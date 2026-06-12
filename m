@@ -4,64 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E369BCD98CF
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Jun 2026 15:44:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4B869CD98CE
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Jun 2026 15:58:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Nm7ivu+qsyPru7tLK0Mf36QWMzOgN30eoycH4h78qpM=; b=kXD0Yn1pLwoPsZATvfK6R6D+pr
-	SBe7tbv4rYpMH57hQP1QkVxx5h6PqbTdH/d18G1NYy3M+RaiYL5VjEwpFD9bs1e9vJvl/C9tKTjwu
-	T0MC88/n3L7To7pTXN9SQshm4Jq+ALqeBf2BLMi5Sft0Iy1BHJq/OAPDwVvnyLENro7xpPOKjnGad
-	tQEfqfCNWQJaS3JRDptb04CXbnb20CHl8A3+m5/YI28VjYw71F1d1R6iSFCz6vvby8uLxwkZxpslF
-	ZkVh5zVjyGp76Ig/zsCG2ihzJVEckeLs2c0H7h+2UETBINFLf/v12Fg6+ftAq6hkTL985p7xPwWGM
-	wzkkZC0A==;
+	bh=/zypJKcobqbr3YjR/7shZwrnjCMfe5ejyDeEhe5hOwA=; b=lda6aR5BMdfuFx0XZQN4AKdHCl
+	c4+BlDAkd6ATI4Z7nOnHmkadHu5KtL1GCRzdjF5aWZBmLexBHK8mizV9jbH9ZkatxPgQm3SquiPTF
+	HKkf/HPtcWACgV+b9JyrLpj3mTyvX9nzyN5kUAb0PjnzbdAruNKRUO51/+nAWjXb05ZDmbkBvQEEc
+	Ug9iDhnBdnCYOrc/KAqOtOfEUKcP4po2ZTkvdXvu8VT2iUvHu1tonEkVTtSyuylo/v5Zxv5W2lh7Y
+	qZaYLIhXrpTvvVoJsQ2hiZURv8CHc6bxaolERakZosS8pBd7VsQyVMxuEYRU7juMmrtqoCdUnq+gC
+	6bPOLnIw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wY43i-0000000BAr8-22C7;
-	Fri, 12 Jun 2026 15:44:38 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wY4Gh-0000000BCGx-3nzu;
+	Fri, 12 Jun 2026 15:58:03 +0000
+Received: from sender4-op-o11.zoho.com ([136.143.188.11])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wY43g-0000000BAqT-25HX;
-	Fri, 12 Jun 2026 15:44:36 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id DEA4A60008;
-	Fri, 12 Jun 2026 15:44:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A41B31F000E9;
-	Fri, 12 Jun 2026 15:44:32 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1781279075;
-	bh=S+0GlFsvyTIfuouEBopxeMKJCoLYJ2b9k3kt0gJUk7s=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=Q8pBwT0BPFtm20O4KmeTbdD4ndiMr6vaHVXN0TGvVxkO7pycW0oXxmTb5IW5eaSwf
-	 a0N/5zOLH/jCGgkmv/Dj7skE44FtGILz9y9HIa1knnHKakBpEE0Xun8w21Pbe1Qsfk
-	 dArJ3a+F5m9F/OpB88UnqidL/qFr9OkbDdHAosTpOGtEhf4Dv7bxeMMuQrskkxSH9J
-	 8+6wAO34Mzyo3vmD7Ob+kJ+rc661ZLGKpTkGtR7AfxesnFfyGawuDUsR6l82EJJIP/
-	 vwI4dIQui961ieLSm5VHfy95uKQe+qcNRqclphMeu8wn95ARa8Ht4r/mOEZkRGflNq
-	 Cp5qe6riCbRXA==
-Date: Fri, 12 Jun 2026 16:44:30 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Tanjeff Moos <tanjeff.moos@westermo.com>,
-	"Christophe Leroy (CS GROUP)" <chleroy@kernel.org>,
-	Michael Walle <mwalle@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
-	Frank Li <Frank.Li@nxp.com>, linux-kernel@vger.kernel.org,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v1 phy-next 7/8] soc: fsl: guts: implement the RCW
- override procedure
-Message-ID: <20260612-twenty-diary-4aab5327f9c2@spud>
-References: <20260611193940.44416-1-vladimir.oltean@nxp.com>
- <20260611193940.44416-8-vladimir.oltean@nxp.com>
+	id 1wY4Gg-0000000BCG8-148D;
+	Fri, 12 Jun 2026 15:58:03 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1781279867; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=nGvzkeuAayjdmBeqtxbjSWHbdPj8/CMrlnp4k5a07CEE11tERyT42JuG3FEpYN8ArfOh7vM3wdb6O43o0CUsmtS83AC6EEJAksu+JBIs+/WKYNjW3XFwZt4WrcEi1ueQR6dotr75yvNLK/ehDEhQJDj+lIZXuNRvjcmrmdRfidE=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1781279867; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=vzdJ9w2taUV525sIaNdL6rwORL1fnnyeOFL2zOPHUvc=; 
+	b=I64hqWs9kfidq6Sua/Ter/ug4SFISdzHpkNJx3kT4lVm3a19ejchBMK8Z0vw07KYDpEV284wpcIsQomhzLp8PuxSHaczeMU3gVGwmtLJd6OO4+uKFXvrkbH7U8/Q/r+GbHdO7RuqK/R8VMr58hKsXqLd7SKZqM+5nwW4LfeEibM=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
+	dmarc=pass header.from=<sebastian.reichel@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1781279867;
+	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
+	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
+	bh=vzdJ9w2taUV525sIaNdL6rwORL1fnnyeOFL2zOPHUvc=;
+	b=VRN6z7S5+7K9JM9iR+cBluY6aRs1RVeyf7/gayIkp58AnkAg7LGrPlgwMJDWyn1J
+	UuIoGA42i+Jrdm5cqL2X/7ll9Ac+t8wr/HjSVA6URfHh1sHeOuw9QQXw7y76+VZ4b1R
+	AofejKoL13MDuLMr2GbhM8nGZdaZ9U9VQbkoWxS0=
+Received: by mx.zohomail.com with SMTPS id 1781279864587114.40647436656968;
+	Fri, 12 Jun 2026 08:57:44 -0700 (PDT)
+Received: by venus (Postfix, from userid 1000)
+	id D5B15180674; Fri, 12 Jun 2026 17:57:39 +0200 (CEST)
+Date: Fri, 12 Jun 2026 17:57:39 +0200
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+To: Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+	Frank Wang <frank.wang@rock-chips.com>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>, 
+	Yubing Zhang <yubing.zhang@rock-chips.com>, Alexey Charkov <alchark@gmail.com>, 
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, kernel@collabora.com, 
+	devicetree@vger.kernel.org
+Subject: Re: [PATCH v4 07/16] phy: rockchip: usbdp: Support single-lane DP
+Message-ID: <aiwrNQhPsqlqDB-Z@venus>
+References: <20260428-rockchip-usbdp-cleanup-v4-0-7775671ece22@collabora.com>
+ <20260428-rockchip-usbdp-cleanup-v4-7-7775671ece22@collabora.com>
+ <f29df43b-111d-471b-8579-0196596fc32b@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <20260611193940.44416-8-vladimir.oltean@nxp.com>
+In-Reply-To: <f29df43b-111d-471b-8579-0196596fc32b@linaro.org>
+X-Zoho-Virus-Status: 1
+X-Zoho-AV-Stamp: zmail-av-0.2.10.1.5.2/281.270.71
+X-ZohoMailClient: External
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260612_085802_323987_E266A16A 
+X-CRM114-Status: GOOD (  14.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,514 +83,107 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4874488317791995179=="
+Content-Type: multipart/mixed; boundary="===============0388107902596436688=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============4874488317791995179==
+--===============0388107902596436688==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="+oYs0Ry07OA4ycIc"
+	protocol="application/pgp-signature"; boundary="rchdwn5oprkndp3s"
 Content-Disposition: inline
 
 
---+oYs0Ry07OA4ycIc
-Content-Type: text/plain; charset=us-ascii
+--rchdwn5oprkndp3s
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v4 07/16] phy: rockchip: usbdp: Support single-lane DP
+MIME-Version: 1.0
 
-On Thu, Jun 11, 2026 at 10:39:39PM +0300, Vladimir Oltean wrote:
-> From: Ioana Ciornei <ioana.ciornei@nxp.com>
->=20
-> Add support for the RCW override procedure which enables runtime
-> reconfiguration of the protocol running on a SerDes lane. The procedure
-> is done through the DCFG DCSR space which now can be defined as the
-> second memory region of the guts DT node.
-> Support is added on the following SoCs: LS1046A, LS1088A, LS2088A.
->=20
-> The procedure is exported to the "client" driver - the Lynx10G SerDes
-> PHY driver - through the following functions:
-> - fsl_guts_lane_init() used to notify the initial / boot time lane mode
->   running on a SerDes lane.
-> - fsl_guts_lane_validate() used to validate that changing the protocol
->   on a specific lane is supported.
-> - fsl_guts_lane_set_mode() which can be used to request the RCW
->   procedure be executed for a specific lane.
->=20
-> Since the RCW override procedure is different depending on the SoC, the
-> private fsl_soc_data structure is updated with two new per SoC callbacks
-> (.serdes_get_rcw_override() and .serdes_init_rcwcr()) which get used
-> from the generic fsl_guts_lane_set_mode() function. These two callbacks
-> hide all the SoC specific register offsets, masks and values so that the
-> _set_mode() procedure is straightforward.
->=20
-> Signed-off-by: Ioana Ciornei <ioana.ciornei@nxp.com>
-> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
-> ---
-> Cc: Conor Dooley <conor@kernel.org>
-> Cc: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-> Cc: Rob Herring <robh@kernel.org>
-> Cc: devicetree@vger.kernel.org
+Hi,
 
-Wrong CC list for this specific patch?
-
-ta,
-Conor.
-
-> ---
->  drivers/soc/fsl/guts.c   | 286 ++++++++++++++++++++++++++++++++++++++-
->  include/linux/fsl/guts.h |  20 ++-
->  2 files changed, 299 insertions(+), 7 deletions(-)
+On Wed, May 06, 2026 at 04:53:07PM +0200, Neil Armstrong wrote:
+> > @@ -537,6 +538,13 @@ static void rk_udphy_usb_bvalid_enable(struct rk_u=
+dphy *udphy, u8 enable)
+> >    * <0 1>                  dpln0         dpln1       usbrx         usb=
+tx
+> >    * <2 3>                  usbrx         usbtx       dpln0         dpl=
+n1
+> >    * ------------------------------------------------------------------=
+---------
+> > + * if 1 lane for dp function, 2 lane for usb function, define rockchip=
+,dp-lane-mux =3D <x>;
+> > + * sample as follow:
+> > + * -------------------------------------------------------------------=
+--------
+> > + *                        B11-B10       A2-A3       A11-A10       B2-B3
+> > + * rockchip,dp-lane-mux   ln0(tx/rx)    ln1(tx)     ln2(tx/rx)    ln3(=
+tx)
+> > + * <0>                    dpln0         \           usbrx         usbtx
+> > + * -------------------------------------------------------------------=
+--------
+> >    */
+> >   static void rk_udphy_dplane_select(struct rk_udphy *udphy)
+> > @@ -544,18 +552,18 @@ static void rk_udphy_dplane_select(struct rk_udph=
+y *udphy)
+> >   	const struct rk_udphy_cfg *cfg =3D udphy->cfgs;
+> >   	u32 value =3D 0;
+> > -	switch (udphy->mode) {
+> > -	case UDPHY_MODE_DP:
+> > -		value |=3D 2 << udphy->dp_lane_sel[2] * 2;
+> > +	switch (udphy->dp_lanes) {
+> > +	case 4:
+> >   		value |=3D 3 << udphy->dp_lane_sel[3] * 2;
+> > +		value |=3D 2 << udphy->dp_lane_sel[2] * 2;
+> >   		fallthrough;
+> > -	case UDPHY_MODE_DP_USB:
+> > -		value |=3D 0 << udphy->dp_lane_sel[0] * 2;
+> > +	case 2:
+> >   		value |=3D 1 << udphy->dp_lane_sel[1] * 2;
+> > -		break;
+> > +		fallthrough;
+> > -	case UDPHY_MODE_USB:
+> > +	case 1:
+> > +		value |=3D 0 << udphy->dp_lane_sel[0] * 2;
 >=20
-> diff --git a/drivers/soc/fsl/guts.c b/drivers/soc/fsl/guts.c
-> index 9f2aff07a274..23ec5750080c 100644
-> --- a/drivers/soc/fsl/guts.c
-> +++ b/drivers/soc/fsl/guts.c
-> @@ -15,6 +15,30 @@
->  #include <linux/fsl/guts.h>
-> =20
->  #define DCFG_CCSR	0
-> +#define DCFG_DCSR	1
-> +
-> +#define MAX_NUM_LANES	8
-> +#define MAX_NUM_SERDES	2
-> +
-> +#define LS1088A_RCWSR29_SRDS_PRTCL_S1_LNn(lane)	\
-> +	GENMASK(19 + 4 * (3 - lane), 16 + 4 * (3 - lane))
-> +#define LS1088A_RCWSR30_SRDS_PRTCL_S2_LNn(lane)	\
-> +	GENMASK(3 + 4 * (3 - lane), 4 * (3 - lane))
-> +
-> +#define LS1046A_RCWSR5_SRDS_PRTCL_S1(lane)	\
-> +	GENMASK(19 + 4 * (lane), 16 + 4 * (lane))
-> +#define SRDS_PRTCL_NONE					0
-> +#define SRDS_PRTCL_XFI					1
-> +#define SRDS_PRTCL_2500BASEX				2
-> +#define SRDS_PRTCL_100BASEX_SGMII			3
-> +#define SRDS_PRTCL_QSGMII				4
-> +#define SRDS_PRTCL_PCIE					5
-> +
-> +#define LS2088A_RCWSR30_SRDS_CLK_EN_SEL_XGMII_S1	BIT(14)
-> +#define LS2088A_RCWSR30_SRDS_CLK_SEL_XGMII_Ln_S1(lane)	BIT(6 + (7 - (lan=
-e)))
-> +#define LS2088A_RCWSR30_SRDS_CLK_SEL_MSK		GENMASK(13, 6)
-> +#define SRDS_CLK_SEL_XGMII				1
-> +#define SRDS_CLK_SEL_GMII				0
-> =20
->  struct fsl_soc_die_attr {
->  	char	*die;
-> @@ -22,9 +46,19 @@ struct fsl_soc_die_attr {
->  	u32	mask;
->  };
-> =20
-> +struct fsl_soc_serdes_rcw_override {
-> +	int offset;
-> +	int mask;
-> +	int val;
-> +};
-> +
->  struct fsl_soc_data {
->  	const char *sfp_compat;
->  	u32 uid_offset;
-> +	int (*serdes_get_rcw_override)(int index, int lane,
-> +				       enum lynx_lane_mode lane_mode,
-> +				       struct fsl_soc_serdes_rcw_override *override);
-> +	void (*serdes_init_rcwcr)(int index);
->  };
-> =20
->  enum qoriq_die {
-> @@ -138,9 +172,13 @@ static const struct fsl_soc_die_attr fsl_soc_die[] =
-=3D {
-> =20
->  static struct fsl_soc_guts {
->  	struct ccsr_guts __iomem *dcfg_ccsr;
-> +	struct ccsr_guts __iomem *dcfg_dcsr;
->  	const struct fsl_soc_data *data;
->  	bool little_endian;
->  	u32 svr;
-> +	enum lynx_lane_mode lane_mode[MAX_NUM_SERDES][MAX_NUM_LANES];
-> +	bool rcwcr_init_done;
-> +	spinlock_t rcwcr_lock; /* serializes concurrent writes to the RCWCR */
->  } soc;
-> =20
->  static unsigned int fsl_guts_read(const void __iomem *reg)
-> @@ -151,6 +189,28 @@ static unsigned int fsl_guts_read(const void __iomem=
- *reg)
->  	return ioread32be(reg);
->  }
-> =20
-> +static void fsl_guts_write(void __iomem *reg, u32 val)
-> +{
-> +	if (soc.little_endian)
-> +		iowrite32(val, reg);
-> +	else
-> +		iowrite32be(val, reg);
-> +}
-> +
-> +/* Some fields of the Reset Configuration Word (RCW) can be overridden at
-> + * runtime by writing to the RCWCRn registers contained within the DCSR =
-space
-> + * of the Device Configuration (DCFG) block. The layout of the RCWCRn re=
-gisters
-> + * is identical with the read-only RCWSRn from the CCSR space.
-> + */
-> +static void fsl_guts_rmw(int offset, u32 val, u32 mask)
-> +{
-> +	u32 tmp =3D fsl_guts_read(&soc.dcfg_ccsr->rcwsr[offset]);
-> +
-> +	tmp &=3D ~mask;
-> +	tmp |=3D val;
-> +	fsl_guts_write(&soc.dcfg_dcsr->rcwcr[offset], tmp);
-> +}
-> +
->  static bool fsl_soc_die_match_one(u32 svr, const struct fsl_soc_die_attr=
- *match)
->  {
->  	return match->svr =3D=3D (svr & match->mask);
-> @@ -167,6 +227,97 @@ static const struct fsl_soc_die_attr *fsl_soc_die_ma=
-tch(
->  	return NULL;
->  }
-> =20
-> +static int
-> +fsl_guts_serdes_get_rcw_override(int serdes_idx, int lane,
-> +				 enum lynx_lane_mode lane_mode,
-> +				 struct fsl_soc_serdes_rcw_override *override)
-> +{
-> +	if ((!fsl_soc_die_match_one(soc.svr, &fsl_soc_die[DIE_LS1088A]) &&
-> +	     !fsl_soc_die_match_one(soc.svr, &fsl_soc_die[DIE_LS2088A]) &&
-> +	     !fsl_soc_die_match_one(soc.svr, &fsl_soc_die[DIE_LS1046A])) ||
-> +	    !soc.data || !soc.data->serdes_get_rcw_override) {
-> +		pr_debug("RCW override not implemented for SoC\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	if (!soc.dcfg_dcsr) {
-> +		pr_debug("Device tree does not define DCFG_DCSR region necessary for R=
-CW override\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	return soc.data->serdes_get_rcw_override(serdes_idx, lane, lane_mode,
-> +						 override);
-> +}
-> +
-> +/**
-> + * fsl_guts_lane_init() - Notify guts module of SerDes lane configuration
-> + * @serdes_idx: zero-based SerDes block index
-> + * @lane: zero-based lane index within SerDes
-> + * @lane_mode: initial / boot time SerDes protocol for lane
-> + *
-> + * On the LS208xA SoC, the RCW override procedure needs to be aware of a=
-ll link
-> + * modes which are configured on a SerDes block.
-> + */
-> +void fsl_guts_lane_init(int serdes_idx, int lane, enum lynx_lane_mode la=
-ne_mode)
-> +{
-> +	soc.lane_mode[serdes_idx - 1][lane] =3D lane_mode;
-> +}
-> +EXPORT_SYMBOL_NS_GPL(fsl_guts_lane_init, "FSL_GUTS");
-> +
-> +/**
-> + * fsl_guts_lane_validate() - Validate that SerDes protocol is implement=
-ed and
-> + *	supported on current SoC
-> + * @serdes_idx: zero-based SerDes block index
-> + * @lane: zero-based lane index within SerDes
-> + * @lane_mode: requested SerDes protocol
-> + *
-> + * Should be called before actually requesting the RCW override procedur=
-e to be
-> + * applied using %fsl_guts_lane_set_mode()
-> + *
-> + * Return: 0 if RCW override to protocol is possible, negative error oth=
-erwise
-> + */
-> +int fsl_guts_lane_validate(int serdes_idx, int lane, enum lynx_lane_mode=
- lane_mode)
-> +{
-> +	struct fsl_soc_serdes_rcw_override override;
-> +
-> +	return fsl_guts_serdes_get_rcw_override(serdes_idx, lane, lane_mode,
-> +						&override);
-> +}
-> +EXPORT_SYMBOL_NS_GPL(fsl_guts_lane_validate, "FSL_GUTS");
-> +
-> +/**
-> + * fsl_guts_lane_set_mode() - apply RCW override procedure for SerDes la=
-ne
-> + * @serdes_idx: zero-based SerDes block index
-> + * @lane: zero-based lane index within SerDes
-> + * @lane_mode: requested SerDes protocol
-> + *
-> + * Return: 0 on success, negative error otherwise
-> + */
-> +int fsl_guts_lane_set_mode(int serdes_idx, int lane, enum lynx_lane_mode=
- lane_mode)
-> +{
-> +	struct fsl_soc_serdes_rcw_override override;
-> +	int err;
-> +
-> +	err =3D fsl_guts_serdes_get_rcw_override(serdes_idx, lane, lane_mode,
-> +					       &override);
-> +	if (err)
-> +		return err;
-> +
-> +	spin_lock(&soc.rcwcr_lock);
-> +
-> +	if (soc.data->serdes_init_rcwcr)
-> +		soc.data->serdes_init_rcwcr(serdes_idx);
-> +
-> +	fsl_guts_rmw(override.offset, override.val << __bf_shf(override.mask),
-> +		     override.mask);
-> +	soc.lane_mode[serdes_idx - 1][lane] =3D lane_mode;
-> +
-> +	spin_unlock(&soc.rcwcr_lock);
-> +
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL_NS_GPL(fsl_guts_lane_set_mode, "FSL_GUTS");
-> +
->  static u64 fsl_guts_get_soc_uid(const char *compat, unsigned int offset)
->  {
->  	struct device_node *np;
-> @@ -193,6 +344,128 @@ static u64 fsl_guts_get_soc_uid(const char *compat,=
- unsigned int offset)
->  	return uid;
->  }
-> =20
-> +static int ls1088a_serdes_get_rcw_override(int index, int lane,
-> +					   enum lynx_lane_mode lane_mode,
-> +					   struct fsl_soc_serdes_rcw_override *override)
-> +{
-> +	/* The RCW override procedure has to write to different registers
-> +	 * depending on the SerDes block index.
-> +	 */
-> +	switch (index) {
-> +	case 1:
-> +		override->offset =3D 28;
-> +		override->mask =3D LS1088A_RCWSR29_SRDS_PRTCL_S1_LNn(lane);
-> +		break;
-> +	case 2:
-> +		override->offset =3D 29;
-> +		override->mask =3D LS1088A_RCWSR30_SRDS_PRTCL_S2_LNn(lane);
-> +		break;
-> +	default:
-> +		return -EINVAL;
-> +	}
-> +
-> +	if (lynx_lane_mode_uses_xgmii_mac(lane_mode))
-> +		override->val =3D SRDS_PRTCL_XFI;
-> +	else if (lynx_lane_mode_uses_gmii_mac(lane_mode))
-> +		override->val =3D SRDS_PRTCL_100BASEX_SGMII;
-> +	else
-> +		return -EINVAL;
-> +
-> +	return 0;
-> +}
-> +
-> +static int ls1046a_serdes_get_rcw_override(int index, int lane,
-> +					   enum lynx_lane_mode lane_mode,
-> +					   struct fsl_soc_serdes_rcw_override *override)
-> +{
-> +	/* The RCW override procedure has to write to different registers
-> +	 * depending on the SerDes block index.
-> +	 */
-> +	switch (index) {
-> +	case 1:
-> +		override->offset =3D 4;
-> +		override->mask =3D LS1046A_RCWSR5_SRDS_PRTCL_S1(lane);
-> +		break;
-> +	default:
-> +		return -EINVAL;
-> +	}
-> +
-> +	if (lynx_lane_mode_uses_xgmii_mac(lane_mode))
-> +		override->val =3D SRDS_PRTCL_XFI;
-> +	else if (lynx_lane_mode_uses_gmii_mac(lane_mode))
-> +		override->val =3D SRDS_PRTCL_100BASEX_SGMII;
-> +	else
-> +		return -EINVAL;
-> +
-> +	return 0;
-> +}
-> +
-> +static int ls2088a_serdes_get_rcw_override(int index, int lane,
-> +					   enum lynx_lane_mode lane_mode,
-> +					   struct fsl_soc_serdes_rcw_override *override)
-> +{
-> +	switch (index) {
-> +	case 1:
-> +		override->offset =3D 29;
-> +		override->mask =3D LS2088A_RCWSR30_SRDS_CLK_SEL_XGMII_Ln_S1(lane);
-> +		break;
-> +	default:
-> +		return -EINVAL;
-> +	}
-> +
-> +	if (lynx_lane_mode_uses_xgmii_mac(lane_mode))
-> +		override->val =3D SRDS_CLK_SEL_XGMII;
-> +	else if (lynx_lane_mode_uses_gmii_mac(lane_mode))
-> +		override->val =3D SRDS_CLK_SEL_GMII;
-> +	else
-> +		return -EINVAL;
-> +
-> +	return 0;
-> +}
-> +
-> +static void ls2088a_serdes_init_rcwcr(int serdes_idx)
-> +{
-> +	u32 reg;
-> +	int i;
-> +
-> +	if (serdes_idx !=3D 1)
-> +		return;
-> +	if (soc.rcwcr_init_done)
-> +		return;
-> +
-> +	/* SRDS_CLK_EN_SEL_XGMII_S1: SerDes Clock Enable Select XGMII Serdes 1:
-> +	 * Enables to select GMII/XGMII clock according to
-> +	 * SRDS_CLK_SEL_XGMII_Ln_S1
-> +	 */
-> +	reg =3D LS2088A_RCWSR30_SRDS_CLK_EN_SEL_XGMII_S1;
-> +
-> +	/* We need to configure the initial state of all lanes for
-> +	 * the SerDes block #1
-> +	 */
-> +	for (i =3D 0; i < MAX_NUM_LANES; i++)
-> +		if (lynx_lane_mode_uses_xgmii_mac(soc.lane_mode[serdes_idx - 1][i]))
-> +			reg |=3D LS2088A_RCWSR30_SRDS_CLK_SEL_XGMII_Ln_S1(i);
-> +
-> +	fsl_guts_rmw(29, reg,
-> +		     LS2088A_RCWSR30_SRDS_CLK_EN_SEL_XGMII_S1 |
-> +		     LS2088A_RCWSR30_SRDS_CLK_SEL_MSK);
-> +
-> +	soc.rcwcr_init_done =3D true;
-> +}
-> +
-> +static const struct fsl_soc_data ls1088a_data =3D {
-> +	.serdes_get_rcw_override =3D ls1088a_serdes_get_rcw_override,
-> +};
-> +
-> +static const struct fsl_soc_data ls1046a_data =3D {
-> +	.serdes_get_rcw_override =3D ls1046a_serdes_get_rcw_override,
-> +};
-> +
-> +static const struct fsl_soc_data ls2088a_data =3D {
-> +	.serdes_get_rcw_override =3D ls2088a_serdes_get_rcw_override,
-> +	.serdes_init_rcwcr =3D ls2088a_serdes_init_rcwcr,
-> +};
-> +
->  static const struct fsl_soc_data ls1028a_data =3D {
->  	.sfp_compat =3D "fsl,ls1028a-sfp",
->  	.uid_offset =3D 0x21c,
-> @@ -221,10 +494,10 @@ static const struct of_device_id fsl_guts_of_match[=
-] =3D {
->  	{ .compatible =3D "fsl,mpc8572-guts", },
->  	{ .compatible =3D "fsl,ls1021a-dcfg", },
->  	{ .compatible =3D "fsl,ls1043a-dcfg", },
-> -	{ .compatible =3D "fsl,ls2080a-dcfg", },
-> -	{ .compatible =3D "fsl,ls1088a-dcfg", },
-> +	{ .compatible =3D "fsl,ls2080a-dcfg", .data =3D &ls2088a_data},
-> +	{ .compatible =3D "fsl,ls1088a-dcfg", .data =3D &ls1088a_data},
->  	{ .compatible =3D "fsl,ls1012a-dcfg", },
-> -	{ .compatible =3D "fsl,ls1046a-dcfg", },
-> +	{ .compatible =3D "fsl,ls1046a-dcfg", .data =3D &ls1046a_data},
->  	{ .compatible =3D "fsl,lx2160a-dcfg", },
->  	{ .compatible =3D "fsl,ls1028a-dcfg", .data =3D &ls1028a_data},
->  	{}
-> @@ -250,6 +523,8 @@ static int __init fsl_guts_init(void)
->  		of_node_put(np);
->  		return -ENOMEM;
->  	}
-> +	/* DCFG_DCSR is optional */
-> +	soc.dcfg_dcsr =3D of_iomap(np, DCFG_DCSR);
-> =20
->  	soc.little_endian =3D of_property_read_bool(np, "little-endian");
->  	soc.svr =3D fsl_guts_read(&soc.dcfg_ccsr->svr);
-> @@ -296,6 +571,8 @@ static int __init fsl_guts_init(void)
->  		goto err;
->  	}
-> =20
-> +	spin_lock_init(&soc.rcwcr_lock);
-> +
->  	pr_info("Machine: %s\n", soc_dev_attr->machine);
->  	pr_info("SoC family: %s\n", soc_dev_attr->family);
->  	pr_info("SoC ID: %s, Revision: %s\n",
-> @@ -305,7 +582,8 @@ static int __init fsl_guts_init(void)
-> =20
->  err_nomem:
->  	ret =3D -ENOMEM;
-> -
-> +	if (soc.dcfg_dcsr)
-> +		iounmap(soc.dcfg_dcsr);
->  	iounmap(soc.dcfg_ccsr);
->  err:
->  	kfree(soc_dev_attr->family);
-> diff --git a/include/linux/fsl/guts.h b/include/linux/fsl/guts.h
-> index fdb55ca47a4f..176842531241 100644
-> --- a/include/linux/fsl/guts.h
-> +++ b/include/linux/fsl/guts.h
-> @@ -13,6 +13,7 @@
-> =20
->  #include <linux/types.h>
->  #include <linux/io.h>
-> +#include <soc/fsl/phy-fsl-lynx.h>
-> =20
->  /*
->   * Global Utility Registers.
-> @@ -91,9 +92,15 @@ struct ccsr_guts {
->  	u32	iovselsr;	/* 0x.00c0 - I/O voltage select status register
->  					     Called 'elbcvselcr' on 86xx SOCs */
->  	u8	res0c4[0x100 - 0xc4];
-> -	u32	rcwsr[16];	/* 0x.0100 - Reset Control Word Status registers
-> -					     There are 16 registers */
-> -	u8	res140[0x224 - 0x140];
-> +	/* 0x.0100 - read-only Reset Configuration Word Status registers in
-> +	 * CCSR, or write-only Reset Configuration Word Control registers in
-> +	 * DCSR. In both cases there are 32 registers.
-> +	 */
-> +	union {
-> +		u32	rcwsr[32];
-> +		u32	rcwcr[32];
-> +	};
-> +	u8	res180[0x224 - 0x180];
->  	u32	iodelay1;	/* 0x.0224 - IO delay control register 1 */
->  	u32	iodelay2;	/* 0x.0228 - IO delay control register 2 */
->  	u8	res22c[0x604 - 0x22c];
-> @@ -131,6 +138,13 @@ struct ccsr_guts {
->  	u32	srds2cr1;	/* 0x.0f44 - SerDes2 Control Register 0 */
->  } __attribute__ ((packed));
-> =20
-> +void fsl_guts_lane_init(int serdes_idx, int lane,
-> +			enum lynx_lane_mode lane_mode);
-> +int fsl_guts_lane_validate(int serdes_idx, int lane,
-> +			   enum lynx_lane_mode lane_mode);
-> +int fsl_guts_lane_set_mode(int serdes_idx, int lane,
-> +			   enum lynx_lane_mode lane_mode);
-> +
->  /* Alternate function signal multiplex control */
->  #define MPC85xx_PMUXCR_QE(x) (0x8000 >> (x))
-> =20
-> --=20
-> 2.34.1
->=20
+> What's the point of keeping this no-op calculation ?
 
---+oYs0Ry07OA4ycIc
+This function is cleaned up in a later patch to no longer have the
+switch/case at all ("Cleanup DP lane selection function"). I kept
+the no-op calculation here, since it IMHO makes it easier to understand
+the cleanup patch and will be optimized away by the compiler anyways.
+
+(I will send out a new patch series in a jiffy)
+
+Greetings,
+
+-- Sebastian
+
+--rchdwn5oprkndp3s
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaiwpXgAKCRB4tDGHoIJi
-0ntBAP9M3qAsl/D+DcH4DwKQGnY7o3dHsy84BKRl/REMqNbhHgEAyh1KBXxdecCi
-UP7ZwuAIECLNF8kS0ZtRizU1Xd8TpgY=
-=5z05
+iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmosLG8ACgkQ2O7X88g7
++powOhAAjGKDnrFO/NogQjJApKysPt9NuuN6z1D58zENDmEHAdPNtxLZl9DsyK1f
+bhNbIb/kv9nN3HuJgCHsT3/5FiG7xUMq/FzE/LZXkYv70AA9TC1uH8hd6/JvTxzi
+jVzUVU9Kgxg0Q5RxfOlFF9pC1NhT+BWzbT5vAbdF367hEKzPataR01oYpn/jgEmg
+v7otspxo6li0UWm/kYndVpql9nwDTWTn7upSLcUUNC2JOqVq/JRw9IhX4E+4Q7yO
+05uATUwjSXCsWlP2fvLGTuyouPEnpT4vIZEE5yC4MiY4ZMZJECvluWweAhBsrVf6
+mcztycUWmsTqEtqfAR02KxwtNJS0cmGpCdKfA/n+GulU4TgsCzD3vsUNQcs4sU6V
+rVGb/v4Wh6QJbMBzw8Y+t2ts2coGC27fZUx8f3cSX0KOTqlg2t704/dHvcA9ooAK
+rMUekMp8P4TVtXYf2MHtGU4QwviQUqkXGe2STukCIX/fgNYMGPmDrQKo0NUb1BgU
+UzApK1gna3wOUBXojV1efN/JEpxQqBbEcy8DJeVu31jBO2ymYObn9PKf2hqjSnIG
+HJ/35QT9khXiDj9zcg/pxt7abqwVJVRfIad0nsJ+tIsCYHTlmOzkJTqxauq3A8Zl
+Qqjgl0LYeZotsiZ4PCrEiDJyVqxUwdE9+EQR3gyVNoCUcARsNhw=
+=+Cjz
 -----END PGP SIGNATURE-----
 
---+oYs0Ry07OA4ycIc--
+--rchdwn5oprkndp3s--
 
 
---===============4874488317791995179==
+--===============0388107902596436688==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -591,5 +194,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============4874488317791995179==--
+--===============0388107902596436688==--
 
