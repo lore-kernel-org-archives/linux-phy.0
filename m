@@ -4,136 +4,140 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5DE45CD98CE
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Jun 2026 07:14:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74055CD98D6
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Jun 2026 07:24:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0VVXsdAIjaGQMX1U8aHymZz17oqbKQHTmYiDdQW7cQo=; b=qAMW1+1xTpId6o
-	4uZnPkvhx+W7r+x7LHeiTI9GqMtCe7hVpzzQjHD9pp/oc/RjO/K6F6OUChqh4ZUHZlxls9IE2W1Gc
-	p7yGMGa5ciHVXJDBb+9iIsreMK/FQUc/BN0qhG4YoDUyPuI0SZhLrSfQ2S1AelkkAs6KTatOhDVMV
-	ROmo0wgsd78YjqZoLFytXgPwV6R+TfjcjfrwVz62imH30n73r3o5c9aInvz80g7gEXS7GEe7SI+kV
-	GtFleAv8Nw4CDlhxwE9ZEAWEC4gcW3m1yZroBPhbW2tivCADn6rG6vEft5J1g0ZEbmKuZ2Hx804Va
-	ja8jD6U8JGGHOvy6cK2Q==;
+	List-Owner; bh=7CgS5o09O/bbhODhVq8JMU5prhc1v3PRks2kBvyoqIw=; b=oKhBvvIWah8Zyu
+	M/NTlf5GelIDtEk6HQ4mHEMPbNI65pruW4y6WqLdlVtJLGtVeFnt4ELQ5J+YfvHQwhbolNgmdinRf
+	DLQ0aWNdeH6u10uuvG068tsGpf0ubGWqIKJnZQ8OdlsuSVcGg8+viasDCNbgWwcOwAwvHWpVHbuWp
+	/KpgzH8lUgiW0kb4ep0fD4My2cuoH9djAdKMAAEmr74inu+z4Q3SW196hte/LWeEHtCpogcp3cg6/
+	yLJ8chbFqmhrV0JhwesZ8Cx4j/DpHcPIsWM/qFYRd9/cC8+Ksh/tQ9Cvrh36nE4waQI/fVzixK8IK
+	GIWIf1L5YMIYtacrjrQA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXw5b-0000000ASYP-0XvN;
-	Fri, 12 Jun 2026 07:14:03 +0000
+	id 1wXwFq-0000000AT7O-3gu3;
+	Fri, 12 Jun 2026 07:24:38 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXw5Y-0000000ASXz-113u
+	id 1wXwFn-0000000AT6z-42T9
 	for linux-phy@lists.infradead.org;
-	Fri, 12 Jun 2026 07:14:01 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65C39WDp940542
-	for <linux-phy@lists.infradead.org>; Fri, 12 Jun 2026 07:13:59 GMT
+	Fri, 12 Jun 2026 07:24:37 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65C39f5v2497007
+	for <linux-phy@lists.infradead.org>; Fri, 12 Jun 2026 07:24:35 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=GOzIs+N6R8tJwR5cBJ70QHca
-	fwj9Yt2lfriysx6gKgc=; b=p75pE7jFSli9mi432IjOZK+1LKwTQiqGSEgRZTws
-	oDsT69Xj4eprdprGA4GocJGhgunFsQb1HFPvmcrKDNy2BenRmKs2/9ol99xrBHUI
-	P6MCn+/FDxaHgwcPx3r0Hxoy9Rv1aB7WlKAl9c6xdJRPnaC6+QnhJjcaoBsRjEpp
-	96/V0+vKHb/MNs0wJf8F0SvEN/1Kf5uC7Sp3+u3FQHdczpbXCnxgKSm67YrFNJNk
-	RUawcwdVwZlfwtJSTkmJF2yeksi9iH7hDBwRDI8ne9ynSIp/S2H+Me2NCX49M53z
-	ZF0DSJnOfBqkQIw+jlQXerk3KkrYhtTldGsfztjoZZvmIg==
-Received: from mail-vs1-f69.google.com (mail-vs1-f69.google.com [209.85.217.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4er014jxw3-1
+	:references:subject:to; s=qcppdkim1; bh=GPAVTLBhhFJdNBz/7VfALgdW
+	+TGwxvR3jClWBIVeqgk=; b=RtFjhjyS7kPnWvpVJ4lgZvmw6t8azgNoDuiYrEKq
+	nvMqWiyFcvjqo7gJovygu05HjeQ2XSDar55Mf1pQ1OJDnXrXYnvH752BEA4dhe52
+	7PuH+vWJkKIQnQ4rnOhy/Z/BoaC55BA6ohhebO+06U6023bNsYZ8UtzuSFEOqx2q
+	vPaIRpjfMAtEet4N/38vEi9FjcQy/QjP0newjQSelRmskOGM+pfAg3gmWeP2+Szr
+	FKKjJalCTFcU2nZ81y3tpSpQvcIuYrfW4Fve4XZNluLc2qkoEQxi5cDhWurJv9IW
+	k5MLjg54yezbaJS0jIieFi8l0EPq2p2rCk9vbDv+2FlS2Q==
+Received: from mail-qt1-f198.google.com (mail-qt1-f198.google.com [209.85.160.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4er0x7jk6w-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 12 Jun 2026 07:13:59 +0000 (GMT)
-Received: by mail-vs1-f69.google.com with SMTP id ada2fe7eead31-6cfe512e871so320853137.2
-        for <linux-phy@lists.infradead.org>; Fri, 12 Jun 2026 00:13:59 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Fri, 12 Jun 2026 07:24:35 +0000 (GMT)
+Received: by mail-qt1-f198.google.com with SMTP id d75a77b69052e-5178fc89b1bso10262621cf.1
+        for <linux-phy@lists.infradead.org>; Fri, 12 Jun 2026 00:24:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1781248438; x=1781853238; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1781249074; x=1781853874; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=GOzIs+N6R8tJwR5cBJ70QHcafwj9Yt2lfriysx6gKgc=;
-        b=kZHgHSHWC3ID3Va5U/nfOLSMPW8Lyuk6V9/HwWKTs1D5D6IJMfHOk2E5+nhbT5j15X
-         0brslN68NZNr0evzPgjbxprSC6jlZHpWF3NnG5VJZaf8AydT+PwywzrYf6J/vTrpQ5xW
-         hlgK6Emhm6AyZwYGb+cMlXWgKfCYcelmmdLezOeqpc58zbP4FcFK3Z3/81jWasHjL+qk
-         Ws0gpwvpPB0dXGLcAluHvdfIpauVG0ZxyvQrZ8CamCcapLdUonZF6VZO3B60HL8cv78D
-         raPbLGdnyCLkSVLo6SUKMs+tTqb71U9jTsJhciWRqq/MoTA7SP3RobQtJzukJpEsPEQ1
-         bImQ==
+        bh=GPAVTLBhhFJdNBz/7VfALgdW+TGwxvR3jClWBIVeqgk=;
+        b=g5DinlmoRpdiNc6xD4UehbVLIVKkno+vcp7vBxkt+V++ZWr0gWXqyNgEP6KctGfG0r
+         8h39wxPP/c8+U1pNR/pm/ETu5uROTRBvOnqX5vI0qiqv5VB1wpqxImHKya9orECSEoj2
+         bspbX9muGh/kGyCWJeTQop1UzzLa7q12S2gbSFC4cxw9b9W/F+2LBOMbLpYBuNiQhXlt
+         xh6tSzNEnVuBJCBgmxWON/RrhfTLy4n/hPhAwvuor7DkekXUHC0XJAyXxJUb3SveeI5q
+         UnJyEb+Pujy/iLsiBQHF4Cbw4naAB66ZVhzeyUAKUrCMPNmjcf77H9L+jMtjc6TmowmS
+         Q00Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1781248438; x=1781853238;
+        d=1e100.net; s=20251104; t=1781249074; x=1781853874;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=GOzIs+N6R8tJwR5cBJ70QHcafwj9Yt2lfriysx6gKgc=;
-        b=WOYA26HQdeqC7iDmz4mW5D+APNWrDhcA3pdci1noJOxsOA+8qEahhx8cF9OgaTGCZF
-         +w0AVG9t5NS8+H5wvaFEFIMuWeJu9LaZkgK6vN1TdFwarCHMBO4v3IA3hrhQHqIIh9OE
-         TXaF6KtnwvALjgZIlf7KKvVz1zAeIJSU8AFIBGvWd07S5krBgZ0PRmWU71ehqNeOvJ+W
-         CWysOjVyBgZf6vpgd7PrSVsqKT26Ti1n4e9iLlXX0va1ErVZD4GDtZVvPv4w197ZfJ7I
-         ZJC4uOvGt6XwyVfRalRTng+pfwQv3QpCCouAQEkD1fxaMCmFX+evZmke4AYp93dhy7IA
-         aLRQ==
-X-Forwarded-Encrypted: i=1; AFNElJ9iq37W6plrUZT5s8DtQ405C3FfIMuXyyExyvlmfpIRSmnuqIPnYg9VGjnHKvlcurbt52VQ8jnrEb0=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwdGC96UhHszjpFHtuK3W6kZ92D1c+EHJBSHXbCP/emg4JMZcZD
-	9hKUwf+oqWjrl0FhxVE1m4dlIgh8rWOXzhzl4HJwhdNlQ0qlb6apa8TGsXaAmTfb3csZJ0BUJXQ
-	6Km/kmpdGvooGp8QqXGazOPQ2uVf6lR3/IBemqvwnHp2JHcv9hXXRRo9jPVVHf4kByfuB
-X-Gm-Gg: Acq92OH57HBWJPUmLv5qkWjh/IOKC4mWTr3JXbjXMqYbB04V8yO4BFrRHyN35Jwl3PO
-	6BYmzg3Zo9ac6wHaZglsX+2v/mVjfmXb+/tiQ7DDfk7rCNaP/CpP7hxXr0/AjHKPaMrbIrkMzTf
-	4fx1rUWkK4LC+w80l5O5o/b3QsMmE0FSs+EbZS/47T/RS9W3k9lGIXL/ouBND05sG9AioY7OBzW
-	Tqe6AV5mRch3utGsdzwLDg9JTP5G7Pz5WtQ3usyG37/U8cLlzXKRrCrQhRWxw/S2d/b7a25jklq
-	5KRTP3ENBq3H34QZTFZgAbSTc2PWy0S6ybNcisOrWpf4MKZcRzwUNHN+cFgvO2mm5FrWod28nbU
-	/PkuHnCMTxdzHbnbLAQAygUJTCIDDZk4udRKzFcORopXYHssWDqEwxsYMCdSLWd4bCDVGCFysSY
-	O7hU3WL9rtzqfzz9/KwUtaVFaCtdpOhuP1HDU=
-X-Received: by 2002:a05:6102:5f06:b0:607:5cd7:d7c0 with SMTP id ada2fe7eead31-71e88c7de78mr557138137.19.1781248438332;
-        Fri, 12 Jun 2026 00:13:58 -0700 (PDT)
-X-Received: by 2002:a05:6102:5f06:b0:607:5cd7:d7c0 with SMTP id ada2fe7eead31-71e88c7de78mr557125137.19.1781248437927;
-        Fri, 12 Jun 2026 00:13:57 -0700 (PDT)
+        bh=GPAVTLBhhFJdNBz/7VfALgdW+TGwxvR3jClWBIVeqgk=;
+        b=J+UAYuFJw5IjdRIDWJusMRKhIcJLDnNLmYukz7WDEcMIc+ErpRsAIWdTiN74X1OjH7
+         nOfn36+1vRy7Ih3lenT0SpoEh8PSFxaIXO3wRYOLSH0WkTlNrjn+k9P8vZVF3FlTFT6N
+         6DRrM2MPKU2RBkemRiu9/WfaXgTcXjlv7l4PuCjX4CsyKDEMTl3Xy4IqL7Lh9VEzi9vn
+         DrDVecCdBdbAN9L565KF1PMGBNcRH31Hp9muUXXy9d/xrOt8g5+A83Oguc7POjkhB958
+         LBTk0MoRSyBxop9HuAufwJYBoTBemW214HAnivh2vmuo2deHcqbVpb9SHL4RWh3i13ae
+         oTAg==
+X-Forwarded-Encrypted: i=1; AFNElJ8Wn7PPBqg684EbOtpzvHRrxAWfc5+aebK8UfshpEgchWI7iAHE9XP7FQoeIJc1VAwNwqJc99M+sIc=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw/KjTtRkaHlPiPMfrDq20Ts1Mvc7LHCrdWYS77B+8as0coOQNX
+	LWhxSmEbhPeE+eyQDpJBq2PzcI3yLvTJXbVrrooVXvd4R648TrqX5AwCchrR8Y0bQbQCV4Z0uEi
+	eqfVNheU3OX/MfPKPQqYNs1Wl3oJX41YHW9QDTLmLB5MJBzS44Ebfs+4Qk2tD7GjvwmOZ
+X-Gm-Gg: Acq92OFvBRw8PBjIRYqqNUo7u2GQYA2H3xwxZZEjXYdTbKKtkOLLlzq7s2ikV/YDNFI
+	Nvi5LM/AmxEq2MnJOqvQkwv4BsuSC6EoBtb2CTfuGFXTdDCW86jnqyWsQRa+As8kHqQoFQ1bUmt
+	nFIZYQQbZapB6IjfNgVm9jvdnPLN889P2VLZam8tekzZa7yg/Dj6Rp5OzsOR7vsLNu+UgRoQl/M
+	W/4j0znIF4/siGf1TPrDW3vgGqX9a+5d90E8hXB1WCWcLccFlSK03OrxlI7VGmPy6lr2RXZOwjv
+	KXgm7CSLC/G8r/afC86v9KQT7WjV+3vc9fu0K+lWPaf5VPYy3//sfYXa9DOBVZzeFf0N5Co5IFh
+	xE67Rqu9P/W563CKCf2YxHZFi2JkRJ7tWb3Ity3qZzML8h54+IFeBoE2tiUiUPGqTLEEU+BV8cZ
+	PC97OiFue8jE3jikdEOiuoJZIfzodAhPFbNaI=
+X-Received: by 2002:ac8:57d6:0:b0:516:dda7:51e0 with SMTP id d75a77b69052e-517fe25ffd6mr19995091cf.17.1781249074259;
+        Fri, 12 Jun 2026 00:24:34 -0700 (PDT)
+X-Received: by 2002:ac8:57d6:0:b0:516:dda7:51e0 with SMTP id d75a77b69052e-517fe25ffd6mr19994701cf.17.1781249073798;
+        Fri, 12 Jun 2026 00:24:33 -0700 (PDT)
 Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-39929c2a00dsm3756161fa.7.2026.06.12.00.13.56
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5ad2e1adae5sm297181e87.56.2026.06.12.00.24.32
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 12 Jun 2026 00:13:56 -0700 (PDT)
-Date: Fri, 12 Jun 2026 10:13:55 +0300
+        Fri, 12 Jun 2026 00:24:32 -0700 (PDT)
+Date: Fri, 12 Jun 2026 10:24:30 +0300
 From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Varadarajan Narayanan <varadarajan.narayanan@oss.qualcomm.com>
+To: Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
 Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
         Rob Herring <robh@kernel.org>,
         Krzysztof Kozlowski <krzk+dt@kernel.org>,
         Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
         linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
         linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 2/2] phy: qcom-qmp-pcie: Add support for ipq5210 PCIe
- phys
-Message-ID: <ka5a2ku45rc6nmvju5scku34xc7lmpf423qxhs6anpdtik7aw6@eycvpfcrbnvc>
-References: <20260610-pcie-phy-v3-0-334011b378d6@oss.qualcomm.com>
- <20260610-pcie-phy-v3-2-334011b378d6@oss.qualcomm.com>
+Subject: Re: [PATCH 2/2] phy: qcom: qmp-pcie: Add IPQ9650 PCIe PHY support
+Message-ID: <epxrpj52vst4zjigsn6ghaiajyzkwdtji2dvgrf7euag4indvf@wzhhy7wtuhhi>
+References: <20260602-ipq9650_pcie_phy-v1-0-d8c32a36dbd9@oss.qualcomm.com>
+ <20260602-ipq9650_pcie_phy-v1-2-d8c32a36dbd9@oss.qualcomm.com>
+ <56zkq7bwrt5smmmum6jckzrekkkqrych2gntx3obnrmamwumtv@espahwe6pc3v>
+ <7def2ccd-0319-4f85-8275-73fd254d887d@oss.qualcomm.com>
+ <fbtghwjrokuijatssy7xn2hwkp34p5fjyn3ndr5t2w67fkz2na@3izdh7uk4hst>
+ <602e893c-d346-486d-86b3-50d0f01990bf@oss.qualcomm.com>
+ <ohijjcszynmoocjarid7mo7nbtd2dqcdvqrbnzb7anjytw5m56@nguadudsz7qg>
+ <a7952e7d-468e-4ad4-8d95-f6bfe9305170@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260610-pcie-phy-v3-2-334011b378d6@oss.qualcomm.com>
-X-Proofpoint-GUID: ja5CFd3Lav2PkJ18QbvaRJWkbZhFRGxq
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNjEyMDA2NCBTYWx0ZWRfX37cBnApPAqTO
- qDL6I300xmoqWZQ8YgcEmIdn6psRuHmCeS4LX8ZWtCBPl6791FcbriV+wToLDDbjkUqFB14GpBG
- X8D9w+H6GFne1dSbswAMWgKn4KdVBYg=
-X-Authority-Analysis: v=2.4 cv=Qp9uG1yd c=1 sm=1 tr=0 ts=6a2bb1b7 cx=c_pps
- a=5HAIKLe1ejAbszaTRHs9Ug==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+In-Reply-To: <a7952e7d-468e-4ad4-8d95-f6bfe9305170@oss.qualcomm.com>
+X-Proofpoint-GUID: ehJ3GhMNyS0KgY6QlAsdadLb0sfMY5bH
+X-Authority-Analysis: v=2.4 cv=c4abhx9l c=1 sm=1 tr=0 ts=6a2bb433 cx=c_pps
+ a=mPf7EqFMSY9/WdsSgAYMbA==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
  a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22 a=EUspDBNiAAAA:8
- a=Sd8SiyjhHEPRc7XwSKMA:9 a=CjuIK1q_8ugA:10 a=gYDTvv6II1OnSo0itH1n:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjEyMDA2NCBTYWx0ZWRfXx3k0hktlZuV0
- 5JoTvIKZQIOlHkuJj1pTFCijQ7/+y0x1Ir5zJKrZmOV+qb6/jlAmQMX1wDVcfVqz620pDUz4xJr
- OUF0anGuU4FxhcrcmCzWFF+leI71OMV1l6Vc4LIpJbK2dqVb99ZLC17bLfWcl99cOZ9X7asj82o
- JO7jhW40lGWpGyf25mPqSw6dAz6PMi1wdY1M3dr9c5yM35J68J3wZPYmhAVRCClP7I+NAvo6+Ph
- 0WW/SGLW8gtzNH5fsVnY4wOsPqaVlGyJN6f+1FGwD0aoJgpat7riBWG0ZVsnz2XD9aV2T3ogx0I
- OL/T/gYVBoB1OYuum9qADdZs5U6pP4QVTInznHUo18jr8NxlWysjT+CskXxMNRyVKriI7yu21CR
- wK+GpvOdJt+mmdED4vk6W7bt3Sn3KIUVDPziETZPGxz9W4lulyTb7E07M/cO2KZ/y1lYOi+wE2Y
- QyIWim95ltO6Zd1w1Zg==
-X-Proofpoint-ORIG-GUID: ja5CFd3Lav2PkJ18QbvaRJWkbZhFRGxq
+ a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22 a=EUspDBNiAAAA:8
+ a=cx6O33gTLCPIekaZO1cA:9 a=CjuIK1q_8ugA:10 a=dawVfQjAaf238kedN5IG:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjEyMDA2NSBTYWx0ZWRfXyuKr0MP8hf7c
+ xTGDGkFAMYZzcpFDOnvq2ktoYEfd1QBcVURVLLAzRAdHe+tyeYow89unlpcbc/Z7zO135LdMCFN
+ OXKxw+1seaKne0rh8jUkex9OCXpf07qMhtbZ8u9SY1NSRWXs/CAlRXZYbxGlbr9mR2W9KyjMJ7r
+ ALHIkI14HVM7u5CxPsDLquDAQnhXFjqSoD75hu3w5yoW42k7zqXCD8tVPB5Zbri95WUJzX5ooQ+
+ ifD3m4HQUAlVBrDYRo1owORm2/G4jmuPJ13LThQdIf6NlFM0I/tO6+aX1IKEJa5+dsOthoGikHI
+ XOGfQd0lNGVRm5/hW5MATeaOXp6HZV/URp+fLD/+7bj8l8InxXBkRlE996Mp6DDPjpNdrjWWPLR
+ 07Q5y5dRkdhcSYCpaQDG7sTEAxCPSDvVIVY2WJ5ej//JW/rVIHGmab8g1P/7bLEMBzsIQM3d2qy
+ 2EM8JPTe6Gk8DZPL14Q==
+X-Proofpoint-ORIG-GUID: ehJ3GhMNyS0KgY6QlAsdadLb0sfMY5bH
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNjEyMDA2NSBTYWx0ZWRfXwdaMkFxMYy+h
+ DvODAoUuN7Zb+te5NwgXNv8maNdpcMZEIN8KAk/VQUbZt7dIsgOO+NoJDTO363g5F8Al53DUSIi
+ KUQ23lZDgiJeRIQ9a6Q8yZOXAQLAL94=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
  definitions=2026-06-12_01,2026-06-11_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 malwarescore=0 spamscore=0 lowpriorityscore=0
- priorityscore=1501 phishscore=0 adultscore=0 bulkscore=0 clxscore=1015
- suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606040000
- definitions=main-2606120064
+ lowpriorityscore=0 adultscore=0 clxscore=1015 phishscore=0 priorityscore=1501
+ malwarescore=0 bulkscore=0 suspectscore=0 impostorscore=0 spamscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2606040000 definitions=main-2606120065
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260612_001400_289746_23940F71 
-X-CRM114-Status: GOOD (  11.85  )
+X-CRM114-CacheID: sfid-20260612_002436_005562_AFDDD11C 
+X-CRM114-Status: GOOD (  26.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,16 +154,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 10, 2026 at 04:46:09PM +0530, Varadarajan Narayanan wrote:
-> Add support for a PCIe phys found on Qualcomm ipq5210 platform.
+On Fri, Jun 12, 2026 at 12:13:04PM +0530, Kathiravan Thirumoorthy wrote:
 > 
-> Signed-off-by: Varadarajan Narayanan <varadarajan.narayanan@oss.qualcomm.com>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 129 +++++++++++++++++++++++++++++++
->  1 file changed, 129 insertions(+)
+> On 6/12/2026 11:44 AM, Dmitry Baryshkov wrote:
+> > On Fri, Jun 12, 2026 at 08:22:02AM +0530, Kathiravan Thirumoorthy wrote:
+> > > On 6/12/2026 1:52 AM, Dmitry Baryshkov wrote:
+> > > > On Tue, Jun 09, 2026 at 03:46:56PM +0530, Kathiravan Thirumoorthy wrote:
+> > > > > On 6/8/2026 12:26 PM, Dmitry Baryshkov wrote:
+> > > > > > On Tue, Jun 02, 2026 at 02:40:18PM +0530, Kathiravan Thirumoorthy wrote:
+> > > > > > > The IPQ9650 platform has three Gen3 2-lane PCIe controllers and two Gen3
+> > > > > > > 1-lane PCIe controllers. The PHY instances also require the on-chip refgen
+> > > > > > > supply.
+> > > > > > > 
+> > > > > > > Add the IPQ9650 Gen3 x1 and x2 QMP PCIe PHY configurations, including the
+> > > > > > > refgen regulator supply.
+> > > > > > > 
+> > > > > > > Signed-off-by: Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
+> > > > > > > ---
+> > > > > > >     drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 220 +++++++++++++++++++++++++++++++
+> > > > > > >     1 file changed, 220 insertions(+)
+> > > > > > > 
+> > > > > > > @@ -3378,6 +3524,10 @@ static const char * const qmp_phy_vreg_l[] = {
+> > > > > > >     	"vdda-phy", "vdda-pll",
+> > > > > > >     };
+> > > > > > > +static const char * const ipq9650_qmp_phy_vreg_l[] = {
+> > > > > > > +	"refgen",
+> > > > > > > +};
+> > > > > > Now vdda-phy / vdda-pll supplies?
+> > > > > Cross checked with HW team again. Along with refgen, there is a on-chip LDO
+> > > > > which supplies fixed voltage to the PHYs. It is enabled upon system power on
+> > > > > and no SW intervention is required.
+> > > > What is it being powered by? MX? CX?
+> > > It is driven by CX.
+> > I assume that there is no CX collapse on IPQ9650? Is CX not scaling on
+> > this chip. Please provide some details on the commit message.
 > 
+> That's right. No CX collapse on IPQ9650. Let me rewrite the commit message
+> as below. Hope its okay.
+> 
+> --
+> 
+> Add support for the IPQ9650 platform, which includes three Gen3 x2 PCIe
+> controllers and two Gen3 x1 PCIe controllers. The PHY instances require the
+> on-chip refgen supply.
+> 
+> Add the IPQ9650 Gen3 x1 and x2 QMP PCIe PHY configurations along with the
+> refgen regulator supply. Note that an on-chip LDO, driven by the SoC CX,
+> supplies the PHY voltages without requiring software control. Note that CX
+> power collapse is not supported on IPQ9650.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+...neither CX power collapse nor rail scaling...
+
+LGTM.
 
 
 -- 
