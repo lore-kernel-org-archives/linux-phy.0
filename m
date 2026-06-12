@@ -4,52 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5FD5CD98DC
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Jun 2026 16:22:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 67EE5CD98D9
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Jun 2026 16:22:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S6rFB6+SgTTSyiT9ueDG7OHoItpquXySeHd0glsVYhs=; b=3A/dp08V51df5j
-	hlRTu+X8UAtFwrLpKEQMCGtxZvMsCQ2upR+cwjjp510/fUpQ9BGmqbYAMU2xg9uZ5N1fqORnCNGd5
-	QEUblpxOlkn0HElOkl7ij8FM1O78cWBsi0ibk9wsiK1ck4d9zCpQ3DlBS37DB9DdHQQ82zEAV00mz
-	/vOwRkxGte366AZ+dIzBWUHsoEeKAKIrN9Yo7nGBZaaeZvtEnYKLmZqXr59/ijJzRW7nGUzmuCBhU
-	xvlKJTUiFl8j/ViTP9uBzMjWUC3J+p8ay2BYEmj86v1uQz7327+YxzZmugcMqWdi1a+/1aYlVSFNq
-	07F7UGse0WewJsl8kRTw==;
+	List-Owner; bh=YEDiM/iLbpDjP3rFTF9oyIfI1lPn0+myoX0g7OJkqa0=; b=mhf9UHeoUcgUHU
+	fHI6c70eZM0ywPLkcJnpVszCRx0x10c3bTJ4ugyiRJNwZFBE093WEvSzCtBt5JNJn908ljyyhcrlv
+	mk3knOWNrt4fLACTWtZPMWHw5D0WpX8jP/zr6ngYg0yn1oX0TJbtVidHdPSCZWffVX9I9gqHdvAtF
+	hd5q1omMsb5YCnuoTSihH8amvoWHABh53e4HKSFQsdK7+8IZfNkEXkk4r9eCcpBMiKGs2nZ51jCcy
+	JeBGL5pdqCaD8wudbhyIyDjJztzeJkn49u8G/y5pHHrbqbQoCMRKQB0SrlreF/K0VdiqTD8iqxUsX
+	R+iZF+La0dFa+tfSUWlw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wY4e5-0000000BEXQ-12vC;
-	Fri, 12 Jun 2026 16:22:13 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1wY4e7-0000000BEcw-1UlH;
+	Fri, 12 Jun 2026 16:22:15 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wY4dt-0000000BE56-2nXE;
-	Fri, 12 Jun 2026 16:22:03 +0000
+	id 1wY4dt-0000000BE51-2eHj;
+	Fri, 12 Jun 2026 16:22:04 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1781281314;
-	bh=dZvkEqj2L1ZPpLivSDqiR4gfg+XCsYE6jCjSEwlvw2M=;
+	bh=YM8vhaVqe6VkIRnSmmclQMgLxDRedtbKmvS/ah+S/TU=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=ZFD8yBzDMpurAyIVsb+2oXlRMxw3UZlDe5OdGZcSpwL5F66DdQ+mVQhekFbxUuqf7
-	 MabLJkuDTIyptspkY/O+R/cDgl0v84T7DGChXJE74a9ovFPnttSil1HjGb4H8SbVyQ
-	 Qb2Wxpbu7U2DG7cY1mGeeTO2fPnKtLfZsSQqvCRgGnTrZPj86E9lJoaaiKXz+QYObm
-	 E2mMGW9HwlEIk0innZmTISeFHHVymg8JJu4uRhId7OFmBye2hmbSNOno6lzYNWxB3o
-	 cRDouMyJw9QpmaLjyXb2b6zHHiP1HibujiGsB7ZwtRk1nxlHqo0bM+7rjR9Kh6Lf3/
-	 vkqiay1T1+1hw==
+	b=I9F7WffznuEW931ghv/SXP7ewXiC2swVf64zpbG4uPCzf8C2iXSnJXwUCjamIOhih
+	 1SQydnwo1vlrWqadYXUu/i3NZXq+dpiKraaydUouiPEj3Kj4s1uwxpBuaPhufjmBHA
+	 P09zapiPYqMGD1UCOMvXOC+Dxw7XScxazI3Qhy5J0VUQ+rLPyoehqJH8UeRI6wRjPA
+	 G6GKuwFDI4cWbCbM6A8XEtRdNyjo54c6a9O1nsYtaHDjyrVwo334jfAvXW5ScXB5V4
+	 gH8LSyfy3hgQQg2+mIzQae1HClAsHVOqh8n4rWsw3VyZe6IqCvIlkbMgh3cO96cxN3
+	 SNK87qHmFY4nA==
 Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 8AC9C17E1031;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id A9D1F17E14FB;
 	Fri, 12 Jun 2026 18:21:54 +0200 (CEST)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id D168E48003A; Fri, 12 Jun 2026 18:21:53 +0200 (CEST)
+	id D957548004E; Fri, 12 Jun 2026 18:21:53 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Fri, 12 Jun 2026 18:21:47 +0200
-Subject: [PATCH v5 09/18] phy: rockchip: usbdp: Use FIELD_PREP_WM16_CONST
+Date: Fri, 12 Jun 2026 18:21:52 +0200
+Subject: [PATCH v5 14/18] phy: rockchip: usbdp: Re-init the PHY on
+ orientation change
 MIME-Version: 1.0
-Message-Id: <20260612-rockchip-usbdp-cleanup-v5-9-efc83069869f@collabora.com>
+Message-Id: <20260612-rockchip-usbdp-cleanup-v5-14-efc83069869f@collabora.com>
 References: <20260612-rockchip-usbdp-cleanup-v5-0-efc83069869f@collabora.com>
 In-Reply-To: <20260612-rockchip-usbdp-cleanup-v5-0-efc83069869f@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -65,26 +66,26 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  devicetree@vger.kernel.org, 
  Sebastian Reichel <sebastian.reichel@collabora.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1546;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1257;
  i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=dZvkEqj2L1ZPpLivSDqiR4gfg+XCsYE6jCjSEwlvw2M=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGosMiEMGk4SwAfqXerFfyOTNITIacyyEkHd2
- DWDlyXViE8r+IkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqLDIhAAoJENju1/PI
- O/qaTosQAJrlim+J0gxf52Vy86nkVzUminmVOO6ph5Ecp7r2F8u2o3LobXI+t4W+Kiuf8SxD0zK
- d12slzJ5epmSmoDuhRlDOBRf9mXlD8dVlZLKhvy9WgdvLsxAdvta+6OpMBghmjSUQ1Av+guS0ly
- 8KnZI8UWgEPzs1/zF0BWvfuPeATQpwPfcSC9fUirYWHyUjpeWq+DC1zbNNObbaVsdUAa/KdF4Va
- Nft3p8I4h5l72C2MrxwICtsB5x70gA4AuX+RzY/BM6sB6411HmNpg1+DKn9PVe9Os68OWY0kio9
- NidJYyiMFQsA70mGrfGT6fXXeT1uJBU4dnEln5l+031KbUR7/GRjNUgzv9cbA6qMUYQIssbqUqi
- ClLjqyGmRklfqXkPT+RyFcAgwaqltOQcw5VaxQSxb0Tnu5lSrcf9IoYzCVMxrd4nJYSKPCN0y23
- axRPCPsYQVv8J7GyzqA2kHl/BHsTjXHt48V4O5bXv+wkI7S8foQUhY/lNRDWhWDJw6j6qVgPVGa
- sie3DyfFXVv+ePG1Na61HvDZYi4N/69Va+3ZUtLYtGBkZgTtN1jHAPH4JC9WHbuI2u5l0sO4rwX
- VDanvwXmcXaTg3mALWpRzCTR3KY83pozsHsEplbyfHDy9Nw+sIbDjWKoLQRuS5cM6eXuRNqOtC6
- m5b7VSnHwuunpGGDt33gstA==
+ bh=YM8vhaVqe6VkIRnSmmclQMgLxDRedtbKmvS/ah+S/TU=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGosMiEo7Ra4KF/dow0Pb3iWgyuH7adBgpGWt
+ bsOqntQGuV9FokCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqLDIhAAoJENju1/PI
+ O/qasDkP/10XqYzkoOmM24a+Lo9njSyyFFlWEOPbGCZvIQ+kccv0e1DHmYmPUSpxKJL5W+1GBbO
+ q7+eJF7V3dY9Nl9W1ERiHKE8gSvnrih04h2sBCec5CvF5Xm+Z//Kz5Tr4scb2t21XDnns8JqpOf
+ Ebtr8uo3fbYart9CInQoSQetdvR+vanUoGmRIW2fOh1l6rpu8eFrvelMwuadz//5b0COQmeSaFv
+ wpTcmkkP/YrxMN8gIC+PwATc/jgMmYJVgzlqnZPlY70YDrLN/19qojYdcUPq4REW8vchJ8uDQTJ
+ d7oot8EMbf/zDQQ8bKPuy/+sxDpcz6mZTp2OLiLaz18K0Iz0Uz4lPdAfeao7qDEI4MH0B9gZlXk
+ LaULx3HumSnuMs4HUuDtI48b5upQFJFL8tmZtvp6se/5DRQu+tvbtrgmyvOHvhUu+ByNRMf9swO
+ upGqHcEggbobz0rUvrotl9sNFjIhcvBNd7cFsNeJ6VCFH7FsZvVOOEayiE+VwnaVhB7wyQUTuOb
+ t3RTEhzyMyUWtBFQwqlAa/XNRxUP7T9XytUUWBXzXKvCqv0rC0XMxeTB2bRd7vB8Vd2izbmXY9e
+ 7vx4Jx+TWG4lR2oWqjYKeIgfPbDpdGqBSDuN2ezAkNLsuSCnfpNI8H3+E3mPu9nN3Pb2ngHeukt
+ m+b9dXsiHiBFSHujtA+QxmA==
 X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
  fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260612_092201_899026_CE265DD6 
-X-CRM114-Status: GOOD (  11.33  )
+X-CRM114-CacheID: sfid-20260612_092201_852372_46EE67A1 
+X-CRM114-Status: GOOD (  10.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,46 +102,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Cleanup code by replacing open-coded version of FIELD_PREP_WM16_CONST
-with the existing helper macro.
+Changing the cable orientation reconfigures the lane muxing, which
+requires re-initializing the PHY. Without this DP functionality
+breaks, if the cable is re-plugged with swapped orientation.
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index 6d7ca11b308e..1bfc365e2b2c 100644
+index a3b4e2e0f578..89a08267611c 100644
 --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -12,6 +12,7 @@
- #include <linux/clk.h>
- #include <linux/delay.h>
- #include <linux/gpio.h>
-+#include <linux/hw_bitfield.h>
- #include <linux/mfd/syscon.h>
- #include <linux/mod_devicetable.h>
- #include <linux/module.h>
-@@ -75,7 +76,6 @@
- #define TRSV_LN2_MON_RX_CDR_DONE_OFFSET		0x1b84	/* trsv_reg06E1 */
- #define TRSV_LN2_MON_RX_CDR_LOCK_DONE		BIT(0)
+@@ -622,6 +622,7 @@ static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
+ 				 enum typec_orientation orien)
+ {
+ 	struct rk_udphy *udphy = typec_switch_get_drvdata(sw);
++	bool flipped = orien == TYPEC_ORIENTATION_REVERSE;
  
--#define BIT_WRITEABLE_SHIFT			16
- #define PHY_AUX_DP_DATA_POL_NORMAL		0
- #define PHY_AUX_DP_DATA_POL_INVERT		1
- #define PHY_LANE_MUX_USB			0
-@@ -104,8 +104,8 @@ struct rk_udphy_grf_reg {
- #define _RK_UDPHY_GEN_GRF_REG(offset, mask, disable, enable) \
- {\
- 	offset, \
--	FIELD_PREP_CONST(mask, disable) | (mask << BIT_WRITEABLE_SHIFT), \
--	FIELD_PREP_CONST(mask, enable) | (mask << BIT_WRITEABLE_SHIFT), \
-+	FIELD_PREP_WM16_CONST(mask, disable), \
-+	FIELD_PREP_WM16_CONST(mask, enable), \
- }
+ 	mutex_lock(&udphy->mutex);
  
- #define RK_UDPHY_GEN_GRF_REG(offset, bitend, bitstart, disable, enable) \
+@@ -633,7 +634,10 @@ static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
+ 		goto unlock_ret;
+ 	}
+ 
+-	udphy->flip = orien == TYPEC_ORIENTATION_REVERSE;
++	if (udphy->flip != flipped)
++		udphy->phy_needs_reinit = true;
++
++	udphy->flip = flipped;
+ 	rk_udphy_set_typec_default_mapping(udphy);
+ 	rk_udphy_usb_bvalid_enable(udphy, true);
+ 
 
 -- 
 2.53.0
