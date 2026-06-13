@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 826E7CD8CA8
-	for <linux-phy@archiver.kernel.org>; Sat, 13 Jun 2026 10:40:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D2D4CD98C5
+	for <linux-phy@archiver.kernel.org>; Sat, 13 Jun 2026 18:36:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D7H6nR0k5gK0oh9PKXmM6LbYHz5spVb8n51krBINnl0=; b=Qyf8ghUm9gWMkK
-	aaE/WS467nK03tP1/2PtzvYtWvczStMcOzT9NnC0ZE3U14F5PGMrU7Yxq5yViZj4imqlo2YJ/07Ih
-	ntOwscqyWfLwkAli3XuJSVjwjfolz+hJwKwTQg61TCASHPnTdN17gmS3ZyHYdoZnIFLo5LtEzHsoN
-	bLbpK92uD8icixRAH/yKX7FAnsmnCAc1IxrbxWAsbC33E35dM/J+j5iX1t8a9XbcM4Bg6+ng65sKH
-	duhSZ1cYyCRmQ3koTFnO4Ce119zYSyvgHA9Tb8RedB16TRTtL4puy2xRWeuSh0xQtrSL2J6lvsKEy
-	SVv2/OaY+vIB31jWLKzQ==;
+	List-Owner; bh=uuoFKCcDwk8PSuSQyyjfKwQXMchZfWC+O23nnWyu30M=; b=djzupehZqnLE7p
+	wbOqPTp8YV/P4MbVBMxda2qCUAxW+1LqFmkuDj9FGRLZQgeVbT1ZPHExfLASTQV+KxyoAR7g1WXxB
+	j/OwpfwDrkD7S/WU2EZIh7jDt+MwSj7XHjR2IL48+eD6VK3FxlqaPGFe5NyhfnYWleFuETS7blJi5
+	9QP4bF60LNqVYkPiaNQWhSE62i+dYLx7TcRdgVLvShxUHr1TuED4GCl/Z0rGx9LAdM0OtEy/odwhd
+	b7Y/7RR8GGen+WwgntzmVg358IvcreGBiclam9ClyBiX07xt2+ICf1JQzD3z8fyPDrlZW7jz7i0AZ
+	08VncZ9SY/pfN6annTRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wYLnF-0000000CCBp-35yA;
-	Sat, 13 Jun 2026 10:40:49 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wYTDZ-0000000CUBU-04xi;
+	Sat, 13 Jun 2026 18:36:29 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wYLnE-0000000CCBU-0LyX
+	id 1wYTDX-0000000CUBO-2TqU
 	for linux-phy@lists.infradead.org;
-	Sat, 13 Jun 2026 10:40:48 +0000
+	Sat, 13 Jun 2026 18:36:27 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 27E0960018;
-	Sat, 13 Jun 2026 10:40:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 41E201F000E9;
-	Sat, 13 Jun 2026 10:40:46 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 09F11440A3;
+	Sat, 13 Jun 2026 18:36:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 10DB81F000E9;
+	Sat, 13 Jun 2026 18:36:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1781347246;
-	bh=nWOk3abyiQHdHW4G8RTGKQ2z2ZistSp8ZODaxHo3anI=;
+	s=k20260515; t=1781375786;
+	bh=9/fhFUOP6QN8GP6i6zmtZ/S1uM1iIL0AFYQSGlurmeM=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=V4XpbPhDcpbDM6anoxdey5ApfNSDXT0NFEPXRiFm1XD2/fOiLZn0WcCmBt6pqquE4
-	 CvPP+d/J6J0Fp/hMFzaa9EKsikx1dzgm4TjhZEoOtowo75GbpD46ufUPr7V0pRY38n
-	 /Qu6kpT95Irncoekgl8sXx6wxzKIU/fcli5U3DL6hrlRJskjO2o8UaxLJvuDNbLSzj
-	 dWA+K3EHXC9IbnDkWMVznsmUiTeLQBpZ7Q1yZs2NN3a1XygkqU6CEEdPHIdVXtqLEo
-	 KrNoOcDyjhv4bpok3qFJAa/2bI5BlcxBCOQ90xXiTPvHVHLRg4qa+N9Q+qBYZu/awZ
-	 pcd/DdvH2zenw==
-Date: Sat, 13 Jun 2026 12:40:44 +0200
+	b=Vvr4+y/Dzg+E+ofiujlSepDU9FyS8u7rvFTmEDwvBkhvgB9vOyJ7f2KxNkqfZntOW
+	 t6PvweaRyQc5cVgUjIurjvXuU6n7LNfB4MEyU0IMcUZNlfV70W2XCmDP4W59iTHdz7
+	 ssAP1DC0hyMU0T7l0IMhLBZ1GIbbfCfkEqh346VrjPnir7ub3+LhGGvl45TytPqNjM
+	 c2ddm/8/0IUbOotH20B40qca7ZHGrb9OX6cIRswKGqiHxE6TiT5xCLQmvZEwBdQFgW
+	 wWcDGQMBWHsJ1GoBXYMkTMG+CIXQLA+WNvCJ6Wmjv2M/e9ssM+wFMW67On3uIOI/71
+	 7j1bc9jEgraxg==
+Date: Sat, 13 Jun 2026 20:36:22 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Biju <biju.das.au@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh@kernel.org>, 
+To: Konrad Dybcio <konradybcio@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
 	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Geert Uytterhoeven <geert+renesas@glider.be>, Magnus Damm <magnus.damm@gmail.com>, 
-	Biju Das <biju.das.jz@bp.renesas.com>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
-	Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Subject: Re: [PATCH 02/11] dt-bindings: phy: renesas,usb2-phy: Document
- RZ/G3L PHY bindings
-Message-ID: <20260613-authentic-eagle-of-enhancement-aefda8@quoll>
-References: <20260612143048.317907-1-biju.das.jz@bp.renesas.com>
- <20260612143048.317907-3-biju.das.jz@bp.renesas.com>
+	Wesley Cheng <quic_wcheng@quicinc.com>, Iskren Chernev <me@iskren.info>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Bjorn Andersson <andersson@kernel.org>, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Subject: Re: [PATCH 1/4] dt-bindings: phy: qcom,qusb2: Straighten out SM6125
+ and MSM8996
+Message-ID: <20260613-impartial-cow-of-emphasis-e60cdc@quoll>
+References: <20260610-topic-8996_61x5_qusb2phy-v1-0-d7135980e78f@oss.qualcomm.com>
+ <20260610-topic-8996_61x5_qusb2phy-v1-1-d7135980e78f@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260612143048.317907-3-biju.das.jz@bp.renesas.com>
+In-Reply-To: <20260610-topic-8996_61x5_qusb2phy-v1-1-d7135980e78f@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,19 +76,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jun 12, 2026 at 03:30:30PM +0100, Biju wrote:
-> From: Biju Das <biju.das.jz@bp.renesas.com>
+On Wed, Jun 10, 2026 at 02:04:14PM +0200, Konrad Dybcio wrote:
+> From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 > 
-> Add device tree binding support for the RZ/G3L (r9a08g046) USB2 PHY.
-> The RZ/G3L USB PHY is almost identical to the RZ/G3S USB PHY, the
-> difference being 2 OTG blocks on RZ/G3L compared to 1 on RZ/G3S.
+> SM6125 DT currently uses just the MSM8996 compatible (without a primary
+> SM6125-specific one). This is not only wrong for the reasons of
+> violating guidelines, but also happens to not be valid.
 > 
-> Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
+> The MSM8996 PHY is quite similar, although it requies a different init
+> sequence (for arch reasons). MSM8996 also needs different power
+> plumbing, as the VDD supply is fed through VDD_MX (which we define as
+> a power domain rather than a regulator), unlike on SM6125.
+> 
+> The init sequence seems to have been "good enough", but now that the
+> bindings clearly diverge, add a new compatible for SM6125 with a SM6115
+> fallback (as they seem to be an exact match from the SW interface POV).
+> 
+> Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 > ---
->  Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml | 2 ++
->  1 file changed, 2 insertions(+)
+>  .../devicetree/bindings/phy/qcom,qusb2-phy.yaml    | 31 ++++++++++++++++++++--
+>  1 file changed, 29 insertions(+), 2 deletions(-)
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 
 Best regards,
 Krzysztof
