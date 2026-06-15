@@ -4,53 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4886CD98CE
-	for <linux-phy@archiver.kernel.org>; Mon, 15 Jun 2026 05:59:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59102CD98C5
+	for <linux-phy@archiver.kernel.org>; Mon, 15 Jun 2026 07:01:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HhX9N9ubFNnrelQd+ydcR3Pae3OjwGZZbHg2WLtAO4A=; b=jYsE5N/wjWN41O
-	m3AMyBVd8v7fhMlRPmkSifXD4zL4CBJBQIJIYkmQvA6EPRbU81qALzGL3jirXyYxGy02yXIdCY6Nw
-	LKJb4sUcmlSLill310w/iUk3wn5vGnBmnwX7FpTO4Ybku/OMZJBqfIo7rAXcPtEHzy7CyYqoSumwb
-	/1QepvgcBkCHaVXxbU6C7fBBlY0esKPkKOC3nMt84iXwGgchC1SEC2KeijxtAHqas6a+cUNaSmQWt
-	ilxqehkYHJkuzToMTcvbX3TNRrNQ5tgUyqaq79uVMcJP/GkTKsQtC0n1ZaDwPy+lqc3Lj0le5TLi3
-	6lHRMQi4/wVT3mkvkRQQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oMbr/YrRTT2WYG436CCXDfTPGQHVQtfFsyXt+xuqXf0=; b=uCDgT0KUBLTUQ0
+	NMqqw5Z/PzL44J2icbxEE80vDHtj1Jjzbv+LMKs5dHVZC4CkUkjEl6GyXKlAGbjDk0mzqsxAPkp8c
+	Brg+EPuutPnumoJ9bGh1oHPG+Cy5FCTY5WfjJx8tcciixD63rKcfw7WF9yZrpOqfBR/K0Fh2nadUA
+	dlMyufp3AcBfnBUycmiRJQzYw3SWMUQQShNfteZq7A8dv1W0L1Fjkqq5/viQl94FQEpp3EoP6Kctw
+	c0Q9oZHCaxBjOzjtxidgwBBFpUMyso1BT754BJI1McDNjHnnWcWtlRw4+aWvyQEApywjCoqbjgblA
+	VN4Cxmravi8kHnOCNIzw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZ0MK-0000000DfAC-1iJ2;
-	Mon, 15 Jun 2026 05:59:44 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wZ1KA-0000000DjM0-3iOZ;
+	Mon, 15 Jun 2026 07:01:34 +0000
+Received: from smtp25.cstnet.cn ([159.226.251.25] helo=cstnet.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZ0MJ-0000000DfA4-1EYb
+	id 1wZ1K7-0000000DjLJ-26b6
 	for linux-phy@lists.infradead.org;
-	Mon, 15 Jun 2026 05:59:43 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 1258043FF3;
-	Mon, 15 Jun 2026 05:59:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8A19B1F000E9;
-	Mon, 15 Jun 2026 05:59:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1781503182;
-	bh=S+lqH2ziGyzPodMSHpNvr3CtKx5so0cg6Gjuioczo1g=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=Bnc8UmTLk++wiCN1G4UP+PFh5F1QSXIGsCpYNRkel1z3WQZyxR0M8fzWuOWM+sBl+
-	 EaSzb03XSbOBhgDPZs7zeDPMZlWoE6BruFZyZoeOPS1LgJv5Xe0xUeWx8cGLtZvAWZ
-	 8wmQVD26oGlSZWJZUpDfo27az/BnuctpWLFILxjN0rAjc6JkkIJ/oqoFT8VMQQuaEF
-	 qvdrTeSnJb+5kgGwqOePb2+b739KblAbQbBaNrUZuOjRSCP5EuWrmOb+eNYMzmxlw2
-	 4BPKD74MIe5y2XAZhfKUMcyQqYwVmu4xO1g/NIdUNtonrWPfE9MSKX2e3Xkb3HRPh8
-	 VnA6Gwz8BrM9w==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH 3/3] phy: nuvoton: phy-ma35d1-usb2: extend to dual-port
- with OTG support
-To: "Joey Lu" <a0987203069@gmail.com>
-Cc: conor+dt@kernel.org, neil.armstrong@linaro.org, devicetree@vger.kernel.org, linux-phy@lists.infradead.org, robh@kernel.org, olteanv@gmail.com, vkoul@kernel.org
-In-Reply-To: <20260615054911.48821-4-a0987203069@gmail.com>
-References: <20260615054911.48821-4-a0987203069@gmail.com>
-Date: Mon, 15 Jun 2026 05:59:42 +0000
-Message-Id: <20260615055942.8A19B1F000E9@smtp.kernel.org>
+	Mon, 15 Jun 2026 07:01:33 +0000
+Received: from localhost.localdomain (unknown [111.196.245.140])
+	by APP-05 (Coremail) with SMTP id zQCowAD3fABFoy9qLh+UEw--.24583S2;
+	Mon, 15 Jun 2026 15:01:25 +0800 (CST)
+From: Pengpeng Hou <pengpeng@iscas.ac.cn>
+To: Justin Chen <justin.chen@broadcom.com>,
+	Al Cooper <alcooperx@gmail.com>,
+	Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Cc: pengpeng@iscas.ac.cn
+Subject: [PATCH] phy: broadcom: brcm-usb: unwind late probe failures
+Date: Mon, 15 Jun 2026 15:01:23 +0800
+Message-ID: <20260615070123.51155-1-pengpeng@iscas.ac.cn>
+X-Mailer: git-send-email 2.50.1
+MIME-Version: 1.0
+X-CM-TRANSID: zQCowAD3fABFoy9qLh+UEw--.24583S2
+X-Coremail-Antispam: 1UD129KBjvJXoWxWrWDZF17XFW5JFyUXFy7KFg_yoW5Ary8pa
+	9rGa9Ygr4DJFW7Ww4fX3WDZFWFkw1Fq3W0yry7Xry7Za4qkwnrJrWIqFyFvF4fJFZ8G3y5
+	ta45XFy5uanrCw7anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUUkE14x267AKxVW8JVW5JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
+	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
+	1l84ACjcxK6xIIjxv20xvE14v26F1j6w1UM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4U
+	JVWxJr1l84ACjcxK6I8E87Iv67AKxVW0oVCq3wA2z4x0Y4vEx4A2jsIEc7CjxVAFwI0_Gc
+	CE3s1le2I262IYc4CY6c8Ij28IcVAaY2xG8wAqx4xG64xvF2IEw4CE5I8CrVC2j2WlYx0E
+	2Ix0cI8IcVAFwI0_Jw0_WrylYx0Ex4A2jsIE14v26r4j6F4UMcvjeVCFs4IE7xkEbVWUJV
+	W8JwACjcxG0xvY0x0EwIxGrwACjI8F5VA0II8E6IAqYI8I648v4I1lc7CjxVAaw2AFwI0_
+	JF0_Jw1l42xK82IYc2Ij64vIr41l4I8I3I0E4IkC6x0Yz7v_Jr0_Gr1lx2IqxVAqx4xG67
+	AKxVWUJVWUGwC20s026x8GjcxK67AKxVWUGVWUWwC2zVAF1VAY17CE14v26r1q6r43MIIY
+	rxkI7VAKI48JMIIF0xvE2Ix0cI8IcVAFwI0_JFI_Gr1lIxAIcVC0I7IYx2IY6xkF7I0E14
+	v26F4j6r4UJwCI42IY6xAIw20EY4v20xvaj40_Jr0_JF4lIxAIcVC2z280aVAFwI0_Gr0_
+	Cr1lIxAIcVC2z280aVCY1x0267AKxVW8Jr0_Cr1UYxBIdaVFxhVjvjDU0xZFpf9x0JUTnQ
+	UUUUUU=
+X-Originating-IP: [111.196.245.140]
+X-CM-SenderInfo: pshqw1xhqjqxpvfd2hldfou0/
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260615_000132_451777_D36DCB5B 
+X-CRM114-Status: GOOD (  11.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,103 +77,97 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-NCBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIE1pc3NpbmcgY2xlYW51
-cCBvZiB0aGUgVVNCIHJvbGUgc3dpdGNoIG9uIHRoZSBwcm9iZSBlcnJvciBwYXRoIGxlYWRzIHRv
-IGEgbWVtb3J5IGxlYWsgYW5kIGEgdHJpZ2dlcmFibGUgdXNlLWFmdGVyLWZyZWUgdnVsbmVyYWJp
-bGl0eS4KLSBbTWVkaXVtXSBNaXNzaW5nIGJvdW5kcyBjaGVjayBvbiBgYXJnc19jb3VudGAgaW4g
-YG1hMzVfdXNiX3BoeV94bGF0ZWAgbGVhZHMgdG8gYW4gdW5pbml0aWFsaXplZCBzdGFjayBtZW1v
-cnkgcmVhZCBhbmQgcG90ZW50aWFsIG91dC1vZi1ib3VuZHMgYWNjZXNzLgotIFtNZWRpdW1dIFVu
-Y2hlY2tlZCByZXR1cm4gdmFsdWVzIG9mIGByZWdtYXBfcmVhZCgpYCBsZWFkIHRvIHRoZSB1c2Ug
-b2YgdW5pbml0aWFsaXplZCBzdGFjayB2YXJpYWJsZXMuCi0gW01lZGl1bV0gRmFpbHVyZSB0byBl
-eHBsaWNpdGx5IGNsZWFyIGBNSVNDRkNSMF9VSE9WUkNVUkhgIHdoZW4gYG51dm90b24sb2MtYWN0
-aXZlLWhpZ2hgIGlzIGFic2VudCBhbGxvd3MgYm9vdGxvYWRlciBzdGF0ZSB0byBibGVlZCBvdmVy
-LgotLQoKY29tbWl0IGM3OGQ5OWY5MWI3MzA1ZjhhNTNiODk5Y2IzY2IzZmE0NWM0M2M3ODMKQXV0
-aG9yOiBKb2V5IEx1IDxhMDk4NzIwMzA2OUBnbWFpbC5jb20+CgpwaHk6IG51dm90b246IHBoeS1t
-YTM1ZDEtdXNiMjogZXh0ZW5kIHRvIGR1YWwtcG9ydCB3aXRoIE9URyBzdXBwb3J0CgpUaGUgZXhp
-c3RpbmcgZHJpdmVyIGhhbmRsZWQgb25seSBQSFkwIGluIGRldmljZSBtb2RlIChEV0MyIGdhZGdl
-dCkuIEV4dGVuZCBpdAp0byBtYW5hZ2UgYm90aCBQSFkgcG9ydHMgYW5kIGludGVncmF0ZSBPVEcg
-c3VwcG9ydCwgcGVyIHJldmlld2VyIHN1Z2dlc3Rpb24gdG8KcmV1c2UgdGhlIGV4aXN0aW5nIGRy
-aXZlciByYXRoZXIgdGhhbiBhZGQgYSBzZXBhcmF0ZSBvbmUuCgo+IGRpZmYgLS1naXQgYS9kcml2
-ZXJzL3BoeS9udXZvdG9uL3BoeS1tYTM1ZDEtdXNiMi5jIGIvZHJpdmVycy9waHkvbnV2b3Rvbi9w
-aHktbWEzNWQxLXVzYjIuYwo+IGluZGV4IDlhNDU5YjcwMGVkNDguLjMzNjY4MDE2MTEwNGYgMTAw
-NjQ0Cj4gLS0tIGEvZHJpdmVycy9waHkvbnV2b3Rvbi9waHktbWEzNWQxLXVzYjIuYwo+ICsrKyBi
-L2RyaXZlcnMvcGh5L251dm90b24vcGh5LW1hMzVkMS11c2IyLmMKClsgLi4uIF0KCj4gK3N0YXRp
-YyBpbnQgbWEzNV91c2JfcGh5X2luaXQoc3RydWN0IHBoeSAqcGh5KQo+ICB7Cj4gLQlzdHJ1Y3Qg
-bWEzNV91c2JfcGh5ICpwX3BoeSA9IHBoeV9nZXRfZHJ2ZGF0YShwaHkpOwo+ICsJc3RydWN0IG1h
-MzVfcGh5X3BvcnQgKnBvcnQgPSBwaHlfZ2V0X2RydmRhdGEocGh5KTsKPiArCXN0cnVjdCBtYTM1
-X3VzYl9waHkgKnAgPSBjb250YWluZXJfb2YocG9ydCAtIHBvcnQtPmlkeCwKPiArCQkJCQkgICAg
-ICBzdHJ1Y3QgbWEzNV91c2JfcGh5LCBwb3J0WzBdKTsKPiArCXVuc2lnbmVkIGludCBuID0gcG9y
-dC0+aWR4Owo+ICAJdW5zaWduZWQgaW50IHZhbDsKPiAgCWludCByZXQ7Cj4gIAo+IC0JcmV0ID0g
-Y2xrX3ByZXBhcmVfZW5hYmxlKHBfcGh5LT5jbGspOwo+IC0JaWYgKHJldCA8IDApIHsKPiAtCQlk
-ZXZfZXJyKHBfcGh5LT5kZXYsICJGYWlsZWQgdG8gZW5hYmxlIFBIWSBjbG9jazogJWRcbiIsIHJl
-dCk7Cj4gLQkJcmV0dXJuIHJldDsKPiAtCX0KPiArCXJlZ21hcF9yZWFkKHAtPnN5c3JlZywgTUEz
-NV9TWVNfVVNCUE1JU0NSLCAmdmFsKTsKCltTZXZlcml0eTogTWVkaXVtXQpDb3VsZCB0aGlzIGxl
-YXZlIHZhbCB1bmluaXRpYWxpemVkIGlmIHJlZ21hcF9yZWFkKCkgZmFpbHM/CgpJZiByZWdtYXBf
-cmVhZCgpIGZhaWxzIChlLmcuIGR1ZSB0byBhIGJ1cyBlcnJvciksIHZhbCByZW1haW5zIHVuaW5p
-dGlhbGl6ZWQuCkV2YWx1YXRpbmcgaXQgaW4gdGhlIG5leHQgbGluZSBjb3VsZCBsZWFkIHRvIHNr
-aXBwaW5nIHRoZSBQSFkgaW5pdGlhbGl6YXRpb24KaW5jb3JyZWN0bHkuCgo+ICsJaWYgKHZhbCAm
-IFVTQlBNSVNDUl9QSFlfU1VTUEVORChuKSkKPiArCQlyZXR1cm4gMDsKClsgLi4uIF0KCj4gK3N0
-YXRpYyBlbnVtIHVzYl9yb2xlIG1hMzVfcm9sZV9zd19nZXQoc3RydWN0IHVzYl9yb2xlX3N3aXRj
-aCAqc3cpCj4gK3sKPiArCXN0cnVjdCBtYTM1X3VzYl9waHkgKnAgPSB1c2Jfcm9sZV9zd2l0Y2hf
-Z2V0X2RydmRhdGEoc3cpOwo+ICsJdTMyIHZhbDsKPiArCj4gKwlyZWdtYXBfcmVhZChwLT5zeXNy
-ZWcsIE1BMzVfU1lTX1BXUk9OT1RQLCAmdmFsKTsKPiArCj4gKwlyZXR1cm4gKHZhbCAmIFBXUk9O
-T1RQX1VTQlAwSUQpID8gVVNCX1JPTEVfSE9TVCA6IFVTQl9ST0xFX0RFVklDRTsKCltTZXZlcml0
-eTogTWVkaXVtXQpEb2VzIHRoaXMgY29kZSByZXR1cm4gYW4gdW5wcmVkaWN0YWJsZSByb2xlIGlm
-IHJlZ21hcF9yZWFkKCkgZmFpbHM/CgpJZiByZWdtYXBfcmVhZCgpIGVuY291bnRlcnMgYW4gZXJy
-b3IsIHZhbCB3aWxsIHJlbWFpbiB1bmluaXRpYWxpemVkLCB3aGljaApjb3VsZCBsZWFkIHRvIG5v
-bmRldGVybWluaXN0aWMgZHJpdmVyIGJlaGF2aW9yIHdoZW4gZXZhbHVhdGVkIGZvciB0aGUgcmV0
-dXJuZWQKcm9sZS4KCj4gK30KClsgLi4uIF0KCj4gK3N0YXRpYyBzdHJ1Y3QgcGh5ICptYTM1X3Vz
-Yl9waHlfeGxhdGUoc3RydWN0IGRldmljZSAqZGV2LAo+ICsJCQkJICAgICAgY29uc3Qgc3RydWN0
-IG9mX3BoYW5kbGVfYXJncyAqYXJncykKPiArewo+ICsJc3RydWN0IG1hMzVfdXNiX3BoeSAqcCA9
-IGRldl9nZXRfZHJ2ZGF0YShkZXYpOwo+ICsKPiArCWlmIChhcmdzLT5hcmdzWzBdID49IE1BMzVf
-UEhZX05VTSkKCltTZXZlcml0eTogTWVkaXVtXQpDYW4gdGhpcyBjb2RlIGFjY2VzcyB1bmluaXRp
-YWxpemVkIG1lbW9yeSBpZiBhcmdzLT5hcmdzX2NvdW50IGlzIDA/CgpJZiB0aGUgZGV2aWNlIHRy
-ZWUgaW5jb3JyZWN0bHkgc3BlY2lmaWVzICNwaHktY2VsbHMgPSA8MD4sIGFyZ3NfY291bnQgd2ls
-bApiZSAwIGFuZCB0aGUgYXJncy0+YXJncyBhcnJheSAoYWxsb2NhdGVkIG9uIHRoZSBjYWxsZXIn
-cyBzdGFjaykgbWlnaHQgYmUKdW5pbml0aWFsaXplZC4gQ291bGQgd2UgYWRkIGEgYm91bmRzIGNo
-ZWNrIGZvciBhcmdzLT5hcmdzX2NvdW50ID49IDEgYmVmb3JlCmFjY2Vzc2luZyBhcmdzLT5hcmdz
-WzBdPwoKPiArCQlyZXR1cm4gRVJSX1BUUigtRUlOVkFMKTsKPiArCj4gKwlyZXR1cm4gcC0+cG9y
-dFthcmdzLT5hcmdzWzBdXS5waHk7Cj4gK30KClsgLi4uIF0KCj4gIHN0YXRpYyBpbnQgbWEzNV91
-c2JfcGh5X3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gIHsKClsgLi4uIF0K
-Cj4gKwlpZiAob2ZfcHJvcGVydHlfcmVhZF9ib29sKHBkZXYtPmRldi5vZl9ub2RlLCAibnV2b3Rv
-bixvYy1hY3RpdmUtaGlnaCIpKQo+ICsJCXJlZ21hcF91cGRhdGVfYml0cyhwLT5zeXNyZWcsIE1B
-MzVfU1lTX01JU0NGQ1IwLAo+ICsJCQkJICAgTUlTQ0ZDUjBfVUhPVlJDVVJILCBNSVNDRkNSMF9V
-SE9WUkNVUkgpOwoKW1NldmVyaXR5OiBNZWRpdW1dCkRvZXMgdGhpcyBjb2RlIGZhaWwgdG8gY2xl
-YXIgTUlTQ0ZDUjBfVUhPVlJDVVJIIHdoZW4gIm51dm90b24sb2MtYWN0aXZlLWhpZ2giCmlzIGFi
-c2VudD8KCklmIGEgYm9vdGxvYWRlciBwcmV2aW91c2x5IHNldCB0aGlzIGJpdCB0byBhY3RpdmUt
-aGlnaCwgTGludXggd2lsbCBmYWlsIHRvCmNsZWFyIGl0IHVwb24gYm9vdCB3aGVuIGFjdGl2ZS1s
-b3cgaXMgZXhwZWN0ZWQsIHBvdGVudGlhbGx5IGJyZWFraW5nIFVTQgpmdW5jdGlvbmFsaXR5LgoK
-PiArCj4gKwlmb3IgKG4gPSAwOyBuIDwgTUEzNV9QSFlfTlVNOyBuKyspIHsKClsgLi4uIF0KCj4g
-KwlyZXQgPSBtYTM1X3JvbGVfc3dpdGNoX2luaXQocGRldiwgcCk7Cj4gKwlpZiAocmV0KQo+ICsJ
-CXJldHVybiByZXQ7Cj4gIAo+IC0JcHJvdmlkZXIgPSBkZXZtX29mX3BoeV9wcm92aWRlcl9yZWdp
-c3RlcigmcGRldi0+ZGV2LCBvZl9waHlfc2ltcGxlX3hsYXRlKTsKPiArCXByb3ZpZGVyID0gZGV2
-bV9vZl9waHlfcHJvdmlkZXJfcmVnaXN0ZXIoJnBkZXYtPmRldiwgbWEzNV91c2JfcGh5X3hsYXRl
-KTsKPiAgCWlmIChJU19FUlIocHJvdmlkZXIpKQo+ICAJCXJldHVybiBkZXZfZXJyX3Byb2JlKCZw
-ZGV2LT5kZXYsIFBUUl9FUlIocHJvdmlkZXIpLAo+IC0JCQkJICAgICAiRmFpbGVkIHRvIHJlZ2lz
-dGVyIFBIWSBwcm92aWRlclxuIik7Cj4gKwkJCQkgICAgICJmYWlsZWQgdG8gcmVnaXN0ZXIgUEhZ
-IHByb3ZpZGVyXG4iKTsKCltTZXZlcml0eTogSGlnaF0KRG9lcyB0aGlzIGVycm9yIHBhdGggbGVh
-ayB0aGUgVVNCIHJvbGUgc3dpdGNoIGNyZWF0ZWQgYnkKbWEzNV9yb2xlX3N3aXRjaF9pbml0KCk/
-CgpJZiBkZXZtX29mX3BoeV9wcm92aWRlcl9yZWdpc3RlcigpIGZhaWxzLCB0aGUgZnVuY3Rpb24g
-cmV0dXJucyBpbW1lZGlhdGVseQp3aXRob3V0IHVucmVnaXN0ZXJpbmcgdGhlIHJvbGUgc3dpdGNo
-LgoKVGhlIGRyaXZlciBjb3JlIHdpbGwgdGhlbiBmcmVlIHRoZSBkZXZtLWFsbG9jYXRlZCBtZW1v
-cnkgKGluY2x1ZGluZyB0aGUKc3RydWN0IG1hMzVfdXNiX3BoeSAqcCBwYXNzZWQgYXMgZHJpdmVy
-IGRhdGEpLiBTaW5jZSB0aGUgcm9sZSBzd2l0Y2ggcmVtYWlucwpyZWdpc3RlcmVkLCBhbnkgbGF0
-ZXIgaW50ZXJhY3Rpb24gd2l0aCBpdCAoZS5nLiBmcm9tIHN5c2ZzKSB3aWxsIGludm9rZQptYTM1
-X3JvbGVfc3dfZ2V0KCk6CgpzdGF0aWMgZW51bSB1c2Jfcm9sZSBtYTM1X3JvbGVfc3dfZ2V0KHN0
-cnVjdCB1c2Jfcm9sZV9zd2l0Y2ggKnN3KQp7CglzdHJ1Y3QgbWEzNV91c2JfcGh5ICpwID0gdXNi
-X3JvbGVfc3dpdGNoX2dldF9kcnZkYXRhKHN3KTsKCXUzMiB2YWw7CgoJcmVnbWFwX3JlYWQocC0+
-c3lzcmVnLCBNQTM1X1NZU19QV1JPTk9UUCwgJnZhbCk7CgpUaGlzIGRlcmVmZXJlbmNlcyB0aGUg
-ZnJlZWQgcCBwb2ludGVyLCBjYXVzaW5nIGEgVXNlLUFmdGVyLUZyZWUuCgo+ICsKPiAgCXJldHVy
-biAwOwo+ICB9CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8j
-L3BhdGNoc2V0LzIwMjYwNjE1MDU0OTExLjQ4ODIxLTEtYTA5ODcyMDMwNjlAZ21haWwuY29tP3Bh
-cnQ9MwoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
-cGh5Cg==
+brcm_usb_phy_probe() registers a PM notifier and may create a sysfs group
+before registering the OF PHY provider. If provider registration fails,
+probe returns the error with those resources still active.
+
+Track which optional resources were installed and remove them on the late
+provider-registration failure path. Use the same state in remove() so
+cleanup matches probe progress.
+
+Signed-off-by: Pengpeng Hou <pengpeng@iscas.ac.cn>
+---
+ drivers/phy/broadcom/phy-brcm-usb.c | 29 +++++++++++++++++++++++++----
+ 1 file changed, 25 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/phy/broadcom/phy-brcm-usb.c b/drivers/phy/broadcom/phy-brcm-usb.c
+index 59d756a10d6c..e606db489698 100644
+--- a/drivers/phy/broadcom/phy-brcm-usb.c
++++ b/drivers/phy/broadcom/phy-brcm-usb.c
+@@ -71,6 +71,8 @@ struct brcm_usb_phy_data {
+ 	int			wake_irq;
+ 	struct brcm_usb_phy	phys[BRCM_USB_PHY_ID_MAX];
+ 	struct notifier_block	pm_notifier;
++	bool			pm_notifier_registered;
++	bool			sysfs_group_created;
+ 	bool			pm_active;
+ };
+ 
+@@ -545,7 +547,11 @@ static int brcm_usb_phy_probe(struct platform_device *pdev)
+ 		return err;
+ 
+ 	priv->pm_notifier.notifier_call = brcm_pm_notifier;
+-	register_pm_notifier(&priv->pm_notifier);
++	err = register_pm_notifier(&priv->pm_notifier);
++	if (err)
++		dev_warn(dev, "Error registering PM notifier\n");
++	else
++		priv->pm_notifier_registered = true;
+ 
+ 	mutex_init(&priv->mutex);
+ 
+@@ -561,6 +567,8 @@ static int brcm_usb_phy_probe(struct platform_device *pdev)
+ 	err = sysfs_create_group(&dev->kobj, &brcm_usb_phy_group);
+ 	if (err)
+ 		dev_warn(dev, "Error creating sysfs attributes\n");
++	else
++		priv->sysfs_group_created = true;
+ 
+ 	/* Get piarbctl syscon if it exists */
+ 	rmap = syscon_regmap_lookup_by_phandle(dev->of_node,
+@@ -581,16 +589,29 @@ static int brcm_usb_phy_probe(struct platform_device *pdev)
+ 	clk_disable_unprepare(priv->usb_30_clk);
+ 
+ 	phy_provider = devm_of_phy_provider_register(dev, brcm_usb_phy_xlate);
++	err = PTR_ERR_OR_ZERO(phy_provider);
++	if (err)
++		goto err_remove_debug;
++
++	return 0;
++
++err_remove_debug:
++	if (priv->sysfs_group_created)
++		sysfs_remove_group(&dev->kobj, &brcm_usb_phy_group);
++	if (priv->pm_notifier_registered)
++		unregister_pm_notifier(&priv->pm_notifier);
+ 
+-	return PTR_ERR_OR_ZERO(phy_provider);
++	return err;
+ }
+ 
+ static void brcm_usb_phy_remove(struct platform_device *pdev)
+ {
+ 	struct brcm_usb_phy_data *priv = dev_get_drvdata(&pdev->dev);
+ 
+-	sysfs_remove_group(&pdev->dev.kobj, &brcm_usb_phy_group);
+-	unregister_pm_notifier(&priv->pm_notifier);
++	if (priv->sysfs_group_created)
++		sysfs_remove_group(&pdev->dev.kobj, &brcm_usb_phy_group);
++	if (priv->pm_notifier_registered)
++		unregister_pm_notifier(&priv->pm_notifier);
+ }
+ 
+ #ifdef CONFIG_PM_SLEEP
+-- 
+2.50.1 (Apple Git-155)
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
