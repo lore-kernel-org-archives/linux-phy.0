@@ -4,81 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5F9FCD98C5
-	for <linux-phy@archiver.kernel.org>; Mon, 15 Jun 2026 18:06:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92354CD98C5
+	for <linux-phy@archiver.kernel.org>; Mon, 15 Jun 2026 18:17:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:From:Subject:Message-ID:
-	Mime-Version:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=N+9eV4EvP9E8U9xySVSRkkUmaLchEmUGspyjo9ELJbE=; b=qkl
-	ZCnCjBhjFYApTU9Sntasfe1y2qGMAjFdPKPWacXSctnFH5Q06uO7c3xaikrthgD0jtfzWDDSKfZSS
-	uxkjeEsL5M7nVxByh4/050D25JHv6SCoZJ9Z8xOHtCW3clKiB5II9FaqtZO7SJA4H0KFRDjuH4dc6
-	SfrKClCuVTdZWjXH+gM+E7RF7CSuU3fDeidxMeXLg5O1tn1hxuf10XQY1F2OlbTKMSXQ5p/YMNNkV
-	h9HUUdSICnXGNSRkD06W4GzKuAnVH4Hrx3Jyd6AuYz3THxSXAoZdsxfpQVEs+hVk9PrbtlnQCZdfi
-	XoefDACc27fdgFzYfmbRRXGlVj50+Lw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZhnIpS9eFNq6fTygI+tfzeGpWkfE8w6ABBgsJDajH0Y=; b=J1OAnrRqZyJEM5
+	Qe1mM0jDjAdETQO6movGyoWagyoyBMWy2E/SK3uKAMpc//I+XMkQl8T/xVTW4Q/ScsOJaJ1Hvx91s
+	LbkQCKWKBpSRXP6Zwa1Z4WA3f0Ay8824usz7P1P2QSWE2adPXCz+ATcuoi27gJqIhDnkEgwgKmNxg
+	PegaLZGONimRxGfQdCqGkKTi1NPdRVe7bJjizQIacZmyhDQ9JZQgRUh61nzYH4ebJbFTl41HV3OZI
+	gg7SpZeqHw/g5x1aKH9c3mP9UxOrqrPDISHhcNSP+x+PqqqgxHDKPCYcatWczeZJpQoRSp2dHt3uL
+	G+geZsf5bfVAiH0WygFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZBhO-0000000Ehup-19vF;
-	Mon, 15 Jun 2026 18:06:14 +0000
-Received: from mail-pl1-x64a.google.com ([2607:f8b0:4864:20::64a])
+	id 1wZBrx-0000000Eian-0tAM;
+	Mon, 15 Jun 2026 18:17:09 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZBhL-0000000EhtK-2Elb
+	id 1wZBrv-0000000EiaT-2Xdb
 	for linux-phy@lists.infradead.org;
-	Mon, 15 Jun 2026 18:06:13 +0000
-Received: by mail-pl1-x64a.google.com with SMTP id d9443c01a7336-2bf32fb7cb2so26777855ad.2
-        for <linux-phy@lists.infradead.org>; Mon, 15 Jun 2026 11:06:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20251104; t=1781546770; x=1782151570; darn=lists.infradead.org;
-        h=cc:to:from:subject:message-id:mime-version:date:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=tYM90U1z3Qc3uuvS1BqysVMKBe7scMOj+TAX3rB6WiI=;
-        b=MrIgQppGjQVVip+neIyYd/nKUL1XVroiahbV9EcWIeUeFGjZGWggUessEr1C5wPVjH
-         smaDk1cmR3b7MV0gpKzbYivMZhgd1ZpLY2bjxpT3q98J81DGZo0eDxM6ZP4io0jeZ0EC
-         +vpzUxoVlUdovCLwh67MoJB2sUjnM3Dw9PczA83UbJeQmHTmODrD7hDu6dFIouKZeiUR
-         sChQRk7LuReIgDFNVVC9THrAktKol3BLkEGTl8yzgJyue0JlBffFuJFdOc6NO8FzOfeJ
-         NJxvfq3heNJRlHyPmuYDx9AqbEsKRqius3q/0dJlZ0v/kQrsR+ac/0pfk3D4sts4PLb1
-         1geA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1781546770; x=1782151570;
-        h=cc:to:from:subject:message-id:mime-version:date:x-gm-message-state
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=tYM90U1z3Qc3uuvS1BqysVMKBe7scMOj+TAX3rB6WiI=;
-        b=lv5+38yHiXJ9937MeFKSQy+8fBHE+YLhjXHq4VPieuYjqhMNNsTXL4zdsbVZyWYG9C
-         +Wfh/lMKZv4H/ELLk6j7o2hE1kv1D0Oiw8vwzof9K8vzpWBpYteIcNKuQJ9ynRYifrwO
-         DSmVoxnwZiljPHl3yHAjA1gbsN7pdXskfiU4MmTZpfUdW8qA7FpIeztH+wKlC9AzOkE5
-         b5PgKOw8RnAgnK5hKy33Wr5eo85nc4XpmlqZPv3+j94DB/8xpwOukYoekCvDc45DJrOK
-         BNfcZY3U48DvDgopbMCR/3qbZW8/UJK82fbTJcmrh98Hw8KBWqiYD4qQJm6zUt1PC9Eo
-         GCDQ==
-X-Forwarded-Encrypted: i=1; AFNElJ/Nq/PPjB6hNrzewwaJYpv48jEKnqI81QE0GFs2H4900GEP7kkJavhLBM8yPR4Hk4/CYZfs2EqsIt0=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyP0aIf2CzQvk5Kx3iMAuT1TjYmjKZ54pdp8Ps0YzIy1f8Y5HBd
-	lei8f1BOE/riS/6RmDwkT7t2a3qCqn5UFNBI/v14iTMyVWtFIS554/JVG2rrTBtL5P+TFxRlppB
-	Xfw9CIb8SitTg3ol6nQ==
-X-Received: from pgli9.prod.google.com ([2002:a63:1309:0:b0:c85:735b:ca4a])
- (user=rdbabiera job=prod-delivery.src-stubby-dispatcher) by
- 2002:a05:6a21:483:b0:3b3:2703:110 with SMTP id adf61e73a8af0-3b7e4951a07mr190399637.4.1781546769346;
- Mon, 15 Jun 2026 11:06:09 -0700 (PDT)
-Date: Mon, 15 Jun 2026 18:05:57 +0000
-Mime-Version: 1.0
-X-Developer-Key: i=rdbabiera@google.com; a=openpgp; fpr=0B74D21BCA57BD40083A73A0DB00FC8CD80B20A1
-X-Developer-Signature: v=1; a=openpgp-sha256; l=14616; i=rdbabiera@google.com;
- h=from:subject; bh=fW9r01EPQhqsfy19zu/auqg544mFwRvXRV407ff98Dw=;
- b=owGbwMvMwCV2m+FPzw1uhYWMp9WSGLIM7FlKIvSqUrM46sLP7dJe/XJqyZPWkCsHjRiPGix+Y
- JpdvO5yRwkLgxgXg6yYIgt3ySXpU+F7HTisihfAzGFlAhnCwMUpABPx4GP4X5IesOIQf0H03zff
- vFNLuDZ+W59ce+CkoYp0UwVTrtUuXobvsRezDWvlrBnXif8/8/jO2eIwyRyfr6oipZ/8BNtP6fM CAA==
-X-Mailer: git-send-email 2.54.0.1189.g8c84645362-goog
-Message-ID: <20260615180556.4048184-2-rdbabiera@google.com>
-Subject: [PATCH v1] phy: Add USB3 PHY support to Google Tensor SoC USB PHY driver
-From: RD Babiera <rdbabiera@google.com>
-To: vkoul@kernel.org, peter.griffin@linaro.org, andre.draszik@linaro.org, 
-	tudor.ambarus@linaro.org, p.zabel@pengutronix.de, neil.armstrong@linaro.org
-Cc: badhri@google.com, linux-arm-kernel@lists.infradead.org, 
-	linux-samsung-soc@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, RD Babiera <rdbabiera@google.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260615_110611_576560_F62E7468 
-X-CRM114-Status: GOOD (  22.03  )
+	Mon, 15 Jun 2026 18:17:07 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id BBFD26008A;
+	Mon, 15 Jun 2026 18:17:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 37CEE1F000E9;
+	Mon, 15 Jun 2026 18:17:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1781547426;
+	bh=wRlyIxBjEXMEzX9YL1kNXix65cDE64CK0uyAYPI4hak=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=h/X0fDuUbHnB7DG+UEd3BOR1JRKbT0vMBMhMXRQktoxsFYP6JeneThO1q0PiJ18uZ
+	 ichH/kuTAEmjSl3/bAQrI7p9ZEMei7zI76MuuZKYij0vLg0lZNU+ItAJwtPxK8P304
+	 GfQxQVU1nqEeoMhlXzbqCyvLKvDovzKGmk/0H6aXRkZdGJYPTZ/NFCzktkwU1JLP+s
+	 mfMeHR49ukNNnyuF5aZkN2AGbt6U6A19p2/AjL5R7Sh4hDrpNBE2laT4FMsGLwFKjQ
+	 uJkRvba7LbHmnPrR7O/F1vAIciZlwMN4DK+ThxXsNoCrsNHMoaHvCCkLtzhtJTNH4R
+	 47BE99aH5r+Pg==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v1] phy: Add USB3 PHY support to Google Tensor SoC USB
+ PHY driver
+To: "RD Babiera" <rdbabiera@google.com>
+Cc: olteanv@gmail.com, linux-phy@lists.infradead.org, neil.armstrong@linaro.org, vkoul@kernel.org
+In-Reply-To: <20260615180556.4048184-2-rdbabiera@google.com>
+References: <20260615180556.4048184-2-rdbabiera@google.com>
+Date: Mon, 15 Jun 2026 18:17:05 +0000
+Message-Id: <20260615181706.37CEE1F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,465 +62,131 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add USB3 PHY support for the Google Tensor G5 USB PHY driver.
-This patch adds functionality for the usb3_core and usb3_tca registers,
-usb3 clock, and usb3 reset as defined in
-google,lga-usb-phy.yaml.
-
-Refactor the probe sequence to initialize the USB2 and USB3 PHYs, and then
-initialize clocks and resets for both PHYs afterwards.
-
-Refactor set_vbus_valid to reduce duplicated code.
-
-Implement USB3 phy_ops for phy_init, phy_exit, and phy_power_on.
-
-Signed-off-by: RD Babiera <rdbabiera@google.com>
----
- drivers/phy/phy-google-usb.c | 350 +++++++++++++++++++++++++++++++----
- 1 file changed, 317 insertions(+), 33 deletions(-)
-
-diff --git a/drivers/phy/phy-google-usb.c b/drivers/phy/phy-google-usb.c
-index ab20bc20f19e..a23a9008b521 100644
---- a/drivers/phy/phy-google-usb.c
-+++ b/drivers/phy/phy-google-usb.c
-@@ -20,6 +20,7 @@
- #include <linux/reset.h>
- #include <linux/usb/typec_mux.h>
- 
-+/* USB_CFG_CSR */
- #define USBCS_USB2PHY_CFG19_OFFSET 0x0
- #define USBCS_USB2PHY_CFG19_PHY_CFG_PLL_FB_DIV GENMASK(19, 8)
- 
-@@ -28,11 +29,41 @@
- #define USBCS_USB2PHY_CFG21_REF_FREQ_SEL GENMASK(15, 13)
- #define USBCS_USB2PHY_CFG21_PHY_TX_DIG_BYPASS_SEL BIT(19)
- 
-+/* USBDP_TOP */
- #define USBCS_PHY_CFG1_OFFSET 0x28
-+#define USBCS_PHY_CFG1_PHY0_MPLLA_SSC_EN BIT(1)
-+#define USBCS_PHY_CFG1_PHY0_SRAM_BYPASS_MODE GENMASK(11, 10)
-+#define SRAM_BYPASS_MODE_BYPASS_FIRMWARE BIT(0)
-+#define SRAM_BYPASS_MODE_BYPASS_CONTEXT BIT(1)
- #define USBCS_PHY_CFG1_SYS_VBUSVALID BIT(17)
- 
-+#define USBDP_TOP_CFG_REG_OFFSET 0x44
-+#define USBDP_TOP_CFG_REG_PMGT_REF_CLK_REQ_N BIT(0)
-+
-+#define PHY_POWER_CONFIG_REG1_OFFSET 0x48
-+#define PHY_POWER_CONFIG_REG1_PG_MODE_EN BIT(1)
-+#define PHY_POWER_CONFIG_REG1_UPCS_PIPE_CONFIG GENMASK(31, 14)
-+#define UPCS_PIPE_CONFIG_ISO_CPM BIT(5)
-+#define UPCS_PIPE_CONFIG_PG_MODE_STATIC BIT(6)
-+#define UPCS_PIPE_CONFIG_LANE_RESET_NO_PG_EXIT BIT(9)
-+
-+/* USB3_TCA */
-+#define TCA_INTR_STS_OFFSET 0x8
-+#define TCA_INTR_STS_XA_ACT_EVT BIT(0)
-+#define TCA_TCPC_OFFSET 0x14
-+#define TCA_TCPC_MUX_CONTROL GENMASK(2, 0)
-+#define TCA_TCPC_MUX_CONTROL_USB_ONLY 0x1
-+#define TCA_TCPC_CONNECTOR_ORIENTATION BIT(3)
-+#define TCA_TCPC_VALID BIT(4)
-+#define TCA_PSTATE_0_OFFSET 0x50
-+#define TCA_PSTATE_0_UPCS_LANE0_PHYSTATUS BIT(8)
-+
-+#define GPHY_TCA_DELAY_US 10
-+#define GPHY_TCA_TIMEOUT_US 2500000
-+
- enum google_usb_phy_id {
- 	GOOGLE_USB2_PHY,
-+	GOOGLE_USB3_PHY,
- 	GOOGLE_USB_PHY_NUM,
- };
- 
-@@ -46,11 +77,50 @@ struct google_usb_phy_instance {
- 	struct reset_control_bulk_data *rsts;
- };
- 
-+struct google_usb_phy_config {
-+	const char * const *clk_names;
-+	unsigned int num_clks;
-+	const char * const *rst_names;
-+	unsigned int num_rsts;
-+};
-+
-+static const char * const u2phy_clk_names[] = {
-+	"usb2",
-+	"usb2_apb",
-+};
-+static const char * const u3phy_clk_names[] = {
-+	"usb3"
-+};
-+static const char * const u2phy_rst_names[] = {
-+	"usb2",
-+	"usb2_apb",
-+};
-+static const char * const u3phy_rst_names[] = {
-+	"usb3"
-+};
-+
-+static const struct google_usb_phy_config phy_configs[GOOGLE_USB_PHY_NUM] = {
-+	[GOOGLE_USB2_PHY] = {
-+		.clk_names = u2phy_clk_names,
-+		.num_clks = ARRAY_SIZE(u2phy_clk_names),
-+		.rst_names = u2phy_rst_names,
-+		.num_rsts = ARRAY_SIZE(u2phy_rst_names),
-+	},
-+	[GOOGLE_USB3_PHY] = {
-+		.clk_names = u3phy_clk_names,
-+		.num_clks = ARRAY_SIZE(u3phy_clk_names),
-+		.rst_names = u3phy_rst_names,
-+		.num_rsts = ARRAY_SIZE(u3phy_rst_names),
-+	},
-+};
-+
- struct google_usb_phy {
- 	struct device *dev;
- 	struct regmap *usb_cfg_regmap;
- 	unsigned int usb2_cfg_offset;
- 	void __iomem *usbdp_top_base;
-+	void __iomem *usb3_core_base;
-+	void __iomem *usb3_tca_base;
- 	struct google_usb_phy_instance *insts;
- 	/*
- 	 * Protect phy registers from concurrent access, specifically via
-@@ -65,15 +135,79 @@ static void set_vbus_valid(struct google_usb_phy *gphy)
- {
- 	u32 reg;
- 
--	if (gphy->orientation == TYPEC_ORIENTATION_NONE) {
--		reg = readl(gphy->usbdp_top_base + USBCS_PHY_CFG1_OFFSET);
-+	reg = readl(gphy->usbdp_top_base + USBCS_PHY_CFG1_OFFSET);
-+	if (gphy->orientation == TYPEC_ORIENTATION_NONE)
- 		reg &= ~USBCS_PHY_CFG1_SYS_VBUSVALID;
--		writel(reg, gphy->usbdp_top_base + USBCS_PHY_CFG1_OFFSET);
--	} else {
--		reg = readl(gphy->usbdp_top_base + USBCS_PHY_CFG1_OFFSET);
-+	else
- 		reg |= USBCS_PHY_CFG1_SYS_VBUSVALID;
--		writel(reg, gphy->usbdp_top_base + USBCS_PHY_CFG1_OFFSET);
--	}
-+	writel(reg, gphy->usbdp_top_base + USBCS_PHY_CFG1_OFFSET);
-+}
-+
-+static void set_sram_bypass(struct google_usb_phy *gphy, u32 bypass)
-+{
-+	u32 reg;
-+
-+	reg = readl(gphy->usbdp_top_base + USBCS_PHY_CFG1_OFFSET);
-+	reg &= ~USBCS_PHY_CFG1_PHY0_SRAM_BYPASS_MODE;
-+	reg |= FIELD_PREP(USBCS_PHY_CFG1_PHY0_SRAM_BYPASS_MODE, bypass);
-+	writel(reg, gphy->usbdp_top_base + USBCS_PHY_CFG1_OFFSET);
-+}
-+
-+static void set_pmgt_ref_clk_req_n(struct google_usb_phy *gphy, bool resume)
-+{
-+	u32 reg;
-+
-+	reg = readl(gphy->usbdp_top_base + USBDP_TOP_CFG_REG_OFFSET);
-+	if (resume)
-+		reg |= USBDP_TOP_CFG_REG_PMGT_REF_CLK_REQ_N;
-+	else
-+		reg &= ~USBDP_TOP_CFG_REG_PMGT_REF_CLK_REQ_N;
-+	writel(reg, gphy->usbdp_top_base + USBDP_TOP_CFG_REG_OFFSET);
-+}
-+
-+static int wait_tca_xa_ack(struct google_usb_phy *gphy)
-+{
-+	int ret;
-+	u32 reg;
-+
-+	ret = readl_poll_timeout(gphy->usb3_tca_base + TCA_INTR_STS_OFFSET,
-+				 reg, !!(reg & TCA_INTR_STS_XA_ACT_EVT),
-+				 GPHY_TCA_DELAY_US, GPHY_TCA_TIMEOUT_US);
-+	if (ret)
-+		dev_err(gphy->dev, "tca xa_ack timeout, ret=%d", ret);
-+
-+	return ret;
-+}
-+
-+static int program_tca_locked(struct google_usb_phy *gphy)
-+	   __must_hold(&gphy->phy_mutex)
-+{
-+	int ret;
-+	u32 reg;
-+
-+	reg = readl(gphy->usb3_tca_base + TCA_INTR_STS_OFFSET);
-+	writel(reg, gphy->usb3_tca_base + TCA_INTR_STS_OFFSET);
-+
-+	reg = readl(gphy->usb3_tca_base + TCA_TCPC_OFFSET);
-+	reg &= ~TCA_TCPC_MUX_CONTROL;
-+	reg |= FIELD_PREP(TCA_TCPC_MUX_CONTROL, TCA_TCPC_MUX_CONTROL_USB_ONLY);
-+	if (gphy->orientation == TYPEC_ORIENTATION_REVERSE)
-+		reg |= TCA_TCPC_CONNECTOR_ORIENTATION;
-+	else
-+		reg &= ~TCA_TCPC_CONNECTOR_ORIENTATION;
-+	reg |= TCA_TCPC_VALID;
-+	writel(reg, gphy->usb3_tca_base + TCA_TCPC_OFFSET);
-+
-+	ret = wait_tca_xa_ack(gphy);
-+	dev_dbg(gphy->dev, "TCA switch %s, mux %lu, orientation %s",
-+		ret ? "failed" : "success",
-+		FIELD_GET(TCA_TCPC_MUX_CONTROL, reg),
-+		FIELD_GET(TCA_TCPC_CONNECTOR_ORIENTATION, reg) ? "reverse" : "normal");
-+
-+	reg = readl(gphy->usb3_tca_base + TCA_INTR_STS_OFFSET);
-+	writel(reg, gphy->usb3_tca_base + TCA_INTR_STS_OFFSET);
-+
-+	return ret;
- }
- 
- static int google_usb_set_orientation(struct typec_switch_dev *sw,
-@@ -161,6 +295,103 @@ static const struct phy_ops google_usb2_phy_ops = {
- 	.exit		= google_usb2_phy_exit,
- };
- 
-+static int google_usb3_phy_init(struct phy *_phy)
-+{
-+	struct google_usb_phy_instance *inst = phy_get_drvdata(_phy);
-+	struct google_usb_phy *gphy = inst->parent;
-+	int ret = 0;
-+	u32 reg;
-+
-+	dev_dbg(gphy->dev, "initializing usb3 phy\n");
-+
-+	guard(mutex)(&gphy->phy_mutex);
-+
-+	reg = readl(gphy->usbdp_top_base + PHY_POWER_CONFIG_REG1_OFFSET);
-+	reg |= PHY_POWER_CONFIG_REG1_PG_MODE_EN;
-+	reg &= ~PHY_POWER_CONFIG_REG1_UPCS_PIPE_CONFIG;
-+	reg |= FIELD_PREP(PHY_POWER_CONFIG_REG1_UPCS_PIPE_CONFIG,
-+			  (UPCS_PIPE_CONFIG_ISO_CPM |
-+			   UPCS_PIPE_CONFIG_PG_MODE_STATIC |
-+			   UPCS_PIPE_CONFIG_LANE_RESET_NO_PG_EXIT));
-+	writel(reg, gphy->usbdp_top_base + PHY_POWER_CONFIG_REG1_OFFSET);
-+
-+	set_vbus_valid(gphy);
-+
-+	reg = readl(gphy->usbdp_top_base + USBCS_PHY_CFG1_OFFSET);
-+	reg |= USBCS_PHY_CFG1_PHY0_MPLLA_SSC_EN;
-+	writel(reg, gphy->usbdp_top_base + USBCS_PHY_CFG1_OFFSET);
-+
-+	set_sram_bypass(gphy, SRAM_BYPASS_MODE_BYPASS_FIRMWARE |
-+			SRAM_BYPASS_MODE_BYPASS_CONTEXT);
-+	set_pmgt_ref_clk_req_n(gphy, true);
-+
-+	ret = clk_bulk_prepare_enable(inst->num_clks, inst->clks);
-+	if (ret)
-+		return ret;
-+
-+	ret = reset_control_bulk_deassert(inst->num_rsts, inst->rsts);
-+	if (ret)
-+		goto disable_clocks;
-+
-+	ret = readl_poll_timeout(gphy->usb3_tca_base + TCA_PSTATE_0_OFFSET,
-+				 reg, !(reg & TCA_PSTATE_0_UPCS_LANE0_PHYSTATUS),
-+				 GPHY_TCA_DELAY_US, GPHY_TCA_TIMEOUT_US);
-+	if (ret) {
-+		dev_err(gphy->dev, "wait for lane0 phystatus timed out");
-+		goto assert_resets;
-+	}
-+
-+	return 0;
-+
-+assert_resets:
-+	reset_control_bulk_assert(inst->num_rsts, inst->rsts);
-+disable_clocks:
-+	clk_bulk_disable_unprepare(inst->num_clks, inst->clks);
-+	return ret;
-+}
-+
-+static int google_usb3_phy_exit(struct phy *_phy)
-+{
-+	struct google_usb_phy_instance *inst = phy_get_drvdata(_phy);
-+	struct google_usb_phy *gphy = inst->parent;
-+
-+	dev_dbg(gphy->dev, "exiting usb3 phy\n");
-+
-+	guard(mutex)(&gphy->phy_mutex);
-+
-+	set_pmgt_ref_clk_req_n(gphy, false);
-+	reset_control_bulk_assert(inst->num_rsts, inst->rsts);
-+	clk_bulk_disable_unprepare(inst->num_clks, inst->clks);
-+
-+	return 0;
-+}
-+
-+static int google_usb3_phy_power_on(struct phy *_phy)
-+{
-+	struct google_usb_phy_instance *inst = phy_get_drvdata(_phy);
-+	struct google_usb_phy *gphy = inst->parent;
-+	int ret;
-+
-+	dev_dbg(gphy->dev, "power on usb3 phy\n");
-+
-+	guard(mutex)(&gphy->phy_mutex);
-+	ret = wait_tca_xa_ack(gphy);
-+	if (ret) {
-+		dev_err(gphy->dev, "PoR->NC transition timeout");
-+		return ret;
-+	}
-+
-+	ret = program_tca_locked(gphy);
-+
-+	return ret;
-+}
-+
-+static const struct phy_ops google_usb3_phy_ops = {
-+	.init		= google_usb3_phy_init,
-+	.exit		= google_usb3_phy_exit,
-+	.power_on	= google_usb3_phy_power_on,
-+};
-+
- static struct phy *google_usb_phy_xlate(struct device *dev,
- 					const struct of_phandle_args *args)
- {
-@@ -173,14 +404,61 @@ static struct phy *google_usb_phy_xlate(struct device *dev,
- 	return gphy->insts[args->args[0]].phy;
- }
- 
-+static int google_usb_phy_parse_clocks(struct google_usb_phy *gphy)
-+{
-+	struct device *dev = gphy->dev;
-+	int id, i, ret;
-+
-+	for (id = 0; id < GOOGLE_USB_PHY_NUM; id++) {
-+		const struct google_usb_phy_config *cfg = &phy_configs[id];
-+		struct google_usb_phy_instance *inst = &gphy->insts[id];
-+
-+		inst->num_clks = cfg->num_clks;
-+		inst->clks = devm_kcalloc(dev, inst->num_clks, sizeof(*inst->clks), GFP_KERNEL);
-+		if (!inst->clks)
-+			return -ENOMEM;
-+
-+		for (i = 0; i < inst->num_clks; i++)
-+			inst->clks[i].id = cfg->clk_names[i];
-+
-+		ret = devm_clk_bulk_get(dev, inst->num_clks, inst->clks);
-+		if (ret)
-+			return dev_err_probe(dev, ret, "failed to get phy%d clks\n", id);
-+	}
-+
-+	return 0;
-+}
-+
-+static int google_usb_phy_parse_resets(struct google_usb_phy *gphy)
-+{
-+	struct device *dev = gphy->dev;
-+	int id, i, ret;
-+
-+	for (id = 0; id < GOOGLE_USB_PHY_NUM; id++) {
-+		const struct google_usb_phy_config *cfg = &phy_configs[id];
-+		struct google_usb_phy_instance *inst = &gphy->insts[id];
-+
-+		inst->num_rsts = cfg->num_rsts;
-+		inst->rsts = devm_kcalloc(dev, inst->num_rsts, sizeof(*inst->rsts), GFP_KERNEL);
-+		if (!inst->rsts)
-+			return -ENOMEM;
-+
-+		for (i = 0; i < inst->num_rsts; i++)
-+			inst->rsts[i].id = cfg->rst_names[i];
-+		ret = devm_reset_control_bulk_get_exclusive(dev, inst->num_rsts, inst->rsts);
-+		if (ret)
-+			return dev_err_probe(dev, ret, "failed to get phy%d resets\n", id);
-+	}
-+
-+	return 0;
-+}
-+
- static int google_usb_phy_probe(struct platform_device *pdev)
- {
- 	struct typec_switch_desc sw_desc = { };
--	struct google_usb_phy_instance *inst;
- 	struct phy_provider *phy_provider;
- 	struct device *dev = &pdev->dev;
- 	struct google_usb_phy *gphy;
--	struct phy *phy;
- 	u32 args[1];
- 	int ret;
- 
-@@ -212,39 +490,45 @@ static int google_usb_phy_probe(struct platform_device *pdev)
- 		return dev_err_probe(dev, PTR_ERR(gphy->usbdp_top_base),
- 				    "invalid usbdp top\n");
- 
-+	gphy->usb3_core_base = devm_platform_ioremap_resource_byname(pdev,
-+								     "usb3_core");
-+	if (IS_ERR(gphy->usb3_core_base))
-+		return dev_err_probe(dev, PTR_ERR(gphy->usb3_core_base),
-+				    "invalid usb3 core\n");
-+
-+	gphy->usb3_tca_base = devm_platform_ioremap_resource_byname(pdev,
-+								    "usb3_tca");
-+	if (IS_ERR(gphy->usb3_tca_base))
-+		return dev_err_probe(dev, PTR_ERR(gphy->usb3_tca_base),
-+				    "invalid usb3 tca\n");
-+
- 	gphy->insts = devm_kcalloc(dev, GOOGLE_USB_PHY_NUM, sizeof(*gphy->insts), GFP_KERNEL);
- 	if (!gphy->insts)
- 		return -ENOMEM;
- 
--	inst = &gphy->insts[GOOGLE_USB2_PHY];
--	inst->parent = gphy;
--	inst->index = GOOGLE_USB2_PHY;
--	phy = devm_phy_create(dev, NULL, &google_usb2_phy_ops);
--	if (IS_ERR(phy))
--		return dev_err_probe(dev, PTR_ERR(phy),
-+	gphy->insts[GOOGLE_USB2_PHY].phy = devm_phy_create(dev, NULL, &google_usb2_phy_ops);
-+	gphy->insts[GOOGLE_USB2_PHY].index = GOOGLE_USB2_PHY;
-+	gphy->insts[GOOGLE_USB2_PHY].parent = gphy;
-+	if (IS_ERR(gphy->insts[GOOGLE_USB2_PHY].phy))
-+		return dev_err_probe(dev, PTR_ERR(gphy->insts[GOOGLE_USB2_PHY].phy),
- 				     "failed to create usb2 phy instance\n");
--	inst->phy = phy;
--	phy_set_drvdata(phy, inst);
-+	phy_set_drvdata(gphy->insts[GOOGLE_USB2_PHY].phy, &gphy->insts[GOOGLE_USB2_PHY]);
- 
--	inst->num_clks = 2;
--	inst->clks = devm_kcalloc(dev, inst->num_clks, sizeof(*inst->clks), GFP_KERNEL);
--	if (!inst->clks)
--		return -ENOMEM;
--	inst->clks[0].id = "usb2";
--	inst->clks[1].id = "usb2_apb";
--	ret = devm_clk_bulk_get(dev, inst->num_clks, inst->clks);
-+	gphy->insts[GOOGLE_USB3_PHY].phy = devm_phy_create(dev, NULL, &google_usb3_phy_ops);
-+	gphy->insts[GOOGLE_USB3_PHY].index = GOOGLE_USB3_PHY;
-+	gphy->insts[GOOGLE_USB3_PHY].parent = gphy;
-+	if (IS_ERR(gphy->insts[GOOGLE_USB3_PHY].phy))
-+		return dev_err_probe(dev, PTR_ERR(gphy->insts[GOOGLE_USB3_PHY].phy),
-+				     "failed to create usb3 phy instance\n");
-+	phy_set_drvdata(gphy->insts[GOOGLE_USB3_PHY].phy, &gphy->insts[GOOGLE_USB3_PHY]);
-+
-+	ret = google_usb_phy_parse_clocks(gphy);
- 	if (ret)
--		return dev_err_probe(dev, ret, "failed to get u2 phy clks\n");
-+		return ret;
- 
--	inst->num_rsts = 2;
--	inst->rsts = devm_kcalloc(dev, inst->num_rsts, sizeof(*inst->rsts), GFP_KERNEL);
--	if (!inst->rsts)
--		return -ENOMEM;
--	inst->rsts[0].id = "usb2";
--	inst->rsts[1].id = "usb2_apb";
--	ret = devm_reset_control_bulk_get_exclusive(dev, inst->num_rsts, inst->rsts);
-+	ret = google_usb_phy_parse_resets(gphy);
- 	if (ret)
--		return dev_err_probe(dev, ret, "failed to get u2 phy resets\n");
-+		return ret;
- 
- 	phy_provider = devm_of_phy_provider_register(dev, google_usb_phy_xlate);
- 	if (IS_ERR(phy_provider))
-
-base-commit: 2ace2e949979b82f82f12dd76d7c5a6145246ca3
--- 
-2.54.0.1189.g8c84645362-goog
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+NyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpOZXcgaXNzdWVzOgotIFtIaWdoXSBN
+aXNzaW5nIGhhcmR3YXJlIHN0YXRlIHVwZGF0ZSBmb3IgdGhlIFVTQjMgVENBIHN3aXRjaCB3aGVu
+IFR5cGUtQyBvcmllbnRhdGlvbiBjaGFuZ2VzLgotIFtIaWdoXSBnb29nbGVfdXNiM19waHlfcG93
+ZXJfb24oKSB0aW1lcyBvdXQgb24gc3Vic2VxdWVudCBjYWxscyBkdWUgdG8gY2xlYXJlZCBQb3dl
+ci1vbi1SZXNldCBpbnRlcnJ1cHQgc3RhdHVzLgotIFtIaWdoXSBBc3ltbWV0cmljIGhhcmR3YXJl
+IHRlYXJkb3duIHNlcXVlbmNlIGluIGdvb2dsZV91c2IzX3BoeV9leGl0KCkuCi0gW01lZGl1bV0g
+TWl4aW5nIHNjb3BlLWJhc2VkIGNsZWFudXAgKGd1YXJkKSB3aXRoIGdvdG8tYmFzZWQgZXJyb3Ig
+aGFuZGxpbmcgaW4gZ29vZ2xlX3VzYjNfcGh5X2luaXQoKS4KLSBbTWVkaXVtXSBNaXNzaW5nIGNs
+ZWFudXAgb2YgcG1ndF9yZWZfY2xrX3JlcV9uIGhhcmR3YXJlIHN0YXRlIG9uIGVycm9yIHBhdGhz
+IGluIGdvb2dsZV91c2IzX3BoeV9pbml0KCkuCi0gW01lZGl1bV0gVGhlIHVzYjNfY29yZSBtZW1v
+cnkgcmVnaW9uIGlzIG1hcHBlZCBhcyBhIG1hbmRhdG9yeSByZXNvdXJjZSBidXQgaXMgbmV2ZXIg
+dXNlZC4KClByZS1leGlzdGluZyBpc3N1ZXM6Ci0gW0hpZ2hdIFRPQ1RPVSByYWNlIHdpdGggcG1f
+cnVudGltZV9zdXNwZW5kZWQoKSBsZWFkaW5nIHRvIHVuc2FmZSBNTUlPIGFjY2Vzcy4KLS0KCmNv
+bW1pdCBhYjAwMDMyYWFiYmVkNTMyZThlMGVjMWFkNjFiODZlYjJmMjcxYjZkCkF1dGhvcjogUkQg
+QmFiaWVyYSA8cmRiYWJpZXJhQGdvb2dsZS5jb20+CgpwaHk6IEFkZCBVU0IzIFBIWSBzdXBwb3J0
+IHRvIEdvb2dsZSBUZW5zb3IgU29DIFVTQiBQSFkgZHJpdmVyCgpUaGlzIGNvbW1pdCBhZGRzIFVT
+QjMgUEhZIHN1cHBvcnQgdG8gdGhlIEdvb2dsZSBUZW5zb3IgRzUgVVNCIFBIWSBkcml2ZXIuCkl0
+IGludHJvZHVjZXMgZnVuY3Rpb25hbGl0eSBmb3IgdGhlIHVzYjNfY29yZSBhbmQgdXNiM190Y2Eg
+cmVnaXN0ZXJzLCBjbG9ja3MsCmFuZCByZXNldHMsIGFuZCBpbXBsZW1lbnRzIHRoZSBVU0IzIHBo
+eV9vcHMgZm9yIGluaXQsIGV4aXQsIGFuZCBwb3dlcl9vbi4KCj4gZGlmZiAtLWdpdCBhL2RyaXZl
+cnMvcGh5L3BoeS1nb29nbGUtdXNiLmMgYi9kcml2ZXJzL3BoeS9waHktZ29vZ2xlLXVzYi5jCj4g
+LS0tIGEvZHJpdmVycy9waHkvcGh5LWdvb2dsZS11c2IuYwo+ICsrKyBiL2RyaXZlcnMvcGh5L3Bo
+eS1nb29nbGUtdXNiLmMKWyAuLi4gXQo+IEBAIC02NSwxNSArMTM1LDc5IEBAIHN0YXRpYyB2b2lk
+IHNldF92YnVzX3ZhbGlkKHN0cnVjdCBnb29nbGVfdXNiX3BoeSAqZ3BoeSkKWyAuLi4gXQo+ICtz
+dGF0aWMgaW50IHByb2dyYW1fdGNhX2xvY2tlZChzdHJ1Y3QgZ29vZ2xlX3VzYl9waHkgKmdwaHkp
+Cj4gKwkgICBfX211c3RfaG9sZCgmZ3BoeS0+cGh5X211dGV4KQo+ICt7ClsgLi4uIF0KPiArfQo+
+ICAKPiAgc3RhdGljIGludCBnb29nbGVfdXNiX3NldF9vcmllbnRhdGlvbihzdHJ1Y3QgdHlwZWNf
+c3dpdGNoX2RldiAqc3csCgpbU2V2ZXJpdHk6IEhpZ2hdCkRvZXMgdGhpcyBtaXNzaW5nIHVwZGF0
+ZSBjYXVzZSBVU0IzIHNpZ25hbCByb3V0aW5nIGZhaWx1cmVzIG9uIG9yaWVudGF0aW9uCmNoYW5n
+ZXM/CgpXaGVuIHRoZSBUeXBlLUMgb3JpZW50YXRpb24gY2hhbmdlcywgZ29vZ2xlX3VzYl9zZXRf
+b3JpZW50YXRpb24oKSB1cGRhdGVzCnRoZSBzb2Z0d2FyZSBzdGF0ZSBhbmQgY2FsbHMgc2V0X3Zi
+dXNfdmFsaWQoZ3BoeSkuIFdoaWxlIHRoaXMgd2FzIHN1ZmZpY2llbnQKZm9yIFVTQjIsIGl0IGRv
+ZXNuJ3Qgc2VlbSB0byByZXByb2dyYW0gdGhlIG5ld2x5IGFkZGVkIFVTQjMgVENBIGhhcmR3YXJl
+Cm11bHRpcGxleGVyLgoKSWYgdGhlIG9yaWVudGF0aW9uIGZsaXBzIHdoaWxlIHRoZSBVU0IzIFBI
+WSBpcyBhY3RpdmUsIHdpbGwgdGhlIGhhcmR3YXJlCnN0YXRlIG1pc3MgdGhlIHVwZGF0ZSBiZWNh
+dXNlIHByb2dyYW1fdGNhX2xvY2tlZCgpIGlzIG5vdCBpbnZva2VkLCBsZWF2aW5nCnRoZSBUQ0Ff
+VENQQ19DT05ORUNUT1JfT1JJRU5UQVRJT04gYml0IHN0YWxlPwoKW1NldmVyaXR5OiBIaWdoXQpU
+aGlzIGlzIGEgcHJlLWV4aXN0aW5nIGlzc3VlLCBidXQgZG9lcyB0aGUgbG9ja2xlc3MgY2hlY2sg
+b2YKcG1fcnVudGltZV9zdXNwZW5kZWQoKSBjcmVhdGUgYSBUT0NUT1UgcmFjZSBjb25kaXRpb24/
+CgpJbiBnb29nbGVfdXNiX3NldF9vcmllbnRhdGlvbigpOgoKICAgIGlmIChwbV9ydW50aW1lX3N1
+c3BlbmRlZChncGh5LT5kZXYpKQogICAgICAgIHJldHVybiAwOwoKICAgIGd1YXJkKG11dGV4KSgm
+Z3BoeS0+cGh5X211dGV4KTsKCiAgICBzZXRfdmJ1c192YWxpZChncGh5KTsKCkJlY2F1c2Ugbm8g
+UE0gcnVudGltZSByZWZlcmVuY2UgaXMgYWNxdWlyZWQgKGxpa2UgcG1fcnVudGltZV9nZXRfc3lu
+YygpKSwKY2FuIHRoZSBkZXZpY2UgYmUgc3VzcGVuZGVkIGJ5IHRoZSBQTSBjb3JlIGltbWVkaWF0
+ZWx5IGFmdGVyIHRoZSBjaGVjawpyZXR1cm5zIGZhbHNlPyBUaGlzIHdvdWxkIGNhdXNlIHRoZSBz
+dWJzZXF1ZW50IHJlZ2lzdGVyIGFjY2VzcyBpbgpzZXRfdmJ1c192YWxpZCgpIHRvIHRyaWdnZXIg
+YSBzeW5jaHJvbm91cyBleHRlcm5hbCBhYm9ydCBvbiBzdXNwZW5kZWQKaGFyZHdhcmUuCgo+IEBA
+IC0xNjEsNiArMjk1LDEwMyBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IHBoeV9vcHMgZ29vZ2xlX3Vz
+YjJfcGh5X29wcyA9IHsKWyAuLi4gXQo+ICtzdGF0aWMgaW50IGdvb2dsZV91c2IzX3BoeV9pbml0
+KHN0cnVjdCBwaHkgKl9waHkpCj4gK3sKWyAuLi4gXQo+ICsJZ3VhcmQobXV0ZXgpKCZncGh5LT5w
+aHlfbXV0ZXgpOwpbIC4uLiBdCj4gKwlzZXRfcG1ndF9yZWZfY2xrX3JlcV9uKGdwaHksIHRydWUp
+Owo+ICsKPiArCXJldCA9IGNsa19idWxrX3ByZXBhcmVfZW5hYmxlKGluc3QtPm51bV9jbGtzLCBp
+bnN0LT5jbGtzKTsKPiArCWlmIChyZXQpCj4gKwkJcmV0dXJuIHJldDsKPiArCj4gKwlyZXQgPSBy
+ZXNldF9jb250cm9sX2J1bGtfZGVhc3NlcnQoaW5zdC0+bnVtX3JzdHMsIGluc3QtPnJzdHMpOwo+
+ICsJaWYgKHJldCkKPiArCQlnb3RvIGRpc2FibGVfY2xvY2tzOwo+ICsKPiArCXJldCA9IHJlYWRs
+X3BvbGxfdGltZW91dChncGh5LT51c2IzX3RjYV9iYXNlICsgVENBX1BTVEFURV8wX09GRlNFVCwK
+PiArCQkJCSByZWcsICEocmVnICYgVENBX1BTVEFURV8wX1VQQ1NfTEFORTBfUEhZU1RBVFVTKSwK
+PiArCQkJCSBHUEhZX1RDQV9ERUxBWV9VUywgR1BIWV9UQ0FfVElNRU9VVF9VUyk7Cj4gKwlpZiAo
+cmV0KSB7Cj4gKwkJZGV2X2VycihncGh5LT5kZXYsICJ3YWl0IGZvciBsYW5lMCBwaHlzdGF0dXMg
+dGltZWQgb3V0Iik7Cj4gKwkJZ290byBhc3NlcnRfcmVzZXRzOwo+ICsJfQo+ICsKPiArCXJldHVy
+biAwOwo+ICsKPiArYXNzZXJ0X3Jlc2V0czoKPiArCXJlc2V0X2NvbnRyb2xfYnVsa19hc3NlcnQo
+aW5zdC0+bnVtX3JzdHMsIGluc3QtPnJzdHMpOwo+ICtkaXNhYmxlX2Nsb2NrczoKPiArCWNsa19i
+dWxrX2Rpc2FibGVfdW5wcmVwYXJlKGluc3QtPm51bV9jbGtzLCBpbnN0LT5jbGtzKTsKPiArCXJl
+dHVybiByZXQ7Cj4gK30KCltTZXZlcml0eTogTWVkaXVtXQpJcyBpdCBzYWZlIHRvIG1peCBnb3Rv
+LWJhc2VkIGVycm9yIGhhbmRsaW5nIHdpdGggc2NvcGUtYmFzZWQgY2xlYW51cCBoZXJlPwoKQWNj
+b3JkaW5nIHRvIHRoZSBjbGVhbnVwIHN1YnN5c3RlbSBkb2N1bWVudGF0aW9uLCB1c2FnZSBvZiBn
+b3RvIGFuZCBjbGVhbnVwCmhlbHBlcnMgbGlrZSBndWFyZChtdXRleCkgc2hvdWxkIG5ldmVyIGJl
+IG1peGVkIGluIHRoZSBzYW1lIGZ1bmN0aW9uLiBDYW4KdGhpcyBjcmVhdGUgY29uZnVzaW5nIGV4
+ZWN1dGlvbiBvcmRlciBhbmQgcmVzb3VyY2Ugb3duZXJzaGlwPwoKW1NldmVyaXR5OiBNZWRpdW1d
+CkFyZSB3ZSBtaXNzaW5nIGEgc3RlcCB0byByZXZlcnQgdGhlIGhhcmR3YXJlIGNsb2NrIHJlcXVl
+c3Qgb24gdGhlIGVycm9yIHBhdGg/CgpFYXJsaWVyIGluIHRoaXMgZnVuY3Rpb24sIHRoZSByZWZl
+cmVuY2UgY2xvY2sgcmVxdWVzdCBpcyBlbmFibGVkIHZpYQpzZXRfcG1ndF9yZWZfY2xrX3JlcV9u
+KCkuIElmIGNsa19idWxrX3ByZXBhcmVfZW5hYmxlKCkgb3IKcmVzZXRfY29udHJvbF9idWxrX2Rl
+YXNzZXJ0KCkgZmFpbCwgdGhlIGVycm9yIHBhdGhzIGRpc2FibGUgdGhlIGNsb2NrcwphbmQgYXNz
+ZXJ0IHJlc2V0cywgYnV0IHRoZXkgZG9uJ3Qgc2VlbSB0byBjYWxsIHNldF9wbWd0X3JlZl9jbGtf
+cmVxX24oKQp0byBkaXNhYmxlIHRoZSBjbG9jayByZXF1ZXN0LiBXaWxsIHRoaXMgbGVhdmUgdGhl
+IGhhcmR3YXJlIGNsb2NrIHJlcXVlc3QKcGVybWFuZW50bHkgYXNzZXJ0ZWQgb24gZmFpbHVyZT8K
+Cj4gK3N0YXRpYyBpbnQgZ29vZ2xlX3VzYjNfcGh5X2V4aXQoc3RydWN0IHBoeSAqX3BoeSkKPiAr
+ewpbIC4uLiBdCj4gKwlzZXRfcG1ndF9yZWZfY2xrX3JlcV9uKGdwaHksIGZhbHNlKTsKPiArCXJl
+c2V0X2NvbnRyb2xfYnVsa19hc3NlcnQoaW5zdC0+bnVtX3JzdHMsIGluc3QtPnJzdHMpOwo+ICsJ
+Y2xrX2J1bGtfZGlzYWJsZV91bnByZXBhcmUoaW5zdC0+bnVtX2Nsa3MsIGluc3QtPmNsa3MpOwo+
+ICsKPiArCXJldHVybiAwOwo+ICt9CgpbU2V2ZXJpdHk6IEhpZ2hdCklzIHRoaXMgaGFyZHdhcmUg
+dGVhcmRvd24gc2VxdWVuY2UgaW4gdGhlIGNvcnJlY3Qgb3JkZXI/CgpJbiBnb29nbGVfdXNiM19w
+aHlfaW5pdCgpLCB0aGUgc2VxdWVuY2UgaXM6CjEpIFJlcXVlc3QgcmVmZXJlbmNlIGNsb2NrCjIp
+IEVuYWJsZSBidXMgY2xvY2tzCjMpIERlYXNzZXJ0IHJlc2V0cwoKSGVyZSBpbiB0aGUgZXhpdCBm
+dW5jdGlvbiwgdGhlIHJlZmVyZW5jZSBjbG9jayByZXF1ZXN0IGlzIHJlbGVhc2VkIGZpcnN0LAp0
+aGVuIHJlc2V0cyBhcmUgYXNzZXJ0ZWQsIGFuZCBidXMgY2xvY2tzIGFyZSBkaXNhYmxlZCBsYXN0
+LiBDb3VsZCByZWxlYXNpbmcKdGhlIHJlZmVyZW5jZSBjbG9jayB3aGlsZSB0aGUgUEhZIGlzIHN0
+aWxsIGFjdGl2ZSBhbmQgb3V0IG9mIHJlc2V0IGxlYWQgdG8KYnVzIGZhdWx0cyBhbmQgc3lzdGVt
+IGxvY2t1cHM/Cgo+ICtzdGF0aWMgaW50IGdvb2dsZV91c2IzX3BoeV9wb3dlcl9vbihzdHJ1Y3Qg
+cGh5ICpfcGh5KQo+ICt7ClsgLi4uIF0KPiArCXJldCA9IHdhaXRfdGNhX3hhX2FjayhncGh5KTsK
+PiArCWlmIChyZXQpIHsKPiArCQlkZXZfZXJyKGdwaHktPmRldiwgIlBvUi0+TkMgdHJhbnNpdGlv
+biB0aW1lb3V0Iik7Cj4gKwkJcmV0dXJuIHJldDsKPiArCX0KPiArCj4gKwlyZXQgPSBwcm9ncmFt
+X3RjYV9sb2NrZWQoZ3BoeSk7Cj4gKwo+ICsJcmV0dXJuIHJldDsKPiArfQoKW1NldmVyaXR5OiBI
+aWdoXQpXaWxsIHRoaXMgdW5jb25kaXRpb25hbGx5IHRpbWUgb3V0IG9uIHN1YnNlcXVlbnQgcG93
+ZXItb24gY2FsbHM/CgpUaGlzIGZ1bmN0aW9uIHdhaXRzIGZvciBhIFBvUi0+TkMgdHJhbnNpdGlv
+biBieSBjaGVja2luZyB0aGUKVENBX0lOVFJfU1RTX1hBX0FDVF9FVlQgYml0LiBIb3dldmVyLCB0
+aGlzIGludGVycnVwdCBiaXQgaXMgZXhwbGljaXRseQpjbGVhcmVkIGF0IHRoZSBlbmQgb2YgcHJv
+Z3JhbV90Y2FfbG9ja2VkKCkuCgpJZiB0aGUgUEhZIGZyYW1ld29yayBjYWxscyBwaHlfcG93ZXJf
+b24oKSBzZXF1ZW50aWFsbHkgKGZvciBleGFtcGxlLApkdXJpbmcgUE0gcnVudGltZSByZXN1bWUp
+IHdpdGhvdXQgYSBwcmVjZWRpbmcgcGh5X2luaXQoKSB0byB0cmlnZ2VyIGEKcGh5c2ljYWwgcmVz
+ZXQsIHRoZSBiaXQgd2lsbCByZW1haW4gMC4gRG9lcyB0aGlzIGNhdXNlIHdhaXRfdGNhX3hhX2Fj
+aygpCnRvIGluZXZpdGFibHkgdGltZSBvdXQgYWZ0ZXIgMi41IHNlY29uZHM/Cgo+IEBAIC0yMTIs
+MzkgKzQ5MCw0NSBAQCBzdGF0aWMgaW50IGdvb2dsZV91c2JfcGh5X3Byb2JlKHN0cnVjdCBwbGF0
+Zm9ybV9kZXZpY2UgKnBkZXYpClsgLi4uIF0KPiArCWdwaHktPnVzYjNfY29yZV9iYXNlID0gZGV2
+bV9wbGF0Zm9ybV9pb3JlbWFwX3Jlc291cmNlX2J5bmFtZShwZGV2LAo+ICsJCQkJCQkJCSAgICAg
+InVzYjNfY29yZSIpOwo+ICsJaWYgKElTX0VSUihncGh5LT51c2IzX2NvcmVfYmFzZSkpCj4gKwkJ
+cmV0dXJuIGRldl9lcnJfcHJvYmUoZGV2LCBQVFJfRVJSKGdwaHktPnVzYjNfY29yZV9iYXNlKSwK
+PiArCQkJCSAgICAiaW52YWxpZCB1c2IzIGNvcmVcbiIpOwo+ICsKCltTZXZlcml0eTogTWVkaXVt
+XQpJcyB0aGUgdXNiM19jb3JlIG1lbW9yeSByZWdpb24gYWN0dWFsbHkgdXNlZCBhbnl3aGVyZSBp
+biB0aGUgZHJpdmVyPwoKVGhpcyBtYXBzIHRoZSB1c2IzX2NvcmUgcmVzb3VyY2UgYW5kIGFib3J0
+cyB0aGUgcHJvYmUgaWYgaXQgaXMgbWlzc2luZywKYnV0IHRoZSByZXN1bHRpbmcgZ3BoeS0+dXNi
+M19jb3JlX2Jhc2UgcG9pbnRlciBkb2Vzbid0IGFwcGVhciB0byBiZQpyZWZlcmVuY2VkIGxhdGVy
+LiBDb3VsZCB0aGlzIGludHJvZHVjZSBhbiB1bm5lY2Vzc2FyeSBzdHJpY3QgZGVwZW5kZW5jeQp0
+aGF0IGJyZWFrcyB0aGUgcHJvYmUgb24gb2xkZXIgRGV2aWNlIFRyZWVzIGxhY2tpbmcgdGhpcyBy
+ZXNvdXJjZT8KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMv
+cGF0Y2hzZXQvMjAyNjA2MTUxODA1NTYuNDA0ODE4NC0yLXJkYmFiaWVyYUBnb29nbGUuY29tP3Bh
+cnQ9MQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
+cGh5Cg==
