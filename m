@@ -4,144 +4,146 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 037DECD98DA
-	for <linux-phy@archiver.kernel.org>; Mon, 15 Jun 2026 10:44:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C60ADCD98DA
+	for <linux-phy@archiver.kernel.org>; Mon, 15 Jun 2026 11:42:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1tPN3g7CyWx0/cviN9UXgUZgbmZeK0Xy8PpHZIN5m4A=; b=EqbcS1aW6CEaPY
-	ete3ORCIyk1G2TvtUebizwEFrj9XKKujGMBb8Ho803aDqDf4TCQt4BhCUiG0rfVsZB5bgd+XV+u6Y
-	FdLkIrHT9sw3u/fpRNknJW6T34iMskSxE13X3ojKbrqX5fdmjHX/Naup5Jtu8WoZIzLBMzSMkYUw9
-	8rb8Y1pa/XnAGiYWq7MS2cOSd468kVJyzE3eMIaU/PC8nEOmJ8L9T9FLK0fgjC7nvkcvKkY41eYiG
-	jxPIF2z6FcO2wmsWavdtWavA7lxED9BJhuItLll0ZCbFIBFmSLk6959gX2wfBy7nPFX2/dEvflJRF
-	xlwebqABXMAMqrq9o22A==;
+	List-Owner; bh=H8vxy60lqdsEafDjqiaYLwNpQSlz1SVkO2fjWilLCO0=; b=eY2vVJclu8pw5Z
+	KxAdt2Z3OKIOwPLkmNx4xNKCL528JxUuthNoINJLhqpngmqo6Hp7vo+BzkUBzczg332IE4ixkJqpY
+	CzUjmX6857UDrqeeEemSbORF6V+Yr9eiJ/T5hRcG8HLru5CtWkuOxOddgKkUNDxkWjCxOjmJNjWYG
+	cNj2CrCaPwjcDj5zzoDm2tEuoPIOkolkQaY3eCVq89hM2gnT12DZNyHVHSIP2DcVdoDYMo/Fvg0RV
+	UVytcuuOESjjkGCMPNaFUtcaktF1SkQp9oD0iyfrkMIWKDpaEqmxxFqKYqRaYMLfpu6kwHfz1QHxI
+	Hs/hXE4faz9Wrr2afvyw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZ4oD-0000000E3wG-0mSZ;
-	Mon, 15 Jun 2026 10:44:49 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wZ5hY-0000000E78U-1ujN;
+	Mon, 15 Jun 2026 11:42:00 +0000
+Received: from mail-japanwestazon11010025.outbound.protection.outlook.com ([52.101.228.25] helo=OS0P286CU011.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZ4oA-0000000E3vk-3oTE
+	id 1wZ5hU-0000000E782-2yp6
 	for linux-phy@lists.infradead.org;
-	Mon, 15 Jun 2026 10:44:48 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65FAIbNs3813829
-	for <linux-phy@lists.infradead.org>; Mon, 15 Jun 2026 10:44:46 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	3L1aoItvXKgSKcXjoUT8ZFQKPYF1tzuxSSufM8weEwQ=; b=Iwx9c5ehwf7NA5sY
-	S2UVAgF9R04vz16jNYGptgnaZUIov2r5+bfxWaSSjZcRM5lQsgKkWv4mgcj1D/ro
-	9LpOTTORjk1pB+ueUvI3S/0pdN2t6uJb2RngR/5EMYZvKz2/KDY48UvIqKuh9Xvz
-	/2mpIep3hNp2XpiNoWqzWLBpvSwveu2V6R0mEQ7spq+py0B5/Lw7HbohEadhUenN
-	DQp3hUUABbecLoTvqNDQuIWxIWwZs95FFpHdM/rS4/g5cKpAJoC2BztxYiNCQDVk
-	pqdBYEGRvCahSEcVtNVAgZMbvzqRjNNT6Q0Vs9rU565iU7sxLvZIc14H+b7NfCke
-	94Cwdg==
-Received: from mail-qv1-f72.google.com (mail-qv1-f72.google.com [209.85.219.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4etetjr9d5-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 15 Jun 2026 10:44:45 +0000 (GMT)
-Received: by mail-qv1-f72.google.com with SMTP id 6a1803df08f44-8ccd9683350so13083456d6.0
-        for <linux-phy@lists.infradead.org>; Mon, 15 Jun 2026 03:44:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1781520285; x=1782125085; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=3L1aoItvXKgSKcXjoUT8ZFQKPYF1tzuxSSufM8weEwQ=;
-        b=S/uOE8S7o7+q+THywYoUM4nlTuAhXGL4HQTX1oZlvEK0D4K3ffs5aaeFJOsamM7yEk
-         XoNrwYlg9A2jfYjvH8kNV0Vj81CZQby02e60fgzA6Qr85BefSjRbSeEJ2YBGtiSd5E2q
-         7kmybPocQIQ22leROv9cXNlzkkpWky3nCnPdnxp5xztgLXBksZraEH9bK3ug8PuInvwZ
-         w2qUAgPjlAqZQjX6qAr3MbuYDvUiapaCvjxpWWBZ9ATnPKLoLOeaXwrfo4Als1pqi07C
-         hP6cOUQo+/FOnCN6WhQVKQdK7oIE4Tb0Ji5foJ2+FxxuM5mFQhT8bixbdn5aA/WjxUdX
-         7RKg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1781520285; x=1782125085;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=3L1aoItvXKgSKcXjoUT8ZFQKPYF1tzuxSSufM8weEwQ=;
-        b=h0aV28S6MVTlO4APwU+ezeF2ur3K406JALgKca3yBAzEPe9zHiiMrbZdiuH+wFgHJA
-         uMGtUf7aHe0HHkxeAGoVsIdsXN9IJzmmDHTED2m5a42aE3NPyDKpvR4PYQ2kHWgHUtsM
-         z6JVhVmj9sm62q5q+OZTZcQKkMm6yLz74R6WKg2NET96MTUgcMHshXW1EfiCTthcgChn
-         c3QE/l3WQInhjNnyQ+Ta+gjF9hyBboeK26FN4qpJWY2/RWgm77rx4/Qc6tiFkrP7ud/A
-         ZSsS1lh7ntucxE2d27raVz49zuI1hAs1dNZVZeIDjoXkERohS8jaXzfLOpg4oXdPZZrj
-         TaEA==
-X-Forwarded-Encrypted: i=1; AFNElJ/OnZOvgNW5bYjvGum953VNtzNb2rSf3BVH5bSYOcjK9yKesTF8Clttjx83cS23GlmAZLiwGhoJhZs=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzlZ05ktXmquZpAJnOoFMxWZHxIqqz67FahealeFPoNe3TWGQzE
-	vGHG7Y0HI80BSP8cAQd3x1nkg6LbtXIX55GMZzXib6QKgiHHDHQixljjD0dEnJbMTKFLYYumDVK
-	S+GFQwa7n54ZqTya+ax4DegPJrnM7WqZ7TLfyLuHZYc3383DHFVScZ+9AnkvYR8mM80/r
-X-Gm-Gg: Acq92OGGVqEgSILCyUIT5gAbyzgi2HBcCNpuJPr1TrQYMQ3cDAS82Uh66rRFWLX87cj
-	73KlDhiEFWtiVgaGe2f9hIWNlOjadMsKJGkvavCPbeOWKBbXY11dy+cjPACsbBisCa4WUgwcucC
-	2GOrnJy5Ke33+Fa9lgdsm7gio/4LzMfU1nM7p0g58I9j45DPeuwQOT7rSxvZm/uvRW1ZfDw1Ci3
-	kyP79QEBlvYF8VU692F6zLAP0xSqaujPpwx2qo9wsrCEIpcAx/xruW91ExF6qKVMJMeLdGR5v8f
-	l0lkxktZJ+ez9ZOxXH31Ca8GiDJ5O3nfJOBlrOQIWhxXEOVKB/IfToGTae2Orz18Egsv5fVNHpG
-	BKVvTmlIlt5qNUhsmopzxqEIIjoq+1S2D77+hqEXKcMjp1A==
-X-Received: by 2002:a05:620a:2892:b0:8f3:5988:f97c with SMTP id af79cd13be357-9161bc9eeabmr1256415085a.3.1781520284825;
-        Mon, 15 Jun 2026 03:44:44 -0700 (PDT)
-X-Received: by 2002:a05:620a:2892:b0:8f3:5988:f97c with SMTP id af79cd13be357-9161bc9eeabmr1256412585a.3.1781520284254;
-        Mon, 15 Jun 2026 03:44:44 -0700 (PDT)
-Received: from [192.168.120.170] ([178.235.128.140])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-bfdb8341ba5sm444685566b.42.2026.06.15.03.44.41
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 15 Jun 2026 03:44:43 -0700 (PDT)
-Message-ID: <a51b6333-cd5a-4a38-b748-b6623c6a1078@oss.qualcomm.com>
-Date: Mon, 15 Jun 2026 12:44:40 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/4] phy: qcom-qusb2: Fix SM6115 init sequence
-To: Iskren Chernev <me@iskren.info>, Konrad Dybcio <konradybcio@kernel.org>,
-        Vinod Koul <vkoul@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Wesley Cheng <quic_wcheng@quicinc.com>,
-        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-        Bjorn Andersson <andersson@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20260610-topic-8996_61x5_qusb2phy-v1-0-d7135980e78f@oss.qualcomm.com>
- <20260610-topic-8996_61x5_qusb2phy-v1-2-d7135980e78f@oss.qualcomm.com>
- <5b474af3-f651-4a64-a5b9-c18136e589eb@iskren.info>
+	Mon, 15 Jun 2026 11:41:58 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=T9mGkk0OgSOO3VtPH8cnmkrlTIRPnBvoiKZLCh/3OMyGkTcM85FrNaF+L8efSiOcDVwd6LuEylcC3aIdN9Vab/Lu1TOpcd+393DgTUPjM6A+yygpnrP6Dn4aw7ide18XG+ux5MPWpB7mJ9mfNWNfRYK73euTPciEJlxA6LIQqFxSpKgoLFApTjxXfHX9XlT8RIa4Vek1F5OM1NSK/4R6KyY/QRgtZdekpy2rAjf+3nLhIL7wdvz0Mp38peQ5H0sRkgMxqSODFLpJwd0uct5TF02wZDS+m/9ofUSGOctDb5C+0vJRsdWiFnsAVRbeGWKvzGwm+bjMSsRVkaJMavwZtQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=rYntbbQk7LlFQqSyApVxiMuBAtuIQiZaKDFvId2fIIQ=;
+ b=nz6kjws/4IX4BcSbhXwagFltEKbfXZMSLBkV2Kn9mC8aNmcNBcSQ7ImFGQMlhp/Ze2vjtjiS+2sUwbqbvAjXADaN7YojHhUTtpjRddUG2rQGeyR0GlgNvP9I+AzvoRzFgpsUPlL5UF6gLjhcmSeIw5K69MlXWhwRyt2RoNHYH6atPs09az1LXa76zLTK4rzkT8+K83gpwC10pSYteezx/gEL7Ic2lzoImjVR6/jNIvUlEryz2lWiHQ5EtFWybTx3bA5E5mfuDS8Uy3YwVlZW7BmI/bPt6O7V/mnbu3ONqntsjnZXuQFezZJTG4oFKvFaZtd/W+XIpR87ROxDy5kT+w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
+ header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=rYntbbQk7LlFQqSyApVxiMuBAtuIQiZaKDFvId2fIIQ=;
+ b=AE2dAJDOIm8qF4np/DUzO1nDcKmi5PzTtOrj/6iA2hSw6nbPKL4ZYXk1i0Dr//70VnlXiG0RZxT1uZ4lr5zkVwFKGTDX2iYBUdcSAcrX+BM9OCqFGZvH2bDhaSkloCvKrjMn1bOvAaM/WMMGqwgEzy2fOGAt+C+HlaovPBhLPp4=
+Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com (2603:1096:400:3d0::7)
+ by TY6PR01MB17860.jpnprd01.prod.outlook.com (2603:1096:405:346::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.113.18; Mon, 15 Jun
+ 2026 11:41:41 +0000
+Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com
+ ([fe80::87d1:4928:d55:97de]) by TY3PR01MB11346.jpnprd01.prod.outlook.com
+ ([fe80::87d1:4928:d55:97de%4]) with mapi id 15.21.0113.015; Mon, 15 Jun 2026
+ 11:41:41 +0000
+From: Biju Das <biju.das.jz@bp.renesas.com>
+To: Claudiu.Beznea <claudiu.beznea@tuxon.dev>, biju.das.au
+	<biju.das.au@gmail.com>, Yoshihiro Shimoda
+	<yoshihiro.shimoda.uh@renesas.com>, Vinod Koul <vkoul@kernel.org>, Geert
+ Uytterhoeven <geert+renesas@glider.be>, magnus.damm <magnus.damm@gmail.com>
+CC: Neil Armstrong <neil.armstrong@linaro.org>, Philipp Zabel
+	<p.zabel@pengutronix.de>, "linux-renesas-soc@vger.kernel.org"
+	<linux-renesas-soc@vger.kernel.org>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>, Prabhakar Mahadev Lad
+	<prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: RE: [PATCH 09/11] phy: renesas: phy-rcar-gen3-usb2: Fix devm action
+ registration for disabled VBUS regulator
+Thread-Topic: [PATCH 09/11] phy: renesas: phy-rcar-gen3-usb2: Fix devm action
+ registration for disabled VBUS regulator
+Thread-Index: AQHc+ngaWA394/baeES91naIfR5habY/YB4AgAAHtfCAAAiJIA==
+Date: Mon, 15 Jun 2026 11:41:40 +0000
+Message-ID: <TY3PR01MB11346698F20EA409B2481D51486E62@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+References: <20260612143048.317907-1-biju.das.jz@bp.renesas.com>
+ <20260612143048.317907-10-biju.das.jz@bp.renesas.com>
+ <2b794049-0c44-4390-a6cd-e5bde5c5f3ca@tuxon.dev>
+ <TY3PR01MB113466284D6307E1967286AC486E62@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+In-Reply-To: <TY3PR01MB113466284D6307E1967286AC486E62@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+Accept-Language: en-GB, en-US
 Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <5b474af3-f651-4a64-a5b9-c18136e589eb@iskren.info>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjE1MDExMyBTYWx0ZWRfX0SyaUI2fe6Dx
- 0T5z/XdfE3pfo+I+gJdlNXOcyGBaou6C4vF4BUqm4BL1t4RuBJlZcjWhNpJNNmkkAweOvKnV8Lg
- jI8UBa9qvzFuA3dnBLDyS48O2K8myKiXYCr8jQaR8rSVlETAkUnz3SuvyHONccoQ9PQmiKI+SsI
- tTB665QEhxzl1/RoAnHSiiF3ONYx20Mv7aipNJ0D5dTTNZtMGGS5CsWEGD2LLmI4kX7+hC8bE2U
- CmKj78IcT07q9yHkk0fGY9GTkvqTOOroloGqQEfHo+ClbegR1aYv8aRvPMECMEwd6XGatYQ/Gg8
- 3+/+WgNnFwPAATE6NjHuvovyXn+QzcrtL6+42NESzGvh09u7qZxqdGxsjnqheEK+QgQ5dDb2Bph
- u68JDiVBoDVl7uu/TrtEJ8RHDdc5Pf8C1LOc7Ho8bFfyse5Lab2Hy8VlnfkBw6EhswrL4jFrq1p
- Nk7DJnnjjzZtmRHlW+A==
-X-Proofpoint-ORIG-GUID: 8rS3imXB9N3sxn-9vyKWnULtJnmdA4OE
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNjE1MDExMyBTYWx0ZWRfX4T2KhFrMlaP9
- T3rQB5sRxtaGJNmiExzmqu/zAva+WhwlAbRbujDTOazOGHU6K3lyZsgx025+LAjaIAnfG+Y77Ck
- vK9onBpIMdaxUUuYyXzhcSJP7+7xloU=
-X-Authority-Analysis: v=2.4 cv=HttG3UTS c=1 sm=1 tr=0 ts=6a2fd79d cx=c_pps
- a=7E5Bxpl4vBhpaufnMqZlrw==:117 a=PRfkaYvzSr8QmIIGAkY2Sg==:17
- a=IkcTkHD0fZMA:10 a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
- a=H8nO66aeAAAA:8 a=sh5-wexBAAAA:20 a=EUspDBNiAAAA:8 a=MyJ6PO3ExZ6mTeW_YjAA:9
- a=QEXdDO2ut3YA:10 a=pJ04lnu7RYOZP9TFuWaZ:22 a=29nWO70QIcuf0NxZitda:22
- a=bA3UWDv6hWIuX7UZL3qL:22
-X-Proofpoint-GUID: 8rS3imXB9N3sxn-9vyKWnULtJnmdA4OE
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
- definitions=2026-06-15_02,2026-06-15_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 spamscore=0 suspectscore=0 clxscore=1015 impostorscore=0
- malwarescore=0 bulkscore=0 priorityscore=1501 lowpriorityscore=0 phishscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606040000 definitions=main-2606150113
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=bp.renesas.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: TY3PR01MB11346:EE_|TY6PR01MB17860:EE_
+x-ms-office365-filtering-correlation-id: b0dd5db4-3aef-4516-d0ca-08decad3114d
+x-ld-processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|7416014|23010399003|376014|366016|1800799024|56012099006|11063799006|6133799003|4143699003|18002099003|22082099003|38070700021;
+x-microsoft-antispam-message-info: 1gHKH0eNBHpW056lHxe20Sxhx2iauvwTbtTAR+mKRTPXrUxrndNX00RxYHWx0uWr+f3ViLPL7kY8OGGK46wRhsj9jkTZGFVlwuIzXfAgtVd3RRQGDxCQ5HfQ+hYleSqrpyBv4fTxDc+54O2dW0sOU+wtSeBIx4HhMk6rd4Mwfnl9oCcML/z9jqPV2jrVWnIfWKbEA53dz5JWj5vBDw5tkXZOtseYlOMsIKqyLE8SO4x2TRMifccvt3r0NjyHsnVd70lws0cSwzU1hyibfvox9h3GaefwFqv1H1gZ819c3nscPzgw5Mp2z691HOM9x54wKFTzLsKs00pTsMkj6e6KCB0RF0D3LakcecH5w9t7qg2qYchW05ZxseSVNSdDx1RBmT3zMYtVesd9X506vgszOPBymn5jOJYGlzboXjQHNh9BPzDZhlS/BBK1qufAHo6i4U/uEEhYGzVo6ezhU+GMSSxJCxeuhog1ESP6nEiY3r6wo9L4azxl2bvz9hFDn+eOiXXkSl7k1elFBRwUqLB0c7KB2GS606f6xgrccsrMgGf7ITgjWVtQo1BE3XeRKEoXSqpkMgAVzwY3BIFBbELcJf0AyffX0xJMP0MfTn7PUfpv/h+xtWmmIcVS1lHlhrsRE9goQN8S84haNAr4CBtDSosYO/iJYDIiGr/I4KTsBSZk5sMYX5ETULtm6cuPfk876euOe7D8ESF0d9vJDqv0dzSCeR6kx+OT0xTitryjhKW6Mi0CdwJ7PgKU2xd08Zbw
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY3PR01MB11346.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(23010399003)(376014)(366016)(1800799024)(56012099006)(11063799006)(6133799003)(4143699003)(18002099003)(22082099003)(38070700021);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?TlE3bUFQRk9FT3RPTXMydWNTcGtMTjQ0dlJlT0tIV0twK0xvN2pxdCtXUDNO?=
+ =?utf-8?B?dXFJbEs1c1N5SEU4dEllZTdFM3lrSTdYT1RwYm5IMTdhaHp2ZndPL2tvL2k5?=
+ =?utf-8?B?VjEyZjlXOFpnOER3YVFmaWhrdklXU1dkVCt4QXZZVTd2VWJ4bml2d1g3MFNo?=
+ =?utf-8?B?ci9EMFh2RFZHMGdEekdUMTJESUZTZ28yaUNkOVN1OXZnd1YvTXRyaXZlVTM0?=
+ =?utf-8?B?VnRxRG1iSXdhTVkvMmFLTHdIR1RjdnM1MldHR0Y2TXJiS3NHcTNrUUtFNDBq?=
+ =?utf-8?B?RzJGOWc0UWZibHRMVDZuNm5CRUFTWHg4d1FDbWlPeTVwQWp0bUZnTFJpaERr?=
+ =?utf-8?B?bmxVVFdQMDJwbE1PZ2F4bkd1Yld1ekxMbG0wc3g0U2ZHdlZzU3lNQldpY3h4?=
+ =?utf-8?B?eUJYZzZhejY3V0JheGhIeFVGcEpJTHZ0MG4vWUozcDVReXUzWVNZbDlqTllj?=
+ =?utf-8?B?K1d5WDBuMFhQKzZDZTNFU1lQL1J1SUVEVTZyUkVrcFBsYnhYejhtUXdPaklv?=
+ =?utf-8?B?SEFyZ0dUR2syNUdPODZYOXh4eGdoMzdDVUR1cGxEK1o5by9qcXJ4RlFXZVNp?=
+ =?utf-8?B?c1p6bEVqT2oycFdTakdwT1IvV20rbDB1TnFrbnBMcm1rVHlpSU5pKzNxeXVp?=
+ =?utf-8?B?bmZucXNMODFaczlOSFc5YmhWZjZiTzRDZXBadUllVEtyMzRzZzJOQklSR2hh?=
+ =?utf-8?B?eW1EblR2a3FQKzZ0NnU0ZnhBcGFhSFBKSHV0MXBiU1dZK1FIRlFNV01RalJ4?=
+ =?utf-8?B?Zi9JRHhFTklWVmZHNlV5M0FwbkpFUm9hNEFlbVY1dGR3dGVERkpFQWRDQWhr?=
+ =?utf-8?B?enBFbHV3a0FiMDNwWjdCbXJyNXhqSGZJYVNRaTZnQm9yVVdidFREM1IrZXAr?=
+ =?utf-8?B?TnROT2x6cS9UZjlrd3krNkh1akYzT2x1cFZBOE44R3ZuRm5rZkJWYmFmY1d5?=
+ =?utf-8?B?MTJkajZWeWRjeXZEYTlFRVpraCtSdm5HY2R4RkFKb0lrSXE0UnRCK1NYM0pE?=
+ =?utf-8?B?YU5ndEZQdDRqY2FwVkNLRVg5TGF3bUVwWkkxMW9uS0lTUmZCbDBQcW8yOXZX?=
+ =?utf-8?B?aE1RN1ExbzZJdnYxaGFjUFNaU2FZOGlhNGJ6cjQzSlk5MUg1TFFER296ci9w?=
+ =?utf-8?B?VVF4TVhYekRNVDJRS05XSkxublQ4dU1TOXExVVMzWEpQU3lXZDBBQzk1NlRI?=
+ =?utf-8?B?dC80aWZWL2JYRnM3Qjl6cmtYUWJhSGZpT1BKZnZMcEJ0bXFad1ZwTFZwY2V3?=
+ =?utf-8?B?VDAwaXdaUUhZM1FQcWFBSWQ5Tkc2QWlaalpGZW14V21oQVhGOSt1SFN0cDBL?=
+ =?utf-8?B?bGFWTE5memVzVXQ3Zk90SDIwMXFWS1YwdVV3eWtzeGVwY1dhOUZkSUFmVXI3?=
+ =?utf-8?B?cTNHS2F4S2JxNnNsZ1ZldGtBd3VBamZYZ1ZMVHlEazNBRWpJUG5qdkRUODR2?=
+ =?utf-8?B?UXc4aGNmQ0VVWHFGVHZGd0RLR1Zrd2FkbWQzdFlvTG9QVjFWcnkxR05DMytv?=
+ =?utf-8?B?aXhTWjI2elYrM1ZYelhZTFV5SitvQzIySlpPdm9ZNzBMSWhpakR0aXNrZHQr?=
+ =?utf-8?B?dzN0MWdKVjdsb08rbi96QVFQTy8xTDJVajJPZ1pRY2JqOEh3QmFqSGpxMy9o?=
+ =?utf-8?B?U3EwTFl4SjdpeEF3TEFpWlJOUzVvRVI4eWg1R1c1VjZOTlBqQzZIYmRueERM?=
+ =?utf-8?B?TWF1Umw5cjhJOTloS2g5MXhabHI2S29hREc1UTFxN2t0eTQvUmtGOFRWSXE0?=
+ =?utf-8?B?MVAvdDVDN0JCejlVK21Pajhmc3lZbmJaQ3RJWXJTNEpkd0xqMkFKUkxyLzNG?=
+ =?utf-8?B?NkxtakdHTjBQUVhUclJFS1BFdHBKdkx6WE1XVXNhekoxZ2JnQXB0ZTdUd0Nj?=
+ =?utf-8?B?MTRFVEtybkxYRy9Dcy9UdHAxVDJuUW5QRm53MSs0NDdBRUNTNko2b3RGbG1Y?=
+ =?utf-8?B?L0gxaEdGdGlCaU4waDgvQ3VDYTNDSFd2bWFsYk12ZWdzQW1rc21LakpUclJ1?=
+ =?utf-8?B?dWwrSW1wV0NTZ1ZzbVJKZHhZVE5kWVR4MEhDZVVvTGNscVRZZkY0Qm0wSWNF?=
+ =?utf-8?B?Y3dLaDM3VHlnZFd2MjBjV1MvS1J3MFFnU1ltMnZCVk1FMVRmeFhwbEVFOU1y?=
+ =?utf-8?B?eUJjcjlFS1MyVEhZb3lrbTg0MDNPOEJHbXJPQnQwK0RWMjZZTVVrODl1ZkRr?=
+ =?utf-8?B?VjBzaEtIbmZOOTI2aHdEZ1QwVFZFcTM2YVMwaFNMTzc3TVYwcjV4NjY1UnN4?=
+ =?utf-8?B?Z0kvaHVTRWNxNEFHdUQ4SW40YjlydGt2dVJpRStEM1hSaXpuek1WVGZkL0Vj?=
+ =?utf-8?B?V0lRZW1iN2ZtRXQ2VHpoaVJMeEtUTG5DUHlNcDlIcHREaExWM0RDQT09?=
+MIME-Version: 1.0
+X-OriginatorOrg: bp.renesas.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: TY3PR01MB11346.jpnprd01.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b0dd5db4-3aef-4516-d0ca-08decad3114d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Jun 2026 11:41:41.0285
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 786HxB5CciylvzXkA7igSWFtYP6QgXxnu3HwM40K4JO5aWxP5DosT8m0KheBix3XCI6N3eNc5RSolMLF0IMi/sHTHGu4fwatEpHw0cZJYHQ=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY6PR01MB17860
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260615_034446_978977_94D94C98 
-X-CRM114-Status: GOOD (  12.12  )
+X-CRM114-CacheID: sfid-20260615_044156_796973_DDB8E8AC 
+X-CRM114-Status: GOOD (  25.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -158,35 +160,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 6/14/26 2:29 PM, Iskren Chernev wrote:
+Hi Claudiu,
+
+> -----Original Message-----
+> From: Biju Das
+> Sent: 15 June 2026 11:22
+> Subject: RE: [PATCH 09/11] phy: renesas: phy-rcar-gen3-usb2: Fix devm action registration for disabled
+> VBUS regulator
 > 
+> Hi Claudiu,
 > 
-> On 6/10/26 3:04 PM, Konrad Dybcio wrote:
->> From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
->>
->> I don't know where the existing one came from, but it's apparently
->> wrong, according to both docs and a downstream DT [1]. Fix it up.
+> > -----Original Message-----
+> > From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
+> > Sent: 15 June 2026 10:37
+> > Subject: Re: [PATCH 09/11] phy: renesas: phy-rcar-gen3-usb2: Fix devm
+> > action registration for disabled VBUS regulator
+> >
+> > Hi, Biju,
+> >
+> > On 6/12/26 17:30, Biju wrote:
+> > > From: Biju Das <biju.das.jz@bp.renesas.com>
+> > >
+> > > devm_regulator_get_exclusive() initialises the regulator with
+> > > enable_count = 1, requiring the consumer to disable it before release.
+> > >
+> > > Previously, the devm disable action was only registered when the
+> > > regulator was explicitly enabled, causing the cleanup path to skip
+> > > decrementing enable_count on device removal when the regulator was
+> > > left disabled.
+> > >
+> > > Fix this by always registering the devm disable action when the
+> > > regulator is enabled (checked via regulator_is_enabled()), covering
+> > > both the explicitly-enabled case and the initial state set by
+> > > devm_regulator_get_exclusive().
+> > >
+> > > This fixes WARN_ON enable count during regulator release.
+> > >
+> > > Fixes: 24843404efe4 ("phy: renesas: phy-rcar-gen3-usb2: Control VBUS
+> > > for RZ/G2L SoCs")
+> > > Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
+> >
+> > The approach in this patch don't solve the problem, at least on RZ/G3S. See [1] for logs.
+> >
+> > I applied this patch on next-20260610:
+> >
+> > git log --oneline -2
+> > afe09f11d549 (HEAD) phy: renesas: phy-rcar-gen3-usb2: Fix devm action
+> > registration for disabled VBUS regulator
+> > abe651837cb3 (tag: next-20260610, linux-next/master) Add linux-next
+> > specific files for 20260610
+> >
+> > [1]
+> > https://github.com/claudiubeznea/logs/blob/2f1bab20407dfe6031385819ffe
+> > abfc4eac772bd/logs
 > 
-> They came from DTB extracted from a running billie2 (OnePlus Nord N100):
-> [1] https://mainlining.dev/wp-content/uploads/2021/02/03_dtbdump_Qualcomm_Technologies_Inc._Bengal_SoC.dts
-> 
-> The phone was bough early after launch, so it could have been wrong/updated later.
+> I have tested only with RZ/G3L host and I don't see the issue.
+> How can the issue be reproduced? It could be related to RZ/G3S.
+> I have executed the following tests and don't see any issue.
+> Can you please try the same tests on RZ/G3S?
+> Is unbind/bind ever worked on RZ?G3S previously?
 
-Good to see you're still around!
+Looks like your issue is related to USB function/gadget driver related.
 
-Looks like vendor tuning. I see that even the initial commit for
-6115 had the init sequence I posted. And the OnePlus sources have
-what seems like a project-specific local copy of the DTSI:
+I was testing with USB2.0 host and I did not face this issue.
 
-https://github.com/OnePlusOSS/android_kernel_oneplus_sm4250/blob/oneplus/SM4250_Q_10.0/arch/arm64/boot/dts/vendor/qcom/bengal-usb.dtsi#L145
-https://github.com/OnePlusOSS/android_kernel_oneplus_sm4250/blob/oneplus/SM4250_Q_10.0/arch/arm64/boot/dts/vendor/20882/bengal-usb.dtsi#L148
+But after enabling the USB function, I can reproduce the issue you mentioned.
 
-To support that, we should add a new property to override the TUNEx
-registers - like e.g. qcom,hstx-trim-value that's already consumed
+Reason:
+rcar_gen3_phy_usb2_power_off() is not called during usbhs/gadget unbind.
 
-Would you like to look into that, or should I take this?
+You can verify regulator count with 
 
-Konrad
+cat /sys/kernel/debug/regulator/regulator_summary
+
+Cheers,
+Biju
 
 -- 
 linux-phy mailing list
