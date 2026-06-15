@@ -4,66 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91163CD98CE
-	for <linux-phy@archiver.kernel.org>; Mon, 15 Jun 2026 07:02:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C382CD98CE
+	for <linux-phy@archiver.kernel.org>; Mon, 15 Jun 2026 07:09:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=C9cAvl89RWB/M6VcipaIdWizljiwH1+bbVQavPyaHP0=; b=RINeK9RfqRXHdC
-	27LXp65pB3dpPsm7mgd1PCMeP8DXg/HhIE7eXLCs2WOUwNle0S3s9GTZAtIzHq1qrT94f1UWuIm0V
-	z3VrLwSHivpSlRVqNANmuvJFaKK3Od0iuOZOjWQRPrwzTM0CsmMOqoZi9tqSOgiPm2f7WjgxQDKBt
-	98zPMuxkgJ5gIwyzNRirjb3ByTP5ksAmVD8woJEu6gh7ObtdmQJ7wh7Dn3sKtjfrJOHsA/SkyBK20
-	2OQGNZdQlQuPTu4SLrpsrWxhsvkAOmbtl9wZawvjh5tKOyx6z/oHuYgtVkl6mCv+UBqr/sirWO+H7
-	8RvP/urtZDQi2bVroqaA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5w3bKBLIn3BFxcaVhCsBMRxicNvpesNQPXru359HacY=; b=tU5h5Drr8+V/wM
+	awM2kpXKdpXcoOqI69eBCD7hRUTZ61KxihfjlaL6LKpVFN9YRt1UAQMNtXi6/O1ocikIqRwwlm4JS
+	L2UQADvwHdw0qX0o+90CTwFWai/bvpeSUisDWLX8WY0NWMKsDzjp7vpasIfuX4bXchXFj9XUJvGZr
+	VcW6UzqtU5BmCjeLd8l03QB2xzdUX6CoUHXx0z4Nip7Yrt4eQuHRJxPdbFLE/e9S0HhL9E/5AVf1U
+	hHoprdyWy/TwDsvY7iN39ANmDnTp4W2SjMq3w4N6h6pIhMepdFtU4ti9h4dOR/OSV1L6heUN0XxWA
+	7JNJpAXdYpEb5ozQllpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZ1L5-0000000DjTQ-0g2x;
-	Mon, 15 Jun 2026 07:02:31 +0000
-Received: from smtp25.cstnet.cn ([159.226.251.25] helo=cstnet.cn)
+	id 1wZ1S4-0000000Dk3I-0XCK;
+	Mon, 15 Jun 2026 07:09:44 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZ1L2-0000000DjSR-1xY2
+	id 1wZ1S2-0000000Dk39-3QsW
 	for linux-phy@lists.infradead.org;
-	Mon, 15 Jun 2026 07:02:29 +0000
-Received: from localhost.localdomain (unknown [111.196.245.140])
-	by APP-05 (Coremail) with SMTP id zQCowAAHfO+Boy9q4SWUEw--.39269S2;
-	Mon, 15 Jun 2026 15:02:26 +0800 (CST)
-From: Pengpeng Hou <pengpeng@iscas.ac.cn>
-To: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Johan Hovold <johan+linaro@kernel.org>,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Cc: pengpeng@iscas.ac.cn
-Subject: [PATCH] phy: ti: twl4030-usb: unwind late probe failures
-Date: Mon, 15 Jun 2026 15:02:08 +0800
-Message-ID: <20260615070211.59144-1-pengpeng@iscas.ac.cn>
-X-Mailer: git-send-email 2.50.1
-MIME-Version: 1.0
-X-CM-TRANSID: zQCowAAHfO+Boy9q4SWUEw--.39269S2
-X-Coremail-Antispam: 1UD129KBjvJXoWxWFWDCw4DGw47Gw1Dur4xCrg_yoW5Ar48pr
-	WrWa4rKrsYg347t39xAr48Xa45CrW3t3y7GryIg3yY9F1Fgw4qvay3G3WYqa18tF95Ga1D
-	XFn8tFWfCFsrWF7anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDU0xBIdaVrnRJUUUkE14x267AKxVWUJVW8JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
-	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
-	1l84ACjcxK6xIIjxv20xvE14v26F1j6w1UM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4U
-	JVWxJr1l84ACjcxK6I8E87Iv67AKxVW0oVCq3wA2z4x0Y4vEx4A2jsIEc7CjxVAFwI0_Gc
-	CE3s1le2I262IYc4CY6c8Ij28IcVAaY2xG8wAqx4xG64xvF2IEw4CE5I8CrVC2j2WlYx0E
-	2Ix0cI8IcVAFwI0_Jw0_WrylYx0Ex4A2jsIE14v26r4j6F4UMcvjeVCFs4IE7xkEbVWUJV
-	W8JwACjcxG0xvY0x0EwIxGrwACjI8F5VA0II8E6IAqYI8I648v4I1lc7CjxVAaw2AFwI0_
-	JF0_Jw1l42xK82IYc2Ij64vIr41l4I8I3I0E4IkC6x0Yz7v_Jr0_Gr1lx2IqxVAqx4xG67
-	AKxVWUJVWUGwC20s026x8GjcxK67AKxVWUGVWUWwC2zVAF1VAY17CE14v26r126r1DMIIY
-	rxkI7VAKI48JMIIF0xvE2Ix0cI8IcVAFwI0_JFI_Gr1lIxAIcVC0I7IYx2IY6xkF7I0E14
-	v26F4j6r4UJwCI42IY6xAIw20EY4v20xvaj40_Jr0_JF4lIxAIcVC2z280aVAFwI0_Gr0_
-	Cr1lIxAIcVC2z280aVCY1x0267AKxVW8Jr0_Cr1UYxBIdaVFxhVjvjDU0xZFpf9x0JU2Q6
-	JUUUUU=
-X-Originating-IP: [111.196.245.140]
-X-CM-SenderInfo: pshqw1xhqjqxpvfd2hldfou0/
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260615_000228_877599_0FDD5751 
-X-CRM114-Status: GOOD (  10.66  )
+	Mon, 15 Jun 2026 07:09:42 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 452246008A;
+	Mon, 15 Jun 2026 07:09:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AC6BE1F000E9;
+	Mon, 15 Jun 2026 07:09:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1781507382;
+	bh=3z9w31comVkcUFWVzFIpmJGFQFvD2zUNOfUcs6acpBg=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=JPGf8J5cY1Yb+6zCUkcDE8XnTEqlR5HxKyIghyhsj9EneiLPRoL/aO3XD/0eVGuSn
+	 U7rdnO9LR8Dj1OieVM4DU7LuSRovEPWmD3W+FNJZomohnpL5JL1JxlyJZOfgVNyvFT
+	 5jzGcAwLFIz1nj3cthbTZwp6ez3s/gDYLpm3WCdsiic75fmLsueOh42YFXJfMnWJbd
+	 WKbt3ClTY2vkvCjooe5m0RY+YjDDFYxpJezYoWFaCfPfU4ts2mMsQgc8sU3jin5g2b
+	 QIe4PjX9Wi5ldj43zJHhKCDQuzPKEc2FXqBP24OJzN8CCv7OzxrzwFeXUtP6X2/mjn
+	 WiNGd2/kRARIw==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH] phy: broadcom: brcm-usb: unwind late probe failures
+To: "Pengpeng Hou" <pengpeng@iscas.ac.cn>
+Cc: linux-phy@lists.infradead.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20260615070123.51155-1-pengpeng@iscas.ac.cn>
+References: <20260615070123.51155-1-pengpeng@iscas.ac.cn>
+Date: Mon, 15 Jun 2026 07:09:41 +0000
+Message-Id: <20260615070941.AC6BE1F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,103 +61,73 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-twl4030_usb_probe() publishes the USB PHY and may create the vbus sysfs
-file before enabling runtime PM and requesting the IRQ.
-
-If the IRQ request or PHY lookup fails, probe returns directly. That
-leaves the USB PHY registered, can leave the vbus sysfs file published,
-and leaves the runtime-PM get from probe unbalanced. The return value
-from usb_add_phy_dev() is also ignored.
-
-Check usb_add_phy_dev(), remember whether the vbus file was created, and
-unwind the runtime-PM, sysfs and USB-PHY state on the late failure paths.
-
-Signed-off-by: Pengpeng Hou <pengpeng@iscas.ac.cn>
----
- drivers/phy/ti/phy-twl4030-usb.c | 25 +++++++++++++++++++++----
- 1 file changed, 21 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/phy/ti/phy-twl4030-usb.c b/drivers/phy/ti/phy-twl4030-usb.c
-index a26aec3ab29e..6a5968e6cfd8 100644
---- a/drivers/phy/ti/phy-twl4030-usb.c
-+++ b/drivers/phy/ti/phy-twl4030-usb.c
-@@ -162,6 +162,7 @@ struct twl4030_usb {
- 	enum musb_vbus_id_status linkstat;
- 	atomic_t		connected;
- 	bool			vbus_supplied;
-+	bool			vbus_file;
- 	bool			musb_mailbox_pending;
- 	unsigned long		runtime_suspended:1;
- 	unsigned long		needs_resume:1;
-@@ -746,11 +747,15 @@ static int twl4030_usb_probe(struct platform_device *pdev)
- 		dev_err(&pdev->dev, "ldo init failed\n");
- 		return err;
- 	}
--	usb_add_phy_dev(&twl->phy);
-+	err = usb_add_phy_dev(&twl->phy);
-+	if (err)
-+		return err;
- 
- 	platform_set_drvdata(pdev, twl);
- 	if (device_create_file(&pdev->dev, &dev_attr_vbus))
- 		dev_warn(&pdev->dev, "could not create sysfs file\n");
-+	else
-+		twl->vbus_file = true;
- 
- 	ATOMIC_INIT_NOTIFIER_HEAD(&twl->phy.notifier);
- 
-@@ -773,18 +778,29 @@ static int twl4030_usb_probe(struct platform_device *pdev)
- 	if (status < 0) {
- 		dev_dbg(&pdev->dev, "can't get IRQ %d, err %d\n",
- 			twl->irq, status);
--		return status;
-+		err = status;
-+		goto err_runtime;
- 	}
- 
- 	if (pdata)
- 		err = phy_create_lookup(phy, "usb", "musb-hdrc.0");
- 	if (err)
--		return err;
-+		goto err_runtime;
- 
- 	pm_runtime_mark_last_busy(&pdev->dev);
- 	pm_runtime_put_autosuspend(twl->dev);
- 
- 	return 0;
-+
-+err_runtime:
-+	pm_runtime_dont_use_autosuspend(&pdev->dev);
-+	pm_runtime_put_noidle(twl->dev);
-+	pm_runtime_disable(&pdev->dev);
-+	if (twl->vbus_file)
-+		device_remove_file(twl->dev, &dev_attr_vbus);
-+	usb_remove_phy(&twl->phy);
-+
-+	return err;
- }
- 
- static void twl4030_usb_remove(struct platform_device *pdev)
-@@ -795,7 +811,8 @@ static void twl4030_usb_remove(struct platform_device *pdev)
- 	usb_remove_phy(&twl->phy);
- 	pm_runtime_get_sync(twl->dev);
- 	cancel_delayed_work_sync(&twl->id_workaround_work);
--	device_remove_file(twl->dev, &dev_attr_vbus);
-+	if (twl->vbus_file)
-+		device_remove_file(twl->dev, &dev_attr_vbus);
- 
- 	/* set transceiver mode to power on defaults */
- 	twl4030_usb_set_mode(twl, -1);
--- 
-2.50.1 (Apple Git-155)
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
+IFtIaWdoXSBNb2RpZnlpbmcgYSBzdGF0aWMgZ2xvYmFsIHN5c2ZzIGF0dHJpYnV0ZSBhcnJheSBk
+dXJpbmcgcHJvYmUgcGVybWFuZW50bHkgYWx0ZXJzIHRoZSBzdGF0ZSBmb3Igc3Vic2VxdWVudCBk
+ZXZpY2UgaW5zdGFuY2VzLgotIFtIaWdoXSBDbG9jayByZWZlcmVuY2VzIGFuZCBjbG9jayBlbmFi
+bGUgc3RhdGVzIGFyZSBwZXJtYW5lbnRseSBsZWFrZWQgZHVyaW5nIGluaXRpYWxpemF0aW9uIGVy
+cm9yIHBhdGhzLgotLQoKY29tbWl0IDA1ZGZmOTExMTE0Zjc1ZmQzZjhkYzg0NmQ5MDRkNmRlYTdj
+ZWQ2M2UKQXV0aG9yOiBQZW5ncGVuZyBIb3UgPHBlbmdwZW5nQGlzY2FzLmFjLmNuPgoKcGh5OiBi
+cm9hZGNvbTogYnJjbS11c2I6IHVud2luZCBsYXRlIHByb2JlIGZhaWx1cmVzCgpUaGlzIGNvbW1p
+dCBhZGRzIHRyYWNraW5nIGZvciBkeW5hbWljYWxseSBjcmVhdGVkIHJlc291cmNlcyBsaWtlIHRo
+ZSBQTQpub3RpZmllciBhbmQgc3lzZnMgZ3JvdXAgZHVyaW5nIHByb2JlLiBJdCBlbnN1cmVzIHRo
+ZXNlIHJlc291cmNlcyBhcmUKcHJvcGVybHkgdW53b3VuZCBvbiBsYXRlIHByb3ZpZGVyLXJlZ2lz
+dHJhdGlvbiBmYWlsdXJlIHBhdGhzIGFuZCBtYXRjaGVkCmR1cmluZyBkZXZpY2UgcmVtb3ZhbC4K
+Cj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L2Jyb2FkY29tL3BoeS1icmNtLXVzYi5jIGIvZHJp
+dmVycy9waHkvYnJvYWRjb20vcGh5LWJyY20tdXNiLmMKPiBpbmRleCA1OWQ3NTZhMTBkNmNiLi5l
+NjA2ZGI0ODk2OThhIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L2Jyb2FkY29tL3BoeS1icmNt
+LXVzYi5jCj4gKysrIGIvZHJpdmVycy9waHkvYnJvYWRjb20vcGh5LWJyY20tdXNiLmMKClsgLi4u
+IF0KCj4gQEAgLTU0NSw3ICs1NDcsMTEgQEAgc3RhdGljIGludCBicmNtX3VzYl9waHlfcHJvYmUo
+c3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiAgCQlyZXR1cm4gZXJyOwoKW1NldmVyaXR5
+OiBIaWdoXQpUaGlzIGlzIGEgcHJlLWV4aXN0aW5nIGlzc3VlLCBidXQgZG8gd2UgbGVhayBjbG9j
+ayByZWZlcmVuY2VzIGFuZCBlbmFibGUKc3RhdGVzIGR1cmluZyBpbml0aWFsaXphdGlvbiBlcnJv
+ciBwYXRocz8KClRoaXMgZXJyb3IgcGF0aCBjb21lcyByaWdodCBhZnRlciBicmNtX3VzYl9waHlf
+ZHZyX2luaXQoKS4gSW5zaWRlCmJyY21fdXNiX3BoeV9kdnJfaW5pdCgpLCBjbG9ja3MgYXJlIG9i
+dGFpbmVkIHVzaW5nIG5vbi1tYW5hZ2VkIEFQSXMgbGlrZQpvZl9jbGtfZ2V0X2J5X25hbWUoKSBi
+dXQgYXJlIG5ldmVyIHJlbGVhc2VkIHZpYSBjbGtfcHV0KCkuIElmIGFuIGVycm9yCm9jY3VycyBh
+ZnRlciBhIGNsb2NrIGlzIHByZXBhcmVkIGFuZCBlbmFibGVkOgoKYnJjbV91c2JfcGh5X2R2cl9p
+bml0KCkgewogICAgLi4uCiAgICBpZiAoSVNfRVJSKGdwaHkpKSB7CiAgICAgICAgZGV2X2Vycihk
+ZXYsICJmYWlsZWQgdG8gY3JlYXRlIEVIQ0kvT0hDSSBQSFlcbiIpOwogICAgICAgIHJldHVybiBQ
+VFJfRVJSKGdwaHkpOwogICAgfQogICAgLi4uCiAgICBpZiAoSVNfRVJSKHByaXYtPnVzYl8zMF9j
+bGspKSB7CiAgICAgICAgaWYgKFBUUl9FUlIocHJpdi0+dXNiXzMwX2NsaykgPT0gLUVQUk9CRV9E
+RUZFUikKICAgICAgICAgICAgcmV0dXJuIC1FUFJPQkVfREVGRVI7CiAgICAuLi4KfQoKVGhlIGZ1
+bmN0aW9uIHJldHVybnMgd2l0aG91dCBjYWxsaW5nIGNsa19kaXNhYmxlX3VucHJlcGFyZSgpLiBQ
+cm9iZSBkZWZlcnJhbAppcyBwYXJ0aWN1bGFybHkgcHJvYmxlbWF0aWMgYXMgZWFjaCByZXRyeSBp
+bmNyZW1lbnRzIHRoZSBlbmFibGUgY291bnQgYW5kCmNsb2NrIHJlZmVyZW5jZSBjb3VudCB3aXRo
+b3V0IGJvdW5kLCBwZXJtYW5lbnRseSBsZWFraW5nIHJlc291cmNlcy4KCj4gIAlwcml2LT5wbV9u
+b3RpZmllci5ub3RpZmllcl9jYWxsID0gYnJjbV9wbV9ub3RpZmllcjsKPiAtCXJlZ2lzdGVyX3Bt
+X25vdGlmaWVyKCZwcml2LT5wbV9ub3RpZmllcik7Cj4gKwllcnIgPSByZWdpc3Rlcl9wbV9ub3Rp
+ZmllcigmcHJpdi0+cG1fbm90aWZpZXIpOwo+ICsJaWYgKGVycikKPiArCQlkZXZfd2FybihkZXYs
+ICJFcnJvciByZWdpc3RlcmluZyBQTSBub3RpZmllclxuIik7Cj4gKwllbHNlCj4gKwkJcHJpdi0+
+cG1fbm90aWZpZXJfcmVnaXN0ZXJlZCA9IHRydWU7Cj4gIAo+ICAJbXV0ZXhfaW5pdCgmcHJpdi0+
+bXV0ZXgpOwo+ICAKPiBAQCAtNTYxLDYgKzU2Nyw4IEBAIHN0YXRpYyBpbnQgYnJjbV91c2JfcGh5
+X3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gIAllcnIgPSBzeXNmc19jcmVh
+dGVfZ3JvdXAoJmRldi0+a29iaiwgJmJyY21fdXNiX3BoeV9ncm91cCk7CgpbU2V2ZXJpdHk6IEhp
+Z2hdClRoaXMgaXMgYSBwcmUtZXhpc3RpbmcgaXNzdWUsIGJ1dCBkb2VzIG1vZGlmeWluZyB0aGUg
+c3RhdGljIGdsb2JhbCBhcnJheQpicmNtX3VzYl9waHlfYXR0cnMganVzdCBiZWZvcmUgdGhpcyBz
+eXNmc19jcmVhdGVfZ3JvdXAoKSBjYWxsIHBlcm1hbmVudGx5CmFsdGVyIHRoZSBzdGF0ZSBmb3Ig
+c3Vic2VxdWVudCBkZXZpY2UgaW5zdGFuY2VzPwoKSnVzdCBhYm92ZSB0aGlzIGh1bmssIHRoZSBj
+b2RlIG11dGF0ZXMgYSBzaGFyZWQgc3RhdGljIGFycmF5OgoKaWYgKHByaXYtPmluaS5zdXBwb3J0
+ZWRfcG9ydF9tb2RlcyAhPSBVU0JfQ1RMUl9NT0RFX0RSRCkKICAgIGJyY21fdXNiX3BoeV9hdHRy
+c1sxXSA9IE5VTEw7CgpCZWNhdXNlIHRoaXMgYXJyYXkgaXMgc2hhcmVkIGFjcm9zcyBhbGwgZHJp
+dmVyIGluc3RhbmNlcyBpbiB0aGUgbW9kdWxlLAptb2RpZnlpbmcgaXQgdHJ1bmNhdGVzIHRoZSBz
+eXNmcyBhdHRyaWJ1dGVzIGZvciB0aGUgZW50aXJlIG1vZHVsZS4gQW55CnN1YnNlcXVlbnRseSBw
+cm9iZWQgZGV2aWNlcyB3aWxsIGJlIG1pc3NpbmcgdGhlIGR1YWxfc2VsZWN0IGF0dHJpYnV0ZSBl
+dmVuCmlmIHRoZXkgZG8gc3VwcG9ydCBEUkQgbW9kZSwgbGVhZGluZyB0byBpbmNvcnJlY3QgZnVu
+Y3Rpb25hbCBiZWhhdmlvciBmb3IKbXVsdGlwbGUgUEhZIGluc3RhbmNlcy4KCj4gIAlpZiAoZXJy
+KQo+ICAJCWRldl93YXJuKGRldiwgIkVycm9yIGNyZWF0aW5nIHN5c2ZzIGF0dHJpYnV0ZXNcbiIp
+Owo+ICsJZWxzZQo+ICsJCXByaXYtPnN5c2ZzX2dyb3VwX2NyZWF0ZWQgPSB0cnVlOwo+ICAKPiAg
+CS8qIEdldCBwaWFyYmN0bCBzeXNjb24gaWYgaXQgZXhpc3RzICovCj4gIAlybWFwID0gc3lzY29u
+X3JlZ21hcF9sb29rdXBfYnlfcGhhbmRsZShkZXYtPm9mX25vZGUsCgpbIC4uLiBdCgotLSAKU2Fz
+aGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYwNjE1
+MDcwMTIzLjUxMTU1LTEtcGVuZ3BlbmdAaXNjYXMuYWMuY24/cGFydD0xCgotLSAKbGludXgtcGh5
+IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
