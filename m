@@ -4,59 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3AE9FCD98DA
-	for <linux-phy@archiver.kernel.org>; Tue, 16 Jun 2026 08:28:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6A79CD98CF
+	for <linux-phy@archiver.kernel.org>; Tue, 16 Jun 2026 10:01:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O698llW/IIkcmemfHDKfHn+i/yIQLDcFjtrNhBOhYZA=; b=PASmpCgVUiKBI6
-	uaa4Mi4gSgN/CPIsV/b+yDtevGqhzfM/PL3XVmbmUuqL8kb1opZ9rW2fV7b4r0pv27rOnD9USJtT6
-	WKn3MJg7TAZ94BVRB9MAErO9qnnFgbmracBHM9h59gy2XGZVI5nd4DH5zgsV39iWdXxstxTsk0sgJ
-	zGY5VW9zn9bR6GslG1rfRA4N+SJ12d01GQU4mrG8hIp9QmQshxhY6KjYFhOQtNpNQZVMJtUOH2Z0y
-	D8TAyFans2RGppnYJkw9GkPX6CbHVAL88cr3V8xqCe00DmFETTLN7+Qem6DZ9QhVr7TZZ3stadkt0
-	33dvDCFyAIOIsEroSG+Q==;
+	List-Owner; bh=bSjNOPIQolQEsyZGkuEsltjg9pfyZqDOT3uwWOCz0ms=; b=PKaSL19gswMDwN
+	Vh5MC4ebPgFimV09jult49NDN1zvT45KjGLg2Ps9spcq8T2wL4FEvdHnkN48dD+CXYWJMt+5BTto8
+	4o7Uke7dTyWlJexFQEQa19aDDc0JVXxNuBP+GNhKZIuJoEBiMV1o6itfRWxnrRXr90LsBrISFOLZZ
+	c5qIgqcA6xoJL5dJuedv6FCNjq+DrOonfLk4Jo2XSs6qQNYWTZfrSR5u652lMomJ07rzBYgaz6yCU
+	3A/D+nHMsX6/PM5Z7XKUjLzALf02SCYDWp4yqrVz6HmaH4EmZ2ms2+seD3hiCVyF0Z5pRzDnBpQve
+	hC58o5T6EtYbBJ0Lv1aw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZP9h-0000000FS2O-3Oda;
-	Tue, 16 Jun 2026 08:28:21 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wZQc0-0000000FYx7-1Q60;
+	Tue, 16 Jun 2026 10:01:40 +0000
+Received: from mail-dy1-x1330.google.com ([2607:f8b0:4864:20::1330])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZP9f-0000000FS1y-3ySD
+	id 1wZQby-0000000FYvx-1Z5K
 	for linux-phy@lists.infradead.org;
-	Tue, 16 Jun 2026 08:28:20 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 01C25600AB;
-	Tue, 16 Jun 2026 08:28:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 506F51F00A3A;
-	Tue, 16 Jun 2026 08:28:14 +0000 (UTC)
-Message-ID: <c49cce1a-5de3-4741-b49a-0fdef9dce9e5@tuxon.dev>
-Date: Tue, 16 Jun 2026 11:28:12 +0300
+	Tue, 16 Jun 2026 10:01:39 +0000
+Received: by mail-dy1-x1330.google.com with SMTP id 5a478bee46e88-30bb7d20ad9so365343eec.1
+        for <linux-phy@lists.infradead.org>; Tue, 16 Jun 2026 03:01:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1781604097; x=1782208897; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=uBeImg1GeZ73aPo+Du634svjdTCaD/BADcPkIYViljc=;
+        b=ly+Y+7emgKZZckT5F3CuvJQsv54TXjMXa9kPJnGbv5V1pj7ixigu5a0DN/n6UNK8+O
+         oNgxVhYa+sbitr5SVl0sijn7cFJT8WxHXtNkNpxL+M1G/Vjuj7igl62L9Onh1kysu18y
+         +faEki/FHyTI64HTEVui1UlYF4eZDcz4VOf8ENevpAYQTZPPy1pSCA717sxWbcegWc/h
+         oJhzkzKyhEyT+6e/2HmbiddrsKlAEe5CMS9OSfIF61CktrDmeibDvIKjNiW5jlpNdzij
+         8oI76n+Q07WqcGWMhaKcuTn4/Su3aI1xvUsTlNtZcxJYpY3LNlBxyoGLsWyDbxyHWbAK
+         bi7Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1781604097; x=1782208897;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=uBeImg1GeZ73aPo+Du634svjdTCaD/BADcPkIYViljc=;
+        b=nEsoCKAI/33YHsJrF4SCuo8+CQK9yA3mO5mB63mEEz6eAcyj3bmnhRAyET1Y2MKnT8
+         8ZdXMiWvRaq6CtANipWS3osyiP3VJeCX+FMcUuUA4PGP0W31qZzeb/1l+gWy18xuan/V
+         1Zm0LZ/yjyKYI0eUtmyEfXvbiq9cYon4V9304TviePSbsal+SEM84uI2KEM4QS9wYbdv
+         PSQ1ERP+Zh4KgGXGY5szySiJsWi9OAMhAsndQSC0A4d01ogoWL8uy44HdxS9vuqYiYwu
+         1JqxlAsEUZHtW+xc9LgW65+kzcTJHy915Xf55EduHtAz+41BPbaAL0DftXG0nvT81Ajo
+         3BHA==
+X-Forwarded-Encrypted: i=1; AFNElJ8tE4jfJXPyRWtowIGWSFI8/iHlJwu/GVNsRdLIvgoc6X3aKpIq5f0q+mJc6jW8ryuha4o7MqL+0hc=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxShAAUtfhvk+4gzO5ZP8YwaAkHmhQsxFlT4tfkE7dMG6SvLnm3
+	WKABtVCpHEMjBnGFFPghJZf9WrXttkqpcAQ9zUhLmQ+w4BCPS/dx+3J0
+X-Gm-Gg: Acq92OHlCEAkzy4dBLkj0wu324D3uG4t4oy5yFJh7fEjnZH9D8VZS/Yb0YqFscZxuoc
+	5NE0YRfdOLoYz9NAvX0y1okEm5uCHBvBxVdPbUxEYVEhdCLH4+4AZ0h1wEnSOhSG4aY6BWS9Hty
+	yNP6q9bOL2A5SU1rJocIlK1GUlFyTulF1E5z382kgeuenY/wT1Kabiz1F89i7fM5nIewfLm4R6B
+	tQP5XMMyqcNypvrxYuh/5c4ttJOHI2kY89vK5lPIjnSXExUZKvYoqrKv7GaQDyT2RGyRArX6D0r
+	d7rD76tOeDipNwQb+DSPe5WRHLdFzlrABG9KbUGk5r4zUveAeiFBVjzkD5ZBJH4O+Qs+Vwsy1f/
+	bP1rfd4pYxnMAatS9r3HVG+ypH2xKqxextEUYQeCbgVZjTFwiKu+O8vQ5HYNOU6BTuHy3V6+Euk
+	2dAy4DIBl71Jl3TDJeof0jJjIjRSMbagw8vdrNPEXTM2a9Tt+FsHRBjTkEvrREBLlPnCKacRUBb
+	iF/
+X-Received: by 2002:a05:7300:6144:b0:307:e4fa:894b with SMTP id 5a478bee46e88-3093685d5b2mr8915809eec.8.1781604096865;
+        Tue, 16 Jun 2026 03:01:36 -0700 (PDT)
+Received: from [192.168.0.100] (60-250-196-139.hinet-ip.hinet.net. [60.250.196.139])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3081e5fefecsm18456036eec.13.2026.06.16.03.01.33
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 16 Jun 2026 03:01:35 -0700 (PDT)
+Message-ID: <07761947-12a2-4ee0-9fc2-60511c40398e@gmail.com>
+Date: Tue, 16 Jun 2026 18:01:29 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 09/11] phy: renesas: phy-rcar-gen3-usb2: Fix devm action
- registration for disabled VBUS regulator
-To: Biju Das <biju.das.jz@bp.renesas.com>, "biju.das.au"
- <biju.das.au@gmail.com>, Yoshihiro Shimoda
- <yoshihiro.shimoda.uh@renesas.com>, Vinod Koul <vkoul@kernel.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- "magnus.damm" <magnus.damm@gmail.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- stable <stable@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-References: <20260612143048.317907-1-biju.das.jz@bp.renesas.com>
- <20260612143048.317907-10-biju.das.jz@bp.renesas.com>
- <2b794049-0c44-4390-a6cd-e5bde5c5f3ca@tuxon.dev>
- <TY3PR01MB113460C85EEF713331411FBEC86E62@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+Subject: Re: [PATCH 1/3] dt-bindings: phy: nuvoton,ma35d1-usb2-phy: extend for
+ dual-port OTG support
+To: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: Hui-Ping Chen <hpchen0nvt@gmail.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ devicetree@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, linux-kernel@vger.kernel.org,
+ Joey Lu <yclu4@nuvoton.com>, Jacky Huang <ychuang3@nuvoton.com>,
+ Arnd Bergmann <arnd@arndb.de>, linux-phy@lists.infradead.org,
+ Shan-Chun Hung <schung@nuvoton.com>
+References: <20260615054911.48821-1-a0987203069@gmail.com>
+ <20260615054911.48821-2-a0987203069@gmail.com>
+ <178153082322.1456470.14205688450934768854.robh@kernel.org>
 Content-Language: en-US
-From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
-In-Reply-To: <TY3PR01MB113460C85EEF713331411FBEC86E62@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+From: Joey Lu <a0987203069@gmail.com>
+In-Reply-To: <178153082322.1456470.14205688450934768854.robh@kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260616_030138_415102_D518A527 
+X-CRM114-Status: GOOD (  19.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,66 +112,64 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi, Biju,
 
-On 6/15/26 15:42, Biju Das wrote:
-> Hi Claudiu,
-> 
-> + stable <stable@kernel.org>
-> 
->> -----Original Message-----
->> From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
->> Sent: 15 June 2026 10:37
->> Subject: Re: [PATCH 09/11] phy: renesas: phy-rcar-gen3-usb2: Fix devm action registration for disabled
->> VBUS regulator
+On 6/15/2026 9:40 PM, Rob Herring (Arm) wrote:
+> On Mon, 15 Jun 2026 13:49:09 +0800, Joey Lu wrote:
+>> The MA35D1 has two USB PHY ports managed by the same hardware block:
 >>
->> Hi, Biju,
+>>    - PHY0 (index 0): OTG port shared between the DWC2 gadget controller
+>>      and EHCI0/OHCI0 host controllers.  A hardware mux follows the USB
+>>      ID pin automatically.
 >>
->> On 6/12/26 17:30, Biju wrote:
->>> From: Biju Das <biju.das.jz@bp.renesas.com>
->>>
->>> devm_regulator_get_exclusive() initialises the regulator with
->>> enable_count = 1, requiring the consumer to disable it before release.
->>>
->>> Previously, the devm disable action was only registered when the
->>> regulator was explicitly enabled, causing the cleanup path to skip
->>> decrementing enable_count on device removal when the regulator was
->>> left disabled.
->>>
->>> Fix this by always registering the devm disable action when the
->>> regulator is enabled (checked via regulator_is_enabled()), covering
->>> both the explicitly-enabled case and the initial state set by
->>> devm_regulator_get_exclusive().
->>>
->>> This fixes WARN_ON enable count during regulator release.
->>>
->>> Fixes: 24843404efe4 ("phy: renesas: phy-rcar-gen3-usb2: Control VBUS
->>> for RZ/G2L SoCs")
->>> Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
+>>    - PHY1 (index 1): dedicated host-only port for EHCI1/OHCI1.
 >>
->> The approach in this patch don't solve the problem, at least on RZ/G3S. See [1] for logs.
+>> Extend the existing binding to cover both ports:
 >>
->> I applied this patch on next-20260610:
+>>    - The PHY node is now a child of the system-management syscon node
+>>      with a reg property.  The nuvoton,sys phandle and clocks
+>>      properties are removed; the driver derives the regmap from its
+>>      parent, and clock gating is owned by each individual USB controller.
 >>
->> git log --oneline -2
->> afe09f11d549 (HEAD) phy: renesas: phy-rcar-gen3-usb2: Fix devm action registration for disabled VBUS
->> regulator
->> abe651837cb3 (tag: next-20260610, linux-next/master) Add linux-next specific files for 20260610
+>>    - #phy-cells changes from 0 to 1: the cell selects the PHY port.
 >>
->> [1]
->> https://github.com/claudiubeznea/logs/blob/2f1bab20407dfe6031385819ffeabfc4eac772bd/logs
-> 
-> This issue is introduced by the commit
-> 
-> eb9ac779830b223584 ("usb: renesas_usbhs: Fix synchronous external abort on unbind")
-
-Indeed, nice catch. I reverted this commit (just for checking the patch you 
-proposed) and and now it looks good on RZ/G2L. Code from commit eb9ac779830b 
-("usb: renesas_usbhs: Fix synchronous external abort on unbind") will have to be 
-adjusted.
-
-Thank you for investigation,
-Claudiu
+>>    - Two optional board-tuning properties are added: nuvoton,rcalcode
+>>      for per-port resistor trim and nuvoton,oc-active-high for
+>>      over-current polarity.
+>>
+>> Signed-off-by: Joey Lu <a0987203069@gmail.com>
+>> ---
+>>   .../bindings/phy/nuvoton,ma35d1-usb2-phy.yaml | 62 ++++++++++++++-----
+>>   1 file changed, 48 insertions(+), 14 deletions(-)
+>>
+> My bot found errors running 'make dt_binding_check' on your patch:
+>
+> yamllint warnings/errors:
+>
+> dtschema/dtc warnings/errors:
+> /builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/nuvoton,ma35d1-usb2-phy.example.dtb: system-management@40460000 (nuvoton,ma35d1-reset): '#address-cells', '#size-cells', 'usb-phy@60' do not match any of the regexes: '^pinctrl-[0-9]+$'
+> 	from schema $id: http://devicetree.org/schemas/reset/nuvoton,ma35d1-reset.yaml
+> /builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/nuvoton,ma35d1-usb2-phy.example.dtb: system-management@40460000 (nuvoton,ma35d1-reset): compatible: ['nuvoton,ma35d1-reset', 'syscon', 'simple-mfd'] is too long
+> 	from schema $id: http://devicetree.org/schemas/reset/nuvoton,ma35d1-reset.yaml
+> /builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/nuvoton,ma35d1-usb2-phy.example.dtb: system-management@40460000 (nuvoton,ma35d1-reset): reg: [[0, 1078329344], [0, 512]] is too long
+> 	from schema $id: http://devicetree.org/schemas/reset/nuvoton,ma35d1-reset.yaml
+>
+> doc reference errors (make refcheckdocs):
+>
+> See https://patchwork.kernel.org/project/devicetree/patch/20260615054911.48821-2-a0987203069@gmail.com
+>
+> The base for the series is generally the latest rc1. A different dependency
+> should be noted in *this* patch.
+>
+> If you already ran 'make dt_binding_check' and didn't see the above
+> error(s), then make sure 'yamllint' is installed and dt-schema is up to
+> date:
+>
+> pip3 install dtschema --upgrade
+>
+> Please check and re-submit after running the above command yourself. Note
+> that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+> your schema. However, it must be unset to test all examples with your schema.
+I will fix it.
 
 -- 
 linux-phy mailing list
