@@ -4,115 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D2EDCD98CE
-	for <linux-phy@archiver.kernel.org>; Tue, 16 Jun 2026 05:07:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3AE9FCD98DA
+	for <linux-phy@archiver.kernel.org>; Tue, 16 Jun 2026 08:28:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V7OUMDvf0Xzpn/OlfjC/W5rHvhcW2xvmROncNZDSLls=; b=RCUU3URM/t/aVt
-	+49hgjXd6rwVzkCM6lY0Xj6bggrKj+4GlfraVlLDP/0w/Eij1qK/Qsp8Yt27wYyZ1K2PzxTFyNrVQ
-	sKGVJcqSdN6Ot55GGFyziHwuStNwOH9mYWqygZHHV7t3N7HZ8he3hnNQ+NvfU2+YFsvaCjTbLz0bh
-	JYxhqU9sjYtvMMM3hLBp9OaTOqGZldvlNyPNiRdUP1l91i5nkXq7r6RHwnKWtHo1Xa+qpuZ/7Zqka
-	w2wphk4TFzC/tSbWo69Z9lWZzBcKKQFpmcgi2d5Ge+agy0XReJHG002u1iG3C7nmT8UzyxDQrMMCh
-	AXZAHT9vRfFvwtrKphUA==;
+	List-Owner; bh=O698llW/IIkcmemfHDKfHn+i/yIQLDcFjtrNhBOhYZA=; b=PASmpCgVUiKBI6
+	uaa4Mi4gSgN/CPIsV/b+yDtevGqhzfM/PL3XVmbmUuqL8kb1opZ9rW2fV7b4r0pv27rOnD9USJtT6
+	WKn3MJg7TAZ94BVRB9MAErO9qnnFgbmracBHM9h59gy2XGZVI5nd4DH5zgsV39iWdXxstxTsk0sgJ
+	zGY5VW9zn9bR6GslG1rfRA4N+SJ12d01GQU4mrG8hIp9QmQshxhY6KjYFhOQtNpNQZVMJtUOH2Z0y
+	D8TAyFans2RGppnYJkw9GkPX6CbHVAL88cr3V8xqCe00DmFETTLN7+Qem6DZ9QhVr7TZZ3stadkt0
+	33dvDCFyAIOIsEroSG+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZM1S-0000000FEYw-43ok;
-	Tue, 16 Jun 2026 05:07:39 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wZP9h-0000000FS2O-3Oda;
+	Tue, 16 Jun 2026 08:28:21 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZM1Q-0000000FEYk-49XC
+	id 1wZP9f-0000000FS1y-3ySD
 	for linux-phy@lists.infradead.org;
-	Tue, 16 Jun 2026 05:07:37 +0000
+	Tue, 16 Jun 2026 08:28:20 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 54F8D43A14;
-	Tue, 16 Jun 2026 05:07:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CEC871F00A3A;
-	Tue, 16 Jun 2026 05:07:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1781586456;
-	bh=DURfbryid3mSGOjQCsKysNm2THYAvg2jqV4gu90T2/Y=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=mYe8Ylhw+3w8eSASw9QRrOHc+B7FNGNsW+b7MThPTFXK85Cuyx1kWvAaQXoOETtgN
-	 1dHnp5glHwT3Kws9WCLiFCulXTJanxQt/U4MczeXUE3w49kh879GToslBZAdKHgmnc
-	 MC0Z95Ymbry6ynqCcbL3OnccgdUV03BPoMxuNd722NxQMkFOVq20PlJlrBiQWxMnat
-	 h2JgmS9T6A15cqbWoPSyBtYB6TmpOm6ZETuo7Td6JhZdquZi0BEzpG+I9aZZoGek/V
-	 1ZzzjKIeB5bemEKCrKOVCCa73kxdLkFDUICUpWAfd6kdR/RPvday0BEM0Zyd6HgPnb
-	 S3NAt91U5y7/w==
-Message-ID: <1d430d8a-8876-490e-ba83-ed85b950a665@kernel.org>
-Date: Tue, 16 Jun 2026 07:07:25 +0200
+	by tor.source.kernel.org (Postfix) with ESMTP id 01C25600AB;
+	Tue, 16 Jun 2026 08:28:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 506F51F00A3A;
+	Tue, 16 Jun 2026 08:28:14 +0000 (UTC)
+Message-ID: <c49cce1a-5de3-4741-b49a-0fdef9dce9e5@tuxon.dev>
+Date: Tue, 16 Jun 2026 11:28:12 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 2/4] dt-bindings: phy: qcom,qcs615-qmp-usb3-dp-phy: Add
- support for Shikra
-To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>,
- Pratham Pratap <pratham.pratap@oss.qualcomm.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>, Vinod Koul
- <vkoul@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
- Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>,
- Johan Hovold <johan+linaro@kernel.org>,
- Loic Poulain <loic.poulain@oss.qualcomm.com>,
- Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
- Abel Vesa <abel.vesa@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20260526184401.3959717-1-pratham.pratap@oss.qualcomm.com>
- <20260526184401.3959717-3-pratham.pratap@oss.qualcomm.com>
- <20260527-lucky-porcelain-bullfrog-185f1d@quoll>
- <9569b594-a4b8-4e67-ac61-5eb2914bfc76@oss.qualcomm.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH 09/11] phy: renesas: phy-rcar-gen3-usb2: Fix devm action
+ registration for disabled VBUS regulator
+To: Biju Das <biju.das.jz@bp.renesas.com>, "biju.das.au"
+ <biju.das.au@gmail.com>, Yoshihiro Shimoda
+ <yoshihiro.shimoda.uh@renesas.com>, Vinod Koul <vkoul@kernel.org>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ "magnus.damm" <magnus.damm@gmail.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ stable <stable@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+References: <20260612143048.317907-1-biju.das.jz@bp.renesas.com>
+ <20260612143048.317907-10-biju.das.jz@bp.renesas.com>
+ <2b794049-0c44-4390-a6cd-e5bde5c5f3ca@tuxon.dev>
+ <TY3PR01MB113460C85EEF713331411FBEC86E62@TY3PR01MB11346.jpnprd01.prod.outlook.com>
 Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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
-In-Reply-To: <9569b594-a4b8-4e67-ac61-5eb2914bfc76@oss.qualcomm.com>
+From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
+In-Reply-To: <TY3PR01MB113460C85EEF713331411FBEC86E62@TY3PR01MB11346.jpnprd01.prod.outlook.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,36 +68,71 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 15/06/2026 21:02, Krishna Kurapati wrote:
->>>     reset-names:
->>> +    minItems: 2
->>>       items:
->>>         - const: phy_phy
->>>         - const: dp_phy
->>> +      - const: phy
->>
->> Not phy_phy_phy? Joking aside, you already have a phy - "phy_phy" - so
->> this is not correct name. I don't know what is the correct name, though.
->> Please consult device manual.
->>
-> The resets needed on Shikra are:
-> 
-> GCC_USB3PHY_PHY_PRIM_SP0_BCR
-> GCC_USB3_DP_PHY_PRIM_BCR
-> GCC_USB3_PHY_PRIM_SP0_BCR
-> 
-> Hence named the third one as "phy".
+Hi, Biju,
 
-Maybe dataheet of this device has more meaningful names? The names here
-do not come from the GCC (the reset provider) but from consumer pins.
+On 6/15/26 15:42, Biju Das wrote:
+> Hi Claudiu,
+> 
+> + stable <stable@kernel.org>
+> 
+>> -----Original Message-----
+>> From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
+>> Sent: 15 June 2026 10:37
+>> Subject: Re: [PATCH 09/11] phy: renesas: phy-rcar-gen3-usb2: Fix devm action registration for disabled
+>> VBUS regulator
+>>
+>> Hi, Biju,
+>>
+>> On 6/12/26 17:30, Biju wrote:
+>>> From: Biju Das <biju.das.jz@bp.renesas.com>
+>>>
+>>> devm_regulator_get_exclusive() initialises the regulator with
+>>> enable_count = 1, requiring the consumer to disable it before release.
+>>>
+>>> Previously, the devm disable action was only registered when the
+>>> regulator was explicitly enabled, causing the cleanup path to skip
+>>> decrementing enable_count on device removal when the regulator was
+>>> left disabled.
+>>>
+>>> Fix this by always registering the devm disable action when the
+>>> regulator is enabled (checked via regulator_is_enabled()), covering
+>>> both the explicitly-enabled case and the initial state set by
+>>> devm_regulator_get_exclusive().
+>>>
+>>> This fixes WARN_ON enable count during regulator release.
+>>>
+>>> Fixes: 24843404efe4 ("phy: renesas: phy-rcar-gen3-usb2: Control VBUS
+>>> for RZ/G2L SoCs")
+>>> Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
+>>
+>> The approach in this patch don't solve the problem, at least on RZ/G3S. See [1] for logs.
+>>
+>> I applied this patch on next-20260610:
+>>
+>> git log --oneline -2
+>> afe09f11d549 (HEAD) phy: renesas: phy-rcar-gen3-usb2: Fix devm action registration for disabled VBUS
+>> regulator
+>> abe651837cb3 (tag: next-20260610, linux-next/master) Add linux-next specific files for 20260610
+>>
+>> [1]
+>> https://github.com/claudiubeznea/logs/blob/2f1bab20407dfe6031385819ffeabfc4eac772bd/logs
+> 
+> This issue is introduced by the commit
+> 
+> eb9ac779830b223584 ("usb: renesas_usbhs: Fix synchronous external abort on unbind")
 
-Best regards,
-Krzysztof
+Indeed, nice catch. I reverted this commit (just for checking the patch you 
+proposed) and and now it looks good on RZ/G2L. Code from commit eb9ac779830b 
+("usb: renesas_usbhs: Fix synchronous external abort on unbind") will have to be 
+adjusted.
+
+Thank you for investigation,
+Claudiu
 
 -- 
 linux-phy mailing list
