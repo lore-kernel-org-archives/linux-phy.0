@@ -4,109 +4,140 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E316BCD98F2
-	for <linux-phy@archiver.kernel.org>; Mon, 22 Jun 2026 20:37:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0932CDB46F
+	for <linux-phy@archiver.kernel.org>; Mon, 22 Jun 2026 23:29:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=9y8/6LsPKrWEaaFoRzi4g5kSQAeTtZvb1qy8RGrNbjA=; b=z37tT743bOT5RALOry7rkMhz5K
-	g9N19Gp68hLeZFo2KT5f9wJ84zhSnxjaZw6DkxXk3h/79zLxnr+2Poxbu5PpnmT9qpM5x/vQSdwhH
-	VTIEsYY5nl//4NEYoWzyyHURpkfWajdS0OxzvpAo/QpssktnSKUtfSM8MI+ap0J4QNK8vc/7lck94
-	DhPx+vWIBPKAoqNf3BfkZNYxb29Cmopu1WVPsp5ENgpmkAzGlwezeyEpcCrt5DrvNAEVALHshRqi9
-	cC5m35fRd4A0fqZm6/SW0kYPPSDvKI/yebcCcSBUMDLWu8mZozBSfyz6EYOkELoNnF2t5JmGkedwq
-	9FCx0dPQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=JuU1Z5xeqJoFrIPGRGTWUIdHdUIiv50txXr77u1qiHU=; b=RfNu54titRoU6X
+	CycF68kgA/+Ak1gp29tsGYp3rKLqO0yBitidCrezg2Vn/Q77Ga745/ArJBFje7/jgkT7WsyvtTWLB
+	2ps0wJr3054n1b/wwBzMPOZxVaYch1yIkAy0gPzFeMrP2aCUzJ82aUtaK7ioiHAKuRcSeM4yQSWq2
+	Uli0bsm3tcT6CzU+mijwiZH9ijkXKVJn254lfXpQlCqtcqcXj4GSPaK50PKdFyfgJ43xsh0ufsfcS
+	wDN/WKg2DRNknbjAJE/y1JD2BT4HpMgHHl4Q3bKsdhY0gr4/W1Rpg0e+2ojCtvePdCEFlEK6D3msT
+	gACVcJ+AiM63DblyC6nQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wblP2-00000005N0K-0lUD;
-	Mon, 22 Jun 2026 20:37:56 +0000
-Received: from sender4-op-o11.zoho.com ([136.143.188.11])
+	id 1wbo5X-00000005T0A-182V;
+	Mon, 22 Jun 2026 23:29:59 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wblOy-00000005Mzk-0yAh;
-	Mon, 22 Jun 2026 20:37:54 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1782160644; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=NbZ03RwDUpsPUGMBrvUdLdu9YwvBtwbJnzp1KGgnOw8bmxFm308mN3AT9TQxGf0hTvg6NQG4C2vMqEG28Kk9TYtSAwUBIsPuLMENiboDJ821z6UtEvkeDwz5+Jcm+re9M7ZFaWtEkR9uOKdar4YVHKXBp3rQHmkoCuJ+yoWpc4o=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1782160644; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=mN91JuTXlP9yH/fF2WAYmfPvIPkIj7NLhNIGrphtGFQ=; 
-	b=cdn/QOUYXHEVxnnOG0Xz+v5hgIFdWmFnUWGGBrXE0BkN+/Y/SSTnkF8DIdXeHmsun1N1bTnfVSATEUntE3qlia7Tu2OXutygr1K/pScuMkRUqb8jzru748kl9eSG9NgAF6EAKY/Eq7kqq5AHGgy4zYxnRNwUhOnHfiaIKQmZ7Ec=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
-	dmarc=pass header.from=<sebastian.reichel@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1782160644;
-	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
-	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
-	bh=mN91JuTXlP9yH/fF2WAYmfPvIPkIj7NLhNIGrphtGFQ=;
-	b=ftenAF2pLAzRlyNVRan8mKVLwnie2DhUAR+YqxoXAcc93rbXBpyH//u6VQz6uvu5
-	NVnB16FfAhcMzP72FH86ULWAFvMa3rYocIFntWDDFHxLa7uuG26U7HA2MLbmUYNgfOb
-	uJogOLlRuf0JNK3ahPODVSRWU84ISRiZWge9esxY=
-Received: by mx.zohomail.com with SMTPS id 1782160642993247.28556327964736;
-	Mon, 22 Jun 2026 13:37:22 -0700 (PDT)
-Received: by venus (Postfix, from userid 1000)
-	id 6EF1E1824A2; Mon, 22 Jun 2026 22:37:11 +0200 (CEST)
-Date: Mon, 22 Jun 2026 22:37:11 +0200
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-Cc: Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Peter Griffin <peter.griffin@linaro.org>, Alim Akhtar <alim.akhtar@samsung.com>, 
-	Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, 
-	Brian Masney <bmasney@redhat.com>, Sylwester Nawrocki <s.nawrocki@samsung.com>, 
-	Chanwoo Choi <cw00.choi@samsung.com>, Sam Protsenko <semen.protsenko@linaro.org>, 
-	Rob Clark <robin.clark@oss.qualcomm.com>, Dmitry Baryshkov <lumag@kernel.org>, 
-	Abhinav Kumar <abhinav.kumar@linux.dev>, Jessica Zhang <jesszhan0024@gmail.com>, 
-	Sean Paul <sean@poorly.run>, Marijn Suijten <marijn.suijten@somainline.org>, 
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
-	Thomas Zimmermann <tzimmermann@suse.de>, Inki Dae <inki.dae@samsung.com>, 
-	Seung-Woo Kim <sw0312.kim@samsung.com>, Kyungmin Park <kyungmin.park@samsung.com>, 
-	Andi Shyti <andi.shyti@kernel.org>, Georgi Djakov <djakov@kernel.org>, Lee Jones <lee@kernel.org>, 
-	Pavel Machek <pavel@kernel.org>, Hans Verkuil <hverkuil@kernel.org>, 
-	Mauro Carvalho Chehab <mchehab@kernel.org>, Ulf Hansson <ulfh@kernel.org>, Peter Rosin <peda@lysator.liu.se>, 
-	Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Linus Walleij <linusw@kernel.org>, Geert Uytterhoeven <geert+renesas@glider.be>, 
-	Magnus Damm <magnus.damm@gmail.com>, Javier Martinez Canillas <javier@dowhile0.org>, 
-	Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Jiri Slaby <jirislaby@kernel.org>, 
-	Srinivas Kandagatla <srini@kernel.org>, Bartlomiej Zolnierkiewicz <bzolnier@gmail.com>, 
-	"Rafael J. Wysocki" <rafael@kernel.org>, Daniel Lezcano <daniel.lezcano@kernel.org>, 
-	Zhang Rui <rui.zhang@intel.com>, Lukasz Luba <lukasz.luba@arm.com>, 
-	Jonathan Marek <jonathan@marek.ca>, Taniya Das <quic_tdas@quicinc.com>, 
-	Robert Marko <robimarko@gmail.com>, Christian Marangi <ansuelsmth@gmail.com>, 
-	Stephan Gerhold <stephan@gerhold.net>, Adam Skladowski <a_skl39@protonmail.com>, 
-	Sireesh Kodali <sireeshkodali@protonmail.com>, Barnabas Czeman <barnabas.czeman@mainlining.org>, 
-	Imran Shaik <quic_imrashai@quicinc.com>, Sricharan Ramabadhran <quic_srichara@quicinc.com>, 
-	Anusha Rao <quic_anusha@quicinc.com>, Luo Jie <quic_luoj@quicinc.com>, 
-	Tomasz Figa <tomasz.figa@gmail.com>, Chanho Park <chanho61.park@samsung.com>, 
-	Sunyeal Hong <sunyeal.hong@samsung.com>, Shin Son <shin.son@samsung.com>, 
-	Krishna Manikandan <quic_mkrishn@quicinc.com>, Jacek Anaszewski <jacek.anaszewski@gmail.com>, 
-	Jaehoon Chung <jh80.chung@samsung.com>, Marek Szyprowski <m.szyprowski@samsung.com>, 
-	Alina Yu <alina_yu@richtek.com>, Andy Gross <agross@kernel.org>, 
-	Niklas =?utf-8?Q?S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>, Wesley Cheng <quic_wcheng@quicinc.com>, 
-	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, linux-clk@vger.kernel.org, 
-	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org, linux-i2c@vger.kernel.org, 
-	linux-pm@vger.kernel.org, linux-leds@vger.kernel.org, linux-media@vger.kernel.org, 
-	linux-mmc@vger.kernel.org, linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org, 
-	linux-renesas-soc@vger.kernel.org, linux-serial@vger.kernel.org, linux-sound@vger.kernel.org, 
-	linux-usb@vger.kernel.org
-Subject: Re: [PATCH 2/2] dt-bindings: Drop incorrect usage of double '::'
-Message-ID: <ajmcsfEXiTfFh-XH@venus>
-References: <20260622101606.485961-3-krzysztof.kozlowski@oss.qualcomm.com>
- <20260622101606.485961-4-krzysztof.kozlowski@oss.qualcomm.com>
+	id 1wbo5U-00000005Sz9-1SN3
+	for linux-phy@lists.infradead.org;
+	Mon, 22 Jun 2026 23:29:57 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65MJaDp42101410
+	for <linux-phy@lists.infradead.org>; Mon, 22 Jun 2026 23:29:53 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=euBB+DSsuvbU95CYN+XIxM
+	5Maw52qyc2lYtpfvGy8oA=; b=jNelJsDgYeCo/18MLbxBAGpRxoviV8j1aL9bZf
+	sCbbb5TSgNG6tgP1AgQiM0WNNfJb6dqFhItqeVXeUjCflX6YiFXiDozNl/8OidK0
+	FiCoEVLRphNXfmLAo6vR8yUhG8uQ9HJz2UVLNiZbjdmzIGiznl7QSwuLULsPCXK1
+	01A04GBFrQaaM8u23gyCicZtpaOy9mHi9MRmgCHAz1nHpsimWrRwPr3j6/92H7xj
+	9X/4zE6EyRX4fIzLlgdp0hZ6LY4ThtF6/UUML7Fnwcxb2IDQ6ozlHc7SVDec1aab
+	YgTLhBToL7ucZcJCX5Vz9tlcRZVHT2coduIt0vYQxlyWYSlw==
+Received: from mail-dy1-f198.google.com (mail-dy1-f198.google.com [74.125.82.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ey3ebakaa-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 22 Jun 2026 23:29:53 +0000 (GMT)
+Received: by mail-dy1-f198.google.com with SMTP id 5a478bee46e88-30c0d568830so6900373eec.1
+        for <linux-phy@lists.infradead.org>; Mon, 22 Jun 2026 16:29:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1782170993; x=1782775793; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=euBB+DSsuvbU95CYN+XIxM5Maw52qyc2lYtpfvGy8oA=;
+        b=Anv4fQd9f32KYQnX9LEK+5MsxWEZdrlU1LIvFuVZly8m5g3+9U9MB56KF2tFiLTSk+
+         QwC5Q1Sq5+3wWv4YmG00XmpuWBGBDZZDkWv5BXD+IYh4bLNkHsCOF4hEv6S9yneMbCXr
+         mKfShlfBEuateDzTsv/u6jzWRIvFkU+ozYJ1IRjAJnkYVVpmI1RQ8HxRzykujlKnwPbh
+         EYoazDGfB/EMoKDs1lSi5BSzafMIUVf4ifHSCi3sN2UfQkYvLLD3KglYePskyu36kW1P
+         6J6XvEmY7/0d45Q6EujIjsD7eZmtigXxInlQj1a73BmYtCiaiNHwFyNP8WkfEpKEEMty
+         2psw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1782170993; x=1782775793;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=euBB+DSsuvbU95CYN+XIxM5Maw52qyc2lYtpfvGy8oA=;
+        b=HvmAncD8+A7b7mM7oqwiEj6t1YsWXiHbr6rIrnA2F5EGLhB1aZ7MtgqvTQmocgMETm
+         tuYBRWRgb+/SBD0XZKtXClCAiQPGiYPAwTky3IXd1pLlce37LfkxNpiUNfXgtzH7aN5b
+         XTh3Lngt3/V5QuX831xs1JJJnYvjEDegG2bZ1mfrX2eWCQRfOAzDcWS63oh/mrI04GKJ
+         YVbcV3CLYE30zglENbgwivg6sAiH58lNaYPicC1i6z6Q/nt7vbWr3Gxt+ltg06ZthmKl
+         p6gzicVQp7byBbDNWhGfUu3Fkff6toJ6jXvxWStT6qa5Hl/++byAA1Gt9EdQVignaHH2
+         DYSw==
+X-Forwarded-Encrypted: i=1; AHgh+Rq2NQcj7u1FwdCY1dUJ3Mdsa3r5vsI68SXZqs8N7uxnWaLBY5NqOv/2i1E0az8K9LOi7z9rXEFpBIU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwQ1Dy+iVA5n7tUGHt4rm9D1VlCREQTZcHY4+LIlBt2ykRfRDP1
+	3U5NbJyVBr/Zfbx+l6a3F1L0lvJP9MgD+Er/0UIaLdrI5hJU9RHNo1gr8nigFUw8d7Z0ydeZAxz
+	jnRsuecSUMILGUrjNvFjTUKY5inkP9i5ClASx810O9r4g71zFgLpVRRFkGPQrk+RhsH3/
+X-Gm-Gg: AfdE7cmSkgBBFlrOSKUqyu+DlEVbmowWbvmrIrDvEUxjr+sfy8vJ8gwUecsd6B+lMxh
+	nALqkQE8kJPAFWxxSXqUYoSZNfaqV4GJzhoWw6/LN2UtMR3uWXIJUylFGosKEySF9EaAWs75GPW
+	dV71FJ91dvKu04mKx8Cu+qoWu6PLWRKNTWVSZTFZ5+2N/ihfEPZnzWHcGF7ypgSTU3ipulxCRq7
+	0FpmCqJF+CojaqzeCnWYvS3YAGN4B5mavSABFnVA5sN88ubuL08WaNySmaUDOz8zwQSFH1K6lJD
+	bIaChIJWAPJxPoOX9kExdeVkBqeqWiJbN402CzZecJrQbELR5OGbzRiqkdMWmi/eqzIpy7NvrgQ
+	XH3EeGwpfvfCP4lOKHX1QgWZbJtntv4S8GXylK6j8anjtXwLAiPc=
+X-Received: by 2002:a05:693c:25c8:b0:2fc:9ae6:e5a8 with SMTP id 5a478bee46e88-30c58b5e602mr486652eec.20.1782170992740;
+        Mon, 22 Jun 2026 16:29:52 -0700 (PDT)
+X-Received: by 2002:a05:693c:25c8:b0:2fc:9ae6:e5a8 with SMTP id 5a478bee46e88-30c58b5e602mr486629eec.20.1782170992202;
+        Mon, 22 Jun 2026 16:29:52 -0700 (PDT)
+Received: from [169.254.0.2] (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-30c1ba8fb35sm15339727eec.12.2026.06.22.16.29.51
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 22 Jun 2026 16:29:51 -0700 (PDT)
+From: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
+Subject: [PATCH 0/2] phy: qcom: edp: Update v8 programming sequence
+Date: Mon, 22 Jun 2026 23:29:48 +0000
+Message-Id: <20260622-glymur-edp-phy-v1-0-814b45089ac9@oss.qualcomm.com>
 MIME-Version: 1.0
-In-Reply-To: <20260622101606.485961-4-krzysztof.kozlowski@oss.qualcomm.com>
-X-Zoho-Virus-Status: 1
-X-Zoho-AV-Stamp: zmail-av-0.2.10.1.5.2/282.152.77
-X-ZohoMailClient: External
+X-B4-Tracking: v=1; b=H4sIAGzFOWoC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
+ vPSU3UzU4B8JSMDIzMDMyMj3fScytzSIt3UlALdgoxKXZM0c9M0UwtL8ySDJCWgpoKi1LTMCrC
+ B0bEQfnFpUlZqcgnIFKXaWgBZy5pJcgAAAA==
+X-Change-ID: 20260622-glymur-edp-phy-4f75f5897b0b
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org,
+        Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1782170991; l=884;
+ i=bjorn.andersson@oss.qualcomm.com; s=20230915; h=from:subject:message-id;
+ bh=xEdhdweP9/D/8BRQtRt4Q0QhNc0Omxcj7qBCNRG+KyA=;
+ b=UVo4EildyTo8cIZd1ChTCoMuHKuDkKqfJvlkbmjywjHbjlNZ2aCNKBe2pVRqZNuzJmvRWXifL
+ 5wZWxDbUG1NB5kVQsowJJ2pEdW1cfskCZnnw5vgrqBgTqE0yZ08gXN7
+X-Developer-Key: i=bjorn.andersson@oss.qualcomm.com; a=ed25519;
+ pk=VkhObtljigy9k0ZUIE1Mvr0Y+E1dgBEH9WoLQnUtbIM=
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNjIyMDIyNSBTYWx0ZWRfX+0uuwXvwM3cH
+ KPMpNAANWOHSt4+iTemxKoCMYIeT6IuKIH+G6eNLYslYrvsE4LHN1wHmss1YGjfOyY0F7P6WLKA
+ SkQbNkPwGMIYszkg94id8gtUaXqFE8k=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjIyMDIyNSBTYWx0ZWRfXxfHLPTSf+CCU
+ gj+QVTJtYMaCHAAY4P+3Xpry0Iarcgn0Y5fb68mWuHxfOVt1Sg1RwRwxWJTYHIgLxRXOrrGgGm2
+ M1mZP3b0OJtDlImCFc66i4N2rYkT5/lkKC+clSndC4Pi4gOBLeJq+i8r84jFmGKxmmd1ETwfYrX
+ aUOVDWlJjjKPA8P6U6li4hVT80g47IisWVHcySBN9JGZYhy/M+zf/1dmMVnwAc00nayV9ZJtOb6
+ pIz099lkkwNSQkhQp9R3VqNYdZd14cISe/PUgqYKr//CTX6Ivu4uK2Lfpst6lRd1FCCdB+tMPK2
+ 5b1yOQEKuKqagzK8vtanoqu3cKkWHruOJZkaGYEOYDZYIMSBelC7krOOuJIwyTXZbTNh5D4oppB
+ Q5BJVDRqn7uVkhYdtPp/Nr8jbBGJnlHSo7vdVOIZyEj5OP7Uwu3Up0ryGkFtrUdJOjNMU+eKGF2
+ fDCEsj/64JCAWhX2mOA==
+X-Authority-Analysis: v=2.4 cv=ILIyzAvG c=1 sm=1 tr=0 ts=6a39c571 cx=c_pps
+ a=wEP8DlPgTf/vqF+yE6f9lg==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
+ a=EUspDBNiAAAA:8 a=SSnYddtK9NkD3JaiHHAA:9 a=QEXdDO2ut3YA:10
+ a=bBxd6f-gb0O0v-kibOvt:22
+X-Proofpoint-GUID: eOKk13Rd_jrFONdVphVy-EClJm060zyH
+X-Proofpoint-ORIG-GUID: eOKk13Rd_jrFONdVphVy-EClJm060zyH
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
+ definitions=2026-06-22_04,2026-06-22_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ phishscore=0 priorityscore=1501 bulkscore=0 clxscore=1011 adultscore=0
+ suspectscore=0 malwarescore=0 spamscore=0 impostorscore=0 lowpriorityscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2606220225
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260622_133752_341489_28C5C765 
-X-CRM114-Status: GOOD (  15.89  )
+X-CRM114-CacheID: sfid-20260622_162956_551071_56B2E933 
+X-CRM114-Status: UNSURE (   9.09  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,88 +149,37 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3891932572170490694=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The programming sequences introduced for v8 doesn't work other than for
+4-lane 8.1Gbps. For 2-lane 5.4Gbps link training fails and for 2.7 and
+1.62Gbps PLL lock isn't reached.
 
---===============3891932572170490694==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="he6mgtsui5z5w5dr"
-Content-Disposition: inline
+Update the driver to match the documentation (and Windows driver for the
+1.62Gbps PLL settings), to get past the link training on lower
+resolution monitors.
 
+Signed-off-by: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
+---
+Bjorn Andersson (2):
+      phy: qcom: edp: split power-on sequencing by PHY version
+      phy: qcom: edp: update v8 power-on programming sequence
 
---he6mgtsui5z5w5dr
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH 2/2] dt-bindings: Drop incorrect usage of double '::'
-MIME-Version: 1.0
+ drivers/phy/qualcomm/phy-qcom-edp.c | 575 +++++++++++++++++++++++++++++++-----
+ 1 file changed, 507 insertions(+), 68 deletions(-)
+---
+base-commit: 948efecf22e49aa4bf55bb73ec79a0ddcfd38571
+change-id: 20260622-glymur-edp-phy-4f75f5897b0b
 
-Hi,
+Best regards,
+--  
+Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
 
-On Mon, Jun 22, 2026 at 12:16:08PM +0200, Krzysztof Kozlowski wrote:
-> There is no use of double colon '::' in YAML. OTOH, the literal style
-> block, e.g. using '|' treats all characters as content [1] therefore
-> single use of ':' in descriptions is perfectly fine, whenever '|' is
-> used.
->=20
-> Cleanup existing code, so the confusing style won't be re-used in new
-> contributions.
->=20
-> Link: https://yaml.org/spec/1.2.2/#literal-style [1]
-> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
->=20
-> ---
->=20
-> Intention for this patch is to go via Rob's tree.
-> ---
-
-[...]
-
->  .../bindings/power/reset/restart-handler.yaml |  8 ++++----
-
-Acked-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-
-[...]
-
-Greetings,
-
--- Sebastian
-
---he6mgtsui5z5w5dr
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmo5nPIACgkQ2O7X88g7
-+pqv2Q/+LMhPKKkmgsVnMejKBphG4p2N/zVrnMgxmg8lVO8rwgA7Kxo2wlLqu2H5
-iapTV4a2dMXB0SUw8UGbt9Lt6JjHaORZnybu95mZEZMS+G7HRl5M8DE+LWMJXLX0
-S+G43Cv1O/d5dV/rM2nJqOItOK+KIbHQI4+oY/O8P7ENnU2h3X2HxOtWxtg6+9gz
-UNPZgoZdEE38SJVzhHrCO1+NfGikbo7vUZC0BmyxiNuVTK9eFjie/eIS3ST4W5T9
-3v2n+F2fD7+xsfSzUyjRc3p+zLyweImjiS6J5GAmTf4qxL9hQ3nXEW2gtRQQvB2l
-W62s4eZt9jFlQjhXVjUeIkEPkORE4RrDInyktgSc6BKm/D5SylQgwytebDtJC2s4
-QceoYrV7CHNsQ0vr9oITDlBN4Ik2TTsqhK2Sw0/2P0W7VU7y8uoHsm2xHPkf17l+
-svy9/UvPf4f5kyBIPwySRFS4IUXcdP8MhscNstvyw1GJqxtCNNRfDX6z0isLIU6Q
-yfIbxBsgCdHQMyM3HekxaofPcGx9LRJtbbNt2YA4SbqEKnzci/ToUY+z8a2svvDM
-Ko5OrYJ/yAjPYjcoQ7ajynJC+BxvFRMTtfCEQmDLiaxN9+ueXJJMXe26hLYClF9g
-ADHM+PuYvQrF2GfU9DgvPXkJHh3yEtyPk1rE6O1f4Q9xvKZMblg=
-=cVKh
------END PGP SIGNATURE-----
-
---he6mgtsui5z5w5dr--
-
-
---===============3891932572170490694==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============3891932572170490694==--
-
