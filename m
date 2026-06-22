@@ -4,63 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 745E4CDB46B
-	for <linux-phy@archiver.kernel.org>; Sat, 20 Jun 2026 11:49:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4BBAACDB46B
+	for <linux-phy@archiver.kernel.org>; Mon, 22 Jun 2026 09:06:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:
-	Subject:To:From:Date:MIME-Version:Reply-To:Cc:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TEtYqksfBEcKWzbFcZPAyQtM2h8sYYKnlV1v9+lNgsA=; b=tnbfH9As/+aPTB
-	Bn24Fzw3G5kiOrGDhc5LbiAzmtofmPm+aQ+KSOpHwq3vRQ+Eru2b16f1gHyB4BhlTlzKo+QEn4mMZ
-	8wKKZ1DC2sgvSrJwr6198b/t2yl63dtx/ofqO9wiQGOL9Y1Al/EDFSDwpdqaBzvYcc+u1T1j+A4tf
-	U1A/mlliEe6z6Qc6pWtNN2769uMeH6ZfOf57HLDb7rAHN44XBTax52RklCczm/X8ed6E0/28MmRAe
-	iE26ANesyc5IAKPUvXFa11PymEt6WdytRzbmKsgRH2Zx6u9lyypust6fVLO7Fd0hvqYrgwmz1DbAp
-	0jsgh9As84ASrdkp2+rQ==;
+	List-Owner; bh=3c6kr34sSiE+26+dJRBJYc8fxQ45tTpR172C4E1nDXA=; b=mJFPJmiIXfjz4S
+	wk8/MFjOyOvBa5PKpaUMYsAIDySPOKAYR0hSiOXUxSx1O/U7yE+F3j+IahsM2sSE7fCQEmBIx2YQM
+	Qn8fhJ+ZxZ2iyMNjmOofB6hbjpak4VbKU6dZdqhuNp5bD8i1+STpU0lRy0rKCwdmIOmjdJyrC3/G0
+	RJXjjUlWwIePJ8MrdFXiu4+yEvsOrbl63kLLhBuEw9yEsvNqeL5yrqcSxT1FVoIk9YbsyDh6yEoQ0
+	3S+Jg1fGLjCcFqLt882u7WlmcvnCqxeL+/dYCh1/mFLqvF8E9xBxR5YcFzIufY7g55Pj/KVzllgVL
+	kFKrecgpJt4dgk+B8HKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wauCZ-00000003MTc-1SDo;
-	Sat, 20 Jun 2026 11:49:31 +0000
-Received: from layka.disroot.org ([178.21.23.139])
+	id 1wbabq-00000004ikH-0JHj;
+	Mon, 22 Jun 2026 09:06:26 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wauCV-00000003MSy-2rYM
+	id 1wbabo-00000004ikB-3zdc
 	for linux-phy@lists.infradead.org;
-	Sat, 20 Jun 2026 11:49:29 +0000
-Received: from mail01.disroot.lan (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id AA5092767D;
-	Sat, 20 Jun 2026 13:49:15 +0200 (CEST)
-X-Virus-Scanned: SPAM Filter at disroot.org
-Received: from layka.disroot.org ([127.0.0.1])
- by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id HXuWGNteZpvQ; Sat, 20 Jun 2026 13:49:15 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1781956155; bh=DXXU4HtLN2x/Zg/aHJpUs5YpYCcdyHAW+G14zqHmT+c=;
-	h=Date:From:To:Subject:In-Reply-To:References;
-	b=QB6YpFHAp+xwyMiN2MmmfEOcEOQgap3emCKFZXosC3gwuGQQ/HfUEWev4G6ZxQDgi
-	 vHzDQdNFsZcTQtebfAA99s4OkhZ9coelnU+b/QPsv8fsYrfvLY0jCDF6zYBiCbTRRf
-	 1M3mKgT+FZiKIM5lULh3LqABPjh7MkiFHFtW7wWDfzsGvdaI7zXX7FNSNM3HDdbTkz
-	 MhuSSa25FIe4zjEiss5ImYb0Ph09QrZpnqoqv50pLYNYNsU2lDgKeuJ1GlbynlWnuI
-	 enstLmS2sAlb8JA0/fBSpYG2IrnJYijtLqsfDRcawSCzASK3q/LWf3kD6asq4YDg7j
-	 3GFnFltYpF/Ew==
-MIME-Version: 1.0
-Date: Sat, 20 Jun 2026 11:49:14 +0000
-From: Rustam Adilov <adilov@disroot.org>
-To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
- <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, Krzysztof
- Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Stanley
- Chang <stanley_chang@realtek.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v6 0/6] phy: realtek: usb2: support for RTL9607C USB2 PHY
-In-Reply-To: <20260520175728.720877-1-adilov@disroot.org>
-References: <20260520175728.720877-1-adilov@disroot.org>
-Message-ID: <ad45accb8136605d3b28f4ab4992336e@disroot.org>
-X-Sender: adilov@disroot.org
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260620_044927_871502_D1CE0930 
-X-CRM114-Status: UNSURE (   5.73  )
-X-CRM114-Notice: Please train this message.
+	Mon, 22 Jun 2026 09:06:24 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id A73C5404B5;
+	Mon, 22 Jun 2026 09:06:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 51F911F000E9;
+	Mon, 22 Jun 2026 09:06:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1782119184;
+	bh=NopIKKMqriZ+t6A+K2QfJb2AzO+uarlrDkj7K+FcDpY=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=GyEJDx6Wxp4Myfg4SBo8AcoQvGBLLlFkLT6wtOc4DIp4Ni/srW/WfAge+CahrNQlp
+	 7grngEyCHeW0p5pgZbEU0zeys4+Z5Rv0lC/dlYLb+P2mPY5ZFBEICO73Xo5FJohTSY
+	 1SvVFqDTPE24vadgM7zDGohf96489SfAt++6BJ33PkVGXg2MOMiGpE+/CIwa5mTONL
+	 rSRotLFlNgw3M1BGc98MBZK3WxcGAq5aFEcU2IF0x2JGlD1Rug0QIodfYdGADngJNw
+	 XDC+3ZgVmyl8qVutE3FcRtD3dF7+AWB83idXNHhBJm7tV7kkqmUG28h+qkKG4sav0w
+	 p1gG9NT6oPjSA==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v6 4/4] phy: ti-pipe3: Fix clock leak in init error path
+To: "Hongling Zeng" <zenghongling@kylinos.cn>
+Cc: vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com, linux-phy@lists.infradead.org
+In-Reply-To: <1782118512967996.3955.seg@mailgw.kylinos.cn>
+References: <20260619030214.1779043-1-zenghongling@kylinos.cn>
+ <1782118512967996.3955.seg@mailgw.kylinos.cn>
+Date: Mon, 22 Jun 2026 09:06:23 +0000
+Message-Id: <20260622090624.51F911F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,28 +62,47 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello,
-
-Just a gentle reminder as this patch series has been sitting idle
-for month already. I do know there are a couple of reviews sent
-by sashiko AI but they are only about pre-existing issues which
-has nothing to do with this patch series.
-
-And the issue about "[High] - The driver attempts to access the 
-PHY's memory-mapped registers in `probe()` before the newly introduced
-reset control is deasserted" is not the case because rtl9607_phy_cfg
-contains the [4] = {0xe4, 0x6a} in page0 and thus doesn't trigger
-phy memory reads during probe (in update_dc_driving_level).
-
-Best,
-Rustam
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gVW5kb2N1bWVudGVk
+IGNvZGUgYW5kIGJlaGF2aW9yIGNoYW5nZSBpbiBTQVRBIERQTEwgbG9jayBjaGVjawotLQoKY29t
+bWl0IGYzNmVjMjRiNWQyMWMxYjFhY2Q3ZDcxYzMwOTk1NDIyMWY5YjJjY2IKQXV0aG9yOiBIb25n
+bGluZyBaZW5nIDx6ZW5naG9uZ2xpbmdAa3lsaW5vcy5jbj4KCnBoeTogdGktcGlwZTM6IEZpeCBj
+bG9jayBsZWFrIGluIGluaXQgZXJyb3IgcGF0aAogICAgCldoZW4gcmVnbWFwX3VwZGF0ZV9iaXRz
+KCkgZmFpbHMgaW4gdGlfcGlwZTNfaW5pdCgpIGZvciBQQ0llIG1vZGUsCnRoZSBmdW5jdGlvbiBy
+ZXR1cm5zIHRoZSBlcnJvciB3aXRob3V0IGNhbGxpbmcgdGlfcGlwZTNfZGlzYWJsZV9jbG9ja3Mo
+KS4KVGhpcyBwYXRjaCBhZGRzIHByb3BlciBjbG9jayBjbGVhbnVwIGluIHRoZSBQQ0llIGVycm9y
+IHBhdGguCiAgICAKQ2xvc2VzOiBodHRwczovL2xvcmUua2VybmVsLm9yZy9hbGwvMjAyNjA1MTgw
+MjM2NTcuNDE4NTJDMkJDQjBAc210cC5rZXJuZWwub3JnLwoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVy
+cy9waHkvdGkvcGh5LXRpLXBpcGUzLmMgYi9kcml2ZXJzL3BoeS90aS9waHktdGktcGlwZTMuYwo+
+IC0tLSBhL2RyaXZlcnMvcGh5L3RpL3BoeS10aS1waXBlMy5jCj4gKysrIGIvZHJpdmVycy9waHkv
+dGkvcGh5LXRpLXBpcGUzLmMKClsgLi4uIF0KCj4gQEAgLTUzMSw4ICs1MzMsOSBAQCBzdGF0aWMg
+aW50IHRpX3BpcGUzX2luaXQoc3RydWN0IHBoeSAqeCkKPiAgCj4gIAkvKiBTQVRBIGhhcyBpc3N1
+ZXMgaWYgcmUtcHJvZ3JhbW1lZCB3aGVuIGxvY2tlZCAqLwo+ICAJdmFsID0gdGlfcGlwZTNfcmVh
+ZGwocGh5LT5wbGxfY3RybF9iYXNlLCBQTExfU1RBVFVTKTsKPiAtCWlmICgodmFsICYgUExMX0xP
+Q0spICYmIHBoeS0+bW9kZSA9PSBQSVBFM19NT0RFX1NBVEEpCj4gLQkJcmV0dXJuIHJldDsKPiAr
+CWlmICgodmFsICYgUExMX0xPQ0spICYmIHBoeS0+bW9kZSA9PSBQSVBFM19NT0RFX1NBVEEpIHsK
+PiArCQlyZXR1cm4gMDsKPiArCX0KCltTZXZlcml0eTogTWVkaXVtXQpUaGUgY29tbWl0IG1lc3Nh
+Z2UgbWVudGlvbnMgYWRkaW5nIGNsb2NrIGNsZWFudXAgZm9yIHRoZSBQQ0llIGVycm9yIHBhdGgs
+CmJ1dCB0aGlzIG1vZGlmaWVzIHRoZSBTQVRBIERQTEwgbG9jayBjaGVjayB0byByZXR1cm4gMCBp
+bnN0ZWFkIG9mIHJldC4KClJpZ2h0IGFib3ZlIHRoaXMgYmxvY2ssIHJldCBjYW4gYmUgYXNzaWdu
+ZWQgYW4gZXJyb3IgdmFsdWUgd2hlbgpicmluZ2luZyB0aGUgRFBMTCBvdXQgb2YgSURMRToKCglp
+ZiAodmFsICYgUExMX0lETEUpIHsKCQl2YWwgJj0gflBMTF9JRExFOwoJCXRpX3BpcGUzX3dyaXRl
+bChwaHktPnBsbF9jdHJsX2Jhc2UsIFBMTF9DT05GSUdVUkFUSU9OMiwgdmFsKTsKCQlyZXQgPSB0
+aV9waXBlM19kcGxsX3dhaXRfbG9jayhwaHkpOwoJfQoKSWYgdGlfcGlwZTNfZHBsbF93YWl0X2xv
+Y2soKSBmYWlscyBhbmQgcmV0dXJucyAtRUJVU1ksIGJ1dCB0aGUgc3Vic2VxdWVudApyZWFkIG9m
+IFBMTF9TVEFUVVMgc2hvd3MgUExMX0xPQ0sgaXMgc2V0LCBkb2VzIHRoaXMgY2hhbmdlIHVuaW50
+ZW50aW9uYWxseQptYXNrIHRoZSBlcnJvciBieSByZXR1cm5pbmcgMD8KCkNvdWxkIHRoZSBjb21t
+aXQgbWVzc2FnZSBiZSB1cGRhdGVkIHRvIGRlc2NyaWJlIHRoaXMgaWYgdGhlIGJlaGF2aW9yIGNo
+YW5nZQp3YXMgaW50ZW50aW9uYWw/Cgo+ICAKPiAgCS8qIFByb2dyYW0gdGhlIERQTEwgKi8KPiAg
+CXJldCA9IHRpX3BpcGUzX2RwbGxfcHJvZ3JhbShwaHkpOwoKLS0gClNhc2hpa28gQUkgcmV2aWV3
+IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDYxOTAzMDIxNC4xNzc5MDQz
+LTEtemVuZ2hvbmdsaW5nQGt5bGlub3MuY24/cGFydD00CgotLSAKbGludXgtcGh5IG1haWxpbmcg
+bGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVh
+ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
