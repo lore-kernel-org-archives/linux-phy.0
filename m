@@ -4,136 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 731CACDB46F
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Jun 2026 03:13:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7A63CD98F0
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Jun 2026 05:38:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AQ4/Neb/q/+nvxSDwISRzcTNhyGVydd2hd/5mcXXhlY=; b=JffQ2eZtyaDUb+
-	2wMf1uveAmSu+yCU1wpTja3rlyo03iO/Vh1DawSQ3l4hxCOyrQp9/3OPGDy0TmIlKprXH5yI1onjO
-	p7aGr1ont1hVl1v9Hl9Ja+2hYFmFBP5hz8WYXR5geNCUokfTuwJvK3h95cBM9bIVG95R+hdyyRMAL
-	xfxVLq/ls2wj1P91Jca8/7wxiKCSOa+Xbyf1EyrIkkD9l4kvioWt5kyt7kZ2EQGaO4Swv2XxvK5mH
-	2mNSTyE9v2b/CF4ZqZoOhFrE0I1aaA6NtVtkD1nHL470+WoUeg5JWhRLvapw3E3nAgtxlnN2zekny
-	ntOGKCJYz24GsOAgGmkg==;
+	List-Owner; bh=pAQ2nNOb+N1gpZjYB9od5WKKABkJVykPv9P5W4zdqDQ=; b=gAOSNY+qr9mxxN
+	FScmsymsholaoliNjKtzHqLjhS9ksrhBWmtnaSQjWjoHNx591MglWkceg7InBxFdzvG+UepjkVsmN
+	U+vCgHeLMfF8fSZoAxhRYay8ZC/ZpA1dqVwyRG9zIitGyBxa+b6I9vlycHHNNPuszBBj2Z6QvO0Vo
+	ILBuRSLAlhCGhjkvv0wAitA7nii9jOsE0zODyAOT4yYgtd0Bl7BZs9UYUpnoVS8EM7bsG9BoyQ5Zo
+	mm7en4aO5Sj4LqqROexPdaPWzHYqNINYcBAc8J0gHDX2l0cf2/yv5CGJ0de5Jz31T/F/RHaYiRqjV
+	AOJMfPm8lQc1YWERoZ8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wbrZg-00000005dkQ-075J;
-	Tue, 23 Jun 2026 03:13:20 +0000
-Received: from mailout2.samsung.com ([203.254.224.25])
+	id 1wbtq5-00000005jLr-1bz3;
+	Tue, 23 Jun 2026 05:38:25 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wbrZZ-00000005dj6-3ecc;
-	Tue, 23 Jun 2026 03:13:17 +0000
-Received: from epcas5p2.samsung.com (unknown [182.195.41.40])
-	by mailout2.samsung.com (KnoxPortal) with ESMTP id 20260623031303epoutp02488f852023875c7b097a7427dfb11950~7l0ExemEP0684306843epoutp02R;
-	Tue, 23 Jun 2026 03:13:03 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com 20260623031303epoutp02488f852023875c7b097a7427dfb11950~7l0ExemEP0684306843epoutp02R
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1782184383;
-	bh=xYWvnYzx61MOHShrICO4N9ZwFKzGqTfE6OdZqCfXxL4=;
-	h=From:To:In-Reply-To:Subject:Date:References:From;
-	b=HSBXm6WralSrItnUo41WTp4Q9bHEdBGeR/ktDAbhDUX4jHkktSgXl1qVmshH/Zbfz
-	 HyFkrFLLFUikPIvVZvLN8hutNjgoW819TbAeR9N1Fg49C1AhVAoaidIA6WQL6TnjHz
-	 ZebhsaMkFvMv6aZD8a/rzkNbslvDGFU7faVRYhzM=
-Received: from epsnrtp01.localdomain (unknown [182.195.42.153]) by
-	epcas5p1.samsung.com (KnoxPortal) with ESMTPS id
-	20260623031303epcas5p1fd11dbfc745aa99f18d960e686705fcd~7l0Ec3mqg0166901669epcas5p1o;
-	Tue, 23 Jun 2026 03:13:03 +0000 (GMT)
-Received: from epcpadp2new (unknown [182.195.40.142]) by
-	epsnrtp01.localdomain (Postfix) with ESMTP id 4gkqrb2vfDz6B9m9; Tue, 23 Jun
-	2026 03:13:03 +0000 (GMT)
-Received: from epsmtip1.samsung.com (unknown [182.195.34.30]) by
-	epcas5p3.samsung.com (KnoxPortal) with ESMTPA id
-	20260622114230epcas5p3e590b84087d9879e30d604f89ce938a8~7ZHlpxa2p3249132491epcas5p3i;
-	Mon, 22 Jun 2026 11:42:30 +0000 (GMT)
-Received: from INBRO002756 (unknown [107.122.3.168]) by epsmtip1.samsung.com
-	(KnoxPortal) with ESMTPA id
-	20260622114216epsmtip1ccbcb97431d34878191527dbce3b94b6~7ZHYxKdLA2526625266epsmtip1D;
-	Mon, 22 Jun 2026 11:42:16 +0000 (GMT)
-From: "Alim Akhtar" <alim.akhtar@samsung.com>
-To: "'Krzysztof Kozlowski'" <krzysztof.kozlowski@oss.qualcomm.com>, "'Bjorn
- Andersson'" <andersson@kernel.org>, "'Konrad Dybcio'"
-	<konradybcio@kernel.org>, "'Rob Herring'" <robh@kernel.org>, "'Krzysztof
- Kozlowski'" <krzk+dt@kernel.org>, "'Conor Dooley'" <conor+dt@kernel.org>,
-	"'Peter Griffin'" <peter.griffin@linaro.org>, "'Michael	Turquette'"
-	<mturquette@baylibre.com>, "'Stephen Boyd'" <sboyd@kernel.org>, "'Brian
- Masney'" <bmasney@redhat.com>, "'Sylwester Nawrocki'"
-	<s.nawrocki@samsung.com>, "'Chanwoo Choi'" <cw00.choi@samsung.com>, "'Sam
- Protsenko'" <semen.protsenko@linaro.org>, "'Rob Clark'"
-	<robin.clark@oss.qualcomm.com>, "'Dmitry Baryshkov'" <lumag@kernel.org>,
-	"'Abhinav Kumar'" <abhinav.kumar@linux.dev>, "'Jessica Zhang'"
-	<jesszhan0024@gmail.com>, "'Sean Paul'" <sean@poorly.run>, "'Marijn
-	Suijten'" <marijn.suijten@somainline.org>, "'David	Airlie'"
- <airlied@gmail.com>, "'Simona Vetter'" <simona@ffwll.ch>, "'Maarten
-	Lankhorst'" <maarten.lankhorst@linux.intel.com>, "'Maxime Ripard'"
- <mripard@kernel.org>, "'Thomas Zimmermann'" <tzimmermann@suse.de>, "'Inki
-	Dae'" <inki.dae@samsung.com>, "'Seung-Woo Kim'" <sw0312.kim@samsung.com>,
-	"'Kyungmin	Park'" <kyungmin.park@samsung.com>, "'Andi Shyti'"
-	<andi.shyti@kernel.org>, "'Georgi	Djakov'" <djakov@kernel.org>, "'Lee
-	Jones'" <lee@kernel.org>, "'Pavel Machek'" <pavel@kernel.org>, "'Hans
-	Verkuil'" <hverkuil@kernel.org>, "'Mauro Carvalho	Chehab'"
- <mchehab@kernel.org>, "'Ulf Hansson'" <ulfh@kernel.org>, "'Peter Rosin'"
- <peda@lysator.liu.se>, "'Vinod Koul'" <vkoul@kernel.org>, "'Neil Armstrong'"
- <neil.armstrong@linaro.org>, "'Linus Walleij'" <linusw@kernel.org>, "'Geert
-	Uytterhoeven'" <geert+renesas@glider.be>, "'Magnus Damm'"
- <magnus.damm@gmail.com>, "'Sebastian Reichel'" <sre@kernel.org>, "'Javier
-	Martinez Canillas'" <javier@dowhile0.org>, "'Liam Girdwood'"
- <lgirdwood@gmail.com>, "'Mark Brown'" <broonie@kernel.org>, "'Greg
-	Kroah-Hartman'" <gregkh@linuxfoundation.org>, "'Jiri	Slaby'"
- <jirislaby@kernel.org>, "'Srinivas Kandagatla'" <srini@kernel.org>,
-	"'Bartlomiej Zolnierkiewicz'" <bzolnier@gmail.com>, "'Rafael J. Wysocki'"
-	<rafael@kernel.org>, "'Daniel Lezcano'" <daniel.lezcano@kernel.org>, "'Zhang
- Rui'" <rui.zhang@intel.com>, "'Lukasz Luba'" <lukasz.luba@arm.com>,
-	"'Jonathan Marek'" <jonathan@marek.ca>, "'Taniya Das'"
-	<quic_tdas@quicinc.com>, "'Robert Marko'" <robimarko@gmail.com>, "'Christian
- Marangi'" <ansuelsmth@gmail.com>, "'Stephan	Gerhold'" <stephan@gerhold.net>,
-	"'Adam Skladowski'" <a_skl39@protonmail.com>, "'Sireesh Kodali'"
-	<sireeshkodali@protonmail.com>, "'Barnabas Czeman'"
-	<barnabas.czeman@mainlining.org>, "'Imran Shaik'"
-	<quic_imrashai@quicinc.com>, "'Sricharan Ramabadhran'"
-	<quic_srichara@quicinc.com>, "'Anusha Rao'" <quic_anusha@quicinc.com>, "'Luo
- Jie'" <quic_luoj@quicinc.com>, "'Tomasz Figa'" <tomasz.figa@gmail.com>,
-	"'Chanho Park'" <chanho61.park@samsung.com>, "'Sunyeal	Hong'"
-	<sunyeal.hong@samsung.com>, "'Shin Son'" <shin.son@samsung.com>, "'Krishna
- Manikandan'" <quic_mkrishn@quicinc.com>, "'Jacek Anaszewski'"
-	<jacek.anaszewski@gmail.com>, "'Jaehoon Chung'" <jh80.chung@samsung.com>,
-	"'Marek	Szyprowski'" <m.szyprowski@samsung.com>, "'Alina Yu'"
-	<alina_yu@richtek.com>, "'Andy	Gross'" <agross@kernel.org>,
-	=?UTF-8?Q?'Niklas_S=C3=B6derlund'?= <niklas.soderlund@ragnatech.se>,
-	"'Wesley Cheng'" <quic_wcheng@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-samsung-soc@vger.kernel.org>,
-	<linux-clk@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
-	<freedreno@lists.freedesktop.org>, <linux-i2c@vger.kernel.org>,
-	<linux-pm@vger.kernel.org>, <linux-leds@vger.kernel.org>,
-	<linux-media@vger.kernel.org>, <linux-mmc@vger.kernel.org>,
-	<linux-phy@lists.infradead.org>, <linux-gpio@vger.kernel.org>,
-	<linux-renesas-soc@vger.kernel.org>, <linux-serial@vger.kernel.org>,
-	<linux-sound@vger.kernel.org>, <linux-usb@vger.kernel.org>,
-	<cpgs@samsung.com>
-In-Reply-To: <20260622101606.485961-3-krzysztof.kozlowski@oss.qualcomm.com>
-Subject: RE: [PATCH 1/2] dt-bindings: clock: Drop incorrect usage of double
- '::'
-Date: Mon, 22 Jun 2026 17:12:14 +0530
-Message-ID: <1050065615.01782184383398.JavaMail.epsvc@epcpadp2new>
+	id 1wbtq3-00000005jLa-1ji5;
+	Tue, 23 Jun 2026 05:38:23 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 7E82A6001D;
+	Tue, 23 Jun 2026 05:38:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A39271F000E9;
+	Tue, 23 Jun 2026 05:38:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1782193102;
+	bh=PoP+QK/KwSSiAS3Sb9GUdLn0Ly8AiDAqOEvYtptecQU=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=hM1+lmP0iv3E5QFVdU0n2GOZA3v2IfDJcv12q/1EoxEUO1q4kMaNk0y6s6130vaz8
+	 zktWIg94l3tIl8lPDoRq8AnHb7j6ftdvYgbIcERxcyTPxr5HgvBYqrucdTdrPQaNX1
+	 GedZFRwqbl0GbM9xWAP9Ebga2boTp80gkJDpgrSCc+AJmgh58d9ddeaKuhnrNr+poW
+	 HXkpbWnNEshBTEXRihnZgg6MYmfr3UKEBGjB/rxDMPpTuIOz+nzisYyYtB5EJSWZj1
+	 SOGihEEfoGEdLULBHQ4pgJg2xYyK9gfRD6pvve6UtfXu1iYbrj/B3wDZErOGxuCLVq
+	 Ek7B+MIPDH2Kg==
+Message-ID: <fc99b195-5bf8-47ad-a775-3174ebfd6b1f@kernel.org>
+Date: Tue, 23 Jun 2026 07:38:12 +0200
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQIwXoGyyqYeRyJ4JjkgDeaw0zOZjgI6ZcaYtZHncYA=
-Content-Language: en-us
-X-CMS-MailID: 20260622114230epcas5p3e590b84087d9879e30d604f89ce938a8
-X-Msg-Generator: CA
-CMS-TYPE: 105P
-X-CPGSPASS: Y
-X-Hop-Count: 3
-X-CMS-RootMailID: 20260622101627epcas5p2aeb4aad096395936c04cb563eb226b83
-References: <CGME20260622101627epcas5p2aeb4aad096395936c04cb563eb226b83@epcas5p2.samsung.com>
-	<20260622101606.485961-3-krzysztof.kozlowski@oss.qualcomm.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260622_201315_359688_6CE066F0 
-X-CRM114-Status: UNSURE (   7.53  )
-X-CRM114-Notice: Please train this message.
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 8/8] arm64: defconfig: Add SM8450 camcc
+To: esteuwu@proton.me, Bjorn Andersson <andersson@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>,
+ Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Rob Clark <robin.clark@oss.qualcomm.com>,
+ Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
+ "Joerg Roedel (AMD)" <joro@8bytes.org>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+ iommu@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org
+References: <20260622-sm8450-qol-v1-0-37e2ee8df9da@proton.me>
+ <20260622-sm8450-qol-v1-8-37e2ee8df9da@proton.me>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
+ cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
+ JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
+ gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
+ J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
+ NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
+ BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
+ vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
+ Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
+ TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
+ S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGPBBMBCgA5AhsDBgsJCAcDAgYVCAIJCgsE
+ FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJp2mE8AAoJEBuTQ307QWKbeaIP
+ /ihHTkTW4KsN/DQ945JJbyu5tI0J80Wue7QyyLPglyKfhgb5cLLNPpOC8cCIJsc7+W3i2P38
+ s2c1cOH6CYGE7E9ur3Vfme8NW2S2I/Z8VC7bZnzyS23wT17LrsdS/qCpx4o8U+pt/xdXDKph
+ EGRYrIEmMpUWvyYzyYKGIe25FtaayIIKpq8eZYyFcp2f/sG5IkOW5uZzHPMPdcm87jU7fyuQ
+ rAU2vx9r+ulUfQ/q9Z2roC/ode3l7t2pN7BCBCsUDp6JCrUyZrtT1e7EbA0ZRP3aOBNk2P2E
+ DQOgJGjGdO5Yx2Y9LFtltu6JbsBJHi1syGRX3AtQYOMc4Y1WGoeZJmMlvKj2ZqqXNkcWi2DS
+ IQEWB0uW6CqFsBBIMGDa+6OzdaVO/uAVXWDWml02Men3CILdI1MbVjoh8ECqYUY7OQ+JJvNN
+ vnliuq5WM3Ghd3jg/LZZrxXjdIginRHFQCjIJYLKpLZWm1/iDFedcfzqRNYmTtqscdCNHW41
+ oT3Z7BmO9xwdjuwBS6nmS6JJwkbf5Ot2QR4pB/DRU7ZwjT1qHe+9r9gF32wXVQatHNGK/VVu
+ sfwOnkdxCWkp/qb2gdQRmZh+SedStWshigH6sNfuHBloF/q+hjMRc8b2m326OZdrbSHwY1Sz
+ vti8Hn7n8NjdHO9LKB7BIdjkA9DA5WsqOuVCzsFNBFVDXDQBEADNkrQYSREUL4D3Gws46JEo
+ Z9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLueMNsWLJBv
+ BaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6eiOMheesVS
+ 5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wAGldWsRxb
+ f3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA6z6lBZn0
+ WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9YegxWKvX
+ XHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt91pFzBSO
+ IpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gUBLHFTg2h
+ YnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/JoFzZ4B0
+ p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu4vXVFBYI
+ GmpyNPYzRm0QPwARAQABwsF2BBgBCgAgAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtBYpsFAmna
+ YUkACgkQG5NDfTtBYptX+BAApg32CkxwNucNEi8WfWA8oKkW0y8YDuY6ORMo9FWNGiT/OTy0
+ vyJrLocrpn86zwfjVp+eCrssPYh8eqJfnWqmYv6ACQtHPYzPZQ3mSo8H97Z01oUxITzCxpXm
+ ZkLgPIqtDPcC2E3dPM/fVxcyowM8XsaMA9wcsaUYrta8toOq2b9tKcjleKMfMrm0gQ9u7wUc
+ QbLkwj6TCLOwucb07GXzLTNF9PZmaDUpKAZjMjmrW+le+SFvQbhamx0rxLWPR0NWntXpbCn+
+ +ACch03p/JyTBVktxFsFyCt7pTPE1kEaeuXBTe/a2D9iQvRxRW19LvuO2e59/u1wYUiH/orz
+ wbIC2S4dBsPAPihL3ztOU1yE86GPyQtSE0kU+/7snnLt4QGi6PChf3t5gnNjAzjUUovO8rgI
+ c+5yN5heq5loYHgK6OQ9OlHzsPHO9e9MOQcKlFycs1pyijFGzDwdNUm/SchK8iWT2QApTx4A
+ K9bCVaboTA2T77QYkRcRJYSsO1alGX0ome/hMLD1daXlkrNUp1HWa3K4iytLRXjCSIorWiGs
+ n+q3krnpXu3TFkA8qtOFZMdnIiFuiq1yLT8hptsV5xh1TA2nsVvSYiaCr3q4s4BKjS/KrLDb
+ qoxzw8ISjdUp4pA85vb6YLCmb39NgidD+7PmAr65lBNveIFynTgsja1rRQ4=
+In-Reply-To: <20260622-sm8450-qol-v1-8-37e2ee8df9da@proton.me>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,34 +123,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 23/06/2026 02:54, Esteban Urrutia via B4 Relay wrote:
+> From: Esteban Urrutia <esteuwu@proton.me>
+> 
+> Add SM8450 camcc as a module since it's enabled in SM8450 dtsi.
 
 
-> -----Original Message-----
-> From: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-> Sent: Monday, June 22, 2026 3:46 PM
-> To: Bjorn Andersson <andersson@kernel.org>; Konrad Dybcio
-> <konradybcio@kernel.org>; Rob Herring <robh@kernel.org>; Krzysztof
-> Kozlowski <krzk+dt@kernel.org>; Conor Dooley <conor+dt@kernel.org>;
-> Peter Griffin <peter.griffin@linaro.org>; Alim Akhtar
-> <alim.akhtar@samsung.com>; Michael Turquette
-> <mturquette@baylibre.com>; Stephen Boyd <sboyd@kernel.org>; Brian
-> Masney <bmasney@redhat.com>; Sylwester Nawrocki
-[Snip]
->  Documentation/devicetree/bindings/clock/qcom,videocc.yaml   | 2 +-
->  .../devicetree/bindings/clock/samsung,exynos5260-clock.yaml | 6 +++---
->   .../devicetree/bindings/clock/samsung,exynos5410-clock.yaml | 2 +-
->   .../devicetree/bindings/clock/samsung,exynos5433-clock.yaml | 2 +-
->  .../devicetree/bindings/clock/samsung,exynos7-clock.yaml    | 2 +-
->  .../devicetree/bindings/clock/samsung,exynos850-clock.yaml  | 2 +-
->  .../bindings/clock/samsung,exynosautov9-clock.yaml          | 2 +-
->  .../bindings/clock/samsung,exynosautov920-clock.yaml        | 2 +-
->  .../devicetree/bindings/clock/samsung,s5pv210-clock.yaml    | 2 +-
+This is not needed. I already sent such patch.
 
-Reviewed-by: Alim Akhtar <alim.akhtar@samsung.com>
-
-
-
-
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
