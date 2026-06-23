@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2370DCDB466
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CAF6FCDB46F
 	for <linux-phy@archiver.kernel.org>; Tue, 23 Jun 2026 00:56:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,43 +12,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JcnoUkioN5AzZJohsikbDLsKfIu9O2Ap7wIU4MdUlhw=; b=Eaw7ZbMOQHgWiW
-	a+HQOkbdH+yuXK/O9+2LVkC9GtGeoQ/U0nOJc83jhhDMZYodVD1yHymd8ZvenwK1K7GCPQXXFY/S7
-	Wh6VwR1aB0QQrMiqmh2XsGkxxWT2iP8Ki1Oo8aLxWCNjETDDIj5/89xDoa2XpEpQfTvnhIQxdCWwG
-	mIRD42Pr971ruCtuX6GMR8LJRFmQgDo4hChzIOERCs4rQo4hwHJTz4rspsoyIrNeFnM3wIy4zhH+K
-	le0A1Er2jKZIyEvNVY1rnZl+9AuL1mNnMY1sjqqLD/opb709bnNTGgvjVAagktYxv34XtWus1qqMZ
-	aOFFPswBPtcL1VhYmhKw==;
+	List-Owner; bh=MD6sE/P0p04tVCU+4kPnJGbLG/M3sXQSugwzs9a68Zw=; b=ztwFbWmW4LXnY9
+	2h0+v1+38sooXI4Q8xAD40H17Ldx6IVGZcyTvA7KX2x5h/GcKUYkp/Lk0ABNsugzBHUua6l8qSMbt
+	SLwPyPIyVYR5dYWt1UI4en++cmaDjFaLECKW3alBOBFCN2WLHOBgcNPClx9jbS4yZiqLRv48KycY8
+	YlQi2Zh2Ja9XSgxLPdKjuhGRoFZIjLQ3z3V0Svi6XL+v16UCw983YV5Rm01vBNIbqrYuVz7pPIOnF
+	ywe5PHpUyMrs2seWsz9D4qTXu/IgEsqE3RCsyfEMjwi/afrKbONWuhThCtICi8k+b+W5uLY1xP84d
+	MypT9375h3k+AWnLyTYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wbpQn-00000005VOt-3HRv;
-	Tue, 23 Jun 2026 00:56:01 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wbpQo-00000005VR7-2A0n;
+	Tue, 23 Jun 2026 00:56:02 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wbpQm-00000005VNK-2FUS;
+	id 1wbpQm-00000005VN7-2qtq;
 	Tue, 23 Jun 2026 00:56:00 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id BE824445D3;
+	by sea.source.kernel.org (Postfix) with ESMTP id ACB76445B7;
 	Tue, 23 Jun 2026 00:55:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 6D66AC2BCF6;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 6302AC2BCF5;
 	Tue, 23 Jun 2026 00:55:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1782176159;
-	bh=jsqvH759yuuhvhDxAQ6gfBb7WpPEVTvTwxN6m/znzWc=;
+	bh=NAQ2wPwIxNZQO7OtM7yBfMhOLpni9K/2uOT+0gTcdss=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=krGm2H3mKSLOiRJwutVYMayFaax5O30niEPEOrUVAWnfjEyuEriS8aUj4B1cZwZPp
-	 ZNsP53++12AtIjoWixc5XrK304bCq4i/INxt7yXIdW8FI20guIVAsF5RrclptNwmwq
-	 xaxUrxQ3mfBBJqiXs1+L7eXDJ4vlI0NQDLtVhQRtMcRm9YsYa8hewGRqyzosivsnUe
-	 xriuAORUPdD5CYZ7Si5BiNYIDs336j7aqHlOGfmIqq25pOHP+qx3B/dqTx2gAaAW9U
-	 m33G2wMfaXq+CuNfhEc18W4oBXfx1+R+DKX+Es2i+WaphTRxCM+OULi80EV/KglMa9
-	 RX0f8vKK9Zlow==
+	b=q1vXSbLV6q9wVvZSjX2Z9NxO07sUskAJXSNt/6c+Ggu4SEZWOy8o0JwmS46aFXNms
+	 GCvT58oPF/x2PA2uErBIajK2ZCEjnzRKnYNjCf4kSaBI7ToprbfaE+tZwBsDuvAtkQ
+	 mKNSSrVFYhfaO7Gm4ofolbpLZDozWVB8ox/t0PKWNp9dRmxgWwBy3zPFovvDiJKeJL
+	 VRNIXjO8ZeQmXO5tsfXe8Aia3CehURxcE2yXhFGPpT4Om7hwSYxj6dPAUG/eaTmj+B
+	 E3NemT2eBlfMRk44/DVZ1R4fLOVDDi44Rq0jMfsjJ+sNQDTdc5kLHA3xiBdl4JBMMC
+	 tmRhl36qKbB6g==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 5D63FCDB471;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 4E4A4CDB476;
 	Tue, 23 Jun 2026 00:55:59 +0000 (UTC)
 From: Esteban Urrutia via B4 Relay <devnull+esteuwu.proton.me@kernel.org>
-Date: Mon, 22 Jun 2026 20:54:25 -0400
-Subject: [PATCH 4/8] arm64: dts: qcom: sm8450: Add missing PCM_OUT port
+Date: Mon, 22 Jun 2026 20:54:24 -0400
+Subject: [PATCH 3/8] arm64: dts: qcom: sm8450: Modify GPU operating points
 MIME-Version: 1.0
-Message-Id: <20260622-sm8450-qol-v1-4-37e2ee8df9da@proton.me>
+Message-Id: <20260622-sm8450-qol-v1-3-37e2ee8df9da@proton.me>
 References: <20260622-sm8450-qol-v1-0-37e2ee8df9da@proton.me>
 In-Reply-To: <20260622-sm8450-qol-v1-0-37e2ee8df9da@proton.me>
 To: Bjorn Andersson <andersson@kernel.org>, 
@@ -65,11 +65,11 @@ Cc: linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org,
  iommu@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
  linux-phy@lists.infradead.org, Esteban Urrutia <esteuwu@proton.me>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1782176157; l=2081;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1782176157; l=1067;
  i=esteuwu@proton.me; s=20260622; h=from:subject:message-id;
- bh=OrJOz9UX4k6KmMtNljEzpauAqT9chi789O6PWbCCR9A=;
- b=8ZrQA/bfSoXVwph2etq7CCG/xh90OvmKglxlcOKnQ6xMzR5oOwV8/Zv7t2tqO7ibSosAfie/H
- mDD4TCZCCX5BDvldcFOyPud4ZsuuTi2J5BmEn4KNL1vGLDynVxzZTaK
+ bh=UC8G+Beo5Ny4qD1bWQkjh6S3TFmJKL1P3wTRFImBETw=;
+ b=V0HqhO1u+vHE2WkQyZ8w53tz9nq5vyJwjoEMcNSnSh9lQeJePF45vUwQO1oEV5l9C03S56ym5
+ yuN/x2btOijA7GTkYxTOpmiR7wyBg3PEFIHlzEQG2lD3ssBubBG0T7a
 X-Developer-Key: i=esteuwu@proton.me; a=ed25519;
  pk=wToFt4mOAWkzbqb15Ye1hrhevI13vK9BcMUFiQ/me1M=
 X-Endpoint-Received: by B4 Relay for esteuwu@proton.me/20260622 with
@@ -94,50 +94,41 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Esteban Urrutia <esteuwu@proton.me>
 
-An error in dmesg shows there is a mismatch between controller and DT
-dout-ports.
-Add PCM_OUT port to fix this.
+These frecuencies don't exist in downstream device trees.
+Both 220MHz and 285MHz belong to SM8475, and I'm not sure where 317MHz
+came from.
 
 Signed-off-by: Esteban Urrutia <esteuwu@proton.me>
 ---
- arch/arm64/boot/dts/qcom/sm8450.dtsi | 20 ++++++++++----------
- 1 file changed, 10 insertions(+), 10 deletions(-)
+ arch/arm64/boot/dts/qcom/sm8450.dtsi | 15 ---------------
+ 1 file changed, 15 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/qcom/sm8450.dtsi b/arch/arm64/boot/dts/qcom/sm8450.dtsi
-index 5e331a25e22a..8fc58a02e5c5 100644
+index e34e3c05bf74..5e331a25e22a 100644
 --- a/arch/arm64/boot/dts/qcom/sm8450.dtsi
 +++ b/arch/arm64/boot/dts/qcom/sm8450.dtsi
-@@ -2914,20 +2914,20 @@ swr1: soundwire@3210000 {
- 			clock-names = "iface";
- 			label = "RX";
- 			qcom,din-ports = <0>;
--			qcom,dout-ports = <5>;
-+			qcom,dout-ports = <6>;
+@@ -2495,21 +2495,6 @@ opp-350000000 {
+ 					opp-hz = /bits/ 64 <350000000>;
+ 					opp-level = <RPMH_REGULATOR_LEVEL_LOW_SVS>;
+ 				};
+-
+-				opp-317000000 {
+-					opp-hz = /bits/ 64 <317000000>;
+-					opp-level = <RPMH_REGULATOR_LEVEL_LOW_SVS>;
+-				};
+-
+-				opp-285000000 {
+-					opp-hz = /bits/ 64 <285000000>;
+-					opp-level = <RPMH_REGULATOR_LEVEL_LOW_SVS_D1>;
+-				};
+-
+-				opp-220000000 {
+-					opp-hz = /bits/ 64 <220000000>;
+-					opp-level = <RPMH_REGULATOR_LEVEL_LOW_SVS_D1>;
+-				};
+ 			};
+ 		};
  
- 			pinctrl-0 = <&rx_swr_active>;
- 			pinctrl-names = "default";
- 
--			qcom,ports-sinterval-low =	/bits/ 8 <0x03 0x1f 0x1f 0x07 0x00>;
--			qcom,ports-offset1 =		/bits/ 8 <0x00 0x00 0x0b 0x01 0x00>;
--			qcom,ports-offset2 =		/bits/ 8 <0x00 0x00 0x0b 0x00 0x00>;
--			qcom,ports-hstart =		/bits/ 8 <0xff 0x03 0xff 0xff 0xff>;
--			qcom,ports-hstop =		/bits/ 8 <0xff 0x06 0xff 0xff 0xff>;
--			qcom,ports-word-length =	/bits/ 8 <0x01 0x07 0x04 0xff 0xff>;
--			qcom,ports-block-pack-mode =	/bits/ 8 <0xff 0x00 0x01 0xff 0xff>;
--			qcom,ports-block-group-count =	/bits/ 8 <0xff 0xff 0xff 0xff 0x00>;
--			qcom,ports-lane-control =	/bits/ 8 <0x01 0x00 0x00 0x00 0x00>;
-+			qcom,ports-sinterval =		/bits/ 16 <0x03 0x3f 0x1f 0x07 0x00 0x18f>;
-+			qcom,ports-offset1 =		/bits/ 8 <0x00 0x00 0x0b 0x01 0x00 0x00>;
-+			qcom,ports-offset2 =		/bits/ 8 <0x00 0x00 0x0b 0x00 0x00 0x00>;
-+			qcom,ports-hstart =		/bits/ 8 <0xff 0x03 0xff 0xff 0xff 0x08>;
-+			qcom,ports-hstop =		/bits/ 8 <0xff 0x06 0xff 0xff 0xff 0x08>;
-+			qcom,ports-word-length =	/bits/ 8 <0x01 0x07 0x04 0xff 0xff 0x0f>;
-+			qcom,ports-block-pack-mode =	/bits/ 8 <0xff 0x00 0x01 0xff 0xff 0x00>;
-+			qcom,ports-block-group-count =	/bits/ 8 <0xff 0xff 0xff 0xff 0x00 0x00>;
-+			qcom,ports-lane-control =	/bits/ 8 <0x01 0x00 0x00 0x00 0x00 0x00>;
- 
- 			#address-cells = <2>;
- 			#size-cells = <0>;
 
 -- 
 2.54.0
