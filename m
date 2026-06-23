@@ -4,109 +4,142 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7A63CD98F0
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Jun 2026 05:38:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 873CCCD98F0
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Jun 2026 05:49:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pAQ2nNOb+N1gpZjYB9od5WKKABkJVykPv9P5W4zdqDQ=; b=gAOSNY+qr9mxxN
-	FScmsymsholaoliNjKtzHqLjhS9ksrhBWmtnaSQjWjoHNx591MglWkceg7InBxFdzvG+UepjkVsmN
-	U+vCgHeLMfF8fSZoAxhRYay8ZC/ZpA1dqVwyRG9zIitGyBxa+b6I9vlycHHNNPuszBBj2Z6QvO0Vo
-	ILBuRSLAlhCGhjkvv0wAitA7nii9jOsE0zODyAOT4yYgtd0Bl7BZs9UYUpnoVS8EM7bsG9BoyQ5Zo
-	mm7en4aO5Sj4LqqROexPdaPWzHYqNINYcBAc8J0gHDX2l0cf2/yv5CGJ0de5Jz31T/F/RHaYiRqjV
-	AOJMfPm8lQc1YWERoZ8w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LKrBoJUk5JK5NnFW1C7WLcgiTopTxqI5bdrM7UXa4mQ=; b=TQ2E9TpnNop5w/
+	ie83JOz2AEXAs4z63BK440y0ejnMnjnY/wWDsAuHC0Yw+1hGOpa/ALLlgcEI0bKD84y1iQq3OCETU
+	YYNkNFI0MXH+MVWkIfdKzl9n6guk51ZKv+rzszkOFMS/CFVIk6+QyIHNSxJYMeRgT/g1+uUEyldc7
+	C9WvLPGshxF1Ps3RSkq/nn8N0++0vkXlZ8iLwIjf47HELIqBQkh6eupZZVOSfaD5nnw2w0hDgSd7X
+	iAtu8NDqSuHDgCGNsSYn684yWABpGvM+E6aVK47EEQzllbxnCcFT0GEvGe29zoLX02XhugAIwE409
+	p9CcTatYeUoUnCSh8vvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wbtq5-00000005jLr-1bz3;
-	Tue, 23 Jun 2026 05:38:25 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wbu0R-00000005k3m-33an;
+	Tue, 23 Jun 2026 05:49:07 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wbtq3-00000005jLa-1ji5;
-	Tue, 23 Jun 2026 05:38:23 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 7E82A6001D;
-	Tue, 23 Jun 2026 05:38:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A39271F000E9;
-	Tue, 23 Jun 2026 05:38:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1782193102;
-	bh=PoP+QK/KwSSiAS3Sb9GUdLn0Ly8AiDAqOEvYtptecQU=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=hM1+lmP0iv3E5QFVdU0n2GOZA3v2IfDJcv12q/1EoxEUO1q4kMaNk0y6s6130vaz8
-	 zktWIg94l3tIl8lPDoRq8AnHb7j6ftdvYgbIcERxcyTPxr5HgvBYqrucdTdrPQaNX1
-	 GedZFRwqbl0GbM9xWAP9Ebga2boTp80gkJDpgrSCc+AJmgh58d9ddeaKuhnrNr+poW
-	 HXkpbWnNEshBTEXRihnZgg6MYmfr3UKEBGjB/rxDMPpTuIOz+nzisYyYtB5EJSWZj1
-	 SOGihEEfoGEdLULBHQ4pgJg2xYyK9gfRD6pvve6UtfXu1iYbrj/B3wDZErOGxuCLVq
-	 Ek7B+MIPDH2Kg==
-Message-ID: <fc99b195-5bf8-47ad-a775-3174ebfd6b1f@kernel.org>
-Date: Tue, 23 Jun 2026 07:38:12 +0200
+	id 1wbu0N-00000005k3M-480E
+	for linux-phy@lists.infradead.org;
+	Tue, 23 Jun 2026 05:49:06 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65N0l3YA2869478
+	for <linux-phy@lists.infradead.org>; Tue, 23 Jun 2026 05:49:03 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=QG3aJcDD0ugIKtSRz9Ak9B1Q0FV2od+EXVp
+	HzTQsOoA=; b=ghjTzxQNSPunCSRYc6erD4dzkHScpm4YIGLE+Q5qFlUwuSEH5Yi
+	9y0/8lDemkYIV45m9tQOuT+NTYocyHoyXd11Ap1OwcKb2ljWD/y9lWmuUKgr0FnF
+	S0gH/gVWKy6KIQMFcG1qjg37fWMz1E95Lm6I9Kar1s75E7/gNS7ObtE9imtghGHO
+	gKLakEmFtDZI9tU+jRwrFj+M1jof0HNZHClBHnEe/HbnJo5hu0J5HBvNC1nsNvVg
+	9LeMVOd4kFOF09L5bE0GyW0rdpFG+vq6Qtysi/0TRsgs3DTNJJciuAl97/pDfMXX
+	AfBUr7iWlAfLyX4XXQaaNfR/IxiG/FDETRQ==
+Received: from mail-qk1-f199.google.com (mail-qk1-f199.google.com [209.85.222.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ey6tmtvt0-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 23 Jun 2026 05:49:02 +0000 (GMT)
+Received: by mail-qk1-f199.google.com with SMTP id af79cd13be357-915767b341eso492202385a.3
+        for <linux-phy@lists.infradead.org>; Mon, 22 Jun 2026 22:49:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1782193741; x=1782798541; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=QG3aJcDD0ugIKtSRz9Ak9B1Q0FV2od+EXVpHzTQsOoA=;
+        b=M7ILgdSCp0iifJr+wroAflhkkYHrzErPzz6mLwWLHZmv/VvXSnSYUrX/PmKM0CD24C
+         lcdwyXCVYZoODJeuyCESpxqRb0H6X5z+TwkQra2cZZdQya/jYQyQzu+e7IJmVth0E2hG
+         JDHtTfaGc4oo2f8KwAhBDWxVpP0/y7F1M/UCQQnObSBOb7YvXqyaA4fYMzmjJ0UyRiMI
+         rwoxOhyw3nn0gBGAXZ4YHf/bHPFb9x/sQgGQGjF3VYMM6bHPtdwD3MULlOM9QjLapcfq
+         mK19v4Nd3DeoUaXQ/V0XRtbFb680bOGPV6g+YCUrFyWoO15jT9+YfXH5Ok432yx4Ljsr
+         qxWQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1782193741; x=1782798541;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=QG3aJcDD0ugIKtSRz9Ak9B1Q0FV2od+EXVpHzTQsOoA=;
+        b=Cvd0iK9Hq965x8yJr1GoduFeQuFqpzm3vZBWqdxITx2V3kHKQ48mlFx0BVtJGHlURL
+         Jo5RQqCQyjAczfJzWeEYxn8O2izcVOUaWEjzdkYoQHEJ5l3H3vS9TmfNF+7FeM12q/Ue
+         ptKPHdJrmOEe6IEfrjnYFiKx1tDfzg3gZ9XDjH2TJh8NNSMNG2rwJ4+1JdnL2p3y75OZ
+         u7YDeYolq09rJB6t7pJrjL8WWx1xB/ap0IBA98EteFLoLXxJButiORK6OvzMT2pCTvG5
+         Dv9uWVVV4tcwCKnuPJ5c7Y5QK+4boPyO/VpnsZ/lGRgXRdqmM5LcNk7o+OFo7T1/cPiO
+         cUSw==
+X-Forwarded-Encrypted: i=1; AFNElJ+WMuU0jB3crzwS9XlxppG9h/fV053DgoFNhizvK+/gU8vBVzTAymYrOxXAbrzpcctuy0bMqiAL618=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxRAeExGvEABo+c4s40ZeHlQ/Gm/z4TTMgQeIk456wm4lHpjmtQ
+	2tvQj49RcqqhnV0VOBP2YKeNDjhAd1H+hZ2hcbHycpjGo1+sevs9jcnx8TTO1Q9MnNPp7bhUUps
+	Daqwfl1jFRymhAfZ5fCxYUSBsLnKRrsLlJGzhPUg4YEVlaHUWfY1FkEI1x3BtRPG7Jj6n
+X-Gm-Gg: AfdE7ck5ZFV9ZWwQJdS4BiDy5917MR+EBkVROUnS0mrQbJcalzNMyc3ieHsvIw4zsiS
+	YrH/1ZyYgxpfPNKnkVliErhzOEXMOP2Ocg1ZbqXb46FHUvSKjxXiLF/iDbFpJbUsEgqwuLGxRRK
+	eN05lsYPMfKnc8Qk+/Xk5ya+gE3o48VN3Pl0LfQ3WFiaTFNcKPgLSUYihOxz2vQ9tFU14B1MCXy
+	hq4SR6M+yagVhU5toyvzaRCBTG99a2e7u8c7wPkNE153evR9moMjr1s9D1OAHZ12S4jDt29EWrF
+	q8ekG6nLao/aAdiU0vYg6rpdt1YkYXQRnUFAcFMeohwxTVc1Ilki5R1si8Edu1t1ipBspOvXo4x
+	2uDDkiaFrkrtuPxax5IXgjrOuzaw=
+X-Received: by 2002:a05:620a:17a3:b0:8ef:3de6:c5a6 with SMTP id af79cd13be357-9208d3f9286mr2845669585a.47.1782193740863;
+        Mon, 22 Jun 2026 22:49:00 -0700 (PDT)
+X-Received: by 2002:a05:620a:17a3:b0:8ef:3de6:c5a6 with SMTP id af79cd13be357-9208d3f9286mr2845657985a.47.1782193740029;
+        Mon, 22 Jun 2026 22:49:00 -0700 (PDT)
+Received: from quoll ([178.197.218.240])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-46666c579dfsm32588915f8f.31.2026.06.22.22.48.54
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 22 Jun 2026 22:48:59 -0700 (PDT)
+From: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+To: Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Peter Griffin <peter.griffin@linaro.org>, Alim Akhtar <alim.akhtar@samsung.com>, Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>, Sylwester Nawrocki <s.nawrocki@samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>, Sam Protsenko <semen.protsenko@linaro.org>, Rob Clark <robin.clark@oss.qualcomm.com>, Dmitry Baryshkov <lumag@kernel.org>, Abhinav Kumar <abhinav.kumar@linux.dev>, Jessica Zhang <jesszhan0024@gmail.com>, Sean Paul <sean@poorly.run>, Marijn Suijten <marijn.suijten@somainline.org>, David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, Inki Dae <inki.dae@samsung.com>, Seung-Woo Kim <sw0312.kim@samsung.com>, Kyungmin Park <kyungmin.park@samsung.com>, Andi Shyti <andi.shyti@kernel.org>, Georgi Djakov <djakov@kernel.org>, Lee Jones <lee@kernel.org>, Pavel Machek <pavel@kernel.org>, Hans Verkuil <hverkuil@kernel.org>, Mauro Carvalho Chehab <mchehab@kernel.org>, Ulf Hansson <ulfh@kernel.org>, Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, Linus Walleij <linusw@kernel.org>, Geert Uytterhoeven <geert+renesas@glider.be>, Magnus Damm <magnus.damm@gmail.com>, Sebastian Reichel <sre@kernel.org>, Javier Martinez Canillas <javier@dowhile0.org>, Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Jiri Slaby <jirislaby@kernel.org>, Srinivas Kandagatla <srini@kernel.org>, Bartlomiej Zolnierkiewicz <bzolnier@gmail.com>, "Rafael J. Wysocki" <rafael@kernel.org>, Daniel Lezcano <daniel.lezcano@kernel.org>, Zhang Rui <rui.zhang@intel.com>, Lukasz Luba <lukasz.luba@arm.com>, Jonathan Marek <jonathan@marek.ca>, Taniya Das <quic_tdas@quicinc.com>, Robert Marko <robimarko@gmail.com>, Christian Marangi <ansuelsmth@gmail.com>, Stephan Gerhold <stephan@gerhold.net>, Adam Skladowski <a_skl39@protonmail.com>, Sireesh Kodali <sireeshkodali@protonmail.com>, Barnabas Czeman <barnabas.czeman@mainlining.org>, Imran Shaik <quic_imrashai@quicinc.com>, Sricharan Ramabadhran <quic_srichara@quicinc.com>, Anusha Rao <quic_anusha@quicinc.com>, Luo Jie <quic_luoj@quicinc.com>, Tomasz Figa <tomasz.figa@gmail.com>, Chanho Park <chanho61.park@samsung.com>, Sunyeal Hong <sunyeal.hong@samsung.com>, Shin Son <shin.son@samsung.com>, Krishna Manikandan <quic_mkrishn@quicinc.com>, Jacek Anaszewski <jacek.anaszewski@gmail.com>, Jaehoon Chung <jh80.chung@samsung.com>, Marek Szyprowski <m.szyprowski@samsung.com>, Alina Yu <alina_yu@richtek.com>, Andy Gross <agross@kernel.org>, =?UTF-8?q?Niklas=20S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>, Wesley Cheng <quic_wcheng@quicinc.com>, linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, linux-clk@vger.kernel.org, dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org, linux-i2c@vger.kernel.org, linux-pm@vger.kernel.org, linux-leds@vger.kernel.org, linux-media@vger.kernel.org, linux-mmc@vger.kernel.org, linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org, linux-renesas-soc@vger.kernel.org, linux-serial@vger.kernel.org, linux-sound@vger.kernel.org, linux-usb@vger.kernel.org
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
+        Conor Dooley <conor.dooley@microchip.com>
+Subject: [PATCH v2 1/2] dt-bindings: clock: Drop incorrect usage of double '::'
+Date: Tue, 23 Jun 2026 07:48:43 +0200
+Message-ID: <20260623054842.21831-3-krzysztof.kozlowski@oss.qualcomm.com>
+X-Mailer: git-send-email 2.53.0
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 8/8] arm64: defconfig: Add SM8450 camcc
-To: esteuwu@proton.me, Bjorn Andersson <andersson@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>,
- Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Rob Clark <robin.clark@oss.qualcomm.com>,
- Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
- "Joerg Roedel (AMD)" <joro@8bytes.org>, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- iommu@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
- linux-phy@lists.infradead.org
-References: <20260622-sm8450-qol-v1-0-37e2ee8df9da@proton.me>
- <20260622-sm8450-qol-v1-8-37e2ee8df9da@proton.me>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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
-In-Reply-To: <20260622-sm8450-qol-v1-8-37e2ee8df9da@proton.me>
+X-Developer-Signature: v=1; a=openpgp-sha256; l=24538; i=krzysztof.kozlowski@oss.qualcomm.com;
+ h=from:subject; bh=43pJw6DvWM48MK0qOhX2LPbHO1ITuc3SC/S5TDYz9Xo=;
+ b=owEBbQKS/ZANAwAKAcE3ZuaGi4PXAcsmYgBqOh46i2/XRiqEjf4RlyvTKWXtcHXSOAUJTIX2q
+ Hf+onZFHyCJAjMEAAEKAB0WIQTd0mIoPREbIztuuKjBN2bmhouD1wUCajoeOgAKCRDBN2bmhouD
+ 1zEXD/0d5p4axXW5efPiX7RUnSL9svTCXbUKBh5ZS6XsWj0n1ONuepokWhRZ4FyBOieKLAg4DlK
+ QRRGftrVXy10+Dd/VaXPcfsKM6DI1KmkBqQB+o9NcqzbWvGwPfZ0s+GfRpKG4MLboT+xcO+wQQw
+ zy4kZvaq0L9KJIv3YtcM9hxy2bEf0rV6Rs5ch5ouAQlrn99JzkKufT4UnwyuSeTCoe13QsfeOvW
+ sArEjXRGSDGxFPZ/Kj4cBPA3Kig0LkMrcncF0PfjwSeVAkroMA9W1taeApq2atfavpwQZji22xN
+ WW6lzclPqgY2DDSZOvfN9tkQYSOZ1io5DZs3/nZIfMMxZx8qSKbIixYc/dUZeyCr5ux44jSwBIR
+ W2uUMBSK3R98+/4RvwDaThw7yBKzV31pJEcjpzyMLVFJ42T/0y7m+FYbcRYMy2wN/e7lXr6jwoz
+ t425TsEdmGpFjH/JKVsGZLwratLCn+niz3BYBWfyU7zF5xzwPa8XyJ2cDud2FpCxHERpakMnHIZ
+ 6LXTcjADmk03uK96M3leZBNGn3XK2Y24P/AvfGc1c4W+U2sWG7Erde94m7fccR1/8Uc63Qx4Pay
+ 4B/S+x6QfT6unSqKAoUj86tNchsiUmSFs/9ivYLulzQHrHa/1M83LTEfFWFJI13w2GNpqPdwCEB ktwA5kNfaRIKx0g==
+X-Developer-Key: i=krzysztof.kozlowski@oss.qualcomm.com; a=openpgp; fpr=9BD07E0E0C51F8D59677B7541B93437D3B41629B
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNjIzMDA0NCBTYWx0ZWRfX2HncshWbnCPE
+ V4xNAcDlrSx+p/mlNZ8y57TQ6i12gf5uMeiRET5OJf706OBhRUh9bAUHBBcXoisOV1OIm+vqQpM
+ k2nEnDJcBsw9S1XPw2DQPNZS39le8HQ=
+X-Proofpoint-GUID: DuT-AwChVXt8s3K-B3MSzMWyFZjkagSA
+X-Proofpoint-ORIG-GUID: DuT-AwChVXt8s3K-B3MSzMWyFZjkagSA
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjIzMDA0NCBTYWx0ZWRfX1TS+aS9d6hpX
+ 5KSS0BNtyIk6Geh/0yDQF16xUTCe6Cr4BJmwyLdceUcNJ23NIRpBH6tgQRPB9CEImW8bPZHFrPW
+ HFrh3odRtfZudvCN3/yejtu772G7dneyyB+q34JrrxKeRS2IIeRCEOipOfkqTNMKXQqP/BVUVjv
+ Ma2vVJt54/RqicI7Efp3QzlPEmObpudOg3+uTKL0cMCwr6pKQeyeTts8sRR3zy7y6H5/64KCT3G
+ KYvh+SLHeRoHQfVS+B2i8gLWlRh0OMxYLMQLb3foMvm49xO001ZvKWP0yVzuUJWa6rwNtmDwil9
+ ZLF7OlNutgWAyiRufZExe7Nb0JbmQ88mVaDUhdMjC7xYcVt97P45GWLiWErVg+rfZGwaeC91K6o
+ V3crVOUbLV/ZPhven2zFbkjIrsdllHLwr+nPs2rFZKNln3bZBsOBYN9RqpvQpexHokqx4Ke2rwk
+ S+x2TSTcQCDm/ECZszQ==
+X-Authority-Analysis: v=2.4 cv=H4HrBeYi c=1 sm=1 tr=0 ts=6a3a1e4e cx=c_pps
+ a=HLyN3IcIa5EE8TELMZ618Q==:117 a=qMZSjPy+XpteAuilWfML4g==:17
+ a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22 a=fqWYVyBuAAAA:8
+ a=hD80L64hAAAA:8 a=XYAwZIGsAAAA:8 a=EUspDBNiAAAA:8 a=lo55dvS-tf9TgaL6bfgA:9
+ a=bTQJ7kPSJx9SKPbeHEYW:22 a=3EkFFxAVN7Xjp7FSp-fE:22 a=E8ToXWR_bxluHZ7gmE-Z:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
+ definitions=2026-06-23_01,2026-06-22_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ spamscore=0 suspectscore=0 clxscore=1015 phishscore=0 bulkscore=0
+ priorityscore=1501 impostorscore=0 adultscore=0 malwarescore=0
+ lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
+ definitions=main-2606230044
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260622_224904_212839_77B2C029 
+X-CRM114-Status: GOOD (  17.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,16 +156,492 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23/06/2026 02:54, Esteban Urrutia via B4 Relay wrote:
-> From: Esteban Urrutia <esteuwu@proton.me>
-> 
-> Add SM8450 camcc as a module since it's enabled in SM8450 dtsi.
+There is no use of double colon '::' in YAML. OTOH, the literal style
+block, e.g. using '|' treats all characters as content [1] therefore
+single use of ':' in descriptions is perfectly fine, whenever '|' is
+used.
 
+Cleanup existing code, so the confusing style won't be re-used in new
+contributions.
 
-This is not needed. I already sent such patch.
+Link: https://yaml.org/spec/1.2.2/#literal-style [1]
+Acked-by: Alim Akhtar <alim.akhtar@samsung.com>
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
+Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+---
+I split the patches to avoid bounces from mailing list due to email size.
 
-Best regards,
-Krzysztof
+This can go via clock tree (no dependencies)... or both could go via
+Rob's tree.
+
+Changes in v2:
+1. Add tags (partial Reviews as Acks, as that's the meaning of Ack)
+---
+ .../devicetree/bindings/clock/qcom,dispcc-sm8x50.yaml       | 2 +-
+ .../devicetree/bindings/clock/qcom,gcc-apq8064.yaml         | 2 +-
+ .../devicetree/bindings/clock/qcom,gcc-apq8084.yaml         | 2 +-
+ .../devicetree/bindings/clock/qcom,gcc-ipq6018.yaml         | 2 +-
+ .../devicetree/bindings/clock/qcom,gcc-ipq8064.yaml         | 2 +-
+ .../devicetree/bindings/clock/qcom,gcc-mdm9607.yaml         | 2 +-
+ .../devicetree/bindings/clock/qcom,gcc-mdm9615.yaml         | 2 +-
+ .../devicetree/bindings/clock/qcom,gcc-msm8660.yaml         | 2 +-
+ .../devicetree/bindings/clock/qcom,gcc-msm8909.yaml         | 2 +-
+ .../devicetree/bindings/clock/qcom,gcc-msm8916.yaml         | 2 +-
+ .../devicetree/bindings/clock/qcom,gcc-msm8953.yaml         | 2 +-
+ .../devicetree/bindings/clock/qcom,gcc-msm8974.yaml         | 2 +-
+ .../devicetree/bindings/clock/qcom,gcc-sdm660.yaml          | 2 +-
+ Documentation/devicetree/bindings/clock/qcom,gpucc.yaml     | 2 +-
+ .../devicetree/bindings/clock/qcom,ipq5018-gcc.yaml         | 2 +-
+ .../devicetree/bindings/clock/qcom,ipq9574-gcc.yaml         | 2 +-
+ .../devicetree/bindings/clock/qcom,qca8k-nsscc.yaml         | 2 +-
+ .../devicetree/bindings/clock/qcom,qcm2290-gpucc.yaml       | 2 +-
+ Documentation/devicetree/bindings/clock/qcom,rpmcc.yaml     | 2 +-
+ .../devicetree/bindings/clock/qcom,sc7280-lpasscorecc.yaml  | 2 +-
+ .../devicetree/bindings/clock/qcom,sc8280xp-lpasscc.yaml    | 2 +-
+ .../devicetree/bindings/clock/qcom,sm6115-lpasscc.yaml      | 2 +-
+ .../devicetree/bindings/clock/qcom,sm8350-videocc.yaml      | 2 +-
+ Documentation/devicetree/bindings/clock/qcom,videocc.yaml   | 2 +-
+ .../devicetree/bindings/clock/samsung,exynos5260-clock.yaml | 6 +++---
+ .../devicetree/bindings/clock/samsung,exynos5410-clock.yaml | 2 +-
+ .../devicetree/bindings/clock/samsung,exynos5433-clock.yaml | 2 +-
+ .../devicetree/bindings/clock/samsung,exynos7-clock.yaml    | 2 +-
+ .../devicetree/bindings/clock/samsung,exynos850-clock.yaml  | 2 +-
+ .../bindings/clock/samsung,exynosautov9-clock.yaml          | 2 +-
+ .../bindings/clock/samsung,exynosautov920-clock.yaml        | 2 +-
+ .../devicetree/bindings/clock/samsung,s5pv210-clock.yaml    | 2 +-
+ 32 files changed, 34 insertions(+), 34 deletions(-)
+
+diff --git a/Documentation/devicetree/bindings/clock/qcom,dispcc-sm8x50.yaml b/Documentation/devicetree/bindings/clock/qcom,dispcc-sm8x50.yaml
+index 53a5ab319159..6863db9bd092 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,dispcc-sm8x50.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,dispcc-sm8x50.yaml
+@@ -13,7 +13,7 @@ description: |
+   Qualcomm display clock control module provides the clocks, resets and power
+   domains on SM8150/SM8250/SM8350.
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,dispcc-sm8150.h
+     include/dt-bindings/clock/qcom,dispcc-sm8250.h
+     include/dt-bindings/clock/qcom,dispcc-sm8350.h
+diff --git a/Documentation/devicetree/bindings/clock/qcom,gcc-apq8064.yaml b/Documentation/devicetree/bindings/clock/qcom,gcc-apq8064.yaml
+index 27df7e3e5bf3..68532244901e 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,gcc-apq8064.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,gcc-apq8064.yaml
+@@ -14,7 +14,7 @@ description: |
+   Qualcomm global clock control module provides the clocks, resets and power
+   domains on APQ8064.
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,gcc-msm8960.h
+     include/dt-bindings/reset/qcom,gcc-msm8960.h
+ 
+diff --git a/Documentation/devicetree/bindings/clock/qcom,gcc-apq8084.yaml b/Documentation/devicetree/bindings/clock/qcom,gcc-apq8084.yaml
+index 0a0a26d9beab..1c022e75fd71 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,gcc-apq8084.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,gcc-apq8084.yaml
+@@ -14,7 +14,7 @@ description: |
+   Qualcomm global clock control module provides the clocks, resets and power
+   domains on APQ8084.
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,gcc-apq8084.h
+     include/dt-bindings/reset/qcom,gcc-apq8084.h
+ 
+diff --git a/Documentation/devicetree/bindings/clock/qcom,gcc-ipq6018.yaml b/Documentation/devicetree/bindings/clock/qcom,gcc-ipq6018.yaml
+index 4d2614d4f368..c7fb84438db7 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,gcc-ipq6018.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,gcc-ipq6018.yaml
+@@ -15,7 +15,7 @@ description: |
+   Qualcomm global clock control module provides the clocks, resets and power
+   domains on IPQ6018.
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,gcc-ipq6018.h
+     include/dt-bindings/reset/qcom,gcc-ipq6018.h
+ 
+diff --git a/Documentation/devicetree/bindings/clock/qcom,gcc-ipq8064.yaml b/Documentation/devicetree/bindings/clock/qcom,gcc-ipq8064.yaml
+index a71557395c01..b4d3175780bc 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,gcc-ipq8064.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,gcc-ipq8064.yaml
+@@ -13,7 +13,7 @@ description: |
+   Qualcomm global clock control module provides the clocks, resets and power
+   domains on IPQ8064.
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,gcc-ipq806x.h (qcom,gcc-ipq8064)
+     include/dt-bindings/reset/qcom,gcc-ipq806x.h (qcom,gcc-ipq8064)
+ 
+diff --git a/Documentation/devicetree/bindings/clock/qcom,gcc-mdm9607.yaml b/Documentation/devicetree/bindings/clock/qcom,gcc-mdm9607.yaml
+index d7da30b0e7ee..0a7be7583bdd 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,gcc-mdm9607.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,gcc-mdm9607.yaml
+@@ -14,7 +14,7 @@ description: |
+   Qualcomm global clock control module provides the clocks, resets and power
+   domains.
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,gcc-mdm9607.h
+ 
+ allOf:
+diff --git a/Documentation/devicetree/bindings/clock/qcom,gcc-mdm9615.yaml b/Documentation/devicetree/bindings/clock/qcom,gcc-mdm9615.yaml
+index 418dea31eb62..0656d5ee448d 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,gcc-mdm9615.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,gcc-mdm9615.yaml
+@@ -14,7 +14,7 @@ description: |
+   Qualcomm global clock control module provides the clocks, resets and power
+   domains.
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,gcc-mdm9615.h
+ 
+ allOf:
+diff --git a/Documentation/devicetree/bindings/clock/qcom,gcc-msm8660.yaml b/Documentation/devicetree/bindings/clock/qcom,gcc-msm8660.yaml
+index e03b6d0acdb6..70c9da1f35c2 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,gcc-msm8660.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,gcc-msm8660.yaml
+@@ -14,7 +14,7 @@ description: |
+   Qualcomm global clock control module provides the clocks and resets on
+   MSM8660
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,gcc-msm8660.h
+     include/dt-bindings/reset/qcom,gcc-msm8660.h
+ 
+diff --git a/Documentation/devicetree/bindings/clock/qcom,gcc-msm8909.yaml b/Documentation/devicetree/bindings/clock/qcom,gcc-msm8909.yaml
+index ce1f5a60bd8c..2edb6c251d99 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,gcc-msm8909.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,gcc-msm8909.yaml
+@@ -13,7 +13,7 @@ description: |
+   Qualcomm global clock control module provides the clocks, resets and power
+   domains on MSM8909, MSM8917 or QM215.
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,gcc-msm8909.h
+     include/dt-bindings/clock/qcom,gcc-msm8917.h
+ 
+diff --git a/Documentation/devicetree/bindings/clock/qcom,gcc-msm8916.yaml b/Documentation/devicetree/bindings/clock/qcom,gcc-msm8916.yaml
+index 258b6b93deca..af4b639ea8c3 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,gcc-msm8916.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,gcc-msm8916.yaml
+@@ -14,7 +14,7 @@ description: |
+   Qualcomm global clock control module provides the clocks, resets and power
+   domains on MSM8916 or MSM8939.
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,gcc-msm8916.h
+     include/dt-bindings/clock/qcom,gcc-msm8939.h
+     include/dt-bindings/reset/qcom,gcc-msm8916.h
+diff --git a/Documentation/devicetree/bindings/clock/qcom,gcc-msm8953.yaml b/Documentation/devicetree/bindings/clock/qcom,gcc-msm8953.yaml
+index ced3118c8580..fc0360554f68 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,gcc-msm8953.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,gcc-msm8953.yaml
+@@ -15,7 +15,7 @@ description: |
+   Qualcomm global clock control module provides the clocks, resets and power
+   domains on MSM8937, MSM8940, MSM8953 or SDM439.
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,gcc-msm8917.h
+     include/dt-bindings/clock/qcom,gcc-msm8953.h
+ 
+diff --git a/Documentation/devicetree/bindings/clock/qcom,gcc-msm8974.yaml b/Documentation/devicetree/bindings/clock/qcom,gcc-msm8974.yaml
+index 929fafc84c19..378dfe7854ac 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,gcc-msm8974.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,gcc-msm8974.yaml
+@@ -15,7 +15,7 @@ description: |
+   Qualcomm global clock control module provides the clocks, resets and power
+   domains on MSM8974 (all variants) and MSM8226.
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,gcc-msm8974.h (qcom,gcc-msm8226 and qcom,gcc-msm8974)
+     include/dt-bindings/reset/qcom,gcc-msm8974.h (qcom,gcc-msm8226 and qcom,gcc-msm8974)
+ 
+diff --git a/Documentation/devicetree/bindings/clock/qcom,gcc-sdm660.yaml b/Documentation/devicetree/bindings/clock/qcom,gcc-sdm660.yaml
+index 724ce0491118..72aaf699cf70 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,gcc-sdm660.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,gcc-sdm660.yaml
+@@ -14,7 +14,7 @@ description: |
+   Qualcomm global clock control module provides the clocks, resets and power
+   domains on SDM630, SDM636 and SDM660
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,gcc-sdm660.h  (qcom,gcc-sdm630 and qcom,gcc-sdm660)
+ 
+ $ref: qcom,gcc.yaml#
+diff --git a/Documentation/devicetree/bindings/clock/qcom,gpucc.yaml b/Documentation/devicetree/bindings/clock/qcom,gpucc.yaml
+index 4cdff6161bf0..3ac4419009a9 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,gpucc.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,gpucc.yaml
+@@ -14,7 +14,7 @@ description: |
+   Qualcomm graphics clock control module provides the clocks, resets and power
+   domains on Qualcomm SoCs.
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,gpucc-sdm845.h
+     include/dt-bindings/clock/qcom,gpucc-sa8775p.h
+     include/dt-bindings/clock/qcom,gpucc-sc7180.h
+diff --git a/Documentation/devicetree/bindings/clock/qcom,ipq5018-gcc.yaml b/Documentation/devicetree/bindings/clock/qcom,ipq5018-gcc.yaml
+index 489d0fc5607c..9925b931ecad 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,ipq5018-gcc.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,ipq5018-gcc.yaml
+@@ -13,7 +13,7 @@ description: |
+   Qualcomm global clock control module provides the clocks, resets and power
+   domains on IPQ5018
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,ipq5018-gcc.h
+     include/dt-bindings/reset/qcom,ipq5018-gcc.h
+ 
+diff --git a/Documentation/devicetree/bindings/clock/qcom,ipq9574-gcc.yaml b/Documentation/devicetree/bindings/clock/qcom,ipq9574-gcc.yaml
+index 27ae9938febc..5b128fa841aa 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,ipq9574-gcc.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,ipq9574-gcc.yaml
+@@ -14,7 +14,7 @@ description: |
+   Qualcomm global clock control module provides the clocks, resets and power
+   domains on IPQ9574
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,ipq9574-gcc.h
+     include/dt-bindings/reset/qcom,ipq9574-gcc.h
+ 
+diff --git a/Documentation/devicetree/bindings/clock/qcom,qca8k-nsscc.yaml b/Documentation/devicetree/bindings/clock/qcom,qca8k-nsscc.yaml
+index 61473385da2d..3da10c364a85 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,qca8k-nsscc.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,qca8k-nsscc.yaml
+@@ -14,7 +14,7 @@ description: |
+   Qualcomm NSS clock control module provides the clocks and resets
+   on QCA8386(switch mode)/QCA8084(PHY mode)
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,qca8k-nsscc.h
+     include/dt-bindings/reset/qcom,qca8k-nsscc.h
+ 
+diff --git a/Documentation/devicetree/bindings/clock/qcom,qcm2290-gpucc.yaml b/Documentation/devicetree/bindings/clock/qcom,qcm2290-gpucc.yaml
+index 734880805c1b..bedbdabef672 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,qcm2290-gpucc.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,qcm2290-gpucc.yaml
+@@ -13,7 +13,7 @@ description: |
+   Qualcomm graphics clock control module provides the clocks, resets and power
+   domains on Qualcomm SoCs.
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,qcm2290-gpucc.h
+ 
+ properties:
+diff --git a/Documentation/devicetree/bindings/clock/qcom,rpmcc.yaml b/Documentation/devicetree/bindings/clock/qcom,rpmcc.yaml
+index ab97d4b7dba8..b6c835bfd0d9 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,rpmcc.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,rpmcc.yaml
+@@ -12,7 +12,7 @@ maintainers:
+ 
+ description: |
+   The clock enumerators are defined in <dt-bindings/clock/qcom,rpmcc.h> and
+-  come in pairs:: FOO_CLK followed by FOO_A_CLK. The latter clock is
++  come in pairs: FOO_CLK followed by FOO_A_CLK. The latter clock is
+   an "active" clock, which means that the consumer only care that the clock is
+   available when the apps CPU subsystem is active, i.e. not suspended or in
+   deep idle. If it is important that the clock keeps running during system
+diff --git a/Documentation/devicetree/bindings/clock/qcom,sc7280-lpasscorecc.yaml b/Documentation/devicetree/bindings/clock/qcom,sc7280-lpasscorecc.yaml
+index 99ab9106009f..fd06ac9bceb9 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,sc7280-lpasscorecc.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,sc7280-lpasscorecc.yaml
+@@ -13,7 +13,7 @@ description: |
+   Qualcomm LPASS core and audio clock control module provides the clocks and
+   power domains on SC7280.
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,lpasscorecc-sc7280.h
+     include/dt-bindings/clock/qcom,lpassaudiocc-sc7280.h
+ 
+diff --git a/Documentation/devicetree/bindings/clock/qcom,sc8280xp-lpasscc.yaml b/Documentation/devicetree/bindings/clock/qcom,sc8280xp-lpasscc.yaml
+index 273d66e245c5..f235b4e24cc7 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,sc8280xp-lpasscc.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,sc8280xp-lpasscc.yaml
+@@ -13,7 +13,7 @@ description: |
+   Qualcomm LPASS core and audio clock control module provides the clocks,
+   and reset on SC8280XP.
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,lpasscc-sc8280xp.h
+ 
+ properties:
+diff --git a/Documentation/devicetree/bindings/clock/qcom,sm6115-lpasscc.yaml b/Documentation/devicetree/bindings/clock/qcom,sm6115-lpasscc.yaml
+index 8cbab3fbb660..d7e1938b5e1b 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,sm6115-lpasscc.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,sm6115-lpasscc.yaml
+@@ -14,7 +14,7 @@ description: |
+   Qualcomm LPASS core and audio clock controllers provide audio-related resets
+   on SM6115 and its derivatives.
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,sm6115-lpasscc.h
+ 
+ properties:
+diff --git a/Documentation/devicetree/bindings/clock/qcom,sm8350-videocc.yaml b/Documentation/devicetree/bindings/clock/qcom,sm8350-videocc.yaml
+index 5c2ecec0624e..a986ab4ce7c7 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,sm8350-videocc.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,sm8350-videocc.yaml
+@@ -13,7 +13,7 @@ description: |
+   Qualcomm video clock control module provides the clocks, resets and power
+   domains on Qualcomm SoCs.
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,videocc-sm8350.h
+     include/dt-bindings/reset/qcom,videocc-sm8350.h
+ 
+diff --git a/Documentation/devicetree/bindings/clock/qcom,videocc.yaml b/Documentation/devicetree/bindings/clock/qcom,videocc.yaml
+index f4ff9acef9d5..124d259fc85e 100644
+--- a/Documentation/devicetree/bindings/clock/qcom,videocc.yaml
++++ b/Documentation/devicetree/bindings/clock/qcom,videocc.yaml
+@@ -13,7 +13,7 @@ description: |
+   Qualcomm video clock control module provides the clocks, resets and power
+   domains on Qualcomm SoCs.
+ 
+-  See also::
++  See also:
+     include/dt-bindings/clock/qcom,sm6350-videocc.h
+     include/dt-bindings/clock/qcom,videocc-sc7180.h
+     include/dt-bindings/clock/qcom,videocc-sc7280.h
+diff --git a/Documentation/devicetree/bindings/clock/samsung,exynos5260-clock.yaml b/Documentation/devicetree/bindings/clock/samsung,exynos5260-clock.yaml
+index b05f83533e3d..56ab972c3da5 100644
+--- a/Documentation/devicetree/bindings/clock/samsung,exynos5260-clock.yaml
++++ b/Documentation/devicetree/bindings/clock/samsung,exynos5260-clock.yaml
+@@ -14,17 +14,17 @@ maintainers:
+ 
+ description: |
+   Expected external clocks, defined in DTS as fixed-rate clocks with a matching
+-  name::
++  name:
+     - "fin_pll" - PLL input clock from XXTI
+     - "xrtcxti" - input clock from XRTCXTI
+     - "ioclk_pcm_extclk" - pcm external operation clock
+     - "ioclk_spdif_extclk" - spdif external operation clock
+     - "ioclk_i2s_cdclk" - i2s0 codec clock
+ 
+-  Phy clocks::
++  Phy clocks:
+   There are several clocks which are generated by specific PHYs.  These clocks
+   are fed into the clock controller and then routed to the hardware blocks.
+-  These clocks are defined as fixed clocks in the driver with following names::
++  These clocks are defined as fixed clocks in the driver with following names:
+     - "phyclk_dptx_phy_ch3_txd_clk" - dp phy clock for channel 3
+     - "phyclk_dptx_phy_ch2_txd_clk" - dp phy clock for channel 2
+     - "phyclk_dptx_phy_ch1_txd_clk" - dp phy clock for channel 1
+diff --git a/Documentation/devicetree/bindings/clock/samsung,exynos5410-clock.yaml b/Documentation/devicetree/bindings/clock/samsung,exynos5410-clock.yaml
+index b737c9d35a1c..1d907dd8fbf1 100644
+--- a/Documentation/devicetree/bindings/clock/samsung,exynos5410-clock.yaml
++++ b/Documentation/devicetree/bindings/clock/samsung,exynos5410-clock.yaml
+@@ -14,7 +14,7 @@ maintainers:
+ 
+ description: |
+   Expected external clocks, defined in DTS as fixed-rate clocks with a matching
+-  name::
++  name:
+     - "fin_pll" - PLL input clock from XXTI
+ 
+   All available clocks are defined as preprocessor macros in
+diff --git a/Documentation/devicetree/bindings/clock/samsung,exynos5433-clock.yaml b/Documentation/devicetree/bindings/clock/samsung,exynos5433-clock.yaml
+index 3f9326e09f79..8a289f1e2ace 100644
+--- a/Documentation/devicetree/bindings/clock/samsung,exynos5433-clock.yaml
++++ b/Documentation/devicetree/bindings/clock/samsung,exynos5433-clock.yaml
+@@ -14,7 +14,7 @@ maintainers:
+ 
+ description: |
+   Expected external clocks, defined in DTS as fixed-rate clocks with a matching
+-  name::
++  name:
+     - "oscclk" - PLL input clock from XXTI
+ 
+   All available clocks are defined as preprocessor macros in
+diff --git a/Documentation/devicetree/bindings/clock/samsung,exynos7-clock.yaml b/Documentation/devicetree/bindings/clock/samsung,exynos7-clock.yaml
+index c137c6744ef9..a51cd4fafb41 100644
+--- a/Documentation/devicetree/bindings/clock/samsung,exynos7-clock.yaml
++++ b/Documentation/devicetree/bindings/clock/samsung,exynos7-clock.yaml
+@@ -14,7 +14,7 @@ maintainers:
+ 
+ description: |
+   Expected external clocks, defined in DTS as fixed-rate clocks with a matching
+-  name::
++  name:
+     - "fin_pll" - PLL input clock from XXTI
+ 
+   All available clocks are defined as preprocessor macros in
+diff --git a/Documentation/devicetree/bindings/clock/samsung,exynos850-clock.yaml b/Documentation/devicetree/bindings/clock/samsung,exynos850-clock.yaml
+index cdc5ded59fe5..68c2fd318765 100644
+--- a/Documentation/devicetree/bindings/clock/samsung,exynos850-clock.yaml
++++ b/Documentation/devicetree/bindings/clock/samsung,exynos850-clock.yaml
+@@ -17,7 +17,7 @@ description: |
+   Exynos850 clock controller is comprised of several CMU units, generating
+   clocks for different domains. Those CMU units are modeled as separate device
+   tree nodes, and might depend on each other. Root clocks in that clock tree are
+-  two external clocks:: OSCCLK (26 MHz) and RTCCLK (32768 Hz). Those external
++  two external clocks: OSCCLK (26 MHz) and RTCCLK (32768 Hz). Those external
+   clocks must be defined as fixed-rate clocks in dts.
+ 
+   CMU_TOP is a top-level CMU, where all base clocks are prepared using PLLs and
+diff --git a/Documentation/devicetree/bindings/clock/samsung,exynosautov9-clock.yaml b/Documentation/devicetree/bindings/clock/samsung,exynosautov9-clock.yaml
+index 32f39e543b36..e9d17d48b4f3 100644
+--- a/Documentation/devicetree/bindings/clock/samsung,exynosautov9-clock.yaml
++++ b/Documentation/devicetree/bindings/clock/samsung,exynosautov9-clock.yaml
+@@ -17,7 +17,7 @@ description: |
+   Exynos Auto v9 clock controller is comprised of several CMU units, generating
+   clocks for different domains. Those CMU units are modeled as separate device
+   tree nodes, and might depend on each other. Root clocks in that clock tree are
+-  two external clocks:: OSCCLK/XTCXO (26 MHz) and RTCCLK/XrtcXTI (32768 Hz).
++  two external clocks: OSCCLK/XTCXO (26 MHz) and RTCCLK/XrtcXTI (32768 Hz).
+   The external OSCCLK must be defined as fixed-rate clock in dts.
+ 
+   CMU_TOP is a top-level CMU, where all base clocks are prepared using PLLs and
+diff --git a/Documentation/devicetree/bindings/clock/samsung,exynosautov920-clock.yaml b/Documentation/devicetree/bindings/clock/samsung,exynosautov920-clock.yaml
+index 6b1fc61a2ff9..475db824d4d3 100644
+--- a/Documentation/devicetree/bindings/clock/samsung,exynosautov920-clock.yaml
++++ b/Documentation/devicetree/bindings/clock/samsung,exynosautov920-clock.yaml
+@@ -17,7 +17,7 @@ description: |
+   ExynosAuto v920 clock controller is comprised of several CMU units, generating
+   clocks for different domains. Those CMU units are modeled as separate device
+   tree nodes, and might depend on each other. Root clocks in that clock tree are
+-  two external clocks:: OSCCLK/XTCXO (38.4 MHz) and RTCCLK/XrtcXTI (32768 Hz).
++  two external clocks: OSCCLK/XTCXO (38.4 MHz) and RTCCLK/XrtcXTI (32768 Hz).
+   The external OSCCLK must be defined as fixed-rate clock in dts.
+ 
+   CMU_TOP is a top-level CMU, where all base clocks are prepared using PLLs and
+diff --git a/Documentation/devicetree/bindings/clock/samsung,s5pv210-clock.yaml b/Documentation/devicetree/bindings/clock/samsung,s5pv210-clock.yaml
+index 67a33665cf00..b1617d96d3fb 100644
+--- a/Documentation/devicetree/bindings/clock/samsung,s5pv210-clock.yaml
++++ b/Documentation/devicetree/bindings/clock/samsung,s5pv210-clock.yaml
+@@ -14,7 +14,7 @@ maintainers:
+ 
+ description: |
+   Expected external clocks, defined in DTS as fixed-rate clocks with a matching
+-  name::
++  name:
+     - "xxti" - external crystal oscillator connected to XXTI and XXTO pins of
+       the SoC,
+     - "xusbxti" - external crystal oscillator connected to XUSBXTI and XUSBXTO
+-- 
+2.53.0
+
 
 -- 
 linux-phy mailing list
