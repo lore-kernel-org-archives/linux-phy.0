@@ -4,73 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F7A3CDB47C
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Jun 2026 13:54:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88492CD98F2
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Jun 2026 14:06:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Z5sI5JyxUxuurVngWXgoNyMVlsUuzV6yXL2lxzI75Tc=; b=a6peQqKCiNnTKa
-	sUOlu/8sgCyL57HbH68DkQW2oL9FtRSvpMEL/YRLEgdCVIoZwFa/ObqkLONC/6776MA+VuNwB71To
-	KBw4ZxTM0C8KHK5SLUPH/5d7T9t5FsCGSLxeqFb1VaVmVE5ZhTdVIhVFCxvGFG5bn+lZTnffdN+Ad
-	xBwhZCaT/NOaD7XSHZeCMfEfAnFTo2NPrELL6E7J12Ad5pY9v0pQxxwAdas+de7XSi4SKeYHo/oof
-	5nck+4C+bzOYRu91epIXtBrcXwS253Gysntv9ltpCDtd42Bp6vCgDo7LPaa9/FOGDzToYOZKLGa1e
-	DtZO09wTfcJKDWfKel7A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7qs5uDyH+IBvS7ojEpJ5lPQnFkHCvm2LDSheLYmvCrU=; b=OFh22yK0CJUH9I
+	zg93AXB6ZB9YXsj+Ktpfnz+5gXaoo74/+qCW8XGkEYB/ozUebbDZdkyWyyTZo78ii38zUx0JJ0f3X
+	dCPyZqnVARbCeOCJPR0njvr3S07JVxGQ/6VVLvX8h1iZta4k4Y7YzYLDKhDHGIwjCKeV5I5i6pE6q
+	hIkEezfWmXZbPVEjFfFuQtfKmzz6mnNldSlLJN9FR+4u2z42z2cSFZVum0Oy+BuzS/QiUn6su8a5N
+	xYnO2XP8xB4Gpf6m6sjEKXPFQwJEA+u9uZc/6Bs7h6bs8LYZHMyXwiauRstmEWi8E8TzhSIN6N705
+	uZoE4dCknt+0Ts++PCCw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wc1Ze-00000006NWs-3Es1;
-	Tue, 23 Jun 2026 13:53:58 +0000
-Received: from smtp25.cstnet.cn ([159.226.251.25] helo=cstnet.cn)
+	id 1wc1ls-00000006Ovz-0bOL;
+	Tue, 23 Jun 2026 14:06:36 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wc1Za-00000006NVX-0E0w;
-	Tue, 23 Jun 2026 13:53:57 +0000
-Received: from localhost.localdomain (unknown [111.196.245.140])
-	by APP-05 (Coremail) with SMTP id zQCowAD3fADtjzpqzCvYFA--.57255S2;
-	Tue, 23 Jun 2026 21:53:49 +0800 (CST)
-From: Pengpeng Hou <pengpeng@iscas.ac.cn>
-To: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Pritam Manohar Sutar <pritam.sutar@samsung.com>,
-	Sam Protsenko <semen.protsenko@linaro.org>,
-	Johan Hovold <johan@kernel.org>,
-	=?UTF-8?q?Andr=C3=A9=20Draszik?= <andre.draszik@linaro.org>,
-	Peter Griffin <peter.griffin@linaro.org>
-Cc: Pengpeng Hou <pengpeng@iscas.ac.cn>,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH] phy: samsung: usbdrd: propagate GS101 PIPE3 lock failures
-Date: Tue, 23 Jun 2026 21:53:49 +0800
-Message-ID: <20260623135349.42739-1-pengpeng@iscas.ac.cn>
-X-Mailer: git-send-email 2.50.1
-MIME-Version: 1.0
-X-CM-TRANSID: zQCowAD3fADtjzpqzCvYFA--.57255S2
-X-Coremail-Antispam: 1UD129KBjvJXoW3KFW7uw1DGw15tr1xtr13Jwb_yoWDXw47pF
-	W7ZryIyrW0qF97tayUtrsxAa15Kw4Ik347XFyfCas2q3WDW3yUW3W8XF10y3Z8KrWkCa4S
-	yr40yFW5ZF1UCrUanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDU0xBIdaVrnRJUUU9014x267AKxVW8JVW5JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
-	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
-	1l84ACjcxK6xIIjxv20xvE14v26r4j6ryUM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4j
-	6F4UM28EF7xvwVC2z280aVAFwI0_GcCE3s1l84ACjcxK6I8E87Iv6xkF7I0E14v26rxl6s
-	0DM2AIxVAIcxkEcVAq07x20xvEncxIr21l5I8CrVACY4xI64kE6c02F40Ex7xfMcIj6xII
-	jxv20xvE14v26r106r15McIj6I8E87Iv67AKxVW8JVWxJwAm72CE4IkC6x0Yz7v_Jr0_Gr
-	1lF7xvr2IYc2Ij64vIr41lF7I21c0EjII2zVCS5cI20VAGYxC7M4IIrI8v6xkF7I0E8cxa
-	n2IY04v7MxkF7I0En4kS14v26r1q6r43MxAIw28IcxkI7VAKI48JMxC20s026xCaFVCjc4
-	AY6r1j6r4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAFwI0_JrI_JrWlx4CE
-	17CEb7AF67AKxVWUtVW8ZwCIc40Y0x0EwIxGrwCI42IY6xIIjxv20xvE14v26r1j6r1xMI
-	IF0xvE2Ix0cI8IcVCY1x0267AKxVW8JVWxJwCI42IY6xAIw20EY4v20xvaj40_Jr0_JF4l
-	IxAIcVC2z280aVAFwI0_Gr0_Cr1lIxAIcVC2z280aVCY1x0267AKxVW8Jr0_Cr1UYxBIda
-	VFxhVjvjDU0xZFpf9x0JUQZ2fUUUUU=
-X-Originating-IP: [111.196.245.140]
-X-CM-SenderInfo: pshqw1xhqjqxpvfd2hldfou0/
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260623_065354_683878_0400265A 
-X-CRM114-Status: GOOD (  13.00  )
+	id 1wc1lq-00000006Ovq-0xgC
+	for linux-phy@lists.infradead.org;
+	Tue, 23 Jun 2026 14:06:34 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 82BF860209;
+	Tue, 23 Jun 2026 14:06:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3C2281F000E9;
+	Tue, 23 Jun 2026 14:06:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1782223593;
+	bh=uoxWjM8Fu2CJNEMwDKGIGIHvvAC9u2vPkRefFO92L5E=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=ob/r4h5KTIrBWfs45dYen7LVJn0vanDow6TxF261qi0/jfn9geiOqt53hYdjkcCDt
+	 v9Q20rFPxKx0lGcbuGl+EqmgPIsbafDTl8QYTGXVOh+ArTmN0aQxbs8GLLoLJN7pAk
+	 J4YOwofFjxKCwGoYdu+Qt6hKbPRRLblUqm7vU5TTy9b0vah7flxHuCkdX1DQGvGi7P
+	 9NJM40oF3osrVVJzet+lzu+0Xwze8TUs8Ja5l0UMNb84ObUvLkfcil+LstOamj2Fa2
+	 +wCzelQNF3iPVK8QzS12uhxW3n6tEGl7D25SuOCBbaUaf27WOXe52q55nYpN0um8Qh
+	 9g3ltyeFTs/Sw==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH] phy: samsung: usbdrd: propagate GS101 PIPE3 lock
+ failures
+To: "Pengpeng Hou" <pengpeng@iscas.ac.cn>
+Cc: vkoul@kernel.org, olteanv@gmail.com, linux-phy@lists.infradead.org, neil.armstrong@linaro.org
+In-Reply-To: <20260623135349.42739-1-pengpeng@iscas.ac.cn>
+References: <20260623135349.42739-1-pengpeng@iscas.ac.cn>
+Date: Tue, 23 Jun 2026 14:06:31 +0000
+Message-Id: <20260623140632.3C2281F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,309 +62,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The GS101 PIPE3 initialization checks the PMA PLL lock and then checks
-the CDR lock. The PLL helper returns an error, but the GS101 PIPE3 init
-path dropped that result. The CDR helper only logged a timeout. PHY
-initialization could therefore still return success after either the PLL
-or the selected receive lane had not locked.
-
-Make the in-file SoC-specific phy_init hook return an int so helpers
-with real failure results can propagate them through the existing PHY
-init paths. Keep the register-only helpers returning success and use the
-new return path to report the GS101 CDR wait failure. Other SoC helper
-paths keep their previous success behavior.
-
-Fixes: 32267c29bc7d ("phy: exynos5-usbdrd: support Exynos USBDRD 3.1 combo phy (HS & SS)")
-Signed-off-by: Pengpeng Hou <pengpeng@iscas.ac.cn>
----
- drivers/phy/samsung/phy-exynos5-usbdrd.c | 78 ++++++++++++++++-------
- 1 file changed, 55 insertions(+), 23 deletions(-)
-
-diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-index 8711a3b62..5a8e0ce77 100644
---- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
-+++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-@@ -471,7 +471,7 @@ struct exynos5_usbdrd_phy;
- struct exynos5_usbdrd_phy_config {
- 	u32 id;
- 	void (*phy_isol)(struct phy_usb_instance *inst, bool isolate);
--	void (*phy_init)(struct exynos5_usbdrd_phy *phy_drd);
-+	int (*phy_init)(struct exynos5_usbdrd_phy *phy_drd);
- 	unsigned int (*set_refclk)(struct phy_usb_instance *inst);
- };
- 
-@@ -708,7 +708,7 @@ exynos5_usbdrd_apply_phy_tunes(struct exynos5_usbdrd_phy *phy_drd,
- 	}
- }
- 
--static void exynos5_usbdrd_pipe3_init(struct exynos5_usbdrd_phy *phy_drd)
-+static int exynos5_usbdrd_pipe3_init(struct exynos5_usbdrd_phy *phy_drd)
- {
- 	u32 reg;
- 
-@@ -721,6 +721,8 @@ static void exynos5_usbdrd_pipe3_init(struct exynos5_usbdrd_phy *phy_drd)
- 	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYTEST);
- 	reg &= ~PHYTEST_POWERDOWN_SSP;
- 	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_PHYTEST);
-+
-+	return 0;
- }
- 
- static void
-@@ -831,7 +833,7 @@ exynos5_usbdrd_usbdp_g2_v4_pma_check_pll_lock(struct exynos5_usbdrd_phy *phy_drd
- 	return err;
- }
- 
--static void
-+static int
- exynos5_usbdrd_usbdp_g2_v4_pma_check_cdr_lock(struct exynos5_usbdrd_phy *phy_drd)
- {
- 	static const unsigned int timeout_us = 40000;
-@@ -857,9 +859,11 @@ exynos5_usbdrd_usbdp_g2_v4_pma_check_cdr_lock(struct exynos5_usbdrd_phy *phy_drd
- 			((phy_drd->orientation == TYPEC_ORIENTATION_NORMAL)
- 			 ? 0
- 			 : 2), reg);
-+
-+	return err;
- }
- 
--static void exynos5_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
-+static int exynos5_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
- {
- 	u32 reg;
- 
-@@ -881,6 +885,8 @@ static void exynos5_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
- 	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYTEST);
- 	reg &= ~PHYTEST_POWERDOWN_HSP;
- 	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_PHYTEST);
-+
-+	return 0;
- }
- 
- static int exynos5_usbdrd_phy_init(struct phy *phy)
-@@ -917,7 +923,9 @@ static int exynos5_usbdrd_phy_init(struct phy *phy)
- 	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_PHYUTMICLKSEL);
- 
- 	/* UTMI or PIPE3 specific init */
--	inst->phy_cfg->phy_init(phy_drd);
-+	ret = inst->phy_cfg->phy_init(phy_drd);
-+	if (ret)
-+		goto disable_clks;
- 
- 	/* reference clock settings */
- 	reg = inst->phy_cfg->set_refclk(inst);
-@@ -940,9 +948,10 @@ static int exynos5_usbdrd_phy_init(struct phy *phy)
- 	reg &= ~PHYCLKRST_PORTRESET;
- 	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_PHYCLKRST);
- 
-+disable_clks:
- 	clk_bulk_disable_unprepare(phy_drd->drv_data->n_clks, phy_drd->clks);
- 
--	return 0;
-+	return ret;
- }
- 
- static int exynos5_usbdrd_phy_exit(struct phy *phy)
-@@ -1203,7 +1212,7 @@ static void exynos7870_usbdrd_phy_isol(struct phy_usb_instance *inst,
- 			   EXYNOS7870_USB2PHY_ENABLE, val);
- }
- 
--static void exynos7870_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
-+static int exynos7870_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
- {
- 	u32 reg;
- 
-@@ -1291,6 +1300,8 @@ static void exynos7870_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
- 	if (phy_drd->drv_data->phy_tunes)
- 		exynos5_usbdrd_apply_phy_tunes(phy_drd,
- 					       PTS_UTMI_POSTINIT);
-+
-+	return 0;
- }
- 
- static int exynos7870_usbdrd_phy_init(struct phy *phy)
-@@ -1304,11 +1315,11 @@ static int exynos7870_usbdrd_phy_init(struct phy *phy)
- 		return ret;
- 
- 	/* UTMI or PIPE3 specific init */
--	inst->phy_cfg->phy_init(phy_drd);
-+	ret = inst->phy_cfg->phy_init(phy_drd);
- 
- 	clk_bulk_disable_unprepare(phy_drd->drv_data->n_clks, phy_drd->clks);
- 
--	return 0;
-+	return ret;
- }
- 
- static int exynos7870_usbdrd_phy_exit(struct phy *phy)
-@@ -1355,10 +1366,12 @@ static const struct phy_ops exynos7870_usbdrd_phy_ops = {
- 	.owner		= THIS_MODULE,
- };
- 
--static void exynos2200_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
-+static int exynos2200_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
- {
- 	/* Configure non-Samsung IP PHY, responsible for UTMI */
--	phy_init(phy_drd->hs_phy);
-+	phy_init(phy_drd->hs_phy);
-+
-+	return 0;
- }
- 
- static void exynos2200_usbdrd_link_init(struct exynos5_usbdrd_phy *phy_drd)
-@@ -1458,11 +1469,11 @@ static int exynos2200_usbdrd_phy_init(struct phy *phy)
- 	exynos2200_usbdrd_link_attach_detach_pipe3_phy(inst);
- 
- 	/* UTMI or PIPE3 specific init */
--	inst->phy_cfg->phy_init(phy_drd);
-+	ret = inst->phy_cfg->phy_init(phy_drd);
- 
- 	clk_bulk_disable_unprepare(phy_drd->drv_data->n_clks, phy_drd->clks);
- 
--	return 0;
-+	return ret;
- }
- 
- static int exynos2200_usbdrd_phy_exit(struct phy *phy)
-@@ -1516,7 +1538,7 @@ exynos5_usbdrd_usb_v3p1_pipe_override(struct exynos5_usbdrd_phy *phy_drd)
- 	writel(reg, regs_base + EXYNOS850_DRD_SECPMACTL);
- }
- 
--static void exynos850_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
-+static int exynos850_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
- {
- 	void __iomem *regs_base = phy_drd->reg_phy;
- 	u32 reg;
-@@ -1622,6 +1644,8 @@ static void exynos850_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
- 
- 	if (ss_ports)
- 		exynos5_usbdrd_usb_v3p1_pipe_override(phy_drd);
-+
-+	return 0;
- }
- 
- static int exynos850_usbdrd_phy_init(struct phy *phy)
-@@ -1635,12 +1659,13 @@ static int exynos850_usbdrd_phy_init(struct phy *phy)
- 		return ret;
- 
- 	/* UTMI or PIPE3 specific init */
-+	ret = 0;
- 	scoped_guard(mutex, &phy_drd->phy_mutex)
--		inst->phy_cfg->phy_init(phy_drd);
-+		ret = inst->phy_cfg->phy_init(phy_drd);
- 
- 	clk_bulk_disable_unprepare(phy_drd->drv_data->n_clks, phy_drd->clks);
- 
--	return 0;
-+	return ret;
- }
- 
- static int exynos850_usbdrd_phy_exit(struct phy *phy)
-@@ -1689,11 +1714,12 @@ static const struct phy_ops exynos850_usbdrd_phy_ops = {
- 	.owner		= THIS_MODULE,
- };
- 
--static void exynos5_usbdrd_gs101_pipe3_init(struct exynos5_usbdrd_phy *phy_drd)
-+static int exynos5_usbdrd_gs101_pipe3_init(struct exynos5_usbdrd_phy *phy_drd)
- {
- 	void __iomem *regs_pma = phy_drd->reg_pma;
- 	void __iomem *regs_phy = phy_drd->reg_phy;
- 	u32 reg;
-+	int ret;
- 
- 	exynos5_usbdrd_usbdp_g2_v4_ctrl_pma_ready(phy_drd);
- 
-@@ -1715,8 +1741,11 @@ static void exynos5_usbdrd_gs101_pipe3_init(struct exynos5_usbdrd_phy *phy_drd)
- 		 SECPMACTL_PMA_INIT_SW_RST);
- 	writel(reg, regs_phy + EXYNOS850_DRD_SECPMACTL);
- 
--	if (!exynos5_usbdrd_usbdp_g2_v4_pma_check_pll_lock(phy_drd))
--		exynos5_usbdrd_usbdp_g2_v4_pma_check_cdr_lock(phy_drd);
-+	ret = exynos5_usbdrd_usbdp_g2_v4_pma_check_pll_lock(phy_drd);
-+	if (ret)
-+		return ret;
-+
-+	return exynos5_usbdrd_usbdp_g2_v4_pma_check_cdr_lock(phy_drd);
- }
- 
- static int exynos5_usbdrd_gs101_phy_init(struct phy *phy)
-@@ -1741,7 +1770,15 @@ static int exynos5_usbdrd_gs101_phy_init(struct phy *phy)
- 	 */
- 	exynos5_usbdrd_phy_isol(inst, false);
- 
--	return exynos850_usbdrd_phy_init(phy);
-+	ret = exynos850_usbdrd_phy_init(phy);
-+	if (ret) {
-+		exynos5_usbdrd_phy_isol(inst, true);
-+		if (inst->phy_cfg->id == EXYNOS5_DRDPHY_UTMI)
-+			regulator_bulk_disable(phy_drd->drv_data->n_regulators,
-+					       phy_drd->regulators);
-+	}
-+
-+	return ret;
- }
- 
- static int exynos5_usbdrd_gs101_phy_exit(struct phy *phy)
-@@ -2277,7 +2314,7 @@ exynosautov920_usb31drd_lane0_reset(struct exynos5_usbdrd_phy *phy_drd, int val)
- 	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_RST_CTRL);
- }
- 
--static void
-+static int
- exynosautov920_usb31drd_pipe3_init(struct exynos5_usbdrd_phy *phy_drd)
- {
- 	void __iomem *reg_phy = phy_drd->reg_phy;
-@@ -2335,6 +2372,8 @@ exynosautov920_usb31drd_pipe3_init(struct exynos5_usbdrd_phy *phy_drd)
- 
- 	/* override values for level settings */
- 	exynosautov920_usb31drd_cr_write(phy_drd, 0x22, 0x00F5);
-+
-+	return 0;
- }
- 
- static void
-@@ -2353,7 +2392,7 @@ exynosautov920_usb31drd_ssphy_disable(struct exynos5_usbdrd_phy *phy_drd)
- 	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CONFIG7);
- }
- 
--static void
-+static int
- exynosautov920_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
- {
- 	void __iomem *reg_phy = phy_drd->reg_phy;
-@@ -2457,6 +2496,8 @@ exynosautov920_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
- 	reg = readl(reg_phy + EXYNOS2200_DRD_CLKRST);
- 	reg |= EXYNOS2200_CLKRST_LINK_PCLK_SEL;
- 	writel(reg, reg_phy + EXYNOS2200_DRD_CLKRST);
-+
-+	return 0;
- }
- 
- static void
-@@ -2504,11 +2545,11 @@ static int exynosautov920_usbdrd_phy_init(struct phy *phy)
- 	inst->phy_cfg->phy_isol(inst, false);
- 
- 	/* UTMI or PIPE3 specific init */
--	inst->phy_cfg->phy_init(phy_drd);
-+	ret = inst->phy_cfg->phy_init(phy_drd);
- 
- 	clk_bulk_disable_unprepare(phy_drd->drv_data->n_clks, phy_drd->clks);
- 
--	return 0;
-+	return ret;
- }
- 
- static int exynosautov920_usbdrd_phy_exit(struct phy *phy)
--- 
-2.50.1 (Apple Git-155)
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
+IFtIaWdoXSBSZXNvdXJjZSBsZWFrIChyZWd1bGF0b3JzIGFuZCBQSFkgaXNvbGF0aW9uIHN0YXRl
+KSBpbiBlcnJvciBwYXRoIG9mIGV4eW5vczIyMDBfdXNiZHJkX3BoeV9pbml0LgotLQoKY29tbWl0
+IDIwZWFjOTM2MjIzNjc1NDUwYjNlOWU0NTg1NjY2NTMyOTlkMGIwOWIKQXV0aG9yOiBQZW5ncGVu
+ZyBIb3UgPHBlbmdwZW5nQGlzY2FzLmFjLmNuPgpTdWJqZWN0OiBwaHk6IHNhbXN1bmc6IHVzYmRy
+ZDogcHJvcGFnYXRlIEdTMTAxIFBJUEUzIGxvY2sgZmFpbHVyZXMKClRoaXMgY29tbWl0IHVwZGF0
+ZXMgdGhlIFNvQy1zcGVjaWZpYyBwaHlfaW5pdCBob29rcyB0byByZXR1cm4gYW4gaW50ZWdlcgpl
+cnJvciBjb2RlIGluc3RlYWQgb2Ygdm9pZC4gVGhpcyBhbGxvd3MgaGVscGVycyB3aXRoIHJlYWwg
+ZmFpbHVyZSByZXN1bHRzLApzdWNoIGFzIHRoZSBHUzEwMSBQSVBFMyBQTEwgb3IgQ0RSIGxvY2tz
+IGZhaWxpbmcsIHRvIHByb3BhZ2F0ZSB0aG9zZSBlcnJvcnMKdGhyb3VnaCB0aGUgZXhpc3Rpbmcg
+UEhZIGluaXRpYWxpemF0aW9uIHBhdGhzLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvc2Ft
+c3VuZy9waHktZXh5bm9zNS11c2JkcmQuYyBiL2RyaXZlcnMvcGh5L3NhbXN1bmcvcGh5LWV4eW5v
+czUtdXNiZHJkLmMKPiBpbmRleCA1YTE4MWNiNDU5N2U5Li41MTNhOGY5YzI1ZTlhIDEwMDY0NAo+
+IC0tLSBhL2RyaXZlcnMvcGh5L3NhbXN1bmcvcGh5LWV4eW5vczUtdXNiZHJkLmMKPiArKysgYi9k
+cml2ZXJzL3BoeS9zYW1zdW5nL3BoeS1leHlub3M1LXVzYmRyZC5jCgpbIC4uLiBdCgo+IEBAIC0x
+NDU4LDExICsxNDcxLDExIEBAIHN0YXRpYyBpbnQgZXh5bm9zMjIwMF91c2JkcmRfcGh5X2luaXQo
+c3RydWN0IHBoeSAqcGh5KQo+ICAJZXh5bm9zMjIwMF91c2JkcmRfbGlua19hdHRhY2hfZGV0YWNo
+X3BpcGUzX3BoeShpbnN0KTsKPiAgCj4gIAkvKiBVVE1JIG9yIFBJUEUzIHNwZWNpZmljIGluaXQg
+Ki8KPiAtCWluc3QtPnBoeV9jZmctPnBoeV9pbml0KHBoeV9kcmQpOwo+ICsJcmV0ID0gaW5zdC0+
+cGh5X2NmZy0+cGh5X2luaXQocGh5X2RyZCk7Cj4gIAo+ICAJY2xrX2J1bGtfZGlzYWJsZV91bnBy
+ZXBhcmUocGh5X2RyZC0+ZHJ2X2RhdGEtPm5fY2xrcywgcGh5X2RyZC0+Y2xrcyk7Cj4gIAo+IC0J
+cmV0dXJuIDA7Cj4gKwlyZXR1cm4gcmV0Owo+ICB9CgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgaXMg
+YSBwcmUtZXhpc3RpbmcgaXNzdWUsIGJ1dCB3aGlsZSByZXZpZXdpbmcgdGhlIGVycm9yIHBhdGgg
+dXBkYXRlcyBpbgpleHlub3MyMjAwX3VzYmRyZF9waHlfaW5pdCgpLCBJIG5vdGljZWQgYSBwb3Rl
+bnRpYWwgcmVzb3VyY2UgbGVhayBlYXJsaWVyCmluIHRoZSBzYW1lIGZ1bmN0aW9uLgoKSWYgY2xr
+X2J1bGtfcHJlcGFyZV9lbmFibGUoKSBmYWlscywgdGhlIGZ1bmN0aW9uIHJldHVybnMgaW1tZWRp
+YXRlbHk6CgoJaWYgKGluc3QtPnBoeV9jZmctPmlkID09IEVYWU5PUzVfRFJEUEhZX1VUTUkpIHsK
+CQlyZXQgPSByZWd1bGF0b3JfYnVsa19lbmFibGUocGh5X2RyZC0+ZHJ2X2RhdGEtPm5fcmVndWxh
+dG9ycywKCQkJCQkgICAgcGh5X2RyZC0+cmVndWxhdG9ycyk7CgkJaWYgKHJldCkgewoJCQkuLi4K
+CQkJcmV0dXJuIHJldDsKCQl9Cgl9CgoJZXh5bm9zNV91c2JkcmRfcGh5X2lzb2woaW5zdCwgZmFs
+c2UpOwoKCXJldCA9IGNsa19idWxrX3ByZXBhcmVfZW5hYmxlKHBoeV9kcmQtPmRydl9kYXRhLT5u
+X2Nsa3MsIHBoeV9kcmQtPmNsa3MpOwoJaWYgKHJldCkKCQlyZXR1cm4gcmV0OwoKRG9lcyB0aGlz
+IHNraXAgdGVhcmluZyBkb3duIHRoZSByZWd1bGF0b3JzIChlbmFibGVkIGZvciBFWFlOT1M1X0RS
+RFBIWV9VVE1JKQphbmQgbGVhdmUgdGhlIFBIWSB1bi1pc29sYXRlZCwgY29uc2lkZXJpbmcgdGhl
+IGdlbmVyaWMgUEhZIGZyYW1ld29yayBkb2VzCm5vdCBjYWxsIC5leGl0KCkgd2hlbiAuaW5pdCgp
+IGZhaWxzPwoKV291bGQgaXQgYmUgYXBwcm9wcmlhdGUgdG8gYWRkIGFuIGVycm9yIGxhYmVsIGhl
+cmUgdG8gZGlzYWJsZSB0aGUgcmVndWxhdG9ycwphbmQgcmUtYXNzZXJ0IGlzb2xhdGlvbiB2aWEg
+ZXh5bm9zNV91c2JkcmRfcGh5X2lzb2woaW5zdCwgdHJ1ZSksIHNpbWlsYXIgdG8KdGhlIGNsZWFu
+dXAgcGF0aCByZWNlbnRseSBhZGRlZCBmb3IgZXh5bm9zNV91c2JkcmRfZ3MxMDFfcGh5X2luaXQo
+KT8KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hz
+ZXQvMjAyNjA2MjMxMzUzNDkuNDI3MzktMS1wZW5ncGVuZ0Bpc2Nhcy5hYy5jbj9wYXJ0PTEKCi0t
+IApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
+dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
