@@ -4,98 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88A16CDE001
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Jun 2026 08:48:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF089CDB479
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Jun 2026 13:26:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:Cc:From:To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dzTTDA+JUcKXYAmq8LbdVhIhWZ6bW2K0wRFJTNq3HZk=; b=pNhUpsGme8qVEH
-	iPmU+Yr3GlUfDAwdT2UwfU91mhS3n722PhX+3swWeTX9IAs0PZxMbDhGhxH9njH0dEZaXduee7hxw
-	VhOyQORMP9oCG47wulI9xU8w5rosHg8AGZb44YagcB1P9NzmzN0IruIg3yoJoHLPgJ3UYdNlzOI97
-	mj3xiZagqK42fEvZYjsnProrSmPZI/zuEuVlpAFQdGzyrzuNwSPKAENPK4V1M7V/5m2ud1h/1s4D6
-	I+Heg9/G6aqVW3V4tlFgTLInbo5pRrqgC6PqjC807VE+G/gz1uB28NBerMOUb4xFk5Dl+iNE9FPZq
-	SzyzHziMIMf65BFSAR0Q==;
+	List-Owner; bh=ZU2w2aT1sWaNL5Wgh80oulzQ2WTqBesdKvayGWFmsgs=; b=UaYu6lH9QgQTQl
+	0Xtur8Y/PPcqfEYRnVNl6uR6bhywAWx2BaZw8hQVE+sI3OjzTbl/N9o0gBZdtf05nuFubqZXem1kH
+	L31R0it4oAB9W1hJZbgTlT8wOPzA9XEqOX2/C8GznSt7myR25NGd25BIPsYjLoX3lNMlXve3F02lr
+	fQMhltYo2Yu8Fxtq/8p4fX3LcpmAHuOhgqTMgbNYB3+x96VgXVWx+ANzlEnODkhcUn3Tml02qMRSD
+	10FJarNfENqYdCXGfhmWY7FiEePUrgQFAxSvkboYimf5qGatBHSidzDCcF9PXzYk60mS6/TYfYTWa
+	eFVotSACbGro3PwgNRig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wcJHV-00000007QlW-0hoa;
-	Wed, 24 Jun 2026 08:48:25 +0000
-Received: from mail-wr1-x431.google.com ([2a00:1450:4864:20::431])
+	id 1wcNcV-00000007opA-1r0l;
+	Wed, 24 Jun 2026 13:26:23 +0000
+Received: from mail-24416.protonmail.ch ([109.224.244.16])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wcJHR-00000007Qk3-3uUl
-	for linux-phy@lists.infradead.org;
-	Wed, 24 Jun 2026 08:48:23 +0000
-Received: by mail-wr1-x431.google.com with SMTP id ffacd0b85a97d-45f3cf907ceso339432f8f.2
-        for <linux-phy@lists.infradead.org>; Wed, 24 Jun 2026 01:48:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1782290900; x=1782895700; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=SB90+YCUH0dV66aMdsIbPcNB77SkXK4CkRD/ocilleU=;
-        b=aSaR2L5u2AcMCUqfwgVTeXXzB7LLTleVrl5QLJS2+dXkGVgdmkXCwvyxT8dux80ZU7
-         nTWMQ/TvSUtFDLpZ8TyyT2AJqzWmgAwiRGGLwn9H99d+s4VqQgJi7Klp1iLuThYwgkR0
-         sa6f6rpTgrtuEhhi6rCiwypaY9hjFAjrSFYNpuS31w8EMofovAoCYimDfAZxOqujKDUl
-         IivyWhQoLBu/iXaST2kYz5cG9Dj+yOrWCuMdaRgTL2Lc3xDDb6W43YuPWT9jXOWFT79U
-         vrqRi5mQbEtP1UrBYYsuq6rKYNw2vd9pgETHE10AhAnlw2wMSrYUfsA9Pi6FqrGxWeVW
-         Luzg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1782290900; x=1782895700;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=SB90+YCUH0dV66aMdsIbPcNB77SkXK4CkRD/ocilleU=;
-        b=ZxvP+ToyzvVAh4av5CxUyYUhsj9lC8btZCPmXL1YCJRGnKk/StYd4iFjILairiOnyB
-         GIFlKZr1D696pAKihz1TODddY8VEqkSw5sS+qscZzfaMcgor4Nl0NDDNRai5I3wN+i+J
-         HACnCPnStiOF771Aj7XsFiF+HZe7y47xAfytzjTCn0AYES68h5aGJrtwODXZGOZ1iVcA
-         LV3QPlqVaO6m77rXqBowfRcN2Ci/FpPAun+7tMPW/YgbVJYT/RmlHKkAFDkuBhoRduYt
-         chxVPRC8Z5xynMRttDiMjBUnXVzbx3mICUALPT2/2FWX7NUPHzKDo5+zYqogkqsoyYa2
-         kqJA==
-X-Forwarded-Encrypted: i=1; AHgh+RqfuB2i6umAjuJiY8sJqM9Q44pARgD3nfISqyPL9M5hT+hgZd7GYsuH9cuOmxZBnNGxmt3aA2l3JfI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxOECo7ozEl9BGuel3OORGBUemWgJ9ZHKIWFRHaqOiq7bVbrUIp
-	61IXSWNBtTUbeFsNe1ML+hqZqSWfwg3eGGSTIIRJ6N80cFidUfWkGGl6
-X-Gm-Gg: AfdE7ckQPekAfkEMKusnn0BZKg0aFNKWP66DCpKW7IIHFmiS3RsZo6q5aLZYHdywUmX
-	7RzcHzsVOhN5Zo+iOXeW2urJRfykRk9Ngud/6kotqQEm8iXs4B4lxvHyF5jA4tGynlYVtx7AjTI
-	TMu+NvvLYqBVf8Rlb+iH9+3144vsvsA7afWdQSpj4W+NMcCuWGrnuOyvlw5ThM/Z9EXBmJ6/OFv
-	2bJ4KnSB/xuskIP1q44xtnr0odYExAcnsAVkK7RmBe2WhMviVIsGfKX7RhlT6vw3DXjOygvJ2fQ
-	i2JvFLlY/EnWhuYI3DI0d3+vkHUR/hIHTtSYtyq/1tVaZp+F8Ss09hUVHNo5U+yukZtzsAOZe3I
-	8VtP9j8VoxMTABowC9TnJU8YMqmWj+d4m75zycRmFY62z7WRvGvuzzmopJbP3M5BwvkW/S99b1k
-	N4mdFHO1PGHyGXexeU5euO8X+Y9iTKLr0qbNEI9p177a01tNItqP7pK0BrSrVJOJuLhD0PuFzPR
-	2gnd8tnBKYr3cSW4g==
-X-Received: by 2002:a05:6000:2404:b0:465:81cb:bb20 with SMTP id ffacd0b85a97d-46c04a33d34mr4263361f8f.9.1782290899881;
-        Wed, 24 Jun 2026 01:48:19 -0700 (PDT)
-Received: from localhost.localdomain (ip-89-176-136-191.bb.vodafone.cz. [89.176.136.191])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-46c221d9371sm5065849f8f.21.2026.06.24.01.48.18
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 24 Jun 2026 01:48:19 -0700 (PDT)
-From: Petr Wozniak <petr.wozniak@gmail.com>
-To: Russell King <linux@armlinux.org.uk>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>
-Cc: Jakub Kicinski <kuba@kernel.org>,
-	"David S . Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Paolo Abeni <pabeni@redhat.com>,
-	netdev@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Maxime Chevallier <maxime.chevallier@bootlin.com>,
-	Bjorn Mork <bjorn@mork.no>,
-	Aleksander Bajkowski <olek2@wp.pl>,
-	Marek Behun <kabel@kernel.org>,
-	Petr Wozniak <petr.wozniak@gmail.com>
-Subject: [PATCH net v4 2/2] net: phy: mdio-i2c: defer RollBall bridge probe to PHY discovery
-Date: Wed, 24 Jun 2026 10:48:14 +0200
-Message-ID: <20260624084814.20972-3-petr.wozniak@gmail.com>
-X-Mailer: git-send-email 2.50.1
-In-Reply-To: <20260624084814.20972-1-petr.wozniak@gmail.com>
-References: <20260624084814.20972-1-petr.wozniak@gmail.com>
+	id 1wcNcR-00000007ooL-2llc;
+	Wed, 24 Jun 2026 13:26:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
+	s=protonmail; t=1782307573; x=1782566773;
+	bh=wIb9R7eOTXQ3L9z9i9MDpz2gfdRkQpGrhD1+tSfI5os=;
+	h=Date:To:From:Cc:Subject:Message-ID:In-Reply-To:References:
+	 Feedback-ID:From:To:Cc:Date:Subject:Reply-To:Feedback-ID:
+	 Message-ID:BIMI-Selector;
+	b=f2sejHT/WrS3zPqG/Iq9XEFBDxWynyuPFUJ25mgIiAxiwbD/aNM7z56IwOvNTa0nR
+	 Y5g7F63y/jN6cgwYlftaw2XTy2sJhj/G17X7juo32bZ2b5lsFIEtb6pe0pgIuydBCA
+	 89xsMu9F0phcow/MV64e2lbCs9A6j+oLpTmTS2sJjIesL41+Q1UshtSkA+6b+gCbFP
+	 rwlV6PkYZm967+4L1H7Yuyz3RhO0RfESjr0HZPbSw42AuhPFg65LEKmjtSM8i/RbC4
+	 YxM7sW1UEuR9SLsSn41NkWaQhm1uzFzZivQsFUKEbdMeeHrSR8y44skr1uq2awYt3S
+	 yZC0lHiUXb/OQ==
+Date: Wed, 24 Jun 2026 13:26:06 +0000
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, Bjorn Andersson <andersson@kernel.org>, Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>, Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Rob Clark <robin.clark@oss.qualcomm.com>, Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>, "Joerg Roedel (AMD)" <joro@8bytes.org>, Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>
+From: Esteban Urrutia <esteuwu@proton.me>
+Cc: linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, iommu@lists.linux.dev, linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH 2/8] arm64: dts: qcom: sm8450: Remove unneeded reserved memory nodes
+Message-ID: <b3541802-3035-40ee-8327-a65bd5d2dfee@proton.me>
+In-Reply-To: <6123a923-21dd-4f69-9ac5-02165963027c@oss.qualcomm.com>
+References: <20260622-sm8450-qol-v1-0-37e2ee8df9da@proton.me> <20260622-sm8450-qol-v1-2-37e2ee8df9da@proton.me> <e1e492ab-884e-442b-8410-cc100c54fd5f@oss.qualcomm.com> <6123a923-21dd-4f69-9ac5-02165963027c@oss.qualcomm.com>
+Feedback-ID: 147889766:user:proton
+X-Pm-Message-ID: df186333b5a853f68028d7d86cfc27a4db0a8a20
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260624_014822_019215_770076C4 
-X-CRM114-Status: GOOD (  19.05  )
+X-CRM114-CacheID: sfid-20260624_062620_394028_589CA138 
+X-CRM114-Status: UNSURE (   8.16  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,148 +69,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-commit 8fe125892f40 ("net: phy: sfp: probe for RollBall I2C-to-MDIO
-bridge in mdio-i2c") introduced a regression: the RollBall I2C-to-MDIO
-bridge is not yet ready to respond to CMD_READ/CMD_DONE cycles when
-sfp_sm_add_mdio_bus() runs in SFP_S_INIT.  The 200 ms probe times out,
-i2c_mii_probe_rollball() returns -ENODEV, and sfp_sm_add_mdio_bus()
-sets mdio_protocol = MDIO_I2C_NONE.  By the time sfp_sm_probe_for_phy()
-runs (up to ~17 s later on affected hardware), the bridge is fully
-initialized but PHY probing is skipped because the protocol has already
-been changed to NONE.
 
-This affects both modules inserted before boot and hotplugged modules on
-hardware where bridge initialization exceeds the 200 ms probe window
-(confirmed: FLYPRO SFP-10GT-CS-30M with Aquantia AQR113C, hotplugged).
 
-Move the probe from i2c_mii_init_rollball(), called at bus-creation time,
-to sfp_sm_probe_for_phy() in sfp.c, where it runs after the SFP state
-machine module initialization delays.  Export the probe function as
-mdio_i2c_probe_rollball() so sfp.c can call it.
+On 6/23/26 7:03 AM, Konrad Dybcio wrote:
+>> This is mentioned in the memory map description, but is not part
+>> of it.
+>>
+>> I booted up a 8450 HDK and it doesn't even have MTE, so it's
+>> probably valid
+> 
+> i.e. it doesn't report MTE to Linux. I don't know if it's Gunyah
+> trapping it.
+Then, should device trees delete these memory regions on a case-by-case
+basis, or be left as is?
 
-For RTL8261BE-based modules the probe correctly returns -ENODEV at PHY
-discovery time, causing sfp_sm_probe_for_phy() to destroy the MDIO bus
-and set MDIO_I2C_NONE, eliminating the 5+ minute PHY probe retry loop.
-
-For genuine RollBall modules (e.g. FLYPRO SFP-10GT-CS-30M with Aquantia
-AQR113C) the probe now runs after initialization is complete and
-correctly returns 0, so PHY detection proceeds normally.
-
-Reported-by: Aleksander Bajkowski <olek2@wp.pl>
-Fixes: 8fe125892f40 ("net: phy: sfp: probe for RollBall I2C-to-MDIO bridge in mdio-i2c")
-Signed-off-by: Petr Wozniak <petr.wozniak@gmail.com>
----
- drivers/net/mdio/mdio-i2c.c   | 15 +++++++++------
- drivers/net/phy/sfp.c         | 22 ++++++++++++++--------
- include/linux/mdio/mdio-i2c.h |  1 +
- 3 files changed, 24 insertions(+), 14 deletions(-)
-
-diff --git a/drivers/net/mdio/mdio-i2c.c b/drivers/net/mdio/mdio-i2c.c
-index b88f63234b4e..2a3a418c1369 100644
---- a/drivers/net/mdio/mdio-i2c.c
-+++ b/drivers/net/mdio/mdio-i2c.c
-@@ -419,7 +419,7 @@ static int i2c_mii_write_rollball(struct mii_bus *bus, int phy_id, int devad,
- 	return 0;
- }
- 
--static int i2c_mii_probe_rollball(struct i2c_adapter *i2c)
-+int mdio_i2c_probe_rollball(struct i2c_adapter *i2c)
- {
- 	u8 data_buf[] = { ROLLBALL_DATA_ADDR, 0x01, 0x00, 0x00 };
- 	u8 cmd_buf[]  = { ROLLBALL_CMD_ADDR, ROLLBALL_CMD_READ };
-@@ -462,9 +462,13 @@ static int i2c_mii_probe_rollball(struct i2c_adapter *i2c)
- 
- 	return -ENODEV;
- }
-+EXPORT_SYMBOL_GPL(mdio_i2c_probe_rollball);
- 
- static int i2c_mii_init_rollball(struct i2c_adapter *i2c)
- {
-+	/* Send the RollBall unlock password; bridge presence is verified
-+	 * later, in sfp_sm_probe_for_phy(), after module initialization.
-+	 */
- 	struct i2c_msg msg;
- 	u8 pw[5];
- 	int ret;
-@@ -486,7 +490,7 @@ static int i2c_mii_init_rollball(struct i2c_adapter *i2c)
- 	if (ret != 1)
- 		return -EIO;
- 
--	return i2c_mii_probe_rollball(i2c);
-+	return 0;
- }
- 
- static bool mdio_i2c_check_functionality(struct i2c_adapter *i2c,
-@@ -531,10 +535,9 @@ struct mii_bus *mdio_i2c_alloc(struct device *parent, struct i2c_adapter *i2c,
- 	case MDIO_I2C_ROLLBALL:
- 		ret = i2c_mii_init_rollball(i2c);
- 		if (ret < 0) {
--			if (ret != -ENODEV)
--				dev_err(parent,
--					"Cannot initialize RollBall MDIO I2C protocol: %d\n",
--					ret);
-+			dev_err(parent,
-+				"Cannot initialize RollBall MDIO I2C protocol: %d\n",
-+				ret);
- 			mdiobus_free(mii);
- 			return ERR_PTR(ret);
- 		}
-diff --git a/drivers/net/phy/sfp.c b/drivers/net/phy/sfp.c
-index c4d274ab651e..01b941a38eed 100644
---- a/drivers/net/phy/sfp.c
-+++ b/drivers/net/phy/sfp.c
-@@ -2174,17 +2174,10 @@ static void sfp_sm_fault(struct sfp *sfp, unsigned int next_state, bool warn)
- 
- static int sfp_sm_add_mdio_bus(struct sfp *sfp)
- {
--	int ret;
--
- 	if (sfp->mdio_protocol == MDIO_I2C_NONE)
- 		return 0;
- 
--	ret = sfp_i2c_mdiobus_create(sfp);
--	if (ret == -ENODEV) {
--		sfp->mdio_protocol = MDIO_I2C_NONE;
--		return 0;
--	}
--	return ret;
-+	return sfp_i2c_mdiobus_create(sfp);
- }
- 
- /* Probe a SFP for a PHY device if the module supports copper - the PHY
-@@ -2215,6 +2208,19 @@ static int sfp_sm_probe_for_phy(struct sfp *sfp)
- 		break;
- 
- 	case MDIO_I2C_ROLLBALL:
-+		/* Probe here, after module initialization delays, so that
-+		 * genuine RollBall bridges have had time to start up.
-+		 * Modules without a bridge (e.g. RTL8261BE) return -ENODEV.
-+		 */
-+		err = mdio_i2c_probe_rollball(sfp->i2c);
-+		if (err == -ENODEV) {
-+			sfp_i2c_mdiobus_destroy(sfp);
-+			sfp->mdio_protocol = MDIO_I2C_NONE;
-+			err = 0;
-+			break;
-+		}
-+		if (err)
-+			break;
- 		err = sfp_sm_probe_phy(sfp, SFP_PHY_ADDR_ROLLBALL, true);
- 		break;
- 	}
-diff --git a/include/linux/mdio/mdio-i2c.h b/include/linux/mdio/mdio-i2c.h
-index 65b550a6fc32..5cf14f45c94b 100644
---- a/include/linux/mdio/mdio-i2c.h
-+++ b/include/linux/mdio/mdio-i2c.h
-@@ -20,5 +20,6 @@ enum mdio_i2c_proto {
- 
- struct mii_bus *mdio_i2c_alloc(struct device *parent, struct i2c_adapter *i2c,
- 			       enum mdio_i2c_proto protocol);
-+int mdio_i2c_probe_rollball(struct i2c_adapter *i2c);
- 
- #endif
--- 
-2.51.0
+Regards,
+Esteban
 
 
 -- 
