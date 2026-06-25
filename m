@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AFA54CDE000
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Jun 2026 17:41:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2CEDDCDE00D
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Jun 2026 17:41:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GDBVrb+5/wc/xuSLYRfBL1ieRK3oq7EWDic6l5+qCHo=; b=qHrChceOIudmyn
-	lPTqbIJygCSjuxAWHBpa4r7qLQyydg9w4pjskHmLomf5mV0EtxHehRxPsWEeCxjYug3LfyTVcJ6YO
-	qP/GOnfLOWsYeYx65Nka2r4G2AUniyVZE6vKFzwk43mV4zEh7PEIs4c4s1b7hbvtoEYmpVywYFRla
-	Y9J1zvmE9mkkUlPGbIFg1cJT5kbxt3GeQ3dH2PVE3DoPFTRM/+mi4nwyH8hJkfqLjGvADD0yQNLYr
-	X2OH9BSRHyHO6xcUdf3uv6Yw2t5QjqsORInrJWgQzWRO6nIX4XGsplDSNnvoLPuI89OwMYmOk4CIi
-	LH02xDuAKJIVQ3c+85WA==;
+	List-Owner; bh=AhZgQ0/QE9VGCgjKt+UVB9Wb04XmnJ/FTRtz9P5gUzk=; b=O7xHt44xKnWmnw
+	tt07wkoAfS8aFVV3+GA4mw/GmMSqKxCNueqeXzBJAy9HXcCgKnElBKMspuFlV6+XA40xAAwP0TJ7h
+	sY5gD5hvcWmBxsDqnU4K5375ilDueZmRHSD/0hn6vjdPCP+GWMxgjkaKiMSSdDQI5DYd9g6JyKSFI
+	rtkhSanF6yHDFM2jdBN6aW9nuQ2n0N9UithKjSAr9Q63viEvxCgEmeSolJ0U1TCw12fLAMg8DNq+4
+	q4uBqXPNBSUW9WldGztlpLiWfxa6ArfIbx3C40vp9gVuhgiv94EO/ObRy4jzD/Bm43qXU73FVRWis
+	b+jqrraYvG+D9nSehEDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wco4Z-00000009bCg-0ed4;
-	Thu, 25 Jun 2026 17:41:07 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1wco4c-00000009bJS-2h9v;
+	Thu, 25 Jun 2026 17:41:10 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wco3L-00000009ZZR-1pzX;
-	Thu, 25 Jun 2026 17:39:53 +0000
+	id 1wco3M-00000009Za6-0jwE;
+	Thu, 25 Jun 2026 17:39:54 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1782409181;
-	bh=lIQrXHPEduipW6Hj0T0PV2Fyg/ObQ+nENmNrinpT9h4=;
+	bh=jL6EGfVAkl39iYFqWeesiDXL+z+JZr8ncJYla5iaccY=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=I8de5XsWer9oUd6umhLmk5yEh0HXekHqmiKO+s8GOpxtNhGFDm4Au0QxQWLraTN+D
-	 j1QdUtLHv7ItwGL6JW/PtFpx+vj4lFz06blKVIqgY0tmmgACpw9+jxHtO3ZTnF1sMd
-	 hrjRFj6rydm7eGZNEVr5qhje62srS/mn41CvMTuIqW9muouc62t0/4lkUX7rlkhTSb
-	 d8io/ThmcKXoLsx2NlQVDrvoR4Ap70T3lrBqPviAdMttVY0W/b7+0CGXDiv+ffPaZD
-	 0NnjzGev0l44uEc5oMcXE4NjP4FDrnEHhRGE/woYVwaGqwEUoL0llJsJfFak5fChUb
-	 /lCleGd6NesdA==
+	b=cmpsjloB85Bq/5X4nbXsu7zRlA2VUu5hke9W0vob2a+Nw4GNc9YrCi8SJVCvSu1Aq
+	 uKheUSKwFawlFWS41ieBA8iTao3190ZhxgxD9bKDQfiylQipykttTMXZZkK1t3rajM
+	 teJKWyK6i0bu8lVy6YZBAVIuHbWoB320SIKLwlqw4YJWe7ITWBpGmR84jMQUWONGMM
+	 6EfqELQ/X2Tb40Ncy3vYiFB7ynhnV4Y69mLM/iZPwFMNB73t3rZzmhslPjkHjJp/AN
+	 BufPLii76vEKSLmayEkELV4gn6+3Bn9rUgIYxgn5kAF6+2yTBrxhZuAUBtMED5d1Xe
+	 D2dQPCcWUUNBQ==
 Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 1760217E1583;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 479B017E15D0;
 	Thu, 25 Jun 2026 19:39:41 +0200 (CEST)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id 166A4480065; Thu, 25 Jun 2026 19:39:40 +0200 (CEST)
+	id 1EEE748006B; Thu, 25 Jun 2026 19:39:40 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Thu, 25 Jun 2026 19:39:47 +0200
-Subject: [PATCH v7 20/27] phy: rockchip: usbdp: Re-init the PHY on
- orientation change
+Date: Thu, 25 Jun 2026 19:39:53 +0200
+Subject: [PATCH v7 26/27] phy: rockchip: usbdp: Add some extra debug
+ messages
 MIME-Version: 1.0
-Message-Id: <20260625-rockchip-usbdp-cleanup-v7-20-38eb3cf654fd@collabora.com>
+Message-Id: <20260625-rockchip-usbdp-cleanup-v7-26-38eb3cf654fd@collabora.com>
 References: <20260625-rockchip-usbdp-cleanup-v7-0-38eb3cf654fd@collabora.com>
 In-Reply-To: <20260625-rockchip-usbdp-cleanup-v7-0-38eb3cf654fd@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -66,26 +66,26 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  devicetree@vger.kernel.org, 
  Sebastian Reichel <sebastian.reichel@collabora.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1257;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2060;
  i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=lIQrXHPEduipW6Hj0T0PV2Fyg/ObQ+nENmNrinpT9h4=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGo9Z9sJsCL2392xBrNchxTuWnPtN4NWuagWe
- ZdNCPBoAC+xrIkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqPWfbAAoJENju1/PI
- O/qaPZ4P/0pP9pYtctzhJxHBThODKf8uG++izvpF4nMDI7QJ7Ey0lS/JIvWUykqVTRG/2MihNZl
- Bp7URr5YlCENF2eTxI6Gfr38RMI3eE8hyEUK5UbQcdht7MdO+cI67eab6C62dcAsh96f5mFUYnp
- th/1VfcAbOlufFuUuG+RKSe7l3xw/c43A5QoTpRaKiMMQ9Rhp8qSJAx6wifo1AO/mQKfDst+bWb
- hdTKEqG/Gi8WAoKzGGO+icyMrQXlNucsCoVHTdtb/4z08641ew/kSO1elSLq2soV+ZT838zjjmU
- AS8NbvSmJVIC46FO1isxoIsAvWR3dTtVmP9lc1aLMDfwd8zZHKqZoIjzdP85c6VkCfNJX86VH7H
- +raGXj8Jj5a8HV57RGmcQ7LpeiG4ZfwbVxBQE+/1vs0dYfs07DWUjBqW4R/m/u5seHm4R309I+e
- kslA1jtBWRvToHiMbH4E9timQXD5NkYE0RlghMmrGRYNGmvP3o4MjZ2x4gSSWqrkG7VKCeWeb/Y
- w+PNro3S7z84Sk6ZQv4gVYdxUTDgphXUIiot/i5UIfbRXqcF1fl6qsp6K0sgHjTI6nlxgtOnfbi
- fkp1AJxo0FrUrWGSNgHfDBrDz15x+SX9FhnLEfBf6xZ1CiODcS/G/HdtlEc5WQSbyj9blcf54Q7
- Pw3t+32j0xAjuf4+OHEctqg==
+ bh=jL6EGfVAkl39iYFqWeesiDXL+z+JZr8ncJYla5iaccY=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGo9Z9tPjAkqsm1AOaQV/ET9R5n/YEkXwQQ3B
+ 5+gw/DC2CBos4kCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqPWfbAAoJENju1/PI
+ O/qaN5AP+gLP9xPzRMsDnaWPseA0gnHs4Pyigl08euTQwg6BFFY2rHG871VT9Od2nmQaq7+aEwG
+ JUcBVIS137GkHEeDU+5S4RE+ylhKmcCsmUE8+s12Tn/ieIKMRsqXrLeVLHi+IINS3ccfu0x4iDO
+ 7N+ph7YO+c09QSWqEPQcNNc5qXDzNp5NiN59QGlTG6MReBBMMP3+vvCbv2R2zkmU0CSMXjU0CxJ
+ aT8OdmZVB4b4BYCDt30HsLF9snI16dtUPtXkNcQzfj83Gcx1fJR+9tTT4Q2gYGOwBNOxYdJ7yLv
+ LV/O4UnCR8zsoUljwb4GUjYfgqXAmkgd2AlUto0EhGm4MfZFPprZq0HZbxPQSIHz5nyOUTs0EXy
+ Hq1S3rPD1ddL/6OUhS0XCnO2LQkp9XB/JENgBvmelkIFpIOjah0aPr8apX7x6HBVBQhVRSLdFpo
+ /T+ICwgnf1Q1K/sr60DaeGnPfDNcdG9Z/3CUeFQa3vXreMVssRkWC4J1W0/tDwnkQqYtYFG+Cdj
+ gkCCjSZYY+vnvMrR5nGxSKH0TFaub6BFfexfVMrIElM13XUgYBdP7gSRHYDbO3+gzV9yx9jyg1P
+ u+Nq7lbOPoFF4vKKhe82xEkUVkGuEN6PvWN2GJhngu/mivhLILkexK1/sQMIa99FtoaRylySXpi
+ 43QZXTEhNo2UUSqTJbgA0Xw==
 X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
  fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260625_103951_671913_381B7098 
-X-CRM114-Status: GOOD (  10.43  )
+X-CRM114-CacheID: sfid-20260625_103952_416874_2DF97286 
+X-CRM114-Status: GOOD (  10.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,39 +102,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Changing the cable orientation reconfigures the lane muxing, which
-requires re-initializing the PHY. Without this DP functionality
-breaks, if the cable is re-plugged with swapped orientation.
+It's useful to log PHY reinit to ease debugging issues around
+USB-C hotplugging.
 
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index b08f0c142b0d..3fa97a8c2555 100644
+index fc788f2bf5fb..8c5d6b8595e2 100644
 --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -625,6 +625,7 @@ static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
- 				 enum typec_orientation orien)
- {
- 	struct rk_udphy *udphy = typec_switch_get_drvdata(sw);
-+	bool flipped = orien == TYPEC_ORIENTATION_REVERSE;
+@@ -24,6 +24,7 @@
+ #include <linux/property.h>
+ #include <linux/regmap.h>
+ #include <linux/reset.h>
++#include <linux/string_choices.h>
+ #include <linux/usb/ch9.h>
+ #include <linux/usb/typec_dp.h>
+ #include <linux/usb/typec_mux.h>
+@@ -494,6 +495,8 @@ static void rk_udphy_u3_port_disable(struct rk_udphy *udphy, u8 disable)
+ 	const struct rk_udphy_cfg *cfg = udphy->cfgs;
+ 	const struct rk_udphy_grf_reg *preg;
  
- 	mutex_lock(&udphy->mutex);
- 
-@@ -636,7 +637,10 @@ static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
- 		goto unlock_ret;
- 	}
- 
--	udphy->flip = orien == TYPEC_ORIENTATION_REVERSE;
-+	if (udphy->flip != flipped)
-+		udphy->phy_needs_reinit = true;
++	dev_dbg(udphy->dev, "USB3 port %s\n", str_on_off(!disable));
 +
-+	udphy->flip = flipped;
- 	rk_udphy_set_typec_default_mapping(udphy);
- 	rk_udphy_usb_bvalid_enable(udphy, true);
+ 	preg = udphy->id ? &cfg->grfcfg.usb3otg1_cfg : &cfg->grfcfg.usb3otg0_cfg;
+ 	rk_udphy_grfreg_write(udphy->usbgrf, preg, disable);
+ }
+@@ -787,6 +790,10 @@ static int rk_udphy_init(struct rk_udphy *udphy)
+ 	const struct rk_udphy_cfg *cfg = udphy->cfgs;
+ 	int ret;
  
++	dev_dbg(udphy->dev, "(re-)init PHY with USB=%s and DP=%s\n",
++		str_enabled_disabled(udphy->mode & UDPHY_MODE_USB),
++		str_enabled_disabled(udphy->mode & UDPHY_MODE_DP));
++
+ 	rk_udphy_reset_assert_all(udphy);
+ 	usleep_range(10000, 11000);
+ 
+@@ -857,6 +864,8 @@ static int rk_udphy_setup(struct rk_udphy *udphy)
+ {
+ 	int ret;
+ 
++	dev_dbg(udphy->dev, "enable PHY\n");
++
+ 	ret = clk_bulk_prepare_enable(udphy->num_clks, udphy->clks);
+ 	if (ret) {
+ 		dev_err(udphy->dev, "failed to enable clk\n");
+@@ -875,6 +884,7 @@ static int rk_udphy_setup(struct rk_udphy *udphy)
+ 
+ static void rk_udphy_disable(struct rk_udphy *udphy)
+ {
++	dev_dbg(udphy->dev, "disable PHY\n");
+ 	clk_bulk_disable_unprepare(udphy->num_clks, udphy->clks);
+ 	rk_udphy_reset_assert_all(udphy);
+ }
 
 -- 
 2.53.0
