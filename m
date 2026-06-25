@@ -4,62 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93C1ECDB466
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Jun 2026 07:58:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13F36CDB47F
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Jun 2026 08:48:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i56TVH6PO9phSnZkMI4H9rupgPOE9d3yrfA1FWsIfNA=; b=momTL4PxLXhoqq
-	ImGVNhYw36hCAI8OSyhdCGAd0XcZmzYAQsZOY8PDNs1sAEWbFpB8U22z4IdAZ4YvH6lXyAw8FPJOx
-	N3PAPnlWrUXms1rnOgb6N9Li3cwRGVd3toL3fphibGVcAuH+YL8Uj7TsJbCycBLzhzxqDmh8Siowk
-	3DoWqi8L1milvDmivMUeBEdSkd96RyvDCykzKiQdgAdJnXO58y4GFG8hK3Hx8miE0K2CEMVDzEqqc
-	nh1diMwcoLqSvQND0BO17mmIHjrd1gWpiskVzejaaxsEE1lL/yVGfmbv6x00iNPUmVeRJdZfb9Gd9
-	/ewNTqDFOw0TSWKaXNzA==;
+	List-Owner; bh=MRlmAI9twQP6GIMrt4DFLorNJDrvZkzDR7j7gG0fHz4=; b=qz5piGmYB3Lr8w
+	wv9zGoAqsWUkIOXx08H4YoCCgfIExmmHDoZq3I7EBSlcemR58Vr9b016HLtLIOALyN15uevbFim/W
+	0oDRHDvc77lRWXwBcJ8nc+koJok3ckOz4AxIa+HlsxFTgil6tQ/KOGsmItmN9RcyGMb+DsjJzuJMt
+	RbqQ90a7TKqqttphrvGT0AOBF7HjdxwrfqvtPRxvFXCf8h/jT77Jlm9pVt9w2Kl9I3s9Qt2FWyAHc
+	9qD+K+Rslso5TtNDKZgFp6LEjvelAio0++4XInefRA4XgIK0YRGLq/X6DZq2ui2YTyvRvUPo+Bf5g
+	gc//hW29L0bAM6XtknNQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wceyd-00000008nrP-1P8P;
-	Thu, 25 Jun 2026 07:58:23 +0000
+	id 1wcflE-00000008qsA-1xJH;
+	Thu, 25 Jun 2026 08:48:36 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wceyb-00000008nqt-1RO6;
-	Thu, 25 Jun 2026 07:58:21 +0000
+	id 1wcflD-00000008qs1-0tdf
+	for linux-phy@lists.infradead.org;
+	Thu, 25 Jun 2026 08:48:35 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 5646F60217;
-	Thu, 25 Jun 2026 07:58:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1073F1F000E9;
-	Thu, 25 Jun 2026 07:58:18 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 3586A60217;
+	Thu, 25 Jun 2026 08:48:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8B5751F000E9;
+	Thu, 25 Jun 2026 08:48:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1782374300;
-	bh=X6+j+T3qBfbWMzZ/XJLC8q7RGgqdlanRoej/U73dd/I=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=at08tizQtpIsG9o+H++Qq4dr/9Nk8mtocexVu+bpTgKUUBRjluKs5CsuT+q8p1+Ks
-	 OfutjiEP6C4iFQjmrAjAWTMYbLBAiItV0jy81jpEP/7YvbnGcK13bTLheJa4+m1QAL
-	 IEwdXLlp/T3DZseHj3YfMO3zPwmwOBLw0fpET+FSezjoTjPaoNNhIpldGJXFJy1GUZ
-	 xUGxTtQPpVzwmKJMdsbbwIngEAaIlupkyGsolTg4gocuegovzKT2yaVAaahUeBGTNw
-	 YSC8ZsMhuiPZ1DT6UrTlV3KONnFBFYd01mHaWzHXRgxhVYtJIfTdVllSz5b4TCe4ed
-	 KvKvwnsNOWs4A==
-Date: Thu, 25 Jun 2026 09:58:16 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Joey Lu <a0987203069@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>, 
-	Jacky Huang <ychuang3@nuvoton.com>, Shan-Chun Hung <schung@nuvoton.com>, 
-	Hui-Ping Chen <hpchen0nvt@gmail.com>, Joey Lu <yclu4@nuvoton.com>, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 2/4] dt-bindings: phy: nuvoton,ma35d1-usb2-phy: extend
- for dual-port OTG support
-Message-ID: <20260625-sexy-black-tarantula-4031a6@quoll>
-References: <20260625023958.569299-1-a0987203069@gmail.com>
- <20260625023958.569299-3-a0987203069@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260625023958.569299-3-a0987203069@gmail.com>
+	s=k20260515; t=1782377313;
+	bh=5x66HCnaI5s2gwV1AUvm4T5d8bsS9fhRXqISFXbiekI=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=BtgzWWnTI36DSaLoPDTmruw5N2e55yi1zgjRtECPU4h5cg0vrxX6dn1ZLS+YGoWy8
+	 qfA3JNIYBqWKZ8hjRMgMwNlMi7BqBqk+Zzod/hqYg9/6/v+8FKwKKxurZmTopv42u3
+	 OchRG/4MRmaZ2U9/6iCP93DTWDxzX1K9BqdA+9g+3AFtBMHbpkQT0feRjSZEwvTp5f
+	 mP6vIdieX/rPyZmAh8OSQuCDWBwr5YlIibLSDRxJgLobHDDefYfAzz/Ti7sVJQmXaK
+	 tZtAR7FLQ2johx+cQ72jz0oLINdjfescuG2nNLKxMA4tk2uvbak9QCCIfexOWoTVkw
+	 J1HYd6ksK9b9A==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH net v4 2/2] net: phy: mdio-i2c: defer RollBall bridge
+ probe to PHY discovery
+To: "Petr Wozniak" <petr.wozniak@gmail.com>
+Cc: olteanv@gmail.com, vkoul@kernel.org, neil.armstrong@linaro.org, linux-phy@lists.infradead.org
+In-Reply-To: <20260624084814.20972-3-petr.wozniak@gmail.com>
+References: <20260624084814.20972-1-petr.wozniak@gmail.com>
+ <20260624084814.20972-3-petr.wozniak@gmail.com>
+Date: Thu, 25 Jun 2026 08:48:33 +0000
+Message-Id: <20260625084833.8B5751F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,110 +63,84 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jun 25, 2026 at 10:39:56AM +0800, Joey Lu wrote:
->  properties:
->    compatible:
->      enum:
->        - nuvoton,ma35d1-usb2-phy
->  
-> +  reg:
-> +    maxItems: 1
-> +
->    "#phy-cells":
-> -    const: 0
-> +    const: 1
-> +    description:
-> +      The single cell selects the PHY port. 0 selects the OTG port (USB0,
-> +      shared with DWC2 gadget controller) and 1 selects the host-only port
-> +      (USB1).
->  
-> -  clocks:
-> -    maxItems: 1
-
-This is odd, considering that parent does not have clocks. So explain me
-this:
-1. USB PHY needed clocks.
-2. You extend USB PHY to cover second part.
-3. That extension for second part means that clocks are not needed.
-Really, how? How is it possible in hardware?
-
-> +  nuvoton,rcalcode:
-> +    $ref: /schemas/types.yaml#/definitions/uint32-array
-> +    minItems: 1
-> +    maxItems: 2
-
-You should require two values. I understand that any PHY is optional,
-thus you skip the entry, so how would you provide value for PHY1 only?
-
-> +    items:
-> +      minimum: 0
-> +      maximum: 15
-> +    description:
-> +      Resistor calibration trim codes for PHY0 and PHY1 respectively.
-> +      Each 4-bit value is written to the RCALCODE field in USBPMISCR and
-> +      adjusts the PHY's internal termination resistance. Both entries are
-> +      optional; when absent the hardware reset default is used.
->  
-> -  nuvoton,sys:
-> -    $ref: /schemas/types.yaml#/definitions/phandle
-> +  nuvoton,oc-active-high:
-> +    type: boolean
->      description:
-> -      phandle to syscon for checking the PHY clock status.
-> +      When present, the over-current detect input from the VBUS power switch
-> +      is treated as active-high. The default (property absent) is active-low.
-> +      This setting is shared by both USB host ports.
->  
->  required:
->    - compatible
-> +  - reg
-
-That's ABI break which was not explained in the commit msg - neither
-specifying impact nor actually providing reasons why you break ABI.
-
-And honestly, you have no resources here except the address, so now it
-is clear that this should be folded into parent. See DTS101 talk slides.
-
->    - "#phy-cells"
-> -  - clocks
-> -  - nuvoton,sys
->  
->  additionalProperties: false
->  
->  examples:
->    - |
-> -    #include <dt-bindings/clock/nuvoton,ma35d1-clk.h>
-> +    system-management@40460000 {
-> +        compatible = "nuvoton,ma35d1-reset", "syscon", "simple-mfd";
-> +        reg = <0x40460000 0x200>;
-> +        #reset-cells = <1>;
-> +        #address-cells = <1>;
-> +        #size-cells = <1>;
-
-Drop. Keep only child node and make parent binding example complete.
-
->  
-> -    usb_phy: usb-phy {
-> -        compatible = "nuvoton,ma35d1-usb2-phy";
-> -        clocks = <&clk USBD_GATE>;
-> -        nuvoton,sys = <&sys>;
-> -        #phy-cells = <0>;
-> +        usb-phy@60 {
-> +            compatible = "nuvoton,ma35d1-usb2-phy";
-> +            reg = <0x60 0x14>;
-> +            #phy-cells = <1>;
-> +        };
->      };
-> -- 
-> 2.43.0
-> 
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIE1vdmluZyBgbWRpb19p
+MmNfcHJvYmVfcm9sbGJhbGwoKWAgaW50byBgc2ZwX3NtX3Byb2JlX2Zvcl9waHkoKWAgYWJvcnRz
+IHRoZSBQSFkgZGlzY292ZXJ5IHJldHJ5IGxvb3Agb24gdGhlIGZpcnN0IE5BSyBvciB0aW1lb3V0
+LCBwZXJtYW5lbnRseSBieXBhc3NpbmcgUEhZIGRldGVjdGlvbiBmb3IgZ2VudWluZSBSb2xsQmFs
+bCBtb2R1bGVzLgotIFtIaWdoXSBSZW1vdmFsIG9mIHRoZSBgLUVOT0RFVmAgZmFsbGJhY2sgaW4g
+YHNmcF9zbV9hZGRfbWRpb19idXMoKWAgY2F1c2VzIGZhdGFsIFNGUCBtb2R1bGUgaW5pdGlhbGl6
+YXRpb24gZmFpbHVyZSBpbnN0ZWFkIG9mIGdyYWNlZnVsbHkgZG93bmdyYWRpbmcgdG8gbm9uLU1E
+SU8gbW9kZS4KLS0KCmNvbW1pdCAyMWNlNWUzNTg5MmVhMDJiNTZjOWVhZDA4N2Y3NzVlZTVkZTA1
+NTE5CkF1dGhvcjogUGV0ciBXb3puaWFrIDxwZXRyLndvem5pYWtAZ21haWwuY29tPgoKbmV0OiBw
+aHk6IG1kaW8taTJjOiBkZWZlciBSb2xsQmFsbCBicmlkZ2UgcHJvYmUgdG8gUEhZIGRpc2NvdmVy
+eQoKVGhpcyBwYXRjaCBtb3ZlcyB0aGUgUm9sbEJhbGwgSTJDLXRvLU1ESU8gYnJpZGdlIHByb2Jl
+IGZyb20gYnVzLWNyZWF0aW9uCnRpbWUgdG8gUEhZIGRpc2NvdmVyeSB0aW1lIHRvIGFsbG93IHNs
+b3ctYm9vdGluZyBtb2R1bGVzIHRpbWUgdG8KaW5pdGlhbGl6ZS4gSXQgYWxzbyByZW1vdmVzIHRo
+ZSAtRU5PREVWIGZhbGxiYWNrIGZyb20Kc2ZwX3NtX2FkZF9tZGlvX2J1cygpLgoKPiBCeSB0aGUg
+dGltZSBzZnBfc21fcHJvYmVfZm9yX3BoeSgpIHJ1bnMgKHVwIHRvIH4xNyBzIGxhdGVyIG9uIGFm
+ZmVjdGVkCj4gaGFyZHdhcmUpLCB0aGUgYnJpZGdlIGlzIGZ1bGx5IGluaXRpYWxpemVkIGJ1dCBQ
+SFkgcHJvYmluZyBpcyBza2lwcGVkCj4gYmVjYXVzZSB0aGUgcHJvdG9jb2wgaGFzIGFscmVhZHkg
+YmVlbiBjaGFuZ2VkIHRvIE5PTkUuCgpMb29raW5nIGF0IHNmcF9zbV9ldmVudCgpLCBzZnBfc21f
+cHJvYmVfZm9yX3BoeSgpIHJ1bnMgaW1tZWRpYXRlbHkgYWZ0ZXIKc2ZwX3NtX2FkZF9tZGlvX2J1
+cygpLiBUaGUgMTctc2Vjb25kIGRlbGF5IG9uIGFmZmVjdGVkIGhhcmR3YXJlIGFwcGVhcnMgdG8K
+YmUgdGhlIGR1cmF0aW9uIG9mIHRoZSBQSFkgcHJvYmUgcmV0cnkgbG9vcCBpdHNlbGYsIHJhdGhl
+ciB0aGFuIGEgZGVsYXkKYmVmb3JlIHNmcF9zbV9wcm9iZV9mb3JfcGh5KCkgaXMgY2FsbGVkLgoK
+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9uZXQvcGh5L3NmcC5jIGIvZHJpdmVycy9uZXQvcGh5L3Nm
+cC5jCj4gaW5kZXggYzRkMjc0YWI2NTFlMy4uMDFiOTQxYTM4ZWVkMiAxMDA2NDQKPiAtLS0gYS9k
+cml2ZXJzL25ldC9waHkvc2ZwLmMKPiArKysgYi9kcml2ZXJzL25ldC9waHkvc2ZwLmMKPiBAQCAt
+MjE3NCwxNyArMjE3NCwxMCBAQCBzdGF0aWMgdm9pZCBzZnBfc21fZmF1bHQoc3RydWN0IHNmcCAq
+c2ZwLCB1bnNpZ25lZCBpbnQgbmV4dF9zdGF0ZSwgYm9vbCB3YXJuKQo+ICAKPiAgc3RhdGljIGlu
+dCBzZnBfc21fYWRkX21kaW9fYnVzKHN0cnVjdCBzZnAgKnNmcCkKPiAgewo+IC0JaW50IHJldDsK
+PiAtCj4gIAlpZiAoc2ZwLT5tZGlvX3Byb3RvY29sID09IE1ESU9fSTJDX05PTkUpCj4gIAkJcmV0
+dXJuIDA7Cj4gIAo+IC0JcmV0ID0gc2ZwX2kyY19tZGlvYnVzX2NyZWF0ZShzZnApOwo+IC0JaWYg
+KHJldCA9PSAtRU5PREVWKSB7Cj4gLQkJc2ZwLT5tZGlvX3Byb3RvY29sID0gTURJT19JMkNfTk9O
+RTsKPiAtCQlyZXR1cm4gMDsKPiAtCX0KPiAtCXJldHVybiByZXQ7Cj4gKwlyZXR1cm4gc2ZwX2ky
+Y19tZGlvYnVzX2NyZWF0ZShzZnApOwo+ICB9CgpbU2V2ZXJpdHk6IEhpZ2hdCklmIHRoZSBpbml0
+aWFsIHBhc3N3b3JkIHdyaXRlIGluIGkyY19taWlfaW5pdF9yb2xsYmFsbCgpIHJldHVybnMgLUVO
+T0RFVgooZHVlIHRvIGEgc2xvdy1ib290aW5nIG1vZHVsZSBvciB0cmFuc2llbnQgSTJDIGVycm9y
+cyksIHdpbGwgdGhpcyBjaGFuZ2UKY2F1c2UgdGhlIFNGUCBzdGF0ZSBtYWNoaW5lIHRvIGZhaWwg
+ZW50aXJlbHk/CgpJbiBzZnBfc21fZXZlbnQoKSwgc2ZwX3NtX2FkZF9tZGlvX2J1cygpIGlzIGNh
+bGxlZCwgYW5kIGlmIGl0IHJldHVybnMgYW4KZXJyb3IsIHRoZSBtb2R1bGUgaXMgZm9yY2VkIGlu
+dG8gU0ZQX1NfRkFJTDoKCnNmcF9zbV9ldmVudCgpIHsKLi4uCiAgICAgICAgcmV0ID0gc2ZwX3Nt
+X2FkZF9tZGlvX2J1cyhzZnApOwogICAgICAgIGlmIChyZXQgPCAwKSB7CiAgICAgICAgICAgICAg
+ICBzZnBfc21fbmV4dChzZnAsIFNGUF9TX0ZBSUwsIDApOwogICAgICAgICAgICAgICAgYnJlYWs7
+CiAgICAgICAgfQouLi4KfQoKV2l0aG91dCB0aGUgLUVOT0RFViBmYWxsYmFjayB0byBNRElPX0ky
+Q19OT05FLCBpdCBzZWVtcyB0aGlzIHdpbGwgYXNzZXJ0ClRYX0RJU0FCTEUgYW5kIGRpc2FibGUg
+dGhlIG5ldHdvcmsgbGluayBpbnN0ZWFkIG9mIGdyYWNlZnVsbHkgZG93bmdyYWRpbmcuCgpbIC4u
+LiBdCgo+IEBAIC0yMjE1LDYgKzIyMDgsMTkgQEAgc3RhdGljIGludCBzZnBfc21fcHJvYmVfZm9y
+X3BoeShzdHJ1Y3Qgc2ZwICpzZnApCj4gIAkJYnJlYWs7Cj4gIAo+ICAJY2FzZSBNRElPX0kyQ19S
+T0xMQkFMTDoKPiArCQkvKiBQcm9iZSBoZXJlLCBhZnRlciBtb2R1bGUgaW5pdGlhbGl6YXRpb24g
+ZGVsYXlzLCBzbyB0aGF0Cj4gKwkJICogZ2VudWluZSBSb2xsQmFsbCBicmlkZ2VzIGhhdmUgaGFk
+IHRpbWUgdG8gc3RhcnQgdXAuCj4gKwkJICogTW9kdWxlcyB3aXRob3V0IGEgYnJpZGdlIChlLmcu
+IFJUTDgyNjFCRSkgcmV0dXJuIC1FTk9ERVYuCj4gKwkJICovCj4gKwkJZXJyID0gbWRpb19pMmNf
+cHJvYmVfcm9sbGJhbGwoc2ZwLT5pMmMpOwo+ICsJCWlmIChlcnIgPT0gLUVOT0RFVikgewo+ICsJ
+CQlzZnBfaTJjX21kaW9idXNfZGVzdHJveShzZnApOwo+ICsJCQlzZnAtPm1kaW9fcHJvdG9jb2wg
+PSBNRElPX0kyQ19OT05FOwo+ICsJCQllcnIgPSAwOwo+ICsJCQlicmVhazsKPiArCQl9CgpbU2V2
+ZXJpdHk6IEhpZ2hdCkRvZXMgdGhpcyBieXBhc3MgdGhlIFBIWSByZXRyeSBsb29wIGVudGlyZWx5
+IGZvciBzbG93LWJvb3RpbmcgZ2VudWluZQpSb2xsQmFsbCBtb2R1bGVzPwoKVGhlIGNvbW1pdCBt
+ZXNzYWdlIG5vdGVzIHRoYXQgYnJpZGdlIGluaXRpYWxpemF0aW9uIGNhbiB0YWtlIH4xN3MsIGJ1
+dApsb29raW5nIGF0IHNmcF9zbV9ldmVudCgpLCBzZnBfc21fcHJvYmVfZm9yX3BoeSgpIGlzIGNh
+bGxlZCBpbW1lZGlhdGVseQphZnRlciBzZnBfc21fYWRkX21kaW9fYnVzKCkgd2l0aCBubyBkZWxh
+eToKCnNmcF9zbV9ldmVudCgpIHsKLi4uCiAgICAgICAgaW5pdF9kb25lOgogICAgICAgICAgICAg
+ICAgcmV0ID0gc2ZwX3NtX2FkZF9tZGlvX2J1cyhzZnApOwouLi4KICAgICAgICAgICAgICAgIGdv
+dG8gcGh5X3Byb2JlOwouLi4KICAgICAgICBwaHlfcHJvYmU6CiAgICAgICAgICAgICAgICByZXQg
+PSBzZnBfc21fcHJvYmVfZm9yX3BoeShzZnApOwouLi4KfQoKU2luY2UgdGhlIHByb2JlIGhhcHBl
+bnMgaW1tZWRpYXRlbHksIGEgc2xvdyBtb2R1bGUgdGhhdCBoYXNuJ3QgZmluaXNoZWQKaW5pdGlh
+bGl6aW5nIHdpbGwgcmV0dXJuIC1FTk9ERVYuIFRoaXMgbmV3IGNvZGUgaW50ZXJjZXB0cyAtRU5P
+REVWLCBzZXRzCmVyciA9IDAsIGFuZCBicmVha3Mgb3V0LgoKQmVjYXVzZSBpdCByZXR1cm5zIDAs
+IHdvbid0IHRoaXMgdGVsbCB0aGUgU0ZQIHN0YXRlIG1hY2hpbmUgdG8gc2tpcAp0aGUgUEhZIHJl
+dHJ5IGxvb3AgYW5kIHByb2NlZWQgd2l0aG91dCBQSFkgZGV0ZWN0aW9uPwoKPiArCQlpZiAoZXJy
+KQo+ICsJCQlicmVhazsKPiAgCQllcnIgPSBzZnBfc21fcHJvYmVfcGh5KHNmcCwgU0ZQX1BIWV9B
+RERSX1JPTExCQUxMLCB0cnVlKTsKPiAgCQlicmVhazsKPiAgCX0KCi0tIApTYXNoaWtvIEFJIHJl
+dmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA2MjQwODQ4MTQuMjA5
+NzItMS1wZXRyLndvem5pYWtAZ21haWwuY29tP3BhcnQ9MgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5n
+IGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRl
+YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
