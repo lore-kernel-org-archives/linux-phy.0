@@ -4,70 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB734C43458
-	for <linux-phy@archiver.kernel.org>; Fri, 26 Jun 2026 15:11:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44C45C43458
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Jun 2026 16:35:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mwi0O9pOXxiAkDEIAqQHRumOWeAa+BVP/4sKuBcBKmI=; b=QZHzyKmgzrwI7p
-	bkIEM8OYZ2r2Lqo7pTra0ruXK7JcTuSC2XWLbx8aK9dk86pCjTVecWcUEEV1XxagELFlXiWg0qidG
-	o7aydDzoaTtN15QOASgo8PhlWK90968oMiDbgtdjKTskiW2llfLIPhqHAUSDy0qtB0JM4WYwuRMly
-	zn5/GfBvKa/OMlunc0/5qnpMOWyL88JSKv1tnOW8Z+a2NAGtQeRa+6xylo3odFF4El327Pps70hBe
-	MwDaQKqcjfMHS7Ofla+GyiE+eaXrR05L2zXyKkNAFYKlXhOIsHWRH2HWO7ASI+XSxie/m3GO4zM/I
-	VXo3ndh4XqF3XzYLhO3A==;
+	List-Owner; bh=pTCe4FaqkbRMykmVWgS0Uvmw2nOoXGTjUa0uTCTyI2A=; b=4P9BMAb2oOx6c1
+	4qBnjbcmqNk1GxnxDJSZ/VqLtAMKycUo5AHObmOEBU71tDjGwHsHtXXLWLT+jYgsi9rOPB7HJ5Vf7
+	CPMm1kWlUU2bKHO5ZlQUEGU0N4t/nMv3vQpbrbyGN4GUOA28MuGFkKr8hUMbbJMfVobHCB8MfWuLB
+	LG+ZkCcao/0RTK/r8UH/PhK6M+KTsww3ai82hfyfCojkQbZiCJp7mT61W4e/Gz65Q0jLZdoMr1FNr
+	TDhb2Hhcm68TK7WGpOGBvCTVUw/X6d5+CpMjPP99XVfTPetb7KKRgWbss++jQZ0wbJfh1B3mDbWMs
+	Mny9uZwVInkX2z4KGTMQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wd8Cs-0000000BWvM-2mCC;
-	Fri, 26 Jun 2026 15:11:02 +0000
-Received: from smtpout-03.galae.net ([185.246.85.4])
+	id 1wd9WZ-0000000Bdpv-08JQ;
+	Fri, 26 Jun 2026 16:35:27 +0000
+Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wd8Cp-0000000BWua-1TOZ
+	id 1wd9WW-0000000BdpX-3TsZ
 	for linux-phy@lists.infradead.org;
-	Fri, 26 Jun 2026 15:11:01 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-03.galae.net (Postfix) with ESMTPS id C280E4E4096B;
-	Fri, 26 Jun 2026 15:10:53 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 8750960232;
-	Fri, 26 Jun 2026 15:10:53 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id D5000104C976A;
-	Fri, 26 Jun 2026 17:10:45 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1782486652; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:content-language:in-reply-to:references;
-	bh=RIDSW4QSN+EL196dH0Hkhfs2WUAzhZ9MQ1BBZjgBM6k=;
-	b=G1h62niQqlh9fdwTRptlTS4dlNEaeDSca/KWRTACRbEf/8BU3A61klMmetMCWiFxjywELB
-	8AL3p/XkWsIa8g7+MWFuaL8aHrRXbVdtNsTPWxrEHZx3uZiNTDhSBUDxO4PHFPOx0uUcG0
-	KSDKXGC++qqDjaNzmEPK2U8nGqyh8h30Fh/Hu5Hzk5DEzO8ZaOb64Op/w05VRFlRIaW+wi
-	xJoheRJKHp+ZdUuwRsHOokMQpp+bDBOQspihj5C51dc7BC5JceVRqIKTdMe3wM5s4Veo9T
-	6WVdIVOdT5DKmsLUUVtBR4z1/zYVjYWtRcXbels8EDf1lilKLIobvsRv40XZrw==
-Message-ID: <f729897a-c2a5-4925-9d8a-9d29569113ec@bootlin.com>
-Date: Fri, 26 Jun 2026 17:10:45 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH net v4 2/2] net: phy: mdio-i2c: defer RollBall bridge
- probe to PHY discovery
-To: Petr Wozniak <petr.wozniak@gmail.com>,
- Russell King <linux@armlinux.org.uk>, Andrew Lunn <andrew@lunn.ch>,
- Heiner Kallweit <hkallweit1@gmail.com>
-Cc: Jakub Kicinski <kuba@kernel.org>, "David S . Miller"
- <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
- Paolo Abeni <pabeni@redhat.com>, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- Bjorn Mork <bjorn@mork.no>, Aleksander Bajkowski <olek2@wp.pl>,
- Marek Behun <kabel@kernel.org>
-References: <20260624084814.20972-1-petr.wozniak@gmail.com>
- <20260624084814.20972-3-petr.wozniak@gmail.com>
-Content-Language: en-US
-From: Maxime Chevallier <maxime.chevallier@bootlin.com>
+	Fri, 26 Jun 2026 16:35:26 +0000
+Received: by mail-wm1-x32e.google.com with SMTP id 5b1f17b1804b1-4924f8db066so6013295e9.2
+        for <linux-phy@lists.infradead.org>; Fri, 26 Jun 2026 09:35:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1782491723; x=1783096523; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=/9JIf9OJEzVS6CWv1FSk8ReHN3mioJ8+p1Xh5mgkJRk=;
+        b=Ro4Dhh6SwQuVwYPzrN1PbpdCPYzAePhCFgBVkrJq6/xia7255AWko+ZmPwxEMiKArW
+         WTP87CnQ+vwgTHFCs5/TD8aGi7qlvQIOk3BjnCb8JTv9efO+VvA3fUlEmZ/QMYwyeacS
+         4sK52LD4oFPifA+t+4mQRYE/qla5TD6FxTDXIGDP5iPaw6WP+HX5TtVVxQ7nLZxeYy7k
+         TGch7fAMPfCVqeJSM3b2MVksdvsTAy6DH0H0vYNSi/mokJAsjea6+Uub+oU9xE2enEVO
+         tHAVtNv23YwlOLLB6k82gpU1/e0DDxssQAdo4gNU6xHUAy/hOD9XnOOOe2jyqWsqMQ6W
+         PwbA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1782491723; x=1783096523;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=/9JIf9OJEzVS6CWv1FSk8ReHN3mioJ8+p1Xh5mgkJRk=;
+        b=BE7ztSdpsfOqcZh8B2ITViH7TuY2et41lAflWMvY8oyaph0q/gIYhkVevh+A6c4+7g
+         8deWB+w/Q2geqSVR5N8lYtZQ0jKboEz+C5VdGupmlTzN7oVbIlu3YdV0Fc+Gd56HXgXO
+         agQ8nvRE0MGwkchNqMaEjLdd7PsPKwy0FrGW9H3I2I0OJS10ESdpFfcOhx8xqU5KmSaZ
+         EH0nDo6DYO99+6SmLziv89GHaL6GIBwJvwRb3t+pC90ol0vhbHPvtIjf0Iufk3/ESybq
+         1KyMVVAnAiRwwwM2kPStJqZYNmf5JEv3WP7+euAGSXe7YYUMES72gH0TF0XeIgDgHgXl
+         UZtQ==
+X-Forwarded-Encrypted: i=1; AFNElJ9IJGPtj7pMvXZbVr8UoAKwr5wRU83EiKddD6QV+i3Vyitz02/lIOb+6rXgXVDqU68WkNPzGhOPDng=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyvSgF21/PL7MHfsD/zzTghvw2B1/Bd4U1Farv2ohx0DjxPJUOz
+	A2aJsINHJBRHiUhZZbPhI6YWQJoeSf7xAgOQT8jMzhKGQ/VzkZ2knctr
+X-Gm-Gg: AfdE7cm5/qr8wj1A7jjAKOBqsmkkG2nEnR7BxuPDkcB0/W5m40M0xxoJBFM69pgNfWG
+	p7P8TY/dJZo4jYdgOEo8qwP/hlHiSTtRgpXrjF6XH6vozPU9B7HVaZAS77zFXDbI+3cxiu7j/1E
+	KFQuqad2QXycQ0rzqaEvXJFe4FL9wehZ87iDgylv5eAfjSrJxSvtBbP1vW1+unS3nlr50ZAFWZW
+	iaSZbpxaFdEQu02mYP7VozIeYYzUtqLDZojNSRX7HjbvMOhBnO+2uGsWGkZLt2KFW0fwzVvQp5L
+	koZDmoI9deVBau0oygEJfO/t1Qp2SkiGm6QHE1dhjDnocQyxDOTD54tsBpl0bYqSXwJ1J28K+B7
+	6FBqKUwrAF/vWUdPwOddNFpzWeOxS8eGuhCiN5smLY+ieoL1ChZq2DCnReEtCjOfcNMa5LEiqZX
+	tao8eOmJYC7isYM2mTG070KyQFFRGyo0GPDizZO7zq+Bdc3a13tWfdY0c5F5Enirqt5U75yeWlM
+	b3KGYpehp5106k32A==
+X-Received: by 2002:a05:600c:34ca:b0:492:58d6:2565 with SMTP id 5b1f17b1804b1-4926689dfe6mr106861335e9.25.1782491722478;
+        Fri, 26 Jun 2026 09:35:22 -0700 (PDT)
+Received: from localhost.localdomain (ip-89-176-136-191.bb.vodafone.cz. [89.176.136.191])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-49269071e49sm89894875e9.10.2026.06.26.09.35.20
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 26 Jun 2026 09:35:21 -0700 (PDT)
+From: Petr Wozniak <petr.wozniak@gmail.com>
+To: maxime.chevallier@bootlin.com,
+	olek2@wp.pl,
+	linux@armlinux.org.uk,
+	andrew@lunn.ch,
+	hkallweit1@gmail.com
+Cc: kuba@kernel.org,
+	davem@davemloft.net,
+	edumazet@google.com,
+	pabeni@redhat.com,
+	netdev@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	bjorn@mork.no,
+	kabel@kernel.org,
+	Petr Wozniak <petr.wozniak@gmail.com>
+Subject: Re: [PATCH net v4 2/2] net: phy: mdio-i2c: defer RollBall bridge probe to PHY discovery
+Date: Fri, 26 Jun 2026 18:35:19 +0200
+Message-ID: <20260626163519.10678-1-petr.wozniak@gmail.com>
+X-Mailer: git-send-email 2.50.1
 In-Reply-To: <20260624084814.20972-3-petr.wozniak@gmail.com>
-X-Last-TLS-Session-Version: TLSv1.3
+References: <20260624084814.20972-3-petr.wozniak@gmail.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260626_081059_562888_2ACC8206 
-X-CRM114-Status: GOOD (  11.82  )
+X-CRM114-CacheID: sfid-20260626_093524_908503_4041E54D 
+X-CRM114-Status: GOOD (  13.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,47 +112,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Petr,
+Maxime Chevallier wrote:
+> I finally got time to test this with a RollBall module, and I
+> confirm what Aleksander says, the RollBall module's PHY doesn't
+> get detected even with this patch. It does work on v7.0 though,
+> so before the bridge probing was introduced.
 
-On 6/24/26 10:48, Petr Wozniak wrote:
-> commit 8fe125892f40 ("net: phy: sfp: probe for RollBall I2C-to-MDIO
-> bridge in mdio-i2c") introduced a regression: the RollBall I2C-to-MDIO
-> bridge is not yet ready to respond to CMD_READ/CMD_DONE cycles when
-> sfp_sm_add_mdio_bus() runs in SFP_S_INIT.  The 200 ms probe times out,
-> i2c_mii_probe_rollball() returns -ENODEV, and sfp_sm_add_mdio_bus()
-> sets mdio_protocol = MDIO_I2C_NONE.  By the time sfp_sm_probe_for_phy()
-> runs (up to ~17 s later on affected hardware), the bridge is fully
-> initialized but PHY probing is skipped because the protocol has already
-> been changed to NONE.
-> 
-> This affects both modules inserted before boot and hotplugged modules on
-> hardware where bridge initialization exceeds the 200 ms probe window
-> (confirmed: FLYPRO SFP-10GT-CS-30M with Aquantia AQR113C, hotplugged).
-> 
-> Move the probe from i2c_mii_init_rollball(), called at bus-creation time,
-> to sfp_sm_probe_for_phy() in sfp.c, where it runs after the SFP state
-> machine module initialization delays.  Export the probe function as
-> mdio_i2c_probe_rollball() so sfp.c can call it.
-> 
-> For RTL8261BE-based modules the probe correctly returns -ENODEV at PHY
-> discovery time, causing sfp_sm_probe_for_phy() to destroy the MDIO bus
-> and set MDIO_I2C_NONE, eliminating the 5+ minute PHY probe retry loop.
-> 
-> For genuine RollBall modules (e.g. FLYPRO SFP-10GT-CS-30M with Aquantia
-> AQR113C) the probe now runs after initialization is complete and
-> correctly returns 0, so PHY detection proceeds normally.
-> 
-> Reported-by: Aleksander Bajkowski <olek2@wp.pl>
-> Fixes: 8fe125892f40 ("net: phy: sfp: probe for RollBall I2C-to-MDIO bridge in mdio-i2c")
-> Signed-off-by: Petr Wozniak <petr.wozniak@gmail.com>
-I finally got time to test this with a RollBall module, and I
-confirm what Aleksander says, the RollBall module's PHY doesn't
-get detected even with this patch.
+Thanks a lot for taking the time to test, Maxime - and Aleksander
+for the original report.
 
-It does work on v7.0 though, so before the bridge probing was
-introduced.
+That settles it: the deferred-probe approach in patch 2/2 doesn't
+actually restore genuine RollBall PHY detection, and as you both
+confirm it worked before 8fe125892f40 introduced the bridge probing.
+Sashiko's static review flagged the same thing (the probe bypasses the
+PHY discovery retry loop for slow-initializing modules), so the static
+analysis and the two hardware reports all point at the same flaw.
 
-Maxime
+I only have RTL8261BE-based copper modules here, not a genuine RollBall
+one, so I can't develop and verify a proper slow-init timing fix
+(module_t_wait / a retry that waits for the bridge) without the
+hardware to test against.
+
+Given that, my suggestion:
+
+- Please drop patch 2/2 from the series.
+
+- Since 8fe125892f40 regressed genuine RollBall detection and the
+  deferred probe doesn't restore it, I think the cleanest fix is to
+  revert 8fe125892f40. I'm happy to send that revert if you'd prefer.
+  The 5-minute RTL8261BE probe loop it was addressing is handled in our
+  downstream tree, so reverting it upstream is fine on our side.
+
+- Patch 1/2 (the mii_bus leak fix) is independent of all this and
+  already has Reviewed-by from Maxime and Larysa - it would be good to
+  take that one regardless. I can resend it standalone if that's easier.
+
+A proper fix covering slow-firmware modules really needs a genuine
+RollBall module to validate, so it's better owned by someone who has
+that hardware - happy to help review.
+
+Thanks again,
+Petr
 
 -- 
 linux-phy mailing list
