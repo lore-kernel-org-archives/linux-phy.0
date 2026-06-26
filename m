@@ -4,98 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44C45C43458
-	for <linux-phy@archiver.kernel.org>; Fri, 26 Jun 2026 16:35:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07E3FC43458
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Jun 2026 20:55:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pTCe4FaqkbRMykmVWgS0Uvmw2nOoXGTjUa0uTCTyI2A=; b=4P9BMAb2oOx6c1
-	4qBnjbcmqNk1GxnxDJSZ/VqLtAMKycUo5AHObmOEBU71tDjGwHsHtXXLWLT+jYgsi9rOPB7HJ5Vf7
-	CPMm1kWlUU2bKHO5ZlQUEGU0N4t/nMv3vQpbrbyGN4GUOA28MuGFkKr8hUMbbJMfVobHCB8MfWuLB
-	LG+ZkCcao/0RTK/r8UH/PhK6M+KTsww3ai82hfyfCojkQbZiCJp7mT61W4e/Gz65Q0jLZdoMr1FNr
-	TDhb2Hhcm68TK7WGpOGBvCTVUw/X6d5+CpMjPP99XVfTPetb7KKRgWbss++jQZ0wbJfh1B3mDbWMs
-	Mny9uZwVInkX2z4KGTMQ==;
+	List-Owner; bh=2d4vVvunBqMuNaSTHzlEOgnFUeS0u0isiFuhDpFMgS4=; b=xFawDiiIOrs/ox
+	W04BVqU1IcDPoXHqZ6qEQRKNczYGFadkiBptrgoORilm3BG2/aCwsCsq3kIRja6lfmb5PKzGuRVBU
+	lXWxlDEgkI9UNf93KmlXE0+kmJgoJiuTvXBpekOjZuGuiLkCpjxVZ2ezBu0YYylNHvd4Xc9ZY2y1C
+	D7jmzyfodK1voknbKj1ei3p8dBMjnyCOng53xh4FPdD+nJzz3Jp2+2Ix8/Tzbof4SzqzN326CyXKj
+	lfukNbAULju5SWXct/9qRQuPm5Lmv/HDuR1jV5985Lcqt0Hgzdx1ta7+hQ9xago5zAD8Rh4x47e5c
+	MEm/1rNGUNxt2VRrNtRg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wd9WZ-0000000Bdpv-08JQ;
-	Fri, 26 Jun 2026 16:35:27 +0000
-Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
+	id 1wdDZt-0000000BpbZ-20iI;
+	Fri, 26 Jun 2026 20:55:09 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wd9WW-0000000BdpX-3TsZ
-	for linux-phy@lists.infradead.org;
-	Fri, 26 Jun 2026 16:35:26 +0000
-Received: by mail-wm1-x32e.google.com with SMTP id 5b1f17b1804b1-4924f8db066so6013295e9.2
-        for <linux-phy@lists.infradead.org>; Fri, 26 Jun 2026 09:35:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1782491723; x=1783096523; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=/9JIf9OJEzVS6CWv1FSk8ReHN3mioJ8+p1Xh5mgkJRk=;
-        b=Ro4Dhh6SwQuVwYPzrN1PbpdCPYzAePhCFgBVkrJq6/xia7255AWko+ZmPwxEMiKArW
-         WTP87CnQ+vwgTHFCs5/TD8aGi7qlvQIOk3BjnCb8JTv9efO+VvA3fUlEmZ/QMYwyeacS
-         4sK52LD4oFPifA+t+4mQRYE/qla5TD6FxTDXIGDP5iPaw6WP+HX5TtVVxQ7nLZxeYy7k
-         TGch7fAMPfCVqeJSM3b2MVksdvsTAy6DH0H0vYNSi/mokJAsjea6+Uub+oU9xE2enEVO
-         tHAVtNv23YwlOLLB6k82gpU1/e0DDxssQAdo4gNU6xHUAy/hOD9XnOOOe2jyqWsqMQ6W
-         PwbA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1782491723; x=1783096523;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=/9JIf9OJEzVS6CWv1FSk8ReHN3mioJ8+p1Xh5mgkJRk=;
-        b=BE7ztSdpsfOqcZh8B2ITViH7TuY2et41lAflWMvY8oyaph0q/gIYhkVevh+A6c4+7g
-         8deWB+w/Q2geqSVR5N8lYtZQ0jKboEz+C5VdGupmlTzN7oVbIlu3YdV0Fc+Gd56HXgXO
-         agQ8nvRE0MGwkchNqMaEjLdd7PsPKwy0FrGW9H3I2I0OJS10ESdpFfcOhx8xqU5KmSaZ
-         EH0nDo6DYO99+6SmLziv89GHaL6GIBwJvwRb3t+pC90ol0vhbHPvtIjf0Iufk3/ESybq
-         1KyMVVAnAiRwwwM2kPStJqZYNmf5JEv3WP7+euAGSXe7YYUMES72gH0TF0XeIgDgHgXl
-         UZtQ==
-X-Forwarded-Encrypted: i=1; AFNElJ9IJGPtj7pMvXZbVr8UoAKwr5wRU83EiKddD6QV+i3Vyitz02/lIOb+6rXgXVDqU68WkNPzGhOPDng=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyvSgF21/PL7MHfsD/zzTghvw2B1/Bd4U1Farv2ohx0DjxPJUOz
-	A2aJsINHJBRHiUhZZbPhI6YWQJoeSf7xAgOQT8jMzhKGQ/VzkZ2knctr
-X-Gm-Gg: AfdE7cm5/qr8wj1A7jjAKOBqsmkkG2nEnR7BxuPDkcB0/W5m40M0xxoJBFM69pgNfWG
-	p7P8TY/dJZo4jYdgOEo8qwP/hlHiSTtRgpXrjF6XH6vozPU9B7HVaZAS77zFXDbI+3cxiu7j/1E
-	KFQuqad2QXycQ0rzqaEvXJFe4FL9wehZ87iDgylv5eAfjSrJxSvtBbP1vW1+unS3nlr50ZAFWZW
-	iaSZbpxaFdEQu02mYP7VozIeYYzUtqLDZojNSRX7HjbvMOhBnO+2uGsWGkZLt2KFW0fwzVvQp5L
-	koZDmoI9deVBau0oygEJfO/t1Qp2SkiGm6QHE1dhjDnocQyxDOTD54tsBpl0bYqSXwJ1J28K+B7
-	6FBqKUwrAF/vWUdPwOddNFpzWeOxS8eGuhCiN5smLY+ieoL1ChZq2DCnReEtCjOfcNMa5LEiqZX
-	tao8eOmJYC7isYM2mTG070KyQFFRGyo0GPDizZO7zq+Bdc3a13tWfdY0c5F5Enirqt5U75yeWlM
-	b3KGYpehp5106k32A==
-X-Received: by 2002:a05:600c:34ca:b0:492:58d6:2565 with SMTP id 5b1f17b1804b1-4926689dfe6mr106861335e9.25.1782491722478;
-        Fri, 26 Jun 2026 09:35:22 -0700 (PDT)
-Received: from localhost.localdomain (ip-89-176-136-191.bb.vodafone.cz. [89.176.136.191])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-49269071e49sm89894875e9.10.2026.06.26.09.35.20
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 26 Jun 2026 09:35:21 -0700 (PDT)
-From: Petr Wozniak <petr.wozniak@gmail.com>
-To: maxime.chevallier@bootlin.com,
-	olek2@wp.pl,
-	linux@armlinux.org.uk,
-	andrew@lunn.ch,
-	hkallweit1@gmail.com
-Cc: kuba@kernel.org,
-	davem@davemloft.net,
-	edumazet@google.com,
-	pabeni@redhat.com,
-	netdev@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	bjorn@mork.no,
-	kabel@kernel.org,
-	Petr Wozniak <petr.wozniak@gmail.com>
-Subject: Re: [PATCH net v4 2/2] net: phy: mdio-i2c: defer RollBall bridge probe to PHY discovery
-Date: Fri, 26 Jun 2026 18:35:19 +0200
-Message-ID: <20260626163519.10678-1-petr.wozniak@gmail.com>
-X-Mailer: git-send-email 2.50.1
-In-Reply-To: <20260624084814.20972-3-petr.wozniak@gmail.com>
-References: <20260624084814.20972-3-petr.wozniak@gmail.com>
+	id 1wdDZq-0000000BpZL-2Fcy;
+	Fri, 26 Jun 2026 20:55:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1782507302;
+	bh=USg1ohYmbXwetA6mCilQyNqt0XA2ZTz/AW7yPMSqQVI=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
+	b=fjKGfUu/SgCkMFsLGGOpRa09uW4xKO0KPwoxxOsdMrySTXZhGtoLebulEpBMF0+Rb
+	 cVRh0i4fF2wUcr4IAoU4TgQS3Y6J9l0RxIMJxecTQ7q1kro9oCaQ4hDEmEWmdu5eA7
+	 5vaBfXd47GhALcpISn2u+cZIJHs/Xi7ML/B11aIK5Hq4ijyYenSJhfqUS7rNh8HM5L
+	 1rwXFyF0zCUR7GzBOfjWtHppUtUFIP3fa5QIyCqQaRTW8n0/9tLM/NeHLFigJqqOxU
+	 P3o1mStnn8nFSLCCBoclKcJFe/8fJdETd7a7EZMOahG3rg4/WqiyhI3QQxpsgUfQCT
+	 44QIYbTn82mtQ==
+Received: from jupiter.universe (unknown [100.64.1.62])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: sre)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 5EB2B17E0C88;
+	Fri, 26 Jun 2026 22:55:02 +0200 (CEST)
+Received: by jupiter.universe (Postfix, from userid 1000)
+	id 0DC37480029; Fri, 26 Jun 2026 22:55:02 +0200 (CEST)
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+Date: Fri, 26 Jun 2026 22:54:55 +0200
+Subject: [PATCH v8 02/29] phy: rockchip: usbdp: Update mode_change after
+ error handling
 MIME-Version: 1.0
+Message-Id: <20260626-rockchip-usbdp-cleanup-v8-2-47f682987895@collabora.com>
+References: <20260626-rockchip-usbdp-cleanup-v8-0-47f682987895@collabora.com>
+In-Reply-To: <20260626-rockchip-usbdp-cleanup-v8-0-47f682987895@collabora.com>
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Heiko Stuebner <heiko@sntech.de>, Frank Wang <frank.wang@rock-chips.com>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>
+Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>, 
+ Yubing Zhang <yubing.zhang@rock-chips.com>, 
+ Alexey Charkov <alchark@gmail.com>, linux-phy@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, kernel@collabora.com, 
+ devicetree@vger.kernel.org, 
+ Sebastian Reichel <sebastian.reichel@collabora.com>, 
+ Sashiko <sashiko-bot@kernel.org>
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1789;
+ i=sebastian.reichel@collabora.com; h=from:subject:message-id;
+ bh=USg1ohYmbXwetA6mCilQyNqt0XA2ZTz/AW7yPMSqQVI=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGo+5yQ0wncuIq0TqEaIQ0cGZ6hiF3QKJvVIq
+ ow3WgHj4ebDaIkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqPuckAAoJENju1/PI
+ O/qavPQQAKACkti70G1jJsqhNOAQ8DrvY2FbnT7ygWto0Uj+7VpmMQCYn2My4kR3kvyZ4WqXvFM
+ Pxju6kJJ7h03GlK9HNx0vF81yIoekaWAN8rju8ffWUN6VZ9fHiAq7VE/jjbPBtqD+Vv5QCyokHl
+ LjUmLGVmKGC+fB4ggvpErEePSnIJ5GCt1ZYvKGp9Q2Tz2TdFxXKtmDNMH735v+2GwWdWUOJBqm2
+ i8L3qVMjcSXtWaRNIZk2QuJ81OUGT/TEaXAC6zyl3UHt0lB6dc3gl2I4jooCUWZrsgMcE/aSPnL
+ WGv8NXIdK+M6z4k8JCIrNUU+KmyJXR1GCAWpNGgPk9+8qSwuC/i8VkHiq83nUWqWW2SuDZeTdWr
+ BzpfviTJuR2ZkFhi7db3tfQkAjA0yz0xQRSmggHCIFJqgnqHYKL1jNhvG4e/yyesCAjBzrPQqNM
+ qEdRrUpM6xXxMJGU9z2HafAIgwqJUtSJwMccwD1KJKUXvdc143AnnbPzpkqrMl1SUuvYZp6Lc/t
+ sKVhzmkWYAeQ609POJAvxmpcnhwjnuCwLegKFdD5o32HrieyC1IgmAIEI/It4D+mdXRv9wsuD7/
+ rYKB6hl114jYSPfMO7I9/8QvkKnpXtHztEtAdZmqJavMAakCHj5P9cyrvsVfWcS2M66kMmaLC3O
+ 9B0dDM+eS8KmdPbWRQwYo8w==
+X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
+ fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260626_093524_908503_4041E54D 
-X-CRM114-Status: GOOD (  13.65  )
+X-CRM114-CacheID: sfid-20260626_135506_736114_9A4DB9CE 
+X-CRM114-Status: GOOD (  12.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,47 +103,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Maxime Chevallier wrote:
-> I finally got time to test this with a RollBall module, and I
-> confirm what Aleksander says, the RollBall module's PHY doesn't
-> get detected even with this patch. It does work on v7.0 though,
-> so before the bridge probing was introduced.
+If rk_udphy_init() or rk_udphy_setup() fails, the reinit will not be
+tried again. Fix this by only updating the variable after all potential
+errors have been handled.
 
-Thanks a lot for taking the time to test, Maxime - and Aleksander
-for the original report.
+Note, that no errors have been seen on real hardware and failures would
+most likely be fatal and require at least a full reboot as the function
+already asserts the PHY reset lines. So this is more of a theoretical
+issue.
 
-That settles it: the deferred-probe approach in patch 2/2 doesn't
-actually restore genuine RollBall PHY detection, and as you both
-confirm it worked before 8fe125892f40 introduced the bridge probing.
-Sashiko's static review flagged the same thing (the probe bypasses the
-PHY discovery retry loop for slow-initializing modules), so the static
-analysis and the two hardware reports all point at the same flaw.
+Fixes: 2f70bbddeb45 ("phy: rockchip: add usbdp combo phy driver")
+Reported-by: Sashiko <sashiko-bot@kernel.org>
+Closes: https://lore.kernel.org/linux-phy/20260612163835.8D5471F000E9@smtp.kernel.org/
+Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+---
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-I only have RTL8261BE-based copper modules here, not a genuine RollBall
-one, so I can't develop and verify a proper slow-init timing fix
-(module_t_wait / a retry that waits for the bridge) without the
-hardware to test against.
+diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
+index fba35510d88c..a5ffdf7a6e76 100644
+--- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
++++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
+@@ -1000,15 +1000,14 @@ static int rk_udphy_power_on(struct rk_udphy *udphy, u8 mode)
+ 	}
+ 
+ 	if (udphy->status == UDPHY_MODE_NONE) {
+-		udphy->mode_change = false;
+ 		ret = rk_udphy_setup(udphy);
+ 		if (ret)
+ 			return ret;
+ 
+ 		if (udphy->mode & UDPHY_MODE_USB)
+ 			rk_udphy_u3_port_disable(udphy, false);
+-	} else if (udphy->mode_change) {
+ 		udphy->mode_change = false;
++	} else if (udphy->mode_change) {
+ 		udphy->status = UDPHY_MODE_NONE;
+ 		if (udphy->mode == UDPHY_MODE_DP)
+ 			rk_udphy_u3_port_disable(udphy, true);
+@@ -1017,6 +1016,7 @@ static int rk_udphy_power_on(struct rk_udphy *udphy, u8 mode)
+ 		ret = rk_udphy_setup(udphy);
+ 		if (ret)
+ 			return ret;
++		udphy->mode_change = false;
+ 	}
+ 
+ 	udphy->status |= mode;
 
-Given that, my suggestion:
+-- 
+2.53.0
 
-- Please drop patch 2/2 from the series.
-
-- Since 8fe125892f40 regressed genuine RollBall detection and the
-  deferred probe doesn't restore it, I think the cleanest fix is to
-  revert 8fe125892f40. I'm happy to send that revert if you'd prefer.
-  The 5-minute RTL8261BE probe loop it was addressing is handled in our
-  downstream tree, so reverting it upstream is fine on our side.
-
-- Patch 1/2 (the mii_bus leak fix) is independent of all this and
-  already has Reviewed-by from Maxime and Larysa - it would be good to
-  take that one regardless. I can resend it standalone if that's easier.
-
-A proper fix covering slow-firmware modules really needs a genuine
-RollBall module to validate, so it's better owned by someone who has
-that hardware - happy to help review.
-
-Thanks again,
-Petr
 
 -- 
 linux-phy mailing list
