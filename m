@@ -4,89 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C2C2C43211
-	for <linux-phy@archiver.kernel.org>; Fri, 26 Jun 2026 21:02:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AAA92C43458
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Jun 2026 21:11:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=69GNX55xp/VXdCd0IrrYG1+MoS2dAkILPfLbuZxKG7w=; b=3fU/339UEWavjL
-	zPH3e2SAeW8D18v0wmiZh4OfVY/zyXsTIECqiLjdvKL6xXlHN1wH7u3sPp3my46jd96YiDPzGzQSq
-	Ht4BXtnL8/J7OwM/RHMYvgLZLOBKeDNf+VWzAGnxrJtldZE5wGBWA7no/3OpM8XsPqaCmc2Lw6Yp4
-	fT/PcuDtwIQ7TMV4njZWQ12bD0O6X5v+d/GKOzXEozJw9rPoNkVrgJ4AEwT+8rQbMuHoqaM3kYxSK
-	mwcAF7HldrkPj/Pm/xkBVtnfuPiLxe5fDpVNUHDN08Sg574AL09V4nCVRFNoIqiR8TiXGGKYSQ0jL
-	kUqu4RO3DLIFW5cCo87w==;
+	List-Owner; bh=GEEm27vLNiUU3n/kSBF8hpXj1tXVQjBzR3gn89Zq3Yg=; b=Gwj2et+rj4cc7V
+	kiUQSLBlTSKGow0u+nnl/4tS4X+FcG0RnqODCWUu4zwAHHabRGsR2IQ80OLHZxj4s884xODZejZYX
+	/He61Wy0dehAv1GvhLURtIhcuwbZaAIB/EFVOIEuaZ7lak7Yamv99/vUklZ4GxMixScs0oHhCzEGH
+	fMu0ZOKko9PfnAY3TFNHvTgGLWQcJKVgYlz7WH+KM+c2e0MIWxRAUF05gDEgb75foBkB4J4H54Boz
+	S7GqIluNuO/JkquHp3QXMTg5QqBcp/aIergeodr+FCexszu/vOwVfi+grW8zyuBHQRInFulqXJYXI
+	DE0D87xTINAq2X5P72vQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wdDhG-0000000Bt4f-1b8A;
-	Fri, 26 Jun 2026 21:02:46 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1wdDq8-0000000Btac-11xS;
+	Fri, 26 Jun 2026 21:11:56 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wdDgs-0000000Bsle-3JQV;
-	Fri, 26 Jun 2026 21:02:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1782507740;
-	bh=MarmR1wDaE/auFAtnNePXWY3E7UWDMWQ2CxnXkcbfjg=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=CHcruOHFIPttswVoR6IM1QkyvF4+mf4TY36EqSAtHqN3SCRJrcQCMOsL/xMxvX3sl
-	 DPtKsmgF8MLtTV8MAHBVBosoatyOjUffFClH4pTxJGI/X0WHF2SO+Wvq80DLHsPZzk
-	 gqQdJTzRyuQy/YAc0Cz6WSSI9g0TpGChdASwQgIflM2l7v1qQj1mGXRa+JKEauq93v
-	 78dhuoL0XMUKJGQylJFhwdxOEd3qGYt0dI/Lmgxqb04zOuGf5ZrgkCefJyTiIEAxLq
-	 wvnZAkanSbq7BbJCSs2ZayO2ihmyk+ueOxpJ6zSWuY1DQRLmPbz0/5qN/N0M/Bt3bY
-	 PQx6kqqFV07dw==
-Received: from jupiter.universe (unknown [100.64.1.62])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 0057317E0C88;
-	Fri, 26 Jun 2026 23:02:19 +0200 (CEST)
-Received: by jupiter.universe (Postfix, from userid 1000)
-	id 3037C48006A; Fri, 26 Jun 2026 22:55:02 +0200 (CEST)
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Fri, 26 Jun 2026 22:55:18 +0200
-Subject: [PATCH v8 25/29] phy: rockchip: usbdp: Clear USB status on PHY
- exit
-MIME-Version: 1.0
-Message-Id: <20260626-rockchip-usbdp-cleanup-v8-25-47f682987895@collabora.com>
+	id 1wdDq6-0000000BtaW-1pD3
+	for linux-phy@lists.infradead.org;
+	Fri, 26 Jun 2026 21:11:54 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id BEB1C4370B;
+	Fri, 26 Jun 2026 21:11:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2332F1F000E9;
+	Fri, 26 Jun 2026 21:11:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1782508311;
+	bh=y7pZiLQeaytZMgQeQIifYpqOvUTnF5RVOku7B6TDsqc=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=Qr5Jlw8esNq4NgE+ksKJKeIvXAXWp0oAWuMlDCrPOzAdz64uEXn0qiMmHhu8FfZK2
+	 6F5J85i5ZiqFU1vxgJRM2ywRgNCADpM7tgXjtORaiw6z9xoWU4GuwUw2bZVpKAR6qJ
+	 AO1y1rEIlfSVYz6rJgiBHPWLBocob1nSZJGSns9WqR1l1+NwpnUD+uxQJkZixHoAN0
+	 1FuSLltkCgqz4o/hKtu/SX/3upxt4B2lioXc/GSY4mzusb+vB9HN3wWadCqzcfiZ2X
+	 dXlELXX7Y6wAyED1XpxyzRKI+baYCc7oQfmF82VMVcMnqLRc58Ej0C1t6XxgWs68KO
+	 Tbxa89UP1u0Ig==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v8 07/29] phy: rockchip: usbdp: Handle
+ rk_udphy_reset_deassert_all errors in init check
+To: "Sebastian Reichel" <sebastian.reichel@collabora.com>
+Cc: vkoul@kernel.org, neil.armstrong@linaro.org, conor+dt@kernel.org, olteanv@gmail.com, robh@kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org
+In-Reply-To: <20260626-rockchip-usbdp-cleanup-v8-7-47f682987895@collabora.com>
 References: <20260626-rockchip-usbdp-cleanup-v8-0-47f682987895@collabora.com>
-In-Reply-To: <20260626-rockchip-usbdp-cleanup-v8-0-47f682987895@collabora.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Heiko Stuebner <heiko@sntech.de>, Frank Wang <frank.wang@rock-chips.com>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>
-Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>, 
- Yubing Zhang <yubing.zhang@rock-chips.com>, 
- Alexey Charkov <alchark@gmail.com>, linux-phy@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- linux-kernel@vger.kernel.org, kernel@collabora.com, 
- devicetree@vger.kernel.org, 
- Sebastian Reichel <sebastian.reichel@collabora.com>, 
- Sashiko <sashiko-bot@kernel.org>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1229;
- i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=MarmR1wDaE/auFAtnNePXWY3E7UWDMWQ2CxnXkcbfjg=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGo+5yVdZh4n+jkW7gcyoPH3lQcGa1FiDJ1LO
- TdTz5vHHbYlKIkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqPuclAAoJENju1/PI
- O/qajBsP/2iW+fNHmJyYrQARtaGAvY11NLf6GT7uYLt250imMz5I/intLeETL1VJExxtCnzZtLv
- CEePzyabyiwiH5UfqtAwnL/gKnVFaigLe8et4+t39Nf5D6PgG/LpxpmeZCV/1ZZztgeVzYKau8P
- 2JEFknQfYSvQ6k6dIXSqMVuV+8820Bqz7uGtq57KZDMgwlkxKRhcEGuK6OpZTzWx3bnTkK1w9rZ
- dKoj0cyzkJPDLo0bn1CvXls2vgHKrvN2d8IafShlTHVl8pUKZAifA6yKen0gJKgxrFWfuOFRgMN
- orA2lHrYSpwfo/yDCM+kDNBKL0LmTUWChHykSMECazqFDAdjbo3DXowzeRb6TePWniarJcycAl+
- F9C36VrenjAftHquWyIbrjFBlcE05foQSjtdUPm3ZDZDmU2IPZGP4VuixM+tRSxe6YCU3iG9HYr
- CpfXHtTdhQo8RT1AQqIuvEbBBtKnyXk2LctsFxoMd9N/VOSVqRc2dgg2fLIfW16nybGWz0Vdbwp
- AazKTMcfoADXqHf5Egtdu8wji6b8mvSCAZEa+DjS/IY3tu+6EQyPPOJTcD1H7Ly1T2Uav9bjtHA
- Wt71WpJt7kKD4+fqbBPhhZtRVMna0sp2enPw7Ml0pU2lJMWrZOi/BbqejBk6WecqfV85VQ8zej1
- BAVbXccjVkNWK47a3UtoyZQ==
-X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
- fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260626_140222_995833_5CCB4D94 
-X-CRM114-Status: GOOD (  12.31  )
+ <20260626-rockchip-usbdp-cleanup-v8-7-47f682987895@collabora.com>
+Date: Fri, 26 Jun 2026 21:11:50 +0000
+Message-Id: <20260626211151.2332F1F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,46 +63,67 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Ensure the USB status flag is cleared when the USB3 PHY is
-exited while the system is in DP-only mode. This can happen
-if the USB3 controller device is unbound while a DP-only
-adapter is plugged into the USB-C port.
-
-Fixes: 2f70bbddeb45 ("phy: rockchip: add usbdp combo phy driver")
-Reported-by: Sashiko <sashiko-bot@kernel.org>
-Closes: https://sashiko.dev/#/message/20260625-rockchip-usbdp-cleanup-v7-24-38eb3cf654fd%40collabora.com
-Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
----
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index 4566822d70c4..15c18c6e3093 100644
---- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
-+++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -1322,8 +1322,10 @@ static int rk_udphy_usb3_phy_exit(struct phy *phy)
- 	udphy->usb_in_use = false;
- 
- 	/* DP only or high-speed */
--	if (!(udphy->mode & UDPHY_MODE_USB) || udphy->hs)
-+	if (!(udphy->mode & UDPHY_MODE_USB) || udphy->hs) {
-+		udphy->status &= ~UDPHY_MODE_USB;
- 		return 0;
-+	}
- 
- 	rk_udphy_power_off(udphy, UDPHY_MODE_USB);
- 
-
--- 
-2.53.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
+IFtNZWRpdW1dIFRoZSByZXR1cm4gdmFsdWUgb2YgYHJlZ21hcF9yZWFkYCBpcyBpZ25vcmVkLCBs
+ZWFkaW5nIHRvIHRoZSB1c2Ugb2YgYW4gdW5pbml0aWFsaXplZCBzdGFjayB2YXJpYWJsZS4KLSBb
+TWVkaXVtXSBUaGUgcGF0Y2ggZmFpbHMgdG8gYWRkcmVzcyBpZGVudGljYWwgcmVzZXQgZGVhc3Nl
+cnRpb24gdnVsbmVyYWJpbGl0aWVzIGluIGBya191ZHBoeV9pbml0YCwgbGVhdmluZyB0aGUgZHJp
+dmVyIHN1c2NlcHRpYmxlIHRvIHRoZSBleGFjdCBzYW1lIFNFcnJvciBpdCBjbGFpbXMgdG8gZml4
+LgotLQoKY29tbWl0IGFmN2E4M2NiMWIxNzQ2MDU0Y2QwOTVkNTc0MzIxMGM2NTM5N2Q2YjEKQXV0
+aG9yOiBTZWJhc3RpYW4gUmVpY2hlbCA8c2ViYXN0aWFuLnJlaWNoZWxAY29sbGFib3JhLmNvbT4K
+CnBoeTogcm9ja2NoaXA6IHVzYmRwOiBIYW5kbGUgcmtfdWRwaHlfcmVzZXRfZGVhc3NlcnRfYWxs
+IGVycm9ycyBpbiBpbml0IGNoZWNrCgpUaGlzIGNvbW1pdCBmaXhlcyBhIHRoZW9yZXRpY2FsIFNF
+cnJvciBpc3N1ZSBieSBlbnN1cmluZyB0aGF0IHRoZSByZXR1cm4KdmFsdWUgb2YgcmtfdWRwaHlf
+cmVzZXRfZGVhc3NlcnRfYWxsIGlzIGNoZWNrZWQuIEl0IGJhaWxzIG91dCBlYXJseSBpZgpkZWFz
+c2VydGluZyB0aGUgcmVzZXQgbGluZXMgZmFpbHMgYmVmb3JlIGF0dGVtcHRpbmcgZnVydGhlciBy
+ZWdpc3RlciBhY2Nlc3MuCgpSZXBvcnRlZC1ieTogU2FzaGlrbyA8c2FzaGlrby1ib3RAa2VybmVs
+Lm9yZz4KQ2xvc2VzOiBodHRwczovL3Nhc2hpa28uZGV2LyMvbWVzc2FnZS8yMDI2MDYxOTE1NDkw
+My4yMjI1QTFGMDAwRTklNDBzbXRwLmtlcm5lbC5vcmcKCj4gRml4IHRoZW9yZXRpY2FsIGlzc3Vl
+LCB0aGF0IGZhaWx1cmUgdG8gZGVhc3NlcnQgdGhlIHJlc2V0IGxpbmVzIHdvdWxkCj4gcmVzdWx0
+IGluIGFuIFNFcnJvciBpbiBmb2xsb3ctdXAgcmVnaXN0ZXIgYWNjZXNzLiBOb3RlLCB0aGF0IHRo
+aXMgY2Fubm90Cj4gaGFwcGVuIHdpdGggY3VycmVudCBjb2RlLCBzaW5jZSB0aGUgUm9ja2NoaXAg
+cmVzZXQgZHJpdmVyIG5ldmVyIHJldHVybnMKPiBhbnkgZXJyb3JzIGZvciAoZGUpYXNzZXJ0aW5n
+IHJlc2V0IGxpbmVzLgoKW1NldmVyaXR5OiBNZWRpdW1dClRoaXMgaXMgYSBwcmUtZXhpc3Rpbmcg
+aXNzdWUsIGJ1dCBkb2VzIHRoaXMgc2FtZSB2dWxuZXJhYmlsaXR5IHN0aWxsIGV4aXN0IGluCnJr
+X3VkcGh5X2luaXQoKSB3aGVyZSByZXNldCBkZWFzc2VydGlvbnMgYXJlIGFsc28gdW5jaGVja2Vk
+PwoKRm9yIGV4YW1wbGU6Cgpkcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtdXNiZHAu
+Yzpya191ZHBoeV9pbml0KCkgewoJLi4uCglya191ZHBoeV9yZXNldF9kZWFzc2VydCh1ZHBoeSwg
+InBtYV9hcGIiKTsKCXJrX3VkcGh5X3Jlc2V0X2RlYXNzZXJ0KHVkcGh5LCAicGNzX2FwYiIpOwoK
+CS8qIFN0ZXAgMjogc2V0IGluaXQgc2VxdWVuY2UgYW5kIHBoeSByZWZjbGsgKi8KCXJldCA9IHJl
+Z21hcF9tdWx0aV9yZWdfd3JpdGUodWRwaHktPnBtYV9yZWdtYXAsIC4uLgoJLi4uCn0KCklmIHJr
+X3VkcGh5X3Jlc2V0X2RlYXNzZXJ0KCkgZmFpbHMgaGVyZSwgd291bGRuJ3QgdGhlIGZvbGxvdy11
+cApyZWdtYXBfbXVsdGlfcmVnX3dyaXRlKCkgdHJpZ2dlciB0aGUgZXhhY3Qgc2FtZSBTRXJyb3I/
+CgpTaG91bGQgdGhlIHJlc2V0IGRlYXNzZXJ0aW9ucyBpbiBya191ZHBoeV9pbml0KCkgYWxzbyBi
+ZSBjaGVja2VkPwoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tj
+aGlwLXVzYmRwLmMgYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtdXNiZHAuYwo+
+IGluZGV4IGY3ZmY1NWYwM2I3Y2YuLmI4ZGUwYTQ3YTYxNjUgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVy
+cy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLXVzYmRwLmMKPiArKysgYi9kcml2ZXJzL3BoeS9y
+b2NrY2hpcC9waHktcm9ja2NoaXAtdXNiZHAuYwo+IEBAIC05MzYsNyArOTM2LDkgQEAgc3RhdGlj
+IGludCBya191ZHBoeV9nZXRfaW5pdGlhbF9zdGF0dXMoc3RydWN0IHJrX3VkcGh5ICp1ZHBoeSkK
+PiAgCQlyZXR1cm4gcmV0Owo+ICAJfQo+ICAKPiAtCXJrX3VkcGh5X3Jlc2V0X2RlYXNzZXJ0X2Fs
+bCh1ZHBoeSk7Cj4gKwlyZXQgPSBya191ZHBoeV9yZXNldF9kZWFzc2VydF9hbGwodWRwaHkpOwo+
+ICsJaWYgKHJldCkKPiArCQlnb3RvIGV4aXQ7Cj4gIAo+ICAJcmVnbWFwX3JlYWQodWRwaHktPnBt
+YV9yZWdtYXAsIENNTl9MQU5FX01VWF9BTkRfRU5fT0ZGU0VULCAmdmFsdWUpOwo+ICAJaWYgKEZJ
+RUxEX0dFVChDTU5fRFBfTEFORV9NVVhfQUxMLCB2YWx1ZSkgJiYgRklFTERfR0VUKENNTl9EUF9M
+QU5FX0VOX0FMTCwgdmFsdWUpKSB7CgpbU2V2ZXJpdHk6IE1lZGl1bV0KVGhpcyBpcyBhIHByZS1l
+eGlzdGluZyBpc3N1ZSwgYnV0IGRvZXMgdGhpcyBjb2RlIGV2YWx1YXRlIGFuIHVuaW5pdGlhbGl6
+ZWQKdmFyaWFibGUgaWYgdGhlIHJlYWQgZmFpbHM/CgpJZiByZWdtYXBfcmVhZCgpIGZhaWxzIGFu
+ZCByZXR1cm5zIGFuIGVycm9yLCB2YWx1ZSBpcyBub3QgaW5pdGlhbGl6ZWQsIGFuZAp0aGUgc3Vi
+c2VxdWVudCBGSUVMRF9HRVQoKSBjaGVja3Mgd2lsbCBvcGVyYXRlIG9uIHVuaW5pdGlhbGl6ZWQg
+c3RhY2sgbWVtb3J5LgoKU2hvdWxkIHRoZSByZXR1cm4gdmFsdWUgb2YgcmVnbWFwX3JlYWQoKSBi
+ZSBjaGVja2VkIGhlcmU/Cgo+ICAJCWRldl9pbmZvKHVkcGh5LT5kZXYsICJTdGFydGVkIHdpdGgg
+RFAgUEhZIHByZS1lbmFibGVkOyBzZWFtbGVzcyB0YWtlb3ZlciB1bnN1cHBvcnRlZFxuIik7Cj4g
+IAkJcmtfdWRwaHlfZ3JmcmVnX3dyaXRlKHVkcGh5LT52b2dyZiwgJmNmZy0+dm9ncmZjZmdbdWRw
+aHktPmlkXS5ocGRfdHJpZ2dlciwgZmFsc2UpOwo+ICAJfQoKLS0gClNhc2hpa28gQUkgcmV2aWV3
+IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDYyNi1yb2NrY2hpcC11c2Jk
+cC1jbGVhbnVwLXY4LTAtNDdmNjgyOTg3ODk1QGNvbGxhYm9yYS5jb20/cGFydD03CgotLSAKbGlu
+dXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
