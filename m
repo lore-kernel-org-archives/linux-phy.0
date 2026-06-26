@@ -4,145 +4,142 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 345E5CDE008
-	for <linux-phy@archiver.kernel.org>; Fri, 26 Jun 2026 06:13:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4FAD1CD4F26
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Jun 2026 11:17:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iFaQMU80skl0F8Ppfz2Uov7pJcehy8x9FQfo2EWglj0=; b=z4Y9iSabGoKIOp
-	oDx2MgB/HjNJkPPTxpuoANpvZlMdsfGyh3K9Po3J5+d1tKwwyXdLuVBXTTXLCcG2Iah5oIUqTPrWa
-	uyZBtT/tSmrA4MKAew0PEQa/IXRDmbhjeG1f2I9Wzb+k0858sHHIcR+1u9mGkq3UkAg4UPCPi2svh
-	X/2s2SRcj7iwbTG1KyVjh2HgsN90LcscQnhVjslZZW7iE7ljbVcAdsEthz2mhKdRWHShVn7mdI/fi
-	ePyQLuy26Uc4qtWCTfCxH3SmnRyJPjTV1Ikm18DUqcU5FvMY0h0LOMIdUz/WAebMzdb1B+R57sA5m
-	z5yv3gEOOwlGpwz0bn8w==;
+	List-Owner; bh=hLtDo1HFJB3iFWqgb26Us2nPfn5WKCCe07zSLDSeqeE=; b=Ui3WFeDfX75TZx
+	3rxzOoeHShzxoHwmD/qQQSsIrTApPhu7tAaHw8H/zC6WPLWIeb14GHEO9mqVANiCtiAtxpO6+kblN
+	/9ooTztYxONyDmKJu40K8vLH4woU5LHT4MPjR181kZob+sYiclEu9bpDl+LNn2+A1/SA37xb1izyW
+	PfB48VLQ6lyQv1F5qA8cC49DTSjHeInRJMe2vPNC0u7iRBiUlvEvIbTMvGLYfsE4bUIkL8GlzspVp
+	AXKn6y7mmZ3mroUVz8wV7giDcbo8NZv/gplbIxsbnuWyGbcixZUWdZzOevFetKxU34jfl1xDQIFDi
+	nGv+4l276QY0UMS9EDQw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wczp6-0000000Aa65-2MaE;
-	Fri, 26 Jun 2026 06:13:56 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wd4Ye-0000000BCAp-2FDR;
+	Fri, 26 Jun 2026 11:17:16 +0000
+Received: from mail-northeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c200::1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wczp4-0000000Aa5b-1RHz
-	for linux-phy@lists.infradead.org;
-	Fri, 26 Jun 2026 06:13:55 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65Q2ibfH3680267
-	for <linux-phy@lists.infradead.org>; Fri, 26 Jun 2026 06:13:53 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	5oaO6nlU8yDgoxuX+c2jtK0nD634i/BWQxbqSO1tKcc=; b=jc4YnbZjP2CjuRnd
-	0UoHCGpJlm++bQFF+SQmmGbcHMPgeIeHbhh+cFhoSBoD6dZp3ZzO4VM/ZvPjPANq
-	uW43i8pdk05Mb3G9+RlRiahKEc7x3zIeGmYGZD3d9DcH9czuuL3cEpHJ8fzr8y00
-	m5Kogkqszc9YaAEW/ri59D8ZqtyPHRkq3n45D46jBrRhzlkRwOM9V79k7lTIBCxG
-	lfkkBZgzgnBRRzZtO7ePF6n5rTe7equ2vdlRrA7OjYQUO0T44MGarAu3rWVkSsva
-	5qILNaE3RdQPP7UEGp20uQIgG20BmkBhIYnW7+KIdFrSjl3AmmWfcXLOul95Q8AS
-	AO4heA==
-Received: from mail-dy1-f198.google.com (mail-dy1-f198.google.com [74.125.82.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4f1fgds2h3-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 26 Jun 2026 06:13:52 +0000 (GMT)
-Received: by mail-dy1-f198.google.com with SMTP id 5a478bee46e88-30c8a940e76so738709eec.1
-        for <linux-phy@lists.infradead.org>; Thu, 25 Jun 2026 23:13:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1782454432; x=1783059232; darn=lists.infradead.org;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=5oaO6nlU8yDgoxuX+c2jtK0nD634i/BWQxbqSO1tKcc=;
-        b=GtI9QXbiV5MRN3mUGLw/C4VwXpKa2UsnIJXuQnz8p4erFvdHT1P6rrVWy8cf2xVqRc
-         zzsYIYzmQhYIxmWZzX8rjjOcEEpdypr+0FxCSWEV/b6kUIBU+er1Zfw8Kkq6O1UnQK5C
-         HCp3fgEBQasTLJG3inRqS+rdAtrFiKcHjQRQkzbuj1YiTSsPbUnBtxXH8QQewuJPqE66
-         RzAg8cROgvOYrJ2lmCVyNTn7ZilZRhqCN7gVr9mkqpdyyv2tS916ts13YS00INGSHfFO
-         2dvQ5NgZdaXEOnIS95lpHjq9i5GPY32+agl99Hj8RYYCI9XIehLaqxX8EEk0smHjCox4
-         KKJw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1782454432; x=1783059232;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=5oaO6nlU8yDgoxuX+c2jtK0nD634i/BWQxbqSO1tKcc=;
-        b=if76s/+Vc5yBP9rfMQaEOJKphIJFpiRgop0/s3Uv6q3AGTmoXfKfcIfiIaaI6J/ANc
-         jec59ISI+id4E/wLxDl8+DVdmxr6MK8UE4GADobRtkDpVnqtrhVGHIO+bIObm36Xtad6
-         zBmxGOYNnhqYSG33tnLFIlgENHlHWmTIvgnKqtE7l5034cwFUFsikRBzy6TFSZs7fip0
-         xOyk5cBC8BeyvN9eRqX5R173SG7mrfEaayJv1kciUyvsYuINIES6gaie+CHPWUHKqVas
-         sHmkNAK2qdbVH1BE3PPIa8jHcI5RtSWgcZGJY327hF6FYMsYmfFrqO0Lhyjo3Z832Clu
-         OzfQ==
-X-Forwarded-Encrypted: i=1; AHgh+Rp22HMT0bcrXNhbNpCMDpGPwKGuZgdWEhY/+naprhVYzRAvVcX9HcgFGnucq44WwvWw/nrG2boFQOE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxuwGnZl9UQcPXvA7NlXreaAw1Ok1ah45h2YGAYEM1mvpKIuHyI
-	qsZByKo5BDlPkq3faIXXUZxoi2OrUqvCiwx23aESTeqLpJXw6Ejqp5BX4P6OYibtYIe3lGcKU6i
-	44NTXotVGfL42L3doouoXesTb+oy4gc+LxV1EuJTHraQo31C6Rhi06NE0rPSnDlYYhG2NhDd5DX
-	9nme8=
-X-Gm-Gg: AfdE7cmiHrWNViSbd9/ZjS9Up8CIIYOQf2nc6sOi6XJFTWrzw3Y3BgpqNrLQKWJHZD3
-	AeuySxjpmeh6lcgC2boAhpIqGpn1gykMIvVzK+xttLnoTokS7FD4iB/+L415cTlXt3QiEEE5RBY
-	fBLGjYun7MeXkFOzIeKZcmDlcT7UDAtn3/AYLbAbOk8U9b5vzRv7YF1tYWC36FZyWxg3aMo7ubk
-	4yJkk+nVpnwF+cCn0QKIZqd64NdsI9uBFq9vnxjmkPRI7MgdoB6j7Pfi4HlZX3MfoVoxZ4CDjyn
-	hGonThclGgLa8ipLyBzMrlu4+WJfTtCIcn0sWCdHpHg2tY4+5ROEd+fKb3/uNu86B33CTGt+3FU
-	DTI+7MnA1GHTgYerqtv8SY5zq
-X-Received: by 2002:a05:7300:1488:b0:30b:ff0d:1efa with SMTP id 5a478bee46e88-30c84d9b4c8mr4532533eec.24.1782454432184;
-        Thu, 25 Jun 2026 23:13:52 -0700 (PDT)
-X-Received: by 2002:a05:7300:1488:b0:30b:ff0d:1efa with SMTP id 5a478bee46e88-30c84d9b4c8mr4532498eec.24.1782454431566;
-        Thu, 25 Jun 2026 23:13:51 -0700 (PDT)
-Received: from oss.qualcomm.com ([202.46.23.25])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-30c9c456cf5sm3782007eec.2.2026.06.25.23.13.46
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 25 Jun 2026 23:13:51 -0700 (PDT)
-Date: Fri, 26 Jun 2026 11:43:43 +0530
-From: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
-To: Loic Poulain <loic.poulain@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Bartosz Golaszewski <bartosz.golaszewski@linaro.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        Wasim Nazir <wasim.nazir@oss.qualcomm.com>,
-        Mohd Ayaan Anwar <quic_mohdayaa@quicinc.com>,
-        Yijie Yang <quic_yijiyang@quicinc.com>, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org,
-        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Subject: Re: [PATCH 0/6] Additional regulator support for the Qualcomm SGMII
- SerDes PHY
-Message-ID: <aj4YlxJDvIsaJF1R@oss.qualcomm.com>
-References: <20251124-sgmiieth_serdes_regulator-v1-0-73ae8f9cbe2a@oss.qualcomm.com>
- <CAFEp6-3De6r3XwSmnKpMSSf8KK3K-esDAhTRKN41Bng-Yf8dXg@mail.gmail.com>
-MIME-Version: 1.0
+	id 1wd4Yb-0000000BC8L-2gqj;
+	Fri, 26 Jun 2026 11:17:15 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=Fx0GksYXDOy0LiAuIDq151I5dFaPsorNoznJqo+tPNTr9+Mwkfql2YfA9NvtAQ9wb/XgBtH82T8mU7sPqVK8qfdSCzZRInBK6EcYoLlfhl6qgCNMwA68lNeUubMwoFtv8tKcVK07Iy/Vws9ePUUJMx6GFjxotG2UaMzHk/yBzPrBEBV1z63RKjTuZbYUIf3zFWvfR4zyGHwBTw0BOZZ9NcFRUipaB4fULankIrHfCkDBV5Xe/WvWZBPNFq9/GbxQ7BxVaTjqIlimdlfODJuD6Oqgpd75IO0hf14L4Ek6Ig047almdcZgwksZYS6r708udXfynm6zQw2TmqsonbSmSg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=DjzML74ejIpR6zLzlBjC6mSv6q/FdQD31kOWB3KqJnQ=;
+ b=Jb94uce2abKb6F43pHbHl44/R1PaybCH6AhdiZjZsqJfJNVVEU+TAP+rzL41bUqOf5uBIaPAkCXX4nD/aEsAbaITWOsbbbsrsXrCiax3t7HvrHPSpd4TpbyfQOeANv3sCJY/zhYrY1kxYlzy5N78HEqViUDpE+4zDp/aANQYBpneck3LQvPEVcwZ86ekZsmpcEZ72MtHOP8AM3PYjZJs2Wka5gIPGaNZYUCShoU8I+tFwIvjMlFJBoS6hmqGRQTI9+jWfl+ElTK65diujUkQagwh3hP2JFJu+TJLpS7TlVXWFhN6NNFc4bbetQ9K6pqzKSQEvYq1lsEVhQlBec2sPg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=DjzML74ejIpR6zLzlBjC6mSv6q/FdQD31kOWB3KqJnQ=;
+ b=cSk7RQ/nvSM1YiY/BQgKxikTlHh6PzwEKXPk1mZ6aL0mK645EMjShIeKYZO7JsZ+P8j/6VCjTL3r64pmIb68GzvRsJSh+K6zH+nuam5x6h29AFwYHvtkg6LfsZ2in5y5ev1jR03SuZpCpDxFear+V6Y6xf3HsWJH35uf6k13Z67uTphQecFLcirlnICs3/p+5rwwnhU7WYHnsYSBKtmbiy+A8fIXJnlW2Q3y50TCns424H8XqtCBHVQPQ3bBXiG8Y4Bs3uAYnj4300Qjt9ixkELZ90VPhZy5MD/A5WaTaqareXC5z5J9AXbIGGtoFCCpdluB3Wsr6gP9OEGbrjnpTA==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from PAXPR04MB9422.eurprd04.prod.outlook.com (2603:10a6:102:2b4::21)
+ by DBBPR04MB8026.eurprd04.prod.outlook.com (2603:10a6:10:1ed::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.139.20; Fri, 26 Jun
+ 2026 11:17:05 +0000
+Received: from PAXPR04MB9422.eurprd04.prod.outlook.com
+ ([fe80::54e:28bf:aa85:d25d]) by PAXPR04MB9422.eurprd04.prod.outlook.com
+ ([fe80::54e:28bf:aa85:d25d%4]) with mapi id 15.21.0159.016; Fri, 26 Jun 2026
+ 11:17:04 +0000
+Date: Fri, 26 Jun 2026 19:15:42 +0800
+From: Xu Yang <xu.yang_2@oss.nxp.com>
+To: Chaoyi Chen <kernel@airkyi.com>
+Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
+	Peter Chen <hzpeterchen@gmail.com>, Luca Ceresoli <luca.ceresoli@bootlin.com>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+	Sandy Huang <hjc@rock-chips.com>, Andy Yan <andy.yan@rock-chips.com>, 
+	Yubing Zhang <yubing.zhang@rock-chips.com>, Frank Wang <frank.wang@rock-chips.com>, 
+	Andrzej Hajda <andrzej.hajda@intel.com>, Neil Armstrong <neil.armstrong@linaro.org>, 
+	Robert Foss <rfoss@kernel.org>, Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, 
+	Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
+	Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, 
+	Simona Vetter <simona@ffwll.ch>, Amit Sunil Dhamne <amitsd@google.com>, 
+	Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>, 
+	Diederik de Haas <didi.debian@cknow.org>, Peter Robinson <pbrobinson@gmail.com>, 
+	Hugh Cole-Baker <sigmaris@gmail.com>, linux-usb@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+	dri-devel@lists.freedesktop.org, Chaoyi Chen <chaoyi.chen@rock-chips.com>
+Subject: Re: [PATCH v15 1/9] drm/bridge: Implement generic USB Type-C DP HPD
+ bridge
+Message-ID: <erx73m2ueuvbzjteadjli6aki5by4pr3hyertkkqqoqwhaa4v3@5cstmshcercx>
+References: <20260304094152.92-1-kernel@airkyi.com>
+ <20260304094152.92-2-kernel@airkyi.com>
 Content-Disposition: inline
-In-Reply-To: <CAFEp6-3De6r3XwSmnKpMSSf8KK3K-esDAhTRKN41Bng-Yf8dXg@mail.gmail.com>
-X-Authority-Analysis: v=2.4 cv=API5kwXb c=1 sm=1 tr=0 ts=6a3e18a0 cx=c_pps
- a=wEP8DlPgTf/vqF+yE6f9lg==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
- a=IkcTkHD0fZMA:10 a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
- a=EUspDBNiAAAA:8 a=evnvvmh2EKmFMqWf2KwA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
- a=bBxd6f-gb0O0v-kibOvt:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjI2MDA0NyBTYWx0ZWRfX6DxBnLW0gKrp
- 86R0RS5vLOSfnh2Nrp7ykX0Gd1xjygeg43QgtZrkDJwboEO6dODxkZD31UBNXRJ9wMBMftnAVTk
- +ZkLBVXiqlMeizbViOr+XJ/GYBiNieTSxEfRVDKMvnk566ZxCAh8Ez5v7QIJ79FoINc+ZIaugDU
- jQQZ4iKPoSZgyeKYPEJ/67ZRLQxhMKx9xSt+/8mqK6TNdHPvf9X04JkpLCZJyhQc9cJMCZmg7Nn
- zB7XBLuHqFgmgSYcYo8rXcbL4Trpa0GriQwlbJGzNZ2hvrVk01pU+xQTiImY4KqEg9hVjkSUX2X
- jXv/4JqgF8P0hRdBDZd6CB9H1/WLy4QTSvwq4axlGtvxxlTpD+8V47bqOkg3NN0u6nkOXYdu7o6
- 7I6/KcZITqx/DOvtd7ZtQEqKPf0fdXkvZUXPFGG0vZ2WS9dsqOU4AFp0pLnL7uSC78Yd4T7k7yQ
- UV+A4vssjFyCiUYl3PA==
-X-Proofpoint-ORIG-GUID: K4BvlV4bwtylYq6IX-Cy6_xHN-RTJ1T7
-X-Proofpoint-GUID: K4BvlV4bwtylYq6IX-Cy6_xHN-RTJ1T7
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNjI2MDA0NyBTYWx0ZWRfX624RlmBNQJVy
- VFX8YHXHH/7LT0Fs2a2DvrrPbGilB8rCg0s/UNG1XsI34Wq0dTRvBUOg5FiDI7CRMcC1xse6KqM
- SG1uhdLKUwYY/6WjeAfKpJZrqBGTGDQ=
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
- definitions=2026-06-26_01,2026-06-24_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 clxscore=1011 bulkscore=0 impostorscore=0 lowpriorityscore=0
- priorityscore=1501 adultscore=0 malwarescore=0 phishscore=0 spamscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2606260047
+In-Reply-To: <20260304094152.92-2-kernel@airkyi.com>
+X-ClientProxiedBy: MA0PR01CA0097.INDPRD01.PROD.OUTLOOK.COM
+ (2603:1096:a01:af::14) To PAXPR04MB9422.eurprd04.prod.outlook.com
+ (2603:10a6:102:2b4::21)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9422:EE_|DBBPR04MB8026:EE_
+X-MS-Office365-Filtering-Correlation-Id: d0a6c04e-9085-4344-f3e8-08ded37473b9
+X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|376014|7416014|23010399003|366016|1800799024|6133799003|11063799006|4143699003|56012099006|18002099003|22082099003;
+X-Microsoft-Antispam-Message-Info: zUIh3be/D51eNGJ/NsLSKWvUOGlGyI698KD3goEQVj8+ww516sApvZ7ZiO9l6ZBgskjqpXv3z91BsMyAoHzBWsjFAOitR6qKfBSMQfycKE5B3QHPxz3XEgCqBelFIRKAjTY1pLMDz+EXMH3OUdKN19nldtYSZXmcoG+ASjUmHYmdEuWZjJSm4DpQsZIpXexxnRy4QoAZYnu6WcUVJDVEEK9GdG67ORhDt2Ctf6Lm73I5kqk1zKwbiLuXAOxLEJkWiduJQHa8js6sSThhjT9FLbxDWRltWYd9zZMTtQ/UxntX3eGaHioDu8LGMwW5dJUK7TowhESrrLJVBDplyytJDxzCCAaWM5UAMZd/IYRPCUZDG/LNKYdd+dF6iU3imDpzw6Gfi5u22c3tgAJ2fQLngCdCJ1UtCMuCiS8nkt+wF2CX3iy+LYfFGWBJHCUjegXq5/7Bm+Kbnaip98S7z2xFgGR1d1f+GhMd2sWndyNAukL1T6ZPUYfFTuuabnzsLVyMOgsxpcX2/zXWOmj3v8acKskTcE9NL1mq4dXoP3TSEwEENSN0jG7Bdu1w9ukhNlKtP9SO7KWTLlmYcqHaPw/aOx5+oc1AVaRjCjrCe1fPVfTjzUZDs7Bvsn/5uU5VR7V2opfseSnkWGrjCFDw3fK/xPC5dgSOk574LBkHzfazB2c=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9422.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(376014)(7416014)(23010399003)(366016)(1800799024)(6133799003)(11063799006)(4143699003)(56012099006)(18002099003)(22082099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?ooeGY7oY34UOvc4nBl1WPcaeKeACkry2olwhNzkFfvQfthS+iHdJ7ZqGfSc9?=
+ =?us-ascii?Q?OKT7s8pvq5NsUA0lbPsHBpKSMZTHWLvO2zraz+8avxNCVeMln4kBmoq2Kqx3?=
+ =?us-ascii?Q?Fc8n4gEgFqx0Mplpa8VtSxVHpGQ0Olqxu+7fXbAE4T/8B+XMYmpsO295B5gH?=
+ =?us-ascii?Q?L2hYDzFZca8XBTMrusK2iiL7TTu+YphyJQSs8rscNbWRliholCnMDQ+TGRHT?=
+ =?us-ascii?Q?DAsRu8lM5p6lUus8a7P6NAwLR5KaMXt+rrXtf/tpD4HRLCdz17phgd+dTDEB?=
+ =?us-ascii?Q?SxXsxkdw1vMEdunMo0RZugNxbby2PqodbyDT0+HubQoR4v4LwHNwTtQ0anOM?=
+ =?us-ascii?Q?X9nN6YdIc/QZceDn79wiaCcAh1Vh4XzDtoJqrpbFP8/L7Z3t6RVHTws3XAzF?=
+ =?us-ascii?Q?zLcw0O9YbZl8VAqknes7NRTZGoHyojLVHqti2m1u3PgcT4zAX7bYyTkWpbTN?=
+ =?us-ascii?Q?H9P8NF/EdUdFsRBrgBqZNjaqsSRRKbUHTppZuVr8DkJIY0yTvM2aJ1mKBdq6?=
+ =?us-ascii?Q?RC6IW9L1eKzHwAgVD9fs2sBtemetLopYr1tnooaMTXeA4v0Cu7haN9og9Kfk?=
+ =?us-ascii?Q?s7tyjDmz2Wp98N+dph7oG7uaoxFJaKaSBAbOEKU8e61GHQUCUjP11F9zK/RS?=
+ =?us-ascii?Q?Tt9d39JUvQ7m8bG2lSmgsSlo/zjL/TUoohc2NUW3mL1kdQ3qx4lSMyjIK/0g?=
+ =?us-ascii?Q?NgQ/qsCyoax4OFnblL0npvMvd/AGB4zSxyuDCOIg5XLZml/pFDPEktHDi0ll?=
+ =?us-ascii?Q?rdoITUmiuPSOWTGdtYp5HQX5hnI0fh09CG07to8Avis88L3GzSYVeSwms6mX?=
+ =?us-ascii?Q?IcjwGijIgsXows8LiLoEru1vDUbw/l8B+UqlYFw6NU/uBjO9ITJjB/wOUPJL?=
+ =?us-ascii?Q?07EAtVktet5zBZZrAIZdGxHs1izN1BrOf1KmEj+JECHznrHJz4BFIOkhCxbi?=
+ =?us-ascii?Q?KawvyAyP+4n1BLruRny6nvO/DYwRVT71fU0EBRByLjYp0YS76anxsCoiGGjM?=
+ =?us-ascii?Q?PtSZnesx6cIKG7JNensUO24VgjS77LiBAD8h6iLtwXvPl5D5aGJpP4Y8GJPl?=
+ =?us-ascii?Q?MOaO2seRTLZIw7QCAZOL5C0lm1vzDBaDhh5qQ9zZhigT3Wolyy1ZsCH9mZ4t?=
+ =?us-ascii?Q?VIDHBr8jvfFYVU6AP0AKXfbJ9FFLdw4x/xaPgqF9hNR5Yu+ZjTSH9DOkVh+l?=
+ =?us-ascii?Q?W+3MLTg4o6jRnANnjx2ARWi4Vk8MT/zesRInbmWbDZMaf66KAsgOHMjAh5/6?=
+ =?us-ascii?Q?Tb4Y9luAulCE8RPQT0+4ZBZ0m72vudQ44ILYfQqrmTmr+WEv1617DNexQH16?=
+ =?us-ascii?Q?3fgzSQqSajDRTwtUkILDD4y9aEIyQ7mgG68ZjUHBR50OS09uSIBOLy59JBNs?=
+ =?us-ascii?Q?VrtQ4emtyi77NedjC3bsAPzGWfjKVm6xgBNW1k5cdDna4N5qhXtEkPpHAQSz?=
+ =?us-ascii?Q?8xDBYG1zRTzRXDCZICQ+cgaZ3fKXCd8FM3ROW91sXfciC56EcqhA9ra4j4Na?=
+ =?us-ascii?Q?jT4DuxkJAvu70N1Ykb3huDGDdwbsP81OCMPjyU4MNVXGSQTs8X4UYlbzOcnE?=
+ =?us-ascii?Q?3gyLDut8GwfNsmL9T9J8XPi8ptYnJx3ClMRtpT6ZP1HXiGPzVS4QR6o0JRG/?=
+ =?us-ascii?Q?jKRgj5digspJm9YjRkv7neeyQ8DZfeiC5HTpb8P/OQAS4xSaj5egP0IsNoj6?=
+ =?us-ascii?Q?bLn3QaaPq6cmbmfsMq17G7ayxNcKgFv3ZJ9FxkkqSYVEee3MOKFFbhvrBA+8?=
+ =?us-ascii?Q?W8UBHr1EhsIhHRBzDRaDDSUuPeSlhW2CzUZjiHP4L4hi4Fg7LnaC?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d0a6c04e-9085-4344-f3e8-08ded37473b9
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9422.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Jun 2026 11:17:04.8307
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: IG396oaH562jMvnEFh7iKacdFcbMY3R6C7lDOmNTFEjKpFgPOdQORlrhM0ONQPr5TSs6AZ6zgRwpNRz0Cpgt3WtGddZMm0C88sd0B6umJ7gxJQdi3Bjmhqzqtxd+BqK9
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DBBPR04MB8026
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260625_231354_387849_30840A53 
-X-CRM114-Status: GOOD (  25.05  )
+X-CRM114-CacheID: sfid-20260626_041713_709936_7B48FA2B 
+X-CRM114-Status: GOOD (  26.82  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -154,40 +151,99 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBKdW4gMjIsIDIwMjYgYXQgMDQ6MDg6NTVQTSArMDIwMCwgTG9pYyBQb3VsYWluIHdy
-b3RlOgo+IEhpLAo+IAo+IE9uIE1vbiwgTm92IDI0LCAyMDI1IGF0IDEwOjI24oCvQU0gTW9oZCBB
-eWFhbiBBbndhcgo+IDxtb2hkLmFud2FyQG9zcy5xdWFsY29tbS5jb20+IHdyb3RlOgo+ID4KPiA+
-IFRoaXMgcGF0Y2ggc2VyaWVzIGFkZHJlc3NlcyBhIFNlckRlcyBwb3dlci11cCBmYWlsdXJlIG9i
-c2VydmVkIG9uIHRoZQo+ID4gUUNTODMwMCBSaWRlIGJvYXJkIHVzaW5nIHRoZSBwaHktcWNvbS1z
-Z21paS1ldGggZHJpdmVyLiBUaGUgaXNzdWUgb2NjdXJzCj4gPiBiZWNhdXNlIHRoZSBTZXJEZXMg
-UEhZIHJlcXVpcmVzIGJvdGggTDVBIGFuZCBMNEEgcmVndWxhdG9ycyB0byBiZQo+ID4gZW5hYmxl
-ZCBkdXJpbmcgaW5pdGlhbGl6YXRpb24uIElmIGVpdGhlciBvbmUgb2YgdGhlbSBpcyBkaXNhYmxl
-ZCwgdGhlCj4gPiBzdGF0dXMgcmVnaXN0ZXIgZG9lcyBub3QgcmVzZXQsIGFuZCB0aGUgRXRoZXJu
-ZXQgaW50ZXJmYWNlIGZhaWxzIHRvIGNvbWUKPiA+IHVwIGR1ZSB0byBhIHRpbWVvdXQ6Cj4gPgo+
-ID4gWyAgIDc3LjEwNTY1MV0gcWNvbS1kd21hYy1zZ21paS1waHkgODkwOTAwMC5waHk6IFFTRVJE
-RVNfQ09NX0NfUkVBRFlfU1RBVFVTIHRpbWVkLW91dAo+ID4gWyAgIDc3LjExMzQ0N10gcWNvbS1l
-dGhxb3MgMjMwNDAwMDAuZXRoZXJuZXQgZXRoMDogX19zdG1tYWNfb3BlbjogU2VyZGVzIHBvd2Vy
-dXAgZmFpbGVkCj4gPgo+ID4gUHJlc3VtYWJseSwgdGhlIGlzc3VlIGlzIG5vdCBzZWVuIG9uIGFs
-bCB1c2VycyBvZiB0aGlzIFBIWSBiZWNhdXNlIGJvdGgKPiA+IHJlZ3VsYXRvcnMgYXJlIG9mdGVu
-IHNoYXJlZCB3aXRoIG90aGVyIHBlcmlwaGVyYWxzLiBIb3dldmVyLCB0aGUgcG93ZXIKPiA+IHJh
-aWwgc2NoZW1hdGljcyBmb3IgYm9hcmRzIHVzaW5nIHRoaXMgU2VyRGVzIFBIWSBzaG93IHRoYXQg
-aXQgaXMKPiA+IHN1cHBsaWVkIGJ5IGJvdGggTDVBICgxLjJWKSBhbmQgTDRBICgwLjlWKSByZWd1
-bGF0b3JzLgo+ID4KPiA+IFRoaXMgc2VyaWVzIGhhcyBiZWVuIHRlc3RlZCBvbiB0aGUgUUNTODMw
-MCBSaWRlIGJvYXJkLCBhbmQgdGhlIHJlcG9ydGVkCj4gPiBpc3N1ZSB3YXMgcmVzb2x2ZWQuIEFs
-bCBNb25hY28gYW5kIExlbWFucyBkZXJpdmF0aXZlIGJvYXJkcyByZXF1aXJlIHRoaXMKPiA+IG5l
-dyBjb25maWd1cmF0aW9uIGFzIHRoZXkgdXNlIHRoZSBzYW1lIFNlckRlcyBQSFkuCj4gPgo+ID4g
-U2lnbmVkLW9mZi1ieTogTW9oZCBBeWFhbiBBbndhciA8bW9oZC5hbndhckBvc3MucXVhbGNvbW0u
-Y29tPgo+IAo+IFRoaXMgYXBwZWFycyB0byBiZSBhIHJlYWwgaXNzdWUsIGJ1dCBJIGhhdmVu4oCZ
-dCBzZWVuIGEgbmV3IHZlcnNpb24gb2YKPiB0aGUgc2VyaWVzIG9yIGFueSByZXNwb25zZSB0byB0
-aGUgZmVlZGJhY2sgc28gZmFyLiBDb3VsZCB5b3UgcGxlYXNlCj4gZm9sbG93IHVwIG9uIHRoaXM/
-Cj4gCgpJIHdpbGwgc2hvcnRseSBzZW5kIG91dCBhIHYyLiBJIGdvdCBhY2Nlc3MgdG8gbW9yZSBk
-ZXRhaWxzIGFib3V0IHRoZQpoYXJkd2FyZSwgYW5kIGl0IGhhcyB0d28gZGVkaWNhdGVkIHJlZ3Vs
-YXRvcnMgd2hpY2ggbmVlZCB0byBiZSBlbmFibGVkLgpUaGUgc2FtZSByZXF1aXJlbWVudHMgYXJl
-IHRoZXJlIG9uIGFsbCBMZW1hbnMvTW9uYWNvLWJhc2VkIGJvYXJkcy4KCglBeWFhbgoKLS0gCmxp
-bnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On Wed, Mar 04, 2026 at 05:41:44PM +0800, Chaoyi Chen wrote:
+> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+> 
+> The HPD function of Type-C DP is implemented through
+> drm_connector_oob_hotplug_event(). For embedded DP, it is required
+> that the DRM connector fwnode corresponds to the Type-C port fwnode.
+> 
+> To describe the relationship between the DP controller and the Type-C
+> port device, we usually using drm_bridge to build a bridge chain.
+> 
+> Now several USB-C controller drivers have already implemented the DP
+> HPD bridge function provided by aux-hpd-bridge.c, it will build a DP
+> HPD bridge on USB-C connector port device.
+> 
+> But this requires the USB-C controller driver to manually register the
+> HPD bridge. If the driver does not implement this feature, the bridge
+> will not be create.
+> 
+> So this patch implements a generic DP HPD bridge based on
+> aux-hpd-bridge.c. It will monitor Type-C bus events, and when a
+> Type-C port device containing the DP svid is registered, it will
+> create an HPD bridge for it without the need for the USB-C controller
+> driver to implement it.
+> 
+> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+> Reviewed-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+> ---
+> 
+> (no changes since v14)
+> 
+> Changes in v13:
+> - Only register drm dp hpd bridge for typec port altmode device.
+> 
+> (no changes since v12)
+> 
+> Changes in v11:
+> - Switch to using typec bus notifiers.
+> 
+> (no changes since v10)
+> 
+> Changes in v9:
+> - Remove the exposed DRM_AUX_HPD_BRIDGE option, and select
+> DRM_AUX_HPD_TYPEC_BRIDGE when it is available.
+> - Add more commit comment about problem background.
+> 
+> Changes in v8:
+> - Merge generic DP HPD bridge into one module.
+> ---
+> 
+>  drivers/gpu/drm/bridge/Kconfig                | 10 ++++
+>  drivers/gpu/drm/bridge/Makefile               |  1 +
+>  .../gpu/drm/bridge/aux-hpd-typec-dp-bridge.c  | 49 +++++++++++++++++++
+>  3 files changed, 60 insertions(+)
+>  create mode 100644 drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
+> 
+> diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
+> index a250afd8d662..559487aa09a9 100644
+> --- a/drivers/gpu/drm/bridge/Kconfig
+> +++ b/drivers/gpu/drm/bridge/Kconfig
+> @@ -30,6 +30,16 @@ config DRM_AUX_HPD_BRIDGE
+>  	  Simple bridge that terminates the bridge chain and provides HPD
+>  	  support.
+>  
+> +if DRM_AUX_HPD_BRIDGE
+> +config DRM_AUX_HPD_TYPEC_BRIDGE
+> +	tristate
+> +	depends on TYPEC || !TYPEC
+> +	default TYPEC
+> +	help
+> +	  Simple bridge that terminates the bridge chain and provides HPD
+> +	  support. It build bridge on each USB-C connector device node.
+> +endif
+> +
+
+Should CONFIG_TYPEC_DP_ALTMODE select this one? Otherwise, we need to do it
+manually.
+
+$ grep -nr --include=Kconfig "select DRM_AUX_HPD_BRIDGE" .
+./drivers/soc/qcom/Kconfig:118: select DRM_AUX_HPD_BRIDGE
+./drivers/usb/typec/ucsi/Kconfig:88:    select DRM_AUX_HPD_BRIDGE if DRM_BRIDGE && OF
+./drivers/usb/typec/ucsi/Kconfig:99:    select DRM_AUX_HPD_BRIDGE if DRM_BRIDGE && OF
+./drivers/usb/typec/tcpm/Kconfig:62:    select DRM_AUX_HPD_BRIDGE if DRM_BRIDGE && OF
+./drivers/usb/typec/tcpm/Kconfig:85:    select DRM_AUX_HPD_BRIDGE if DRM_BRIDGE && OF
+
+Thanks,
+Xu Yang
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
