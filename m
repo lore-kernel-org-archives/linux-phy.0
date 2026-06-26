@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30428C43458
-	for <linux-phy@archiver.kernel.org>; Fri, 26 Jun 2026 20:56:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8F81C43458
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Jun 2026 20:56:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4vwjx9JK9q5fplcRSGRns4oGe7UC0ba/xCTtFGt9ayY=; b=03xyCSNH0xdVjF
-	XXzKwxu42LUr91MvVSj3lHy5jtHLCiW0ro+spiLNsuxdu7ZgjoyK5DvohCgpZqERxLLinBUlZsv+h
-	SX9DWAd+A3i4gurNt+zZYCqzc8zt0VfIVHZqZQRemYlk7AiERtdik7aodao80vQwsAtICoCesLabY
-	60ZRzEtRIFkG5e0IBQn62Qnr2Rc57lVIARQ91goQwvSluhGZ4fw17paA7Csh1erXJT+iYBQNKi7x9
-	cOQ8elZAk+znSGRo1aEfyoBnuBMjbuGjxZh21Z24TA5io/nZkRulRI44Ms7PUAecSbmneN1D8kxau
-	5mY6cO41ObvvhUUG/xcw==;
+	List-Owner; bh=FE9YPgGqXRQRx9Vh3lYuU1P19lgWzYzVTwEOrTDw5yU=; b=SaA1809zMo8Z5G
+	yfvL4pqoaYunjM1wIdLp8WEml2w/nxaaWsMoclOSu1CzKDbqAYdy1XSedXB3rbo2YLFOw4T/0NWzL
+	v+EvsX87p9Xm9sIGuUartdDES0WTr2vj2wt1H/Xokx9w2NKfBPuQqDWaXqYotY17MTuhQw/pX0oCW
+	Cz0yUpJikhhj+XqkTo35D2UyWoQtCri6J/DWrKsGWM78m5gusIr6KVRyJbUPbcbPA9J3LzUtgvXzs
+	e+U6mF8euv70Q+q3DJsVkJw5gZ5eyXDQ/h1wrqR0xM7PyvMwXMRQmJEbzugNDgWlEzpj04SeemrCo
+	3F2hmIYjngMDJF+Jwvyw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wdDaz-0000000BqkQ-3aqV;
-	Fri, 26 Jun 2026 20:56:17 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1wdDbA-0000000BqvV-2sDB;
+	Fri, 26 Jun 2026 20:56:28 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wdDZv-0000000Bpbj-0yKN;
+	id 1wdDZw-0000000BpcF-17XX;
 	Fri, 26 Jun 2026 20:55:15 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1782507302;
-	bh=wIdm6WAvSCnmDVmjn0d4nzjlUVyQK7d9rbn5XLogh8M=;
+	s=mail; t=1782507303;
+	bh=bEoQG/Yys4jT28HNaTVApBbEpqOJRZhkpwJKmtLe//I=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=iqYVbMDhwwrTVKiaXVZ6eBKE5tbmln5Mp4Ahy1GfBKnui0PLjte3v11igZmrCPUPA
-	 2QvrjmOS5zXqBogYNNo0E7bac1uNUjVYoK+yHYYMAYs6BsrI+C/vYaJ/qWwmgVeLwu
-	 YnutpULYGVo47VheQjke3klDNP2nowPz6eBk4WHgpuKSnKmUbukRIGeQn3JG4ByWxe
-	 s9U0aKjJCA4iPr2FDC/fh4UarrIUl2loo7bSSeJ+L3u4mQ90KvnSMHnFhjtsUZj+Hi
-	 zPVQRXDQSAwyYUHwegFLy8qW3rlBG7oAEFbd2FPDlPyAyIW4RWs+e+T0HNbqE4zGwA
-	 MANh4Zyyz327w==
+	b=gMru2ayOZH2mdWnJ2ghc67VKsl9W2zrYwCLFhh1hSRljKXw851dXK9XjITsWnFs8i
+	 2xqb5FNWWnwMCHFJyoAJOjvZ6ldhSAzZAEc3N6z0OlrfK61mUQG5+STJLbRgOlsFKi
+	 bxYML/5j0u/tUXHrbHTXAGkuq8mczY3rqaJ0pz47wwSM3bX7DY1m1EayNkWf+0sXB7
+	 25OcFciLCHGC0u0bgM5vltayAVf/A+pHNXWselqSswlsXRbtAoN1MnT2Foc5/7yoTt
+	 EeHc7HKi8fv+GOs8IfHPWIYM+xPbCO9aTbwmWPPq+AhY6Z8WOlKKMlFjknUEC92qy6
+	 IuFBa6cIxVTGg==
 Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id B7D4317E140E;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id D29EB17E1539;
 	Fri, 26 Jun 2026 22:55:02 +0200 (CEST)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id 158E6480035; Fri, 26 Jun 2026 22:55:02 +0200 (CEST)
+	id 1B6E3480047; Fri, 26 Jun 2026 22:55:02 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Fri, 26 Jun 2026 22:55:00 +0200
-Subject: [PATCH v8 07/29] phy: rockchip: usbdp: Handle
- rk_udphy_reset_deassert_all errors in init check
+Date: Fri, 26 Jun 2026 22:55:04 +0200
+Subject: [PATCH v8 11/29] phy: rockchip: usbdp: Add missing mode_change
+ update
 MIME-Version: 1.0
-Message-Id: <20260626-rockchip-usbdp-cleanup-v8-7-47f682987895@collabora.com>
+Message-Id: <20260626-rockchip-usbdp-cleanup-v8-11-47f682987895@collabora.com>
 References: <20260626-rockchip-usbdp-cleanup-v8-0-47f682987895@collabora.com>
 In-Reply-To: <20260626-rockchip-usbdp-cleanup-v8-0-47f682987895@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -64,29 +64,28 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
  linux-kernel@vger.kernel.org, kernel@collabora.com, 
  devicetree@vger.kernel.org, 
- Sebastian Reichel <sebastian.reichel@collabora.com>, 
- Sashiko <sashiko-bot@kernel.org>
+ Sebastian Reichel <sebastian.reichel@collabora.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1587;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2006;
  i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=wIdm6WAvSCnmDVmjn0d4nzjlUVyQK7d9rbn5XLogh8M=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGo+5yWbE39BAB+33EfKvnPIrrl2F4e82Rhpy
- Fhj2WG76sGY/IkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqPuclAAoJENju1/PI
- O/qabkEP/0fQDfGFBdE3Qjyi91pEFGDFfdMbowO1VMEMn2LpVopP514hAJkGol9ABBk4/YCYzPh
- q9PPGL8kM4g313JuDwpHTl+VyYlZrxGE4ht26BytKRwZDRkycwqs6tcgFk60VGqCR4eXizWOVlo
- kKgu29ASRVKy1uZr5sTFOZdCjA/6CQKFNiRrrOCD6pnO+5ZV5g7f9tadHbu4YHLyfLrwmf0qj9X
- kM2K3lIEaei4Nk+hkcNd028WUu+YLyFlEs4xtUxLyhR9QHBdGTcPwYkjg3e95HfYmOtrHNbLY3r
- XlYRx6v4xG0qDRvRVS/BByNozkusfG19tVqjPkx2s3l5jrpzJMr8acapRQ4Ky2XtxEUIoxjZ20R
- TOAsO+/BfWnOjfQgOwZj0xbJnOV1gC2L0519nFktLxgur65Ogu3rW1lS7YQTi40rSA2qhnA6VQy
- VSbaI68fvsMBkZLhDdCrH0rMXyz1IoDtIxOf4VekbgvOphuEdJplWXg1l+7ToAdZJVZNs2cB/Id
- 6Fw2mW6GwEN6BgLJikjuOLLaEVxkKvBQXnhU3KJqWwmUIOjID69Frbc6fuwD5lGZyIV+8B3jsTY
- A2EuwGX3giuGG3SK8nFVGXwChvvnG1lSPgKiVDAIxXg41Jht/w4i1mbX+Fyxrc/DUCUwfguJkug
- scDllP0rFCxDrY4iU38YlwQ==
+ bh=bEoQG/Yys4jT28HNaTVApBbEpqOJRZhkpwJKmtLe//I=;
+ b=kA0DAAoB2O7X88g7+poByyZiAGo+5yWjFn5qkTHA+NKIgxeN6GJwNmyjcB+CweDJD6nD6OksH
+ 4kCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqPuclAAoJENju1/PIO/qaHDwP/A5U
+ umpT1iVFyw3BPM8vth5wSsv+IboQaeZ/G5TS16slev7KLMToIrNrsaaC40r16Qd6gZg52hxOGOx
+ pi86Op3NDB2rdRb+FxY4c1YrXDi+09GjBxAA7PF28AnZm68t6X6IXcuiC9TqAc9ARpvaZpjk81n
+ PEN8hB3+1+Nj5tbcrhPK2w99I+i0t/KBmxw6wdxWl0+PyuZweajrPG2HhEdVn8G3hRFuYxVbD0n
+ yr8Oy2DjYVJgQjWuHWUG5pxFEXpPMQRuq18XZj4zTwC6ZDLGvRXCH8qa26R+kXV1UtEMkB8RhIj
+ ceS8KF4a/LXRq05Q4rRRS45BpMSdwS8W3mbyhuxJc9sBXjlaZ3Eo3vKoX0Cdt0sFOcbLylBBIkN
+ 2CELtwiaQVg0wGeiyBwivN8yucFUPLUcn6f23yGaimzyCZzkLi4kAghDVQINB+qs/y70JgpYEpE
+ uss1NvEZeemjiAITWDOStQsocyHut4I9bYgFhj+DgW2/vYG8/dmnjsOG8gc0v0gKwGgtRlDTYN8
+ pw+I843s6HuqnyDHgQbb6lQh9cIS6IhFfFp5yN/FHUL+uuwBwneFSJp74exNachATRni1uunZ0D
+ cKjf+T+bFm7W0zpTD6kBWaD/Nr4uFn1cBFvlqgFNJmDBG9rQsV2eiAcpDvvUogUAcSw6+0Iu9ue
+ usuj/
 X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
  fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260626_135511_554262_ED107F31 
-X-CRM114-Status: GOOD (  10.28  )
+X-CRM114-CacheID: sfid-20260626_135512_511839_88F3A213 
+X-CRM114-Status: GOOD (  12.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,46 +102,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Fix theoretical issue, that failure to deassert the reset lines would
-result in an SError in follow-up register access. Note, that this cannot
-happen with current code, since the Rockchip reset driver never returns
-any errors for (de)asserting reset lines.
+rk_udphy_set_typec_default_mapping() updates the available modes,
+but does not set the mode_change as required. This results in
+missing re-initialization and thus non-working DisplayPort.
 
-Fixes: 2f70bbddeb45 ("phy: rockchip: add usbdp combo phy driver")
-Reported-by: Sashiko <sashiko-bot@kernel.org>
-Closes: https://sashiko.dev/#/message/20260619154903.2225A1F000E9%40smtp.kernel.org
+Fix this issue by introducing a new helper to update the available
+modes.
+
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 16 +++++++++++-----
+ 1 file changed, 11 insertions(+), 5 deletions(-)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index f7ff55f03b7c..b8de0a47a616 100644
+index c6d24dd3bdef..d091f8007acd 100644
 --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -936,7 +936,9 @@ static int rk_udphy_get_initial_status(struct rk_udphy *udphy)
- 		return ret;
- 	}
- 
--	rk_udphy_reset_deassert_all(udphy);
-+	ret = rk_udphy_reset_deassert_all(udphy);
-+	if (ret)
-+		goto exit;
- 
- 	regmap_read(udphy->pma_regmap, CMN_LANE_MUX_AND_EN_OFFSET, &value);
- 	if (FIELD_GET(CMN_DP_LANE_MUX_ALL, value) && FIELD_GET(CMN_DP_LANE_EN_ALL, value)) {
-@@ -944,9 +946,10 @@ static int rk_udphy_get_initial_status(struct rk_udphy *udphy)
- 		rk_udphy_grfreg_write(udphy->vogrf, &cfg->vogrfcfg[udphy->id].hpd_trigger, false);
- 	}
- 
-+exit:
- 	rk_udphy_disable(udphy);
- 
--	return 0;
-+	return ret;
+@@ -622,6 +622,15 @@ static void rk_udphy_dp_hpd_event_trigger(struct rk_udphy *udphy, bool hpd)
+ 	rk_udphy_grfreg_write(udphy->vogrf, &cfg->vogrfcfg[udphy->id].hpd_trigger, hpd);
  }
  
- static int rk_udphy_parse_dt(struct rk_udphy *udphy)
++static void rk_udphy_mode_set(struct rk_udphy *udphy, u8 mode)
++{
++	if (udphy->mode == mode)
++		return;
++
++	udphy->mode_change = true;
++	udphy->mode = mode;
++}
++
+ static void rk_udphy_set_typec_default_mapping(struct rk_udphy *udphy)
+ {
+ 	if (udphy->flip) {
+@@ -652,7 +661,7 @@ static void rk_udphy_set_typec_default_mapping(struct rk_udphy *udphy)
+ 		gpiod_set_value_cansleep(udphy->sbu2_dc_gpio, 1);
+ 	}
+ 
+-	udphy->mode = UDPHY_MODE_DP_USB;
++	rk_udphy_mode_set(udphy, UDPHY_MODE_DP_USB);
+ }
+ 
+ static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
+@@ -1394,10 +1403,7 @@ static int rk_udphy_typec_mux_set(struct typec_mux_dev *mux,
+ 			usleep_range(750, 800);
+ 			rk_udphy_dp_hpd_event_trigger(udphy, true);
+ 		} else if (data->status & DP_STATUS_HPD_STATE) {
+-			if (udphy->mode != mode) {
+-				udphy->mode = mode;
+-				udphy->mode_change = true;
+-			}
++			rk_udphy_mode_set(udphy, mode);
+ 			rk_udphy_dp_hpd_event_trigger(udphy, true);
+ 		} else {
+ 			rk_udphy_dp_hpd_event_trigger(udphy, false);
 
 -- 
 2.53.0
