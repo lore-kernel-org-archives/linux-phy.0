@@ -4,53 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4AF4DC43602
-	for <linux-phy@archiver.kernel.org>; Fri, 26 Jun 2026 20:56:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1B53AC43458
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Jun 2026 20:56:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ijUm1YP8u+/hEi9l5UCI1iMx7XJ2hfFU5uMXJPoLZcw=; b=c+oZn0GCRO2/Al
-	eStydIFNDW/9DlFySOLKcSexl33twg/+MuO21imSQDGk9WQ0tUslVonD2eVtB3GjuQUAGUf3wgDfJ
-	wNgvNOUX8eWDMX5UURWlAfAP3eoUFNCzCuaQ5u96XMlXvwwUBcf3vA3oxNLY36IrmaLSN9+rXD8z8
-	MuVHVZZL+31pN1m9KNTBJRHYrN1VzTKNscVlDYLNaA/ijeipBaRik3GzuorLNN2Tlymhmo6XXtC4P
-	D+IdRJTpI4kTXNBrGbc/d3wI+YUzbOjVJ6B9oCuSQY6mI2QXN3qibYBtMtcxFgLZzH6YMA+X0Emqm
-	593YY/wS2AdxwfmBlolA==;
+	List-Owner; bh=YySXXkPZlpat9lNt4RArTAeGCeXdIDf5YO9dqKWsgn8=; b=y3tvgCDTdZhIQU
+	8vAWnGOA0nWRgr+y6hJPILCRmtODSaN7LycMVT84f3NCaDlMxCtKNtP/vUlcRGiwUPYVbMS9pJAk4
+	WJLid/6bFr0ZISR4IzUa2FhBLF44UtWi7Q9sqGfRH2QJCy+XvzWbqFc623+ksJJP2nwHcHeYVb8JL
+	PlcYApZEEqq1THN2HZ6gyhVdL22woCsbD9UvV9fe2sKoaqjic1KkK616cheU3DZvfhGbyKPcxQnrX
+	Y+6YlyVmE1ZtXrgFgU+KpayOFFXQ1GHGO+VJw0IKJk8aOtb4+PeYEhSkwJoLlM9b3VeIeakuRrxq8
+	MwO6seC0odnAxOvirnRQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wdDbA-0000000Bqvs-3KdZ;
-	Fri, 26 Jun 2026 20:56:28 +0000
+	id 1wdDbG-0000000Br4H-3EnA;
+	Fri, 26 Jun 2026 20:56:34 +0000
 Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wdDZw-0000000BpcK-1O0w;
+	id 1wdDZw-0000000BpcJ-1Inn;
 	Fri, 26 Jun 2026 20:55:15 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1782507303;
-	bh=lzF/7VzLP8C3rgYOuAm8DgQ1R0OKHKM5g5aD363rFzo=;
+	bh=B1hFP7GBgjpJwgyiWYAhEXHS75Uh6G1z6FfSU+iGafs=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=mdczpxWlwepiw3IP4TTnQ6guJJrMUBdi5cX2LJhVRIJGkql/5IVmy5fF/pExNC620
-	 jkX2mfBd+xzovk9s/wfFnpxlPMbCax3KDSRBNN46IidS+9hqg1s19xUUpgScfjnY0r
-	 lejAt8KHcZvSfHCwywuFHIJOb5DW5PkPfdy9i+D4sIiAoHhKcygpzj7WB2UcQ4N854
-	 j4CSq1SlazH+uFgfAEWEXZUdMwVfA9Jidt6H2Kh8DqOUlvidkMnk8l1ylyMUPVMmYc
-	 Mp8v2zGfIxOeyXHL5elnPTlx4DbJuVh3a9YMhRl2iksHcLjN+3jGcZEcZmdePAnc7P
-	 4x+QSAqc+qW/Q==
+	b=knVVh50VwsLWBd3KmIY6qlXZ2RKNkgsLJvenbrSi43HLpf8+Lr8RqdwSNBphGjdyW
+	 hidvPbGG5jVg9ItVHzi+go9c1UFYfO4YJyPaljuKrQP90xSWu82upoW0m3rzgYQ6DU
+	 ku+bCmLDE5sR2HKhKzwwKrAjgYCPBA+vIlay5Et52VVI0IBLXMu6bxOM9y2TrD0+R3
+	 +aKQuUkbQ0T2gGQ5mYcr03jXDANGrj8Z9aNt83TWF2/Vfh9sLV3yjvZOisMFbhj+an
+	 FfpKYJlre3D8w1OUw57aoUIjT3DyCg46o4vHXbAvhsBmdlnNlaH7zaHnf13hcMNbES
+	 B56L8TneN8Q8w==
 Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id DF4E617E155B;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id E4B3117E1562;
 	Fri, 26 Jun 2026 22:55:02 +0200 (CEST)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id 1E48648004C; Fri, 26 Jun 2026 22:55:02 +0200 (CEST)
+	id 1FC8048004E; Fri, 26 Jun 2026 22:55:02 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Fri, 26 Jun 2026 22:55:06 +0200
-Subject: [PATCH v8 13/29] phy: rockchip: usbdp: Limit DP lane count to
- muxed lanes
+Date: Fri, 26 Jun 2026 22:55:07 +0200
+Subject: [PATCH v8 14/29] phy: rockchip: usbdp: Rename DP lane functions
 MIME-Version: 1.0
-Message-Id: <20260626-rockchip-usbdp-cleanup-v8-13-47f682987895@collabora.com>
+Message-Id: <20260626-rockchip-usbdp-cleanup-v8-14-47f682987895@collabora.com>
 References: <20260626-rockchip-usbdp-cleanup-v8-0-47f682987895@collabora.com>
 In-Reply-To: <20260626-rockchip-usbdp-cleanup-v8-0-47f682987895@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -64,29 +63,28 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
  linux-kernel@vger.kernel.org, kernel@collabora.com, 
  devicetree@vger.kernel.org, 
- Sebastian Reichel <sebastian.reichel@collabora.com>, 
- Sashiko <sashiko-bot@kernel.org>
+ Sebastian Reichel <sebastian.reichel@collabora.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1284;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2007;
  i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=lzF/7VzLP8C3rgYOuAm8DgQ1R0OKHKM5g5aD363rFzo=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGo+5yVPZESpCGzgGWdbnGsT4RWtCQ11Kgdgn
- rfQJnj4uaMLzYkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqPuclAAoJENju1/PI
- O/qaYpYP/jNq3WN/nA6qP4nCl852d9v//Aer9D0MOndV0rI1PNXeEp16WEGdORdb1Aa7slLtlG5
- B/yUl6AGGVsbk7n28F8PKChDrJ4PVLDbl+IG5XLTQxzS7KN9AjE9uh68a9mrArMXK7/MqkH3Kkl
- 3CY2iENGwRPiNrD65bZSIiRP2+sg7fqriszYD5pyvQfqOFhRggTShHARkLWvtaLGCYC4zDTw078
- zUavnxVQTLkak18GAtlLUS2BdyjgWhdBxC4IdvUoTgxQ4pTAQWT5GbcWcsmuFiEcL8HLRpoiI5p
- +exHXqPgwNugZ5qYnIXDpfo7xGOHRBdSv2hPjAAFSyBpQqlEgSdyQFWWILb0+O2liE2gtLEAIEV
- FNoxyJK6BrtDuzOA72qoDw/Jtyn3rDszw81uNcLtou6IbzWc3uyaZxchSqxoi3UL3FnvjSl8Q+J
- uZciUEYWkAjzprnmgf1vmCf/uT9seIeg/KzSx3191Z09JUU699TPcZAdXkTfupJj68GHi0NBUON
- bnSKGzXvVuJsur0AXOJQiUNhvApYIGFdzu1I7iMK7h0PMzCTBpdbH4KuK4YNfqAM+1woNMyPyHY
- aLcRp5wnVqF5q7eteFwgQxl3jefc8gZQHx0T4O6NHQY/uERvyOnp8H6lLPMBC33yx8mtZ9lZprt
- 5/fPVv93fyEwRPHTBdDYpYw==
+ bh=B1hFP7GBgjpJwgyiWYAhEXHS75Uh6G1z6FfSU+iGafs=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGo+5yVvFMZUvwP9JJZT9HW0X7ypcrsANPUvG
+ HWkf89JIpkaR4kCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqPuclAAoJENju1/PI
+ O/qais4P/1Z05N3q8Wy/MvxN6cxl33Az2WGK46F+hKVJyTkr60nPFLSFY8ieGZOSjX6kpNv12OW
+ 7hRVRybTo1h7xtQaCbVp1xOTKAWxhF/u7yPb6SbDGKgDCebJVdXcWrydpOQ2FuuIquCZEj26QKd
+ bN472U2vknW0MWcuEX8MTvaK87wkMoR7HujD/uQonDBkdfG7nM6UWC2L0ifsd6mo4Nixl+vsq0s
+ 5+DWyoSl+ObaYgtXCQMzky2FSuX6rLWxa3cid/tgejGRcVQwExYqJTMk7f14YKPb+GiTtvEb+yF
+ n6InaUXAHS8SXONeRMrzecYFrZIuqNRfWZg4lUzkep8lkvTt+PElN9eXWs4DOLkn3qY+K2cKEkC
+ 087wWpcogksDFgbXyz+qGEwr9dbfhLtSFWz1AZ5BDa3ZDI2Ruimss8usM3LpqER7R8Jg4NV4all
+ X8W4Af6g0aMHyCvis0X8NR2cXJbdfBB3FmeUDlBngspvu3SIj9AelypGWjWNRWZuL+qPQNQJ/ph
+ 18pJJ26ht0el1dRb5XeSwft8E4xpPXW1EpMWF8KBbgkMiLAeNZzpBXIF9KNhUg0V8mIS93UfFX7
+ tjMfpinsbGyFfxvaY3aiWiifuaowDNkVJC45dMDUlyGDRdTqFKuIYvpXykW97+6Z8MGQJHgCXfx
+ sSNb0QLCR1qMsDCe2Oxw5IQ==
 X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
  fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260626_135512_555766_F3A1CCE4 
-X-CRM114-Status: GOOD (  11.61  )
+X-CRM114-CacheID: sfid-20260626_135512_582761_C9776724 
+X-CRM114-Status: GOOD (  11.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,36 +101,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In theory the DP controller could request 4 lanes when the PHY is
-restricted to 2 lanes as the other half is used by USB3.
+The common prefix for DisplayPort related functions is rk_udphy_dp_
+(with a final _), so update the two DP lane functions to follow that
+scheme.
 
-With the current user (DW-DP) this cannot happen, but as the check is
-cheap and users might change in the future protect things accordingly.
-Not doing so would corrupt USB3 usage by the following code configuring
-the voltages.
-
-Fixes: 2f70bbddeb45 ("phy: rockchip: add usbdp combo phy driver")
-Reported-by: Sashiko <sashiko-bot@kernel.org>
-Closes: https://lore.kernel.org/linux-phy/20260612165546.98E1F1F000E9@smtp.kernel.org/
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index 5c38da0dadd2..6de8ac3f9144 100644
+index 6de8ac3f9144..db1ad3c2a953 100644
 --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -1132,6 +1132,9 @@ static int rk_udphy_dp_phy_verify_link_rate(struct rk_udphy *udphy,
- static int rk_udphy_dp_phy_verify_lanes(struct rk_udphy *udphy,
- 					struct phy_configure_opts_dp *dp)
+@@ -550,7 +550,7 @@ static void rk_udphy_usb_bvalid_enable(struct rk_udphy *udphy, u8 enable)
+  * ---------------------------------------------------------------------------
+  */
+ 
+-static void rk_udphy_dplane_select(struct rk_udphy *udphy)
++static void rk_udphy_dp_lane_select(struct rk_udphy *udphy)
  {
-+	if (dp->lanes > udphy->dp_lanes)
-+		return -EINVAL;
-+
- 	switch (dp->lanes) {
- 	case 1:
- 	case 2:
+ 	const struct rk_udphy_cfg *cfg = udphy->cfgs;
+ 	u32 value = 0;
+@@ -579,7 +579,7 @@ static void rk_udphy_dplane_select(struct rk_udphy *udphy)
+ 		     FIELD_PREP(DP_AUX_DOUT_SEL, udphy->dp_aux_dout_sel) | value);
+ }
+ 
+-static void rk_udphy_dplane_enable(struct rk_udphy *udphy, int dp_lanes)
++static void rk_udphy_dp_lane_enable(struct rk_udphy *udphy, int dp_lanes)
+ {
+ 	u32 val = 0;
+ 	int i;
+@@ -1082,9 +1082,9 @@ static int rk_udphy_dp_phy_power_on(struct phy *phy)
+ 	if (ret)
+ 		goto unlock;
+ 
+-	rk_udphy_dplane_enable(udphy, udphy->dp_lanes);
++	rk_udphy_dp_lane_enable(udphy, udphy->dp_lanes);
+ 
+-	rk_udphy_dplane_select(udphy);
++	rk_udphy_dp_lane_select(udphy);
+ 
+ unlock:
+ 	mutex_unlock(&udphy->mutex);
+@@ -1102,7 +1102,7 @@ static int rk_udphy_dp_phy_power_off(struct phy *phy)
+ 	struct rk_udphy *udphy = phy_get_drvdata(phy);
+ 
+ 	mutex_lock(&udphy->mutex);
+-	rk_udphy_dplane_enable(udphy, 0);
++	rk_udphy_dp_lane_enable(udphy, 0);
+ 	rk_udphy_power_off(udphy, UDPHY_MODE_DP);
+ 	mutex_unlock(&udphy->mutex);
+ 
 
 -- 
 2.53.0
