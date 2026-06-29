@@ -4,54 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3A59C43458
-	for <linux-phy@archiver.kernel.org>; Sun, 28 Jun 2026 21:12:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B393C43458
+	for <linux-phy@archiver.kernel.org>; Mon, 29 Jun 2026 01:29:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=myu0jTW9caU0WlSZrafiknOxRttBMuunzvzCjCT9+7M=; b=tBgQawT/RrB+W+
-	LYJL7CVJtnlEeJR/puPyW2jdeSHCrGjxc0mRaU+Ar7RxJ5S2Or4LDD4WJTVSoX//Ek7WgblJW2q3y
-	qoYP3D5Csa16UNS4yNXYew384mV18O9uHpWN+UjemWlDsGEhI7R4KY8PqyjVYhG/fOjuE8LQT/gsD
-	9R3mM5dr0dPgo4vAjKMr6vDg5d4BwoswUF2Di4wQN7w5YLKbJ3nta25fyPD+QiHsDTJ+qCk9jj2wo
-	dxZ7LP1QlhqOWYtwnrIP5FMY7KcR/PK7xdMBKiRgB6EHChNIbfIlDXDFYLxv7ba0qShOEoVlcSJnU
-	nx58MyHXTfbzdVG4csAg==;
+	List-Owner; bh=9uXN4ujYuOYc01QfM5dIcYzn1mh8+hhz/Z74CZIc7pQ=; b=RWV0+b6Vzasy8W
+	dEOQ3L/SeniQxGK7X7xICvU77hWFhrr/M8TwQkKImloU+m5FUPuRMzrUF1YCNgyLfRsHNHGBAvReR
+	pIiq/AdiKqQ372g0aFjKYNEYghKiWVZL1afTVQCGEW/1t5q0SlQXj6TROfsu6GUqWADV6rZjLHXLN
+	N2QsUxOIW3Y67WYYX2AspOKuxhtpElOTE6bgdvKLioT2yy7JXyf0NsC8o2EacQewG7JDn4cvgN2oS
+	zksbbwHdFQxBh23eReTKm2QnPOCiiw1ns8c5LJ8m6sK6HvKTrOZI7UNiH5J60E4AkTGixiZSBr+5M
+	CBVD1jCYwzS1lhAa5BsQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wdwnk-0000000DOGp-0XVU;
-	Sun, 28 Jun 2026 21:12:28 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1we0oU-0000000DXh0-38Ga;
+	Mon, 29 Jun 2026 01:29:30 +0000
+Received: from mail-m1085.netease.com ([154.81.10.85])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wdwng-0000000DOGF-2VIE;
-	Sun, 28 Jun 2026 21:12:26 +0000
-Received: from killaraus.ideasonboard.com (2001-14ba-70f3-e800--a06.rev.dnainternet.fi [IPv6:2001:14ba:70f3:e800::a06])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 8302BB5;
-	Sun, 28 Jun 2026 23:11:37 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1782681097;
-	bh=ESaXuL2QWFgndDHnEoKtcINNlsoWDBoTexSj6ML/vgE=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=oNMY3QGK6ZP5FUt4gNS3ai/PAji+4L+mqZHtclVDJKSby8BBNJIMZm4aYYtGZ+P3Q
-	 XRO6s54z5MKB8miynknMXF9J+m9poyGs94q0yk60Z9rzxjIpsZCtjGJ5rsrCpzpYp8
-	 AEiz03cdXRhC5ZHU/jxpO3vN/bKI1eSnhlDXDfLs=
-Date: Mon, 29 Jun 2026 00:12:18 +0300
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>
-Cc: tomi.valkeinen@ideasonboard.com, vkoul@kernel.org, michal.simek@amd.com,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH] MAINTAINERS: Add Radhey Shyam Pandey as ZynqMP PHY
- maintainer
-Message-ID: <20260628211218.GA2943795@killaraus.ideasonboard.com>
-References: <20260627162233.2803425-1-radhey.shyam.pandey@amd.com>
+	id 1we0oR-0000000DXgH-0UmT;
+	Mon, 29 Jun 2026 01:29:29 +0000
+Received: from [172.16.12.90] (unknown [61.154.14.86])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 4413e3e2e;
+	Mon, 29 Jun 2026 09:29:10 +0800 (GMT+08:00)
+Message-ID: <56c6abb8-c127-449f-9368-12f94620c2bc@rock-chips.com>
+Date: Mon, 29 Jun 2026 09:29:08 +0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260627162233.2803425-1-radhey.shyam.pandey@amd.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v15 1/9] drm/bridge: Implement generic USB Type-C DP HPD
+ bridge
+To: Xu Yang <xu.yang_2@oss.nxp.com>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>
+Cc: Chaoyi Chen <kernel@airkyi.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+ Peter Chen <hzpeterchen@gmail.com>, Luca Ceresoli
+ <luca.ceresoli@bootlin.com>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner
+ <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
+ Andy Yan <andy.yan@rock-chips.com>,
+ Yubing Zhang <yubing.zhang@rock-chips.com>,
+ Frank Wang <frank.wang@rock-chips.com>,
+ Andrzej Hajda <andrzej.hajda@intel.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Amit Sunil Dhamne <amitsd@google.com>, Dragan Simic <dsimic@manjaro.org>,
+ Johan Jonker <jbx6244@gmail.com>, Diederik de Haas <didi.debian@cknow.org>,
+ Peter Robinson <pbrobinson@gmail.com>, Hugh Cole-Baker <sigmaris@gmail.com>,
+ linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ dri-devel@lists.freedesktop.org
+References: <20260304094152.92-1-kernel@airkyi.com>
+ <20260304094152.92-2-kernel@airkyi.com>
+ <erx73m2ueuvbzjteadjli6aki5by4pr3hyertkkqqoqwhaa4v3@5cstmshcercx>
+Content-Language: en-US
+From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+In-Reply-To: <erx73m2ueuvbzjteadjli6aki5by4pr3hyertkkqqoqwhaa4v3@5cstmshcercx>
+X-HM-Tid: 0a9f10fea08b03a7kunmf966b99e214af0
+X-HM-MType: 1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVkaSBgaVhpDH0kaHhhKTh4ZTlYVFA
+	kWGhdVEwETFhoSFyQUDg9ZV1kYEgtZQVlNSlVKTk9VSk9VQ01ZV1kWGg8SFR0UWUFZT0tIVUpLSE
+	pKQk1VSktLVUpCWQY+
+DKIM-Signature: a=rsa-sha256;
+	b=bc5KtQ7UrGKUA1rijDG/0B4GnAe4Tbk7iG+1XzHoKWSacIyQrLgRn/wZx/UCpNfTXWV4YMlY+zS699AajY0KFrqU8mPgVl3OdvBTceFp8y15yVHWma3EgFqkkQYhFlnRAVXl6lg8VchEaO+B6yHrFQ3CnqvDkdKPMtnFtZ92LDI=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
+	bh=7rX64/yu/OhWoqaAPGRmOa806yP0CYEXLXKtENt1Bg4=;
+	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260628_141225_083407_BBEA4FB3 
-X-CRM114-Status: GOOD (  12.58  )
+X-CRM114-CacheID: sfid-20260628_182927_753149_0C378CA8 
+X-CRM114-Status: GOOD (  19.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,40 +98,101 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Jun 27, 2026 at 09:52:33PM +0530, Radhey Shyam Pandey wrote:
-> I am maintaining phy-zynqmp driver in xilinx tree and would like to
-> maintain it in the mainline kernel as well. Hence adding myself as a
-> maintainer.
-> 
-> Signed-off-by: Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>
+Hello Xu Yang,
 
-Thank you for volunteering.
-
-Acked-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-
-> ---
->  MAINTAINERS | 1 +
->  1 file changed, 1 insertion(+)
+On 6/26/2026 7:15 PM, Xu Yang wrote:
+> On Wed, Mar 04, 2026 at 05:41:44PM +0800, Chaoyi Chen wrote:
+>> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+>>
+>> The HPD function of Type-C DP is implemented through
+>> drm_connector_oob_hotplug_event(). For embedded DP, it is required
+>> that the DRM connector fwnode corresponds to the Type-C port fwnode.
+>>
+>> To describe the relationship between the DP controller and the Type-C
+>> port device, we usually using drm_bridge to build a bridge chain.
+>>
+>> Now several USB-C controller drivers have already implemented the DP
+>> HPD bridge function provided by aux-hpd-bridge.c, it will build a DP
+>> HPD bridge on USB-C connector port device.
+>>
+>> But this requires the USB-C controller driver to manually register the
+>> HPD bridge. If the driver does not implement this feature, the bridge
+>> will not be create.
+>>
+>> So this patch implements a generic DP HPD bridge based on
+>> aux-hpd-bridge.c. It will monitor Type-C bus events, and when a
+>> Type-C port device containing the DP svid is registered, it will
+>> create an HPD bridge for it without the need for the USB-C controller
+>> driver to implement it.
+>>
+>> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+>> Reviewed-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+>> ---
+>>
+>> (no changes since v14)
+>>
+>> Changes in v13:
+>> - Only register drm dp hpd bridge for typec port altmode device.
+>>
+>> (no changes since v12)
+>>
+>> Changes in v11:
+>> - Switch to using typec bus notifiers.
+>>
+>> (no changes since v10)
+>>
+>> Changes in v9:
+>> - Remove the exposed DRM_AUX_HPD_BRIDGE option, and select
+>> DRM_AUX_HPD_TYPEC_BRIDGE when it is available.
+>> - Add more commit comment about problem background.
+>>
+>> Changes in v8:
+>> - Merge generic DP HPD bridge into one module.
+>> ---
+>>
+>>  drivers/gpu/drm/bridge/Kconfig                | 10 ++++
+>>  drivers/gpu/drm/bridge/Makefile               |  1 +
+>>  .../gpu/drm/bridge/aux-hpd-typec-dp-bridge.c  | 49 +++++++++++++++++++
+>>  3 files changed, 60 insertions(+)
+>>  create mode 100644 drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
+>>
+>> diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
+>> index a250afd8d662..559487aa09a9 100644
+>> --- a/drivers/gpu/drm/bridge/Kconfig
+>> +++ b/drivers/gpu/drm/bridge/Kconfig
+>> @@ -30,6 +30,16 @@ config DRM_AUX_HPD_BRIDGE
+>>  	  Simple bridge that terminates the bridge chain and provides HPD
+>>  	  support.
+>>  
+>> +if DRM_AUX_HPD_BRIDGE
+>> +config DRM_AUX_HPD_TYPEC_BRIDGE
+>> +	tristate
+>> +	depends on TYPEC || !TYPEC
+>> +	default TYPEC
+>> +	help
+>> +	  Simple bridge that terminates the bridge chain and provides HPD
+>> +	  support. It build bridge on each USB-C connector device node.
+>> +endif
+>> +
 > 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 1705eb823dd0..90dd86437c5c 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -29645,6 +29645,7 @@ F:	drivers/edac/zynqmp_edac.c
->  
->  XILINX ZYNQMP PSGTR PHY DRIVER
->  M:	Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-> +M:	Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>
->  L:	linux-kernel@vger.kernel.org
->  S:	Supported
->  T:	git https://github.com/Xilinx/linux-xlnx.git
+> Should CONFIG_TYPEC_DP_ALTMODE select this one? Otherwise, we need to do it
+> manually.
 > 
-> base-commit: 3d5670d672ae08b8c534b7beed6f57c8b44e7b43
+> $ grep -nr --include=Kconfig "select DRM_AUX_HPD_BRIDGE" .
+> ./drivers/soc/qcom/Kconfig:118: select DRM_AUX_HPD_BRIDGE
+> ./drivers/usb/typec/ucsi/Kconfig:88:    select DRM_AUX_HPD_BRIDGE if DRM_BRIDGE && OF
+> ./drivers/usb/typec/ucsi/Kconfig:99:    select DRM_AUX_HPD_BRIDGE if DRM_BRIDGE && OF
+> ./drivers/usb/typec/tcpm/Kconfig:62:    select DRM_AUX_HPD_BRIDGE if DRM_BRIDGE && OF
+> ./drivers/usb/typec/tcpm/Kconfig:85:    select DRM_AUX_HPD_BRIDGE if DRM_BRIDGE && OF
+> 
+
+That's a fair point. But based on the previous discussion, Heikki
+point out that configurations in the TYPEC subsystem should not
+select configurations from DRM.
 
 -- 
-Regards,
-
-Laurent Pinchart
+Best, 
+Chaoyi
 
 -- 
 linux-phy mailing list
