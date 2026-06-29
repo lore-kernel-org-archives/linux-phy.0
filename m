@@ -4,86 +4,148 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8BA0FC43458
-	for <linux-phy@archiver.kernel.org>; Mon, 29 Jun 2026 09:09:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D3B5C43458
+	for <linux-phy@archiver.kernel.org>; Mon, 29 Jun 2026 09:20:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A+WE+xpzEOXZfxDAw9e0ARe2JP8GVjfqPVQ6cJi9qAg=; b=NgqoDAgtW22pH9
-	Jk55bKzZLA4cZw6UDRN9BvIdZI0s2AjWFUq3oAFeviahHPMPCmGU1aqgt6K/8vD/gzdTp5A4HQ9ZD
-	NE+NBlnaPi3o5EDZF9BDjHPkYrsPxr6pymjhos4xtds+Rhiuk1T9kwlHHIAPR0s4+2TlJYZ3I98IU
-	+sx8KIWIozOKqCRmBGkZ4ldynGb9KA428WD3u5t0azP40Xi1FFlHjCCyc5XwuvEZ1ufVa4X/4oBGp
-	fokGlNVysoT1Yj5Qin/trRZsx6gAW3Nqm4bV2NOOpcy+p0hkAVeqbLWahQLDlqyOLjImcPV4RhQV2
-	SEGSk/15DdVZQCB0Yhbg==;
+	List-Owner; bh=KnVsPN0emd3EsXC9VLmYk51HZmr2w5gBwbzwvKIlAkc=; b=DTrVWPpVYTM+3H
+	ofWZsnyBE8BOB69U60ZXZBAenqorGOxXNEqDnjC5KUDGaX/8/04U9en91XNTP68nk61brmChuLj3G
+	Xq2LEn5/dUz4wegJ01y65uM3Db7OxGS1FVXuLnw4z1EIVteWT4AZvb1zhgakpwjT/jVqnkFLd8u28
+	74p6SPSNMnleu/5wuu/xuNVTzpi9+Gweint398Ipm6DKWm9fzUpEpJNtukGlazSfSbGSvkmsBN7St
+	vkvN4gkCuCxbHoa6lbuq9TI0NMXv6waK/a7K5IfOmJK17rLP1ynmvWHq3R6jhiQkkSYehzWwxQ2Xs
+	/srPvMCis1Qo8FXX93Nw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1we7zk-0000000E6ca-0lUv;
-	Mon, 29 Jun 2026 09:09:36 +0000
-Received: from mail-m10190.netease.com ([154.81.10.190])
+	id 1we8A4-0000000E9A7-0b6T;
+	Mon, 29 Jun 2026 09:20:16 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1we7zh-0000000E6bm-13qZ;
-	Mon, 29 Jun 2026 09:09:35 +0000
-Received: from [172.16.12.90] (unknown [61.154.14.86])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 442780943;
-	Mon, 29 Jun 2026 17:09:24 +0800 (GMT+08:00)
-Message-ID: <b2633b22-da30-4778-8e23-7b5bed9ead07@rock-chips.com>
-Date: Mon, 29 Jun 2026 17:09:23 +0800
+	id 1we8A1-0000000E99g-1udm
+	for linux-phy@lists.infradead.org;
+	Mon, 29 Jun 2026 09:20:14 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65T6rHXM2115290
+	for <linux-phy@lists.infradead.org>; Mon, 29 Jun 2026 09:20:12 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	lx5ClSQCx2d7oD0iKrRpdI3v2HOgXCbOYzofJpTEngs=; b=KWVUTR5j8fqWNzfC
+	Dux3lXOXIOoYhOAOzal0/KsJ/tCmP0uxuABO8Yc+qAUlZQm39q1NZznBuH/M6QRF
+	mRIYXZ1eFXsnOy7ofXt5IaF3dZvj0Rpsv2edaBqGTzkZX4wALsFEvz7ytuSrzEmT
+	VT6AjYycmvwFwm7eK2s+NT9EI1L+W0PaRradhrHvgKS3l7CoozxBnE9DU2w+1GwY
+	fsSzRcoXfGJQqGkL7aakidDDMPi56PDHczXO66I5m6JcKIp7/SMCZQWI3JL4zXNz
+	00z03GEps6Rgz3neW/zEKJlGFbiFCz0hLkO8T+qRqQHfYAs6BP1KPK3/l/Lg/8PN
+	gk5ulw==
+Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com [209.85.222.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4f2734drw0-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 29 Jun 2026 09:20:12 +0000 (GMT)
+Received: by mail-qk1-f200.google.com with SMTP id af79cd13be357-92a9777b04dso87626085a.2
+        for <linux-phy@lists.infradead.org>; Mon, 29 Jun 2026 02:20:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1782724811; x=1783329611; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=lx5ClSQCx2d7oD0iKrRpdI3v2HOgXCbOYzofJpTEngs=;
+        b=kJK+Eep56WgdDMUx1hhVWzRGDV0RH986saM8xKCOpchHeJSU+loRToYPsRPa62vD9I
+         e/5IgRNFwxfY5uxl5bPLSTVtXSg61/ObFrGdvUfAbm8Vhx7YDELq5Gkl04a+OTzq80tV
+         F/5F3l8SQ9QNWYfvX8EzwbBvKSO7Bj05k/t+yS+QpDIHmJjQwuCAhtPE4lJHzWy8S39d
+         b/h+TXJjyFuEKAmDl3jLfUI8kLItTmXbrFMDQ3FgGCqzls37KcxgsXWx2Op7SiSNKbgS
+         zwt13nE8AbrRvPUmA3OlSjW8VChzozc+gREWuVpFzxW45BwqAwa3v7PWhq8SCWhOiCRI
+         TUFg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1782724811; x=1783329611;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=lx5ClSQCx2d7oD0iKrRpdI3v2HOgXCbOYzofJpTEngs=;
+        b=ZKrpQlKR47Kjokc0xy1RDxEzixisqtMjqVkFnBhbM2tPE6odEkr668ztEh5jzni0zF
+         vpVCQqsOEIsK5vtl9uYPWS09NayT6DyjEJt9yjc1PoEsezwH4gfLAo9SuzE9eKwa8tkV
+         CDN6UCzsQ45HXCSnUIkWjNKbWO/yQ5xfSqVZ8tnTyfcVlAlNAv6Jid8LA+cLG7Rw2B6p
+         tFgV6jbYJ/s/LDHyymIZ9xjITlE/3Zf2myCs6JyO9hxiqxMDiDze0zpTjB8cdaJ9h3AY
+         R0BGifoFUq6xdNC91h4jLV1vUSAaa28yUTklpZWfCi1wd5s6bKHPot2SUI2Emx68lQtO
+         HIZg==
+X-Forwarded-Encrypted: i=1; AFNElJ/3g2P90T+9YkyN31WU7gwy5dpB4rR43cAfQ2TKXdDNu74JMihcXO5yW6l8cs+VWWPz/t1xYTKa+QU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzBrX3B8/u4LIKwVxX7j752LCGbDCKrNgVSHiYNEEZEKDlV2UPS
+	0Mqx1Hh1CRPq3q24qsqH7WKO+SMf6GcYBvtHhxX2QqtIOLHKc3+ccKRmmNbwwhd9+SXGs027JLW
+	EkrWbq2JHYqlq3Qo0P9+WJl/Uwfgr4rjRhEVGxVsbqs1ohDBdtf5MN3NXs2VpK8BhlLQc
+X-Gm-Gg: AfdE7clTTxnqBmi/q83ESp96FMMeJR17MuxCKDeECbkLkoHDSfvbICZsJ3CePNp/YBt
+	6ZhgKwEduF7RN+zSnnbG1jHPc4JCqN+ZJOUVpdY6fPx48bFPSu7Si0RMPnmaOS5maGvOJsAIVj+
+	elRBB9ZGcOEpgg04rMUl8fWDgD+l1u8KsIZHhtSV3mOWieIE7F3d80UCDVVuKPlE6lR8mVfsR8x
+	N2whDTvsxq128Pf3s7tzykK0Ju/clN7iVQ5BZKWEumjhIRgJgYRHn6/MAKB1T+B4maTx8sRlkyA
+	nW0wRXFkTvo8zvOzf0OGULw0CGUoHRVJwqTHNX9HfYIeRGk7+UgOo6ACjV9blX8RDdj8Fh65Mje
+	CC/DYa91f1WoBlfi88z+0qP5XFBZ5+x8KCyA=
+X-Received: by 2002:a05:620a:2684:b0:90d:11b2:80f3 with SMTP id af79cd13be357-9293ccd5b89mr1496330185a.7.1782724811474;
+        Mon, 29 Jun 2026 02:20:11 -0700 (PDT)
+X-Received: by 2002:a05:620a:2684:b0:90d:11b2:80f3 with SMTP id af79cd13be357-9293ccd5b89mr1496327785a.7.1782724810965;
+        Mon, 29 Jun 2026 02:20:10 -0700 (PDT)
+Received: from [192.168.120.170] ([178.235.128.140])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c1276ec6c96sm49387366b.43.2026.06.29.02.20.08
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 29 Jun 2026 02:20:10 -0700 (PDT)
+Message-ID: <ae2e1bdd-59b0-4ff7-bd6f-ddd57267c2d9@oss.qualcomm.com>
+Date: Mon, 29 Jun 2026 11:20:07 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v15 1/9] drm/bridge: Implement generic USB Type-C DP HPD
- bridge
-To: Xu Yang <xu.yang_2@oss.nxp.com>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>
-Cc: Chaoyi Chen <kernel@airkyi.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
- Peter Chen <hzpeterchen@gmail.com>, Luca Ceresoli
- <luca.ceresoli@bootlin.com>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner
- <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
- Andy Yan <andy.yan@rock-chips.com>,
- Yubing Zhang <yubing.zhang@rock-chips.com>,
- Frank Wang <frank.wang@rock-chips.com>,
- Andrzej Hajda <andrzej.hajda@intel.com>,
- Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Amit Sunil Dhamne <amitsd@google.com>, Dragan Simic <dsimic@manjaro.org>,
- Johan Jonker <jbx6244@gmail.com>, Diederik de Haas <didi.debian@cknow.org>,
- Peter Robinson <pbrobinson@gmail.com>, Hugh Cole-Baker <sigmaris@gmail.com>,
- linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- dri-devel@lists.freedesktop.org
-References: <20260304094152.92-1-kernel@airkyi.com>
- <20260304094152.92-2-kernel@airkyi.com>
- <erx73m2ueuvbzjteadjli6aki5by4pr3hyertkkqqoqwhaa4v3@5cstmshcercx>
- <56c6abb8-c127-449f-9368-12f94620c2bc@rock-chips.com>
- <k53t2soc3nxhwugncatksektig6agxfgdkogkdwbhrhu2fn2g7@auvsfrv76wxy>
+Subject: Re: [PATCH RFC v4 9/9] arm64: dts: qcom: glymur: Wire PCIe3a/3b to
+ shared Gen5x8 PHY
+To: Qiang Yu <qiang.yu@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley
+ <conor+dt@kernel.org>,
+        Philipp Zabel <p.zabel@pengutronix.de>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org
+References: <20260518-link_mode_0519-v4-0-269cd73cc5d1@oss.qualcomm.com>
+ <20260518-link_mode_0519-v4-9-269cd73cc5d1@oss.qualcomm.com>
+ <ab21f1c7-f861-4961-9287-84cae280d8c1@oss.qualcomm.com>
+ <akH9LKxqhciznM2x@hu-qianyu-lv.qualcomm.com>
 Content-Language: en-US
-From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-In-Reply-To: <k53t2soc3nxhwugncatksektig6agxfgdkogkdwbhrhu2fn2g7@auvsfrv76wxy>
-X-HM-Tid: 0a9f12a3faa703a7kunmb5a121f9254176
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVlCSUhIVkwfQ0hMHkxCHUNLHVYVFA
-	kWGhdVEwETFhoSFyQUDg9ZV1kYEgtZQVlNSlVKTk9VSk9VQ01ZV1kWGg8SFR0UWUFZT0tIVUpLSE
-	pKQk1VSktLVUpCWQY+
-DKIM-Signature: a=rsa-sha256;
-	b=KeP9lnKD//VlvvlxIiRxEa09oTrs/v+c7Ck0y9CJ7kebPxL1eAQ4LuYjyaIGw/OYsBbKdtssXKahpSlLQkKujxKOUvxCbJxwSZlr8H/ZYK2KhzjMnwcoDd1Sn9tYhC8NZeSIdOHyY2fC9yOG+KjawDDY3dqQlsRMu7fzSYuGBdk=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=oOV+Bwk6KYyidJt86LeBdzQS5L6KRlfhXQ6hucCploM=;
-	h=date:mime-version:subject:message-id:from;
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <akH9LKxqhciznM2x@hu-qianyu-lv.qualcomm.com>
+X-Proofpoint-GUID: NT3aIuckzRh25J1_JnvqEOUo8r_GquKT
+X-Proofpoint-ORIG-GUID: NT3aIuckzRh25J1_JnvqEOUo8r_GquKT
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNjI5MDA3NCBTYWx0ZWRfX92AkumcVjkK7
+ V9JGQ6ubcVotgiVlG734mXgKPNW630Bs6kOcnVsuGYmgaMKfxkrxz6jGL4II+HgOYvp7iYMDxkA
+ azKlVJNHWFvG4AJJZoK3rvTguA3+BTo=
+X-Authority-Analysis: v=2.4 cv=HYokiCE8 c=1 sm=1 tr=0 ts=6a4238cc cx=c_pps
+ a=hnmNkyzTK/kJ09Xio7VxxA==:117 a=PRfkaYvzSr8QmIIGAkY2Sg==:17
+ a=IkcTkHD0fZMA:10 a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
+ a=EUspDBNiAAAA:8 a=zBfHOgCXiaqlRJpMRBUA:9 a=QEXdDO2ut3YA:10
+ a=PEH46H7Ffwr30OY-TuGO:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjI5MDA3NCBTYWx0ZWRfX0NCHXngD4LMw
+ 7OXu/IfLlo1Q85RnMkLCn4gKtKvh9wFeZfUOpeujZhdy6i3L3NiD9yg7ASL+qgOAxwHg3dvgutt
+ ZEX8SpcJAnv50veWXhFzT/kq598qEA/ZQ0BlQEx0dG+eXTImhiTCh5WG7R8lLsno2/Zqj6Sx6G9
+ Xz+M8zvxVO+vxiBa91Tek6cJ8MQ8PvXVre/V2nsVl1Mh88bN+8/uh0znDpZ56qRlBqPgWRNXqIJ
+ bmvGXDoZn0n5fP35pvx245GDask+PqnKwxWqR7NYbsruhYi1d8bXssuZGNN+SyUPHjbRgC5J6e+
+ +8UzNEwD5boR+swZNtjXe5goA/pn8UyhRlWhiJ0f5mPw6XI0zqPLK0LX90Uy1cK4KCd8DXPAe3n
+ cnedHusG0ylr2/qkku+i95ocoHxNgP0skfyO9E5uQqpk70pACrRU+lB0HEmJ4FHyi53dV4RvfAt
+ Y6gCx79LBBdy9hO5Q0A==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
+ definitions=2026-06-29_02,2026-06-26_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ adultscore=0 clxscore=1015 suspectscore=0 priorityscore=1501
+ lowpriorityscore=0 impostorscore=0 spamscore=0 malwarescore=0 bulkscore=0
+ phishscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
+ definitions=main-2606290074
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260629_020933_860398_97028A29 
-X-CRM114-Status: GOOD (  23.29  )
+X-CRM114-CacheID: sfid-20260629_022013_618309_00DF4BC0 
+X-CRM114-Status: GOOD (  16.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,138 +162,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Xu Yang, Heikki
-
-On 6/29/2026 4:26 PM, Xu Yang wrote:
-> On Mon, Jun 29, 2026 at 09:29:08AM +0800, Chaoyi Chen wrote:
->> Hello Xu Yang,
+On 6/29/26 7:05 AM, Qiang Yu wrote:
+> On Wed, Jun 17, 2026 at 01:19:49PM +0200, Konrad Dybcio wrote:
+>> On 5/19/26 7:47 AM, Qiang Yu wrote:
+>>> Glymur PCIe3 uses a single shared Gen5x8 QMP PHY block. Model PCIe3a and
+>>> PCIe3b as consumers of that shared PHY provider instead of separate PHY
+>>> nodes.
+>>>
+>>> Update the DTS wiring to:
+>>> - point GCC PCIe3A/3B pipe parents to the shared PHY clock outputs
+>>> - add PCIe3a controller node and route PCIe3a/PCIe3b port phys to
+>>>   &pcie3_phy using two-cell PHY arguments
+>>> - configure the shared PHY node with link-mode and dual pipe outputs
+>>>
+>>> Use QMP_PCIE_GLYMUR_MODE_* dt-binding macros for mode selection.
+>>>
+>>> Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
+>>> ---
 >>
->> On 6/26/2026 7:15 PM, Xu Yang wrote:
->>> On Wed, Mar 04, 2026 at 05:41:44PM +0800, Chaoyi Chen wrote:
->>>> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
->>>>
->>>> The HPD function of Type-C DP is implemented through
->>>> drm_connector_oob_hotplug_event(). For embedded DP, it is required
->>>> that the DRM connector fwnode corresponds to the Type-C port fwnode.
->>>>
->>>> To describe the relationship between the DP controller and the Type-C
->>>> port device, we usually using drm_bridge to build a bridge chain.
->>>>
->>>> Now several USB-C controller drivers have already implemented the DP
->>>> HPD bridge function provided by aux-hpd-bridge.c, it will build a DP
->>>> HPD bridge on USB-C connector port device.
->>>>
->>>> But this requires the USB-C controller driver to manually register the
->>>> HPD bridge. If the driver does not implement this feature, the bridge
->>>> will not be create.
->>>>
->>>> So this patch implements a generic DP HPD bridge based on
->>>> aux-hpd-bridge.c. It will monitor Type-C bus events, and when a
->>>> Type-C port device containing the DP svid is registered, it will
->>>> create an HPD bridge for it without the need for the USB-C controller
->>>> driver to implement it.
->>>>
->>>> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
->>>> Reviewed-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
->>>> ---
->>>>
->>>> (no changes since v14)
->>>>
->>>> Changes in v13:
->>>> - Only register drm dp hpd bridge for typec port altmode device.
->>>>
->>>> (no changes since v12)
->>>>
->>>> Changes in v11:
->>>> - Switch to using typec bus notifiers.
->>>>
->>>> (no changes since v10)
->>>>
->>>> Changes in v9:
->>>> - Remove the exposed DRM_AUX_HPD_BRIDGE option, and select
->>>> DRM_AUX_HPD_TYPEC_BRIDGE when it is available.
->>>> - Add more commit comment about problem background.
->>>>
->>>> Changes in v8:
->>>> - Merge generic DP HPD bridge into one module.
->>>> ---
->>>>
->>>>  drivers/gpu/drm/bridge/Kconfig                | 10 ++++
->>>>  drivers/gpu/drm/bridge/Makefile               |  1 +
->>>>  .../gpu/drm/bridge/aux-hpd-typec-dp-bridge.c  | 49 +++++++++++++++++++
->>>>  3 files changed, 60 insertions(+)
->>>>  create mode 100644 drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
->>>>
->>>> diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
->>>> index a250afd8d662..559487aa09a9 100644
->>>> --- a/drivers/gpu/drm/bridge/Kconfig
->>>> +++ b/drivers/gpu/drm/bridge/Kconfig
->>>> @@ -30,6 +30,16 @@ config DRM_AUX_HPD_BRIDGE
->>>>  	  Simple bridge that terminates the bridge chain and provides HPD
->>>>  	  support.
->>>>  
->>>> +if DRM_AUX_HPD_BRIDGE
->>>> +config DRM_AUX_HPD_TYPEC_BRIDGE
->>>> +	tristate
->>>> +	depends on TYPEC || !TYPEC
->>>> +	default TYPEC
->>>> +	help
->>>> +	  Simple bridge that terminates the bridge chain and provides HPD
->>>> +	  support. It build bridge on each USB-C connector device node.
->>>> +endif
->>>> +
->>>
->>> Should CONFIG_TYPEC_DP_ALTMODE select this one? Otherwise, we need to do it
->>> manually.
->>>
->>> $ grep -nr --include=Kconfig "select DRM_AUX_HPD_BRIDGE" .
->>> ./drivers/soc/qcom/Kconfig:118: select DRM_AUX_HPD_BRIDGE
->>> ./drivers/usb/typec/ucsi/Kconfig:88:    select DRM_AUX_HPD_BRIDGE if DRM_BRIDGE && OF
->>> ./drivers/usb/typec/ucsi/Kconfig:99:    select DRM_AUX_HPD_BRIDGE if DRM_BRIDGE && OF
->>> ./drivers/usb/typec/tcpm/Kconfig:62:    select DRM_AUX_HPD_BRIDGE if DRM_BRIDGE && OF
->>> ./drivers/usb/typec/tcpm/Kconfig:85:    select DRM_AUX_HPD_BRIDGE if DRM_BRIDGE && OF
->>>
+>> [...]
 >>
->> That's a fair point. But based on the previous discussion, Heikki
->> point out that configurations in the TYPEC subsystem should not
->> select configurations from DRM.
-> 
-> I have just reviewed your previous patchsets but I did't find such opinion from
-> Heikki. Otherwise, why are tcpm.c/ucsi.c already allowed to add the above select
-> condition in their configs?
-> 
-> I think Heikki means that the DRM_AUX_HPD_BRIDGE shouldn't been selected at the
-> top level of Type-C subsystem. Because not all Type-C devices support the DP function.
-> 
-> As a generic Type-C DP HPD bridge, displayport.c will likely need to use it in
-> the future. Therefore, allowing displayport.c to select DRM_AUX_HPD_BRIDGE makes sense.
-> 
-> According to my testing, it's impossible to build this driver in unless TYPEC_FUSB302
-> or a relevant CONFIG is built in to select DRM_AUX_HPD_BRIDGE, or the defconfig is modified.
-> 
+>>> +		pcie3a: pci@1c10000 {
+>>> +			device_type = "pci";
+>>> +			compatible = "qcom,glymur-pcie", "qcom,pcie-x1e80100";
+>>> +			reg = <0x0 0x01c10000 0x0 0x3000>,
+>>> +			      <0x0 0x70000000 0x0 0xf20>,
+>>> +			      <0x0 0x70000f40 0x0 0xa8>,
+>>> +			      <0x0 0x70001000 0x0 0x4000>,
+>>> +			      <0x0 0x70100000 0x0 0x100000>,
+>>> +			      <0x0 0x01c13000 0x0 0x1000>;
+>>> +			reg-names = "parf",
+>>> +				    "dbi",
+>>> +				    "elbi",
+>>> +				    "atu",
+>>> +				    "config",
+>>> +				    "mhi";
+>>> +			#address-cells = <3>;
+>>> +			#size-cells = <2>;
+>>> +			ranges = <0x01000000 0x0 0x00000000 0x0 0x70200000 0x0 0x100000>,
+>>> +				 <0x02000000 0x0 0x70000000 0x0 0x70300000 0x0 0x3d00000>,
+>>> +				 <0x03000000 0x7 0x00000000 0x7 0x00000000 0x0 0x40000000>,
+>>> +				 <0x43000000 0x70 0x00000000 0x70 0x00000000 0x10 0x00000000>;
+>>> +
+>>> +			bus-range = <0 0xff>;
+>>> +
+>>> +			dma-coherent;
+>>> +
+>>> +			linux,pci-domain = <3>;
+>>> +			num-lanes = <8>;
+>>
+>> Is it fine to keep num-lanes 8 here even for configurations with
+>> bifurcated PHY?
+>>
+>> I would assume so, given essentially this is a x8 host, whose 4
+>> lanes may simply be effectively NC 
+>>
+> Actually, on existing platforms, the PCIe3a and PCIe3b controllers are
+> never enabled at the same time. When PCIe3a is exposed, it is always in an
+> x8 slot. But if we have a x4+x4 platform in future, we can simply override
+> num-lanes to 4 in the board.dts.
 
-Yep. For me, I select DRM_AUX_HPD_BRIDGE in DRM.
+My question is whether that will be necessary - if yes, sure, we
+can do it, but if not, we can conclude on this early and not have
+to fight over it in a couple months
 
-@Heikki, what do you think of the following change?
-Should we add a new patch for this? Thanks.
-
-
-diff --git a/drivers/usb/typec/altmodes/Kconfig b/drivers/usb/typec/altmodes/Kconfig
-index 7867fa7c405d..f89cdf3c949b 100644
---- a/drivers/usb/typec/altmodes/Kconfig
-+++ b/drivers/usb/typec/altmodes/Kconfig
-@@ -5,6 +5,7 @@ menu "USB Type-C Alternate Mode drivers"
- config TYPEC_DP_ALTMODE
-        tristate "DisplayPort Alternate Mode driver"
-        depends on DRM
-+       select DRM_AUX_HPD_BRIDGE 
-        help
-          DisplayPort USB Type-C Alternate Mode allows DisplayPort
-          displays and adapters to be attached to the USB Type-C
-
--- 
-Best, 
-Chaoyi
+Konrad
 
 -- 
 linux-phy mailing list
