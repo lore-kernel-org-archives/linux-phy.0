@@ -4,141 +4,144 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54728C43458
-	for <linux-phy@archiver.kernel.org>; Mon, 29 Jun 2026 07:13:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3EEEC43458
+	for <linux-phy@archiver.kernel.org>; Mon, 29 Jun 2026 08:28:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8X/CwBtpamaSpS/sV2bAIm/85Z5DtYIikY0t7MjR4mA=; b=J0v8p0B0nkYpNe
-	QvNDp645vd30b8ZYZIlggm2bReM/G+EUBtskXPoa2WUyiAMJq6wxxTWz/j1VRYwGnj90CBKZaWbGn
-	VMTQyinfbpWpey2oha0L6/YdRfgRahJd2Kvj/JPm4z/KRwrapyUlHkfELfhBrukU2eahfLvwSj5C0
-	sPOjM7nESJds5fq7akLN6bNj+JBtmecFkDZSbKZMzarsW+lqnQeB7eoG+jZ8c0bp2hIjxofWKblAL
-	KBLjMPsGa+ZURZWzz5RpWcjT0SMeluV9ft1TaZ1aEzlfhyG2JSHi/bHhAEqcfVLngQMvg0wfdfbo+
-	23BgoTp48H0bUTo1mejw==;
+	List-Owner; bh=6ZmL9h7KhBLuB2c1LCPJU/9ADnsj4Q84Sh7z9UhSM44=; b=jquqg6kC8NgLhr
+	F/ogmK1Fa6uhFBo9XwA9wim/zm8ksX33MbLhsjaoN2Ze5/Z2reu8fJJY+1PomZMpphTYC4C6DHFvR
+	VzOCDk1CkEyLaJYxvIkfBBDq17xPIWY20UvnYoJWDXveoh0jOTHM1cp8rWFdI7o6u1mdDTDXl5T7Y
+	Fd7meD6OUkJuVK1KhGlV+AcnAtLbollBrxIJdCEXSUQmJw+bA5Vj25jpQu5qLYodYnfI9NZpp5Myt
+	34sK7EnAvKZjDJJpMKu0Wlw+C6j1rd2ewrjIT82r7ayFEKvAG8i3mzi5AVCkahGdm7nh+S3N0LWuP
+	QF+HS8pOI1YQmjIAGLxA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1we6BC-0000000DrtN-0I6s;
-	Mon, 29 Jun 2026 07:13:18 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1we7Lb-0000000E0Gg-2GGc;
+	Mon, 29 Jun 2026 08:28:07 +0000
+Received: from mail-norwayeastazon11013021.outbound.protection.outlook.com ([40.107.159.21] helo=OSPPR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1we6B9-0000000Drrl-1YNY
-	for linux-phy@lists.infradead.org;
-	Mon, 29 Jun 2026 07:13:16 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65T6rD4o2135783
-	for <linux-phy@lists.infradead.org>; Mon, 29 Jun 2026 07:13:14 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=DpBPb27RIWIwXmB/JzvE9Nff
-	dB3sd81CybJo2XPwfZA=; b=PrsjYO+bFn0aUg7xZxYo9mcccrZ2ffRVpawmmtH9
-	SdYyX78TcWCxyE58uEq3zmWsxg5KbFnDcARD19BqLRuhLmkF2NSnNEwIKU1JTv9q
-	A7ex8X1GKgnn0+aPysr0k+QJpnoSAsbLeJCcr76F6Nfxr7P5o3hy2+9kCV7hocy8
-	mtrsnfHJ1nSd7Qa0QlBiIibdKGzlSGNxPApQerTu+v45nTjqxR492DVYmXArCrTi
-	wxSGixsiquzYOerCEvC45kzNzGZoMigxS1FKmYQ7/k/0ytZhXA5mzfFjtPZVhfj7
-	d+S2C6n6CRvzJDKHw9a7FdwbRKlsxcyAxvTsD2pUW+TFCA==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4f26tun3bf-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 29 Jun 2026 07:13:14 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2c7cfa17fe6so46431145ad.3
-        for <linux-phy@lists.infradead.org>; Mon, 29 Jun 2026 00:13:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1782717194; x=1783321994; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=DpBPb27RIWIwXmB/JzvE9NffdB3sd81CybJo2XPwfZA=;
-        b=HDzMJ+6DoxpTzP1lvoa03nnmuUYQWBYfImAKtu1okvrWMo1E5X4PQ+pftFGs3xByjE
-         GXMuG/R2s7EaovOlTqmllmOr7JZ8VN0jTCxY8dN34GGx7EgMHHDQenPMXyzOdOK3ACMY
-         NkcQS+6HuezPFjQE6W8n1OkP/UrzDgax3xvO0aGwUnQSgbV/n0c2OTaXLf+4pFiOTXqh
-         bgpqiu6Bi/MUUUSaK94SsDrkaFme80SrFYvBKoSgM/YkHGWzwF5YHZMcFbgqQ79leCzG
-         5006u84N4rRJkr9W0UpGe8jTsjCaB72ZATqBdXE+LF2Z/AXQgont2TNzQbUuGiFuNoin
-         j1eg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1782717194; x=1783321994;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=DpBPb27RIWIwXmB/JzvE9NffdB3sd81CybJo2XPwfZA=;
-        b=JGvMZRY45Ta0KsrRb1Q4D6yWb3fWmOZFljenLil/qi3yZFzT+hzRRnlyJpi0PPMPfy
-         3ChuPwA0MkfyeuLbVul7klCxen3CbAHziAr8XwSD14vJRvHxFH4xhTWzVK3kHyzES5XM
-         l9VMCUjPmALX8PZhXbnc3Dj6tweY8lRHCQLEmiIMh0MmZ9pcl9j8NFwnIugb1LAZGN9R
-         DC0+WIzTh10VoK9MeMjZYOBsnO2jvsf7veTHQSmY+ObpQlaH1FXPBwdxoHDnvhUJ75Uz
-         zcxtBJQWwiS/AkZyu9yTbhwW1+/WCQYOGRvLzvr+lvmVIBPykhQFR9/6DPneuu3sxI4G
-         E0CQ==
-X-Forwarded-Encrypted: i=1; AHgh+RqbzpXKt8Lxmvxbwpp8LFKR2f6Rv793GD3Xggvy2jFki4rYV9BIIMRP6/S4jpeahrPTwrnCQCnnavg=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwWg+JQQy/kLo/8ewDr28D/fyc2J2T+44Y1ZJJAuqlRNsdmYNqS
-	ZUH70hub9YrUzgjnn0F0zlezH+P11eOLYDQXN1+kLBtTjqs0vC7RAqgVZLXeN9rr60dkdc9wAu3
-	Pls5FNbPjwda+Pfdd/D+WOPyzwUCg4PexLAFNWhQaaB9oy8dWXNG/pcdgkuIEmlNt0vj7
-X-Gm-Gg: AfdE7cn9BPv9WEurFLGfpCWFmjoPewXg8KWwG6PbtE2BjVD6RKQhpQs2qQCrR7RX9h/
-	xRr2zkM0f+zn/RCur0YcqfTdr/VyBQjzYyMOcEJNqeAFO5GXYxKRPJt8/yOiwSE31w38oh0r66P
-	Qwr0WCIqvJ2Iv/vneJ6wpCgGI4f8YgOjm8wApSD8zXo8UCbGziJh9cZ97kmRGbQSnU6+adUrGsU
-	rvs6JwMAIIUDgEMBvSN9rgWxzx4vrOSGzGUv8M428Lg4TBe6Hxg3hHEi8RWDYEUU+I6fx40CoP5
-	9mptK2odQnOBE3fnCboqKqf0G7/kKuCrm3uTfVcSR0uWKDanWOHimykoCloViFNmXFQG7MTateQ
-	Gh68ZDmHbpneESnm2pl6DqLL0ENjHmwgSUx5k62Uef+UWfg==
-X-Received: by 2002:a17:903:2b03:b0:2c9:b396:1a55 with SMTP id d9443c01a7336-2c9b3961fa6mr64038515ad.12.1782717193878;
-        Mon, 29 Jun 2026 00:13:13 -0700 (PDT)
-X-Received: by 2002:a17:903:2b03:b0:2c9:b396:1a55 with SMTP id d9443c01a7336-2c9b3961fa6mr64038315ad.12.1782717193458;
-        Mon, 29 Jun 2026 00:13:13 -0700 (PDT)
-Received: from hu-mchunara-hyd.qualcomm.com ([202.46.22.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2c8255602fcsm54177235ad.60.2026.06.29.00.13.07
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 29 Jun 2026 00:13:12 -0700 (PDT)
-Date: Mon, 29 Jun 2026 12:43:05 +0530
-From: Monish Chunara <monish.chunara@oss.qualcomm.com>
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Wesley Cheng <quic_wcheng@quicinc.com>, Ulf Hansson <ulfh@kernel.org>,
-        Kernel Team <kernel@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-phy@lists.infradead.org, linux-mmc@vger.kernel.org,
-        Nitin Rawat <nitin.rawat@oss.qualcomm.com>,
-        Pradeep Pragallapati <pradeep.pragallapati@oss.qualcomm.com>,
-        Komal Bajaj <komal.bajaj@oss.qualcomm.com>,
-        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Subject: Re: [PATCH V1 0/2] arm64: dts: qcom: Shikra SD Card support
-Message-ID: <akIbARuf3lMAg6rj@hu-mchunara-hyd.qualcomm.com>
-References: <20260604122045.494712-1-monish.chunara@oss.qualcomm.com>
- <boo7p6mgop7rarfu3rfsrfah6eq7zp6y3sf6mdq3hsejtacwxx@yl543m4lj47d>
-MIME-Version: 1.0
+	id 1we7LY-0000000E0Ft-3ogP;
+	Mon, 29 Jun 2026 08:28:06 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=JW60UZDxaXiatvxgBuGYfcNV+R10+HYKiIM3vwpv1AeHQtChiDsiakKTZAtB+0Cr2NEpTvKAA8wMmygN22r6uDYYx+DSTw8nKriJ27PXsceaauPZUMNSg2cipyHfqiFZB3+jwxL0Kf1ElrVO0HY5ekYb5ajyBOi9yeFbtVD8qj5TWPSyNKm3X78UWPcWNkAJJZNlFj3eHdjEZLJogpBtrbqhG4YkbLkm/o07WyFCC7NKjqQWIMWGVH4HKAg+DPp/E9yQsDyURC8LYzQTwzssX2KQSwmdtMpxgg6qArbM/dc68fBRVeymXFnkDdGrdBYBLnF9XUGhYPGTOP6PTiZxbg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=DNEqPyZr0SoYzYr1LXdRL6klSeRWrXueUloBM72etzI=;
+ b=CAmMKaVjZSF3FzxOBCA+Uow1IS67IEV2pXsDb+BhJQG5X+77t74+DARvIQvu63ex7g4inMKtrpkPqnQ84qRDLoAns+OKU/Q28ZIJiy4dsFe5jimkQDpAUtYYG/SmdLpRguDh+rWn0Jv8FvPhsLUQxFyDrxfknCC8WJJMhJ25DkVlB5I1T2MVq/zbioK8aLZpYeG7uV24bEg2q3gBeedUw8ebRRb49GikDyMYS/8oMg6DN/8USj81fvjNObeso8aZ7SbZ9zDSjLG7NxRb2Kdi0h5LYjv5UMpsNdjewU1vERmzHrNY3wYe7XZcYY2xr9m94wAjGa13IHRRJr86rLEkVQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=DNEqPyZr0SoYzYr1LXdRL6klSeRWrXueUloBM72etzI=;
+ b=dKovW1ZKN+PUPfr1M+HBiJ7RYUqUrEQ6c0zVd3MEnjf0z8M1FZhXqHmG8CDhdG0IhhTpfnJ/UIDE4PeigrlKL8ZP5eddjOawJK/CmksPkh4Ma0qxIyjz+sUeLMnYcCekb0TY/wAAyD+N8qY+MSEPyAzInGznar6rpZStjENRgW2WojomcvJNoRNOHpb+KkLcTfHiD9WSvubPg5Rs8RSpvTvCBaMRk4pga7/EN6ErNlnM4/sVqDbjNGn2736vSdVRqSlal+rEcZR8Q8o7x4P5qxSPz6AgpRwxBOBNmA4nPz0okuq/EMDgGDhUbYg6gxLhiFwxw4Ot0Kr5nqRbnMN0xg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from PAXPR04MB9422.eurprd04.prod.outlook.com (2603:10a6:102:2b4::21)
+ by AMDPR04MB11555.eurprd04.prod.outlook.com (2603:10a6:20b:71d::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.159.19; Mon, 29 Jun
+ 2026 08:27:58 +0000
+Received: from PAXPR04MB9422.eurprd04.prod.outlook.com
+ ([fe80::54e:28bf:aa85:d25d]) by PAXPR04MB9422.eurprd04.prod.outlook.com
+ ([fe80::54e:28bf:aa85:d25d%4]) with mapi id 15.21.0159.018; Mon, 29 Jun 2026
+ 08:27:57 +0000
+Date: Mon, 29 Jun 2026 16:26:32 +0800
+From: Xu Yang <xu.yang_2@oss.nxp.com>
+To: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>, 
+	Chaoyi Chen <kernel@airkyi.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, Peter Chen <hzpeterchen@gmail.com>, 
+	Luca Ceresoli <luca.ceresoli@bootlin.com>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>, 
+	Andy Yan <andy.yan@rock-chips.com>, Yubing Zhang <yubing.zhang@rock-chips.com>, 
+	Frank Wang <frank.wang@rock-chips.com>, Andrzej Hajda <andrzej.hajda@intel.com>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>, 
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, Jonas Karlman <jonas@kwiboo.se>, 
+	Jernej Skrabec <jernej.skrabec@gmail.com>, Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+	Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+	Amit Sunil Dhamne <amitsd@google.com>, Dragan Simic <dsimic@manjaro.org>, 
+	Johan Jonker <jbx6244@gmail.com>, Diederik de Haas <didi.debian@cknow.org>, 
+	Peter Robinson <pbrobinson@gmail.com>, Hugh Cole-Baker <sigmaris@gmail.com>, linux-usb@vger.kernel.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+	dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH v15 1/9] drm/bridge: Implement generic USB Type-C DP HPD
+ bridge
+Message-ID: <k53t2soc3nxhwugncatksektig6agxfgdkogkdwbhrhu2fn2g7@auvsfrv76wxy>
+References: <20260304094152.92-1-kernel@airkyi.com>
+ <20260304094152.92-2-kernel@airkyi.com>
+ <erx73m2ueuvbzjteadjli6aki5by4pr3hyertkkqqoqwhaa4v3@5cstmshcercx>
+ <56c6abb8-c127-449f-9368-12f94620c2bc@rock-chips.com>
 Content-Disposition: inline
-In-Reply-To: <boo7p6mgop7rarfu3rfsrfah6eq7zp6y3sf6mdq3hsejtacwxx@yl543m4lj47d>
-X-Proofpoint-GUID: viX7Ubr7bkg3h8z8fG08vXkDMxlqXT1c
-X-Authority-Analysis: v=2.4 cv=A8Rc+aWG c=1 sm=1 tr=0 ts=6a421b0a cx=c_pps
- a=IZJwPbhc+fLeJZngyXXI0A==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
- a=kj9zAlcOel0A:10 a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22
- a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=BkqjwfLYJ-8FfuLtd5sA:9 a=CjuIK1q_8ugA:10
- a=uG9DUKGECoFWVXl0Dc02:22
-X-Proofpoint-ORIG-GUID: viX7Ubr7bkg3h8z8fG08vXkDMxlqXT1c
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjI5MDA2MCBTYWx0ZWRfX9T3vEz7C9X7n
- csDGS21nLKjPrFoUlIn6etj7rfm9b8GdWdgCV6joFkBr18sfIZcdWTxgOwmB+qG4yAjmD106nTD
- 86OROJEWmR3XcHHNUvA+PXD1btEKavIi9lonpi5NNxubvqrLJctEVcdbmtlEFXToGVTphN3lV2/
- IPMx/Ir/ciw0LR408wVT5vRkmlp7GOpL31fZNOmn0j+ap46xO1By3my+swhSZaCQzZl3cmxcNXH
- vEjWBHHz5PJw6Uu/IMLSU8uwDHUqjM1l+nqWdzx2BXgk5iSIRkufn4zOyMzuHs77k1UMzrh3sRN
- 0+mD86iINd5To/rv555VQH9+sWJVYYm5zk7Wo13neHAIo6OmyJ3aQoYCWierpqyc7Afn7TLSTuq
- uTdpFtchV7eF5dHbiPYMsSc0CIaRJLTT1jj9s9Ow1xsHVIKZxDRc+JHgl4VqH0dOlJ8T7DbWosz
- cQWV0TGVfPldtFj75fA==
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNjI5MDA2MCBTYWx0ZWRfX3rUfhGRYJKn4
- EVHDTamU2mGRU7Yxa8X5RT1DBZqgSy5oJKkBPUdRQv/XJGffzr8KzbIAI0miyZ7jw6r9ORzMYOW
- FnfPJqzU0tt4xBhhWEaZbFCchkqj5kQ=
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
- definitions=2026-06-29_02,2026-06-26_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 adultscore=0 clxscore=1015 impostorscore=0 priorityscore=1501
- suspectscore=0 malwarescore=0 phishscore=0 spamscore=0 lowpriorityscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2606290060
+In-Reply-To: <56c6abb8-c127-449f-9368-12f94620c2bc@rock-chips.com>
+X-ClientProxiedBy: SI3PR01CA0011.apcprd01.prod.exchangelabs.com
+ (2603:1096:4:296::6) To PAXPR04MB9422.eurprd04.prod.outlook.com
+ (2603:10a6:102:2b4::21)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9422:EE_|AMDPR04MB11555:EE_
+X-MS-Office365-Filtering-Correlation-Id: f5305d0b-3a9e-4c44-5ca9-08ded5b852ab
+X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|23010399003|376014|7416014|19092799006|366016|6133799003|18002099003|22082099003|4143699003|11063799006|56012099006;
+X-Microsoft-Antispam-Message-Info: WEAYDRX9M4Cqh+zmF67SmUsU435qfb5fvhxevYQJWqkz93Uq0qc2+WMOwIcHo/UxlD2jmP94D04ir6Xi9y7r3FigE6wu14944Rtm2JTBS4O1Nbn2Z9h8M2DphY/L03v3UiL+EgkFpDUGuU/IfhGzNgOwH19qK2jA4OK3vXuO6FR5ORRsddemRGcNCUhniKdQT9CFjAl9v2BzGevYgyhckfoylEM2CVagR3rL9wBXgqX2yhIV6KLlHBjwLt9ZJCAxEWBTWfIz4BtadGJcxbXWBL1ZBwjmPVVI5agASSK3wX8iMQ4LA7virZ5F18tYCAtOn4MgDwtVj+Y6Yo3oXo4F0jQBlAR+jANc9AsE9Il5Exe62/IhICtiz4en7kQk6C/8IRaCNMwwWly/RRzMbP5FRsKk4guR8pyAWtT4An1iTJPfqWJ2tx1py0yTTtuZGxHlOALcCe4BoA5w9Coz1jgH5l8miItwKAJ148F1kgTjWTwAuoWo78MiDrMCW7UNUSojouFRTjMgVZ9ELu8NqjDp0lyHvGHYaVlGd2VqztUxsrEIFrjY7olNzGoQNpfn/tejMKeE9rEYQeLbBJaudw4fkGpX4dpn3B/DK/bOYK16qLwzt0g27kWgN2gjmkbdasRcoeWk54gaKvOzoOh2MtBL4I3kEH2DO6sgUkS6ZJkVCno=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9422.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(23010399003)(376014)(7416014)(19092799006)(366016)(6133799003)(18002099003)(22082099003)(4143699003)(11063799006)(56012099006);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?gsTkS+0Di68y5Q1piqQ18BwEkP/IfsmODRGTPm/FxcXoCx9N3qfY60BWYyVo?=
+ =?us-ascii?Q?ndXtwNZAbGPqMYnZSShszMJ8LUjXKYGAaNcGjcZhGCUOTpT6/dmlvjaJYd1V?=
+ =?us-ascii?Q?QKp/x2azcmnyOCCRr8ZpgiL/KxxGLLiIekLu7g5Qlo06sUFzbtYawkAzdzVb?=
+ =?us-ascii?Q?1G9BaR7IvJwsoqB5RXbya5KwHN8Mp9T4h+KO/pHfjJX5C4KEhpnufu/fo91t?=
+ =?us-ascii?Q?gjI7ZQvHKFye5kMSEBAfIb7cseWCH3s+0WZTSqi8wTNfgtp0nckE1QNN4rnq?=
+ =?us-ascii?Q?Mv8DERWqb7nFaPzYP5HOdhQK3OxQVjkmcWizyq9w96loekIrPNjtozGDxWkR?=
+ =?us-ascii?Q?ur1ouKJDniTGFM8ub96sFR7rJ0OgyhK7HKyw/+P2g97z9TWvvtwDGXlFyWSW?=
+ =?us-ascii?Q?oDLGE3U/UWqm3dSBVPcXmv/i8u+UiSlqg1PUobdu0YrSrgJ2riAIHjVSCahx?=
+ =?us-ascii?Q?6Jq0D3N7jeKHZ0quvC/UqFeLq6D/h9l1b1x9ui+yCWUY5XFGSvjss3JVn7+M?=
+ =?us-ascii?Q?twuv2aOhr/KY20a9HT1Fdpz9Vpuml5RzmjHUZd7f21X7KbDv2eCn2LN3BmBm?=
+ =?us-ascii?Q?7aqzFvq7FUFfJ7jUPcoMlrvO3huckpTCjlY+pKmv2ZAeSaxD7ECdYpkeaHRz?=
+ =?us-ascii?Q?OsgLvGxWB5PLJrdNtRftr0PEC1KQCma8Y5NX0ODP0GDGq1D6QdxY6J0nlwtZ?=
+ =?us-ascii?Q?bxitZCJwdpARTPcImO6QHA+DQHO+0El7MjrxyhqFpXMDdcWhzbqnWJt/5N5P?=
+ =?us-ascii?Q?kUIlKt8/d4vXer/EiyunOw0auMzUvy72/dfLArLQoOvuAIQbtCvyvduQ1yoc?=
+ =?us-ascii?Q?xeNQLKGXTiXa/wDzQ5lFvqYi7b7S8y2tTPxZSxt2AGpsDtuXma44DunwKqhH?=
+ =?us-ascii?Q?p4YIXqVBWiM1JSi5CAcdHjsagAkPTg1PUSFfl0WuB4kyH47gzj1mLlE/yZfD?=
+ =?us-ascii?Q?dIfQr6YmQgOhLsSPbWb4pJj2rky8djkiWa1jCgx/j8PaoqNsNWV3q7YtsDzd?=
+ =?us-ascii?Q?96LR/kWvbC4YOTGFCrEwxO9p3mYpOAeuGtqZYj/TPl9QztVz+en9ZeVExuYW?=
+ =?us-ascii?Q?CBo/IOh2YS80PS2s3jmP31xQT1NC/seb6g62kV+WR6j/mPjLCE7am7of2MK9?=
+ =?us-ascii?Q?hnB4zMzy73YrWlMTG0yiJYEpfDQTLIRs2WlsCvXdYq94b6S4zKBmOCykaBqU?=
+ =?us-ascii?Q?Py4OzvavKG9XJ1iJAEMW0WY066EIkkM6mjvwdzLlJdrX+nH5HKoQMJTaO/qV?=
+ =?us-ascii?Q?z+S00YgKxd6JThcXQSl5sKOaUMyuDSkRK3mn9f6ENT1sH6cFG9ihjn5XuGk6?=
+ =?us-ascii?Q?xjsqX9wCKunOeSvg385hPkVszhKgxZYN4gg9P916z1N3xf1qyy3L4rDMfTWi?=
+ =?us-ascii?Q?iN9cwojD6rNP/b7mYUn99EPFxkQfN1ALhnyODwR9JiUZkO2EjErMH8Wg5So1?=
+ =?us-ascii?Q?gOTkFK+ftoILdZ46mH5vsLprBJT3DJBGUz5jdF1vYm/nlANHwWrSHf97kRc/?=
+ =?us-ascii?Q?/6y/v8RIDEHK/FaUEmJZyIYqHb+AALhHyWjhhyFa9N8WEQ0vaHxl8+xjGg2A?=
+ =?us-ascii?Q?kVclzsGoS8i3uzL9TUCg+6e1M2RfMnHpSLUNCVjwlG62uEP15JxXgf/DtCY8?=
+ =?us-ascii?Q?RHkM2EERa3WxPSRlHnazfTI0RzfkR+YDEE62aeGJQ0TuedOWqP+6YejKPRyn?=
+ =?us-ascii?Q?gUVjJP+fPAONs9P3F/zNyZgeNJhgZhHgQ30IXDU0G661HHhalDtoekVjDy8j?=
+ =?us-ascii?Q?z2RCk8bYcap9O563Gf/w44EQ/Ho+ND+bjXHH7aIhIUJQXCHIUkUI?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: f5305d0b-3a9e-4c44-5ca9-08ded5b852ab
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9422.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Jun 2026 08:27:57.5896
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: uCvQgZstkF7npR5g4ojWVi75soPfGVpUq1uN0j7PtOIqd3qhkoFp674Ws/rwzXkb6V0EKWhqtClxrxe5IoWcY4aZMNX5b1ej7saM0u7c+m47NMqQaVEAOHZQZ4M+88k7
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AMDPR04MB11555
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260629_001315_420820_F09407D0 
-X-CRM114-Status: GOOD (  18.60  )
+X-CRM114-CacheID: sfid-20260629_012804_952823_06E09259 
+X-CRM114-Status: GOOD (  34.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -155,35 +158,114 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jun 16, 2026 at 03:54:56AM +0300, Dmitry Baryshkov wrote:
-> On Thu, Jun 04, 2026 at 05:50:43PM +0530, Monish Chunara wrote:
-> > This series adds SD card support for the Shikra platform.
-> > 
-> > The first patch adds the SDHC2 controller node and the necessary pinctrl
-> > configurations to the base Shikra SoC dtsi. The second patch enables 
-> > this support on the Shikra EVK (CQS, CQM, and IQS variants) by defining
-> > the regulator supplies and the card detection GPIO.
-> > 
-> > Testing:
-> > - Validated on Shikra EVK variants.
-> > 
-> > This series depends on:
-> > - https://lore.kernel.org/all/20260527-shikra-dt-v4-0-b5ca1fa0b392@oss.qualcomm.com/
-> > - https://lore.kernel.org/all/20260521-shikra-rproc-v3-0-2fca0bbe1ad7@oss.qualcomm.com/
-> > - https://lore.kernel.org/linux-devicetree/20260513-tsens_binding-v1-1-1780c6a6caf2@oss.qualcomm.com/
+On Mon, Jun 29, 2026 at 09:29:08AM +0800, Chaoyi Chen wrote:
+> Hello Xu Yang,
 > 
-> If the SD card depends on remote proc, tsens or cpufreq, then something
-> is wrong. Maybe, the way the serieas are organized and sent.
+> On 6/26/2026 7:15 PM, Xu Yang wrote:
+> > On Wed, Mar 04, 2026 at 05:41:44PM +0800, Chaoyi Chen wrote:
+> >> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+> >>
+> >> The HPD function of Type-C DP is implemented through
+> >> drm_connector_oob_hotplug_event(). For embedded DP, it is required
+> >> that the DRM connector fwnode corresponds to the Type-C port fwnode.
+> >>
+> >> To describe the relationship between the DP controller and the Type-C
+> >> port device, we usually using drm_bridge to build a bridge chain.
+> >>
+> >> Now several USB-C controller drivers have already implemented the DP
+> >> HPD bridge function provided by aux-hpd-bridge.c, it will build a DP
+> >> HPD bridge on USB-C connector port device.
+> >>
+> >> But this requires the USB-C controller driver to manually register the
+> >> HPD bridge. If the driver does not implement this feature, the bridge
+> >> will not be create.
+> >>
+> >> So this patch implements a generic DP HPD bridge based on
+> >> aux-hpd-bridge.c. It will monitor Type-C bus events, and when a
+> >> Type-C port device containing the DP svid is registered, it will
+> >> create an HPD bridge for it without the need for the USB-C controller
+> >> driver to implement it.
+> >>
+> >> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+> >> Reviewed-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+> >> ---
+> >>
+> >> (no changes since v14)
+> >>
+> >> Changes in v13:
+> >> - Only register drm dp hpd bridge for typec port altmode device.
+> >>
+> >> (no changes since v12)
+> >>
+> >> Changes in v11:
+> >> - Switch to using typec bus notifiers.
+> >>
+> >> (no changes since v10)
+> >>
+> >> Changes in v9:
+> >> - Remove the exposed DRM_AUX_HPD_BRIDGE option, and select
+> >> DRM_AUX_HPD_TYPEC_BRIDGE when it is available.
+> >> - Add more commit comment about problem background.
+> >>
+> >> Changes in v8:
+> >> - Merge generic DP HPD bridge into one module.
+> >> ---
+> >>
+> >>  drivers/gpu/drm/bridge/Kconfig                | 10 ++++
+> >>  drivers/gpu/drm/bridge/Makefile               |  1 +
+> >>  .../gpu/drm/bridge/aux-hpd-typec-dp-bridge.c  | 49 +++++++++++++++++++
+> >>  3 files changed, 60 insertions(+)
+> >>  create mode 100644 drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
+> >>
+> >> diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
+> >> index a250afd8d662..559487aa09a9 100644
+> >> --- a/drivers/gpu/drm/bridge/Kconfig
+> >> +++ b/drivers/gpu/drm/bridge/Kconfig
+> >> @@ -30,6 +30,16 @@ config DRM_AUX_HPD_BRIDGE
+> >>  	  Simple bridge that terminates the bridge chain and provides HPD
+> >>  	  support.
+> >>  
+> >> +if DRM_AUX_HPD_BRIDGE
+> >> +config DRM_AUX_HPD_TYPEC_BRIDGE
+> >> +	tristate
+> >> +	depends on TYPEC || !TYPEC
+> >> +	default TYPEC
+> >> +	help
+> >> +	  Simple bridge that terminates the bridge chain and provides HPD
+> >> +	  support. It build bridge on each USB-C connector device node.
+> >> +endif
+> >> +
+> > 
+> > Should CONFIG_TYPEC_DP_ALTMODE select this one? Otherwise, we need to do it
+> > manually.
+> > 
+> > $ grep -nr --include=Kconfig "select DRM_AUX_HPD_BRIDGE" .
+> > ./drivers/soc/qcom/Kconfig:118: select DRM_AUX_HPD_BRIDGE
+> > ./drivers/usb/typec/ucsi/Kconfig:88:    select DRM_AUX_HPD_BRIDGE if DRM_BRIDGE && OF
+> > ./drivers/usb/typec/ucsi/Kconfig:99:    select DRM_AUX_HPD_BRIDGE if DRM_BRIDGE && OF
+> > ./drivers/usb/typec/tcpm/Kconfig:62:    select DRM_AUX_HPD_BRIDGE if DRM_BRIDGE && OF
+> > ./drivers/usb/typec/tcpm/Kconfig:85:    select DRM_AUX_HPD_BRIDGE if DRM_BRIDGE && OF
+> > 
+> 
+> That's a fair point. But based on the previous discussion, Heikki
+> point out that configurations in the TYPEC subsystem should not
+> select configurations from DRM.
 
-There is no technical dependency on tsens for SD card. The mentioned dependency
-series was to ensure the changes get picked up without conflicts.
+I have just reviewed your previous patchsets but I did't find such opinion from
+Heikki. Otherwise, why are tcpm.c/ucsi.c already allowed to add the above select
+condition in their configs?
 
-In the next patch series, only the actual dependenices will be mentioned in the
-cover letter.
+I think Heikki means that the DRM_AUX_HPD_BRIDGE shouldn't been selected at the
+top level of Type-C subsystem. Because not all Type-C devices support the DP function.
 
-Regards,
-Monish 
+As a generic Type-C DP HPD bridge, displayport.c will likely need to use it in
+the future. Therefore, allowing displayport.c to select DRM_AUX_HPD_BRIDGE makes sense.
 
+According to my testing, it's impossible to build this driver in unless TYPEC_FUSB302
+or a relevant CONFIG is built in to select DRM_AUX_HPD_BRIDGE, or the defconfig is modified.
+
+Thanks,
+Xu Yang
 
 -- 
 linux-phy mailing list
