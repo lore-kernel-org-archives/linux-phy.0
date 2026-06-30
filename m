@@ -4,54 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ABFD1C43458
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Jun 2026 08:00:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7280C43458
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Jun 2026 09:56:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bgeXyT+NIsD5lvNmYd/axvo3behj6JR+CJ6AR0QRka8=; b=h68cGaET5o+Ebd
-	+LMXpb9UyY6vCOcov19mq/EFZEWSUuMLSp/sLAOVJ1k3mfHrZn5nAi1yPDwZEd+gx8I/B+bZ2yYyy
-	uYXuoq5O5oL6uAY68RPxnUnrZDCwamNv2ZSWQ/LMCBzzSJUAodhvaGkRS8skcRnOvtKmw/zx7IOD7
-	jpldS+qKHsyjsUtZYzrMuHtJ7BAGm0bi5sxgxsTw9y/bUv3a3pjBqmhWHsVuBlkHbWfAPZCM1PNDX
-	jt4PUwMKkPXd5AqjrUkWDzMY5hWcrxFDiPpbU1kXUyYzvw1ofA533MWWVtGi+LT5i1nXBQDIeBY53
-	C/MV/bQ1kmtIvDrLz7NA==;
+	List-Owner; bh=23EJZxIv71u99mgM8zPXFwoVlzYaVUt/72ejAsL0xBE=; b=plBU5euDrm/P1w
+	B3/dqDGwSCg07/rTN0g2SC9IhEEVKBSEgKHa7mcOwDA2xmPBWsF1bQmb6vWwRd/mM7kJtKDNYaCZW
+	WxgiA/mhTwFZzrG34/GT635dU1SsuBLaCyAEqn/EXUmk2Nl7wE3u24drVMLvsJRS3KYW+57kUK4tq
+	+/baEm//ulU2Fi4GPDbTJYzjbiGuvl6bkC7HMRly/XrjoOM0iMAf82rJpVzRRGXmB1ypoPHWjxxAT
+	f6mGO5hPDJ90LXA8eTIIAfdJtlbLy1VBxYXs197byjnbF/C5DQkND5zK40/yqgjWsAGfoPHJGYmpU
+	l32A7LFjZa623qSviVGw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1weTOZ-0000000GELg-1NAO;
-	Tue, 30 Jun 2026 08:00:39 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1weVD5-0000000GY81-1oqP;
+	Tue, 30 Jun 2026 09:56:55 +0000
+Received: from mgamail.intel.com ([192.198.163.11])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1weTOY-0000000GELZ-2FpF
-	for linux-phy@lists.infradead.org;
-	Tue, 30 Jun 2026 08:00:38 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 4DBA4403F1;
-	Tue, 30 Jun 2026 08:00:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B5CE21F000E9;
-	Tue, 30 Jun 2026 08:00:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1782806438;
-	bh=aklCtIdwAuaV/IkYc3oYr7mTqO/RWDS/WnA9iYfqABI=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=n+jtMy76AtRUPWNey7Uh6bCpahTZ15+A+d5vimKhXap0eKxXdW+zpGiUzwliEf3Vm
-	 /CDYW/kLw2E8/y8UWTfGcI2DZadOm/ejXe1eqqq+oOdlgMfU+QGtuXiGjARIVAFII9
-	 15sMxCzyLbxSFRDkWRVssYHA64gZmOLdmc5zItyorHySHMUKXOnX/PzY0XCDAuqMyU
-	 wJXPEew2/xCHf2+tabUGwuX6OqbQKP9JDjQg+L3yW1UJHFVzfgU8+1Qe1C5jddTiCY
-	 9MgBIpJcBb2wbsXLiVo0cNVIuMDmDWufXalyoBjQiWft+4s3XoEhIHwTKWFTyRj6lp
-	 ZKxT1nXgRx54w==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v3 1/3] phy: rockchip: phy-rockchip-inno-csidphy: fix
- rk1808 hsfreq table
-To: "Gerald Loacker" <gerald.loacker@wolfvision.net>
-Cc: robh@kernel.org, devicetree@vger.kernel.org, vkoul@kernel.org, olteanv@gmail.com, conor+dt@kernel.org, linux-phy@lists.infradead.org, neil.armstrong@linaro.org
-In-Reply-To: <20260630-feature-mipi-csi-dphy-4k60-v3-1-176792ab71fa@wolfvision.net>
-References: <20260630-feature-mipi-csi-dphy-4k60-v3-0-176792ab71fa@wolfvision.net>
- <20260630-feature-mipi-csi-dphy-4k60-v3-1-176792ab71fa@wolfvision.net>
-Date: Tue, 30 Jun 2026 08:00:37 +0000
-Message-Id: <20260630080037.B5CE21F000E9@smtp.kernel.org>
+	id 1weVD2-0000000GXdT-2ete;
+	Tue, 30 Jun 2026 09:56:53 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1782813413; x=1814349413;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=yFdNZwVFhbbRd/mn/WFs5v2ropeqaVxom/v/MdhKyJ0=;
+  b=fLI7Ie3lD17HCHOTa+ajHwatRHqWWYF8EVzYrOj3c1XN9y1rksLlqtnK
+   xlvTRORniLdlViG83qX2qCyF4xpjPtbO/94fpMOc8sSDqP441qW2Q4eex
+   qvEL5RL+TSCr9tflsqnb8X9Ej3SWlcshn+DArTyHVJFvwwfUBvivSNRa0
+   ajnBEgQg5ReiQKKjpoD9RpbrBw0GByi8cU3p5jphw2uF4OEA6GxMc2TRm
+   ENs0nUONvkvE4cZDVQlj9G6il8C9811yRNS/9E5TpAsyFhVMecia4VjgA
+   JZ5FwqPQI+3ASYS58hazuex6/aSESN6sySkDhKsM1BolNrRWDBDTg+t0j
+   w==;
+X-CSE-ConnectionGUID: JL4v8ztKQW6BgaUj82OioQ==
+X-CSE-MsgGUID: tqHp+n/GS/GOTrNvIGGrog==
+X-IronPort-AV: E=McAfee;i="6800,10657,11832"; a="94121340"
+X-IronPort-AV: E=Sophos;i="6.24,233,1774335600"; 
+   d="scan'208";a="94121340"
+Received: from fmviesa004.fm.intel.com ([10.60.135.144])
+  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 30 Jun 2026 02:54:52 -0700
+X-CSE-ConnectionGUID: 0hz0Ybo9T4ahdiG68gNfsA==
+X-CSE-MsgGUID: wmd5dzvtSaeoUTNv7c+DrA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.24,233,1774335600"; 
+   d="scan'208";a="254135822"
+Received: from black.igk.intel.com ([10.91.253.5])
+  by fmviesa004.fm.intel.com with ESMTP; 30 Jun 2026 02:54:44 -0700
+Received: by black.igk.intel.com (Postfix, from userid 1008)
+	id 6175195; Tue, 30 Jun 2026 11:54:43 +0200 (CEST)
+Date: Tue, 30 Jun 2026 12:54:41 +0300
+From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+To: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+Cc: Xu Yang <xu.yang_2@oss.nxp.com>, Chaoyi Chen <kernel@airkyi.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	Peter Chen <hzpeterchen@gmail.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Yubing Zhang <yubing.zhang@rock-chips.com>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Robert Foss <rfoss@kernel.org>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Amit Sunil Dhamne <amitsd@google.com>,
+	Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
+	Diederik de Haas <didi.debian@cknow.org>,
+	Peter Robinson <pbrobinson@gmail.com>,
+	Hugh Cole-Baker <sigmaris@gmail.com>, linux-usb@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH v15 1/9] drm/bridge: Implement generic USB Type-C DP HPD
+ bridge
+Message-ID: <akOSYXV7zRY4inSo@kuha>
+References: <20260304094152.92-1-kernel@airkyi.com>
+ <20260304094152.92-2-kernel@airkyi.com>
+ <erx73m2ueuvbzjteadjli6aki5by4pr3hyertkkqqoqwhaa4v3@5cstmshcercx>
+ <56c6abb8-c127-449f-9368-12f94620c2bc@rock-chips.com>
+ <k53t2soc3nxhwugncatksektig6agxfgdkogkdwbhrhu2fn2g7@auvsfrv76wxy>
+ <b2633b22-da30-4778-8e23-7b5bed9ead07@rock-chips.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <b2633b22-da30-4778-8e23-7b5bed9ead07@rock-chips.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260630_025652_681045_51FF5B52 
+X-CRM114-Status: GOOD (  13.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,69 +115,35 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
-IFtIaWdoXSBWYWxpZCBsb3ctZnJlcXVlbmN5IGNvbmZpZ3VyYXRpb25zIGFyZSBpbmNvcnJlY3Rs
-eSByZWplY3RlZCBiZWNhdXNlIGEgYGNmZ19iaXRgIHZhbHVlIG9mIGAweDAwYCBjb25mbGljdHMg
-d2l0aCB0aGUgZGVmYXVsdCAnbm90IGZvdW5kJyBzZW50aW5lbC4KLSBbSGlnaF0gVGhlIGByazMz
-NjhfZ3JmX2RwaHlfcmVnc2AgYXJyYXkgaXMgbWlzc2luZyBhbiBleHBsaWNpdCBzaXplIGFuZCBv
-bmx5IGluaXRpYWxpemVzIGluZGV4IDAsIG1lYW5pbmcgaXQgaXMgY29tcGlsZWQgYXMgYW4gYXJy
-YXkgb2Ygc2l6ZSAxLiBgcm9ja2NoaXBfaW5ub19jc2lkcGh5X3Bvd2VyX29uKClgIHVuY29uZGl0
-aW9uYWxseSBpbmRleGVzIGludG8gdGhpcyBhcnJheSBhdCBpbmRpY2VzIDEgYW5kIDIsIGNhdXNp
-bmcgYW4gb3V0LW9mLWJvdW5kcyByZWFkIGFuZCBhbiBlcnJvbmVvdXMgd3JpdGUgdG8gYW4gdW5k
-ZWZpbmVkIEdSRiByZWdpc3RlciBvZmZzZXQuCi0tCgpjb21taXQgNGNjMzUwZmYzYTNiZmRjYjYy
-MDRkZGMyMzU3MTcyMzg1ZmJlNGQyYQpBdXRob3I6IEdlcmFsZCBMb2Fja2VyIDxnZXJhbGQubG9h
-Y2tlckB3b2xmdmlzaW9uLm5ldD4KCnBoeTogcm9ja2NoaXA6IHBoeS1yb2NrY2hpcC1pbm5vLWNz
-aWRwaHk6IGZpeCByazE4MDggaHNmcmVxIHRhYmxlCgpUaGUgcmsxODA4IGhzZnJlcSB0YWJsZSBw
-cmV2aW91c2x5IGNhcHBlZCBhdCAyNDk5IE1icHMuIFRoaXMgY29tbWl0CmV4dGVuZHMgdGhlIGZp
-bmFsIGVudHJ5IHRvIDI1MDAgTWJwcyB0byBzdXBwb3J0IHRoaXMgZXhhY3QgZGF0YSByYXRlLAp3
-aGljaCBpcyBlc3NlbnRpYWwgZm9yIHRoZSBSSzM1ODggcGxhdGZvcm0gcmV1c2luZyB0aGlzIGFy
-cmF5LgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLWlu
-bm8tY3NpZHBoeS5jIGIvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLWlubm8tY3Np
-ZHBoeS5jCj4gaW5kZXggYzc5ZmI1M2Q4ZWU1Yy4uNTI4MWY4ZGVhMGFkMyAxMDA2NDQKPiAtLS0g
-YS9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtaW5uby1jc2lkcGh5LmMKPiArKysg
-Yi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtaW5uby1jc2lkcGh5LmMKPiBAQCAt
-MTcwLDcgKzE3MCw3IEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3QgaHNmcmVxX3JhbmdlIHJrMTgwOF9t
-aXBpZHBoeV9oc2ZyZXFfcmFuZ2VzW10gPSB7Cj4gIAl7IDI5OSwgMHgwNn0sIHsgMzk5LCAweDA4
-fSwgeyA0OTksIDB4MGJ9LCB7IDU5OSwgMHgwZX0sCj4gIAl7IDY5OSwgMHgxMH0sIHsgNzk5LCAw
-eDEyfSwgeyA5OTksIDB4MTZ9LCB7MTE5OSwgMHgxZX0sCj4gIAl7MTM5OSwgMHgyM30sIHsxNTk5
-LCAweDJkfSwgezE3OTksIDB4MzJ9LCB7MTk5OSwgMHgzN30sCj4gLQl7MjE5OSwgMHgzY30sIHsy
-Mzk5LCAweDQxfSwgezI0OTksIDB4NDZ9Cj4gKwl7MjE5OSwgMHgzY30sIHsyMzk5LCAweDQxfSwg
-ezI1MDAsIDB4NDZ9Cj4gIH07CgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgaXNuJ3QgYSBidWcgaW50
-cm9kdWNlZCBieSB0aGlzIHBhdGNoLCBidXQgd2hpbGUgcmV2aWV3aW5nIHRoZSBmcmVxdWVuY3kK
-dGFibGVzIEkgbm90aWNlZCBhIHBvdGVudGlhbCBwcm9ibGVtIGluIGhvdyB0aGUgc2VsZWN0ZWQg
-Y29uZmlndXJhdGlvbiBpcwpldmFsdWF0ZWQgbGF0ZXIgaW4gdGhlIGRyaXZlci4KCklmIGEgZGF0
-YSByYXRlIG1hcHMgdG8gYSBjb25maWd1cmF0aW9uIHdoZXJlIHRoZSBjZmdfYml0IGlzIDB4MDAs
-IHdpbGwKcm9ja2NoaXBfaW5ub19jc2lkcGh5X2NvbmZpZ3VyZSgpIGluY29ycmVjdGx5IHJlamVj
-dCBpdD8KCkluIHJvY2tjaGlwX2lubm9fY3NpZHBoeV9jb25maWd1cmUoKToKICAgIGlmICghaHNm
-cmVxKQogICAgICAgIHJldHVybiAtRUlOVkFMOwoKSXQgc2VlbXMgdGhpcyBjaGVjayB1c2VzIDB4
-MDAgYXMgYSBub3QgZm91bmQgc2VudGluZWwsIGJ1dCB2YWxpZCBsb3cKZnJlcXVlbmN5IHJhbmdl
-cyBtaWdodCBsZWdpdGltYXRlbHkgdXNlIDB4MDAgYXMgdGhlaXIgY29uZmlndXJhdGlvbiB2YWx1
-ZS4KVGhpcyBzYW1lIGxvZ2ljIGlzIGFsc28gcHJlc2VudCBpbiBya19kcGh5X2NvbmZpZ3VyZSgp
-IGluCnBoeS1yb2NrY2hpcC1kcGh5LXJ4MC5jLiBEb2VzIHRoaXMgcHJldmVudCB0aGUgaGFyZHdh
-cmUgZnJvbSBvcGVyYXRpbmcgYXQKdGhvc2UgbG93IGZyZXF1ZW5jaWVzPwoKW1NldmVyaXR5OiBI
-aWdoXQpUaGlzIGlzIGFsc28gYSBwcmUtZXhpc3RpbmcgaXNzdWUsIGJ1dCBJIG5vdGljZWQgYW4g
-b3V0LW9mLWJvdW5kcyBhcnJheQphY2Nlc3MgaW4gdGhpcyBkcml2ZXIgZm9yIHRoZSBSSzMzNjgg
-cGxhdGZvcm0uCgpUaGUgcmszMzY4X2dyZl9kcGh5X3JlZ3MgYXJyYXkgaXMgaW5pdGlhbGl6ZWQg
-d2l0aCBvbmx5IGEgc2luZ2xlIGVsZW1lbnQ6CgpzdGF0aWMgY29uc3Qgc3RydWN0IGRwaHlfcmVn
-IHJrMzM2OF9ncmZfZHBoeV9yZWdzW10gPSB7CiAgICBbR1JGX0RQSFlfQ1NJUEhZX0ZPUkNFUlhN
-T0RFXSA9IFBIWV9SRUcoUkszMzY4X0dSRl9TT0NfQ09ONl9PRkZTRVQsIDQsIDgpLAp9OwoKSG93
-ZXZlciwgcm9ja2NoaXBfaW5ub19jc2lkcGh5X3Bvd2VyX29uKCkgdW5jb25kaXRpb25hbGx5IGFj
-Y2Vzc2VzCmluZGljZXMgYmV5b25kIHRoaXM6CgogICAgd3JpdGVfZ3JmX3JlZyhwcml2LCBHUkZf
-RFBIWV9DU0lQSFlfQ0xLTEFORV9FTiwgMHgxKTsKICAgIHdyaXRlX2dyZl9yZWcocHJpdiwgR1JG
-X0RQSFlfQ1NJUEhZX0RBVEFMQU5FX0VOLAogICAgICAgICAgICAgICAgICBHRU5NQVNLKHByaXYt
-PmNvbmZpZy5sYW5lcyAtIDEsIDApKTsKCkNvdWxkIHRoaXMgcmVhZCBwYXN0IHRoZSBlbmQgb2Yg
-dGhlIDEtZWxlbWVudCBhcnJheSBhbmQgY2F1c2UgYW4gZXJyb25lb3VzCndyaXRlIHRvIGFuIHVu
-ZGVmaW5lZCByZWdpc3RlciBvZmZzZXQgaWYgdGhlIGFkamFjZW50IG1lbW9yeSBldmFsdWF0ZXMg
-YXMKdmFsaWQ/CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8j
-L3BhdGNoc2V0LzIwMjYwNjMwLWZlYXR1cmUtbWlwaS1jc2ktZHBoeS00azYwLXYzLTAtMTc2Nzky
-YWI3MWZhQHdvbGZ2aXNpb24ubmV0P3BhcnQ9MQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QK
-bGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+> @Heikki, what do you think of the following change?
+> Should we add a new patch for this? Thanks.
+> 
+> diff --git a/drivers/usb/typec/altmodes/Kconfig b/drivers/usb/typec/altmodes/Kconfig
+> index 7867fa7c405d..f89cdf3c949b 100644
+> --- a/drivers/usb/typec/altmodes/Kconfig
+> +++ b/drivers/usb/typec/altmodes/Kconfig
+> @@ -5,6 +5,7 @@ menu "USB Type-C Alternate Mode drivers"
+>  config TYPEC_DP_ALTMODE
+>         tristate "DisplayPort Alternate Mode driver"
+>         depends on DRM
+> +       select DRM_AUX_HPD_BRIDGE 
+>         help
+>           DisplayPort USB Type-C Alternate Mode allows DisplayPort
+>           displays and adapters to be attached to the USB Type-C
+
+This look good to me. Please do add the patch for this.
+
+thanks,
+
+-- 
+heikki
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
