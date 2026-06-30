@@ -4,68 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C52ECC43458
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Jun 2026 19:22:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D31D1C43602
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Jun 2026 19:25:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=NWj6i2GOqQ9+iaTtY9G5Ul9OtpyorRCFvXnPZ/d/BLA=; b=wr27c4oqZymYQL
-	Pfwm5AEnByxBat8jIHzeNxEvXa3YHn5kDkvZozP5Q0zzzVCgrz/3icJEzhJ14NIFkFn/SJoxtcrvO
-	b5gh0htLENiUhG0dIjRMEC+2v2HlsRpEnDjvymq24HHrSu9ZRYQstVC7jYL3sMaE7Jm1tMBryrj8h
-	cHsMYR6Dj63MYmRwPIk2pKnRl6zEgnPbAkx6tplFlAJDGIxaeXZyQWrx61ZixRV9ONo1rVlRnllz+
-	/Xn0AuE1MxVq3o8I/lg0qDHg/FJSJpvu57uWxL66KXbqBFh1L84zJjvTxkD+1nbF0+C0+MMwTslx7
-	NCJ02jwRPlhhUg7nAxWw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=x+0VMHtmKRA6w5COelnyc5jHkls7gtwJNzvSzPrr1Bc=; b=S42oi/PVm3i0vS
+	msfcuUB+2PGzXsBiWXbzjBF5Sm+AEw27RD9mpmp1IV8tfW+T4Um8F8kERnSrJV8SNoh051pam8G9k
+	zZglqyo/10G7jBVksFrCRN0vCeBQ4hrRe1pu8tBQu795/PS9JCqyyWDmrehkWxZAO56VasbgH3B2h
+	m7TKB+IuLAXeP5fey8M4pveEMP/U4CGcXs1XndJtqgTbE1w1MwQKYok3mMnRvWpyP4nzIgYZSnvlf
+	2ElX6fG9cievq8bDUnE55RkicmYowTcIHt9A4jSLLUXQrsiZ5xxnwryfhKwmqITJ47DU3umm8HGpT
+	JiZi9yGnDgwEWGWl9xyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wee2g-0000000075b-2Kxx;
-	Tue, 30 Jun 2026 19:22:46 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wee5c-000000007Rz-1iuc;
+	Tue, 30 Jun 2026 19:25:48 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wee2X-0000000072r-3ZpQ
-	for linux-phy@lists.infradead.org;
-	Tue, 30 Jun 2026 19:22:38 +0000
+	id 1wee5a-000000007RF-345r;
+	Tue, 30 Jun 2026 19:25:46 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 8B44543F34;
-	Tue, 30 Jun 2026 19:22:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3EF2C1F00A3A;
-	Tue, 30 Jun 2026 19:22:37 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 19F5E437F8;
+	Tue, 30 Jun 2026 19:25:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C8F731F000E9;
+	Tue, 30 Jun 2026 19:25:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1782847357;
-	bh=93+khCzYAxSuZ6LAEDHQmhDcBOzCoIbxXWmUh6yplEs=;
-	h=Date:From:To:Cc:Subject:In-Reply-To;
-	b=nz0M/7vsVhwb0KqueOLLKIaOEdw/r77pfoDWR/QRvJRlF9Lso4B/URWwYHVsWxXOm
-	 p95jCHvlo9k0RPeP+2NDP8OI7dIj6TZ3N3zQ50um+qzPLwwW/vo/AG5yzelDF6w8bM
-	 YunrhVD746DO8HyOajx7JbmLqf+UhrtZAn+x0yNjwbc6fVeWnC85AhRcN1CsYiSb00
-	 391uAs5DSybPVvI+QoxOGett5drXd63ntnXxZXSGB1Ydh2pgQl4BHwYJaencGZlKiU
-	 EkLbIxout9q3KhhqryruTvRLvi3wKtROK1N+RXQQEYqBROFN1aBM+FKC+8nH0yMkty
-	 sMRHi/HqTj2yA==
-Date: Tue, 30 Jun 2026 14:22:36 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Sushrut Shree Trivedi <sushrut.trivedi@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>,
+	s=k20260515; t=1782847546;
+	bh=LTrA9g5qo+wGJ1gI/ApiYTCUbrzQgSfo23idl+HlRRg=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=ZL83Ybq49JV55XfuhdylUTFvAhxCS0TvJxx2mxr9NC5FsSU5OYl+ErsanMZ/c0gxW
+	 ZcaxRI3FDnpwDC5EQPI3HmnxbLf2dLd3g5mXtzXf6obKzXNiujZOAY5ZkA4N6FwHFy
+	 nAv1VdmT+WWIqCbkmzbHmky6vb/spnpUX3pcBi0xFmcgYfGJVvrT1LNW1aTUu0Hnkm
+	 ZMQc6dkuE/DPt39sILJbGPf2BXQS4e+8iLCJvFTTJMT1hlDTahCXX8QOGz5rE2r6cs
+	 PnHLkRsR2AC5URHagRma3NG4HBdt5umcRVo4jsqQIHo1Eu6cwjyaTbZjkEM2rbjXRl
+	 KeI0Ee5XAaS+A==
+Date: Tue, 30 Jun 2026 14:25:45 -0500
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Gerald Loacker <gerald.loacker@wolfvision.net>
+Cc: Conor Dooley <conor+dt@kernel.org>, linux-kernel@vger.kernel.org,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
-	Bartosz Golaszewski <brgl@kernel.org>,
-	Konrad Dybcio <konradybcio@kernel.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-pci@vger.kernel.org
-Subject: Re: [PATCH 3/9] dt-bindings: PCI: Add bindings for endpoint gpios
-Message-ID: <20260630192236.GA222338@bhelgaas>
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
+	devicetree@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>,
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH v3 2/3] dt-bindings: phy: rockchip-inno-csi-dphy: add
+ rockchip,clk-lane-phase property
+Message-ID: <178284754478.82737.4770095981342524898.robh@kernel.org>
+References: <20260630-feature-mipi-csi-dphy-4k60-v3-0-176792ab71fa@wolfvision.net>
+ <20260630-feature-mipi-csi-dphy-4k60-v3-2-176792ab71fa@wolfvision.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260701-shikra-upstream-v1-3-e1a721eb8943@oss.qualcomm.com>
+In-Reply-To: <20260630-feature-mipi-csi-dphy-4k60-v3-2-176792ab71fa@wolfvision.net>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,19 +75,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jul 01, 2026 at 12:32:45AM +0530, Sushrut Shree Trivedi wrote:
-> Add devicetree bindings for TC9563 GPIO's which are
-> used to control endpoint power and reset.
 
-Include context in subject line.  Regrettably, previous commits to
-toshiba,tc9563.yaml don't include that either, but I think something
-like this would be good:
+On Tue, 30 Jun 2026 09:48:25 +0200, Gerald Loacker wrote:
+> Add support for the optional rockchip,clk-lane-phase device tree property
+> to allow board-specific tuning of the clock lane sampling phase for
+> improved signal integrity across supported data rates.
+> 
+> Signed-off-by: Gerald Loacker <gerald.loacker@wolfvision.net>
+> ---
+>  .../devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml        | 10 ++++++++++
+>  1 file changed, 10 insertions(+)
+> 
 
-  dt-bindings: PCI: toshiba,tc9563: Add endpoint GPIO bindings
+Acked-by: Rob Herring (Arm) <robh@kernel.org>
 
-s/GPIO's/GPIOs/
-
-Wrap to fill 75 columns.
 
 -- 
 linux-phy mailing list
