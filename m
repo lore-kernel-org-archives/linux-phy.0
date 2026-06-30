@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EFB7CC43458
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Jun 2026 19:28:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16C31C43327
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Jun 2026 19:29:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
 	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=fFhH2xdqj14TWfBDblOaJWII59yYJqlYcMTnq/CS69U=; b=Dr6qUDg5AOErTY
-	pEda6M6seFv6sdtYLF3izbgcpmspKReawGDvn+2OgisCkb2+gwJ3b6KmO02oBebvjT1VpF6eFWWpM
-	6PcF1wAxogkQKoR5p8PZjWR3B2Ij4/GKixpcZJnM8deEBjEnOL48iOvCdsblx1F+I4GVnkrYe645Q
-	yU6XOCQktTNsrVeX1PjNMYxn1X8wHavSTF5pVZUvD0Tfz9P5ufcewDzojyUwkw5pejd2UUFLfGCZn
-	96urdUIKB40qmVq3uAMKUuF6X1lW+GzoUQVgtMwES+A9ubajpf78qYBmJOniaPtSErzUx5nvjbbYG
-	PpQkFC6kvyZ6Sdgy7WVA==;
+	List-Owner; bh=Dsz5V+kOetMiaCJQ06nARpcM7ma/2FA35fCapQ/yHlk=; b=gW3sc0b7iiuKZi
+	hDnq6uFn8z5Wei9rYTqIOJohlLHs2HiLhRiyuvC9EWAiR4NRweZVV7R2c653HNqCq636gDt45UUmC
+	yMMRtjIxi+SjnO+6Z8UCDS51sCQrdfOULeNfj6OSoH+XRH4FR0CExr4yNVLZIaBHKR+11miLvz3wP
+	vBj9w5P00nc2Dvn+RxialCqaAldr5cZlif4sV2/6c1prMmRNoXUKPX/UHMbWGEClaW2/KviXMm1je
+	AlCADyycUSMeU2rWDJ9Hb/JK11Feuv7LNNEaYWwdydb+srKCTv5XxDwdVzTQ3hiabDydr6f1u59qv
+	Yamd6lRN1GbWryOjYHIA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wee8U-000000007lg-31mj;
-	Tue, 30 Jun 2026 19:28:46 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wee9S-000000007oS-3ZNk;
+	Tue, 30 Jun 2026 19:29:46 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wee8P-000000007lW-1AEq
+	id 1wee9S-000000007oM-1XnU
 	for linux-phy@lists.infradead.org;
-	Tue, 30 Jun 2026 19:28:41 +0000
+	Tue, 30 Jun 2026 19:29:46 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 7DBC3600BB;
-	Tue, 30 Jun 2026 19:28:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 066301F000E9;
-	Tue, 30 Jun 2026 19:28:39 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 956B7600DA;
+	Tue, 30 Jun 2026 19:29:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1ED541F00A3A;
+	Tue, 30 Jun 2026 19:29:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1782847720;
-	bh=3xUokEw784jqQMjsVSWEIlpIvgdkj7DJezvHEDxld74=;
+	s=k20260515; t=1782847785;
+	bh=fSzRtKVMoXI7+HHGIKAFEIMBcfBqFTGvZ1qEttKO60E=;
 	h=Date:From:To:Cc:Subject:In-Reply-To;
-	b=lSJnHV0+4/HlK6Dfa3TlgXQOJUzfXRh45Bll5pkrCzjICnIWpk4nu2YnHV7Lwa/yL
-	 J25kjic5DcursnlXyfXShrJOlzDW/rurYoFUewp023b3X2NqZGkeWWKRUnOdpJLuHQ
-	 nYw6MZjcQacksfZH7wrSO5hWgd/oV9LhKARcy8+68nTPQ/GDz2LkMWuCfGes4NwoZB
-	 zYDGKh5uiy8NhomL2Ct1agvdovSbFp1+uQDfWHScdJwlLjZRJVBIS2q+y7NKiQSsLL
-	 651919KORECiUqE0cKqyd+SadUX2xnNI7+lyCNiksRDIq0D0GVHCiJCZxBPel0BfKz
-	 J0W2jSfOvTsbw==
-Date: Tue, 30 Jun 2026 14:28:38 -0500
+	b=B2AIDKh5vbGFBuOg6hOx6tdHmaWWwzMFzTu6BS2ggeDQO9KhP6owJCRkl8I7qxlBp
+	 ECPDP5pOgm2JAt74VH4OUJsu5aYNAg6A/L2YR4PPhxeDLFp1x7CzUZe+9vmhA0sZ9D
+	 X6hOdFpOm7x5ck+JJJPQmK702bZ4hCPDZUwjDJRi/n4HMA+zAHqds+WajiGX7r4baJ
+	 6dUHPXQvZQGfrKnO3eJt/E/Yk2STTm/M/p7wRnbfKh7xLZao2UAhioaDPK08cWiYe+
+	 PTYBhUwha03uTbtfVDRPMKh26Y/L/5Rz9zW+Ohwy0mSSp+hbedhj0eVoz5H+L0Q0CG
+	 yFF9nsIzeyLVw==
+Date: Tue, 30 Jun 2026 14:29:44 -0500
 From: Bjorn Helgaas <helgaas@kernel.org>
 To: Sushrut Shree Trivedi <sushrut.trivedi@oss.qualcomm.com>
 Cc: Vinod Koul <vkoul@kernel.org>,
@@ -61,12 +61,12 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
 	linux-pci@vger.kernel.org
-Subject: Re: [PATCH 6/9] PCI/pwrctrl: tc9563: Add API to control endpoint
- power and reset
-Message-ID: <20260630192838.GA223662@bhelgaas>
+Subject: Re: [PATCH 7/9] arm64: dts: qcom: shikra: Add PCIe PHY and
+ controller nodes
+Message-ID: <20260630192944.GA224708@bhelgaas>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260701-shikra-upstream-v1-6-e1a721eb8943@oss.qualcomm.com>
+In-Reply-To: <20260701-shikra-upstream-v1-7-e1a721eb8943@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,23 +83,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jul 01, 2026 at 12:32:48AM +0530, Sushrut Shree Trivedi wrote:
-> Some platform utilise TC9563 GPIOs to enable power and
-> control reset of endpoints.
-> 
-> This patch adds support to parse endpoint reset and power enable
-> gpios from each TC9563 port node in the devicetree. To configure
-> these GPIO's during the POWER ON sequence, two new API's are
-> introduced: tc9563_ep_pwr_en() and tc9563_ep_assert_deassert_reset().
+On Wed, Jul 01, 2026 at 12:32:49AM +0530, Sushrut Shree Trivedi wrote:
+> Shikra supports single PCIe instance with  5GT/s x1 lane.
 
-s/Some platform utilise/Some platforms utilise/
-s/This patch adds/Add/
-s/gpios/GPIOs/
-
-  Add tc9563_ep_pwr_en() and tc9563_ep_assert_deassert_reset() to
-  configure these GPIOs during the power-on sequence.
-
-Wrap to fill 75 columns.
+s/  / /
+s/lane/link/
 
 -- 
 linux-phy mailing list
