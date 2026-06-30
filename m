@@ -4,106 +4,148 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7280C43458
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Jun 2026 09:56:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08824C43458
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Jun 2026 10:08:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=23EJZxIv71u99mgM8zPXFwoVlzYaVUt/72ejAsL0xBE=; b=plBU5euDrm/P1w
-	B3/dqDGwSCg07/rTN0g2SC9IhEEVKBSEgKHa7mcOwDA2xmPBWsF1bQmb6vWwRd/mM7kJtKDNYaCZW
-	WxgiA/mhTwFZzrG34/GT635dU1SsuBLaCyAEqn/EXUmk2Nl7wE3u24drVMLvsJRS3KYW+57kUK4tq
-	+/baEm//ulU2Fi4GPDbTJYzjbiGuvl6bkC7HMRly/XrjoOM0iMAf82rJpVzRRGXmB1ypoPHWjxxAT
-	f6mGO5hPDJ90LXA8eTIIAfdJtlbLy1VBxYXs197byjnbF/C5DQkND5zK40/yqgjWsAGfoPHJGYmpU
-	l32A7LFjZa623qSviVGw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Cc:To:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nl89eKcd62adsdEkDwTrNsTEhvJySmPATUBd2R4tusk=; b=MfkMRM6Oz/edO1
+	fLcxkdd1p00crqUpFAM3UWQaxUFrE7Bvpy4YakONntnncMWgnt/RHbAlblVAVV7NDySyDA1j4yzF9
+	lxmwc0bibFO8CMKjmb0IxwqNEshPBIrmfO3r/i87Juns7XmSAcY1x3gHtGNUxPD73fTRhw5yUdcCw
+	FAXtVX2KA2g5JbGjiBxcwmUr688HtqOeb+3QcZWQHFBSX02+J4CWjuIXP2K7oJB2GDJhtpbSwYNFb
+	YncO57K9zLpenfln1AyE12ush7kXYrgBhS1WrRkCKdlvYFbxWmMbam0BBhRDA7kd/plx1X0SweV2B
+	Sv7lUsVn+IAhGvtf1P/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1weVD5-0000000GY81-1oqP;
-	Tue, 30 Jun 2026 09:56:55 +0000
-Received: from mgamail.intel.com ([192.198.163.11])
+	id 1weVOO-0000000GZwb-2U03;
+	Tue, 30 Jun 2026 10:08:36 +0000
+Received: from mail-swedencentralazon11013061.outbound.protection.outlook.com ([52.101.83.61] helo=GVXPR05CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1weVD2-0000000GXdT-2ete;
-	Tue, 30 Jun 2026 09:56:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1782813413; x=1814349413;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=yFdNZwVFhbbRd/mn/WFs5v2ropeqaVxom/v/MdhKyJ0=;
-  b=fLI7Ie3lD17HCHOTa+ajHwatRHqWWYF8EVzYrOj3c1XN9y1rksLlqtnK
-   xlvTRORniLdlViG83qX2qCyF4xpjPtbO/94fpMOc8sSDqP441qW2Q4eex
-   qvEL5RL+TSCr9tflsqnb8X9Ej3SWlcshn+DArTyHVJFvwwfUBvivSNRa0
-   ajnBEgQg5ReiQKKjpoD9RpbrBw0GByi8cU3p5jphw2uF4OEA6GxMc2TRm
-   ENs0nUONvkvE4cZDVQlj9G6il8C9811yRNS/9E5TpAsyFhVMecia4VjgA
-   JZ5FwqPQI+3ASYS58hazuex6/aSESN6sySkDhKsM1BolNrRWDBDTg+t0j
-   w==;
-X-CSE-ConnectionGUID: JL4v8ztKQW6BgaUj82OioQ==
-X-CSE-MsgGUID: tqHp+n/GS/GOTrNvIGGrog==
-X-IronPort-AV: E=McAfee;i="6800,10657,11832"; a="94121340"
-X-IronPort-AV: E=Sophos;i="6.24,233,1774335600"; 
-   d="scan'208";a="94121340"
-Received: from fmviesa004.fm.intel.com ([10.60.135.144])
-  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 30 Jun 2026 02:54:52 -0700
-X-CSE-ConnectionGUID: 0hz0Ybo9T4ahdiG68gNfsA==
-X-CSE-MsgGUID: wmd5dzvtSaeoUTNv7c+DrA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.24,233,1774335600"; 
-   d="scan'208";a="254135822"
-Received: from black.igk.intel.com ([10.91.253.5])
-  by fmviesa004.fm.intel.com with ESMTP; 30 Jun 2026 02:54:44 -0700
-Received: by black.igk.intel.com (Postfix, from userid 1008)
-	id 6175195; Tue, 30 Jun 2026 11:54:43 +0200 (CEST)
-Date: Tue, 30 Jun 2026 12:54:41 +0300
-From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-To: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-Cc: Xu Yang <xu.yang_2@oss.nxp.com>, Chaoyi Chen <kernel@airkyi.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-	Peter Chen <hzpeterchen@gmail.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Yubing Zhang <yubing.zhang@rock-chips.com>,
-	Frank Wang <frank.wang@rock-chips.com>,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Robert Foss <rfoss@kernel.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	Amit Sunil Dhamne <amitsd@google.com>,
-	Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
-	Diederik de Haas <didi.debian@cknow.org>,
-	Peter Robinson <pbrobinson@gmail.com>,
-	Hugh Cole-Baker <sigmaris@gmail.com>, linux-usb@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH v15 1/9] drm/bridge: Implement generic USB Type-C DP HPD
- bridge
-Message-ID: <akOSYXV7zRY4inSo@kuha>
-References: <20260304094152.92-1-kernel@airkyi.com>
- <20260304094152.92-2-kernel@airkyi.com>
- <erx73m2ueuvbzjteadjli6aki5by4pr3hyertkkqqoqwhaa4v3@5cstmshcercx>
- <56c6abb8-c127-449f-9368-12f94620c2bc@rock-chips.com>
- <k53t2soc3nxhwugncatksektig6agxfgdkogkdwbhrhu2fn2g7@auvsfrv76wxy>
- <b2633b22-da30-4778-8e23-7b5bed9ead07@rock-chips.com>
+	id 1weVOL-0000000GZvN-24gM;
+	Tue, 30 Jun 2026 10:08:35 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=kfWEuRnUMtxoCezBkXrZYDlAR63Zz0rTwmaw+qhDktZOJjr3TyONoqFkQ82Zzo+De3XyHInN5IYkXAaNzotkEFcuIw+6ZBdMnUviQP2XlfG+hhot6xmRLVkDPRuGP6ba5oBrTzEuQ4G15fzs/Bv7npqD1dmvwfKyCaJZJSnh5c7SWNYE/x6CbqJS5w5efmZPJe3bUkwUk6jFActdxQ0KBjSRCGTC6v/tlSnRLm9OXrN+5ZVh9ZC3ZtKRKcNjRchQbPdpzl5zsmh7uQY3ys2K9bTINN6IihXM6WyXZZRBLGZbPgzHFlCOkWCCW2dvmTxPs+/NMoF1GCT+nQSJbsfvbQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=MnSWt7Am1oIlrp6yusCdalohKmrnvHnZOFTY9NYxwb8=;
+ b=fXEbURPbfHrgRcsIWw11NKhDUZOZpRCI+mo8DBo287wgrA0Dw7Q71nsfmqwUiALkpOEsEZvw6+LzsofJP/0Fe/d8AWe3rWivvKsVdZu0rs+VjkDrIgj5YTi9vIm+AV+dNN2ych2+o6H6nulcALucuDpQSq28kYEqVhs/NLjlvdl2cW4S52/oNxvbORxV7PxS218+2H51eJs4AMfbuje5rFfT9NsUlK2LDoDaW2DtWQXr7I2HgZ+K0+cjYL/Vyh3+PoksaEuh9mPJPIQMETCNepuClO/co16psfyj6nhFqNOtHBzncWJrZfpwlVBBIKdSZ2LRpU/ixEmGCeCbfdZeYg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=MnSWt7Am1oIlrp6yusCdalohKmrnvHnZOFTY9NYxwb8=;
+ b=U7UUmKVgLhznAX42zue38XbfY7fwDSm9I03QUFWBpNBV5mtnA7neqNcoJYh0LteIw3ABON6iIc9gQavKeQR+2tD2Mjz151H7ag1wbS+Pfk10Ov4bnR4e1ypaKqkntHtZTHh8nG/WEEuDl9dZePEnzjucVlbDhhGhtN4wmgxZNN1K7fi5k/h9oGI8ZWqo3VIZvvNxx1iwd5CXSfu1PFRgpYNu6lrVA/fWh3JLDO0U+vkikyQ8HPb+ffsmL/Wcr6qSsNuW/COs5KkvslnX4ZsVcby3dT05DYZDjDPEEX7FOqSfNxQrw50KyrZZYtg9eus4i049/Hr/4XAGdsn2SjcHgw==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from PAXPR04MB9422.eurprd04.prod.outlook.com (2603:10a6:102:2b4::21)
+ by GV1PR04MB10991.eurprd04.prod.outlook.com (2603:10a6:150:206::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.159.19; Tue, 30 Jun
+ 2026 10:08:20 +0000
+Received: from PAXPR04MB9422.eurprd04.prod.outlook.com
+ ([fe80::54e:28bf:aa85:d25d]) by PAXPR04MB9422.eurprd04.prod.outlook.com
+ ([fe80::54e:28bf:aa85:d25d%4]) with mapi id 15.21.0159.018; Tue, 30 Jun 2026
+ 10:08:20 +0000
+From: Xu Yang <xu.yang_2@oss.nxp.com>
+Subject: [PATCH v5 0/5] phy: fsl-imx8mq-usb: few improvements
+Date: Tue, 30 Jun 2026 18:11:27 +0800
+Message-Id: <20260630-imx8mp-usb-phy-improvement-v5-0-25d616403844@nxp.com>
+X-B4-Tracking: v=1; b=H4sIAE+WQ2oC/33OvQ6CMBSG4Vsxna1pTqFUJ+/DONA/6dCftNhAC
+ PduITE6Mb5neL6zoKyT1RndTgtKuthsg6/Rnk9IDr1/aWxVbQQEGGEEsHUTdxG/s8BxmGvGFIp
+ 22o+4gQ4UJVxxBqgCMWljpx1/PGsPNo8hzftWodv1y9IjtlBMcNcbwQ2/9kKyu5/iRQaHNrQ0/
+ 1B7CDUVEqCUAUPrj/IHrev6AZOr770LAQAA
+X-Change-ID: 20260602-imx8mp-usb-phy-improvement-4272d308d862
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Frank Li <Frank.Li@nxp.com>, 
+ Sascha Hauer <s.hauer@pengutronix.de>, 
+ Pengutronix Kernel Team <kernel@pengutronix.de>, 
+ Fabio Estevam <festevam@gmail.com>, Jun Li <jun.li@nxp.com>
+Cc: linux-phy@lists.infradead.org, imx@lists.linux.dev, 
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Felix Gu <ustc.gu@gmail.com>, stable@vger.kernel.org, 
+ Xu Yang <xu.yang_2@nxp.com>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1782814305; l=1781;
+ i=xu.yang_2@nxp.com; s=20250815; h=from:subject:message-id;
+ bh=18kxzLZ2njX1rLkyLYUAnKvGaKr/peUvP+bMrr8HpkA=;
+ b=6h9DYm99OhchzfPqn3TVNo0+vfBo5/I7MtTCr1A5NFPRh8VCtvIZJllNvEoO2foXvsaZnLE6j
+ Tv5KWqCW8LHAQKdHEiiqMzxuk16Yr7iNVm/PVHzwe4DSAOvqemv16K8
+X-Developer-Key: i=xu.yang_2@nxp.com; a=ed25519;
+ pk=5c2HwftfKxFlMJboUe40+xawMtfnp5F8iEiv5CiKS+4=
+X-ClientProxiedBy: SI1PR02CA0037.apcprd02.prod.outlook.com
+ (2603:1096:4:1f6::13) To PAXPR04MB9422.eurprd04.prod.outlook.com
+ (2603:10a6:102:2b4::21)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <b2633b22-da30-4778-8e23-7b5bed9ead07@rock-chips.com>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9422:EE_|GV1PR04MB10991:EE_
+X-MS-Office365-Filtering-Correlation-Id: b5a2abaa-bb68-4032-3fc3-08ded68f82fa
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|366016|23010399003|19092799006|1800799024|18002099003|11063799006|56012099006|5023799004;
+X-Microsoft-Antispam-Message-Info: KxePcuI40PKaPP1RzLf5OQOFUbEO2DalL1amYoxkn3n+Jib/bmiJIJErPPkkN/GrxowSmL3CoGpPfofT50SDZdAxd5y6wDBAa62+zzHFpNOuYkwsy5DXkMJLaGJ5L59o40lrOADk9YzRRRuV4xnzxN8TS6OC+Mv6t/4dNlJVyIeXF/Os1SN9d4hSHt4vn9n39TOXdJqCdLtbp3hmx4tyvVL8rtKw8KAQW0s5h/ba82fVZNUzmHrPS5+FoeXjk2ONRnlA2Hmt6vAlZ3dMBaCoS+vHHfmiRY16ADZkOJ4l1ZyDCsTzVs9XAuAw2hgmzv+Vk0YurqxGI1PuWMY9D8BBybGVqaZydBHp2Q1+Ie+ZBdi/LbXNUFH0+IUJA7i0OIzfwusjIACAXq9d5RbnEqc+jnaGcvLm5FWjnnF8KlPtSthLN3NCpfVXaT271TRdbtTbOuuVgq7zumkguTZj+/jElGmNZYnvrTiOc5WwLeyrMO5dk7FzMvmN2rog3b4LIsqjLq6djKi86iJo9EH9jedSjBodyKLK/xr6nozjmOzLXSoBmoHFHVeSnmYcK8BxOQ56yboi0YNDlzADD21lqFtFwvtXog3rG7dYX5u2MCJM6n8Rh1HDjY5X6ua5nglmMc27
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9422.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(366016)(23010399003)(19092799006)(1800799024)(18002099003)(11063799006)(56012099006)(5023799004);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?WXVVdmtPOXNjRmJwb1ZKWGQ4Q1ZrSFlsY2I4cU52aHZSMmVVOVNoRmU1UENM?=
+ =?utf-8?B?SG02RG1ZeXhZNVVzQSsvTDk0anhmZ0xXRHNPQVJXN3BpZW8vNnNPVzJEbjYw?=
+ =?utf-8?B?TEJvYU1WRFZkSDRUbFdkR3VZd005eWlCMXJOUjA1KytVQms0VTZYNUMydVlh?=
+ =?utf-8?B?SC8yWW9lck5CUHNlQkxZeXZnSmtKVHQ1aVN4SEhsWnhVNEdmcEI3cDduVDcz?=
+ =?utf-8?B?RE1MSEFzb2l5N01kMHpEUGh6NjExOUg2NXJhVEN4Z0lHRkdnSzZsVmxNQm9i?=
+ =?utf-8?B?R0cvRHcrYVhUZy9oSlhINFNadzMwTS94UEVKQkNsclhuNzRTZU5OZnVJelA1?=
+ =?utf-8?B?U3ZhanhFQXlHM09LUUwyWjhpQkgxM3RzYzVEK2MwamJRU29hdCtVRUdwWGRl?=
+ =?utf-8?B?d21qVHBBUjFEajBRb0NmSTFYa1g2Wk5VelVUdE9RY1RPY2sycnBIMk15bnp3?=
+ =?utf-8?B?WDMrQm1HODN6NnFOaUxzcmIyUmRheXkvVWZaM1JYa0luVDBOQzlZV09SOGNV?=
+ =?utf-8?B?WlFPUVhtUjdxV0RremFLSzVINVRnL1ZJTXQzcmNjRm5XMWdLeFhvSC9xTEpw?=
+ =?utf-8?B?WjRHc3NZOVlsQzJDMC95NEF5OEljd1dkNFVjSjM4a0hkeHZoS0hjb0NsK04x?=
+ =?utf-8?B?Nm5jY2FsNmN0UW13VzRWdmwwcHBHK3dDd2liUExKeXBsbm91Z1ZQeW1XQVFk?=
+ =?utf-8?B?RHlVUUErZEhDdmFldXNMay94MDZ1SXZnMFNOSHZsMkJZNjNBbUNXa01hN29D?=
+ =?utf-8?B?ZXViMEZpOHVJZ1k3QnV6RE9Bbmp1enEySm91eHVRYnlidDluc3l5ZGo4RmUr?=
+ =?utf-8?B?ajAwU2FuL2RaYWhvY3VtQXpybVdZM0F4QTVJYzBYRUF2WU1oNFFpS2hoVXox?=
+ =?utf-8?B?ZTczaWdNSWVGQmdiVzcrRGp3dEtvSFBsaktMeWdhTzMyTjQ4Y0tRNXNNaFRQ?=
+ =?utf-8?B?SmpFK05IN2E3V0V3VkNxSmpTQU11Zi9zRVJUdEY1eklPa0VQK1ZpU2dqS3Y0?=
+ =?utf-8?B?dnZpTjhuQ3pNOWFubzh2WHJnMTRVQ3hhTXdON0EvSk1SWnAvRUI5akxmZ2Ix?=
+ =?utf-8?B?cW9DUi9ydGxJYUhTVUZaTUE5b1F3d1lDaVFiZnQwMkxQcHBHVVIxTkxUVEVu?=
+ =?utf-8?B?UjM4bk5rL3hicHd3eTE3bDcxdnMvdGhrZUFZenhvL1RGY1pCM01iNHVKUVVI?=
+ =?utf-8?B?aWdpaFEyUmN6T2pIYm9MbHBUekNGcmZTSWlrcUtyTEY2SlpKdGF6WlU2THQr?=
+ =?utf-8?B?aElBSGpNREZOL0YvcVNtYTAreHNQREM4Ync3bVpoVVozdnVxQ0RPKzFSTkpG?=
+ =?utf-8?B?QTdDaWJhRUtDVjBhR2ZvUmJVM1Q4QVhWdUFyS29zbkNoRk5pbDRENStmaDBN?=
+ =?utf-8?B?SVA1WmUwNlVuZnVXN2FrakFZSTY1UjA5cUVsYkpBajZNNXVYV2FYaDFSODRh?=
+ =?utf-8?B?dVYxMVpUOTFYdFEzZWxiTExIcU5IcUxlYVNRNVN1d3BjWDZLaU5aOE05QWZ1?=
+ =?utf-8?B?RUtNRlBKWnJQaUJjbTNUMkJzamZpbDBiYVo4L3BmWTE1VDdidGFvcEhvUkdk?=
+ =?utf-8?B?aHZDbmxQdUN6WVdBUFgyNVBzL1hVQ3gvVXhOckp0aDBDYkhidUZSQWg0bFMr?=
+ =?utf-8?B?UkpLU0xVK2ZXWm1UTi9IajlKc2JKV1hNSTBNMlkrS0ZaLzZ4Q09USk9JZFVm?=
+ =?utf-8?B?bXdtZlJXMEsyV2hxSTNPTWI1RkNjcWxTTS9nK3hLTHpNa1JaOGE2bCtyaVlD?=
+ =?utf-8?B?YUh0SmVXY2J5RkFvdHJET0xKb2p4TW10Wi9GektwVWFVbWtPUmwzS1dqdVJm?=
+ =?utf-8?B?SFlUTk1jNDR5Qlp3OFdYS0lodWpYbVduYTVEaElDY0dpTWFTQmw3T3U4MStv?=
+ =?utf-8?B?NVZVMEEra2JNbnNjdXAzSmI3YkxXZ3dVNlgyazg3dmZOUzNQVU83ZVJ3MFV0?=
+ =?utf-8?B?RlBpZStkRjFxcllaTmFrVWROWElBYmZLblpVTGI3SFV5aWRaT2twMG8rWmsr?=
+ =?utf-8?B?Sy91UmwzSDJ4YVNhY0sxbC9YZnd2Si9yNTcvTmpzcXVLNVdvZHdkWVJYUnNm?=
+ =?utf-8?B?R2NTQSszTFQ0OExoc05rS0dvWHh4aWdVVkhaOFE1YU51bnJsODNyczBsekZn?=
+ =?utf-8?B?bzY2aXpiMDJ1L2Nsa1UxWEdZSHBHcDM4ZngvbHcvN09VTUszTnQ2Mnc1U2Vt?=
+ =?utf-8?B?RGNUbFBJbU9CNlkvaE9SMndUMElFVU5rSDl4Y29GOGgwQXlKSDI2V2swbERU?=
+ =?utf-8?B?STdEWklHMWVCRGx3cnRZQUtNTEQ3TDZNeHVTaVIxSHg1WnNKNGZZR3dIb2Vm?=
+ =?utf-8?B?ZUgrMmMrT3FmbEdBYzRsN01FVDgwdzNlTWh4Rmw5QnkxbkxNOFd3RW5qMy9m?=
+ =?utf-8?Q?0QsLXnib6MAU0CFeVBP8TyK/42TZ4lbYiMMc6?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b5a2abaa-bb68-4032-3fc3-08ded68f82fa
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9422.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Jun 2026 10:08:20.2899
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 2CSl1VKDq3ffXVst2xL7ShlUCvrFpsprGlEQj7Earr03S366jZHSfObxv6RxUvsMha6IeTtcLdu+O67WWpyCELBQ+xwdoFhyukPxWLXCPDYN1EV1oxFplpbiFXQlAfI4
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1PR04MB10991
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260630_025652_681045_51FF5B52 
-X-CRM114-Status: GOOD (  13.15  )
+X-CRM114-CacheID: sfid-20260630_030833_564722_C2B25CF0 
+X-CRM114-Status: UNSURE (   6.13  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,28 +162,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> @Heikki, what do you think of the following change?
-> Should we add a new patch for this? Thanks.
-> 
-> diff --git a/drivers/usb/typec/altmodes/Kconfig b/drivers/usb/typec/altmodes/Kconfig
-> index 7867fa7c405d..f89cdf3c949b 100644
-> --- a/drivers/usb/typec/altmodes/Kconfig
-> +++ b/drivers/usb/typec/altmodes/Kconfig
-> @@ -5,6 +5,7 @@ menu "USB Type-C Alternate Mode drivers"
->  config TYPEC_DP_ALTMODE
->         tristate "DisplayPort Alternate Mode driver"
->         depends on DRM
-> +       select DRM_AUX_HPD_BRIDGE 
->         help
->           DisplayPort USB Type-C Alternate Mode allows DisplayPort
->           displays and adapters to be attached to the USB Type-C
+This patchset is a continuous of v2, it mainly resolves some concerns
+reported by sashiko-bot.
 
-This look good to me. Please do add the patch for this.
+Patch #1 fix Type-C switch resource leak if probe() fails.
+Patch #3 add runtime PM support to avoid register access issue if the
+      USB controller enters into runtime suspended state, in this state
+      accessing USB PHY register may lack some resources. This will also
+      avoid regulator leak if power_on() fails.
+Patch #4 add debug control register regmap
+Patch #5 correct i.MX8MP USB runtime wakeup issue after introduce runtime
+      PM support.
 
-thanks,
+---
+Changes in v5:
+- not use devm runtime callback to avoid clk enable/disable imblance
+- Link to v4: https://patch.msgid.link/20260605-imx8mp-usb-phy-improvement-v4-0-b2ddf2f3862c@nxp.com
 
--- 
-heikki
+Changes in v4:
+- add Rb tag
+- replace guard() with PM_RUNTIME_ACQUIRE()
+- Link to v3: https://patch.msgid.link/20260603-imx8mp-usb-phy-improvement-v3-0-7afb8f89abc6@nxp.com
+
+Link to v2:
+ - https://lore.kernel.org/linux-phy/20260512101046.1498096-1-xu.yang_2@nxp.com/
+ - https://lore.kernel.org/linux-phy/20260512101212.1498223-1-xu.yang_2@nxp.com/
+
+---
+Felix Gu (1):
+      phy: fsl-imx8mq-usb: fix typec switch leak on probe error path
+
+Xu Yang (4):
+      phy: fsl-imx8mq-usb: set usb phy to be wakeup capable
+      phy: fsl-imx8mq-usb: add runtime PM support
+      phy: fsl-imx8mq-usb: add control register regmap
+      phy: fsl-imx8mq-usb: keep PHY power domain runtime always-on for i.MX8MP
+
+ drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 131 +++++++++++++++++++++--------
+ 1 file changed, 96 insertions(+), 35 deletions(-)
+---
+base-commit: 7de6ae9e12207ec146f2f3f1e58d1a99317e88bc
+change-id: 20260602-imx8mp-usb-phy-improvement-4272d308d862
+
+Best regards,
+--  
+Xu Yang <xu.yang_2@nxp.com>
+
 
 -- 
 linux-phy mailing list
