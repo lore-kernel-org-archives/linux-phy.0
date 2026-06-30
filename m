@@ -4,152 +4,128 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3263C43458
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Jun 2026 19:04:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5342C43458
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Jun 2026 19:06:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QB5QjBbkSxYVXFOu4O9wQfATPuZQw/cCqOLbZMj3dpE=; b=DkiEhx4RmZvHa2
-	CEyjJFCBe0qiF9YXLejf6vPcuqx11UoKbfffVmhO63wOGgoW5wwx7TCgx+45tr5FpXRyitEZwiHZy
-	XYlxQfb9/A8kxgydgtcmsNuUyR+tbpZEHSDWSjElrY7MtFFbJxCAhD5lyop/F5SU0MvVtCbEoCGMN
-	Ky3gABzUiwnprcwmhcVcEe/OHJhpzwYZ1IJCyuIQ2kcQO/VdjutJtnYWpnPWXfckpmi9SpuzZQlxb
-	DVTRMjTh0aVtdYvrjBQpU3bZfymDjqa97O9n8w7pRrlvp/eyViputnsaEQ1w/lbQQ5eeARif22jF2
-	WLYf4WQrjZojn/M1CcBg==;
+	List-Owner; bh=TTexApADQvTMiFZld43hpmvvGOvmuJWYbx+suxomkVI=; b=D+gAQyKSV6OHEX
+	hpzEY+R+zs4pxVtn8kY9pOISoZKMCz6j9IobC+xTrEc7n1wPkAhJeyTvJw0Bk4pmLT8PAgKuz9NAe
+	MKcsWfBuZ4AxVMainc5x0RMlcT9Wk2SkWxXzt1UTHjmY9OFriSsc7B/V43Jt/Ni5ZMGlCxIl1uZIV
+	zp0VL5lKR5OjnHdp3EDLDl173hazPI6BSvqQWMgEuO2FcTUfBoKIr5G4Ip7XVnxN3ylHZ2cn2i5CH
+	dCrA2L8pbaOULjnIjs2x2d7wi5XZ3+2bN6Ic1wKuvOHw7EvvfPAtXGqsewsitQaydPH99TuH4VRzm
+	zW5YoJi8tOe3SvtyTw2A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wedkr-000000005MW-1wbp;
-	Tue, 30 Jun 2026 19:04:21 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1wedn2-000000005Vs-3U5K;
+	Tue, 30 Jun 2026 19:06:36 +0000
+Received: from mail-westeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c201::1] helo=AM0PR83CU005.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wedkn-000000005Lk-3jiS
-	for linux-phy@lists.infradead.org;
-	Tue, 30 Jun 2026 19:04:20 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65UHl2Ju2721887
-	for <linux-phy@lists.infradead.org>; Tue, 30 Jun 2026 19:04:16 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	S6Y7YhobAf0BVh62LWHOQSP9ynKHGLmfRU7MX9qDErg=; b=fxcnZ001O+ruLVK0
-	BXa5CxzuAefjhn7iYYCvlCwtrsEk0blxOXoLg9y9bd86Kxk4dyXqoOuipge7H4D9
-	wxZrY71mt5uXx2OH/aaazQsa2zVvwd/wnLl4Ic06+MGJLbD1t+H3ocZ/8kQLLlfW
-	0ThzjGa8xmIqLPprp5RdLDXM/onc3TJLxUDBFnWHUSLNz39/B7B8pZM7D2h+lgHt
-	dm9YmyM8p3jOBJ/NNclZzLITV2XXim1sU9uRGwUNBZFss3AUeHVb3MEMJ233DieU
-	wRVLPDrzPzCa8m0nPAEdMS593Ic3SQyI0vQ4zmKzwyCXhEqDGEfP5PimuHfs47ON
-	HPosuQ==
-Received: from mail-dy1-f200.google.com (mail-dy1-f200.google.com [74.125.82.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4f4fc09gcv-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 30 Jun 2026 19:04:16 +0000 (GMT)
-Received: by mail-dy1-f200.google.com with SMTP id 5a478bee46e88-30cb5001ed8so129155eec.1
-        for <linux-phy@lists.infradead.org>; Tue, 30 Jun 2026 12:04:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1782846256; x=1783451056; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=S6Y7YhobAf0BVh62LWHOQSP9ynKHGLmfRU7MX9qDErg=;
-        b=BHt1zhf2Ub84ZNUIPLvkL2AgvlB4KY5VnLQCLC5uFWXGyrDQSn4GZNAVlSGE9PsQk2
-         LhosxTm0rctzcTo5VJ38wJ6ewrYdz4TkYyjNWmVxPM192Fva9OiNDzG7cKFqbr9YZhAV
-         O9VbtMTgSRgWdWwz2h1YQP0gZumCrCHH3UaFeCaIQ8PrLw67v7Gl15C05L8AnWu6hEes
-         yQlUVyjoUMyBTkmT2XluFDxKbSHUZKk8VDUd+ML2xAf+OfLCZk4Ojl21qPGfZeUDHJss
-         de2sUmdFLWMoykyC28MaiJtaAAZc0yY2p+QjYCKyaDf94nJ5TUYs5tSlWiGaR34dKhEJ
-         6ncw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1782846256; x=1783451056;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-gg:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=S6Y7YhobAf0BVh62LWHOQSP9ynKHGLmfRU7MX9qDErg=;
-        b=OMkuHaGcm1Qn8iumo/tKOAquYAsNz9uNFeulYRkXtDbyMCGlOiozrT+KaAVofy/DzB
-         aAHg2CytJmAfPzTJVuliP1g4f+R05mIzZ1pmowKTrDtQiMoOO/yuBgOU4TkvctbnbU3e
-         po4rTK3anzojsClWl1LhQmA1j8KUc0HnfaZCwzXk36FtIa0yMX2/E9gd6gC2dprYWD39
-         6/4AhzLMSkMB/dRD8UMLy5reULwjuM/oM+h4OuvLXGTrE/dSpbzqIEnBrd66OAZyXkD0
-         Y1uhJ7GLgau36AFXqj7LM6R+Q25vkNgxLSzgf6Po8SPymg++/f06sx7iEDT3vFgwWGjY
-         6QYw==
-X-Forwarded-Encrypted: i=1; AHgh+RqNpKSdJZyp342gMtb2D4dt7xL2d8jtM08y+9WaXX8/I+LnzZ4KlM6afEBavUtAh1KS1lPRFSFA4vk=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yyd6MjO7b2KPUkAuxJYAgrAIavqi70O30tUDsf5lfd8PUBOLiET
-	Wz6LkupayYAAFwzt00ejzZR8c34kobiZkiSmCba7K1UaSFiPFzaxuMSaSJUdGifH3w4CzBPtoxx
-	rc9jAFvK3TE8tKpUyMsmWCtb/3UFuUmtAlKypFOFKSjQQXWgYTjZ9uSJBYYRoLLV9sldu
-X-Gm-Gg: AfdE7cnHXSw6OnzljN+Veq5LNZLUeK6gnb689JeROTUcMRbE6RcLm05A5FVAR7nPUoK
-	7YIKcvsCS65fhWoOgaBgsMNRxsIQMG5efjFMjkgJMGkortDpAFQec68iA2ZYiLrMmSHUQU5sPty
-	B8eBnzRPdOz5iduwTmZ+NyGcXxIggkWet4kUdIqZT2fUUmeo0RZ91vGH6GZBH+4gmVzOmHm7PLP
-	MwxJDXbySV6JdP8trxbp4BhB1DiaC5c9bFzkmd0qZ8a7gna1S4Mig3CTsExX3CbajNKriqLC+wj
-	D+uv68JXPpY6InXORlkPHLTTzbec+/EqKjjib9lb+2CjLdcpSYjFfAmFo114LWxdZ8KYSAAdyI9
-	mhn0mUtOa3bhrT3lzjaXCHrd6A8dWb6WP8ZrZ+6abqTZu0+E=
-X-Received: by 2002:a05:7300:57a3:b0:30c:23ab:b7d2 with SMTP id 5a478bee46e88-30ef0975166mr1520419eec.28.1782846255694;
-        Tue, 30 Jun 2026 12:04:15 -0700 (PDT)
-X-Received: by 2002:a05:7300:57a3:b0:30c:23ab:b7d2 with SMTP id 5a478bee46e88-30ef0975166mr1520344eec.28.1782846254702;
-        Tue, 30 Jun 2026 12:04:14 -0700 (PDT)
-Received: from hu-sushruts-hyd.qualcomm.com ([202.46.22.19])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-30ee317095dsm14963815eec.15.2026.06.30.12.04.08
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 30 Jun 2026 12:04:14 -0700 (PDT)
-From: Sushrut Shree Trivedi <sushrut.trivedi@oss.qualcomm.com>
-Date: Wed, 01 Jul 2026 00:32:51 +0530
-Subject: [PATCH 9/9] arm64: dts: qcom: shikra-(cqm/cqs/iqs)-evk: Enable
- PCIe PHY node
+	id 1wedn0-000000005VT-2EM9;
+	Tue, 30 Jun 2026 19:06:35 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=FSWoqBThFrHjzjq8wLoxKxmPOh4Ze6XDQUm4brroEaa8HCQeo5AFid+tQ/3S4bMwW8Vw/EL+7NBkluISZXeO3sObDsotEH0/qnOtBfk+QNlxfFex3xZYxoD1SVjlGJOWtCOY0PVmSlNnpZkuCdGjxwUuKns6HkbJe+cAnq3XlUotBGn3UYTFV4raI0PCDyJqcmmhjbm966/PQ5ONEkVcoofvSE36qsLruZs/e0R67krMo6enp7/aaqFgGTmu9QdaNclM6DGlFFpP2DZvQbaNgYlVOyWG2ns3gWmiG4pKm/Ht1dn/2rrY6FLHbf2+niuHieiQqii8P6igkfDgS2HOVw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=RKQXQauBcinkN9LtmNTgb3xnqLHtUh8kbL1ZJW+M8/M=;
+ b=OGDvPruouPBiDpKc+MW97dvRWNSEyDQlQIbOPyUUeaS4VP1gprXsrWVhQweb9m8aW/An4u9m7wm2tDPAdxDePiE/yh9F3rMrYQwrLvQMlCrxcfLXhJVx4SfNRBrNtx+Hz1T4S2zXfm0PIeDjJvl6TMyfPgh+30T1jFbcEevkUj+ue/chvVlLFwy7HKtMpq8lOW3vhPqsOcMcMNzZvmbj2iJJivv8uP5E2cKQHoHIbsbRMkxw6r4aLHhW+lIrnh4XLecAPPbcLu6Tlyng3u6/cbS8MGLQE3sKcaE9fxqF+Ypqm87Gm1gvpBvCTu8YAIJ8yjk5hPmmlOOV1IOCdbMbHA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=RKQXQauBcinkN9LtmNTgb3xnqLHtUh8kbL1ZJW+M8/M=;
+ b=RAAOmRa24fho4O/iqOEMcgNujYDqRUsuvbqjTv6fF8o+fJztbrMHQzVP5vX/6Vhq5Fcy3dGtxAjVlKdvcsgi6keBnL/Cto17i3jRxk1gs+IS5ZLFkgz5o7IehWps1gG0lyZ88ebk9XfxK54j/vJXjtiTmlJFbmCsM9nshsCBfCqrjeF+FFG0xz/6Ey/JKHAG4ijiQFmRm69+4+u0UbzKf0UCqkgmiJoR22dB1iAtwBtEknqSY+gUmMtHumUhoW2I6CumwxGuz0aoyXwaytT/kIHZzo2wuBzcoxzI+5DH6BlN1iyRZQqF+Xjst0vrTGfDL39ypXcNbYqbc6UEY8vyyg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
+ by AM9PR04MB8876.eurprd04.prod.outlook.com (2603:10a6:20b:40b::7) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.181.8; Tue, 30 Jun
+ 2026 19:06:29 +0000
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c%6]) with mapi id 15.21.0159.007; Tue, 30 Jun 2026
+ 19:06:29 +0000
+Date: Tue, 30 Jun 2026 14:06:21 -0500
+From: Frank Li <Frank.li@oss.nxp.com>
+To: Xu Yang <xu.yang_2@oss.nxp.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Frank Li <Frank.Li@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, Jun Li <jun.li@nxp.com>,
+	linux-phy@lists.infradead.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	Xu Yang <xu.yang_2@nxp.com>
+Subject: Re: [PATCH v5 3/5] phy: fsl-imx8mq-usb: add runtime PM support
+Message-ID: <akQTrWWbnDSr1Nd1@SMW015318>
+References: <20260630-imx8mp-usb-phy-improvement-v5-0-25d616403844@nxp.com>
+ <20260630-imx8mp-usb-phy-improvement-v5-3-25d616403844@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <20260630-imx8mp-usb-phy-improvement-v5-3-25d616403844@nxp.com>
+X-ClientProxiedBy: SA1PR03CA0003.namprd03.prod.outlook.com
+ (2603:10b6:806:2d3::14) To GV2PR04MB11799.eurprd04.prod.outlook.com
+ (2603:10a6:150:2cf::9)
 MIME-Version: 1.0
-Message-Id: <20260701-shikra-upstream-v1-9-e1a721eb8943@oss.qualcomm.com>
-References: <20260701-shikra-upstream-v1-0-e1a721eb8943@oss.qualcomm.com>
-In-Reply-To: <20260701-shikra-upstream-v1-0-e1a721eb8943@oss.qualcomm.com>
-To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Bjorn Helgaas <bhelgaas@google.com>,
-        Lorenzo Pieralisi <lpieralisi@kernel.org>,
-        =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-        Manivannan Sadhasivam <mani@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
-        Bartosz Golaszewski <brgl@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-pci@vger.kernel.org,
-        Sushrut Shree Trivedi <sushrut.trivedi@oss.qualcomm.com>
-X-Mailer: b4 0.13.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1782846191; l=1973;
- i=sushrut.trivedi@oss.qualcomm.com; s=20251127; h=from:subject:message-id;
- bh=RTnxmJmcXqptIc1CpIlZkuSiZ1cZFh1FUN601H5hlC8=;
- b=H+Moevnq+AybpYWzC/36+UGo9gtMkD6aY9ze/Ewovw2zgrcI8aCNgiY2Gku5HmDaOD2qP+Ot4
- qWwR9iSiBJOCnJ4ToDj/gO5wgkYZBE/rhbERXLbAk24+D74dWgNVj9L
-X-Developer-Key: i=sushrut.trivedi@oss.qualcomm.com; a=ed25519;
- pk=OrUHTxBaSg1oY3CtCictJ5A4bDMNLRZS1S+QfD9pdjw=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjMwMDE4MiBTYWx0ZWRfXy2gOfxW/tXVu
- 2e+lloj1Hk7qg1FPv2VXTnjvKeGs2E7tBmBxpmG7+Gwvpp0ADXeZVZiRyj8/901B4g9lswWz0Fu
- MSUpidG/dvJtZCOjn9lGoTaOYlFwe2qAgsOzbZKqW9EnsZvnEZ5moWpI+KPaRKDdIOyakqe/BqW
- kVgyql0FIP5DV474WIil4lDEIWTE+hdYBe7rKTLShAKLfSDWVhFldXWJc7TUz5vDPb4w6PN5hkF
- T8EDFhcpAZ3iRBTjZXV9THO9Xhlxza33KTtP1qE5BlgfJ1blg3xnGGDp3iJIrS0r4G8hQ5NeTLE
- 3vqi6bF4LZMBOruTLcYzqqb6hrBAsCHStmvE+NIdMc20jR15NKeC2ScovmZx3cccMAS/uHvJDY6
- kj3jmfBMUQfEmwK6lMqn8STX3QNJ/lpLdfH5vd2LIXGyuxRqT9kuaKf0BTkMWkg57wUBuIklwaq
- c3B7+b7gbvmJ5E/L/HQ==
-X-Proofpoint-GUID: 1wqRLCka1hvGBjhR2ygahJ-Ekf81xOK7
-X-Proofpoint-ORIG-GUID: 1wqRLCka1hvGBjhR2ygahJ-Ekf81xOK7
-X-Authority-Analysis: v=2.4 cv=Ivkutr/g c=1 sm=1 tr=0 ts=6a441330 cx=c_pps
- a=PfFC4Oe2JQzmKTvty2cRDw==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
- a=IkcTkHD0fZMA:10 a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=gowsoOTTUOVcmtlkKump:22
- a=EUspDBNiAAAA:8 a=Dx0sEE52Z9zFkSaW5IkA:9 a=QEXdDO2ut3YA:10
- a=6Ab_bkdmUrQuMsNx7PHu:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNjMwMDE4MiBTYWx0ZWRfX8PvJaNL0KJft
- N977NBbnWcvBjuRQIdkfYhYdfxZRUYi1eqDqL0FIa8ewGq3IwFZ+scgbqF7+tyofZHID4Pn46Rj
- Fr7DBi0CnOGPWx5PTE8ZwUiyWWvbe5U=
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
- definitions=2026-06-30_04,2026-06-26_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 priorityscore=1501 impostorscore=0 clxscore=1011 malwarescore=0
- bulkscore=0 adultscore=0 lowpriorityscore=0 suspectscore=0 spamscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2606300182
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|AM9PR04MB8876:EE_
+X-MS-Office365-Filtering-Correlation-Id: d66fb4ce-b332-4dc2-f46a-08ded6dab0e4
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|376014|23010399003|366016|1800799024|11063799006|4143699003|56012099006|22082099003|18002099003|3023799007;
+X-Microsoft-Antispam-Message-Info: DeKa+QuJwwD1+SLBwWENFoaCkC6ZvINyYvEt7dCDYkOXVFeX0iol+uLwewfdiAS+nexaI/VncNEkyv0YlVdxD1uxR90QQt/1RXumYIMnXMh4LbF8KFhaal29cRQ0EcxNjN+HTqbmE9svlHSnNmVde1l/FyUOhQ3NrI3ax/w3jkNoalToUpktXVdGk1a4A5uUR8Xbo9GHNVBM4I0Q8udWw+LvqI95XhBNYh+PTUFAzzVp+B5+qcyApnvbJ4MPdhxdEKxO2sONSdgQatVmA5FLn7XWllRVlEEOcPMCOVGljow/26DkZS+Q4tYlmLHpZbdl3PnvWHN7UYmJILzt0rJHZ7BvlFQrSS/on2ikVHTkmzo3krSeK2s4pTH5iRyHtMQ9T2T7R5jpKMkviWZqmqGMvzh96OX1v+6GAakMVvQqg6F/ONXEMqBdsMQ+FhpjDsOKLDU/rYZb0SCy2+I7WCjoeaSz17mr1w8YhhJuBouA120TrFceTjmAdTiK4pkqw4PO1j45CFbaiIiMOFg8IGfM8I85PAHZkUzATQz7NBTE8OtZSZFjQm1M2icqdyjjjC23HZOKu145FR90LxGrFO3egUOfk64PduMmolIRNMLPJYuDFw8ZImcUrq3dhmAOIph6whI8Vsz4AuORrmhlmmzgrEYANTu5jg98OMC9VgMIPfk=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(376014)(23010399003)(366016)(1800799024)(11063799006)(4143699003)(56012099006)(22082099003)(18002099003)(3023799007);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?K08d0h3lOrx5qL6bGvmu4VL8Upcr4Jbgp8buUP9QaDtjx4BDUzncrv4qM0lE?=
+ =?us-ascii?Q?yvByvvAR0E4C8P/9CJCZoIoVqICccXD7MRD5UFgtr/lliNXMwtPNsabYiFLe?=
+ =?us-ascii?Q?GG+lNklG3Yr9prFEyRtz3mm30ME2Vyz75ZwMIHXYWG8gVjvP37y9yA3mavF1?=
+ =?us-ascii?Q?Xqk98sH0k24dpOT5c5LZbEwPohRhVmVcJz5uNObjDBGuWTuIoye5D/9578L2?=
+ =?us-ascii?Q?vbWFe0AfPcJFGNJDeWmUIwExAL6cgjQoqR6izzWodjUPsO89ZBZ51Q+EHD56?=
+ =?us-ascii?Q?daFVoWFYazqNsVPBqmhCy1VH6jjmg9NKNB4ZzrjWiOPhtbaFktuKCIG3AOMW?=
+ =?us-ascii?Q?tym73MLHP2X/B3+x7sFt2r7GfvvRKCI71EwuJLSdzj6oIxOE/2F1pMMfCUf8?=
+ =?us-ascii?Q?jZz8DyZkKi8sSRzI+hH7xgTyr1mxKCC6HKdcahMJhG4QYQ6AKYl2ypbRaWVW?=
+ =?us-ascii?Q?hWbyL7UNMyMV/ZtnrN0lNifdpgb0uRo9bHcViPAHoUvKIs+Gal9R6XXLoJAQ?=
+ =?us-ascii?Q?jPol1YrMEUveAVpyjS5xCF7fTkikHXyio21WVgQjvLJCr+3Lnjj4UVUzSlRu?=
+ =?us-ascii?Q?7IQevxl6RbYwvek3H35N6RR81/9tITxJDy9HPwXEadOuW0Z8NSvKHzYyrXcG?=
+ =?us-ascii?Q?5G0U42OamwI4BLI4RAOd+zrsCC+XL9yXVr7Dc0lnaUXQZjLT9txUReziLEC/?=
+ =?us-ascii?Q?r9KSZdyMxeALkJVvjRMmqy4lpytHeGFRVdSdB9OPSapcIb6ubXlYR+nSSC7c?=
+ =?us-ascii?Q?jcqdh2kIu6OP/yl0c3QqY88NQp6OBiG9ZYOi2w8iyCBmE0B0RxB90/10yXq+?=
+ =?us-ascii?Q?TcvcUdQUD6605o7+QFPmInBEBw7+lAdgtCwNAQ7r4BHVh2px9eL0iEgqy4RB?=
+ =?us-ascii?Q?m19++Z0ULbtoNqJyLZoX4DiCmh8CIdr4tY46nv19jyN8SS4OSb7lgcxUA1Kk?=
+ =?us-ascii?Q?5hJIZALNk6hOuxGR7NJLSFkCR7CFBq0XKKQHA5Uxv4pBWbKdxnQcQfWoY1Aa?=
+ =?us-ascii?Q?/4018CyODtOmIeBNyO9XobYDERqQGljV4G9a3vsiqBMwp2bEGgJ3t2gniojY?=
+ =?us-ascii?Q?PxhWpJHEXBMT9UxKndjtC2/twggVb3+NW+jRfVy5LoK5EfdAqnjSk1wHOXut?=
+ =?us-ascii?Q?LD4/+5qRDCJFC+BnYki7Eux7tiseAr4gbmOuHxEn3pIXkfmVFGLwno7RQt4H?=
+ =?us-ascii?Q?eU0sKKjRkrcSm4j34HU3KR/zEA9XMzC6HFgyju07F7u1Fwip+jTELvTi7rN/?=
+ =?us-ascii?Q?KRrIOBDx/BEP7Wemx4hTV5dwEfWqNMOXfaKe+brez/0Vg1iKevoD2KOPDO6D?=
+ =?us-ascii?Q?nh+jHXMft2IwLujVY8BeSFrZTFDMAFimmWlBN9QW0layjf5wASYu1ReB3axV?=
+ =?us-ascii?Q?i1Cum+pA21ZHAGyUv2yG0guv5aaQHNdcs99Jfg4jYNlZJ7Vf6oG1BynsRMbQ?=
+ =?us-ascii?Q?ib6i+2sWYLall2ApfwQtXH/J/AN81PGIzEh0LfCZH1HEYoErhbScaUvGmqA3?=
+ =?us-ascii?Q?AKISav36UybMFinBylsGUg9JDaaOhIiULpw+D/i73zVf/9tJtQWS8z70K72Q?=
+ =?us-ascii?Q?H87X2F4nMrdwbqXi8FKNNK9IgvdPZfbQVuzJZb132Se9t0CuU/M9Su1X1JRS?=
+ =?us-ascii?Q?I7WEfT3t4xj3lTmHeFg2u+KYvnwMaJxau1M8gI3dz1v8rAQj0ceNwmmhiQ0K?=
+ =?us-ascii?Q?KUddKqf0xl4rHoDAVDDUZI0DALjnSILLQlzcPcbyigeOSAfAvoVEvP84NAxs?=
+ =?us-ascii?Q?syVlDvgtUfSxK9J1o+hZdubsPOg0tboE5l5CDV8HuIMwlAnrYFwr?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d66fb4ce-b332-4dc2-f46a-08ded6dab0e4
+X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Jun 2026 19:06:29.5654
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: NMg2LRINe2tgla84uxLPda9BT4+RnJTetN83ZCjmBmXk5J/6x/hpG/wV987YFNgLviEzeidSel+G1oiETSDwhtGkXrQZGDCVgA0+TxmQOK4/ytI/YLTXQdJMY5Mp8aWl
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB8876
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260630_120419_265985_F9D7A618 
-X-CRM114-Status: GOOD (  10.74  )
+X-CRM114-CacheID: sfid-20260630_120634_600553_67F33E3A 
+X-CRM114-Status: GOOD (  27.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -166,77 +142,184 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable the PCIe PHY for the single PCIe intance on the Shikra
-CQS, CQM and the IQS platforms.
+On Tue, Jun 30, 2026 at 06:11:30PM +0800, Xu Yang wrote:
+> From: Xu Yang <xu.yang_2@nxp.com>
+>
+> Add runtime PM to ensure the PHY is properly powered and clocked during
+> register access, preventing potential system hangs.
+>
+> It guards register access in the following scenarios:
+> - PHY operations: init() and power_on/off() callbacks are guarded by
+>   phy core
+> - Type-C orientation switching when PHY/Controller are suspended which
+>   needs explicitly care
+> - Future PHY control port register regmap debugfs access
+>
+> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+>
+> ---
+> Changes in v5:
+>  - use non-devm PM runtime callback to correctly enable/disable clocks
+>    when unbind the device
+> Changes in v4:
+>  - replace guard() with PM_RUNTIME_ACQUIRE()
+> Changes in v3:
+>  - new patch
+> ---
+>  drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 64 +++++++++++++++++++++---------
+>  1 file changed, 45 insertions(+), 19 deletions(-)
+>
+> diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> index 3a5788c609e1..9d1dd0e7352e 100644
+> --- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> +++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> @@ -9,6 +9,7 @@
+>  #include <linux/of.h>
+>  #include <linux/phy/phy.h>
+>  #include <linux/platform_device.h>
+> +#include <linux/pm_runtime.h>
+>  #include <linux/regulator/consumer.h>
+>  #include <linux/usb/typec_mux.h>
+>
+> @@ -136,17 +137,15 @@ static int tca_blk_typec_switch_set(struct typec_switch_dev *sw,
+>  {
+>  	struct imx8mq_usb_phy *imx_phy = typec_switch_get_drvdata(sw);
+>  	struct tca_blk *tca = imx_phy->tca;
+> -	int ret;
+>
+>  	if (tca->orientation == orientation)
+>  		return 0;
+>
+> -	ret = clk_prepare_enable(imx_phy->clk);
+> -	if (ret)
+> -		return ret;
+> +	PM_RUNTIME_ACQUIRE(&imx_phy->phy->dev, pm);
+> +	if (PM_RUNTIME_ACQUIRE_ERR(&pm))
+> +		return -ENXIO;
+>
+>  	tca_blk_orientation_set(tca, orientation);
+> -	clk_disable_unprepare(imx_phy->clk);
+>
+>  	return 0;
+>  }
+> @@ -620,16 +619,6 @@ static int imx8mq_phy_power_on(struct phy *phy)
+>  	if (ret)
+>  		return ret;
+>
+> -	ret = clk_prepare_enable(imx_phy->clk);
+> -	if (ret)
+> -		return ret;
+> -
+> -	ret = clk_prepare_enable(imx_phy->alt_clk);
+> -	if (ret) {
+> -		clk_disable_unprepare(imx_phy->clk);
+> -		return ret;
+> -	}
+> -
+>  	/* Disable rx term override */
+>  	value = readl(imx_phy->base + PHY_CTRL6);
+>  	value &= ~PHY_CTRL6_RXTERM_OVERRIDE_SEL;
+> @@ -648,8 +637,6 @@ static int imx8mq_phy_power_off(struct phy *phy)
+>  	value |= PHY_CTRL6_RXTERM_OVERRIDE_SEL;
+>  	writel(value, imx_phy->base + PHY_CTRL6);
+>
+> -	clk_disable_unprepare(imx_phy->alt_clk);
+> -	clk_disable_unprepare(imx_phy->clk);
+>  	regulator_disable(imx_phy->vbus);
+>
+>  	return 0;
+> @@ -693,13 +680,13 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
+>
+>  	platform_set_drvdata(pdev, imx_phy);
+>
+> -	imx_phy->clk = devm_clk_get(dev, "phy");
+> +	imx_phy->clk = devm_clk_get_enabled(dev, "phy");
+>  	if (IS_ERR(imx_phy->clk)) {
+>  		dev_err(dev, "failed to get imx8mq usb phy clock\n");
+>  		return PTR_ERR(imx_phy->clk);
+>  	}
+>
+> -	imx_phy->alt_clk = devm_clk_get_optional(dev, "alt");
+> +	imx_phy->alt_clk = devm_clk_get_optional_enabled(dev, "alt");
+>  	if (IS_ERR(imx_phy->alt_clk))
+>  		return dev_err_probe(dev, PTR_ERR(imx_phy->alt_clk),
+>  				    "Failed to get alt clk\n");
+> @@ -708,6 +695,9 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
+>  	if (IS_ERR(imx_phy->base))
+>  		return PTR_ERR(imx_phy->base);
+>
+> +	pm_runtime_set_active(dev);
+> +	pm_runtime_enable(dev);
+> +
 
-IQS platform uses a different powergrid than CQS/CQM which explain
-the different PHY supplies for IQS variant.
+devm_pm_runtime_enable();
 
-Signed-off-by: Sushrut Shree Trivedi <sushrut.trivedi@oss.qualcomm.com>
----
- arch/arm64/boot/dts/qcom/shikra-cqm-evk.dts | 7 +++++++
- arch/arm64/boot/dts/qcom/shikra-cqs-evk.dts | 7 +++++++
- arch/arm64/boot/dts/qcom/shikra-iqs-evk.dts | 7 +++++++
- 3 files changed, 21 insertions(+)
+runtime pm will be always on active status, why suspend it?
 
-diff --git a/arch/arm64/boot/dts/qcom/shikra-cqm-evk.dts b/arch/arm64/boot/dts/qcom/shikra-cqm-evk.dts
-index 683b5245923b..06ad32041546 100644
---- a/arch/arm64/boot/dts/qcom/shikra-cqm-evk.dts
-+++ b/arch/arm64/boot/dts/qcom/shikra-cqm-evk.dts
-@@ -60,6 +60,13 @@ vreg_pmu_ch1: ldo4 {
- 	};
- };
- 
-+&pcie_phy {
-+	vdda-phy-supply = <&pm4125_l13>;
-+	vdda-pll-supply = <&pm4125_l9>;
-+
-+	status = "okay";
-+};
-+
- &remoteproc_cdsp {
- 	firmware-name = "qcom/shikra/cdsp.mbn";
- 
-diff --git a/arch/arm64/boot/dts/qcom/shikra-cqs-evk.dts b/arch/arm64/boot/dts/qcom/shikra-cqs-evk.dts
-index 26ff8007a819..e467c46a55c0 100644
---- a/arch/arm64/boot/dts/qcom/shikra-cqs-evk.dts
-+++ b/arch/arm64/boot/dts/qcom/shikra-cqs-evk.dts
-@@ -60,6 +60,13 @@ vreg_pmu_ch1: ldo4 {
- 	};
- };
- 
-+&pcie_phy {
-+	vdda-phy-supply = <&pm4125_l13>;
-+	vdda-pll-supply = <&pm4125_l9>;
-+
-+	status = "okay";
-+};
-+
- &remoteproc_cdsp {
- 	firmware-name = "qcom/shikra/cdsp.mbn";
- 
-diff --git a/arch/arm64/boot/dts/qcom/shikra-iqs-evk.dts b/arch/arm64/boot/dts/qcom/shikra-iqs-evk.dts
-index fd691d53a0fa..a7628443cb36 100644
---- a/arch/arm64/boot/dts/qcom/shikra-iqs-evk.dts
-+++ b/arch/arm64/boot/dts/qcom/shikra-iqs-evk.dts
-@@ -68,6 +68,13 @@ vreg_pmu_ch1: ldo4 {
- 	};
- };
- 
-+&pcie_phy {
-+	vdda-phy-supply = <&pm8150_l12>;
-+	vdda-pll-supply = <&pm8150_l9>;
-+
-+	status = "okay";
-+};
-+
- &remoteproc_cdsp {
- 	firmware-name = "qcom/shikra/cdsp.mbn";
- 
+>  	phy_ops = of_device_get_match_data(dev);
+>  	if (!phy_ops)
+>  		return -EINVAL;
+> @@ -737,15 +727,51 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
+>
+>  static void imx8mq_usb_phy_remove(struct platform_device *pdev)
+>  {
+> +	struct device *dev = &pdev->dev;
+> +
+> +	pm_runtime_get_sync(dev);
+> +	pm_runtime_disable(dev);
+> +	pm_runtime_put_noidle(dev);
+> +}
+> +
+> +static int imx8mq_usb_phy_runtime_suspend(struct device *dev)
+> +{
+> +	struct imx8mq_usb_phy *imx_phy = dev_get_drvdata(dev);
+> +
+> +	clk_disable_unprepare(imx_phy->alt_clk);
+> +	clk_disable_unprepare(imx_phy->clk);
 
--- 
-2.43.0
+can you switch to use bulk clk api.
 
+Frank
+> +
+> +	return 0;
+> +}
+> +
+> +static int imx8mq_usb_phy_runtime_resume(struct device *dev)
+> +{
+> +	struct imx8mq_usb_phy *imx_phy = dev_get_drvdata(dev);
+> +	int ret;
+> +
+> +	ret = clk_prepare_enable(imx_phy->clk);
+> +	if (ret)
+> +		return ret;
+>
+> +	ret = clk_prepare_enable(imx_phy->alt_clk);
+> +	if (ret) {
+> +		clk_disable_unprepare(imx_phy->clk);
+> +		return ret;
+> +	}
+> +
+> +	return 0;
+>  }
+>
+> +static DEFINE_RUNTIME_DEV_PM_OPS(imx8mq_usb_phy_pm_ops, imx8mq_usb_phy_runtime_suspend,
+> +				 imx8mq_usb_phy_runtime_resume, NULL);
+> +
+>  static struct platform_driver imx8mq_usb_phy_driver = {
+>  	.probe	= imx8mq_usb_phy_probe,
+>  	.remove = imx8mq_usb_phy_remove,
+>  	.driver = {
+>  		.name	= "imx8mq-usb-phy",
+>  		.of_match_table	= imx8mq_usb_phy_of_match,
+> +		.pm = pm_ptr(&imx8mq_usb_phy_pm_ops),
+>  		.suppress_bind_attrs = true,
+>  	}
+>  };
+>
+> --
+> 2.34.1
+>
+>
 
 -- 
 linux-phy mailing list
