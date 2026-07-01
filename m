@@ -4,59 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF69CC44501
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 12:19:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16320C43458
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 12:20:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FvbV0v+VuQWlvP0LgGyOaLI47FkqJsSZcm6hmUHCp+w=; b=XCoOoLGERxmBHY
-	e67bLtRNn3G+hB8/SAwxp2zF/IRpEx8GXhad0vh5YMZKhdHLm6R0EOvKY/hf+eJudw4W2EI+kcVhP
-	dKoGi0EcFJlYYACrCB0MTJRV2sQpKnQJfYM2o0rHnVmsUsBKo8IWHm19x4C1vzNwA7UwDTPt9ZSse
-	xA92CSQgiT7VSXUugJH0kjVgTLMV6dOC79sUbJuDOfL5fbpxiFmZK46ANr9jxhQvurt6Jb5cFauIL
-	TXmOKqLMC9g4x4zJK5O3ez18t5GwGePEVsvMFgxrmGnfotTayibdynC4ODCSfP7Yz5xPrbII4ppKQ
-	gEC2/8R9ySjJPBAm/fUw==;
+	List-Owner; bh=lIi+BKkb2WzfvXkdsPdZHQ3EJMz50gIcfbT7AJuAdyM=; b=ynnzMNu1+AU8A7
+	qfBpZIjIwKIl55qv1ljsSOgUULJoHtv3DrSsfzOBpVQ7jWS8ASuDDDogZWImdOBZIubAJbUAnEOs9
+	KCYAfQNtDpkmuPpJW936bXwhoj72huBTK0lBtjlgWMQn7LGHTvJa1w9eIIGC3gbcurGNlOplVcK9B
+	UYjnCpdhK5rEOnniL7cjfbq6MOjfcs6DyUV5HTeSQlfnU8pd7RKsxmILbw4rBFQbti5GM2gSDklxg
+	UmhhG48PM2s6YPEH3On5woj5DF1kiakpQDx2H1opYyvjfEQjQWyXPeCBq6LxK1wDDBhvBoolbGcuj
+	4y5gfw6FdNZnf+YQ8V3Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wetv1-00000001q4L-1Dc4;
-	Wed, 01 Jul 2026 12:19:55 +0000
+	id 1wetvV-00000001rSA-2gWV;
+	Wed, 01 Jul 2026 12:20:25 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wetux-00000001ptF-36Ib;
-	Wed, 01 Jul 2026 12:19:51 +0000
+	id 1wetvP-00000001r7y-0bFh;
+	Wed, 01 Jul 2026 12:20:19 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
 	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
 	Content-Type:Content-ID:Content-Description;
-	bh=pQwXsr33PDWDylUJrRWygqi3FIPjOPpBIXbLRPE3rDI=; b=lnNOXHUD/5wIpHJ9tfCNIHbBfj
-	LP6Y240IenOcgXZcqwn6wlo1wIYkMBcFHQzP2tuisQlRugFWJO7H4fWZhoCQi3danJwiNrZndfUvG
-	nSw7dR2abe8iYjSz9byaM6iDGFp/6tTj6jtv0BJLeRC2Xd8DgQxgAPxuH4sJ6i8GLmTcw7fSShFvD
-	BqLoO+6jtXfYY74yH2fSsBQNY+ZtJ677bHYNRqCBGH5E4qGKiCst2KJn3THilNkREoX/9ksiQDs4M
-	SXMKrEB5stmX5isOsMeClHPktZlBkPSpodLG4bUE7IcJg1t61duQOZxZa2rBBt8Rw7BXb5u1LNsPM
-	kHdXWxcA==;
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	bh=4yekgiJ+T/S7uCQwESFyMiYYet29UYuCPdFELTnGD58=; b=n1HhXzEygwk8mXewLA+hhnoW2u
+	KEh3TCWrNeHEEPvwf57XKKIAwNLx4qGQQIMAcFIHvtRWWVvFnCK12uJr4W8LEg9ikVCCLnFnH9vni
+	NL+hmJVyVlACbTGPM4paYTPqKf3xQaiW98L/OEe8lmo63YCQPiIsN0sPie5Rc+RXjTHvGDTZq49zS
+	vjOSIiJ97xStoxtDt/opQYDFDJrdZnZIuEMhvCPMUqq8t9GIOlRGf6CCx6G8JqM7BUKotwufZRF9H
+	JOecAZf9+DHWQU5RvItu+m4U8dK+CP90CeTlS/BGAztpOHQ/X6Q/ZJ+1nHSvSc3MBZJu9aPBWy0NZ
+	MWhjbxFg==;
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1wetut-00000002iwv-3Jg8;
-	Wed, 01 Jul 2026 12:19:50 +0000
+	id 1wetvK-00000002jA8-2tpU;
+	Wed, 01 Jul 2026 12:20:18 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1782908386;
-	bh=N9qgTD2hCOq6phgEAOhZ0sHaU3HIB5GFM6z3BqTcBcQ=;
+	s=mail; t=1782908413;
+	bh=WveJIKcSDFtln6moBUm4mMfeMv6Y8I/JiesYCykNM8g=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=Ke5dK4aUjJAAyxOCMHrVw+wFCSjKctNVXNUUd3oWnDuL8t2IHkB2g30mKK+SoCWtN
-	 CCw/nWwMppgS55qcOd8TO0ooye19JVtUaN4G+60zM2eoi3SRQIWCuBqXXsEUnhlr3m
-	 Da6VsdtHiuaHQNEJJf/QY7fJ2NKm/nsmWlKGdwqsDBefrF1NLKe/gCtpfkN/tG2f6F
-	 66dRwm0ltM6f4zm9zyGT6yavcHjYi+F41TLzrPqSsuY2MonSLpiDh6lhgaM/OvIP9e
-	 1AirmzWy24MVgvRMpJq/LFBHeQuHulUkNGm303r1Ytj77+WIC7JzViCCzE9IdhG/ua
-	 5k+vFXg9OKV0g==
+	b=KuWQiqXO3Bo3bL3GfEx3ALn6r1FYE+70kyIXjMrLlJEKwrsXVgFkgXpix7MHSCW+7
+	 1GINPA2qAKDJ9Wq0DD8z8UjczYeYu8sczvDAVgK6MJ2bBJU7thsYXSmPw+rgsvLwVD
+	 3YLUra77S2Lwp9Vk6PfRexipL+2q+/QMJBI6NUjTZ78wU5ioClQTVX1jYsW96qvu18
+	 KeXaGWTfw22bN6vSnub8paTUGwVjLnvA1Fs6s1tPJk+9J3fyqkWgdW7qaaDNPp+WnA
+	 Gr3ATRPJUi5BRRYZBScXN+9psjzSqAcShbfzD1BHlm+i3+bYfeZXIehZnYmG0oG1u0
+	 es5Li1MWMGsFA==
 Received: from IcarusMOD.eternityproject.eu (unknown [100.64.1.21])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id B15D817E0CA2;
-	Wed,  1 Jul 2026 14:19:45 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 54C6D17E0D72;
+	Wed,  1 Jul 2026 14:20:12 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: chunfeng.yun@mediatek.com
 Cc: vkoul@kernel.org,
@@ -64,10 +64,10 @@ Cc: vkoul@kernel.org,
 	robh@kernel.org,
 	krzk+dt@kernel.org,
 	conor+dt@kernel.org,
-	chunkuang.hu@kernel.org,
-	p.zabel@pengutronix.de,
 	matthias.bgg@gmail.com,
 	angelogioacchino.delregno@collabora.com,
+	chunkuang.hu@kernel.org,
+	p.zabel@pengutronix.de,
 	justin.yeh@mediatek.com,
 	linux-arm-kernel@lists.infradead.org,
 	linux-mediatek@lists.infradead.org,
@@ -76,17 +76,16 @@ Cc: vkoul@kernel.org,
 	linux-kernel@vger.kernel.org,
 	dri-devel@lists.freedesktop.org,
 	kernel@collabora.com
-Subject: [PATCH 1/2] dt-bindings: phy: mediatek,dsi-phy: Add support for MT8196
-Date: Wed,  1 Jul 2026 14:19:42 +0200
-Message-ID: <20260701121943.19430-2-angelogioacchino.delregno@collabora.com>
+Subject: [PATCH 02/12] phy: phy-mtk-dp: Rename regs to regmap in struct mtk_dp_phy
+Date: Wed,  1 Jul 2026 14:19:58 +0200
+Message-ID: <20260701122008.19509-3-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.54.0
-In-Reply-To: <20260701121943.19430-1-angelogioacchino.delregno@collabora.com>
-References: <20260701121943.19430-1-angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20260701122008.19509-1-angelogioacchino.delregno@collabora.com>
+References: <20260701122008.19509-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260701_131947_937856_AFA4D80D 
-X-CRM114-Status: UNSURE (   9.07  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260701_132014_790148_D0477572 
+X-CRM114-Status: GOOD (  11.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,28 +102,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for the MediaTek Kompanio Ultra (MT8196) SoC: this
-chip features a DSI PHY that is similar to the one found in the
-MT8183 SoC, but is a new (incremental) revision with a different
-register layout.
+In preparation to perform further cleanups and to extend the
+driver to support more SoCs, rename the `regs` member to `regmap`
+to improve readability, as this is a common name across many
+kernel drivers for a struct regmap.
 
 Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 ---
- Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/phy/mediatek/phy-mtk-dp.c | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml
-index c6d0bbdbe0e2..9df1dbe1253b 100644
---- a/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml
-@@ -39,6 +39,7 @@ properties:
-       - const: mediatek,mt2701-mipi-tx
-       - const: mediatek,mt8173-mipi-tx
-       - const: mediatek,mt8183-mipi-tx
-+      - const: mediatek,mt8196-mipi-tx
+diff --git a/drivers/phy/mediatek/phy-mtk-dp.c b/drivers/phy/mediatek/phy-mtk-dp.c
+index d7024a144335..bf7b3a95e72d 100644
+--- a/drivers/phy/mediatek/phy-mtk-dp.c
++++ b/drivers/phy/mediatek/phy-mtk-dp.c
+@@ -79,7 +79,7 @@
+ 				 XTP_LN_TX_LCTXCP1_SW3_PRE0_DEFAULT)
  
-   reg:
-     maxItems: 1
+ struct mtk_dp_phy {
+-	struct regmap *regs;
++	struct regmap *regmap;
+ };
+ 
+ static int mtk_dp_phy_init(struct phy *phy)
+@@ -94,13 +94,13 @@ static int mtk_dp_phy_init(struct phy *phy)
+ 		DRIVING_PARAM_8_DEFAULT
+ 	};
+ 
+-	regmap_bulk_write(dp_phy->regs, MTK_DP_LANE0_DRIVING_PARAM_3,
++	regmap_bulk_write(dp_phy->regmap, MTK_DP_LANE0_DRIVING_PARAM_3,
+ 			  driving_params, ARRAY_SIZE(driving_params));
+-	regmap_bulk_write(dp_phy->regs, MTK_DP_LANE1_DRIVING_PARAM_3,
++	regmap_bulk_write(dp_phy->regmap, MTK_DP_LANE1_DRIVING_PARAM_3,
+ 			  driving_params, ARRAY_SIZE(driving_params));
+-	regmap_bulk_write(dp_phy->regs, MTK_DP_LANE2_DRIVING_PARAM_3,
++	regmap_bulk_write(dp_phy->regmap, MTK_DP_LANE2_DRIVING_PARAM_3,
+ 			  driving_params, ARRAY_SIZE(driving_params));
+-	regmap_bulk_write(dp_phy->regs, MTK_DP_LANE3_DRIVING_PARAM_3,
++	regmap_bulk_write(dp_phy->regmap, MTK_DP_LANE3_DRIVING_PARAM_3,
+ 			  driving_params, ARRAY_SIZE(driving_params));
+ 
+ 	return 0;
+@@ -131,10 +131,10 @@ static int mtk_dp_phy_configure(struct phy *phy, union phy_configure_opts *opts)
+ 			val = BIT_RATE_HBR3;
+ 			break;
+ 		}
+-		regmap_write(dp_phy->regs, MTK_DP_PHY_DIG_BIT_RATE, val);
++		regmap_write(dp_phy->regmap, MTK_DP_PHY_DIG_BIT_RATE, val);
+ 	}
+ 
+-	regmap_update_bits(dp_phy->regs, MTK_DP_PHY_DIG_PLL_CTL_1,
++	regmap_update_bits(dp_phy->regmap, MTK_DP_PHY_DIG_PLL_CTL_1,
+ 			   TPLL_SSC_EN, opts->dp.ssc ? TPLL_SSC_EN : 0);
+ 
+ 	return 0;
+@@ -144,10 +144,10 @@ static int mtk_dp_phy_reset(struct phy *phy)
+ {
+ 	struct mtk_dp_phy *dp_phy = phy_get_drvdata(phy);
+ 
+-	regmap_update_bits(dp_phy->regs, MTK_DP_PHY_DIG_SW_RST,
++	regmap_update_bits(dp_phy->regmap, MTK_DP_PHY_DIG_SW_RST,
+ 			   DP_GLB_SW_RST_PHYD, 0);
+ 	usleep_range(50, 200);
+-	regmap_update_bits(dp_phy->regs, MTK_DP_PHY_DIG_SW_RST,
++	regmap_update_bits(dp_phy->regmap, MTK_DP_PHY_DIG_SW_RST,
+ 			   DP_GLB_SW_RST_PHYD, 1);
+ 
+ 	return 0;
+@@ -176,7 +176,7 @@ static int mtk_dp_phy_probe(struct platform_device *pdev)
+ 	if (!dp_phy)
+ 		return -ENOMEM;
+ 
+-	dp_phy->regs = regs;
++	dp_phy->regmap = regs;
+ 	phy = devm_phy_create(dev, NULL, &mtk_dp_phy_dev_ops);
+ 	if (IS_ERR(phy))
+ 		return dev_err_probe(dev, PTR_ERR(phy),
 -- 
 2.54.0
 
