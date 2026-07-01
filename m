@@ -4,53 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3806FC43602
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 23:44:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C60EEC44502
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 23:44:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1RS5kau3OcTyCZXcS+f1D/WYDJnv+H0KgPsoxdduBNQ=; b=nIqtkjYKHJa9PK
-	wWyXRG42DisLxR8aHH4pHz0tTy4BhhVfnYMA0eCw9Rk5AyjzHvfVWlFR4bSQ4JHS6lZwM0uJNfCa9
-	rnYQGJ7ACNhuUBqLHUwjwRjyiG7b4lBl2ZxIUmn3CpCRN965+RmCyu+4IT6hQLizVtnB7q7gx+BpV
-	5XlseokDSN2iT2s+SmCLNT4a0WZkf1JUU/mCh0tykswpXRj6QQnQHn1RPPVE+N9z9fkCHVDw2yqCP
-	3quuZVrSi22SxgIT2cUy8sV3UXyk2oswCESka9Uf2KG6BMSwIcyrO4YxL2Ym6WAdB9ul5gFguyeOS
-	Esf86wmTRzmd6vqqxopg==;
+	List-Owner; bh=HGlCWZ95mfTw3H4/cCoV3xCvkoJPjIwX9aFghezu5rM=; b=aqA6pS384B+fto
+	5WMcn8Zxh76jDvxavkZbKtKuoYK2wehhsj07FWwTrTxhYUtEtzKiCht3dRWkrqmcSYrg9mjzqYScA
+	tVRppwnSY4X7bjuxsd2IioxjO0fpKuT0prXYhGzLCO5azp5/scscxzyBTop4uj5F2S7nGHmO+wp4T
+	87iWloR0y2hFa9x9+/KJPaeYqczs1o7G4L/DlVgPufi9Kvti4029HpwlseHOvn81CZ+3IFwDDOo7q
+	xF83SmrufIdXKufRKTw7cmfp/xktJ+98YaNx0fv+4nW3LpH7Ta+rOfWYFiFnyG/VlsfldJZTnMzFB
+	5IAIST0ZWuJTY8qwQR5w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wf4bu-00000003E2G-44f1;
-	Wed, 01 Jul 2026 23:44:54 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1wf4bw-00000003E6B-1sxW;
+	Wed, 01 Jul 2026 23:44:56 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wf4bo-00000003Dsl-0v5z;
-	Wed, 01 Jul 2026 23:44:50 +0000
+	id 1wf4br-00000003DuH-0WfO;
+	Wed, 01 Jul 2026 23:44:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1782949486;
-	bh=zENi69Um11uU524KG8ZT0u+uCO1jqfR48V5n4jhR7ws=;
+	bh=waXlmTvbPOG5/ezXaAtha40DVEtrFzT/vfQbjQQH34g=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=B/ECViDWihZFOfWlCJ2q1OURuYsV/Z2b3vrFYNevPypzJgj5NWpM/j+ZJQ97zGnlo
-	 D6mV5ovIsgTOvMGZbsrYU3kWlMiwx4GA87eZgUVbdCvVdLpSlDRVGqdEwsQkPDmvXR
-	 I14OSjQyjc2tyqrnsFVSoKbymo+C+A/A9UkKEoHXAUeuSb2SHY1dmz4hEidyGxWUga
-	 kOB2WkNOmWxx/QpSji0XN4zbO7god00pPKT02VrjxLk9zUyVZqIYJBbe5cGVzMaGpV
-	 Sl0KYoXy3RkqSPct50nBXLvC9tH+YwaIzMjUCswdaZnG4FhD8uFl6oPHUbbPCuljeU
-	 vQknVu0fiiGIQ==
+	b=EUm2SQW9IMwHFb7OQHh1ih19R4xbGjIQoIy0Cyl+MSKhQIU9D7lOHRvIfSL57j/Pl
+	 O2ewpAjF4yYCxcJpoKF26kvEBGX4leb67lgtUYfIhRpsKbbQpKXdFKzztNA0VDX3uM
+	 et3JVtWen8iOTTjGzXLhmapUNdkiRmrTo/nLXKtyTH0KRVNBFjmConDZa0cjhsU6az
+	 Fwks4MlihSAvcNkibj7jmcTrhTF7o8m4SJy7qqjkN9MBp4HfkTR4aAf45kLjUsljW0
+	 e5Mk33tV8RT1ZsvTN/fb/D0g++f3PEcXbRlrK5SmUnbzvd0i3mm9NWrvokRv/eh84o
+	 6Vjv1efcW2iqg==
 Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id C092417E0FAA;
-	Thu,  2 Jul 2026 01:44:45 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 186CC17E0FDF;
+	Thu,  2 Jul 2026 01:44:46 +0200 (CEST)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id CEA73480069; Thu, 02 Jul 2026 01:35:48 +0200 (CEST)
+	id C5E69480062; Thu, 02 Jul 2026 01:35:48 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Thu, 02 Jul 2026 01:36:01 +0200
-Subject: [PATCH v9 23/38] phy: rockchip: usbdp: Use guard functions for
- mutex
+Date: Thu, 02 Jul 2026 01:35:55 +0200
+Subject: [PATCH v9 17/38] phy: rockchip: usbdp: Register DP aux bridge
 MIME-Version: 1.0
-Message-Id: <20260702-rockchip-usbdp-cleanup-v9-23-e31efbb62d2e@collabora.com>
+Message-Id: <20260702-rockchip-usbdp-cleanup-v9-17-e31efbb62d2e@collabora.com>
 References: <20260702-rockchip-usbdp-cleanup-v9-0-e31efbb62d2e@collabora.com>
 In-Reply-To: <20260702-rockchip-usbdp-cleanup-v9-0-e31efbb62d2e@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -68,26 +67,26 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  devicetree@vger.kernel.org, linux-usb@vger.kernel.org, 
  Sebastian Reichel <sebastian.reichel@collabora.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=4395;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3189;
  i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=zENi69Um11uU524KG8ZT0u+uCO1jqfR48V5n4jhR7ws=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpFpFTb4sz8pLoBRi9gVQlSlRqL4PbE0Az0d
- 9/ftw7J2IdXHokCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqRaRUAAoJENju1/PI
- O/qazHQP/0syXkEYZeyHWORrGEQwdRqaM982n5t6SAv6MtbnWqpUGwN2SnC9eCsW0z3kMCsmHgV
- 4rq6Yy+LUiRhaEDBELEZUKVt28VizY/wnnouvTaAX5IoWDEaDoMgYeFmuMmNbp6Po5dktFvwUaQ
- fvvutjLlTQBbC07xLzINXK4qh+ckznkVIsmGIWlygKDBwp/b8djYw6Jcof3eiYtgyR+AweGYVtR
- JxA1JXZMJek9hEnB7QIPnAXSX55kio4+EBm3D9RaQwqiBG+2Sd6qF1NEWvnnLsRpGJsXtcAi+g1
- feIptpxOt1iX02eezCtXhN0jSj9THnEvqbgu7367xpgOyBAKPAzBQv10Mg6ErB96jDGKHxaP1ru
- XooAAwaPfTfZ8rukJ9qN7Cdre8Yo1y8vN+LnwA2Oln5QCNGtyxdvLskcl7E8X9XVFlqRNVC879y
- Upr/+BA14qCD/Dq8hpScw1THiSUfT6HryYgpIeJ0mz4GGw2AJlIHGNLBEskgzRBGyKCi+abHtEH
- Vy66/hyha6nFUfGW+/RcZ6vZayUMYAH5kLr+UN70oKAa1c15bWnwOcgA01REqkwT72G3n8zdbAu
- v3IDjaFjWsaI9lvdTbJRrtYFswNlBiJnv2/wtCqKbg9XqGcbRjVGZnHiQNOFhKOCPBtxrYdkLy+
- R4nKkNb/m/c1pU4s43I0gaA==
+ bh=waXlmTvbPOG5/ezXaAtha40DVEtrFzT/vfQbjQQH34g=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpFpFNJJu0ImWjE1ZJlvsT7/dQeefNitxLjK
+ C3bCXcOUhdQ14kCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqRaRTAAoJENju1/PI
+ O/qa8KoP/R70neAO1D0zwdWvLn3B9wArH1/ZxDrPFsUlW1q+XVDmbCPQpJUk9NT/iED4zogCzp/
+ Ve6qhsD6HsnaNIqW3H+BvcjDBsy0jzq//ielQaKGKXFOazEvF3f1hxiPn3LDTXYh/+pkvtI2A9a
+ bFPsVcjPeBCSfZovV3CxiZ1YT7FjebJLR6H1vjYpbvASOoPnYqDE1blidAoHWRZDdfVbUFJ/ZXU
+ J5xEg4RZpM+tnu1z0AWU/8BEO5N+DuJHormBVgHEVLJ5N8a8GwqMsVOuDR8CctAQAj4D/QCpYJ+
+ b2kmt9IwmdEK/MNIa8dIXmQ5gqE3/738N5F7HVxx92zWcIFWkn6eI9K2fKEymCSWbNnCqCdntID
+ kzV5WaAAXrRT6CEpS6Cco4ub6hSR7kfiT9JNB1d2qfKOIy238NKMmKsSVbS2Exri6MEZyORAwgJ
+ Fvnsm+xlR9mYZsbpq2c5No+KZ4f2fJs1Wjz7+s0JLMzT000h4EqIV0KuMrRDqJQPlOsSzBfcujm
+ IN9RnmsQJibTOlTc9OW+UBvOcZhVURXpp/XwHPYMOR/l9WZmy7oZOSbf9Ps4ZzpT9IRz2Y6XLMT
+ 0yCnU7mTIZqXlXESiZLE0Tb/FJpKQg4EzUUqmQkojsyiT+KbQAv+hZvIFa7CZfamJlK19HpyjIe
+ K0BKUMwvEnrVzn3I1j2U0KA==
 X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
  fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260701_164448_425502_BB918A41 
-X-CRM114-Status: GOOD (  15.67  )
+X-CRM114-CacheID: sfid-20260701_164451_352396_51D1FE16 
+X-CRM114-Status: GOOD (  16.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,162 +103,92 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Convert the driver to use guard functions for mutex handling as
-a small cleanup. There is a small functional change in the DP PHY
-power up function, which no longer sleeps if the internal powerup
-code returns an error. This is not a problem as the sleep is only
-relevant for successful power-up.
+Add support to use USB-C connectors with the DP altmode helper code on
+devicetree based platforms. To get this working there must be a DRM
+bridge chain from the DisplayPort controller to the USB-C connector.
+E.g. on Rockchip RK3576:
 
+root@rk3576 # cat /sys/kernel/debug/dri/0/encoder-0/bridges
+bridge[0]: dw_dp_bridge_funcs
+        refcount: 7
+        type: [10] DP
+        OF: /soc/dp@27e40000:rockchip,rk3576-dp
+        ops: [0x47] detect edid hpd
+bridge[1]: drm_aux_bridge_funcs
+        refcount: 4
+        type: [0] Unknown
+        OF: /soc/phy@2b010000:rockchip,rk3576-usbdp-phy
+        ops: [0x0]
+bridge[2]: drm_aux_hpd_bridge_funcs
+        refcount: 5
+        type: [10] DP
+        OF: /soc/i2c@2ac50000/typec-portc@22/connector:usb-c-connector
+        ops: [0x4] hpd
+
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 54 +++++++++++++------------------
- 1 file changed, 23 insertions(+), 31 deletions(-)
+ drivers/phy/rockchip/Kconfig              |  2 ++
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 17 +++++++++++++++++
+ 2 files changed, 19 insertions(+)
 
+diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
+index 14698571b607..39759bb2fa1d 100644
+--- a/drivers/phy/rockchip/Kconfig
++++ b/drivers/phy/rockchip/Kconfig
+@@ -136,8 +136,10 @@ config PHY_ROCKCHIP_USBDP
+ 	tristate "Rockchip USBDP COMBO PHY Driver"
+ 	depends on ARCH_ROCKCHIP && OF
+ 	depends on TYPEC
++	depends on DRM || DRM=n
+ 	select GENERIC_PHY
+ 	select USB_COMMON
++	select DRM_AUX_BRIDGE if DRM_BRIDGE
+ 	help
+ 	  Enable this to support the Rockchip USB3.0/DP combo PHY with
+ 	  Samsung IP block. This is required for USB3 support on RK3588.
 diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index 9f0c0127e6d0..bf6e7edbe631 100644
+index 5d3db696d51f..b3de16557c32 100644
 --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -10,6 +10,7 @@
+@@ -6,6 +6,7 @@
+  * Copyright (C) 2024 Collabora Ltd
+  */
+ 
++#include <drm/bridge/aux-bridge.h>
  #include <dt-bindings/phy/phy.h>
  #include <linux/bitfield.h>
  #include <linux/bits.h>
-+#include <linux/cleanup.h>
- #include <linux/clk.h>
- #include <linux/delay.h>
- #include <linux/gpio.h>
-@@ -656,14 +657,15 @@ static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
- 	struct rk_udphy *udphy = typec_switch_get_drvdata(sw);
- 	bool flipped = orien == TYPEC_ORIENTATION_REVERSE;
- 
--	mutex_lock(&udphy->mutex);
-+	guard(mutex)(&udphy->mutex);
- 
- 	if (orien == TYPEC_ORIENTATION_NONE) {
- 		gpiod_set_value_cansleep(udphy->sbu1_dc_gpio, 0);
- 		gpiod_set_value_cansleep(udphy->sbu2_dc_gpio, 0);
- 		/* unattached */
- 		rk_udphy_usb_bvalid_enable(udphy, false);
--		goto unlock_ret;
-+
-+		return 0;
+@@ -1449,6 +1450,7 @@ static int rk_udphy_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+ 	struct phy_provider *phy_provider;
++	struct fwnode_handle *dp_aux_ep;
+ 	struct resource *res;
+ 	struct rk_udphy *udphy;
+ 	void __iomem *base;
+@@ -1507,6 +1509,21 @@ static int rk_udphy_probe(struct platform_device *pdev)
+ 			return ret;
  	}
  
- 	if (udphy->flip != flipped)
-@@ -673,8 +675,6 @@ static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
- 	rk_udphy_set_typec_default_mapping(udphy);
- 	rk_udphy_usb_bvalid_enable(udphy, true);
- 
--unlock_ret:
--	mutex_unlock(&udphy->mutex);
- 	return 0;
- }
- 
-@@ -1056,26 +1056,25 @@ static int rk_udphy_dp_phy_power_on(struct phy *phy)
- 	struct rk_udphy *udphy = phy_get_drvdata(phy);
- 	int ret;
- 
--	mutex_lock(&udphy->mutex);
-+	scoped_guard(mutex, &udphy->mutex) {
-+		phy_set_bus_width(phy, udphy->dp_lanes);
- 
--	phy_set_bus_width(phy, udphy->dp_lanes);
--
--	ret = rk_udphy_power_on(udphy, UDPHY_MODE_DP);
--	if (ret)
--		goto unlock;
-+		ret = rk_udphy_power_on(udphy, UDPHY_MODE_DP);
++	/*
++	 * Only register the DRM bridge, if the DP aux channel is connected.
++	 * Some boards use the USBDP PHY only for its USB3 capabilities. The
++	 * aux bridge itself will be registered using port 0, endpoint 0, which
++	 * is fine as that is the actual superspeed data connection shared by
++	 * USB3 and DP based on the mux config.
++	 */
++	dp_aux_ep = fwnode_graph_get_endpoint_by_id(dev_fwnode(dev), 3, 0, 0);
++	if (dp_aux_ep) {
++		ret = drm_aux_bridge_register(dev);
++		fwnode_handle_put(dp_aux_ep);
 +		if (ret)
 +			return ret;
- 
--	rk_udphy_dp_lane_enable(udphy, udphy->dp_lanes);
-+		rk_udphy_dp_lane_enable(udphy, udphy->dp_lanes);
- 
--	rk_udphy_dp_lane_select(udphy);
-+		rk_udphy_dp_lane_select(udphy);
 +	}
- 
--unlock:
--	mutex_unlock(&udphy->mutex);
- 	/*
- 	 * If data send by aux channel too fast after phy power on,
- 	 * the aux may be not ready which will cause aux error. Adding
- 	 * delay to avoid this issue.
- 	 */
- 	usleep_range(10000, 11000);
 +
- 	return ret;
- }
- 
-@@ -1083,10 +1082,10 @@ static int rk_udphy_dp_phy_power_off(struct phy *phy)
- {
- 	struct rk_udphy *udphy = phy_get_drvdata(phy);
- 
--	mutex_lock(&udphy->mutex);
-+	guard(mutex)(&udphy->mutex);
-+
- 	rk_udphy_dp_lane_enable(udphy, 0);
- 	rk_udphy_power_off(udphy, UDPHY_MODE_DP);
--	mutex_unlock(&udphy->mutex);
- 
- 	return 0;
- }
-@@ -1291,35 +1290,30 @@ static const struct phy_ops rk_udphy_dp_phy_ops = {
- static int rk_udphy_usb3_phy_init(struct phy *phy)
- {
- 	struct rk_udphy *udphy = phy_get_drvdata(phy);
--	int ret = 0;
- 
--	mutex_lock(&udphy->mutex);
-+	guard(mutex)(&udphy->mutex);
-+
- 	/* DP only or high-speed, disable U3 port */
- 	if (!(udphy->mode & UDPHY_MODE_USB) || udphy->hs) {
- 		rk_udphy_u3_port_disable(udphy, true);
--		goto unlock;
-+		return 0;
- 	}
- 
--	ret = rk_udphy_power_on(udphy, UDPHY_MODE_USB);
--
--unlock:
--	mutex_unlock(&udphy->mutex);
--	return ret;
-+	return rk_udphy_power_on(udphy, UDPHY_MODE_USB);
- }
- 
- static int rk_udphy_usb3_phy_exit(struct phy *phy)
- {
- 	struct rk_udphy *udphy = phy_get_drvdata(phy);
- 
--	mutex_lock(&udphy->mutex);
-+	guard(mutex)(&udphy->mutex);
-+
- 	/* DP only or high-speed */
- 	if (!(udphy->mode & UDPHY_MODE_USB) || udphy->hs)
--		goto unlock;
-+		return 0;
- 
- 	rk_udphy_power_off(udphy, UDPHY_MODE_USB);
- 
--unlock:
--	mutex_unlock(&udphy->mutex);
- 	return 0;
- }
- 
-@@ -1351,12 +1345,10 @@ static int rk_udphy_typec_mux_set(struct typec_mux_dev *mux,
- 	if (!rk_udphy_is_supported_mode(state))
- 		return 0;
- 
--	mutex_lock(&udphy->mutex);
-+	guard(mutex)(&udphy->mutex);
- 
- 	rk_udphy_set_typec_state(udphy, state->mode);
- 
--	mutex_unlock(&udphy->mutex);
--
- 	return 0;
- }
- 
+ 	udphy->phy_u3 = devm_phy_create(dev, dev->of_node, &rk_udphy_usb3_phy_ops);
+ 	if (IS_ERR(udphy->phy_u3)) {
+ 		ret = PTR_ERR(udphy->phy_u3);
 
 -- 
 2.53.0
