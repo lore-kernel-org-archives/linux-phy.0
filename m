@@ -4,88 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB41DC43458
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 12:20:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12FB2C43327
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 12:27:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0BpH8W0DHqwK4pzv0nDqU+q0OrLo7vgbDoPzY4EgBvE=; b=hAjeYj2EErIf9J
-	scdm/Cs21cJ6DsVPlgnZNPNW/CnN/+X4hs0JN07+pzOiHMKLl/CPZ4iTu2VeDPoOHw9KWj4fBa2uh
-	6wS4w1AlzDwHMS6jAjSdEVevYD+qcevnj55bVp3i/aQitGqI5nUUZAbCv5XfFApS/wQ4tmjAHhkKM
-	dOHIyuzkStKhU4gl45C+FHehlk7z9Zp4LVVbn96+YPUriqu5IovqpQa86elgxEpdW0FUzJVElwS5V
-	c7So0wa0SrhSkYxBRPSKrvaXjV8DhEz5h9wRR2wTwXEkXi8a1Y+SXL1wX6ZPcuBMiOGmKmO+HsQIb
-	jHlDB/jHNGEYvdF+3wBA==;
+	List-Owner; bh=C+BYUlwUO9n2vUPQBrqyck+cXGAAac9kCynLHARf+fc=; b=0Pixa7sdM1r3fv
+	3LJe2jeu85z06VsgB7M9iKjhmTTPQ74OLnT42nE1BwyaNLhXahHjsfkNUwk9W3nzaGcVr1vQBgHTc
+	92MwbrSo3aCXzJBXDc0TU0yELoNoHWtZguM3fR522z4h4xpkH0g64LPxeouj43H4oQplg66R5udem
+	IIxoi4LRnDBPCVVqJ3kGGc7bSTv+RvTfold5CQjSs9OBN2kBgjdyPXlK88j6Q5NQjXCvystuJCQd0
+	uRDt0kpwdCS4+drlJxXKWA0M2DW+qHmXBmeyvO2vBCVYps2TkHOF/75db0hCWMDgum7dJjNMtcKxg
+	VlkmapQcpgePvRrMErIg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wetvn-00000001sIV-0JoZ;
-	Wed, 01 Jul 2026 12:20:43 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1weu1s-00000001zS9-3TCR;
+	Wed, 01 Jul 2026 12:27:00 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wetvZ-00000001ra9-07Kl;
-	Wed, 01 Jul 2026 12:20:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=oiRBiC71AJTilv2l5S+MEmJPfyr+FMJMiueTJaFZmOA=; b=qxSOFrlZZE2PUltz4YQnzwxsue
-	+2I9ADui2UJMXZcsL2c608SDDprMkMlzfIxvnHhW6t6QZjXpbYYNcVp/2HmwUw3IaaRvoTVfog7IE
-	D8uAlCcGLEe3c64i+Rt+1Ihm8qZBCZTW4MlOpVEBAT8tNsS03VB2p5ZuxWdcHaflmM9PQJ0bR9OuX
-	yZKHov6BVD068Y0wmG5doSXhvuRObwYO45Z80jf/yR0sRLztUjRgDBRH91xokRZotNxmzRLqpP1y8
-	3k3M5YgFD2bqx6J5hetj8Lu6DVK4YDU1zAJBaVGOFKygHzoBWHX5b48G3Von67AMmnY5GLHypykWq
-	cbL2aL+w==;
-Received: from bali.collaboradmins.com ([148.251.105.195])
-	by casper.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wetvP-00000006aYJ-1TWn;
-	Wed, 01 Jul 2026 12:20:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1782908417;
-	bh=3xaFVtB+sdmI4U8DTkJvH4kHZiMSV8phaSXhpZ/6ybk=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=oR3U6+qvJvnxvweoNtdQ082mX9WW9RtmOMwPnF6m2VO/g8CTfarJ3ao9jnYBRAtXX
-	 wk5WTMwXmKfYkvKTvnQYNhHAYUwdt3S++rqhOo2wT4qdB+DSRnJAu+PLkifjN09r1V
-	 nPK/UJm+DPwVkZbK8doDBTu7RPfx2d/LJqVhBnm8AWch9Rg9hehxDtmeljTFoOkG8E
-	 LIQ+hcgXcsFIkP2sKnP8OpTDDwSeKyHeRB8D9bUIBjnd+l4syHap57GmjzefeAuDCT
-	 1blqqsY14pixbE4qqYytWqdxY02rngtWiTsLKcfbIxQhDEO0AaaGwp2AHZ8nNclFfy
-	 cBQo+ccR6tlIg==
-Received: from IcarusMOD.eternityproject.eu (unknown [100.64.1.21])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id A1C5417E1583;
-	Wed,  1 Jul 2026 14:20:16 +0200 (CEST)
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-To: chunfeng.yun@mediatek.com
-Cc: vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	matthias.bgg@gmail.com,
-	angelogioacchino.delregno@collabora.com,
-	chunkuang.hu@kernel.org,
-	p.zabel@pengutronix.de,
-	justin.yeh@mediatek.com,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	dri-devel@lists.freedesktop.org,
-	kernel@collabora.com
-Subject: [PATCH 07/12] phy: phy-mtk-dp: Support setting volt swing and preemphasis values
-Date: Wed,  1 Jul 2026 14:20:03 +0200
-Message-ID: <20260701122008.19509-8-angelogioacchino.delregno@collabora.com>
-X-Mailer: git-send-email 2.54.0
-In-Reply-To: <20260701122008.19509-1-angelogioacchino.delregno@collabora.com>
+	id 1weu1r-00000001zRl-10OT
+	for linux-phy@lists.infradead.org;
+	Wed, 01 Jul 2026 12:26:59 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id CA821417D1;
+	Wed,  1 Jul 2026 12:26:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 307E21F000E9;
+	Wed,  1 Jul 2026 12:26:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1782908818;
+	bh=52TWOxi0a9pzDOPVJc9NbYPQ8WvoOLt636S3MKAbHJA=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=YMX46vOGtug9PRPhaH8+H3L/5/KdufZTz7PM5e2MY4oETmZAvnVYqLv2bcaIMiV1c
+	 185urfMN9u5KoQo7IamVLySokmd0AMTJrlbag6A6ilUyW4Wa6YRh/cyNPsLhNDil1J
+	 gj6SZsmezNXYB3La4yiM+5mLoRVJaHbQ3bMYV9RQFIz7/3XrT+vf1PpMWaCsxd1H1v
+	 o5+bFg8JZM5+RDVXjcY69jNUYF6OwIA9G3qm8cOL0mcf72CxTh6QB8xDCPDWArDp9w
+	 WBvKt5DYeDLvxYgYIStdw/mR7Mkm24Nq2tFDGLbuHEAk5tKO3UaqsbAOoEKMHiM8UM
+	 sZvd//fWXmbvQ==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH 02/12] phy: phy-mtk-dp: Rename regs to regmap in struct
+ mtk_dp_phy
+To: "AngeloGioacchino Del Regno" <angelogioacchino.delregno@collabora.com>
+Cc: linux-phy@lists.infradead.org, neil.armstrong@linaro.org, dri-devel@lists.freedesktop.org, conor+dt@kernel.org, robh@kernel.org, olteanv@gmail.com, devicetree@vger.kernel.org, vkoul@kernel.org
+In-Reply-To: <20260701122008.19509-3-angelogioacchino.delregno@collabora.com>
 References: <20260701122008.19509-1-angelogioacchino.delregno@collabora.com>
-MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260701_132019_634902_217ADE62 
-X-CRM114-Status: GOOD (  14.20  )
+ <20260701122008.19509-3-angelogioacchino.delregno@collabora.com>
+Date: Wed, 01 Jul 2026 12:26:57 +0000
+Message-Id: <20260701122658.307E21F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,113 +63,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for honoring the set_voltages request to set the
-voltage swing and preemphasis values in the .configure() callback.
-
-For proper hardware cleanup, reset both in the .reset() callback.
-
-Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
----
- drivers/phy/mediatek/phy-mtk-dp.c | 41 ++++++++++++++++++++++++++++++-
- 1 file changed, 40 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/phy/mediatek/phy-mtk-dp.c b/drivers/phy/mediatek/phy-mtk-dp.c
-index a2cd22b9da06..17d871530cca 100644
---- a/drivers/phy/mediatek/phy-mtk-dp.c
-+++ b/drivers/phy/mediatek/phy-mtk-dp.c
-@@ -48,6 +48,11 @@
- /* DP_PHYD_TX_CTL_0 */
- #define PHYD_TX_LN_EN			GENMASK(7, 4)
- 
-+/* DP_PHYD_DRIVING_FORCE */
-+#define PHYD_DP_TX_FORCE_VOLT_SWING_EN	BIT(0)
-+#define PHYD_DP_TX_FORCE_VOLT_SWING_VAL	GENMASK(2, 1)
-+#define PHYD_DP_TX_FORCE_PRE_EMPH_VAL	GENMASK(4, 3)
-+
- #define XTP_LN_TX_LCTXC0_SW0_PRE0_DEFAULT	BIT(4)
- #define XTP_LN_TX_LCTXC0_SW0_PRE1_DEFAULT	(BIT(10) | BIT(12))
- #define XTP_LN_TX_LCTXC0_SW0_PRE2_DEFAULT	GENMASK(20, 19)
-@@ -101,6 +106,7 @@ enum mtk_dp_phya_ana_glb_regidx {
- };
- 
- enum mtk_dp_phyd_dig_lane_regidx {
-+	DP_PHYD_LAN_DRIVING_FORCE,
- 	DP_PHYD_LAN_DRIVING_PARAM_0,
- 	DP_PHYD_LAN_MAX
- };
-@@ -121,6 +127,7 @@ static const u8 mt8195_phy_ana_glb_regs[DP_PHYA_GLOBAL_MAX] = {
- };
- 
- static const u8 mt8195_phy_dig_lane_regs[DP_PHYD_LAN_MAX] = {
-+	[DP_PHYD_LAN_DRIVING_FORCE] = 0x18,
- 	[DP_PHYD_LAN_DRIVING_PARAM_0] = 0x2c,
- };
- 
-@@ -235,6 +242,28 @@ static int mtk_dp_phy_configure(struct phy *phy, union phy_configure_opts *opts)
- 				   PHYD_TX_LN_EN, val);
- 	}
- 
-+	if (opts->dp.set_voltages) {
-+		const u32 reg_drv_force = pdata->regs_dig_lane[DP_PHYD_LAN_DRIVING_FORCE];
-+
-+		if (opts->dp.lanes > 4) {
-+			dev_err(&phy->dev, "Wrong lanes config %u\n", opts->dp.lanes);
-+			return -EINVAL;
-+		}
-+
-+		for (i = 0; i < opts->dp.lanes; i++) {
-+			const u32 off_dig_lane = pdata->off_dig_lane[i];
-+			u32 val;
-+
-+			val = FIELD_PREP(PHYD_DP_TX_FORCE_VOLT_SWING_VAL, opts->dp.voltage[i]);
-+			val |= FIELD_PREP(PHYD_DP_TX_FORCE_PRE_EMPH_VAL, opts->dp.pre[i]);
-+
-+			regmap_update_bits(dp_phy->regmap, off_dig_lane + reg_drv_force,
-+					   PHYD_DP_TX_FORCE_VOLT_SWING_VAL |
-+					   PHYD_DP_TX_FORCE_PRE_EMPH_VAL,
-+					   val);
-+		}
-+	}
-+
- 	regmap_update_bits(dp_phy->regmap,
- 			   pdata->off_dig_glb + pdata->regs_dig_glb[DP_PHYD_PLL_CTL_1],
- 			   TPLL_SSC_EN, opts->dp.ssc ? TPLL_SSC_EN : 0);
-@@ -329,7 +358,8 @@ static int mtk_dp_phy_reset(struct phy *phy)
- 	struct mtk_dp_phy *dp_phy = phy_get_drvdata(phy);
- 	const struct mtk_dp_phy_pdata *pdata = dp_phy->pdata;
- 	const u32 reg_rst = pdata->regs_dig_glb[DP_PHYD_SW_RST];
--	int ret;
-+	const u32 reg_drv_force = pdata->regs_dig_lane[DP_PHYD_LAN_DRIVING_FORCE];
-+	int i, ret;
- 
- 	/* Clearing bits sets reset state */
- 	regmap_clear_bits(dp_phy->regmap, pdata->off_dig_glb + reg_rst, DP_GLB_SW_RST_PHYD);
-@@ -345,6 +375,15 @@ static int mtk_dp_phy_reset(struct phy *phy)
- 	if (ret)
- 		dev_err(dp_phy->dev, "Could not disable lanes during reset!\n");
- 
-+	/* Reset Voltage Swing and Preemphasis values */
-+	for (i = 0; i < MTK_DP_PHY_MAX_LANES; i++) {
-+		const u32 off_dig_lane = pdata->off_dig_lane[i];
-+
-+		regmap_clear_bits(dp_phy->regmap, off_dig_lane + reg_drv_force,
-+				   PHYD_DP_TX_FORCE_VOLT_SWING_VAL |
-+				   PHYD_DP_TX_FORCE_PRE_EMPH_VAL);
-+	}
-+
- 	return 0;
- }
- 
--- 
-2.54.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
+IFtIaWdoXSBNaXNzaW5nIE5VTEwgY2hlY2sgZm9yIGBkZXYtPnBsYXRmb3JtX2RhdGFgIGJlZm9y
+ZSBkZXJlZmVyZW5jaW5nLgotIFtIaWdoXSBNaXNzaW5nIGByZW1vdmVgIGNhbGxiYWNrIHRvIGNs
+ZWFuIHVwIFBIWSBsb29rdXAgbGVhZHMgdG8gYSBtZW1vcnkgbGVhayBhbmQgdXNlLWFmdGVyLWZy
+ZWUuCi0tCgpjb21taXQgYTFhOTZlNDI5Y2YzMzQ1NDcyYWFlMWIwNmY2ZmZlNWIzMWVkZWU4MQpB
+dXRob3I6IEFuZ2Vsb0dpb2FjY2hpbm8gRGVsIFJlZ25vIDxhbmdlbG9naW9hY2NoaW5vLmRlbHJl
+Z25vQGNvbGxhYm9yYS5jb20+CgpwaHk6IHBoeS1tdGstZHA6IFJlbmFtZSByZWdzIHRvIHJlZ21h
+cCBpbiBzdHJ1Y3QgbXRrX2RwX3BoeQoKSW4gcHJlcGFyYXRpb24gdG8gcGVyZm9ybSBmdXJ0aGVy
+IGNsZWFudXBzIGFuZCB0byBleHRlbmQgdGhlIGRyaXZlciB0bwpzdXBwb3J0IG1vcmUgU29Dcywg
+cmVuYW1lIHRoZSByZWdzIG1lbWJlciB0byByZWdtYXAgdG8gaW1wcm92ZSByZWFkYWJpbGl0eSwK
+YXMgdGhpcyBpcyBhIGNvbW1vbiBuYW1lIGFjcm9zcyBtYW55IGtlcm5lbCBkcml2ZXJzIGZvciBh
+IHN0cnVjdCByZWdtYXAuCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9tZWRpYXRlay9waHkt
+bXRrLWRwLmMgYi9kcml2ZXJzL3BoeS9tZWRpYXRlay9waHktbXRrLWRwLmMKPiBpbmRleCBkNzAy
+NGExNDQzMzU4Li5iZjdiM2E5NWU3MmQyIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L21lZGlh
+dGVrL3BoeS1tdGstZHAuYwo+ICsrKyBiL2RyaXZlcnMvcGh5L21lZGlhdGVrL3BoeS1tdGstZHAu
+YwpbIC4uLiBdCj4gQEAgLTE3Niw3ICsxNzYsNyBAQCBzdGF0aWMgaW50IG10a19kcF9waHlfcHJv
+YmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKCltTZXZlcml0eTogSGlnaF0KVGhpcyBp
+cyBhIHByZS1leGlzdGluZyBpc3N1ZSwgYnV0IGlzIGl0IHBvc3NpYmxlIGZvciBkZXYtPnBsYXRm
+b3JtX2RhdGEgdG8gYmUKTlVMTCBoZXJlPwoKRWFybGllciBpbiBtdGtfZHBfcGh5X3Byb2JlKCks
+IGRldi0+cGxhdGZvcm1fZGF0YSBpcyBkZXJlZmVyZW5jZWQgZGlyZWN0bHkKd2l0aG91dCBhIGNo
+ZWNrOgoKZHJpdmVycy9waHkvbWVkaWF0ZWsvcGh5LW10ay1kcC5jOm10a19kcF9waHlfcHJvYmUo
+KSB7CgkuLi4KCXN0cnVjdCByZWdtYXAgKnJlZ3M7CgoJcmVncyA9ICooc3RydWN0IHJlZ21hcCAq
+KilkZXYtPnBsYXRmb3JtX2RhdGE7CglpZiAoIXJlZ3MpCgkuLi4KfQoKSWYgdGhlIGRyaXZlciBp
+cyBtYW51YWxseSBib3VuZCB2aWEgc3lzZnMgKG9yIG90aGVyd2lzZSBpbnN0YW50aWF0ZWQgd2l0
+aG91dApwbGF0Zm9ybSBkYXRhKSwgZGV2LT5wbGF0Zm9ybV9kYXRhIHdpbGwgYmUgTlVMTC4KClNo
+b3VsZCB0aGUgY29kZSB2YWxpZGF0ZSB0aGF0IGRldi0+cGxhdGZvcm1fZGF0YSBpcyBub3QgTlVM
+TCBiZWZvcmUKZGVyZWZlcmVuY2luZyBpdCB0byBhdm9pZCBhIGtlcm5lbCBwYW5pYz8KCltTZXZl
+cml0eTogSGlnaF0KVGhpcyBpc24ndCBhIGJ1ZyBpbnRyb2R1Y2VkIGJ5IHRoaXMgcGF0Y2gsIGJ1
+dCBkb2VzIHRoaXMgZHJpdmVyIGxlYWsgdGhlCnBoeV9sb29rdXAgc3RydWN0IGFuZCBsZWF2ZSBh
+IGRhbmdsaW5nIHBvaW50ZXIgaWYgaXQgZ2V0cyB1bmJvdW5kPwoKSW4gbXRrX2RwX3BoeV9wcm9i
+ZSgpLCB3aGVuICFkZXYtPm9mX25vZGUgaXMgdHJ1ZSwgYSBsb29rdXAgZW50cnkgaXMKcmVnaXN0
+ZXJlZDoKCmRyaXZlcnMvcGh5L21lZGlhdGVrL3BoeS1tdGstZHAuYzptdGtfZHBfcGh5X3Byb2Jl
+KCkgewoJLi4uCglpZiAoIWRldi0+b2Zfbm9kZSkKCQlwaHlfY3JlYXRlX2xvb2t1cChwaHksICJk
+cCIsIGRldl9uYW1lKGRldikpOwoKCXJldHVybiAwOwp9CgpIb3dldmVyLCBtdGtfZHBfcGh5X2Ry
+aXZlciBkb2VzIG5vdCBoYXZlIGEgLnJlbW92ZSBjYWxsYmFjayB0byBjYWxsCnBoeV9yZW1vdmVf
+bG9va3VwKCk6Cgpkcml2ZXJzL3BoeS9tZWRpYXRlay9waHktbXRrLWRwLmM6CnN0YXRpYyBzdHJ1
+Y3QgcGxhdGZvcm1fZHJpdmVyIG10a19kcF9waHlfZHJpdmVyID0gewoJLnByb2JlID0gbXRrX2Rw
+X3BoeV9wcm9iZSwKCS5kcml2ZXIgPSB7CgkJLm5hbWUgPSAibWVkaWF0ZWstZHAtcGh5IiwKCX0s
+Cn07CgpJZiB0aGUgZHJpdmVyIGlzIHVuYm91bmQsIHRoZSBwaHlfbG9va3VwIHN0cnVjdCBpcyBs
+ZWFrZWQgYW5kIHJlbWFpbnMgbGlua2VkCmluIHRoZSBnbG9iYWwgcGh5cyBsaXN0LiBTaW5jZSB0
+aGUgcGh5IHN0cnVjdCBnZXRzIGZyZWVkIGJ5IHRoZQpkZXZpY2UtbWFuYWdlZCBzdWJzeXN0ZW0s
+IHN1YnNlcXVlbnQgZGV2aWNlIHByb2JlcyBpdGVyYXRpbmcgdGhlIFBIWSBsb29rdXAKbGlzdCB3
+b3VsZCB0cmlnZ2VyIGEgdXNlLWFmdGVyLWZyZWUuCgpDb3VsZCBhIC5yZW1vdmUgY2FsbGJhY2sg
+YmUgYWRkZWQgdG8gdW5yZWdpc3RlciB0aGUgbG9va3VwIGFuZCBwcmV2ZW50IHRoaXM/Cgo+ICAJ
+aWYgKCFkcF9waHkpCj4gIAkJcmV0dXJuIC1FTk9NRU07Cj4gIAo+IC0JZHBfcGh5LT5yZWdzID0g
+cmVnczsKPiArCWRwX3BoeS0+cmVnbWFwID0gcmVnczsKPiAgCXBoeSA9IGRldm1fcGh5X2NyZWF0
+ZShkZXYsIE5VTEwsICZtdGtfZHBfcGh5X2Rldl9vcHMpOwo+ICAJaWYgKElTX0VSUihwaHkpKQo+
+ICAJCXJldHVybiBkZXZfZXJyX3Byb2JlKGRldiwgUFRSX0VSUihwaHkpLAoKLS0gClNhc2hpa28g
+QUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDcwMTEyMjAw
+OC4xOTUwOS0xLWFuZ2Vsb2dpb2FjY2hpbm8uZGVscmVnbm9AY29sbGFib3JhLmNvbT9wYXJ0PTIK
+Ci0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3Jn
+Cmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
