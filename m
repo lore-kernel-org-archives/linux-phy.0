@@ -4,62 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5865C43327
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 06:59:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66EB8C43458
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 09:50:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w9zI2u6E1TYjWhNsDmZ6vfp66fAK1uUxzHhsfcNM5ys=; b=Ad44lzuxmVDbcn
-	/Sv0+kdrggpcoAZ23Om8si8qsdaVwTCMbCgwRL33A0kDa6t+BRRq/rIEn4x+p8h9q5LwdcRSd9lgw
-	WQSbnVmEwkWHV4aGykYdONI2as2M826xpey+xpXZGRtBSBXTpO1o6i5mpcHgxykHseteermj0kzuO
-	klw/mL0BgA3Lv03sFRja9RGicxHJLKEWG4EQEaDqm4rdGjTXQ6DTcgOrpHejk5D4EcHHljm95LluN
-	iieW7G05PGi7zdCYVKi0NyiNcbpLlwve1ct08DVm4gFZ0kez1C2N2LJNesxiaZYZJ6x8dcUlflXw9
-	5xMmLy1ZfVBEC4DvqDLw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:
+	References:MIME-Version:In-Reply-To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=+sqz0Ft99pq8+MdyhJ96BbEsX9Ld5GgDtc81OHtf1kw=; b=laDat+VTe30jznLMFyMhmhTin9
+	CJwMvJLioOqjHSP2WTrFYSKzE6ZMeSH+WrB7T/5pzAhj+G3kod/BgEfcunEGQrezQB+fLwtROkeVo
+	mGQLXK05zLbPjpVw0GUo2jc83D6vKmvT0kUgEENrW3OXQVUt6aH9/Onh3KTRagSVp0Hxie3Yq+NwA
+	ed+0njCiEOKoP0Wg39izbNcA2rOmP83b3MEwPrv7osM+SQjed8t9Jw69FhwZ7+S8QR+Te00cPUwn3
+	fXk1e6ur3IbxpBMj1Ib5VR9ymYN8HwJ5ZczFquPOygpZ3fsuHnqEo1dHTTrhn1CXZwcKx5NX+Gu5o
+	4tbAPCNw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1weouX-00000000qZW-1Jq9;
-	Wed, 01 Jul 2026 06:59:06 +0000
-Received: from mail.aspeedtech.com ([211.20.114.72] helo=twmbx01.aspeedtech.com)
+	id 1werag-00000001Et1-3V8D;
+	Wed, 01 Jul 2026 09:50:46 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1weouR-00000000qRW-2Hjj;
-	Wed, 01 Jul 2026 06:59:00 +0000
-Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
- (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Wed, 1 Jul
- 2026 14:58:18 +0800
-Received: from [127.0.1.1] (192.168.10.13) by TWMBX01.aspeed.com
- (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
- Transport; Wed, 1 Jul 2026 14:58:18 +0800
-From: Ryan Chen <ryan_chen@aspeedtech.com>
-Date: Wed, 1 Jul 2026 14:58:19 +0800
-Subject: [PATCH v3 3/3] MAINTAINERS: Add ASPEED USB3 PHY driver
+	id 1weraf-00000001Esb-1FMC
+	for linux-phy@lists.infradead.org;
+	Wed, 01 Jul 2026 09:50:45 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id C317F601E2
+	for <linux-phy@lists.infradead.org>; Wed,  1 Jul 2026 09:50:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7727D1F00A3F
+	for <linux-phy@lists.infradead.org>; Wed,  1 Jul 2026 09:50:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1782899443;
+	bh=CYGZFzyPZ+A2YYB3ropIX8iebOcV3V3VZwIWp6S8JQM=;
+	h=From:In-Reply-To:References:Date:Subject:To:Cc;
+	b=ovsz+YelOrq+1skD75xSG5EORRjD0cTTOcWfjmNL1AE9OSsCsfZjJp8XxxnkiUAcg
+	 P+abid/4QGDt7gX6rEmPOu/VcNzmUDeaCsph0bEI5G2ZBM756c+SPKBHfxhAfNqZVw
+	 mElrkhKwEzEm8A6sScqGt9rfi2+uIc2CPoQ5vo4bi69uMhjvNM7S+laUTGgzHzhx+h
+	 R38HmKICmEJs1YdCuGnRmbrznzgZczz/T7WE4l0mpNrxhJred0aed7bjS24lYbyHiI
+	 1PmPdRZXOUVe38kyHbGRHLtz9q+GicbDgaldjuYPzchLjKtzQM/Em7bqSFFTRjfkQW
+	 5xc/tFJrhG/sg==
+Received: by mail-lj1-f182.google.com with SMTP id 38308e7fff4ca-39b315585a4so3282541fa.0
+        for <linux-phy@lists.infradead.org>; Wed, 01 Jul 2026 02:50:43 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AHgh+RqQHjOAf4tsZgjigvUq31SxGUhtRHhe/FgyXeTxdzN72AJr01VwlUDiuriyXIgKPD0Yvf99BFAaJdI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwU/p0DPMbCXXoRUKHMJfwQPJO9t9VvZoSVQ6DjJ7NQkBYuhFMM
+	Q3UNKivZuODPbLGggAf6mIf2NdO2hyO6zXLDQIvTxBlzeKdIyy3FVJ5VfgSeiQRaU9rVCq1aMQK
+	wC1KLNVPenM7meZOw0QcQSGIAzaIM4qok3uY6uJSliQ==
+X-Received: by 2002:a2e:9a0e:0:b0:396:9966:50e4 with SMTP id
+ 38308e7fff4ca-39b33fcfac5mr2066541fa.14.1782899442056; Wed, 01 Jul 2026
+ 02:50:42 -0700 (PDT)
+Received: from 969154062570 named unknown by gmailapi.google.com with
+ HTTPREST; Wed, 1 Jul 2026 04:50:40 -0500
+Received: from 969154062570 named unknown by gmailapi.google.com with
+ HTTPREST; Wed, 1 Jul 2026 04:50:40 -0500
+From: Bartosz Golaszewski <brgl@kernel.org>
+In-Reply-To: <20260701-shikra-upstream-v1-1-e1a721eb8943@oss.qualcomm.com>
 MIME-Version: 1.0
-Message-ID: <20260701-upstream_usb3phy-v3-3-00e12315b6f9@aspeedtech.com>
-References: <20260701-upstream_usb3phy-v3-0-00e12315b6f9@aspeedtech.com>
-In-Reply-To: <20260701-upstream_usb3phy-v3-0-00e12315b6f9@aspeedtech.com>
-To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>, "Andrew
- Jeffery" <andrew@codeconstruct.com.au>, Philipp Zabel
-	<p.zabel@pengutronix.de>
-CC: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-aspeed@lists.ozlabs.org>,
-	<linux-kernel@vger.kernel.org>, Ryan Chen <ryan_chen@aspeedtech.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1782889098; l=861;
- i=ryan_chen@aspeedtech.com; s=20251126; h=from:subject:message-id;
- bh=njRESqLfQG7J4os1F1U/PJtipN00LX9glpTZuXwuxRE=;
- b=9nDC6roHxfGcpoe43h1qTGG9AwTHok6mjgtTbKiriMRNV5LYvorZCkvRv1RyoRS7m+iQGHzcm
- V8uVk5DQGeSBKe0/CjGZXbG8nfFOos6gvV42A+70KRo+SPXsxdJ0+vv
-X-Developer-Key: i=ryan_chen@aspeedtech.com; a=ed25519;
- pk=Xe73xY6tcnkuRjjbVAB/oU30KdB3FvG4nuJuILj7ZVc=
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260630_235859_593675_ECC40F74 
-X-CRM114-Status: UNSURE (   8.18  )
-X-CRM114-Notice: Please train this message.
+References: <20260701-shikra-upstream-v1-0-e1a721eb8943@oss.qualcomm.com> <20260701-shikra-upstream-v1-1-e1a721eb8943@oss.qualcomm.com>
+Date: Wed, 1 Jul 2026 04:50:40 -0500
+X-Gmail-Original-Message-ID: <CAMRc=Mey1em0BBUUuyLTpVfq8u4Xn8jZMhE4g+HpdrojZ8MXEQ@mail.gmail.com>
+X-Gm-Features: AVVi8CflDzWyc0cIuHDaH0TTpmlFBQDWQvxDBA8MQsFXpL6lUrYdBoN6qFDa_4c
+Message-ID: <CAMRc=Mey1em0BBUUuyLTpVfq8u4Xn8jZMhE4g+HpdrojZ8MXEQ@mail.gmail.com>
+Subject: Re: [PATCH 1/9] dt-bindings: phy: sc8280xp-qmp-pcie: Document Shikra
+ PCIe phy
+To: Sushrut Shree Trivedi <sushrut.trivedi@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-pci@vger.kernel.org, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Bjorn Helgaas <bhelgaas@google.com>, Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+	=?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+	Manivannan Sadhasivam <mani@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>, Bartosz Golaszewski <brgl@kernel.org>, 
+	Konrad Dybcio <konradybcio@kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,36 +93,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add maintainer entry for ASPEED USB3 PHY driver.
+On Tue, 30 Jun 2026 21:02:43 +0200, Sushrut Shree Trivedi
+<sushrut.trivedi@oss.qualcomm.com> said:
+> Document the compatible of the Shikra PCIe phy which supports
+> Gen2x1.
+>
+> Signed-off-by: Sushrut Shree Trivedi <sushrut.trivedi@oss.qualcomm.com>
+> ---
+>  Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml | 2 ++
+>  1 file changed, 2 insertions(+)
+>
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> index 108cf9dc86ea..b9b0fa26347b 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> @@ -34,6 +34,7 @@ properties:
+>        - qcom,sdm845-qmp-pcie-phy
+>        - qcom,sdx55-qmp-pcie-phy
+>        - qcom,sdx65-qmp-gen4x2-pcie-phy
+> +      - qcom,shikra-qmp-gen2x1-pcie-phy
+>        - qcom,sm8150-qmp-gen3x1-pcie-phy
+>        - qcom,sm8150-qmp-gen3x2-pcie-phy
+>        - qcom,sm8250-qmp-gen3x1-pcie-phy
+> @@ -166,6 +167,7 @@ allOf:
+>                - qcom,sdm845-qhp-pcie-phy
+>                - qcom,sdm845-qmp-pcie-phy
+>                - qcom,sdx55-qmp-pcie-phy
+> +              - qcom,shikra-qmp-gen2x1-pcie-phy
+>                - qcom,sm8150-qmp-gen3x1-pcie-phy
+>                - qcom,sm8150-qmp-gen3x2-pcie-phy
+>                - qcom,sm8250-qmp-gen3x1-pcie-phy
+>
+> --
+> 2.43.0
+>
+>
 
-Signed-off-by: Ryan Chen <ryan_chen@aspeedtech.com>
----
- MAINTAINERS | 8 ++++++++
- 1 file changed, 8 insertions(+)
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 895a87b571c3..10c08f322618 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -4062,6 +4062,14 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/usb/aspeed,ast2600-udc.yaml
- F:	drivers/usb/gadget/udc/aspeed_udc.c
- 
-+ASPEED USB3 PHY DRIVER
-+M:	Ryan Chen <ryan_chen@aspeedtech.com>
-+L:	linux-aspeed@lists.ozlabs.org (moderated for non-subscribers)
-+L:	linux-phy@lists.infradead.org
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/phy/aspeed,ast2700-usb3-phy.yaml
-+F:	drivers/phy/aspeed/phy-aspeed-usb3.c
-+
- ASPEED VIDEO ENGINE DRIVER
- M:	Eddie James <eajames@linux.ibm.com>
- L:	linux-media@vger.kernel.org
-
--- 
-2.34.1
-
+Reviewed-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 
 -- 
 linux-phy mailing list
