@@ -4,90 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2461C44507
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 23:36:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3B96DC43458
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 23:38:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q68jtqkxCxXlrDCPgsMH0/ADNFBEamdQytagAgD0sbs=; b=n1ZTlZNKC44dBd
-	GWR36eplBM1Rx2wU+sOFHWVcAcOtDmAwJXAJDGFDOSIXIXoyoELLmaZ0dCyVeLHNXmCWwfrBpIohC
-	jXt7F0ZBPsnDYYeiv5B7FzzUpHrhWt7mHYg7clq4dysdCNMlQofsWPku+ukHhoOwwNHfNCzAFmasB
-	iC4DCluuS2Yg7MIAaG2041lCg1ll2a3hrQWsT17ithXCwxlvE4+6FAS8AvxnHD3Icms5LjYPjgqoh
-	4ovplZhV8Ap3Ur69mMJ+qVnRsrGU2lziYX6u9x/tZSFCUFdq93nr1e+yi4IxaIXu7ruv+q4y/Fl5z
-	YuA6IGJCe/mK6VFk033g==;
+	List-Owner; bh=Mvyo/hWJ0LehFssCA+Y2PLD7HgbHvko7/c6SWBYqtHY=; b=dozkuC7VRy//rD
+	uUU28VaITq6/aUf8LE+d6Y/2E/Je+ODwBik0zQgJqo2ZJTxc736AzEUMnOk7ZwGl09nr7F2lteCk1
+	bxA/43nPVc7TwdRrzd64Cw3jxscHtMFjP9qkoQNDH55DJ9SOHnpF8053KvCCOJ3U22FUUjhTeQqlG
+	fjjXeus761GyfhWVQOv8pGffULM7IqLz1N9T2+niwILbDzq/9YVdGpzYDQnnDpqcsIS25wBd+wbLd
+	7UxtjRESYFtgq9CtY7EuxA1slF965Bya/OC3OcwUgaSv4K4WsdfnEgVFSV7Bst+/hv+SHBLOb/QVt
+	xaQIaRRSFyi+XuC5T6IQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wf4U3-00000003CDQ-3nHd;
-	Wed, 01 Jul 2026 23:36:47 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1wf4VJ-00000003DJp-03HG;
+	Wed, 01 Jul 2026 23:38:05 +0000
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wf4TN-00000003A1B-0rkM;
-	Wed, 01 Jul 2026 23:36:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1782948950;
-	bh=4RuwzAtf5TKGkkh33ZvgbW91Fqbf6UoXltvoPmdTV2I=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=Ni7TxY3WL+87gUUA9z1Z5f8DcDdvcMovMxYaK/ASLRb2ZSuyL7Ecv7J7wObTzV+zf
-	 sCemTBs2vCshpQ80SVbVdSuCrnW95mqi0s8PHf4G6YvtMI2vZ0vV+PtlmS9BakzrPJ
-	 j1zODvOGyzDBzFgb761PjO+L9bQYfPDcIUT3I2D9SZYQwA5n2VtbNvKU1JNPEs8+zh
-	 AikKzBd2R1l4GAw3WbFPsp4WZ74NsZ3+Zi1NPd8R+Vb4PEWL+rWDDcbLXN7R7h1rpf
-	 LYeFyMpXOug0R2g831YuuoeBOsuVRfVl+r8T5VEERIS5F25SoX6jsSODr2UJWPZ5sS
-	 1Jid6U4+bWr1Q==
-Received: from jupiter.universe (unknown [100.64.1.62])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 455AE17E361D;
-	Thu,  2 Jul 2026 01:35:50 +0200 (CEST)
-Received: by jupiter.universe (Postfix, from userid 1000)
-	id E08CF48007A; Thu, 02 Jul 2026 01:35:48 +0200 (CEST)
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Thu, 02 Jul 2026 01:36:13 +0200
-Subject: [PATCH v9 35/38] phy: rockchip: usbdp: Simplify power state
- handling
+	id 1wf4VG-00000003DJS-1Zgm
+	for linux-phy@lists.infradead.org;
+	Wed, 01 Jul 2026 23:38:03 +0000
+Received: by mail-lf1-x132.google.com with SMTP id 2adb3069b0e04-5aebf96bc89so223092e87.0
+        for <linux-phy@lists.infradead.org>; Wed, 01 Jul 2026 16:38:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1782949080; x=1783553880; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from:references
+         :cc:to:subject:user-agent:mime-version:date:message-id:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=OVCh6Lf8+nzzdAxzyPMuHDYAnEuNDpXn+opdGjJoaxg=;
+        b=jR2DCzJ9Xu2LImuZom30Z+4tIIIEyn3vhJEQe28TB2U9xk1Qf0rvDu+l42pJGI693/
+         l4lmxOuK8JOYsbTvni5nj959Dt9eXoXqO/DCGR6Agi19KXHb1vlMPG7fhFdlVDA3Hqoy
+         G9d2y2vwVA4wmDQnIxuUTgW5iluSF7NFO4ws11uKPIHFLmdoxvskW1MCaDtfK7n6ya/k
+         DtJpEQBmJCOq6utGaKkQAxz7tKbbz6OWPvbXMQ4q1I7VTDr0nCe6ziXcYREj0xOOg+sM
+         vneakM4ayz0tmLhVyF5onWO2fB84x72hvi9nebKP+S56/eZR8kqDbRqcrTVGJnJitY3A
+         z5rw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1782949080; x=1783553880;
+        h=content-transfer-encoding:content-type:in-reply-to:from:references
+         :cc:to:subject:user-agent:mime-version:date:message-id:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=OVCh6Lf8+nzzdAxzyPMuHDYAnEuNDpXn+opdGjJoaxg=;
+        b=FOdcHVnLAL3pvAx/+msM+z1xtEUDLLALjDxtJmUT6YdBkqvh2Zh418gis8JNuC+H2j
+         buUJAaH1UCbrrIYiAFap+MIJ/0jt7lQpNGG8KGxOA2E8TbEhKbqYgzbBhUBnokLINlg+
+         DK6rxTRDfYZBwS6hWNs2f6/+h0SEMe58y0vCeOQEX9pZH+G94m7Ma9AiYqCGvU2T/Pm6
+         Rb3NWHb77oDenwnTMPRqQOpRYFb0rQBG/nfMMSIznmS4IyY4XukH1R0mShxV00IDHLBp
+         fA9DtnvN5Rl8Tx51CokUgWhXFV0+vCSB6ebWKHIWYD/BoyLessFLr+KZrZTnL+MmrKXC
+         7jOQ==
+X-Forwarded-Encrypted: i=1; AHgh+RppNBMwD206dK17nwaLVqiLuJzASmf3F5gkR3Q84Fn7LXynF8fjLQuJk4KWRAjRwmbPWeBVi/PMjC8=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz0XasoqiHCxHf8SxO2YSXOKfYtJhShZ7rfILI7rn2hDU6/wjed
+	T3VyYQiISHVRcmImyRqAv5bAWT4fZY4cWoTIRRKCuhS6V3ImYZZMNKKhg8I/nenNnbU=
+X-Gm-Gg: AfdE7claVU2p8OH+l61ksdePyirDjpOsq3smRScYOXV2NAg+ssc8LM879DqUkDEVvCB
+	iaRbGd30CRDKyHHmhnaJbcy+PYKYWAbyusRcIPaqYQ7/8mww5bqH5YWsxHJi4/KbpWCsJWnUCuq
+	M8PP39iWQJJjSHq7XS5kilqeIsnZYCdKsCzCWttjeMhAn6xw8gUub/k38i582di7G+FNNMIvf+S
+	kl1mVKGoQoXllc9zAawD9uPO4itwZwcZL+W6hM7sBe2/RT6J2pvj8OBHIBeWmWTvZrVCSrsGu6j
+	dA+OkxZDQ9GjnCvw4V2VCYF3Eoe9nZAjDGfkRRtPN7wjHXTZuluXfbzojbSskiOFnKdtychRZ5n
+	7F8kSpxm7R42ihHMUM0W5Ac4wHC3o+UvG0t8meYw8FForDRvLcgMGnEmZaORrwBWMOF92MIhX9a
+	p0y3p8aPBzSCn8V2p5YCKJbN3XGuxQStikfkcueU1aC50bYOrDRdK1JlCYHkEr557deIc=
+X-Received: by 2002:a05:6512:4613:b0:5ae:b17a:2617 with SMTP id 2adb3069b0e04-5aec7435771mr533633e87.6.1782949079808;
+        Wed, 01 Jul 2026 16:37:59 -0700 (PDT)
+Received: from [192.168.1.100] (91-159-24-186.elisa-laajakaista.fi. [91.159.24.186])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5aec89dc478sm300818e87.68.2026.07.01.16.37.58
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 01 Jul 2026 16:37:58 -0700 (PDT)
+Message-ID: <ae3a381b-5697-43ee-bdfd-aaf2d22ceedf@linaro.org>
+Date: Thu, 2 Jul 2026 02:37:58 +0300
 MIME-Version: 1.0
-Message-Id: <20260702-rockchip-usbdp-cleanup-v9-35-e31efbb62d2e@collabora.com>
-References: <20260702-rockchip-usbdp-cleanup-v9-0-e31efbb62d2e@collabora.com>
-In-Reply-To: <20260702-rockchip-usbdp-cleanup-v9-0-e31efbb62d2e@collabora.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Heiko Stuebner <heiko@sntech.de>, Frank Wang <frank.wang@rock-chips.com>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>, 
- Yubing Zhang <yubing.zhang@rock-chips.com>, 
- Alexey Charkov <alchark@gmail.com>, linux-phy@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- linux-kernel@vger.kernel.org, kernel@collabora.com, 
- devicetree@vger.kernel.org, linux-usb@vger.kernel.org, 
- Sebastian Reichel <sebastian.reichel@collabora.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=6342;
- i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=4RuwzAtf5TKGkkh33ZvgbW91Fqbf6UoXltvoPmdTV2I=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpFpFRa+ou2LkR21OWZwKdVSLxiiOpwQx95q
- 8e/kJRzey2gKYkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqRaRUAAoJENju1/PI
- O/qahH4P/3+Rrju4vHg151N1+iO/jfoqvL83xNF73dzSAh6ZBCRb/m6Vv8Qco7x5rjUIFYbCBZS
- 8Ny2UqcA3K4lWpOku02CwPzLaavXxcP5X5Vi+OZgkBi5dAdpRfED0LF5SycWCsKLBGGsxowl9F0
- Oq27qPbJzZJ8B3obUk87ulDOtjk3XVRF2EbxO4E8pTqRsGVmUHAp517UmEBqdFDmh7BoxRR0U/R
- 8XrVUvNUpnb0UnFDZxVDAVWhQvyH9ZSyqgJUeDRTahYsOYEA4zJoktLQuUhLQS4DAhuKapghiRC
- /nj2kC3OZ4bvC+jKcApcHpIc6a2dfz9TIoyYIpCp9yAjfnyYpBs8i8FkRy22H3yKcNOB730Zdbd
- hbDvb0Pa9XtzgrjVpUZqEGHMT3qfKYTILoPsqI+OQBGE4A8CrUBi44htl2ACXfMjFSdSXRdVFo9
- qZAj+ggk/6yyk6y0VqeoHz8iaWxkvVxzrztDJesgpycqp/El+FwGZbj4Edm7IH9TSHZpkxMFVsE
- ev1xiEj4DVs2YuL803BRxny+iQDHu4X5/JGYMJzir3B4hQ2i4bvBBVtC8hriT797GxdbkuTnlqi
- xqAcEKsPqplsHMG40U+aD5SIOtheSlNlE03BuA1I1xo0ySNYnzeeqFlzJ7bpeAj/yZ1DcRoBGef
- NCYSXMLyfmJvIkc7O458lzw==
-X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
- fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v8 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
+To: Bryan O'Donoghue <bod@kernel.org>,
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>, Vinod Koul
+ <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20260523-x1e-csi2-phy-v8-0-a85668459521@linaro.org>
+ <20260523-x1e-csi2-phy-v8-1-a85668459521@linaro.org>
+ <rpnNMsR9GY8gbynzeBO8Zm61JAOq3ubt6sp0x3WDPPwkMAJzlcofECD1kabN-IUoK6sSwP5P6l28UIZLFCOpjQ==@protonmail.internalid>
+ <dda32577-04e0-4507-acaf-a5694f4f31b3@linaro.org>
+ <7c564df8-5c5a-4b43-806e-5e017e5c51db@kernel.org>
+From: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
+In-Reply-To: <7c564df8-5c5a-4b43-806e-5e017e5c51db@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260701_163605_486295_F37C6EAC 
-X-CRM114-Status: GOOD (  19.77  )
+X-CRM114-CacheID: sfid-20260701_163802_470679_FA7C5825 
+X-CRM114-Status: GOOD (  12.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,226 +106,50 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Simplify power state handling by introducing sw_mode in addition
-to the hw_mode field, so that the PHY knows about the currently
-supported modes from the hardware perspective, the current modes
-requested by software and the actual hardware status.
+On 7/2/26 01:54, Bryan O'Donoghue wrote:
+> On 02/06/2026 22:59, Vladimir Zapolskiy wrote:
+>>> +
+>>> +  "#phy-cells":
+>>> +    const: 1
+>>> +    description:
+>>> +      The single cell specifies the PHY operating mode.
+>> #phy-cells should be 0, because the PHY operating mode is well defined
+>> by 'bus-type' property of an endpoint on the sensor side, the opposite
+>> side of CAMSS/CSID as a CSIPHY "consumer" should not dictate the PHY type.
+> 
+> So going through the list I don't believe this is correct.
 
-Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
----
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 117 +++++++++++++-----------------
- 1 file changed, 49 insertions(+), 68 deletions(-)
+Be specific what is incorrect.
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index a19b048fb39c..51aac07ef9fe 100644
---- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
-+++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -176,7 +176,8 @@ struct rk_udphy {
- 	bool flip;
- 	bool phy_needs_reinit;
- 	u8 hw_mode; /* modes currently supported by hardware */
--	u8 status;
-+	u8 sw_mode; /* modes currently requested */
-+	u8 status; /* current PHY power state */
- 
- 	/* utilized for USB */
- 	bool hs; /* flag for high-speed */
-@@ -585,15 +586,6 @@ static void rk_udphy_dp_lane_enable(struct rk_udphy *udphy, int dp_lanes)
- 				   CMN_DP_CMN_RSTN, FIELD_PREP(CMN_DP_CMN_RSTN, 0x0));
- }
- 
--static void rk_udphy_mode_set(struct rk_udphy *udphy, u8 hw_mode)
--{
--	if (udphy->hw_mode == hw_mode)
--		return;
--
--	udphy->phy_needs_reinit = true;
--	udphy->hw_mode = hw_mode;
--}
--
- static void rk_udphy_set_typec_state(struct rk_udphy *udphy, unsigned long state)
- {
- 	u8 hw_mode;
-@@ -627,7 +619,7 @@ static void rk_udphy_set_typec_state(struct rk_udphy *udphy, unsigned long state
- 		break;
- 	}
- 
--	rk_udphy_mode_set(udphy, hw_mode);
-+	udphy->hw_mode = hw_mode;
- }
- 
- static void rk_udphy_set_typec_default_mapping(struct rk_udphy *udphy)
-@@ -1023,66 +1015,61 @@ static int rk_udphy_parse_dt(struct rk_udphy *udphy)
- 	return rk_udphy_reset_init(udphy, dev);
- }
- 
--static int rk_udphy_power_on(struct rk_udphy *udphy, u8 mode)
-+static int rk_udphy_update_power_state(struct rk_udphy *udphy)
- {
-+	u8 target_mode = udphy->hw_mode & udphy->sw_mode;
- 	int ret;
- 
--	if (!(udphy->hw_mode & mode)) {
--		dev_info(udphy->dev, "mode 0x%02x is not support\n", mode);
-+	if (!udphy->phy_needs_reinit && udphy->status == target_mode)
- 		return 0;
--	}
- 
--	if (udphy->status == UDPHY_MODE_NONE) {
--		phy_notify_reset(udphy->phy_u3, PHY_NOTIFY_PRE_RESET);
-+	/*
-+	 * Inform DWC3 driver, that we are about to reset the PHY, so that it can
-+	 * assert its PIPE reset lines and avoid DWC3 getting into a buggy state.
-+	 */
-+	phy_notify_reset(udphy->phy_u3, PHY_NOTIFY_PRE_RESET);
- 
--		rk_udphy_u3_port_disable(udphy, true);
--		udelay(10);
-+	/*
-+	 * Disable USB3 port, which among other things re-routes a DWC3 clock to
-+	 * avoid SErrors when the DWC3 registers are accessed while the PHY is
-+	 * disabled.
-+	 */
-+	rk_udphy_u3_port_disable(udphy, true);
-+	udelay(10);
- 
-+	if (udphy->status == UDPHY_MODE_NONE) {
-+		/* Power up (incl. clocks) */
- 		ret = rk_udphy_setup(udphy);
--		if (ret)
-+		if (ret) {
-+			phy_notify_reset(udphy->phy_u3, PHY_NOTIFY_POST_RESET);
- 			return ret;
--
--		if (!udphy->hs && udphy->hw_mode & UDPHY_MODE_USB)
--			rk_udphy_u3_port_disable(udphy, false);
--		udphy->phy_needs_reinit = false;
--
--		phy_notify_reset(udphy->phy_u3, PHY_NOTIFY_POST_RESET);
--	} else if (udphy->phy_needs_reinit) {
--		phy_notify_reset(udphy->phy_u3, PHY_NOTIFY_PRE_RESET);
--
--		rk_udphy_u3_port_disable(udphy, true);
--		udelay(10);
--
-+		}
-+	} else if (target_mode == UDPHY_MODE_NONE) {
-+		/* Power down (incl. clocks) */
-+		rk_udphy_disable(udphy);
-+	} else {
-+		/* Mode change => re-init */
- 		ret = rk_udphy_init(udphy);
- 		if (ret) {
- 			phy_notify_reset(udphy->phy_u3, PHY_NOTIFY_POST_RESET);
- 			return ret;
- 		}
--
--		phy_notify_reset(udphy->phy_u3, PHY_NOTIFY_POST_RESET);
--
--		udphy->phy_needs_reinit = false;
- 	}
- 
--	udphy->status |= mode;
-+	/* Ensure USB3 support is enabled when supported and requested */
-+	if (!udphy->hs && target_mode & UDPHY_MODE_USB)
-+		rk_udphy_u3_port_disable(udphy, false);
- 
--	return 0;
--}
--
--static void rk_udphy_power_off(struct rk_udphy *udphy, u8 mode)
--{
--	if (!(udphy->hw_mode & mode)) {
--		dev_info(udphy->dev, "mode 0x%02x is not support\n", mode);
--		return;
--	}
--
--	if (!udphy->status)
--		return;
-+	/*
-+	 * Inform DWC3, that we are done with the reset, so that it can deassert
-+	 * its PIPE reset line.
-+	 */
-+	phy_notify_reset(udphy->phy_u3, PHY_NOTIFY_POST_RESET);
- 
--	udphy->status &= ~mode;
-+	udphy->status = target_mode;
-+	udphy->phy_needs_reinit = false;
- 
--	if (udphy->status == UDPHY_MODE_NONE)
--		rk_udphy_disable(udphy);
-+	return 0;
- }
- 
- static int rk_udphy_dp_phy_power_on(struct phy *phy)
-@@ -1091,9 +1078,11 @@ static int rk_udphy_dp_phy_power_on(struct phy *phy)
- 	int ret;
- 
- 	scoped_guard(mutex, &udphy->mutex) {
-+		udphy->sw_mode |= UDPHY_MODE_DP;
-+
- 		phy_set_bus_width(phy, udphy->dp_lanes);
- 
--		ret = rk_udphy_power_on(udphy, UDPHY_MODE_DP);
-+		ret = rk_udphy_update_power_state(udphy);
- 		if (ret)
- 			return ret;
- 
-@@ -1118,8 +1107,10 @@ static int rk_udphy_dp_phy_power_off(struct phy *phy)
- 
- 	guard(mutex)(&udphy->mutex);
- 
-+	udphy->sw_mode &= ~UDPHY_MODE_DP;
-+
- 	rk_udphy_dp_lane_enable(udphy, 0);
--	rk_udphy_power_off(udphy, UDPHY_MODE_DP);
-+	rk_udphy_update_power_state(udphy);
- 
- 	return 0;
- }
-@@ -1329,13 +1320,9 @@ static int rk_udphy_usb3_phy_init(struct phy *phy)
- 
- 	guard(mutex)(&udphy->mutex);
- 
--	/* DP only or high-speed, disable U3 port */
--	if (!(udphy->hw_mode & UDPHY_MODE_USB) || udphy->hs) {
--		rk_udphy_u3_port_disable(udphy, true);
--		return 0;
--	}
-+	udphy->sw_mode |= UDPHY_MODE_USB;
- 
--	return rk_udphy_power_on(udphy, UDPHY_MODE_USB);
-+	return rk_udphy_update_power_state(udphy);
- }
- 
- static int rk_udphy_usb3_phy_exit(struct phy *phy)
-@@ -1344,15 +1331,9 @@ static int rk_udphy_usb3_phy_exit(struct phy *phy)
- 
- 	guard(mutex)(&udphy->mutex);
- 
--	/* DP only or high-speed */
--	if (!(udphy->hw_mode & UDPHY_MODE_USB) || udphy->hs) {
--		udphy->status &= ~UDPHY_MODE_USB;
--		return 0;
--	}
-+	udphy->sw_mode &= ~UDPHY_MODE_USB;
- 
--	rk_udphy_power_off(udphy, UDPHY_MODE_USB);
--
--	return 0;
-+	return rk_udphy_update_power_state(udphy);
- }
- 
- static const struct phy_ops rk_udphy_usb3_phy_ops = {
+> 
+> Inserting bus-type into the PHY layer is borrowing from one domain
+> linux-media and pushing the concept into PHYs.
+
+It's the other way around, "bus-type" is an endpoint property of media
+devices, reference to video-interfaces.yaml to get more details about it.
+
+> phy-cells = 1 with CPHY/DPHY specified in the consumer, as was Rob's
+> suggestion will specify the mode.
+
+This cell is just not needed, and unneeded complexity should not be added.
+
+> Then to understand if we are in regular or combo mode, we parse the
+> ports/endspoints in the PHY node as we've agreed already.
+> 
+
+That's correct, and while it's unavoidable to parse endpoint properties,
+a phy cell value will not bring any additional information, in the best
+case it's useless, or it opens a door to a clash, if different phy types
+are occasionally specified twice.
 
 -- 
-2.53.0
-
+Best wishes,
+Vladimir
 
 -- 
 linux-phy mailing list
