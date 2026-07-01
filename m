@@ -4,50 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1869BC43458
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 06:27:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E225C43458
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 06:28:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PZYP2My9UgMF/TmHVXqriefm0EMUo5mGtqTvCp50tTY=; b=MnCbN3OATxQRHM
-	YMQFPqoeWWtDkLTpBylKH+zR5hM+UR0wRpniO3qnAZXmxBvDUBQP5ZmJNNHNxyquOFwuRIgAd0dx4
-	OntZ7mnNUUbSicZwIYlr9ihoJcO/9sPfSpUzXHLA8dwCkZBdtEIBxppMcVhI9y7jScqfQKNGqm5OL
-	vZ3k9nO6Ozwwx3ZgIwdUMV8HXaZ/i1y4bV0uZGxf6X8uOvBcRRvQ1LfnuB+aI6tgH4MXhOkcn0Hu/
-	ujKurm6p52TPUGWcOgbtUMTLLvPJzpJ+IN9GA+eW8u4uUG4Ms6+0R4XqFijI/cLJKVWnEYW8EuwdZ
-	JTzvQTQzhAVj28uhRjCQ==;
+	List-Owner; bh=y+1ltEtI4CpzfmNt70cPu4ohqJ8BNI+c+UFcuEqGE1c=; b=MQUAF48eOBLpSA
+	vjnjCD0UY4kHXMru/1sISOXFu1TFaJS21sbd9NRhhk45PDJkD3HSIo7nDB9hSvKL8Vuw3Q/AsVvQe
+	GjfLm12mN00RM3Ifnzgd7N7CgPPXSS3uX2ibvZMaOiktVEcCM8fiW4mx/H1t+1i3PJ2CFlTYYmsri
+	Pfje4dOjHD4wuLeiZw5dnYG2nl2fJEWdm1/82Qvjg4S0WAjQfwX2cvun7j5bxa23LPXD+6FRLV6r4
+	eTZYVfQbvdr39UlwwfOD6CahCJKwLbOCpvTIsiYvGM7ivMfjOTAw9tWfm3KOO1ITpDAWw9PlnhwOs
+	U5c3n+FKAaGrVBZpEkGg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1weoPX-00000000nlD-2T58;
-	Wed, 01 Jul 2026 06:27:03 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1weoQU-00000000npn-48VN;
+	Wed, 01 Jul 2026 06:28:04 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1weoPW-00000000nl3-0JvW
+	id 1weoQT-00000000npg-3SZg
 	for linux-phy@lists.infradead.org;
-	Wed, 01 Jul 2026 06:27:02 +0000
+	Wed, 01 Jul 2026 06:28:01 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 108A3600AB;
-	Wed,  1 Jul 2026 06:27:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4C0071F000E9;
-	Wed,  1 Jul 2026 06:26:54 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id B1ACA43C00;
+	Wed,  1 Jul 2026 06:27:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1204D1F00A3A;
+	Wed,  1 Jul 2026 06:27:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1782887220;
-	bh=jc33EUwde6uA7KX9JoZ4Zl2Cj0IijWhtJWXs7c9GWBk=;
+	s=k20260515; t=1782887279;
+	bh=AzsGwTY+mJ+sRAvXerUCWfwYtPNwiq4R25I3LSUWuww=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=T/lXHqVa0kRXptZQ3pThkodbRBOJcVl5f0Qh3y02FPLMmJb47TAnA9/FHeqzmTHI+
-	 63BZsBCMt2RWHWycaxwVgfsoVkXhJKLVS/t4LXpdacP9Uxu6OzH7Xoz/tsxphb8Sny
-	 cEWjv3/kn2KuZBJVNx257bPjGGzwGWWNvibTWkCNvATHQGC9NVX6uA92Hy9wmg7foo
-	 EC1A+y/gm2Zm5VZfc6pkwbeaU1fBppfytq5QfyrGKcjk8I9xAkRVOsOA14jMMtgUjU
-	 Y8CEIS9hYBX5We8AUMOpxQh0Qq5MMiRnJvUsdiOYSPSyALdy2GpZeR0XqGWqn0GLdv
-	 PmdcDgIAyxabg==
-Message-ID: <dd9e68f3-c33d-47d1-871f-f085550b88b1@kernel.org>
-Date: Wed, 1 Jul 2026 08:26:52 +0200
+	b=DS3oyryKeZZIiP3IDN4D1Pu0xavypZ81sgh8jI0mT6Te+CYoZQo1pBILdtGpD4SWp
+	 Nf3Pl1L9v8LSKrCOl4V3ZI7NELOlAIse/yPPkmqyrCYHQeX+CbRqsprNINygW/K4Xa
+	 ddagaqhXQG61m0fQU50m0UIAqJpLYDqvkaH8EGg3plzSGe4cXsySASdkB6H3jppal4
+	 Vu7ck85CdxNXr11/bRCTje0Y1qjdnzstuki2NwSvvjs7nosspRZoY43UFgoUfn+bnj
+	 cvnYeaMveQ6DbpP5pv//8kPs3dprtWdXMhOnlUQdulOCRbEiR3nunyI4TsojJ8vQKR
+	 KF+Ki1425DTmg==
+Message-ID: <59c96d6e-95f4-4b03-b1a7-21e7cf6ce43d@kernel.org>
+Date: Wed, 1 Jul 2026 08:27:52 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/9] dt-bindings: PCI: qcom: Document the Shikra PCIe
- Controller
+Subject: Re: [PATCH 3/9] dt-bindings: PCI: Add bindings for endpoint gpios
 To: Sushrut Shree Trivedi <sushrut.trivedi@oss.qualcomm.com>,
  Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -62,7 +61,7 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-pci@vger.kernel.org
 References: <20260701-shikra-upstream-v1-0-e1a721eb8943@oss.qualcomm.com>
- <20260701-shikra-upstream-v1-2-e1a721eb8943@oss.qualcomm.com>
+ <20260701-shikra-upstream-v1-3-e1a721eb8943@oss.qualcomm.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -108,7 +107,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  K9bCVaboTA2T77QYkRcRJYSsO1alGX0ome/hMLD1daXlkrNUp1HWa3K4iytLRXjCSIorWiGs
  n+q3krnpXu3TFkA8qtOFZMdnIiFuiq1yLT8hptsV5xh1TA2nsVvSYiaCr3q4s4BKjS/KrLDb
  qoxzw8ISjdUp4pA85vb6YLCmb39NgidD+7PmAr65lBNveIFynTgsja1rRQ4=
-In-Reply-To: <20260701-shikra-upstream-v1-2-e1a721eb8943@oss.qualcomm.com>
+In-Reply-To: <20260701-shikra-upstream-v1-3-e1a721eb8943@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,86 +125,20 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 30/06/2026 21:02, Sushrut Shree Trivedi wrote:
-> Add a dedicated schema for the PCIe controller found on the Shikra
-> platform.
-> 
-> Signed-off-by: Sushrut Shree Trivedi <sushrut.trivedi@oss.qualcomm.com>
-> ---
->  .../devicetree/bindings/pci/qcom,shikra-pcie.yaml  | 211 +++++++++++++++++++++
->  1 file changed, 211 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/pci/qcom,shikra-pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,shikra-pcie.yaml
-> new file mode 100644
-> index 000000000000..f9d1dba9dd2e
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/pci/qcom,shikra-pcie.yaml
-> @@ -0,0 +1,211 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/pci/qcom,shikra-pcie.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Qualcomm Shikra PCI Express Root Complex
-> +
-> +maintainers:
-> +  - Bjorn Andersson <andersson@kernel.org>
-> +  - Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> +
-> +description:
-> +  Qualcomm Shikra SoC (and compatible) PCIe root complex controller is based on
-> +  the Synopsys DesignWare PCIe IP.
-> +
-> +properties:
-> +  compatible:
-> +    const: qcom,shikra-pcie
-> +
-> +  reg:
-> +    minItems: 5
-> +    maxItems: 6
+>        toshiba,tx-amplitude-microvolt:
+>          description:
+>            Change Tx Margin setting for low power consumption.
+> @@ -104,7 +120,7 @@ examples:
+>          #address-cells = <3>;
+>          #size-cells = <2>;
+>  
+> -        pcie@0 {
+> +      tc9563: pcie@0 {
 
-Same comments as other recent Qualcomm bindings. Don't invent stuff,
-take what was reviewed from the list so we won't have to repeat.
-
-...
+And you change indentation because?
 
 
-> +          power-domains = <&gcc GCC_PCIE_GDSC>;
-> +
-> +          max-link-speed = <2>;
-> +
-> +          operating-points-v2 = <&pcie_opp_table>;
-> +
-> +          status = "disabled";
-
-Drop, you never tested the binding in such case.
-
-> +
-> +          pcie_opp_table: opp-table {
-> +                  compatible = "operating-points-v2";
-
-Broken indent.
-
-> +
-> +                  /* GEN 1 x1 */
-> +                  opp-2500000 {
-> +                          opp-hz = /bits/ 64 <2500000>;
-> +                          required-opps = <&rpmpd_opp_nom>;
-> +                          opp-peak-kBps = <250000 1>;
-> +                          opp-level = <1>;
-> +                  };
-> +
-> +                  /* GEN 2 x1 */
-> +                  opp-5000000 {
-> +                          opp-hz = /bits/ 64 <5000000>;
-> +                          required-opps = <&rpmpd_opp_nom>;
-> +                          opp-peak-kBps = <500000 1>;
-> +                          opp-level = <2>;
-> +                  };
-> +          };
-> +        };
-> +    };
-> 
+Just like the other patch, this wasn't tested, right?
 
 
 Best regards,
