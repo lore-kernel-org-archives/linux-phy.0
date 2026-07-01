@@ -4,90 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2478C44503
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 23:44:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A0F3C43458
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 23:54:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FQXqM9XxzBtZYZM+gLjDLWLoyO9sexBezKoCCcB04Q0=; b=s1UHZLO/TrypbR
-	E3U8iaKH33efI2r4xfc7I9Tk628BkF2GWmJIOzgTFh7wIhXCidiDgnqZBaXCFM7su9tDfRhz8PebD
-	rXoXtFe5xFLAo+CC3uZqoNv+UhnA4EZbyVUlCRpK9zvNtjDCViHSLJetyEgxx0ZdtGb4Ot5IiNgWm
-	/k2FvRZH2PzN95v92Mt/qFCn0NnN2TnqHRmPtUDRsYSXSPCHTqWlBAWB6+T2MoCy2/ZuEewJm1VGe
-	YM9H8QwmkMh7/YiMQ66CCZzr0oNj0tNTv33f6PUNW7ihD6T/Pjop4emEeM55NFJ7vIbgolEatJ/PL
-	i7cciMYpyXsVIY5nIE0Q==;
+	List-Owner; bh=NDHVxCXnnVOPNyLLu1fUdnOgtkaL//hlAPbj5ox8hbc=; b=CjpPvZapYQpCyw
+	Lam+2bnqG10otxZpXplScl6+HjWEgOO8B+4KBg08RsTmm+6d3Y2OrqsK1LpVsLfPvc+IOuoOwD1Du
+	PrkwQp1+AySh3UGAh88JHVOevCFeXqPIGhSnx9Ar4pTJrve7K17iQvrTrL4l6LRECkQ96IRfutx++
+	rPgh4zIcscO209csjPT1u2YM7CURKnKKebmZ+YTfYR3bwVeBWwPyedpM/u80UgB61V4D9HbUFyku7
+	Do1J46yAkq742+1zJWl8Vup0jWkr03tx0/1WklGeWWUXKwMyVP5IWJVYR5Ds1ZiucfOa9H4XpBThB
+	+gFpFOfDLalD0+65+q3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wf4bx-00000003E8j-1qPR;
-	Wed, 01 Jul 2026 23:44:57 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1wf4l2-00000003Fgk-0VpB;
+	Wed, 01 Jul 2026 23:54:20 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wf4br-00000003DuW-2Aaz;
-	Wed, 01 Jul 2026 23:44:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1782949486;
-	bh=4Msz8sGDoKNM7oLrBuPjItajKMD3i6RymHRBLbBlU2k=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=agikFq4oLJmGTs85omH95Nm4o1ldR7iZKMaqUQyWc335pMruPmOz1CS8U+Yk/AHdK
-	 YvKCXsLKJoALHYNXqEYBuW7RZtnTBE+GtdUARWg3npsSJm+9hMkxlhCWc6at/JovKc
-	 VKtisKLn6RoK8woi8YGPIxPOfvrVB2vw6nxAD4YKmxKH60EJnvgatP4EpiBkgL6SUY
-	 8cBbTqSlEzhDgN0otqyvy7b+ky9h4lAhiyvy59G7dXcBuMdEOh5z+XSXzNNs+ngVao
-	 vkPXdyG4K697PvU2Hi3gNDtnTnh32akoyndmueUwY5ZJcWYX+f40IUWf0CPnFf8QHZ
-	 y9SDduFh6cLZw==
-Received: from jupiter.universe (unknown [100.64.1.62])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 234B317E1411;
-	Thu,  2 Jul 2026 01:44:46 +0200 (CEST)
-Received: by jupiter.universe (Postfix, from userid 1000)
-	id E1F8848007B; Thu, 02 Jul 2026 01:35:48 +0200 (CEST)
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Thu, 02 Jul 2026 01:36:14 +0200
-Subject: [PATCH v9 36/38] phy: rockchip: usbdp: Rename phy_needs_reinit to
- orientation_changed
-MIME-Version: 1.0
-Message-Id: <20260702-rockchip-usbdp-cleanup-v9-36-e31efbb62d2e@collabora.com>
+	id 1wf4l0-00000003FgH-0JPJ
+	for linux-phy@lists.infradead.org;
+	Wed, 01 Jul 2026 23:54:18 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 330E3600AF;
+	Wed,  1 Jul 2026 23:54:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 72C081F000E9;
+	Wed,  1 Jul 2026 23:54:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1782950056;
+	bh=BjNPVbSEkZtFTbiDHSbqpJmJa36fXcuEyq8WayNnJMs=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=WksoGx7elF+ncrsyurlh8djLJ+DfnxlegNy77qF1VtjmZ3d02Pz5iIRd0prAM58v5
+	 C1Q9r3wwjV/kcO2pj29878ahsR92w6kAAZgWAcOWa70altTNU4/sQwXk2LoVtXsdl8
+	 3C3varm9cUmExvFEpYbIQzkRFycBB8CWjD24cb3cUQrd4qYTdxtqD5HoiF/QX2UWhG
+	 99X1vVMkNKNfzbJWTA7DROxxn7QOuH2XfBUYf2x1bCYlPwXFCfC/QVz5ABuRh0YNs2
+	 zDSb5Oh9FOGpuusaMOoCQc05ri4EjQbHIz0ODA+2U8mqJ4T/ZxgEcbhv7LnfvfHf12
+	 n07lGYZz28K3A==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v9 01/38] dt-bindings: phy: rockchip-usbdp: add improved
+ ports scheme
+To: "Sebastian Reichel" <sebastian.reichel@collabora.com>
+Cc: devicetree@vger.kernel.org, linux-phy@lists.infradead.org, robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20260702-rockchip-usbdp-cleanup-v9-1-e31efbb62d2e@collabora.com>
 References: <20260702-rockchip-usbdp-cleanup-v9-0-e31efbb62d2e@collabora.com>
-In-Reply-To: <20260702-rockchip-usbdp-cleanup-v9-0-e31efbb62d2e@collabora.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Heiko Stuebner <heiko@sntech.de>, Frank Wang <frank.wang@rock-chips.com>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>, 
- Yubing Zhang <yubing.zhang@rock-chips.com>, 
- Alexey Charkov <alchark@gmail.com>, linux-phy@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- linux-kernel@vger.kernel.org, kernel@collabora.com, 
- devicetree@vger.kernel.org, linux-usb@vger.kernel.org, 
- Sebastian Reichel <sebastian.reichel@collabora.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1814;
- i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=4Msz8sGDoKNM7oLrBuPjItajKMD3i6RymHRBLbBlU2k=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpFpFRg4JktR8FOSiU0zl21I7iKtC9Cdloz7
- UuioioUyjTEOYkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqRaRUAAoJENju1/PI
- O/qain4QAKiyjB0N6qKNjr0oqpQ3fFnL7FV3faHGQ+2Pa8hAtXLY9AHi7/X6KE0SxR2DabcN+xe
- nFE/s1NnFceme+K/Io0CjzZ6jHveTnfAbBLc1eTrF92JbYXO6lkM/JRHKe7aLTHaLn5cHRrFtde
- OKeB7aKccKcXJB72wFH4246PsEWKHqdDGLquQF7TtphuE/UUOgACnHJAOlC7O57h7TN74wNv6nT
- cGV3Kg2Lpl9isEM7mcaOU6dJqFBgfjqsljWkKXBfHgYYougfje4YKUOFbVKqwtfd9blA33K+5Z3
- sD90DCdXsNgilsr2dSyvq/jRPgmvEeAXNFIAm2R+/IqThqntL2Pu9HBoch6Ncqg+PMna+x9rnIG
- c6wbZhv1WO3umOm28bCWyFTebH6US73osQhDvOGOX0SQ5ic/sitM1ZV91bfuCCxEnYPa1RIJ7sy
- Xnhl8yQjALv7lDyMEBKLKRjgHqzxz4SNM78nOMdCK5dtLkQmmA86D4pxWELVRNxEfUToFxvlNy/
- XyDf0mQiZcL0LmBUxXXRmql8MSxNYZzGiMuYQobIby0ClDkVZwr19Yk0CAVfd+5Fp4899juJBf4
- fr4yzA9llX1Rz+5YdmuXaaE8To6wYSktkRF3s2bQYs9ecpzMaELMVzMoI6iWjtLOY1rYyJ4gRBw
- taN/JwrQd3i/9BIkE3RQqzg==
-X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
- fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260701_164451_731931_A2BBA791 
-X-CRM114-Status: GOOD (  13.34  )
+ <20260702-rockchip-usbdp-cleanup-v9-1-e31efbb62d2e@collabora.com>
+Date: Wed, 01 Jul 2026 23:54:15 +0000
+Message-Id: <20260701235416.72C081F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,66 +63,38 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-phy_needs_reinit used to signal mode or cable orientation changes,
-but mode changes are now tracked separately. Thus it makes sense
-to rename the variable to show what it actually signals.
-
-Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
----
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index 51aac07ef9fe..735ce1bfac7a 100644
---- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
-+++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -174,7 +174,7 @@ struct rk_udphy {
- 
- 	/* PHY status management */
- 	bool flip;
--	bool phy_needs_reinit;
-+	bool orientation_changed;
- 	u8 hw_mode; /* modes currently supported by hardware */
- 	u8 sw_mode; /* modes currently requested */
- 	u8 status; /* current PHY power state */
-@@ -667,7 +667,7 @@ static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
- 
- 	if (udphy->flip != flipped) {
- 		dev_dbg(udphy->dev, "cable orientation changed, PHY re-init required.\n");
--		udphy->phy_needs_reinit = true;
-+		udphy->orientation_changed = true;
- 	}
- 
- 	udphy->flip = flipped;
-@@ -1020,7 +1020,7 @@ static int rk_udphy_update_power_state(struct rk_udphy *udphy)
- 	u8 target_mode = udphy->hw_mode & udphy->sw_mode;
- 	int ret;
- 
--	if (!udphy->phy_needs_reinit && udphy->status == target_mode)
-+	if (!udphy->orientation_changed && udphy->status == target_mode)
- 		return 0;
- 
- 	/*
-@@ -1067,7 +1067,7 @@ static int rk_udphy_update_power_state(struct rk_udphy *udphy)
- 	phy_notify_reset(udphy->phy_u3, PHY_NOTIFY_POST_RESET);
- 
- 	udphy->status = target_mode;
--	udphy->phy_needs_reinit = false;
-+	udphy->orientation_changed = false;
- 
- 	return 0;
- }
-
--- 
-2.53.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0xvd10gVGhlIHNjaGVtYSBpbnRy
+b2R1Y2VzIGEgbmV3IGBwb3J0c2Agb2JqZWN0IHRvIGxpbmsgdG8gdGhlIFVTQi1DIGNvbm5lY3Rv
+ciBidXQgZmFpbHMgdG8gcmVtb3ZlIG9yIHByb3Blcmx5IHJlc3RyaWN0IHRoZSBsZWdhY3kgYHBv
+cnRgIHByb3BlcnR5LCBjcmVhdGluZyBhbiBhbWJpZ3VvdXMgYW5kIGNvbmZsaWN0aW5nIGNvbmZp
+Z3VyYXRpb24gcGF0aC4KLS0KCk5vdGU6IER1ZSB0byByZWNpdGF0aW9uIHJlc3RyaWN0aW9ucywg
+dGhlIHN0YW5kYXJkIGlubGluZSBkaWZmIHF1b3RpbmcgZm9ybWF0CmhhcyBiZWVuIGFsdGVyZWQu
+IFRoZSBmb2xsb3dpbmcgaXMgYSBmcmVlLWZvcm0gc3VtbWFyeSBvZiB0aGUgcmV2aWV3IGZpbmRp
+bmdzLgoKY29tbWl0IDA5NzEyM2M3M2ZjZTZkN2NlNmY0NzU1YTgzY2UxMzYyYzhjYWVmZWIKQXV0
+aG9yOiBTZWJhc3RpYW4gUmVpY2hlbCA8c2ViYXN0aWFuLnJlaWNoZWxAY29sbGFib3JhLmNvbT4K
+ZHQtYmluZGluZ3M6IHBoeTogcm9ja2NoaXAtdXNiZHA6IGFkZCBpbXByb3ZlZCBwb3J0cyBzY2hl
+bWUKClRoaXMgY29tbWl0IGludHJvZHVjZXMgYSBwcm9wZXIgcG9ydCBzY2hlbWUgZm9yIHRoZSBS
+b2NrY2hpcCBVU0JEUCBQSFksCmZvbGxvd2luZyB0aGUgUXVhbGNvbW0gUU1QIFVTQjQtVVNCMy1E
+UCBQSFkgY29udHJvbGxlciBiaW5kaW5nLiBJdCBhZGRzIGFuCmFkZGl0aW9uYWwgcG9ydCBmb3Ig
+dGhlIFVTQi1DIFNCVSBwb3J0IHRvIHN1cHBvcnQgVVNCLUMgRFAgQWx0TW9kZS4KCltTZXZlcml0
+eTogTG93XQpUaGUgc2NoZW1hIGludHJvZHVjZXMgYSBuZXcgcG9ydHMgb2JqZWN0IHRvIGxpbmsg
+dG8gdGhlIFVTQi1DIGNvbm5lY3RvcgpidXQgcmV0YWlucyB0aGUgbGVnYWN5IHBvcnQgcHJvcGVy
+dHkgd2l0aG91dCBtYXJraW5nIGl0IGFzIGRlcHJlY2F0ZWQuCgpTaW5jZSBib3RoIHRoZSBsZWdh
+Y3kgcG9ydCBhbmQgdGhlIG5ldyBwb3J0cyBwcm9wZXJ0aWVzIGFyZSBwcmVzZW50IGluCnRoZSBz
+Y2hlbWEgcHJvcGVydGllcywgY291bGQgYSBkZXZpY2UgdHJlZSBkZWZpbmUgYm90aCBzaW11bHRh
+bmVvdXNseSBhbmQKc3RpbGwgcGFzcyB2YWxpZGF0aW9uPwoKV291bGQgaXQgYmUgYXBwcm9wcmlh
+dGUgdG8gYWRkIGEgb25lT2YgZXhjbHVzaW9uIGNvbnN0cmFpbnQgdG8gZW5zdXJlIHRoZXNlCm11
+dHVhbGx5LWV4Y2x1c2l2ZSBncmFwaCBwYXJhZGlnbXMgY2Fubm90IGJlIGRlZmluZWQgYXQgdGhl
+IHNhbWUgdGltZT8KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2
+LyMvcGF0Y2hzZXQvMjAyNjA3MDItcm9ja2NoaXAtdXNiZHAtY2xlYW51cC12OS0wLWUzMWVmYmI2
+MmQyZUBjb2xsYWJvcmEuY29tP3BhcnQ9MQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGlu
+dXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
+aWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
