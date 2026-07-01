@@ -4,53 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 909FDC43458
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 02:40:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1869BC43458
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 06:27:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vjil67FDQyb0zu6nFxHNavbnVj4QdBSMJxRocntVw4M=; b=ncIkYhSQ8XFUgK
-	ra70b+4zMIJkkkGZ7uNHTAAklCRBIOSpIr+9DadsJD3axwqtS8D1+sgy05aIGNIHWGhsOW98jZDXf
-	EyzJFaabK9bmLIZjHTH5oIl9Id31izrU2YmTno7jIVxyalbNSI1dtF9Uk7sG8GiTUAIGOAhfB1/Hf
-	ds6PILFkDoU+8A6l3i3XNsTx/5qaBTwhR3TuT/Lrfu864mUp5yPMF4/k81+03yySRvutFHMWeILun
-	pi6banUb5fBeGJRVm2NHgFohN4GCySo3HVRd5FlqBM5pVZdeFyIDbxNOMfzXggzmEOM3SDBOO1GmR
-	d5oy9I++powgTtjLrW9g==;
+	List-Owner; bh=PZYP2My9UgMF/TmHVXqriefm0EMUo5mGtqTvCp50tTY=; b=MnCbN3OATxQRHM
+	YMQFPqoeWWtDkLTpBylKH+zR5hM+UR0wRpniO3qnAZXmxBvDUBQP5ZmJNNHNxyquOFwuRIgAd0dx4
+	OntZ7mnNUUbSicZwIYlr9ihoJcO/9sPfSpUzXHLA8dwCkZBdtEIBxppMcVhI9y7jScqfQKNGqm5OL
+	vZ3k9nO6Ozwwx3ZgIwdUMV8HXaZ/i1y4bV0uZGxf6X8uOvBcRRvQ1LfnuB+aI6tgH4MXhOkcn0Hu/
+	ujKurm6p52TPUGWcOgbtUMTLLvPJzpJ+IN9GA+eW8u4uUG4Ms6+0R4XqFijI/cLJKVWnEYW8EuwdZ
+	JTzvQTQzhAVj28uhRjCQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wekru-00000000XG3-3u2r;
-	Wed, 01 Jul 2026 02:40:06 +0000
+	id 1weoPX-00000000nlD-2T58;
+	Wed, 01 Jul 2026 06:27:03 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wekrs-00000000XFB-1mJO
+	id 1weoPW-00000000nl3-0JvW
 	for linux-phy@lists.infradead.org;
-	Wed, 01 Jul 2026 02:40:04 +0000
+	Wed, 01 Jul 2026 06:27:02 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 716A46001D;
-	Wed,  1 Jul 2026 02:40:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DB4E71F000E9;
-	Wed,  1 Jul 2026 02:40:02 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 108A3600AB;
+	Wed,  1 Jul 2026 06:27:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4C0071F000E9;
+	Wed,  1 Jul 2026 06:26:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1782873603;
-	bh=HbrRVMKCmlPL7AVR0h/GOkoWilu2n8PVysx7LuXTGIw=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=nl7NBRxD1H8mhzR24+9v9NKQ8oUoY52+etbbnW0E+jE1/cE0XgYn/7gOFh3RFhMaV
-	 GC1+TgPABGtWxsvreRlDfHnJZN8DBUr94r7cl2+H0EYG55SENNajGxizVClZCNr1AL
-	 cCiAZBeXl3CFCk2dEFOjjkY5uv38+UURMLn9vqQHV7klQ5Yw7jS4sSWGFzgMSsJND3
-	 9r0pRWo9Akro7OTbwGJPUKMw8Ng1PlJrZGNokNoz3oQ9T+0SXvv20yg4Hc3J4NErrA
-	 Ey5EbbvGLt/6AlK6+se607U//owe7EdFth3Fv6XjXACSDyTuqomPb3fFlLeYVILVoH
-	 ojYEnwY0Lu69Q==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v3] phy: Add USB3 PHY support to Google Tensor SoC USB
- PHY driver
-To: "RD Babiera" <rdbabiera@google.com>
-Cc: vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com, linux-phy@lists.infradead.org
-In-Reply-To: <20260701022827.785674-2-rdbabiera@google.com>
-References: <20260701022827.785674-2-rdbabiera@google.com>
-Date: Wed, 01 Jul 2026 02:40:02 +0000
-Message-Id: <20260701024002.DB4E71F000E9@smtp.kernel.org>
+	s=k20260515; t=1782887220;
+	bh=jc33EUwde6uA7KX9JoZ4Zl2Cj0IijWhtJWXs7c9GWBk=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=T/lXHqVa0kRXptZQ3pThkodbRBOJcVl5f0Qh3y02FPLMmJb47TAnA9/FHeqzmTHI+
+	 63BZsBCMt2RWHWycaxwVgfsoVkXhJKLVS/t4LXpdacP9Uxu6OzH7Xoz/tsxphb8Sny
+	 cEWjv3/kn2KuZBJVNx257bPjGGzwGWWNvibTWkCNvATHQGC9NVX6uA92Hy9wmg7foo
+	 EC1A+y/gm2Zm5VZfc6pkwbeaU1fBppfytq5QfyrGKcjk8I9xAkRVOsOA14jMMtgUjU
+	 Y8CEIS9hYBX5We8AUMOpxQh0Qq5MMiRnJvUsdiOYSPSyALdy2GpZeR0XqGWqn0GLdv
+	 PmdcDgIAyxabg==
+Message-ID: <dd9e68f3-c33d-47d1-871f-f085550b88b1@kernel.org>
+Date: Wed, 1 Jul 2026 08:26:52 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 2/9] dt-bindings: PCI: qcom: Document the Shikra PCIe
+ Controller
+To: Sushrut Shree Trivedi <sushrut.trivedi@oss.qualcomm.com>,
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+ Manivannan Sadhasivam <mani@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
+ Bartosz Golaszewski <brgl@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-pci@vger.kernel.org
+References: <20260701-shikra-upstream-v1-0-e1a721eb8943@oss.qualcomm.com>
+ <20260701-shikra-upstream-v1-2-e1a721eb8943@oss.qualcomm.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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
+In-Reply-To: <20260701-shikra-upstream-v1-2-e1a721eb8943@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,87 +120,98 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpOZXcgaXNzdWVzOgotIFtIaWdoXSBU
-aGUgdGVhcmRvd24gc2VxdWVuY2UgaW4gYGdvb2dsZV91c2IzX3BoeV9leGl0YCB2aW9sYXRlcyBM
-SUZPIG9yZGVyaW5nLCBjYXVzaW5nIGEgaGFyZHdhcmUgcmVzb3VyY2Ugc2VxdWVuY2UgbWlzbWF0
-Y2guCi0gW0hpZ2hdIFVuY29uZGl0aW9uYWwgVENBIHByb2dyYW1taW5nIGluIGBnb29nbGVfdXNi
-M19waHlfcG93ZXJfb25gIG1pc2NvbmZpZ3VyZXMgdGhlIFBIWSBmb3IgYSBkaXNjb25uZWN0ZWQg
-cG9ydC4KClByZS1leGlzdGluZyBpc3N1ZXM6Ci0gW0hpZ2hdIFRpbWUtb2YtQ2hlY2sgdG8gVGlt
-ZS1vZi1Vc2UgKFRPQ1RPVSkgcmFjZSBjb25kaXRpb24gaW4gYGdvb2dsZV91c2Jfc2V0X29yaWVu
-dGF0aW9uYCBsZWFkcyB0byB1bmNsb2NrZWQgTU1JTyBhY2Nlc3Nlcy4KLS0KCmNvbW1pdCBjZWZi
-YWQ3ODdmMWI5NGJjOTllZTI0NmNmOTRlNTQzMDI4M2ZjZTBjCkF1dGhvcjogUkQgQmFiaWVyYSA8
-cmRiYWJpZXJhQGdvb2dsZS5jb20+CnBoeTogQWRkIFVTQjMgUEhZIHN1cHBvcnQgdG8gR29vZ2xl
-IFRlbnNvciBTb0MgVVNCIFBIWSBkcml2ZXIKClRoaXMgcGF0Y2ggYWRkcyBVU0IzIFBIWSBzdXBw
-b3J0IGZvciB0aGUgR29vZ2xlIFRlbnNvciBHNSBVU0IgUEhZIGRyaXZlci4KSXQgaW1wbGVtZW50
-cyB0aGUgVVNCMyBwaHlfb3BzIGZvciBwaHlfaW5pdCwgcGh5X2V4aXQsIGFuZCBwaHlfcG93ZXJf
-b24sCmFuZCBhZGRzIGEgY29tYm9fcGh5X3N0YXRlIGVudW0gdG8gdHJhY2sgdGhlIFBIWSBicmlu
-Z3VwIHN0YXRlIGFjcm9zcwpBUEkgY2FsbHMuCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcGh5
-LWdvb2dsZS11c2IuYyBiL2RyaXZlcnMvcGh5L3BoeS1nb29nbGUtdXNiLmMKLS0tIGEvZHJpdmVy
-cy9waHkvcGh5LWdvb2dsZS11c2IuYworKysgYi9kcml2ZXJzL3BoeS9waHktZ29vZ2xlLXVzYi5j
-CgpbIC4uLiBdCgo+IEBAIC05Miw2ICsyNjEsOSBAQCBzdGF0aWMgaW50IGdvb2dsZV91c2Jfc2V0
-X29yaWVudGF0aW9uKHN0cnVjdCB0eXBlY19zd2l0Y2hfZGV2ICpzdywKPiAgCj4gIAlzZXRfdmJ1
-c192YWxpZChncGh5KTsKCltTZXZlcml0eTogSGlnaF0KVGhpcyBpcyBhIHByZS1leGlzdGluZyBp
-c3N1ZSwgYnV0IGRvZXMgY2hlY2tpbmcgcG1fcnVudGltZV9zdXNwZW5kZWQoKQplYXJsaWVyIGlu
-IHRoaXMgZnVuY3Rpb24gd2l0aG91dCBob2xkaW5nIGEgUE0gcmVmZXJlbmNlIGludHJvZHVjZSBh
-IHJhY2UKY29uZGl0aW9uIGhlcmU/CgpJZiB0aGUgUE0gY29yZSBzdXNwZW5kcyB0aGUgZGV2aWNl
-IGltbWVkaWF0ZWx5IGFmdGVyIHRoYXQgY2hlY2sgcmV0dXJucwpmYWxzZSwgdGhlIGZ1bmN0aW9u
-IHdpbGwgcHJvY2VlZCB0byBhY3F1aXJlIHRoZSBtdXRleCBhbmQgd3JpdGUgdG8gTU1JTwpyZWdp
-c3RlcnMgdmlhIHNldF92YnVzX3ZhbGlkKCkgYW5kIHByb2dyYW1fdGNhX2xvY2tlZCgpIGFmdGVy
-IHRoZSBwb3dlcgpkb21haW4gYW5kIGNsb2NrcyBoYXZlIGJlZW4gZGlzYWJsZWQuCgpDb3VsZCB0
-aGlzIGxlYWQgdG8gYSBzeW5jaHJvbm91cyBleHRlcm5hbCBhYm9ydCB3aGVuIGFjY2Vzc2luZyB0
-aGUgdW5jbG9ja2VkCnJlZ2lzdGVycz8gU2hvdWxkIHRoaXMgdXNlIHBtX3J1bnRpbWVfZ2V0X2lm
-X2FjdGl2ZSgpIGluc3RlYWQ/Cgo+ICsJaWYgKGdwaHktPnBoeV9zdGF0ZSA9PSBDT01CT19QSFlf
-VENBX1JFQURZICYmIG9yaWVudGF0aW9uICE9IFRZUEVDX09SSUVOVEFUSU9OX05PTkUpCj4gKwkJ
-cmV0dXJuIHByb2dyYW1fdGNhX2xvY2tlZChncGh5KTsKPiArCj4gIAlyZXR1cm4gMDsKPiAgfQoK
-WyAuLi4gXQoKPiArc3RhdGljIGludCBnb29nbGVfdXNiM19waHlfZXhpdChzdHJ1Y3QgcGh5ICpf
-cGh5KQo+ICt7Cj4gKwlzdHJ1Y3QgZ29vZ2xlX3VzYl9waHlfaW5zdGFuY2UgKmluc3QgPSBwaHlf
-Z2V0X2RydmRhdGEoX3BoeSk7Cj4gKwlzdHJ1Y3QgZ29vZ2xlX3VzYl9waHkgKmdwaHkgPSBpbnN0
-LT5wYXJlbnQ7Cj4gKwo+ICsJZGV2X2RiZyhncGh5LT5kZXYsICJleGl0aW5nIHVzYjMgcGh5XG4i
-KTsKPiArCj4gKwlndWFyZChtdXRleCkoJmdwaHktPnBoeV9tdXRleCk7Cj4gKwo+ICsJc2V0X3Bt
-Z3RfcmVmX2Nsa19yZXFfbihncGh5LCBmYWxzZSk7Cj4gKwlyZXNldF9jb250cm9sX2J1bGtfYXNz
-ZXJ0KGluc3QtPm51bV9yc3RzLCBpbnN0LT5yc3RzKTsKPiArCWNsa19idWxrX2Rpc2FibGVfdW5w
-cmVwYXJlKGluc3QtPm51bV9jbGtzLCBpbnN0LT5jbGtzKTsKCltTZXZlcml0eTogSGlnaF0KSXMg
-dGhlIG1hbnVhbCB0ZWFyZG93biBzZXF1ZW5jZSBoZXJlIGluIHRoZSBjb3JyZWN0IG9yZGVyPwoK
-SW4gZ29vZ2xlX3VzYjNfcGh5X2luaXQoKSwgcmVzb3VyY2VzIGFyZSBhY3F1aXJlZCBpbiB0aGlz
-IG9yZGVyOgoxKSBzZXRfcG1ndF9yZWZfY2xrX3JlcV9uKHRydWUpCjIpIGNsb2NrIGVuYWJsZQoz
-KSByZXNldCBkZWFzc2VydAoKVGhlIF9fZnJlZSBibG9ja3MgaW4gdGhlIGluaXQgZnVuY3Rpb24g
-Y29ycmVjdGx5IGVzdGFibGlzaCB0aGUgZXJyb3IgY2xlYW51cApzZXF1ZW5jZSBpbiByZXZlcnNl
-IG9yZGVyIChMSUZPKS4gSG93ZXZlciwgaGVyZSB0aGUgdXBzdHJlYW0gcmVmZXJlbmNlIGNsb2Nr
-CnJlcXVlc3QgaXMgZGlzYWJsZWQgYmVmb3JlIHBsYWNpbmcgdGhlIGhhcmR3YXJlIGJsb2NrIGlu
-dG8gcmVzZXQgYW5kCmRpc2FibGluZyBjbG9ja3MuCgpDb3VsZCBkaXNhYmxpbmcgdGhlIGNsb2Nr
-IHJlcXVlc3QgYmVmb3JlIGFzc2VydGluZyByZXNldCBmcmVlemUgdGhlIElQIGluIGFuCmludmFs
-aWQgc3RhdGUgYW5kIHByZXZlbnQgc3Vic2VxdWVudCB3YWtldXBzPwoKPiArCj4gKwlncGh5LT5w
-aHlfc3RhdGUgPSBDT01CT19QSFlfSURMRTsKPiArCj4gKwlyZXR1cm4gMDsKPiArfQo+ICsKPiAr
-c3RhdGljIGludCBnb29nbGVfdXNiM19waHlfcG93ZXJfb24oc3RydWN0IHBoeSAqX3BoeSkKPiAr
-ewo+ICsJc3RydWN0IGdvb2dsZV91c2JfcGh5X2luc3RhbmNlICppbnN0ID0gcGh5X2dldF9kcnZk
-YXRhKF9waHkpOwo+ICsJc3RydWN0IGdvb2dsZV91c2JfcGh5ICpncGh5ID0gaW5zdC0+cGFyZW50
-Owo+ICsJaW50IHJldDsKPiArCj4gKwlkZXZfZGJnKGdwaHktPmRldiwgInBvd2VyIG9uIHVzYjMg
-cGh5XG4iKTsKPiArCj4gKwlndWFyZChtdXRleCkoJmdwaHktPnBoeV9tdXRleCk7Cj4gKwo+ICsJ
-aWYgKGdwaHktPnBoeV9zdGF0ZSAhPSBDT01CT19QSFlfVENBX1JFQURZKSB7Cj4gKwkJLyogV2Fp
-dCBmb3IgUG9SIC0+IE5DIHRyYW5zaXRpb25zKi8KPiArCQlyZXQgPSB3YWl0X3RjYV94YV9hY2so
-Z3BoeSk7Cj4gKwkJaWYgKHJldCkgewo+ICsJCQlkZXZfZXJyKGdwaHktPmRldiwgIlBvUi0+TkMg
-dHJhbnNpdGlvbiB0aW1lb3V0Iik7Cj4gKwkJCXJldHVybiByZXQ7Cj4gKwkJfQo+ICsJCWdwaHkt
-PnBoeV9zdGF0ZSA9IENPTUJPX1BIWV9UQ0FfUkVBRFk7Cj4gKwl9Cj4gKwo+ICsJcmV0dXJuIHBy
-b2dyYW1fdGNhX2xvY2tlZChncGh5KTsKCltTZXZlcml0eTogSGlnaF0KU2hvdWxkIHRoaXMgY2hl
-Y2sgaWYgdGhlIFR5cGUtQyBwb3J0IGlzIGFjdHVhbGx5IGNvbm5lY3RlZCBiZWZvcmUgY2FsbGlu
-Zwpwcm9ncmFtX3RjYV9sb2NrZWQoKT8KCklmIHRoZSBwb3J0IGlzIGRpc2Nvbm5lY3RlZCAoZ3Bo
-eS0+b3JpZW50YXRpb24gPT0gVFlQRUNfT1JJRU5UQVRJT05fTk9ORSksCnByb2dyYW1fdGNhX2xv
-Y2tlZCgpIGZhbGxzIHRocm91Z2ggaXRzIGVsc2UgYnJhbmNoLCBjb25maWd1cmluZyB0aGUgcmVn
-aXN0ZXJzCmZvciBUWVBFQ19PUklFTlRBVElPTl9OT1JNQUwgYW5kIHNldHRpbmcgVENBX1RDUENf
-VkFMSUQuCgpTaW5jZSB0aGUgVHlwZS1DIHN3aXRjaCBjYWxsYmFjayBnb29nbGVfdXNiX3NldF9v
-cmllbnRhdGlvbigpIGNvcnJlY3RseSBza2lwcwpUQ0EgcHJvZ3JhbW1pbmcgaWYgdGhlIG9yaWVu
-dGF0aW9uIGlzIE5PTkUsIHNob3VsZCBhIHNpbWlsYXIgY2hlY2sgYmUgcHJlc2VudApoZXJlIHRv
-IHByZXZlbnQgZW5hYmxpbmcgdGhlIFN1cGVyU3BlZWQgZGF0YSBwYXRoIGZvciBhIHBoYW50b20g
-Y29ubmVjdGlvbj8KCj4gK30KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hp
-a28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA3MDEwMjI4MjcuNzg1Njc0LTItcmRiYWJpZXJhQGdvb2ds
-ZS5jb20/cGFydD0xCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1waHkK
+On 30/06/2026 21:02, Sushrut Shree Trivedi wrote:
+> Add a dedicated schema for the PCIe controller found on the Shikra
+> platform.
+> 
+> Signed-off-by: Sushrut Shree Trivedi <sushrut.trivedi@oss.qualcomm.com>
+> ---
+>  .../devicetree/bindings/pci/qcom,shikra-pcie.yaml  | 211 +++++++++++++++++++++
+>  1 file changed, 211 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/pci/qcom,shikra-pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,shikra-pcie.yaml
+> new file mode 100644
+> index 000000000000..f9d1dba9dd2e
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/pci/qcom,shikra-pcie.yaml
+> @@ -0,0 +1,211 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/pci/qcom,shikra-pcie.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Qualcomm Shikra PCI Express Root Complex
+> +
+> +maintainers:
+> +  - Bjorn Andersson <andersson@kernel.org>
+> +  - Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> +
+> +description:
+> +  Qualcomm Shikra SoC (and compatible) PCIe root complex controller is based on
+> +  the Synopsys DesignWare PCIe IP.
+> +
+> +properties:
+> +  compatible:
+> +    const: qcom,shikra-pcie
+> +
+> +  reg:
+> +    minItems: 5
+> +    maxItems: 6
+
+Same comments as other recent Qualcomm bindings. Don't invent stuff,
+take what was reviewed from the list so we won't have to repeat.
+
+...
+
+
+> +          power-domains = <&gcc GCC_PCIE_GDSC>;
+> +
+> +          max-link-speed = <2>;
+> +
+> +          operating-points-v2 = <&pcie_opp_table>;
+> +
+> +          status = "disabled";
+
+Drop, you never tested the binding in such case.
+
+> +
+> +          pcie_opp_table: opp-table {
+> +                  compatible = "operating-points-v2";
+
+Broken indent.
+
+> +
+> +                  /* GEN 1 x1 */
+> +                  opp-2500000 {
+> +                          opp-hz = /bits/ 64 <2500000>;
+> +                          required-opps = <&rpmpd_opp_nom>;
+> +                          opp-peak-kBps = <250000 1>;
+> +                          opp-level = <1>;
+> +                  };
+> +
+> +                  /* GEN 2 x1 */
+> +                  opp-5000000 {
+> +                          opp-hz = /bits/ 64 <5000000>;
+> +                          required-opps = <&rpmpd_opp_nom>;
+> +                          opp-peak-kBps = <500000 1>;
+> +                          opp-level = <2>;
+> +                  };
+> +          };
+> +        };
+> +    };
+> 
+
+
+Best regards,
+Krzysztof
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
