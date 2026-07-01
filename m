@@ -4,52 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A565BC44500
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 23:36:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 248AEC43602
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 23:36:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2Iix/eEh2twyC0/GCwrabuCtRrwaY9jYqe5ijkPqSWw=; b=owgk3Zph3F6KWu
-	tAZSJPaAbEtxVSP7mTJ34b/3ADR6z7pUQbUXKkXMmRukJVh9XiVJ5Q6AEB8ArNsF3noDtX3GE8wVb
-	tzuC8sVPZdr081ahor47ISMfQW2U8k6+CUcUYx0FItlNVgc2TPU5JoZzPCdr03KZQ+DFCiGbvpWBf
-	q2peHbtRlzCbmdpxu3nya2JchlMB+x2i5OnbryQJIBsw67M7Qu/afPht13nbf8kcV65BXGqDrhyBK
-	Mns6tYfkMfeBbAbFIZqY7xbWe5a5Fplu7vt+4u+gzclO7g5ys8O6TeK8+mVFS0f3ubc4vPkDyycX9
-	S/Cs5wZCkyFt0FpBysZQ==;
+	List-Owner; bh=oJcUh5pTXx45RrzJeW8jrLxSzXpX/xjVPnYQVxBDCVI=; b=xcNDnIKeKsYGcd
+	Kf02mPBwTo8mMttjtxPii6wpNUi+KYaXbgswJuJMMrZ4Ftoh1j43iAiIcYR53e2pa8YnzHuJWoU0i
+	Eqa6s/uXEQ+uNDwNmX6WHFNJyFwsJaz1XlTKjPLd2JobSyd6bqelj065PaQL2wzU3DpHwOETsAWoI
+	IAFAA8IXkMjWJnK7qE+Zp9qym+nee568mStB0xDhqfqJHmYropZ9l3stEoG+py3ySTjgDILamwtXq
+	4oQ9omIuOnEEPS1lp43THKl/6Ll9ec1GX4LNjicxUcNcMYK24oBoD2HHguoOhktCZCp/k4gtVbKDn
+	BvU+wgIbTfbkf0lgbYbQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wf4Tz-00000003By7-2RLf;
-	Wed, 01 Jul 2026 23:36:43 +0000
+	id 1wf4U0-00000003C1G-2QC3;
+	Wed, 01 Jul 2026 23:36:44 +0000
 Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wf4TM-000000039zA-0jkH;
-	Wed, 01 Jul 2026 23:36:11 +0000
+	id 1wf4TM-000000039z9-0suP;
+	Wed, 01 Jul 2026 23:36:10 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1782948950;
-	bh=myM2kDdC+o9qU/R8uVpBsqVAxMREJkYJoXrUM6Jce8E=;
+	bh=ikQQ7R67iWEi0faIcN8A/nmORI4U0ATMeZtF0w69Moc=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=l86FlR/Bi2GDtRDYGqVw3WD4OyyrERDHhIF980zAVf+zasaJ2wD5ovqWzEgKwSXLv
-	 LsQcrAbt9fWMl3xUtm7FgqP6nBdLA9PDZ1eW8BKOyV47Xf9ieVtKQllnTjvmzm681N
-	 rqB7aCeUQ3SPvJLYYQaLjTwl1QC4XjzA7jxvJk+Dlv+g7Hd85ixtMWHC9Wut5rBrYM
-	 QPt8DrZJuewyQW5ZhBkUta0RDmUaMK0jJCzrKaQ6BJZn8HW2zv6HKTnGorw9W11Rtx
-	 +0PzjNY/3q9kYqPeLxUHTofYOAIT9Ha0bFFqj5M3VE+SJkmgEwULKhxK30BDK1ELgF
-	 zxBHaIeuZKu4A==
+	b=omod0ca2GYNlxhws/xCOGLMsgbaiqo2FO4zutUtVx9WDIF84f+zj5Qh060prxuIRV
+	 e6Gr02DSDAUmAi4B2qKedAt3Bg0zg+Zz6agys0DpOFc9xKjME3C7r1niSkr9FHkE4k
+	 YE46JXaZZMiQdfnLC8kHibGW1d75mPFWU9oztHJymvPStWj0tSj7G4bXBiXP98Ow1S
+	 Bibwx84wpKfVqf7kFhZapGuZiZuVVdbONQcVhsSz0Zu2HJ4qKrNaBft9QyFqnVR7cK
+	 zS96X1POYMwwSUq4lL8wAgxYN5L99q0rKjUDjicdV7w0w5pDMCVZJn+PlRD22p23rQ
+	 5gpO7tmQU1gAg==
 Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 38C5B17E3602;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 2223C17E35FD;
 	Thu,  2 Jul 2026 01:35:50 +0200 (CEST)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id DF10F480079; Thu, 02 Jul 2026 01:35:48 +0200 (CEST)
+	id DAB19480075; Thu, 02 Jul 2026 01:35:48 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Thu, 02 Jul 2026 01:36:12 +0200
-Subject: [PATCH v9 34/38] phy: rockchip: usbdp: Rename mode to hw_mode
+Date: Thu, 02 Jul 2026 01:36:09 +0200
+Subject: [PATCH v9 31/38] phy: core: add notifier infrastructure
 MIME-Version: 1.0
-Message-Id: <20260702-rockchip-usbdp-cleanup-v9-34-e31efbb62d2e@collabora.com>
+Message-Id: <20260702-rockchip-usbdp-cleanup-v9-31-e31efbb62d2e@collabora.com>
 References: <20260702-rockchip-usbdp-cleanup-v9-0-e31efbb62d2e@collabora.com>
 In-Reply-To: <20260702-rockchip-usbdp-cleanup-v9-0-e31efbb62d2e@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -67,26 +67,26 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  devicetree@vger.kernel.org, linux-usb@vger.kernel.org, 
  Sebastian Reichel <sebastian.reichel@collabora.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=6709;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=5859;
  i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=myM2kDdC+o9qU/R8uVpBsqVAxMREJkYJoXrUM6Jce8E=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpFpFRnyZXbpi51tAIRAlLhy0cPl/Gy8v32X
- Q9dAwfSfXxN3YkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqRaRUAAoJENju1/PI
- O/qaH9YP/itITf812DSkAla90r9Ht2ZOVCckKgPZcS1dJfbAAeqh2EyQjjfhiUWvroa+V68KYIq
- KIWPCVVMAgbO9ZeMafKebQbLQjjKHN9Udu1kpj1V6G1XxUnAGYEr+pA8dPQjVkXvOhZmyh27PPQ
- 4kcIHJOvg5VBgxAtJLdipbRNTqg+j1LhN4ZeJVTUaTOoeyrqkusiEyrOk/W8EAHzdeqoh2hBBAU
- jrSyf/oJ/m/0UqYXI8joTi+Z/SXQFnQFBooiWkMjdIcKzqznVZShhn5WmjuMTgkcTsFVYp3bBvn
- tK4Mtn3HZcycyZBTtb2NhACIBlErOigVLL7uLgnyyHvmMQw/T08/z+RjUEvJIT8wUkdvmtpQQ9q
- HGwlTbHiz+etvMaFeTNBOddUFrQf5Wp0PCv6H/XgLyFaPNfDPHln6nE52yISmIRdQqNVQVXF0TW
- nUla2Jcis2BBXPutkPUl8OD/TH2y7MkRqV3erme/jC+hzvQk/jO/mwNLJX3lSyatqOYps/eTpeo
- b9D5V4c99GrlBS+ROQhbg7lkOOyEXVvHXnTjZn4Xh8ohVxfzIRn8F7wFpLs4loD3tejH40VtND4
- tKyCI976iV4QlCwZjUrmp2RdJ+E5ClMIZX1gCZYT5vGiNWQ109uC4O7qZbeWsZC+if5oCejd/6O
- EH3u2tG3LeKvJelj58NcnIA==
+ bh=ikQQ7R67iWEi0faIcN8A/nmORI4U0ATMeZtF0w69Moc=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpFpFTlVIUt76H8NwaAq0XfNfnni0dMPMysW
+ WSuKJ8hWhF1PIkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqRaRUAAoJENju1/PI
+ O/qakZoP/2fEIIZzFio+WHZ6QlN2EmWAbYj5L9SJpYGxwFeUgLlR/Bdvp9j6VsEK3+/6uUW0exP
+ /EhnD46zOHpgcLdZPJyCNTvv8HD4JTWC6vDTHeJIJNAdRUU+Ug5h7tP3U1Om3WArPzwy9uQ3F7m
+ 2jdPpp1WbYxgTdCVUCOPJ4iGk/uh+MPGGObHVnrlayaZyTuk7yrrxmSnGiPllDNnNsIJ+xsH/xx
+ Va4i5QhYrnJZNL0Ik1DmXAvmSoE9I8MT6MhnWaAiwE95qNrYD7FYOKouwxd/KBxnLcJvT6LTdAK
+ woIPDpkBa26WLbKJvN2TRUY7jK9mBMs8Cb+lxnWsZUtugrCNOnBYtb+rTatEOd6s9x/jVj5ZSy2
+ WtmKBFK5/6VawPdi2UfUZ361EnqwnNdcTEbpswk7COotQWpytmx3iNEHwFk4wxvCIfX/m0I+hqo
+ DvCxdbnrz4ZS5t5gy5vKtOM9NHWbzqOX7mHI509QMNzPM78IoBe0w4ZGRDPkmoYxHONMx/qa+D0
+ FDwVnzwWFsTKJAhqyJyRns5NIMoRTBsMbAYcydEkA56ABJhQ72lJIvW3yNdZaTTD6XWbfRzeKLQ
+ kAodA+vIzIjIue9XzMGgsYDcKTwcjsq4/nGWZ4kXNMdX/PJ/qUZ63AZo741407rxcOPLrhXeGYb
+ PbRhG2pyXEg6yIKI2e54pyQ==
 X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
  fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260701_163604_477343_3C5C0DCB 
-X-CRM114-Status: GOOD (  18.25  )
+X-CRM114-CacheID: sfid-20260701_163604_578216_9D109181 
+X-CRM114-Status: GOOD (  19.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,196 +103,185 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Rename mode field to hw_mode to make clear that this is the modes
-currently supported by the hardware, but not necessarily requested
-by software. I.e. it is only set by either the USB-C state machine
-or device-tree if the PHY is used in a fixed routing setup.
+Some PHY devices with multiple ports (e.g. USB3 and DP) require a reset
+if the configuration changes or cable orientation changes. This is a
+problem, as the consumer device will run into undefined behavior.
+
+With the new PHY notifier API introduced in this patch, the consumer
+driver can hook into reset events coming from a PHY device to handle the
+PHY going down gracefully.
+
+Note that this uses -ENOSYS instead of the more sensible -ENOTSUP for
+the stub functions when GENERIC_PHY is disabled to stay consistent with
+the existing ones.
 
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 46 +++++++++++++++----------------
- 1 file changed, 23 insertions(+), 23 deletions(-)
+ drivers/phy/phy-core.c  | 57 +++++++++++++++++++++++++++++++++++++++++++++++++
+ include/linux/phy/phy.h | 40 ++++++++++++++++++++++++++++++++++
+ 2 files changed, 97 insertions(+)
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index ad594bb3962a..a19b048fb39c 100644
---- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
-+++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -175,7 +175,7 @@ struct rk_udphy {
- 	/* PHY status management */
- 	bool flip;
- 	bool phy_needs_reinit;
--	u8 mode;
-+	u8 hw_mode; /* modes currently supported by hardware */
- 	u8 status;
+diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+index 21aaf2f76e53..533473d975d3 100644
+--- a/drivers/phy/phy-core.c
++++ b/drivers/phy/phy-core.c
+@@ -542,6 +542,62 @@ int phy_notify_state(struct phy *phy, union phy_notify state)
+ }
+ EXPORT_SYMBOL_GPL(phy_notify_state);
  
- 	/* utilized for USB */
-@@ -585,18 +585,18 @@ static void rk_udphy_dp_lane_enable(struct rk_udphy *udphy, int dp_lanes)
- 				   CMN_DP_CMN_RSTN, FIELD_PREP(CMN_DP_CMN_RSTN, 0x0));
++/**
++ * phy_register_notifier() - register a notifier for PHY events
++ * @phy: the phy returned by phy_get()
++ * @nb: notifier block to register
++ *
++ * Allows PHY consumers to receive notifications about PHY reset events.
++ * PHY providers can signal these events using phy_notify_reset().
++ *
++ * Returns: %0 if successful, a negative error code otherwise
++ */
++int phy_register_notifier(struct phy *phy, struct notifier_block *nb)
++{
++	if (!phy)
++		return 0;
++
++	return blocking_notifier_chain_register(&phy->notifier, nb);
++}
++EXPORT_SYMBOL_GPL(phy_register_notifier);
++
++/**
++ * phy_unregister_notifier() - unregister a notifier for PHY events
++ * @phy: the phy returned by phy_get()
++ * @nb: notifier block to unregister
++ *
++ * Returns: %0 if successful, a negative error code otherwise
++ */
++int phy_unregister_notifier(struct phy *phy, struct notifier_block *nb)
++{
++	if (!phy)
++		return 0;
++
++	return blocking_notifier_chain_unregister(&phy->notifier, nb);
++}
++EXPORT_SYMBOL_GPL(phy_unregister_notifier);
++
++/**
++ * phy_notify_reset() - notify consumers of a PHY reset event
++ * @phy: the phy that is being reset
++ * @event: the notification event (PRE_RESET or POST_RESET)
++ *
++ * Called by PHY providers to notify consumers that the PHY is about to
++ * be reset or has completed a reset. This allows consumers to quiesce
++ * hardware before the PHY becomes unavailable.
++ *
++ * Returns: %0 if successful or no notifiers registered, a negative error
++ * code if a notifier returns an error (for PRE_RESET only)
++ */
++int phy_notify_reset(struct phy *phy, enum phy_notification event)
++{
++	if (!phy)
++		return 0;
++
++	return blocking_notifier_call_chain(&phy->notifier, event, phy);
++}
++EXPORT_SYMBOL_GPL(phy_notify_reset);
++
+ /**
+  * phy_configure() - Changes the phy parameters
+  * @phy: the phy returned by phy_get()
+@@ -1018,6 +1074,7 @@ struct phy *phy_create(struct device *dev, struct device_node *node,
+ 	device_initialize(&phy->dev);
+ 	lockdep_register_key(&phy->lockdep_key);
+ 	mutex_init_with_key(&phy->mutex, &phy->lockdep_key);
++	BLOCKING_INIT_NOTIFIER_HEAD(&phy->notifier);
+ 
+ 	phy->dev.class = &phy_class;
+ 	phy->dev.parent = dev;
+diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+index ea47975e288a..3779a4d0a02c 100644
+--- a/include/linux/phy/phy.h
++++ b/include/linux/phy/phy.h
+@@ -11,6 +11,7 @@
+ #define __DRIVERS_PHY_H
+ 
+ #include <linux/err.h>
++#include <linux/notifier.h>
+ #include <linux/of.h>
+ #include <linux/device.h>
+ #include <linux/pm_runtime.h>
+@@ -53,6 +54,16 @@ enum phy_media {
+ 	PHY_MEDIA_DAC,
+ };
+ 
++/**
++ * enum phy_notification - PHY notification events
++ * @PHY_NOTIFY_PRE_RESET: PHY is about to be reset, consumers should quiesce
++ * @PHY_NOTIFY_POST_RESET: PHY reset is complete, consumers may resume
++ */
++enum phy_notification {
++	PHY_NOTIFY_PRE_RESET,
++	PHY_NOTIFY_POST_RESET,
++};
++
+ enum phy_ufs_state {
+ 	PHY_UFS_HIBERN8_ENTER,
+ 	PHY_UFS_HIBERN8_EXIT,
+@@ -170,6 +181,7 @@ struct phy_attrs {
+  * @power_count: used to protect when the PHY is used by multiple consumers
+  * @attrs: used to specify PHY specific attributes
+  * @pwr: power regulator associated with the phy
++ * @notifier: notifier head for PHY reset events
+  * @debugfs: debugfs directory
+  */
+ struct phy {
+@@ -182,6 +194,7 @@ struct phy {
+ 	int			power_count;
+ 	struct phy_attrs	attrs;
+ 	struct regulator	*pwr;
++	struct blocking_notifier_head notifier;
+ 	struct dentry		*debugfs;
+ };
+ 
+@@ -267,6 +280,9 @@ int phy_calibrate(struct phy *phy);
+ int phy_notify_connect(struct phy *phy, int port);
+ int phy_notify_disconnect(struct phy *phy, int port);
+ int phy_notify_state(struct phy *phy, union phy_notify state);
++int phy_register_notifier(struct phy *phy, struct notifier_block *nb);
++int phy_unregister_notifier(struct phy *phy, struct notifier_block *nb);
++int phy_notify_reset(struct phy *phy, enum phy_notification event);
+ static inline int phy_get_bus_width(struct phy *phy)
+ {
+ 	return phy->attrs.bus_width;
+@@ -428,6 +444,30 @@ static inline int phy_notify_state(struct phy *phy, union phy_notify state)
+ 	return -ENOSYS;
  }
  
--static void rk_udphy_mode_set(struct rk_udphy *udphy, u8 mode)
-+static void rk_udphy_mode_set(struct rk_udphy *udphy, u8 hw_mode)
++static inline int phy_register_notifier(struct phy *phy,
++					struct notifier_block *nb)
++{
++	if (!phy)
++		return 0;
++	return -ENOSYS;
++}
++
++static inline int phy_unregister_notifier(struct phy *phy,
++					  struct notifier_block *nb)
++{
++	if (!phy)
++		return 0;
++	return -ENOSYS;
++}
++
++static inline int phy_notify_reset(struct phy *phy,
++				   enum phy_notification event)
++{
++	if (!phy)
++		return 0;
++	return -ENOSYS;
++}
++
+ static inline int phy_configure(struct phy *phy,
+ 				union phy_configure_opts *opts)
  {
--	if (udphy->mode == mode)
-+	if (udphy->hw_mode == hw_mode)
- 		return;
- 
- 	udphy->phy_needs_reinit = true;
--	udphy->mode = mode;
-+	udphy->hw_mode = hw_mode;
- }
- 
- static void rk_udphy_set_typec_state(struct rk_udphy *udphy, unsigned long state)
- {
--	u8 mode;
-+	u8 hw_mode;
- 
- 	switch (state) {
- 	case TYPEC_DP_STATE_C:
-@@ -605,7 +605,7 @@ static void rk_udphy_set_typec_state(struct rk_udphy *udphy, unsigned long state
- 		udphy->lane_mux_sel[1] = PHY_LANE_MUX_DP;
- 		udphy->lane_mux_sel[2] = PHY_LANE_MUX_DP;
- 		udphy->lane_mux_sel[3] = PHY_LANE_MUX_DP;
--		mode = UDPHY_MODE_DP;
-+		hw_mode = UDPHY_MODE_DP;
- 		udphy->dp_lanes = 4;
- 		break;
- 
-@@ -622,12 +622,12 @@ static void rk_udphy_set_typec_state(struct rk_udphy *udphy, unsigned long state
- 			udphy->lane_mux_sel[2] = PHY_LANE_MUX_DP;
- 			udphy->lane_mux_sel[3] = PHY_LANE_MUX_DP;
- 		}
--		mode = UDPHY_MODE_DP_USB;
-+		hw_mode = UDPHY_MODE_DP_USB;
- 		udphy->dp_lanes = 2;
- 		break;
- 	}
- 
--	rk_udphy_mode_set(udphy, mode);
-+	rk_udphy_mode_set(udphy, hw_mode);
- }
- 
- static void rk_udphy_set_typec_default_mapping(struct rk_udphy *udphy)
-@@ -750,7 +750,7 @@ static int rk_udphy_status_check(struct rk_udphy *udphy)
- 	int ret;
- 
- 	/* LCPLL check */
--	if (udphy->mode & UDPHY_MODE_USB) {
-+	if (udphy->hw_mode & UDPHY_MODE_USB) {
- 		ret = regmap_read_poll_timeout(udphy->pma_regmap, CMN_ANA_LCPLL_DONE_OFFSET,
- 					       val, (val & CMN_ANA_LCPLL_AFC_DONE) &&
- 					       (val & CMN_ANA_LCPLL_LOCK_DONE), 200, 100000);
-@@ -785,15 +785,15 @@ static int rk_udphy_init(struct rk_udphy *udphy)
- 	int ret;
- 
- 	dev_dbg(udphy->dev, "reinit PHY with USB=%s and DP=%s (%u lanes) flipped=%s\n",
--		str_enabled_disabled(udphy->mode & UDPHY_MODE_USB),
--		str_enabled_disabled(udphy->mode & UDPHY_MODE_DP),
-+		str_enabled_disabled(udphy->hw_mode & UDPHY_MODE_USB),
-+		str_enabled_disabled(udphy->hw_mode & UDPHY_MODE_DP),
- 		udphy->dp_lanes, str_yes_no(udphy->flip));
- 
- 	rk_udphy_reset_assert_all(udphy);
- 	usleep_range(10000, 11000);
- 
- 	/* enable rx lfps for usb */
--	if (udphy->mode & UDPHY_MODE_USB)
-+	if (udphy->hw_mode & UDPHY_MODE_USB)
- 		rk_udphy_grfreg_write(udphy->udphygrf, &cfg->grfcfg.rx_lfps, true);
- 
- 	/* Step 1: power on pma and deassert apb rstn */
-@@ -830,13 +830,13 @@ static int rk_udphy_init(struct rk_udphy *udphy)
- 			   FIELD_PREP(CMN_DP_LANE_EN_ALL, 0));
- 
- 	/* Step 4: deassert init rstn and wait for 200ns from datasheet */
--	if (udphy->mode & UDPHY_MODE_USB) {
-+	if (udphy->hw_mode & UDPHY_MODE_USB) {
- 		ret = rk_udphy_reset_deassert(udphy, "init");
- 		if (ret)
- 			goto assert_resets;
- 	}
- 
--	if (udphy->mode & UDPHY_MODE_DP) {
-+	if (udphy->hw_mode & UDPHY_MODE_DP) {
- 		regmap_update_bits(udphy->pma_regmap, CMN_DP_RSTN_OFFSET,
- 				   CMN_DP_INIT_RSTN,
- 				   FIELD_PREP(CMN_DP_INIT_RSTN, 0x1));
-@@ -845,7 +845,7 @@ static int rk_udphy_init(struct rk_udphy *udphy)
- 	udelay(1);
- 
- 	/*  Step 5: deassert cmn/lane rstn */
--	if (udphy->mode & UDPHY_MODE_USB) {
-+	if (udphy->hw_mode & UDPHY_MODE_USB) {
- 		ret = rk_udphy_reset_deassert(udphy, "cmn");
- 		if (ret)
- 			goto assert_resets;
-@@ -904,7 +904,7 @@ static int rk_udphy_parse_lane_mux_data(struct rk_udphy *udphy)
- 	num_lanes = device_property_count_u32(udphy->dev, "rockchip,dp-lane-mux");
- 	if (num_lanes < 0) {
- 		dev_dbg(udphy->dev, "no dp-lane-mux, following dp alt mode\n");
--		udphy->mode = UDPHY_MODE_USB;
-+		udphy->hw_mode = UDPHY_MODE_USB;
- 		return 0;
- 	}
- 
-@@ -933,10 +933,10 @@ static int rk_udphy_parse_lane_mux_data(struct rk_udphy *udphy)
- 		}
- 	}
- 
--	udphy->mode = UDPHY_MODE_DP;
-+	udphy->hw_mode = UDPHY_MODE_DP;
- 	udphy->dp_lanes = num_lanes;
- 	if (num_lanes == 1 || num_lanes == 2) {
--		udphy->mode |= UDPHY_MODE_USB;
-+		udphy->hw_mode |= UDPHY_MODE_USB;
- 		udphy->flip = (udphy->lane_mux_sel[0] == PHY_LANE_MUX_DP) ||
- 			      (udphy->lane_mux_sel[1] == PHY_LANE_MUX_DP);
- 	}
-@@ -1027,7 +1027,7 @@ static int rk_udphy_power_on(struct rk_udphy *udphy, u8 mode)
- {
- 	int ret;
- 
--	if (!(udphy->mode & mode)) {
-+	if (!(udphy->hw_mode & mode)) {
- 		dev_info(udphy->dev, "mode 0x%02x is not support\n", mode);
- 		return 0;
- 	}
-@@ -1042,7 +1042,7 @@ static int rk_udphy_power_on(struct rk_udphy *udphy, u8 mode)
- 		if (ret)
- 			return ret;
- 
--		if (!udphy->hs && udphy->mode & UDPHY_MODE_USB)
-+		if (!udphy->hs && udphy->hw_mode & UDPHY_MODE_USB)
- 			rk_udphy_u3_port_disable(udphy, false);
- 		udphy->phy_needs_reinit = false;
- 
-@@ -1071,7 +1071,7 @@ static int rk_udphy_power_on(struct rk_udphy *udphy, u8 mode)
- 
- static void rk_udphy_power_off(struct rk_udphy *udphy, u8 mode)
- {
--	if (!(udphy->mode & mode)) {
-+	if (!(udphy->hw_mode & mode)) {
- 		dev_info(udphy->dev, "mode 0x%02x is not support\n", mode);
- 		return;
- 	}
-@@ -1330,7 +1330,7 @@ static int rk_udphy_usb3_phy_init(struct phy *phy)
- 	guard(mutex)(&udphy->mutex);
- 
- 	/* DP only or high-speed, disable U3 port */
--	if (!(udphy->mode & UDPHY_MODE_USB) || udphy->hs) {
-+	if (!(udphy->hw_mode & UDPHY_MODE_USB) || udphy->hs) {
- 		rk_udphy_u3_port_disable(udphy, true);
- 		return 0;
- 	}
-@@ -1345,7 +1345,7 @@ static int rk_udphy_usb3_phy_exit(struct phy *phy)
- 	guard(mutex)(&udphy->mutex);
- 
- 	/* DP only or high-speed */
--	if (!(udphy->mode & UDPHY_MODE_USB) || udphy->hs) {
-+	if (!(udphy->hw_mode & UDPHY_MODE_USB) || udphy->hs) {
- 		udphy->status &= ~UDPHY_MODE_USB;
- 		return 0;
- 	}
 
 -- 
 2.53.0
