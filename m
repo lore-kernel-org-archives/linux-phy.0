@@ -4,61 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74B1BC43458
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 14:38:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 536E1C43602
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 15:37:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=1zBYs35wFbV3YWTecv27WNMN4HU3xb9/Cl1k6EGcgfM=; b=1KJA2oULTWN5nfFgypauLQ8VnA
-	dZKbnDmx0z710we9UoJg+Cxs8nw2wvRkzF5U5JyeKax01e3S90L+qmK5eD9ZIvEOJJjx6A8OYUPZ2
-	do08glyUCIBQmcelGIT7Wj514zlgAyNaOOliUcRztbItyj2a6FAvCDHzHu+IqdB4Oun72S4e6Rq3A
-	iabxMmZxNBWVMcYmTWqOgZAprTCy55F8BS4+7i+dKfP5yMNYJ2SaOhYa+Zb1bxMlbEHfnKeoqtee7
-	uihP3mhV3vhtINdzVuYXH7tGnpy+yUfVKT9OEC84KRzEdMUIK/MYgTS1hvArtfBkKVIM8tBfh+vM0
-	NDRCDJQw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+6wJ9AVoo7fwDtJLDXsbBdCcp0r2N7S6cRMh9HVwVyI=; b=4z8MW2X00S9ar3
+	0QUbX9dQpO2gXpPG+1ufqFTY9q3I+Oj/NqhT2EpVJvyumlYsS6c5odrfvTnRXU6YwvK1PvO8Okcxm
+	j2Lp+neAS2/9UuNGMqt8HJnVZ/ht93KQKZLCdKBlwnrohCbiBbxzzECTfcjfctA5z4zUoO2wWyzmJ
+	KDm6x/dGZwXHJsU8Z1POvW3/FeNO8YSJbWJdrcJHD0/pEpuq6iMi87PNkIDvp47bxfvaZRiVVDF9D
+	wqCFNLDuYPvt0jq74LRag9etD7pmY1AK2Rk5B6wA220a121JNvMfcJx4rDAiqyS+28EsB68b1aeM7
+	in7LyRqRuQw7cEjGvyPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wew5U-00000002JIN-41Np;
-	Wed, 01 Jul 2026 14:38:52 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wex01-00000002PTE-3iY7;
+	Wed, 01 Jul 2026 15:37:17 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wew5U-00000002JHh-0D6r;
-	Wed, 01 Jul 2026 14:38:52 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 7A65742E2A;
-	Wed,  1 Jul 2026 14:38:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 34EC81F000E9;
-	Wed,  1 Jul 2026 14:38:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1782916731;
-	bh=DoAPIKHlQF01BQdUW983/8p5nb/vO5Fh5kJQWUG/dxQ=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject;
-	b=ePjixhTP3XZgrzhZdeHkU+VCPkYuzgpl2DzTg6EuV5D7zoGrCxE0H4loNSi3lbqPB
-	 MNpNB+p5gzVEaG47iCyZ4SXEN3tuV4PQXnjqaJqWIoWDU+CZVLWoKOQAqOeyVREenz
-	 0znKSxkVXVcTPQm9s0hgMVON/QEjwg6v+AEr+0fusTrOfe/Uxlg61jXskQP/77qw5R
-	 4MD7BSMdgHs0ENBjVjyKjrkouPznJtTI3qYypogcwNTr1a+0ZAzLGizfVYHGO5NT/G
-	 mKHNPd3iTm80lkGSARlqEXZSJoWXuynP0L5f9lodG2UxDokboZhdPa57EWFTKPbzU3
-	 0jk3Ld++wS1Ww==
-Date: Wed, 01 Jul 2026 09:38:50 -0500
+	id 1wewzz-00000002PSi-1UrA;
+	Wed, 01 Jul 2026 15:37:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1782920232;
+	bh=B2XyVL7QuZTHg/QCA4ERiK9bSp3FRiqNCvgt9Ow2ZVM=;
+	h=From:Date:Subject:To:Cc:From;
+	b=ZsR7GGxQRS+K6ITU00OcjTBndc0C7IbFsE7CU8t/s4x4wsTpimz8V9BkdekluR86l
+	 PhFHwjUMtxHfdE9/ts0zjTnkp2pUbyCItWGkK5nBVPNW0/mPrTLVH0pOz8jmQEZTE7
+	 Jg0bgORrQT3+8c+QiYWgwig7H7Tgs4eqFxK9Z3ri2WGYZh9jJRPr4y6TO5rKzI1rxM
+	 rvvNWg4Qa3HdoSjOB9u1JjULbIjlrvQcfa3DJzW0jUdp56ZPEh5T+X9kSYmeZrQThf
+	 iG3H5prtdW0AWgNLwvbHYzigOvwFjcEJtSZBxaqlgxfzGYOHtU9h+Oar9QCkPxtKKV
+	 W35OUKwQ+yrjA==
+Received: from yukiji.home (unknown [100.64.0.131])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: laeyraud)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id C51D717E0432;
+	Wed,  1 Jul 2026 17:37:11 +0200 (CEST)
+From: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
+Date: Wed, 01 Jul 2026 17:36:49 +0200
+Subject: [PATCH] dt-bindings: phy: mediatek,tphy: Add support for MT8189
+ SoC
 MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: dri-devel@lists.freedesktop.org, conor+dt@kernel.org, 
- p.zabel@pengutronix.de, linux-mediatek@lists.infradead.org, 
- vkoul@kernel.org, chunfeng.yun@mediatek.com, linux-phy@lists.infradead.org, 
- matthias.bgg@gmail.com, linux-arm-kernel@lists.infradead.org, 
- kernel@collabora.com, linux-kernel@vger.kernel.org, 
- neil.armstrong@linaro.org, justin.yeh@mediatek.com, krzk+dt@kernel.org, 
- devicetree@vger.kernel.org, chunkuang.hu@kernel.org
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-In-Reply-To: <20260701122008.19509-2-angelogioacchino.delregno@collabora.com>
-References: <20260701122008.19509-1-angelogioacchino.delregno@collabora.com>
- <20260701122008.19509-2-angelogioacchino.delregno@collabora.com>
-Message-Id: <178291673047.19807.6106947084460440701.robh@kernel.org>
-Subject: Re: [PATCH 01/12] dt-bindings: phy: Document MT8195 and MT8196
- DisplayPort PHYs
+Message-Id: <20260701-mt8189-dt-bindings-tphy-v1-1-5848a2be8303@collabora.com>
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/yWNQQ6DIBBFr0Jm3UlAW6pexbgAmeosQAu0sTHev
+ USX7yf/vR0SRaYEndgh0pcTL6GAugkYZxMmQnaFoZKVlk+p0OdGNS26jJaD4zAlzOv8w7vVWlF
+ tWnpIKO810ou309wPF0d6f0ogXyNYkwjHxXvOnQi0ZTwjupYwHMcfb4JeIpoAAAA=
+X-Change-ID: 20260701-mt8189-dt-bindings-tphy-4b661e3a9e50
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: kernel@collabora.com, linux-arm-kernel@lists.infradead.org, 
+ linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1782920231; l=1052;
+ i=louisalexis.eyraud@collabora.com; s=20250113; h=from:subject:message-id;
+ bh=B2XyVL7QuZTHg/QCA4ERiK9bSp3FRiqNCvgt9Ow2ZVM=;
+ b=tYvNgQLRRhU0C6Mq2zqKSPuBUtv6H016NPf0CmvwYW6Ejy3fZHF9iyT/E70wJUS8INuSEPCMY
+ t3sGUZ6Yyd4B6QuzRwA6L7pTAun4Kxr/gr5XjLWn7Kt9lFmirYLf8HF
+X-Developer-Key: i=louisalexis.eyraud@collabora.com; a=ed25519;
+ pk=CHFBDB2Kqh4EHc6JIqFn69GhxJJAzc0Zr4e8QxtumuM=
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260701_083715_552013_42D575A3 
+X-CRM114-Status: UNSURE (   7.68  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,48 +91,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Add a compatible string for the MediaTek MT8189 SoC, that integrates a
+MediaTek generic T-PHY version 3.
 
-On Wed, 01 Jul 2026 14:19:57 +0200, AngeloGioacchino Del Regno wrote:
-> This adds bindings for the DisplayPort and Embedded DisplayPort
-> PHYs found in the MediaTek MT8195 SoC (and variants of) and for
-> the Embedded DisplayPort found in the MT8196 SoC (and variants).
-> 
-> This PHY supports varying impedance calibrations for the various
-> signals to reach an optimal EYE signal pattern for any specific
-> board(s), especially useful for very high bitrates such as HBR3
-> and higher, depending on board design.
-> 
-> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-> ---
->  .../bindings/phy/mediatek,mt8195-dp-phy.yaml  | 77 +++++++++++++++++++
->  1 file changed, 77 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/mediatek,mt8195-dp-phy.yaml
-> 
+Signed-off-by: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
+---
+ Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-My bot found errors running 'make dt_binding_check' on your patch:
+diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+index ff5c77ef1176..8b240cfd537d 100644
+--- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
++++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+@@ -90,6 +90,7 @@ properties:
+       - items:
+           - enum:
+               - mediatek,mt8188-tphy
++              - mediatek,mt8189-tphy
+               - mediatek,mt8195-tphy
+           - const: mediatek,generic-tphy-v3
+       - const: mediatek,mt2701-u3phy
 
-yamllint warnings/errors:
+---
+base-commit: ba7c57499e5999aeae8dd4f954eb2600589d80aa
+change-id: 20260701-mt8189-dt-bindings-tphy-4b661e3a9e50
 
-dtschema/dtc warnings/errors:
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/mediatek,mt8195-dp-phy.example.dtb: phy@1c500000 (mediatek,mt8195-dp-phy): reg: [[0, 475004928], [0, 8192]] is too long
-	from schema $id: http://devicetree.org/schemas/phy/mediatek,mt8195-dp-phy.yaml
-
-doc reference errors (make refcheckdocs):
-
-See https://patchwork.kernel.org/project/devicetree/patch/20260701122008.19509-2-angelogioacchino.delregno@collabora.com
-
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
+Best regards,
+-- 
+Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 
 
 -- 
