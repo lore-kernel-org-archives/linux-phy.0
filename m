@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48F61C43602
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 23:44:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13D2CC43327
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 23:44:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Cj9WCbwrp2WMaswpqHoFCoU2jStUjGiAAI/QfyQtlBw=; b=cPZpYnry+uT7y9
-	NArD9apVs3WXtdPO1ii+4Q15jN/KNzHBMA9RlixqO/S8EuHJvrtbfdIU+3RcJUlyjSTiTsVNT0Uaw
-	twfcFC2Mf6+1KWh9ykMdcZRTJt4kcL7b5qjqEljCjqlD4KoR2T2Ia6KzUnvjjQAM850ouvmDWgMqh
-	eI3zqXmANm0+InDEhgbOSdRgaja/MihDY8Y/qwqLZcaknT6o1YXlhvZWfqwYfZa6p6GYZ2Niyappz
-	etid5aRK5BS2ffsU57TFfy313H7IQHGEssI5SuNnENy1LEYY/jf7nddOlNnu7LITxeJ+mrPyFRzwj
-	5MS7YGqEGi5G0qrhMa+w==;
+	List-Owner; bh=GRZ0XsebMaP/QPpaQPsUro4/tAdC1aocj+k9Bez4BX0=; b=f6AdgpwuiEPeu/
+	eMgJT0JJHOc+KcdrkyMrZ87Mg4LpaqNhwGuCQK9GGhuR0w8p8vF2eKiMZPCg/qq1e4BOWm78ACF0J
+	2eztr0DuBFSueTSHir4T8VzdDHTcu4h/8YqheMx1gXLOvy3QAGIVEPohXCTShE/tc0XFrbp56C/At
+	TcHG8wFNZ81MlFw4j6Rf8GhkENH8TmJxWFthiGav3UD6E/MfPt88/byuMVP938oAsV1R2dtwDhKjN
+	8oEolbhUrbqUYCcXOFeU6IRhO5eWWyzFOpqHwgw+E3EQ8nhRGScW1/1lnhUTJGsRNJVmlJjJ/GIjD
+	BTX7tb6/jnikX791bXVw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wf4br-00000003DvT-0E8V;
-	Wed, 01 Jul 2026 23:44:51 +0000
+	id 1wf4bs-00000003DyZ-2eJy;
+	Wed, 01 Jul 2026 23:44:52 +0000
 Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wf4bn-00000003Dsh-3x20;
-	Wed, 01 Jul 2026 23:44:49 +0000
+	id 1wf4bn-00000003Dsj-44WO;
+	Wed, 01 Jul 2026 23:44:50 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1782949485;
-	bh=/REGbdDmWtcDdBho2f8xt5QLr18HO0mgfsHKYCUYVNY=;
+	bh=GDko6Pg71SnIljp10CbXwO/7RNhfDn98jzA5z2G7oGc=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=cu2fTAYCZZuJbZ3aiwcaW2NSeWOOsrH2kkZwOnNaKk90KBq3SXW097jw5W9gAdM+f
-	 a2Hly+U/+SsG/h2AvwUmTJz1Ql8kuzOhvrTsWkOejg7+FFTSCEkN+4cjmifiQo1MUX
-	 yfbM6oSr9agDtgOXfgf7uAWZbYvVfJKQHlbhLHP4nzWWZbImF2XfqMjXMGZ5lAhVF/
-	 k5m2xMctbP2PuvLoE1QS0MUFVRh5+6RBy6fj26eZCbFsk6B88qEi/R8Bp09IyJ9pbt
-	 eT0gd8mEynZQh6ZxNJYV7WBfsV8zM2HF1tKtePoqPwrJ9VtFzEDckd1PEFnzZR7zjY
-	 9SDjjWt3meqRw==
+	b=nwzM+qB58nZgxNUvv+reO13BW9C0iNKaDlmUe16SfkZUMwNgu2loC2Wx7DALnpkZx
+	 ubHu/xCcSIDS5QTdOh8BBJqIarH6YrKj16oZ0j+lrs6sbNLZvKUnMLz6pvrF095zAt
+	 e1o+vgmLrM93IMtdyg8ipkYsu9wN7IZ9v/lAaAMy306U76qfmfeST+c67piqpqJRQ0
+	 gNjspOZjAiIS98iwQ9z8Lqan0sQouyN2FCOYQDno7NPZuglekMA2HIt0UQeV0Sctlc
+	 KGLvrDMg/mrHDKaq+vVuE22NxsqeK/GWKBK/TvE4OuYjgEX6nzx+sohsowkztsKacW
+	 24shuXJVLpn/g==
 Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id B9E2317E03CE;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id BD9CF17E0F68;
 	Thu,  2 Jul 2026 01:44:45 +0200 (CEST)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id D312548006D; Thu, 02 Jul 2026 01:35:48 +0200 (CEST)
+	id CBB2A480067; Thu, 02 Jul 2026 01:35:48 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Thu, 02 Jul 2026 01:36:04 +0200
-Subject: [PATCH v9 26/38] phy: rockchip: usbdp: Add some extra debug
- messages
+Date: Thu, 02 Jul 2026 01:35:59 +0200
+Subject: [PATCH v9 21/38] phy: rockchip: usbdp: Factor out lane_mux_sel
+ setup
 MIME-Version: 1.0
-Message-Id: <20260702-rockchip-usbdp-cleanup-v9-26-e31efbb62d2e@collabora.com>
+Message-Id: <20260702-rockchip-usbdp-cleanup-v9-21-e31efbb62d2e@collabora.com>
 References: <20260702-rockchip-usbdp-cleanup-v9-0-e31efbb62d2e@collabora.com>
 In-Reply-To: <20260702-rockchip-usbdp-cleanup-v9-0-e31efbb62d2e@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -68,26 +68,26 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  devicetree@vger.kernel.org, linux-usb@vger.kernel.org, 
  Sebastian Reichel <sebastian.reichel@collabora.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3251;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=4580;
  i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=/REGbdDmWtcDdBho2f8xt5QLr18HO0mgfsHKYCUYVNY=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpFpFSwcRjRJZ2vu9RJp2rEuL2/fte+R1EEk
- A5XLgt5AGEwI4kCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqRaRUAAoJENju1/PI
- O/qaomMQAKD1Fa61jKraXRnGNBfs9WwuUzv6kFIjtQEH8qBbz7jwN+UaZLaYJD4KwPGlamOH+lS
- kQqnHptzCPmjZwLVHWqMHS7ty6dk9wikDTeXPmzBbqS3jOgZFv3Oz23FdfKE0Z8g7WXOfvPKWxD
- +P9UeIeCaMMtlQTLoaFm3FvXviJzo2hE5kumhubjpuQlYJx00NjJXGcYMYrDlI2+CIr0IjSMAH5
- r/FtVfRsUpgBOnbkb2ICsRpI5Kp/jBel7L7Kg0QsgcAENEJD9imTeuDDmc2H273hCa5jCz51g6a
- yIgSzvrTEfOqabYJ3O6zwHcXJF7HULkah8mHnE6d6L8thsX7sHsPSd/kwMPGK+MtW1gM4Ve1FnM
- mugfwHsQv13UWozVFO3QHl3A7Jb+M/csNslDCwXNpOfleCeL35Pm6WJDpPy+vATdub5OV4y7Hn+
- rwkF++Z+p6NahFrnYfy42ExsQVH5xVTVmk9YF3SabuXykiGcROqXQ0VH2m/+w9P6wQtEvRQ8/6t
- HaiM7o6tgjHnPcakNEmjDG7qHOMV0qHiGUgla+3MoGqJANm5eEF+oCyd9GpInmKtFs4c5xqGROZ
- voTfwFJwWCERyQhrukEPKlhjnisbv5xL9m0OrXn0pag6Xf4GA4DJZcvlMy91qlJS4MZFIA29ZiB
- C/bqM7rIUpsKlW2O3JLcqwA==
+ bh=GDko6Pg71SnIljp10CbXwO/7RNhfDn98jzA5z2G7oGc=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpFpFMnPYggtQGwkq6Fui7woPy38Ct8GqYUX
+ Ofmvs6bKOT2ZIkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqRaRTAAoJENju1/PI
+ O/qa6uQQAJKA5INvHRnSlocrz4O4bP3y/piYRwPzQwh/W0ezvxpOuZXyVLUcGx1aG0LOwr9vn8c
+ qm8AgPtPTCP6wSmubtLRnqkEbPNQNryR692fLop14oWezkA95O4lpgUUaB5+h9gI2HJhPxU0ITz
+ MDzEkKIyBcFUvMr5ulxGQYX3AX9ErXatKMZ3OoYZjJ686AtKGmuFKD2P+BEKthmPeueBhKL0YI5
+ 9//3yjVz4lDZuZYv97fJ0N6rbqBFMfGmc/WIjIHgXLmLoM6D2rpyW6MAuDF7boNvYhblWTnJbKn
+ QJWgkUEVZAVqU1B31ZxP74SceePLDP7cy6cWabhVNuvILDt1UrKObJewfdILUjKZAv+LQtF2FCR
+ nCHLd/hiPKb6yGaqVczEgZyQ1ZPmCCn4b6Wr4nqgIzavEn+wqFGbFS0nu7+ZUoOqSgSwc3ZBM6D
+ hrkNtMF2Z97mc9hzARGcGJbeq0sy7FJxOiuoD4ABwwYE4rgfWTh/rQhcmLXiRgr6D2MMf3Knpjt
+ y1BO9WXaLz8TmV/3ICRwsCCvioxGlPGXi0O+ErFiZzL/z33LiBVUygwWITDDS0Yka/zGQjtX9CO
+ dTqVh7P8Cdoy3JYf65pGAdGSgUbEcqhp4CWO72fHEMmtY8vDIqvQbv9TOoEseGN4H8F78tIP0iz
+ PnL5GOO3HNJuEkEwxmLIvkw==
 X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
  fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260701_164448_129811_EDA99593 
-X-CRM114-Status: GOOD (  13.79  )
+X-CRM114-CacheID: sfid-20260701_164448_183303_4B8D8481 
+X-CRM114-Status: GOOD (  13.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,98 +104,141 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-It's useful to log PHY reinit to ease debugging issues around
-USB-C hotplugging.
+Avoid describing the USB+DP lane_mux_sel logic twice by introducing
+a helper function to reduce code duplication.
 
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 23 +++++++++++++++++++++--
- 1 file changed, 21 insertions(+), 2 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 81 +++++++++++++++----------------
+ 1 file changed, 40 insertions(+), 41 deletions(-)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index c874dfeeece9..6b0add354880 100644
+index eab9e82dbfe4..70ef02c4a187 100644
 --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -24,6 +24,7 @@
- #include <linux/property.h>
- #include <linux/regmap.h>
- #include <linux/reset.h>
-+#include <linux/string_choices.h>
- #include <linux/usb/ch9.h>
- #include <linux/usb/typec_dp.h>
- #include <linux/usb/typec_mux.h>
-@@ -468,6 +469,8 @@ static int rk_udphy_reset_deassert(struct rk_udphy *udphy, char *name)
- 			return reset_control_deassert(list[idx].rstc);
- 	}
- 
-+	dev_err(udphy->dev, "failed to de-assert missing reset line: %s\n", name);
-+
- 	return -EINVAL;
+@@ -588,6 +588,42 @@ static void rk_udphy_mode_set(struct rk_udphy *udphy, u8 mode)
+ 	udphy->mode = mode;
  }
  
-@@ -494,6 +497,8 @@ static void rk_udphy_u3_port_disable(struct rk_udphy *udphy, u8 disable)
- 	const struct rk_udphy_cfg *cfg = udphy->cfgs;
- 	const struct rk_udphy_grf_reg *preg;
- 
-+	dev_dbg(udphy->dev, "USB3 port %s\n", str_on_off(!disable));
++static void rk_udphy_set_typec_state(struct rk_udphy *udphy, unsigned long state)
++{
++	u8 mode;
 +
- 	preg = udphy->id ? &cfg->grfcfg.usb3otg1_cfg : &cfg->grfcfg.usb3otg0_cfg;
- 	rk_udphy_grfreg_write(udphy->usbgrf, preg, disable);
- }
-@@ -668,8 +673,10 @@ static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
- 		return 0;
- 	}
- 
--	if (udphy->flip != flipped)
-+	if (udphy->flip != flipped) {
-+		dev_dbg(udphy->dev, "cable orientation changed, PHY re-init required.\n");
- 		udphy->phy_needs_reinit = true;
++	switch (state) {
++	case TYPEC_DP_STATE_C:
++	case TYPEC_DP_STATE_E:
++		udphy->lane_mux_sel[0] = PHY_LANE_MUX_DP;
++		udphy->lane_mux_sel[1] = PHY_LANE_MUX_DP;
++		udphy->lane_mux_sel[2] = PHY_LANE_MUX_DP;
++		udphy->lane_mux_sel[3] = PHY_LANE_MUX_DP;
++		mode = UDPHY_MODE_DP;
++		udphy->dp_lanes = 4;
++		break;
++
++	case TYPEC_DP_STATE_D:
++	default:
++		if (udphy->flip) {
++			udphy->lane_mux_sel[0] = PHY_LANE_MUX_DP;
++			udphy->lane_mux_sel[1] = PHY_LANE_MUX_DP;
++			udphy->lane_mux_sel[2] = PHY_LANE_MUX_USB;
++			udphy->lane_mux_sel[3] = PHY_LANE_MUX_USB;
++		} else {
++			udphy->lane_mux_sel[0] = PHY_LANE_MUX_USB;
++			udphy->lane_mux_sel[1] = PHY_LANE_MUX_USB;
++			udphy->lane_mux_sel[2] = PHY_LANE_MUX_DP;
++			udphy->lane_mux_sel[3] = PHY_LANE_MUX_DP;
++		}
++		mode = UDPHY_MODE_DP_USB;
++		udphy->dp_lanes = 2;
++		break;
 +	}
- 
- 	udphy->flip = flipped;
- 	rk_udphy_set_typec_default_mapping(udphy);
-@@ -787,6 +794,11 @@ static int rk_udphy_init(struct rk_udphy *udphy)
- 	const struct rk_udphy_cfg *cfg = udphy->cfgs;
- 	int ret;
- 
-+	dev_dbg(udphy->dev, "reinit PHY with USB=%s and DP=%s (%u lanes) flipped=%s\n",
-+		str_enabled_disabled(udphy->mode & UDPHY_MODE_USB),
-+		str_enabled_disabled(udphy->mode & UDPHY_MODE_DP),
-+		udphy->dp_lanes, str_yes_no(udphy->flip));
 +
- 	rk_udphy_reset_assert_all(udphy);
- 	usleep_range(10000, 11000);
- 
-@@ -857,6 +869,8 @@ static int rk_udphy_setup(struct rk_udphy *udphy)
- {
- 	int ret;
- 
-+	dev_dbg(udphy->dev, "enable PHY\n");
++	rk_udphy_mode_set(udphy, mode);
++}
 +
- 	ret = clk_bulk_prepare_enable(udphy->num_clks, udphy->clks);
- 	if (ret) {
- 		dev_err(udphy->dev, "failed to enable clk\n");
-@@ -875,6 +889,7 @@ static int rk_udphy_setup(struct rk_udphy *udphy)
- 
- static void rk_udphy_disable(struct rk_udphy *udphy)
+ static void rk_udphy_set_typec_default_mapping(struct rk_udphy *udphy)
  {
-+	dev_dbg(udphy->dev, "disable PHY\n");
- 	clk_bulk_disable_unprepare(udphy->num_clks, udphy->clks);
- 	rk_udphy_reset_assert_all(udphy);
+ 	if (udphy->flip) {
+@@ -595,10 +631,6 @@ static void rk_udphy_set_typec_default_mapping(struct rk_udphy *udphy)
+ 		udphy->dp_lane_sel[1] = 1;
+ 		udphy->dp_lane_sel[2] = 3;
+ 		udphy->dp_lane_sel[3] = 2;
+-		udphy->lane_mux_sel[0] = PHY_LANE_MUX_DP;
+-		udphy->lane_mux_sel[1] = PHY_LANE_MUX_DP;
+-		udphy->lane_mux_sel[2] = PHY_LANE_MUX_USB;
+-		udphy->lane_mux_sel[3] = PHY_LANE_MUX_USB;
+ 		udphy->dp_aux_dout_sel = PHY_AUX_DP_DATA_POL_INVERT;
+ 		udphy->dp_aux_din_sel = PHY_AUX_DP_DATA_POL_INVERT;
+ 		gpiod_set_value_cansleep(udphy->sbu1_dc_gpio, 1);
+@@ -608,18 +640,14 @@ static void rk_udphy_set_typec_default_mapping(struct rk_udphy *udphy)
+ 		udphy->dp_lane_sel[1] = 3;
+ 		udphy->dp_lane_sel[2] = 1;
+ 		udphy->dp_lane_sel[3] = 0;
+-		udphy->lane_mux_sel[0] = PHY_LANE_MUX_USB;
+-		udphy->lane_mux_sel[1] = PHY_LANE_MUX_USB;
+-		udphy->lane_mux_sel[2] = PHY_LANE_MUX_DP;
+-		udphy->lane_mux_sel[3] = PHY_LANE_MUX_DP;
+ 		udphy->dp_aux_dout_sel = PHY_AUX_DP_DATA_POL_NORMAL;
+ 		udphy->dp_aux_din_sel = PHY_AUX_DP_DATA_POL_NORMAL;
+ 		gpiod_set_value_cansleep(udphy->sbu1_dc_gpio, 0);
+ 		gpiod_set_value_cansleep(udphy->sbu2_dc_gpio, 1);
+ 	}
+ 
+-	rk_udphy_mode_set(udphy, UDPHY_MODE_DP_USB);
+-	udphy->dp_lanes = 2;
++	/* default to USB3 + DP as 4 lane USB is not supported */
++	rk_udphy_set_typec_state(udphy, TYPEC_DP_STATE_D);
  }
-@@ -1346,8 +1361,12 @@ static int rk_udphy_typec_mux_set(struct typec_mux_dev *mux,
+ 
+ static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
+@@ -1305,7 +1333,6 @@ static int rk_udphy_typec_mux_set(struct typec_mux_dev *mux,
+ 				  struct typec_mux_state *state)
+ {
  	struct rk_udphy *udphy = typec_mux_get_drvdata(mux);
+-	u8 mode;
  
- 	/* Ignore mux events not involving USB or DP */
--	if (!rk_udphy_is_supported_mode(state))
-+	if (!rk_udphy_is_supported_mode(state)) {
-+		dev_dbg(udphy->dev, "ignore mux event with mode=%lu\n", state->mode);
- 		return 0;
-+	}
+ 	/*
+ 	 * Ignore mux events not involving DP AltMode, because
+@@ -1317,38 +1344,10 @@ static int rk_udphy_typec_mux_set(struct typec_mux_dev *mux,
+ 
+ 	mutex_lock(&udphy->mutex);
+ 
+-	switch (state->mode) {
+-	case TYPEC_DP_STATE_C:
+-	case TYPEC_DP_STATE_E:
+-		udphy->lane_mux_sel[0] = PHY_LANE_MUX_DP;
+-		udphy->lane_mux_sel[1] = PHY_LANE_MUX_DP;
+-		udphy->lane_mux_sel[2] = PHY_LANE_MUX_DP;
+-		udphy->lane_mux_sel[3] = PHY_LANE_MUX_DP;
+-		mode = UDPHY_MODE_DP;
+-		udphy->dp_lanes = 4;
+-		break;
+-
+-	case TYPEC_DP_STATE_D:
+-	default:
+-		if (udphy->flip) {
+-			udphy->lane_mux_sel[0] = PHY_LANE_MUX_DP;
+-			udphy->lane_mux_sel[1] = PHY_LANE_MUX_DP;
+-			udphy->lane_mux_sel[2] = PHY_LANE_MUX_USB;
+-			udphy->lane_mux_sel[3] = PHY_LANE_MUX_USB;
+-		} else {
+-			udphy->lane_mux_sel[0] = PHY_LANE_MUX_USB;
+-			udphy->lane_mux_sel[1] = PHY_LANE_MUX_USB;
+-			udphy->lane_mux_sel[2] = PHY_LANE_MUX_DP;
+-			udphy->lane_mux_sel[3] = PHY_LANE_MUX_DP;
+-		}
+-		mode = UDPHY_MODE_DP_USB;
+-		udphy->dp_lanes = 2;
+-		break;
+-	}
+-
+-	rk_udphy_mode_set(udphy, mode);
++	rk_udphy_set_typec_state(udphy, state->mode);
+ 
+ 	mutex_unlock(&udphy->mutex);
 +
-+	dev_dbg(udphy->dev, "new mode: %lu\n", state->mode);
- 
- 	guard(mutex)(&udphy->mutex);
+ 	return 0;
+ }
  
 
 -- 
