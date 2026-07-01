@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C40C1C43458
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 23:36:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB7CCC44500
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 23:36:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hT33BDapNEtflipK4xO1PdkS+rUdL2CFjq0tcKia2yc=; b=YE48SyXYrocsRm
-	T3OqScaqf32oK+rBU+qBy3PEBy32ujERIyh1kB3l6adv7xiL+puPLpEBjOZsBxAqIndw3IPRpXSBZ
-	1S5flc8CLD6d8QI3j173Ps6Th0jvGFlbu2HfsLfrA0ip3ZwvzbUqrdi/auFMouEEs1ALy7BTrPqlN
-	qvhIUpr4K8Uh3v558erfhJXUZ3w5sJCEpMycsmS2HgZA9luHvVRW26PVwOgQc+G5t6Rpg8Soq5WAz
-	LZEckCah0PMmpZoc8WZpiGrWjA8KU/9MkFJS8I8JgumuYvSn6YtEIONKODP5gnyg8aoLS7woR4l/w
-	hIlyQqVVXlPXE1YD7QoA==;
+	List-Owner; bh=RI9EUpWi4+CGrriHTlMOyQ128HgstNQNsBaqqH3kHIk=; b=ILuT/ZMRfcr7cL
+	OxyvBkcwJmFO+4xTdxTv7lDA2ixksIxrjfIqBfWanCyRKkW6f2EnXrYGm7nAlN1WvJgTaCHiCLoyE
+	AhYIqPMbaeyYnXYi9baUEUndkhI0eHJR2eU/GIRRSuilShGyxcL2FokKLSsNcoqqYAb8yhkuoK/5K
+	1fQW/uM7h98guoRuKlQHdjwMnrgITir31EtI8tzdg36Q5h2IS7JarU+6FU333kenUsFaKSyTm2ras
+	2sOnqJ3JuU1z1+1yTmdi4ogHgdNbMs+NuO+mDIQgXFEMZYq9E1iC8WltGlpDMugZDx72Ju4B9175M
+	r/WrCWyhZ2UnUFAcFOlA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wf4Tp-00000003BQb-3jQJ;
-	Wed, 01 Jul 2026 23:36:33 +0000
+	id 1wf4Tr-00000003BVO-17j0;
+	Wed, 01 Jul 2026 23:36:35 +0000
 Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wf4TK-000000039vT-2bKn;
-	Wed, 01 Jul 2026 23:36:07 +0000
+	id 1wf4TL-000000039xn-1ciF;
+	Wed, 01 Jul 2026 23:36:06 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1782948950;
-	bh=E3PH5dcID2nJKs/noMUpOfcvSjayh2aTBogbpSH7EdQ=;
+	bh=2KMZ0BK5nZl9x3Sxrnw8YlXTBKnooaCdrEkVGc6Hu7w=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=V2AjyEZVDnJ6h3Zvk3vHGoUyNfrlmRc1MXasRG6Cs9Ntl8QWDx+pR/j32kP8KxHLW
-	 hSlQngtj3D5B89HX3QsH2ijih8CfY2FeU4oT1czb6qZonFS+Hps3R540o9XZnJxYjE
-	 1SNetTnDkiuxCd1QNmugORMY83pC6EkWvKY4OqpHz8Iyn4xjw4knVmb4TEULhfT0Yt
-	 H4qAzLphgIPykrBDuh2wMwFzxW5IjGg/qKoXdbpMjULDsvm+W+z/a2NjhPEATv0u4c
-	 +pzT6LSxVQ+RNv/G1FgNYN3E57sbYQwOty5Wc8Fj2vpjZkJpuVmkydID/iIj+30O1S
-	 UZ/62Ym2t2Cpw==
+	b=FjQx/BR1AcycpjQFboqeuflIr35Y68NL8TJPsSzOGVv2M9U1BTQfIaxa8j/FZ1DMk
+	 lQAHErHxCEaXAKhx74lklAaYHAm0sG5gUA+Nu/7/JskFL0sOBMS5I3gETGQ1ehhxPv
+	 2SkLM+cCp2QNBr+SoTZH9OomPl5Lur/fzKybx8MyGQUSIgpQolLUH4ca2W2l6lU2U6
+	 IEbRIM/5EtKyy1K/fb/CAdx5NITFDCtaE/k8d54FEkG2c2AUDv1wtd0m06MNjskL+p
+	 tRK83sgYBuZagKsFTlF6Fdtr+iVq58pli5GOQ3URCenF2Y5AqCcW2c7ZKDmMMmxik4
+	 A1I+QOk5srNsQ==
 Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id DABA917E35DB;
-	Thu,  2 Jul 2026 01:35:49 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 187D817E35FB;
+	Thu,  2 Jul 2026 01:35:50 +0200 (CEST)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id D01CC48006A; Thu, 02 Jul 2026 01:35:48 +0200 (CEST)
+	id D93C8480074; Thu, 02 Jul 2026 01:35:48 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Thu, 02 Jul 2026 01:36:02 +0200
-Subject: [PATCH v9 24/38] phy: rockchip: usbdp: Clear USB status on PHY
- exit
+Date: Thu, 02 Jul 2026 01:36:08 +0200
+Subject: [PATCH v9 30/38] phy: rockchip: usbdp: Only enable USB3 when not
+ in high-speed mode
 MIME-Version: 1.0
-Message-Id: <20260702-rockchip-usbdp-cleanup-v9-24-e31efbb62d2e@collabora.com>
+Message-Id: <20260702-rockchip-usbdp-cleanup-v9-30-e31efbb62d2e@collabora.com>
 References: <20260702-rockchip-usbdp-cleanup-v9-0-e31efbb62d2e@collabora.com>
 In-Reply-To: <20260702-rockchip-usbdp-cleanup-v9-0-e31efbb62d2e@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -69,26 +69,26 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  Sebastian Reichel <sebastian.reichel@collabora.com>, 
  Sashiko <sashiko-bot@kernel.org>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1231;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1088;
  i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=E3PH5dcID2nJKs/noMUpOfcvSjayh2aTBogbpSH7EdQ=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpFpFSZIwQ43TvL9dF8Txf69gahcpyg9sB6Y
- X2mrUXuV7Jr7YkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqRaRUAAoJENju1/PI
- O/qa4VAP/jCC02OyX+P8a2s+rWg32sVH2MuJZVRNL+4sMRhoYBCwtR2StQQjPQzAWD0cCVUbVAf
- 02OuVf4TUk5CTQDY2OCktbHd87GpxvPQ1o9wNtcxy/nEpg8j5qqv29q55168WYr9pECF+XMM1i0
- 2wI9K0fPoQQ5ymnmzuwBCqV6PSOJ3yrEqHuSBxTHgYYmZ5ZFEwHtJhtFXUey7KimOvuBXfMfIsL
- jmIEn9r84xPCb7b7gYKx7uSSlJbhPxJ/7bjfH4j0OvQAafVgdrDRkyNqQ1aaphePPnAoHmGACgj
- ba952xNcGDqdyPddPIOIf9VrcbBu9ugFaPysgyLdVt0oPlOXvrmnGBkbd8vWqX+4oR6a6rMMSk1
- y28XSaT2c8NDxf2ggOMR2jXnmDCEpCyQPDL8kksK3r8BAmfcqeO8YuYoY7+5n5ogU7D5PgbenIz
- GexrRSm0r9X5IpZpEtEkHqkofJQbrlNorBHZDH3i5ZqiT5ycqyZwCXPlJVMAEbQWNq7aJag4WqS
- SLZjZWZL/LTsIReqtund48cQ2fgIEYMC+0oMCHVJ9UoifKQh/yasmeoEeGwcqub7XHnOQfgGzbM
- WGmba+yqYd25Gr+vcUj0/L6sX0nBxj/ptFMh9HnfVu0e+HYR8hHGBkGh2ztauXDvE5xkE22fp8L
- FEg59G0POV/H2gSZVopIxNw==
+ bh=2KMZ0BK5nZl9x3Sxrnw8YlXTBKnooaCdrEkVGc6Hu7w=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpFpFSkcMxQDCmuLrdWjNkM/C2sM0jUr02q7
+ Nd096rbB/JWVYkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqRaRUAAoJENju1/PI
+ O/qalFwP/0WTgWmYfQkf0vMM3TApw1PcGBOaeKB8x9C/kYkdnIxed6Q5afPc3EW9cth0VP4BFnW
+ kxBtJD+I4qRFHv0aB9xlVMeVJ+55uui4tXxtDaER0Ta1Qj4XkIBGYxqaj9rzpTBgHAQbQLeNJjv
+ 6oALvAg9G5SxOAHxU+eqrOE5QbqbqeeoBUujVoL1j6s2rBoDBPc6tF+gWy4tmj8rdXlhcFdPORV
+ zUJZ7bUDzh63wHRTuTn/HSmS23Z+UEZ/aErXk1hGKelq/Ts1dI+pnDXA9jGZRhJJgjnZGgOm7M/
+ vaggTyfa1bDzJ8PBZR2C+9+9r73e2hCYjAyZ8SdFmkMOuQDgrh4CuR88D/0nDMq2MeEQ8Ib8iTT
+ tYc9yjoMhMONuBDjq3fssT/jmSVrgn4849mAR/Sq+zXrtiknkyD45o+SKnOfiBkGcerzzSLO8Am
+ D7OSbzFWWZdR5NWeqaQ9fTAazRyFGKkExXaQ9JeddM7enPZ+NbRCQ4rYGV3aC7in0kabth/cmrv
+ DGYcBuGaMknEb0rqzyRwJiR9niBIBNcmDCnnCOui6FELAVNODClLBDI7WhXs1jC41Ad0LSErAOl
+ FjunmZnDQj/oIOn871AKWlJIeo7rFFM4yohT8EJ8/OBW72gh8tM/1NY9US33O0dDxTqU02COT83
+ Wg258Fb4fnEdCLzk/H5su5Q==
 X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
  fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260701_163602_942535_A715788D 
-X-CRM114-Status: GOOD (  13.12  )
+X-CRM114-CacheID: sfid-20260701_163603_671771_6B7DF466 
+X-CRM114-Status: GOOD (  12.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,35 +105,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Ensure the USB status flag is cleared when the USB3 PHY is
-exited while the system is in DP-only mode. This can happen
-if the USB3 controller device is unbound while a DP-only
-adapter is plugged into the USB-C port.
+Ensure that USB3 mode is not accidently enabled during PHY re-init
+for systems that are configured as high-speed only via DT.
 
 Fixes: 2f70bbddeb45 ("phy: rockchip: add usbdp combo phy driver")
 Reported-by: Sashiko <sashiko-bot@kernel.org>
-Closes: https://sashiko.dev/#/message/20260625-rockchip-usbdp-cleanup-v7-24-38eb3cf654fd%40collabora.com
+Closes: https://sashiko.dev/#/message/20260626212424.C215E1F000E9%40smtp.kernel.org
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index bf6e7edbe631..1a983c1cef4b 100644
+index 266cbb0e5325..c69766929b3a 100644
 --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -1309,8 +1309,10 @@ static int rk_udphy_usb3_phy_exit(struct phy *phy)
- 	guard(mutex)(&udphy->mutex);
+@@ -1037,7 +1037,7 @@ static int rk_udphy_power_on(struct rk_udphy *udphy, u8 mode)
+ 		if (ret)
+ 			return ret;
  
- 	/* DP only or high-speed */
--	if (!(udphy->mode & UDPHY_MODE_USB) || udphy->hs)
-+	if (!(udphy->mode & UDPHY_MODE_USB) || udphy->hs) {
-+		udphy->status &= ~UDPHY_MODE_USB;
- 		return 0;
-+	}
- 
- 	rk_udphy_power_off(udphy, UDPHY_MODE_USB);
- 
+-		if (udphy->mode & UDPHY_MODE_USB)
++		if (!udphy->hs && udphy->mode & UDPHY_MODE_USB)
+ 			rk_udphy_u3_port_disable(udphy, false);
+ 		udphy->phy_needs_reinit = false;
+ 	} else if (udphy->phy_needs_reinit) {
 
 -- 
 2.53.0
