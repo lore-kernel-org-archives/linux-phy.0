@@ -4,28 +4,28 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BCEC8C43458
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 06:58:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2CA65C43327
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Jul 2026 06:58:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:MIME-Version:Message-ID:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=iWdugHiINudXlOLo+W1eLiX8TbD4aAk55d8yrPjz4i4=; b=kUSk/JQYzVR+h9
-	7gqQaOJBADobEPvp1QRucS0dVvXL8UsxWx7e6fHigOYB0qedc2LQIs9RPJlGxw8TKUh1P1yrIGpmZ
-	EnfzE5yL3Hv7SgtONTg2WzDWuX1JFPfUipOGVgwHnztNOjH7dNLzYBb0IaU30248twtJ5FpVU7SZV
-	2K4BWlMGaoB2yD7FWSTAbPDQr7z+nPNfcOqnY+EB6lGIY1tl7dJflNFKKPGGArEG12BPwKJcXPtv4
-	R5MU0YHBMU+6IToEHw6RYlXMYX13fnD9RjUqZtQjdx8tWsuKSLlw7QDvOC5Pjk9GBGBTCZQyVpoKk
-	ryaSLLdim9R2Hom24hxA==;
+	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EC0fQ3g845Nm1K9zORinjvTUy0BAqA0sYl5MmhPVVac=; b=E/jCzIk5SGFytN
+	EqaDqYqOUuGFKV4Q5OXqrn49miMQLajeXcE/YU5ktBXFTu6PySbTmft1KQsuU8puhxt5pGBzlh0RX
+	AZDJmFuXkQKzCCv9M9QlYHIUGDzXaOrBBRrAY/AOxTrJ8e70xHifrrj8TFQJfzsH728wXnVoHY5K0
+	/5NeOpYaRF8kO7eJ/Ye1nQxUxWcxoFwWzARudghMN3aNFpZbcH5DUR/xFi37rMIwevb/JYULihxG7
+	X8INq7BOQKryEvnSHMGI3Mjt+T8h2YmtdzGhU7kk/XDvedF7oxdJJnbcNOiIcHdCl/zsikpOa/9B1
+	XwQSv4X1Iia16r9ilQPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1weouN-00000000qUb-1eGL;
-	Wed, 01 Jul 2026 06:58:55 +0000
+	id 1weouP-00000000qVk-3d3Y;
+	Wed, 01 Jul 2026 06:58:57 +0000
 Received: from mail.aspeedtech.com ([211.20.114.72] helo=twmbx01.aspeedtech.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1weouJ-00000000qRW-0iSc;
-	Wed, 01 Jul 2026 06:58:53 +0000
+	id 1weouM-00000000qRW-14dk;
+	Wed, 01 Jul 2026 06:58:56 +0000
 Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
  (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Wed, 1 Jul
@@ -34,15 +34,13 @@ Received: from [127.0.1.1] (192.168.10.13) by TWMBX01.aspeed.com
  (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
  Transport; Wed, 1 Jul 2026 14:58:18 +0800
 From: Ryan Chen <ryan_chen@aspeedtech.com>
-Subject: [PATCH v3 0/3] Add AST2700 USB3.2 PHY driver
-Date: Wed, 1 Jul 2026 14:58:16 +0800
-Message-ID: <20260701-upstream_usb3phy-v3-0-00e12315b6f9@aspeedtech.com>
+Date: Wed, 1 Jul 2026 14:58:17 +0800
+Subject: [PATCH v3 1/3] dt-bindings: phy: aspeed: Document AST2700 USB3.2
+ PHY
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAIm6RGoC/23N0QqDIBTG8VcJr+dQK1272nuMMVKP04tKtGQRv
- fssGAza5f+D8zsLihAcRHQtFhQgueiGPkd5KpCybf8C7HRuxAjjhFKGJx/HAG33nKIsvZ2xoJS
- bizYgRIPymQ9g3Hsn74/c1sVxCPP+IdFt/WLVEUsUE8ygbuqGSGBa3NroAfQIyp7V0KFNTOxX4
- X8UlhUiiWpMCZKb6qCs6/oBBGE8IvsAAAA=
-X-Change-ID: 20260112-upstream_usb3phy-7116f8dfe779
+Message-ID: <20260701-upstream_usb3phy-v3-1-00e12315b6f9@aspeedtech.com>
+References: <20260701-upstream_usb3phy-v3-0-00e12315b6f9@aspeedtech.com>
+In-Reply-To: <20260701-upstream_usb3phy-v3-0-00e12315b6f9@aspeedtech.com>
 To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
 	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>, "Andrew
@@ -53,16 +51,16 @@ CC: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
 	<linux-kernel@vger.kernel.org>, Ryan Chen <ryan_chen@aspeedtech.com>,
 	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1782889098; l=1671;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1782889098; l=1695;
  i=ryan_chen@aspeedtech.com; s=20251126; h=from:subject:message-id;
- bh=bn8u6iZT/heeYMxwS3gT13QMzWcArkH0V90un5xFeD4=;
- b=awUCfrqi0MGSFD1GjYf0evv5DlrS0hIHqJjRtUdPjmOksHD0SJTQiXAe/gKUsCtwN/oCLfBEz
- Y0iyYwtPBPLCJ8u+r+25FkG5Y/F5eOuRgXc/iYmI+HSjUqRooQkTHEy
+ bh=PMotyQehgGrEVoSSxouKDsCZuOfMr0EXxz1QwPMc58k=;
+ b=hFYD8zr7qSwYWi6q+U7ERKc+wEuXk5ozWnoYh3PntDKqnIiHF9YUjjcmrw0X6MNajmxg8Kify
+ Fc5OD8AAIs5D9K5zHG+UO9vW52Z/J5fAJ34frQ6l1q6meyT4e65Uu4d
 X-Developer-Key: i=ryan_chen@aspeedtech.com; a=ed25519;
  pk=Xe73xY6tcnkuRjjbVAB/oU30KdB3FvG4nuJuILj7ZVc=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260630_235851_678630_9C085D98 
-X-CRM114-Status: UNSURE (   7.42  )
+X-CRM114-CacheID: sfid-20260630_235854_672861_FF6273C6 
+X-CRM114-Status: UNSURE (   9.97  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -80,48 +78,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add AST2700 USB3.2 PHY support.
- - Supports Super Speed Plus Gen2x1 (10 Gbps), Super Speed (5 Gbps),
-   High Speed (480 Mbps), Full Speed (12Mbps), and Low Speed (1.5 Mbps).
+Document AST2700 USB3.2 PHY. This IP is connected between
+USB3 controller and PHY module.
 
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 Signed-off-by: Ryan Chen <ryan_chen@aspeedtech.com>
 ---
-Changes in v3:
-- Wire drivers/phy/aspeed/ into drivers/phy/Kconfig and
-  drivers/phy/Makefile so the driver is actually built.
-- Fix the Makefile config symbol to CONFIG_PHY_ASPEED_USB3 to match
-  the Kconfig symbol.
-- Expand the Kconfig help text.
-- Link to v2: https://lore.kernel.org/r/20260116-upstream_usb3phy-v2-0-0b0c9f3eb6f4@aspeedtech.com
+ .../bindings/phy/aspeed,ast2700-usb3-phy.yaml      | 48 ++++++++++++++++++++++
+ 1 file changed, 48 insertions(+)
 
-Changes in v2:
-- aspeed,ast2700-usb3-phy.yaml
- - Drop clocks, resets descripton.
-- Kconfig
- - add COMPILE_TEST, remove default n
-- Link to v1: https://lore.kernel.org/r/20260114-upstream_usb3phy-v1-0-2e59590be2d7@aspeedtech.com
+diff --git a/Documentation/devicetree/bindings/phy/aspeed,ast2700-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/aspeed,ast2700-usb3-phy.yaml
+new file mode 100644
+index 000000000000..b83037aa0438
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/aspeed,ast2700-usb3-phy.yaml
+@@ -0,0 +1,48 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/aspeed,ast2700-usb3-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: ASPEED AST2700 USB 3.2 PHY
++
++maintainers:
++  - Ryan Chen <ryan_chen@aspeedtech.com>
++
++properties:
++  compatible:
++    const: aspeed,ast2700-usb3-phy
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  resets:
++    maxItems: 1
++
++  '#phy-cells':
++    const: 0
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - resets
++  - '#phy-cells'
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/aspeed,ast2700-scu.h>
++    #include <dt-bindings/reset/aspeed,ast2700-scu.h>
++
++    usb-phy@12010000 {
++        compatible = "aspeed,ast2700-usb3-phy";
++        reg = <0x12010000 0xc0>;
++        clocks = <&syscon0 SCU0_CLK_GATE_PORTAUSB2CLK>;
++        resets = <&syscon0 SCU0_RESET_PORTA_PHY3>;
++        #phy-cells = <0>;
++    };
 
----
-Ryan Chen (3):
-      dt-bindings: phy: aspeed: Document AST2700 USB3.2 PHY
-      phy: aspeed: Add AST2700 USB3.2 PHY driver
-      MAINTAINERS: Add ASPEED USB3 PHY driver
-
- .../bindings/phy/aspeed,ast2700-usb3-phy.yaml      |  48 +++++
- MAINTAINERS                                        |   8 +
- drivers/phy/Kconfig                                |   1 +
- drivers/phy/Makefile                               |   1 +
- drivers/phy/aspeed/Kconfig                         |  15 ++
- drivers/phy/aspeed/Makefile                        |   2 +
- drivers/phy/aspeed/phy-aspeed-usb3.c               | 236 +++++++++++++++++++++
- 7 files changed, 311 insertions(+)
----
-base-commit: 948efecf22e49aa4bf55bb73ec79a0ddcfd38571
-change-id: 20260112-upstream_usb3phy-7116f8dfe779
-
-Best regards,
 -- 
-Ryan Chen <ryan_chen@aspeedtech.com>
+2.34.1
 
 
 -- 
