@@ -4,106 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 729F7C43458
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Jul 2026 12:47:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5BD2C43458
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Jul 2026 12:59:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=egdTDMPMZ7T1C+tmlMh8Im74bi+9OUg9btN1WrNV38E=; b=I2uoWgEGmndxSs
-	lWI8K0J9IrWHHqytCOouXymYI3lk7yxtiE7KYOIdTdZXmZo0qCS4Ed+ovBjL08GBCHsQTcZhC2FN2
-	bFmi47aDWL88BYqkJF/eM5LICtlrZ2HYjcaLuWHs92NHPD/upzN4z0cr3kHO9xVoj5xW7dW2qm+57
-	u1aWNxs2T7H/f4r+fWq3C83qhF4vsFKNFQ2n+5zjUSO7gPneS8fpuCbUikustgACNiJHEpYhkyDcW
-	anmMytcda4NedWJciH3tN+XwXXCRNucG37aWW7BWRZVlDdHSABsm8nwst87P+JNC9lQl6frg3TF43
-	01kS1MbC24dGjhxbem7Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tNiYpm2EHJI/8ldUL5LXuQ7al3KY5w4UMfsc4m7yZNc=; b=T54ET90yLU5qmL
+	OskaMlrFjm0zw73tz+SOloa4ve72VFx9fhc1+38+M+v/bpmR842AGbckcQFyEqxRdJKCynf6uBvnT
+	uPWfoce8ltJkgYg3LOYz/82euazj+f++ujLcHRLpKfxAg6+CAtoA9oGG6NQmLC44s+ifOb85kXLpo
+	hUZjnH34iC3rHsK03uWpCsLDTP/dzcG+BSjhJdOwLL14RKhCgwDGEuMl1x4kVHJ3mGk7dLUbTdnwO
+	Xq1ErXERhKwkiA30gEKZKX8+WUON9noZEsHETfP/z+59w0Emz9jq800U1IFr/2Vp1cOVt/w1LVwxR
+	f1uY1KYOWW66QRvJa4IQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wfGoq-00000004SqI-0xYH;
-	Thu, 02 Jul 2026 12:47:04 +0000
-Received: from mail-ej1-x62f.google.com ([2a00:1450:4864:20::62f])
+	id 1wfH0V-00000004Txg-0mZy;
+	Thu, 02 Jul 2026 12:59:07 +0000
+Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wfGon-00000004SpC-1tXo
+	id 1wfH0S-00000004Twc-3PHE
 	for linux-phy@lists.infradead.org;
-	Thu, 02 Jul 2026 12:47:03 +0000
-Received: by mail-ej1-x62f.google.com with SMTP id a640c23a62f3a-c1274bedebfso167913166b.2
-        for <linux-phy@lists.infradead.org>; Thu, 02 Jul 2026 05:47:00 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1782996419; cv=none;
-        d=google.com; s=arc-20260327;
-        b=Rt9lcR7plQONm/8SlfZT0Cr3Nh6umBn+pdcchFddBU5IpcG4YZGgKgmoVuUFj2Y/aO
-         B672YUxVSkcUR9XLbLkQP+jOolFAcnZBplTOR+eKWpw86xzhu6YJvDn9jAp1nZBNwgsq
-         6zZRcc3NCPavkmwXEONP+G0UUBYKxnQ2FZ3pv6nhw5iaKkia0w83o/ewE6gn8snQCa4W
-         Wwq5cHWNMxVJ+WdDdaaGFrnNCnrM1NyB+4lmddloLRnxVK7orlt3hDfNPfZXGAM0IHMO
-         FJj8oND+Hr23iwBtBDKmzxbVz6t/gw2y/aMRpgUl1gAxrxoChAKeY1Vd/MmH9zutytI4
-         CMUw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:dkim-signature;
-        bh=210HKleKgbmFKKFSqfRC++HOJhEM15Vlg9VXrqpCJ6A=;
-        fh=vmbsW//BT4+ZENW3brhpW2aXY1iu8GK3fFieRorZ+OM=;
-        b=RT1apKV1YeFz9oLVXHSnW0VDgxTZSF2Z7nmfhRj/vj+IlF44i77udmqqwD51osEfEl
-         na/UkW7iKTYNqS13frZbpjM6jiiBBEOCX0n0gWxtbcV0sVsZmZ0bRQu2n6ZNQXJuPJdy
-         jfE5TfsqaYNVhkkpl+7dEMsO4it9gKju/j/ol7n2i5a5IGL0OvIBICQ369aI1DBA+Nql
-         kkNpLIaDrCitk4bsyQALgo8Tx0yYNbP+ra8WLDdboCG2L/NfprNfZk8xUE8cgQxP7Y5H
-         muyv9DnX5MweZdNVGLdV9YahEhGVoSJeBaJPZKbPVz7H+AXtDob8CNypfzGV9QK+uUhV
-         uAsA==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
+	Thu, 02 Jul 2026 12:59:05 +0000
+Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-470174001a0so1325643f8f.0
+        for <linux-phy@lists.infradead.org>; Thu, 02 Jul 2026 05:59:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1782996419; x=1783601219; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=210HKleKgbmFKKFSqfRC++HOJhEM15Vlg9VXrqpCJ6A=;
-        b=mFGKoY/qUbdiaR8GqpEr0/RIg4G3gzJdWGHBUqOJvDVtU+uhukYmPJ4nKmI1eCiKdL
-         QdDvek1UfQNdS6FUKTPqXIJuJZ4eg3mAopQoZwed5xYUTWOyBzG0y9x4BnVeCbFBuBmE
-         gDoabv3C5LDnqdShALSvhM/G4U2nLiKBSdkzzE8BBJK12GrxRxLc/poX3jzeI+tGcjZ0
-         aey6hoVoLJnAqQj2ESQe7puhAJ0iy55RcB2A3k9ZhVi0XzHOwgm7qi+wTcBHWAxpNtmh
-         l/0uADNlNCf6DW358yB/F9hUT0vgMPooyATEpBslAyzxEv9okt0j7fh+EZm6NMz36hVg
-         IaVQ==
+        d=gmail.com; s=20251104; t=1782997142; x=1783601942; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=gmLDi1XgEV0nw8Bvz62Dym/abqNF+kJy2cP0AFA24gY=;
+        b=mqoo4Ivj7wCRwtyWXxS9WVDzSwPLjhInpujoItYa82Wugu1vvkhJdwK6/5dPrwoDUA
+         P3gmjUMU8abSXvFCtLSnEWs/b0nH+fh26U6HHHe8ftrGlg8xoj6GkU1TUG3O2Ij5Vq+/
+         sm5PWkWhKUdWOH+voNZoc4IRd0NZEQlwbvAoHtzaCc7GLf2mviZEqe847u48emI8Q3fy
+         16ZYeS+3/SAhSb7UeARgkvqUldWufRuJywvcnyH4LRyFvzyQMSfFKLqBHojv2bC1tzKu
+         KwR3XRWloVMdhSqGMig6httTARFLk9DQ/LQB5d8u0L2XEcvgETPUu9DsEZfhX51kUA9+
+         EKcg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1782996419; x=1783601219;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=1e100.net; s=20251104; t=1782997142; x=1783601942;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=210HKleKgbmFKKFSqfRC++HOJhEM15Vlg9VXrqpCJ6A=;
-        b=G7Rw/DK07qK5SC6IUZXJjHq2n7vUnKZfMpJ7UEp1RGxO1IYK8Ds+fsQ+JoyIayk+cg
-         AZzc1YBiTDcEe7Ermjq7Or7zCGEhvtGxNPOURgRRDCbqWQzlJvjGtbAKeWyUNe6jcsg1
-         Tu+D/KLskVW1O1KB2jjET/q6tIo/uL5VutR5ihMp73FVKoLK0j6YyH32MLDwVgkzZ8HX
-         Y+n4znX4H/BQx8vLxzLDobZiU0wjCAGZpTNB7CJJO0ooISiQ2BpfJl039IG3ckoLtCHy
-         dNovFUeqsnoSDFPD7SGkAht6nX8iAAEMl26msLnbSXonpV/CSF9egz8ngTzfi2Ujy6sI
-         8eHg==
-X-Forwarded-Encrypted: i=1; AHgh+RobW0HBSHG7TmgxryEsiRAWwN7gyABWrA+kj7JAa+6MmtIU6gKCFxsoLxYjndLdE4rL5cDMgykXHto=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzUGuzstHSSb2hrOfI95t9txHLmJaUewW6RATuL2UZtECg5QJjx
-	hdek0a749TWs1hn0itleSzzPrrGS+8Ajnaraw8ICQu73igt4dxhPAAsSAjFDVFoC+pfLMaOM57O
-	ReKqEzijCck/ooCMz8wzFUcSOFTZTSVhbYZWKCLcmSw==
-X-Gm-Gg: AfdE7cl126JsrbzNU9MI6DTFvIM7qMIg47+Zsn04NIFo67usvStRvX+zdGEAU+BCwAH
-	G3QdKIt6gC0GGSt5gqnHYChQXA53+v7fSjro1yp+zGr631da8m7oAowSugBezBJljW9xF5e5239
-	hIUk7OZo7bttW8cXQcmLjyU64Oz/Mo2/AVszUIMhWVXjRnaZI23+fyuKvPl5OOVVlPOuO1P+X8q
-	1UC7Fn86uzs2xtCcwYqAfsBmYvUJoschGEHG0g4cRKvnCFk2c9apEYSRtGBlroRXJWMf0tpMkPu
-	M6SCCzPmeQNSrcTSQOBw/EZryQ==
-X-Received: by 2002:a17:906:d0da:b0:c12:64c6:bd7 with SMTP id
- a640c23a62f3a-c12a9e053e3mr203835966b.21.1782996418879; Thu, 02 Jul 2026
- 05:46:58 -0700 (PDT)
+        bh=gmLDi1XgEV0nw8Bvz62Dym/abqNF+kJy2cP0AFA24gY=;
+        b=qXh39wjNBUvCO9fT0nBOehbV7fawlpkdH8yTGKju+pxGs4glPKCBIi5200eLgsGIS5
+         JFBDlKb3MvJt3SXFu9CsXPAhkuX+m06hsIkqoCocDI+TgwzQdY/Mov/knYcbgiu3LL5e
+         bBYiuxH1GrKdUaBs6hcrcCXwLCLbF0oNhXa2OXuyTcU2jLMb0XHAkf1jpMT7tgk0R6Uf
+         oXO4cCChFnxiwoOTbYtuzcOzWDNFHkkgJ3IDUWIYLAn2xGrhxmRjRvIJPTlizHE9y1/m
+         riZqu0ZkRrkccTYUQVsYK8QXpLwc79J/FKRgOYz917W+Kl1f8c835yHCVjcHM7mWtJ52
+         AeSQ==
+X-Forwarded-Encrypted: i=1; AHgh+RrxO7ahoAY/qnW44ByJAvuz/pso5fzwSxZn5w2UBa8UuyRl8SFMlLAeSlTJ47DiEuymJs1nQuZXCzU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxSlTABnuo0hVYFYrHLuPnWWYHw3ye/OgQ4LYoc+Cfl2Q+9FDBj
+	bHGMg4A7QZNGwTz91VKcY0h4RSVo63GrAHztN+uYKpBuofgsgnvwhK5b
+X-Gm-Gg: AfdE7cmeO9uLSxl0Mv4A+yRSovoz6hYn67ux4ueR1aPViAm7ZWvlM4I4WZStK39T4wK
+	kJtvvwGq2sS18tek9Lc53k2U0xSpxWqvLPTDJ618roC0v1HtC+iN5eL5hXxzisFghVvkIc8Tx+d
+	R+HE/ZAu5nKeWBj2hfdLFFbMJq91d7oEkRVcyR/PYzOpczmk1fVHf3UUzO9CQGG7VrOSoWeJT3z
+	dLg+faLZHkKnm6YMueXnhyTBe8qXl7QFsLa5PlHRWhdNh26Gg/hl/Fpm7k2mzxGJRUiEZD4Mqpx
+	NHbn5+uZTqHxt7+tiXVm/uLPzY2frEAZrOm24FEJMqVAMrUYX3PywpEnh/SOXdwucD2vM+KJQVd
+	ZukHgSoM57eSJ/Wf4rNMZHnLT3d7OyZ0aCddROQv3FcvmAj1+xDQqkRxgENs7xCfA7JVFxbAsSE
+	Pa2wg7OnKms925rOrqAUlYjGnZKzakL5UIsNL91VIlufZLKdaXE/EtP6Jq4y+WrD9AwDtLUW142
+	q3yvwrN9Uca3UBY3Vb4/45ve2I=
+X-Received: by 2002:a05:6000:2505:b0:46f:7d90:8127 with SMTP id ffacd0b85a97d-477b3889474mr7327706f8f.13.1782997141864;
+        Thu, 02 Jul 2026 05:59:01 -0700 (PDT)
+Received: from iku.Home ([2a06:5906:61b:2d00:7a4b:58b4:175e:8c2d])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-477db8a44d7sm8312273f8f.9.2026.07.02.05.59.01
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 02 Jul 2026 05:59:01 -0700 (PDT)
+From: Prabhakar <prabhakar.csengg@gmail.com>
+X-Google-Original-From: Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>,
+	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+Cc: linux-renesas-soc@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Prabhakar <prabhakar.csengg+renesas@gmail.com>,
+	Biju Das <biju.das.jz@bp.renesas.com>,
+	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
+	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: [PATCH] phy: renesas: rcar-gen3-usb2: Ignore missing VBUS regulator
+Date: Thu,  2 Jul 2026 13:58:55 +0100
+Message-ID: <20260702125855.3157253-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+X-Mailer: git-send-email 2.54.0
 MIME-Version: 1.0
-References: <20260203161917.1666696-1-vincent.guittot@linaro.org> <akZcpgDSjAg6gcok@lsv051416.swis.nl-cdc01.nxp.com>
-In-Reply-To: <akZcpgDSjAg6gcok@lsv051416.swis.nl-cdc01.nxp.com>
-From: Vincent Guittot <vincent.guittot@linaro.org>
-Date: Thu, 2 Jul 2026 14:46:47 +0200
-X-Gm-Features: AVVi8CfnsNCvDc67RDsUnObGKCXWxD40T6JSCY5QNMiAlpanyxUGcJsCLPpkpdE
-Message-ID: <CAKfTPtDT5NiFcgozfxec0vBi4663fhnNdQGRdGpF6VwpKSJU-g@mail.gmail.com>
-Subject: Re: [PATCH 0/4 v2] Serdes: s32g: Add support for serdes subsystem
-To: Jan Petrous <jan.petrous@oss.nxp.com>
-Cc: vkoul@kernel.org, neil.armstrong@linaro.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, ciprianmarian.costea@oss.nxp.com, s32@nxp.com, 
-	p.zabel@pengutronix.de, linux@armlinux.org.uk, ghennadi.procopciuc@nxp.com, 
-	Ionut.Vicovan@nxp.com, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org, 
-	horms@kernel.org, Frank.li@nxp.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260702_054701_506977_255DE2EC 
-X-CRM114-Status: GOOD (  20.23  )
+X-CRM114-CacheID: sfid-20260702_055904_870375_E47E9ED6 
+X-CRM114-Status: GOOD (  13.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,76 +108,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 2 Jul 2026 at 14:42, Jan Petrous <jan.petrous@oss.nxp.com> wrote:
->
-> On Tue, Feb 03, 2026 at 05:19:13PM +0100, Vincent Guittot wrote:
-> > s32g SoC family includes 2 serdes subsystems which are made of one PCIe
-> > controller, 2 XPCS and a shared Phy. The Phy got 2 lanes that can be
-> > configured to output PCIe lanes and/or SGMII.
-> >
-> > Implement PCIe phy and XPCS support.
-> >
-> > Change since v1:
-> > - Fix compile_test
-> > - Use devm_reset_control_get_exclusive()
-> > - Fix s32g_serdes_phy_set_mode_ext()
-> > - Manage devm_clk_bulk_get_all() returns 0
-> > - Fix s32g_serdes_parse_lanes() error management
-> > - Move xpcs filein drivers/net/pcs/
-> > - Add pcs_inband_caps()
-> > - Fix functions in phylink_pcs_ops
-> > - Fix MAINTAINERS
-> >
-> >
-> > Vincent Guittot (4):
-> >   dt-bindings: serdes: s32g: Add NXP serdes subsystem
-> >   phy: s32g: Add serdes subsystem phy
-> >   phy: s32g: Add serdes xpcs subsystem
-> >   MAINTAINERS: Add MAINTAINER for NXP S32G Serdes driver
-> >
-> >  .../bindings/phy/nxp,s32g-serdes.yaml         |  154 +++
-> >  MAINTAINERS                                   |   10 +
-> >  drivers/net/pcs/Makefile                      |    1 +
-> >  drivers/net/pcs/pcs-nxp-s32g-xpcs.c           | 1006 +++++++++++++++++
-> >  drivers/phy/freescale/Kconfig                 |   10 +
-> >  drivers/phy/freescale/Makefile                |    1 +
-> >  drivers/phy/freescale/phy-nxp-s32g-serdes.c   |  953 ++++++++++++++++
-> >  include/linux/pcs/pcs-nxp-s32g-xpcs.h         |   50 +
-> >  8 files changed, 2185 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/phy/nxp,s32g-serdes.yaml
-> >  create mode 100644 drivers/net/pcs/pcs-nxp-s32g-xpcs.c
-> >  create mode 100644 drivers/phy/freescale/phy-nxp-s32g-serdes.c
-> >  create mode 100644 include/linux/pcs/pcs-nxp-s32g-xpcs.h
-> >
-> > --
-> > 2.43.0
-> >
->
-> Hi Vincent, all,
-> I'm taking over the S32G SerDes/XPCS upstreaming. The effort has moved in-house
-> at NXP and I'll be carrying it forward, continuing from this v2 rather than
-> restarting from zero.
->
-> Vincent, thanks for the v1->v2 groundwork. I'll keep your authorship on the
-> patches that originate from your series (Co-developed-by plus your
-> Signed-off-by) and build on top; I'll send you v3 off-list first, as you
-> offered.
->
-> A v3 is in preparation and will come as an RFC, with the v2 review comments
-> addressed.
->
-> Vincent, if you're OK with the handoff, a short ack here would help make the
-> transition visible to the reviewers.
+From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 
-Ack
+Commit b6d7dd157763 ("phy: renesas: rcar-gen3-usb2: Add regulator for
+OTG VBUS control") introduced support for controlling OTG VBUS through
+the regulator framework.
 
-Thanks
-Vincent
+As part of this change, the driver started requesting an exclusive "vbus"
+regulator for OTG-capable PHYs with no_adp_ctrl set. The lookup failure
+was propagated unconditionally, causing probe to fail on platforms where
+no VBUS regulator is described.
 
->
-> Thanks.
-> /Jan
->
+On RZ/V2H and RZ/V2N, which do not use a VBUS regulator, this results
+in the following error:
+
+    phy_rcar_gen3_usb2 15800200.usb-phy:
+    dummy supplies not allowed for exclusive requests (id=vbus)
+
+This failure completely prevents the USB 2.0 interface from initializing.
+
+Fix this by allowing the probe to continue if an external VBUS regulator
+is missing. Only propagate the error if the internal vbus-regulator node
+is explicitly present, or if the lookup returns -EPROBE_DEFER. For all
+other missing regulator errors, gracefully assume no external VBUS
+regulator is available and return 0.
+
+Fixes: b6d7dd157763 ("phy: renesas: rcar-gen3-usb2: Add regulator for OTG VBUS control")
+Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+---
+ drivers/phy/renesas/phy-rcar-gen3-usb2.c | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+index ef38c3b365d4..9ae9975d3255 100644
+--- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
++++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+@@ -902,8 +902,17 @@ static int rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable(struct rcar_ge
+ 	int ret;
+ 
+ 	channel->vbus = devm_regulator_get_exclusive(dev, "vbus");
+-	if (IS_ERR(channel->vbus))
+-		return PTR_ERR(channel->vbus);
++	if (IS_ERR(channel->vbus)) {
++		ret = PTR_ERR(channel->vbus);
++		/* If vbus-regulator node was present vbus regulator should be available */
++		if (channel->otg_internal_reg)
++			return ret;
++
++		if (ret == -EPROBE_DEFER)
++			return ret;
++
++		return 0;
++	}
+ 
+ 	if (enable) {
+ 		ret = regulator_enable(channel->vbus);
+-- 
+2.54.0
+
 
 -- 
 linux-phy mailing list
