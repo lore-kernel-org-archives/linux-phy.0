@@ -4,72 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC229C43327
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Jul 2026 09:38:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24BABC43458
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Jul 2026 09:38:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AxVsVLYtT0+Tb6AvcwP/4bDA908mjRSmP+t8kQAh7TQ=; b=JTc6JLU2igpJEV
-	XYf8rKnqeL9i5eZvnI0sEe9IMKDO/HXtUesMyOzTVs/e3lVq4SUVwsDy3W0mekfgJvjpqHIQ/Oh11
-	N4uMAlA5+VE5L1n7aj9FUUqWGBmXdsiJeOxyPe/BWI6LQPsQcR9JK8g7hC3OXn18ALv5b6oBS2hVu
-	dey3QS9IR0x2VHRgKk4zuOpGBYb/J3ugctDzOLP1E55ETQ11HBhXUtu1Az4/ZK9t0MDrCsNPJ1JAG
-	mymSN7KZ2/OayscxjEoDtr6U97gQV17rSVZZ17PBYGv2n4jY0qbctv6MLlZt0RnY8p0sUgaF4oMTV
-	2F1F3UjyDP3tjYwWE01Q==;
+	List-Owner; bh=mIAbvSBXqE7QyUnL/tK/qV2Gl3mZXkRuaSxMQKwxyZk=; b=19T60iiaOv/X43
+	YNkpvSxE6fbz/Hh9tKi2YsxVz1If/Z5981eMswPruHgP5F3ZBfZwZqoKqhm7D+LZLDrpjiFrodIyx
+	YKL8CMP86K5CtWl8tHrwW1zax0XXE1kUIvS8vvjZkcKMqM5a2Yc6g1MCegBIFM3M/Xi4u0Jnysf/c
+	E0vncuLfecgoHPY+9JqfC4IMUseWSm8JUagSiDAtWIZq7jpsmDOgLemFKEO4Qf0/NGbbVVB8MnFiq
+	H3SaP+1hZk/xWhslC/KYNsByJqwAq95tTihBvUdTsTnxHzFBBoEalLxvEVkwdk0j7TwZt42pfdiVm
+	UuzhBogCvPifMT7QJV1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wfDsO-0000000442I-2Tqw;
-	Thu, 02 Jul 2026 09:38:32 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1wfDsQ-0000000444v-3owB;
+	Thu, 02 Jul 2026 09:38:34 +0000
+Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wfDsL-000000043xy-0nNG
+	id 1wfDsM-000000043zW-2h3X
 	for linux-phy@lists.infradead.org;
-	Thu, 02 Jul 2026 09:38:30 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-493bb510ce4so11770455e9.1
-        for <linux-phy@lists.infradead.org>; Thu, 02 Jul 2026 02:38:28 -0700 (PDT)
+	Thu, 02 Jul 2026 09:38:31 +0000
+Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-493b1710405so8724515e9.2
+        for <linux-phy@lists.infradead.org>; Thu, 02 Jul 2026 02:38:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1782985107; x=1783589907; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1782985109; x=1783589909; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:to:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=jv4z1LhL7ndXVWFW9IHlXeU6IP582amPe/jHp+pPs7U=;
-        b=PRhjxqo5LdLV4OFqlMlf5bK6t+xMo7uqEkrK8Y3O3u7BWZlh+aosJkWRSuQVYNDe+P
-         3d/GAFIm1iTxjhlqh9/0fDBIAhrXhSMZoEbNUYs6jRiIl/YnbFKrQ8DSUGTp0Vv5oLA/
-         eF0JzniBlM/rF2mqtalyJEgHFE8ZUqoVU1epewwR/r4FsSFkRiTCP+H2RSD8gPUY5XQ8
-         xdOA+Jpm0Xq0+8tX0XW/S1KWInFsr/JeNc+jVcpgIj9xJd4cd5eadXNpPMZ0vrMdbq3I
-         aBGK7h/rbqZBJMeDKRA1C3wIsYn+jR1yVtYmMIDZjH4uTLcVyCfXC6xcpUxKL6CxJ9qy
-         Bd8A==
+        bh=19Blhbug/ViMibEwSUq3xAqJ9uRR52sZJ3C/I6CrjH0=;
+        b=CmydogT5WOTMKAtMI80nJpJqq1jnKhO85ieWUx5mIWslZ79wIr5Vu18ysy2GHa3eZH
+         zcQJCRg0xt3BF3CN72UKTcagfGQXSTYhUvHpb97yb3qfEEHaK8fuy4RDdlRF/v8+zAIo
+         K8uxmbwwuNCew3ExGmCipcfsqDgENIwlW3Vft5TrBJ7BBo1Yg+Q4VJ64P4jgHP5q9UDF
+         34aQ6xTeXE+1bFdMMWNR6KxTUy/U1wDNsUyNGjlpYNXiSq34duzkN5Vn0q6rshS/8j3R
+         Lo5YVSZpyicArBxgKyyrQj4T9UdD4CBk57/TCQmrgZQZHxOeNCVhGw8NO6qAAW4EqxhL
+         mT9A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1782985107; x=1783589907;
+        d=1e100.net; s=20251104; t=1782985109; x=1783589909;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:to:from:x-gm-gg:x-gm-message-state:from:to
          :cc:subject:date:message-id:reply-to;
-        bh=jv4z1LhL7ndXVWFW9IHlXeU6IP582amPe/jHp+pPs7U=;
-        b=lOnenwfKZjGHcY84G/jozvDkPG4fVckghGpjOZDxWhArxquJo+dFJNMYAuUP/Fdo0R
-         FgczsZ6eaZlUzLmIle1t9mtJqwfGVDe6yoAuoR7bd3+Rlw5ghGM5rvcWkK2P+jY9bywN
-         i3vCv5/XUApv0NYInrzRVVToO8yDmvJCvKfDp3jb2rVZ3/EmM8gKk6eTlNDCdjMUVdIa
-         40i/bI+8Z8pFBnknBxIm8i55ydnGhr5RTTZXvEh7116IA/vSFfVl1voRUbhVXFTtpxel
-         6tBSTAKLlF+ra0g2DC3nAY9lcOenB5y7QM6WsDRNJT9ASJnt1QieFpT/BSwHsS6EnVTk
-         Bu/w==
-X-Forwarded-Encrypted: i=1; AFNElJ+V0u+bpyIEz6S7XKXE0fv2EQItpnd3tGaqp1YEQnNqANBzgc2Nwe9hLj1HHOmdBXf/QTB9cw2in0s=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyuK7NV3EHoSRsDKBrxGw0//6K/8daIyjncN6aeJjmEFrE2r5L9
-	HNh3zeNM+Dp4s5xo/hM8DA3BEH4iq9m8kMKvX4WXEPT/vPcF7J9nuvAy
-X-Gm-Gg: AfdE7cl5nK1AxPt4JD2zqMFKuhpYlg9WHSnXeg/HAqlT45fKGeKhHpOts5/M12TSse+
-	UBFsm6r0ZSGH14WOLVy+fC4+VzyTM6EdI0Roj4NiHNPy51oOkSJM506OrNKnb5QJyaa1vmGlwLF
-	NC7k565+blLJGRk5NwT/QJitlo9dQwnR+UgkHVnDcW6d7afS+nmQi3gV1qN3lXXx1fDxunPQm85
-	eSfrW8rhpsF9+GSHyfoNGz+O+gxf0ifoA4lBaaY/+t9AfLuKpfGzaTQTodE/yqHlJrK08fShKtH
-	M0r+7EbByawPfAsJfi2JuPEjCaARbYBRrdyvizX0uUxcb1wRxjd52pvMzZLe9+TNqUafkGXhzii
-	JSG3ysEr06t1CW9x4jOnJhbZwPqUdANYLHDnPv7cBOP6TGnoBHO+bsQuiOupYWq5zcyKHuvgxq4
-	G7umP5rTJMh9h/i4RaSJJSZI3sCqFIeW6JkyjTfK8XqE0NRhFslcd/bT2NGminsBCrtnHB0s7o2
-	omo/w==
-X-Received: by 2002:a05:600c:5297:b0:493:a5da:e5d2 with SMTP id 5b1f17b1804b1-493c2b93614mr72216135e9.26.1782985107289;
-        Thu, 02 Jul 2026 02:38:27 -0700 (PDT)
+        bh=19Blhbug/ViMibEwSUq3xAqJ9uRR52sZJ3C/I6CrjH0=;
+        b=s+JHUS/3dUrfC3YB/4T5Nek4esEurL1oN9yDPSK65bZW1ZYVUsEzTtL6VvFnJSnrvK
+         7eJwuve27tX+sbiWdc/Ozn/bBKGOLsPLkZcjdq6uezfvQaCcAZ25eSS4vKR8QdcFbWPB
+         64qFdIrMy38aKrmaNPYzLpz8RP5V/bwqTHxpOsxuzQmLJu+AMLuZBB3ZWtNCbdEnUXIY
+         lR3fnui0ZXbuud67dJZ/fHIrhG95XruHGZTuyJfiaHFwokK6P6F7lmKywUM0B9Qmx5r5
+         /9Hn/LB6NsbgXEdLcmeKmHIAEKBdOLnOMMO5rE4EA4L7O228Y26+M6oo80DWxaYS9947
+         GH2A==
+X-Forwarded-Encrypted: i=1; AFNElJ8XrH1plvVQ9JdR1jVfWtBZBnJ+7VICxeT5RPqvFybOv02dgPE4+Nrj+MLLZz+xYGCblnOMGOAdUVQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzORLAZT1MMzEo5UMK3zGuN3o0Cgx6VXwa/ocN34bpsPYkc0ady
+	D6eiO2JlT9MRFB6kNQsN9xuTYJ1ghY1QXBTEGafXsURfgaQpmWpm8bYW
+X-Gm-Gg: AfdE7cnd5lQHgWGTjsGs86OT9UVkOttDxdYD2bRG4HJc7bxFk+okZMg1DJXaz4O53t9
+	JF6Aw1UC4pFK9QUOJLXGBVDUCnWaExZRlZ+1MQL8MKp0UzMhV7R0WNH0vbfTA3AQmSP03UtCS3P
+	1pXwtuS5JwAMbHUxZZu2BrLDw2YAvAq5iHtvrVCDoNdNDxE79deuklhipz5StlbjToEiBxtSXPn
+	ORkZStOVh4Lo5xRXNWaDzw42VHtF3mmrNf156lKS99kQqHWwX9ZOZAaZkc2qpp/rX3W6uyR53N1
+	4edFs45CsR+BJixmOUvopZ3GE+tlHYPT2o6wPnYVv6PVKbc2NzfJNGd0YDbC0Xb5qzAQX8Y9gCo
+	GzgjKU+eIejHDPfeZkOx5yMSIKX5O/29rRig2wWCusLheIqHog0e2iLCs0539moQU1+CJxQCVB9
+	COyrno5NJyGmvFHZRSupq8W7gTw38rosKgKJrFUrcef+0HBfNzbsqYi796X1c1Bdg8xhM2NU9KZ
+	quXfw==
+X-Received: by 2002:a05:600c:8117:b0:490:688b:f9f8 with SMTP id 5b1f17b1804b1-493c2b99aafmr71835635e9.27.1782985108910;
+        Thu, 02 Jul 2026 02:38:28 -0700 (PDT)
 Received: from Ansuel-XPS24.localdomain (host-79-52-250-217.retail.telecomitalia.it. [79.52.250.217])
-        by smtp.googlemail.com with ESMTPSA id 5b1f17b1804b1-493c636c8b9sm35502285e9.10.2026.07.02.02.38.25
+        by smtp.googlemail.com with ESMTPSA id 5b1f17b1804b1-493c636c8b9sm35502285e9.10.2026.07.02.02.38.27
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 02 Jul 2026 02:38:26 -0700 (PDT)
+        Thu, 02 Jul 2026 02:38:28 -0700 (PDT)
 From: Christian Marangi <ansuelsmth@gmail.com>
 To: Michael Turquette <mturquette@baylibre.com>,
 	Stephen Boyd <sboyd@kernel.org>,
@@ -87,16 +87,16 @@ To: Michael Turquette <mturquette@baylibre.com>,
 	linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-phy@lists.infradead.org
-Subject: [PATCH v10 3/5] clk: en7523: Add support for selecting the Serdes port in SCU
-Date: Thu,  2 Jul 2026 11:38:08 +0200
-Message-ID: <20260702093812.15918-4-ansuelsmth@gmail.com>
+Subject: [PATCH v10 4/5] phy: move and rename Airoha PCIe PHY driver to dedicated directory
+Date: Thu,  2 Jul 2026 11:38:09 +0200
+Message-ID: <20260702093812.15918-5-ansuelsmth@gmail.com>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20260702093812.15918-1-ansuelsmth@gmail.com>
 References: <20260702093812.15918-1-ansuelsmth@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260702_023829_307239_2EA63879 
-X-CRM114-Status: GOOD (  25.35  )
+X-CRM114-CacheID: sfid-20260702_023830_756290_DF838745 
+X-CRM114-Status: GOOD (  25.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,337 +113,174 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In the SCU register for clock and reset, there are also some register to
-select the Serdes port mode. The Airoha AN7581 SoC have 4 different Serdes
-that can switch between PCIe, USB or Ethernet mode.
+To keep the generic PHY directory tidy, move the PCIe PHY driver for
+Airoha AN7581 SoC to a dedicated directory.
 
-Add a simple PHY provider that expose the .set_mode OP to toggle the
-requested mode for the Serdes port.
+Also rename the driver and add the relevant SoC name to the .c and .h
+file in preparation for support of PCIe and USB PHY driver for Airoha
+AN7583 SoC that use a completely different implementation and
+calibration for PHYs and will have their own dedicated drivers.
 
-Reviewed-by: Brian Masney <bmasney@redhat.com>
+The rename permits to better identify the specific usage of the driver
+in the future once the airoha PHY directory will have multiple driver
+for multiple SoC.
+
+The config is changed from PHY_AIROHA_PCIE to PHY_AIROHA_AN7581_PCIE.
+
 Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
+Acked-by: Lorenzo Bianconi <lorenzo@kernel.org>
 ---
- drivers/clk/Kconfig      |   1 +
- drivers/clk/clk-en7523.c | 218 ++++++++++++++++++++++++++++++++++++++-
- 2 files changed, 216 insertions(+), 3 deletions(-)
+ MAINTAINERS                                         |  4 ++--
+ drivers/phy/Kconfig                                 | 11 +----------
+ drivers/phy/Makefile                                |  4 ++--
+ drivers/phy/airoha/Kconfig                          | 13 +++++++++++++
+ drivers/phy/airoha/Makefile                         |  3 +++
+ .../phy-an7581-pcie-regs.h}                         |  2 +-
+ .../{phy-airoha-pcie.c => airoha/phy-an7581-pcie.c} |  6 +++---
+ 7 files changed, 25 insertions(+), 18 deletions(-)
+ create mode 100644 drivers/phy/airoha/Kconfig
+ create mode 100644 drivers/phy/airoha/Makefile
+ rename drivers/phy/{phy-airoha-pcie-regs.h => airoha/phy-an7581-pcie-regs.h} (99%)
+ rename drivers/phy/{phy-airoha-pcie.c => airoha/phy-an7581-pcie.c} (99%)
 
-diff --git a/drivers/clk/Kconfig b/drivers/clk/Kconfig
-index 1717ce75a907..4d58c35d88bc 100644
---- a/drivers/clk/Kconfig
-+++ b/drivers/clk/Kconfig
-@@ -221,6 +221,7 @@ config COMMON_CLK_EN7523
- 	bool "Clock driver for Airoha/EcoNet SoC system clocks"
- 	depends on OF
- 	depends on ARCH_AIROHA || ECONET || COMPILE_TEST
-+	select GENERIC_PHY
- 	default ARCH_AIROHA
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 05e90c3f7fe0..952653034c4c 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -765,8 +765,8 @@ M:	Lorenzo Bianconi <lorenzo@kernel.org>
+ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ S:	Maintained
+ F:	Documentation/devicetree/bindings/phy/airoha,en7581-pcie-phy.yaml
+-F:	drivers/phy/phy-airoha-pcie-regs.h
+-F:	drivers/phy/phy-airoha-pcie.c
++F:	drivers/phy/airoha/phy-an7581-pcie-regs.h
++F:	drivers/phy/airoha/phy-an7581-pcie.c
+ 
+ AIROHA SPI SNFI DRIVER
+ M:	Lorenzo Bianconi <lorenzo@kernel.org>
+diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+index 19f3b7d12b7d..e93951a4a898 100644
+--- a/drivers/phy/Kconfig
++++ b/drivers/phy/Kconfig
+@@ -46,16 +46,6 @@ config GENERIC_PHY_MIPI_DPHY
+ 	  Provides a number of helpers a core functions for MIPI D-PHY
+ 	  drivers to us.
+ 
+-config PHY_AIROHA_PCIE
+-	tristate "Airoha PCIe-PHY Driver"
+-	depends on ARCH_AIROHA || COMPILE_TEST
+-	depends on OF
+-	select GENERIC_PHY
+-	help
+-	  Say Y here to add support for Airoha PCIe PHY driver.
+-	  This driver create the basic PHY instance and provides initialize
+-	  callback for PCIe GEN3 port.
+-
+ config PHY_CAN_TRANSCEIVER
+ 	tristate "CAN transceiver PHY"
+ 	select GENERIC_PHY
+@@ -168,6 +158,7 @@ config PHY_XGENE
  	help
- 	  This driver provides the fixed clocks and gates present on Airoha
-diff --git a/drivers/clk/clk-en7523.c b/drivers/clk/clk-en7523.c
-index 1ab0e2eca5d3..183cf7fe4bda 100644
---- a/drivers/clk/clk-en7523.c
-+++ b/drivers/clk/clk-en7523.c
-@@ -6,14 +6,18 @@
- #include <linux/io.h>
- #include <linux/mfd/syscon.h>
+ 	  This option enables support for APM X-Gene SoC multi-purpose PHY.
+ 
++source "drivers/phy/airoha/Kconfig"
+ source "drivers/phy/allwinner/Kconfig"
+ source "drivers/phy/amlogic/Kconfig"
+ source "drivers/phy/apple/Kconfig"
+diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
+index d7aa516bcc49..4ca4a07963fc 100644
+--- a/drivers/phy/Makefile
++++ b/drivers/phy/Makefile
+@@ -7,7 +7,6 @@ obj-$(CONFIG_PHY_COMMON_PROPS)		+= phy-common-props.o
+ obj-$(CONFIG_PHY_COMMON_PROPS_TEST)	+= phy-common-props-test.o
+ obj-$(CONFIG_GENERIC_PHY)		+= phy-core.o
+ obj-$(CONFIG_GENERIC_PHY_MIPI_DPHY)	+= phy-core-mipi-dphy.o
+-obj-$(CONFIG_PHY_AIROHA_PCIE)		+= phy-airoha-pcie.o
+ obj-$(CONFIG_PHY_CAN_TRANSCEIVER)	+= phy-can-transceiver.o
+ obj-$(CONFIG_PHY_ECONET_PCIE)		+= phy-econet-pcie.o
+ obj-$(CONFIG_PHY_EYEQ5_ETH)		+= phy-eyeq5-eth.o
+@@ -20,7 +19,8 @@ obj-$(CONFIG_PHY_PISTACHIO_USB)		+= phy-pistachio-usb.o
+ obj-$(CONFIG_PHY_SNPS_EUSB2)		+= phy-snps-eusb2.o
+ obj-$(CONFIG_PHY_XGENE)			+= phy-xgene.o
+ 
+-obj-$(CONFIG_GENERIC_PHY)		+= allwinner/	\
++obj-$(CONFIG_GENERIC_PHY)		+= airoha/	\
++					   allwinner/	\
+ 					   amlogic/	\
+ 					   apple/	\
+ 					   axiado/	\
+diff --git a/drivers/phy/airoha/Kconfig b/drivers/phy/airoha/Kconfig
+new file mode 100644
+index 000000000000..9a1b625a7701
+--- /dev/null
++++ b/drivers/phy/airoha/Kconfig
+@@ -0,0 +1,13 @@
++# SPDX-License-Identifier: GPL-2.0-only
++#
++# Phy drivers for Airoha devices
++#
++config PHY_AIROHA_AN7581_PCIE
++	tristate "Airoha AN7581 PCIe-PHY Driver"
++	depends on ARCH_AIROHA || COMPILE_TEST
++	depends on OF
++	select GENERIC_PHY
++	help
++	  Say Y here to add support for Airoha AN7581 PCIe PHY driver.
++	  This driver create the basic PHY instance and provides initialize
++	  callback for PCIe GEN3 port.
+diff --git a/drivers/phy/airoha/Makefile b/drivers/phy/airoha/Makefile
+new file mode 100644
+index 000000000000..912f3e11a061
+--- /dev/null
++++ b/drivers/phy/airoha/Makefile
+@@ -0,0 +1,3 @@
++# SPDX-License-Identifier: GPL-2.0
++
++obj-$(CONFIG_PHY_AIROHA_AN7581_PCIE)	+= phy-an7581-pcie.o
+diff --git a/drivers/phy/phy-airoha-pcie-regs.h b/drivers/phy/airoha/phy-an7581-pcie-regs.h
+similarity index 99%
+rename from drivers/phy/phy-airoha-pcie-regs.h
+rename to drivers/phy/airoha/phy-an7581-pcie-regs.h
+index 58572c793722..b938a7b468fe 100644
+--- a/drivers/phy/phy-airoha-pcie-regs.h
++++ b/drivers/phy/airoha/phy-an7581-pcie-regs.h
+@@ -1,4 +1,4 @@
+-/* SPDX-License-Identifier: GPL-2.0-only */
++// SPDX-License-Identifier: GPL-2.0-only
+ /*
+  * Copyright (c) 2024 AIROHA Inc
+  * Author: Lorenzo Bianconi <lorenzo@kernel.org>
+diff --git a/drivers/phy/phy-airoha-pcie.c b/drivers/phy/airoha/phy-an7581-pcie.c
+similarity index 99%
+rename from drivers/phy/phy-airoha-pcie.c
+rename to drivers/phy/airoha/phy-an7581-pcie.c
+index 56e9ade8a9fd..81ddf0e7638b 100644
+--- a/drivers/phy/phy-airoha-pcie.c
++++ b/drivers/phy/airoha/phy-an7581-pcie.c
+@@ -13,7 +13,7 @@
  #include <linux/platform_device.h>
-+#include <linux/phy.h>
-+#include <linux/phy/phy.h>
- #include <linux/property.h>
- #include <linux/regmap.h>
- #include <linux/reset-controller.h>
-+#include <linux/spinlock.h>
- #include <dt-bindings/clock/en7523-clk.h>
- #include <dt-bindings/reset/airoha,en7523-reset.h>
- #include <dt-bindings/reset/airoha,en7581-reset.h>
- #include <dt-bindings/clock/econet,en751221-scu.h>
- #include <dt-bindings/reset/econet,en751221-scu.h>
-+#include <dt-bindings/soc/airoha,scu-ssr.h>
+ #include <linux/slab.h>
  
- #define RST_NR_PER_BANK			32
+-#include "phy-airoha-pcie-regs.h"
++#include "phy-an7581-pcie-regs.h"
  
-@@ -40,9 +44,22 @@
- #define   REG_HIR_MASK			GENMASK(31, 16)
- /* EN7581 */
- #define REG_NP_SCU_PCIC			0x88
-+#define REG_NP_SCU_SSR3			0x94
-+#define REG_SSUSB_HSGMII_SEL_MASK	BIT(29)
-+#define REG_SSUSB_HSGMII_SEL_HSGMII	FIELD_PREP_CONST(REG_SSUSB_HSGMII_SEL_MASK, 0x0)
-+#define REG_SSUSB_HSGMII_SEL_USB	FIELD_PREP_CONST(REG_SSUSB_HSGMII_SEL_MASK, 0x1)
- #define REG_NP_SCU_SSTR			0x9c
- #define REG_PCIE_XSI0_SEL_MASK		GENMASK(14, 13)
-+#define REG_PCIE_XSI0_SEL_PCIE		FIELD_PREP_CONST(REG_PCIE_XSI0_SEL_MASK, 0x0)
-+#define REG_PCIE_XSI0_SEL_XFI		FIELD_PREP_CONST(REG_PCIE_XSI0_SEL_MASK, 0x1)
-+#define REG_PCIE_XSI0_SEL_HSGMII	FIELD_PREP_CONST(REG_PCIE_XSI0_SEL_MASK, 0x2)
- #define REG_PCIE_XSI1_SEL_MASK		GENMASK(12, 11)
-+#define REG_PCIE_XSI1_SEL_PCIE		FIELD_PREP_CONST(REG_PCIE_XSI1_SEL_MASK, 0x0)
-+#define REG_PCIE_XSI1_SEL_XFI		FIELD_PREP_CONST(REG_PCIE_XSI1_SEL_MASK, 0x1)
-+#define REG_PCIE_XSI1_SEL_HSGMII	FIELD_PREP_CONST(REG_PCIE_XSI1_SEL_MASK, 0x2)
-+#define REG_USB_PCIE_SEL_MASK		BIT(3)
-+#define REG_USB_PCIE_SEL_PCIE		FIELD_PREP_CONST(REG_USB_PCIE_SEL_MASK, 0x0)
-+#define REG_USB_PCIE_SEL_USB		FIELD_PREP_CONST(REG_USB_PCIE_SEL_MASK, 0x1)
- #define REG_CRYPTO_CLKSRC2		0x20c
- /* EN751221 */
- #define EN751221_REG_SPI_DIV		0x0cc
-@@ -81,6 +98,8 @@ enum en_hir {
- 	HIR_MAX		= 14,
+ #define LEQ_LEN_CTRL_MAX_VAL	7
+ #define FREQ_LOCK_MAX_ATTEMPT	10
+@@ -1279,12 +1279,12 @@ MODULE_DEVICE_TABLE(of, airoha_pcie_phy_of_match);
+ static struct platform_driver airoha_pcie_phy_driver = {
+ 	.probe	= airoha_pcie_phy_probe,
+ 	.driver	= {
+-		.name = "airoha-pcie-phy",
++		.name = "airoha-an7581-pcie-phy",
+ 		.of_match_table = airoha_pcie_phy_of_match,
+ 	},
  };
+ module_platform_driver(airoha_pcie_phy_driver);
  
-+#define EN_SERDES_PHY_NUM		4
-+
- struct en_clk_desc {
- 	int id;
- 	const char *name;
-@@ -113,6 +132,18 @@ struct en_rst_data {
- 	struct reset_controller_dev rcdev;
- };
- 
-+struct en_serdes_phy_instance {
-+	struct phy *phy;
-+	unsigned int serdes_port;
-+};
-+
-+struct en_clk_priv {
-+	void __iomem *base;
-+	/* protect SCU register */
-+	spinlock_t lock;
-+	struct en_serdes_phy_instance *serdes_phys[EN_SERDES_PHY_NUM];
-+};
-+
- struct en_clk_soc_data {
- 	u32 num_clocks;
- 	const struct clk_ops pcie_ops;
-@@ -830,12 +861,179 @@ static int en7581_reset_register(struct device *dev, void __iomem *base,
- 	return devm_reset_controller_register(dev, &rst_data->rcdev);
- }
- 
-+static int en7581_serdes_phy_set_mode(struct phy *phy, enum phy_mode mode,
-+				      int submode)
-+{
-+	struct en_serdes_phy_instance *instance = phy_get_drvdata(phy);
-+	struct en_clk_priv *priv = dev_get_drvdata(phy->dev.parent);
-+	u32 reg, mask, sel, val;
-+	unsigned long flags;
-+
-+	switch (instance->serdes_port) {
-+	case AIROHA_SCU_SERDES_PCIE1:
-+		reg = REG_NP_SCU_SSTR;
-+		mask = REG_PCIE_XSI0_SEL_MASK;
-+
-+		if (mode != PHY_MODE_ETHERNET && mode != PHY_MODE_PCIE)
-+			return -EINVAL;
-+
-+		if (mode == PHY_MODE_ETHERNET) {
-+			switch (submode) {
-+			case PHY_INTERFACE_MODE_USXGMII:
-+			case PHY_INTERFACE_MODE_10GBASER:
-+				sel = REG_PCIE_XSI0_SEL_XFI;
-+				break;
-+			case PHY_INTERFACE_MODE_SGMII:
-+			case PHY_INTERFACE_MODE_1000BASEX:
-+			case PHY_INTERFACE_MODE_2500BASEX:
-+				sel = REG_PCIE_XSI0_SEL_HSGMII;
-+				break;
-+			default:
-+				return -EINVAL;
-+			}
-+		} else {
-+			sel = REG_PCIE_XSI0_SEL_PCIE;
-+		}
-+
-+		break;
-+	case AIROHA_SCU_SERDES_PCIE2:
-+		reg = REG_NP_SCU_SSTR;
-+		mask = REG_PCIE_XSI1_SEL_MASK;
-+
-+		if (mode != PHY_MODE_ETHERNET && mode != PHY_MODE_PCIE)
-+			return -EINVAL;
-+
-+		if (mode == PHY_MODE_ETHERNET) {
-+			switch (submode) {
-+			case PHY_INTERFACE_MODE_USXGMII:
-+			case PHY_INTERFACE_MODE_10GBASER:
-+				sel = REG_PCIE_XSI1_SEL_XFI;
-+				break;
-+			case PHY_INTERFACE_MODE_SGMII:
-+			case PHY_INTERFACE_MODE_1000BASEX:
-+			case PHY_INTERFACE_MODE_2500BASEX:
-+				sel = REG_PCIE_XSI1_SEL_HSGMII;
-+				break;
-+			default:
-+				return -EINVAL;
-+			}
-+		} else {
-+			sel = REG_PCIE_XSI1_SEL_PCIE;
-+		}
-+
-+		break;
-+	case AIROHA_SCU_SERDES_USB1:
-+		reg = REG_NP_SCU_SSR3;
-+		mask = REG_SSUSB_HSGMII_SEL_MASK;
-+
-+		if (mode != PHY_MODE_ETHERNET && mode != PHY_MODE_USB_DEVICE &&
-+		    mode != PHY_MODE_USB_DEVICE_SS)
-+			return -EINVAL;
-+
-+		if (mode == PHY_MODE_ETHERNET)
-+			sel = REG_SSUSB_HSGMII_SEL_HSGMII;
-+		else
-+			sel = REG_SSUSB_HSGMII_SEL_USB;
-+
-+		break;
-+	case AIROHA_SCU_SERDES_USB2:
-+		reg = REG_NP_SCU_SSTR;
-+		mask = REG_USB_PCIE_SEL_MASK;
-+
-+		if (mode != PHY_MODE_PCIE && mode != PHY_MODE_USB_DEVICE &&
-+		    mode != PHY_MODE_USB_DEVICE_SS)
-+			return -EINVAL;
-+
-+		if (mode == PHY_MODE_PCIE)
-+			sel = REG_USB_PCIE_SEL_PCIE;
-+		else
-+			sel = REG_USB_PCIE_SEL_USB;
-+
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	spin_lock_irqsave(&priv->lock, flags);
-+	val = readl(priv->base + reg);
-+	val &= ~mask;
-+	val |= sel;
-+	writel(val, priv->base + reg);
-+	spin_unlock_irqrestore(&priv->lock, flags);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops en7581_serdes_phy_ops = {
-+	.set_mode	= en7581_serdes_phy_set_mode,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static struct phy *en7581_serdes_phy_xlate(struct device *dev,
-+					   const struct of_phandle_args *args)
-+{
-+	struct en_clk_priv *priv = dev_get_drvdata(dev);
-+	struct en_serdes_phy_instance *instance;
-+	unsigned int serdes_port;
-+
-+	if (args->args_count != 1) {
-+		dev_err(dev, "invalid number of cells in 'phy' property\n");
-+		return ERR_PTR(-EINVAL);
-+	}
-+
-+	serdes_port = args->args[0];
-+	if (serdes_port >= EN_SERDES_PHY_NUM) {
-+		dev_err(dev, "invalid serdes port: %d\n", serdes_port);
-+		return ERR_PTR(-EINVAL);
-+	}
-+
-+	instance = priv->serdes_phys[serdes_port];
-+	if (!instance) {
-+		dev_err(dev, "failed to find appropriate serdes phy\n");
-+		return ERR_PTR(-EINVAL);
-+	}
-+
-+	return instance->phy;
-+}
-+
-+static int en7581_serdes_phy_register(struct device *dev)
-+{
-+	struct en_clk_priv *priv = dev_get_drvdata(dev);
-+	struct phy_provider *phy_provider;
-+	int i;
-+
-+	for (i = 0; i < EN_SERDES_PHY_NUM; i++) {
-+		struct en_serdes_phy_instance *instance;
-+
-+		instance = devm_kzalloc(dev, sizeof(*instance),
-+					GFP_KERNEL);
-+		if (!instance)
-+			return -ENOMEM;
-+
-+		instance->phy = devm_phy_create(dev, NULL,
-+						&en7581_serdes_phy_ops);
-+		if (IS_ERR(instance->phy))
-+			return dev_err_probe(dev, PTR_ERR(instance->phy), "failed to create phy\n");
-+
-+		instance->serdes_port = i;
-+		priv->serdes_phys[i] = instance;
-+
-+		phy_set_drvdata(instance->phy, instance);
-+	}
-+
-+	phy_provider = devm_of_phy_provider_register(dev, en7581_serdes_phy_xlate);
-+
-+	return PTR_ERR_OR_ZERO(phy_provider);
-+}
-+
- static int en7581_clk_hw_init(struct platform_device *pdev,
- 			      struct clk_hw_onecell_data *clk_data)
- {
-+	struct en_clk_priv *priv = platform_get_drvdata(pdev);
- 	struct regmap *map;
- 	void __iomem *base;
- 	u32 val;
-+	int ret;
- 
- 	map = syscon_regmap_lookup_by_compatible("airoha,en7581-chip-scu");
- 	if (IS_ERR(map))
-@@ -845,6 +1043,8 @@ static int en7581_clk_hw_init(struct platform_device *pdev,
- 	if (IS_ERR(base))
- 		return PTR_ERR(base);
- 
-+	priv->base = base;
-+
- 	en7581_register_clocks(&pdev->dev, clk_data, map, base);
- 
- 	val = readl(base + REG_NP_SCU_SSTR);
-@@ -853,9 +1053,12 @@ static int en7581_clk_hw_init(struct platform_device *pdev,
- 	val = readl(base + REG_NP_SCU_PCIC);
- 	writel(val | 3, base + REG_NP_SCU_PCIC);
- 
--	return en7581_reset_register(&pdev->dev, base, en7581_rst_map,
--				     ARRAY_SIZE(en7581_rst_map),
--				     en7581_rst_ofs);
-+	ret = en7581_reset_register(&pdev->dev, base, en7581_rst_map,
-+				    ARRAY_SIZE(en7581_rst_map), en7581_rst_ofs);
-+	if (ret)
-+		return ret;
-+
-+	return en7581_serdes_phy_register(&pdev->dev);
- }
- 
- static enum en_hir get_hw_id(void __iomem *np_base)
-@@ -962,16 +1165,25 @@ static int en7523_clk_probe(struct platform_device *pdev)
- 	struct device_node *node = pdev->dev.of_node;
- 	const struct en_clk_soc_data *soc_data;
- 	struct clk_hw_onecell_data *clk_data;
-+	struct en_clk_priv *priv;
- 	int r;
- 
- 	soc_data = device_get_match_data(&pdev->dev);
- 
-+	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+
-+	spin_lock_init(&priv->lock);
-+
- 	clk_data = devm_kzalloc(&pdev->dev,
- 				struct_size(clk_data, hws, soc_data->num_clocks),
- 				GFP_KERNEL);
- 	if (!clk_data)
- 		return -ENOMEM;
- 
-+	platform_set_drvdata(pdev, priv);
-+
- 	clk_data->num = soc_data->num_clocks;
- 	r = soc_data->hw_init(pdev, clk_data);
- 	if (r)
+-MODULE_DESCRIPTION("Airoha PCIe PHY driver");
++MODULE_DESCRIPTION("Airoha AN7581 PCIe PHY driver");
+ MODULE_AUTHOR("Lorenzo Bianconi <lorenzo@kernel.org>");
+ MODULE_LICENSE("GPL");
 -- 
 2.53.0
 
