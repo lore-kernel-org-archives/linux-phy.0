@@ -4,69 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72BE0C43458
-	for <linux-phy@archiver.kernel.org>; Fri,  3 Jul 2026 02:11:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F230C43458
+	for <linux-phy@archiver.kernel.org>; Fri,  3 Jul 2026 02:11:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/4pkggHYs3xDrb2obs0d7sgfOEU4k8MAZ+hNMrnm9f0=; b=3dNiRpV6k2xsGL
-	XcUxU3oieSpK5y3dKWEhd1fG1mdH852DeJvc8hq/QKw2ZeHtlzKtE/2bx28jtUnbR2ji8K4/2k1C6
-	AcmEJGJIiEMHkLqNEXNES5464N2TYIzqk/05VDfpdPNqrOgnKk3ix1ljsNgzufdQ3VzFSliV0z8oV
-	w3w7EMWrv9tJ2zJmTGYihfQtUO2HtaHZE53jYc+ilgrBtzp4XTpMSI8dQN77Ke1tFrIG4Djzzigjc
-	ZzuaNqzqdDOj0cxge/MzVWCObnfnMNiS/HifSCu9umHp8jB9BGMWWAaMwt9Yl+tys6XoWP07cHLrq
-	LMcQUd3Z8rIrrbf1go1A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=suZFArHQIj0phdctTALPnT1fs1K9OwMgKGTCTHuHsPQ=; b=3q7NEA26wwvxcG
+	tQv/3IDtzR26zhcEgGZQrH0Pv9Oj4Es9yd4Fr9z9JIYPtbI/uYL8PAr9TSZ86eUMLMp+i7zYt/hN1
+	bZqQXF78RCuUFjj0DMZ6IBBEO0O1AODkPa4Ip0np/SYUWiDGhhlNQ5SHtkUcGM2h62DC1MQOxQnJR
+	zzmQ8vNUt1hdXwGwI4AGnF7IngEUUjJSOCGd+Dct8dne5ep619Jl6aI60RBLPuHqE6JMvxJ3PvyI/
+	Rkm6SovCije9sMLounLAR203gZEC6P+xIjku4CGTkCM1g0iVVkzcvi/zs1eg0by/5QUdwfI5unGBq
+	061MQzpHRtEkg7f3IADA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wfTMq-00000005s5g-42mq;
-	Fri, 03 Jul 2026 02:11:00 +0000
-Received: from mail-pf1-x429.google.com ([2607:f8b0:4864:20::429])
+	id 1wfTMu-00000005s7V-0a5e;
+	Fri, 03 Jul 2026 02:11:04 +0000
+Received: from mail-pj1-x1036.google.com ([2607:f8b0:4864:20::1036])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wfTMo-00000005s4I-20c8
+	id 1wfTMq-00000005s57-2sYn
 	for linux-phy@lists.infradead.org;
-	Fri, 03 Jul 2026 02:11:00 +0000
-Received: by mail-pf1-x429.google.com with SMTP id d2e1a72fcca58-845e363246aso73558b3a.1
-        for <linux-phy@lists.infradead.org>; Thu, 02 Jul 2026 19:10:58 -0700 (PDT)
+	Fri, 03 Jul 2026 02:11:02 +0000
+Received: by mail-pj1-x1036.google.com with SMTP id 98e67ed59e1d1-37d46e0d246so65146a91.2
+        for <linux-phy@lists.infradead.org>; Thu, 02 Jul 2026 19:11:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1783044657; x=1783649457; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=9te5WRnB3/pnQ+/Q0S83oqHxAqp55SmkhfuxRe3M02I=;
-        b=AufIWTqtt7ZvjgYSl3Art5Kwgd6zYElVVUKyV7I22PWE57fzNVYnXAQBqCU+FyQ9nP
-         puqJY9BH5Z0B/MFFXp6HLEEevUMoCq8g27KJ0ctfONWsTo/C4F/ycsuemoJxy2ddcgEo
-         750tbn5iJFKl8oMy73TDF16ey8Wc1manSsqbJsoH4XIF6jgTZOiRVWzzMb42ssHykmHV
-         2wFjqC0TbtOuF2WrKTrWJEUu51vMfs2JYM60cEy7zOpJdJGxf0xWFt9eaZLu8/GB24DE
-         eILv86TCSaDPnj3seH/xRrHjVwCg2pDwn9sEdnTvOzXW9W9PldGpRFCyUtHsp3J+rxxW
-         cQTQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1783044657; x=1783649457;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=gmail.com; s=20251104; t=1783044660; x=1783649460; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=9te5WRnB3/pnQ+/Q0S83oqHxAqp55SmkhfuxRe3M02I=;
-        b=FTGE8/snFny2UVneu/kuogG7ePIpKRUdZ8Hm8s3Kszs9BfuWARM7xSNUX73Ewvhp5T
-         kJ6PDsNawBUhVydffzYcr5ewcnIDQ4F8QKq4sns1a++lXFah63kfQUTZsgty6rxGENoT
-         uzu/tb1b80bVM36/hIP2qDT7euesR5rWrvY+YuPWqBoKPwTaSYD2fv1fdBfTgXB6+3ES
-         qOdGe5WCxbUgE3SgT78V+4Y3tSlcdJs+hZ/ggJEI15ArXY1+IxqwwrapgbuBtH/EEc4U
-         XiZ+6o+d4cC551zrZQOk3/pTECGQDipnhyceFYzv2zq7TeNQfRtLEXrxZ/qROvk42d3f
-         ehNQ==
-X-Gm-Message-State: AOJu0YyTf5gZRZEnSCUODNSFB2jF87yja5RppJmk8RR1B0RS0SSjTlul
-	eCXYzzKmGDl5PPEyuCFF6aroO1irJEoIkJDHRtkPS7p6k1A7k/N4yGdc
-X-Gm-Gg: AfdE7ck9WXIynnnA3jvFIf0uX6bj1OujpwHC40b7lAUXAkAXfiF+DBylJTWyEvl2tqW
-	yYE1melVcvhnHMybh+6Lm+plVlsWDT/ZOUC6AJxJzzwJiPk7VyPaOJx+8ZuxYeUY0ZpO/ObYLUC
-	aMUd2VJ4M0l4E/F7nYMSOKbXB+L3XNsLajF41TJ6H8S4+DOcxbz098zOBh7YPUMtU5I1JJvOF+0
-	C3qulomLV2cgOXBXTEFiykUYfO5JBSWfMuWqLbgR+9iB7viGAJOqoFlSdbp7ubR/TyJvYMmOHCU
-	otDbY38w+7uD024ORPpnDXHKTV+NpK293lUPDK2dL5qVITvUpf7NjMh4k6eSoz8sNPFS1Bp2em6
-	D23rItd1DvPg21x5s/RySjTbuM203AYT8dGdQHAxUmnaAR5sTthUgzSyG/YuMHmr73oJTCF//zy
-	SIFyJGyVocZLw2hASnEXBbgA==
-X-Received: by 2002:a05:6a00:b481:b0:847:8496:1aa2 with SMTP id d2e1a72fcca58-847c0731433mr8687798b3a.27.1783044657351;
-        Thu, 02 Jul 2026 19:10:57 -0700 (PDT)
+        bh=fLtOt0nYZtjUYJXDOkZT3LzWT/GyJY005mggTmWgITg=;
+        b=F7W0iRxZ9sRYZkSIUyyrZ40T8L4gnDGAn4E/Wpg5hW3LZ4EQtjQ8GGi8lDECywLDFf
+         JkIeow9FyTfqbSJOQNiMUe5k6I3YVr1n/K/H/p9A/nD5wonGOrYSwqUN35Tz0yd/AFXJ
+         MStM3dMMbkMdZ0jJ6dM1xaTJroFfIMXY2zM2vSOBiZiMuOuXzBVXM705GPjkxWX3MQI0
+         Q8LKLkC5GzwygEZBwyUFXowe9kDEWYpBy0fUQEs4NSygQ1RNgsH2gtNDrafQkQ9eusW/
+         94Z2x/qSs6n7HZN79whhF3QYJsfWTNyGhToa+IIEIHZDY8xZhIaix3wAC0pY948eD6uS
+         /qLg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1783044660; x=1783649460;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=fLtOt0nYZtjUYJXDOkZT3LzWT/GyJY005mggTmWgITg=;
+        b=L+jlXrtFCljsInUY5FbGSiMGxPsd/YmKQZHYuVwi854BerWFvP0roaY0xPgkxSxm2U
+         UEfjHKPX2+XtCHePb9H5pbvutWfoqjnoYmpKElvDswcGTilVHDJrLq9BNLLXw16THHwu
+         1cEiCnL1JBCfWYJ8zTkMsVOXQCPVjckX/MBmbXNZXQH6bLxSsdnZdOA6O+HFs80mMnld
+         8o1u1I3ySCegdyxYMT59u3gnlSWsaDme89b5teaqcOTUdEZ3GVToX3oER7kTr+ZEwO8+
+         R15PIQ+HtxhdP2VHSlf6t6in7SQ0LZlU1H4ECCvK4dRG1gVkDInD7CljP0qeTgeNHeTW
+         bGYQ==
+X-Gm-Message-State: AOJu0YxnwoEkaPPDtpF0GixTcqWhWONvQKWw6Zt1phWi9oFXrDY0tdD+
+	FhvILWuyiBE5H9RhmDJ6hA/jSTZkCHO3t18XP7AEoGHZFX5LHWz9hPFf
+X-Gm-Gg: AfdE7cmLLVlVLOQu69V/ixV7X2D7RanfeFxRLeF5i/9LnmONLC/KJk1bTFUtyPrNiEv
+	/35tgfvxumIJKUiROfBpHx82jpJFBdNuwehQDkdoR4sbu4jHi2cX+OqxNvtU7VDoXHpnkupib2K
+	CPWvuI285GH30EljKMcHMHKABuDs0dYvocbIXDbJoVooKfog92LV0nR2YhnZ5e5bHYz8FvXoaLD
+	K8E7HBeewZJWHqDpZJBMPzcQ0tMwzgKw1MtSmva21N4ZVAe5SZywfZ4Nitx3+/b8WFFQEOtnFZ5
+	CUlHVYfE98VysGKDmaltkClvKx4zUsJRyaao0r3kgdrKMPlPVkd+/ohnijr8Y3JIL9E50uxVU9H
+	h8Fs4VeHQE8hPepVZRi6MzFhMCq74AQTNmdfEGknUYtCeQ8rGNImMsjYfgY0NyY9nOHCkiRuM8o
+	teU4PnniXO7D0=
+X-Received: by 2002:a17:90b:4d88:b0:37f:bfd6:8b40 with SMTP id 98e67ed59e1d1-380aa0952c0mr8804402a91.5.1783044659714;
+        Thu, 02 Jul 2026 19:10:59 -0700 (PDT)
 Received: from localhost ([2001:19f0:8000:3e6e:5400:6ff:fe38:3d01])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-847cb9b0220sm2124478b3a.50.2026.07.02.19.10.56
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-38128174885sm194920a91.16.2026.07.02.19.10.59
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 02 Jul 2026 19:10:57 -0700 (PDT)
+        Thu, 02 Jul 2026 19:10:59 -0700 (PDT)
 From: Inochi Amaoto <inochiama@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
@@ -91,15 +92,16 @@ Cc: linux-phy@lists.infradead.org,
 	linux-hardening@vger.kernel.org,
 	Yixun Lan <dlan@gentoo.org>,
 	Longbin Li <looong.bin@gmail.com>
-Subject: [PATCH v2 0/2] riscv: spacemit: Add K3 PCIe/USB comb phy support
-Date: Fri,  3 Jul 2026 10:10:21 +0800
-Message-ID: <20260703021024.495433-1-inochiama@gmail.com>
+Subject: [PATCH v2 1/2] dt-bindings: phy: Add Spacemit K3 USB3/PCIe comb phy support
+Date: Fri,  3 Jul 2026 10:10:22 +0800
+Message-ID: <20260703021024.495433-2-inochiama@gmail.com>
 X-Mailer: git-send-email 2.55.0
+In-Reply-To: <20260703021024.495433-1-inochiama@gmail.com>
+References: <20260703021024.495433-1-inochiama@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260702_191058_529350_A29EB5AD 
-X-CRM114-Status: UNSURE (   8.76  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260702_191100_733400_7851B528 
+X-CRM114-Status: GOOD (  14.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,37 +118,91 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The PCIe/USB comb phy on K3 is a big phy that contains multiple
-standalone phys for each PCIe and USB controllers. This phy is
-required to configure a syscon device for mux configuration and
-calibration.
+The USB3/PCIe comb PHY on the K3 is a complex PHY group that
+can provide multiple phy for both PCIe and USB controller.
+Its mux configuration is controlled by the APMU syscon device.
 
-Changed from v1:
-patch 1:
-1. Add extra description for "#phy-cells" and "spacemit,apmu"
-patch 2:
-1. Fix multiple spelling errors and copy-paste errors.
-2. Make some magic number as meaningful macros.
-3. Remove USB3 set_speed() callback as it is not needed.
-4. Fix the wrong land data config and mask.
-
-Inochi Amaoto (2):
-  dt-bindings: phy: Add Spacemit K3 USB3/PCIe comb phy support
-  phy: spacemit: Add USB3/PCIe comb PHY driver for Spacemit K3
-
- .../bindings/phy/spacemit,k3-combo-phy.yaml   |  68 +++
- drivers/phy/spacemit/Kconfig                  |  16 +
- drivers/phy/spacemit/Makefile                 |   2 +
- drivers/phy/spacemit/phy-k3-combo.c           | 252 +++++++++++
- drivers/phy/spacemit/phy-k3-common.c          | 391 ++++++++++++++++++
- drivers/phy/spacemit/phy-k3-common.h          |  27 ++
- 6 files changed, 756 insertions(+)
+Signed-off-by: Inochi Amaoto <inochiama@gmail.com>
+---
+ .../bindings/phy/spacemit,k3-combo-phy.yaml   | 68 +++++++++++++++++++
+ 1 file changed, 68 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/phy/spacemit,k3-combo-phy.yaml
- create mode 100644 drivers/phy/spacemit/phy-k3-combo.c
- create mode 100644 drivers/phy/spacemit/phy-k3-common.c
- create mode 100644 drivers/phy/spacemit/phy-k3-common.h
 
---
+diff --git a/Documentation/devicetree/bindings/phy/spacemit,k3-combo-phy.yaml b/Documentation/devicetree/bindings/phy/spacemit,k3-combo-phy.yaml
+new file mode 100644
+index 000000000000..ed820cf697b8
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/spacemit,k3-combo-phy.yaml
+@@ -0,0 +1,68 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/spacemit,k3-combo-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Spacemit K3 PCIE/USB3 Comb PHY
++
++maintainers:
++  - Inochi Amaoto <inochiama@gmail.com>
++
++properties:
++  compatible:
++    const: spacemit,k3-combo-phy
++
++  reg:
++    maxItems: 1
++
++  "#phy-cells":
++    const: 2
++    description:
++      The first one is phy id, the second one is phy type. This
++      only supports types are PCIe and USB .
++
++  spacemit,apb-spare:
++    $ref: /schemas/types.yaml#/definitions/phandle
++    description:
++      Phandle to APB SPARE system controller interface, used for
++      PHY calibration.
++
++  spacemit,apmu:
++    $ref: /schemas/types.yaml#/definitions/phandle-array
++    items:
++      - items:
++          - description: phandle of APMU syscon
++          - description: configuration of the PHY lanes
++    description: |
++      Phandle to control PHY mux configuration. The configuration
++      is described as follows:
++      bit 4: 0 - PCIe A x8 mode, 1 - PCIe lane share mode
++      bit 3: 0 - PCIe A x4 mode, 1 - PCIe A x2 and PCIe B x2 mode
++      bit 2: 0 - PCIe C lane 0 is PCIe mode , 1 - USB mode
++      bit 1: 0 - PCIe C lane 1 is PCIe mode , 1 - USB mode
++      bit 0: 0 - PCIe D lane is PCIe mode , 1 - USB mode
++
++      The bit[3:0] is only valid when bit 4 is 1.
++
++      This mux control does not affect the PHY for PCIe E, it is always
++      in PCIe mode.
++
++required:
++  - compatible
++  - reg
++  - "#phy-cells"
++  - spacemit,apb-spare
++  - spacemit,apmu
++
++additionalProperties: false
++
++examples:
++  - |
++    phy@81d00000 {
++      compatible = "spacemit,k3-combo-phy";
++      reg = <0x81d00000 0x600000>;
++      #phy-cells = <2>;
++      spacemit,apb-spare = <&apb_spare>;
++      spacemit,apmu = <&apmu 0x00>;
++    };
+-- 
 2.55.0
 
 
