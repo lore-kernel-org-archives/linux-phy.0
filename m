@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4C01C43458
-	for <linux-phy@archiver.kernel.org>; Sat,  4 Jul 2026 07:39:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4414BC44500
+	for <linux-phy@archiver.kernel.org>; Sat,  4 Jul 2026 07:39:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rxDI8ZVag7f3mj6V19tQDyI/4VrLAe9Nk1+ORRSIsPM=; b=DIEii99z+0lzPo
-	Ex1kzaTzHMbQPSNJeokfuc2uTOQE28j5YkRY+o7oBqH/Ng2mcYANpzp0ghLrtebWzTXdWPN/u7fxZ
-	HuH5+wy+Pra0W259WmbYHOUpS0FJ8+LKDIg+liGpoB63Orkk1lJLBPM9QoeklfqT7NrkudrMvNVaW
-	aOKVdkflYWrLcUcTZxjYaqhzRvMnxR6UeySKjSpPMUtJdg2cid3fRg/us/YMfEiuTiXzpQtUZi1V7
-	vapvlEBC0jD5zxA3SgigmfqnHajmSnILoPcGXrW7Gc7pKHyMKttA5wO2LY/46mIKnRxxdz9J1E/A2
-	knl8LMf86eOO9aMwacKg==;
+	List-Owner; bh=s6jf04QUh4v1c7ITTUyx6ZwNMdvEOfN+W65tvgZIgYU=; b=kwK41GS+DY24Lf
+	UaoQd2basbFP9MNUl8rvF0iaGc0IbFofi9A2vJ/aGISGGRpy/q6lI+8KOMB82N+ZY6X76d9kK2vDh
+	RfLEAMESSTd2loyLU+Q2qrkwGldfcYSL8c7rkDRqnphhXrD8+YWeJqXcnK3uIqq11HkHd/87INeuK
+	jgzmixsJ3CyB+9ecdOo7ox7/ml4juH/fZm9Z80ONBE5Jhx7tjNIg6tMNooBG1gjKCWjmgS9xd6sX6
+	2Yl8gsr4fRWEsodDzN17dgSzT9TZ7Mrxs08C4bRugNW8epzu/YkpL2udRJ4g/uPi2EN2G88056ywl
+	6XYKUdvSGspH1AUT1t8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wfuyC-00000008GRm-1YLf;
-	Sat, 04 Jul 2026 07:39:24 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+	id 1wfuyD-00000008GSW-4AyF;
+	Sat, 04 Jul 2026 07:39:25 +0000
+Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wfuy9-00000008GPr-3uIs
+	id 1wfuyB-00000008GQQ-1EVE
 	for linux-phy@lists.infradead.org;
-	Sat, 04 Jul 2026 07:39:22 +0000
-Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-493c55d5c7aso11916955e9.1
-        for <linux-phy@lists.infradead.org>; Sat, 04 Jul 2026 00:39:21 -0700 (PDT)
+	Sat, 04 Jul 2026 07:39:24 +0000
+Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-493ae59eca6so8702445e9.1
+        for <linux-phy@lists.infradead.org>; Sat, 04 Jul 2026 00:39:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1783150760; x=1783755560; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1783150761; x=1783755561; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=0Ujun7RB7FUF9dZLPZwQwz/fZN6r2PvMJI73ZhiW7os=;
-        b=YI+8Kb9OvxYyD2AVxgMH5u5ofCrXlC6jDNF+pOO9jsbhHmBOo7l17NNZnUC4jOa8BA
-         mNp/rKzKd0lvKasCHM2ymntusTbNfAleoiHy2E5FUrxePU5kkc4I5Xwj82FAtziV6yWp
-         OwRTmEK3aD8Ge+7FzBPL2X6gepKVpwT/Jnohr5/WBx/HDzucLvgB6fpLoS0+/Lkcm6a+
-         iVufKvUKCdSDj4Rv4/VMZgPrYNX2xjXGKzUvCvh8GDywrL0dE+WLbHcBrr2dab/WvH6j
-         WgzeJZfFPIshBJOTVUr1qNiHGihVRf++OFXz3zkYLRmIdxUaJC46ZP4nooiQXWWRZpop
-         8UbQ==
+         :message-id:reply-to:content-type;
+        bh=BCU57h1AQhpc1p/9qZeN2ZrfUbMLmuZ03JO7I6z1Jug=;
+        b=UEIm0CGmMw1aNLtK3IJ+mrLKkP5xjYrrTmA8xE96ddXIi0PUWoo+IYa4eBrkdkAszg
+         r95jKyals32VWP5tpHYQhWrrAnr/UiyfG5fWMLOcWicNjHjX8HIVfWlxrlpMlzFVTBOp
+         /FPZRlWBRb2iESQThTkXe//joRLjmCa62/9KF2SewZ34PZGCGHlL5pIY18Lta/LFZCHG
+         k95pL/dlPdpMU54Ie+Jf4KyJhbD8Z//qPCYQxTK9dzNuBe1Tag3beWmOzJDq4SUveGkc
+         vVo9IZEESkLOvE80PeIDsKbD31xPaR6YVX7MJl38/vRbGqg6PZszSEJ7d57LTIMzEa8I
+         ox+g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1783150760; x=1783755560;
+        d=1e100.net; s=20251104; t=1783150761; x=1783755561;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=0Ujun7RB7FUF9dZLPZwQwz/fZN6r2PvMJI73ZhiW7os=;
-        b=ZXS4jhigZG5rGfiWwZvFjSOrGemLRireB+HiCmpDMJwVkGA+M5lg2kBVZvbr31mwfi
-         A5Oqas93RhLgRj1/cc8/GDfDBQd3GQtej2gybMmdwmNUmD+YW6KUPA5jfNOxV/NYuvr3
-         iiVck7Y/SrhW9UWMKnhBEaue3AUinOxrD5/GcYwjWw4lpxuJzwE1Ni/eo0Wpn7KX/1If
-         Clls71TnsOItovE0X2tkqemrhgWT0x4b72DFtGUmIO5mEmBQxV4AF88nLQZo8Ko1Rbna
-         IB8Ozy/1peF5938vacYywXJ5z6Dr4tyzKlsOp4vAIpJqv+uAC27IMCIbgMrv+Z17qdgQ
-         ukvA==
-X-Gm-Message-State: AOJu0Yyv8MDrdpZw9GEByyJ/CbpjlBA8lCx+hkLK4t+gYPTi0BqIpC04
-	dGlIVNDpswIUySXG/2SBn983gtT3tVhK/vWvYWDDtvUiBNn/v+1cBBTd
-X-Gm-Gg: AfdE7ckINa8+1KXDqz2GoGAB/SL+rlisFzqAgdDdl5n+RaTLvg7h2trA68kJfPXOvOv
-	ydQoq+ffWYn5kCHWIMjH9y2TGroJLEh5EN7J7DIQQgkSU/OZkVrjDRNTFn2JRm6J+rXJTpU5Oen
-	uUSkQ0+VJKwvwuoJ5mePy1bzOaXyiNjb3OKUp38k6uorpEBTqLByoGKWO6BAc0peN2FZ8/y1zQn
-	h43UPeBbmyiZPI1UQZJN0qNSbPaNiAnp7xqyBFhfMS2ttb3nH/zWe6yW2xG8fqUMjVo1RqWoIe+
-	bTSraobyUIndJEWXCM27OMgqkJiC3jJIrGqYFxsnFu7IInwSSR7IzzkCYZnBljA0qTOPlpIBgM0
-	4wB3U1Ezsi91qfAaugHd955imKCcXptJOhdQVLLDGi0CgfjxEEWtRVNjX+RfKXN59ifm9W6LToK
-	4f4iZ4kubR+G/NC8j7MwNmXEhElEsNJG5BJSqVLj4+k3vX
-X-Received: by 2002:a05:600c:a00c:b0:490:d38c:7836 with SMTP id 5b1f17b1804b1-493d11d26d5mr25933205e9.3.1783150759893;
-        Sat, 04 Jul 2026 00:39:19 -0700 (PDT)
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=BCU57h1AQhpc1p/9qZeN2ZrfUbMLmuZ03JO7I6z1Jug=;
+        b=DTq79Cv95bE3kGveU55O7XKAUxYIpBy+a4kCmwEHaCtHiJ8BOn+lnIuF2BfaWr6eXd
+         T9StoNVYEpQ2GWFhw+ZU9LmRFlozuufKJrN833Vd1AyuIY2fwWfRUbb2xkb6ye6Xgk7X
+         9VE6OAh70TkyMwyuVEXjtWbKkZdrGKW6XERldN/6KcyPgRkMNjV8quXZqG2q4Qk6Utpg
+         xxPtwWKnFOpMC3tN4ISGVvs3y/seKxhwRZ+Kb0d2BwaKiryOb4Cz+jv471aPicZiXKQu
+         U82644w9w0H3F9JDPcaQ7eBRdT/GwX3jqmmDO+ZNDvYFbrg6jIPsbG9Up77eCJsZO59r
+         9sEg==
+X-Gm-Message-State: AOJu0YyLO6FmD1F1n42Uq+zZHgVfgtCMks6m3I+1Mv6PesSo0tpDStfP
+	Vjw/yxfHTnGc2+6RiaEtLu0ebgn5mfU1C5dRuOTtKU1g8ke7Dsbn2bVN
+X-Gm-Gg: AfdE7cnoIChczmbBOqGyfjE1ORp2x9wqbuJNWdeVdMBclg8F59WnA32KUILqDW7HF6M
+	u4fqxAZrLylii0TS0Px8LB40qEZ9RKjylzGiUegHIUhewbIv7YJ44HiF3ET5EQDUS6VC3zpC3tI
+	cwzd2iJVEDL8JoUdAq5v9V+/Joy0wifD+vpp+BZ4JZBgWf5hYy3n3y0MLzUuEZCFvFMO9vGuOo6
+	WQ+TVj9NDHn4Tu3YfjobnqTla5NUxVcfVYo5nvvpUdwiqT/6in+vuwJ734FbC93PpoegiI3zdZO
+	w5w/qrfKuU+/il8dBAzCoLHfz75vHPCwZbqLWXMJmOct4Ytnb8f7B+OIgGRUEiBvgxoSnVCIpJx
+	OVqVBvkJQoneObJHW0LBFdv0pk2MGpquchnSL/Tqla346pVcSx0aPFbYxfOQAa2Q3vljum0RvbR
+	94IcmRPOct2I1xB0yIg0C+zKLbaB7KIdIpTg==
+X-Received: by 2002:a05:600c:4e13:b0:493:b729:3a9 with SMTP id 5b1f17b1804b1-493d11f577amr25900125e9.27.1783150761434;
+        Sat, 04 Jul 2026 00:39:21 -0700 (PDT)
 Received: from localhost.localdomain ([95.43.220.235])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-47a9de1e736sm6565488f8f.7.2026.07.04.00.39.18
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-47a9de1e736sm6565488f8f.7.2026.07.04.00.39.20
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 04 Jul 2026 00:39:19 -0700 (PDT)
+        Sat, 04 Jul 2026 00:39:21 -0700 (PDT)
 From: Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
@@ -87,16 +87,16 @@ Cc: linux-phy@lists.infradead.org,
 	linux-omap@vger.kernel.org,
 	linux-gpio@vger.kernel.org,
 	Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>
-Subject: [PATCH 3/5] dt-bindings: phy: motorola,cpcap-usb: replace se1 interrupt with chrg_det
-Date: Sat,  4 Jul 2026 10:38:41 +0300
-Message-Id: <20260704073843.1750458-4-ivo.g.dimitrov.75@gmail.com>
+Subject: [PATCH 4/5] ARM: dts: ti: cpcap-mapphone: use charger detection interrupt for CPCAP USB PHY
+Date: Sat,  4 Jul 2026 10:38:42 +0300
+Message-Id: <20260704073843.1750458-5-ivo.g.dimitrov.75@gmail.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20260704073843.1750458-1-ivo.g.dimitrov.75@gmail.com>
 References: <20260704073843.1750458-1-ivo.g.dimitrov.75@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260704_003921_979822_9E0FDF2F 
-X-CRM114-Status: GOOD (  10.03  )
+X-CRM114-CacheID: sfid-20260704_003923_348243_DE5769F0 
+X-CRM114-Status: GOOD (  11.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,53 +113,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The CPCAP USB PHY driver uses the CPCAP charger detection interrupt
-for DCP detection rather than the SE1 interrupt.
+Update the CPCAP USB PHY interrupt mapping to use the charger
+detection interrupt and corresponding "chrg_det" interrupt name.
 
-Update the binding and example DTS to use the corresponding
-"chrg_det" interrupt name.arch: arm: dts: cpcap-mapphone: xxx
+This matches the driver and binding updates for DCP detection.
 
 Signed-off-by: Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>
 ---
- .../devicetree/bindings/phy/motorola,cpcap-usb-phy.yaml   | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ arch/arm/boot/dts/ti/omap/motorola-cpcap-mapphone.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/motorola,cpcap-usb-phy.yaml b/Documentation/devicetree/bindings/phy/motorola,cpcap-usb-phy.yaml
-index 0febd04a61f4..81c5f3b5997b 100644
---- a/Documentation/devicetree/bindings/phy/motorola,cpcap-usb-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/motorola,cpcap-usb-phy.yaml
-@@ -27,7 +27,7 @@ properties:
-       - description: vbusvld interrupt
-       - description: sessvld interrupt
-       - description: sessend interrupt
--      - description: se1 interrupt
-+      - description: charger detection interrupt
-       - description: dm interrupt
-       - description: dp interrupt
- 
-@@ -40,7 +40,7 @@ properties:
-       - const: vbusvld
-       - const: sessvld
-       - const: sessend
--      - const: se1
-+      - const: chrg_det
-       - const: dm
-       - const: dp
- 
-@@ -90,11 +90,11 @@ examples:
-         #phy-cells = <0>;
-         interrupts-extended = <
-             &cpcap 15 0 &cpcap 14 0 &cpcap 28 0 &cpcap 19 0
--            &cpcap 18 0 &cpcap 17 0 &cpcap 16 0 &cpcap 49 0
-+            &cpcap 18 0 &cpcap 17 0 &cpcap 13 0 &cpcap 49 0
-             &cpcap 48 1
-         >;
-         interrupt-names = "id_ground", "id_float", "se0conn", "vbusvld",
--                          "sessvld", "sessend", "se1", "dm", "dp";
-+                          "sessvld", "sessend", "chrg_det", "dm", "dp";
-         io-channels = <&cpcap_adc 2>, <&cpcap_adc 7>;
-         io-channel-names = "vbus", "id";
-         vusb-supply = <&vusb>;
+diff --git a/arch/arm/boot/dts/ti/omap/motorola-cpcap-mapphone.dtsi b/arch/arm/boot/dts/ti/omap/motorola-cpcap-mapphone.dtsi
+index 6b1195c2a768..b75a327caf1f 100644
+--- a/arch/arm/boot/dts/ti/omap/motorola-cpcap-mapphone.dtsi
++++ b/arch/arm/boot/dts/ti/omap/motorola-cpcap-mapphone.dtsi
+@@ -125,11 +125,11 @@ cpcap_usb2_phy: phy {
+ 			interrupts-extended =
+ 				<&cpcap 15 0>, <&cpcap 14 0>, <&cpcap 28 0>,
+ 				<&cpcap 19 0>, <&cpcap 18 0>, <&cpcap 17 0>,
+-				<&cpcap 16 0>, <&cpcap 49 0>, <&cpcap 48 0>;
++				<&cpcap 13 0>, <&cpcap 49 0>, <&cpcap 48 0>;
+ 			interrupt-names =
+ 				"id_ground", "id_float", "se0conn",
+ 				"vbusvld", "sessvld", "sessend",
+-				"se1", "dm", "dp";
++				"chrg_det", "dm", "dp";
+ 			mode-gpios = <&gpio2 28 GPIO_ACTIVE_HIGH>,
+ 				     <&gpio1 0 GPIO_ACTIVE_HIGH>;
+ 			io-channels = <&cpcap_adc 2>, <&cpcap_adc 7>;
 -- 
 2.25.1
 
