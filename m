@@ -4,63 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B85BC43458
-	for <linux-phy@archiver.kernel.org>; Sun,  5 Jul 2026 09:31:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73798C43458
+	for <linux-phy@archiver.kernel.org>; Sun,  5 Jul 2026 10:11:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NSiSS+2sDdebWzAiZyIAElJj/RIT4vqH1Zd0EK3vZP8=; b=Hy1x+s63MXS07x
-	ZlHGboggCdXMfpu/uC8QxlpePM+iAwXQl8dRkl78+5VUniehiSSH1dokQPFSWuJE0eowuqwY96A4S
-	IEWI9tkqxOtXtIQDb9nii5bO+wboqfsL96L4GpM/6sfmzXgfF5xgISLnK312nn0y3Ga8EvI5CmhkC
-	GsteKsPdiHa24EDRNwu/LYS7RcZee6wBbOgPdIcK/zI58LvbfQlLRJd6qwuNvwh4ztkfKg2/buIl5
-	dY/0Gs3pAw5o0eeSg2gR+JUFkNpjZ71wC9rgpdrCROW2yf+hij4pxCtGESsQO+w+QcBoDUgDdHmCR
-	lnMjH5DvUclUrJMhxVBg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=yb5mciT9N/s74mZSdgIb+ZstOrJnTg3+PA7ETYxlO4w=; b=YkYEIlQ3sy0Ftc
+	hhY0fdHDToJhwZ2l1H616zwloU3cjRDwJFZ9RYsR4g2cq6e2WRdFqeEK2ALigEyFGMAHKvXmla62G
+	5hfeaFNLAlLPokajL2vaIHreVaZceGiPDpIVz8Jzo5VDFz5bPitca6c6hQwnwfjJA9infaLp3zuGk
+	IOfKRpjAozQ9CZg6Uwl0xaEvNQ4IE+807e1W4jCWP9voRGiuYfE4g7zDo6PBD4KZ+4U5Vdr6C/EyB
+	MPxUnZzppEQFa8AVjaJQCtBwMP6rSucwSHleaJEpc9i8/S0IxvEfBA/GjQoXCwqfNsnqVa9aHYpeV
+	rEGyFi95T1znP5acJeJA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wgJCa-00000009CPZ-0hZl;
-	Sun, 05 Jul 2026 09:31:52 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wgJos-00000009E35-2Bpv;
+	Sun, 05 Jul 2026 10:11:26 +0000
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wgJCZ-00000009CPR-2LEi
+	id 1wgJop-00000009E21-10TC
 	for linux-phy@lists.infradead.org;
-	Sun, 05 Jul 2026 09:31:51 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 9768E60052;
-	Sun,  5 Jul 2026 09:31:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 228841F000E9;
-	Sun,  5 Jul 2026 09:31:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1783243910;
-	bh=AhGPdjF+r5UBWPWxnx50rWXjfnljknqyyw0l2Tw+k6Y=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=W5DotYFtavKGQ4u82DcYZuX/X+sA82xmEtnofouFEYpo8kZP6bu94ZzQsYRmNsz2K
-	 N5/D7o36Piz0siQQYwguyJFDdXxl+8Cxao+I/aiEsUZ3AR6RuhOOgatm8uYz+z/91c
-	 4eYqa672YwaWNBhpwmV1wdKEwSucOvhCr9FkDC2KDI/t2mR63TIhf4i6BQ94iBLI6d
-	 Fa8Y5y+4AcpBb0sBTisbncEXISiHGBVq+MxsAEsr13goexUR9pURzaV6kPDI9UCtXD
-	 LuVhQq7V2jiUXrZ9BVRKAIf4iHS4KBxXI9V7s4P+r1kz3XS3ctlXGUuJ1OSgsRIZYK
-	 ZeUp9avQQUvQA==
-Date: Sun, 5 Jul 2026 11:31:46 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>, 
-	Vinod Koul <vkoul@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
-	Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>, Johan Hovold <johan+linaro@kernel.org>, 
-	Loic Poulain <loic.poulain@oss.qualcomm.com>, Shawn Guo <shengchao.guo@oss.qualcomm.com>, 
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, Abel Vesa <abel.vesa@oss.qualcomm.com>, 
-	Wesley Cheng <wesley.cheng@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v4 0/4] Add USB Phy driver and binding changes for
- Qualcomm Shikra SoC
-Message-ID: <20260705-functional-vivid-seahorse-a8c149@quoll>
-References: <20260701165051.4122259-1-krishna.kurapati@oss.qualcomm.com>
+	Sun, 05 Jul 2026 10:11:24 +0000
+Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-493c83474ddso19393085e9.3
+        for <linux-phy@lists.infradead.org>; Sun, 05 Jul 2026 03:11:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1783246281; x=1783851081; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=KosFoYH7JPzJbGxiLDLiAcfUT9wevKTSADbKnE7NxIU=;
+        b=dZSkil3HHhvMqhCfIxPuM3deh4+gD0o9H64XWjxsDAmAeHXcCC8VXAqEvRf8FqC/ot
+         7VvCE5XYusaTR1v8it03oylIISAxZXRn6I9z4gxLbTLlodplqJZ7f4LGwbYRGJeqRQUw
+         FRWhK8PsFG0YPmEBfyleHmPEDTERSoyUnjM3Yl4zoKnTu0Fw9lmFe4HUfCsL8deFyVz0
+         WeLU5sz3bDw9WUwWGJ5S0JlTq36tGRDKf8k5os+bDyi9rt4JGz9imDQ7c5tOyfY8sb12
+         KGiLj78bqEfj53eZHlpWMDV0lk3FVXPoYc2gpYn/ARLU5xxlxmX5hrw5vr8ACWc+fBXi
+         ZDQQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1783246281; x=1783851081;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=KosFoYH7JPzJbGxiLDLiAcfUT9wevKTSADbKnE7NxIU=;
+        b=qIb5jMm0sTR6MbvdL0kHefIylaZyXkphcptYQCJ7UjrCrCBvqoLOnpXr4p7qPMNAY2
+         4ARlktU0KqD/7UavkZJAiPgQP7uET0K5NWzjYa4HRw1tHdT9W3M/qx5T/hslWPUYPEz6
+         LZHKoOY74i3zbeu1Nab4RGdnUHsRfNnsjxp4tUMDYaJYcc2YNgqFJWfxGlXeBzioJvUc
+         SlK2Um8K/x8x57KZQ6HRHh/mfF3mSJYIHwLeiUVCJJ0U64Bu2oWRFfbv3UNNIoHkYYs+
+         5EWgcOVut55Oj/a7sQDJZrnr+5FOscR9EKgVhhsJdvXSnjh/CXiLxK1ZdajAK01oBnvQ
+         KW2g==
+X-Gm-Message-State: AOJu0YyqJ+2KgTjc0pR9cxuFHVN1R9Y6uwQ+HcS5Dm0zPQgS/a9XV1Ss
+	XbCgHgrvDuv+MAADKnNVWQwEqqzknqiI8zdQ82fmqUE5q+0xOVm1NWEr
+X-Gm-Gg: AfdE7cnIUEVinU+0jmNO04RZq8HSAye+XLN/rhm7wOq8OzsnM/t3F5RUluY/Xs3bu1Z
+	txtqzFCZlGaGtMH5UoIqCI4MRmo5vCwLKyUHDBNWuTiVa+f7N6FJm0YdoBO0tYZ7bbQxJb8bbvh
+	gTT0uK4BlW3eSUjbwJ12fotg6KqivBvKMpwNkbjABPUfGe7X/KkUFkFShwAgqMkhzDhmX8rpUpo
+	ZDsqqwILUkwztnmnQeOwvBibvnxgDZtV7MR66WavOIwR12qbgc50q4GVZMTl+aVFKdn+h5to46T
+	fwwWU63HEYSIENJCk4DrE2SEz68g4zNe/NctkKayEGw9i1YO8N7sIXZrRX5mLRDV4NiOARpQLKt
+	DRUG9LUnniV8A28WPg6YSBOKDQUB6cTzYyN/+9swiRwyoJaWCpA2/4p++TYPDRUF2zV3y/oRHlM
+	VmXjrMVl8hbRC/icziOsf1seorL0gkNwYsNw==
+X-Received: by 2002:a05:600c:3493:b0:493:d115:d835 with SMTP id 5b1f17b1804b1-493d22abbd8mr58420125e9.8.1783246281032;
+        Sun, 05 Jul 2026 03:11:21 -0700 (PDT)
+Received: from localhost.localdomain ([95.43.220.235])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-493c637bbcfsm261382715e9.6.2026.07.05.03.11.19
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 05 Jul 2026 03:11:20 -0700 (PDT)
+From: Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Aaro Koskinen <aaro.koskinen@iki.fi>,
+	Andreas Kemnade <andreas@kemnade.info>,
+	Kevin Hilman <khilman@baylibre.com>,
+	Roger Quadros <rogerq@kernel.org>,
+	Tony Lindgren <tony@atomide.com>,
+	Linus Walleij <linusw@kernel.org>,
+	Bartosz Golaszewski <brgl@kernel.org>
+Cc: linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-omap@vger.kernel.org,
+	linux-gpio@vger.kernel.org,
+	Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>
+Subject: [PATCH v3 0/4] phy: cpcap-usb: improve charger detection and export cable state
+Date: Sun,  5 Jul 2026 13:11:01 +0300
+Message-Id: <20260705101105.1798069-1-ivo.g.dimitrov.75@gmail.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260701165051.4122259-1-krishna.kurapati@oss.qualcomm.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260705_031123_321720_D015CF92 
+X-CRM114-Status: GOOD (  11.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,29 +110,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jul 01, 2026 at 10:20:47PM +0530, Krishna Kurapati wrote:
-> This series adds Driver and binding changes for USB Phys on Shikra.
-> There are two USB controllers - One of them is SS capable and other is
-> highspeed only capable.
-> 
-> Changes in v4:
-> - Moved to using qcs615-usb3-dp-phy and added resets specific to shikra
-> - Updated bindings to reflect that there are 3 resets used in qmp phy
-> - Add remote endpoints and orientation-switch for Type-c handling
-> 
+The Motorola CPCAP USB PHY contains the hardware state machine used for
+USB cable detection. Besides distinguishing USB peripheral and host
+connections, it can also detect dedicated charging ports (DCP).
 
-b4 diff 20260701165051.4122259-1-krishna.kurapati@oss.qualcomm.com
-Looking up https://lore.kernel.org/all/20260701165051.4122259-1-krishna.kurapati@oss.qualcomm.com/
-Grabbing thread from lore.kernel.org/all/20260701165051.4122259-1-krishna.kurapati@oss.qualcomm.com/t.mbox.gz
-Checking for older revisions
----
-Analyzing 33 messages in the thread
-Could not find lower series to compare against.
+This series updates the Device Tree binding and corresponding mapphone
+Device Tree to use the charger detection interrupt, adds DCP detection
+support to the CPCAP USB PHY and finally exports the detected cable state
+through the Extcon framework.
 
-Great. We asked many times already to use b4.
+The existing driver already interprets the CPCAP USB detection state
+machine to determine the attached cable type. This series extends that
+logic to distinguish DCP connections and exposes the detected cable state
+through Extcon using a standard kernel interface. It also makes the idle
+UART mode optional, allowing the PHY to remain in its default USB
+detection configuration unless UART support is explicitly requested.
 
-Best regards,
-Krzysztof
+The series has been tested on Motorola Droid 4 hardware.
+
+Changes in v3:
+- Drop "phy: cpcap-usb: Prevent line glitches from triggering sysrq"
+- Fix DT schema interrupts order
+- Fix boot cable detection
+
+Changes in v2:
+- add chrg_det interrupt instead of replacing se1
+- Fix remove() race by cancelling detect_work before hardware teardown
+- Restore SysRq state on all error paths
+- Introduce CPCAP_UNKNOWN initial mode
+- Snapshot enable_uart module parameter
+
+Ivaylo Dimitrov (4):
+  dt-bindings: phy: motorola,cpcap-usb: add chrg_det interrupt
+  ARM: dts: ti: cpcap-mapphone: use charger detection interrupt for
+    CPCAP USB PHY
+  phy: cpcap-usb: add DCP detection and make UART idle mode optional
+  phy: cpcap-usb: add extcon support
+
+ .../bindings/phy/motorola,cpcap-usb-phy.yaml  |   6 +-
+ .../dts/ti/omap/motorola-cpcap-mapphone.dtsi  |   6 +-
+ drivers/phy/motorola/phy-cpcap-usb.c          | 320 +++++++++++++++---
+ 3 files changed, 279 insertions(+), 53 deletions(-)
+
+-- 
+2.39.5
 
 
 -- 
