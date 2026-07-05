@@ -4,53 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2477C43458
-	for <linux-phy@archiver.kernel.org>; Sat,  4 Jul 2026 07:51:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 353F0C43458
+	for <linux-phy@archiver.kernel.org>; Sun,  5 Jul 2026 01:08:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DGVUxevyHJ9pBKj/eFrxUK6+UQpu5QRuSYLV8u2YOxE=; b=Fj4n0b1eg7R5Xk
-	q11dxUXzD6GmvQdIYKsov92nHEJsHIB4FzwMuKzCY8eMEmQgRNU64xFFZtOKv/He0uHdNXQX5noYL
-	PIgyOOUrvXJqdn/KqdnnY7tJq3vFm55yqBtLF3N+9xhez4IVliYdSdKmMZf9r9Pn2kONbYFVuXIBT
-	mTVRcJupqpfqRax7y1MpgIMtPJVC2nWh/x1RzWGtaYeMXDtZXHFR/5bRaVUkyNZYU3KMgRDBpI8EV
-	HXynoySzhocVoHJq+pYfEQkEIhXM1DWxDrEkVsd/366AFcULK5X9jtMiEkoVQCpsLauSFt131gEhC
-	dWNUlEABBKCgGWYdUM7w==;
+	List-Owner; bh=dFcCSowp+lQ2iBqeSbekDq+18+CIpgBDeh2WdPDVgL8=; b=SPvLi2FDXPxvLk
+	Z9j8gfHp4I5R6SvH8xAmpboqKN6ReqyR4ax83rSH6isYkMnjVILU19eC7V2vNU5G/SqVIh3aQ9XVN
+	EzLddb/Sr/azQXhMLSUKZ2hR8T4fOxsYLSk5ujQY/qBimG8WziTr+S01Tcux0UV+kDZLgE4fKlHEN
+	fRDiA1uFwg0ZFEN8+fDd76SKtEHCTgmnNvXsMRWk6y8Eznf421E2jyJ+s/dpVqZzHe4qJfP/QCsxI
+	tdHc9g29rYvD08LBrkdlD1vMFo8R2UIu0MHEyiJ1facMmfU+OsOWmTVQkllyDnE2IhvxvfE6/gEUY
+	lFf6Z7FtJeV8YP6KmA9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wfvA2-00000008H3g-2TgI;
-	Sat, 04 Jul 2026 07:51:38 +0000
+	id 1wgBLB-00000008tCw-0nAb;
+	Sun, 05 Jul 2026 01:08:13 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wfvA1-00000008H3a-0EIO
-	for linux-phy@lists.infradead.org;
-	Sat, 04 Jul 2026 07:51:37 +0000
+	id 1wgBLA-00000008tCd-1RAp;
+	Sun, 05 Jul 2026 01:08:12 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id BA9DC40122;
-	Sat,  4 Jul 2026 07:51:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0014E1F000E9;
-	Sat,  4 Jul 2026 07:51:35 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id F2B8343942;
+	Sun,  5 Jul 2026 01:08:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4F2BF1F000E9;
+	Sun,  5 Jul 2026 01:08:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1783151496;
-	bh=nk6nP7hmKCgBnsx+MNVD61Cm7aZyuBzkUCKBoY7kSj0=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=c+BDokhpWiPzgGP+7wIiERr9pI7Jx51Fed5Hpd0TFL8FVQIwTTuuSwF1aqzi3L4mf
-	 D9feTB1bOJkXweUq7zKEmTCBqLxjTNVdxmqHEYCFK6JRvHUdqHK1JFIJHme2/aKTR5
-	 kvLrycknJl9EByuxn856hP/pDHNp1qsmDK8Z4Nrn7Gj8qmZQQAmmPpz0MHb2jQax+z
-	 VvkPN50n3bYSmSFMSgWRvp3h9Rc03p5yoEyl3lz9XR/QNJf3CXAiUo9u4UqtHH3hnm
-	 Pg2QWNX54zkRdbze2+ubfb6HRp8ExleIo7ZRBcRR8EJJngVhwbljtJgjUfomEHlfkw
-	 0Ixhx2JocRXog==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH 5/5] phy: cpcap-usb: add extcon support
-To: "Ivaylo Dimitrov" <ivo.g.dimitrov.75@gmail.com>
-Cc: conor+dt@kernel.org, devicetree@vger.kernel.org, neil.armstrong@linaro.org, vkoul@kernel.org, linux-phy@lists.infradead.org, robh@kernel.org, olteanv@gmail.com
-In-Reply-To: <20260704073843.1750458-6-ivo.g.dimitrov.75@gmail.com>
-References: <20260704073843.1750458-1-ivo.g.dimitrov.75@gmail.com>
- <20260704073843.1750458-6-ivo.g.dimitrov.75@gmail.com>
-Date: Sat, 04 Jul 2026 07:51:35 +0000
-Message-Id: <20260704075136.0014E1F000E9@smtp.kernel.org>
+	s=k20260515; t=1783213690;
+	bh=3duzwyHdi6RgshCaFz1ynAPla1JdMO1NFXgABI7Eh3s=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References;
+	b=RBkPSMZz/BRsU6kDJgLsvltCHl/7nmfEQhY9exVykMN2oKxRiBkjx0bffH+fLPUYH
+	 2ck3iltRsWHYzSENjgVtJrOJreGEUuUNSVj3Lw6/17RResfLk3hMjVq8SFBY9BhwDf
+	 sKGEtqWnoWO1tu5pP6nXAc6xmwVh8UNIja+d2sdcRPZaulrROXaGk/79+rxatMNbsr
+	 c2v95I5UOD7pAE9DXeaUhAJJOM+Z8Ue+In01tEjX7ZGwWogIhtIPwhvb1sf0fVcC/Q
+	 IwJtuFvlG/z8wx2ctp0O4Cx1DHR5NHBJURe7Lg72aFRhuLvN9Mldzb+6xKPfPOkOCm
+	 T0vQCQ2/MHtEg==
+Date: Sun, 5 Jul 2026 02:07:58 +0100
+From: Jonathan Cameron <jic23@kernel.org>
+To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+Cc: Romain Gantois <romain.gantois@bootlin.com>, MyungJoo Ham
+ <myungjoo.ham@samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>, Guenter
+ Roeck <linux@roeck-us.net>, Peter Rosin <peda@axentia.se>, David Lechner
+ <dlechner@baylibre.com>, Nuno =?UTF-8?B?U8Oh?= <nuno.sa@analog.com>, Andy
+ Shevchenko <andy@kernel.org>, Lars-Peter Clausen <lars@metafoo.de>, Michael
+ Hennerich <Michael.Hennerich@analog.com>, Mariel Tinaco
+ <Mariel.Tinaco@analog.com>, Kevin Tsai <ktsai@capellamicro.com>, Linus
+ Walleij <linus.walleij@linaro.org>, Eugen Hristev
+ <eugen.hristev@linaro.org>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay
+ Abraham I <kishon@kernel.org>, Sebastian Reichel <sre@kernel.org>, Chen-Yu
+ Tsai <wens@csie.org>, Hans de Goede <hansg@kernel.org>, Support Opensource
+ <support.opensource@diasemi.com>, Paul Cercueil <paul@crapouillou.net>,
+ Iskren Chernev <me@iskren.info>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>, Matheus Castello
+ <matheus@castello.eng.br>, Saravanan Sekar <sravanhome@gmail.com>, Matthias
+ Brugger <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
+ <angelogioacchino.delregno@collabora.com>, Casey Connolly
+ <casey.connolly@linaro.org>, Pali =?UTF-8?B?Um9ow6Fy?= <pali@kernel.org>,
+ Orson Zhai <orsonzhai@gmail.com>, Baolin Wang
+ <baolin.wang@linux.alibaba.com>, Chunyan Zhang <zhang.lyra@gmail.com>, Amit
+ Kucheria <amitk@kernel.org>, Thara Gopinath <thara.gopinath@gmail.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>, Daniel Lezcano
+ <daniel.lezcano@linaro.org>, Zhang Rui <rui.zhang@intel.com>, Lukasz Luba
+ <lukasz.luba@arm.com>, Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
+ Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
+ Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, Sylwester
+ Nawrocki <s.nawrocki@samsung.com>, Olivier Moysan
+ <olivier.moysan@foss.st.com>, Arnaud Pouliquen
+ <arnaud.pouliquen@foss.st.com>, Maxime Coquelin
+ <mcoquelin.stm32@gmail.com>, Alexandre Torgue
+ <alexandre.torgue@foss.st.com>, Thomas Petazzoni
+ <thomas.petazzoni@bootlin.com>, linux-kernel@vger.kernel.org,
+ linux-hwmon@vger.kernel.org, linux-iio@vger.kernel.org,
+ linux-input@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-pm@vger.kernel.org, linux-mips@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+ linux-sound@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ Sebastian Reichel <sebastian.reichel@collabora.com>, Andy Shevchenko
+ <andriy.shevchenko@intel.com>
+Subject: Re: [PATCH v2 2/2] iio: inkern: Use namespaced exports
+Message-ID: <20260705020758.011f4f3c@jic23-huawei>
+In-Reply-To: <20260603182052.7d23c067@jic23-huawei>
+References: <20251209-iio-inkern-use-namespaced-exports-v2-0-9799a33c4b7f@bootlin.com>
+	<20251209-iio-inkern-use-namespaced-exports-v2-2-9799a33c4b7f@bootlin.com>
+	<acBr-W2ILu9tnMyd@google.com>
+	<20260603182052.7d23c067@jic23-huawei>
+X-Mailer: Claws Mail 4.4.0 (GTK 3.24.52; x86_64-pc-linux-gnu)
+MIME-Version: 1.0
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,91 +103,59 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpOZXcgaXNzdWVzOgotIFtIaWdoXSBU
-aGUgRVhUQ09OX1VTQiBzdGF0ZSBpcyB1cGRhdGVkIHVzaW5nIGBleHRjb25fc2V0X3N0YXRlYCB3
-aXRob3V0IGEgY29ycmVzcG9uZGluZyBgZXh0Y29uX3NldF9zdGF0ZV9zeW5jYCBvciBgZXh0Y29u
-X3N5bmNgLCBwcmV2ZW50aW5nIHJlZ2lzdGVyZWQgbGlzdGVuZXJzIGZyb20gcmVjZWl2aW5nIHN0
-YXRlIGNoYW5nZSBub3RpZmljYXRpb25zLgotIFtNZWRpdW1dIEV4dGNvbiBzdGF0ZSBjYW4gYmVj
-b21lIHBlcm1hbmVudGx5IGRlc3luY2hyb25pemVkIGZyb20gdGhlIGhhcmR3YXJlL3NvZnR3YXJl
-IHN0YXRlIHdoZW4gcmVnbWFwIHVwZGF0ZXMgZmFpbC4KClByZS1leGlzdGluZyBpc3N1ZXM6Ci0g
-W0hpZ2hdIFRoZSBkcml2ZXIncyByZW1vdmUgcGF0aCByYWNlcyB3aXRoIHRoZSBkZXZyZXMtbWFu
-YWdlZCB0aHJlYWRlZCBJUlEgaGFuZGxlciwgbGVhZGluZyB0byBhIFVzZS1BZnRlci1GcmVlIG9m
-IHRoZSBkcml2ZXIgZGF0YSBzdHJ1Y3R1cmUuCi0tCgpjb21taXQgNWUyMWQyMDkwNThlZTkzMzA0
-ZGEwZTE5NjRiODQzMzljZjg3MDljMgpBdXRob3I6IEl2YXlsbyBEaW1pdHJvdiA8aXZvLmcuZGlt
-aXRyb3YuNzVAZ21haWwuY29tPgoKcGh5OiBjcGNhcC11c2I6IGFkZCBleHRjb24gc3VwcG9ydAoK
-UmVnaXN0ZXIgYW4gRXh0Y29uIGRldmljZSBhbmQgcmVwb3J0IHRoZSBkZXRlY3RlZCBjYWJsZSBz
-dGF0ZS4KVGhlIGRyaXZlciBhbHJlYWR5IGRldGVybWluZXMgdGhlIHR5cGUgb2YgY2FibGUgYXR0
-YWNoZWQgZHVyaW5nIFVTQiBjYWJsZQpkZXRlY3Rpb24uIEV4cG9ydCB0aGUgZGV0ZWN0ZWQgc3Rh
-dGUgdGhyb3VnaCB0aGUgRXh0Y29uIGZyYW1ld29yayBzbwpvdGhlciBkcml2ZXJzIGNhbiBjb25z
-dW1lIGl0IHVzaW5nIGEgc3RhbmRhcmQga2VybmVsIGludGVyZmFjZS4KCj4gZGlmZiAtLWdpdCBh
-L2RyaXZlcnMvcGh5L21vdG9yb2xhL3BoeS1jcGNhcC11c2IuYyBiL2RyaXZlcnMvcGh5L21vdG9y
-b2xhL3BoeS1jcGNhcC11c2IuYwo+IGluZGV4IDNiZTJiM2FmYWFmNGQuLjg5NzhhOTVjMWMxOTkg
-MTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9waHkvbW90b3JvbGEvcGh5LWNwY2FwLXVzYi5jCj4gKysr
-IGIvZHJpdmVycy9waHkvbW90b3JvbGEvcGh5LWNwY2FwLXVzYi5jCj4gQEAgLTEyMyw2ICsxMjQs
-NyBAQCBzdHJ1Y3QgY3BjYXBfcGh5X2RkYXRhIHsKPiAgCXN0cnVjdCByZWdtYXAgKnJlZzsKPiAg
-CXN0cnVjdCBkZXZpY2UgKmRldjsKPiAgCXN0cnVjdCB1c2JfcGh5IHBoeTsKPiArCXN0cnVjdCBl
-eHRjb25fZGV2ICplZGV2Owo+ICAJc3RydWN0IGRlbGF5ZWRfd29yayBkZXRlY3Rfd29yazsKCltT
-ZXZlcml0eTogSGlnaF0KVGhpcyBpcyBhIHByZS1leGlzdGluZyBpc3N1ZSwgYnV0IGRvZXMgdGhl
-IHJlbW92ZSBwYXRoIHJhY2Ugd2l0aCB0aGUKZGV2cmVzLW1hbmFnZWQgdGhyZWFkZWQgSVJRIGhh
-bmRsZXIsIGxlYWRpbmcgdG8gYSB1c2UtYWZ0ZXItZnJlZSBvZiB0aGlzCmRyaXZlciBkYXRhIHN0
-cnVjdHVyZT8KCklmIHRoZSBkZXZyZXMtbWFuYWdlZCBJUlEgdGhyZWFkIGNwY2FwX3BoeV9pcnFf
-dGhyZWFkKCkgZmlyZXMgYW5kIHJlYWRzCmRkYXRhLT5hY3RpdmUgYXMgMSwgYnV0IGlzIHByZWVt
-cHRlZCBiZWZvcmUgY2FsbGluZyBzY2hlZHVsZV9kZWxheWVkX3dvcmsoKToKCkFuZCB0aGVuIHRo
-ZSBkcml2ZXIgcmVtb3ZlIHBhdGggY3BjYXBfdXNiX3BoeV9yZW1vdmUoKSBleGVjdXRlcywgc2V0
-cwpkZGF0YS0+YWN0aXZlIHRvIDAsIGNhbmNlbHMgYW55IHBlbmRpbmcgd29yaywgYW5kIHJldHVy
-bnMuCgpEZXZyZXMgY2xlYW51cCB0aGVuIGJlZ2lucywgY2FsbGluZyBkZXZtX2lycV9yZWxlYXNl
-KCkgLT4gZnJlZV9pcnEoKSAtPgpzeW5jaHJvbml6ZV9pcnEoKSwgd2hpY2ggYmxvY2tzIHdhaXRp
-bmcgZm9yIHRoZSBwcmVlbXB0ZWQgSVJRIHRocmVhZC4KCldoZW4gdGhlIElSUSB0aHJlYWQgcmVz
-dW1lcywgaXQgc3VjY2Vzc2Z1bGx5IHF1ZXVlcyB0aGUgZGVsYXllZCB3b3JrIGFuZApyZXR1cm5z
-LgoKT25jZSBkZXZtX2lycV9yZWxlYXNlKCkgZmluaXNoZXMsIGRldnJlcyBwcm9jZWVkcyB0byBm
-cmVlIGRkYXRhLgpUaGUgZGVsYXllZCB3b3JrIHRpbWVyIGV4cGlyZXMgYW5kIGV4ZWN1dGVzIGNw
-Y2FwX3VzYl9kZXRlY3QoKSBvbiB0aGUgZnJlZWQKZGRhdGEgbWVtb3J5LgoKPiBbIC4uLiBdCj4g
-QEAgLTIyNiw2ICsyMzksNDMgQEAgc3RhdGljIHZvaWQgY3BjYXBfdXNiX3RyeV9tdXNiX21haWxi
-b3goc3RydWN0IGNwY2FwX3BoeV9kZGF0YSAqZGRhdGEsCj4gWyAuLi4gXQo+ICtzdGF0aWMgdm9p
-ZCBjcGNhcF91c2Jfc2V0X2V4dGNvbihzdHJ1Y3QgY3BjYXBfcGh5X2RkYXRhICpkZGF0YSkKPiAr
-ewo+IFsgLi4uIF0KPiArCWlmIChkZGF0YS0+Y2FibGUgPT0gRVhUQ09OX0NIR19VU0JfU0RQKQo+
-ICsJCWV4dGNvbl9zZXRfc3RhdGUoZGRhdGEtPmVkZXYsIEVYVENPTl9VU0IsIGZhbHNlKTsKPiAr
-CWVsc2UgaWYgKGNhYmxlID09IEVYVENPTl9DSEdfVVNCX1NEUCkKPiArCQlleHRjb25fc2V0X3N0
-YXRlKGRkYXRhLT5lZGV2LCBFWFRDT05fVVNCLCB0cnVlKTsKCltTZXZlcml0eTogSGlnaF0KRG9l
-cyB0aGlzIHByZXZlbnQgcmVnaXN0ZXJlZCBsaXN0ZW5lcnMgZnJvbSByZWNlaXZpbmcgc3RhdGUg
-Y2hhbmdlCm5vdGlmaWNhdGlvbnMgZm9yIEVYVENPTl9VU0I/CgpUaGUgRVhUQ09OX1VTQiBzdGF0
-ZSBpcyB1cGRhdGVkIGhlcmUgdXNpbmcgZXh0Y29uX3NldF9zdGF0ZSgpIHdpdGhvdXQgYQpjb3Jy
-ZXNwb25kaW5nIGV4dGNvbl9zZXRfc3RhdGVfc3luYygpIG9yIGV4dGNvbl9zeW5jKCkuIFdoZW4g
-dGhlIGRyaXZlcgpjaGFuZ2VzIHRoZSBzdGF0ZSB0byBvciBmcm9tIENQQ0FQX1VTQiAod2hpY2gg
-bWFwcyB0byBFWFRDT05fQ0hHX1VTQl9TRFApLAp0aGUgc3Vic2VxdWVudCBleHRjb25fc2V0X3N0
-YXRlX3N5bmMoKSBjYWxscyBvbmx5IHRhcmdldCB0aGUgY2hhcmdlciBjYWJsZQpJRCBhbmQgaXRz
-IHNwZWNpZmljIG5vdGlmaWVyIGNoYWluLgoKVGhlIG5vdGlmaWVyIGNoYWluIGZvciBFWFRDT05f
-VVNCIG1pZ2h0IG5ldmVyIGJlIGZpcmVkLgoKPiArCj4gKwlpZiAoZGRhdGEtPmNhYmxlICE9IEVY
-VENPTl9OT05FKQo+ICsJCWV4dGNvbl9zZXRfc3RhdGVfc3luYyhkZGF0YS0+ZWRldiwgZGRhdGEt
-PmNhYmxlLCBmYWxzZSk7Cj4gKwo+ICsJaWYgKGNhYmxlICE9IEVYVENPTl9OT05FKQo+ICsJCWV4
-dGNvbl9zZXRfc3RhdGVfc3luYyhkZGF0YS0+ZWRldiwgY2FibGUsIHRydWUpOwo+ICsKPiArCWRk
-YXRhLT5jYWJsZSA9IGNhYmxlOwo+ICt9Cj4gWyAuLi4gXQo+IEBAIC0zNTYsNiArNDExLDggQEAg
-c3RhdGljIHZvaWQgY3BjYXBfdXNiX2RldGVjdChzdHJ1Y3Qgd29ya19zdHJ1Y3QgKndvcmspCj4g
-WyAuLi4gXQo+ICAJaWYgKGRkYXRhLT5tb2RlID09IENQQ0FQX0lETEUpCj4gIAkJcmV0dXJuOwo+
-ICAKPiAgCWRkYXRhLT5tb2RlID0gQ1BDQVBfSURMRTsKPiAgCWNwY2FwX3VzYl90cnlfbXVzYl9t
-YWlsYm94KGRkYXRhLCBNVVNCX1ZCVVNfT0ZGKTsKPiAgCj4gIAllcnJvciA9IGNwY2FwX3VzYl9z
-ZXRfaWRsZV9tb2RlKGRkYXRhKTsKPiAgCWlmIChlcnJvcikKPiAgCQlnb3RvIG91dF9lcnI7Cj4g
-IAo+ICsJY3BjYXBfdXNiX3NldF9leHRjb24oZGRhdGEpOwo+ICsKPiAgCXJldHVybjsKPiAgCj4g
-IG91dF9lcnI6CgpbU2V2ZXJpdHk6IE1lZGl1bV0KQ2FuIHRoZSBleHRjb24gc3RhdGUgYmVjb21l
-IHBlcm1hbmVudGx5IGRlc3luY2hyb25pemVkIGZyb20gdGhlIGhhcmR3YXJlIGFuZApzb2Z0d2Fy
-ZSBzdGF0ZSBpZiBhIHJlZ21hcCB1cGRhdGUgZmFpbHM/CgpFYXJsaWVyIGluIGNwY2FwX3VzYl9k
-ZXRlY3QoKSwgdGhlIGludGVybmFsIHNvZnR3YXJlIHN0YXRlIGRkYXRhLT5tb2RlIGlzCnVwZGF0
-ZWQgcHJpb3IgdG8gaGFyZHdhcmUgY29uZmlndXJhdGlvbi4gSWYgdGhlIGhhcmR3YXJlIHJlZ2lz
-dGVyIHVwZGF0ZQpmYWlscywgdGhlIGNvZGUgYnJhbmNoZXMgdG8gb3V0X2VyciBhbmQgc2tpcHMg
-Y2FsbGluZwpjcGNhcF91c2Jfc2V0X2V4dGNvbigpLgoKQmVjYXVzZSBkZGF0YS0+bW9kZSBpcyBh
-bHJlYWR5IG1vZGlmaWVkLCBzdWJzZXF1ZW50IGV4ZWN1dGlvbnMgb2YKY3BjYXBfdXNiX2RldGVj
-dCgpIHdpbGwgdGFrZSB0aGUgZWFybHkgcmV0dXJuIHBhdGggYW5kIHdpbGwgbmV2ZXIgcmV0cnkK
-dXBkYXRpbmcgdGhlIGV4dGNvbiBzdGF0ZSwgbGVhdmluZyBpdCBzdGFsZSBpbmRlZmluaXRlbHku
-CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0
-LzIwMjYwNzA0MDczODQzLjE3NTA0NTgtMS1pdm8uZy5kaW1pdHJvdi43NUBnbWFpbC5jb20/cGFy
-dD01CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1w
-aHkK
+On Wed, 3 Jun 2026 18:20:52 +0100
+Jonathan Cameron <jic23@kernel.org> wrote:
+
+> On Sun, 22 Mar 2026 15:24:21 -0700
+> Dmitry Torokhov <dmitry.torokhov@gmail.com> wrote:
+> 
+> > On Tue, Dec 09, 2025 at 09:25:56AM +0100, Romain Gantois wrote:  
+> > > Use namespaced exports for IIO consumer API functions.
+> > > 
+> > > This will make it easier to manage the IIO export surface. Consumer drivers
+> > > will only be provided access to a specific set of functions, thereby
+> > > restricting usage of internal IIO functions by other parts of the kernel.
+> > > 
+> > > This change cannot be split into several parts without breaking
+> > > bisectability, thus all of the affected drivers are modified at once.
+> > > 
+> > > Acked-by: Sebastian Reichel <sebastian.reichel@collabora.com> # for power-supply
+> > > Acked-by: Guenter Roeck <linux@roeck-us.net>
+> > > Reviewed-by: Andy Shevchenko <andriy.shevchenko@intel.com>
+> > > Signed-off-by: Romain Gantois <romain.gantois@bootlin.com>    
+> > 
+> > For input:
+> > 
+> > Acked-by: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+> > 
+> > Thanks.
+> >   
+> 
+> For anyone wondering what happened to this... I forgot to apply this at the
+> beginning of the cycle and by the time I remembered we had too much queued up
+> so it would have been messy to do an immutable branch.   Anyhow, I plan to
+> sort this at start of next cycle.
+
+Immutable branch created as: iio-inkern-namespace-ib based on v7.2-rc1
+on https://git.kernel.org/pub/scm/linux/kernel/git/jic23/iio.git
+
+I've merged it into the testing branch of iio.git so if anyone else does
+need to merge this to avoid conflicts, perhaps wait a day or two until
+I've pushed it out as togreg for linux-next to pick up.
+
+Thanks,
+
+Jonathan
+> 
+> Jonathan
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
