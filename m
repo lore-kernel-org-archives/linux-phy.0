@@ -4,94 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 353F0C43458
-	for <linux-phy@archiver.kernel.org>; Sun,  5 Jul 2026 01:08:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD93EC43458
+	for <linux-phy@archiver.kernel.org>; Sun,  5 Jul 2026 01:59:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dFcCSowp+lQ2iBqeSbekDq+18+CIpgBDeh2WdPDVgL8=; b=SPvLi2FDXPxvLk
-	Z9j8gfHp4I5R6SvH8xAmpboqKN6ReqyR4ax83rSH6isYkMnjVILU19eC7V2vNU5G/SqVIh3aQ9XVN
-	EzLddb/Sr/azQXhMLSUKZ2hR8T4fOxsYLSk5ujQY/qBimG8WziTr+S01Tcux0UV+kDZLgE4fKlHEN
-	fRDiA1uFwg0ZFEN8+fDd76SKtEHCTgmnNvXsMRWk6y8Eznf421E2jyJ+s/dpVqZzHe4qJfP/QCsxI
-	tdHc9g29rYvD08LBrkdlD1vMFo8R2UIu0MHEyiJ1facMmfU+OsOWmTVQkllyDnE2IhvxvfE6/gEUY
-	lFf6Z7FtJeV8YP6KmA9A==;
+	List-Owner; bh=bNJZ3GM+ysHOZbexfFaVXYipi/57n+Cbx1EPMf5JxBI=; b=io1QUDO7WXtX1o
+	9HQs2tGPnTY0C2wL85xjAhD/A2ZjiuziOiuINyYZueuCEMRQf0z6a1U5Egy98jSGHEJiV/c3j4KTa
+	qiSiDmGzRdYFHDEWmNvVqOGuwSnzw56D67lpvZLYdW++/tR6n8bmkXoJ/PBKmDmh2KqvZKJXWjxBU
+	uw+hu80gw3fqjCVZnKNvZRhgVpJyvCF0buQb6uu3gHuhXYOVRBPxrhmj1WB6kgAY2TKwKw6YkOyni
+	gSO2+zlWkauPZNqwAdkBXk5V69Wr6ACUbpYYwnNTVwmskcSQHGw3aSv81LI4cA8IblYL0FBBCDpuL
+	5VxlHopJRyDoPTJWCu9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wgBLB-00000008tCw-0nAb;
-	Sun, 05 Jul 2026 01:08:13 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wgC8z-00000008uPy-0FvP;
+	Sun, 05 Jul 2026 01:59:41 +0000
+Received: from mail-pj1-x102e.google.com ([2607:f8b0:4864:20::102e])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wgBLA-00000008tCd-1RAp;
-	Sun, 05 Jul 2026 01:08:12 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id F2B8343942;
-	Sun,  5 Jul 2026 01:08:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4F2BF1F000E9;
-	Sun,  5 Jul 2026 01:08:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1783213690;
-	bh=3duzwyHdi6RgshCaFz1ynAPla1JdMO1NFXgABI7Eh3s=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References;
-	b=RBkPSMZz/BRsU6kDJgLsvltCHl/7nmfEQhY9exVykMN2oKxRiBkjx0bffH+fLPUYH
-	 2ck3iltRsWHYzSENjgVtJrOJreGEUuUNSVj3Lw6/17RResfLk3hMjVq8SFBY9BhwDf
-	 sKGEtqWnoWO1tu5pP6nXAc6xmwVh8UNIja+d2sdcRPZaulrROXaGk/79+rxatMNbsr
-	 c2v95I5UOD7pAE9DXeaUhAJJOM+Z8Ue+In01tEjX7ZGwWogIhtIPwhvb1sf0fVcC/Q
-	 IwJtuFvlG/z8wx2ctp0O4Cx1DHR5NHBJURe7Lg72aFRhuLvN9Mldzb+6xKPfPOkOCm
-	 T0vQCQ2/MHtEg==
-Date: Sun, 5 Jul 2026 02:07:58 +0100
-From: Jonathan Cameron <jic23@kernel.org>
-To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-Cc: Romain Gantois <romain.gantois@bootlin.com>, MyungJoo Ham
- <myungjoo.ham@samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>, Guenter
- Roeck <linux@roeck-us.net>, Peter Rosin <peda@axentia.se>, David Lechner
- <dlechner@baylibre.com>, Nuno =?UTF-8?B?U8Oh?= <nuno.sa@analog.com>, Andy
- Shevchenko <andy@kernel.org>, Lars-Peter Clausen <lars@metafoo.de>, Michael
- Hennerich <Michael.Hennerich@analog.com>, Mariel Tinaco
- <Mariel.Tinaco@analog.com>, Kevin Tsai <ktsai@capellamicro.com>, Linus
- Walleij <linus.walleij@linaro.org>, Eugen Hristev
- <eugen.hristev@linaro.org>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay
- Abraham I <kishon@kernel.org>, Sebastian Reichel <sre@kernel.org>, Chen-Yu
- Tsai <wens@csie.org>, Hans de Goede <hansg@kernel.org>, Support Opensource
- <support.opensource@diasemi.com>, Paul Cercueil <paul@crapouillou.net>,
- Iskren Chernev <me@iskren.info>, Krzysztof Kozlowski <krzk@kernel.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>, Matheus Castello
- <matheus@castello.eng.br>, Saravanan Sekar <sravanhome@gmail.com>, Matthias
- Brugger <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
- <angelogioacchino.delregno@collabora.com>, Casey Connolly
- <casey.connolly@linaro.org>, Pali =?UTF-8?B?Um9ow6Fy?= <pali@kernel.org>,
- Orson Zhai <orsonzhai@gmail.com>, Baolin Wang
- <baolin.wang@linux.alibaba.com>, Chunyan Zhang <zhang.lyra@gmail.com>, Amit
- Kucheria <amitk@kernel.org>, Thara Gopinath <thara.gopinath@gmail.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>, Daniel Lezcano
- <daniel.lezcano@linaro.org>, Zhang Rui <rui.zhang@intel.com>, Lukasz Luba
- <lukasz.luba@arm.com>, Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
- Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, Sylwester
- Nawrocki <s.nawrocki@samsung.com>, Olivier Moysan
- <olivier.moysan@foss.st.com>, Arnaud Pouliquen
- <arnaud.pouliquen@foss.st.com>, Maxime Coquelin
- <mcoquelin.stm32@gmail.com>, Alexandre Torgue
- <alexandre.torgue@foss.st.com>, Thomas Petazzoni
- <thomas.petazzoni@bootlin.com>, linux-kernel@vger.kernel.org,
- linux-hwmon@vger.kernel.org, linux-iio@vger.kernel.org,
- linux-input@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-pm@vger.kernel.org, linux-mips@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- linux-sound@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- Sebastian Reichel <sebastian.reichel@collabora.com>, Andy Shevchenko
- <andriy.shevchenko@intel.com>
-Subject: Re: [PATCH v2 2/2] iio: inkern: Use namespaced exports
-Message-ID: <20260705020758.011f4f3c@jic23-huawei>
-In-Reply-To: <20260603182052.7d23c067@jic23-huawei>
-References: <20251209-iio-inkern-use-namespaced-exports-v2-0-9799a33c4b7f@bootlin.com>
-	<20251209-iio-inkern-use-namespaced-exports-v2-2-9799a33c4b7f@bootlin.com>
-	<acBr-W2ILu9tnMyd@google.com>
-	<20260603182052.7d23c067@jic23-huawei>
-X-Mailer: Claws Mail 4.4.0 (GTK 3.24.52; x86_64-pc-linux-gnu)
+	id 1wgC8w-00000008uPU-2HiA
+	for linux-phy@lists.infradead.org;
+	Sun, 05 Jul 2026 01:59:40 +0000
+Received: by mail-pj1-x102e.google.com with SMTP id 98e67ed59e1d1-3811f512167so1577067a91.3
+        for <linux-phy@lists.infradead.org>; Sat, 04 Jul 2026 18:59:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1783216777; x=1783821577; darn=lists.infradead.org;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=Acu2tx9xjRD3YeEyFpnpJ7uZlmuH+RrGw+/Yhe826DM=;
+        b=RMh2f8NDzYSdBYomBK9l8iyggsOMwxVV+YainPlS57UVfVkcNnqEWmvzaplF3/P8Qo
+         F7b1UZhTnsBV1Y2hKucZToRFAeDNr3PdBf7Za/TOcM2og2t6wtvnE7u7JSwvnVL2Ryvl
+         8K9mE8yFBY1XUNXwOnwr0yQCXDuiE0seyuq5MV7/+VDWh68TWMhtwas8vgRHyzWR6odz
+         zeZuIiMpStqck6LPVQf0dTtUD9tJOOZokxO30P8XdbwXaoYMZGX2/nmMYQ+r2Gq+6X5u
+         o5rGRwEiKXTwBMpINDEtA6rPxFbeZT0hTMjtdhwRzbBsrZReI1oP4G+9sqDZdV/0ZNXC
+         00rQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1783216777; x=1783821577;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Acu2tx9xjRD3YeEyFpnpJ7uZlmuH+RrGw+/Yhe826DM=;
+        b=RYUbJhkfibHDFD/z/N2mMcpF/aeNYZnl5BXYX308+kEJQfsH2NHNyJ+se5q1rzOoEm
+         C2ey3DF3MMNzplr/AqbTQVah1qeLSMWjwS2VJ08WlL+25LPH+RVkMtLJFvKznap1qhud
+         bcpaLBkFk4+f7/l5lQqwbyNn7o41jvr2Bcbg37KPpXzZFIkpdEZn7ocmMhWK1cqxqDaK
+         PJwsE/EXlzg74BukIhuWpCwe5I2Z2ddcHfyv0z9UeROsseV0lu8KgaXaB6H818+RsdxN
+         r+SmTmse82H+ou32rhWOVL905i+ryWDk1umvFNF5FnC+YdZHSBGop0DWhaubfmvGv0J7
+         HoiA==
+X-Gm-Message-State: AOJu0YzcFcJLNNZ24lInIZx0Gf/Pco3ojAZTE3pOOXaD/p9Q8w5z1pPo
+	5ShzmwVEsZG2OQDFEOkL6nCUfuFPl5GTidJV9hrq2rfMrtC1E9Xm+q6N
+X-Gm-Gg: AfdE7ckOWVRPD0I2pq0IpmKqjvp9vzyTPxjstQUcRqYjzME6fmph8udcCce82EHZlxi
+	l8Cblphz91L6CDU03mED6KZdz12bTyxcXdFZZ81mSlY76jH52kylSh+NUOb+RRrca7BxTNGlhS9
+	Hcst14m0f67wtc5MxJ1UoTLewBVXpKI5ABJrMd7cYVO/qZ1MERoCVYPB373iqnXDuwiv0PJWR5k
+	IJpU0F3hJVH/Z6kukUNP043OZ9FNMC/qdGOZEOOIaL2zPDobfIb1d9Y0NBQ7blLnglmUPMtDn+F
+	G6Xp5qp9zsq5r9aJuW/aoYBXjASjOkCc6N5q75xtf52QakZUbWSgKwmq6/nUnH4YccRarn7Y9xd
+	PdDXWI241FLqvEronZLbEn1ZupJv0QMCt0Jmc8h3A5cyG/+KbUPxsJugz+0t144Fj
+X-Received: by 2002:a17:90b:1f8a:b0:381:41e9:32aa with SMTP id 98e67ed59e1d1-382812808d5mr4797300a91.15.1783216777198;
+        Sat, 04 Jul 2026 18:59:37 -0700 (PDT)
+Received: from localhost ([2001:da8:7001:11::cb])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3809c8c0915sm3074901a91.0.2026.07.04.18.59.36
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 04 Jul 2026 18:59:36 -0700 (PDT)
+Date: Sun, 5 Jul 2026 09:59:03 +0800
+From: Inochi Amaoto <inochiama@gmail.com>
+To: sashiko-reviews@lists.linux.dev, Inochi Amaoto <inochiama@gmail.com>
+Cc: linux-phy@lists.infradead.org, vkoul@kernel.org, 
+	neil.armstrong@linaro.org, olteanv@gmail.com, robh@kernel.org, conor+dt@kernel.org, 
+	devicetree@vger.kernel.org
+Subject: Re: [PATCH v2 2/2] phy: spacemit: Add USB3/PCIe comb PHY driver for
+ Spacemit K3
+Message-ID: <akm5-xLZgFPLKeE4@inochi.infowork>
+References: <20260703021024.495433-1-inochiama@gmail.com>
+ <20260703021024.495433-3-inochiama@gmail.com>
+ <20260703021929.15FDE1F000E9@smtp.kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260703021929.15FDE1F000E9@smtp.kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260704_185938_600373_155D11E9 
+X-CRM114-Status: GOOD (  23.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,59 +96,121 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 3 Jun 2026 18:20:52 +0100
-Jonathan Cameron <jic23@kernel.org> wrote:
+On Fri, Jul 03, 2026 at 02:19:28AM +0000, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 1 potential issu=
+e(s) to consider:
+> - [High] Hardware register clobbering due to missing read-modify-write op=
+erations in PHY initialization.
+> --
+> =
 
-> On Sun, 22 Mar 2026 15:24:21 -0700
-> Dmitry Torokhov <dmitry.torokhov@gmail.com> wrote:
-> 
-> > On Tue, Dec 09, 2025 at 09:25:56AM +0100, Romain Gantois wrote:  
-> > > Use namespaced exports for IIO consumer API functions.
-> > > 
-> > > This will make it easier to manage the IIO export surface. Consumer drivers
-> > > will only be provided access to a specific set of functions, thereby
-> > > restricting usage of internal IIO functions by other parts of the kernel.
-> > > 
-> > > This change cannot be split into several parts without breaking
-> > > bisectability, thus all of the affected drivers are modified at once.
-> > > 
-> > > Acked-by: Sebastian Reichel <sebastian.reichel@collabora.com> # for power-supply
-> > > Acked-by: Guenter Roeck <linux@roeck-us.net>
-> > > Reviewed-by: Andy Shevchenko <andriy.shevchenko@intel.com>
-> > > Signed-off-by: Romain Gantois <romain.gantois@bootlin.com>    
-> > 
-> > For input:
-> > 
-> > Acked-by: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-> > 
-> > Thanks.
-> >   
-> 
-> For anyone wondering what happened to this... I forgot to apply this at the
-> beginning of the cycle and by the time I remembered we had too much queued up
-> so it would have been messy to do an immutable branch.   Anyhow, I plan to
-> sort this at start of next cycle.
+> commit c71cb5c4ebfcb4fc5aff5c18a7769949e15dae55
+> Author: Inochi Amaoto <inochiama@gmail.com>
+> =
 
-Immutable branch created as: iio-inkern-namespace-ib based on v7.2-rc1
-on https://git.kernel.org/pub/scm/linux/kernel/git/jic23/iio.git
+> phy: spacemit: Add USB3/PCIe comb PHY driver for Spacemit K3
+> =
 
-I've merged it into the testing branch of iio.git so if anyone else does
-need to merge this to avoid conflicts, perhaps wait a day or two until
-I've pushed it out as togreg for linux-next to pick up.
+> Adds a USB3/PCIe comb PHY driver for Spacemit K3. The comb PHY requires
+> configuring a syscon device for the correct mux configuration and needs
+> calibration before usage.
+> =
 
-Thanks,
+> > diff --git a/drivers/phy/spacemit/phy-k3-common.c b/drivers/phy/spacemi=
+t/phy-k3-common.c
+> > new file mode 100644
+> > index 0000000000000..0b289e63db999
+> > --- /dev/null
+> > +++ b/drivers/phy/spacemit/phy-k3-common.c
+> =
 
-Jonathan
-> 
-> Jonathan
+> [ ... ]
+> =
+
+> > +	/* Power down 100MHz refclk buffer */
+> > +	val =3D readl(base + PHY_PU_CK_REG);
+> > +	val =3D u32_replace_bits(val, 0, PHY_PU_REFCLK_100);
+> > +	writel(val, base + PHY_PU_CK_REG);
+> > +
+> > +	/* Program PLL REG1 configure the SSC */
+> > +	val =3D FIELD_PREP(PHY_PLL_SSC_MODE, PHY_PLL_SSC_MODE_DOWN_SPREAD1) |
+> > +	      FIELD_PREP(PHY_PLL_SSC_DEP_SEL, PHY_PLL_SSC_5000PPM) |
+> > +	      FIELD_PREP(PHY_PLL_FREF_SEL, PHY_PLL_FREF_24M);
+> > +	writel(val, base + PHY_PLL_REG1);
+> =
+
+> [Severity: High]
+> Does this completely overwrite PHY_PLL_REG1 and zero out unspecified bits?
+> =
 
 
--- 
+No, All the field are filled, so no data is lost.
+
+> Unlike the PCIe initialization path which uses a read-modify-write for th=
+is
+> register, this direct writel() in k3_usb3phy_init_single() clobbers the
+> entire register. Could this cause important default settings or calibrati=
+on
+> values to be lost?
+> =
+
+> [ ... ]
+> =
+
+> > +	for (i =3D 0; i < lg->data->lanes; i++) {
+> > +		void __iomem *lane_base =3D lg->base + lg->data->offsets[i];
+> > +
+> > +		val =3D readl(lane_base + PCIE_RX_REG1);
+> > +		val =3D u32_replace_bits(val, 0, 0x3);
+> > +		writel(val, lane_base + PCIE_RX_REG1);
+> > +	}
+> > +
+> > +	val =3D readl(phy_base + PHY_PLL_REG2);
+> > +	val |=3D BIT(20);
+> > +	writel(val, phy_base + PHY_PLL_REG2);
+> > +
+> > +	/* The write is needed as clock requires renegotiation */
+> > +	val =3D FIELD_PREP(PCIE_RX_REFCLK_MODE, PCIE_RX_REFCLK_MODE_DRIVER) |
+> > +	      PCIE_RX_SEL_TRI_CODE |
+> > +	      FIELD_PREP(PCIE_RX_LEGACY, PCIE_RX_LEGACY_DEFAULT);
+> > +	writel(val, phy_base + PCIE_RX_REG1);
+> =
+
+> [Severity: High]
+> Does this clobber the entire PCIE_RX_REG1 register for lane 0?
+> =
+
+
+This also serves as the whole clock. If the phy has two lanes, they share s=
+ome
+data and the data is store at lane 0.
+
+> The preceding loop performs a read-modify-write on PCIE_RX_REG1 for all l=
+anes,
+> but this direct writel() on phy_base (which points to lane 0) invalidates
+> that previous work and zeroes out any bits not explicitly set here.
+> =
+
+> Should this also use a read-modify-write operation to preserve the regist=
+er
+> state?
+> =
+
+
+No, it is not needed, as all the field are filled or it should be zero.
+
+> -- =
+
+> Sashiko AI review =B7 https://sashiko.dev/#/patchset/20260703021024.49543=
+3-1-inochiama@gmail.com?part=3D2
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
