@@ -4,111 +4,142 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AF42C43458
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Jul 2026 17:36:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C29FAC43458
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Jul 2026 18:22:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wnESE3uCjZs6jcQ1Q/1mDN3oFOpGHJdjO2wHcR9Thz8=; b=Ek6KSY1Z6SA0uj
-	NPARauV/021KL7VXgnu5eN6OE7NyAI+CUrAoaQ9zhxN+AHqGNDR61KGb6YvifCoeb0g+W34E1E6KR
-	Q/i6nNOXD+gAvPoDxSB0P0+77z6RNQT4efG+CA7yv5EUKv30w9VzbjR4pcggepd1Fjugjr9qToPbE
-	WtzeWywjv+fzZuOHET9MyjxoY+V7FptUGgHR0sLPZ6zHHrE/2fnZ9S0c8BlFV+2kSWtdl6KddNZfO
-	dAuOVLubL3oKvBm4cRS1YpeWyestZ/tKZCbVT+4XH1WwHj64Yq7/b+rnaeTJcn/lcSdsKl2lSwgOT
-	h570mEFT7sqtowLgiCYQ==;
+	List-Owner; bh=VhzY9MCV+iRkBlmt78A3PzNJ8+hzOWPSSNSvHmwD+bE=; b=1rVQFygzo1gO2X
+	ymmfA4kAlncB8eNZfeyAdNNvEXHWBe/b9TLTrfG6Dr9yLvfMq00pM/KOk84zoWTaVJSAGoFfEmiA5
+	1zE2QvubARvhRG21iQ4qGjVaijdpgHTOZaH5nJUx7WpWESF6ln8PAdmRbe4KqviRB4lZYzlDtGciu
+	IuYaeOR31WyKBc89g2AEQ7USRjSm37ZZZPQblS3cOTV+RwcazkU1HMg7CUKVYSHCkfXif/0xo61ER
+	wPHdhb5DRuwkEp3RXReb3WOGpO3nlqtO6R790eXVbuEM55fvhwflZ6nctzd/hWfWlMfS1S32oYtis
+	n/sU6huTzoiKt5M7GsJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wgnEg-0000000DDMG-3PQl;
-	Mon, 06 Jul 2026 17:36:02 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wgnxS-0000000DKYi-2H1J;
+	Mon, 06 Jul 2026 18:22:18 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wgnEf-0000000DDLZ-1L6v
+	id 1wgnxM-0000000DKW6-3eVI
 	for linux-phy@lists.infradead.org;
-	Mon, 06 Jul 2026 17:36:01 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 5D1D4600C3;
-	Mon,  6 Jul 2026 17:36:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id ADAAB1F000E9;
-	Mon,  6 Jul 2026 17:35:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1783359360;
-	bh=Zem70rbrr5mUsndrvjYMmanzu4feubA1RPvcfc4ftqA=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=igVkf1KxZZdtNaZ6adhBxDvm4bALwcjPPLH8xGbuVOGvTR9fbEh/QnmSsaXMEu0vu
-	 QJNLtuH2W1AsvrzhmgwzZyr72u7h6GfAop1eoQmxJ0ti+zaLpA+zsa9flIH2X/Wi8v
-	 uboVxH0488sf3lKkEMWQ4l0nhIK0CPxyNRJWUkl++Bd5jdIbInC9hPVf+23ZP4YVzp
-	 EhtwQ7FIP5Nezi8gcJW5LEh4umMnXeT8tsTxZ8JC751lr/oQY7ZRGlZD9uN5KBpnYz
-	 jt92pPeLTQAuuY5tQsRAPnH/zue7qdSzqj4kMxI5pRDWyaCDz76hajTf3SaeosqUYa
-	 JNV1s0Sjrqtyg==
-Message-ID: <9967f1a0-a9e3-4d62-b5df-7f625610a89d@kernel.org>
-Date: Mon, 6 Jul 2026 19:35:52 +0200
+	Mon, 06 Jul 2026 18:22:15 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 666FFBqW990319
+	for <linux-phy@lists.infradead.org>; Mon, 6 Jul 2026 18:22:12 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=v+oE012GSbNPmRWX2SIsV0+R
+	GluI//ijk3Ve8PNTH7A=; b=ICNziEBhOwA3ThKdqAlrIYdxEyCtsuwQxSSe4066
+	ghoWAku41y/5nokuhHf+oBQP/RpdRhK9lZZE/3sxGgXIw9LmaEnkyJTuY1jBcJ2S
+	7VmAgRXMWxsEBAiJLi89Y3uXwkKh+c+LXabxO7jjUmp37skdEt0IR05a/1+2f+tT
+	9NqScHRx77IWj03FrLHvBSe8YbOuQk5WzzHLQD4IrFGYPdcHzDcsGT2FxytZ+fZG
+	vskpbEP2/yT6z+OmZt/beWQLRIMSlFcew3PRnKM60tMs3Pdgi8xmIox0820yQHlo
+	B9NkXIubsaj2gfPpSc01mCbfRAnHJXR0w6DBjJOCrT55uw==
+Received: from mail-ua1-f72.google.com (mail-ua1-f72.google.com [209.85.222.72])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4f8a3gtbm9-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 06 Jul 2026 18:22:12 +0000 (GMT)
+Received: by mail-ua1-f72.google.com with SMTP id a1e0cc1a2514c-966a617821aso1385291241.3
+        for <linux-phy@lists.infradead.org>; Mon, 06 Jul 2026 11:22:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1783362131; x=1783966931; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=v+oE012GSbNPmRWX2SIsV0+RGluI//ijk3Ve8PNTH7A=;
+        b=b0ztEXWWR5k4tvBBce6Lh3mN98WQSjm8SKhvKxoLdxVQvFSivm4J3OlEPCqiJjF6my
+         Drn8NLSTIfApZjiGfucEt8uwpJlCbHM7Ji4B4G1ep0TJke30P8TwTN7BvnsTr3JUPnHD
+         Cgzlh5kSPcLXEEFK0TdkPeZsrFWfhM9jscZSNiAC9Ju+vM4Q4xWswxqvX7HsgiKiSdYH
+         TCT3eQbDtcrC4w4adxRTi8rYDCLrp1T5smzYVdL5lEEk5g8WNy5ngQfOAKmY4c2fVHXD
+         psSZN6iJbeegbosqyBRauhrYa90C+7Nb6KZBMp2oyCpqpalhBZb37VnU+qFaVfz5MP0M
+         2KUg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1783362131; x=1783966931;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=v+oE012GSbNPmRWX2SIsV0+RGluI//ijk3Ve8PNTH7A=;
+        b=l1gYJT4ilk3AtET0xxhV0+QgeFshGjO0CD7N5CNn1JLz6s8rmQEuzFmldXUyk4vSyl
+         snVbFMeKUDPZMTHvv9Eq2kWvJYw/zDFW6uIxrhcGBojlDstsFLCHXEIHGuOktr2RUqSU
+         lYeyVg5shEJqfNh0mtQCMWH9vefOLxx7znTeIsIpAeWZSdqtq8mjGHn+hxxxAsQtzKq9
+         CLU2BjvZ6Sx4AN/agtEYznPJLsYmrTmB2rNfzY9WOdGAEuxDKbp9muEL0/JzXJy8FczB
+         Bz+1rbhu1KCtjU2QfAkX4EhV0tTtIXoswPFrXFUa2xzWS3/+ty3UA37S3pIJaASx0J1w
+         Plfw==
+X-Forwarded-Encrypted: i=1; AHgh+RoEhF7R+XAnzhIn2jBHMhVZkHdUYckVhA6TehDKEiyq7a73KheTSrLL1n+d2fs+dZlJi5KXzckPN5U=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yxns+moypFdKOdQbsLxRIlx2N6Qm9Yq4kYDlNBxkKLc3x/qpR81
+	i/IKQNB4VOxw8aAaDepkfWygSitg1PTbra91JTUORm5nzdkWNnU3v9+jO7TPqK0V+puKSIjj9bY
+	6KEN05k+al7UCs/ahc+vnvoM8pgL8FiGB3n3MILKulrcMEP1PsGqSue2/yywUmkVBdQIO
+X-Gm-Gg: AfdE7cndVmTyORRKjBJ4bn0UpxRux/J+Nf7QENcCBL1LwvLydN9GvjG68ciQlgcn/tc
+	KMGIUnCJIdBr7AMMnolVwEZPtizWNxYBZ7ln5lCx7E42iAzfgVD6tw9swLqYtuxGW1VH56tcobh
+	cBUS0TPqgDVS+tMzaqqlr9ganhVrX2qcPANMmVrRirhZLpiWK6dACjz3i7uvz9bCk1fa6wiZVzp
+	GqlnLDXXN6kLrsXf8fKx9LFYLoID2vBrfG5/Jj4mv4Ee03IRYljp+IKSQBFDTirU23xESxSYdTO
+	JBjFbtY1C9ulnh8XPpJPrh8ubWYi0e9Q3pI8G5D3XTKjKqF75xtqloQ1j7x3cLoIrUUijvQkSvK
+	xYgP0Z/bMjDLNyY4uko1pVZNAE+yz8+g2GUFswoG+46NGNrjv2AlvLZmrTCNq+VRRoUElhxQsUm
+	A2/i0mFhcRH0kaq0lE1czZyn6p
+X-Received: by 2002:a05:6122:4d07:b0:5bd:aba5:3830 with SMTP id 71dfb90a1353d-5be89537d9emr895722e0c.0.1783362131391;
+        Mon, 06 Jul 2026 11:22:11 -0700 (PDT)
+X-Received: by 2002:a05:6122:4d07:b0:5bd:aba5:3830 with SMTP id 71dfb90a1353d-5be89537d9emr895694e0c.0.1783362130681;
+        Mon, 06 Jul 2026 11:22:10 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5aed136f8b0sm3065981e87.4.2026.07.06.11.22.07
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 06 Jul 2026 11:22:08 -0700 (PDT)
+Date: Mon, 6 Jul 2026 21:22:06 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: esteuwu@proton.me
+Cc: Bjorn Andersson <andersson@kernel.org>,
+        Michael Turquette <mturquette@baylibre.com>,
+        Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>,
+        Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Rob Clark <robin.clark@oss.qualcomm.com>,
+        Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
+        "Joerg Roedel (AMD)" <joro@8bytes.org>, Vinod Koul <vkoul@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org,
+        linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+        iommu@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
+        linux-phy@lists.infradead.org
+Subject: Re: [PATCH 1/8] clk: qcom: dispcc-sm8450: Fix mdss clocks
+Message-ID: <wgaujvwp45q4gfm76py2xbxobz5zc4hotnfxwldeysn7go6t6r@ufcuw7khhadg>
+References: <20260622-sm8450-qol-v1-0-37e2ee8df9da@proton.me>
+ <20260622-sm8450-qol-v1-1-37e2ee8df9da@proton.me>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] dt-bindings: pci: qcom,hawi-pcie: Add Maili PCIe
- compatible
-To: Manivannan Sadhasivam <mani@kernel.org>
-Cc: Vivek Pernamitta <vivek.pernamitta@oss.qualcomm.com>,
- Lorenzo Pieralisi <lpieralisi@kernel.org>,
- =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
- Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
- linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org
-References: <20260703-vdev_maili_dt_bindings-v1-0-c9df0916cd5e@oss.qualcomm.com>
- <20260703-vdev_maili_dt_bindings-v1-1-c9df0916cd5e@oss.qualcomm.com>
- <20260706-pastoral-okapi-of-reading-e5bdb3@quoll>
- <yntj62kr7tixc7capwdr6xhv2zpisfrjg62bwftgiuujf4fzt5@cjdrkglo4dv5>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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
-In-Reply-To: <yntj62kr7tixc7capwdr6xhv2zpisfrjg62bwftgiuujf4fzt5@cjdrkglo4dv5>
+Content-Disposition: inline
+In-Reply-To: <20260622-sm8450-qol-v1-1-37e2ee8df9da@proton.me>
+X-Proofpoint-GUID: TRxLkwo9-8Hz87MiW27xHgw_-AdzQJsk
+X-Proofpoint-ORIG-GUID: TRxLkwo9-8Hz87MiW27xHgw_-AdzQJsk
+X-Authority-Analysis: v=2.4 cv=CPYamxrD c=1 sm=1 tr=0 ts=6a4bf254 cx=c_pps
+ a=ULNsgckmlI/WJG3HAyAuOQ==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22 a=Rl_UxCnVGJdxiaxNqnMA:9
+ a=CjuIK1q_8ugA:10 a=1WsBpfsz9X-RYQiigVTh:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzA2MDE4NSBTYWx0ZWRfXwUky93eByuWG
+ qp3SAxMufhl9YQlZhpgMGjl56F6ySmfVhBhibltqPA21O+dZgk6tVe0HrNV6svU4QAS956q9f8T
+ shuwQsrMi4MDfV82I6q4rWoayk7PQI0gc0MvYFbLqyOqPKuXYheF/aKVCT2RY8YTSrSoD3kPU/U
+ g6UhGNCWYJoeYFGzP5aXYIrLSXzlwjqqmFzle4kUPC5P9Mwk1goxrWCCFgJqSSaPQCI+XPqtSoZ
+ nb5UvN6KU89dCyGqB1KDBsxabuzJ4UFH9gQF9tJ8xPIclun5QZQymOacJc3OTKmhM7GBTxx6hPk
+ tF+Q/0hOU55MiOGNiJE2xH6nU85mkWFuexmjVwE63jTgThENDnqVJYCjd7Btt/r+/1m6fgWtpCb
+ AIXdZGV6/90kqedNucMP7MUMhfpBSsGrZtG0PJ9Dy3JL64BYLFaI8QbZR8+GQLcCs6OttM5LFtm
+ G1J4G0y2E0/aE3URT9g==
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNzA2MDE4NSBTYWx0ZWRfX/d6y+AyB3A44
+ 4VAhyY5ertmmMD68vNnCEikABa4K08MF6f3fhONFzl9S2eRvS1mTIKFQcpcewuK9wopT0r0sNAI
+ vlb310iemEqMddY8vq3Lv1dxMOX0SX0=
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-07-06_02,2026-07-06_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ impostorscore=0 adultscore=0 clxscore=1015 priorityscore=1501 suspectscore=0
+ malwarescore=0 phishscore=0 bulkscore=0 lowpriorityscore=0 spamscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607060185
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260706_112212_909524_0AAA7DD3 
+X-CRM114-Status: GOOD (  14.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,39 +156,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 06/07/2026 18:36, Manivannan Sadhasivam wrote:
-> On Mon, Jul 06, 2026 at 08:46:41AM +0200, Krzysztof Kozlowski wrote:
->> On Fri, Jul 03, 2026 at 05:38:40PM +0530, Vivek Pernamitta wrote:
->>> Add qcom,maili-pcie as a compatible string that falls back to
->>> qcom,hawi-pcie, as the Maili SoC reuses the Hawi PCIe controller IP.
->>>
->>> The Maili SoC is a derivative of Hawi and shares the same PCIe
->>> controller architecture, allowing reuse of the existing Hawi PCIe
->>> DT bindings.
->>>
->>> Signed-off-by: Vivek Pernamitta <vivek.pernamitta@oss.qualcomm.com>
->>> ---
->>> Dependencies:
->>> - PCI: qcom: Add PCIe support for upcoming Hawi SoC
->>>   https://lore.kernel.org/all/20260625-hawi-pcie-v4-0-1a578603cd86@oss.qualcomm.com/
->>
->> Squash the patches then.
->>
+On Mon, Jun 22, 2026 at 08:54:22PM -0400, Esteban Urrutia via B4 Relay wrote:
+> From: Esteban Urrutia <esteuwu@proton.me>
 > 
-> But these are two independent SoC additions, isn't it?
+> Both of these changes allow the framebuffer to show upon boot and let
+> the mdss driver take over afterwards.
+> Before, none of these actions were possible. Only mdss takeover was
+> possible, but screen had to be turned off first.
+> 
+> OLE configuration may have been a misinterpretation... that's not
+> something that's done on the downstream driver.
 
-It's adding a single compatible, no? If a patch adding a single
-compatible cannot be done without multi-patchset dependencies making
-testing by tooling impossible, then probably that work should not be
-sent separately or even as separate patch. And I am not saying anything
-new because half a year ago (around Kaanapali and Glymur) I voiced
-strong opinion about that.
+As far as I can see, SM8475 uses lucid_ole for PLL0 / PLL1.
+So, no, this part is correct.
 
-But really, you do not need to add two compatibles in two separate patches.
+> 
+> Changing disp_cc_mdss_mdp_clk_src from clk_rcg2_shared_ops to
+> clk_rcg2_shared_no_init_park_ops fixes this warning as well:
+> 
 
-
-Best regards,
-Krzysztof
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
