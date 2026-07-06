@@ -4,58 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD672C43458
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Jul 2026 10:13:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C416C43458
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Jul 2026 11:22:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jngz7Q7OEdN8PoeCOaXxWcqo4/eIQCcaU+gyrH4Mtrw=; b=tD3UK7RZ/tGnKs
-	Fnv9KUCBdmcSDpziJcKkv2GJhbz1hMXEg8MxC4axk6F7ZICuS9CUyq0e0bl9rPycfI6Qn/6pdizSt
-	ZI6L9i5LAkP7IBJIHsdldjwZQjQ2wajHdMAANVQqQhMGM1A92kLlDbghyIoTIWDpfrpbqcbRGjLcy
-	LVnFb2QSfTlx+8PlmNhU+y7BermdhInsIAptIJkJjpZ71ykjSsH9M/VKiRRMOeBLZjcRgNY6Bqwyz
-	L10Q1TWxJ10S9PVN/jlrQ+pJuH9r07u39Ei8+RvxXeZTUc2UMODzNnlTf5q7jb2EC58BW5Co7dUZZ
-	9ag2oK7OKXMfA+8vdLmQ==;
+	List-Owner; bh=tFvNaqmjFCUl67PilR2cMbhmyb91SExChwDdMBUJAg4=; b=dabwPM8ReomakZ
+	KyxLbXQKnZhQkIfoP5XqAttbITXtoX7vxZIvK3y7qXIT3u4agtzNCXSoBGkedE1DmxzVY/+Hgl5KE
+	LAw8P3eZJO6ad2yvYRD2ju/lCTPmk6JJxcYmUvjCEJ7p402JFuS7s0hyVwiuTKVObjYVQxc2ZGgaq
+	S3qVDjqXtIJYzabE+oEJdUbjoiuDVZabJnqcYpJSWi5W4mYmuXEx3Sot03HhEcMUYTuVMDT4rUxZG
+	rouvszeSnvGKvSJuutBKR8nTKzQrpn//81aqzDM63dewbMBNijZTOhgQEXEOu83aJ7ifqJNlGt4IU
+	1gls3oZDTVpmJbKl3lQg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wggKE-0000000CA36-1s7e;
-	Mon, 06 Jul 2026 10:13:18 +0000
-Received: from foss.arm.com ([217.140.110.172])
-	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wggKB-0000000CA2K-0dYo;
-	Mon, 06 Jul 2026 10:13:16 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 03D4C16F3;
-	Mon,  6 Jul 2026 03:13:09 -0700 (PDT)
-Received: from [192.168.178.24] (usa-sjc-mx-foss1.foss.arm.com [172.31.20.19])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AB3B63F85F;
-	Mon,  6 Jul 2026 03:13:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=arm.com; s=foss;
-	t=1783332793; bh=M+wWN+uhCsm+rCwBHGw7kCZppIs5qzAmwl9BelRZ0b4=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=gLTLe2CCOD8CeaMQbjekS2D9KXffduPDMInyWVeVj4gpzEeyf4qp3/wDi/0LN7rKO
-	 qh9RO0bbr6W3QC2PluaOFUaezI9y02AmJ90H5yvUJ+65oBhGjCwY17SCFHgGzRrdgT
-	 kKQbKjBea2EKF87NxI6ece8hXBwdADN2CDLCtniQ=
-Message-ID: <d8042dd2-303e-4f24-b7bf-74ae080f4ae6@arm.com>
-Date: Mon, 6 Jul 2026 12:13:11 +0200
+	id 1wghPW-0000000CM3c-3ELI;
+	Mon, 06 Jul 2026 11:22:50 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
+	id 1wghPU-0000000CM3D-3Lqs;
+	Mon, 06 Jul 2026 11:22:48 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 5F42A40C2E;
+	Mon,  6 Jul 2026 11:22:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9140E1F000E9;
+	Mon,  6 Jul 2026 11:22:40 +0000 (UTC)
+Message-ID: <95b20f95-37c4-49a6-8952-e023597d9fd3@linux-m68k.org>
+Date: Mon, 6 Jul 2026 21:22:35 +1000
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: allwinner: sun4i-usb: disable the PHY2 PMU clock
- after SIDDQ setup
-To: raoxu <raoxu@uniontech.com>, vkoul@kernel.org
-Cc: wens@kernel.org, jernej.skrabec@gmail.com, samuel@sholland.org,
- neil.armstrong@linaro.org, marco.crivellari@suse.com,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org
-References: <1368E4E3485E881C+20260706093549.867442-1-raoxu@uniontech.com>
-Content-Language: en-GB
-From: Andre Przywara <andre.przywara@arm.com>
-In-Reply-To: <1368E4E3485E881C+20260706093549.867442-1-raoxu@uniontech.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260706_031315_262997_BBBA7363 
-X-CRM114-Status: GOOD (  16.10  )
+Subject: Re: [PATCH 02/13] m68k/coldfire: replace linux/gpio.h inclusions
+To: Arnd Bergmann <arnd@kernel.org>, linux-gpio@vger.kernel.org
+Cc: Arnd Bergmann <arnd@arndb.de>, Bartosz Golaszewski <brgl@kernel.org>,
+ Andrew Lunn <andrew@lunn.ch>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ Gregory Clement <gregory.clement@bootlin.com>, Frank Li <Frank.Li@nxp.com>,
+ Robert Jarzmik <robert.jarzmik@free.fr>,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Hauke Mehrtens <hauke@hauke-m.de>, =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?=
+ <zajec5@gmail.com>, Yoshinori Sato <ysato@users.sourceforge.jp>,
+ John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>,
+ Linus Walleij <linusw@kernel.org>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>, Jakub Kicinski
+ <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+ Dominik Brodowski <linux@dominikbrodowski.net>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org, patches@opensource.cirrus.com,
+ linux-m68k@lists.linux-m68k.org, linux-mips@vger.kernel.org,
+ linux-sh@vger.kernel.org, linux-input@vger.kernel.org,
+ linux-media@vger.kernel.org, netdev@vger.kernel.org,
+ linux-sunxi@lists.linux.dev, linux-phy@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-sound@vger.kernel.org
+References: <20260629132633.1300009-1-arnd@kernel.org>
+ <20260629132633.1300009-3-arnd@kernel.org>
+Content-Language: en-US
+From: Greg Ungerer <gerg@linux-m68k.org>
+In-Reply-To: <20260629132633.1300009-3-arnd@kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,55 +79,56 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+Hi Arnd,
 
-On 7/6/26 11:35, raoxu wrote:
-> From: Xu Rao <raoxu@uniontech.com>
+On 29/6/26 23:26, Arnd Bergmann wrote:
+> From: Arnd Bergmann <arnd@arndb.de>
 > 
-> sun4i_usb_phy_init() temporarily enables PHY2's clk2 when a SoC needs
-> PHY2 SIDDQ setup while initializing another PHY. However, after updating
-> PHY2's PMU register it disables the clk2 pointer from the PHY currently
-> being initialized.
+> linux/gpio.h should no longer be used, convert these instead to
+> linux/gpio/legacy.h for coldfire.
 > 
-> This leaves PHY2's clk2 enabled and also drops an extra reference from
-> the current PHY's clk2, causing the prepare/enable accounting to become
-> unbalanced.
-> 
-> Disable the same PHY2 clk2 that was enabled for the auxiliary PMU access.
-> 
-> Signed-off-by: Xu Rao <raoxu@uniontech.com>
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+
+For the ColdFire changes, LGTM:
+
+Reviewed-by: Greg Ungerer <gerg@linux-m68k.com>
+
+Regards
+Greg
+
+
+
 > ---
->   drivers/phy/allwinner/phy-sun4i-usb.c | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
+>   arch/m68k/coldfire/device.c     | 2 +-
+>   arch/m68k/include/asm/mcfgpio.h | 2 +-
+>   2 files changed, 2 insertions(+), 2 deletions(-)
 > 
-> diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
-> index e2fbf8ccf99e..839856c09e30 100644
-> --- a/drivers/phy/allwinner/phy-sun4i-usb.c
-> +++ b/drivers/phy/allwinner/phy-sun4i-usb.c
-> @@ -318,7 +318,7 @@ static int sun4i_usb_phy_init(struct phy *_phy)
->   			writel(val, phy2->pmu + REG_HCI_PHY_CTL);
->   		}
-> 
-> -		clk_disable_unprepare(phy->clk2);
-> +		clk_disable_unprepare(phy2->clk2);
-
-Interesting, this looks about right, and matches the comment above, 
-noting that phy2->clk2 is just temporarily needed. I don't remember 
-further details, only that this workaround was quite annoying and messy ;-)
-
-However I am wondering how this worked so far: This should sabotage the 
-access to the local REG_HCI_PHY_CTL access in the next few lines ...
-Any idea why this worked nevertheless?
-
-Thanks,
-Andre
-
->   	}
-> 
->   	if (phy->pmu && data->cfg->hci_phy_ctl_clear) {
-> --
-> 2.50.1
-> 
+> diff --git a/arch/m68k/coldfire/device.c b/arch/m68k/coldfire/device.c
+> index 1420bae0964f..9a0258acd998 100644
+> --- a/arch/m68k/coldfire/device.c
+> +++ b/arch/m68k/coldfire/device.c
+> @@ -12,7 +12,7 @@
+>   #include <linux/init.h>
+>   #include <linux/io.h>
+>   #include <linux/spi/spi.h>
+> -#include <linux/gpio.h>
+> +#include <linux/gpio/legacy.h>
+>   #include <linux/fec.h>
+>   #include <linux/dmaengine.h>
+>   #include <asm/traps.h>
+> diff --git a/arch/m68k/include/asm/mcfgpio.h b/arch/m68k/include/asm/mcfgpio.h
+> index 7103cfa4edb6..29726aa40eb6 100644
+> --- a/arch/m68k/include/asm/mcfgpio.h
+> +++ b/arch/m68k/include/asm/mcfgpio.h
+> @@ -16,7 +16,7 @@ int __mcfgpio_request(unsigned gpio);
+>   void __mcfgpio_free(unsigned gpio);
+>   
+>   #ifdef CONFIG_GPIOLIB
+> -#include <linux/gpio.h>
+> +#include <linux/gpio/legacy.h>
+>   #else
+>   
+>   /* our alternate 'gpiolib' functions */
 
 
 -- 
