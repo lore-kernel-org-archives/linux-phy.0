@@ -4,53 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9E02C43458
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Jul 2026 09:51:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD672C43458
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Jul 2026 10:13:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xiV1sXpJ8wu9iPjvRycf1XzL/SV0k/SIO47rEqHEtlo=; b=hXeWXTGgbgCY8f
-	iLFfanUpD77o/aWprQyPybcJNa+pE4s72sHhrQS1NV4v7hR4av2sWKV2JPp4j/k5whfAL2uHmunD4
-	zTQLtUSVPK1jaylCa7/3m7zVyHBvZs+oV7DW64+ZHzC8I1PgMN+3uYbY0O5ZCrJQn6xhXPl67LcSM
-	wQ5Fkn2q972aa/SavMH86Xca/GsJhbwmeZPcAWan8EEz3Srgb6JAvnBPPhSF9SvPsjJvbWe06mBcR
-	PE4j1e50yO3DQiuhWaVWPIpIh5lBApY2K5KuZHjog25fnr7ylwrWetPjMOEGSG0M7kuuM8ZsNqBpS
-	Ry5DKxcdf48Nfl5PpIsg==;
+	List-Owner; bh=jngz7Q7OEdN8PoeCOaXxWcqo4/eIQCcaU+gyrH4Mtrw=; b=tD3UK7RZ/tGnKs
+	Fnv9KUCBdmcSDpziJcKkv2GJhbz1hMXEg8MxC4axk6F7ZICuS9CUyq0e0bl9rPycfI6Qn/6pdizSt
+	ZI6L9i5LAkP7IBJIHsdldjwZQjQ2wajHdMAANVQqQhMGM1A92kLlDbghyIoTIWDpfrpbqcbRGjLcy
+	LVnFb2QSfTlx+8PlmNhU+y7BermdhInsIAptIJkJjpZ71ykjSsH9M/VKiRRMOeBLZjcRgNY6Bqwyz
+	L10Q1TWxJ10S9PVN/jlrQ+pJuH9r07u39Ei8+RvxXeZTUc2UMODzNnlTf5q7jb2EC58BW5Co7dUZZ
+	9ag2oK7OKXMfA+8vdLmQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wgfzJ-0000000C6qS-1FDL;
-	Mon, 06 Jul 2026 09:51:41 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
-	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wgfzH-0000000C6q9-1y6i
-	for linux-phy@lists.infradead.org;
-	Mon, 06 Jul 2026 09:51:39 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id B05C541339;
-	Mon,  6 Jul 2026 09:51:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3BC6A1F000E9;
-	Mon,  6 Jul 2026 09:51:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1783331498;
-	bh=80SEud9SSc5nJCoaBVMLg2nI39mL2JAnoC0LmxzoV6U=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=oVE5z6rjQExt9y1NQmCxeVey4T7MnRN8wrEpdbAmu6izBftqpErQNYE1ek89Map3I
-	 HJxCN01xL2sPNP3M+EK+5NbP8rei1JiNQGMEYiI1DOtuBkvBx1fMcZLPjcQZo01YGQ
-	 zjwStJkEFDE2kGElSD3zhJbv33E2bMxLLQqs/yI2bdXTcL2t+WYu1uMvO05n4N9CVm
-	 eHhEsJzvS+k6jzmaJs1fXXnnUjg8aKeUNagBB8Ab4SFb9Rt36nUDhnfZ94JFFe4pfL
-	 u1pqxpORstRJYK35d9dHw0WpccDHKHY/QEM4Uex8iIfsR6EYF1oBbb6zO0kD5inOYn
-	 FMlwk/espjCtA==
-From: sashiko-bot@kernel.org
+	id 1wggKE-0000000CA36-1s7e;
+	Mon, 06 Jul 2026 10:13:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
+	id 1wggKB-0000000CA2K-0dYo;
+	Mon, 06 Jul 2026 10:13:16 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 03D4C16F3;
+	Mon,  6 Jul 2026 03:13:09 -0700 (PDT)
+Received: from [192.168.178.24] (usa-sjc-mx-foss1.foss.arm.com [172.31.20.19])
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AB3B63F85F;
+	Mon,  6 Jul 2026 03:13:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=arm.com; s=foss;
+	t=1783332793; bh=M+wWN+uhCsm+rCwBHGw7kCZppIs5qzAmwl9BelRZ0b4=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=gLTLe2CCOD8CeaMQbjekS2D9KXffduPDMInyWVeVj4gpzEeyf4qp3/wDi/0LN7rKO
+	 qh9RO0bbr6W3QC2PluaOFUaezI9y02AmJ90H5yvUJ+65oBhGjCwY17SCFHgGzRrdgT
+	 kKQbKjBea2EKF87NxI6ece8hXBwdADN2CDLCtniQ=
+Message-ID: <d8042dd2-303e-4f24-b7bf-74ae080f4ae6@arm.com>
+Date: Mon, 6 Jul 2026 12:13:11 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH] phy: allwinner: sun4i-usb: disable the PHY2 PMU clock
  after SIDDQ setup
-To: raoxu <raoxu@uniontech.com>
-Cc: olteanv@gmail.com, linux-sunxi@lists.linux.dev, vkoul@kernel.org, linux-phy@lists.infradead.org, neil.armstrong@linaro.org
-In-Reply-To: <1368E4E3485E881C+20260706093549.867442-1-raoxu@uniontech.com>
+To: raoxu <raoxu@uniontech.com>, vkoul@kernel.org
+Cc: wens@kernel.org, jernej.skrabec@gmail.com, samuel@sholland.org,
+ neil.armstrong@linaro.org, marco.crivellari@suse.com,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org
 References: <1368E4E3485E881C+20260706093549.867442-1-raoxu@uniontech.com>
-Date: Mon, 06 Jul 2026 09:51:37 +0000
-Message-Id: <20260706095138.3BC6A1F000E9@smtp.kernel.org>
+Content-Language: en-GB
+From: Andre Przywara <andre.przywara@arm.com>
+In-Reply-To: <1368E4E3485E881C+20260706093549.867442-1-raoxu@uniontech.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260706_031315_262997_BBBA7363 
+X-CRM114-Status: GOOD (  16.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,58 +67,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
-IFtIaWdoXSBDb25jdXJyZW50IHVzYWdlIG9mIFBIWTIgcmVzdWx0cyBpbiBoYXJkd2FyZSBtYWxm
-dW5jdGlvbiBiZWNhdXNlIGBwaHkyLT5yZXNldGAgaXMgcmVxdWVzdGVkIGFzIGFuIGV4Y2x1c2l2
-ZSByZXNldCBjb250cm9sLgotIFtIaWdoXSBUaGUgY2xvY2sgYW5kIHJlc2V0IHRlYXJkb3duIG9y
-ZGVyIGZvciBgcGh5MmAgaW4gYHN1bjRpX3VzYl9waHlfZXhpdCgpYCBpcyBpbnZlcnRlZCBhbmQg
-YXN5bW1ldHJpYyB3aXRoIGl0cyBpbml0aWFsaXphdGlvbi4KLS0KCmNvbW1pdCA5YzMzZTAwZDMz
-NzViNGE1Y2IwNmRiZGIxMWJjODc0Yzg5NjBmY2ZmCkF1dGhvcjogWHUgUmFvIDxyYW94dUB1bmlv
-bnRlY2guY29tPgoKcGh5OiBhbGx3aW5uZXI6IHN1bjRpLXVzYjogZGlzYWJsZSB0aGUgUEhZMiBQ
-TVUgY2xvY2sgYWZ0ZXIgU0lERFEgc2V0dXAKClRoaXMgY29tbWl0IGZpeGVzIGEgY2xvY2sgYWNj
-b3VudGluZyBpbWJhbGFuY2UgYnkgZW5zdXJpbmcgdGhlIHNhbWUgUEhZMgpjbGsyIHRoYXQgd2Fz
-IGVuYWJsZWQgZm9yIGF1eGlsaWFyeSBQTVUgYWNjZXNzIGlzIGNvcnJlY3RseSBkaXNhYmxlZCwK
-cmF0aGVyIHRoYW4gZGlzYWJsaW5nIHRoZSBjdXJyZW50IFBIWSdzIGNsazIuCgo+IGRpZmYgLS1n
-aXQgYS9kcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjRpLXVzYi5jIGIvZHJpdmVycy9waHkv
-YWxsd2lubmVyL3BoeS1zdW40aS11c2IuYwo+IGluZGV4IGUyZmJmOGNjZjk5ZTEuLjgzOTg1NmMw
-OWUzMDUgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9waHkvYWxsd2lubmVyL3BoeS1zdW40aS11c2Iu
-Ywo+ICsrKyBiL2RyaXZlcnMvcGh5L2FsbHdpbm5lci9waHktc3VuNGktdXNiLmMKPiBAQCAtMzE4
-LDcgKzMxOCw3IEBAIHN0YXRpYyBpbnQgc3VuNGlfdXNiX3BoeV9pbml0KHN0cnVjdCBwaHkgKl9w
-aHkpCj4gIAkJCXdyaXRlbCh2YWwsIHBoeTItPnBtdSArIFJFR19IQ0lfUEhZX0NUTCk7Cj4gIAkJ
-fQo+ICAKPiAtCQljbGtfZGlzYWJsZV91bnByZXBhcmUocGh5LT5jbGsyKTsKPiArCQljbGtfZGlz
-YWJsZV91bnByZXBhcmUocGh5Mi0+Y2xrMik7Cj4gIAl9CgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMg
-aXMgYSBwcmUtZXhpc3RpbmcgaXNzdWUsIGJ1dCBzaW5jZSB0aGlzIHBhdGNoIGRlYWxzIHdpdGgg
-UEhZMiByZXNvdXJjZQphY2NvdW50aW5nLCBkb2VzIHRoZSByZXNldCBjb250cm9sIGZvciBQSFky
-IGFsc28gaGF2ZSBhIGNvbmN1cnJlbnQgdXNhZ2UKaXNzdWU/CgpJbiBzdW40aV91c2JfcGh5X3By
-b2JlKCksIHRoZSByZXNldCBjb250cm9sIGlzIGZldGNoZWQgZXhjbHVzaXZlbHk6CgpzdW40aV91
-c2JfcGh5X3Byb2JlKCkKICAgIC4uLgogICAgcGh5LT5yZXNldCA9IGRldm1fcmVzZXRfY29udHJv
-bF9nZXQoZGV2LCBuYW1lKTsKCkJlY2F1c2UgaXQgaXMgYW4gZXhjbHVzaXZlIHJlc2V0IGNvbnRy
-b2wsIGl0IGRvZXMgbm90IG1haW50YWluIGEgcmVmZXJlbmNlCmNvdW50IGZvciBhc3NlcnRpb25z
-LiBXaGVuIG11bHRpcGxlIFBIWXMgKGxpa2UgUEhZMCBhbmQgUEhZMSkgaW5kZXBlbmRlbnRseQp1
-c2UgUEhZMiwgd29uJ3Qgb25lIFBIWSBleGl0aW5nIHVuY29uZGl0aW9uYWxseSBhc3NlcnQgcGh5
-Mi0+cmVzZXQgYW5kCmluc3RhbnRseSBicmVhayB0aGUgb3RoZXIgYWN0aXZlIFBIWXM/CgpzdW40
-aV91c2JfcGh5X2V4aXQoKQogICAgLi4uCiAgICByZXNldF9jb250cm9sX2Fzc2VydChwaHkyLT5y
-ZXNldCk7CgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgaXMgYWxzbyBhIHByZS1leGlzdGluZyBpc3N1
-ZSwgYnV0IHRoZSBjbG9jayBhbmQgcmVzZXQgdGVhcmRvd24gb3JkZXIKZm9yIHBoeTIgYXBwZWFy
-cyBpbnZlcnRlZCBpbiBzdW40aV91c2JfcGh5X2V4aXQoKSBjb21wYXJlZCB0byBob3cgaXQgaXMK
-c2FmZWx5IGluaXRpYWxpemVkIGhlcmUgaW4gc3VuNGlfdXNiX3BoeV9pbml0KCkuCgpJbiBzdW40
-aV91c2JfcGh5X2luaXQoKSwgcGh5Mi0+Y2xrIGlzIGVuYWJsZWQgYmVmb3JlIHBoeTItPnJlc2V0
-IGlzCmRlYXNzZXJ0ZWQuIEhvd2V2ZXIsIGluIHN1bjRpX3VzYl9waHlfZXhpdCgpLCB0aGUgY2xv
-Y2sgaXMgZGlzYWJsZWQgYmVmb3JlCnRoZSByZXNldCBpcyBhc3NlcnRlZDoKCnN1bjRpX3VzYl9w
-aHlfZXhpdCgpCiAgICAuLi4KICAgIGNsa19kaXNhYmxlX3VucHJlcGFyZShwaHkyLT5jbGspOwog
-ICAgcmVzZXRfY29udHJvbF9hc3NlcnQocGh5Mi0+cmVzZXQpOwoKQ291bGQgYXNzZXJ0aW5nIHRo
-ZSByZXNldCBvbiBhbiB1bmNsb2NrZWQgaGFyZHdhcmUgYmxvY2sgbGVhdmUgdGhlIFBIWTIKYmxv
-Y2sgaW4gYW4gdW5kZWZpbmVkIG9yIHN0dWNrIHN0YXRlPwoKPiAgCj4gIAlpZiAocGh5LT5wbXUg
-JiYgZGF0YS0+Y2ZnLT5oY2lfcGh5X2N0bF9jbGVhcikgewoKLS0gClNhc2hpa28gQUkgcmV2aWV3
-IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8xMzY4RTRFMzQ4NUU4ODFDKzIwMjYw
-NzA2MDkzNTQ5Ljg2NzQ0Mi0xLXJhb3h1QHVuaW9udGVjaC5jb20/cGFydD0xCgotLSAKbGludXgt
-cGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+Hi,
+
+On 7/6/26 11:35, raoxu wrote:
+> From: Xu Rao <raoxu@uniontech.com>
+> 
+> sun4i_usb_phy_init() temporarily enables PHY2's clk2 when a SoC needs
+> PHY2 SIDDQ setup while initializing another PHY. However, after updating
+> PHY2's PMU register it disables the clk2 pointer from the PHY currently
+> being initialized.
+> 
+> This leaves PHY2's clk2 enabled and also drops an extra reference from
+> the current PHY's clk2, causing the prepare/enable accounting to become
+> unbalanced.
+> 
+> Disable the same PHY2 clk2 that was enabled for the auxiliary PMU access.
+> 
+> Signed-off-by: Xu Rao <raoxu@uniontech.com>
+> ---
+>   drivers/phy/allwinner/phy-sun4i-usb.c | 2 +-
+>   1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
+> index e2fbf8ccf99e..839856c09e30 100644
+> --- a/drivers/phy/allwinner/phy-sun4i-usb.c
+> +++ b/drivers/phy/allwinner/phy-sun4i-usb.c
+> @@ -318,7 +318,7 @@ static int sun4i_usb_phy_init(struct phy *_phy)
+>   			writel(val, phy2->pmu + REG_HCI_PHY_CTL);
+>   		}
+> 
+> -		clk_disable_unprepare(phy->clk2);
+> +		clk_disable_unprepare(phy2->clk2);
+
+Interesting, this looks about right, and matches the comment above, 
+noting that phy2->clk2 is just temporarily needed. I don't remember 
+further details, only that this workaround was quite annoying and messy ;-)
+
+However I am wondering how this worked so far: This should sabotage the 
+access to the local REG_HCI_PHY_CTL access in the next few lines ...
+Any idea why this worked nevertheless?
+
+Thanks,
+Andre
+
+>   	}
+> 
+>   	if (phy->pmu && data->cfg->hci_phy_ctl_clear) {
+> --
+> 2.50.1
+> 
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
