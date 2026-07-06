@@ -4,71 +4,143 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85BA7C43458
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Jul 2026 14:45:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89EE7C43602
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Jul 2026 15:37:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:From:To:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iGpj6Ij8evpM4mGgdqWfI/AKV+ypccACLlU8pKNRc/g=; b=CCRZwUrlbr09cU
-	hex0WokmBrsvcg1Pn5Zqc6P2FhEG1UwDuvqNbCwvJ/tuVCaCziPx0aSbKy5ApFYr0SDQ1vGNBr++8
-	JRbuN5znCflqbAAxDkqv3qJGpxXRcIQaALS4iFu9fu+e/gXawRYuRYgysvyoquTbS5jGkM3+yYliw
-	NpplrkXy/V92iXAku2QteD9p3eCJ/fG1nrbTy5pdnmcvH9ILMMe32iU53gBx8Wf/v5bQsiE+V0l3C
-	E56Y+3JIfe3RBj+sOcSwd5UqHClxLlLBX9QGd6iJocT8J0V6WeJZMaXaKS07YBxSpYUceqvxTlJul
-	8xe+XD5pC24ELbj8e+cA==;
+	List-Owner; bh=thJSCxRMOAeWpxgsCc+1W4vWpspiKD2P3vNipOJ66rE=; b=ZNVleuakXQyvNZ
+	wc2htVe1nTP3cnBybYct5rekN8Wl6uQNLs00zIxbgHKCUmdfrjvEfzFcuxBEEbXr5ByYCySyCOC28
+	9rCrXwUyp70MgA5Q47xth6PyxmxNbWm+fJq4IJvXIbJS1LJMF5wvTTpjmPDNWyeL1CNW8iQfOjDWb
+	TUhXSI6TlYPF65hEXCD4PFbJ3sHxv/jtGPTpWZ79ln7NEYvs4yqXYpTqnqRDZ0gGN9ytuQH9jaqyH
+	gpO/55ISnmwnIfPea/r5/7NO2rOPRKd2CodWxEYU3cGA6uDpkOnUqXXB1f4a0VEcPdzCp2Kf7mAXT
+	2YXUFRnd4touCEWEfeKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wgkZO-0000000Cn3a-0M0s;
-	Mon, 06 Jul 2026 14:45:14 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1wglOD-0000000CucS-0exv;
+	Mon, 06 Jul 2026 15:37:45 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wgkZK-0000000Cn1l-2qgz
-	for linux-phy@bombadil.infradead.org;
-	Mon, 06 Jul 2026 14:45:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:From:To:Date:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=AsCqUSepLV1EVCdAVb1gjnK16IGOCWPNy8kXiha5vOI=; b=gMJhOtqyYqMwz7E7eW5EreXKkt
-	AiJLr/YtSMcRdW7XcfEXgJHuWl66WV+ImpI9EeIDaKUWYFs4L2FgLMUuEtWCIdjVgGlIiToraxHtP
-	h2YIchuT9PNo5CPIFAGTlCLwusHoJHqA5v0p/rces7Go6U1UVv/syRZlY5eR9lMgkNF5lObgER0jo
-	vicrmt43nfPJB4hVUfs7n8TiZSvF6UgTpNm5ojRZ7Ivh5jsLF//k3n8Q14bxjd5WsSrttdkefVyKv
-	2f+Y7YpXPoCh2E1d1tLc3erqpSEAOxHPZBFMVIRMGRSwNN9HqFvnKsBreLmxdAtBS/f4TuIGI9cuO
-	AExqComQ==;
-Received: from mail-24417.protonmail.ch ([109.224.244.17])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1wgkZH-00000006fco-3WZ8
+	id 1wglOB-0000000Cubf-1lqD
 	for linux-phy@lists.infradead.org;
-	Mon, 06 Jul 2026 14:45:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
-	s=protonmail; t=1783349097; x=1783608297;
-	bh=AsCqUSepLV1EVCdAVb1gjnK16IGOCWPNy8kXiha5vOI=;
-	h=Date:To:From:Cc:Subject:Message-ID:In-Reply-To:References:
-	 Feedback-ID:From:To:Cc:Date:Subject:Reply-To:Feedback-ID:
-	 Message-ID:BIMI-Selector;
-	b=VipuLJ4un5PyrPcU0KPcGiK0xJEfiUV3xhrpBqr6mg8Mps1BbtBjxAM5646uVOKIy
-	 SlksiiSCQ4zT91kZrt2NMczhh5luxT2AaTiVzcPgJFBMOQkWgrhjcTPhaVxRzqJAuX
-	 iF/4etLGMFunrq4FAQ5Dq13xGej6umdPTOu+JTsxCWybEDAk/+Vl+3gkCr/4gQtmqD
-	 MY4lCSXXMGSjQgsHN+hWWv1d7NbqwLMzz0bJw+JnB+eSGjRfgt1aCO0qX9GMDWITnT
-	 qC5d5gzcCEqZL+J3mqXcDsGcx2iqvZgwEMJiTm3gWploRJZijlDPERGrnjggRphVZS
-	 /tpVlyzwY0cLQ==
-Date: Mon, 06 Jul 2026 14:44:51 +0000
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, Bjorn Andersson <andersson@kernel.org>, Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>, Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Rob Clark <robin.clark@oss.qualcomm.com>, Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>, "Joerg Roedel (AMD)" <joro@8bytes.org>, Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-From: Esteban Urrutia <esteuwu@proton.me>
-Cc: linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, iommu@lists.linux.dev, linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH 7/8] phy: qcom: qmp-combo: Correct pre-emphasis table for QMP v4 DP PHYs
-Message-ID: <9a203e5e-5d16-400d-a507-8b68df8eb017@proton.me>
-In-Reply-To: <4635a665-f605-4647-810d-c9d83a271a86@oss.qualcomm.com>
-References: <20260622-sm8450-qol-v1-0-37e2ee8df9da@proton.me> <20260622-sm8450-qol-v1-7-37e2ee8df9da@proton.me> <4635a665-f605-4647-810d-c9d83a271a86@oss.qualcomm.com>
-Feedback-ID: 147889766:user:proton
-X-Pm-Message-ID: 4d9a7c56b233fd2d39549ef51db60aa12ffaa5e3
+	Mon, 06 Jul 2026 15:37:44 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 666FFCAs990326
+	for <linux-phy@lists.infradead.org>; Mon, 6 Jul 2026 15:37:43 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	1hUvU7+YPjYZoemxWGudb5HAwYsBJ2lip94he8TAung=; b=O62LOiTIr+OGbYsa
+	2foSvydPvNkHVmJAENUjbCvuLzrUhR87vjk2oDpW4PEYBQf/KtjJgOJt7ak0Go9W
+	xzoAAu7+KaJgvYQ6TXnLdeC10aDkmcJzLNxolwNfueGhbm//zDOOiweTTPwz99yw
+	iXHcAT5At5jCQMFwdAKC6prWW3vEXA70Sk0cuRpV29yFWOBF2AIiJG9wwQS5pr6O
+	wwyAHNkZTHei7IYUMR4VTvtxsGaEEunvyasH/fkR5D8HTD5gSiFkFjCLP1ho4RLi
+	uRzIS92Sq4SB09zp9mAeAkOOaGdBBPpFRelJTdF0X034L0eh9iW+GbdzkTKPF01Z
+	4oDUqA==
+Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com [209.85.160.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4f8a3gshev-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 06 Jul 2026 15:37:42 +0000 (GMT)
+Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-51c15c77619so7357651cf.1
+        for <linux-phy@lists.infradead.org>; Mon, 06 Jul 2026 08:37:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1783352262; x=1783957062; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=1hUvU7+YPjYZoemxWGudb5HAwYsBJ2lip94he8TAung=;
+        b=f45udZ158snxXewtN1CdigHvXlCCsSGlWVHu6i/DaKPLKZac0eSSyiM4X75BAWQq8u
+         3RMMBZhAxuPIzspmm4eLvcwWO1hd/Z4jW+CcvgcSdQRPm560VDcxcnMaUufKRhOIeEKv
+         h3EwseuUwix2Jl6FciB6qv8zFUgz1/2PRGKM6lXmzsVcCK3xj+2LVTjXi10UXqxEUgru
+         aHFTZOvE3nlZ3DVuzUp9fF5vE5vQLwGg0Ke9tTaM1LDxFh6AxhBL4eCdZgnxFizzAddl
+         fa4G8ZVoA9C/XmYQ5zvrpeIPP9euCbCe8kVbKJf929GFzkqVbB7mBhhaO3IHbEnUtKqc
+         pDYw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1783352262; x=1783957062;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=1hUvU7+YPjYZoemxWGudb5HAwYsBJ2lip94he8TAung=;
+        b=Wtcai14TpNrYd/qqTpSQnRkNIYEszPFr9Z1G9AXiyQuu/fRMRzYnEaLw+EeJrkaMij
+         OY+tJXYobrez5b/6QLK5IjcwsyyUIZrTmfO38SFNGivxWYaFLyTPyaCVSfd2n5oYp/wv
+         a8s4dXIwjHAItDcLcnjkS9vwir1+I6MFMPt6kxjsmXrOuF5KBOf/6FC5YFbQkUQ2FUl1
+         wsdDXLuAsMApk6BTzLUP7EiyFD88KLLtXaoDNbRBT1uvVBu1FnMuZd13JIbBTbZhO7N5
+         +SwswYEMeHEX7nYjXUpZNCAge1QxE9QLYnqJj3fYvdUFjcOdxePz4JSKLJx8JTZNvYL4
+         crdg==
+X-Forwarded-Encrypted: i=1; AHgh+RoXtfY9tXzjDf3PhCBGYsVaBsbkrDqPDek/J6FFtyaUgGaakJNBGdP26mRBXz8ySUKpNKMcqCiXcOU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxqfghojMItVW7UWe3nuQs5gCzxrZGAf43NuY/yEUWkc/6cGO3M
+	V7mLZLfz2AU6KIRCRduHljwRLNQRRHNFOTVCiNUf2C/XvxhuZR/9W5d6XQZ5GJF+ozVowjZUz+n
+	QJvVdJwp3XgT+dcfaYnIWzF79c+/EYGF/dW3Oc0ECcNWVA1SuMmQP/VdMZxEaFOWOMy2g
+X-Gm-Gg: AfdE7cmrzCgbQyiUwA8WGzmFavHTJjHjLJEPSxOIvHQKZFPWqT6HNS2z4JAeNr5tle6
+	f4dW9Bnp6eFxnjKDHGVNxHOHH/RyQLm082O8Q8lGKiF/aJ3jfLqHXbZyUfhbPG6xnxeJPdoyAdM
+	pWETq3LaxCZLTBEtlt9+obkFMPDww7sB/MPXv6mi6c353YE1FuDKNer1zIQWYOMLlI1+LVDQaXc
+	l2+m1uTO9bIiAFwW0+Xc8zhG0cIY1KiinAfQbGRuOIL2ONH6V2HN0ek9PDySg4T0k0qdBue6S6D
+	li2Wk3Z7Xq0eSy9fzRERdsCDhj0eopq0tzA3evi8ArrdwnwhW34AMn05mB4F7ue1v87nQC+UrlB
+	qsULNq4Ye2wZwU8qU4Oc09yNh2vO8w+81gYE=
+X-Received: by 2002:a05:622a:144e:b0:51c:215:3e81 with SMTP id d75a77b69052e-51c4bddbc26mr100069631cf.4.1783352261785;
+        Mon, 06 Jul 2026 08:37:41 -0700 (PDT)
+X-Received: by 2002:a05:622a:144e:b0:51c:215:3e81 with SMTP id d75a77b69052e-51c4bddbc26mr100068971cf.4.1783352261047;
+        Mon, 06 Jul 2026 08:37:41 -0700 (PDT)
+Received: from [192.168.120.193] ([178.235.128.140])
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-69a19cd8904sm4294955a12.2.2026.07.06.08.37.38
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 06 Jul 2026 08:37:40 -0700 (PDT)
+Message-ID: <decdd6fe-7460-42fe-9e53-0352f291d538@oss.qualcomm.com>
+Date: Mon, 6 Jul 2026 17:37:37 +0200
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 1/3] phy: qcom-qusb2: enable autoresume on Talos
+ platforms
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Kathiravan T <quic_kathirav@quicinc.com>,
+        Baruch Siach <baruch@tkos.co.il>, Dmitry Baryshkov <lumag@kernel.org>,
+        Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>,
+        Manu Gautam <mgautam@codeaurora.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org, stable@vger.kernel.org
+References: <20260706-fix-qusb2-v2-0-8d9cd73b1db7@oss.qualcomm.com>
+ <20260706-fix-qusb2-v2-1-8d9cd73b1db7@oss.qualcomm.com>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <20260706-fix-qusb2-v2-1-8d9cd73b1db7@oss.qualcomm.com>
+X-Proofpoint-GUID: GwI07wtpNO35UzOplnXZ0Ha8dlSWQWmA
+X-Proofpoint-ORIG-GUID: GwI07wtpNO35UzOplnXZ0Ha8dlSWQWmA
+X-Authority-Analysis: v=2.4 cv=CPYamxrD c=1 sm=1 tr=0 ts=6a4bcbc6 cx=c_pps
+ a=WeENfcodrlLV9YRTxbY/uA==:117 a=PRfkaYvzSr8QmIIGAkY2Sg==:17
+ a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
+ a=EUspDBNiAAAA:8 a=VwQbUJbxAAAA:8 a=w1RBZjOZuwMwct0x8h4A:9 a=QEXdDO2ut3YA:10
+ a=kacYvNCVWA4VmyqE58fU:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzA2MDE1NyBTYWx0ZWRfX4unHL71UBiPR
+ 0ICfZ1LqSVhQD7zjCIEPK2wgQBuK/82B5FIkE/AdQUTyv7EW/kgtNxCN/2pYQz95xK3/GaXfuLQ
+ V6v0s33Yy1ym/ijNkIB1imKHWQyLmJfVf8ZHEAUvckCP7X0PaANmF6A8EpNcoQdGd0VK65AYOYH
+ cFhew19xnnikgmwhInBAeMIwCakeiyOcJfJ0FPXzFm8LIWieVP/eYb0caaY72PuoSSYmO7q5WuT
+ xEVClAbpavkvyT9sAT/CCfJVQ6/NXaaxc2PeMZtdi9S/nHa4XAghR93IQkJo3U4l+hMIGJhRvNy
+ i0bibyvYg+6doegJw6hS20LHOM9gyDd2GuOwvrEA8/wyY561cv0p6K+2jB5tuO8RDPBf0u9wjTP
+ npNUssZayZ/rJxvbK/F7RyPlE71MR+JbyD7q0phtrWyTVo8RCkzNACLcYnpifweZoxFA6TEFdgb
+ 3KoQgFifeX4aEU/ShfQ==
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNzA2MDE1NyBTYWx0ZWRfX2XphPqc4Mzxa
+ UrVXCWzSQzRacTEod1+wBoERJPE9KCc9op66yMdAzqCKCn1fsTi6J/FHUcX5Zr6zgC0ANYSeofJ
+ 8NGKm/c0zni1TP9ivoJMgsaHEsLHNrc=
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-07-06_02,2026-07-06_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ impostorscore=0 adultscore=0 clxscore=1015 priorityscore=1501 suspectscore=0
+ malwarescore=0 phishscore=0 bulkscore=0 lowpriorityscore=0 spamscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607060157
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260706_154508_000510_1E20668A 
-X-CRM114-Status: UNSURE (   5.14  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260706_083743_483125_FD7AF29D 
+X-CRM114-Status: GOOD (  10.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,14 +157,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 6/23/26 7:36 AM, Konrad Dybcio wrote:
-> It seems like 8350/8450 should be using what this driver calls
-> v5 tables, with this fixup:
-Any updates on this?
+On 7/6/26 3:53 PM, Dmitry Baryshkov wrote:
+> According to Krishna, having autoresume disabled on Talos is a c&p
+> error and it should be enabled.
+> 
+> Suggested-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+> Fixes: 8adbf20e0502 ("phy: qcom-qusb2: Add support for QCS615")
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+> ---
 
-Regards,
-Esteban
+Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 
+Konrad
 
 -- 
 linux-phy mailing list
