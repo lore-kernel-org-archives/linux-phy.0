@@ -4,99 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B598C43602
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Jul 2026 22:36:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1A070C43458
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Jul 2026 22:44:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w8RjotNb56j05JAkkyYlbc5Qjh6t8EWqyv4/6VCgjZU=; b=GzX81VeUg5osyO
-	QQqOYdJtjuGLK07fFHRUQTlBUz28Ff6CbLovnGzwvvroUQ7exm6JKKa1mIp12JHSLT7c1YI+lkZm3
-	WgTy3U/uElyQzHqtVuIlycZWnjQnsV/CYjZjiaohpy524VIscQUeYpj9LDITKLRMNaJFdjWLuFend
-	VsTgf//mTHEdm6tKt0Sfe9EC2dfyw205W64e0sahETxNw2C3CdvcSlo/PCSVVbzkjthIs05QipQ7e
-	+zbaQ8aaCXQj8sWVmAaUA4e+hftg7cJ9oBdcAIQ7J2/uM9iv/nfDtH8HNvAbaJQo03+81ntvft4Js
-	wFi0VZ5W/q2RMxKL5XjA==;
+	List-Owner; bh=wlzvMpfl1QEvdiLDP3405JxYfFT6qGTer1xoqFuHu34=; b=tBZ46JMCr5xPAT
+	eSD4HDVCo+VxfNOWYE6WfBleSz4zT8RFSzcoCqwRmASg6fJUDiCBu0BdH4NM8fg7WMrvekBBYhzFS
+	XnqeM3O1nzPjUE3qy/kS1TE0r4fv1gdvDBK4in9264nAaXQAPkex6TunyvRHYRS35VG7nKwlSkgXH
+	I4gi5SLiYhR8Pd5Dht/gXPoXNTkbZyZD122woOKEUSaUeARD4A8BeGNyW0Fjg9BThvUbmkbSnJkHX
+	jfQcBjdOga+nRiFPqiRuAdPhjm1isiKer9Dt2ginxhlcVGdRZDkFPhhiMcKGXvO2HhzGSgFDgqxac
+	FELm/tSL3ky/hXG2eiQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wgrvg-0000000Dj85-1RnP;
-	Mon, 06 Jul 2026 22:36:44 +0000
-Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
+	id 1wgs2q-0000000DkHK-2kbd;
+	Mon, 06 Jul 2026 22:44:08 +0000
+Received: from mail-oo1-xc2b.google.com ([2607:f8b0:4864:20::c2b])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wgrvc-0000000Dj2g-1uMK
+	id 1wgs2o-0000000DkGu-0Yr8
 	for linux-phy@lists.infradead.org;
-	Mon, 06 Jul 2026 22:36:42 +0000
-Received: by mail-wr1-x42f.google.com with SMTP id ffacd0b85a97d-47dc6e04367so469218f8f.1
-        for <linux-phy@lists.infradead.org>; Mon, 06 Jul 2026 15:36:39 -0700 (PDT)
+	Mon, 06 Jul 2026 22:44:07 +0000
+Received: by mail-oo1-xc2b.google.com with SMTP id 006d021491bc7-6a192afad7dso1878685eaf.2
+        for <linux-phy@lists.infradead.org>; Mon, 06 Jul 2026 15:44:04 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1783377843; cv=none;
+        d=google.com; s=arc-20260327;
+        b=lamNOMItys17RvMgWp6LG7hFgP2BQKGy83YUcqTxyPyp6VCJ0AiiqolDnDjCHx2Jmy
+         Kez/4b2dwK/HSLM16+ql2ZejAe/o/V1eexBZmE3Ufb/0KxwpD77ybVrSOMAgSiqfZzPo
+         twDFwXR/EN6bDkyLN6wVvPaHS1D4cOvrwzlhFYZqYF6JpYVZq8FTYpH42xmyQ9uyZcQy
+         5ONcNG+S1GGJcHKh6rcGz98kfZcnDFDT4LfN8VWSdbLoiGXVYI2o7Mw9hJzMTN9qgrPS
+         /5tUNv95fgQd3jL4VeiBUdhL6CIinHW9SA0+2JttM17s6k48IM4zxpxNt/d3y9HGC2Se
+         oMTQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:dkim-signature;
+        bh=yx74mKYdJqkO2FUcIAj7kyzeQKoLU5qySEVSk2mMPWs=;
+        fh=gR9MDh5FebFo385T+Zj8WZjCGqBDRycss2/2pO67K04=;
+        b=HYkVslbKPHasHFwlEulYZ9mqy9JYCEp3fI0RbfYNc+VOhNkstlWR7muH29Ch2/M/kl
+         cDfnyn5S0oysL4+edLRuJj3ypGUqX5qO83CfHfIp2gCQJ6OauSQlUFg+KcVn5hpleqGE
+         Gv9QQMmjIe66oGCDHn2u1tQ7/mT+CAySmqn3rHzO4w2Xki7lq7jLtn66fvJaDm38deez
+         KA9Po4fjv6Dg31xjqq+f62TmmnAa1PsTtc4aGj2m7zPmSQIBbluqd37DnJ++R09yjgtt
+         BF5R+SbR2W4rVjbO1lU0ym4tyMsueThjoayGJ1u8JtdsQ2nhhJoBx3moa+EqDnKWc3QV
+         Yz1A==;
+        darn=lists.infradead.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1783377398; x=1783982198; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=xqBkhvyelySc3loJx/J76CZgVdNYoTTPG8StLA3hSFU=;
-        b=g6N1aKTlEbTeV2cihkx40ECxnyZP/crLC3Pw5LEd1ucw2VjkMe+GboqQLjvfSGpZjt
-         93dPVfo/3ROOetbKthwvl2C4+tIUJjHU1YzsYwK4rTHzkjrMmOiInG6cMqGunncSShKv
-         wTbfFWKFXD0mcXU4e5q7TyWcMAFBV9opu96gGh9TWy9lZIh0qiC6Iomjb0rkfRm9ZVu3
-         IW4xjq38hFJVfnPivM2WbdiuDR7b9322VBJMat0+e6fp66NaYS6VqHtaUWfLzEh/f3gG
-         7U+oY1BNYg9dz3AhmtqT+k5xH4OPcDBn89/dEB2rZpy0+c+fpcoTUhu3WJVMtJs+s3U9
-         pj2w==
+        d=google.com; s=20251104; t=1783377843; x=1783982643; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:cc:to:subject:message-id
+         :date:from:in-reply-to:references:mime-version:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=yx74mKYdJqkO2FUcIAj7kyzeQKoLU5qySEVSk2mMPWs=;
+        b=IZrHO4DGWYro1P6obah0SkJzpqmbaOag+WYQ8f/hzmOxFK5UAZbk/6ZFkDx52vo1f3
+         qhUIVWXF6yafWGnb4wXwCk8llAyfFrlrwtbht2sHKtfDiP9k/slwVwe9KoHOS4UdeBDA
+         Mwdui1CjJmJzV3v9aYOKmQMEyIfxQ1eHCuqSuA+/2wjjilmHLFMUxjzGCCTOiYd8gJvg
+         faWTO+VYpwIUE9eyP2m2P+/UlKcGgFyjrE4tDwgyDTzahSkxcvt9pEDWYDW7blyNVWjg
+         tGNY42TzYlao7xCVi6l7h5pfvtQcsYowuMtI9TW6FNk9COiw0hHgr8/557QZr3wPIcfM
+         ysTA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1783377398; x=1783982198;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=xqBkhvyelySc3loJx/J76CZgVdNYoTTPG8StLA3hSFU=;
-        b=SbR7FItflgTc5NpwDDz1XgYc0w4/1s+4F4lS6lOmxYCu7WDyj/GLE9+ldBo+mBLzmB
-         lpY2/cJ3XzLtTE/w2L3NEPe2q7g6rx/NorGM0H6VfkJa6kzWCbACKzpzKiN4UYSvWaws
-         WuSK67yMBs9JSqx/NCeVp2zOiMQDsF/OXyvV7hA/Lrac+SKZqRwoKGKYj4Uni4JTkl8z
-         OXnEsqsaIbsO+oQ2WICZsAygf4ld7DO13GU7n6UWMJ89cc+FEzuLETz/0+5wi6T5l1Hg
-         zLoc0YbgGDyM3wWPgJoR/0yb9eu9s04fZfKXRUypfHptdzzNfliqf9BxZa9gofQdk3DV
-         HKoA==
-X-Forwarded-Encrypted: i=1; AHgh+RpA1l6INBC+lRzrKSEJR5rNEQU7hL7K1615nhBUu2Ajl6w2JT3zWrxb2IX/RbdSpjtmEUF3eosd07Y=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwhUtA4vXvOL3tqp8qp743yodvaRvIlUEcYILMV5SQfu/0tFCdA
-	zE4lQoWVyoWvlsZNlmSbIKuiCsSo3Sw0vzUBHThwasxVm04Lz52emr06
-X-Gm-Gg: AfdE7cleLJoj7BK4n2YHe1fPhdQc4WPvq7D1t1RwVS8cSjm7+ZDaKzeJE4Rb5tofPv/
-	ZE7jz4cYTG27edh3VUOrG58p6YWzW+aweocI7EAYeUfuYjRdASNxltwEDlImK/ywVf1d7IfeZz7
-	JfJX59kLaOQscYOu+kldN0/uLWehcfd8p1XakatpYmp7/bS3V3t+KwziH8w4ICSsMbo1BheV5LP
-	IG9tFvnpxQedDIdm9A9qhAkSBTpWMA4QRsZZ4LxLNINCtSvgZOev77Ls2lBl71ILpGlQWTVGpNa
-	Yx0zMkdgdJ+sp0nyPjxJMmhksc+0z9gvpSKcT5ROdlJSzbt5WLX3PydOkuQySgzHs5Fydz+WFeB
-	ZH2CIn48/vkQmnqVagxbtV+C7AdVZgy3yUadrfDAt4OJ0QixZfxaIEZljdrngtvWm2QN5u0q04T
-	kzFTFkXGIJM1P31DK9wH5kdsL+q17aba32aIuDcqMk85lQ+v8UasJHGtmTKh9ikg==
-X-Received: by 2002:a5d:6382:0:b0:462:fdf2:3a50 with SMTP id ffacd0b85a97d-47de66a309emr1878338f8f.32.1783377398441;
-        Mon, 06 Jul 2026 15:36:38 -0700 (PDT)
-Received: from turbine.fritz.box (p5785b224.dip0.t-ipconnect.de. [87.133.178.36])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-47a9e4d6da9sm27491387f8f.12.2026.07.06.15.36.37
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 06 Jul 2026 15:36:37 -0700 (PDT)
-From: Andreas Zdziarstek <andreas.zdziarstek@gmail.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Heiko Stuebner <heiko@sntech.de>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Frank Wang <frank.wang@rock-chips.com>,
-	Louis Chauvet <louis.chauvet@bootlin.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	devicetree@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-usb@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Andreas Zdziarstek <andreas.zdziarstek@gmail.com>
-Subject: [RFC PATCH v1 2/2] arm64: dts: rockchip: fix gadget hot-plug on ODROID-M1S micro-USB
-Date: Tue,  7 Jul 2026 00:36:27 +0200
-Message-ID: <20260706223627.113814-3-andreas.zdziarstek@gmail.com>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20260706223627.113814-1-andreas.zdziarstek@gmail.com>
-References: <20260706223627.113814-1-andreas.zdziarstek@gmail.com>
+        d=1e100.net; s=20251104; t=1783377843; x=1783982643;
+        h=content-transfer-encoding:content-type:cc:to:subject:message-id
+         :date:from:in-reply-to:references:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=yx74mKYdJqkO2FUcIAj7kyzeQKoLU5qySEVSk2mMPWs=;
+        b=CgiYFzuSlakjpL17XRJTwy3mMfe5A7UtCeqe2y84i1jcOrlBkENHmc0ph+Y6akNuYI
+         gjrN0qPysTDxOamcG7a9oHpHgvt13DzN3Fj2ulWv14J5vYZTCEX6fLatZuWgaUSS4Zc+
+         TNAJXKh5sAueuwpJwzkaedj4aIY4zkL+p7UEtsCvjaph4rZ1nk+XgX3C+jRHjxwPKRoo
+         a2cbllwrVQPo+rt4s59kelkRFxPolYKg0HSe8hEBZ7anG/52czOgJs6btGsd8xp0As98
+         gzMDEL65lo8xJt9VGdbpj80ML0e0n1tpD1k8kgFS/fIfMOoaH7nibcWHLvKVQdYgSiBt
+         q7sQ==
+X-Forwarded-Encrypted: i=1; AFNElJ/c+B/SFbu+GzMIy/SdNaUd5SQOJHeIRVO2mg2aGjwmyyRHz8WBPPXFhj2mcRTx1wdbeojy5AllHrc=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwVMgeJdw1Ztq6bWma5Cxac749X0q2oNgxHuCszYE+RCovUI4sX
+	sNmbnd8Ynyf9/dW856ZtSMY0GEjaKu/CJU1/cD1cYQDQtuii4b3262//z2cDmZJuoF7Y8qYX0Ir
+	cvU6WoocuhIIwlxALGzoduoFzbJkK8E1uRcjbft9G
+X-Gm-Gg: AfdE7clHxuEp5GcUQZi94nrA85C2NzIYtpLFihz30Smmo1y+1UwL4Ml8hqsHwzxrah/
+	NPfoeprdl4UsLwheVxFYstgwLxXWvl8Plwz0sCEXlX2bWzi60MNxH/LQotZjDDvgxfsJ0m3rGCG
+	wuysrQmsQW+iVlRiEuCV6K4TCVcfRhPGR+X7Nlr0aWvUfzrJQyXRFrYnkO31pjO16Nsf0/oMfep
+	Rd7rXBPW30KqP/MXFstSfrOq2ovRtnd/6KaZgzt9EZy/i/ebJwnioHmM69OU20JNIUBA+0aAlJm
+	9VJfpxOste6Yvrf1CMsV9EXeqipvCi8=
+X-Received: by 2002:a05:6820:1392:b0:6a1:8223:466b with SMTP id
+ 006d021491bc7-6a355504c46mr1874256eaf.28.1783377842141; Mon, 06 Jul 2026
+ 15:44:02 -0700 (PDT)
 MIME-Version: 1.0
+References: <20260701022827.785674-2-rdbabiera@google.com> <20260701024002.DB4E71F000E9@smtp.kernel.org>
+In-Reply-To: <20260701024002.DB4E71F000E9@smtp.kernel.org>
+From: RD Babiera <rdbabiera@google.com>
+Date: Mon, 6 Jul 2026 15:43:51 -0700
+X-Gm-Features: AVVi8CfUsgnGHZq-c3BxQdwCm9qIfw2Qtbp7kwS_ksYMx_hhFjYJQvUN7HwDsVc
+Message-ID: <CALzBnUHDyYe8gJbKGNG_XYS6Fv016JdtbpfGX-4DHwd-7vY_+w@mail.gmail.com>
+Subject: Re: [PATCH v3] phy: Add USB3 PHY support to Google Tensor SoC USB PHY driver
+To: sashiko-reviews@lists.linux.dev, 
+	Badhri Jagan Sridharan <badhri@google.com>
+Cc: vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com, 
+	linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260706_153640_556982_199FBE36 
-X-CRM114-Status: GOOD (  13.32  )
+X-CRM114-CacheID: sfid-20260706_154406_185154_69EFF923 
+X-CRM114-Status: GOOD (  16.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,59 +113,49 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Referencing the vcc5v0_usb2_otg switch as phy-supply of the OTG port
-makes the phy core enable it as soon as the USB controller powers the
-PHY, so the board permanently drives its own 5 V onto the micro-USB
-connector's VBUS pin. That blinds the PHY's session detection: VBUSDET
-(fed from connector VBUS through the on-board 10k/15k divider) is
-always high, no bvalid edge can ever occur on plug or unplug, and the
-OTG state machine never wakes from its initial state. A USB gadget
-only enumerates if the cable is already attached at power-on. It also
-back-drives 5 V against the host port.
-
-The inno-usb2 driver has no role-managed VBUS supply support, and the
-practical use of this port is as the board's USB device/download port.
-Separate Type-A ports are available for host functions.
-
-Drop the phy-supply so the port never sources VBUS and pin the
-controller to dr_mode="peripheral" to match that.
-
-Fixes: 10dc64fe0f98 ("arm64: dts: rockchip: Add Hardkernel ODROID-M1S")
-Signed-off-by: Andreas Zdziarstek <andreas.zdziarstek@gmail.com>
----
- arch/arm64/boot/dts/rockchip/rk3566-odroid-m1s.dts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/arch/arm64/boot/dts/rockchip/rk3566-odroid-m1s.dts b/arch/arm64/boot/dts/rockchip/rk3566-odroid-m1s.dts
-index 33bc5249d729..d9d4a31373a0 100644
---- a/arch/arm64/boot/dts/rockchip/rk3566-odroid-m1s.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3566-odroid-m1s.dts
-@@ -602,6 +602,7 @@ &usb_host0_ohci {
- };
- 
- &usb_host0_xhci {
-+	dr_mode = "peripheral";
- 	status = "okay";
- };
- 
-@@ -627,7 +628,6 @@ &usb2phy0_host {
- };
- 
- &usb2phy0_otg {
--	phy-supply = <&vcc5v0_usb2_otg>;
- 	status = "okay";
- };
- 
--- 
-2.53.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVHVlLCBKdW4gMzAsIDIwMjYgYXQgNzo0MOKAr1BNIDxzYXNoaWtvLWJvdEBrZXJuZWwub3Jn
+PiB3cm90ZToKPiA+ICtzdGF0aWMgaW50IGdvb2dsZV91c2IzX3BoeV9leGl0KHN0cnVjdCBwaHkg
+Kl9waHkpCj4gPiArewo+ID4gKyAgICAgc3RydWN0IGdvb2dsZV91c2JfcGh5X2luc3RhbmNlICpp
+bnN0ID0gcGh5X2dldF9kcnZkYXRhKF9waHkpOwo+ID4gKyAgICAgc3RydWN0IGdvb2dsZV91c2Jf
+cGh5ICpncGh5ID0gaW5zdC0+cGFyZW50Owo+ID4gKwo+ID4gKyAgICAgZGV2X2RiZyhncGh5LT5k
+ZXYsICJleGl0aW5nIHVzYjMgcGh5XG4iKTsKPiA+ICsKPiA+ICsgICAgIGd1YXJkKG11dGV4KSgm
+Z3BoeS0+cGh5X211dGV4KTsKPiA+ICsKPiA+ICsgICAgIHNldF9wbWd0X3JlZl9jbGtfcmVxX24o
+Z3BoeSwgZmFsc2UpOwo+ID4gKyAgICAgcmVzZXRfY29udHJvbF9idWxrX2Fzc2VydChpbnN0LT5u
+dW1fcnN0cywgaW5zdC0+cnN0cyk7Cj4gPiArICAgICBjbGtfYnVsa19kaXNhYmxlX3VucHJlcGFy
+ZShpbnN0LT5udW1fY2xrcywgaW5zdC0+Y2xrcyk7Cj4KPiBbU2V2ZXJpdHk6IEhpZ2hdCj4gSXMg
+dGhlIG1hbnVhbCB0ZWFyZG93biBzZXF1ZW5jZSBoZXJlIGluIHRoZSBjb3JyZWN0IG9yZGVyPwo+
+Cj4gSW4gZ29vZ2xlX3VzYjNfcGh5X2luaXQoKSwgcmVzb3VyY2VzIGFyZSBhY3F1aXJlZCBpbiB0
+aGlzIG9yZGVyOgo+IDEpIHNldF9wbWd0X3JlZl9jbGtfcmVxX24odHJ1ZSkKPiAyKSBjbG9jayBl
+bmFibGUKPiAzKSByZXNldCBkZWFzc2VydAo+Cj4gVGhlIF9fZnJlZSBibG9ja3MgaW4gdGhlIGlu
+aXQgZnVuY3Rpb24gY29ycmVjdGx5IGVzdGFibGlzaCB0aGUgZXJyb3IgY2xlYW51cAo+IHNlcXVl
+bmNlIGluIHJldmVyc2Ugb3JkZXIgKExJRk8pLiBIb3dldmVyLCBoZXJlIHRoZSB1cHN0cmVhbSBy
+ZWZlcmVuY2UgY2xvY2sKPiByZXF1ZXN0IGlzIGRpc2FibGVkIGJlZm9yZSBwbGFjaW5nIHRoZSBo
+YXJkd2FyZSBibG9jayBpbnRvIHJlc2V0IGFuZAo+IGRpc2FibGluZyBjbG9ja3MuCj4KPiBDb3Vs
+ZCBkaXNhYmxpbmcgdGhlIGNsb2NrIHJlcXVlc3QgYmVmb3JlIGFzc2VydGluZyByZXNldCBmcmVl
+emUgdGhlIElQIGluIGFuCj4gaW52YWxpZCBzdGF0ZSBhbmQgcHJldmVudCBzdWJzZXF1ZW50IHdh
+a2V1cHM/CgpJJ3ZlIHZlcmlmaWVkIGJvdGggb3JkZXJpbmdzIG9mIHNldF9wbWd0X3JlZl9jbGtf
+cmVxX24gaW4gcGh5X2V4aXQsIHdpbGwKY2hhbmdlIHRvIGJlIGNvbnNpc3RlbnQgd2l0aCBwaHlf
+aW5pdCBvcmRlcmluZyB0aG91Z2guCgo+ID4gKwo+ID4gKyAgICAgcmV0dXJuIHByb2dyYW1fdGNh
+X2xvY2tlZChncGh5KTsKPgo+IFtTZXZlcml0eTogSGlnaF0KPiBTaG91bGQgdGhpcyBjaGVjayBp
+ZiB0aGUgVHlwZS1DIHBvcnQgaXMgYWN0dWFsbHkgY29ubmVjdGVkIGJlZm9yZSBjYWxsaW5nCj4g
+cHJvZ3JhbV90Y2FfbG9ja2VkKCk/Cj4KPiBJZiB0aGUgcG9ydCBpcyBkaXNjb25uZWN0ZWQgKGdw
+aHktPm9yaWVudGF0aW9uID09IFRZUEVDX09SSUVOVEFUSU9OX05PTkUpLAo+IHByb2dyYW1fdGNh
+X2xvY2tlZCgpIGZhbGxzIHRocm91Z2ggaXRzIGVsc2UgYnJhbmNoLCBjb25maWd1cmluZyB0aGUg
+cmVnaXN0ZXJzCj4gZm9yIFRZUEVDX09SSUVOVEFUSU9OX05PUk1BTCBhbmQgc2V0dGluZyBUQ0Ff
+VENQQ19WQUxJRC4KPgo+IFNpbmNlIHRoZSBUeXBlLUMgc3dpdGNoIGNhbGxiYWNrIGdvb2dsZV91
+c2Jfc2V0X29yaWVudGF0aW9uKCkgY29ycmVjdGx5IHNraXBzCj4gVENBIHByb2dyYW1taW5nIGlm
+IHRoZSBvcmllbnRhdGlvbiBpcyBOT05FLCBzaG91bGQgYSBzaW1pbGFyIGNoZWNrIGJlIHByZXNl
+bnQKPiBoZXJlIHRvIHByZXZlbnQgZW5hYmxpbmcgdGhlIFN1cGVyU3BlZWQgZGF0YSBwYXRoIGZv
+ciBhIHBoYW50b20gY29ubmVjdGlvbj8KCldpbGwgZ3VhcmQgYmVoaW5kIGdwaHktPm9yaWVudGF0
+aW9uIGluIG5leHQgdmVyc2lvbi4gSWYgdGhlIHBvcnQgaXMKZGlzY29ubmVjdGVkIHRoZQpQSFkg
+d2lsbCBiZSB0cmVhdGVkIGFzIGJlaW5nIGluIG5vcm1hbCBvcmllbnRhdGlvbiwgYnV0IGdpdmVu
+IFVTQiBtb2RlIGlzIGJlaW5nCnByb2dyYW1tZWQgaGVyZSBhbmQgbm90IE5DLCBpdCdzIG1vcmUg
+Y29ycmVjdCB0byBvbmx5IHByb2dyYW0gVVNCIHdoZW4KYSBwb3J0IHBhcnRuZXIgaXMgYWN0dWFs
+bHkgY29ubmVjdGVkLgoKQmVzdCwKUkQKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4
+LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
+bWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
