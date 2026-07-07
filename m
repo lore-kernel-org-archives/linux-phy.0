@@ -4,65 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA9FDC43602
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 16:15:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29081C43458
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 16:17:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0oZSxATjh+2QxiEaqsG79KapWTFkAO5VApEhhKp21pE=; b=dHmBBhNCqaHODb
-	LtjcYbx+Bob9+XvA7kKby2VqdQKrBhF/8LFX//wZDxxi7Lbtnx2pBdPnHZPYrZOrr2yigAE56GMWR
-	R/xq9KK9IcKvDVc2gYiDsdaTfN6fU5ubhFj7n402SAfE+QByRR3mH/2juaTsgvzrfdCGVkRVKJ6X4
-	ULRrfcx/rcnc1zZRcfj0U96h8MMrcGsG32qY/qo+dYZRfw6FetJ5ThCvzp9PDFGt4DWIO0FXKXWj6
-	Zb0UPnIQukwDk9vTvEZUnKlDvPE/ShcFaUlLp8kPYX7TzI0MI16H/nt3D8TbR+kh+6M/kzk55KtiI
-	ifK8/9rCexCSSiUDNo8Q==;
+	List-Owner; bh=72zZW/0zW7qYnMEtvD33D2UR4fe+UiNbRUPvmhQSL7A=; b=G3CH3zMfln05Jx
+	RfofJN3uHiPOIU+vjPVw2SaIJ4b+HqnjOcXBAH2TDFzYWptujQ5J2P/lhsKGYTAV2iZsfGvvxY2wD
+	BS3qTpvxKrVkRpEqX1LIxQuUJbBG3DYip9B4t+HpS5LDFYEFZ9+3g9rBMUH8eFKYigArD1gI2vUP/
+	qtZNokeK3o+yuGAGRSnPHJxSezWK7xoOJ9UVa09qi6oa6Cr9t3E4HODSPpIZHbPxLsPwfDIe9QIfj
+	UHgVYWvGRtLJiwaOpMO3AU4T5vZOVhDtQ5gcXnLTTlTCNqswkrEf8BaYCxSuph/IJ3Tr6/j4RKB/z
+	WRvpK7jSrB5lwKRmA/zA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh8S5-0000000FRGq-1knt;
-	Tue, 07 Jul 2026 16:15:17 +0000
+	id 1wh8Tr-0000000FRPa-2p1J;
+	Tue, 07 Jul 2026 16:17:07 +0000
 Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh8S1-0000000FRFu-33MU
+	id 1wh8Tk-0000000FROW-0RPO
 	for linux-phy@lists.infradead.org;
-	Tue, 07 Jul 2026 16:15:16 +0000
+	Tue, 07 Jul 2026 16:17:06 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1783440911;
-	bh=e8ufgerAfARsokorUa9usFydgSZd4W0BX082w6Cpe9g=;
+	s=mail; t=1783441018;
+	bh=ndr39EnnDNyaVg4yg1bwCupKHr8Ke/XoGQGTOTChPKE=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=j/89V5udi+J0D1/DMhkgGtE2jSOwhtbwlWmfnr6Q3kKrklaMLbj1f4gR7L2vw8D3A
-	 H/b+RxP+qqzGAf45MgIKCkq1LRRRGhm3h2dvAx/ZdhmuLJnH1jGVbATGbMH51ma2VC
-	 Tr1fkPM9KwBLeC9f5RCiFB8dhUNGy1jyTdpiqLL9l/0JzaBek48/ZSdPxWniOjuKEw
-	 bSyReZfvfWjYWvHy7Vhe7d+CwecSMmiG1rsrOi8WT7gAW5ZCMkIl2KmsC+UGCvYwbT
-	 CQ7IAx8SoG9KJb34m/litZjfLNPzXj+fjmEhn5KkXWiCqkeefnAlHlJeZjLtCTlAZJ
-	 OJ+Y8djzIq/bg==
+	b=PsIkaeUfrvGxQz+sgpc04CLNz5da5Y1PslciCx8uYjStfb3i9x3w3EQ5ylIUI/dMq
+	 vl6wkPIsQjRN56V+acJLJw+Ly+J/gSkEJAb8aaCJcFb650saonn5htIRydBSMoYqd+
+	 0BmrwBQqljHbajnnuY0uP/XQyjYKJ7Mi/nJ0Kgd8EmmPU/Es4gHuDqAyNEEi2SzYiL
+	 JAQutMXtnkaoQbiguUkCzXYRIHqVaxjmzcNA0zK59rypR8cwdTNC2GdccBMbcu5QQj
+	 JtA5a1V99CHVLiaw3VCJollvKxoz/ZqgPZPCBjv8C9kkl9RqCTEJfcMtUTWtmJydqa
+	 j+WUi6cZGE6Uw==
 Received: from [100.64.1.21] (unknown [100.64.1.21])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange x25519)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id DF96B17E0114;
-	Tue, 07 Jul 2026 18:15:10 +0200 (CEST)
-Message-ID: <d075acd2-c873-489c-a0b6-dcdeeffcdbab@collabora.com>
-Date: Tue, 7 Jul 2026 18:15:10 +0200
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id E311017E0795;
+	Tue, 07 Jul 2026 18:16:57 +0200 (CEST)
+Message-ID: <69813d90-e419-4433-bc7a-948ee8345b40@collabora.com>
+Date: Tue, 7 Jul 2026 18:16:57 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 03/12] phy: phy-mtk-dp: Allow probing with devicetree
- match
+Subject: Re: [PATCH v3 12/12] phy: phy-mtk-dp: Add support for MT8196 eDP PHY
 To: sashiko-reviews@lists.linux.dev
-Cc: vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com,
- linux-phy@lists.infradead.org, conor+dt@kernel.org,
- dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, robh@kernel.org
+Cc: conor+dt@kernel.org, neil.armstrong@linaro.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, robh@kernel.org, olteanv@gmail.com,
+ vkoul@kernel.org
 References: <20260707154245.198361-1-angelogioacchino.delregno@collabora.com>
- <20260707154245.198361-4-angelogioacchino.delregno@collabora.com>
- <20260707160646.813771F000E9@smtp.kernel.org>
+ <20260707154245.198361-13-angelogioacchino.delregno@collabora.com>
+ <20260707160507.4759F1F000E9@smtp.kernel.org>
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Content-Language: en-US
-In-Reply-To: <20260707160646.813771F000E9@smtp.kernel.org>
+In-Reply-To: <20260707160507.4759F1F000E9@smtp.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260707_091513_953112_B6DC8FB7 
-X-CRM114-Status: GOOD (  26.03  )
+X-CRM114-CacheID: sfid-20260707_091702_406923_3B91C8AF 
+X-CRM114-Status: GOOD (  21.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,125 +79,93 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 7/7/26 18:06, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 3 potential issue(s) to consider:
-> 
-> New issues:
-> - [High] Hardcoded `PHY_OFFSET` causes out-of-bounds register accesses or resource conflicts when the PHY is probed as a standalone devicetree node.
-> - [High] Hardware registers are accessed in `mtk_dp_phy_configure()` while the PHY device is runtime-suspended, causing a system crash or silent loss of configuration.
-> 
-> Pre-existing issues:
-> - [High] Dereferencing `dev->platform_data` before checking if it is NULL leads to a kernel crash.
+On 7/7/26 18:05, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 1 potential issue(s) to consider:
+> - [High] Missing NULL check for the result of `device_get_match_data(dev)` before dereferencing it.
 > --
 > 
-> --- Patch [3]: [PATCH v3 03/12] phy: phy-mtk-dp: Allow probing with devicetree match ---
-> commit 710ab5488fd0b66b2ea62388b977a4308f99a0c6
+> --- Patch [12]: [PATCH v3 12/12] phy: phy-mtk-dp: Add support for MT8196 eDP PHY ---
+> commit 171cadff965a41b7aba8d81fbb60622f2a8e1a97
 > Author: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 > 
-> phy: phy-mtk-dp: Allow probing with devicetree match
+> phy: phy-mtk-dp: Add support for MT8196 eDP PHY
 > 
-> Make it possible to decouple the registration of the DisplayPort
-> PHY driver from the DisplayPort IP driver by adding a devicetree
-> match to probe the PHY. In order to retain compatibility with older
-> devicetrees, the legacy code was moved in a mtk_dp_phy_legacy_probe()
-> function.
+> The MT8196 SoC features an updated PHY IP compared to the older
+> ones, and there is one that is specific to Embedded DisplayPort.
+> This commit adds support for the eDP PHY found in the MediaTek MT8196 SoC
+> and all of its variants.
 > 
 >> diff --git a/drivers/phy/mediatek/phy-mtk-dp.c b/drivers/phy/mediatek/phy-mtk-dp.c
->> index bf7b3a95e72d2..d241004e28286 100644
+>> index f5aadc5fdc42c..5decc29c77cb3 100644
 >> --- a/drivers/phy/mediatek/phy-mtk-dp.c
 >> +++ b/drivers/phy/mediatek/phy-mtk-dp.c
-> [ ... ]
->> +static int mtk_dp_phy_legacy_probe(struct platform_device *pdev, struct mtk_dp_phy *dp_phy)
->> +{
->> +	struct device *dev = &pdev->dev;
->> +	struct phy *phy;
->> +	int ret;
->> +
->> +	dp_phy->regmap = *(struct regmap **)dev->platform_data;
->> +	if (!dp_phy->regmap)
->> +		return dev_err_probe(dev, -EINVAL, "No platform data available\n");
-> 
-> [Severity: High]
-> This is a pre-existing issue, but does casting and dereferencing
-> dev->platform_data before checking if it is NULL lead to a kernel crash?
-> 
-> If the driver is bound to a device without platform data via sysfs, this
-> unvalidated pointer will be dereferenced before the check for
-> !dp_phy->regmap can execute.
 > 
 > [ ... ]
->>   static int mtk_dp_phy_probe(struct platform_device *pdev)
->>   {
->>   	struct device *dev = &pdev->dev;
-> [ ... ]
->>   	dp_phy = devm_kzalloc(dev, sizeof(*dp_phy), GFP_KERNEL);
->>   	if (!dp_phy)
->>   		return -ENOMEM;
+> 
+>> @@ -805,8 +838,39 @@ static const struct mtk_dp_phy_pdata mt8195_dp_phy_data = {
+>>   	},
+>>   };
 >>   
->> -	dp_phy->regmap = regs;
->> +	dp_phy->dev = dev;
+>> +static const struct mtk_dp_phy_pdata mt8196_edp_phy_data = {
+>> +	.off_ana_glb = 0x400,
+> 
+> [ ... ]
+> 
+>> +	.driving_params = (const u32[]) {
+>> +		[0] = 0,
+>> +		[1] = 0,
+>> +		[2] = 0,
+>> +		[3] = MT8196_DRIVING_PARAM_3_DEFAULT,
+>> +		[4] = MT8196_DRIVING_PARAM_4_DEFAULT,
+>> +		[5] = MT8196_DRIVING_PARAM_5_DEFAULT,
+>> +		[6] = MT8196_DRIVING_PARAM_6_DEFAULT,
+>> +		[7] = MT8196_DRIVING_PARAM_7_DEFAULT,
+>> +		[8] = MT8196_DRIVING_PARAM_8_DEFAULT
+>> +	},
+>> +};
 >> +
->> +	/* If there's no devicetree, go for legacy pdev probe */
->> +	if (!dev->of_node)
->> +		return mtk_dp_phy_legacy_probe(pdev, dp_phy);
->> +
->> +	base = devm_platform_ioremap_resource(pdev, 0);
->> +	if (IS_ERR(base))
->> +		return PTR_ERR(base);
->> +
->> +	dp_phy->regmap = devm_regmap_init_mmio(dev, base, &mtk_dp_phy_regmap_cfg);
+>>   static const struct of_device_id mtk_dp_phy_of_match[] = {
+>>   	{ .compatible = "mediatek,mt8195-dp-phy", .data = &mt8195_dp_phy_data },
+>> +	{ .compatible = "mediatek,mt8196-edp-phy", .data = &mt8196_edp_phy_data },
+>>   	{ /* sentinel */ }
+>>   };
 > 
 > [Severity: High]
-> Since the driver hardcodes PHY_OFFSET (0x1000) into its register macros like
-> MTK_DP_PHY_DIG_PLL_CTL_1, will this independent regmap cause out-of-bounds
-> accesses if the devicetree maps the PHY node to its true physical base?
+> If the driver is forcefully bound to a device via the sysfs bind interface,
+> and the device has an of_node but its compatible string does not match any
+> entry in the driver's of_match_table, device_get_match_data(dev) will return
+> NULL.
 > 
-> If the devicetree instead sets the PHY node's reg to the parent DP IP base to
-> counteract this offset, won't this cause devm_platform_ioremap_resource() to
-> fail with -EBUSY due to resource conflicts between the PHY driver and the DP
-> IP driver?
+> This NULL pointer is stored in dp_phy->pdata:
 > 
-
-All of that is exactly why there's a "legacy probe" and a "devicetree probe"
-mechanism. It's either one or the other, and the legacy one is there only for
-retro compatibility purposes.
-
-If the devicetree sets the PHY node's reg to something unrelated this is not
-going to work; it's obvious, and should not even be evaluated as an option.
-
-Magic 8 ball case again?
-
->> +	if (IS_ERR(dp_phy->regmap))
->> +		return PTR_ERR(dp_phy->regmap);
->> +
->> +	ret = devm_pm_runtime_enable(dev);
->> +	if (ret)
->> +		return ret;
+> drivers/phy/mediatek/phy-mtk-dp.c:mtk_dp_phy_probe() {
+>      ...
+> 	dp_phy->pdata = device_get_match_data(dev);
 > 
-> [Severity: High]
-> By enabling runtime PM here, could mtk_dp_phy_configure() access hardware
-> registers while the PHY device is runtime-suspended?
+> 	if (IS_REACHABLE(CONFIG_NVMEM)) {
+> 		ret = mtk_dp_phy_get_calibration_data(dp_phy);
+>      ...
+> }
 > 
-> The consumer driver calls phy_configure() without calling phy_power_on().
-> The PHY framework takes a runtime PM reference during .init and .reset,
-> but explicitly drops it right before returning, and does not take a reference
-> during .configure.
+> And is unconditionally dereferenced here:
 > 
-> When the consumer calls phy_configure(), it writes directly to hardware via
-> regmap_write() and regmap_update_bits() while the device PM usage count
-> is zero. Can this crash the system or cause silent loss of configuration?
+> drivers/phy/mediatek/phy-mtk-dp.c:mtk_dp_phy_get_default_cal_data() {
+>      ...
+> 	const struct mtk_dp_phy_pdata *pdata = dp_phy->pdata;
+> 	int i;
+> 
+> 	dp_phy->ana_bias_r = pdata->ana_bias_r;
+>      ...
+> }
+> 
+> Should device_get_match_data() be checked for NULL before continuing in
+> mtk_dp_phy_probe() to prevent a potential kernel panic?
 > 
 
-That won't happen because as I explained before, the PHY needs to be powered
-on with phy_power_on() which calls runtime_pm_get_sync().
+Oh just shut up, Sashiko! :-)
 
-In any case, an unpowered PHY will cause a silent loss of configuration with
-no SError nor any other crash.
-
->> +
->>   	phy = devm_phy_create(dev, NULL, &mtk_dp_phy_dev_ops);
-> 
-
+Too many paranoid checks proposed, are we trying to slow down Linux by a factor
+of 1000 with all the defensive coding?
 
 -- 
 linux-phy mailing list
