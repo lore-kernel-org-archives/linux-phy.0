@@ -4,46 +4,46 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A99C8C44500
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 10:18:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2402C44501
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 10:18:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4SZXfHEszUmg16UV1c/meQu5++GbNMLQIOvsiPNTD+I=; b=A0lyEmywHttLT3
-	96GHLMq+U75s+XQmv52xTQ6uXC/E1xZlY1ElDllzAqIKpW2fQYI8Gt4u7JiMY2pup90ZZnrtV3IgQ
-	LyuyMH/ahoCUxbL1dOXAviDY8Q/JWa7IJQoPyCu+y9FaRc5BRJujaFDpyRpETW2ck5EIcV0BijuzQ
-	mTHYNc0cnfvE8Wn0888HnLnSMHzB4ncQl3ZQbFYCv/Iig9nilwF2oNTgTFcv61CxKbQkgxfWIJLMJ
-	vbL6Te4pprdfPsig3t4JTK9tsbfBo8BBWNXOmba5B9pAzEe9sIB7ZECHiOSKfoAe9YqnGeuItzNUf
-	GKKS1Sr5gJFQ16PERk/w==;
+	List-Owner; bh=PDTRb66d9LZ8Dr7GenRQWxZRiVs/FWp2vv/M0s9eINQ=; b=il2dmX5cH8U4u4
+	lGYnBJ3l2+Sh78OQsSF6bZxIyYYuza+87ZSiy46f2wLjqUYSBGIMRZ9eQOED4E5eXemhRQAoFm86c
+	Id0nZNTaO4teyJNEHuPJ+7ksr34YIvTApi4HBrXgf53W/OtNe6vJAq5dDNURZIvyNCXyn+3ZLQ5Mt
+	Pf57AvCU6c+3mHIsbvg7zB7qolomLaNNBRubWjCYbw6oceTTkBOWubWdYpvzTzRLPSKP3eFYR6E7p
+	RugBeM0js16BVNmJZF8c6UmFICssyr5iwe9S/6guotAtSUyfC1DVZB68QDyzMAuIxMTW9cSqyJs5a
+	wiRd9CPQoOiwCVT2w1wA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh2su-0000000Eixm-1a0p;
-	Tue, 07 Jul 2026 10:18:36 +0000
+	id 1wh2ss-0000000EiwD-1Q2C;
+	Tue, 07 Jul 2026 10:18:34 +0000
 Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh2sp-0000000EitF-2ldh
+	id 1wh2sp-0000000EitE-2VQ4
 	for linux-phy@lists.infradead.org;
-	Tue, 07 Jul 2026 10:18:33 +0000
+	Tue, 07 Jul 2026 10:18:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1783419508;
-	bh=5XHG9mRRPOrh7Tu9kX4q/JsR3SeFMTY9G6JTDyva/fU=;
+	s=mail; t=1783419509;
+	bh=karO6HmYztmpgPiJLMQ4vW+o2ogQy55ZxbCv8+28n9k=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=SodfrAFHoMOa/TLv3XRr+7So1pgre7YIMbpdNFzDPsb6btN9ijrt0XFJ7gy38de9A
-	 Q7jhpYl/sNEeGbJgCRgoJR0U0QzUYUBHH1DOrvk66RabG4krNg35G0kOJ8jXvA6xWY
-	 h2bIRORhlqgcsr/7uxQ/p7obDrDVz7uwjepYOEVbhg6+Yx9pP+FMH2Cj6jX5upXRpP
-	 dHNe65SN39W7v59BZ/eR8bSXBC4zOO4tVo8FlU1huv/9w1ymso3yUmGaSQHF/7zRJe
-	 Pd/JKXLtX94WS+fTgsP52Kq1FOSf/QD1uvlojU1FKXRdIrorXbzdMhjIRgitsGbS3J
-	 5bq3Ed++X8nvQ==
+	b=nr0uAH4Qf/hjXjB33AmnyLwYLyec0/iOQZfpI9gdjsOneZQOrIKToTzF/Qhl2P8ue
+	 cwj+qxS9suYO30CJevqVbeCj9tW6HorUWXkEMSyyzHbQZFhpLB3dihwA3ZVIArJ9X9
+	 uOGboOVRkH9LfxRmuklt9ffl7UUXgdnAX8O1t0s5b6eg+7Tup05Br06F5EPBsbp6hE
+	 rQLSSOdoy5wUZ+EYUlqH0DaKBtcYRMLzVWYoMEoJ9DYDuJiIN6jE0X8xhjsNL5UlDD
+	 rEp0NBMZTwjWh3VEJrRPfS3BQwSyfvF8OP1AbBTvMiAxBYLtdwiV4n/ngKTgICqaUi
+	 pCcDTc9Su9zBw==
 Received: from IcarusMOD.eternityproject.eu (unknown [100.64.1.21])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 857E717E0CDE;
-	Tue, 07 Jul 2026 12:18:27 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id B781917E0D56;
+	Tue, 07 Jul 2026 12:18:28 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: jic23@kernel.org,
 	sboyd@kernel.org
@@ -75,16 +75,16 @@ Cc: dlechner@baylibre.com,
 	linux-pm@vger.kernel.org,
 	kernel@collabora.com,
 	Andy Shevchenko <andriy.shevchenko@intel.com>
-Subject: [PATCH v11 02/12] spmi: Remove redundant dev_name() print in spmi_device_add()
-Date: Tue,  7 Jul 2026 12:18:11 +0200
-Message-ID: <20260707101821.173319-3-angelogioacchino.delregno@collabora.com>
+Subject: [PATCH v11 03/12] spmi: Print error status with %pe format
+Date: Tue,  7 Jul 2026 12:18:12 +0200
+Message-ID: <20260707101821.173319-4-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.54.0
 In-Reply-To: <20260707101821.173319-1-angelogioacchino.delregno@collabora.com>
 References: <20260707101821.173319-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260707_031831_875937_E8F69411 
-X-CRM114-Status: UNSURE (   9.46  )
+X-CRM114-CacheID: sfid-20260707_031831_807431_A1170CA8 
+X-CRM114-Status: UNSURE (   9.15  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -102,40 +102,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Function spmi_device_add() uses dev_{dbg,err}() for respectively
-debug and error prints, and passes the same device pointer as both
-the dev_{dbg,err}() parameters and to a dev_name() that is part of
-the actual message.
-This means that the device name gets printed twice!
-
-Remove the redundant dev_name() from the messages.
+Instead of printing just a number, use the %pe format for error
+status, increasing readability of error prints.
 
 Acked-by: Stephen Boyd <sboyd@kernel.org>
 Reviewed-by: Andy Shevchenko <andriy.shevchenko@intel.com>
 Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 ---
- drivers/spmi/spmi.c | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
+ drivers/spmi/spmi.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/spmi/spmi.c b/drivers/spmi/spmi.c
-index 293e1adddcd7..9bee0cb3d9dc 100644
+index 9bee0cb3d9dc..2cf5fd5e1ba9 100644
 --- a/drivers/spmi/spmi.c
 +++ b/drivers/spmi/spmi.c
-@@ -71,12 +71,11 @@ int spmi_device_add(struct spmi_device *sdev)
+@@ -71,7 +71,7 @@ int spmi_device_add(struct spmi_device *sdev)
  
  	err = device_add(&sdev->dev);
  	if (err < 0) {
--		dev_err(&sdev->dev, "Can't add %s, status %d\n",
--			dev_name(&sdev->dev), err);
-+		dev_err(&sdev->dev, "Can't add device, status %d\n", err);
+-		dev_err(&sdev->dev, "Can't add device, status %d\n", err);
++		dev_err(&sdev->dev, "Can't add device, status %pe\n", ERR_PTR(err));
  		goto err_device_add;
  	}
  
--	dev_dbg(&sdev->dev, "device %s registered\n", dev_name(&sdev->dev));
-+	dev_dbg(&sdev->dev, "device registered\n");
+@@ -496,8 +496,8 @@ static void of_spmi_register_devices(struct spmi_controller *ctrl)
+ 		err = of_property_read_u32_array(node, "reg", reg, 2);
+ 		if (err) {
+ 			dev_err(&ctrl->dev,
+-				"node %pOF err (%d) does not have 'reg' property\n",
+-				node, err);
++				"node %pOF err (%pe) does not have 'reg' property\n",
++				node, ERR_PTR(err));
+ 			continue;
+ 		}
  
- err_device_add:
- 	return err;
+@@ -525,7 +525,7 @@ static void of_spmi_register_devices(struct spmi_controller *ctrl)
+ 		err = spmi_device_add(sdev);
+ 		if (err) {
+ 			dev_err(&sdev->dev,
+-				"failure adding device. status %d\n", err);
++				"failure adding device. status %pe\n", ERR_PTR(err));
+ 			of_node_put(node);
+ 			spmi_device_put(sdev);
+ 		}
 -- 
 2.54.0
 
