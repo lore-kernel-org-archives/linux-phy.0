@@ -4,54 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24C60C43602
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 15:01:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1E0CC43458
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 15:42:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fb0lMfYCAgPV1HXH+M/ejyrTTmHGy7KeEWo8+SCs5Ww=; b=xv8MpVMM6GPNqQ
-	fnV4WgQGieXz6Zn/yzGsBXaeqF5qR+riubYe+SPzhqtgqP4XcRSuCQzNvieA6xlVK/F48BWRTVn8p
-	8tjH/90cjYZ16AF2IoBWsFAhWVZB9cQdTPLx/wzGBfbpX0whGdd53HqdoCqjWFJph1keDJv5QU3w4
-	OzbgIkARK73uGstXruyWLqMOBL1ZmRmM/OCtT864mncUR0hLWEEOF95GyhAhDbdw49X73QhvCXxOL
-	cX+kae7VH56Xtgxo/2Rq+rwM4MAf9Lg51kgOWqgey3z4VpNIICnpZXRv9Wx+BoKemEFCbwEeWsxZs
-	Lyay1l0kSSS9EcTCYwPw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=FJBVMovqloEM+6S/lsINqxRqP39sNKQtqXL41YMkkm4=; b=cAfJRfD8cO5oH7
+	891P5Y3YswthqqUE6sQaWt3ZEZEmZFy/t9TEf3TIWFjes2Mc/NvXgTPJoGSYi3+QMmTDStXO4YxZN
+	fMSWSr2U4y5C0xHKJe+enz/OE6Zki7w9sWx5jqoTRpFoG4i9d0jP0j4pbv5g7xurHBoZNUsPNWUir
+	ZNO6NH5IunXgh7xP3nuhgVfVyoWbdSnqlQw7Lwnf9vizLP3uJFTOenS6AOk8FcZmSvqxmRXsqii7+
+	5ak8yXiUaUBJ8uY6K7CPo/KBU5x8dBg9xaE6bijeulUIqPohlNMKGbwlFEV13bP6EfH3WnMvGfqRp
+	08trfpLE3TEjvtpHXcIg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh7Iy-0000000FEhG-3D9k;
-	Tue, 07 Jul 2026 15:01:48 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wh7wk-0000000FLyf-2SZw;
+	Tue, 07 Jul 2026 15:42:54 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh7Iv-0000000FEgs-2R4z
-	for linux-phy@lists.infradead.org;
-	Tue, 07 Jul 2026 15:01:47 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id ED41440B1C;
-	Tue,  7 Jul 2026 15:01:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 925AD1F000E9;
-	Tue,  7 Jul 2026 15:01:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1783436504;
-	bh=652BGfDH5F9Z7DUjv4OzEK14PcYnedn9zwCXJ2tz3hg=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=nEc5Fpl47AKNyB3AsAamATNZcNE9EJEEAAzdAjP73G0kHcuumtMP9NSRXnyjPCGSS
-	 n/jayqmjsBhiPV1dD4DIynLqbgTEJKMEIaWPO4McliUP0O96I7Bs67evuavSFkhTnd
-	 pkT7RmJ+br0ytOCCFIfzqy9Yz+PYMz3r7e0GN69NcWgKfU8DlAwg3z+ApO4pcfekbh
-	 hGrjkgpbBoaogjkFRUrF/qVQmNCqr6EF3l2lTiijwj5Xes6MM65vxYvt1oPA48lSnK
-	 zjXfowmegPj2sYI2jWpkx0TCINJ53nCEtk88oqliTd9NrZgXroyG0LA2k8Stg/Xt3A
-	 MFSmL0ByKIZxw==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v3 7/9] phy: renesas: phy-rcar-gen3-usb2: Fix devm
- action registration for disabled VBUS regulator
-To: Biju <biju.das.au@gmail.com>
-Cc: wsa+renesas@sang-engineering.com, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com, linux-phy@lists.infradead.org
-In-Reply-To: <20260707143646.245177-8-biju.das.jz@bp.renesas.com>
-References: <20260707143646.245177-1-biju.das.jz@bp.renesas.com>
- <20260707143646.245177-8-biju.das.jz@bp.renesas.com>
-Date: Tue, 07 Jul 2026 15:01:44 +0000
-Message-Id: <20260707150144.925AD1F000E9@smtp.kernel.org>
+	id 1wh7wi-0000000FLwd-0awi;
+	Tue, 07 Jul 2026 15:42:53 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1783438969;
+	bh=q69Efgu8X5NGbOCMTzwUNrYXN34SM6vI0sNv573sxkM=;
+	h=From:To:Cc:Subject:Date:From;
+	b=qEr99uQGkcf3jMnENadozcdWbn/QYxn9I9gMh+n4RN2pEgM6gPMBFTSWJCTX1lPjD
+	 pHbLSezVjJ9i/7HuFrKbcVitlpR3K2NtMxrl5y4AlhQGeAPSGxbw/9rcwjxU8ml4dA
+	 PgqFfvz5iyIZBv/ouPOLZfcNu6MSZjrsJs3h4L6hfWItfLT4ziJhWFdrbQBNf/mhaL
+	 0FJ8Xy9gJQsHCovUT0vUD9y6R+ncnOI5YyVkVzpDn7FwYkVpvN1xfN5Ejq6QLjSIeo
+	 GXtYd1RV366To/3hy52H1GAsgGrxsHJdNoKmqCYcEJy3dqPEHZjylBRb50pYWimPfd
+	 49UBEPYIi5J6w==
+Received: from IcarusMOD.eternityproject.eu (unknown [100.64.1.21])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 7BBFC17E013E;
+	Tue, 07 Jul 2026 17:42:48 +0200 (CEST)
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+To: chunfeng.yun@mediatek.com
+Cc: vkoul@kernel.org,
+	neil.armstrong@linaro.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	matthias.bgg@gmail.com,
+	angelogioacchino.delregno@collabora.com,
+	chunkuang.hu@kernel.org,
+	p.zabel@pengutronix.de,
+	justin.yeh@mediatek.com,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	dri-devel@lists.freedesktop.org,
+	kernel@collabora.com
+Subject: [PATCH v3 00/12] PHY: MediaTek DP PHY refactor and MT8196 eDP
+Date: Tue,  7 Jul 2026 17:42:33 +0200
+Message-ID: <20260707154245.198361-1-angelogioacchino.delregno@collabora.com>
+X-Mailer: git-send-email 2.54.0
+MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260707_084252_341779_D4865A57 
+X-CRM114-Status: GOOD (  17.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,98 +81,98 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-NCBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpOZXcgaXNzdWVzOgotIFtNZWRpdW1d
-IGByZWd1bGF0b3JfaXNfZW5hYmxlZCgpYCByZXR1cm5zIGEgbmVnYXRpdmUgZXJyb3IgY29kZSBv
-biBmYWlsdXJlLCB3aGljaCBpbmNvcnJlY3RseSBldmFsdWF0ZXMgdG8gdHJ1ZSBhbmQgY2F1c2Vz
-IGFuIHVuYmFsYW5jZWQgZGlzYWJsZSBXQVJOX09OLgoKUHJlLWV4aXN0aW5nIGlzc3VlczoKLSBb
-SGlnaF0gSWYgdGhlIHJlZ3VsYXRvciB3YXMgaW5pdGlhbGx5IGVuYWJsZWQgaW4gaGFyZHdhcmUg
-QU5EIGV4cGxpY2l0bHkgZW5hYmxlZCBieSB0aGUgZHJpdmVyLCBvbmx5IG9uZSBkaXNhYmxlIGFj
-dGlvbiBpcyByZWdpc3RlcmVkLCBsZWFkaW5nIHRvIGEgcmVzb3VyY2UgbGVhayBhbmQgV0FSTl9P
-Ti4KLSBbSGlnaF0gSWYgYHJlZ3VsYXRvcl9lbmFibGUoKWAgZmFpbHMsIHRoZSBmdW5jdGlvbiBy
-ZXR1cm5zIGVhcmx5IHdpdGhvdXQgcmVnaXN0ZXJpbmcgYSBkaXNhYmxlIGFjdGlvbiwgbGVha2lu
-ZyB0aGUgaW1wbGljaXQgYGVuYWJsZV9jb3VudGAgcmVmZXJlbmNlIGlmIHRoZSByZWd1bGF0b3Ig
-d2FzIGFscmVhZHkgZW5hYmxlZC4KLSBbSGlnaF0gTWlzc2luZyBjYW5jZWxsYXRpb24gb2YgdGhl
-IHBlbmRpbmcgd29ya3F1ZXVlIHRhc2sgKGBjaGFubmVsLT53b3JrYCkgZHVyaW5nIGRldmljZSBy
-ZW1vdmFsIGxlYWRzIHRvIGEgVXNlLUFmdGVyLUZyZWUuCi0tCgotLS0gUGF0Y2ggWzddOiBbUEFU
-Q0ggdjMgNy85XSBwaHk6IHJlbmVzYXM6IHBoeS1yY2FyLWdlbjMtdXNiMjogRml4IGRldm0gYWN0
-aW9uIHJlZ2lzdHJhdGlvbiBmb3IgZGlzYWJsZWQgVkJVUyByZWd1bGF0b3IgLS0tCmNvbW1pdCAz
-MDA1NDk5MGVlODA2ZmI4ZDc5NzY4YWU3OTU4N2I5YWNmZTBmNmE2CkF1dGhvcjogQmlqdSBEYXMg
-PGJpanUuZGFzLmp6QGJwLnJlbmVzYXMuY29tPgoKcGh5OiByZW5lc2FzOiBwaHktcmNhci1nZW4z
-LXVzYjI6IEZpeCBkZXZtIGFjdGlvbiByZWdpc3RyYXRpb24gZm9yIGRpc2FibGVkIFZCVVMgcmVn
-dWxhdG9yCgpUaGlzIGNvbW1pdCB1cGRhdGVzIHRoZSBWQlVTIHJlZ3VsYXRvciByZWdpc3RyYXRp
-b24gdG8gYWx3YXlzIGFkZCBhIGRldm0KZGlzYWJsZSBhY3Rpb24gYmFzZWQgb24gdGhlIGFjdHVh
-bCBlbmFibGVkIHN0YXRlLCByYXRoZXIgdGhhbiBvbmx5IHdoZW4KYW4gZXhwbGljaXQgZW5hYmxl
-IHdhcyByZXF1ZXN0ZWQuIFRoaXMgZW5zdXJlcyB0aGUgcmVndWxhdG9yJ3MgZW5hYmxlX2NvdW50
-CmlzIGNvcnJlY3RseSBkZWNyZW1lbnRlZCBkdXJpbmcgZGV2aWNlIHJlbW92YWwgZXZlbiBpZiBp
-dCB3YXMgbGVmdCBlbmFibGVkCmJ5IHRoZSBib290bG9hZGVyLgoKPiBkaWZmIC0tZ2l0IGEvZHJp
-dmVycy9waHkvcmVuZXNhcy9waHktcmNhci1nZW4zLXVzYjIuYyBiL2RyaXZlcnMvcGh5L3JlbmVz
-YXMvcGh5LXJjYXItZ2VuMy11c2IyLmMKPiBpbmRleCBkMDZmYjUyZWQ1ZjFiLi5lZjM4YzNiMzY1
-ZDQyIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L3JlbmVzYXMvcGh5LXJjYXItZ2VuMy11c2Iy
-LmMKPiArKysgYi9kcml2ZXJzL3BoeS9yZW5lc2FzL3BoeS1yY2FyLWdlbjMtdXNiMi5jCj4gQEAg
-LTkwNSwxNSArOTA1LDE3IEBAIHN0YXRpYyBpbnQgcmNhcl9nZW4zX3BoeV91c2IyX3ZidXNfcmVn
-dWxhdG9yX2dldF9leGNsdXNpdmVfZW5hYmxlKHN0cnVjdCByY2FyX2dlCj4gIAlpZiAoSVNfRVJS
-KGNoYW5uZWwtPnZidXMpKQo+ICAJCXJldHVybiBQVFJfRVJSKGNoYW5uZWwtPnZidXMpOwo+ICAK
-PiAtCWlmICghZW5hYmxlKQo+IC0JCXJldHVybiAwOwo+ICsJaWYgKGVuYWJsZSkgewo+ICsJCXJl
-dCA9IHJlZ3VsYXRvcl9lbmFibGUoY2hhbm5lbC0+dmJ1cyk7Cj4gKwkJaWYgKHJldCkKPiArCQkJ
-cmV0dXJuIHJldDsKCltTZXZlcml0eTogSGlnaF0KVGhpcyBpcyBhIHByZS1leGlzdGluZyBpc3N1
-ZSwgYnV0IGRvZXMgdGhpcyBlYXJseSByZXR1cm4gbGVhayB0aGUgaW1wbGljaXQKZW5hYmxlX2Nv
-dW50IHJlZmVyZW5jZSBpZiB0aGUgcmVndWxhdG9yIHdhcyBhbHJlYWR5IGVuYWJsZWQ/CgpJZiBk
-ZXZtX3JlZ3VsYXRvcl9nZXRfZXhjbHVzaXZlKCkgaW5pdGlhbGl6ZXMgZW5hYmxlX2NvdW50IHRv
-IDEgKGJlY2F1c2UgdGhlCmhhcmR3YXJlIHdhcyBhbHJlYWR5IGVuYWJsZWQpLCBhbmQgdGhpcyBy
-ZWd1bGF0b3JfZW5hYmxlKCkgY2FsbCBmYWlscywgd2UKcmV0dXJuIGVhcmx5IGFuZCBieXBhc3Mg
-cmVnaXN0ZXJpbmcgdGhlIGRldm0gZGlzYWJsZSBhY3Rpb24uIFdoZW4gdGhlIHByb2JlCmZhaWxz
-IGFuZCBkZXZyZXMgY2xlYW5zIHVwLCByZWd1bGF0b3JfcHV0KCkgd2lsbCBiZSBjYWxsZWQgd2l0
-aAplbmFibGVfY291bnQgPT0gMSwgd2hpY2ggdHJpZ2dlcnMgYSBXQVJOX09OKHJlZ3VsYXRvci0+
-ZW5hYmxlX2NvdW50KSBhbmQKbGVha3MgdGhlIHVuZGVybHlpbmcgcmRldi0+dXNlX2NvdW50LgoK
-PiArCX0KPiAgCj4gLQlyZXQgPSByZWd1bGF0b3JfZW5hYmxlKGNoYW5uZWwtPnZidXMpOwo+IC0J
-aWYgKHJldCkKPiAtCQlyZXR1cm4gcmV0Owo+ICsJaWYgKHJlZ3VsYXRvcl9pc19lbmFibGVkKGNo
-YW5uZWwtPnZidXMpKQo+ICsJCXJldHVybiBkZXZtX2FkZF9hY3Rpb25fb3JfcmVzZXQoZGV2LCBy
-Y2FyX2dlbjNfcGh5X3VzYjJfdmJ1c19kaXNhYmxlX2FjdGlvbiwKPiArCQkJCQkJY2hhbm5lbC0+
-dmJ1cyk7CgpbU2V2ZXJpdHk6IE1lZGl1bV0KRG9lcyByZWd1bGF0b3JfaXNfZW5hYmxlZCgpIHJl
-dHVybiBhIG5lZ2F0aXZlIGVycm9yIGNvZGUgb24gZmFpbHVyZSwgYW5kCndpbGwgdGhhdCBiZSBp
-bmNvcnJlY3RseSBldmFsdWF0ZWQgYXMgdHJ1ZSBoZXJlPwoKSWYgYSBoYXJkd2FyZSBvciBJMkMg
-ZXJyb3Igb2NjdXJzLCByZWd1bGF0b3JfaXNfZW5hYmxlZCgpIGNhbiByZXR1cm4gYQpuZWdhdGl2
-ZSB2YWx1ZS4gVGhpcyBjb25kaXRpb24gd291bGQgZXZhbHVhdGUgYXMgdHJ1ZSwgcXVldWVpbmcg
-dGhlCnJjYXJfZ2VuM19waHlfdXNiMl92YnVzX2Rpc2FibGVfYWN0aW9uIGV2ZW4gaWYgdGhlIHJl
-Z3VsYXRvciBpcyBhY3R1YWxseQpkaXNhYmxlZCBvciBpdHMgZW5hYmxlX2NvdW50IGlzIDAuIAoK
-T24gZGV2aWNlIHJlbW92YWwsIGNhbGxpbmcgcmVndWxhdG9yX2Rpc2FibGUoKSB3aXRoIGFuIGVu
-YWJsZV9jb3VudCBvZiAwCnRyaWdnZXJzIGEgV0FSTiBpbiB0aGUgcmVndWxhdG9yIGNvcmUuCgpb
-U2V2ZXJpdHk6IEhpZ2hdClRoaXMgaXMgYSBwcmUtZXhpc3RpbmcgaXNzdWUsIGJ1dCBkb2VzIHRo
-aXMgbG9naWMgbGVhZCB0byBhIHJlc291cmNlIGxlYWsgaWYKdGhlIHJlZ3VsYXRvciB3YXMgaW5p
-dGlhbGx5IGVuYWJsZWQgaW4gaGFyZHdhcmUgYW5kIGV4cGxpY2l0bHkgZW5hYmxlZCBieSB0aGUK
-ZHJpdmVyPwoKSWYgdGhlIGJvb3Rsb2FkZXIgbGVhdmVzIHRoZSByZWd1bGF0b3IgZW5hYmxlZCwK
-ZGV2bV9yZWd1bGF0b3JfZ2V0X2V4Y2x1c2l2ZSgpIGluaXRpYWxpemVzIGVuYWJsZV9jb3VudCB0
-byAxLiBJZiB0aGUgZHJpdmVyCmFsc28gZXhwbGljaXRseSByZXF1ZXN0cyBlbmFibGUgPSB0cnVl
-LCByZWd1bGF0b3JfZW5hYmxlKCkgaW5jcmVtZW50cwplbmFibGVfY291bnQgdG8gMi4gCgpIb3dl
-dmVyLCB0aGlzIGxvZ2ljIG9ubHkgcmVnaXN0ZXJzIGEgc2luZ2xlIGRpc2FibGUgYWN0aW9uLiBE
-dXJpbmcgdW5iaW5kLAp0aGUgYWN0aW9uIGRlY3JlbWVudHMgZW5hYmxlX2NvdW50IHRvIDEsIGFu
-ZCBkZXZtX3JlZ3VsYXRvcl9yZWxlYXNlKCkgY2FsbHMKcmVndWxhdG9yX3B1dCgpIHdoaWNoIHRy
-aWdnZXJzIGEgV0FSTl9PTiBhbmQgZGVzdHJveXMgdGhlIGNvbnN1bWVyIHN0cnVjdAp3aXRob3V0
-IGZ1bGx5IGRlY3JlbWVudGluZyB0aGUgdW5kZXJseWluZyByZGV2LT51c2VfY291bnQuCgo+IC0J
-cmV0dXJuIGRldm1fYWRkX2FjdGlvbl9vcl9yZXNldChkZXYsIHJjYXJfZ2VuM19waHlfdXNiMl92
-YnVzX2Rpc2FibGVfYWN0aW9uLAo+IC0JCQkJCWNoYW5uZWwtPnZidXMpOwo+ICsJcmV0dXJuIDA7
-Cj4gIH0KCltTZXZlcml0eTogSGlnaF0KVGhpcyBpcyBhIHByZS1leGlzdGluZyBpc3N1ZSwgYnV0
-IGRvZXMgdGhpcyBkZXZpY2UgcmVtb3ZhbCBzZXF1ZW5jZSBtaXNzCmNhbmNlbGluZyB0aGUgcGVu
-ZGluZyB3b3JrcXVldWUgdGFzaz8KCmRyaXZlcnMvcGh5L3JlbmVzYXMvcGh5LXJjYXItZ2VuMy11
-c2IyLmM6cmNhcl9nZW4zX3BoeV91c2IyX3JlbW92ZSgpIHsKCXN0cnVjdCByY2FyX2dlbjNfY2hh
-biAqY2hhbm5lbCA9IHBsYXRmb3JtX2dldF9kcnZkYXRhKHBkZXYpOwoKCWlmIChjaGFubmVsLT5p
-c19vdGdfY2hhbm5lbCkKCQlkZXZpY2VfcmVtb3ZlX2ZpbGUoJnBkZXYtPmRldiwgJmRldl9hdHRy
-X3JvbGUpOwp9CgpUaGUgZHJpdmVyIHNjaGVkdWxlcyBjaGFubmVsLT53b3JrIGZyb20gaXRzIElS
-USBoYW5kbGVyLiBJZiB0aGUgZHJpdmVyIGlzCnVuYm91bmQgd2hpbGUgYW4gSVJRIGlzIGJlaW5n
-IHByb2Nlc3NlZCwgcmNhcl9nZW4zX3BoeV91c2IyX3JlbW92ZSgpCmV4ZWN1dGVzIGJ1dCBkb2Vz
-IG5vdCBjYWxsIGNhbmNlbF93b3JrX3N5bmMoJmNoYW5uZWwtPndvcmspLgoKQXMgZGV2cmVzIGNs
-ZWFucyB1cCwgaXQgZnJlZXMgdGhlIGNoYW5uZWwgc3RydWN0dXJlLiBJZiB0aGUgd29ya3F1ZXVl
-CmV4ZWN1dGVzIGFmdGVyIGNoYW5uZWwgaXMgZnJlZWQsIGl0IHdpbGwgZGVyZWZlcmVuY2UgZnJl
-ZWQgbWVtb3J5IGxlYWRpbmcKdG8gYSB1c2UtYWZ0ZXItZnJlZS4KCi0tIApTYXNoaWtvIEFJIHJl
-dmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA3MDcxNDM2NDYuMjQ1
-MTc3LTEtYmlqdS5kYXMuanpAYnAucmVuZXNhcy5jb20/cGFydD03CgotLSAKbGludXgtcGh5IG1h
-aWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmlu
-ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+Changes in v3:
+ - Added missing bitfield.h, pm_runtime.h includes (Sashiko)
+ - Set calibration data before registering PHY (Sashiko)
+ - Enable PM Runtime before creating PHY device (Sashiko)
+ - Continue poweroff if some write fails, but still return failure
+   as that would be a partial poweroff anyway (Sashiko)
+ - Added zero driving params to fix default calibration data setting (Sashiko)
+ - Added NULL check on device_Get_match_data (Sashiko)
+
+Changes in v2:
+ - Fixed register offsets for ANA phy in MT8196
+ - Set/clear FORCE_VOLT_SWING_EN bit when configuring and resetting
+   the voltage swing registers
+ - Fixed endianness issue in call to nvmem_read_u16 (Sashiko)
+ - Added early exit during lanes disablement if none are enabled to
+   avoid out-of-bounds bitwise shift (Sashiko)
+ - Removed useless call to pm_runtime_get_sync() in probe(), which
+   also fixes issues pointed out by Sashiko
+ - Fixed wrong dig vs ana register array usage in power_on/off (Sashiko)
+
+
+This series performs major refactoring on the MediaTek DisplayPort PHY
+driver, makes it probe with devicetree instead of getting registered
+by the mtk_dp DRM driver, adds power_on/off() callbacks, and honors
+the phy configure opts' set_lanes and set_voltages for, respectively,
+varying the number of lanes and setting the voltage pre-emphasis and
+swing on the PHY, for each lane.
+
+This driver now also properly gets the PHY (EYE) Calibration Data from
+NVMEM (eFuse array) if provided, instead of getting it (improperly)
+injected by the mtk_dp driver.
+
+Additionally, all of the driving parameters calculations and most of
+the other register definitions were refactored to greatly enhance the
+human readability of this code.
+
+As a last step, this also transfers the register offsets for both the
+digital and analog phy registers in arrays assigned to soc specific
+data, in an effort to both introduce support for new minor revisions
+of the MediaTek DisplayPort PHY and to have a clearer view of the
+register related differences between those (for example, it is easily
+understandable that the analog part remained exactly the same between
+MT8195 and MT8196, but the digital part gets a slight update).
+
+Speaking of which, as a last step, this also adds support for the
+MT8196 SoC (and its derivatives), which uses this PHY only for its
+Embedded DisplayPort (eDP) IP (spoiler: the DP one seems to be way
+too different and requiring an entirely new PHY driver).
+
+In this state, this driver can also easily support the MT8189 SoC
+with a few lines of code: even though I do have clean code to add
+support for this one, I was not (*yet*) able to test it on upstream
+based kernels, and for this reason I decided to leave that one out
+for now (but it's coming later for sure).
+
+NOTE!
+Despite all the apparently breaking changes in the refactoring, full
+compatibility with older MTK_DP driver and with old devicetrees was
+retained and carefully tested on multiple platforms!
+
+P.S.: I am aware of the BUILD_DRIVING_PARAM_0( 0, 2, 4, 7) checkpatch
+warning and I didn't fix it in bigger favor of human readability.
+
+AngeloGioacchino Del Regno (12):
+  dt-bindings: phy: Document MT8195 and MT8196 DisplayPort PHYs
+  phy: phy-mtk-dp: Rename regs to regmap in struct mtk_dp_phy
+  phy: phy-mtk-dp: Allow probing with devicetree match
+  phy: phy-mtk-dp: Migrate register offsets to SoC specific pdata
+  phy: phy-mtk-dp: Implement power_on and power_off PHY callbacks
+  phy: phy-mtk-dp: Support set_lanes in configure and properly cleanup
+  phy: phy-mtk-dp: Support setting volt swing and preemphasis values
+  phy: phy-mtk-dp: Add support for digital and analog calibration
+  phy: phy-mtk-dp: Rewrite and document default driving param macros
+  phy: phy-mtk-dp: Add bitrate register val definitions to SoC data
+  phy: phy-mtk-dp: Add PHYD Lane EN register mask to SoC data
+  phy: phy-mtk-dp: Add support for MT8196 eDP PHY
+
+ .../bindings/phy/mediatek,mt8195-dp-phy.yaml  |  77 ++
+ drivers/phy/mediatek/phy-mtk-dp.c             | 882 ++++++++++++++++--
+ 2 files changed, 862 insertions(+), 97 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/mediatek,mt8195-dp-phy.yaml
+
+-- 
+2.54.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
