@@ -4,46 +4,46 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B45BAC43602
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 08:37:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 349BDC43458
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 08:37:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HB156DEbANMqESJljCJT9fL0/ogLBdJqZJea8c/35Fc=; b=vIHF3H2yQjqLLy
-	VgkIPY2jT/dJo2kj833IGjSKvwP4ejjDjWjQ9XlnLbQCicg/gBk9QbPgLWQ4L8JFqBwJKFic08H0l
-	p+lizt1WwH9B6xdDJK5OySKExdZntEsvAPLY7CmNhc8CgilBHeGLi40JQGI0KMv3qEn1/sNO2aRO7
-	qD+zjj+HqG8/EGdfCrANluBskkFWCwlKMwTlidvJ3+iWv/8icasrTkBBOAwkt+XGJrjCfYpGSa64A
-	zXtzGgpcVmsk+f8QczsCDE8+6wfveBo8lvTWhyEbSW0EmiLKqXzlnQatCFzf/ZZJ1TPIwgUbkiLBt
-	op1gxhp0g7ShImSVmlzA==;
+	List-Owner; bh=r89SpunWHEiTNUYDRVenBUBPdC/QIyp8NVlVc/Bxf/w=; b=LeuCPEW3yRPbu5
+	GfVK3GkdOXOb7H/gs0NFFws4A0B7sWB6Vs60one6lPZKn83LoMUlMAAR19eWavOPcI76juc1s8b8u
+	pRh+TFtdwQ6GAKCAl8bOdAc3FEWegz1I58sEcvro26eIKB7CeuTNaLLYJU8g/TZe2vlHTM6GtkqGA
+	THA1mTfmZsPJwEtzHWyvqiz8Nksx82QWllWl6dSgo7FFG6tTlDqiMHmoxNgBOmfcOPJ+sgVBBBas7
+	NW5KNLl2br2DeIkgAmbOoo5LOM/J/L+aIdU70FIVZfjYUcF1E0nwysHaEiyLUGSojcDVZ+4ysOcoW
+	uSuHizIfy+RM9hi+fOCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh1JQ-0000000EUxG-1i7x;
-	Tue, 07 Jul 2026 08:37:52 +0000
+	id 1wh1JW-0000000EV1B-3xQ2;
+	Tue, 07 Jul 2026 08:37:58 +0000
 Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh1JL-0000000EUtp-1FO3
+	id 1wh1JP-0000000EUvz-4BB7
 	for linux-phy@lists.infradead.org;
-	Tue, 07 Jul 2026 08:37:48 +0000
+	Tue, 07 Jul 2026 08:37:54 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1783413465;
-	bh=BQixtTSWbR6Ud5CItNz9c6mlwiZdSeJF9oTLRnS4wP0=;
+	s=mail; t=1783413470;
+	bh=ZiQvgdmmkoOc+zv8tKiyiuY3EF4d6kjAqhjnaUSW36Q=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=Iq+xdglsAKRHzfwjnnkrRlX1Hk66UsqUg7alhb0H3+W5MogQD32Mma32VmxtLTqTT
-	 GjxYst2soh3DT3oTiCm+eQR2DtBk8gp4qbRlGVrBEkowSVYYxGpsWvpOInO5eAlSUM
-	 a8bX0rFIlOX4S7md+a8r8n3dfjPRxGHwFzUsMa1nQEoxHK94tK8n1O0uppx2JgjXMQ
-	 qIHCX45JmVTjwN0qwl2tgeWteiRXldmVDDeVRM0gFhd6iP5p8g1vXx4Edeh/bijZew
-	 ZytleQ65zAm+CytAO3fV06/OrqMqZIsKJuBa2aWzebDg0sKrUeKqW5oOSMBy9SX29O
-	 W1zhB0cY0wskg==
+	b=JMt4oCsXixehXv9696b11RV5sD7BGiV4XnIfqjymzMWeCjZy+BM9JsNiSjjYrhiXV
+	 H7M6m9u0q+isqFerZA75DrVt9+aR7AQoEbdpe2juJNCFcAys5KcEmjSSKjnXU10hPa
+	 Gp4Gzxta8PcySglW7WReHj58ah/yFCZJkMGrstXOnRsYKD9mN2ry/1fj9xkgVZ/Hi9
+	 5Se+w7Yuu+0LtwsLFQBsGGspBBhxegVBzMQjFEO8H9bPOy7f2727ehYbeNnZ2BsEoN
+	 CjFmZphwHqcmY/0tFRwgm6xrBz0uDK8tF3+subvU5lXTG/ItzryNT+cvn7N2QRrsdx
+	 tJR+/NUQfYRCQ==
 Received: from IcarusMOD.eternityproject.eu (unknown [100.64.1.21])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 6BFFC17E0E95;
-	Tue, 07 Jul 2026 10:37:44 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 5796F17E05D3;
+	Tue, 07 Jul 2026 10:37:49 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: jic23@kernel.org,
 	sboyd@kernel.org
@@ -74,18 +74,17 @@ Cc: dlechner@baylibre.com,
 	linux-phy@lists.infradead.org,
 	linux-pm@vger.kernel.org,
 	kernel@collabora.com,
-	Jonathan Cameron <jonathan.cameron@huawei.com>,
 	Andy Shevchenko <andriy.shevchenko@intel.com>
-Subject: [PATCH v10 05/11] spmi: Implement spmi_subdevice_alloc_and_add() and devm variant
-Date: Tue,  7 Jul 2026 10:37:24 +0200
-Message-ID: <20260707083730.33977-6-angelogioacchino.delregno@collabora.com>
+Subject: [PATCH v10 09/11] misc: qcom-coincell: Migrate to devm_spmi_subdevice_alloc_and_add()
+Date: Tue,  7 Jul 2026 10:37:28 +0200
+Message-ID: <20260707083730.33977-10-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.54.0
 In-Reply-To: <20260707083730.33977-1-angelogioacchino.delregno@collabora.com>
 References: <20260707083730.33977-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260707_013747_489691_47AE1081 
-X-CRM114-Status: GOOD (  16.67  )
+X-CRM114-CacheID: sfid-20260707_013752_276404_3624777D 
+X-CRM114-Status: GOOD (  17.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,211 +101,149 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Some devices connected over the SPMI bus may be big, in the sense
-that those may be a complex of devices managed by a single chip
-over the SPMI bus, reachable through a single SID.
+Some Qualcomm PMICs integrate a charger for coincells, usually
+powering an RTC when external (or main battery) power is missing.
 
-Add new functions aimed at managing sub-devices of a SPMI device
-spmi_subdevice_alloc_and_add() and a spmi_subdevice_remove() for
-adding a new subdevice and removing it respectively, and also
-add their devm_* variants.
+Instead of using the parent SPMI device (the main PMIC) as a kind
+of syscon in this driver, register a new SPMI sub-device and
+initialize its own regmap with this sub-device's specific base
+address, retrieved from the devicetree.
 
-The need for such functions comes from the existence of	those
-complex Power Management ICs (PMICs), which feature one or many
-sub-devices, in some cases with these being even addressable on
-the chip in form of SPMI register ranges.
+This allows to stop manually adding the register base address to
+every R/W call in this driver, as this can be, and is now, handled
+by the regmap API instead.
 
-Examples of those devices can be found in both Qualcomm platforms
-with their PMICs having PON, RTC, SDAM, GPIO controller, and other
-sub-devices, and in newer MediaTek platforms showing similar HW
-features and a similar layout with those also having many subdevs.
-
-Also, instead of generally exporting symbols, export them with a
-new "SPMI" namespace: all users will have to import this namespace
-to make use of the newly introduced exports.
-
-Reviewed-by: Jonathan Cameron <jonathan.cameron@huawei.com>
+Acked-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Tested-by: Neil Armstrong <neil.armstrong@linaro.org> # on SM8650-QRD
-Acked-by: Stephen Boyd <sboyd@kernel.org>
 Reviewed-by: Andy Shevchenko <andriy.shevchenko@intel.com>
 Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 ---
- drivers/spmi/spmi-devres.c | 24 ++++++++++++
- drivers/spmi/spmi.c        | 78 ++++++++++++++++++++++++++++++++++++++
- include/linux/spmi.h       | 16 ++++++++
- 3 files changed, 118 insertions(+)
+ drivers/misc/Kconfig         |  2 ++
+ drivers/misc/qcom-coincell.c | 48 ++++++++++++++++++++++++++----------
+ 2 files changed, 37 insertions(+), 13 deletions(-)
 
-diff --git a/drivers/spmi/spmi-devres.c b/drivers/spmi/spmi-devres.c
-index 62c4b3f24d06..c3e889fe1b6e 100644
---- a/drivers/spmi/spmi-devres.c
-+++ b/drivers/spmi/spmi-devres.c
-@@ -60,5 +60,29 @@ int devm_spmi_controller_add(struct device *parent, struct spmi_controller *ctrl
- }
- EXPORT_SYMBOL_GPL(devm_spmi_controller_add);
+diff --git a/drivers/misc/Kconfig b/drivers/misc/Kconfig
+index 390256ed91f4..90947c015179 100644
+--- a/drivers/misc/Kconfig
++++ b/drivers/misc/Kconfig
+@@ -291,6 +291,8 @@ config HP_ILO
+ config QCOM_COINCELL
+ 	tristate "Qualcomm coincell charger support"
+ 	depends on MFD_SPMI_PMIC || COMPILE_TEST
++	depends on SPMI
++	select REGMAP_SPMI
+ 	help
+ 	  This driver supports the coincell block found inside of
+ 	  Qualcomm PMICs.  The coincell charger provides a means to
+diff --git a/drivers/misc/qcom-coincell.c b/drivers/misc/qcom-coincell.c
+index 3c57f7429147..46340f0199cd 100644
+--- a/drivers/misc/qcom-coincell.c
++++ b/drivers/misc/qcom-coincell.c
+@@ -9,11 +9,11 @@
+ #include <linux/of.h>
+ #include <linux/regmap.h>
+ #include <linux/platform_device.h>
++#include <linux/spmi.h>
  
-+static void devm_spmi_subdevice_remove(void *sub_sdev)
-+{
-+	spmi_subdevice_remove(sub_sdev);
-+}
-+
-+struct spmi_subdevice *devm_spmi_subdevice_alloc_and_add(struct device *dev,
-+							 struct spmi_device *sparent)
-+{
-+	struct spmi_subdevice *sub_sdev;
-+	int ret;
-+
-+	sub_sdev = spmi_subdevice_alloc_and_add(sparent);
-+	if (IS_ERR(sub_sdev))
-+		return sub_sdev;
-+
-+	ret = devm_add_action_or_reset(dev, devm_spmi_subdevice_remove, sub_sdev);
-+	if (ret)
-+		return ERR_PTR(ret);
-+
-+	return sub_sdev;
-+}
-+EXPORT_SYMBOL_NS_GPL(devm_spmi_subdevice_alloc_and_add, "SPMI");
-+
- MODULE_LICENSE("GPL");
- MODULE_DESCRIPTION("SPMI devres helpers");
-+MODULE_IMPORT_NS("SPMI");
-diff --git a/drivers/spmi/spmi.c b/drivers/spmi/spmi.c
-index cae89dd915d4..cd047aba38ab 100644
---- a/drivers/spmi/spmi.c
-+++ b/drivers/spmi/spmi.c
-@@ -19,6 +19,7 @@
- 
- static bool is_registered;
- static DEFINE_IDA(ctrl_ida);
-+static DEFINE_IDA(spmi_subdevice_ida);
- 
- static void spmi_dev_release(struct device *dev)
- {
-@@ -31,6 +32,19 @@ static const struct device_type spmi_dev_type = {
- 	.release	= spmi_dev_release,
+ struct qcom_coincell {
+ 	struct device	*dev;
+ 	struct regmap	*regmap;
+-	u32		base_addr;
  };
  
-+static void spmi_subdev_release(struct device *dev)
-+{
-+	struct spmi_device *sdev = to_spmi_device(dev);
-+	struct spmi_subdevice *sub_sdev = container_of(sdev, struct spmi_subdevice, sdev);
-+
-+	ida_free(&spmi_subdevice_ida, sub_sdev->devid);
-+	kfree(sub_sdev);
-+}
-+
-+static const struct device_type spmi_subdev_type = {
-+	.release	= spmi_subdev_release,
-+};
-+
- static void spmi_ctrl_release(struct device *dev)
- {
- 	struct spmi_controller *ctrl = to_spmi_controller(dev);
-@@ -90,6 +104,18 @@ void spmi_device_remove(struct spmi_device *sdev)
- }
- EXPORT_SYMBOL_GPL(spmi_device_remove);
+ #define QCOM_COINCELL_REG_RSET		0x44
+@@ -35,7 +35,7 @@ static int qcom_coincell_chgr_config(struct qcom_coincell *chgr, int rset,
+ 	/* if disabling, just do that and skip other operations */
+ 	if (!enable)
+ 		return regmap_write(chgr->regmap,
+-			  chgr->base_addr + QCOM_COINCELL_REG_ENABLE, 0);
++			  QCOM_COINCELL_REG_ENABLE, 0);
  
-+/**
-+ * spmi_subdevice_remove() - Remove an SPMI subdevice
-+ * @sub_sdev:	spmi_device to be removed
-+ */
-+void spmi_subdevice_remove(struct spmi_subdevice *sub_sdev)
-+{
-+	struct spmi_device *sdev = &sub_sdev->sdev;
-+
-+	device_unregister(&sdev->dev);
-+}
-+EXPORT_SYMBOL_NS_GPL(spmi_subdevice_remove, "SPMI");
-+
- static inline int
- spmi_cmd(struct spmi_controller *ctrl, u8 opcode, u8 sid)
- {
-@@ -431,6 +457,58 @@ struct spmi_device *spmi_device_alloc(struct spmi_controller *ctrl)
- }
- EXPORT_SYMBOL_GPL(spmi_device_alloc);
+ 	/* find index for current-limiting resistor */
+ 	for (i = 0; i < ARRAY_SIZE(qcom_rset_map); i++)
+@@ -58,7 +58,7 @@ static int qcom_coincell_chgr_config(struct qcom_coincell *chgr, int rset,
+ 	}
  
-+/**
-+ * spmi_subdevice_alloc_and_add(): Allocate and add a new SPMI sub-device
-+ * @sparent:	SPMI parent device with previously registered SPMI controller
-+ *
-+ * Returns:
-+ * Pointer to newly allocated SPMI sub-device for success or error pointer.
-+ */
-+struct spmi_subdevice *spmi_subdevice_alloc_and_add(struct spmi_device *sparent)
-+{
+ 	rc = regmap_write(chgr->regmap,
+-			  chgr->base_addr + QCOM_COINCELL_REG_RSET, i);
++			  QCOM_COINCELL_REG_RSET, i);
+ 	if (rc) {
+ 		/*
+ 		 * This is mainly to flag a bad base_addr (reg) from dts.
+@@ -71,37 +71,58 @@ static int qcom_coincell_chgr_config(struct qcom_coincell *chgr, int rset,
+ 	}
+ 
+ 	rc = regmap_write(chgr->regmap,
+-		chgr->base_addr + QCOM_COINCELL_REG_VSET, j);
++		QCOM_COINCELL_REG_VSET, j);
+ 	if (rc)
+ 		return rc;
+ 
+ 	/* set 'enable' register */
+ 	return regmap_write(chgr->regmap,
+-			    chgr->base_addr + QCOM_COINCELL_REG_ENABLE,
++			    QCOM_COINCELL_REG_ENABLE,
+ 			    QCOM_COINCELL_ENABLE);
+ }
+ 
+ static int qcom_coincell_probe(struct platform_device *pdev)
+ {
+-	struct device_node *node = pdev->dev.of_node;
++	struct regmap_config qcom_coincell_regmap_config = {
++		.reg_bits = 16,
++		.val_bits = 8,
++		.max_register = 0xff,
++		.fast_io = true,
++	};
++	struct device *dev = &pdev->dev;
++	struct device_node *node = dev->of_node;
 +	struct spmi_subdevice *sub_sdev;
-+	struct spmi_device *sdev;
-+	int ret;
-+
-+	sub_sdev = kzalloc_obj(*sub_sdev);
-+	if (!sub_sdev)
-+		return ERR_PTR(-ENOMEM);
-+
-+	sdev = &sub_sdev->sdev;
-+	sdev->ctrl = sparent->ctrl;
-+	sdev->usid = sparent->usid;
-+
-+	ret = ida_alloc(&spmi_subdevice_ida, GFP_KERNEL);
-+	if (ret < 0) {
-+		kfree(sub_sdev);
-+		return ERR_PTR(ret);
-+	}
-+	sub_sdev->devid = ret;
-+
-+	device_initialize(&sdev->dev);
-+	sdev->dev.parent = &sparent->dev;
-+	sdev->dev.bus = &spmi_bus_type;
-+	sdev->dev.type = &spmi_subdev_type;
-+
-+	ret = dev_set_name(&sdev->dev, "%u-%02x.%u.auto",
-+			   sdev->ctrl->nr, sdev->usid, sub_sdev->devid);
-+	if (ret)
-+		goto err_put_dev;
-+
-+	ret = device_add(&sdev->dev);
-+	if (ret) {
-+		dev_err(&sdev->dev, "Can't add device, status %pe\n", ERR_PTR(ret));
-+		goto err_put_dev;
-+	}
-+
-+	return sub_sdev;
-+
-+err_put_dev:
-+	put_device(&sdev->dev);
-+	return ERR_PTR(ret);
-+}
-+EXPORT_SYMBOL_NS_GPL(spmi_subdevice_alloc_and_add, "SPMI");
-+
- /**
-  * spmi_controller_alloc() - Allocate a new SPMI controller
-  * @parent:	parent device
-diff --git a/include/linux/spmi.h b/include/linux/spmi.h
-index 4eb9564a7fb3..a78a8924b2ac 100644
---- a/include/linux/spmi.h
-+++ b/include/linux/spmi.h
-@@ -69,6 +69,22 @@ int spmi_device_add(struct spmi_device *sdev);
++	struct spmi_device *sparent;
+ 	struct qcom_coincell chgr;
+ 	u32 rset = 0;
+ 	u32 vset = 0;
+ 	bool enable;
+ 	int rc;
  
- void spmi_device_remove(struct spmi_device *sdev);
+-	chgr.dev = &pdev->dev;
++	if (!dev->parent)
++		return -ENODEV;
  
-+/**
-+ * struct spmi_subdevice - Basic representation of an SPMI sub-device
-+ * @sdev:	Sub-device representation of an SPMI device
-+ * @devid:	Platform Device ID of an SPMI sub-device
-+ */
-+struct spmi_subdevice {
-+	struct spmi_device	sdev;
-+	unsigned int		devid;
-+};
+-	chgr.regmap = dev_get_regmap(pdev->dev.parent, NULL);
+-	if (!chgr.regmap) {
+-		dev_err(chgr.dev, "Unable to get regmap\n");
+-		return -EINVAL;
+-	}
++	chgr.dev = &pdev->dev;
+ 
+-	rc = of_property_read_u32(node, "reg", &chgr.base_addr);
++	rc = device_property_read_u32(dev, "reg", &qcom_coincell_regmap_config.reg_base);
+ 	if (rc)
+ 		return rc;
+ 
++	sparent = spmi_find_device_by_of_node(dev->parent->of_node);
++	if (!sparent)
++		return ERR_PTR(-ENODEV);
 +
-+struct spmi_subdevice *spmi_subdevice_alloc_and_add(struct spmi_device *sparent);
-+void spmi_subdevice_remove(struct spmi_subdevice *sdev);
++	sub_sdev = devm_spmi_subdevice_alloc_and_add(dev, sparent);
++	if (IS_ERR(sub_sdev))
++		return PTR_ERR(sub_sdev);
 +
-+struct spmi_subdevice *devm_spmi_subdevice_alloc_and_add(struct device *dev,
-+							 struct spmi_device *sparent);
++	chgr.regmap = devm_regmap_init_spmi_ext(&sub_sdev->sdev,
++						&qcom_coincell_regmap_config);
++	if (IS_ERR(chgr.regmap)) {
++		dev_err(chgr.dev, "Unable to get regmap\n");
++		return PTR_ERR(chgr.regmap);
++	}
 +
- /**
-  * struct spmi_controller - interface to the SPMI master controller
-  * @dev:	Driver model representation of the device.
+ 	enable = !of_property_read_bool(node, "qcom,charger-disable");
+ 
+ 	if (enable) {
+@@ -142,3 +163,4 @@ module_platform_driver(qcom_coincell_driver);
+ 
+ MODULE_DESCRIPTION("Qualcomm PMIC coincell charger driver");
+ MODULE_LICENSE("GPL v2");
++MODULE_IMPORT_NS("SPMI");
 -- 
 2.54.0
 
