@@ -4,149 +4,148 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C52BC43458
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 05:41:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E5E7C43458
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 05:41:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N6RCDjL5m2PCKYwy8OCGWZ8IZpoJV5vhsYikc8oEKTs=; b=haz84EJUWzGbVe
-	pReXtBFqrTprGFs8xLIsRdt5YDqL396ouxAC/9ZA36wWFKvRPMRa/bb6NnLXO6eSAnZEL0NvTzmai
-	3b/7llI674h54hSaT8pZPCWXnrEvznMjjTi09QKUZetSNjy0FoVpSu3mnKXhiykBWArtws+XZJOmH
-	6/6Q02ndAKaSDdrbMCQBYzSF/gr8Yat7yqFW3vV7bwSg4kejzNxpxDhdo2NUYySFZ0uS2t2eX57f8
-	Th7Qpqu34+bh7nyLxDBWe/+bHcXedWH+lEMi/qDf8MdyHxSF+Caa6AQhT7V6v6pZUHyo/fFVHt485
-	IiLSnyD+0/V+2FSurURQ==;
+	List-Owner; bh=VVLZZtpBvfO2xl6el4tQXDImtAl0GzTrdAnurs2RFso=; b=4p88csB0DiXk8c
+	85VXcg1817PxB2vblPz15vV3VMQlVLN8cvUg5SU541UkujTqo18yOvyvJofs3WTKVWanGEvu+YgBW
+	+PeM0x3OjjKhaNvnABWYhml0GxkNz+g6OrPJERg9bosQqZUlamj2179nLLsqN/MRzmKZp2ZBT61zi
+	MIQHsr2BuUKODasFqGx8pZ6fCPy5Pyz5CaIUiFdRUaEKjtSouPfa/x+T5nbmdoS4f49UOYdZbAMd0
+	itXjxp9CNYylZ+WQD3zgptxNHk4YFHHJJuDlvrQFAAFBEhrES7oSjM7TSlf9HOVk+ABttVsdaVev1
+	/It5PSmGEdfQijim45Cg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wgyYc-0000000E8kx-3GY5;
-	Tue, 07 Jul 2026 05:41:22 +0000
+	id 1wgyZ7-0000000E8nc-3nJ5;
+	Tue, 07 Jul 2026 05:41:53 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wgyYa-0000000E8kZ-0BlS
+	id 1wgyZ5-0000000E8nD-1zjP
 	for linux-phy@lists.infradead.org;
-	Tue, 07 Jul 2026 05:41:21 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66748qp02450511
-	for <linux-phy@lists.infradead.org>; Tue, 7 Jul 2026 05:41:19 GMT
+	Tue, 07 Jul 2026 05:41:52 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66748mlm2649162
+	for <linux-phy@lists.infradead.org>; Tue, 7 Jul 2026 05:41:51 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	lflEKyZ2GNpJuinbyFUPuuftqGQc8rX0sKQ4/Oimemk=; b=pIBWH6C/GRvvXGyK
-	UUKYecCk/BmHWnvjJUWbpCrXeEV6AzYwfHLiD/JB5aCTOi99/Eyg818IG6T3R2FP
-	jph2mKiIANbeN/NHviifXypy/T3ol9IJCF/k0UQezDxP8McA5FHoA8+sHRnMXBSZ
-	DSQSPVzaLXvJG3VvKLHXaN7DaXUpyvC5o5dH8tcyZY1lMdCExYakJCs/knZd1TTn
-	4ezS6YhRl1KMmmkwPbEEWbkj/HQVuJTvFH/XFOJZceOPxAo3lxZX2y3a0SogvRme
-	OfpN+ylzzHLEYnj+m+vauhahORUeja6sJGN0XG8bX9g+RQAHCH5s6hL3VH6zRWSo
-	aDuq5Q==
-Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4f8su70ajm-1
+	ow/eYL8dueLqt/B+l/aviyIZSIeIrdYbf3Z3NhMMHok=; b=ZHhxHNv3oNKYdllQ
+	HccPBJl83ODUJG7oL7Kx2LsFfGE5GuDSMP6LgfHNgnxLzfUtVuj1V32G7gHx1pAk
+	y0TKnf6j7RkHtdxQVal94OSBWhHZc9llnTlrkltz0+dE7GcY+Gv9yfsrYXY0uuCo
+	uC/T+eZ5yDlQHgquP6cTsihcMV2VQo+IOPLgYlr/ISrEJwNsYouQRZFnFr9Hy0pC
+	Jqzyr5jwN+pBbnb8ZRorxlOktNjIH7bD5lgMVUsUGJF4CDnhgOZfxV27jo6zBkh6
+	0Yaw6nUkwSANqapnogCMEdFFKVzefTjl7lZlq/4KchuaEbRz89/M9R0+e9R5IFCU
+	1vl4oQ==
+Received: from mail-pf1-f197.google.com (mail-pf1-f197.google.com [209.85.210.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4f8fdw2ptu-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 07 Jul 2026 05:41:19 +0000 (GMT)
-Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-380ddac2b02so5814729a91.1
-        for <linux-phy@lists.infradead.org>; Mon, 06 Jul 2026 22:41:19 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Tue, 07 Jul 2026 05:41:50 +0000 (GMT)
+Received: by mail-pf1-f197.google.com with SMTP id d2e1a72fcca58-845e3ede1f9so4436254b3a.0
+        for <linux-phy@lists.infradead.org>; Mon, 06 Jul 2026 22:41:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1783402879; x=1784007679; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=lflEKyZ2GNpJuinbyFUPuuftqGQc8rX0sKQ4/Oimemk=;
-        b=WsNZGNErBVWlhwRhtRojhj50SIkXJ7P1SnDil8ZWZedrfsSGGAv6485w5ARaMvBD6w
-         FILCn61uDVGOpcjL1JHCI5cP9CEhsfYeq4HIZGuU5Iw/sNl17tTwqXa4a+0ocF4EwGFZ
-         QGj+D+hEKpH4PoAmHWlDSl3YkvGZBMWY5ikVWUd3wGKVtRUFW2jVXCDtkHHgyVvwF3xl
-         V/1Nz9mNAet3HIt3fik/MqC0Z8WAixtlSZYan2cFkidP2Nyantfe+7aluMPnv+1a4MXR
-         aZY9MF6MchcSSH5MIw5RSJEeXdm2PmKyIgB8pw4ncVrer28m/HfaHFHuqIx1x6rkFfHj
-         38QQ==
+        d=oss.qualcomm.com; s=google; t=1783402910; x=1784007710; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=ow/eYL8dueLqt/B+l/aviyIZSIeIrdYbf3Z3NhMMHok=;
+        b=BPt0XafPJ8jZAX0xaZUHtzx9kFlUwc/58K1b2MnMeXGWCv5BvhQxJo9GXNKeqPx3t9
+         Wdg5D6TX+vMrP9vMbFmXY0bL2NY4gttCVHJFRbi1NC+N+r5BBlhjzlUyYj+o4jI3iiKM
+         9dCzFf0Z8TwzYA3e9C95S3LiisP3RI1ThFlT/8wU903ToSzQTbwmCWVIBs2DOd3wwLXz
+         sdokhyIJjV+jcifsRez8a3tcbVzxgacAWbW6KXt1t+tQ6LtCic52tTjWnnmDwiNVo6T+
+         BxTsfKvCCP94HUHvQYwXpVBMWHjPLM6ZhVeqyUsJkQm5E7yGpKfq6adBArehVo7tSXf2
+         K2Kg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1783402879; x=1784007679;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=lflEKyZ2GNpJuinbyFUPuuftqGQc8rX0sKQ4/Oimemk=;
-        b=fNPYJ9/VC/2C902eCQ3WLNlMoZm/yZrijNMfXoYJvESADIr+mlAkemvItKA6ZPpz28
-         k7q95obQfL7rO5ojPe2D/mX4ORqYOtzRS1Er8SJXKnmHwSlM1Z+QkWluD2ILdQmQP7j7
-         PBhIh1JRK7EFpSAvTsQeiMzoiK3+UJKSr9dxUoEz6c2l8KcbaSSCvj02yX4DHPVEJFhh
-         3bBviHhXD8h6oKqXDprLULpyl6aMpcSHyE45lp0NTwSBhhXPCfap5OLgvxsTERKX2ucw
-         4hxuzlvecYoXGPpJVT9ok2EpdONaejRuQJ05aHnte0Hijk9TFfkuvURd7PAEK12Ysd3/
-         IAKA==
-X-Forwarded-Encrypted: i=1; AHgh+RrOCIBysAYQQdjg+XwXugCLptDOPwDEKaD8zUDLqhyN3VWhves97Re2UI08n4oZ2YcyMFvsoQ0up8o=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxcNyHJMYEzl29kt7T7/GckVwDDcn1CiWdgSndOnm0fsEbSgwZE
-	jlfhODVV7x/OpEmlh/rPQoA8MOV6qGOSZq6p3SzCR/X/IL3KA6FqOHlnX3UBFkpislMMkWRGN0A
-	zXUMT2SWERs0GISMJFSsKCs3FMQYgCQMLSM2OVkOAX2jJCaq1dznkwvsrUEzXVzAliQKj
-X-Gm-Gg: AfdE7clHzwVD6Zk+pUDQ/azCcIzuYyHwSSQGYDVX3JUcNssY2yUw7BwFKDmf9wD+L1V
-	EE4Xi+TAnRlFdsfK5yQUoa6qgNRJ7rAWmZHhLUMAom8kPe37ZGDOg6wgN96/aBQHgWxSOZrZXt1
-	BlHWmZKqO4xES307I+yiGWgULXFRQa4zfWmrymcqCosf5ufcYEohFVOAo468kCDtHCAgYAot63L
-	kFtvRm6FByPvDNF8YSDm5O2mj9CtUZqgdR3YjgUr00c2uE0AD4R6T7rCyW5Y3c2sFKEZ6Up9D5+
-	MDNE52CVvxg63loZWOiFaUic4Re0ejJyHkjeJAoUXu8WQuZzv7GzhN3F4HQONfUpqdgofM8XIHU
-	px7MoKWLlgUD2oekAPCuNoGf/3qsfNsLzPSsz0Xkv8fZ7CoN/G/9oSEhUgtB4ZJ8RjI2ajOVgO9
-	7VnH7x
-X-Received: by 2002:a17:90b:53c3:b0:37f:ce2e:32ea with SMTP id 98e67ed59e1d1-3875826180emr3950203a91.19.1783402878816;
-        Mon, 06 Jul 2026 22:41:18 -0700 (PDT)
-X-Received: by 2002:a17:90b:53c3:b0:37f:ce2e:32ea with SMTP id 98e67ed59e1d1-3875826180emr3950171a91.19.1783402878394;
-        Mon, 06 Jul 2026 22:41:18 -0700 (PDT)
+        d=1e100.net; s=20251104; t=1783402910; x=1784007710;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=ow/eYL8dueLqt/B+l/aviyIZSIeIrdYbf3Z3NhMMHok=;
+        b=KHUoaAu3a5kt7N5IrsN+lhvC3kj0SEuw3qxd2uSkm/sgEJmK11CKYKn8bppgVzzZCa
+         /D58hPRRm9NIBFhSNs9C8Snhevf2qncl3kXpMQ0ZWVtMkA/WHKOyocddObvxe4+280e6
+         ea70Mq962FhVL11KsVAkK6QJr07U/kTmsYv1fVoPXXDuf5IUKfAWWCqIZG+aTwc2kKJ2
+         EOcoXrWPOrVUDx2bu4wNF63HppwSh5/5nVBJtPM4ah4aOsbT5JBTL9puJYNpL7x08ZHe
+         wQ1D0TPlXnf0t9lwhyce8JwNe+gR2BSvagiF/d2p8zcbHlT/m7X8fnRgf4DNdI327EeO
+         EdXw==
+X-Forwarded-Encrypted: i=1; AHgh+RrmLrO/M7XN0sbHWhYuwxXCjNTSxb0pMxNXBbmfC64SFKn3aKY+4+hLaR9Igair6A+jaw2Kqevlz+c=@lists.infradead.org
+X-Gm-Message-State: AOJu0YykfpQW9ZmZX7Ec8hQTMt5fKsvbelTzHsTXkLqWcTbGHKBIFK4+
+	U6htK2TdM4mR6bGdAi+K7gbDF6YBQc3ySETtE81Ah0sSVrCElm7/X9rb/riS3+Vly3O/Nu1ca4S
+	sZWRq7LAkcH7t9MEUeisCruzD1tbx5TGTL8xUXGvdi2zcPVNmT1kSKxD/kLx4vd5bhcQR
+X-Gm-Gg: AfdE7ckzbrkBy9uOtnZXJrXw0M7QUWZPpTlEB6PHYsPQXKrbn9VJ5DdN/Y09Gckb6/4
+	AxxFbUXSPUER1fzN1moUFoDoKD+bFGv3V7To/0HSagUa/BYIUAtdLdEP6Hkof/GxBxGF8T6E6hB
+	GyLEr/kaT1KvynvhXVhsGlJgZ9hpJbB0X81d0trD9WEkeTyRkIU5CTz7ks5CHOL9JSY63UBY9R/
+	UqdcLKSovAV67UNSKY68R1W9TshFYNZa1l7veo0u0bbW/YiOoCsj0fPZJTUZOAETbIFQ6qKrS0f
+	a3OINV7iby64gvco8K8446lKX6EJxQ+KOUqJGqCUyJN5H+CVcC8TasHSQ4xe2mm8ZWjgR2cIUza
+	LQpLYTi2apFUsW7K9MeM4Q69PrLMqYKmtqkjgBDn8F4XDTFYFC5qhgE2i3sjxuhFsiojGB82vgL
+	3w7g58
+X-Received: by 2002:a05:6a00:4fc1:b0:847:9c06:2bef with SMTP id d2e1a72fcca58-84826d3e5fbmr3666425b3a.29.1783402910007;
+        Mon, 06 Jul 2026 22:41:50 -0700 (PDT)
+X-Received: by 2002:a05:6a00:4fc1:b0:847:9c06:2bef with SMTP id d2e1a72fcca58-84826d3e5fbmr3666389b3a.29.1783402909456;
+        Mon, 06 Jul 2026 22:41:49 -0700 (PDT)
 Received: from ?IPV6:2405:201:c409:b03f:6d0b:bb83:7a67:4093? ([2405:201:c409:b03f:6d0b:bb83:7a67:4093])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-387d100b5c9sm426934a91.3.2026.07.06.22.41.12
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-847f6d7a96fsm4763011b3a.46.2026.07.06.22.41.43
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 06 Jul 2026 22:41:17 -0700 (PDT)
-Message-ID: <1602bd87-ecc3-4051-b833-5aac43c2762d@oss.qualcomm.com>
-Date: Tue, 7 Jul 2026 11:11:11 +0530
+        Mon, 06 Jul 2026 22:41:49 -0700 (PDT)
+Message-ID: <eafba447-1b25-4c78-be17-d0a90fafc8fb@oss.qualcomm.com>
+Date: Tue, 7 Jul 2026 11:11:42 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 8/9] arm64: dts: qcom: shikra-evk: Add TC9563 PCIe switch
- node for PCIe
-To: Bjorn Helgaas <helgaas@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
- <neil.armstrong@linaro.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
- <conor+dt@kernel.org>,
-        Bjorn Helgaas <bhelgaas@google.com>,
-        Lorenzo Pieralisi <lpieralisi@kernel.org>,
+Subject: Re: [PATCH 2/9] dt-bindings: PCI: qcom: Document the Shikra PCIe
+ Controller
+To: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: Lorenzo Pieralisi <lpieralisi@kernel.org>,
         =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-        Manivannan Sadhasivam <mani@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>, Vinod Koul <vkoul@kernel.org>,
         Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
-        Bartosz Golaszewski <brgl@kernel.org>,
-        Konrad Dybcio
- <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org
-References: <20260630193059.GA225112@bhelgaas>
+        Bjorn Helgaas <bhelgaas@google.com>, devicetree@vger.kernel.org,
+        Manivannan Sadhasivam <mani@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>, linux-kernel@vger.kernel.org,
+        linux-phy@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+        Conor Dooley <conor+dt@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>, linux-pci@vger.kernel.org,
+        Bartosz Golaszewski <brgl@kernel.org>
+References: <20260701-shikra-upstream-v1-0-e1a721eb8943@oss.qualcomm.com>
+ <20260701-shikra-upstream-v1-2-e1a721eb8943@oss.qualcomm.com>
+ <178285172593.288348.3890129606237873483.robh@kernel.org>
 Content-Language: en-US
 From: Sushrut Shree Trivedi <sushrut.trivedi@oss.qualcomm.com>
-In-Reply-To: <20260630193059.GA225112@bhelgaas>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzA3MDA1MSBTYWx0ZWRfX7/F4Hep58PKG
- X+/R6od2ZLpgSw83k4MmyfSP6V45ZR67GRTUHxZ14+Qhx3cyWwPDNLnQjFIlk9bbLk3TUnYc9nA
- 02hKRmMNMc7qcbLJiVIFtoZe2PIxCe1SizQyY0JNQcP0p5PfXwDnTJcze4t0/jmSa1RnBItsVqy
- 8PuS8EITb/UDr379c6BZWGd5loXLvzgTdVb21LJ8nHKqdjMgQ1lY2g4emL4IwG4ovWHIX6wOLyJ
- Dcpzg8ZdoylcZ5blZL/8xlBNgSG+4cEStzOPWpAO4LMdBdvDKD7GcMT/8lJ9lyvuKNHdNjS6WE0
- dhWqTYZs/WZKyilEQibXI5pWJC8wIvKVsB5lixbohjjI4tVbeGDbgkq9avj1OebUZybsn0CDIsi
- LBzIwFkNEx8r9c5KrZspuj49+nKaN/xRAdKPOqmYxa4HqHBBiHFdSSzM65nhGc2OGTdaf3C6nws
- jsYyGs6W3MkTVhNvljw==
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzA3MDA1MSBTYWx0ZWRfX2o35ZEtu7cGr
- uZrFrvZSowMHO55Vzrdj1d1x1LtcPY0so9GnOvDP++n1BTH315GmEZjEeCavnw8FJf20NofweSo
- xGqcy+FWAnCOfLOVVdclmp0K72QcJH4=
-X-Proofpoint-GUID: Ns4NXAchEILll1pmsQH0XEx6U1dkrV-D
-X-Proofpoint-ORIG-GUID: Ns4NXAchEILll1pmsQH0XEx6U1dkrV-D
-X-Authority-Analysis: v=2.4 cv=HN7z0Itv c=1 sm=1 tr=0 ts=6a4c917f cx=c_pps
- a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10
+In-Reply-To: <178285172593.288348.3890129606237873483.robh@kernel.org>
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNzA3MDA1MSBTYWx0ZWRfX15qSs9RE2QMu
+ emTQ2h4Zcz+LUbFDY7yu9rGdl0mvPALK/ZKPCLHlCTV3WnVNWjqvgFUtiXMjCZSqDJeUGkGhv8/
+ Gt0QHkcLGobzAOcjpuI0+kgkRYuTtmI=
+X-Proofpoint-ORIG-GUID: 4efeyP7feXVFFh0NUNRKhvNymbHk4_Uq
+X-Authority-Analysis: v=2.4 cv=EtziaycA c=1 sm=1 tr=0 ts=6a4c919e cx=c_pps
+ a=rEQLjTOiSrHUhVqRoksmgQ==:117 a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10
  a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22 a=S2spThItiBpve86ZF9EA:9
- a=QEXdDO2ut3YA:10 a=uKXjsCUrEbL0IQVhDsJ9:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22 a=VwQbUJbxAAAA:8
+ a=EUspDBNiAAAA:8 a=g4xDkRcHy8dAf5eKVigA:9 a=QEXdDO2ut3YA:10
+ a=2VI0MkxyNR6bbpdq8BZq:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzA3MDA1MSBTYWx0ZWRfX4vpiznzGa+4T
+ PeDjKJKRz818JMkBJcfgib0wuTXpysdzerKDK+gJV14at9pRUVmSYU1PuxV4dq3P2tTRDHefUjK
+ 5DfAxyxVSUve6xk2rV4DcxcujhN8RsF4ezRqtJ/YmmZwDXihZnJRuRVWMyqIDqYRP3aESIvPIOr
+ V24xAtdcdtSaAOD3/0m32UAqobykEBSNylloaX+MEPkbPbKY9p1JOlGjd9rtua+KLwJHfr+LBm1
+ LtmDPLnlSTG4lhzMfaaa+lrMppL6ekzC+Hnf0nJNY+Vt0JSip+2ZUGPdN52yE+6D7jDFZTM82Cq
+ MfRPZ03/sAfpNfJANaVvGj9nhcf5Wk7zlpILHYC64YpZJu6MgT0K9C8BQU1udG9cOAECVLyV37F
+ gLnEsx/GuiCfIVdH97Y3TmSK9HWsy0rhvdR3MA0Zs9EPUcG4spX5xN62f/siBNBHlIh03S9zOrd
+ 6NOxjU+FY2ccrgInf3A==
+X-Proofpoint-GUID: 4efeyP7feXVFFh0NUNRKhvNymbHk4_Uq
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-07-07_01,2026-07-06_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 priorityscore=1501 malwarescore=0 adultscore=0 clxscore=1015
- bulkscore=0 suspectscore=0 lowpriorityscore=0 impostorscore=0 phishscore=0
+ priorityscore=1501 suspectscore=0 clxscore=1015 adultscore=0 phishscore=0
+ spamscore=0 lowpriorityscore=0 bulkscore=0 impostorscore=0 malwarescore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607070051
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260706_224120_122524_8641E284 
-X-CRM114-Status: GOOD (  11.62  )
+X-CRM114-CacheID: sfid-20260706_224151_550608_8FACC17B 
+X-CRM114-Status: GOOD (  17.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -164,24 +163,90 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On 7/1/2026 1:00 AM, Bjorn Helgaas wrote:
-> On Wed, Jul 01, 2026 at 12:32:50AM +0530, Sushrut Shree Trivedi wrote:
->> Add a node for the TC9563 PCIe switch connected to PCIe. The switch
->> has three downstream ports.Two embedded Ethernet devices are present
->> on one of the downstream ports. All the ports present in the
->> node represent the downstream ports and embedded endpoints.
+On 7/1/2026 2:05 AM, Rob Herring (Arm) wrote:
+> On Wed, 01 Jul 2026 00:32:44 +0530, Sushrut Shree Trivedi wrote:
+>> Add a dedicated schema for the PCIe controller found on the Shikra
+>> platform.
 >>
->> Power to the TC9563 is supplied through two LDO regulators, which
->> are on by default and are added as fixed regulators. TC9563 can be
->> configured through I2C.
-> s/ports.Two/ports. Two/
+>> Signed-off-by: Sushrut Shree Trivedi <sushrut.trivedi@oss.qualcomm.com>
+>> ---
+>>   .../devicetree/bindings/pci/qcom,shikra-pcie.yaml  | 211 +++++++++++++++++++++
+>>   1 file changed, 211 insertions(+)
+>>
+> My bot found errors running 'make dt_binding_check' on your patch:
 >
-> Possibly subject doesn't need two uses of "PCIe".
+> yamllint warnings/errors:
+>
+> dtschema/dtc warnings/errors:
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:57.29-36 Unexpected 'GIC_SPI'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:57.41-60 Unexpected 'IRQ_TYPE_LEVEL_HIGH'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:58.29-36 Unexpected 'GIC_SPI'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:58.41-60 Unexpected 'IRQ_TYPE_LEVEL_HIGH'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:59.29-36 Unexpected 'GIC_SPI'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:59.41-60 Unexpected 'IRQ_TYPE_LEVEL_HIGH'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:60.29-36 Unexpected 'GIC_SPI'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:60.41-60 Unexpected 'IRQ_TYPE_LEVEL_HIGH'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:61.29-36 Unexpected 'GIC_SPI'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:61.41-60 Unexpected 'IRQ_TYPE_LEVEL_HIGH'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:62.29-36 Unexpected 'GIC_SPI'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:62.41-60 Unexpected 'IRQ_TYPE_LEVEL_HIGH'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:63.29-36 Unexpected 'GIC_SPI'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:63.41-60 Unexpected 'IRQ_TYPE_LEVEL_HIGH'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:64.29-36 Unexpected 'GIC_SPI'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:64.41-60 Unexpected 'IRQ_TYPE_LEVEL_HIGH'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:65.29-36 Unexpected 'GIC_SPI'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:65.41-60 Unexpected 'IRQ_TYPE_LEVEL_HIGH'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:76.56-75 Unexpected 'IRQ_TYPE_LEVEL_HIGH'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:77.56-75 Unexpected 'IRQ_TYPE_LEVEL_HIGH'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:78.56-75 Unexpected 'IRQ_TYPE_LEVEL_HIGH'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:79.56-75 Unexpected 'IRQ_TYPE_LEVEL_HIGH'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:83.30-46 Unexpected 'GCC_PCIE_AUX_CLK'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:84.30-50 Unexpected 'GCC_PCIE_CFG_AHB_CLK'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:85.30-51 Unexpected 'GCC_PCIE_MSTR_AXI_CLK'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:86.30-50 Unexpected 'GCC_PCIE_SLV_AXI_CLK'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:87.30-54 Unexpected 'GCC_PCIE_SLV_Q2A_AXI_CLK'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:88.30-58 Unexpected 'GCC_DDRSS_MEMNOC_PCIE_SF_CLK'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:89.30-59 Unexpected 'GCC_PCIE_TILE_AXI_SYS_NOC_CLK'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:90.30-55 Unexpected 'GCC_QMIP_PCIE_CFG_AHB_CLK'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:100.39-55 Unexpected 'GCC_PCIE_AUX_CLK'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:103.44-58 Unexpected 'MASTER_PCIE2_0'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:103.59-73 Unexpected 'RPM_ALWAYS_TAG'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:104.40-53 Unexpected 'SLAVE_EBI_CH0'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:104.54-68 Unexpected 'RPM_ALWAYS_TAG'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:105.41-56 Unexpected 'MASTER_AMPSS_M0'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:105.57-71 Unexpected 'RPM_ACTIVE_TAG'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:106.43-56 Unexpected 'SLAVE_PCIE2_0'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:106.57-71 Unexpected 'RPM_ACTIVE_TAG'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:114.30-42 Unexpected 'GCC_PCIE_BCR'
+> Lexical error: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dts:117.37-50 Unexpected 'GCC_PCIE_GDSC'
+> FATAL ERROR: Syntax error parsing input tree
+> make[2]: *** [scripts/Makefile.dtbs:140: Documentation/devicetree/bindings/pci/qcom,shikra-pcie.example.dtb] Error 1
+> make[2]: *** Waiting for unfinished jobs....
+> make[1]: *** [/builds/robherring/dt-review-ci/linux/Makefile:1669: dt_binding_check] Error 2
+> make: *** [Makefile:248: __sub-make] Error 2
+>
+> doc reference errors (make refcheckdocs):
+>
+> See https://patchwork.kernel.org/project/devicetree/patch/20260701-shikra-upstream-v1-2-e1a721eb8943@oss.qualcomm.com
+>
+> The base for the series is generally the latest rc1. A different dependency
+> should be noted in *this* patch.
+>
+> If you already ran 'make dt_binding_check' and didn't see the above
+> error(s), then make sure 'yamllint' is installed and dt-schema is up to
+> date:
+>
+> pip3 install dtschema --upgrade
+>
+> Please check and re-submit after running the above command yourself. Note
+> that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+> your schema. However, it must be unset to test all examples with your schema.
 
 ACK'd.
 
 Sushrut
 
+>
 
 -- 
 linux-phy mailing list
