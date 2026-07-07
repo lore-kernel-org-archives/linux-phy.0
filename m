@@ -4,88 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11307C44503
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 14:20:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 837FEC43602
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 14:27:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TOxHEqbOVdcIXXWmX1vjtLvSZPsvjAtFpEU8TrgfG0M=; b=O2xMeHKc0NbPuK
-	myuGa2K+G3OLHVHPwyfaseGlOqhynQO9mARYchbu07qMUcbX8w9cNEF11ugxJ8Ka9V2AFjru9n9IX
-	LQK7GpUoFHxrtzCJ0/iXzT3C826UtXoZabdcKdk0BAPjlRBZaEGI8Vt7gPtSxR1CZlfPiyqB4sOCE
-	dl9jvt15MocMEJKRxGGfX/YxD8sK4VIywOk6RlCxhz6BmyHhu9kRIYf7tJn7c74Hh9qpvr/NQ+dmp
-	CnwSIA+LRcZuLcTIKintucAlQk+NZU8Zd2dI8wZVkQyson3LVMB1jx0vvpYcCX1YzumSTPLr06ECB
-	4etZ/3M6qPqJ563tlR1g==;
+	List-Owner; bh=a6KH0ZNz6yPEYWKucPH06YbONUXhsVj0ILSCqxA8MnU=; b=IGVvtXB57IkIJB
+	HqVeyGZFg6wJDdnqvM8kU3ZGII3mQKMtYEZyxhfCaxgQOYSyvg56m6y0l9gdj7ZvIBYlMcomJKzZB
+	BkU8Ame2G+mLk9BAv6r4n4MujwizmtpoNTFbiwIYO5rKJObW5IK+xm5+G8KxPgHe4OygaKDtRiaJg
+	pKtSLJrU9s3bGFP/r3E4PPXE/CxK+7BU79yw3AGFgWlqf39jRtNU3AoCqOrxMb3k6wg71rCu64L7W
+	/3krFfrdDWkPAyVugSHyHCCRrsy6BiQeWrhIGb+R4T0akyXpW9E34VxzHK8XJzRdmYeMBIuULAUaU
+	TBM+lKQJKRHIjVkup4vA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh6eh-0000000F9EO-384p;
-	Tue, 07 Jul 2026 14:20:11 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1wh6la-0000000FB6n-0UqM;
+	Tue, 07 Jul 2026 14:27:18 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh6eS-0000000F8jN-00Nu;
-	Tue, 07 Jul 2026 14:19:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=ipq0m/UCHbgUkw9TUuYAYbkxtDj8SUYvBQUfqWIvn5o=; b=l8FrxjKBgOAxNV5a+GsMSdnsdm
-	5LOdptmQGwVNq8aidSGSrUP+zBCjSfYE+Enbyz35276Hou/p29bIoDB6Sovd7EHgUMQPc2gHMlCGC
-	E+QX/l5ZijO/Mca/AzGOjsi5tNiC28TVcfftj4LYubsTjdB0NKak+czBWNby/Dh/++g0KA5wBdmqw
-	mflNQSNNRdglLdKr19ud2NwHDbPVgprQXkgUUr2kpwxuG0nRa82wO/QZKG44LIFE1l1A+L8F8825T
-	RpGj5skBRRcH1e7Y9PDRavPK3BJtR5ELW/2jXte5lsQB6s0R+goh/01RPFXfl9bkVPHeDIzFvXKI3
-	04hWgQMQ==;
-Received: from bali.collaboradmins.com ([148.251.105.195])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1wh6eO-00000007XVg-3ZYX;
-	Tue, 07 Jul 2026 14:19:54 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1783433991;
-	bh=eEMuTOF44PUBx6MlzjnKfxwVyJPuxTBMZ92VOVk+KkA=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=KcoMWmF4xmGl87DEVTHvrrPw3gZQHpOIEPrL7oglPFtomr3cYRqB0VzKjgNsJPdQP
-	 FmwICiAjFITk3GNtcbcAP57CIMlBNVGG7zHpaYFzkdBMMTLXSdmCd3kzJxWMwsuGWa
-	 qAHkNwRt2iGt9oDBt33ytA0NEavwScH39y5Fk3gPHC5F0GJZoTQsjovegt3Zu/KoqW
-	 8qGAmKzd0z8OSBRgM0f6tRonu41Yp3+N8kvJDrbO3xsbkGWh+QGGFZ+eEPN2ohJLxD
-	 5rF2wJbedKaR3FGkJOvhktIwarhD7Nre+NNlFg/U7t/EIsG93n15z2USZeZr3uzLk1
-	 SlPfJI8KldZqA==
-Received: from IcarusMOD.eternityproject.eu (unknown [100.64.1.21])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 03B9517E0FD0;
-	Tue, 07 Jul 2026 16:19:50 +0200 (CEST)
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-To: chunfeng.yun@mediatek.com
-Cc: vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	matthias.bgg@gmail.com,
-	angelogioacchino.delregno@collabora.com,
-	chunkuang.hu@kernel.org,
-	p.zabel@pengutronix.de,
-	justin.yeh@mediatek.com,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	dri-devel@lists.freedesktop.org,
-	kernel@collabora.com
-Subject: [PATCH v2 12/12] phy: phy-mtk-dp: Add support for MT8196 eDP PHY
-Date: Tue,  7 Jul 2026 16:19:31 +0200
-Message-ID: <20260707141931.191172-13-angelogioacchino.delregno@collabora.com>
-X-Mailer: git-send-email 2.54.0
-In-Reply-To: <20260707141931.191172-1-angelogioacchino.delregno@collabora.com>
+	id 1wh6lY-0000000FB6J-2anY
+	for linux-phy@lists.infradead.org;
+	Tue, 07 Jul 2026 14:27:16 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id AEFF26138A;
+	Tue,  7 Jul 2026 14:27:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D03021F00AC4;
+	Tue,  7 Jul 2026 14:27:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1783434434;
+	bh=9ejetAl8MzDSoFJYgSbHLvtbPxpoS6PlRJW41QuvIVs=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=BosXBH9rxDr4wDdzAsIV/yyFwkLkT8dXAnXvl3sUysQ1HPPsxjVNQOsIuvaunYhQF
+	 j5FYwA/BVxVTU9wn3cmScF4NKsbDF/VG09DmkdhmnikWggql1pv8XBSXhLxzewdkYD
+	 OQ5MMrq1t9zeATktAKdhwFdB/6nPRfJHOYYqE+SEqS9mVJ0cVPgQdZEPECZFG6toSS
+	 MYWaNf6n1SeAUYfSSKfEIGKAB+qVFR9SDmvaCws1KpNBtBzwQIlTcMD1L+ewrHw79F
+	 nIxjSQsLRfv1l1OqA6yBL0OHiDNVLIvb3g/HErKa6p8ZkmCz/SpfSx41db8XSvolgV
+	 RtZfq7lTtOyGw==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v2 02/12] phy: phy-mtk-dp: Rename regs to regmap in
+ struct mtk_dp_phy
+To: "AngeloGioacchino Del Regno" <angelogioacchino.delregno@collabora.com>
+Cc: conor+dt@kernel.org, vkoul@kernel.org, devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, olteanv@gmail.com, neil.armstrong@linaro.org, robh@kernel.org
+In-Reply-To: <20260707141931.191172-3-angelogioacchino.delregno@collabora.com>
 References: <20260707141931.191172-1-angelogioacchino.delregno@collabora.com>
-MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260707_151953_105292_D6AA8685 
-X-CRM114-Status: GOOD (  13.75  )
+ <20260707141931.191172-3-angelogioacchino.delregno@collabora.com>
+Date: Tue, 07 Jul 2026 14:27:13 +0000
+Message-Id: <20260707142713.D03021F00AC4@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,155 +63,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The MT8196 SoC features an updated PHY IP compared to the older
-ones, and there is one that is specific to Embedded DisplayPort.
-
-Add support for the eDP PHY found in the MediaTek MT8196 SoC and
-all of its variants.
-
-Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
----
- drivers/phy/mediatek/phy-mtk-dp.c | 66 ++++++++++++++++++++++++++++++-
- 1 file changed, 65 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/phy/mediatek/phy-mtk-dp.c b/drivers/phy/mediatek/phy-mtk-dp.c
-index 64bdfda5394f..06337a546c21 100644
---- a/drivers/phy/mediatek/phy-mtk-dp.c
-+++ b/drivers/phy/mediatek/phy-mtk-dp.c
-@@ -5,7 +5,7 @@
-  * Copyright (c) 2022, BayLibre Inc.
-  * Copyright (c) 2022, MediaTek Inc.
-  *
-- * Major refactoring
-+ * Major refactoring and new SoCs support
-  * Copyright (c) 2026, Collabora Ltd.
-  *                     AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-  */
-@@ -41,6 +41,7 @@
- #define TPLL_SSC_EN			BIT(3)
- 
- /* DP_PHYD_BIT_RATE */
-+#define PHYD_DIG_RG_BIT_RATE_V2		GENMASK(3, 0)
- #define PHYD_DIG_RG_BIT_RATE		GENMASK(1, 0)
- 
- /* DP_PHYD_SW_RST */
-@@ -57,6 +58,7 @@
- 
- /* DP_PHYD_TX_CTL_0 */
- #define PHYD_TX_LN_EN			GENMASK(7, 4)
-+#define PHYD_TX_LN_EN_V2		GENMASK(3, 0)
- 
- /* DP_PHYD_DRIVING_FORCE */
- #define PHYD_DP_TX_FORCE_VOLT_SWING_EN	BIT(0)
-@@ -123,6 +125,16 @@
- #define MT8195_DRIVING_PARAM_7_DEFAULT	BUILD_DRIVING_PARAM_12(0, 6, 12, 0)
- #define MT8195_DRIVING_PARAM_8_DEFAULT	BUILD_DRIVING_PARAM_23(8, 0)
- 
-+/* MT8196/MT6991: Logic State Change Point (LC TX C) */
-+#define MT8196_DRIVING_PARAM_3_DEFAULT	BUILD_DRIVING_PARAM_0( 10, 12, 14, 17)
-+#define MT8196_DRIVING_PARAM_4_DEFAULT	BUILD_DRIVING_PARAM_12(14, 17, 18, 18)
-+#define MT8196_DRIVING_PARAM_5_DEFAULT	BUILD_DRIVING_PARAM_23(21, 24)
-+
-+/* MT8196/MT6991: Positive Edge (LC TX CP) */
-+#define MT8196_DRIVING_PARAM_6_DEFAULT	BUILD_DRIVING_PARAM_0( 0, 2, 4, 7)
-+#define MT8196_DRIVING_PARAM_7_DEFAULT	BUILD_DRIVING_PARAM_12(0, 3, 6, 0)
-+#define MT8196_DRIVING_PARAM_8_DEFAULT	BUILD_DRIVING_PARAM_23(3, 0)
-+
- enum mtk_dp_phya_ana_glb_regidx {
- 	DP_PHYA_GLB_BIAS_GEN_0,
- 	DP_PHYA_GLB_BIAS_GEN_1,
-@@ -178,6 +190,11 @@ static const u8 mt8195_phy_dig_lane_regs[DP_PHYD_LAN_MAX] = {
- 	[DP_PHYD_LAN_DRIVING_PARAM_0] = 0x2c,
- };
- 
-+static const u8 mt8196_phy_dig_lane_regs[DP_PHYD_LAN_MAX] = {
-+	[DP_PHYD_LAN_DRIVING_FORCE] = 0x30,
-+	[DP_PHYD_LAN_DRIVING_PARAM_0] = 0x34,
-+};
-+
- static const u8 mt8195_phy_dig_glb_regs[DP_PHYD_GLOBAL_MAX] = {
- 	[DP_PHYD_PLL_CTL_0] = 0x10,
- 	[DP_PHYD_PLL_CTL_1] = 0x14,
-@@ -187,6 +204,15 @@ static const u8 mt8195_phy_dig_glb_regs[DP_PHYD_GLOBAL_MAX] = {
- 	[DP_PHYD_TX_CTL_0] = 0x44,
- };
- 
-+static const u8 mt8196_phy_dig_glb_regs[DP_PHYD_GLOBAL_MAX] = {
-+	[DP_PHYD_PLL_CTL_0] = 0x10,
-+	[DP_PHYD_PLL_CTL_1] = 0x14,
-+	[DP_PHYD_SW_RST] = 0x38,
-+	[DP_PHYD_BIT_RATE] = 0x3c,
-+	[DP_PHYD_AUX_RX_CTL] = 0x40,
-+	[DP_PHYD_TX_CTL_0] = 0x74,
-+};
-+
- static const u8 mt8195_phy_dig_bitrate_val[DP_PHYD_BIT_RATE_MAX] = {
- 	[DP_PHYD_BIT_RATE_RBR] = 0,
- 	[DP_PHYD_BIT_RATE_HBR] = 1,
-@@ -194,6 +220,13 @@ static const u8 mt8195_phy_dig_bitrate_val[DP_PHYD_BIT_RATE_MAX] = {
- 	[DP_PHYD_BIT_RATE_HBR3] = 3
- };
- 
-+static const u8 mt8196_edp_phy_dig_bitrate_val[DP_PHYD_BIT_RATE_MAX] = {
-+	[DP_PHYD_BIT_RATE_RBR] = 1,
-+	[DP_PHYD_BIT_RATE_HBR] = 4,
-+	[DP_PHYD_BIT_RATE_HBR2] = 7,
-+	[DP_PHYD_BIT_RATE_HBR3] = 9
-+};
-+
- /**
-  * struct mtk_dp_phya_imp_sel - Per-Lane Impedance Selection
-  * @pmos: Impedance selection for P-Channel MOSFET
-@@ -786,8 +819,39 @@ static const struct mtk_dp_phy_pdata mt8195_dp_phy_data = {
- 	},
- };
- 
-+static const struct mtk_dp_phy_pdata mt8196_edp_phy_data = {
-+	.off_ana_glb = 0x400,
-+	.off_ana_lane = (const u16[]) { 0x0, 0x100, 0x200, 0x300 },
-+	.off_dig_glb = 0x1400,
-+	.off_dig_lane = (const u16[]) { 0x1000, 0x1100, 0x1200, 0x1300 },
-+	.regs_ana_glb = mt8195_phy_ana_glb_regs,
-+	.regs_ana_lane = mt8195_phy_ana_lane_regs,
-+	.regs_dig_glb = mt8196_phy_dig_glb_regs,
-+	.regs_dig_lane = mt8196_phy_dig_lane_regs,
-+	.mask_dig_tx_ln = PHYD_TX_LN_EN_V2,
-+	.val_dig_bitrate = mt8196_edp_phy_dig_bitrate_val,
-+	.ana_bias_r = 15,
-+	.ana_cktx_imp = 8,
-+	.ana_lanes_imp = {
-+		.pmos = 8,
-+		.nmos = 8,
-+	},
-+	.driving_params = (const u32[]) {
-+		[0] = 0,
-+		[1] = 0,
-+		[2] = 0,
-+		[3] = MT8196_DRIVING_PARAM_3_DEFAULT,
-+		[4] = MT8196_DRIVING_PARAM_4_DEFAULT,
-+		[5] = MT8196_DRIVING_PARAM_5_DEFAULT,
-+		[6] = MT8196_DRIVING_PARAM_6_DEFAULT,
-+		[7] = MT8196_DRIVING_PARAM_7_DEFAULT,
-+		[8] = MT8196_DRIVING_PARAM_8_DEFAULT
-+	},
-+};
-+
- static const struct of_device_id mtk_dp_phy_of_match[] = {
- 	{ .compatible = "mediatek,mt8195-dp-phy", .data = &mt8195_dp_phy_data },
-+	{ .compatible = "mediatek,mt8196-edp-phy", .data = &mt8196_edp_phy_data },
- 	{ /* sentinel */ }
- };
- MODULE_DEVICE_TABLE(of, mtk_dp_phy_of_match);
--- 
-2.54.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
+IFtIaWdoXSBNaXNzaW5nIE5VTEwgY2hlY2sgZm9yIGBkZXYtPnBsYXRmb3JtX2RhdGFgIGJlZm9y
+ZSBkZXJlZmVyZW5jaW5nIGl0IGluIGBtdGtfZHBfcGh5X3Byb2JlYC4KLS0KCi0tLSBQYXRjaCBb
+Ml06IFtQQVRDSCB2MiAwMi8xMl0gcGh5OiBwaHktbXRrLWRwOiBSZW5hbWUgcmVncyB0byByZWdt
+YXAgaW4gc3RydWN0IG10a19kcF9waHkgLS0tCmNvbW1pdCBiNDFkNDA3MmE5NzgwZmY0ZjU2Y2Y4
+YjE3MDg1MDg4YjFmMjc3N2FlCkF1dGhvcjogQW5nZWxvR2lvYWNjaGlubyBEZWwgUmVnbm8gPGFu
+Z2Vsb2dpb2FjY2hpbm8uZGVscmVnbm9AY29sbGFib3JhLmNvbT4KCnBoeTogcGh5LW10ay1kcDog
+UmVuYW1lIHJlZ3MgdG8gcmVnbWFwIGluIHN0cnVjdCBtdGtfZHBfcGh5CgpUaGlzIGNvbW1pdCBy
+ZW5hbWVzIHRoZSByZWdzIG1lbWJlciBvZiBzdHJ1Y3QgbXRrX2RwX3BoeSB0byByZWdtYXAgdG8K
+aW1wcm92ZSByZWFkYWJpbGl0eSBhbmQgYWxpZ24gd2l0aCBjb21tb24ga2VybmVsIGRyaXZlciBu
+YW1pbmcgY29udmVudGlvbnMuCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9tZWRpYXRlay9w
+aHktbXRrLWRwLmMgYi9kcml2ZXJzL3BoeS9tZWRpYXRlay9waHktbXRrLWRwLmMKPiBpbmRleCBk
+NzAyNGExNDQzMzU4Li5iZjdiM2E5NWU3MmQyIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L21l
+ZGlhdGVrL3BoeS1tdGstZHAuYwo+ICsrKyBiL2RyaXZlcnMvcGh5L21lZGlhdGVrL3BoeS1tdGst
+ZHAuYwoKWyAuLi4gXQoKPiBAQCAtMTc2LDcgKzE3Niw3IEBAIHN0YXRpYyBpbnQgbXRrX2RwX3Bo
+eV9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQoKW1NldmVyaXR5OiBIaWdoXQpU
+aGlzIGlzIGEgcHJlLWV4aXN0aW5nIGlzc3VlLCBidXQgZG9lcyBtdGtfZHBfcGh5X3Byb2JlKCkg
+bGFjayBhIE5VTEwgY2hlY2sgCmZvciBkZXYtPnBsYXRmb3JtX2RhdGEgYmVmb3JlIGRlcmVmZXJl
+bmNpbmcgaXQ/CgpJZiB0aGUgcGxhdGZvcm0gZGV2aWNlIGlzIHByb2JlZCB3aXRob3V0IHBsYXRm
+b3JtX2RhdGEgKGZvciBleGFtcGxlLCBpZiAKbWFudWFsbHkgYm91bmQgdmlhIHRoZSBzeXNmcyBi
+aW5kIGludGVyZmFjZSB0byBhIGdlbmVyaWMgcGxhdGZvcm0gZGV2aWNlIApsYWNraW5nIHRoaXMg
+ZGF0YSksIGRldi0+cGxhdGZvcm1fZGF0YSB3aWxsIGJlIE5VTEwuCgpMb29raW5nIGF0IHRoZSBj
+b2RlIGluIG10a19kcF9waHlfcHJvYmUoKToKCiAgICByZWdzID0gKihzdHJ1Y3QgcmVnbWFwICoq
+KWRldi0+cGxhdGZvcm1fZGF0YTsKICAgIGlmICghcmVncykKICAgICAgICByZXR1cm4gZGV2X2Vy
+cl9wcm9iZShkZXYsIC1FSU5WQUwsIC4uLgoKRGVyZWZlcmVuY2luZyBkZXYtPnBsYXRmb3JtX2Rh
+dGEgdG8gYXNzaWduIHJlZ3MgYmVmb3JlIGNoZWNraW5nIGlmIApwbGF0Zm9ybV9kYXRhIGl0c2Vs
+ZiBpcyB2YWxpZCB3aWxsIGNhdXNlIGEga2VybmVsIG9vcHMuCgo+ICAJaWYgKCFkcF9waHkpCj4g
+IAkJcmV0dXJuIC1FTk9NRU07Cj4gIAo+IC0JZHBfcGh5LT5yZWdzID0gcmVnczsKPiArCWRwX3Bo
+eS0+cmVnbWFwID0gcmVnczsKPiAgCXBoeSA9IGRldm1fcGh5X2NyZWF0ZShkZXYsIE5VTEwsICZt
+dGtfZHBfcGh5X2Rldl9vcHMpOwo+ICAJaWYgKElTX0VSUihwaHkpKQo+ICAJCXJldHVybiBkZXZf
+ZXJyX3Byb2JlKGRldiwgUFRSX0VSUihwaHkpLAoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0
+dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDcwNzE0MTkzMS4xOTExNzItMS1hbmdl
+bG9naW9hY2NoaW5vLmRlbHJlZ25vQGNvbGxhYm9yYS5jb20/cGFydD0yCgotLSAKbGludXgtcGh5
+IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
