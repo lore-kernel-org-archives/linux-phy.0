@@ -4,54 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6A9AC43458
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 11:31:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 55936C43458
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 11:57:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2z+hdb/aw6IO9lon7btIfeS9q246gSlApSd3aAvnEkM=; b=zwuLs20SoVTroZ
-	K78qeX5POgGRxPdcLFRwx+xLwByzsXrCPRVeFn3IrgjyCirdD3qzobZRmh4GQZklDaXtfeq73ccT4
-	Z3+0d3dEnXL7KHOJTQhfTMGzyeKLaaI/qtIOrwNrfmgXa8JJ8Fnm0OD0ea74SYLjmw7Nc8UxxD97p
-	hjJFsqCiKRZlJar3jWDCSekHPiExW1ugwzzgahVC8xJ2OS75GGUWaV3MDaM21whkLG3bltpvnnY/E
-	GayKoeO0iPmzWZfbTILqxkeVtDJoEK79z0sw+YGMnlvaXaXk3q1vgMtJNJaneIUCnSVoVLw0xX0v2
-	ro8dFs4AVl14OZhClptw==;
+	List-Owner; bh=+FqxWLLSBMLvuViqlcWxs8KKAV2eXKcp383gUTRX6jg=; b=Ttn/upptUUvup9
+	hIxQTwKklAubiUH8tSdBSd/raUhG3nDKU20MmxOR7QjxJxTgq+dZ8cXvsH6kl1M6BgLTCH9qh4DaI
+	nY8uRx6/ROYGxXI0pyv1n/yFGumfneNEsIJRbY3dQ6k20W/7MhGGJx6EYVR34Etzv/LWP66tuH039
+	H09MX27Q+8VKOk4zV26M+3cUpRbYWSzYDTjCmFwwSvDuz0XGGIdg7ECk8WrNBTuakyKfIWkq5dy2V
+	w+v0ATr9q58PmqAKNsI+d09Q/BdB84qhPyN52rsvkjRFXG7A309yP8l7TKyR3ol5d0lRc0G0MyDe7
+	ujEOW3ms/NLVt5iBIrFA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh411-0000000ErAW-2BmG;
-	Tue, 07 Jul 2026 11:31:05 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wh4Qx-0000000EuB2-0TBF;
+	Tue, 07 Jul 2026 11:57:51 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh410-0000000ErAF-1FPE
+	id 1wh4Qv-0000000EuAR-0dgV
 	for linux-phy@lists.infradead.org;
-	Tue, 07 Jul 2026 11:31:02 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id E490F418B7;
-	Tue,  7 Jul 2026 11:31:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6CEB81F000E9;
-	Tue,  7 Jul 2026 11:31:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1783423861;
-	bh=VcLKg93e+zs0Xjnf+pXbVXuv1TZ7gPpVnYH6IGlJgKA=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=a7yzXxj0AhIw9LIdvUrOUKr5V4o564Or0pSOGCZg+pqSulwkghVeUJTzn0xvJxBu1
-	 oVhfalVseEV5b0BtU6T8ijMFMzrplzUvCIHrrwEvSKaA0JK2j+McIvUEetSDo04uM6
-	 WIdtz3DAHXumNMpVuaR1UczSFlbquGg7eV62tS/dQSbtAoeDX4nTbx1533Obm2039T
-	 MzvgLk/0fuMMiD/S8q8OW6QiDs/qFBMlvskNxrRzVGAAxJ2MsSlG3sRW8vxPAWhAZY
-	 mRVihUfAhk7cbk/rED3BcbFhEtY3B1WQbdp8xbrayGPCQC20GyqhaHO8PGW417h9zM
-	 ZzkQcpkOIQMNA==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v12 05/12] spmi: Implement
- spmi_subdevice_alloc_and_add() and devm variant
-To: "AngeloGioacchino Del Regno" <angelogioacchino.delregno@collabora.com>
-Cc: neil.armstrong@linaro.org, vkoul@kernel.org, olteanv@gmail.com, linux-phy@lists.infradead.org
-In-Reply-To: <20260707111829.180158-6-angelogioacchino.delregno@collabora.com>
+	Tue, 07 Jul 2026 11:57:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1783425467;
+	bh=VHqBskF2miGoUSyz6zaznqC2MdqsOv4v1qlhwctNtPo=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=Io6doRaBd4/RS/BSjrvq7JNNdKHDBS+5wUEC+wsfq2bTXkc2XoHWEtQFiHGGEKg+c
+	 IRQhsn7R347oNbs3KTnzCPBfDICxxZ6+HIQCiJ53pCE26gg/vAaI3zeUVIyvbpT+bV
+	 /z1wZCwcE9QmC3etLoDPJCAUHM3DBxCYXrWaC2VRxQiU0Nndtif7iIRKbSn+sx4pGb
+	 Gs25diGcV9i/HpW4dKssaz3mwjYswEkRMOBhpLQApoeQvmy2TdIOXPVjH4pT2YG83r
+	 tRDt1lN9Cs7J/mOQJoy+x2h3yOCA2P9RWeqvu6U6m4G/sRVw3xgpYCeQL1TyBI0x5a
+	 z4jUJtRKTKxBw==
+Received: from [100.64.1.21] (unknown [100.64.1.21])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange x25519)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id B5EC817E013E;
+	Tue, 07 Jul 2026 13:57:46 +0200 (CEST)
+Message-ID: <ee5961a8-cc2d-4dbc-a668-3e007f7cd2fa@collabora.com>
+Date: Tue, 7 Jul 2026 13:57:46 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v12 06/12] spmi: Add helper to get a parent SPMI device
+To: sashiko-reviews@lists.linux.dev
+Cc: neil.armstrong@linaro.org, olteanv@gmail.com, vkoul@kernel.org,
+ linux-phy@lists.infradead.org
 References: <20260707111829.180158-1-angelogioacchino.delregno@collabora.com>
- <20260707111829.180158-6-angelogioacchino.delregno@collabora.com>
-Date: Tue, 07 Jul 2026 11:31:00 +0000
-Message-Id: <20260707113101.6CEB81F000E9@smtp.kernel.org>
+ <20260707111829.180158-7-angelogioacchino.delregno@collabora.com>
+ <20260707112756.DEAAB1F000E9@smtp.kernel.org>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+In-Reply-To: <20260707112756.DEAAB1F000E9@smtp.kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260707_045749_377403_2BC4B481 
+X-CRM114-Status: GOOD (  21.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,54 +72,75 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIENvbWJpbmluZyBkZXZp
-Y2UgYWxsb2NhdGlvbiBhbmQgYWRkaXRpb24gaW50byBhIHNpbmdsZSBgYWxsb2NfYW5kX2FkZGAg
-ZnVuY3Rpb24gYnJlYWtzIGRldmljZSBtb2RlbCBjb25maWd1cmF0aW9uIHNlbWFudGljcyBmb3Ig
-YHNwbWlfYnVzX3R5cGVgIGRldmljZXMuCi0tCgotLS0gUGF0Y2ggWzVdOiBbUEFUQ0ggdjEyIDA1
-LzEyXSBzcG1pOiBJbXBsZW1lbnQgc3BtaV9zdWJkZXZpY2VfYWxsb2NfYW5kX2FkZCgpIGFuZCBk
-ZXZtIHZhcmlhbnQgLS0tCmNvbW1pdCAwN2M4ODRkZWNjOGZlYjgzOTcwZGM3YTJmZTU0YTRmYmY4
-MGJlNjEwCkF1dGhvcjogQW5nZWxvR2lvYWNjaGlubyBEZWwgUmVnbm8gPGFuZ2Vsb2dpb2FjY2hp
-bm8uZGVscmVnbm9AY29sbGFib3JhLmNvbT4KCnNwbWk6IEltcGxlbWVudCBzcG1pX3N1YmRldmlj
-ZV9hbGxvY19hbmRfYWRkKCkgYW5kIGRldm0gdmFyaWFudAoKVGhpcyBwYXRjaCBhZGRzIG5ldyBm
-dW5jdGlvbnMgdG8gbWFuYWdlIHN1Yi1kZXZpY2VzIG9mIGFuIFNQTUkgZGV2aWNlLAppbmNsdWRp
-bmcgc3BtaV9zdWJkZXZpY2VfYWxsb2NfYW5kX2FkZCgpIGFuZCBzcG1pX3N1YmRldmljZV9yZW1v
-dmUoKS4KVGhlc2UgYXJlIGludGVuZGVkIHRvIHN1cHBvcnQgY29tcGxleCBQTUlDcyB0aGF0IGZl
-YXR1cmUgbXVsdGlwbGUKc3ViLWRldmljZXMgYWRkcmVzc2FibGUgdmlhIFNQTUkgcmVnaXN0ZXIg
-cmFuZ2VzLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9zcG1pL3NwbWkuYyBiL2RyaXZlcnMvc3Bt
-aS9zcG1pLmMKPiBpbmRleCA0MDUwZjM2MTRkYWI4Li5lMjE4YzgxNDA1NDU4IDEwMDY0NAo+IC0t
-LSBhL2RyaXZlcnMvc3BtaS9zcG1pLmMKPiArKysgYi9kcml2ZXJzL3NwbWkvc3BtaS5jCgpbIC4u
-LiBdCgo+ICtzdHJ1Y3Qgc3BtaV9zdWJkZXZpY2UgKnNwbWlfc3ViZGV2aWNlX2FsbG9jX2FuZF9h
-ZGQoc3RydWN0IHNwbWlfZGV2aWNlICpzcGFyZW50KQo+ICt7Cj4gKwlzdHJ1Y3Qgc3BtaV9zdWJk
-ZXZpY2UgKnN1Yl9zZGV2Owo+ICsJc3RydWN0IHNwbWlfZGV2aWNlICpzZGV2Owo+ICsJaW50IHJl
-dDsKClsgLi4uIF0KCj4gKwlkZXZpY2VfaW5pdGlhbGl6ZSgmc2Rldi0+ZGV2KTsKPiArCXNkZXYt
-PmRldi5wYXJlbnQgPSAmc3BhcmVudC0+ZGV2Owo+ICsJc2Rldi0+ZGV2LmJ1cyA9ICZzcG1pX2J1
-c190eXBlOwo+ICsJc2Rldi0+ZGV2LnR5cGUgPSAmc3BtaV9zdWJkZXZfdHlwZTsKPiArCj4gKwly
-ZXQgPSBkZXZfc2V0X25hbWUoJnNkZXYtPmRldiwgIiV1LSUwMnguJXUuYXV0byIsCj4gKwkJCSAg
-IHNkZXYtPmN0cmwtPm5yLCBzZGV2LT51c2lkLCBzdWJfc2Rldi0+ZGV2aWQpOwo+ICsJaWYgKHJl
-dCkKPiArCQlnb3RvIGVycl9wdXRfZGV2Owo+ICsKPiArCXJldCA9IGRldmljZV9hZGQoJnNkZXYt
-PmRldik7CgpbU2V2ZXJpdHk6IEhpZ2hdCkRvZXMgY29tYmluaW5nIGFsbG9jYXRpb24gYW5kIHJl
-Z2lzdHJhdGlvbiBpbnRvIGEgc2luZ2xlIGZ1bmN0aW9uIHByZXZlbnQKY2FsbGVycyBmcm9tIHBy
-b3Blcmx5IGNvbmZpZ3VyaW5nIGRldmljZSBwcm9wZXJ0aWVzPwoKU2luY2UgZGV2aWNlX2FkZCgp
-IGlzIGNhbGxlZCBpbW1lZGlhdGVseSBoZXJlLCB0aGUgZHJpdmVyIGNvcmUgZXhlY3V0ZXMgYnVz
-Cm1hdGNoaW5nIGFuZCBicm9hZGNhc3RzIHRoZSBLT0JKX0FERCB1ZXZlbnQgYmVmb3JlIHRoZSBj
-YWxsZXIgcmVjZWl2ZXMgdGhlCmRldmljZSBwb2ludGVyLiBUaGlzIGxlYXZlcyBubyB3aW5kb3cg
-dG8gc2V0IHByb3BlcnRpZXMgbGlrZSBvZl9ub2RlIG9yCmZ3bm9kZS4KCldpbGwgdGhpcyBjYXVz
-ZSB0aGUgdWV2ZW50IHRvIGJlIHNlbnQgd2l0aG91dCBhIE1PREFMSUFTLCBicmVha2luZyB1c2Vy
-c3BhY2UKbW9kdWxlIGF1dG9sb2FkaW5nIGFuZCBhdXRvbWF0aWMgZHJpdmVyIHByb2JpbmcgZm9y
-IHRoZXNlIHN1YmRldmljZXM/Cgo+ICsJaWYgKHJldCkgewo+ICsJCWRldl9lcnIoJnNkZXYtPmRl
-diwgIkNhbid0IGFkZCBkZXZpY2UsIHN0YXR1cyAlcGVcbiIsIEVSUl9QVFIocmV0KSk7Cj4gKwkJ
-Z290byBlcnJfcHV0X2RldjsKPiArCX0KPiArCj4gKwlyZXR1cm4gc3ViX3NkZXY7Cj4gKwo+ICtl
-cnJfcHV0X2RldjoKPiArCXB1dF9kZXZpY2UoJnNkZXYtPmRldik7Cj4gKwlyZXR1cm4gRVJSX1BU
-UihyZXQpOwo+ICt9CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRl
-di8jL3BhdGNoc2V0LzIwMjYwNzA3MTExODI5LjE4MDE1OC0xLWFuZ2Vsb2dpb2FjY2hpbm8uZGVs
-cmVnbm9AY29sbGFib3JhLmNvbT9wYXJ0PTUKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0Cmxp
-bnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On 7/7/26 13:27, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 1 potential issue(s) to consider:
+> - [High] Time-of-check to time-of-use (TOCTOU) race on `dev->parent` can lead to a NULL pointer dereference.
+> --
+> 
+> --- Patch [6]: [PATCH v12 06/12] spmi: Add helper to get a parent SPMI device ---
+> commit fb3218d6b528eabdc83ac90ed869685f4b9bd99e
+> Author: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+> 
+> spmi: Add helper to get a parent SPMI device
+> 
+> This commit adds a new helper function spmi_get_parent_spmi_device()
+> which takes a struct device and returns a pointer to its parent SPMI
+> device if one exists, without modifying the reference count.
+> 
+>> diff --git a/drivers/spmi/spmi.c b/drivers/spmi/spmi.c
+>> index e218c81405458..a0a6ea9b1d2db 100644
+>> --- a/drivers/spmi/spmi.c
+>> +++ b/drivers/spmi/spmi.c
+> 
+> [ ... ]
+> 
+>> @@ -433,6 +433,29 @@ struct spmi_device *spmi_find_device_by_of_node(struct device_node *np)
+>>   }
+>>   EXPORT_SYMBOL_GPL(spmi_find_device_by_of_node);
+>>   
+>> +/**
+>> + * spmi_get_parent_spmi_device() - get the parent SPMI device from current dev
+>> + * @dev:        pointer to a subdevice on SPMI bus
+>> + *
+>> + * Checks if the passed device is a child of an SPMI device and returns a
+>> + * handle to the parent SPMI device without incrementing any refcount.
+>> + *
+>> + * Return: Handle to the parent SPMI device or NULL
+>> + */
+>> +struct spmi_device *spmi_get_parent_spmi_device(struct device *dev)
+>> +{
+>> +	struct device *parent;
+>> +
+>> +	if (dev && dev->parent) {
+>> +		parent = dev->parent;
+>> +
+>> +		if (parent->type == &spmi_dev_type)
+> 
+> [Severity: High]
+> Can a concurrent device topology change (like device_move()) cause a NULL
+> pointer dereference here?
+> 
+
+That's not happening.
+
+> If dev->parent is modified to NULL between the check in the if condition
+> and the assignment to the local parent variable, parent will become NULL
+> and this parent->type check will panic.
+> 
+> Since the compiler is permitted to emit two separate memory loads for
+> dev->parent in this sequence, would it be safer to read it exactly once
+> into the local variable before checking its validity?
+> 
+
+Yes, but it's overcautious, and purely a nitpick. Not severe at all, and I'm not
+fixing that as it's still safe.
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
