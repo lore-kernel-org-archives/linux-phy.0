@@ -4,88 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA471C43602
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 11:18:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29C80C43458
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 11:20:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8XoKUKB8ayDfmoUduQ1yjI7QJu5bDsxVrPQTdJQqWjo=; b=zQlEE2Mefrhl4p
-	5n8nRfIvpueHtfk2mUdUSprJeeZquE6hgxPYscsuOgfnF/yD/kb0M+6HeeMgzP3LHnrjQEovKV0Tf
-	pFQ0DiC3ZBpflAAlASC3JES+OvOKFBdnbh2Z5CcgpSJrU3FvWc1mhvS97fBdbKyqSsPOxuZmVSOSB
-	IaBF9uXfPGIvFm3KhN+enkCM5LIoSp3dvRREO6ZQg9d5C6NmmUT7tZ1iYnU4jzt9/3HCZKcHtkd8n
-	HU/QOmMfaxETULlLHIbn9vmiMKtxsycnKlWRip/V7+GV0h48hcuzonkTLAsfB7WIop4BDwudiaf3X
-	Jofxp47chpK4gJf7OFtA==;
+	List-Owner; bh=KClqgy6BiS1juX5WfDF/AFBSQO5Y+fdYE8SJlAPysNo=; b=VMA2pCgRl71oXd
+	vvPd/oPBF6UBNpL7FFR5+T1TsI6MW7d2sWArAtztj1nBnSZpmMH5+Vqs5i9e818RoYVryCBNNPEwq
+	U10TGVXj9ITEyqnhPh3VnLt/lHkuKPspq8t5gVY5ezCKfBjrCHciCbI0KujEmOxMvm5/ozENE8/ty
+	px+4OpbyxL4UcW0BNDCTm4mBDhLBYaadCfTzYdJ3+mLgQ76h9MZBTgF1Qao2TPRwtCax/6NGp8Wa8
+	cN2WOqCXiVgjsjWdclzbiPaENrgiRt+QeWzsZaGjNJycm4R+0lQcgO8KtNmcQXBr8qlDTalsjF/7v
+	2WAawBvNBtBjbD6GMDfA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh3pF-0000000Eq7t-308m;
-	Tue, 07 Jul 2026 11:18:53 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1wh3qu-0000000EqGM-3evB;
+	Tue, 07 Jul 2026 11:20:36 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh3pB-0000000Eq4M-0rbr
+	id 1wh3qt-0000000EqGD-2kTg
 	for linux-phy@lists.infradead.org;
-	Tue, 07 Jul 2026 11:18:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1783423127;
-	bh=nSks/w7lu/kfUus9HwyDIAlsfUY9aYe0Qj1YNG4JANg=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=Nhil/dPBIXg5JZzePyTrhit87QuwPv64fYBUCUkJL+apC+4Z4gqcY9BN+Pru68bKJ
-	 +RADyMwsN3bhU6NZN9smBwHi3LyIjL1g8fM2Y//r5fo3i1ndbr0Yn3RVEF+Fq38l0o
-	 8FI5wVKPdoY6/vnRA7mij4BVkosqhfb9ykiqkGc6TWAqk8jt/Vj/W4JFg3X1W+vapK
-	 RBZLKPkEvvuuI1qH00PzSzlgeQsKHsAoUQ+IJqF9PswVG5Y5otvIsDvXU/T0Bh1A0X
-	 CYtsKmIh8n0vMaozvQwiITDk/vciOIAQIuXHSx9fHha+RLrbnLwRBOLnpti51HnyVD
-	 6igxQL7fwRdUQ==
-Received: from IcarusMOD.eternityproject.eu (unknown [100.64.1.21])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id E747717E013E;
-	Tue, 07 Jul 2026 13:18:45 +0200 (CEST)
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-To: jic23@kernel.org,
-	sboyd@kernel.org
-Cc: dlechner@baylibre.com,
-	nuno.sa@analog.com,
-	andy@kernel.org,
-	arnd@arndb.de,
-	gregkh@linuxfoundation.org,
-	srini@kernel.org,
-	vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	sre@kernel.org,
-	angelogioacchino.delregno@collabora.com,
-	krzk@kernel.org,
-	dmitry.baryshkov@oss.qualcomm.com,
-	quic_wcheng@quicinc.com,
-	melody.olvera@oss.qualcomm.com,
-	quic_nsekar@quicinc.com,
-	ivo.ivanov.ivanov1@gmail.com,
-	abelvesa@kernel.org,
-	luca.weiss@fairphone.com,
-	konrad.dybcio@oss.qualcomm.com,
-	mitltlatltl@gmail.com,
-	krishna.kurapati@oss.qualcomm.com,
-	linux-arm-msm@vger.kernel.org,
-	linux-iio@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-pm@vger.kernel.org,
-	kernel@collabora.com,
-	Jonathan Cameron <jonathan.cameron@huawei.com>,
-	Andy Shevchenko <andriy.shevchenko@intel.com>
-Subject: [PATCH v12 12/12] iio: adc: qcom-spmi-iadc: Remove regmap R/W wrapper functions
-Date: Tue,  7 Jul 2026 13:18:29 +0200
-Message-ID: <20260707111829.180158-13-angelogioacchino.delregno@collabora.com>
-X-Mailer: git-send-email 2.54.0
-In-Reply-To: <20260707111829.180158-1-angelogioacchino.delregno@collabora.com>
-References: <20260707111829.180158-1-angelogioacchino.delregno@collabora.com>
-MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260707_041849_443609_06908F46 
-X-CRM114-Status: GOOD (  11.87  )
+	Tue, 07 Jul 2026 11:20:35 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id A421A6001D;
+	Tue,  7 Jul 2026 11:20:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0DED81F000E9;
+	Tue,  7 Jul 2026 11:20:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1783423234;
+	bh=rY/Kg5kcYqoigcimetZ7/xnfd05K4l6T/KzDOUB9SgM=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=lf3jj4oBinqXKfv83hKlNngffRRv8cY2XIbvwJjaKZoRhOQrHhNCLLjrBymo403O/
+	 xSUAO0yMHS3yyKqCYKt6+jYTfJbUQPQNtgMwL+D0gtSRx5/a4c/juh3Dx1epRi+5zP
+	 u3hxtfb2swGsgpWKTrOH7Oi28YK0ZBxEjYfWJAbyMtRSuwDIImf59WTOwJLloLskp5
+	 iY2DZIHHbul2hoAZ9UhNaKuXCgDiTn3p4PUbre9lD1GXTM66sHQE3nwdACqgDFPl6L
+	 ooz1MCfu24U8qolvG2Zh23ijbnlBVP1hdb3OKSBz5eSI/6jidDhKSEKWBOSCUvpzqb
+	 o1uFOj1Y29dTw==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v11 10/12] misc: qcom-coincell: Migrate to
+ devm_spmi_subdevice_alloc_and_add()
+To: "AngeloGioacchino Del Regno" <angelogioacchino.delregno@collabora.com>
+Cc: vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com, linux-phy@lists.infradead.org
+In-Reply-To: <20260707101821.173319-11-angelogioacchino.delregno@collabora.com>
+References: <20260707101821.173319-1-angelogioacchino.delregno@collabora.com>
+ <20260707101821.173319-11-angelogioacchino.delregno@collabora.com>
+Date: Tue, 07 Jul 2026 11:20:33 +0000
+Message-Id: <20260707112034.0DED81F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,273 +63,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This driver doesn't need to add any register base address to any
-regmap call anymore since it was migrated to register as a SPMI
-subdevice with its own regmap reg_base, which makes the regmap
-API to automatically add such base address internally.
-
-Since the iadc_{read,write,read_result}() functions now only do
-call regmap_{read,write,bulk_read}() and nothing else, simplify
-the driver by removing them and by calling regmap APIs directly.
-
-Reviewed-by: Jonathan Cameron <jonathan.cameron@huawei.com>
-Tested-by: Neil Armstrong <neil.armstrong@linaro.org> # on SM8650-QRD
-Reviewed-by: Andy Shevchenko <andriy.shevchenko@intel.com>
-Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
----
- drivers/iio/adc/qcom-spmi-iadc.c | 89 ++++++++++++--------------------
- 1 file changed, 33 insertions(+), 56 deletions(-)
-
-diff --git a/drivers/iio/adc/qcom-spmi-iadc.c b/drivers/iio/adc/qcom-spmi-iadc.c
-index 21e35df82193..196525ba0b4b 100644
---- a/drivers/iio/adc/qcom-spmi-iadc.c
-+++ b/drivers/iio/adc/qcom-spmi-iadc.c
-@@ -113,77 +113,59 @@ struct iadc_chip {
- 	struct completion complete;
- };
- 
--static int iadc_read(struct iadc_chip *iadc, u16 offset, u8 *data)
--{
--	unsigned int val;
--	int ret;
--
--	ret = regmap_read(iadc->regmap, offset, &val);
--	if (ret < 0)
--		return ret;
--
--	*data = val;
--	return 0;
--}
--
--static int iadc_write(struct iadc_chip *iadc, u16 offset, u8 data)
--{
--	return regmap_write(iadc->regmap, offset, data);
--}
--
- static int iadc_reset(struct iadc_chip *iadc)
- {
--	u8 data;
-+	u32 data;
- 	int ret;
- 
--	ret = iadc_write(iadc, IADC_SEC_ACCESS, IADC_SEC_ACCESS_DATA);
-+	ret = regmap_write(iadc->regmap, IADC_SEC_ACCESS, IADC_SEC_ACCESS_DATA);
- 	if (ret < 0)
- 		return ret;
- 
--	ret = iadc_read(iadc, IADC_PERH_RESET_CTL3, &data);
-+	ret = regmap_read(iadc->regmap, IADC_PERH_RESET_CTL3, &data);
- 	if (ret < 0)
- 		return ret;
- 
--	ret = iadc_write(iadc, IADC_SEC_ACCESS, IADC_SEC_ACCESS_DATA);
-+	ret = regmap_write(iadc->regmap, IADC_SEC_ACCESS, IADC_SEC_ACCESS_DATA);
- 	if (ret < 0)
- 		return ret;
- 
- 	data |= IADC_FOLLOW_WARM_RB;
- 
--	return iadc_write(iadc, IADC_PERH_RESET_CTL3, data);
-+	return regmap_write(iadc->regmap, IADC_PERH_RESET_CTL3, data);
- }
- 
- static int iadc_set_state(struct iadc_chip *iadc, bool state)
- {
--	return iadc_write(iadc, IADC_EN_CTL1, state ? IADC_EN_CTL1_SET : 0);
-+	return regmap_write(iadc->regmap, IADC_EN_CTL1, state ? IADC_EN_CTL1_SET : 0);
- }
- 
- static void iadc_status_show(struct iadc_chip *iadc)
- {
--	u8 mode, sta1, chan, dig, en, req;
-+	u32 mode, sta1, chan, dig, en, req;
- 	int ret;
- 
--	ret = iadc_read(iadc, IADC_MODE_CTL, &mode);
-+	ret = regmap_read(iadc->regmap, IADC_MODE_CTL, &mode);
- 	if (ret < 0)
- 		return;
- 
--	ret = iadc_read(iadc, IADC_DIG_PARAM, &dig);
-+	ret = regmap_read(iadc->regmap, IADC_DIG_PARAM, &dig);
- 	if (ret < 0)
- 		return;
- 
--	ret = iadc_read(iadc, IADC_CH_SEL_CTL, &chan);
-+	ret = regmap_read(iadc->regmap, IADC_CH_SEL_CTL, &chan);
- 	if (ret < 0)
- 		return;
- 
--	ret = iadc_read(iadc, IADC_CONV_REQ, &req);
-+	ret = regmap_read(iadc->regmap, IADC_CONV_REQ, &req);
- 	if (ret < 0)
- 		return;
- 
--	ret = iadc_read(iadc, IADC_STATUS1, &sta1);
-+	ret = regmap_read(iadc->regmap, IADC_STATUS1, &sta1);
- 	if (ret < 0)
- 		return;
- 
--	ret = iadc_read(iadc, IADC_EN_CTL1, &en);
-+	ret = regmap_read(iadc->regmap, IADC_EN_CTL1, &en);
- 	if (ret < 0)
- 		return;
- 
-@@ -199,34 +181,34 @@ static int iadc_configure(struct iadc_chip *iadc, int channel)
- 
- 	/* Mode selection */
- 	mode = (IADC_OP_MODE_NORMAL << IADC_OP_MODE_SHIFT) | IADC_TRIM_EN;
--	ret = iadc_write(iadc, IADC_MODE_CTL, mode);
-+	ret = regmap_write(iadc->regmap, IADC_MODE_CTL, mode);
- 	if (ret < 0)
- 		return ret;
- 
- 	/* Channel selection */
--	ret = iadc_write(iadc, IADC_CH_SEL_CTL, channel);
-+	ret = regmap_write(iadc->regmap, IADC_CH_SEL_CTL, channel);
- 	if (ret < 0)
- 		return ret;
- 
- 	/* Digital parameter setup */
- 	decim = IADC_DEF_DECIMATION << IADC_DIG_DEC_RATIO_SEL_SHIFT;
--	ret = iadc_write(iadc, IADC_DIG_PARAM, decim);
-+	ret = regmap_write(iadc->regmap, IADC_DIG_PARAM, decim);
- 	if (ret < 0)
- 		return ret;
- 
- 	/* HW settle time delay */
--	ret = iadc_write(iadc, IADC_HW_SETTLE_DELAY, IADC_DEF_HW_SETTLE_TIME);
-+	ret = regmap_write(iadc->regmap, IADC_HW_SETTLE_DELAY, IADC_DEF_HW_SETTLE_TIME);
- 	if (ret < 0)
- 		return ret;
- 
--	ret = iadc_write(iadc, IADC_FAST_AVG_CTL, IADC_DEF_AVG_SAMPLES);
-+	ret = regmap_write(iadc->regmap, IADC_FAST_AVG_CTL, IADC_DEF_AVG_SAMPLES);
- 	if (ret < 0)
- 		return ret;
- 
- 	if (IADC_DEF_AVG_SAMPLES)
--		ret = iadc_write(iadc, IADC_FAST_AVG_EN, IADC_FAST_AVG_EN_SET);
-+		ret = regmap_write(iadc->regmap, IADC_FAST_AVG_EN, IADC_FAST_AVG_EN_SET);
- 	else
--		ret = iadc_write(iadc, IADC_FAST_AVG_EN, 0);
-+		ret = regmap_write(iadc->regmap, IADC_FAST_AVG_EN, 0);
- 
- 	if (ret < 0)
- 		return ret;
-@@ -239,19 +221,19 @@ static int iadc_configure(struct iadc_chip *iadc, int channel)
- 		return ret;
- 
- 	/* Request conversion */
--	return iadc_write(iadc, IADC_CONV_REQ, IADC_CONV_REQ_SET);
-+	return regmap_write(iadc->regmap, IADC_CONV_REQ, IADC_CONV_REQ_SET);
- }
- 
- static int iadc_poll_wait_eoc(struct iadc_chip *iadc, unsigned int interval_us)
- {
- 	unsigned int count, retry;
-+	u32 sta1;
- 	int ret;
--	u8 sta1;
- 
- 	retry = interval_us / IADC_CONV_TIME_MIN_US;
- 
- 	for (count = 0; count < retry; count++) {
--		ret = iadc_read(iadc, IADC_STATUS1, &sta1);
-+		ret = regmap_read(iadc->regmap, IADC_STATUS1, &sta1);
- 		if (ret < 0)
- 			return ret;
- 
-@@ -267,11 +249,6 @@ static int iadc_poll_wait_eoc(struct iadc_chip *iadc, unsigned int interval_us)
- 	return -ETIMEDOUT;
- }
- 
--static int iadc_read_result(struct iadc_chip *iadc, u16 *data)
--{
--	return regmap_bulk_read(iadc->regmap, IADC_DATA, data, 2);
--}
--
- static int iadc_do_conversion(struct iadc_chip *iadc, int chan, u16 *data)
- {
- 	unsigned int wait;
-@@ -296,7 +273,7 @@ static int iadc_do_conversion(struct iadc_chip *iadc, int chan, u16 *data)
- 	}
- 
- 	if (!ret)
--		ret = iadc_read_result(iadc, data);
-+		ret = regmap_bulk_read(iadc->regmap, IADC_DATA, data, sizeof(*data));
- exit:
- 	iadc_set_state(iadc, false);
- 	if (ret < 0)
-@@ -392,33 +369,33 @@ static int iadc_update_offset(struct iadc_chip *iadc)
- 
- static int iadc_version_check(struct iadc_chip *iadc)
- {
--	u8 val;
-+	u32 val;
- 	int ret;
- 
--	ret = iadc_read(iadc, IADC_PERPH_TYPE, &val);
-+	ret = regmap_read(iadc->regmap, IADC_PERPH_TYPE, &val);
- 	if (ret < 0)
- 		return ret;
- 
- 	if (val < IADC_PERPH_TYPE_ADC) {
--		dev_err(iadc->dev, "%d is not ADC\n", val);
-+		dev_err(iadc->dev, "%u is not ADC\n", val);
- 		return -EINVAL;
- 	}
- 
--	ret = iadc_read(iadc, IADC_PERPH_SUBTYPE, &val);
-+	ret = regmap_read(iadc->regmap, IADC_PERPH_SUBTYPE, &val);
- 	if (ret < 0)
- 		return ret;
- 
- 	if (val < IADC_PERPH_SUBTYPE_IADC) {
--		dev_err(iadc->dev, "%d is not IADC\n", val);
-+		dev_err(iadc->dev, "%u is not IADC\n", val);
- 		return -EINVAL;
- 	}
- 
--	ret = iadc_read(iadc, IADC_REVISION2, &val);
-+	ret = regmap_read(iadc->regmap, IADC_REVISION2, &val);
- 	if (ret < 0)
- 		return ret;
- 
- 	if (val < IADC_REVISION2_SUPPORTED_IADC) {
--		dev_err(iadc->dev, "revision %d not supported\n", val);
-+		dev_err(iadc->dev, "revision %u not supported\n", val);
- 		return -EINVAL;
- 	}
- 
-@@ -428,7 +405,7 @@ static int iadc_version_check(struct iadc_chip *iadc)
- static int iadc_rsense_read(struct iadc_chip *iadc, struct device_node *node)
- {
- 	int ret, sign, int_sense;
--	u8 deviation;
-+	u32 deviation;
- 
- 	ret = of_property_read_u32(node, "qcom,external-resistor-micro-ohms",
- 				   &iadc->rsense[IADC_EXT_RSENSE]);
-@@ -440,7 +417,7 @@ static int iadc_rsense_read(struct iadc_chip *iadc, struct device_node *node)
- 		return -EINVAL;
- 	}
- 
--	ret = iadc_read(iadc, IADC_NOMINAL_RSENSE, &deviation);
-+	ret = regmap_read(iadc->regmap, IADC_NOMINAL_RSENSE, &deviation);
- 	if (ret < 0)
- 		return ret;
- 
--- 
-2.54.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIFRoZSBwcm9iZSBmdW5j
+dGlvbiBpbmNvcnJlY3RseSBwYXNzZXMgYGRldi0+cGFyZW50YCB0byBgc3BtaV9nZXRfcGFyZW50
+X3NwbWlfZGV2aWNlKClgLCBjYXVzaW5nIGFuIHVuY29uZGl0aW9uYWwgcHJvYmUgZmFpbHVyZS4K
+LS0KCi0tLSBQYXRjaCBbMTBdOiBbUEFUQ0ggdjExIDEwLzEyXSBtaXNjOiBxY29tLWNvaW5jZWxs
+OiBNaWdyYXRlIHRvIGRldm1fc3BtaV9zdWJkZXZpY2VfYWxsb2NfYW5kX2FkZCgpIC0tLQpjb21t
+aXQgZWFiOTM2Nzc2ZTM0Nzc2YjhlOGM3Yzk3ZDBlZmZiZDg2OWEzOGRiMApBdXRob3I6IEFuZ2Vs
+b0dpb2FjY2hpbm8gRGVsIFJlZ25vIDxhbmdlbG9naW9hY2NoaW5vLmRlbHJlZ25vQGNvbGxhYm9y
+YS5jb20+CgptaXNjOiBxY29tLWNvaW5jZWxsOiBNaWdyYXRlIHRvIGRldm1fc3BtaV9zdWJkZXZp
+Y2VfYWxsb2NfYW5kX2FkZCgpCgpUaGlzIGNvbW1pdCBtaWdyYXRlcyB0aGUgY29pbmNlbGwgY2hh
+cmdlciBkcml2ZXIgdG8gdXNlIGEgbmV3IFNQTUkKc3ViLWRldmljZSBpbnN0ZWFkIG9mIHVzaW5n
+IHRoZSBwYXJlbnQgUE1JQyBhcyBhIHN5c2Nvbi4gSXQgaW5pdGlhbGl6ZXMKYSBzZXBhcmF0ZSBy
+ZWdtYXAgd2l0aCB0aGUgc3ViLWRldmljZSdzIHNwZWNpZmljIGJhc2UgYWRkcmVzcyByZXRyaWV2
+ZWQKZnJvbSB0aGUgZGV2aWNldHJlZS4KCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvbWlzYy9xY29t
+LWNvaW5jZWxsLmMgYi9kcml2ZXJzL21pc2MvcWNvbS1jb2luY2VsbC5jCj4gLS0tIGEvZHJpdmVy
+cy9taXNjL3Fjb20tY29pbmNlbGwuYwo+ICsrKyBiL2RyaXZlcnMvbWlzYy9xY29tLWNvaW5jZWxs
+LmMKClsgLi4uIF0KCj4gQEAgLTkyLDE2ICsxMDEsMjUgQEAgc3RhdGljIGludCBxY29tX2NvaW5j
+ZWxsX3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gIAo+ICAJY2hnci5kZXYg
+PSAmcGRldi0+ZGV2Owo+ICAKPiAtCWNoZ3IucmVnbWFwID0gZGV2X2dldF9yZWdtYXAocGRldi0+
+ZGV2LnBhcmVudCwgTlVMTCk7Cj4gLQlpZiAoIWNoZ3IucmVnbWFwKSB7Cj4gLQkJZGV2X2Vycihj
+aGdyLmRldiwgIlVuYWJsZSB0byBnZXQgcmVnbWFwXG4iKTsKPiAtCQlyZXR1cm4gLUVJTlZBTDsK
+PiAtCX0KPiAtCj4gLQlyYyA9IG9mX3Byb3BlcnR5X3JlYWRfdTMyKG5vZGUsICJyZWciLCAmY2hn
+ci5iYXNlX2FkZHIpOwo+ICsJcmMgPSBkZXZpY2VfcHJvcGVydHlfcmVhZF91MzIoZGV2LCAicmVn
+IiwgJnFjb21fY29pbmNlbGxfcmVnbWFwX2NvbmZpZy5yZWdfYmFzZSk7Cj4gIAlpZiAocmMpCj4g
+IAkJcmV0dXJuIHJjOwo+ICAKPiArCXNwYXJlbnQgPSBzcG1pX2dldF9wYXJlbnRfc3BtaV9kZXZp
+Y2UoZGV2LT5wYXJlbnQpOwogICAgICAgIF5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5e
+Xl5eXl5eXl5eXl5eXl5eXl5eCltTZXZlcml0eTogSGlnaF0KRG9lcyB0aGlzIGNhdXNlIGFuIHVu
+Y29uZGl0aW9uYWwgcHJvYmUgZmFpbHVyZT8KCklmIGRldiBpcyB0aGUgcGxhdGZvcm0gZGV2aWNl
+LCBkZXYtPnBhcmVudCBpcyB0aGUgU1BNSSBkZXZpY2UgKHRoZSBQTUlDKS4KVGhlIHNwbWlfZ2V0
+X3BhcmVudF9zcG1pX2RldmljZSgpIGhlbHBlciBhbHJlYWR5IGluc3BlY3RzIHRoZSBwYXJlbnQg
+b2YgdGhlCmRldmljZSBwYXNzZWQgdG8gaXQuIEJ5IHBhc3NpbmcgZGV2LT5wYXJlbnQgaGVyZSwg
+aXQgZXZhbHVhdGVzCmRldi0+cGFyZW50LT5wYXJlbnQgKHRoZSBTUE1JIGJ1cyBjb250cm9sbGVy
+KS4KClNpbmNlIHRoZSBidXMgY29udHJvbGxlcidzIGRldmljZSB0eXBlIGlzICZzcG1pX2N0cmxf
+dHlwZSByYXRoZXIgdGhhbgomc3BtaV9kZXZfdHlwZSwgdGhlIGhlbHBlcidzIGludGVybmFsIHR5
+cGUgY2hlY2sgd2lsbCBmYWlsIGFuZCByZXR1cm4gTlVMTCwKY2F1c2luZyBxY29tX2NvaW5jZWxs
+X3Byb2JlKCkgdG8gYWx3YXlzIHJldHVybiAtRU5PREVWLgoKU2hvdWxkIHRoaXMgcGFzcyBkZXYg
+aW5zdGVhZCBvZiBkZXYtPnBhcmVudD8KCj4gKwlpZiAoIXNwYXJlbnQpCj4gKwkJcmV0dXJuIC1F
+Tk9ERVY7Cj4gKwo+ICsJc3ViX3NkZXYgPSBkZXZtX3NwbWlfc3ViZGV2aWNlX2FsbG9jX2FuZF9h
+ZGQoZGV2LCBzcGFyZW50KTsKPiArCWlmIChJU19FUlIoc3ViX3NkZXYpKQo+ICsJCXJldHVybiBQ
+VFJfRVJSKHN1Yl9zZGV2KTsKCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hp
+a28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA3MDcxMDE4MjEuMTczMzE5LTEtYW5nZWxvZ2lvYWNjaGlu
+by5kZWxyZWdub0Bjb2xsYWJvcmEuY29tP3BhcnQ9MTAKCi0tIApsaW51eC1waHkgbWFpbGluZyBs
+aXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
