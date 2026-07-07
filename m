@@ -4,54 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E919C43458
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 16:06:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2CA2C44501
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 16:07:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XnDXo1UyV4tAZq03SbfrqImzPkKBLUDpMs9f1ZBZUfw=; b=xa27PG+hyGY/of
-	+RQRzdQiBqPfXqbHNuf4U/3pettrogeFF7crx5wfPPPAob/vA2A6z6M8yDUfUDb0icS8x93FvgN8h
-	bAZ7A+zQSdlctsULaC8xwSeag1GFyhXpiTAiwj96Jp49kwlCdoHGMlPORO7qfwlBv/52pOGguosqG
-	PRlNaC8zwB+iFj3Dp3s2/P+u6eToEOppyWLg0DVQxmU5m0LqNFakk+nMkav7aEeUKm6+ovQfOtRBt
-	1z8r+hV57JJ9Jyue9TdISq43L36qawF1H4CG2fbtoFFbNDW7gsGXkE7ESv79eZmi3eFMza16r5epb
-	wolhl6FZhUtTjwlTdbGg==;
+	List-Owner; bh=m80DuzuHo5l56/U6WKnIM4nISfgEw+bbgj+3J0Rvdco=; b=XP1kRu4s7tq1e5
+	JL7QzF0wpDoeTAP03NTz8F9X07NsWhzp3wOs8n69bfFjj6CbjJL7ZjLHzRW1Iv9WshHlsabqwQHwq
+	uUaAosnW4VWjxPsUyrnMXk3QNMQZVsqpeDwcAKolXINePqbzqSrNaD2+4jM5zLjbY5DGqWWU8ehAh
+	+Oj9yh+0agvy6vbE/d7zRUq0L55kUDTlpeO5zMvJgQTs34rP/ejKU41W//+OGigpXq4S22IzjMdMj
+	WpT8qvcemODsXpTZPL1n4Y7Rt4qNEgfFUetT3/FzQ7Rg4Mncx/saVMstZc9Fs8Xouuj4SnNGO8+9x
+	FTFEHwFi1sD1GES6C4nA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh8Jt-0000000FQV7-0Myk;
-	Tue, 07 Jul 2026 16:06:49 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wh8Ks-0000000FQa2-25zU;
+	Tue, 07 Jul 2026 16:07:50 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh8Jr-0000000FQUx-3nlE
+	id 1wh8Kq-0000000FQZS-0hUG
 	for linux-phy@lists.infradead.org;
-	Tue, 07 Jul 2026 16:06:48 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 460AF60018;
-	Tue,  7 Jul 2026 16:06:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 813771F000E9;
-	Tue,  7 Jul 2026 16:06:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1783440407;
-	bh=L5y+zUPinxjtVfco8HA4/kOWa/nb9LJmepf6+tT3NBY=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=fBDYi1zGE7lf4Blqh7AGdmstS6BNHwbUlm21DQ1dz+mK03zfb1ZPwQM0DyOwzhChE
-	 uZL6yI19C0Nmz6mjClnAAzrwgzPLTo/cwyNspErpwAt+MxEBctJumAse1eQvmDohkE
-	 PwP6fkEj11lvde6jy6Zr2Wz1mj8ghRhN0LAIsQH37SQbT1PYUMQNacHIFEPEyqg7jK
-	 /t6EdzTj5cXvDyVsxerjN65IX6J9KExgkXXrWqkGAoNKYPKP7ACtJeaEHOvUSLBiNb
-	 vMKVwNJKFaNKGz1Ra4hqYrOHnEWVI1y9os8RRb/py1Qy9/uSZbwYMhXmp2M7xvgh5d
-	 Z4q5of08j19VA==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v3 03/12] phy: phy-mtk-dp: Allow probing with devicetree
- match
-To: "AngeloGioacchino Del Regno" <angelogioacchino.delregno@collabora.com>
-Cc: vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com, linux-phy@lists.infradead.org, conor+dt@kernel.org, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, robh@kernel.org
-In-Reply-To: <20260707154245.198361-4-angelogioacchino.delregno@collabora.com>
+	Tue, 07 Jul 2026 16:07:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1783440466;
+	bh=rswlpAED6vR9rN0AkFmT6GGYwiGSI3RJQYeK/PxCBJo=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=Q+MPiMDlLZHfWrfTuFiFDNuRsxSdKxsnk26mkphmGLuD95L7jp79zzd2dWgPb37nx
+	 906xMpVVDcp2vfmF2N1VrKTg2e9fQ61Za1FKTv+H+th+2HmGWZRFTFTMSjavOKO384
+	 y8VMi/Hv7uhoNH/yMVHJbyAecqptJT3OWGCEFP/TnzaqFsU1pEIy4uzqdNu63wwH/h
+	 DeehDP2uoS2Qj2RzllmjsIe7enoAUhVmgAwZLikhQIgy4N7IvZGd6GvS+q3y17fgLP
+	 uBIhaHHwmCdYQpaP07zPafmPLGt1SjqISR9Y1kPhoKTfwGHIhqswEiyUMkkvShFwdD
+	 znfuqaWjaXIww==
+Received: from [100.64.1.21] (unknown [100.64.1.21])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id C0D6317E0076;
+	Tue, 07 Jul 2026 18:07:45 +0200 (CEST)
+Message-ID: <f5382d15-f4d4-4276-93d5-f9bbb9071f01@collabora.com>
+Date: Tue, 7 Jul 2026 18:07:45 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 04/12] phy: phy-mtk-dp: Migrate register offsets to SoC
+ specific pdata
+To: sashiko-reviews@lists.linux.dev
+Cc: conor+dt@kernel.org, olteanv@gmail.com, dri-devel@lists.freedesktop.org,
+ neil.armstrong@linaro.org, robh@kernel.org, devicetree@vger.kernel.org,
+ vkoul@kernel.org, linux-phy@lists.infradead.org
 References: <20260707154245.198361-1-angelogioacchino.delregno@collabora.com>
- <20260707154245.198361-4-angelogioacchino.delregno@collabora.com>
-Date: Tue, 07 Jul 2026 16:06:46 +0000
-Message-Id: <20260707160646.813771F000E9@smtp.kernel.org>
+ <20260707154245.198361-5-angelogioacchino.delregno@collabora.com>
+ <20260707155630.4F32C1F000E9@smtp.kernel.org>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+In-Reply-To: <20260707155630.4F32C1F000E9@smtp.kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260707_090748_379226_9B951C35 
+X-CRM114-Status: GOOD (  28.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,83 +74,170 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpOZXcgaXNzdWVzOgotIFtIaWdoXSBI
-YXJkY29kZWQgYFBIWV9PRkZTRVRgIGNhdXNlcyBvdXQtb2YtYm91bmRzIHJlZ2lzdGVyIGFjY2Vz
-c2VzIG9yIHJlc291cmNlIGNvbmZsaWN0cyB3aGVuIHRoZSBQSFkgaXMgcHJvYmVkIGFzIGEgc3Rh
-bmRhbG9uZSBkZXZpY2V0cmVlIG5vZGUuCi0gW0hpZ2hdIEhhcmR3YXJlIHJlZ2lzdGVycyBhcmUg
-YWNjZXNzZWQgaW4gYG10a19kcF9waHlfY29uZmlndXJlKClgIHdoaWxlIHRoZSBQSFkgZGV2aWNl
-IGlzIHJ1bnRpbWUtc3VzcGVuZGVkLCBjYXVzaW5nIGEgc3lzdGVtIGNyYXNoIG9yIHNpbGVudCBs
-b3NzIG9mIGNvbmZpZ3VyYXRpb24uCgpQcmUtZXhpc3RpbmcgaXNzdWVzOgotIFtIaWdoXSBEZXJl
-ZmVyZW5jaW5nIGBkZXYtPnBsYXRmb3JtX2RhdGFgIGJlZm9yZSBjaGVja2luZyBpZiBpdCBpcyBO
-VUxMIGxlYWRzIHRvIGEga2VybmVsIGNyYXNoLgotLQoKLS0tIFBhdGNoIFszXTogW1BBVENIIHYz
-IDAzLzEyXSBwaHk6IHBoeS1tdGstZHA6IEFsbG93IHByb2Jpbmcgd2l0aCBkZXZpY2V0cmVlIG1h
-dGNoIC0tLQpjb21taXQgNzEwYWI1NDg4ZmQwYjY2YjJlYTYyMzg4Yjk3N2E0MzA4Zjk5YTBjNgpB
-dXRob3I6IEFuZ2Vsb0dpb2FjY2hpbm8gRGVsIFJlZ25vIDxhbmdlbG9naW9hY2NoaW5vLmRlbHJl
-Z25vQGNvbGxhYm9yYS5jb20+CgpwaHk6IHBoeS1tdGstZHA6IEFsbG93IHByb2Jpbmcgd2l0aCBk
-ZXZpY2V0cmVlIG1hdGNoCgpNYWtlIGl0IHBvc3NpYmxlIHRvIGRlY291cGxlIHRoZSByZWdpc3Ry
-YXRpb24gb2YgdGhlIERpc3BsYXlQb3J0ClBIWSBkcml2ZXIgZnJvbSB0aGUgRGlzcGxheVBvcnQg
-SVAgZHJpdmVyIGJ5IGFkZGluZyBhIGRldmljZXRyZWUKbWF0Y2ggdG8gcHJvYmUgdGhlIFBIWS4g
-SW4gb3JkZXIgdG8gcmV0YWluIGNvbXBhdGliaWxpdHkgd2l0aCBvbGRlcgpkZXZpY2V0cmVlcywg
-dGhlIGxlZ2FjeSBjb2RlIHdhcyBtb3ZlZCBpbiBhIG10a19kcF9waHlfbGVnYWN5X3Byb2JlKCkK
-ZnVuY3Rpb24uCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9tZWRpYXRlay9waHktbXRrLWRw
-LmMgYi9kcml2ZXJzL3BoeS9tZWRpYXRlay9waHktbXRrLWRwLmMKPiBpbmRleCBiZjdiM2E5NWU3
-MmQyLi5kMjQxMDA0ZTI4Mjg2IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L21lZGlhdGVrL3Bo
-eS1tdGstZHAuYwo+ICsrKyBiL2RyaXZlcnMvcGh5L21lZGlhdGVrL3BoeS1tdGstZHAuYwpbIC4u
-LiBdCj4gK3N0YXRpYyBpbnQgbXRrX2RwX3BoeV9sZWdhY3lfcHJvYmUoc3RydWN0IHBsYXRmb3Jt
-X2RldmljZSAqcGRldiwgc3RydWN0IG10a19kcF9waHkgKmRwX3BoeSkKPiArewo+ICsJc3RydWN0
-IGRldmljZSAqZGV2ID0gJnBkZXYtPmRldjsKPiArCXN0cnVjdCBwaHkgKnBoeTsKPiArCWludCBy
-ZXQ7Cj4gKwo+ICsJZHBfcGh5LT5yZWdtYXAgPSAqKHN0cnVjdCByZWdtYXAgKiopZGV2LT5wbGF0
-Zm9ybV9kYXRhOwo+ICsJaWYgKCFkcF9waHktPnJlZ21hcCkKPiArCQlyZXR1cm4gZGV2X2Vycl9w
-cm9iZShkZXYsIC1FSU5WQUwsICJObyBwbGF0Zm9ybSBkYXRhIGF2YWlsYWJsZVxuIik7CgpbU2V2
-ZXJpdHk6IEhpZ2hdClRoaXMgaXMgYSBwcmUtZXhpc3RpbmcgaXNzdWUsIGJ1dCBkb2VzIGNhc3Rp
-bmcgYW5kIGRlcmVmZXJlbmNpbmcKZGV2LT5wbGF0Zm9ybV9kYXRhIGJlZm9yZSBjaGVja2luZyBp
-ZiBpdCBpcyBOVUxMIGxlYWQgdG8gYSBrZXJuZWwgY3Jhc2g/CgpJZiB0aGUgZHJpdmVyIGlzIGJv
-dW5kIHRvIGEgZGV2aWNlIHdpdGhvdXQgcGxhdGZvcm0gZGF0YSB2aWEgc3lzZnMsIHRoaXMKdW52
-YWxpZGF0ZWQgcG9pbnRlciB3aWxsIGJlIGRlcmVmZXJlbmNlZCBiZWZvcmUgdGhlIGNoZWNrIGZv
-cgohZHBfcGh5LT5yZWdtYXAgY2FuIGV4ZWN1dGUuCgpbIC4uLiBdCj4gIHN0YXRpYyBpbnQgbXRr
-X2RwX3BoeV9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ICB7Cj4gIAlzdHJ1
-Y3QgZGV2aWNlICpkZXYgPSAmcGRldi0+ZGV2OwpbIC4uLiBdCj4gIAlkcF9waHkgPSBkZXZtX2t6
-YWxsb2MoZGV2LCBzaXplb2YoKmRwX3BoeSksIEdGUF9LRVJORUwpOwo+ICAJaWYgKCFkcF9waHkp
-Cj4gIAkJcmV0dXJuIC1FTk9NRU07Cj4gIAo+IC0JZHBfcGh5LT5yZWdtYXAgPSByZWdzOwo+ICsJ
-ZHBfcGh5LT5kZXYgPSBkZXY7Cj4gKwo+ICsJLyogSWYgdGhlcmUncyBubyBkZXZpY2V0cmVlLCBn
-byBmb3IgbGVnYWN5IHBkZXYgcHJvYmUgKi8KPiArCWlmICghZGV2LT5vZl9ub2RlKQo+ICsJCXJl
-dHVybiBtdGtfZHBfcGh5X2xlZ2FjeV9wcm9iZShwZGV2LCBkcF9waHkpOwo+ICsKPiArCWJhc2Ug
-PSBkZXZtX3BsYXRmb3JtX2lvcmVtYXBfcmVzb3VyY2UocGRldiwgMCk7Cj4gKwlpZiAoSVNfRVJS
-KGJhc2UpKQo+ICsJCXJldHVybiBQVFJfRVJSKGJhc2UpOwo+ICsKPiArCWRwX3BoeS0+cmVnbWFw
-ID0gZGV2bV9yZWdtYXBfaW5pdF9tbWlvKGRldiwgYmFzZSwgJm10a19kcF9waHlfcmVnbWFwX2Nm
-Zyk7CgpbU2V2ZXJpdHk6IEhpZ2hdClNpbmNlIHRoZSBkcml2ZXIgaGFyZGNvZGVzIFBIWV9PRkZT
-RVQgKDB4MTAwMCkgaW50byBpdHMgcmVnaXN0ZXIgbWFjcm9zIGxpa2UKTVRLX0RQX1BIWV9ESUdf
-UExMX0NUTF8xLCB3aWxsIHRoaXMgaW5kZXBlbmRlbnQgcmVnbWFwIGNhdXNlIG91dC1vZi1ib3Vu
-ZHMKYWNjZXNzZXMgaWYgdGhlIGRldmljZXRyZWUgbWFwcyB0aGUgUEhZIG5vZGUgdG8gaXRzIHRy
-dWUgcGh5c2ljYWwgYmFzZT8KCklmIHRoZSBkZXZpY2V0cmVlIGluc3RlYWQgc2V0cyB0aGUgUEhZ
-IG5vZGUncyByZWcgdG8gdGhlIHBhcmVudCBEUCBJUCBiYXNlIHRvCmNvdW50ZXJhY3QgdGhpcyBv
-ZmZzZXQsIHdvbid0IHRoaXMgY2F1c2UgZGV2bV9wbGF0Zm9ybV9pb3JlbWFwX3Jlc291cmNlKCkg
-dG8KZmFpbCB3aXRoIC1FQlVTWSBkdWUgdG8gcmVzb3VyY2UgY29uZmxpY3RzIGJldHdlZW4gdGhl
-IFBIWSBkcml2ZXIgYW5kIHRoZSBEUApJUCBkcml2ZXI/Cgo+ICsJaWYgKElTX0VSUihkcF9waHkt
-PnJlZ21hcCkpCj4gKwkJcmV0dXJuIFBUUl9FUlIoZHBfcGh5LT5yZWdtYXApOwo+ICsKPiArCXJl
-dCA9IGRldm1fcG1fcnVudGltZV9lbmFibGUoZGV2KTsKPiArCWlmIChyZXQpCj4gKwkJcmV0dXJu
-IHJldDsKCltTZXZlcml0eTogSGlnaF0KQnkgZW5hYmxpbmcgcnVudGltZSBQTSBoZXJlLCBjb3Vs
-ZCBtdGtfZHBfcGh5X2NvbmZpZ3VyZSgpIGFjY2VzcyBoYXJkd2FyZQpyZWdpc3RlcnMgd2hpbGUg
-dGhlIFBIWSBkZXZpY2UgaXMgcnVudGltZS1zdXNwZW5kZWQ/CgpUaGUgY29uc3VtZXIgZHJpdmVy
-IGNhbGxzIHBoeV9jb25maWd1cmUoKSB3aXRob3V0IGNhbGxpbmcgcGh5X3Bvd2VyX29uKCkuClRo
-ZSBQSFkgZnJhbWV3b3JrIHRha2VzIGEgcnVudGltZSBQTSByZWZlcmVuY2UgZHVyaW5nIC5pbml0
-IGFuZCAucmVzZXQsCmJ1dCBleHBsaWNpdGx5IGRyb3BzIGl0IHJpZ2h0IGJlZm9yZSByZXR1cm5p
-bmcsIGFuZCBkb2VzIG5vdCB0YWtlIGEgcmVmZXJlbmNlCmR1cmluZyAuY29uZmlndXJlLgoKV2hl
-biB0aGUgY29uc3VtZXIgY2FsbHMgcGh5X2NvbmZpZ3VyZSgpLCBpdCB3cml0ZXMgZGlyZWN0bHkg
-dG8gaGFyZHdhcmUgdmlhCnJlZ21hcF93cml0ZSgpIGFuZCByZWdtYXBfdXBkYXRlX2JpdHMoKSB3
-aGlsZSB0aGUgZGV2aWNlIFBNIHVzYWdlIGNvdW50CmlzIHplcm8uIENhbiB0aGlzIGNyYXNoIHRo
-ZSBzeXN0ZW0gb3IgY2F1c2Ugc2lsZW50IGxvc3Mgb2YgY29uZmlndXJhdGlvbj8KCj4gKwo+ICAJ
-cGh5ID0gZGV2bV9waHlfY3JlYXRlKGRldiwgTlVMTCwgJm10a19kcF9waHlfZGV2X29wcyk7Cgot
-LSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIw
-MjYwNzA3MTU0MjQ1LjE5ODM2MS0xLWFuZ2Vsb2dpb2FjY2hpbm8uZGVscmVnbm9AY29sbGFib3Jh
-LmNvbT9wYXJ0PTMKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LXBoeQo=
+On 7/7/26 17:56, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 4 potential issue(s) to consider:
+> 
+> New issues:
+> - [High] Register accesses are performed in `mtk_dp_phy_configure()` while the device's PM runtime state is suspended, risking system hangs.
+> - [Medium] Missing validation of `device_get_match_data()` return value can lead to a NULL pointer dereference.
+> - [Low] Invalid compound literal initialization for the 'off_dig_lane' array member causes a compilation error.
+> 
+> Pre-existing issues:
+> - [High] The legacy probe path unconditionally dereferences `dev->platform_data` before validating that it is not NULL.
+> --
+> 
+> --- Patch [4]: [PATCH v3 04/12] phy: phy-mtk-dp: Migrate register offsets to SoC specific pdata ---
+> commit c49d221e57bf6a9816b6ce4e691a20564bc66896
+> Author: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+> 
+> phy: phy-mtk-dp: Migrate register offsets to SoC specific pdata
+> 
+> In preparation for adding support for newer SoCs and for adding
+> more capabilities to this driver in an efficient manner, migrate
+> all of the hardcoded register offsets to SoC specific pdata and
+> assign that for both DT and platform probing.
+> 
+>> diff --git a/drivers/phy/mediatek/phy-mtk-dp.c b/drivers/phy/mediatek/phy-mtk-dp.c
+>> index d241004e28286..20974650d9409 100644
+>> --- a/drivers/phy/mediatek/phy-mtk-dp.c
+>> +++ b/drivers/phy/mediatek/phy-mtk-dp.c
+>> @@ -111,9 +173,12 @@ static int mtk_dp_phy_init(struct phy *phy)
+>>   static int mtk_dp_phy_configure(struct phy *phy, union phy_configure_opts *opts)
+>>   {
+>>   	struct mtk_dp_phy *dp_phy = phy_get_drvdata(phy);
+>> +	const struct mtk_dp_phy_pdata *pdata = dp_phy->pdata;
+>>   	u32 val;
+>>   
+>>   	if (opts->dp.set_rate) {
+>> +		const u32 reg_bit_rate = pdata->regs_dig_glb[DP_PHYD_BIT_RATE];
+>> +
+> 
+> [ ... ]
+> 
+>> -		regmap_write(dp_phy->regmap, MTK_DP_PHY_DIG_BIT_RATE, val);
+>> +		regmap_write(dp_phy->regmap, pdata->off_dig_glb + reg_bit_rate, val);
+>>   	}
+>>   
+>> -	regmap_update_bits(dp_phy->regmap, MTK_DP_PHY_DIG_PLL_CTL_1,
+>> +	regmap_update_bits(dp_phy->regmap,
+>> +			   pdata->off_dig_glb + pdata->regs_dig_glb[DP_PHYD_PLL_CTL_1],
+>>   			   TPLL_SSC_EN, opts->dp.ssc ? TPLL_SSC_EN : 0);
+> 
+> [Severity: High]
+> Since phy_configure() is not wrapped by phy_pm_runtime_get_sync() in the
+> PHY core, and the consumer driver may not call phy_power_on() before this
+> point, the PHY PM runtime usage counter might remain 0 during
+> mtk_dp_phy_configure().
+> 
+> If the PHY power domain is turned off, will these unclocked regmap_write()
+> and regmap_update_bits() calls cause the system to hang?
+> 
+> Should there be PM runtime protection around these register accesses?
+> 
+
+This PHY needs to be powered on with its full power_on sequence before being able
+to be accessed, and anyway the user is taking care of this.
+phy_power_on() will take care of calling phy_pm_runtime_get_sync() so there's
+absolutely no problem with that.
+
+>>   
+>>   	return 0;
+>>   }
+> 
+> [ ... ]
+> 
+>> @@ -170,12 +241,19 @@ static void mtk_dp_phy_legacy_remove_lookup(void *data)
+>>   	phy_remove_lookup(phy, "dp", dev_name(dp_phy->dev));
+>>   }
+>>   
+>> +static const struct mtk_dp_phy_pdata mt8195_dp_phy_data;
+>> +
+>>   static int mtk_dp_phy_legacy_probe(struct platform_device *pdev, struct mtk_dp_phy *dp_phy)
+>>   {
+>>   	struct device *dev = &pdev->dev;
+>>   	struct phy *phy;
+>>   	int ret;
+>>   
+>> +	/*
+>> +	 * If legacy platform driver probe, assume this is MT8195 or compatible
+>> +	 * with a devicetree that was not migrated to the new, proper bindings.
+>> +	 */
+>> +	dp_phy->pdata = &mt8195_dp_phy_data;
+>>   	dp_phy->regmap = *(struct regmap **)dev->platform_data;
+> 
+> [Severity: High]
+> This is a pre-existing issue, but dev->platform_data is unconditionally
+> dereferenced here before it is checked for NULL.
+> 
+> If this legacy probe path is triggered without platform_data provided (for
+> example, via the sysfs new_device interface), won't this cause an immediate
+> NULL pointer dereference?
+> 
+
+The only other alternative is to remove the legacy probe and break compatibility
+with older devicetrees, so, no, that's that.
+
+>>   	if (!dp_phy->regmap)
+>>   		return dev_err_probe(dev, -EINVAL, "No platform data available\n");
+> 
+> [ ... ]
+> 
+>> @@ -235,6 +313,8 @@ static int mtk_dp_phy_probe(struct platform_device *pdev)
+>>   	if (ret)
+>>   		return ret;
+>>   
+>> +	dp_phy->pdata = device_get_match_data(dev);
+>> +
+> 
+> [Severity: Medium]
+> If a user binds the mediatek-dp-phy driver via sysfs to a platform device
+> that doesn't match the driver's compatible strings, device_get_match_data()
+> will return NULL.
+> 
+> Does this need a NULL check before storing it in dp_phy->pdata?
+> 
+> Without validation, subsequent PHY operations like mtk_dp_phy_init() will
+> dereference the NULL pointer and crash.
+
+Does this really happen, anyway?!?!?!?!? :-)
+
+> 
+>>   	phy = devm_phy_create(dev, NULL, &mtk_dp_phy_dev_ops);
+>>   	if (IS_ERR(phy))
+>>   		return dev_err_probe(dev, PTR_ERR(phy),
+> 
+> [ ... ]
+> 
+>> @@ -249,8 +329,15 @@ static int mtk_dp_phy_probe(struct platform_device *pdev)
+>>   	return 0;
+>>   }
+>>   
+>> +static const struct mtk_dp_phy_pdata mt8195_dp_phy_data = {
+>> +	.off_dig_glb = 0x1000,
+>> +	.off_dig_lane = (const u16[]) { 0x1100, 0x1200, 0x1300, 0x1400 },
+> 
+> [Severity: Low]
+> Is this compound literal initialization valid for an array struct member?
+> 
+
+It's valid. I see no warnings nor errors during build.
+
+> Compiling this with GCC or Clang may throw an invalid initializer error
+> because C99 requires array members to be initialized directly with
+> brace-enclosed lists rather than compound literal expressions.
+> 
+>> +	.regs_dig_glb = mt8195_phy_dig_glb_regs,
+>> +	.regs_dig_lane = mt8195_phy_dig_lane_regs,
+>> +};
+> 
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
