@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49B09C44501
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E455C43602
 	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 08:37:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,38 +12,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rZqmL6PfgeNHqWY0ycZq83VokduwV5+eBcacY1die/g=; b=YAyRYEtcj3nfdl
-	U6pXQkMHDpk1soccmxAcUHcOLTQPq4cB9eZUqF7/Jom7j+39HFCeLfBEWyp85js9vbo2xo/MbTg37
-	dshGdu0FKqskQ64f/8lkGT85Da4wOn7VtDN+obI89nTz9P2TRW7lZVCTpZjM8porRy1eO3jo8cAWc
-	MHcf/H00x0vAFK7RdmO+8G7IVBeztgTJLBF+osG08b5k0srdunSHVdPu3t5KAR0iAqHcAINOlHZw6
-	JFpsqJzWvrWqE2JdFSXg1jt7XKbMaQBsOcglXEOhGCCICGmNoHrau0MyGs/wU6QY5WL/1aVOA33fS
-	/eZi+iCpzLK8+22KnewQ==;
+	List-Owner; bh=T5M7cdm0TkMO+qkup9TnH7SMTLMYFJF0X0udDXW1SWc=; b=UL3gEvybAYSrAz
+	IExJYhogGQuOXhuCTV7lTPQPe1LnahBOgzIoQPzeQ4nvAXFQj5YbNJyusm8zFANTBY6b/AuXZnlIj
+	RfEyDd8mkrgqwQSpRFFT7GaJMB7eTmSb7m8ptCJKQub/bmhGfZzErtClImZttaYc//iLsd5yx16Es
+	26jZFaiLvj7+8HpvNSM1nwStBsoRicLhxbXet1UJSRWY8Xxw0KxbWKjQEn2NCMXAjohmzNQ6c9Uu9
+	o7iCDK1o8zncs80rJ3ugh01u0fPfA/Of2sR1umkg/ucRWql/qHuviijkkfa1LppipMwfFVyCp7554
+	y1bhgFauFjguNOve8vXw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh1JL-0000000EUuL-0Egs;
-	Tue, 07 Jul 2026 08:37:47 +0000
+	id 1wh1JK-0000000EUuF-467K;
+	Tue, 07 Jul 2026 08:37:46 +0000
 Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh1JI-0000000EUsY-04f0
+	id 1wh1JG-0000000EUsE-2AxH
 	for linux-phy@lists.infradead.org;
-	Tue, 07 Jul 2026 08:37:45 +0000
+	Tue, 07 Jul 2026 08:37:44 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1783413461;
-	bh=At3kX04dh5r5RHMMhi000LK1O2FCYXXKg+W9vgPjwWw=;
+	s=mail; t=1783413460;
+	bh=iaQLoHq0emKn/Ux2pZvoEbzv+i4CXFCtM/rTzwYOxmA=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=cUEHhYac1RJP4a7pEwRzbXyD3BJz5jDHcjqT9mQ1R++lmDO/1T2vky6eHrfNt9Cvg
-	 dscr+jUJj1tsWUKSdeIDxB+YmE4q/4R10okFnOCpeqn3MFPsgxpZkizUR7u4bQV3k/
-	 6/3oJTRkHH7KX9vXVoWPcO8BiywYltVOzJRuQn2CKLWZHnhJqzg/hHrktQSoPReq+C
-	 +/wZHsoImpnVgnoxx9/NxUEwEfAH6nNdOkOFQLmVRlIVumw4HM+RIcyylxTKQ3bijd
-	 /MAS8oAUIFLMQtgOoq8oVqb9dzKwdDorzKDBHPcOA9PPgCcUkJzyX7EflY10mCJWij
-	 5gYvaxblUbatA==
+	b=AsKnv6ixZLW/q5z/ejz1gYG7QBKu8tm158Hy/NjJYSr491pKy1mtvKx61es5bhqyd
+	 q5fky8VcFsYbuZ9uS1MaTtBSgAY5mj6KLks0Me8mLhdB5NupV+N6yUJ9XTZM3n7Nv6
+	 +VcWuCyfdwdq+tIc+JHaGMMH+O46RzICa6YNMnomlgDgOrqFp94fLTeEL5W07weUI9
+	 gbnqbqp2gNsFsX+AF2VG9WvQc6wlO9C8IsXlsB9ZNmjv0hhWLRoAaqc8di13H3fL/K
+	 HJlHZF+eY/tBcFVWe4yK/twJTaqOdOyXhtmJihwmSklo6xDeb/f27+e63OVD5K1AtB
+	 gzvOGCzgdta8Q==
 Received: from IcarusMOD.eternityproject.eu (unknown [100.64.1.21])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id C9E7D17E0CDE;
-	Tue, 07 Jul 2026 10:37:40 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 8E62B17E05E8;
+	Tue, 07 Jul 2026 10:37:39 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: jic23@kernel.org,
 	sboyd@kernel.org
@@ -74,18 +74,18 @@ Cc: dlechner@baylibre.com,
 	linux-phy@lists.infradead.org,
 	linux-pm@vger.kernel.org,
 	kernel@collabora.com,
-	Andy Shevchenko <andriy.shevchenko@intel.com>
-Subject: [PATCH v10 02/11] spmi: Remove redundant dev_name() print in spmi_device_add()
-Date: Tue,  7 Jul 2026 10:37:21 +0200
-Message-ID: <20260707083730.33977-3-angelogioacchino.delregno@collabora.com>
+	stable@vger.kernel.org,
+	Sashiko Bot <sashiko-bot@kernel.org>
+Subject: [PATCH v10 01/11] spmi: Fix potential use-after-free by grabbing of_node reference
+Date: Tue,  7 Jul 2026 10:37:20 +0200
+Message-ID: <20260707083730.33977-2-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.54.0
 In-Reply-To: <20260707083730.33977-1-angelogioacchino.delregno@collabora.com>
 References: <20260707083730.33977-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260707_013744_248570_149602C3 
-X-CRM114-Status: UNSURE (   9.46  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260707_013742_728669_517A83C4 
+X-CRM114-Status: GOOD (  11.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,40 +102,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Function spmi_device_add() uses dev_{dbg,err}() for respectively
-debug and error prints, and passes the same device pointer as both
-the dev_{dbg,err}() parameters and to a dev_name() that is part of
-the actual message.
-This means that the device name gets printed twice!
+As noticed by Sashiko during a review run of an unrelated patch,
+in of_spmi_register_devices(), for_each_available_child_of_node()
+is used to loop through children, and to also assign a node to a
+newly created SPMI child device.
 
-Remove the redundant dev_name() from the messages.
+Problem is that the refcount is dropped at every iteration so, in
+the specific case of DT overlays, a use-after-free may occur when
+an overlay is dynamically unloaded!
 
-Acked-by: Stephen Boyd <sboyd@kernel.org>
-Reviewed-by: Andy Shevchenko <andriy.shevchenko@intel.com>
+To resolve this, increase the of_node refcount when assigning (in
+function of_spmi_register_devices) and release the reference in
+spmi_device_remove().
+
+Fixes: bc32bbd04011 ("spmi: Set fwnode for spmi devices")
+Cc: stable@vger.kernel.org
+Reported-by: Sashiko Bot <sashiko-bot@kernel.org>
+Closes: https://sashiko.dev/#/patchset/20260608100949.36309-1-angelogioacchino.delregno@collabora.com?part=2
 Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 ---
- drivers/spmi/spmi.c | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
+ drivers/spmi/spmi.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/spmi/spmi.c b/drivers/spmi/spmi.c
-index 6e701aff6045..cf33262eaeb2 100644
+index 57b7c0cb4240..6e701aff6045 100644
 --- a/drivers/spmi/spmi.c
 +++ b/drivers/spmi/spmi.c
-@@ -68,12 +68,11 @@ int spmi_device_add(struct spmi_device *sdev)
+@@ -86,6 +86,9 @@ EXPORT_SYMBOL_GPL(spmi_device_add);
+  */
+ void spmi_device_remove(struct spmi_device *sdev)
+ {
++	if (IS_ENABLED(CONFIG_OF))
++		of_node_put(sdev->dev.of_node);
++
+ 	device_unregister(&sdev->dev);
+ }
+ EXPORT_SYMBOL_GPL(spmi_device_remove);
+@@ -517,13 +520,14 @@ static void of_spmi_register_devices(struct spmi_controller *ctrl)
+ 		if (!sdev)
+ 			continue;
  
- 	err = device_add(&sdev->dev);
- 	if (err < 0) {
--		dev_err(&sdev->dev, "Can't add %s, status %d\n",
--			dev_name(&sdev->dev), err);
-+		dev_err(&sdev->dev, "Can't add device, status %d\n", err);
- 		goto err_device_add;
+-		device_set_node(&sdev->dev, of_fwnode_handle(node));
++		device_set_node(&sdev->dev, of_fwnode_handle(of_node_get(node)));
+ 		sdev->usid = (u8)reg[0];
+ 
+ 		err = spmi_device_add(sdev);
+ 		if (err) {
+ 			dev_err(&sdev->dev,
+ 				"failure adding device. status %d\n", err);
++			of_node_put(node);
+ 			spmi_device_put(sdev);
+ 		}
  	}
- 
--	dev_dbg(&sdev->dev, "device %s registered\n", dev_name(&sdev->dev));
-+	dev_dbg(&sdev->dev, "device registered\n");
- 
- err_device_add:
- 	return err;
 -- 
 2.54.0
 
