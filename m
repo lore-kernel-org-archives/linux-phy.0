@@ -4,74 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 212FAC43458
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 15:43:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 253D5C43602
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 15:56:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p3PWgEN4TBwRLOdsXk5hczBMDzG1yWupEOZQemaZ2gY=; b=V/QJ/wp+mDbzQb
-	i802rrX8nZ5VmUvtHuRPmYXaONKeiHVJGrIg46j78JJaDq8MkYGt6jvRDDEwVBy4opT2FKrbaJfS5
-	FmoV8jCJi89MhVgraEraoH0w0/pW/4ZZYX615folu1XYdcFInw4npWmEuVd3IqTLSP5y9/voaZGa+
-	zIzgbRSH7q3vk/ppw50JnZqKTZLmdrpVv59oY/RY9TlWGTZxeuDQw/5+aDbd1pXP96Qo8c11ebNct
-	Z5ahh2XE4DhUISk8NBw5nLcXIHSUK9A9Ro/41oHlH9h8fUE1YY+jfN34VM/dkjwdcdOPdCnq2s/la
-	4QPtGnahiKFhfJPTWz2A==;
+	List-Owner; bh=vxTZftPnrxGw1S8muesY9n5LQGbpkIEWOBr4f11YIa0=; b=xsrGnu0RP04o6H
+	vAQ/Tg4CSMuO5Q5gtx/NLHncyf+hlXAzB8mlkKahbU76e+4cxZr7WfvqYmNMwO698oZ5QtfZExNhs
+	DSmKFBqWtA59xDPKOii7gi48arC8phNBZcLxRXdularRl+LMQ8UsX4zLfRF1ktIiYDekh6XSKrxGs
+	YZVE1j3yr6OvJTbP0F+GXEwXxNqlRyjHE3D3N7SRYaTF1bknQF42zWgc69zHKPQRqvhLt68SVO6Pr
+	d8OLUnckCCU/BQ/EIaXUPcvk4OmB4qMr/vhPxYzVVQNPCQISchbPqq2ecg5CNZo5wsgn40lXBe3b5
+	44WBdkE+Bl9iFAPdEWvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh7xZ-0000000FN2r-3mTj;
-	Tue, 07 Jul 2026 15:43:50 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1wh89s-0000000FPQK-30GS;
+	Tue, 07 Jul 2026 15:56:28 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh7ws-0000000FM42-3QhY;
-	Tue, 07 Jul 2026 15:43:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1783438979;
-	bh=+l0JxPVMWizDtm7st0nxfuuabxoYFY3ab2cxUYpVGhs=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=nIGWtEjKDxprqxhn4jWdJ9+N5r3huvsEt9hZDz5O0jQ5jIJpZEYlvhS48SRAWHIJd
-	 omQy3NaiHkzj6yq7C39mY7ZsytQ+DDM+TIIOBAfwmJ+gW//JYj+WQJRZcvydXtUV3p
-	 42lZK1/PzHW1KP569CoYuppW84qiK2wzdvYASXpXY7rMQJhQkbZaa2jP6+FJMKrEth
-	 OcnELanv0uQTAyDLbp23kuAKakXkcnxAewX2XkkPl4D69EdJba5G3w/5zwylI4nFxM
-	 gVe+xCQDX1ddpkZortmw8Xjxwnkvjeh1SZHe8f+RMVW+8LPgugNGJuGikkuYNqetpv
-	 GJwEcf8iF3iGQ==
-Received: from IcarusMOD.eternityproject.eu (unknown [100.64.1.21])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 5A56017E1078;
-	Tue, 07 Jul 2026 17:42:58 +0200 (CEST)
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-To: chunfeng.yun@mediatek.com
-Cc: vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	matthias.bgg@gmail.com,
-	angelogioacchino.delregno@collabora.com,
-	chunkuang.hu@kernel.org,
-	p.zabel@pengutronix.de,
-	justin.yeh@mediatek.com,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	dri-devel@lists.freedesktop.org,
-	kernel@collabora.com
-Subject: [PATCH v3 12/12] phy: phy-mtk-dp: Add support for MT8196 eDP PHY
-Date: Tue,  7 Jul 2026 17:42:45 +0200
-Message-ID: <20260707154245.198361-13-angelogioacchino.delregno@collabora.com>
-X-Mailer: git-send-email 2.54.0
-In-Reply-To: <20260707154245.198361-1-angelogioacchino.delregno@collabora.com>
+	id 1wh89r-0000000FPPR-1Lqo
+	for linux-phy@lists.infradead.org;
+	Tue, 07 Jul 2026 15:56:27 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id D619641A99;
+	Tue,  7 Jul 2026 15:56:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E68ED1F000E9;
+	Tue,  7 Jul 2026 15:56:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1783439784;
+	bh=BR+iQpZJepEmz0MopDypdDGqAeRtQkbVo5FSmYXDYTw=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=ibq+mNhdF/OXAgu5Ou+Mm2q8Wgm5ue+pmOuErVVJcCjnib+lNS+R+K+c43Vpr1UO5
+	 pZN1S2YVFWxrbPHjed6P1ZLnLNayIpTahyWzkDoyRZjsAtNOrYiGxvYhX0TmkUQNnk
+	 t4WBT+Er/phINwAZsgdxxIGUcR89nVrJwxxvxEYqEkrAnWT8eZ43eYS2VpRmGVjww7
+	 G7rJvCws3rrOO8TDetOeKJLrs3y7CIG1MaeTdMipAAP13w5XG8rSgjv7fZ3az4OhNr
+	 rA2565nPjCA8dS1XXQUFJQZGW4qNZIoTQ05kXhCIFaWSmjyzOoG/kNOem+vTldwPRi
+	 6qiwYTTb+dTaw==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v3 06/12] phy: phy-mtk-dp: Support set_lanes in
+ configure and properly cleanup
+To: "AngeloGioacchino Del Regno" <angelogioacchino.delregno@collabora.com>
+Cc: robh@kernel.org, conor+dt@kernel.org, neil.armstrong@linaro.org, devicetree@vger.kernel.org, vkoul@kernel.org, olteanv@gmail.com, linux-phy@lists.infradead.org, dri-devel@lists.freedesktop.org
+In-Reply-To: <20260707154245.198361-7-angelogioacchino.delregno@collabora.com>
 References: <20260707154245.198361-1-angelogioacchino.delregno@collabora.com>
-MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260707_084303_031625_A473C00E 
-X-CRM114-Status: GOOD (  13.71  )
+ <20260707154245.198361-7-angelogioacchino.delregno@collabora.com>
+Date: Tue, 07 Jul 2026 15:56:23 +0000
+Message-Id: <20260707155623.E68ED1F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,155 +63,58 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The MT8196 SoC features an updated PHY IP compared to the older
-ones, and there is one that is specific to Embedded DisplayPort.
-
-Add support for the eDP PHY found in the MediaTek MT8196 SoC and
-all of its variants.
-
-Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
----
- drivers/phy/mediatek/phy-mtk-dp.c | 66 ++++++++++++++++++++++++++++++-
- 1 file changed, 65 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/phy/mediatek/phy-mtk-dp.c b/drivers/phy/mediatek/phy-mtk-dp.c
-index f5aadc5fdc42..5decc29c77cb 100644
---- a/drivers/phy/mediatek/phy-mtk-dp.c
-+++ b/drivers/phy/mediatek/phy-mtk-dp.c
-@@ -5,7 +5,7 @@
-  * Copyright (c) 2022, BayLibre Inc.
-  * Copyright (c) 2022, MediaTek Inc.
-  *
-- * Major refactoring
-+ * Major refactoring and new SoCs support
-  * Copyright (c) 2026, Collabora Ltd.
-  *                     AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-  */
-@@ -43,6 +43,7 @@
- #define TPLL_SSC_EN			BIT(3)
- 
- /* DP_PHYD_BIT_RATE */
-+#define PHYD_DIG_RG_BIT_RATE_V2		GENMASK(3, 0)
- #define PHYD_DIG_RG_BIT_RATE		GENMASK(1, 0)
- 
- /* DP_PHYD_SW_RST */
-@@ -63,6 +64,7 @@
- 
- /* DP_PHYD_TX_CTL_0 */
- #define PHYD_TX_LN_EN			GENMASK(7, 4)
-+#define PHYD_TX_LN_EN_V2		GENMASK(3, 0)
- 
- /* DP_PHYD_DRIVING_FORCE */
- #define PHYD_DP_TX_FORCE_VOLT_SWING_EN	BIT(0)
-@@ -129,6 +131,16 @@
- #define MT8195_DRIVING_PARAM_7_DEFAULT	BUILD_DRIVING_PARAM_12(0, 6, 12, 0)
- #define MT8195_DRIVING_PARAM_8_DEFAULT	BUILD_DRIVING_PARAM_23(8, 0)
- 
-+/* MT8196/MT6991: Logic State Change Point (LC TX C) */
-+#define MT8196_DRIVING_PARAM_3_DEFAULT	BUILD_DRIVING_PARAM_0( 10, 12, 14, 17)
-+#define MT8196_DRIVING_PARAM_4_DEFAULT	BUILD_DRIVING_PARAM_12(14, 17, 18, 18)
-+#define MT8196_DRIVING_PARAM_5_DEFAULT	BUILD_DRIVING_PARAM_23(21, 24)
-+
-+/* MT8196/MT6991: Positive Edge (LC TX CP) */
-+#define MT8196_DRIVING_PARAM_6_DEFAULT	BUILD_DRIVING_PARAM_0( 0, 2, 4, 7)
-+#define MT8196_DRIVING_PARAM_7_DEFAULT	BUILD_DRIVING_PARAM_12(0, 3, 6, 0)
-+#define MT8196_DRIVING_PARAM_8_DEFAULT	BUILD_DRIVING_PARAM_23(3, 0)
-+
- enum mtk_dp_phya_ana_glb_regidx {
- 	DP_PHYA_GLB_BIAS_GEN_0,
- 	DP_PHYA_GLB_BIAS_GEN_1,
-@@ -184,6 +196,11 @@ static const u8 mt8195_phy_dig_lane_regs[DP_PHYD_LAN_MAX] = {
- 	[DP_PHYD_LAN_DRIVING_PARAM_0] = 0x2c,
- };
- 
-+static const u8 mt8196_phy_dig_lane_regs[DP_PHYD_LAN_MAX] = {
-+	[DP_PHYD_LAN_DRIVING_FORCE] = 0x30,
-+	[DP_PHYD_LAN_DRIVING_PARAM_0] = 0x34,
-+};
-+
- static const u8 mt8195_phy_dig_glb_regs[DP_PHYD_GLOBAL_MAX] = {
- 	[DP_PHYD_PLL_CTL_0] = 0x10,
- 	[DP_PHYD_PLL_CTL_1] = 0x14,
-@@ -193,6 +210,15 @@ static const u8 mt8195_phy_dig_glb_regs[DP_PHYD_GLOBAL_MAX] = {
- 	[DP_PHYD_TX_CTL_0] = 0x44,
- };
- 
-+static const u8 mt8196_phy_dig_glb_regs[DP_PHYD_GLOBAL_MAX] = {
-+	[DP_PHYD_PLL_CTL_0] = 0x10,
-+	[DP_PHYD_PLL_CTL_1] = 0x14,
-+	[DP_PHYD_SW_RST] = 0x38,
-+	[DP_PHYD_BIT_RATE] = 0x3c,
-+	[DP_PHYD_AUX_RX_CTL] = 0x40,
-+	[DP_PHYD_TX_CTL_0] = 0x74,
-+};
-+
- static const u8 mt8195_phy_dig_bitrate_val[DP_PHYD_BIT_RATE_MAX] = {
- 	[DP_PHYD_BIT_RATE_RBR] = 0,
- 	[DP_PHYD_BIT_RATE_HBR] = 1,
-@@ -200,6 +226,13 @@ static const u8 mt8195_phy_dig_bitrate_val[DP_PHYD_BIT_RATE_MAX] = {
- 	[DP_PHYD_BIT_RATE_HBR3] = 3
- };
- 
-+static const u8 mt8196_edp_phy_dig_bitrate_val[DP_PHYD_BIT_RATE_MAX] = {
-+	[DP_PHYD_BIT_RATE_RBR] = 1,
-+	[DP_PHYD_BIT_RATE_HBR] = 4,
-+	[DP_PHYD_BIT_RATE_HBR2] = 7,
-+	[DP_PHYD_BIT_RATE_HBR3] = 9
-+};
-+
- /**
-  * struct mtk_dp_phya_imp_sel - Per-Lane Impedance Selection
-  * @pmos: Impedance selection for P-Channel MOSFET
-@@ -805,8 +838,39 @@ static const struct mtk_dp_phy_pdata mt8195_dp_phy_data = {
- 	},
- };
- 
-+static const struct mtk_dp_phy_pdata mt8196_edp_phy_data = {
-+	.off_ana_glb = 0x400,
-+	.off_ana_lane = (const u16[]) { 0x0, 0x100, 0x200, 0x300 },
-+	.off_dig_glb = 0x1400,
-+	.off_dig_lane = (const u16[]) { 0x1000, 0x1100, 0x1200, 0x1300 },
-+	.regs_ana_glb = mt8195_phy_ana_glb_regs,
-+	.regs_ana_lane = mt8195_phy_ana_lane_regs,
-+	.regs_dig_glb = mt8196_phy_dig_glb_regs,
-+	.regs_dig_lane = mt8196_phy_dig_lane_regs,
-+	.mask_dig_tx_ln = PHYD_TX_LN_EN_V2,
-+	.val_dig_bitrate = mt8196_edp_phy_dig_bitrate_val,
-+	.ana_bias_r = 15,
-+	.ana_cktx_imp = 8,
-+	.ana_lanes_imp = {
-+		.pmos = 8,
-+		.nmos = 8,
-+	},
-+	.driving_params = (const u32[]) {
-+		[0] = 0,
-+		[1] = 0,
-+		[2] = 0,
-+		[3] = MT8196_DRIVING_PARAM_3_DEFAULT,
-+		[4] = MT8196_DRIVING_PARAM_4_DEFAULT,
-+		[5] = MT8196_DRIVING_PARAM_5_DEFAULT,
-+		[6] = MT8196_DRIVING_PARAM_6_DEFAULT,
-+		[7] = MT8196_DRIVING_PARAM_7_DEFAULT,
-+		[8] = MT8196_DRIVING_PARAM_8_DEFAULT
-+	},
-+};
-+
- static const struct of_device_id mtk_dp_phy_of_match[] = {
- 	{ .compatible = "mediatek,mt8195-dp-phy", .data = &mt8195_dp_phy_data },
-+	{ .compatible = "mediatek,mt8196-edp-phy", .data = &mt8196_edp_phy_data },
- 	{ /* sentinel */ }
- };
- MODULE_DEVICE_TABLE(of, mtk_dp_phy_of_match);
--- 
-2.54.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0xvd10gSW5jb25zaXN0ZW50IHVz
+ZSBvZiBkZXZpY2UgcG9pbnRlcnMgZm9yIGVycm9yIGxvZ2dpbmcgaW4gYG10a19kcF9waHlfcG93
+ZXJfb2ZmYCBhbmQgYG10a19kcF9waHlfcmVzZXRgLgotLQoKLS0tIFBhdGNoIFs2XTogW1BBVENI
+IHYzIDA2LzEyXSBwaHk6IHBoeS1tdGstZHA6IFN1cHBvcnQgc2V0X2xhbmVzIGluIGNvbmZpZ3Vy
+ZSBhbmQgcHJvcGVybHkgY2xlYW51cCAtLS0KY29tbWl0IGNhYjMwOTU1N2FjNGZjYjQ2MmM1Yjg5
+NzhhOGNkNjYwYWNhYjFlYzEKQXV0aG9yOiBBbmdlbG9HaW9hY2NoaW5vIERlbCBSZWdubyA8YW5n
+ZWxvZ2lvYWNjaGluby5kZWxyZWdub0Bjb2xsYWJvcmEuY29tPgoKcGh5OiBwaHktbXRrLWRwOiBT
+dXBwb3J0IHNldF9sYW5lcyBpbiBjb25maWd1cmUgYW5kIHByb3Blcmx5IGNsZWFudXAKClRoaXMg
+Y29tbWl0IGFkZHMgc3VwcG9ydCBmb3IgZW5hYmxpbmcgYSBzcGVjaWZpY2FsbHkgcmVxdWVzdGVk
+IG51bWJlciBvZgpsYW5lcyBpbiB0aGUgLmNvbmZpZ3VyZSgpIGNhbGxiYWNrLiBJdCBhbHNvIHVw
+ZGF0ZXMgdGhlIHBvd2VyIG9mZiBhbmQgcmVzZXQKY2FsbGJhY2tzIHRvIGRpc2FibGUgYWxsIGxh
+bmVzIGZvciBwcm9wZXIgaGFyZHdhcmUgY2xlYW51cC4KCj4gLS0tIGEvZHJpdmVycy9waHkvbWVk
+aWF0ZWsvcGh5LW10ay1kcC5jCj4gKysrIGIvZHJpdmVycy9waHkvbWVkaWF0ZWsvcGh5LW10ay1k
+cC5jClsgLi4uIF0KPiBAQCAtMjYzLDMxICsyODEsNjggQEAgc3RhdGljIGludCBtdGtfZHBfcGh5
+X3Bvd2VyX29uKHN0cnVjdCBwaHkgKnBoeSkKWyAuLi4gXQo+ICBzdGF0aWMgaW50IG10a19kcF9w
+aHlfcG93ZXJfb2ZmKHN0cnVjdCBwaHkgKnBoeSkKPiAgewo+ICAJc3RydWN0IG10a19kcF9waHkg
+KmRwX3BoeSA9IHBoeV9nZXRfZHJ2ZGF0YShwaHkpOwo+ICAJY29uc3Qgc3RydWN0IG10a19kcF9w
+aHlfcGRhdGEgKnBkYXRhID0gZHBfcGh5LT5wZGF0YTsKPiAgCWNvbnN0IHU4ICpyZWdzX2RpZyA9
+IHBkYXRhLT5yZWdzX2RpZ19nbGI7Cj4gIAljb25zdCB1OCAqcmVnc19hbmEgPSBwZGF0YS0+cmVn
+c19hbmFfZ2xiOwo+IC0JaW50IHJldF9ja3R4LCByZXRfYXV4Owo+ICsJaW50IHJldF9ja3R4LCBy
+ZXRfYXV4LCByZXQ7Cj4gIAo+ICAJcmV0X2NrdHggPSByZWdtYXBfc2V0X2JpdHMoZHBfcGh5LT5y
+ZWdtYXAsCj4gIAkJCQkgICBwZGF0YS0+b2ZmX2FuYV9nbGIgKyByZWdzX2FuYVtEUF9QSFlBX0dM
+Ql9GT1JDRV9DVFJMXzFdLAo+ICAJCQkJICAgQ0tNX0NLVFgwX0VOX0ZPUkNFX01PREUpOwo+ICsJ
+aWYgKHJldF9ja3R4KQo+ICsJCWRldl9lcnIoJnBoeS0+ZGV2LCAiQ291bGQgbm90IGRpc2FibGUg
+Q0tUWDA6ICVkXG4iLCByZXRfY2t0eCk7ClsgLi4uIF0KPiArCXJldCA9IG10a19kcF9waHlfZGlz
+YWJsZV9hbGxfbGFuZXMoZHBfcGh5KTsKPiArCWlmIChyZXQpIHsKPiArCQlkZXZfZXJyKGRwX3Bo
+eS0+ZGV2LCAiQ291bGQgbm90IGRpc2FibGUgbGFuZXMgZm9yIHBvd2Vyb2ZmIVxuIik7CgpbU2V2
+ZXJpdHk6IExvd10KU2hvdWxkIHRoaXMgdXNlICZwaHktPmRldiBpbnN0ZWFkIG9mIGRwX3BoeS0+
+ZGV2IGZvciBlcnJvciBsb2dnaW5nPwoKVGhlIGFkamFjZW50IGVycm9yIGhhbmRsZXJzIGZvciBD
+S1RYIGFuZCBBVVggaW4gdGhpcyBzYW1lIGZ1bmN0aW9uIGxvZyAKZXJyb3JzIHVzaW5nICZwaHkt
+PmRldi4gTWl4aW5nIGRldmljZSBwb2ludGVycyBtaWdodCBsZWFkIHRvIGluY29uc2lzdGVudCAK
+ZGV2aWNlIG5hbWVzIGluIHRoZSBrZXJuZWwgbG9nLgoKPiArCQlyZXR1cm4gcmV0Owo+ICAJfQpb
+IC4uLiBdCj4gQEAgLTMwNyw2ICszNjMsMTEgQEAgc3RhdGljIGludCBtdGtfZHBfcGh5X3Jlc2V0
+KHN0cnVjdCBwaHkgKnBoeSkKWyAuLi4gXQo+ICAJLyogU2V0dGluZyBiaXRzIG1lYW5zIGdvIG91
+dCBvZiByZXNldCAqLwo+ICAJcmVnbWFwX3NldF9iaXRzKGRwX3BoeS0+cmVnbWFwLCBwZGF0YS0+
+b2ZmX2RpZ19nbGIgKyByZWdfcnN0LCBEUF9HTEJfU1dfUlNUX1BIWUQpOwo+ICAKPiArCS8qIERp
+c2FibGUgYWxsIGxhbmVzIGFuZCBjb250aW51ZSByZXNldCBldmVuIGlmIHRoaXMgZmFpbHMsIGJ1
+dCBub3RpZnkgKi8KPiArCXJldCA9IG10a19kcF9waHlfZGlzYWJsZV9hbGxfbGFuZXMoZHBfcGh5
+KTsKPiArCWlmIChyZXQpCj4gKwkJZGV2X2VycihkcF9waHktPmRldiwgIkNvdWxkIG5vdCBkaXNh
+YmxlIGxhbmVzIGR1cmluZyByZXNldCFcbiIpOwoKW1NldmVyaXR5OiBMb3ddClNpbWlsYXJseSBo
+ZXJlLCB3b3VsZCBpdCBiZSBiZXR0ZXIgdG8gdXNlICZwaHktPmRldiBmb3IgY29uc2lzdGVuY3kg
+d2l0aCAKdGhlIHJlc3Qgb2YgdGhlIEFQSSBpbXBsZW1lbnRhdGlvbj8KCj4gKwo+ICAJcmV0dXJu
+IDA7Cj4gIH0KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMv
+cGF0Y2hzZXQvMjAyNjA3MDcxNTQyNDUuMTk4MzYxLTEtYW5nZWxvZ2lvYWNjaGluby5kZWxyZWdu
+b0Bjb2xsYWJvcmEuY29tP3BhcnQ9NgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgt
+cGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtcGh5Cg==
