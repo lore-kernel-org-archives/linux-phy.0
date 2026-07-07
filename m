@@ -4,83 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE515C43602
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 13:18:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D215C43458
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 14:14:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GpJFAr0K6VZw7lbi/h3F7fVIdOe6nMwL1ZvSmVbILB8=; b=fahUnUHYMiMMj8
-	HMVlc0k7I9sIOiLjSnOnzeHwFmibMTS4t2b0qftVr52sTptF07cjwHb44hbET6ZmLiz79wRhTmEsz
-	+NEkmfgjj7zFxk6SAcb08hbtdgUOVessFEIJPaQfA081sKprp53nG4M6lJkAZmq3P/tBJG171hJNR
-	JYVt4wooA2YoBBSccnvsIWRTmS18z/hi19dC1/SXlDUborFVHsxU5+0tJfn6rMuuNHIEcC6xm44PQ
-	KwWb8ERzS/FYMi+0l8t05+J44vq8DbWIMKkn4JOcqppdMxRQ5q9Nuo4Jbup4HX9SCmxWLtNmWF1EP
-	b8pe8XTgfUF9Lt+bJj4Q==;
+	List-Owner; bh=MmN/+l9ZiMf4wTP0hL5WtBCUzUBNNni5mN6AyaG7Yn4=; b=sfe4DE8eX6b2Lo
+	pkPLQI32oW4yrTBlWb1giZG/K9CR04TP+8u57a3aY2orrBU/8wxQJlwB5a7l1q9yvYfFKh7lPBwqT
+	SFk3KN6kxU7kslL8/M4OgJfapj/u/99S4suvPAMqKpeaARylSrQJoAJz0cd4tdzCErJsNvKzWVkeV
+	HVhveZvu/GISRvw7bgAMO1RBWUQrYeYpXNXI8OX7NQpoPd4Nl9+hjHdqEEk0Bg8HWpqOhy2UFBIcX
+	pjgyV29kCKg7U233/hxpFKrfJg+Gq3VzaKoV2PHCnATtsSH5gcrR3HgVqAVUR8g22ZTPus+sJIJZr
+	aMhyv4Bc+b2n+7ZJTg+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh5hD-0000000F2MZ-1Hcs;
-	Tue, 07 Jul 2026 13:18:43 +0000
-Received: from mgamail.intel.com ([198.175.65.18])
+	id 1wh6ZW-0000000F7t5-0zaX;
+	Tue, 07 Jul 2026 14:14:50 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh5hA-0000000F2MA-3vzJ
+	id 1wh6ZQ-0000000F7rO-3o40
 	for linux-phy@lists.infradead.org;
-	Tue, 07 Jul 2026 13:18:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1783430321; x=1814966321;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=/ly3zhbN8UvM0mBvHsyaV05d2n7SVnkwc5cqb3pdRB0=;
-  b=Hwr+sCODcd5Nly3JsYsPg0OHJsgkEMNPRvgv94W7GGRFumQ++3bsC4az
-   pNFUyTJTAv8FzeRWb6L8VlGazHo4eXNdyTdVAY4qQqI5N0rkpgcRAkTsT
-   U4jsgVPsVWHANMHmAitBW/DoPk1RXpMmF0iRDve+ZU4G/E5KkkHGD8gBM
-   Peov81IBSScyh1BqRs4QSKz+rNZQFzzNTxNpQd/5kDGY+IpSCrFoxTzvM
-   w8cmsLvJFt0+ruj0PSEocujVbi8jx3Vv9Tb9rBcgkvhTAuripAtF+rlbx
-   fJYOQ7DUiNU0n5v4KIdG9lSt/nKc3HvGbl5/xapvMO0oe54m7JQHOpytL
-   g==;
-X-CSE-ConnectionGUID: aLxGRs4lTT2YifNhuuGFUQ==
-X-CSE-MsgGUID: RDptrYAjQYWNlN71JG12YQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11840"; a="84167307"
-X-IronPort-AV: E=Sophos;i="6.25,153,1779174000"; 
-   d="scan'208";a="84167307"
-Received: from orviesa003.jf.intel.com ([10.64.159.143])
-  by orvoesa110.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 07 Jul 2026 06:18:10 -0700
-X-CSE-ConnectionGUID: WsO3CRuiQMilZkW6KgdYNA==
-X-CSE-MsgGUID: wMffaHyNQPaTlSUC+Mp9gA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.25,153,1779174000"; 
-   d="scan'208";a="257569504"
-Received: from slindbla-desk.ger.corp.intel.com (HELO localhost) ([10.245.245.36])
-  by ORVIESA003-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 07 Jul 2026 06:18:04 -0700
-Date: Tue, 7 Jul 2026 16:18:01 +0300
-From: Andy Shevchenko <andriy.shevchenko@intel.com>
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: jic23@kernel.org, sboyd@kernel.org, dlechner@baylibre.com,
-	nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de,
-	gregkh@linuxfoundation.org, srini@kernel.org, vkoul@kernel.org,
-	neil.armstrong@linaro.org, sre@kernel.org, krzk@kernel.org,
-	dmitry.baryshkov@oss.qualcomm.com, quic_wcheng@quicinc.com,
-	melody.olvera@oss.qualcomm.com, quic_nsekar@quicinc.com,
-	ivo.ivanov.ivanov1@gmail.com, abelvesa@kernel.org,
-	luca.weiss@fairphone.com, konrad.dybcio@oss.qualcomm.com,
-	mitltlatltl@gmail.com, krishna.kurapati@oss.qualcomm.com,
-	linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-pm@vger.kernel.org, kernel@collabora.com
-Subject: Re: [PATCH v12 00/12] SPMI: Implement sub-devices and migrate drivers
-Message-ID: <akz8iRW2emM7B7n7@ashevche-desk.local>
-References: <20260707111829.180158-1-angelogioacchino.delregno@collabora.com>
+	Tue, 07 Jul 2026 14:14:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1783433681;
+	bh=Oir2L8r8JENMjsaS6XGSf9ZOzknW7/JZBsW+OujDV0o=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=is6ar83mWEsiCXiD8wZSgKlomceF4f4VAPU6+Cs1rHP6ePF5Y2Iek9P1ZrIKDlRFw
+	 CYT3/wwBLl2G/mS+AdGbozZT6J3B/o2COoncwFJVIMj3uS+2HpxDSE2ccp0XncqoWW
+	 7r6qcbnkZbKyw50mOU7yJo/0mmVC0kRJq/142//VM7YsThaLJ5tVQAZTj7hrxTc0wX
+	 pCCbHLsrL2SeiFQIRXJKgWzEFHOk99pJ8zS7gCeeAG6OWkknMbC7XBQzIGVIELmftr
+	 bpvflslf4R4BvfswqSzx84BeH8geoZGPYXrptZn4C3XiMSiUKpsuogIiHWVqfBhC+e
+	 5MMU+gKHuxOJg==
+Received: from [100.64.1.21] (unknown [100.64.1.21])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 86B0317E05E8;
+	Tue, 07 Jul 2026 16:14:41 +0200 (CEST)
+Message-ID: <568124de-9ed6-469a-8521-99c11cd6c495@collabora.com>
+Date: Tue, 7 Jul 2026 16:14:41 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260707111829.180158-1-angelogioacchino.delregno@collabora.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
- krs, Bertel Jungin Aukio 5, 02600 Espoo
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/2] phy: mediatek: phy-mtk-hdmi-mt8195: Fix PLL calc
+ divisor overflow
+To: sashiko-reviews@lists.linux.dev
+Cc: dri-devel@lists.freedesktop.org, olteanv@gmail.com, vkoul@kernel.org,
+ linux-phy@lists.infradead.org, neil.armstrong@linaro.org
+References: <20260701121936.19407-1-angelogioacchino.delregno@collabora.com>
+ <20260701121936.19407-2-angelogioacchino.delregno@collabora.com>
+ <20260701123106.1B5801F00A3E@smtp.kernel.org>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+In-Reply-To: <20260701123106.1B5801F00A3E@smtp.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260707_061841_018378_5D9454A0 
-X-CRM114-Status: UNSURE (   7.26  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260707_071448_105045_51A12C86 
+X-CRM114-Status: GOOD (  16.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,25 +73,81 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 07, 2026 at 01:18:17PM +0200, AngeloGioacchino Del Regno wrote:
-> Changes in v12:
->  - Removed call to of_node_put() for failure as it's being already
->    done in spmi_dev_release(), as pointed out by Sashiko
->  - Fixed usage of the new helper in all users (it's too hot today, sorry)
+On 7/1/26 14:31, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 1 potential issue(s) to consider:
+> 
+> Pre-existing issues:
+> - [High] Calculations using `14835 * MEGA`, `5 * GIGA`, and `12 * GIGA` silently overflow 32-bit `unsigned long` types on 32-bit architectures, completely breaking clock tiering and boundary checks.
+> --
+> 
+> commit 8179a32cf1dac8f1d080e57bbce79246661b50eb
+> Author: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+> 
+> phy: mediatek: phy-mtk-hdmi-mt8195: Fix PLL calc divisor overflow
+> 
+> This commit fixes an issue where calculating a PLL rate for high display
+> resolutions results in a pixel clock exceeding 32 bits, but the digital
+> clock divider calculation uses div_u64(), which expects a 32-bit divisor.
+> It resolves this by using div64_u64() instead to prevent overflow.
+> 
+>> diff --git a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+>> index 1426a2db984d5..e6ee8e0800222 100644
+>> --- a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+>> +++ b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+>> @@ -290,7 +290,7 @@ static int mtk_hdmi_pll_calc(struct mtk_hdmi_phy *hdmi_phy, struct clk_hw *hw,
+> 
+> [Severity: High]
+> This is a pre-existing issue, but do the constants in this function silently
+> overflow on 32-bit architectures?
+> 
 
-You have send two versions in a row and effectively ignored my comment.
-What is going on? Perhaps you need to slow down, find a cool place and
-start over?
+There is no 32-bit architecture compatible with this driver. This will run only
+on AArch64, and it's very unlikely to see a 32-bits kernel running on MT8195.
 
--- 
-With Best Regards,
-Andy Shevchenko
+This can be eventually fixed with a later series, but shall not block the proposed
+fixes from being picked, both because it's unlikely to happen, and because those
+are pre-existing issues.
 
+Besides, the series *is* actually fixing some other overflow issues and was already
+tested good.
+
+
+
+> Earlier in mtk_hdmi_pll_calc(), there are tier threshold calculations like:
+> 
+>      else if ((tmds_clk * 100) >= 14835 * MEGA && (tmds_clk * 10) < 2967 * MEGA)
+> 
+> and later boundary checks:
+> 
+>      if (ns_hdmipll_ck >= 5 * GIGA &&
+>          ns_hdmipll_ck <= 12 * GIGA)
+> 
+> If MEGA and GIGA evaluate as 32-bit types on 32-bit systems, a multiplication
+> like 14835 * MEGA evaluates to 14,835,000,000, which wraps around modulo 2^32
+> to 1,950,098,112 before being promoted to u64 for the comparison against
+> tmds_clk * 100.
+> 
+> Similarly, 5 * GIGA and 12 * GIGA would overflow, potentially rendering the
+> valid PLL clock range mathematically unreachable and forcing the function to
+> always return -EINVAL on 32-bit builds.
+> 
+> Should these constants be explicitly typed or cast to u64 to ensure the
+> comparisons work correctly on 32-bit kernels?
+> 
+>>   	posdiv2 = 1;
+>>   
+>>   	/* Digital clk divider, max /32 */
+>> -	digital_div = div_u64(ns_hdmipll_ck, posdiv1 * posdiv2 * pixel_clk);
+>> +	digital_div = div64_u64(ns_hdmipll_ck, posdiv1 * posdiv2 * pixel_clk);
+>>   	if (!(digital_div <= 32 && digital_div >= 1))
+>>   		return -EINVAL;
+>>
+> 
 
 
 -- 
