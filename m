@@ -4,64 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D215C43458
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 14:14:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D27F6C44501
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jul 2026 14:19:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MmN/+l9ZiMf4wTP0hL5WtBCUzUBNNni5mN6AyaG7Yn4=; b=sfe4DE8eX6b2Lo
-	pkPLQI32oW4yrTBlWb1giZG/K9CR04TP+8u57a3aY2orrBU/8wxQJlwB5a7l1q9yvYfFKh7lPBwqT
-	SFk3KN6kxU7kslL8/M4OgJfapj/u/99S4suvPAMqKpeaARylSrQJoAJz0cd4tdzCErJsNvKzWVkeV
-	HVhveZvu/GISRvw7bgAMO1RBWUQrYeYpXNXI8OX7NQpoPd4Nl9+hjHdqEEk0Bg8HWpqOhy2UFBIcX
-	pjgyV29kCKg7U233/hxpFKrfJg+Gq3VzaKoV2PHCnATtsSH5gcrR3HgVqAVUR8g22ZTPus+sJIJZr
-	aMhyv4Bc+b2n+7ZJTg+Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vc+tMQCSkdxtm8WYh//L/Az+zmrFOjdtgLDdlsCJ9pM=; b=ce0qHeZYX4fmD0
+	L3SzfiLIwtIvzCVqIFjrRjE75QDEshwAgNThgn9VfikV6h2E1SJsq/Kvfc+brKo/1UHKMWQDda1Rd
+	9uoRCoxBA93ddmbLSlZryTURHna5VPbny31Uid77kUujRPLToOLwgtKjk0MKe9XwF04oZKMGLpSVP
+	S5URqGi83zDXB2cxF3ejAow38SAO+x/Cx/zfSSt2sL2cCuJSpdIoZZT7USgYcvORZ+ByO3JjFojZO
+	0/FrNhEyftMne3d4Jk5zszY0IhINif//c/fAjA08bIeHKVETqFjHwEGSy5lJNFloypyA1Jt1tZ90+
+	mAGgc4jqCj2BrkPnSSvA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh6ZW-0000000F7t5-0zaX;
-	Tue, 07 Jul 2026 14:14:50 +0000
+	id 1wh6eL-0000000F8ex-2Qmq;
+	Tue, 07 Jul 2026 14:19:49 +0000
 Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wh6ZQ-0000000F7rO-3o40
-	for linux-phy@lists.infradead.org;
-	Tue, 07 Jul 2026 14:14:49 +0000
+	id 1wh6eH-0000000F8cU-0IV8;
+	Tue, 07 Jul 2026 14:19:47 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1783433681;
-	bh=Oir2L8r8JENMjsaS6XGSf9ZOzknW7/JZBsW+OujDV0o=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=is6ar83mWEsiCXiD8wZSgKlomceF4f4VAPU6+Cs1rHP6ePF5Y2Iek9P1ZrIKDlRFw
-	 CYT3/wwBLl2G/mS+AdGbozZT6J3B/o2COoncwFJVIMj3uS+2HpxDSE2ccp0XncqoWW
-	 7r6qcbnkZbKyw50mOU7yJo/0mmVC0kRJq/142//VM7YsThaLJ5tVQAZTj7hrxTc0wX
-	 pCCbHLsrL2SeiFQIRXJKgWzEFHOk99pJ8zS7gCeeAG6OWkknMbC7XBQzIGVIELmftr
-	 bpvflslf4R4BvfswqSzx84BeH8geoZGPYXrptZn4C3XiMSiUKpsuogIiHWVqfBhC+e
-	 5MMU+gKHuxOJg==
-Received: from [100.64.1.21] (unknown [100.64.1.21])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	s=mail; t=1783433981;
+	bh=X99KKDPKDM77EUe/K6IwQ6N3jw1s5gDXs0w54CvjxZ4=;
+	h=From:To:Cc:Subject:Date:From;
+	b=IpN4sGTRbigL3LEZNRe+mqGHxT8wFbKvRLsqh0ZAz/EyFvhA1cCX/D8gB17qhdB0f
+	 l/Iht+L5Y7/EJ81L5B1FTSB6z2CKWtBEBPFa+bZrO9RArYmAmZej7ehEGnRa7dg8kQ
+	 ukBwj66jefpWIt30+R9pLxYPW97g1qPKXZqQiDjcS54II2ODPyywBH2fE09XN6oYYJ
+	 FejvJSgL5mtEDipmqlie7U3UvCm/t5PgNmGOTdW2HWw2/nuNyAyQueGhI4fYCN4qTd
+	 wvoK9IqJYlu4YAh1VSwFc4SFKBon/nWQW3Yd+ZtScB1HXp399HSYfYnpx2otIaTW/+
+	 IySYs4MvxWyEA==
+Received: from IcarusMOD.eternityproject.eu (unknown [100.64.1.21])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 86B0317E05E8;
-	Tue, 07 Jul 2026 16:14:41 +0200 (CEST)
-Message-ID: <568124de-9ed6-469a-8521-99c11cd6c495@collabora.com>
-Date: Tue, 7 Jul 2026 16:14:41 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] phy: mediatek: phy-mtk-hdmi-mt8195: Fix PLL calc
- divisor overflow
-To: sashiko-reviews@lists.linux.dev
-Cc: dri-devel@lists.freedesktop.org, olteanv@gmail.com, vkoul@kernel.org,
- linux-phy@lists.infradead.org, neil.armstrong@linaro.org
-References: <20260701121936.19407-1-angelogioacchino.delregno@collabora.com>
- <20260701121936.19407-2-angelogioacchino.delregno@collabora.com>
- <20260701123106.1B5801F00A3E@smtp.kernel.org>
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 270A417E003B;
+	Tue, 07 Jul 2026 16:19:41 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Content-Language: en-US
-In-Reply-To: <20260701123106.1B5801F00A3E@smtp.kernel.org>
+To: chunfeng.yun@mediatek.com
+Cc: vkoul@kernel.org,
+	neil.armstrong@linaro.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	matthias.bgg@gmail.com,
+	angelogioacchino.delregno@collabora.com,
+	chunkuang.hu@kernel.org,
+	p.zabel@pengutronix.de,
+	justin.yeh@mediatek.com,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	dri-devel@lists.freedesktop.org,
+	kernel@collabora.com
+Subject: [PATCH v2 00/12] PHY: MediaTek DP PHY refactor and MT8196 eDP
+Date: Tue,  7 Jul 2026 16:19:19 +0200
+Message-ID: <20260707141931.191172-1-angelogioacchino.delregno@collabora.com>
+X-Mailer: git-send-email 2.54.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260707_071448_105045_51A12C86 
-X-CRM114-Status: GOOD (  16.60  )
+X-CRM114-CacheID: sfid-20260707_071945_264847_1CDBDF84 
+X-CRM114-Status: GOOD (  16.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,81 +81,86 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 7/1/26 14:31, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 1 potential issue(s) to consider:
-> 
-> Pre-existing issues:
-> - [High] Calculations using `14835 * MEGA`, `5 * GIGA`, and `12 * GIGA` silently overflow 32-bit `unsigned long` types on 32-bit architectures, completely breaking clock tiering and boundary checks.
-> --
-> 
-> commit 8179a32cf1dac8f1d080e57bbce79246661b50eb
-> Author: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-> 
-> phy: mediatek: phy-mtk-hdmi-mt8195: Fix PLL calc divisor overflow
-> 
-> This commit fixes an issue where calculating a PLL rate for high display
-> resolutions results in a pixel clock exceeding 32 bits, but the digital
-> clock divider calculation uses div_u64(), which expects a 32-bit divisor.
-> It resolves this by using div64_u64() instead to prevent overflow.
-> 
->> diff --git a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
->> index 1426a2db984d5..e6ee8e0800222 100644
->> --- a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
->> +++ b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
->> @@ -290,7 +290,7 @@ static int mtk_hdmi_pll_calc(struct mtk_hdmi_phy *hdmi_phy, struct clk_hw *hw,
-> 
-> [Severity: High]
-> This is a pre-existing issue, but do the constants in this function silently
-> overflow on 32-bit architectures?
-> 
-
-There is no 32-bit architecture compatible with this driver. This will run only
-on AArch64, and it's very unlikely to see a 32-bits kernel running on MT8195.
-
-This can be eventually fixed with a later series, but shall not block the proposed
-fixes from being picked, both because it's unlikely to happen, and because those
-are pre-existing issues.
-
-Besides, the series *is* actually fixing some other overflow issues and was already
-tested good.
+Changes in v2:
+ - Fixed register offsets for ANA phy in MT8196
+ - Set/clear FORCE_VOLT_SWING_EN bit when configuring and resetting
+   the voltage swing registers
+ - Fixed endianness issue in call to nvmem_read_u16 (Sashiko)
+ - Added early exit during lanes disablement if none are enabled to
+   avoid out-of-bounds bitwise shift (Sashiko)
+ - Removed useless call to pm_runtime_get_sync() in probe(), which
+   also fixes issues pointed out by Sashiko
+ - Fixed wrong dig vs ana register array usage in power_on/off (Sashiko)
 
 
+This series performs major refactoring on the MediaTek DisplayPort PHY
+driver, makes it probe with devicetree instead of getting registered
+by the mtk_dp DRM driver, adds power_on/off() callbacks, and honors
+the phy configure opts' set_lanes and set_voltages for, respectively,
+varying the number of lanes and setting the voltage pre-emphasis and
+swing on the PHY, for each lane.
 
-> Earlier in mtk_hdmi_pll_calc(), there are tier threshold calculations like:
-> 
->      else if ((tmds_clk * 100) >= 14835 * MEGA && (tmds_clk * 10) < 2967 * MEGA)
-> 
-> and later boundary checks:
-> 
->      if (ns_hdmipll_ck >= 5 * GIGA &&
->          ns_hdmipll_ck <= 12 * GIGA)
-> 
-> If MEGA and GIGA evaluate as 32-bit types on 32-bit systems, a multiplication
-> like 14835 * MEGA evaluates to 14,835,000,000, which wraps around modulo 2^32
-> to 1,950,098,112 before being promoted to u64 for the comparison against
-> tmds_clk * 100.
-> 
-> Similarly, 5 * GIGA and 12 * GIGA would overflow, potentially rendering the
-> valid PLL clock range mathematically unreachable and forcing the function to
-> always return -EINVAL on 32-bit builds.
-> 
-> Should these constants be explicitly typed or cast to u64 to ensure the
-> comparisons work correctly on 32-bit kernels?
-> 
->>   	posdiv2 = 1;
->>   
->>   	/* Digital clk divider, max /32 */
->> -	digital_div = div_u64(ns_hdmipll_ck, posdiv1 * posdiv2 * pixel_clk);
->> +	digital_div = div64_u64(ns_hdmipll_ck, posdiv1 * posdiv2 * pixel_clk);
->>   	if (!(digital_div <= 32 && digital_div >= 1))
->>   		return -EINVAL;
->>
-> 
+This driver now also properly gets the PHY (EYE) Calibration Data from
+NVMEM (eFuse array) if provided, instead of getting it (improperly)
+injected by the mtk_dp driver.
+
+Additionally, all of the driving parameters calculations and most of
+the other register definitions were refactored to greatly enhance the
+human readability of this code.
+
+As a last step, this also transfers the register offsets for both the
+digital and analog phy registers in arrays assigned to soc specific
+data, in an effort to both introduce support for new minor revisions
+of the MediaTek DisplayPort PHY and to have a clearer view of the
+register related differences between those (for example, it is easily
+understandable that the analog part remained exactly the same between
+MT8195 and MT8196, but the digital part gets a slight update).
+
+Speaking of which, as a last step, this also adds support for the
+MT8196 SoC (and its derivatives), which uses this PHY only for its
+Embedded DisplayPort (eDP) IP (spoiler: the DP one seems to be way
+too different and requiring an entirely new PHY driver).
+
+In this state, this driver can also easily support the MT8189 SoC
+with a few lines of code: even though I do have clean code to add
+support for this one, I was not (*yet*) able to test it on upstream
+based kernels, and for this reason I decided to leave that one out
+for now (but it's coming later for sure).
+
+NOTE!
+Despite all the apparently breaking changes in the refactoring, full
+compatibility with older MTK_DP driver and with old devicetrees was
+retained and carefully tested on multiple platforms!
+
+P.S.: I am aware of the BUILD_DRIVING_PARAM_0( 0, 2, 4, 7) checkpatch
+warning and I didn't fix it in bigger favor of human readability.
+
+AngeloGioacchino Del Regno (12):
+  dt-bindings: phy: Document MT8195 and MT8196 DisplayPort PHYs
+  phy: phy-mtk-dp: Rename regs to regmap in struct mtk_dp_phy
+  phy: phy-mtk-dp: Allow probing with devicetree match
+  phy: phy-mtk-dp: Migrate register offsets to SoC specific pdata
+  phy: phy-mtk-dp: Implement power_on and power_off PHY callbacks
+  phy: phy-mtk-dp: Support set_lanes in configure and properly cleanup
+  phy: phy-mtk-dp: Support setting volt swing and preemphasis values
+  phy: phy-mtk-dp: Add support for digital and analog calibration
+  phy: phy-mtk-dp: Rewrite and document default driving param macros
+  phy: phy-mtk-dp: Add bitrate register val definitions to SoC data
+  phy: phy-mtk-dp: Add PHYD Lane EN register mask to SoC data
+  phy: phy-mtk-dp: Add support for MT8196 eDP PHY
+
+ .../bindings/phy/mediatek,mt8195-dp-phy.yaml  |  77 ++
+ drivers/phy/mediatek/phy-mtk-dp.c             | 863 ++++++++++++++++--
+ 2 files changed, 843 insertions(+), 97 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/mediatek,mt8195-dp-phy.yaml
+
+-- 
+2.54.0
 
 
 -- 
