@@ -4,54 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA637C43458
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Jul 2026 12:31:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0353C43602
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Jul 2026 12:55:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PXsf+IVNsdaib6G7BGg2WKlQkHsa0gagjz0MEocaArU=; b=dfSdYTCIJD4lKv
-	7gtv+xPki6K/qyBqOdh1sp9bMc18XHB7+5rTBCvPuqM1yseEUgXxaoNqz4wxhCrTLarHAvVY7oVcs
-	36oSsTYHUOuTEk0rdQBsoKizHWiWWPUphpkwmMWi6wnnD9mVyGn079JASCe3Xjuo7UxNmrN4XZKmJ
-	7NnFK5cgGtNunsvkivp7bMkxw7MGyEx0GRnTmVHYzI4BZRjEKRT6dZE2TmzIl28f9KaCQKlkSD9GK
-	Z9dCq9x+xOwhZbvZgEZS84YT2aNKBEiNxcqTInrJ0kOahxqG8ZeaIPvkl37T1eieGDMhvSDYReo7+
-	PoDWsQvHA/kTygfMUDqQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YtFeHjZvEhRu7y3b4lzG3QtOKtrLOPP2sWthND+eMcA=; b=rp6gLbRUkcTFKM
+	397FRM2UdhM29m0635GZ8EM3CTXqpWDzCNonM+ZCb5fzWgdIinJzku7gKRGkZ7iATMVrs8Cc17d5G
+	prRlmXXLU1ty5rF1ALERlzgN0tbGmV2EULJPXlMNreiZ8sTqs4LJ4V77IXp+qT7U8QrjAfWGFkVPL
+	/Y9XLFMAHSIXHaiMnQWnsjDASwN32UZ/+lDkURrH6b/ZiGaq+qtiU9LSqmzDtSZWOEiNu1HCNwxTl
+	1LW/w1VRF7ZXXHJWsPhzQGC4J7fwE16hDUHyS2CUuahgOrJl0Bxs3hk5fI2+B70F3sK7ABDcUvqDH
+	WLndX+LijM0m2K9Deu8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whRQb-0000000H7o8-1gOE;
-	Wed, 08 Jul 2026 12:31:01 +0000
+	id 1whRoU-0000000H9Te-31kz;
+	Wed, 08 Jul 2026 12:55:42 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whRQZ-0000000H7o2-3TBw
+	id 1whRoS-0000000H9TF-3Lrw
 	for linux-phy@lists.infradead.org;
-	Wed, 08 Jul 2026 12:30:59 +0000
+	Wed, 08 Jul 2026 12:55:40 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 4656F60008;
-	Wed,  8 Jul 2026 12:30:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 887D01F000E9;
-	Wed,  8 Jul 2026 12:30:58 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 02E216001D;
+	Wed,  8 Jul 2026 12:55:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0AC541F000E9;
+	Wed,  8 Jul 2026 12:55:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1783513859;
-	bh=IlRUXPFk2vbTLOIm+kuVmkj1sw5VqyQ4MktpZxd7404=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=ay1zj8vZYSav8wjcQ6wosWFhTht8HqV4gL9USLz0d5pLvF5Fbytqzd6zGF7Tt7YuY
-	 oUaq8w5bH9DW6RTd/GLtT1o2AHSWbUTPGfzAF6sVHIkX7ZjF5kOvWmBWeQK34TQSLy
-	 rsDsf3wLalkYLy0nSt+O64v9Wm2iUY35FeKPEv5eLdsmqm9uZU0+W41psOjRg2rtu1
-	 Rr7rdTOHYPq63vmLlRl03MR5NDBZ87+/on/ipWIJDtYSQKyBbGnzvPXY9Le3r3uJoP
-	 o6uN0/zmZ93CZdSzVhcA/QKE51JpjA5/XkOc3avCtdlxDDw8/Yqiku7OmbpXqeFiwY
-	 sDW3znjm/MGpA==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v7 4/5] arm64: dts: qcom: Add Shikra IQ2390S SoM
- platform
-To: "Komal Bajaj" <komal.bajaj@oss.qualcomm.com>
-Cc: conor+dt@kernel.org, devicetree@vger.kernel.org, neil.armstrong@linaro.org, robh@kernel.org, vkoul@kernel.org, linux-phy@lists.infradead.org, olteanv@gmail.com
-In-Reply-To: <20260708-shikra-dt-v7-4-977b65a300c1@oss.qualcomm.com>
-References: <20260708-shikra-dt-v7-0-977b65a300c1@oss.qualcomm.com>
- <20260708-shikra-dt-v7-4-977b65a300c1@oss.qualcomm.com>
-Date: Wed, 08 Jul 2026 12:30:58 +0000
-Message-Id: <20260708123058.887D01F000E9@smtp.kernel.org>
+	s=k20260515; t=1783515339;
+	bh=ut3UarkY4E2iVItnOqyLBKMNCQFGt9UFxYJzpkOH7so=;
+	h=From:Subject:Date:To:Cc;
+	b=Ye24f+KxIRIZcYkrxtfHqyagQyY4jPqcI0Av7LPB9khBJ/6nVoGJt2VeIO9Zol2WI
+	 i7C9TJ/smYnJpk8pIPqdPIeLOp3w+W7h3cnlmvNe2uNgWv6wNHAM+9tg100nGUdP9F
+	 q4sv5RkzOpmAdhOKLd9+bN1Z55no+6mxVWv0aBmiUHYPajaDBTQJxmFVR7WF4dNXsr
+	 JPyaOpsLGrArouu32uPl/H+u5fHjIHOXuNkOxOyKPAact9InxTYzH0g4LEik9mrXX+
+	 xPqYsHv9+VMGZM6a/wPcrezGiuJoh9iv0L5AhRvLOYRdfXhXHpYvlgUsEsCYqiPhwF
+	 bg9xr97jXsoqQ==
+From: Mattijs Korpershoek <mkorpershoek@kernel.org>
+Subject: [PATCH 0/2] Add support for SA8255P in the qcom-qmp-usb phy driver
+Date: Wed, 08 Jul 2026 14:54:19 +0200
+Message-Id: <20260708-phy-qcom-qmp-usb-8255-v1-0-8d852a9535db@kernel.org>
+MIME-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/yXMQQ6CMBBA0auQWTtJbQK0XsW4oMMgYwKUDhAN4
+ e5WWb7F/zsoJ2GFW7FD4k1UpjHjeimA+mZ8MkqbDdbYytTGYew/ONM04DxEXDWgs2WJ3rvKm5r
+ aQB5yGxN38v5/74/TuoYX0/KbwXF8AYOpzwF5AAAA
+X-Change-ID: 20260708-phy-qcom-qmp-usb-8255-9986907cdbc9
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>
+Cc: Maxime Ripard <mripard@kernel.org>, linux-arm-msm@vger.kernel.org, 
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, Mattijs Korpershoek <mkorpershoek@kernel.org>, 
+ Sriram Dash <quic_sriramd@quicinc.com>, 
+ Shazad Hussain <quic_shazhuss@quicinc.com>
+X-Mailer: b4 0.16-dev
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2217;
+ i=mkorpershoek@kernel.org; h=from:subject:message-id;
+ bh=GVKu0sKv6JR2SFwPMl2GMGykm0l1ivf7NRCnKBDggFM=;
+ b=owEBbQGS/pANAwAKARkNHbRmThk1AcsmYgBqTkiZMdGzmjxZQHq+vroXk75KX+Q9H0U0bgLeG
+ /uB9UlOGlOJATMEAAEKAB0WIQQu6UKnth9qvlMTrQAZDR20Zk4ZNQUCak5ImQAKCRAZDR20Zk4Z
+ NWjPCADH7ve69Tmvl67MC++sdD5RCijoAoxlCWG5cmtcRtk54UbA6x+6RTXqY5G/nSMKRa1hEDd
+ eHg8rM03dAbwBCKdM9WPmRfuF1gy7mSaTWulmkkZ3J2PTu9x6XGzFZIeD9G/8lHRGbSgycKQRM9
+ AqgKzwKtmB0oM3jHlhq9By2REyaPQyCWrF4eDMZ11dygIg4bzS+Gl58tjvJDAThyC4D1KkUtksD
+ QZSCjHYNrMisE9nqAwQDMcWwMGQT7V5KOqlRmRFqilFWgUBiJaGMr8RFr5XhQK0iJtrplnGDC40
+ lnHDa6umkXlb4in/JuL5xFm549FZl73/VWfYcKOQ8Eomf0UX
+X-Developer-Key: i=mkorpershoek@kernel.org; a=openpgp;
+ fpr=8234A35B45C0D26B31C1A2DA570338B018144F28
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,42 +84,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0xvd10gVGhlIHRvcC1sZXZlbCBH
-UElPIGtleXMgbm9kZSBpcyBpbmNvcnJlY3RseSBuYW1lZCBgZ3Bpby1rZXlgIGluc3RlYWQgb2Yg
-dGhlIHN0YW5kYXJkIGBncGlvLWtleXNgLgotLQoKLS0tIFBhdGNoIFs0XTogW1BBVENIIHY3IDQv
-NV0gYXJtNjQ6IGR0czogcWNvbTogQWRkIFNoaWtyYSBJUTIzOTBTIFNvTSBwbGF0Zm9ybSAtLS0K
-Y29tbWl0IGUzOWZhMmRkNDcwYzc4ZmQ0ODJlNDA2MWYyYmNlODcyNTBkZGE1MjMKQXV0aG9yOiBL
-b21hbCBCYWphaiA8a29tYWwuYmFqYWpAb3NzLnF1YWxjb21tLmNvbT4KCmFybTY0OiBkdHM6IHFj
-b206IEFkZCBTaGlrcmEgSVEyMzkwUyBTb00gcGxhdGZvcm0KClRoaXMgY29tbWl0IGFkZHMgdGhl
-IGRldmljZSB0cmVlIGluY2x1ZGUgZm9yIHRoZSBJUTIzOTBTIHZhcmlhbnQgb2YgdGhlClNoaWty
-YSBTeXN0ZW0tb24tTW9kdWxlLiBJdCBpbmNsdWRlcyB0aGUgY29tbW9uIHNoaWtyYS5kdHNpIGFu
-ZCBhZGRzClBNODE1MCBQTUlDIHJlZ3VsYXRvciBkZWZpbml0aW9ucyBzcGVjaWZpYyB0byB0aGlz
-IHZhcmlhbnQuCgo+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vc2hpa3Jh
-LWlxcy1zb20uZHRzaSBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcWNvbS9zaGlrcmEtaXFzLXNvbS5k
-dHNpCj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiBpbmRleCAwMDAwMDAwMDAwMDAwLi43Mzk0NWJm
-NDIxMTJkCj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcWNvbS9z
-aGlrcmEtaXFzLXNvbS5kdHNpCj4gQEAgLTAsMCArMSwxNzAgQEAKPiArLy8gU1BEWC1MaWNlbnNl
-LUlkZW50aWZpZXI6IEJTRC0zLUNsYXVzZQo+ICsvKgo+ICsgKiBDb3B5cmlnaHQgKGMpIFF1YWxj
-b21tIFRlY2hub2xvZ2llcywgSW5jLiBhbmQvb3IgaXRzIHN1YnNpZGlhcmllcy4KPiArICovCj4g
-Kwo+ICsjaW5jbHVkZSA8ZHQtYmluZGluZ3MvZ3Bpby9ncGlvLmg+Cj4gKyNpbmNsdWRlIDxkdC1i
-aW5kaW5ncy9waW5jdHJsL3Fjb20scG1pYy1ncGlvLmg+Cj4gKwo+ICsjaW5jbHVkZSAic2hpa3Jh
-LmR0c2kiCj4gKyNpbmNsdWRlICJwbTgxNTAuZHRzaSIKPiArCj4gKy8gewo+ICsJZ3Bpby1rZXkg
-ewo+ICsJCWNvbXBhdGlibGUgPSAiZ3Bpby1rZXlzIjsKCltTZXZlcml0eTogTG93XQpUaGlzIGlz
-bid0IGEgYnVnLCBidXQgaXMgdGhpcyB0b3AtbGV2ZWwgbm9kZSBuYW1lZCBjb3JyZWN0bHk/IERl
-dmljZXRyZWUKY29udmVudGlvbnMgdHlwaWNhbGx5IHVzZSBzdGFuZGFyZCBnZW5lcmljIG5hbWVz
-IGxpa2UgZ3Bpby1rZXlzIGFjcm9zcyB0aGUKc3Vic3lzdGVtIHJhdGhlciB0aGFuIHRoZSBzaW5n
-dWxhciBncGlvLWtleS4gCgo+ICsJCWxhYmVsID0gImdwaW8ta2V5cyI7Cj4gKwkJcGluY3RybC1u
-YW1lcyA9ICJkZWZhdWx0IjsKPiArCQlwaW5jdHJsLTAgPSA8JnZvbF91cF9uPjsKClsgLi4uIF0K
-Ci0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQv
-MjAyNjA3MDgtc2hpa3JhLWR0LXY3LTAtOTc3YjY1YTMwMGMxQG9zcy5xdWFsY29tbS5jb20/cGFy
-dD00CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1w
-aHkK
+The Qualcomm automotive SA8255p SoC relies on firmware to configure
+platform resources, including clocks, interconnects and TLMM.
+The driver requests resources operations over SCMI using power protocols.
+
+The SCMI power protocol enables or disables resources like clocks,
+interconnect paths, and TLMM (GPIOs) using runtime PM framework APIs,
+such as resume/suspend, to control power on/off.
+
+Power domain "core" controls the GDSC, resets, and TLMM (GPIOs)
+whereas power domain "transfer" controls clocks and interconnects.
+
+Patch 1 adds the binding change for sa8255p. I've considered to create
+a totally separate binding like the I2C one [1].
+Given that the existing binding already had multiple conditionals, I've
+chosen to update qcom,sc8280xp-qmp-usb3-uni-phy.yaml by adding another
+conditional for the power domains.
+
+Patch 2 adds the driver change, which is based on a public vendor
+patch from qualcomm [2].
+I did the following changes on top of that:
+* Use devm_add_action_or_reset() for dev_pm_domain_detach_list() instead
+  of implementing a driver .remove()
+* Drop the .lanes struct member since it no longer exists.
+* Re-order some functions
+
+This has been tested on next-20260706 with a Ride4 SA8775P board that
+has SCMI firmware (which is compatible).
+
+[1] https://lore.kernel.org/all/20260617-enable-i2c-on-sa8255p-v7-1-ad736dbeab57@oss.qualcomm.com/
+[2] https://git.codelinaro.org/clo/le/meta-qti-auto-kernel/-/blob/LY.AU.0.1.0.r1-16800-gen4meta.0/recipes-kernel/linux/files/usb/0011-PENDING-phy-qcom-qmp-usb-Add-support-for-SA8255P.patch
+
+Signed-off-by: Mattijs Korpershoek <mkorpershoek@kernel.org>
+---
+Mattijs Korpershoek (1):
+      dt-bindings: phy: qcom,sc8280xp-qmp-usb3-uni: Add SA8255P USB PHY
+
+Sriram Dash (1):
+      phy: qcom: qmp-usb: Add support for SA8255P
+
+ .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml        |  92 +++++++++--
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c            | 175 ++++++++++++++++++---
+ 2 files changed, 238 insertions(+), 29 deletions(-)
+---
+base-commit: dc59e4fea9d83f03bad6bddf3fa2e52491777482
+change-id: 20260708-phy-qcom-qmp-usb-8255-9986907cdbc9
+
+Best regards,
+--  
+Mattijs Korpershoek <mkorpershoek@kernel.org>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
