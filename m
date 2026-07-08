@@ -4,60 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3CCC9C43458
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Jul 2026 06:15:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84237C44501
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Jul 2026 07:45:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rJOZFolvCJDii/yhEgVLqQSew+lEXeBKikmUJIvPqxY=; b=L/GiNuQcQak9rV
-	RSOA11iz5u3YgClmiznBvzQmJb+iexzw5evDSLOUFwQGFN1s6j9MSP+jyvPh10ZFZ1+wDjf2lecv9
-	NE1ijY/VDp2FL+fQkUVeiL0P7T4i7hPmQGyKCsdIMM123QfAKw/dvytsXO9M5NAILrgzjvJyhFsM1
-	7Bi3k/JWmdKW8ZmhQ6KhYVePU/SbZVNEjR7QAl9OxeKhNR9GEaxLF4CyKRJVhV2LmcmoAbrFss3nC
-	Po4EavIEi/vg+jmgurejLQ+vMKxGlRB+C0qhzover7pClY1T26Ztmyqp4AvwX6gjCpSOt0hVa1u2N
-	399ftN2KL3jAPPrmqcKw==;
+	List-Owner; bh=Mpjv+5st37jHONEyJOhQv7+wo+s7tFsGxJqB7cjeqX0=; b=B+u/AZgKbQcGn0
+	o7E8o110jezzO6ovwJZmz4Su6jLwPvZbfZ2Qu/gwfH94pIqG2yZ9LkedCmeRXZJn8iJUey+NJI3S7
+	6rDP4fphAU0CVJChDGIF8nwROeGJgoNeIOl0RvrvOA+avmenbfFZCHMAflpY0Nl7N97zyCzQd74gt
+	1oTxAK7+GuSy0VWaQwiwS0KxPlZDDwQdWBDU6rRMZ3dEVq3rYlTp5eGBh3/irOd8Ymt1wV3Mwbijj
+	A1/fzHFI1hkHCITLg+XIbScrgZi72sn+ZV4ixjrkhNtsZZHPbbL7GrwuDhCV48JaXzdDuugmKwpTd
+	xr91oSY7fJLySww6nkpw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whLZe-0000000GOmU-1Jje;
-	Wed, 08 Jul 2026 06:15:58 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1whMxx-0000000GX5e-3zTh;
+	Wed, 08 Jul 2026 07:45:10 +0000
+Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whLZc-0000000GOm3-3aRo
+	id 1whMxv-0000000GX5G-2JAH
 	for linux-phy@lists.infradead.org;
-	Wed, 08 Jul 2026 06:15:56 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id DACE26001A;
-	Wed,  8 Jul 2026 06:15:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5C6841F000E9;
-	Wed,  8 Jul 2026 06:15:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1783491355;
-	bh=0k5II8l8SmqeI+eI4lrAlQGKex7vSPZrEvokGtu5P1U=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=IOQjCEKzAGl2EPxaOBq8AwDpbcOHv9g1XYjFHTNdnnFBZhqjghnm0EW0gXGu9e/3n
-	 VK0Muko6N+6PO+73JFdb1q/q6M+yGcuVWssdEgUTKxDHzKmn4QxLeSDfDdah2vhynw
-	 tO4+dpTqUjKc7cR0MMxl3AnUKoNDW8IOpNqvrEKD0eLw9/6JElhdY+V+BFGpaRMgxV
-	 HxDsEK6HJWx3tppvrVBJEnfoMw2nJGJ+O7GhOZGXITPMwJQscXf0ivcWjCs9q+CR4S
-	 WeZp+2f4JPDUu/PULFQDR81LC3jbrV/YZ9Dw4p2VKg63zQ0Y4wxvEIxhLktyvpIPQT
-	 BUY23mOdMfWVg==
-Date: Wed, 8 Jul 2026 08:15:51 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Bryan O'Donoghue <bod@kernel.org>, 
-	Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-media@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+	Wed, 08 Jul 2026 07:45:09 +0000
+Received: by mail-lf1-x12d.google.com with SMTP id 2adb3069b0e04-5ad4c966e63so34929e87.3
+        for <linux-phy@lists.infradead.org>; Wed, 08 Jul 2026 00:45:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1783496705; x=1784101505; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from:references
+         :cc:to:subject:user-agent:mime-version:date:message-id:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=mkXy4kbxINUY2w5Y8HT7KOs4yBngnLIiuXbssaXGyXo=;
+        b=F064twn73aD1382codaA+L8TJ81+I/2tOUO3zNH6IuxqM1u7TdcPjBAPiscZrXYIrw
+         3bOa5WmPyKCnwFCz3Fg7pcTiR6o18xGGHwpJWSfBxH/+uCXbJKXhf6/9K1TDw+7YQa5J
+         wKK7mauWG2FvD+0dDZU7cnCL/zbsteqgH9ChOR+KrN1UERWmLpI1RXa5hYzuj82+poOI
+         n/R+NOqGxWcpxlLA5BIZWdi1hSkHruxOoWyTqjr1txO4ofGzoyG5R9a7GK/nmVaJyaaL
+         7uibnZ+73GT/+GFHMmf/vSz6ToOyMM8lVicNpWGCxN+edTC0vYed35HBsfbZZ2hEYpFo
+         5vyg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1783496705; x=1784101505;
+        h=content-transfer-encoding:content-type:in-reply-to:from:references
+         :cc:to:subject:user-agent:mime-version:date:message-id:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=mkXy4kbxINUY2w5Y8HT7KOs4yBngnLIiuXbssaXGyXo=;
+        b=BjNspcM0WynWxmG+aMNs50i6O7zfboBIhAFH48550WZ3drGXiVYqBFHTxgIvfrokSF
+         b/BOscIwNrl/hN4Qaq1iEEGtJIWCvDJfkiL+SVHabmIXonxFVcasysixuJGqUtNwdzhz
+         +wUwvN4MZ3+tHDun2tIBx2xmEa+yVMK9pkid9JO6qqqt8M88kNmOKQsRFFplvnAT3UCs
+         6rt7Z+JFkBPeeHA2atJlBT5a7aCYMRHeplI+ZAOHdjGxhyAvFJG6jNawnYTVNjlFViC4
+         zvKnDxvVwghkIjGV6uSf+ZuZzv6lI791JfqKXCDcqaYSYpUKBNSItqcZUy1b0ueCb2EL
+         ZDOA==
+X-Forwarded-Encrypted: i=1; AHgh+RoyFs3RAoQnqb+bL86GfHWcN8Jewyyt58BQ4FrXLaS+qD6ur0rXjfVHbhJmM9fD5kyZs754bizWl7w=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx7JvK+Q522zEPnf7OyEIHkxYV/T8APZcTj43j/19YOEhYYl4Pf
+	/Pqh8Ewztfwfuk0xr7BcovTxtJ13VDRZZkAvRnkvzcIZjx2+2gceJfiRJeWI2J5TUsc=
+X-Gm-Gg: AfdE7cnHZR5L1pn1EZekWRIqMnHklaWStJgQPMLOm4CowrFi+jTMqMHf8/e7GEI4ogk
+	10Mc3AAynmfcEkvQMoK2h06KUpLfCMUR7vilbiKyG+NR/h7FVPxp6S0pNAkteiPzAsyPdiPhn4o
+	rLtwo42D2zxbJi6fFdpyLDTfE0l7RtmPRebgunTezoKglpp3T1RBhQjKVzQp0LfOuhK4M78uo7w
+	nqd6P/yVLsJfg/rD9VRwq1Gm7tL4PPghfPDlmNJNbEgiCastVdZjkykKUJtodogzfoiK6m1Eicj
+	7KTWlHOqEfr1skkCiSbfKHIRYlzMmrapd+eey/0Lx4/3VnMP4PQkaDXKE5MnptIbokCmh8kOdyD
+	13et6zelnPMH/s14Yt7//G3yHelFzVR3Vgkb9I7zvqLzbt/veBiUvUeNI50OJSzPPani0KAR9qp
+	4xtUioywX/LN5dvLOxtLU3pz2SCQzc+3oBFDi/UzBbTc8vP+xvkh7a2sJZ7AxSczHjJYhvqwanl
+	ZxYvw==
+X-Received: by 2002:a05:6512:3e05:b0:5ae:b0ea:d32e with SMTP id 2adb3069b0e04-5b0114471b9mr260939e87.2.1783496704298;
+        Wed, 08 Jul 2026 00:45:04 -0700 (PDT)
+Received: from [192.168.1.100] (91-159-24-186.elisa-laajakaista.fi. [91.159.24.186])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5aed13701a7sm4284357e87.12.2026.07.08.00.45.03
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 08 Jul 2026 00:45:03 -0700 (PDT)
+Message-ID: <b7baffda-b97c-4b83-8d9e-e381d0289682@linaro.org>
+Date: Wed, 8 Jul 2026 10:44:53 +0300
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v9 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
-Message-ID: <20260708-gentle-classy-tiger-af3ab0@quoll>
+To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Bryan O'Donoghue <bod@kernel.org>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20260708-x1e-csi2-phy-v9-0-0210b90c04cf@linaro.org>
  <20260708-x1e-csi2-phy-v9-1-0210b90c04cf@linaro.org>
-MIME-Version: 1.0
-Content-Disposition: inline
+From: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
 In-Reply-To: <20260708-x1e-csi2-phy-v9-1-0210b90c04cf@linaro.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260708_004507_699889_4BFC75AA 
+X-CRM114-Status: GOOD (  25.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,12 +102,12 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jul 08, 2026 at 12:39:02AM +0100, Bryan O'Donoghue wrote:
+On 7/8/26 02:39, Bryan O'Donoghue wrote:
 > Add a base schema initially compatible with x1e80100 to describe MIPI CSI2
 > PHY devices.
 > 
@@ -83,32 +116,16 @@ On Wed, Jul 08, 2026 at 12:39:02AM +0100, Bryan O'Donoghue wrote:
 > The schema here defines two ports with three endpoints:
 > 
 > port@0: Sensor input.
->           endpoint@0: primary sensor
->           endpoint@1: optional second sensor, implies DPHY split-mode
+>            endpoint@0: primary sensor
+>            endpoint@1: optional second sensor, implies DPHY split-mode
 > 
 > port@1: Controller output.
-
-Do not paste contents of the diff into the commit message, it brings no
-benefits.
-
 > 
 > The CSIPHY devices have their own pinouts on the SoC as well as their own
 > individual voltage rails.
 > 
 > The need to model voltage rails on a per-PHY basis leads us to define
 > CSIPHY devices as individual nodes.
-
-This entire commit msg is difficult to read - every sentence per
-paragraph.
-
-This makes no sense.
-
-We do not write like that.
-
-Please organize the flow in some logical chunks and combine paragraphs.
-
-So it will be easier to read.
-
 > 
 > Two nice outcomes in terms of schema and DT arise from this change.
 > 
@@ -123,8 +140,8 @@ So it will be easier to read.
 > 
 > Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
 > ---
->  .../bindings/phy/qcom,x1e80100-csi2-phy.yaml       | 202 +++++++++++++++++++++
->  1 file changed, 202 insertions(+)
+>   .../bindings/phy/qcom,x1e80100-csi2-phy.yaml       | 202 +++++++++++++++++++++
+>   1 file changed, 202 insertions(+)
 > 
 > diff --git a/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
 > new file mode 100644
@@ -139,9 +156,6 @@ So it will be easier to read.
 > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
 > +title: Qualcomm SoC CSI2 PHY
-
-Qualcomm X1E80100 SoC....
-
 > +
 > +maintainers:
 > +  - Bryan O'Donoghue <bod@kernel.org>
@@ -162,6 +176,16 @@ Qualcomm X1E80100 SoC....
 > +    const: 1
 > +    description:
 > +      The single cell specifies the PHY operating mode.
+
+Unfortunately my review comment given before was ignored before publishing
+this version, thus I will repeat.
+
+There is a clash between the proposed phy cells value and 'bus-type' property
+of the media endpoint, the proposed value of phy cells brings no information,
+and therefore the whole proposed '#phy-cells' prorperty shall be removed.
+
+There shall be no third link introduced between CAMSS and CAMSS CSIPHYs.
+
 > +
 > +  clocks:
 > +    maxItems: 3
@@ -176,10 +200,6 @@ Qualcomm X1E80100 SoC....
 > +    maxItems: 1
 > +
 > +  operating-points-v2: true
-
-opp-table:
-  type: object
-
 > +
 > +  power-domains:
 > +    items:
@@ -192,9 +212,17 @@ opp-table:
 > +      - const: top
 > +      - const: mmcx
 > +      - const: mx
+
+None of the power domains finds its place in this device tree node, the
+child device belongs to CAMSS, which already enables these power domains.
+
 > +
 > +  vdda-0p8-supply:
 > +    description: Phandle to a 0.8V regulator supply to a PHY.
+
+The property name shall be vdda-0p9-supply, the description shall be
+changed accordingly
+
 > +
 > +  vdda-1p2-supply:
 > +    description: Phandle to 1.2V regulator supply to a PHY.
@@ -215,6 +243,9 @@ opp-table:
 > +
 > +        patternProperties:
 > +          "^endpoint(@[0-9a-f]+)?$":
+
+This is too wide regexp mask for one or two endpoints only.
+
 > +            $ref: /schemas/media/video-interfaces.yaml#
 > +            unevaluatedProperties: false
 > +            properties:
@@ -222,11 +253,6 @@ opp-table:
 > +                minItems: 1
 > +                maxItems: 4
 > +              remote-endpoint: true
-
-Drop this one
-
-Blank line
-
 > +            required:
 > +              - data-lanes
 > +              - remote-endpoint
@@ -251,10 +277,6 @@ Blank line
 > +
 > +      port@1:
 > +        $ref: /schemas/graph.yaml#/$defs/port-base
-
-This is odd, don't use endpoint-base below. Why do you need it? That's
-just /schemas/graph.yaml#/properties/port schema, no?
-
 > +        description: Output to the CAMSS CSID controller.
 > +        unevaluatedProperties: false
 > +
@@ -266,7 +288,6 @@ just /schemas/graph.yaml#/properties/port schema, no?
 > +              remote-endpoint: true
 > +            required:
 > +              - remote-endpoint
-
 > +
 > +    required:
 > +      - port@0
@@ -329,6 +350,10 @@ just /schemas/graph.yaml#/properties/port schema, no?
 > +                reg = <0>;
 > +                csiphy0_in: endpoint {
 > +                    data-lanes = <0 1 2 3>;
+
+The previously given review comment about numeration of lanes was
+not implemented.
+
 > +                    remote-endpoint = <&sensor_out>;
 > +                };
 > +            };
@@ -343,12 +368,19 @@ just /schemas/graph.yaml#/properties/port schema, no?
 > +    };
 > +
 > +    csiphy_opp_table: opp-table {
+> +        compatible = "operating-points-v2";
+> +
+> +        opp-300000000 {
+> +            opp-hz = /bits/ 64 <300000000>;
+> +            required-opps = <&rpmhpd_opp_low_svs_d1>,
+> +                            <&rpmhpd_opp_low_svs_d1>;
+> +        };
+> +    };
+> 
 
-Drop node, if outside then not really relevant to the example.
-
-Best regards,
-Krzysztof
-
+-- 
+Best wishes,
+Vladimir
 
 -- 
 linux-phy mailing list
