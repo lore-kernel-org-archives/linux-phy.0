@@ -4,77 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4EF89C44501
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Jul 2026 14:57:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF6D5C43458
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Jul 2026 16:39:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4MtSV2DaZ0ULkx6UWIcz1fiDdJsgI32O4yWit3Qd3pQ=; b=bHKbHLaHfpIuDt
-	MPNvBmwpDaTuZLoFmmbVu4U5xsQ79tpAR7nNbmulAMLIKMuD7Q2UQ9mK+MKttO/ZuQGG6cz+R0o/S
-	O4uVgXl1qdnH1SIvtwjqIiTyHMBruyoPUpttxVQm3v5v3kL05Zpw1AceQ+Oe8XaGRjgKeBjbf2YPd
-	t/O3Sg1SqjjNsUknN/tbStyTy2N+jj72u6DxQwawYL8KVKbK8L8gYVo5BxlK1Gyz7oWnimu4v4iWD
-	Mx4SZqxofp/YkuIpNT8C6fgGDFJiGJugcldc/cBFYvAtOfBWls5sdXOgPltrl0rR1HsXCEwlTYh8/
-	Im7Fj7AHQtQf40AJhI/w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=xoRt9u5vozRzdzfNSVAAh6SUJeKO2kPPv8oIhJ5V2H0=; b=Q/20B7lAEloOsoaJQU1AeZEdLn
+	WEa/KCH8Ue9knSAOeX2+pxEZ8GJzgxt0cUnfyW/S7ii5CmfM0/HGo1RGiDR+SQ8PkRlNaAYsjDeoU
+	RT53uIpUgfY2oq4YCVakNyDERvzvQfoKFzyPd9bOGWUDB+Ij9gt+vn+SlXdI6C0PuMm4Xu/UOOBdj
+	9OIzixKN5ssjQ8uS5+e0hrnAHYb7dkESInh1iUzTa0LT3JGJDy/eX1xeYy43MukrZr2iYJDPRpyXW
+	IcDP/9BGRW+Ow+kRAcnK3P5DfvHwRmcuFZCKemI6PNVfq3FF+dyFO6xMpTObsMmSDrlKdh+BsldO1
+	+Pgv6cEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whTiU-0000000HPcE-0HbN;
-	Wed, 08 Jul 2026 14:57:38 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1whVJG-000000000p4-1OKL;
+	Wed, 08 Jul 2026 16:39:42 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whTiS-0000000HPbb-1jTU
-	for linux-phy@lists.infradead.org;
-	Wed, 08 Jul 2026 14:57:36 +0000
+	id 1whVJE-000000000oH-3BJU;
+	Wed, 08 Jul 2026 16:39:40 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id BBC8B600B0;
-	Wed,  8 Jul 2026 14:57:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D512A1F00AC4;
-	Wed,  8 Jul 2026 14:57:33 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 02073600C3;
+	Wed,  8 Jul 2026 16:39:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DFF5F1F000E9;
+	Wed,  8 Jul 2026 16:39:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1783522655;
-	bh=qoZ280uhy7JTGVkTvQaxSlDpOpz9ZrDz5L1tLvCiprI=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=br8aoGydkb7csIpon1GqWw8aTALYLC9KWCh9PZD3GaKPomWHmt0jaMzgkw4cxhtN8
-	 R88mV9PFowCj/H6iM0mPGnGv3qt663KJdDQb9GEf7BvXiiS+FWclL0x/NvGPz2SLKw
-	 iqRWlZ/iFiOWF9e1Uk4j1fIB3aY2u9DXIhmzAxXDNW91fvhoViEbxNnqQJjFlvWn6D
-	 2SKvqagaajD3dvZ2XGnkMPP1PnZNgam8Mrn0+TfR/ppBQtcJmx8VtRHg6VNeN2c9v7
-	 73JpUuMR2LYJyyZaKaAxvNnNCGzuYTRIwd3SXsOQBvG1oQ0meD7ErxRW8gEWUJR1Ow
-	 W7EImo64rugqw==
-From: Bjorn Andersson <andersson@kernel.org>
-To: Konrad Dybcio <konradybcio@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Wesley Cheng <quic_wcheng@quicinc.com>,
-	Ulf Hansson <ulfh@kernel.org>,
-	Komal Bajaj <komal.bajaj@oss.qualcomm.com>
-Cc: linux-arm-msm@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-mmc@vger.kernel.org,
-	monish.chunara@oss.qualcomm.com,
-	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
-	Imran Shaik <imran.shaik@oss.qualcomm.com>,
-	Monish Chunara <quic_mchunara@quicinc.com>,
-	Rakesh Kota <rakesh.kota@oss.qualcomm.com>,
-	Raviteja Laggyshetty <raviteja.laggyshetty@oss.qualcomm.com>,
-	Sneh Mankad <sneh.mankad@oss.qualcomm.com>,
-	Vishnu Santhosh <vishnu.santhosh@oss.qualcomm.com>,
-	Xueyao An <xueyao.an@oss.qualcomm.com>,
-	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Subject: Re: [PATCH v6 0/5] arm64: dts: qcom: Add initial device tree support for Shikra
-Date: Wed,  8 Jul 2026 09:56:35 -0500
-Message-ID: <178352261652.2235436.7454171283560267964.b4-ty@kernel.org>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20260612-shikra-dt-v6-0-6b6cb58db477@oss.qualcomm.com>
-References: <20260612-shikra-dt-v6-0-6b6cb58db477@oss.qualcomm.com>
+	s=k20260515; t=1783528779;
+	bh=0vXeI+uCXnMRTRUaf8HMNBKTFOd8TopxxzIUG1swgmA=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=mAKVPYvLfywT4c/A7TNfSBbuW0PmTrerhJVp61IvBtaET8sHc8VIztbtUWBp0UqZx
+	 /tz6XVc2uJoqaZHv2oc1kjKDqoeVdSEdTShBIqdsu/34W4tgFke/gOmjTBF3GdsbRy
+	 J+oupoeLzOALtt+soh9dr19rB9cFk8RZQi49pW+CqpW9uh5I8YABFIhjk5yOXl9r/z
+	 VHFGAO5p3YlYiiwIBuK0zwmxsvrtn8uaeuM8nMWIMvdDsycG7QQcyCUrGVdji/Ola9
+	 ZYfWXCrtrmiFHq46lv+JVjhr78iuQ1O4B0fqMWvX22K5dqJCWoxagqwjTdabI1MPux
+	 1M9rxYeT7hlqQ==
+Date: Wed, 8 Jul 2026 17:39:34 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Gokul Praveen <g-praveen@ti.com>
+Cc: conor+dt@kernel.org, devicetree@vger.kernel.org, krzk+dt@kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, neil.armstrong@linaro.org, nm@ti.com,
+	robh@kernel.org, sjakhade@cadence.com, kristo@kernel.org,
+	vigneshr@ti.com, vkoul@kernel.org, yamonkar@cadence.com
+Subject: Re: [PATCH v5 net-next 1/2] dt-bindings: phy: cadence-torrent:
+ Update property values to support multilink SERDES configuration
+Message-ID: <20260708-purifier-subside-667f32244c09@spud>
+References: <20260708083725.66777-1-g-praveen@ti.com>
+ <20260708083725.66777-2-g-praveen@ti.com>
 MIME-Version: 1.0
+In-Reply-To: <20260708083725.66777-2-g-praveen@ti.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,43 +67,108 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============0473173081315558182=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+--===============0473173081315558182==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="SevP7+UOVskAfqSk"
+Content-Disposition: inline
 
-On Fri, 12 Jun 2026 22:57:36 +0530, Komal Bajaj wrote:
-> Add initial device tree support for the Qualcomm Shikra SoC.
-> Shikra ships in a SoM form factor; this series covers the CQ2390M,
-> CQ2390S and IQ2390S SoM variants and their EVK boards.
-> The series adds:
-> - dt-bindings for the Shikra SoC, CQ2390M/CQ2390S/IQ2390S EVK boards
-> - SoC base DTSI
-> - CQ2390M SoM DTSI with PM4125 and PM8005 PMIC regulator definitions
-> - IQ2390S SoM DTSI with PM8150 PMIC regulator definitions
-> - EVK DTS files enabling UART and eMMC on the carrier board
-> 
-> [...]
+--SevP7+UOVskAfqSk
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Applied, thanks!
+On Wed, Jul 08, 2026 at 02:07:24PM +0530, Gokul Praveen wrote:
+> Update the maxItems value of clocks parameter as 3 clocks
+> (refclk,pll1_refclk,phy_en_refclk) are supported.
+>=20
+> Update the clock-names parameter to support mutilink SERDES configuration
+> as the existing enum configuration of the clock-names parameter does not
+> allow both pll1_refclk and phy_en_refclk to be used at the same time,
+> hence preventing the support for the configuration  (refclk,pll1_refclk,
+> phy_en_refclk), which is neeed for multilink SERDES usecases.
+>=20
+> For multilink SERDES configurations where the links require different
+> clock speeds, all 3 clocks(refclk, pll1_refclk and phy_en_refclk)
+> are needed.
+>=20
+> For example,considering the USXGMII+SGMII multilink SERDES configuration
+> usecase, having only 1 reference clock(refclk) fails because USXGMII
+> requires a clock speed of 156.25 Mhz and SGMII protocol requires an
+> clock speed of 100 Mhz.
+>=20
+> Since one reference clock(refclk) alone cannot cater to the 2
+> different clock speed requirements of these protocols, the second
+> input reference clock(pll1_refclk) along with phy_en_refclk
+> is also needed.
 
-[1/5] dt-bindings: arm: qcom: Document Shikra and its EVK boards
-      commit: 62eaf922d773c89153fdc6f612d4783610a4391a
-[2/5] arm64: dts: qcom: Introduce Shikra SoC base dtsi
-      commit: 14a9b4bcc8dad3eee35faea4fde9ac31507e2ab3
-[3/5] arm64: dts: qcom: Add Shikra CQ2390M SoM platform
-      commit: 28ffbb18c21e8baf9bf4440e8ef949b1b7030a4e
-[4/5] arm64: dts: qcom: Add Shikra IQ2390S SoM platform
-      commit: 8dbf2a0283b1f7beb464b598cee37af69ed73640
-[5/5] arm64: dts: qcom: Add Shikra EVK boards
-      commit: 2ef5adff2d38698cad70cb779555c9c173f24d2e
+This binding supports 2 devices and the generic compatible. Do all these
+devices have the new refclk?
 
-Best regards,
--- 
-Bjorn Andersson <andersson@kernel.org>
+Thanks,
+Conor.
+
+>=20
+> Signed-off-by: Gokul Praveen <g-praveen@ti.com>
+> ---
+>  Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+>=20
+> diff --git a/Documentation/devicetree/bindings/phy/phy-cadence-torrent.ya=
+ml b/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
+> index 9af39b33646a..ac0f625cd76d 100644
+> --- a/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
+> +++ b/Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml
+> @@ -34,7 +34,7 @@ properties:
+> =20
+>    clocks:
+>      minItems: 1
+> -    maxItems: 2
+> +    maxItems: 3
+>      description:
+>        PHY input reference clocks - refclk (for PLL0) & pll1_refclk (for =
+PLL1).
+>        pll1_refclk is optional and used for multi-protocol configurations=
+ requiring
+> @@ -48,6 +48,7 @@ properties:
+>      items:
+>        - const: refclk
+>        - enum: [ pll1_refclk, phy_en_refclk ]
+> +      - const: phy_en_refclk
+> =20
+>    reg:
+>      minItems: 1
+> --=20
+> 2.34.1
+>=20
+
+--SevP7+UOVskAfqSk
+Content-Type: application/pgp-signature; name=signature.asc
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCak59RgAKCRB4tDGHoIJi
+0jCnAQDwtt/OwP4pRnpx2Cyg3NCRTTNs5l3WIiTgazMbaX9XagD+KZWxE6E1LGe+
+AxAPK0PIAm6SzsOvq7pGRtKDUpY01gg=
+=70nt
+-----END PGP SIGNATURE-----
+
+--SevP7+UOVskAfqSk--
+
+
+--===============0473173081315558182==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============0473173081315558182==--
+
