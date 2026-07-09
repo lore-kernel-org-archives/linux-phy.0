@@ -4,103 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7BE5C43458
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Jul 2026 23:30:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B719FC43458
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Jul 2026 02:16:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KJCNCZgMCUb5l7nHOz+QG28YCYaXMyP6DjKmJOjjc9w=; b=y72/S8drwPgYjx
-	0C+B2i10e2GmDHYlkZUoRtpdw7MosO2xX4cTYoqm9lcJLu2WQ2eDAy3+lnhGcSWs7GWc0cciIm0UO
-	ajGeY7i2ukKtSwQ4DwpWSR20qQ+eiO2a7ZsGN44xeo1cmDJWzldDyax6OYV0tiTh4MjHEyeiCFIDC
-	+28ZJJBsEt5sa/W53lnWYn3iSQ8tYuSUUC7y+OmnopfJadL1JdoxLvmmcqtXc941drUzPwLusNqxi
-	eahxGIlaN4EmPt7v2MMlfBqHaIBInAbRpMF3xBq+l1Lg6PTd/l0L7Srtp/s3nZ7ZKcGx+26r3fkqc
-	3UREH4BKrBFNvLcjD1Hw==;
+	List-Owner; bh=SoC1OBkXcxYRrBer6D8L7IBLm/XYxqNbfnbKemxEi2I=; b=xcVM2RiuiAl+gl
+	tGBdU5QJRNhYjtg19SAgUj4GzPztb8TrLrVZaWxcLdemcbIC7C6wh+FssNOqFQyjeq8lI/Q2+4ST1
+	5d6AwOlin4hAKt8i2ga0w9VT5a6t6KaUxS1fxpKc0pxR9PupTVyWef8nTy2OjyeB3HW2blULdmswM
+	9ISamWEoHBvoGniO0r5hJqp14YXTKTi5Iau3jJU+HqS7p6bd0sVmAOgiOxevbJ3zVZeEMBnoPkHT9
+	UY0aiUTDM3gD3scSblfvvE0zX2jNnq94+/PBlkBJBVjVtPFcPx+26vYsCWLbDBiifmCBx3xImvbrr
+	qTFni3bPTvYwWf+NU7WQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whbie-00000000b5y-0k43;
-	Wed, 08 Jul 2026 23:30:20 +0000
-Received: from mail-ot1-x330.google.com ([2607:f8b0:4864:20::330])
+	id 1wheJE-00000000oDi-1zrp;
+	Thu, 09 Jul 2026 02:16:16 +0000
+Received: from pi.codeconstruct.com.au ([203.29.241.158] helo=codeconstruct.com.au)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whbic-00000000b5a-07rO
-	for linux-phy@lists.infradead.org;
-	Wed, 08 Jul 2026 23:30:19 +0000
-Received: by mail-ot1-x330.google.com with SMTP id 46e09a7af769-7e9f69ee6f4so1150759a34.2
-        for <linux-phy@lists.infradead.org>; Wed, 08 Jul 2026 16:30:16 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1783553416; cv=none;
-        d=google.com; s=arc-20260327;
-        b=UbLfdA+ch/JS+foHaFUecUGqlcfgI3eSCel7uCa072FeSbUANrig3uKyCN1b3/NGU1
-         k/to9LW9T7nAzF5oe9xIb96I9QmPnDoRbBZRJm2ROccWRNPyDCNpBXje5yVXYVyCO/cJ
-         BRYIfXLFZX6xA9r/luCnaMJl2hK3wotrQTua/PwiN/VBFl+fxYcOhdULWkWWgUKf/xOr
-         RaU7Vq2Y3B+ytWqYn9Qy+o6CuVWsdk0cKjAUnPFlbVT/nM7payGu6kSXjmThP6xGw0qt
-         Fo3Gx2HAwnN6UPijB4udQNAqgnRuXnHNggmhssy5/i3x3Waq7c/TgtENKY2RCYAlP6mx
-         /9ZA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:dkim-signature;
-        bh=3Phac2raMjwWjIRCVv5WDyx21Xab89Vi8U4ckasYYSM=;
-        fh=3jHIV3M1W4qDZ9XhP6vnU55Vxfg3yGJ3c8EWxVzilHs=;
-        b=NQgP7xEd2UEKrw5bvHFHOdnPMbqc30jhWyEySnNx8AxL/r6a9ykSPDTo3mLrVpeSjB
-         1dB0/YXCel6o2jnfC1mbQM0n99cei2c35aPLgE7iB2xqqRl9ucgk6AL0Qy6eegZUdEGj
-         FhrsArSz2qSU6mUVY6ZSB7FiSYKddYvgsB0dYSd60tqd3yl9DhwCJwI2muHfPFralexn
-         ZD/CNlhfHnjMZN2HPGm8VaQv0Y1ui6xWoOHGgc7WalZTwU5T3pLxZHASG70gHB0bHnGu
-         xCA7QZ9eCULt+Abq6p8WkIRQsBoF0FejIJFj+Sfw50WnC72cDVhu9+mFLvlMh56aYsWB
-         ZE3A==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
+	id 1wheJC-00000000oCh-0HN9;
+	Thu, 09 Jul 2026 02:16:15 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20251104; t=1783553416; x=1784158216; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=3Phac2raMjwWjIRCVv5WDyx21Xab89Vi8U4ckasYYSM=;
-        b=lKFighi6tLu+vIy2VJKU8Uq+42q4SQST7LaOfTmjMFGnsBVtCMklirGhlV239DW5YZ
-         iS8amlcR2ZRP8lwECme6bpEMkCsgG1lxQklqbswIX+zxHKcevMvTonfmb2Cs7BrY3lFI
-         XRKZEmz6i7EWsZG7Ee5T6dLTAf8XOXOmjIBhWX0hVpHo/qb99mwzPHiDDQwYS7gpEv6g
-         +pMZD5VH4O0o6a25DVJaJEUg1/A9saAsyUjxniAniR6WLunt8oZixrjD16ODSG2uR796
-         Ual6qYhHsJ4cnYrVlWxdbTjlIUjIjSRGl88AvUtzF2odB0jG7f4IPnRLdalFmEt0yYfK
-         87UQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1783553416; x=1784158216;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=3Phac2raMjwWjIRCVv5WDyx21Xab89Vi8U4ckasYYSM=;
-        b=EAMktCq1g6CmRD6+EzJZfJWvp6W/blv4Iioakl67qc1RWl2h2gqrnL9hG9kvJy85z/
-         nMB8P5VKruU7DH4bvNSszYjG3VQob6On+IVYFe0WbF0AUCP3SWCTuNriMwMmlrjqvVvq
-         igJidRVZd2/SZpehOA1ovZYyto6Ovo0He+yG5DNTVn5/If9a5NopHfnFnNHsDgFgdkB2
-         2ANeBAZZhlQ1VnrPQxEEEIX5amq4uViHiMZeMczoMRtjTk08G0U7EgtfVGqy3t9+jRtE
-         0xEZrk9lxwwodiRIy/kaDXdv8yzpLoeFD+CFIZKoklV9nWuYIYz/neV9aspf8+gpz0J/
-         WPFg==
-X-Forwarded-Encrypted: i=1; AFNElJ+NjxG3wughZNqGbVA/wDd/LpD4Xvr4ECk+VXi9PGf+97oXS4313ulPNSX6p/Ujkoz4Pw6PgmNqbxU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxwzPjbt0ZLsydrXrpaAMuUiWIhkU443qsVjRBQUxHtwicgkKea
-	lXEE3JF2QFmGprQ6269mUb2W9EHeJ3pG7vHmfdUVN/tti5jvXxM5rq09pCUZtR2LH4HZEuHX3UB
-	93K5Rusp4A4B7druuunXYSLOu98/W2XLOfFwHK/aX
-X-Gm-Gg: AfdE7clyDmxX+GLlZC4TbwhdqAc2SS8PgcGIWzGPN9z9j5Oyf18dAPCLKo1iAdckKDS
-	OkdYvNqfCPbDzj+q+ZtV71VeJbJ/JGKZrvdw1mFnr29QR9QDfoKPvtQvWB140xqvdCcHq1hCYaX
-	Ru0p2bIzVeW5f775NojtQjXlUaDRVuMMb+byTOKgHph5NEZ6exsMooXoWxoNqZvuz6W+Tgf7leL
-	ZZUdEb4BS8Zur4hNw4D/SpYk1XfGRpPmraCI/GvxhjsQcHyCO3ETVk+XEjWoKdQAWuZr5C2yMGo
-	ndHvjN4uY2fh0837dgCeLZ1Y1VEGbb6fkccVew==
-X-Received: by 2002:a05:6820:2085:b0:6a3:1f3d:853f with SMTP id
- 006d021491bc7-6a36da346b8mr3187577eaf.7.1783553415229; Wed, 08 Jul 2026
- 16:30:15 -0700 (PDT)
+	d=codeconstruct.com.au; s=2022a; t=1783563355;
+	bh=tH41RNED5+clJ8bDU3yrsPjDBxC2yWIilI8EOLE574U=;
+	h=Subject:From:To:Cc:Date:In-Reply-To:References;
+	b=ftms0R3l1Hxi9KJ9589VO97Frg6kN7OeNXibsjqRd65pV+OUowKvaK4G4y+TYgTcP
+	 uB8ZX8+0DdAGA9lY46OHDqUkT6OKe9E+U6Qv3eAvvB2EFuX83vJgLY32mW9W7R2I3G
+	 +bdp1eQu07nsN0ZxcHvRxL+ScRsJuX6dFWeI1ii/hsUmk6FVy6+KDGykQo2oHiHIm9
+	 4FEHkiIC5/XDz69xWmYZ9N8Ig7zcnjVc4pCi+OBHq3yDJBRjbDDph0P556SoViAXfd
+	 92Bij0zFycrY5a3rYKvMIzMD5MaGxwK7jNQEI3u5uDKgKDeiaeMte/jhozACIZDuW1
+	 4PMwao+akqDRQ==
+Received: from [192.168.68.117] (unknown [180.150.112.11])
+	by mail.codeconstruct.com.au (Postfix) with ESMTPSA id 4823960288;
+	Thu,  9 Jul 2026 10:15:53 +0800 (AWST)
+Message-ID: <ddb133ca1a3be605ee776b2276c1907c9ad32491.camel@codeconstruct.com.au>
+Subject: Re: [PATCH v2 2/3] phy: add AST2700 usb3.2 phy driver
+From: Andrew Jeffery <andrew@codeconstruct.com.au>
+To: Ryan Chen <ryan_chen@aspeedtech.com>, Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski	 <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Joel Stanley	 <joel@jms.id.au>, Philipp Zabel
+ <p.zabel@pengutronix.de>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org, 
+	linux-kernel@vger.kernel.org
+Date: Thu, 09 Jul 2026 11:45:52 +0930
+In-Reply-To: <20260116-upstream_usb3phy-v2-2-0b0c9f3eb6f4@aspeedtech.com>
+References: <20260116-upstream_usb3phy-v2-0-0b0c9f3eb6f4@aspeedtech.com>
+	 <20260116-upstream_usb3phy-v2-2-0b0c9f3eb6f4@aspeedtech.com>
+User-Agent: Evolution 3.56.2-0+deb13u1 
 MIME-Version: 1.0
-References: <20260706231633.700676-2-rdbabiera@google.com> <20260706232735.9DAE51F000E9@smtp.kernel.org>
-In-Reply-To: <20260706232735.9DAE51F000E9@smtp.kernel.org>
-From: RD Babiera <rdbabiera@google.com>
-Date: Wed, 8 Jul 2026 16:30:02 -0700
-X-Gm-Features: AVVi8CcSrwCh5LbwO7WnfvTZrSFNdC4Sgt5jKz_3inEavnBPl5_6Ab3E641i0pQ
-Message-ID: <CALzBnUHg9W0kAwN6kvv5888WAK+i3J5B9PBqqRYA6q5+tjm9KQ@mail.gmail.com>
-Subject: Re: [PATCH v4] phy: Add USB3 PHY support to Google Tensor SoC USB PHY driver
-To: sashiko-reviews@lists.linux.dev
-Cc: olteanv@gmail.com, linux-phy@lists.infradead.org, vkoul@kernel.org, 
-	neil.armstrong@linaro.org, Badhri Jagan Sridharan <badhri@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260708_163018_078275_C31588D3 
-X-CRM114-Status: GOOD (  21.33  )
+X-CRM114-CacheID: sfid-20260708_191614_309527_23CFB811 
+X-CRM114-Status: GOOD (  19.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,54 +70,133 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBKdWwgNiwgMjAyNiBhdCA0OjI34oCvUE0gPHNhc2hpa28tYm90QGtlcm5lbC5vcmc+
-IHdyb3RlOgo+IFtTZXZlcml0eTogSGlnaF0KPiBUaGlzIGlzIGEgcHJlLWV4aXN0aW5nIGlzc3Vl
-LCBidXQgZG9lcyB0aGlzIGZ1bmN0aW9uIGhhdmUgYSByYWNlIGNvbmRpdGlvbgo+IHdpdGggcG93
-ZXIgbWFuYWdlbWVudCB0aGF0IGNvdWxkIGNhdXNlIGEgYnVzIGZhdWx0Pwo+Cj4gZ29vZ2xlX3Vz
-Yl9zZXRfb3JpZW50YXRpb24oKSBjaGVja3MgcG1fcnVudGltZV9zdXNwZW5kZWQoZ3BoeS0+ZGV2
-KSB3aXRob3V0Cj4gaG9sZGluZyBhIFBNIHJ1bnRpbWUgcmVmZXJlbmNlLiBJZiB0aGUgVVNCIGNv
-cmUgcmVsZWFzZXMgaXRzIFBNIHJlZmVyZW5jZQo+IGltbWVkaWF0ZWx5IGFmdGVyIHRoaXMgY2hl
-Y2ssIHRoZSBkZXZpY2UgY291bGQgc3VzcGVuZCBhbmQgcG93ZXIgb2ZmIHRoZSBQSFkuCj4KPiBU
-aGUgZnVuY3Rpb24gd291bGQgdGhlbiBhY3F1aXJlIHRoZSBsb2NrIGFuZCBjYWxsIHNldF92YnVz
-X3ZhbGlkKCkgYW5kCj4gcHJvZ3JhbV90Y2FfbG9ja2VkKCkgb24gdW5jbG9ja2VkIGFuZCB1bnBv
-d2VyZWQgTU1JTyByZWdpc3RlcnMsIHJlc3VsdGluZwo+IGluIGEgc3luY2hyb25vdXMgZXh0ZXJu
-YWwgYWJvcnQuCj4KPiBXb3VsZCBpdCBiZSBzYWZlciB0byB1c2UgcG1fcnVudGltZV9nZXRfc3lu
-YygpIHRvIGVuc3VyZSB0aGUgaGFyZHdhcmUKPiByZW1haW5zIGFjdGl2ZSBkdXJpbmcgdGhlc2Ug
-YWNjZXNzZXM/CgpJJ2xsIGFkZCBhIGdldF9ub3Jlc3VtZSBjYWxsIHByaW9yIHRvIGNoZWNraW5n
-IHJ1bnRpbWVfc3VzcGVuZGVkLAphbmQgdGhlbiBhZGRpbmcgYSBwdXRfYXV0b3N1c3BlbmQgYXQg
-dGhlIGVuZCBvZiB0aGUgc2V0X29yaWVudGF0aW9uCmNhbGwuIElmIHRoZSBzdXNwZW5kZWQgY2hl
-Y2sgZmFpbHMsIHdlIGNhbiBwdXRfbm9pZGxlIGhlcmUuIFRoaXMgd291bGQKY292ZXIgbm90IHBy
-b2dyYW1taW5nIHZidXNfdmFsaWQgd2hlbiB1bm5lY2Vzc2FyeSwgYW5kIGFkZHJlc3NpbmcKYW55
-IHJhY2UgY29uZGl0aW9uIGlmIHRoZSBydW50aW1lIGNvdW50IGRyb3BzIHRvIHplcm8gZHVyaW5n
-IHRoZSBsb2NrZWQKc2VjdGlvbi4KCj4gW1NldmVyaXR5OiBIaWdoXQo+IENhbiB0aGlzIGxlYWQg
-dG8gcmVkdW5kYW50IFRDQSBwcm9ncmFtbWluZyBhbmQgYSAyLjUtc2Vjb25kIHRpbWVvdXQ/Cj4K
-PiBMb29raW5nIGF0IGdvb2dsZV91c2Jfc2V0X29yaWVudGF0aW9uKCksIGdwaHktPm9yaWVudGF0
-aW9uIGlzIHVwZGF0ZWQgYmVmb3JlCj4gdGhlIG11dGV4IGlzIGFjcXVpcmVkOgo+Cj4gZ29vZ2xl
-X3VzYl9zZXRfb3JpZW50YXRpb24oKSB7Cj4gICAgICAgICBncGh5LT5vcmllbnRhdGlvbiA9IG9y
-aWVudGF0aW9uOwo+Cj4gICAgICAgICBpZiAocG1fcnVudGltZV9zdXNwZW5kZWQoZ3BoeS0+ZGV2
-KSkKPiAgICAgICAgICAgICAgICAgcmV0dXJuIDA7Cj4KPiAgICAgICAgIGd1YXJkKG11dGV4KSgm
-Z3BoeS0+cGh5X211dGV4KTsKPiAgICAgICAgIC4uLgo+Cj4gSWYgYSBUeXBlLUMgcGx1ZyBldmVu
-dCAoVGhyZWFkIEEpIHNldHMgZ3BoeS0+b3JpZW50YXRpb24gYnV0IGlzIHByZWVtcHRlZAo+IGJl
-Zm9yZSB0YWtpbmcgdGhlIGxvY2ssIGFuZCB0aGUgVVNCIGNvcmUgY29uY3VycmVudGx5IGNhbGxz
-Cj4gZ29vZ2xlX3VzYjNfcGh5X3Bvd2VyX29uKCkgKFRocmVhZCBCKSwgVGhyZWFkIEIgd2lsbCBz
-ZWUgdGhlIG5ldwo+IG9yaWVudGF0aW9uLCBwcm9ncmFtIHRoZSBUQ0EsIGFuZCByZWxlYXNlIHRo
-ZSBsb2NrLgo+Cj4gV2hlbiBUaHJlYWQgQSByZXN1bWVzLCBpdCB3aWxsIGFjcXVpcmUgdGhlIG11
-dGV4LCBzZWUgQ09NQk9fUEhZX1RDQV9SRUFEWSwKPiBhbmQgY2FsbCBwcm9ncmFtX3RjYV9sb2Nr
-ZWQoKSBhIHNlY29uZCB0aW1lIHdpdGggdGhlIGlkZW50aWNhbCBjb25maWd1cmF0aW9uLgo+IFNp
-bmNlIHdyaXRpbmcgdGhlIHNhbWUgY29uZmlndXJhdGlvbiB0byB0aGUgVENBIGhhcmR3YXJlIGRv
-ZXNuJ3QgdHJpZ2dlciBhCj4gbmV3IFhBX0FDVF9FVlQgaW50ZXJydXB0LCB3YWl0X3RjYV94YV9h
-Y2soKSB3aWxsIHN0YWxsIGZvciBpdHMgZnVsbCB0aW1lb3V0Lgo+Cj4gU2hvdWxkIHRoZSBvcmll
-bnRhdGlvbiB1cGRhdGUgYmUgbW92ZWQgaW5zaWRlIHRoZSBsb2NrPwoKSXQgc2hvdWxkIGJlIG1v
-dmVkIGluc2lkZSB0aGUgbG9jaywgYnV0IGJlY2F1c2UgaWYgdGhlIG9yaWVudGF0aW9uIGlzCnNl
-dCB0byBub25lLCB0aGVyZSBjYW4gYmUgYSByYWNlIGNvbmRpdGlvbiB3aGVyZSBwb3dlcl9vbiBw
-YXNzZXMgdGhlCm9yaWVudGF0aW9uIGNoZWNrIGFuZCB0aGVuIHByb2NlZWRzIHRvIHByb2dyYW0g
-dGhlIFRDQSB3aGVuIHRoZSBvcmllbnRhdGlvbgppcyBub25lLiBTZXR0aW5nIHRoZSB2YWxpZCBi
-aXQgb24gdGhlIFRDQV9UQ1BDIHJlZ2lzdGVyIHN0YXJ0cyBhIG5ldyBYQV9BQ1RfRVZUCmludGVy
-cnVwdCwgc28gdGhlIHN0YWxsIGhlcmUgaXNuJ3QgcG9zc2libGUuCgpCZXN0LApSRAoKLS0gCmxp
-bnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+Hi Ryan,
+
+On Fri, 2026-01-16 at 10:53 +0800, Ryan Chen wrote:
+
+
+...
+
+> diff --git a/drivers/phy/aspeed/phy-aspeed-usb3.c b/drivers/phy/aspeed/phy-aspeed-usb3.c
+> new file mode 100644
+> index 000000000000..872d2163fcf5
+> --- /dev/null
+> +++ b/drivers/phy/aspeed/phy-aspeed-usb3.c
+> @@ -0,0 +1,236 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Copyright 2026 Aspeed Technology Inc.
+> + */
+> +
+> +#include <linux/bitfield.h>
+> +#include <linux/clk.h>
+> +#include <linux/io.h>
+> +#include <linux/iopoll.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/reset.h>
+> +
+> +#define PHY3S00		0x00
+> +#define PHY3S00_INIT_DONE		BIT(15)
+> +#define PHY3S00_SRAM_BYPASS		BIT(7)
+> +#define PHY3S00_SRAM_EXT_LOAD	BIT(6)
+> 
+
+...
+
+> +
+> +static int aspeed_usb3_phy_init(struct phy *phy)
+> +{
+> +	struct aspeed_usb3_phy *aspeed_phy = phy_get_drvdata(phy);
+> +	u32 val;
+> +	int ret;
+> +
+> +	ret = clk_prepare_enable(aspeed_phy->clk);
+> +	if (ret) {
+> +		dev_err(aspeed_phy->dev, "Failed to enable clock %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	ret = reset_control_deassert(aspeed_phy->rst);
+> +	if (ret) {
+> +		clk_disable_unprepare(aspeed_phy->clk);
+> +		return ret;
+
+Nit: Given we have to do this below if the reset_control_deassert()
+succeeds, perhaps add a label below and use goto here?
+
+> +	}
+> +
+> +	/* Wait for USB3 PHY internal SRAM initialization done */
+> +	ret = readl_poll_timeout(aspeed_phy->regs + PHY3S00, val,
+> +				 val & PHY3S00_INIT_DONE,
+> +				 USEC_PER_MSEC, 10 * USEC_PER_MSEC);
+> +	if (ret) {
+> +		dev_err(aspeed_phy->dev, "SRAM init timeout\n");
+> +		goto err_assert_reset;
+> +	}
+> +
+> +	val = readl(aspeed_phy->regs + PHY3S00);
+> +	val |= PHY3S00_SRAM_BYPASS;
+> +	writel(val, aspeed_phy->regs + PHY3S00);
+
+According to the datasheet PHY3S00[15] (PHY3S00_INIT_DONE above)
+indicates that the PHY internal SRAM initialisation is complete. The
+datasheet reports the SRAM is used for configuration of calibration
+among other things. PHY3S00[6] instructs the PHY that software has
+completed loading the configuration data into SRAM, however
+PHY3S00_SRAM_BYPASS (PHY3S00[7]) tells the PHY to load configuration
+from "hard wired" values.
+
+Is it necessary to wait for SRAM initialisation to complete if we're
+bypassing it? Or are there other side-effects involved in the setting
+of PHY3S00[15]?
+
+> +
+> +	/* Set protocol1_ext signals as default PHY3 settings based on SNPS documents.
+> +	 * Including PCFGI[54]: protocol1_ext_rx_los_lfps_en for better compatibility
+> +	 */
+> +	writel(PHY3P00_DEFAULT, aspeed_phy->regs + PHY3P00);
+> +	writel(PHY3P04_DEFAULT, aspeed_phy->regs + PHY3P04);
+> +	writel(PHY3P08_DEFAULT, aspeed_phy->regs + PHY3P08);
+> +	writel(PHY3P0C_DEFAULT, aspeed_phy->regs + PHY3P0C);
+> +
+> +	return 0;
+> +
+> +err_assert_reset:
+> +	reset_control_assert(aspeed_phy->rst);
+> +	clk_disable_unprepare(aspeed_phy->clk);
+> +	return ret;
+> +}
+> 
+
+...
+
+> 
+> +static struct platform_driver aspeed_usb3_phy_driver = {
+> +	.probe		= aspeed_usb3_phy_probe,
+> +	.driver		= {
+> +		.name	= KBUILD_MODNAME,
+> +		.of_match_table	= aspeed_usb3_phy_match_table,
+> +	},
+> +};
+> +module_platform_driver(aspeed_usb3_phy_driver);
+> +
+> +MODULE_LICENSE("GPL");
+> +MODULE_DESCRIPTION("ASPEED USB3.0 PHY Driver");
+
+MODULE_AUTHOR()?
+
+Andrew
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
