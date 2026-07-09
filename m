@@ -4,66 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DED65C44501
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Jul 2026 19:03:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 588F4C44507
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Jul 2026 19:03:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wNkEVJy770zNm3SP7xHuuhm/kMqoHtXyOYYYcubor2w=; b=Pb/nM7yMj9hz5e
-	Ct/FfPCy1oe9sYve6zQHwW9bGNLmKHSxJqAmWnRNJFmh5oEIKqpDyA7UCh0GeVyuVVavM1MFYH6Cv
-	SxrfanYKjyNCwBDFGEYjaGf8WlLRrG3pmJ3l13wXiiExV3y34UZipERtABkiRer65+opUT+aaSHYT
-	3R11UQiFnoA+SaSqHqLihUFUYr0aMoOnuDS3EILDCyEObDV+QstgBbU9tIOCmJPAV4u7KmKpozDjh
-	nC5kZ7E4xX7NoRFJBPA3EwqpuMMgYMcWa292yywzamMxcIMSCvO7b7f+/u7C2JxxJ4O4tgGOp2ii7
-	j3m66vvFqudJzXu4mDxw==;
+	List-Owner; bh=lsidGAa4MNxS9D4v/a6yriJVrRVQr9rXGOd1pefEeEQ=; b=qQLTQH7Ci0CHxo
+	hdwz9XAZ2GIIYqIPdk5oRDWD/IL6xs1pSPLxIu3x1fCQt6KgwzMO4J12zwSiM6VbjeD/YAMT6f0hx
+	aQylaKL4GE+mrUDVRnCu05AXZHYeccObS5YOxiXXDMGBnQtbTBTrzVTS+TJftQ+09P3P6SHf/0a38
+	YpvTqRY2WeSi9Bu59xCfHp8lif5wmIHWDbaBg0+3TrYJTM2mwjMDqXqt3Raz8Q2G/RTvpOoc/kBcD
+	ofEAKUdLyStguv7hNSVT+IOD/RbUlufT4n1e2uau56RicZkAKgF3LsuFUAydvficwk9k+yhgC8Uin
+	qL77vnlkZJJDmLOO2QoA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whu1a-00000003MP5-1Tbz;
-	Thu, 09 Jul 2026 19:03:06 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1whu1b-00000003MS5-24PR;
+	Thu, 09 Jul 2026 19:03:07 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whu1C-00000003LQz-1x6a;
+	id 1whu1A-00000003LMu-47Az;
 	Thu, 09 Jul 2026 19:02:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
-	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=rhBYvWOF+cgnaRqQxrykGk9N0o0tzWLbopxZBzBsMvw=; b=UpuJvMgly+nMNgyXx4tzJvHQP1
-	71e1euzq4eKSsAI7jBNtUiSo2g757PFwSzxSVkWAoo+aQaLKDlIjl3s8AZs4kKl3v8Xx00+vEECjN
-	z3oSXlliTYmcUGo+PwIfcUSGA+PL+qvEc+mWA5RzFI7xP9JxfDpcmqjX2gDGqaqAR8/3A9UFPZVol
-	8zKaWVF7BmDYgIQPAYkUcHUm47ntNWRltMwmvLAQJqr3cJoqhR8zlCn/HnREDGQC3LJGKnvwA8nUy
-	Hkr1TIXc6oECmDQuBrVok8lHn0FUnLyvMoTxsB0CXlvvQmRPMXfMu1DACHe+RF2x6O35jna3ftES5
-	Xw7ufFdw==;
-Received: from bali.collaboradmins.com ([148.251.105.195])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1whu18-00000009TL8-2gxg;
-	Thu, 09 Jul 2026 19:02:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1783623750;
-	bh=DGHAo+/yHQUfg6E5xfAgVJta4NhbAYv3HkIdYgaZpOw=;
+	bh=AyMiIrxEFIKqV6uGqRNRCgp/f+R94tkSUd/pjFfr5TQ=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=lopJJ5AHuKouoTNzHcyTqRSZ7z8bmvR2Fcn7SmPkmLiUW9B7lIXsg5huUp3Kj3Reu
-	 uJx7rbHy/CrGkvtLSEwe6IzYN7dF0HnpOUDJ6ObWhh1kAm78EkELZJgezJ/5bjQXa7
-	 ifOuqOAc1UHYUndEcdLo8yEdJxGwUFwfpoNntGDEKGVDJLL+sFdS5JKComQXOqiRoc
-	 baETDzyieNtoi8uHl9C6FtAgcCmAyL1OXf5X6Lkgzf1bYfeV5rA/b86onbyyswKlyR
-	 E9jOYJC9gaXIxc/erwQDnevefRdVCuZxVIspKzT9kulnkcN5022HjrsyylC995/xYu
-	 pDC3G4vu9I3SA==
+	b=RVM1jgzwtqQtAXBiMDRV0pxyJYYDBL5K6vAS3yCpxVSFTTootyH2vgTCUBqor/cek
+	 XL8dh+L3qHQn3dMZ883MkIDtEOoXc1nlxjzfqmx5RKajukK3+lGtlB1BDxYN4u6whY
+	 PVrF7mxYNxed7q2quCUMwJWLQTBIaRCxePZvG7rOgqUqYcRU51O/+nSj8hJ5J9jxF3
+	 j7ysuojWmi1ZNhu+nXR57O/DmAMyD1Oc0rVTP7bhwLu0wFN5Jtxm7K9WBf+HXE9RPT
+	 dTwXpSC/1BE/FBRPSgiUX8n6BKi6mDXnwoF3EZzLgKyCcOAZs9bGu9lTlZCbVLcl2R
+	 I+ZStwsl0pz1g==
 Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519)
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 75EC817E0FD0;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id AE33917E101E;
 	Thu, 09 Jul 2026 21:02:30 +0200 (CEST)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id B6C6E480052; Thu, 09 Jul 2026 21:02:29 +0200 (CEST)
+	id BE81E480065; Thu, 09 Jul 2026 21:02:29 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Thu, 09 Jul 2026 21:02:37 +0200
-Subject: [PATCH v11 14/36] phy: rockchip: usbdp: Use FIELD_PREP_WM16_CONST
+Date: Thu, 09 Jul 2026 21:02:42 +0200
+Subject: [PATCH v11 19/36] phy: rockchip: usbdp: Re-init the PHY on
+ orientation change
 MIME-Version: 1.0
-Message-Id: <20260709-rockchip-usbdp-cleanup-v11-14-a149ac60f76c@collabora.com>
+Message-Id: <20260709-rockchip-usbdp-cleanup-v11-19-a149ac60f76c@collabora.com>
 References: <20260709-rockchip-usbdp-cleanup-v11-0-a149ac60f76c@collabora.com>
 In-Reply-To: <20260709-rockchip-usbdp-cleanup-v11-0-a149ac60f76c@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -82,26 +69,26 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  devicetree@vger.kernel.org, linux-usb@vger.kernel.org, 
  Sebastian Reichel <sebastian.reichel@collabora.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1546;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1257;
  i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=DGHAo+/yHQUfg6E5xfAgVJta4NhbAYv3HkIdYgaZpOw=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpP8ESAQQua4/zB5iwqfA9ypzmbw69wV0fJH
- tKQb/3/wXDjXIkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqT/BEAAoJENju1/PI
- O/qadgUP/20Azt8oEyXceQjrgd3jsT3KZfsz9W0W56qmf5ifW7w41nZc3s4RnrQ4WrSQ+d/+DYR
- NbURzVPue4sB0+aQiDn1DOFHEFAWydZ1CWRkpaevbKSPevYPEEjKuDpDmtS5pUg5uTFx+S2AmG9
- dnvcpxsliUKGSxeILGJuAFO91vfAL8mZYcPswHJQA/IM4IB4yop+oC5zUUw91BpzP+6yZ+Swqit
- ysN9jbfLCbxWveTFXRVzsLaJpo6rH0YPrGXQPPWIRK4DFPB8hePHrYhZXOZjOAXQMU1YL0GAhi7
- Z1AKE7x7BUrFv07Z59KesnUAmeD1NqIKAONHIQiezALbDM29Newjw/VtoB33KRN7ilJSRGvGuGO
- UVgS/RdRtaGoh1Sz08LemNIKPegeWCeucQ9xTJ1K2KqntbJXYCPK9t//uCY2x5N7uhy3aY6kM9R
- 2ZrEdnLSiFTiUKHMn6y8D4QD6/HbKPJHP+7UrlyufDPnoodHtzdIge0QBTsi5Y6wGAeKC69yUVG
- fJA7f0NmYVcfIzjnQXfl8gYN2WhMJ7NjBtTur54IhRBg9F4qVhHVWZ3lOGSATn7y4C6L4lqVqDI
- 5X+dXvEq2A10fVz+QNbrfMHARSOuyBZgkCE+8ktUqK1jzf/UPUrL2klJJhEdA6JGR2FGMFi8Iv2
- Sd59vkJZb0/jtsWuxvaEqxQ==
+ bh=AyMiIrxEFIKqV6uGqRNRCgp/f+R94tkSUd/pjFfr5TQ=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpP8ERrLE1cxL1f0vra7CZ0nbMrlvbHUe2Or
+ FUyNz56HfWea4kCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqT/BEAAoJENju1/PI
+ O/qawUcP/2vg9O25p5cQ9+EwlLOvStbFON3dr6bfk5F7vo0sGvlVofg9BIsqbi16+37wvw5IoAR
+ +xK8v3T5yt1aXgMrOMiFOxz+x6KhcmJ6jvX6mkMCPQyrzN1LJFSRSlkmkCLDlgMu+Mwn7SmgFy3
+ 1qcEPNlIEQGq+h6HCSGGDnc32FriIgc0ualnv2rKKaoBs3TStUuhxeH3OA+oc+tvUhOp07FbAo8
+ FO5NPSTSCvqSfYp8plCmr7iBgvalg5PHNnCE84+Q7CdR68QboU+Rk/EoggRTep/9NNcHAEHImhH
+ I8rj+7NcEduZdCT54FgfZv/lOYsJ1g9ht2JeL3BaeLhRY34mp0TPuEDR7Dr3la44TSAKA4NXpMR
+ XQ0edRsBmpK77Ulvz3RVnzu5iognFb8WECvEZ5hyp0B1NJkw8tzcCJ4EKqq541Hn4jmjUcQLb76
+ R8E8CoyDVy9fSm91Y0Ki9Ac38KUHQCCc0YyMzKkYapD3dlBNcBF1HnUJSoEGM9azx0tqbIBhliU
+ vX6A85MhQeJNj2kyADNWHs/7JqlhpVQNtdgWSt17O7hUl+F1AtFPQ5aIwMSmgEygpBjkYBaq3Y7
+ Q+iTjGjDMDUsL04qhlBN8itrDuy7DLd8FCm2gvzy6l8nO7vd2oeZ0ST4AryxTR0inrHvgDS1U/9
+ HZ2tiYL4b9zY8I+CUW3Im4w==
 X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
  fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260709_200239_090253_2B3A633A 
-X-CRM114-Status: GOOD (  11.60  )
+X-CRM114-CacheID: sfid-20260709_120241_291922_4A17E275 
+X-CRM114-Status: GOOD (  10.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,46 +105,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Cleanup code by replacing open-coded version of FIELD_PREP_WM16_CONST
-with the existing helper macro.
+Changing the cable orientation reconfigures the lane muxing, which
+requires re-initializing the PHY. Without this DP functionality
+breaks, if the cable is re-plugged with swapped orientation.
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index 7fb864a1486c..05593e98c16d 100644
+index e44d19c9d119..4b454798c4ed 100644
 --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -12,6 +12,7 @@
- #include <linux/clk.h>
- #include <linux/delay.h>
- #include <linux/gpio.h>
-+#include <linux/hw_bitfield.h>
- #include <linux/mfd/syscon.h>
- #include <linux/mod_devicetable.h>
- #include <linux/module.h>
-@@ -75,7 +76,6 @@
- #define TRSV_LN2_MON_RX_CDR_DONE_OFFSET		0x1b84	/* trsv_reg06E1 */
- #define TRSV_LN2_MON_RX_CDR_LOCK_DONE		BIT(0)
+@@ -620,6 +620,7 @@ static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
+ 				 enum typec_orientation orien)
+ {
+ 	struct rk_udphy *udphy = typec_switch_get_drvdata(sw);
++	bool flipped = orien == TYPEC_ORIENTATION_REVERSE;
  
--#define BIT_WRITEABLE_SHIFT			16
- #define PHY_AUX_DP_DATA_POL_NORMAL		0
- #define PHY_AUX_DP_DATA_POL_INVERT		1
- #define PHY_LANE_MUX_USB			0
-@@ -104,8 +104,8 @@ struct rk_udphy_grf_reg {
- #define _RK_UDPHY_GEN_GRF_REG(offset, mask, disable, enable) \
- {\
- 	offset, \
--	FIELD_PREP_CONST(mask, disable) | (mask << BIT_WRITEABLE_SHIFT), \
--	FIELD_PREP_CONST(mask, enable) | (mask << BIT_WRITEABLE_SHIFT), \
-+	FIELD_PREP_WM16_CONST(mask, disable), \
-+	FIELD_PREP_WM16_CONST(mask, enable), \
- }
+ 	mutex_lock(&udphy->mutex);
  
- #define RK_UDPHY_GEN_GRF_REG(offset, bitend, bitstart, disable, enable) \
+@@ -631,7 +632,10 @@ static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
+ 		goto unlock_ret;
+ 	}
+ 
+-	udphy->flip = orien == TYPEC_ORIENTATION_REVERSE;
++	if (udphy->flip != flipped)
++		udphy->phy_needs_reinit = true;
++
++	udphy->flip = flipped;
+ 	rk_udphy_set_typec_default_mapping(udphy);
+ 	rk_udphy_usb_bvalid_enable(udphy, true);
+ 
 
 -- 
 2.53.0
