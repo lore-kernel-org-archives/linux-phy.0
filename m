@@ -4,96 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6DF8FC43458
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Jul 2026 07:41:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3AD9CC43458
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Jul 2026 08:31:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jRFfAjqtkl0cICikO0EYQft+3Z2tcG33yXSzS4MEyz8=; b=f0MFzzsvRJXwNe
-	Gk5KygcPMSUIk3F7vYDx8NivMnEKN7BZFEAnq+uQsPxzUc3amXRd4CpD13roUWepL7pDBVcPsW0NK
-	s5TfAZAe1jBqbJ6TMy8IYEXpzN/pKrkuVvQ/Di8f2ckvUrCTDMgnAnZU/WY6bvFcr+x94uK60IOxM
-	v8y60LRS3ivzXSRM9/zk7x3ILJZCc9kUBUJWdwv4Ok4JULzQsYxJZQkhhzzMSfcJaOo1vX0TSzKF+
-	OnnjYnhrdNGRnCgZIFTZwrzYMtOYjUu8pnYg1/VoHP7GfCaBymPLnfba0nZSrE9w2orxywBXhB7OR
-	AopKDm7aWLvE9KsNqPRg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hMDXZSDgbT8buuEwn94dLHiS6619QogupuWnhAHwVjY=; b=yf53pq/gXoip52
+	tiDOUHcGKU8TA2516vH6F+OVTew3ka7UHbIHLcvYkfv7JoVkTWz7qN7/ZZZ6FT3ldaZeVG2fLLOam
+	ONuA1nq4Vm+wdk4b37eWav+9spQRofAV2U/lYPuH9jABh2awG4pay7rLk1bNtLOTlFavlZnTSTDho
+	Ls8OTXE/nc0xpLtRJ4G8MhPYnwK1y0dPih2ABFSNWsi2kv73g+EO6fRziuTwrnIZFPN9a8KGnvRSe
+	hH83VfbsseqEP7MKtJO9DhuSRdKgKA0xmR4cF+cDlDoJb0uaJARswg59mj6iWF5kaHkfrlO/aC2Wu
+	tSjU7hoQePl8beT6fK1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whjNU-00000001Kuu-02MZ;
-	Thu, 09 Jul 2026 07:41:00 +0000
-Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
+	id 1whkA8-00000001QgG-47pG;
+	Thu, 09 Jul 2026 08:31:16 +0000
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whjNR-00000001KuM-2d9X
+	id 1whkA5-00000001QfE-3hs8
 	for linux-phy@lists.infradead.org;
-	Thu, 09 Jul 2026 07:40:59 +0000
-Received: by mail-lf1-x12f.google.com with SMTP id 2adb3069b0e04-5aeb906d6c6so82875e87.2
-        for <linux-phy@lists.infradead.org>; Thu, 09 Jul 2026 00:40:57 -0700 (PDT)
+	Thu, 09 Jul 2026 08:31:15 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-493c19bad03so14697895e9.2
+        for <linux-phy@lists.infradead.org>; Thu, 09 Jul 2026 01:31:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1783582855; x=1784187655; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from:references
-         :cc:to:subject:user-agent:mime-version:date:message-id:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=8yH1YNoaMWIJTqKTNCWri0730PMLmS7x/g08jHqQ684=;
-        b=nTBTvk8hx5YO2NFuRUqpXUEv3WV3ha6vXTfAsZK+ilRD+/nz/heNAcZAuZh5Jyc99b
-         iW4cQN+aP947Ln4fWu7uKd0AMMefnO5Q0KoLKM5EeP72OFtpaR44+AbSyKg9/F5ILK0D
-         AfDpJZHn8qW1kBO44cULDkEc3SIYeyqlG2wvw6M9jqeDGW5uUBl7ts0b+eMlSI3PB0Ul
-         nWbUcQFLVLZPEtTnXZHEPNLLIjRcJ4mPOu9g7CKyqKB5uyWIEcz0YvrVhLXv866BIf2p
-         kWn8Zn/QCuy4kJlOYCXsjeqyGTv6kDcqx8YF5YmmDWSvG1CZA5B/5JN1QjA6hEtAwtov
-         LAdw==
+        d=gmail.com; s=20251104; t=1783585871; x=1784190671; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=zwKLW3e8sifoWMe13SzALnUW9Xz9XuHOuNauXNIlqAg=;
+        b=XUsVTizhPsY56ChZtPO40iylOjNGj94sK3t78bQ5DRJBJTqZ/jGHEUyIwEmD+zwl/y
+         cFC0rRVP7M7QDjKLNmCN0x6kMs9RjhuijnBq+i4/TCGa9Nu5pu7R3EeyeVujRLIaBZGf
+         98eUecgDWuN57gHO/kA72cUDTmkBeqMMiYRM4aqIfdYdLTNr07tz3byYIrzulS3IA5pf
+         aMQxgEZNxiFFqT4sK3uyab6XM+hqKT57vPIuwdNklOz7WCCK7BE3ijJ8JFHWvblPjRBD
+         bMhHj295kgW10+oFtdCpLzE+l8A2ZjNV8lQXsADDBmYvy3sF0nF4BkPW8YQaJDJBfkYA
+         kVKA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1783582855; x=1784187655;
-        h=content-transfer-encoding:content-type:in-reply-to:from:references
-         :cc:to:subject:user-agent:mime-version:date:message-id:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=8yH1YNoaMWIJTqKTNCWri0730PMLmS7x/g08jHqQ684=;
-        b=fRDwLaQFpepNGqt8DW9u51YVvt1TCJ2qf+ZlfGUjF3ONF7WF0Q606YSmPMoDT4gvDY
-         ZOawERTN/lPBoafbZQ+M6d52btzYGix+gY0pUHBRUFse2eIrEpskXK1xQB6CVAIXrcqv
-         MlPAsWN53GeTYBFOMmAfa9n8pUCgXVTpZomk55fMlZ5IlzAkKHIWoLFieeH2tb2r2LgN
-         VInM0oWPSFklHQK49MqBCWfYuTWH8+C4aQsv7zmx5nFfmT7jBkR7CTYAAmsWJhIXsFfA
-         uTrtg60bzOKSazMCDfOmO1Q/dsuFiZ9uZjXu3z66G616PU1KpEi3QyU3jaijO+2Hhl4Q
-         ZXEA==
-X-Forwarded-Encrypted: i=1; AHgh+Rrw/N4c4JqnGx6N5c3RWYEthA96r69FAEZJHFfXwO4AOTE7BtBKvkwiGd0YdOJC449AyungJUDFP1M=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxW1a2DIiPE1+MyMGc9eByR7XOHnyhkXaQIU31vzFH6Wa+X9rvX
-	/FyQax9CZKsEDDGZb7CdVwI1OC3kSB54tqdzamJaSNZT180I7V4hSpQAq6fUq6ZeQ3Q=
-X-Gm-Gg: AfdE7cm8/c4b/mufTYKyIM/lXtfKANWC3FxWogsLWeiuBVzplOPU4xTAOKLeHFetm8h
-	GqqVnZCflLUiR+Og6Gvh4blwEoOWm7RkqnY9UuCxTcczmP1n6PMDpnvA3YMWMcapKry6D/WXTOG
-	GiC3xQYhrcWIRW7bmSe6VazgbuAr5/dXpMc/0Bl8vSEYYGhKNY6CkG+TPsTIdYDykE/Y2uemVKz
-	M/2G3wYoOl55Kd9Ln8O774vMMq0QDLbCmt4OOTkwGtyKSxoFFZowug8iHDP68GyRyhqK14fMMZv
-	NHJj0aPIvetrf49ugWqFr65Fg8cGfCvU/LNP5fOAhwfRzZf3lOMHRkYC8ewAq30bb1cVEpQ4jHy
-	918tnCyw3jV+wER1LO0hjleTfu+HSUOyi3vWI+WSiNPo/nJtafiMqUanBzW9TxuCl+4/MhXbhrT
-	7SR3OPmPwA5fCkVJbPfcga3TNflTSUb/tuKgNaNdKylcTtVn51Et9Jh2kp/uYveisUp1Q=
-X-Received: by 2002:a05:6512:3ca1:b0:5b0:312:21ca with SMTP id 2adb3069b0e04-5b011474220mr806567e87.2.1783582855271;
-        Thu, 09 Jul 2026 00:40:55 -0700 (PDT)
-Received: from [192.168.1.100] (91-159-24-186.elisa-laajakaista.fi. [91.159.24.186])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5aed13c4acdsm5083912e87.76.2026.07.09.00.40.54
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 09 Jul 2026 00:40:54 -0700 (PDT)
-Message-ID: <b834e9a0-a61c-4912-b57c-36d571938b75@linaro.org>
-Date: Thu, 9 Jul 2026 10:40:54 +0300
+        d=1e100.net; s=20251104; t=1783585871; x=1784190671;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=zwKLW3e8sifoWMe13SzALnUW9Xz9XuHOuNauXNIlqAg=;
+        b=YTKwQnq71rDysnhqEmbZJ0oplvdRQag6edUs6esVIA84vfUj6QVm/zdHs9JW+gcgDG
+         /YzL0Pg7AOImb4e4M+lqCI3MpBYvKozlMPLpZesP5Wrb9NlSj3e8fxPoxDrdvbzDBwUK
+         oqWhStQeRReG9NXqZHoPfqItbKkeYcpLSRXWYlLZg/UVdWqF3gTQwQGAlGQqgA6EEW3/
+         GNTv2MVdJbwe1oOAy9NVjI3oZuZ8syoAqY/vn+2DwR38YghgqrnaLf5JLwjXuHKSATOl
+         GXmtQERj7zOAEy/t2xFK9HlTNGp9J1FyOrXJC7EvDB15kDmPGPh9A4kUxK1n+2sxnWuj
+         j5iw==
+X-Forwarded-Encrypted: i=1; AHgh+RqcyDyo+urH8levtvF/sNHWywMPHGZn0TeWasjmp2EPwBqMxrzzHpwbO8JOqy+2Kgx8ZnoB3L4Jb9k=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyrVdi7Qz3R4nfq4rRBqEgwglaSMZBRO8fEpPORtGA+b/UsCdUy
+	5GK+/tIeNAErP7OSizAuwnavPSlp3qiBYN7FGBYLd69+9ZBq7oEQ8SgTeam/B8yO
+X-Gm-Gg: AfdE7cnK35A7Yk+1upRtIn9x/F6zBRXhlwB/6LVC8QxhAl0eS+VWxQgM1vQmlimKOq7
+	tZZG8DDnIOBUiA1AQhKcaXn5ldxproFplvfr5nvxu5QnFQGtxC1TsEQApfQehmlzsNKDYrSoY03
+	orP+in4L6jPuyOe13eUf9GqtOq9UWDtu+xJVtAgXCszxbjWDpVRY4m1C6loc1SZXAApUTbKUdvD
+	nYPHzFPvJ9/gyI4n2yRCatl1quSUoaijP0D78aPfCazPE73XEXi/zOdHxkM7MG4v0r/o3rcESrM
+	BDy5V+1sSIC8o2n3m9sV6Ghwbw7PG7yxdxE/oJe28CTN4KJo33AOlrl3W7FeccuU5ytp7/klGkM
+	+3Wg3P4xXK+1+2sw8iVZhTiqegAMMdby/2Owo9Jl5cokPe6gauVrQp/lqHnG8iSVBOeiRxvDyix
+	sKQlQ/p2F+eBmVxcY30gd3
+X-Received: by 2002:a05:6000:2583:b0:472:55a:ef9b with SMTP id ffacd0b85a97d-47df072dfd8mr6559434f8f.8.1783585871101;
+        Thu, 09 Jul 2026 01:31:11 -0700 (PDT)
+Received: from biju.lan ([2a00:23c4:a702:d301:8fb6:1d85:3dc1:42ab])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-47a9e4d780csm50316543f8f.11.2026.07.09.01.31.09
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 09 Jul 2026 01:31:10 -0700 (PDT)
+From: Biju <biju.das.au@gmail.com>
+X-Google-Original-From: Biju <biju.das.jz@bp.renesas.com>
+To: Philipp Zabel <p.zabel@pengutronix.de>,
+	Vinod Koul <vkoul@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Mark Brown <broonie@kernel.org>,
+	Magnus Damm <magnus.damm@gmail.com>
+Cc: Biju Das <biju.das.jz@bp.renesas.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-clk@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org,
+	Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+	Biju Das <biju.das.au@gmail.com>
+Subject: [PATCH v4 0/9] Add RZ/G3L USB2.0 host support
+Date: Thu,  9 Jul 2026 09:30:53 +0100
+Message-ID: <20260709083108.108370-1-biju.das.jz@bp.renesas.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v9 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
-To: Bryan O'Donoghue <bod@kernel.org>,
- Bryan O'Donoghue <bryan.odonoghue@linaro.org>, Vinod Koul
- <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20260708-x1e-csi2-phy-v9-0-0210b90c04cf@linaro.org>
- <20260708-x1e-csi2-phy-v9-1-0210b90c04cf@linaro.org>
- <YSunV_lNJ8xW_y-Aa2psZavniF6mcHJlJipuj1RYWMB8Zb8yLC-gb7eEnk0XMjfwQOneMGsZM5foFKutCNhYqw==@protonmail.internalid>
- <b7baffda-b97c-4b83-8d9e-e381d0289682@linaro.org>
- <3ab676ac-919b-4a80-8dd6-71dd7f6fe06c@kernel.org>
-From: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
-In-Reply-To: <3ab676ac-919b-4a80-8dd6-71dd7f6fe06c@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260709_004057_763431_3C9FC0F8 
-X-CRM114-Status: GOOD (  30.00  )
+X-CRM114-CacheID: sfid-20260709_013113_938347_9A7EDE2A 
+X-CRM114-Status: GOOD (  13.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,336 +110,78 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 7/9/26 00:55, Bryan O'Donoghue wrote:
-> On 08/07/2026 08:44, Vladimir Zapolskiy wrote:
->> On 7/8/26 02:39, Bryan O'Donoghue wrote:
->>> Add a base schema initially compatible with x1e80100 to describe MIPI CSI2
->>> PHY devices.
->>>
->>> The hardware can support both CPHY, DPHY and a special split-mode DPHY.
->>>
->>> The schema here defines two ports with three endpoints:
->>>
->>> port@0: Sensor input.
->>>              endpoint@0: primary sensor
->>>              endpoint@1: optional second sensor, implies DPHY split-mode
->>>
->>> port@1: Controller output.
->>>
->>> The CSIPHY devices have their own pinouts on the SoC as well as their own
->>> individual voltage rails.
->>>
->>> The need to model voltage rails on a per-PHY basis leads us to define
->>> CSIPHY devices as individual nodes.
->>>
->>> Two nice outcomes in terms of schema and DT arise from this change.
->>>
->>> 1. The ability to define on a per-PHY basis voltage rails.
->>> 2. The ability to require those voltage.
->>>
->>> We have had a complete bodge upstream for this where a single set of
->>> voltage rail for all CSIPHYs has been buried inside of CAMSS.
->>>
->>> Much like the I2C bus which is dedicated to Camera sensors - the CCI bus in
->>> CAMSS parlance, the CSIPHY devices should be individually modelled.
->>>
->>> Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
->>> ---
->>>     .../bindings/phy/qcom,x1e80100-csi2-phy.yaml       | 202 +++++++++++++++++++++
->>>     1 file changed, 202 insertions(+)
->>>
->>> diff --git a/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
->>> new file mode 100644
->>> index 0000000000000..a7fbf6804cd9e
->>> --- /dev/null
->>> +++ b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
->>> @@ -0,0 +1,202 @@
->>> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
->>> +%YAML 1.2
->>> +---
->>> +$id: http://devicetree.org/schemas/phy/qcom,x1e80100-csi2-phy.yaml#
->>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->>> +
->>> +title: Qualcomm SoC CSI2 PHY
->>> +
->>> +maintainers:
->>> +  - Bryan O'Donoghue <bod@kernel.org>
->>> +
->>> +description:
->>> +  Qualcomm MIPI CSI2 C-PHY/D-PHY combination PHY. Connects MIPI CSI2 sensors
->>> +  to Qualcomm's Camera CSI Decoder. The PHY supports both C-PHY and D-PHY
->>> +  modes.
->>> +
->>> +properties:
->>> +  compatible:
->>> +    const: qcom,x1e80100-csi2-phy
->>> +
->>> +  reg:
->>> +    maxItems: 1
->>> +
->>> +  "#phy-cells":
->>> +    const: 1
->>> +    description:
->>> +      The single cell specifies the PHY operating mode.
->>
->> Unfortunately my review comment given before was ignored before publishing
->> this version, thus I will repeat.
->>
->> There is a clash between the proposed phy cells value and 'bus-type' property
->> of the media endpoint, the proposed value of phy cells brings no information,
->> and therefore the whole proposed '#phy-cells' prorperty shall be removed.
->>
->> There shall be no third link introduced between CAMSS and CAMSS CSIPHYs.
-> 
-> As explained in the cover letter: I'm following guidance from Rob on that.
+From: Biju Das <biju.das.jz@bp.renesas.com>
 
-Pehaps you've misread a given review comment, because Rob's guidance is
-to remove 'phy-type' property, and so far there were no arguments given
-against removing unnecessary '#phy-cells' propert, which is needed to
-exclude the clash on peer's side between its value and 'bus-type' value.
+Hi All,
 
-> 
-> 20260708-x1e-csi2-phy-v9-0-0210b90c04cf@linaro.org
-> 
-> Old guidance granted, so let me see if I can get his attention to this
-> matter. Perhaps your suggestion is fine by him if so then fine, if not I
-> will stick to his original nudge, either way its up to him as the
-> original reviewer and senior schema maintainer to call this one.
+This patch series aims to add USB2.0 host support for the RZ/G3L SMARC
+EVK. The RZ/G3L USB PHY block is similar to RZ/G3S, but each port
+has an OTG controller, unlike RZ/G3S, which has an OTG controller only on
+port 1. This series migrates regulator driver to use id-table so there
+is hard dependency between reset driver and regulator driver.
 
-Hopefully Rob will discuss my review comment, at the moment there is no
-any technical arguments against it from anyone, so it's still open.
+Merge strategy:
+  An Ack/Rb tag from Regulator Maintainer for patch#4.
+  Patch #1,#2,#3,#4 - Reset subsystem
+  Patch #5,#6,#7 - PHY subsystem
+  Patch #8,#9 - Renesas SoC
 
->>> +
->>> +  clocks:
->>> +    maxItems: 3
->>> +
->>> +  clock-names:
->>> +    items:
->>> +      - const: core
->>> +      - const: timer
->>> +      - const: ahb
->>> +
->>> +  interrupts:
->>> +    maxItems: 1
->>> +
->>> +  operating-points-v2: true
->>> +
->>> +  power-domains:
->>> +    items:
->>> +      - description: Titan Top GDSC - Titan ISP Block, Global Distributed Switch Controller.
->>> +      - description: MMCX voltage rail
->>> +      - description: MXC or MXA voltage rail
->>> +
->>> +  power-domain-names:
->>> +    items:
->>> +      - const: top
->>> +      - const: mmcx
->>> +      - const: mx
->>
->> None of the power domains finds its place in this device tree node, the
->> child device belongs to CAMSS, which already enables these power domains.
-> 
-> Right, I think the whole subnode debate has run its course. Its a
-> problem for JPEG and a bit of a fake debate, there is no real "bus" here
-> so what is the point of mutating DT to look like a bus ? We are forever
-> lecturing people about "making fake DT stuff for convenience".
+v3->v4:
+ * Updated cover letter with merge strategy
+ * Reorder the phy binding patch for easy merging.
+ * Updated the commit description for patch #2,#3, #4.
+ * Moved the handling of regulator_driver_name to patch #3
+   in preparation for id_table match.
+ * Migrated to id_table match using driver_name and reduced the length
+   < 24.
+ * Dropped rzg3l specific platform driver.
+ * Dropped the tag for regulator driver,
+ * Added id_table handling by introducing a common probe().
+v2->v3:
+ * Replaced items->enum in reset controller bindings.
+ * Collected the tag for reset binding patch.
+ * Dropped clock patch as it is accepted.
+v1->v2:
+ * Dropped patch#6(Introduce helper for regulator registration)
+ * Passing pointer to an array of regulators to make it scalable.
+ * Dropped regulator1-vbus and added a regulators group node.
+ * Updated commit description for patch#1,#4,#6,#7,#8,#9 and #10.
+ * Added enum instead of const in the compatible section.
+ * Updated schema check.
+ * Collected tag for PHY binding patch.
+   in the regulator driver.
+ * Added regulators group node and its children in SoC dtsi.
 
-Please remind me, what is the point of grouping CAMSS devices under one
-device tree node? Is there an X1E CAMSS device?
+Biju Das (9):
+  dt-bindings: reset: renesas,rzg2l-usbphy-ctrl: Document RZ/G3L support
+  reset: rzg2l-usbphy-ctrl: Introduce info struct for match data
+  reset: rzg2l-usbphy-ctrl: Add RZ/G3L support
+  regulator: renesas-usb-vbus-regulator: Add RZ/G3L VBUS regulator
+    support
+  dt-bindings: phy: renesas,usb2-phy: Document RZ/G3L PHY bindings
+  phy: renesas: phy-rcar-gen3-usb2: Add RZ/G3L support
+  phy: renesas: phy-rcar-gen3-usb2: Fix devm action registration for
+    disabled VBUS regulator
+  arm64: dts: renesas: r9a08g046: Add USB2.0 device nodes
+  arm64: dts: renesas: r9a08g046l48-smarc: Add USB2.0 support
 
-> 
-> Peer nodes with TITAN_TOP_GDSC will perfectly adequately describe this
-> hardware and the JPEG too.
-
-It's not an argument against my proposal to get a simpler hardware
-description in the form of device tree bindings. Please address
-the review comments actually received.
-
->>
->>> +
->>> +  vdda-0p8-supply:
->>> +    description: Phandle to a 0.8V regulator supply to a PHY.
->>
->> The property name shall be vdda-0p9-supply, the description shall be
->> changed accordingly
-> 
-> Hmm what ? I'll have to look back through my notes, I thought the opposite.
-> 
-> Let me follow up in v10 after grepping for this again.>>
->>> +
->>> +  vdda-1p2-supply:
->>> +    description: Phandle to 1.2V regulator supply to a PHY.
->>> +
->>> +  ports:
->>> +    $ref: /schemas/graph.yaml#/properties/ports
->>> +
->>> +    properties:
->>> +      port@0:
->>> +        $ref: /schemas/graph.yaml#/$defs/port-base
->>> +        description:
->>> +          Sensor input. Always present. A single sensor is described by a
->>> +          single endpoint with one to four data lanes. DPHY split mode,
->>> +          where two independent sensors share the same PHY, is described
->>> +          by two endpoints; endpoint@0 with exactly two-data lanes and
->>> +          endpoint@1 with exactly one data-lane.
->>> +        unevaluatedProperties: false
->>> +
->>> +        patternProperties:
->>> +          "^endpoint(@[0-9a-f]+)?$":
->>
->> This is too wide regexp mask for one or two endpoints only.
-> 
-> Yeah you're right, this is just fluff.
-> 
->>
->>> +            $ref: /schemas/media/video-interfaces.yaml#
->>> +            unevaluatedProperties: false
->>> +            properties:
->>> +              data-lanes:
->>> +                minItems: 1
->>> +                maxItems: 4
->>> +              remote-endpoint: true
->>> +            required:
->>> +              - data-lanes
->>> +              - remote-endpoint
->>> +
->>> +        allOf:
->>> +          - if:
->>> +              required:
->>> +                - endpoint@1
->>> +            then:
->>> +              properties:
->>> +                endpoint@0:
->>> +                  properties:
->>> +                    data-lanes:
->>> +                      minItems: 2
->>> +                      maxItems: 2
->>> +                endpoint@1:
->>> +                  properties:
->>> +                    data-lanes:
->>> +                      maxItems: 1
->>> +              required:
->>> +                - endpoint@0
->>> +
->>> +      port@1:
->>> +        $ref: /schemas/graph.yaml#/$defs/port-base
->>> +        description: Output to the CAMSS CSID controller.
->>> +        unevaluatedProperties: false
->>> +
->>> +        patternProperties:
->>> +          "^endpoint(@[0-9a-f]+)?$":
->>> +            $ref: /schemas/graph.yaml#/$defs/endpoint-base
->>> +            unevaluatedProperties: false
->>> +            properties:
->>> +              remote-endpoint: true
->>> +            required:
->>> +              - remote-endpoint
->>> +
->>> +    required:
->>> +      - port@0
->>> +      - port@1
->>> +
->>> +required:
->>> +  - compatible
->>> +  - reg
->>> +  - "#phy-cells"
->>> +  - clocks
->>> +  - clock-names
->>> +  - interrupts
->>> +  - operating-points-v2
->>> +  - power-domains
->>> +  - power-domain-names
->>> +  - vdda-0p8-supply
->>> +  - vdda-1p2-supply
->>> +  - ports
->>> +
->>> +additionalProperties: false
->>> +
->>> +examples:
->>> +  - |
->>> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
->>> +    #include <dt-bindings/clock/qcom,x1e80100-camcc.h>
->>> +    #include <dt-bindings/clock/qcom,x1e80100-gcc.h>
->>> +    #include <dt-bindings/power/qcom,rpmhpd.h>
->>> +
->>> +    phy@ace4000 {
->>> +        compatible = "qcom,x1e80100-csi2-phy";
->>> +        reg = <0x0ace4000 0x2000>;
->>> +        #phy-cells = <1>;
->>> +
->>> +        clocks = <&camcc CAM_CC_CSIPHY0_CLK>,
->>> +                 <&camcc CAM_CC_CSI0PHYTIMER_CLK>,
->>> +                 <&camcc CAM_CC_CORE_AHB_CLK>;
->>> +        clock-names = "core",
->>> +                      "timer",
->>> +                      "ahb";
->>> +
->>> +        interrupts = <GIC_SPI 477 IRQ_TYPE_EDGE_RISING>;
->>> +
->>> +        operating-points-v2 = <&csiphy_opp_table>;
->>> +
->>> +        power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>,
->>> +                        <&rpmhpd RPMHPD_MMCX>,
->>> +                        <&rpmhpd RPMHPD_MX>;
->>> +        power-domain-names = "top",
->>> +                             "mmcx",
->>> +                             "mx";
->>> +
->>> +        vdda-0p8-supply = <&vreg_l2c_0p8>;
->>> +        vdda-1p2-supply = <&vreg_l1c_1p2>;
->>> +
->>> +        ports {
->>> +            #address-cells = <1>;
->>> +            #size-cells = <0>;
->>> +
->>> +            port@0 {
->>> +                reg = <0>;
->>> +                csiphy0_in: endpoint {
->>> +                    data-lanes = <0 1 2 3>;
->>
->> The previously given review comment about numeration of lanes was
->> not implemented.
-> 
-> I understand your comment but as Nihal pointed out - CAMSS has an
-> established pattern for this - and I think his argument is convincing -
-> we should stick to that pattern.
-
-I disagree with it, since it's a new dt binding description, and the
-issue is known in advance, it should fixed and not ignored.
-
->>
->>> +                    remote-endpoint = <&sensor_out>;
->>> +                };
->>> +            };
->>> +
->>> +            port@1 {
->>> +                reg = <1>;
->>> +                csiphy0_out: endpoint {
->>> +                    remote-endpoint = <&csid_in>;
->>> +                };
->>> +            };
->>> +        };
->>> +    };
->>> +
->>> +    csiphy_opp_table: opp-table {
->>> +        compatible = "operating-points-v2";
->>> +
->>> +        opp-300000000 {
->>> +            opp-hz = /bits/ 64 <300000000>;
->>> +            required-opps = <&rpmhpd_opp_low_svs_d1>,
->>> +                            <&rpmhpd_opp_low_svs_d1>;
->>> +        };
->>> +    };
->>>
+ .../bindings/phy/renesas,usb2-phy.yaml        |   2 +
+ .../reset/renesas,rzg2l-usbphy-ctrl.yaml      |  48 +++++++-
+ arch/arm64/boot/dts/renesas/r9a08g046.dtsi    | 105 ++++++++++++++++++
+ .../boot/dts/renesas/r9a08g046l48-smarc.dts   |  49 ++++++++
+ drivers/phy/renesas/phy-rcar-gen3-usb2.c      |  20 ++--
+ .../regulator/renesas-usb-vbus-regulator.c    |  74 +++++++++++-
+ drivers/reset/reset-rzg2l-usbphy-ctrl.c       |  44 +++++---
+ 7 files changed, 316 insertions(+), 26 deletions(-)
 
 -- 
-Best wishes,
-Vladimir
+2.43.0
+
 
 -- 
 linux-phy mailing list
