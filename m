@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B79C0C43458
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EDD3CC44501
 	for <linux-phy@archiver.kernel.org>; Thu,  9 Jul 2026 19:04:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,59 +12,58 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mNtQO6iGLC4VVJdSMY5tYT+f9ySmqD8cVWZWziTQn0o=; b=Oz3FTcmn+fIxr7
-	I1gc/Dx5yVVW9an1ClwHroGSGbaf7VbkaPZG6aZPS3k+R/hYoCJgsjCRj3C48/WcMYzFwXdSuCsOb
-	1Oe9d2SQHLrj4B4GnhO9vsVj9j6eC53zLi7SoVGsSmyfxTlDXxOeIetzAkvLvpvR+H+5Od+cE1mSV
-	hrHFLDQ3kMA0svWfEzjIECzIAysTIwenuPjmHtVfPrqZYwOXAemdLofM5F37CyC54tL15lhTkBcbH
-	S1MMofufWOdwW/hMGtfbi6rT+k0Dk2aPZPd1Kvrjb4uY1d1XpmHopjuyS2+hfiSbBmTaCL2vewTjs
-	8N7ozzC0ojfFxw8iULEQ==;
+	List-Owner; bh=Kuhyedj0TVz2A0XtNup+mLwGZuHJfgi4OiZm8sClcf0=; b=Xk8g1eHVIAXt4m
+	0LlvD2bO978D+iDui9D5HvJ076/37oVzk53tdhSwG8EuAnnvqxCrlj2/xW5c6K1ZnWMnG9JSbbEmH
+	hER0e/u3aMwS7TSk6y6SY6SOU3kw3DsF6exJRJK3y/lJU3n3YnNk5iRuqeQsxGE9P38WlL4b+rQKZ
+	rcC6i+b5bvmDV/xnKt0gEYtTcdKBR22wVEvOK0m0Cm2IjLoLc3pGiIbqG8gzgPSlVjw6w5WG1za75
+	MOkofINOJm2OxfY5/r4NG/Fcb3dO6zgucYRX62pi6nZujAi4walKeqKQmw2ZCMcRBUiiswR7D2FO1
+	WXdV3XXGC9CaZ9IssqKw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whu2h-00000003OFz-1pAQ;
+	id 1whu2h-00000003OGI-2nTk;
 	Thu, 09 Jul 2026 19:04:15 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whu2Y-00000003OCn-1zuz;
+	id 1whu2Y-00000003OCp-2C3l;
 	Thu, 09 Jul 2026 19:04:06 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
 	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=IDwGHzKb0G48JC1+hRp3wH01XQW5D2hqtFQ6eD02BaA=; b=rBQV/DPH1S31h4SnzfN4v2tDwh
-	ndy+mMp2ZbjmHIn/MSvPiZHyELvs/DwnHthgiteritQWGG6oCYgBVIQRrMicAiKKzjlq91wEMp0hQ
-	B4KGVWhakHEb+b0K2J0wkzN2BV8PTUQpf0u07EL+DVS019q6STG563xk99P0w1Cm2ZCOXW8dfOYlK
-	5UuNl4Af6QeE2e2/twwFRcvaCef5w31MFtfnEdpfuS2fGMlpiu6zAJ3O21Cd5KMoyrJObkCYwAPhe
-	s7NLfUEky0LwMzCKPRA+qXTuV2CNDz5+4617yEIJOuh5nHyPMx+ehSBFKrSWRTUkVaSdOA+CB8/If
-	Ydsllnbw==;
+	bh=0/M83H4/jN/N0EzWc13PFnwEGauG0PFNjZUcyRXiXXc=; b=qRCPB7nMzZWdNulYo7gyk4jSM+
+	91NPVKvaMGwE/8hcbL2c0F9+hTLNXVnTg76G7QweVkEMTYDpTJ4kwYIEN9zJ7pvkn5ivZ2MnEEz+q
+	7b0qXx3P7mtpKcjd4ZaIMPgDBvxDrNC2eYZyDprkKrdXv3oN1g0sf8LsyGufRnnbJrA9pvQBNj7a1
+	3crPkDqFwvysPFX35SZxKBDpaqIk+fz411HlOAPVCRV6yfTgwlmplaLeR+RbqcDMyPEyJZIRZMz4Q
+	ACNojsu0AOGvx6bJBEPvFOo0ckl1w7P/yWbDe0xk+ogKwbF/GaoPhmnwVoQi5p+Vp6pwj/utZ/MCH
+	x2eoVLog==;
 Received: from bali.collaboradmins.com ([148.251.105.195])
 	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1whu1B-00000009TN3-46bo;
+	id 1whu1B-00000009TMy-2evy;
 	Thu, 09 Jul 2026 19:04:03 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1783623751;
-	bh=4X9eFjcBaJHCtFU4hA401y9jwD+dcI01OT23M3giXnI=;
+	bh=zAIpPhnBqJTD75ki7fc8mqrG+OsdwFQx0MWSBhIwC28=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=KxnJFhGOKeOyCNCu/i8D6ZEDuqIQeZgoxARnaGfVInx6BqhovC/tMg/I5igB8XEiu
-	 IVJSaEPUk/JhyzfT9tbESKRZqHheFdQvjjRzbj7B4klF+TAtdsrcpP782w1PBGPf3G
-	 kP3MfXaTWAWlsYhiBAU+cEMSwUz38EMADZe7YVlkktCtYaZixLK91fUVSlJhCkccnf
-	 mVsKKXBG0xU9Ht5qU10jEgtlUA13PzpgWEFhOu8FifcvKCn156Aw2AtvGFVhWav6HS
-	 mWmDB71U9EGtAjAKUNoaBf3DjUfKLovX4sN9dVWfv6dcG/TSeTokOVuVkjyDOYmCTi
-	 B+WLJE+qK5hIA==
+	b=ELam322a6jPqmycCmg5uLQxLpIGe+qschMJgTv66UWWusil457l1sQGNe3Bv22Lnj
+	 4hKcWsOdfeveiW9GXgDt7MsGszCc2Mz2zTQOLUHLtTN3qlXe5kTM2SENYMumsjmkfq
+	 ebN+V6MArocX7YTabVj+Ss9SeLT5Hv0FZfkjrL7j1IXulOva6vyopB70iD+OerAFbK
+	 1g5us25stgYVP1ZjLqnYb97U27lafUWy9CmaNU8IQdbJ/FKXW7VV0tW031M5L8k19z
+	 +vdYvwQtrjr1emOnEAF7MqXe6CNCGIj+RrYXNct3qcfPZ6G7b1jKVINV0LaDjHyvqq
+	 x64ZHzdMX4GBw==
 Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519)
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id EF85A17E127A;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id E2D8C17E1078;
 	Thu, 09 Jul 2026 21:02:30 +0200 (CEST)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id CCA1848006F; Thu, 09 Jul 2026 21:02:29 +0200 (CEST)
+	id C99DB48006D; Thu, 09 Jul 2026 21:02:29 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Thu, 09 Jul 2026 21:02:51 +0200
-Subject: [PATCH v11 28/36] phy: rockchip: usbdp: Only enable USB3 when not
- in high-speed mode
+Date: Thu, 09 Jul 2026 21:02:49 +0200
+Subject: [PATCH v11 26/36] phy: rockchip: usbdp: Avoid xHCI SErrors
 MIME-Version: 1.0
-Message-Id: <20260709-rockchip-usbdp-cleanup-v11-28-a149ac60f76c@collabora.com>
+Message-Id: <20260709-rockchip-usbdp-cleanup-v11-26-a149ac60f76c@collabora.com>
 References: <20260709-rockchip-usbdp-cleanup-v11-0-a149ac60f76c@collabora.com>
 In-Reply-To: <20260709-rockchip-usbdp-cleanup-v11-0-a149ac60f76c@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -81,29 +80,28 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
  linux-kernel@vger.kernel.org, kernel@collabora.com, 
  devicetree@vger.kernel.org, linux-usb@vger.kernel.org, 
- Sebastian Reichel <sebastian.reichel@collabora.com>, 
- Sashiko <sashiko-bot@kernel.org>
+ Sebastian Reichel <sebastian.reichel@collabora.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1088;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1810;
  i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=4X9eFjcBaJHCtFU4hA401y9jwD+dcI01OT23M3giXnI=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpP8EWmJ7UgiPJxlFmypOxTVS7rcM6wogegx
- HInXB9THqAtWokCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqT/BFAAoJENju1/PI
- O/qaxRAP/iRidCIAUqeDbd0g8ayzjTupj4CKv2CwQ6cuJcrG1SfcO7IFg8KwQf3QxO1w2Wxzlu7
- vnwFZmhcb7s9ccPW5BIaRX3MODac/GW0YKWiHSdb5lzalsc0a+UPlq6KaaIg4jRAF8KD/Xpc8jO
- 2GaORYEkJ1ohSWXRtdzjlhBkFAPCUl+/c53TVRPS2tkEDrPy1zdFcQHwoKoQUe9wFVH3wPxJSrE
- r6G/8WG8me9SvhhJr6BvxnKxVrhgOg3FLUrgcBAys+KhY37C+2ZaSJQl/u1CqLkCyImAHSP/za8
- RYP6QXEgsfdb9eAgF4TgXh6xSq08dp2yeX14mPM8tboqddND0Zvx74JZRw8qT3XOFRAQFXslrvf
- 067YQh30FrEfI9ycVfpuuDan28sdl5CdlmlKgZ6nCrXuudmSuVxYchwBroiOM55jaTU1PTCqwJz
- 6dT8ZPyHFJl7kDHR7e8Mhrft17YBgbab/AHN+Oml+cCot/x8nDNszfUVlYE1fNpzusxU92EtpHx
- MN2qob40yTuQwSmpdXL4plelXFP8XCH5oDDhtW5W0aRhHwGYFhJ6T56mkcn7hgdZkTURt4lZxEl
- UnvQ59duz/qw4uk6v8yO6sOwSl2mQgnLd2k7i3CGvHMBuUjdBekXo2zZA/5emk7LF1k8Fo2Pq1r
- 2hlZcHwbAzo/6arXSA3YsFQ==
+ bh=zAIpPhnBqJTD75ki7fc8mqrG+OsdwFQx0MWSBhIwC28=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpP8EUsqxDjyRpYmP/KrlICmmaxYzsBb1exY
+ RFPTxNl4Yyol4kCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqT/BFAAoJENju1/PI
+ O/qa1WkP/0GrRF7v/bnHHnjREPF92AFSWya2wTPYzjOYPZ74aYdJjnjGxizciFrIB8atC/BKotR
+ NKZQ/WSWTbns+caQ43FJqJ3dmtp66jy9wo/WRQ98Oj5FWX3l0CSdBCpvEYpmLQJxZtHDrOnpwRi
+ MTLyqD8nE/fA3Epsz682SFWYXmjmpgrzySWoXyY3kiQhzpJ2eztQCu9NbAyiwRTf9gGd+IDLakC
+ Z3Ip6tlXD3YiVa1WSC2dK7JN10a5avyseQBl/P/6ZQSVMrdgWEkoF4g/3efi2MCozPK2TkRlISM
+ olthzv7MGlgPh9wR7CYmMlnAsr+TKwV45FZS/qSlB/582KzkuCcNKSgsu3uP81DlBSjIWVp2xUq
+ NSKxrfLQi4wW8UL8TFVTHm70bl/pP03UfEUrRKwf0JSs9KkfbRUBc/Ern4kvg6np8wFQ4aeorhq
+ LSErqdSpz7e4SEnfT6pUYs/qmd0wOiDcU7y9LH/0T3Y3jHae8CY7YTSilFs9JmH5ZsJgg8/EV1X
+ NNQ6wDVJeV6+VbdrjGvKbmOWuvUJtutFYgEWtZT0j9FHO8EHhKTzMn6r7CQH1/BymZWEVVv/KRO
+ d2Vkmba5qwrz0livLMVWRJSiB5D/5TSMRKrEv/ZEAXhscdZFGroa+uSlvjJxF8ddyVqh13libZg
+ fIsEVP3JoVpgcX+n5hfMt9g==
 X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
  fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260709_200242_146484_E065C3D5 
-X-CRM114-Status: GOOD (  11.55  )
+X-CRM114-CacheID: sfid-20260709_200241_825339_9434820C 
+X-CRM114-Status: GOOD (  15.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,30 +118,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Ensure that USB3 mode is not accidently enabled during PHY re-init
-for systems that are configured as high-speed only via DT.
+The USBDP PHY provides the PIPE clock to the USB3 controller, which
+means the PHY must be fully running when anything tries to access
+the xHCI registers.
+
+When switching between USB3-only, USB3 + DP and DP-only mode, the
+PHY must be re-initialized resulting in a short period of the PHY
+being disabled. If the DWC3 driver decides to access the xHCI at
+this point the system will fail with an SError.
+
+This patch avoids the problems by disabling the USB3 port before
+re-initializing it. This does a couple of things:
+
+- forces phystatus to 0 from GRF (not from PHY)
+- switches PIPE clock source from PHY to UTMI (safe fallback clock)
+- num_u3_port=0
+
+The last part will be ignored, as DWC3 already probed, but the
+clock re-routing will avoid the SError. There is a small delay
+afterwards to make sure the mux happened. The datasheet gives
+no hints how long it takes, so delay time is a guess.
 
 Fixes: 2f70bbddeb45 ("phy: rockchip: add usbdp combo phy driver")
-Reported-by: Sashiko <sashiko-bot@kernel.org>
-Closes: https://sashiko.dev/#/message/20260626212424.C215E1F000E9%40smtp.kernel.org
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index c645fea67c4d..694688ed387f 100644
+index edee27933d89..9e77513643a3 100644
 --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -1009,7 +1009,7 @@ static int rk_udphy_power_on(struct rk_udphy *udphy, u8 mode)
- 		if (ret)
- 			return ret;
- 
--		if (udphy->mode & UDPHY_MODE_USB)
-+		if (!udphy->hs && udphy->mode & UDPHY_MODE_USB)
+@@ -1000,8 +1000,8 @@ static int rk_udphy_power_on(struct rk_udphy *udphy, u8 mode)
  			rk_udphy_u3_port_disable(udphy, false);
  		udphy->phy_needs_reinit = false;
  	} else if (udphy->phy_needs_reinit) {
+-		if (udphy->mode == UDPHY_MODE_DP)
+-			rk_udphy_u3_port_disable(udphy, true);
++		rk_udphy_u3_port_disable(udphy, true);
++		udelay(10);
+ 
+ 		ret = rk_udphy_init(udphy);
+ 		if (ret)
 
 -- 
 2.53.0
