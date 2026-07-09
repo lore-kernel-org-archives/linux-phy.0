@@ -4,73 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 914EFC44506
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Jul 2026 14:52:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA6B6C43458
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Jul 2026 15:07:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vkjk9+2AjnDfVhCw+kkrjm9QFxVdx2+IumK1kYvG/ec=; b=iaHgINETQCcXLn
-	8wfE6V1R9HDgbfz20H2NI1ZXdqxwORi63AMP1USYb1E+QjZy06Cgrniyj5HRfe6nFDBYmuOXiigQc
-	F8x1Jr/GI2/61AIKJTYLjo9JFEiE9O2TcHByPJmqFBKy6c+LLo5wnPvn55udcOwn8XoRYlHrIzpMw
-	DOdSoShpIOvqIOaqqVAIYWJSKBRjTapNzqSxQrfQmJ7uVypNZ0SNN/Ou1r5bJnGU5m/Gg+HtC1LpA
-	QcdPscnxcjaKIq3HtVR9jxUQl9NhkSdSUmwI06eO7F1Lbfc6IyW4fAwxTIXj4xqWQ/l/VyQbyQM0O
-	vknMGaCWy7FeqdCTIlxA==;
+	List-Owner; bh=PaTYaymD+Xbm4WgMIhjL08npGcQerISZsIu8t189L2M=; b=keDUyDF9pmWMOe
+	c4uwmujM8c+HSbwISHb4ep78YiST4NGQZocm6CTCbr6yRL2TF5lr8UnSOhJlvdi5HUdLZ3eLOGdp+
+	jJvppNF2JTCBYVcBgin2l+PmNXbH+H3FOnBdpf9imW28RlQUjskuyNeeZ+UcS5Oz+aK3TFJaFKG9+
+	Jqfz9/V2zk3819vA3UPTPoSIr5Kj+t/1z/N3GnDiATbISl4FU5ZYEUK8qJwe9FFaeBg5tFVjX9qcK
+	0q/FdC80YPbd55GnJVqlmk+7I59Yb2ukHAG4TvDCk7+t60JlXj9sCxiEaTXG9iLAtirzc4i/YntpL
+	ZcnAyvsUwSVf8npdlA6A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whq6y-00000002qMM-1WU4;
-	Thu, 09 Jul 2026 14:52:24 +0000
+	id 1whqL8-00000002s8T-16zr;
+	Thu, 09 Jul 2026 15:07:02 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whq6x-00000002qM3-1C9F
+	id 1whqL6-00000002s81-2t7P
 	for linux-phy@lists.infradead.org;
-	Thu, 09 Jul 2026 14:52:23 +0000
+	Thu, 09 Jul 2026 15:07:00 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0F3DD435B5;
-	Thu,  9 Jul 2026 14:52:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5B5AB1F000E9;
-	Thu,  9 Jul 2026 14:52:22 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 0B0FC43306;
+	Thu,  9 Jul 2026 15:07:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6E0301F000E9;
+	Thu,  9 Jul 2026 15:06:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1783608742;
-	bh=kPpfLWK7GZV22ZiG2NIQmu1C2IHKk82G2KY81WwAbBM=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc;
-	b=QNMaiOKlMDl4ceuxKymeZQqaD082at//FsgJ3FPVff75M9IRqI3Ax4WUL8uHs7MCT
-	 anqlcE2m7DD/1FJwff9Vs18205VLahMvI66L/tlTBTyhLfjI6L2l705OOaaPQH7+ON
-	 Xg78EmK9hqE7pCo1YN0ypB8upYDN2ERk4wqTCuMbUUwSOikAWuxsdLdI4IJpZED68G
-	 gkGFaA0ceP2b2JRxGbPkESnFN6E/Uxh4Za6yKRcLYTFr3i/F7Chu1nvzsJL+mkSFde
-	 wnLVrTXcpwbzulnRwsgfG2V8J7uOMKfLW95O1nrejYRCOoB21isvE4YuHfc25tEe23
-	 WTO/+/AbqBeHg==
-From: Mattijs Korpershoek <mkorpershoek@kernel.org>
-Date: Thu, 09 Jul 2026 16:52:10 +0200
-Subject: [PATCH v2 2/2] phy: qcom: qmp-usb: Add support for SA8255P
-MIME-Version: 1.0
-Message-Id: <20260709-phy-qcom-qmp-usb-8255-v2-2-3b6c26a45788@kernel.org>
+	s=k20260515; t=1783609619;
+	bh=/VJs97blzsqmmwlpVLCysRWeFjeCYGmhYUplljqOOwY=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=LlxLGFYm93x3jLlhQiMdrn1J3tDZ94vLh3ZAVTyiHNn6sg2FkwUnDcqAj9+YO0FAQ
+	 gZCeS5OAJ0TejRG1l4epXSclxs4exeVafa5G8p5NiDCakA6sNzMUa5ZUCdqt/DPKCW
+	 TD/Qa0GHdC1osZPy80vU4CRMk/AHBtgpRlbmLBxJ0Eo/mMphoQrWicVnTrKj7o8kHS
+	 6cEMjbbTe2kyKe/9zjirAAXnbfYp4L3wnEbnp+XOv9e7WVdtPkgPdnwu1OwLIp2G2W
+	 1uH8IVvHSDCqtwqU+mlb93EToGm593ijouDzCDh+ooPRhVQ6RkwYNu6KU7MkBhEkPR
+	 R8jbuv6uovBmw==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v2 2/2] phy: qcom: qmp-usb: Add support for SA8255P
+To: "Mattijs Korpershoek" <mkorpershoek@kernel.org>
+Cc: robh@kernel.org, neil.armstrong@linaro.org, conor+dt@kernel.org, olteanv@gmail.com, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, vkoul@kernel.org
+In-Reply-To: <20260709-phy-qcom-qmp-usb-8255-v2-2-3b6c26a45788@kernel.org>
 References: <20260709-phy-qcom-qmp-usb-8255-v2-0-3b6c26a45788@kernel.org>
-In-Reply-To: <20260709-phy-qcom-qmp-usb-8255-v2-0-3b6c26a45788@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>
-Cc: Maxime Ripard <mripard@kernel.org>, linux-arm-msm@vger.kernel.org, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, Mattijs Korpershoek <mkorpershoek@kernel.org>, 
- Sriram Dash <quic_sriramd@quicinc.com>, 
- Shazad Hussain <quic_shazhuss@quicinc.com>
-X-Mailer: b4 0.16-dev
-X-Developer-Signature: v=1; a=openpgp-sha256; l=10001;
- i=mkorpershoek@kernel.org; h=from:subject:message-id;
- bh=R/z0y5/HrZRHfrps+nwXnb+g5O7GiVCXS9FwUwT1qT8=;
- b=owEBbQGS/pANAwAKARkNHbRmThk1AcsmYgBqT7We5/0AAdehnaq6h3wIpf32fmJOK0K66Y4aS
- TsLXol0nkCJATMEAAEKAB0WIQQu6UKnth9qvlMTrQAZDR20Zk4ZNQUCak+1ngAKCRAZDR20Zk4Z
- NdD/CAC0HR9xOAU2ehkJ9tV0uDqMHH6+xl4bKKDP85ubW5f0LEDL2acKC/d+o3craCVZmfUGnNA
- UuRivYNwSkoIt1CyBU2xoBzh61KxiWjqfIlbJl23NwEqGDNxuAQX/+uV1/2UtQQhVS6BAJoMfq4
- JRQiBYSclmeH39NYLDTP3jkP3ZnLMny2Ea2LhBSj8Laj2Zu0DS+rSoeSBSYNq4Okyz7dHH66C49
- XZ1iAvchr+vXVOMvvsiTD/Zooz+lQptfsMbL9+HrYZWV75GBDEu7KBJWLbMpSsJiJH2IDys9l1S
- ixShS6BUVEc1SZssgJy9iwUQ+mnEXp/NY1MT203OyGAbEvYx
-X-Developer-Key: i=mkorpershoek@kernel.org; a=openpgp;
- fpr=8234A35B45C0D26B31C1A2DA570338B018144F28
+ <20260709-phy-qcom-qmp-usb-8255-v2-2-3b6c26a45788@kernel.org>
+Date: Thu, 09 Jul 2026 15:06:58 +0000
+Message-Id: <20260709150659.6E0301F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,354 +62,59 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Sriram Dash <quic_sriramd@quicinc.com>
-
-The Qualcomm automotive SA8255p SoC relies on firmware to configure
-platform resources, including clocks, interconnects and TLMM.
-The driver requests resources operations over SCMI using power protocols.
-
-The SCMI power protocol enables or disables resources like clocks,
-interconnect paths, and TLMM (GPIOs) using runtime PM framework APIs,
-such as resume/suspend, to control power on/off.
-
-Power domain "usb_core" controls the GDSC, resets, and TLMM (GPIOs)
-whereas power domain "usb_transfer" controls clocks and interconnects.
-
-In this variant, two disjoint sets of resources are modeled against
-the power domain suppliers which can be turned on/off to achieve modeled
-device states. Two modeled low power states d1 and d3 are supported.
-
-transition: d0 <--> d3  :: both core and transfer suppliers
-transition: d0 <--> d1  :: only transfer supplier
-
-Signed-off-by: Sriram Dash <quic_sriramd@quicinc.com>
-Signed-off-by: Shazad Hussain <quic_shazhuss@quicinc.com>
-Signed-off-by: Mattijs Korpershoek <mkorpershoek@kernel.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 182 ++++++++++++++++++++++++++++----
- 1 file changed, 160 insertions(+), 22 deletions(-)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index c5507168e135..d085c1ad7fb5 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -15,6 +15,7 @@
- #include <linux/of_address.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
-+#include <linux/pm_domain.h>
- #include <linux/regulator/consumer.h>
- #include <linux/reset.h>
- #include <linux/slab.h>
-@@ -1411,6 +1412,9 @@ struct qmp_phy_cfg {
- 
- 	/* Offset from PCS to PCS_USB region */
- 	unsigned int pcs_usb_offset;
-+
-+	/* true, if the device resources are fw managed */
-+	bool fw_managed;
- };
- 
- struct qmp_usb {
-@@ -1437,6 +1441,8 @@ struct qmp_usb {
- 	struct phy *phy;
- 
- 	struct clk_fixed_rate pipe_clk_fixed;
-+
-+	struct dev_pm_domain_list *pd_list;
- };
- 
- static inline void qphy_setbits(void __iomem *base, u32 offset, u32 val)
-@@ -1667,6 +1673,25 @@ static const struct qmp_phy_cfg qcs8300_usb3_uniphy_cfg = {
- 	.regs			= qmp_v5_usb3phy_regs_layout,
- };
- 
-+static const struct qmp_phy_cfg sa8255p_usb3_uniphy_cfg = {
-+	.offsets		= &qmp_usb_offsets_v5,
-+
-+	.serdes_tbl		= sc8280xp_usb3_uniphy_serdes_tbl,
-+	.serdes_tbl_num		= ARRAY_SIZE(sc8280xp_usb3_uniphy_serdes_tbl),
-+	.tx_tbl			= sc8280xp_usb3_uniphy_tx_tbl,
-+	.tx_tbl_num		= ARRAY_SIZE(sc8280xp_usb3_uniphy_tx_tbl),
-+	.rx_tbl			= sc8280xp_usb3_uniphy_rx_tbl,
-+	.rx_tbl_num		= ARRAY_SIZE(sc8280xp_usb3_uniphy_rx_tbl),
-+	.pcs_tbl		= sa8775p_usb3_uniphy_pcs_tbl,
-+	.pcs_tbl_num		= ARRAY_SIZE(sa8775p_usb3_uniphy_pcs_tbl),
-+	.pcs_usb_tbl		= sa8775p_usb3_uniphy_pcs_usb_tbl,
-+	.pcs_usb_tbl_num	= ARRAY_SIZE(sa8775p_usb3_uniphy_pcs_usb_tbl),
-+	.vreg_list		= qmp_phy_vreg_l,
-+	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-+	.regs			= qmp_v5_usb3phy_regs_layout,
-+	.fw_managed		= true,
-+};
-+
- static const struct qmp_phy_cfg sc8280xp_usb3_uniphy_cfg = {
- 	.offsets		= &qmp_usb_offsets_v5,
- 
-@@ -1865,6 +1890,77 @@ static const struct qmp_phy_cfg glymur_usb3_uniphy_cfg = {
- 	.regs			= qmp_v7_usb3phy_regs_layout,
- };
- 
-+static int qmp_usb_domain_attach(struct qmp_usb *qmp)
-+{
-+	struct dev_pm_domain_attach_data pd_data = {
-+		.pd_flags       = PD_FLAG_NO_DEV_LINK,
-+		.pd_names       = (const char *[]) { "usb_transfer", "usb_core" },
-+		.num_pd_names   = 2,
-+	};
-+	struct device *dev = qmp->dev;
-+	int ret;
-+
-+	ret = dev_pm_domain_attach_list(dev, &pd_data, &qmp->pd_list);
-+	if (ret < 0)
-+		return dev_err_probe(dev, ret, "domain attach failed\n");
-+
-+	return 0;
-+}
-+
-+static void qmp_usb_domain_detach(void *data)
-+{
-+	struct qmp_usb *qmp = data;
-+
-+	dev_pm_domain_detach_list(qmp->pd_list);
-+}
-+
-+/* d3_to_d0 transition by turning on all the suppliers */
-+static int qmp_usb_d3_to_d0(struct qmp_usb *qmp)
-+{
-+	int ret;
-+
-+	if (!qmp->pd_list)
-+		return 0;
-+
-+	ret = pm_runtime_resume_and_get(qmp->pd_list->pd_devs[0]);
-+	if (ret)
-+		return ret;
-+
-+	ret = pm_runtime_resume_and_get(qmp->pd_list->pd_devs[1]);
-+	if (ret)
-+		pm_runtime_put_sync(qmp->pd_list->pd_devs[0]);
-+
-+	return ret;
-+}
-+
-+/* d0_to_d3 transition by turning off all the suppliers */
-+static void qmp_usb_d0_to_d3(struct qmp_usb *qmp)
-+{
-+	if (!qmp->pd_list)
-+		return;
-+
-+	pm_runtime_put_sync(qmp->pd_list->pd_devs[1]);
-+	pm_runtime_put_sync(qmp->pd_list->pd_devs[0]);
-+}
-+
-+/* d1_to_d0 transition by turning on the 'transfer' supplier */
-+static int qmp_usb_d1_to_d0(struct qmp_usb *qmp)
-+{
-+	if (!qmp->pd_list)
-+		return 0;
-+
-+	return pm_runtime_resume_and_get(qmp->pd_list->pd_devs[0]);
-+}
-+
-+/* d0_to_d1 transition by turning off the 'transfer' supplier */
-+static void qmp_usb_d0_to_d1(struct qmp_usb *qmp)
-+{
-+	if (!qmp->pd_list)
-+		return;
-+
-+	pm_runtime_put_sync(qmp->pd_list->pd_devs[0]);
-+}
-+
- static int qmp_usb_serdes_init(struct qmp_usb *qmp)
- {
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
-@@ -1884,10 +1980,16 @@ static int qmp_usb_init(struct phy *phy)
- 	void __iomem *pcs = qmp->pcs;
- 	int ret;
- 
-+	ret = qmp_usb_d3_to_d0(qmp);
-+	if (ret < 0) {
-+		dev_err(qmp->dev, "Failed to transition to d0 state\n");
-+		return ret;
-+	}
-+
- 	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
- 	if (ret) {
- 		dev_err(qmp->dev, "failed to enable regulators, err=%d\n", ret);
--		return ret;
-+		goto err_transition_to_d3;
- 	}
- 
- 	ret = reset_control_bulk_assert(qmp->num_resets, qmp->resets);
-@@ -1914,6 +2016,8 @@ static int qmp_usb_init(struct phy *phy)
- 	reset_control_bulk_assert(qmp->num_resets, qmp->resets);
- err_disable_regulators:
- 	regulator_bulk_disable(cfg->num_vregs, qmp->vregs);
-+err_transition_to_d3:
-+	qmp_usb_d0_to_d3(qmp);
- 
- 	return ret;
- }
-@@ -1929,6 +2033,8 @@ static int qmp_usb_exit(struct phy *phy)
- 
- 	regulator_bulk_disable(cfg->num_vregs, qmp->vregs);
- 
-+	qmp_usb_d0_to_d3(qmp);
-+
- 	return 0;
- }
- 
-@@ -2111,6 +2217,8 @@ static int __maybe_unused qmp_usb_runtime_suspend(struct device *dev)
- 	clk_disable_unprepare(qmp->pipe_clk);
- 	clk_bulk_disable_unprepare(qmp->num_clks, qmp->clks);
- 
-+	qmp_usb_d0_to_d1(qmp);
-+
- 	return 0;
- }
- 
-@@ -2126,14 +2234,23 @@ static int __maybe_unused qmp_usb_runtime_resume(struct device *dev)
- 		return 0;
- 	}
- 
-+	ret = qmp_usb_d1_to_d0(qmp);
-+	if (ret < 0) {
-+		dev_err(qmp->dev, "Failed to transition to d0 state\n");
-+		return ret;
-+	}
-+
- 	ret = clk_bulk_prepare_enable(qmp->num_clks, qmp->clks);
--	if (ret)
-+	if (ret) {
-+		qmp_usb_d0_to_d1(qmp);
- 		return ret;
-+	}
- 
- 	ret = clk_prepare_enable(qmp->pipe_clk);
- 	if (ret) {
- 		dev_err(dev, "pipe_clk enable failed, err=%d\n", ret);
- 		clk_bulk_disable_unprepare(qmp->num_clks, qmp->clks);
-+		qmp_usb_d0_to_d1(qmp);
- 		return ret;
- 	}
- 
-@@ -2313,10 +2430,12 @@ static int qmp_usb_parse_dt_legacy(struct qmp_usb *qmp, struct device_node *np)
- 		qmp->pcs_misc = NULL;
- 	}
- 
--	qmp->pipe_clk = devm_get_clk_from_child(dev, np, NULL);
--	if (IS_ERR(qmp->pipe_clk)) {
--		return dev_err_probe(dev, PTR_ERR(qmp->pipe_clk),
--				     "failed to get pipe clock\n");
-+	if (!qmp->cfg->fw_managed) {
-+		qmp->pipe_clk = devm_get_clk_from_child(dev, np, NULL);
-+		if (IS_ERR(qmp->pipe_clk)) {
-+			return dev_err_probe(dev, PTR_ERR(qmp->pipe_clk),
-+					     "failed to get pipe clock\n");
-+		}
- 	}
- 
- 	ret = devm_clk_bulk_get_all(qmp->dev, &qmp->clks);
-@@ -2325,10 +2444,12 @@ static int qmp_usb_parse_dt_legacy(struct qmp_usb *qmp, struct device_node *np)
- 
- 	qmp->num_clks = ret;
- 
--	ret = qmp_usb_reset_init(qmp, usb3phy_legacy_reset_l,
--				 ARRAY_SIZE(usb3phy_legacy_reset_l));
--	if (ret)
--		return ret;
-+	if (!qmp->cfg->fw_managed) {
-+		ret = qmp_usb_reset_init(qmp, usb3phy_legacy_reset_l,
-+					 ARRAY_SIZE(usb3phy_legacy_reset_l));
-+		if (ret)
-+			return ret;
-+	}
- 
- 	return 0;
- }
-@@ -2362,17 +2483,19 @@ static int qmp_usb_parse_dt(struct qmp_usb *qmp)
- 	if (ret)
- 		return ret;
- 
--	qmp->pipe_clk = devm_clk_get(dev, "pipe");
--	if (IS_ERR(qmp->pipe_clk)) {
--		return dev_err_probe(dev, PTR_ERR(qmp->pipe_clk),
--				     "failed to get pipe clock\n");
-+	if (!qmp->cfg->fw_managed) {
-+		qmp->pipe_clk = devm_clk_get(dev, "pipe");
-+		if (IS_ERR(qmp->pipe_clk)) {
-+			return dev_err_probe(dev, PTR_ERR(qmp->pipe_clk),
-+					     "failed to get pipe clock\n");
-+		}
-+
-+		ret = qmp_usb_reset_init(qmp, usb3phy_reset_l,
-+					 ARRAY_SIZE(usb3phy_reset_l));
-+		if (ret)
-+			return ret;
- 	}
- 
--	ret = qmp_usb_reset_init(qmp, usb3phy_reset_l,
--				 ARRAY_SIZE(usb3phy_reset_l));
--	if (ret)
--		return ret;
--
- 	return 0;
- }
- 
-@@ -2395,6 +2518,16 @@ static int qmp_usb_probe(struct platform_device *pdev)
- 	if (!qmp->cfg)
- 		return -EINVAL;
- 
-+	if (qmp->cfg->fw_managed) {
-+		ret = qmp_usb_domain_attach(qmp);
-+		if (ret)
-+			return ret;
-+
-+		ret = devm_add_action_or_reset(dev, qmp_usb_domain_detach, qmp);
-+		if (ret)
-+			return ret;
-+	}
-+
- 	ret = devm_regulator_bulk_get_const(dev, qmp->cfg->num_vregs,
- 					qmp->cfg->vreg_list, &qmp->vregs);
- 	if (ret)
-@@ -2421,9 +2554,11 @@ static int qmp_usb_probe(struct platform_device *pdev)
- 	 */
- 	pm_runtime_forbid(dev);
- 
--	ret = phy_pipe_clk_register(qmp, np);
--	if (ret)
--		goto err_node_put;
-+	if (!qmp->cfg->fw_managed) {
-+		ret = phy_pipe_clk_register(qmp, np);
-+		if (ret)
-+			goto err_node_put;
-+	}
- 
- 	qmp->phy = devm_phy_create(dev, np, &qmp_usb_phy_ops);
- 	if (IS_ERR(qmp->phy)) {
-@@ -2470,6 +2605,9 @@ static const struct of_device_id qmp_usb_of_match_table[] = {
- 	}, {
- 		.compatible = "qcom,qdu1000-qmp-usb3-uni-phy",
- 		.data = &qdu1000_usb3_uniphy_cfg,
-+	}, {
-+		.compatible = "qcom,sa8255p-qmp-usb3-uni-phy",
-+		.data = &sa8255p_usb3_uniphy_cfg,
- 	}, {
- 		.compatible = "qcom,sa8775p-qmp-usb3-uni-phy",
- 		.data = &sa8775p_usb3_uniphy_cfg,
-
--- 
-2.54.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIEluY29ycmVjdCBwb3dl
+ciBkb21haW4gc2VxdWVuY2luZyBkdXJpbmcgZDAvZDMgdHJhbnNpdGlvbnMgcmlza3MgTm9DIGVy
+cm9ycyBhbmQgYnVzIGhhbmdzLgotLQoKLS0tIFBhdGNoIFsyXTogW1BBVENIIHYyIDIvMl0gcGh5
+OiBxY29tOiBxbXAtdXNiOiBBZGQgc3VwcG9ydCBmb3IgU0E4MjU1UCAtLS0KY29tbWl0IGMzMmJi
+ZmQ4MTdjM2Y5ZmNhNGQyOTgyZWEzN2JlMzYzNTQ1MDFjYzcKQXV0aG9yOiBTcmlyYW0gRGFzaCA8
+cXVpY19zcmlyYW1kQHF1aWNpbmMuY29tPgpTdWJqZWN0OiBwaHk6IHFjb206IHFtcC11c2I6IEFk
+ZCBzdXBwb3J0IGZvciBTQTgyNTVQCgpUaGlzIGNvbW1pdCBhZGRzIHN1cHBvcnQgZm9yIHRoZSBT
+QTgyNTVQIFNvQyB0byB0aGUgUU1QIFVTQiBQSFkgZHJpdmVyLiAKSXQgaW50cm9kdWNlcyBmaXJt
+d2FyZS1tYW5hZ2VkIHJlc291cmNlcyB2aWEgU0NNSSB1c2luZyBwb3dlciBwcm90b2NvbHMsCm1h
+bmFnaW5nIHN0YXRlIHRyYW5zaXRpb25zIChkMCwgZDEsIGQzKSB0aHJvdWdoIHRoZSAidXNiX2Nv
+cmUiIGFuZAoidXNiX3RyYW5zZmVyIiBwb3dlciBkb21haW5zLgoKPiBkaWZmIC0tZ2l0IGEvZHJp
+dmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXVzYi5jIGIvZHJpdmVycy9waHkvcXVhbGNv
+bW0vcGh5LXFjb20tcW1wLXVzYi5jCj4gaW5kZXggYzU1MDcxNjhlMTM1NC4uZDA4NWMxYWQ3ZmI1
+YyAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtdXNiLmMK
+PiArKysgYi9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtdXNiLmMKClsgLi4uIF0K
+Cj4gQEAgLTE4NjUsNiArMTg5MCw3NyBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IHFtcF9waHlfY2Zn
+IGdseW11cl91c2IzX3VuaXBoeV9jZmcgPSB7Cj4gIAkucmVncwkJCT0gcW1wX3Y3X3VzYjNwaHlf
+cmVnc19sYXlvdXQsCj4gIH07CgpbIC4uLiBdCgo+ICsvKiBkM190b19kMCB0cmFuc2l0aW9uIGJ5
+IHR1cm5pbmcgb24gYWxsIHRoZSBzdXBwbGllcnMgKi8KPiArc3RhdGljIGludCBxbXBfdXNiX2Qz
+X3RvX2QwKHN0cnVjdCBxbXBfdXNiICpxbXApCj4gK3sKPiArCWludCByZXQ7Cj4gKwo+ICsJaWYg
+KCFxbXAtPnBkX2xpc3QpCj4gKwkJcmV0dXJuIDA7Cj4gKwo+ICsJcmV0ID0gcG1fcnVudGltZV9y
+ZXN1bWVfYW5kX2dldChxbXAtPnBkX2xpc3QtPnBkX2RldnNbMF0pOwo+ICsJaWYgKHJldCkKPiAr
+CQlyZXR1cm4gcmV0Owo+ICsKPiArCXJldCA9IHBtX3J1bnRpbWVfcmVzdW1lX2FuZF9nZXQocW1w
+LT5wZF9saXN0LT5wZF9kZXZzWzFdKTsKPiArCWlmIChyZXQpCj4gKwkJcG1fcnVudGltZV9wdXRf
+c3luYyhxbXAtPnBkX2xpc3QtPnBkX2RldnNbMF0pOwo+ICsKPiArCXJldHVybiByZXQ7Cj4gK30K
+CltTZXZlcml0eTogSGlnaF0KRG9lcyB0aGlzIHNlcXVlbmNlIHBvd2VyIHVwIHRoZSBkb21haW5z
+IGluIHRoZSB3cm9uZyBvcmRlcj8KClRoZSBjb21taXQgbWVzc2FnZSBub3RlcyB0aGF0ICJ1c2Jf
+Y29yZSIgKHdoaWNoIG1hcHMgdG8gcGRfZGV2c1sxXSBiYXNlZCBvbiAKdGhlIHFtcF91c2JfZG9t
+YWluX2F0dGFjaCBvcmRlcikgY29udHJvbHMgdGhlIEdEU0MsIHdoaWxlICJ1c2JfdHJhbnNmZXIi
+IAoocGRfZGV2c1swXSkgY29udHJvbHMgY2xvY2tzIGFuZCBpbnRlcmNvbm5lY3RzLgoKRW5hYmxp
+bmcgY2xvY2tzIGJlZm9yZSB0aGUgR0RTQyBmb3VuZGF0aW9uYWwgcG93ZXIgZG9tYWluIGlzIGVu
+YWJsZWQgdHlwaWNhbGx5CnJlc3VsdHMgaW4gdW5wb3dlcmVkIHJlZ2lzdGVyIGFjY2VzcyBvbiBR
+dWFsY29tbSBTb0NzLCB3aGljaCBjb3VsZCB0cmlnZ2VyIGEKTmV0d29yay1vbi1DaGlwIChOb0Mp
+IGVycm9yIGFuZCBidXMgaGFuZy4gU2hvdWxkIHBkX2RldnNbMV0gYmUgcmVzdW1lZCBiZWZvcmUK
+cGRfZGV2c1swXT8KCj4gKwo+ICsvKiBkMF90b19kMyB0cmFuc2l0aW9uIGJ5IHR1cm5pbmcgb2Zm
+IGFsbCB0aGUgc3VwcGxpZXJzICovCj4gK3N0YXRpYyB2b2lkIHFtcF91c2JfZDBfdG9fZDMoc3Ry
+dWN0IHFtcF91c2IgKnFtcCkKPiArewo+ICsJaWYgKCFxbXAtPnBkX2xpc3QpCj4gKwkJcmV0dXJu
+Owo+ICsKPiArCXBtX3J1bnRpbWVfcHV0X3N5bmMocW1wLT5wZF9saXN0LT5wZF9kZXZzWzFdKTsK
+PiArCXBtX3J1bnRpbWVfcHV0X3N5bmMocW1wLT5wZF9saXN0LT5wZF9kZXZzWzBdKTsKPiArfQoK
+W1NldmVyaXR5OiBIaWdoXQpTaW1pbGFybHksIGNvdWxkIHRoaXMgY2F1c2UgYSBidXMgaGFuZyBk
+dXJpbmcgdGhlIGQwIHRvIGQzIHRyYW5zaXRpb24/CgpQdXR0aW5nICJ1c2JfY29yZSIgKHBkX2Rl
+dnNbMV0pIGJlZm9yZSAidXNiX3RyYW5zZmVyIiAocGRfZGV2c1swXSkgZGlzYWJsZXMgCnRoZSBH
+RFNDIGJlZm9yZSB0aGUgY2xvY2tzLiBTaG91bGRuJ3QgdGhlIEdEU0MgYmUgZGlzYWJsZWQgbGFz
+dCB0byBwcmV2ZW50IAp1bnBvd2VyZWQgaGFyZHdhcmUgY2xvY2sgYWNjZXNzPwoKLS0gClNhc2hp
+a28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDcwOS1w
+aHktcWNvbS1xbXAtdXNiLTgyNTUtdjItMC0zYjZjMjZhNDU3ODhAa2VybmVsLm9yZz9wYXJ0PTIK
+Ci0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3Jn
+Cmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
