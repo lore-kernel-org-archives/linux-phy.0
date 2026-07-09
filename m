@@ -4,54 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49545C43458
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Jul 2026 14:03:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A685C43458
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Jul 2026 14:18:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VSXYm0BxOadKn7Dc7HlJmKSarww6p74T4uwpJScvuc4=; b=2LxuNHM8wtSFX1
-	E8ZHB1mRuaScbRKdCnN1yf+CJpiLYa0s8jaBHyN5SG9LoJZtHpdGhdTDNEtowhpqTkG6YCMo/VT2+
-	sayKhBI0ZqkxjkmEyuU4OuX2jcimbQ0UGqWkHFKlI0axSjiFwrw9cL7NPLGYEeqe7L38oE4LHAPTv
-	nTMz8ZsAHn37jCQc10v1ztuaCTZcbVE7R71XBd3CDuFCCQFEpiMnbdbXAOOxLGJITqlRJBO3qdi7s
-	MKKlxsIA6k8Q3yhJxBmwRk7FKbMbe7VESe/22LXnNCI9HzOfMPqgeOA8JiZvAI82rAQEIviDeUbSF
-	ZbryHbA8zsKTDNf+A39w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6WBRszp/rWyO6dRvknBwzbK6mCV0tU9qqt83fr+vbgA=; b=Nm1wCfGCmJsHKk
+	2fD/P7QZmZVsfWOZODdMf0ilgYm/wiFZw2LGjZT85sWXXlX6U4ra7NLT8tbwDcKUgNYP1jYkkAr9J
+	55eH0qrO79dTQg3yU7Nq45AWRvswDAgn7Xcma9Fp5Qdo39NI9HsbbgrDI63HQ6p/1KIHkRWzvA3Y6
+	5jREIiuHROoMoV62j7AjkyhTPFbb+kRUk5+F5TjWnRacB4z7mL9dsxkjfq6/W/baXOBX97Bz7sGkh
+	nfNKXmCfVQPDN2DG09pbal4YzACXqOfUtpqJbtNiNAUM3xTB47CZ0+Tz/qbcj2PHmdsW7tGohI2JC
+	Q72mimBcXMNU6A4eDehg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whpLF-00000002hDW-3zeb;
-	Thu, 09 Jul 2026 14:03:05 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1whpa8-00000002jfu-44f6;
+	Thu, 09 Jul 2026 14:18:28 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whpLE-00000002hCQ-1wBg
+	id 1whpa7-00000002jfk-1I6m
 	for linux-phy@lists.infradead.org;
-	Thu, 09 Jul 2026 14:03:04 +0000
+	Thu, 09 Jul 2026 14:18:27 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 686FA6137C;
-	Thu,  9 Jul 2026 14:03:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3553F1F000E9;
-	Thu,  9 Jul 2026 14:03:00 +0000 (UTC)
-From: Claudiu Beznea <claudiu.beznea+renesas@tuxon.dev>
-To: yoshihiro.shimoda.uh@renesas.com,
-	vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	geert+renesas@glider.be,
-	magnus.damm@gmail.com,
-	prabhakar.mahadev-lad.rj@bp.renesas.com
-Cc: claudiu.beznea@tuxon.dev,
-	linux-renesas-soc@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
-	stable@vger.kernel.org,
-	Pavel Machek <pavel@nabladev.com>,
-	Nobuhiro Iwamatsu <iwamatsu@nigauri.org>
-Subject: [PATCH v4] phy: renesas: rcar-gen3-usb2: Avoid long delay in atomic context
-Date: Thu,  9 Jul 2026 17:02:57 +0300
-Message-ID: <20260709140257.843685-1-claudiu.beznea+renesas@tuxon.dev>
-X-Mailer: git-send-email 2.43.0
-MIME-Version: 1.0
+	by sea.source.kernel.org (Postfix) with ESMTP id C227F41246;
+	Thu,  9 Jul 2026 14:18:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5511B1F000E9;
+	Thu,  9 Jul 2026 14:18:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1783606706;
+	bh=FYf4LaeZb21q7QVm5XCYWW8IvRUenakOJim6vJ1uvi0=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=SVvYhcbfG6HMihS9ZZ0CLuihh3br18t3IA/HWJXChyFS/4zzIYkWvXkkhiZuuGDmR
+	 e19Z1//RqrAt3EKHmN0lfdXBkDv9siFL4+Hwr0BTOBo5xxIU96z8K7txxYOPSvgqDi
+	 pg/5ks625cObDQbbU+SFIJTq/6yMYdalug5uQ2y/vxI7F+RuPVPbhrCe3WlgNj/AEG
+	 Bvwe22+N4NjmkYj1S3ML5s21n7TKj7R9NjZW5FmvqE18xAkYEieoYtiE6OTPndA7Nz
+	 a/DUPmrhlZxGWf6uQShe6IvHAjzPqcuhZauZZ1YkCY5YwK3JTdu6ewDWINRhzu0qyX
+	 eRvWjM2xV2rfg==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v4] phy: renesas: rcar-gen3-usb2: Avoid long delay in
+ atomic context
+To: "Claudiu Beznea" <claudiu.beznea+renesas@tuxon.dev>
+Cc: linux-phy@lists.infradead.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com, wsa+renesas@sang-engineering.com
+In-Reply-To: <20260709140257.843685-1-claudiu.beznea+renesas@tuxon.dev>
+References: <20260709140257.843685-1-claudiu.beznea+renesas@tuxon.dev>
+Date: Thu, 09 Jul 2026 14:18:25 +0000
+Message-Id: <20260709141826.5511B1F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,515 +62,242 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-
-The OTG PHY initialization sequence needs to wait for 20 ms at a specific
-step, as described in commit 72c0339c115b ("phy: renesas:
-rcar-gen3-usb2: follow the hardware manual procedure").
-
-Commit 55a387ebb921 ("phy: renesas: rcar-gen3-usb2: Lock around hardware
-registers and driver data") tried to address various problems in the
-rcar-gen3-usb2 driver and converted the mutex protecting HW register
-accesses to a spin lock, leaving, however, a long delay in the critical
-section protected by the spin lock. This may become a problem,
-especially on RT kernels.
-
-To address this, release the spin lock before sleeping for 20 ms as
-required by the HW manual and reacquire it afterwards. To avoid other
-threads entering the critical section and configuring the HW while the
-software is waiting for the OTG initialization to complete, introduce the
-otg_initializing variable alongside the otg_init_done completion. Any
-other thread trying to configure the HW while the OTG PHY initialization
-is in progress waits for the completion instead of immediately returning
-errors to PHY users. The IRQs were also disabled while waiting for the OTG
-PHY initialization to complete, as the interrupt handler may also apply HW
-settings.
-
-The OTG can only be initialized once. It is initialized by the first PHY
-that calls struct phy_ops::rcar_gen3_phy_usb2_init().
-
-To avoid failures when multiple PHYs call struct
-phy_ops::rcar_gen3_phy_usb2_init() simultaneously, and the PHY responsible
-for initializing the OTG either fails or deinit quiqly and another PHY
-takes over the PHY init role), the code waiting for the
-channel->otg_init_done completion retries up to NUM_OF_PHYS times.
-
-Fixes: 55a387ebb921 ("phy: renesas: rcar-gen3-usb2: Lock around hardware registers and driver data")
-Cc: stable@vger.kernel.org
-Reported-by: Pavel Machek <pavel@nabladev.com>
-Closes: https://lore.kernel.org/all/afhkX2Ys2BG1gnqy@duo.ucw.cz
-Reported-by: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>
-Closes: https://lore.kernel.org/all/afhkX2Ys2BG1gnqy@duo.ucw.cz
-Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
----
-
-Changes in v4:
-- increase the timeout to 120 ms and added a macro for it USB2_OTG_INIT_TIMEOUT
-- add retry mechanism when waiting for otg_init_done completion
-- read the status registers in rcar_gen3_phy_usb2_irq() before returning,
-  in case an unexpected IRQ is received while waiting for OTG init
-- mask channel->phy_data->obint_enable_bits in rcar_gen3_phy_usb2_irqs_mask_all()
-- updated the patch description
-
-Changes in v3:
-- initialize ret value in role_store()
-- jump to exit label in role_store() to have the same exit path
-- dropped scoped_guard() in rcar_gen3_phy_usb2_irq() to avoid mixing
-  goto statements with scoped_guard()
-- take into account USB2_INT_ENABLE_UCOM_INTEN when masking/unmasking IRQs
-- increase the completion timeout to 40ms
-- in rcar_gen3_phy_usb2_power_on() disable regulator on failure path
-
-Changes in v2:
-- dropped the rcar_gen3_phy_wait_otg_init() and used inline the code; with it
-  the comment that was previously in rcar_gen3_phy_wait_otg_init() was added
-  in struct rcar_gen3_chan for above the org_initializing variable
-- dropped READ_ONCE()/WRITE_ONCE() arround struct rcar_gen3_chan::otg_initializing
-- checked for struct rcar_gen3_chan::otg_initializing before checking for
-  rcar_gen3_is_any_otg_rphy_initialized() in all code places
-- added rcar_gen3_phy_usb2_irqs_mask_all() and rcar_gen3_phy_usb2_irqs_unmask()
-  to mask/unmask only the interrupts at the controller level since the line is
-  shared
-- along with it dropped disable_irq_nosync()/enable_irq() from v1 along with
-  struct rcar_gen3_chan::irq
-- increased the completion timeout to 30 ms
-
- drivers/phy/renesas/phy-rcar-gen3-usb2.c | 258 +++++++++++++++++++----
- 1 file changed, 217 insertions(+), 41 deletions(-)
-
-diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-index 9a45d840efeb..e1873928cc84 100644
---- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-+++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-@@ -106,6 +106,13 @@
- /*  RZ/G2L specific */
- #define USB2_LINECTRL1_USB2_IDMON	BIT(0)
- 
-+/*
-+ * The OTG initialization is expected to finish in 20ms. Choose a large enough
-+ * timeout to avoid waiters exit prematurely the waiting section under heavy
-+ * CPU load.
-+ */
-+#define USB2_OTG_INIT_TIMEOUT		msecs_to_jiffies(120)
-+
- #define NUM_OF_PHYS			4
- enum rcar_gen3_phy_index {
- 	PHY_INDEX_BOTH_HC,
-@@ -138,12 +145,20 @@ struct rcar_gen3_chan {
- 	struct rcar_gen3_phy rphys[NUM_OF_PHYS];
- 	struct regulator *vbus;
- 	struct work_struct work;
-+	struct completion otg_init_done;
- 	spinlock_t lock;	/* protects access to hardware and driver data structure. */
- 	enum usb_dr_mode dr_mode;
- 	bool extcon_host;
- 	bool is_otg_channel;
- 	bool uses_otg_pins;
- 	bool otg_internal_reg;
-+	/*
-+	 * The OTG can be initialized only once and needs to release the spinlock
-+	 * and wait for 20 ms due to hardware constraints. If a thread executes
-+	 * PHY configuration code while the OTG PHY is waiting for the 20 ms, the
-+	 * thread will have to wait for the OTG PHY initialization to complete.
-+	 */
-+	bool otg_initializing;
- };
- 
- struct rcar_gen3_phy_drv_data {
-@@ -392,26 +407,52 @@ static ssize_t role_store(struct device *dev, struct device_attribute *attr,
- 	struct rcar_gen3_chan *ch = dev_get_drvdata(dev);
- 	bool is_b_device;
- 	enum phy_mode cur_mode, new_mode;
-+	int retries = NUM_OF_PHYS;
-+	unsigned long flags;
-+	int ret = -EIO;
- 
--	guard(spinlock_irqsave)(&ch->lock);
-+	spin_lock_irqsave(&ch->lock, flags);
- 
--	if (!ch->is_otg_channel || !rcar_gen3_is_any_otg_rphy_initialized(ch))
--		return -EIO;
-+	if (!ch->is_otg_channel)
-+		goto unlock;
-+
-+	while (retries-- && ch->otg_initializing) {
-+		spin_unlock_irqrestore(&ch->lock, flags);
-+
-+		ret = wait_for_completion_timeout(&ch->otg_init_done,
-+						  USB2_OTG_INIT_TIMEOUT);
-+		ret = ret ? 0 : -ETIMEDOUT;
-+		if (ret && !retries)
-+			goto exit;
-+
-+		spin_lock_irqsave(&ch->lock, flags);
-+	}
-+
-+	if (!rcar_gen3_is_any_otg_rphy_initialized(ch)) {
-+		ret = -EIO;
-+		goto unlock;
-+	}
- 
--	if (sysfs_streq(buf, "host"))
-+	if (sysfs_streq(buf, "host")) {
- 		new_mode = PHY_MODE_USB_HOST;
--	else if (sysfs_streq(buf, "peripheral"))
-+	} else if (sysfs_streq(buf, "peripheral")) {
- 		new_mode = PHY_MODE_USB_DEVICE;
--	else
--		return -EINVAL;
-+	} else {
-+		ret = -EINVAL;
-+		goto unlock;
-+	}
- 
- 	/* is_b_device: true is B-Device. false is A-Device. */
- 	is_b_device = rcar_gen3_check_id(ch);
- 	cur_mode = rcar_gen3_get_phy_mode(ch);
- 
- 	/* If current and new mode is the same, this returns the error */
--	if (cur_mode == new_mode)
--		return -EINVAL;
-+	if (cur_mode == new_mode) {
-+		ret = -EINVAL;
-+		goto unlock;
-+	}
-+
-+	ret = 0;
- 
- 	if (new_mode == PHY_MODE_USB_HOST) { /* And is_host must be false */
- 		if (!is_b_device)	/* A-Peripheral */
-@@ -425,7 +466,10 @@ static ssize_t role_store(struct device *dev, struct device_attribute *attr,
- 			rcar_gen3_init_for_peri(ch);
- 	}
- 
--	return count;
-+unlock:
-+	spin_unlock_irqrestore(&ch->lock, flags);
-+exit:
-+	return ret ?: count;
- }
- 
- static ssize_t role_show(struct device *dev, struct device_attribute *attr,
-@@ -441,14 +485,11 @@ static ssize_t role_show(struct device *dev, struct device_attribute *attr,
- }
- static DEVICE_ATTR_RW(role);
- 
--static void rcar_gen3_init_otg(struct rcar_gen3_chan *ch)
-+static void rcar_gen3_init_otg_phase0(struct rcar_gen3_chan *ch)
- {
- 	void __iomem *usb2_base = ch->base;
- 	u32 val;
- 
--	if (!ch->is_otg_channel || rcar_gen3_is_any_otg_rphy_initialized(ch))
--		return;
--
- 	/* Should not use functions of read-modify-write a register */
- 	val = readl(usb2_base + USB2_LINECTRL1);
- 	val = (val & ~USB2_LINECTRL1_DP_RPD) | USB2_LINECTRL1_DPRPD_EN |
-@@ -471,7 +512,11 @@ static void rcar_gen3_init_otg(struct rcar_gen3_chan *ch)
- 			writel(val | USB2_ADPCTRL_IDPULLUP, usb2_base + USB2_ADPCTRL);
- 		}
- 	}
--	mdelay(20);
-+}
-+
-+static void rcar_gen3_init_otg_phase1(struct rcar_gen3_chan *ch)
-+{
-+	void __iomem *usb2_base = ch->base;
- 
- 	writel(0xffffffff, usb2_base + USB2_OBINTSTA);
- 	writel(ch->phy_data->obint_enable_bits, usb2_base + USB2_OBINTEN);
-@@ -502,6 +547,7 @@ static irqreturn_t rcar_gen3_phy_usb2_irq(int irq, void *_ch)
- 	void __iomem *usb2_base = ch->base;
- 	struct device *dev = ch->dev;
- 	irqreturn_t ret = IRQ_NONE;
-+	unsigned long flags;
- 	u32 status;
- 
- 	pm_runtime_get_noresume(dev);
-@@ -509,33 +555,91 @@ static irqreturn_t rcar_gen3_phy_usb2_irq(int irq, void *_ch)
- 	if (pm_runtime_suspended(dev))
- 		goto rpm_put;
- 
--	scoped_guard(spinlock, &ch->lock) {
--		status = readl(usb2_base + USB2_OBINTSTA);
--		if (status & ch->phy_data->obint_enable_bits) {
--			dev_vdbg(dev, "%s: %08x\n", __func__, status);
--			if (ch->phy_data->vblvl_ctrl)
--				writel(USB2_OBINTSTA_CLEAR, usb2_base + USB2_OBINTSTA);
--			else
--				writel(ch->phy_data->obint_enable_bits, usb2_base + USB2_OBINTSTA);
--			rcar_gen3_device_recognition(ch);
--			rcar_gen3_configure_vblvl_ctrl(ch);
--			ret = IRQ_HANDLED;
--		}
-+	spin_lock_irqsave(&ch->lock, flags);
-+
-+	status = readl(usb2_base + USB2_OBINTSTA);
-+	if (status & ch->phy_data->obint_enable_bits) {
-+		dev_vdbg(dev, "%s: %08x\n", __func__, status);
-+		if (ch->phy_data->vblvl_ctrl)
-+			writel(USB2_OBINTSTA_CLEAR, usb2_base + USB2_OBINTSTA);
-+		else
-+			writel(ch->phy_data->obint_enable_bits, usb2_base + USB2_OBINTSTA);
-+
-+		ret = IRQ_HANDLED;
-+
-+		/* This should not happen! */
-+		if (ch->otg_initializing)
-+			goto unlock;
-+
-+		rcar_gen3_device_recognition(ch);
-+		rcar_gen3_configure_vblvl_ctrl(ch);
- 	}
- 
-+unlock:
-+	spin_unlock_irqrestore(&ch->lock, flags);
- rpm_put:
- 	pm_runtime_put_noidle(dev);
- 	return ret;
- }
- 
-+static void rcar_gen3_phy_usb2_irqs_mask_all(struct rcar_gen3_chan *channel,
-+					     u32 *masked_irqs_bits)
-+{
-+	u32 val, bitmask = USB2_INT_ENABLE_UCOM_INTEN;
-+	void __iomem *usb2_base = channel->base;
-+
-+	for (unsigned int i = 0; i < NUM_OF_PHYS; i++)
-+		bitmask |= channel->rphys[i].int_enable_bits;
-+
-+	val = readl(usb2_base + USB2_INT_ENABLE);
-+	*masked_irqs_bits = val & bitmask;
-+	/*
-+	 * Don't report channel->phy_data->obint_enable_bits IRQs. These are
-+	 * unmasked anyway in rcar_gen3_init_otg_phase1().
-+	 */
-+	val &= ~(bitmask | channel->phy_data->obint_enable_bits);
-+	writel(val, usb2_base + USB2_INT_ENABLE);
-+}
-+
-+static void rcar_gen3_phy_usb2_irqs_unmask(struct rcar_gen3_chan *channel,
-+					   u32 irqs_bits)
-+{
-+	u32 val, bitmask = USB2_INT_ENABLE_UCOM_INTEN;
-+	void __iomem *usb2_base = channel->base;
-+
-+	for (unsigned int i = 0; i < NUM_OF_PHYS; i++)
-+		bitmask |= channel->rphys[i].int_enable_bits;
-+
-+	val = readl(usb2_base + USB2_INT_ENABLE);
-+	val &= ~bitmask;
-+	val |= irqs_bits;
-+	writel(val, usb2_base + USB2_INT_ENABLE);
-+}
-+
- static int rcar_gen3_phy_usb2_init(struct phy *p)
- {
- 	struct rcar_gen3_phy *rphy = phy_get_drvdata(p);
- 	struct rcar_gen3_chan *channel = rphy->ch;
- 	void __iomem *usb2_base = channel->base;
-+	int retries = NUM_OF_PHYS;
-+	unsigned long flags;
- 	u32 val;
- 
--	guard(spinlock_irqsave)(&channel->lock);
-+	spin_lock_irqsave(&channel->lock, flags);
-+
-+	while (retries-- && channel->otg_initializing) {
-+		int ret;
-+
-+		spin_unlock_irqrestore(&channel->lock, flags);
-+
-+		ret = wait_for_completion_timeout(&channel->otg_init_done,
-+						  USB2_OTG_INIT_TIMEOUT);
-+		ret = ret ? 0 : -ETIMEDOUT;
-+		if (ret && !retries)
-+			return ret;
-+
-+		spin_lock_irqsave(&channel->lock, flags);
-+	}
- 
- 	/* Initialize USB2 part */
- 	val = readl(usb2_base + USB2_INT_ENABLE);
-@@ -548,8 +652,24 @@ static int rcar_gen3_phy_usb2_init(struct phy *p)
- 	}
- 
- 	/* Initialize otg part (only if we initialize a PHY with IRQs). */
--	if (rphy->int_enable_bits)
--		rcar_gen3_init_otg(channel);
-+	if (rphy->int_enable_bits && channel->is_otg_channel &&
-+	    !rcar_gen3_is_any_otg_rphy_initialized(channel)) {
-+		u32 masked_irq_bits = 0;
-+
-+		rcar_gen3_init_otg_phase0(channel);
-+		rcar_gen3_phy_usb2_irqs_mask_all(channel, &masked_irq_bits);
-+		reinit_completion(&channel->otg_init_done);
-+		channel->otg_initializing = true;
-+		spin_unlock_irqrestore(&channel->lock, flags);
-+
-+		fsleep(20000);
-+
-+		spin_lock_irqsave(&channel->lock, flags);
-+		channel->otg_initializing = false;
-+		complete_all(&channel->otg_init_done);
-+		rcar_gen3_phy_usb2_irqs_unmask(channel, masked_irq_bits);
-+		rcar_gen3_init_otg_phase1(channel);
-+	}
- 
- 	if (channel->phy_data->vblvl_ctrl) {
- 		/* SIDDQ mode release */
-@@ -568,6 +688,8 @@ static int rcar_gen3_phy_usb2_init(struct phy *p)
- 
- 	rphy->initialized = true;
- 
-+	spin_unlock_irqrestore(&channel->lock, flags);
-+
- 	return 0;
- }
- 
-@@ -576,9 +698,25 @@ static int rcar_gen3_phy_usb2_exit(struct phy *p)
- 	struct rcar_gen3_phy *rphy = phy_get_drvdata(p);
- 	struct rcar_gen3_chan *channel = rphy->ch;
- 	void __iomem *usb2_base = channel->base;
-+	int retries = NUM_OF_PHYS;
-+	unsigned long flags;
- 	u32 val;
- 
--	guard(spinlock_irqsave)(&channel->lock);
-+	spin_lock_irqsave(&channel->lock, flags);
-+
-+	while (retries-- && channel->otg_initializing) {
-+		int ret;
-+
-+		spin_unlock_irqrestore(&channel->lock, flags);
-+
-+		ret = wait_for_completion_timeout(&channel->otg_init_done,
-+						  USB2_OTG_INIT_TIMEOUT);
-+		ret = ret ? 0 : -ETIMEDOUT;
-+		if (ret && !retries)
-+			return ret;
-+
-+		spin_lock_irqsave(&channel->lock, flags);
-+	}
- 
- 	rphy->initialized = false;
- 
-@@ -588,6 +726,7 @@ static int rcar_gen3_phy_usb2_exit(struct phy *p)
- 		val &= ~USB2_INT_ENABLE_UCOM_INTEN;
- 	writel(val, usb2_base + USB2_INT_ENABLE);
- 
-+	spin_unlock_irqrestore(&channel->lock, flags);
- 	return 0;
- }
- 
-@@ -596,6 +735,8 @@ static int rcar_gen3_phy_usb2_power_on(struct phy *p)
- 	struct rcar_gen3_phy *rphy = phy_get_drvdata(p);
- 	struct rcar_gen3_chan *channel = rphy->ch;
- 	void __iomem *usb2_base = channel->base;
-+	int retries = NUM_OF_PHYS;
-+	unsigned long flags;
- 	u32 val;
- 	int ret = 0;
- 
-@@ -605,7 +746,19 @@ static int rcar_gen3_phy_usb2_power_on(struct phy *p)
- 			return ret;
- 	}
- 
--	guard(spinlock_irqsave)(&channel->lock);
-+	spin_lock_irqsave(&channel->lock, flags);
-+
-+	while (retries-- && channel->otg_initializing) {
-+		spin_unlock_irqrestore(&channel->lock, flags);
-+
-+		ret = wait_for_completion_timeout(&channel->otg_init_done,
-+						  USB2_OTG_INIT_TIMEOUT);
-+		ret = ret ? 0 : -ETIMEDOUT;
-+		if (ret && !retries)
-+			goto disable_regulator;
-+
-+		spin_lock_irqsave(&channel->lock, flags);
-+	}
- 
- 	if (!rcar_gen3_are_all_rphys_power_off(channel))
- 		goto out;
-@@ -620,27 +773,49 @@ static int rcar_gen3_phy_usb2_power_on(struct phy *p)
- 	/* The powered flag should be set for any other phys anyway */
- 	rphy->powered = true;
- 
--	return 0;
-+	spin_unlock_irqrestore(&channel->lock, flags);
-+
-+disable_regulator:
-+	if (ret && channel->vbus && !channel->otg_internal_reg)
-+		regulator_disable(channel->vbus);
-+
-+	return ret;
- }
- 
- static int rcar_gen3_phy_usb2_power_off(struct phy *p)
- {
- 	struct rcar_gen3_phy *rphy = phy_get_drvdata(p);
- 	struct rcar_gen3_chan *channel = rphy->ch;
-+	int retries = NUM_OF_PHYS;
-+	unsigned long flags;
- 	int ret = 0;
- 
--	scoped_guard(spinlock_irqsave, &channel->lock) {
--		rphy->powered = false;
-+	spin_lock_irqsave(&channel->lock, flags);
- 
--		if (rcar_gen3_are_all_rphys_power_off(channel)) {
--			u32 val = readl(channel->base + USB2_USBCTR);
-+	while (retries-- && channel->otg_initializing) {
-+		spin_unlock_irqrestore(&channel->lock, flags);
- 
--			val |= USB2_USBCTR_PLL_RST;
--			writel(val, channel->base + USB2_USBCTR);
--		}
-+		ret = wait_for_completion_timeout(&channel->otg_init_done,
-+						  USB2_OTG_INIT_TIMEOUT);
-+		ret = ret ? 0 : -ETIMEDOUT;
-+		if (ret && !retries)
-+			return ret;
-+
-+		spin_lock_irqsave(&channel->lock, flags);
- 	}
- 
--	if (channel->vbus && !channel->otg_internal_reg)
-+	rphy->powered = false;
-+
-+	if (rcar_gen3_are_all_rphys_power_off(channel)) {
-+		u32 val = readl(channel->base + USB2_USBCTR);
-+
-+		val |= USB2_USBCTR_PLL_RST;
-+		writel(val, channel->base + USB2_USBCTR);
-+	}
-+
-+	spin_unlock_irqrestore(&channel->lock, flags);
-+
-+	if (!ret && channel->vbus && !channel->otg_internal_reg)
- 		ret = regulator_disable(channel->vbus);
- 
- 	return ret;
-@@ -1007,6 +1182,7 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
- 		return ret;
- 
- 	spin_lock_init(&channel->lock);
-+	init_completion(&channel->otg_init_done);
- 	for (i = 0; i < NUM_OF_PHYS; i++) {
- 		channel->rphys[i].phy = devm_phy_create(dev, NULL,
- 							channel->phy_data->phy_usb2_ops);
--- 
-2.43.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+NyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpOZXcgaXNzdWVzOgotIFtIaWdoXSBB
+IGxpbmdlcmluZyBgLUVUSU1FRE9VVGAgZnJvbSBhIHByZXZpb3VzIGxvb3AgaXRlcmF0aW9uIGNh
+dXNlcyBzcHVyaW91cyBmYWlsdXJlcyBhbmQgcmVzb3VyY2UgbGVha3MgaW4gYHJjYXJfZ2VuM19w
+aHlfdXNiMl9wb3dlcl9vbigpYCBhbmQgYHJjYXJfZ2VuM19waHlfdXNiMl9wb3dlcl9vZmYoKWAu
+Ci0gW0hpZ2hdIGByY2FyX2dlbjNfcGh5X3VzYjJfaXJxc19tYXNrX2FsbCgpYCBlcnJvbmVvdXNs
+eSBjbGVhcnMgYG9iaW50X2VuYWJsZV9iaXRzYCBmcm9tIGBVU0IyX0lOVF9FTkFCTEVgIGluc3Rl
+YWQgb2YgYFVTQjJfT0JJTlRFTmAsIGZhaWxpbmcgdG8gbWFzayBPVEcgaW50ZXJydXB0cyBhbmQg
+Y29ycnVwdGluZyBnZW5lcmFsIGludGVycnVwdCBlbmFibGVzLgotIFtNZWRpdW1dIFRoZSBPVEcg
+aW5pdGlhbGl6YXRpb24gcmV0cnkgbG9vcCBzaG9ydC1jaXJjdWl0cyBvbiB0aGUgZmluYWwgcmV0
+cnksIGFsbG93aW5nIGNvbmN1cnJlbnQgaGFyZHdhcmUgbW9kaWZpY2F0aW9uIGlmIGEgbmV3IGlu
+aXRpYWxpemF0aW9uIHBoYXNlIGhhcyBzdGFydGVkLgotIFtNZWRpdW1dIENhbGxpbmcgYHJlaW5p
+dF9jb21wbGV0aW9uKClgIHdoaWxlIHRoZXJlIGFyZSBhY3RpdmUgd2FpdGVycyBjYXVzZXMgYSBk
+YXRhIHJhY2Ugb24gYHgtPmRvbmVgLCB2aW9sYXRpbmcgdGhlIGNvbXBsZXRpb24gQVBJLgoKUHJl
+LWV4aXN0aW5nIGlzc3VlczoKLSBbSGlnaF0gVGhlIGludGVycnVwdCBoYW5kbGVyIHVzZXMgYHBt
+X3J1bnRpbWVfZ2V0X25vcmVzdW1lKClgIGFuZCBgcG1fcnVudGltZV9zdXNwZW5kZWQoKWAgdG8g
+Z3VhcmQgaGFyZHdhcmUgYWNjZXNzLCB3aGljaCBpcyByYWN5IGFuZCBjYW4gbGVhZCB0byBpbnZh
+bGlkIHJlZ2lzdGVyIHJlYWRzLgotIFtIaWdoXSBUaGUgc3lzZnMgYXR0cmlidXRlcyBgcm9sZV9z
+aG93YCBhbmQgYHJvbGVfc3RvcmVgIGFjY2VzcyBoYXJkd2FyZSByZWdpc3RlcnMgd2l0aG91dCBl
+bnN1cmluZyB0aGUgZGV2aWNlIGlzIGFjdGl2ZWx5IHBvd2VyZWQuCi0gW0hpZ2hdIFNldmVyYWwg
+cGF0aHMgY2FsbCBgcG1fcnVudGltZV9yZXN1bWVfYW5kX2dldCgpYCB3aGlsZSBob2xkaW5nIHRo
+ZSBgY2gtPmxvY2tgIHNwaW5sb2NrLCB3aGljaCBjYW4gYmxvY2sgYW5kIHRyaWdnZXIgYSBzY2hl
+ZHVsaW5nLXdoaWxlLWF0b21pYyBCVUcuCi0tCgotLS0gUGF0Y2ggWzFdOiBbUEFUQ0ggdjRdIHBo
+eTogcmVuZXNhczogcmNhci1nZW4zLXVzYjI6IEF2b2lkIGxvbmcgZGVsYXkgaW4gYXRvbWljIGNv
+bnRleHQgLS0tCmNvbW1pdCA5ZmRhZDFiYjg3YjkzNmRlNDljNjkyNzJkNTIxZTQ2ZTI2YjdlMTZh
+CkF1dGhvcjogQ2xhdWRpdSBCZXpuZWEgPGNsYXVkaXUuYmV6bmVhLnVqQGJwLnJlbmVzYXMuY29t
+PgoKcGh5OiByZW5lc2FzOiByY2FyLWdlbjMtdXNiMjogQXZvaWQgbG9uZyBkZWxheSBpbiBhdG9t
+aWMgY29udGV4dAoKVGhlIE9URyBQSFkgaW5pdGlhbGl6YXRpb24gc2VxdWVuY2UgbmVlZHMgdG8g
+d2FpdCBmb3IgMjAgbXMgYXQgYSBzcGVjaWZpYwpzdGVwLCBhcyBkZXNjcmliZWQgaW4gY29tbWl0
+IDcyYzAzMzljMTE1YiAoInBoeTogcmVuZXNhczoKcmNhci1nZW4zLXVzYjI6IGZvbGxvdyB0aGUg
+aGFyZHdhcmUgbWFudWFsIHByb2NlZHVyZSIpLgoKRml4ZXM6IDU1YTM4N2ViYjkyMSAoInBoeTog
+cmVuZXNhczogcmNhci1nZW4zLXVzYjI6IExvY2sgYXJvdW5kIGhhcmR3YXJlIHJlZ2lzdGVycyBh
+bmQgZHJpdmVyIGRhdGEiKQpDYzogc3RhYmxlQHZnZXIua2VybmVsLm9yZwpSZXBvcnRlZC1ieTog
+UGF2ZWwgTWFjaGVrIDxwYXZlbEBuYWJsYWRldi5jb20+CkNsb3NlczogaHR0cHM6Ly9sb3JlLmtl
+cm5lbC5vcmcvYWxsL2FmaGtYMllzMkJHMWducXlAZHVvLnVjdy5jegpSZXBvcnRlZC1ieTogTm9i
+dWhpcm8gSXdhbWF0c3UgPGl3YW1hdHN1QG5pZ2F1cmkub3JnPgpDbG9zZXM6IGh0dHBzOi8vbG9y
+ZS5rZXJuZWwub3JnL2FsbC9hZmhrWDJZczJCRzFnbnF5QGR1by51Y3cuY3oKU2lnbmVkLW9mZi1i
+eTogQ2xhdWRpdSBCZXpuZWEgPGNsYXVkaXUuYmV6bmVhLnVqQGJwLnJlbmVzYXMuY29tPgoKPiBk
+aWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcmVuZXNhcy9waHktcmNhci1nZW4zLXVzYjIuYyBiL2Ry
+aXZlcnMvcGh5L3JlbmVzYXMvcGh5LXJjYXItZ2VuMy11c2IyLmMKPiBpbmRleCA5YTQ1ZDg0MGVm
+ZWIyLi5lMTg3MzkyOGNjODQ3IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L3JlbmVzYXMvcGh5
+LXJjYXItZ2VuMy11c2IyLmMKPiArKysgYi9kcml2ZXJzL3BoeS9yZW5lc2FzL3BoeS1yY2FyLWdl
+bjMtdXNiMi5jCgpbIC4uLiBdCgo+IEBAIC0zOTIsMjYgKzQwNyw1MiBAQCBzdGF0aWMgc3NpemVf
+dCByb2xlX3N0b3JlKHN0cnVjdCBkZXZpY2UgKmRldiwgc3RydWN0IGRldmljZV9hdHRyaWJ1dGUg
+KmF0dHIsCj4gIAlzdHJ1Y3QgcmNhcl9nZW4zX2NoYW4gKmNoID0gZGV2X2dldF9kcnZkYXRhKGRl
+dik7Cj4gIAlib29sIGlzX2JfZGV2aWNlOwo+ICAJZW51bSBwaHlfbW9kZSBjdXJfbW9kZSwgbmV3
+X21vZGU7Cj4gKwlpbnQgcmV0cmllcyA9IE5VTV9PRl9QSFlTOwo+ICsJdW5zaWduZWQgbG9uZyBm
+bGFnczsKPiArCWludCByZXQgPSAtRUlPOwo+ICAKPiAtCWd1YXJkKHNwaW5sb2NrX2lycXNhdmUp
+KCZjaC0+bG9jayk7Cj4gKwlzcGluX2xvY2tfaXJxc2F2ZSgmY2gtPmxvY2ssIGZsYWdzKTsKCltT
+ZXZlcml0eTogSGlnaF0KVGhpcyBpc24ndCBhIGJ1ZyBpbnRyb2R1Y2VkIGJ5IHRoaXMgcGF0Y2gs
+IGJ1dCBkb2VzIHRoaXMgY2FsbCBjaGFpbiBzbGVlcCB3aGlsZQpob2xkaW5nIHRoZSBzcGlubG9j
+az8KCnJvbGVfc3RvcmUoKSBhY3F1aXJlcyBjaC0+bG9jayB2aWEgc3Bpbl9sb2NrX2lycXNhdmUo
+KSwgdGhlbiBjYWxscwpyY2FyX2dlbjNfaW5pdF9mcm9tX2FfcGVyaV90b19hX2hvc3QoKSwgd2hp
+Y2ggY2FuIGNhc2NhZGUgaW50bwpyY2FyX2dlbjNfZW5hYmxlX3ZidXNfY3RybCgpLgoKRm9yIGNv
+bmZpZ3VyYXRpb25zIHVzaW5nIHRoZSBpbnRlcm5hbCByZWd1bGF0b3IgKHdoZXJlIG5vX2FkcF9j
+dHJsIGlzIHRydWUpLAp0aGlzIGNhbGxzIHJlZ3VsYXRvcl9oYXJkd2FyZV9lbmFibGUoKSwgaW52
+b2tpbmcgdGhlIGRyaXZlcidzIC5lbmFibGUgY2FsbGJhY2sKKHJjYXJfZ2VuM19waHlfdXNiMl9y
+ZWd1bGF0b3JfZW5hYmxlKS4KClRoYXQgY2FsbGJhY2sgdW5jb25kaXRpb25hbGx5IGNhbGxzIHBt
+X3J1bnRpbWVfcmVzdW1lX2FuZF9nZXQoKSwgd2hpY2ggY2FuIHNsZWVwCnN5bmNocm9ub3VzbHkg
+d2hpbGUgd2FpdGluZyBmb3IgdGhlIGRldmljZSB0byByZXN1bWUuIENvdWxkIHRoaXMgdHJpZ2dl
+ciBhCnNjaGVkdWxpbmctd2hpbGUtYXRvbWljIHBhbmljPwoKPiAgCj4gLQlpZiAoIWNoLT5pc19v
+dGdfY2hhbm5lbCB8fCAhcmNhcl9nZW4zX2lzX2FueV9vdGdfcnBoeV9pbml0aWFsaXplZChjaCkp
+Cj4gLQkJcmV0dXJuIC1FSU87Cj4gKwlpZiAoIWNoLT5pc19vdGdfY2hhbm5lbCkKPiArCQlnb3Rv
+IHVubG9jazsKPiArCj4gKwl3aGlsZSAocmV0cmllcy0tICYmIGNoLT5vdGdfaW5pdGlhbGl6aW5n
+KSB7Cj4gKwkJc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmY2gtPmxvY2ssIGZsYWdzKTsKPiArCj4g
+KwkJcmV0ID0gd2FpdF9mb3JfY29tcGxldGlvbl90aW1lb3V0KCZjaC0+b3RnX2luaXRfZG9uZSwK
+PiArCQkJCQkJICBVU0IyX09UR19JTklUX1RJTUVPVVQpOwo+ICsJCXJldCA9IHJldCA/IDAgOiAt
+RVRJTUVET1VUOwo+ICsJCWlmIChyZXQgJiYgIXJldHJpZXMpCj4gKwkJCWdvdG8gZXhpdDsKPiAr
+Cj4gKwkJc3Bpbl9sb2NrX2lycXNhdmUoJmNoLT5sb2NrLCBmbGFncyk7Cj4gKwl9Cj4gKwo+ICsJ
+aWYgKCFyY2FyX2dlbjNfaXNfYW55X290Z19ycGh5X2luaXRpYWxpemVkKGNoKSkgewo+ICsJCXJl
+dCA9IC1FSU87Cj4gKwkJZ290byB1bmxvY2s7Cj4gKwl9Cj4gIAo+IC0JaWYgKHN5c2ZzX3N0cmVx
+KGJ1ZiwgImhvc3QiKSkKPiArCWlmIChzeXNmc19zdHJlcShidWYsICJob3N0IikpIHsKPiAgCQlu
+ZXdfbW9kZSA9IFBIWV9NT0RFX1VTQl9IT1NUOwo+IC0JZWxzZSBpZiAoc3lzZnNfc3RyZXEoYnVm
+LCAicGVyaXBoZXJhbCIpKQo+ICsJfSBlbHNlIGlmIChzeXNmc19zdHJlcShidWYsICJwZXJpcGhl
+cmFsIikpIHsKPiAgCQluZXdfbW9kZSA9IFBIWV9NT0RFX1VTQl9ERVZJQ0U7Cj4gLQllbHNlCj4g
+LQkJcmV0dXJuIC1FSU5WQUw7Cj4gKwl9IGVsc2Ugewo+ICsJCXJldCA9IC1FSU5WQUw7Cj4gKwkJ
+Z290byB1bmxvY2s7Cj4gKwl9Cj4gIAo+ICAJLyogaXNfYl9kZXZpY2U6IHRydWUgaXMgQi1EZXZp
+Y2UuIGZhbHNlIGlzIEEtRGV2aWNlLiAqLwo+ICAJaXNfYl9kZXZpY2UgPSByY2FyX2dlbjNfY2hl
+Y2tfaWQoY2gpOwo+ICAJY3VyX21vZGUgPSByY2FyX2dlbjNfZ2V0X3BoeV9tb2RlKGNoKTsKCltT
+ZXZlcml0eTogSGlnaF0KVGhpcyBpcyBhIHByZS1leGlzdGluZyBpc3N1ZSwgYnV0IGFyZSB0aGVz
+ZSBoYXJkd2FyZSByZWdpc3RlciBhY2Nlc3NlcyBzYWZlCndpdGhvdXQgZW5zdXJpbmcgdGhlIGRl
+dmljZSBpcyBhY3RpdmVseSBwb3dlcmVkPwoKcm9sZV9zdG9yZSgpIGNhbGxzIHJjYXJfZ2VuM19j
+aGVja19pZCgpIGFuZCByY2FyX2dlbjNfZ2V0X3BoeV9tb2RlKCksIHdoaWNoIHJlYWQKaGFyZHdh
+cmUgcmVnaXN0ZXJzIGxpa2UgVVNCMl9BRFBDVFJMIGFuZCBVU0IyX0xJTkVDVFJMMS4KClNpbmNl
+IHRoZXNlIHN5c2ZzIGNhbGxiYWNrcyBkb24ndCB1c2UgcG1fcnVudGltZV9nZXRfc3luYygpIGJl
+Zm9yZSBoYXJkd2FyZQphY2Nlc3NlcywgY291bGQgcmVhZGluZyB0aGVzZSByZWdpc3RlcnMgd2hp
+bGUgdGhlIFBIWSBkZXZpY2UgaXMgcnVudGltZQpzdXNwZW5kZWQgbGVhZCB0byBpbnZhbGlkIGRh
+dGEgcmVhZHMgb3IgdHJpZ2dlciBhc3luY2hyb25vdXMgZXh0ZXJuYWwgYWJvcnRzPwoKWyAuLi4g
+XQoKPiBAQCAtNTAyLDYgKzU0Nyw3IEBAIHN0YXRpYyBpcnFyZXR1cm5fdCByY2FyX2dlbjNfcGh5
+X3VzYjJfaXJxKGludCBpcnEsIHZvaWQgKl9jaCkKPiAgCXZvaWQgX19pb21lbSAqdXNiMl9iYXNl
+ID0gY2gtPmJhc2U7Cj4gIAlzdHJ1Y3QgZGV2aWNlICpkZXYgPSBjaC0+ZGV2Owo+ICAJaXJxcmV0
+dXJuX3QgcmV0ID0gSVJRX05PTkU7Cj4gKwl1bnNpZ25lZCBsb25nIGZsYWdzOwo+ICAJdTMyIHN0
+YXR1czsKPiAgCj4gIAlwbV9ydW50aW1lX2dldF9ub3Jlc3VtZShkZXYpOwo+IEBAIC01MDksMzMg
+KzU1NSw5MSBAQCBzdGF0aWMgaXJxcmV0dXJuX3QgcmNhcl9nZW4zX3BoeV91c2IyX2lycShpbnQg
+aXJxLCB2b2lkICpfY2gpCj4gIAlpZiAocG1fcnVudGltZV9zdXNwZW5kZWQoZGV2KSkKPiAgCQln
+b3RvIHJwbV9wdXQ7CgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgaXMgYSBwcmUtZXhpc3RpbmcgaXNz
+dWUsIGJ1dCBkb2VzIHRoaXMgcnVudGltZSBQTSBjaGVjayBwcm90ZWN0IGFnYWluc3QKY29uY3Vy
+cmVudCBzdXNwZW5kIHRyYW5zaXRpb25zPwoKVGhlIGhhbmRsZXIgdXNlcyBwbV9ydW50aW1lX2dl
+dF9ub3Jlc3VtZSgpIHdoaWNoIGluY3JlbWVudHMgdGhlIHVzYWdlIGNvdW50ZXIKYnV0IGRvZXMg
+bm90IGNoZWNrIHRoZSBzdGF0dXMgYXRvbWljYWxseS4gSWYgdGhlIGRldmljZSB1c2VzIGEgc2hh
+cmVkIElSUSBsaW5lCmFuZCBhbm90aGVyIGRldmljZSB0cmlnZ2VycyBhbiBpbnRlcnJ1cHQgd2hp
+bGUgdGhpcyBkZXZpY2UgaXMgaW4gdGhlClJQTV9TVVNQRU5ESU5HIHN0YXRlLCBwbV9ydW50aW1l
+X3N1c3BlbmRlZCgpIHdpbGwgcmV0dXJuIGZhbHNlLgoKQ291bGQgdGhlIGhhbmRsZXIgdGhlbiBw
+cm9jZWVkIHRvIHJlYWQgaGFyZHdhcmUgcmVnaXN0ZXJzIHRoYXQgYXJlIGFjdGl2ZWx5CmJlaW5n
+IHBvd2VyZWQgZG93biwgbGVhZGluZyB0byBpbnZhbGlkIHJlYWRzIChlLmcuLCAweGZmZmZmZmZm
+KSBhbmQgc3B1cmlvdXMKaW50ZXJydXB0IHByb2Nlc3Npbmc/IFNob3VsZCB0aGlzIHVzZSBwbV9y
+dW50aW1lX2dldF9pZl9hY3RpdmUoKSBpbnN0ZWFkPwoKWyAuLi4gXQoKPiArc3RhdGljIHZvaWQg
+cmNhcl9nZW4zX3BoeV91c2IyX2lycXNfbWFza19hbGwoc3RydWN0IHJjYXJfZ2VuM19jaGFuICpj
+aGFubmVsLAo+ICsJCQkJCSAgICAgdTMyICptYXNrZWRfaXJxc19iaXRzKQo+ICt7Cj4gKwl1MzIg
+dmFsLCBiaXRtYXNrID0gVVNCMl9JTlRfRU5BQkxFX1VDT01fSU5URU47Cj4gKwl2b2lkIF9faW9t
+ZW0gKnVzYjJfYmFzZSA9IGNoYW5uZWwtPmJhc2U7Cj4gKwo+ICsJZm9yICh1bnNpZ25lZCBpbnQg
+aSA9IDA7IGkgPCBOVU1fT0ZfUEhZUzsgaSsrKQo+ICsJCWJpdG1hc2sgfD0gY2hhbm5lbC0+cnBo
+eXNbaV0uaW50X2VuYWJsZV9iaXRzOwo+ICsKPiArCXZhbCA9IHJlYWRsKHVzYjJfYmFzZSArIFVT
+QjJfSU5UX0VOQUJMRSk7Cj4gKwkqbWFza2VkX2lycXNfYml0cyA9IHZhbCAmIGJpdG1hc2s7Cj4g
+KwkvKgo+ICsJICogRG9uJ3QgcmVwb3J0IGNoYW5uZWwtPnBoeV9kYXRhLT5vYmludF9lbmFibGVf
+Yml0cyBJUlFzLiBUaGVzZSBhcmUKPiArCSAqIHVubWFza2VkIGFueXdheSBpbiByY2FyX2dlbjNf
+aW5pdF9vdGdfcGhhc2UxKCkuCj4gKwkgKi8KPiArCXZhbCAmPSB+KGJpdG1hc2sgfCBjaGFubmVs
+LT5waHlfZGF0YS0+b2JpbnRfZW5hYmxlX2JpdHMpOwo+ICsJd3JpdGVsKHZhbCwgdXNiMl9iYXNl
+ICsgVVNCMl9JTlRfRU5BQkxFKTsKPiArfQoKW1NldmVyaXR5OiBIaWdoXQpEb2VzIHRoaXMgbWlz
+dGFrZW5seSBhcHBseSB0aGUgb2JpbnRfZW5hYmxlX2JpdHMgdG8gdGhlIHdyb25nIHJlZ2lzdGVy
+PwoKVGhpcyBmdW5jdGlvbiByZWFkcyB0aGUgVVNCMl9JTlRfRU5BQkxFIHJlZ2lzdGVyLCBidXQg
+b2JpbnRfZW5hYmxlX2JpdHMgYmVsb25nCnRvIHRoZSBVU0IyX09CSU5URU4gcmVnaXN0ZXIuCgpX
+aGVuIHJjYXJfZ2VuM19waHlfdXNiMl9pcnFzX3VubWFzaygpIGlzIGNhbGxlZCBsYXRlciwgaXQg
+b25seSByZXN0b3JlcyBiaXRzCmRlZmluZWQgaW4gYml0bWFzaywgd2hpY2ggZG9lc24ndCBpbmNs
+dWRlIHRoZSBvYmludCBiaXRzLiBXaWxsIHRoaXMgbGVhdmUgdGhlCmNvcnJ1cHRlZCBiaXRzIGlu
+IFVTQjJfSU5UX0VOQUJMRSBjbGVhcmVkIHBlcm1hbmVudGx5IGFuZCBmYWlsIHRvIG1hc2sgT1RH
+CmludGVycnVwdHMgZHVyaW5nIHRoZSBpbml0aWFsaXphdGlvbiB3aW5kb3c/CgpbIC4uLiBdCgo+
+ICBzdGF0aWMgaW50IHJjYXJfZ2VuM19waHlfdXNiMl9pbml0KHN0cnVjdCBwaHkgKnApCj4gIHsK
+PiAgCXN0cnVjdCByY2FyX2dlbjNfcGh5ICpycGh5ID0gcGh5X2dldF9kcnZkYXRhKHApOwo+ICAJ
+c3RydWN0IHJjYXJfZ2VuM19jaGFuICpjaGFubmVsID0gcnBoeS0+Y2g7Cj4gIAl2b2lkIF9faW9t
+ZW0gKnVzYjJfYmFzZSA9IGNoYW5uZWwtPmJhc2U7Cj4gKwlpbnQgcmV0cmllcyA9IE5VTV9PRl9Q
+SFlTOwo+ICsJdW5zaWduZWQgbG9uZyBmbGFnczsKPiAgCXUzMiB2YWw7Cj4gIAo+IC0JZ3VhcmQo
+c3BpbmxvY2tfaXJxc2F2ZSkoJmNoYW5uZWwtPmxvY2spOwo+ICsJc3Bpbl9sb2NrX2lycXNhdmUo
+JmNoYW5uZWwtPmxvY2ssIGZsYWdzKTsKPiArCj4gKwl3aGlsZSAocmV0cmllcy0tICYmIGNoYW5u
+ZWwtPm90Z19pbml0aWFsaXppbmcpIHsKCltTZXZlcml0eTogTWVkaXVtXQpJcyB0aGVyZSBhIHJh
+Y2UgY29uZGl0aW9uIHdoZW4gdGhlIHJldHJpZXMgY291bnRlciBoaXRzIHplcm8/CgpPbiB0aGUg
+ZmluYWwgbG9vcCBpdGVyYXRpb24gKHdoZW4gcmV0cmllcyBldmFsdWF0ZXMgdG8gMCBpbnNpZGUg
+dGhlIGxvb3ApLCBpZgp3YWl0X2Zvcl9jb21wbGV0aW9uX3RpbWVvdXQoKSBzdWNjZWVkcyB3aXRo
+b3V0IHRpbWluZyBvdXQsIHRoZSBsb29wIGNvbmRpdGlvbgp3aWxsIGJlIGV2YWx1YXRlZCBhZ2Fp
+bi4KCkJlY2F1c2UgcmV0cmllcyBpcyAwLCB0aGUgcG9zdC1kZWNyZW1lbnQgb3BlcmF0b3IgcmV0
+dXJucyAwLCBjYXVzaW5nIHRoZSAmJgp0byBzaG9ydC1jaXJjdWl0LiBUaGUgY2hhbm5lbC0+b3Rn
+X2luaXRpYWxpemluZyB2YXJpYWJsZSBpcyBub3QgY2hlY2tlZCwgYW5kCnRoZSBsb29wIGV4aXRz
+LgoKSWYgYW5vdGhlciB0aHJlYWQgaGFkIGp1c3Qgc3RhcnRlZCBhIG5ldyBpbml0aWFsaXphdGlv
+biBwaGFzZSBhbmQgc2V0Cm90Z19pbml0aWFsaXppbmcgPSB0cnVlLCBjb3VsZCB0aGUgZXhpdGlu
+ZyB0aHJlYWQgcHJvY2VlZCB0byBtb2RpZnkgaGFyZHdhcmUKY29uY3VycmVudGx5PwoKPiArCQlp
+bnQgcmV0Owo+ICsKPiArCQlzcGluX3VubG9ja19pcnFyZXN0b3JlKCZjaGFubmVsLT5sb2NrLCBm
+bGFncyk7Cj4gKwo+ICsJCXJldCA9IHdhaXRfZm9yX2NvbXBsZXRpb25fdGltZW91dCgmY2hhbm5l
+bC0+b3RnX2luaXRfZG9uZSwKPiArCQkJCQkJICBVU0IyX09UR19JTklUX1RJTUVPVVQpOwo+ICsJ
+CXJldCA9IHJldCA/IDAgOiAtRVRJTUVET1VUOwo+ICsJCWlmIChyZXQgJiYgIXJldHJpZXMpCj4g
+KwkJCXJldHVybiByZXQ7Cj4gKwo+ICsJCXNwaW5fbG9ja19pcnFzYXZlKCZjaGFubmVsLT5sb2Nr
+LCBmbGFncyk7Cj4gKwl9CgpbIC4uLiBdCgo+ICAJLyogSW5pdGlhbGl6ZSBvdGcgcGFydCAob25s
+eSBpZiB3ZSBpbml0aWFsaXplIGEgUEhZIHdpdGggSVJRcykuICovCj4gLQlpZiAocnBoeS0+aW50
+X2VuYWJsZV9iaXRzKQo+IC0JCXJjYXJfZ2VuM19pbml0X290ZyhjaGFubmVsKTsKPiArCWlmIChy
+cGh5LT5pbnRfZW5hYmxlX2JpdHMgJiYgY2hhbm5lbC0+aXNfb3RnX2NoYW5uZWwgJiYKPiArCSAg
+ICAhcmNhcl9nZW4zX2lzX2FueV9vdGdfcnBoeV9pbml0aWFsaXplZChjaGFubmVsKSkgewo+ICsJ
+CXUzMiBtYXNrZWRfaXJxX2JpdHMgPSAwOwo+ICsKPiArCQlyY2FyX2dlbjNfaW5pdF9vdGdfcGhh
+c2UwKGNoYW5uZWwpOwo+ICsJCXJjYXJfZ2VuM19waHlfdXNiMl9pcnFzX21hc2tfYWxsKGNoYW5u
+ZWwsICZtYXNrZWRfaXJxX2JpdHMpOwo+ICsJCXJlaW5pdF9jb21wbGV0aW9uKCZjaGFubmVsLT5v
+dGdfaW5pdF9kb25lKTsKPiArCQljaGFubmVsLT5vdGdfaW5pdGlhbGl6aW5nID0gdHJ1ZTsKCltT
+ZXZlcml0eTogTWVkaXVtXQpJcyBpdCBzYWZlIHRvIHJlaW5pdGlhbGl6ZSB0aGUgY29tcGxldGlv
+biBoZXJlPwoKV2FpdGVycyBmcm9tIGEgcHJldmlvdXMgd2FpdF9mb3JfY29tcGxldGlvbl90aW1l
+b3V0KCkgbWlnaHQgc3RpbGwgYmUgaW5zaWRlCndhaXRfZm9yX2NvbW1vbigpIHByb2Nlc3Npbmcg
+dGhlaXIgd2FrZXVwLgoKU2luY2UgdGhlIGNvbXBsZXRpb24gQVBJIG1hbmRhdGVzIHRoYXQgcmVp
+bml0X2NvbXBsZXRpb24oKSBtdXN0IG9ubHkgYmUgY2FsbGVkCndoZW4gdGhlcmUgYXJlIG5vIGFj
+dGl2ZSB3YWl0ZXJzLCBjb3VsZCB0aGlzIGNhdXNlIGEgZGF0YSByYWNlIG9uIHgtPmRvbmUgYW5k
+CmxlYWQgdG8gdW5wcmVkaWN0YWJsZSB3YWtlLXVwIGJlaGF2aW9yIGZvciBwcmlvciB3YWl0ZXJz
+PwoKWyAuLi4gXQoKPiAgc3RhdGljIGludCByY2FyX2dlbjNfcGh5X3VzYjJfcG93ZXJfb24oc3Ry
+dWN0IHBoeSAqcCkKPiAgewo+ICAJc3RydWN0IHJjYXJfZ2VuM19waHkgKnJwaHkgPSBwaHlfZ2V0
+X2RydmRhdGEocCk7Cj4gIAlzdHJ1Y3QgcmNhcl9nZW4zX2NoYW4gKmNoYW5uZWwgPSBycGh5LT5j
+aDsKPiAgCXZvaWQgX19pb21lbSAqdXNiMl9iYXNlID0gY2hhbm5lbC0+YmFzZTsKPiArCWludCBy
+ZXRyaWVzID0gTlVNX09GX1BIWVM7Cj4gKwl1bnNpZ25lZCBsb25nIGZsYWdzOwo+ICAJdTMyIHZh
+bDsKPiAgCWludCByZXQgPSAwOwo+ICAKPiBAQCAtNjA1LDcgKzc0NiwxOSBAQCBzdGF0aWMgaW50
+IHJjYXJfZ2VuM19waHlfdXNiMl9wb3dlcl9vbihzdHJ1Y3QgcGh5ICpwKQo+ICAJCQlyZXR1cm4g
+cmV0Owo+ICAJfQo+ICAKPiAtCWd1YXJkKHNwaW5sb2NrX2lycXNhdmUpKCZjaGFubmVsLT5sb2Nr
+KTsKPiArCXNwaW5fbG9ja19pcnFzYXZlKCZjaGFubmVsLT5sb2NrLCBmbGFncyk7Cj4gKwo+ICsJ
+d2hpbGUgKHJldHJpZXMtLSAmJiBjaGFubmVsLT5vdGdfaW5pdGlhbGl6aW5nKSB7Cj4gKwkJc3Bp
+bl91bmxvY2tfaXJxcmVzdG9yZSgmY2hhbm5lbC0+bG9jaywgZmxhZ3MpOwo+ICsKPiArCQlyZXQg
+PSB3YWl0X2Zvcl9jb21wbGV0aW9uX3RpbWVvdXQoJmNoYW5uZWwtPm90Z19pbml0X2RvbmUsCj4g
+KwkJCQkJCSAgVVNCMl9PVEdfSU5JVF9USU1FT1VUKTsKPiArCQlyZXQgPSByZXQgPyAwIDogLUVU
+SU1FRE9VVDsKPiArCQlpZiAocmV0ICYmICFyZXRyaWVzKQo+ICsJCQlnb3RvIGRpc2FibGVfcmVn
+dWxhdG9yOwo+ICsKPiArCQlzcGluX2xvY2tfaXJxc2F2ZSgmY2hhbm5lbC0+bG9jaywgZmxhZ3Mp
+Owo+ICsJfQo+ICAKPiAgCWlmICghcmNhcl9nZW4zX2FyZV9hbGxfcnBoeXNfcG93ZXJfb2ZmKGNo
+YW5uZWwpKQo+ICAJCWdvdG8gb3V0Owo+IEBAIC02MjAsMjcgKzc3Myw0OSBAQCBzdGF0aWMgaW50
+IHJjYXJfZ2VuM19waHlfdXNiMl9wb3dlcl9vbihzdHJ1Y3QgcGh5ICpwKQo+ICAJLyogVGhlIHBv
+d2VyZWQgZmxhZyBzaG91bGQgYmUgc2V0IGZvciBhbnkgb3RoZXIgcGh5cyBhbnl3YXkgKi8KPiAg
+CXJwaHktPnBvd2VyZWQgPSB0cnVlOwo+ICAKPiAtCXJldHVybiAwOwo+ICsJc3Bpbl91bmxvY2tf
+aXJxcmVzdG9yZSgmY2hhbm5lbC0+bG9jaywgZmxhZ3MpOwo+ICsKPiArZGlzYWJsZV9yZWd1bGF0
+b3I6Cj4gKwlpZiAocmV0ICYmIGNoYW5uZWwtPnZidXMgJiYgIWNoYW5uZWwtPm90Z19pbnRlcm5h
+bF9yZWcpCj4gKwkJcmVndWxhdG9yX2Rpc2FibGUoY2hhbm5lbC0+dmJ1cyk7Cj4gKwo+ICsJcmV0
+dXJuIHJldDsKPiAgfQoKW1NldmVyaXR5OiBIaWdoXQpDb3VsZCBhIGxpbmdlcmluZyAtRVRJTUVE
+T1VUIGZyb20gdGhlIHByZXZpb3VzIGxvb3AgaXRlcmF0aW9uIGNhdXNlIGEgc3B1cmlvdXMKZmFp
+bHVyZSBoZXJlPwoKSWYgYSB0aHJlYWQgZW50ZXJzIHRoZSB3YWl0IGxvb3Agd2hpbGUgYW5vdGhl
+ciB0aHJlYWQgaXMgZXhlY3V0aW5nIHRoZSBPVEcKaW5pdGlhbGl6YXRpb24sIHdhaXRfZm9yX2Nv
+bXBsZXRpb25fdGltZW91dCgpIG1pZ2h0IHRpbWUgb3V0IGF0IGxlYXN0IG9uY2UsCnNldHRpbmcg
+cmV0IHRvIC1FVElNRURPVVQuCgpJZiB0aGUgT1RHIGluaXRpYWxpemF0aW9uIGNvbXBsZXRlcyBi
+ZWZvcmUgdGhlIG5leHQgbG9vcCBjb25kaXRpb24gZXZhbHVhdGlvbiwKY2hhbm5lbC0+b3RnX2lu
+aXRpYWxpemluZyBiZWNvbWVzIGZhbHNlIGFuZCB0aGUgbG9vcCBleGl0cyBub3JtYWxseS4KCkhv
+d2V2ZXIsIHJldCByZXRhaW5zIHRoZSBzdGFsZSAtRVRJTUVET1VUIHZhbHVlLiBJbiBwb3dlcl9v
+bigpLCB0aGlzIGNhdXNlcyB0aGUKZGlzYWJsZV9yZWd1bGF0b3IgY2xlYW51cCBwYXRoIHRvIGV4
+ZWN1dGUgZGVzcGl0ZSBzdWNjZXNzLgoKU2hvdWxkIHJldCBiZSByZXNldCB0byAwIGFmdGVyIGV4
+aXRpbmcgdGhlIHdhaXQgbG9vcD8KClsgLi4uIF0KCj4gIHN0YXRpYyBpbnQgcmNhcl9nZW4zX3Bo
+eV91c2IyX3Bvd2VyX29mZihzdHJ1Y3QgcGh5ICpwKQo+ICB7Cj4gIAlzdHJ1Y3QgcmNhcl9nZW4z
+X3BoeSAqcnBoeSA9IHBoeV9nZXRfZHJ2ZGF0YShwKTsKPiAgCXN0cnVjdCByY2FyX2dlbjNfY2hh
+biAqY2hhbm5lbCA9IHJwaHktPmNoOwo+ICsJaW50IHJldHJpZXMgPSBOVU1fT0ZfUEhZUzsKPiAr
+CXVuc2lnbmVkIGxvbmcgZmxhZ3M7Cj4gIAlpbnQgcmV0ID0gMDsKPiAgCj4gLQlzY29wZWRfZ3Vh
+cmQoc3BpbmxvY2tfaXJxc2F2ZSwgJmNoYW5uZWwtPmxvY2spIHsKPiAtCQlycGh5LT5wb3dlcmVk
+ID0gZmFsc2U7Cj4gKwlzcGluX2xvY2tfaXJxc2F2ZSgmY2hhbm5lbC0+bG9jaywgZmxhZ3MpOwo+
+ICAKPiAtCQlpZiAocmNhcl9nZW4zX2FyZV9hbGxfcnBoeXNfcG93ZXJfb2ZmKGNoYW5uZWwpKSB7
+Cj4gLQkJCXUzMiB2YWwgPSByZWFkbChjaGFubmVsLT5iYXNlICsgVVNCMl9VU0JDVFIpOwo+ICsJ
+d2hpbGUgKHJldHJpZXMtLSAmJiBjaGFubmVsLT5vdGdfaW5pdGlhbGl6aW5nKSB7Cj4gKwkJc3Bp
+bl91bmxvY2tfaXJxcmVzdG9yZSgmY2hhbm5lbC0+bG9jaywgZmxhZ3MpOwo+ICAKPiAtCQkJdmFs
+IHw9IFVTQjJfVVNCQ1RSX1BMTF9SU1Q7Cj4gLQkJCXdyaXRlbCh2YWwsIGNoYW5uZWwtPmJhc2Ug
+KyBVU0IyX1VTQkNUUik7Cj4gLQkJfQo+ICsJCXJldCA9IHdhaXRfZm9yX2NvbXBsZXRpb25fdGlt
+ZW91dCgmY2hhbm5lbC0+b3RnX2luaXRfZG9uZSwKPiArCQkJCQkJICBVU0IyX09UR19JTklUX1RJ
+TUVPVVQpOwo+ICsJCXJldCA9IHJldCA/IDAgOiAtRVRJTUVET1VUOwo+ICsJCWlmIChyZXQgJiYg
+IXJldHJpZXMpCj4gKwkJCXJldHVybiByZXQ7Cj4gKwo+ICsJCXNwaW5fbG9ja19pcnFzYXZlKCZj
+aGFubmVsLT5sb2NrLCBmbGFncyk7Cj4gIAl9Cj4gIAo+IC0JaWYgKGNoYW5uZWwtPnZidXMgJiYg
+IWNoYW5uZWwtPm90Z19pbnRlcm5hbF9yZWcpCj4gKwlycGh5LT5wb3dlcmVkID0gZmFsc2U7Cj4g
+Kwo+ICsJaWYgKHJjYXJfZ2VuM19hcmVfYWxsX3JwaHlzX3Bvd2VyX29mZihjaGFubmVsKSkgewo+
+ICsJCXUzMiB2YWwgPSByZWFkbChjaGFubmVsLT5iYXNlICsgVVNCMl9VU0JDVFIpOwo+ICsKPiAr
+CQl2YWwgfD0gVVNCMl9VU0JDVFJfUExMX1JTVDsKPiArCQl3cml0ZWwodmFsLCBjaGFubmVsLT5i
+YXNlICsgVVNCMl9VU0JDVFIpOwo+ICsJfQo+ICsKPiArCXNwaW5fdW5sb2NrX2lycXJlc3RvcmUo
+JmNoYW5uZWwtPmxvY2ssIGZsYWdzKTsKPiArCj4gKwlpZiAoIXJldCAmJiBjaGFubmVsLT52YnVz
+ICYmICFjaGFubmVsLT5vdGdfaW50ZXJuYWxfcmVnKQo+ICAJCXJldCA9IHJlZ3VsYXRvcl9kaXNh
+YmxlKGNoYW5uZWwtPnZidXMpOwo+ICAKPiAgCXJldHVybiByZXQ7Cj4gIH0KCltTZXZlcml0eTog
+SGlnaF0KU2ltaWxhciB0byBwb3dlcl9vbigpLCBjb3VsZCBhIHN0YWxlIC1FVElNRURPVVQgaW4g
+cmV0IGZyb20gdGhlIHdhaXQgbG9vcApwcmV2ZW50IHRoZSByZWd1bGF0b3IgZnJvbSBiZWluZyBk
+aXNhYmxlZCBoZXJlLCBsZWFraW5nIHRoZSByZXNvdXJjZT8KCi0tIApTYXNoaWtvIEFJIHJldmll
+dyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA3MDkxNDAyNTcuODQzNjg1
+LTEtY2xhdWRpdS5iZXpuZWErcmVuZXNhc0B0dXhvbi5kZXY/cGFydD0xCgotLSAKbGludXgtcGh5
+IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
