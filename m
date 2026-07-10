@@ -4,43 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82ED7C44501
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Jul 2026 21:20:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00ADBC43458
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Jul 2026 21:20:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tF/ydTwd0sRvtELmIrPO5YkfzkpjFZ/RrgpaoD/wvbk=; b=yafAY7UKoFxKYc
-	vDKav+uLtSzpinWP1gUHckXcx+ku454a6wd3fsTWNnRwd+2f9KGJa6X6TmCfKHo6JUaF2wf1FNsQk
-	8YRWW1ffipEQHUFcp8DDsH+zEN4J9onrDsX15pJN+FsOX/m2NRcRjZIKpCWe2tv+fqZDS4J3HBjB+
-	8xKkxJAAAG18gg7eoOTPNxxEuaXKgTeYrF+c4zpd9mqoo7Jwk8AUmQDx+NgmkxcyM2Xvx5STbX9Mb
-	nJGNAIeuu0UiuKyCH1CGK1AaHe6h2UJs0xR5QXOFwHVIvWykv+h5nlpprCGQMyFYOJEVgXGtoSqcJ
-	i95y2dHjWE8ElQOBmzbg==;
+	List-Owner; bh=skX6wt24UiUx6wVeP7CfQUzk01iHyokTkxEvC5wg+qw=; b=zFPORa14wa5HBu
+	S3rIhZoRKzQ7dx1+LgX96TTl4EonvhNxPQZQB33iuvnepBySVV/2i/iD/dk0E+D1kof1T+IL3CiIC
+	pK9s1M3U2wuDsEdbu7YAbMZ7LaukACZtP72h2H6KXm4NRYKwNGRwYbbP5265CA5GnKZZfMH+9Qjrb
+	Du9cZP7X1/9tjdPCDay/04sh7lHz9l7kM058M4zJe6y4v7Xo52HnookP46MHpiMp5Tcq3DsnabPdD
+	mPWKe+btdTaSBUGobLWIBBXT4wjMjW+Wgt1g/B6T3yP+WzG5U/xi6rrUpRw3V038RDBo0H+ao1wUW
+	BtZJiCB4j6kpNTzuXFSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wiIeU-00000005o8f-16Wh;
-	Fri, 10 Jul 2026 21:20:54 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wiIeZ-00000005oFf-2VjB;
+	Fri, 10 Jul 2026 21:20:59 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wiIeS-00000005o66-3MpU;
-	Fri, 10 Jul 2026 21:20:52 +0000
+	id 1wiIeY-00000005oDg-2xRl;
+	Fri, 10 Jul 2026 21:20:58 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 3F9156136D;
+	by sea.source.kernel.org (Postfix) with ESMTP id 6B3624156D;
+	Fri, 10 Jul 2026 21:20:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 67B511F00A3D;
 	Fri, 10 Jul 2026 21:20:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 080DC1F000E9;
-	Fri, 10 Jul 2026 21:20:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1783718452;
-	bh=WiMIaDHfHeDsg88B3aZLP5knyXdv30ZMibI6w8aJ4Hk=;
+	s=k20260515; t=1783718458;
+	bh=b37fFY1bviqEnaLlbm41fcnqbx2JSx0mhMImAdcr6E0=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=m53mzAigYaO7ux+1bIOsaBGC8FpVnAoEKRZ7fa1oFXWLTRJqbHc9lZ7sOosOgski2
-	 0gg8s4qWmhM1jR3HG8R1C8HyDoPokk/RkZ81iMZQnZBQrb+hyCKhgLJHXqpnLk4nDU
-	 G8xyD5MVOSYGOKRTGFSXwKc9KVQjJaXjm/UhRoXkafmibn2cSLeagOY3gcrPZRcvev
-	 Kg6AiP49Q+5gO0lGcU21Jp92VA5f/SHowubVX0797WfEB7ofMJk7C0iQvLB5lPyLJY
-	 iX0bNtcGIBz+PS6nvtfzP7HEuYOW+6FBNuVTX/sZpAWzX/Ml88cK6TVNctrk5aDeo3
-	 o07276wuF19gw==
+	b=HGyes/oHC8M+ATz3uD0lP9e+9cgWWjj6YY6Sz2mUhzsz6RPvOZG4q+VrnxpwAXGQW
+	 6dJ2OVFIVAhWXAlxy3CCmtli9rDf4UfOZqtn3W8PENfRMoxJ2Ux3TvRaPMfUpSyhQU
+	 xJuwmr4i7/Jz1E7ZzsAYwZQPrKp3C8p1Ad8ukCLGadL5rQwJ6p2A5Rr0Dsih8utYRe
+	 SWfpYfCkS0cKQ2J461R6NUUdFZOyfbxio9fhJC4oZ59lGcq0f+BecEOa4sgYTj4bCn
+	 hFpCDPCqBfseIR7u3HiwD10EIK4KXsm2m+0344hw/dScFOZD2BG9zHV/t2cMk0sJU+
+	 r6lNKDBcS9llw==
 From: Arnd Bergmann <arnd@kernel.org>
 To: linux-gpio@vger.kernel.org,
 	Linus Walleij <linusw@kernel.org>,
@@ -73,9 +73,9 @@ Cc: Arnd Bergmann <arnd@arndb.de>,
 	linux-rockchip@lists.infradead.org,
 	linux-sound@vger.kernel.org,
 	Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
-Subject: [PATCH v2 07/10] pcmcia: replace linux/gpio.h inclusions
-Date: Fri, 10 Jul 2026 23:19:52 +0200
-Message-Id: <20260710211954.1373336-8-arnd@kernel.org>
+Subject: [PATCH v2 08/10] phy: replace linux/gpio.h inclusions
+Date: Fri, 10 Jul 2026 23:19:53 +0200
+Message-Id: <20260710211954.1373336-9-arnd@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20260710211954.1373336-1-arnd@kernel.org>
 References: <20260710211954.1373336-1-arnd@kernel.org>
@@ -98,85 +98,54 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Arnd Bergmann <arnd@arndb.de>
 
-The pcmcia drivers all use the legacy interfaces, so convert to
-include linux/gpio/legacy.h instead.
+linux/gpio.h should no longer be used, so remove those and
+make sure linux/gpio/consumer.h is included instead.
 
 Acked-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 ---
- drivers/pcmcia/bcm63xx_pcmcia.c | 2 +-
- drivers/pcmcia/db1xxx_ss.c      | 2 +-
- drivers/pcmcia/sa1100_h3600.c   | 2 +-
- drivers/pcmcia/soc_common.c     | 2 +-
- drivers/pcmcia/xxs1500_ss.c     | 2 +-
- 5 files changed, 5 insertions(+), 5 deletions(-)
+ drivers/phy/broadcom/phy-bcm-ns2-usbdrd.c | 1 -
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 2 +-
+ drivers/phy/ti/phy-j721e-wiz.c            | 1 -
+ 3 files changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/drivers/pcmcia/bcm63xx_pcmcia.c b/drivers/pcmcia/bcm63xx_pcmcia.c
-index 724fd6ee0fd0..1612b5d76975 100644
---- a/drivers/pcmcia/bcm63xx_pcmcia.c
-+++ b/drivers/pcmcia/bcm63xx_pcmcia.c
-@@ -14,7 +14,7 @@
- #include <linux/slab.h>
- #include <linux/delay.h>
- #include <linux/pci.h>
--#include <linux/gpio.h>
-+#include <linux/gpio/legacy.h>
- 
- #include <bcm63xx_regs.h>
- #include <bcm63xx_io.h>
-diff --git a/drivers/pcmcia/db1xxx_ss.c b/drivers/pcmcia/db1xxx_ss.c
-index 7b896d7dbc9f..410d24762f13 100644
---- a/drivers/pcmcia/db1xxx_ss.c
-+++ b/drivers/pcmcia/db1xxx_ss.c
-@@ -23,7 +23,7 @@
-  */
+diff --git a/drivers/phy/broadcom/phy-bcm-ns2-usbdrd.c b/drivers/phy/broadcom/phy-bcm-ns2-usbdrd.c
+index 8473fa574529..171bf097a8b8 100644
+--- a/drivers/phy/broadcom/phy-bcm-ns2-usbdrd.c
++++ b/drivers/phy/broadcom/phy-bcm-ns2-usbdrd.c
+@@ -3,7 +3,6 @@
  
  #include <linux/delay.h>
--#include <linux/gpio.h>
-+#include <linux/gpio/legacy.h>
- #include <linux/interrupt.h>
- #include <linux/pm.h>
- #include <linux/module.h>
-diff --git a/drivers/pcmcia/sa1100_h3600.c b/drivers/pcmcia/sa1100_h3600.c
-index 10cb99c20a7f..6c52d90795eb 100644
---- a/drivers/pcmcia/sa1100_h3600.c
-+++ b/drivers/pcmcia/sa1100_h3600.c
-@@ -11,7 +11,7 @@
- #include <linux/interrupt.h>
- #include <linux/init.h>
- #include <linux/delay.h>
--#include <linux/gpio.h>
-+#include <linux/gpio/legacy.h>
- 
- #include <mach/hardware.h>
- #include <asm/irq.h>
-diff --git a/drivers/pcmcia/soc_common.c b/drivers/pcmcia/soc_common.c
-index 87aa3f667117..23585e3968e9 100644
---- a/drivers/pcmcia/soc_common.c
-+++ b/drivers/pcmcia/soc_common.c
-@@ -32,8 +32,8 @@
- 
- 
- #include <linux/cpufreq.h>
+ #include <linux/extcon-provider.h>
 -#include <linux/gpio.h>
  #include <linux/gpio/consumer.h>
-+#include <linux/gpio/legacy.h>
  #include <linux/init.h>
  #include <linux/interrupt.h>
- #include <linux/io.h>
-diff --git a/drivers/pcmcia/xxs1500_ss.c b/drivers/pcmcia/xxs1500_ss.c
-index 8a8aae1843b5..ba1bd0f9d9f8 100644
---- a/drivers/pcmcia/xxs1500_ss.c
-+++ b/drivers/pcmcia/xxs1500_ss.c
-@@ -7,7 +7,7 @@
-  */
- 
+diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
+index fba35510d88c..d0d736a30d08 100644
+--- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
++++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
+@@ -11,7 +11,7 @@
+ #include <linux/bits.h>
+ #include <linux/clk.h>
  #include <linux/delay.h>
 -#include <linux/gpio.h>
-+#include <linux/gpio/legacy.h>
- #include <linux/interrupt.h>
++#include <linux/gpio/consumer.h>
+ #include <linux/mfd/syscon.h>
+ #include <linux/mod_devicetable.h>
+ #include <linux/module.h>
+diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
+index 7531a8a04912..1f5dba49ace4 100644
+--- a/drivers/phy/ti/phy-j721e-wiz.c
++++ b/drivers/phy/ti/phy-j721e-wiz.c
+@@ -11,7 +11,6 @@
+ #include <linux/slab.h>
+ #include <linux/clk.h>
+ #include <linux/clk-provider.h>
+-#include <linux/gpio.h>
+ #include <linux/gpio/consumer.h>
  #include <linux/io.h>
- #include <linux/ioport.h>
+ #include <linux/module.h>
 -- 
 2.39.5
 
