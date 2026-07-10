@@ -4,53 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73A04C44501
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D809C43458
 	for <linux-phy@archiver.kernel.org>; Fri, 10 Jul 2026 21:20:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wlOJDZB95WCtiF57vIH+kiFraKDoR6FsppLLxqKdKS0=; b=c4vdnS8NIa9ozA
-	eKm8TQt+aF8476WU5vG+0ioVotzOloF1Jz6x4vdN3L1YR62wKVEaR6ahTO/qB9hs44Coi1l60mi1h
-	3b5BaCz2upjT2cV3rHJLpCgUeXLN85H2NZg1PuzxBKi33yfFDXPAh5x/OKAGdJPYo8eDcEu3+Ml8V
-	mNSiuAZ81cO3mbnxtP87Vwrpbm7Hs3CbslZzLdpvFsiTV+YBeu8Ru9g09duKldTK6sJYqwN51eqxF
-	3BYRxHXzFclHkztkNe6cD89obFTR5TRElJJVLrqHrOGcAeO9agvp6xs8tAVLMwHzYChn7mql2O5kW
-	UwQiajjAdhgWrEdA/hcQ==;
+	List-Owner; bh=qsdl7RVT4rSxkI4Akc1uyCp+3GxSkZQNH56Sd56JO4o=; b=3M3x5ffkESDBqE
+	Hn4TZjRDTxSw0V5t6Z4O047zC9PUeipnYUd71EpKlnUgUgrLrBzkPWAHnI4AKpfVA4Ekfgl5seR+n
+	j2EiIRhHjfaSNK3D/gEFUYDd5sxT+Ve7PRN56Po7ueeinEfShN9lpDl+2coTPdl7vuw2ur3cBLXC5
+	XuQJ7mvP8RwEB/8pHIJJa76fDH61dpuST4M/Q4hj/Y7yDK3FYdCh6KpeSaBVeWUUOTowmIprTbylA
+	XMU0SPzBGNk99dgVpNPh9IFPoEV8iOQ/p1fkjLZCmC0kxroOr1RyHNfVnaQufHs/m+jOo7O2c7e0n
+	hoHT+Yw2mospCMwb3e7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wiIe5-00000005ncy-0ksP;
+	id 1wiIe5-00000005ncV-010M;
 	Fri, 10 Jul 2026 21:20:29 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wiIe4-00000005nbW-250R
-	for linux-phy@lists.infradead.org;
-	Fri, 10 Jul 2026 21:20:28 +0000
+	id 1wiIe3-00000005naN-1GRb;
+	Fri, 10 Jul 2026 21:20:27 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 4201443CCD;
-	Fri, 10 Jul 2026 21:20:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B0FD81F00A3E;
-	Fri, 10 Jul 2026 21:20:27 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id B6D6C600C3;
+	Fri, 10 Jul 2026 21:20:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 844321F00A3A;
+	Fri, 10 Jul 2026 21:20:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1783718428;
-	bh=+4C6LHBHn5bWwNjIOH4OmWGa5kFrkHURsLUPb26QVZ0=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=OYfAhWWd/XE0FW78ls054wx3wy6EO7LylctyDh761qlBONhZUg6SL99NvTeBUHgaQ
-	 VfPpEsOR8xSF9CnNg2WuEGarG8hPLcKjk1s+FED9GO3gK3UfLFbLIVYGh1nFN6azqI
-	 q8AUI9Pq2PIKeZSXgGP4gZLKWDggcNqqCdEoq0a3AZFyYziuOOV6ETSIirSbVOh7H5
-	 PONbBIO8/9eyAJTElnLrMcaJzltdlrSw0sWpSaiS0gVbCveKffZ6VTKtRQL6zfc8d4
-	 Zv2/ccmbCS2VXEm4amrTus4upLlQr3aift5bnA0sSEXqZy31/awnhgMTj+zHYuppm3
-	 hHaSByfOtTauA==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v12 26/36] phy: rockchip: usbdp: Avoid xHCI SErrors
-To: "Sebastian Reichel" <sebastian.reichel@collabora.com>
-Cc: olteanv@gmail.com, robh@kernel.org, conor+dt@kernel.org, linux-phy@lists.infradead.org, vkoul@kernel.org, devicetree@vger.kernel.org, neil.armstrong@linaro.org
-In-Reply-To: <20260710-rockchip-usbdp-cleanup-v12-26-8b41a9a9bef0@collabora.com>
-References: <20260710-rockchip-usbdp-cleanup-v12-0-8b41a9a9bef0@collabora.com>
- <20260710-rockchip-usbdp-cleanup-v12-26-8b41a9a9bef0@collabora.com>
-Date: Fri, 10 Jul 2026 21:20:27 +0000
-Message-Id: <20260710212027.B0FD81F00A3E@smtp.kernel.org>
+	s=k20260515; t=1783718426;
+	bh=46eUzVM3ncAmL/9d8cH77iPrk71pbyGmWfoXjh1L6RU=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References;
+	b=LF44cjDyG2hqK00k2mfWkqXGbJF8blKUlTcFPOjLUfZ2ua4SP1IhMZVv94Mjwp7xo
+	 mfEDdZkIWq8GfMFuibDL0EegdsALrOlV636uEcI0FZbEffDmgaKKPPUmoEx1LmSX7C
+	 V3sQD0QRmU0kDQX5rvfmz96i2ajCJcfyB4T7ZweOqJZujZIQ9h21ESh6JmSTeTzlS7
+	 crjfQgLQBV7aUNGve/Jqu1SoFnPZfqVLjySWnOUgpPEVi67IIJ8y2inP0rsNPmEJU4
+	 roTMAnhXXyFsyMatMsv590fT+L0oG+lyT13kdP3JXHWA2LnwtOPElNhz48VlYb5yWW
+	 fa/D7KQDEHa4w==
+From: Arnd Bergmann <arnd@kernel.org>
+To: linux-gpio@vger.kernel.org,
+	Linus Walleij <linusw@kernel.org>,
+	Bartosz Golaszewski <brgl@kernel.org>
+Cc: Arnd Bergmann <arnd@arndb.de>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+	Gregory Clement <gregory.clement@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>,
+	Robert Jarzmik <robert.jarzmik@free.fr>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Greg Ungerer <gerg@linux-m68k.org>,
+	Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+	Hauke Mehrtens <hauke@hauke-m.de>,
+	=?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <zajec5@gmail.com>,
+	Yoshinori Sato <ysato@users.sourceforge.jp>,
+	John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>,
+	Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+	Dominik Brodowski <linux@dominikbrodowski.net>,
+	linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org,
+	patches@opensource.cirrus.com,
+	linux-m68k@lists.linux-m68k.org,
+	linux-mips@vger.kernel.org,
+	linux-sh@vger.kernel.org,
+	linux-input@vger.kernel.org,
+	linux-sunxi@lists.linux.dev,
+	linux-phy@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-sound@vger.kernel.org,
+	Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+Subject: [PATCH v2 03/10] mips: replace linux/gpio.h inclusions
+Date: Fri, 10 Jul 2026 23:19:48 +0200
+Message-Id: <20260710211954.1373336-4-arnd@kernel.org>
+X-Mailer: git-send-email 2.39.5
+In-Reply-To: <20260710211954.1373336-1-arnd@kernel.org>
+References: <20260710211954.1373336-1-arnd@kernel.org>
+MIME-Version: 1.0
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,93 +91,137 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpOZXcgaXNzdWVzOgotIFtIaWdoXSBD
-bG9jayBhbmQgcG93ZXIgbGVhayBpbiBgcmtfdWRwaHlfdXNiM19waHlfZXhpdGAgd2hlbiBUeXBl
-LUMgbW9kZSBkcm9wcyBVU0Igc3VwcG9ydC4KLSBbSGlnaF0gVGhlIHBhdGNoIHVuY29uZGl0aW9u
-YWxseSByZS1lbmFibGVzIHRoZSBTdXBlclNwZWVkIFUzIHBvcnQgZHVyaW5nIFBIWSBpbml0aWFs
-aXphdGlvbiBhbmQgcmUtaW5pdGlhbGl6YXRpb24sIGlnbm9yaW5nIHRoZSBoaWdoLXNwZWVkIHJl
-c3RyaWN0aW9uIChgdWRwaHktPmhzYCkuCgpQcmUtZXhpc3RpbmcgaXNzdWVzOgotIFtIaWdoXSBX
-aGVuIGEgVHlwZS1DIGRldmljZSBpcyB1bnBsdWdnZWQsIHRoZSBQSFkgcmUtaW5pdGlhbGl6YXRp
-b24gaXMgZmxhZ2dlZCBidXQgbmV2ZXIgZXhlY3V0ZWQsIGxlYXZpbmcgdGhlIFVTQjMgcG9ydCBw
-aHlzaWNhbGx5IGRpc2FibGVkIGFuZCBicmVha2luZyBzdWJzZXF1ZW50IFVTQjMgY29ubmVjdGlv
-bnMuCi0tCgotLS0gUGF0Y2ggWzI2XTogW1BBVENIIHYxMiAyNi8zNl0gcGh5OiByb2NrY2hpcDog
-dXNiZHA6IEF2b2lkIHhIQ0kgU0Vycm9ycyAtLS0KY29tbWl0IDY2ODU3ZTg3ZmNlYWVjNzlmYWQz
-ODQ1ZDQ2ZGJmZDQ4YzkzNDA5NzcKQXV0aG9yOiBTZWJhc3RpYW4gUmVpY2hlbCA8c2ViYXN0aWFu
-LnJlaWNoZWxAY29sbGFib3JhLmNvbT4KCnBoeTogcm9ja2NoaXA6IHVzYmRwOiBBdm9pZCB4SENJ
-IFNFcnJvcnMKClRoaXMgY29tbWl0IGFkZHJlc3NlcyBhbiBTRXJyb3IgY2F1c2VkIGJ5IHRoZSBk
-d2MzIGRyaXZlciBhY2Nlc3NpbmcgeEhDSQpyZWdpc3RlcnMgd2hpbGUgdGhlIFVTQkRQIFBIWSBp
-cyB0ZW1wb3JhcmlseSBkaXNhYmxlZCBkdXJpbmcgYSBtb2RlIHN3aXRjaC4KSXQgcmVzb2x2ZXMg
-dGhpcyBieSBkaXNhYmxpbmcgdGhlIFVTQjMgcG9ydCBwcmlvciB0byByZS1pbml0aWFsaXphdGlv
-biwgd2hpY2gKc2FmZWx5IHJlLXJvdXRlcyB0aGUgUElQRSBjbG9jayB0byB0aGUgVVRNSSBmYWxs
-YmFjayBjbG9jay4KCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2Nr
-Y2hpcC11c2JkcC5jIGIvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLXVzYmRwLmMK
-PiBpbmRleCBlZGVlMjc5MzNkODkwLi5mZjc2OGU1YjQzY2EwIDEwMDY0NAo+IC0tLSBhL2RyaXZl
-cnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC11c2JkcC5jCj4gKysrIGIvZHJpdmVycy9waHkv
-cm9ja2NoaXAvcGh5LXJvY2tjaGlwLXVzYmRwLmMKPiBAQCAtMTAwMCwxMiArMTAwMCwxNSBAQCBz
-dGF0aWMgaW50IHJrX3VkcGh5X3Bvd2VyX29uKHN0cnVjdCBya191ZHBoeSAqdWRwaHksIHU4IG1v
-ZGUpCj4gIAkJCXJrX3VkcGh5X3UzX3BvcnRfZGlzYWJsZSh1ZHBoeSwgZmFsc2UpOwo+ICAJCXVk
-cGh5LT5waHlfbmVlZHNfcmVpbml0ID0gZmFsc2U7Cj4gIAl9IGVsc2UgaWYgKHVkcGh5LT5waHlf
-bmVlZHNfcmVpbml0KSB7Cj4gLQkJaWYgKHVkcGh5LT5tb2RlID09IFVEUEhZX01PREVfRFApCj4g
-LQkJCXJrX3VkcGh5X3UzX3BvcnRfZGlzYWJsZSh1ZHBoeSwgdHJ1ZSk7Cj4gKwkJcmtfdWRwaHlf
-dTNfcG9ydF9kaXNhYmxlKHVkcGh5LCB0cnVlKTsKPiArCQl1ZGVsYXkoMTApOwo+ICAKPiAgCQly
-ZXQgPSBya191ZHBoeV9pbml0KHVkcGh5KTsKPiAgCQlpZiAocmV0KQo+ICAJCQlyZXR1cm4gcmV0
-Owo+ICsKPiArCQlpZiAodWRwaHktPm1vZGUgJiBVRFBIWV9NT0RFX1VTQikKPiArCQkJcmtfdWRw
-aHlfdTNfcG9ydF9kaXNhYmxlKHVkcGh5LCBmYWxzZSk7CgpbU2V2ZXJpdHk6IEhpZ2hdCkRvZXMg
-dGhpcyBjb2RlIHVuY29uZGl0aW9uYWxseSByZS1lbmFibGUgdGhlIFN1cGVyU3BlZWQgVTMgcG9y
-dCBwdXJlbHkgYmFzZWQgb24KdGhlIG1vZGU/CgpEdXJpbmcgcmtfdWRwaHlfdXNiM19waHlfaW5p
-dCgpLCB0aGUgVTMgcG9ydCBpcyBrZXB0IGRpc2FibGVkIGlmIHVkcGh5LT5ocyBpcwp0cnVlLiBI
-b3dldmVyLCB3aGVuIGEgbW9kZSBzd2l0Y2ggb3IgRFAgcG93ZXItb24gdHJpZ2dlcnMgYSBQSFkK
-cmUtaW5pdGlhbGl6YXRpb24gaW4gcmtfdWRwaHlfcG93ZXJfb24oKSwgdGhpcyBuZXcgbG9naWMg
-ZXhlY3V0ZXMgd2l0aG91dApjaGVja2luZyAhdWRwaHktPmhzLgoKQ291bGQgdGhpcyByZXN1bHQg
-aW4gbWlzY29uZmlndXJpbmcgdGhlIGhhcmR3YXJlIGJ5IGVuYWJsaW5nIHRoZSBTdXBlclNwZWVk
-IFUzCnBvcnQgb24gYm9hcmRzIHRoYXQgZXhwbGljaXRseSByZXN0cmljdGVkIHRoZSBQSFkgdG8g
-aGlnaC1zcGVlZAoobWF4aW11bS1zcGVlZCA9ICJoaWdoLXNwZWVkIik/Cgo+ICAJCXVkcGh5LT5w
-aHlfbmVlZHNfcmVpbml0ID0gZmFsc2U7CgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgaXMgYSBwcmUt
-ZXhpc3RpbmcgaXNzdWUsIGJ1dCBkb2VzIHRoZSBwaHlfbmVlZHNfcmVpbml0IHN0YXRlIG1hY2hp
-bmUgZ2V0CnN0dWNrIHdoZW4gYSBUeXBlLUMgZGV2aWNlIGlzIHVucGx1Z2dlZD8KCklmIGEgRFAt
-b25seSBjYWJsZSBpcyB1bnBsdWdnZWQgYWZ0ZXIgYSBzdGFuZGFyZCBVU0IzIGNhYmxlIHdhcyBh
-Y3RpdmUsCnR5cGVjX211eF9zZXQoKSByZXZlcnRzIHRvIFVEUEhZX01PREVfRFBfVVNCIGFuZCBm
-bGFncwpwaHlfbmVlZHNfcmVpbml0ID0gdHJ1ZS4gVGhlIERQIGZyYW1ld29yayBjYWxscyBya191
-ZHBoeV9kcF9waHlfcG93ZXJfb2ZmKCksCndoaWNoIGNsZWFycyB0aGUgRFAgYml0IGZyb20gdWRw
-aHktPnN0YXR1czoKCmRyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC11c2JkcC5jOnJr
-X3VkcGh5X2RwX3BoeV9wb3dlcl9vZmYoKSB7CiAgICBya191ZHBoeV9kcF9sYW5lX2VuYWJsZSh1
-ZHBoeSwgMCk7CiAgICBya191ZHBoeV9wb3dlcl9vZmYodWRwaHksIFVEUEhZX01PREVfRFApOwp9
-CgpCZWNhdXNlIHRoZSBVU0IzIGNvbnRyb2xsZXIgbmV2ZXIgc3VzcGVuZGVkLCB1ZHBoeS0+c3Rh
-dHVzIHJlbWFpbnMgbm9uLXplcm8KKHNldCB0byBVRFBIWV9NT0RFX1VTQiksIHNvIHRoZSBQSFkg
-aXNuJ3QgZGlzYWJsZWQuIENydWNpYWxseSwgbm8gZHJpdmVyIGNhbGxzCnJrX3VkcGh5X3Bvd2Vy
-X29uKCkgdG8gcHJvY2VzcyB0aGUgcGVuZGluZyBwaHlfbmVlZHNfcmVpbml0IHN0YXRlLgoKV2ls
-bCB0aGlzIHN0cmFuZCB0aGUgYWN0aXZlIFVTQjMgUEhZIGluIGEgZGlzYWJsZWQgcGh5c2ljYWwg
-c3RhdGUsIGJyZWFraW5nCnN1YnNlcXVlbnQgVVNCMyBjb25uZWN0aW9ucz8KCj4gIAl9CgpbU2V2
-ZXJpdHk6IEhpZ2hdClJlZ2FyZGluZyB0aGUgcmVsYXRlZCBjb21taXQgaW4gdGhpcyBzZXJpZXMg
-dGhhdCBjbGVhcnMgVVNCIHN0YXR1cyBvbiBQSFkgZXhpdCwKaXMgdGhlcmUgYSBjbG9jayBhbmQg
-cG93ZXIgbGVhayBpbiBya191ZHBoeV91c2IzX3BoeV9leGl0KCkgd2hlbiB0aGUgVHlwZS1DCm1v
-ZGUgZHJvcHMgVVNCIHN1cHBvcnQ/CgpJbiBya191ZHBoeV91c2IzX3BoeV9leGl0KCk6CgoJaWYg
-KCEodWRwaHktPm1vZGUgJiBVRFBIWV9NT0RFX1VTQikgfHwgdWRwaHktPmhzKSB7CgkJdWRwaHkt
-PnN0YXR1cyAmPSB+VURQSFlfTU9ERV9VU0I7CgkJcmV0dXJuIDA7Cgl9CgpXaGVuIHRoZSBUeXBl
-LUMgbW9kZSBkeW5hbWljYWxseSBjaGFuZ2VzIHRvIGEgc3RhdGUgd2l0aG91dCBVU0Igc3VwcG9y
-dCAoZS5nLiwKYSBEUC1vbmx5IGNhYmxlIGlzIGNvbm5lY3RlZCksIHVkcGh5LT5tb2RlIGJlY29t
-ZXMgVURQSFlfTU9ERV9EUC4gSWYgdGhlIFVTQgpjb250cm9sbGVyIHRoZW4gc3VzcGVuZHMgYW5k
-IGNhbGxzIHBoeV9leGl0KCksIHJrX3VkcGh5X3VzYjNfcGh5X2V4aXQoKQpleGVjdXRlcyB0aGlz
-IGVhcmx5IHJldHVybi4KClRoaXMgY2xlYXJzIHRoZSBVRFBIWV9NT0RFX1VTQiBiaXQgZnJvbSB1
-ZHBoeS0+c3RhdHVzLCBidXQgbWlzc2VzIGNoZWNraW5nIGlmCnVkcGh5LT5zdGF0dXMgPT0gVURQ
-SFlfTU9ERV9OT05FLiBDb3VsZCB0aGlzIGNvbXBsZXRlbHkgZmFpbCB0byBjYWxsCnJrX3VkcGh5
-X2Rpc2FibGUoKSwgd2FzdGluZyBwb3dlciBhbmQgcG90ZW50aWFsbHkgYmxvY2tpbmcgc3lzdGVt
-IHN1c3BlbmQ/CgpBZGRpdGlvbmFsbHksIHJrX3VkcGh5X3Bvd2VyX29mZigpIGluYXBwcm9wcmlh
-dGVseSByZWZ1c2VzIHRvIHR1cm4gb2ZmIGFjdGl2ZQpoYXJkd2FyZSBmZWF0dXJlcyBpZiB0aGUg
-bmVnb3RpYXRlZCBUeXBlLUMgdWRwaHktPm1vZGUgaGFzIGFscmVhZHkgc2hpZnRlZAphd2F5IGZy
-b20gdGhlIHJlcXVlc3RlZCBtb2RlOgoKZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlw
-LXVzYmRwLmM6cmtfdWRwaHlfcG93ZXJfb2ZmKCkgewoJaWYgKCEodWRwaHktPm1vZGUgJiBtb2Rl
-KSkgewoJCWRldl9pbmZvKHVkcGh5LT5kZXYsICJtb2RlIDB4JTAyeCBpcyBub3Qgc3VwcG9ydFxu
-IiwgbW9kZSk7CgkJcmV0dXJuOwoJfQogICAgLi4uCn0KCi0tIApTYXNoaWtvIEFJIHJldmlldyDC
-tyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA3MTAtcm9ja2NoaXAtdXNiZHAt
-Y2xlYW51cC12MTItMC04YjQxYTlhOWJlZjBAY29sbGFib3JhLmNvbT9wYXJ0PTI2CgotLSAKbGlu
-dXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+From: Arnd Bergmann <arnd@arndb.de>
+
+linux/gpio.h should no longer be used, convert these instead to
+either linux/gpio/consumer.h or linux/gpio/legacy.h as needed.
+
+Acked-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+---
+ arch/mips/alchemy/board-xxs1500.c                   | 2 +-
+ arch/mips/alchemy/devboards/db1000.c                | 2 +-
+ arch/mips/alchemy/devboards/db1200.c                | 2 +-
+ arch/mips/alchemy/devboards/db1550.c                | 2 +-
+ arch/mips/bcm47xx/workarounds.c                     | 2 +-
+ arch/mips/bcm63xx/boards/board_bcm963xx.c           | 1 +
+ arch/mips/include/asm/mach-bcm63xx/board_bcm963xx.h | 2 +-
+ arch/mips/txx9/rbtx4927/setup.c                     | 2 +-
+ 8 files changed, 8 insertions(+), 7 deletions(-)
+
+diff --git a/arch/mips/alchemy/board-xxs1500.c b/arch/mips/alchemy/board-xxs1500.c
+index f175bce2987f..a03762dde4e7 100644
+--- a/arch/mips/alchemy/board-xxs1500.c
++++ b/arch/mips/alchemy/board-xxs1500.c
+@@ -11,7 +11,7 @@
+ #include <linux/init.h>
+ #include <linux/interrupt.h>
+ #include <linux/platform_device.h>
+-#include <linux/gpio.h>
++#include <linux/gpio/consumer.h>
+ #include <linux/delay.h>
+ #include <linux/pm.h>
+ #include <asm/bootinfo.h>
+diff --git a/arch/mips/alchemy/devboards/db1000.c b/arch/mips/alchemy/devboards/db1000.c
+index 8fb24b220e3a..5eff34a8683b 100644
+--- a/arch/mips/alchemy/devboards/db1000.c
++++ b/arch/mips/alchemy/devboards/db1000.c
+@@ -8,7 +8,7 @@
+ 
+ #include <linux/clk.h>
+ #include <linux/dma-mapping.h>
+-#include <linux/gpio.h>
++#include <linux/gpio/legacy.h>
+ #include <linux/gpio/machine.h>
+ #include <linux/gpio/property.h>
+ #include <linux/init.h>
+diff --git a/arch/mips/alchemy/devboards/db1200.c b/arch/mips/alchemy/devboards/db1200.c
+index de2a9083ed9a..539b311fc8af 100644
+--- a/arch/mips/alchemy/devboards/db1200.c
++++ b/arch/mips/alchemy/devboards/db1200.c
+@@ -7,7 +7,7 @@
+ 
+ #include <linux/clk.h>
+ #include <linux/dma-mapping.h>
+-#include <linux/gpio.h>
++#include <linux/gpio/legacy.h>
+ #include <linux/i2c.h>
+ #include <linux/init.h>
+ #include <linux/interrupt.h>
+diff --git a/arch/mips/alchemy/devboards/db1550.c b/arch/mips/alchemy/devboards/db1550.c
+index b8295a5c2e9a..579fc8f1eaed 100644
+--- a/arch/mips/alchemy/devboards/db1550.c
++++ b/arch/mips/alchemy/devboards/db1550.c
+@@ -7,7 +7,7 @@
+ 
+ #include <linux/clk.h>
+ #include <linux/dma-mapping.h>
+-#include <linux/gpio.h>
++#include <linux/gpio/legacy.h>
+ #include <linux/i2c.h>
+ #include <linux/init.h>
+ #include <linux/io.h>
+diff --git a/arch/mips/bcm47xx/workarounds.c b/arch/mips/bcm47xx/workarounds.c
+index 745c6228eb2c..dc9e5483347d 100644
+--- a/arch/mips/bcm47xx/workarounds.c
++++ b/arch/mips/bcm47xx/workarounds.c
+@@ -1,7 +1,7 @@
+ // SPDX-License-Identifier: GPL-2.0
+ #include "bcm47xx_private.h"
+ 
+-#include <linux/gpio.h>
++#include <linux/gpio/legacy.h>
+ #include <bcm47xx_board.h>
+ #include <bcm47xx.h>
+ 
+diff --git a/arch/mips/bcm63xx/boards/board_bcm963xx.c b/arch/mips/bcm63xx/boards/board_bcm963xx.c
+index c5617b889b1c..71628dac6c26 100644
+--- a/arch/mips/bcm63xx/boards/board_bcm963xx.c
++++ b/arch/mips/bcm63xx/boards/board_bcm963xx.c
+@@ -7,6 +7,7 @@
+ #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
+ 
+ #include <linux/init.h>
++#include <linux/gpio/legacy.h>
+ #include <linux/kernel.h>
+ #include <linux/string.h>
+ #include <linux/platform_device.h>
+diff --git a/arch/mips/include/asm/mach-bcm63xx/board_bcm963xx.h b/arch/mips/include/asm/mach-bcm63xx/board_bcm963xx.h
+index 830f53f28e3f..428cf4508f9a 100644
+--- a/arch/mips/include/asm/mach-bcm63xx/board_bcm963xx.h
++++ b/arch/mips/include/asm/mach-bcm63xx/board_bcm963xx.h
+@@ -3,7 +3,7 @@
+ #define BOARD_BCM963XX_H_
+ 
+ #include <linux/types.h>
+-#include <linux/gpio.h>
++#include <linux/gpio/consumer.h>
+ #include <linux/leds.h>
+ #include <bcm63xx_dev_enet.h>
+ #include <bcm63xx_dev_usb_usbd.h>
+diff --git a/arch/mips/txx9/rbtx4927/setup.c b/arch/mips/txx9/rbtx4927/setup.c
+index 31955c1d5555..b4fbe6a2a73a 100644
+--- a/arch/mips/txx9/rbtx4927/setup.c
++++ b/arch/mips/txx9/rbtx4927/setup.c
+@@ -48,7 +48,7 @@
+ #include <linux/ioport.h>
+ #include <linux/platform_device.h>
+ #include <linux/delay.h>
+-#include <linux/gpio.h>
++#include <linux/gpio/legacy.h>
+ #include <linux/leds.h>
+ #include <asm/io.h>
+ #include <asm/reboot.h>
+-- 
+2.39.5
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
