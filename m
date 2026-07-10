@@ -4,67 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22EF0C44501
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Jul 2026 16:47:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD81FC44509
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Jul 2026 16:47:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DdB4/DhDi9QgLLz3jkErQd7/vBf4Xe3F7JSl7JACBPE=; b=BXx5HckvExrpgI
-	1r/jsLjKCxKRfmcfx0dhIdMBkw4nztcgGfAYT85122EO59YTa/ufqyrAOMxj8QLFF50V/xXk3bt81
-	ZCxh4yCeDXDKMD+K1+pe1rFigz6AR5IT7vK6yIbyTaFvg89lTrkQHkQMuOHTkjq+oRXqBrkQ0mXL5
-	ajfAQuwsSfw73s1srxOQgMmW3KJIvsdZp0siwOwftnp2mnBx3BTozjqbpQj3DdnJPu6313eL7MFnf
-	v398x3UnN+g9cVYSjH2jNtP1lJmnYERaNdT+LFIxWDR1uQjYAd8Q/MBo8A5qgICstTTZAitJirhZu
-	DZXhc+fltOc4VCdYvjhg==;
+	List-Owner; bh=6n4yfROr0afqsxdkeBJTe2S/OjrVX0v84iz7wRFXmAs=; b=z69ZV9XwmiSgIb
+	Wk4szrCbxyLD5Gw/klMd7iLRC5KaLRAn2DPA6Jy7bMH+PZxrgp2fHenOIjVGJ1sGIrJPjxtGDKM3p
+	R9/k1r5LfCoH3P6ixVZM0P6v2WcuFtcOihRgoRv8MfuOof/Lt5fFO/27CgFvGp9h61kQsemzQEyvB
+	usF0wsNMP/CSy9qmmM1rO0I7/8kPFFezZTrN3v7N0I0qChqTHQvTfeMH9Ud5g6ig140oJHldVLCad
+	w1EKGC93EoQUj/fXiEspuwAPd0bmw+ByceEdBkdnAr9MbkTN61O1m+uBIzfSYuXJXtkL8HR2J/jPM
+	k9NKxNsRhpwOeKPONX0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wiENz-00000005LKJ-3JyC;
-	Fri, 10 Jul 2026 16:47:35 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1wiEO5-00000005LWB-0DKP;
+	Fri, 10 Jul 2026 16:47:41 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wiEN0-00000005JQY-2oH4;
+	id 1wiEMw-00000005JGB-2nyB;
 	Fri, 10 Jul 2026 16:46:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
-	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=EQSt4hDw8cWnniHRwc4rgnTW75Pg/4kF0Wh7Uzk0Acc=; b=qnMniB3larShRPvwzd4YwcPiC7
-	EUQD5htp76D/JoEw/LW0O2MDuKjkRNQERDPp/XraFpoTvBv54cLBYjDexDNtKybA8d9NuA65/A0On
-	9pboCSdbPjUcfgyqShTPehVCLKSQn2EYmEYPsWK59FY36XhQGj+dqVZd2S0GNbpUsTRQ12da+Loo7
-	Q2x4M2Q2ABVX1qZhPh+kCu5q0PZ0ln3LkWllEKdePVcRYSj81OAi8BjPX2kCVBJq5da1r0X//nTFV
-	GrvvC1vv3OKilzxxT6/KZA85/xoakLumCggvCssP7eQwRaquDOw21naJL4V/yNLETdscO5ECJAuu6
-	IRlH5Vjg==;
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1wiEMw-0000000AAb7-2zl0;
-	Fri, 10 Jul 2026 16:46:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1783701979;
-	bh=Adf3D9AnAkHrC/YlGvt/hjXUbv43xmuTB0FhRy7nf74=;
+	bh=2gLkRV9WDvS2Po8dt61VmCkxYhpPnN12xRBLJSp5sbU=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=kbfsxRrkDJ/By4IFU2kaeEAVXDq5KERD/hj0zKyTpUp3oil6LIv7YuAiWtT0h1QhW
-	 AS3vqCs+Qqu2h3GQoTjSHOdbOoJkdaiSHW5NFR3wOJuAQ4h9Rp9ONbl1+jMMM9sf7m
-	 cHkP3Q0oTRoBuS6Ia8lhmEun7lVovXuXAD1/isQaVJyB1vlGRYR4pXvnWMC9Zng93N
-	 GzRZ7VAmQq5RENY+PQdcexahYb+hpqB3TgiQBihs49WmsfVSfb6K7oXQeO03yBhMwH
-	 E8sFHRTo8jTNcUCZC1e99MFUQ4True4DfBZTsTNibqPaS1GJOZxxBO620wkFtnXO+4
-	 WI0Z6LCYpe4wg==
+	b=KbX23xCqk9IZWmkgzpqdhY7nlDg/WC+S/ncSxSZgSHMJ4OIyezWPqhWzuXP6aJLPz
+	 s58/4vnCMjWaXXMssDNzmwVrNUSudwDSY93cU+D3J8tWApy9PKWju/KISsUYeV1Zdj
+	 0rPQfuwJTsR0hjnv19aGYNQjoAMNMETKrNcPhUoXn7bMTeaH90+939kwASPY0KIY41
+	 d1xH58exq02o5A5tfRLqqh7dPNuQ54SG4qICOWGeVu6FzasdnJ6wiC1H5r+2frdwIQ
+	 SP9Q6I+B/3aznbn/szWtOVUwWcVnnW2e/yhYgdJzDYX0PtTfA/zgA4nCCLTUrVZMUk
+	 FxmsHkO6ABArw==
 Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519)
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 2947917E127F;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 0B2B017E1066;
 	Fri, 10 Jul 2026 18:46:19 +0200 (CEST)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id 105E748006E; Fri, 10 Jul 2026 18:46:18 +0200 (CEST)
+	id 0A3A4480069; Fri, 10 Jul 2026 18:46:18 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Fri, 10 Jul 2026 18:45:05 +0200
-Subject: [PATCH v12 27/36] phy: rockchip: usbdp: Handle
- rk_udphy_reset_deassert errors
+Date: Fri, 10 Jul 2026 18:45:01 +0200
+Subject: [PATCH v12 23/36] phy: rockchip: usbdp: Clear USB status on PHY
+ exit
 MIME-Version: 1.0
-Message-Id: <20260710-rockchip-usbdp-cleanup-v12-27-8b41a9a9bef0@collabora.com>
+Message-Id: <20260710-rockchip-usbdp-cleanup-v12-23-8b41a9a9bef0@collabora.com>
 References: <20260710-rockchip-usbdp-cleanup-v12-0-8b41a9a9bef0@collabora.com>
 In-Reply-To: <20260710-rockchip-usbdp-cleanup-v12-0-8b41a9a9bef0@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -84,26 +70,26 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  Sebastian Reichel <sebastian.reichel@collabora.com>, 
  Sashiko <sashiko-bot@kernel.org>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2365;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1231;
  i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=Adf3D9AnAkHrC/YlGvt/hjXUbv43xmuTB0FhRy7nf74=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpRIdkklZx5EIMfvsZqKr8/+swrXpeTuekXU
- vTJ+GjYVOqoyYkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqUSHZAAoJENju1/PI
- O/qaB7sP/ArLanC+QhP0ztEzeBU3ZeSO2fQS90p8TYlt7bzQmS3xb+PEB5EQ9wl27SIj0oScndP
- PeD7r/E5B7NpkkubID1E5HKnLn4fUbTzYX0r4i1oLAOMyZoGQXjfT1RZOucBW2GU98LpVyCS5jD
- N6uvmNrpgDOJ9uQg2/dotQfDrLCOsGIyj9iagRn/WR5cil8cHs9QEKOZhyWUbrbavn0j7MyWkjP
- WWFkhBQsgcgBnBi0ceZhxqh350fXGWQIGFufGm+Zl+2vp7W1o7H88JCQJt5KEeF6AgqJTcJ+RHP
- Kyy/W3wvwNU3G7Quki/khqGN5MISpPqf6SOHwt3GiZ4F66PBbUiy2one+8DZk98qC9QnzeBWNlq
- 36nWvoEvayvcaM5LBmshwNlI6TFRI+GrJTNJyt8q7veYAFGCJV4bJwYvXo6ghJPdCJuC8vmKUhu
- D4XK1+3FR9csXG5aXnqaT4X4jOqojpbIMf24sHUTwEulutEbH0Ok/VW/aEnlQyIFhonszNNekp2
- 9aujUIA9LfjT/1Lld6wVdkHnFdizb4S6WVba+zqxIdmMC0RDFT9OGxihYPGSAVrfStqYy7VkmVd
- SFDna/X4M6ny7wY3zJz0g/vLYKrEHSIZeimVY0tMQKmOUoODrfqpdOaOjWTM8JynP0+gATKsFu5
- zB8v0+CIxtQ+XZMZTy0U8SQ==
+ bh=2gLkRV9WDvS2Po8dt61VmCkxYhpPnN12xRBLJSp5sbU=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpRIdl/6QOwty84wstrmcD/c8k+KmVlkxsw9
+ Wadc0m3+uRAsYkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqUSHZAAoJENju1/PI
+ O/qaFm0P/imYG+JPo5C9PiNekq1YpO111qtuk60JOpoJcXeYA8ZsQKWCWa5yqsA+cJ0H7I98ULs
+ dn+yhtufyQ1CWfBkxRUi+JZVQ337gAuSzlo7eooExY/j164m2nXOBeJDFaHVn7PfUd5QjJ+BVIF
+ SR82/AMooT+lMgOFUeFlshf+BHlkGiuh8GjniTV19wWzfjSA9r6v879D7iUhxAQrTageFFb3yml
+ Fwq7QBkCi+pUSRyhPfRuBzfKFCHXorzOjDe+jg8//nYls32QF+sLrPs+7zYhg79HORkVcWuH+3l
+ RX02S4RrNhZWfys/2IemWE8o3SFdcXbUOROj9L7BGCAsssOVErTUZsd/PPZp4fPh5598ccb4qCb
+ xb5xeLu1iPVkUeNBxkyiiDtSoC2a882q2QxcjVNuH+TIlE/pbNModiY4usQ3ZvQq7kTUq/84oU9
+ +o3Npyjnb6DBmlDgGmxMOp7/leXXmdadyHnkKf6PsxI4dWo8yfIT81cRNSaY3s/PRyO3dPGZA4K
+ fMAqCSW/CV4knR/iqLdhD2ZmxmBGNnbfpiKBEXfVescoeFUM/CWMyn39ZvV92zCkc39654MMsYV
+ h4p3DvRcbW9Khei1i4u0H1pcPW7kjcD+5ExYEAQ8q51yjpi2BMu8Li/uqrwVIkjzW5bjG7J0BYq
+ fksy3bZ0d7S4V6Bl0w/kyyg==
 X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
  fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260710_174630_906422_AA312EF3 
-X-CRM114-Status: GOOD (  11.93  )
+X-CRM114-CacheID: sfid-20260710_094630_894411_0094D852 
+X-CRM114-Status: GOOD (  12.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,67 +106,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Handle rk_udphy_reset_deassert returning errors to avoid theoretical
-(Rockchip reset controller driver does not return errors) SError.
+Ensure the USB status flag is cleared when the USB3 PHY is
+exited while the system is in DP-only mode. This can happen
+if the USB3 controller device is unbound while a DP-only
+adapter is plugged into the USB-C port.
 
 Fixes: 2f70bbddeb45 ("phy: rockchip: add usbdp combo phy driver")
 Reported-by: Sashiko <sashiko-bot@kernel.org>
-Closes: https://sashiko.dev/#/message/20260626211151.2332F1F000E9%40smtp.kernel.org
+Closes: https://sashiko.dev/#/message/20260625-rockchip-usbdp-cleanup-v7-24-38eb3cf654fd%40collabora.com
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 25 +++++++++++++++++++------
- 1 file changed, 19 insertions(+), 6 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index ff768e5b43ca..2099ae2e51d1 100644
+index 8c165bcab796..a742bde7155b 100644
 --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -803,8 +803,12 @@ static int rk_udphy_init(struct rk_udphy *udphy)
- 	/* Step 1: power on pma and deassert apb rstn */
- 	rk_udphy_grfreg_write(udphy->udphygrf, &cfg->grfcfg.low_pwrn, true);
+@@ -1273,8 +1273,10 @@ static int rk_udphy_usb3_phy_exit(struct phy *phy)
+ 	guard(mutex)(&udphy->mutex);
  
--	rk_udphy_reset_deassert(udphy, "pma_apb");
--	rk_udphy_reset_deassert(udphy, "pcs_apb");
-+	ret = rk_udphy_reset_deassert(udphy, "pma_apb");
-+	if (ret)
-+		goto assert_resets;
-+	ret = rk_udphy_reset_deassert(udphy, "pcs_apb");
-+	if (ret)
-+		goto assert_resets;
- 
- 	/* Step 2: set init sequence and phy refclk */
- 	ret = regmap_multi_reg_write(udphy->pma_regmap, rk_udphy_init_sequence,
-@@ -830,8 +834,11 @@ static int rk_udphy_init(struct rk_udphy *udphy)
- 			   FIELD_PREP(CMN_DP_LANE_EN_ALL, 0));
- 
- 	/* Step 4: deassert init rstn and wait for 200ns from datasheet */
--	if (udphy->mode & UDPHY_MODE_USB)
--		rk_udphy_reset_deassert(udphy, "init");
-+	if (udphy->mode & UDPHY_MODE_USB) {
-+		ret = rk_udphy_reset_deassert(udphy, "init");
-+		if (ret)
-+			goto assert_resets;
+ 	/* DP only or high-speed */
+-	if (!(udphy->mode & UDPHY_MODE_USB) || udphy->hs)
++	if (!(udphy->mode & UDPHY_MODE_USB) || udphy->hs) {
++		udphy->status &= ~UDPHY_MODE_USB;
+ 		return 0;
 +	}
  
- 	if (udphy->mode & UDPHY_MODE_DP) {
- 		regmap_update_bits(udphy->pma_regmap, CMN_DP_RSTN_OFFSET,
-@@ -843,8 +850,14 @@ static int rk_udphy_init(struct rk_udphy *udphy)
+ 	rk_udphy_power_off(udphy, UDPHY_MODE_USB);
  
- 	/*  Step 5: deassert cmn/lane rstn */
- 	if (udphy->mode & UDPHY_MODE_USB) {
--		rk_udphy_reset_deassert(udphy, "cmn");
--		rk_udphy_reset_deassert(udphy, "lane");
-+		ret = rk_udphy_reset_deassert(udphy, "cmn");
-+		if (ret)
-+			goto assert_resets;
-+
-+		ret = rk_udphy_reset_deassert(udphy, "lane");
-+		if (ret)
-+			goto assert_resets;
-+
- 	}
- 
- 	/*  Step 6: wait for lock done of pll */
 
 -- 
 2.53.0
