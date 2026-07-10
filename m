@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2516C44508
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29854C43458
 	for <linux-phy@archiver.kernel.org>; Fri, 10 Jul 2026 16:47:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,45 +12,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=au29nUywfm4H3BvYGvqZF51R78kSlGUBY/W3PzlshFw=; b=k3GwdYmlnFraU1
-	RGxLLRNJG/0r1GVdBWFEwcj+gHKc7Xuc6wC15quKpo6bCzU0mruGgzbonm/f/1mz5dmtrgvQkRSNG
-	tRQ8/6e9n8tLF0QWsfcnYzA++lnQgVDok1J0J2HPBGEu1b33woFQhC2vgCMCUekCYXJXzbqDEhdBH
-	CcgMx5zmc49GNGwwes/3OlUTUOJnHyfflZiZ2jPUQPqRhThInMC2b+7cAAmnRTjvby83KLvdKWT6M
-	3wAcLo1yo4YpE3FjE0Lvck0bOg/LLM0f+3wj0TK5ke/bzOJGZ129qLec/RzcCAxZdesDN+3hpa7/k
-	7lUbbM6+1FVfDFg1XYQg==;
+	List-Owner; bh=hkwGSZGE4W3s0kKQqsT9prXidYoGtLrl22zprFybPuw=; b=Re2UDnDP82E99e
+	51wey7b6HiHHNOirscF54uzIqR6nP4WPVTSb6edGt7KmZI1K7A39QK//85uba2oerzwxp3zUI+C5z
+	CqskIVURD9105yuKul2XbPFKlxcarmC5OUPMqcEY7xoV+4D6thWY00kElf6myxOCvKj3p2RsWKf4Z
+	6G/UksOx/dNSpi9QKc8ZAuN9dIaYDuFCSuijUzj63iFRTG24aIZqnacf0DULZsVIt/6iuxTXIvUmX
+	Fs7aIdj6s3OTj4a3GPZo2PTW/pHWojgCriYQG5UcQuClGNRf7xbpJEe+ZJTwXPCedbCzl7aiIF23E
+	os10IOAuM973GvNu42xw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wiENk-00000005Kcn-2We7;
-	Fri, 10 Jul 2026 16:47:20 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1wiENj-00000005Kak-3FUo;
+	Fri, 10 Jul 2026 16:47:19 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wiEMu-00000005JE9-4BJF;
-	Fri, 10 Jul 2026 16:46:32 +0000
+	id 1wiEMs-00000005J9j-1VJm;
+	Fri, 10 Jul 2026 16:46:31 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1783701979;
-	bh=M0nFL5Ec9a+nAx7KM5MPvRfwUmrPlBv56rRN9JqMFu4=;
+	s=mail; t=1783701978;
+	bh=p/Hx7Dq61GhbEna9UzxVrHfH1lhodjbwQzayZC0Idd8=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=LCuZiY13oen7vGcIJN8GAYwikrUhNu4laH8qiyDGnVHIuzjiS7lQ6+EHEb+iJ3NnK
-	 g/BFN8kI88QuezwImjxPBDucDXlOPnKOReRq9CwybuE6G8IhcwpucOZoSWAXuDOQNR
-	 m9xOxYUbLYE3FSxad+teheuB6zbIXt3z0hPmxbVzkwk2YdypOJjOO0yTLF5d1RKkPe
-	 7eN+chuOY3G47O+uxqLhOuuD/h466l7+CHvEXHzdWpWiwZXQu7wGWyfLeGEw9NxxwK
-	 Z4s3XF4EitFdegM1Jt6+kwx4oNNFPpRS36RZxUdkNi0sJjt5RJAIQH1al6DEjBzSrb
-	 n0eptkXtwvl0w==
+	b=XFO8By1DJ/gAVp+WFYrD6tBjg3DLbe0FQoFrl+v/HkTV8kSEHcFSXDpSYrJ03hwOj
+	 rl9UN8b/9HO1MJ1afBbopyjV5GjWX0UDshAfQX13RyPtseOIY2szsS26wltb7E9U+9
+	 2ZYNDCJMW0HUNN8D3D8FSGWZFNg80VNxFUhgpItaxEwuwPZI21UrIy/wbj2ctsoiGs
+	 sNkfrmkK93uEfxwu6eIG/KF1gsE/I4sa0mzsZbo/g2xm2Yc4YCkRC1+/VtkN7N0+0/
+	 0TIAGpzQiZufTK8oIuI29yYRT4FjMpKBjnt/ZJPUEEjmy5VzN7nfuAts+wpWmEjtxb
+	 8r4CTjqp94wjA==
 Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519)
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id C590117E101E;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 9B9D217E0FD0;
 	Fri, 10 Jul 2026 18:46:18 +0200 (CEST)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id F23A5480055; Fri, 10 Jul 2026 18:46:17 +0200 (CEST)
+	id EDA5748004C; Fri, 10 Jul 2026 18:46:17 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Fri, 10 Jul 2026 18:44:53 +0200
-Subject: [PATCH v12 15/36] phy: rockchip: usbdp: Cleanup DP lane selection
- function
+Date: Fri, 10 Jul 2026 18:44:50 +0200
+Subject: [PATCH v12 12/36] phy: rockchip: usbdp: Limit DP lane count to
+ muxed lanes
 MIME-Version: 1.0
-Message-Id: <20260710-rockchip-usbdp-cleanup-v12-15-8b41a9a9bef0@collabora.com>
+Message-Id: <20260710-rockchip-usbdp-cleanup-v12-12-8b41a9a9bef0@collabora.com>
 References: <20260710-rockchip-usbdp-cleanup-v12-0-8b41a9a9bef0@collabora.com>
 In-Reply-To: <20260710-rockchip-usbdp-cleanup-v12-0-8b41a9a9bef0@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -67,28 +67,29 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
  linux-kernel@vger.kernel.org, kernel@collabora.com, 
  devicetree@vger.kernel.org, linux-usb@vger.kernel.org, 
- Sebastian Reichel <sebastian.reichel@collabora.com>
+ Sebastian Reichel <sebastian.reichel@collabora.com>, 
+ Sashiko <sashiko-bot@kernel.org>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1889;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1284;
  i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=M0nFL5Ec9a+nAx7KM5MPvRfwUmrPlBv56rRN9JqMFu4=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpRIdnqu9WnvXtVfALP/heXYjhF1739NIHt9
- vbsnBCRW3FR64kCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqUSHZAAoJENju1/PI
- O/qa3QMP/3U18siTpCKZtv1qpp9eOec/quVU9Owehf5/dOR5tttpOLMJ5W3Ah2dnrxvepCAFH2S
- w9q4FkuTjQrTYU821ahUkdKfcHSo3VDzEfjrAhVAd8PJwJsUk4wxzxtPRVw9b9xhie/2zAe/i4D
- hOG/FfoXCcWBUxapSqHqQCtRR2nDlsYxR0HzZZNDTmTP7L0VnSeuXPcZhmTqOsmnkT+xV/MHnvJ
- pOtd9Ab6gbrEmsFeXd+wJNuQsoB9rwEex/f02XAMbhDBgplmylex2H3OhKvz8gq+F1XVCYJhXJS
- dJdAPLAcUMtfS149qydCG/IUx19rAjYuxs0rEhJu+/y9MsXZehoQrIolsPs9Ed0ieda1tOATyYc
- Z9Cx7TBXx7tOfIgdZKonVqD6Vif1JPlO5jFUf6+cZkPAS/2SkMOLlriZAYceT/gN8gKS8ZhwiwP
- QlfFemUWYsp9vyKEM8ZrM3y4qt2lBKaxgNsiivXQLLUDAmOCpR1SrRJyBuqhqvAYTKbd2ed3SOZ
- uhqG987dgSWffvUWTeqTiisPbvUsNYtnKUkCMd5Qio4Kaa3Gy2H6p+bNv8DSTb1yU5hinscIz09
- Bkq6HawEppCCZS0MXt6cGOlgS4wtWnhUw6IHS8xFqoXOqofkWviseO9+hHztEgQOtiMzsRAsr+E
- pQ92EdpF3oo64o0REnzYltw==
+ bh=p/Hx7Dq61GhbEna9UzxVrHfH1lhodjbwQzayZC0Idd8=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpRIdj72DDjkI9/sX7ecpjWBaZ0uU6L11Adj
+ JQbaNK+mlmu54kCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqUSHYAAoJENju1/PI
+ O/qaESkQAIu0jxdbXqe+fqC+khEjIl6hvyv6VQwFYdaXEdNsfvDfm7FfPyCchwQSwhSXJlT/8tJ
+ Y/BY9dJPLvsR3fxhTmFk54Ux1nJL7GAX4v2seAFW76k0Lj+x8aVrmZJA4U21e+WEuJ4sDG7v9mO
+ E5cftShB/uw33/pTzJcskHFjfxI96EWMdCloEBbS5nYzIZUbf5ERnMGnvydSyPXC/LwY0/JGWo9
+ LCne3Wsyb08LBDbCTOwB49UmLw1g9hjdRknPHynmDjbcc9QHlTX/NUIDvATjuYvB8GisALP49XL
+ FPWDio3g7VerJyDDOGtd4PvR0PLsdfLApHqlb3fQhgKaMkSRyttNCSv8d/5QbxwxQ0VTQKrNjF3
+ VtpAcVcesTRZ/kVomqXvg3brQfKKpr7YleJbqKEN/M/ESzbTOj6lBEvNe/TZkCpfydc8jS/Kt0u
+ V+XDUP6egbnYmwj/K23LpPhvXYWm5G6lZ598AvpFzGVKDtJBGWHz5qiesevVZifjqV4ZpgNMpEn
+ YeF1PR7m4O8uAT3bCm5Y2BnesXd+BGr9YgHHoit1zxgqjAxAtIvU2w1Z/ioOO1dMgrNUaGfS4zl
+ AqbruJg+tZn9jnE0Z72LDSNT3J0dEaS/ogMBQ8fps7GOUu7IyFqVQ0duuu0PK7G6b5FMiHZZs71
+ iMUSQM2GUxxvlMt9L82gxJw==
 X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
  fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260710_094629_232292_C52A9F95 
-X-CRM114-Status: GOOD (  10.21  )
+X-CRM114-CacheID: sfid-20260710_094626_580782_7F3035DC 
+X-CRM114-Status: GOOD (  12.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,57 +106,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Use FIELD_PREP_WM16() helpers to simplify the DP lane selection
-logic.
+In theory the DP controller could request 4 lanes when the PHY is
+restricted to 2 lanes as the other half is used by USB3.
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
+With the current user (DW-DP) this cannot happen, but as the check is
+cheap and users might change in the future protect things accordingly.
+Not doing so would corrupt USB3 usage by the following code configuring
+the voltages.
+
+Fixes: 2f70bbddeb45 ("phy: rockchip: add usbdp combo phy driver")
+Reported-by: Sashiko <sashiko-bot@kernel.org>
+Closes: https://lore.kernel.org/linux-phy/20260612165546.98E1F1F000E9@smtp.kernel.org/
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 28 +++++++---------------------
- 1 file changed, 7 insertions(+), 21 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index 05593e98c16d..eda3f7a1e267 100644
+index c4d62b234ea8..b172ce6a722e 100644
 --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -548,30 +548,16 @@ static void rk_udphy_usb_bvalid_enable(struct rk_udphy *udphy, u8 enable)
- static void rk_udphy_dp_lane_select(struct rk_udphy *udphy)
+@@ -1099,6 +1099,9 @@ static int rk_udphy_dp_phy_verify_link_rate(struct rk_udphy *udphy,
+ static int rk_udphy_dp_phy_verify_lanes(struct rk_udphy *udphy,
+ 					struct phy_configure_opts_dp *dp)
  {
- 	const struct rk_udphy_cfg *cfg = udphy->cfgs;
--	u32 value = 0;
--
--	switch (udphy->dp_lanes) {
--	case 4:
--		value |= 3 << udphy->dp_lane_sel[3] * 2;
--		value |= 2 << udphy->dp_lane_sel[2] * 2;
--		fallthrough;
--
--	case 2:
--		value |= 1 << udphy->dp_lane_sel[1] * 2;
--		fallthrough;
-+	u32 value = FIELD_PREP_WM16(DP_LANE_SEL_ALL, 0);
-+	int i;
- 
--	case 1:
--		value |= 0 << udphy->dp_lane_sel[0] * 2;
--		break;
-+	for (i = 0; i < udphy->dp_lanes; i++)
-+		value |= field_prep(DP_LANE_SEL_N(udphy->dp_lane_sel[i]), i);
- 
--	default:
--		break;
--	}
-+	value |= FIELD_PREP_WM16(DP_AUX_DIN_SEL, udphy->dp_aux_din_sel);
-+	value |= FIELD_PREP_WM16(DP_AUX_DOUT_SEL, udphy->dp_aux_dout_sel);
- 
--	regmap_write(udphy->vogrf, cfg->vogrfcfg[udphy->id].dp_lane_reg,
--		     ((DP_AUX_DIN_SEL | DP_AUX_DOUT_SEL | DP_LANE_SEL_ALL) << 16) |
--		     FIELD_PREP(DP_AUX_DIN_SEL, udphy->dp_aux_din_sel) |
--		     FIELD_PREP(DP_AUX_DOUT_SEL, udphy->dp_aux_dout_sel) | value);
-+	regmap_write(udphy->vogrf, cfg->vogrfcfg[udphy->id].dp_lane_reg, value);
- }
- 
- static void rk_udphy_dp_lane_enable(struct rk_udphy *udphy, int dp_lanes)
++	if (dp->lanes > udphy->dp_lanes)
++		return -EINVAL;
++
+ 	switch (dp->lanes) {
+ 	case 1:
+ 	case 2:
 
 -- 
 2.53.0
