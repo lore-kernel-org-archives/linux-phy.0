@@ -4,71 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F85FC43458
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Jul 2026 15:55:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 799E8C43458
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Jul 2026 16:46:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V2a/wkCJEKHH526RShHh2H9w/zxANZBIGK6KF1ZPK1A=; b=gZx0HPvZF7W+lH
-	F2vo1eNvsbRpTj8ShzUTUiw51qd9QSkB3sxcVjC4wAlEH6JoQZV1sIVMz8myu/50GALko6BHTNpfZ
-	DUg6jeffd4Fdni8GLLR88mGhvEFT5TDiizArnNshrhuK7wLmwAmM2UvLmAHBQ5QwF65ncocZ3kZJE
-	o8zM4s4oql2O5izzz+ABsQ8uhZgVqPYlTOB6xdd+xfNvlRY5cyahNUYpbWprWcobYQwDO9lKkjYEe
-	6QlUpR348fPmcPOUbKcx9vajaiFai6e+2pfvYaT1sTu+mdxD/MkBgw48ghEcWdwkofc2x9fJjDeoM
-	Rw7266tBS/2BdJTAn/zA==;
+	List-Owner; bh=BLdA1IFPDUrmMNESpajnEqn/S7JZzJSfQh8R/roSSY4=; b=tApZku7xi2fKDE
+	rR3vJm9gjsk52TUN4js2Wnu7+qkiwNohqRi/8uAK9ngBJ0Sk3NN1dFqH+hMunrOQDJMdaXmAXNcNk
+	qMVUxaSIhy/6XPdQHAuhIZ3j4nLLMxNAz8Y0Wqx0YDagw5GZ9jj721SaEQ+xvQ26JOrIDoHO6mNv3
+	fAYHdDNUa4PGBvSAh7lQdeks0f+8+h8WZ8RpbEJKNns2Rne7cr8flOldwuZdIDFMNUyB8Cm6z/Cgs
+	FBtd5Km73DQrAjreS5SZeDDqEKSwQ1s+aB69WSfx1kviSIVCvxhytaMTiSGftvMi9waorPJZOZT21
+	QJVC//7MKMzUtQiZvGDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wiDZi-00000005E4n-2tOE;
-	Fri, 10 Jul 2026 15:55:38 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wiEMq-00000005J9o-3gUY;
+	Fri, 10 Jul 2026 16:46:24 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wiDZh-00000005E2l-0KUW;
-	Fri, 10 Jul 2026 15:55:37 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9D03E41944;
-	Fri, 10 Jul 2026 15:55:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1C3C31F000E9;
-	Fri, 10 Jul 2026 15:55:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1783698935;
-	bh=SuBn+qM9tZrJlvXW+nzoxQ4e9HtFDIaF9zBrPfyVFeA=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=UPenvW+mFXYRa5Xjsm6aXAqYufOqCJ5V7fxPkJr2mIKaD/B0InGGoaeo1ry1282gY
-	 AKm5H+mLP65IpFPClBzRBZkk1fVyz+2KA6R4USZWlbw3NxAH1sCRKDSuxbd5xRWFoe
-	 qG/9OoIrV5HUXKI0DQSKkd8vxf+nCDV6NZpa7GSZJtpHqyQzFJcA+EcpyJbc/YfGMC
-	 ss0/TyqbVZdom5eYeAoAIDtmYbVvZntsEud+VeGpomsb648OJ3lhr6X1B64K/dkdK1
-	 AKoIEXnVP11RNyMIAsXL6yCd1UhMyxG9mx6yfj7Fk92OCkFdnzvZhI+i8410pJGon1
-	 lY1HoUNgUt8yg==
-Date: Fri, 10 Jul 2026 08:55:33 -0700
-From: Drew Fustini <fustini@kernel.org>
-To: Icenowy Zheng <uwu@icenowy.me>
-Cc: Guo Ren <guoren@kernel.org>, Fu Wei <wefu@redhat.com>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Paul Walmsley <pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
-	Jisheng Zhang <jszhang@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-riscv@lists.infradead.org, linux-clk@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-gpio@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-usb@vger.kernel.org, Han Gao <rabenda.cn@gmail.com>,
-	Yao Zi <ziyao@disroot.org>,
-	Emil Renner Berthing <emil.renner.berthing@canonical.com>
-Subject: Re: [PATCH 11/12] riscv: dts: thead: Add Lichee Pi 4A IO expansions
-Message-ID: <alEV9XJ2pr23CJ3B@gen8>
-References: <20260507081710.4090814-1-zhengxingda@iscas.ac.cn>
- <20260507081710.4090814-12-zhengxingda@iscas.ac.cn>
- <b8fc8356212012d92186a1a4cd3ad641f01461a6.camel@icenowy.me>
+	id 1wiEMn-00000005J6r-2V9y;
+	Fri, 10 Jul 2026 16:46:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1783701978;
+	bh=ou2OeHe9NiTPGYgMcRzTUBwKmURTgL5/azZ1wBtlGvM=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
+	b=Z9/lgldW1p/torIfO3+0J7K5SE7Px5YDPwEuMuUqbjYAZzc9N7qCZmS8LqapBK2QV
+	 WlPAwUMWx6EEZuJmTnnNJdo+eB3Mb29MQtZ1QTZPEAsjFZWm7w90aaCjt6BjNGwAiW
+	 BGaNzkDa4AlB6U9LmgjkvBhRNm7PJePBV7A7rKLLmnavF0H9I0rUgOYK6rTU/wMa7E
+	 Z4BPFaHRELtG4haE9EuLaQv1Ff9aIRJsy4YZXuR8zgl0SLjBVZzgrs/oI6ZjBLxNE3
+	 S5CwAwEc0mlONyWXiamHsZ3PcoL5rTWDd26pELCCNbL+UgKR33Ee04Zb0qPWWkb7sR
+	 PVOk3F/knagtg==
+Received: from jupiter.universe (unknown [100.64.1.62])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: sre)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 2AA3C17E0EA6;
+	Fri, 10 Jul 2026 18:46:18 +0200 (CEST)
+Received: by jupiter.universe (Postfix, from userid 1000)
+	id DF44248002F; Fri, 10 Jul 2026 18:46:17 +0200 (CEST)
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+Date: Fri, 10 Jul 2026 18:44:41 +0200
+Subject: [PATCH v12 03/36] phy: rockchip: usbdp: Do not lose USB3 PHY
+ status
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <b8fc8356212012d92186a1a4cd3ad641f01461a6.camel@icenowy.me>
+Message-Id: <20260710-rockchip-usbdp-cleanup-v12-3-8b41a9a9bef0@collabora.com>
+References: <20260710-rockchip-usbdp-cleanup-v12-0-8b41a9a9bef0@collabora.com>
+In-Reply-To: <20260710-rockchip-usbdp-cleanup-v12-0-8b41a9a9bef0@collabora.com>
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Heiko Stuebner <heiko@sntech.de>, Frank Wang <frank.wang@rock-chips.com>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>, 
+ Yubing Zhang <yubing.zhang@rock-chips.com>, 
+ Alexey Charkov <alchark@flipper.net>, linux-phy@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, kernel@collabora.com, 
+ devicetree@vger.kernel.org, linux-usb@vger.kernel.org, 
+ Sebastian Reichel <sebastian.reichel@collabora.com>
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1409;
+ i=sebastian.reichel@collabora.com; h=from:subject:message-id;
+ bh=ou2OeHe9NiTPGYgMcRzTUBwKmURTgL5/azZ1wBtlGvM=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpRIdgT4M5ecjWoo9i4FR9rI2qvhAlHpQ8ej
+ pRJGRn/KQ+JrIkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqUSHYAAoJENju1/PI
+ O/qaL6IP/3NBH0E5hs6z3K/Y0L4JnphZO8K1ayvhrcKZi9bmum93d+iJwJHKF1+Tp5WTQxHn1ON
+ nzZ+WbWi2ZItdAms5R6mE1k1+fkaK6N1VwaLl50KeefC9oHSxxbombhkVOBNmSgYSM00jXJL1N2
+ YTDL5421gLW6E5jLXt6/rDLtDbecmGayYRsVKAqz5POE5MKeTKf3asC9lZfND2b7D4VtH/ut/07
+ wJgIBBspErHRGub6coWLLz61eurp5Gb5/HzpEM3GIm2+VPrDUVpQzZuCUrxJTNDsN9+HVO/+Agw
+ 6SBmcQh0ItYcMd4iM8a6NAK+0BkOucayNENTAY3fS7naKMzPt2jGNN6P4dHJlDhiZBvKyuf66ib
+ BgySUYlltC92bpz6Qh41a0sWg8D6lA2ckCJOdiM49HFyXWHvUjsfx2J5Gbcnqj7VjAMngQ0jWK9
+ XL6XzlS8le4hb2LluTzLtIbYlWCvmPgIv3+UWRYJ+7sxMcRXgiH9DXDVWM6FbxHU0PSMLn+PHLO
+ rWtho30nM7FWmzDTYaVQD39leq9N/c2rFPIIRT0CVOvcUmjQ8+2U2A0U0+eGF1VgmpNAu5f5Fdc
+ 9jYwhTjAmEXmP88+kqxOu3+MP7MzImDKTRTOwr1Iu7I7wbC4ERrVj7tBIUy0e9t79NjrUmPDYZK
+ vIDAyuiff8QfNgHtG5Sc0CQ==
+X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
+ fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260710_094621_785594_DD82C03A 
+X-CRM114-Status: GOOD (  12.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,28 +100,47 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gRnJpLCBKdWwgMTAsIDIwMjYgYXQgMTA6NTY6MDhQTSArMDgwMCwgSWNlbm93eSBaaGVuZyB3
-cm90ZToKPiDlnKggMjAyNi0wNS0wN+Wbm+eahCAxNjoxNyArMDgwMO+8jEljZW5vd3kgWmhlbmfl
-hpnpgZPvvJoKPiA+IEZyb206IEVtaWwgUmVubmVyIEJlcnRoaW5nIDxlbWlsLnJlbm5lci5iZXJ0
-aGluZ0BjYW5vbmljYWwuY29tPgo+ID4gCj4gPiBMaWNoZWUgUGkgNEEgaGFzIDMgSTJDIElPIGV4
-cGFuc2lvbiBjaGlwcyBvbmJvYXJkLCBjb25uZWN0ZWQgdG8gdGhlCj4gPiBJMkMwLzEvMyBidXNz
-ZXMuCj4gPiAKPiA+IEFkZCBkZXZpY2UgdHJlZSBub2RlcyBmb3IgdGhlbS4KPiA+IAo+ID4gU2ln
-bmVkLW9mZi1ieTogRW1pbCBSZW5uZXIgQmVydGhpbmcKPiA+IDxlbWlsLnJlbm5lci5iZXJ0aGlu
-Z0BjYW5vbmljYWwuY29tPgo+ID4gW0ljZW5vd3k6IGFkZGVkIGNvbW1pdCBkZXNjcmlwdGlvbl0K
-PiA+IFNpZ25lZC1vZmYtYnk6IEljZW5vd3kgWmhlbmcgPHpoZW5neGluZ2RhQGlzY2FzLmFjLmNu
-Pgo+IAo+IEkgYW0gZ29pbmcgdG8gc2VuZCBhIG5ld2VyIHJldmlzaW9uIG9mIFBBVENIIDl+MTEg
-aW4gYSBmZXcgZGF5cywKPiBiZWNhdXNlIHRoZSBJMkMxIGNvbnRyb2xsZXIgaXMgYWxyZWFkeSBh
-ZGRlZCB0byB0aGUgbWFpbmxpbmUgZGV2aWNlCj4gdHJlZSBmb3IgV2ktRmkgc3VwcG9ydCwgYWx0
-aG91Z2ggdGhlIGFscmVhZHktbWVyZ2VkIHBhdGNoZXMgYXJlIGEKPiBsaXR0bGUgd2VpcmQuCgpU
-aGFua3MsIHRoYXQgd291bGQgYmUgZ3JlYXQgaWYgeW91IGNhbiBzdWJtaXQgdGhlIHNlcmllcyBh
-Z2Fpbi4gSSdsbAptYWtlIHN1cmUgdG8gcHJvbXB0bHkgcmV2aWV3IHRoaXMgdGltZSBhcyBpdCB3
-b3VsZCBiZSBnZXQgdG8gaGF2ZSBVU0IKc3VwcG9ydCB1cHN0cmVhbS4gSG9wZWZ1bGx5IHRoZXJl
-IGlzIGEgd2F5IHRvIGNvbmZpZ3VyZSBJMkMxIHNvIHRoYXQgaXQKd29ya3MgZm9yIGJvdGggVVNC
-IGFuZCBXaUZpIG1vZHVsZS4KCkRyZXcKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4
-LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
-bWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+By default (i.e. without manually enabling runtime PM) DWC3 requests the
+USB3 PHY once and keeps it enabled all the time. When DisplayPort is
+being requested later on, a mode change is needed. This re-initializes
+the PHY. During re-initialization the status variable has incorrectly
+been cleared, which means the tracking information for USB3 is lost.
+
+This is not an immediate problem, since the DP side keeps the PHY
+enabled. But once DP is toggled off, the whole PHY will be disabled.
+This is a problem, because the USB side still needs it powered.
+
+Fix things by not clearing the status flags.
+
+Fixes: 2f70bbddeb45 ("phy: rockchip: add usbdp combo phy driver")
+Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+---
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
+index a5ffdf7a6e76..12dfdd470a78 100644
+--- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
++++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
+@@ -1008,7 +1008,6 @@ static int rk_udphy_power_on(struct rk_udphy *udphy, u8 mode)
+ 			rk_udphy_u3_port_disable(udphy, false);
+ 		udphy->mode_change = false;
+ 	} else if (udphy->mode_change) {
+-		udphy->status = UDPHY_MODE_NONE;
+ 		if (udphy->mode == UDPHY_MODE_DP)
+ 			rk_udphy_u3_port_disable(udphy, true);
+ 
+
+-- 
+2.53.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
