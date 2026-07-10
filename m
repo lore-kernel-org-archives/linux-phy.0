@@ -4,53 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06758C44506
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Jul 2026 16:47:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49A14C44501
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Jul 2026 16:47:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xOJKrBN5WzpYt5FlwcMy5oiYruGySHLGhhmy3QpDDJU=; b=EdmTqzKIxL5DPi
-	Osg+Xdogg1wlaia+HVLU7atU2ioh0Y+5VkGpJylIQCJ6sbMAhyfKN2IVOh7W9FwdnIkxhaCHNtxl5
-	jIpXzEYq1PxyODxjuiZ9cNdx71oUhYEyWjGj6SOgEUOITRvA2qT5OlvOAqskdk14GFpbJeiZK8ALX
-	qVH8Ckgcvxgnrai1m5nCwqLhil7vp8I3nWSK/aw/DA/TWbimwIXTTxmMHIHwcXoWRe5njO5Br9QuM
-	DZQA1Ek9sfmZc10w29Gz3+e8eMTXglG+oBMF8D/0wPVsSf44DdEGHmtkkonu+n1p9Dn15tXTjYJVp
-	DPsZSW9BFjYWaWg7HPGg==;
+	List-Owner; bh=dlsDMbLLbwCQ4jsd/xoBHr3DbZjkriW/R8KWYF9wSXA=; b=sPxSfBAmpQJsct
+	IbY5ZlXBjNhxrvIkobTwaHJArCr0tdj+i/7cm5g77LTQC+8Lu3oWf4SghTCnplAx7FUUel1LXGcXx
+	ZYriALvl9tdwdWizrmutVegC2T4CD9gZ3y+k2Eg0DG0hrgeJ8lAtRrOM2F1AxyFEfJWw9S4HDd4Vl
+	oWATh8MWwaaMy6uzH0/7QBp/zkHUeFd5/aiuWRcZUCjydi/U0/LU7Ditug3dnMJyzLMPFvqdU1JaX
+	V2jzgMw9gyK0g0d4OW5p+A1wa/C9qAU7VTkfXr/4xmKIcy7twkN2un/V/RunfDHAY6InoUzvt24Tl
+	UWg8Gg+Xkxus0wv41YjQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wiEO5-00000005LXy-2mcu;
-	Fri, 10 Jul 2026 16:47:41 +0000
+	id 1wiEO6-00000005Lb6-3Uim;
+	Fri, 10 Jul 2026 16:47:42 +0000
 Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wiEMy-00000005JKT-41ND;
-	Fri, 10 Jul 2026 16:46:35 +0000
+	id 1wiEMy-00000005JKV-3P8N;
+	Fri, 10 Jul 2026 16:46:34 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1783701984;
-	bh=l23k7hURhwLe9t2tXRcPSTBeNz9hUVrmkn6StuJVZSU=;
+	s=mail; t=1783701979;
+	bh=BNl2Fn08aUkxOhWB1xQv712EcMXS1inZZsIZsld0Xl0=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=PltLgtGHUoyUC60S8kt248n+ZF92typs2Y0UFePpRIyFXreJNr0fxFoVdXrZptOBo
-	 RVNwYquTZCZ+MZKiErc3S0w4xhY5xQoop/0KXU9KImxkh+S7yqVSAMlmfu+mDFFTeR
-	 2Q+FdYjJz8nSrhSst3TZRx2hAy3LlrZTNWw5PD9vIuCi7dg2wgREXddaFUeb2sTnhe
-	 5Yol4SIB1JFsX6HLg9ZAE2RoqtWN9XQXhuvYyddGihhZeKPtuEJO5vpQ9IiHTo1wdo
-	 0Vom0mCwpiwHxjIzI1mjRw6e+LoAbRkySDl/hGtau3SfkItk9UfTk4KNoXT9hWysib
-	 uHKROtDGsHdiQ==
+	b=AUqe67x/ZtquKA2YD/Nz6YUwPLO6XcJ8eKOy5OdfOE3NTN9de//boWyPAi2i9InWz
+	 fBrqabeJ32F+8fNiLEQs8njWuzoZyDyIpzsMQevQDoLf5oMXoaqoYXnr8YoyaQFpSj
+	 dXOT/Xvs5CqEGEGpx3hmCplkt97zbXJrQiojZ2o/p6W1HuoLkzIKRACdL7yITMBCqE
+	 LZjpvkNAmnuH9houP59JvLIJ8GczpbVAjQ+2vhpVawOgjZ8t4CPz/lwYytxV5oyJ+s
+	 9xRmiVtgepAkIsMmLSCZT4vX91MJq2K2KvgpL6xzOxTVYDmqZToBtVmHNSJ+sqJj7/
+	 iTz0Cee9n8PVA==
 Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519)
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 624FC17E0B0E;
-	Fri, 10 Jul 2026 18:46:24 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 4A9F217E14CE;
+	Fri, 10 Jul 2026 18:46:19 +0200 (CEST)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id 1E7E748007B; Fri, 10 Jul 2026 18:46:18 +0200 (CEST)
+	id 18291480076; Fri, 10 Jul 2026 18:46:18 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Fri, 10 Jul 2026 18:45:14 +0200
-Subject: [PATCH v12 36/36] phy: rockchip: usbdp: Add USB-C state without DP
- enabled
+Date: Fri, 10 Jul 2026 18:45:10 +0200
+Subject: [PATCH v12 32/36] phy: rockchip: usbdp: Drop -EPROBE_DEFER hack
 MIME-Version: 1.0
-Message-Id: <20260710-rockchip-usbdp-cleanup-v12-36-8b41a9a9bef0@collabora.com>
+Message-Id: <20260710-rockchip-usbdp-cleanup-v12-32-8b41a9a9bef0@collabora.com>
 References: <20260710-rockchip-usbdp-cleanup-v12-0-8b41a9a9bef0@collabora.com>
 In-Reply-To: <20260710-rockchip-usbdp-cleanup-v12-0-8b41a9a9bef0@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -69,26 +68,26 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  devicetree@vger.kernel.org, linux-usb@vger.kernel.org, 
  Sebastian Reichel <sebastian.reichel@collabora.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3387;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1501;
  i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=l23k7hURhwLe9t2tXRcPSTBeNz9hUVrmkn6StuJVZSU=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpRIdmK1+FR9+kRpEl9RK0UUIWQJIQz/xPdA
- 7IOLyGmHLPPA4kCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqUSHZAAoJENju1/PI
- O/qab6EP/jG+yoN0c2EMjDbjw4IcehEdMB3f8qCwZTj7G+yQYhnZdLvZMPK3zWZMkZHvo540YLi
- 9dFYskwln9uXMxejohaMl4P/9vSFV854oZOBWx2sRKUMo7rWnLzEhci2Zqyk9UfyCX8UAGw1Ose
- 7eDxaJtZQ8TG20meU/81XB7JPTqiRnuUZQTZRRffUP8X1AScZUWVwu8XaRe7VUPGJGXQ7v3Z18X
- Kfqhn9l2aad8ACK5HuX/uoxupnQLFvoQAuh8Dxf7jJyIolILVcztFbPGa37JhuYkqYHSUry9M8w
- o67bedptmp8A4KnSSVxyMzpczaVKgKDfOnup4em1gc+K3PT40SJcyiGyUW5WoIUTqHTCAj4AuK/
- R84OOcDQCYCyGZrwiAmqjxKRMDdqEExjFpMy4I8+mCdaYHD/E52Fwtyy4SPDAe6r0lPjreXoQ+a
- 6V335MNCVGVJamS02HkVf9B22XJQdoigIk2gJ7E5Li9ZlFkt8HEoUQkg/UDaQQ7LamRIBDLdkFZ
- mSK0qO5JgwHOGKHHet4h+WZ9oxL4L/lKP5UNa2Lqop0h30Q7ToqbYZqtsKfwMM6Ng4huxHJtmFp
- 01TApZ5Xkb9JBwAVBi8m6crZj33gVM8l4eQBzN9BtyMD1DrXRxddFsz/Sxg/DlpDuESR/ofwOQd
- caCTdiSpUawK6HMtwf24rdQ==
+ bh=BNl2Fn08aUkxOhWB1xQv712EcMXS1inZZsIZsld0Xl0=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpRIdmX8P61+Usbf8aM4mZbcdyVTC6ApzP7I
+ xNHRYHr+VY8D4kCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqUSHZAAoJENju1/PI
+ O/qaQBgP/RuOFUVNpwxGF9p6Rx8Da9Z+UP9bowWSo33x/69xr/UdAiipnYENJ+pIZSLtQeno+xa
+ jCA6Lqs0xGvJc3T2RotOJx7lP1CK/uosErAnhhD/aOllm9hKIDPn4hXPC13ZyMwxK6Zdg1m3QNr
+ DVR9WV4X070/NufJD9obFBnvheaU9kBMlbQcc07pzUv7sjK6kPAf4RTATq01xYUO3aENmmvXgkR
+ ZssHt75R6rlYuFy3tsiw8JHopKjgtAs1iVDA54Foz3WCX6AHI49vgRojLx530j6ZMQKN7KWgeDQ
+ iSKPOa7HOrCR5WevRsDlzbxW70knVyu5XDgud03s7jVTIKZQnkCe+PhwjaUqv2d/T5Guqz8eYnm
+ 0cVLxJx93X7KV6ELiHRWppq9l1RH0zOz3+Lhy1r3cqym1/f4Wo57VBngi5luxOhEjCqVXR+3IM7
+ 9x778iwPY4igO517XjRYG6PcHZYTXCkdwCGeGhdXR02IFCi9OXTUImWZIwsjHGzmz94wn49a9Tq
+ +XfPBaAbsPzZHKPtH05q2AlWA8sWSosn7sC6W5/R5/+5dhdeh6uunmNId+xKGm74t+5Yeb5aBM/
+ NFlhJoQ6S6i5oQY8wUavQFic5WN01TGZBJu7x54h4sjBQP63hvPmLgS+TEiiK3zf7EKY+h41dpq
+ bGpVGUUPgKSRpEm9mLYQ0tw==
 X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
  fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260710_094633_198147_50ECB579 
-X-CRM114-Status: GOOD (  15.27  )
+X-CRM114-CacheID: sfid-20260710_094633_060027_E0FE3D9B 
+X-CRM114-Status: GOOD (  14.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,109 +104,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The driver currently only differs between 4 lanes DP mode or combined DP
-+ USB3 mode. This makes sense from a lane routing point of view, as the
-hardware only has 2 lanes of USB3.
+The hack to return -EPROBE_DEFER when the lcpll lock timeouts is no
+longer needed. The driver now does a reset during its probe routine
+marking everything as off and later on does a re-init, which avoids
+the problem.
 
-But adding a separate state for USB-only helps with power management,
-since we always power up all PHY parts according to the current hardware
-setup to avoid data stream interruptions. Even if some lanes are muxed
-to the DP controller there is no need to keep the DP side enabled if
-something without DP AltMode is plugged into USB-C.
-
-This potentially triggers some more USB reconnections during the PD
-AltMode negotiation when switching from USB-only to combined USB+DP
-mode. This should be fine, as the cable is freshly plugged at this
-point.
+Apart from that rk_udphy_status_check() is called after the probe,
+so it should not return -EPROBE_DEFER.
 
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 57 ++++++++++++++++++-------------
- 1 file changed, 33 insertions(+), 24 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 12 +-----------
+ 1 file changed, 1 insertion(+), 11 deletions(-)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index ecf0ed0139f6..bca096abb076 100644
+index 0333e846ce34..cf173276bfc0 100644
 --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -580,32 +580,14 @@ static void rk_udphy_dp_lane_enable(struct rk_udphy *udphy, int dp_lanes)
- 				   CMN_DP_CMN_RSTN, FIELD_PREP(CMN_DP_CMN_RSTN, 0x0));
- }
- 
--static void rk_udphy_mode_set(struct rk_udphy *udphy, u8 hw_mode)
-+static void rk_udphy_set_lane_mux(struct rk_udphy *udphy)
- {
--	if (udphy->hw_mode == hw_mode)
--		return;
--
--	udphy->phy_needs_reinit = true;
--	udphy->hw_mode = hw_mode;
--}
--
--static void rk_udphy_set_typec_state(struct rk_udphy *udphy, unsigned long state)
--{
--	u8 hw_mode;
--
--	switch (state) {
--	case TYPEC_DP_STATE_C:
--	case TYPEC_DP_STATE_E:
-+	if (udphy->dp_lanes == 4) {
- 		udphy->lane_mux_sel[0] = PHY_LANE_MUX_DP;
- 		udphy->lane_mux_sel[1] = PHY_LANE_MUX_DP;
- 		udphy->lane_mux_sel[2] = PHY_LANE_MUX_DP;
- 		udphy->lane_mux_sel[3] = PHY_LANE_MUX_DP;
--		hw_mode = UDPHY_MODE_DP;
--		udphy->dp_lanes = 4;
--		break;
--
--	case TYPEC_DP_STATE_D:
--	default:
-+	} else {
- 		if (udphy->flip) {
- 			udphy->lane_mux_sel[0] = PHY_LANE_MUX_DP;
- 			udphy->lane_mux_sel[1] = PHY_LANE_MUX_DP;
-@@ -617,12 +599,39 @@ static void rk_udphy_set_typec_state(struct rk_udphy *udphy, unsigned long state
- 			udphy->lane_mux_sel[2] = PHY_LANE_MUX_DP;
- 			udphy->lane_mux_sel[3] = PHY_LANE_MUX_DP;
+@@ -750,17 +750,7 @@ static int rk_udphy_status_check(struct rk_udphy *udphy)
+ 					       (val & CMN_ANA_LCPLL_LOCK_DONE), 200, 100000);
+ 		if (ret) {
+ 			dev_err(udphy->dev, "cmn ana lcpll lock timeout\n");
+-			/*
+-			 * If earlier software (U-Boot) enabled USB once already
+-			 * the PLL may have problems locking on the first try.
+-			 * It will be successful on the second try, so for the
+-			 * time being a -EPROBE_DEFER will solve the issue.
+-			 *
+-			 * This requires further investigation to understand the
+-			 * root cause, especially considering that the driver is
+-			 * asserting all reset lines at probe time.
+-			 */
+-			return -EPROBE_DEFER;
++			return ret;
  		}
--		hw_mode = UDPHY_MODE_DP_USB;
--		udphy->dp_lanes = 2;
-+	}
-+}
-+
-+static void rk_udphy_mode_set(struct rk_udphy *udphy, u8 hw_mode, u8 dp_lanes)
-+{
-+	if (udphy->hw_mode == hw_mode && udphy->dp_lanes == dp_lanes)
-+		return;
-+
-+	udphy->phy_needs_reinit = true;
-+	udphy->hw_mode = hw_mode;
-+	udphy->dp_lanes = dp_lanes;
-+}
-+
-+static void rk_udphy_set_typec_state(struct rk_udphy *udphy, unsigned long state)
-+{
-+	switch (state) {
-+	case TYPEC_DP_STATE_C:
-+	case TYPEC_DP_STATE_E:
-+		rk_udphy_mode_set(udphy, UDPHY_MODE_DP, 4);
-+		break;
-+
-+	case TYPEC_DP_STATE_D:
-+		rk_udphy_mode_set(udphy, UDPHY_MODE_DP_USB, 2);
-+		break;
-+
-+	case TYPEC_STATE_SAFE:
-+	case TYPEC_STATE_USB:
-+	default:
-+		rk_udphy_mode_set(udphy, UDPHY_MODE_USB, 0);
- 		break;
- 	}
  
--	rk_udphy_mode_set(udphy, hw_mode);
-+	rk_udphy_set_lane_mux(udphy);
- }
- 
- static void rk_udphy_set_typec_default_mapping(struct rk_udphy *udphy)
+ 		if (!udphy->flip) {
 
 -- 
 2.53.0
