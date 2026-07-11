@@ -4,71 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E19DC44501
-	for <linux-phy@archiver.kernel.org>; Sat, 11 Jul 2026 19:50:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D287DC44501
+	for <linux-phy@archiver.kernel.org>; Sat, 11 Jul 2026 19:50:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l+2vd15cJJGUZyI1lDuxpnOvaAfJ6KKbinV/Otd5DQY=; b=4vxOWacPcaVQ0V
-	ty0hAbv9/rIKNU1cTCM6ZAE6uoUzO8vzvMCeCUmkXse6mkJyhtL8Squd58dTHGyVIWVrq6xpWPobv
-	u+PbbzroJcw9rpJckYPxd6yfCI8tleoeU9pBCvMgEnwVcXGL2NxbmqMoHgrdaQ3UnRC8qgOAtB0aH
-	EbP3HIJ4Fn/VAGQZqbq3fGayl3VxoBI5zI68B0AuHi+xMPTqAx2RS6LGAvqSyC6lUxzNtqSF+xix4
-	N9ol0WNp9zH++xmSZqqK2a2wY0lIZrxA8CaOY/jRJrkiGFvhm+4nco+wOT/oIZ3bSO1KoMiGvKulU
-	nChLPV3tsKCiIcwcS4SA==;
+	List-Owner; bh=OMqgJeL1Z768TMp2SwHterCqDQWW4gQtXspd8v6FsVI=; b=XiwuzL54C2E8VQ
+	8Zaw3zJFBemrRKkDW+BgkE1Hsc5yPxczuErOzw/xOPMNTn8xc6uhKbtpBw991IGknT3LEymOSmjKZ
+	5SaT9/6mHK9H5pdNbPt/mk6s8p1mMRCqPI78c+Gqd2LOVpVvmBsLf9M2wl0NCbqcTzmUf1aNWHEAm
+	5XlJgYxE6Ys3sJvmjx4Ule0SazlRSYCW7Zj/5a9qNOVoFHlenAOXLYnw1Vg7FJTtWPdqkPcIH4ZjI
+	jpcjnpWtOZJiclSlVqt/qfSo8qxW9hMOHNzwPa9QWtpyzlPOEE/RKOJgRtL9phMn+mGUhr5yyB4D6
+	MvXHqnZMeiFjEF0iE4kA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1widi7-00000006pH4-17WF;
-	Sat, 11 Jul 2026 19:50:03 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1widiK-00000006pLO-2Xyi;
+	Sat, 11 Jul 2026 19:50:16 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1widi5-00000006pGb-3rBF;
-	Sat, 11 Jul 2026 19:50:01 +0000
+	id 1widiH-00000006pJl-03EN
+	for linux-phy@lists.infradead.org;
+	Sat, 11 Jul 2026 19:50:13 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id E4FCE61372;
-	Sat, 11 Jul 2026 19:50:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3985C1F00A3E;
-	Sat, 11 Jul 2026 19:49:59 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 75A5760052;
+	Sat, 11 Jul 2026 19:50:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E08B51F00ACA;
+	Sat, 11 Jul 2026 19:50:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1783799400;
-	bh=4KW0mDYxxvCs+MdA9V1BDmlww/e9OaKOFuPRGtfySv8=;
+	s=k20260515; t=1783799412;
+	bh=rdUahqtxJg50ApBQ7w/taQrMHkspc+FmfnbTmXgl8FE=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=CV9cizgUZHxiVfZXVePzS/iz1smxoeAzfg53JhpVEBDDs2dK+lKh4yPOFlQuvPZqT
-	 0CMXJRjGOWp0LELoIf27NMEyB3rQL16ZTiK6wmedmZwiDiUW2sQd5L603zYP6zYS5S
-	 +MFApwjk6Eo/G/nVi2hpt6/qjlzecRO7UCWU7ZeWNPneg1+MVCJZexWE/EFGGlePOF
-	 dj1Hy3hFGSwb+r/S38zRYqlR9XQ52LBwmRbr0YX22TLYVwg/AEX5izEp3g+rdvwRIL
-	 vTQnCZRxYFA5KhbHFySxlDjDhsA0spuS+VGh0pAapzjSDUUaXKxxqHLKMIafgHjjVF
-	 p5xy1mvG0I5aw==
+	b=Aj9SRxsEvxyqB/wtUbojXM+g5w1gpo6aq+71wgw9mu4hsFfY/u6RevYejNwy8eKea
+	 44e7/5G7C6IdArnsOmbCuHxr4+beXitevDaVUDoMoI1gqssoPi+F7SPBaCs/WhApAf
+	 +mdbGLpRoWaCFfnNHHpEGNHBVPuDz+kKeukzWnhZfs/J1FvLJGmRH9n8zsvUYPulx9
+	 Nis/R91quzW6IotJMm/kvXWXHdf+tnBw34ExqQE4X4WT9MESEjUzIsVeQ+3YCjmGIv
+	 yW7XqMeksJcprX0YHwpLARTfjf90ppzALGtWCPN+BRuFHbNvcC9Vc1O2XbKi/CjoJR
+	 UfGnMcTZubxOw==
 From: Bjorn Andersson <andersson@kernel.org>
-To: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Brian Masney <bmasney@redhat.com>,
-	Konrad Dybcio <konradybcio@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Rob Clark <robin.clark@oss.qualcomm.com>,
-	Will Deacon <will@kernel.org>,
-	Robin Murphy <robin.murphy@arm.com>,
-	"Joerg Roedel (AMD)" <joro@8bytes.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Esteban Urrutia <esteuwu@proton.me>
-Cc: linux-arm-msm@vger.kernel.org,
-	linux-clk@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
+To: linux-arm-msm@vger.kernel.org,
+	Michael Scott <mike.scott@oss.qualcomm.com>
+Cc: vkoul@kernel.org,
+	neil.armstrong@linaro.org,
+	dmitry.baryshkov@oss.qualcomm.com,
+	wesley.cheng@oss.qualcomm.com,
+	abelvesa@kernel.org,
+	faisal.hassan@oss.qualcomm.com,
+	linux-phy@lists.infradead.org,
+	konradybcio@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
 	devicetree@vger.kernel.org,
-	iommu@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org
-Subject: Re: (subset) [PATCH 0/8] SM8450 QoL changes
-Date: Sat, 11 Jul 2026 14:49:40 -0500
-Message-ID: <178379938594.163099.2250376340461760537.b4-ty@kernel.org>
+	val@packett.cool,
+	bryan.odonoghue@linaro.org,
+	laurentiu.tudor1@dell.com,
+	alex.vinarskis@gmail.com,
+	linux-kernel@vger.kernel.org
+Subject: Re: (subset) [PATCH v2 0/4] phy: qcom: qmp-combo fixes + x1-dell-thena DT maintenance
+Date: Sat, 11 Jul 2026 14:49:50 -0500
+Message-ID: <178379938620.163099.4648562543382010337.b4-ty@kernel.org>
 X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20260622-sm8450-qol-v1-0-37e2ee8df9da@proton.me>
-References: <20260622-sm8450-qol-v1-0-37e2ee8df9da@proton.me>
+In-Reply-To: <20260521010935.1333494-1-mike.scott@oss.qualcomm.com>
+References: <20260521010935.1333494-1-mike.scott@oss.qualcomm.com>
 MIME-Version: 1.0
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -87,21 +86,20 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 22 Jun 2026 20:54:21 -0400, Esteban Urrutia wrote:
-> I've been mainlining an SM8475 based device for quite some time now and
-> I feel now's the proper time to start submitting patches.
-> I'm starting with the smallest part which are mostly modifications
-> regarding the current support for the SM8450 SoC.
+On Wed, 20 May 2026 18:09:31 -0700, Michael Scott wrote:
+> Four patches:
 > 
-> Regards,
-> Esteban
+>   * Two pre-existing bug fixes in phy-qcom-qmp-combo that are reachable
+>     today on any board which registers a usb_role_switch on this PHY,
+>     and will become reachable on more X1E boards as their Type-C
+>     support matures (patches 1-2).
 > 
 > [...]
 
 Applied, thanks!
 
-[4/8] arm64: dts: qcom: sm8450: Add missing PCM_OUT port
-      commit: 9c510bde799765bf1d28004b0e6555e05565f464
+[3/4] arm64: dts: qcom: x1-dell-thena: mark l12b and l15b always-on
+      commit: e505fc5f96661f3e3afa4267ac9415d8559cf2bd
 
 Best regards,
 -- 
