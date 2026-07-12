@@ -4,63 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D102EC43458
-	for <linux-phy@archiver.kernel.org>; Sun, 12 Jul 2026 12:27:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34E0BC43458
+	for <linux-phy@archiver.kernel.org>; Sun, 12 Jul 2026 15:22:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OZKGXz/FI9E0dLBzg4gqLl96P7JCsa5K/0YZorcXbsU=; b=X8WQQrAuWJBp9z
-	DNiMwp5nH6jwpHn/314xyIPQDjJj9kqv1AlzQ88AKkQFALGKYJ50B54+rUd8BeO2ia5V4Z4IjjjdX
-	qG1KhgdEYr+s8CUMQo3wfCpwcv81Jq0IosE32z5m7/vgD4/kewBq4GYQAYLq/VQ5aKISUgjqZF9jR
-	TO/ZedTiX/OirNdoG7/xcO/SzTtG3j0HJJqrQg9Io4pwjH8wq22PfipD9puaVnhvosRWoqYbXWrZb
-	Ax4mYwVjB0cq+Xfn+mRWfNxgLkcOSmBq0b1roCbJ2jZpVMady+g30OfK8C9/usT+wWRe2+7yqm5ps
-	aAuR+FvetvfbSfzWy/0w==;
+	List-Owner; bh=FVGUrzj2MRB/KFfw+XwLvdYyzPy/N97r6cgDlIQeBBo=; b=BLBO+pbKKiqf2i
+	ftwvK458XBGmPWrjT4pK/MoZN7aec1jFrroYb/08jW9sDcLacYRLcMq4qWxShYnxbFMViagNsoCEp
+	hiZg4T1017mcoyj3afbjdPxuQAb36o6WX2hdz90D9s8cjHxU3G9nTGs3Ru/c4+tEJlbZ7Q48HPcFm
+	kl0BVgb5Wxx0QRX5N68tuoqkFDCP7Ec/SHlERdksLPDojuWqUkqJBhJln2LiqtDnXeazcQ31vmycU
+	gM1wRuBhT/p7jfn9o+zXdZLfsxYnjyJlo38Pleb9NbUXQV6NadBoyylMdCyupapxDJWGiiyTIcY7b
+	5kBBEDNAxMxV768q3zUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1witHQ-00000007Rdn-0nps;
-	Sun, 12 Jul 2026 12:27:32 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wiw0W-00000007Z2h-2kLX;
+	Sun, 12 Jul 2026 15:22:16 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1witHN-00000007RdB-43k2;
-	Sun, 12 Jul 2026 12:27:30 +0000
+	id 1wiw0V-00000007Z2M-0xI2;
+	Sun, 12 Jul 2026 15:22:15 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id EAB096004E;
-	Sun, 12 Jul 2026 12:27:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C37F81F000E9;
-	Sun, 12 Jul 2026 12:27:21 +0000 (UTC)
-Message-ID: <ec9e62c8-3c1d-4493-a876-82432575b381@linux-m68k.org>
-Date: Sun, 12 Jul 2026 22:27:19 +1000
+	by sea.source.kernel.org (Postfix) with ESMTP id 8256A4325B;
+	Sun, 12 Jul 2026 15:22:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A15231F000E9;
+	Sun, 12 Jul 2026 15:22:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1783869734;
+	bh=DuaiB+g90evMEnQ75glw9g8iH9UnlpaAQbng8V1ssBs=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=Byp017trUwl/8psOoSyDdN8PtY7+zecQELkM7ZiyxQf/cRCTQO+ugA+tXHJUoPtj1
+	 P8Togkk32pLjMyqbfV33rMfj5OXwjMUiYcGjYxuHKsBxZoLXHFqVJAzIks1ND47AD7
+	 WiIKN5DKkyBMetJJXIHTavH9NHVACUAgWOuGWeH9IE+FKeB4g8MlhdkD2ydvhlY7D6
+	 HsUXCIUPg5kil7KSF8xcPnpYSpQt2lJFcLKk042r1i5ot5xxVdDAw/3bBhVLT2XrOG
+	 dwiZili2xMav43/ICOeZV14fGdX2gnE2MYTslx4YI5cHO4mexPM0wp9VPbKwPmyGfN
+	 TmhTRPn5RxXNQ==
+Date: Sun, 12 Jul 2026 17:22:10 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: chunfeng.yun@mediatek.com, vkoul@kernel.org, neil.armstrong@linaro.org, 
+	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, chunkuang.hu@kernel.org, 
+	p.zabel@pengutronix.de, matthias.bgg@gmail.com, justin.yeh@mediatek.com, 
+	linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	dri-devel@lists.freedesktop.org, kernel@collabora.com
+Subject: Re: [PATCH 1/2] dt-bindings: phy: mediatek,dsi-phy: Add support for
+ MT8196
+Message-ID: <20260712-unselfish-topaz-roadrunner-f0bbfb@quoll>
+References: <20260701121943.19430-1-angelogioacchino.delregno@collabora.com>
+ <20260701121943.19430-2-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 02/10] m68k/coldfire: replace linux/gpio.h inclusions
-To: Arnd Bergmann <arnd@kernel.org>, linux-gpio@vger.kernel.org,
- Linus Walleij <linusw@kernel.org>, Bartosz Golaszewski <brgl@kernel.org>
-Cc: Arnd Bergmann <arnd@arndb.de>, Andrew Lunn <andrew@lunn.ch>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
- Gregory Clement <gregory.clement@bootlin.com>, Frank Li <Frank.Li@nxp.com>,
- Robert Jarzmik <robert.jarzmik@free.fr>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Hauke Mehrtens <hauke@hauke-m.de>, =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?=
- <zajec5@gmail.com>, Yoshinori Sato <ysato@users.sourceforge.jp>,
- John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Dominik Brodowski <linux@dominikbrodowski.net>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, patches@opensource.cirrus.com,
- linux-m68k@lists.linux-m68k.org, linux-mips@vger.kernel.org,
- linux-sh@vger.kernel.org, linux-input@vger.kernel.org,
- linux-sunxi@lists.linux.dev, linux-phy@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-sound@vger.kernel.org,
- Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
-References: <20260710211954.1373336-1-arnd@kernel.org>
- <20260710211954.1373336-3-arnd@kernel.org>
-Content-Language: en-US
-From: Greg Ungerer <gerg@linux-m68k.org>
-In-Reply-To: <20260710211954.1373336-3-arnd@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20260701121943.19430-2-angelogioacchino.delregno@collabora.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,59 +69,26 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Arnd,
-
-On 11/7/26 07:19, Arnd Bergmann wrote:
-> From: Arnd Bergmann <arnd@arndb.de>
+On Wed, Jul 01, 2026 at 02:19:42PM +0200, AngeloGioacchino Del Regno wrote:
+> Add support for the MediaTek Kompanio Ultra (MT8196) SoC: this
+> chip features a DSI PHY that is similar to the one found in the
+> MT8183 SoC, but is a new (incremental) revision with a different
+> register layout.
 > 
-> linux/gpio.h should no longer be used, convert these instead to
-> linux/gpio/legacy.h for coldfire.
-> 
-> Acked-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-
-I have applied this one to the for-next branch of the m68knommu git tree.
-
-Thanks
-Greg
-
-
+> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 > ---
->   arch/m68k/coldfire/device.c     | 2 +-
->   arch/m68k/include/asm/mcfgpio.h | 2 +-
->   2 files changed, 2 insertions(+), 2 deletions(-)
-> 
-> diff --git a/arch/m68k/coldfire/device.c b/arch/m68k/coldfire/device.c
-> index 1420bae0964f..9a0258acd998 100644
-> --- a/arch/m68k/coldfire/device.c
-> +++ b/arch/m68k/coldfire/device.c
-> @@ -12,7 +12,7 @@
->   #include <linux/init.h>
->   #include <linux/io.h>
->   #include <linux/spi/spi.h>
-> -#include <linux/gpio.h>
-> +#include <linux/gpio/legacy.h>
->   #include <linux/fec.h>
->   #include <linux/dmaengine.h>
->   #include <asm/traps.h>
-> diff --git a/arch/m68k/include/asm/mcfgpio.h b/arch/m68k/include/asm/mcfgpio.h
-> index 7103cfa4edb6..29726aa40eb6 100644
-> --- a/arch/m68k/include/asm/mcfgpio.h
-> +++ b/arch/m68k/include/asm/mcfgpio.h
-> @@ -16,7 +16,7 @@ int __mcfgpio_request(unsigned gpio);
->   void __mcfgpio_free(unsigned gpio);
->   
->   #ifdef CONFIG_GPIOLIB
-> -#include <linux/gpio.h>
-> +#include <linux/gpio/legacy.h>
->   #else
->   
->   /* our alternate 'gpiolib' functions */
+>  Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml | 1 +
+>  1 file changed, 1 insertion(+)
+
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+
+Best regards,
+Krzysztof
 
 
 -- 
