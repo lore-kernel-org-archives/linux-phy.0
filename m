@@ -4,57 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16AC9C44501
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1EB73C44506
 	for <linux-phy@archiver.kernel.org>; Sun, 12 Jul 2026 03:13:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id
-	:Date:Subject:From:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=u6n57cOz7JsGjbiF+jpXp66YpEILAYfiOBqrOgKwlNI=; b=j+fCLLQ/jXJjqT
-	/V7ZY42IO3nqRinq5yfSSJhBMUDC1lzDZpK0VdSDE7KfBex86WZ9Ai722T6Kofe9GhKBDgEr45aAU
-	RJielJazh+mijCVY9z/kZ7aqCzFOojWRJB9zR1sv4JvpsBiAaoMuwW9n6hDn8TaXqCkdyTYIcrLJO
-	BI4Mmag9JB2Ym1/WI3DM0i+4tMoPM7LSTUA/EmZEi5KMMgbXBLCL8Pd31lYVT6RJF7FKm6It8IQlH
-	KYx0vwtvNPyUe+E2n5VbmR+FVSs59haJBJdWptriLWFwa3l4IBBnG/ULyVuh0lV04lIN7KpAv40zm
-	gL0VCiSaqoQSr/3rMjyQ==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UBnnvwh5fzCM4UN+9KkaSv4BUJNgTI+7LwduVfhaf4Q=; b=W/nGVESd1iXft8
+	aee/qZKS/nMOWTGUS/QSbKcHcU6lN0lxs+PrxMSXIiD49Onyi3AltuUNgZ2AkKyndrYdrOVe0/AOX
+	WJvZN1yi72CFbFAALIQzpvvs769RLfF1dF7/YJlh9vYdd3mhOFXYibbFgDp98Ohg4sqBugwiPVlru
+	S6VqvMUSNAGlbI9NewX9oa7lOLk1TCdvCZ5Cks/cxDmai4qCwirn/Lwpg8lkYWT2GSFHXzkB9MEN9
+	TzVeuVb2jpUX+NA0294cdka6sksMb6wzFWEksqiZG9GIpqsSeIaqUtbwy+9P68JFIXWamqNYnT7ss
+	/iPADX3AXg06qGJeQnPQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wikdC-000000074G3-2UCN;
+	id 1wikdC-000000074G7-2fuI;
 	Sun, 12 Jul 2026 03:13:26 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wikdB-000000074Fj-0nYc
+	id 1wikdB-000000074Fk-1G0N
 	for linux-phy@lists.infradead.org;
 	Sun, 12 Jul 2026 03:13:25 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 546A243A18;
+	by sea.source.kernel.org (Postfix) with ESMTP id 6D46D43A26;
 	Sun, 12 Jul 2026 03:13:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 35BF3C2BCF4;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 517C3C2BCF6;
 	Sun, 12 Jul 2026 03:13:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1783826004;
-	bh=CnxT7IX+/QaPvXduAC/yoSfn8VJxlMb0Yx8cduWN740=;
-	h=From:Subject:Date:To:Cc:Reply-To:From;
-	b=uESS+pR3GAV8aR9X8DeB8g6ApxXOKaOt+6RUs4KP7g67pBbdNyN9MvyTD3A6+Z4r1
-	 sKRF9irMt2IAYJ6xBaXa+mQC3ThIqJ+2/WWTlSZdgo7psgkFtYqZOysU0Gz+5WjYXY
-	 +9qITov1Edz+LwPQpDxVxuTlN7x/Yw8e5JmuYDPzJuH3ndPyYY0p6RTBphBMqJrxTV
-	 n5hsAplLWDvcWJLKOA078DHVmkuAK0fPmmpipqYKkZd6vW0UIFuOAr4r2mV+QjZPnm
-	 zVkexYLsIbMbMTi/FnC/5PSmXp37QJhpqpjbGvXs+STMK4mOJoYG+Jf6z+tNPCr+vA
-	 ldWrGNA2eh+vg==
+	bh=x5KI9xBhGsLY1nX16Hu0YrPAjW4HJNwJ8zZ+sAlguvg=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=MqWH2a9MSxgnwMeZQpOQ8PwEb2BfmeTDU5GECOK/5JRHPYDPR2E5pS7MiauviAK8j
+	 3b7wsP2lHBu9ypTo6bPNCfVnQMjNZO3r/5uU93iIyd6Dx0cyDGuh4Wet9VOOe6td7/
+	 M8olpEtaluJtGFbpYjrZF0WKJ/ynO+fxVrf1uKVV/WXfYOgk5x+sJN8XmXJPaIdQA1
+	 BzZsZKm5pNKhZlCb93M7HZkLIGL9x4WLcyI9HxmZ5Q3tIuLXWKTiTjvXcQO2pAnEKd
+	 RisRjIusi0pkWLMytKiJ5z9v8eTw2RF5xk5YWEniiO7y4/679orpgZ/D1Z3S1GqFdo
+	 6tCQV0AWAPZJg==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 25522C44501;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 40F42C43458;
 	Sun, 12 Jul 2026 03:13:24 +0000 (UTC)
 From: Esteban Urrutia via B4 Relay <devnull+esteuwu.proton.me@kernel.org>
-Subject: [PATCH v2 0/2] SM8450 QoL changes (qmp)
-Date: Sat, 11 Jul 2026 23:13:16 -0400
-Message-Id: <20260711-sm8450-qol-qmp-v2-0-d14353bd6ff4@proton.me>
+Date: Sat, 11 Jul 2026 23:13:18 -0400
+Subject: [PATCH v2 2/2] phy: qcom: qmp-combo: Drop qmp_v4_calibrate_dp_phy
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAAAAAAAC/02Nyw6CMBBFf4XM2jHtIC9X/odhwWOQGmmhxUZD+
- HcLbFye5NxzF3BsFTu4RgtY9sopowPQKYKmr/SDUbWBgQSlIpMS3ZBfEoGTeeE0jJjEXc1NURf
- EOYTRaLlTnz14Lw927/rJzbxVNqNXbjb2uz96uXlHPCX6j3uJAuOMiTlvu6KtbqM1s9HngaFc1
- /UH0Nswv7oAAAA=
-X-Change-ID: 20260711-sm8450-qol-qmp-53fbec9b92e8
+Message-Id: <20260711-sm8450-qol-qmp-v2-2-d14353bd6ff4@proton.me>
+References: <20260711-sm8450-qol-qmp-v2-0-d14353bd6ff4@proton.me>
+In-Reply-To: <20260711-sm8450-qol-qmp-v2-0-d14353bd6ff4@proton.me>
 To: Vinod Koul <vkoul@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>, 
  Dmitry Baryshkov <lumag@kernel.org>, Bjorn Andersson <andersson@kernel.org>
@@ -63,11 +60,11 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  Esteban Urrutia <esteuwu@proton.me>, 
  Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1783826002; l=809;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1783826003; l=6562;
  i=esteuwu@proton.me; s=20260622; h=from:subject:message-id;
- bh=CnxT7IX+/QaPvXduAC/yoSfn8VJxlMb0Yx8cduWN740=;
- b=gFTD4IDaLgOS67N2qExQKGIXVwukbZhnviwPA81Xq+PlqE6e/hDwEJe1mLhb86Q01IOMncjPs
- d1IwSV9+EDhCVQ3SFjV4VqECrN9/UQcG/2z8ICawtQtRwsKnR79v1f9
+ bh=wKUTfzWF98obGb2By7Mg953jLV5lY7NFjqUaUlrnhQw=;
+ b=w65Y1pej68eXgxcGQQOjjV3You6L0nVEpgbFFDmb4oj154c9Pe/xZEZsvhPQD7DYQJLQrjC4M
+ 4IA/rgRQKKcDSIdfmyoDY9Jnup07Pu60x9dgh44qiZbbzXuQkdjYvrF
 X-Developer-Key: i=esteuwu@proton.me; a=ed25519;
  pk=wToFt4mOAWkzbqb15Ye1hrhevI13vK9BcMUFiQ/me1M=
 X-Endpoint-Received: by B4 Relay for esteuwu@proton.me/20260622 with
@@ -90,29 +87,158 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-These two patches drop qmp_v4_calibrate_dp_phy() and modify a pre-emphasis
-table for v4 DP PHYs to match downstream behavior.
+From: Esteban Urrutia <esteuwu@proton.me>
 
+There are no downstream device trees that specify five values in the
+qcom,aux-cfg1-settings array.
+Plus, after cross referencing both downstream device trees and entries
+which refer this function, only 0x13 is specified.
+Since 0x13 is written at initialization time, drop this function as a
+whole, and remove now unused variable assignations.
+
+Fixes: aff188feb5e1 ("phy: qcom-qmp: add support for sm8250-usb3-dp phy")
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 Signed-off-by: Esteban Urrutia <esteuwu@proton.me>
 ---
-Changes in v2:
-- Split series in subseries (dispcc, dts, qmp, smmu)
-- Link to v1: https://patch.msgid.link/20260622-sm8450-qol-v1-0-37e2ee8df9da@proton.me
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 31 -------------------------------
+ 1 file changed, 31 deletions(-)
 
----
-Esteban Urrutia (2):
-      phy: qcom: qmp-combo: Correct pre-emphasis table for QMP v4 DP PHYs
-      phy: qcom: qmp-combo: Drop qmp_v4_calibrate_dp_phy
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index a72c3b9654ec..5b278fd54a16 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -2325,7 +2325,6 @@ static int qmp_v3_calibrate_dp_phy(struct qmp_combo *qmp);
+ static void qmp_v4_dp_aux_init(struct qmp_combo *qmp);
+ static void qmp_v4_configure_dp_tx(struct qmp_combo *qmp);
+ static int qmp_v4_configure_dp_phy(struct qmp_combo *qmp);
+-static int qmp_v4_calibrate_dp_phy(struct qmp_combo *qmp);
+ 
+ static void qmp_v8_dp_aux_init(struct qmp_combo *qmp);
+ static int qmp_v8_configure_dp_clocks(struct qmp_combo *qmp);
+@@ -2466,7 +2465,6 @@ static const struct qmp_phy_cfg sar2130p_usb3dpphy_cfg = {
+ 	.configure_dp_tx	= qmp_v4_configure_dp_tx,
+ 	.configure_dp_clocks	= qmp_v3_configure_dp_clocks,
+ 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
+-	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
+ 
+ 	.regs			= qmp_v6_usb3phy_regs_layout,
+ 	.reset_list		= msm8996_usb3phy_reset_l,
+@@ -2603,7 +2601,6 @@ static const struct qmp_phy_cfg sc8180x_usb3dpphy_cfg = {
+ 	.configure_dp_tx	= qmp_v4_configure_dp_tx,
+ 	.configure_dp_clocks	= qmp_v3_configure_dp_clocks,
+ 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
+-	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
+ 
+ 	.reset_list		= msm8996_usb3phy_reset_l,
+ 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
+@@ -2650,7 +2647,6 @@ static const struct qmp_phy_cfg sc8280xp_usb43dpphy_cfg = {
+ 	.configure_dp_tx	= qmp_v4_configure_dp_tx,
+ 	.configure_dp_clocks	= qmp_v3_configure_dp_clocks,
+ 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
+-	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
+ 
+ 	.reset_list		= msm8996_usb3phy_reset_l,
+ 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
+@@ -2696,7 +2692,6 @@ static const struct qmp_phy_cfg x1e80100_usb3dpphy_cfg = {
+ 	.configure_dp_tx	= qmp_v4_configure_dp_tx,
+ 	.configure_dp_clocks	= qmp_v3_configure_dp_clocks,
+ 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
+-	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
+ 
+ 	.reset_list		= msm8996_usb3phy_reset_l,
+ 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
+@@ -2785,7 +2780,6 @@ static const struct qmp_phy_cfg sm8250_usb3dpphy_cfg = {
+ 	.configure_dp_tx	= qmp_v4_configure_dp_tx,
+ 	.configure_dp_clocks	= qmp_v3_configure_dp_clocks,
+ 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
+-	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
+ 
+ 	.reset_list		= msm8996_usb3phy_reset_l,
+ 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
+@@ -2834,7 +2828,6 @@ static const struct qmp_phy_cfg sm8350_usb3dpphy_cfg = {
+ 	.configure_dp_tx	= qmp_v4_configure_dp_tx,
+ 	.configure_dp_clocks	= qmp_v3_configure_dp_clocks,
+ 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
+-	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
+ 
+ 	.reset_list		= msm8996_usb3phy_reset_l,
+ 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
+@@ -2882,7 +2875,6 @@ static const struct qmp_phy_cfg sm8550_usb3dpphy_cfg = {
+ 	.configure_dp_tx	= qmp_v4_configure_dp_tx,
+ 	.configure_dp_clocks	= qmp_v3_configure_dp_clocks,
+ 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
+-	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
+ 
+ 	.regs			= qmp_v6_usb3phy_regs_layout,
+ 	.reset_list		= msm8996_usb3phy_reset_l,
+@@ -2928,7 +2920,6 @@ static const struct qmp_phy_cfg sm8650_usb3dpphy_cfg = {
+ 	.configure_dp_tx	= qmp_v4_configure_dp_tx,
+ 	.configure_dp_clocks	= qmp_v3_configure_dp_clocks,
+ 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
+-	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
+ 
+ 	.regs			= qmp_v6_usb3phy_regs_layout,
+ 	.reset_list		= msm8996_usb3phy_reset_l,
+@@ -2974,7 +2965,6 @@ static const struct qmp_phy_cfg sm8750_usb3dpphy_cfg = {
+ 	.configure_dp_tx	= qmp_v4_configure_dp_tx,
+ 	.configure_dp_clocks	= qmp_v3_configure_dp_clocks,
+ 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
+-	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
+ 
+ 	.regs			= qmp_v8_usb3phy_regs_layout,
+ 	.reset_list		= msm8996_usb3phy_reset_l,
+@@ -3020,7 +3010,6 @@ static const struct qmp_phy_cfg glymur_usb3dpphy_cfg = {
+ 	.configure_dp_tx	= qmp_v4_configure_dp_tx,
+ 	.configure_dp_clocks	= qmp_v8_configure_dp_clocks,
+ 	.configure_dp_phy	= qmp_v8_configure_dp_phy,
+-	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
+ 
+ 	.regs			= qmp_v8_n3_usb43dpphy_regs_layout,
+ 	.reset_list		= msm8996_usb3phy_reset_l,
+@@ -3316,7 +3305,6 @@ static void qmp_v4_dp_aux_init(struct qmp_combo *qmp)
+ 	writel(0x03, qmp->dp_dp_phy + QSERDES_DP_PHY_AUX_CFG7);
+ 	writel(0xb7, qmp->dp_dp_phy + QSERDES_DP_PHY_AUX_CFG8);
+ 	writel(0x03, qmp->dp_dp_phy + QSERDES_DP_PHY_AUX_CFG9);
+-	qmp->dp_aux_cfg = 0;
+ 
+ 	writel(PHY_AUX_STOP_ERR_MASK | PHY_AUX_DEC_ERR_MASK |
+ 	       PHY_AUX_SYNC_ERR_MASK | PHY_AUX_ALIGN_ERR_MASK |
+@@ -3345,7 +3333,6 @@ static void qmp_v8_dp_aux_init(struct qmp_combo *qmp)
+ 	writel(0x03, qmp->dp_dp_phy + QSERDES_DP_PHY_AUX_CFG7);
+ 	writel(0xb7, qmp->dp_dp_phy + QSERDES_DP_PHY_AUX_CFG8);
+ 	writel(0x03, qmp->dp_dp_phy + QSERDES_DP_PHY_AUX_CFG9);
+-	qmp->dp_aux_cfg = 0;
+ 
+ 	writel(PHY_AUX_STOP_ERR_MASK | PHY_AUX_DEC_ERR_MASK |
+ 	       PHY_AUX_SYNC_ERR_MASK | PHY_AUX_ALIGN_ERR_MASK |
+@@ -3605,24 +3592,6 @@ static int qmp_v8_configure_dp_phy(struct qmp_combo *qmp)
+ 	return 0;
+ }
+ 
+-/*
+- * We need to calibrate the aux setting here as many times
+- * as the caller tries
+- */
+-static int qmp_v4_calibrate_dp_phy(struct qmp_combo *qmp)
+-{
+-	static const u8 cfg1_settings[] = { 0x20, 0x13, 0x23, 0x1d };
+-	u8 val;
+-
+-	qmp->dp_aux_cfg++;
+-	qmp->dp_aux_cfg %= ARRAY_SIZE(cfg1_settings);
+-	val = cfg1_settings[qmp->dp_aux_cfg];
+-
+-	writel(val, qmp->dp_dp_phy + QSERDES_DP_PHY_AUX_CFG1);
+-
+-	return 0;
+-}
+-
+ static int qmp_combo_dp_configure(struct phy *phy, union phy_configure_opts *opts)
+ {
+ 	const struct phy_configure_opts_dp *dp_opts = &opts->dp;
 
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 33 +------------------------------
- 1 file changed, 1 insertion(+), 32 deletions(-)
----
-base-commit: 96615101b3caf73612f80a217abb9a0da0effbc7
-change-id: 20260711-sm8450-qol-qmp-53fbec9b92e8
-
-Best regards,
---  
-Esteban Urrutia <esteuwu@proton.me>
+-- 
+2.55.0
 
 
 
