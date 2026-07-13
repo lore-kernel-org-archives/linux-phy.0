@@ -4,58 +4,147 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5FDC8C44507
-	for <linux-phy@archiver.kernel.org>; Mon, 13 Jul 2026 11:12:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F03DC44501
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Jul 2026 11:57:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CGmdfwxbtcdT1ivjfkcZipDpwgv2KykyA0Qn6CyqjRk=; b=gGRJiXKODgDDAP
-	W0s2tudB5pzj16lcuCNWx/WSc4CEDbh9UYn1RKzP/i74KfsWM1VZoTCFK7FIQ29JWIUWmPTcd0IEj
-	Fz9OOK+oibQgQDFslh0RbO0lumqdEinc4zNgHD+zKIrkJ/u3+expejBuKbLERWQkw4lGf+iXQ5Fhs
-	MXDmtAnyQf4CmHqc9WyT/rmz6rKxguj+lDV3M1XFohjwfbJiiKZk1M1HKNpLbXTfIZVjgAiAfvvrg
-	O7J9ijNSFF0Dw8YKHyJNKeR72Z04Q0PEWprwGnpc0xO4iOIGw64VlIhnDFi9FWkydPYrk6mMwN6RT
-	loSThHo99KSYnttoq6Jg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
+	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=tVwwv62NbGYDbkaZn3N4UI0vuDdgK8PZYJliqRCRkLI=; b=2pzPRvl84ngXmJoSO+c0lB6+Ix
+	zPxY57rnXo7BEy9sUkB7Xnt09/lAkYv1mdXY0XDD2ZQ3rwQvy016XGR+Sj+NxDzfqoMNRlxzLl3DV
+	C032dFDFpHE5pOmmNMd6NvKkSQLMDiJQaxdqIzuvEYFllKYkmWR30Ff/C9dBCyeA0v7+vNXrcirXw
+	6OY9gmLUMvq7KR1KcwLAoQSzeu8Lo5vYzLaWnh8MDwhym3FYtEO3TM5I9+ZVYP1MreGgqHCXzawDQ
+	kJ2KMgTx5kKW38ORPC8S/mDRaPUZiMDYBbZ5fq6Gfe98jdvVy0M0FKhqmDZMP5LXUEngOuaE4ytEf
+	pu0/tXTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjEaW-00000008ynY-3jQW;
-	Mon, 13 Jul 2026 11:12:41 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wjFHs-000000096BP-0Aw2;
+	Mon, 13 Jul 2026 11:57:28 +0000
+Received: from mail.lysator.liu.se ([2001:6b0:17:f0a0::3])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjEaU-00000008ynL-3ZFf
-	for linux-phy@lists.infradead.org;
-	Mon, 13 Jul 2026 11:12:38 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id F23856004E;
-	Mon, 13 Jul 2026 11:12:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9A8F41F000E9;
-	Mon, 13 Jul 2026 11:12:32 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1783941157;
-	bh=+itPATlxhTbhN7l81/OGgYUotwlHoDMlh3YsBI1rLuY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=LMDpN4mjsABMx6a9b/8YHkgELyGWi8x5/IMBb/CpNiZVulzJzrRippKl5PEtGhVKB
-	 L4qC2SKg4U6zbAcGfQ60SWArIjNtPvq09E9h00HVQdmEaG9H3lfq0C0tdP82ZlSy8V
-	 Y6H2SkWIwhgSCcMAP4xH9Fq/Nu5R3qxPvxNKZ7VSAwE+S38laXRoF79GGhQHkdVYzr
-	 pM826rvmwjDDLl6/+a63D12osQUmRy+kOH6FBkFhe+h6H40shlEywP/AjuMfXmf4lC
-	 6+CkOSb+zUPiGBXo2sv4wfK+E1jmFaHOnCfO9iMh6Mh0bjIkad2JIyOWfCRPZL84C5
-	 U4/RNS9v3sF7g==
-Date: Mon, 13 Jul 2026 13:12:28 +0200
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: vkoul@kernel.org, Ronak Raheja <ronak.raheja@oss.qualcomm.com>
-Cc: krzk+dt@kernel.org, conor+dt@kernel.org, robh@kernel.org, 
-	neil.armstrong@linaro.org, gregkh@linuxfoundation.org, dmitry.baryshkov@oss.qualcomm.com, 
-	konrad.dybcio@oss.qualcomm.com, abel.vesa@oss.qualcomm.com, wesley.cheng@oss.qualcomm.com, 
-	krzysztof.kozlowski@oss.qualcomm.com, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 0/4] phy: qcom: Introduce USB support for Hawi
-Message-ID: <chf57j2dkhhjzigpguldadfld5utepa4sxwbo7fjxk5nq37bhp@yci5agzh46ly>
-References: <20260508213234.4643-1-ronak.raheja@oss.qualcomm.com>
+	id 1wjFHn-000000096AU-2x4C;
+	Mon, 13 Jul 2026 11:57:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=lysator.liu.se;
+	s=2026; t=1783943837;
+	bh=ZU9f5XQcfOha9tsafysQKKY+BbVKCPTIcqlTdjCJdHc=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=pRXGPF976Iki1t7KMpqT7+wiSqjTexXB0wnkJTT3EI5w8JAOYsOuF5p4zJoyaJmtg
+	 2El6x6YuRBo6ewO2H+r3GVUgRs538NxlgdH8k5BoLbefvYAsQ537CapqkV5sP3Jz4e
+	 67NaD1Riexbqc8LpOFF8MvxTmY6ztVbddyHLrNelrzJUDaxxXKbVI3yd4QGo3/Gcoj
+	 sxgQ8H/R8uTiuUKnRimE2ZN2obxnJQDnzVk06+hqqruq26KsPNjluhbgmG7yCxdoNU
+	 xOqOF1vH3EkG10+WDKSpyBl12GKbw7jHdUzcOSLjlFatyyTj9AOxnWoQLkOvm07iRb
+	 s6ejWv4/TGIOw==
+Received: from mail.lysator.liu.se (localhost [127.0.0.1])
+	by mail.lysator.liu.se (Postfix) with ESMTP id 2EE714637;
+	Mon, 13 Jul 2026 13:57:17 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=lysator.liu.se;
+	s=2026; t=1783943837;
+	bh=ZU9f5XQcfOha9tsafysQKKY+BbVKCPTIcqlTdjCJdHc=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=pRXGPF976Iki1t7KMpqT7+wiSqjTexXB0wnkJTT3EI5w8JAOYsOuF5p4zJoyaJmtg
+	 2El6x6YuRBo6ewO2H+r3GVUgRs538NxlgdH8k5BoLbefvYAsQ537CapqkV5sP3Jz4e
+	 67NaD1Riexbqc8LpOFF8MvxTmY6ztVbddyHLrNelrzJUDaxxXKbVI3yd4QGo3/Gcoj
+	 sxgQ8H/R8uTiuUKnRimE2ZN2obxnJQDnzVk06+hqqruq26KsPNjluhbgmG7yCxdoNU
+	 xOqOF1vH3EkG10+WDKSpyBl12GKbw7jHdUzcOSLjlFatyyTj9AOxnWoQLkOvm07iRb
+	 s6ejWv4/TGIOw==
+Received: by mail.lysator.liu.se (Postfix, from userid 1004)
+	id 1172945C4; Mon, 13 Jul 2026 13:57:16 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=lysator.liu.se;
+	s=2026; t=1783943829;
+	bh=ZU9f5XQcfOha9tsafysQKKY+BbVKCPTIcqlTdjCJdHc=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=tBP9qD8X/xsXZ7egKwzKFvcjlUpLAIm1KgxB8b2b/QLhFDWGuOsaaNyA9AaX0h4EP
+	 UT2xTKBrUdwJ/uHPjdWfTqK0UgegGwGKDuLWoa8qiMNmxxKHEMA9HhBig1pp5ohAjX
+	 ZI/fDbfZ/PXP7cP49ifkTiFpUxlBKg38sdJlmDSBipXM++nfWkFQRfFkeqkLQyc7bx
+	 m+f1FvpSIm0o1JV9aJcwLQX8dUa/Xdwqevi/LKyHPDmfPXQ0CFyn7k19/mxEZu9W/X
+	 A9NB0oaVGN8c5fFzWE1e2YV54kMlbioLeCyOmyKxNO/NUCXCFkQTvjQuhFWkI4UuLv
+	 L4FRdHuEGTiAw==
+Received: from [192.168.2.172] (81-225-28-11-no2391.tbcn.telia.com [81.225.28.11])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by mail.lysator.liu.se (Postfix) with ESMTPSA id B019F45B4;
+	Mon, 13 Jul 2026 13:57:02 +0200 (CEST)
+Message-ID: <744e6181-ad21-4632-b293-5bf6c1e9fc2e@lysator.liu.se>
+Date: Mon, 13 Jul 2026 13:57:01 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260508213234.4643-1-ronak.raheja@oss.qualcomm.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 2/2] dt-bindings: Drop incorrect usage of double '::'
+To: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Peter Griffin <peter.griffin@linaro.org>,
+ Alim Akhtar <alim.akhtar@samsung.com>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Chanwoo Choi <cw00.choi@samsung.com>,
+ Sam Protsenko <semen.protsenko@linaro.org>,
+ Rob Clark <robin.clark@oss.qualcomm.com>, Dmitry Baryshkov
+ <lumag@kernel.org>, Abhinav Kumar <abhinav.kumar@linux.dev>,
+ Jessica Zhang <jesszhan0024@gmail.com>, Sean Paul <sean@poorly.run>,
+ Marijn Suijten <marijn.suijten@somainline.org>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ Inki Dae <inki.dae@samsung.com>, Seung-Woo Kim <sw0312.kim@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Andi Shyti
+ <andi.shyti@kernel.org>, Georgi Djakov <djakov@kernel.org>,
+ Lee Jones <lee@kernel.org>, Pavel Machek <pavel@kernel.org>,
+ Hans Verkuil <hverkuil@kernel.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Ulf Hansson <ulfh@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+ Linus Walleij <linusw@kernel.org>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Magnus Damm <magnus.damm@gmail.com>, Sebastian Reichel <sre@kernel.org>,
+ Javier Martinez Canillas <javier@dowhile0.org>,
+ Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Jiri Slaby <jirislaby@kernel.org>, Srinivas Kandagatla <srini@kernel.org>,
+ Bartlomiej Zolnierkiewicz <bzolnier@gmail.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ Daniel Lezcano <daniel.lezcano@kernel.org>, Zhang Rui <rui.zhang@intel.com>,
+ Lukasz Luba <lukasz.luba@arm.com>, Jonathan Marek <jonathan@marek.ca>,
+ Taniya Das <quic_tdas@quicinc.com>, Robert Marko <robimarko@gmail.com>,
+ Christian Marangi <ansuelsmth@gmail.com>,
+ Stephan Gerhold <stephan@gerhold.net>,
+ Adam Skladowski <a_skl39@protonmail.com>,
+ Sireesh Kodali <sireeshkodali@protonmail.com>,
+ Barnabas Czeman <barnabas.czeman@mainlining.org>,
+ Imran Shaik <quic_imrashai@quicinc.com>,
+ Sricharan Ramabadhran <quic_srichara@quicinc.com>,
+ Anusha Rao <quic_anusha@quicinc.com>, Luo Jie <quic_luoj@quicinc.com>,
+ Tomasz Figa <tomasz.figa@gmail.com>, Chanho Park
+ <chanho61.park@samsung.com>, Sunyeal Hong <sunyeal.hong@samsung.com>,
+ Shin Son <shin.son@samsung.com>,
+ Krishna Manikandan <quic_mkrishn@quicinc.com>,
+ Jacek Anaszewski <jacek.anaszewski@gmail.com>,
+ Jaehoon Chung <jh80.chung@samsung.com>,
+ Marek Szyprowski <m.szyprowski@samsung.com>, Alina Yu
+ <alina_yu@richtek.com>, Andy Gross <agross@kernel.org>,
+ =?UTF-8?Q?Niklas_S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>,
+ Wesley Cheng <quic_wcheng@quicinc.com>, linux-arm-msm@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-clk@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ freedreno@lists.freedesktop.org, linux-i2c@vger.kernel.org,
+ linux-pm@vger.kernel.org, linux-leds@vger.kernel.org,
+ linux-media@vger.kernel.org, linux-mmc@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org,
+ linux-renesas-soc@vger.kernel.org, linux-serial@vger.kernel.org,
+ linux-sound@vger.kernel.org, linux-usb@vger.kernel.org
+References: <20260622101606.485961-3-krzysztof.kozlowski@oss.qualcomm.com>
+ <20260622101606.485961-4-krzysztof.kozlowski@oss.qualcomm.com>
+Content-Language: en-US, sv-SE
+From: Peter Rosin <peda@lysator.liu.se>
+In-Reply-To: <20260622101606.485961-4-krzysztof.kozlowski@oss.qualcomm.com>
+X-Virus-Scanned: ClamAV using ClamSMTP
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260713_045724_219668_5C2D9FFA 
+X-CRM114-Status: GOOD (  18.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,54 +156,57 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gRnJpLCBNYXkgMDgsIDIwMjYgYXQgMDI6MzI6MzBQTSAtMDcwMCwgUm9uYWsgUmFoZWphIHdy
-b3RlOgo+IFRoaXMgc2VyaWVzIGFkZHMgVVNCIFBIWSBzdXBwb3J0IGZvciB0aGUgSGF3aSBTb0Mu
-IEl0IGRvY3VtZW50cyB0aGUKPiBRTVAgVVNCMy1EUCBjb21ibyBQSFkgYW5kIE0zMSBlVVNCMiBQ
-SFkgYmluZGluZ3MsIGFkZHMgdGhlIEhhd2kKPiBjb21wYXRpYmxlIHRvIHRoZSBEV0MzIFVTQiBi
-aW5kaW5nLCBhbmQgYWRkcyB0aGUgUEhZIGluaXRpYWxpemF0aW9uCj4gc2VxdWVuY2VzIHRvIHRo
-ZSBxbXAtY29tYm8gZHJpdmVyLgo+IAoKVmlub2QsIGRvZXMgdGhpcyBzZXJpZXMgbG9vayBnb29k
-IHRvIHlvdT8KCi0gTWFuaQoKPiAtLS0KPiBDaGFuZ2VzIGluIHYzOgo+IC0gRml4IG1pc3Npbmcg
-dmVyc2lvbiB0YWcgaW4gaW5kaXZpZHVhbCBwYXRjaCBzdWJqZWN0cwo+IC0gTGluayB0byB2Mjog
-aHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvYWxsLzIwMjYwNDI3MjE0MjE3LjI3MzUyNDAtMS1yb25h
-ay5yYWhlamFAb3NzLnF1YWxjb21tLmNvbQo+IAo+IENoYW5nZXMgaW4gdjI6Cj4gLSBDbGFyaWZ5
-IGluIHRoZSBRTVAgUEhZIGJpbmRpbmcgY29tbWl0IG1lc3NhZ2Ugd2h5IEhhd2kgbmVlZHMgYQo+
-ICAgZGVkaWNhdGVkIGNvbXBhdGlibGUgc3RyaW5nIHZzIHByZXZpb3VzIHRhcmdldHMKPiAtIFJl
-bW92ZSBzdHJheSBibGFuayBsaW5lIGluIGhhd2lfdXNiM19yeF90YmwKPiAtIExpbmsgdG8gdjE6
-IGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2FsbC8yMDI2MDQyNTA3MDAwMi4zNDg3MzMtMS1yb25h
-ay5yYWhlamFAb3NzLnF1YWxjb21tLmNvbS8KPiAKPiBSb25hayBSYWhlamEgKDQpOgo+ICAgZHQt
-YmluZGluZ3M6IHBoeTogcWNvbSxzYzgyODB4cC1xbXAtdXNiNDNkcC1waHk6IEFkZCBIYXdpIFFN
-UCBQSFkKPiAgIGR0LWJpbmRpbmdzOiBwaHk6IHFjb20sbTMxLWV1c2IyLXBoeTogRG9jdW1lbnQg
-TTMxIGVVU0IyIFBIWSBmb3IgSGF3aQo+ICAgZHQtYmluZGluZ3M6IHVzYjogcWNvbSxzbnBzLWR3
-YzM6IEFkZCBIYXdpIGNvbXBhdGlibGUKPiAgIHBoeTogcXVhbGNvbW06IHFtcC1jb21ibzogQWRk
-IHN1cHBvcnQgZm9yIEhhd2kgU29DCj4gCj4gIC4uLi9iaW5kaW5ncy9waHkvcWNvbSxtMzEtZXVz
-YjItcGh5LnlhbWwgICAgICB8ICAgMSArCj4gIC4uLi9waHkvcWNvbSxzYzgyODB4cC1xbXAtdXNi
-NDNkcC1waHkueWFtbCAgICB8ICAgMiArCj4gIC4uLi9iaW5kaW5ncy91c2IvcWNvbSxzbnBzLWR3
-YzMueWFtbCAgICAgICAgICB8ICAgMyArCj4gIC4uLi9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1w
-LWNvbS1hb24tdjEwLmggICB8ICAxNSArKwo+ICBkcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNv
-bS1xbXAtY29tYm8uYyAgICAgfCAyMzEgKysrKysrKysrKysrKysrKystCj4gIC4uLi9waHkvcXVh
-bGNvbW0vcGh5LXFjb20tcW1wLWRwLXBoeS12MTAuaCAgICB8ICAxNSArKwo+ICAuLi4vcGh5L3F1
-YWxjb21tL3BoeS1xY29tLXFtcC1wY3MtYW9uLXYxMC5oICAgfCAgMTMgKwo+ICAuLi4vcGh5L3F1
-YWxjb21tL3BoeS1xY29tLXFtcC1wY3MtdXNiLXYxMC5oICAgfCAgMTkgKysKPiAgZHJpdmVycy9w
-aHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXBjcy12MTAuaCAgIHwgIDM0ICsrKwo+ICAuLi4vcXVh
-bGNvbW0vcGh5LXFjb20tcW1wLXFzZXJkZXMtY29tLXYxMC5oICAgfCAgODkgKysrKysrKwo+ICAu
-Li4vcXVhbGNvbW0vcGh5LXFjb20tcW1wLXFzZXJkZXMtdHhyeC12MTAuaCAgfCAgODkgKysrKysr
-Kwo+ICBkcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAuaCAgICAgICAgICAgfCAgIDUg
-Kwo+ICAxMiBmaWxlcyBjaGFuZ2VkLCA1MTIgaW5zZXJ0aW9ucygrKSwgNCBkZWxldGlvbnMoLSkK
-PiAgY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1j
-b20tYW9uLXYxMC5oCj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL3BoeS9xdWFsY29tbS9w
-aHktcWNvbS1xbXAtZHAtcGh5LXYxMC5oCj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL3Bo
-eS9xdWFsY29tbS9waHktcWNvbS1xbXAtcGNzLWFvbi12MTAuaAo+ICBjcmVhdGUgbW9kZSAxMDA2
-NDQgZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXBjcy11c2ItdjEwLmgKPiAgY3Jl
-YXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1wY3MtdjEw
-LmgKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFt
-cC1xc2VyZGVzLWNvbS12MTAuaAo+ICBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9waHkvcXVh
-bGNvbW0vcGh5LXFjb20tcW1wLXFzZXJkZXMtdHhyeC12MTAuaAo+IAo+IC0tIAo+IDIuMzQuMQo+
-IAoKLS0gCuCuruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDgrprgrqTgrr7grprgrr/grrXgrq7g
-r40KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBo
-eQo=
+On 2026-06-22 12:16, Krzysztof Kozlowski wrote:
+> There is no use of double colon '::' in YAML. OTOH, the literal style
+> block, e.g. using '|' treats all characters as content [1] therefore
+> single use of ':' in descriptions is perfectly fine, whenever '|' is
+> used.
+> 
+> Cleanup existing code, so the confusing style won't be re-used in new
+> contributions.
+> 
+> Link: https://yaml.org/spec/1.2.2/#literal-style [1]
+> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+> 
+> ---
+> 
+> Intention for this patch is to go via Rob's tree.
+> ---
+
+
+
+> diff --git a/Documentation/devicetree/bindings/mux/mux-consumer.yaml b/Documentation/devicetree/bindings/mux/mux-consumer.yaml
+> index 9e2d78a78e40..769243a2bf04 100644
+> --- a/Documentation/devicetree/bindings/mux/mux-consumer.yaml
+> +++ b/Documentation/devicetree/bindings/mux/mux-consumer.yaml
+> @@ -13,8 +13,8 @@ description: |
+>     Mux controller consumers should specify a list of mux controllers that they
+>     want to use with a property containing a 'mux-ctrl-list':
+>   
+> -    mux-ctrl-list ::= <single-mux-ctrl> [mux-ctrl-list]
+> -    single-mux-ctrl ::= <mux-ctrl-phandle> [mux-ctrl-specifier]
+> +    mux-ctrl-list := <single-mux-ctrl> [mux-ctrl-list]
+> +    single-mux-ctrl := <mux-ctrl-phandle> [mux-ctrl-specifier]
+>       mux-ctrl-phandle : phandle to mux controller node
+>       mux-ctrl-specifier : array of #mux-control-cells specifying the
+>                            given mux controller (controller specific)
+This change does not match the others? I do not think ::= is some kind
+of malformed YAML that has crept into a literal block. Instead, I think
+it is syntax inspired from BNF or something such. IIRC, it was once
+adapted from
+Documentation/devicetree/bindings/pwm/pwm.txt
+
+Or, I am missing something...
+
+Cheers,
+Peter
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
