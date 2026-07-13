@@ -4,74 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4B90DC44507
-	for <linux-phy@archiver.kernel.org>; Mon, 13 Jul 2026 10:23:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B63B7C43458
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Jul 2026 10:32:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2U4YpVpnF4HAROj+pb3mTAf5A/N34zWhLJuFHM/AnTM=; b=OMADId7dDvUU4B
-	TpLEdVk0X31PWL+TYZ9LuZXQdHm7gAEwUg4elU9nyltdvuHD9DC72pbCMscrIwCVAWbtODCygYoXq
-	ZrnKarYrfOq4Cc7qfNU8HtXsQ8W+crbFbn1E2e93aTMzXn4R2Nt2/WP8SmGTlIMXAhpFtBsHJcSFp
-	7eBlHoALRQX9f6FJv+ik/xLhTJzxBNCDIdhkPPvXByLQdLO5ioePllkbbAXRW1OgUynH3un3La1lL
-	dvH1bWpob+90pPF9BwSmLVwKpy5vulvykZg6VTycAe31eMy2cPnE1NiDe9xOQDLVxm3u8VaZehjIt
-	Do8fJCdJY9wWfZNGHjIA==;
+	List-Owner; bh=HBVA+yxacShN4SnLqQ0dw4CIrOLw2Ltt1K966MQmHIo=; b=wZ06od3VEq+h/X
+	I+7TESlUiE8/6OGFd+0QzZY2j0KGDEm/EP++h433V4W6lCSZMYYHBK8Ylv0c0lgcXNxoIjNA3pyNG
+	tuDWS+wU9t1K4M/5jXnAFrWMpvLRY2r/6fSOZTvEYOOVYqHb963rrzT+o7fARzpcPyOprq5ed440S
+	hERMVtbvItmlAtZQAG+DuTQRCWs07RGWUxeJ48gvt5HziiRnCwYzcpKvLRpFqqCwgrGBX65Ch/ExR
+	sRhlQ2RxStk8woVW800ibyiS9+t2qrgENDwrd/bDNRtr/WAxzDOLpn557ZBd7rOdZamPme2eaM9ms
+	DoaEEwi7018jxOFnxyDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjDp6-00000008sT8-3L2J;
-	Mon, 13 Jul 2026 10:23:40 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1wjDxu-00000008to0-0iRd;
+	Mon, 13 Jul 2026 10:32:46 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjDov-00000008sF0-2qOP;
-	Mon, 13 Jul 2026 10:23:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1783938207;
-	bh=e6EW3G1noluvUbsf4mXKsPJ8a0ez3clxF+2eHH/FFqg=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=ZvZvIn/K20LMUklJ5R2g85ND+bvgYQRUr6X1Kahvy6RsateTMQbNPTNdkySXFIOLq
-	 DU5m0jIoWgPko7AfNhJwbfSVjqR358RAzxaSl/WiMxW3mX5wGA80IBZozpp3H7G7no
-	 J2wykpuXVraFpr08UWD9eKtFS7eAulLmqW/qv7QWyLM79tKUIGwla3c8+oJEznEH0p
-	 0jfLKtqNyk+KHVaSSOaUkTLPHfJ0jeagwlrS7/VWIzdJer5NXKukcxPcIvI8xddrBr
-	 +xFZpAAzPZOXYTPGHtu3gJ3sqtPVipxwnm4vFVOrM8lB2gvBAS4hOo0l+nIQDgB9yp
-	 jdtVet+n8d1XQ==
-Received: from IcarusMOD.eternityproject.eu (unknown [100.64.1.21])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id AFF4F17E023C;
-	Mon, 13 Jul 2026 12:23:26 +0200 (CEST)
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-To: chunfeng.yun@mediatek.com
-Cc: vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	chunkuang.hu@kernel.org,
-	p.zabel@pengutronix.de,
-	matthias.bgg@gmail.com,
-	angelogioacchino.delregno@collabora.com,
-	justin.yeh@mediatek.com,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	dri-devel@lists.freedesktop.org,
-	kernel@collabora.com
-Subject: [PATCH v2 2/2] phy: mediatek: Add support for MT8196 MIPI DSI PHY
-Date: Mon, 13 Jul 2026 12:23:22 +0200
-Message-ID: <20260713102322.21782-3-angelogioacchino.delregno@collabora.com>
-X-Mailer: git-send-email 2.54.0
-In-Reply-To: <20260713102322.21782-1-angelogioacchino.delregno@collabora.com>
+	id 1wjDxs-00000008tn7-2XBM
+	for linux-phy@lists.infradead.org;
+	Mon, 13 Jul 2026 10:32:44 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id C70146004E;
+	Mon, 13 Jul 2026 10:32:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0E37C1F000E9;
+	Mon, 13 Jul 2026 10:32:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1783938763;
+	bh=5Dz+t3Wdm4GaqxoQWFG0bDZjkowP7rv++fG1N/ZnYUk=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=OlFiZV6HQSV3MRGlNbsU7DBAge7FSP/fOzEIbvsnqj8zT1kI7H7BFHtDw1p5XX8/h
+	 XFEjK+mxnND9ErxmRAFDmJ4jxmghGGc9bNWuhXw2TZ7LwiWQLYZM3ui6ngOMg0IKZo
+	 L8YY9ekTT7WBzSyAvzb0QMhOj44tWcVWYciEbXLKnrOUhHqbdQ+oTMrDLodS0IqoCV
+	 pCajFg+EvQwEEGcpcvXDk2GS8t3/uJeAtkM1wuxzz3YEF4z+5eb/+RyjZqwMsl8Hho
+	 6WiS0Vpvh32SBN+EKgznQtSU/t582+zxA6Hk/d2ks1c3R4kG3ANJ5b8+RJC7P6Nw6u
+	 WYYfCCgjqgqig==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v2 2/2] phy: mediatek: Add support for MT8196 MIPI DSI
+ PHY
+To: "AngeloGioacchino Del Regno" <angelogioacchino.delregno@collabora.com>
+Cc: devicetree@vger.kernel.org, vkoul@kernel.org, olteanv@gmail.com, neil.armstrong@linaro.org, robh@kernel.org, conor+dt@kernel.org, dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org
+In-Reply-To: <20260713102322.21782-3-angelogioacchino.delregno@collabora.com>
 References: <20260713102322.21782-1-angelogioacchino.delregno@collabora.com>
-MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260713_032329_884581_AD665C8E 
-X-CRM114-Status: GOOD (  20.85  )
+ <20260713102322.21782-3-angelogioacchino.delregno@collabora.com>
+Date: Mon, 13 Jul 2026 10:32:42 +0000
+Message-Id: <20260713103243.0E37C1F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,271 +63,73 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for the MIPI DSI PHY found in the MediaTek MT8196 SoC
-and its variants.
-This PHY has a different register layout and provides support for
-more hardware features compared to the previous generation.
-
-This initial driver only adds support for basic functionality that
-is necessary to drive MIPI DSI displays as a D-PHY.
-
-Feature additions like lane-swap, DPHY/CPHY switching, dual-port,
-and others, may be done in the future.
-
-Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
----
- drivers/phy/mediatek/Makefile                 |   1 +
- .../phy/mediatek/phy-mtk-mipi-dsi-mt8196.c    | 196 ++++++++++++++++++
- drivers/phy/mediatek/phy-mtk-mipi-dsi.c       |   1 +
- drivers/phy/mediatek/phy-mtk-mipi-dsi.h       |   2 +-
- 4 files changed, 199 insertions(+), 1 deletion(-)
- create mode 100644 drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8196.c
-
-diff --git a/drivers/phy/mediatek/Makefile b/drivers/phy/mediatek/Makefile
-index 1b8088df71e8..ed0da708759b 100644
---- a/drivers/phy/mediatek/Makefile
-+++ b/drivers/phy/mediatek/Makefile
-@@ -21,4 +21,5 @@ obj-$(CONFIG_PHY_MTK_MIPI_CSI_0_5)	+= phy-mtk-mipi-csi-0-5.o
- phy-mtk-mipi-dsi-drv-y			:= phy-mtk-mipi-dsi.o
- phy-mtk-mipi-dsi-drv-y			+= phy-mtk-mipi-dsi-mt8173.o
- phy-mtk-mipi-dsi-drv-y			+= phy-mtk-mipi-dsi-mt8183.o
-+phy-mtk-mipi-dsi-drv-y			+= phy-mtk-mipi-dsi-mt8196.o
- obj-$(CONFIG_PHY_MTK_MIPI_DSI)		+= phy-mtk-mipi-dsi-drv.o
-diff --git a/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8196.c b/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8196.c
-new file mode 100644
-index 000000000000..273f236fa7e9
---- /dev/null
-+++ b/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8196.c
-@@ -0,0 +1,196 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (c) 2019 MediaTek Inc.
-+ * Author: jitao.shi <jitao.shi@mediatek.com>
-+ *
-+ * Copyright (c) 2026 Collabora Ltd.
-+ *                    AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-+ */
-+
-+#include "phy-mtk-io.h"
-+#include "phy-mtk-mipi-dsi.h"
-+
-+#define MIPITX_LANE_CON		0x0004
-+#define RG_DSI_CPHY_T1DRV_EN		BIT(0)
-+#define RG_DSI_ANA_CK_SEL		BIT(1)
-+#define RG_DSI_PHY_CK_SEL		BIT(2)
-+#define RG_DSI_CPHY_EN			BIT(3)
-+#define RG_DSI_PHYCK_INV_EN		BIT(4)
-+#define RG_DSI_PWR04_EN			BIT(5)
-+#define RG_DSI_BG_LPF_EN		BIT(6)
-+#define RG_DSI_BG_CORE_EN		BIT(7)
-+#define RG_DSI_PAD_TIEL_SEL		BIT(8)
-+
-+#define MIPITX_VOLTAGE_SEL	0x0008
-+#define RG_DSI_HSTX_LDO_REF_SEL		GENMASK(9, 6)
-+#define RG_DSI_PRD_REF_SEL		GENMASK(5, 0)
-+#define RG_DSI_PRD_REF_MINI		0
-+#define RG_DSI_PRD_REF_DEF		4
-+#define RG_DSI_PRD_REF_MAX		7
-+
-+#define MIPITX_PRESERVED	0x000c
-+#define MIPITX_PRESERVED_DEF		0xffff0040
-+#define MIPITX_PRESERVED_MINI		0xffff00f0
-+
-+#define MIPITX_PLL_PWR		0x0028
-+#define AD_DSI_PLL_SDM_PWR_ON		BIT(0)
-+#define AD_DSI_PLL_SDM_ISO_EN		BIT(1)
-+#define MIPITX_PLL_CON0		0x002c
-+#define MIPITX_PLL_CON1		0x0030
-+#define RG_DSI_PLL_EN			BIT(0)
-+#define RG_DSI_PLL_POSDIV		GENMASK(10, 8)
-+#define MIPITX_PLL_CON2		0x0034
-+#define MIPITX_PLL_CON3		0x0038
-+#define MIPITX_PLL_CON4		0x003c
-+#define RG_DSI_PLL_IBIAS		GENMASK(11, 10)
-+
-+#define MIPITX_D2_SW_CTL_EN	0x015c
-+#define MIPITX_D0_SW_CTL_EN	0x025c
-+#define MIPITX_CK_CKMODE_EN	0x0320
-+#define DSI_CK_CKMODE_EN		BIT(0)
-+#define MIPITX_CK_SW_CTL_EN	0x035c
-+#define MIPITX_D1_SW_CTL_EN	0x045c
-+#define MIPITX_D3_SW_CTL_EN	0x055c
-+#define DSI_SW_CTL_EN			BIT(0)
-+
-+#define DSI_PHY_XTAL_CLK_HZ		26000000
-+
-+static int mtk_mipi_tx_pll_enable(struct clk_hw *hw)
-+{
-+	struct mtk_mipi_tx *mipi_tx = mtk_mipi_tx_from_clk_hw(hw);
-+	void __iomem *base = mipi_tx->regs;
-+	u32 voltage = RG_DSI_PRD_REF_MINI;
-+	u32 pres = MIPITX_PRESERVED_MINI;
-+	unsigned long long pcw_calc;
-+	unsigned int txdiv, txdiv0;
-+	u32 pcw;
-+
-+	dev_dbg(mipi_tx->dev, "enable: %u bps\n", mipi_tx->data_rate);
-+
-+	if (mipi_tx->data_rate >= 2000000000) {
-+		/* Select higher signaling voltage for fast data rates */
-+		voltage = RG_DSI_PRD_REF_DEF;
-+		pres = MIPITX_PRESERVED_DEF;
-+		txdiv = 1;
-+		txdiv0 = 0;
-+	} else if (mipi_tx->data_rate >= 1000000000) {
-+		txdiv = 2;
-+		txdiv0 = 1;
-+	} else if (mipi_tx->data_rate >= 500000000) {
-+		txdiv = 4;
-+		txdiv0 = 2;
-+	} else if (mipi_tx->data_rate > 250000000) {
-+		txdiv = 8;
-+		txdiv0 = 3;
-+	} else if (mipi_tx->data_rate >= 125000000) {
-+		txdiv = 16;
-+		txdiv0 = 4;
-+	} else {
-+		return -EINVAL;
-+	}
-+
-+	pcw_calc = ((u64)(mipi_tx->data_rate / 2) * txdiv) << 24;
-+	pcw_calc = div_u64(pcw_calc, DSI_PHY_XTAL_CLK_HZ);
-+
-+	if (pcw_calc > U32_MAX) {
-+		dev_err(mipi_tx->dev, "Calculated PCW=%llu overflow!\n", pcw_calc);
-+		return -EINVAL;
-+	}
-+	pcw = (u32)pcw_calc;
-+
-+	mtk_phy_update_field(base + MIPITX_VOLTAGE_SEL, RG_DSI_PRD_REF_SEL, voltage);
-+	writel(pres, base + MIPITX_PRESERVED);
-+
-+	mtk_phy_set_bits(base + MIPITX_PLL_PWR, AD_DSI_PLL_SDM_PWR_ON);
-+	mtk_phy_clear_bits(base + MIPITX_PLL_CON1, RG_DSI_PLL_EN);
-+	usleep_range(30, 60);
-+
-+	mtk_phy_clear_bits(base + MIPITX_PLL_PWR, AD_DSI_PLL_SDM_ISO_EN);
-+	writel(pcw, base + MIPITX_PLL_CON0);
-+	mtk_phy_update_field(base + MIPITX_PLL_CON1, RG_DSI_PLL_POSDIV, txdiv0);
-+	usleep_range(30, 60);
-+
-+	mtk_phy_set_bits(base + MIPITX_PLL_CON1, RG_DSI_PLL_EN);
-+	usleep_range(30, 60);
-+
-+	return 0;
-+}
-+
-+static void mtk_mipi_tx_pll_disable(struct clk_hw *hw)
-+{
-+	struct mtk_mipi_tx *mipi_tx = mtk_mipi_tx_from_clk_hw(hw);
-+	void __iomem *base = mipi_tx->regs;
-+
-+	mtk_phy_clear_bits(base + MIPITX_PLL_CON1, RG_DSI_PLL_EN);
-+
-+	mtk_phy_set_bits(base + MIPITX_PLL_PWR, AD_DSI_PLL_SDM_ISO_EN);
-+	mtk_phy_clear_bits(base + MIPITX_PLL_PWR, AD_DSI_PLL_SDM_PWR_ON);
-+}
-+
-+static int mtk_mipi_tx_pll_determine_rate(struct clk_hw *hw,
-+					  struct clk_rate_request *req)
-+{
-+	req->rate = clamp_val(req->rate, 125000000, 1600000000);
-+
-+	return 0;
-+}
-+
-+static const struct clk_ops mtk_mipi_tx_pll_ops = {
-+	.enable = mtk_mipi_tx_pll_enable,
-+	.disable = mtk_mipi_tx_pll_disable,
-+	.determine_rate = mtk_mipi_tx_pll_determine_rate,
-+	.set_rate = mtk_mipi_tx_pll_set_rate,
-+	.recalc_rate = mtk_mipi_tx_pll_recalc_rate,
-+};
-+
-+static void mtk_mipi_tx_power_on_signal(struct phy *phy)
-+{
-+	struct mtk_mipi_tx *mipi_tx = phy_get_drvdata(phy);
-+	void __iomem *base = mipi_tx->regs;
-+
-+	/* BG_LPF_EN / BG_CORE_EN */
-+	writel(RG_DSI_PAD_TIEL_SEL | RG_DSI_BG_CORE_EN, base + MIPITX_LANE_CON);
-+	/* Wait for MIPI core to enable */
-+	usleep_range(30, 100);
-+	writel(RG_DSI_BG_CORE_EN | RG_DSI_BG_LPF_EN, base + MIPITX_LANE_CON);
-+
-+	/* Switch OFF each Lane */
-+	mtk_phy_clear_bits(base + MIPITX_D0_SW_CTL_EN, DSI_SW_CTL_EN);
-+	mtk_phy_clear_bits(base + MIPITX_D1_SW_CTL_EN, DSI_SW_CTL_EN);
-+	mtk_phy_clear_bits(base + MIPITX_D2_SW_CTL_EN, DSI_SW_CTL_EN);
-+	mtk_phy_clear_bits(base + MIPITX_D3_SW_CTL_EN, DSI_SW_CTL_EN);
-+	mtk_phy_clear_bits(base + MIPITX_CK_SW_CTL_EN, DSI_SW_CTL_EN);
-+
-+	/*
-+	 * The MIPI TX drive strength is in the range of 3000 ~ 6000 microamps:
-+	 * RG_DSI_HSTX_LDO_REF_SEL expresses an offset from the minimum drive
-+	 * strength (3000uA) and can add a maximum offset of 3000uA, reaching a
-+	 * maximum drive strength of 3000+3000=6000uA.
-+	 */
-+	mtk_phy_update_field(base + MIPITX_VOLTAGE_SEL, RG_DSI_HSTX_LDO_REF_SEL,
-+			     (mipi_tx->mipitx_drive - 3000) / 200);
-+
-+	mtk_phy_set_bits(base + MIPITX_CK_CKMODE_EN, DSI_CK_CKMODE_EN);
-+}
-+
-+static void mtk_mipi_tx_power_off_signal(struct phy *phy)
-+{
-+	struct mtk_mipi_tx *mipi_tx = phy_get_drvdata(phy);
-+	void __iomem *base = mipi_tx->regs;
-+
-+	/* Switch ON each lane one by one */
-+	mtk_phy_set_bits(base + MIPITX_D0_SW_CTL_EN, DSI_SW_CTL_EN);
-+	mtk_phy_set_bits(base + MIPITX_D1_SW_CTL_EN, DSI_SW_CTL_EN);
-+	mtk_phy_set_bits(base + MIPITX_D2_SW_CTL_EN, DSI_SW_CTL_EN);
-+	mtk_phy_set_bits(base + MIPITX_D3_SW_CTL_EN, DSI_SW_CTL_EN);
-+	mtk_phy_set_bits(base + MIPITX_CK_SW_CTL_EN, DSI_SW_CTL_EN);
-+
-+	writel(RG_DSI_PAD_TIEL_SEL | RG_DSI_BG_CORE_EN, base + MIPITX_LANE_CON);
-+	writel(RG_DSI_PAD_TIEL_SEL, base + MIPITX_LANE_CON);
-+}
-+
-+const struct mtk_mipitx_data mt8196_mipitx_data = {
-+	.mipi_tx_clk_ops = &mtk_mipi_tx_pll_ops,
-+	.mipi_tx_enable_signal = mtk_mipi_tx_power_on_signal,
-+	.mipi_tx_disable_signal = mtk_mipi_tx_power_off_signal,
-+};
-diff --git a/drivers/phy/mediatek/phy-mtk-mipi-dsi.c b/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
-index 065ea626093a..46f0cb3ac096 100644
---- a/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
-+++ b/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
-@@ -183,6 +183,7 @@ static const struct of_device_id mtk_mipi_tx_match[] = {
- 	{ .compatible = "mediatek,mt2701-mipi-tx", .data = &mt2701_mipitx_data },
- 	{ .compatible = "mediatek,mt8173-mipi-tx", .data = &mt8173_mipitx_data },
- 	{ .compatible = "mediatek,mt8183-mipi-tx", .data = &mt8183_mipitx_data },
-+	{ .compatible = "mediatek,mt8196-mipi-tx", .data = &mt8196_mipitx_data },
- 	{ /* sentinel */ }
- };
- MODULE_DEVICE_TABLE(of, mtk_mipi_tx_match);
-diff --git a/drivers/phy/mediatek/phy-mtk-mipi-dsi.h b/drivers/phy/mediatek/phy-mtk-mipi-dsi.h
-index 5d4876f1dc95..e6f967078e3b 100644
---- a/drivers/phy/mediatek/phy-mtk-mipi-dsi.h
-+++ b/drivers/phy/mediatek/phy-mtk-mipi-dsi.h
-@@ -42,5 +42,5 @@ unsigned long mtk_mipi_tx_pll_recalc_rate(struct clk_hw *hw,
- extern const struct mtk_mipitx_data mt2701_mipitx_data;
- extern const struct mtk_mipitx_data mt8173_mipitx_data;
- extern const struct mtk_mipitx_data mt8183_mipitx_data;
--
-+extern const struct mtk_mipitx_data mt8196_mipitx_data;
- #endif
--- 
-2.54.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIFNsZWVwaW5nIGluIEF0
+b21pYyBDb250ZXh0Ci0gW0xvd10gRGVhZCBDb2RlIC8gSGFyZHdhcmUgQ2FwYWJpbGl0eSBSZXN0
+cmljdGlvbgotLQoKLS0tIFBhdGNoIFsyXTogW1BBVENIIHYyIDIvMl0gcGh5OiBtZWRpYXRlazog
+QWRkIHN1cHBvcnQgZm9yIE1UODE5NiBNSVBJIERTSSBQSFkgLS0tCmNvbW1pdCAyOTBkOTQyN2M0
+MzZlMzAyYzRhYmE1YTI2ZjVlM2UxZTliYjcyOGY1CkF1dGhvcjogQW5nZWxvR2lvYWNjaGlubyBE
+ZWwgUmVnbm8gPGFuZ2Vsb2dpb2FjY2hpbm8uZGVscmVnbm9AY29sbGFib3JhLmNvbT4KCnBoeTog
+bWVkaWF0ZWs6IEFkZCBzdXBwb3J0IGZvciBNVDgxOTYgTUlQSSBEU0kgUEhZCgpBZGQgc3VwcG9y
+dCBmb3IgdGhlIE1JUEkgRFNJIFBIWSBmb3VuZCBpbiB0aGUgTWVkaWFUZWsgTVQ4MTk2IFNvQwph
+bmQgaXRzIHZhcmlhbnRzLiBUaGlzIFBIWSBoYXMgYSBkaWZmZXJlbnQgcmVnaXN0ZXIgbGF5b3V0
+IGFuZCBwcm92aWRlcwpzdXBwb3J0IGZvciBtb3JlIGhhcmR3YXJlIGZlYXR1cmVzIGNvbXBhcmVk
+IHRvIHRoZSBwcmV2aW91cyBnZW5lcmF0aW9uLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkv
+bWVkaWF0ZWsvcGh5LW10ay1taXBpLWRzaS1tdDgxOTYuYyBiL2RyaXZlcnMvcGh5L21lZGlhdGVr
+L3BoeS1tdGstbWlwaS1kc2ktbXQ4MTk2LmMKPiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+IGluZGV4
+IDAwMDAwMDAwMDAwMDAuLjI3M2YyMzZmYTdlOWUKPiAtLS0gL2Rldi9udWxsCj4gKysrIGIvZHJp
+dmVycy9waHkvbWVkaWF0ZWsvcGh5LW10ay1taXBpLWRzaS1tdDgxOTYuYwo+IEBAIC0wLDAgKzEs
+MTk2IEBAClsgLi4uIF0KPiArc3RhdGljIGludCBtdGtfbWlwaV90eF9wbGxfZW5hYmxlKHN0cnVj
+dCBjbGtfaHcgKmh3KQo+ICt7Cj4gKwlzdHJ1Y3QgbXRrX21pcGlfdHggKm1pcGlfdHggPSBtdGtf
+bWlwaV90eF9mcm9tX2Nsa19odyhodyk7Cj4gKwl2b2lkIF9faW9tZW0gKmJhc2UgPSBtaXBpX3R4
+LT5yZWdzOwo+ICsJdTMyIHZvbHRhZ2UgPSBSR19EU0lfUFJEX1JFRl9NSU5JOwo+ICsJdTMyIHBy
+ZXMgPSBNSVBJVFhfUFJFU0VSVkVEX01JTkk7Cj4gKwl1bnNpZ25lZCBsb25nIGxvbmcgcGN3X2Nh
+bGM7Cj4gKwl1bnNpZ25lZCBpbnQgdHhkaXYsIHR4ZGl2MDsKPiArCXUzMiBwY3c7Cj4gKwo+ICsJ
+ZGV2X2RiZyhtaXBpX3R4LT5kZXYsICJlbmFibGU6ICV1IGJwc1xuIiwgbWlwaV90eC0+ZGF0YV9y
+YXRlKTsKPiArCj4gKwlpZiAobWlwaV90eC0+ZGF0YV9yYXRlID49IDIwMDAwMDAwMDApIHsKPiAr
+CQkvKiBTZWxlY3QgaGlnaGVyIHNpZ25hbGluZyB2b2x0YWdlIGZvciBmYXN0IGRhdGEgcmF0ZXMg
+Ki8KPiArCQl2b2x0YWdlID0gUkdfRFNJX1BSRF9SRUZfREVGOwoKW1NldmVyaXR5OiBMb3ddCklz
+IHRoaXMgYmxvY2sgcmVhY2hhYmxlPyBMYXRlciBpbiBtdGtfbWlwaV90eF9wbGxfZGV0ZXJtaW5l
+X3JhdGUoKSwKcmVxLT5yYXRlIGlzIGNsYW1wZWQgdG8gYSBtYXhpbXVtIG9mIDEsNjAwLDAwMCww
+MDAgSHouIElmIHRoZSBoYXJkd2FyZQpzdXBwb3J0cyByYXRlcyBhYm92ZSAyLjAgR0h6LCBkb2Vz
+IHRoZSBjbGFtcCBsaW1pdCBuZWVkIHRvIGJlIGluY3JlYXNlZCwKb3IgaXMgdGhpcyBkZWFkIGNv
+ZGU/Cgo+ICsJCXByZXMgPSBNSVBJVFhfUFJFU0VSVkVEX0RFRjsKPiArCQl0eGRpdiA9IDE7Cj4g
+KwkJdHhkaXYwID0gMDsKPiArCX0gZWxzZSBpZiAobWlwaV90eC0+ZGF0YV9yYXRlID49IDEwMDAw
+MDAwMDApIHsKWyAuLi4gXQo+ICsJbXRrX3BoeV9zZXRfYml0cyhiYXNlICsgTUlQSVRYX1BMTF9Q
+V1IsIEFEX0RTSV9QTExfU0RNX1BXUl9PTik7Cj4gKwltdGtfcGh5X2NsZWFyX2JpdHMoYmFzZSAr
+IE1JUElUWF9QTExfQ09OMSwgUkdfRFNJX1BMTF9FTik7Cj4gKwl1c2xlZXBfcmFuZ2UoMzAsIDYw
+KTsKCltTZXZlcml0eTogSGlnaF0KRG9lcyB0aGlzIGNvZGUgc2xlZXAgaW4gYW4gYXRvbWljIGNv
+bnRleHQ/CgpUaGUgbXRrX21pcGlfdHhfcGxsX2VuYWJsZSgpIGZ1bmN0aW9uIGlzIHJlZ2lzdGVy
+ZWQgYXMgdGhlIC5lbmFibGUKY2FsbGJhY2sgaW4gbXRrX21pcGlfdHhfcGxsX29wcyBiZWxvdy4g
+VGhlIENvbW1vbiBDbG9jayBGcmFtZXdvcmsgaW52b2tlcwouZW5hYmxlIHVuZGVyIGFuIGVuYWJs
+ZV9sb2NrIHNwaW5sb2NrIHdpdGggaW50ZXJydXB0cyBkaXNhYmxlZC4KCkNhbGxpbmcgdXNsZWVw
+X3JhbmdlKCkgaGVyZSwgd2hpY2ggaW50ZXJuYWxseSBjYWxscyBzY2hlZHVsZSgpLCB3aWxsIGxl
+YWQKdG8gc2NoZWR1bGluZyB3aGlsZSBhdG9taWMuIFNob3VsZCB0aGlzIHVzZSBhbiBhdG9taWMt
+c2FmZSBkZWxheSBsaWtlCnVkZWxheSgzMCksIG9yIHNob3VsZCB0aGlzIGxvZ2ljIGJlIG1vdmVk
+IHRvIHRoZSBzbGVlcGFibGUgLnByZXBhcmUKY2FsbGJhY2s/Cgo+ICsKPiArCW10a19waHlfY2xl
+YXJfYml0cyhiYXNlICsgTUlQSVRYX1BMTF9QV1IsIEFEX0RTSV9QTExfU0RNX0lTT19FTik7Cj4g
+Kwl3cml0ZWwocGN3LCBiYXNlICsgTUlQSVRYX1BMTF9DT04wKTsKPiArCW10a19waHlfdXBkYXRl
+X2ZpZWxkKGJhc2UgKyBNSVBJVFhfUExMX0NPTjEsIFJHX0RTSV9QTExfUE9TRElWLCB0eGRpdjAp
+Owo+ICsJdXNsZWVwX3JhbmdlKDMwLCA2MCk7Cj4gKwo+ICsJbXRrX3BoeV9zZXRfYml0cyhiYXNl
+ICsgTUlQSVRYX1BMTF9DT04xLCBSR19EU0lfUExMX0VOKTsKPiArCXVzbGVlcF9yYW5nZSgzMCwg
+NjApOwo+ICsKPiArCXJldHVybiAwOwo+ICt9ClsgLi4uIF0KPiArc3RhdGljIGludCBtdGtfbWlw
+aV90eF9wbGxfZGV0ZXJtaW5lX3JhdGUoc3RydWN0IGNsa19odyAqaHcsCj4gKwkJCQkJICBzdHJ1
+Y3QgY2xrX3JhdGVfcmVxdWVzdCAqcmVxKQo+ICt7Cj4gKwlyZXEtPnJhdGUgPSBjbGFtcF92YWwo
+cmVxLT5yYXRlLCAxMjUwMDAwMDAsIDE2MDAwMDAwMDApOwo+ICsKPiArCXJldHVybiAwOwo+ICt9
+Cj4gKwo+ICtzdGF0aWMgY29uc3Qgc3RydWN0IGNsa19vcHMgbXRrX21pcGlfdHhfcGxsX29wcyA9
+IHsKPiArCS5lbmFibGUgPSBtdGtfbWlwaV90eF9wbGxfZW5hYmxlLAo+ICsJLmRpc2FibGUgPSBt
+dGtfbWlwaV90eF9wbGxfZGlzYWJsZSwKPiArCS5kZXRlcm1pbmVfcmF0ZSA9IG10a19taXBpX3R4
+X3BsbF9kZXRlcm1pbmVfcmF0ZSwKPiArCS5zZXRfcmF0ZSA9IG10a19taXBpX3R4X3BsbF9zZXRf
+cmF0ZSwKPiArCS5yZWNhbGNfcmF0ZSA9IG10a19taXBpX3R4X3BsbF9yZWNhbGNfcmF0ZSwKPiAr
+fTsKCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hz
+ZXQvMjAyNjA3MTMxMDIzMjIuMjE3ODItMS1hbmdlbG9naW9hY2NoaW5vLmRlbHJlZ25vQGNvbGxh
+Ym9yYS5jb20/cGFydD0yCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1waHkK
