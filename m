@@ -4,54 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4E05C43458
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Jul 2026 06:53:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77581C43458
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Jul 2026 08:29:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y7EI6esN/S5tGtI7CGdTRmL1jZgNdPMSepOlTsRMyb0=; b=HA1OZ+Qz/a665n
-	oWu+B2MyaQQZNNwi4RZrXi0uYSQsDKaFEozeL4lHl5vpJbNxAWPQ4mmYsVi75kSIWgB1NiNsDegJd
-	wf43O0hbpyLKuzP2tPz3LRSotlzJ5qUlQfXNG8bAiX016MnIlH7ChAkCA3y0U9ErB38N1lj0bF2uP
-	68XQr+z2HKTFRWQ2yOIU80X5WBDCRs3y3nIkwoPZV0l5Ti96LICaESn67Fq6+Pbb/BUFn6foLQXz6
-	En/Iy5BAC7Nq4BRbuvR5kdVnuNTPR+xESVB/+FTO4dx1IVMoPJVPN/PxeNR1ELpBtWwkGyHFlrqRV
-	Ktbs6zltaAV0gIaTSkKw==;
+	List-Owner; bh=NN2JcEGTQT776PAnLi1VrIP8ahiGkH6qGSmf1FN8Pek=; b=WEK0oxWV0sSAMe
+	B7JdPdMu3TxFGa3ACr0GtPB2O6Z+cRa4mOs5J+p9/FeTZUZPHvLc3Rkjjy99KK1sjOvj6TTwiu66t
+	UCYqmibJq5hoIg6YgZxuNrfOOW2IbI6FXymzk+yVjNa73tmyNjzIEo3VUfDKPp6jc1RGco6S1mtoT
+	wsNA80N334fGyo4uTDtxcAyVpquXXjVaRjq5o426UpuvlgMmu0obroSHF48Uu/WQScQTXl8Yo7ZKy
+	SK7z3F4iTo+T/7cyC0mx4K2KaWXC4krIcN2l8hhF2ChnL6oPQRVvqIm55EQ3P7SPJfOUEsZgu+AP7
+	0Lm4VVUHRVXjzyBzgxZQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjX12-0000000B5kt-2S3V;
-	Tue, 14 Jul 2026 06:53:16 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wjYWd-0000000BJAZ-0GtK;
+	Tue, 14 Jul 2026 08:29:59 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjX11-0000000B5kj-06fF
+	id 1wjYWa-0000000BJ9N-2n9n
 	for linux-phy@lists.infradead.org;
-	Tue, 14 Jul 2026 06:53:15 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 7445A60120;
-	Tue, 14 Jul 2026 06:53:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AA56D1F000E9;
-	Tue, 14 Jul 2026 06:53:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784011994;
-	bh=a+06sBeVaMr0O+Qr5MRt+JcVThTh2IjiE1te939gX8I=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=LfW4k/2fbi5F7wG+FTq6TlxkG0MU1hIdlh+AIhvn0xDKa4hX3CQTXBnfGpR0iAmm+
-	 6BS/mvJeMbsbvol26WOD4ChsY8CWZyh57ACaEkRNa8Ju2PcXpuArRj9oM8rvOe83Yq
-	 lNwDD0mkFGhfmNA18ZZhk2TMvM4Wd1nSHCed6zhpEdE2DsCU5Ae1Y4bF/dm9eBBA7J
-	 liY6qvLumCE11v5E0xMhPrtsjIOHsE2p3lXv53VBwXpSWLu2xADFDpTtYb/ZyGTbdV
-	 BTZEcyWj1X0seCr7p2+KG4E36lCwcs/vprzOv6KxRyU5+EY+k5nXJXwJwR2q+4ETaI
-	 DTfXQ7GBRQ4uw==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH 2/6] phy: qcom: qmp-pcie: Add pcs_lane1 offset to V5
- offsets
-To: "Esteban Urrutia" <esteuwu@proton.me>
-Cc: robh@kernel.org, linux-phy@lists.infradead.org, vkoul@kernel.org, conor+dt@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com, devicetree@vger.kernel.org
-In-Reply-To: <20260714-sm8475-bup-v1-2-b2871be2b4ec@proton.me>
-References: <20260714-sm8475-bup-v1-0-b2871be2b4ec@proton.me>
- <20260714-sm8475-bup-v1-2-b2871be2b4ec@proton.me>
-Date: Tue, 14 Jul 2026 06:53:13 +0000
-Message-Id: <20260714065313.AA56D1F000E9@smtp.kernel.org>
+	Tue, 14 Jul 2026 08:29:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1784017793;
+	bh=0z1IK69pS9jc49SbkL5azQzEAF3MoW806mjpXyXyOvI=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=aT/ee9yEREkPyq59qQsKaO0Vne6ZLmp13nINGbI8/uV2dAIPHDktBHnWzc/CMpXLU
+	 xhhmirWSLZyi+08ZXfv2yvLLfIGDhR2aDKvTS39oNRbZUgHR8rwxFsOpsxGmfSFLmP
+	 NKDXADPU9/dn8CQ7Aup2SnrqrL3g8TL7sY8r4WG6dJr20lXzz1NDLWuaB/KGrcAkZY
+	 /i88igMVpH/U0E8Ml4FRFjsgZ03xte5LaUJb3R/Pa4h9ojkd1DEga2JbnwLoSlwmsC
+	 oiIicGGV4+Q5K52yTNSITTjT0PdVtahyv94m9C6qzD0HuPZZehyEhuN3svvXVOjOgd
+	 m45Gyll8PpqQA==
+Received: from [100.64.1.21] (unknown [100.64.1.21])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 23AB017E07AA;
+	Tue, 14 Jul 2026 10:29:53 +0200 (CEST)
+Message-ID: <cd633f0b-7f6b-42cf-b1e5-79ca56d62716@collabora.com>
+Date: Tue, 14 Jul 2026 10:29:52 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 2/2] phy: mediatek: Add support for MT8196 MIPI DSI PHY
+To: sashiko-reviews@lists.linux.dev
+Cc: conor+dt@kernel.org, dri-devel@lists.freedesktop.org,
+ devicetree@vger.kernel.org, neil.armstrong@linaro.org,
+ linux-phy@lists.infradead.org, vkoul@kernel.org, robh@kernel.org,
+ olteanv@gmail.com
+References: <20260713103805.23030-1-angelogioacchino.delregno@collabora.com>
+ <20260713103805.23030-3-angelogioacchino.delregno@collabora.com>
+ <20260713104835.B14401F000E9@smtp.kernel.org>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+In-Reply-To: <20260713104835.B14401F000E9@smtp.kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260714_012956_864725_2BB3B605 
+X-CRM114-Status: GOOD (  21.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,54 +74,84 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
-IFtIaWdoXSBNaXNzaW5nIGAucGNzX2xhbmUxYCBvZmZzZXQgaW4gYHFtcF9wY2llX29mZnNldHNf
-djZfMjBgIGNhdXNlcyBzaWxlbnQgb3V0LW9mLWJvdW5kcyByZWdpc3RlciBvdmVyd3JpdGUgb2Yg
-dGhlIGB0eGAgYmxvY2suCi0tCgotLS0gUGF0Y2ggWzJdOiBbUEFUQ0ggMi82XSBwaHk6IHFjb206
-IHFtcC1wY2llOiBBZGQgcGNzX2xhbmUxIG9mZnNldCB0byBWNSBvZmZzZXRzIC0tLQpjb21taXQg
-Nzk2YWE5NTljYzBhMDhiZTkxM2Y5ZWI4NzFmZTQzMTJkOThlMTZmYwpBdXRob3I6IEVzdGViYW4g
-VXJydXRpYSA8ZXN0ZXV3dUBwcm90b24ubWU+CgpwaHk6IHFjb206IHFtcC1wY2llOiBBZGQgcGNz
-X2xhbmUxIG9mZnNldCB0byBWNSBvZmZzZXRzCgpTb21lIFNvQ3Mgc3VjaCBhcyBTTTg0NzUgd3Jp
-dGUgZGF0YSB0byByZWdpc3RlcnMgdXNpbmcgdGhpcyBvZmZzZXQsCnNwZWNpZmljYWxseSBTV19D
-VFJMMiBhbmQgTVhfQ1RSTDIuIEFkZCBwY3NfbGFuZTEgb2Zmc2V0IHRvIFY1IG9mZnNldHMgdXNp
-bmcKdGhlIHByb3BlciBvZmZzZXQsIG90aGVyd2lzZSB0aGVzZSByZWdpc3RlcnMgd291bGQgYmUg
-cGFydCBvZiBSWCBhbmQgd291bGQgbm90CmJlIGRlZmluZWQuCgo+IGRpZmYgLS1naXQgYS9kcml2
-ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtcGNpZS5jIGIvZHJpdmVycy9waHkvcXVhbGNv
-bW0vcGh5LXFjb20tcW1wLXBjaWUuYwo+IGluZGV4IGQzZWZmYWQ3YTA3NGIuLjM2MTg4MTJlODRk
-NWYgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXBjaWUu
-Ywo+ICsrKyBiL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1wY2llLmMKPiBAQCAt
-MzU1NCw2ICszNTU0LDcgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBxbXBfcGNpZV9vZmZzZXRzIHFt
-cF9wY2llX29mZnNldHNfdjUgPSB7Cj4gIAkucGNzX21pc2MJPSAweDA2MDAsCj4gIAkudHgJCT0g
-MHgwZTAwLAo+ICAJLnJ4CQk9IDB4MTAwMCwKPiArCS5wY3NfbGFuZTEJPSAweDE0MDAsCj4gIAku
-dHgyCQk9IDB4MTYwMCwKPiAgCS5yeDIJCT0gMHgxODAwLAo+ICB9OwoKW1NldmVyaXR5OiBIaWdo
-XQpUaGlzIGlzIGEgcHJlLWV4aXN0aW5nIGlzc3VlIGFuZCB3YXNuJ3QgaW50cm9kdWNlZCBieSB0
-aGlzIHBhdGNoLCBidXQgd2hpbGUKeW91IGFyZSBhZGRpbmcgdGhlIHBjc19sYW5lMSBvZmZzZXQg
-aGVyZSwgaXMgaXQgYWxzbyBtaXNzaW5nIGZyb20KcW1wX3BjaWVfb2Zmc2V0c192Nl8yMD8KCkxv
-b2tpbmcgYXQgZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXBjaWUuYywgcW1wX3Bj
-aWVfb2Zmc2V0c192Nl8yMApvbWl0cyB0aGUgLnBjc19sYW5lMSBtYXBwaW5nOgoKc3RhdGljIGNv
-bnN0IHN0cnVjdCBxbXBfcGNpZV9vZmZzZXRzIHFtcF9wY2llX29mZnNldHNfdjZfMjAgPSB7Cgku
-c2VyZGVzCQk9IDB4MTAwMCwKCS5wY3MJCT0gMHgxMjAwLAoJLnBjc19taXNjCT0gMHgxNDAwLAoJ
-LnR4CQk9IDB4MDAwMCwKCS5yeAkJPSAweDAyMDAsCgkudHgyCQk9IDB4MDgwMCwKCS5yeDIJCT0g
-MHgwYTAwLAoJLmxuX3NocmQJPSAweDBlMDAsCn07CgpUaGlzIG9taXNzaW9uIGNhdXNlcyAucGNz
-X2xhbmUxIHRvIGltcGxpY2l0bHkgZGVmYXVsdCB0byAweDAwMDAsIHdoaWNoIGlzIHRoZQpzYW1l
-IG9mZnNldCBhcyB0aGUgLnR4IGJsb2NrLgoKSG93ZXZlciwgc2R4NjVfcW1wX3BjaWVwaHlfY2Zn
-IHBhaXJzIHRoaXMgb2Zmc2V0IHN0cnVjdHVyZSB3aXRoIGEgdmFsaWQKcGNzX2xhbmUxIHRhYmxl
-OgoKc3RhdGljIGNvbnN0IHN0cnVjdCBxbXBfcGh5X2NmZyBzZHg2NV9xbXBfcGNpZXBoeV9jZmcg
-PSB7CgkubGFuZXMgICAgICAgICAgICAgICAgICA9IDIsCgoJLm9mZnNldHMJCT0gJnFtcF9wY2ll
-X29mZnNldHNfdjZfMjAsCgoJLnRibHMgPSB7Ci8vIC4uLgoJCQkucGNzX2xhbmUxICAgICAgID0g
-c2R4NjVfcW1wX3BjaWVfcGNzX2xhbmUxX3RibCwKCQkJLnBjc19sYW5lMV9udW0gICA9IEFSUkFZ
-X1NJWkUoc2R4NjVfcW1wX3BjaWVfcGNzX2xhbmUxX3RibCksCgkJfSwKCldpbGwgdGhpcyBjYXVz
-ZSB0aGUgcGNzX2xhbmUxIHRhYmxlIHRvIGJsaW5kbHkgb3ZlcndyaXRlIHRoZSBQSFkgdHJhbnNt
-aXR0ZXIKcmVnaXN0ZXJzIGluIHRoZSB0eCBibG9jayBkdXJpbmcgaW5pdGlhbGl6YXRpb24/Cgot
-LSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIw
-MjYwNzE0LXNtODQ3NS1idXAtdjEtMC1iMjg3MWJlMmI0ZWNAcHJvdG9uLm1lP3BhcnQ9MgoKLS0g
-CmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 7/13/26 12:48, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 1 potential issue(s) to consider:
+> - [Medium] Signaling voltage boost is exclusively tied to the absolute maximum clamped frequency, preventing high data rates from receiving the boost.
+> --
+> 
+> --- Patch [2]: [PATCH v3 2/2] phy: mediatek: Add support for MT8196 MIPI DSI PHY ---
+> commit a6b40caad1ac266a0481ef7b26baffceb672008c
+> Author: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+> 
+> phy: mediatek: Add support for MT8196 MIPI DSI PHY
+> 
+> This commit adds support for the MIPI DSI PHY found in the MediaTek MT8196
+> SoC and its variants. It introduces a new register layout and basic D-PHY
+> functionality needed to drive MIPI DSI displays.
+> 
+>> diff --git a/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8196.c b/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8196.c
+>> new file mode 100644
+>> index 0000000000000..eac3db9922dba
+>> --- /dev/null
+>> +++ b/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8196.c
+> 
+> [ ... ]
+> 
+>> +static int mtk_mipi_tx_pll_enable(struct clk_hw *hw)
+>> +{
+>> +	struct mtk_mipi_tx *mipi_tx = mtk_mipi_tx_from_clk_hw(hw);
+>> +	void __iomem *base = mipi_tx->regs;
+>> +	u32 voltage = RG_DSI_PRD_REF_MINI;
+>> +	u32 pres = MIPITX_PRESERVED_MINI;
+>> +	unsigned long long pcw_calc;
+>> +	unsigned int txdiv, txdiv0;
+>> +	u32 pcw;
+>> +
+>> +	dev_dbg(mipi_tx->dev, "enable: %u bps\n", mipi_tx->data_rate);
+>> +
+>> +	if (mipi_tx->data_rate >= DSI_PHY_PLL_MAX_RATE_HZ) {
+>> +		/* Select higher signaling voltage for fast data rates */
+>> +		voltage = RG_DSI_PRD_REF_DEF;
+>> +		pres = MIPITX_PRESERVED_DEF;
+>> +		txdiv = 1;
+>> +		txdiv0 = 0;
+>> +	} else if (mipi_tx->data_rate >= 1000000000) {
+> 
+> [Severity: Medium]
+> Does this logic unintentionally restrict the higher signaling voltage to only
+> exact matches of the maximum PLL rate?
+> 
+
+Yes, it does. It's fine. This is on purpose.
+
+There's a way to scale voltages a bit differently (for 4 different freq ranges)
+but it's a bit messy to implement, needs me to have different displays to test
+all different frequencies (which I don't have), and a bit more code.
+
+The only frequencies that really need the higher signaling voltage are the ones
+from 2GHz (which is currently the max frequency, but can be expanded later, as
+there will be new HW supporting higher freqs, with the same signaling voltage
+increase and the same code for it) onwards.
+
+
+> Since mtk_mipi_tx_pll_determine_rate() clamps the clock rate to
+> DSI_PHY_PLL_MAX_RATE_HZ (2.0 GHz), mipi_tx->data_rate can never exceed this
+> value. Consequently, panels requesting data rates slightly below 2.0 GHz
+> (for example, 1.99 GHz) will fall through to the 1.0 GHz branch instead of
+> receiving the voltage boost and correct PLL dividers intended for fast data
+> rates.
+> 
+> Could this conflation between the PLL octave band threshold and the maximum
+> frequency clamp macro also break the PLL divider logic if the maximum
+> supported rate limit is increased in the future?
+> 
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
