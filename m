@@ -4,66 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13D90C4450B
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Jul 2026 19:28:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96378C4450B
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Jul 2026 19:28:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+xfDyrLuUbhaT3CcihCtO8GNuArPE1Uyv6SUW3CHyEk=; b=sPm0mB+gjxjJj4
-	NHBJgJXj2cpvaNyWwt+PWX4EsGmYDUBrTs9wu/fsvePl6vpqBlultjpTslq+00ajDQxokLOj+UAJn
-	pPqa+hlbYpuXp61uElIwWwg8tpDJT48rXhcjLPmTi7A3LYOzWvnq1WalEbxCo+UJpCGy5hjx4ESz2
-	TVcONCPHLB6Q3qL1IHaSsV5+Wx/FZWvsYHC0fKr0lT8NgLqDzc6NKmKl5XgHoIZjns5GvGX/nELSx
-	+nIC8Yg/HjiuPn7q8GiJ6R9bun6Vd9zfREitDJDsUF3TTRDO8PATJTjsyny3cYrlbafSt+4S0/y+R
-	gLWHAR6FHVJeXEDmtC+w==;
+	List-Owner; bh=9eSMuoijbCLg2pJ7SVzSsupq72HHLwCIVUocnilSFd8=; b=ye6d9IxQ9cYRSN
+	AZQxMk9HNSxaroKaaBSIt71HUbYC4+FqMnWMCY0em4Q3/JC/4DkLm7eiBBN6u8aKHDTIiOS4aLMsf
+	LeAWJb/C/Zhk0hRVF4yNMoo17tl7kv5aCPNzJu+Kmi67F9HEFEBhbuDIErXS3cpQZtp3e53RMXW2A
+	xYGO5ifmZ/iVtCbnCqSknxrOw3oUyUlnP8HuUhr7/IxXJqImGEib8afVxwcDry4ppUtenvWwW1642
+	U303GmpQSDcGzRxKcGuiCSw18OvBthJAtXH2ZiUMwMC0bZmqiH2Qqz5omQA4ucD3AWduaLsSl6Ued
+	sAOTXPdL0/iAAGnplapg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjink-0000000D5YE-2Igw;
-	Tue, 14 Jul 2026 19:28:20 +0000
+	id 1wjinv-0000000D5kx-0pM2;
+	Tue, 14 Jul 2026 19:28:31 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjimD-0000000D3PG-39Bk;
-	Tue, 14 Jul 2026 19:26:45 +0000
+	id 1wjimE-0000000D3Qa-0uaK;
+	Tue, 14 Jul 2026 19:26:46 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
 	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=IYikmDMba8G2LzQ01Ao1OTZqbg3k3ecnWxhXvCaq+PU=; b=D2huuWyioaw2IBmR+oluchO2Sx
-	IsM2VRnqcUH1AmB8MVCXtRMk3BAc3XUQpOUYjqMk+ZNGz6fKgNnULwj9jofYz1gPpGX4Aal1XVOHy
-	rCoomsX21VkhUzf21ptnCWRZGSEUpMg4Km+eGJrgT+aziWNGKalBn+Xyvfl2LOwd3/75se8vJAMkZ
-	3tGv4t9G1KAfv1FhjrG1P87XkSHiC/3pSWl0AIZNVoF9sDvMlBd0kf7fowcVpwg4IWH6ixHehmScv
-	FpcB4r2m3bQtr18S6FF6hahtA/qvh5/47l9kCbl+60wfO3eputDMKpfqRxg7PvlcFS04qYWLIO7tb
-	kwRlUGRA==;
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	bh=5rl+UiCF7my18ZxcuMyoW05fzRW7rZtyaCGC1/e5Y3E=; b=VYg/R75si/JWDpLGE+s3zTBlSv
+	1ayW/0RkbUCghETQjBzFey4bmr31yh5vjmKGCVp3RpBpuVik7swNK37KFl+HIowlwc2sCD9tAUZGZ
+	RIXWPIHOoH9bdNtfeo3QBpQF5bCnmhZNyvkWT91p7elurJj8bRYri594PD40kPkCzszVku9TljlG6
+	xBilzHNXL61ktPy6462k8B5tftA6J0DBiERySVDBE+fAl2hzhH0WmasSIJUIcV3/Y5C3usohNXlcs
+	DYIMwuLYzGMJ9Q2H5RkZnI8tzxleudo2i82aeQRXvCwSDQaRbIUMfCvjXXP91qWgE7MaOkvxiy/Mp
+	L+fYi1vw==;
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1wjim2-0000000Co8v-0onU;
-	Tue, 14 Jul 2026 19:26:37 +0000
+	id 1wjim3-0000000Co6x-353K;
+	Tue, 14 Jul 2026 19:26:44 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1784057174;
-	bh=Cq66EKeE2flHvN+UE+9Jd7VxqMbU2uK/j0/Drv52Xi4=;
+	s=mail; t=1784057169;
+	bh=FzxdooW9D7IYkJPvtynhOqwEPTbYTO3x1SBymELs+Bc=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=Rk9Z/R42FF90Hf6BQKBh6UG09k8y4+0WjEMOKoxcv3Qmy3g7Q/oItkjBM/MVc3Y/U
-	 LtgvS1qp2fSKETmGky59xN2Taz1TP1qSwrM41Kaw6A7BoaKBdACKMThJ5uB/Gl3lL1
-	 nregYd8BcQeaur+WNAkhqWtABPKfChL+Q7V+vrh2wtoaeh3bOGHi6zYWhXlsZyC+9K
-	 zteFaO5pdwL6hSV+eguxgRI0z96VOes4pEyVI58oE8Az7qgocs2q+bEDluuMMiPUej
-	 LA4LwigCaO3KB5nYHK1kQ09TEDJMfroLUwuCvcBzi8wVa6sarYK/RnsVd+UOzWMmxU
-	 Qp/UBsxpu1o4g==
+	b=WEzpHQv5armzKD8q2UPJzb5uhxxC/XusNRE58QZAJijBUlkun3ephVIUaQpyB3eQt
+	 GJEnXgoKk6xjAnqOrCY23lJ4uqtDW+Er/1SSqD6EbW+iPTdx+v/uFbWn41MMhHWaKh
+	 JPfvIS89Y+QIvX2yVsjxCCfWZRfi+loP/E/6U1yykiMl8yGac5cYoDmnGSgeOR6fMH
+	 eDLFCiU2MovEQif+DuBR+Vgr+gqNP69s05kVSdEbIoTzcZ4UgUdp5lzKHKwBdmvO1T
+	 vQrZ+QezH5fHXWAhkHdNAu5kLrYs1sY9txIpD1kaVrxd9aVRj0stQTVb6lTUz7XEv9
+	 aKdZRGAbMuhBg==
 Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519)
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 9D0F517E36BC;
-	Tue, 14 Jul 2026 21:26:14 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id C1CE017E1029;
+	Tue, 14 Jul 2026 21:26:09 +0200 (CEST)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id E0FEC48004E; Tue, 14 Jul 2026 21:26:08 +0200 (CEST)
+	id E5C4B480061; Tue, 14 Jul 2026 21:26:08 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Tue, 14 Jul 2026 21:26:14 +0200
-Subject: [PATCH v13 13/35] phy: rockchip: usbdp: Rename DP lane functions
+Date: Tue, 14 Jul 2026 21:26:17 +0200
+Subject: [PATCH v13 16/35] phy: rockchip: usbdp: Register DP aux bridge
 MIME-Version: 1.0
-Message-Id: <20260714-rockchip-usbdp-cleanup-v13-13-6cb3e769d4c5@collabora.com>
+Message-Id: <20260714-rockchip-usbdp-cleanup-v13-16-6cb3e769d4c5@collabora.com>
 References: <20260714-rockchip-usbdp-cleanup-v13-0-6cb3e769d4c5@collabora.com>
 In-Reply-To: <20260714-rockchip-usbdp-cleanup-v13-0-6cb3e769d4c5@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -82,26 +82,26 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  devicetree@vger.kernel.org, linux-usb@vger.kernel.org, 
  Sebastian Reichel <sebastian.reichel@collabora.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2007;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3189;
  i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=Cq66EKeE2flHvN+UE+9Jd7VxqMbU2uK/j0/Drv52Xi4=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpWjU8PsBrTeDHuwd30ncJpcP7OaB7DFoutj
- QE6UqAabWAzW4kCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqVo1PAAoJENju1/PI
- O/qaJd8P/3sIBsWLap93/EdAi2yXwxyjzrE6xD3YK8WGN3OfdL7k7V6mHLJzMQV4mWkQspATGvC
- h9uie7H2bQfZAagedPCIQpUmn5DN7gDBqFltuVsz4k+U2uL8+YZDlvRDfQv550Zb3NPcLut8pO5
- tCKmMZ15+2b4cZwukSzN95C46aTaeWyedLVhUezkQRFSITMly03h8+EWt/fSIzfSfXJ0tS5+bZA
- KKqAUAzDoGj4uJVJNUoxCgF6ktVgUAnFPQ1BwmsZ81kRKn8JocE51vlYN6OaUVdygwQxNLOGNv+
- 12TfpytmGAJWkQqzukfxszqahd47vBhafpxWMMp8TG3KyD6Utalh70XEfaSsWwjeAsTgj4byfzP
- /FaNBQqLJC1amyKbLXYVY2MYpyh10QDghOHhETCjzULTrmCQlt6U6o+wwgZzfuesbf36Pvk3VOP
- Wqe580QiauEbzTXg1u3w4afCDTOJF+aTPuq0AmyOwGukWVXQJSbPIyj3SfKDKZJe1sT+VGpRJoz
- OHHeG9Y8/xfJiC5EMxse6t+e/FJsMe0kWvjKJOUJNWaOxjniXdTX92a+EVJlDIit1FZnsXAMtax
- ghcbBdaMFSal+Q57BqW4h3Vx3rrCADUXafPf1Rf9l51YQF7GHQaxWr4yDru+ensmIkpe5NcSJK+
- C05TLAa2ejAcGK48tWOolEQ==
+ bh=FzxdooW9D7IYkJPvtynhOqwEPTbYTO3x1SBymELs+Bc=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpWjVCmQA7P9pLhCQwe1b0neqgfTb3q06+zi
+ 47H/lksbpq1vYkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqVo1QAAoJENju1/PI
+ O/qaAnEP/2pJcDRGVcbo90LkCIDqorCJyp0SsQeFrx/0hF1d9pt5TwyRVOu8yNxGxgkzs3qQP0p
+ mXXvtBeYFBlC5ej+Ep371y2qiB5/9rpAdmLE3t/DhB/fSnFjh6MRSFBQDrAPUBXLA8XDcT+zT11
+ 8iy11uQwwO95/81+gBH15ANtNDs9f6G6nO5lWqi0brpo2qd0Z4rTo5U9YcxGb2aRSe0WFDG1DRY
+ uYFUPTIv4DYunDmM5dMH2CnrvJgXm5E/DTu5ZxRvErnSQwsDA0mSjDMlupfgclFmpzMVM69wKr4
+ ApV2uG9FhwTtHu++8EMQOplg+dJXFskD8VcNxayXmzYHFDDs1yQia2w6vy/XdhRX4ePm83w1B5v
+ Cj07x5V0F1N1bFtIIzRKO08QR4mebzvAKsGdYsP9wEcCblDD4dGVGB9j0VMZkY6/AvuhrUlNKwn
+ kMujikbBUhQP51YfbYVWfN+uv9a/Tn84Mfy/t0lC/+eBeZUYn49jMU72dqB7GH79d65WpCNcyYN
+ 5sZr5sKEQRUh35k24/mNcjCYbUHYPsiK2AJoDHIYUhnz4px0YnbUCJHLNexcVB7BUK7Ds1KDwh9
+ Vj9+8Y6aBxKYgjHP2xZS+3joxJIFgZRKBrWGhyp+n6OVYgj4fLjICNF+tqoqHvRtS/Gy/sA8bZ7
+ ojiTRxBgKY4Q0TyhC6OgzsQ==
 X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
  fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260714_202634_429629_6357829F 
-X-CRM114-Status: GOOD (  11.43  )
+X-CRM114-CacheID: sfid-20260714_202641_925301_046DD99E 
+X-CRM114-Status: GOOD (  16.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,59 +118,92 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The common prefix for DisplayPort related functions is rk_udphy_dp_
-(with a final _), so update the two DP lane functions to follow that
-scheme.
+Add support to use USB-C connectors with the DP altmode helper code on
+devicetree based platforms. To get this working there must be a DRM
+bridge chain from the DisplayPort controller to the USB-C connector.
+E.g. on Rockchip RK3576:
+
+root@rk3576 # cat /sys/kernel/debug/dri/0/encoder-0/bridges
+bridge[0]: dw_dp_bridge_funcs
+        refcount: 7
+        type: [10] DP
+        OF: /soc/dp@27e40000:rockchip,rk3576-dp
+        ops: [0x47] detect edid hpd
+bridge[1]: drm_aux_bridge_funcs
+        refcount: 4
+        type: [0] Unknown
+        OF: /soc/phy@2b010000:rockchip,rk3576-usbdp-phy
+        ops: [0x0]
+bridge[2]: drm_aux_hpd_bridge_funcs
+        refcount: 5
+        type: [10] DP
+        OF: /soc/i2c@2ac50000/typec-portc@22/connector:usb-c-connector
+        ops: [0x4] hpd
 
 Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
+ drivers/phy/rockchip/Kconfig              |  2 ++
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 17 +++++++++++++++++
+ 2 files changed, 19 insertions(+)
 
+diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
+index 14698571b607..39759bb2fa1d 100644
+--- a/drivers/phy/rockchip/Kconfig
++++ b/drivers/phy/rockchip/Kconfig
+@@ -136,8 +136,10 @@ config PHY_ROCKCHIP_USBDP
+ 	tristate "Rockchip USBDP COMBO PHY Driver"
+ 	depends on ARCH_ROCKCHIP && OF
+ 	depends on TYPEC
++	depends on DRM || DRM=n
+ 	select GENERIC_PHY
+ 	select USB_COMMON
++	select DRM_AUX_BRIDGE if DRM_BRIDGE
+ 	help
+ 	  Enable this to support the Rockchip USB3.0/DP combo PHY with
+ 	  Samsung IP block. This is required for USB3 support on RK3588.
 diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index b172ce6a722e..7fb864a1486c 100644
+index eda3f7a1e267..8ac6a83b0b2a 100644
 --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -545,7 +545,7 @@ static void rk_udphy_usb_bvalid_enable(struct rk_udphy *udphy, u8 enable)
-  * ---------------------------------------------------------------------------
+@@ -6,6 +6,7 @@
+  * Copyright (C) 2024 Collabora Ltd
   */
  
--static void rk_udphy_dplane_select(struct rk_udphy *udphy)
-+static void rk_udphy_dp_lane_select(struct rk_udphy *udphy)
++#include <drm/bridge/aux-bridge.h>
+ #include <dt-bindings/phy/phy.h>
+ #include <linux/bitfield.h>
+ #include <linux/bits.h>
+@@ -1414,6 +1415,7 @@ static int rk_udphy_probe(struct platform_device *pdev)
  {
- 	const struct rk_udphy_cfg *cfg = udphy->cfgs;
- 	u32 value = 0;
-@@ -574,7 +574,7 @@ static void rk_udphy_dplane_select(struct rk_udphy *udphy)
- 		     FIELD_PREP(DP_AUX_DOUT_SEL, udphy->dp_aux_dout_sel) | value);
- }
+ 	struct device *dev = &pdev->dev;
+ 	struct phy_provider *phy_provider;
++	struct fwnode_handle *dp_aux_ep;
+ 	struct resource *res;
+ 	struct rk_udphy *udphy;
+ 	void __iomem *base;
+@@ -1468,6 +1470,21 @@ static int rk_udphy_probe(struct platform_device *pdev)
+ 			return ret;
+ 	}
  
--static void rk_udphy_dplane_enable(struct rk_udphy *udphy, int dp_lanes)
-+static void rk_udphy_dp_lane_enable(struct rk_udphy *udphy, int dp_lanes)
- {
- 	u32 val = 0;
- 	int i;
-@@ -1049,9 +1049,9 @@ static int rk_udphy_dp_phy_power_on(struct phy *phy)
- 	if (ret)
- 		goto unlock;
- 
--	rk_udphy_dplane_enable(udphy, udphy->dp_lanes);
-+	rk_udphy_dp_lane_enable(udphy, udphy->dp_lanes);
- 
--	rk_udphy_dplane_select(udphy);
-+	rk_udphy_dp_lane_select(udphy);
- 
- unlock:
- 	mutex_unlock(&udphy->mutex);
-@@ -1069,7 +1069,7 @@ static int rk_udphy_dp_phy_power_off(struct phy *phy)
- 	struct rk_udphy *udphy = phy_get_drvdata(phy);
- 
- 	mutex_lock(&udphy->mutex);
--	rk_udphy_dplane_enable(udphy, 0);
-+	rk_udphy_dp_lane_enable(udphy, 0);
- 	rk_udphy_power_off(udphy, UDPHY_MODE_DP);
- 	mutex_unlock(&udphy->mutex);
- 
++	/*
++	 * Only register the DRM bridge, if the DP aux channel is connected.
++	 * Some boards use the USBDP PHY only for its USB3 capabilities. The
++	 * aux bridge itself will be registered using port 0, endpoint 0, which
++	 * is fine as that is the actual superspeed data connection shared by
++	 * USB3 and DP based on the mux config.
++	 */
++	dp_aux_ep = fwnode_graph_get_endpoint_by_id(dev_fwnode(dev), 3, 0, 0);
++	if (dp_aux_ep) {
++		ret = drm_aux_bridge_register(dev);
++		fwnode_handle_put(dp_aux_ep);
++		if (ret)
++			return ret;
++	}
++
+ 	udphy->phy_u3 = devm_phy_create(dev, dev->of_node, &rk_udphy_usb3_phy_ops);
+ 	if (IS_ERR(udphy->phy_u3)) {
+ 		ret = PTR_ERR(udphy->phy_u3);
 
 -- 
 2.53.0
