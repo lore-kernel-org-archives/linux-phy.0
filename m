@@ -4,56 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20D9EC44501
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24252C44509
 	for <linux-phy@archiver.kernel.org>; Tue, 14 Jul 2026 06:36:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id
-	:Date:Subject:From:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=r/aKLANzoJTJ+RSeVDxlL1EOnXTClA4JyBYDVFS7RCs=; b=CLT2cNwXiEMDoA
-	py2vvPT+mpDYS30CSa+o71sHMEMAD5VFIjNd2dtC6zGwgrw2fb3OtD2Jafu93sSh8BY1xvdTLtXY0
-	a2ui1zkoZAOEv5n8uaOBPct2jIuJojLwYQ5Qf1wM7y6+MifNzGfMHk5xzBkPTy428BqHklQe0at/E
-	tHkWjulJjHY7pNmFYBnGi0izYCW81XC1ZPeCID008LMRPelQaVJfnyr/eNlFFd4so5BpZHGxp3ChL
-	+t7hzelh75JjOqSyHrpG11yDOujl3NxAyBMPdzYG1xPU8nSYPupyPCfU+3B1rNMYjGMkdR8yH+FGO
-	Wk+/jprkLXwuSQiqhVeg==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Swu3uHGyjcRxGQwOKLf99LL2173DPQjg9V7ygYS4gm0=; b=jNjdGY+SaRQiwl
+	cGG1pGCst9H3OLSkAcpvBLokCzx3MzaoA+i039Zh4Dyg1ql2BPw21AQooh9m3NAgWRzQYxYOrMM2o
+	IMHJytryVCcaxyO+Q52rJRbrNXgKjU64/nTyLnl8XJ04ZEsAPQz0C3iJTh5L6xbZvBBx2y6u8skEi
+	QpZB3QQlqtUZ28CWHzfIjFGWWKxAXECCu3oy7IXwSj5QXelxYsJbjv58SgwoOE7uHdIlCfJqgRCu0
+	U9/8vhC39wZlKwf8YqxQAPwHNlcsYmKtlGLXKEv1u9lG5FYrU04LOWS59FZ/dfwtlKdluosGMt86J
+	eNJP6w8f+723CUFsPWCw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjWlE-0000000B4Ag-2bJ1;
+	id 1wjWlE-0000000B4Ao-2n8a;
 	Tue, 14 Jul 2026 06:36:56 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjWlD-0000000B49n-3n7i
+	id 1wjWlD-0000000B49z-481p
 	for linux-phy@lists.infradead.org;
-	Tue, 14 Jul 2026 06:36:55 +0000
+	Tue, 14 Jul 2026 06:36:56 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 4A08841A40;
+	by sea.source.kernel.org (Postfix) with ESMTP id 99FF543CFC;
 	Tue, 14 Jul 2026 06:36:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 267C0C2BCB8;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 5D44AC2BCFA;
 	Tue, 14 Jul 2026 06:36:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1784011015;
-	bh=loOVyJQdNo2C/7b6M2ZU7HXekbM+vRvrsTr0PcS5i0A=;
-	h=From:Subject:Date:To:Cc:Reply-To:From;
-	b=cbsZ7DbARYYRKCkPeeeSd+fbI4nSJXyAanHl+adiOga5VyzRQaOB6NMy0Ri7C8zXK
-	 Laoy22nWdcdoExHig7apqoWZ7WAkQ0sJtIwXhSe+gUCuPHFcC77E7EVeZkMC0jlwsm
-	 pQ7Q3JyBYt6OD0+uiSk2Wx+LmfKf4wcwteaowGQ6YzxNrTRRWTcsy/Nw0uX54LjlQg
-	 K0Xm44KjH/3tVrA9itvShiuVJc78JsWYx5uf01EahMissc5AcW5UPQT43n0Ip726x3
-	 2yKrjpgPFJNbdhB5exPnWNk7De/4G6RZI8Ccvmif3IsibNgRJHqimAFBBH1rX0lPkZ
-	 GLLBQBpZrHp8A==
+	bh=y0CnPP7mxupqVofK7JjimHQy7LWbh6NFh1EFHs8+aw4=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=MrpzX81LFNAl7E35iuSh9h+Xy/r3JBuo38GDJP6QrtoAkrmivCDqnBArWHlMlaowy
+	 Wmiodhvco8dgiZ/p5t/PCzLmnfz0GKtVaS1XUl1XHRovZfJ43kjKngaRozg/MpsCY4
+	 jSSZIv1gh9CPTVbGV5xcX0KKDmgy4OdMnC6XpWLyN3Bb3Zx1c1NphgNU48vj0LEN65
+	 3Y5LaVpJBxPqYTxh/day14hPc4BnXBSp4axgeIdwEBfedkYU6pq01Z3S40uY2Km4tY
+	 l9Beb7237IifqQUmh8xp0EOF4vbQI3dYe5sZkWWMrdk9xqim6zuNzigG2V3aQ+74qM
+	 +wM3NcaT9xpdA==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 072D8C43458;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 4534EC44508;
 	Tue, 14 Jul 2026 06:36:55 +0000 (UTC)
 From: Esteban Urrutia via B4 Relay <devnull+esteuwu.proton.me@kernel.org>
-Subject: [PATCH 0/6] Initial PCIe0 and QMP USB PHYs support for SM8475
-Date: Tue, 14 Jul 2026 02:36:38 -0400
-Message-Id: <20260714-sm8475-bup-v1-0-b2871be2b4ec@proton.me>
+Date: Tue, 14 Jul 2026 02:36:41 -0400
+Subject: [PATCH 3/6] phy: qcom: qmp-pcie: Add support for SM8475 Gen3x1
+ PCIe0 port
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAAAAAAAC/yXMTQ5AMBBA4avIrDWpRrVxFbHQGozETzqIRNxds
- fwW713AGAgZyuSCgAcxLXNElibgh2buUVAbDUqqQposFzzZ3Gjh9lVob2WrO+mUayAGa8COzm9
- W1b95dyP67T3AfT9v8AbObgAAAA==
-X-Change-ID: 20260714-sm8475-bup-5c80d5f0b2ba
+Message-Id: <20260714-sm8475-bup-v1-3-b2871be2b4ec@proton.me>
+References: <20260714-sm8475-bup-v1-0-b2871be2b4ec@proton.me>
+In-Reply-To: <20260714-sm8475-bup-v1-0-b2871be2b4ec@proton.me>
 To: Vinod Koul <vkoul@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -62,11 +61,11 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  phone-devel@vger.kernel.org, Esteban Urrutia <esteuwu@proton.me>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1784011013; l=1233;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1784011013; l=7014;
  i=esteuwu@proton.me; s=20260622; h=from:subject:message-id;
- bh=loOVyJQdNo2C/7b6M2ZU7HXekbM+vRvrsTr0PcS5i0A=;
- b=2itTSQOEtB51eyLG5Ly2sH889FWi31qrOSgVL8uSfy7U8P+fKSBTFKWN5YEkKPK7gJs2Df/H2
- dOWy4a03DFPAiwLJ2r6Y0JDnVtWIDgpSzBNshzM3bkrsB1POy+5cDDL
+ bh=BoefUjBF0F79KKjrYCZRV0KO0xB2WEhrR2N6MJvYzTU=;
+ b=w8cox2YZKV7eN+d6x+URcJmZImtyqOZVNgu4B784OroA7DGY3We2Q2ZVIzGuDuavb+/mQ/+Dg
+ IVYFC/KhsU8Dc1G4vkQP8tnhgNjMO3KaltbA80A8KyWUHl5H5C8aIOx
 X-Developer-Key: i=esteuwu@proton.me; a=ed25519;
  pk=wToFt4mOAWkzbqb15Ye1hrhevI13vK9BcMUFiQ/me1M=
 X-Endpoint-Received: by B4 Relay for esteuwu@proton.me/20260622 with
@@ -89,33 +88,154 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This series adds support for both the PCIe0 and the QMP USB PHYs which
-can be found on the SM8475 SoC.
-The initialization sequences vary noticeably when compared to the ones
-used in the SM8450 SoC, hence the need to add support for these PHYs.
+From: Esteban Urrutia <esteuwu@proton.me>
+
+This gets the port working. Tested with WCN6856 WLAN capabilities.
+Serdes, RX and PCS Misc tables had to be added, while TX and PCS tables
+were reused from SM8550, and PCS Lane1 was reused from SAR2130P.
+Despite this, all offsets and values match.
 
 Signed-off-by: Esteban Urrutia <esteuwu@proton.me>
 ---
-Esteban Urrutia (6):
-      dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add SM8475 QMP PHY
-      phy: qcom: qmp-pcie: Add pcs_lane1 offset to V5 offsets
-      phy: qcom: qmp-pcie: Add support for SM8475 Gen3x1 PCIe0 port
-      dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy: Add SM8475 QMP PHY
-      phy: qcom: qmp-combo: Add serdes and RBR/HBR/HBR2/HBR3 tables for v1 DP PLLs
-      phy: qcom: qmp-combo: Add SM8475 support
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 108 +++++++++++++++++++++++++++++++
+ 1 file changed, 108 insertions(+)
 
- .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml   |   2 +
- .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         |   1 +
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 259 +++++++++++++++++----
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c           | 109 +++++++++
- 4 files changed, 326 insertions(+), 45 deletions(-)
----
-base-commit: 49362394dad7df66c274c867a271394c10ca2bb8
-change-id: 20260714-sm8475-bup-5c80d5f0b2ba
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index 3618812e84d5..47d7196460ee 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -2454,6 +2454,82 @@ static const struct qmp_phy_init_tbl sm8450_qmp_gen4x2_pcie_ep_pcs_misc_tbl[] =
+ 	QMP_PHY_INIT_CFG(QPHY_V5_20_PCS_PCIE_OSC_DTCT_MODE2_CONFIG5, 0x08),
+ };
+ 
++static const struct qmp_phy_init_tbl sm8475_qmp_gen3x1_pcie_serdes_tbl[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_EN_CENTER, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_PER1, 0x31),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_PER2, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE1_MODE0, 0xff),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE2_MODE0, 0x06),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE1_MODE1, 0x4c),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE2_MODE1, 0x06),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CLK_ENABLE1, 0x90),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYS_CLK_CTRL, 0x82),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_IVCO, 0x07),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE0, 0x02),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE1, 0x02),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE0, 0x16),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE1, 0x16),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE0, 0x36),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE1, 0x36),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYSCLK_EN_SEL, 0x08),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BG_TIMER, 0x0e),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP_EN, 0x42),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x0a),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x1a),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE1, 0x14),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE1, 0x34),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x82),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE1, 0x68),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START1_MODE0, 0xab),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START2_MODE0, 0xea),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START3_MODE0, 0x02),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START1_MODE1, 0xab),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START2_MODE1, 0xaa),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START3_MODE1, 0x02),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_MAP, 0x14),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CLK_SELECT, 0x34),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_SEL_1, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CORECLK_DIV_MODE1, 0x04),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CMN_CONFIG_1, 0x16),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_ADDITIONAL_MISC_3, 0x0f),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CORE_CLK_EN, 0xa0),
++};
++
++static const struct qmp_phy_init_tbl sm8475_qmp_gen3x1_pcie_rx_tbl[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_DFE_CTLE_POST_CAL_OFFSET, 0x38),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_GM_CAL, 0x11),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_00_HIGH, 0xbf),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_00_HIGH2, 0xbf),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_00_HIGH3, 0xb7),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_00_HIGH4, 0xea),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_00_LOW, 0x3f),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_01_HIGH, 0x5c),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_01_HIGH2, 0x9c),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_01_HIGH3, 0x1a),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_01_HIGH4, 0x89),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_01_LOW, 0xdc),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_10_HIGH, 0x94),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_10_HIGH2, 0x5b),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_10_HIGH3, 0x1a),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_10_HIGH4, 0x89),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_TX_ADAPT_POST_THRESH, 0xf0),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_FO_GAIN, 0x09),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_SO_GAIN, 0x05),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_SB2_THRESH1, 0x08),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_SB2_THRESH2, 0x08),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_VGA_CAL_CNTRL2, 0x0f),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_SIDGET_ENABLES, 0x1c),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_IDAC_TSETTLE_LOW, 0x07),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_SIGDET_CAL_TRIM, 0x08),
++};
++
++static const struct qmp_phy_init_tbl sm8475_qmp_gen3x1_pcie_pcs_misc_tbl[] = {
++	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_PCS_PCIE_POWER_STATE_CONFIG2, 0x1d),
++	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_PCS_PCIE_POWER_STATE_CONFIG4, 0x07),
++	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_PCS_PCIE_ENDPOINT_REFCLK_DRIVE, 0xc1),
++	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_PCS_PCIE_OSC_DTCT_ACTIONS, 0x00),
++};
++
+ static const struct qmp_phy_init_tbl sm8550_qmp_gen3x2_pcie_serdes_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_EN_CENTER, 0x01),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_PER1, 0x62),
+@@ -4406,6 +4482,35 @@ static const struct qmp_phy_cfg sm8450_qmp_gen4x2_pciephy_cfg = {
+ 	.aux_clock_rate		= 20000000,
+ };
+ 
++static const struct qmp_phy_cfg sm8475_qmp_gen3x1_pciephy_cfg = {
++	.lanes = 1,
++
++	.offsets		= &qmp_pcie_offsets_v5,
++
++	.tbls = {
++		.serdes		= sm8475_qmp_gen3x1_pcie_serdes_tbl,
++		.serdes_num	= ARRAY_SIZE(sm8475_qmp_gen3x1_pcie_serdes_tbl),
++		.tx		= sm8550_qmp_gen3x2_pcie_tx_tbl,
++		.tx_num		= ARRAY_SIZE(sm8550_qmp_gen3x2_pcie_tx_tbl),
++		.rx		= sm8475_qmp_gen3x1_pcie_rx_tbl,
++		.rx_num		= ARRAY_SIZE(sm8475_qmp_gen3x1_pcie_rx_tbl),
++		.pcs		= sm8550_qmp_gen3x2_pcie_pcs_tbl,
++		.pcs_num	= ARRAY_SIZE(sm8550_qmp_gen3x2_pcie_pcs_tbl),
++		.pcs_misc	= sm8475_qmp_gen3x1_pcie_pcs_misc_tbl,
++		.pcs_misc_num	= ARRAY_SIZE(sm8475_qmp_gen3x1_pcie_pcs_misc_tbl),
++		.pcs_lane1	= sar2130p_qmp_gen3x2_pcie_pcs_lane1_tbl,
++		.pcs_lane1_num	= ARRAY_SIZE(sar2130p_qmp_gen3x2_pcie_pcs_lane1_tbl),
++	},
++	.reset_list		= sdm845_pciephy_reset_l,
++	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
++	.vreg_list		= qmp_phy_vreg_l,
++	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
++	.regs			= pciephy_v6_regs_layout,
++
++	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
++	.phy_status		= PHYSTATUS,
++};
++
+ static const struct qmp_phy_cfg sm8550_qmp_gen3x2_pciephy_cfg = {
+ 	.lanes = 2,
+ 
+@@ -5631,6 +5736,9 @@ static const struct of_device_id qmp_pcie_of_match_table[] = {
+ 	}, {
+ 		.compatible = "qcom,sm8450-qmp-gen4x2-pcie-phy",
+ 		.data = &sm8450_qmp_gen4x2_pciephy_cfg,
++	}, {
++		.compatible = "qcom,sm8475-qmp-gen3x1-pcie-phy",
++		.data = &sm8475_qmp_gen3x1_pciephy_cfg,
+ 	}, {
+ 		.compatible = "qcom,sm8550-qmp-gen3x2-pcie-phy",
+ 		.data = &sm8550_qmp_gen3x2_pciephy_cfg,
 
-Best regards,
---  
-Esteban Urrutia <esteuwu@proton.me>
+-- 
+2.55.0
 
 
 
