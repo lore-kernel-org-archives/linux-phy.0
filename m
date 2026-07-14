@@ -4,112 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 648B7C44507
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Jul 2026 19:14:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD26EC4450A
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Jul 2026 19:26:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VF6dNeLVH5+HdcadRJYXrfcwVerTQaCs2YGt1NUZOoA=; b=L7sQU1Qi6/fQ72
-	NEK474jsP7Cfi8He92TNNICcaFn3QmKzDAmYEy0qggaSvo3TU/sN35QOoP8VwVJs9kIkFIxi3IBal
-	XMG4BCHzHyHVmzlfe+HBOGTCB7gGxiNmjQ9b7neDQSkYa9vWD2ctpjnliPtqToM3MbCdMDHs4+PG/
-	elETe0TIpsa3PaZ2sZu7TU3P8477mMcBBhIGY5pcmg90HhfxfXad+MmzXkZGkwEg3w4QnP3lNvQyG
-	o2H0RNuI5cfySQ6TPVS7yBNBmdNvpvldQgfsvy/nzn6cNlailtIpG0W3SerRcQR0dQ0kiM49LStAC
-	S3rA7LUIqBDEbn5d4iGw==;
+	List-Owner; bh=BLdA1IFPDUrmMNESpajnEqn/S7JZzJSfQh8R/roSSY4=; b=v55KIowJWMxU4Z
+	tG7Fa6QrCivyqPdINGZhM0mp+DcsttMnElN2aN8b7L73LQofsMAy3J0Ek0b6rYSGUCeEbPba4Arw8
+	x9JoM7OnOaVjqWKU4ycICJZqCNeanVXD2mi9AHGwt/8v2rw1xJEEoTi+OiiDSRayYqkbOW2Hde2AG
+	LRAmE/QJuNM5rLytLXr/yYUr3qQRm8vfj5K8pRFLelpMvCrmRyt3B34+UdnoVnCSU2Hv4bF9nKLfr
+	Nr55XOBS9U/lLvZQK/IBkkMaEO8OtxQmEw999nCiJ8vKA3O9kMN04MVfklsngMCXZkUkQ8bw+hLiX
+	dLX9S0O4WxpBR1OdWYAQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjiaj-0000000D0nX-0KOe;
-	Tue, 14 Jul 2026 19:14:53 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1wjiln-0000000D2q4-1SDZ;
+	Tue, 14 Jul 2026 19:26:19 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjiah-0000000D0lC-43Bf
-	for linux-phy@bombadil.infradead.org;
-	Tue, 14 Jul 2026 19:14:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=kGEBxSja9QK9v749iu4BHEOzirdhrkQ+xdtjQ0ijsW8=; b=HuAxFwhNsCsVLWueqnB4MtUHTn
-	HxhM8N4XaVt75VNSPVj8Q1mAttjWqT1XUxt7v/VH3FLxelGr3y8y5Izeh4d+Qr6KNk90gzTUiRWdF
-	JYjLrQIaQJLIbTTUolfp2MpE+zn+oNMekJtf/6ph6tHpZTj8qtrJBSit47B45YJCwrV3qeavrUrwQ
-	EBitj/+TimxQ2HmZqs+SkLzlXNNfKqq0fqmRbHJmvkSRFGQqwJkhA9LjBwVnwBAEYkFfw6awGnRRU
-	dv+6U3j2uIhxy8MSaIhC3SQo0/b4OMBvLawrTISZZMQvaPEJryLeYWhrgnlHofFhGFNR74/k8g8gR
-	Dah9a3gQ==;
-Received: from mail-pj2-x04.google.com ([2607:f8b0:4864:39::4])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1wjiad-0000000CnfL-1FRy
-	for linux-phy@lists.infradead.org;
-	Tue, 14 Jul 2026 19:14:50 +0000
-Received: by mail-pj2-x04.google.com with SMTP id d9443c01a7336-2cabf1f1051so4128525ad.0
-        for <linux-phy@lists.infradead.org>; Tue, 14 Jul 2026 12:14:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1784056485; x=1784661285; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=kGEBxSja9QK9v749iu4BHEOzirdhrkQ+xdtjQ0ijsW8=;
-        b=k95Ax1h/DMv71Izi/3v4xWsHJetNRSY7QPvPlwo/MKMUSmbbzZYNgzC1XVMJ4/61Va
-         FJuFg85cLxZfahfQ/WNU+Ym3gU79hLI4+jh/rc4F2X20ooXTxyZzMe7Gvx8pV33Aj7oA
-         G2yoDNh9NI1TVhL8TIEpW29swC8mzhBj01M9u6kYIjmfq538vCT18JGR6x69ZFmAzgAJ
-         VTtJBiWZibfCR12ISXL99YyVmI/VBuPGY+Zvd51mMfQS/LZHlSSehOKipUl5XLfa0e0P
-         SkSB+RrWba399lSpsQ4A2lB+0voOZ5YUA8btUgBZhz5kg+Crgu+KmdqRC/PCtwp2dwLq
-         DErQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784056485; x=1784661285;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=kGEBxSja9QK9v749iu4BHEOzirdhrkQ+xdtjQ0ijsW8=;
-        b=W0A2kY2x/ABO74//+DVeqQ9CntZfvV/ong8e6aiSHmbZcv7PKs78SQ2CRAgRjGv4oA
-         H6Bta9xwCBMuDdHnk+cMKX8WOD4qT/fnK9huBHlRJBDOxL6XWDq/UEcDtm/+qiVozFpY
-         saUKXk9RUj4IO1KUKTH1ED05Q6RQU/drNuR+zHsT5pd3wdPgTEkOUX4ETftkjoW6WEOA
-         ezKtbnrnZnfitOVxE8/WaAB6fvbmZpGdEW1iSnqNN2L9vCTGipgTzBwKvtNx9MOXzfyp
-         4phG1Edo4zCTghu0JpCvJf6iuDz5ncAbTL7vxCAIUwd76J4WNHggGX/CdHGeA5bN/36Z
-         QDlg==
-X-Forwarded-Encrypted: i=1; AHgh+RrK7EtJloO5kfyFdZ3E2mD6wzSGlNjI8JOlVGFHTbbvBfLtC4AtTeLaw6CigpM59QGajepJYxmQBg4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwV7dsbwX7rdud1JN5IgF4Yh3UwVJGv1CP8omPONwx7X7DipWw+
-	cEr/BL0jkcDlkx3WGPBm3/MW/TkXgwYwvHzRXVz8gOK3D8AH7UdqcS14
-X-Gm-Gg: AfdE7cmfapHWLQGDZHSOBz6v5WbblanK4svi63g3IHHfV66FxXFMMeAtVauGmgP4Wg5
-	rGm7xDf06Evoi5xm5AU6ziTlg1WCMkMP7PMDHmSA45rGfe8hT1sc5slIRaCIYO40ZKIMKx5MjfC
-	X13p0aQfDl6vPKZIgAFKlf3GAvZo2f/D02VaGRz8QfBytp2EUFLOJmwNG6Oqz6IyQVCEAS2a3de
-	+ZKdB0JC1poaYHHgdoI43jR6zFkiNHlfRk1xujOzKBER+XMJDyKTpeA6rub/y32OcGjHZr70Ufd
-	bqaOzaxQrFRKIkius8yFEhZtnph8ccW9KqNTKEBLajnaoBB5QuRkEiuZqdZZjX390JBbna7E5vy
-	1ZQSGSJbdEcF8eKxdv5QPJNMN2Jm1laTt7bkDTHvF7ZNotnFdqc4y6B1/0hjq1CifkPLxIkB+/j
-	665lsMbKqCbKQ=
-X-Received: by 2002:a17:903:15c3:b0:2cc:777f:d67c with SMTP id d9443c01a7336-2ce9e99be82mr146416405ad.13.1784056484883;
-        Tue, 14 Jul 2026 12:14:44 -0700 (PDT)
-Received: from server.lan ([150.230.217.250])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2ccc9d3d451sm120763245ad.65.2026.07.14.12.14.39
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 14 Jul 2026 12:14:43 -0700 (PDT)
-From: Coia Prant <coiaprant@gmail.com>
-To: kuba@kernel.org,
-	davem@davemloft.net,
-	edumazet@google.com,
-	pabeni@redhat.com,
-	andrew+netdev@lunn.ch,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	heiko@sntech.de
-Cc: netdev@vger.kernel.org,
-	linux-rockchip@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	Coia Prant <coiaprant@gmail.com>
-Subject: [RFC PATCH 10/10] MAINTAINERS: add entry for Rockchip XPCS driver
-Date: Wed, 15 Jul 2026 03:08:38 +0800
-Message-ID: <20260714191341.690906-11-coiaprant@gmail.com>
-X-Mailer: git-send-email 2.47.3
-In-Reply-To: <20260714191341.690906-1-coiaprant@gmail.com>
-References: <20260714191341.690906-1-coiaprant@gmail.com>
+	id 1wjilk-0000000D2hv-01SZ;
+	Tue, 14 Jul 2026 19:26:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1784057169;
+	bh=ou2OeHe9NiTPGYgMcRzTUBwKmURTgL5/azZ1wBtlGvM=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
+	b=gHNbOAYpLNeJMIX8AB67rtX0qgJArQ+D5DKBQu8GLMn+hOrcgF0xwbMhSMRVtWsnA
+	 J/hvXxHb2y5LvWJUX0UZFGV8jhheOgFPd3YHLoCQlk4h1xuE+Cxe1gh54RM5erWAN1
+	 7JZpdeekW3jeKLce4F/+7DB10MyBSQdF7POlIzITc6ho1GNo/abroEZZMeVcB0Rtte
+	 tZrT3lGcxoI6netTqokfVn4GzpyfYTP9tWUfoGSjBjH19Ifhz71YSuHh7owwYPcvnf
+	 yxbaLd5tp1yM10faVvJMAYD0nVljFfZsAIWuxp9gsjv4/2z3kcTz5Swl2S92mEzVjw
+	 8s0C6IpNmGXLg==
+Received: from jupiter.universe (unknown [100.64.1.62])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: sre)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 2538D17E0B89;
+	Tue, 14 Jul 2026 21:26:09 +0200 (CEST)
+Received: by jupiter.universe (Postfix, from userid 1000)
+	id CFD2D48002F; Tue, 14 Jul 2026 21:26:08 +0200 (CEST)
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+Date: Tue, 14 Jul 2026 21:26:04 +0200
+Subject: [PATCH v13 03/35] phy: rockchip: usbdp: Do not lose USB3 PHY
+ status
 MIME-Version: 1.0
+Message-Id: <20260714-rockchip-usbdp-cleanup-v13-3-6cb3e769d4c5@collabora.com>
+References: <20260714-rockchip-usbdp-cleanup-v13-0-6cb3e769d4c5@collabora.com>
+In-Reply-To: <20260714-rockchip-usbdp-cleanup-v13-0-6cb3e769d4c5@collabora.com>
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Heiko Stuebner <heiko@sntech.de>, Frank Wang <frank.wang@rock-chips.com>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>, 
+ Yubing Zhang <yubing.zhang@rock-chips.com>, 
+ Alexey Charkov <alchark@flipper.net>, linux-phy@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, kernel@collabora.com, 
+ devicetree@vger.kernel.org, linux-usb@vger.kernel.org, 
+ Sebastian Reichel <sebastian.reichel@collabora.com>
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1409;
+ i=sebastian.reichel@collabora.com; h=from:subject:message-id;
+ bh=ou2OeHe9NiTPGYgMcRzTUBwKmURTgL5/azZ1wBtlGvM=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGpWjU/N+pqThOWKKerejsXTJvqKMa89XLKeY
+ o53vbzDkztdJokCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqVo1PAAoJENju1/PI
+ O/qaoPYP/0M8Z8VgKSRwjex2OTUq917XYXZ7RdTjMZ0Ik7ZF5EM8whNXlWfREoCv6688qYuStSj
+ I4BzMuuLXxJFbkYriSqopaY4635z/8DwtRkUZKsV9sNGX1CgszSV/HPzWs18/bpyyR69rxMExu2
+ 1v4FD9QDinQ2Dl0BiBbecQJZvnvhzQ/4iyqwxqOVau5TpEeNum7ZLnXxTsNAXm7Dz7jXvf6FqC7
+ 1hgZsW3j/+E7GsxXDbnIra+qcFfncmqBe8TYE7laUIl1HnFS4NbJJVlp2k8JI7EQ9aPW5kE2BIy
+ uOhrGtAV7nALkbedghmXb884u/RZUsxr70DDCESjaNxYATRajqX6+g2LmAWPOrbFfAdD2nNWjFR
+ M9vIGzq7MkBxSjs0N3b9BTzHvwBOlH5yuWJsI6UUEM1RBOizOSudAtTifDTdp4zm0t0RY+ggAHF
+ 1R8EFBFGRi5euOQqHdkNG7JIOeQTnMjb+ojWUiAMxpM8WzKz/ff43TralA6H1mdbpFAaamUcY09
+ IOrx4KhJsMlRl5sSNWK1p9RMQfLQk6Sg6dReV69VJCIKe4mZdz1GItmhr3snG1fdlfMNlAAQyja
+ guAaqYN1qWA2H78ng8E6XmsCuJfyEMXkq/fWtAfXysLAesz7dDXKosF7b70LbYP+Hd9TpEtko8+
+ 4E0cmZ26DuGVQ+cxVsvo0Hw==
+X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
+ fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260714_201447_401234_5484B5C9 
-X-CRM114-Status: UNSURE (   8.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260714_122616_247170_43F138BB 
+X-CRM114-Status: GOOD (  12.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,39 +105,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a MAINTAINERS entry for the Rockchip RK3568 XPCS platform driver
-and its device tree binding.
+By default (i.e. without manually enabling runtime PM) DWC3 requests the
+USB3 PHY once and keeps it enabled all the time. When DisplayPort is
+being requested later on, a mode change is needed. This re-initializes
+the PHY. During re-initialization the status variable has incorrectly
+been cleared, which means the tracking information for USB3 is lost.
 
-Include the relevant mailing lists (netdev and linux-rockchip) so that
-future patches are properly distributed.
+This is not an immediate problem, since the DP side keeps the PHY
+enabled. But once DP is toggled off, the whole PHY will be disabled.
+This is a problem, because the USB side still needs it powered.
 
-Signed-off-by: Coia Prant <coiaprant@gmail.com>
+Fix things by not clearing the status flags.
+
+Fixes: 2f70bbddeb45 ("phy: rockchip: add usbdp combo phy driver")
+Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- MAINTAINERS | 9 +++++++++
- 1 file changed, 9 insertions(+)
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 806bd2d80d153..8cba6a0a2dd03 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -23463,6 +23463,15 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/sound/rockchip,rk3576-sai.yaml
- F:	sound/soc/rockchip/rockchip_sai.*
+diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
+index a5ffdf7a6e76..12dfdd470a78 100644
+--- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
++++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
+@@ -1008,7 +1008,6 @@ static int rk_udphy_power_on(struct rk_udphy *udphy, u8 mode)
+ 			rk_udphy_u3_port_disable(udphy, false);
+ 		udphy->mode_change = false;
+ 	} else if (udphy->mode_change) {
+-		udphy->status = UDPHY_MODE_NONE;
+ 		if (udphy->mode == UDPHY_MODE_DP)
+ 			rk_udphy_u3_port_disable(udphy, true);
  
-+ROCKCHIP XPCS DRIVER
-+M:	Coia Prant <coiaprant@gmail.com>
-+L:	netdev@vger.kernel.org
-+L:	linux-rockchip@lists.infradead.org
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/net/pcs/rockchip-dwxpcs.yaml
-+F:	drivers/net/pcs/pcs-xpcs-rk.c
-+F:	include/linux/pcs/pcs-xpcs-rk.h
-+
- ROCKER DRIVER
- M:	Jiri Pirko <jiri@resnulli.us>
- L:	netdev@vger.kernel.org
+
 -- 
-2.47.3
+2.53.0
 
 
 -- 
