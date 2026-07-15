@@ -4,105 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0EE4EC44507
-	for <linux-phy@archiver.kernel.org>; Wed, 15 Jul 2026 20:19:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60E8DC44508
+	for <linux-phy@archiver.kernel.org>; Wed, 15 Jul 2026 20:33:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ir5icaTWjEQalDpokJIPiJHluAhLRo1hIHi3pBjl2rQ=; b=ywokn/1q0I411b
-	KHqWPvZ0ylKEjsJKKqM+mFqa4I+wPiOwxhQU+YGGqH7u51mhYoGzpSRw/o9/CO/MDRs7iJ/OPb24Q
-	kqN6vWpQ6Zbhfkl9IBUSaZ4+RHXSIBV8NzmXP27akpF6FM7DeikTb3eVZ5HePFZWGnc65m08mfzC5
-	s6vQ79aB7N1MeANkHN2g5u9yQw0CkAGldZ9QtNNQWaV8rIc5GSuNBqQOc6fSdL2NYewjG4rR8vwsx
-	3wv++5J6MrdL+ZB+z7FnW5tm1QufpboF7+pfzXII8AbISC0PNpwq4+dOWE8UoDtaOWvz3Ql8mOHTn
-	hVLNsebWsAj1z9W1hV0A==;
+	List-Owner; bh=6dK1coKnslHit15DFeOSh6NV05M2tc0ZT7+evxkj3UE=; b=VQU/jhDihlTul/
+	4YRNrgh22HB5aXnQK4Iydt22hAZ832QvUhvs/CE7SQKF5f7FN/vH7tEBhiK0bgxVkeHykr1tirHGf
+	uKUbGqxXEXMELoZMxefdTJqvSjJc3WL8vHgKYo/srHqQnxsvJ8nDT6ufAyef70jed8m9Nl5JqGkI0
+	s4hCJmaPIDP8Fo5GAcLeGihtaYaf0iflaaEYvvcMwiufupNWiRjY3YlPght9pf+O4R+b5ud5WndgH
+	Rn9JsB7pJjU5QLdVYaQZW75YbX8eMIfMZy3tc2L8DRzvVKZMiiKLJlmWcpdcWibNYLx0xAXTRUbj+
+	jLpGLlQSnlDYQMm1oRrw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wk657-0000000Fs4D-2RlG;
-	Wed, 15 Jul 2026 20:19:49 +0000
-Received: from mail-ej2-x03.google.com ([2a00:1450:4864:34::3])
+	id 1wk6IF-0000000Ft2D-3xJD;
+	Wed, 15 Jul 2026 20:33:23 +0000
+Received: from mail-ej2-x00.google.com ([2a00:1450:4864:34::])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wk655-0000000Fs3c-1Kf6
+	id 1wk6ID-0000000Ft1j-1tld
 	for linux-phy@lists.infradead.org;
-	Wed, 15 Jul 2026 20:19:48 +0000
-Received: by mail-ej2-x03.google.com with SMTP id a640c23a62f3a-c15f8dd6f18so360729666b.1
-        for <linux-phy@lists.infradead.org>; Wed, 15 Jul 2026 13:19:46 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1784146784; cv=none;
+	Wed, 15 Jul 2026 20:33:22 +0000
+Received: by mail-ej2-x00.google.com with SMTP id a640c23a62f3a-c15be76348eso113074166b.1
+        for <linux-phy@lists.infradead.org>; Wed, 15 Jul 2026 13:33:20 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1784147596; cv=none;
         d=google.com; s=arc-20260327;
-        b=G9WtO1Qv8SVK/rzBZrfPu9DOZNvFEv0vRba2KgsTeYY4AYXrPybN3EjPIjR2Fpac6r
-         L0ftG8B5t7hxGzJSJHNMSmjjqP17hOuhJhZwElViGxf0E3FEpKICx5RvSVht4F4ikCm8
-         fyrL9Gb/UA4M2YuxqYmSwGZf4yAROP29oIpwyPH+lxUrqYNwc8FoHdNosmQiqE6YqUAv
-         5tiCJ7CrUkOk1w1n14+geytfO9jd/IINw6J+rINPf4vBkHiduFXnMOCSnIhglhbvJDVx
-         zE8WbM4++1okU4DyajS7G7m6PATOZyRJE0GNwvCaQkI0xqb4+y8IPRJsBNQ0bc4tQAy7
-         AxGg==
+        b=f6eHT6fyjRKsRYopsSZaY1OojU77CpScEN++n+a2AXnHDxUqhJuvx5t2nJ0qYb+CIL
+         kXtDZ0hNBiqKJ6iI6PD5KZU/AgB4skEtXsO6inHZuZ2z5HGQ6H4H+ThxQOpPxgxxcO2u
+         auA2I96+3GhzyuYbAqSUXXKciNqL0PDrz2pGjkHDvg3c1WXUx/jM2h3dfR0NV3hVfMid
+         /ZyMSUVy3FAbcJX49CfucNZlXsy7u7/VC2M+hIMioROY4TkCa/nFkqQ6ni5ug16lsM7L
+         DQkP8FJHgNCxXGquLgb7az+3w7EzE2CMbQeAYtHrzhM/knQ8AmYbZOdPG+IMqpLS0FhH
+         Kl3Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:dkim-signature;
-        bh=nubd27NNIvTV4B3FNhrgAkY1uJlNnIcqTLmtlT2/89o=;
-        fh=gw3bipLoCZzh+YD9SweiJm4PMtAHsVkVYEnblUVzrio=;
-        b=XrYzMfzet3sJs8wPbvS1o0mzCRPeU8ns5PAp9QcQIT2pijThFYS1dFEfSCGZguGfNF
-         essb/7atPxMEzqTgDH6P//DCi4HarsvnQ3udC1fhVUpg+3BmyvrCOmoxuy9VF7g/vPZq
-         dCKVdtifkJiGyfuzT+OcV+yL9VUblL9LNMAe0g3cl7fVvnvcMc1Bp3TSiSzedWYppbVj
-         5ECdmPAU2ZJPQ76riQGUy5H9v9lu95tUesnCoqIjZN5hMuLaxBIL+MvHbPg2ZBDg1HYo
-         DgqOpwJOcPFH3wxBeOOFy3O+k/ip/+crZAEoG7qfGbuMY6sUAJlrMdxBSzGaAcoIW5yJ
-         ch5A==;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=ChZRrIPY+q69QoNpgGM5mCWAZDJasoa0uEar2XXIlDE=;
+        fh=RwfH2Kra3ZpaDCEDP723d9kAHsxDA6is/GtgOfxu5PI=;
+        b=X8/5vzK7jYwMVbfLrgs2D2PBZEJgLtLwS5PGgknC7OBs4JZHU9Id9Y8ymsTil0eUyv
+         c4ED2AtUN5t8EGheFCF7iRoiLh90QO6uADhN/oZuX5bxf1LXvMwF79XUz9FFpuHx0sI2
+         cjM2w5OZKJEUfcIV/FGJA9yjRjotoKcSoLGAQAsgJSnBTdwvIg4Qk5QU0osrz4143uRh
+         q3pJErEm78QmVKgmDnUN3gau6R+GqL9hk510kfd4kbIyK/MqOdq/5loikgS1lHhUTyZg
+         jQxf8cPPKbCk+E/NaY6ji4hZanJStCf3qruU0xqMl9sX3h+SQeYQEnqPQ1lIlFHAnbIw
+         8UOQ==;
         darn=lists.infradead.org
 ARC-Authentication-Results: i=1; mx.google.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1784146784; x=1784751584; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=nubd27NNIvTV4B3FNhrgAkY1uJlNnIcqTLmtlT2/89o=;
-        b=Wz1ftkjuTXryqKnjCGm0W43zb4ILz8HzdoC48RJ4EJu8iZYp0zwtMZxjCI4ktGccv3
-         9J/MjcjhWln7R1MhOjua8/RPyBZPKcx6WW2gx47PlOFyNCJM6fkR+veyfAIf8iE3VBKI
-         mKopjfbCJiAFXbZIccTNf2DGv0aq18ElY3bnNzqW6wS3gDaErv8E7OoXCLEgrCWR4XPk
-         CN5gJozypLDY1q2oj4xwkStBhRhNT356sLaSxefizM4B6c0owv6OeELnGQy7eCYC7ICB
-         aJDp+wts5SDtrgMdadZwJrdIP/kfb/8Sn6LVs7he5xkCziIlISJv5o2BfAgoBNuGL7mf
-         AJnA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784146784; x=1784751584;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+        d=gmail.com; s=20251104; t=1784147596; x=1784752396; darn=lists.infradead.org;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=nubd27NNIvTV4B3FNhrgAkY1uJlNnIcqTLmtlT2/89o=;
-        b=IF/YNz8Fa13csP1M9JDcCnfCTWXSh73sK9xXIgENVImKKFkgy6CvbwhR9VHWIys1ua
-         JEun5dE/sgzri9j8hlDbQYSNZGUc4BXcEPH95s9a5EVh1+2AUqH8a/8CKtR2Q9QwBnzT
-         nmXti2MDWelTy7FiTu2hn9rEgq2VRd9I5+oQ+YQOzu7yr+E1CuZHw6rBgkK+ZWvwkk22
-         X2pZUX14MXb5lBqmp2SfvH6j4R4lpZa1IV7gnwlhWolBpzNoAeFaxU6sbuu0UNo3S94l
-         K7g9EmJXD49g2Ij4ixICuYtuh2jVQoY6uL9EfyO5+M7vEhNxvioJD27Zqe2K+tV4Sz5i
-         ozvw==
-X-Forwarded-Encrypted: i=1; AHgh+RphW0NQoF2oEdhHPbjAp8LLeYn+yozWcQEiNkVqrCH7qMFkvM8GZScZPI4rZtSsOFbB1BQq4DkECII=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx3zDM6Jpg5y8L+Z0AKzYAQ0PAmMLngUYy/WuDG9lEilF8CkxKn
-	tnkqTWniKsuNB9wX7RHnxC5n+jYdGfg1jqR3GnWGz/RZQH8dQfCZ8TCTJ3ynq2VQTGEdfiaeZDz
-	QHJmTKZSA31VyM+VxHh7ton+eKSiRnUI=
-X-Gm-Gg: AfdE7cnv1pKLZOWV85FYiYPGfXhZjGjnieYLbXYQtanCkNdVjywAO3n+Hx80T/+uJGu
-	gazTZdyuZuUQPRJDMTTvCyjyULM6mr78BHI5ShdMcq9crDcYyBM1BlWIukAOkBX7/COxj/diGX0
-	2pe2hdfPD8pVUTSzZ8PZP/z6OhnTSFOBtJoFjhKSNn6grasFFAQNJE7rwHviNvQ8wGpaBUfA8/J
-	cd8O6sxWVc78XuGH+ESkB3uCmxwc1Vjrzhlate6TsztgsL3P/rXP1OkhlGADdf6A8ObTF0csZ0=
-X-Received: by 2002:a17:907:9484:b0:c16:1227:e3d8 with SMTP id
- a640c23a62f3a-c16790fa355mr278084266b.13.1784146783933; Wed, 15 Jul 2026
- 13:19:43 -0700 (PDT)
+        bh=ChZRrIPY+q69QoNpgGM5mCWAZDJasoa0uEar2XXIlDE=;
+        b=gUzd17iRwyht4cnvZQS5Hh4qznEjPQrlRo0KQ7DKGu9bx4CXcegsYV0D72N1n1Y6Yn
+         NBnEDqD+Y/DMdvjxX6wPkB3NGxjUjY1FCTht7vtLxGUSso31tld/QrZMkCDfCcmqwKs0
+         xH0D9SBqH6F2y+W6DxtKA49tqI8dPpviRTUCTS1g5JD4bxObzVofZDqNdoIEWsy0v6n1
+         P2oS9OvJNkZBbI2JuqcjyiWTH8qxiJj4FnijgFO/CVBHrILDFo95FbVI0fPoAegS93i4
+         ee4GYi5AyV0RoFpN43rpoj8McHxQcoRegQtDBWInSlEq9dHUmmsHD/8HoBWAuTfQ4nbi
+         gV8A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1784147596; x=1784752396;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=ChZRrIPY+q69QoNpgGM5mCWAZDJasoa0uEar2XXIlDE=;
+        b=CF1dMnpaQRA1ecrpSpmdMSYkf7ipPdij1n8PmV5fjaqh4Gx3gqGyJne6JR6EpZdgL3
+         kgqGrOLB8ckjLA9SKhI0aV/YP2wAxy3ar18hA+y7D6hqXpw73fqwv140yJLyygVuDwub
+         1XZKLL01nEMM5XkWI9wwYqtu6nxwiJgcZGXlH6gYgT8EMAgtd6p2Ouh6ger+D5So7h+Q
+         lq/M4+MkMu4PJ8X1oT5kSMyc1PHrIlStwHRjwndWtcDbo/HfSwPma/+ftLvyFOjijRWA
+         mKv+BUUnmWT/JOiW037/rBy7GIaJEOuHKYXFcZ9+QHZ/fxGg9ysITxcMyKqlzSIQtaP5
+         8vig==
+X-Forwarded-Encrypted: i=1; AHgh+RpmvQYCPJVA0RKYg8EuD0wCXMl5SGzWbZouJBb6OWnXWaAuipey5DwbiIGpp6AUpexFhNl30jsiPC4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwCZZDOSrQLa3BNGvDRWsW8pc+FEZpo/GbVtpfUyapBkrUHyaVe
+	JE+5NlM2hIo20Y70Ii30VS/JpKivLOI4UBaVxN3u/KIN90uC3wkQBfsFoYQbzozsrC8PnENRZfu
+	E96Af4N2nXt/4EvZ3XMkSea+rA7Io6l0=
+X-Gm-Gg: AfdE7ckpD400esPr6Y3UBrZQHORrgNCXQpXVTdZfKq1cjxstQdj3yC2fEpYPTEL0Zcr
+	RWmLDqesgtNild0UHJCKHaePeOdwkexmiwcsa8QfYLp/sXcZy6amZBzlBuxUf9Iopejm1SY9s20
+	Qt2hj90VsvDG54RQEtkLQtCL/ugrUvoV2hIE0CKffGm5dJzDeE75qCXVB2/oUgYg1McAwMCWLNq
+	cQtZA1/8oS5whga7aGNB9OoFQxiGSftJeLgNIa9AttTsUQIY3a3m4ydNOmlfLtN1aV9SPVaXTE=
+X-Received: by 2002:a17:907:d649:b0:c16:5cdb:9f89 with SMTP id
+ a640c23a62f3a-c165cdba195mr563594166b.64.1784147595530; Wed, 15 Jul 2026
+ 13:33:15 -0700 (PDT)
 MIME-Version: 1.0
-References: <20260714191341.690906-1-coiaprant@gmail.com> <20260714191341.690906-7-coiaprant@gmail.com>
- <20260715191453.DEE731F000E9@smtp.kernel.org>
-In-Reply-To: <20260715191453.DEE731F000E9@smtp.kernel.org>
+References: <20260714191341.690906-1-coiaprant@gmail.com> <20260714191341.690906-9-coiaprant@gmail.com>
+ <20260715191455.D033A1F00ACA@smtp.kernel.org>
+In-Reply-To: <20260715191455.D033A1F00ACA@smtp.kernel.org>
 From: Coia Prant <coiaprant@gmail.com>
-Date: Thu, 16 Jul 2026 04:19:32 +0800
-X-Gm-Features: AUfX_my5g85fDayigq-hMxxzbVtYHNZXP8Ax7QFobz0v3NSrNqtAVYC0ELzRnTI
-Message-ID: <CALj3r0ge83r9kmcDbnhvsEyD983Q7_oNcFTrd2iSFdvOsHTFdQ@mail.gmail.com>
-Subject: Re: [RFC PATCH 06/10] net: pcs: xpcs: improve SGMII AN state handling
- for Rockchip RK3568
+Date: Thu, 16 Jul 2026 04:33:04 +0800
+X-Gm-Features: AUfX_mywQaSTkJvyJzv8XehCE-odr5e5YLAuGpoxeXM7OtZo7VSAqzu94NbaTns
+Message-ID: <CALj3r0hjOBgRL21R9tRPDP+yrN0QbAXw=NcOvp4jiu_0PxFeWw@mail.gmail.com>
+Subject: Re: [RFC PATCH 08/10] net: stmmac: dwmac-rk: add SGMII support for RK3568
 To: sashiko-reviews@lists.linux.dev
-Cc: vkoul@kernel.org, olteanv@gmail.com, neil.armstrong@linaro.org, 
-	robh@kernel.org, devicetree@vger.kernel.org, conor+dt@kernel.org, 
-	linux-phy@lists.infradead.org
+Cc: robh@kernel.org, devicetree@vger.kernel.org, neil.armstrong@linaro.org, 
+	olteanv@gmail.com, linux-phy@lists.infradead.org, vkoul@kernel.org, 
+	conor+dt@kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260715_131947_415623_0820F6F1 
-X-CRM114-Status: GOOD (  23.26  )
+X-CRM114-CacheID: sfid-20260715_133321_742865_92C7ABA9 
+X-CRM114-Status: GOOD (  15.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,71 +112,57 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmtzIGZvciB0aGUgcmV2aWV3LgoKPiBbIC4uLiBdCj4KPiA+IEBAIC04ODQsNyArODg5LDcg
-QEAgc3RhdGljIGludCB4cGNzX2NvbmZpZ19hbmVnX2MzN18xMDAwYmFzZXgoc3RydWN0IGR3X3hw
-Y3MgKnhwY3MsCj4gPgo+ID4gICAgICAgaWYgKG5lZ19tb2RlID09IFBIWUxJTktfUENTX05FR19J
-TkJBTkRfRU5BQkxFRCkgewo+ID4gICAgICAgICAgICAgICByZXQgPSB4cGNzX3dyaXRlKHhwY3Ms
-IE1ESU9fTU1EX1ZFTkQyLCBNSUlfQk1DUiwKPiA+IC0gICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICBtZGlvX2N0cmwgfCBCTUNSX0FORU5BQkxFKTsKPiA+ICsgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICBtZGlvX2N0cmwgfCBCTUNSX0FORU5BQkxFIHwgQk1DUl9BTlJFU1RBUlQpOwo+
-Cj4gW1NldmVyaXR5OiBNZWRpdW1dCj4gVGhlIGNvbW1pdCBtZXNzYWdlIG1lbnRpb25zIGltcHJv
-dmluZyBTR01JSSBBTiBzdGF0ZSBoYW5kbGluZywgYnV0IHRoaXMKPiBhZGRzIEJNQ1JfQU5SRVNU
-QVJUIHRvIHRoZSAxMDAwQkFTRS1YIGNvbmZpZ3VyYXRpb24gcGF0aCBpbgo+IHhwY3NfY29uZmln
-X2FuZWdfYzM3XzEwMDBiYXNleCgpLiBXYXMgdGhpcyB1bmludGVudGlvbmFsLCBvciBzaG91bGQg
-dGhlCj4gY29tbWl0IG1lc3NhZ2UgYmUgdXBkYXRlZCB0byBtZW50aW9uIHRoaXMgYmVoYXZpb3Ig
-Y2hhbmdlIGZvciAxMDAwQkFTRS1YPwoKWW91IGFyZSBjb3JyZWN0LiBUaGlzIHdhcyB1bmludGVu
-dGlvbmFsLiBUaGUgYEJNQ1JfQU5SRVNUQVJUYCBjaGFuZ2UgaW4KYHhwY3NfY29uZmlnX2FuZWdf
-YzM3XzEwMDBiYXNleCgpYCBpcyBhIG1pc3Rha2UgdGhhdCB3YXMgaW50cm9kdWNlZApkdXJpbmcg
-ZGV2ZWxvcG1lbnQgYW5kIHNob3VsZCBub3QgYmUgdGhlcmUuIEkgd2lsbCByZW1vdmUgaXQgaW4g
-djIuCgpUaGUgU0dNSUkgcGF0aCAoYHhwY3NfY29uZmlnX2FuZWdfYzM3X3NnbWlpKClgKSBpcyB0
-aGUgb25lIHRoYXQgYWN0dWFsbHkKbmVlZHMgdGhpcyBjaGFuZ2UsIGFuZCB0aGF0IGlzIHdoYXQg
-SSBoYXZlIHRlc3RlZCBvbiB0aGUgUGhvdG9uaWNhdCBib2FyZC4KVGhlIDEwMDBCQVNFLVggcGF0
-aCB3YXMgbm90IHRlc3RlZCBhbmQgdGhlIGNoYW5nZSB3YXMgbm90IGludGVuZGVkLgoKPiBbIC4u
-LiBdCj4KPiA+IEBAIC0xMDg2LDcgKzEwOTQsMjQgQEAgc3RhdGljIGludCB4cGNzX2dldF9zdGF0
-ZV9jMzdfc2dtaWkoc3RydWN0IGR3X3hwY3MgKnhwY3MsCj4gPiAgICAgICAgICAgICAgICAgICAg
-ICAgc3RhdGUtPmR1cGxleCA9IERVUExFWF9GVUxMOwo+ID4gICAgICAgICAgICAgICBlbHNlCj4g
-PiAgICAgICAgICAgICAgICAgICAgICAgc3RhdGUtPmR1cGxleCA9IERVUExFWF9IQUxGOwo+ID4g
-LSAgICAgfSBlbHNlIGlmIChyZXQgPT0gRFdfVlJfTUlJX0FOX1NUU19DMzdfQU5DTVBMVF9JTlRS
-KSB7Cj4gPiArCj4gPiArICAgICAgICAgICAgIHJldHVybiAwOwo+ID4gKyAgICAgfQo+ID4gKwo+
-ID4gKyAgICAgLyogQ2xlYXIgQU4gY29tcGxldGUgc3RhdHVzIG9yIGludGVycnVwdCAqLwo+ID4g
-KyAgICAgaWYgKHN0YXRlLT5hbl9jb21wbGV0ZSkKPiA+ICsgICAgICAgICAgICAgeHBjc193cml0
-ZSh4cGNzLCBNRElPX01NRF9WRU5EMiwgRFdfVlJfTUlJX0FOX0lOVFJfU1RTLCAwKTsKPgo+IFtT
-ZXZlcml0eTogSGlnaF0KPiBDYW4gY2xlYXJpbmcgdGhlIGludGVycnVwdCBoZXJlIGxlYWQgdG8g
-YSBwZXJtYW5lbnRseSBzdGFsbGVkIGxpbmsgb24KPiBXYW5neHVuIHBsYXRmb3JtcyBpZiB0aGUg
-c3Vic2VxdWVudCB4cGNzX3JlYWQoKSBmYWlscz8KPgo+IFRoZSBvcmlnaW5hbCBjb2RlIGNsZWFy
-ZWQgRFdfVlJfTUlJX0FOX0lOVFJfU1RTIGF0IHRoZSB2ZXJ5IGVuZCBvZiB0aGUKPiBEV19WUl9N
-SUlfQU5fU1RTX0MzN19BTkNNUExUX0lOVFIgYmxvY2ssIGFmdGVyIHN1Y2Nlc3NmdWxseSByZWFk
-aW5nCj4gTUlJX0JNQ1IgYW5kIE1JSV9BRFZFUlRJU0UuCj4KPiBCeSBtb3ZpbmcgdGhlIGludGVy
-cnVwdCBjbGVhciBoZXJlOgo+Cj4gICAgIGlmIChzdGF0ZS0+YW5fY29tcGxldGUpCj4gICAgICAg
-ICB4cGNzX3dyaXRlKHhwY3MsIE1ESU9fTU1EX1ZFTkQyLCBEV19WUl9NSUlfQU5fSU5UUl9TVFMs
-IDApOwo+Cj4gSWYgYSB0cmFuc2llbnQgTURJTyBlcnJvciBvY2N1cnMgZHVyaW5nIHRoZSBzdWJz
-ZXF1ZW50IE1JSV9CTUNSIHJlYWQ6Cj4KPiAgICAgc3BlZWQgPSB4cGNzX3JlYWQoeHBjcywgTURJ
-T19NTURfVkVORDIsIE1JSV9CTUNSKTsKPiAgICAgaWYgKHNwZWVkIDwgMCkKPiAgICAgICAgIHJl
-dHVybiBzcGVlZDsKPgo+IFRoZSBmdW5jdGlvbiB3aWxsIGV4aXQgd2l0aCBhbiBlcnJvciBhbmQg
-dGhlIGxpbmsgd2lsbCByZW1haW4gZG93biwgYnV0IHRoZQo+IEFOIGNvbXBsZXRlIHN0YXR1cyBo
-YXMgYWxyZWFkeSBiZWVuIGNsZWFyZWQuIFdpbGwgdGhpcyBwcmV2ZW50IHRoZSBXYW5neHVuCj4g
-aW5pdGlhbGl6YXRpb24gYmxvY2sgZnJvbSBydW5uaW5nIG9uIHRoZSBuZXh0IHBvbGwgYW5kIGxl
-YXZlIHRoZSBsaW5rCj4gc3R1Y2s/CgpObywgdGhpcyBpcyBzYWZlLiBUaGUgYHJldGAgdmFsdWUg
-dXNlZCB0byBkZXRlcm1pbmUgd2hldGhlciB0byBlbnRlciB0aGUKV2FuZ3h1bi1zcGVjaWZpYyBw
-YXRoIGlzIHJlYWQgZnJvbSB0aGUgcmVnaXN0ZXIgYmVmb3JlIHRoZSBjbGVhciBvcGVyYXRpb24u
-ClRoZSBjbGVhciBvbmx5IGFmZmVjdHMgdGhlIGhhcmR3YXJlIHJlZ2lzdGVyLCBub3QgdGhlIHN0
-YWNrIHZhcmlhYmxlLiBTbwpXYW5neHVuJ3MgYGlmIChyZXQgPT0gRFdfVlJfTUlJX0FOX1NUU19D
-MzdfQU5DTVBMVF9JTlRSKWAgYmxvY2sgd2lsbCBzdGlsbApiZSByZWFjaGVkIGNvcnJlY3RseS4K
-CklmIHRoZSBzdWJzZXF1ZW50IE1ESU8gcmVhZCBmYWlscywgdGhlIGZ1bmN0aW9uIHdpbGwgcmV0
-dXJuIHRoZSBlcnJvciBhbmQKdGhlIGxpbmsgc3RhdGUgd2lsbCByZW1haW4gZG93bi4gU2luY2Ug
-dGhlIGhhcmR3YXJlIGludGVycnVwdCBzdGF0dXMgaGFzCmFscmVhZHkgYmVlbiBjbGVhcmVkLCB0
-aGUgbmV4dCBwb2xsIHdpbGwgbm90IHNlZSBgc3RhdGUtPmFuX2NvbXBsZXRlYCBzZXQKYWdhaW4s
-IHNvIHRoZSBXYW5neHVuIGJsb2NrIHdpbGwgbm90IGJlIGVudGVyZWQgdW50aWwgYSBuZXcgQU4g
-ZXZlbnQKb2NjdXJzLiBUaGlzIGlzIGFjdHVhbGx5IHRoZSBpbnRlbmRlZCBiZWhhdmlvciDigJQg
-dGhlIGludGVycnVwdCBpcyBvbmx5CnZhbGlkIGZvciB0aGUgY3VycmVudCBBTiBldmVudCBhbmQg
-c2hvdWxkIG5vdCBiZSBwcm9jZXNzZWQgbW9yZSB0aGFuIG9uY2UuCgpUaGVyZWZvcmUsIHRoZSBj
-aGFuZ2UgZG9lcyBub3QgaW50cm9kdWNlIGEgcmVncmVzc2lvbiBvbiBXYW5neHVuIHBsYXRmb3Jt
-cy4KCkkgd2lsbCByZW1vdmUgdGhlIDEwMDBCQVNFLVggY2hhbmdlIGluIHYyIGFuZCBrZWVwIG9u
-bHkgdGhlIFNHTUlJLXJlbGF0ZWQKZml4ZXMuCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdAps
-aW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+> [ ... ]
+> > @@ -1379,6 +1441,9 @@ static int rk_gmac_powerup(struct rk_priv_data *bsp_priv)
+> >       if (ret)
+> >               return ret;
+> >
+> > +     if (bsp_priv->phy_iface == PHY_INTERFACE_MODE_SGMII)
+> > +             goto set_mode;
+> > +
+>
+> [Severity: High]
+> Does this goto skip enabling the MAC clocks? By jumping directly to set_mode,
+> we bypass the call to gmac_clk_enable() further down in this function.
+>
+> Can this cause a synchronous external abort when the MAC registers are accessed
+> subsequently while their clock domain remains disabled?
+
+You are correct. The original RFC patch had this issue: the SGMII path
+bypassed `gmac_clk_enable()` via the `goto set_mode`, which could lead
+to hardware faults when accessing MAC registers with the clock disabled.
+
+This has been fixed in the updated version of the patch. The clock enable
+is now moved before the SGMII check:
+
+    ret = gmac_clk_enable(bsp_priv, true);
+    if (ret)
+        return ret;
+
+    if (bsp_priv->phy_iface == PHY_INTERFACE_MODE_SGMII)
+        goto set_mode;
+
+So the clocks are always enabled before any register access, regardless of
+the interface mode.
+
+The error handling has also been cleaned up with a unified `clk_disable`
+label, and the default (unhandled interface) case now properly returns an
+error and disables the clocks.
+
+Regarding stable backport: this issue does not exist in the 6.18
+kernel that I am using for backport testing, as the code structure in
+`rk_gmac_powerup()` is significantly different there. The fix only
+affects the mainline version of the patch.
+
+Thanks,
+Coia
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
