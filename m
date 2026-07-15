@@ -4,73 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F923C44508
-	for <linux-phy@archiver.kernel.org>; Wed, 15 Jul 2026 18:24:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4CC02C44501
+	for <linux-phy@archiver.kernel.org>; Wed, 15 Jul 2026 19:14:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ChhCzsMWYGR1cvQCWFNU6kyLhKW5HUHHlGNejaSs6HU=; b=2pOdlQRAxEv8TRdhOUpfzOd9it
-	nyFhGefeLaUn8anTahdpYuO3T92CWFPlrxlOxNcI1BNgApIdF9E1NE7LONwoMYorFlgfCt0eb0U4e
-	I6KiFcegXQxRs0dBp+hGBxaq/Aw/W79GoZrSMkPjfZLeeX+xOzBvVAQChP8k6bEGblqRtiYuV3LGq
-	sw1RO9+sywqbbRkNqkIZ+ZntKgdrXuIeV5CTxXJjQeY3SPDrvYWZNh9iMv+1psxNy3dWo1lzntHO0
-	xgl7bsDgCMe+gjdnZe9dJ8BQMHh6abZi2xSkf/ovRI7ZyFS8/+yu7U1nZ72gk+TC2EQ/Gd0R09sqe
-	O091128A==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1LsjdYzoozBEO4tKRlfiWPuhoAJxx44+xcmOXhTdrJo=; b=JQLRfJzdiPApHH
+	jqWBMbUqMetGz54CWESnQ5Vfi3XlWac7HX5j9vGxeolEZnkgWsOLrL0UKTSZ/T8fZ5NGSY3Y9VbfR
+	FFFm4zcic+HENoa/O78m/1QlaMbqqRWg0vy/0oQnuZtRANweRQjJJoWmWudRKLByxgaBk7HwglwDY
+	pioK9V4OEXTvrhjo6yQcWCpqFxvzW9HQwEYo2pq0gLXePqnihzcuK6OOFjNF1PJxKVTrW+fZRcFaX
+	fXvPrRPZ+G2v/NE7F/I2wn27pO722aamfR8oEGDhKoDiaRqKcYBqQ8PIdCxE1OOynngcxjKC42v4M
+	sv4TyLWawVcQeHdFZjTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wk4Hn-0000000FfUO-1H3X;
-	Wed, 15 Jul 2026 18:24:47 +0000
-Received: from sender4-op-o11.zoho.com ([136.143.188.11])
+	id 1wk54F-0000000Flw1-2NZC;
+	Wed, 15 Jul 2026 19:14:51 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wk4Hj-0000000FfTj-2yJj;
-	Wed, 15 Jul 2026 18:24:45 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1784139868; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=IhvFUZ9pBGqNI8hYJqvQK2Jcng0vYzqCPomCvhDmMrZpi5SIDUyQzR4A94Yb8ZLXCufzR8r12iK9RWMJltZgj5yFqV5d4pm5bZAhPYYGbjn/t18MSg4xzt/lNI46e96FGwukJtr4YdmMOER8aEkucqr5h0e7fFSYmVAjYbX/0fE=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1784139868; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=3PEo/RhuCHxy6yK+MqfZAEADxxCOppEH8wYLxe4Mw8o=; 
-	b=UQU4E0ZsuUwsdmO/JAIgigAvKqoQQend4aF7p54tbAEDq95mhS62ky1yvpsNKqCs1LRjDQ0EXXctBepIyaT5/z4Gd+9ND/PHG5L0dg4pSbhfB/B9yqnoNNcFNlbToXjoKKaqCDWQeH0j6/Mceh+E9Fwfrf96fjQbaLkaOdWKE4M=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
-	dmarc=pass header.from=<sebastian.reichel@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1784139868;
-	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
-	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
-	bh=3PEo/RhuCHxy6yK+MqfZAEADxxCOppEH8wYLxe4Mw8o=;
-	b=SgYolUAVNq9GURPq0SYVmbEkFdioA0MSknOIEnslL0KvxWW2p0vM6CVdHarui+7F
-	I2AaYEDPUsGsoSyOMThwADTyE/j+e/1++nekrt/ahuEcS4D71fZtLeXRAdnTFTwZK6Q
-	4yFKUSz7DthkjvkzyunslsdSM2mI95MF+Lah4dsA=
-Received: by mx.zohomail.com with SMTPS id 178413986565159.909473966743576;
-	Wed, 15 Jul 2026 11:24:25 -0700 (PDT)
-Received: by venus (Postfix, from userid 1000)
-	id B554D180820; Wed, 15 Jul 2026 20:24:20 +0200 (CEST)
-Date: Wed, 15 Jul 2026 20:24:20 +0200
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Heiko Stuebner <heiko@sntech.de>, 
-	Frank Wang <frank.wang@rock-chips.com>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org, linux-phy@lists.infradead.org
-Cc: Andy Yan <andy.yan@rock-chips.com>, 
-	Dmitry Baryshkov <lumag@kernel.org>, Yubing Zhang <yubing.zhang@rock-chips.com>, 
-	Alexey Charkov <alchark@flipper.net>, linux-phy@lists.infradead.org, 
-	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	kernel@collabora.com, devicetree@vger.kernel.org, linux-usb@vger.kernel.org, 
-	Sashiko <sashiko-bot@kernel.org>, William Wu <william.wu@rock-chips.com>
-Subject: Re: [PATCH v13 00/35] phy: rockchip: usbdp: Clean up the mess
-Message-ID: <alfM6dFBovHMaYn2@venus>
-References: <20260714-rockchip-usbdp-cleanup-v13-0-6cb3e769d4c5@collabora.com>
-MIME-Version: 1.0
-In-Reply-To: <20260714-rockchip-usbdp-cleanup-v13-0-6cb3e769d4c5@collabora.com>
-X-Zoho-Virus-Status: 1
-X-Zoho-AV-Stamp: zmail-av-0.2.10.1.5.2/284.121.97
-X-ZohoMailClient: External
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260715_112443_807751_ADC94460 
-X-CRM114-Status: GOOD (  12.33  )
+	id 1wk54E-0000000Flvr-2IFY
+	for linux-phy@lists.infradead.org;
+	Wed, 15 Jul 2026 19:14:50 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id D92E640080;
+	Wed, 15 Jul 2026 19:14:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 437E11F00A3A;
+	Wed, 15 Jul 2026 19:14:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1784142889;
+	bh=QaPvJvsUGfaYOnyKvojyIFNtpOj23a4t4/Ky9KmWBbs=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=fQbZpVGFZCA5viPknyLXtBRQdB6/PhAC1hsdaD+m4jf74vrvtIpcQZl5Cp31rGH2Q
+	 NieTGaLas+UREXQTkii6ZcmG4k8OibaeVH4HARPyuwtoque/R39J9PidaB0fo+Gvz7
+	 1oy/jUiy3KpaIhFV0qHM0x9By3dQpbsgIInwiY02g0VmXCi6cW96jBZfU4QNaoG5TC
+	 oIWnG2Wd/pueZAScIDfGtaZgvcyNRQ1Lx3UIM9E984E6nOxvTeBhjN37dfdd8Oln2V
+	 VlGPl49I9Rs5DlLFhMDDGrmhJ6Zky7nlW+MZErkArZpEzJllCbx6/8UbmvO4L3ztc1
+	 KyqmhhZQv8CMg==
+From: sashiko-bot@kernel.org
+Subject: Re: [RFC PATCH 02/10] dt-bindings: phy: rockchip: naneng-combphy:
+ add rockchip,sgmii-mac-sel property
+To: "Coia Prant" <coiaprant@gmail.com>
+Cc: olteanv@gmail.com, devicetree@vger.kernel.org, linux-phy@lists.infradead.org, vkoul@kernel.org, robh@kernel.org, conor+dt@kernel.org, neil.armstrong@linaro.org
+In-Reply-To: <20260714191341.690906-3-coiaprant@gmail.com>
+References: <20260714191341.690906-1-coiaprant@gmail.com>
+ <20260714191341.690906-3-coiaprant@gmail.com>
+Date: Wed, 15 Jul 2026 19:14:48 +0000
+Message-Id: <20260715191449.437E11F00A3A@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,76 +63,59 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1115685967243121163=="
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============1115685967243121163==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="k4qr3c4r65j5eyhe"
-Content-Disposition: inline
-
-
---k4qr3c4r65j5eyhe
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Subject: Re: [PATCH v13 00/35] phy: rockchip: usbdp: Clean up the mess
-MIME-Version: 1.0
-
-Hi,
-
-I've gone through the Sashiko feedback for v13 and I do not plan
-to submit a v14 for Sashiko feedback at this point. The issues
-it reported in v13 are either fixed in later patches - especially
-all those "pre-existing problems" - or do not apply.
-
-The series fixes a massive amount of problems in the USBDP driver
-and unblocks USB-C DP AltMode at the same point. It would be good if
-we get this into 7.3, so that the DRM series is unblocked for 7.4
-allowing users to have USB-C DP AltMode in 2027.
-
-My proposed merge strategy is to route everything through the PHY
-subsystem as the changes in the DWC3 driver are not very complex
-(purely additions), so a merge conflict should be easy to solve.
-
-Greetings,
-
--- Sebastian
-
---k4qr3c4r65j5eyhe
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmpX0E0ACgkQ2O7X88g7
-+poxnA//eiQ4tyVwFKkfyMZ9JF8oA/6H2JGA2Y/G7qxFaieN/qnANmrMdNepvlCd
-pnmO9MYGhzn6u9/DcZYZdghysxLnFhVlMUuL+NqvNsb8z2rT90NylnGs1TVcgR0o
-ZbvYy0pHQN2PQ2w4AKL+F5GtQknxLGY1KJaQA7fpFZEjz0HslQNUqCXS7d9wzYsd
-K0F76bZnSX4brPeOKvcoDbHYCOZ8iIRlXvb1qUA/9SZbEpK1U/QzA7ahMxUhu+IS
-xa22F+dy7s9lvmPrdVXGAs7AobMp1GwRfo/jDnyylXFoR8iARi1qeqYL++Yb3TwI
-NjbAeY9qEQhSG2u4MY9sbf3NIqEeJdEjV9hnPnktialwkPP7N0DFNtJhS8077KNj
-R1Zt/ljWN9tdUdrZuXpJsDNBiTzJ4QpfzWyU454gIl3VYmIYLv5OyblufmMfAn0S
-QWE1Zo256J0upomvc4Jk+KNRCq2qqWLAkH3/OPYqVS4WnWINqt/NmKPevz5r0Pol
-sjIjH7OL8C0KJdvfCMLyYiyfMeWexEPBHw7LzN0UJWVqtuY4HW/0m7qG8N5MRxOz
-xpfZB+Wni1X/nX0Vhb7ueSYRTcZVaiW7EWn/svWoMpsW9ZV2cdRReoZIHExSjl4d
-6s5dtmoRfN1xtFKbqEOBRcyYqaWyZmliqGCAebpOANvlLXto7AQ=
-=fvwk
------END PGP SIGNATURE-----
-
---k4qr3c4r65j5eyhe--
-
-
---===============1115685967243121163==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============1115685967243121163==--
-
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gTG9naWNhbCBjb250
+cmFkaWN0aW9uIGJldHdlZW4gdGhlIHByb3BlcnR5J3MgZG9jdW1lbnRlZCBkZWZhdWx0IHZhbHVl
+IGFuZCB0aGUgY29tbWl0IG1lc3NhZ2UncyBleHBsaWNpdCBjb25maWd1cmF0aW9uIHJlcXVpcmVt
+ZW50LgotIFtMb3ddIFRoZSBgcm9ja2NoaXAsc2dtaWktbWFjLXNlbGAgcHJvcGVydHkgaXMgZGVm
+aW5lZCBnbG9iYWxseSBhbmQgbm90IGNvbmRpdGlvbmFsbHkgY29uc3RyYWluZWQgdG8gdGhlIFJL
+MzU2OCBTb0MuCi0tCgotLS0gUGF0Y2ggWzJdOiBbUkZDIFBBVENIIDAyLzEwXSBkdC1iaW5kaW5n
+czogcGh5OiByb2NrY2hpcDogbmFuZW5nLWNvbWJwaHk6IGFkZCByb2NrY2hpcCxzZ21paS1tYWMt
+c2VsIHByb3BlcnR5IC0tLQpjb21taXQgMGQ5NTBiNDA1NWRkMTQ0ZmVjZjUwNTlmMTY1MzVmMmM4
+ZDk0YjVkMwpBdXRob3I6IENvaWEgUHJhbnQgPGNvaWFwcmFudEBnbWFpbC5jb20+CgpkdC1iaW5k
+aW5nczogcGh5OiByb2NrY2hpcDogbmFuZW5nLWNvbWJwaHk6IGFkZCByb2NrY2hpcCxzZ21paS1t
+YWMtc2VsIHByb3BlcnR5CgpUaGlzIGNvbW1pdCBhZGRzIHRoZSAicm9ja2NoaXAsc2dtaWktbWFj
+LXNlbCIgcHJvcGVydHkgdG8gdGhlIFJvY2tjaGlwCk5hbmVuZyBjb21icGh5IGRldmljZSB0cmVl
+IGJpbmRpbmcuIEl0IGFsbG93cyBzZWxlY3RpbmcgYmV0d2VlbiBHTUFDMAphbmQgR01BQzEgZm9y
+IHRoZSBTR01JSSBpbnRlcmZhY2Ugb24gdGhlIFJLMzU2OCBTb0MuCgo+IFRoaXMgaXMgbmVjZXNz
+YXJ5IGZvciBib2FyZHMgc3VjaCBhcyB0aGUgQXJpYWJvYXJkIFBob3RvbmljYXQsIHdoZXJlCj4g
+dGhlIFNHTUlJIGludGVyZmFjZSBpcyBjb25uZWN0ZWQgdG8gR01BQzAgYW5kIG5lZWRzIHRvIGJl
+IGV4cGxpY2l0bHkKPiBjb25maWd1cmVkLgoKW1NldmVyaXR5OiBNZWRpdW1dCklzIGl0IGFjdHVh
+bGx5IG5lY2Vzc2FyeSB0byBleHBsaWNpdGx5IGNvbmZpZ3VyZSB0aGUgcHJvcGVydHkgdG8gMCBm
+b3IKR01BQzA/IAoKVGhlIHNjaGVtYSBkZWZpbmVzIHRoZSBkZWZhdWx0IGFzIDAsIHdoaWNoIGlt
+cGxpZXMgdGhhdCBvbWl0dGluZyB0aGUgcHJvcGVydHkKd291bGQgbmF0dXJhbGx5IGRlZmF1bHQg
+dGhlIGhhcmR3YXJlIHRvIEdNQUMwLiBJZiBleHBsaWNpdCBjb25maWd1cmF0aW9uIGlzCnJlcXVp
+cmVkLCBkb2VzIHRoaXMgbWVhbiB0aGUgaGFyZHdhcmUgb3IgYm9vdGxvYWRlciBsZWF2ZXMgdGhl
+IHJlZ2lzdGVyIGF0IDEsCm1ha2luZyB0aGUgYGRlZmF1bHQ6IDBgIGRvY3VtZW50ZWQgaW4gdGhl
+IHNjaGVtYSBpbmNvcnJlY3Q/Cgo+IGRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRy
+ZWUvYmluZGluZ3MvcGh5L3BoeS1yb2NrY2hpcC1uYW5lbmctY29tYnBoeS55YW1sIGIvRG9jdW1l
+bnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9waHktcm9ja2NoaXAtbmFuZW5nLWNvbWJw
+aHkueWFtbAo+IGluZGV4IDM3OWIwOGJkOWU5N2EuLjYxNzMxOTJlMzFhYjIgMTAwNjQ0Cj4gLS0t
+IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9waHktcm9ja2NoaXAtbmFu
+ZW5nLWNvbWJwaHkueWFtbAo+ICsrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5n
+cy9waHkvcGh5LXJvY2tjaGlwLW5hbmVuZy1jb21icGh5LnlhbWwKWyAuLi4gXQo+IEBAIC04MCw2
+ICs4MCwxMyBAQCBwcm9wZXJ0aWVzOgo+ICAgICAgZGVzY3JpcHRpb246Cj4gICAgICAgIFNvbWUg
+YWRkaXRpb25hbCBwaXBlIHNldHRpbmdzIGFyZSBhY2Nlc3NlZCB0aHJvdWdoIEdSRiByZWdzLgo+
+ICAKPiArICByb2NrY2hpcCxzZ21paS1tYWMtc2VsOgo+ICsgICAgJHJlZjogL3NjaGVtYXMvdHlw
+ZXMueWFtbCMvZGVmaW5pdGlvbnMvdWludDMyCj4gKyAgICBlbnVtOiBbMCwgMV0KCltTZXZlcml0
+eTogTG93XQpTaG91bGQgdGhpcyBwcm9wZXJ0eSBiZSBjb25kaXRpb25hbGx5IHJlc3RyaWN0ZWQg
+dG8gdGhlIFJLMzU2OCBjb21wYXRpYmxlCnN0cmluZz8gCgpCZWNhdXNlIGl0IGlzIGRlZmluZWQg
+aW4gdGhlIHRvcC1sZXZlbCBwcm9wZXJ0aWVzIGJsb2NrLCBpdCB3aWxsIHBhc3MKdmFsaWRhdGlv
+biBmb3IgYWxsIG90aGVyIGhhcmR3YXJlIHZhcmlhbnRzIChsaWtlIFJLMzUyOCBvciBSSzM1ODgp
+IHRoYXQgZG8Kbm90IGFjdHVhbGx5IHN1cHBvcnQgU0dNSUkuIENvdWxkIGFuIGBpZi10aGVuYCBi
+bG9jayBpbiB0aGUgYGFsbE9mYCBzZWN0aW9uCmJlIHVzZWQgdG8gc2V0IHRoaXMgcHJvcGVydHkg
+dG8gZmFsc2UgZm9yIGNvbXBhdGlibGVzIG90aGVyIHRoYW4KYHJvY2tjaGlwLHJrMzU2OC1uYW5l
+bmctY29tYnBoeWA/Cgo+ICsgICAgZGVmYXVsdDogMAo+ICsgICAgZGVzY3JpcHRpb246Cj4gKyAg
+ICAgIFNlbGVjdCBnbWFjMCBvciBnbWFjMSB0byBiZSB1c2VkIGFzIFNHTUlJIGNvbnRyb2xsZXIu
+Cj4gKwo+ICAgICIjcGh5LWNlbGxzIjoKPiAgICAgIGNvbnN0OiAxCj4KCi0tIApTYXNoaWtvIEFJ
+IHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA3MTQxOTEzNDEu
+NjkwOTA2LTEtY29pYXByYW50QGdtYWlsLmNvbT9wYXJ0PTIKCi0tIApsaW51eC1waHkgbWFpbGlu
+ZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFk
+ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
