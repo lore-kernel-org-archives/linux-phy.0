@@ -4,57 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41790C4450B
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E496C44501
 	for <linux-phy@archiver.kernel.org>; Wed, 15 Jul 2026 07:07:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id
-	:Date:Subject:From:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2IClbPtCdg8nqtf1nVBaN8oI2PQq1H/Dy67w0t/ksRA=; b=GOfm92wHmsFc3W
-	K6pDSkrAFjxlMVzpIuCYolL1RdUE+QXUID7We7mWC/8gnVPA9ACcsv9A/V+Iu7KAoO3vvkV/5KQRC
-	+o/XykRfyTx64H6TPBysjOOiEu/RReJn/GauFqC9V4Ns5Bd493mLUBHSNIoMG/ZibGBGVR91eMEGS
-	+MnO25ewIHWvTbYC7WPJ8dQp80fXy+afJNoUPxWjIDCL5TOlxU5GSDR37KXj1bggpBKmezlseffUw
-	ugkiLcOBW3QGEXoD+g0hyy6upoK7uqzbuUCKLb0F1qqb3pfc3ayIDzOhsWXmcYxrDD4W5KFGnGcLg
-	AiqhZv31LMGSB93bGwNA==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IuKCUYynCqxTkqCl51R00fIB7y3eDkRDV3NwyrLDiaE=; b=mJN6ISpdgDflRA
+	UMlXaHpS1s6xWF03llUf3fB3NnN21vaF/X53Get99UBgOaZ8/SsUJ4nvp+D212CoK8N7SlggiRewN
+	ZU58NF9jsKxQ+sWzEDUO7EH/QH32aMQEt/mKrLXbLKY1beAxONm1xJLjuN1GNiILUEJ0WDXifuLxr
+	1l5qxhTlT/5Uljq01gTOXlg4J2HonutA8Xs4QZiWq3HU0KIctq6RbO8Aa8VbXdDSYVxnoSnSW0n9F
+	RGJTV8/dgd+zj7eIgF8ESZcuXqvFrEFfaOIEAtYYbg+Q6cyW2AgbU+UpBlTOy+lQ5Z3pP2s/D7t86
+	3IIc+bdKYukW5Xa5icMA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjtiP-0000000DyLz-38eh;
+	id 1wjtiP-0000000DyMB-3j52;
 	Wed, 15 Jul 2026 07:07:33 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjtiO-0000000DyKt-1jwQ
+	id 1wjtiP-0000000DyLE-0RjE
 	for linux-phy@lists.infradead.org;
-	Wed, 15 Jul 2026 07:07:32 +0000
+	Wed, 15 Jul 2026 07:07:33 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 2796641413;
+	by sea.source.kernel.org (Postfix) with ESMTP id 77AA143741;
 	Wed, 15 Jul 2026 07:07:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 0744EC2BCB9;
-	Wed, 15 Jul 2026 07:07:31 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 30082C2BCC7;
+	Wed, 15 Jul 2026 07:07:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1784099252;
-	bh=t27yyUkbtJ63OblVXNLeuoM4AskzDQ+ORg37wek6PuI=;
-	h=From:Subject:Date:To:Cc:Reply-To:From;
-	b=D5RuqhSLkZoVwuCln1qvC4lIQwE3yE2a5jKf2NWTItHuBD68nACDmRXND/rnNiGjG
-	 0tqcOIAXFCx6nwEoS/uHciOKvRBjkHqzJGhhe/DZbYO9WOQl8kSe3Rks4bYofely+o
-	 lWh3IpY7pf6fyc5GwtbPHn88Boxn2dP7BhhqpEhm1Gz3HSayc01FcZ/qJuPameScOS
-	 0wCSrcxMRzzB9R/erbjVK3nbPsaX87Bbnrxq8hgyu8exDWyOuUePjZIl2/15LYYgaL
-	 sTgNu5O8+6EVccnL6VSOmQopoSh7nEWv0yZAiJcT4aHpkBcm3zx89aWSERWBRE4aeR
-	 PM7xoH2akDHAg==
+	bh=FDpYnwRtmcbV17Q4xx73jxmEu1o34piLsbK8kMgW2H8=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=V2ORq5OmROZq/MutKakFVnnOOgVd+eYkBVdEQtvG2IzQ4QH7AmK+CNgMdw0ffngFP
+	 DBlHWWQ7KDF4vznX/Gdd1B5+DxCl99Fk6hdOjqpbF5ylUrK9SDMNS/VHSZSHcyNXiJ
+	 F8CelbaNU1NRdsHqpAJIZS6CtsU713KUeHFNX+AxlAnVsRYeEmA5dYuOb/W+ZLPItp
+	 Z9ti4lP1FImOHpzgMMrXhbpwZ0hQzZFxqXB9eJt+Z1mszUszICgXkfn53WjAs9lepH
+	 bN+XKCtQN+G4+pXoXrB1iOTxGYIg7tymPJu+v+Ay4l839aO92+6S4yE5drbwTbOgwe
+	 ly+143NWqxjVw==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id C6F44C4450B;
-	Wed, 15 Jul 2026 07:07:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 02BCFC4450F;
+	Wed, 15 Jul 2026 07:07:32 +0000 (UTC)
 From: Esteban Urrutia via B4 Relay <devnull+esteuwu.proton.me@kernel.org>
-Subject: [PATCH v2 0/3] Initial QMP USB PHY support for SM8475
-Date: Wed, 15 Jul 2026 03:06:53 -0400
-Message-Id: <20260715-sm8475-bup-usbss-v2-0-2d8def39b190@proton.me>
+Date: Wed, 15 Jul 2026 03:06:55 -0400
+Subject: [PATCH v2 2/3] phy: qcom: qmp-combo: Specify PLL version in
+ qmp_v6_dp_serdes_tbl structs
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAAAAAAAC/22OwQ6CMBBEf4Xs2TW0VIqe/A/DweIiNZFityUaw
- r9bwKPHl8y8mQmYvCWGUzaBp9GydX0Cucug6a79ndDeEoPMZZlroZCfldIHNHHAyIYZqawKdVS
- 6aEuCVBs8tfa9Ki/1xhzNg5qweJZEZzk4/1k3R7Hk/upHgTkaWWlhSBpFzXnwLrh+/ySo583s6
- RXT5/Cbm+cvKsStF9EAAAA=
-X-Change-ID: 20260714-sm8475-bup-usbss-e68349473f6e
+Message-Id: <20260715-sm8475-bup-usbss-v2-2-2d8def39b190@proton.me>
+References: <20260715-sm8475-bup-usbss-v2-0-2d8def39b190@proton.me>
+In-Reply-To: <20260715-sm8475-bup-usbss-v2-0-2d8def39b190@proton.me>
 To: Vinod Koul <vkoul@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -63,11 +61,11 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  phone-devel@vger.kernel.org, Esteban Urrutia <esteuwu@proton.me>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1784099250; l=1426;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1784099250; l=9527;
  i=esteuwu@proton.me; s=20260622; h=from:subject:message-id;
- bh=t27yyUkbtJ63OblVXNLeuoM4AskzDQ+ORg37wek6PuI=;
- b=uPsi2rUF9M6thEvBqtonyXw0DDhZ28DRs8306mJSSJr6aU7F+JMjb6FUMycE6xaK/Hh8it/ja
- 66CgB/sqH9QD/64RCz05pjGvrNtrUnMJcF89KalVmF0uJ3Aun3u4LJ5
+ bh=xM+iYx47hDJsnpSr2d5T8wt7Tbc8+U5gc/fVbCObSpg=;
+ b=dpSwwbXivqqU+bDPWgA3zyKaYt0JIRtkKAGQsEXRLCG76OsgoZoeF6Eb2oIXq+g1WvDIFT4N9
+ REGyOXwOORcCYDqkpgV5yuf4WHCNl7orZtQGDt2w9q0Jo2e9XSdCqbd
 X-Developer-Key: i=esteuwu@proton.me; a=ed25519;
  pk=wToFt4mOAWkzbqb15Ye1hrhevI13vK9BcMUFiQ/me1M=
 X-Endpoint-Received: by B4 Relay for esteuwu@proton.me/20260622 with
@@ -90,41 +88,195 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Based on the following patch:
-[1] https://lore.kernel.org/all/20260711-sm8450-qol-qmp-v2-2-d14353bd6ff4@proton.me/
+From: Esteban Urrutia <esteuwu@proton.me>
 
-This series adds support for the QMP USB PHY found in the SM8475 SoC.
-The initialization sequence varies noticeably when compared to the one used
-in the SM8450 SoC, hence the need to add support for this PHY.
+Two versions of PLLs for v6 PHYs exist: v1 and v1.1.
+These tables only cover v1.1 PLLs.
+For serdes, the difference between v1 and v1.1 PLLs is the value written to
+the BG_TIMER register.
+This register is set to 0x0e for v1 PLLs and 0x0a for v1.1 PLLs.
+As reference, SM8550 and SM8650 SoCs use v1.1 PLLs.
+For RBR/HBR/HBR2/HBR3, most values change.
+Make this distinction clear to avoid confusion when adding support for SoCs
+making use of v1 PLLs.
 
 Signed-off-by: Esteban Urrutia <esteuwu@proton.me>
 ---
-Changes in v2:
-- Split series in subseries (pcie, usbss)
-  - Sorry, it should have been like this from the start!
-- Add notice about base commit
-  - Reason why calibrate_dp_phy is not present
-- Modify referenced swing and pre-emphasis tables
-- Move v1 PLL tables to SM8475 support patch
-  - Warnings are generated at build time otherwise
-- Link to v1: https://patch.msgid.link/20260714-sm8475-bup-v1-0-b2871be2b4ec@proton.me
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 90 +++++++++++++++----------------
+ 1 file changed, 45 insertions(+), 45 deletions(-)
 
----
-Esteban Urrutia (3):
-      dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy: Add SM8475 QMP PHY
-      phy: qcom: qmp-combo: Specify PLL version in qmp_v6_dp_serdes_tbl structs
-      phy: qcom: qmp-combo: Add SM8475 support
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index 9bd666ac2c49..36361ac02855 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -1337,7 +1337,7 @@ static const struct qmp_phy_init_tbl qmp_v5_5nm_dp_tx_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_5NM_TX_TX_BAND, 0x01),
+ };
+ 
+-static const struct qmp_phy_init_tbl qmp_v6_dp_serdes_tbl[] = {
++static const struct qmp_phy_init_tbl qmp_v6_dp_v1_1_serdes_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SVS_MODE_CLK_SEL, 0x15),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYSCLK_EN_SEL, 0x3b),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYS_CLK_CTRL, 0x02),
+@@ -1471,7 +1471,7 @@ static const struct qmp_phy_init_tbl qmp_v8_n3p_dp_tx_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX1_RESTRIM_POST_CAL_OFFSET, 0x10),
+ };
+ 
+-static const struct qmp_phy_init_tbl qmp_v6_dp_serdes_tbl_rbr[] = {
++static const struct qmp_phy_init_tbl qmp_v6_dp_v1_1_serdes_tbl_rbr[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_SEL_1, 0x05),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x34),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START2_MODE0, 0xc0),
+@@ -1483,7 +1483,7 @@ static const struct qmp_phy_init_tbl qmp_v6_dp_serdes_tbl_rbr[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x0c),
+ };
+ 
+-static const struct qmp_phy_init_tbl qmp_v6_dp_serdes_tbl_hbr[] = {
++static const struct qmp_phy_init_tbl qmp_v6_dp_v1_1_serdes_tbl_hbr[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_SEL_1, 0x03),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x34),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START2_MODE0, 0xc0),
+@@ -1495,7 +1495,7 @@ static const struct qmp_phy_init_tbl qmp_v6_dp_serdes_tbl_hbr[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x0c),
+ };
+ 
+-static const struct qmp_phy_init_tbl qmp_v6_dp_serdes_tbl_hbr2[] = {
++static const struct qmp_phy_init_tbl qmp_v6_dp_v1_1_serdes_tbl_hbr2[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_SEL_1, 0x01),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x46),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START2_MODE0, 0x00),
+@@ -1507,7 +1507,7 @@ static const struct qmp_phy_init_tbl qmp_v6_dp_serdes_tbl_hbr2[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x10),
+ };
+ 
+-static const struct qmp_phy_init_tbl qmp_v6_dp_serdes_tbl_hbr3[] = {
++static const struct qmp_phy_init_tbl qmp_v6_dp_v1_1_serdes_tbl_hbr3[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_SEL_1, 0x00),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x34),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START2_MODE0, 0xc0),
+@@ -2442,19 +2442,19 @@ static const struct qmp_phy_cfg sar2130p_usb3dpphy_cfg = {
+ 	.pcs_usb_tbl		= sm8550_usb3_pcs_usb_tbl,
+ 	.pcs_usb_tbl_num	= ARRAY_SIZE(sm8550_usb3_pcs_usb_tbl),
+ 
+-	.dp_serdes_tbl		= qmp_v6_dp_serdes_tbl,
+-	.dp_serdes_tbl_num	= ARRAY_SIZE(qmp_v6_dp_serdes_tbl),
++	.dp_serdes_tbl		= qmp_v6_dp_v1_1_serdes_tbl,
++	.dp_serdes_tbl_num	= ARRAY_SIZE(qmp_v6_dp_v1_1_serdes_tbl),
+ 	.dp_tx_tbl		= qmp_v6_dp_tx_tbl,
+ 	.dp_tx_tbl_num		= ARRAY_SIZE(qmp_v6_dp_tx_tbl),
+ 
+-	.serdes_tbl_rbr		= qmp_v6_dp_serdes_tbl_rbr,
+-	.serdes_tbl_rbr_num	= ARRAY_SIZE(qmp_v6_dp_serdes_tbl_rbr),
+-	.serdes_tbl_hbr		= qmp_v6_dp_serdes_tbl_hbr,
+-	.serdes_tbl_hbr_num	= ARRAY_SIZE(qmp_v6_dp_serdes_tbl_hbr),
+-	.serdes_tbl_hbr2	= qmp_v6_dp_serdes_tbl_hbr2,
+-	.serdes_tbl_hbr2_num	= ARRAY_SIZE(qmp_v6_dp_serdes_tbl_hbr2),
+-	.serdes_tbl_hbr3	= qmp_v6_dp_serdes_tbl_hbr3,
+-	.serdes_tbl_hbr3_num	= ARRAY_SIZE(qmp_v6_dp_serdes_tbl_hbr3),
++	.serdes_tbl_rbr		= qmp_v6_dp_v1_1_serdes_tbl_rbr,
++	.serdes_tbl_rbr_num	= ARRAY_SIZE(qmp_v6_dp_v1_1_serdes_tbl_rbr),
++	.serdes_tbl_hbr		= qmp_v6_dp_v1_1_serdes_tbl_hbr,
++	.serdes_tbl_hbr_num	= ARRAY_SIZE(qmp_v6_dp_v1_1_serdes_tbl_hbr),
++	.serdes_tbl_hbr2	= qmp_v6_dp_v1_1_serdes_tbl_hbr2,
++	.serdes_tbl_hbr2_num	= ARRAY_SIZE(qmp_v6_dp_v1_1_serdes_tbl_hbr2),
++	.serdes_tbl_hbr3	= qmp_v6_dp_v1_1_serdes_tbl_hbr3,
++	.serdes_tbl_hbr3_num	= ARRAY_SIZE(qmp_v6_dp_v1_1_serdes_tbl_hbr3),
+ 
+ 	.swing_hbr_rbr		= &qmp_dp_v5_voltage_swing_hbr_rbr,
+ 	.pre_emphasis_hbr_rbr	= &qmp_dp_v6_pre_emphasis_hbr_rbr,
+@@ -2852,19 +2852,19 @@ static const struct qmp_phy_cfg sm8550_usb3dpphy_cfg = {
+ 	.pcs_usb_tbl		= sm8550_usb3_pcs_usb_tbl,
+ 	.pcs_usb_tbl_num	= ARRAY_SIZE(sm8550_usb3_pcs_usb_tbl),
+ 
+-	.dp_serdes_tbl		= qmp_v6_dp_serdes_tbl,
+-	.dp_serdes_tbl_num	= ARRAY_SIZE(qmp_v6_dp_serdes_tbl),
++	.dp_serdes_tbl		= qmp_v6_dp_v1_1_serdes_tbl,
++	.dp_serdes_tbl_num	= ARRAY_SIZE(qmp_v6_dp_v1_1_serdes_tbl),
+ 	.dp_tx_tbl		= qmp_v6_dp_tx_tbl,
+ 	.dp_tx_tbl_num		= ARRAY_SIZE(qmp_v6_dp_tx_tbl),
+ 
+-	.serdes_tbl_rbr		= qmp_v6_dp_serdes_tbl_rbr,
+-	.serdes_tbl_rbr_num	= ARRAY_SIZE(qmp_v6_dp_serdes_tbl_rbr),
+-	.serdes_tbl_hbr		= qmp_v6_dp_serdes_tbl_hbr,
+-	.serdes_tbl_hbr_num	= ARRAY_SIZE(qmp_v6_dp_serdes_tbl_hbr),
+-	.serdes_tbl_hbr2	= qmp_v6_dp_serdes_tbl_hbr2,
+-	.serdes_tbl_hbr2_num	= ARRAY_SIZE(qmp_v6_dp_serdes_tbl_hbr2),
+-	.serdes_tbl_hbr3	= qmp_v6_dp_serdes_tbl_hbr3,
+-	.serdes_tbl_hbr3_num	= ARRAY_SIZE(qmp_v6_dp_serdes_tbl_hbr3),
++	.serdes_tbl_rbr		= qmp_v6_dp_v1_1_serdes_tbl_rbr,
++	.serdes_tbl_rbr_num	= ARRAY_SIZE(qmp_v6_dp_v1_1_serdes_tbl_rbr),
++	.serdes_tbl_hbr		= qmp_v6_dp_v1_1_serdes_tbl_hbr,
++	.serdes_tbl_hbr_num	= ARRAY_SIZE(qmp_v6_dp_v1_1_serdes_tbl_hbr),
++	.serdes_tbl_hbr2	= qmp_v6_dp_v1_1_serdes_tbl_hbr2,
++	.serdes_tbl_hbr2_num	= ARRAY_SIZE(qmp_v6_dp_v1_1_serdes_tbl_hbr2),
++	.serdes_tbl_hbr3	= qmp_v6_dp_v1_1_serdes_tbl_hbr3,
++	.serdes_tbl_hbr3_num	= ARRAY_SIZE(qmp_v6_dp_v1_1_serdes_tbl_hbr3),
+ 
+ 	.swing_hbr_rbr		= &qmp_dp_v5_voltage_swing_hbr_rbr,
+ 	.pre_emphasis_hbr_rbr	= &qmp_dp_v6_pre_emphasis_hbr_rbr,
+@@ -2897,19 +2897,19 @@ static const struct qmp_phy_cfg sm8650_usb3dpphy_cfg = {
+ 	.pcs_usb_tbl		= sm8550_usb3_pcs_usb_tbl,
+ 	.pcs_usb_tbl_num	= ARRAY_SIZE(sm8550_usb3_pcs_usb_tbl),
+ 
+-	.dp_serdes_tbl		= qmp_v6_dp_serdes_tbl,
+-	.dp_serdes_tbl_num	= ARRAY_SIZE(qmp_v6_dp_serdes_tbl),
++	.dp_serdes_tbl		= qmp_v6_dp_v1_1_serdes_tbl,
++	.dp_serdes_tbl_num	= ARRAY_SIZE(qmp_v6_dp_v1_1_serdes_tbl),
+ 	.dp_tx_tbl		= qmp_v6_dp_tx_tbl,
+ 	.dp_tx_tbl_num		= ARRAY_SIZE(qmp_v6_dp_tx_tbl),
+ 
+-	.serdes_tbl_rbr		= qmp_v6_dp_serdes_tbl_rbr,
+-	.serdes_tbl_rbr_num	= ARRAY_SIZE(qmp_v6_dp_serdes_tbl_rbr),
+-	.serdes_tbl_hbr		= qmp_v6_dp_serdes_tbl_hbr,
+-	.serdes_tbl_hbr_num	= ARRAY_SIZE(qmp_v6_dp_serdes_tbl_hbr),
+-	.serdes_tbl_hbr2	= qmp_v6_dp_serdes_tbl_hbr2,
+-	.serdes_tbl_hbr2_num	= ARRAY_SIZE(qmp_v6_dp_serdes_tbl_hbr2),
+-	.serdes_tbl_hbr3	= qmp_v6_dp_serdes_tbl_hbr3,
+-	.serdes_tbl_hbr3_num	= ARRAY_SIZE(qmp_v6_dp_serdes_tbl_hbr3),
++	.serdes_tbl_rbr		= qmp_v6_dp_v1_1_serdes_tbl_rbr,
++	.serdes_tbl_rbr_num	= ARRAY_SIZE(qmp_v6_dp_v1_1_serdes_tbl_rbr),
++	.serdes_tbl_hbr		= qmp_v6_dp_v1_1_serdes_tbl_hbr,
++	.serdes_tbl_hbr_num	= ARRAY_SIZE(qmp_v6_dp_v1_1_serdes_tbl_hbr),
++	.serdes_tbl_hbr2	= qmp_v6_dp_v1_1_serdes_tbl_hbr2,
++	.serdes_tbl_hbr2_num	= ARRAY_SIZE(qmp_v6_dp_v1_1_serdes_tbl_hbr2),
++	.serdes_tbl_hbr3	= qmp_v6_dp_v1_1_serdes_tbl_hbr3,
++	.serdes_tbl_hbr3_num	= ARRAY_SIZE(qmp_v6_dp_v1_1_serdes_tbl_hbr3),
+ 
+ 	.swing_hbr_rbr		= &qmp_dp_v6_voltage_swing_hbr_rbr,
+ 	.pre_emphasis_hbr_rbr	= &qmp_dp_v6_pre_emphasis_hbr_rbr,
+@@ -2942,19 +2942,19 @@ static const struct qmp_phy_cfg sm8750_usb3dpphy_cfg = {
+ 	.pcs_usb_tbl		= sm8750_usb3_pcs_usb_tbl,
+ 	.pcs_usb_tbl_num	= ARRAY_SIZE(sm8750_usb3_pcs_usb_tbl),
+ 
+-	.dp_serdes_tbl		= qmp_v6_dp_serdes_tbl,
+-	.dp_serdes_tbl_num	= ARRAY_SIZE(qmp_v6_dp_serdes_tbl),
++	.dp_serdes_tbl		= qmp_v6_dp_v1_1_serdes_tbl,
++	.dp_serdes_tbl_num	= ARRAY_SIZE(qmp_v6_dp_v1_1_serdes_tbl),
+ 	.dp_tx_tbl		= qmp_v6_dp_tx_tbl,
+ 	.dp_tx_tbl_num		= ARRAY_SIZE(qmp_v6_dp_tx_tbl),
+ 
+-	.serdes_tbl_rbr		= qmp_v6_dp_serdes_tbl_rbr,
+-	.serdes_tbl_rbr_num	= ARRAY_SIZE(qmp_v6_dp_serdes_tbl_rbr),
+-	.serdes_tbl_hbr		= qmp_v6_dp_serdes_tbl_hbr,
+-	.serdes_tbl_hbr_num	= ARRAY_SIZE(qmp_v6_dp_serdes_tbl_hbr),
+-	.serdes_tbl_hbr2	= qmp_v6_dp_serdes_tbl_hbr2,
+-	.serdes_tbl_hbr2_num	= ARRAY_SIZE(qmp_v6_dp_serdes_tbl_hbr2),
+-	.serdes_tbl_hbr3	= qmp_v6_dp_serdes_tbl_hbr3,
+-	.serdes_tbl_hbr3_num	= ARRAY_SIZE(qmp_v6_dp_serdes_tbl_hbr3),
++	.serdes_tbl_rbr		= qmp_v6_dp_v1_1_serdes_tbl_rbr,
++	.serdes_tbl_rbr_num	= ARRAY_SIZE(qmp_v6_dp_v1_1_serdes_tbl_rbr),
++	.serdes_tbl_hbr		= qmp_v6_dp_v1_1_serdes_tbl_hbr,
++	.serdes_tbl_hbr_num	= ARRAY_SIZE(qmp_v6_dp_v1_1_serdes_tbl_hbr),
++	.serdes_tbl_hbr2	= qmp_v6_dp_v1_1_serdes_tbl_hbr2,
++	.serdes_tbl_hbr2_num	= ARRAY_SIZE(qmp_v6_dp_v1_1_serdes_tbl_hbr2),
++	.serdes_tbl_hbr3	= qmp_v6_dp_v1_1_serdes_tbl_hbr3,
++	.serdes_tbl_hbr3_num	= ARRAY_SIZE(qmp_v6_dp_v1_1_serdes_tbl_hbr3),
+ 
+ 	.swing_hbr_rbr		= &qmp_dp_v6_voltage_swing_hbr_rbr,
+ 	.pre_emphasis_hbr_rbr	= &qmp_dp_v6_pre_emphasis_hbr_rbr,
 
- .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         |   1 +
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 259 +++++++++++++++++----
- 2 files changed, 215 insertions(+), 45 deletions(-)
----
-base-commit: 43d250aa1ba24a4124162b7310a7010ff6a141be
-change-id: 20260714-sm8475-bup-usbss-e68349473f6e
-
-Best regards,
---  
-Esteban Urrutia <esteuwu@proton.me>
+-- 
+2.55.0
 
 
 
