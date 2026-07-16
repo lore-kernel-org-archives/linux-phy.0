@@ -4,107 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF8C6C44501
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Jul 2026 12:27:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0599CC4450A
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Jul 2026 12:41:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HkA+E7Rpue0enQfSw+enx32fkI+nf1JrhAbB5gUD4KQ=; b=sFSJ64uCadMF4/
-	MtBkmVdjwnTJmwEA8pTSdcDtkh5EtMvX36z9FVCSC2p25/NZlffi7EwjtvSKnki3336XURwYuH0t2
-	X4cr6iReMMkdrxvSOVdEfCy9UpJ5w6bpiiPjmd0kihRWqpg0B0nQ5aRIyJCaewdjROFY4pGa9r7dE
-	rq4i4zTL6q1R2Mb5lNezxQuTVmi2mhKZCQBtV1xjqntCGoAgwkDu4kD8QJCL0y97lWOAIEqzZLT2w
-	iEiNKiq6pCHs7kiApSnnvq31wq4GP9GqbKSmwrwSJYEWimC4EzSkJ8qfnKsBrNAAgelq3s/RdwbYY
-	qu/uwdVG/50Ezl79kWSg==;
+	List-Owner; bh=SkeJNkPgCXG68iuopf2Z9mr/rG6TUF20/z0vYUXna4c=; b=QFZkICDlCyR3ML
+	q5Wml+4an/fPxdAf4TMh0nPF1Ox+a+3F9DkBUFzQRTm+Z6mIpgOPhwqp4fgaEBzF3rzsb+9FAPlBN
+	FVyvMZPGfnlsrdrlasKMKHwZO1IIJU04irNawlqMJpmvkogqMqwUsFEsdqyQ5Y7eXAuB3v0dmJxSS
+	esIQdwx3ILSxQTcZVTdXNpemmiBqzntPqz/KQgf30eKxUrBdLsBu4K1YYyUxKgs3xjnr3G3r6coKa
+	GvLkiRHNrHngoE40A7LCWyB8jd9MgLIxvs4K6qw7SBrI/b3AKJkW2vCf5pE75IZISgvcwVk73L8MW
+	mqi7vgLBWAtBvtFFO0SA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wkLBh-0000000HFUM-10zr;
-	Thu, 16 Jul 2026 12:27:37 +0000
-Received: from mail-wr1-x436.google.com ([2a00:1450:4864:20::436])
+	id 1wkLOv-0000000HHXt-1puu;
+	Thu, 16 Jul 2026 12:41:17 +0000
+Received: from mail-westeuropeazon11013044.outbound.protection.outlook.com ([52.101.72.44] helo=AM0PR02CU008.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wkLBe-0000000HFT9-0x2D
-	for linux-phy@lists.infradead.org;
-	Thu, 16 Jul 2026 12:27:35 +0000
-Received: by mail-wr1-x436.google.com with SMTP id ffacd0b85a97d-475417f010dso3338995f8f.2
-        for <linux-phy@lists.infradead.org>; Thu, 16 Jul 2026 05:27:33 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1784204852; cv=none;
-        d=google.com; s=arc-20260327;
-        b=Vq4why73K3deUSRdBeBlKkuYIu3bl9fI/mVfkMghAzp+/pEH3NLNExt2lnlAzXmUw4
-         DoQ4e64n7z2PvYYEM5TVdbfmXW/inu1k3niNm+4C587EqWYoQkaZYXkMmxWPzNtIP9N+
-         D1rE2J0tWqDAWQ1Yf/QSEC0pE+Lcc+adm/BFK+gTDJwcOlfJfRMZ5hhCDCDuw6N5OFlQ
-         RXkF3HwAdctlRIz2Ji8RO/Li7OW02VtTVMW3S+XS9mhLa6JCDAxB7k0oyOxZzIWROI1K
-         abDWxIh8nQVk9M2U7p2Th3G8rNQITu7PshzDS8v1K2XPZ6+z8T2D4MDUV3Ua7vv/BePo
-         SLYQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:dkim-signature;
-        bh=85KSTws32WPyRCiZC1/0LybeFCEGGOzS0CRvJprKyoI=;
-        fh=lEobMbxn83uJRwEZ7dYe8rsI4WnOOIZdzJ+cRGQgHLo=;
-        b=qtP2hnhtyNssckc5jhZ9XIOM/oSYwMh9BFi/yjxxLYoe482u+cRBn/8ApLLGSZgpwp
-         SP72LXV7qf/Bb/quQGMmb7inY/1SMhFvN4lVQOv+TUYJz0g/PInJq1SmIX6+ujBF/gof
-         Jt9KxLJJLHpA7eGQlEx0MAWH98ohPBNC9CtMbY4fA+3+t1QDpAy5ApUVUKJ9mflJRS0J
-         2GAOw1OVEJoFw25268oy7mUWFKHCcywz7KuVSkk7yKMt7VBPAleKxVqlK1TyYPQ9qnxG
-         yc+8HVarjQl2rk/0FzfRh737WpgW7QNzBBjEi5WFJdYOeb503T/7p/yQewqApo8IqvqF
-         YpCQ==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1784204852; x=1784809652; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=85KSTws32WPyRCiZC1/0LybeFCEGGOzS0CRvJprKyoI=;
-        b=PAw7p8Pa49rVH1GG6UzkbrxlxJA3tuAmvYwzt7yjDHNWPYsrzuNXyN6/N1oUoXLx+D
-         NizVJXxPs6ncWe8zEMDSB9IeQaWOZF+wy9es98wikygZ4e3Lwd2PNWQNgZUUbxAcGrx1
-         AXr8K3pOunHlLY+hMY0zpcAwXWEtOXEx9UcaMHSxvuOkWTak/J/8sK5JdltJ/ipQWo97
-         kpJY0Qm2Kp9AxuO6Ay5OasoXwjsCbS2uFVGMH8graxC5Lo1d57XhN2SL3e4m3wnUUQx4
-         xweCfFl+GxwvdU5rsm7aa4ijmG0AZ/N7Y/2E3LMR7CMj89oXCtOghRJYWN4rBz6eHP6j
-         12oQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784204852; x=1784809652;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=85KSTws32WPyRCiZC1/0LybeFCEGGOzS0CRvJprKyoI=;
-        b=VH45/SAvrA1A6Yk9MofdwCUE4QZEjkioy4rgtAwCpaa9gid9N+02tU++MPIliekjc3
-         0c4dzcIoSoOPwLKLoGpUVFGZjfKYpjg7JpBnS57j6f5EAKuhAClfJuVbmhyqo7PJTLxz
-         FlYhDlHWy+ZAsft5d4GVSQgn5d6QorAGb4L5abT8rk+lC2N8pRFl1EZ+TaqcQ1mGOaCf
-         VgipY2XC4dTtm9CBEZo4fwlCekn+UVTlsemgfx2/2LKbJJsrs/bRzEqc7KgtehsXjin9
-         tASh9E3D9Z8GdHps3HMOTeaIMx/Pi0sA9UGhZjywfCF+wqk1zl5OPvTD0hWZye2HXyG3
-         n0uQ==
-X-Forwarded-Encrypted: i=1; AHgh+RqdfK9MZAJtDrxBKlHctg1tuI4s3vCDpyqM1T8FA0O07vOu48TxAAfUo3KlsQNS7JUPKD3Ym2dyiN0=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yww1H4UelvjmCH1ptF0ZLicVaZkwA4R+K3mdLsJpA59SQQSPD4B
-	OzWq5fUpZ8LmBymPUbAayhpsS997SVui50jxFx3iQbXjKXH2Qh+yh5QP0xwKIyhTDS+MY3X3/Tr
-	PY1GMkqG/Sjx7qOpgIh2dqEM4EXzE8s4=
-X-Gm-Gg: AfdE7cnl/yTzsz2jaAWkpZFbGuf7wS4kHSGPxFq49QQBnJVgTLhy1jJzkRiV8AKI5Ov
-	E47xewPZb47bMp59ljqa32SynAB4AcmhGYYCY/TwpeNEr0TUkpPwg45Tb7+b91QdlVGNNbtKXVb
-	GovkZamk5mxdFwQpfokDZ8bs9h+1g/BQpGC4vGDt0b7qjbyzaMMI6XU4AKEdLC2OaWvl31o+RrH
-	8z1Q4QbSazxkPeko6TNn+4L0wLLxVQOhwwjQ5B6yPsuEJaqUsX8qdVAhskTFQ==
-X-Received: by 2002:a05:6000:2911:b0:47f:2baf:5e2b with SMTP id
- ffacd0b85a97d-47f4fc99a4fmr8133433f8f.1.1784204852159; Thu, 16 Jul 2026
- 05:27:32 -0700 (PDT)
+	id 1wkLOt-0000000HHXE-0wzQ;
+	Thu, 16 Jul 2026 12:41:16 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=AueHn5FmKcF2CqXa96RWzJ7b5pGTQnom20pCXWZBxK4vjBfIKSqa9u95MGAKoWuogEFVGWVxws1BEGlatsjizR5kYTO4oS26x1se5QTo82NKilrHec2mPVGk9CGRkTyxA1OL53YGE5eHQZZ1aSATEvHIEO4qvcoNU2Y3o30LaMktDmXla7Be0tFnDma89y3SYhRhJvyRrOSF/taJ87wv5F73qlYZhtV75HmTmX+wHi20LTqYvhq5cRgP2XKZz3QaV6VBIGvOe7rOcFoKKDCyYUYlvZbNMBF7zJ7nfzVp1e4k/1s0gNnm/dd9IFe5scWcxObcq0PXoCzCfU44cwswmA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=7Mk9nHBF6Z9TtDEi1xPdJ5l57Ah17ET6dQN4vhkdut4=;
+ b=LrtRCJcKZXhWR5nmvHXIaajRZjfYTSYX2f9H1BtXmhTOEaYzmZV5AtqMeAvft1Rv1XQ4eBfQ53EmQt7h2PtxkVAUyW2l3679LbqD5qs0YmQMn33V7GybV2IGfK8YIdA+ZVeFtT/IY9oLFpGI7uJpGyHZHvwi8JZDoit0Lh0G+1oWVapRrgDXJ8g89roTGWVbGjAUStycBHX7Ftb8VL7K6BvbZ/nzAIQ/eSnhNVIolgcHboQvRBDUaGGHmS0mfzN8GJoAdOOUGx0lr43NPEPkqIQ/Hhwotvs4PQoz4pNfCJQR9TCL3/a5QAGWQ5gBGepPq/lCXef/5juhS4oX3WDOuQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=7Mk9nHBF6Z9TtDEi1xPdJ5l57Ah17ET6dQN4vhkdut4=;
+ b=ihs2atTaHIRrKmupvcFVpoV6xVcpg9Sy5bRVZJGlLgeIgkLOqkb461hWM73UWooE2m7eOoSCoSO5BGxMpHI4Eln66GgMaH8pXnioOoKjE0b+UgiluGowxs+WOF0Z7MPukbu1jWUeRZr4+VsZm681yOTsyT/zLn411FGz8rTBvPwKLSBj3fjIAz8g64HC2VfxtNqEzQW8ZtIoH1XQx7wDH8KXTIEpV0vHoww5m/wZ5sTH35JI1uw9/QLBdKvN+GJ9OjsygzsS8JlPmhrDdiyx8z3Br1hj27TKlFmOTHL7TNUOw37FeBafJkupophYOPKy2WEg8547F/3Qs38PmziqXg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
+ by AS5PR04MB11345.eurprd04.prod.outlook.com (2603:10a6:20b:6c3::13) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.202.18; Thu, 16 Jul
+ 2026 12:41:09 +0000
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c%6]) with mapi id 15.21.0223.011; Thu, 16 Jul 2026
+ 12:41:09 +0000
+Date: Thu, 16 Jul 2026 07:41:00 -0500
+From: Frank Li <Frank.li@oss.nxp.com>
+To: Xu Yang <xu.yang_2@oss.nxp.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Frank Li <Frank.Li@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, Jun Li <jun.li@nxp.com>,
+	linux-phy@lists.infradead.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	Xu Yang <xu.yang_2@nxp.com>
+Subject: Re: [PATCH v6 3/6] phy: fsl-imx8mq-usb: add runtime PM support
+Message-ID: <aljRXBXtv_TjJECe@SMW015318>
+References: <20260715-imx8mp-usb-phy-improvement-v6-0-00d95e270e4c@nxp.com>
+ <20260715-imx8mp-usb-phy-improvement-v6-3-00d95e270e4c@nxp.com>
+ <alenBaMOTSPo7DJV@SMW015318>
+ <omitpksxmr657vlmjs3ybzhiq6zj4znrsp2tereofqees27z36@m3lhmrbufqay>
+Content-Disposition: inline
+In-Reply-To: <omitpksxmr657vlmjs3ybzhiq6zj4znrsp2tereofqees27z36@m3lhmrbufqay>
+X-ClientProxiedBy: SA1P222CA0099.NAMP222.PROD.OUTLOOK.COM
+ (2603:10b6:806:35e::13) To GV2PR04MB11799.eurprd04.prod.outlook.com
+ (2603:10a6:150:2cf::9)
 MIME-Version: 1.0
-References: <20260612-hdptx-clk-fixes-v4-0-ce5e1d456cda@collabora.com> <20260612-hdptx-clk-fixes-v4-1-ce5e1d456cda@collabora.com>
-In-Reply-To: <20260612-hdptx-clk-fixes-v4-1-ce5e1d456cda@collabora.com>
-From: Andy Yan <andyshrk@gmail.com>
-Date: Thu, 16 Jul 2026 20:27:19 +0800
-X-Gm-Features: AUfX_mzgo6LqHodBqk8XKfq4lJF2iVLX6VlVzaraq-ul6MEoybhP2jiUNkg_Mig
-Message-ID: <CANbgqAR=ECWEHv2X85nOASmm=r91ipO=r=8ufrrXFYLxxKCaFg@mail.gmail.com>
-Subject: Re: [PATCH v4 1/8] phy: rockchip: samsung-hdptx: Fix rate
- recalculation for high bpc
-To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>, 
-	Dmitry Baryshkov <lumag@kernel.org>, kernel@collabora.com, linux-phy@lists.infradead.org, 
-	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, =?UTF-8?Q?Thomas_Niederpr=C3=BCm?= <dubito@online.de>, 
-	Simon Wright <simon@symple.nz>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|AS5PR04MB11345:EE_
+X-MS-Office365-Filtering-Correlation-Id: 4f6bfd30-5e64-4591-d0df-08dee3378284
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|376014|19092799006|1800799024|366016|56012099006|11063799006|4143699003|18002099003|22082099003|10067099003|3023799007;
+X-Microsoft-Antispam-Message-Info: TD9cETcVRVlzMr4Uv5zi7ishU3OnWkF8wuJlzGzao2LCTLbvb7AbgdSkRJdEk0LeeuhTQAzBWiJ0umtyhWsjtwBM1vZ6WFrpV23Zcu7j0wWD72Ja/nGDBPmQL1IaPwZdnAsj1f/WrcQP+tN82P/KDzOSQjXtpR4bIcVkHTa0g43NQGoPvMGcWgCK6Motc6PrA1OTuaQHaUu0bDafd9Im1p7lLum85Q/Sk8BhYnqdqNqrQX3YuLkIaxUr7+gtpKm5xHW5HQH+2lXvnzNBfLbCQpkm/983OItOzP1Pa553uRv24B8I2o6ckIzVlAgkQcNCnBu4dR+u0p4nkSughEcxSjU4sGNkhgNIqXvu8iXhqTnOAYP5HKRwMUa26dsoX+Goa3FsHwK/bpDDezo+WfhXTrsu02wu5nTWBkgDZWn3wlvBlsq0Lb2MHH4yfGN2/Vye4jCTYOgOGqbbKGfXca+bcQC/y2CAauZO5LgYfgIhIm7J38dNBaAQRDftanK0CXarGNgJ9z5dvjG19fTkQx8Xf701RGeaDWUbvkkLFoTvR/KE2tFExuxUw064AqCjX7OfZvH6IvugqcdI8M3pXMUTJQ18IRtgQ3bkdxvQfn6O1cFDMHkKY0Tdy4zYlhAJs5w3UhJei1peNeGJQcnZO8ZYTZQpkEGQRcrBke6pHNLq27Y=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(376014)(19092799006)(1800799024)(366016)(56012099006)(11063799006)(4143699003)(18002099003)(22082099003)(10067099003)(3023799007);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?AQCyeNJcNZvJUkRbnDj76xTGAT7zID5y/Lprs0vKgIJ0ayevmJ4zol4ZhLh4?=
+ =?us-ascii?Q?KjOv1az4Qayc1n1Gpj0DJo8zizKaYHJphBgdE10/zOkQEM2V2zGFMbc757hG?=
+ =?us-ascii?Q?zaIoQWkVRA8WxYT6AO/SP5936GgUtHmla7iGYjmA7P8W64q9Vi1228Y4VjSY?=
+ =?us-ascii?Q?gk9WRhXq+oEdVmvt3kn3CIL9QfLNTcbif2/M0t7dgpcPPnJ6gBcPa0HhBStN?=
+ =?us-ascii?Q?B3NvOyZf1XIDRPMjst+f0U0LFIQgYhs3jWQzaVLoPd5q1de+IPuZIcRPZWkG?=
+ =?us-ascii?Q?noG0TZAoGmeDiQ7VCse0Sji3uVofi6iqnCcCUet47hn+405sm5QF2WylcduW?=
+ =?us-ascii?Q?+rgYtvLRalYOFpqhm9jY5LIkJe070JY/EODLYcmUVVp8QfFcLKtPeGGhuiug?=
+ =?us-ascii?Q?QF+1psJYRzcbvOGTrXTwJT7/y73+3aSOYAMKViERSB3eruUbaQ4GE83222+h?=
+ =?us-ascii?Q?1EK5qKIe4afbQp68AoSrNOUzFf7mYMeXxAvY6k96VQ10Wrk2HOmFXBE71npq?=
+ =?us-ascii?Q?dp6jpcYuNvXgxWMmMdc3llnvtY37yq9Cgb2GaDPA/tgs8TVKMiWNSntffdME?=
+ =?us-ascii?Q?DPAEIMU4fmNi5WaDKCCXME+Su6PuPHoORU41nfY+TyeQxWg+rbWOTUW/glks?=
+ =?us-ascii?Q?Fp613sKHSqubJvhyPLBtABfFGvSVI2kc52xQWZqBYUIOntsBIpMBjjIvCFcb?=
+ =?us-ascii?Q?qH0+iDuwJeHElWfkqmIDPOIagwmJy1jXI0a7RdWxbRPHig8Bi48IqI2M9axZ?=
+ =?us-ascii?Q?X2FRr90Cnn0erQxO9kBjDVFVqamOkB/eoGlWslAqlbrEYYueW/QhqjOUFuKa?=
+ =?us-ascii?Q?OQs4ICAkZWQD7P4VxAfQ+1aesswVKvTD1lQ/8mpKWMYK7LCv45XWep2lI2km?=
+ =?us-ascii?Q?gQmsHIQkaaVZuz5KQF/vqLXGPrZ4ZzUHq14QejL7a4+2RqcN+q1MoWGxAiH1?=
+ =?us-ascii?Q?lz4mbAV5nondug+otvSSuN89soE+D+xn8of169Xvw/is/rcsU9sWbPatNff1?=
+ =?us-ascii?Q?JI9PDaYHyU4amnQt/w6/19KCu+mEuZdgFIvflvBgzJcCV4lUxq/JtTCMBZHq?=
+ =?us-ascii?Q?YUqJhACZnfr44ewG7oKJZcRWaOhr6Q30ulgamsPDDsViPIfQoKA+Az63YZyI?=
+ =?us-ascii?Q?ugPyW8i2il3YCWIvm6i0GRVq56Yq35/dywOFGMok1NE9W8afOnbZ4WCNXs/u?=
+ =?us-ascii?Q?NenXl9vH2preeAndT2xivHn2gV0/qIrM2o+5eGtQWOKbekgqZHMxMLZPiffV?=
+ =?us-ascii?Q?1hvak7JxhJcEFx7Y4loHFXXbtxBacKDEsOwtgYWWf56JQcZQfywUTQmgV4JH?=
+ =?us-ascii?Q?VV6S5TfOZJt1t5cxMRGsJuGxe61dsTrtbgas8JoIMEB5FkJjO5fb9a59aA5a?=
+ =?us-ascii?Q?IJO3SeVEttso0jewElhMdvZYHrHxL4BnKgLEaAADSa97RmZ+ZhIZeAL5Lskz?=
+ =?us-ascii?Q?IkuNPCkeVREL1CPMnfvrxNYsV/vZnhoCxFAC02D911MZQkrBNjDHH6U4lArl?=
+ =?us-ascii?Q?qzT09s5b8OE6e8fD8MMqBkoDOakF7ORhyka4AEb0ChejmGOCEJYFIa4zLDW1?=
+ =?us-ascii?Q?YbuPgT6z+Th/L9vi6c5SDuDA3/aG58ZGQJhKAX2fAGnyYwBLQhjSMz/IvSky?=
+ =?us-ascii?Q?olPXJD1JTajKiYaP/elZ79x07LEhcDyKLcNKKnIkvwzM3KtINGxt6OeTsYOK?=
+ =?us-ascii?Q?D2dth3fj6nsxpvchjhKqMm+/HEto79jdkRNGBcHMjsVwoJEgEBYVBeJQWY7o?=
+ =?us-ascii?Q?wH37koNyvOMpHmDINu2Wjcv0LhpvhF4L1Nu6Jt5ZDSBrTu6Cto84?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4f6bfd30-5e64-4591-d0df-08dee3378284
+X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Jul 2026 12:41:09.1073
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 14rH0BLuIhiCOF4ydI6zckUXk8nMXIcqYVE7x2I6cg+ri64AQhjFX2mqLmD/CUhJgH7+hwjLXlNbqrOaymVT89MFbYinvrVhHoE+ULEUKbc9ZPMmUsp+yhc5gE6th80X
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS5PR04MB11345
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260716_052734_320648_59FE1351 
-X-CRM114-Status: GOOD (  18.30  )
+X-CRM114-CacheID: sfid-20260716_054115_298485_3A56A895 
+X-CRM114-Status: GOOD (  30.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,70 +139,165 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGVsbG/vvIwKQ3Jpc3RpYW4gQ2lvY2FsdGVhIDxjcmlzdGlhbi5jaW9jYWx0ZWFAY29sbGFib3Jh
-LmNvbT4g5LqOMjAyNuW5tDbmnIgxMuaXpeWRqOS6lCAwNzo0NeWGmemBk++8mgo+Cj4gVGhlIFBI
-WSBQTEwgY2FuIGJlIHByb2dyYW1tZWQgYnkgYW4gZXh0ZXJuYWwgY29tcG9uZW50LCBlLmcuIHRo
-ZQo+IGJvb3Rsb2FkZXIsIGp1c3QgYmVmb3JlIHRoZSByZWNhbGNfcmF0ZSgpIGNhbGxiYWNrIGlz
-IGludm9rZWQgZHVyaW5nCj4gZGV2bV9jbGtfaHdfcmVnaXN0ZXIoKSBpbiB0aGUgcHJvYmUgcGF0
-aC4KPgo+IFRoZXJlZm9yZSBya19oZHB0eF9waHlfY2xrX3JlY2FsY19yYXRlKCkgZmluZHMgdGhl
-IFBMTCBlbmFibGVkIGFuZAo+IGF0dGVtcHRzIHRvIGNvbXB1dGUgdGhlIGNsb2NrIHJhdGUsIHdo
-aWxlIG1ha2luZyB1c2Ugb2YgdGhlIGJwYyB2YWx1ZQo+IGZyb20gdGhlIEhETUkgUEhZIGNvbmZp
-Z3VyYXRpb24sIHdoaWNoIGFsd2F5cyBkZWZhdWx0cyB0byA4IGJlY2F1c2UKPiBwaHlfY29uZmln
-dXJlKCkgd2FzIG5vdCBydW4gYXQgdGhhdCBwb2ludC4gIEFzIGEgY29uc2VxdWVuY2UsIHRoZQo+
-IChyZSljYWxjdWxhdGVkIHJhdGUgaXMgaW5jb3JyZWN0IHdoZW4gdGhlIGFjdHVhbCBicGMgd2Fz
-IGhpZ2hlciB0aGFuIDguCj4KPiBEbyBub3QgcmVseSBvbiBhbnkgb2YgdGhlIGhkbWlfY2ZnIG1l
-bWJlcnMgd2hlbiBjb21wdXRpbmcgdGhlIGNsb2NrIHJhdGUKPiBhbmQsIGluc3RlYWQsIHJlYWQg
-dGhlIHJlcXVpcmVkIGlucHV0IGRhdGEgKGkuZS4gYnBjKSwgZGlyZWN0bHkgZnJvbSB0aGUKPiBo
-YXJkd2FyZSByZWdpc3RlcnMuCj4KPiBGaXhlczogMzQ4MWZjMDRkOTY5ICgicGh5OiByb2NrY2hp
-cDogc2Ftc3VuZy1oZHB0eDogQ29tcHV0ZSBjbGsgcmF0ZSBmcm9tIFBMTCBjb25maWciKQo+IFRl
-c3RlZC1ieTogVGhvbWFzIE5pZWRlcnByw7xtIDxkdWJpdG9Ab25saW5lLmRlPgo+IFRlc3RlZC1i
-eTogU2ltb24gV3JpZ2h0IDxzaW1vbkBzeW1wbGUubno+Cj4gU2lnbmVkLW9mZi1ieTogQ3Jpc3Rp
-YW4gQ2lvY2FsdGVhIDxjcmlzdGlhbi5jaW9jYWx0ZWFAY29sbGFib3JhLmNvbT4KCiAgIFJldmll
-d2VkLWJ577yaQW5keSBZYW4gPGFuZHlzaHJrQGdtYWlsLmNvbT4KClRoYW5rcwo+IC0tLQo+ICBk
-cml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtc2Ftc3VuZy1oZHB0eC5jIHwgMTMgKysr
-Ky0tLS0tLS0tLQo+ICAxIGZpbGUgY2hhbmdlZCwgNCBpbnNlcnRpb25zKCspLCA5IGRlbGV0aW9u
-cygtKQo+Cj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1z
-YW1zdW5nLWhkcHR4LmMgYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtc2Ftc3Vu
-Zy1oZHB0eC5jCj4gaW5kZXggMmQ5NzNiYzM3ZjA3Li43MTA2MDNhZmZmODYgMTAwNjQ0Cj4gLS0t
-IGEvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLXNhbXN1bmctaGRwdHguYwo+ICsr
-KyBiL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1zYW1zdW5nLWhkcHR4LmMKPiBA
-QCAtMjE2OCw3ICsyMTY4LDcgQEAgc3RhdGljIHU2NCBya19oZHB0eF9waHlfY2xrX2NhbGNfcmF0
-ZV9mcm9tX3BsbF9jZmcoc3RydWN0IHJrX2hkcHR4X3BoeSAqaGRwdHgpCj4gICAgICAgICBzdHJ1
-Y3QgbGNwbGxfY29uZmlnIGxjcGxsX2h3Owo+ICAgICAgICAgc3RydWN0IHJvcGxsX2NvbmZpZyBy
-b3BsbF9odzsKPiAgICAgICAgIHU2NCBmb3V0LCBzZG07Cj4gLSAgICAgICB1MzIgbW9kZSwgdmFs
-Owo+ICsgICAgICAgdTMyIG1vZGUsIGJwYywgdmFsOwo+ICAgICAgICAgaW50IHJldCwgaTsKPgo+
-ICAgICAgICAgcmV0ID0gcmVnbWFwX3JlYWQoaGRwdHgtPnJlZ21hcCwgQ01OX1JFRygwMDA4KSwg
-Jm1vZGUpOwo+IEBAIC0yMjY2LDYgKzIyNjYsNyBAQCBzdGF0aWMgdTY0IHJrX2hkcHR4X3BoeV9j
-bGtfY2FsY19yYXRlX2Zyb21fcGxsX2NmZyhzdHJ1Y3QgcmtfaGRwdHhfcGh5ICpoZHB0eCkKPiAg
-ICAgICAgIGlmIChyZXQpCj4gICAgICAgICAgICAgICAgIHJldHVybiAwOwo+ICAgICAgICAgcm9w
-bGxfaHcucG1zX3NkaXYgPSAoKHZhbCAmIFBMTF9QQ0dfUE9TVERJVl9TRUxfTUFTSykgPj4gNCkg
-KyAxOwo+ICsgICAgICAgYnBjID0gKEZJRUxEX0dFVChQTExfUENHX0NMS19TRUxfTUFTSywgdmFs
-KSA8PCAxKSArIDg7Cj4KPiAgICAgICAgIGZvdXQgPSBQTExfUkVGX0NMSyAqIHJvcGxsX2h3LnBt
-c19tZGl2Owo+ICAgICAgICAgaWYgKHJvcGxsX2h3LnNkbV9lbikgewo+IEBAIC0yMjgwLDcgKzIy
-ODEsNyBAQCBzdGF0aWMgdTY0IHJrX2hkcHR4X3BoeV9jbGtfY2FsY19yYXRlX2Zyb21fcGxsX2Nm
-ZyhzdHJ1Y3QgcmtfaGRwdHhfcGh5ICpoZHB0eCkKPiAgICAgICAgICAgICAgICAgICAgICAgICBm
-b3V0ID0gZm91dCArIHNkbTsKPiAgICAgICAgIH0KPgo+IC0gICAgICAgcmV0dXJuIGRpdl91NjQo
-Zm91dCAqIDIsIHJvcGxsX2h3LnBtc19zZGl2ICogMTApOwo+ICsgICAgICAgcmV0dXJuIERJVl9S
-T1VORF9DTE9TRVNUX1VMTChmb3V0ICogMiAqIDgsIHJvcGxsX2h3LnBtc19zZGl2ICogMTAgKiBi
-cGMpOwo+ICB9Cj4KPiAgc3RhdGljIHVuc2lnbmVkIGxvbmcgcmtfaGRwdHhfcGh5X2Nsa19yZWNh
-bGNfcmF0ZShzdHJ1Y3QgY2xrX2h3ICpodywKPiBAQCAtMjI4OCwxOSArMjI4OSwxMyBAQCBzdGF0
-aWMgdW5zaWduZWQgbG9uZyBya19oZHB0eF9waHlfY2xrX3JlY2FsY19yYXRlKHN0cnVjdCBjbGtf
-aHcgKmh3LAo+ICB7Cj4gICAgICAgICBzdHJ1Y3QgcmtfaGRwdHhfcGh5ICpoZHB0eCA9IHRvX3Jr
-X2hkcHR4X3BoeShodyk7Cj4gICAgICAgICB1MzIgc3RhdHVzOwo+IC0gICAgICAgdTY0IHJhdGU7
-Cj4gICAgICAgICBpbnQgcmV0Owo+Cj4gICAgICAgICByZXQgPSByZWdtYXBfcmVhZChoZHB0eC0+
-Z3JmLCBHUkZfSERQVFhfQ09OMCwgJnN0YXR1cyk7Cj4gICAgICAgICBpZiAocmV0IHx8ICEoc3Rh
-dHVzICYgSERQVFhfSV9QTExfRU4pKQo+ICAgICAgICAgICAgICAgICByZXR1cm4gMDsKPgo+IC0g
-ICAgICAgcmF0ZSA9IHJrX2hkcHR4X3BoeV9jbGtfY2FsY19yYXRlX2Zyb21fcGxsX2NmZyhoZHB0
-eCk7Cj4gLQo+IC0gICAgICAgaWYgKGhkcHR4LT5oZG1pX2NmZy5tb2RlID09IFBIWV9IRE1JX01P
-REVfRlJMKQo+IC0gICAgICAgICAgICAgICByZXR1cm4gcmF0ZTsKPiAtCj4gLSAgICAgICByZXR1
-cm4gRElWX1JPVU5EX0NMT1NFU1RfVUxMKHJhdGUgKiA4LCBoZHB0eC0+aGRtaV9jZmcuYnBjKTsK
-PiArICAgICAgIHJldHVybiBya19oZHB0eF9waHlfY2xrX2NhbGNfcmF0ZV9mcm9tX3BsbF9jZmco
-aGRwdHgpOwo+ICB9Cj4KPiAgc3RhdGljIGludCBya19oZHB0eF9waHlfY2xrX2RldGVybWluZV9y
-YXRlKHN0cnVjdCBjbGtfaHcgKmh3LAo+Cj4gLS0KPiAyLjU0LjAKPgo+CgotLSAKbGludXgtcGh5
-IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3Rz
-LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On Thu, Jul 16, 2026 at 07:32:59PM +0800, Xu Yang wrote:
+> On Wed, Jul 15, 2026 at 10:28:05AM -0500, Frank Li wrote:
+> > On Wed, Jul 15, 2026 at 07:33:58PM +0800, Xu Yang wrote:
+> > > From: Xu Yang <xu.yang_2@nxp.com>
+> > >
+> > > Add runtime PM to ensure the PHY is properly powered and clocked during
+> > > register access, preventing potential system hangs.
+> > >
+> > > It guards register access in the following scenarios:
+> > > - PHY operations: init() and power_on/off() callbacks are guarded by
+> > >   phy core
+> > > - Type-C orientation switching when PHY/Controller are suspended which
+> > >   needs explicitly care
+> > > - Future PHY control port register regmap debugfs access
+> > >
+> > > Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+> > >
+> > > ---
+> > > Changes in v6:
+> > >  - use devm_pm_runtime_enable() to disable runtime PM when probe fails
+> > >  - simply pm_runtime_get_sync/disable/put_noidle() to pm_runtime_resume()
+> > > Changes in v5:
+> > >  - use non-devm PM runtime callback to correctly enable/disable clocks
+> > >    when unbind the device
+> > > Changes in v4:
+> > >  - replace guard() with PM_RUNTIME_ACQUIRE()
+> > > Changes in v3:
+> > >  - new patch
+> > > ---
+> > >  drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 67 +++++++++++++++++++++---------
+> > >  1 file changed, 48 insertions(+), 19 deletions(-)
+> > >
+> > > diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> > > index 3a5788c609e1..bc804d2b5aee 100644
+> > > --- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> > > +++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> > > @@ -9,6 +9,7 @@
+> > >  #include <linux/of.h>
+> > >  #include <linux/phy/phy.h>
+> > >  #include <linux/platform_device.h>
+> > > +#include <linux/pm_runtime.h>
+> > >  #include <linux/regulator/consumer.h>
+> > >  #include <linux/usb/typec_mux.h>
+> > >
+> > > @@ -136,17 +137,15 @@ static int tca_blk_typec_switch_set(struct typec_switch_dev *sw,
+> > >  {
+> > >  	struct imx8mq_usb_phy *imx_phy = typec_switch_get_drvdata(sw);
+> > >  	struct tca_blk *tca = imx_phy->tca;
+> > > -	int ret;
+> > >
+> > >  	if (tca->orientation == orientation)
+> > >  		return 0;
+> > >
+> > > -	ret = clk_prepare_enable(imx_phy->clk);
+> > > -	if (ret)
+> > > -		return ret;
+> > > +	PM_RUNTIME_ACQUIRE(&imx_phy->phy->dev, pm);
+> > > +	if (PM_RUNTIME_ACQUIRE_ERR(&pm))
+> > > +		return -ENXIO;
+> > >
+> > >  	tca_blk_orientation_set(tca, orientation);
+> > > -	clk_disable_unprepare(imx_phy->clk);
+> > >
+> > >  	return 0;
+> > >  }
+> > > @@ -620,16 +619,6 @@ static int imx8mq_phy_power_on(struct phy *phy)
+> > >  	if (ret)
+> > >  		return ret;
+> > >
+> > > -	ret = clk_prepare_enable(imx_phy->clk);
+> > > -	if (ret)
+> > > -		return ret;
+> > > -
+> > > -	ret = clk_prepare_enable(imx_phy->alt_clk);
+> > > -	if (ret) {
+> > > -		clk_disable_unprepare(imx_phy->clk);
+> > > -		return ret;
+> > > -	}
+> > > -
+> > >  	/* Disable rx term override */
+> > >  	value = readl(imx_phy->base + PHY_CTRL6);
+> > >  	value &= ~PHY_CTRL6_RXTERM_OVERRIDE_SEL;
+> > > @@ -648,8 +637,6 @@ static int imx8mq_phy_power_off(struct phy *phy)
+> > >  	value |= PHY_CTRL6_RXTERM_OVERRIDE_SEL;
+> > >  	writel(value, imx_phy->base + PHY_CTRL6);
+> > >
+> > > -	clk_disable_unprepare(imx_phy->alt_clk);
+> > > -	clk_disable_unprepare(imx_phy->clk);
+> > >  	regulator_disable(imx_phy->vbus);
+> > >
+> > >  	return 0;
+> > > @@ -686,6 +673,7 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
+> > >  	struct device *dev = &pdev->dev;
+> > >  	struct imx8mq_usb_phy *imx_phy;
+> > >  	const struct phy_ops *phy_ops;
+> > > +	int ret;
+> > >
+> > >  	imx_phy = devm_kzalloc(dev, sizeof(*imx_phy), GFP_KERNEL);
+> > >  	if (!imx_phy)
+> > > @@ -693,13 +681,13 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
+> > >
+> > >  	platform_set_drvdata(pdev, imx_phy);
+> > >
+> > > -	imx_phy->clk = devm_clk_get(dev, "phy");
+> > > +	imx_phy->clk = devm_clk_get_enabled(dev, "phy");
+> > >  	if (IS_ERR(imx_phy->clk)) {
+> > >  		dev_err(dev, "failed to get imx8mq usb phy clock\n");
+> > >  		return PTR_ERR(imx_phy->clk);
+> > >  	}
+> > >
+> > > -	imx_phy->alt_clk = devm_clk_get_optional(dev, "alt");
+> > > +	imx_phy->alt_clk = devm_clk_get_optional_enabled(dev, "alt");
+> > >  	if (IS_ERR(imx_phy->alt_clk))
+> > >  		return dev_err_probe(dev, PTR_ERR(imx_phy->alt_clk),
+> > >  				    "Failed to get alt clk\n");
+> > > @@ -708,6 +696,11 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
+> > >  	if (IS_ERR(imx_phy->base))
+> > >  		return PTR_ERR(imx_phy->base);
+> > >
+> > > +	pm_runtime_set_active(dev);
+> > > +	ret = devm_pm_runtime_enable(dev);
+> > > +	if (ret)
+> > > +		return dev_err_probe(dev, ret, "failed to enable runtime PM\n");
+> > > +
+> >
+> > no place to call pm runtime suspend, so whole driver's life cycle runtime
+> > pm is on, is it expected?
+>
+> First, at the end of __driver_probe_device(), it will call pm_request_idle()
+> for the device. So runtime_suspend() will run.
+> Second, this platform device is the parent of created phy device, the runtime status
+> of phy device is managed by phy core, so this platform device will be managed by phy
+> core indirectly.
+>
+> Just found it's not suitable to call devm_pm_runtime_enable() here. Because
+>
+> pm_runtime_disable_action()
+>   pm_runtime_dont_use_autosuspend()
+>     update_autosuspend()
+>       rpm_idle()
+>
+> then after remove(), runtime suspend func will still be called. Clocks may be
+> disabled twice. I will use non-devm version pm_runtime_enable() in next version.
+
+This should be common problem. Your case should be typical one.
+try devm_pm_runtime_set_active_enabled().
+
+Frank
+
+>
+> Thanks,
+> Xu Yang
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
