@@ -4,97 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B02F3C44517
-	for <linux-phy@archiver.kernel.org>; Fri, 17 Jul 2026 07:26:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC22EC4451B
+	for <linux-phy@archiver.kernel.org>; Fri, 17 Jul 2026 07:33:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ql1jxu/iIntOYOACePbnHHgaKyLC5kmjdoJX6c6pEF4=; b=RWETUylqdzY1Ce
-	jO2eUvs1HxDL6xIOLvUPZSB8JsRltxuxJvIZmFykimsdlA/UUBPSvvlsxFTe1WEY07TavL1yQCVai
-	S59uENEKirtPpJKsyZTATJA44Fvo4mhpvqC3oKnN0awOAN8fbIuMSL9oQL3wmIcrnZ7u7s/ESkLtY
-	vnj3EZGSItmG3912UisqLUy0JiDFDn9MQqAw8ihVU1Nh5pzKTofg7W3eTr3hrT79kt8ggcLr3bueS
-	KFPQIS486gryQsYzRQAND4QlTw14PCcSKJJx0YHKNHP27Q7kA4+w41Y6xybGR91Ap6vraAfIjHkzT
-	8DDTf2AY7UTMAF0npATg==;
+	List-Owner; bh=rEq3ehlyzgzdVx6bMc5I5NovscYZwn5e19Al7aqTlzk=; b=hQUoBsDJdgyTlc
+	CJRsfiO9Jxuy1AEcBtUPg5XV+UnzqF2INtwyfUeS2Em7EP6bMxcMep+Y/8pDev4zTtCrAVpw1udJe
+	FlGG4oTgO8zZbv2s648A6qWwAGptJMwdT6mQcktMnAAaYTGhQ/zZgnpWoTsnNN+AfaFuW1SVugsP4
+	ACwZJJeNVlYmSzTfzkbGcVCHlJoMK7v72qKsubxKVhUfleDmgEQLCiRDoSLRj5sOi4kOrooRu4YvK
+	QW27LnNCEQmweoEdaJ9HpGNECAtoJUDDKZAYGI58NS8fV46hMqfpJmuU2qiVAYDFkzigz8KFFWshw
+	MPWGLJbKAJHa4GfI0QsQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wkcyH-00000001RMp-1b0c;
-	Fri, 17 Jul 2026 07:26:57 +0000
-Received: from smtpbguseast3.qq.com ([54.243.244.52])
+	id 1wkd4N-00000001T98-2FKo;
+	Fri, 17 Jul 2026 07:33:15 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wkcyE-00000001RE3-1CYu;
-	Fri, 17 Jul 2026 07:26:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=airkyi.com;
-	s=altu2504; t=1784273038;
-	bh=hfSDcA/VFf5O36XZ1jIbDeiIvlPOe5N0iYnQa5D5SVg=;
-	h=From:To:Subject:Date:Message-Id;
-	b=fYXEyAssbfHboxP5QdcQ6RM2gOmJnmbbZPGsTBD8SPtT5gd9wFAY0UGeMT42MDXjg
-	 ukdaXkyvlWNUDsUmO5b1iLRbYYMRG/QeFAQFz4251JelGmBGAojVXu38G0dj288PxV
-	 s4kIBlvRsQ0tUQ6lT1r3APLRPP5/q4mEgB0ZxaLk=
-X-QQ-mid: esmtpsz21t1784273037t8aa6d3dc
-X-QQ-Originating-IP: 0D5wUK+GE2YIGxT4HuuhDJ2D57emU1+Gs34WtC5gClQ=
-Received: from DESKTOP-8BT1A2O.localdomain ( [61.154.14.86])
-	by bizesmtp.qq.com (ESMTP) with 
-	id ; Fri, 17 Jul 2026 15:23:46 +0800 (CST)
-X-QQ-SSF: 0000000000000000000000000000000
-X-QQ-GoodBg: 0
-X-BIZMAIL-ID: 8582860570799389207
-From: Chaoyi Chen <kernel@airkyi.com>
-To: Andrzej Hajda <andrzej.hajda@intel.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Robert Foss <rfoss@kernel.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>,
-	Simona Vetter <simona@ffwll.ch>,
-	Sandy Huang <hjc@rock-chips.com>,
-	=?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Chaoyi Chen <chaoyi.chen@rock-chips.com>,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Cc: linux-kernel@vger.kernel.org,
-	dri-devel@lists.freedesktop.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-phy@lists.infradead.org
-Subject: [PATCH v3 4/5] drm/rockchip: cdn-dp: Support handle lane info without extcon
-Date: Fri, 17 Jul 2026 15:23:22 +0800
-Message-Id: <20260717072323.96-5-kernel@airkyi.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20260717072323.96-1-kernel@airkyi.com>
+	id 1wkd4L-00000001T7Q-2IqP
+	for linux-phy@lists.infradead.org;
+	Fri, 17 Jul 2026 07:33:13 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 2316F43935;
+	Fri, 17 Jul 2026 07:33:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ADB331F00A3A;
+	Fri, 17 Jul 2026 07:33:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1784273593;
+	bh=mdIEkZeC84PdXzOvpRfi+ovbwMjSaaPCZZFU6v1KpG8=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=K41Fx4v90rb/3ei7KVNAqSIiqvElhlSDsDEX5yvOGSfSRP9739es2B73N0Ea1uNhC
+	 39CBRR2JOTRCMYcRLYA29Vkr1ltV1gd7HRUOeAXCly9lqINZ++KvxJeRFPu3W3tP8u
+	 lK97tvyjePyk8ymk+bH1YrFjMDdf0C1MSrPNcgcUCU4hfiIGk8m4tf4j62cYVfUpet
+	 IM3ukhMgPhnRj44dowxuDRMYYChf9VBx6tNcNpanryC67Qexv9kdv50Iwn/rOwlDX7
+	 YR6ydCZgITi2O8arwPNKepeoWPROvuFl9iQWV4EyqS5+y1keMw6WHxV+iIvjOEBhBJ
+	 HJbHujV8mtYTQ==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v3 2/5] drm/bridge: aux: Add
+ drm_aux_bridge_register_from_node()
+To: "Chaoyi Chen" <kernel@airkyi.com>
+Cc: vkoul@kernel.org, neil.armstrong@linaro.org, dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, olteanv@gmail.com
+In-Reply-To: <20260717072323.96-3-kernel@airkyi.com>
 References: <20260717072323.96-1-kernel@airkyi.com>
-X-QQ-SENDSIZE: 520
-Feedback-ID: esmtpsz:airkyi.com:qybglogicsvrgz:qybglogicsvrgz6b-0
-X-QQ-XMAILINFO: MyirvGjpKb1j4ajW/h+h1TDId9lYcfgTEOsAICrRq9y1W44g/WIDA6L6
-	1JWZ0h4PwjzvF7e4k3ixjIK9UwIEJwaET8qNWs2PnJI8hQfasLNmNRXrpQycPjW3rv5xQ79
-	wt+8gbNqvaD6mdJptCUnIq2OEXaePOyrkb/k0b7Phsw6d70ijk7lbBUKfFGqgBDjF32iV4b
-	qyra8iqbYK7X8LxqFE0M19xYfhHKFTMCwGYJX8AVXtXOy0dwuVVPPBbHz9KdW/p0zc5HXRl
-	jZKIseDiWv27v26B+yZB6NrF8uteC1iepCxC0cIfh+w9fYUDpH8WmU1ZTpG/SNgvL6YKj/i
-	cWL9wInqWxMyqzznX/JMEgTW/RiD2tM0wgjL6i8LELLmGx+U43kMxyOuUUsDo84boQ61ujz
-	q1Zy5MLXCjSS3nzziQCUl12imVu3EKoXIxxb5wPPAHOQAReGMHuxha2poazmNdbtpIV2PPp
-	slyEdY9y8rw2SfehD0I2dYShbGaPT2k6T03HmT7r+S+gRvFO99QWLbeoopn7mRoWg6GCrlx
-	dBa4LXfe/fGZsMi8uJRfYgNk2RY28/6eONbtPt/ufC57K8pny3zG3hL+bheoIUl1gmRNCaw
-	CWQI1rNn8SXHwbn/+F7wESzmxW//eu7Tx6drkXJDkdrqAoGFdXe6wbACNf7B5h7JuL2jJjt
-	qZrXRQ6JiTUHIKytR55lC/ZstWZ1oKaGjoiBMNE+5sdEDW+taX9xVgzDUC3dQYcXK8Hiv5o
-	/OSRMq6bu7gRQnBNvpNBVjJFRYnM3GrvidG8FdyUS4wdFl5UMHra7FpUauzPEL0cWu3YNBB
-	ZywkpWayYDk+kW0RdDCHHGqfq2VJnyQiZK+l7/XaX0Nc71bUU7qwyVFPILMsaguABMZwoCf
-	8iOlMTqbi9wnOCpR3IHqv1sXLq0jsJfEbdi1Cb0/6dn5iCvqPVgY8ALM4U5DzDuM38uj4X5
-	98JR4Cjm19tvDfzNsdjFnu1VatTol4AB3LXhBGoZzxTJBCw5sSgekfvAnQASVeyips07zXK
-	ZkbmqqoDefXCroucMWu4TUw+a3LU9WeESH9O8nNg==
-X-QQ-XMRINFO: M/715EihBoGS47X28/vv4NpnfpeBLnr4Qg==
-X-QQ-RECHKSPAM: 0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260717_002654_823602_4B8AD0FE 
-X-CRM114-Status: GOOD (  14.96  )
+ <20260717072323.96-3-kernel@airkyi.com>
+Date: Fri, 17 Jul 2026 07:33:12 +0000
+Message-Id: <20260717073312.ADB331F00A3A@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,107 +63,47 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Reply-To: sashiko-reviews@lists.linux.dev
 MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-
-This patch add support for get PHY lane info without help of extcon.
-
-There is no extcon needed if the Type-C controller is present. In this
-case, the lane info can be get from PHY instead of extcon.
-
-The extcon device should still be supported if Type-C controller is
-not present.
-
-Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-Reviewed-by: Heiko Stuebner <heiko@sntech.de>
----
-
-(no changes since v1)
-
----
- drivers/gpu/drm/rockchip/cdn-dp-core.c | 25 +++++++++++++++++--------
- 1 file changed, 17 insertions(+), 8 deletions(-)
-
-diff --git a/drivers/gpu/drm/rockchip/cdn-dp-core.c b/drivers/gpu/drm/rockchip/cdn-dp-core.c
-index 190cce9530c8..74e1f5422a6e 100644
---- a/drivers/gpu/drm/rockchip/cdn-dp-core.c
-+++ b/drivers/gpu/drm/rockchip/cdn-dp-core.c
-@@ -157,6 +157,9 @@ static int cdn_dp_get_port_lanes(struct cdn_dp_port *port)
- 	int dptx;
- 	u8 lanes;
- 
-+	if (!edev)
-+		return phy_get_bus_width(port->phy);
-+
- 	dptx = extcon_get_state(edev, EXTCON_DISP_DP);
- 	if (dptx > 0) {
- 		extcon_get_property(edev, EXTCON_DISP_DP,
-@@ -220,7 +223,7 @@ static bool cdn_dp_check_sink_connection(struct cdn_dp_device *dp)
- 	 * some docks need more time to power up.
- 	 */
- 	while (time_before(jiffies, timeout)) {
--		if (!extcon_get_state(port->extcon, EXTCON_DISP_DP))
-+		if (port->extcon && !extcon_get_state(port->extcon, EXTCON_DISP_DP))
- 			return false;
- 
- 		if (!cdn_dp_get_sink_count(dp, &sink_count))
-@@ -386,11 +389,14 @@ static int cdn_dp_enable_phy(struct cdn_dp_device *dp, struct cdn_dp_port *port)
- 		goto err_power_on;
- 	}
- 
--	ret = extcon_get_property(port->extcon, EXTCON_DISP_DP,
--				  EXTCON_PROP_USB_TYPEC_POLARITY, &property);
--	if (ret) {
--		DRM_DEV_ERROR(dp->dev, "get property failed\n");
--		goto err_power_on;
-+	property.intval = 0;
-+	if (port->extcon) {
-+		ret = extcon_get_property(port->extcon, EXTCON_DISP_DP,
-+					  EXTCON_PROP_USB_TYPEC_POLARITY, &property);
-+		if (ret) {
-+			DRM_DEV_ERROR(dp->dev, "get property failed\n");
-+			goto err_power_on;
-+		}
- 	}
- 
- 	port->lanes = cdn_dp_get_port_lanes(port);
-@@ -1027,6 +1033,9 @@ static int cdn_dp_bind(struct device *dev, struct device *master, void *data)
- 	for (i = 0; i < dp->ports; i++) {
- 		port = dp->port[i];
- 
-+		if (!port->extcon)
-+			continue;
-+
- 		port->event_nb.notifier_call = cdn_dp_pd_event;
- 		ret = devm_extcon_register_notifier(dp->dev, port->extcon,
- 						    EXTCON_DISP_DP,
-@@ -1119,14 +1128,14 @@ static int cdn_dp_probe(struct platform_device *pdev)
- 		    PTR_ERR(phy) == -EPROBE_DEFER)
- 			return -EPROBE_DEFER;
- 
--		if (IS_ERR(extcon) || IS_ERR(phy))
-+		if (IS_ERR(phy) || PTR_ERR(extcon) != -ENODEV)
- 			continue;
- 
- 		port = devm_kzalloc(dev, sizeof(*port), GFP_KERNEL);
- 		if (!port)
- 			return -ENOMEM;
- 
--		port->extcon = extcon;
-+		port->extcon = IS_ERR(extcon) ? NULL : extcon;
- 		port->phy = phy;
- 		port->dp = dp;
- 		port->id = i;
--- 
-2.53.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIFVuYmFsYW5jZWQgYG9m
+X25vZGVfcHV0KClgIGluIGBkcm1fYXV4X2JyaWRnZV9yZWdpc3Rlcl9mcm9tX25vZGUoKWAgYW5k
+IGBkcm1fYXV4X2JyaWRnZV9yZWxlYXNlKClgIGNhdXNlcyBhIHJlZmVyZW5jZSBjb3VudCB1bmRl
+cmZsb3cgZm9yIHRoZSBwcm92aWRlZCBgZGV2aWNlX25vZGVgLgotLQoKLS0tIFBhdGNoIFsyXTog
+W1BBVENIIHYzIDIvNV0gZHJtL2JyaWRnZTogYXV4OiBBZGQgZHJtX2F1eF9icmlkZ2VfcmVnaXN0
+ZXJfZnJvbV9ub2RlKCkgLS0tCmNvbW1pdCBiMmI2Njk3MjIwMGJkYzRiNjU0MWNhNDFmOGFlNDRj
+MDhkODFhOTY0CkF1dGhvcjogQ2hhb3lpIENoZW4gPGNoYW95aS5jaGVuQHJvY2stY2hpcHMuY29t
+PgoKZHJtL2JyaWRnZTogYXV4OiBBZGQgZHJtX2F1eF9icmlkZ2VfcmVnaXN0ZXJfZnJvbV9ub2Rl
+KCkKClRoZSBkcm1fYXV4X2JyaWRnZV9yZWdpc3RlcigpIHVzZXMgdGhlIGRldmljZS0+b2Zfbm9k
+ZSBhcyB0aGUgYnJpZGdlLT5vZl9ub2RlLgpUaGlzIHBhdGNoIGFkZHMgZHJtX2F1eF9icmlkZ2Vf
+cmVnaXN0ZXJfZnJvbV9ub2RlKCkgdG8gYWxsb3cgc3BlY2lmeWluZyB0aGUKb2Zfbm9kZSBjb3Jy
+ZXNwb25kaW5nIHRvIHRoZSBicmlkZ2UuCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0v
+YnJpZGdlL2F1eC1icmlkZ2UuYyBiL2RyaXZlcnMvZ3B1L2RybS9icmlkZ2UvYXV4LWJyaWRnZS5j
+Cj4gaW5kZXggMWVkMjFhODcxM2JmZC4uMDZhMTQ2NmY0OWJkMiAxMDA2NDQKPiAtLS0gYS9kcml2
+ZXJzL2dwdS9kcm0vYnJpZGdlL2F1eC1icmlkZ2UuYwo+ICsrKyBiL2RyaXZlcnMvZ3B1L2RybS9i
+cmlkZ2UvYXV4LWJyaWRnZS5jClsgLi4uIF0KPiBAQCAtNjIsNyArNjMsMTAgQEAgaW50IGRybV9h
+dXhfYnJpZGdlX3JlZ2lzdGVyKHN0cnVjdCBkZXZpY2UgKnBhcmVudCkKPiAgCWFkZXYtPmRldi5w
+YXJlbnQgPSBwYXJlbnQ7Cj4gIAlhZGV2LT5kZXYucmVsZWFzZSA9IGRybV9hdXhfYnJpZGdlX3Jl
+bGVhc2U7Cj4gIAo+IC0JZGV2aWNlX3NldF9vZl9ub2RlX2Zyb21fZGV2KCZhZGV2LT5kZXYsIHBh
+cmVudCk7Cj4gKwlpZiAobnApCj4gKwkJZGV2aWNlX3NldF9ub2RlKCZhZGV2LT5kZXYsIG9mX2Z3
+bm9kZV9oYW5kbGUobnApKTsKCltTZXZlcml0eTogSGlnaF0KRG9lcyB0aGlzIGNhdXNlIGEgcmVm
+ZXJlbmNlIGNvdW50IHVuZGVyZmxvdyBmb3IgdGhlIGRldmljZSBub2RlPwoKVW5saWtlIGRldmlj
+ZV9zZXRfb2Zfbm9kZV9mcm9tX2RldigpIHdoaWNoIHNhZmVseSBhY3F1aXJlcyBhIHJlZmVyZW5j
+ZSB0byB0aGUKb2Zfbm9kZSwgZGV2aWNlX3NldF9ub2RlKCkganVzdCBhc3NpZ25zIHRoZSBwb2lu
+dGVyIHdpdGhvdXQgY2FsbGluZwpvZl9ub2RlX2dldCgpLgoKSWYgYXV4aWxpYXJ5X2RldmljZV9p
+bml0KCkgZmFpbHMsIHRoZSBlcnJvciBwYXRoIGJlbG93IHVuY29uZGl0aW9uYWxseSBjYWxscwpv
+Zl9ub2RlX3B1dChhZGV2LT5kZXYub2Zfbm9kZSkuIFNpbWlsYXJseSwgdGhlIHByZS1leGlzdGlu
+Zwpkcm1fYXV4X2JyaWRnZV9yZWxlYXNlKCkgY2FsbGJhY2sgZHJvcHMgYSByZWZlcmVuY2Ugd2hl
+biB0aGUgZGV2aWNlIGlzCmRlc3Ryb3llZC4KCkNvdWxkIHRoaXMgY2F1c2Ugb2Zfbm9kZV9wdXQo
+KSB0byBkcm9wIGEgcmVmZXJlbmNlIHRoYXQgd2FzIG5ldmVyIGFjcXVpcmVkPwoKPiArCWVsc2UK
+PiArCQlkZXZpY2Vfc2V0X29mX25vZGVfZnJvbV9kZXYoJmFkZXYtPmRldiwgcGFyZW50KTsKPiAg
+Cj4gIAlyZXQgPSBhdXhpbGlhcnlfZGV2aWNlX2luaXQoYWRldik7Cj4gIAlpZiAocmV0KSB7Cgot
+LSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIw
+MjYwNzE3MDcyMzIzLjk2LTEta2VybmVsQGFpcmt5aS5jb20/cGFydD0yCgotLSAKbGludXgtcGh5
+IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
