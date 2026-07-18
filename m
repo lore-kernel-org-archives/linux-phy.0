@@ -4,138 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D03B3C4451B
-	for <linux-phy@archiver.kernel.org>; Sat, 18 Jul 2026 01:04:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 320FBC44515
+	for <linux-phy@archiver.kernel.org>; Sat, 18 Jul 2026 02:38:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DgAf1Yeh9lqnzikvLyLaj7IT0tN8L551svkF91Og+ig=; b=pIWqXl/jZBo02l
-	5REnHMEK4YeGN1zHOHBuBmXsBxVxVTsXllw/NSN6zMNXLGpu8hzUCCeTo1jgfR2MtU2XjOy3XkB6G
-	dQh/2+y6deoE22dSkYqDUZo/jAPh6lf0B5hkuUlAzbcG5Ck/op6IrmeGgyu7bywSjcd+McaanGvSj
-	OsZ0OejmaabXIfxBajmAiFj0TXGlrx3eu2Ofhvc28oVwZhs6S9pDew8KUyjxmLFexC3SqvCklezQA
-	0E0n5A/D4Mz+HPZEvtG+MFdCdzpvo/nkyH7c7xtJ3RPpW9PrgQy+NB14tzaXCPV1TVv6igMQUGo5p
-	oRegj2DSoHp+g/JytPHA==;
+	List-Owner; bh=fFwhS7ZlgSY0TC3B8DdpbVTwavpSzPydtXNjhAl7G4s=; b=WL4Fg1e7lEycPY
+	HSch58zwGpZ7tcx0I8sT/ZU6StmgI1Jwo/JbFqFfsa5Tg66k/f57zgJJhrkrNU8Xo8/i07ktvCe9V
+	INA1dPYeNTXs3xJzwce47EUKl4v/qcvRNWy3KIvKIauJcvHRzLMY83RU8dZ0a5usgLvXEb5Zi7Naz
+	L7eaVFoXMSQr0tZIjIMKRUuSWBKXx5ZbJ4jvyl8OVPwkgDaV8iXcWf/58+9/JFAOTQrlB2eSszj1B
+	QgRXuBkkNLxmCO/417AbXzyzO7hJC5egaEXoiC2xAALr1KXFRHAJnwlJbYH65tg/8ftlsOO1//QRy
+	Lk9kuigiruUCCnvLtfRg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wktTy-00000003Tgo-3zR9;
-	Sat, 18 Jul 2026 01:04:46 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wkuwe-00000003YqC-2CUB;
+	Sat, 18 Jul 2026 02:38:28 +0000
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wktTw-00000003TgP-2Qnb
+	id 1wkuwb-00000003Yp7-33rp
 	for linux-phy@lists.infradead.org;
-	Sat, 18 Jul 2026 01:04:46 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66HNELmR3023738
-	for <linux-phy@lists.infradead.org>; Sat, 18 Jul 2026 01:04:42 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=rQLRlSB7PGWIgFFnVYd8T2nZ
-	Olfy4NygBjlMFmkKEA0=; b=bRvPpj/Zqt7bPVpIhmwtZY+AmMaBPhkRFEIGJj1F
-	FWXqHrwjAfLU2X7RqeQpxQCo+/4PUqHomjzwzcbovlUj8QVzhJIitso+LhSTX/OF
-	SgSeuLDBeEIlWqsOJyNEl7JmK0bxinazW9NjddUt3ccEMW1jWPPhdfMMTcJi9KIu
-	/w2/wwnmM4HaGfNzaEZ4hJSwhXgzroQLU+NDp4Igvv8bgZbPkeL1x1+dSJ38noZS
-	MQATaGwwTQ/YhR8TwaJw+uvw0qxIjYpw8nHxYfryg+t0i7ZPg7DIVY28YiQYO+UK
-	vtpx/kQf7bVMI0TmzK02bfhoLyjHY9//3nKbrItkg8kw0A==
-Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ffrp8sdh9-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Sat, 18 Jul 2026 01:04:42 +0000 (GMT)
-Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-cb5ea36f969so346487a12.2
-        for <linux-phy@lists.infradead.org>; Fri, 17 Jul 2026 18:04:42 -0700 (PDT)
+	Sat, 18 Jul 2026 02:38:27 +0000
+Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-493ce08a75bso34565905e9.1
+        for <linux-phy@lists.infradead.org>; Fri, 17 Jul 2026 19:38:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1784336682; x=1784941482; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=rQLRlSB7PGWIgFFnVYd8T2nZOlfy4NygBjlMFmkKEA0=;
-        b=Bt9LsFfxFEw9fXMg/BeGDu0Bew/TMSOfjftgSP0n2nInumNYzyFw2o/euMIGojkw9U
-         FBuAiimhR0za5DY/lhK2RstPwY+o12lVbh3iUFOVhjSZcMH80OF3YK3b1GO0Ze32yKYj
-         4TJCRpAwgN8KdBt2gn9Ez83DYYZw6RcXjTc/2ChZsX0SxF20hFR75PfzY0QNf2ohkAi9
-         A00tw8yFBzFCR3WwlJQjJvcX088g5pNoiXDFrkLYGXBWPrljhkDKvECH4ajdX5OcaeSz
-         gG7VaqqX1XYkvxUWPZn5uXd2qy/OEMqXxNvjPwgSo3wJuKPW/9zyJzULGOEkiGgXPbMX
-         k5lA==
+        d=linaro.org; s=google; t=1784342303; x=1784947103; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :content-type:mime-version:subject:date:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=C1zdgJ/E2ohNwZS2QQgpks1mLElw1NRwGvhu99duCc8=;
+        b=ijFdrCydFvfz4JpkM7ZBbv5ZkCfcGKM8jT7qqOp8dD9mMlVWzfDM6J/paCyysYa2f/
+         B6mGI746FWlEHCtG3kPicIfBMkje4cpqPqeQKOE4MgCTycK9HyqGb4T24tNCxwORSwQD
+         ZmTiI/3eZqKIjFysFHRdJ60Kc+kBqQeZZLjXaNECVVaKHj31030vIehsB9o5jHs9keq7
+         w8ikCSbgN1tVjkVVjhwqdIxMOB+NzmY4rHXhKGu+UgP30DpWKl93gYKagVCNonXFaW6o
+         qc2t9k0rAsz8GPA0N/JPqZOW7DHoCdgnZZvIsKQ+fOYHWIHpv0SSZSENm+ESA+KbNas2
+         MsnQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784336682; x=1784941482;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:x-gm-gg
+        d=1e100.net; s=20251104; t=1784342303; x=1784947103;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=rQLRlSB7PGWIgFFnVYd8T2nZOlfy4NygBjlMFmkKEA0=;
-        b=PzzjAh+EufdhAsTjCi3uWtVu/WcgxhWE7kiZSv4dlYlvKllixjqKxfJaUiy3Rcn1vW
-         hREgX8UQZati90CMw5eWOp7VOmnRambwjh9uTMavTmIM9x2ar8JhyHztyeGBrYYqzBRU
-         VVWjklvseZGPbbNlvVyujwgjKapHGvkCJVh4dz9WsK4gOXfw5sPiERko5kbME1otXOmA
-         Zawco5EajxyZJurOpPUwqlhgmbKGQp46jhA4MHSQvtf2s6vMuydu+jx8oaw7h6xAS3gy
-         6iZ6rD89OrOpnUdc8HNQSjKcGaMtWMQ+5chwwPWJMIHYmtC4+JJznZhLWdPUUmZFA3OY
-         piBQ==
-X-Forwarded-Encrypted: i=1; AHgh+RqMK2jiSMizGewtqlBMVmczHNO1UdZzfs2AlIbaRf97teEgdGUWz9CpElNP/rmFN3YL1gOeBjCa4gw=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxENsVmm1U63hip3HqJPCnwWaKOy5UcxJBYLeKaQulqQbtXIEEV
-	M9hYLNUhQnl84Qx8BraTFO7bZdAgFWipDuGCCN/NixM0dyK+Z1CVmcButKnyxJYazUhVTRNEXga
-	y0RdbDbmxqrHxT4GNpp7YNBC502TV1dtH61YzT6pFytR2DGAJY6x5sqgCYXPa9m32pq3X
-X-Gm-Gg: AfdE7cl0hEUyKfootephQU7Twd9e9mQHfLNHx3RlDMmh9jO8PIZ20aZZCfZZCVeJPUn
-	2Fv7w6CjScL421iboqGbLGXLg1p+c45d11oGrbjgkKK7tNzmuz/8DogwhTPKVhdiDTcKmngC5TS
-	2i1CTxxTyYWjCfHIUPb7TIV3dOKrR4z2ptkFuT+iPA6w+4HPEYDEUy01HOra4hF/pTDTYA/Ym0e
-	TG4zifIrBQbzLh7wKg2OL192pqEelXgAmO9MVyXHg0f82bzfDScCdiBtkp9YO6i7WQF6yOpJw5J
-	z5uMGYnI8nKjGTa0SCmJCvs/0Di+JW0q8raJlEXM2udZuVRyWYR+Wz7LynhLcAqQqnrO/sNuRPh
-	RyXfmpt3ndn7iVmSLPyfM3Pzk+F32438L2Z9mYa4jX9XNRxFhXxivC9dB
-X-Received: by 2002:a17:90a:d605:b0:37f:9ce3:ca95 with SMTP id 98e67ed59e1d1-38e4b54436bmr5104029a91.30.1784336681734;
-        Fri, 17 Jul 2026 18:04:41 -0700 (PDT)
-X-Received: by 2002:a17:90a:d605:b0:37f:9ce3:ca95 with SMTP id 98e67ed59e1d1-38e4b54436bmr5103968a91.30.1784336681100;
-        Fri, 17 Jul 2026 18:04:41 -0700 (PDT)
-Received: from hu-mattleun-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3142a1de301sm11476274eec.24.2026.07.17.18.04.39
+        bh=C1zdgJ/E2ohNwZS2QQgpks1mLElw1NRwGvhu99duCc8=;
+        b=AzJMbqR+AkICiCuKAHPZrlUrtpucu4UAFHcsSOmLKqaERT6UmGZK0v0Cqj6/NYIxTn
+         R2iyAUKi3yIEdK0WHexB55FdfLK/KmUsmcc6AxopCDpHfybiaPFM2M0caz+B6CISET4j
+         VLuH/XsAYbd1+ghvnkPHIlOwEDcCI9UpLH5LCKxZKe7rQw805UZa9LwVMJ15iHvZ69hV
+         ICtgfQhCpxVlUgZIDU7bi3/SOJRtU45hnCrqM+Ui8IbCUjZIZxUqwPwiWdX+DLGj7bV7
+         6mwikdOYCIPZLHWncKgUqMnQfUY9r3Kci8e+q7leiilRGHX53Lf2U5uC4DJp6tOpQmwX
+         v3qA==
+X-Forwarded-Encrypted: i=1; AHgh+RrzOdhX0JOkaRHaa09p54vvC4uJ0U7/RQrNkCEVGvWAfDMKfs0yADeQKwemg6m/upwdFUdBCPeMs5A=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy0/9RTcos1zl985pTztBsUvooQ07hppdl2hmw5OYjzyE8KML8n
+	jfZH3u8uflpekuwc2uD/ByMu5x77JjAVYl/1GPPjy68qQ3JX/047tiR3xhbnlESjRxo=
+X-Gm-Gg: AfdE7clFuAkRkTwhIWJw7d9YJhlW1SkssD5mUoaWF6b2tt90kGaDC/0tytP79ewzRmW
+	1G4xsorphnrWx42he8DNczaIXXVg9EJKarsuai9isKovpmRm2Ze0D+G4wZdKbE9KQwHz8lNofCE
+	Uo5tgrY+AP8JiVZljvaLW4vsSIDIuM6WEJOFpun6oaXUbkUGzifLhfYzCjfNx3orDt3h5B3FB1v
+	snwFq3hLFiMeqSJc0+rhB4mkoIkD7ajTu7NLgkzAfzvzrAPbYcyN2Wc+ZbB7N7iSOX07o5D+6Lo
+	6TD8U7mqIpVi6mVsVQ9ciMEDwb8dNM40bxNhB4uDbd5Q5S/BWQiiYnOQ0H2LNm/FasN42YyXV4+
+	YA8KSrsDqaOeXKT4fX/C3FMD/I7Px06Q/yLCLhRHhDZjOMYgmn8CiSGsgML2Ep0R5FYCNqh2DtB
+	HgYvTTeFis/XSx
+X-Received: by 2002:a05:600c:4585:b0:492:45a0:dcef with SMTP id 5b1f17b1804b1-4954a3eeb63mr57220575e9.5.1784342303493;
+        Fri, 17 Jul 2026 19:38:23 -0700 (PDT)
+Received: from [192.168.0.35] ([109.76.30.128])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-49548e14e1bsm67524235e9.2.2026.07.17.19.38.22
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 17 Jul 2026 18:04:40 -0700 (PDT)
-Date: Fri, 17 Jul 2026 18:04:37 -0700
-From: Matthew Leung <matthew.leung@oss.qualcomm.com>
-To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-Subject: Re: [PATCH v4 0/4] phy: qcom: qmp-pcie: Add PCIe PHY support for Hawi
-Message-ID: <alrRJQF2JcThIh4k@hu-mattleun-lv.qualcomm.com>
-References: <20260707-hawi-phy-pcie-v4-0-8d9cc6324947@oss.qualcomm.com>
+        Fri, 17 Jul 2026 19:38:22 -0700 (PDT)
+From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+Date: Sat, 18 Jul 2026 03:38:17 +0100
+Subject: [PATCH v10 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260707-hawi-phy-pcie-v4-0-8d9cc6324947@oss.qualcomm.com>
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzE4MDAwNyBTYWx0ZWRfX/3vO+/kza0E3
- OSObajBEYENI65eFiIsvspMsBZOfjvDYn4P7ATPNu+TdYxH2J/qKpJueCWJPyp2JZ8AtHkIwcHJ
- TCnDfHCCiPPrINIz30L//NC5Dv4IT/U=
-X-Proofpoint-ORIG-GUID: b7DIhJDVTKOYyrAy4DiAw6zjT3G19qRg
-X-Proofpoint-GUID: b7DIhJDVTKOYyrAy4DiAw6zjT3G19qRg
-X-Authority-Analysis: v=2.4 cv=fMYJG5ae c=1 sm=1 tr=0 ts=6a5ad12a cx=c_pps
- a=Oh5Dbbf/trHjhBongsHeRQ==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=kj9zAlcOel0A:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
- a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=bC-a23v3AAAA:8 a=KKAkSRfTAAAA:8
- a=JfrnYn6hAAAA:8 a=jj8kymYpkfAu7g8d2q8A:9 a=CjuIK1q_8ugA:10
- a=_Vgx9l1VpLgwpw_dHYaR:22 a=FO4_E8m0qiDe52t0p3_H:22 a=cvBusfyB2V15izCimMoJ:22
- a=1CNFftbPRP8L7MoqJWF3:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzE4MDAwNyBTYWx0ZWRfX7VE5fRo3zy9x
- 2CL+jWLxRTyi/U3XxRzdBTg80Cg46nLyeT1LgFwJKv/L59RHbSCmhr3cNMA1yEmC3ym8mHTH/wX
- JYZ9Q0MXFEQ4oFKd2lL0pVPgjYhaoMxL2yaEZvzUMPZ2vnK3bP3r6GOTq8k6wmkruL1G9G8bD14
- IyJ3rVb3KnRBho6zTXASTTxaJW6TOAAXOQenLcPkEmCmmT3tYts/0JgkEOC/Pg+gkk3OWIpD2X9
- WhPx/jZre54ijibNAt7bptgolfpsQZmacm67maMuzrO5c+BSqPel/1k2+cpAXgA3pprshoTRnS7
- 0nRK7kSVSaz2rpERYBcmYoKJ6vCHUp6svKjuY2679C2A5yC3dnCOpYGFVHXWrKaJkz/L2tMy84S
- nwctGuf+FiUp0q82iL9riWtCngUyBo6DaV3yrmYRq3cdawiaJsq4QFX1STh7XfuEMHF2leBahVq
- 4MNPVamKIobA2zZLvOQ==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-07-17_07,2026-07-17_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 malwarescore=0 priorityscore=1501 suspectscore=0
- lowpriorityscore=0 bulkscore=0 spamscore=0 adultscore=0 clxscore=1015
- phishscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
- definitions=main-2607180007
+Message-Id: <20260718-x1e-csi2-phy-v10-1-5720a7888953@linaro.org>
+References: <20260718-x1e-csi2-phy-v10-0-5720a7888953@linaro.org>
+In-Reply-To: <20260718-x1e-csi2-phy-v10-0-5720a7888953@linaro.org>
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Bryan O'Donoghue <bod@kernel.org>, 
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>, 
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=6162;
+ i=bryan.odonoghue@linaro.org; h=from:subject:message-id;
+ bh=4CejNBxwYr6qK2LLBsKy77yO7TG9DBAT6iXNJvDrqBI=;
+ b=owEBbQKS/ZANAwAKASJxO7Ohjcg6AcsmYgBqWuccR4/99Ti/mSZWTs9hwp+xMB6opOoBdZDY1
+ BkyiC+f8g6JAjMEAAEKAB0WIQTmk/sqq6Nt4Rerb7QicTuzoY3IOgUCalrnHAAKCRAicTuzoY3I
+ OqdrD/9IGCUSzAzY3e+PzlnyOyJDkZmAI0VPNiJV5bmz9O2udJuaYDUBVTlDitGO4agnKlaP9iy
+ FGKA+56SBdoNldIw3Eonob4beh678TAK/DdHkjhVqnmU9TMb6KiCP87/mg+MQZC6UnwvpAM7mou
+ /dujngstFjE81sctbqs8BAkLRJWGv/UIeyim2UKVLdwQbVyhzjejCECa+r+V6GlOD7fpo4nYOvh
+ 3BL/CrSXaU865RktVcQYzwd0VbCabMJsgjfl+1s0iSnj728bALSS/MufTTxUG6IbI/EvN9DYZ/y
+ nHi/f0dxDeMin8c3IaHxxgeupnajcmFJ+YqQsxRdRO2qqNeWWi4EGOQvJ+ecvzKVz5v2+AOmewp
+ kUHzniHd8UxhDEZCbH1LJXnS0qNZH8vLWHBD2j+kY595wMB99OGWoVkV1EnJBncli0wM+q88/j8
+ YLk7183Zox8GTy+KKyRGiG33PA9jV9O+AIpQ+6Ln+ckdx4aweRIq0TifDIdJ8cS6Ktc8iraEvRa
+ LxhqqdGYjK3hGHhNd3Bpz4T+WEStAx/KzMaNvZaKHLX27f7/lfkED2YTuLSJoFmwgaiR0ojAcXW
+ aOOaTOegULeT+Azv56loxZfhHyRp7+ryzSoC83iuxMjqrrBbjnwMrO2eByM1lQ5oeWEF8dOM2U4
+ h8Hvnf3+CeMWl1w==
+X-Developer-Key: i=bryan.odonoghue@linaro.org; a=openpgp;
+ fpr=E693FB2AABA36DE117AB6FB422713BB3A18DC83A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260717_180444_630152_C2442587 
-X-CRM114-Status: GOOD (  22.74  )
+X-CRM114-CacheID: sfid-20260717_193825_822548_218B97A6 
+X-CRM114-Status: GOOD (  11.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -152,90 +124,224 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Gentle ping. All patches have Reviewed-by tags. Please let me know if anything is needed.
+Add a base schema for the MIPI CSI2 PHYs on Qualcomm SoCs. This PHY
+supports both DPHY and CPHY operation. A special mode of DPHY operation -
+called variously split-mode or combo-mode also allows for two sensors to be
+connected to one PHY.
 
-On Tue, Jul 07, 2026 at 08:32:45PM +0000, Matthew Leung wrote:
-> This series adds QMP PCIe PHY support for the Qualcomm Hawi SoC. The Hawi
-> platform features two PCIe PHY configurations: Gen3 x2 and Gen4 x1.
-> 
-> The Gen3 x2 PHY uses v10 register definitions, while the Gen4 x1 PHY uses
-> v10.60 register definitions.
-> 
-> The series adds:
-> - device tree bindings
-> - v10 register offset headers
-> - v10.60 register offset headers
-> - driver support with PHY initialization tables for both configurations
-> 
-> Overlap:
-> The series has overlap with "phy: qcom: Introduce USB support for Hawi"
-> by Ronak Raheja (see link [1]). Both patch series introduce a subset of
-> v10 registers (this series for PCIe and Ronak's for USB). I have
-> coordinated with Ronak regarding the overlap, and we can update the
-> series to resolve any overlap based on the order of merging.
-> 
-> Link: https://lore.kernel.org/all/20260508213234.4643-1-ronak.raheja@oss.qualcomm.com/ [1]
-> 
-> Signed-off-by: Matthew Leung <matthew.leung@oss.qualcomm.com>
-> ---
-> Changes in v4:
-> - Rebased onto v7.2-rc2
-> - Link to v3: https://patch.msgid.link/20260618-hawi-phy-pcie-v3-0-3fa42ca45ea4@oss.qualcomm.com
-> 
-> Changes in v3:
-> - Squashed v10 register offsets into a single change
-> - Squashed v10.60 register offsets into a single change
-> - Removed USB mentions from header comments; offsets are PCIe-specific
-> - Reused the tx offset for the v10.60 combined txrx module instead of
->   introducing a separate txrx offset
-> - Link to v2: https://patch.msgid.link/20260604-hawi-phy-pcie-v2-0-be908d3560db@oss.qualcomm.com
-> 
-> Changes in v2:
-> - Rebased onto v7.1-rc6
-> - Patch 1: no change (Reviewed-by carried forward)
-> - Patch 9: rename QPHY_PCIE_V10_60_PCS_PCS_TX_RX_CONFIG to
->   QPHY_PCIE_V10_60_PCS_TX_RX_CONFIG to be consistent with the
->   naming convention used in previous pcs-pcie headers
-> - Patch 10: update usage of renamed macro
-> - Link to v1: https://patch.msgid.link/20260508-hawi-phy-pcie-v1-0-237b894353fc@oss.qualcomm.com
-> 
-> To: Vinod Koul <vkoul@kernel.org>
-> To: Neil Armstrong <neil.armstrong@linaro.org>
-> To: Rob Herring <robh@kernel.org>
-> To: Krzysztof Kozlowski <krzk+dt@kernel.org>
-> To: Conor Dooley <conor+dt@kernel.org>
-> Cc: linux-arm-msm@vger.kernel.org
-> Cc: linux-phy@lists.infradead.org
-> Cc: devicetree@vger.kernel.org
-> Cc: linux-kernel@vger.kernel.org
-> 
-> ---
-> Matthew Leung (4):
->       dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add Hawi compatibles
->       phy: qcom-qmp: Add v10 register offsets
->       phy: qcom-qmp: Add v10.60 register offsets
->       phy: qcom: qmp-pcie: Add QMP PCIe PHY support for Hawi
-> 
->  .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml   |   6 +
->  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c           | 375 +++++++++++++++++++++
->  drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v10.h   |  18 +
->  .../phy/qualcomm/phy-qcom-qmp-pcs-pcie-v10_60.h    |  26 ++
->  drivers/phy/qualcomm/phy-qcom-qmp-pcs-v10.h        |  22 ++
->  drivers/phy/qualcomm/phy-qcom-qmp-pcs-v10_60.h     |  23 ++
->  .../phy/qualcomm/phy-qcom-qmp-qserdes-com-v10.h    |  49 +++
->  .../phy/qualcomm/phy-qcom-qmp-qserdes-com-v10_60.h |  55 +++
->  .../phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v10.h   |  47 +++
->  .../qualcomm/phy-qcom-qmp-qserdes-txrx-v10_60.h    | 109 ++++++
->  drivers/phy/qualcomm/phy-qcom-qmp.h                |  10 +
->  11 files changed, 740 insertions(+)
-> ---
-> base-commit: 8cdeaa50eae8dad34885515f62559ee83e7e8dda
-> change-id: 20260506-hawi-phy-pcie-283933b4113e
-> 
-> Best regards,
-> --  
-> Matthew Leung <matthew.leung@oss.qualcomm.com>
-> 
+The submitted binding here describes the DPHY modes of operation only. CPHY
+is left to future work.
+
+Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+---
+ .../bindings/phy/qcom,x1e80100-csi2-phy.yaml       | 195 +++++++++++++++++++++
+ 1 file changed, 195 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
+new file mode 100644
+index 0000000000000..880fe602945cb
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
+@@ -0,0 +1,195 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/qcom,x1e80100-csi2-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Qualcomm X1E80100 SoC CSI2 PHY
++
++maintainers:
++  - Bryan O'Donoghue <bod@kernel.org>
++
++description:
++  Qualcomm MIPI CSI2 C-PHY/D-PHY combination PHY. Connects MIPI CSI2 sensors
++  to Qualcomm's Camera CSI Decoder. The PHY supports both C-PHY and D-PHY
++  modes.
++
++properties:
++  compatible:
++    const: qcom,x1e80100-csi2-phy
++
++  reg:
++    maxItems: 1
++
++  "#phy-cells":
++    const: 1
++    description:
++      The single cell specifies the PHY operating mode.
++
++  clocks:
++    maxItems: 3
++
++  clock-names:
++    items:
++      - const: core
++      - const: timer
++      - const: ahb
++
++  interrupts:
++    maxItems: 1
++
++  operating-points-v2: true
++
++  opp-table:
++    type: object
++
++  power-domains:
++    items:
++      - description: Titan Top GDSC - Titan ISP Block, Global Distributed Switch Controller.
++      - description: MMCX voltage rail
++      - description: MXC or MXA voltage rail
++
++  power-domain-names:
++    items:
++      - const: top
++      - const: mmcx
++      - const: mx
++
++  vdda-0p9-supply:
++    description: Phandle to a 0.9V regulator supply to a PHY.
++
++  vdda-1p2-supply:
++    description: Phandle to 1.2V regulator supply to a PHY.
++
++  ports:
++    $ref: /schemas/graph.yaml#/properties/ports
++
++    properties:
++      port@0:
++        $ref: /schemas/graph.yaml#/$defs/port-base
++        description:
++          Sensor input. Always present. A single sensor is described by a
++          single endpoint with one to four data lanes. DPHY split mode,
++          where two independent sensors share the same PHY, is described
++          by two endpoints; endpoint@0 with exactly two data-lanes and
++          endpoint@1 with exactly one data-lane.
++        unevaluatedProperties: false
++
++        patternProperties:
++          "^endpoint(@[0-9a-f]+)?$":
++            $ref: /schemas/media/video-interfaces.yaml#
++            unevaluatedProperties: false
++            properties:
++              data-lanes:
++                minItems: 1
++                maxItems: 4
++
++            required:
++              - data-lanes
++              - remote-endpoint
++
++        allOf:
++          - if:
++              required:
++                - endpoint@1
++            then:
++              properties:
++                endpoint@0:
++                  properties:
++                    data-lanes:
++                      minItems: 2
++                      maxItems: 2
++                endpoint@1:
++                  properties:
++                    data-lanes:
++                      maxItems: 1
++              required:
++                - endpoint@0
++
++      port@1:
++        $ref: /schemas/graph.yaml#/properties/port
++        description: Output to the CAMSS CSID controller.
++
++    required:
++      - port@0
++      - port@1
++
++required:
++  - compatible
++  - reg
++  - "#phy-cells"
++  - clocks
++  - clock-names
++  - interrupts
++  - operating-points-v2
++  - power-domains
++  - power-domain-names
++  - vdda-0p9-supply
++  - vdda-1p2-supply
++  - ports
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/clock/qcom,x1e80100-camcc.h>
++    #include <dt-bindings/clock/qcom,x1e80100-gcc.h>
++    #include <dt-bindings/power/qcom,rpmhpd.h>
++
++    phy@ace4000 {
++        compatible = "qcom,x1e80100-csi2-phy";
++        reg = <0x0ace4000 0x2000>;
++        #phy-cells = <1>;
++
++        clocks = <&camcc CAM_CC_CSIPHY0_CLK>,
++                 <&camcc CAM_CC_CSI0PHYTIMER_CLK>,
++                 <&camcc CAM_CC_CORE_AHB_CLK>;
++        clock-names = "core",
++                      "timer",
++                      "ahb";
++
++        interrupts = <GIC_SPI 477 IRQ_TYPE_EDGE_RISING>;
++
++        operating-points-v2 = <&csiphy_opp_table>;
++
++        power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>,
++                        <&rpmhpd RPMHPD_MMCX>,
++                        <&rpmhpd RPMHPD_MX>;
++        power-domain-names = "top",
++                             "mmcx",
++                             "mx";
++
++        vdda-0p9-supply = <&vreg_l2c_0p9>;
++        vdda-1p2-supply = <&vreg_l1c_1p2>;
++
++        ports {
++            #address-cells = <1>;
++            #size-cells = <0>;
++
++            port@0 {
++                reg = <0>;
++                csiphy0_in: endpoint {
++                    data-lanes = <0 1 2 3>;
++                    remote-endpoint = <&sensor_out>;
++                };
++            };
++
++            port@1 {
++                reg = <1>;
++                csiphy0_out: endpoint {
++                    remote-endpoint = <&csid_in>;
++                };
++            };
++        };
++
++        csiphy_opp_table: opp-table {
++            compatible = "operating-points-v2";
++
++            opp-300000000 {
++                opp-hz = /bits/ 64 <300000000>;
++                required-opps = <&rpmhpd_opp_low_svs_d1>,
++                                <&rpmhpd_opp_low_svs_d1>;
++            };
++        };
++    };
+
+-- 
+2.54.0
+
 
 -- 
 linux-phy mailing list
