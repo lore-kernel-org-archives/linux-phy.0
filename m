@@ -4,76 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D48CBC4451B
-	for <linux-phy@archiver.kernel.org>; Sat, 18 Jul 2026 07:18:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97DAAC4451B
+	for <linux-phy@archiver.kernel.org>; Sat, 18 Jul 2026 07:25:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VcMcwnINRqFu3nv2UjF2FMyvj3Zn/4OBbTxIGMAGI94=; b=OGVE/NIvcgG3ka
-	P+qakGv+WBsjpmvRFQ9sARItS/a03L0g+ZMUNUX05nkiLchPCTg3hAiUxs+yw4U+XPbAeadIyXckD
-	pbjWbLd07SM2xOj+b1zkLGrbSIYovhvah/a3M4cecXjNjfHPj37xYlPabQAy9v3ldLBF4tU3pIzGT
-	5HYcNCPNyXAysbmCH+maNgS8EnF6SgL6q7PIVXtBchL75mXwppriSiDA4cDODrMNjKr3d/TX2i6T8
-	/bEiKt8JviUM6dTccl631vHWxgaNbGinZvhNCGMfXxi9JBb7v8ZNaQcTCgT+0bOoG4bE3hAcix+yo
-	auUxjh+YEjHdyivoAqGw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=w27c40E4x7Omr24V/80yeDoKvWMhT+IOZzh4yp1nbrE=; b=rpGFB5UgPBvLrB
+	85Q1EyVs+qFne4PicjxGKxqtZMEcND26+cYayjcEvdyWhuTbOtVAKM3tKUSEPRDWJm/CsyMjlbj/g
+	Q3xiXyELfcoQMUrBS87/0+Vov67nF1TfYwfBp8Hm7pBMcPZ/NVO0kta2Vswbh16c4Xe8iAjxx4lUG
+	JQJ9xkhNC7FCiOE1sD5q44t7tLzM1UKYnzVIKXiNdnry1q2kWU/h3O3DRqJkMLZ4YeTUcVGFoDJyS
+	KZYm827PXomrkV4M5d+OqGu5JPT9UQoqYQUG0ho9JSGkzt8zhgwjAB768FWXvYNazlx7XSVTVFpr9
+	0w7P/lEpIT58Xm2pCjrw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wkzJy-00000003pNe-2Lhg;
-	Sat, 18 Jul 2026 07:18:50 +0000
-Received: from mailgw.kylinos.cn ([124.126.103.232])
+	id 1wkzQq-00000003pkx-1AyI;
+	Sat, 18 Jul 2026 07:25:56 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wkzJv-00000003pN5-1Svg
+	id 1wkzQo-00000003pkn-1MTY
 	for linux-phy@lists.infradead.org;
-	Sat, 18 Jul 2026 07:18:49 +0000
-X-UUID: e7ddd986827811f1aa26b74ffac11d73-20260718
-X-CTIC-Tags: HR_CC_COUNT, HR_CC_DOMAIN_COUNT, HR_CC_NAME, HR_CC_NO_NAME, HR_CTE_8B
-	HR_CTT_MISS, HR_DATE_H, HR_DATE_WKD, HR_DATE_ZONE, HR_FROM_NAME
-	HR_SJ_LANG, HR_SJ_LEN, HR_SJ_LETTER, HR_SJ_NOR_SYM, HR_SJ_PHRASE
-	HR_SJ_PHRASE_LEN, HR_SJ_WS, HR_TO_COUNT, HR_TO_DOMAIN_COUNT, HR_TO_NO_NAME
-	IP_TRUSTED, SRC_TRUSTED, DN_TRUSTED, SA_TRUSTED, SA_EXISTED
-	SN_TRUSTED, SN_EXISTED, SPF_NOPASS, DKIM_NOPASS, DMARC_NOPASS
-	CIE_GOOD, CIE_GOOD_SPF, GTI_FG_BS, GTI_RG_INFO, GTI_C_BU
-	AMN_GOOD, ABX_MISS_RDNS
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.3.12,REQID:e9dd0467-be09-455a-b401-accefd39c1f1,IP:15,
-	URL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION
-	:release,TS:15
-X-CID-INFO: VERSION:1.3.12,REQID:e9dd0467-be09-455a-b401-accefd39c1f1,IP:15,UR
-	L:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:r
-	elease,TS:15
-X-CID-META: VersionHash:e7bac3a,CLOUDID:b86353c549001be137f299a4fa0a2f14,BulkI
-	D:260718151843EJ8MIE03,BulkQuantity:0,Recheck:0,SF:10|38|66|78|102|127|865
-	|898,TC:nil,Content:0|15|50,EDM:-3,IP:-2,URL:0,File:nil,RT:nil,Bulk:nil,QS
-	:nil,BEC:nil,COL:0,OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,A
-	RC:0
-X-CID-BVR: 2,SSN|SDN
-X-CID-BAS: 2,SSN|SDN,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR
-X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
-X-UUID: e7ddd986827811f1aa26b74ffac11d73-20260718
-X-User: pengcan@kylinos.cn
-Received: from lenovo [(116.128.244.171)] by mailgw.kylinos.cn
-	(envelope-from <pengcan@kylinos.cn>)
-	(Generic MTA with TLSv1.3 TLS_AES_256_GCM_SHA384 256/256)
-	with ESMTP id 47783712; Sat, 18 Jul 2026 15:18:42 +0800
-From: Can Peng <pengcan@kylinos.cn>
-To: vkoul@kernel.org,
-	neil.armstrong@linaro.org
-Cc: linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Can Peng <pengcan@kylinos.cn>,
-	stable@vger.kernel.org
-Subject: [PATCH] phy: freescale: fsl-samsung-hdmi: Fix runtime PM cleanup
-Date: Sat, 18 Jul 2026 15:18:16 +0800
-Message-ID: <20260718071816.437047-1-pengcan@kylinos.cn>
-X-Mailer: git-send-email 2.53.0
-MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260718_001848_294971_A7F1A82D 
-X-CRM114-Status: UNSURE (   8.05  )
-X-CRM114-Notice: Please train this message.
+	Sat, 18 Jul 2026 07:25:54 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 56F416001A;
+	Sat, 18 Jul 2026 07:25:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8BB5D1F000E9;
+	Sat, 18 Jul 2026 07:25:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1784359552;
+	bh=9sfvdyv3EdsQ2HCM3g42ldjyin46dhCoCXnz0zYOgpc=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=AxyNFYQ+b5N3iLRhJwtW0slLuTSQruYEoGDqM6Ww4Z2lgLjRuGBWP5IivyxbSaDfU
+	 nZTTIFfP8JqBu11tIFbO5w1IBijFNZnLx8ihbAgqdZ8HdcYaNS2hpYOEatOrvFLZOa
+	 FSgn2p7BIkHHl1yuTvz8+4cAdNwsicIN49XnyankdEemPUYvlNGWoBt70jEnUwRHNy
+	 fdk9EOhYlNaT7RVG7lPgJRE15gF7mDQ+Bcv4DszfK9wccSypWIzZYl2wQWr/dtSIOL
+	 QwhB0enWtvEPTeV0nXpEz9mf1Wx4M+bt+vq4MamErr7YhNN2ahS7qXzUP2yM3Wh2nH
+	 N58WvT6gw+L1Q==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH] phy: starfive: Fix runtime PM cleanup in JH7110 DPHY TX
+ probe
+To: "Can Peng" <pengcan@kylinos.cn>
+Cc: vkoul@kernel.org, olteanv@gmail.com, neil.armstrong@linaro.org, linux-phy@lists.infradead.org
+In-Reply-To: <20260718071733.436927-1-pengcan@kylinos.cn>
+References: <20260718071733.436927-1-pengcan@kylinos.cn>
+Date: Sat, 18 Jul 2026 07:25:52 +0000
+Message-Id: <20260718072552.8BB5D1F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,70 +62,73 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-fsl_samsung_hdmi_phy_probe() takes a runtime PM reference, marks the
-device active and enables runtime PM before registering the PHY clock.
-If phy_clk_register() fails, probe returns without dropping the runtime
-PM reference or disabling runtime PM.
-
-The remove callback only unregisters the clock provider, so runtime PM
-is also left enabled after a successful probe followed by driver unbind.
-
-Check pm_runtime_set_active(), use devm_pm_runtime_enable() so runtime
-PM is disabled automatically, and drop the initial noresume reference
-on PM setup and clock registration failures.
-
-Fixes: 6ad082bee902 ("phy: freescale: add Samsung HDMI PHY")
-Cc: stable@vger.kernel.org
-Signed-off-by: Can Peng <pengcan@kylinos.cn>
----
- drivers/phy/freescale/phy-fsl-samsung-hdmi.c | 14 ++++++++++----
- 1 file changed, 10 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-index d010fec15671..e7af4f9c7b20 100644
---- a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-+++ b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-@@ -665,20 +665,26 @@ static int fsl_samsung_hdmi_phy_probe(struct platform_device *pdev)
- 				     "failed to get ref clk\n");
- 
- 	pm_runtime_get_noresume(phy->dev);
--	pm_runtime_set_active(phy->dev);
--	pm_runtime_enable(phy->dev);
-+	ret = pm_runtime_set_active(phy->dev);
-+	if (ret)
-+		goto pm_put_noidle;
-+
-+	ret = devm_pm_runtime_enable(phy->dev);
-+	if (ret)
-+		goto pm_put_noidle;
- 
- 	ret = phy_clk_register(phy);
- 	if (ret) {
- 		dev_err(&pdev->dev, "register clk failed\n");
--		goto register_clk_failed;
-+		goto pm_put_noidle;
- 	}
- 
- 	pm_runtime_put(phy->dev);
- 
- 	return 0;
- 
--register_clk_failed:
-+pm_put_noidle:
-+	pm_runtime_put_noidle(phy->dev);
- 	return ret;
- }
- 
--- 
-2.53.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
+IFtIaWdoXSBUaGUgcGF0Y2ggZml4ZXMgYSBydW50aW1lIFBNIGNsZWFudXAgbGVhayBpbiB0aGUg
+RFBIWSBUWCBkcml2ZXIgYnkgcmVwbGFjaW5nIGBwbV9ydW50aW1lX2VuYWJsZSgpYCB3aXRoIGBk
+ZXZtX3BtX3J1bnRpbWVfZW5hYmxlKClgLCBidXQgY29tcGxldGVseSBtaXNzZXMgdGhlIGV4YWN0
+IHNhbWUgYnVnIGluIHRoZSBjb21wYW5pb24gRFBIWSBSWCBkcml2ZXIgKGBwaHktamg3MTEwLWRw
+aHktcnguY2ApLgotIFtNZWRpdW1dIFJlc291cmNlIGxlYWtzIGluIGBzdGZfZHBoeV9pbml0KClg
+IGFuZCBgc3RmX2RwaHlfZXhpdCgpYCBlcnJvciBwYXRocyB3aGVyZSBjbG9ja3MgYXJlIG5vdCBj
+b3JyZWN0bHkgdW53b3VuZCBvciBjbGVhbmVkIHVwLgotLQoKLS0tIFBhdGNoIFsxXTogW1BBVENI
+XSBwaHk6IHN0YXJmaXZlOiBGaXggcnVudGltZSBQTSBjbGVhbnVwIGluIEpINzExMCBEUEhZIFRY
+IHByb2JlIC0tLQpjb21taXQgZDkxMDM3ZjQzOGNiZWRhMWY1ZjdkYmRiMTgyZDkzOGI2ODgzZmY5
+YwpBdXRob3I6IENhbiBQZW5nIDxwZW5nY2FuQGt5bGlub3MuY24+CgpwaHk6IHN0YXJmaXZlOiBG
+aXggcnVudGltZSBQTSBjbGVhbnVwIGluIEpINzExMCBEUEhZIFRYIHByb2JlCgpzdGZfZHBoeV9w
+cm9iZSgpIGVuYWJsZXMgcnVudGltZSBQTSBiZWZvcmUgZ2V0dGluZyB0aGUgY2xvY2sgYW5kCnJl
+c2V0IGNvbnRyb2xzLCBjcmVhdGluZyB0aGUgUEhZIGFuZCByZWdpc3RlcmluZyB0aGUgUEhZIHBy
+b3ZpZGVyLiBJZgphbnkgb2YgdGhvc2Ugc3RlcHMgZmFpbHMsIHByb2JlIHJldHVybnMgd2l0aCBy
+dW50aW1lIFBNIHN0aWxsIGVuYWJsZWQuClVzZSBkZXZtX3BtX3J1bnRpbWVfZW5hYmxlKCkgc28g
+cnVudGltZSBQTSBpcyBkaXNhYmxlZCBhdXRvbWF0aWNhbGx5Cm9uIGxhdGVyIHByb2JlIGZhaWx1
+cmVzIGFuZCBvbiBkcml2ZXIgdW5iaW5kLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvc3Rh
+cmZpdmUvcGh5LWpoNzExMC1kcGh5LXR4LmMgYi9kcml2ZXJzL3BoeS9zdGFyZml2ZS9waHktamg3
+MTEwLWRwaHktdHguYwo+IGluZGV4IGM2NGQxYzkxYjEzMDcuLjE4MTQ5MWE5MzgwNzkgMTAwNjQ0
+Cj4gLS0tIGEvZHJpdmVycy9waHkvc3RhcmZpdmUvcGh5LWpoNzExMC1kcGh5LXR4LmMKPiArKysg
+Yi9kcml2ZXJzL3BoeS9zdGFyZml2ZS9waHktamg3MTEwLWRwaHktdHguYwo+IEBAIC0zOTIsNiAr
+MzkyLDcgQEAgc3RhdGljIGludCBzdGZfZHBoeV9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNl
+ICpwZGV2KQo+ICB7Cj4gIAlzdHJ1Y3QgcGh5X3Byb3ZpZGVyICpwaHlfcHJvdmlkZXI7Cj4gIAlz
+dHJ1Y3Qgc3RmX2RwaHkgKmRwaHk7Cj4gKwlpbnQgcmV0Owo+ICAKPiAgCWRwaHkgPSBkZXZtX2t6
+YWxsb2MoJnBkZXYtPmRldiwgc2l6ZW9mKCpkcGh5KSwgR0ZQX0tFUk5FTCk7Cj4gIAlpZiAoIWRw
+aHkpCj4gQEAgLTQwNiw3ICs0MDcsOSBAQCBzdGF0aWMgaW50IHN0Zl9kcGh5X3Byb2JlKHN0cnVj
+dCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gIAlpZiAoSVNfRVJSKGRwaHktPnRvcHN5cykpCj4g
+IAkJcmV0dXJuIFBUUl9FUlIoZHBoeS0+dG9wc3lzKTsKPiAgCj4gLQlwbV9ydW50aW1lX2VuYWJs
+ZSgmcGRldi0+ZGV2KTsKPiArCXJldCA9IGRldm1fcG1fcnVudGltZV9lbmFibGUoJnBkZXYtPmRl
+dik7Cj4gKwlpZiAocmV0KQo+ICsJCXJldHVybiByZXQ7CgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMg
+aXNuJ3QgYSBidWcgaW50cm9kdWNlZCBieSB0aGlzIHBhdGNoLCBidXQgdGhlIGNvbXBhbmlvbiBE
+UEhZIFJYIGRyaXZlcgooZHJpdmVycy9waHkvc3RhcmZpdmUvcGh5LWpoNzExMC1kcGh5LXJ4LmMp
+IGhhcyB0aGUgZXhhY3Qgc2FtZSBidWcgaW4Kc3RmX2RwaHlfcHJvYmUoKToKCglwbV9ydW50aW1l
+X2VuYWJsZSgmcGRldi0+ZGV2KTsKCglwaHlfc2V0X2RydmRhdGEoZHBoeS0+cGh5LCBkcGh5KTsK
+CXBoeV9wcm92aWRlciA9IGRldm1fb2ZfcGh5X3Byb3ZpZGVyX3JlZ2lzdGVyKCZwZGV2LT5kZXYs
+CgkJCQkJCSAgICAgb2ZfcGh5X3NpbXBsZV94bGF0ZSk7CgoJcmV0dXJuIFBUUl9FUlJfT1JfWkVS
+TyhwaHlfcHJvdmlkZXIpOwoKSWYgcHJvYmUgZmFpbHMgb3IgdGhlIGRyaXZlciB1bmJpbmRzLCBw
+bV9ydW50aW1lX2Rpc2FibGUoKSBpcyBtaXNzaW5nLApsZWFkaW5nIHRvIHVuYmFsYW5jZWQgUE0g
+dXNhZ2UgY291bnRzLiBTaG91bGQgYSBzaW1pbGFyIGZpeCBiZSBhcHBsaWVkIHRoZXJlPwoKW1Nl
+dmVyaXR5OiBNZWRpdW1dClRoaXMgaXMgYSBwcmUtZXhpc3RpbmcgaXNzdWUsIGJ1dCBkb2VzIHN0
+Zl9kcGh5X2luaXQoKSBsZWFrIHRoZSBwcmVwYXJlZApjbG9jayBpZiByZXNldF9jb250cm9sX2Rl
+YXNzZXJ0KCkgZmFpbHM/CgpzdGZfZHBoeV9pbml0KCkgaW4gZHJpdmVycy9waHkvc3RhcmZpdmUv
+cGh5LWpoNzExMC1kcGh5LXR4LmMgaGFzOgoKCXJldCA9IGNsa19wcmVwYXJlX2VuYWJsZShkcGh5
+LT50eGVzY19jbGspOwoJaWYgKHJldCkgewoJCWRldl9lcnIoZHBoeS0+ZGV2LCAiRmFpbGVkIHRv
+IHByZXBhcmUvZW5hYmxlIHR4ZXNjX2Nsa1xuIik7CgkJcmV0dXJuIHJldDsKCX0KCglyZXQgPSBy
+ZXNldF9jb250cm9sX2RlYXNzZXJ0KGRwaHktPnN5c19yc3QpOwoJaWYgKHJldCkgewoJCWRldl9l
+cnIoZHBoeS0+ZGV2LCAiRmFpbGVkIHRvIGRlYXNzZXJ0IHN5c19yc3RcbiIpOwoJCXJldHVybiBy
+ZXQ7Cgl9CgpJZiByZXNldF9jb250cm9sX2RlYXNzZXJ0KCkgZmFpbHMsIHRoZSBmdW5jdGlvbiBy
+ZXR1cm5zIHdpdGhvdXQgY2FsbGluZwpjbGtfZGlzYWJsZV91bnByZXBhcmUoZHBoeS0+dHhlc2Nf
+Y2xrKS4KClNpbWlsYXJseSwgaW4gc3RmX2RwaHlfZXhpdCgpLCBpZiByZXNldF9jb250cm9sX2Fz
+c2VydCgpIGZhaWxzLCBpdCByZXR1cm5zCmVhcmx5IGFuZCBza2lwcyBjbGtfZGlzYWJsZV91bnBy
+ZXBhcmUoKToKCglyZXQgPSByZXNldF9jb250cm9sX2Fzc2VydChkcGh5LT5zeXNfcnN0KTsKCWlm
+IChyZXQpIHsKCQlkZXZfZXJyKGRwaHktPmRldiwgIkZhaWxlZCB0byBhc3NlcnQgc3lzX3JzdFxu
+Iik7CgkJcmV0dXJuIHJldDsKCX0KCgljbGtfZGlzYWJsZV91bnByZXBhcmUoZHBoeS0+dHhlc2Nf
+Y2xrKTsKCkNvdWxkIHRoZXNlIGZhaWx1cmUgcGF0aHMgbG9jayB0aGUgY2xvY2sgaW4gYW4gZW5h
+YmxlZCBzdGF0ZT8KCj4gIAo+ICAJZHBoeS0+dHhlc2NfY2xrID0gZGV2bV9jbGtfZ2V0KCZwZGV2
+LT5kZXYsICJ0eGVzYyIpOwo+ICAJaWYgKElTX0VSUihkcGh5LT50eGVzY19jbGspKQoKLS0gClNh
+c2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDcx
+ODA3MTczMy40MzY5MjctMS1wZW5nY2FuQGt5bGlub3MuY24/cGFydD0xCgotLSAKbGludXgtcGh5
+IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
