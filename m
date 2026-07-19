@@ -4,90 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98572C4450A
-	for <linux-phy@archiver.kernel.org>; Sun, 19 Jul 2026 13:45:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BB80C44521
+	for <linux-phy@archiver.kernel.org>; Sun, 19 Jul 2026 13:47:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FPyM7lT0/1C1btlOr4OVEDXn8gpEnxB8qVjsGNs7PUE=; b=u0J05mEnvUvsRN
-	a7juNGgvFST3Fj9Uq4QZt4PFZz8O0hXNIbB0KloYa9npQR/edyAzFx+UQ31Wtm0I07fSWmMEWLycm
-	Zf/hKWo+JVlShR/JunoFXLjP5lT2RUdz7UQgLsyBFJhv2BfmBSIc/iYlNw2wMmMZj00YJLyHb17xK
-	s7m7XtrXBUuU9AgVeCfQkv+n7qStvVFShh+k2/37NSDWQ7VEbvXlGttzNqLn9IKl2gMR4g8RxmqnV
-	NY+k6Rs6WVmlH5ssbUucxApqIUoMD+oyxvllf6OFNbgauzsRUbLJc+/X25ttaSO1cT4Gti11AxVsO
-	MwY4X1xcpRbC8O2nURiQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zs9/pbXDTFLqvUGgLfA3I09zULL8kkws5bD8AsuGVBI=; b=cqjMNwiaivRmhY
+	aukQwwL1DLzBgmAbTBP6tKPRnKqccCdB2jG/f3kekj9Fv/64IJLy29IZCLXuxB3P9NGqYRDTr6hiq
+	gUdQ3sD/iiNB1RL6DHeCsl4CqWQ9xIgk+YPO2BNR+82WvnXs9ymxrCEtBHjCviGI1Tlei/IWkVjTB
+	/YdpeuHo2Eaf31WnjooMu3xKLQ9W5IerNdR6a5Ha68juJJqqKDxL6PRGhCuoJzcKdNzGHvWXfEKSm
+	vWB5uWWHmbEAgJbgtmd1DA4HYafw5cOVpvsgMWLPR9u38JKh+HpjRV75xwtR1rTzYJ6a4XIQTVdZq
+	wzTRXvkxB+ibqenkp0JQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlRpp-000000052ds-1zTL;
-	Sun, 19 Jul 2026 13:45:37 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1wlRrz-000000052hj-2tUS;
+	Sun, 19 Jul 2026 13:47:51 +0000
+Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlRpm-000000052dH-3rzr
+	id 1wlRrv-000000052gp-0sKj
 	for linux-phy@lists.infradead.org;
-	Sun, 19 Jul 2026 13:45:36 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-4954a9e8490so9561485e9.1
-        for <linux-phy@lists.infradead.org>; Sun, 19 Jul 2026 06:45:33 -0700 (PDT)
+	Sun, 19 Jul 2026 13:47:49 +0000
+Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-493d92b7db3so45014585e9.2
+        for <linux-phy@lists.infradead.org>; Sun, 19 Jul 2026 06:47:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1784468732; x=1785073532; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=S8oezzhPlACWhvhdZH/Jait1ZXvVzzjG4ACItSTIAt0=;
-        b=QZkAeja6AmC03P6fycrnTx7YBsTV6Ilq938kvLgmsu4keVB6xWNP8vbdhBXc48bKyT
-         KpYTs5ELl74yjs2BNYgrCtGXqU8E+Mo+Dflmg0yQoJDQ4BRrh2TEm78Xb8g6uCXiduLB
-         oRXKSECIHgQJmJWHvVFszKQCH6jxr4YazaTNXl9xehHh6ys4HBnWENVU8BSq1ggLHA0f
-         Y38ZIl5UwMca5YZxUEGpL49O3zkqOUZU4pfC9ydbQbkB8bQ1fmUyhyFT6nSHL+7HyVtp
-         RnrrXiBdbIW2ecK/0qTze0q2YQWE6KgsqjNlDpAo43Xn8AN6hCU37y4MqV/vyZJaHU2R
-         jUiA==
+        d=linaro.org; s=google; t=1784468865; x=1785073665; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:content-type:mime-version
+         :message-id:date:subject:from:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=5lxUMS2l1XU03/4zQ7dCUuH2TfWFULjnfTYIK6r4O6w=;
+        b=XMDD+qjZMqKVws23RpMZ8C4Wnan69yOrylo4Qg8q4MDE6ReTv1sassKhbMHmAJ7p5r
+         hOoaxxNj8gEIJhuqjynmhlBMBgJXF4UB12PzufcYkQNomEjw7kwjpw/D438yGCRQxjXU
+         yludsQS5FNOW5JxGtlg+lmiBZXej9K1Otvs/XzzVMZpazmXFgr3cfXUBCJiLT3w7IXor
+         wXw/Nvb8zAGSys1uMrogjqWVbXsIiG//6ioM8/UiT/1G/4gBJLmkegNuBupAvnse5Bsb
+         hRuf1Q4RISiPxV3saWcGMaf/gztQHZ2a+1HC4L0Fb0BoBJWTuzZuxwdb3onWVNBgI7jE
+         Cadg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784468732; x=1785073532;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=S8oezzhPlACWhvhdZH/Jait1ZXvVzzjG4ACItSTIAt0=;
-        b=PIjPm3m0/TeKrVCD2utNEwX/XsWPxv0bjJksSt8Q0V1RCJEvZm9g1gneLNjgTw+N3c
-         QNNMqC4LQrCV690DEeUM49u74PgfRBw7pJ/G1zrY7xxrj8WGJelbNdd9pdky6wtMe9Gr
-         NybR2Uehtr334KW9pVBRsnP0U7NtF4w6RfS008VRLfxou8w0OEg3EHCtlGsFX7T6lxY1
-         DDJDUzNmuRXAW3CVWNjnUJKKrKIvElYaVMrLVQMUUI7HAQzD/QYCeL6xozPPCQOd0RB3
-         gJb+NAtMZc3flyC8eNUu/IV3PH4yd1GY0hG7hHHTj68wEMM8G1+jm/GC+oawbQOwCNPv
-         3XmQ==
-X-Gm-Message-State: AOJu0Yx6bEtoGWHrCVztfJzLPQTyW2TLvd8ljQr+bsttC3XNPmbFNdhw
-	+w0TLMzBlRhbSTHglZwXNRMXKj4U5DAcz0VH+H5m3TFDbhkZev9aGvelp8sIAHqjCvE=
-X-Gm-Gg: AfdE7clTq0fK1+dqAifVs07W2QZD9CHVkHEYNzW5g3DeMkJO/TSlTkSLJkD4gwlB92y
-	93sX3EpqEXnPB1ELXeHfJla1SRZgZhJEUcP+W2p05uTePvWOfaJKTXhPiqPRnqjSkYdHvMg0xrC
-	cBEMKaSPVz0niHvpbfEMJOHgpb1a0Cd5Nk+NeDVplmFHfM5W/6trFEadWmxP3kdFmymFt5WmXWW
-	/oCLvq6z49CXGS6h97T0i1xs8FvV03NEL9m0vUY7cOY44JneMV+O3IYXR2suyGyBkrX9RCZj4hu
-	iuhWsxJ620dpGi6OkeXxeEjKOlUk4toJfhW+KHb4F0b7/oYWT0eXClQCABlVeK4kEXak9OryrdS
-	BIrYFOQAWrH8XTK9wqu37kMjJMs6EVAcTpI0MTLDcbcwwmFqJWaaYOShLgP2dKY6EyggkqDUJzw
-	L6kfss+eLX9srv
-X-Received: by 2002:a05:600c:c178:b0:495:5d6d:9cc1 with SMTP id 5b1f17b1804b1-4955d6d9f9bmr10727905e9.0.1784468730934;
-        Sun, 19 Jul 2026 06:45:30 -0700 (PDT)
+        d=1e100.net; s=20251104; t=1784468865; x=1785073665;
+        h=cc:to:content-transfer-encoding:content-type:mime-version
+         :message-id:date:subject:from:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=5lxUMS2l1XU03/4zQ7dCUuH2TfWFULjnfTYIK6r4O6w=;
+        b=gbPGD3440vRHCl6Lj8KlfJ3Dr2k3wIEHGqmd4F24C21B6Q89u2FQ/F+/KNy8Jbhkyb
+         yh12xNBKpuJoxhJARxobqH8wpchczPk8pkV+jzZUA3FXfXf0R0ZpYfOcupRWMZQ3d4DM
+         3M6YokvXGK9pC19IfXOgZdEiIt97z8ypcMUrQUejabtECOu8uaS4LLTketF5Xsu7MV8D
+         oQfvwRTweo3AYa5HZzNPZzKzM6vT2xBO2rQOyA4UnpIJbluZ8OGkcEMwK33IgATEux9i
+         iWKfw6vVCBwIGVUw69SVYTd3KJt26DsPpnZlehs0xjknp5+2X7MOEWnX/fWSq2BU4xRl
+         hnsw==
+X-Forwarded-Encrypted: i=1; AHgh+RrCiWsEWMoGC+yYBPt/YEWiLbzXMXf/OpMCx1WcYF3yOz8RxKKjACiwB50G+Uc2NhZQXmChC4z4eOI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxazdxSq9D4tECvhxI6e7VDz/k8YL/agfsEXcckB951IqhQDREH
+	Hsj4XCBLEy7GarlLGN71fuFPjOl0yDCnO1Cer4frySSK7hAM+EHjTv7jW489rZ/6oO4=
+X-Gm-Gg: AfdE7cns3/nHTtaIsUWmIxAoBxYOUeKTuLEwx14IIklRIvmycPUk76mD7NdQVhToVoM
+	D+W7brLpGarVGqcNgD8+g3OIMowpNVfqDbGbbfDS3qL+Zyj8pSPeO5w73LfS4UQ+/6bSaE14rBT
+	6rCe8tjleT/ScAWYKAHfo5mRgDek8qgPmlDnBVJaowPT/ErBOPTnptpTIkYuxLBQXtMIXMtWQod
+	JbohD05GX5Y3K70aBeT6qFNmCZ69+I9ODmkNG+7j43dtDFnWVPl5bfBDaxqf6TnmJSxNV34qREE
+	UJ5P1tzKxkrOx6pA4340uugg4SbmzahN5FseWccj51nBRpE3FS6RVfeZ83pKThf37DF3cGHSVY/
+	ANhwTICwa1s0+RRTzzEEnu3t0QjWxXXFsRrdXByGLwiYcGxLVnMD40JFs5xgmIluwbtTMOzxq4j
+	UQ76JEoAgUgpGa
+X-Received: by 2002:a05:600c:3553:b0:492:3773:a230 with SMTP id 5b1f17b1804b1-4954a50e75dmr117554875e9.27.1784468864853;
+        Sun, 19 Jul 2026 06:47:44 -0700 (PDT)
 Received: from [192.168.0.35] ([109.76.79.119])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4954995b78dsm134249105e9.0.2026.07.19.06.45.28
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 19 Jul 2026 06:45:29 -0700 (PDT)
-Message-ID: <add20096-6b98-460c-8d4c-5e497cfa857e@linaro.org>
-Date: Sun, 19 Jul 2026 14:45:27 +0100
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v11 2/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI DPHY driver
-To: sashiko-reviews@lists.linux.dev
-Cc: linux-phy@lists.infradead.org, conor+dt@kernel.org,
- neil.armstrong@linaro.org, vkoul@kernel.org, media-ci@linuxtv.org,
- olteanv@gmail.com, devicetree@vger.kernel.org, robh@kernel.org
-References: <20260719-x1e-csi2-phy-v11-0-9d0a1ed0632d@linaro.org>
- <20260719-x1e-csi2-phy-v11-2-9d0a1ed0632d@linaro.org>
- <20260719124126.397901F000E9@smtp.kernel.org>
-Content-Language: en-US
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-47f63ed1911sm22345902f8f.22.2026.07.19.06.47.43
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 19 Jul 2026 06:47:44 -0700 (PDT)
 From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-In-Reply-To: <20260719124126.397901F000E9@smtp.kernel.org>
+Subject: [PATCH v12 0/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI DPHY driver
+Date: Sun, 19 Jul 2026 14:47:39 +0100
+Message-Id: <20260719-x1e-csi2-phy-v12-0-cc7311326d1b@linaro.org>
+MIME-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/3XSyWrDMBAA0F8JOldlZrT31P8oPWhzIihxsItJC
+ P73yoESV6LHGXizSXc256nkmb0d7mzKS5nLeK4B0suBxZM/HzMvqSYYASkwCPyKmce5EL+cbnz
+ QUsigFSbhWSWXKQ/l+qj38VnjU5m/x+n2KL/glv2n0IIcuJE+hqACagrvX+Xsp/F1nI5sq7TQr
+ 9ZApBpNmzZK5xS0yd51Wuy1brSoGjFrsEY5idBp+dQC296yagcRHIGw1qZOq53uequqKx6iGVQ
+ E7PfWT60IG6233smI5EIyifrJzV5To812NRcDkoXBJ91pu9ei0bZqb5XWVipXR+u0e2oDttFu2
+ 5sQwnY6GYdOI+w4trz+H+DKEHhTb+6U6D3uvWs9Pi4HHnMCLejvq63r+gMqW1ZVGgMAAA==
+X-Change-ID: 20250710-x1e-csi2-phy-f6434b651d3a
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Bryan O'Donoghue <bod@kernel.org>, 
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>, 
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, Bryan O'Donoghue <bryan.odonoghue@linaro.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=14131;
+ i=bryan.odonoghue@linaro.org; h=from:subject:message-id;
+ bh=lAUK9ZlVmeEOmQD2PA/HAlZmcqek0Kfk7XBL7SChjYQ=;
+ b=owEBbQKS/ZANAwAKASJxO7Ohjcg6AcsmYgBqXNV+lxYQ/w8xnu0tAu7dVPZiDc0zmQSGYbaHy
+ dzARs9On7+JAjMEAAEKAB0WIQTmk/sqq6Nt4Rerb7QicTuzoY3IOgUCalzVfgAKCRAicTuzoY3I
+ OnpmEACK+hpK7NZzs179n/Rq3WC64sqlzRLDAopX2haur9GLRWHu5084l4q5dBhvbScTAmwbBKX
+ ffQb1teVhw5mgYvYC7e8de9kEEvlSe7pyRTQ6ErTZwFwp1G1u21mgZS92XD+t93eKEDMWjsEEOF
+ ylpYLwSbt6Vz8IrxXzre6Ii2xIgfwBF8JHlO6G9sbczZ3ral9OaufGOFKMYH9MCIkRxE7CYhgDc
+ vwmEBREATSBv8qYOZEAGpWUWIcqNufth3rLdX8BWaYq+4ZJPsF7Fx3QNhaUXjT8W18V8L7X70nS
+ GfxmjzYxLLKIewXVpW/q5n+b1p1oQNd3By/ctAYQzD486KucwoB306WR/hSHs760VGmijiQBxEN
+ yIKRtyAHVGQUkkXBiCAIppv9jd9voaGL7latrmJmnc1jOHUoqQAJsIR0uHWSgBkn1lyYsBrQ4gu
+ 7Ua78vD6nUXgs4BdwBJU8IOwqx64qH4nmhoxcQCwETnqKmG/9R/6sN/KMy7Xs6bAYhfQGI/x2NB
+ gXQNn5Hofb8ibtvwTz8ITWjriQELFsnOgKMmWFEq6wchJt1ENViQtpoJxFr+h2YyWYG4npJYz+j
+ bB5WbD22XvzggOoDn9kcrZYXYW3PAli1ZdVeDWTTc93NTP4nmoWDB4o8Tv6DHMYd9m5D+qEUknR
+ b8SgiXahCy2FMig==
+X-Developer-Key: i=bryan.odonoghue@linaro.org; a=openpgp;
+ fpr=E693FB2AABA36DE117AB6FB422713BB3A18DC83A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260719_064535_038062_B8AF0272 
-X-CRM114-Status: GOOD (  32.98  )
+X-CRM114-CacheID: sfid-20260719_064747_427122_9933461E 
+X-CRM114-Status: GOOD (  34.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,141 +124,308 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMTkvMDcvMjAyNiAxMzo0MSwgc2FzaGlrby1ib3RAa2VybmVsLm9yZyB3cm90ZToKPiBUaGFu
-ayB5b3UgZm9yIHlvdXIgY29udHJpYnV0aW9uISBTYXNoaWtvIEFJIHJldmlldyBmb3VuZCA0IHBv
-dGVudGlhbCBpc3N1ZShzKSB0byBjb25zaWRlcjoKPiAtIFtIaWdoXSBJbnN1ZmZpY2llbnQgdmFs
-aWRhdGlvbiBvZiB0aGUgYGRhdGEtbGFuZXNgIHByb3BlcnR5IGFsbG93cyB2YWx1ZXMgdXAgdG8g
-NywgbGVhZGluZyB0byBpbnRlZ2VyIHRydW5jYXRpb24gYW5kIG91dC1vZi1ib3VuZHMgTU1JTyB3
-cml0ZXMgaW50byBjb21tb24gUEhZIHJlZ2lzdGVycy4KPiAtIFtNZWRpdW1dIFRoZSBkcml2ZXIg
-c3RhdGljYWxseSBjb25maWd1cmVzIGxhbmVzIGJhc2VkIG9uIHRoZSBkZXZpY2UgdHJlZSBpbnN0
-ZWFkIG9mIHJlc3BlY3RpbmcgZHluYW1pYyBgZHBoeV9jZmctPmxhbmVzYCByZXF1ZXN0cywgdmlv
-bGF0aW5nIHRoZSBNSVBJIEQtUEhZIEFQSSBjb250cmFjdC4KPiAtIFtNZWRpdW1dIFNldHRpbmcg
-bGFuZSBwb2xhcml0eSB1bmNvbmRpdGlvbmFsbHkgb3ZlcndyaXRlcyB0aGUgZW50aXJlIGBDVFJM
-OWAgcmVnaXN0ZXIgaW5zdGVhZCBvZiBwZXJmb3JtaW5nIGEgcmVhZC1tb2RpZnktd3JpdGUuCj4g
-LSBbTG93XSBVbm1hc2tlZCBhc3NpZ25tZW50IG9mIHRoZSBmaXJzdCBieXRlIGluIGBod192ZXJz
-aW9uYCBtYXkgY29ycnVwdCB0aGUgZmluYWwgdmFsdWUgd2l0aCB1bmRlZmluZWQgdXBwZXIgYml0
-cy4KPiAtLQo+IAo+IC0tLSBQYXRjaCBbMl06IFtQQVRDSCB2MTEgMi8yXSBwaHk6IHFjb20tbWlw
-aS1jc2kyOiBBZGQgYSBDU0kyIE1JUEkgRFBIWSBkcml2ZXIgLS0tCj4gY29tbWl0IGNmZjAyZjY1
-MDgzOThkZjRmMjU0YzY3NWIzNTgwYzNjODQ4ZTE3YzIKPiBBdXRob3I6IEJyeWFuIE8nRG9ub2do
-dWUgPGJyeWFuLm9kb25vZ2h1ZUBsaW5hcm8ub3JnPgo+IFN1YmplY3Q6IHBoeTogcWNvbS1taXBp
-LWNzaTI6IEFkZCBhIENTSTIgTUlQSSBEUEhZIGRyaXZlcgo+IAo+IFRoaXMgY29tbWl0IGFkZHMg
-YSBuZXcgTUlQSSBDU0kyIFBIWSBkcml2ZXIgaW4gRFBIWSBtb2RlIGZvciBRdWFsY29tbQo+IGhh
-cmR3YXJlLiBJdCBwb3J0cyBsb2dpYyBmcm9tIGV4aXN0aW5nIGNhbXNzIGRyaXZlcnMgdG8gaW5p
-dGlhbGl6ZSBhbmQKPiBjb25maWd1cmUgZGF0YSBhbmQgY2xvY2sgbGFuZXMgYmFzZWQgb24gZGV2
-aWNlIHRyZWUgcHJvcGVydGllcy4KPiAKPj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L3F1YWxj
-b21tL3BoeS1xY29tLW1pcGktY3NpMi0zcGgtZHBoeS5jIGIvZHJpdmVycy9waHkvcXVhbGNvbW0v
-cGh5LXFjb20tbWlwaS1jc2kyLTNwaC1kcGh5LmMKPj4gLS0tIC9kZXYvbnVsbAo+PiArKysgYi9k
-cml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1taXBpLWNzaTItM3BoLWRwaHkuYwo+IAo+IFsg
-Li4uIF0KPiAKPj4gK3N0YXRpYyB2b2lkIHBoeV9xY29tX21pcGlfY3NpMl9od192ZXJzaW9uX3Jl
-YWQoc3RydWN0IG1pcGlfY3NpMnBoeV9kZXZpY2UgKmNzaTJwaHkpCj4+ICt7Cj4+ICsJY29uc3Qg
-c3RydWN0IG1pcGlfY3NpMnBoeV9kZXZpY2VfcmVncyAqcmVncyA9IGNzaTJwaHlfZGV2X3RvX3Jl
-Z3MoY3NpMnBoeSk7Cj4+ICsJdTMyIHRtcDsKPj4gKwo+PiArCXdyaXRlbChDU0lQSFlfM1BIX0NN
-Tl9DU0lfQ09NTU9OX0NUUkw2X1NIT1dfUkVWX0lELCBjc2kycGh5LT5iYXNlICsKPj4gKwkgICAg
-ICAgQ1NJUEhZXzNQSF9DTU5fQ1NJX0NPTU1PTl9DVFJMbihyZWdzLT5jb21tb25fcmVnc19vZmZz
-ZXQsIDYpKTsKPj4gKwo+PiArCXRtcCA9IHJlYWRsX3JlbGF4ZWQoY3NpMnBoeS0+YmFzZSArCj4+
-ICsJCQkgICAgQ1NJUEhZXzNQSF9DTU5fQ1NJX0NPTU1PTl9TVEFUVVNuKHJlZ3MtPmNvbW1vbl9y
-ZWdzX29mZnNldCwgMTIpKTsKPj4gKwljc2kycGh5LT5od192ZXJzaW9uID0gdG1wOwo+IAo+IFtT
-ZXZlcml0eTogTG93XQo+IERvZXMgdGhpcyBhc3NpZ25tZW50IHRvIGNzaTJwaHktPmh3X3ZlcnNp
-b24gbmVlZCBhIG1hc2sgbGlrZSAmIDB4RkY/Cj4gCj4gSWYgdGhlIGhhcmR3YXJlIHJlZ2lzdGVy
-IHJldHVybnMgbm9uLXplcm8gZ2FyYmFnZSB2YWx1ZXMgaW4gdGhlIHVwcGVyIDI0Cj4gYml0cywg
-dGhvc2UgYml0cyBtaWdodCByZW1haW4gaW4gaHdfdmVyc2lvbiBhbmQgY29ycnVwdCB0aGUgZmlu
-YWwgdmFsdWUKPiB3aGVuIHRoZSBzdWJzZXF1ZW50IHNoaWZ0ZWQgYnl0ZXMgYXJlIE9SJ2VkIGlu
-Lgo+IAo+IFsgLi4uIF0KCk5vIG5vdCB2YWxpZGF0aW5nIGZvciAiaGFyZHdhcmUgcmV0dXJucyBn
-YXJiYWdlIiB0aGF0J3MgYSByYWJiaXQgaG9sZSB3ZSAKZG9uJ3QgZ28gZG93bi4gVGhlIGJpdHMg
-b3V0IG9mIHJlZ2lzdGVycyBhcmUgdHJ1c3RlZCBhcyBjb3JyZWN0Lgo+IAo+PiArc3RhdGljIGlu
-dCBwaHlfcWNvbV9taXBpX2NzaTJfbGFuZXNfZW5hYmxlKHN0cnVjdCBtaXBpX2NzaTJwaHlfZGV2
-aWNlICpjc2kycGh5LAo+PiArCQkJCQkgICBzdHJ1Y3QgbWlwaV9jc2kycGh5X3N0cmVhbV9jZmcg
-KmNmZykKPj4gK3sKPj4gKwljb25zdCBzdHJ1Y3QgbWlwaV9jc2kycGh5X2RldmljZV9yZWdzICpy
-ZWdzID0gY3NpMnBoeV9kZXZfdG9fcmVncyhjc2kycGh5KTsKPj4gKwlzdHJ1Y3QgbWlwaV9jc2ky
-cGh5X2xhbmVzX2NmZyAqbGFuZV9jZmcgPSAmY2ZnLT5sYW5lX2NmZzsKPj4gKwl1OCBzZXR0bGVf
-Y250Owo+PiArCXU4IHZhbDsKPj4gKwlpbnQgaTsKPiAKPiBbIC4uLiBdCj4gCj4+ICsJLyoKPj4g
-KwkgKiBDU0lfQ09NTU9OX0NUUkw1IGlzIGEgcGh5c2ljYWwgbGFuZSBwb3dlci11cCBiaXRtYXA6
-Cj4+ICsJICogLSBCaXRzIFswLDIsNCw2XSDihpIgRC1QSFkgZGF0YSBsYW5lcyhMTjAsIExOMiwg
-TE40LCBMTjYpCj4+ICsJICogLSBCaXRzIFsxLDMsNV0g4oaSIEMtUEhZIHRyaW8gbGFuZXMoTE4x
-LCBMTjMsIExONSkKPj4gKwkgKiAtIEJpdCBbN10g4oaSIEQtUEhZIGNsb2NrIGxhbmUoTE5DSykg
-ZGVkaWNhdGVkIGNsb2NrIGVuYWJsZQo+PiArCSAqLwo+PiArCXZhbCA9IEJJVChsYW5lX2NmZy0+
-Y2xrLnBvcyk7Cj4+ICsJZm9yIChpID0gMDsgaSA8IGNmZy0+bnVtX2RhdGFfbGFuZXM7IGkrKykK
-Pj4gKwkJdmFsIHw9IEJJVChsYW5lX2NmZy0+ZGF0YVtpXS5wb3MgKiAyKTsKPiAKPiBbU2V2ZXJp
-dHk6IEhpZ2hdCj4gQ291bGQgdGhpcyBjYXVzZSBhbiBpbnRlZ2VyIHRydW5jYXRpb24/Cj4gCj4g
-QmVjYXVzZSB0aGUgdmFsIHZhcmlhYmxlIGlzIGRlZmluZWQgYXMgYSB1OCwgc2hpZnRpbmcgYnkg
-OCBvciBtb3JlIHdpbGwKPiBzaWxlbnRseSB0cnVuY2F0ZSB0byAwLiBJZiBhIGxhbmUgcG9zaXRp
-b24gaXMgPj0gNCwgbGFuZV9jZmctPmRhdGFbaV0ucG9zICogMgo+IGJlY29tZXMgPj0gOCwgd2hp
-Y2ggbWVhbnMgdGhlIGRyaXZlciBtaWdodCBmYWlsIHRvIHBvd2VyIHVwIHRoZSBsYW5lLgoKV2ls
-bCB2YWxpZGF0ZSBkYXRhX2xhbmVzW2ldIGFnYWluc3QgPj0gTUFYX0RBVEFfTEFORVMKPiAKPj4g
-Kwl3cml0ZWwodmFsLCBjc2kycGh5LT5iYXNlICsKPj4gKwkgICAgICAgQ1NJUEhZXzNQSF9DTU5f
-Q1NJX0NPTU1PTl9DVFJMbihyZWdzLT5jb21tb25fcmVnc19vZmZzZXQsIDUpKTsKPj4gKwo+PiAr
-CS8qIExhbmUgY29uZmlndXJhdGlvbiBmb3IgcG9sYXJpdHkgQCBDU0lQSFktYmFzZSArIENUUkw5
-ICovCj4+ICsJZm9yIChpID0gMDsgaSA8IGNmZy0+bnVtX2RhdGFfbGFuZXM7IGkrKykgewo+PiAr
-CQlpZiAobGFuZV9jZmctPmRhdGFbaV0ucG9sKSB7Cj4+ICsJCQl1OCBwb3MgPSBsYW5lX2NmZy0+
-ZGF0YVtpXS5wb3M7Cj4+ICsKPj4gKwkJCXdyaXRlbChCSVQoMiksIGNzaTJwaHktPmJhc2UgKyBD
-U0lQSFlfMlBIX0xOX0NTSV8yUEhBU0VfQ1RSTDluKHBvcyAqIDIpKTsKPiAKPiBbU2V2ZXJpdHk6
-IEhpZ2hdCj4gQ2FuIHRoaXMgcmVzdWx0IGluIGFuIG91dC1vZi1ib3VuZHMgbWVtb3J5IHdyaXRl
-Pwo+IAo+IElmIHBvcyBpcyA+PSA0LCBwb3MgKiAyIGlzID49IDguIFRoZSBDU0lQSFlfMlBIX0xO
-X0NTSV8yUEhBU0VfQ1RSTDluIG1hY3JvCj4gd2lsbCBjb21wdXRlIGFuIG9mZnNldCB0aGF0IG92
-ZXJmbG93cyB0aGUgcGh5c2ljYWwgbGFuZSByZWdpc3RlciBzcGFjZSBhbmQKPiBhbGlhc2VzIGRp
-cmVjdGx5IGludG8gdGhlIGNvbW1vbiBQSFkgcmVnaXN0ZXIgYmxvY2ssIHBvdGVudGlhbGx5IGNs
-b2JiZXJpbmcKPiBjb21tb24gcmVnaXN0ZXJzLgoKCldpbGwgdmFsaWRhdGUgZGF0YV9sYW5lc1tp
-XSBhZ2FpbnN0ID49IE1BWF9EQVRBX0xBTkVTCgo+IFtTZXZlcml0eTogTWVkaXVtXQo+IElzIGl0
-IHNhZmUgdG8gdXNlIGFuIGFic29sdXRlIHdyaXRlbCgpIGhlcmUgaW5zdGVhZCBvZiBhIHJlYWQt
-bW9kaWZ5LXdyaXRlPwo+IAo+IFdyaXRpbmcgQklUKDIpIGRpcmVjdGx5IGNsZWFycyBhbnkgaGFy
-ZHdhcmUgZGVmYXVsdHMgb3IgcmVzZXJ2ZWQgYml0cyB0aGF0Cj4gbWlnaHQgYmUgcHJlc2VudCBp
-biB0aGUgcmVzdCBvZiB0aGUgcmVnaXN0ZXIuIFRoaXMgYWxzbyBjcmVhdGVzIGFzeW1tZXRyaWMK
-PiBoYW5kbGluZyBzaW5jZSB0aGUgcmVnaXN0ZXIgaXMgbGVmdCB1bnRvdWNoZWQgaWYgcG9sYXJp
-dHkgaXMgZmFsc2UuCgpPdmVyd3JpdGluZyB0aGUgcmVnaXN0ZXIgaXMgZGVsaWJlcmF0ZSBhdCB0
-aGlzIHBvaW50Cgo+PiArCQl9Cj4+ICsJfQo+PiArCj4+ICsJaWYgKGxhbmVfY2ZnLT5jbGsucG9s
-KQo+PiArCQl3cml0ZWwoQklUKDIpLCBjc2kycGh5LT5iYXNlICsgQ1NJUEhZXzJQSF9MTl9DU0lf
-MlBIQVNFX0NUUkw5bihsYW5lX2NmZy0+Y2xrLnBvcykpOwo+IAo+IFtTZXZlcml0eTogTWVkaXVt
-XQo+IFNpbWlsYXJseSwgY291bGQgdGhpcyBhYnNvbHV0ZSB3cml0ZSBjbG9iYmVyIHRoZSBjbG9j
-ayBsYW5lIENUUkw5IHJlZ2lzdGVyPwoKT3ZlcndyaXRpbmcgdGhlIHJlZ2lzdGVyIGlzIGRlbGli
-ZXJhdGUgYXQgdGhpcyBwb2ludAoKCj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9xdWFsY29t
-bS9waHktcWNvbS1taXBpLWNzaTItY29yZS5jIGIvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFj
-b20tbWlwaS1jc2kyLWNvcmUuYwo+PiAtLS0gL2Rldi9udWxsCj4+ICsrKyBiL2RyaXZlcnMvcGh5
-L3F1YWxjb21tL3BoeS1xY29tLW1pcGktY3NpMi1jb3JlLmMKPiAKPiBbIC4uLiBdCj4gCj4+ICtz
-dGF0aWMgaW50IHBoeV9xY29tX21pcGlfY3NpMl9jb25maWd1cmUoc3RydWN0IHBoeSAqcGh5LAo+
-PiArCQkJCQl1bmlvbiBwaHlfY29uZmlndXJlX29wdHMgKm9wdHMpCj4+ICt7Cj4+ICsJc3RydWN0
-IG1pcGlfY3NpMnBoeV9kZXZpY2UgKmNzaTJwaHkgPSBwaHlfZ2V0X2RydmRhdGEocGh5KTsKPj4g
-KwlzdHJ1Y3QgcGh5X2NvbmZpZ3VyZV9vcHRzX21pcGlfZHBoeSAqZHBoeV9jZmcgPSAmb3B0cy0+
-bWlwaV9kcGh5Owo+PiArCXN0cnVjdCBtaXBpX2NzaTJwaHlfc3RyZWFtX2NmZyAqc3RyZWFtX2Nm
-ZyA9ICZjc2kycGh5LT5zdHJlYW1fY2ZnOwo+PiArCWludCByZXQ7Cj4+ICsKPj4gKwlyZXQgPSBw
-aHlfbWlwaV9kcGh5X2NvbmZpZ192YWxpZGF0ZShkcGh5X2NmZyk7Cj4+ICsJaWYgKHJldCkKPj4g
-KwkJcmV0dXJuIHJldDsKPj4gKwo+PiArCWlmIChkcGh5X2NmZy0+bGFuZXMgPCAxIHx8IGRwaHlf
-Y2ZnLT5sYW5lcyA+IENTSTJfTUFYX0RBVEFfTEFORVMpCj4+ICsJCXJldHVybiAtRUlOVkFMOwo+
-PiArCj4+ICsJc3RyZWFtX2NmZy0+bGlua19mcmVxID0gZHBoeV9jZmctPmhzX2Nsa19yYXRlOwo+
-PiArCj4+ICsJcmV0dXJuIDA7Cj4+ICt9Cj4gCj4gW1NldmVyaXR5OiBNZWRpdW1dCj4gU2hvdWxk
-IHRoZSBkeW5hbWljYWxseSByZXF1ZXN0ZWQgZHBoeV9jZmctPmxhbmVzIHZhbHVlIGJlIHNhdmVk
-IGludG8gdGhlCj4gYWN0aXZlIGNvbmZpZ3VyYXRpb24gaGVyZT8KPiAKPiBUaGUgdmFsdWUgaXMg
-dmFsaWRhdGVkIGJ1dCBkaXNjYXJkZWQsIG1lYW5pbmcgdGhlIGRyaXZlciB3aWxsIGFsd2F5cwo+
-IHN0YXRpY2FsbHkgcG93ZXIgdXAgdGhlIG1heGltdW0gbnVtYmVyIG9mIGxhbmVzIGNvbmZpZ3Vy
-ZWQgaW4gdGhlIGRldmljZQo+IHRyZWUgaW5zdGVhZCBvZiByZXNwZWN0aW5nIGR5bmFtaWMgcmVx
-dWVzdHMgZnJvbSB0aGUgY29uc3VtZXIuIERvZXMgdGhpcwo+IHZpb2xhdGUgdGhlIE1JUEkgRC1Q
-SFkgQVBJIGNvbnRyYWN0IGZvciBkeW5hbWljIGxhbmUgY29uZmlndXJhdGlvbj8KCldlIHVzZSBh
-IGZpeGVkIGNvbmZpZ3VyYXRpb24gcmlnaHQgbm93LiBGdXR1cmUgd29yayBtYXkgYWxsb3cgZm9y
-IApkeW5hbWljIGxhbmUgY29uZmlndXJhdGlvbiAtIHJlcXVpcmVzIHdheSBtb3JlIHdvcmsgZGVm
-aW5pbmcgcmVnaXN0ZXJzIAphbmQgYml0cyBwbHVzIGxvZ2ljIHRvIGNvbmZpZ3VyZSBiYXNlZCBv
-biByZXF1ZXN0ZWQgaW5wdXQuCgoKPiBbIC4uLiBdCj4gCj4+ICtzdGF0aWMgaW50IHBoeV9xY29t
-X21pcGlfY3NpMl9wYXJzZV9yb3V0aW5nKHN0cnVjdCBtaXBpX2NzaTJwaHlfZGV2aWNlICpjc2ky
-cGh5KQo+PiArewo+PiArCXN0cnVjdCBtaXBpX2NzaTJwaHlfc3RyZWFtX2NmZyAqc3RyZWFtX2Nm
-ZyA9ICZjc2kycGh5LT5zdHJlYW1fY2ZnOwo+IAo+IFsgLi4uIF0KPiAKPj4gKwljc2kycGh5LT5z
-dHJlYW1fY2ZnLmxhbmVfY2ZnLmNsay5wb3MgPSBDU0kyX0RFRkFVTFRfQ0xLX0xBTkU7Cj4+ICsJ
-Y3NpMnBoeS0+c3RyZWFtX2NmZy5sYW5lX2NmZy5jbGsucG9sID0gbGFuZV9wb2xhcml0aWVzWzBd
-Owo+PiArCj4+ICsJZm9yIChpID0gMDsgaSA8IGNzaTJwaHktPnN0cmVhbV9jZmcubnVtX2RhdGFf
-bGFuZXM7IGkrKykgewo+PiArCQlpZiAoZGF0YV9sYW5lc1tpXSA+IENTSTJfTUFYX0xBTkVfTlVN
-KSB7Cj4gCj4gW1NldmVyaXR5OiBIaWdoXQo+IElzIENTSTJfTUFYX0xBTkVfTlVNICg3KSB0b28g
-bGFyZ2UgZm9yIHRoaXMgYm91bmRzIGNoZWNrPwo+IAo+IEFzIG5vdGVkIGluIHBoeV9xY29tX21p
-cGlfY3NpMl9sYW5lc19lbmFibGUoKSwgYWxsb3dpbmcgbGFuZSBudW1iZXJzID49IDQKPiByZXN1
-bHRzIGluIHBvcyAqIDIgYmVpbmcgPj0gOCBsYXRlciBvbiwgd2hpY2ggY2F1c2VzIGJvdGggdHJ1
-bmNhdGlvbiBpbiB0aGUKPiB1OCBiaXRtYXNrIGFuZCBvdXQtb2YtYm91bmRzIHdyaXRlcyBpbnRv
-IHRoZSBjb21tb24gUEhZIHJlZ2lzdGVyIHJlZ2lvbi4KCk5vIGRhdGEtbGFuZXMgaXMgY29uc3Ry
-YWluZWQgYW5kIHdpbGwgYmUgdmFsaWRhdGVkIGluIHRoZSBuZXh0IHBhc3MuCgo+PiArCQkJZGV2
-X2VycihkZXYsICJJbnZhbGlkIGxhbmUgJWRcbiIsIGRhdGFfbGFuZXNbaV0pOwo+PiArCQkJcmV0
-ID0gLUVJTlZBTDsKPj4gKwkJCWdvdG8gb3V0X3B1dDsKPj4gKwkJfQo+PiArCQljc2kycGh5LT5z
-dHJlYW1fY2ZnLmxhbmVfY2ZnLmRhdGFbaV0ucG9zID0gZGF0YV9sYW5lc1tpXTsKPj4gKwkJY3Np
-MnBoeS0+c3RyZWFtX2NmZy5sYW5lX2NmZy5kYXRhW2ldLnBvbCA9IGxhbmVfcG9sYXJpdGllc1tp
-ICsgMV07Cj4+ICsJfQo+IAoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LXBoeQo=
+This driver is very critical to several SoCs being merged and CPHY being
+added to Qualcomm SoCs.
+
+It would be very beneficial therefore to get this merged in this cycle. A
+lot of other enablement code depends on it.
+
+Vinod, Kishon what do you need to take this for 7.2 ?
+
+Changes in v12:
+- Fixes indexing for data-lanes = <0 1 2 4> which is out of range - Sashiko
+- The rest of Sashiko's review rebutted on list - bod
+- Link to v11: https://patch.msgid.link/20260719-x1e-csi2-phy-v11-0-9d0a1ed0632d@linaro.org
+
+Changes in v11:
+- Adds RB - Krzysztof
+- Fixes div_u64 to div64_u64 - Sashiko
+- Fixes pos * 2 reg offset - Sashiko
+- Fixes devm_pm_runtime_enable. Missed in v10 - Frank
+
+- Link to v10: https://patch.msgid.link/20260718-x1e-csi2-phy-v10-0-5720a7888953@linaro.org
+
+Changes in v10:
+- Rewords commit log of yaml schema to read more organically - Krzysztof
+- title: Qualcomm X1E80100 SoC CSI2 PHY - Krzysztof
+- opp-table: object - Krzysztof
+- Example opp-table in PHY node - Krzysztof
+- port@1 uses stock graph.yaml - Krzysztof
+- Dropped redundant remote-endpoint declaration - Krzysztof
+- vdda-0p9 - SoC pins are vdda-0p9 rail is l2c_0p8. Named as with pin - Vlad, Konrad
+- Retaining #phy-cells = 1.
+  Rob gave a steer to have the consumer configure this via DT. Not the way
+  Vlad suggests but I'm sticking to Rob's guidance for now - Rob/Vlad.
+- data-lanes - retained as per CAMSS existing.
+  Nihal suggested, I agreed and Loic added his assent too. Vlad disagrees
+  with this. I accept Nihal's suggestion though we should remain
+  consistent. - Nihal, Loic, Vlad.
+
+- pd_data = {} - Sashiko, Wengmeng
+- lanes_enable() failure unwinds - Sashiko
+- power_off and error paths drop OPP rate before performance state - Sashiko
+- probe returns -ENODEV when pd_list is NULL with ret == 0 - Sashiko
+- Move to devm_clk_bulk_get_all(), timer clock taken from the bulk,
+  clk_names indirection removed from soc_cfg - Frank
+- Drop static CSI_COMMON_CTRL5 (0x1014) table row - Nihal
+
+- Link to v9: https://patch.msgid.link/20260708-x1e-csi2-phy-v9-0-0210b90c04cf@linaro.org
+
+Changes in v9:
+
+Key advantages of implementing this logic as drivers/phy:
+
+  a) Per-PHY power rails become declarable and enforceable on a per-PHY
+     basis.
+  b) With future adaptations of CAMSS routing the PHY output to something
+     other than the CSI Decoders becomes possible.
+  c) Standard framework contract. phy_configure(mipi_dphy opts) / power_on / of_xlate.
+  d) Introduction of CPHY in this driver will elaborate CPHY for Linux in
+     general as there is currently no mipi_cphy_opts structure.
+
+- TITAN_TOP_GDSC retained. Further elaboration in below link. - Vlad
+  Link: https://lore.kernel.org/all/d5407ab1-1af7-4678-ae67-5cf30ce8fa4b@kernel.org/
+- Consumer selects PHY mode - Rob Herring
+  Link: https://lore.kernel.org/linux-media/20250710230846.GA44483-robh@kernel.org/
+- Incorporates two comments by Krzysztof I missed previously - krzk
+- Changes 0p9 rail name to 0p8 - Konrad, Sashiko
+- Uses port@0 and port@1 to denote input/output - Vladimir
+- Label phy@ instead of csiphy@ in example - Sashiko
+- Drops additional entries in example opp one is enough - bod
+- return 0 on timer_period_ps < 6. - Sashiko
+- Use power-domain names and a "scaled" bool to flag if
+  a power-domain needs to be scaled or not. Allowing the code to
+  attached to all PDs, GDSC and RPMPD alike but only scale the
+  RPMPD. - Sashiko
+- Fixes error cleanup flagged by Sashiko.
+- Checks args->args_count. Sashiko
+- Performs checks on pd_list == NULL. Sashiko
+- Makes opp-table required. Sashiko
+- Uses const "core" and "timer" when getting clocks. - Loic
+- Adds AHB clock - Vijay
+- Revert v7 lane-enable change, BIT(pos * 2) is correct: data-lanes
+  are logical indices, CSI_COMMON_CTRL5 is a physical bitmap - Nihal
+- Adds a comment to explain clock-lane - Nihal
+- Link to v8: https://patch.msgid.link/20260523-x1e-csi2-phy-v8-0-a85668459521@linaro.org
+
+Changes in v8:
+- Fixes two dt verification splats I missed by passing the wrong yaml file
+  to my checking script :( - Rob's bot
+- Fixes the polarity offset error - thanks Sashiko.
+- CONFIG_PM implies CONFIG_GENERIC_PM_DOMAINS no change - Sashiko, Bryan
+- Implemented suggested unwinding by Sashiko
+- Leaving the flagged settle_cnt alone. Requires invalid DT settings and in
+  addition the result is just a long settle count. Not real bug - Sashiko
+- Link to v7: https://patch.msgid.link/20260522-x1e-csi2-phy-v7-0-79cb1280fad6@linaro.org
+
+Changes in v7:
+- Made CONFIG_PM a dependency. Sashiko commented on the pd_list being NULL
+  and suggested I check the pointer but, we need to ramp the rails when
+  switching clock rate so we need CONFIG_PM full stop. - Sashiko.ai, Bryan
+- Added unwind operation for performance state error path - Sashiko
+- Made clock-lanes genuinely optional for the supported use-case. - Sashiko
+- Fixed the enable of lanes. Thus far we have had forever it seems
+  val |= BIT(lane.pos * 2) which I've never looked at much because it
+  has always worked. But looking at how to switch on polarities I realised
+  the relevant register is a linear bitmask without gaps so the correct
+  method is `val |= BIT(lane.pos)`.
+  This needs an update in the legacy PHY too in another series - Bryan
+- I opted not to do any of the "but if DT send junk into your driver" fixes
+  from Sashiko since TBH I think the code would be Spaghetti afterwards.
+  We trust DT and if DT is wrong we fix it, we don't try to graph its
+  relative (in)sanity.
+- Fixed my example in the yaml. Sashiko
+- Link to v6: https://patch.msgid.link/20260521-x1e-csi2-phy-v6-0-9d73d9bd7d20@linaro.org
+
+Changes in v6:
+- Taking feedback from lively debate added ports and
+  endpoints to the PHY - Neil, Vlad
+- Detection of split mode by way of which ports are declared.
+  port@0 is always a sensor input.
+  port@1 is optional and if present implies split-mode
+  port@2 is always the output. - Dmitry, Neil, Vlad.
+- Split mode is left as -ENOTSUPP unless/until someone with the appropriate
+  hardware can take on responsibility to drive to completion.
+- Extending phy_config_opts dropped.
+  I think this is a worthwhile extension but this series no longer depends
+  on it so dropped. - Bryan
+- MX/MXC.
+  Two OPP tables one for CSIPHY0/1/2 scaling MXC one for CSIPHY4 keeping
+  MXA at LOWSVS_D1 - to be implemented in DT not here. Taniya, Konrad, Bryan
+- Changed MAINTAINERS from Supported to Maintained.
+  Hobby time for me right now. - Bryan
+- Link to v5: https://lore.kernel.org/r/20260326-x1e-csi2-phy-v5-0-0c0fc7f5c01b@linaro.org
+
+v5:
+- Adds support to apply passed parameters for clock/data position/polarity - Neil
+- Drops GEN1/GEN2 differentiation this can be reconstituted if GEN1 ever
+  gets supported in this driver - Dmitry
+- Drops camnoc_axi, cpas_ahb - Konrad
+- Renames csiphy->core csiphy_timer->timer - Konrad
+- Renames rail from 0p8 to 0p9 schematics say  VDD_A_CSI_n_0P9 - Konrad
+- TITAN_TOP_GDSC dropped - Konrad
+- Passes PHY_QCOM_CSI2_MODE_{DPHY|CPHY|SPLIT_DPHY} with the controller
+  selecting the mode. Only DPHY mode is supported but the method to pass
+  CPHY or split-mode DPHY configuration is there.
+  Since split-mode is a Qualcomm specific mode the PHY modes are defined in
+  our binding instead of adding a new type to include/linux/phy/phy.h - bod
+- Depends-on: https://lore.kernel.org/r/20260325-dphy-params-extension-v1-0-c6df5599284a@linaro.org
+- Link to v4: https://lore.kernel.org/r/20260315-x1e-csi2-phy-v4-0-90c09203888d@linaro.org
+
+v4:
+- MMCX, MCX and MX/MXA power-domains added - Dmitry, Vijay, Konrad
+- power-domain-names added as required - bod
+- opp-tables amended to capture RPMHPD deps - Dmitry, Vijay
+- Switched to dev_pm_opp_set_rate, dev_pm_domain_attach_by_name etc
+  dropped inherited CAMSS code - Dmitry
+- Amended parameters structure to specify power-domain name list - bod
+- Removed dead defines - Dmitry
+- Noted in CSIPHY commit log intention to rework patterns of
+  PHY lane configs into loops/defines/bit-fields later - Dmitry, bod
+- Lowercase hex throughout - Dmitry
+- The yaml and code in this driver doesn't care if the node is a
+  sibling or a sub-node of CAMSS confirmed to work both ways - Dmitry, bod
+- Link to v3: https://lore.kernel.org/r/20260226-x1e-csi2-phy-v3-0-11e608759410@linaro.org
+
+v3:
+
+- Resending this to make clear this submission is additive to x1e/Hamoa
+  The existing bindings and code will continue to work 
+  Bindings are added only, nothing is subtracted from existing ABI.
+- Link to v2: https://lore.kernel.org/r/20260225-x1e-csi2-phy-v2-0-7756edb67ea9@linaro.org
+
+v2:
+
+In this updated version
+
+- Added operating-point support
+  The csiphy clock sets the OPP prior to setting the rate
+  for csiphy and csiphy_timer - Konrad
+
+- Combo mode
+  Combo mode in CAMSS yaml has been added. Right now
+  no code has been changed in the PHY driver to support it as
+  I don't have hardware to test. In principle though it can
+  be supported. - Vladimir
+
+- CSIPHY init sequences
+  I left these as their "magic number formats". With my diminished
+  status as a non-qcom VPN person - I can no longer see what the bits
+  map to. Moreover this is the situation any non-VPN community member
+  will be in when submitting CSIPHY sequences derived from downstream.
+
+  I think it is perfectly reasonable to take public CSIPHY init sequences
+  as magic numbers. If someone with bit-level access wants to enumerate
+  the bits that's fine but, it shouldn't gate in the interim. - Konrad/bod
+
+- Sensor endpoints
+  I've stuck to the format used by every other CSIPHY in upstream.
+  Sensor endpoints hit the CAMSS/CSID endpoint not a endpoint in the PHY.
+  Given the proposed changes to CAMSS though to support "combo mode" I
+  think this should achieve the same outcome - multiple sensors on the one
+  PHY without introducing endpoints into the PHY that no other CSIPHY in
+  upstream currently has.
+
+- Bitmask of enabled lanes
+  Work needs to be done in the v4l2 layer to really support this.
+  I propose making a separate series dedicated to non-linear bit
+  interpretation after merging this so as to contain the scope of the
+  series to something more bite (byte haha) sized. - Konrad/bod
+
+- Link to v1: https://lore.kernel.org/r/20250710-x1e-csi2-phy-v1-0-74acbb5b162b@linaro.org
+
+v1:
+This short series adds a CSI2 MIPI PHY driver, initially supporting D-PHY
+mode. The core logic and init sequences come directly from CAMSS and are
+working on at least five separate x1e devices.
+
+The rationale to instantiate CSI2 PHYs as standalone devices instead of as
+sub-nodes of CAMSS is as follows.
+
+1. Precedence
+   CAMSS has a dedicated I2C bus called CCI Camera Control Interface.
+   We model this controller as its own separate device in devicetree.
+   This makes sense and CCI/I2C is a well defined bus type already modelled
+   in Linux.
+
+   MIPI CSI2 PHY devices similarly fit into a well defined separate
+   bus/device structure.
+
+   Contrast to another CAMSS component such as VFE, CSID or TPG these
+   components only interact with other CAMSS inputs/outputs unlike CSIPHY
+   which interacts with non-SoC components.
+
+2. Hardware pinouts and rails
+   The CSI2 PHY has its own data/clock lanes out from the SoC and indeed
+   has its own incoming power-rails.
+
+3. Other devicetree schemas
+   There are several examples throughout the kernel of CSI PHYs modeled as
+   standalone devices which one assumes follows the same reasoning as given
+   above.
+
+I've been working on this on-and-off since the end of April:
+Link: https://lore.kernel.org/linux-media/c5cf0155-f839-4db9-b865-d39b56bb1e0a@linaro.org
+
+There is another proposal to have the PHYs be subdevices of CAMSS but, I
+believe we should go with a "full fat" PHY to match best practices in
+drivers/phy/qualcomm/*.
+
+Using the standard PHY API and the parameter passing that goes with it
+allows us to move away from custom interfaces in CAMSS and to conform more
+clearly to established PHY paradigms such as the QMP combo PHY.
+
+Looking at existing compat strings I settled on
+"qcom,x1e80100-mipi-csi2-combo-phy" deliberately omitting reference to the
+fact the PHY is built on a four nano-meter process node, which seems to
+match recent submissions to QMP PHY.
+
+My first pass at this driver included support for the old two phase
+devices:
+
+Link: https://git.codelinaro.org/bryan.odonoghue/kernel/-/commit/a504c28d109296c93470340cfe7281231f573bcb#b6e59ed7db94c9da22e492bb03fcda6a4300983c
+
+I realised that the device tree schema changes required to support a
+comprehensive conversion of all CAMSS to this driver would be an
+almost certainly be unacceptable ABI break or at the very least an enormous
+amount of work and verification so I instead aimed to support just one new
+SoC in the submission.
+
+I've retained the callback indirections give us scope to add in another type of
+future PHY including potentially adding in the 2PH later on.
+
+This driver is tested and working on x1e/Hamoa and has been tested as not
+breaking sc8280xp/Makena and sm8250/Kona.
+
+Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+---
+Bryan O'Donoghue (2):
+      dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
+      phy: qcom-mipi-csi2: Add a CSI2 MIPI DPHY driver
+
+ .../bindings/phy/qcom,x1e80100-csi2-phy.yaml       | 195 +++++++++
+ MAINTAINERS                                        |  10 +
+ drivers/phy/qualcomm/Kconfig                       |  14 +
+ drivers/phy/qualcomm/Makefile                      |   5 +
+ drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c | 386 ++++++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c     | 446 +++++++++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-mipi-csi2.h          |  97 +++++
+ 7 files changed, 1153 insertions(+)
+---
+base-commit: 8dac27bfa2f994ecb11f01a63641527d17d48fc1
+change-id: 20250710-x1e-csi2-phy-f6434b651d3a
+
+Best regards,
+--  
+Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
