@@ -4,52 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1D9EC4451B
-	for <linux-phy@archiver.kernel.org>; Sat, 18 Jul 2026 09:36:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63514C44512
+	for <linux-phy@archiver.kernel.org>; Sun, 19 Jul 2026 06:28:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FdYvRgBWyTMp7bGNRqIM5WTn5Dz+yiJtZFDekLpJnPU=; b=0GmXNtV0z/QdZU
-	TM6/CCxxT1cvufxGPNdVxyAXd+Izy4Hq8BKuA9Qj9+9hQjc4vrFYAbRsVNAdBlhsuNF2uUqD1TzCo
-	EuY5hKcCdx9yn7YoAzH1mRS5yJ1BCXoC2wQzy9qi1yNLUFUjKhR9dHhjsJF3ivYkIKRdC4OA3HxeW
-	PtO140qJGDtLENrGabJ7QcVUtoc/zVWB/yq5xOTFSVOoJTcz7fmd/bBupTYu/gkIfwqKuUboyD6aq
-	em4jG/+VOsWHBCBA6uVXmHNPq04PzZM9SRnyN43K+CNzWbyeQdhBp4XCODwM+bgiHzQW2saf06Mis
-	Qcp34lPdSvlxG/GTvKrA==;
+	List-Owner; bh=+NCF+eQhuv71cNyFK7EJKJsu1SWepdvat+JY2mjnK9M=; b=c0xTpm+X4cHtly
+	Y+aJgEoiqUgT6mxSfVhyhy8bjavPWF7P58A5CATTitPRieX5jFMi0guUFlr//TYFA6LUB3qqaFFVP
+	mgvSh1Bcl2viVbBLDZBL/V2pY3rt682cdS3XRqDJ/t8shL+fpt7i/kfjbMxBJ+HAIf1dF7iJse0T9
+	0INPUbMn534X671k/7OHDhKfb7LpXw0wGrsXHuv4l1++CWsHB+woy49suzGG3BidstINRU2D1zOuc
+	2tFqY2WO5pPfNopBN+Hpmkl42qIluKmGFA7ivDItJxq1x/3b+Bo484/nroAdM1XTJaFVqLap0O30N
+	VII4lsa9IxVGt6lDwhZg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wl1Tf-00000003xvx-1vwz;
-	Sat, 18 Jul 2026 09:36:59 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wlL0X-00000004nIP-2y2V;
+	Sun, 19 Jul 2026 06:28:13 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wl1Te-00000003xvr-405Q
+	id 1wlL0W-00000004nIH-3XAt
 	for linux-phy@lists.infradead.org;
-	Sat, 18 Jul 2026 09:36:58 +0000
+	Sun, 19 Jul 2026 06:28:12 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 736C940F10;
-	Sat, 18 Jul 2026 09:36:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 111191F000E9;
-	Sat, 18 Jul 2026 09:36:58 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id DBEBB6001A;
+	Sun, 19 Jul 2026 06:28:11 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 96D6D1F000E9;
+	Sun, 19 Jul 2026 06:28:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784367418;
-	bh=T6pdw/mkihOKQESakimbMw8bn8o3LUv5NtKVXUW5xU4=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=LVp43yI5k9Io09Ci3oyjdbWS132yDebneDCmLbmefTgJaA0bW4vxy0sQ/Qain0n+K
-	 jwXk1lsF+UbGKd+W/uE1PQOeuUsLgfiqcYOPTgfQaiNoD7MYTFNdNj+MxwOzrJY8ii
-	 R6W9dx+GX+b8f8XuTEkC3k0PW2qRbFx/Yd+FEm26JP9LtaDMtF2cFNo7IwiDwR456c
-	 ecUVNPCmsig2CtE6AHi6ukzRaVsMGREJIWpcJGcn7e/D85x50v8D4PNjce5tODiI59
-	 /QRumr+SZotNHLVgZ7RyypsRQFCi90//HQ0fVZ9I+1oTyW7AIvOg6AP9bUTGPPjuBi
-	 cdaK51BDWtoLA==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH] phy: qcom: m31-eusb2: Fix return value of init call
-To: "Krishna Kurapati" <krishna.kurapati@oss.qualcomm.com>
-Cc: vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com, linux-phy@lists.infradead.org
-In-Reply-To: <20260718-m31-eusb2-fix-v1-1-8588a1b94d76@oss.qualcomm.com>
-References: <20260718-m31-eusb2-fix-v1-1-8588a1b94d76@oss.qualcomm.com>
-Date: Sat, 18 Jul 2026 09:36:57 +0000
-Message-Id: <20260718093658.111191F000E9@smtp.kernel.org>
+	s=k20260515; t=1784442491;
+	bh=UQoXqfEBpAt6v+emI5izvhq1VvHsMHK/ap376N19A8A=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=m6Yl3eowjZffPDvmmVJ55kv2AJc2VODML6zPwXABUiXiMUgci8v+ocgEnHEVKoL4K
+	 3KyXezS2Ee4JG7dTbkf9+vJ9Tf0SZ2LLtxzaKdh9Hf3REXGjwOIQv8ffAegBQlODd7
+	 DQaJ16fN0DRr1PZK/9jijyGS6OOTIa5cjdPC6IduaDmN3PIDq+jJrWGOtfAERVRXqy
+	 EnlqwTknoZZvoZ4zuoJV72+ztodAof1SMcgCQ04bZOpjFYcWvwMRlyCvDyhFPVfPww
+	 4yo9oYN8qPDf570GHVQqLGfmVJK9WVsxpcDS3ZslEzRa0KfkSPRD4Ra9mEGwxCtegh
+	 AzB9aJqSekWUQ==
+Date: Sun, 19 Jul 2026 08:28:07 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Bryan O'Donoghue <bod@kernel.org>, 
+	Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-media@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v10 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY
+ schema
+Message-ID: <20260719-electronic-swine-from-hyperborea-b1edbc@quoll>
+References: <20260718-x1e-csi2-phy-v10-0-5720a7888953@linaro.org>
+ <20260718-x1e-csi2-phy-v10-1-5720a7888953@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260718-x1e-csi2-phy-v10-1-5720a7888953@linaro.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -61,49 +70,32 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
-IFtIaWdoXSBIYXJkd2FyZSBpbml0aWFsaXphdGlvbiBmYWlsdXJlcyBkdXJpbmcgcmVnaXN0ZXIg
-Y29uZmlndXJhdGlvbiBpbiBgbTMxZXVzYjJfcGh5X2luaXRgIGFyZSBpZ25vcmVkLCBsZWFkaW5n
-IHRvIGEgc2lsZW50IGZhaWx1cmUuCi0tCgotLS0gUGF0Y2ggWzFdOiBbUEFUQ0hdIHBoeTogcWNv
-bTogbTMxLWV1c2IyOiBGaXggcmV0dXJuIHZhbHVlIG9mIGluaXQgY2FsbCAtLS0KY29tbWl0IDY1
-ZjY2NmZlMzBjYmM1NGIzN2VlNjgyZjMwNjRhMjRmY2MyNGIxNmYKQXV0aG9yOiBLcmlzaG5hIEt1
-cmFwYXRpIDxrcmlzaG5hLmt1cmFwYXRpQG9zcy5xdWFsY29tbS5jb20+CgpwaHk6IHFjb206IG0z
-MS1ldXNiMjogRml4IHJldHVybiB2YWx1ZSBvZiBpbml0IGNhbGwKICAgIApUaGUgaW5pdCBjYWxs
-IHByZXZpb3VzbHkgcmV0dXJuZWQgMCBldmVuIHdoZW4gcmVwZWF0ZXIgaW5pdGlhbGl6YXRpb24g
-b3IgY2xvY2sKZW5hYmxlbWVudCBmYWlsZWQuIFRoaXMgcGF0Y2ggdXBkYXRlcyB0aGUgZmFpbHVy
-ZSBwYXRoIHRvIHJldHVybiB0aGUgYWN0dWFsCmVycm9yIHZhbHVlLgoKPiBkaWZmIC0tZ2l0IGEv
-ZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tbTMxLWV1c2IyLmMgYi9kcml2ZXJzL3BoeS9x
-dWFsY29tbS9waHktcWNvbS1tMzEtZXVzYjIuYwo+IGluZGV4IDBiZWM4NjU3MTQ5YzkuLjI3NWRm
-MzgyNTZkZTMgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tbTMx
-LWV1c2IyLmMKPiArKysgYi9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1tMzEtZXVzYjIu
-YwpbIC4uLiBdCj4gIAltMzFldXNiMl9waHlfd3JpdGVfc2VxdWVuY2UocGh5LCBkYXRhLT5zZXR1
-cF9zZXEsIGRhdGEtPnNldHVwX3NlcV9ucmVncyk7Cj4gIAltMzFldXNiMl9waHlfd3JpdGVfcmVh
-ZGJhY2socGh5LT5iYXNlLAo+ICAJCQkJICAgIFVTQl9QSFlfSFNfUEhZX0NUUkxfQ09NTU9OMCwg
-RlNFTCwKPiAgCQkJCSAgICBGSUVMRF9QUkVQKEZTRUwsIGRhdGEtPmZzZWwpKTsKPiAgCW0zMWV1
-c2IyX3BoeV93cml0ZV9zZXF1ZW5jZShwaHksIGRhdGEtPm92ZXJyaWRlX3NlcSwgZGF0YS0+b3Zl
-cnJpZGVfc2VxX25yZWdzKTsKPiAgCW0zMWV1c2IyX3BoeV93cml0ZV9zZXF1ZW5jZShwaHksIGRh
-dGEtPnJlc2V0X3NlcSwgZGF0YS0+cmVzZXRfc2VxX25yZWdzKTsKPiAgCj4gIAlyZXR1cm4gMDsK
-CltTZXZlcml0eTogSGlnaF0KVGhpcyBpcyBhIHByZS1leGlzdGluZyBpc3N1ZSwgYnV0IHNpbmNl
-IHRoaXMgcGF0Y2ggZml4ZXMgZXJyb3IgaGFuZGxpbmcgaW4gCm0zMWV1c2IyX3BoeV9pbml0KCks
-IHNob3VsZCB3ZSBhbHNvIGNoZWNrIHRoZSByZXR1cm4gdmFsdWVzIG9mIHRoZXNlIHJlZ2lzdGVy
-IApjb25maWd1cmF0aW9uIGZ1bmN0aW9ucz8KCklmIG0zMWV1c2IyX3BoeV93cml0ZV9zZXF1ZW5j
-ZSgpIG9yIG0zMWV1c2IyX3BoeV93cml0ZV9yZWFkYmFjaygpIGZhaWxzLCB0aGUgCmVycm9yIGlz
-IGN1cnJlbnRseSBpZ25vcmVkLiBUaGUgZnVuY3Rpb24gc3VjY2Vzc2Z1bGx5IHJldHVybnMgMCB3
-aXRob3V0IApleGVjdXRpbmcgdGhlIGRpc2FibGVfcmVwZWF0ZXIgYW5kIGRpc2FibGVfdnJlZyBj
-bGVhbnVwIHBhdGhzLiBUaGlzIGNvdWxkIGxlYXZlIAp0aGUgUEhZIGhhcmR3YXJlIGluIGFuIGlu
-Y29ycmVjdGx5IGluaXRpYWxpemVkIHN0YXRlLgoKPiAgCj4gIGRpc2FibGVfcmVwZWF0ZXI6Cj4g
-IAlwaHlfZXhpdChwaHktPnJlcGVhdGVyKTsKPiAgZGlzYWJsZV92cmVnOgo+ICAJcmVndWxhdG9y
-X2J1bGtfZGlzYWJsZShNMzFfRVVTQl9OVU1fVlJFR1MsIHBoeS0+dnJlZ3MpOwo+ICAKPiAtCXJl
-dHVybiAwOwo+ICsJcmV0dXJuIHJldDsKPiAgfQoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0
-dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDcxOC1tMzEtZXVzYjItZml4LXYxLTEt
-ODU4OGExYjk0ZDc2QG9zcy5xdWFsY29tbS5jb20/cGFydD0xCgotLSAKbGludXgtcGh5IG1haWxp
-bmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On Sat, Jul 18, 2026 at 03:38:17AM +0100, Bryan O'Donoghue wrote:
+> Add a base schema for the MIPI CSI2 PHYs on Qualcomm SoCs. This PHY
+> supports both DPHY and CPHY operation. A special mode of DPHY operation -
+> called variously split-mode or combo-mode also allows for two sensors to be
+> connected to one PHY.
+> 
+> The submitted binding here describes the DPHY modes of operation only. CPHY
+> is left to future work.
+> 
+> Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+> ---
+>  .../bindings/phy/qcom,x1e80100-csi2-phy.yaml       | 195 +++++++++++++++++++++
+>  1 file changed, 195 insertions(+)
+
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
