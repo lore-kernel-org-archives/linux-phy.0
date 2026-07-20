@@ -4,91 +4,117 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED65AC44512
-	for <linux-phy@archiver.kernel.org>; Sun, 19 Jul 2026 22:30:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EE699C4451B
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 01:11:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8ScaMPoiu+AgcV8bUmfH26HQUPoLg2l0JA1jBEPooco=; b=FHmmnTEcuevcjn
-	XMmWYhU7lDfXgdI+OCFKnZ7+ZC/sCTB2sa64WmZ7mD5z2wvCOOi7hvh+WeKblm89TzQTtQOVf0lSo
-	+6V6/aPtlnkcKud0arQxKjQJJ/mcaYeSj3WC6hhNIANbyS0kJGqdSOOyCpuktT5rJ4IfoelEdB0tF
-	q1R3+88I59N//Qwq8AJhNT9s9WPRNV94VmTlTPnyPAiJ/La2QzzCExE9AEJXomuarSdgyXp9VrCar
-	NjCQIRrlqD+Ov3QwgK/Hx27x/qkdR8P8O646wDikxSnL/9CmNAZNdT+6wv5JOu/XOKp8IpGVvI6t8
-	XQr3WRbmSTKHC3/o6Cmw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=6SJrfTNTH4MEn1EtjZIoPRroNBsNlukgHSexj0/Uric=; b=Ion9oXaK3Fl3D8
+	nORf3KINnpjuHj/cjIoLxld/X+pNAU75noMHC91ehSbNnS22AHtNaXH++k54JDGYauj4R1HiaKyEH
+	LdZO58enELyPfDp0mNAYaKADu1rqafDlGjwx3xA6qmpjHVRS8pugnb/kz3++lIHeMhfGsB7B05vTd
+	woEiLA/ga+FSVu6hUxI2uG31KqzIp5X+yGQZDE5iKklZJzWw7tMvwrS2K6VIb0dP81u35Fg7olx2C
+	NRCqQvYJVUr6vpF/ZL9i8E7/DhV9bZg5TGCbDPGdna7WPkJU0kmlce8jfAgeXjA44MTtIP/UK08SN
+	bCReeb+FXlMB8eHOYB+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wla1v-00000005RJZ-1F05;
-	Sun, 19 Jul 2026 22:30:39 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	id 1wlcXq-00000005Zts-4257;
+	Mon, 20 Jul 2026 01:11:46 +0000
+Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wla1s-00000005RJ8-2g1x
+	id 1wlcXn-00000005Zsu-0EII
 	for linux-phy@lists.infradead.org;
-	Sun, 19 Jul 2026 22:30:37 +0000
-Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-4955158f26aso8065625e9.3
-        for <linux-phy@lists.infradead.org>; Sun, 19 Jul 2026 15:30:36 -0700 (PDT)
+	Mon, 20 Jul 2026 01:11:44 +0000
+Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-4955158f26aso8424825e9.3
+        for <linux-phy@lists.infradead.org>; Sun, 19 Jul 2026 18:11:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1784500235; x=1785105035; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=VNPJswjr3SJLrlJpAZg7EHmOY10XaD74Uxuqros5GpM=;
-        b=lKFJaDP9y9LpOoFAV+Dw14c93Lz9odXGpMimSFD911iy4EVKF0u3+yMvQ88RT8brEV
-         jWVSr7NG68wB1d27cHZM3IrUhzD185kopVyvf8tUWwXURYx6ZXLldzSLLM0nZW8umjgm
-         ZhG0O3WNQTuc6rk8jEc54/JvSXgHe0YpyCXr/T4BGmFP4dOtW6XQ6esQ011v+iVrUqwJ
-         UNJEW2GBZbahI220cGxEBxHXHlaKG2r/DTqWzVUQYMmXc3FaEbZ6AOQenc/XRBk7yuvg
-         MKNC6tqlz3pLgru+yzuTr1qjaxmmcnMJrERHNNqmJ6h29zYuWBrczdn6TFQLaAbNy/cs
-         y80g==
+        d=linaro.org; s=google; t=1784509901; x=1785114701; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:content-type:mime-version
+         :message-id:date:subject:from:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=NBzFqo1q62oUHnanuR3X/f6GVIfyfY7mdfBhjgPaDbc=;
+        b=rwALRCdwQnEusLWCZjyJfrokmoTKT73587hva3KTsqOSzs7mpahcgHk6abM+NQfmGJ
+         4PqOjwmpc/o5dPGl9d/NchJRJg/JFosHafO42gGLcs/mCnn8chW+I9+WnD++DFOn1nd+
+         oa5By9XKf0IzgQ+aG08LxA03XD8Ra8w1e524aaPpTO2LUMJRPjBIPUV+Qtx2dtUJdAYq
+         Vd2EQesFO8VXM+GVqbnBG05Kib6WnxrXlf2UMBWrN9jRkoC/Am77jcrajQVuWcwyw9e1
+         nTb6OvxnDT6oYNdhnR+tujYhlEw1ptudi7pCu+9/6HqV9c6VlEQwWtXPIWxm2tb/sQI2
+         1vQw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784500235; x=1785105035;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=VNPJswjr3SJLrlJpAZg7EHmOY10XaD74Uxuqros5GpM=;
-        b=eyL0g3P2G6tiOFKOMBZoDaem2uJFeshTcJWb8+QGlvrvPi4iIBv5UhSJnq360+XPQg
-         a7cXP+xgAWjDkNHoTiEpgEA3z/5z2jcgz2/IsQ1cegORXx3qeKJUUIjsTB7sAwx5+drB
-         ww8yEUeb8HCe78sEo/e8eLuszkcMuhR4uySn+gdosxII/T8MWNpRwB66JSFWfLlH/VUD
-         Lf3hISq1b6rFRIgomZmoprAeqKPJB0LcYQDostkIVzTW+af/qYF/vmAkLWb+iBHShdgy
-         VOjmh+0oi1z829IfpzCZRPIXlDCO6b8O3AkMBhHNoOemhMK6hhT8qQ2CROc+JiL2AQc8
-         Wt1A==
-X-Forwarded-Encrypted: i=1; AHgh+Rrl/rTtw1FkHQbj1cRtkIZW5PQgWXBXCl0HkDMWRli7oj+gI79npjIPj3t2Uy906J+oTODJ8xGw5XA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwlNaO8dETK0kpXBr9vex3kVhfbeasR2khA5ancTxgEMfuxAMVh
-	on/UeNYLDamt537xqALMBK5RA51gjs2NJs5vy0YF62jAneots8PEFuxmwpEkUekmHSoqP+bVErl
-	LVT/VN78=
-X-Gm-Gg: AfdE7clBbwETKMV85Ir/0S9U8DULYDkOX14nGQFoZdCjcP7JQJ05fOymB4R8wgc6a7H
-	HYyKfsYzUmZdabhiTCJjoJiQF4uRRDug2DEUEcviN59AKkPgCdJftI5xhhbnofFCUKjog0er0Pn
-	jWzPqODeXzI8xcf1PcuamdpVilDSJgHxvwfKAYhPIqn+USRQPCA0hxoTIVThd4On6RXaCTrEUV7
-	FR8cPiMopCgUFGmcea6937sQKaIE/cb6RTCA0GwJF91b/EvquP0GayO6y2NQe4UgTwOebKkVr4u
-	G7B+4pYx1DoV7JCsQHa+ePqWATdoh0Ix3zl8aAh98I0txgj3py7MsslH4MKCvIAEYyBDXEDzfTz
-	PwzkIMfqO/PfSyRpiG519puNGfp15JDLCEDGgV4H/2C2iklNxJfh7Yl23Ru0wTpecDdY/s7KYQc
-	inTkq3RQPNh09R9+0bvwdkugvw
-X-Received: by 2002:a05:600c:4445:b0:493:f262:b8 with SMTP id 5b1f17b1804b1-4954a3e374cmr116983045e9.1.1784500234679;
-        Sun, 19 Jul 2026 15:30:34 -0700 (PDT)
-Received: from [192.168.0.101] ([109.76.79.119])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4954a2edda2sm217846365e9.13.2026.07.19.15.30.33
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 19 Jul 2026 15:30:34 -0700 (PDT)
-Message-ID: <61f7c25d-fd50-42bd-aabc-8da1ea28e233@linaro.org>
-Date: Sun, 19 Jul 2026 23:30:33 +0100
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v12 2/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI DPHY driver
-To: sashiko-reviews@lists.linux.dev
-Cc: robh@kernel.org, media-ci@linuxtv.org, vkoul@kernel.org,
- conor+dt@kernel.org, devicetree@vger.kernel.org, neil.armstrong@linaro.org,
- linux-phy@lists.infradead.org, olteanv@gmail.com
-References: <20260719-x1e-csi2-phy-v12-0-cc7311326d1b@linaro.org>
- <20260719-x1e-csi2-phy-v12-2-cc7311326d1b@linaro.org>
- <20260719135920.2195A1F00A3A@smtp.kernel.org>
+        d=1e100.net; s=20251104; t=1784509901; x=1785114701;
+        h=cc:to:content-transfer-encoding:content-type:mime-version
+         :message-id:date:subject:from:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=NBzFqo1q62oUHnanuR3X/f6GVIfyfY7mdfBhjgPaDbc=;
+        b=ONmOtTy9afdtvp6xINnLv7Lmo94o8ax2K8pPG3DLFfHMTR0PNqIrddY89uwbWPUIS7
+         eAPJ9JvVXgeHT//Drzu6pXLzc5ZyBY6HgrvxdTkhEYZl9MyPf0SrYaLzjsuaPsef2SHQ
+         PiuGSs0DKoOjwPxT0flm69v27dNkZX1HXmKluI6vFhYvAHQhMA2HS05jRc0n6NUxZq3C
+         o838EC1zc+Gk1NWTijNkO1a3OxlOLFa1z0lWYIJfw6KEt7UeoD3PUwLvSOv8V5OXRlud
+         jwu2/geP2wTeuOBz4Sqp+kSb29NJk8BVy08EbNQKXXpcV2uST8ghjfNV+A1/NqhXQfm/
+         10Eg==
+X-Forwarded-Encrypted: i=1; AHgh+RomFy2NU2tL8L88cak8RCco/nYUd5oJwH/rDMY+Jc+uV4vtpfSElVo8gI4BIpkDQ8A4t5lghaZsLYE=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwMcIE29wi2IXmduvYUOTbMcyJpHZr7YPPBUdk6BjZ9gKJbvEIk
+	iCk4Z4hxUq2nG3E4ZQ2DSk/eZHwkhIxKdlnftU79MDFhqja5Y3a7wwCbrObywP5dn38RiUczqSF
+	z3x+9k9U=
+X-Gm-Gg: AfdE7clFbWx/r6pHb1V/q+DL7ybIbQeXkbbV+MRZanuLQOX+6+x5/sewx9oq+6TtMN2
+	kxycqDV+TUhabZKtrCOUoJfEDyB69t8UaIf1oSV/AFpo0io2CMGht11MmcvnxFKAXe/e6ntK6qw
+	xX7iTTghmXctWNpY6awXUz4Qs3yo2a+nMg0LYwCmzGEj+W4iAMoSaROW5arbb7HfSkPgFDQLwLl
+	xvKBT5cLsukRPNI1BQT63rTNsrRegKu9z42suWmCsbrHozNxpEWAlmr6o7B+/73Pno6wVqqS40r
+	jYYDsND6wJ45kSw27hHHeJ7/QveweuhOfyLf391tOhGVjvWQKJ00bFOg/htTiOODdghp2/GVC1K
+	mtnMPlrUf2akO9Nm/oWWykN6Hgx3qLampXDA4oIRcrXrPuNY6ryHG/+wMsCWPtAq8LbZO8D8/nb
+	se+kjHJcx0ztkt
+X-Received: by 2002:a05:600c:4f94:b0:493:d741:5d72 with SMTP id 5b1f17b1804b1-4954a513ef9mr124626705e9.38.1784509900440;
+        Sun, 19 Jul 2026 18:11:40 -0700 (PDT)
+Received: from [192.168.0.35] ([109.76.79.119])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4954d384146sm180847285e9.14.2026.07.19.18.11.39
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 19 Jul 2026 18:11:39 -0700 (PDT)
 From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-Content-Language: en-GB
-In-Reply-To: <20260719135920.2195A1F00A3A@smtp.kernel.org>
+Subject: [PATCH v13 0/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI DPHY driver
+Date: Mon, 20 Jul 2026 02:11:33 +0100
+Message-Id: <20260720-x1e-csi2-phy-v13-0-160c31958863@linaro.org>
+MIME-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/33SzWrDMAwA4FcpOc9Dkv932nuMHfyX1jCakozQU
+ vLuswujwWY7WvBJsqT7sKQ5p2V4O9yHOa15ydO5PJC/HIZwcudjYjmWwEBAEjQCu2JiYcnELqc
+ bG5XgwiuJkbuhkMucxnx95Pv4LO9TXr6n+fZIv2KN/pFoRQZMCxe8lx4V+fevfHbz9DrNx6FmW
+ ulXKyCSjaaqtVQpeqWTs53me60azYtGTAqMllYgdFo8Nce2tijaQgBLwI0xsdNyp7vasuiCx6B
+ HGQD7f6unloSNVrV21DxaH3WkvnO919RoXadmg0cyMLqoOm32mjfaFO2MVMoIaUtrnbZPrcE02
+ tZ/E4KvoxNh7DTCjmPLy/0Ak5rA6TJzK3nvce9t6/ExOXCYIihO/daQ/vX14kLQHLHsNDZ727b
+ tBzIJjaBaAwAA
+X-Change-ID: 20250710-x1e-csi2-phy-f6434b651d3a
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Bryan O'Donoghue <bod@kernel.org>, 
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>, 
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, Bryan O'Donoghue <bryan.odonoghue@linaro.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=14352;
+ i=bryan.odonoghue@linaro.org; h=from:subject:message-id;
+ bh=Pq7BY98qSyosGScIWwD7GLm/dqH5Alj/b2UyLq4Wwr0=;
+ b=owEBbQKS/ZANAwAKASJxO7Ohjcg6AcsmYgBqXXXJ3/JlvNOzl97qTVn1T+JAAKIJuHkfX5MQR
+ SGmLxHznR2JAjMEAAEKAB0WIQTmk/sqq6Nt4Rerb7QicTuzoY3IOgUCal11yQAKCRAicTuzoY3I
+ Oo39EACjIuL/XiVTmGeYdDltonHYi+ibhBK+sg53z8USjh2u3/m675K+cWDO61UJEE6oWM+Zoe3
+ OaVM+k9XmahAMhKHf3O+YefvobuZP5Pdltwu01jxO0RVET1nqehIDny04j/y/Ogtw+cl2y7+F5O
+ euFGWAcK+nFTlnly8DUO6ZwAjx3SPc3+n+4djNFTGrtOyf3hAAJGBEDUUGSlXSflCDbPFQruwWj
+ nFUL3DTeoR4ZtjEkpIYFMuRGeh0on0uQ4cpWJ+ZnAmD4+/o/t6u9Rah4agQT/oBc+AGHaHDKOwq
+ Jh/XHdnvuN5grnW2ZkHycmMHfj0wFTZbmLExzYFNguSqYbEiECF6j8pDp6O4r8688t03rV7baiG
+ fn3vTIX2uyjvt7XlQ7ZkPb0nZGoVGa+KklHMHwlImhCD6pLRqX3e4N0WnKhjLgJ1Vwtwc9QgrGm
+ Iv7Maq8tXcd6NOvrvegBNQi/9cHR/5B19mY+QBRSbMw7SZ3R+EiIvwaZ5XTpZxrTl0Txb3Q7fGt
+ hRnZzo23kHqHR+IQwQj3pnOSlUyNuynMFYLKaq3F8PQD7efeoFYdaJvQoaBPsv3MlFQcr+27E4y
+ YxR7Q7lgcCyo4a1HKIrgGPfdfYW7K4y/AowmW35pJsMvXHunK5at8qfjxzk/qXMklg4aAGnkGD2
+ ijNUJ/ybU1iljxw==
+X-Developer-Key: i=bryan.odonoghue@linaro.org; a=openpgp;
+ fpr=E693FB2AABA36DE117AB6FB422713BB3A18DC83A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260719_153036_737525_C79017DA 
-X-CRM114-Status: GOOD (  29.25  )
+X-CRM114-CacheID: sfid-20260719_181143_260769_AE8E6D78 
+X-CRM114-Status: GOOD (  33.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,137 +126,310 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 19/07/2026 14:59, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 3 potential issue(s) to consider:
-> - [High] Valid calculated settle_cnt of 0 is erroneously rejected as an error, causing PHY initialization to fail.
-> - [High] Potential NULL pointer dereference in clock name comparison during probe when parsing malformed device trees.
-> - [Medium] Missing PM_OPP Kconfig dependency causes unconditional runtime probe failures.
-> --
-> 
-> --- Patch [2]: [PATCH v12 2/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI DPHY driver ---
-> commit 7fdedc509474184e47a62af468ae08b71f96dfd5
-> Author: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-> Subject: phy: qcom-mipi-csi2: Add a CSI2 MIPI DPHY driver
-> 
-> This commit adds a new MIPI CSI2 driver in DPHY mode. It imports existing
-> CAMSS CSI PHY initialization sequences to support devices like the
-> qcom,x1e80100-csi2-phy.
-> 
->> diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
->> index 60a0ead127fa9..779a3511ba852 100644
->> --- a/drivers/phy/qualcomm/Kconfig
->> +++ b/drivers/phy/qualcomm/Kconfig
->> @@ -28,6 +28,20 @@ config PHY_QCOM_EDP
->>   	  Enable this driver to support the Qualcomm eDP PHY found in various
->>   	  Qualcomm chipsets.
->>   
->> +config PHY_QCOM_MIPI_CSI2
->> +	tristate "Qualcomm MIPI CSI2 PHY driver"
->> +	depends on ARCH_QCOM || COMPILE_TEST
->> +	depends on OF
->> +	depends on PM
->> +	depends on COMMON_CLK
->> +	select GENERIC_PHY
->> +	select GENERIC_PHY_MIPI_DPHY
-> 
-> [Severity: Medium]
-> Should this Kconfig entry select or depend on PM_OPP?
-> 
-> Without CONFIG_PM_OPP enabled, the stub for devm_pm_opp_of_add_table()
-> used during probe will return -EOPNOTSUPP, causing the driver probe to
-> unconditionally fail with an "invalid OPP table" error.
+This driver is very critical to several SoCs being merged and CPHY being
+added to Qualcomm SoCs.
 
-By design in fact as a result of a Sashiko review as I recall. Context 
-window between runs seems required for this tool.
+It would be very beneficial therefore to get this merged in this cycle. A
+lot of other enablement code depends on it.
 
-> 
->> diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
->> new file mode 100644
->> --- /dev/null
->> +++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
-> 
-> [ ... ]
-> 
->> +static int phy_qcom_mipi_csi2_lanes_enable(struct mipi_csi2phy_device *csi2phy,
->> +					   struct mipi_csi2phy_stream_cfg *cfg)
->> +{
->> +	const struct mipi_csi2phy_device_regs *regs = csi2phy_dev_to_regs(csi2phy);
->> +	struct mipi_csi2phy_lanes_cfg *lane_cfg = &cfg->lane_cfg;
->> +	u8 settle_cnt;
->> +	u8 val;
->> +	int i;
->> +
->> +	settle_cnt = phy_qcom_mipi_csi2_settle_cnt_calc(cfg->link_freq, csi2phy->timer_clk_rate);
->> +	if (!settle_cnt)
->> +		return -EINVAL;
-> 
-> [Severity: High]
-> Does this incorrectly reject a valid settle count of zero?
-> 
-> Looking at the math in phy_qcom_mipi_csi2_settle_cnt_calc():
-> 
-> phy_qcom_mipi_csi2_settle_cnt_calc() {
->          ...
->          settle_cnt = t_hs_settle_ps / timer_period_ps - 6;
->          return settle_cnt;
-> }
-> 
-> If the link frequency and timer clock rate yield exactly 6 timer periods
-> for t_hs_settle, the calculation results in 0. By rejecting 0 here,
-> legitimate MIPI CSI2 configurations might fail to initialize.
+Vinod, Kishon what do you need to take this for 7.2 ?
 
-Yeah, I guess a zero settle count should be legitimate.
+Changes in v13:
+- Fixed two sashiko "high" flagged items. Hopefully for the last time.
+- Added PM_OPP to depends - Sashiko
+- Link to v12: https://patch.msgid.link/20260719-x1e-csi2-phy-v12-0-cc7311326d1b@linaro.org
 
-> 
->> diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
->> new file mode 100644
->> --- /dev/null
->> +++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
-> 
-> [ ... ]
-> 
->> +static int phy_qcom_mipi_csi2_probe(struct platform_device *pdev)
->> +{
-> 
-> [ ... ]
-> 
->> +	ret = devm_clk_bulk_get_all(dev, &csi2phy->clks);
->> +	if (ret < 0)
->> +		return dev_err_probe(dev, ret, "Failed to get clocks\n");
->> +
->> +	if (num_clk != ret) {
->> +		return dev_err_probe(dev, -ENODEV, "clock count %d expected %d\n",
->> +				     ret, num_clk);
->> +	}
->> +
->> +	for (i = 0; i < num_clk; i++) {
->> +		if (!strcmp(csi2phy->clks[i].id, "timer")) {
-> 
-> [Severity: High]
-> Could csi2phy->clks[i].id be NULL here?
-> 
-> The clk_bulk_get_all() infrastructure can leave the .id field as NULL if
-> the device tree node has a "clocks" property but is missing "clock-names".
-> Calling strcmp() on a NULL pointer will cause a kernel panic during probe
-> when parsing malformed device trees.
+Changes in v12:
+- Fixes indexing for data-lanes = <0 1 2 4> which is out of range - Sashiko
+- The rest of Sashiko's review rebutted on list - bod
+- Link to v11: https://patch.msgid.link/20260719-x1e-csi2-phy-v11-0-9d0a1ed0632d@linaro.org
 
-clock-names are required in the schema but sure I add a check for this.
+Changes in v11:
+- Adds RB - Krzysztof
+- Fixes div_u64 to div64_u64 - Sashiko
+- Fixes pos * 2 reg offset - Sashiko
+- Fixes devm_pm_runtime_enable. Missed in v10 - Frank
 
-This ping-pong with this tool is taking forever, I need to figure out 
-how to run this locally to stop wasting my own time.
+- Link to v10: https://patch.msgid.link/20260718-x1e-csi2-phy-v10-0-5720a7888953@linaro.org
 
->> +			csi2phy->timer_clk = csi2phy->clks[i].clk;
->> +			break;
->> +		}
->> +	}
->> +	if (!csi2phy->timer_clk)
->> +		return dev_err_probe(dev, -ENODEV, "no timer clock\n");
-> 
+Changes in v10:
+- Rewords commit log of yaml schema to read more organically - Krzysztof
+- title: Qualcomm X1E80100 SoC CSI2 PHY - Krzysztof
+- opp-table: object - Krzysztof
+- Example opp-table in PHY node - Krzysztof
+- port@1 uses stock graph.yaml - Krzysztof
+- Dropped redundant remote-endpoint declaration - Krzysztof
+- vdda-0p9 - SoC pins are vdda-0p9 rail is l2c_0p8. Named as with pin - Vlad, Konrad
+- Retaining #phy-cells = 1.
+  Rob gave a steer to have the consumer configure this via DT. Not the way
+  Vlad suggests but I'm sticking to Rob's guidance for now - Rob/Vlad.
+- data-lanes - retained as per CAMSS existing.
+  Nihal suggested, I agreed and Loic added his assent too. Vlad disagrees
+  with this. I accept Nihal's suggestion though we should remain
+  consistent. - Nihal, Loic, Vlad.
+
+- pd_data = {} - Sashiko, Wengmeng
+- lanes_enable() failure unwinds - Sashiko
+- power_off and error paths drop OPP rate before performance state - Sashiko
+- probe returns -ENODEV when pd_list is NULL with ret == 0 - Sashiko
+- Move to devm_clk_bulk_get_all(), timer clock taken from the bulk,
+  clk_names indirection removed from soc_cfg - Frank
+- Drop static CSI_COMMON_CTRL5 (0x1014) table row - Nihal
+
+- Link to v9: https://patch.msgid.link/20260708-x1e-csi2-phy-v9-0-0210b90c04cf@linaro.org
+
+Changes in v9:
+
+Key advantages of implementing this logic as drivers/phy:
+
+  a) Per-PHY power rails become declarable and enforceable on a per-PHY
+     basis.
+  b) With future adaptations of CAMSS routing the PHY output to something
+     other than the CSI Decoders becomes possible.
+  c) Standard framework contract. phy_configure(mipi_dphy opts) / power_on / of_xlate.
+  d) Introduction of CPHY in this driver will elaborate CPHY for Linux in
+     general as there is currently no mipi_cphy_opts structure.
+
+- TITAN_TOP_GDSC retained. Further elaboration in below link. - Vlad
+  Link: https://lore.kernel.org/all/d5407ab1-1af7-4678-ae67-5cf30ce8fa4b@kernel.org/
+- Consumer selects PHY mode - Rob Herring
+  Link: https://lore.kernel.org/linux-media/20250710230846.GA44483-robh@kernel.org/
+- Incorporates two comments by Krzysztof I missed previously - krzk
+- Changes 0p9 rail name to 0p8 - Konrad, Sashiko
+- Uses port@0 and port@1 to denote input/output - Vladimir
+- Label phy@ instead of csiphy@ in example - Sashiko
+- Drops additional entries in example opp one is enough - bod
+- return 0 on timer_period_ps < 6. - Sashiko
+- Use power-domain names and a "scaled" bool to flag if
+  a power-domain needs to be scaled or not. Allowing the code to
+  attached to all PDs, GDSC and RPMPD alike but only scale the
+  RPMPD. - Sashiko
+- Fixes error cleanup flagged by Sashiko.
+- Checks args->args_count. Sashiko
+- Performs checks on pd_list == NULL. Sashiko
+- Makes opp-table required. Sashiko
+- Uses const "core" and "timer" when getting clocks. - Loic
+- Adds AHB clock - Vijay
+- Revert v7 lane-enable change, BIT(pos * 2) is correct: data-lanes
+  are logical indices, CSI_COMMON_CTRL5 is a physical bitmap - Nihal
+- Adds a comment to explain clock-lane - Nihal
+- Link to v8: https://patch.msgid.link/20260523-x1e-csi2-phy-v8-0-a85668459521@linaro.org
+
+Changes in v8:
+- Fixes two dt verification splats I missed by passing the wrong yaml file
+  to my checking script :( - Rob's bot
+- Fixes the polarity offset error - thanks Sashiko.
+- CONFIG_PM implies CONFIG_GENERIC_PM_DOMAINS no change - Sashiko, Bryan
+- Implemented suggested unwinding by Sashiko
+- Leaving the flagged settle_cnt alone. Requires invalid DT settings and in
+  addition the result is just a long settle count. Not real bug - Sashiko
+- Link to v7: https://patch.msgid.link/20260522-x1e-csi2-phy-v7-0-79cb1280fad6@linaro.org
+
+Changes in v7:
+- Made CONFIG_PM a dependency. Sashiko commented on the pd_list being NULL
+  and suggested I check the pointer but, we need to ramp the rails when
+  switching clock rate so we need CONFIG_PM full stop. - Sashiko.ai, Bryan
+- Added unwind operation for performance state error path - Sashiko
+- Made clock-lanes genuinely optional for the supported use-case. - Sashiko
+- Fixed the enable of lanes. Thus far we have had forever it seems
+  val |= BIT(lane.pos * 2) which I've never looked at much because it
+  has always worked. But looking at how to switch on polarities I realised
+  the relevant register is a linear bitmask without gaps so the correct
+  method is `val |= BIT(lane.pos)`.
+  This needs an update in the legacy PHY too in another series - Bryan
+- I opted not to do any of the "but if DT send junk into your driver" fixes
+  from Sashiko since TBH I think the code would be Spaghetti afterwards.
+  We trust DT and if DT is wrong we fix it, we don't try to graph its
+  relative (in)sanity.
+- Fixed my example in the yaml. Sashiko
+- Link to v6: https://patch.msgid.link/20260521-x1e-csi2-phy-v6-0-9d73d9bd7d20@linaro.org
+
+Changes in v6:
+- Taking feedback from lively debate added ports and
+  endpoints to the PHY - Neil, Vlad
+- Detection of split mode by way of which ports are declared.
+  port@0 is always a sensor input.
+  port@1 is optional and if present implies split-mode
+  port@2 is always the output. - Dmitry, Neil, Vlad.
+- Split mode is left as -ENOTSUPP unless/until someone with the appropriate
+  hardware can take on responsibility to drive to completion.
+- Extending phy_config_opts dropped.
+  I think this is a worthwhile extension but this series no longer depends
+  on it so dropped. - Bryan
+- MX/MXC.
+  Two OPP tables one for CSIPHY0/1/2 scaling MXC one for CSIPHY4 keeping
+  MXA at LOWSVS_D1 - to be implemented in DT not here. Taniya, Konrad, Bryan
+- Changed MAINTAINERS from Supported to Maintained.
+  Hobby time for me right now. - Bryan
+- Link to v5: https://lore.kernel.org/r/20260326-x1e-csi2-phy-v5-0-0c0fc7f5c01b@linaro.org
+
+v5:
+- Adds support to apply passed parameters for clock/data position/polarity - Neil
+- Drops GEN1/GEN2 differentiation this can be reconstituted if GEN1 ever
+  gets supported in this driver - Dmitry
+- Drops camnoc_axi, cpas_ahb - Konrad
+- Renames csiphy->core csiphy_timer->timer - Konrad
+- Renames rail from 0p8 to 0p9 schematics say  VDD_A_CSI_n_0P9 - Konrad
+- TITAN_TOP_GDSC dropped - Konrad
+- Passes PHY_QCOM_CSI2_MODE_{DPHY|CPHY|SPLIT_DPHY} with the controller
+  selecting the mode. Only DPHY mode is supported but the method to pass
+  CPHY or split-mode DPHY configuration is there.
+  Since split-mode is a Qualcomm specific mode the PHY modes are defined in
+  our binding instead of adding a new type to include/linux/phy/phy.h - bod
+- Depends-on: https://lore.kernel.org/r/20260325-dphy-params-extension-v1-0-c6df5599284a@linaro.org
+- Link to v4: https://lore.kernel.org/r/20260315-x1e-csi2-phy-v4-0-90c09203888d@linaro.org
+
+v4:
+- MMCX, MCX and MX/MXA power-domains added - Dmitry, Vijay, Konrad
+- power-domain-names added as required - bod
+- opp-tables amended to capture RPMHPD deps - Dmitry, Vijay
+- Switched to dev_pm_opp_set_rate, dev_pm_domain_attach_by_name etc
+  dropped inherited CAMSS code - Dmitry
+- Amended parameters structure to specify power-domain name list - bod
+- Removed dead defines - Dmitry
+- Noted in CSIPHY commit log intention to rework patterns of
+  PHY lane configs into loops/defines/bit-fields later - Dmitry, bod
+- Lowercase hex throughout - Dmitry
+- The yaml and code in this driver doesn't care if the node is a
+  sibling or a sub-node of CAMSS confirmed to work both ways - Dmitry, bod
+- Link to v3: https://lore.kernel.org/r/20260226-x1e-csi2-phy-v3-0-11e608759410@linaro.org
+
+v3:
+
+- Resending this to make clear this submission is additive to x1e/Hamoa
+  The existing bindings and code will continue to work 
+  Bindings are added only, nothing is subtracted from existing ABI.
+- Link to v2: https://lore.kernel.org/r/20260225-x1e-csi2-phy-v2-0-7756edb67ea9@linaro.org
+
+v2:
+
+In this updated version
+
+- Added operating-point support
+  The csiphy clock sets the OPP prior to setting the rate
+  for csiphy and csiphy_timer - Konrad
+
+- Combo mode
+  Combo mode in CAMSS yaml has been added. Right now
+  no code has been changed in the PHY driver to support it as
+  I don't have hardware to test. In principle though it can
+  be supported. - Vladimir
+
+- CSIPHY init sequences
+  I left these as their "magic number formats". With my diminished
+  status as a non-qcom VPN person - I can no longer see what the bits
+  map to. Moreover this is the situation any non-VPN community member
+  will be in when submitting CSIPHY sequences derived from downstream.
+
+  I think it is perfectly reasonable to take public CSIPHY init sequences
+  as magic numbers. If someone with bit-level access wants to enumerate
+  the bits that's fine but, it shouldn't gate in the interim. - Konrad/bod
+
+- Sensor endpoints
+  I've stuck to the format used by every other CSIPHY in upstream.
+  Sensor endpoints hit the CAMSS/CSID endpoint not a endpoint in the PHY.
+  Given the proposed changes to CAMSS though to support "combo mode" I
+  think this should achieve the same outcome - multiple sensors on the one
+  PHY without introducing endpoints into the PHY that no other CSIPHY in
+  upstream currently has.
+
+- Bitmask of enabled lanes
+  Work needs to be done in the v4l2 layer to really support this.
+  I propose making a separate series dedicated to non-linear bit
+  interpretation after merging this so as to contain the scope of the
+  series to something more bite (byte haha) sized. - Konrad/bod
+
+- Link to v1: https://lore.kernel.org/r/20250710-x1e-csi2-phy-v1-0-74acbb5b162b@linaro.org
+
+v1:
+This short series adds a CSI2 MIPI PHY driver, initially supporting D-PHY
+mode. The core logic and init sequences come directly from CAMSS and are
+working on at least five separate x1e devices.
+
+The rationale to instantiate CSI2 PHYs as standalone devices instead of as
+sub-nodes of CAMSS is as follows.
+
+1. Precedence
+   CAMSS has a dedicated I2C bus called CCI Camera Control Interface.
+   We model this controller as its own separate device in devicetree.
+   This makes sense and CCI/I2C is a well defined bus type already modelled
+   in Linux.
+
+   MIPI CSI2 PHY devices similarly fit into a well defined separate
+   bus/device structure.
+
+   Contrast to another CAMSS component such as VFE, CSID or TPG these
+   components only interact with other CAMSS inputs/outputs unlike CSIPHY
+   which interacts with non-SoC components.
+
+2. Hardware pinouts and rails
+   The CSI2 PHY has its own data/clock lanes out from the SoC and indeed
+   has its own incoming power-rails.
+
+3. Other devicetree schemas
+   There are several examples throughout the kernel of CSI PHYs modeled as
+   standalone devices which one assumes follows the same reasoning as given
+   above.
+
+I've been working on this on-and-off since the end of April:
+Link: https://lore.kernel.org/linux-media/c5cf0155-f839-4db9-b865-d39b56bb1e0a@linaro.org
+
+There is another proposal to have the PHYs be subdevices of CAMSS but, I
+believe we should go with a "full fat" PHY to match best practices in
+drivers/phy/qualcomm/*.
+
+Using the standard PHY API and the parameter passing that goes with it
+allows us to move away from custom interfaces in CAMSS and to conform more
+clearly to established PHY paradigms such as the QMP combo PHY.
+
+Looking at existing compat strings I settled on
+"qcom,x1e80100-mipi-csi2-combo-phy" deliberately omitting reference to the
+fact the PHY is built on a four nano-meter process node, which seems to
+match recent submissions to QMP PHY.
+
+My first pass at this driver included support for the old two phase
+devices:
+
+Link: https://git.codelinaro.org/bryan.odonoghue/kernel/-/commit/a504c28d109296c93470340cfe7281231f573bcb#b6e59ed7db94c9da22e492bb03fcda6a4300983c
+
+I realised that the device tree schema changes required to support a
+comprehensive conversion of all CAMSS to this driver would be an
+almost certainly be unacceptable ABI break or at the very least an enormous
+amount of work and verification so I instead aimed to support just one new
+SoC in the submission.
+
+I've retained the callback indirections give us scope to add in another type of
+future PHY including potentially adding in the 2PH later on.
+
+This driver is tested and working on x1e/Hamoa and has been tested as not
+breaking sc8280xp/Makena and sm8250/Kona.
+
+Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+---
+Bryan O'Donoghue (2):
+      dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
+      phy: qcom-mipi-csi2: Add a CSI2 MIPI DPHY driver
+
+ .../bindings/phy/qcom,x1e80100-csi2-phy.yaml       | 195 +++++++++
+ MAINTAINERS                                        |  10 +
+ drivers/phy/qualcomm/Kconfig                       |  15 +
+ drivers/phy/qualcomm/Makefile                      |   5 +
+ drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c | 385 ++++++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c     | 449 +++++++++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-mipi-csi2.h          |  97 +++++
+ 7 files changed, 1156 insertions(+)
+---
+base-commit: 8dac27bfa2f994ecb11f01a63641527d17d48fc1
+change-id: 20250710-x1e-csi2-phy-f6434b651d3a
+
+Best regards,
+--  
+Bryan O'Donoghue <bryan.odonoghue@linaro.org>
 
 
 -- 
