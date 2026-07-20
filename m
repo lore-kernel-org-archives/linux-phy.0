@@ -4,139 +4,143 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17905C44515
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 03:36:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4123C4451B
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 03:44:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tPbOgCkrx03hKJbxNPZ3ZGvus4jvbvIvqK4k/F0KRA4=; b=BI8kd3SRhnVVQR
-	+MrwVfakhkanJ6atCIOGJ+s4yeSVtqDInJ8iwgeXdrHusA12Go15KEZffoEbFg1X8BANcPJcuX5UP
-	gvlgrZKzit147CHoZHlWQjx4tQVSjDYZeXlaUKZ29G4PojQS9oF5/Fu4BBYBKGdpWdl4d071hZlOS
-	E8xY93X2DqJ9qpYrHepmDG+NhA8BCoOmARgHbD4ZV5q9Nz4geCNzAie92vmDAGFB3ZSH4j45030kX
-	v7Idj/NXOSIZ/uS+Gu1F4nC5OboEAcC04o8X+OPC5XxCtH8Au2c6+GP3lF+HjYCYbJl2Npi/C6Lew
-	qxsL5D4xH/ZnS25ww7Vg==;
+	List-Owner; bh=Xn6hYZreHwRuUjXhYshDnGR8o0PRXSYjYPcSH0rsbqI=; b=t6aXXD6opK7aZ6
+	3gzEXqKeeNsiEB2C5SSoUesJ/un/cWDxGLkBUzfhLJzxHSRmvd2Tq0h540GZlvzHWFhKavXbNs3dA
+	5ZigMC3Cz2kIe0do7tyrbr6pMoE4LciHi9dAZUgPhm/W0R/jvMr4p87pvfJBfj/0Dkp1fyUCLQhfH
+	N5U93EhPsh8gRU9Vf8vEz5gqPYYcaWYmZ5bpOZKApWoCQiemc/coF1etNVppCB7i2FufpPY2QEOfz
+	YAQeigWQTasMGGqKBuje9Lin9h9lH9WEmxSXxsEQyr+tDhwaDIsFffQbVHMWsAinQ67LcUWXJfW1q
+	cnCYVVGAJ7qP1UMsO68w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wleoK-00000005muX-2h9D;
-	Mon, 20 Jul 2026 03:36:56 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1wlevN-00000005nDO-1pVG;
+	Mon, 20 Jul 2026 03:44:13 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wleoI-00000005mu7-2H1E
+	id 1wlevL-00000005nCe-3UHs
 	for linux-phy@lists.infradead.org;
-	Mon, 20 Jul 2026 03:36:55 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66JNsbe6912361
-	for <linux-phy@lists.infradead.org>; Mon, 20 Jul 2026 03:36:53 GMT
+	Mon, 20 Jul 2026 03:44:13 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66JNskGp645389
+	for <linux-phy@lists.infradead.org>; Mon, 20 Jul 2026 03:44:11 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=qEKVOtSGu6v1Xnn1gJvWyAkY
-	8TDzed0RUUEE6gih+W0=; b=pzGwnh47vzDCNMF0WVXWhtl3v1FY9qJz7aRZOwLe
-	mRzUQrFyXT9h87KVeq8LJSptvtIVGht5FXBlQx6YcDZZ7NteUmLRCateN7OzWy52
-	jGUuZZmZGMPldFLMZQMITROZFSq5KreiTOeoHxWVh1PWlOqOCeYwTra+LukFLIhL
-	h/mdnx4oX+DiuG3h1kzSuh1zvpSKJR+CJtkm8UC2AZCrW86Rq6dBzaXwIyjHcVGX
-	UGB/wzfeMzImAaCRyKVHTcZX7AbYup8cZm11YuGp4mLAvT0GMarfJHJ3Y9fwQlRS
-	vnE3L4kNnlNgP8YLotY7FGt5oIgfJ7Bh+lFpTjcwyq4feg==
-Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fg2af45u9-1
+	:references:subject:to; s=qcppdkim1; bh=trT3juczJpImDbMhvopx4zts
+	L1HEFUZShfNhFaITGZ4=; b=DzU8xxKMu0zPhmbZGbe0eS1ej1Hq7hQrinKlk2K9
+	uzctM2Iund1xEK9pkIrr67OWy+PyuFW/KpD62SwwnZfeIjj9gsfCxSoCIYu7+aHQ
+	ldN7QzqtUk4PRcxJTdK6nH4R/pcJloGdqN8Ou8wQijMNsYd+kXYiJ75flWS2W/Zn
+	eqXj1A++Lkp3Ygym1ZgRC091g0leHfufKqAsqRBVUSiBs4K7Jg+2U7bhxPmjui06
+	3S/+fHLZjAJWZZYet4Q6YMRpmS6nVmnZAg//S1PSQ+q9YQw1mrvw4VEs8iiBto2E
+	bkpdRg/ytY22hvk8lcAqn0dqcIjsGW4Yn+x/WlTXUMxHqA==
+Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fg2bvv6n2-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 20 Jul 2026 03:36:53 +0000 (GMT)
-Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-38ce7fabf76so13866538a91.2
-        for <linux-phy@lists.infradead.org>; Sun, 19 Jul 2026 20:36:53 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Mon, 20 Jul 2026 03:44:11 +0000 (GMT)
+Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2cee894b3d8so120625825ad.2
+        for <linux-phy@lists.infradead.org>; Sun, 19 Jul 2026 20:44:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1784518612; x=1785123412; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1784519051; x=1785123851; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:content-type:mime-version
          :references:message-id:subject:cc:to:from:date:from:to:cc:subject
          :date:message-id:reply-to:content-type;
-        bh=qEKVOtSGu6v1Xnn1gJvWyAkY8TDzed0RUUEE6gih+W0=;
-        b=SmSbzjmraj2zabysp2LP/VTsnBBn/liwE3XQdkz67QwY41nFyzUuRbbB5mleLzsp2D
-         4E2b02mv7r979fF5KjIzYGhj+HIHspmZy9TjMN1jwuzbFG8/3+5603ffFU0KLZL4aZzx
-         3WX05u8ajYsEUzDjz2wKOwLYwC6Nr5hLA20Znr/DIe6gqwAn8SpFCk3JGVRPvJ9NmaOa
-         wDAt+aEAjcSoGPU70OXi3mHJ86dOLh9f69etM0jzMbkkkDggN+ny9kbHTzrF9Z4+wrZ7
-         P67WrPQoR0P6BZxHr/h06kts/kHZ2msWNLnU5Xe8ZC0RzW4IMjNPUI7qAG406qBSzCWV
-         /NIA==
+        bh=trT3juczJpImDbMhvopx4ztsL1HEFUZShfNhFaITGZ4=;
+        b=exq7ZI/nGtsSq6BKEK4kh1d/I5UqMbIPA8GBWmxeHi0RIsX2LdOwEIDRliXIPOjDYj
+         IYMN0iVc6PbQ4TFH4HoLBLNPJaMINiLFYXAo2tgd7Myc8zK0zUlSHxeyE1ts9L35Iy6e
+         UyAvwzDSqrhgt/XM7U0x/biV2mDb3gDZgNj53LJzP+GA/5W9msTdt94X0C3jNwR2rcSG
+         qDODTLPljx6pAvNGgk3eZXOMt1hUY5UiTc7LbzC6kYGIL8u7uDhZWjsMovYI3/k+Vif4
+         ciRiCqAw+n+nmCw4itZuKvNNB+sQWQ1DTCbZd+qzd+zHxnjotIo/e6nJbG/knna7LOir
+         pUAA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784518612; x=1785123412;
+        d=1e100.net; s=20251104; t=1784519051; x=1785123851;
         h=in-reply-to:content-disposition:content-type:mime-version
          :references:message-id:subject:cc:to:from:date:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=qEKVOtSGu6v1Xnn1gJvWyAkY8TDzed0RUUEE6gih+W0=;
-        b=iA4OBU/J5KCl5K5yPXsw1acPU4HE4g7HV1NXMbTOmH/KKLNCs5jMTEQRLrMvwLwPMb
-         i1fTF7mEuKkMaWKr92DMYpeucqWEsdRXweGu5a6gdMSlcK7ciMiHdJ9l4isRhDdgCke+
-         VzfxNEC30782RYOxteTitjbGCyz77fDnMLHk/evmSvQUsjnfbakGyc71zYAYFNS7v60s
-         kPU36Cj5EeoaiMZQfgtTnTDH+nQUopwbcqBuMt5LAP2zQ/TrMSZYB6tTYWKCFQJVc2O9
-         8BrU6H9dBQb5nAUTq7YdCQoG9W8/vME0ZsUUb+k/+pO5986Vjf74+kjpAJL6eTxPG52p
-         JsoQ==
-X-Forwarded-Encrypted: i=1; AHgh+Rp7+qVu15VdzwhH/6LXtHystFXk4/nm5o1fFVzNaqtR79AwJ+qr2sDVKIdYH9hjcyf6zS7DsqyKTXU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxDZdZBOvxehkw+xCdsXieBuG6D0cvnpUeNJ4aOza96UISr2PNP
-	P/RJslFDx3PwH2/cH2FYM9UDSrcG2aFgS3cQecbAOhJduR36EfRGHJMf8VksZdL0/CX0s0SXTff
-	hjqegpPmUWaye6MJIG6JKPxPs3eMsTY4fZHrDbEU/k+h3dHZ29IJiV7wfPWaMN4KBZf9g
-X-Gm-Gg: AfdE7cnE/MxAuAiKkMwhRKLQIu3X3pSAkcIZkEwFs1Pss8jIib51JGUtbW3LOUAZ5WV
-	+V0CtMYNjt0fKebv3OkiMKW2SpOGi8JMjnas7pO5cXtmyZ1jbCGazH4jZwq4sZRK8PdmIv7cNzf
-	C2CWfXodGvt914VSFiJ9MGH1oEm5iJwOCdP111Lglf0rW4MYmBq0+ZnxXUGZvtFoYSyS10tJRXC
-	AhdoaNSR0t0kCGWHB6PjyJu/gJkZs51jmRNz+8XwHmSBJUf+PcVB8n8IpQJ81Dtm4T30UGgDpgM
-	348mBlOCDxjI/gs4KBTkgSD5xhkKVU8cM5yuAprNor91T6nG6yNuqQEJkwS30X6Y/XYr00HmsNQ
-	7f+SjsIwWzAN4v8VbnKgBszqrMJp81QYYg7ydsvKdeud7Ego=
-X-Received: by 2002:a17:90b:4a08:b0:380:9157:d6c with SMTP id 98e67ed59e1d1-38e4b41043cmr13718747a91.10.1784518612425;
-        Sun, 19 Jul 2026 20:36:52 -0700 (PDT)
-X-Received: by 2002:a17:90b:4a08:b0:380:9157:d6c with SMTP id 98e67ed59e1d1-38e4b41043cmr13718723a91.10.1784518611968;
-        Sun, 19 Jul 2026 20:36:51 -0700 (PDT)
+        bh=trT3juczJpImDbMhvopx4ztsL1HEFUZShfNhFaITGZ4=;
+        b=Y8EH0/J0sukrCGaQY+cAIqFmcthjgtM6fZh0TeKQgUOAL8nN2pKfSwowHhRUul6FJ4
+         PTcPV4sL1o4fH/GuFXZEMnv9ldundI72XKNxIQUi/lmy39ZP9EZEayX1iSGTBp9u1f+Y
+         Jso1k+kXUFQh+gveEijsXjKdSzBF30Bc9vs/x5f76zq8JOzcbeeMzCNlVl5zlgTnwz0D
+         nEo07YCzmSQxtl3QqhihMFkHy8xhID0h1xKHlOTq879MrwTEC7RmoZyQCa7swC1AHQPG
+         ikSU7w/Yl+9qSctPW2W5DRTusR/0ZGIpSV1f3/c6+98z8JBOk6ue6oZtqqBekost7mP8
+         Xw3g==
+X-Forwarded-Encrypted: i=1; AHgh+Rr+Je1HmXq1I/F1gkbQT5DdZa1TTLnIj+E2+bBWxoeYPg8zN05umEfSOmvjmiAlU1YJXEGxpIIc6HA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwE6Jhyk/RcLOvzsAOUjmh1lbds1C55XxMc80MgiakalSzMFm4R
+	wCURv2twKt6XgTe616SmRiK0iPtNrIiL6Xm3PZVDFVqEFBtheh8Bc2LuP9GgCTkR9Nb7753rX5p
+	WJk5OY4vRuC74ElXtlOSUFa8Mx+v3xyFzaRpHXgXZLzmWF2SMzrTHCqazYY64geFHgYQD95SUVp
+	od
+X-Gm-Gg: AfdE7cl2JNI+xec9qA8APjxNsCDGxyNKLNhG9HGOsQa80AhWZUZtNQJs9EXKkmaAIXy
+	iVeGbj8CUlApZyJl57iisMxz9yj2gWkh/RkmPxy29g5sEOk6cPlqv3V4lZBvaKc9vsiO2DQ4y7d
+	I2vhSeq8hsF5I4H+qnUCxE07tWCr19dttGz912nvL/8SYJZoirutF89iKS74sFxUi5N5ZpLabJh
+	SmV7QmcxQxa+XFfEh/GALB2a+wYdXFPbrsf7ltXM//ehTKDFhy4VmWQDVGqvrW6nO5ds5kH17J4
+	CbDablEbWsJF5UfkpKfDFR2lJGI5w4Osp+5xk0j2B2Kztv3Iab4p5UF9sKHf+HjQSV12/+FgaB1
+	VqEg4qnediEN7KQoRUEOG7Tu4a1HakgJy5Bks62EkSval1io=
+X-Received: by 2002:a05:6a21:48f:b0:3b3:bf95:f7e3 with SMTP id adf61e73a8af0-3c3ad9d1bacmr12837965637.43.1784519050695;
+        Sun, 19 Jul 2026 20:44:10 -0700 (PDT)
+X-Received: by 2002:a05:6a21:48f:b0:3b3:bf95:f7e3 with SMTP id adf61e73a8af0-3c3ad9d1bacmr12837940637.43.1784519050173;
+        Sun, 19 Jul 2026 20:44:10 -0700 (PDT)
 Received: from hu-qianyu-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-13ce29c2a48sm22658546c88.2.2026.07.19.20.36.51
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-31429fdbd45sm31009945eec.12.2026.07.19.20.44.09
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 19 Jul 2026 20:36:51 -0700 (PDT)
-Date: Sun, 19 Jul 2026 20:36:49 -0700
+        Sun, 19 Jul 2026 20:44:09 -0700 (PDT)
+Date: Sun, 19 Jul 2026 20:44:08 -0700
 From: Qiang Yu <qiang.yu@oss.qualcomm.com>
-To: Bjorn Andersson <andersson@kernel.org>
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
         Rob Herring <robh@kernel.org>,
         Krzysztof Kozlowski <krzk+dt@kernel.org>,
         Conor Dooley <conor+dt@kernel.org>,
         Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>,
         Philipp Zabel <p.zabel@pengutronix.de>,
+        Bjorn Andersson <andersson@kernel.org>,
         Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org,
         linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
         linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v5 2/3] phy: qcom: qmp-pcie: Add QMP PCIe Multi-PHY driver
-Message-ID: <al2X0Yx4GeRgA6mS@hu-qianyu-lv.qualcomm.com>
+Subject: Re: [PATCH v5 3/3] arm64: dts: qcom: glymur: Wire PCIe3a/3b to
+ shared Gen5x8 PHY
+Message-ID: <al2ZiMcTFC6s7hby@hu-qianyu-lv.qualcomm.com>
 References: <20260717-glymur_linkmode_0717-v5-0-4f9e87a61463@oss.qualcomm.com>
- <20260717-glymur_linkmode_0717-v5-2-4f9e87a61463@oss.qualcomm.com>
- <alqrbpi3EbvV9RnC@baldur>
+ <20260717-glymur_linkmode_0717-v5-3-4f9e87a61463@oss.qualcomm.com>
+ <5f20426c-d34e-4d68-ad80-d01e2fc4e33d@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <alqrbpi3EbvV9RnC@baldur>
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzIwMDAzNiBTYWx0ZWRfX8OgKoV5UpkcU
- SBGziyV/QLxvPmx5+j5dfsWkh0WIQBsbeKNvnGueF+edJWkoFG9mX7sBif7LnczTovRqaP/ePuD
- WGlPXHSvrrw/AKvFvv77wgL1X5pCxEM=
-X-Proofpoint-GUID: kMinjVnzAZqHGYsUgQJpXfjr5K3ea8fm
-X-Proofpoint-ORIG-GUID: kMinjVnzAZqHGYsUgQJpXfjr5K3ea8fm
-X-Authority-Analysis: v=2.4 cv=a+sAM0SF c=1 sm=1 tr=0 ts=6a5d97d5 cx=c_pps
- a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+In-Reply-To: <5f20426c-d34e-4d68-ad80-d01e2fc4e33d@oss.qualcomm.com>
+X-Proofpoint-GUID: _iW2waJpGT440z0hUryWc-PTAkvLeyaB
+X-Authority-Analysis: v=2.4 cv=EcH4hvmC c=1 sm=1 tr=0 ts=6a5d998b cx=c_pps
+ a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
  a=kj9zAlcOel0A:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22
- a=Y4lf73eBQ-sTD4myGQcA:9 a=CjuIK1q_8ugA:10 a=uKXjsCUrEbL0IQVhDsJ9:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzIwMDAzNiBTYWx0ZWRfX1kqUVtVUoWbS
- eGwUJ/j8RbViiTNrdjHIUdOquKiBAfv3JW+LfVj7CEbs+ln/nMdw5aNnQ6H17JtYywk4tZ3Xa5b
- 6Iplhqsivgbd1j0Y6R2mUQrihGmadYk8K26VZD4IkyVw+NR4bYN7UK29/yD5aDNopjTEMe55vb4
- Ji9dJWHLRAB6L6Bpj3XVF6kjoQA9sOY1qvzpTxbSTnaNtXd8/lTYYNKllO496W4FL5byJeIfj3A
- L4R+sM0tDa/yEJzeGUFXOB7KU53yi5RkIDw4fKnwUq6s7gxHXifxynBm89c+MWOzrhG4PmrfBVd
- 4UHTKrkZD1XyjgsNSbIv4awEAdEHvofoR2AapHl6ZVFBI6OnQJ47bkKfMTXX+7FJNu/VBvCxb/u
- SGU/5ljbRNcorA/qpLWlrlFy9Qm2ftjwYwkFtUUvjSCOjzA0I0Q0852Dg1zAUzW1VoEUbAdykVr
- c+XfnEEPJFlWGzLQE/Q==
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=Az1h_F6XyeYmpGR1YZEA:9 a=CjuIK1q_8ugA:10
+ a=GvdueXVYPmCkWapjIL-Q:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzIwMDAzNyBTYWx0ZWRfX0Ca2C6Fd/1x0
+ If3uZYuYl4HLFRYIWmsILXIUTfWDiFF4miaJQtK7lGPlzt8GkqMmm0GWac/WK6w76PgGWLPIRON
+ KbydzZTzPMe4aCaBa1dKJgpfBNiZ91ESqOIwgXhhMwh5tNXG0WKIdkcX1HZxd8NuZ9rfm9+gc1u
+ omTwkvrox1Liv/zq5NThl/y58XPJF/aAfWGqcxr1dsycilQj0XkhDpzhkHN7Zl5HRlM6/9yZiTI
+ LgRseg5K7wzPrbTVri7yqFBhCK51xs7+B7ZFqDY30bTTbsOmXiWQsBhVEPa3d+BWTt8w/umF19R
+ FyWiCI9je5LnqeX1M8T0LGI0nQ4qyBjTqobuobqY82itCMv7M6a2qF844b13fcf+KbmsTdQakPQ
+ H2N+V2KgG0WEGDzqOG9b/xKAi1WDTUA3FACab/WuRFH8hK0aNsFbZWQLb81/BTeYN5qJrE/xPBC
+ QfMN9F0VS/rtdtWMDqg==
+X-Proofpoint-ORIG-GUID: _iW2waJpGT440z0hUryWc-PTAkvLeyaB
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNzIwMDAzNyBTYWx0ZWRfX8AYibTWDfUGP
+ MTHvfdnQOCPjs0Hm/uPxeiLV8eIAU6zKmwjz+BHpfIvwAmCL4BnXMRfPn/v+0Xw61pkwPyBQTK/
+ WLab18O/kyHftTlkf0VWNnFz3LcFvAo=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-07-19_08,2026-07-17_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 clxscore=1015 impostorscore=0 malwarescore=0 spamscore=0
- phishscore=0 priorityscore=1501 lowpriorityscore=0 adultscore=0 bulkscore=0
+ lowpriorityscore=0 suspectscore=0 bulkscore=0 clxscore=1015 impostorscore=0
+ phishscore=0 adultscore=0 malwarescore=0 priorityscore=1501 spamscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607200036
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607200037
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260719_203654_700077_C1FFBB2B 
-X-CRM114-Status: GOOD (  22.46  )
+X-CRM114-CacheID: sfid-20260719_204411_877557_F3DC26D9 
+X-CRM114-Status: GOOD (  21.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -153,64 +157,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jul 17, 2026 at 05:45:45PM -0500, Bjorn Andersson wrote:
-> On Fri, Jul 17, 2026 at 02:58:34AM -0700, Qiang Yu wrote:
-> [..]
-> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-multiphy.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-multiphy.c
-> > new file mode 100644
-> > index 000000000000..b79edf2b7d5f
-> > --- /dev/null
-> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-multiphy.c
-> > @@ -0,0 +1,770 @@
-> > +// SPDX-License-Identifier: GPL-2.0-only
-> > +/*
-> > + * Copyright (c) 2026, Qualcomm Technologies, Inc. and/or its subsidiaries.
+On Fri, Jul 17, 2026 at 06:50:23PM +0200, Konrad Dybcio wrote:
+> On 7/17/26 11:58 AM, Qiang Yu wrote:
+> > Glymur's PCIe3a and PCIe3b controllers share a single Gen5x8 QMP PHY block
+> > that can be bifurcated into two independent x4 links, rather than each
+> > controller owning its own dedicated PHY.
+> > 
+> > Add a pcie3_phy node describing the shared PHY block, add the missing
+> > PCIe3a controller node, and point both PCIe3a's and PCIe3b's port phys
+> > at &pcie3_phy (index 0 and 1 respectively) so each controller picks up
+> > its half of the bifurcated PHY. Update the GCC pipe clock parent array
+> > to reference the new PHY's clock outputs instead of the placeholders.
+> > 
+> > Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
+> > ---
+> >  arch/arm64/boot/dts/qcom/glymur-crd.dtsi |   8 +
+> >  arch/arm64/boot/dts/qcom/glymur.dtsi     | 336 ++++++++++++++++++++++++++++++-
 > 
-> No, there should not be a year in there.
+> These changes really shouldn't be in the same commit
 
-Ack, will drop the year:
-
-Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+Ack, will split this into two patches: one for the glymur.dtsi PHY node
+and GCC pipe clock changes, and a separate one for the glymur-crd.dtsi
+board-specific supply wiring.
 
 > 
-> > + */
+> >  2 files changed, 342 insertions(+), 2 deletions(-)
+> > 
+> > diff --git a/arch/arm64/boot/dts/qcom/glymur-crd.dtsi b/arch/arm64/boot/dts/qcom/glymur-crd.dtsi
+> > index c12808abbfe1..e8e81bf9a6a1 100644
+> > --- a/arch/arm64/boot/dts/qcom/glymur-crd.dtsi
+> > +++ b/arch/arm64/boot/dts/qcom/glymur-crd.dtsi
+> > @@ -750,6 +750,14 @@ &pcie3b {
+> >  	pinctrl-names = "default";
+> >  };
+> >  
+> > +&pcie3_phy {
+> > +	vdda-phy-supply = <&vreg_l3c_e1_0p89>;
+> > +	vdda-pll-supply = <&vreg_l2c_e1_1p14>;
 > > +
-> [..]
-> > +static int qmp_pcie_pd_power_on(struct qmp_pcie *qmp)
-> > +{
-> > +	const struct qmp_phy_cfg *cfg = qmp->cfg;
-> > +	int i, ret;
-> > +
-> > +	for (i = 0; i < cfg->num_pds; i++) {
-> > +		ret = pm_runtime_get_sync(qmp->pd_devs[i]);
+> > +	vdda-refgen0p9-supply = <&vreg_l1c_e1_0p82>;
+> > +	vdda-refgen1p2-supply = <&vreg_l4f_e1_1p08>;
+> > +};
 > 
-> In the error path you will put pd_devs[0..i-1], but
-> pm_runtime_get_sync() requires that you put pd_devs[i] as well.
-> 
-> Please use pm_runtime_resume_and_get() instead.
+> This node is disabled
 
-Okay, will switch to pm_runtime_resume_and_get() to avoid this imbalance.
+Yes, it is disabled because pcie3b is not enabled by default.
+See the fake pcie3b_phy be dropped
+
+https://lore.kernel.org/all/20260420133616.88740-2-krzysztof.kozlowski@oss.qualcomm.com/
 
 - Qiang Yu
-> 
-> > +		if (ret < 0) {
-> > +			dev_err(qmp->dev, "failed to power on %s domain\n",
-> > +				cfg->pd_names[i]);
-> > +			goto err_power_off;
-> > +		}
-> > +	}
-> > +
-> > +	return 0;
-> > +
-> > +err_power_off:
-> > +	while (--i >= 0)
-> > +		pm_runtime_put(qmp->pd_devs[i]);
-> > +
-> > +	return ret;
-> > +}
-> 
-> Regards,
-> Bjorn
 
 -- 
 linux-phy mailing list
