@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4E6FC44515
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 10:22:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00C4DC44527
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 10:22:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=clAr0xwBRAKdgWduS8pktGetsQvkiUThW8IEDGg9Ow4=; b=KFGQvc7143z718
-	nJWSaX+8tbqaUmpCZbt771qTOjzEdhx2ZJS0oEQyj/iV9SaxkG1VrE2Vwbpg7Q8+pa6a0bzVq8IHS
-	nlP7mskE2VQ8xf7aFPN+WHY+pAt5bLjASbvuhwF9/jc4Kac4BGIse/165kpmEpOSMkcQcIgsOn7Wd
-	ZkZOjiSl+y9o5Tun0Ge3RdRYVs2LnSxqBz53InAN/myUG4+6gz8XJKp1HS0vYg3BnCYQsma0k8dqe
-	A9CeES3Te7KU0Y6c49d8uHco9R1BVZBhR5F7qrrBoR7RXJJNmVdf5eh34OVs70xLGoDVJOOTrVpnh
-	Ua5n/lYJ/5iLiDK5H1Zg==;
+	List-Owner; bh=WVE5oaC/NoBMmayAiSFRDtakAY1zfHyx2J7fSN+eYbY=; b=WqCtrMvQfQ7xRO
+	cP2vvj0ccHFQ1Gz0J4vL+IZguCcz9GFQiPGEaG4SQieqbyJRC5BIpgT685nyo47trRgwV20fResea
+	8PgoN2rxzI0ZpsFgWWJ8o4RRame2a16uMDZTaUu1hmeJ/30MA24gouOOLbqYVBbdS2wh4aAYpBCTR
+	qaiStZn8YbgHQG9ptFQpH3nC4MfKFCeVUSfP72RnUAJUUgnl+f78DnDsXK7+RxM+NqgZ5f1N/tsEx
+	rcOA8UB1dfi/bGKKQYgUTRe60Ri5PcESB+8Dub7f6UmMVl5WiX2d2JIvi/rgBA51pBgBNqdRjP5xW
+	p6Qn5VFDa3UaN5KoqoHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wll8t-00000006TXi-1ZTg;
-	Mon, 20 Jul 2026 10:22:35 +0000
-Received: from mail-pj1-x1032.google.com ([2607:f8b0:4864:20::1032])
+	id 1wll8x-00000006TZp-2dQm;
+	Mon, 20 Jul 2026 10:22:39 +0000
+Received: from mail-pj1-x102e.google.com ([2607:f8b0:4864:20::102e])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wll8r-00000006TWZ-37xw
+	id 1wll8u-00000006TYD-497Q
 	for linux-phy@lists.infradead.org;
-	Mon, 20 Jul 2026 10:22:34 +0000
-Received: by mail-pj1-x1032.google.com with SMTP id 98e67ed59e1d1-382ef647e20so9326786a91.1
-        for <linux-phy@lists.infradead.org>; Mon, 20 Jul 2026 03:22:33 -0700 (PDT)
+	Mon, 20 Jul 2026 10:22:38 +0000
+Received: by mail-pj1-x102e.google.com with SMTP id 98e67ed59e1d1-38dfe910e9dso6762983a91.3
+        for <linux-phy@lists.infradead.org>; Mon, 20 Jul 2026 03:22:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1784542953; x=1785147753; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1784542956; x=1785147756; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=GVUZrYg+XX3ftKTmbZ6y3GjBx4YY/KKIzTtukvscq4w=;
-        b=CA8xvDHca0Ze5KIgYw3ZLpXEL3wQXqyi/0ej3dKdgo+IkYZGFzCfPSlkOiJhMBtUWs
-         DvzgI19c8GHxEkYv7v5IZESjMpKl4HV48lLqH+bfN0pRG7cyKumK2Kis7dFBEFY8sfLE
-         kIl1S66d9Jy3Hi8sH66kFwXTDLxnSfMRui2xoWQFMLoVwvyfCicgX/0D4ReN9UIB1ZZ+
-         QjPMOA6gNZsm0IAfYOkfEQ75L1YOogyJY+B33+m/DXgmB36qxGhCCK8Zj8hSbqupsbVx
-         vQiAg8eIkqHgZt1oOP2AIuv6eFcN8RqLv1EguGX8KpwxkvjBPhejbioAQ5UTZGbKmX/o
-         hLMg==
+        bh=zY7O09j1b/kYLX3ncq/pMHK0bqmzatxHIxsJQ5YPWmk=;
+        b=XZnAguzHTYDXWFbhC/mmBbDbpx5eHr6npPwTRaalTvzN5XhLgYScr5LRUV4Z04XNfP
+         7FJUZICT5u9ybR34pQr3wtrKNx5MJDT8IR1Y7+qEp3QCkOOxQN/Dxw58BEWpWuJ2c3Zn
+         LJeEdmqYLUXYW7XuxEviV0bGvuSqLmZ88ZGlhzfFF7GwkzuAyzzh7oGFLsZ3xisLmKjK
+         4prezSOMq6B2ovgW05B0YdM3cDJqxKA02yiesbKN6lcmN7nme515yQUUg3PAMmiN4pQA
+         q+wZHpLBKLwIhT4eshxwpRiKGLCjPeaU1hjn7TjM01dMfcaMWPUg5LXG0xq4n0Yj/Fby
+         jIEQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784542953; x=1785147753;
+        d=1e100.net; s=20251104; t=1784542956; x=1785147756;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=GVUZrYg+XX3ftKTmbZ6y3GjBx4YY/KKIzTtukvscq4w=;
-        b=O8ghxmmf7IU1u8hA/z7fRbqptLLZyu9Dh5xJ+ovjFtHKmpFLVK4f0OzndW60XGkf6v
-         +wdhr145Q62Yl96+gF45Q0MVwMO1i/bTi5q2jL3BoQrH5sRGN0yiK60SalD5BnULzrPK
-         mI1kuMvcgmd/c6dkFfLv/zNIxi20GvUh8k/vrCcdR1oYRNB/y+XMXQ76CgT2BRZUVp8v
-         urJm4uxkNto0MSchahFHVtYcrJ5obTh+r5v51fbs43Y7Nh8suG4CC3UhQ/eY8BbYGshq
-         zNqoSorMyzs+NawAwAm01kSFn8luxyU/aCAS0wxVqKlRaQ7ekJVn95bj+zX7JNfdj2TK
-         aYkg==
-X-Forwarded-Encrypted: i=1; AHgh+RrDDeNmS9v3+igUeVsNqIW3v6S2W/vktDpP+NS+01vDAnUhIxR3UvYmR+fSCh/4hhOCZ0ZtF9LNlmQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yyt2qfoNW/RRBAIAICC6jYNrA9liH5T73hil8FPFX0kdzH0nQk7
-	w1Px8Io1E5473AY6l1tJXu5elhcLTDQb76s1PwZUNRdUPpj/hmVvZXCL
-X-Gm-Gg: AfdE7cnhNvfR12TRuQY89fO3JgAqKlw6dEmoPBhkv8IcH5czetYjsAgIveGa0jeqrFs
-	gDG/1xiCOX9AVez7hxh3Un4Zw4hSiMHndY35yY5oSHYP9Bb2DiBD9XSvyCXrns+R4p/5iysPk9t
-	e0awbljV0VYGCAxjHkFFtaE5dh8yqvKgpjtvNAxqYKHR96kVOSKMDgFKGPQwe+hiGzi9ZQNbZga
-	nAZXjVfH0Mie4p8GAcOla6KWGQKuHoUXmaIEAwxKk17UrULjNnANeBmwrOXIrrh60XnCdFESFnW
-	kHe+PQ1HmjHk/8kILOnMw8HRNA4DpTtqcIlPJLdldG4XulngqH0EWfsm+w4JtPOsVjCSBg/4+vr
-	bV/JA82qR2zBUQ/3HSDn4bV2C1fPpTKDzEgeRw6jwt5KWUObiF8dpoZhLWr5peKVvGE47ylFTKX
-	RmaTu4NO1Qs84absM5lWnoQy0PtPTpMQpoGUJ8H3p5TRXyzGgR3RQrQCZH0qVpFiU=
-X-Received: by 2002:a17:90a:dfcf:b0:381:1c96:829b with SMTP id 98e67ed59e1d1-38e4b422aaamr13448276a91.3.1784542952701;
-        Mon, 20 Jul 2026 03:22:32 -0700 (PDT)
+        bh=zY7O09j1b/kYLX3ncq/pMHK0bqmzatxHIxsJQ5YPWmk=;
+        b=JyO0aRgW1ward2/r8NKWyoXezIfd9CSHQOdkGiXfAgRw+VzHr9S+IKZfOT/n6l6BUh
+         ZSZSN4kMSz0zJp8OZEuF7glZpwjj/aZUM2/au88/uiEr2ArZQpCWjn29+iW+B/5qI2H2
+         Dp6X7hccjxZkxGUdVVK4ILQ+Zb+td27ZNlM/uUWtS4IQIuSQPiLeT1A+oXL1t+QKMMD3
+         A8TetqvUq70meKTQTatDsJI2V5CTYGMVDc6PEfP7uw/3eXz6k0YWZHNpNeEaAR8OhKzi
+         rrrxdXGA2Wr8fuybGb222/0MzNnYfcZniRI45vAlML1n6PWVSheUqtYY85VginJxzq7d
+         a9/Q==
+X-Forwarded-Encrypted: i=1; AHgh+Ro8tO4QNkDHZJbFhDkCF0MmnUYm1Ig9PFJso9e0zMMSyhp8pOE842on4kwFS8V0tIAQfW7bHH35Wos=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyZ8bTnk7iIIlKqcJbt3Q/ZI4EbvTJfFNukaQYYIGH9/QiWIN41
+	vWeml0Lps7hdnhxuPvfO3xRHirIdO4xv2THqMPUzXo4QXnXi1a5CYx7M
+X-Gm-Gg: AfdE7cmSajVJqdOK1KK4NfZ7G8sOWHVfsjAev6x2KJdzX+vNMWohKNSMW18C+g2uLqd
+	D2Or7f0SG4XZ5BI78imde5/605iSK98gp/yxYkSmoe/bmwsBO11hVhJkG2E2unVffyyKVonAvOk
+	Z0skhxeod9QGy3jxThHoeXNow3zkVA7x0RHKlzJSe1KLaVfgdDi1NmxY+vmrysS3uUovl4eP5Kl
+	fs6+aMRqAvlvEKD9N4h2r2p16NpoVWp5SFfGrtM9Sn3UZLpOG0Dv25cG1ef6YQOuD8fPm+RIQMk
+	MI6zR7S4w0zJ5N/53CWBhJ1QyA+XED3K5CD6429fcmcjUhziGHFmvC8I+hvQg38Ap7JAOvYL1wN
+	Y74TULNJBWmruJoFarrOWe/WHi9Xa9gFUh2s4ASgVMd3DnsBsN1R75kE96Fa6CFbXGuSGZzS0po
+	jpnNtld5xQ/mP6E11ZngMNw4yXB7sxrl1wPTN2xwe1jnieVZ0jAm9XRxZr9/csvUU=
+X-Received: by 2002:a17:90b:55c5:b0:37e:a09:2640 with SMTP id 98e67ed59e1d1-38e4b41713bmr14114572a91.7.1784542956061;
+        Mon, 20 Jul 2026 03:22:36 -0700 (PDT)
 Received: from localhost.localdomain (60-250-196-139.hinet-ip.hinet.net. [60.250.196.139])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-38e4b20df7esm5616125a91.13.2026.07.20.03.22.29
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-38e4b20df7esm5616125a91.13.2026.07.20.03.22.32
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 20 Jul 2026 03:22:32 -0700 (PDT)
+        Mon, 20 Jul 2026 03:22:35 -0700 (PDT)
 From: Joey Lu <a0987203069@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>
@@ -85,18 +85,18 @@ Cc: Rob Herring <robh@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
-	Joey Lu <a0987203069@gmail.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-Subject: [PATCH v4 1/3] dt-bindings: phy: nuvoton,ma35d1-usb2-phy: extend for dual-port and OTG
-Date: Mon, 20 Jul 2026 18:22:20 +0800
-Message-ID: <20260720102222.251179-2-a0987203069@gmail.com>
+	Joey Lu <a0987203069@gmail.com>
+Subject: [PATCH v4 2/3] arm64: dts: nuvoton: ma35d1: add USB controllers and dual-port PHY node
+Date: Mon, 20 Jul 2026 18:22:21 +0800
+Message-ID: <20260720102222.251179-3-a0987203069@gmail.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20260720102222.251179-1-a0987203069@gmail.com>
 References: <20260720102222.251179-1-a0987203069@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260720_032233_796422_6BF2FA16 
-X-CRM114-Status: GOOD (  14.90  )
+X-CRM114-CacheID: sfid-20260720_032237_040505_1CC967A9 
+X-CRM114-Status: UNSURE (   9.69  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,103 +113,210 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The MA35D1 exposes two USB PHY ports (PHY0 and PHY1) managed by the
-same hardware block (USBPMISCR register in the system-management syscon).
-PHY0 is shared between the DWC2 gadget controller and EHCI0/OHCI0
-through an automatic hardware mux that follows the USB ID pin; PHY1 is
-dedicated to EHCI1/OHCI1.  Because both ports share the same register
-topology a single binding and driver should cover both.
+Add the USB subsystem nodes for the MA35D1 SoC and boards:
 
-Changing '#phy-cells' from const: 0 to enum: [0, 1] lets consumers name
-the port they need while preserving backward compatibility: boards already
-using '#phy-cells = <0>' continue to validate and function unchanged.
+  - usb_phy: standalone PHY node with #phy-cells = <1>, covering both
+    the OTG port (PHY0, index 0) and the host-only port (PHY1, index 1).
+    Uses nuvoton,sys phandle and HUSBH0_GATE clock per the binding.
 
-The two new optional properties:
-  - nuvoton,rcalcode: the resistor calibration trim code is determined at
-    board design time to match the PCB trace impedance.
-  - nuvoton,oc-active-high: the over-current detect polarity depends on
-    the choice of VBUS power switch.
+  - usb (DWC2 gadget, USB0): phys = <&usb_phy 0>, dr_mode = peripheral.
+  - ehci0/ohci0 (USB0 host): phys = <&usb_phy 0>, companion pairing.
+  - ehci1/ohci1 (USB1 host): phys = <&usb_phy 1>.
+
+Board files (ma35d1-som-256m.dts, ma35d1-iot-512m.dts) add pinctrl for
+VBUSVLD, PWREN and OVC signals and enable all USB nodes.
 
 Signed-off-by: Joey Lu <a0987203069@gmail.com>
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 ---
- .../bindings/phy/nuvoton,ma35d1-usb2-phy.yaml | 44 ++++++++++++++++++-
- 1 file changed, 42 insertions(+), 2 deletions(-)
+ .../boot/dts/nuvoton/ma35d1-iot-512m.dts      | 36 ++++++++++
+ .../boot/dts/nuvoton/ma35d1-som-256m.dts      | 36 ++++++++++
+ arch/arm64/boot/dts/nuvoton/ma35d1.dtsi       | 65 +++++++++++++++++++
+ 3 files changed, 137 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/nuvoton,ma35d1-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/nuvoton,ma35d1-usb2-phy.yaml
-index fff858c909a0..1bd22dd0e5fc 100644
---- a/Documentation/devicetree/bindings/phy/nuvoton,ma35d1-usb2-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/nuvoton,ma35d1-usb2-phy.yaml
-@@ -8,6 +8,18 @@ title: Nuvoton MA35D1 USB2 phy
- 
- maintainers:
-   - Hui-Ping Chen <hpchen0nvt@gmail.com>
-+  - Joey Lu <yclu4@nuvoton.com>
+diff --git a/arch/arm64/boot/dts/nuvoton/ma35d1-iot-512m.dts b/arch/arm64/boot/dts/nuvoton/ma35d1-iot-512m.dts
+index 78534d613486..0a068abda6e0 100644
+--- a/arch/arm64/boot/dts/nuvoton/ma35d1-iot-512m.dts
++++ b/arch/arm64/boot/dts/nuvoton/ma35d1-iot-512m.dts
+@@ -97,6 +97,16 @@ pinctrl_uart14: uart14-pins {
+ 			power-source = <1>;
+ 		};
+ 	};
 +
-+description:
-+  USB 2.0 PHY for the Nuvoton MA35D1 SoC. The PHY node is a standalone
-+  platform device that accesses the USB PHY control registers inside the
-+  system-management syscon block via the nuvoton,sys phandle.
-+
-+  PHY0 is the OTG port whose signals are routed to either the DWC2 gadget
-+  controller or the EHCI0/OHCI0 host controller by a hardware mux that
-+  follows the USB ID pin automatically.
-+
-+  PHY1 is a dedicated host-only port used by EHCI1/OHCI1.
++	hsusb {
++		pinctrl_hsusb: hsusb-pins {
++			nuvoton,pins = <5 15 1>, /* VBUSVLD */
++				       <11 12 9>, /* PWREN */
++				       <11 13 9>; /* OVC */
++			bias-disable;
++			power-source = <1>;
++		};
++	};
+ };
  
- properties:
-   compatible:
-@@ -15,7 +27,12 @@ properties:
-       - nuvoton,ma35d1-usb2-phy
- 
-   "#phy-cells":
--    const: 0
-+    enum: [0, 1]
-+    description:
-+      When 0, the node exposes PHY0 only and consumers reference it
-+      with no cell argument. When 1, the single cell selects the port,
-+      with 0 for the OTG port (USB0, shared with DWC2 gadget controller)
-+      and 1 for the host-only port (USB1).
- 
-   clocks:
-     maxItems: 1
-@@ -23,7 +40,29 @@ properties:
-   nuvoton,sys:
-     $ref: /schemas/types.yaml#/definitions/phandle
-     description:
--      phandle to syscon for checking the PHY clock status.
-+      Phandle to the system-management syscon node providing access to the
-+      USB PHY control registers.
+ &uart0 {
+@@ -151,3 +161,29 @@ eth_phy1: ethernet-phy@1 {
+ 		reg = <1>;
+ 	};
+ };
 +
-+  nuvoton,rcalcode:
-+    $ref: /schemas/types.yaml#/definitions/uint32-array
-+    minItems: 2
-+    maxItems: 2
-+    items:
-+      minimum: 0
-+      maximum: 15
-+    description:
-+      Resistor calibration trim codes for PHY0 and PHY1 respectively.
-+      Each 4-bit value is written to the RCALCODE field in USBPMISCR and
-+      adjusts the PHY's internal termination resistance. Both entries must
-+      be supplied when this property is present; when absent the hardware
-+      reset default is used for each port.
++&usb_phy {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_hsusb>;
++	status = "okay";
++};
 +
-+  nuvoton,oc-active-high:
-+    type: boolean
-+    description:
-+      When present, the over-current detect input from the VBUS power switch
-+      is treated as active-high. The default (property absent) is active-low.
-+      This setting is shared by both USB host ports.
++&usb {
++	status = "okay";
++};
++
++&ehci0 {
++	status = "okay";
++};
++
++&ehci1 {
++	status = "okay";
++};
++
++&ohci0 {
++	status = "okay";
++};
++
++&ohci1 {
++	status = "okay";
++};
+diff --git a/arch/arm64/boot/dts/nuvoton/ma35d1-som-256m.dts b/arch/arm64/boot/dts/nuvoton/ma35d1-som-256m.dts
+index a029b660e8dc..7f1e6d2a1fc2 100644
+--- a/arch/arm64/boot/dts/nuvoton/ma35d1-som-256m.dts
++++ b/arch/arm64/boot/dts/nuvoton/ma35d1-som-256m.dts
+@@ -100,6 +100,16 @@ pinctrl_uart16: uart16-pins {
+ 			power-source = <1>;
+ 		};
+ 	};
++
++	hsusb {
++		pinctrl_hsusb: hsusb-pins {
++			nuvoton,pins = <5 15 1>, /* VBUSVLD */
++				       <11 12 9>, /* PWREN */
++				       <11 13 9>; /* OVC */
++			bias-disable;
++			power-source = <1>;
++		};
++	};
+ };
  
- required:
-   - compatible
-@@ -42,4 +81,5 @@ examples:
-         clocks = <&clk USBD_GATE>;
-         nuvoton,sys = <&sys>;
-         #phy-cells = <0>;
-+        nuvoton,rcalcode = <7 7>;
-     };
+ &uart0 {
+@@ -153,3 +163,29 @@ eth_phy1: ethernet-phy@1 {
+ 		reg = <1>;
+ 	};
+ };
++
++&usb_phy {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_hsusb>;
++	status = "okay";
++};
++
++&usb {
++	status = "okay";
++};
++
++&ehci0 {
++	status = "okay";
++};
++
++&ehci1 {
++	status = "okay";
++};
++
++&ohci0 {
++	status = "okay";
++};
++
++&ohci1 {
++	status = "okay";
++};
+diff --git a/arch/arm64/boot/dts/nuvoton/ma35d1.dtsi b/arch/arm64/boot/dts/nuvoton/ma35d1.dtsi
+index 7228ad4735b5..5a7a39b1b514 100644
+--- a/arch/arm64/boot/dts/nuvoton/ma35d1.dtsi
++++ b/arch/arm64/boot/dts/nuvoton/ma35d1.dtsi
+@@ -88,6 +88,14 @@ sys: system-management@40460000 {
+ 			#reset-cells = <1>;
+ 		};
+ 
++		usb_phy: usb-phy {
++			compatible = "nuvoton,ma35d1-usb2-phy";
++			clocks = <&clk HUSBH0_GATE>;
++			nuvoton,sys = <&sys>;
++			#phy-cells = <1>;
++			status = "disabled";
++		};
++
+ 		clk: clock-controller@40460200 {
+ 			compatible = "nuvoton,ma35d1-clk";
+ 			reg = <0x00000000 0x40460200 0x0 0x100>;
+@@ -431,5 +439,62 @@ mdio1: mdio {
+ 				#size-cells = <0>;
+ 			};
+ 		};
++
++		usb: usb@40200000 {
++			compatible = "snps,dwc2";
++			reg = <0x0 0x40200000 0x0 0x1000>;
++			interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clk USBD_GATE>;
++			clock-names = "otg";
++			phys = <&usb_phy 0>;
++			phy-names = "usb2-phy";
++			dr_mode = "peripheral";
++			g-np-tx-fifo-size = <16>;
++			g-rx-fifo-size = <0x100>;
++			g-tx-fifo-size = <256 256 64 64 64 32 32 32>;
++			status = "disabled";
++		};
++
++		ehci0: usb@40140000 {
++			compatible = "generic-ehci";
++			reg = <0x0 0x40140000 0x0 0x1000>;
++			interrupts = <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clk HUSBH0_GATE>;
++			phys = <&usb_phy 0>;
++			phy-names = "usb";
++			companion = <&ohci0>;
++			status = "disabled";
++		};
++
++		ehci1: usb@401c0000 {
++			compatible = "generic-ehci";
++			reg = <0x0 0x401c0000 0x0 0x1000>;
++			interrupts = <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clk HUSBH1_GATE>;
++			phys = <&usb_phy 1>;
++			phy-names = "usb";
++			companion = <&ohci1>;
++			status = "disabled";
++		};
++
++		ohci0: usb@40150000 {
++			compatible = "generic-ohci";
++			reg = <0x0 0x40150000 0x0 0x1000>;
++			interrupts = <GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clk HUSBH0_GATE>;
++			phys = <&usb_phy 0>;
++			phy-names = "usb";
++			status = "disabled";
++		};
++
++		ohci1: usb@401d0000 {
++			compatible = "generic-ohci";
++			reg = <0x0 0x401d0000 0x0 0x1000>;
++			interrupts = <GIC_SPI 36 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clk HUSBH1_GATE>;
++			phys = <&usb_phy 1>;
++			phy-names = "usb";
++			status = "disabled";
++		};
+ 	};
+ };
 -- 
 2.43.0
 
