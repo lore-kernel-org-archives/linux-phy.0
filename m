@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D98A9C4452B
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 13:37:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B187C4452C
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 13:37:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YKcImzQYJu0VHyJP70RDw9bB0SG0cYitQyFRaeQOqBw=; b=H1sDXsagSvXPMu
-	O4LSVVPstOJNylpm1qmD06cVNNuOZBxc3mZKY+he/HyIBE/tVAiWU4Qy2KMF+AUEukQ1Mkcvp3Cd7
-	s0nQSxxtTVhrrNZHy01qbysFpFykfDT3pjUrClPbRpqwx5uQXAw08LweDWh/lVLeF1H82tIuYK69r
-	2NqedbNT1JMlH75rCayopD/vRnjsM8UWOHLYNR6wD+zBuVqlttXBqTIuQW23YhhbOBmVhySsIRlqJ
-	08cZidesvZSUvPeIdDWzyuJ1nu5ZMpiwms/OeD2jTgPAyVTPRx5Rs2az0SLzceC1J7/tjTulEl5JY
-	Lyx2UvYuLo7weLrLVqLw==;
+	List-Owner; bh=5EACK1xktpjep807WPnF/W03ZiJ94aU/9Vvoc6ROWcY=; b=V5vY1xUobVF72E
+	kfvGsIaWMZ68atOAsDtRFyrdBOuM6kQQYnstv5id5gF3NSjFp1LSPGFOlTjagFUuDIaQTM6SiJaWn
+	US1fwr86zKKf7hHyOfHY90eC/62n2IFVIT0JQgfNqICldAV4XvZ6DzvAivjFNdde9LTD4kMtXNFeL
+	6HoQmZXLWK+u7cpXel2Y0lmomppDjB7nUk2B7iEkbUTGHeCXjIMOHr7QWRwyiu3Ty8yO5pVHBN38/
+	kSVp6asJi77cUT/BJXRQUh4mcPMR4iXyVcuLz2FrGiy+Kxp35ntQhOfVmKsBTkIPIIWqiDSwJMwMs
+	4vbjsciQiIgimAZ4KMAQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wloBG-00000006qOh-2LCe;
+	id 1wloBG-00000006qQ8-47cA;
 	Mon, 20 Jul 2026 13:37:14 +0000
-Received: from mail-northeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c200::1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
+Received: from mail-norwayeastazon11013048.outbound.protection.outlook.com ([40.107.159.48] helo=OSPPR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wloB6-00000006qHF-0CAN;
-	Mon, 20 Jul 2026 13:37:05 +0000
+	id 1wloBC-00000006qKI-174Z;
+	Mon, 20 Jul 2026 13:37:11 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=cSY0PahZy9XQwEcHNUpMo84XzEW3cU19zyRNzrmEEixbEcUobyoQeg7jlAc4e/M6fbPOkfIUd9ma2VwGnPXZMKQe2UAgXYCRDLqS3/Xt/EKTVvscANn4jARZ2BYWO33K/hatM9isOZy3RomXPH4HK5FTUrC0HbZElEUZctPjQPe2d9+dDbOm353zK5DV8ra0m6K3K1Ef+MTeESSV3cSlxf8XDjdfUMCWdtOKjI1IKiX5ynMDK2tZubcyYeKGRwP/nedrZ9kMJUL+9P4GY/1shvKZegGPKdm09l7HHdb2ctq4NrqfADJxKMKWsizJ8CpsgHNy/d+vY9cmfQOd/Y+BjA==
+ b=swz6cHeH5hM8sSuzn81YoSlWHsLVGEcZPgxEYSZmIj2IawMDjaFwkP20Egv/h1R37HIUPH0UeSUystkvvUGWNBS6TDOrcf7augilSeyijWXmL7NvWsDKRuLLTL/lnGKPhzhypXqn4snH4cABvA1OwsmZ1Orx0FDNCWHoCDZTaJrgqs22gQo9A6BOLQZeclP9OGIXufsH1cLcbR09SL4WfQC1HPJT3+vB2uk8fmlAS5GlRRsdj5p8OR9sHZPoyuQPm34kEdYLC3RHN6Or95PLZoA77CUGAVn6cFrgt7KTzdGHOAXDuLiQ/KqziinWQRBqEvNUSEOrLzSrlQC2AN+aog==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=r8C1iPY5H+aYOVLx8GmlsIz6mJWm6UNRbFpTk423AZ4=;
- b=GwalJBM05+EQNCaCTvk80Zzetu47r2EZM7r8vjTmia79NRMeqnapsVblPqyPFdrEMnBb1MYEd4OSjSJH/EKVS87RAP2N1JgOmzOAgY5ViY4mFBNLjAfu7gr69eGCew5uPHrqbyA3tFE+kGvf+6btrlUAWZRCbYD1hurRD7Dp54tGsgdgloUuqCcauOMz3S2xhvtsDStYbO0OOXPul3qIMyK/dr1l9oHVoeM9XoyEUycVl4C+mZPOChxWbMOFfVFvIIjT7leN+8Z/IMZFtS4NehZvZGhaw7uzyJ5ID/FTm+qr6ycBXltKVKNGRQmJAWjeHqqHkq1BmIUKYJEjfH4rDA==
+ bh=3JMDgNBI7b696XJL8xSeBFjF60/yKWE2k7dnvfk4lZk=;
+ b=qLz9XrnQcJXKAMJ6FsyK0lS5NhJLfC6QCwhRTj6Ot2G29w6MAD2G+oAnHufAIHIC/Sl3Ewk6I9+o1JlpMP46GrDVFBdRgj5Os5PRKabR5xpPWHGpxUCbBOUT4HW/PUzY6ToKhbTFAPb9CStsjl+Cwj1HYN1RlPSZS0CgxU+nce5zYAVRRDkfhr/ANpd7VH69jOZjV3tTgb67Mdc6Lfe6+fufAKeWmXiI/SmLLtCbuu/LXVblRZoESNtTGz18NJpHAcOja3xNZ5Vyz1z+CJ1iZV+0C06z2gAK847uRct4N3u8hpZ11UEQ5xtkLJ+bNxIgyBPc0M6Owv1TcHuYpZ8MQA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=r8C1iPY5H+aYOVLx8GmlsIz6mJWm6UNRbFpTk423AZ4=;
- b=ZHAbrWjLtVGp1HsO7peKBIDKjOXXT8HwPwRwGoiNCAIEE7l+xWeYKfciRCpLis678YPqSIJAVSr5ETBnaKTEeao3QIgO+FEs7xBKLwnE4EpN1FwyWFRUCkLLCihgbPaJU8Yru53jflF51gvh2pDa0qJKXpgnFTdM7to6cNVXQt45haNK5a5JtfgNtEG0A5F2Dg0fjhrw9tKwrGDrcB/4p1IYbRpLEwkD6gGYLGA9FTV+ZQu5oEcDgW8sMAjYH0EQ7X5vus5d+60wBTewjSO7Xb6QsVDvWmfghAUckgPkL8TPYxF/kAGDAckGBHmH2ec6e6ozCUAFsYTUZxnO6muLPw==
+ bh=3JMDgNBI7b696XJL8xSeBFjF60/yKWE2k7dnvfk4lZk=;
+ b=jILkBl7YoXHZ4QX/f/C2u3ht/a+MZUchesn8CDMHei53FZaVTWNkrwSTv7F1gsvcAyqxGlcbUBcad/M7/5GwGnhKWPrp9LNKnFUj2O6UWRj1m4CgGACkjeBdS5g9CYq1r9wXKEbnW+uNdtjFB0Fq3QShSfU+KJ4zmnbEKJimiADunHu3CukXxZTtUNKDmCrScIHdxD4zVAZDWX9ahFQl0oClqcl9z0bOgQ/FZjiPyzRxHFYo7gQgv367UJIWVz8ZAMnzxps+dSWzw49EvG5XLxwcU2M8KLIZDZzb+sogklUjbJekcOG0BtUcEuoj/MZ9i9JIqprDk87gewY4LN1w7g==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from AM0PR04MB6900.eurprd04.prod.outlook.com (2603:10a6:208:17d::10)
  by PR3PR04MB7259.eurprd04.prod.outlook.com (2603:10a6:102:8a::18) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.223.18; Mon, 20 Jul
- 2026 13:36:59 +0000
+ 2026 13:37:03 +0000
 Received: from AM0PR04MB6900.eurprd04.prod.outlook.com
  ([fe80::7fda:8431:ca1b:b023]) by AM0PR04MB6900.eurprd04.prod.outlook.com
  ([fe80::7fda:8431:ca1b:b023%5]) with mapi id 15.21.0223.017; Mon, 20 Jul 2026
- 13:36:59 +0000
+ 13:37:03 +0000
 From: Vladimir Oltean <vladimir.oltean@nxp.com>
 To: linux-phy@lists.infradead.org
 Cc: devicetree@vger.kernel.org,
@@ -64,70 +64,74 @@ Cc: devicetree@vger.kernel.org,
 	Michael Walle <mwalle@kernel.org>,
 	Shawn Guo <shawnguo@kernel.org>,
 	Frank Li <Frank.Li@nxp.com>,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH v3 phy-next 4/8] soc: fsl: guts: make it easier to determine on which SoC we are running
-Date: Mon, 20 Jul 2026 16:36:38 +0300
-Message-Id: <20260720133642.136324-5-vladimir.oltean@nxp.com>
+	linux-kernel@vger.kernel.org,
+	Conor Dooley <conor.dooley@microchip.com>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Rob Herring <robh@kernel.org>
+Subject: [PATCH v3 phy-next 6/8] dt-bindings: fsl: layerscape-dcfg: define DCFG_DCSR region
+Date: Mon, 20 Jul 2026 16:36:40 +0300
+Message-Id: <20260720133642.136324-7-vladimir.oltean@nxp.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20260720133642.136324-1-vladimir.oltean@nxp.com>
 References: <20260720133642.136324-1-vladimir.oltean@nxp.com>
-X-ClientProxiedBy: AS4P191CA0023.EURP191.PROD.OUTLOOK.COM
- (2603:10a6:20b:5d9::19) To AM0PR04MB6900.eurprd04.prod.outlook.com
+X-ClientProxiedBy: AS4PR10CA0005.EURPRD10.PROD.OUTLOOK.COM
+ (2603:10a6:20b:5dc::13) To AM0PR04MB6900.eurprd04.prod.outlook.com
  (2603:10a6:208:17d::10)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: AM0PR04MB6900:EE_|PR3PR04MB7259:EE_
-X-MS-Office365-Filtering-Correlation-Id: 0ca8cb3e-db5f-4334-2811-08dee663f932
+X-MS-Office365-Filtering-Correlation-Id: 05d02c92-86fa-4e62-7f56-08dee663fbff
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|19092799006|366016|7416014|376014|1800799024|3023799007|56012099006|11063799006|10067099003|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: F/s8Pum1gi4ieReNMasssUTEQLrw/sikq5qC4s2J3HCnSyOUC2V4TflolXP0bRTu9+vFZBRW9JZamW4guSszp3QOzVMNVN2i2ZyAeQBmdxtueWtJWa5VIPEGXme2gvVZJKqPc8G+P1rV5/PW0Pu78wRbIHf1XsaKpAbcEk1Z+iPCeO8GpsamILTZmr58tRHcwr+yDOfh+V8EO0TmfHjcz5KA9ByTQv4Nn5NjMpyVGIIQG0SR5JswGSsuLb6R25gKHLwhYPgiB8F5x+iBmZKk6EUrSW3+9eoSBYhgeTZpRsGVsy1ymRyuAYDkrfHf9HR47Y1uSAx6tNna/uHvm5x0NKMlzMpog08PJO7xUmAf5TVOlhoYLi391YL9rkjZYeBrYd7ihWw+Hl9UdzkhzN8ohJC7358Q9EFV/Pw3j9ZOQe0F+FE1ClOJrdyddM6R+R/hrLO0EM3QNvgd1HJ/Pj3SQxYPuzoC/K5MYBVkRMj7MWgxmZoWc4IfAYcpp2mB8HViKN0VSQv6R8Uor05Zy/bQbTFnYycSPZBeufF0v1/Qzvb5drzhx4Kt4rTG7q31/D34ewRWs2Q8IfILNMw2sazeOroLR+958R/J8QnrnTkLiciZJtn1RSQPchdp1cUxJuS90S0/p7dj9vKGxstF4YiIbgA4nyz5BdwZRMnjz2JrrYA=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6900.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(19092799006)(366016)(7416014)(376014)(1800799024)(3023799007)(56012099006)(11063799006)(10067099003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|19092799006|366016|7416014|376014|1800799024|3023799007|56012099006|5023799004|11063799006|10067099003|6133799003|18002099003|22082099003;
+X-Microsoft-Antispam-Message-Info: Ru9U42Nb8QoFgvNJPa2gXWbOd387WUxCOwJOJHyWj345gxy7B4mfJeJ/6w0aJlKwJHZhgF4G8KsF6MiWNwAt6/jrBYkPaOf+9Gh3UTasLFpoyw1H11zr7FbLtvAyWV419QU7E7lb2YUH7hPllSixr+dA7t+9OIUsb0fV5bUKMZXPOqOQkwSPEcijfFcYr+yme/UtJ9HS1yZB66cmxGAjyLwLgRHklsC5muhuZinMHCLTlec/jvsNBRt9s0O5cAB1aiAH5EZWmVlRaLkSdnD3gtYJKkONuALcZQYqyijJ7Su2QhxutEIwCpr5xlUl7VNYhIIbtFxMC0dK45UWrHHxb97EwIjPm+AfMkSk8Yr9nhCeIo6cUkqsePZlOWMTAdUsFapYowh0pIYrEW16LO6Uwvnr5PlRhW3JObwY250xbJzvzdUoZanzpVN+5KC17DdGzN1EQHQcUNHIQ2D17M9e/Xx0EOAu2rStjAAvVF3hpMGXfI+HV9O0wwHCJuVO6dvXjyAXjoIk3bSoBH1L5hXsTxLvi7e6hVZhI4eI5UgP05WZqAzQLeK5GlINJ8pRekaiTBJmdbBeabgiSlxIypyXbjwM27vRwisTk7bQpNQb7ZhCMQIzrv98tkfjNgIPxvbCGkUKwWMf4wZ7MTYKcxo15ssBnexBWpbLLVqpy5FUjik=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6900.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(19092799006)(366016)(7416014)(376014)(1800799024)(3023799007)(56012099006)(5023799004)(11063799006)(10067099003)(6133799003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?kbEPiYY2YqLi8JSUZlUg3ce6NbzRqbf5WvQPO4up2ItxRnLnw1fw7YYKQBu1?=
- =?us-ascii?Q?LRcXoc3KC6j1kLcpI8GgDGMkmfib1XKN/Zkz3KKfW6fKy7tGQwnJu2omlmEJ?=
- =?us-ascii?Q?ydY9JwiPAc9Ei3HrcVorqNHCL8ytU/zL+gdRO8BDSB0kU6zMMcgpVgJr/2Ni?=
- =?us-ascii?Q?3ksR+s1t8QzMJow06UwGnUpEeMyy/F79rZ8iGRtjeBAGjBwjYYsuWTC1oOOM?=
- =?us-ascii?Q?/cFSy0I+m5gbTIOpBt/dCPQZq+DbngE0tue7+AyIoZCCYvt+Dlriv7gBdXfg?=
- =?us-ascii?Q?cVxcrQ7QqRkhx0d+F2gcCneGLtY2bxMyXwAj++e55wlwsXw0OAfhBDsFoo9v?=
- =?us-ascii?Q?RUoZqECO2vbVOEIiI6NnD41M668jM/Q9TvPF7UOmX9/fLBazZI/lyx18NVVb?=
- =?us-ascii?Q?jfVFy5o+/IAidYdi5B/bn6JIgAefp4s7WN+AvqgQypl07xKVmqLykeGzFh6m?=
- =?us-ascii?Q?ym/L5/LG5YTrywYLMTVm6jhuPTJE+HBObk7UgSP7Dz/XpIKzW2cnJZHQiuDy?=
- =?us-ascii?Q?16Wig5MxvszdqCy3kWxGj+t86lCYrSkrIyVP7heSliqXZIdNr6gg5I6ZDJPO?=
- =?us-ascii?Q?oS8bPFI2x6bcinPZaomTJx3AYxq5QMsNOluufxnk7QPkiuwMJ/lpctxI5Wpo?=
- =?us-ascii?Q?DsZofpC09u/3AgxXHHqmnvynb00+2GesQ9yVeU2PueF4KOqAab8aWEi/7y3x?=
- =?us-ascii?Q?F/Fp3E67RuHotC2IXHM/IixFtmhV08bDYmDbg/cSdn2ImOyxBOFodR5AU5r2?=
- =?us-ascii?Q?iSz3SIhCuckl6/vfs0X4+3nhN4+QTqUsHC4zVuhF4GAwJFYtYNW2WBOCfl1N?=
- =?us-ascii?Q?XOrJMslaQVIWa7yvZtQj+b6Yh58+r8FK8DZelv+quTSTqVMkQQVFBOiuQK57?=
- =?us-ascii?Q?Hdskbz2VS6KskCT68TVnmYnAzNKx8UM/IiOhnpZVgOmnN9p5hmhIKNCJa1h9?=
- =?us-ascii?Q?m19mJZ4QiiB8QaUZ18/cXU71Sf1l55VdNW1sISWJ7H3HRyW6z0Ur2j4r7298?=
- =?us-ascii?Q?K3y/db/hN7+0Nz1XFYWZ0beCralIWCy9iqGuP/LNyiyWYy0iXmrZk1QNeCGM?=
- =?us-ascii?Q?0kv8dsHwnBT765ikZGWsoHPaofJS91H0tEGAceHIsYbz5ImEqtxE5GytwCq6?=
- =?us-ascii?Q?ru6sCgEtvcl0h3ybqEWRlsXvmpVSjNOvXc4lY1c+XrpuWPJQvAqxSKGmgvVt?=
- =?us-ascii?Q?dUzvou1F9usBQgw7D2VdotqL1tcZCcmfYMTBru55Ta12fEoiy21keBtYyNAK?=
- =?us-ascii?Q?ZdACBDZ20BcHqDgtLdAXnV0xhryRviLGAAddvnZ1cMdHd4pLNKiUVgqSjJBg?=
- =?us-ascii?Q?Ke7tkWaVCKzEF29YlKjigDlxXsKDEw3DIuoGtW8+p/LSIrN/7yBPG0FjYruK?=
- =?us-ascii?Q?YZOSmfLFoVrZpic9febtGxHyKNQV+ugS+/Fab3QDqk9x6eZGDgahPVOoYxz+?=
- =?us-ascii?Q?ZG1mfcg1zHgfAxUjcpEZNP1l/HroCpxWLdKBIN3Kc6/1lKbCRfuAUoE+hOpB?=
- =?us-ascii?Q?qBWQ5yMxGTBDc1cxL0HFC8XgVqSAPIVHVVxM7o85RSjW/ub3zsBWOqqDlQCG?=
- =?us-ascii?Q?ATEsE2pn/B32HWwSbrS5F2au3Bwew49tejsQ7aiqrXNtACgEhbWdAv9e0whi?=
- =?us-ascii?Q?KGgMnTKhwL+15VQ9j+Oci6Pw6VXSfm3B+S9XohLkqCotCF3idVopPKuRdh5y?=
- =?us-ascii?Q?ylBR4dIJuahQVllHQfTSzYalfhpObGZiOQZHVxvEJ/wwT6ntRY6WltFCU9MX?=
- =?us-ascii?Q?1UjdrfVEdw=3D=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?MgQYzMEWB87dVWaliCWK+AI/SsG8QrLVQi9oy171HYUYR/P4UoKeeZeZ0fMb?=
+ =?us-ascii?Q?4vkl73x3bq1ZZFUFhGHRrsRCciVjjXhuksitUL7omsomQ1nEwxwB5GDOPQm/?=
+ =?us-ascii?Q?EDlSZ8nuRZ1mVjxyxDCT+XubzAqQHhlQicXMxU+IhPM6XRZR2axTtC40Qsbo?=
+ =?us-ascii?Q?UARPRwQLPAT2QM5UCzVwvtqTIgpgFCsfMVqzmJlgAqAhMifC2OxdqqlbvVP2?=
+ =?us-ascii?Q?hHbwl8pioObVp0o0ggBEHXD35tHAwtC+yZsyRfxXRogHBBD2Fs+XBJnzMOTP?=
+ =?us-ascii?Q?dbvUnbwVTlpSfaFerOakoPBZVuqdXGvj7rmw8MZTsMkiiU0ovrRJEUWd+6WS?=
+ =?us-ascii?Q?60fjz6INpgOTJGeusrfB0EHC9K0vCMHAO29ZkA+JWTY5WNdCLAUnOUR3IfUr?=
+ =?us-ascii?Q?j99ea9wZFQuS/oM5AqdgtUbw1ZlDDBNIbGOLWC1jIZ426kLVMCMB0oAE3dzl?=
+ =?us-ascii?Q?WCRiTGrMN8l/ft613+UOjNGVWMtdbqYVbUFmea/3ax1qXb71tuGAJELfHVpu?=
+ =?us-ascii?Q?e/9y2an0IpeD/miMj66dMhVtBy/P0+SIOq+zTSWGozaaR4twrpYFZqk6l80o?=
+ =?us-ascii?Q?IgqR9SRCq6sILapTkLa5B7qdo3qWrywhkix8P/yBEsbV/ZHwBU30VnUJRwV+?=
+ =?us-ascii?Q?YXulFxzReekLbXWFIXJbJQrpwqB2m1XeRXQwwaBIxALFwbjjruOzU9PH86gz?=
+ =?us-ascii?Q?SsnFyT8np+Og7QHuZsJNjnltAFJriXF00JO+D4vtNto8l1XPRjkZoXPiDZD3?=
+ =?us-ascii?Q?dTHY4Vn3/VUT6fULgg/T/YF9KUWA4RTx8Dey3rWBldsHnygCZJXVbDSJyX2o?=
+ =?us-ascii?Q?e+R03zwWlN/rbuS+paQVap3c6oRgwmn94uO5z0ZhkC6I4qtBkwlm3FudUy+q?=
+ =?us-ascii?Q?zkLvmT1yVJKfY6u+/AAduFRGz4mdMS2YMoU1QLzvLl1OLXj0nhCvLOpt/h7t?=
+ =?us-ascii?Q?Jr4hUr5jFYG/Vus7XaAEtlWQZJ36+xzW4/AyYbmVZ2Tvuxmrz17y1G8cAEKy?=
+ =?us-ascii?Q?y27LQ4vXpLCLDLVOsnFiOJMsv702weasS6bCSygHwfhwB+8HYUCqH+5EyoCJ?=
+ =?us-ascii?Q?2YZnS085jFB3svsWuZOxy9e7iBH5WgxeAt7D705A4Y2JRJl2I/X73QP3M6fQ?=
+ =?us-ascii?Q?H6uKUCABpslTwqWQhHcCNbdWKjR83RVrH9J1rEecSetj5eAWH7+IVZzULxu9?=
+ =?us-ascii?Q?7CxpUqnjMx+Ez011xGasR8mDFGlBZgDUCXgM1+40fBpMezjq3IoNdcUnVvtP?=
+ =?us-ascii?Q?b5OQ1atNvpXFWtEuYdSIYMiN72XpfBLYcOmGPzgNfHhImJEP+oFgSWldW6e9?=
+ =?us-ascii?Q?62x95FsDxfYbzJAZtkryymKadKD7rhTiV+c+ORbOcNXH3vclqIMJ4VP62Soc?=
+ =?us-ascii?Q?OsWoxG/HxjGdGPWi7pwbE6IMF8nMfkXpKj/JftiY9VdZqy4eRTmooFgHZOOR?=
+ =?us-ascii?Q?sYWmC+idAi1iYXBKYBVdMkRMr8gHyqAtBMckjyG1JVT5eTyckdN0kcDsB8Lu?=
+ =?us-ascii?Q?snFECKgQ6ls/y4WNbMS265ludpU2CkZIezTrylWUcIkitq71lwHdteRavnez?=
+ =?us-ascii?Q?e0wroOxFQi67oGJaIqpThmF6jeyHQGzD/vcy/PyRWRzAIKlwpVui+vJmfJJM?=
+ =?us-ascii?Q?f6oav2zsoRFF0Zg+bx27rkj7601XGJiS1Aqvem0rHR3+kw7bTD5Az/y1Z8HS?=
+ =?us-ascii?Q?m4i7nwqcp1oW3pPwNqb4YLfQ0aOAV/3rE4M1OYmaeiW4yCluFdVhRdEbaurd?=
+ =?us-ascii?Q?H6mSUhAU+w=3D=3D?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0ca8cb3e-db5f-4334-2811-08dee663f932
+X-MS-Exchange-CrossTenant-Network-Message-Id: 05d02c92-86fa-4e62-7f56-08dee663fbff
 X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6900.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Jul 2026 13:36:59.1373
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Jul 2026 13:37:03.8208
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: Y3iSb/LmKzSjL9sZAKZxl856slKJpA8ae/mf8pkTB0KAWCsjG06nEoXMfwQoLHFn60H9D02FAXWevVrpSIA3qA==
+X-MS-Exchange-CrossTenant-UserPrincipalName: qeJjwPSw8mQuWNmIShKb4eyWj7wQh0H0nI795gkoyXmh9ovtNx6SZ/RUeGGEQTaOk4H0S2S+L2dOR+KSCpwYNg==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: PR3PR04MB7259
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260720_063704_092670_31B49DE7 
-X-CRM114-Status: GOOD (  19.36  )
+X-CRM114-CacheID: sfid-20260720_063710_313765_653F736C 
+X-CRM114-Status: GOOD (  14.82  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,205 +148,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Ioana Ciornei <ioana.ciornei@nxp.com>
+In Layerscape (Arm) and QorIQ (PowerPC) devices, hardware peripherals
+are accessed by the CPU through a portion of the SoC address space
+called CCSR ("Configuration, Control, and Status Registers"). All
+hardware IP blocks have their registers mapped here, and the Device
+Configuration block makes no exception.
 
-The guts driver will need to easily determine on which SoC it's running
-when it will need to perform RCW override at runtime. The guts driver
-knows this already because fsl_guts_init() reads the QorIQ/Layerscape
-architectural System Version Register (SVR), but it doesn't save this
-for later lookups.
+However, there exists a secondary range of the address space named DCSR
+("Debug Control and Status Registers") which, like CCSR, also holds
+registers of hardware IP blocks, except the DCSR contents is hidden in
+all public reference manuals.
 
-Add a new qoriq_die enum to be used as an index in the fsl_soc_die
-array. A new fsl_soc_die_match_one() function is also added so that we
-can directly determine if the SVR is a match with a specific die.
-The SVR value read from the DCFG CCSR is also kept in the global soc
-structure so that it can be accessed when needed.
+The intention of the CCSR/DCSR split, to the best of my knowledge, was
+to place the functionality that is too low level for normal use, and
+which is necessary only for debug, in a completely separate address
+space which can be hidden.
 
-Signed-off-by: Ioana Ciornei <ioana.ciornei@nxp.com>
+A use case has appeared where networking SerDes lanes need to be
+reconfigured at runtime for a different protocol (example: 10GBase-R to
+SGMII), and the architecture of the SoCs does not normally permit that.
+The Reset Configuration Word (RCW) is a data structure read by the SoC
+preboot loader (PBL) which contains stuff like pinmuxing and SerDes
+protocol mapping for each lane.
+
+The RCW that the PBL has loaded is visible in the DCFG block's normal
+status registers (from CCSR), as read only. Turns out, the RCW is also
+mapped in the DCFG's shadow register map (in DCSR), in a write-only
+form. Writing to the RCW registers from the DCFG's DCSR space to change
+what the PBL has loaded is called "RCW override".
+
+It has been validated that the RCW override procedure is necessary to
+reconfigure the networking data path when a SerDes lane performs a major
+protocol change. It changes some internal muxes which connect the PCS to
+either the 10G MAC or to the 1G MAC.
+
+Defining the DCSR area of the DCFG as a secondary 'reg' array element
+allows operating systems to perform RCW overrides. Since it is
+introduced late in the binding's lifetime, it is optional. It can be
+identified by name, but also by index (first 'reg' is CCSR).
+
+Note that while all SoCs should have a DCFG register block in DCSR, we
+only need to expose it for the SoCs where the RCW override procedure is
+known to be needed and has been validated.
+
 Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
 ---
-v1->v3: none
----
- drivers/soc/fsl/guts.c | 47 ++++++++++++++++++++++++++++++++++++------
- 1 file changed, 41 insertions(+), 6 deletions(-)
+Cc: Conor Dooley <conor+dt@kernel.org>
+Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
+Cc: Rob Herring <robh@kernel.org>
 
-diff --git a/drivers/soc/fsl/guts.c b/drivers/soc/fsl/guts.c
-index e1b3a054e681..922560d98782 100644
---- a/drivers/soc/fsl/guts.c
-+++ b/drivers/soc/fsl/guts.c
-@@ -27,6 +27,23 @@ struct fsl_soc_data {
- 	u32 uid_offset;
- };
+v2->v3: none
+v1->v2:
+- add Conor's review tag
+- update email addresses of DT maintainers
+---
+ .../bindings/soc/fsl/fsl,layerscape-dcfg.yaml     | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+
+diff --git a/Documentation/devicetree/bindings/soc/fsl/fsl,layerscape-dcfg.yaml b/Documentation/devicetree/bindings/soc/fsl/fsl,layerscape-dcfg.yaml
+index 3fb0534ea597..fc14fd0bf84b 100644
+--- a/Documentation/devicetree/bindings/soc/fsl/fsl,layerscape-dcfg.yaml
++++ b/Documentation/devicetree/bindings/soc/fsl/fsl,layerscape-dcfg.yaml
+@@ -36,7 +36,20 @@ properties:
+           - const: simple-mfd
  
-+enum qoriq_die {
-+	DIE_T4240,
-+	DIE_T1040,
-+	DIE_T2080,
-+	DIE_T1024,
-+	DIE_LS1043A,
-+	DIE_LS2080A,
-+	DIE_LS1088A,
-+	DIE_LS1012A,
-+	DIE_LS1046A,
-+	DIE_LS2088A,
-+	DIE_LS1021A,
-+	DIE_LX2160A,
-+	DIE_LS1028A,
-+	DIE_MAX,
-+};
+   reg:
+-    maxItems: 1
++    minItems: 1
++    items:
++      - description:
++          Customer-visible DCFG register map from CCSR address space
++          (Configuration, Control and Status Registers)
++      - description:
++          Customer-hidden DCFG register map from DCSR address space
++          (Debug Control and Status Registers)
 +
- /* SoC die attribute definition for QorIQ platform */
- static const struct fsl_soc_die_attr fsl_soc_die[] = {
- 	/*
-@@ -34,21 +51,25 @@ static const struct fsl_soc_die_attr fsl_soc_die[] = {
- 	 */
++  reg-names:
++    minItems: 1
++    items:
++      - const: dcfg_ccsr
++      - const: dcfg_dcsr
  
- 	/* Die: T4240, SoC: T4240/T4160/T4080 */
-+	[DIE_T4240] =
- 	{ .die		= "T4240",
- 	  .svr		= 0x82400000,
- 	  .mask		= 0xfff00000,
- 	},
- 	/* Die: T1040, SoC: T1040/T1020/T1042/T1022 */
-+	[DIE_T1040] =
- 	{ .die		= "T1040",
- 	  .svr		= 0x85200000,
- 	  .mask		= 0xfff00000,
- 	},
- 	/* Die: T2080, SoC: T2080/T2081 */
-+	[DIE_T2080] =
- 	{ .die		= "T2080",
- 	  .svr		= 0x85300000,
- 	  .mask		= 0xfff00000,
- 	},
- 	/* Die: T1024, SoC: T1024/T1014/T1023/T1013 */
-+	[DIE_T1024] =
- 	{ .die		= "T1024",
- 	  .svr		= 0x85400000,
- 	  .mask		= 0xfff00000,
-@@ -59,46 +80,55 @@ static const struct fsl_soc_die_attr fsl_soc_die[] = {
- 	 */
- 
- 	/* Die: LS1043A, SoC: LS1043A/LS1023A */
-+	[DIE_LS1043A] =
- 	{ .die		= "LS1043A",
- 	  .svr		= 0x87920000,
- 	  .mask		= 0xffff0000,
- 	},
- 	/* Die: LS2080A, SoC: LS2080A/LS2040A/LS2085A */
-+	[DIE_LS2080A] =
- 	{ .die		= "LS2080A",
- 	  .svr		= 0x87010000,
- 	  .mask		= 0xff3f0000,
- 	},
- 	/* Die: LS1088A, SoC: LS1088A/LS1048A/LS1084A/LS1044A */
-+	[DIE_LS1088A] =
- 	{ .die		= "LS1088A",
- 	  .svr		= 0x87030000,
- 	  .mask		= 0xff3f0000,
- 	},
- 	/* Die: LS1012A, SoC: LS1012A */
-+	[DIE_LS1012A] =
- 	{ .die		= "LS1012A",
- 	  .svr		= 0x87040000,
- 	  .mask		= 0xffff0000,
- 	},
- 	/* Die: LS1046A, SoC: LS1046A/LS1026A */
-+	[DIE_LS1046A] =
- 	{ .die		= "LS1046A",
- 	  .svr		= 0x87070000,
- 	  .mask		= 0xffff0000,
- 	},
- 	/* Die: LS2088A, SoC: LS2088A/LS2048A/LS2084A/LS2044A */
-+	[DIE_LS2088A] =
- 	{ .die		= "LS2088A",
- 	  .svr		= 0x87090000,
- 	  .mask		= 0xff3f0000,
- 	},
- 	/* Die: LS1021A, SoC: LS1021A/LS1020A/LS1022A */
-+	[DIE_LS1021A] =
- 	{ .die		= "LS1021A",
- 	  .svr		= 0x87000000,
- 	  .mask		= 0xfff70000,
- 	},
- 	/* Die: LX2160A, SoC: LX2160A/LX2120A/LX2080A */
-+	[DIE_LX2160A] =
- 	{ .die          = "LX2160A",
- 	  .svr          = 0x87360000,
- 	  .mask         = 0xff3f0000,
- 	},
- 	/* Die: LS1028A, SoC: LS1028A */
-+	[DIE_LS1028A] =
- 	{ .die          = "LS1028A",
- 	  .svr          = 0x870b0000,
- 	  .mask         = 0xff3f0000,
-@@ -109,6 +139,7 @@ static const struct fsl_soc_die_attr fsl_soc_die[] = {
- static struct fsl_soc_guts {
- 	struct ccsr_guts __iomem *dcfg_ccsr;
- 	bool little_endian;
-+	u32 svr;
- } soc;
- 
- static unsigned int fsl_guts_read(const void __iomem *reg)
-@@ -119,11 +150,16 @@ static unsigned int fsl_guts_read(const void __iomem *reg)
- 	return ioread32be(reg);
- }
- 
-+static bool fsl_soc_die_match_one(u32 svr, const struct fsl_soc_die_attr *match)
-+{
-+	return match->svr == (svr & match->mask);
-+}
-+
- static const struct fsl_soc_die_attr *fsl_soc_die_match(
- 	u32 svr, const struct fsl_soc_die_attr *matches)
- {
- 	while (matches->svr) {
--		if (matches->svr == (svr & matches->mask))
-+		if (fsl_soc_die_match_one(svr, matches))
- 			return matches;
- 		matches++;
- 	}
-@@ -202,7 +238,6 @@ static int __init fsl_guts_init(void)
- 	const struct of_device_id *match;
- 	struct device_node *np;
- 	u64 soc_uid = 0;
--	u32 svr;
- 	int ret;
- 
- 	np = of_find_matching_node_and_match(NULL, fsl_guts_of_match, &match);
-@@ -217,7 +252,7 @@ static int __init fsl_guts_init(void)
- 	}
- 
- 	soc.little_endian = of_property_read_bool(np, "little-endian");
--	svr = fsl_guts_read(&soc.dcfg_ccsr->svr);
-+	soc.svr = fsl_guts_read(&soc.dcfg_ccsr->svr);
- 	of_node_put(np);
- 
- 	/* Register soc device */
-@@ -229,7 +264,7 @@ static int __init fsl_guts_init(void)
- 	if (ret)
- 		of_machine_read_compatible(&soc_dev_attr->machine, 0);
- 
--	soc_die = fsl_soc_die_match(svr, fsl_soc_die);
-+	soc_die = fsl_soc_die_match(soc.svr, fsl_soc_die);
- 	if (soc_die) {
- 		soc_dev_attr->family = kasprintf(GFP_KERNEL, "QorIQ %s",
- 						 soc_die->die);
-@@ -239,12 +274,12 @@ static int __init fsl_guts_init(void)
- 	if (!soc_dev_attr->family)
- 		goto err_nomem;
- 
--	soc_dev_attr->soc_id = kasprintf(GFP_KERNEL, "svr:0x%08x", svr);
-+	soc_dev_attr->soc_id = kasprintf(GFP_KERNEL, "svr:0x%08x", soc.svr);
- 	if (!soc_dev_attr->soc_id)
- 		goto err_nomem;
- 
- 	soc_dev_attr->revision = kasprintf(GFP_KERNEL, "%d.%d",
--					   (svr >>  4) & 0xf, svr & 0xf);
-+					   (soc.svr >>  4) & 0xf, soc.svr & 0xf);
- 	if (!soc_dev_attr->revision)
- 		goto err_nomem;
- 
+   little-endian: true
+   big-endian: true
 -- 
 2.34.1
 
