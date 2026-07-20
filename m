@@ -4,79 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF141C44529
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 18:01:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F6B7C44520
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 18:36:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=3TlOWQ5syl8tiF0SpgjSsGWIZul9PzWO1FVF2WV3E3U=; b=BgpUoxxTg0Du+5y3kaLAWvR6Y3
-	S1feV6UIYmSlryLWqIthe3x4oop2qfsGMoYsNOG3ocIn+ocO32DWpRyvANucdSavdLmPSunXjKC+l
-	5czoyrM0GcnXSMRmGJRbKI1TpXJIYt1q+gTdu04LLIsNnD5kVrSXnnJf6zn0nRw6m84FC4NEpU6rc
-	Era+dWGmAzBOF21HUq0byQ4ZQoTfxBtmar4ls0aUsHN4zPUgfNWj7Tquinrmf5k59XxRkk3ZXdcuo
-	6ukHFZXFvrFkvjEJ+fgL2MiFz9NfBHhSqLS576vanplbnI+v/4Dcgn4+qkvwndgJKSsuyJfJhJfba
-	Y75N+qYg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Jnp8b0eoOcgS95ubvYm/dYfSQm6MYBhwc94bduJspiM=; b=4R0AtBR1FoAOTN
+	F1Yt5v/DUezAtB1mjGpCWfEZIWRMKh4XJGBtIcbEsIVBJgqnMoHD09A5AvGND+AiNfKCAPPq7n1O7
+	o5q1XHjcIDsHfsCa+Hs1VEEd4irLHREc5EE2PQMn72y57sbEutdK2Z66M4u2+KInkgEeMi5Qn/OO9
+	SjpE48nKgJ8U9ILYIBiLIxt5GNUVhmW2gAGLGEDLk4FA1tUnq/IxZt3w2HDn8a8FAqP3zRewa6D/T
+	uaG1RQkpdtDc72OCTqDhRDs6plY9RotrjoEAMdOX1is9zOgxaVgzv2UIoUZHRpa4d7Mh4h5nEhzxh
+	M5ptZUyZTZ+INAQVcvsA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlsIZ-00000007b7v-2hYm;
-	Mon, 20 Jul 2026 18:01:03 +0000
-Received: from sender4-op-o11.zoho.com ([136.143.188.11])
+	id 1wlsqu-00000007fxq-2l3x;
+	Mon, 20 Jul 2026 18:36:32 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlsIV-00000007b6f-3L8v;
-	Mon, 20 Jul 2026 18:01:01 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1784570401; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=RT/1oyKIMcGmM+6SQWFkdyVqHta/RRyy0Yu4g4mm2VfK93pSIopDF6QoHT41cPIbnPr7Hy9dMb4JYN0l9C+h3MeYgS6BCda64OY2r5L2u/L/ht2dBIDLPOt5PFzx6a4nrkAQFD9dkerk6zeq67tC8mrABV3OdCH9YNp+NTUWEv0=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1784570401; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=PI5Oxb9HCfJR7oPD5XfJPeD09VaVWbnvfaj5lOSTQXI=; 
-	b=i/mkP3SSxYV9S4bVnCbWrIBof1StGDfQlRgeCnXvGVBJAGkOqDaLIzvZd4/OzOOrTPfQBbeUsqtMMAoH2wB3GRl+3JaSSXMmZ5JgVNuXmXukC6VT/pluuNyx1YvvtvVdAb5HfNbNKNhsspzV5ZTiYjA8dK1vueh8M0zrwCYP+QE=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
-	dmarc=pass header.from=<sebastian.reichel@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1784570401;
-	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
-	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
-	bh=PI5Oxb9HCfJR7oPD5XfJPeD09VaVWbnvfaj5lOSTQXI=;
-	b=IQqR+m+U/mjAqGizVvFMly5QcjIIaE/3vePjAzA6K22TI7658slUzACY11LrIn7m
-	edZZJ3OOCmrkW+Zp88L8qw86AYN/EMlgxSCqJPV4S33e6eFomYSt6mup8so6MjN0buj
-	rTE1wUvmp1WrV7i93mJ+hhrZCZ2KdghDyrbpcswM=
-Received: by mx.zohomail.com with SMTPS id 1784570399288490.3932171563042;
-	Mon, 20 Jul 2026 10:59:59 -0700 (PDT)
-Received: by venus (Postfix, from userid 1000)
-	id 26FF41809C8; Mon, 20 Jul 2026 19:59:53 +0200 (CEST)
-Date: Mon, 20 Jul 2026 19:59:53 +0200
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Chaoyi Chen <kernel@airkyi.com>
-Cc: Andrzej Hajda <andrzej.hajda@intel.com>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>, 
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, Jonas Karlman <jonas@kwiboo.se>, 
-	Jernej Skrabec <jernej.skrabec@gmail.com>, Luca Ceresoli <luca.ceresoli@bootlin.com>, 
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
-	Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, 
-	Simona Vetter <simona@ffwll.ch>, Sandy Huang <hjc@rock-chips.com>, 
-	Heiko =?utf-8?Q?St=C3=BCbner?= <heiko@sntech.de>, Andy Yan <andy.yan@rock-chips.com>, 
-	Vinod Koul <vkoul@kernel.org>, Chaoyi Chen <chaoyi.chen@rock-chips.com>, 
-	Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
-	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH v3 1/5] drm/bridge: Implement generic USB Type-C DP HPD
- bridge
-Message-ID: <al5fYojQ0kJw2okg@venus>
-References: <20260717072323.96-1-kernel@airkyi.com>
- <20260717072323.96-2-kernel@airkyi.com>
- <alpeAqKo72pwOEnX@venus>
+	id 1wlsqr-00000007fwx-2D70
+	for linux-phy@lists.infradead.org;
+	Mon, 20 Jul 2026 18:36:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1784572585;
+	bh=HBO7t+Ert+oqgjYT9uCQMkAftwBdNildjn+bN27LNfA=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=SeqCtsMnLuhAfpsgzsNPXUktmJWaZm2klMDqoy0wj/pvKXCA5Khe+H2ftMXQWwAZE
+	 UWWl5Ae2AsfZmiLEtH2Dwj7qnbnLQCJ3bcikmmzGQ7yCu3/1+8IyESHDFXDvw5CmO0
+	 a6P7678vkaR5o0wUwPImh62lV3jEmeISBpw6n0foWhZIh4drnCsvx8DuOjSQzx12Dh
+	 aJwVBBLF4RRhKr9QWAZI1lTT7sGqTM1eYMhANk96ihwIuCSzkeAXeXdkjD2Q/Nsjoe
+	 qQNzIi/Dlb5oIFb6xEpD9OCEjiVmUmr7t+jtBYSEPCKV+/qGUCDp0MFkzp5PLSGMDJ
+	 8dMQtRv+pHWlg==
+Received: from [100.64.0.241] (unknown [100.64.0.241])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 9FC7617E09AA;
+	Mon, 20 Jul 2026 20:36:25 +0200 (CEST)
+Message-ID: <2f2cca68-34ee-4f12-9fbc-77774a7f71d4@collabora.com>
+Date: Mon, 20 Jul 2026 21:36:24 +0300
 MIME-Version: 1.0
-In-Reply-To: <alpeAqKo72pwOEnX@venus>
-X-Zoho-Virus-Status: 1
-X-Zoho-AV-Stamp: zmail-av-0.2.10.1.5.2/284.544.97
-X-ZohoMailClient: External
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 2/8] phy: rockchip: samsung-hdptx: Prevent
+ divide-by-zero when computing clk rate
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Cc: sashiko-reviews@lists.linux.dev, neil.armstrong@linaro.org,
+ olteanv@gmail.com, linux-phy@lists.infradead.org, vkoul@kernel.org
+References: <20260612-hdptx-clk-fixes-v4-2-ce5e1d456cda@collabora.com>
+ <20260611235702.0E9691F000E9@smtp.kernel.org>
+ <90ac7bbc-977b-432a-9f17-b7280e19d819@collabora.com>
+ <al4sQ1kNriKH7hHL@umbar.lan>
+Content-Language: en-US
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+In-Reply-To: <al4sQ1kNriKH7hHL@umbar.lan>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260720_110059_889660_F84CF393 
-X-CRM114-Status: GOOD (  28.61  )
+X-CRM114-CacheID: sfid-20260720_113629_772622_DCF541C6 
+X-CRM114-Status: GOOD (  10.89  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,134 +74,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2927953081841348591=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Dmitry,
 
---===============2927953081841348591==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="qn43nqqaph5qazm4"
-Content-Disposition: inline
+Thanks a lot for taking the time to review the series!
 
+On 7/20/26 5:10 PM, Dmitry Baryshkov wrote:
+> On Fri, Jun 12, 2026 at 03:18:52AM +0300, Cristian Ciocaltea wrote:
+>> On 6/12/26 2:57 AM, sashiko-bot@kernel.org wrote:
+>>> Thank you for your contribution! Sashiko AI review found 1 potential issue(s) to consider:
+>>>
+>>> Pre-existing issues:
+>>> - [High] Potential integer underflow in `fout` calculation when hardware state is misconfigured, leading to a massive bogus clock rate that could hang downstream components.
+>>> --
+>>
+>> If the hardware reached such a damaged state, the kernel is likely already encountering more serious issues.
+>>
+>> Regardless, I will address this in the "FRL TxFFE level control" series, which is currently blocked by this one, to avoid any further delays.
+>>
+> 
+> With the overflow handled:
+> 
+> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 
---qn43nqqaph5qazm4
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH v3 1/5] drm/bridge: Implement generic USB Type-C DP HPD
- bridge
-MIME-Version: 1.0
+Since a new revision is needed anyway, I'll add a new patch to handle this in
+v5.
 
-Hi,
-
-On Fri, Jul 17, 2026 at 07:19:29PM +0200, Sebastian Reichel wrote:
-> On Fri, Jul 17, 2026 at 03:23:19PM +0800, Chaoyi Chen wrote:
-> > From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-> >=20
-> > The HPD function of Type-C DP is implemented through
-> > drm_connector_oob_hotplug_event(). For embedded DP, it is required
-> > that the DRM connector fwnode corresponds to the Type-C port fwnode.
-> >=20
-> > To describe the relationship between the DP controller and the Type-C
-> > port device, we usually using drm_bridge to build a bridge chain.
-> >=20
-> > Now several USB-C controller drivers have already implemented the DP
-> > HPD bridge function provided by aux-hpd-bridge.c, it will build a DP
-> > HPD bridge on USB-C connector port device.
-> >=20
-> > But this requires the USB-C controller driver to manually register the
-> > HPD bridge. If the driver does not implement this feature, the bridge
-> > will not be create.
-> >=20
-> > So this patch implements a generic DP HPD bridge based on
-> > aux-hpd-bridge.c. It will monitor Type-C bus events, and when a
-> > Type-C port device containing the DP svid is registered, it will
-> > create an HPD bridge for it without the need for the USB-C controller
-> > driver to implement it.
-> >=20
-> > Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-> > Reviewed-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-> > Reviewed-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-> > ---
->=20
-> Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-> Tested-by: Sebastian Reichel <sebastian.reichel@collabora.com> # ArmSom S=
-ige5
->=20
-> I gave this a test together with the RK3588/RK3576 USB-C DP AltMode
-> patches I'm working on. As the fusb302 does a manual registration
-> for the DRM bridge in its probe function, the bridge is registered
-> twice:
->=20
-> root@sige5 # cat /sys/kernel/debug/dri/bridges
-> ...
-> bridge[1]: drm_aux_hpd_bridge_funcs
-> 	refcount: 4
-> 	type: [10] DP
-> 	OF: /soc/i2c@2ac50000/typec-portc@22/connector:usb-c-connector
-> 	ops: [0x4] hpd
-> bridge[2]: drm_aux_hpd_bridge_funcs
-> 	refcount: 2
-> 	type: [10] DP
-> 	OF: /soc/i2c@2ac50000/typec-portc@22/connector:usb-c-connector
-> 	ops: [0x4] hpd
-> ...
->=20
-> Apparently the USB-C DP AltMode keeps working, so this just wastes
-> a few CPU cycles and some memory. So this can land and then we can
-> remove the manual code from the driver as a follow-up step. I also
-> gave that a try and things keep working. I won't send the fusb302
-> patch for now to ensure its not applied before this patch lands.
-
-The above test was done with a kernel having all config options
-built-in (i.e. no modules). Using arm64 defconfig one ends up with
-
-CONFIG_DRM_AUX_HPD_TYPEC_BRIDGE=3Dm
-
-But the resulting 'aux-hpd-typec-dp-bridge' module is not loaded
-automatically resulting in missing bridge registration. Running
-'modprobe aux-hpd-typec-dp-bridge' manually in the booted system
-does not work either as the TypeC controller has already been
-registered and no new BUS_NOTIFY_ADD_DEVICE is generated.
-
-Greetings,
-
--- Sebastian
-
---qn43nqqaph5qazm4
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmpeYgsACgkQ2O7X88g7
-+pp+TQ//dO/L/gdv3kllo402Dewki5Weq5We6e9xzWhRnm2HCSo/GBdqWFfuxZhw
-lQJeUcgDS7NJw/Btt1+oseitVUxklDA9U5tdh21nLt6lZ8xybUI4ejCM++GOgCbv
-rd4Qm9QEsWBL5dSSL7REXU4QqoZMDf7SDO/JMWRyxki0WT4E1HFD1Rq0q/XWnD0/
-zVWg01K10udFR7cMY9o8pAEXdqBvMiOncBGmHgHl/cx87yz7XPSDfhzN5y5bHPIs
-UEZr8vv6nOrhGkOxMqBXs86AEvdkBlOHl02UA2RU5MSukt2qIFz7IXRDxmcTruvq
-U9Q5ydGWrXNqOYvtaEgmjV844bmy4RVqRKyJTy/OlDLjLvMbdKbvo4s2v9vc1Q9a
-JKlWr8NlaGUh6vcH/gPgRZVzWp0XrHez3bDxeHK/8cLhzmhB2s6Q587ToGrUuDSp
-AryltU/IrpTYhOMdXt+hjIHRwo4fVYbKfMP/6ccgL3cVHwqncrhNSKSsoXgqXpsG
-XnB8Ptw8j6khSsJYsvz7lknc+CEQnC5Xm/Ltg0o9+Co7pY3Elph1W4dM2wqGM+mA
-xnYe7MtpRuA2wkMmBieyKremABtImf7OAyM6xY0qFJx925K46MwEbDJS+PMw+8PT
-lpUfz3PvTPEY0UaKQhXusyDfWCQpftab5PHy+kH7BBVDWY1V0hY=
-=yeQL
------END PGP SIGNATURE-----
-
---qn43nqqaph5qazm4--
-
-
---===============2927953081841348591==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Regards,
+Cristian
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============2927953081841348591==--
-
