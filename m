@@ -4,56 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1462C44520
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 11:36:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31340C44520
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 11:43:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2teZjNzEdFcUjR2a9UyP+zTE4vwyJi2Y4ybKV2ofdnM=; b=ahUuJiI2QPtWVS
-	zRFLmG3eT2yvpipiEK90bUw3Fx/F08Ltm3h4fXhTuk8WNA1gaX+KSZHZwY4vVM11sQL4Im0B1rz5A
-	lQqfBG4n8AGmEjX0G2l8qusJMpzkWB/gFSNkJxLjr9a4KZT56JIWJAMsZOGzwrNPxvInIOX0JpRyZ
-	p/6VuD/9mYM9dXEaImoXOzSvd9m86GXz8l6HKvLAizj4cC4XVPoVTeNNMC+jZvr4SYGdC9nTKxQdd
-	pavCJdXAuAwTjc10y5PWzn32YhuLo/cqdyxt7hftXkliObvYjyCQ6gbTKEQTnVkUHh0HicdFP/No6
-	2ivm9arCXaPwukviu5pA==;
+	List-Owner; bh=1B9M3We3SWljVhPREaITo7Cy6GLtCv7fRylsCrqjTP0=; b=NtfRpU7Egu3KfZ
+	i3pQAh13I76hmUUuo7WZIOvia3jvpCFCIAII2ZFkwxMWSM5XEtwoJ0FzRe//e83hEfuI0Q8vojHoU
+	iCYjIDfODXspryiIL9CglVkBnT9lfvMXDsM0eDax6iFovB2Q7PTVrgeg7rtFHg0ffJePLqs07PeKt
+	ef8qjyYJV88MsAnOgXRitScXBnvjcy+h1RbV/CUx6eiRxnj++XcR7M4Ya/1kUs3wiqBxjR3647bl6
+	FNvDg3vu1Wt2D/lgyAYg3grYg69WDJ/y0+TCXDk8G2e/Q6lhP6AwCu544D4Ex4Fg8L9Z6NXbCzsMu
+	xtfPc2AjwgajZNz7EgYQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlmIN-00000006c9S-1Pbe;
-	Mon, 20 Jul 2026 11:36:27 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wlmP2-00000006cvD-2Zde;
+	Mon, 20 Jul 2026 11:43:20 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlmIM-00000006c91-0COx;
-	Mon, 20 Jul 2026 11:36:26 +0000
+	id 1wlmP1-00000006cuj-1TlW
+	for linux-phy@lists.infradead.org;
+	Mon, 20 Jul 2026 11:43:19 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5574641ADB;
-	Mon, 20 Jul 2026 11:36:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CA4961F00A3D;
-	Mon, 20 Jul 2026 11:36:22 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 514FD412F0;
+	Mon, 20 Jul 2026 11:43:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D6A921F00A3A;
+	Mon, 20 Jul 2026 11:43:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784547385;
-	bh=v36e970MK+YgUbuwLDVXe5yspfmfNDBswqX60ky+hII=;
+	s=k20260515; t=1784547798;
+	bh=IwbTmGPKkSmwUNAoJKDpbszDISUrVaoIYCDL4XOp0Wc=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=hR3tQwnjfBN2EIGsDQoz+X4UVx6Wjqmnc8SKjKcQhsrpAVIZ4EATATQa1tBxBNjJ4
-	 /516ebGbb9o8t5/PjRVE4gRynVQRztTGg6bKpY0xcChyqkPdTWW+V/9uOa3Hg/J6Da
-	 h4XlKtJjKoprBP+3/iL0UZIj3h6DDer2HTvcfyzGFcRqRp3c5cIq9F4IA1EgFg4+lK
-	 2SmleYv2VM+rtgLxpHphsALgeDDSlMx3RzA2NI+/QgJE/MLRIOpLS7oBavRnjXx8k4
-	 g5Bf+fIOp6JsTv/4tIdfE/bBh3VkH+II3K53VLKghK5nbRrxevRc2n/yELoCrWnATM
-	 qamclOw8FtkLg==
+	b=BH/R7/rgj1uJg16QxlPlswjF87TH/1ns2rIHuke2Z6aaeXtPoFZniBV9j3lWErfzo
+	 rPAbtqR1HLgskNsM1XHl11Lz5/3sKkxvyyd6Hfp2iGxcxXvYyENPFhuLeVK8CbRks7
+	 h/lrqecFZgKqmp1x6HbKoSeLATp3fTYndD4EFcafSi69UNplzUH/clVFSy5cWmv0EJ
+	 BPQ0fVFcafmcjrUyrMKi4Xq038TGO2Z6rxej1HnFygEsjM6juusQgyYE6Bj3BCZlDt
+	 TqbNXxDOwvvftOsTClqpJBADCZzdtOhF7RDPJDR9j5IaD3j4WRft2u0X531r9QJKkw
+	 L7N1UyH3j5rPQ==
 From: Vinod Koul <vkoul@kernel.org>
 To: Neil Armstrong <neil.armstrong@linaro.org>, 
- Heiko Stuebner <heiko@sntech.de>, Shawn Lin <shawn.lin@rock-chips.com>, 
- Alexey Charkov <alchark@flipper.net>
-Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
- stable@vger.kernel.org
-In-Reply-To: <20260714-naneng-ssc-fix-v1-1-1c40a58061ae@flipper.net>
-References: <20260714-naneng-ssc-fix-v1-1-1c40a58061ae@flipper.net>
-Subject: Re: (subset) [PATCH] phy: rockchip: naneng-combphy: Always
- configure SSC spread direction
-Message-Id: <178454738244.1375859.4122685311138244257.b4-ty@kernel.org>
-Date: Mon, 20 Jul 2026 17:06:22 +0530
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Matthew Leung <matthew.leung@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+In-Reply-To: <20260707-hawi-phy-pcie-v4-0-8d9cc6324947@oss.qualcomm.com>
+References: <20260707-hawi-phy-pcie-v4-0-8d9cc6324947@oss.qualcomm.com>
+Subject: Re: [PATCH v4 0/4] phy: qcom: qmp-pcie: Add PCIe PHY support for
+ Hawi
+Message-Id: <178454779443.1388616.1697222144323108998.b4-ty@kernel.org>
+Date: Mon, 20 Jul 2026 17:13:14 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
@@ -73,21 +75,31 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 14 Jul 2026 19:41:20 +0400, Alexey Charkov wrote:
-> Commit 0b31f297557f ("phy: rockchip: naneng-combphy: Consolidate SSC
-> configuration") moved the SSC spread spectrum direction setup into the
-> new rk_combphy_common_cfg_ssc() helper. That helper returns early when
-> the 'rockchip,enable-ssc' property is absent, whereas the equivalent
-> RK3568_PHYREG32 direction writes previously ran unconditionally in the
-> per-type switch statements, independent of whether SSC modulation was
-> actually enabled.
+On Tue, 07 Jul 2026 20:32:45 +0000, Matthew Leung wrote:
+> This series adds QMP PCIe PHY support for the Qualcomm Hawi SoC. The Hawi
+> platform features two PCIe PHY configurations: Gen3 x2 and Gen4 x1.
+> 
+> The Gen3 x2 PHY uses v10 register definitions, while the Gen4 x1 PHY uses
+> v10.60 register definitions.
+> 
+> The series adds:
+> - device tree bindings
+> - v10 register offset headers
+> - v10.60 register offset headers
+> - driver support with PHY initialization tables for both configurations
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] phy: rockchip: naneng-combphy: Always configure SSC spread direction
-      commit: be2b5b17b7053fee142939076746d26b2d6c9702
+[1/4] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add Hawi compatibles
+      commit: d15224492d1aef8b28508f23b889ee0394b07b83
+[2/4] phy: qcom-qmp: Add v10 register offsets
+      commit: 0696cc735dc7ff53297ad2ee649ceed3b1f93d07
+[3/4] phy: qcom-qmp: Add v10.60 register offsets
+      commit: fdfe6417e2e699890f51bcc0b772734a0431e5d2
+[4/4] phy: qcom: qmp-pcie: Add QMP PCIe PHY support for Hawi
+      commit: 9ef4e520912e4966081e276beda628b69aac85dd
 
 Best regards,
 -- 
