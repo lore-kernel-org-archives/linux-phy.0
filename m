@@ -4,58 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31340C44520
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 11:43:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 203B4C44515
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 11:43:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1B9M3We3SWljVhPREaITo7Cy6GLtCv7fRylsCrqjTP0=; b=NtfRpU7Egu3KfZ
-	i3pQAh13I76hmUUuo7WZIOvia3jvpCFCIAII2ZFkwxMWSM5XEtwoJ0FzRe//e83hEfuI0Q8vojHoU
-	iCYjIDfODXspryiIL9CglVkBnT9lfvMXDsM0eDax6iFovB2Q7PTVrgeg7rtFHg0ffJePLqs07PeKt
-	ef8qjyYJV88MsAnOgXRitScXBnvjcy+h1RbV/CUx6eiRxnj++XcR7M4Ya/1kUs3wiqBxjR3647bl6
-	FNvDg3vu1Wt2D/lgyAYg3grYg69WDJ/y0+TCXDk8G2e/Q6lhP6AwCu544D4Ex4Fg8L9Z6NXbCzsMu
-	xtfPc2AjwgajZNz7EgYQ==;
+	List-Owner; bh=k49ueFSvmQsTmakta/Krw75Cq595hUBh5QancQzAAAQ=; b=2tsnIYhSq0MRZX
+	1NrN+JHkx+foIqKG/pFK2UyUYAXTLB8y9+W7l3uS7gEuTdb+0nncDHcDPhGNFonwe3QBsBDULoLb0
+	mm+eo7vHRfq4OFhfXib67SHxw611YaJ8duJzC1KIuw9bEyLjriCpu0Wu4fiLsiK6nPu4CJfm9xsDn
+	aaK5VFPbWfiAAIX+abeGRFpmAQ/xuv+2lZM3FJ31iZi8by5rZ9B2VFiFbG8e6Z64BrcG97h7qu1ng
+	Ni+++ur7S+yiQ3j7ZLdvxdmOnST9UXfmMiqpqoinXnPWgFq/AFLEHVLyKMMvuhPvJsOWYA2CEnggL
+	G64EVVVWXYRvdh9k1qeg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlmP2-00000006cvD-2Zde;
-	Mon, 20 Jul 2026 11:43:20 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wlmP5-00000006cwC-2jvB;
+	Mon, 20 Jul 2026 11:43:23 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlmP1-00000006cuj-1TlW
+	id 1wlmP4-00000006cve-1sqF
 	for linux-phy@lists.infradead.org;
-	Mon, 20 Jul 2026 11:43:19 +0000
+	Mon, 20 Jul 2026 11:43:22 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 514FD412F0;
+	by tor.source.kernel.org (Postfix) with ESMTP id 983B660103;
+	Mon, 20 Jul 2026 11:43:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DD68C1F00ADF;
 	Mon, 20 Jul 2026 11:43:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D6A921F00A3A;
-	Mon, 20 Jul 2026 11:43:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784547798;
-	bh=IwbTmGPKkSmwUNAoJKDpbszDISUrVaoIYCDL4XOp0Wc=;
+	s=k20260515; t=1784547801;
+	bh=USIFta8waGswLsVlrDqqeC2xFs953QzX0eT4BvPWM8c=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=BH/R7/rgj1uJg16QxlPlswjF87TH/1ns2rIHuke2Z6aaeXtPoFZniBV9j3lWErfzo
-	 rPAbtqR1HLgskNsM1XHl11Lz5/3sKkxvyyd6Hfp2iGxcxXvYyENPFhuLeVK8CbRks7
-	 h/lrqecFZgKqmp1x6HbKoSeLATp3fTYndD4EFcafSi69UNplzUH/clVFSy5cWmv0EJ
-	 BPQ0fVFcafmcjrUyrMKi4Xq038TGO2Z6rxej1HnFygEsjM6juusQgyYE6Bj3BCZlDt
-	 TqbNXxDOwvvftOsTClqpJBADCZzdtOhF7RDPJDR9j5IaD3j4WRft2u0X531r9QJKkw
-	 L7N1UyH3j5rPQ==
+	b=DVVvMFHfbIJcXfQxDL7HTpHjrOz0lcoTScUafjew1nqMVm1MaETpm+nna6dlUAe4I
+	 qT0vUTWcVUVhORQjbGSb7jsZzbCMFWdaQIRmcL5tf5F5D66iiN6i+kXa1bEPpX78QV
+	 i3WzKB+umJc8+NaB6F/HBIUrModomwfNNi2u6rkdU+TA2AoZorSJ9GR3Q3Lk6zPWmY
+	 TCd3eqMdwVmw1x0seE78ky7SAEaf24wEsf+1xoDhkxaV/hdbwlnQTRp2F4PVb37B7v
+	 cGQAcgoR0IiKuqRiCUaNUsjjysrl2L4ZPXWQZQ+PBlH3ZJYBbIZDnxtN1/iv/nuvH3
+	 ZKA6Pwr3iaDFg==
 From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Matthew Leung <matthew.leung@oss.qualcomm.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-In-Reply-To: <20260707-hawi-phy-pcie-v4-0-8d9cc6324947@oss.qualcomm.com>
-References: <20260707-hawi-phy-pcie-v4-0-8d9cc6324947@oss.qualcomm.com>
-Subject: Re: [PATCH v4 0/4] phy: qcom: qmp-pcie: Add PCIe PHY support for
- Hawi
-Message-Id: <178454779443.1388616.1697222144323108998.b4-ty@kernel.org>
-Date: Mon, 20 Jul 2026 17:13:14 +0530
+To: jack.zhu@starfivetech.com, changhuang.liang@starfivetech.com, 
+ keith.zhao@starfivetech.com, neil.armstrong@linaro.org, 
+ Can Peng <pengcan@kylinos.cn>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20260718090054.444513-1-pengcan@kylinos.cn>
+References: <20260718090054.444513-1-pengcan@kylinos.cn>
+Subject: Re: [PATCH v2 0/2] phy: starfive: Fix JH7110 DPHY runtime PM
+ cleanup
+Message-Id: <178454779848.1388616.16069499534692165906.b4-ty@kernel.org>
+Date: Mon, 20 Jul 2026 17:13:18 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
@@ -75,31 +72,23 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 07 Jul 2026 20:32:45 +0000, Matthew Leung wrote:
-> This series adds QMP PCIe PHY support for the Qualcomm Hawi SoC. The Hawi
-> platform features two PCIe PHY configurations: Gen3 x2 and Gen4 x1.
+On Sat, 18 Jul 2026 17:00:52 +0800, Can Peng wrote:
+> The JH7110 DPHY TX and RX drivers both enable runtime PM during probe
+> without arranging for it to be disabled on later probe failures or on
+> driver unbind.
 > 
-> The Gen3 x2 PHY uses v10 register definitions, while the Gen4 x1 PHY uses
-> v10.60 register definitions.
-> 
-> The series adds:
-> - device tree bindings
-> - v10 register offset headers
-> - v10.60 register offset headers
-> - driver support with PHY initialization tables for both configurations
+> Use devm_pm_runtime_enable() in both drivers so the runtime PM state is
+> cleaned up automatically when probe fails after runtime PM has been
+> enabled and when the driver is unbound.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/4] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add Hawi compatibles
-      commit: d15224492d1aef8b28508f23b889ee0394b07b83
-[2/4] phy: qcom-qmp: Add v10 register offsets
-      commit: 0696cc735dc7ff53297ad2ee649ceed3b1f93d07
-[3/4] phy: qcom-qmp: Add v10.60 register offsets
-      commit: fdfe6417e2e699890f51bcc0b772734a0431e5d2
-[4/4] phy: qcom: qmp-pcie: Add QMP PCIe PHY support for Hawi
-      commit: 9ef4e520912e4966081e276beda628b69aac85dd
+[1/2] phy: starfive: Fix runtime PM cleanup in JH7110 DPHY TX probe
+      commit: f40b0241f3a382e99c14de2f28f14a44973407c1
+[2/2] phy: starfive: Fix runtime PM cleanup in JH7110 DPHY RX probe
+      commit: 97bed336f6a25c9d1115ca95e3aa00e05c3bc271
 
 Best regards,
 -- 
