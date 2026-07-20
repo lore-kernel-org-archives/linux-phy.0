@@ -4,140 +4,131 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A48D0C44515
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 13:24:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ECEFBC4452A
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 13:36:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uiruaoXQIfuCHzgrOrYjM7WqrDEH1Q8aYHXVH5hfzN8=; b=nwbLHBCupq/J41
-	Vc2Ox2ZnDntEQLESOhEweNMJVxt7D3InDOk5jXjMHzvhsNpcYIMBvXZdp5x/m82sW8HuyxKYFQH7R
-	CeWHozbcASHuLxJuLiWb9sGB6aMXWg1zU2k4QZYLcQNb42fj90DZNvitGm5qwTqZDPoqlnwe5mHo5
-	u1qLhhDQkuv8PGVHNpp+bi9vlY3caeZtf9Ma48gUR08u/PFU+99H53wOM9jSgVp66ttmTB/HaiGEO
-	qSQJfo003epy0MB2ZroJvJoANayE1XsCk66M2cLT67+Wed9BHEB4CRq41VzwqXpeGNHzJskqRBEmf
-	t3DRB7c2BnaXU+uE354Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=PxKeK8KiYBIr6l6OZkciCJL06jidE+8M1gRYzo7r8TE=; b=gLqgNKfCIPgWyW
+	Rgh7tUxw4CA5wGaV1qy+KnjoVP5HzuMi/7Y4gcbwaEbDngWv4w29vi2G0/+WD9uTkXZzX+MVost+t
+	UD/N96gmTK8k16Mc44L+YA/4xd2hoxtAAyu2JbUn8ZyF2UfMw/b9Y5h/5Z5EYPtJd4LSLeL9vtXCm
+	UeHp5/gU8kjJg9lApgDdsxSkdV/SoPBaeRq/en+o3s5zZedBt/B617pqhWfgHpqgvPyB+l+3NIuT8
+	8zA2wrH830aojmSB3eVwezB3hkQ2YyttX+sQqdpb17l8PuSgSERoRwhfdighqePaOeVp+AB5m+d6U
+	u3o1scQ3RZpWKkZaLcpA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlnyx-00000006nbL-1P5T;
-	Mon, 20 Jul 2026 13:24:31 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1wloB0-00000006qEc-29z5;
+	Mon, 20 Jul 2026 13:36:58 +0000
+Received: from mail-westeuropeazon11011012.outbound.protection.outlook.com ([52.101.70.12] helo=AS8PR04CU009.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlnys-00000006nYU-15dr
-	for linux-phy@lists.infradead.org;
-	Mon, 20 Jul 2026 13:24:28 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66KAvSGw2430339
-	for <linux-phy@lists.infradead.org>; Mon, 20 Jul 2026 13:24:25 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	2rnuTTxS3dtHAIgoofax5iZiwmNO+2ul3JOTWMDYSu8=; b=eFxtgw5wut5B92w3
-	RtZVhajGc7llr/dfSaSe83kq00XNfrpnd8/z4naj0xu1FB2kRE5ClT3jFInM4NUk
-	OYC/SDqCunEnuJAXFLaWEamwJE+jF5XzAECMf0TH8KGT2GCGKsBD8RkQNevWqaUe
-	SK29H3kDJuKVntvjF3xkn3T/XNJ0RV7v4Cai3cKyn1xib7zOJQVepqd0zgt1VCQN
-	D3OTVNOlrhrltPMuOxNITi9kr6IQGWHxBm/b4Nhd3r82vSAGMSCSGnDWu/m7z2Zx
-	I4Ku6WhSOp1WwCOM61lpaFPN07QxjYiAtxTHCypTFVRmvMibPCSx0+cK0rn/r8f7
-	HoC55g==
-Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com [209.85.160.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fhhgyrtku-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 20 Jul 2026 13:24:25 +0000 (GMT)
-Received: by mail-qt1-f197.google.com with SMTP id d75a77b69052e-51c1e6f602cso146966771cf.3
-        for <linux-phy@lists.infradead.org>; Mon, 20 Jul 2026 06:24:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1784553864; x=1785158664; darn=lists.infradead.org;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :content-type:mime-version:references:message-id:subject:cc:to:from
-         :date:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=2rnuTTxS3dtHAIgoofax5iZiwmNO+2ul3JOTWMDYSu8=;
-        b=DQMugsXOJKYqSp46+HQNvJQdI46KKu0cmkfSqgB3rfcbiPbPMsguqEBThY5DLmqXcu
-         BsNyRiIdknDjxE8Ty3YoR6cxcwD1ettFxmDNeZUQQ/tsiZxpcR/emz7jxTLf8Ps5y6SY
-         zJRjLNYmOZI7+u5BYFawc3HPiXjarMd68Xd78opBOjxI4/3ITVP9DnKsoFLkQRSiDbv5
-         Dt9DWhUA+k6+MSP1iMvgR/JNxkLpquISZxbx1QQJztR9bMxA8SrVggDCugfUEi/3rSUL
-         wJRANaFfsC0m4mdW3hPtxxHV8g1lKONpKp02vhqc1Hfr/gx0inSLpP+Fq7hpkvKAjkdO
-         gqIA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784553864; x=1785158664;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :content-type:mime-version:references:message-id:subject:cc:to:from
-         :date:x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to:content-type;
-        bh=2rnuTTxS3dtHAIgoofax5iZiwmNO+2ul3JOTWMDYSu8=;
-        b=TdVniC7uNyHoDsYBfW+6xKddel7eKVcPgzZOLHURT1Zx5zrVSJcqyfaK3v4azeZTLf
-         rDoptfpa88l4y0TkRxf5bnf66tHWJZHVZzme0BOLWiLyUhGB0v4Uyllw9j9cuThL9TMB
-         8QjY1++bivxr7Ew9BLKVKSndwTSTHTkcSo1bVv+0XiqE2mosvPSWJvPHjmnmL9BA63RA
-         Rx1RviTN2uHeTqPm61irLiq++GAaHLRPRT/DllsCgjwJEa0ZQ0xZ5OykO5b4i6zrHYvm
-         9CHo0xpI2/Bz+qmORrKCO5id1oaXl+SFlFHPeIk7b9Ef1sJmNFj3taSU/NriGku/JuSa
-         SGYw==
-X-Forwarded-Encrypted: i=1; AHgh+RoL2O4VjClBLNReFuKNHvYd3lQTO6rs/toJsapgnRGPqXkbGt8BrfHxRV1b3sakoX0/RrgSE/BhW20=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yyfjm1Ribl2MHYI6AEXqWSYErCyRtUz0hbpWWDWOSOw588Tct+S
-	Nqh8KQtDvcqUy2ChvlCjJCtMgryEHyqxLetV5TDKh4UbRwODt+wjuL0vJNFZ0Jn22bU7I+c4JaW
-	xDti5sqwgTkyVGi5ns3+SlZHCMZKlFhrVCz3CTx6PUwnlv13eq5LrJDs2q4dha86mOrkC
-X-Gm-Gg: AfdE7cmyHGpyX0l+FjbMfyJ7lNPa6cSvlBuS+YDURjJ1mx95P24YDARwHwPR6zG3zGi
-	X5eaQVJh4Hp1Abkt7zvavsfEA1m7PjPqqbqitUvR6jdFrc/TS4sW4GJfP+0vMKZhIcsUmhTkDt5
-	i7kR/HR3wOx4dUrNB8ZHVAiuqcM0pSU/YYijxmntxY099krHwQJsgEZ6Z1SDWRWpVaKfQSN4gqJ
-	A4IPjqcgCBiL424D3/Rvyd0044Vlzo0xSsUYoKNXjP5fpJgAZW0HBOBxJKZNp8Vj+/qp/t0x0C2
-	KE/+cN4v+94udgTwcGBqxLeQlEhzemQRLoQ7B8cISP9Jt6ti7ibQ00jAHwgtlznPsi0tNxDcYsk
-	TbGCP/VZ+vKoWooqUXTZZ2fkn3onStRDuDZ519J34huyR7z8EN5wPDd7hCA+Qwpbm8ER5HB5XrS
-	qihuQeMLYcuyXTrA==
-X-Received: by 2002:a05:622a:4110:b0:51a:8b64:69e0 with SMTP id d75a77b69052e-5213d2b7109mr130718351cf.11.1784553864348;
-        Mon, 20 Jul 2026 06:24:24 -0700 (PDT)
-X-Received: by 2002:a05:622a:4110:b0:51a:8b64:69e0 with SMTP id d75a77b69052e-5213d2b7109mr130717871cf.11.1784553863758;
-        Mon, 20 Jul 2026 06:24:23 -0700 (PDT)
-Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5b291e0ea8dsm2337558e87.41.2026.07.20.06.24.22
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 20 Jul 2026 06:24:22 -0700 (PDT)
-Date: Mon, 20 Jul 2026 16:24:20 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-        Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>,
-        Dmitry Baryshkov <lumag@kernel.org>, kernel@collabora.com,
-        linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-        linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
-        Thomas =?iso-8859-1?Q?Niederpr=FCm?= <dubito@online.de>,
-        Simon Wright <simon@symple.nz>
-Subject: Re: [PATCH v4 1/8] phy: rockchip: samsung-hdptx: Fix rate
- recalculation for high bpc
-Message-ID: <al4hhLKoufegMPAg@umbar.lan>
-References: <20260612-hdptx-clk-fixes-v4-0-ce5e1d456cda@collabora.com>
- <20260612-hdptx-clk-fixes-v4-1-ce5e1d456cda@collabora.com>
+	id 1wloAy-00000006qDt-0FUf;
+	Mon, 20 Jul 2026 13:36:57 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=GqQAHL7GidNFJ6oGFHgX4n+3/EQTedRuI4F+UmWI1QzFFBQtQ0lelLxYUAAndUhYUHFTZNlyP4C8fujkYhF21VA0e912tfqYJblJxJlMZSFpSKNnDaJArEhit06juh3jcUjcbMPf3ASukoraDdyiX0z8nwzI0GvnUpaD4RxAD9WzMtQY6/ldcOzx2seernBPbJkGgnmHYDSAlHjAnh8i60y3oOBOdQAX7ifcRHneKj8o+PjdyCruVUnzdCh8xXDZ0i6P8lF/p5dp1XSv5QddknzJ2QX2h4jmS1GKVSN9j4wuujeAOjeX5O9IEDAsL7iYch9l/TqkzIEqCYattrv9KQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Obh7R9qKC5V8H7mIMt7BCNgcA1CyEsysjPEQ+3GdH/8=;
+ b=rAJthG+94cWH9jJndb9AdMGp+vqs5IRwvtzSYQV4VEZ7K4sdDwXqrlW+vyG6dUFJdk2CrbCpxeEbEH7FQrf35JMccdFnaG/8eyn7tnvvRwRE/+I12USp0XmvgXmveCfplxQkTO2w0vXmz+38bcbXVZ0oSNs8r+KMSMvxs3+uq9DOOoAHMQuOj02uvcpVB0NNJ0qu125m0v8C4kcvX0kVcS9ssYojsQwm/f/KzDXsNK6Uiv966LdQqeUF3C9V3VuTjVc564xfy8dfm2yaSec9I0AYURBn0qIe7vxl5OieXeIAg6UOeKyu3odTRQkSMGYRsNwYVLQSOeIxx0jDrPQHrw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Obh7R9qKC5V8H7mIMt7BCNgcA1CyEsysjPEQ+3GdH/8=;
+ b=UYgtVTrCHS3BmhiXp8OZLsAprTFbqqnKc/0tcDBetAo+cDpmWchiZtaJtFbNbLY66Gq5/1ndJff4Ij8KYP5PEbTUzQmsgx67EONiGuFe0JP0KXr3vdRGCkeL3X8i/UEzGkLDJ1TQDH9wE+RR2/8dbnAnw2ynoiu7B1HxHHGo8FNn7SikffmOlZqsnNwfp3J3PH4gLedCQ7gKNC0CDrlHydgVr0w4x/E0jodupWBaE9aVQmCWObTCDpcKuLFBp8ICpVXthkXt9Q9rEX27gp4JC+1Ptcag2886PJQ3PYKok9iac7VO1ymGCH1pQk/S6n+71uvuVA+42MDQgDWtUywcNw==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM0PR04MB6900.eurprd04.prod.outlook.com (2603:10a6:208:17d::10)
+ by AS8PR04MB8626.eurprd04.prod.outlook.com (2603:10a6:20b:429::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.223.18; Mon, 20 Jul
+ 2026 13:36:51 +0000
+Received: from AM0PR04MB6900.eurprd04.prod.outlook.com
+ ([fe80::7fda:8431:ca1b:b023]) by AM0PR04MB6900.eurprd04.prod.outlook.com
+ ([fe80::7fda:8431:ca1b:b023%5]) with mapi id 15.21.0223.017; Mon, 20 Jul 2026
+ 13:36:51 +0000
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: linux-phy@lists.infradead.org
+Cc: devicetree@vger.kernel.org,
+	linuxppc-dev@lists.ozlabs.org,
+	linux-arm-kernel@lists.infradead.org,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Tanjeff Moos <tanjeff.moos@westermo.com>,
+	"Christophe Leroy (CS GROUP)" <chleroy@kernel.org>,
+	Michael Walle <mwalle@kernel.org>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Frank Li <Frank.Li@nxp.com>,
+	linux-kernel@vger.kernel.org,
+	Conor Dooley <conor+dt@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Rob Herring <robh@kernel.org>
+Subject: [PATCH v3 phy-next 0/8] RCW override for 10G Lynx dynamic protocol reconfiguration
+Date: Mon, 20 Jul 2026 16:36:34 +0300
+Message-Id: <20260720133642.136324-1-vladimir.oltean@nxp.com>
+X-Mailer: git-send-email 2.34.1
+X-ClientProxiedBy: AS4P191CA0016.EURP191.PROD.OUTLOOK.COM
+ (2603:10a6:20b:5d9::11) To AM0PR04MB6900.eurprd04.prod.outlook.com
+ (2603:10a6:208:17d::10)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260612-hdptx-clk-fixes-v4-1-ce5e1d456cda@collabora.com>
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzIwMDE0OSBTYWx0ZWRfXwmmFeMCy4hT/
- KOWOEkuMnYC95B02tTTcR+3LQ4zXdyNhr2juL1Gi4gJvMFrIoGQiPYEYLzEPXVygPEeGOLEwTLm
- qMifNnQ1S74LYGEXDEkOHBw+nxO3cUY=
-X-Authority-Analysis: v=2.4 cv=LK9WhpW9 c=1 sm=1 tr=0 ts=6a5e2189 cx=c_pps
- a=EVbN6Ke/fEF3bsl7X48z0g==:117 a=xqWC_Br6kY4A:10 a=8nJEP1OIZ-IA:10
- a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22 a=QX4gbG5DAAAA:8
- a=EUspDBNiAAAA:8 a=LBX7SfcbrNp00noYVVsA:9 a=3ZKOabzyN94A:10 a=wPNLvfGTeEIA:10
- a=a_PwQJl-kcHnX1M80qC6:22 a=AbAUZ8qAyYyZVLSsDulk:22
-X-Proofpoint-ORIG-GUID: Yuf4dcuWZ9z-dNpTqewAOZdU92aiVj8M
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzIwMDE0OSBTYWx0ZWRfX7aMMz4Gw9DC4
- spzeazjcxtq0XjuFlexhUtEDhZ4Qw3SEKLgHvJOfBsTtel6UgHRpvyBJ5/wvAfJixQ6UkzG+GM3
- +/URQbWqgjr9cJNGpBGrxw+ZTwcgWLv+c2YjSKFb4T6qW5T5vEaInzqOcpeCPwygWPbIR2HTGzI
- jOnCIF++EOBoNVVZSjckOEV1+5n05QmfG00A1C9Nxnknvw6cNMvnd5OvxS7qvSdQDu8ydYluIVX
- SDAiqJVrjpHMIuq1iqAl5oBv6XGfW1/sswPZpI2d75Ogr4v5+fAm52SJdZcgGCZtX8HrI4X/x5T
- jhAvZ6kAd6d1dqt/0tn4/mh3uYWLZjUIHZ/GSaIwHL6IOrE96v9Iw56hxkWD3tvRxtn08dY+EpA
- GrqhmWU0T3fHLSmfPPoxwjFJis2ELSMVzTF6VOoh5HCilsLVKdmDL7slPoqjeCRTxRbxsWGcb0N
- Nc+ga45keszIdSv+3fg==
-X-Proofpoint-GUID: Yuf4dcuWZ9z-dNpTqewAOZdU92aiVj8M
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-07-20_02,2026-07-20_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 bulkscore=0 phishscore=0 clxscore=1015 malwarescore=0
- suspectscore=0 impostorscore=0 lowpriorityscore=0 spamscore=0 adultscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607200149
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM0PR04MB6900:EE_|AS8PR04MB8626:EE_
+X-MS-Office365-Filtering-Correlation-Id: 25b3d99d-8d46-4b3c-b32a-08dee663f4b0
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|1800799024|19092799006|23010399003|366016|3023799007|18002099003|10067099003|6133799003|11063799006|56012099006;
+X-Microsoft-Antispam-Message-Info: +0lcyEp12ZZj9BZoCnnwP2bEh25tDDPzsm65TywJV0gPqgTYdXmFC6u45t0Jrgsx2uAJPgEX881kNNLEW15RqSJjRJHZgMBfj2l/vJDh785N7DWqZ1KVmK+jTcLkoz4mlhC4m/R7LiXmu7G/2X5cf+VuCVoOoy6l9++StO+KG/vyXfxnnLpv/OThxcyb45nl/l8M+Xx4IuwZcO3KM64vxD6PWpcgjUSZBeMOZQj5G1bAq7GhiicUTMEQz5fUTci/eNA2LgQX4MoyayDeZxk7EvJvjXpNsizum8993XVIO3qzaWtiHHvH6pHgnLzgOI8lyFga/WwRnNNs4D6CuBTXHRlKBJuokxDiYFmx37/K7ytpHzz9hioMNu66DHnJnvedihlpxCjQLL16LkDscbRDeMXTAiAGgKTbH+o792/7oMAv4/K/kYJzmUrBjqh8NSJqA2XzrLIuyuDp+hF07lDvAaTWdAObhPoMKTX5Z9oHaw6/iv8kkqfRr1NjeBoyIwOMaMf7UvEu2zW7RW9rqKcYtTx+RcpCKBDmxnzIBChLVONYr6m3k8Vs0OluOtOrVetjl25hbzOxw3ZubCarjyHihiHoqIaEMusNRVz9iM6jKJOD5ii7w6HQb+FzJxQhMz+iile4YATn2FBfOh/qdw/OVBJp/hiyzFhoMrXWv0IjIWU=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6900.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(1800799024)(19092799006)(23010399003)(366016)(3023799007)(18002099003)(10067099003)(6133799003)(11063799006)(56012099006);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?ByRBNIU3RCpB+qdBZz6oifcMJEkMXC4VRm43W/VtQkugTGuKhHpVCTlO+zMi?=
+ =?us-ascii?Q?Lf7OxC0lmYRJinomI9N/0ghqP1xQVaZ0RkoAtYyX8JVH8CyTtDdwRYsH0+P3?=
+ =?us-ascii?Q?NOXfTG+uthHXoI01yc0CcsrDrfPQ17xBq0vCyRTjj5ICTjScFQGBHvTONs1Q?=
+ =?us-ascii?Q?EC0XvrXRoL3+M1Kc6t1KQzWqKwDZwFX/TLtdUHyxO3IPkqfGpcOmucO448/R?=
+ =?us-ascii?Q?aIunfo7JH/P3ZtDcjdbqZUd8XSYFMVPRVHFQBjtUj4rBNn33jXnLsFEj1HKu?=
+ =?us-ascii?Q?FQ0GyOxCmss1alAAIBl2wKT9jXi5Qp4i4um1vw1lrE2e5cpSWbMnbajgmtev?=
+ =?us-ascii?Q?mLlcx9jd9EysYee6sVZurMGU2fyXKMI9mGDaRaMxIdu8jR27KVRxF0a7Qbsx?=
+ =?us-ascii?Q?6PEV9e7lGfxtynk7ZjWOKEGy3f0gHEXI0VMra5ejNGsXV1Ahern8gNR8DcsH?=
+ =?us-ascii?Q?ZE5Wo2WcAqe796kjH6sIhAP6nmhMV7CXL8GgnvRejDhA3rYpm6etKFv0BUV1?=
+ =?us-ascii?Q?LSIXBYGe60QwwCBtIgFWcZvk5HtzkUmFaMO4W/tU/ZZSvAYAbErCAhtPs0uy?=
+ =?us-ascii?Q?FeGqn7yrAtAHfReTkDe7f/PKBshetpaQb4WV3Evewuf0s2ERkmQ62iz/ZxH8?=
+ =?us-ascii?Q?I7qRKZFqVaq2jN7ojpeHsHl38UWJpP0u3xChC5iTZ/2gqC0cEAAZr+SK9xtr?=
+ =?us-ascii?Q?00hl7wyHTJKb80G0O+SecSXIENWeDBguWt+e08wbk6mt9GyhfCNPJdSPIwQI?=
+ =?us-ascii?Q?wuPzcgJBgJ6H1FA9nH6phUQUqLo5twb7GqEwrxg4k2nZLRYhTKhdgj9oE4YZ?=
+ =?us-ascii?Q?nJlV4yksfoh0xqztex0x4UAYqpAyn9Ake+iGEv7yi1A81qqV7kIT4X66rpid?=
+ =?us-ascii?Q?274oE8IFnMhaOBieST6PENoKIbZ7oIs564d9IykHKIKOxOSbM0NG1oyLa378?=
+ =?us-ascii?Q?PECl0Rk58IxRbem6kWkp7TLIP0zqcjpZ8KvYciHtuXRbBMXcQ7xpVMfNkyrh?=
+ =?us-ascii?Q?6TKwQTaZTaDITdfiA7t8JQikAgTFJ1/yVj95kwRze75AinigapY71OBdLtwm?=
+ =?us-ascii?Q?11UCiO6Za+NiED6DTNfENOSKDNjNz+r/+9VzIkjho8zxCV39F9sUBqom78xG?=
+ =?us-ascii?Q?5aEc49m6TXQbG2JC37pglFWLkhm1IbTX7/b33Mixa/Yl/tqONwQ5mkukf6GA?=
+ =?us-ascii?Q?dno0IDsCEbM4bqolOnVHZaGPa5xsrXrcF/EDcIJrjfN411+hp1cEAqArLta4?=
+ =?us-ascii?Q?juXPKy81RXzqgBRSnEmhH7rUJRh/hDj+nMHLGvPTUyaM6YZK4QtZuXAFAnHT?=
+ =?us-ascii?Q?phLVWYl+x/cEOfTBcz+IOphLTz0RQQXXvuktDCUoJuiRJaoFf/XoXaImXDtg?=
+ =?us-ascii?Q?5HKLLEqc6Z4FuoVHNzuhhvyCZ1dGNO8uM3aoYkw8qti89rV0Z23L+A8sbhbp?=
+ =?us-ascii?Q?hXM5fNQVw+ByjWcVxfdgNrD0crCO4sn+hTAIW1GgKCzHvqIsMdvyAcLSfmTd?=
+ =?us-ascii?Q?dLVCAi/rbMyn1kaurKZ7kX+NG8tnqTEOAWGFZWgsByb9X57jy3BziMlzZpbr?=
+ =?us-ascii?Q?NRNgS3KTNWgEr9x58dfNXhm1KndlvDrehtklOsT76vBovtZ8WKw7AKHaWN+I?=
+ =?us-ascii?Q?2/MMu4AcvCuPyhAfeqbRtvC9974OKf8s57nttvboFc6c1rJqOj4StkAKPEHr?=
+ =?us-ascii?Q?nHVOL81glBhRbvfWHqwe95JrdywyVBWa3AIF3f3/3OyPfUZkMmv+GVtqizai?=
+ =?us-ascii?Q?ESYm44p/J3qF71Xuut0eZ7HRrOj69KA=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 25b3d99d-8d46-4b3c-b32a-08dee663f4b0
+X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6900.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Jul 2026 13:36:51.6155
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: Ce42wKa9gz9Iucor6ag+v2AkBbKNJDEh4iZeQptzzkIxLZ7Uimp+bAW8lkC61itn4a8MYZEgJRBxqKPNiWyUuA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8626
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260720_062426_415234_4C30E00F 
-X-CRM114-Status: GOOD (  15.44  )
+X-CRM114-CacheID: sfid-20260720_063656_107131_405D3A37 
+X-CRM114-Status: GOOD (  17.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,50 +140,108 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jun 12, 2026 at 02:45:20AM +0300, Cristian Ciocaltea wrote:
-> The PHY PLL can be programmed by an external component, e.g. the
-> bootloader, just before the recalc_rate() callback is invoked during
-> devm_clk_hw_register() in the probe path.
-> =
+Previous set "New Generic PHY driver for Lynx 10G SerDes":
+https://lore.kernel.org/linux-phy/20260610151952.2141019-1-vladimir.oltean@nxp.com/
+introduced the 10G Lynx SerDes driver with a reduced functionality set.
+Namely, only minor protocol changes are supported (1GbE <-> 2.5GbE).
+The major protocol changes need a procedure named RCW override,
+explained in more detail in commits 6/8 and 7/8.
 
-> Therefore rk_hdptx_phy_clk_recalc_rate() finds the PLL enabled and
-> attempts to compute the clock rate, while making use of the bpc value
-> from the HDMI PHY configuration, which always defaults to 8 because
-> phy_configure() was not run at that point.  As a consequence, the
-> (re)calculated rate is incorrect when the actual bpc was higher than 8.
-> =
+This series adds kernel and device tree binding support for RCW
+override, completing the SerDes PHY driver functionality.
 
-> Do not rely on any of the hdmi_cfg members when computing the clock rate
-> and, instead, read the required input data (i.e. bpc), directly from the
-> hardware registers.
-> =
+Two components are involved:
+- drivers/soc/fsl/guts.c (binding is fsl,layerscape-dcfg.yaml) - Device
+  Configuration Unit, this is API provider for the SerDes driver to
+  request RCW override depending on SoC
+- drivers/phy/freescale/phy-fsl-lynx-10g.c - SerDes PHY driver, this is
+  API consumer
 
-> Fixes: 3481fc04d969 ("phy: rockchip: samsung-hdptx: Compute clk rate from=
- PLL config")
-> Tested-by: Thomas Niederpr=FCm <dubito@online.de>
-> Tested-by: Simon Wright <simon@symple.nz>
-> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-> ---
->  drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 13 ++++---------
->  1 file changed, 4 insertions(+), 9 deletions(-)
-> =
+The guts driver probes on DCFG blocks from multiple Freescale SoC
+generations:
+- MPC85xx, BSC and QorIQ (PowerPC) are all covered by the
+  Documentation/devicetree/bindings/soc/fsl/guts.txt schema
+- Layerscape (Arm) is covered by
+  Documentation/devicetree/bindings/soc/fsl/fsl,layerscape-dcfg.yaml
+
+It is ultimately the same hardware block, just that (from what I can
+tell) the Layerscape nodes are also compatible with syscon, and PowerPC
+aren't.
+
+RCW override has only been validated on select Layerscape SoCs, so
+converting guts.txt to a PowerPC schema is out of scope for this
+series - we don't even touch that (just in case it gets asked).
+
+Using syscon to map the DCFG_DCSR register block in the Lynx SerDes
+driver instead of creating this guts <-> lynx API was considered, but
+because the RCW procedure is SoC-specific, it was ruled out for
+polluting the SerDes driver. The guts driver is all about SoC awareness
+anyway, and it offers some abstraction of all the gory details.
+
+Changes since v2:
+- fix error handling in fsl_guts_init() and make sure that all newly
+  introduced RCW override API functions fail if fsl_guts_init() failed.
+- replace __bf_shf() use with __ffs()
+- use read_poll_timeout_atomic() in fsl_guts_rcw_rmw() to clarify that
+  DCFG_DCSR writes are supposed to reflect back in DCFG_CCSR
+- only operate on lanes on which fsl_guts_lane_init() was called in
+  ls2088a_serdes_init_rcwcr()
+- put parentheses around (lane) in LS1088A_RCWSR29_SRDS_PRTCL_S1_LNn()
+  and LS1088A_RCWSR30_SRDS_PRTCL_S2_LNn() macro expressions
+
+v2 at:
+https://lore.kernel.org/linux-phy/20260612210859.266759-8-vladimir.oltean@nxp.com/
+
+Changes since v1:
+- add Conor's review tag on 6/8
+- update email addresses of DT maintainers
+- drop DT maintainers from explicit CC on patch 7/8
+- keep devicetree@vger.kernel.org CCed on entire series
+- include missing <linux/bitfield.h> in patch 7/8
+- namespace SRDS_PRTCL values for LS1046A and LS1088A, even if they are
+  the same. For LS1028A (not covered here) they are not.
+- prefix SRDS_CLK_SEL_{GMII,XGMII} with LS2088A_
+- reorder alphanumerically (LS1046A should come before LS1088A)
+
+Change logs also in individual patches.
+
+v1 at:
+https://lore.kernel.org/linux-phy/20260611193940.44416-1-vladimir.oltean@nxp.com/
+
+Cc: Conor Dooley <conor+dt@kernel.org>
+Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
+Cc: Rob Herring <robh@kernel.org>
+
+Ioana Ciornei (5):
+  soc: fsl: guts: use a macro to encode the DCFG CCSR space
+  soc: fsl: guts: add a global structure to hold state
+  soc: fsl: guts: add a central fsl_guts_read() function
+  soc: fsl: guts: make it easier to determine on which SoC we are
+    running
+  soc: fsl: guts: implement the RCW override procedure
+
+Vladimir Oltean (3):
+  soc: fsl: guts: make fsl_soc_data available after fsl_guts_init()
+  dt-bindings: fsl: layerscape-dcfg: define DCFG_DCSR region
+  phy: lynx-10g: use RCW override procedure for dynamic protocol change
+
+ .../bindings/soc/fsl/fsl,layerscape-dcfg.yaml |  15 +-
+ drivers/phy/freescale/Kconfig                 |   1 +
+ drivers/phy/freescale/phy-fsl-lynx-10g.c      |  24 +-
+ drivers/soc/fsl/guts.c                        | 438 ++++++++++++++++--
+ include/linux/fsl/guts.h                      |  20 +-
+ 5 files changed, 459 insertions(+), 39 deletions(-)
+
+-- 
+2.34.1
 
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-
-
--- =
-
-With best wishes
-Dmitry
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
