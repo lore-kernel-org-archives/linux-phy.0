@@ -4,58 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B04E3C44515
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 11:43:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA9D5C4452C
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 11:43:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YM3yOiJECbtPRwEHD7xudHh5VRLpDJTN0i7+eQ9WlL4=; b=2Wy+GUMMEGV6py
-	kW/fSXRxkAEJHeMNwX0UDoqV2Ct48W6cPyljrz8OWa2U7/j/lGTbPgKedHa324YdSgJ11vZPLa2L6
-	4rhPakmxaeR1CPxILEIfjroH1sQKUfaTrpQB/Th2kEK5IrQKUE4YzG3O5dVzQzd4a6XJSqcv4HAOH
-	MJCdZasDtnycL/26z5U0xVhAxeT5PkN90oG/hYl0PH018RyNkAgr3j72H4p1IJDxjo8p8qBImuUkY
-	Rr9JZssW2bcODOIWzDQ7gq2yvi+KwuooIBbVfWBwNi7omb81zl5I5OvEWh4ObwfArzxFw1ZN5QQBT
-	VX6OoO8yshDF5BrNT2+g==;
+	List-Owner; bh=759EcoHYYVdNJaf+YEmdSyo6Ylunsvwgl3kCYdJsO0g=; b=D96yDVQcHsxmok
+	rTtC7OIYY6MovveTDyh1Z7519IKgvjFMr+cwjDo4lN3LYU+cOnqcO9z/IVPKuRynpmVJXzdM/G+l7
+	euDA57C7qk4AoGa2+BDN6L/iI3L1q98aFVl8kK9bS/mKBYbu8We+t41y7BWhlEDQCiB/Px1yMh0Ad
+	KxtihdkRb1IgZYZGNmMV+efLTpeuVZuBg3BbSfWf9DxdIpy2FREjrVbrkC0i2zIWtrBODnbOOaJEt
+	Dwjc3wWa+UFNvC5OL+XLHazNJPb9hjP2GFOWC4aNmfFtZ7BwI2UX/0uQxvq/fpXToqFpKL34ccVh+
+	0/4NPhm4KkFvxXFPfTrg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlmPK-00000006czj-1fNw;
-	Mon, 20 Jul 2026 11:43:38 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wlmPO-00000006d2H-1qUh;
+	Mon, 20 Jul 2026 11:43:42 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlmPH-00000006cz0-31mH;
-	Mon, 20 Jul 2026 11:43:35 +0000
+	id 1wlmPN-00000006d1d-268N
+	for linux-phy@lists.infradead.org;
+	Mon, 20 Jul 2026 11:43:41 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 56F24403F5;
+	by sea.source.kernel.org (Postfix) with ESMTP id 4533141B3E;
+	Mon, 20 Jul 2026 11:43:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 037831F00A3D;
 	Mon, 20 Jul 2026 11:43:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9C8181F00A3E;
-	Mon, 20 Jul 2026 11:43:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784547815;
-	bh=kgEbuRaZ7fC8I4l3wHHvaMm3ff8vOKykqDqNHrxX4ow=;
+	s=k20260515; t=1784547821;
+	bh=pWL/barBtInChl02bEndoQ2DFelEZZZkg+gCxWYVwpk=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=BDrGf7NzG0L0sB92Cx3an0HY1ia4T3Hj7SKz4jZfVtUVZKNaE0lMcuzwpN3POvU+y
-	 QW/1xfdjtYXcXfpfoizjUartFQ5DITdV9VV4RzKBfW6+RmwdEqwpw19lk6lxTBjwpA
-	 OVdlzEOOHgbjPIbNgnUS3mBUcpmxuT5xpU1+zf17X/0Nu+Fp+2G7PS+MCjp7dXAOtw
-	 XQd3v8cy/BdrIgrYxKeL5S29+gSDF+Fzbmu0AGMofTzCfibJI4EUXSVlIbMfs+cN1N
-	 zpkR13ypArj3x2L/8tCe3SWBDgIB8mB2dJJUcYcuUNULhtOAtKNb2W1ofEqS7sRVU0
-	 qRLKSqctmGPHw==
+	b=UlLL+xWkGRdTFUk8ZiUPuJp+MT6KUB0KlvY8qPiQiQ0PeN0hGkf8+IAbV8jjNL+vu
+	 3oHtXNt6Fjo4stwMoP1tl0G4nVnR691ovAQMC4/t2+kdyUc/a4USDTX1TMCcrtAWXA
+	 Inbbtcmavu/fHSb+bfZklOeK2Y0HJbC8LJOA9Y62zFFb6VVkIi/ArkmAPr+F8DOZJo
+	 1KIxafyRWb2uAihkiwsUnsepzP/QAB1iBg0C2QYgpKmemfia+xKalXa+PUHnEFHkYE
+	 MXd6eiKLpmU//wPA/NSH6ygNwk6zQtZeUB+gOc7yuaILWFSt0jEImpcopORfmhvF/s
+	 5Idv1tcVjuziQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: chunfeng.yun@mediatek.com, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: neil.armstrong@linaro.org, robh@kernel.org, krzk+dt@kernel.org, 
- conor+dt@kernel.org, chunkuang.hu@kernel.org, p.zabel@pengutronix.de, 
- matthias.bgg@gmail.com, justin.yeh@mediatek.com, 
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
- kernel@collabora.com
-In-Reply-To: <20260713103805.23030-1-angelogioacchino.delregno@collabora.com>
-References: <20260713103805.23030-1-angelogioacchino.delregno@collabora.com>
-Subject: Re: [PATCH v3 0/2] PHY: Add support for MT8196 DSI PHY
-Message-Id: <178454780918.1388616.17680006872088012294.b4-ty@kernel.org>
-Date: Mon, 20 Jul 2026 17:13:29 +0530
+To: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, Jingoo Han <jingoohan1@gmail.com>, 
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+ =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+ Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, 
+ Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org, 
+ Abel Vesa <abel.vesa@oss.qualcomm.com>, 
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
+ Qiang Yu <qiang.yu@oss.qualcomm.com>
+In-Reply-To: <20260709-link_retain-v3-0-81a9d187bb61@oss.qualcomm.com>
+References: <20260709-link_retain-v3-0-81a9d187bb61@oss.qualcomm.com>
+Subject: Re: (subset) [PATCH v3 0/4] PCI: qcom: Add link retention support
+Message-Id: <178454781557.1388616.15635571686533105234.b4-ty@kernel.org>
+Date: Mon, 20 Jul 2026 17:13:35 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
@@ -75,24 +79,23 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 13 Jul 2026 12:38:03 +0200, AngeloGioacchino Del Regno wrote:
-> Changes in v3:
->  - Actually sent the correct patch series (sorry, I had messed up v2)
->  - Added definitions for minimum and maximum PLL rates
+On Thu, 09 Jul 2026 12:05:15 +0530, Krishna Chaitanya Chundru wrote:
+> This patch series introduces support for retaining the PCIe link across
+> bootloader and kernel handoff on Qualcomm platforms, specifically
+> X1E80100. The goal is to reduce boot time and avoid unnecessary link
+> reinitialization  when the link is already up.
 > 
-> Changes in v2:
->  - Added a few comments and fix scheduling while atomic issue in clk
->    enable ops by waiting with udelay() instead
->  - Removed one unnecessary delay after clk/pwr isolation disablement
+> We are not enabling link retantion support for all the targets, as there
+> is no guarantee that the bootloader on all targets has initialized the
+> PCIe link in max supported speed. So we are enabling for hamoa & glymur
+> target only for now based on the config flag.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/2] dt-bindings: phy: mediatek,dsi-phy: Add support for MT8196
-      commit: 215cd5def8eca1c2aa7ca043483d96155a1c3ed6
-[2/2] phy: mediatek: Add support for MT8196 MIPI DSI PHY
-      commit: 2ec9c210c1f931389709aee403d28e4f32676385
+[1/4] phy: qcom: qmp-pcie: Skip PHY reset if already up
+      commit: 910b828b22b7b91054b3bd4be676a017444b0e00
 
 Best regards,
 -- 
