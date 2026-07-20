@@ -4,54 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1FA9CC4452A
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 15:10:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B29C7C4452B
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 15:20:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U2xTtGucXZvG/CzaQRTFnfJkQjs7K6j4tMoFRXDqk3U=; b=TpLYP1nhyD3GF9
-	a657CmEilxhh2iH89vM/OvOBCQacJZA+Hx7AOWtn16jlIM4Zjcpr6R3vKmP5oiANvx1HsCD2ShIhJ
-	YdBeppkc94PdljaLsyFH3hLecxzi9JyNhXJVaXAHubCU9hIHTi73af8UmeI8hOzUCfMwzhxOM+a2Y
-	9Re9gf01hZ7u5zL7d/hLL8ucA8xSpHk315ZAGfVKebELESpPXWrHIXzU713jCltXJ2o59v1eeytPs
-	T4vQAvA8qWO/mxML9Xnzk+OI7DD145PBWuvv4iOmrJoCDFrlQ3ryqbzPvEmnpPXxV2Nn5a03kfFch
-	GeGBGYwuvLrEIYxpYQaQ==;
+	List-Owner; bh=0WgWzmsLL4a5/hmeh2ThioHwAndyoEYxR7B2dUK6qHg=; b=X36JTbMVCvxgBf
+	jNp/7GV/+bSibxZOJ4kTdWPDAKUYQd8adkAk94dBk2Bf2Sf2ES0PsIbl07wBz34bTuxW1EQMZpmvb
+	Xnqi8orwbYuv+uunwVFJUDcC7R8zdkT9TT13ROq5zLazWQUM5PfpT3D3feN3XRAE7Xz0C1yAvB0pa
+	ahaMHQBh93p9foArBzmzZFhDYKgqDc/sFR67JFrS++6t7GjwwWvdfaz7kSynD1qdCvq7dvsVnRZ2K
+	79/p8LpOGB807dhm9Uhj5R8Sh5Jn7Y+7ZefKpIfLVIlFOTLxzZBHD0+V+6XMYg5++u/UDXESCyPjG
+	KmuVPEixm35lhMZ0fTuQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlpdb-000000078Aw-3SC0;
-	Mon, 20 Jul 2026 15:10:35 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wlpmi-00000007A9v-1jCK;
+	Mon, 20 Jul 2026 15:20:00 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlpda-000000078Ae-0cGA
+	id 1wlpmf-00000007A8D-2bSV
 	for linux-phy@lists.infradead.org;
-	Mon, 20 Jul 2026 15:10:35 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id E422D41260;
-	Mon, 20 Jul 2026 15:10:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3DEFF1F000E9;
-	Mon, 20 Jul 2026 15:10:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784560233;
-	bh=B+3GL1RsTcu52ezGlHNaDATGvLk6jzJgCBM32z8LYyA=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=lm3FYIs1BEqlGSb3rhBeO6wbGDWWdtEY9OJ9Vh1iFKdQJtamIJtkALkax7R/I4fq1
-	 P9VlDNuAobb8px9yfF6A85os74YLIX1jGGM9gqmHRPJomzFB24FNpvAmBkwWa5oQ8a
-	 2d4WLcp3RitmLPj8GkfaZaZfpehgaRHXopWv9YUbwKXoGFzabJdT3n05HkMeZeihhg
-	 NoDkWu5GMBwyJN3cc7dedkKo7KfTSRYxbzDdQk93DLsR6ZH7j5oFrpdij3XtKhPa0Y
-	 71D1eL4BwHTizmsogg+Oyxp6t78FyjvoUmlfWAV/F35+qW+1Y1ShClYA4SmmWt3qR6
-	 jIOqPMDzV7mVw==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v4 3/4] phy: qcom: qmp-usb-legacy: Fix possible
- NULL-deref on early runtime suspend
-To: "Loic Poulain" <loic.poulain@oss.qualcomm.com>
-Cc: neil.armstrong@linaro.org, olteanv@gmail.com, vkoul@kernel.org, linux-phy@lists.infradead.org
-In-Reply-To: <20260720-qcom-usb-phy-fix-null-v4-3-4d2a0f06d53a@oss.qualcomm.com>
-References: <20260720-qcom-usb-phy-fix-null-v4-0-4d2a0f06d53a@oss.qualcomm.com>
- <20260720-qcom-usb-phy-fix-null-v4-3-4d2a0f06d53a@oss.qualcomm.com>
-Date: Mon, 20 Jul 2026 15:10:29 +0000
-Message-Id: <20260720151030.3DEFF1F000E9@smtp.kernel.org>
+	Mon, 20 Jul 2026 15:19:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1784560795;
+	bh=1D1sKEa/Qff+Tb9URO3TIUV9ce1vUhdd8hBkVZX90rg=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=VK/ALKAXQxOxYHh226uH+caIytyBVCaIOBA9zt/VVVEGDl9ExoSiOYFjrU4Af17Ou
+	 kkq5BwPsh9hCU8BO6wp7SwsaAmrMgXw6DogvJO1iiAL5WlIvr9Hflz0upeQWa1M8Bm
+	 jXdv96ZecpKVgT6VwO+8pkqQ9v1Hcu4usO2jp8UzQO4lw1fkdCLep4NKEgr3SIGRto
+	 5A2zkyD/aM7G+vC7HA/VnPirpqwpzHJYXo7IYftLbygheoFT4Xj+ZCGNaNXwtpS0sd
+	 RcdMCaA2pdkO+54xrtqi44pQkAIkulfG5L7GTO53+xlxOQze1A65RR0xVz4Pu+yf45
+	 RgbHse1py/Vxw==
+Received: from [100.64.1.21] (unknown [100.64.1.21])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 7D2D817E07A2;
+	Mon, 20 Jul 2026 17:19:55 +0200 (CEST)
+Message-ID: <e41075b9-8999-48f4-9a61-56b85042b0c5@collabora.com>
+Date: Mon, 20 Jul 2026 17:19:55 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 2/2] phy: mediatek: Add support for PCI-Express Gen4
+ S-PHY
+To: sashiko-reviews@lists.linux.dev
+Cc: neil.armstrong@linaro.org, olteanv@gmail.com, devicetree@vger.kernel.org,
+ vkoul@kernel.org, linux-phy@lists.infradead.org, conor+dt@kernel.org,
+ robh@kernel.org
+References: <20260720135344.84183-1-angelogioacchino.delregno@collabora.com>
+ <20260720135344.84183-3-angelogioacchino.delregno@collabora.com>
+ <20260720141301.482441F00A3A@smtp.kernel.org>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+In-Reply-To: <20260720141301.482441F00A3A@smtp.kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260720_081957_837557_F689D7BB 
+X-CRM114-Status: GOOD (  32.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,79 +74,166 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpOZXcgaXNzdWVzOgotIFtIaWdoXSBB
-c3luY2hyb25vdXMgYHBtX3J1bnRpbWVfcHV0KClgIGNvbWJpbmVkIHdpdGggaW52ZXJ0ZWQgZGV2
-cmVzIGNsZWFudXAgb3JkZXIgaW50cm9kdWNlcyBhIFVzZS1BZnRlci1GcmVlIG9mIGBxbXAtPnBo
-eWAgb24gcHJvYmUgZXJyb3IuCgpQcmUtZXhpc3RpbmcgaXNzdWVzOgotIFtMb3ddIFRoZSBgZGV2
-X3BtX29wc2Agc3RydWN0dXJlIGlzIGFzc2lnbmVkIHVuY29uZGl0aW9uYWxseSB0byB0aGUgZHJp
-dmVyJ3MgYC5wbWAgZmllbGQgd2l0aG91dCB0aGUgYHBtX3B0cigpYCB3cmFwcGVyLCBwcm9kdWNp
-bmcgZGVhZCBjb2RlIHdoZW4gUE0gaXMgZGlzYWJsZWQuCi0tCgotLS0gUGF0Y2ggWzNdOiBbUEFU
-Q0ggdjQgMy80XSBwaHk6IHFjb206IHFtcC11c2ItbGVnYWN5OiBGaXggcG9zc2libGUgTlVMTC1k
-ZXJlZiBvbiBlYXJseSBydW50aW1lIHN1c3BlbmQgLS0tCmNvbW1pdCAzYjI1YmUyNDVkNTg5MDEy
-MTJiNzhkZDhhZmFiYzM4YTllOWU4YWJlCkF1dGhvcjogTG9pYyBQb3VsYWluIDxsb2ljLnBvdWxh
-aW5Ab3NzLnF1YWxjb21tLmNvbT4KCnBoeTogcWNvbTogcW1wLXVzYi1sZWdhY3k6IEZpeCBwb3Nz
-aWJsZSBOVUxMLWRlcmVmIG9uIGVhcmx5IHJ1bnRpbWUgc3VzcGVuZAoKVGhpcyBjb21taXQgYWRk
-cmVzc2VzIGEgcG9zc2libGUgTlVMTCBwb2ludGVyIGRlcmVmZXJlbmNlIGluIHRoZSBydW50aW1l
-CnN1c3BlbmQgcGF0aC4gSXQgdGFrZXMgYSBydW50aW1lIFBNIHVzYWdlIHJlZmVyZW5jZSB3aXRo
-CnBtX3J1bnRpbWVfZ2V0X25vcmVzdW1lKCkgYmVmb3JlIGVuYWJsaW5nIFBNIGFuZCByZWxlYXNl
-cyBpdCBvbmx5IGFmdGVyCnRoZSBQSFkgaXMgY3JlYXRlZCwgcHJldmVudGluZyB0aGUgc3VzcGVu
-ZCBjYWxsYmFjayBmcm9tIGV4ZWN1dGluZyB3aGlsZQp0aGUgcG9pbnRlciBpcyB1bmluaXRpYWxp
-emVkLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXVz
-Yi1sZWdhY3kuYyBiL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC11c2ItbGVnYWN5
-LmMKPiBpbmRleCA4YmY5NTFiMDQ5MGNmLi44YjkxZWVjMGI1ZWVlIDEwMDY0NAo+IC0tLSBhL2Ry
-aXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC11c2ItbGVnYWN5LmMKPiArKysgYi9kcml2
-ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtdXNiLWxlZ2FjeS5jCj4gQEAgLTEyNzcsMTAg
-KzEyNzcsMTYgQEAgc3RhdGljIGludCBxbXBfdXNiX2xlZ2FjeV9wcm9iZShzdHJ1Y3QgcGxhdGZv
-cm1fZGV2aWNlICpwZGV2KQo+ICAJaWYgKHJldCkKPiAgCQlnb3RvIGVycl9ub2RlX3B1dDsKPiAg
-Cj4gKwkvKgo+ICsJICogRW5hYmxlIHJ1bnRpbWUgUE0gYmVmb3JlIGNyZWF0aW5nIHRoZSBQSFks
-IHBoeV9jcmVhdGUoKSBvbmx5IGVuYWJsZXMKPiArCSAqIGl0IG9uIHRoZSBQSFkgZGV2aWNlIGlm
-IGFscmVhZHkgZW5hYmxlZCBvbiB0aGUgcGFyZW50LiBIb2xkIGEgdXNhZ2UKPiArCSAqIHJlZmVy
-ZW5jZSBzbyBjYWxsYmFja3MgY2Fubm90IHJ1biBiZWZvcmUgcW1wLT5waHkgaXMgYXNzaWduZWQu
-Cj4gKwkgKi8KPiArCXBtX3J1bnRpbWVfZ2V0X25vcmVzdW1lKGRldik7Cj4gIAlwbV9ydW50aW1l
-X3NldF9hY3RpdmUoZGV2KTsKPiAgCXJldCA9IGRldm1fcG1fcnVudGltZV9lbmFibGUoZGV2KTsK
-PiAgCWlmIChyZXQpCj4gLQkJZ290byBlcnJfbm9kZV9wdXQ7Cj4gKwkJZ290byBlcnJfcG1fcHV0
-OwoKWyAuLi4gXQoKPiAgCXFtcC0+cGh5ID0gZGV2bV9waHlfY3JlYXRlKGRldiwgbnAsICZxbXBf
-dXNiX2xlZ2FjeV9waHlfb3BzKTsKPiAgCWlmIChJU19FUlIocW1wLT5waHkpKSB7Cj4gIAkJcmV0
-ID0gUFRSX0VSUihxbXAtPnBoeSk7Cj4gIAkJZGV2X2VycihkZXYsICJmYWlsZWQgdG8gY3JlYXRl
-IFBIWTogJWRcbiIsIHJldCk7Cj4gLQkJZ290byBlcnJfbm9kZV9wdXQ7Cj4gKwkJZ290byBlcnJf
-cG1fcHV0Owo+ICAJfQo+ICAKPiAgCXBoeV9zZXRfZHJ2ZGF0YShxbXAtPnBoeSwgcW1wKTsKPiAg
-Cj4gKwlwbV9ydW50aW1lX3B1dChkZXYpOwo+ICsKCltTZXZlcml0eTogSGlnaF0KRG9lcyB0aGlz
-IGFzeW5jaHJvbm91cyBwbV9ydW50aW1lX3B1dCgpIGludHJvZHVjZSBhIHVzZS1hZnRlci1mcmVl
-IG9uIHRoZQpwcm9iZSBlcnJvciBwYXRoPwoKSWYgYSB1c2VyIGVuYWJsZXMgcnVudGltZSBQTSB2
-aWEgc3lzZnMgKHNldHRpbmcgcG93ZXIvY29udHJvbCB0byBhdXRvKSBiZWZvcmUKb3IgZHVyaW5n
-IHByb2JlLCB0aGlzIGNhbGwgZHJvcHMgdGhlIHVzYWdlIGNvdW50ZXIgdG8gemVybyBhbmQgcXVl
-dWVzIGFuCmFzeW5jaHJvbm91cyBzdXNwZW5kLgoKSWYgZGV2bV9vZl9waHlfcHJvdmlkZXJfcmVn
-aXN0ZXIoKSBzdWJzZXF1ZW50bHkgZmFpbHMsIHByb2JlIHJldHVybnMgYW4gZXJyb3IKYW5kIGRl
-dnJlcyB1bndpbmRzIGluIHJldmVyc2Ugb3JkZXI6CgoxLiBkZXZtX3BoeV9jcmVhdGUoKSB1bndp
-bmRzLCBmcmVlaW5nIHFtcC0+cGh5LgoyLiBkZXZtX3BtX3J1bnRpbWVfZW5hYmxlKCkgdW53aW5k
-cywgY2FsbGluZyBwbV9ydW50aW1lX2Rpc2FibGUoKS4KCklmIHRoZSBxdWV1ZWQgYXN5bmNocm9u
-b3VzIHN1c3BlbmQgZXhlY3V0ZXMgYWZ0ZXIgcW1wLT5waHkgaXMgZnJlZWQgYnV0IGJlZm9yZQpw
-bV9ydW50aW1lX2Rpc2FibGUoKSBjb21wbGV0ZXMsIHFtcF91c2JfbGVnYWN5X3J1bnRpbWVfc3Vz
-cGVuZCgpIHdpbGwKZGVyZWZlcmVuY2UgdGhlIGZyZWVkIHBvaW50ZXI6Cgpkcml2ZXJzL3BoeS9x
-dWFsY29tbS9waHktcWNvbS1xbXAtdXNiLWxlZ2FjeS5jOnFtcF91c2JfbGVnYWN5X3J1bnRpbWVf
-c3VzcGVuZCgpCiAgICBpZiAoIXFtcC0+cGh5LT5pbml0X2NvdW50KSB7CgpXb3VsZCB1c2luZyBw
-bV9ydW50aW1lX3B1dF9zeW5jKCkgaGVyZSBlbnN1cmUgYW55IHBlbmRpbmcgc3VzcGVuZCBjb21w
-bGV0ZXMKYmVmb3JlIGEgcG90ZW50aWFsIGRldnJlcyBjbGVhbnVwPwoKPiAgCW9mX25vZGVfcHV0
-KG5wKTsKPiAgCj4gIAlwaHlfcHJvdmlkZXIgPSBkZXZtX29mX3BoeV9wcm92aWRlcl9yZWdpc3Rl
-cihkZXYsIG9mX3BoeV9zaW1wbGVfeGxhdGUpOwo+ICAKPiAgCXJldHVybiBQVFJfRVJSX09SX1pF
-Uk8ocGh5X3Byb3ZpZGVyKTsKClsgLi4uIF0KCltTZXZlcml0eTogTG93XQpUaGlzIGlzIGEgcHJl
-LWV4aXN0aW5nIGlzc3VlLCBidXQgSSBub3RpY2VkIHRoZSBkZXZfcG1fb3BzIHN0cnVjdHVyZSBp
-cwphc3NpZ25lZCB1bmNvbmRpdGlvbmFsbHkgdG8gdGhlIGRyaXZlcjoKCmRyaXZlcnMvcGh5L3F1
-YWxjb21tL3BoeS1xY29tLXFtcC11c2ItbGVnYWN5LmM6cW1wX3VzYl9sZWdhY3lfZHJpdmVyCiAg
-ICAucG0gPSAmcW1wX3VzYl9sZWdhY3lfcG1fb3BzLAoKSWYgQ09ORklHX1BNIGlzIGRpc2FibGVk
-LCBkb2VzIHRoaXMgbGVhdmUgcW1wX3VzYl9sZWdhY3lfcG1fb3BzIGFuZCBpdHMKcmVmZXJlbmNl
-ZCBjYWxsYmFja3MgYXMgZGVhZCBjb2RlPwoKQ291bGQgcG1fcHRyKCkgYmUgdXNlZCBoZXJlIHRv
-IGFsbG93IHRoZSBjb21waWxlciB0byBvcHRpbWl6ZSBhd2F5IHRoZSB1bnVzZWQKc3RydWN0dXJl
-IHdoZW4gUE0gc3VwcG9ydCBpcyBub3QgYnVpbHQgaW4/CgotLSAKU2FzaGlrbyBBSSByZXZpZXcg
-wrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYwNzIwLXFjb20tdXNiLXBoeS1m
-aXgtbnVsbC12NC0wLTRkMmEwZjA2ZDUzYUBvc3MucXVhbGNvbW0uY29tP3BhcnQ9MwoKLS0gCmxp
-bnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 7/20/26 16:13, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 4 potential issue(s) to consider:
+> - [High] Improper handling of missing or unsupported NVMEM calibration data causes spurious error logs and hard probe failures.
+> - [Medium] A valid calibration value of 0 is incorrectly treated as missing data, discarding all calibrations.
+> - [Low] The TX_IMPSEL registers are updated twice with identical values during initialization.
+> - [Low] Macros for AEQ_EGEQ_RATIO are defined but unused in favor of literal magic numbers.
+> --
+> 
+> --- Patch [2]: [PATCH v2 2/2] phy: mediatek: Add support for PCI-Express Gen4 S-PHY ---
+> commit d91c6c0718440c44adc7e6a83f5aeca706a6c3d5
+> Author: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+> Subject: phy: mediatek: Add support for PCI-Express Gen4 S-PHY
+> 
+> This patch adds support for the PCI-Express Gen4 S-PHY found in the latest
+> MediaTek SoCs, including MT8196 and MT8894.
+> 
+>> --- a/drivers/phy/mediatek/phy-mtk-pcie-sphy.c
+>> +++ b/drivers/phy/mediatek/phy-mtk-pcie-sphy.c
+> [ ... ]
+>> +#define PEXTP_DIG_LN_RX2_AEQ_EDGE_0			0x6004
+>> +#  define RG_XTP_LN_RX_AEQ_EGEQ_RATIO_GEN3		GENMASK(21, 16)
+>> +#  define RG_XTP_LN_RX_AEQ_EGEQ_RATIO_GEN4		GENMASK(29, 24)
+>> +#  define AEQ_EGEQ_RATIO_GEN3_TO_22			0x16
+>> +#  define AEQ_EGEQ_RATIO_GEN4_TO_22			0x16
+> [ ... ]
+>> +		mtk_phy_update_field(sif_lane_base + PEXTP_DIG_LN_RX2_AEQ_EDGE_0,
+>> +				     RG_XTP_LN_RX_AEQ_EGEQ_RATIO_GEN3, 22);
+>> +
+>> +		mtk_phy_update_field(sif_lane_base + PEXTP_DIG_LN_RX2_AEQ_EDGE_0,
+>> +				     RG_XTP_LN_RX_AEQ_EGEQ_RATIO_GEN4, 22);
+> 
+> [Severity: Low]
+> Is there a reason the literal 22 is used here instead of the
+> AEQ_EGEQ_RATIO_GEN3_TO_22 and AEQ_EGEQ_RATIO_GEN4_TO_22 macros defined
+> earlier?
+> 
+
+I forgot to remove those definitions. Will do for a v3 tomorrow.
+
+> [ ... ]
+>> +static void mtk_pcie_sphy_apply_calibration(struct mtk_pcie_sphy *pcie_sphy)
+>> +{
+> [ ... ]
+>> +		mtk_phy_update_field(sif_lane_base + PEXTP_ANA_LN_TRX_A0,
+>> +				     RG_XTP_LN_TX_IMPSEL_PMOS, cal->tx_impsel.pmos);
+>> +
+>> +		mtk_phy_update_field(sif_lane_base + PEXTP_ANA_LN_TRX_A0,
+>> +				     RG_XTP_LN_TX_IMPSEL_NMOS, cal->tx_impsel.nmos);
+>> +	}
+>> +}
+>> +
+> [ ... ]
+>> +static int mtk_pcie_sphy_init(struct phy *phy)
+>> +{
+> [ ... ]
+>> +	if (pcie_sphy->calibration.supported) {
+>> +		mtk_pcie_sphy_apply_calibration(pcie_sphy);
+>> +
+>> +		tx_impsel.pmos = pcie_sphy->calibration.tx_impsel.pmos;
+>> +		tx_impsel.nmos = pcie_sphy->calibration.tx_impsel.nmos;
+>> +	} else {
+>> +		/* Set P=10, N=9 to prevent EMI if no calibration present */
+>> +		tx_impsel.pmos = 10;
+>> +		tx_impsel.nmos = 9;
+>> +	}
+>> +
+>> +	/* Select TX Impedance on N and P MOSFETs */
+>> +	for (i = 0; i < pcie_sphy->num_lanes; i++) {
+>> +		void __iomem *sif_lane_base = pcie_sphy->sif_base + PEXTP_REG_LANE(i);
+>> +
+>> +		mtk_phy_update_field(sif_lane_base + PEXTP_ANA_LN_TRX_A0,
+>> +				     RG_XTP_LN_TX_IMPSEL_PMOS, tx_impsel.pmos);
+>> +
+>> +		mtk_phy_update_field(sif_lane_base + PEXTP_ANA_LN_TRX_A0,
+>> +				     RG_XTP_LN_TX_IMPSEL_NMOS, tx_impsel.nmos);
+>> +	}
+> 
+> [Severity: Low]
+> Are these register updates redundant?
+> 
+> When calibration is supported, mtk_pcie_sphy_apply_calibration() already
+> writes cal->tx_impsel.pmos and cal->tx_impsel.nmos to PEXTP_ANA_LN_TRX_A0.
+> 
+> Then this loop immediately overwrites the same registers with the exact same
+> values.
+> 
+
+Eh yes, fixed for v3.
+
+> [ ... ]
+>> +static int mtk_pcie_sphy_get_one_cal_para(struct device *dev, const char *name, u8 max_val)
+>> +{
+> [ ... ]
+>> +	ret = nvmem_cell_read_u8(dev, name, &tmp);
+>> +	if (ret == 0)
+>> +		buf = tmp;
+>> +	else
+>> +		ret = nvmem_cell_read_u16(dev, name, &buf);
+>> +
+>> +	if (ret)
+>> +		return dev_err_probe(dev, ret,
+>> +				     "Cannot get calibration data for %s\n", name);
+> 
+> [Severity: High]
+> Will this cause spurious error logs or fail the probe when calibration data is
+> missing or unsupported?
+> 
+> If the system does not have CONFIG_NVMEM enabled, nvmem_cell_read_u8() returns
+> -EOPNOTSUPP, which gets logged as an error here.
+> 
+> This error is then passed back up to mtk_pcie_sphy_get_calibration_data(),
+> where it is not caught. This will cause the entire driver probe to fail.
+> 
+> Similarly, if the cell is simply missing from the Device Tree, it returns
+> -ENOENT. This also triggers an error log via dev_err_probe(), even though
+> missing calibration data is explicitly documented as non-fatal and optional.
+> 
+>> +
+>> +	if (buf == 0) {
+>> +		dev_info(dev, "No calibration for %s. Using defaults\n", name);
+>> +		return -ENOENT;
+>> +	}
+> 
+> [Severity: Medium]
+> Is a value of 0 always indicative of missing calibration?
+> 
+> If a valid tuned calibration value is 0, this check will return -ENOENT and
+> cause mtk_pcie_sphy_get_calibration_data() to discard all calibrations entirely.
+> 
+> This also seems to prevent the quirk for cal-version == 0 from ever being
+> applied:
+> 
+
+Fixed for v3.
+
+> [ ... ]
+>> +static int mtk_pcie_sphy_get_calibration_data(struct mtk_pcie_sphy *pcie_sphy)
+>> +{
+> [ ... ]
+>> +	ret = mtk_pcie_sphy_get_one_cal_para(dev, "cal-version", 15);
+>> +	if (ret < 0)
+>> +		goto end;
+>> +	version = ret;
+>> +
+>> +	/* Quirk for eFuse calibration table versions 0 to 4 */
+>> +	if ((version <= MTK_PCIE_SPHY_CALIBRATION_LAST_QUIRK_VER) &&
+>> +	    cal->rx_leq_rl_ctle == 10) {
+> 
+> Because mtk_pcie_sphy_get_one_cal_para() returns -ENOENT when it reads a 0,
+> the version == 0 condition will never be reached.
+> 
+
+Fixed for v3.
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
