@@ -4,54 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25F8CC4452A
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 13:53:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA392C4452B
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 13:54:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fi7f6LFhL07VoD5rthOEYjmPpEZZkLcoc1OTrT391/w=; b=VRZ1JZKS0OzzY/
-	ioXVZgdPAkP5/lkqBPeLre7K3aN4/SU9jq7LUf0JYOO65RmTaVqACyMxQDYoolRA8WUlxw75o8Tv/
-	GDj5paZtA/HLTB78X0BEPAHqv0neawOgePx6XA4tzf07k7wF5v2mE5wcDA7aDC30L+cvos81orLDG
-	KSR6oAhmtUKZYAOAUqCKeR5jZuRQbgQD/kObq9hh5wH3SfYVNZfilL2EgRlo7SImvJQRYB6nQQsuD
-	XpvxK8aWbzE4huGTZpM6m/x3WDYMH4f/qE/zC6RKb9AEDy0RXPm9QoIkexZ+LfnGqVLIHCGGwQ9qK
-	eiZA9BhxedvAwl6FDL2w==;
+	List-Owner; bh=qq9GnTYlrBRtoTY1Xlxhh8hZ9MgFiOZzMFCOYzGBgcU=; b=4+6VaOQFphpUGI
+	nZFL78+08SD4G8yH3VKFBeS1FASY6iOxLhIF4nXIDZpy8qfcHyc56zIZHFnQGp9NfeX0zn1hbrwak
+	Jl+UsBeoGbbXWvekduDx5MYd2SfFBNt+KRVyFvL7SRol6hksmEnzMZkM+P22r8oz8GEATH/ahHmFK
+	n4vMrnOhGjdmDdK4cpHNORDfWR9tDu6hWRmPt1YX6Aol2x2ZqNwkyn6coku6sQW8A2gxlMMjL9FYP
+	sWa65qNY9WeUuJumq/7/3H6JSjZesYVXTHxZP392i8nPBDkIx3bAAqK2TPFuqSM57UI4EqDbQQrNC
+	H3Q7pqm6HN1bRh7qPk3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wloR8-00000006scp-3U1X;
-	Mon, 20 Jul 2026 13:53:38 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wloRr-00000006skE-18Cy;
+	Mon, 20 Jul 2026 13:54:23 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wloR6-00000006sci-48ow
-	for linux-phy@lists.infradead.org;
-	Mon, 20 Jul 2026 13:53:37 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id B3D8842E49;
-	Mon, 20 Jul 2026 13:53:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2455F1F00A3A;
-	Mon, 20 Jul 2026 13:53:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784555616;
-	bh=+HRLJpWdJvMqicxywTFH8ps/eLO/SOD9TEHKB7F7MuA=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=l2DQueFM64nnGq8VTlzn4eaxajnfGsjtT4JxMl4jBM0QEGXjovF8rZq2PFeTy5wIO
-	 uEu4BdntVm2DuutDWsKuc+k931Bp9Q+mIN0CfACo/a9k+cnU/F3rokeX0PWy5ybsFE
-	 gsdtXtx8pcYf2ciPbXWsKBUQdKtqDRRbl7BmbNHEL7F2+hthtMog/SodipqV23By4J
-	 T2TgI8JUASDsi/r9piCakGkkff7GUdbz2lHnCga2JL8ikNQJpCs0/1RzLqW6Zux/L2
-	 YNk9XlEzxucauJGLXwRxFFke2AqxykmaskxiOUlo+glogwQl2DJozu/cG2fv/FoXXS
-	 Isz16yMSyG3nQ==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v3 phy-next 4/8] soc: fsl: guts: make it easier to
- determine on which SoC we are running
-To: "Vladimir Oltean" <vladimir.oltean@nxp.com>
-Cc: olteanv@gmail.com, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org
-In-Reply-To: <20260720133642.136324-5-vladimir.oltean@nxp.com>
-References: <20260720133642.136324-1-vladimir.oltean@nxp.com>
- <20260720133642.136324-5-vladimir.oltean@nxp.com>
-Date: Mon, 20 Jul 2026 13:53:35 +0000
-Message-Id: <20260720135336.2455F1F00A3A@smtp.kernel.org>
+	id 1wloRn-00000006siA-2WFb;
+	Mon, 20 Jul 2026 13:54:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1784555656;
+	bh=p+IHXAGkZYBnXP0KK3KUxT6ZWI3a3RuaN/BGaUcuR3w=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=BNqXhUeltySqygbcC0Y+CCd9z/CmMt1k4Jw9EKJOs89GG0N4AGsmBMJQ4N0C2bpa1
+	 9liq+pkIpRG7vTYb6eMYG93GG0pHFtRa6WsOfuiqZuwhO9SlSNyaDUqGsbJCplryd7
+	 hHzG6SpGfqlkjScoSPQBQe5HlfbsJo0I7lqcxhlEL0blXFzsJWk2Ir6ZVwrGXVaDV7
+	 VwjWmEvXosLiFhmudXGtYPQMfMPIVdzaHQiSDtVR/nZpMKBvAjlVli3qR0brPbkCs2
+	 e34PocyTGIR2dsdjDPMpSq1cCy7xgZv4V7nsqBJKjOuAxif+XSN6Fx9h6zAKQ2pF3Q
+	 7D6igRoJ8BNbA==
+Received: from IcarusMOD.eternityproject.eu (unknown [100.64.1.21])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 5042317E0974;
+	Mon, 20 Jul 2026 15:54:16 +0200 (CEST)
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+To: chunfeng.yun@mediatek.com
+Cc: vkoul@kernel.org,
+	neil.armstrong@linaro.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	matthias.bgg@gmail.com,
+	angelogioacchino.delregno@collabora.com,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	kernel@collabora.com
+Subject: [PATCH v2 1/2] dt-bindings: phy: Document MT8196 MediaTek PCI-Express Gen4 S-PHY
+Date: Mon, 20 Jul 2026 15:53:43 +0200
+Message-ID: <20260720135344.84183-2-angelogioacchino.delregno@collabora.com>
+X-Mailer: git-send-email 2.55.0
+In-Reply-To: <20260720135344.84183-1-angelogioacchino.delregno@collabora.com>
+References: <20260720135344.84183-1-angelogioacchino.delregno@collabora.com>
+MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260720_065419_803850_8600B9A3 
+X-CRM114-Status: GOOD (  12.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,48 +79,130 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIERlcmVmZXJlbmNpbmcg
-YSBOVUxMIHBvaW50ZXIgb24gdGhlIGBzb2NfZGV2X2F0dHJgIGFsbG9jYXRpb24gZXJyb3IgcGF0
-aCBpbiBgZnNsX2d1dHNfaW5pdCgpYC4KLS0KCi0tLSBQYXRjaCBbNF06IFtQQVRDSCB2MyBwaHkt
-bmV4dCA0LzhdIHNvYzogZnNsOiBndXRzOiBtYWtlIGl0IGVhc2llciB0byBkZXRlcm1pbmUgb24g
-d2hpY2ggU29DIHdlIGFyZSBydW5uaW5nIC0tLQpjb21taXQgMjdmZmYzMGNkYTdjNzYzYjkyYzlm
-ZDg5MDQ1MDQxNmI2YTMwNDE0MApBdXRob3I6IElvYW5hIENpb3JuZWkgPGlvYW5hLmNpb3JuZWlA
-bnhwLmNvbT4KCnNvYzogZnNsOiBndXRzOiBtYWtlIGl0IGVhc2llciB0byBkZXRlcm1pbmUgb24g
-d2hpY2ggU29DIHdlIGFyZSBydW5uaW5nCgpUaGUgZ3V0cyBkcml2ZXIgd2lsbCBuZWVkIHRvIGVh
-c2lseSBkZXRlcm1pbmUgb24gd2hpY2ggU29DIGl0J3MgcnVubmluZwp3aGVuIGl0IHdpbGwgbmVl
-ZCB0byBwZXJmb3JtIFJDVyBvdmVycmlkZSBhdCBydW50aW1lLiBUaGUgZ3V0cyBkcml2ZXIKa25v
-d3MgdGhpcyBhbHJlYWR5IGJlY2F1c2UgZnNsX2d1dHNfaW5pdCgpIHJlYWRzIHRoZSBRb3JJUS9M
-YXllcnNjYXBlCmFyY2hpdGVjdHVyYWwgU3lzdGVtIFZlcnNpb24gUmVnaXN0ZXIgKFNWUiksIGJ1
-dCBpdCBkb2Vzbid0IHNhdmUgdGhpcwpmb3IgbGF0ZXIgbG9va3Vwcy4KCj4gZGlmZiAtLWdpdCBh
-L2RyaXZlcnMvc29jL2ZzbC9ndXRzLmMgYi9kcml2ZXJzL3NvYy9mc2wvZ3V0cy5jCj4gaW5kZXgg
-ZTFiM2EwNTRlNjgxYi4uOTIyNTYwZDk4NzgyNCAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3NvYy9m
-c2wvZ3V0cy5jCj4gKysrIGIvZHJpdmVycy9zb2MvZnNsL2d1dHMuYwpbIC4uLiBdCj4gQEAgLTIz
-OSwxMiArMjc0LDEyIEBAIHN0YXRpYyBpbnQgX19pbml0IGZzbF9ndXRzX2luaXQodm9pZCkKPiAg
-CWlmICghc29jX2Rldl9hdHRyLT5mYW1pbHkpCj4gIAkJZ290byBlcnJfbm9tZW07Cj4gIAo+IC0J
-c29jX2Rldl9hdHRyLT5zb2NfaWQgPSBrYXNwcmludGYoR0ZQX0tFUk5FTCwgInN2cjoweCUwOHgi
-LCBzdnIpOwo+ICsJc29jX2Rldl9hdHRyLT5zb2NfaWQgPSBrYXNwcmludGYoR0ZQX0tFUk5FTCwg
-InN2cjoweCUwOHgiLCBzb2Muc3ZyKTsKPiAgCWlmICghc29jX2Rldl9hdHRyLT5zb2NfaWQpCj4g
-IAkJZ290byBlcnJfbm9tZW07CgpbU2V2ZXJpdHk6IEhpZ2hdCkRvZXMganVtcGluZyB0byBlcnJf
-bm9tZW0gd2hlbiBzb2NfZGV2X2F0dHIgYWxsb2NhdGlvbiBmYWlscyBjYXVzZSBhIE5VTEwKcG9p
-bnRlciBkZXJlZmVyZW5jZT8KCkluIGFuIGVhcmxpZXIgY29tbWl0IGluIHRoaXMgc2VyaWVzICgi
-c29jOiBmc2w6IGd1dHM6IGFkZCBhIGdsb2JhbCBzdHJ1Y3R1cmUKdG8gaG9sZCBzdGF0ZSIpLCB0
-aGUgZXJyb3IgcGF0aCBpbiBmc2xfZ3V0c19pbml0KCkgd2FzIG1vZGlmaWVkIHRvIHVubWFwCnNv
-Yy5kY2ZnX2Njc3IsIGJ1dCBpdCBzZWVtcyB0aGUgY2xlYW51cCBhc3N1bWVzIHNvY19kZXZfYXR0
-ciBpcyB2YWxpZDoKCmZzbF9ndXRzX2luaXQoKQoJc29jX2Rldl9hdHRyID0ga3phbGxvY19vYmoo
-KnNvY19kZXZfYXR0cik7CglpZiAoIXNvY19kZXZfYXR0cikKCQlnb3RvIGVycl9ub21lbTsKICAg
-IC4uLgplcnJfbm9tZW06CglyZXQgPSAtRU5PTUVNOwplcnI6CglrZnJlZShzb2NfZGV2X2F0dHIt
-PmZhbWlseSk7CgpJZiB0aGUgZHluYW1pYyBhbGxvY2F0aW9uIGZvciBzb2NfZGV2X2F0dHIgZmFp
-bHMsIHdvdWxkbid0IHdlIGRlcmVmZXJlbmNlCnRoZSBOVUxMIHBvaW50ZXIgd2hlbiBmcmVlaW5n
-IGl0cyBtZW1iZXJzIGluIHRoZSBlcnIgYmxvY2s/CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcg
-aHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYwNzIwMTMzNjQyLjEzNjMyNC0xLXZs
-YWRpbWlyLm9sdGVhbkBueHAuY29tP3BhcnQ9NAoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QK
-bGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+This adds bindings for the PCI-Express Gen4 S-PHY found in newer
+MediaTek SoCs, such as MT8196 and its variants.
+
+In the current "revision 3", depending on the specific port, this
+S-PHY supports up to two lanes of PCI-Express Gen 4 and both EP
+and RC modes.
+It is not clear whether revisions/versions earlier than 3 have
+ever been shipped in any other MediaTek SoC.
+
+Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+---
+ .../phy/mediatek,mt8196-pcie-sphy.yaml        | 93 +++++++++++++++++++
+ 1 file changed, 93 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/mediatek,mt8196-pcie-sphy.yaml
+
+diff --git a/Documentation/devicetree/bindings/phy/mediatek,mt8196-pcie-sphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,mt8196-pcie-sphy.yaml
+new file mode 100644
+index 000000000000..c24871f7e0e5
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/mediatek,mt8196-pcie-sphy.yaml
+@@ -0,0 +1,93 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/mediatek,mt8196-pcie-sphy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: MediaTek PCI-Express Gen4 S-PHY
++
++maintainers:
++  - AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
++
++description:
++  The MediaTek PCI-Express Gen4 S-PHY is capable of data serialization
++  and de-serialization with 8, 10, 128 or 130 bits (16GT/s) encoding
++  and decoding, has analog buffers, elastic buffers and mechanisms for
++  receiver detection.
++  This PHY supports link rates of 2.5, 5.0, 6.0 and 16.0 GT/s per-lane
++  in both Root Complex (RC) and End Point (EP) modes, depending on the
++  chosen port.
++  The Digital PHY (PHYD) part adheres to the Intel PIPE (PHY Interface
++  for the PCIe) specification.
++
++properties:
++  compatible:
++    const: mediatek,mt8196-pcie-sphy
++
++  reg:
++    items:
++      - description: System Interface (SIF) registers
++      - description: Clock Management (CKM) registers
++
++  reg-names:
++    items:
++      - const: sif
++      - const: ckm
++
++  "#phy-cells":
++    const: 0
++
++  nvmem-cells:
++    items:
++      - description: Internal resistor selection of TX Bias Current
++      - description: XTP Bias V2V voltage calibration
++      - description: S-PLL CKTX Impedance Selection (P-MOSFET side)
++      - description: S-PLL CKTX Impedance Selection (N-MOSFET side)
++      - description: S-PLL CKTX Intermediate Transition Impedance
++      - description: RX Front-End Return Loss Continuous Time Linear EQ
++      - description: RX Front-End Return Loss Variable Gain Amplifier
++      - description: RX Front-End Return Loss Decision Feedback EQ
++      - description: RX Impedance Selection
++      - description: TX Impedance Selection (P-MOSFET side)
++      - description: TX Impedance Selection (N-MOSFET side)
++      - description: TX Lane 0 Switch Resistance (RSWn)
++      - description: TX Lane 1 Switch Resistance (RSWn)
++      - description: eFuse calibration table version
++
++  nvmem-cell-names:
++    items:
++      - const: int-r
++      - const: xtp-vtrim
++      - const: cktx-pmos
++      - const: cktx-nmos
++      - const: cktx-r-mid
++      - const: rxfe-lanes-rl-ctle
++      - const: rxfe-lanes-rl-vga
++      - const: rxfe-lanes-rl-dfe
++      - const: rx-lanes-imp
++      - const: tx-lanes-pmos
++      - const: tx-lanes-nmos
++      - const: tx-ln0-rswn
++      - const: tx-ln1-rswn
++      - const: cal-version
++
++  power-domains:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - reg-names
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    phy@16900000 {
++        compatible = "mediatek,mt8196-pcie-sphy";
++        reg = <0x16900000 0x10000>, <0x16920000 0x10000>;
++        reg-names = "sif", "ckm";
++        power-domains = <&spm 10>;
++        #phy-cells = <0>;
++    };
+-- 
+2.55.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
