@@ -4,111 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E55DC44525
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 01:11:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EE1F5C44512
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Jul 2026 01:13:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IyoVBOwZ6N4i4WhvAsBFHXffPZS9NG445PKcth0er4w=; b=UM5jSi8I7lE1Za
-	ZCqcv1qMzhQfCW/59G29RhaBZh0zG+0wtdVR1WEUyZIqnjtPWwnzmSCGj8Y7mtd80PawMSRbuKGv6
-	OclNNPRbBICVbuWGp5QmHebqWakFj8+m2ayUksTrufEPxJTUgtx/UUPpz8KeOqtk2PZuc4fHgLDzB
-	9RhEhU/ZmKbmqmOcWeOcaFc7d5S/PByEWISKxdyKr5RCkmJlLDDFPKgPPIaSbaqzLdJ5dqN/IsnWU
-	lSFVMADJ8Kz6FG9yNNfzX691STqMyaEbu19SGW5zsUYoO7DkaOwB6IKkMjnfwyApNf1RwRtVFuC21
-	7YtPPcyX940AG4hdPyRw==;
+	List-Owner; bh=pLsJPQdtEnVu1YlQrOFX4miCUHJkjWtRgsqdmF+2qMw=; b=iNC3HFZuqCqAyn
+	W7FjqXci+U5rWNaN/d2XgxiqN7Zp3SWFAdM+p74tTeAmArvjStQENOyVdpfMTTHuQNceFkjjd/Eej
+	vDz2HZ4ZzqKTQbkikyY6jVD1D4wcpeTlTcGGEd16WhQRSFHaMoXg0g+nJ9Or1A3v/PU9eUJecfB14
+	qBMMe/nost4nbbRmUh6mIQ/KIptAeiWESGx9lAuUTSQRBmpsWJlrQ9QEwchlApOV8lQQg1ArXeZqh
+	oWpIa6OxjdSJ13bWAvqHLuUQoi2O9STRs1v5wPFxYVWZVYhjuNkxduLVPJvA5WyN5LrBJ49IdrpX8
+	44GCqAPFx5JXLHvus2hw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlcXu-00000005ZvR-0GGB;
-	Mon, 20 Jul 2026 01:11:50 +0000
-Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
+	id 1wlcZF-00000005a5y-1gFP;
+	Mon, 20 Jul 2026 01:13:13 +0000
+Received: from mail-sh0chn02on2104.outbound.protection.partner.outlook.cn ([139.219.146.104] helo=CHN02-SH0-obe.outbound.protection.partner.outlook.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlcXo-00000005Zt9-2vGQ
+	id 1wlcZB-00000005a5K-2xFE
 	for linux-phy@lists.infradead.org;
-	Mon, 20 Jul 2026 01:11:46 +0000
-Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-49548e01d02so10865015e9.0
-        for <linux-phy@lists.infradead.org>; Sun, 19 Jul 2026 18:11:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1784509903; x=1785114703; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :content-type:mime-version:subject:date:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=4XnV+FykkybVqG+qJ/ggN1ABFG87UERnEoUc/FfnJBw=;
-        b=TdDsEuZDNMNBy+P2Knwk1popWUgUuNawF0QJwNYKRUmwP5O54cjIIzu9G3UKhJdLb2
-         sEOY5z43Cyw/JVU9yLzC5UcP82NJZRE+D8yi2ss0SLUkv28pI6uieQMO+PpIzkomvCHe
-         dcg8UcxceKCuVviBa9bK/zt/olZdUXHmvdTLvcCirl2ujRHvZL4rc9jAisdA3N8E+59d
-         FaYjsamHQM8yT0WPe6RaOoM+Q3lgpKRlqGbRexi91pu9F/9/EUBl/VCjskDAJe+m1wKM
-         pb7Ua1Og62hbn4EyfXcpDSFX7flhFCtAfIxdYiV6rwDczvCccj+HZOJl5TCc3Jn6pft9
-         LNBw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784509903; x=1785114703;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :content-type:mime-version:subject:date:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=4XnV+FykkybVqG+qJ/ggN1ABFG87UERnEoUc/FfnJBw=;
-        b=GnE0J0TKLcYPQOc2ctTbBSMLakA9sCjgTjFo99782x6ns59bvdHwxh1kUZiiC07ZYu
-         VjOqf9GV3yRqHJGhTcdV6pUUtaPAehF1gqgyOE8x8pCIfppmvmQrWX7b+BiYFsLXllx1
-         /47Mt/wDPmWWBfULpFwHwcMr61ehIcM2P/bEvWnh87PqUNFVOz6jFo++2aobENcUcKYh
-         Mt+1jYXM7pM5F+icMyupzDjLbafr/moqQdv38mezQXKOSu6BZ6k8P0TEGmUJz65ciEER
-         nTf5dvctkQgxFc46ZVUv+2N+djwNEJaHpJ+EUQLblXC7U985NOE7yIuggNnObccq5jrm
-         uD1A==
-X-Forwarded-Encrypted: i=1; AHgh+RoHmeaJ4u2drdnQeh/3v9tFJ9pgfn/VUZuyeHZEFCorQ1uF3w48+NOKBPqE5ARfvPqDLkzH+9zhsSo=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyGnFcAViwW91MXsCxIC7PODOg7zJK6Q5N3Qb2vMlZrSl6K3p4U
-	EweyfSE9+ptbFzYiXKSM5iZp9gSfy572l3rlYTQukjM27Jbp6x2f9Ip96EBy1hTfec8=
-X-Gm-Gg: AfdE7cmpy2f6t431+Dk6y1L1ZKS3408PZwdenlB11Xswq+UY0hZHv1X/yKU8tROBX45
-	IaF792CPa3FVlZjQ5ir3mn2cWmQxZcQaiplA/+9Lh2eAKxHymH69gjvdBjBY1rdqteTON8Z9fLn
-	v+Wj/Hryax5kSVut/hFv09z1+6DZLHBatQHPRD1qvVrPiPjm4xkxLlh5V4sLcCbgRRSZq/XfKmr
-	/38zdxSo4LHWyFqg2VHuSqH5tUI2d+7ZfFrJGiBRVQKAHXBW84qB6GZqOlvZfmwlAHxgqaxpf26
-	tclnQ2dFD/imfLnLOKnuL+bX6r5kzHN9/eNuk+i6nxBgzattmfnWjGddIy5/NH9C+gWVpyQes7i
-	bbNgiJvG7SrouHUamxlnlRE79Vs55x9x04VzvIr9rKiDvv6yAUrheMKgYOuX13yrJwk88ispTjn
-	rO75w7HcTY0roh
-X-Received: by 2002:a05:600c:c490:b0:495:4730:15b2 with SMTP id 5b1f17b1804b1-4954a40d1c9mr125802115e9.31.1784509902427;
-        Sun, 19 Jul 2026 18:11:42 -0700 (PDT)
-Received: from [192.168.0.35] ([109.76.79.119])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4954d384146sm180847285e9.14.2026.07.19.18.11.40
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 19 Jul 2026 18:11:41 -0700 (PDT)
-From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-Date: Mon, 20 Jul 2026 02:11:34 +0100
-Subject: [PATCH v13 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
+	Mon, 20 Jul 2026 01:13:12 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Ilqd4kXzocUm0SoPr5mF/d6jMBGCjERlVF0Crq2X9Ep4BhXemypA2kFiv3qXnf8lDogL3IKYScJMsn4j67guGoPhBsRtUBL4jUzbgyNgXWtjOL9FK4bOFZzRWCQrN95iFaWDEvVFD5wXR4M1Rd+FmfGcIGoZhR+5U5uLN0IzAxzJy9DkSTW0FwbmOy6jREx3N5yIK0xs7cHz8hNigakuoJzptRBchUOHFo62+qYyJT/oc9TBmqr//JZwd9ntfmfdVwvNxYPGQ2ptNmQMy0gS60dXnkoCbctbPktTJ+wqN2CpFLi2Z1OWVIHJNQMp+m31qZ+STv9R/1upzqrP9Fr0cQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=zcBdQ6BBenV9KTv6aO3P88TSGBN1MbuOfcmuXT05l20=;
+ b=nUnNBhn8/yOxkPZmsDgQM/cS3ylAvF5YbFncAwzLbRiV354antewjeQ9aZNfw5Hkqu8YH/t7PYmqLXJn9I6NpcQ/PX8FKW5UtKRrVfSjGLluhHLbGKzHydIXZf4UiQr8xzLi8LmDKqFrNawjkcvERWg0EENzkr/y8W70xBDWJOxIUB9ZpUdq5hapGcQIBUJBrWcaJLRHwEwDwXQutTyprNDfexxcxTIJCAGOjRJ3bkp5wMfs5CwRKhuVEeRTqo3Z3IokLRouwzrhrtZN1GZrOwK1OpTncPIrIDQpN093ijwKEbeHloGvT4R4OQhS7iXdWZfzoIi65e+5q/iv3JGKCA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=starfivetech.com; dmarc=pass action=none
+ header.from=starfivetech.com; dkim=pass header.d=starfivetech.com; arc=none
+Received: from ZQ4PR01MB1202.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c550:17::6) by ZQ4PR01MB1316.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c550:14::10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.223.15; Mon, 20 Jul
+ 2026 01:12:38 +0000
+Received: from ZQ4PR01MB1202.CHNPR01.prod.partner.outlook.cn
+ ([fe80::e7d4:256c:b066:850d]) by
+ ZQ4PR01MB1202.CHNPR01.prod.partner.outlook.cn ([fe80::e7d4:256c:b066:850d%2])
+ with mapi id 15.21.0223.015; Mon, 20 Jul 2026 01:12:38 +0000
+From: Changhuang Liang <changhuang.liang@starfivetech.com>
+To: Can Peng <pengcan@kylinos.cn>, "jack.zhu@starfivetech.com"
+	<jack.zhu@starfivetech.com>, "keith.zhao@starfivetech.com"
+	<keith.zhao@starfivetech.com>, "vkoul@kernel.org" <vkoul@kernel.org>,
+	"neil.armstrong@linaro.org" <neil.armstrong@linaro.org>
+CC: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"stable@vger.kernel.org" <stable@vger.kernel.org>
+Subject: Re: [PATCH v2 1/2] phy: starfive: Fix runtime PM cleanup in JH7110
+ DPHY TX probe
+Thread-Topic: [PATCH v2 1/2] phy: starfive: Fix runtime PM cleanup in JH7110
+ DPHY TX probe
+Thread-Index: AQHdFpQMtTB3hbeiVUmGFHzI225YobZ1nIzw
+Date: Mon, 20 Jul 2026 01:12:38 +0000
+Message-ID: <ZQ4PR01MB1202A26BE85C41F0D582AA67F2C32@ZQ4PR01MB1202.CHNPR01.prod.partner.outlook.cn>
+References: <20260718090054.444513-1-pengcan@kylinos.cn>
+ <20260718090054.444513-2-pengcan@kylinos.cn>
+In-Reply-To: <20260718090054.444513-2-pengcan@kylinos.cn>
+Accept-Language: zh-CN, en-US
+Content-Language: zh-CN
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=starfivetech.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: ZQ4PR01MB1202:EE_|ZQ4PR01MB1316:EE_
+x-ms-office365-filtering-correlation-id: c90f6f75-0590-46b1-8b07-08dee5fbfd7a
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|366016|23010399003|376014|38070700021|18002099003|22082099003|4143699003|56012099006|10067099003;
+x-microsoft-antispam-message-info: wx29O81RbSaIZ0MRkXCoJgln3S34B5+4Gw7/u13YkpFFj9VJC4PyrFICyGBG+jQzpARN/jRjZ7u8aqsX/6keN+M0BzpIzVoQkNZpJ68W2V84SsTWQmAoyTfZ3BVmdGVhVpf4SEVW9xf2NivemYGtfh1xlNHtHxrqopOxgfBoH+TBsGSqJHJvl/vSB4nE55oQ/vE+HcYMdcd2Vu6CPCCOF2eTTYCxQsc4jITc9AzqRsjSOWM3XVC3s4NqBIbEILWc8/bI8iRvjqUYXJh2LoLjBfT9cQkI9/MkULDGaaM20sfARrtsji0WpzoyOW4LHjsV030pMx/plyz879ad+2MoieIVfSCTp5CajvWEyLOwIfEduKPUbOHNeECn57cgRAMyt3i9Wj95Frzv2YaXLIWgIA1fM1JwllrHMSF4x5/5f5xoKbV5Rb4tldQQkbmQLBtCuD4BcWwchGRBwjgjgGmh4R15DtPK3BORuE7G6chdwFwOqMZBVntu5Gx50XlhnXzZME1wD2JcWf7rDw6VMO2ZDSiL9oPCkKJaF/uXWrloFXXfDjqiGiThdL1DP6xJ9JMe
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:ZQ4PR01MB1202.CHNPR01.prod.partner.outlook.cn;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(23010399003)(376014)(38070700021)(18002099003)(22082099003)(4143699003)(56012099006)(10067099003);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?fUpK/FA3j7b1k4CcXpgLRCpBck7Sj5dJnY30BmW6I78hKqXPlvePYdjRTRcz?=
+ =?us-ascii?Q?cufXWR9LY9QJ8aJso9rDEFJgh3EQpKJ6fbynB82c/eyugoCFLlwshiHDd6Hr?=
+ =?us-ascii?Q?RDv6sdaOmYU5xSIn/PM49RNH0S+ObD56r5Z9ZLDJtpcqD9aRW3pUk3Rxw2l+?=
+ =?us-ascii?Q?I/YM0h0FPTWayv8uCAV2og59HeJHxHO5h3lqZfXWNhGApr7FB49wl4LTbdvj?=
+ =?us-ascii?Q?4eq0FjsjO93Z4L3w0d81wi3qb9gxFyM1OqhNlFJcIdNkzyYnxw5SYLBNdf/O?=
+ =?us-ascii?Q?OalL1VmQqGxfxIvH+yW5z25Y+Wk76aoRkuaDj5ScLKp+RMcm2rKX7oT4Z2y/?=
+ =?us-ascii?Q?13KW8C5B4WjqqD9Oerm5HB5WXpEyVLhhkmRULVUS0GJRL66yWnbl1vJbHrc5?=
+ =?us-ascii?Q?J9H/zoKDVuoJ+bY3MArkOKZqYKwOGQwrdml+jkAq2B3tXIAuvnGCngmXbzP+?=
+ =?us-ascii?Q?ZuXyBED7CfmRcG890emyJu7r9yWRQ7VX6BkeCDsA8T1sUgqHr45Qq1UCou30?=
+ =?us-ascii?Q?ylV5lyIXCSzw1v5TJqWUrSYUFXwdBdUicBepGzcvjTLUkEjLfA9V1uXBZ6Du?=
+ =?us-ascii?Q?XyBuzwrguuQV0fMlwTXVVBxX9j1kgIKNY2AhfyYg/982SD0aFICxfg5PATpD?=
+ =?us-ascii?Q?3t2aUxigK4va/WmEX4NahcixyXevIHWwduC/ESXiy0UZnsfkIB+1rAUZLM7J?=
+ =?us-ascii?Q?izgpbPfbYNdUt/SqStHZAvEnZqzA44SNqOx3xVYN4apS9ec/ISBJTb6DAX2g?=
+ =?us-ascii?Q?DIwHyTRDQJDOQ3h1OHtXSGzSay1hio1LZK0HS4O9RqvfpYDGsGj2AtMcpth1?=
+ =?us-ascii?Q?1J72U+V0oefHQGcN60l4rKyHd619+XeA4ngUg+dJCVXs7UlKqfQSkYOfUy44?=
+ =?us-ascii?Q?AskBVctJyuddI/akYVMurBnWmWcBz5UqQrwAxnPqLm2bzO2g61TWngtMs8Lj?=
+ =?us-ascii?Q?QuhIXMvoPZcVcnkiwsDbsyG28iaWMK2Gh+ymxfuVLmSAieG9SCJCGLrm1KKf?=
+ =?us-ascii?Q?MmXpZvr2ZYpb4E8ttQB1avPjp/h9xpL5+cV0j6Z4d7gzOluJYSOd3SEkDsn7?=
+ =?us-ascii?Q?HgVRrYvxAuBHpORGs/Ca8bWMXB2K0EViGYkxOPEYwUWH0qtrWwgKCo8F//N9?=
+ =?us-ascii?Q?DpW+6Spq7VC3KH0F4MD4/VRUEzW1Pd19dl0QCLnsMVgSx2z2vLSV6Mcb1zUz?=
+ =?us-ascii?Q?jHdQPXJ8ysgshG3c2HuZeGjM1Nfy+X97p1HmseyxSLZZ268XSgpqMmLOS4xC?=
+ =?us-ascii?Q?f396twe2nkI6Ztj8fSkL+cF2QBCcsyNGR9YE0ZCEXH0rCJ21W3K6dIrd9CB7?=
+ =?us-ascii?Q?MA/iH/KuG0ibjYBi7XFIXTDkvlvhMz/bLY85Bu5MQYMaF9vrXtGDy9y7RUc5?=
+ =?us-ascii?Q?kUIwE9sPxRl9g2Q/CVf2Ecw71hIm7I3mkUIJOXd7Ym2tssvkLOvcgiWXIRMe?=
+ =?us-ascii?Q?6tw2izJBgRukRdYymIdKuWck9wptmkinCemMp+pVXxLb1vGpSjbwbBRTjyjf?=
+ =?us-ascii?Q?97L/U/uOIQfg6fNZc81NpEvhr0jwRh1xPmhgW9oetEiwcK1/j3+o+pu0mNAZ?=
+ =?us-ascii?Q?hAHvkNxMKksDFTGyuKUwe3unWIkPhVmXNUemj8YqAebUAu5AoY7WS6LjbY3N?=
+ =?us-ascii?Q?GliCH+XKo8438P10QNhgZsoWfsbn63HCB5j3oC+/FWVfsaZrGeCvmQrgZAaF?=
+ =?us-ascii?Q?blrQbbEaeRcu67NT+fAR4nc1ztc5uWxQazNpTzEVSUbXeu33y5vI5mqsre/v?=
+ =?us-ascii?Q?vC7t/vwCV7BI+Xj7xIZJEImqujyJ9BQ=3D?=
 MIME-Version: 1.0
-Message-Id: <20260720-x1e-csi2-phy-v13-1-160c31958863@linaro.org>
-References: <20260720-x1e-csi2-phy-v13-0-160c31958863@linaro.org>
-In-Reply-To: <20260720-x1e-csi2-phy-v13-0-160c31958863@linaro.org>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Bryan O'Donoghue <bod@kernel.org>, 
- Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>, 
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-media@vger.kernel.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, Bryan O'Donoghue <bryan.odonoghue@linaro.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=6235;
- i=bryan.odonoghue@linaro.org; h=from:subject:message-id;
- bh=AC1MUPJeho28pBdVYrHItIRHxia1fJXAF7Xy5HQMoms=;
- b=owEBbQKS/ZANAwAKASJxO7Ohjcg6AcsmYgBqXXXKvBp3dUE1KtESZ7+ZHlIp/cv9XUuMb2l0g
- 16nZ0I4ltuJAjMEAAEKAB0WIQTmk/sqq6Nt4Rerb7QicTuzoY3IOgUCal11ygAKCRAicTuzoY3I
- Oo9LEACTzkusJ7PUs4YxRQWdEU58xvKYuA3I6VtctNKxxL4llpjHHfU+PoReyDg0vAgy2vxWbsZ
- VIc3KMgb+z72wXoxiW/uMO/qTkSMzIFOP239wLExgXPvrkSQWosIdhiGvPY/67sqRTphlDADLIM
- +aaA3oPOSkBKxoEpTh6AANvqmUejhM/t68xVDqsoWFRygiyGTjVTU3jdXBNdcNqkfcIfnE9013z
- dm29kgfJT8ZQtuPKMQZIBCAgl1sfQkoRV4OX3dDzsdkpD4WMPSICC7kLaCD90yRskCbGqB6s0LS
- u/qR1d1ostvTx/p3a+jVA7JfBDFMP/TZxlK7kGQndT/IcCRMqgacMAadhXrGuZcSBHDwuBAx+u1
- a+e6TM7MdJcttBdtDbLs7XiVGcKe/DuPPgGwQkN+8CUGfSdTWjLfpiz1zsyqjGQe5X/rzc81uPo
- loADr6tFPA1pNbWkLGJOfSgm27cRbMSbt3dIFPFMl5sc5RF1rC+uaicBUCRQN6N1+OrGzj2Jjxa
- hKtCBQgoc2RLDZTVHVz7WX44N90qwRS7Ox2AVBahZ1zXvb7Mctns6ook+KNkJcu3bdOhbeFNxNV
- YvOeCi3u/yiy3z2oE7A6XOMfETKaIPCcJ8IyU9/XfEwXYMdRL4NKYuFyVI1Tv9wIeEtPWhcvB+L
- rItQkwSaj3yZaQA==
-X-Developer-Key: i=bryan.odonoghue@linaro.org; a=openpgp;
- fpr=E693FB2AABA36DE117AB6FB422713BB3A18DC83A
+X-OriginatorOrg: starfivetech.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: ZQ4PR01MB1202.CHNPR01.prod.partner.outlook.cn
+X-MS-Exchange-CrossTenant-Network-Message-Id: c90f6f75-0590-46b1-8b07-08dee5fbfd7a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Jul 2026 01:12:38.5240
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 06fe3fa3-1221-43d3-861b-5a4ee687a85c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: LEhAPKQy4KfFpDFz8dwSUQkUlvzlnpZgs2SayGlIl4QV5qoSOoQJJJNn/dbSKcVARvRabVzyDatIatv9dAvSLFjtHkRYhDWD9PMVRwM0rO1gmHCwqrflNeU/Qv6TDRn0
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: ZQ4PR01MB1316
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260719_181144_790998_79AECA06 
-X-CRM114-Status: GOOD (  11.96  )
+X-CRM114-CacheID: sfid-20260719_181309_769926_49710BCE 
+X-CRM114-Status: GOOD (  15.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,224 +139,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a base schema for the MIPI CSI2 PHYs on Qualcomm SoCs. This PHY
-supports both DPHY and CPHY operation. A special mode of DPHY operation -
-called variously split-mode or combo-mode also allows for two sensors to be
-connected to one PHY.
 
-The submitted binding here describes the DPHY modes of operation only. CPHY
-is left to future work.
+> stf_dphy_probe() enables runtime PM before getting the clock and reset
+> controls, creating the PHY and registering the PHY provider. If any of those
+> steps fails, probe returns with runtime PM still enabled.
+> 
+> The driver also has no remove callback, so runtime PM is left enabled on
+> driver unbind after a successful probe.
+> 
+> Use devm_pm_runtime_enable() so runtime PM is disabled automatically on
+> later probe failures and on driver unbind.
+> 
+> Fixes: d3ab79553308 ("phy: starfive: Add mipi dphy tx support")
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Can Peng <pengcan@kylinos.cn>
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
----
- .../bindings/phy/qcom,x1e80100-csi2-phy.yaml       | 195 +++++++++++++++++++++
- 1 file changed, 195 insertions(+)
+Reviewed-by: Changhuang Liang <changhuang.liang@starfivetech.com>
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
-new file mode 100644
-index 0000000000000..880fe602945cb
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
-@@ -0,0 +1,195 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/qcom,x1e80100-csi2-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Qualcomm X1E80100 SoC CSI2 PHY
-+
-+maintainers:
-+  - Bryan O'Donoghue <bod@kernel.org>
-+
-+description:
-+  Qualcomm MIPI CSI2 C-PHY/D-PHY combination PHY. Connects MIPI CSI2 sensors
-+  to Qualcomm's Camera CSI Decoder. The PHY supports both C-PHY and D-PHY
-+  modes.
-+
-+properties:
-+  compatible:
-+    const: qcom,x1e80100-csi2-phy
-+
-+  reg:
-+    maxItems: 1
-+
-+  "#phy-cells":
-+    const: 1
-+    description:
-+      The single cell specifies the PHY operating mode.
-+
-+  clocks:
-+    maxItems: 3
-+
-+  clock-names:
-+    items:
-+      - const: core
-+      - const: timer
-+      - const: ahb
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  operating-points-v2: true
-+
-+  opp-table:
-+    type: object
-+
-+  power-domains:
-+    items:
-+      - description: Titan Top GDSC - Titan ISP Block, Global Distributed Switch Controller.
-+      - description: MMCX voltage rail
-+      - description: MXC or MXA voltage rail
-+
-+  power-domain-names:
-+    items:
-+      - const: top
-+      - const: mmcx
-+      - const: mx
-+
-+  vdda-0p9-supply:
-+    description: Phandle to a 0.9V regulator supply to a PHY.
-+
-+  vdda-1p2-supply:
-+    description: Phandle to 1.2V regulator supply to a PHY.
-+
-+  ports:
-+    $ref: /schemas/graph.yaml#/properties/ports
-+
-+    properties:
-+      port@0:
-+        $ref: /schemas/graph.yaml#/$defs/port-base
-+        description:
-+          Sensor input. Always present. A single sensor is described by a
-+          single endpoint with one to four data lanes. DPHY split mode,
-+          where two independent sensors share the same PHY, is described
-+          by two endpoints; endpoint@0 with exactly two data-lanes and
-+          endpoint@1 with exactly one data-lane.
-+        unevaluatedProperties: false
-+
-+        patternProperties:
-+          "^endpoint(@[0-9a-f]+)?$":
-+            $ref: /schemas/media/video-interfaces.yaml#
-+            unevaluatedProperties: false
-+            properties:
-+              data-lanes:
-+                minItems: 1
-+                maxItems: 4
-+
-+            required:
-+              - data-lanes
-+              - remote-endpoint
-+
-+        allOf:
-+          - if:
-+              required:
-+                - endpoint@1
-+            then:
-+              properties:
-+                endpoint@0:
-+                  properties:
-+                    data-lanes:
-+                      minItems: 2
-+                      maxItems: 2
-+                endpoint@1:
-+                  properties:
-+                    data-lanes:
-+                      maxItems: 1
-+              required:
-+                - endpoint@0
-+
-+      port@1:
-+        $ref: /schemas/graph.yaml#/properties/port
-+        description: Output to the CAMSS CSID controller.
-+
-+    required:
-+      - port@0
-+      - port@1
-+
-+required:
-+  - compatible
-+  - reg
-+  - "#phy-cells"
-+  - clocks
-+  - clock-names
-+  - interrupts
-+  - operating-points-v2
-+  - power-domains
-+  - power-domain-names
-+  - vdda-0p9-supply
-+  - vdda-1p2-supply
-+  - ports
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/clock/qcom,x1e80100-camcc.h>
-+    #include <dt-bindings/clock/qcom,x1e80100-gcc.h>
-+    #include <dt-bindings/power/qcom,rpmhpd.h>
-+
-+    phy@ace4000 {
-+        compatible = "qcom,x1e80100-csi2-phy";
-+        reg = <0x0ace4000 0x2000>;
-+        #phy-cells = <1>;
-+
-+        clocks = <&camcc CAM_CC_CSIPHY0_CLK>,
-+                 <&camcc CAM_CC_CSI0PHYTIMER_CLK>,
-+                 <&camcc CAM_CC_CORE_AHB_CLK>;
-+        clock-names = "core",
-+                      "timer",
-+                      "ahb";
-+
-+        interrupts = <GIC_SPI 477 IRQ_TYPE_EDGE_RISING>;
-+
-+        operating-points-v2 = <&csiphy_opp_table>;
-+
-+        power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>,
-+                        <&rpmhpd RPMHPD_MMCX>,
-+                        <&rpmhpd RPMHPD_MX>;
-+        power-domain-names = "top",
-+                             "mmcx",
-+                             "mx";
-+
-+        vdda-0p9-supply = <&vreg_l2c_0p9>;
-+        vdda-1p2-supply = <&vreg_l1c_1p2>;
-+
-+        ports {
-+            #address-cells = <1>;
-+            #size-cells = <0>;
-+
-+            port@0 {
-+                reg = <0>;
-+                csiphy0_in: endpoint {
-+                    data-lanes = <0 1 2 3>;
-+                    remote-endpoint = <&sensor_out>;
-+                };
-+            };
-+
-+            port@1 {
-+                reg = <1>;
-+                csiphy0_out: endpoint {
-+                    remote-endpoint = <&csid_in>;
-+                };
-+            };
-+        };
-+
-+        csiphy_opp_table: opp-table {
-+            compatible = "operating-points-v2";
-+
-+            opp-300000000 {
-+                opp-hz = /bits/ 64 <300000000>;
-+                required-opps = <&rpmhpd_opp_low_svs_d1>,
-+                                <&rpmhpd_opp_low_svs_d1>;
-+            };
-+        };
-+    };
-
--- 
-2.54.0
+> ---
+>  drivers/phy/starfive/phy-jh7110-dphy-tx.c | 5 ++++-
+>  1 file changed, 4 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/phy/starfive/phy-jh7110-dphy-tx.c
+> b/drivers/phy/starfive/phy-jh7110-dphy-tx.c
+> index c64d1c91b130..181491a93807 100644
+> --- a/drivers/phy/starfive/phy-jh7110-dphy-tx.c
+> +++ b/drivers/phy/starfive/phy-jh7110-dphy-tx.c
+> @@ -392,6 +392,7 @@ static int stf_dphy_probe(struct platform_device
+> *pdev)  {
+>  	struct phy_provider *phy_provider;
+>  	struct stf_dphy *dphy;
+> +	int ret;
+> 
+>  	dphy = devm_kzalloc(&pdev->dev, sizeof(*dphy), GFP_KERNEL);
+>  	if (!dphy)
+> @@ -406,7 +407,9 @@ static int stf_dphy_probe(struct platform_device
+> *pdev)
+>  	if (IS_ERR(dphy->topsys))
+>  		return PTR_ERR(dphy->topsys);
+> 
+> -	pm_runtime_enable(&pdev->dev);
+> +	ret = devm_pm_runtime_enable(&pdev->dev);
+> +	if (ret)
+> +		return ret;
+> 
+>  	dphy->txesc_clk = devm_clk_get(&pdev->dev, "txesc");
+>  	if (IS_ERR(dphy->txesc_clk))
+> --
+> 2.53.0
 
 
 -- 
