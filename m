@@ -4,122 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20613C44529
-	for <linux-phy@archiver.kernel.org>; Tue, 21 Jul 2026 08:15:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 686AAC44529
+	for <linux-phy@archiver.kernel.org>; Tue, 21 Jul 2026 08:17:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=GpslvHWI24XKNC70nAGxUZj1X4+UyLZsOyVjrsn/DoM=; b=T7ruVGa3DB5cfjsttr7ZnJr433
-	jh9v3Sh9303OOaVi3/bI4b7NBmZoCgRbG9NHzkqT6qPvp7geEv0FPu/jub7k1v0J1w9Q1S+i+jDKV
-	Xec1twC2SlQG/Efo7tSdxwcifzT5GHTZYOuwTPb+ZizXHMahqSRPAEnTMeUsTDrcQSiL2kuAYtyt+
-	KMeZ42SA9Hw2DTL7BwJAWVukf7VKPXmtopHVhRNexZmlsIEBcbAlKYgYwyJ9wLwo5l1OtLUc1gbHU
-	cRBst/+vPSlpnbB91xAE3CkhIsFJcOPMqrRCIIYmDg2SfDF/GxDkzAn4LRG21524nFaR4phocJxfj
-	ZOFvx+Ww==;
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZCqcjaDga2B8J6/5sHwqrJ6K8QVX59bm6GXng2iG/2o=; b=IPaFutqRxEiQbP
+	r9vopN+XO/KLVFYYNwhQT4dQDEmE2RiGH0lN09XxpbMMCO/zufSA+X6u7ND9QMACklesCaNisqsXZ
+	STDfF5QaA2ptt/0g5kEDalgKbCEmrJIl3bUnhJo4fhoKTNpE7xpwhmH3yZr31viC2S9j2uPwmqfQ0
+	+/887A4v3dHdvtPUacWZgAmY6A9V60WyEkFvKYybE+FJr2wgw5f4uektHeC2LQdZCuGB/fbjmzgKL
+	Ve0hudYUOIUa3CdSunN29u3AGnsnRKnFjAdUZ6bOHAtUIMUDPZWmvER7Z+E3Gi35/LragjB75emog
+	WD56uVjFFYqWolnB7O6A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wm5dY-00000008lnC-3R3o;
-	Tue, 21 Jul 2026 08:15:36 +0000
-Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
+	id 1wm5fG-00000008m4F-0VtT;
+	Tue, 21 Jul 2026 08:17:22 +0000
+Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wm5dW-00000008lm8-0hmN
+	id 1wm5fD-00000008m3X-28cf
 	for linux-phy@lists.infradead.org;
-	Tue, 21 Jul 2026 08:15:35 +0000
-Received: by mail-wr1-x42c.google.com with SMTP id ffacd0b85a97d-471eeac43bfso10244337f8f.3
-        for <linux-phy@lists.infradead.org>; Tue, 21 Jul 2026 01:15:33 -0700 (PDT)
+	Tue, 21 Jul 2026 08:17:20 +0000
+Received: by mail-lf1-x136.google.com with SMTP id 2adb3069b0e04-5aeb72b0af1so1249937e87.3
+        for <linux-phy@lists.infradead.org>; Tue, 21 Jul 2026 01:17:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1784621732; x=1785226532; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:organization
-         :autocrypt:content-language:references:cc:to:subject:reply-to:from
-         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=ZYoAtIkHW87FIAd0vM+TKdI5UC2ppQruRqxPUsfJzmE=;
-        b=GWkZbMM2eF4uuqPorGP6KHDRq0z2NbRBY0uxZFg8e5mDxIC2Wb2ySQ7qxUyhHxl510
-         P8zy3tJUmFEKiE0NUOisV1IqAiDVQaP85upH29pDj6ThTRPxpQx0NEAnovBY/mKaBxEF
-         NQINnD/DAZ1zAwym+nGXckpCeAwu1FU3ea3OjKt4snSFH8r3eSnfkRE5lyBzp6xAgelJ
-         EXljAhSVlMP9YZsOKp86Xd2c/Ws4pjDAu6kJNkaSEbCQ6iwSYxV+GUatrFZoBP30O+Lw
-         VOEJirLQq1/iS0DoDhcOmWv6uVJo79SYVFrhLYq9admaFC/lvD8FDrg5nKTAlPTHbNFT
-         HQ0A==
+        d=linaro.org; s=google; t=1784621837; x=1785226637; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from:references
+         :cc:to:subject:user-agent:mime-version:date:message-id:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=gKMYuSxpffkyrGpleNqSwP2E6RLfbUM1DxXqtJdN6kU=;
+        b=qJARENoQdWpo0hzB4kf8/lcyFydlHYS+CWJgKZWVCVmS+3y7zqdzD2NIzKrOnLKC8G
+         kNkpyi5ts/FwVRI9Wg64A5PrSpPxgUFv3OqscHD/t1dNh7es8qbbOmupHpwh2QrF0y6o
+         em+FpVyLJ0O7siIl2wyQNQ3QDR7MaBRdb7K8i74pyi8t4ZFJK5Un99DkU8rOzghqfHDY
+         tdXZBP1AhnIBEWycb2zzE4Fgv2CZbEaL/K5E+RzGkO3LOzWKkPodQQbKqqHQ9Cfxnbzf
+         EGUlGtfITUwH2AaekN0myCPDx5IHehPohpWq1POtcK4pepKQzIYDxs77+EbBH6GlDIZ+
+         orQQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784621732; x=1785226532;
-        h=content-transfer-encoding:content-type:in-reply-to:organization
-         :autocrypt:content-language:references:cc:to:subject:reply-to:from
-         :user-agent:mime-version:date:message-id:x-gm-gg:x-gm-message-state
-         :from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=ZYoAtIkHW87FIAd0vM+TKdI5UC2ppQruRqxPUsfJzmE=;
-        b=fO54f9M9x2I9Y16Hm2cwOSEHncKNwPexgdkUhOHEZvNrAwQ7rMKPdmzDSZIBuZrVmE
-         fg8/k2w9NmoiiCHmJy+wU3ALFPQ/rCfje87uohvEXNknquW0IGRC0X1Af6FC54nmPbpu
-         d8m9tkUhZaO3bw65LymQZPhqwoNzxyu70dqJuDTVDqdfeWaeLE6bk3rNvYaeZJGWBUh2
-         1yqCucPev5kPxO6KiyhxvWdIMQF6WHo4HWcN7qWkFKjWS2/wNVP4r/i8V9PAmpsTSRrO
-         8NHXYpjObipCAK4NNzhsIMsOLlbABbbWejLWj/b1bvULupgFr07jdbFvVvGLmd5aDA3j
-         28nQ==
-X-Forwarded-Encrypted: i=1; AHgh+RpjzfH4j2BRR0VyieHeqB3eqM8Y7e0dPIgP2y8mwDAdcNeEqDM/TXpalWbCwsAg7modO5+SRyHBk7c=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxYIgSTE4pSUA9yUWRfXhEKJP8PSlNwSJSyrg1GwDuc6m/jSaMe
-	VVD0pBVry4JT9GzzeY1Tg5Ok4x9qpOd2gzugMWtOceISagoS6t0Rst8dqZHWy4IIx6g=
-X-Gm-Gg: AR+sD11OrVXGhlK0E4X2Vc6ra7M4dY/yCH+yDkMpZKgQr97gVESmeq9+wGIWc2HXWyx
-	v8RZOfdMavQYUynFAVKRg6za3/istlw85B19arUHj4ahAb0EvPQ0g84eHuYFZfsQzwQFCUnrYYc
-	Tai8/3+3p+CSQZ27SHeNlt8ocb0DVaZGgKzvD7qXEiqhZ5mWNYeD5dF6OAyo/FKVTxBt5i9+dRO
-	kl0Dv4Rg9/0oQjkkFpWFS8DQcHJtKACdF9lnnodJPSKPouH8BRnRigx+knty0nyXj4+ZY2qSP3L
-	UT/NBQCc17w7ifajTNRodEY94Oe5J3E5PU7iJgF6CUU1sqVPno5NHXcFd4zhHCoxtX8tvmyYXFR
-	EbdoJQo65O8ebj4OHePMKehi2MOfKLjDdd5Au7u1U3bc75IZflWxUqyJKmF7c24efiKANh1hD7g
-	7fvyrJvmh27d9r07Lrz+v50aWbHpgehWhLTE3soLbZ+hKWCBPJE5p4P8k=
-X-Received: by 2002:adf:e00f:0:20b0:47f:77ae:d8f9 with SMTP id ffacd0b85a97d-47f77aeda2emr6547848f8f.59.1784621731787;
-        Tue, 21 Jul 2026 01:15:31 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:106d:1080:588:18d6:82ff:eb96? ([2a01:e0a:106d:1080:588:18d6:82ff:eb96])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-47f6b85970esm30396524f8f.15.2026.07.21.01.15.31
+        d=1e100.net; s=20251104; t=1784621837; x=1785226637;
+        h=content-transfer-encoding:content-type:in-reply-to:from:references
+         :cc:to:subject:user-agent:mime-version:date:message-id:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=gKMYuSxpffkyrGpleNqSwP2E6RLfbUM1DxXqtJdN6kU=;
+        b=V3amRDdDqdW47OOMRcWjgQA+tV6TQf/U2pXCUZOIofwO91Uve9UFuJ7h9E9NBkMfkH
+         BetNHMOfJqFpmEdy02W1KSwTwT8nsMVs8Ph4nq0alObnM6ZTCzijK+1prNJL14/3BgxZ
+         BAujo+SCRIzG9mj/IU5vr4K0giRSmkD+M8eADXIHnVJlJmutUl250bI1pLWVQvnofmJo
+         2AlBIhmTCMEcIipArMy8Oa7nvnDIm+ln9Two0pK2DEOXXMHddCfonROHi22uPz4AbJbL
+         aHKizjcpWgnCgWaLxXnvYHKkiK4YEGlYEPzMzSGDN7EUFEa4kw5qjppzaGLvLM/ERkBQ
+         GxqQ==
+X-Forwarded-Encrypted: i=1; AHgh+Rr3On8pKwujeIIq3FMUFdpaGth8iAlqoZtGxVA65SI9dJUgf6bQurGLkuhg5BBT8b6GnXFtvQwNJEw=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwZGhOm/Wx/ormBRsGvsIm37GbExcwXSxIwNnBOokOPaYFdP6fk
+	BlRJOqlCHz208LSwC/Lk7pN5S39kmm6coFqBOaI3CpaGwpEcLZC5dSz2p8QVlJhNPm8=
+X-Gm-Gg: AR+sD11XqjuhHfhj2HLlNq2FBZFBo26mZ+keAGKECLO/aH4/ryBgPX4TOkelms6cM6w
+	jqX27u57VNeCQO43bzKsA0E73PV9eOcHIVLFaqx2D1umaGx1AXTIYXCUK0i5wUlS/Ni/QMQPN/+
+	6l4dCOI4AwWCz76S/xRIavlJOpd6ttCNCF19qjmxnGslW/3iJoEmlKzor57khywHPBLui+0TM0D
+	crlR+tSvdfYA1Znn15aFVqN9I3/9z49pJxrz8vZYfqSBzm98nCajG1IgQWucgxDhprEyD2q5QvD
+	J2RVAn7C9uA1VU/AC06v84wiF7jEHnHuwik595Nqfuy0doBYheeljSCHTqoc/+66Ef0BGjbb2xR
+	/dMAEiUKYCXn7Y7sSuIVvudCWbogDlyjokjEJ16mZ5h6ZgRm7nsA/FvQh/og9jaI/+3CqQic8G7
+	Cammy7KABAnM+XYCAoAqdbWZTuGCjdCStT5f+2gJb8FJax+d9/eHuaaXaS
+X-Received: by 2002:a05:6512:3e24:b0:5ae:c063:638c with SMTP id 2adb3069b0e04-5b2a4a87341mr290377e87.7.1784621837200;
+        Tue, 21 Jul 2026 01:17:17 -0700 (PDT)
+Received: from [192.168.1.100] (91-159-24-186.elisa-laajakaista.fi. [91.159.24.186])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5b291e25e5bsm2736698e87.78.2026.07.21.01.17.16
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 21 Jul 2026 01:15:31 -0700 (PDT)
-Message-ID: <4c9ef1ac-1748-4604-99af-52e37877b23b@linaro.org>
-Date: Tue, 21 Jul 2026 10:15:30 +0200
+        Tue, 21 Jul 2026 01:17:16 -0700 (PDT)
+Message-ID: <0da6d314-bfa9-493a-bcc6-8c3b75751d0c@linaro.org>
+Date: Tue, 21 Jul 2026 11:17:16 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-From: Neil Armstrong <neil.armstrong@linaro.org>
 Subject: Re: [PATCH v13 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY
  schema
 To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>
-Cc: Bryan O'Donoghue <bod@kernel.org>,
- Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org,
+ Conor Dooley <conor+dt@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Bryan O'Donoghue <bod@kernel.org>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 References: <20260720-x1e-csi2-phy-v13-0-160c31958863@linaro.org>
  <20260720-x1e-csi2-phy-v13-1-160c31958863@linaro.org>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
+From: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
 In-Reply-To: <20260720-x1e-csi2-phy-v13-1-160c31958863@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260721_011534_265590_B2E6FD00 
-X-CRM114-Status: GOOD (  22.72  )
+X-CRM114-CacheID: sfid-20260721_011719_599718_053C5CAE 
+X-CRM114-Status: GOOD (  21.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,15 +103,12 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
-
-On 7/20/26 03:11, Bryan O'Donoghue wrote:
+On 7/20/26 04:11, Bryan O'Donoghue wrote:
 > Add a base schema for the MIPI CSI2 PHYs on Qualcomm SoCs. This PHY
 > supports both DPHY and CPHY operation. A special mode of DPHY operation -
 > called variously split-mode or combo-mode also allows for two sensors to be
@@ -150,6 +119,12 @@ On 7/20/26 03:11, Bryan O'Donoghue wrote:
 > 
 > Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 > Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+
+Since there is no changes in dt bindings from v12, all comments from here
+are still applicable to this version of the changeset:
+
+https://lore.kernel.org/linux-arm-msm/20260719-x1e-csi2-phy-v12-0-cc7311326d1b@linaro.org/
+
 > ---
 >   .../bindings/phy/qcom,x1e80100-csi2-phy.yaml       | 195 +++++++++++++++++++++
 >   1 file changed, 195 insertions(+)
@@ -187,6 +162,14 @@ On 7/20/26 03:11, Bryan O'Donoghue wrote:
 > +    const: 1
 > +    description:
 > +      The single cell specifies the PHY operating mode.
+
+This has been reported before, #phy-cells shall be 0, the operation
+mode is selected by bus-type of endpoints as it is described in
+video-interfaces.yaml
+
+Two competing values are redundant and it opens a door to a wrong
+hardware description, the technical discussion has not been started yet.
+
 > +
 > +  clocks:
 > +    maxItems: 3
@@ -239,6 +222,10 @@ On 7/20/26 03:11, Bryan O'Donoghue wrote:
 > +
 > +        patternProperties:
 > +          "^endpoint(@[0-9a-f]+)?$":
+
+endpoint suffix regexp is incorrected, this issue has been reported
+previously, still it is not fixed.
+
 > +            $ref: /schemas/media/video-interfaces.yaml#
 > +            unevaluatedProperties: false
 > +            properties:
@@ -333,6 +320,10 @@ On 7/20/26 03:11, Bryan O'Donoghue wrote:
 > +                reg = <0>;
 > +                csiphy0_in: endpoint {
 > +                    data-lanes = <0 1 2 3>;
+
+data-lanes values has not been corrected in accordance to linux-media
+requirements.
+
 > +                    remote-endpoint = <&sensor_out>;
 > +                };
 > +            };
@@ -357,22 +348,9 @@ On 7/20/26 03:11, Bryan O'Donoghue wrote:
 > +    };
 > 
 
-While I see the utility of moving the CSI PHY into a separate node and
-transferring the sensor endpoints there, I don't see why the PHYs would
-be linked to CAMSS via the `phys =` property and via a port/endpoint to the CSIDs.
-
-In my view, the `phys =` property should be used to reference static PHYs
-associated with a controller, whereas port/endpoint graphs are better suited
-for identifying the node and device for dynamic PHYs, like the ones we have here.
-
-To that extent, I understand how moving this to the PHY framework could help
-clean up the code. However, some PHY-related logic will still need to remain in
-CAMSS to handle dynamic associations to different CSIDs at runtime.
-
-I'm still not really convinced about moving this code to the PHY subsystem
-as a standalone PHY driver.
-
-Neil
+-- 
+Best wishes,
+Vladimir
 
 -- 
 linux-phy mailing list
