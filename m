@@ -4,67 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CE519C4451C
-	for <linux-phy@archiver.kernel.org>; Tue, 21 Jul 2026 06:48:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 684CCC44529
+	for <linux-phy@archiver.kernel.org>; Tue, 21 Jul 2026 07:01:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CXqBYh1isJ/1tLNHDokDN1csFHlQFLHgkabjmh5GxU0=; b=QgpLEoXE9JY+9z
-	CPoUMm49rt1A+bdpVteyehrJ519dY0/QqKo4FxlQpVZwfarg48IE3GOxnoinZmnKGNahNDyIW4MKA
-	Zb0DjY8KRMpWLdZpaLv4LaWk27jXZXXJe5FO48fREXFCRnU8OmZ45PyojesTVxhsBzSdt6gkRm5jy
-	c8Fl0kzmAAQ8zut3dfFMNn/FlPWSSha911kVbnvLO+s2nCueYmRPeOzGZCHw0BZMQhfSISuF3IobF
-	Ta0C6U/mOSZzmeCOuP9ThuMywLAXq9TE5fi4r738z1bv9Vl9JA0LDHhB2tKvf4wDgcVJp+1q3f+jo
-	M7FoEYjEYcbFyehuDPZQ==;
+	List-Owner; bh=n6bL2R2hUa7ZbDp9o1StoMMv6BVLfbeeg27bMoFp7Ok=; b=iJzwPpwOfLsgJI
+	Y5RFar3NYB2Lv0bnHCPFC6XyyzwrKpBibKFkKVywkUedkYtQXx0EWkLn9KmbPV6UCpvsqWuGpUzNu
+	1GhjDjeoecv474pqQyIxgZZKfxaI1KLoyqptjiUZYDnqRVK/udCu5AwU0MgeWo4/qgOXTfB16DMG3
+	8DgEhysTNN6QyNETjAZMeiHhlMO2UrdZpzss2fU4lM7pgWtnzLlFqYgpmnUCDvmtMOLoroIdvRs+7
+	WPqQ0N2YBTClJbXuFbvRG4hn49+f19j9rsRkDJS7RZzmOh0LUCkQN8sL0s87AKXqUn8n1s3gSH5nl
+	86d317OiyUIxAW8thzSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wm4H8-00000008ZB4-2Dn9;
-	Tue, 21 Jul 2026 06:48:22 +0000
-Received: from mailgw.kylinos.cn ([124.126.103.232])
+	id 1wm4Tx-00000008cI1-40HT;
+	Tue, 21 Jul 2026 07:01:37 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wm4H5-00000008Z9N-3J0J
+	id 1wm4Tw-00000008cHn-1G0L
 	for linux-phy@lists.infradead.org;
-	Tue, 21 Jul 2026 06:48:21 +0000
-X-UUID: 2622954884d011f1aa26b74ffac11d73-20260721
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.3.12,REQID:0266ae76-5ceb-416f-83ef-0ac66190f1b9,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:e7bac3a,CLOUDID:430a820fc86c611bc906720702d2c2ae,BulkI
-	D:nil,BulkQuantity:0,Recheck:0,SF:81|82|102|865|898,TC:nil,Content:0|15|50
-	,EDM:-3,IP:nil,URL:0,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,O
-	SA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 2,SSN|SDN
-X-CID-BAS: 2,SSN|SDN,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR
-X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
-X-UUID: 2622954884d011f1aa26b74ffac11d73-20260721
-X-User: pengcan@kylinos.cn
-Received: from lenovo [(10.44.16.150)] by mailgw.kylinos.cn
-	(envelope-from <pengcan@kylinos.cn>)
-	(Generic MTA with TLSv1.3 TLS_AES_256_GCM_SHA384 256/256)
-	with ESMTP id 973892165; Tue, 21 Jul 2026 14:48:15 +0800
-From: Can Peng <pengcan@kylinos.cn>
-To: vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	bmasney@redhat.com
-Cc: linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Can Peng <pengcan@kylinos.cn>,
-	stable@vger.kernel.org
-Subject: [PATCH v2 4/4] phy: freescale: fsl-samsung-hdmi: Disable APB clock on resume failure
-Date: Tue, 21 Jul 2026 14:47:52 +0800
-Message-ID: <20260721064752.153338-5-pengcan@kylinos.cn>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20260721064752.153338-1-pengcan@kylinos.cn>
+	Tue, 21 Jul 2026 07:01:36 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id B88FA403DE;
+	Tue, 21 Jul 2026 07:01:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5A1381F000E9;
+	Tue, 21 Jul 2026 07:01:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1784617295;
+	bh=gxpngH1SL4p1GFHTCL2oTYtHkDdG24xXY6+99109Nh0=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=ns5K11JBtldOnvpeW55jINJK/pGsIcjw8vdju2foQuiHoG48nQQbemDe+bTu4mtvD
+	 Osk3HRJhgXO0l/MuJr/9tXgDJGL+ipIWhXnBHxNUpzPMD19326HkUyGHtV5Gz/1A3z
+	 n0W3JbosS9mpsmXtfq2MFu88QsnfjDrR0AI41HspCKpM73Kef+BW++UdA+jQ0mIqkK
+	 ZVDV3okgz7Kkzrhe7QFFT4Wi4rHMGytKtBbAFkci8XXU6N7tqqM8fj2JfKPdjW5jvY
+	 us0qkYAadFNVILQHzwK7U1oBTAB16tfZoeYJKWZODs6kaSKWq4zpZ6AueDmB5moF3K
+	 X2L1KoqLM8T4w==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v2 4/4] phy: freescale: fsl-samsung-hdmi: Disable APB
+ clock on resume failure
+To: "Can Peng" <pengcan@kylinos.cn>
+Cc: vkoul@kernel.org, olteanv@gmail.com, neil.armstrong@linaro.org, linux-phy@lists.infradead.org
+In-Reply-To: <20260721064752.153338-5-pengcan@kylinos.cn>
 References: <20260721064752.153338-1-pengcan@kylinos.cn>
-MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260720_234820_125282_6332D0C2 
-X-CRM114-Status: UNSURE (   9.98  )
-X-CRM114-Notice: Please train this message.
+ <20260721064752.153338-5-pengcan@kylinos.cn>
+Date: Tue, 21 Jul 2026 07:01:34 +0000
+Message-Id: <20260721070135.5A1381F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,48 +63,83 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-fsl_samsung_hdmi_phy_resume() enables apbclk and then reprograms the PHY
-when a previous clock configuration is available. If the hardware
-configuration fails, the function returns the error with apbclk still
-enabled.
-
-Disable apbclk on the failure path so the clock enable count remains
-balanced.
-
-Fixes: 6ad082bee902 ("phy: freescale: add Samsung HDMI PHY")
-Cc: stable@vger.kernel.org
-Signed-off-by: Can Peng <pengcan@kylinos.cn>
----
- drivers/phy/freescale/phy-fsl-samsung-hdmi.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-index 455d03220b72..bb1aa1977065 100644
---- a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-+++ b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-@@ -722,8 +722,11 @@ static int __maybe_unused fsl_samsung_hdmi_phy_resume(struct device *dev)
- 		return ret;
- 	}
- 
--	if (phy->cur_cfg)
-+	if (phy->cur_cfg) {
- 		ret = fsl_samsung_hdmi_phy_configure(phy, phy->cur_cfg);
-+		if (ret)
-+			clk_disable(phy->apbclk);
-+	}
- 
- 	return ret;
- 
--- 
-2.53.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
+IFtDcml0aWNhbF0gVGhlIGNsb2NrIGBzZXRfcmF0ZWAgY2FsbGJhY2sgZGlyZWN0bHkgYWNjZXNz
+ZXMgaGFyZHdhcmUgcmVnaXN0ZXJzIHdpdGhvdXQgZW5zdXJpbmcgdGhlIFBIWSBkZXZpY2UgaXMg
+cnVudGltZSBhY3RpdmUsIHdoaWNoIGNvdWxkIGNhdXNlIGEgc3luY2hyb25vdXMgZXh0ZXJuYWwg
+YWJvcnQgd2hlbiBjYWxsZWQgd2hpbGUgdGhlIGRldmljZSBpcyBzdXNwZW5kZWQuCi0gW0hpZ2hd
+IFRoZSBkcml2ZXIgbXV0YXRlcyBhIHN0YXRpYyBnbG9iYWwgdmFyaWFibGUgdG8gc3RvcmUgZHlu
+YW1pY2FsbHkgY2FsY3VsYXRlZCwgaW5zdGFuY2Utc3BlY2lmaWMgUEhZIGNvbmZpZ3VyYXRpb25z
+LCBjYXVzaW5nIGEgcmFjZSBjb25kaXRpb24gaW4gbXVsdGktaW5zdGFuY2Ugb3IgY29uY3VycmVu
+dCBzY2VuYXJpb3MuCi0gW01lZGl1bV0gSWYgYHBtX3J1bnRpbWVfcmVzdW1lX2FuZF9nZXQoKWAg
+ZmFpbHMgaW4gYGZzbF9zYW1zdW5nX2hkbWlfcGh5X3JlbW92ZSgpYCwgZGV2cmVzIGNsZWFudXAg
+d2lsbCB1bmRlcmZsb3cgdGhlIEFQQiBjbG9jayBlbmFibGUgY291bnQuCi0tCgotLS0gUGF0Y2gg
+WzRdOiBbUEFUQ0ggdjIgNC80XSBwaHk6IGZyZWVzY2FsZTogZnNsLXNhbXN1bmctaGRtaTogRGlz
+YWJsZSBBUEIgY2xvY2sgb24gcmVzdW1lIGZhaWx1cmUgLS0tCmNvbW1pdCBmMTg1YjYzOWViMzdh
+ODQxN2M2ODYwNTlmZDRlN2EyMzk5MzA2MDU1CkF1dGhvcjogQ2FuIFBlbmcgPHBlbmdjYW5Aa3ls
+aW5vcy5jbj4KCnBoeTogZnJlZXNjYWxlOiBmc2wtc2Ftc3VuZy1oZG1pOiBEaXNhYmxlIEFQQiBj
+bG9jayBvbiByZXN1bWUgZmFpbHVyZQoKVGhpcyBjb21taXQgbW9kaWZpZXMgdGhlIGZzbF9zYW1z
+dW5nX2hkbWlfcGh5X3Jlc3VtZSgpIGZ1bmN0aW9uIHRvIGRpc2FibGUKdGhlIGFwYmNsayBvbiB0
+aGUgZmFpbHVyZSBwYXRoLiBUaGlzIGVuc3VyZXMgdGhlIGNsb2NrIGVuYWJsZSBjb3VudCByZW1h
+aW5zCmJhbGFuY2VkIGlmIHRoZSBoYXJkd2FyZSBjb25maWd1cmF0aW9uIGZhaWxzIGFmdGVyIHRo
+ZSBjbG9jayB3YXMgZW5hYmxlZC4KCkNjOiBzdGFibGVAdmdlci5rZXJuZWwub3JnCgo+IGRpZmYg
+LS1naXQgYS9kcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1zYW1zdW5nLWhkbWkuYyBiL2Ry
+aXZlcnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLXNhbXN1bmctaGRtaS5jCj4gaW5kZXggNDU1ZDAz
+MjIwYjcyYy4uYmIxYWExOTc3MDY1MCAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS9mcmVlc2Nh
+bGUvcGh5LWZzbC1zYW1zdW5nLWhkbWkuYwo+ICsrKyBiL2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9w
+aHktZnNsLXNhbXN1bmctaGRtaS5jCj4gQEAgLTcyMiw4ICs3MjIsMTEgQEAgc3RhdGljIGludCBf
+X21heWJlX3VudXNlZCBmc2xfc2Ftc3VuZ19oZG1pX3BoeV9yZXN1bWUoc3RydWN0IGRldmljZSAq
+ZGV2KQo+ICAJCXJldHVybiByZXQ7Cj4gIAl9Cj4gIAo+IC0JaWYgKHBoeS0+Y3VyX2NmZykKPiAr
+CWlmIChwaHktPmN1cl9jZmcpIHsKPiAgCQlyZXQgPSBmc2xfc2Ftc3VuZ19oZG1pX3BoeV9jb25m
+aWd1cmUocGh5LCBwaHktPmN1cl9jZmcpOwoKW1NldmVyaXR5OiBIaWdoXQpUaGlzIGlzIGEgcHJl
+LWV4aXN0aW5nIGlzc3VlLCBidXQgZG9lcyByZWFkaW5nIHBoeS0+Y3VyX2NmZyBoZXJlIHJhY2UK
+d2l0aCBjb25jdXJyZW50IGNsb2NrIHJhdGUgdXBkYXRlcz8KCkluIGZzbF9zYW1zdW5nX2hkbWlf
+cGh5X2ZpbmRfc2V0dGluZ3MoKSwgdGhlIGRyaXZlciBkeW5hbWljYWxseSBjYWxjdWxhdGVzCnNl
+dHRpbmdzIGFuZCB3cml0ZXMgdGhlbSBpbnRvIGEgc2hhcmVkIHN0YXRpYyBnbG9iYWwgdmFyaWFi
+bGUgd2l0aG91dApsb2NraW5nOgoKc3RhdGljIHN0cnVjdCBwaHlfY29uZmlnIGNhbGN1bGF0ZWRf
+cGh5X3BsbF9jZmcgPSB7IC4uLiB9OwoKZnNsX3NhbXN1bmdfaGRtaV9waHlfZmluZF9zZXR0aW5n
+cygpCiAgICAuLi4KICAgIGZzbF9zYW1zdW5nX2hkbWlfY2FsY3VsYXRlX3BoeSgmY2FsY3VsYXRl
+ZF9waHlfcGxsX2NmZywgLi4uKTsKCklmIGEgY29uY3VycmVudCBjYWxsIHRvIGNsa19yb3VuZF9y
+YXRlKCkgdXBkYXRlcyBjYWxjdWxhdGVkX3BoeV9wbGxfY2ZnCndoaWxlIHRoaXMgcmVzdW1lIGNh
+bGxiYWNrIGlzIHJlYWRpbmcgZnJvbSBpdCB2aWEgcGh5LT5jdXJfY2ZnLCBjb3VsZCBpdAp3cml0
+ZSBwYXJ0aWFsbHkgdXBkYXRlZCBvciBpbnZhbGlkIFBMTCB2YWx1ZXMgdG8gdGhlIGhhcmR3YXJl
+LCByZXN1bHRpbmcgaW4KY29ycnVwdGVkIG91dHB1dCBvciBhIGRpc3BsYXkgbG9ja3VwPwoKPiAr
+CQlpZiAocmV0KQo+ICsJCQljbGtfZGlzYWJsZShwaHktPmFwYmNsayk7Cj4gKwl9Cj4gIAo+ICAJ
+cmV0dXJuIHJldDsKCltTZXZlcml0eTogQ3JpdGljYWxdClRoaXMgaXMgYSBwcmUtZXhpc3Rpbmcg
+aXNzdWUsIGJ1dCBkb2VzIHRoZSBjbG9jayBzZXRfcmF0ZSBjYWxsYmFjayByaXNrIGEKc3luY2hy
+b25vdXMgZXh0ZXJuYWwgYWJvcnQgaWYgY2FsbGVkIHdoaWxlIHRoZSBkZXZpY2UgaXMgc3VzcGVu
+ZGVkPwoKVGhlIGNsa19zZXRfcmF0ZSBjYWxsYmFjayBkaXJlY3RseSBhY2Nlc3NlcyBoYXJkd2Fy
+ZSByZWdpc3RlcnMgd2l0aG91dApjYWxsaW5nIHBtX3J1bnRpbWVfcmVzdW1lX2FuZF9nZXQoKToK
+CmZzbF9zYW1zdW5nX2hkbWlfcGh5X2Nsa19zZXRfcmF0ZSgpCiAgICAuLi4KICAgIHJldHVybiBm
+c2xfc2Ftc3VuZ19oZG1pX3BoeV9jb25maWd1cmUocGh5LCB0YXJnZXRfc2V0dGluZ3MpOwoKZnNs
+X3NhbXN1bmdfaGRtaV9waHlfY29uZmlndXJlKCkKICAgIC4uLgogICAgd3JpdGViKFJFRzMzX0ZJ
+WF9EQSwgcGh5LT5yZWdzICsgUEhZX1JFRygzMykpOwoKQmVjYXVzZSB0aGUgY2xvY2sgZnJhbWV3
+b3JrIGRvZXMgbm90IGF1dG9tYXRpY2FsbHkgcmVzdW1lIHByb3ZpZGVyIGRldmljZXMKZHVyaW5n
+IGNsa19zZXRfcmF0ZSgpLCBpZiBhIGNvbnN1bWVyIGNhbGxzIGNsa19zZXRfcmF0ZSgpIHdoaWxl
+IHRoZSBQSFkgaXMKcnVudGltZSBzdXNwZW5kZWQsIHdvdWxkIHdyaXRpbmcgdG8gdGhlc2UgdW5j
+bG9ja2VkIEFQQiByZWdpc3RlcnMgY2F1c2UgYQpzeXN0ZW0gY3Jhc2g/CgpbU2V2ZXJpdHk6IE1l
+ZGl1bV0KVGhpcyBpcyBhIHByZS1leGlzdGluZyBpc3N1ZSwgYnV0IGRvZXMgZmFpbGluZyB0byBy
+ZXN1bWUgaW4gcmVtb3ZlKCkKY2F1c2UgYSBjbG9jayBlbmFibGUgY291bnQgdW5kZXJmbG93PwoK
+SWYgcG1fcnVudGltZV9yZXN1bWVfYW5kX2dldCgpIGZhaWxzIChmb3IgZXhhbXBsZSwgZHVlIHRv
+IGEgUExMIGxvY2sKdGltZW91dCksIHRoZSBkZXZpY2UgcmVtYWlucyBzdXNwZW5kZWQgd2l0aCBh
+biBlbmFibGUgY291bnQgb2YgMDoKCmZzbF9zYW1zdW5nX2hkbWlfcGh5X3JlbW92ZSgpCiAgICAu
+Li4KICAgIHJldCA9IHBtX3J1bnRpbWVfcmVzdW1lX2FuZF9nZXQoJnBkZXYtPmRldik7CiAgICBp
+ZiAocmV0IDwgMCkKICAgICAgICBkZXZfd2FybigmcGRldi0+ZGV2LCAiZmFpbGVkIHRvIHJlc3Vt
+ZSBvbiByZW1vdmU6ICVkXG4iLCByZXQpOwoKV2hlbiByZW1vdmUoKSByZXR1cm5zLCBkZXZyZXMg
+Y2xlYW51cCB1bmNvbmRpdGlvbmFsbHkgY2FsbHMKY2xrX2Rpc2FibGVfdW5wcmVwYXJlKCkuIFNp
+bmNlIHRoZSBkcml2ZXIgbWl4ZXMgZGV2bV9jbGtfZ2V0X2VuYWJsZWQoKQp3aXRoIG1hbnVhbCBj
+bGtfZW5hYmxlKCkgYW5kIGNsa19kaXNhYmxlKCkgUE0gcnVudGltZSB0b2dnbGluZywgd291bGRu
+J3QKdGhpcyBpbnZva2UgY2xrX2Rpc2FibGUoKSBvbiBhIGNsb2NrIHRoYXQgaXMgYWxyZWFkeSBh
+dCAwLCB0cmlnZ2VyaW5nIGEKd2FybmluZyBpbiB0aGUgY2xvY2sgY29yZT8KCi0tIApTYXNoaWtv
+IEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA3MjEwNjQ3
+NTIuMTUzMzM4LTEtcGVuZ2NhbkBreWxpbm9zLmNuP3BhcnQ9NAoKLS0gCmxpbnV4LXBoeSBtYWls
+aW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZy
+YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
