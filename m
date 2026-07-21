@@ -4,54 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB2C4C4451C
-	for <linux-phy@archiver.kernel.org>; Tue, 21 Jul 2026 09:49:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E24FDC4452B
+	for <linux-phy@archiver.kernel.org>; Tue, 21 Jul 2026 09:56:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Guq26463Kx1B/03SEQu5dRm1TjSmsZudv89PFPruDUg=; b=ctEbTs/q+PeJs2
-	4jXvRW9zuqjuO0xQ9iTlBpd9RM9sY6ZWxR7OK+0120fjxRWJrgpaGnV8p4XvyOjBE0MmOVXWyDlnT
-	GVRMOKeUa3EysVxmYhaQ9oic3NgOD1PKXAJl/7mZwVhMM2ORPwcpKP7d86I8T/xUyvLbJtwnJlBgD
-	pdbW4ejaQ2NgHLrQJRCfCeI2SGbbKRJy67D3kHOlAce1ZQS/NDZsi9jjrWqO3Hm0DsmgR5ENVjctp
-	OfeJ6QaEyREkDPqU38CuvRe7YDI/QohzdX1nCZRKvt8Oj8vOx0PwahI8kCpiDMxjd9bjQisKokRjL
-	5AILIVfwNXBLSE4VKNcg==;
+	List-Owner; bh=orKTg5wTHFybTfap7OuISyInm9k/DpjBjODWmJmfvo4=; b=rJj5OI1Oaaenj8
+	TeUcaXq/wzCGKOL46XJTEof0jfPNO5Vi4M5T31oUhY4KVpw0qIwaTZZO7re0kpfcpMypO1oRoyF8K
+	qlxVlfhyV4AI4SeuAFDck33AyoJxbTe8b9v2sl1x8SKLeEsPxS8HH7sweDMJ+QdQrlMySLaeK3300
+	ZZwsblFG9zyL8ehy+9DagWPfuenKNTMvwFDfWJo6I8+d07slcbhbJkn/C6rpJGpTcUxw4x9TT8rOG
+	W4cczw0vg86t8GYCEFCFxMO1HgjnX9BRAV6M28k0IgKEXYGdRPwr05OfyCw9yM16gcZWOpdBv70TT
+	fNUQ76VCvXhzd8tz5/+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wm76o-000000091Fn-2hay;
-	Tue, 21 Jul 2026 09:49:54 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wm7Df-000000092Qf-2alR;
+	Tue, 21 Jul 2026 09:56:59 +0000
+Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wm76n-000000091FE-1X89
+	id 1wm7Dd-000000092Py-1Fhd
 	for linux-phy@lists.infradead.org;
-	Tue, 21 Jul 2026 09:49:53 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id E98CD415CF;
-	Tue, 21 Jul 2026 09:49:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7F6441F00A3A;
-	Tue, 21 Jul 2026 09:49:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784627392;
-	bh=KFcy1DLAO/kJeoR/koU2y5c43w0/DPsFa5ZIqltDBmE=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=J2RM79Wo60evZapTtPv31e8/18ShuQR/6vq2QNrJFcL5BjHKRrZZxdQNzWkmarn4B
-	 qrH2+GNBIaQZYpH8paeCf1CioozE11iOuyC5xTOj2xv0jQGh/j5bbYikMf1wOpqtCS
-	 PZwIF6T/goydJgj4K/I17iX232+oNgqRwcNdrPHCWDIRm8C0ybq0kYwKNx3C3oMzi4
-	 gNTO9xkAF0+M2WYMpyFSnt5ONoYoDpp7siIu54mSK7FTIL+C0t2Fg5eb5GQCkYOiil
-	 1bvyo8G4jw79PJOXRj+MRVp3U4ltGyUgN780O6N94A1S53dx2mWPY3TtbVe7Hx3ee7
-	 zJnjlnC/sigAA==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v13 01/12] spmi: Fix potential use-after-free by
- grabbing of_node reference
-To: "AngeloGioacchino Del Regno" <angelogioacchino.delregno@collabora.com>
-Cc: linux-phy@lists.infradead.org, neil.armstrong@linaro.org, vkoul@kernel.org, olteanv@gmail.com
-In-Reply-To: <20260721093626.96264-2-angelogioacchino.delregno@collabora.com>
-References: <20260721093626.96264-1-angelogioacchino.delregno@collabora.com>
- <20260721093626.96264-2-angelogioacchino.delregno@collabora.com>
-Date: Tue, 21 Jul 2026 09:49:52 +0000
-Message-Id: <20260721094952.7F6441F00A3A@smtp.kernel.org>
+	Tue, 21 Jul 2026 09:56:58 +0000
+Received: by mail-lf1-x12e.google.com with SMTP id 2adb3069b0e04-5b2960ea2fbso278593e87.3
+        for <linux-phy@lists.infradead.org>; Tue, 21 Jul 2026 02:56:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1784627815; x=1785232615; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from:references
+         :cc:to:subject:user-agent:mime-version:date:message-id:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=PlDMh90wfY4dRTCIsx8e18xxobLQnLayOa3bHMPPBVg=;
+        b=u3AKYVYQMe1HnoV4sCI8d2vULyAU2Vbl0WMh89y59OZTxMWVhCr0sEKdoXquGBRahX
+         MRIQrLNbd+Btp4pueIZXlqmfN3/nvaqIKSWS46Nhxt0sm3e90vvZjTH6nt4gPMZRBOUd
+         Z29dRnx6+S5lb8iyc/E+Oe8IOklO4iZdNTNRRG2qnFlBINUkMlvi7ohwOW4/qevD3Bi1
+         X8EASeFksHCOhNI++d+/QC/ePEpAL37nIre2K4xb1eYc35HXJmi0tT3ipiPiYR+7gzGB
+         OtB9QtfFqT2cbYKOAYKECkobVYrd1P7FBd9EyyUT4PRGZKTzPXVxnnsGvF1EuKEv5b3c
+         Ywew==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1784627815; x=1785232615;
+        h=content-transfer-encoding:content-type:in-reply-to:from:references
+         :cc:to:subject:user-agent:mime-version:date:message-id:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=PlDMh90wfY4dRTCIsx8e18xxobLQnLayOa3bHMPPBVg=;
+        b=jm2NrpcO3K1k3kyU6tuXnT0f3e4Bjof6nDBfw2dmtWFOXF0qmu2J0TU6jga7pDLvsv
+         lGzM5EVejrHUy/rVTU1yLJqfNFVL8OEesc9V1Lniw2NftG7LOAEDTZ+5Ggu0fPXZvyRA
+         I0ZIzOcUC+eIRhckySvq/6WauMbQ54HG4uaJP5yB1SoGXxFQoe57DuR6HM3CSt8pHXDH
+         wcQAYldCRh8lgIcxRjopdYGT8d4J35GvHa4eEupXU061X0uTe/LQMOIVxUiEGgXf+h6X
+         uyTPl94Hmsxb5bpQ+TLFeLsI1NISoANC4pktVyBEog/TvEqKod7kd2fZJ7Hc7RGrkh22
+         IOuQ==
+X-Forwarded-Encrypted: i=1; AHgh+RrPXtkoM2X7AOp+OGV20GDhW6ndh2nrj/frgtN8jqkwUn8djuWdOhFPpU5OnvB4phLft8Nlm2S6z7Y=@lists.infradead.org
+X-Gm-Message-State: AOJu0Ywzgj7ogcRKhp4ZvB2lSjlUtI5Lp56eWBCBFNb6rxyR6a6OKMCn
+	DNd5gswue+0le5pCqg2SbvlR9s2JKLd8BnnXqeBIwixCI2xPSKtyIVRwJJtuU1pq1Ec=
+X-Gm-Gg: AR+sD13nxv3wKQpxYBNb3wJJa94MvFo6a2BTctKDXVTtG56APBs8n1uUm0bPc7ev+xG
+	OIIt46Q2XCX+9vKUEm/FqEuqeDAS5uYESCTxFI31c6q2vpHLBdJVr+ucQQd27mncDDx1JJKIEeK
+	Ds0PNaIvXFdJkPiNvdEgBMYkbJBrFVfm+qnTLKUkLaixXaFU1J1jNzYKke26q/XHDuL39t67GQy
+	eC/INS+rWYmUjjVrXIrZxVtt3J/ndwN8KwDcpk6sO6GONLTCIHLgXW3Zt8phe0182jreABXjCVE
+	Fh8ywQR5ZjpGFR6Yvv792Bh3p5sVd7l78tJ3YXcLqlIEbeLlrcYMPTTmJsntQnHRIJFuE8ilA46
+	zerOwMq+krS9ke+yBxXl0H6apyPhK0VdnLOJB9DpXl8VPLR1IE2hR2bzqmd0eAbqz7yYkXB3idl
+	MvSDrgGKIXCegWaeuUvIAfbCdi6w54v/ZsW8+Tu7H4z8mUPhv6k4yG7SIE
+X-Received: by 2002:a05:6512:3b98:b0:5ae:c5b2:9cbd with SMTP id 2adb3069b0e04-5b2a4a7e164mr328522e87.4.1784627814976;
+        Tue, 21 Jul 2026 02:56:54 -0700 (PDT)
+Received: from [192.168.1.100] (91-159-24-186.elisa-laajakaista.fi. [91.159.24.186])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5b291e18811sm2797516e87.60.2026.07.21.02.56.53
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 21 Jul 2026 02:56:54 -0700 (PDT)
+Message-ID: <345ca98e-09f6-4965-87bb-e64dac096498@linaro.org>
+Date: Tue, 21 Jul 2026 12:56:53 +0300
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v13 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY
+ schema
+To: Bryan O'Donoghue <bod@kernel.org>,
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>, Vinod Koul
+ <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+References: <20260720-x1e-csi2-phy-v13-0-160c31958863@linaro.org>
+ <20260720-x1e-csi2-phy-v13-1-160c31958863@linaro.org>
+ <LyWJAb2qKsAFTMHNJUce9VqoqbkFKUQanb6z8ziA63RYZ1P9jj1XpA83uGPvz9m4QnWvEjJFK8dGD_8EtioHVQ==@protonmail.internalid>
+ <0da6d314-bfa9-493a-bcc6-8c3b75751d0c@linaro.org>
+ <88ae6662-cb85-4e3a-bbb5-1b536348df34@kernel.org>
+From: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
+In-Reply-To: <88ae6662-cb85-4e3a-bbb5-1b536348df34@kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260721_025657_514599_B2920A23 
+X-CRM114-Status: GOOD (  14.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,55 +107,57 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
-IFtIaWdoXSBJbXByb3BlciByZXNvdXJjZSByZWxlYXNlIG9uIGVycm9yIHBhdGggaW4gYHNwbWlf
-Y29udHJvbGxlcl9hbGxvYygpYCBsZWFkcyB0byBJREEgY29ycnVwdGlvbi4KLS0KCi0tLSBQYXRj
-aCBbMV06IFtQQVRDSCB2MTMgMDEvMTJdIHNwbWk6IEZpeCBwb3RlbnRpYWwgdXNlLWFmdGVyLWZy
-ZWUgYnkgZ3JhYmJpbmcgb2Zfbm9kZSByZWZlcmVuY2UgLS0tCmNvbW1pdCA3YWUwNGM1M2VhMDcy
-MzhmOTk4M2JhNDVmYzcyYWM2MDcwOTMxY2M5CkF1dGhvcjogQW5nZWxvR2lvYWNjaGlubyBEZWwg
-UmVnbm8gPGFuZ2Vsb2dpb2FjY2hpbm8uZGVscmVnbm9AY29sbGFib3JhLmNvbT4KCnNwbWk6IEZp
-eCBwb3RlbnRpYWwgdXNlLWFmdGVyLWZyZWUgYnkgZ3JhYmJpbmcgb2Zfbm9kZSByZWZlcmVuY2UK
-CkluIG9mX3NwbWlfcmVnaXN0ZXJfZGV2aWNlcygpLCBhIG5vZGUgaXMgYXNzaWduZWQgdG8gYSBu
-ZXdseSBjcmVhdGVkIFNQTUkgY2hpbGQKZGV2aWNlIGR1cmluZyBpdGVyYXRpb24uIFRoZSByZWZj
-b3VudCBpcyBkcm9wcGVkIGF0IGV2ZXJ5IGl0ZXJhdGlvbiwgc28gYQp1c2UtYWZ0ZXItZnJlZSBt
-YXkgb2NjdXIgd2hlbiBhbiBvdmVybGF5IGlzIGR5bmFtaWNhbGx5IHVubG9hZGVkLiBUaGlzIGNv
-bW1pdApyZXNvbHZlcyB0aGUgaXNzdWUgYnkgaW5jcmVhc2luZyB0aGUgb2Zfbm9kZSByZWZjb3Vu
-dCB3aGVuIGFzc2lnbmluZyB0aGUgbm9kZQphbmQgcmVsZWFzaW5nIGl0IGluIHNwbWlfZGV2X3Jl
-bGVhc2UoKS4KCkNsb3NlczogaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYwNjA4
-MTAwOTQ5LjM2MzA5LTEtYW5nZWxvZ2lvYWNjaGluby5kZWxyZWdub0Bjb2xsYWJvcmEuY29tP3Bh
-cnQ9MgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9zcG1pL3NwbWkuYyBiL2RyaXZlcnMvc3BtaS9z
-cG1pLmMKPiBpbmRleCA1N2I3YzBjYjQyNDA3Li5mNmQyZjRiZGRmY2QyIDEwMDY0NAo+IC0tLSBh
-L2RyaXZlcnMvc3BtaS9zcG1pLmMKPiArKysgYi9kcml2ZXJzL3NwbWkvc3BtaS5jCj4gQEAgLTI0
-LDYgKzI0LDcgQEAgc3RhdGljIHZvaWQgc3BtaV9kZXZfcmVsZWFzZShzdHJ1Y3QgZGV2aWNlICpk
-ZXYpCj4gIHsKPiAgCXN0cnVjdCBzcG1pX2RldmljZSAqc2RldiA9IHRvX3NwbWlfZGV2aWNlKGRl
-dik7Cj4gIAo+ICsJb2Zfbm9kZV9wdXQoZGV2LT5vZl9ub2RlKTsKPiAgCWtmcmVlKHNkZXYpOwo+
-ICB9CgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgaXNuJ3QgYSBidWcgaW50cm9kdWNlZCBieSB0aGlz
-IHBhdGNoLCBidXQgd2hpbGUgcmV2aWV3aW5nIHRoZSByZXNvdXJjZQpyZWxlYXNlIHBhdGhzIGlu
-IHRoaXMgZmlsZSwgSSBub3RpY2VkIGEgcG90ZW50aWFsIElEQSBjb3JydXB0aW9uIGluCnNwbWlf
-Y29udHJvbGxlcl9hbGxvYygpIGR1cmluZyB0aGUgZXJyb3IgcGF0aC4KCklmIGlkYV9hbGxvYygp
-IGZhaWxzIHVuZGVyIG1lbW9yeSBwcmVzc3VyZToKCmRyaXZlcnMvc3BtaS9zcG1pLmM6c3BtaV9j
-b250cm9sbGVyX2FsbG9jKCkgewogICAgLi4uCglpZCA9IGlkYV9hbGxvYygmY3RybF9pZGEsIEdG
-UF9LRVJORUwpOwoJaWYgKGlkIDwgMCkgewoJCWRldl9lcnIocGFyZW50LAoJCQkidW5hYmxlIHRv
-IGFsbG9jYXRlIFNQTUkgY29udHJvbGxlciBpZGVudGlmaWVyLlxuIik7CgkJc3BtaV9jb250cm9s
-bGVyX3B1dChjdHJsKTsKCQlyZXR1cm4gRVJSX1BUUihpZCk7Cgl9CiAgICAuLi4KfQoKSXQgY2Fs
-bHMgc3BtaV9jb250cm9sbGVyX3B1dChjdHJsKSwgd2hpY2ggZXZlbnR1YWxseSBpbnZva2VzIHNw
-bWlfY3RybF9yZWxlYXNlKCk6Cgpkcml2ZXJzL3NwbWkvc3BtaS5jOnNwbWlfY3RybF9yZWxlYXNl
-KCkgewogICAgLi4uCglpZGFfZnJlZSgmY3RybF9pZGEsIGN0cmwtPm5yKTsKCWtmcmVlKGN0cmwp
-Owp9CgpTaW5jZSB0aGUgY29udHJvbGxlciBtZW1vcnkgaXMgemVyby1pbml0aWFsaXplZCBhbmQg
-Y3RybC0+bnIgaGFzbid0CmJlZW4gc2V0IHlldCB3aGVuIGlkYV9hbGxvYygpIGZhaWxzLCBjdHJs
-LT5uciBpcyBpbXBsaWNpdGx5IDAuCgpEb2VzIHRoaXMgdW5jb25kaXRpb25hbGx5IGZyZWUgSUQg
-MCwgaW5hZHZlcnRlbnRseSByZW1vdmluZyB0aGUgaWRlbnRpZmllcgpmb3IgYW5vdGhlciBhY3Rp
-dmUgU1BNSSBjb250cm9sbGVyIGFuZCBsZWFkaW5nIHRvIHN5c2ZzIG5hbWluZyBjb2xsaXNpb25z
-CihzcG1pLTApIG9uIHN1YnNlcXVlbnQgYWxsb2NhdGlvbnM/CgotLSAKU2FzaGlrbyBBSSByZXZp
-ZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYwNzIxMDkzNjI2Ljk2MjY0
-LTEtYW5nZWxvZ2lvYWNjaGluby5kZWxyZWdub0Bjb2xsYWJvcmEuY29tP3BhcnQ9MQoKLS0gCmxp
-bnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 7/21/26 12:39, Bryan O'Donoghue wrote:
+> On 21/07/2026 09:17, Vladimir Zapolskiy wrote:
+>>> +  "#phy-cells":
+>>> +    const: 1
+>>> +    description:
+>>> +      The single cell specifies the PHY operating mode.
+>> This has been reported before, #phy-cells shall be 0, the operation
+>> mode is selected by bus-type of endpoints as it is described in
+>> video-interfaces.yaml
+>>
+>> Two competing values are redundant and it opens a door to a wrong
+>> hardware description, the technical discussion has not been started yet.
+> 
+> So as I said before, I'm following Rob Herring's input on this and
+> Krzysztof has given RB for this binding. At this stage, I don't see
+> scope to change it.
+> 
+> Adding endpoints was already a compromise to address your feedback,
+> which I hoped would bring you on board with the design.
+
+That's my comment dated March 27, 2026, and it says moving phy type
+from phy cell to the endpoint property excludes the need to set any
+phy cells:
+
+https://lore.kernel.org/linux-arm-msm/e37ce438-12c7-462d-b2bc-1351be62b806@linaro.org/
+
+The technical comment is left unresponded so far since then.
+
+Since there is no expected phy cells to get on consumer's side, and
+since there is another link between CSIPHY and CSID described in
+video-interfaces.yaml, any kind of dependency of this IP on phy can
+be just removed, which serves the purpose of hardware description
+simplification.
+
+> 
+> There are several SoC bindings as well as new CPHY features which are
+> gated on these changes.
+> 
+> Vinod, Kishon I'd request to merge the changes as-is.
+> 
+
+-- 
+Best wishes,
+Vladimir
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
