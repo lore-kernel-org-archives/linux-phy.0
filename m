@@ -4,61 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 243F5C44529
-	for <linux-phy@archiver.kernel.org>; Tue, 21 Jul 2026 06:42:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE40BC44529
+	for <linux-phy@archiver.kernel.org>; Tue, 21 Jul 2026 06:48:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DW93s4Rwiuge6Y7wC12Oz0y6dICjqZoY6r1E3zHYTps=; b=xt8Fnntbnh5c7g
-	kKljT2HneR+EdZVy+YJjarcKQGQlfv5adQZQXVBbYcJm6L9ZK2GLy84l9Gtpy0NtfFImW4TVoBBD5
-	YMecpqHRi+qdxnQe38rHs3C1zc4GSfCJf9FgnIyUwalmSjRHIL5U6wrVsJ7JfW4vTKTYyWutXknOJ
-	Wnrc7cKnDKEQnKOS1F/DOQd7M0EVJrh60aV6VfFSy/UkYvHUSN/6je5jSOuPzwZHywwrqBkwxUiGp
-	lGNvNhfWiOW1bRrG1pMCS//SVXWALd3AAEgn8skXGOz4Ujvz4xSHuOej2tD5SFLzEOSEgSiIT5p2V
-	LhbgFlhLU/Xn9RWBayVg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zGCaU+DLR0fVdEMCZp4Pm4IcRbvCPQrHc0HLRjIgel4=; b=c+LwPM+XUufpU2
+	n/6zs+0GndFw86FvHTimhciPAIcb6qBATu00zeeEyX8byAv+980DzSAFj5odSxUoAybAS6SHKTbsC
+	o7Sdny+aCc6uXkjYbdJh9Ql/mJSubF/e86B1csXOSiPCyCe7+9RBX8HUu36pyUIi8LIewpVKA4LLf
+	9w9KqLtCXCqoRK0CJnrM6wn1jFuDyRy0TS57+v8xoNfRw+JV/bhzyqvME6JrZBmsddPcWYWS9N08e
+	iAsvR70CtFIMfCBKuGGBVd5+FZW6DkVwUWD90MKat9xajYTQobpunatEUXKA9IoLfKxz9AaSLm8/2
+	rNCbRXQSmQyQlOybel0g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wm4BS-00000008YeJ-3V1G;
-	Tue, 21 Jul 2026 06:42:30 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wm4H1-00000008Z8B-1Vwp;
+	Tue, 21 Jul 2026 06:48:15 +0000
+Received: from mailgw.kylinos.cn ([124.126.103.232])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wm4BR-00000008YdW-0gAD
+	id 1wm4Gx-00000008Z7O-364K
 	for linux-phy@lists.infradead.org;
-	Tue, 21 Jul 2026 06:42:29 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 8A4CE40A53;
-	Tue, 21 Jul 2026 06:42:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7BC5A1F000E9;
-	Tue, 21 Jul 2026 06:42:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784616148;
-	bh=8CbiBV5aOWrj46L9ZurcKtFkuOur0vzKkTHkO/3S6oQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=Wy3BsUFREu+NHQ2PkiX1/f8b+FzHxsP5EUQnPQgBD9pVxDq+aXc0f4mwliH8oI3Ec
-	 kmnPjn3BB7bAZ3p5HdCk66gU6P0BE1UbD2wG9nMLD7YvwKXx8i/L17E7I1vjVQKIoG
-	 +rgYFNvgvSDsjVJehQQDiPPAbUvjEi30wLmWJsQLNfNkuehTQVRHDHtabvfXwVB3al
-	 6Q3Pl1G2HoWjCojsT2g8xoMdh9aN0q+pBi62ByDKbYiOAYh7l0g+JmNRyyILzb/aED
-	 4qJH1XPQSGXc0XQfI/JxnGRh+E9qHw2/IgU0r/TeW8CLbIWNBCyzsb9DEgTCf5T6FV
-	 MfU+fJSBnH4cA==
-Date: Tue, 21 Jul 2026 08:42:24 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Wesley Cheng <quic_wcheng@quicinc.com>, Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v6 2/4] dt-bindings: phy: qcs615-qmp-usb3dp: Add support
- for Shikra SoC
-Message-ID: <20260721-sloppy-subtle-perch-dd921b@quoll>
-References: <20260712-usb-shikra-phy-v6-v6-0-1b3e51bf1541@oss.qualcomm.com>
- <20260712-usb-shikra-phy-v6-v6-2-1b3e51bf1541@oss.qualcomm.com>
+	Tue, 21 Jul 2026 06:48:14 +0000
+X-UUID: 1bda329484d011f1aa26b74ffac11d73-20260721
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.3.12,REQID:79241616-d8f3-431a-9d1d-e96ccbbd3f12,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:e7bac3a,CLOUDID:d34577e4aad10c4d3fd9ccf493db8a4e,BulkI
+	D:nil,BulkQuantity:0,Recheck:0,SF:102|865|898,TC:nil,Content:0|15|50,EDM:-
+	3,IP:nil,URL:99|1,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:
+	0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 2,SSN|SDN
+X-CID-BAS: 2,SSN|SDN,0,_
+X-CID-FACTOR: TF_CID_SPAM_ULS,TF_CID_SPAM_SNR
+X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
+X-UUID: 1bda329484d011f1aa26b74ffac11d73-20260721
+X-User: pengcan@kylinos.cn
+Received: from lenovo [(10.44.16.150)] by mailgw.kylinos.cn
+	(envelope-from <pengcan@kylinos.cn>)
+	(Generic MTA with TLSv1.3 TLS_AES_256_GCM_SHA384 256/256)
+	with ESMTP id 62137364; Tue, 21 Jul 2026 14:47:58 +0800
+From: Can Peng <pengcan@kylinos.cn>
+To: vkoul@kernel.org,
+	neil.armstrong@linaro.org,
+	bmasney@redhat.com
+Cc: linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Can Peng <pengcan@kylinos.cn>
+Subject: [PATCH v2 0/4] phy: freescale: fsl-samsung-hdmi: Fix runtime PM issues
+Date: Tue, 21 Jul 2026 14:47:48 +0800
+Message-ID: <20260721064752.153338-1-pengcan@kylinos.cn>
+X-Mailer: git-send-email 2.53.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260712-usb-shikra-phy-v6-v6-2-1b3e51bf1541@oss.qualcomm.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260720_234812_116553_204AD776 
+X-CRM114-Status: UNSURE (   9.36  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,24 +78,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, Jul 12, 2026 at 08:58:35PM +0530, Krishna Kurapati wrote:
-> Declare the USB-C QMP PHY present on the Qualcomm Shikra SoC. Shikra uses
-> 3 resets to be programmed before initialising the phy. As per the hardware
-> documentation, the third reset is PHY_PRIM_SP0_BCR, hence naming it "phy".
-> 
-> Also, add remote endpoints and orientation switch support for getting
-> Type-C orientation information.
-> 
-> Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-> ---
->  .../bindings/phy/qcom,qcs615-qmp-usb3dp-phy.yaml   | 49 +++++++++++++++++++++-
->  1 file changed, 48 insertions(+), 1 deletion(-)
+Hi,
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+v1 fixed runtime PM cleanup when PHY clock registration fails. During
+review, additional runtime PM and clock lifetime issues were pointed out
+in the same driver:
 
-Best regards,
-Krzysztof
+- the APB clock can be disabled twice on remove if the device is runtime
+  suspended;
+- the PHY clock .set_rate() path can access registers after the provider
+  device has been runtime suspended;
+- runtime resume can leak the APB clock enable count if PHY
+  reconfiguration fails.
 
+This v2 keeps the original cleanup fix and adds targeted fixes for the
+other cases.
+
+The PHY clock is registered after runtime PM is enabled, so the common
+clock framework takes a runtime PM reference on the provider device
+before invoking the rate callbacks. Patch 3 keeps the APB clock prepared
+for the lifetime of the device and only gates it in runtime PM callbacks,
+which makes the provider resume path safe while rate callbacks access
+PHY registers.
+
+Changes in v2:
+- Expand the original single patch into a four-patch series.
+- Add fixes for the remove-time APB clock underflow, CCF .set_rate()
+  runtime PM path and runtime-resume error unwind reported during
+  review.
+- Link to v1: 
+  https://lore.kernel.org/all/20260718071816.437047-1-pengcan@kylinos.cn/
+
+Can Peng (4):
+  phy: freescale: fsl-samsung-hdmi: Fix runtime PM cleanup
+  phy: freescale: fsl-samsung-hdmi: Resume device on remove
+  phy: freescale: fsl-samsung-hdmi: Only gate APB clock in runtime PM
+  phy: freescale: fsl-samsung-hdmi: Disable APB clock on resume failure
+
+ drivers/phy/freescale/phy-fsl-samsung-hdmi.c | 32 +++++++++++++++-----
+ 1 file changed, 25 insertions(+), 7 deletions(-)
+
+-- 
+2.53.0
 
 -- 
 linux-phy mailing list
