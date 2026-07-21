@@ -4,46 +4,46 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F1D3C44529
-	for <linux-phy@archiver.kernel.org>; Tue, 21 Jul 2026 09:36:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56D5CC4452B
+	for <linux-phy@archiver.kernel.org>; Tue, 21 Jul 2026 09:36:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=eYCZrA8aoDnU1X/OVrLRdLh9Ii2Wl8rW07Ot3JSyEt0=; b=JSdzBAdfKIjobz
-	V3kSR6vQkjwf3uehBm4N20djx3I37wCa9UeH/SgnCWKrOVT6gzdhNTHyiIroQm51/tr9hZw488Hxe
-	2ALLifSXPO6v7+JBPvuuvWPTxNNdrtsdeRHe5HtlqKScYD8kfIALejl/YRxvr4tDewGptLh7CwvNF
-	HMFmP64fYflLYzA2+RyvTsHL0+4UO1jhFi5c75PDuJBB+S5cs7VdFf6mmJMTIq6EXXhhRaPU9ZdkP
-	A/52n+PCwfC+PMII4s6OEC2QE0R865upSranRDO8D+byQgSy6aRrOs+7rfNo9C7xlBXggHx6yE7GF
-	XjouMhq1lg4DgGSw4Utg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AwdqsTtGP1QULHs74kSOsRQXANv1E/y7hSTO7a4/Kmk=; b=N3MqsSl0Q3Bu6Y
+	7C4ogKiNBRFv5H/CKEE2vWsb9Fxc1yGLmoB0KMciJVRKKYm62vaimdUKc/B8RFLBBo4YAciHw907R
+	49ks87Z1HdvwshQ9nk0vnu0m5HCnIrz/dz3JxqQpfWMqgr2wjX2iiHW7w/upLSiadCbRx+Qb/oqwP
+	roT9Mqn8SrI0B2Yx8UHSUd08Gx/J5KOHFk/Z1awujUKxQdk8g6e60FNGY9i8IDN0STSb0yOQwrQPo
+	qXhNwKibDlLQe2t3Wek7gmrkOHrTrqOYqoymv4WST4sFxptFnTtYRu/zU5GhN0uCpgI8+DEbDgH2c
+	zZIjz6uO57pl6hvtR0UA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wm6tv-000000090Dp-3NEg;
-	Tue, 21 Jul 2026 09:36:35 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1wm6tx-000000090F3-3uhc;
+	Tue, 21 Jul 2026 09:36:37 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wm6tt-000000090Cu-3bgG
+	id 1wm6tu-000000090Cz-39EJ
 	for linux-phy@lists.infradead.org;
-	Tue, 21 Jul 2026 09:36:35 +0000
+	Tue, 21 Jul 2026 09:36:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1784626591;
-	bh=IBGKklFpePh/CmwfYx9z8c46jRRW9ywuEQTmliN5Jcg=;
-	h=From:To:Cc:Subject:Date:From;
-	b=RN3nS3YVCbG0beUc1lVkTetAVP/fGZqUvvRxZc7TL920cgvb2uVCbPX0rjUhl3ZXt
-	 I4rYIH0oxtdCcIm0HsVYenV6kBl+2g4RjHfKK9VdX91Ne5aOvokNEhkKfAQGFILmhp
-	 8/ernguAGMbVbNfNWV08vTPe9jxrkw1tmu2s53XMPeVbNhHP5rBWwHAKTsp5TY0+6o
-	 yn3yUFkHkZQnlwDczBFBoYqy7V9JJo8x2Besgp9EVZmwolL+hC7dbpNQkhU4RI7MjL
-	 tMMeh+44v7PPpkZ57AOWa/bCibbWD0JUC/tS6z4JqdM3LE3cng/y97Ijxs1CO58YD/
-	 qkkjd37aZznJQ==
+	s=mail; t=1784626592;
+	bh=UjfNXgF3s7L3FTzKJThRG5oNM8jZglNFcKi7mxpewEs=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=JwwI4juou5roxp/z2ALzzKtSkD9s5yP505LwJBEY4To2VYfc+BqIh5TJ8HGY85MEw
+	 sSY6H6GTNiL4adCOL9V6XD6yXON/DrcVBLkYovYQMaRH0+aV70mXmYE6cDm40ZcEBm
+	 9+MTXGQ/XGgmVZ7UVI2NgF/cIICgml4BTI7AmZP/XBTNmdPWWxaSsD7Y91q7mcrKh+
+	 dmr5TIzW4Wte/S2zFahF/f7407pYNHGxAsTxBEiZB57tvFd2zjaC0zrsaTdI8qceBX
+	 MrSIuH3fFOZFTWYqoVst0Cju4wRDTxN3LgrzIPkYj2SWtnywrKty8oiVUUM/NF0Vnf
+	 tQL6OCh8FQl+w==
 Received: from IcarusMOD.eternityproject.eu (unknown [100.64.1.21])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 4EEB317E0564;
-	Tue, 21 Jul 2026 11:36:30 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 7F41817E071A;
+	Tue, 21 Jul 2026 11:36:31 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: jic23@kernel.org,
 	sboyd@kernel.org
@@ -73,15 +73,19 @@ Cc: dlechner@baylibre.com,
 	linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-pm@vger.kernel.org,
-	kernel@collabora.com
-Subject: [PATCH v13 00/12] SPMI: Implement sub-devices and migrate drivers
-Date: Tue, 21 Jul 2026 11:36:14 +0200
-Message-ID: <20260721093626.96264-1-angelogioacchino.delregno@collabora.com>
+	kernel@collabora.com,
+	stable@vger.kernel.org,
+	Sashiko Bot <sashiko-bot@kernel.org>
+Subject: [PATCH v13 01/12] spmi: Fix potential use-after-free by grabbing of_node reference
+Date: Tue, 21 Jul 2026 11:36:15 +0200
+Message-ID: <20260721093626.96264-2-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.55.0
+In-Reply-To: <20260721093626.96264-1-angelogioacchino.delregno@collabora.com>
+References: <20260721093626.96264-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260721_023634_060222_7FA2E622 
-X-CRM114-Status: GOOD (  24.63  )
+X-CRM114-CacheID: sfid-20260721_023634_940208_1B4F40B2 
+X-CRM114-Status: GOOD (  10.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,191 +102,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Changes in v13:
- - Removed `if (IS_ENABLED(CONFIG_OF))` check in spmi_dev_release (Andy)
- - Rebased (though still applies cleanly) over next-20260720
+As noticed by Sashiko during a review run of an unrelated patch,
+in of_spmi_register_devices(), for_each_available_child_of_node()
+is used to loop through children, and to also assign a node to a
+newly created SPMI child device.
 
-Changes in v12:
- - Removed call to of_node_put() for failure as it's being already
-   done in spmi_dev_release(), as pointed out by Sashiko
- - Fixed usage of the new helper in all users (it's too hot today, sorry)
+Problem is that the refcount is dropped at every iteration so, in
+the specific case of DT overlays, a use-after-free may occur when
+an overlay is dynamically unloaded!
 
-Changes in v11:
- - Use kzalloc_obj() in spmi_subdevice_alloc_and_add()
- - Introduced new helper to get a parent SPMI device which verifies
-   both if the device has parent and if that parent is effectively
-   a SPMI device type
- - Removed dev->parent NULL checks in all migration code, as that
-   is now being checked in the new helper instead, reducing the
-   amount of required lines of code to instantiate a SPMI subdevice
- - Moved of_node reference dropping to dev release callback (Sashiko)
- - Rebased over next-20260706
+To resolve this, increase the of_node refcount when assigning (in
+function of_spmi_register_devices) and release the reference in
+spmi_device_remove().
 
-Changes in v10:
- - Add use-after-free fix rebased to before this series, as the v1 of
-   that did not apply cleanly on a tree without this series applied
- - Replace unsafe to_spmi_device() with spmi_find_device_by_of_node() (Sashiko)
- - Fix -Wformat warning in dev_set_name call (Sashiko)
+Fixes: bc32bbd04011 ("spmi: Set fwnode for spmi devices")
+Cc: stable@vger.kernel.org
+Reported-by: Sashiko Bot <sashiko-bot@kernel.org>
+Closes: https://sashiko.dev/#/patchset/20260608100949.36309-1-angelogioacchino.delregno@collabora.com?part=2
+Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+---
+ drivers/spmi/spmi.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-Changes in v9:
- - Added check for dev->parent where missing (Sashiko)
- - Changed %d to %u in dev_set_name() call as arg is unsigned (Sashiko)
- - Propagating error code from devm_regmap_init_spmi_ext() instead of
-   returning -ENODEV in phy-qcom-eusb2-repeater.c (Sashiko)
- - Rebased over next-20260605 (no conflicts anyway)
-
-Changes in v8:
- - Renamed *res to *sub_sdev in devm_spmi_subdevice_remove() (Andy)
- - Changed kerneldoc wording to "error pointer" for function
-   spmi_subdevice_alloc_and_add() (Andy)
- - Shuffled around some assignments in spmi_subdevice_alloc_and_add() (Andy)
- - Used device_property_read_u32() instead of of_property_read_u32()
-   in all of the migrated drivers (Andy)
- - Changed .max_register field in all of the migrated drivers from
-   0x100 to 0xff (Andy)
- - Kept `sta1` declaration in reversed xmas tree order in function
-   iadc_poll_wait_eoc() of qcom-spmi-iadc.c (Andy)
-
-Changes in v7:
- - Added commit to cleanup redundant dev_name() in the pre-existing
-   spmi_device_add() function
- - Added commit removing unneeded goto and improving spmi_device_add()
-   readability by returning error in error path, and explicitly zero
-   for success at the end.
-
-Changes in v6:
- - Added commit to convert spmi.c to %pe error format and used
-   %pe error format in spmi_subdevice code as wanted by Uwe Kleine-Konig
-
-Changes in v5:
- - Changed dev_err to dev_err_probe in qcom-spmi-sdam (and done
-   that even though I disagree - because I wanted this series to
-   *exclusively* introduce the minimum required changes to
-   migrate to the new API, but okay, whatever....!);
- - Added missing REGMAP dependency in Kconfig for qcom-spmi-sdam,
-   phy-qcom-eusb2-repeater and qcom-coincell to resolve build
-   issues when the already allowed COMPILE_TEST is enabled
-   as pointed out by the test robot's randconfig builds.
-
-Changes in v4:
- - Added selection of REGMAP_SPMI in Kconfig for qcom-coincell and
-   for phy-qcom-eusb2-repeater to resolve undefined references when
-   compiled with some randconfig
-
-Changes in v3:
- - Fixed importing "SPMI" namespace in spmi-devres.c
- - Removed all instances of defensive programming, as pointed out by
-   jic23 and Sebastian
- - Removed explicit casting as pointed out by jic23
- - Moved ida_free call to spmi_subdev_release() and simplified error
-   handling in spmi_subdevice_alloc_and_add() as pointed out by jic23
-
-Changes in v2:
- - Fixed missing `sparent` initialization in phy-qcom-eusb2-repeater
- - Changed val_bits to 8 in all Qualcomm drivers to ensure
-   compatibility as suggested by Casey
- - Added struct device pointer in all conversion commits as suggested
-   by Andy
- - Exported newly introduced functions with a new "SPMI" namespace
-   and imported the same in all converted drivers as suggested by Andy
- - Added missing error checking for dev_set_name() call in spmi.c
-   as suggested by Andy
- - Added comma to last entry of regmap_config as suggested by Andy
-
-While adding support for newer MediaTek platforms, featuring complex
-SPMI PMICs, I've seen that those SPMI-connected chips are internally
-divided in various IP blocks, reachable in specific contiguous address
-ranges... more or less like a MMIO, but over a slow SPMI bus instead.
-
-I recalled that Qualcomm had something similar... and upon checking a
-couple of devicetrees, yeah - indeed it's the same over there.
-
-What I've seen then is a common pattern of reading the "reg" property
-from devicetree in a struct member and then either
- A. Wrapping regmap_{read/write/etc}() calls in a function that adds
-    the register base with "base + ..register", like it's done with
-    writel()/readl() calls; or
- B. Doing the same as A. but without wrapper functions.
-
-Even though that works just fine, in my opinion it's wrong.
-
-The regmap API is way more complex than MMIO-only readl()/writel()
-functions for multiple reasons (including supporting multiple busses
-like SPMI, of course) - but everyone seemed to forget that regmap
-can manage register base offsets transparently and automatically in
-its API functions by simply adding a `reg_base` to the regmap_config
-structure, which is used for initializing a `struct regmap`.
-
-So, here we go: this series implements the software concept of an SPMI
-Sub-Device (which, well, also reflects how Qualcomm and MediaTek's
-actual hardware is laid out anyway).
-
-               SPMI Controller
-                     |                ______
-                     |               /       Sub-Device 1
-                     V              /
-              SPMI Device (PMIC) ----------- Sub-Device 2
-                                    \
-                                     \______ Sub-Device 3
-
-As per this implementation, an SPMI Sub-Device can be allocated/created
-and added in any driver that implements a... well.. subdevice (!) with
-an SPMI "main" device as its parent: this allows to create and finally
-to correctly configure a regmap that is specific to the sub-device,
-operating on its specific address range and reading, and writing, to
-its registers with the regmap API taking care of adding the base address
-of a sub-device's registers as per regmap API design.
-
-All of the SPMI Sub-Devices are therefore added as children of the SPMI
-Device (usually a PMIC), as communication depends on the PMIC's SPMI bus
-to be available (and the PMIC to be up and running, of course).
-
-Summarizing the dependency chain (which is obvious to whoever knows what
-is going on with Qualcomm and/or MediaTek SPMI PMICs):
-    "SPMI Sub-Device x...N" are children "SPMI Device"
-    "SPMI Device" is a child of "SPMI Controller"
-
-(that was just another way to say the same thing as the graph above anyway).
-
-Along with the new SPMI Sub-Device registration functions, I have also
-performed a conversion of some Qualcomm SPMI drivers and only where the
-actual conversion was trivial.
-
-I haven't included any conversion of more complex Qualcomm SPMI drivers
-because I don't have the required bandwidth to do so (and besides, I think,
-but haven't exactly verified, that some of those require SoCs that I don't
-have for testing anyway).
-
-
-AngeloGioacchino Del Regno (12):
-  spmi: Fix potential use-after-free by grabbing of_node reference
-  spmi: Remove redundant dev_name() print in spmi_device_add()
-  spmi: Print error status with %pe format
-  spmi: Remove unneeded goto in spmi_device_add() error path
-  spmi: Implement spmi_subdevice_alloc_and_add() and devm variant
-  spmi: Add helper to get a parent SPMI device
-  nvmem: qcom-spmi-sdam: Migrate to devm_spmi_subdevice_alloc_and_add()
-  power: reset: qcom-pon: Migrate to devm_spmi_subdevice_alloc_and_add()
-  phy: qualcomm: eusb2-repeater: Migrate to
-    devm_spmi_subdevice_alloc_and_add()
-  misc: qcom-coincell: Migrate to devm_spmi_subdevice_alloc_and_add()
-  iio: adc: qcom-spmi-iadc: Migrate to
-    devm_spmi_subdevice_alloc_and_add()
-  iio: adc: qcom-spmi-iadc: Remove regmap R/W wrapper functions
-
- drivers/iio/adc/qcom-spmi-iadc.c              | 116 ++++++++---------
- drivers/misc/Kconfig                          |   2 +
- drivers/misc/qcom-coincell.c                  |  45 +++++--
- drivers/nvmem/Kconfig                         |   1 +
- drivers/nvmem/qcom-spmi-sdam.c                |  41 ++++--
- drivers/phy/qualcomm/Kconfig                  |   2 +
- .../phy/qualcomm/phy-qcom-eusb2-repeater.c    |  52 +++++---
- drivers/power/reset/qcom-pon.c                |  31 +++--
- drivers/spmi/spmi-devres.c                    |  24 ++++
- drivers/spmi/spmi.c                           | 121 ++++++++++++++++--
- include/linux/spmi.h                          |  17 +++
- 11 files changed, 325 insertions(+), 127 deletions(-)
-
+diff --git a/drivers/spmi/spmi.c b/drivers/spmi/spmi.c
+index 57b7c0cb4240..f6d2f4bddfcd 100644
+--- a/drivers/spmi/spmi.c
++++ b/drivers/spmi/spmi.c
+@@ -24,6 +24,7 @@ static void spmi_dev_release(struct device *dev)
+ {
+ 	struct spmi_device *sdev = to_spmi_device(dev);
+ 
++	of_node_put(dev->of_node);
+ 	kfree(sdev);
+ }
+ 
+@@ -517,7 +518,7 @@ static void of_spmi_register_devices(struct spmi_controller *ctrl)
+ 		if (!sdev)
+ 			continue;
+ 
+-		device_set_node(&sdev->dev, of_fwnode_handle(node));
++		device_set_node(&sdev->dev, of_fwnode_handle(of_node_get(node)));
+ 		sdev->usid = (u8)reg[0];
+ 
+ 		err = spmi_device_add(sdev);
 -- 
 2.55.0
 
