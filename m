@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E184AC4452F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EDDC1C44532
 	for <linux-phy@archiver.kernel.org>; Tue, 21 Jul 2026 13:05:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,90 +12,90 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yx1afZsmnUPYDffI6HUnoOHkaZvLoGiyB6TiFO2deJU=; b=da8P7kiovUu6L+
-	KTzf8mfh5bcdDq+uh7oAmYQSAtW9tlK6GSHMCPiDCI9tthv40gxB9+bL9aPVNraAvP/kdvkVpKbj4
-	wL9IYKCekxq+pU9H8xtcZ6/IH2jsktzk1wZF6G8cI6VRyW/cF46xotKwvY4nIXuyLMYLJr9OGTdeJ
-	5IxZxgWh4S+Y2vqFfEjt5H4ETIWpmSWlJ1ARP5OahDWBR4MfKBq2ltKwM7EHvawVtSClbgR0RMfmF
-	fz7UjE+tavorpgCiiLmTjG6IGrFVi/cbjSmP5kyyec70/0G83WKGw8xH+8IaKKxcn02omsXPO1UQi
-	HqBhGseWhB6DRe3Ubv9A==;
+	List-Owner; bh=5vmIr2t01YJVxlMz0iGgWlZ1ZeUWE4wfEvl3+dq1ysc=; b=eXgy6FJFYkBfK7
+	Zvhb0G7I6tmJNEbDsNofXLeiTBiGKsHTj21L23kmRc04DnFj1OqC6/gAlvZlBcX/pTar7JVw2cyeK
+	lIeBZ0SaSb5q7R4lWzwWxZF0R1lKhuoRY00m5R5sAfw1STdHuKLqtXzc6ajnJBx3xfqhpIQSKuXi1
+	RdD5bkvWkz6Dl0n31pEvY3wi06HfQknMI6WpxKa4U73D6BooY0kRWIukjtEUs9irGumItOwE54bFx
+	KaoAROzlG8W11A7xuZtAMoPMAm1MteMRrVngU4VUoL0NtKZwgxGP+BcJeXIaYZ0/3vgbaB9YPSzUI
+	xfWHHR8GEkFVgTkSM6cQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmAAW-00000009U4J-2bE4;
+	id 1wmAAW-00000009U4P-2o2O;
 	Tue, 21 Jul 2026 13:05:56 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmAAT-00000009U2w-07mB
+	id 1wmAAT-00000009U3J-3tYq
 	for linux-phy@lists.infradead.org;
-	Tue, 21 Jul 2026 13:05:54 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66LD5qJH1853793
-	for <linux-phy@lists.infradead.org>; Tue, 21 Jul 2026 13:05:52 GMT
+	Tue, 21 Jul 2026 13:05:55 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66LAQtbZ2502675
+	for <linux-phy@lists.infradead.org>; Tue, 21 Jul 2026 13:05:53 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	0C9IgCI2fyKGPwADUG81tMOL7Xd+RLAneLurfpmZbVM=; b=PCmwzvjZJsGmSwHV
-	GJjJJjGLkb4McjKi/J5CJfZeEjpDCBucAKtPx5c0yL87LUVSXFz2wggQNV6c6pw5
-	xYVrWJPengSkHx0T29xVbWbyXDvMNB/kypXUrb1AFQb71ptRfXMuc5ow0DEF53MA
-	bKvK9J1BOqjAuVZa96oNvQPCa9nokb1xretPhtDQxeupRqEGlbks1mcDsUApfU8f
-	BC+CmXtH/1k8Hqj30RBN7QIbKU8AJMqlaVgbVNHbxfGpF210U9aSGKcaMYmpCe08
-	RiDCSD1lGqnDYFfEU7uOsXHFpKAi1gZ1JjUPe7Y2TeEoaDuaGgTToIQo6ADwwQOM
-	4lUXiA==
-Received: from mail-ua1-f70.google.com (mail-ua1-f70.google.com [209.85.222.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fj9bs801h-1
+	ArevCzpRzOB06CCKd2tNeB4LMRjUeXNscgEPzgFVN68=; b=l1XXiear32KiBO9v
+	W5xcP4duKlk8YwkOsrlPlAoxk+q7W+pb0WPtYMA7fUhbuAZDJqsD78JRbotZff8C
+	8PFmT9i8WJncUA1YqWNnGWhI416GtsYShPYE1nz/E4GT4sG7+MJoL/OOj/waQ9Hj
+	49nqarxfQgvozVnY6JmYesqp86NhpUcychte8HxlwNAQYSiBLGEf/bMIn0OhX6Js
+	FMfBLKlWFeXs2qCVtsc3y6ebLtuq+X7/TbrsmbIgl1cGLJFSl7EVW5gn/N/f9vNR
+	gY+fYYEwrQhW0BrEb0UUCR2wP5OOzFR5IfsWRH0WAOPwUx+6b2HR/o3OpVIWsPE+
+	9o9brg==
+Received: from mail-ua1-f69.google.com (mail-ua1-f69.google.com [209.85.222.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fj6nsrvb8-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 21 Jul 2026 13:05:52 +0000 (GMT)
-Received: by mail-ua1-f70.google.com with SMTP id a1e0cc1a2514c-9674d6a4ca4so7150191241.2
-        for <linux-phy@lists.infradead.org>; Tue, 21 Jul 2026 06:05:52 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Tue, 21 Jul 2026 13:05:53 +0000 (GMT)
+Received: by mail-ua1-f69.google.com with SMTP id a1e0cc1a2514c-9694e84752eso6686569241.0
+        for <linux-phy@lists.infradead.org>; Tue, 21 Jul 2026 06:05:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1784639151; x=1785243951; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1784639152; x=1785243952; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=0C9IgCI2fyKGPwADUG81tMOL7Xd+RLAneLurfpmZbVM=;
-        b=DD4iQ72MQ3AGkKGru7gNECWy/pn+krZdZrsNyoAvonW9AiTGXMDJLlcPiPNfYbEIlZ
-         wn5IKcsqd6kj3Zh8P+ghoewb2a5LPKJvFEG0WWJgLE6iwz6c32A1Mh6l0R9myAUe6Rtt
-         UppEnr7riUjpLgmEu/OBBiSH/A0E8Tc70Xxsi2S3K560AHH3Yy86a0c6PHkW/uVzNDSj
-         g+SbHMK65ylkZYoKXE7T6F+NZtOMSGn555m5Xf8MXih+kXGTua2u2v0SpSWyYpqD7r00
-         XUMSwH+nvPL/5JMo20u8bAI/KdH4OcqXXYWvcwivgzJ2BwK2PdwYGyIAKSqrwb0mYvKj
-         TNog==
+        bh=ArevCzpRzOB06CCKd2tNeB4LMRjUeXNscgEPzgFVN68=;
+        b=Vha7zdEvVF1KxjtEqldFrO75an+o3VybdndaVUvHE/3ktTp9yrBak7eQWH35QH5o5Q
+         kT7GNdPheTxzkuPXmODTkHRBAVvcHdPW3unfZ6hYNRVcvv1VZ7R4TzlEhvb1U60GSDJT
+         UWsWHH3+yJKDkdHOFiGzQIDynKyfG692jtXOugqv9D3s/DpuPUZGFxjrE3Qd4AWawrPX
+         N2pVpVsOtFiPljiFUTckB/TzO6j/WyY6Yuicabke+OI/uA0Sdt1be6ttOFCwmzvevcqF
+         0re1I/UMbqNQ9Dw7aMcfui0fUijSYtLiHiV1up2OUZDD9A+PQ1qr84zyMuT8eB3MiUh3
+         DGsQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784639151; x=1785243951;
+        d=1e100.net; s=20251104; t=1784639152; x=1785243952;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=0C9IgCI2fyKGPwADUG81tMOL7Xd+RLAneLurfpmZbVM=;
-        b=pFYBo3NZEcZB4zCEB/7RAHLh7QUE5BMPBsQpGKTrTjUn3D/jZYShyaW+u2vLb43ALs
-         7KNbFUwXp+f8+EIGd9/llPQqbEJgC80qPkkWJ+5w70rPf6j1zlUupsxndY9VpK6FC7m0
-         Qq30he3kFLmnsy3Feebm87fDNMNI7INhs8SXNppoMGVdY0LCqAezIfMrhdnpQc2kOEJ0
-         71I5ympGfwVyJTloFGdmia9CH7okfyxwvhQrt7uQJeEJlXWxxT9/tG+17I9oB4ddhgdX
-         ImhHjIAZ0AIB8FKhhdToAYLOfbIkbmcBy6E8pOIaV+hDltZB6ADk1mWInQ5dZyY/Ej2I
-         hyBw==
-X-Forwarded-Encrypted: i=1; AHgh+Ro47Uaks+vl3NTQjcov7vshvcM2V7TAPlpJn6DK7eAzbihOyJA+77bbar8KUbiOcKoCMmBaMPtlrvU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwFdzXo8yWvntJKQpkpjmIw6TlbluQwIGi//PN9Z81/QLjDaZ6K
-	gHe7siCztCWrBwl4ygT2SAO0GAY3Iu70fnX0hBUwKeET2FhKyBVOk0PiNi13S8TIYJvXdgqNELV
-	1bVL8QGp0q2IU0PzCAGsIcPiX4VTAiqoI7QKf/FY14vDABFy4FgJkc7sd+cXTMs3HV3Zo
-X-Gm-Gg: AR+sD10B4sj2wzt82G5tu7O4zgcysoh0BJ7vaf2G+hqKt93f1m7qZpQZbW8qfryTyaM
-	mYhLwzTJQ1uyTIgPZUoHC2zD0FMZfIilJbrjNqvyXLGaqwp5sqWdZAok3Xim+E6PFxyFZVxOWFy
-	aqomdcJM+mJAZj5AtZ05/RW0MaZfVswP2INmHaEr7VWIcsR4e22qMAFTfqCj3/oYWM7o6+0ab0i
-	oVdq8iDJgqKKmuzo6rWk2dP3Y3BwZaQYW1+SzHxRiAj8Mgl8mxJgSDthcHVD5vDlmkRLSk6jCfn
-	XgWU1+2bvpji1j3mdSsDpFfA685m5ZXGS72WNFETnqMB0oCtUx4PZoqq9oBnIdnO/yuBqbsKsU+
-	26YeefoUbW2f4gyCq3a6ouvRlGDDorsqViHmB+9wslLOl9GrhcaXdaeAstJgahPNFJDOQZccVol
-	Gwjp/0QqbrPeSW0Jsa3cniOovAsiiXBjtyc1oMusKKUQPZjWCy/3A=
-X-Received: by 2002:a05:6102:3f13:b0:745:6b08:c338 with SMTP id ada2fe7eead31-747534ca994mr7023310137.10.1784639151532;
+        bh=ArevCzpRzOB06CCKd2tNeB4LMRjUeXNscgEPzgFVN68=;
+        b=MFsfdBpUVspF+8/0ZNDLIY9i4x1hT0PqxgVuNDEzaZHkNme+EKe21TPkFbU81cDOZ7
+         V+4RiONzQgMLH1hLLgp92fZU+xAmiABfpy4PFfB2B2QgZssGUfWrJxh8+u98hPUKta06
+         UP+wj0IOyk3B2lnIKnQ4M526rVK9kemjBWGS9kOq8n6VaWgNukmjLF9d0etEkmHHQfWa
+         IVHHrFIVSpyjn6nvqTu2F7JGz53apU/o2472pVrSRWoLhC/B+AQi6qnt3HeZzHLDyzRU
+         fciUr76uFYkkXhNXVZK7meHPBsoHdE3EHqrkey8QCpQ9n8zVTG59CwlUMKaLdKF2mb9p
+         nSVQ==
+X-Forwarded-Encrypted: i=1; AHgh+Rp8Kx697CKKeDi6jf9lRZMhwPiIeWBXj0XPd4kSeZ4H75IJBvywgCJ2EsX8ZW/J6+ArGAdQJBogTBc=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx36eQOE7icBRyijOOR1U6SIQRhAW+2ihZyAnHUZ9h5algPp6rK
+	WrhGx0xlwnR6HrHGlgpMwc1dOjYc9pvL9HM3pPhSFSbSAiXA8WTpbcH8RSRszm7HMu34Cti5qWa
+	TioDF7o00NIFWaVCKdhrbTbc1MIzOw2fQI0lLpoubp/w4V/9KkMqUpXI9YYOuv2LJMnG9
+X-Gm-Gg: AR+sD13BCLoJromF0MQhK4UrflTIQ9ACsQtgWHg78bbaH7/Haz0Azcy+eD9cR6tbm0x
+	kAremoIVoD5/CACNtgd8h5eRF6YcdZiJLjnJfsKm3lPgmhTNk2SxQC0sOuLrlHBcmEm6R04o6Wy
+	evjgm6m5Pa4M/OR+nV8OXkY93LeQS+jHbezfwtClWzVAmcBzTFu99vRvAk4R+fbtw3KpitAIk3+
+	Fd8RadrRoD4Kuul3/kxpriYWuyVrlkEzT6Gl8xkYQn23zDn9JTcxg3J97vIqECzFdrpcAXga4L0
+	ll23KJyEXXE4IrXshZ1FoGlfGaunA83acH7NcBV7Xn9SomFFK0lJNgB7M1/lFBXlOw1C8FTLUxg
+	VSaAh5EOKZZCfpAAJUht0oa7OIF+xJzN5eXLS3BjlsSwf/tPkt07I5FreFBX04z34qqczPu7xpI
+	gD6uFHCyu7vOu29FbiGPR9WvzR5IRdohLKzaZJ7WvN2/2Nir7TBMw=
+X-Received: by 2002:a05:6102:1487:b0:729:affa:70fd with SMTP id ada2fe7eead31-747534bf4b0mr5780652137.8.1784639152417;
+        Tue, 21 Jul 2026 06:05:52 -0700 (PDT)
+X-Received: by 2002:a05:6102:1487:b0:729:affa:70fd with SMTP id ada2fe7eead31-747534bf4b0mr5780628137.8.1784639151990;
         Tue, 21 Jul 2026 06:05:51 -0700 (PDT)
-X-Received: by 2002:a05:6102:3f13:b0:745:6b08:c338 with SMTP id ada2fe7eead31-747534ca994mr7023246137.10.1784639150566;
-        Tue, 21 Jul 2026 06:05:50 -0700 (PDT)
 Received: from QCOM-eG0v1AUPpu.na.qualcomm.com ([2a01:e0a:830:450:751c:d61c:c91:60dd])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c17009ae04bsm591898066b.8.2026.07.21.06.05.49
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c17009ae04bsm591898066b.8.2026.07.21.06.05.50
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 21 Jul 2026 06:05:49 -0700 (PDT)
+        Tue, 21 Jul 2026 06:05:51 -0700 (PDT)
 From: Loic Poulain <loic.poulain@oss.qualcomm.com>
-Date: Tue, 21 Jul 2026 15:05:45 +0200
-Subject: [PATCH v5 1/5] phy: qcom: qmp-combo: Prevent unnecessary PM
- runtime suspend at boot
+Date: Tue, 21 Jul 2026 15:05:46 +0200
+Subject: [PATCH v5 2/5] phy: qcom: qmp-usbc: Prevent unnecessary PM runtime
+ suspend at boot
 MIME-Version: 1.0
-Message-Id: <20260721-qcom-usb-phy-fix-null-v5-1-a181e2adbd2d@oss.qualcomm.com>
+Message-Id: <20260721-qcom-usb-phy-fix-null-v5-2-a181e2adbd2d@oss.qualcomm.com>
 References: <20260721-qcom-usb-phy-fix-null-v5-0-a181e2adbd2d@oss.qualcomm.com>
 In-Reply-To: <20260721-qcom-usb-phy-fix-null-v5-0-a181e2adbd2d@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
@@ -103,40 +103,40 @@ To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
         Wesley Cheng <quic_wcheng@quicinc.com>
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         linux-kernel@vger.kernel.org,
-        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-        Abel Vesa <abel.vesa@oss.qualcomm.com>,
         Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+        Abel Vesa <abel.vesa@oss.qualcomm.com>,
+        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
         Loic Poulain <loic.poulain@oss.qualcomm.com>
 X-Mailer: b4 0.14.2
-X-Proofpoint-ORIG-GUID: MJsALJvm81THQa4n4kj5_dWnNX22lzFX
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzIxMDEzOCBTYWx0ZWRfX8KB1hSCFQC7E
- szxrQT01HNI7oyMPtsLudzo8t4+DGdzHgrVgrWPo/nHtXAiuaoMBuABwKjAQriYQ2KA6GkIg5wu
- gnhpm3ZTOXPoRE1zG0nJghkRPn3JbvMzZRIy3xnkS7OCnCSUCIUQvwpfSANpuLbjetQcgQnncGZ
- 2yXywMYA1f5R4qvYeBqwUOZSN1ERZixDcxFUMI1uZXarl3nkewgiLsfB7X/lgrHyHJ0p57xppnS
- yW+U+Y2FKTsk20W7L6OHFBho1+5bzOCREsBN0YWB8HkBOX4u5dm1SumTIz95tFfQLpN2xmFt7XW
- oRi+4/XShAANOpsEKN1idIC7ochxUtcehHK6BEW4wZRP7JfDMNT78eSqXuLs8WBK2pJQFD2p3tx
- nuo/tz6j0wdNSu+XqE7lOw0OqgdxrXP4TFF8j4q4fpODUbuEUCxC5QBH3liVzUZDjYJz35Y30Hp
- 6jboRes62iSLaXPzb0g==
-X-Proofpoint-GUID: MJsALJvm81THQa4n4kj5_dWnNX22lzFX
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzIxMDEzOCBTYWx0ZWRfX7MqsfhyJlanj
- CDDvZfE42K1P0gqt+YraXOwphTEtnNpuVLr9TIjhW0JEAdDMLbLg3dShSqtV1zmo3X6vR3bUUJ3
- cUXLFblQBIfcvrcEg71RfH0vdlQbWmY=
-X-Authority-Analysis: v=2.4 cv=QK1YgALL c=1 sm=1 tr=0 ts=6a5f6eb0 cx=c_pps
- a=R6oCqFB+Yf/t2GF8e0/dFg==:117 a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10
+X-Proofpoint-GUID: ZfwBQyodirkfhiTxx4ewbGrN_mHyeOZe
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNzIxMDEzOCBTYWx0ZWRfXz+NnWyOfspkG
+ 8rpQfqdHIoWoeAfphJGOu/B77OfKG4HX3Dw3XM6qPQy8msOkBEYHIEUfmO79yrTWX1xa4qZyb7z
+ J3z1PXRDFGZDZPuQ1mKgDZsAOsRImPA=
+X-Authority-Analysis: v=2.4 cv=ZJjnX37b c=1 sm=1 tr=0 ts=6a5f6eb1 cx=c_pps
+ a=UbhLPJ621ZpgOD2l3yZY1w==:117 a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10
  a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22 a=EUspDBNiAAAA:8
- a=PcYcMbZi39MCwOMHHM8A:9 a=QEXdDO2ut3YA:10 a=TD8TdBvy0hsOASGTdmB-:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22 a=EUspDBNiAAAA:8
+ a=PcYcMbZi39MCwOMHHM8A:9 a=QEXdDO2ut3YA:10 a=TOPH6uDL9cOC6tEoww4z:22
+X-Proofpoint-ORIG-GUID: ZfwBQyodirkfhiTxx4ewbGrN_mHyeOZe
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzIxMDEzOCBTYWx0ZWRfX1UvQA6sa6kym
+ 8kmsRIemH5hOPqZxohpKguXQAODVyoexcBJaW8LAuskV+O8j86Vvx2GQ+LIf44XF/GkzxHqPiN3
+ mvYBahE1XiAtinru9hMcOpd3GZojrK8+CEYg5XwrSl3me/gP0P6uGvqniJGmjSwgvKbjMjtwwly
+ uuijdi7/rdndp7hoy8REPxXcliB12p4WbVbR6E/UoNa8gMw7WUvGQUqhgDGJHVRxojKA6d/Oykq
+ i21GfP3+5RY8h/r1ckg6Sopujej2vEotK9yjfZSluyRjIBYSdyWWZccIDTcr7Cr1RVCbwurHMIq
+ EXHNb9PcOamNHhKMeAZbEnhJOVvypOx34PUO6uNJr8coSrUG2x6/iwK6GSj9a4wQuJI6tPF8o/n
+ V2obdXlIm0PsdAKhqoLZtCDh1Yzueh6RiymAHwYcQJmv22UgkllCIV7QofCdk1qiqPMtAl0mRIy
+ Of1dZNalFw5N+79qBDA==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-07-21_01,2026-07-20_03,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 spamscore=0 phishscore=0 impostorscore=0 bulkscore=0
- suspectscore=0 clxscore=1015 adultscore=0 lowpriorityscore=0 malwarescore=0
+ clxscore=1015 phishscore=0 priorityscore=1501 suspectscore=0 impostorscore=0
+ malwarescore=0 spamscore=0 lowpriorityscore=0 adultscore=0 bulkscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607210138
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260721_060553_066769_6545639D 
-X-CRM114-Status: GOOD (  17.74  )
+X-CRM114-CacheID: sfid-20260721_060553_994628_AB450FD5 
+X-CRM114-Status: GOOD (  16.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -164,19 +164,19 @@ Take a runtime PM usage reference with pm_runtime_get_noresume() before
 enabling runtime PM and release it once the PHYs have been created to
 prevent the device from being runtime suspended during that window.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Reviewed-by: Abel Vesa <abel.vesa@oss.qualcomm.com>
 Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Reviewed-by: Abel Vesa <abel.vesa@oss.qualcomm.com>
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 Signed-off-by: Loic Poulain <loic.poulain@oss.qualcomm.com>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 19 ++++++++++++++-----
- 1 file changed, 14 insertions(+), 5 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-usbc.c | 18 ++++++++++++++----
+ 1 file changed, 14 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index cdcfad2e86b1d37650c4d7b0433319837ee9c9d4..affc8e040bb968a5b9d0b6f6fc2694c471368729 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -4934,10 +4934,16 @@ static int qmp_combo_probe(struct platform_device *pdev)
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
+index ab3055bb5b0c198832ae06dfcd04fd34395e271d..4317224070fd8dec98090e9200ac7d0e97265979 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
+@@ -1959,10 +1959,16 @@ static int qmp_usbc_probe(struct platform_device *pdev)
  	if (ret)
  		goto err_node_put;
  
@@ -194,47 +194,45 @@ index cdcfad2e86b1d37650c4d7b0433319837ee9c9d4..affc8e040bb968a5b9d0b6f6fc2694c4
  	/*
  	 * Prevent runtime pm from being ON by default. Users can enable
  	 * it using power/control in sysfs.
-@@ -4946,14 +4952,13 @@ static int qmp_combo_probe(struct platform_device *pdev)
+@@ -1971,13 +1977,13 @@ static int qmp_usbc_probe(struct platform_device *pdev)
  
- 	ret = qmp_combo_register_clocks(qmp, usb_np, dp_np);
+ 	ret = qmp_usbc_register_clocks(qmp, np);
  	if (ret)
 -		goto err_node_put;
--
 +		goto err_pm_put;
  
- 	qmp->usb_phy = devm_phy_create(dev, usb_np, &qmp_combo_usb_phy_ops);
+ 	qmp->usb_phy = devm_phy_create(dev, np, &qmp_usbc_usb_phy_ops);
  	if (IS_ERR(qmp->usb_phy)) {
  		ret = PTR_ERR(qmp->usb_phy);
- 		dev_err(dev, "failed to create USB PHY: %d\n", ret);
+ 		dev_err(dev, "failed to create PHY: %d\n", ret);
 -		goto err_node_put;
 +		goto err_pm_put;
  	}
  
  	phy_set_drvdata(qmp->usb_phy, qmp);
-@@ -4962,11 +4967,13 @@ static int qmp_combo_probe(struct platform_device *pdev)
- 	if (IS_ERR(qmp->dp_phy)) {
- 		ret = PTR_ERR(qmp->dp_phy);
- 		dev_err(dev, "failed to create DP PHY: %d\n", ret);
--		goto err_node_put;
-+		goto err_pm_put;
+@@ -1987,17 +1993,21 @@ static int qmp_usbc_probe(struct platform_device *pdev)
+ 		if (IS_ERR(qmp->dp_phy)) {
+ 			ret = PTR_ERR(qmp->dp_phy);
+ 			dev_err(dev, "failed to create PHY: %d\n", ret);
+-			goto err_node_put;
++			goto err_pm_put;
+ 		}
+ 		phy_set_drvdata(qmp->dp_phy, qmp);
  	}
- 
- 	phy_set_drvdata(qmp->dp_phy, qmp);
  
 +	pm_runtime_put(dev);
 +
- 	if (usb_np == dev->of_node)
- 		phy_provider = devm_of_phy_provider_register(dev, qmp_combo_phy_xlate);
- 	else
-@@ -4977,6 +4984,8 @@ static int qmp_combo_probe(struct platform_device *pdev)
+ 	of_node_put(np);
+ 
+ 	phy_provider = devm_of_phy_provider_register(dev, qmp_usbc_phy_xlate);
  
  	return PTR_ERR_OR_ZERO(phy_provider);
  
 +err_pm_put:
 +	pm_runtime_put_noidle(dev);
  err_node_put:
- 	of_node_put(usb_np);
- 	of_node_put(dp_np);
+ 	of_node_put(np);
+ 	return ret;
 
 -- 
 2.34.1
