@@ -4,135 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96C85C4452B
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 01:17:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B47C4C4452B
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 01:53:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vDgZpzbofc4pn0nOH0vfscVPvy2k6aE2Jm7Hb2DcJwc=; b=17yb2Mbe8RwOIn
-	7d1hdA0gSZy+T3Wbq9xQqPw/xueN/QJH4thI+2PHyJhkJxoA94f2jknr1ln29opnsEZzMxw08AtK+
-	ddqWO1QJM+OPbd/v9gyTqjnrMg+B0gu1F24HCRylg0azTAxL7WhEHHhbU4gmdTG1xUUaOQdXWmHLR
-	Fq2zEMsVCZJEwdMbaDvCfmZgYVDP+4vDKaIqsEwuAaV58SzagY46YMgoFEyYlSXx6AgZznOWOdhSy
-	xbiFy5VSZYTjljYJRcb1vhZeQgp80x+ohjOBjRjO3mM15GNqOABS9GrbkrzpR37WdnrtR7je/2Ls4
-	3DMDHZTFCqnlJv8YIttg==;
+	List-Owner; bh=q2AZMcOrYF/2EZEEohSFD6hf5Gp3EgJwJxh/UtKj+LA=; b=JhfQUIVYkaCGzq
+	k2wMgIgfivIuhlxmrmtEZJCP9wGUqK2742Ea+F4Xo8sO1IQsZ3EZ3fmhS7TbFjYA1iYgyGW4bUk38
+	r00raCOPxMnwPFljwcMF6Ub5NQpFWnAu+yr0qw5BNkaTXbet0zDPg5L6UXkJJVG5tDMRS5lBnO6nz
+	ReCgIHW+mdMzaSItC+d96sU3PSOPOFYWmnKBE3N7tShgiKQtL+W4ez4w+cLdkqFmrypfPzEsacbc+
+	AxvLbEJS4LDEIFVyZDJeEu8/5Mk+XvWri6qGflDxPrFG3Nb/UJtYlGwiRzZ65aiZ67Lgjl39cGe6O
+	H790DVMmnK/xmZwsT19Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmLao-0000000AhjU-0Fbv;
-	Wed, 22 Jul 2026 01:17:50 +0000
-Received: from mail-westeuropeazlp170130006.outbound.protection.outlook.com ([2a01:111:f403:c201::6] helo=AM0PR02CU008.outbound.protection.outlook.com)
+	id 1wmM9A-0000000AjN7-0zZS;
+	Wed, 22 Jul 2026 01:53:20 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmLal-0000000Ahie-2ImP
+	id 1wmM99-0000000AjN1-05oS
 	for linux-phy@lists.infradead.org;
-	Wed, 22 Jul 2026 01:17:48 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Li2Lnm3fuQBa+w3Tsz6DtLDYA/NQyTRIiMqPA8gjJsLmGO+dYfj08Jl/F/jBBrzPHVDAtDR95UvOtQ9veSZPwHe5a4yeQsFN77eijLlHVNixZCV0C5txM1SmIOY4frD1zA6q/kMzCaYxfLYkkPKgK0NgxnXPY80tHlLvqMSL+uo2nIwnke0ZN/viSACUPN8/3bssFIOGqfJFUO4xPp6voKdm6WAlMNmJ/xRgXipQpW/mQ74sppWlWsRe6eQ9pYCX4QGPJhHgCRI9naNoV3QcYmoGRf1AXB6j4h5i/QHEy7PHz1hAnN3sJV5K8u2tueCNVZYPCiBA7oDG2t/dy5wMEA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=+zNzyaYynbZm0lcfQ0KsJGAvLqhVGlYlouAx2krtwUs=;
- b=PSyH2QTy3izIGJKDB5v9ZOiyEfikjP6vcO6TyD5L01Sv9PD4hDBBNEtsaAg7HVbzYHUhBW8/738Calj9eLGlOe7DfpmwC/ikhaCMqvl/++yGspmJkl7wEVCCIJG71+lvN3q31PkKQT0l0AZWgluVZEPFRopIUrF2b2cJybXXRhdD6dNPuShFOpf/CJojYEq4NXdMZbfqutWyzSskhr+m+T0G3+RIYD/pwonAbVFb5NOOVjQL5p/i6gjlDGbLMUnDj+ZBhGtlmFO3C6fIfL7QHGbn1iSTBTA3IeYHBSW03vz8x4VcPlrkkR/mQHey4V7GzyGABgR9Vw64L5tOg6Dbgg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+zNzyaYynbZm0lcfQ0KsJGAvLqhVGlYlouAx2krtwUs=;
- b=TRVuHurK+HVWREE7aeXhUCKp8/BPXuF/qJVL88l66CJNYqcnj+3IseXPBHOUNOp6Eul6VJ9ggxOx/vf7Dm9RvTHsjTs7QPmR8dzHa5UkIti7ub+Qt2UMwuJTC4idD5H0K6Rt0jBsdmWMgHt+4fr1d28ph+WyNlZuTOrXjNeIP+UWOx40rjhBzGptnG5HshiUYIDRwK4GJdO3l9gFRrAFt5ABNFt1WOxL2h2QBwL1PzbegqJDwbvQU81y26qbi9UCiARa/2dXAH6tjlh6ngWylOGMAwnOSAyFoit5o4QkF2ucpiBc5dZ8/0h/n+MYy9c1pQTSh4CLD6E6JMrAG5cauQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by DB9PR04MB9646.eurprd04.prod.outlook.com (2603:10a6:10:30a::20) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.223.18; Wed, 22 Jul
- 2026 01:17:43 +0000
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c%6]) with mapi id 15.21.0245.009; Wed, 22 Jul 2026
- 01:17:43 +0000
-Date: Tue, 21 Jul 2026 20:17:29 -0500
-From: Frank Li <Frank.li@oss.nxp.com>
-To: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
-Cc: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Bryan O'Donoghue <bod@kernel.org>, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+	Wed, 22 Jul 2026 01:53:19 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 639FE600FC;
+	Wed, 22 Jul 2026 01:53:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B4DA41F000E9;
+	Wed, 22 Jul 2026 01:53:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1784685197;
+	bh=EyvCeadiCpecAtmf/jVCC4DvpHXg9v3w99/kgsifdeI=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=BcIz6ojoMmb0icp91ZJi00hmO2765M0BGAU2ZwJ+ZUBH1BDegspyILtSjFgtPVsqL
+	 TSJ6nrHLAScbSf/q74xqC/ZdUpn5AEwa3fRYTlFlHIvgrw0TXz5N0gaAA63U7uNYF6
+	 5+1dQyk7NrFuMzL7q4F/vypzpNwDn5JWfmN12w1HJMWo2hVyyAnc1Syf5M0dVYDeQo
+	 GDL4H2iE9gnGwJvNCt9QnvxvjYiNnjk23+uHky2THdbfaLgrud6W/GNRWUCZAhVdXo
+	 8jj+9leb1HQ7JCBaBkfGnjrIJ2XRbmgELT3Tgkrjqur7yqYv77mJIl7/XyZa84hSgQ
+	 Xxuwhp468EMOQ==
+Message-ID: <cc9b087c-b985-416c-999a-a08f2abbf202@kernel.org>
+Date: Wed, 22 Jul 2026 02:53:10 +0100
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v13 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY
  schema
-Message-ID: <amAaKalbD749uZuK@SMW015318>
+To: Frank Li <Frank.li@oss.nxp.com>,
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
+Cc: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 References: <20260720-x1e-csi2-phy-v13-0-160c31958863@linaro.org>
  <20260720-x1e-csi2-phy-v13-1-160c31958863@linaro.org>
  <al_BEUNJOrqVPQWw@lizhi-Precision-Tower-5810>
  <b974f1be-b802-40a3-a54c-f7e3c8fbbece@linaro.org>
-Content-Disposition: inline
-In-Reply-To: <b974f1be-b802-40a3-a54c-f7e3c8fbbece@linaro.org>
-X-ClientProxiedBy: SA1P222CA0147.NAMP222.PROD.OUTLOOK.COM
- (2603:10b6:806:3c2::11) To GV2PR04MB11799.eurprd04.prod.outlook.com
- (2603:10a6:150:2cf::9)
-MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|DB9PR04MB9646:EE_
-X-MS-Office365-Filtering-Correlation-Id: 081bbd64-6afc-413f-220f-08dee78f07c5
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|19092799006|7416014|376014|366016|23010399003|22082099003|18002099003|10067099003|4143699003|56012099006|11063799006|3023799007|6133799003;
-X-Microsoft-Antispam-Message-Info: OKFx5Y6ODiN25FtvI95354cqOYEuaQQ139o5aKi0YKZ7ZVBr9zvAfyq5hUH9h4RwsdQV39hGh+Jj7vz8Ptoyu8vg1+dFP1TL2Hr+AjWxWtumC/2F/T58s8OsAKPUaIRheMCqZLecWceXJUjQZTEwVO3EKQ8rMeRrY/DQYB4kidI4Fd2bUEpQg8pyKhOh47hJv7mwgJ67z4X6fyndeV/STHp2Ju6nLhkMQ8cVxBtVYzh2/lv6zBLCLAwJV207Hq4SDWcnzGcKj65H74cEYZXbbM+DiG8mFUyeDEr+1aM6+n+Yost1+0f/rwk5ZDoP07xNqhBhxG8/xowAKX7sWw2L6izYe/uBWU/i5sOK48QHxvONWkDdaQFfCKNo2AS5SPb2q0UnMfLBx9ctgmS7mTmEwhThB24myX7DkSfJr7VyE1Sg6edXTlyO6WUF9ihJbHoFgsOyW+qKnh5QibYivixkie6p2pojcqCo3nMiP8DZMNESkQ0nwJlKORkYD5dY3kcbg0mbU0kPxqWy7cvLJ1JFG0JJ2XhhfSbgFDCRS4gOiZooT09Li3xqGLR7brhZNquubZYXor970OkASjSusUPFcSZvp1KkaGtarhY19YCilWQ=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(19092799006)(7416014)(376014)(366016)(23010399003)(22082099003)(18002099003)(10067099003)(4143699003)(56012099006)(11063799006)(3023799007)(6133799003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?u5WTe9jSugQnlIviazPWHQAD1Lrvg07HlW6VePMuzErPR3L3c0K8LzGa2ixS?=
- =?us-ascii?Q?SaGgKsqzFWNaowrblCTd/LV+Uqimt7ZeyE2CzfDtEtbPYUPilrlkWZpLUv8S?=
- =?us-ascii?Q?0rY6LQtwzn47lp6cU9XVFzLJWbib3zNIgLPunv6SFVMh7/Ycb8D/F9wlyfIf?=
- =?us-ascii?Q?LcStS7zwfHSHhZHaRLR/2xw0onEJEFNl86wek3lyiqQDUS0Ra57l/IjefYha?=
- =?us-ascii?Q?Nd4u3wcQ+VOwIALzS9NbAFRR+mkUDJxhUjQZznysQQBpw9QREdWzH307F9l/?=
- =?us-ascii?Q?Rkt+gsBSI32vLELKsiG2x8qfhW8oKPSHjgLod3BkABMAJEs/EG1gjlAjA67W?=
- =?us-ascii?Q?gEDUFO9e5OqM6AFNnlmWYFH6QjlkCafRZmkkWmzz9O9XuSmIz7uZMs+norEr?=
- =?us-ascii?Q?AZS9nKg/yQ3y0K9QHEFpvHeFie/YChjspxrj4W3GaX4t6bqQekj18xGmUmjN?=
- =?us-ascii?Q?dT6T/DPSoeMxGv1VsWLO84ooPaFTXtlERwkJPGmCOujc49OSv9888qtHsn4Y?=
- =?us-ascii?Q?CypHZ5papDlaUn5B4YYclvrlVnTDOc1iXnKFUImpLsfRIddENfghhN/kopTS?=
- =?us-ascii?Q?i8hJeHrJno15pLzGR4vIoAA2yh4oksH+KcZdZl8P0TaaUlCThPNNykY8fPwg?=
- =?us-ascii?Q?EdJcSfND4+GOZ4VuQihP67zkKyEB7P8LEpyy3fPWpEfs/NhGFkTYwHeulRWq?=
- =?us-ascii?Q?3mdnBaEoyrtuIuXxwUCqiVM16n+WkOzZPr9ksqbl0nFzdgvXIkmO+mlzvmr0?=
- =?us-ascii?Q?mTPh7Lh/StJeK25UgUKB5ta6tYKT0Ecqd47/U2rH7TpvjAxgC4pldq7/ezAF?=
- =?us-ascii?Q?bihcbCE0bX2TjRVIcWJbIrwI58pV7b63CaMNP2NMJ3WJfgeg0HT37j2nATYG?=
- =?us-ascii?Q?boAk1RERpBfdfm81pJpCAsZ9klQTeezje2Ai5XGmje2DRcyyapsVY6Kvs6ov?=
- =?us-ascii?Q?FHFiHFxN60OdxFdLE2LaeTmUU3lRLTfcxBLyqTHMiyseJ5th35HrSi3B/TfH?=
- =?us-ascii?Q?8Ie3VB8tpyBiCXDt7Hgv5w6y8014mMbasTwNRnNRJXOFJx+2YE6AJveDpr0m?=
- =?us-ascii?Q?iIjNZt22pFRCW4NsNgSg2gdmpqu8SpDzcDHETwtaQhKbbgjA46ErcJ8XOp4P?=
- =?us-ascii?Q?OpALHG8ypE6uJoQfvyiBa5Y3Q1gS3WD1jtRs+4RlZu1r7okoXaIs29huisy8?=
- =?us-ascii?Q?A4/DMLHKY23DIu9rBIs/i2VMjYX/OftytrvnZqFo/UILkfCB0d09uFXCsN9u?=
- =?us-ascii?Q?Ck94hVb/TdR5KnYmUc3z5tnyOpn2icwGVYh2wQQGj3E+N67TYn0EMN7YX7Wj?=
- =?us-ascii?Q?hVrXtxfM27I5xoapdp/dk8T22253y0HCJBY08GCSC+0HGhdfQVoaiiYOZzsN?=
- =?us-ascii?Q?tCsPp9WrctjHSgx/7F+01OREX4tZPScNwh1KT9jepRLIbi8UP8kI4KHD1vk9?=
- =?us-ascii?Q?3JKVmTYUia8AAF3hp03PYoq6zadl+cNJpIPmOfVVRyxTD0s/Z9le2jdTwokJ?=
- =?us-ascii?Q?LiQmyOlkSkHVA3VuFNJoz9Cl26TFQn9SrKYnBDxo92bDd86hfZekb0madN91?=
- =?us-ascii?Q?OJ8BKz6Utrrjakga8gt23tBbqzmsqZx653/Y15Ov7zsSp1QcMhMTtNJUxaFJ?=
- =?us-ascii?Q?lD7hDb4T21eRS5jM8Mau+trhaRNKN1ZhC3EHvEs+41fuMKIXuDkHWt0drp3d?=
- =?us-ascii?Q?tTccJ87ujcYkZl73AOUQqENdpHHwYUpj+ii4CAEBhY3wR3y7Q/Yk2+z6fHBe?=
- =?us-ascii?Q?sp/3VJ2jAzqmN1eIwkaEC8M/1BLbntnn4vu5wegfrbke/A9EmcPk?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 081bbd64-6afc-413f-220f-08dee78f07c5
-X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Jul 2026 01:17:43.2887
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: s8dB3EKP0y9fgThYWJzNUPF28PUYKhPn/faZu6KxvPPqwZbyXwXsRcYKvUvGCSvVCO7jjm6JeprIgAwWEiclDf8eDJnXgeqh23OPr4aUzuu1P6fCuQt0Qf/ZaFhwhX95
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR04MB9646
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260721_181747_621595_E48025C9 
-X-CRM114-Status: GOOD (  26.04  )
+ <HY6xNkbpncBHZ0I4_BzIf-Oe8GwsSScaF3-vJPweR5popvMlyVRnqHkJJehMdb26OR-kQJ-c3tPqh07qcNYEDQ==@protonmail.internalid>
+ <amAaKalbD749uZuK@SMW015318>
+From: Bryan O'Donoghue <bod@kernel.org>
+Content-Language: en-GB
+Autocrypt: addr=bod@kernel.org; keydata=
+ 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
+In-Reply-To: <amAaKalbD749uZuK@SMW015318>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,144 +121,36 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jul 22, 2026 at 12:49:05AM +0300, Vladimir Zapolskiy wrote:
-> Hi Frank.
->
-> On 7/21/26 21:57, Frank Li wrote:
-> > On Mon, Jul 20, 2026 at 02:11:34AM +0100, Bryan O'Donoghue wrote:
-> > > Add a base schema for the MIPI CSI2 PHYs on Qualcomm SoCs. This PHY
-> > > supports both DPHY and CPHY operation. A special mode of DPHY operation -
-> > > called variously split-mode or combo-mode also allows for two sensors to be
-> > > connected to one PHY.
-> > >
-> > > The submitted binding here describes the DPHY modes of operation only. CPHY
-> > > is left to future work.
-> > >
-> > > Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-> > > Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-> > > ---
-> > >   .../bindings/phy/qcom,x1e80100-csi2-phy.yaml       | 195 +++++++++++++++++++++
-> > >   1 file changed, 195 insertions(+)
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
-> > > new file mode 100644
-> > > index 0000000000000..880fe602945cb
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
-> > > @@ -0,0 +1,195 @@
-> > > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > > +%YAML 1.2
-> > > +---
-> > > +$id: http://devicetree.org/schemas/phy/qcom,x1e80100-csi2-phy.yaml#
-> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > +
-> > > +title: Qualcomm X1E80100 SoC CSI2 PHY
-> > > +
-> > > +maintainers:
-> > > +  - Bryan O'Donoghue <bod@kernel.org>
-> > > +
-> > > +description:
-> > > +  Qualcomm MIPI CSI2 C-PHY/D-PHY combination PHY. Connects MIPI CSI2 sensors
-> > > +  to Qualcomm's Camera CSI Decoder. The PHY supports both C-PHY and D-PHY
-> > > +  modes.
-> > > +
-> > > +properties:
-> > > +  compatible:
-> > > +    const: qcom,x1e80100-csi2-phy
-> > > +
-> > > +  reg:
-> > > +    maxItems: 1
-> > > +
-> > > +  "#phy-cells":
-> > > +    const: 1
-> > > +    description:
-> > > +      The single cell specifies the PHY operating mode.
-> > > +
-> > > +  clocks:
-> > > +    maxItems: 3
-> > > +
-> > > +  clock-names:
-> > > +    items:
-> > > +      - const: core
-> > > +      - const: timer
-> > > +      - const: ahb
-> > > +
-> > > +  interrupts:
-> > > +    maxItems: 1
-> > > +
-> > > +  operating-points-v2: true
-> > > +
-> > > +  opp-table:
-> > > +    type: object
-> > > +
-> > > +  power-domains:
-> > > +    items:
-> > > +      - description: Titan Top GDSC - Titan ISP Block, Global Distributed Switch Controller.
-> > > +      - description: MMCX voltage rail
-> > > +      - description: MXC or MXA voltage rail
-> > > +
-> > > +  power-domain-names:
-> > > +    items:
-> > > +      - const: top
-> > > +      - const: mmcx
-> > > +      - const: mx
-> > > +
-> > > +  vdda-0p9-supply:
-> > > +    description: Phandle to a 0.9V regulator supply to a PHY.
-> > > +
-> > > +  vdda-1p2-supply:
-> > > +    description: Phandle to 1.2V regulator supply to a PHY.
-> > > +
-> > > +  ports:
-> > > +    $ref: /schemas/graph.yaml#/properties/ports
-> > > +
-> > > +    properties:
-> > > +      port@0:
-> > > +        $ref: /schemas/graph.yaml#/$defs/port-base
-> > > +        description:
-> > > +          Sensor input. Always present. A single sensor is described by a
-> > > +          single endpoint with one to four data lanes. DPHY split mode,
-> > > +          where two independent sensors share the same PHY, is described
-> > > +          by two endpoints; endpoint@0 with exactly two data-lanes and
-> > > +          endpoint@1 with exactly one data-lane.
-> >
-> > Sorry, jump in so late. I have questions about this design
-> >
-> > why not model each lane as sperated phys.
-> >
-> > csi1 {
-> > 	...
-> > 	phys = <&phy 0>, <&phy 1>; // use lane 0 and 1, connect sensor 1
-> > };
-> >
-> > csi2 {
-> > 	...
-> > 	phys = <&phy 2>; // use lan 2, connect sensor 2.
-> > };
-> >
->
-> Such design has a number of flaws and in general it looks overly
-> complicated. From the beginning it's unclear how to distinguish
-> a clock lane from a data lane, how to specify lane frequencies etc.
+On 22/07/2026 02:17, Frank Li wrote:
+>> Such design has a number of flaws and in general it looks overly
+>> complicated. From the beginning it's unclear how to distinguish
+>> a clock lane from a data lane, how to specify lane frequencies etc.
+> Thanks, but phy-cell support more than one argument. like
+> 
+> 	<&phy 0 mode_cphy link_freq>
+> 
+> I ask these because simiar other phys may connect to display panel, some
+> phys combine csi and dsi together.
 
-Thanks, but phy-cell support more than one argument. like
+For a combined CSI/DSI PHY that's a good model, and it re-establishes
+the principle that the consumer chooses the mode.
 
-	<&phy 0 mode_cphy link_freq>
+For our simpler camera-only case the cell has less work to do. The
+series carries #phy-cells = 1 per Rob's feedback and an RB from Krzysztof.
 
-I ask these because simiar other phys may connect to display panel, some
-phys combine csi and dsi together.
+That's reviewed, tested and mergeable.
 
-Frank
+The one alternative under discussion with Vinod is bus-type in the CSID 
+controller's endpoint with the mode conveyed via phy_configure(). Either 
+way the consumer decides.
 
->
-> --
-> Best wishes,
-> Vladimir
+---
+bod
 
 -- 
 linux-phy mailing list
