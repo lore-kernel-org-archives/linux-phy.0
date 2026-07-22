@@ -4,52 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90BFEC4452D
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 05:48:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E24EDC44533
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 05:51:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:From:To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9zXSi5QYZ1JEl82Esc7j1Y/N5x6Gv1Bkim13KJTdTVU=; b=sO5KsjDD4dH60F
-	3OPPNOFj4lonUHnQySzOpjuYuWy1RKxklq6PaH8JF6yNBI4zw7sunbwzFG4+E6SNkDKN09ZLEE5cj
-	zyFPVoqoqNEjQ2VMJh35DFZkgJONVf5mwdkdiuHkQWi0h3/MOwc+3EMiRIw4QsgpF+GcyOBv6NwzN
-	GHXcu3zySxN+kLHweUYPfGtIpbifl4s+LHhAdTQfxvITjUm51XG3RXRudrv0QCAqAjHHJQemSFHpH
-	a0nCwjPRBW69BlHs8GguJHfJiccUyxWTJwGtGC0kgcKF0o6pSiD7p0cyFcjTJS4UR5UO+QkKn/UX3
-	lbWnQy9E6D9v86uoAT2Q==;
+	List-Owner; bh=e0wfMNbijQF6e0lCkz6I6S1mtvaApMDdrIGWqPxRXyk=; b=qDl48zeWBwhCAF
+	k8vHwJxQFpPI4Kav5M6KVZlAmBLZftoz/B1iBp6WG4t1Qutykoum5N8bfdu6VPpOoMp9gSZLK1cPn
+	2DL2qbr67YvLxmNMIjutJIO5OQyl8L4RaDfR5XQelVntiLDm9ITTvPsefW1+nCRooBMGAG8hOrsMi
+	mI81ezPJiWYXACpm1UA4tKeEvtf/GG4DMaA1REtvO1+nfbgu44+vLaZ7MDgus9DK06ueKECUterD7
+	HQazc0fVDhyLYs4+8FZoHuq6OQIn9uzET6oHsRytHVbCdYQ/hFbiCanItp+G4jb19stYqsiVma3V8
+	e6vBxebSdgg+GuM9rw6Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmPow-0000000Aw6o-3Ht6;
-	Wed, 22 Jul 2026 05:48:42 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wmPrz-0000000AwKc-0BSu;
+	Wed, 22 Jul 2026 05:51:51 +0000
+Received: from mail-43102.protonmail.ch ([185.70.43.102])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmPou-0000000Aw6g-3bXF
+	id 1wmPrw-0000000AwKG-0lqe
 	for linux-phy@lists.infradead.org;
-	Wed, 22 Jul 2026 05:48:40 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id EEA69601EC;
-	Wed, 22 Jul 2026 05:48:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 60C791F000E9;
-	Wed, 22 Jul 2026 05:48:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784699319;
-	bh=Tcu9xDxyceZho9qRTDsLUawnfh0hmMCRFSWmhQriqUk=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=iYnSe/UJ1xEg5q4aAGwGMChtprN7HZzQQUd3zy8X3cvBh2lpp06zmir6RcGw2YTCj
-	 dYQKkTeOnssygnXl7+ygG41LpilBw/B+xbc8vh9RANKMvjqdaY7MKB7rJ/91AGl8GO
-	 h7TX5h4RTj6mAL7lKLLNgIZb8hL/9+MxqsbrB0QvyI7YLX3T4psipHfBm/9WXbpMRo
-	 u06QcQ+bQbQKoAFEyaWOhpj/CxvpQoiyDaitxKDF2eLIhoudohkFAfjueF+xB6lKgb
-	 42arf/qnM2KaSwO+8f2CnabP06caHAt04KE8Jp6rf3stidT2JljO3xwKJx3C9iGJpU
-	 D5H0pM+zXtJQg==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH] phy: omap-usb2: add explicit PHY comparator API
-To: "Ivaylo Dimitrov" <ivo.g.dimitrov.75@gmail.com>
-Cc: neil.armstrong@linaro.org, vkoul@kernel.org, linux-phy@lists.infradead.org, olteanv@gmail.com
-In-Reply-To: <20260722053618.602702-1-ivo.g.dimitrov.75@gmail.com>
-References: <20260722053618.602702-1-ivo.g.dimitrov.75@gmail.com>
-Date: Wed, 22 Jul 2026 05:48:38 +0000
-Message-Id: <20260722054839.60C791F000E9@smtp.kernel.org>
+	Wed, 22 Jul 2026 05:51:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
+	s=protonmail; t=1784699505; x=1784958705;
+	bh=7EWW65TWhQFgLQPj2Wkv861bBhqVtYITBfDqiAmRxN8=;
+	h=Date:To:From:Cc:Subject:Message-ID:In-Reply-To:References:
+	 Feedback-ID:From:To:Cc:Date:Subject:Reply-To:Feedback-ID:
+	 Message-ID:BIMI-Selector;
+	b=eLr5Ckm8EKvVt+9shvYM9yYTSn7Jc9du0uSBhGBLgcT66RvEVoe38TFFMjOBW2QRE
+	 vvLf3ixJTAe0uef2uutvVe5et6L7nqaKpEPiT/NUE6A+suqBQlygrwLg38Tbr6QTW+
+	 5Xw1kJiBMN/ppBwP77dS4mH0cthIj9oM92bfmGeWueIkq3VlC4qDScWSGzE0y1qY8p
+	 42tR75tOe91eBddJosYS54YEQnli7/lbf3rRByilB8JSSsKat36G726X9WFPvFiEFz
+	 e+/XemSZvM1kOdWieytECYhhoim8lCOZZLZfeJ46rVd7gZN/gO8B5t6xxDtQs404rt
+	 xkaqcdJYPwXvw==
+Date: Wed, 22 Jul 2026 05:51:39 +0000
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+From: Esteban Urrutia <esteuwu@proton.me>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, phone-devel@vger.kernel.org
+Subject: Re: [PATCH v2 2/3] phy: qcom: qmp-combo: Specify PLL version in qmp_v6_dp_serdes_tbl structs
+Message-ID: <8066103b-e1de-4b20-b21e-533a6cbc2bba@proton.me>
+In-Reply-To: <zd5wulhfcw7vzbwaz4akhetbqqub7ygsmexuswkdvzxcfmqvqa@hom4ax54efft>
+References: <20260715-sm8475-bup-usbss-v2-0-2d8def39b190@proton.me> <20260715-sm8475-bup-usbss-v2-2-2d8def39b190@proton.me> <wg6lgpaexz4ktjlfzqpsidj56wr3hjax2ktn75kqsoaubtdxre@xh3yn3xpr4af> <b77dc15d-f9ad-4c06-9e24-8f73421e2130@proton.me> <dph6cacosw3jzksqxp7fgofdueukrq6a3c5xys4jfrkqjuigvx@sroivvrxiwxk> <47b1db2c-6314-49ce-a7b9-f68eeb022295@proton.me> <zd5wulhfcw7vzbwaz4akhetbqqub7ygsmexuswkdvzxcfmqvqa@hom4ax54efft>
+Feedback-ID: 147889766:user:proton
+X-Pm-Message-ID: 67d6104ff7e818c69f7a2fef9f4052ef51b91cb8
+MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260721_225148_835671_41032518 
+X-CRM114-Status: UNSURE (   7.82  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -61,84 +65,29 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpOZXcgaXNzdWVzOgotIFtNZWRpdW1d
-IFR5cGUgdmFsaWRhdGlvbiByZWxpZXMgb24gZnVuY3Rpb24gcG9pbnRlciBlcXVhbGl0eSwgd2hp
-Y2ggaXMgdW5zYWZlIHVuZGVyIElkZW50aWNhbCBDb2RlIEZvbGRpbmcgKElDRikuCgpQcmUtZXhp
-c3RpbmcgaXNzdWVzOgotIFtIaWdoXSBBIFRpbWUtT2YtQ2hlY2sgdG8gVGltZS1PZi1Vc2UgKFRP
-Q1RPVSkgcmFjZSBjb25kaXRpb24gZXhpc3RzIHdoZW4gYWNjZXNzaW5nIGBwaHktPmNvbXBhcmF0
-b3JgLgotIFtIaWdoXSBUaGUgbGVnYWN5IGBvbWFwX3VzYjJfc2V0X2NvbXBhcmF0b3IoKWAgZnVu
-Y3Rpb24gcmVtYWlucyB2dWxuZXJhYmxlIHRvIGFuIGludmFsaWQgYGNvbnRhaW5lcl9vZigpYCBj
-b252ZXJzaW9uIG9uIG11bHRpLVBIWSBzeXN0ZW1zLgotLQoKLS0tIFBhdGNoIFsxXTogW1BBVENI
-XSBwaHk6IG9tYXAtdXNiMjogYWRkIGV4cGxpY2l0IFBIWSBjb21wYXJhdG9yIEFQSSAtLS0KY29t
-bWl0IDRiMDBlNzJhYWJhNjZlM2VmNjQxN2Q1N2VlN2E3OTE2ZGFjMWNkM2QKQXV0aG9yOiBJdmF5
-bG8gRGltaXRyb3YgPGl2by5nLmRpbWl0cm92Ljc1QGdtYWlsLmNvbT4KCnBoeTogb21hcC11c2Iy
-OiBhZGQgZXhwbGljaXQgUEhZIGNvbXBhcmF0b3IgQVBJCgpUaGUgZXhpc3Rpbmcgb21hcF91c2Iy
-X3NldF9jb21wYXJhdG9yKCkgQVBJIGFzc3VtZXMgYSBzaW5nbGUgVVNCMiBQSFksCmxlYWRpbmcg
-dG8gaW52YWxpZCBjb250YWluZXJfb2YoKSBjYXN0cyBvbiBtdWx0aS1QSFkgc3lzdGVtcy4gVGhp
-cyBjb21taXQKaW50cm9kdWNlcyBvbWFwX3VzYjJfc2V0X3BoeV9jb21wYXJhdG9yKCkgZm9yIGV4
-cGxpY2l0IFBIWSBpbnN0YW5jZQphc3NvY2lhdGlvbiB3aGlsZSBrZWVwaW5nIHRoZSBsZWdhY3kg
-QVBJIGludGFjdCBmb3IgZXhpc3RpbmcgdXNlcnMuCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3Bo
-eS90aS9waHktb21hcC11c2IyLmMgYi9kcml2ZXJzL3BoeS90aS9waHktb21hcC11c2IyLmMKPiBp
-bmRleCAxZWIyNTI2MDQ0NDFiLi5hYzMxYjY5M2ZjZTdiIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMv
-cGh5L3RpL3BoeS1vbWFwLXVzYjIuYwo+ICsrKyBiL2RyaXZlcnMvcGh5L3RpL3BoeS1vbWFwLXVz
-YjIuYwpbIC4uLiBdCj4gQEAgLTExMyw2ICsxMTUsMzYgQEAgaW50IG9tYXBfdXNiMl9zZXRfY29t
-cGFyYXRvcihzdHJ1Y3QgcGh5X2NvbXBhbmlvbiAqY29tcGFyYXRvcikKPiAgfQo+ICBFWFBPUlRf
-U1lNQk9MX0dQTChvbWFwX3VzYjJfc2V0X2NvbXBhcmF0b3IpOwoKW1NldmVyaXR5OiBIaWdoXQpU
-aGlzIGlzIGEgcHJlLWV4aXN0aW5nIGlzc3VlLCBidXQgZG9lcyBsZWF2aW5nIHRoaXMgbGVnYWN5
-IEFQSSB3aXRob3V0IHR5cGUKdmFsaWRhdGlvbiBkZWZlYXQgdGhlIHB1cnBvc2Ugb2YgZml4aW5n
-IHRoZSBtdWx0aS1QSFkgaXNzdWU/CgpJZiBhbiBleGlzdGluZyBjYWxsZXIgb24gYSBtdWx0aS1Q
-SFkgc3lzdGVtIHVzZXMgdGhpcyBBUEkgYW5kIHVzYl9nZXRfcGh5KCkKcmV0dXJucyBhIG5vbi1P
-TUFQIFBIWSwgaXQgd2lsbCBzdGlsbCBwZXJmb3JtIGFuIGludmFsaWQgY29udGFpbmVyX29mKCkg
-Y2FzdDoKCmRyaXZlcnMvcGh5L3RpL3BoeS1vbWFwLXVzYjIuYzpvbWFwX3VzYjJfc2V0X2NvbXBh
-cmF0b3IoKSB7CiAgICAuLi4KICAgIHN0cnVjdCB1c2JfcGh5ICp4ID0gdXNiX2dldF9waHkoVVNC
-X1BIWV9UWVBFX1VTQjIpOwogICAgLi4uCiAgICBwaHkgPSBwaHlfdG9fb21hcHVzYih4KTsKICAg
-IHBoeS0+Y29tcGFyYXRvciA9IGNvbXBhcmF0b3I7CiAgICAuLi4KfQoKQ291bGQgdGhpcyBsZWFk
-IHRvIGFyYml0cmFyeSBtZW1vcnkgY29ycnVwdGlvbiB3aGVuIHBoeS0+Y29tcGFyYXRvciBpcwpv
-dmVyd3JpdHRlbiBvbiBhIGZvcmVpZ24gUEhZIHN0cnVjdHVyZT8KCj4gKy8qKgo+ICsgKiBvbWFw
-X3VzYjJfc2V0X3BoeV9jb21wYXJhdG9yKCkgLSBhc3NvY2lhdGUgYSBjb21wYXJhdG9yIHdpdGgg
-YW4gT01BUCBVU0IyIFBIWQo+ICsgKgo+ICsgKiBAb21hcF9waHk6IE9NQVAgVVNCMiBQSFkgaW5z
-dGFuY2UKPiArICogQGNvbXBhcmF0b3I6IGNvbXBhbmlvbiBQSFkgcHJvdmlkaW5nIGNvbXBhcmF0
-b3Igb3BlcmF0aW9ucwo+ICsgKgo+ICsgKiBUaGUgcGh5IGNvbXBhbmlvbiBkcml2ZXIgc2hvdWxk
-IGNhbGwgdGhpcyBBUEkgd2l0aCB0aGUgY29tcGFuaW9uIFBIWQo+ICsgKiBpbXBsZW1lbnRhdGlv
-biBjb250YWluaW5nIHRoZSBjYWxsYmFja3MgcmVxdWlyZWQgYnkgQG9tYXBfcGh5Lgo+ICsgKgo+
-ICsgKiBGb3IgdXNlIGJ5IHBoeSBjb21wYW5pb24gZHJpdmVycy4KPiArICovCj4gK2ludCBvbWFw
-X3VzYjJfc2V0X3BoeV9jb21wYXJhdG9yKHN0cnVjdCB1c2JfcGh5ICpvbWFwX3BoeSwKPiArCQkJ
-CSBzdHJ1Y3QgcGh5X2NvbXBhbmlvbiAqY29tcGFyYXRvcikKPiArewo+ICsJc3RydWN0IG9tYXBf
-dXNiCSpwaHk7Cj4gKwo+ICsJaWYgKCFvbWFwX3BoeSkKPiArCQlyZXR1cm4gLUVJTlZBTDsKPiAr
-Cj4gKwlpZiAoV0FSTl9PTighb21hcF9waHktPm90ZyB8fAo+ICsJCSAgICBvbWFwX3BoeS0+b3Rn
-LT5zZXRfaG9zdCAhPSBvbWFwX3VzYl9zZXRfaG9zdCkpCj4gKwkJcmV0dXJuIC1FSU5WQUw7Cgpb
-U2V2ZXJpdHk6IE1lZGl1bV0KSXMgaXQgc2FmZSB0byByZWx5IG9uIGZ1bmN0aW9uIHBvaW50ZXIg
-ZXF1YWxpdHkgZm9yIHR5cGUgdmFsaWRhdGlvbiBoZXJlPwoKSWYgdGhlIGtlcm5lbCBpcyBidWls
-dCB3aXRoIExpbmsgVGltZSBPcHRpbWl6YXRpb24gYW5kIElkZW50aWNhbCBDb2RlIEZvbGRpbmcK
-KGUuZy4sIENsYW5nIExUTyAtLWljZj1hbGwpLCBvbWFwX3VzYl9zZXRfaG9zdCBjb3VsZCBiZSBm
-b2xkZWQgaW50byB0aGUKc2FtZSBtZW1vcnkgYWRkcmVzcyBhcyBhIHN0cnVjdHVyYWxseSBpZGVu
-dGljYWwgc2V0X2hvc3QgaW1wbGVtZW50YXRpb24KaW4gYW5vdGhlciBQSFkgZHJpdmVyLgoKVW5k
-ZXIgdGhlc2UgY29uZGl0aW9ucywgY291bGQgdGhpcyBjaGVjayBmYWxzZWx5IHBhc3MgZm9yIGFu
-IGluY29ycmVjdCBQSFksCmxlYWRpbmcgdG8gYW4gaW52YWxpZCBjb250YWluZXJfb2YoKSBjYXN0
-PwoKPiArCj4gKwlwaHkgPSBwaHlfdG9fb21hcHVzYihvbWFwX3BoeSk7Cj4gKwlwaHktPmNvbXBh
-cmF0b3IgPSBjb21wYXJhdG9yOwoKW1NldmVyaXR5OiBIaWdoXQpUaGlzIGlzIGEgcHJlLWV4aXN0
-aW5nIGlzc3VlLCBidXQgZG9lcyBtb2RpZnlpbmcgdGhlIHNoYXJlZCBwaHktPmNvbXBhcmF0b3IK
-cG9pbnRlciBsb2NrbGVzc2x5IGNyZWF0ZSBhIHJhY2UgY29uZGl0aW9uIHdpdGggT1RHIGV2ZW50
-cz8KCkxvb2tpbmcgYXQgb21hcF91c2Jfc2V0X3ZidXMoKSBhbmQgb21hcF91c2Jfc3RhcnRfc3Jw
-KCksIHRoZSBjb21wYXJhdG9yCnBvaW50ZXIgaXMgY2hlY2tlZCBhbmQgdGhlbiBkZXJlZmVyZW5j
-ZWQgd2l0aG91dCBsb2NrcyBvciBSRUFEX09OQ0UoKToKCmRyaXZlcnMvcGh5L3RpL3BoeS1vbWFw
-LXVzYjIuYzpvbWFwX3VzYl9zZXRfdmJ1cygpIHsKICAgIC4uLgogICAgaWYgKCFwaHktPmNvbXBh
-cmF0b3IgfHwgIXBoeS0+Y29tcGFyYXRvci0+c2V0X3ZidXMpCiAgICAgICAgcmV0dXJuIC1FTk9E
-RVY7CgogICAgcmV0dXJuIHBoeS0+Y29tcGFyYXRvci0+c2V0X3ZidXMocGh5LT5jb21wYXJhdG9y
-LCBlbmFibGVkKTsKfQoKSWYgYW4gT1RHIGV2ZW50IG9jY3VycyBjb25jdXJyZW50bHkgd2l0aCBh
-IGRldmljZSB1bmJpbmQgdGhhdCBjbGVhcnMgdGhlCmNvbXBhcmF0b3IgcG9pbnRlciwgY291bGQg
-dGhpcyByZXN1bHQgaW4gYSB1c2UtYWZ0ZXItZnJlZSBvciBOVUxMIHBvaW50ZXIKZGVyZWZlcmVu
-Y2U/Cgo+ICsKPiArCXJldHVybiAwOwo+ICt9Cj4gK0VYUE9SVF9TWU1CT0xfR1BMKG9tYXBfdXNi
-Ml9zZXRfcGh5X2NvbXBhcmF0b3IpOwoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8v
-c2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDcyMjA1MzYxOC42MDI3MDItMS1pdm8uZy5kaW1p
-dHJvdi43NUBnbWFpbC5jb20/cGFydD0xCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51
-eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1waHkK
+On 7/22/26 1:34 AM, Dmitry Baryshkov wrote:
+> Yes, because the platform has different refclock. 
+Sorry. I think I've lost the thread on this one. From what I've
+understood:
+- For this commit, v1.1 tables should be left as is without renaming
+them.
+- For the third commit, v1 tables (DP serdes, RBR, HBR, HBR2 and HBR3)
+should be added along with a comment in the driver explaining the
+reason.
+ 
+Please confirm if my conclusions are correct or if additional changes
+will have to be made.
+ 
+Regards,
+Esteban
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
