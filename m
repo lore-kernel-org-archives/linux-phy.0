@@ -4,64 +4,144 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2DDADC4451C
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 07:01:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D7E9C44512
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 07:13:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JwFe7ty7MSQ38FEG4whgUXr+HBYlqZ60ApgmuNr40g8=; b=XzaapLQCkoReSp
-	TdpVAE6GHi9VgjcPcHXJJDYWZ3sJExPcOZitRGrfpJCrptOUItpGEPtec2U0A4mzXmJB25aW4NGKi
-	irHktp2gZaB4jgH5r3rkdnSQE9EHDCm/JYbNu7QsbvNw4HjM5uk8G/lnhO/ZMOZ8qxN9+lShyq49T
-	f920PF154xXhHFcGrxML9ATJConhqh072TTqpYGvqy0UMV0mQ/CXEb8tD9j4rEt1x3nNe5KoFOAEp
-	sqkIHPfZJip/5cj6iTPX+ySlk1Fdx5d4uGGTYT7gujUv2MMGcUknatzmpGGn5yu0XKN10cjkSsT4/
-	PlVlZeJsGtfBr/x9VYtw==;
+	List-Owner; bh=P8Rp6An33s5WQNN+Z20jGoO5SBWEBgUfSBIyBAeSlvg=; b=UDsZjHfoTtFoOc
+	igSPj07oL7B9tsTGcoR9BXlSkvX+VY3Mm1WcRadM0U7XmKyAMKqerftUx3oLMG3MDI4ZJcruXOy/d
+	C+r13gqNF7D2NN8vLKJ7FZiBpLo/gCVW7ZYFXSuB/VikhzTHMkTZJyEQuBy/ocAYAPNmDcNr6w4hw
+	yP8oUtgQvw1ljc+cwq1H7TEomnW4v1XUKYntkqVrg60BI5YoQjI7NRNK5Yfcla3Uj7b0oyWQkCr25
+	AQxOOAYisBlkrRNhXMX39qnMDBpJU+YVDR+I2k8LyiUeUaE9bOHPsTffIDvcxmjv548NJtQUOR3QN
+	A5k8UwSs7uZB+i9JGoWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmQwz-0000000B1Nu-0F1B;
-	Wed, 22 Jul 2026 07:01:05 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wmR8p-0000000B2Gl-1JvO;
+	Wed, 22 Jul 2026 07:13:19 +0000
+Received: from mail-koreacentralazon11023122.outbound.protection.outlook.com ([40.107.44.122] helo=SEYPR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmQww-0000000B1NS-24Gu
-	for linux-phy@lists.infradead.org;
-	Wed, 22 Jul 2026 07:01:02 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id AEBF141A70;
-	Wed, 22 Jul 2026 07:01:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6934B1F000E9;
-	Wed, 22 Jul 2026 07:01:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784703661;
-	bh=CI+UMo385N4h+hc9M6wJenaTKuLPOI4BaoeYVQ49/R0=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=esa6/k+PMxEFbkw7m4bgcelBl49jBZiH9qd5G0ZvGMysh72ybSGx7sabDnxQqE603
-	 rPgUTSsSrY9bv/EXXfXx2lwhBXJtIBDNWPn510TP5thoCShlUdsmCxZiJoy5rB50ZZ
-	 hn5av/a4drQdOWhKNI2bQWmJ/5U4baK0meLPd9n+hQMxliFCSTd+1WN56CxlkK5bvR
-	 IN9m0M0nF6yQ+5rB5N5FpsRJ+1SVVijR02KTVh8YaLS0B6lcBtlfqnJSlJVW7SRFcb
-	 oLMxdQdI1tj+3lMmMSZGd44tLS/Hf4yFRyfW9pPrZK0hYV8Twkpk8O+jJHPjZ5n+0y
-	 OYRD3f5oeN4dA==
-Date: Wed, 22 Jul 2026 09:00:58 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
-Cc: Robert Foss <rfoss@kernel.org>, Todor Tomov <todor.too@gmail.com>, 
-	Bryan O'Donoghue <bryan.odonoghue@linaro.org>, Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>, 
-	Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Bryan O'Donoghue <bod@kernel.org>, Loic Poulain <loic.poulain@oss.qualcomm.com>, 
-	Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	jeyaprakash.soundrapandian@oss.qualcomm.com, Vijay Kumar Tumati <quic_vtumati@quicinc.com>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-Subject: Re: [PATCH v6 2/7] media: dt-bindings: Add CAMSS device for SM8750
-Message-ID: <20260722-enthusiastic-hyrax-of-zoology-17bd7d@quoll>
-References: <20260721-add-support-for-camss-on-sm8750-v6-0-a5f841061d18@oss.qualcomm.com>
- <20260721-add-support-for-camss-on-sm8750-v6-2-a5f841061d18@oss.qualcomm.com>
+	id 1wmR8m-0000000B2FZ-06JQ;
+	Wed, 22 Jul 2026 07:13:17 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=k5Pchl8iFqGZQutr4d2AeHDyvhTAAQGxGTcik1K2hVpQujxsgmjmKZhqVmZbPykhZNA4wt8Zrws3H9uOXobLCisPdMO4oyjT17vWGr25ttd80/nSDd+TlQYw1FVtQAn8uWb6n6J6YwG6xMJVsIuA1wI2eDN6MqkV+HZdhQJ8rVgFqubJw87zz6u4K0UDMXHQlyps2QeZGmIkAxZay97O+TT4qAjtNVFGqJIPpf2ke/1WkkanBdKwgk7uiPX64jFnXsw/cPqFW8GJNmYDPCrWCazFQQGacxiC8N4gC5KeCUrDxuTdBWo3ePGuV9L5fwgZwyoaNwBD+TjeX04yObMf+g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=8zSjtJjo65BsmoR0tfNEhF1V8f8hOiMNumw8/OLiR/4=;
+ b=aJ/qya9sVTgdefnqsWLsiUvMqL55I5vARnAcgi0yrBX6DfpqfBSwYYgy4hx9cGGz0nWjqL4RcHp1NBmcO1OKG59pcogShsbAcOVLhJLwv1NkdswV0w+6mXT//CHrRGcJdSbLMDQIOmYqdCsuEyuVZwDxnfaf7HMIA11ViDjxXCx/BvtSruvdFeHH8HJi7vb2wLkDZaC/JmBtHnppvqG1G6AJQryvITklLarSH6kf/oasmCYNm8j2njsFv3srQnxRZ/c5JdueNEsVowscIc5mmyAKI4aZWotCUXQorg6XGxRTzONuapk5EBNgjHTgBu29D/viOk7Z23feqvn2h52Vzg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=aspeedtech.com; dmarc=pass action=none
+ header.from=aspeedtech.com; dkim=pass header.d=aspeedtech.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aspeedtech.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=8zSjtJjo65BsmoR0tfNEhF1V8f8hOiMNumw8/OLiR/4=;
+ b=hT4nClg+AkV0m2K9UR0BweiWx+mugIUQ2p/TEbfaIVaqPXzO64YKnUOcPlTxyzw+l77w+wnbxu+lSCh+w8DuokweWs510qvggE0fwhWN9bZKip5++3ks7hrGozHusi53bYX1uIIUSFQCKK+/JkiN5nQAb4LTybqeHqvfQvs58FZBglkRrNCa0V3O32/YRmAHaWJMTp+JTpJkCdv1/dqdgOTdwNCqDktKtRWcu87yCENVT2Euba+qcX4OCG/AO69Xib25ZWY9scddsnWlQL/1QExEyc8w19noCtiX5z7SYLCQyCDycdRp0kFYYWirWyRUDw9ZIladf0Vx6ZzmEpvqig==
+Received: from TY2PPF5CB9A1BE6.apcprd06.prod.outlook.com (2603:1096:408::791)
+ by SE3PR06MB8665.apcprd06.prod.outlook.com (2603:1096:101:333::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.245.10; Wed, 22 Jul
+ 2026 07:13:01 +0000
+Received: from TY2PPF5CB9A1BE6.apcprd06.prod.outlook.com
+ ([fe80::43a0:9857:dd1e:76d2]) by TY2PPF5CB9A1BE6.apcprd06.prod.outlook.com
+ ([fe80::43a0:9857:dd1e:76d2%4]) with mapi id 15.21.0223.017; Wed, 22 Jul 2026
+ 07:13:00 +0000
+From: Ryan Chen <ryan_chen@aspeedtech.com>
+To: Andrew Jeffery <andrew@codeconstruct.com.au>, Vinod Koul
+	<vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring
+	<robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+	<conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>, Philipp Zabel
+	<p.zabel@pengutronix.de>
+CC: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "linux-aspeed@lists.ozlabs.org"
+	<linux-aspeed@lists.ozlabs.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>, Joe Wang <joe_wang@aspeedtech.com>
+Subject: RE: [PATCH v2 2/3] phy: add AST2700 usb3.2 phy driver
+Thread-Topic: [PATCH v2 2/3] phy: add AST2700 usb3.2 phy driver
+Thread-Index: AQHchpNOnM449AUerUiXvoW6kWH3sbZlhJQAgAA9O2CAFICtAIAAA0tA
+Date: Wed, 22 Jul 2026 07:13:00 +0000
+Message-ID: <TY2PPF5CB9A1BE62ADABBBFA67FF51ABB53F2C12@TY2PPF5CB9A1BE6.apcprd06.prod.outlook.com>
+References: <20260116-upstream_usb3phy-v2-0-0b0c9f3eb6f4@aspeedtech.com>
+		 <20260116-upstream_usb3phy-v2-2-0b0c9f3eb6f4@aspeedtech.com>
+	 <ddb133ca1a3be605ee776b2276c1907c9ad32491.camel@codeconstruct.com.au>
+	 <TY2PPF5CB9A1BE6AE5B658D558EBDF24450F2F82@TY2PPF5CB9A1BE6.apcprd06.prod.outlook.com>
+ <ca289e45bbde8e8a2f823a1660aa0a8f88e94bc4.camel@codeconstruct.com.au>
+In-Reply-To: <ca289e45bbde8e8a2f823a1660aa0a8f88e94bc4.camel@codeconstruct.com.au>
+Accept-Language: zh-TW, en-US
+Content-Language: zh-TW
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=aspeedtech.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: TY2PPF5CB9A1BE6:EE_|SE3PR06MB8665:EE_
+x-ms-office365-filtering-correlation-id: 744f58f2-bc3e-42d0-b934-08dee7c0aa2b
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|7416014|376014|23010399003|1800799024|366016|38070700021|6133799003|56012099006|10067099003|4143699003|22082099003|18002099003;
+x-microsoft-antispam-message-info: VY8MRMuhs1tyKmpzX71ZbYuljGmlHZUH63leUIGdhVihPmQxxLr2K3pzYl4/7IEcq2MIP151Xq8YvZsOuRIzd+hlPBXGPAmZkNm5NeQqQAYHTn066DK56dkHuL6x3iNgx146nGrN4E6H9ztU+1Fptnf00cm4CUB11/h1DNrEpSflOu3PaYKkUcURP71ME5C/vrHcBBe3h66wCc7+uSbGMEwNEM1fHlUE18qQuqBTK+vzQPlkHMpQa5AobqyNMLqTqHaEN62xvnkxuH4RLJf9qHDG0ejNQebvJ7daFh6qJvAbP5zF9xIlAKV4bU0+jFehil3ex4OSgbrrEb64r+xS31H4UFQs7gelpVQeKyd7sUBGcJ3QZ66YAgtJK5PEnLmW7eohV8Tyncz/7692dclVRN6RKfc+qqu7nCx87hw0asNQrkcghp6xhs1rbTaGNLSnw3gNyao8XWu2i6XJceAgxdDjASgiW6SSoESH7kb2+OwI5WUU1wnDpD/aO3U+lncnUdQlGsTH8nR+0sX2xsr/hP70jHXLoPv/PUvDfSoRc6MbwnxWcK9x/ylLaHd/Of9JCnX4pSqcNfa5NZabwywMdIuCjDmK7VHKlJtgkd7keCAqWgGmAjayxRstX7/gMU28NkEauS2NEDPZTo07v7JdcxcCXbJ5uDPJCs6t+dZFxEK81djbp+XEf47bAGPryxkSFF8i9nDoVWY/YRjTzjPWvH40SWHkLFruhso6LUoVKYI=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:zh-tw;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY2PPF5CB9A1BE6.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(376014)(23010399003)(1800799024)(366016)(38070700021)(6133799003)(56012099006)(10067099003)(4143699003)(22082099003)(18002099003);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?Wm1rSGNpZWx6MG9XbjExT1A4ai9JZzl6ckwwM0Z3aUg3TDJ2QkFHZ2Y4ZFF2?=
+ =?utf-8?B?OE1JTS84dTN0S3JTSEtHbVVScnNLQnNzOHlRNlFMSFBwMkk2OURTdklvMXZZ?=
+ =?utf-8?B?ZjdUMlN0TjNVdGdGdmhBNDY1NnJ2d1hzR0t3TkdlUjY4T05FbkVmb2YzZGZO?=
+ =?utf-8?B?eDI4c0ZSR1h1ZE5oK0JXOG9HbU1rL3RDQWtMcVRxR2lWS1FBOW1IZTBRRThZ?=
+ =?utf-8?B?OVJnbUlORXN5T2xZbXE4TjcvTGlCUkJ0emtkenFxcTg2VzQ3cjR3bTY0cy9x?=
+ =?utf-8?B?MWdKYmNsYVo5Si9zUjFTNTMxWWNIL1lsRmdIT2NCOWYzZXdDak95dlRjTnVw?=
+ =?utf-8?B?dWJQVzZ2d2VQUU5nbTNqVlpRY3AyT1RoVWhocXNxM1haNkdnMEhRZU5WRWVK?=
+ =?utf-8?B?V0FtdVFIVG02R2RwUWdlaUJBVFM5NXRVU0tZYkxmeXBQTU1kNE1ObE1tZTcr?=
+ =?utf-8?B?ZnBhYk83VE1sRTlJNDFrQzhzazU3L2Z5d2RuYTZnYjF2UHRadSt1MWE2RWdu?=
+ =?utf-8?B?QXZ4em54VDA2Znd1THBHT1RyWk0vdWlOYkY0cXc3YTBrejB3TWxaRWtSMS91?=
+ =?utf-8?B?TENCMkJ0cjhlQklHenQ3OFozWmpZUEhDeDFFTUdmSTBjWXV3M1BlNDgwalhE?=
+ =?utf-8?B?TFZJUWFiTVFjeGNkOUp2YWhyUXNPTE1EdW5RcUY3RDJmUjUrb3p5ck53QVM4?=
+ =?utf-8?B?MU1LeTFJbER4eEQ5NkQ3R0J3bjRTcWQrS3lRMi85elJpMzQ0cXJzcjNscGcr?=
+ =?utf-8?B?SmRSbGNzL0d6emV0WFkrTmxGNllPNk1Gc3lYNDY2eTRlaGFZanZ3b2Y4OFBt?=
+ =?utf-8?B?YUhZQmwyK29meGNLWXVNRTRML1pqa0dLdnpKVDFrZm5JNzc0bHIwMys2SXNp?=
+ =?utf-8?B?N0lpWWxIVkVRTjdGQ0lwRkVQc0dpS0NDUEZiTU51bTcyWVdHL3Zield5UGda?=
+ =?utf-8?B?ODZ2MkEydTV2akpjUEdHcklZNEdNMVJPMHlERS9DWldTQWZnbWZNdDBKWXF2?=
+ =?utf-8?B?K1JGNnYyaXdUS2dGMTlCZ2ZES0o3eXh1ODRFY0ZWb0hRdklYNlVkV3FVK1A4?=
+ =?utf-8?B?SEhpdUMrODg1TFRhZlZYbEErS3pYdVFueWJMTVNUcGh3bGVOSXN0bmhQUkMr?=
+ =?utf-8?B?NDBPSm43UmVUZE9kanp3SkJOejR3VTBTc3VCVzBwRktsTHpvb2Z5bndkeWor?=
+ =?utf-8?B?R0ZKNWtBQ3RtdWl1cEhKY3FubHNXYmc1OFEwT1Q2YWo1WGJWSm02MVMwSUUx?=
+ =?utf-8?B?NmxQUVV0YjBSZWxBQnBiRFlGTVlhVFIvaTBzUHBwR3JPQ0ZTL054bFdKeUhp?=
+ =?utf-8?B?TkMrY2trcHdaWjVlcnNNQWI1cS9jbXorMXhBdlJIOThpR2ZOVHk2eDBpd09Z?=
+ =?utf-8?B?SngzRFU2WEVTNlFYS3lCVk5tWFJ3SmxNRUhTbDVoRGRtR05qM1MxQ0JTcUk5?=
+ =?utf-8?B?MVBUd3ByckFjUktoaVltN0tGNjZZTUc2VXA2NmtubE40dWZ3VXBJOUxHVUxB?=
+ =?utf-8?B?TDZiUnc5M2hudEQwTGZkenYzakl5N0kwSjBnYkVxWnZsUDNhcEdVMW1UTnZz?=
+ =?utf-8?B?QUZwbTdJUjNYZ05PMmRaaXJZS281QXFXVFVsQjFKOVp2V3JJSGRNaW1kaWps?=
+ =?utf-8?B?TzlXV21MTDdCdlN0RGpNOWVuUkROSlpNTkpSTUxhNUxMYUloQ29KZWV1M0VE?=
+ =?utf-8?B?c3ppY1pBdXdzbEwwUmFoYU5HRzltVVNrMk9rNXllaGR5R2NjMmVDcmgvUUha?=
+ =?utf-8?B?N1AxQm5McGc5K2VLSzAvOVJIMDhaQ25ybmJiZTdXWE5LeWgyU2NRQkxlUEsw?=
+ =?utf-8?B?Vi8rRmFMSU1LbnRuUENmRUY5TWlLdXlzNFNZZGxnWXdCS29sTU5jSk5RWnZQ?=
+ =?utf-8?B?Y1lpMStoSlNvci9qdUV6YitENk9ydjVkNW03cTZKTlpJNHZWM09QM3lMN2Rt?=
+ =?utf-8?B?UlBiNVUxMUcrb0Y4bjRMVFVPNWdzWmtWMVZ0WnJ6U3lhMjlkalNKaGJpaUdC?=
+ =?utf-8?B?S2VzQlBvdHk0a2lVeUVOZnMyZWhyelF2UENheG45dHNBelJzVWx2U1MvTUp3?=
+ =?utf-8?B?VVg3UjZjTHRQVEFrc1k3bEJzOU41V2tRenEvUVRaMVRCUHBSMW1KZTRFUGxV?=
+ =?utf-8?B?T29reHRWOXZOb0ZRWk1hU0NUMXptZ25jbmdJbllTWURqcSt0aTF3aEhYZURo?=
+ =?utf-8?B?T3JJWEp5bmN2eldPcHZJMWtQOHFvTUUwenRnVnkwSU5Zem5HQUErUldFalZY?=
+ =?utf-8?B?VmJiQ21KNEx6YUhZR012dkJLZEN2cWdZUHpKSEdUclRPSi9GdmppS3dURTZn?=
+ =?utf-8?B?aHJLb2dBS1FRMFUrZk5KQW4ya0t5Yk1IalpyQmZSVEgwdzBTUXIrdz09?=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260721-add-support-for-camss-on-sm8750-v6-2-a5f841061d18@oss.qualcomm.com>
+X-OriginatorOrg: aspeedtech.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: TY2PPF5CB9A1BE6.apcprd06.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 744f58f2-bc3e-42d0-b934-08dee7c0aa2b
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Jul 2026 07:13:00.7658
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 43d4aa98-e35b-4575-8939-080e90d5a249
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: sUR1W/BLFcoYeJDVocnhvU3RqKNkdLGPKeuESDWr7VvfYmpWbZETMR3YcOI5q7WXikAfjIEE0uTGQkIJk9RG2hCrQroCQXRvTg74Jfr3Iu8=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SE3PR06MB8665
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260722_001316_198099_99398149 
+X-CRM114-Status: GOOD (  23.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,28 +158,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 21, 2026 at 05:46:01AM -0700, Hangxiang Ma wrote:
-> Add bindings for Camera Subsystem (CAMSS) on the Qualcomm SM8750 platform.
+
+> Subject: Re: [PATCH v2 2/3] phy: add AST2700 usb3.2 phy driver
 > 
-> The SM8750 platform provides:
-> - 6 x CSIPHY (CSI Physical Layer)
-> - 3 x TPG (Test Pattern Generator)
-> - 3 x CSID (CSI Decoder)
-> - 2 x CSID Lite
-> - 3 x VFE (Video Front End), 5 RDI per VFE
-> - 2 x VFE Lite, 4 RDI per VFE Lite
+> On Wed, 2026-07-15 at 05:55 +0000, Ryan Chen wrote:
+> >
+> > >
+> > > > +	}
+> > > > +
+> > > > +	/* Wait for USB3 PHY internal SRAM initialization done */
+> > > > +	ret = readl_poll_timeout(aspeed_phy->regs + PHY3S00, val,
+> > > > +				 val & PHY3S00_INIT_DONE,
+> > > > +				 USEC_PER_MSEC, 10 * USEC_PER_MSEC);
+> > > > +	if (ret) {
+> > > > +		dev_err(aspeed_phy->dev, "SRAM init timeout\n");
+> > > > +		goto err_assert_reset;
+> > > > +	}
+> > > > +
+> > > > +	val = readl(aspeed_phy->regs + PHY3S00);
+> > > > +	val |= PHY3S00_SRAM_BYPASS;
+> > > > +	writel(val, aspeed_phy->regs + PHY3S00);
+> > >
+> > > According to the datasheet PHY3S00[15] (PHY3S00_INIT_DONE above)
+> > > indicates that the PHY internal SRAM initialisation is complete. The
+> > > datasheet reports the SRAM is used for configuration of calibration among
+> other things.
+> > > PHY3S00[6] instructs the PHY that software has completed loading the
+> > > configuration data into SRAM, however PHY3S00_SRAM_BYPASS
+> > > (PHY3S00[7]) tells the PHY to load configuration from "hard wired" values.
+> > >
+> > > Is it necessary to wait for SRAM initialisation to complete if we're
+> bypassing it?
+> > > Or are there other side-effects involved in the setting of PHY3S00[15]?
+> >
+> > Yes, it is necessary to wait SRAM initial, the driver polls PHY3S00[15].
+> > It reports that the boot loader in the PCS has finished initialising
+> > the SRAM (loading the contents into the PCS), and that initialisation
+> > has to complete before sram_bypass (PHY3S00[7]) may be asserted.
+> >
 > 
-> Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-
-Drop both tags.
-
-Binding was very different.
-
-Best regards,
-Krzysztof
-
-
+> Can you improve the comment then to make it clear that the wait is necessary
+> despite the bypass?
+> 
+Thanks, will update.
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
