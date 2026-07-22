@@ -4,53 +4,126 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8801C44539
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 10:43:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A44F9C44539
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 11:01:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LJ/MxfBfzn4aV0KXLeSQB13UepKKMF9+BYE2f0AaePs=; b=Tq8DeUSaTH8EaJ
-	SI5P9BfE4OngFx8l3T0XXMZ0vqGGOWHr+19O2D97qJUTSbQN63weRnWiYyLMpvyFNRb4i8E6dbr/L
-	XIdk3OzwIAbhk3XGRdR3OORqQWFxBa1hJIpZHztSQ382i8oJ0EStbmRQV64TdIB/v1iwelmQjmNIu
-	/Jr3CnXZNOxW920v4wSnfPbPdWwPLoIZpHM7/LLlDNLePQ8RSXc8kVurSUR1XBw2ZTkgFe1ZTvJEh
-	EVY1E9HoJ1xRelmr/ZCNYGteyQMiVdOV+teZoNR+L9G770HE6DAmmj3Y9CSfkcFiKS0TkoBbUhwNA
-	gKSHB6ImYUGys1yaGZLw==;
+	List-Owner; bh=19VTzvfCJb28+f2XaJC8mWr8UdzZQFphMGHeiyoF8Jk=; b=4OuXtW/rEZ+1CQ
+	n7++5SsZcnxHH7oroIqA5t5dfrnXZcGEnbJbn7CSMzQ4CGxNByb6r7d80PpcJf8KwXVJmZ79v1X9Y
+	HwYgbpgQlXb+G8vWMBtsKLUW3NbxPiD0PVd1+7e2slfWnHdbvbApTltRy8JEn9P32SxsTOusbBAmT
+	5DgbfGoVR74vT8aizZZj4v63wSuVmkkJTtK1bK1nLaQWPSybu9jqkELIdXunZX+RZw2dzmLOFnlc6
+	4hPeWlJFRGoT3VVlewt9lo1UHSI1LA+IdfNeY0ccIPIh3pkW/+t8NdkbGyl+A0q9OcG2T9fhjwjk1
+	cNaazbcO5QoPkjDxKAuQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmUPm-0000000BaBY-1pfB;
-	Wed, 22 Jul 2026 10:43:02 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wmUhZ-0000000Bbkv-1SAk;
+	Wed, 22 Jul 2026 11:01:25 +0000
+Received: from mail-westeuropeazon11010035.outbound.protection.outlook.com ([52.101.69.35] helo=AM0PR83CU005.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmUPl-0000000BaBO-2ONo
-	for linux-phy@lists.infradead.org;
-	Wed, 22 Jul 2026 10:43:01 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id E515A600DA;
-	Wed, 22 Jul 2026 10:43:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 56ECF1F000E9;
-	Wed, 22 Jul 2026 10:43:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784716980;
-	bh=pLox4Y/Z0BGWT8IWOs8onwkLqr7YAzr3wC7ymcLWsf8=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=XLV+Ak/XQQt5EjKj7h+Agf+SZyF6gOiUvf1g90Mz/AP4lfhH/EOQtnVc09h54kLju
-	 LFBGdS73SssvvwmNFAOAhzlwPOVpyLtP3IiLDfvNvkphO1tT6pj3b7s9LjVuz5uw96
-	 k9eDURarDJBfalCzySFnyAHrJ5V2y9zMVxxoABpe9NZ97/IozxDE8o7yhfg14xhTqR
-	 jaDclVZa+1eWRJ619wndmaVOWPX0jcyglWLsWWT/YOS5gF4TD71dpJpdbvkD5PUVI5
-	 3Zx3peFq3QKnl3TiQTf/TQiNomzDMrTT1bX+IWLNEcmT1QqhshL5uuhK46Q18/7QHb
-	 bWucCBU/kTE4g==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH] phy: qcom-qmp: qserdes-com: drop duplicate v8 DP
- headers
-To: "Dmitry Baryshkov" <dmitry.baryshkov@oss.qualcomm.com>
-Cc: olteanv@gmail.com, vkoul@kernel.org, linux-phy@lists.infradead.org, neil.armstrong@linaro.org
-In-Reply-To: <20260722-qmp-drop-duplicate-v8-v1-1-795eb7de0322@oss.qualcomm.com>
-References: <20260722-qmp-drop-duplicate-v8-v1-1-795eb7de0322@oss.qualcomm.com>
-Date: Wed, 22 Jul 2026 10:42:59 +0000
-Message-Id: <20260722104300.56ECF1F000E9@smtp.kernel.org>
+	id 1wmUhX-0000000BbkF-21P7;
+	Wed, 22 Jul 2026 11:01:24 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=v/SwW2TRg4R9d8wzAvRo++VQ8QjihDBEefCLWeMiDCCQ+t1hxcgH9BFOE3RbvtP1KW6wqRkiIoj0xQwbfuvyW3qkgzAfP/ZtVMJWyD3t7uncOyY0O/a1YKZAR9EjfRoSgDoxPVojtX1HoJ/mIR0QqUylKs9C4kyixPWMjRE1xxuX7KXn/f395IICkgTYev6yEEJpFsft5MYtH/+EcKrcOVkTsVVA8aDEjNfuZlGCvxX3ffQunl6u3vWtnpFKxVDyl2Vhv9ykvNT1Uqvsc1eHWqVl1Ob4v/Vrg5SyFZSDORGWdFJfoccp43IX47q3JWznyVf7phgToEX92kvA+UWCmA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=sVMK55xDG6B3zAQsQTMbDzUHCdtkVL0JfcOKf5RzWhk=;
+ b=W1xmZDkmy8j67iRDxxsOgM+hS0b4uow9EsR3tj1CECZ3lrxH8IyRq0XH+2wjnX7VCXpz7B8bPuLMVrRsp9V65tkuhgGh+JkzaDNvEhLZrmltthCOTg+eeA7YpSjM7S2w/CpLKoi8gHzXc09T1vlf4C4zfb9kLSQxymF9LKuTWfwxQkQdOPGhXuzHXpGiW3Mjs6ZZ/RC7fXaMBcLBSaX8RJBZc+A8Va5DvuCpgn+Cz7g+eH5Yeh0VhkGlhGHcq3hAaabPtsDyN/WCAp0UyaSSorPvqCK6MTkSN4KKfiyPfUWzvDxwhD8fAUcEW2/94g3nnorT25MIZ2UCxrFz9cjchA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=sVMK55xDG6B3zAQsQTMbDzUHCdtkVL0JfcOKf5RzWhk=;
+ b=OL4Fjnxl6Xed7JK2NKozlSckAOBj9GS1VZW7bBYEw7Rxr9xC0r5lZQFMoKVZ53FWWE/q0YK9s6UhwfiBm9gWa76f7D5RQluFfRb99jL0VOA//s5f6ClGwgwAYjLWNslC+55Lo+12ouayN3l7MbVwOu2BB0VkxzyN3IqY7nEU5i6y6jvLL4ITrs/wnOEdeQ4UFPknE1/T40vDSsh9eWN/IiJaq0RLa42WpXN3ezhAheCBj4uokd8kYMcXmjTlwQp0O+zJylysTWkWCOch1lrandOlXJX/+M011Fkm8vAMOWPLFGdRmGtXvLSvOlWpGpMopV8ZeThxfUmzICUeGwg/iw==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from GVXPR04MB12290.eurprd04.prod.outlook.com
+ (2603:10a6:150:319::13) by VI0PR04MB10805.eurprd04.prod.outlook.com
+ (2603:10a6:800:25f::22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.223.18; Wed, 22 Jul
+ 2026 11:01:18 +0000
+Received: from GVXPR04MB12290.eurprd04.prod.outlook.com
+ ([fe80::1739:3404:2175:33dd]) by GVXPR04MB12290.eurprd04.prod.outlook.com
+ ([fe80::1739:3404:2175:33dd%6]) with mapi id 15.21.0245.009; Wed, 22 Jul 2026
+ 11:01:16 +0000
+Date: Wed, 22 Jul 2026 14:01:12 +0300
+From: Ioana Ciornei <ioana.ciornei@nxp.com>
+To: Vladimir Oltean <vladimir.oltean@nxp.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org, 
+	Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+	Tanjeff Moos <tanjeff.moos@westermo.com>, "Christophe Leroy (CS GROUP)" <chleroy@kernel.org>, 
+	Michael Walle <mwalle@kernel.org>, Shawn Guo <shawnguo@kernel.org>, Frank Li <Frank.Li@nxp.com>, 
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v4 phy-next 8/9] soc: fsl: guts: implement the RCW
+ override procedure
+Message-ID: <xumth3wb3bvui6ywrithgazf6fombn42hisikprtywkbuexypn@kugdqyce226c>
+References: <20260721231603.67865-1-vladimir.oltean@nxp.com>
+ <20260721231603.67865-9-vladimir.oltean@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <20260721231603.67865-9-vladimir.oltean@nxp.com>
+X-ClientProxiedBy: FR4P281CA0398.DEUP281.PROD.OUTLOOK.COM
+ (2603:10a6:d10:cf::16) To GVXPR04MB12290.eurprd04.prod.outlook.com
+ (2603:10a6:150:319::13)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: GVXPR04MB12290:EE_|VI0PR04MB10805:EE_
+X-MS-Office365-Filtering-Correlation-Id: 11ac55c5-a0cc-4f4b-031f-08dee7e08d5e
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|366016|1800799024|23010399003|7416014|376014|18002099003|22082099003|4143699003|3023799007|10067099003|11063799006|56012099006|6133799003;
+X-Microsoft-Antispam-Message-Info: gPhVywYvXAD6cxc/nEnVAwOIneunXOWblsvzWXrgxIigLsyTmVs+Pcde2Q1LxZ8wbo3v8UX125tZg95i7HRibOxt7iSPqtssAaFsEGF5ns5+URsHnXyZacmtuzaiCyW+nu6OTJHDs20fXgEdT5F/j+iuTgN6Q2sRl9lOjVJaL2ZTj2GkdItE3l26zx6wWShYzl1VYNSs2ZU7ce5TgoAQdxpaXkjhVT/XdcPDBugNc9Op+Yld1ts7r4zwPxEfq0ogQG4ZU6GZ36oNBE1DxTowMYDa+RF2JiHDZ2WlUQCa4p0rFe9N03w6KbXcqYQf4WloNnyxY1cfQFrYRvXoWm8i1X4c6wTpqRJ3qwBMW6DwW4LfkP93CH5UVrDmBIE7LVxQdHLO0eo74im9wOnz6a4wOUZnn+nHlxGYWyqV3u/B3mkAzENL2zkzz5jUG2vP9UjJ9vN2LNdVQml3PwKr1SJaY8pwWuebFfGyh80DR6JWs60j0r5XODBwyeSGp5vVdcMVyN+tYGAQw/P6OJHejI/akuIl7AV16fiM4KkDWCjghOPNhekzNWRY2P5e+niXWeQtTCQ4/ebAC6LJajiOLDqvfwHWY/bzQlDuQhPnOARkIrzgH/wd0yQgKDIQpbTuOscfprVd8eWEkl80HvBuHMnYGQ==
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GVXPR04MB12290.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(366016)(1800799024)(23010399003)(7416014)(376014)(18002099003)(22082099003)(4143699003)(3023799007)(10067099003)(11063799006)(56012099006)(6133799003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?1i5me2SzcPvYHupJr5lL7hv7F+asRuH8H/zUJWxna7FIaw0sRcBEsSy0t28N?=
+ =?us-ascii?Q?hZsb75u3kXNrq5rAxSWEVFQmqsrMjv6tJoQm4b8FeNsS+rp26HhmqMlVXc0C?=
+ =?us-ascii?Q?3X63xa6oWAMv3B4mpPJX4fjPG0grd19SabfxPVL0+5xNEs+nNHjN3XUdEXy5?=
+ =?us-ascii?Q?r7CVeEOBVedwVb/lbyRVklVFWAXENOmaBmJ0S4bixvbzHQAqEBvbXJWM0fqe?=
+ =?us-ascii?Q?xzVJEck3rJPkiFeAYHkuNHthHw/Gnddfm6ExxUaPTOsw0/PHbWQiKmUY8eoW?=
+ =?us-ascii?Q?H9SNj1Xkosms/s3OD3slmehN0MqW+e96wPmPXYqvzVxlKdSvQv2JbZQ7XvgU?=
+ =?us-ascii?Q?L4GC0+3059bCm6Tj6VDodnFBsCUl/tMrk1wHUg6Mn6bXMYD2s+dZo9OVGiEi?=
+ =?us-ascii?Q?fVCpicI3myiwoKuj/OA+ruMDjJBLgmHLAPxaPX5udP3KyO72NDDGbwb9tYTP?=
+ =?us-ascii?Q?BSpR2KoTkXqIDE8TKHhOAY5hGzci2S+dRcyc/C0xcjpLkqIi9TN1t3cgXvZl?=
+ =?us-ascii?Q?0LKeuIopB2CbdDcgx0eluU7/Y9JOQn31E4RiQQ1ysdFdfE+I9C0E9CcpWi8W?=
+ =?us-ascii?Q?NN3YyvmRh1ItK0k3hgVCAKUwYPmc718gC3kwUs0PvjS2NOqy0IUoPj/nGUf1?=
+ =?us-ascii?Q?0tghR6C1WFpaDCYerPNrnpp+YxWj8XmRWxWqM8C+72qqdnwsTi6M0guuLvuX?=
+ =?us-ascii?Q?Xch0FdSa0ClxEOYlcYjXFbwGxno9S9UpoTHnwAEHgl5LYal8WsCXY8yhRlV9?=
+ =?us-ascii?Q?ceShFol1Z6jX9gdzXEkgqe5Mr46CEve1U4XCZdCx8fuGahecXkQ9e08b9rzw?=
+ =?us-ascii?Q?44FDU4uERf6JBDCL1DecCViyfo9jvMfAlqe8kAuiRZQr5QDrTAHhc3vsznly?=
+ =?us-ascii?Q?A9gtJulSoNzhEuYfjZVkHbZP7Do83821vvmT8VfC/gJkoRrx2PQ9KWnAfqCo?=
+ =?us-ascii?Q?vQ5j3n9bIIp2lIoUXc2+U0T1IdtVyQ8TtFeXa3AqQllvwAjab4in9JPOjZ8Q?=
+ =?us-ascii?Q?tMgYyxwP112x2RXv7TyNuV+IqtEIVdrh/R/yfaVl59FMiZMtZ1TwZtAmP1bw?=
+ =?us-ascii?Q?6iKzAlhmgdeZ4vcKeL4bhBB0Yr4twobZQTp/2BjZiDOULlUhUXrxxZ5fEgE/?=
+ =?us-ascii?Q?3sGP2RLpnkJql7dFKiT1payYvUh8ttarx6RQ9yCuoqq4TIcVLP2snfkLs37x?=
+ =?us-ascii?Q?1RdaBgDQ8uXOCJMLmuluNPKKklGUJgPwVW2ZaVth3uibtd5QvBajYj+tS5KH?=
+ =?us-ascii?Q?mYKJcn3YSdFxluD+5xGE9J6S7vqUue1blWVsQlYZ9G57Iznsxf9X2wLlq7Ki?=
+ =?us-ascii?Q?a6UhELgsbB3LtvCIGtK40P6tMqxXxRHkspKQ57a2f0JbP8zVA2XkeikqgPKk?=
+ =?us-ascii?Q?DD86wSuRyHeFfxmddsHOBbzSCvbSPr6NBfR6IolrcVnoxDZsftxIduNHmI29?=
+ =?us-ascii?Q?nI+KhbORfmWvvZ7tAWMsFC3+sqGhdMRjLmQ3fijOFs9TkwueIAI01OKRrsHW?=
+ =?us-ascii?Q?gzzvjO9U3+uodHyWXnWAtP4YoMw5H/G8wij99TH2PnMqAXf6YI+u4oNpqQGj?=
+ =?us-ascii?Q?LQSPFrD+i6T5/9zA5+3zLe+XUvn7IjgM975m4GOSWjk7v9HIokHAbOUQZkH/?=
+ =?us-ascii?Q?drpHss8Hf2ZUDatPljWf8AUDO/GXRR0xtDdvofEusQUZFN5xhG4zj+E2YMyB?=
+ =?us-ascii?Q?eTInKlIaqzZGK+rap5mIIrhBoReM3ObOrjHuFlzu9LoNvMAwng+6snTMo3AJ?=
+ =?us-ascii?Q?V3ifIL9tqw=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 11ac55c5-a0cc-4f4b-031f-08dee7e08d5e
+X-MS-Exchange-CrossTenant-AuthSource: GVXPR04MB12290.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Jul 2026 11:01:16.4864
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 1i7dCdyiGJ+Qxw/f+Xv8fFr4Oo6m9qilIi4vWB2xVHcyQO4Q0L7SuBdkwm9HdrJ8JFTfRFvRaebq+8TKW5VF9g==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI0PR04MB10805
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260722_040123_538549_08B032B5 
+X-CRM114-Status: GOOD (  17.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,43 +135,38 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gVGhlIGNvbW1pdCBt
-ZXNzYWdlIGluYWNjdXJhdGVseSBjbGFpbXMgdG8gcmV2ZXJ0IGNvbW1pdCBkMTA3MzZkYjk4ZDIs
-IGJ1dCBvbmx5IGEgc2luZ2xlIHVudXNlZCBoZWFkZXIgZmlsZSBpcyByZW1vdmVkIHdoaWxlIHRo
-ZSByZXN0IG9mIHRoZSBjb21taXQncyBzdWJzdGFudGlhbCBjaGFuZ2VzIGFyZSBsZWZ0IGludGFj
-dC4KLS0KCi0tLSBQYXRjaCBbMV06IFtQQVRDSF0gcGh5OiBxY29tLXFtcDogcXNlcmRlcy1jb206
-IGRyb3AgZHVwbGljYXRlIHY4IERQIGhlYWRlcnMgLS0tCmNvbW1pdCA0NDZmZmVkYWFkYTM1YjQ5
-MDNjZGE0YzEwNzQyZmNhNjk0OThhMDAyCkF1dGhvcjogRG1pdHJ5IEJhcnlzaGtvdiA8ZG1pdHJ5
-LmJhcnlzaGtvdkBvc3MucXVhbGNvbW0uY29tPgoKcGh5OiBxY29tLXFtcDogcXNlcmRlcy1jb206
-IGRyb3AgZHVwbGljYXRlIHY4IERQIGhlYWRlcnMKClRoaXMgY29tbWl0IHJlbW92ZXMgYSBkdXBs
-aWNhdGUgaGVhZGVyIGZpbGUgZm9yIFY4IERpc3BsYXlQb3J0IFFTRVJERVMgQ09NCnJlZ2lzdGVy
-cy4gSXQgc3RhdGVzIHRoYXQgaXQgcmV2ZXJ0cyBhIHByZXZpb3VzIGNvbW1pdCB0aGF0IGludHJv
-ZHVjZWQgdGhlCmR1cGxpY2F0ZSBoZWFkZXIgYWxvbmdzaWRlIEdseW11ciBwbGF0Zm9ybSBzZXR0
-aW5ncy4KCj4gQ29tbWl0IDIxMmNkZWRjYWMxMSAoInBoeTogcWNvbS1xbXA6IHFzZXJkZXMtY29t
-OiBBZGQgdjgKPiBEUC1zcGVjaWZpYyBxc2VyZGVzIHJlZ2lzdGVyIG9mZnNldHMiKSBhbmQgY29t
-bWl0IGQxMDczNmRiOThkMiAoInBoeToKPiBxdWFsY29tbTogcW1wLWNvbWJvOiBBZGQgRFAgb2Zm
-c2V0cyBhbmQgc2V0dGluZ3MgZm9yIEdseW11ciBwbGF0Zm9ybXMiKQo+IGFkZGVkIGlkZW50aWNh
-bCBoZWFkZXIgZmlsZXMgZm9yIERpc3BsYXlQb3J0LXNwZWNpZmljIHJlZ2lzdGVycyBvbiBWOAo+
-IFBIWXMsIGhhdmluZyBkaWZmZXJlbnQgbmFtZXMuIEdldCByaWQgb2Ygb25lIG9mIHRoZSBjb3Bp
-ZXMsIHJldmVydGluZwo+IGNvbW1pdCBkMTA3MzZkYjk4ZDIgKCJwaHk6IHF1YWxjb21tOiBxbXAt
-Y29tYm86IEFkZCBEUCBvZmZzZXRzIGFuZAo+IHNldHRpbmdzIGZvciBHbHltdXIgcGxhdGZvcm1z
-IikKCltTZXZlcml0eTogTWVkaXVtXQpJcyB0aGlzIGNvbW1pdCBtZXNzYWdlIGFjY3VyYXRlPwoK
-SXQgc3RhdGVzIHRoaXMgY29tbWl0IGlzIHJldmVydGluZyBkMTA3MzZkYjk4ZDIgZW50aXJlbHks
-IGJ1dCB0aGUgZGlmZgpvbmx5IHJlbW92ZXMgdGhlIGR1cGxpY2F0ZSBoZWFkZXIgZmlsZS4gVGhl
-IEdseW11ciBwbGF0Zm9ybSBzZXR0aW5ncyBhbmQKdGFibGVzIChzdWNoIGFzIHFtcF92OF9kcF9z
-ZXJkZXNfdGJsIGluCmRyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1jb21iby5jKSBp
-bnRyb2R1Y2VkIGJ5IHRoYXQgY29tbWl0IGFyZQpsZWZ0IGludGFjdC4KCldvdWxkIGl0IGJlIG1v
-cmUgcHJlY2lzZSB0byByZXBocmFzZSB0aGlzIHNvIGl0IGRvZXNuJ3Qgc3VnZ2VzdCBhIGZ1bGwK
-cmV2ZXJ0PwoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9w
-YXRjaHNldC8yMDI2MDcyMi1xbXAtZHJvcC1kdXBsaWNhdGUtdjgtdjEtMS03OTVlYjdkZTAzMjJA
-b3NzLnF1YWxjb21tLmNvbT9wYXJ0PTEKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4
-LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
-bWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On Wed, Jul 22, 2026 at 02:16:02AM +0300, Vladimir Oltean wrote:
+> Add support for the RCW override procedure which enables runtime
+> reconfiguration of the protocol running on a SerDes lane. The procedure
+> is done through the DCFG DCSR space which now can be defined as the
+> second memory region of the guts DT node.
+> Support is added on the following SoCs: LS1046A, LS1088A, LS2088A.
+> 
+> The procedure is exported to the "client" driver - the Lynx10G SerDes
+> PHY driver - through the following functions:
+> - fsl_guts_lane_validate() used to validate that changing the protocol
+>   on a specific lane is supported.
+> - fsl_guts_lane_set_mode() which can be used to request the RCW
+>   procedure be executed for a specific lane.
+> 
+> Since the RCW override procedure is different depending on the SoC, the
+> private fsl_soc_data structure is updated with two new per SoC callbacks
+> (.serdes_get_rcw_override() and .serdes_init_rcwcr()) which get used
+> from the generic fsl_guts_lane_set_mode() function. These two callbacks
+> hide all the SoC specific register offsets, masks and values so that the
+> _set_mode() procedure is straightforward.
+> 
+> Signed-off-by: Ioana Ciornei <ioana.ciornei@nxp.com>
+> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+
+Reviewed-by: Ioana Ciornei <ioana.ciornei@nxp.com>
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
