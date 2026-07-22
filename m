@@ -4,88 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7ED19C44512
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 03:36:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D877C44512
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 05:27:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=q7O52Hq7+8QEF/stB4ah2zXMOWrBu5Gph7fQpB8uvQY=; b=g5myqwN5Wk5706
-	H9z2YSGxZgecaaXxeENKCm1XkOlqe9XCL3rdbgLauMXTswUQMadsy45riP4e5wcQPR/MnI20VlPzB
-	rLBNNRjmJpnCBENP2R3tWX40cgpSwRL46ZYFNTkvIdzyXoXED7rpHVCjGyS6AyDJTFhsgsmA87nqL
-	2/ZeCYi6bBG8pyMRIFZ00L0nkUq7isz4oc5Y7oJqeijaXj88XdLbdQV4eoUqRNkJpZMscXoUF3MTN
-	PbjP3ekPSsYn5iGa3TxyJ/i7un9OVTEC8cLBG5VimZJg+SGUCsIm90CoOamHEO1wAOxCjpCnerCbJ
-	fLpjVGY9oS0ZP5PBHKnQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:From:To:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2oHhd52SHQkv1uEnYpYG1185UMhQ9gYik7mJ3126Tco=; b=bmQrZjgURO0ViU
+	usyTyJAnUpaDl0rOoo5YsQlAry4u3wVxf4/4tF5S+V0/Hq/Qw0sHOAj3l28a0sybLSdKY8JgMrxYw
+	k+5raZow2d5OCEE2p5UtWYL93LbEh54guvWJ2lvTw9AKB67V5PIrtrvYCobx9MFVFAD26/zpLYbHB
+	neTSLK1s+sSbFH1zB9RaSQfIHbDRQKL3ILWuecEIFI2Rth54CWarfdUeOAWKpwyawma6U3binw1Qe
+	CwhEHBkSMqiLTjXLIE98oLAtFdNDU9WmBYO/4doYIMF3Btyw3GmEQHrJcoU6VMI3Bxs9Rk84Pr8X1
+	ZFLmWiaC1Wj04ZBQfIBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmNlE-0000000ApdA-465N;
-	Wed, 22 Jul 2026 03:36:45 +0000
-Received: from mail-pg1-x52b.google.com ([2607:f8b0:4864:20::52b])
+	id 1wmPUm-0000000AvRN-1icw;
+	Wed, 22 Jul 2026 05:27:52 +0000
+Received: from mail-244123.protonmail.ch ([109.224.244.123])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmNlB-0000000Apce-2VIL
+	id 1wmPUj-0000000AvQV-024S
 	for linux-phy@lists.infradead.org;
-	Wed, 22 Jul 2026 03:36:43 +0000
-Received: by mail-pg1-x52b.google.com with SMTP id 41be03b00d2f7-ca7c1176317so8863147a12.1
-        for <linux-phy@lists.infradead.org>; Tue, 21 Jul 2026 20:36:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1784691400; x=1785296200; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=7NHyhDTZjnyF9Jy1uHqpnZ3KtVUroBokJdvpUJqEFWk=;
-        b=o1vlIao4zHcQWq7zLaqxxmREJzSWwidFgzOal7h5Chxg3DqBr8fSOFzfXUiJ9BIOey
-         9Gxmyk0uSpU1hmLiqxYv8h34VLQwxiuvGTIbIYcORPiPkGTTXGZJzRxGXMtWnx1+WNkA
-         uZpFRboajTxHK+xkoGKeJZpu3mRhskrLFOAcIHJFuSliN6K5u5ci8JsWrvc+hhV9Ke0W
-         O1tBZM+mb9PYkqbzMaLK4UvHv7YY8vu/rs91GtgvmxYGfJ87idU44cohsRK3cVV07qUw
-         6qoGLvRugoRi5+JaUdfU6pqM+UPBEM9uUbW9GrzVl2uuFlpCQfjbBPyPWs+KuxSEMItk
-         1zzQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784691400; x=1785296200;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=7NHyhDTZjnyF9Jy1uHqpnZ3KtVUroBokJdvpUJqEFWk=;
-        b=eknqLYfyb6Hngyw/0I0z4Y1wfQGSUOxWB7ynLefF9yVKYg5vw1dLI9KSuvGZeOXS3a
-         +/+g4gljF6F0/zdn1FIGbhqXSY0Q4HObD2EPRZ7mqv3IZC1pXgTfiCVnyqOiG8CcEOTT
-         keS7mVoMB9Q2dSma4+zwK64DZ38S7x69mBRYUNNQPv9ER3SMHyzVaRYQfBr9ejki1Md1
-         oZ0wrN4kpzxT3qRHJKk/nI8bFmUWX4OHBkoTkoJeAIR390k5fIOyIGJnWfGtYfdy4r0u
-         nQlX2O8UFETXnh8Xxey2GsNuQgnIOW9yxWnCW36rImUqLlM5q4I4/kJMkObOwQbbPjp7
-         W9nQ==
-X-Forwarded-Encrypted: i=1; AHgh+RoYz+NHAr7eQzn1o8xqr1TugDTrU5BI823DQAkUsGYKZ1L3I4QkJNSTlw3+Y28pS1pZpIzX2+Lp8vI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzsJoh6RpPE9h2BJFMX2G4bPXxhAFojUPwuGJoVpes15zvL59Pk
-	VAcN2/dO6m/fnSXrqIkX5+Fi7KPp/UuILmprbmQwwzGmsQfNlrmXsRM=
-X-Gm-Gg: AR+sD13opYRydGuzDCXxEpCNB6h+tflAlA2ilPnMdsr+YdhzcaDPxLKN/zrJk9r2B7E
-	oGU4GupfDLK3qQP4RnR5izNyDIrPILbJC9TXkHyT9sY8F5JWAh4831npUiA1PXfECRym1NQfvXh
-	YRt7OhQy5RaN9J6sn6vdwInOZzWeBIVcbFIZrCHS191rbRQ/JB8aoWTum7B84ymD6J7BGgoljDq
-	w9MnnsldgCCE5B7EKfTKkWFmJzVpATG6W+acYN6HSN2zy1t5xef78wx5MOPIijhXlOHOoVWksVl
-	FeXAMJ6yPXbr25x2qGJkeBF1uEn0cEKBwAPOKFDOiD7wPPlpAlELEE1+cR98V5uR+RX8eDRFuJ9
-	mBqXD+VK/mUk6LEqlRIMqABAn+B4kCYLL5nQBVHnfgQdIjbI8sLf+bL1xV93mxLWcLiB8haRCAt
-	b2C0UJGMdAYaDPcRr08QA+7XMHMzA=
-X-Received: by 2002:a05:6300:808c:b0:3c4:2cf9:28a1 with SMTP id adf61e73a8af0-3c42cf93a4fmr1420862637.46.1784691400038;
-        Tue, 21 Jul 2026 20:36:40 -0700 (PDT)
-Received: from t-rex ([2401:4900:adaa:53ec:4dd9:f3bc:714a:d631])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-13d13015052sm1561599c88.5.2026.07.21.20.36.35
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 21 Jul 2026 20:36:39 -0700 (PDT)
-From: kr494167@gmail.com
-To: ioana.ciornei@nxp.com,
-	vladimir.oltean@nxp.com,
-	vkoul@kernel.org
-Cc: neil.armstrong@linaro.org,
-	davem@davemloft.net,
-	netdev@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	surendra <kr494167@gmail.com>
-Subject: [PATCH] phy: fsl-lynx-28g: propagate PCVT enable errors
-Date: Wed, 22 Jul 2026 09:06:19 +0530
-Message-ID: <20260722033619.10647-1-kr494167@gmail.com>
-X-Mailer: git-send-email 2.55.0
+	Wed, 22 Jul 2026 05:27:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
+	s=protonmail; t=1784698064; x=1784957264;
+	bh=cI/qXI5aIOtv67IxgQsQWkvSxybRIeo9UIqFM/YYosA=;
+	h=Date:To:From:Cc:Subject:Message-ID:In-Reply-To:References:
+	 Feedback-ID:From:To:Cc:Date:Subject:Reply-To:Feedback-ID:
+	 Message-ID:BIMI-Selector;
+	b=nsHIgWf2mOwt/IYjw6I0iqkXQQekTDShR3GZuubpI11aEwtV8197WvjlCciGGrBDT
+	 XgpzyqbsYi87zv2uvLvmE2YZZCRzdCwN5HMnafQESiJm5ROGz5S/MumFVk9qLpRJqj
+	 kPdMGjoXb+y/G5L2N3BzcAykgSnwQMNMSFH9iPgguIZsCXhMJ55aQmyPiNV+6vsm5Y
+	 GJAO3802WtiXFNMgUv8UngbJbm1KSEgaaRKS+L6yNwibqzOop3JTwrbO5rZZ7Mg60j
+	 l5H0ZDZMF54VGJRhVbvgaJPpN7xGpfyrbyeL71jSO+Z2XZ15DtHgy93DvmjSePWLTy
+	 v1TSErY0FLIWA==
+Date: Wed, 22 Jul 2026 05:27:39 +0000
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+From: Esteban Urrutia <esteuwu@proton.me>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, phone-devel@vger.kernel.org
+Subject: Re: [PATCH v2 2/3] phy: qcom: qmp-combo: Specify PLL version in qmp_v6_dp_serdes_tbl structs
+Message-ID: <58edef55-b513-4ccb-a384-64f2ee7e0250@proton.me>
+In-Reply-To: <dph6cacosw3jzksqxp7fgofdueukrq6a3c5xys4jfrkqjuigvx@sroivvrxiwxk>
+References: <20260715-sm8475-bup-usbss-v2-0-2d8def39b190@proton.me> <20260715-sm8475-bup-usbss-v2-2-2d8def39b190@proton.me> <wg6lgpaexz4ktjlfzqpsidj56wr3hjax2ktn75kqsoaubtdxre@xh3yn3xpr4af> <b77dc15d-f9ad-4c06-9e24-8f73421e2130@proton.me> <dph6cacosw3jzksqxp7fgofdueukrq6a3c5xys4jfrkqjuigvx@sroivvrxiwxk>
+Feedback-ID: 147889766:user:proton
+X-Pm-Message-ID: 544f5ece5549d5872eeeeab0d457c91d6fe6892b
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260721_203641_655622_35E9AF12 
-X-CRM114-Status: GOOD (  10.35  )
+X-CRM114-CacheID: sfid-20260721_222749_687407_0F9B4815 
+X-CRM114-Status: UNSURE (   7.88  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,38 +70,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: surendra <kr494167@gmail.com>
-
-lynx_28g_set_mode() currently ignores failures from
-lynx_28g_lane_enable_pcvt(). It then updates the lane mode and reports
-success even though the protocol converter may remain disabled.
-
-Propagate the error and leave the previous lane mode intact so the caller
-can handle the failed reconfiguration.
-
-Fixes: 8f73b37cf3fb ("phy: add support for the Layerscape SerDes 28G")
-Signed-off-by: surendra <kr494167@gmail.com>
----
- drivers/phy/freescale/phy-fsl-lynx-28g.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/phy/freescale/phy-fsl-lynx-28g.c b/drivers/phy/freescale/phy-fsl-lynx-28g.c
-index 38afcd081a2a..1fe406adc83c 100644
---- a/drivers/phy/freescale/phy-fsl-lynx-28g.c
-+++ b/drivers/phy/freescale/phy-fsl-lynx-28g.c
-@@ -1003,7 +1003,9 @@ static int lynx_28g_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+On 7/21/26 9:02 PM, Esteban Urrutia wrote:
+> This does not seem to be the case...
+> When HBR2 is used over a direct Type-C to Type-C DP Alt Mode connection,
+> link training fails when v1.1 tables are used instead: 
+Expanding on what I said in my previous email, here is what happens when
+certain tables are used.
  
- 	lynx_28g_lane_change_proto_conf(lane, lane_mode);
- 	lynx_28g_lane_remap_pll(lane, lane_mode);
--	WARN_ON(lynx_28g_lane_enable_pcvt(lane, lane_mode));
-+	err = lynx_28g_lane_enable_pcvt(lane, lane_mode);
-+	if (err)
-+		goto out;
+- v1   DP serdes, v1   RBR/HBR/HBR2/HBR3: works
+- v1   DP serdes, v1.1 RBR/HBR/HBR2/HBR3: doesn't work
+- v1.1 DP serdes, v1   RBR/HBR/HBR2/HBR3: works
+- v1.1 DP serdes, v1.1 RBR/HBR/HBR2/HBR3: doesn't work
  
- 	lane->mode = lane_mode;
+The third case is interesting. I'm inclined to believe it works because
+the only difference between v1 and v1.1 DP serdes tables is the value
+written to the BG_TIMER offset.
  
--- 
-2.55.0
+Regards,
+Esteban
 
 
 -- 
