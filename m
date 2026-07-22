@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D624CC4451C
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 06:57:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E86F1C4451C
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 07:00:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eRLXCUpZFs6iuKfugOAWJOXyVGyTBtxDiQfJmmxVxQg=; b=LfDC1YsadOhehS
-	q1sFJRGcCYpyjX/2Hb9eljhvQFt8FFE9x69XVPJkEI7IJDWGbAQ0VCZNeeUyFs+ZEE7EOUKjstgjX
-	O0zwbT40EQZSxRbMK+74EajVJr6i9PosL+2N21OwA46psK0n3AwD4VEJug0e6cQNlEgBlY88ur9N2
-	2iZMq6pOjqjvqvN4e/6iVv1REGraNzqgkq0Cxv9B42IhFSIkK5Aylus5W9QOjccu7NR3nid7nWeKA
-	vYFJWWORPkkVL5efoxX4/OlkA0ofGmIzqblqodYLH9q/HZ26hbqZo4i6SikoYJMrdaUd1SxWvAryD
-	Y4rzIci0NMSHmkeON/EQ==;
+	List-Owner; bh=tBG6TxgdyQGeYaNeQXTUcY3mTDXH3Tozbmhi3Tu2dLI=; b=W9228o9BC0trmB
+	ua1JCMswTBAeWjBO5QQ4pj38dBv9QkA9xw/EDJtd14wyRA3KLsmw32YVQ7ydRFaPvBQGzLNoJqU6G
+	/XDPzXKscKdIDhbXEjJplKz9e9GF7BPe7F+9lgeQTO4QCkfjHFM60eJkKGZMdHhn3LM1p33MuoS6o
+	zNHo8jHstjDkxbe90FA1PfzP3hHmteIp9LwJwqJtfKdMQdd19HCg/aQsr2jjii3DWQSP1iDRt0+6e
+	M4ucp+EhgwXm+WfX9EAoNKLuLZJHsS4QhofN5X+cvVtnK2euo818w5nA1rG38cFXPDQTVFyQTucZ3
+	gxQqak17m6UlbhjMR2RQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmQtw-0000000B1AJ-1j6D;
-	Wed, 22 Jul 2026 06:57:56 +0000
+	id 1wmQw4-0000000B1JO-2VW6;
+	Wed, 22 Jul 2026 07:00:08 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmQtu-0000000B1A0-3pAI
+	id 1wmQw2-0000000B1J0-3x8y
 	for linux-phy@lists.infradead.org;
-	Wed, 22 Jul 2026 06:57:54 +0000
+	Wed, 22 Jul 2026 07:00:07 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id AB42360A65;
-	Wed, 22 Jul 2026 06:57:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 61AF61F00A3A;
-	Wed, 22 Jul 2026 06:57:52 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 65A0460A65;
+	Wed, 22 Jul 2026 07:00:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4DCC51F000E9;
+	Wed, 22 Jul 2026 07:00:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784703473;
-	bh=06XF7zpSnsetbA0eus7tkijIniC80Q0nSuvoNAK5KGQ=;
+	s=k20260515; t=1784703606;
+	bh=1qag43zPvLOUvv8dvXgzxys0I5jgEaBVCcZtyX8rrvI=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=lOEHauXRUNHaWZHe8+W3+FJCQ/xB4iOyemVEL8HToPwnAa7M5biAhvlq4PWtClWk7
-	 o3J4tvqZuh4vzLuzgaVqfPHWWnQhBrx5U9zUz9BIHnFkQtR/j8Fn8vR8d7fhRPYzvm
-	 7v6hssZh4LN2sy4zI9MREoxLuz4dOUGMaPKL9rcvJO85Ho9/McuJjpqZRgUqaS+yup
-	 v59ryEcp6dTPxVM6W3zvlJAaEc8lqVCUq/7NxbwBvPdYZWNk51AkDngA8l/gRjN4XK
-	 YHmYjEQeNNykgDaGt/PdVPZVjRUjwkqm9ziLpyem82V0NfWOY1D5D+EqgVwI/n65YO
-	 f5fFy5i5gL2Hw==
-Date: Wed, 22 Jul 2026 08:57:49 +0200
+	b=Vz2GFqQ3kmDM3+E8pdVx79b3ByuDYrWV6QNxVaIVQ+Ej9zZcNPSDwrguOEMVTCzrI
+	 Gp+GAmW/1j4vuBB/JgkYYHytA0z8VY8W4iCOn40WfMz9uO1d13/aM60nIlX7WYLC2K
+	 c8V5xF5cwgfjzMccHXbi8ALUIaNPXijDKz+5jtIha7eaEp29eq9gQ1xCeBuDjGm+rd
+	 bU1zNh5eyhMCH5+PSKK2S3i08GqPZwrN3HKfVyV839I3B+EoJ13I3osUAcdUIuRWVE
+	 8WGyembYgaaVwNYbcg2+QGL7TQHOUZirKi8xIKJx/sMi/LEYjPCY8Dsw4+92eC9BdB
+	 IX2OB7phCgkTQ==
+Date: Wed, 22 Jul 2026 09:00:02 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
 Cc: Robert Foss <rfoss@kernel.org>, Todor Tomov <todor.too@gmail.com>, 
@@ -53,15 +53,14 @@ Cc: Robert Foss <rfoss@kernel.org>, Todor Tomov <todor.too@gmail.com>,
 	Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
 	linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
 	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	jeyaprakash.soundrapandian@oss.qualcomm.com, Vijay Kumar Tumati <quic_vtumati@quicinc.com>
-Subject: Re: [PATCH v6 1/7] dt-bindings: phy: qcom,x1e80100-csi2-phy: Add
- SM8750 CSI2 PHY
-Message-ID: <20260722-literate-nondescript-seagull-cbdfaa@quoll>
+	jeyaprakash.soundrapandian@oss.qualcomm.com, Vijay Kumar Tumati <quic_vtumati@quicinc.com>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, Atiya Kailany <atiya.kailany@oss.qualcomm.com>
+Subject: Re: [PATCH v6 0/7] media: qcom: camss: Add SM8750 support
+Message-ID: <20260722-real-diligent-pig-c97d3a@quoll>
 References: <20260721-add-support-for-camss-on-sm8750-v6-0-a5f841061d18@oss.qualcomm.com>
- <20260721-add-support-for-camss-on-sm8750-v6-1-a5f841061d18@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260721-add-support-for-camss-on-sm8750-v6-1-a5f841061d18@oss.qualcomm.com>
+In-Reply-To: <20260721-add-support-for-camss-on-sm8750-v6-0-a5f841061d18@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,53 +77,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 21, 2026 at 05:46:00AM -0700, Hangxiang Ma wrote:
-> The SM8750 camera subsystem exposes six CSI2 D-PHY blocks that follow the
-> same programming model as Kaanapali. Describe the SM8750 CSI2 PHY using a
-
-No, SM8750 does not have the same programming model as Kaanapali. When
-SM8750 was created, there was no Kaanapali, so how it could have the
-same interface?
-
-> "qcom,sm8750-csi2-phy" compatible with the "qcom,kaanapali-csi2-phy"
-> fallback, so the CAMSS binding can instantiate the CSIPHY nodes as
-> separate phy devices.
-
-Redundant sentence.
-
+On Tue, Jul 21, 2026 at 05:45:59AM -0700, Hangxiang Ma wrote:
+> Add support for the RDI only CAMSS camera driver on SM8750. Enabling
+> RDI path involves adding the support for a set of CSIPHY, CSID and TFE
+> modules, with each TFE having multiple RDI ports. This hardware
+> architecture requires 'qdss_debug_xo' clock for CAMNOC to be functional.
 > 
-> Signed-off-by: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
-> ---
->  .../devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml        | 10 +++++++---
->  1 file changed, 7 insertions(+), 3 deletions(-)
+> SM8750 camera subsystem provides:
+> - 6 x CSIPHY (CSI Physical Layer)
+> - 3 x TPG (Test Pattern Generator)
+> - 3 x CSID (CSI Decoder)
+> - 2 x CSID Lite
+> - 3 x VFE (Video Front End), 5 RDI per VFE
+> - 2 x VFE Lite, 4 RDI per VFE Lite
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
-> index 7943049834f9..95375efb2597 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
+> This series has been tested using the following commands with S5KJN5 sensor.
+> - media-ctl --reset
+> - media-ctl -V '"msm_csiphy2":0[fmt:SGBRG10/4096x3072]'
+> - media-ctl -V '"msm_csid0":0[fmt:SGBRG10/4096x3072]'
+> - media-ctl -V '"msm_vfe0_rdi0":0[fmt:SGBRG10/4096x3072]'
+> - media-ctl -l '"msm_csiphy2":1->"msm_csid0":0[1]'
+> - media-ctl -l '"msm_csid0":1->"msm_vfe0_rdi0":0[1]'
+> - yavta  --capture=20 -I -n 5 -f SGBRG10P -s 4096x3072 -F  /dev/video0
+> 
+> Dependencies:
+> - https://lore.kernel.org/all/20260720-x1e-csi2-phy-v13-0-160c31958863@linaro.org/
+> - https://lore.kernel.org/all/20260708-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v12-0-f8588da41f16@linaro.org/
+> - https://lore.kernel.org/all/20260720-kaanapali-camss-v15-0-c0b1c1167c5d@oss.qualcomm.com/
 
-I just commented on very similar patch. This is confusing, there is no
-such file and I do not get why you keep adding some long chain of
-patches touching the same lines. Squash patches.
+None of these were cleared for merging. IOW, all received comments yet
+you send work which depends on it.
 
-This is untestable.
-
-> @@ -16,9 +16,13 @@ description:
->  
->  properties:
->    compatible:
-> -    enum:
-> -      - qcom,kaanapali-csi2-phy
-> -      - qcom,x1e80100-csi2-phy
-> +    oneOf:
-> +      - enum:
-> +          - qcom,kaanapali-csi2-phy
-> +          - qcom,x1e80100-csi2-phy
-> +      - items:
-> +          - const: qcom,sm8750-csi2-phy
-> +          - const: qcom,kaanapali-csi2-phy
-
-SM8750 came one year before Kaanapali, so how such compatibility is possible?
+This is exactly something Bjorn said a week ago or so. And then a few
+other maintainers re-iterated. Exactly the same, nothing learnt.
 
 Best regards,
 Krzysztof
