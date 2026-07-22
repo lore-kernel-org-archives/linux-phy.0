@@ -4,67 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 438ACC44536
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 15:29:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C929C44539
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 15:39:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CF3KUeocCU+GKvkprRnXx6/0TU5/VI28/NUrg/LN5gc=; b=YxmZqMLnsQhH9+
-	uAWhTq7wA8KYz7Z17MujlLHHL7etqi1ZMEE+m44V7WDZjdU2ULMSa88yl5sxEYr62Q46QbnNoNapd
-	phKuEN7OPnUlvz0UvBVzS37rFf/iqPEY+8PndvqheG5VF3uFECeS7fNzYne8UIc2JNY5znOWfCMv5
-	kdOUzJLHLZBEJun1ZC0US5IFhsZBkgvownjPxwdpDhCV/cHLqdCexcfT2Qbf9dPhhixlVE2ebWatz
-	wggG+DV9SMwDAhhfrxWsi2jALNK4Mwt31Wn0Q9zigI6kegHoXcy2Kxx2I4jW02+oaQte6CW+4wSUo
-	Ha6MG8D/WOSWMTMSeasQ==;
+	List-Owner; bh=Rho9TNeS2STZF/pt71fWP28Hv9r6ZDKPEARmlXgZ54o=; b=tWwdiJbq28ln96
+	CwN/Va8CzWtWwKIPJnqxv401POaXtTf0HzVlWzk/C9dgSJ1Efevv41hp1RLfM5TotVpzn7bsku49v
+	qjiU0KJTS/5gAhSRriVqQCKRAM1ih1zXUa/VPBsPbeR21Iyr2AjfDM6ISOY3sJGrMbJxYVmtAjUfL
+	WDH4+qeK4MMSfrDY7Rep6UTQsMnU8F7HfVC/zR4OXN3w3kG1HJMurggFhSGidRQOqMJwl7dCWDNtP
+	DEL/hm9o6RcbSnurZR2o2mmzpn8PU8ZzgjBwMzqzLGClso1VM8GA8RQCaXy3+0HCtyqPVq8pLpIcI
+	3VXOynx7Peq7uwWjWukw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmYtM-0000000C9l7-40Ao;
-	Wed, 22 Jul 2026 15:29:52 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wmZ2o-0000000CD0v-3Z2m;
+	Wed, 22 Jul 2026 15:39:38 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmYtM-0000000C9ky-0rpM
-	for linux-phy@lists.infradead.org;
-	Wed, 22 Jul 2026 15:29:52 +0000
+	id 1wmZ2m-0000000CD0R-3P0r;
+	Wed, 22 Jul 2026 15:39:36 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id CA253435CB;
-	Wed, 22 Jul 2026 15:29:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6371A1F000E9;
-	Wed, 22 Jul 2026 15:29:51 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id CEA83600AB;
+	Wed, 22 Jul 2026 15:39:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CD81D1F000E9;
+	Wed, 22 Jul 2026 15:39:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784734191;
-	bh=MiQon9B13JCqJ0ZBlba87Lc4HaPjX/zchUwplkS+IdU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=LCC4R1v0jWUsMNFaS+5KjDDT5n6lfO+NQiaCp6DGdH/9ttyBE8R7oW8Di/T1K26D6
-	 NHL1ntBZsVBOj4HBGUptwxozE8WItQ56Xt8C8/hayvKKTmuDdfdaBWMFhQTGVoQATN
-	 PfV4nB4XbnSa35JCZWL3GDknVu+0UKlTHGEF5ZFyE0vTmoJhTbJDcxY3QGib247hdO
-	 lctF+SW9X1YfFB8ZwE50VK53NKjXNBiYGWtBSsys24ymDGfnI2cw6DQi69r3+3iL7s
-	 fnLPfn/ZBXiPxVMlQbkaCvHMYHJQQk1zpR3LAugohRIdnWuIRd5/H8xKC1sRFljfpF
-	 5A1HeLvUar2Og==
-Date: Wed, 22 Jul 2026 10:29:49 -0500
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>
-Cc: Tony Lindgren <tony@atomide.com>, Bartosz Golaszewski <brgl@kernel.org>,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Roger Quadros <rogerq@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Aaro Koskinen <aaro.koskinen@iki.fi>, linux-omap@vger.kernel.org,
-	linux-gpio@vger.kernel.org,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Linus Walleij <linusw@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Andreas Kemnade <andreas@kemnade.info>,
-	Kevin Hilman <khilman@baylibre.com>
-Subject: Re: [PATCH v5 2/7] dt-bindings: phy: motorola,cpcap-usb-phy: add
- optional safe pinctrl state
-Message-ID: <178473416255.967931.16569030812535097273.robh@kernel.org>
-References: <20260711204210.197144-1-ivo.g.dimitrov.75@gmail.com>
- <20260711204210.197144-3-ivo.g.dimitrov.75@gmail.com>
+	s=k20260515; t=1784734775;
+	bh=Rl/qyjtpoDPvZZ7vR3XW5Kx6nHmzENWCtL5AfFrlddk=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date;
+	b=nbCqvnm7WWI990ltCojzPfsJ9SJnj1XQwt34BOUTKkTEAUkUiINCK1FjN/06tzDF8
+	 IQMk0crDNrZ20W5a9JINuWLdJborGRQ+jwdVMvGUhbyw4SYcwv7y328LLLPYcDtHe2
+	 Da3yYuH9FJkvW6/YSlkElWCRH3WH8WKaE3sdr2wW4IIHoDPCJP7X4LYK6g1I8z3z7k
+	 ooPLru5R81auH8uQmg418zVjTpHVdum/aolAhfL1Gs0WlFG4q6KRgC9w1NvyEIeypH
+	 PUl2WRBsD9P0XcyFI800/MGprCuGEXWLanf+ktboAYEVF3q7+YpQ2Lk2HSw87rVixa
+	 A9L5135aclhew==
+From: Vinod Koul <vkoul@kernel.org>
+To: tomi.valkeinen@ideasonboard.com, michal.simek@amd.com, 
+ Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>
+Cc: linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20260627155229.2791113-1-radhey.shyam.pandey@amd.com>
+References: <20260627155229.2791113-1-radhey.shyam.pandey@amd.com>
+Subject: Re: [RESEND PATCH 0/3] phy: zynqmp: fix SERDES scrambler register
+ handling and enable for USB
+Message-Id: <178473477346.290624.4095554027815775020.b4-ty@kernel.org>
+Date: Wed, 22 Jul 2026 21:09:33 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260711204210.197144-3-ivo.g.dimitrov.75@gmail.com>
+X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,16 +71,29 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Sat, 11 Jul 2026 23:42:05 +0300, Ivaylo Dimitrov wrote:
-> Document the optional "safe" pinctrl state for the CPCAP USB PHY.
+On Sat, 27 Jun 2026 21:22:26 +0530, Radhey Shyam Pandey wrote:
+> This series fixes three related issues in the ZynqMP SERDES PHY
+> scrambler/encoder bypass path:
 > 
-> Signed-off-by: Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>
-> ---
->  .../devicetree/bindings/phy/motorola,cpcap-usb-phy.yaml      | 5 ++++-
->  1 file changed, 4 insertions(+), 1 deletion(-)
+> 1. The L0_TM_DISABLE_SCRAMBLE_ENCODER mask incorrectly included bit 2
+>    of L0_TX_DIG_61, which is a reserved read-only field. Correct the
+>    mask to (BIT(3) | GENMASK(1, 0)).
 > 
+> [...]
 
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+Applied, thanks!
+
+[1/3] phy: zynqmp: fix L0_TM_DISABLE_SCRAMBLE_ENCODER mask
+      commit: 6cb22477929489a412df8d153e550e77a012e701
+[2/3] phy: zynqmp: use read-modify-write for SERDES scrambler bypass
+      commit: 21e0749f931702765b9d52d05740092bc87fcd8d
+[3/3] phy: zynqmp: keep SERDES scrambler and 8b/10b enabled for USB
+      commit: 7eb61caf45607e1e1270f51f8f93f0ded53146da
+
+Best regards,
+-- 
+~Vinod
+
 
 
 -- 
