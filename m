@@ -4,61 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5A64C4453C
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 16:38:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 05640C44536
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 17:22:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:From:To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zRp1yxpHHiTVnIY4K4Fpr6OC+OsjVJXSfUdAbnRClws=; b=recmaqYkzwWnRa
-	D5ruJn4rAHWsfDOdUws26+PwenoeqYAKfcxKhm8yHqI+oGPR5saZQ9upghGQs3933AZFppqzba7e7
-	oONiwgCWrOIFpYf7BCzjBNMSbwgzjT5FddMK+R8MdeWuzHXIvrAoUNBuVykrUvq5VSV4F9+fmrNRq
-	9RiHhD/ySshGaYEq+mCv47U53DU9Njuqajeod+CR67lne5pysoEDJFj9GyTwGmqasr79JGhKEU/b6
-	De1pZyGzoo52DePWf4jPQ9uM6+66TYD9aWcbsdhpvE9JRSjOFW289v1CibiSp1w5Rp3b2xL3quurZ
-	25QG+0/SFKK1acjnGevg==;
+	List-Owner; bh=QZpGt90hSQ1kn6GXerBGQsvJljdc3RI4gXv9HLRfWzk=; b=Ckj7pYNSMcli1i
+	SDDc76GlsVRQbuARJZoDbv82eytcUE0hwDb1xqFOWr2vNNJeLek6Q65YVxynMVcmjNjqIPh+lbXF8
+	QhUWyG8Pawm2G45QYPh5YU/4O+VsXyUB7H2amqyMepTTdhTVGbdpeYTP5G4l9Kh49ObiyN5kVekbf
+	5DOFu9RKevrTaHGJW8PChlXEq+gNPNAi0FzlA3Oq/kfF7G0uZ3Tdzl2ZVbhcz8gQvKrMkcmMGuxbR
+	lqdZ4p2Yan/XP9xd3ij0eOOdk01gdkIqcsbdDXJAweKzadbzDCkP5par6QL8Wyk6Vs27/MrYhYcYR
+	i+o+0jfxKrJG9Jrt0IfA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmZxs-0000000CMpr-27XR;
-	Wed, 22 Jul 2026 16:38:36 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wmaeN-0000000CRoE-30ZJ;
+	Wed, 22 Jul 2026 17:22:31 +0000
+Received: from mail-106119.protonmail.ch ([79.135.106.119])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmZxr-0000000CMpN-1qmr
+	id 1wmaeL-0000000CRn8-12gI
 	for linux-phy@lists.infradead.org;
-	Wed, 22 Jul 2026 16:38:35 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id DD8AA601E0;
-	Wed, 22 Jul 2026 16:38:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AF2B21F00A3A;
-	Wed, 22 Jul 2026 16:38:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784738314;
-	bh=8bZsdyf3RJFwjJ1geQjuOy4xo6q2BaGy0n+TBXIZcmk=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=nnWnltqY0BUeak2nZPn5syYVAs+FnN5kh/2s/Gxstnva7F/oTFfn7V9L2h9j3MqvK
-	 7UmlxyYEt84GTBYQu1GVLcoI3ZCFDPySmKR8/RfpJ2sZMQZ8B2cOk/VJplMERbvMuY
-	 DyZeRCqWhd7Po0qIVrfLvQg1rnhQG8LfZF7PBM8RVlyaGs/QA2mxdPtjvmFBEmPgE9
-	 IWQgJKU5GWa4Mv3KKF2aDzA7Zg1XbNYBoTBo1gpxwx2tSfbMX/4HrqGLD6U0kP8Tlp
-	 Mabzyx7W1YoUL6bvlezQVPD+VC++EEl2Hu4UFgXUjZYvD0cc1ZELT8sVxIl5i8vREZ
-	 NoqVAdiI7Baog==
-From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-In-Reply-To: <20260710-ipq9650_pcie_phy-v3-0-ef6018818d33@oss.qualcomm.com>
-References: <20260710-ipq9650_pcie_phy-v3-0-ef6018818d33@oss.qualcomm.com>
-Subject: Re: [PATCH v3 0/2] Add support for the QMP PCIe PHYs in Qualcomm
- IPQ9650
-Message-Id: <178473831135.304548.1416914034370187826.b4-ty@kernel.org>
-Date: Wed, 22 Jul 2026 22:08:31 +0530
+	Wed, 22 Jul 2026 17:22:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
+	s=protonmail; t=1784740946; x=1785000146;
+	bh=otgE4BlDNttJLSTdSkPcjBDLB10Ko4Z57qMN5bI2t8E=;
+	h=Date:To:From:Cc:Subject:Message-ID:In-Reply-To:References:
+	 Feedback-ID:From:To:Cc:Date:Subject:Reply-To:Feedback-ID:
+	 Message-ID:BIMI-Selector;
+	b=AeBW49hSY5qGGQqGex6CdqUBshJCM96AbFDjgqv7QjSEAQq+DQ2guXEhJCnY7TYhL
+	 N2tzv7VOxsl9lctvo5I9CthgbBmZDPnfNW+aoATPO6dR08hRrIK9Omcw11kif3KbQo
+	 7aTpNqu/ohps0Sord60LyhJjnLaA+XGBUqspIh1B+62NTFWunDaI248n2mYtW3/w+8
+	 gdL5q3XqkXgU+x82Pn0eVT3hMfm2zs/zwHVTqaKoGAKvppkzx3qyKJK70Jy/3CxSle
+	 1GhgPlRtTxe+SHcGPslqZWg+fjPvFHTh9zyUaHwLW4IagRml/+vsEKP6JVnlfRVU/U
+	 0syE9VepyRD+A==
+Date: Wed, 22 Jul 2026 17:22:21 +0000
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, Dmitry Baryshkov <lumag@kernel.org>, Bjorn Andersson <andersson@kernel.org>
+From: Esteban Urrutia <esteuwu@proton.me>
+Cc: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, phone-devel@vger.kernel.org
+Subject: Re: [PATCH v2 1/2] phy: qcom: qmp-combo: Correct pre-emphasis table for QMP v4 DP PHYs
+Message-ID: <56b9c83e-e90b-4b95-acff-d0a232069fe0@proton.me>
+In-Reply-To: <20260711-sm8450-qol-qmp-v2-1-d14353bd6ff4@proton.me>
+References: <20260711-sm8450-qol-qmp-v2-0-d14353bd6ff4@proton.me> <20260711-sm8450-qol-qmp-v2-1-d14353bd6ff4@proton.me>
+Feedback-ID: 147889766:user:proton
+X-Pm-Message-ID: 23e43a487f912dc5619a457c760ffd98f8aeb263
 MIME-Version: 1.0
-X-Mailer: b4 0.13.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260722_102229_920367_E82FFC22 
+X-CRM114-Status: UNSURE (   4.87  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,29 +70,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Fri, 10 Jul 2026 23:16:39 +0530, Kathiravan Thirumoorthy wrote:
-> Qualcomm's IPQ9650 SoC has 3 Gen3 dual lane and 2 Gen3 single lane
-> controllers with the QMP PHYs. Unlike the PHYs in the other IPQ SoC,
-> refgen supply is needed to bringup the PHYs. Both single and dual lane
-> shares the same HW init sequence. So reuse the tables.
+On 7/11/26 11:13 PM, Esteban Urrutia via B4 Relay wrote:
+> Comparing sm8350 and sm8450 tables, this seems to be a typo.
 > 
-> Document the compatible along with refgen supply and add the phy driver
-> support for it.
-> 
-> [...]
+> Fixes: ef14aff107bd ("phy: qcom: com-qmp-combo: add SM8350 & SM8450 support")
+> Signed-off-by: Esteban Urrutia <esteuwu@proton.me>
++Dmitry, is there any update on this?
+A confirmation on the tables was requested by Konrad almost a month ago
+in v1 [1].
+I asked for an update two weeks after, to which Konrad also requested an
+update in v1 [2].
+Please confirm the correct tables for SM8350/SM8450 so that this commit
+can be handled accordingly.
 
-Applied, thanks!
+Regards,
+Esteban
 
-[1/2] dt-bindings: phy: qcom,ipq8074-qmp-pcie: document IPQ9650 QMP PCIe PHYs
-      commit: 7218d17e7613d5949cfc6215101493418fa501c0
-[2/2] phy: qcom: qmp-pcie: Add IPQ9650 PCIe PHY support
-      commit: ee6aa0f01d4e8eddf1c7fda49d65c7ef12444e78
-
-Best regards,
--- 
-~Vinod
-
+[1] https://lore.kernel.org/all/4635a665-f605-4647-810d-c9d83a271a86@oss.qualcomm.com/
+[2] https://lore.kernel.org/all/7cfbc3dc-c1c7-4e4d-afe4-67a25084f607@oss.qualcomm.com/
 
 
 -- 
