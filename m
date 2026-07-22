@@ -4,84 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8815FC4452D
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 05:36:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90BFEC4452D
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 05:48:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=jCN9Tm6GZVz/KWv/vrGHoy+Ut6MX8ayytpG23AzXpgY=; b=v5wamiZ9hu2eqN
-	g2nrtJAWH5IOsWTxSJP7IOchZi3qaXlMxtI8OckXQoLARMaWhSC07H2GbBNZKqxMVNhl6eba79hAy
-	bBFG6Inv6WpaMv9c0uioR/I0mU+F5HJu3SLwMtsEkdyR5CKj2VmFd1uXXRfYRpiMshV95uO6TIs0O
-	tTVzU7PGF18H+jHO/oya6eHZt9Lebuis3IgcL366/+Fb8Y6RDPfUZAW1buLUNTE5rLVMJki5od9Tt
-	zZi83+q9x2jkXlMsWHniSSZdRZpUyn0825S7s4pMwjNdxnl/4xy/6QTEqeQa9kCHBCRXTx5iNU+me
-	tUIWRDEyLpG4V2Ai3JyA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9zXSi5QYZ1JEl82Esc7j1Y/N5x6Gv1Bkim13KJTdTVU=; b=sO5KsjDD4dH60F
+	3OPPNOFj4lonUHnQySzOpjuYuWy1RKxklq6PaH8JF6yNBI4zw7sunbwzFG4+E6SNkDKN09ZLEE5cj
+	zyFPVoqoqNEjQ2VMJh35DFZkgJONVf5mwdkdiuHkQWi0h3/MOwc+3EMiRIw4QsgpF+GcyOBv6NwzN
+	GHXcu3zySxN+kLHweUYPfGtIpbifl4s+LHhAdTQfxvITjUm51XG3RXRudrv0QCAqAjHHJQemSFHpH
+	a0nCwjPRBW69BlHs8GguJHfJiccUyxWTJwGtGC0kgcKF0o6pSiD7p0cyFcjTJS4UR5UO+QkKn/UX3
+	lbWnQy9E6D9v86uoAT2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmPdO-0000000Avsf-2QX8;
-	Wed, 22 Jul 2026 05:36:46 +0000
-Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
+	id 1wmPow-0000000Aw6o-3Ht6;
+	Wed, 22 Jul 2026 05:48:42 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmPdM-0000000AvsI-0TLU
+	id 1wmPou-0000000Aw6g-3bXF
 	for linux-phy@lists.infradead.org;
-	Wed, 22 Jul 2026 05:36:45 +0000
-Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-47de0093c42so7006998f8f.3
-        for <linux-phy@lists.infradead.org>; Tue, 21 Jul 2026 22:36:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1784698602; x=1785303402; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=JUYQkb6kcmG18ceKspm+XxEQfizEv7MsjrgrMep9zgE=;
-        b=nhhlOarYFQff6UhrT5SlTr5C5Mesl5Q66ffBS5/6+d3QeINO80MLdDiuUtTaowHC2l
-         hEsPNLvCXBTODBsKyayTvIITLQH9fPYWtsfcDv1h+L/+aNufD81dMDm0Rypmu6YIhSg0
-         c3Dl1lAHfuR24jNxmQlT8n65pJ7/HsRroctQxMBGYHTJxImVTT7N7x4AeRfQTqxK+4Oa
-         8PoGe6M/zUlAZUCtMakD86TTraRa4GB1OiUiVK+vRPfVVTzveL0XJEtkTkF6/8LLfLPQ
-         FZLrUFu6dXkeuST+SDBVrhEJlTEA+Hfov7WbYve+T7/HAd6E3IUgiNUuu/YEThIUKlsd
-         e7Cg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784698602; x=1785303402;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=JUYQkb6kcmG18ceKspm+XxEQfizEv7MsjrgrMep9zgE=;
-        b=nH5iNtxveCl6iUeU8HnMkA15yhbk1P0zE6mct3x5ykp5XZUvNlLhbiVRwC6fxK0ZAT
-         tiw6rxEWIUm5VjXVcIV69tWItIdEP4rgq0AQalKowat5gOZg/yqHSj9ipk72SJFT0ccI
-         rRcbwLOQf0x+r+8EC2c9MCmT6TMWW6hl56FzxQk6JcEBVAWyAX/wznAXfvTpWrmmRSeT
-         gReqMupZM8iiHVvLnBpvWfna0Et6YvNN0vHrSjInYpWrGGa3S44S7Qanj+jc98XSN25b
-         TP9XOZy5eOvynEUFb09/0piyAQDSJyegzX6D2lNlorOHXZaO659onxNB4qoIoICT0oa7
-         iNug==
-X-Gm-Message-State: AOJu0YyZncvQRAM6IzT+O5cfFC9RdAC3GHhIT5ZubisAbF2cagRajN06
-	cKQMWCpo9i5PZFMvmp3bLQHcREs0VtnOl8DYm2NQC7qvhlL0WD7GJHNn
-X-Gm-Gg: AR+sD13Po/xnv3mp0CFlU16YA+DtJlU4jscA2lfPSpyjuazOGB6SA5UlFLK+Decl2Xi
-	9TpVPTdW53sDn0SJH5cFWtIfQVIRisTb9b7JGlT2xPSQ+Yh2r9KVMUgPSEYpPiDNNLV/LUmsnhn
-	QKqS87Djy9lk8EFm8LdclBMKlLWT57Rl+QepWk44IoeDp7kOWMzzowUKesVc11RFGXLM5QZuunE
-	C6hcjDhcEhRZlg4fnuE0c4XWEdNJsvV1sa0BVM8OAdQmFYYsDRRFCXNCi6PaP8ZkDdFKlTH4Fzj
-	WUy+nl/O/ACzgJwDMWAnHzVUc/FzKtRUvWyPoURQNlvCUM/kDT1Bf5qw+hZbtYlq1B4YYsm3Pd1
-	pi1kJmzHSKQlXD0dZfjAjU3rPBDr/i14UXRVuk+cFKTl2/wSpKCtBU7QuiPXQJqKqd8r/0sY+p2
-	7mMTN8poBRAHcWup7K7mzuPgI=
-X-Received: by 2002:adf:e18e:0:b0:47e:12d9:1c79 with SMTP id ffacd0b85a97d-47f622ffc75mr25483573f8f.27.1784698601513;
-        Tue, 21 Jul 2026 22:36:41 -0700 (PDT)
-Received: from localhost.localdomain ([95.43.220.235])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-47f85c532d4sm2477933f8f.22.2026.07.21.22.36.40
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 21 Jul 2026 22:36:41 -0700 (PDT)
-From: Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Johan Hovold <johan@kernel.org>
-Cc: linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>
-Subject: [PATCH] phy: omap-usb2: add explicit PHY comparator API
-Date: Wed, 22 Jul 2026 08:36:18 +0300
-Message-Id: <20260722053618.602702-1-ivo.g.dimitrov.75@gmail.com>
-X-Mailer: git-send-email 2.25.1
-MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260721_223644_177667_74EAFB01 
-X-CRM114-Status: GOOD (  12.15  )
+	Wed, 22 Jul 2026 05:48:40 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id EEA69601EC;
+	Wed, 22 Jul 2026 05:48:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 60C791F000E9;
+	Wed, 22 Jul 2026 05:48:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1784699319;
+	bh=Tcu9xDxyceZho9qRTDsLUawnfh0hmMCRFSWmhQriqUk=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=iYnSe/UJ1xEg5q4aAGwGMChtprN7HZzQQUd3zy8X3cvBh2lpp06zmir6RcGw2YTCj
+	 dYQKkTeOnssygnXl7+ygG41LpilBw/B+xbc8vh9RANKMvjqdaY7MKB7rJ/91AGl8GO
+	 h7TX5h4RTj6mAL7lKLLNgIZb8hL/9+MxqsbrB0QvyI7YLX3T4psipHfBm/9WXbpMRo
+	 u06QcQ+bQbQKoAFEyaWOhpj/CxvpQoiyDaitxKDF2eLIhoudohkFAfjueF+xB6lKgb
+	 42arf/qnM2KaSwO+8f2CnabP06caHAt04KE8Jp6rf3stidT2JljO3xwKJx3C9iGJpU
+	 D5H0pM+zXtJQg==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH] phy: omap-usb2: add explicit PHY comparator API
+To: "Ivaylo Dimitrov" <ivo.g.dimitrov.75@gmail.com>
+Cc: neil.armstrong@linaro.org, vkoul@kernel.org, linux-phy@lists.infradead.org, olteanv@gmail.com
+In-Reply-To: <20260722053618.602702-1-ivo.g.dimitrov.75@gmail.com>
+References: <20260722053618.602702-1-ivo.g.dimitrov.75@gmail.com>
+Date: Wed, 22 Jul 2026 05:48:38 +0000
+Message-Id: <20260722054839.60C791F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,113 +61,84 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The existing omap_usb2_set_comparator() API locates the OMAP USB2 PHY
-instance by calling usb_get_phy(USB_PHY_TYPE_USB2), assuming there is a
-single USB2 PHY registered in the system.
-
-This assumption no longer holds on systems with multiple USB2 PHY
-providers. In such cases, the global lookup may return a different USB2
-PHY instance, causing the OMAP driver to perform an invalid container_of()
-conversion when accessing its private data.
-
-Introduce omap_usb2_set_phy_comparator(), allowing callers to explicitly
-specify the OMAP USB2 PHY instance to associate with a phy_companion.
-The new helper validates that the supplied USB PHY is an OMAP USB2 PHY
-before accessing its private data.
-
-The existing omap_usb2_set_comparator() API is kept unchanged for
-existing users.
-
-
-Signed-off-by: Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>
----
- drivers/phy/ti/phy-omap-usb2.c | 32 ++++++++++++++++++++++++++++++++
- include/linux/phy/omap_usb.h   |  7 +++++++
- 2 files changed, 39 insertions(+)
-
-diff --git a/drivers/phy/ti/phy-omap-usb2.c b/drivers/phy/ti/phy-omap-usb2.c
-index 1eb252604441..ac31b693fce7 100644
---- a/drivers/phy/ti/phy-omap-usb2.c
-+++ b/drivers/phy/ti/phy-omap-usb2.c
-@@ -70,6 +70,8 @@ struct omap_usb {
- 
- #define	phy_to_omapusb(x)	container_of((x), struct omap_usb, phy)
- 
-+static int omap_usb_set_host(struct usb_otg *otg, struct usb_bus *host);
-+
- struct usb_phy_data {
- 	const char *label;
- 	u8 flags;
-@@ -113,6 +115,36 @@ int omap_usb2_set_comparator(struct phy_companion *comparator)
- }
- EXPORT_SYMBOL_GPL(omap_usb2_set_comparator);
- 
-+/**
-+ * omap_usb2_set_phy_comparator() - associate a comparator with an OMAP USB2 PHY
-+ *
-+ * @omap_phy: OMAP USB2 PHY instance
-+ * @comparator: companion PHY providing comparator operations
-+ *
-+ * The phy companion driver should call this API with the companion PHY
-+ * implementation containing the callbacks required by @omap_phy.
-+ *
-+ * For use by phy companion drivers.
-+ */
-+int omap_usb2_set_phy_comparator(struct usb_phy *omap_phy,
-+				 struct phy_companion *comparator)
-+{
-+	struct omap_usb	*phy;
-+
-+	if (!omap_phy)
-+		return -EINVAL;
-+
-+	if (WARN_ON(!omap_phy->otg ||
-+		    omap_phy->otg->set_host != omap_usb_set_host))
-+		return -EINVAL;
-+
-+	phy = phy_to_omapusb(omap_phy);
-+	phy->comparator = comparator;
-+
-+	return 0;
-+}
-+EXPORT_SYMBOL_GPL(omap_usb2_set_phy_comparator);
-+
- static int omap_usb_set_vbus(struct usb_otg *otg, bool enabled)
- {
- 	struct omap_usb *phy = phy_to_omapusb(otg->usb_phy);
-diff --git a/include/linux/phy/omap_usb.h b/include/linux/phy/omap_usb.h
-index e23b52df93ec..96f9792c6ce6 100644
---- a/include/linux/phy/omap_usb.h
-+++ b/include/linux/phy/omap_usb.h
-@@ -15,11 +15,18 @@
- 
- #if defined(CONFIG_OMAP_USB2) || defined(CONFIG_OMAP_USB2_MODULE)
- extern int omap_usb2_set_comparator(struct phy_companion *comparator);
-+extern int omap_usb2_set_phy_comparator(struct usb_phy *omap_phy,
-+					struct phy_companion *comparator);
- #else
- static inline int omap_usb2_set_comparator(struct phy_companion *comparator)
- {
- 	return -ENODEV;
- }
-+static inline int omap_usb2_set_phy_comparator(struct usb_phy *omap_phy,
-+					       struct phy_companion *comparator)
-+{
-+	return -ENODEV;
-+}
- #endif
- 
- #endif /* __DRIVERS_OMAP_USB_H */
--- 
-2.39.5
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpOZXcgaXNzdWVzOgotIFtNZWRpdW1d
+IFR5cGUgdmFsaWRhdGlvbiByZWxpZXMgb24gZnVuY3Rpb24gcG9pbnRlciBlcXVhbGl0eSwgd2hp
+Y2ggaXMgdW5zYWZlIHVuZGVyIElkZW50aWNhbCBDb2RlIEZvbGRpbmcgKElDRikuCgpQcmUtZXhp
+c3RpbmcgaXNzdWVzOgotIFtIaWdoXSBBIFRpbWUtT2YtQ2hlY2sgdG8gVGltZS1PZi1Vc2UgKFRP
+Q1RPVSkgcmFjZSBjb25kaXRpb24gZXhpc3RzIHdoZW4gYWNjZXNzaW5nIGBwaHktPmNvbXBhcmF0
+b3JgLgotIFtIaWdoXSBUaGUgbGVnYWN5IGBvbWFwX3VzYjJfc2V0X2NvbXBhcmF0b3IoKWAgZnVu
+Y3Rpb24gcmVtYWlucyB2dWxuZXJhYmxlIHRvIGFuIGludmFsaWQgYGNvbnRhaW5lcl9vZigpYCBj
+b252ZXJzaW9uIG9uIG11bHRpLVBIWSBzeXN0ZW1zLgotLQoKLS0tIFBhdGNoIFsxXTogW1BBVENI
+XSBwaHk6IG9tYXAtdXNiMjogYWRkIGV4cGxpY2l0IFBIWSBjb21wYXJhdG9yIEFQSSAtLS0KY29t
+bWl0IDRiMDBlNzJhYWJhNjZlM2VmNjQxN2Q1N2VlN2E3OTE2ZGFjMWNkM2QKQXV0aG9yOiBJdmF5
+bG8gRGltaXRyb3YgPGl2by5nLmRpbWl0cm92Ljc1QGdtYWlsLmNvbT4KCnBoeTogb21hcC11c2Iy
+OiBhZGQgZXhwbGljaXQgUEhZIGNvbXBhcmF0b3IgQVBJCgpUaGUgZXhpc3Rpbmcgb21hcF91c2Iy
+X3NldF9jb21wYXJhdG9yKCkgQVBJIGFzc3VtZXMgYSBzaW5nbGUgVVNCMiBQSFksCmxlYWRpbmcg
+dG8gaW52YWxpZCBjb250YWluZXJfb2YoKSBjYXN0cyBvbiBtdWx0aS1QSFkgc3lzdGVtcy4gVGhp
+cyBjb21taXQKaW50cm9kdWNlcyBvbWFwX3VzYjJfc2V0X3BoeV9jb21wYXJhdG9yKCkgZm9yIGV4
+cGxpY2l0IFBIWSBpbnN0YW5jZQphc3NvY2lhdGlvbiB3aGlsZSBrZWVwaW5nIHRoZSBsZWdhY3kg
+QVBJIGludGFjdCBmb3IgZXhpc3RpbmcgdXNlcnMuCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3Bo
+eS90aS9waHktb21hcC11c2IyLmMgYi9kcml2ZXJzL3BoeS90aS9waHktb21hcC11c2IyLmMKPiBp
+bmRleCAxZWIyNTI2MDQ0NDFiLi5hYzMxYjY5M2ZjZTdiIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMv
+cGh5L3RpL3BoeS1vbWFwLXVzYjIuYwo+ICsrKyBiL2RyaXZlcnMvcGh5L3RpL3BoeS1vbWFwLXVz
+YjIuYwpbIC4uLiBdCj4gQEAgLTExMyw2ICsxMTUsMzYgQEAgaW50IG9tYXBfdXNiMl9zZXRfY29t
+cGFyYXRvcihzdHJ1Y3QgcGh5X2NvbXBhbmlvbiAqY29tcGFyYXRvcikKPiAgfQo+ICBFWFBPUlRf
+U1lNQk9MX0dQTChvbWFwX3VzYjJfc2V0X2NvbXBhcmF0b3IpOwoKW1NldmVyaXR5OiBIaWdoXQpU
+aGlzIGlzIGEgcHJlLWV4aXN0aW5nIGlzc3VlLCBidXQgZG9lcyBsZWF2aW5nIHRoaXMgbGVnYWN5
+IEFQSSB3aXRob3V0IHR5cGUKdmFsaWRhdGlvbiBkZWZlYXQgdGhlIHB1cnBvc2Ugb2YgZml4aW5n
+IHRoZSBtdWx0aS1QSFkgaXNzdWU/CgpJZiBhbiBleGlzdGluZyBjYWxsZXIgb24gYSBtdWx0aS1Q
+SFkgc3lzdGVtIHVzZXMgdGhpcyBBUEkgYW5kIHVzYl9nZXRfcGh5KCkKcmV0dXJucyBhIG5vbi1P
+TUFQIFBIWSwgaXQgd2lsbCBzdGlsbCBwZXJmb3JtIGFuIGludmFsaWQgY29udGFpbmVyX29mKCkg
+Y2FzdDoKCmRyaXZlcnMvcGh5L3RpL3BoeS1vbWFwLXVzYjIuYzpvbWFwX3VzYjJfc2V0X2NvbXBh
+cmF0b3IoKSB7CiAgICAuLi4KICAgIHN0cnVjdCB1c2JfcGh5ICp4ID0gdXNiX2dldF9waHkoVVNC
+X1BIWV9UWVBFX1VTQjIpOwogICAgLi4uCiAgICBwaHkgPSBwaHlfdG9fb21hcHVzYih4KTsKICAg
+IHBoeS0+Y29tcGFyYXRvciA9IGNvbXBhcmF0b3I7CiAgICAuLi4KfQoKQ291bGQgdGhpcyBsZWFk
+IHRvIGFyYml0cmFyeSBtZW1vcnkgY29ycnVwdGlvbiB3aGVuIHBoeS0+Y29tcGFyYXRvciBpcwpv
+dmVyd3JpdHRlbiBvbiBhIGZvcmVpZ24gUEhZIHN0cnVjdHVyZT8KCj4gKy8qKgo+ICsgKiBvbWFw
+X3VzYjJfc2V0X3BoeV9jb21wYXJhdG9yKCkgLSBhc3NvY2lhdGUgYSBjb21wYXJhdG9yIHdpdGgg
+YW4gT01BUCBVU0IyIFBIWQo+ICsgKgo+ICsgKiBAb21hcF9waHk6IE9NQVAgVVNCMiBQSFkgaW5z
+dGFuY2UKPiArICogQGNvbXBhcmF0b3I6IGNvbXBhbmlvbiBQSFkgcHJvdmlkaW5nIGNvbXBhcmF0
+b3Igb3BlcmF0aW9ucwo+ICsgKgo+ICsgKiBUaGUgcGh5IGNvbXBhbmlvbiBkcml2ZXIgc2hvdWxk
+IGNhbGwgdGhpcyBBUEkgd2l0aCB0aGUgY29tcGFuaW9uIFBIWQo+ICsgKiBpbXBsZW1lbnRhdGlv
+biBjb250YWluaW5nIHRoZSBjYWxsYmFja3MgcmVxdWlyZWQgYnkgQG9tYXBfcGh5Lgo+ICsgKgo+
+ICsgKiBGb3IgdXNlIGJ5IHBoeSBjb21wYW5pb24gZHJpdmVycy4KPiArICovCj4gK2ludCBvbWFw
+X3VzYjJfc2V0X3BoeV9jb21wYXJhdG9yKHN0cnVjdCB1c2JfcGh5ICpvbWFwX3BoeSwKPiArCQkJ
+CSBzdHJ1Y3QgcGh5X2NvbXBhbmlvbiAqY29tcGFyYXRvcikKPiArewo+ICsJc3RydWN0IG9tYXBf
+dXNiCSpwaHk7Cj4gKwo+ICsJaWYgKCFvbWFwX3BoeSkKPiArCQlyZXR1cm4gLUVJTlZBTDsKPiAr
+Cj4gKwlpZiAoV0FSTl9PTighb21hcF9waHktPm90ZyB8fAo+ICsJCSAgICBvbWFwX3BoeS0+b3Rn
+LT5zZXRfaG9zdCAhPSBvbWFwX3VzYl9zZXRfaG9zdCkpCj4gKwkJcmV0dXJuIC1FSU5WQUw7Cgpb
+U2V2ZXJpdHk6IE1lZGl1bV0KSXMgaXQgc2FmZSB0byByZWx5IG9uIGZ1bmN0aW9uIHBvaW50ZXIg
+ZXF1YWxpdHkgZm9yIHR5cGUgdmFsaWRhdGlvbiBoZXJlPwoKSWYgdGhlIGtlcm5lbCBpcyBidWls
+dCB3aXRoIExpbmsgVGltZSBPcHRpbWl6YXRpb24gYW5kIElkZW50aWNhbCBDb2RlIEZvbGRpbmcK
+KGUuZy4sIENsYW5nIExUTyAtLWljZj1hbGwpLCBvbWFwX3VzYl9zZXRfaG9zdCBjb3VsZCBiZSBm
+b2xkZWQgaW50byB0aGUKc2FtZSBtZW1vcnkgYWRkcmVzcyBhcyBhIHN0cnVjdHVyYWxseSBpZGVu
+dGljYWwgc2V0X2hvc3QgaW1wbGVtZW50YXRpb24KaW4gYW5vdGhlciBQSFkgZHJpdmVyLgoKVW5k
+ZXIgdGhlc2UgY29uZGl0aW9ucywgY291bGQgdGhpcyBjaGVjayBmYWxzZWx5IHBhc3MgZm9yIGFu
+IGluY29ycmVjdCBQSFksCmxlYWRpbmcgdG8gYW4gaW52YWxpZCBjb250YWluZXJfb2YoKSBjYXN0
+PwoKPiArCj4gKwlwaHkgPSBwaHlfdG9fb21hcHVzYihvbWFwX3BoeSk7Cj4gKwlwaHktPmNvbXBh
+cmF0b3IgPSBjb21wYXJhdG9yOwoKW1NldmVyaXR5OiBIaWdoXQpUaGlzIGlzIGEgcHJlLWV4aXN0
+aW5nIGlzc3VlLCBidXQgZG9lcyBtb2RpZnlpbmcgdGhlIHNoYXJlZCBwaHktPmNvbXBhcmF0b3IK
+cG9pbnRlciBsb2NrbGVzc2x5IGNyZWF0ZSBhIHJhY2UgY29uZGl0aW9uIHdpdGggT1RHIGV2ZW50
+cz8KCkxvb2tpbmcgYXQgb21hcF91c2Jfc2V0X3ZidXMoKSBhbmQgb21hcF91c2Jfc3RhcnRfc3Jw
+KCksIHRoZSBjb21wYXJhdG9yCnBvaW50ZXIgaXMgY2hlY2tlZCBhbmQgdGhlbiBkZXJlZmVyZW5j
+ZWQgd2l0aG91dCBsb2NrcyBvciBSRUFEX09OQ0UoKToKCmRyaXZlcnMvcGh5L3RpL3BoeS1vbWFw
+LXVzYjIuYzpvbWFwX3VzYl9zZXRfdmJ1cygpIHsKICAgIC4uLgogICAgaWYgKCFwaHktPmNvbXBh
+cmF0b3IgfHwgIXBoeS0+Y29tcGFyYXRvci0+c2V0X3ZidXMpCiAgICAgICAgcmV0dXJuIC1FTk9E
+RVY7CgogICAgcmV0dXJuIHBoeS0+Y29tcGFyYXRvci0+c2V0X3ZidXMocGh5LT5jb21wYXJhdG9y
+LCBlbmFibGVkKTsKfQoKSWYgYW4gT1RHIGV2ZW50IG9jY3VycyBjb25jdXJyZW50bHkgd2l0aCBh
+IGRldmljZSB1bmJpbmQgdGhhdCBjbGVhcnMgdGhlCmNvbXBhcmF0b3IgcG9pbnRlciwgY291bGQg
+dGhpcyByZXN1bHQgaW4gYSB1c2UtYWZ0ZXItZnJlZSBvciBOVUxMIHBvaW50ZXIKZGVyZWZlcmVu
+Y2U/Cgo+ICsKPiArCXJldHVybiAwOwo+ICt9Cj4gK0VYUE9SVF9TWU1CT0xfR1BMKG9tYXBfdXNi
+Ml9zZXRfcGh5X2NvbXBhcmF0b3IpOwoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8v
+c2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDcyMjA1MzYxOC42MDI3MDItMS1pdm8uZy5kaW1p
+dHJvdi43NUBnbWFpbC5jb20/cGFydD0xCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51
+eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
+bG1hbi9saXN0aW5mby9saW51eC1waHkK
