@@ -4,123 +4,151 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48319C44539
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 08:01:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E541BC4452D
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 08:03:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+9XOiKZbw6s7BwX97qHsu8plEwTEhgdFobkHeodxHPs=; b=X7quBCnWaAA6Z7
-	Teg2zxJzmRiDGHRlOZR2dcDaPvP17YVec3v5mZpy4Xojx+OX8TlyxNrpy+Mcq5nN4msNFwy16xQXT
-	zeDnF1VYojfVZqeKKUnTaSkB4vmi6A1WgBycrmlFoFiWN1k/zB8ZmU7jfFcqeYVBCTD9YnHRopehr
-	2ahDpchPk90MDTnTYMtZnrthY3C9ZjSvSmRFe1Rb4w95VxJwOpoJSdS2QBMUvCNszhd0jOlAYh8Qt
-	+cBQ+Hm6xiCmmbXhJCXcd2V8WSioDBevdTR0g3Rh3c0PY/H2AVex28PLp2f/GY8w5X5DT1bdh3Jhz
-	ZJiAoIXjxIbyBDrgk/rQ==;
+	List-Owner; bh=7gnirbojGI+5KEmnH1QDJ0Y4ZcmdhRAsAEshdNxP9VQ=; b=TVbo2icBZiPkXt
+	o0w8uTrghUR5xFUnDtW6IBWrVXl+0PnK5HrBLZYKsG3tZvUbjbQZXKp+oo/AJieEDx/YD1/th+zDp
+	TBTXvdc3/10vYR+d6mZc+oKEVt5r5sq9jENWi1PNmxClK6SGuiA/xfMGfzvSNQdGFuQYFFtUgOAqk
+	B3moe5/D3UdMpjuMyyBw2HbA7fWRMFZZ1giTx+rCvCYFcK6nN019mY7wYBnfwumwaGTitsCttZG6n
+	CmXL8dzL4rEVg2DYycgs0mmcasq8+wLUT/KLWGgUDGc5oqZgz0Efz/BJB2qmy9R21dV7O2w2UuL4O
+	TWr2wNSEMKlC5rwvEo4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmRt5-0000000BCHC-33jY;
-	Wed, 22 Jul 2026 08:01:07 +0000
-Received: from mail-northeuropeazon11010007.outbound.protection.outlook.com ([52.101.84.7] helo=DB3PR0202CU003.outbound.protection.outlook.com)
+	id 1wmRv0-0000000BCQK-2VEu;
+	Wed, 22 Jul 2026 08:03:06 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmRt3-0000000BCGT-2oQy
+	id 1wmRux-0000000BCPy-2wrw
 	for linux-phy@lists.infradead.org;
-	Wed, 22 Jul 2026 08:01:07 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=pojh4VEyG10DygKq+HrzCuPc4CPWC5TbwVggbe5L7FFQDzs/MCiyAdV5GpNGU8sEtn8xho04Usj670pBeJnntvEqq9A8T8saFyT8IuScSxjtSFWmJw7JV530vqnSgrPMhOZCnIdzuiH7+fb7eMsaXFj04HLxlSJMiwvrY/RpCSk6HaxCPsYzWQnysy+a9U253Ko0X3QMGobqKzBUEeRVJBlX6tjlCZ7rJ0Wdu2so2p5hkWiHqyPvDEuG+sTbutaaTAvQMot6umS1OBSCgmpZ8IBMuHWmLo10t8h5PrIe/22cNHlOMxSHGgsxtQAT3zcHBFlC30Gx8kwmxAuQLJ6mxA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Oj1QmheiAyIOYxau45ixCtS0+gTaSJCMXCxO5PzkMTw=;
- b=MveYZdomQcWMg2xivHe8ozgk3EcSvm6p/tqN7+PO2Xcc/0Dcfhp+rpTWQ+PtbjvBfPKLEhvNY2iULTWEwdn2wba18ZCiRytcAbeieG+baqd0pAVb6MQ6lQly1qmrE4n8IQP0/kPmZy0fcyLYkrk0DNTQCmRLK5zBkdf/8DJ1GR0Ca4E4IUGC99zfbMGhOfzTJNosEovM37eJJaa7AZnF5WFj2n3NPU+TXK90RVuo78lD0jfBcm54c/JACDlYACs3lEYY5FQkz3AVJmoYbrHfZxDaLVIZHo6/GyCoJpWQS1JSpdrRap8SEXljDht7Q/vsaa0GJ2UJ31eg92wDdff+cw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Oj1QmheiAyIOYxau45ixCtS0+gTaSJCMXCxO5PzkMTw=;
- b=B4Jf+sV5/rET+ZsOoEHWiEhMZW+j6KqRnXFQJYgdhdGuebjglQxxEpbKBSE3IF6bUaNpz+KTbwrJEUm9b/07mEEtyrmX0ItrhvpisCGTCzpJxj9qJoW2yT+PEVSrvAE0YhjDSru6dqZNH9Azs6aaA8yfisdx9WI52RXlkKU0hkmmoXsmTqz0VpjoO6kUmw3TtNa4ZJurTKHybj/CAXbARnXuXD/gG9D6HNoblFPCL6wJgSeepZ9CWqrWmT6GjNDyxjDanfg43dOxBgrvujRB4PUUtwKoBZbvwGBw2e2J1P5T6AMPTh1PEIJZMMOuwfAkEcwQkg99z7QdF7o9SCdH6Q==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM0PR04MB6900.eurprd04.prod.outlook.com (2603:10a6:208:17d::10)
- by GVXPR04MB12105.eurprd04.prod.outlook.com (2603:10a6:150:335::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.223.18; Wed, 22 Jul
- 2026 08:01:00 +0000
-Received: from AM0PR04MB6900.eurprd04.prod.outlook.com
- ([fe80::7fda:8431:ca1b:b023]) by AM0PR04MB6900.eurprd04.prod.outlook.com
- ([fe80::7fda:8431:ca1b:b023%5]) with mapi id 15.21.0245.009; Wed, 22 Jul 2026
- 08:00:59 +0000
-Date: Wed, 22 Jul 2026 11:00:56 +0300
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: kr494167@gmail.com
-Cc: ioana.ciornei@nxp.com, vkoul@kernel.org, neil.armstrong@linaro.org,
-	davem@davemloft.net, netdev@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: fsl-lynx-28g: propagate PCVT enable errors
-Message-ID: <20260722080056.vd6eni74tscmxtpb@skbuf>
-References: <20260722033619.10647-1-kr494167@gmail.com>
-Content-Disposition: inline
-In-Reply-To: <20260722033619.10647-1-kr494167@gmail.com>
-X-ClientProxiedBy: WA3PEPF00000525.POLP291.PROD.OUTLOOK.COM
- (2603:10a6:1d8::679) To AM0PR04MB6900.eurprd04.prod.outlook.com
- (2603:10a6:208:17d::10)
+	Wed, 22 Jul 2026 08:03:05 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66M53glD3883047
+	for <linux-phy@lists.infradead.org>; Wed, 22 Jul 2026 08:03:02 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	3YLza+Mco6SqiShSL430kfFXyShTCFaucpwzk2WswoE=; b=VVwZCkgOwPI73iOZ
+	ZbPgmLIwFIVHWIXa/2KJp7Iqw+SFOKxZuVnj/pj+BW61orvH2LQ5kTzZcseDxsRO
+	bLIhflkxG9josLydQtbYv6M3cjJw/5NhjGTCXaVEwXPYciBMb52pbtL5XCrDVyQD
+	U+AauV8gNp5s6f5PbA84eU3i7YjmFTbnP3F5njFgMgjifH0xrlO1teSjAg4LlQVF
+	O1m35X2jM76qk2/hv+xcQlBPqdZUd9po68TjF0P2e3LTqwkqwkfL7S03DbwManOU
+	wILyfcsU0PDJ5zTSoPoroRIgztNKV0zyLigmx79fs2SvvfXtD0Syr883WLbrzAuY
+	5QQ6Lw==
+Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fjntn11bk-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 22 Jul 2026 08:03:02 +0000 (GMT)
+Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-38e7621655eso5459735a91.0
+        for <linux-phy@lists.infradead.org>; Wed, 22 Jul 2026 01:03:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1784707381; x=1785312181; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=3YLza+Mco6SqiShSL430kfFXyShTCFaucpwzk2WswoE=;
+        b=IAOXSNd86lvlu19Pebvewn4KWdspCBv8d5g/lGDB0lIRJh2tCi48kjj82bHcviN8tP
+         5h66qQotF5X11OGJtyhEzpYr3DuroFiLfi7zKEwJvwrutcONRPYK2y52ikxJaCfKVXC1
+         mCwwFti2wqBEAYIVKM1FlPx9weBxrKf/Jc7gejoy4q+22CQida/U1Yp/XHqOXEENSVsD
+         CkEFmb7VfCy2+HcG7+FmUVItzWKCbcvJlRf2TpcMxh2VK2oKSo5Md7xS4t2FmQcS2JPx
+         a9S5apY1Ts6EzMpBcbZkjqbyT4ZHII+ckFn/mqIERr8ZakCDlVNZldp3QYI7TuuI5gdd
+         RFwA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1784707381; x=1785312181;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=3YLza+Mco6SqiShSL430kfFXyShTCFaucpwzk2WswoE=;
+        b=NKSlhZL811SfHtt+8afi02r7nG2YWpyLtIWZ6yS4UNepEpnPSjX7W0s/JYfozZFRwi
+         YsRHRs+Jw0S80h3NPojAsp4Pucfe4qY7Wt8oRWsNgjCaqWf7RdFEXkkvhPAHPGtHcqh1
+         lBZ/Hb/nfRRvEuIDsH8co5UIsIMTJIJdCkT10rOk4r5XV8evIPl71lVQnBcSS3vjtlG1
+         wmsnUu0RceJqurFPEE68+72oj/qs/rPcrS8xp28oIUqEdvm6lAGN3OZEpnO5p0x+OULO
+         C4eriffKH+wd5tl4FLU+CEKx/lnA89p9xsfnIuQyXM9AYm+Q3f/64jkNaWTQkLyPM10u
+         tYFg==
+X-Forwarded-Encrypted: i=1; AHgh+RqXOmsMkCILTHsheEIdTdJXBJybOIZJAnF3IdDZDG3GC3/qdTbZOveCC64mIYc4Uit7hkg4LHGcEvs=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwDYd0sB4m3C9NFCNsBZoJoaq7tDKjRrRu6TIhTzYm+XQYM2AIA
+	o81rKuIjfWJnPddmUutg6ziVQrsQLiXmbeEqOZ4YyvAIFlRMjiGyMYNjiw5Dg8piM2uwdsJ7BIa
+	rRES6uJCckJZhk3AKAUwY2AUCML8v8vOLDFLQqAoj3tIcHCp/97f7E0m96ge2Q69VfQNe
+X-Gm-Gg: AR+sD11BrAqDBwDn1uGu/Y9sBE3J+dMYX79OwPhDGKLX3/SN1pM71ukJfbge1QZW93D
+	mjSU9Gj8P1msChc0uA6VLguSNiu7Um7dY3HO3803BQxrRItPjdetdpExEWJEBZ9zUTVGZ9dcqUV
+	QfY+j4CVkZRsdnDYOYIZVdqcT2f2UVZCul9EzhI/w14YmGhQnotzXVJ6FCTC4EfjUh0L0JksdtJ
+	u+x5e/8euA6psU54L+Lwa3ryYgkZcxoCap3+VrVNU1HIR/LZAb6k7eutHAp+kv3ENUi0gJrbqfn
+	ZGLjTD1yWJ3jkC3gCw/ac8FsTs6fYd36H/eNnku0rkvjqAMDD8PXR6YyCv9WhDpGZM2Fz+lEAYi
+	9d7RzdHQx0QB9rXlVDhSYiD8CZJE=
+X-Received: by 2002:a17:90b:3f86:b0:38e:7297:a931 with SMTP id 98e67ed59e1d1-38e7297ab8bmr14046155a91.43.1784707381427;
+        Wed, 22 Jul 2026 01:03:01 -0700 (PDT)
+X-Received: by 2002:a17:90b:3f86:b0:38e:7297:a931 with SMTP id 98e67ed59e1d1-38e7297ab8bmr14046084a91.43.1784707380728;
+        Wed, 22 Jul 2026 01:03:00 -0700 (PDT)
+Received: from [10.233.16.34] ([114.94.8.21])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-38ea7aa85c3sm611869a91.12.2026.07.22.01.02.54
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 22 Jul 2026 01:03:00 -0700 (PDT)
+Message-ID: <515b04a2-b595-4fb7-a72b-2885121e0066@oss.qualcomm.com>
+Date: Wed, 22 Jul 2026 16:02:53 +0800
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6900:EE_|GVXPR04MB12105:EE_
-X-MS-Office365-Filtering-Correlation-Id: ed3ed8dd-2c48-48aa-308f-08dee7c75e12
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|19092799006|376014|1800799024|23010399003|10070799003|11063799006|56012099006|10067099003|3023799007|22082099003|18002099003|6133799003;
-X-Microsoft-Antispam-Message-Info: lDScj+ewYuIsJLP3bXIVopsCTV0CpMztLzUsCLUAgLe+nrDeEIcPhMdABqhxzrwV4HmymbvUGwVGry0NH+V17f/pD/MS/By/6QKgg8tuKEImuAA+Iff0e5kqlhBjlXQo8eTW5u/hwC7Bs1fPxNIAlBN7PRichlJAJ2z4Z4mQsGFj5Tvkc6PAfo1rrBSH7keHwQrUX8ddEGA24SOarpctwciCvoW1ubIbIMi7xbY84Eze5rixkal78Uwlzx7c6sKDy3L3qa+MYVylrZZgD0mHrks5pI0xCWDb22KGTDY+I8yjOVnjG0wtv1ZiJOkBrKcrASmo6RM44TT25TsU0zPoxDKzReXp7rY0pFShUouD1YK3aw6ML8S3BwgWYJfWwJHvW3pjZkIvFUiVgkTnWGxBBk5bNk/6zxnDkDf/LqcyJCeiulhD905nBIJuIVwsT5Cno99xiiX5ETPuMg8gIyK5siQyMfhWE/XCypwqXsmnVrTnIcWSPuxE4USroCD5ax7sIC0QK2T4xYY04rqAd6Sr2U8NV342W+WhxKHIiHTT23IqxCcKaDjYVfomcoAL09aXiNchztb3A3kryJbJDkKGhaELONoqbJPKuNLLUlOpVEjYkkZzZt3LdKVZ3KfNOoXBLHs3xSkafG1L4iPQpFWe/08rMOvc0SlOo2XAgoQwOgw=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6900.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(19092799006)(376014)(1800799024)(23010399003)(10070799003)(11063799006)(56012099006)(10067099003)(3023799007)(22082099003)(18002099003)(6133799003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?KmjOTdz8b6VnkRBXtACmHBo1/z3z9oAvDdCrLsHsngTI3y6cL/q0i/2BJ7C9?=
- =?us-ascii?Q?LwJRvP22qzXdbdZylxLQxQ/qxmwfaKb84IID4IMeABwo+sP/L/EE57OgGOTP?=
- =?us-ascii?Q?KylNvYSR/fm0+TX6TjYt31IXPJnmN0O1PwClAEK/e1XM08U3LcTDkIUYeYuq?=
- =?us-ascii?Q?Wh86IDqIhOGK7BFHd1MsW3ZikMKiErTFgsW/Aqkv5Kt8wujVgaf+J6QZ5EZH?=
- =?us-ascii?Q?793eVDVkqVlbKZuUXln5WZK8sZ7WumxV7QAHfLQdJeACPtRdBXm+Eqn2dRTi?=
- =?us-ascii?Q?Li+MHV1oJv8fnIiMRx5llMEYwFEuyykga+ubvaRoJ89mh8a/rLfNabZoYoYa?=
- =?us-ascii?Q?CZL9lOWqD9ODYzBHXYIETos79LgEnn3SQPbcycc5FjZEmYti1/7yaOPiTD94?=
- =?us-ascii?Q?KyPoCt3YpoT2LtCkWRogr1XQhuvDRB//YvhcNoivQxQ/UfOvcLMEP6GTkOy5?=
- =?us-ascii?Q?BgMy9Q5Cqe8AL2pR5FBazisqLLotKioGzhXr/Zi6d5HulUr3M99Eg7zQPpEt?=
- =?us-ascii?Q?Pw0byZa8js35SHoDZn6eB8yUupSFIUpR57ZgX5BhISJcdXiOsAhjdV8CkKZL?=
- =?us-ascii?Q?V3UVO+E03O5s8RzgRSbg8eaLGMdf++7aJGNLy5dbM/Gfvd3xHuYtQ9eh/fD8?=
- =?us-ascii?Q?KLNG54y97b/QLFlZlssxROdTYMmLYcnZu0lsR/4H1w1daxm4LrOUlD0kMNoB?=
- =?us-ascii?Q?fioaGl07bBZjcjGwOacs+4rYY7n8LeqnxY6AGF+PN6WVYaSxEMs4q51/t6Nn?=
- =?us-ascii?Q?HU7XWFC5sb5hlZCjAuFYuJfiPGegRyM22KQWmXS54aChGozu0588X4fK1Qg8?=
- =?us-ascii?Q?DYaN3qfa3GGEeYKExsDnIx9ogtXcoSmkWwqY6er3NWiFop8SQyaIWfbqL2kC?=
- =?us-ascii?Q?Gr03Ny/vRs323YXAA0v2pnczOL+6/OAjfB08kjNee4NkemescrO/DN2eAWSg?=
- =?us-ascii?Q?uawVSfSkyTuVHw8E82n26G5vYYk1d5HaoA+JPAmmBPgq/H0MHU0HJAhTPBhC?=
- =?us-ascii?Q?p8+7+W36KpDsBMQFkQ/trJAwboOC7M0V/hhLvYkLJvhld7SgkhxMfhjYf8Ox?=
- =?us-ascii?Q?JtHppMQDnGj0MAblfuB3+rfEOkM5fYEz1KC3CYoBZs4DdHSja1kTSgp30Bcy?=
- =?us-ascii?Q?NdcvYjoF8J6BcyjUpgFmb1DZX9UcTy3XCKRYTEqHbGxb9E+yfay6CvGSRkUP?=
- =?us-ascii?Q?x3oCBJ543ekl0oce7sWy6LYmQGXmxNEeyfAVvc8//GIjM37HEkx50d1ZahpS?=
- =?us-ascii?Q?CpxURXEmneTXycWw4Sz/AGxznk6tEDucGKjgyfwqcSkeFPwEAaZASQCOe4uv?=
- =?us-ascii?Q?2n4b5zzE/lcwRo9s7Yoc0N2B5yNqcoWqkrNWOsyEiWfy7N84XsDrATRVs9NG?=
- =?us-ascii?Q?owd7pvCkoRSxt/5f1eRoRSVqUooYzsg+Iot21dEkG4edaUFl5v456lpU9wm9?=
- =?us-ascii?Q?RoRhlKIIuVNJIG9lFmFEhbBZLXrkfUbMkl0l7pq1Mj0V1CXc8AP5fY3BUz/7?=
- =?us-ascii?Q?esfIdb9g+bZs6JaRsimkJtHTQqsgM14Y93v96TOloK6/Bo2PtejSnrq1D8yV?=
- =?us-ascii?Q?hpA/5rCHQcTU7rTM04jGu2pLZt0Zkg0iBkWLDkSLdEYoXeEkZV726BXkiTYa?=
- =?us-ascii?Q?BkTOpTrto/1tfVXtEkRKv1sgFtvfWo4wAzea+BWu3nBs3yFwoBYsgVX3a0jQ?=
- =?us-ascii?Q?Gsks2a1reQARCEMM+3XPxMEtEI+ZuUlYHWdMKSj8VTrSMUOwOD/NPWeIK2vo?=
- =?us-ascii?Q?VihKUuIJXOPS6Dml8IowL/U95/UCZgGZqsOAEqXoshA7ofl82jxC4jgmgW/M?=
-X-MS-Exchange-AntiSpam-MessageData-1: yGkXGHg033JFk1LpZIw09e3qFCgsQcPmATM=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ed3ed8dd-2c48-48aa-308f-08dee7c75e12
-X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6900.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Jul 2026 08:00:59.9242
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: lndivna6Azh6KbGFnIhV9BunXAZ06EicMuNM5BVBpsjJo626nrXUlibavlW2se7kkvlHefbW8Drng2yQwdfK9A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXPR04MB12105
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 0/7] media: qcom: camss: Add SM8750 support
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Robert Foss <rfoss@kernel.org>, Todor Tomov <todor.too@gmail.com>,
+        Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+        Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+        Mauro Carvalho Chehab <mchehab@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley
+ <conor+dt@kernel.org>, Bryan O'Donoghue <bod@kernel.org>,
+        Loic Poulain <loic.poulain@oss.qualcomm.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-phy@lists.infradead.org,
+        jeyaprakash.soundrapandian@oss.qualcomm.com,
+        Vijay Kumar Tumati <quic_vtumati@quicinc.com>,
+        Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
+        Atiya Kailany <atiya.kailany@oss.qualcomm.com>
+References: <20260721-add-support-for-camss-on-sm8750-v6-0-a5f841061d18@oss.qualcomm.com>
+ <20260722-real-diligent-pig-c97d3a@quoll>
+Content-Language: en-US
+From: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
+In-Reply-To: <20260722-real-diligent-pig-c97d3a@quoll>
+X-Authority-Analysis: v=2.4 cv=AJsSZ1gA c=1 sm=1 tr=0 ts=6a607936 cx=c_pps
+ a=0uOsjrqzRL749jD1oC5vDA==:117 a=Uz3yg00KUFJ2y2WijEJ4bw==:17
+ a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
+ a=VwQbUJbxAAAA:8 a=KKAkSRfTAAAA:8 a=EUspDBNiAAAA:8 a=eB01bHF-wB_RgGLiRNkA:9
+ a=QEXdDO2ut3YA:10 a=mQ_c8vxmzFEMiUWkPHU9:22 a=cvBusfyB2V15izCimMoJ:22
+X-Proofpoint-GUID: KCmgbkb5hP5vwyP47nMCXO7Q4PU0AcDW
+X-Proofpoint-ORIG-GUID: KCmgbkb5hP5vwyP47nMCXO7Q4PU0AcDW
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNzIyMDA3NCBTYWx0ZWRfX4LmZHZumI2wS
+ DZmfDgtZvZW/pYB2sax8H2aiA/SrplDLb4sfkCIloFgZWgAXdF7rK1Afc6iJy3TPvae+zfBCSDO
+ qepibxZJ6RRYyHgGadjwhpn3ALfUZLg=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzIyMDA3NCBTYWx0ZWRfX3yplAfdMmK6L
+ /mUWZoz40YLGCPJsThjzQeO6/mLjoIwvz9AIKlDqe2kG7RobirLi4qqa76tSvYMFClv3PyCssYc
+ cXjuPcOc5pOE7cD7p8eiy0MOJsaJID7gBkmA0dU1oF7xXxNKTmy1KDs+cQP486sxWctwljOba95
+ MH4eZ8KAyTUOQmO5lIjclcVYct2Bgj54laOT/bNAHAShl2tsGDzebn5M0qHDT41goxCTQiB/Hjp
+ xdjeLEcdeSJJYlLWpmormWRsgwWblhdDzbjEVq2b9HjVEY0q426kap0mYtB3CztYLjCJhTBtaHX
+ 25Tl3ZWQKPHJ3AsRcrWv4O4Ns1DOg9qCkpb+BGC+vXd7bZDdk+GKdPZkauaAU5tk0OHZZuUerOV
+ ZZQhoNYDhfCOBbJtB36RUXfP0ZKAwMAdGnHlcW07wzaoLP+PgmvYloTFGpsTbbgwm7aI6sJRcKm
+ srI2SJ0tJ1Txdbq62KQ==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-07-22_02,2026-07-21_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ impostorscore=0 spamscore=0 clxscore=1015 phishscore=0 lowpriorityscore=0
+ bulkscore=0 adultscore=0 priorityscore=1501 suspectscore=0 malwarescore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607220074
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260722_010105_806162_50845AC1 
-X-CRM114-Status: GOOD (  18.98  )
+X-CRM114-CacheID: sfid-20260722_010303_972429_15761F7A 
+X-CRM114-Status: GOOD (  18.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,53 +160,66 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Surendra,
+On 7/22/2026 3:00 PM, Krzysztof Kozlowski wrote:
+> On Tue, Jul 21, 2026 at 05:45:59AM -0700, Hangxiang Ma wrote:
+>> Add support for the RDI only CAMSS camera driver on SM8750. Enabling
+>> RDI path involves adding the support for a set of CSIPHY, CSID and TFE
+>> modules, with each TFE having multiple RDI ports. This hardware
+>> architecture requires 'qdss_debug_xo' clock for CAMNOC to be functional.
+>>
+>> SM8750 camera subsystem provides:
+>> - 6 x CSIPHY (CSI Physical Layer)
+>> - 3 x TPG (Test Pattern Generator)
+>> - 3 x CSID (CSI Decoder)
+>> - 2 x CSID Lite
+>> - 3 x VFE (Video Front End), 5 RDI per VFE
+>> - 2 x VFE Lite, 4 RDI per VFE Lite
+>>
+>> This series has been tested using the following commands with S5KJN5 sensor.
+>> - media-ctl --reset
+>> - media-ctl -V '"msm_csiphy2":0[fmt:SGBRG10/4096x3072]'
+>> - media-ctl -V '"msm_csid0":0[fmt:SGBRG10/4096x3072]'
+>> - media-ctl -V '"msm_vfe0_rdi0":0[fmt:SGBRG10/4096x3072]'
+>> - media-ctl -l '"msm_csiphy2":1->"msm_csid0":0[1]'
+>> - media-ctl -l '"msm_csid0":1->"msm_vfe0_rdi0":0[1]'
+>> - yavta  --capture=20 -I -n 5 -f SGBRG10P -s 4096x3072 -F  /dev/video0
+>>
+>> Dependencies:
+>> - https://lore.kernel.org/all/20260720-x1e-csi2-phy-v13-0-160c31958863@linaro.org/
+>> - https://lore.kernel.org/all/20260708-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v12-0-f8588da41f16@linaro.org/
+>> - https://lore.kernel.org/all/20260720-kaanapali-camss-v15-0-c0b1c1167c5d@oss.qualcomm.com/
+> 
+> None of these were cleared for merging. IOW, all received comments yet
+> you send work which depends on it.
+> 
+> This is exactly something Bjorn said a week ago or so. And then a few
+> other maintainers re-iterated. Exactly the same, nothing learnt.
+> 
+> Best regards,
+> Krzysztof
+> 
+I understand the concern and agree that posting dependent work before 
+the prerequisite series has been fully reviewed and cleared for merging 
+is not ideal. The reason these series were posted at this stage was due 
+to internal planning requirements and the need to keep work on other 
+dependent platforms moving in parallel. The early review is aim to 
+avoiding blocking them too much. That's a dilemma that I was asked to 
+handle it in this way.
 
-On Wed, Jul 22, 2026 at 09:06:19AM +0530, kr494167@gmail.com wrote:
-> From: surendra <kr494167@gmail.com>
-> 
-> lynx_28g_set_mode() currently ignores failures from
-> lynx_28g_lane_enable_pcvt(). It then updates the lane mode and reports
-> success even though the protocol converter may remain disabled.
-> 
-> Propagate the error and leave the previous lane mode intact so the caller
-> can handle the failed reconfiguration.
-> 
-> Fixes: 8f73b37cf3fb ("phy: add support for the Layerscape SerDes 28G")
-> Signed-off-by: surendra <kr494167@gmail.com>
-> ---
->  drivers/phy/freescale/phy-fsl-lynx-28g.c | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/phy/freescale/phy-fsl-lynx-28g.c b/drivers/phy/freescale/phy-fsl-lynx-28g.c
-> index 38afcd081a2a..1fe406adc83c 100644
-> --- a/drivers/phy/freescale/phy-fsl-lynx-28g.c
-> +++ b/drivers/phy/freescale/phy-fsl-lynx-28g.c
-> @@ -1003,7 +1003,9 @@ static int lynx_28g_set_mode(struct phy *phy, enum phy_mode mode, int submode)
-> 
->         lynx_28g_lane_change_proto_conf(lane, lane_mode);
->         lynx_28g_lane_remap_pll(lane, lane_mode);
-> -       WARN_ON(lynx_28g_lane_enable_pcvt(lane, lane_mode));
-> +       err = lynx_28g_lane_enable_pcvt(lane, lane_mode);
-> +       if (err)
-> +               goto out;
-> 
->         lane->mode = lane_mode;
-> 
-> --
-> 2.55.0
->
+However, I understand that this can create additional review overhead 
+and confusion regarding the status of the prerequisite work. Will 
+transfer your concern internally to try to avoid other colleagues 
+posting more series that has much long chain dependencies.
 
-Did you draw any conclusions from the feedback you received on the
-lynx-10g patch and decided that it doesn't apply to lynx-28g?
-https://lore.kernel.org/linux-phy/20260720101906.80584-1-kr494167@gmail.com/
+Apologies for the inconvenience, and thanks for the feedback.
 
-Hint: it does.
+Best regards,
+Hangxiang
 
 -- 
 linux-phy mailing list
