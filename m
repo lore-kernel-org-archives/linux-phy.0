@@ -4,144 +4,149 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D7E9C44512
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 07:13:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C5BDC4451C
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 07:14:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P8Rp6An33s5WQNN+Z20jGoO5SBWEBgUfSBIyBAeSlvg=; b=UDsZjHfoTtFoOc
-	igSPj07oL7B9tsTGcoR9BXlSkvX+VY3Mm1WcRadM0U7XmKyAMKqerftUx3oLMG3MDI4ZJcruXOy/d
-	C+r13gqNF7D2NN8vLKJ7FZiBpLo/gCVW7ZYFXSuB/VikhzTHMkTZJyEQuBy/ocAYAPNmDcNr6w4hw
-	yP8oUtgQvw1ljc+cwq1H7TEomnW4v1XUKYntkqVrg60BI5YoQjI7NRNK5Yfcla3Uj7b0oyWQkCr25
-	AQxOOAYisBlkrRNhXMX39qnMDBpJU+YVDR+I2k8LyiUeUaE9bOHPsTffIDvcxmjv548NJtQUOR3QN
-	A5k8UwSs7uZB+i9JGoWQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:References:Subject:To:From:MIME-Version:
+	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=wXuVi9BNIvEOokWLVAmEVJ9s9M4T1k8Kl5dVcDrl1Bg=; b=2PyGi8xA3pE1xIJyA3NbtKmBuS
+	tx0cafaYoptQ5g5gagezzY03TuHNECWzG1MykQRzVYr741LFyCX0qqP+DN3AK371QZXFDwzlFMJ2w
+	XxvrzQBzZg2K6dzOOxZ0QYdMHyvOlQAAV8Mvt0pRtGGwq4l9dwDBuNC6nLje3pKM4SSVGBx88D2dZ
+	Ouwzbw7DT3doU/hUf6ltByFeRi6F9wP5liHvHSacGRtztl/RjKKAfi8At00FpQORgASJXn7NGunnB
+	VXwk+d6EdwNgi45r/SjBvjjrZfvvBSj01TMBUvc1NPhbCUUNxfKZps221+/f4TijYYqhAwvpC9zEQ
+	Ei6CxwMQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmR8p-0000000B2Gl-1JvO;
-	Wed, 22 Jul 2026 07:13:19 +0000
-Received: from mail-koreacentralazon11023122.outbound.protection.outlook.com ([40.107.44.122] helo=SEYPR02CU001.outbound.protection.outlook.com)
+	id 1wmRA0-0000000B2RF-39vg;
+	Wed, 22 Jul 2026 07:14:32 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmR8m-0000000B2FZ-06JQ;
-	Wed, 22 Jul 2026 07:13:17 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=k5Pchl8iFqGZQutr4d2AeHDyvhTAAQGxGTcik1K2hVpQujxsgmjmKZhqVmZbPykhZNA4wt8Zrws3H9uOXobLCisPdMO4oyjT17vWGr25ttd80/nSDd+TlQYw1FVtQAn8uWb6n6J6YwG6xMJVsIuA1wI2eDN6MqkV+HZdhQJ8rVgFqubJw87zz6u4K0UDMXHQlyps2QeZGmIkAxZay97O+TT4qAjtNVFGqJIPpf2ke/1WkkanBdKwgk7uiPX64jFnXsw/cPqFW8GJNmYDPCrWCazFQQGacxiC8N4gC5KeCUrDxuTdBWo3ePGuV9L5fwgZwyoaNwBD+TjeX04yObMf+g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=8zSjtJjo65BsmoR0tfNEhF1V8f8hOiMNumw8/OLiR/4=;
- b=aJ/qya9sVTgdefnqsWLsiUvMqL55I5vARnAcgi0yrBX6DfpqfBSwYYgy4hx9cGGz0nWjqL4RcHp1NBmcO1OKG59pcogShsbAcOVLhJLwv1NkdswV0w+6mXT//CHrRGcJdSbLMDQIOmYqdCsuEyuVZwDxnfaf7HMIA11ViDjxXCx/BvtSruvdFeHH8HJi7vb2wLkDZaC/JmBtHnppvqG1G6AJQryvITklLarSH6kf/oasmCYNm8j2njsFv3srQnxRZ/c5JdueNEsVowscIc5mmyAKI4aZWotCUXQorg6XGxRTzONuapk5EBNgjHTgBu29D/viOk7Z23feqvn2h52Vzg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=aspeedtech.com; dmarc=pass action=none
- header.from=aspeedtech.com; dkim=pass header.d=aspeedtech.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aspeedtech.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8zSjtJjo65BsmoR0tfNEhF1V8f8hOiMNumw8/OLiR/4=;
- b=hT4nClg+AkV0m2K9UR0BweiWx+mugIUQ2p/TEbfaIVaqPXzO64YKnUOcPlTxyzw+l77w+wnbxu+lSCh+w8DuokweWs510qvggE0fwhWN9bZKip5++3ks7hrGozHusi53bYX1uIIUSFQCKK+/JkiN5nQAb4LTybqeHqvfQvs58FZBglkRrNCa0V3O32/YRmAHaWJMTp+JTpJkCdv1/dqdgOTdwNCqDktKtRWcu87yCENVT2Euba+qcX4OCG/AO69Xib25ZWY9scddsnWlQL/1QExEyc8w19noCtiX5z7SYLCQyCDycdRp0kFYYWirWyRUDw9ZIladf0Vx6ZzmEpvqig==
-Received: from TY2PPF5CB9A1BE6.apcprd06.prod.outlook.com (2603:1096:408::791)
- by SE3PR06MB8665.apcprd06.prod.outlook.com (2603:1096:101:333::5) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.245.10; Wed, 22 Jul
- 2026 07:13:01 +0000
-Received: from TY2PPF5CB9A1BE6.apcprd06.prod.outlook.com
- ([fe80::43a0:9857:dd1e:76d2]) by TY2PPF5CB9A1BE6.apcprd06.prod.outlook.com
- ([fe80::43a0:9857:dd1e:76d2%4]) with mapi id 15.21.0223.017; Wed, 22 Jul 2026
- 07:13:00 +0000
-From: Ryan Chen <ryan_chen@aspeedtech.com>
-To: Andrew Jeffery <andrew@codeconstruct.com.au>, Vinod Koul
-	<vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring
-	<robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
-	<conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>, Philipp Zabel
-	<p.zabel@pengutronix.de>
-CC: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "linux-aspeed@lists.ozlabs.org"
-	<linux-aspeed@lists.ozlabs.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, Joe Wang <joe_wang@aspeedtech.com>
-Subject: RE: [PATCH v2 2/3] phy: add AST2700 usb3.2 phy driver
-Thread-Topic: [PATCH v2 2/3] phy: add AST2700 usb3.2 phy driver
-Thread-Index: AQHchpNOnM449AUerUiXvoW6kWH3sbZlhJQAgAA9O2CAFICtAIAAA0tA
-Date: Wed, 22 Jul 2026 07:13:00 +0000
-Message-ID: <TY2PPF5CB9A1BE62ADABBBFA67FF51ABB53F2C12@TY2PPF5CB9A1BE6.apcprd06.prod.outlook.com>
-References: <20260116-upstream_usb3phy-v2-0-0b0c9f3eb6f4@aspeedtech.com>
-		 <20260116-upstream_usb3phy-v2-2-0b0c9f3eb6f4@aspeedtech.com>
-	 <ddb133ca1a3be605ee776b2276c1907c9ad32491.camel@codeconstruct.com.au>
-	 <TY2PPF5CB9A1BE6AE5B658D558EBDF24450F2F82@TY2PPF5CB9A1BE6.apcprd06.prod.outlook.com>
- <ca289e45bbde8e8a2f823a1660aa0a8f88e94bc4.camel@codeconstruct.com.au>
-In-Reply-To: <ca289e45bbde8e8a2f823a1660aa0a8f88e94bc4.camel@codeconstruct.com.au>
-Accept-Language: zh-TW, en-US
-Content-Language: zh-TW
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=aspeedtech.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: TY2PPF5CB9A1BE6:EE_|SE3PR06MB8665:EE_
-x-ms-office365-filtering-correlation-id: 744f58f2-bc3e-42d0-b934-08dee7c0aa2b
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|7416014|376014|23010399003|1800799024|366016|38070700021|6133799003|56012099006|10067099003|4143699003|22082099003|18002099003;
-x-microsoft-antispam-message-info: VY8MRMuhs1tyKmpzX71ZbYuljGmlHZUH63leUIGdhVihPmQxxLr2K3pzYl4/7IEcq2MIP151Xq8YvZsOuRIzd+hlPBXGPAmZkNm5NeQqQAYHTn066DK56dkHuL6x3iNgx146nGrN4E6H9ztU+1Fptnf00cm4CUB11/h1DNrEpSflOu3PaYKkUcURP71ME5C/vrHcBBe3h66wCc7+uSbGMEwNEM1fHlUE18qQuqBTK+vzQPlkHMpQa5AobqyNMLqTqHaEN62xvnkxuH4RLJf9qHDG0ejNQebvJ7daFh6qJvAbP5zF9xIlAKV4bU0+jFehil3ex4OSgbrrEb64r+xS31H4UFQs7gelpVQeKyd7sUBGcJ3QZ66YAgtJK5PEnLmW7eohV8Tyncz/7692dclVRN6RKfc+qqu7nCx87hw0asNQrkcghp6xhs1rbTaGNLSnw3gNyao8XWu2i6XJceAgxdDjASgiW6SSoESH7kb2+OwI5WUU1wnDpD/aO3U+lncnUdQlGsTH8nR+0sX2xsr/hP70jHXLoPv/PUvDfSoRc6MbwnxWcK9x/ylLaHd/Of9JCnX4pSqcNfa5NZabwywMdIuCjDmK7VHKlJtgkd7keCAqWgGmAjayxRstX7/gMU28NkEauS2NEDPZTo07v7JdcxcCXbJ5uDPJCs6t+dZFxEK81djbp+XEf47bAGPryxkSFF8i9nDoVWY/YRjTzjPWvH40SWHkLFruhso6LUoVKYI=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:zh-tw;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY2PPF5CB9A1BE6.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(376014)(23010399003)(1800799024)(366016)(38070700021)(6133799003)(56012099006)(10067099003)(4143699003)(22082099003)(18002099003);DIR:OUT;SFP:1102;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?Wm1rSGNpZWx6MG9XbjExT1A4ai9JZzl6ckwwM0Z3aUg3TDJ2QkFHZ2Y4ZFF2?=
- =?utf-8?B?OE1JTS84dTN0S3JTSEtHbVVScnNLQnNzOHlRNlFMSFBwMkk2OURTdklvMXZZ?=
- =?utf-8?B?ZjdUMlN0TjNVdGdGdmhBNDY1NnJ2d1hzR0t3TkdlUjY4T05FbkVmb2YzZGZO?=
- =?utf-8?B?eDI4c0ZSR1h1ZE5oK0JXOG9HbU1rL3RDQWtMcVRxR2lWS1FBOW1IZTBRRThZ?=
- =?utf-8?B?OVJnbUlORXN5T2xZbXE4TjcvTGlCUkJ0emtkenFxcTg2VzQ3cjR3bTY0cy9x?=
- =?utf-8?B?MWdKYmNsYVo5Si9zUjFTNTMxWWNIL1lsRmdIT2NCOWYzZXdDak95dlRjTnVw?=
- =?utf-8?B?dWJQVzZ2d2VQUU5nbTNqVlpRY3AyT1RoVWhocXNxM1haNkdnMEhRZU5WRWVK?=
- =?utf-8?B?V0FtdVFIVG02R2RwUWdlaUJBVFM5NXRVU0tZYkxmeXBQTU1kNE1ObE1tZTcr?=
- =?utf-8?B?ZnBhYk83VE1sRTlJNDFrQzhzazU3L2Z5d2RuYTZnYjF2UHRadSt1MWE2RWdu?=
- =?utf-8?B?QXZ4em54VDA2Znd1THBHT1RyWk0vdWlOYkY0cXc3YTBrejB3TWxaRWtSMS91?=
- =?utf-8?B?TENCMkJ0cjhlQklHenQ3OFozWmpZUEhDeDFFTUdmSTBjWXV3M1BlNDgwalhE?=
- =?utf-8?B?TFZJUWFiTVFjeGNkOUp2YWhyUXNPTE1EdW5RcUY3RDJmUjUrb3p5ck53QVM4?=
- =?utf-8?B?MU1LeTFJbER4eEQ5NkQ3R0J3bjRTcWQrS3lRMi85elJpMzQ0cXJzcjNscGcr?=
- =?utf-8?B?SmRSbGNzL0d6emV0WFkrTmxGNllPNk1Gc3lYNDY2eTRlaGFZanZ3b2Y4OFBt?=
- =?utf-8?B?YUhZQmwyK29meGNLWXVNRTRML1pqa0dLdnpKVDFrZm5JNzc0bHIwMys2SXNp?=
- =?utf-8?B?N0lpWWxIVkVRTjdGQ0lwRkVQc0dpS0NDUEZiTU51bTcyWVdHL3Zield5UGda?=
- =?utf-8?B?ODZ2MkEydTV2akpjUEdHcklZNEdNMVJPMHlERS9DWldTQWZnbWZNdDBKWXF2?=
- =?utf-8?B?K1JGNnYyaXdUS2dGMTlCZ2ZES0o3eXh1ODRFY0ZWb0hRdklYNlVkV3FVK1A4?=
- =?utf-8?B?SEhpdUMrODg1TFRhZlZYbEErS3pYdVFueWJMTVNUcGh3bGVOSXN0bmhQUkMr?=
- =?utf-8?B?NDBPSm43UmVUZE9kanp3SkJOejR3VTBTc3VCVzBwRktsTHpvb2Z5bndkeWor?=
- =?utf-8?B?R0ZKNWtBQ3RtdWl1cEhKY3FubHNXYmc1OFEwT1Q2YWo1WGJWSm02MVMwSUUx?=
- =?utf-8?B?NmxQUVV0YjBSZWxBQnBiRFlGTVlhVFIvaTBzUHBwR3JPQ0ZTL054bFdKeUhp?=
- =?utf-8?B?TkMrY2trcHdaWjVlcnNNQWI1cS9jbXorMXhBdlJIOThpR2ZOVHk2eDBpd09Z?=
- =?utf-8?B?SngzRFU2WEVTNlFYS3lCVk5tWFJ3SmxNRUhTbDVoRGRtR05qM1MxQ0JTcUk5?=
- =?utf-8?B?MVBUd3ByckFjUktoaVltN0tGNjZZTUc2VXA2NmtubE40dWZ3VXBJOUxHVUxB?=
- =?utf-8?B?TDZiUnc5M2hudEQwTGZkenYzakl5N0kwSjBnYkVxWnZsUDNhcEdVMW1UTnZz?=
- =?utf-8?B?QUZwbTdJUjNYZ05PMmRaaXJZS281QXFXVFVsQjFKOVp2V3JJSGRNaW1kaWps?=
- =?utf-8?B?TzlXV21MTDdCdlN0RGpNOWVuUkROSlpNTkpSTUxhNUxMYUloQ29KZWV1M0VE?=
- =?utf-8?B?c3ppY1pBdXdzbEwwUmFoYU5HRzltVVNrMk9rNXllaGR5R2NjMmVDcmgvUUha?=
- =?utf-8?B?N1AxQm5McGc5K2VLSzAvOVJIMDhaQ25ybmJiZTdXWE5LeWgyU2NRQkxlUEsw?=
- =?utf-8?B?Vi8rRmFMSU1LbnRuUENmRUY5TWlLdXlzNFNZZGxnWXdCS29sTU5jSk5RWnZQ?=
- =?utf-8?B?Y1lpMStoSlNvci9qdUV6YitENk9ydjVkNW03cTZKTlpJNHZWM09QM3lMN2Rt?=
- =?utf-8?B?UlBiNVUxMUcrb0Y4bjRMVFVPNWdzWmtWMVZ0WnJ6U3lhMjlkalNKaGJpaUdC?=
- =?utf-8?B?S2VzQlBvdHk0a2lVeUVOZnMyZWhyelF2UENheG45dHNBelJzVWx2U1MvTUp3?=
- =?utf-8?B?VVg3UjZjTHRQVEFrc1k3bEJzOU41V2tRenEvUVRaMVRCUHBSMW1KZTRFUGxV?=
- =?utf-8?B?T29reHRWOXZOb0ZRWk1hU0NUMXptZ25jbmdJbllTWURqcSt0aTF3aEhYZURo?=
- =?utf-8?B?T3JJWEp5bmN2eldPcHZJMWtQOHFvTUUwenRnVnkwSU5Zem5HQUErUldFalZY?=
- =?utf-8?B?VmJiQ21KNEx6YUhZR012dkJLZEN2cWdZUHpKSEdUclRPSi9GdmppS3dURTZn?=
- =?utf-8?B?aHJLb2dBS1FRMFUrZk5KQW4ya0t5Yk1IalpyQmZSVEgwdzBTUXIrdz09?=
+	id 1wmR9y-0000000B2Qv-1bQT
+	for linux-phy@lists.infradead.org;
+	Wed, 22 Jul 2026 07:14:31 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66M53utA3996109
+	for <linux-phy@lists.infradead.org>; Wed, 22 Jul 2026 07:14:29 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	o6WZlUuh3ud4p8X6xsya3c8SjjkN8PuSsK3pWB1fpMw=; b=AjAqo7LAuFLPTaW+
+	g/1pLskBeOz/IJGLF/MUAyzKMnFXDB+lJCR73CwGumcStABOBxIR1lpMmopSJhFE
+	q5WMM6C0Cwydk+/tY1R3nNXG+puSausZOvEmMRMTOpkwpWks/F/9B1sjf18banSH
+	Tm4p/TlUtC9e+EMHndKx1V+k6KCMnxnBLSGbeHWDS0dzVwUH2qMcKGe8WDYPxDl1
+	rudj16LahEaZgvd+KiYtIgPgPcmiZb8NFleBZ8iaXkEPrbiIk13jvJOZZjvQQfkq
+	YxmMEpTvyenz6MnTT5dPkDQ39mLpJdkBPgYCORVLPZM77jGSUPoIjg8cKBsEmrwo
+	WD//vg==
+Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fjd6d2r3f-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 22 Jul 2026 07:14:28 +0000 (GMT)
+Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-381abcccbf4so8132240a91.3
+        for <linux-phy@lists.infradead.org>; Wed, 22 Jul 2026 00:14:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1784704468; x=1785309268; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:references
+         :subject:to:from:user-agent:mime-version:date:message-id:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=o6WZlUuh3ud4p8X6xsya3c8SjjkN8PuSsK3pWB1fpMw=;
+        b=RXwPbUU5ZgnTop0I7elUyeyxw5XMJSfXNFOs8TTHrBp/kNaieMaD/kMoX2UySo36sR
+         7UKA6AhZZG0usnZMGzNbcT9MOeQbrQQ4BNQ5Mw9YezdosRVpy8Oekh5JxAD/4MWzCQyA
+         zIs478lSIscPYbjOsJyKsbLtqHrmUZ6+OII7ymDwkwY8uTnesnX9fy76axPS8LDR0Tpo
+         Aq738qupxMbEMTsndCI35AmsOx+8/kvHl80K8jpdIyZMn2ozRkdTISOZiIim1SwwLRSu
+         gwh+oM5DnSbZA6oWbgdukPm71aibwl0HJHZmnnrzpE4o4TjsQZaCgleMyyd1hbEagfLM
+         C1cA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1784704468; x=1785309268;
+        h=content-transfer-encoding:content-type:in-reply-to:references
+         :subject:to:from:user-agent:mime-version:date:message-id:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=o6WZlUuh3ud4p8X6xsya3c8SjjkN8PuSsK3pWB1fpMw=;
+        b=lTMohh/aHJq4GNbqAyTNU0cJTcX/Uq4iCW3WuxhIgV8OFQ2HjjG27CSsi0x5FXCQzy
+         kHWBGwIsQiO4sEkWfMoiiEAk/8PHrVyxQ9/BeBMjYsdkVfZ5vZ+EZLS4PKWROGmdScmg
+         9roRzof9232ii/xc8AhdbuhYf7WoJ9uvy6WFnmYdD/ESubLA+JGBM0VX98b0aAocchCf
+         k1Mr1hJHOIbpn9igQCqmKFICeuKE1DaDKzXI8Kd73azyI0lwb6dBzjkJWUWx+lzP69GD
+         mOi+7ODGzGIqUPpb4Gu0VzgM4GHVuiMAQBSGMDu8ZQi6qGJPI/UKcA7yUV3Mf9zWk8VO
+         odZA==
+X-Forwarded-Encrypted: i=1; AHgh+RrTGgp2/gzxvfZPLWk7v+nLyY1H7rLUxY2yWI4VLMGj6Ux0BbBrbNDx4I+haCxfjuVPJDj8pMiIsGo=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxoAso9HC4Dzh1u1dAFHDu0UOQVQV6B5BCUt/fTVk1piTue46Pe
+	G8C85nXjJ6byGi8dZIMjyC/yBoZVzndPCLjnQ7SsYcPjugpdzb57zwmY914K60hPbwbmm5vJLuc
+	On4exgJwjli0TL3+7akrj1R3BLAyatRJOXc1+blL5PwRcrnPfNxB21uu6AOn3qZrBws/f
+X-Gm-Gg: AR+sD11ar2/WIA2Ij7f3Z/Hx8eLmSsfg9VsPkLTcVSTPo4xcxLA3jgmGgqo4zUDm+QG
+	xGc9i1xMCls3dbe7gEa3JjF3GLW0/vQe/LuutH1V+bbdZYH9i+wy8pzaHzzuIcGRJxcOW1OFBkF
+	zH67W/3ABIKw2pss/Qy+d6tj6pfp1TzWteVQZtvwjZ2CVoPTBHgEEd23cYR9BwYhxqEinKM6PGa
+	8udX/mnRsm+9fNnJI/2ibsxtSr66tTb4ipKd7ykE9R8kPY6KcFTFuiIvrLPI4wLZ+YmKCM6UPEy
+	zj9gy7lbu+e8t0ewhpT1GuPXeuweWbiDzrAXLV4Eur+NlP1jFPEpNEjpoWIsWFAybpCtOdN/hSt
+	VWuhum6nratztd4D1DuKSb7qBHqc=
+X-Received: by 2002:a17:90b:1f88:b0:38d:f1a4:1116 with SMTP id 98e67ed59e1d1-38e4b537bedmr18504093a91.33.1784704467800;
+        Wed, 22 Jul 2026 00:14:27 -0700 (PDT)
+X-Received: by 2002:a17:90b:1f88:b0:38d:f1a4:1116 with SMTP id 98e67ed59e1d1-38e4b537bedmr18504062a91.33.1784704467297;
+        Wed, 22 Jul 2026 00:14:27 -0700 (PDT)
+Received: from [10.233.16.34] ([114.94.8.21])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-38e92091875sm2754093a91.7.2026.07.22.00.14.21
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 22 Jul 2026 00:14:26 -0700 (PDT)
+Message-ID: <ec502fa5-9e9e-4396-9599-4b297061bfec@oss.qualcomm.com>
+Date: Wed, 22 Jul 2026 15:14:20 +0800
 MIME-Version: 1.0
-X-OriginatorOrg: aspeedtech.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: TY2PPF5CB9A1BE6.apcprd06.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 744f58f2-bc3e-42d0-b934-08dee7c0aa2b
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Jul 2026 07:13:00.7658
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 43d4aa98-e35b-4575-8939-080e90d5a249
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: sUR1W/BLFcoYeJDVocnhvU3RqKNkdLGPKeuESDWr7VvfYmpWbZETMR3YcOI5q7WXikAfjIEE0uTGQkIJk9RG2hCrQroCQXRvTg74Jfr3Iu8=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SE3PR06MB8665
+User-Agent: Mozilla Thunderbird
+From: hangxiang.ma@oss.qualcomm.com
+To: Krzysztof Kozlowski <krzk@kernel.org>, Robert Foss <rfoss@kernel.org>,
+        Todor Tomov <todor.too@gmail.com>,
+        Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+        Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+        Mauro Carvalho Chehab <mchehab@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley
+ <conor+dt@kernel.org>, Bryan O'Donoghue <bod@kernel.org>,
+        Loic Poulain <loic.poulain@oss.qualcomm.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-phy@lists.infradead.org,
+        jeyaprakash.soundrapandian@oss.qualcomm.com,
+        Vijay Kumar Tumati <quic_vtumati@quicinc.com>,
+        Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Subject: Re: [PATCH v6 2/7] media: dt-bindings: Add CAMSS device for SM8750
+References: <20260721-add-support-for-camss-on-sm8750-v6-0-a5f841061d18@oss.qualcomm.com>
+ <20260721-add-support-for-camss-on-sm8750-v6-2-a5f841061d18@oss.qualcomm.com>
+ <20260722-enthusiastic-hyrax-of-zoology-17bd7d@quoll>
+In-Reply-To: <20260722-enthusiastic-hyrax-of-zoology-17bd7d@quoll>
+X-Proofpoint-GUID: 1Q-D-d5QG4eu0CIQeUkJQ1itC_Jja2AA
+X-Proofpoint-ORIG-GUID: 1Q-D-d5QG4eu0CIQeUkJQ1itC_Jja2AA
+X-Authority-Analysis: v=2.4 cv=XaG5Co55 c=1 sm=1 tr=0 ts=6a606dd4 cx=c_pps
+ a=vVfyC5vLCtgYJKYeQD43oA==:117 a=Uz3yg00KUFJ2y2WijEJ4bw==:17
+ a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=gowsoOTTUOVcmtlkKump:22
+ a=VwQbUJbxAAAA:8 a=KKAkSRfTAAAA:8 a=EUspDBNiAAAA:8 a=g9Y63sCnjjm7CRfqtwoA:9
+ a=QEXdDO2ut3YA:10 a=rl5im9kqc5Lf4LNbBjHf:22 a=cvBusfyB2V15izCimMoJ:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzIyMDA2NiBTYWx0ZWRfX6KGZRWs42Vjr
+ qY3QofPZwv2ys5yes7K28sNX9Ewqhw1bFcuHRWXitoaCg1MVesAi7z8UC91d8xBKjEUpc3w1TpY
+ EDBgkNiaFuIJMOSUMCe2TSqmBCZPV8cBvlm7wvDjq9Fh1K+jLRpznz46S5jJUyJIHy2702lux1o
+ HQkuNK7qjEfjAjhOWAGC6sWqrt6PdymS+fcXjaJPPAOZpeRG2lHzryZTHrT0EtAnDn11XyJDIGD
+ hL/w5kxRpSkDWIcOJF8vvKxPbComFodXeNRUIHx7zL9+dSHXaj528yqYHxVJAVs/kYNwLCpTzWz
+ wPl8DTncdXeQHJtu/jq7s8quAV8KXpup/MOBtmv9FRmmZVSeEoOCUP+13hfoQUl4UfMhsBPjskV
+ Za1Ak8Y8DZFypFMFtNIBH/lM6obXL5HI7kmiLmDodqu4ylG1lIFEQU4MUW4ziEZUIexIY/iqNh2
+ i8XwvyOVbaKEvLpcORQ==
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNzIyMDA2NiBTYWx0ZWRfX6FxuvJogufjV
+ fx0vptfBrLldWecRtufrWkM8bF9QcvVQo9dK4XFW/HCfIaIx2PzyWGvb7NQ8zUT1cfUAzi50XsD
+ clItOY/9AknuvcOX4+2HLQWuH72LoGM=
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-07-22_02,2026-07-21_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ adultscore=0 priorityscore=1501 spamscore=0 lowpriorityscore=0 suspectscore=0
+ bulkscore=0 impostorscore=0 clxscore=1015 malwarescore=0 phishscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607220066
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260722_001316_198099_99398149 
-X-CRM114-Status: GOOD (  23.29  )
+X-CRM114-CacheID: sfid-20260722_001430_584030_0AF26A44 
+X-CRM114-Status: GOOD (  11.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -153,54 +158,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 7/22/26 3:00 PM, Krzysztof Kozlowski <krzk@kernel.org> wrote:
+> On Tue, Jul 21, 2026 at 05:46:01AM -0700, Hangxiang Ma wrote:
+> > Add bindings for Camera Subsystem (CAMSS) on the Qualcomm SM8750 platform.
+> >
+> > The SM8750 platform provides:
+> > - 6 x CSIPHY (CSI Physical Layer)
+> > - 3 x TPG (Test Pattern Generator)
+> > - 3 x CSID (CSI Decoder)
+> > - 2 x CSID Lite
+> > - 3 x VFE (Video Front End), 5 RDI per VFE
+> > - 2 x VFE Lite, 4 RDI per VFE Lite
+> >
+> > Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+> > Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+> 
+> Drop both tags.
+> 
+> Binding was very different.
+> 
+> Best regards,
+> Krzysztof
+> 
+> 
 
-> Subject: Re: [PATCH v2 2/3] phy: add AST2700 usb3.2 phy driver
-> 
-> On Wed, 2026-07-15 at 05:55 +0000, Ryan Chen wrote:
-> >
-> > >
-> > > > +	}
-> > > > +
-> > > > +	/* Wait for USB3 PHY internal SRAM initialization done */
-> > > > +	ret = readl_poll_timeout(aspeed_phy->regs + PHY3S00, val,
-> > > > +				 val & PHY3S00_INIT_DONE,
-> > > > +				 USEC_PER_MSEC, 10 * USEC_PER_MSEC);
-> > > > +	if (ret) {
-> > > > +		dev_err(aspeed_phy->dev, "SRAM init timeout\n");
-> > > > +		goto err_assert_reset;
-> > > > +	}
-> > > > +
-> > > > +	val = readl(aspeed_phy->regs + PHY3S00);
-> > > > +	val |= PHY3S00_SRAM_BYPASS;
-> > > > +	writel(val, aspeed_phy->regs + PHY3S00);
-> > >
-> > > According to the datasheet PHY3S00[15] (PHY3S00_INIT_DONE above)
-> > > indicates that the PHY internal SRAM initialisation is complete. The
-> > > datasheet reports the SRAM is used for configuration of calibration among
-> other things.
-> > > PHY3S00[6] instructs the PHY that software has completed loading the
-> > > configuration data into SRAM, however PHY3S00_SRAM_BYPASS
-> > > (PHY3S00[7]) tells the PHY to load configuration from "hard wired" values.
-> > >
-> > > Is it necessary to wait for SRAM initialisation to complete if we're
-> bypassing it?
-> > > Or are there other side-effects involved in the setting of PHY3S00[15]?
-> >
-> > Yes, it is necessary to wait SRAM initial, the driver polls PHY3S00[15].
-> > It reports that the boot loader in the PCS has finished initialising
-> > the SRAM (loading the contents into the PCS), and that initialisation
-> > has to complete before sram_bypass (PHY3S00[7]) may be asserted.
-> >
-> 
-> Can you improve the comment then to make it clear that the wait is necessary
-> despite the bypass?
-> 
-Thanks, will update.
+Ack
+
+Best regards,
+Hangxiang
+
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
