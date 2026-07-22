@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C929C44539
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 15:39:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01FAEC44532
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 16:38:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rho9TNeS2STZF/pt71fWP28Hv9r6ZDKPEARmlXgZ54o=; b=tWwdiJbq28ln96
-	CwN/Va8CzWtWwKIPJnqxv401POaXtTf0HzVlWzk/C9dgSJ1Efevv41hp1RLfM5TotVpzn7bsku49v
-	qjiU0KJTS/5gAhSRriVqQCKRAM1ih1zXUa/VPBsPbeR21Iyr2AjfDM6ISOY3sJGrMbJxYVmtAjUfL
-	WDH4+qeK4MMSfrDY7Rep6UTQsMnU8F7HfVC/zR4OXN3w3kG1HJMurggFhSGidRQOqMJwl7dCWDNtP
-	DEL/hm9o6RcbSnurZR2o2mmzpn8PU8ZzgjBwMzqzLGClso1VM8GA8RQCaXy3+0HCtyqPVq8pLpIcI
-	3VXOynx7Peq7uwWjWukw==;
+	List-Owner; bh=M3CvqAzF4LglPo0MPAr95nq5v0Xqdi+2lovPpeDT9/E=; b=bP3QGS9rH7WJcg
+	lgE/ZJZC0zQAobUiCxlDi/28lvH2BFA6qEoG3kaUjTS5Wuicv7N3BuuFX5PMAz0z4slGR+uuaBbvp
+	Iy5vJA65IoZC4fglQkXlfzUhh09lOFD0p5Xhw2mZJUw1mgTqyg2whHywS6BsH9Gy6G0gCR+jZWJ7J
+	+QKMVKVYB+TKR9HV0AWk+wxvhHR+tlFcKKDN+fK9EWNmLIA1mJqF5mivzWvzqCHtBy3YAHeoI7X4c
+	OzMKffidPpdYcujZyd1mUyh7oZdGhD83QM+br52VmLabf2tvEvKjJf5O2OjPAd91rxfcvWdNBnYTM
+	9SfrqiB63nERreP76LUg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmZ2o-0000000CD0v-3Z2m;
-	Wed, 22 Jul 2026 15:39:38 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wmZxq-0000000CMp5-1ZXW;
+	Wed, 22 Jul 2026 16:38:34 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmZ2m-0000000CD0R-3P0r;
-	Wed, 22 Jul 2026 15:39:36 +0000
+	id 1wmZxo-0000000CMog-0qF6;
+	Wed, 22 Jul 2026 16:38:32 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id CEA83600AB;
-	Wed, 22 Jul 2026 15:39:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CD81D1F000E9;
-	Wed, 22 Jul 2026 15:39:33 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 61F12600B0;
+	Wed, 22 Jul 2026 16:38:31 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2FADA1F000E9;
+	Wed, 22 Jul 2026 16:38:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784734775;
-	bh=Rl/qyjtpoDPvZZ7vR3XW5Kx6nHmzENWCtL5AfFrlddk=;
+	s=k20260515; t=1784738311;
+	bh=xguxeJsRUnOMPr8O6uQMF5COxPhgnEd3/jFNolbL4Jc=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=nbCqvnm7WWI990ltCojzPfsJ9SJnj1XQwt34BOUTKkTEAUkUiINCK1FjN/06tzDF8
-	 IQMk0crDNrZ20W5a9JINuWLdJborGRQ+jwdVMvGUhbyw4SYcwv7y328LLLPYcDtHe2
-	 Da3yYuH9FJkvW6/YSlkElWCRH3WH8WKaE3sdr2wW4IIHoDPCJP7X4LYK6g1I8z3z7k
-	 ooPLru5R81auH8uQmg418zVjTpHVdum/aolAhfL1Gs0WlFG4q6KRgC9w1NvyEIeypH
-	 PUl2WRBsD9P0XcyFI800/MGprCuGEXWLanf+ktboAYEVF3q7+YpQ2Lk2HSw87rVixa
-	 A9L5135aclhew==
+	b=ITUIa1qsKIqvMlIRz/ud4mBLV8GmOnS/3mgHzW8U0L1dOESNarlO3DXVTuya4tr4P
+	 SKrmaxNoQFBKoWJOUqhBIkJPpLgQMrgu1pAdFavYEJoEAUvlNtZtsv75kpa56ciZZY
+	 it6/yjU0407PL6ysChZCOg28z0GnF6rFrqu4DrFcNmEFuf30Q4YMCFsIIJYRQCTvBp
+	 Hz+6LE4yr1X0WoURLzEzUlWXf3oIvsdoB7T6uTNAXPyHREXTD+kSyDef2/7Ha6nZV5
+	 8/FPBPYJhsKJ7FkcR0512K5+IZUslI8tbzJf5kiDeTJ7xjTw6VamZxI5o27Gnx78Rn
+	 ApjmWzq7TSg5w==
 From: Vinod Koul <vkoul@kernel.org>
-To: tomi.valkeinen@ideasonboard.com, michal.simek@amd.com, 
- Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>
+To: laurent.pinchart@ideasonboard.com, tomi.valkeinen@ideasonboard.com, 
+ michal.simek@amd.com, Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>
 Cc: linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
  linux-arm-kernel@lists.infradead.org
-In-Reply-To: <20260627155229.2791113-1-radhey.shyam.pandey@amd.com>
-References: <20260627155229.2791113-1-radhey.shyam.pandey@amd.com>
-Subject: Re: [RESEND PATCH 0/3] phy: zynqmp: fix SERDES scrambler register
- handling and enable for USB
-Message-Id: <178473477346.290624.4095554027815775020.b4-ty@kernel.org>
-Date: Wed, 22 Jul 2026 21:09:33 +0530
+In-Reply-To: <20260627162233.2803425-1-radhey.shyam.pandey@amd.com>
+References: <20260627162233.2803425-1-radhey.shyam.pandey@amd.com>
+Subject: Re: [PATCH] MAINTAINERS: Add Radhey Shyam Pandey as ZynqMP PHY
+ maintainer
+Message-Id: <178473830883.304548.16250078284958976521.b4-ty@kernel.org>
+Date: Wed, 22 Jul 2026 22:08:28 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
@@ -71,24 +71,17 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Sat, 27 Jun 2026 21:22:26 +0530, Radhey Shyam Pandey wrote:
-> This series fixes three related issues in the ZynqMP SERDES PHY
-> scrambler/encoder bypass path:
+On Sat, 27 Jun 2026 21:52:33 +0530, Radhey Shyam Pandey wrote:
+> I am maintaining phy-zynqmp driver in xilinx tree and would like to
+> maintain it in the mainline kernel as well. Hence adding myself as a
+> maintainer.
 > 
-> 1. The L0_TM_DISABLE_SCRAMBLE_ENCODER mask incorrectly included bit 2
->    of L0_TX_DIG_61, which is a reserved read-only field. Correct the
->    mask to (BIT(3) | GENMASK(1, 0)).
 > 
-> [...]
 
 Applied, thanks!
 
-[1/3] phy: zynqmp: fix L0_TM_DISABLE_SCRAMBLE_ENCODER mask
-      commit: 6cb22477929489a412df8d153e550e77a012e701
-[2/3] phy: zynqmp: use read-modify-write for SERDES scrambler bypass
-      commit: 21e0749f931702765b9d52d05740092bc87fcd8d
-[3/3] phy: zynqmp: keep SERDES scrambler and 8b/10b enabled for USB
-      commit: 7eb61caf45607e1e1270f51f8f93f0ded53146da
+[1/1] MAINTAINERS: Add Radhey Shyam Pandey as ZynqMP PHY maintainer
+      commit: 02f447eabd48a2e843147ca72b0626b6e6428940
 
 Best regards,
 -- 
