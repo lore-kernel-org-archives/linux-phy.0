@@ -4,112 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B47C4C4452B
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 01:53:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7ED19C44512
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 03:36:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q2AZMcOrYF/2EZEEohSFD6hf5Gp3EgJwJxh/UtKj+LA=; b=JhfQUIVYkaCGzq
-	k2wMgIgfivIuhlxmrmtEZJCP9wGUqK2742Ea+F4Xo8sO1IQsZ3EZ3fmhS7TbFjYA1iYgyGW4bUk38
-	r00raCOPxMnwPFljwcMF6Ub5NQpFWnAu+yr0qw5BNkaTXbet0zDPg5L6UXkJJVG5tDMRS5lBnO6nz
-	ReCgIHW+mdMzaSItC+d96sU3PSOPOFYWmnKBE3N7tShgiKQtL+W4ez4w+cLdkqFmrypfPzEsacbc+
-	AxvLbEJS4LDEIFVyZDJeEu8/5Mk+XvWri6qGflDxPrFG3Nb/UJtYlGwiRzZ65aiZ67Lgjl39cGe6O
-	H790DVMmnK/xmZwsT19Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=q7O52Hq7+8QEF/stB4ah2zXMOWrBu5Gph7fQpB8uvQY=; b=g5myqwN5Wk5706
+	H9z2YSGxZgecaaXxeENKCm1XkOlqe9XCL3rdbgLauMXTswUQMadsy45riP4e5wcQPR/MnI20VlPzB
+	rLBNNRjmJpnCBENP2R3tWX40cgpSwRL46ZYFNTkvIdzyXoXED7rpHVCjGyS6AyDJTFhsgsmA87nqL
+	2/ZeCYi6bBG8pyMRIFZ00L0nkUq7isz4oc5Y7oJqeijaXj88XdLbdQV4eoUqRNkJpZMscXoUF3MTN
+	PbjP3ekPSsYn5iGa3TxyJ/i7un9OVTEC8cLBG5VimZJg+SGUCsIm90CoOamHEO1wAOxCjpCnerCbJ
+	fLpjVGY9oS0ZP5PBHKnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmM9A-0000000AjN7-0zZS;
-	Wed, 22 Jul 2026 01:53:20 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wmNlE-0000000ApdA-465N;
+	Wed, 22 Jul 2026 03:36:45 +0000
+Received: from mail-pg1-x52b.google.com ([2607:f8b0:4864:20::52b])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmM99-0000000AjN1-05oS
+	id 1wmNlB-0000000Apce-2VIL
 	for linux-phy@lists.infradead.org;
-	Wed, 22 Jul 2026 01:53:19 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 639FE600FC;
-	Wed, 22 Jul 2026 01:53:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B4DA41F000E9;
-	Wed, 22 Jul 2026 01:53:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784685197;
-	bh=EyvCeadiCpecAtmf/jVCC4DvpHXg9v3w99/kgsifdeI=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=BcIz6ojoMmb0icp91ZJi00hmO2765M0BGAU2ZwJ+ZUBH1BDegspyILtSjFgtPVsqL
-	 TSJ6nrHLAScbSf/q74xqC/ZdUpn5AEwa3fRYTlFlHIvgrw0TXz5N0gaAA63U7uNYF6
-	 5+1dQyk7NrFuMzL7q4F/vypzpNwDn5JWfmN12w1HJMWo2hVyyAnc1Syf5M0dVYDeQo
-	 GDL4H2iE9gnGwJvNCt9QnvxvjYiNnjk23+uHky2THdbfaLgrud6W/GNRWUCZAhVdXo
-	 8jj+9leb1HQ7JCBaBkfGnjrIJ2XRbmgELT3Tgkrjqur7yqYv77mJIl7/XyZa84hSgQ
-	 Xxuwhp468EMOQ==
-Message-ID: <cc9b087c-b985-416c-999a-a08f2abbf202@kernel.org>
-Date: Wed, 22 Jul 2026 02:53:10 +0100
+	Wed, 22 Jul 2026 03:36:43 +0000
+Received: by mail-pg1-x52b.google.com with SMTP id 41be03b00d2f7-ca7c1176317so8863147a12.1
+        for <linux-phy@lists.infradead.org>; Tue, 21 Jul 2026 20:36:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1784691400; x=1785296200; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=7NHyhDTZjnyF9Jy1uHqpnZ3KtVUroBokJdvpUJqEFWk=;
+        b=o1vlIao4zHcQWq7zLaqxxmREJzSWwidFgzOal7h5Chxg3DqBr8fSOFzfXUiJ9BIOey
+         9Gxmyk0uSpU1hmLiqxYv8h34VLQwxiuvGTIbIYcORPiPkGTTXGZJzRxGXMtWnx1+WNkA
+         uZpFRboajTxHK+xkoGKeJZpu3mRhskrLFOAcIHJFuSliN6K5u5ci8JsWrvc+hhV9Ke0W
+         O1tBZM+mb9PYkqbzMaLK4UvHv7YY8vu/rs91GtgvmxYGfJ87idU44cohsRK3cVV07qUw
+         6qoGLvRugoRi5+JaUdfU6pqM+UPBEM9uUbW9GrzVl2uuFlpCQfjbBPyPWs+KuxSEMItk
+         1zzQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1784691400; x=1785296200;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=7NHyhDTZjnyF9Jy1uHqpnZ3KtVUroBokJdvpUJqEFWk=;
+        b=eknqLYfyb6Hngyw/0I0z4Y1wfQGSUOxWB7ynLefF9yVKYg5vw1dLI9KSuvGZeOXS3a
+         +/+g4gljF6F0/zdn1FIGbhqXSY0Q4HObD2EPRZ7mqv3IZC1pXgTfiCVnyqOiG8CcEOTT
+         keS7mVoMB9Q2dSma4+zwK64DZ38S7x69mBRYUNNQPv9ER3SMHyzVaRYQfBr9ejki1Md1
+         oZ0wrN4kpzxT3qRHJKk/nI8bFmUWX4OHBkoTkoJeAIR390k5fIOyIGJnWfGtYfdy4r0u
+         nQlX2O8UFETXnh8Xxey2GsNuQgnIOW9yxWnCW36rImUqLlM5q4I4/kJMkObOwQbbPjp7
+         W9nQ==
+X-Forwarded-Encrypted: i=1; AHgh+RoYz+NHAr7eQzn1o8xqr1TugDTrU5BI823DQAkUsGYKZ1L3I4QkJNSTlw3+Y28pS1pZpIzX2+Lp8vI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzsJoh6RpPE9h2BJFMX2G4bPXxhAFojUPwuGJoVpes15zvL59Pk
+	VAcN2/dO6m/fnSXrqIkX5+Fi7KPp/UuILmprbmQwwzGmsQfNlrmXsRM=
+X-Gm-Gg: AR+sD13opYRydGuzDCXxEpCNB6h+tflAlA2ilPnMdsr+YdhzcaDPxLKN/zrJk9r2B7E
+	oGU4GupfDLK3qQP4RnR5izNyDIrPILbJC9TXkHyT9sY8F5JWAh4831npUiA1PXfECRym1NQfvXh
+	YRt7OhQy5RaN9J6sn6vdwInOZzWeBIVcbFIZrCHS191rbRQ/JB8aoWTum7B84ymD6J7BGgoljDq
+	w9MnnsldgCCE5B7EKfTKkWFmJzVpATG6W+acYN6HSN2zy1t5xef78wx5MOPIijhXlOHOoVWksVl
+	FeXAMJ6yPXbr25x2qGJkeBF1uEn0cEKBwAPOKFDOiD7wPPlpAlELEE1+cR98V5uR+RX8eDRFuJ9
+	mBqXD+VK/mUk6LEqlRIMqABAn+B4kCYLL5nQBVHnfgQdIjbI8sLf+bL1xV93mxLWcLiB8haRCAt
+	b2C0UJGMdAYaDPcRr08QA+7XMHMzA=
+X-Received: by 2002:a05:6300:808c:b0:3c4:2cf9:28a1 with SMTP id adf61e73a8af0-3c42cf93a4fmr1420862637.46.1784691400038;
+        Tue, 21 Jul 2026 20:36:40 -0700 (PDT)
+Received: from t-rex ([2401:4900:adaa:53ec:4dd9:f3bc:714a:d631])
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-13d13015052sm1561599c88.5.2026.07.21.20.36.35
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 21 Jul 2026 20:36:39 -0700 (PDT)
+From: kr494167@gmail.com
+To: ioana.ciornei@nxp.com,
+	vladimir.oltean@nxp.com,
+	vkoul@kernel.org
+Cc: neil.armstrong@linaro.org,
+	davem@davemloft.net,
+	netdev@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	surendra <kr494167@gmail.com>
+Subject: [PATCH] phy: fsl-lynx-28g: propagate PCVT enable errors
+Date: Wed, 22 Jul 2026 09:06:19 +0530
+Message-ID: <20260722033619.10647-1-kr494167@gmail.com>
+X-Mailer: git-send-email 2.55.0
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v13 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY
- schema
-To: Frank Li <Frank.li@oss.nxp.com>,
- Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
-Cc: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-References: <20260720-x1e-csi2-phy-v13-0-160c31958863@linaro.org>
- <20260720-x1e-csi2-phy-v13-1-160c31958863@linaro.org>
- <al_BEUNJOrqVPQWw@lizhi-Precision-Tower-5810>
- <b974f1be-b802-40a3-a54c-f7e3c8fbbece@linaro.org>
- <HY6xNkbpncBHZ0I4_BzIf-Oe8GwsSScaF3-vJPweR5popvMlyVRnqHkJJehMdb26OR-kQJ-c3tPqh07qcNYEDQ==@protonmail.internalid>
- <amAaKalbD749uZuK@SMW015318>
-From: Bryan O'Donoghue <bod@kernel.org>
-Content-Language: en-GB
-Autocrypt: addr=bod@kernel.org; keydata=
- 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
-In-Reply-To: <amAaKalbD749uZuK@SMW015318>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260721_203641_655622_35E9AF12 
+X-CRM114-Status: GOOD (  10.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,36 +97,44 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22/07/2026 02:17, Frank Li wrote:
->> Such design has a number of flaws and in general it looks overly
->> complicated. From the beginning it's unclear how to distinguish
->> a clock lane from a data lane, how to specify lane frequencies etc.
-> Thanks, but phy-cell support more than one argument. like
-> 
-> 	<&phy 0 mode_cphy link_freq>
-> 
-> I ask these because simiar other phys may connect to display panel, some
-> phys combine csi and dsi together.
+From: surendra <kr494167@gmail.com>
 
-For a combined CSI/DSI PHY that's a good model, and it re-establishes
-the principle that the consumer chooses the mode.
+lynx_28g_set_mode() currently ignores failures from
+lynx_28g_lane_enable_pcvt(). It then updates the lane mode and reports
+success even though the protocol converter may remain disabled.
 
-For our simpler camera-only case the cell has less work to do. The
-series carries #phy-cells = 1 per Rob's feedback and an RB from Krzysztof.
+Propagate the error and leave the previous lane mode intact so the caller
+can handle the failed reconfiguration.
 
-That's reviewed, tested and mergeable.
-
-The one alternative under discussion with Vinod is bus-type in the CSID 
-controller's endpoint with the mode conveyed via phy_configure(). Either 
-way the consumer decides.
-
+Fixes: 8f73b37cf3fb ("phy: add support for the Layerscape SerDes 28G")
+Signed-off-by: surendra <kr494167@gmail.com>
 ---
-bod
+ drivers/phy/freescale/phy-fsl-lynx-28g.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/phy/freescale/phy-fsl-lynx-28g.c b/drivers/phy/freescale/phy-fsl-lynx-28g.c
+index 38afcd081a2a..1fe406adc83c 100644
+--- a/drivers/phy/freescale/phy-fsl-lynx-28g.c
++++ b/drivers/phy/freescale/phy-fsl-lynx-28g.c
+@@ -1003,7 +1003,9 @@ static int lynx_28g_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+ 
+ 	lynx_28g_lane_change_proto_conf(lane, lane_mode);
+ 	lynx_28g_lane_remap_pll(lane, lane_mode);
+-	WARN_ON(lynx_28g_lane_enable_pcvt(lane, lane_mode));
++	err = lynx_28g_lane_enable_pcvt(lane, lane_mode);
++	if (err)
++		goto out;
+ 
+ 	lane->mode = lane_mode;
+ 
+-- 
+2.55.0
+
 
 -- 
 linux-phy mailing list
