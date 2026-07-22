@@ -4,111 +4,123 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97B6AC4452D
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 07:55:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48319C44539
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jul 2026 08:01:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=duyzq1IJxYbsHP3KyvCf1fatPHxxv2FYi9Ps0FeydzA=; b=BzC/FgBQqR1cx+
-	3/zkU79RgzPAiSA2sNyxLSfndiqf+sqxjYOsBXR6usBXyb8lZ9kIPfTmSzG+I0Lfu29uZkCKX/Rf/
-	Hsr+yrf0/TSbVFU/d/zixhsx06w/JqPwv4z4uPqVKtMCxO6ZlnTAKb8lIOSfjam0r0j6cgFrZ/sit
-	GgwkyOQ+8503lGnunNGmnc5MwhlwkztfgUbNTbm1t1k4q7ZpaQiW2O/RbW5ILjfm+fjCd8/sUVK70
-	P1Zg8HXJeAhkw8h5Vn5NImQT34i1/wvAVHCLEpPu/zPWNlLQKZW38aGyGclRGCR08qVn0m/2RaiMz
-	lY8797HBKQrcTH7Dv7+w==;
+	List-Owner; bh=+9XOiKZbw6s7BwX97qHsu8plEwTEhgdFobkHeodxHPs=; b=X7quBCnWaAA6Z7
+	Teg2zxJzmRiDGHRlOZR2dcDaPvP17YVec3v5mZpy4Xojx+OX8TlyxNrpy+Mcq5nN4msNFwy16xQXT
+	zeDnF1VYojfVZqeKKUnTaSkB4vmi6A1WgBycrmlFoFiWN1k/zB8ZmU7jfFcqeYVBCTD9YnHRopehr
+	2ahDpchPk90MDTnTYMtZnrthY3C9ZjSvSmRFe1Rb4w95VxJwOpoJSdS2QBMUvCNszhd0jOlAYh8Qt
+	+cBQ+Hm6xiCmmbXhJCXcd2V8WSioDBevdTR0g3Rh3c0PY/H2AVex28PLp2f/GY8w5X5DT1bdh3Jhz
+	ZJiAoIXjxIbyBDrgk/rQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmRo0-0000000BBev-0LlH;
-	Wed, 22 Jul 2026 07:55:52 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1wmRt5-0000000BCHC-33jY;
+	Wed, 22 Jul 2026 08:01:07 +0000
+Received: from mail-northeuropeazon11010007.outbound.protection.outlook.com ([52.101.84.7] helo=DB3PR0202CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmRnz-0000000BBeH-2WEL
-	for linux-phy@bombadil.infradead.org;
-	Wed, 22 Jul 2026 07:55:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
-	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=ylc8TXlNP8HCp9xOR7j/KXR/abtqHgmLUYlJxvcNlVU=; b=R7JUGFp3ChZZVY6rh2d98SxshP
-	BjjyTXYAdLuzJTmJN5pqnL3Ntn4D0BMLr3zRZitPLQ8W594kxO0GrIQ80LjTc8+qG603grjGH6aHF
-	Z8RIgNYdrXngoCTtWKxy4IR+5AjG9ayIc3lKCg2DW1zMGscm0+BgC8loPnzCvHDedW80jVT+GhA6Y
-	5uVId2nNxdH6UUDgle0SmXrufsDrq2HLLi23xb1+SZ0xSn8SwQDXcSo4d6kFS3vvcjPUge7w6zeVo
-	33C5P1YnmvYZLQu1hkeqlA5lISxU1RJyYhYxJ5e2VET8exHi2pxpUjQ8/yw50aKd5UOhtGvEdNWm6
-	dXRUhb0Q==;
-Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1wmRnw-00000000bM3-1mvr
+	id 1wmRt3-0000000BCGT-2oQy
 	for linux-phy@lists.infradead.org;
-	Wed, 22 Jul 2026 07:55:50 +0000
-Received: by mail-wr1-x435.google.com with SMTP id ffacd0b85a97d-47f706438c3so193009f8f.3
-        for <linux-phy@lists.infradead.org>; Wed, 22 Jul 2026 00:55:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1784706946; x=1785311746; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=ylc8TXlNP8HCp9xOR7j/KXR/abtqHgmLUYlJxvcNlVU=;
-        b=b0MEEkCrDfnjPHtuPpNzC1Tr6NY/1Zjbyeerp+JgQ7zXI49JM/dOV5JE1kFlk292RF
-         EsUjUOTF03S7vQrjRr49F4plrNQcV/4DtKoClu4SJ5yhK+wxKdswUMD5dAX7eC/sX+bF
-         mBjhRoaD9VnnZGQdZvpAL2JZZFoguDwzy5iD4ZuB22OAsN70xhAZVT8Q0AEQZt9lHMry
-         6bgJlxNsAV3gntrjYT1g36iCeGNnOz/ugmvi3pxQlaKyYLu2+5kPeMp9GsPMpUOge2LI
-         rMV6Z/2iUW0E9y6v9hfA0FnW/5SF/8KM5t9Q70Zx45MXe/Af2L1mQp/C8hjvbtAxBqX2
-         vidA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784706946; x=1785311746;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=ylc8TXlNP8HCp9xOR7j/KXR/abtqHgmLUYlJxvcNlVU=;
-        b=cmAeGYXpC+nay/YwantnUKM6e0e4OSbQVe0i16O6EOfy+b/Fpy8B+DvW+mJtXp71PA
-         qUuSRF4+3X8arKSNsGxznGWmYVKWvSUxGUtX9rIprfRD2IPl7RqRepoNZNukRWrXYyj2
-         oI39cYN+mKGt/LUzlQFjV/v9fGZpQBYbBydUr2PnmhSSEh8wlNouuOU5CIEAxENUtDNs
-         TpgHb4lb5tfEo89b3PS2a57OpLN0RPEUIr/5TRQbd055Jj40+dpitf9xhq2ZqBCVjhqd
-         pKG83QzDKxX5845T0WKwa+tYd4gSnTn0vku02eIVKbBimaEPYIufBEO72T9/7OdlLOJk
-         vpeQ==
-X-Forwarded-Encrypted: i=1; AHgh+RqE4NwvAWk2DJlN5ASz7ZpDrYyRJoBGUtv9Ubuf3smZvDqzQ7NAQtefiAQOMwB4u+fzSHo0tGeZ6y4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxPlL6Gb8wLUcKcM43GlGSu7CFVCENiDXe8m7QrdhlmGdk5NDQW
-	CRcijo3/U4E3FCx7FPSEWZDkEz6jA2xlDasROjlQOhuyNC6R5UuuPB4q
-X-Gm-Gg: AR+sD11g3t5wog9ntkuLTNdhdi8JSOsRvuIB+pGMUjjx5TeV7In1zwY2m3ZeUE9fJYn
-	3e0tKyV1dvYEyEg6DyhzovRhocAmc0eRA4V/pSliflIE3UNqqe3lVBpgilTwmQFHHvW0voPPgmb
-	SD3Q2tc6UpmzH/Sx5E15AhQjcpqZlgSRTqhkXQ/NVVGsO9TUGF/5wHLuKZDNeZY8rll+eaW9Pgf
-	7E+5YuUSrt6B/3Sb7Od6etA6u8F1jok06ZSmFWvGVrf1Gm0iSVyhvu+X2aAw8+UgkuJLRJvvLEP
-	L3gATn7v7H6mx+nNUT3Ds+gShC60yGm/cpJHOjfqYGQucB3Tgi3AlqQBGejBx5O+r+gvHSCQX6e
-	b3S/cEgXz7FqsbzVPhWFCU0mNteYxtVmwBdFtKf4wuJSuEMitvncMtXJPeLjlfaVfIMbq
-X-Received: by 2002:a05:6000:4687:b0:47f:8136:e7f5 with SMTP id ffacd0b85a97d-47f8136e9edmr2516706f8f.2.1784706946354;
-        Wed, 22 Jul 2026 00:55:46 -0700 (PDT)
-Received: from skbuf ([2a02:2f04:d801:b100:1a7a:c7e7:fc27:12d8])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-47f85b9a64dsm3759581f8f.1.2026.07.22.00.55.44
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 22 Jul 2026 00:55:45 -0700 (PDT)
-Date: Wed, 22 Jul 2026 10:55:42 +0300
-From: Vladimir Oltean <olteanv@gmail.com>
-To: Michael Walle <mwalle@kernel.org>
-Cc: Vladimir Oltean <vladimir.oltean@nxp.com>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Tanjeff Moos <tanjeff.moos@westermo.com>,
-	"Christophe Leroy (CS GROUP)" <chleroy@kernel.org>,
-	Shawn Guo <shawnguo@kernel.org>, Frank Li <Frank.Li@nxp.com>,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v4 phy-next 1/9] soc: fsl: guts: perform fsl_guts_init()
- error teardown in reverse order of setup
-Message-ID: <20260722075542.p3uissyqzcvfsdri@skbuf>
-References: <20260721231603.67865-1-vladimir.oltean@nxp.com>
- <20260721231603.67865-2-vladimir.oltean@nxp.com>
- <DK4X0XV6ZM1E.2L9G007WXO2J6@kernel.org>
-MIME-Version: 1.0
+	Wed, 22 Jul 2026 08:01:07 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=pojh4VEyG10DygKq+HrzCuPc4CPWC5TbwVggbe5L7FFQDzs/MCiyAdV5GpNGU8sEtn8xho04Usj670pBeJnntvEqq9A8T8saFyT8IuScSxjtSFWmJw7JV530vqnSgrPMhOZCnIdzuiH7+fb7eMsaXFj04HLxlSJMiwvrY/RpCSk6HaxCPsYzWQnysy+a9U253Ko0X3QMGobqKzBUEeRVJBlX6tjlCZ7rJ0Wdu2so2p5hkWiHqyPvDEuG+sTbutaaTAvQMot6umS1OBSCgmpZ8IBMuHWmLo10t8h5PrIe/22cNHlOMxSHGgsxtQAT3zcHBFlC30Gx8kwmxAuQLJ6mxA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Oj1QmheiAyIOYxau45ixCtS0+gTaSJCMXCxO5PzkMTw=;
+ b=MveYZdomQcWMg2xivHe8ozgk3EcSvm6p/tqN7+PO2Xcc/0Dcfhp+rpTWQ+PtbjvBfPKLEhvNY2iULTWEwdn2wba18ZCiRytcAbeieG+baqd0pAVb6MQ6lQly1qmrE4n8IQP0/kPmZy0fcyLYkrk0DNTQCmRLK5zBkdf/8DJ1GR0Ca4E4IUGC99zfbMGhOfzTJNosEovM37eJJaa7AZnF5WFj2n3NPU+TXK90RVuo78lD0jfBcm54c/JACDlYACs3lEYY5FQkz3AVJmoYbrHfZxDaLVIZHo6/GyCoJpWQS1JSpdrRap8SEXljDht7Q/vsaa0GJ2UJ31eg92wDdff+cw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Oj1QmheiAyIOYxau45ixCtS0+gTaSJCMXCxO5PzkMTw=;
+ b=B4Jf+sV5/rET+ZsOoEHWiEhMZW+j6KqRnXFQJYgdhdGuebjglQxxEpbKBSE3IF6bUaNpz+KTbwrJEUm9b/07mEEtyrmX0ItrhvpisCGTCzpJxj9qJoW2yT+PEVSrvAE0YhjDSru6dqZNH9Azs6aaA8yfisdx9WI52RXlkKU0hkmmoXsmTqz0VpjoO6kUmw3TtNa4ZJurTKHybj/CAXbARnXuXD/gG9D6HNoblFPCL6wJgSeepZ9CWqrWmT6GjNDyxjDanfg43dOxBgrvujRB4PUUtwKoBZbvwGBw2e2J1P5T6AMPTh1PEIJZMMOuwfAkEcwQkg99z7QdF7o9SCdH6Q==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM0PR04MB6900.eurprd04.prod.outlook.com (2603:10a6:208:17d::10)
+ by GVXPR04MB12105.eurprd04.prod.outlook.com (2603:10a6:150:335::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.223.18; Wed, 22 Jul
+ 2026 08:01:00 +0000
+Received: from AM0PR04MB6900.eurprd04.prod.outlook.com
+ ([fe80::7fda:8431:ca1b:b023]) by AM0PR04MB6900.eurprd04.prod.outlook.com
+ ([fe80::7fda:8431:ca1b:b023%5]) with mapi id 15.21.0245.009; Wed, 22 Jul 2026
+ 08:00:59 +0000
+Date: Wed, 22 Jul 2026 11:00:56 +0300
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: kr494167@gmail.com
+Cc: ioana.ciornei@nxp.com, vkoul@kernel.org, neil.armstrong@linaro.org,
+	davem@davemloft.net, netdev@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: fsl-lynx-28g: propagate PCVT enable errors
+Message-ID: <20260722080056.vd6eni74tscmxtpb@skbuf>
+References: <20260722033619.10647-1-kr494167@gmail.com>
 Content-Disposition: inline
-In-Reply-To: <DK4X0XV6ZM1E.2L9G007WXO2J6@kernel.org>
+In-Reply-To: <20260722033619.10647-1-kr494167@gmail.com>
+X-ClientProxiedBy: WA3PEPF00000525.POLP291.PROD.OUTLOOK.COM
+ (2603:10a6:1d8::679) To AM0PR04MB6900.eurprd04.prod.outlook.com
+ (2603:10a6:208:17d::10)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM0PR04MB6900:EE_|GVXPR04MB12105:EE_
+X-MS-Office365-Filtering-Correlation-Id: ed3ed8dd-2c48-48aa-308f-08dee7c75e12
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|19092799006|376014|1800799024|23010399003|10070799003|11063799006|56012099006|10067099003|3023799007|22082099003|18002099003|6133799003;
+X-Microsoft-Antispam-Message-Info: lDScj+ewYuIsJLP3bXIVopsCTV0CpMztLzUsCLUAgLe+nrDeEIcPhMdABqhxzrwV4HmymbvUGwVGry0NH+V17f/pD/MS/By/6QKgg8tuKEImuAA+Iff0e5kqlhBjlXQo8eTW5u/hwC7Bs1fPxNIAlBN7PRichlJAJ2z4Z4mQsGFj5Tvkc6PAfo1rrBSH7keHwQrUX8ddEGA24SOarpctwciCvoW1ubIbIMi7xbY84Eze5rixkal78Uwlzx7c6sKDy3L3qa+MYVylrZZgD0mHrks5pI0xCWDb22KGTDY+I8yjOVnjG0wtv1ZiJOkBrKcrASmo6RM44TT25TsU0zPoxDKzReXp7rY0pFShUouD1YK3aw6ML8S3BwgWYJfWwJHvW3pjZkIvFUiVgkTnWGxBBk5bNk/6zxnDkDf/LqcyJCeiulhD905nBIJuIVwsT5Cno99xiiX5ETPuMg8gIyK5siQyMfhWE/XCypwqXsmnVrTnIcWSPuxE4USroCD5ax7sIC0QK2T4xYY04rqAd6Sr2U8NV342W+WhxKHIiHTT23IqxCcKaDjYVfomcoAL09aXiNchztb3A3kryJbJDkKGhaELONoqbJPKuNLLUlOpVEjYkkZzZt3LdKVZ3KfNOoXBLHs3xSkafG1L4iPQpFWe/08rMOvc0SlOo2XAgoQwOgw=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6900.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(19092799006)(376014)(1800799024)(23010399003)(10070799003)(11063799006)(56012099006)(10067099003)(3023799007)(22082099003)(18002099003)(6133799003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?KmjOTdz8b6VnkRBXtACmHBo1/z3z9oAvDdCrLsHsngTI3y6cL/q0i/2BJ7C9?=
+ =?us-ascii?Q?LwJRvP22qzXdbdZylxLQxQ/qxmwfaKb84IID4IMeABwo+sP/L/EE57OgGOTP?=
+ =?us-ascii?Q?KylNvYSR/fm0+TX6TjYt31IXPJnmN0O1PwClAEK/e1XM08U3LcTDkIUYeYuq?=
+ =?us-ascii?Q?Wh86IDqIhOGK7BFHd1MsW3ZikMKiErTFgsW/Aqkv5Kt8wujVgaf+J6QZ5EZH?=
+ =?us-ascii?Q?793eVDVkqVlbKZuUXln5WZK8sZ7WumxV7QAHfLQdJeACPtRdBXm+Eqn2dRTi?=
+ =?us-ascii?Q?Li+MHV1oJv8fnIiMRx5llMEYwFEuyykga+ubvaRoJ89mh8a/rLfNabZoYoYa?=
+ =?us-ascii?Q?CZL9lOWqD9ODYzBHXYIETos79LgEnn3SQPbcycc5FjZEmYti1/7yaOPiTD94?=
+ =?us-ascii?Q?KyPoCt3YpoT2LtCkWRogr1XQhuvDRB//YvhcNoivQxQ/UfOvcLMEP6GTkOy5?=
+ =?us-ascii?Q?BgMy9Q5Cqe8AL2pR5FBazisqLLotKioGzhXr/Zi6d5HulUr3M99Eg7zQPpEt?=
+ =?us-ascii?Q?Pw0byZa8js35SHoDZn6eB8yUupSFIUpR57ZgX5BhISJcdXiOsAhjdV8CkKZL?=
+ =?us-ascii?Q?V3UVO+E03O5s8RzgRSbg8eaLGMdf++7aJGNLy5dbM/Gfvd3xHuYtQ9eh/fD8?=
+ =?us-ascii?Q?KLNG54y97b/QLFlZlssxROdTYMmLYcnZu0lsR/4H1w1daxm4LrOUlD0kMNoB?=
+ =?us-ascii?Q?fioaGl07bBZjcjGwOacs+4rYY7n8LeqnxY6AGF+PN6WVYaSxEMs4q51/t6Nn?=
+ =?us-ascii?Q?HU7XWFC5sb5hlZCjAuFYuJfiPGegRyM22KQWmXS54aChGozu0588X4fK1Qg8?=
+ =?us-ascii?Q?DYaN3qfa3GGEeYKExsDnIx9ogtXcoSmkWwqY6er3NWiFop8SQyaIWfbqL2kC?=
+ =?us-ascii?Q?Gr03Ny/vRs323YXAA0v2pnczOL+6/OAjfB08kjNee4NkemescrO/DN2eAWSg?=
+ =?us-ascii?Q?uawVSfSkyTuVHw8E82n26G5vYYk1d5HaoA+JPAmmBPgq/H0MHU0HJAhTPBhC?=
+ =?us-ascii?Q?p8+7+W36KpDsBMQFkQ/trJAwboOC7M0V/hhLvYkLJvhld7SgkhxMfhjYf8Ox?=
+ =?us-ascii?Q?JtHppMQDnGj0MAblfuB3+rfEOkM5fYEz1KC3CYoBZs4DdHSja1kTSgp30Bcy?=
+ =?us-ascii?Q?NdcvYjoF8J6BcyjUpgFmb1DZX9UcTy3XCKRYTEqHbGxb9E+yfay6CvGSRkUP?=
+ =?us-ascii?Q?x3oCBJ543ekl0oce7sWy6LYmQGXmxNEeyfAVvc8//GIjM37HEkx50d1ZahpS?=
+ =?us-ascii?Q?CpxURXEmneTXycWw4Sz/AGxznk6tEDucGKjgyfwqcSkeFPwEAaZASQCOe4uv?=
+ =?us-ascii?Q?2n4b5zzE/lcwRo9s7Yoc0N2B5yNqcoWqkrNWOsyEiWfy7N84XsDrATRVs9NG?=
+ =?us-ascii?Q?owd7pvCkoRSxt/5f1eRoRSVqUooYzsg+Iot21dEkG4edaUFl5v456lpU9wm9?=
+ =?us-ascii?Q?RoRhlKIIuVNJIG9lFmFEhbBZLXrkfUbMkl0l7pq1Mj0V1CXc8AP5fY3BUz/7?=
+ =?us-ascii?Q?esfIdb9g+bZs6JaRsimkJtHTQqsgM14Y93v96TOloK6/Bo2PtejSnrq1D8yV?=
+ =?us-ascii?Q?hpA/5rCHQcTU7rTM04jGu2pLZt0Zkg0iBkWLDkSLdEYoXeEkZV726BXkiTYa?=
+ =?us-ascii?Q?BkTOpTrto/1tfVXtEkRKv1sgFtvfWo4wAzea+BWu3nBs3yFwoBYsgVX3a0jQ?=
+ =?us-ascii?Q?Gsks2a1reQARCEMM+3XPxMEtEI+ZuUlYHWdMKSj8VTrSMUOwOD/NPWeIK2vo?=
+ =?us-ascii?Q?VihKUuIJXOPS6Dml8IowL/U95/UCZgGZqsOAEqXoshA7ofl82jxC4jgmgW/M?=
+X-MS-Exchange-AntiSpam-MessageData-1: yGkXGHg033JFk1LpZIw09e3qFCgsQcPmATM=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ed3ed8dd-2c48-48aa-308f-08dee7c75e12
+X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6900.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Jul 2026 08:00:59.9242
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: lndivna6Azh6KbGFnIhV9BunXAZ06EicMuNM5BVBpsjJo626nrXUlibavlW2se7kkvlHefbW8Drng2yQwdfK9A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXPR04MB12105
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260722_085548_583344_7FC3A675 
-X-CRM114-Status: GOOD (  11.94  )
+X-CRM114-CacheID: sfid-20260722_010105_806162_50845AC1 
+X-CRM114-Status: GOOD (  18.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,20 +137,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jul 22, 2026 at 09:18:48AM +0200, Michael Walle wrote:
-> Hi,
-> 
-> On Wed Jul 22, 2026 at 1:15 AM CEST, Vladimir Oltean wrote:
-> > Michael Walle has confirmed that ignoring the error was intentional,
-> > and we preserve that:
-> > https://lore.kernel.org/linux-phy/DK44809N7Y8I.J2Z3U4N32H0Q@kernel.org/
-> 
-> I thought you wanted to check if kasprintf() fails and return an
-> error? Just to be clear, I'm fine with either way.
+Hi Surendra,
 
-I did, but then I considered I don't have a strong justification, and it
-isn't a change I need to make to make progress with this series, rather
-more of a distraction.
+On Wed, Jul 22, 2026 at 09:06:19AM +0530, kr494167@gmail.com wrote:
+> From: surendra <kr494167@gmail.com>
+> 
+> lynx_28g_set_mode() currently ignores failures from
+> lynx_28g_lane_enable_pcvt(). It then updates the lane mode and reports
+> success even though the protocol converter may remain disabled.
+> 
+> Propagate the error and leave the previous lane mode intact so the caller
+> can handle the failed reconfiguration.
+> 
+> Fixes: 8f73b37cf3fb ("phy: add support for the Layerscape SerDes 28G")
+> Signed-off-by: surendra <kr494167@gmail.com>
+> ---
+>  drivers/phy/freescale/phy-fsl-lynx-28g.c | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/phy/freescale/phy-fsl-lynx-28g.c b/drivers/phy/freescale/phy-fsl-lynx-28g.c
+> index 38afcd081a2a..1fe406adc83c 100644
+> --- a/drivers/phy/freescale/phy-fsl-lynx-28g.c
+> +++ b/drivers/phy/freescale/phy-fsl-lynx-28g.c
+> @@ -1003,7 +1003,9 @@ static int lynx_28g_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+> 
+>         lynx_28g_lane_change_proto_conf(lane, lane_mode);
+>         lynx_28g_lane_remap_pll(lane, lane_mode);
+> -       WARN_ON(lynx_28g_lane_enable_pcvt(lane, lane_mode));
+> +       err = lynx_28g_lane_enable_pcvt(lane, lane_mode);
+> +       if (err)
+> +               goto out;
+> 
+>         lane->mode = lane_mode;
+> 
+> --
+> 2.55.0
+>
+
+Did you draw any conclusions from the feedback you received on the
+lynx-10g patch and decided that it doesn't apply to lynx-28g?
+https://lore.kernel.org/linux-phy/20260720101906.80584-1-kr494167@gmail.com/
+
+Hint: it does.
 
 -- 
 linux-phy mailing list
