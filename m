@@ -4,165 +4,146 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 854EDC531CB
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Jul 2026 10:15:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 588CEC531CB
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Jul 2026 10:39:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f6LtXcxWQlOqJdojd1uD/MOKsMopg6RyO1T5M8CJCgA=; b=ACe+tK60wUhEu4
-	ATRUKPiJLGVQcHfZSQVJUaw+zGy4eIJxUn1FzLn4CFFNOUFJIbEJh2oI6308KrxgxRW7TbjbexxfD
-	LQlB+77+33RJwnlNoKJAihmt7XzvRL9nvhUjmX1gspRHk4LvTITVuBwN2MSbcJmPdYy+LNge8qSJ0
-	zWiXXMvGBOEl4RvQQag5oUJH+HMNmHZ26UFcUYc45hvx6o35Z6jHl+9KDeEUXHKQWgRyTlsj5jNI0
-	cdm6NkGaEF4nu0QilZk7K7ZmJlH8YCSwFESzx24AuDV2icn90DYCKq3vEvp5AJYKX1z9l2k7qPS3N
-	7+LUeuB2yEbvGBBw90Pw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fyXnTuh650IzXwGtFfjYrt7IVGoELu8NyXaQ2tqJRcA=; b=sLm0miBeoEgsIw
+	dcjbzYdVOdfq3kbQuWngfHj+v+/jvLHwdFos6AE5ATpJup1Bg8Xa+gVTjge2qRxeKaTQdNA+8yJLh
+	WiQNGOJ7xteqfV6wEgLjtGVLSB+DJbzOX5T8fvNnGICLteQyRvQy5OcdNqk+b0b7rQq3NS9tLqg9k
+	Q/F1niLcXlIdTT5oMySVL68pjvIM/bRanMsyZNWINBAarkcOGmhhCns4sIfGGkpo84fvIPZXuxz4H
+	8wT2YEWT6RrZfNZ2AU/B1K8WbokkeiSc4WTMbDvUxKWPqFPW5xY0F9HTVauzYVgybNjckglx10qfz
+	M16UeP2ROnaG9Eb6EuCg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmqSt-0000000E02E-3qAS;
-	Thu, 23 Jul 2026 10:15:43 +0000
-Received: from mx0b-0002e601.pphosted.com ([148.163.154.28])
+	id 1wmqpi-0000000E37P-36OH;
+	Thu, 23 Jul 2026 10:39:18 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmqSq-0000000E01t-3Xae
+	id 1wmqpg-0000000E375-29WI
 	for linux-phy@lists.infradead.org;
-	Thu, 23 Jul 2026 10:15:42 +0000
-Received: from pps.filterd (m0374956.ppops.net [127.0.0.1])
-	by mx0b-0002e601.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66N9JonS2008613;
-	Thu, 23 Jul 2026 05:15:35 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com; h=cc
-	:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=
-	proofpoint-05-2026; bh=ItLAX6rRatNTFg6LMigSQlDmcaoOIy1bF9CcNUl9M
-	ZM=; b=BaWhzV5NMrqutH3gxN5q3Zyn+4k1Wo3MA0fH2tyEAnCYs28WrZ2TTjCdK
-	icuHz0wBjIueuwlXYWCeY5zM4KudLMdSEYnyneFD95vTT3c8dBBYIP6xrXHzNAM8
-	46enf9dlcl3QdRYB5pnaF6BCn0z7+qEQUGd5fhWqvYjyMucMZNVMWSD7jMBJIdxr
-	DIYP2knWIt4jlalFK0IMY8YpPHi5OjnBBX+ZwCxW4jZxtkYXw8fyZHKwlGc6Zc0O
-	Y0eDKnByIjyy9z/fCTOHEKU554q6OhKolPLBAAjTb+nJObTVj7XOqj5DdGGlr5E4
-	on69M2Zn9GVLKUD+75foEUNpogTVQ==
-Received: from bn8pr05cu002.outbound.protection.outlook.com (mail-eastus2azon11011053.outbound.protection.outlook.com [52.101.57.53])
-	by mx0b-0002e601.pphosted.com (PPS) with ESMTPS id 4fkg7ug6y9-1
-	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
-	Thu, 23 Jul 2026 05:15:34 -0500 (CDT)
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=MCXE1GDqTVva/J1EVazj+Hagy4oTuj7TaHiLWBAo7lM59KreEpCwGDfvABfuho3+EqcSFumGpCda5uzUmlvYtwWPUKcWuYdBOJeNTeG7QbiyFNV1mxsh402WMBrVRBCS46ffFCXy93P+1m7lpK8/h49KY6Og1RDYKDqQvjieYY31LvO32uCVeF2Xtls3qMXyDu2xwp49g7pJrfonqfSUUH+3mVqnAkT/Rd5DMjDbjYAgt5Mke+vaX5Ltr14qW/tVLP03+oBiCXgagiz8+Yion0P0uSPWoO83H+RVbDEE2/ugFypfnVv34L/y1fhzFx6FY15ccs2xRHo6++SD7aXgdg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=ItLAX6rRatNTFg6LMigSQlDmcaoOIy1bF9CcNUl9MZM=;
- b=LhdJjclgtlv2FNWK/irf2NnpKvAQJHh3hXmaSgXdcm4rUiiQZGd23wV+GYCBx2NzetDs6yiqWBbLAySz5o8qAbyyCkemuZzZIiFAVLTzW3WPQWznh8a9AYiGfzMTSEVy7hKekyvqOgRwZ7tVpuXecT/qHfQNkWyMP/9+bWgoxcL6Otvwe9IDHKsn5DViCB1/tklgmWqkmt121CoJiphTtmNuXq5U/dfe1C9wDzEDVjQfG21+DT8r/Cx37GS2/9m59f2nsPCNHCetR+1T1dZ7uM+E66O6GE8gX0B88HnElSIgBdocM329Mdym0vGQtb+PnJ1CJefoQZA/z2eI4oCvkw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 198.47.21.194) smtp.rcpttodomain=cadence.com smtp.mailfrom=ti.com; dmarc=pass
- (p=quarantine sp=none pct=100) action=none header.from=ti.com; dkim=none
- (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ItLAX6rRatNTFg6LMigSQlDmcaoOIy1bF9CcNUl9MZM=;
- b=u8PSW+mE0/JyEMrCX1SbheaQ51dkqhAbOxlWVtC8PHSd0f23MaZ2uGcPgd2Li3TnD7jylu7Pej3badQt3lkdXtkfWJimBxCq8ksotF4Am+r85c5hm1W2FxjPREDmaOd/Q8WDwOVAN84Q+iZ4GomXFVVz1NX47jpy1V91pXQDm5M=
-Received: from CH5PR04CA0004.namprd04.prod.outlook.com (2603:10b6:610:1f4::10)
- by PH0PR10MB7061.namprd10.prod.outlook.com (2603:10b6:510:284::13) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.245.10; Thu, 23 Jul
- 2026 10:15:26 +0000
-Received: from DM2PEPF00003FC7.namprd04.prod.outlook.com
- (2603:10b6:610:1f4:cafe::9c) by CH5PR04CA0004.outlook.office365.com
- (2603:10b6:610:1f4::10) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.21.245.11 via Frontend Transport; Thu,
- 23 Jul 2026 10:15:26 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 198.47.21.194)
- smtp.mailfrom=ti.com; dkim=none (message not signed) header.d=none;dmarc=pass
- action=none header.from=ti.com;
-Received-SPF: Pass (protection.outlook.com: domain of ti.com designates
- 198.47.21.194 as permitted sender) receiver=protection.outlook.com;
- client-ip=198.47.21.194; helo=flwvzet200.ext.ti.com; pr=C
-Received: from flwvzet200.ext.ti.com (198.47.21.194) by
- DM2PEPF00003FC7.mail.protection.outlook.com (10.167.23.24) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.270.5 via Frontend Transport; Thu, 23 Jul 2026 10:15:25 +0000
-Received: from DFLE201.ent.ti.com (10.64.6.59) by flwvzet200.ext.ti.com
- (10.248.192.31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.37; Thu, 23 Jul
- 2026 05:15:23 -0500
-Received: from DFLE203.ent.ti.com (10.64.6.61) by DFLE201.ent.ti.com
- (10.64.6.59) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.37; Thu, 23 Jul
- 2026 05:15:23 -0500
-Received: from lelvem-mr05.itg.ti.com (10.180.75.9) by DFLE203.ent.ti.com
- (10.64.6.61) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.37 via Frontend
- Transport; Thu, 23 Jul 2026 05:15:23 -0500
-Received: from [10.24.53.223] (a0507176-hp-z2-tower-g9-workstation-desktop-pc.dhcp.ti.com [10.24.53.223])
-	by lelvem-mr05.itg.ti.com (8.18.1/8.18.1) with ESMTP id 66NAFJcN1503212;
-	Thu, 23 Jul 2026 05:15:19 -0500
-Message-ID: <0b8a91f0-8a2e-4dfa-aecf-acb865442d53@ti.com>
-Date: Thu, 23 Jul 2026 15:45:18 +0530
+	Thu, 23 Jul 2026 10:39:18 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66N8qWgZ467153
+	for <linux-phy@lists.infradead.org>; Thu, 23 Jul 2026 10:39:15 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=SjKJs+Talp5i5s1FC33zjJ
+	TMZ2uKeAJS7dad2YjJSPc=; b=SKOzv3FtVQ+I/avpr+mnxraoXYtZ/lL3/kdQit
+	1PH207QgmUcTwUz0w3cNXF4RxF46Ut9XsEf4yEMf8tjaRi69fzSGo2ndYl7GWblK
+	q7chxSZEYtZWJSnefp7mImXvNOR+4GjCjbazN1DhmCNccd29d/IfSu4xsgSHVEmd
+	kJAU826gBVKA6xQnwy7lRLXfdK1MGXK3346NV1N8gy4t7e7kflOn0uGsa0GTg3SH
+	HlemRph0UJHmAqp7kvKbECNKiZgMD7YzEnqTN8WKF2jZ9LqBMgt9FwqDiZhqBh6v
+	ChLOHRgDS6W3zwlLECkWO6XQt/WkZf0Bk/OHwkuQwpTxV6yA==
+Received: from mail-pf1-f198.google.com (mail-pf1-f198.google.com [209.85.210.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fk28xum34-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Thu, 23 Jul 2026 10:39:15 +0000 (GMT)
+Received: by mail-pf1-f198.google.com with SMTP id d2e1a72fcca58-84e048a801dso909610b3a.3
+        for <linux-phy@lists.infradead.org>; Thu, 23 Jul 2026 03:39:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1784803155; x=1785407955; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:content-type:mime-version
+         :message-id:date:subject:from:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=SjKJs+Talp5i5s1FC33zjJTMZ2uKeAJS7dad2YjJSPc=;
+        b=hh9GfMcAt7haN0xFhe1URA/cFW6dCT0wqfnIjxSJHISsRHLRdsS/59sMuo1QSKCRRv
+         +TlIk9sMnF/JvAY9bbrg98tu+UNjBjMMNyuhrbc4rl4sF2EtdNKumc9FIhU7Xcmn30B1
+         dZQ+gh0E3wanwu2x/Ch9J5pth4AwbRJ3hJwP0HU3g5geeFozp2F+GELO3JoECGw9S6fR
+         5ceF9+03FM/4q1nTMU1xYgTKPhRgp6cpDKXv4Sr4uBVX5OVmF7uNgFs3xNUrT8UBJ+ht
+         /kSDmNVFchjQAwHB8UzbOmeyuxpfu+7zSqP/dmgSDelMWlxYwsom9XLh9w1MdEx2Y2/F
+         t6CQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1784803155; x=1785407955;
+        h=cc:to:content-transfer-encoding:content-type:mime-version
+         :message-id:date:subject:from:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=SjKJs+Talp5i5s1FC33zjJTMZ2uKeAJS7dad2YjJSPc=;
+        b=C+qwB3ronw7567mPDzOn77N6el0wtgQNmZOLZd4bG31ncNsP96g7BHhh9G1QGTiYil
+         JzqCxNXttFBUgVupn4fxIffnfzgCNre0DGn02vCgiZlLiSgZjic2eS1si7uCMBBmxWPC
+         tDaQv1dCURtpoH1ifl00muvcUIVaz+dqbokjP2dCI0TacPuwtg3BEu5gXBQkVSR9SGUv
+         BAFMoUFQYaxlxC7+YB4Ll1L3l2qR1gQe7IzsJ7sI91L4rUEFfFXpBGtS6k6QCeEI93Vv
+         vmExM/Vux46FwVjj0FIuup5gat8y+/SCRaR+BhoEHBLCVmZujxh0XaZ/pDwmEgI7nWzt
+         aKKQ==
+X-Gm-Message-State: AOJu0YxYJvlhF9S3MWc06GsBHtbwnpA4x5Prgxk7iI6p3KV5Ixx3BuTF
+	Rw+FDjwhPOpRYWkdz4EhyVPze5jzdzCofG2ggDYPNBX1OYoYQVnumil3fLnv0tyEHisPQke/L3F
+	ZjP3t7hSKgMavpcBeXS6R1ol2SeKMVoWwGzB289HWQTPeSo4OXweIc24jvIlgT0EVp8dtwPYZu9
+	3B
+X-Gm-Gg: AR+sD11LQE4QQw+VHsOAveteUGLP7ryVbBVabhufndSx9zvmSXqexVRRFSWHy4VYNSQ
+	Wx3tHa+dmgcHWlne6pwPi3ha9GOsTklehxd9bUckkKZ9UfEwkWZUpH5mtOliIDh5DsYnVoxO4ml
+	CfYvQtmHi8MaiyE/ixLg9Nd5w9CJUHBVNCMgpB/CNgm/EioWTA7O/Vpx24h+Oz3gSfCLZMFohGA
+	c/JWhn8yHKrzejiqZJ/DzYhYKEEMYl+C1lri8VtD2rI6HyLmi5csWNad7g4A0Uat6XOSq9PvG6i
+	MpskYz7uq/rUVnUxH1j7ZZiRuSww6f+Ew6FlUKOUu9j/2DwIpUiswagIRXWGI63PuXnsBbzd2IY
+	JdyyKG81X3FjbWKs2ecZOVhcy72k3Qpk2pI/veM9j10htb5KE7z1y2BMr6eme3PDV8RSroQ==
+X-Received: by 2002:a05:6a00:12c7:b0:847:902a:57c1 with SMTP id d2e1a72fcca58-84e2bb3282dmr2946925b3a.57.1784803154919;
+        Thu, 23 Jul 2026 03:39:14 -0700 (PDT)
+X-Received: by 2002:a05:6a00:12c7:b0:847:902a:57c1 with SMTP id d2e1a72fcca58-84e2bb3282dmr2946891b3a.57.1784803154461;
+        Thu, 23 Jul 2026 03:39:14 -0700 (PDT)
+Received: from hu-kriskura-hyd.qualcomm.com ([202.46.22.19])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-84e17604a46sm2864469b3a.60.2026.07.23.03.39.09
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 23 Jul 2026 03:39:13 -0700 (PDT)
+From: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+Subject: [PATCH v5 0/5] Modify interrupt handling for eUSB2 Phy targets
+Date: Thu, 23 Jul 2026 16:09:03 +0530
+Message-Id: <20260723-eusb2-int-handling-v5-v5-0-f32ea6c1a318@oss.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6] dt-bindings: phy: cadence-torrent: Update clocks for
- multilink SERDES
-To: Krzysztof Kozlowski <krzk@kernel.org>
-CC: <conor+dt@kernel.org>, <devicetree@vger.kernel.org>, <krzk+dt@kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <neil.armstrong@linaro.org>, <robh@kernel.org>, <sjakhade@cadence.com>,
-        <vkoul@kernel.org>, <yamonkar@cadence.com>, <s-vadapalli@ti.com>
-References: <20260722061831.1045884-1-g-praveen@ti.com>
- <20260723-venomous-nuthatch-of-inquire-dade7b@quoll>
-Content-Language: en-US
-From: Gokul Praveen <g-praveen@ti.com>
-In-Reply-To: <20260723-venomous-nuthatch-of-inquire-dade7b@quoll>
-X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DM2PEPF00003FC7:EE_|PH0PR10MB7061:EE_
-X-MS-Office365-Filtering-Correlation-Id: 7e062108-4204-49c5-0e0d-08dee8a35052
-X-LD-Processed: e5b49634-450b-4709-8abb-1e2b19b982b7,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700016|376014|7416014|1800799024|82310400026|23010399003|10067099003|4143699003|6133799003|56012099006|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: O+sYF1ATdNUj2S+hglN2giIBEPC88Y5uVCpBCe9bjJbogPszYyWMAPYBaRUZgsVYWJLVkKTrtsZB/NK+0Hx3EXF0kOAA0+NYZixl8uVqKL78uK5sB0PdLANGAL7J8is0MjQmmy6XoaVS7ozx7l5csXRWH+xp/fu/l9/GN7Q0GVIwyY25+6Lf/xlzFfNyfmKu5kqpQJDolRhMz2cb70FcpYurvN+XXJMdVE6ywn7U5HB8eOZ2T5IlcVzIYZBUxfH1GdCH38168hLAMe0MjaLkjZVPI9WHYvLG6Sj45AyVWOf5LXfmgpo7G1HuJm32lyyaCZDd3G3/PKLVXiGCarTOw5NmPlbzmz0KXhIqN4o+tJRHjg9anr7PlQljhoIRpLuWV4KooBNFXuuYH0mAVc/BN1NVpKbg14e+M1LkoV9yh1ez9ES8/IuSn5rWNUejD9LZVzACREnOMQr+MAnn5uolPeIYhANAzuxGRK0wHGya7VVfzAk+TV82V+9menEdBZXIJu20eqk55+4xsa6tdITuU15LKJ9QkIxPUwYkFoTcp31cvDTRLOsTzedgnc/9YMxx1aJKDwRMkyg8xKiMZUm68d4haSLU+tlciPLBb9xKqrxjODVgnFUYA0ki61us8ewPLyWDqr3fGabS6V9ZvJAsrFb12R02OlURC/fZKs9DR9CVL1Y455u+1TVa5uhTwnNIMXSecRfcN0pyD80dRK3zoA==
-X-Forefront-Antispam-Report: CIP:198.47.21.194;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:flwvzet200.ext.ti.com;PTR:ErrorRetry;CAT:NONE;SFS:(13230040)(36860700016)(376014)(7416014)(1800799024)(82310400026)(23010399003)(10067099003)(4143699003)(6133799003)(56012099006)(18002099003)(22082099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 3cIdx+bbEelgHW8QxwbOtWkZGmk/tYpOP/m+axIYL+CEXIdEKv9ELiAtVWnkj9MRLRlZJzx0yJU/WjSmtjbECbK7ItmPmqAoIbC8NjgBTrMPlZ90AUhwAk9EAHBzkB1Fhs06FQL1eMTWPThoJjwOyrY/bOTAfFWimZGBP+pRsC1HDbvpmh10neL97OrZthUYD9P1ESDLcDsfTeFcrNmE5Drfs2ay1s/XYX/tIv6WOQtUNyIzWHEWaEPzdBtrs6rn0ux1JThPl6yzLnDFdwr4bUoN4cJK5n9TKW21wazCp273WeRX1nPpgFH2yudYmJUjOM2H+htG54Q/2ZFrbXUtuZHp+8prRSvHhVoZLHGvWBayVu2R5eKhTTdjNXRDKI6jF5+COs58ZSmh8W3zIDO1YeChJdEX8PgvHEg0bYrjonOUxsmaUBgx04hmkgzhy8fp
-X-Exchange-RoutingPolicyChecked: lLz2/h/eHq/Lmtt3AhkOtVnOY0MNf1V56AdvzCad+hwkwwPRRzCqXJ1Mu0J4ku44RXWok+xFV9oRcgd3Jhja+hXQBY9/v2DI8iH6dLpOvJ5YtLo1EvuPkvwdbbQISVLlGZEjUYOjA0+Zucm86beqoDNBppxDCdNMy8VYUIcfitC0zKUMlD2Nex9w6u2Kz8JlvGtPbIy21g7rd9YqSJGOuxP+dpwtI6VnaMT7jymgTiS+maG2tzdJktLsEQFhqfVxiSEGP8N00tUPCCBEVJIg4Z5KIYoFL/w7erH86leBUrcb6LgfGhUQi61Un06HQ8V52nOwPXaH51uwtKE/lqDfrw==
-X-OriginatorOrg: ti.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Jul 2026 10:15:25.7070
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7e062108-4204-49c5-0e0d-08dee8a35052
-X-MS-Exchange-CrossTenant-Id: e5b49634-450b-4709-8abb-1e2b19b982b7
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=e5b49634-450b-4709-8abb-1e2b19b982b7;Ip=[198.47.21.194];Helo=[flwvzet200.ext.ti.com]
-X-MS-Exchange-CrossTenant-AuthSource: DM2PEPF00003FC7.namprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH0PR10MB7061
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzIzMDEwMCBTYWx0ZWRfXzszcqBd+r0xJ
- lcGW+mBDSIY2B3JIan5GrAqFQzVGFvc0XAeFk21abcma64gbtwEji8Ew9bfEUSjyuFdDVOuc9JU
- 1JNrtbZ71co10FwPshQF2Gla5jdgP2nxOvlTkXpxLHEFRudy92nlfbUj5ZsNGJ+v3Q6Ndo8vLNw
- rhydRzoYCawrkXE+7RhTKwxuLxGZvNWMF3m/Tocr3f6Qs0qAT/Vv+HuZpnWsvPiHsBqoMYLR41D
- WjamXjQLQjpPjVecnHLETPvsAFGtoFjeu0RRAtf4RJgTUuYPcV8gKiGwtReZi/mKaww1DLnCQfm
- dZLfvztZ0bw+Q8ULEHPjWWydLKaOwzNVlsMT+1BaKhaE67nCv1rTLhNAd1+4NNI8oPV7TAV+NUT
- 1Qh2/D3kVLT2JYeUoKbng93qhdAfweAcxydY21T4KHw6SFIknUw5Sr/2uUCl8KL+HpvLIBZdXt+
- 7eKMhKAfg3wK7e3U4XA==
-X-Proofpoint-ORIG-GUID: G1vyzJE7qMdymiyIqgn2z-tMShbw7Uo8
-X-Authority-Analysis: v=2.4 cv=c/ibhx9l c=1 sm=1 tr=0 ts=6a61e9c6 cx=c_pps
- a=7AIX19wKKSH4vG2a64CeWA==:117 a=iwqwCZQqcuTv3JOpYdM7/Q==:17
- a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19 a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10
- a=V5UXEbMT0ywA:10 a=VkNPw1HP01LnGYTKEx00:22 a=Z8NIEmU8O1QQgoT56wFK:22
- a=jwouBfj2j3NM8CExmVVE:22 a=rydgXn8_Au4ypBn2xbEA:9 a=QEXdDO2ut3YA:10
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzIzMDEwMCBTYWx0ZWRfX/onWkryazVId
- ddrcV2sL5nKQ3nAaZXM+3Hy66uUX3Hvp84djWBbo9h4hPAuzn3RSJt4n1vYWpCFBDWZ5ot/e3/P
- 2/M4A9TbJXaVwkX6YlSbKQt2JkO5EOQ=
-X-Proofpoint-GUID: G1vyzJE7qMdymiyIqgn2z-tMShbw7Uo8
+X-B4-Tracking: v=1; b=H4sIAEfvYWoC/yXMQQqDMBCF4avIrB3QKTHiVYoLY0adUtKSMSKId
+ 2+qy4/H+w9QjsIKXXFA5E1UPiHDlAWMyxBmRvHZQBU1la1b5KSOUMKKefZvCTNuBpmc9TSZ1tk
+ H5O838iT71X32tzW5F4/rPwbn+QOQsClIeQAAAA==
+X-Change-ID: 20260718-eusb2-int-handling-v5-e2b7d2f58b73
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+        Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+        linux-usb@vger.kernel.org,
+        Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1784803149; l=2757;
+ i=krishna.kurapati@oss.qualcomm.com; s=20260707; h=from:subject:message-id;
+ bh=95aRlnqGGcjXiiM0uMEb3A+wNWlk0AP0T2azwmwkXDc=;
+ b=sFSifNo1uwvjssJXARa1tPt8jF0YG84JsenqWOBkD77tPe7VwWU7nWjZNj7bKC8Pwm/rmawVm
+ U8KV6/0qz/rCKJWaWVOuUZzqLHYguR50rGUfnE8ga/7ZYz8gcKiLyD5
+X-Developer-Key: i=krishna.kurapati@oss.qualcomm.com; a=ed25519;
+ pk=6PmiuwGCdov3wRO+bdmRlRxRtmJyDKz3ED57LLPVgds=
+X-Proofpoint-ORIG-GUID: vIPujjhG48ZdTjc_3_8339ufhpm2dww5
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNzIzMDEwNCBTYWx0ZWRfX6X12SzomcAI0
+ KdAK3y5HgkmKpd2rsUAAOYHIX3MQzUbm/EplZ7S+1gEJh3KK4Oc/KxfT6e8VbmSjhPuAvv18Rcj
+ f7jqNbeSJbuBitt5WpZG/iHUm2o5ZCI=
+X-Proofpoint-GUID: vIPujjhG48ZdTjc_3_8339ufhpm2dww5
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzIzMDEwNCBTYWx0ZWRfX59FSW28u1taa
+ ++LgTRZoJzwltmPtM2g6fYwszo1OsqMf7erMg5ptFC2BbhcPgGQijha3vdgAX127j060pvmx8gI
+ +KDO4PGz74C760o8B1L4zJp1GUydCZfgnIQxxiZ3rf2a4zeFB5ltbJkb1Ht0NhuGJIC2dTWC7Lf
+ H7HN+AWVsC+n6dbtUTO0wiSEK3n9PW9AGzGehSnSNl1GSsg+RoQo3wCLppbdZVEzxFbA7wxxCMf
+ 8IEqwI/YmuewjfHD6++CiVx/fosh1gSQF3gONzY0V9h5yXR6p1w0R02U6bZbutuiFDfFs5SnHdg
+ EQtKNCWp08GzeFARrB4vfPvh5Cgvw4VswYDPnS6aVkc/2Acsf1uc+kFQTk1Ir5FowhYme2zPc+0
+ RnMMYOEExOxOJOd0wKkaqFO0p6C6FsNKBIm79CIomOwrvcDcRH1UtnvmYqhYzcXxNYfaOYFsBKb
+ HtEMcb0ZykWfRlHyIgQ==
+X-Authority-Analysis: v=2.4 cv=WNxPmHsR c=1 sm=1 tr=0 ts=6a61ef53 cx=c_pps
+ a=m5Vt/hrsBiPMCU0y4gIsQw==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
+ a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=xjCIpWma6R3UThYtaJkA:9 a=QEXdDO2ut3YA:10
+ a=IoOABgeZipijB_acs4fv:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-07-23_03,2026-07-22_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 priorityscore=1501 bulkscore=0 malwarescore=0 impostorscore=0
- clxscore=1015 lowpriorityscore=0 suspectscore=0 phishscore=0 spamscore=0
+ adultscore=0 bulkscore=0 priorityscore=1501 malwarescore=0 phishscore=0
+ impostorscore=0 suspectscore=0 clxscore=1015 spamscore=0 lowpriorityscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607230100
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607230104
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260723_031541_154070_A8B57961 
-X-CRM114-Status: GOOD (  10.29  )
+X-CRM114-CacheID: sfid-20260723_033916_559352_FD97535A 
+X-CRM114-Status: GOOD (  13.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -174,37 +155,83 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krzystzof,
+eUSB2 targets handle wakeup interrupts differently depending on device
+speed when operating in host mode.
 
-On 23/07/26 12:45, Krzysztof Kozlowski wrote:
-> On Wed, Jul 22, 2026 at 11:48:31AM +0530, Gokul Praveen wrote:
->> For multilink SERDES configurations where each link requires a
->> different clock frequency, the SERDES provisions an additional
->> reference clock for PLL1. Hence, document it.
-> The pll1 is already there.
+According to the eUSB2 specification, remote wakeup signaling in host
+mode is detected via different data-line assertions based on the
+connected device speed.
 
-Yes, but the existing configuration has a limitation as
+When a low-speed device is connected, the host repeater drives eD+ to
+logic '1' upon detecting a K-state on the USB lines during remote wakeup
+(eUSB2 specification, Section 5.5.14).
 
-it does not allow both pll1 and phy_en_refclk to be used at the same time.
+When a full-speed or high-speed device is connected, the host repeater
+drives eD- to logic '1' upon detecting a K-state on the USB line during
+remote wakeup (eUSB2 specification, Sections 5.5.15 and 5.5.18).
 
->
-> Also, the TI variant does it or cdns one or both?
+Since the eUSB2 PHY's "DP" and "DM" interrupt lines monitor the eD+ and
+eD- line states, configure the wakeup interrupts accordingly
 
-Both of them.
+Add support for a new phy "type" attribute to be set by eusb2 phy drivers
+and be read by consumers (in this case usb controller) and act accordingly
 
-Best Regards
+Changes in v5:
+- Add support for phy "type" attribute and set it from m31 and snps eusb2
+phy probes.
+- Removed adding a new binding property
 
-Gokul Praveen
+Link to v4:
+https://lore.kernel.org/all/20260709-eusb2-interrupt-handling-v5-v4-0-d4f993925608@oss.qualcomm.com/
 
->
-> Best regards,
-> Krzysztof
->
+Changes in v4:
+- Moved to using binding approach as suggested by Thinh
+
+Link to v3:
+https://lore.kernel.org/all/20260511094422.3561509-1-krishna.kurapati@oss.qualcomm.com/
+
+Changes in v3:
+- Removed multiple glymur-dwc3-mp pdata entries
+- Replaced use of ternary operators with if-else
+
+Link to v2:
+https://lore.kernel.org/all/20260505194242.1947891-1-krishna.kurapati@oss.qualcomm.com/
+
+Changes in v2:
+- Updated commit message
+- added supported eUSB2 targets
+
+Link to v1:
+https://lore.kernel.org/all/20260502095616.666938-1-krishna.kurapati@oss.qualcomm.com/
+
+Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+---
+Krishna Kurapati (5):
+      dt-bindings: phy: Add PHY_TYPE_EUSB2 definition
+      include: linux: phy: Add phy attribute "type" and associated helpers
+      phy: snps-eusb2: Set phy type to EUSB2
+      phy: qcom: m31-eusb2: Set phy type to EUSB2
+      usb: dwc3: qcom: Modify interrupt handling for eUSB2 Phy targets
+
+ drivers/phy/phy-snps-eusb2.c              |  4 +++
+ drivers/phy/qualcomm/phy-qcom-m31-eusb2.c |  4 +++
+ drivers/usb/dwc3/dwc3-qcom.c              | 53 +++++++++++++++++++++++++------
+ include/dt-bindings/phy/phy.h             |  1 +
+ include/linux/phy/phy.h                   | 27 ++++++++++++++++
+ 5 files changed, 79 insertions(+), 10 deletions(-)
+---
+base-commit: dc59e4fea9d83f03bad6bddf3fa2e52491777482
+change-id: 20260718-eusb2-int-handling-v5-e2b7d2f58b73
+
+Best regards,
+--  
+Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+
 
 -- 
 linux-phy mailing list
