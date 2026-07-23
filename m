@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B00EDC4453A
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8F51C4453D
 	for <linux-phy@archiver.kernel.org>; Thu, 23 Jul 2026 02:30:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,89 +12,89 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WexFbtQzu80NziMj1QdukEzvhTcH7DrIrA9luzLmbWg=; b=fr/wLOMhP+2H/Z
-	NKiqpf2w6KYSBfo+7hVtHRe0ne1br4exdTMFdw6XFdwTJC2U270LliHIT7fxZABqTCXuocvd9DIfF
-	cbPA9bUg/B7ptg5QLvlsFwKPKg3fYh1DezMIlFpyCZ2Yc2JNpKdYYheCoy/D6VliUZkSkv7/PsKjH
-	gYgE13MZZbzYeRMskEF4oSxh+N3VvB4lTRYavYMJKOheeZGhLAO90EqsYJaSAnwFpe0/CeRqUF0UC
-	szxFf11eQliMADbr8dWJweOb5kciQJYQTHm7mHhL2IsTE8t6pTv8WVaNC6Gti2o79aGebVbRtd/jq
-	ubtLXCPaqfzRFh5c9HUw==;
+	List-Owner; bh=Hx1wEO5MVaQj4eWq+YyFHmFYL9OYDILRkgcYYDcqem0=; b=cm/mJNKt3WjoFz
+	4OYTdAH+B/tga6eLt7GJqRuxrwcCDoaH0qz2WdpWAO6/I5aajhTzGJ7pHLcmD5BXl0zaElsC8BYdJ
+	cM1zsEBudUMoXmKLUfcyeGcpkZjOv80TfgiAstVNHY2kqJYV4YYG60uu2h3kLDeN4evLTYKBN56dR
+	q9iZ17HgYLDPv3aUPL+Le5rlDLNC5ZbjVmtKBJ0eh43xVKgyECfx1uq8x+PiMduvh581HEy/TvQa8
+	hOp6y1UC+LyBQPgy7nV1cFdUfVOecwLeGQNJ6fE9kIQvGXeQl+qICQ6FTTQ6SOrFig5KNmFvE0tDF
+	G81boXNNTlG0Rfc8qmeg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmjCp-0000000DESH-1enH;
+	id 1wmjCp-0000000DESP-1qiZ;
 	Thu, 23 Jul 2026 02:30:39 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmjCk-0000000DEP9-0mWH
+	id 1wmjCm-0000000DEQt-0zDn
 	for linux-phy@lists.infradead.org;
-	Thu, 23 Jul 2026 02:30:35 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66N0X9Oa2658543
-	for <linux-phy@lists.infradead.org>; Thu, 23 Jul 2026 02:30:33 GMT
+	Thu, 23 Jul 2026 02:30:37 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66N0XEhT2365495
+	for <linux-phy@lists.infradead.org>; Thu, 23 Jul 2026 02:30:35 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	gdi19UFzDjF4fKg8Tt5mxer0+svC1+wk4/8Ph5sdlFg=; b=dCEtFhfHG+FPzvf5
-	wRMui2FNE11uIalrwqxkrnos7xsKcpCNDFYk3VQvuWj1RcdUDV0aUv/Ga4cdlEXd
-	XMwEyYPUFb7mA2vqiciuJuqakUWsExkHzWn+2bJTggpGuyIxjexuZugKMXXYB+Kj
-	Bafovg8FmAcmrQOKrRmK+MTKsPc/lKkYPViL16dCoVoqGHF7TI0H5ilAvy0HWV90
-	2OietoEmctB7Z0/8P2sHF5KyMQZOehiUOmc31jpemkwJ6Nf1OWgtK+Ka+ndfSqmh
-	jMM6Pd+ZvWzf+Z9oAQ85BU+5gfN8Q/A/tone+vnd5XJ+bzCaypLKnB3PQX9T7vZy
-	n1Umyw==
-Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com [209.85.215.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fk7b50gcf-1
+	xGQESnapNniC439AziMhXbTJfLqaefgPzfYKsPTLavw=; b=hXDhHiXIypTL2I4Q
+	Nm0xckCyLs0Y/M1peMRut9fEBa9Yn311o9sHlSc4WW+VXni04g9zgJIEcVfEbWjC
+	L3hv2z0mr88xgEz7a5jyiCmeOcVwdEnZWivb8ot9P1AOCdDDqSGjUTnsrxWyBp4/
+	3D6b9Q8RkA5y7Dn1JdPzHSfyYvPj/kOQLBVchOY9t94tgaFfVI0N8CL66rQ7FDTe
+	S5ilX2XdR8RZV/SM9P1teb3tOcUHdO9XOD7yFm0HwiX7A0sL71qCpfEGp5FX+Byf
+	4i1z3m15MWfhQw6pGtt+0nWpuv1VC/CmKSzQBxOHcEbANDrTT1GVHptrJeE7bR9D
+	IuAccQ==
+Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fk28vhtca-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 23 Jul 2026 02:30:33 +0000 (GMT)
-Received: by mail-pg1-f198.google.com with SMTP id 41be03b00d2f7-c9fe4c5eb39so170367a12.1
-        for <linux-phy@lists.infradead.org>; Wed, 22 Jul 2026 19:30:33 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Thu, 23 Jul 2026 02:30:35 +0000 (GMT)
+Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2cc73f47bdcso3894685ad.3
+        for <linux-phy@lists.infradead.org>; Wed, 22 Jul 2026 19:30:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1784773833; x=1785378633; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1784773834; x=1785378634; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=gdi19UFzDjF4fKg8Tt5mxer0+svC1+wk4/8Ph5sdlFg=;
-        b=cZ5gsR2fkx/E6k4UR7iwrwXzpFzPmfnIOQQJvpWtd+PFddhbTux/NNjsJ6nqcWQbfA
-         7lIY7gbkdwoLeXfqE0knM1cMgFeugW0F955xun9YtNIwxgNpnDymXd4MD5HPqDtDsNFZ
-         9plKBdxmMWfKccA3KuFgd9P+pvqcyaIDNp4p9SxFC3WaORvz7RAYbV5wFrTF51q9WW6L
-         fWZwAejMzEthS14kAmgk5gTbl4H+rkwONIZxEf/+If2bF6y85VUxauvwMxvwQjjCqZ9k
-         8wdK3LCx8azo8z/+nFdYVMGZlwLIhLmwYiJ5nbul+TRLnLM34+7Z1aCmqHxeEnvi8LO2
-         5FrQ==
+        bh=xGQESnapNniC439AziMhXbTJfLqaefgPzfYKsPTLavw=;
+        b=H+BW8lGSUD4m4yVBqEfBJu69bVmJyuCQh0CKzKXMYuJLdcOJRbPjNfQn10ZIWmOdFj
+         6pqC7tCe88iVGXMTx5sKLTJYOojmC6vU8lqVLCVUcvh58PRRyjjU/OiFdS260bhv7lAM
+         uIOnleaI8IF0bNnCBGvwtzkgS1JOBeh1k+z7b560nFwnwZ/Zv6PbAfoogph38NXav1wv
+         8ywBaGM7ZfjIq6UpH5s/mCbIXi2XVNVN2TpnAMy0jzfu0ydhh8qaNClpZyOZ1ts1NgXQ
+         84ehQUuJdbuZq6o0QTpxgi190eEbY7XQYZwGB+F3hVALjWKks3cjYLRwMdtJwMfYfbJj
+         A1PA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784773833; x=1785378633;
+        d=1e100.net; s=20251104; t=1784773834; x=1785378634;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=gdi19UFzDjF4fKg8Tt5mxer0+svC1+wk4/8Ph5sdlFg=;
-        b=KQ9/RicstbZzfc47C4edi7k9dK+msM6gXwTsGcjCVjx6lb3LMiyOC60KtHZI1BAffC
-         rPFe1M551Kau7P1horKxsTfF2PvSw7yfSS/NW5Adp9Sm/PHuZ7wYMLISJnTDwUgmfTbQ
-         qrAZBdTPR+FI5jF1FbI3S382o9quj00N5UpYjmFp0a2MEkeU4cVtYmgz9Wwr0j0DP2xf
-         J3sDGtIf4xlOMGsvM1QI6BQ9F6o/BATxlWIw1hTGx2biepN9kw3gVRpXdrnA2dQqA4P4
-         n5eDTBWMXGV+CMHiEZO3pvDaA4BkzBcgUOvlpZhIKBLfrlTHtRpZHuck5kUXo1JvApS5
-         dcMA==
-X-Forwarded-Encrypted: i=1; AHgh+RrCNbMWv1eISQ5M6miVRqF1xCEhkHdxdCGkaOr0j8b+Kk5OkjOCvQ/tLBruLk17gyuuPvEgDFHMr60=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yzamsrzu7GBSOLmH8NJukg4RdgdAXYqhVf422FPOcYxxt1SwrYx
-	69Be/MusEbDBqyhovYRRZla9ZVjdA07rni2bIFtHzXTzWIA/nBhbRHoqSPsVl6pXpWskFo4dDKq
-	SX8rVX7cuW/k+nByJalOwlFzNS6AtIbsGOS+n/e76sP7aJmVcCWDOZN+RyezUzNJsu/EY
-X-Gm-Gg: AR+sD13sf3Dx/Po6HpxVXSAjhgNdbJPTG7ydcD8aMcWH3Gd8UmG9X2IBmxvEz0gWKZ5
-	mDZF0yGi7HDuXkhEqLBeTtsMsqYXCwIdBXEa6LS/OKbP+320v5KmQLd/MoqBP+nwQSkmo9fFP9q
-	+l95AtIX9RqeqdwvTlRlT+TAdfSnAhD+Ph3CnFtaz6gPuk2/5iuFOFQLLaigvOSvY6dTCisHbdh
-	BG62JMapWs/AX7ho7i6y1qMd4J8A8IjTluLgXzETadzVsO7FGpvZUNt5oSguq9Z7KP17+tMc460
-	+lrCKx15ge4h9UgXGsflmLwfLeTOGZPRCLjrhx+FjgyrqynxCHvO4IIM3LyLXCxZVZ2K/MsOody
-	rskFeOLRy23MHsawknZvzNgtXiNpJixP5lxJtx4xWyNsrVQc=
-X-Received: by 2002:a05:6a20:7345:b0:3c3:93ce:663 with SMTP id adf61e73a8af0-3c44b01447cmr1221190637.26.1784773832871;
-        Wed, 22 Jul 2026 19:30:32 -0700 (PDT)
-X-Received: by 2002:a05:6a20:7345:b0:3c3:93ce:663 with SMTP id adf61e73a8af0-3c44b01447cmr1221139637.26.1784773832389;
-        Wed, 22 Jul 2026 19:30:32 -0700 (PDT)
+        bh=xGQESnapNniC439AziMhXbTJfLqaefgPzfYKsPTLavw=;
+        b=gvQY17p10v8p9DuFJ6BW5Ca82jhqdnNEBRSp9k3eGLtBTz60M+jDHIwnjc1r8dab6o
+         1gmWdy/r++q93/wPJ6bQkSX8BGgWSGX3yCYAAKPyOa+5trECVRQXnyNP/juRaMZmpAm1
+         jbPZZNXjp5zJLWTqPf8NvXpsgUj8RXkIJpKEifbPalEhySMTlEMeuI/CA5wN8eP0GICg
+         X1N1rv1UDSQoWx0TnNiwbABCYb8R+slz/RR95JJb8grQWvWBN/31BR+X1wPSegTzLwHB
+         7dtFQBgGgB15d/rbDck1wFtOadbf4bp+ofKLddOZBnkwBWP8J8hF9yzZ977/3J+7fIuv
+         k34A==
+X-Forwarded-Encrypted: i=1; AHgh+RoeWWN8HpDyl0TxHp3gWGMJ8UpA3WZZCPbShRQztZl6aKpPs8Evlw3zcR5WahQft/3hrOIWJ3zfjZg=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz6p4WEV2+5xRRofokezrlLKEUxqE9glubv7EmXa0jph+D+6X0V
+	MuXjkqsrrBD/cuzgrLbBVK8YiIcwEGSzFc1GWoL/4aRVUOufeQ14htKQ1EpSQZYhHOI6Qy8kjGN
+	Mo48RKTXlWdroAHkxqTND//KKL/PJCof6jol9HmOO/T/ZQvCbIvTzdWwN8P5WtAZtfNq/
+X-Gm-Gg: AR+sD10kSKipoiL6rqJFCnGJTR0OSaZZfqM1WooEIRuVTfZYKTZX32JdD2ZHmFOJyBW
+	GcmJQMl8tjzhf9USg1POHFLQm5uZ9wgGfJwIIKAVzrAtErEg0jnMlx2kyW+64vfGw40TJbB00iz
+	/YYAikTrwHni0YRDRZcRamKUVj4TXxSL5r8yOo0mi8zNg4GH332+Al4I2KdQq9WI0oY8fA/KzxL
+	KDAfB5EWdvULB3naZ+tCkd78sKhDw9YwBjNkupk/HWn1BbfbeaC76CqvYc8QvxOcK9Ao1KSzO1i
+	GjzjCnlj+5f4jD00OJ6wtSA7IPQ9ZakYwQ5wkBU4BiVwgAhGFgi4oY8yMp26qlZBzzVJBHPjBPm
+	KkudCB3eML7Wa+KknDAYN7ZgpbywF5H2756L+ugbewU15Y3c=
+X-Received: by 2002:a17:903:1aeb:b0:2ca:53e9:1277 with SMTP id d9443c01a7336-2cfa6a43e63mr15762815ad.1.1784773834188;
+        Wed, 22 Jul 2026 19:30:34 -0700 (PDT)
+X-Received: by 2002:a17:903:1aeb:b0:2ca:53e9:1277 with SMTP id d9443c01a7336-2cfa6a43e63mr15762425ad.1.1784773833688;
+        Wed, 22 Jul 2026 19:30:33 -0700 (PDT)
 Received: from hu-qianyu-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3147d47960dsm13463980eec.0.2026.07.22.19.30.31
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3147d47960dsm13463980eec.0.2026.07.22.19.30.32
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 22 Jul 2026 19:30:31 -0700 (PDT)
+        Wed, 22 Jul 2026 19:30:32 -0700 (PDT)
 From: Qiang Yu <qiang.yu@oss.qualcomm.com>
-Date: Wed, 22 Jul 2026 19:30:22 -0700
-Subject: [PATCH v6 5/6] arm64: dts: qcom: mahua: Replace pcie3a/pcie3_phy
- with dedicated pcie3b_phy
+Date: Wed, 22 Jul 2026 19:30:23 -0700
+Subject: [PATCH v6 6/6] arm64: dts: qcom: mahua-crd: Add PHY supplies for
+ pcie3b_phy
 MIME-Version: 1.0
-Message-Id: <20260722-glymur_linkmode_0722-v6-5-bba8156b8cbb@oss.qualcomm.com>
+Message-Id: <20260722-glymur_linkmode_0722-v6-6-bba8156b8cbb@oss.qualcomm.com>
 References: <20260722-glymur_linkmode_0722-v6-0-bba8156b8cbb@oss.qualcomm.com>
 In-Reply-To: <20260722-glymur_linkmode_0722-v6-0-bba8156b8cbb@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
@@ -109,43 +109,44 @@ Cc: Qiang Yu <qiang.yu@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org,
         linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
         linux-kernel@vger.kernel.org
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1784773825; l=4308;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1784773825; l=781;
  i=qiang.yu@oss.qualcomm.com; s=20250513; h=from:subject:message-id;
- bh=X/OJrcxF0NvsS0kMFTEztosA6t5zY1MBw7n2lTxh6BY=;
- b=FxmFHdzF+1pJ4SJWlrhi03mt/3qSS6Zvb0k1UMZ0NKTec4sCrwknTo3cJ3bbF5wKOwf2A3rYl
- NDN5u90eO40AHDga2EiC9Lz3UiCGZ819655V0/b3Ll2Hs/Q9JUOehgB
+ bh=KWNs/xCEnPlXMN2fZRU/bfpMbHhsvVdPwo2ZWlrIGks=;
+ b=GgeI+2mlBp4bTa+H4va0AjEB1ZBhMjPdS2WjMBoprLL8UozW9j9WgkZI9WpFy/gdzAXVr+vvH
+ sxRWa4f9U+/Dow9A7HnykLTLHwB/mWLeFBqqKA22kJeqIJamoV2Wu24
 X-Developer-Key: i=qiang.yu@oss.qualcomm.com; a=ed25519;
  pk=Rr94t+fykoieF1ngg/bXxEfr5KoQxeXPtYxM8fBQTAI=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzIzMDAyMiBTYWx0ZWRfX2CxJqNw5/axs
- tpHeiIgO8pZPFHcSnhTl0yYi6TSeLmR+I603VD9CjA41Cy/Y7EMeK8tKAJS6+MfOShU6nocH6Ph
- +LkgKPiRmw9gqoQXzWLpgy+lbJigHPG4fVrN9fLoDjg/1RrCBfj7S2Emsnqo48Sg+TEdnk2xsyB
- sVOFxDK1rFLQ5CnHis7/3bF/yFK6XXTuvgJ38hEob0yuufY5gz0YUiF8a7CEEBHlPfy8aPfiwPY
- 7Yqr5Cv9Pw380oIWFBOjIwFfRK6AVr/+KRv0lXJn9a1lGFO1n3wTIjUeuy8m/XOZn5bbzROYcJw
- +aP2q+S9Fu6FzropJXD7JXlK4XIjl7yK4Guj2qoxzOc65CEv8g2ppLTGKbqTZDltdgtkxgCdHj8
- XnHw4eoadXv3dOMp+J9r2pq6K8F5LTlFtaDz2Fca7suE3A3gfXQZide5zT49q/RXXdzCjXSNO1U
- O5fEVMED4iZ91uSfueg==
-X-Proofpoint-GUID: xHSNfsTe7-SR9kwunwdpZRjoFbw-WFrR
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzIzMDAyMiBTYWx0ZWRfX5g5zKhBDqWpz
- Cqi+X2jKE2XHH7xXvbyjbulGQ2Msj2I3PzDqzl9IKePZ0a/vetzV+UfZzeEbLL8bi+4xG00X930
- XFMAXZE3gKkDGqcfif8axxZxrpCPQPM=
-X-Authority-Analysis: v=2.4 cv=btx8wkai c=1 sm=1 tr=0 ts=6a617cc9 cx=c_pps
- a=Qgeoaf8Lrialg5Z894R3/Q==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNzIzMDAyMiBTYWx0ZWRfX7sPhe/VGixpn
+ f4dy6NKVRAyy+dGiztrLNoJZ3R7PkmhZU06eANYg1eCINrEkgWSfDjRRoUn7Z3VSzkKHrEc9OEP
+ I002RlFofxMwvP8D9JnAevEOCDYmAVM=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzIzMDAyMiBTYWx0ZWRfXxbgjOLH+FbNi
+ yKjTUXkkMjmryeNYPu6y9AZJpCFxbeYPNfnrDmV5Zkif3LBOQdrB65BUqecVV7RaVJ28ny5sUwu
+ xo7bFWurmo9TbubHqLjC20bLpIpaCqVpsD0JbGR6C3ZgMeeYQdOOw3tpMdJX/lwjdK0faAu5XOY
+ QmhbLXElRJL6ti4JbsbikEF/p32j5nBx3sqJhhKBhWZVa+B3K186QAnlDNCaO/9AXDId3P4cRym
+ j1JqQOEjidt/brp+zS/BeCciy1xhMP8nYrMKE3Kxi4J0pZcrdDVuLnno4UVtdFi9QFD4yLdMSXD
+ 2H88HLrpz+NBzhSRTc3GjTm/XAX9ZE3mxzPq/e8Fp9XYNoh09w4nZqf2T0tg5z+0FQ68SFqqpFh
+ N1g38VT5YVZ2g1aP3NDTK7/4+CihIAW76Y2M/678me1UXU0ILHUhwgcYaRJl0SCtrVGyvDU/ztu
+ nNvfqqfKZQt83aPh+Kg==
+X-Proofpoint-ORIG-GUID: lRvZXtyUrnTj4LVnEqW_zFjZMaWQTpPl
+X-Proofpoint-GUID: lRvZXtyUrnTj4LVnEqW_zFjZMaWQTpPl
+X-Authority-Analysis: v=2.4 cv=D4V37PRj c=1 sm=1 tr=0 ts=6a617ccb cx=c_pps
+ a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
  a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
- a=EUspDBNiAAAA:8 a=ZTTPuMnDdfme7OPWMlMA:9 a=QEXdDO2ut3YA:10
- a=x9snwWr2DeNwDh03kgHS:22
-X-Proofpoint-ORIG-GUID: xHSNfsTe7-SR9kwunwdpZRjoFbw-WFrR
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
+ a=EUspDBNiAAAA:8 a=FJ594BFJAeq65zshAlMA:9 a=QEXdDO2ut3YA:10
+ a=GvdueXVYPmCkWapjIL-Q:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-07-23_01,2026-07-22_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 malwarescore=0 adultscore=0 lowpriorityscore=0 impostorscore=0
- phishscore=0 priorityscore=1501 spamscore=0 bulkscore=0 suspectscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607230022
+ lowpriorityscore=0 malwarescore=0 adultscore=0 priorityscore=1501
+ phishscore=0 spamscore=0 bulkscore=0 suspectscore=0 impostorscore=0
+ clxscore=1015 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
+ definitions=main-2607230022
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260722_193034_451291_F2047F25 
-X-CRM114-Status: GOOD (  12.35  )
+X-CRM114-CacheID: sfid-20260722_193036_420169_A56C8B8A 
+X-CRM114-Status: GOOD (  10.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -162,140 +163,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Unlike Glymur, Mahua only has PCIe3b wired up; there is no PCIe3a
-controller and no shared Gen5x8 PHY block. Delete the inherited pcie3a
-and pcie3_phy nodes, and add a dedicated pcie3b_phy using the existing
-qcom,glymur-qmp-gen5x4-pcie-phy compatible.
-
-Point pcie3b_port0's phys and the GCC pipe clock parent array at
-&pcie3b_phy instead of the deleted &pcie3_phy.
+Mahua CRD wires the dedicated PCIe3b PHY's regulator supplies through
+board-specific PMIC rails. Add the vdda-phy and vdda-pll supplies for
+&pcie3b_phy.
 
 Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
 ---
- arch/arm64/boot/dts/qcom/mahua.dtsi | 89 +++++++++++++++++++++++++++++++++++++
- 1 file changed, 89 insertions(+)
+ arch/arm64/boot/dts/qcom/mahua-crd.dts | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/qcom/mahua.dtsi b/arch/arm64/boot/dts/qcom/mahua.dtsi
-index 22822b6b2e8b..3280eb96d61c 100644
---- a/arch/arm64/boot/dts/qcom/mahua.dtsi
-+++ b/arch/arm64/boot/dts/qcom/mahua.dtsi
-@@ -22,6 +22,8 @@
- /delete-node/ &cpu_pd16;
- /delete-node/ &cpu_pd17;
- /delete-node/ &cti_wpss;
-+/delete-node/ &pcie3_phy;
-+/delete-node/ &pcie3a;
- /delete-node/ &thermal_aoss_6;
- /delete-node/ &thermal_aoss_7;
- /delete-node/ &thermal_cpu_2_0_0;
-@@ -79,6 +81,52 @@ &config_noc {
- 	compatible = "qcom,mahua-cnoc-cfg";
+diff --git a/arch/arm64/boot/dts/qcom/mahua-crd.dts b/arch/arm64/boot/dts/qcom/mahua-crd.dts
+index 9c8244e892dd..c56f0ab71f4f 100644
+--- a/arch/arm64/boot/dts/qcom/mahua-crd.dts
++++ b/arch/arm64/boot/dts/qcom/mahua-crd.dts
+@@ -19,3 +19,8 @@ / {
+ 	model = "Qualcomm Technologies, Inc. Mahua CRD";
+ 	compatible = "qcom,mahua-crd", "qcom,mahua";
  };
- 
-+&gcc {
-+	clocks = <&rpmhcc RPMH_CXO_CLK>,	/* Board XO source */
-+		 <&rpmhcc RPMH_CXO_CLK_A>,	/* Board XO_A source */
-+		 <&sleep_clk>,			/* Sleep */
-+		 <0>,				/* USB 0 Phy DP0 GMUX */
-+		 <0>,				/* USB 0 Phy DP1 GMUX */
-+		 <0>,				/* USB 0 Phy PCIE PIPEGMUX */
-+		 <0>,				/* USB 0 Phy PIPEGMUX */
-+		 <0>,				/* USB 0 Phy SYS PCIE PIPEGMUX */
-+		 <0>,				/* USB 1 Phy DP0 GMUX 2 */
-+		 <0>,				/* USB 1 Phy DP1 GMUX 2 */
-+		 <0>,				/* USB 1 Phy PCIE PIPEGMUX */
-+		 <0>,				/* USB 1 Phy PIPEGMUX */
-+		 <0>,				/* USB 1 Phy SYS PCIE PIPEGMUX */
-+		 <0>,				/* USB 2 Phy DP0 GMUX 2 */
-+		 <0>,				/* USB 2 Phy DP1 GMUX 2 */
-+		 <0>,				/* USB 2 Phy PCIE PIPEGMUX */
-+		 <0>,				/* USB 2 Phy PIPEGMUX */
-+		 <0>,				/* USB 2 Phy SYS PCIE PIPEGMUX */
-+		 <0>,				/* PCIe 3a pipe */
-+		 <&pcie3b_phy>,			/* PCIe 3b pipe */
-+		 <&pcie4_phy>,			/* PCIe 4 */
-+		 <&pcie5_phy>,			/* PCIe 5 */
-+		 <&pcie6_phy>,			/* PCIe 6 */
-+		 <0>,				/* QUSB4 0 PHY RX 0 */
-+		 <0>,				/* QUSB4 0 PHY RX 1 */
-+		 <0>,				/* QUSB4 1 PHY RX 0 */
-+		 <0>,				/* QUSB4 1 PHY RX 1 */
-+		 <0>,				/* QUSB4 2 PHY RX 0 */
-+		 <0>,				/* QUSB4 2 PHY RX 1 */
-+		 <0>,				/* UFS PHY RX Symbol 0 */
-+		 <0>,				/* UFS PHY RX Symbol 1 */
-+		 <0>,				/* UFS PHY TX Symbol 0 */
-+		 <&usb_0_qmpphy QMP_USB43DP_USB3_PIPE_CLK>,
-+		 <&usb_1_qmpphy QMP_USB43DP_USB3_PIPE_CLK>,
-+		 <&usb_2_qmpphy QMP_USB43DP_USB3_PIPE_CLK>,
-+		 <&usb_mp_qmpphy0>,		/* USB3 UNI PHY pipe 0 */
-+		 <&usb_mp_qmpphy1>,		/* USB3 UNI PHY pipe 1 */
-+		 <0>,				/* USB4 PHY 0 pcie pipe */
-+		 <0>,				/* USB4 PHY 0 Max pipe */
-+		 <0>,				/* USB4 PHY 1 pcie pipe */
-+		 <0>,				/* USB4 PHY 1 Max pipe */
-+		 <0>,				/* USB4 PHY 2 pcie */
-+		 <0>;				/* USB4 PHY 2 Max */
++
++&pcie3b_phy {
++	vdda-phy-supply = <&vreg_l3c_e1_0p89>;
++	vdda-pll-supply = <&vreg_l2c_e1_1p14>;
 +};
-+
- &hsc_noc {
- 	compatible = "qcom,mahua-hscnoc";
- };
-@@ -115,6 +163,10 @@ &oobm_ss_noc {
- 	compatible = "qcom,mahua-oobm-ss-noc", "qcom,glymur-oobm-ss-noc";
- };
- 
-+&pcie3b_port0 {
-+	phys = <&pcie3b_phy>;
-+};
-+
- &pcie_east_anoc {
- 	compatible = "qcom,mahua-pcie-east-anoc", "qcom,glymur-pcie-east-anoc";
- };
-@@ -134,6 +186,43 @@ &pcie_west_slv_noc {
- 	compatible = "qcom,mahua-pcie-west-slv-noc";
- };
- 
-+&soc {
-+	pcie3b_phy: phy@1b90000 {
-+		compatible = "qcom,glymur-qmp-gen5x4-pcie-phy";
-+		reg = <0x0 0x01b90000 0x0 0x10000>;
-+
-+		clocks = <&gcc GCC_PCIE_PHY_3B_AUX_CLK>,
-+			 <&gcc GCC_PCIE_3B_CFG_AHB_CLK>,
-+			 <&tcsr TCSR_PCIE_3_CLKREF_EN>,
-+			 <&gcc GCC_PCIE_3B_PHY_RCHNG_CLK>,
-+			 <&gcc GCC_PCIE_3B_PIPE_CLK>,
-+			 <&gcc GCC_PCIE_3B_PIPE_DIV2_CLK>;
-+		clock-names = "aux",
-+			      "cfg_ahb",
-+			      "ref",
-+			      "rchng",
-+			      "pipe",
-+			      "pipediv2";
-+
-+		resets = <&gcc GCC_PCIE_3B_PHY_BCR>,
-+			 <&gcc GCC_PCIE_3B_NOCSR_COM_PHY_BCR>;
-+		reset-names = "phy",
-+			      "phy_nocsr";
-+
-+		assigned-clocks = <&gcc GCC_PCIE_3B_PHY_RCHNG_CLK>;
-+		assigned-clock-rates = <100000000>;
-+
-+		power-domains = <&gcc GCC_PCIE_3B_PHY_GDSC>;
-+
-+		#clock-cells = <0>;
-+		clock-output-names = "pcie3b_pipe_clk";
-+
-+		#phy-cells = <0>;
-+
-+		status = "disabled";
-+	};
-+};
-+
- &system_noc {
- 	compatible = "qcom,mahua-system-noc", "qcom,glymur-system-noc";
- };
 
 -- 
 2.34.1
