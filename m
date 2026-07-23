@@ -4,54 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A765C531CB
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Jul 2026 11:31:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 782DDC531CB
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Jul 2026 11:49:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OgdMt4F10VPb3UlnYqBpUZ0pvTdL1IZxy8YHJtn2+ao=; b=Sju7EaIVz4s3RE
-	gk1aFERct94ncZHX5XEUjbE2IcuQDvTbCX04mJ0iwpdfuUPDft+7iejMSdVyLpR/TlrZflyS/GJKD
-	CHIdF+MwDe98xD3G+OY+IcHF73SsogY0qgikAGzGVn1njssNowblJgIm7xCSfMkfXKwTKybKHHacP
-	FQK51UAM7Q+YBrzuYa7Xac2AbVB7xmR4wCue9cRRMUPn5LUF3677xnuUGsuQru7bjCi1fvCQSRPIZ
-	2F6ZlrskX08wFjZpR+vb2CdZrhcju+VW/XS6PDBcHfY1UdS/IMc3hMQrU4eB+97QvrDaMuPtXboy9
-	PzCVWdSc6M64Z/9dzuOg==;
+	List-Owner; bh=5kUJJiwNXbW732UWJ87Cr898gIz7R9t6VTvfXyPk6so=; b=mTPRPQz4LYAKnv
+	+x2eRk8aWn+e52V/IjpV1TY1tsQknvlvca2zeVDiW7j4BTzYu3PdoSvZgYbAtl19qfl68GUreO148
+	aTePl5OaUKDO/tMqOe88EfVjZdZKJhff6DbXa1BlpwORGg2CuO6cU9AWzQMQGy2wKonX03WmXKm0I
+	RlJFLkxKkA7UFIyprBc6Wgb31inL5v/KOB0AOrrQOQMewL/UkvXLdCfpW3ZWW4Vn+CahxsXwVeD0c
+	dc5brGLeXFpyLzZbyfg5wJaq/4A1nCfE3shBolWXYpvpP+12fx3V/1aTIgE4M8KJmis3/PavbyFog
+	b+brRru9ryo8BZua6W9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmreR-0000000E9vt-3OuI;
-	Thu, 23 Jul 2026 11:31:43 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wmrvz-0000000EBiu-03Zo;
+	Thu, 23 Jul 2026 11:49:51 +0000
+Received: from mail-m2443.xmail.ntesmail.com ([45.195.24.43])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmreP-0000000E9vf-32Hs
-	for linux-phy@lists.infradead.org;
-	Thu, 23 Jul 2026 11:31:41 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id AD07A40334;
-	Thu, 23 Jul 2026 11:31:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1152C1F000E9;
-	Thu, 23 Jul 2026 11:31:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784806300;
-	bh=zTHmzbpmqcAkcVzqNFSrhGQW6IhnCGf+SrtuCSFJ24w=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=NhCTzTbIdxxXsQpPQuPUVm80tZmjDffm3qFZLd5uAt9RfWfTt5tEQxdk+M1+hS+RL
-	 C6Yr0IkKpYXBy2ZYutGT6/Fxr1JKEft7nCJULIMvASwCsYPe8v+/WK97XcsPOhAn0r
-	 unCrdtRgLT6RQGNaFtv0BqW3CdOxavmSWme2qkzTydhwaUvirlAC2WhOHOMhRdR5Sc
-	 Lt4BcEWp7h/rXw5i7T9hJlYzGcsHwk7mq7W/qq8/M4yL9G17Xf7IImQyIwZ7Y/cdNc
-	 QVBDT9cO0Vy60PSLV4ggM5kFBYvnfdaOW58Skj2NVDISB8iU1BWgaKmNKTsbjv8eDU
-	 HKJi4pLPYpsig==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v5 5/5] usb: dwc3: qcom: Modify interrupt handling for
- eUSB2 Phy targets
-To: "Krishna Kurapati" <krishna.kurapati@oss.qualcomm.com>
-Cc: linux-phy@lists.infradead.org, conor+dt@kernel.org, robh@kernel.org, devicetree@vger.kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
-In-Reply-To: <20260723-eusb2-int-handling-v5-v5-5-f32ea6c1a318@oss.qualcomm.com>
-References: <20260723-eusb2-int-handling-v5-v5-0-f32ea6c1a318@oss.qualcomm.com>
- <20260723-eusb2-int-handling-v5-v5-5-f32ea6c1a318@oss.qualcomm.com>
-Date: Thu, 23 Jul 2026 11:31:39 +0000
-Message-Id: <20260723113140.1152C1F000E9@smtp.kernel.org>
+	id 1wmrvu-0000000EBi2-3TZX;
+	Thu, 23 Jul 2026 11:49:49 +0000
+Received: from [172.16.12.77] (unknown [58.22.7.114])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 475247b2e;
+	Thu, 23 Jul 2026 19:49:32 +0800 (GMT+08:00)
+Message-ID: <676d0baa-98c9-417d-91b0-0a9cc07d464c@rock-chips.com>
+Date: Thu, 23 Jul 2026 19:49:31 +0800
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 2/8] phy: rockchip: samsung-hdptx: Prevent
+ divide-by-zero when computing clk rate
+To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+ Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>,
+ Dmitry Baryshkov <lumag@kernel.org>
+Cc: kernel@collabora.com, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Sashiko <sashiko-bot@kernel.org>
+References: <20260612-hdptx-clk-fixes-v4-0-ce5e1d456cda@collabora.com>
+ <20260612-hdptx-clk-fixes-v4-2-ce5e1d456cda@collabora.com>
+Content-Language: en-US
+From: Andy Yan <andy.yan@rock-chips.com>
+In-Reply-To: <20260612-hdptx-clk-fixes-v4-2-ce5e1d456cda@collabora.com>
+X-HM-Tid: 0a9f8ecf362e09d8kunm45c8aff254ee
+X-HM-MType: 1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFDSUNOT01LS0k3V1kYFggdWUFKV1ktWUFJV1kPCRoVCBIfWUFZQklCSlZCQ0wYGhlNQ0
+	0aHU9WFRQJFhoXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0
+	tIVUpLSEpKQkxVSktLVUpCS0tZBg++
+DKIM-Signature: a=rsa-sha256;
+	b=X7Xqdg4Z42g/5lfR4vXGT5Dsyta9ef9az6uvuMhqlSEQbK3gTo1+h3I4zkrT+oqH6A46NcXhx6IGPAMp0R3oum5vMv0bsX9+Jxsbg8Qx5quN6KWZoihEf98kRiqvNb3dxk4GeKR91yzYKLZa/4XQBp0U1Kx9KWDpGMfOhyOCMHE=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
+	bh=L1A7SLzIpbSpqM14bWF0t1CZA/db+dQzBITowvt1p1c=;
+	h=date:mime-version:subject:message-id:from;
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260723_044948_188202_D8ADB225 
+X-CRM114-Status: GOOD (  13.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,71 +71,62 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIFJlc291cmNlIGxlYWsg
-b24gZGV2bV9waHlfZ2V0KCkgZXJyb3IgcGF0aCBpbiBkd2MzX3Fjb21fcHJvYmUoKS4KLSBbSGln
-aF0gUHJvYmUgZmFpbHMgZHVlIHRvIHVuaGFuZGxlZCAtRU5PU1lTIHdoZW4gQ09ORklHX0dFTkVS
-SUNfUEhZIGlzIGRpc2FibGVkLgotIFtMb3ddIENvbW1lbnQgZGVzY3JpYmluZyBEUC9ETSBpbnRl
-cnJ1cHQgcG9sYXJpdHkgY29udHJhZGljdHMgbmV3IGVVU0IyIGxvZ2ljLgotLQoKLS0tIFBhdGNo
-IFs1XTogW1BBVENIIHY1IDUvNV0gdXNiOiBkd2MzOiBxY29tOiBNb2RpZnkgaW50ZXJydXB0IGhh
-bmRsaW5nIGZvciBlVVNCMiBQaHkgdGFyZ2V0cyAtLS0KY29tbWl0IGU3YWFjOGI2NTVkZTAzYjhl
-ODFiZmE3Mjc5MjI5NjA1MDBjYjlhZTMKQXV0aG9yOiBLcmlzaG5hIEt1cmFwYXRpIDxrcmlzaG5h
-Lmt1cmFwYXRpQG9zcy5xdWFsY29tbS5jb20+Cgp1c2I6IGR3YzM6IHFjb206IE1vZGlmeSBpbnRl
-cnJ1cHQgaGFuZGxpbmcgZm9yIGVVU0IyIFBoeSB0YXJnZXRzCgpUaGlzIGNvbW1pdCBtb2RpZmll
-cyB0aGUgaW50ZXJydXB0IGhhbmRsaW5nIGxvZ2ljIGluIHRoZSBEV0MzIFF1YWxjb21tCmRyaXZl
-ciB0byBzdXBwb3J0IGVVU0IyIFBIWSB0YXJnZXRzLiBJdCBxdWVyaWVzIHRoZSBQSFkgdHlwZSBk
-dXJpbmcKcHJvYmUgYW5kIGNvbmZpZ3VyZXMgcmVtb3RlIHdha2V1cCBpbnRlcnJ1cHQgcG9sYXJp
-dGllcyBiYXNlZCBvbiB0aGUKZVVTQjIgc3BlY2lmaWNhdGlvbiBmb3IgZGlmZmVyZW50IGRldmlj
-ZSBzcGVlZHMuCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3VzYi9kd2MzL2R3YzMtcWNvbS5jIGIv
-ZHJpdmVycy91c2IvZHdjMy9kd2MzLXFjb20uYwo+IGluZGV4IGY0M2Y3M2FjMzZmZjEuLjRjNTU5
-Yjk3YzYyNzYgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy91c2IvZHdjMy9kd2MzLXFjb20uYwo+ICsr
-KyBiL2RyaXZlcnMvdXNiL2R3YzMvZHdjMy1xY29tLmMKWyAuLi4gXQo+IEBAIC0yODksOCArMjk4
-LDEwIEBAIHN0YXRpYyB2b2lkIGR3YzNfcWNvbV9kaXNhYmxlX3BvcnRfaW50ZXJydXB0cyhzdHJ1
-Y3QgZHdjM19xY29tX3BvcnQgKnBvcnQpCj4gIAlkd2MzX3Fjb21fZGlzYWJsZV93YWtldXBfaXJx
-KHBvcnQtPnNzX3BoeV9pcnEpOwo+ICB9Cj4gIAo+IC1zdGF0aWMgdm9pZCBkd2MzX3Fjb21fZW5h
-YmxlX3BvcnRfaW50ZXJydXB0cyhzdHJ1Y3QgZHdjM19xY29tX3BvcnQgKnBvcnQpCj4gK3N0YXRp
-YyB2b2lkIGR3YzNfcWNvbV9lbmFibGVfcG9ydF9pbnRlcnJ1cHRzKHN0cnVjdCBkd2MzX3Fjb20g
-KnFjb20sIGludCBwb3J0X2luZGV4KQo+ICB7Cj4gKwlzdHJ1Y3QgZHdjM19xY29tX3BvcnQgKnBv
-cnQgPSAmcWNvbS0+cG9ydHNbcG9ydF9pbmRleF07Cj4gKwo+ICAJZHdjM19xY29tX2VuYWJsZV93
-YWtldXBfaXJxKHBvcnQtPnF1c2IyX3BoeV9pcnEsIDApOwo+ICAKPiAgCS8qCj4gQEAgLTMwMywx
-MiArMzE0LDIwIEBAIHN0YXRpYyB2b2lkIGR3YzNfcWNvbV9lbmFibGVfcG9ydF9pbnRlcnJ1cHRz
-KHN0cnVjdCBkd2MzX3Fjb21fcG9ydCAqcG9ydCkKPiAgCSAqLwoKW1NldmVyaXR5OiBMb3ddClRo
-aXMgaXNuJ3QgYSBidWcsIGJ1dCBkb2VzIHRoaXMgY29tbWVudCBibG9jayBuZWVkIHRvIGJlIHVw
-ZGF0ZWQ/ICBUaGUgbmV3bHkKYWRkZWQgZVVTQjIgbG9naWMgYmVsb3cgY29uZmlndXJlcyB0aGVz
-ZSBsaW5lcyBhcyByaXNpbmcgZWRnZSwgd2hpY2gKY29udHJhZGljdHMgdGhlIGJlaGF2aW9yIGRl
-c2NyaWJlZCBpbiB0aGlzIGNvbW1lbnQuCgo+ICAKPiAgCWlmIChwb3J0LT51c2IyX3NwZWVkID09
-IFVTQl9TUEVFRF9MT1cpIHsKPiAtCQlkd2MzX3Fjb21fZW5hYmxlX3dha2V1cF9pcnEocG9ydC0+
-ZG1faHNfcGh5X2lycSwKPiAtCQkJCQkgICAgSVJRX1RZUEVfRURHRV9GQUxMSU5HKTsKPiArCQlp
-ZiAocWNvbS0+aGFzX2V1c2IyX3BoeSkKPiArCQkJZHdjM19xY29tX2VuYWJsZV93YWtldXBfaXJx
-KHBvcnQtPmRwX2hzX3BoeV9pcnEsCj4gKwkJCQkJCSAgICBJUlFfVFlQRV9FREdFX1JJU0lORyk7
-ClsgLi4uIF0KPiBAQCAtNjgzLDYgKzcwMywxOSBAQCBzdGF0aWMgaW50IGR3YzNfcWNvbV9wcm9i
-ZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ICAJaWYgKGlnbm9yZV9waXBlX2NsaykK
-PiAgCQlkd2MzX3Fjb21fc2VsZWN0X3V0bWlfY2xrKHFjb20pOwo+ICAKPiArCWlmIChxY29tLT5u
-dW1fcG9ydHMgPT0gMSkKPiArCQlwaHkgPSBkZXZtX3BoeV9nZXQoZGV2LCAidXNiMi1waHkiKTsK
-PiArCWVsc2UKPiArCQlwaHkgPSBkZXZtX3BoeV9nZXQoZGV2LCAidXNiMi0wIik7Cj4gKwo+ICsJ
-aWYgKElTX0VSUihwaHkpKSB7Cj4gKwkJaWYgKFBUUl9FUlIocGh5KSAhPSAtRU5PREVWKQoKW1Nl
-dmVyaXR5OiBIaWdoXQpJZiB0aGUga2VybmVsIGlzIGNvbXBpbGVkIHdpdGhvdXQgQ09ORklHX0dF
-TkVSSUNfUEhZLCBkZXZtX3BoeV9nZXQoKSB3aWxsCnJldHVybiAtRU5PU1lTLiBTaW5jZSB0aGlz
-IGNoZWNrIG9ubHkgaWdub3JlcyAtRU5PREVWLCB3aWxsIHRoaXMgY2F1c2UgdGhlCnByb2JlIHRv
-IGZhaWwgZW50aXJlbHkgZm9yIGNvbmZpZ3VyYXRpb25zIHdpdGhvdXQgZ2VuZXJpYyBQSFkgc3Vw
-cG9ydD8KCj4gKwkJCXJldHVybiBkZXZfZXJyX3Byb2JlKGRldiwgUFRSX0VSUihwaHkpLAo+ICsJ
-CQkJCSAgICAgImZhaWxlZCB0byBnZXQgdXNiMiBwaHlcbiIpOwoKW1NldmVyaXR5OiBIaWdoXQpE
-b2VzIHRoaXMgcmV0dXJuIGRpcmVjdGx5IHdpdGhvdXQganVtcGluZyB0byB0aGUgY2xrX2Rpc2Fi
-bGUgZXJyb3IgbGFiZWw/CgpFYXJsaWVyIGluIGR3YzNfcWNvbV9wcm9iZSgpLCBjbGtfYnVsa19w
-cmVwYXJlX2VuYWJsZSgpIGlzIGNhbGxlZC4gIElmCmRldm1fcGh5X2dldCgpIGZhaWxzIHdpdGgg
-YW4gZXJyb3IgbGlrZSAtRVBST0JFX0RFRkVSLCB3aWxsIHRoaXMgbGVhayB0aGUKY2xvY2sgcHJl
-cGFyZSBhbmQgZW5hYmxlIGNvdW50cz8KCj4gKwkJcGh5ID0gTlVMTDsKPiArCX0KPiArCXFjb20t
-Pmhhc19ldXNiMl9waHkgPSBwaHkgJiYgKHBoeV9nZXRfdHlwZShwaHkpID09IFBIWV9UWVBFX0VV
-U0IyKTsKPiArCj4gIAlxY29tLT5tb2RlID0gdXNiX2dldF9kcl9tb2RlKGRldik7CgotLSAKU2Fz
-aGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYwNzIz
-LWV1c2IyLWludC1oYW5kbGluZy12NS12NS0wLWYzMmVhNmMxYTMxOEBvc3MucXVhbGNvbW0uY29t
-P3BhcnQ9NQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJh
-ZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtcGh5Cg==
+Hello,
+
+
+On 6/12/26 07:45, Cristian Ciocaltea wrote:
+> Calculating 'sdm' fraction in rk_hdptx_phy_clk_calc_rate_from_pll_cfg()
+> could trigger a divide-by-zero, as it uses div_u64() with a denominator
+> read directly from hardware: the values ropll_hw.sdm_deno,
+> ropll_hw.sdc_deno, ropll_hw.sdc_n, and ropll_hw.sdc_num are populated
+> from PLL registers which, in theory, could be left by the bootloader
+> uninitialized/misconfigured.
+> 
+> Provide the necessary sanitization to avoid trusting the hardware state.
+> 
+> Reported-by: Sashiko <sashiko-bot@kernel.org>
+> Closes: https://sashiko.dev/#/patchset/20260611-hdptx-clk-fixes-v3-0-67b1b0c00e16@collabora.com?part=1
+> Fixes: 3481fc04d969 ("phy: rockchip: samsung-hdptx: Compute clk rate from PLL config")
+> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+
+    Reviewed-by: Andy Yan <andy.yan@rock-chips.com>
+
+> ---
+>   drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 11 ++++++++---
+>   1 file changed, 8 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> index 710603afff86..8c044381b83a 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> @@ -2270,10 +2270,15 @@ static u64 rk_hdptx_phy_clk_calc_rate_from_pll_cfg(struct rk_hdptx_phy *hdptx)
+>   
+>   	fout = PLL_REF_CLK * ropll_hw.pms_mdiv;
+>   	if (ropll_hw.sdm_en) {
+> +		val = 16U * ropll_hw.sdm_deno *
+> +		      (ropll_hw.sdc_deno * ropll_hw.sdc_n - ropll_hw.sdc_num);
+> +		if (!val) {
+> +			dev_dbg(hdptx->dev, "%s invalid ROPLL hw state\n", __func__);
+> +			return 0;
+> +		}
+> +
+>   		sdm = div_u64(PLL_REF_CLK * ropll_hw.sdc_deno *
+> -			      ropll_hw.pms_mdiv * ropll_hw.sdm_num,
+> -			      16 * ropll_hw.sdm_deno *
+> -			      (ropll_hw.sdc_deno * ropll_hw.sdc_n - ropll_hw.sdc_num));
+> +			      ropll_hw.pms_mdiv * ropll_hw.sdm_num, val);
+>   
+>   		if (ropll_hw.sdm_num_sign)
+>   			fout = fout - sdm;
+> 
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
