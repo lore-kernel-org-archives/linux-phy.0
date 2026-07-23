@@ -4,76 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4F7BC4453D
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Jul 2026 02:03:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7BEA2C4453A
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Jul 2026 02:10:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id
-	:Date:Subject:From:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wZD/tvRFH9WUxsRyKXE5ndz1waVvW4FyIR/Py95uXJI=; b=pmFG25uStb5sOk
-	cPI4sJ8BrqwXmiFt7yxYblYesgD1YgFDB1nf6pur+pcQ9MkoQhmFz+3mezl5/WxWh5P4gsRaObTHM
-	em/0K+ar5CsEcFjDhiCFiXz66PRPxg94zQ8GX39u3mam7AoMpinjpdFYayBZ85CWqCIN+nQU71fM1
-	R5S+S4k40uhc9y2/I2vUnIyNQG2kouXAzts0/4Ir9XrZLgDuXcvl6FPH/Keots8VylhwE3knE2lNd
-	bPozHNgYqxi/V+kr3lL4iGWQP7n48QKUbMSmLo4LFUGXtZvoGTac1mpt0I1dN5zrgNf6isHsWbK3X
-	erAWLT5wqivSdH5J8tag==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:From:To:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3K8Clr5PIcatlUK5xfdDZ8YtMkBZ/0Q97NGmbEsPFd0=; b=tXXb+PzB240e8C
+	DpzgrsdBHHCopjfBPnKbRzc6cU02HqtB7eKmKGdIMD5gAl/8mMypj9Ic3tzBjoVrGejW4DcsC6oj9
+	jnbj3M/yRG5mXudHX19mp5CuF3WoGLCL75qvymCh+bzpYUsp+kbc4Icr8b0C7F7cI1mfCVZp54SYM
+	TEEqbmzqG2Dc4JiKXxkGjErscLjxYDoNCKaWHmFQ+zyycX5+ZYxa45YozZK2NMZJzHyXBBFKQnksW
+	KqGzYvGE+tfibe3qABMe4mDYqUN8hEMHgaN3EpG7U4pIrvRIx5Gp3Wnzj80h8LqAAbyWqB4gWvBAy
+	y6K/WupfeT7FQldsrSjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmimB-0000000DBXc-1sil;
-	Thu, 23 Jul 2026 02:03:07 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wmit2-0000000DC7i-10Yl;
+	Thu, 23 Jul 2026 02:10:12 +0000
+Received: from mail-24417.protonmail.ch ([109.224.244.17])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmim7-0000000DBWc-2KuG
+	id 1wmisz-0000000DC6f-3pxY
 	for linux-phy@lists.infradead.org;
-	Thu, 23 Jul 2026 02:03:03 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id B4CC7600AB;
-	Thu, 23 Jul 2026 02:03:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 5DE74C19425;
-	Thu, 23 Jul 2026 02:03:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1784772182;
-	bh=dsucI9dtuef998/sTfbGEFix5/XY1XUkRggnOrmadjM=;
-	h=From:Subject:Date:To:Cc:Reply-To:From;
-	b=iqZzQeSsHqqZoWAKvzdabH4HelGwmtu8tp544GkZohh+Tb/Fr9jyt/w7oXWgznhMS
-	 FaO9K85endEBCNK0ljsbzuk6nsbgskZ2T+5eUd1tJ4qgHHYxS/01KfgftC7uFkSMO7
-	 a1qkIWptpmuqbBxrFuo8Y9mSM3NdEMNYNCT8Oq3GxAQDsnvQW4BhhMehQLevs58BzR
-	 tiUte2jG7Ts0mUqvxzyJWe3nCZ6dDVlayP2s8lzFDGbEyZRUlxHVrH76jHamC+62No
-	 kPYp9SiAC1jZWoW+YEdvop5HQnRQx2bZcHABSQr6zsVg/d7digILxNz2gYO4Nup+0a
-	 Dt1H8guLQrLUQ==
-Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 2EC49C4453A;
-	Thu, 23 Jul 2026 02:03:02 +0000 (UTC)
-From: Esteban Urrutia via B4 Relay <devnull+esteuwu.proton.me@kernel.org>
-Subject: [PATCH v3 0/2] Initial QMP USB PHY support for SM8475
-Date: Wed, 22 Jul 2026 22:00:00 -0400
-Message-Id: <20260722-sm8475-bup-usbss-v3-0-0dd5da218ab2@proton.me>
+	Thu, 23 Jul 2026 02:10:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
+	s=protonmail; t=1784772604; x=1785031804;
+	bh=oVQd39UDoufgoPV9MVO4P+cpqxa0bAHqW7i0Rkg/YGU=;
+	h=Date:To:From:Cc:Subject:Message-ID:In-Reply-To:References:
+	 Feedback-ID:From:To:Cc:Date:Subject:Reply-To:Feedback-ID:
+	 Message-ID:BIMI-Selector;
+	b=Gou67e2JwKJubJOBbgNhPt9ddH9BdMnn3uAbU/yk7ErAmNFJruEKvDQwQihJIMRwb
+	 IVtVfAkB68ospeZqahuvcPj8724RU1lVU59jfhvVRtESjVYfuK/dBjgtyKnCsyr0lA
+	 JNQqeiN08tXEMTGoXeHHrskcUGb75HKPTOeejxvduf99u8Ct8iVyrMNJZ1C4GGklte
+	 23ubij355ipibb3WNpivu/9oK2XlE02nHj9Z48aRFRpV4uN7u83VD3Kjbt9cb9N0vK
+	 VqERUepy/ak0xgI2FH7mxZUW4zcDwDegmMaMkp4tkzpqDVM8NoI6uwFBQ4uWhyi1Vp
+	 KMkS8TVWiTyAw==
+Date: Thu, 23 Jul 2026 02:09:59 +0000
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>
+From: Esteban Urrutia <esteuwu@proton.me>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, phone-devel@vger.kernel.org
+Subject: Re: [PATCH v3 2/2] phy: qcom: qmp-combo: Add SM8475 support
+Message-ID: <9e85cb8f-fe99-442b-a516-46dee7f72a12@proton.me>
+In-Reply-To: <20260722-sm8475-bup-usbss-v3-2-0dd5da218ab2@proton.me>
+References: <20260722-sm8475-bup-usbss-v3-0-0dd5da218ab2@proton.me> <20260722-sm8475-bup-usbss-v3-2-0dd5da218ab2@proton.me>
+Feedback-ID: 147889766:user:proton
+X-Pm-Message-ID: dfdf654f40cd626fe20093bccce809bd06340ed4
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAAAAAAAC/22Pyw6CMBBFf4V0bQ0t5eXK/zAuLAxSEyh22kZD+
- HdbcEGiy5vce+bMTBCMAiSnZCYGvEKlxxCyQ0Ka/jbegao2ZMJTXqQlExSHSpQ5lW6iDiUihaL
- KRC3KrCuAhNlkoFOvFXm5bhmdfEBjIyc2eoVWm/d607PY+4v3jKZU8qpkErgU0Jwno60ejwOQC
- PZ8P81/zTwPAN5WLXRZLVmd7gHLpmbg6cLT9uu7LB+SBjj6EgEAAA==
-X-Change-ID: 20260714-sm8475-bup-usbss-e68349473f6e
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- phone-devel@vger.kernel.org, Esteban Urrutia <esteuwu@proton.me>, 
- Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1784772180; l=1558;
- i=esteuwu@proton.me; s=20260622; h=from:subject:message-id;
- bh=dsucI9dtuef998/sTfbGEFix5/XY1XUkRggnOrmadjM=;
- b=mcIU0Bs0PVZBUoZGz2VaKDCf5t4VqBIo8iVOjBc0LftaQCqJUlAM7QgMum7Qqe/jyKLVt4uwo
- +vQJpBEvY0cBNiUdgibWzw7EeS2Hq9tqFSkibDvRphp+oO4YYFok05R
-X-Developer-Key: i=esteuwu@proton.me; a=ed25519;
- pk=wToFt4mOAWkzbqb15Ye1hrhevI13vK9BcMUFiQ/me1M=
-X-Endpoint-Received: by B4 Relay for esteuwu@proton.me/20260622 with
- auth_id=835
-X-Original-From: Esteban Urrutia <esteuwu@proton.me>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260722_191010_587313_D1D14AE2 
+X-CRM114-Status: UNSURE (   7.24  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,53 +65,26 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: esteuwu@proton.me
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Based on the following patch:
-[1] https://lore.kernel.org/all/20260711-sm8450-qol-qmp-v2-2-d14353bd6ff4@proton.me/
+On 7/22/26 10:00 PM, Esteban Urrutia via B4 Relay wrote:
+> Some SoCs such as SAR2130P, SM7550, SM7635 and SM8475 use 4nm-v1 PLLs.
+> For SM8475, trying to use qmp_v6_dp_serdes_tbl structs (which are for
+> 4nm-v1.1 PLLs) causes link training to fail because of ref clock
+> differences, which in turn makes these structs differ.
+> Add structs for v1 PLLs as well.
+Taking a look at commit 545069bcf39e ("phy: qualcomm: qmp-combo: add support for SAR2130P")
+it would be great if someone could test these changes on a SAR2130P
+based device, since qcom,pll-version is also set to 4nm-v1 on this
+platform as can be seen in [1].
 
-This series adds support for the QMP USB PHY found in the SM8475 SoC.
-The initialization sequence varies noticeably when compared to the one
-used in the SM8450 SoC, hence the need to add support for this PHY.
+[1] https://github.com/LineageOS/android_kernel_qcom_sm8450-devicetrees/blob/lineage-20/qcom/display/display/neo-sde.dtsi#L69
 
-Signed-off-by: Esteban Urrutia <esteuwu@proton.me>
----
-Changes in v3:
-- Apply suggestions from Dmitry
-- Drop PLL version patch
-  - Explain the situation instead of renaming the structs
-- Link to v2: https://patch.msgid.link/20260715-sm8475-bup-usbss-v2-0-2d8def39b190@proton.me
-
-Changes in v2:
-- Split series in subseries (pcie, usbss)
-  - Sorry, it should have been like this from the start!
-- Add notice about base commit
-  - Reason why calibrate_dp_phy is not present
-- Modify referenced swing and pre-emphasis tables
-- Move v1 PLL tables to SM8475 support patch
-  - Warnings are generated at build time otherwise
-- Link to v1: https://patch.msgid.link/20260714-sm8475-bup-v1-0-b2871be2b4ec@proton.me
-
----
-Esteban Urrutia (2):
-      dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy: Add SM8475 QMP PHY
-      phy: qcom: qmp-combo: Add SM8475 support
-
- .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         |   1 +
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 169 +++++++++++++++++++++
- 2 files changed, 170 insertions(+)
----
-base-commit: 30b4a96d99ce8447f4589af6f7da35d4b43e0af6
-change-id: 20260714-sm8475-bup-usbss-e68349473f6e
-
-Best regards,
---  
-Esteban Urrutia <esteuwu@proton.me>
-
+Regards,
+Esteban
 
 
 -- 
