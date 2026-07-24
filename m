@@ -4,54 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63136C531F9
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Jul 2026 19:01:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC46CC531C9
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Jul 2026 20:34:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GTaAuRV2fRGOBIrLYeZzXt3yl0NjcLen1u6wY0JBj+0=; b=Bdgp1iCaLsKRwx
-	TjklFPw7rENece+OKMR1kOY/wk6/3oZ+fHeOubMv0Wtwwr5uNAwxpnq6vqL7ew9kr4Kq3FSfnHWXP
-	0u9CX/0JlysUHV0sa+917PnXtlZbU6HR+6xGRgqTaME+sUOrmiHvJn9nbZfTV2b36IGsR53en0gX2
-	fizFqa7K6EmhL+esV/vq5Rud9uJfebV8AJ7tlwK4Cu7PVSv9Cqji0ExUYxI/JfDQUuOF8LrimZgB4
-	ZQMVKzGWejX3Oy8RQK1zzlzSlpABAYvKK9Eoilrn0ftfmO1wE5udRbtx3u43Qn/Xjwz2KePayOAE6
-	R/AOjopVYQzVuTFkP4KA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=2RDjPJ/TOA8St4k61Qg7Y0e3zIZOWm0qw9SuINENVjU=; b=AeZRV4UUS4L1hEi272LWUsUXu7
+	HTVy1wmRRKEGaxfoGJtKpI1vsFNIzMDlCjNZhBWn1L8+GLmuQ4LMFpjAjfzXWpV2h5LpryC0GsZno
+	3U7/ihpoxw9zYxC1eU/m6zh9fu1Xg4M2oc0TnFstYTslmMyGo12lUUelZRzZKX9tCmo0YVxXJUhdW
+	nsJTeVJMEw1gwnz9Ef9kA4cDGv35BluCR3GP+PuO09rcmHwstrOtzQn8476rw3sf5IzCTk5hTNf01
+	fiULK2egpCz8t4+hi0rIqvYrlbXCALa3TmM7g9Y03ujyUfUn+3BHY2jNzc6Ezxy8Fl3s/isjV6TQd
+	vQ0ePvTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wnL9O-0000000H75w-1i13;
-	Fri, 24 Jul 2026 19:01:38 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wnMav-0000000HE4H-0kNR;
+	Fri, 24 Jul 2026 20:34:09 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wnL9M-0000000H75c-3KiF
-	for linux-phy@lists.infradead.org;
-	Fri, 24 Jul 2026 19:01:36 +0000
+	id 1wnMas-0000000HE2t-3UiL;
+	Fri, 24 Jul 2026 20:34:07 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 495EC4382B;
-	Fri, 24 Jul 2026 19:01:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B22051F000E9;
-	Fri, 24 Jul 2026 19:01:35 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 677B740938;
+	Fri, 24 Jul 2026 20:34:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EBD171F000E9;
+	Fri, 24 Jul 2026 20:34:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784919696;
-	bh=b/2fAmPzybAY+X6MbMbrFn/6g3tSWxJ53kcCCGeEU34=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=Im382gLmmjTwqpeViaLQR/Nb+E+w6w5zSHzoout8LChHLzDSSt0AT0GIfxo+iivhC
-	 Hv0FOBQ5UStPUiS4AeblA4zC+2pVfVx+AUVI5Htl5LF9dwslBGfVL7MYNfm3lWHAp5
-	 //55D1GPORi5V0Wl0lF69VjCnZI24h8ZSXsEuwLFicWOqiIbrTEz24VJjdbgj8F/Uj
-	 IhXmXmqj5Vc2imQZSeRDhCVqEXE5vHd6awYeELTItGqZNsjb4nbnOeP3hNQiXb+zcy
-	 iaVpBXigRn7TdLgYBfHpcy9iG+5IFJ6Taga3/zd0uRuif79fXrMHN5qhlz8gpsbxa2
-	 XPQqQ/iaGL5Gw==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v11 3/3] phy: airoha: Add support for Airoha AN7581 USB
- PHY
-To: "Christian Marangi" <ansuelsmth@gmail.com>
-Cc: conor+dt@kernel.org, devicetree@vger.kernel.org, vkoul@kernel.org, robh@kernel.org, olteanv@gmail.com, neil.armstrong@linaro.org, linux-phy@lists.infradead.org
-In-Reply-To: <20260724184523.193661-4-ansuelsmth@gmail.com>
+	s=k20260515; t=1784925243;
+	bh=OzE0BRt0k4cK2r7lKLDhy/lGjmtBWr3yCpJradIEDBI=;
+	h=Date:From:Cc:To:In-Reply-To:References:Subject;
+	b=QoRbqQB+cSEfc+gruKvWH71dqHXIKiEAVMUkrP4D6/k6KV7XiTA3ZIfAzZ+4yaDTH
+	 NxyJEDfssp/b55URyzKqR6wrSTDmOOYC8EmxzRAHLZiC7BK94wWKno5ihn0UZvuw4i
+	 BJ5A57Yskt4LWr35CX9FpEe8vhtRz0Vt3tUP0411YaBL7NpIZjA1/g2q8XBw2v/1Cf
+	 Y4b7VxlsUOKvnKFfW5EYGaXTDToXYDXrdpY3Fcipt6Ckl427BQYjq2qFfZ1YeN39a2
+	 SsUFbKgDTfe34N9iUR7EyMb0QjVkNDhvsjQ6nD3F0Eh4D32vjml44uZtoyUSFuj602
+	 evDru+Ew9eItg==
+Date: Fri, 24 Jul 2026 15:34:02 -0500
+MIME-Version: 1.0
+From: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, linux-phy@lists.infradead.org, 
+ Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+ Lorenzo Bianconi <lorenzo@kernel.org>, linux-kernel@vger.kernel.org
+To: Christian Marangi <ansuelsmth@gmail.com>
+In-Reply-To: <20260724184523.193661-2-ansuelsmth@gmail.com>
 References: <20260724184523.193661-1-ansuelsmth@gmail.com>
- <20260724184523.193661-4-ansuelsmth@gmail.com>
-Date: Fri, 24 Jul 2026 19:01:35 +0000
-Message-Id: <20260724190135.B22051F000E9@smtp.kernel.org>
+ <20260724184523.193661-2-ansuelsmth@gmail.com>
+Message-Id: <178492524234.1087066.16396953078954543669.robh@kernel.org>
+Subject: Re: [PATCH v11 1/3] dt-bindings: phy: Add documentation for Airoha
+ AN7581 USB PHY
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,112 +69,75 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-NCBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIE1pc3NpbmcgUEhZIElu
-aXRpYWxpemF0aW9uIGZvciBTZXJEZXMgUEhZIChBUEkgVmlvbGF0aW9uKQotIFtIaWdoXSBJbmNv
-cnJlY3QgUmVnaXN0ZXIgVXBkYXRlIHVzaW5nIHJlZ21hcF9zZXRfYml0cyB3aXRoIGEgbXVsdGkt
-Yml0IG1hc2sKLSBbTWVkaXVtXSBTZW1hbnRpYyBNaXNtYXRjaDogSGFyZGNvZGluZyBTZXJEZXMg
-UEhZIHRvIERFVklDRSBtb2RlIGlnbm9yZXMgSE9TVCBjb250cm9sbGVyIGNhcGFiaWxpdHkKLSBb
-TG93XSBNaXNzaW5nIEhlYWRlciBGaWxlcyBmb3IgQ29yZSBLZXJuZWwgQVBJcwotLQoKLS0tIFBh
-dGNoIFszXTogW1BBVENIIHYxMSAzLzNdIHBoeTogYWlyb2hhOiBBZGQgc3VwcG9ydCBmb3IgQWly
-b2hhIEFONzU4MSBVU0IgUEhZIC0tLQpjb21taXQgMjJiMWE1NWYwZGI4Y2Y0MjYxNDM3NWFhMTU4
-YjVmMjVhYzVmOTdkNgpBdXRob3I6IENocmlzdGlhbiBNYXJhbmdpIDxhbnN1ZWxzbXRoQGdtYWls
-LmNvbT4KU3ViamVjdDogcGh5OiBhaXJvaGE6IEFkZCBzdXBwb3J0IGZvciBBaXJvaGEgQU43NTgx
-IFVTQiBQSFkKClRoaXMgY29tbWl0IGFkZHMgc3VwcG9ydCBmb3IgdGhlIEFpcm9oYSBBTjc1ODEg
-VVNCIFBIWSBkcml2ZXIsIHdoaWNoIHN1cHBvcnRzCnVwIHRvIDIgVVNCIHBvcnRzLiBVU0IgMi4w
-IGlzIGFsd2F5cyBzdXBwb3J0ZWQsIHdoaWxlIFVTQiAzLjAgbW9kZSBpcyBvbmx5CmF2YWlsYWJs
-ZSBpZiB0aGUgU2VyZGVzIHBvcnQgaXMgY29ycmVjdGx5IGNvbmZpZ3VyZWQuIFRoZSBkcml2ZXIg
-aW5jbHVkZXMgc2xldwpyYXRlIGNhbGlicmF0aW9uIGxvZ2ljIHVzaW5nIGEgc2VsZWN0YWJsZSBt
-b25pdG9yIGNsb2NrLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvYWlyb2hhL3BoeS1hbjc1
-ODEtdXNiLmMgYi9kcml2ZXJzL3BoeS9haXJvaGEvcGh5LWFuNzU4MS11c2IuYwo+IG5ldyBmaWxl
-IG1vZGUgMTAwNjQ0Cj4gaW5kZXggMDAwMDAwMDAwMDAwMC4uOTJjNWU1YzJmYmYzYgo+IC0tLSAv
-ZGV2L251bGwKPiArKysgYi9kcml2ZXJzL3BoeS9haXJvaGEvcGh5LWFuNzU4MS11c2IuYwo+IEBA
-IC0wLDAgKzEsNTU5IEBACj4gKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBHUEwtMi4wCj4g
-Ky8qCj4gKyAqIEF1dGhvcjogQ2hyaXN0aWFuIE1hcmFuZ2kgPGFuc3VlbHNtdGhAZ21haWwuY29t
-Pgo+ICsgKi8KPiArCj4gKyNpbmNsdWRlIDxkdC1iaW5kaW5ncy9waHkvcGh5Lmg+Cj4gKyNpbmNs
-dWRlIDxkdC1iaW5kaW5ncy9zb2MvYWlyb2hhLHNjdS1zc3IuaD4KPiArI2luY2x1ZGUgPGxpbnV4
-L2JpdGZpZWxkLmg+Cj4gKyNpbmNsdWRlIDxsaW51eC9tYXRoLmg+Cj4gKyNpbmNsdWRlIDxsaW51
-eC9tb2R1bGUuaD4KPiArI2luY2x1ZGUgPGxpbnV4L21mZC9zeXNjb24uaD4KPiArI2luY2x1ZGUg
-PGxpbnV4L3BoeS9waHkuaD4KPiArI2luY2x1ZGUgPGxpbnV4L3BsYXRmb3JtX2RldmljZS5oPgo+
-ICsjaW5jbHVkZSA8bGludXgvcmVnbWFwLmg+CgpbU2V2ZXJpdHk6IExvd10KRG9lcyB0aGlzIGZp
-bGUgbmVlZCB0byBpbmNsdWRlIGxpbnV4L2RlbGF5LmggZm9yIHVzbGVlcF9yYW5nZSgpLCBsaW51
-eC9vZi5oCmZvciBvZl9wcm9wZXJ0eV9yZWFkX3UzMigpLCBhbmQgbGludXgvZXJyLmggZm9yIFBU
-Ul9FUlJfT1JfWkVSTygpIHRvIGF2b2lkCnBvdGVudGlhbCBidWlsZCBicmVha3Mgb24gb3RoZXIg
-YXJjaGl0ZWN0dXJlcyBpZiBpbXBsaWNpdCBpbmNsdXNpb25zIGNoYW5nZT8KClsgLi4uIF0KPiAr
-c3RhdGljIHZvaWQgYW43NTgxX3VzYl9waHlfdTNfaW5pdChzdHJ1Y3QgYW43NTgxX3VzYl9waHlf
-cHJpdiAqcHJpdikKPiArewpbIC4uLiBdCj4gKwlyZWdtYXBfdXBkYXRlX2JpdHMocHJpdi0+cmVn
-bWFwLCBBSVJPSEFfVVNCX1BIWV9VM19QSFlBX1JFRzAsCj4gKwkJCSAgIEFJUk9IQV9VU0JfUEhZ
-X1NTVVNCX0JHX0RJViwKPiArCQkJICAgQUlST0hBX1VTQl9QSFlfU1NVU0JfQkdfRElWXzQpOwo+
-ICsKPiArCXJlZ21hcF9zZXRfYml0cyhwcml2LT5yZWdtYXAsIEFJUk9IQV9VU0JfUEhZX1UzX1BI
-WUFfUkVHMSwKPiArCQkJRklFTERfUFJFUChBSVJPSEFfVVNCX1BIWV9TU1VTQl9YVEFMX1RPUF9S
-RVNFUlZFLCAweDYwMCkpOwoKW1NldmVyaXR5OiBIaWdoXQpJcyBpdCBpbnRlbnRpb25hbCB0byB1
-c2UgcmVnbWFwX3NldF9iaXRzKCkgaGVyZSB3aXRoIGEgbXVsdGktYml0IG1hc2s/ClRoaXMgcGVy
-Zm9ybXMgYSBsb2dpY2FsIE9SLCB3aGljaCBzZXRzIHRoZSBkZXNpcmVkIGJpdHMgYnV0IHdpbGwg
-bm90IGNsZWFyIGFueQpwcmUtZXhpc3RpbmcgYml0cyBpbiB0aGUgbWFzayBmcm9tIHRoZSBib290
-bG9hZGVyLiBTaG91bGQgdGhpcyBiZQpyZWdtYXBfdXBkYXRlX2JpdHMoKSBpbnN0ZWFkIHRvIGVu
-c3VyZSBhIGNsZWFuIHN0YXRlPwoKPiArCj4gKwlyZWdtYXBfdXBkYXRlX2JpdHMocHJpdi0+cmVn
-bWFwLCBBSVJPSEFfVVNCX1BIWV9VM19QSFlBX0RBX1JFRzE5LAo+ICsJCQkgICBBSVJPSEFfVVNC
-X1BIWV9TU1VTQl9QTExfU1NDX0RFTFRBMV9VMywKPiArCQkJICAgRklFTERfUFJFUChBSVJPSEFf
-VVNCX1BIWV9TU1VTQl9QTExfU1NDX0RFTFRBMV9VMywgMHg0MykpOwo+ICt9Cj4gKwo+ICtzdGF0
-aWMgaW50IGFuNzU4MV91c2JfcGh5X2luaXQoc3RydWN0IHBoeSAqcGh5KQo+ICt7Cj4gKwlzdHJ1
-Y3QgYW43NTgxX3VzYl9waHlfaW5zdGFuY2UgKmluc3RhbmNlID0gcGh5X2dldF9kcnZkYXRhKHBo
-eSk7Cj4gKwlzdHJ1Y3QgYW43NTgxX3VzYl9waHlfcHJpdiAqcHJpdiA9IGRldl9nZXRfZHJ2ZGF0
-YShwaHktPmRldi5wYXJlbnQpOwo+ICsJaW50IHJldDsKPiArCj4gKwlzd2l0Y2ggKGluc3RhbmNl
-LT50eXBlKSB7Cj4gKwljYXNlIFBIWV9UWVBFX1VTQjI6Cj4gKwkJYW43NTgxX3VzYl9waHlfdTJf
-aW5pdChwcml2KTsKPiArCQlicmVhazsKPiArCWNhc2UgUEhZX1RZUEVfVVNCMzoKPiArCQlyZXQg
-PSBwaHlfc2V0X21vZGUocHJpdi0+c2VyZGVzX3BoeSwgUEhZX01PREVfVVNCX0RFVklDRV9TUyk7
-CgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgY2FsbHMgcGh5X3NldF9tb2RlKCkgb24gcHJpdi0+c2Vy
-ZGVzX3BoeSwgYnV0IGRvZXMgdGhlIHVuZGVybHlpbmcKc2VyZGVzIFBIWSBoYXJkd2FyZSBldmVy
-IGdldCBpbml0aWFsaXplZD8gSXQgYXBwZWFycyBwaHlfaW5pdCgpIGlzIG1pc3NpbmcKYmVmb3Jl
-IHRoaXMgY2FsbCwgd2hpY2ggY291bGQgbGVhdmUgdGhlIHNlcmRlcyBQSFkgaW4gYW4gdW5pbml0
-aWFsaXplZCBzdGF0ZS4KCltTZXZlcml0eTogTWVkaXVtXQpBZGRpdGlvbmFsbHksIGlzIGl0IGNv
-cnJlY3QgdG8gaGFyZGNvZGUgdGhlIHNlcmRlcyBQSFkgbW9kZSB0bwpQSFlfTU9ERV9VU0JfREVW
-SUNFX1NTIGhlcmU/IFRoZSBjb21taXQgbWVzc2FnZSBtZW50aW9ucyB4SENJIHdoaWNoIGlzIGEg
-aG9zdApjb250cm9sbGVyLCBzbyBmb3JjaW5nIGRldmljZSBtb2RlIG1pZ2h0IGNhdXNlIGluaXRp
-YWxpemF0aW9uIGZhaWx1cmVzIGlmIHRoZQpzZXJkZXMgUEhZIGRyaXZlciBkaXN0aW5ndWlzaGVz
-IGJldHdlZW4gaG9zdCBhbmQgZGV2aWNlIG9wZXJhdGlvbmFsIG1vZGVzLgoKPiArCQlpZiAocmV0
-KQo+ICsJCQlyZXR1cm4gcmV0Owo+ICsKPiArCQlhbjc1ODFfdXNiX3BoeV91M19pbml0KHByaXYp
-Owo+ICsJCWJyZWFrOwo+ICsJZGVmYXVsdDoKPiArCQlyZXR1cm4gLUVJTlZBTDsKPiArCX0KPiAr
-Cj4gKwlyZXR1cm4gMDsKPiArfQpbIC4uLiBdCj4gK3N0YXRpYyBpbnQgYW43NTgxX3VzYl9waHlf
-cG93ZXJfb24oc3RydWN0IHBoeSAqcGh5KQo+ICt7Cj4gKwlzdHJ1Y3QgYW43NTgxX3VzYl9waHlf
-aW5zdGFuY2UgKmluc3RhbmNlID0gcGh5X2dldF9kcnZkYXRhKHBoeSk7Cj4gKwlzdHJ1Y3QgYW43
-NTgxX3VzYl9waHlfcHJpdiAqcHJpdiA9IGRldl9nZXRfZHJ2ZGF0YShwaHktPmRldi5wYXJlbnQp
-Owo+ICsKPiArCXN3aXRjaCAoaW5zdGFuY2UtPnR5cGUpIHsKPiArCWNhc2UgUEhZX1RZUEVfVVNC
-MjoKPiArCQlhbjc1ODFfdXNiX3BoeV91Ml9wb3dlcl9vbihwcml2KTsKPiArCQlicmVhazsKPiAr
-CWNhc2UgUEhZX1RZUEVfVVNCMzoKPiArCQlhbjc1ODFfdXNiX3BoeV91M19wb3dlcl9vbihwcml2
-KTsKCltTZXZlcml0eTogSGlnaF0KRG9lcyBwcml2LT5zZXJkZXNfcGh5IG5lZWQgdG8gYmUgcG93
-ZXJlZCBvbiBoZXJlIGFzIHdlbGw/IFRoZSB3cmFwcGVyCnBvd2VycyBvbiBpdHMgVVNCMyBpbnN0
-YW5jZSwgYnV0IGl0IGxvb2tzIGxpa2UgcGh5X3Bvd2VyX29uKHByaXYtPnNlcmRlc19waHkpCmlz
-IG5ldmVyIGNhbGxlZC4KCj4gKwkJYnJlYWs7Cj4gKwlkZWZhdWx0Ogo+ICsJCXJldHVybiAtRUlO
-VkFMOwo+ICsJfQo+ICsKPiArCXJldHVybiAwOwo+ICt9ClsgLi4uIF0KPiArc3RhdGljIGludCBh
-bjc1ODFfdXNiX3BoeV9zZXRfbW9kZShzdHJ1Y3QgcGh5ICpwaHksIGVudW0gcGh5X21vZGUgbW9k
-ZSwgaW50IHN1Ym1vZGUpCj4gK3sKPiArCXN0cnVjdCBhbjc1ODFfdXNiX3BoeV9pbnN0YW5jZSAq
-aW5zdGFuY2UgPSBwaHlfZ2V0X2RydmRhdGEocGh5KTsKPiArCXN0cnVjdCBhbjc1ODFfdXNiX3Bo
-eV9wcml2ICpwcml2ID0gZGV2X2dldF9kcnZkYXRhKHBoeS0+ZGV2LnBhcmVudCk7Cj4gKwo+ICsJ
-c3dpdGNoIChpbnN0YW5jZS0+dHlwZSkgewo+ICsJY2FzZSBQSFlfVFlQRV9VU0IyOgo+ICsJCXJl
-dHVybiBhbjc1ODFfdXNiX3BoeV91Ml9zZXRfbW9kZShwcml2LCBtb2RlKTsKPiArCWRlZmF1bHQ6
-Cj4gKwkJcmV0dXJuIDA7CgpbU2V2ZXJpdHk6IE1lZGl1bV0KRG9lcyB0aGlzIGNvZGUgc2lsZW50
-bHkgaWdub3JlIHRoZSBjb25zdW1lcidzIHJlcXVlc3RlZCBtb2RlIGZvcgpQSFlfVFlQRV9VU0Iz
-PyBTaW5jZSBhbjc1ODFfdXNiX3BoeV9pbml0KCkgZm9yY2VzIFBIWV9NT0RFX1VTQl9ERVZJQ0Vf
-U1MsCnNob3VsZCB0aGlzIGZ1bmN0aW9uIGhhbmRsZSBwcm9wYWdhdGluZyB0aGUgcmVxdWVzdGVk
-IG1vZGUgdG8gdGhlIHNlcmRlcyBQSFkKaW5zdGVhZCBvZiBoYXJkY29kaW5nIGl0IGR1cmluZyBp
-bml0aWFsaXphdGlvbj8KCj4gKwl9Cj4gK30KWyAuLi4gXQo+ICtzdGF0aWMgY29uc3Qgc3RydWN0
-IHBoeV9vcHMgYWlyb2hhX3BoeSA9IHsKPiArCS5pbml0CQk9IGFuNzU4MV91c2JfcGh5X2luaXQs
-Cj4gKwkucG93ZXJfb24JPSBhbjc1ODFfdXNiX3BoeV9wb3dlcl9vbiwKPiArCS5wb3dlcl9vZmYJ
-PSBhbjc1ODFfdXNiX3BoeV9wb3dlcl9vZmYsCj4gKwkuc2V0X21vZGUJPSBhbjc1ODFfdXNiX3Bo
-eV9zZXRfbW9kZSwKPiArCS5vd25lcgkJPSBUSElTX01PRFVMRSwKPiArfTsKCltTZXZlcml0eTog
-SGlnaF0KSXMgdGhlIC5leGl0IGNhbGxiYWNrIGludGVudGlvbmFsbHkgb21pdHRlZCBoZXJlPyBX
-aXRob3V0IGFuIC5leGl0IGhvb2ssCnRoZXJlIGRvZXNuJ3Qgc2VlbSB0byBiZSBhIHdheSB0byBj
-YWxsIHBoeV9leGl0KCkgb24gdGhlIHNlcmRlcyBQSFksIHdoaWNoCm1pZ2h0IGxlYWQgdG8gcmVz
-b3VyY2UgbGVha3Mgd2hlbiB0aGUgUEhZIGlzIHJlbGVhc2VkLgoKLS0gClNhc2hpa28gQUkgcmV2
-aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDcyNDE4NDUyMy4xOTM2
-NjEtMS1hbnN1ZWxzbXRoQGdtYWlsLmNvbT9wYXJ0PTMKCi0tIApsaW51eC1waHkgbWFpbGluZyBs
-aXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFk
-Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+
+On Fri, 24 Jul 2026 20:45:20 +0200, Christian Marangi wrote:
+> Add documentation for Airoha AN7581 USB PHY that describe the USB PHY
+> for the USB controller.
+> 
+> Airoha AN7581 SoC support a maximum of 2 USB port. The USB 2.0 mode is
+> always supported. The USB 3.0 mode is optional and depends on the Serdes
+> mode currently configured on the system for the relevant USB port.
+> 
+> To correctly calibrate, the USB 2.0 port require correct value in
+> "airoha,usb2-monitor-clk-sel" property. Both the 2 USB 2.0 port permit
+> selecting one of the 4 monitor clock for calibration (internal clock not
+> exposed to the system) but each port have only one of the 4 actually
+> connected in HW hence the correct value needs to be specified in DT
+> based on board and the physical port. Normally it's monitor clock 1 for
+> USB1 and monitor clock 2 for USB2.
+> 
+> To correctly setup the Serdes mode attached to the USB 3.0 mode, a phys
+> property is required with the phandle pointing to the correct Serdes port
+> provided by the SCU node. Providing the phys property is optional if USB
+> 3.0 is not used.
+> 
+> Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
+> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+> ---
+>  .../bindings/phy/airoha,an7581-usb-phy.yaml   | 62 +++++++++++++++++++
+>  MAINTAINERS                                   |  6 ++
+>  2 files changed, 68 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
+> 
+
+My bot found errors running 'make dt_binding_check' on your patch:
+
+yamllint warnings/errors:
+
+dtschema/dtc warnings/errors:
+Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.example.dts:18:18: fatal error: dt-bindings/soc/airoha,scu-ssr.h: No such file or directory
+   18 |         #include <dt-bindings/soc/airoha,scu-ssr.h>
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[2]: *** [scripts/Makefile.dtbs:140: Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.example.dtb] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [/builds/robherring/dt-review-ci/linux/Makefile:1705: dt_binding_check] Error 2
+make: *** [Makefile:248: __sub-make] Error 2
+
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.kernel.org/project/devicetree/patch/20260724184523.193661-2-ansuelsmth@gmail.com
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
