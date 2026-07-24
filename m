@@ -4,59 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 55F3EC531F9
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Jul 2026 06:08:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ACEE7C531FA
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Jul 2026 09:45:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eVb8r+KbSv9Jc2OZwS14MUYLKdvkrFxhdxL7Z0tPOI0=; b=O2BPeao5sLT5Hr
-	hQdF/+WLIRUA8FXNjnkww/jKB4ZwLnyWEZG8StX5C5baSK3WFEtThOTMlOa6A6jbydDok6wDnGk04
-	mOvFxnM+04YoSShArH72Eihvl5favPxm2sWslr4rgIUKbg6ffUJoceN4H7WAscHzjBnYatXJjsxGr
-	sXGC3eXsqUnmm85fzFxX0MVpSWOxHl4a8Rh7eFHyBu8kB/sgJ1bW8J4DFsDiGu/6M7OWzFhmLhodD
-	m2kIxFefFA1+RimDtrHL7lsDEPq/3Wsp98ozVwy2rRjA4lsb2AWXCfVf5cuMiBcRaCpdT1XbZowEw
-	bsSquMrILgwyjPJDWfuw==;
+	List-Owner; bh=zyA7rN7oEu4ytk4JXbf+Eawn2fLeK2fWrQKtY1/IKPA=; b=PMe0wCq8TZ9RXU
+	sr9m08Q700148qKhFTlR2zQs42tndUYlyr7dS+pYV7DvlUYNtJVJEeUuYkiqI7ECmfReikdvlKoBa
+	kiWL7pekATvJLJu/IJBt3J1QNjsk6NM9iNbJeb+Xw6Jbi/nlFsEOkYPcoftIihEpXTaCBdc9zxDoB
+	dYCj502wl97t7FpiwtFYfkHtJXZDNZC33A//aszjdUtCtWit3qK/n8l32Fr1Rcga8V0GT9LU/zeDu
+	6jAc9P4z/D4PJDX8YQGRQN3VN41pIQYVfvug2n5s45MzAPxdyoJ5MD/FSl2JfEpEjMPK9XvC4ml84
+	a845JH0K8HnMHQcQ6pQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wn95I-0000000FYY1-47kQ;
-	Fri, 24 Jul 2026 06:08:36 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wnCTX-0000000Fzsq-0UGk;
+	Fri, 24 Jul 2026 09:45:51 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wn95I-0000000FYXg-0qUC
-	for linux-phy@lists.infradead.org;
-	Fri, 24 Jul 2026 06:08:36 +0000
+	id 1wnCTV-0000000FzsM-2Vfo;
+	Fri, 24 Jul 2026 09:45:49 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 98F92416DB;
-	Fri, 24 Jul 2026 06:08:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5318A1F000E9;
-	Fri, 24 Jul 2026 06:08:33 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id C1E48600AA;
+	Fri, 24 Jul 2026 09:45:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7DA911F000E9;
+	Fri, 24 Jul 2026 09:45:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784873315;
-	bh=WQBrih1V2c7eezOy98taIHWz4vgMeqRiJE8rOtXizvI=;
+	s=k20260515; t=1784886348;
+	bh=7c7vhpEup6VOBqUns/9puAzJgpwqbpDNftz2EG8wb4E=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=h0RL2G8XBtqsbSo50KprKkOX7fjhiaNdGbsyy6itwGFVRc2Y7GQi4TtPE2uVxkXPf
-	 xNTgSKA1UlGKarX9cBCmsUBedM0hPNauqcgSgzmLfVmQbOTcSei714kibaFIPTpiHl
-	 9AY7QLx7fdhQuXH1okjFuE0zmEDjv5sosl09cSyYCl0MIeMENipTS0LJOhAwwVV/XQ
-	 6u8pBroeHipWkUL4MrtDxVhaWtEUtu7wUSLgUL8LEcQJkVW0wzwo4Y7BzH3z4RtKZv
-	 FreE8RLOM6oK/8NX1EobzlgIhc7ufQTXqnucdzb7ZkShKtPfq6cd0vyB49edSiM4sf
-	 2AQxw2bY9FaLw==
-Date: Fri, 24 Jul 2026 08:08:31 +0200
+	b=gmuDKJ7enNtUDQnzQgyDysKdjMH+51EhGpEr9b3ytIpOX17Xw30CpgWE49QGdlz32
+	 7L8Cqx4J6yGMDRZhmuVVjSm9mcURmnuw4RW4gttNiN8j/024TB9J/JKCSpL4jo2SY4
+	 GWakn7GXkvigsMzpkMysBY9JIgAjd+JQDV+a/brI6fgLo9OKBW8k1o/kBdwkzBRd4u
+	 8fOrVrXB9/CXAgqMccyk9PtI9DgnRC+oyxy4pAyagej6yJDuf04avvqL71bdfJEvx2
+	 +aib/ZDACXT5O6RPsmQgQH21DB3C9VzkmWDtysFxmWPWhqSJNbaYiQVgd/KbyVC3lZ
+	 Tohy/JYo6ej0Q==
+Date: Fri, 24 Jul 2026 11:45:44 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Mattijs Korpershoek <mkorpershoek@kernel.org>
+To: Jason Yang <jason98166@gmail.com>
 Cc: Vinod Koul <vkoul@kernel.org>, 
 	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
 	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Maxime Ripard <mripard@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 1/2] dt-bindings: phy: Add sa8255p USB PHY
-Message-ID: <20260724-satisfied-spiked-myna-eb63c6@quoll>
-References: <20260722-phy-qcom-qmp-usb-8255-v3-0-e789070b48f7@kernel.org>
- <20260722-phy-qcom-qmp-usb-8255-v3-1-e789070b48f7@kernel.org>
+	Heiko Stuebner <heiko@sntech.de>, Guochun Huang <hero.huang@rock-chips.com>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/4] dt-bindings: phy: rockchip,rk3588-mipi-dcphy:
+ support per-direction phys
+Message-ID: <20260724-incredible-colorful-trogon-9df033@quoll>
+References: <20260721-dcphy-rx-v1-v1-0-4fc83c0ccac9@gmail.com>
+ <20260721-dcphy-rx-v1-v1-1-4fc83c0ccac9@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260722-phy-qcom-qmp-usb-8255-v3-1-e789070b48f7@kernel.org>
+In-Reply-To: <20260721-dcphy-rx-v1-v1-1-4fc83c0ccac9@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,26 +74,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jul 22, 2026 at 03:45:44PM +0200, Mattijs Korpershoek wrote:
-> +  power-domain-names:
-> +    items:
-> +      - const: transfer
-> +      - const: core
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - "#phy-cells"
-> +  - power-domains
-> +  - power-domain-names
-> +
-> +unevaluatedProperties: false
+On Tue, Jul 21, 2026 at 06:35:19PM +0800, Jason Yang wrote:
+>    clocks:
+>      maxItems: 2
+> @@ -82,6 +92,6 @@ examples:
+>                   <&cru SRST_S_MIPI_DCPHY0>;
+>          reset-names = "m_phy", "apb", "grf", "s_phy";
+>          rockchip,grf = <&mipidcphy0_grf>;
+> -        #phy-cells = <1>;
+> +        #phy-cells = <2>;
+>        };
+>      };
+> diff --git a/include/dt-bindings/phy/phy-rockchip-samsung-dcphy.h b/include/dt-bindings/phy/phy-rockchip-samsung-dcphy.h
+> new file mode 100644
+> index 000000000000..60f6630f58b3
+> --- /dev/null
+> +++ b/include/dt-bindings/phy/phy-rockchip-samsung-dcphy.h
 
-This has to be additionalProperties: false.
-
-With this fixed:
-
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Filename must follow compatible or binding filename, so this is
+rockchip,rk3588-mipi-dcphy.h for example.
 
 Best regards,
 Krzysztof
