@@ -4,62 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 312D2C531F9
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Jul 2026 06:00:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 55F3EC531F9
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Jul 2026 06:08:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sfq86tTE9tlm28P6/cSi6zdtqFADSRcFQl5hqSHDnGk=; b=j9ZLM8s7EFi7Lt
-	NDTk83OSqox28oE9WaRRRC1Wd42aPhE/wTgYdjTTj5Pdr4pVsqBiAgZSxLV3AlX/cKuROTwBAYCAo
-	wD1aXQreMS5Y/MdHsDgGNpZuoFlXC7Tn3xZsnNZ2nhHFityR8dPLwSS0Ow5Pbedh82bXruuIH3dkL
-	/xM5a/mj+zVR5F9TgyRw6BRzfqtFc1Q5zIraxulv0BJfadVLAkYs015NH9zDv1/i9GKsDmfwDKZV0
-	sEKRO4GBL9lKLVrAdaBhcddkDmELtFBgl07xDV5Lyi8IFFrvYexNfMeOsHegO4qmWJXfBNKqN2MO9
-	j7DF3DB96Wt7SXXC8O7A==;
+	List-Owner; bh=eVb8r+KbSv9Jc2OZwS14MUYLKdvkrFxhdxL7Z0tPOI0=; b=O2BPeao5sLT5Hr
+	hQdF/+WLIRUA8FXNjnkww/jKB4ZwLnyWEZG8StX5C5baSK3WFEtThOTMlOa6A6jbydDok6wDnGk04
+	mOvFxnM+04YoSShArH72Eihvl5favPxm2sWslr4rgIUKbg6ffUJoceN4H7WAscHzjBnYatXJjsxGr
+	sXGC3eXsqUnmm85fzFxX0MVpSWOxHl4a8Rh7eFHyBu8kB/sgJ1bW8J4DFsDiGu/6M7OWzFhmLhodD
+	m2kIxFefFA1+RimDtrHL7lsDEPq/3Wsp98ozVwy2rRjA4lsb2AWXCfVf5cuMiBcRaCpdT1XbZowEw
+	bsSquMrILgwyjPJDWfuw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wn8xb-0000000FXnE-23YC;
-	Fri, 24 Jul 2026 06:00:39 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wn95I-0000000FYY1-47kQ;
+	Fri, 24 Jul 2026 06:08:36 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wn8xa-0000000FXmM-0vp0;
-	Fri, 24 Jul 2026 06:00:38 +0000
+	id 1wn95I-0000000FYXg-0qUC
+	for linux-phy@lists.infradead.org;
+	Fri, 24 Jul 2026 06:08:36 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 305EC600AA;
-	Fri, 24 Jul 2026 06:00:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1C3A41F00A3A;
-	Fri, 24 Jul 2026 06:00:35 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 98F92416DB;
+	Fri, 24 Jul 2026 06:08:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5318A1F000E9;
+	Fri, 24 Jul 2026 06:08:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784872836;
-	bh=6rzPW0CUckbkrF39Ekx9Pi0vtsbA5yjRkuFGFKuxzek=;
+	s=k20260515; t=1784873315;
+	bh=WQBrih1V2c7eezOy98taIHWz4vgMeqRiJE8rOtXizvI=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=SJ4S4muwxAjPqwN3bl5N3K9mlPX5ztOTcDpunS2J0kEzqUWBG0SS0UtzJGOf3bANn
-	 eyjQumooGnJtkNw7HW5mNwxNfaSN2DrMHU6EsxiTgVBmth+jxT8ol2i6DKRgn7/U74
-	 Nuahy8UsYiCHf6Q64qJ9zhYtA52xoHHWUsxCK3MLlJno1ItjqbmY+TCJcBBrMBDxUd
-	 hXvZtusw1l6p0s4FNmOkI9g/ZRaxyWOo4Y+Gqjkb4QVp6Q7Wuf6+SS8hXgs2MifcgY
-	 Jbx3MMJW0lKXITrAnkxqY6kgN8eUoXfd59iGo3vhR6P/zMHkPXnE1pCy1IyI02D2Xv
-	 C1TfCVVca16sw==
-Date: Fri, 24 Jul 2026 11:30:32 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Tanjeff Moos <tanjeff.moos@westermo.com>,
-	"Christophe Leroy (CS GROUP)" <chleroy@kernel.org>,
-	Michael Walle <mwalle@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
-	Frank Li <Frank.Li@nxp.com>, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v4 phy-next 9/9] phy: lynx-10g: use RCW override
- procedure for dynamic protocol change
-Message-ID: <amL_gPKbD0BQG10S@vaman>
-References: <20260721231603.67865-1-vladimir.oltean@nxp.com>
- <20260721231603.67865-10-vladimir.oltean@nxp.com>
+	b=h0RL2G8XBtqsbSo50KprKkOX7fjhiaNdGbsyy6itwGFVRc2Y7GQi4TtPE2uVxkXPf
+	 xNTgSKA1UlGKarX9cBCmsUBedM0hPNauqcgSgzmLfVmQbOTcSei714kibaFIPTpiHl
+	 9AY7QLx7fdhQuXH1okjFuE0zmEDjv5sosl09cSyYCl0MIeMENipTS0LJOhAwwVV/XQ
+	 6u8pBroeHipWkUL4MrtDxVhaWtEUtu7wUSLgUL8LEcQJkVW0wzwo4Y7BzH3z4RtKZv
+	 FreE8RLOM6oK/8NX1EobzlgIhc7ufQTXqnucdzb7ZkShKtPfq6cd0vyB49edSiM4sf
+	 2AQxw2bY9FaLw==
+Date: Fri, 24 Jul 2026 08:08:31 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Mattijs Korpershoek <mkorpershoek@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Maxime Ripard <mripard@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v3 1/2] dt-bindings: phy: Add sa8255p USB PHY
+Message-ID: <20260724-satisfied-spiked-myna-eb63c6@quoll>
+References: <20260722-phy-qcom-qmp-usb-8255-v3-0-e789070b48f7@kernel.org>
+ <20260722-phy-qcom-qmp-usb-8255-v3-1-e789070b48f7@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260721231603.67865-10-vladimir.oltean@nxp.com>
+In-Reply-To: <20260722-phy-qcom-qmp-usb-8255-v3-1-e789070b48f7@kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,18 +73,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22-07-26, 02:16, Vladimir Oltean wrote:
-> Up until this patch, the only protocol change supported was between
-> 1000Base-X/SGMII and 2500Base-X. The others require an RCW override
-> procedure which was lacking.
-> 
-> Since now the guts driver provides the means of applying this procedure,
-> make use of it and remove any comment which mentioned the limitation.
+On Wed, Jul 22, 2026 at 03:45:44PM +0200, Mattijs Korpershoek wrote:
+> +  power-domain-names:
+> +    items:
+> +      - const: transfer
+> +      - const: core
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - "#phy-cells"
+> +  - power-domains
+> +  - power-domain-names
+> +
+> +unevaluatedProperties: false
 
-Acked-by: Vinod Koul <vkoul@kernel.org>
+This has to be additionalProperties: false.
 
--- 
-~Vinod
+With this fixed:
+
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
