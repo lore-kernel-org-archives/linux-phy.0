@@ -4,140 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1B67EC531FA
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Jul 2026 15:26:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35D0AC531F9
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Jul 2026 18:45:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=caMurVGSrH+CKhLTked/+AB4Dl3/h3O/BcMNIgZKuk4=; b=YLMEA5s6mp9Fu1
-	3kQyCkomEzgk40WmwZ/OmH9PqYoh1fJCSc3XybcCWy+qhYnSHiZarjqOLeSANlwHHkbU6+TjJA8tF
-	pYP9seEDeoMPlmovF1n6OtNnDI/qiP/gcHHoUOvt2rSoDRUSJp58lR3PsSXS36xOwtOxbpa67TkVf
-	rPiwhjMPm3R8rS5Y5yDcggjnhiyL+8/kPqqGQsBbrMad/dvCIEEXj83fQRIgB5kStPBRUnYa3qi1r
-	OiccGeFooZnWrxNFQXXjaPBfuDQG89Umzzk/fJUxo6zf6tiT/5myThecdn1FTUjLYaPCfHVpCj14M
-	Pt9uHdRkQ6x3KhCIjYcA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=6uN1YzWnN08YAPWp4i4EalApo7PaOYI8Oz6JusPPyHA=; b=ZD2cXJuWZrKz+G
+	D7RLxAPD4FTp3IkTIzLi+jITSHbAuDUYzFT455OJiCAP2ZdEGwzqDoVYS79mz6NfCbympub24qfbG
+	Ig+cQqDnh3/+0yDyCW8dstys0mMNWZkf+e1N0Sn8b6+BOl9RzrrD04ofGnk6paRTNnjMam3H3/Vx1
+	qZsIYIIrrEtDPDXg/kUMLE/t7vQL2MaF3dECS0zwO5yLahjuGoS7cww7/KAqcngyiAs3tpOJNxwY2
+	o+mxlNPqjXg1hbb6yeKhYcJx0QfcsbMelEelGLOjLtzZswVBOUT23phE+U+8g7LR/LlzfSrVXgijj
+	GfsPQxG/5QPEnoyQ63RA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wnHn5-0000000GhhG-1Wvt;
-	Fri, 24 Jul 2026 15:26:23 +0000
-Received: from mail-japaneastazlp170100000.outbound.protection.outlook.com ([2a01:111:f403:c405::] helo=TY3P286CU002.outbound.protection.outlook.com)
+	id 1wnKtu-0000000H5Nt-2uOF;
+	Fri, 24 Jul 2026 18:45:38 +0000
+Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wnHmy-0000000Ghaq-21eo
+	id 1wnKts-0000000H5M7-0Tij
 	for linux-phy@lists.infradead.org;
-	Fri, 24 Jul 2026 15:26:18 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=JOYWtjp+jJlt4BvDe+kTrzUeYjvTiPL7KnQTeWKEiJB8GMTkeRyhDGxvbz2FnA7G+bY02MvmTSLFHt+OnnFIHqoG1E2AgB6rVB891yyX2nin3aeZRC2cGd2xBTAYkCByBJHk29GY7UWe7V23eYoAxpsbmqdoZnos8f99/RzlQLTcpILbZAP4+CkFBUIiiWSWS1ZhsDLX95tzC6dQYUxXdSbRf6PM/tcYWqAF8uELlYRfuFVME5PcaprqwaIfNAYy/DjAT4wjTeuX1sppCJV3oSqwWK1CLP8y9qYUoA1jpujJmnkCk/NwPu2vPP+MZEhxKTLEiz5Pm13Es5rHNXzrag==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=acxgN6MmaigVkpF8PkUnG4vjA+SwsGFRzA2jDWSu1fs=;
- b=WD29lb/1JycoebsrcTYgbag3X1JUDdWeWt+plM2DRyQt+YwWkc2jZ9DeWgfshgktgVRU7UxYyou20kcPSZSNP1zp9Xcw+nmhqqaLFUjgqDCL2828kLiEsMJu7I4WIaGsymHQkUtiAAbEPbNh1lJT3ykoz1MrNC2MUhnnYWXiBZS6yBiQXzoVZoVGMGx3s2uHFT1SJj/mbqw2Tw81G4jpe6PDUJYMiawn/1qMT5QTnmjC1S1+PMQgOyHiWYJ0M57s9ZibbpU5v+JFjprXXb49EJJbS+5K+wGsD3+wF+gyZkfPHafx6FuurIl05YBhEt22xrFxfZRBp2h/VaY6JNDHIA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=acxgN6MmaigVkpF8PkUnG4vjA+SwsGFRzA2jDWSu1fs=;
- b=QGqUadbnbX2Jhhoit2DA7Abg0Rkjlr0GMqahl1JUZ6dBNRONzcEramkfH/8OHiz7m3DTbcClOe9zRvzRDFwXB6zYsktbfJa2CdPnC32D3tRov79wXBmk89wh/KrKNoZKIJALCF970bYhIVjwk1mcHE2gv2O51RrMyxDs18cUPmg=
-Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com (2603:1096:400:3d0::7)
- by OS7PR01MB18410.jpnprd01.prod.outlook.com (2603:1096:604:4c2::23) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.245.12; Fri, 24 Jul
- 2026 15:26:09 +0000
-Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com
- ([fe80::87d1:4928:d55:97de]) by TY3PR01MB11346.jpnprd01.prod.outlook.com
- ([fe80::87d1:4928:d55:97de%4]) with mapi id 15.21.0245.012; Fri, 24 Jul 2026
- 15:26:09 +0000
-From: Biju Das <biju.das.jz@bp.renesas.com>
-To: Biju Das <biju.das.jz@bp.renesas.com>, biju.das.au
-	<biju.das.au@gmail.com>, Philipp Zabel <p.zabel@pengutronix.de>, Vinod Koul
-	<vkoul@kernel.org>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
-	<krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Geert Uytterhoeven
-	<geert+renesas@glider.be>, Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>, Mark
- Brown <broonie@kernel.org>, magnus.damm <magnus.damm@gmail.com>, Bartosz
- Golaszewski <brgl@kernel.org>
-CC: Neil Armstrong <neil.armstrong@linaro.org>, Yoshihiro Shimoda
-	<yoshihiro.shimoda.uh@renesas.com>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "devicetree@vger.kernel.org"
-	<devicetree@vger.kernel.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "linux-clk@vger.kernel.org"
-	<linux-clk@vger.kernel.org>, "linux-renesas-soc@vger.kernel.org"
-	<linux-renesas-soc@vger.kernel.org>, Prabhakar Mahadev Lad
-	<prabhakar.mahadev-lad.rj@bp.renesas.com>, biju.das.au
-	<biju.das.au@gmail.com>
-Subject: RE: [PATCH v4 0/9] Add RZ/G3L USB2.0 host support
-Thread-Topic: [PATCH v4 0/9] Add RZ/G3L USB2.0 host support
-Thread-Index: AQHdD31PanBotJGjU0WhwiGgIXx1z7Z5/a6QgALhSkA=
-Date: Fri, 24 Jul 2026 15:26:08 +0000
-Message-ID: <TY3PR01MB11346FA21EFADC8A3D53D81BE86CF2@TY3PR01MB11346.jpnprd01.prod.outlook.com>
-References: <20260709083108.108370-1-biju.das.jz@bp.renesas.com>
- <TY3PR01MB1134672A4A05BBD95782F70C486C12@TY3PR01MB11346.jpnprd01.prod.outlook.com>
-In-Reply-To: <TY3PR01MB1134672A4A05BBD95782F70C486C12@TY3PR01MB11346.jpnprd01.prod.outlook.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=bp.renesas.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: TY3PR01MB11346:EE_|OS7PR01MB18410:EE_
-x-ms-office365-filtering-correlation-id: 314e7d11-20d1-4e2a-8930-08dee997e2ee
-x-ld-processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|23010399003|7416014|376014|1800799024|366016|11063799006|56012099006|4143699003|10067099003|3023799007|22082099003|18002099003|921020|38070700021;
-x-microsoft-antispam-message-info: htgUL8jAsPuCINQYtW1hHUGw/HNOXOUg2zjiJBjc7kxRl57zsjJKPkCKp+B0O6Mc+aZlrmjcum2IxGgROVzldn7O/qiVUh3K8TORs/613FbZv/AACaoQcyk3+FyRq8RI+fG6DgLtFJi17LjMrOJmIt/kg8JRJNDhbowuYJFo2kqxsIW4P8Bove368tDbdGtIR4xMNWWsP/qJI9DREBxBYfeHH7fSNHmjSWUCz4z0GpxoYjpMhkPX4btbRWJjEeLRe6tLNtGb1RKL+OWD5R4EMikuhd2L85FK/tFbBA4/mUPuhK9pyzzlxDR8XnJJ/kFGf2ahwx91JmYKQvykQJYVh3xKsoPpgrBVwUPtOIMO2+iNQaulm+nGkZXlFmHgO2EiChWHD5D7yfFuGqWZFeSwArhjAKXHanBLjpT+F0YkSKRkijAGK7wR7BnCMjE6bRLWrgZv1+5n6S2QH7hF/mGBLUnorfxc3t43xJWKotSAC57/sJ8MGSFtTlG9LcCKBiOeQs9uaEKnMqAl3X2VwA8PBicHG5TDb4GAcj6bUtGoQ06A7WxW6ZoXlGY6byrKiijtzp8ZhP2TCawFlSL0zGZlfPYN3CzEXTz3MFW00gEozzUotC9fn59xYv97emaXLaWM0ybzhFpWlJgZ9hwSzen7Vj1G8v1xm8VGEsLLkUUmu+Pn5Tszr3xY+0M8ywvomtWR
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY3PR01MB11346.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(7416014)(376014)(1800799024)(366016)(11063799006)(56012099006)(4143699003)(10067099003)(3023799007)(22082099003)(18002099003)(921020)(38070700021);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?2UGrnqWsnbqg7BTndEOOYRtkDfJfyA+hOKaRHWGFUOD0t6N9VdEa3sTW6jjW?=
- =?us-ascii?Q?JUxQ2Cf4IVNufWItTwHJi/yXH+PMS/uq/hARFJctj3jsBzyoLTwqIiQd6quh?=
- =?us-ascii?Q?kuDJyhTeOEhj8dY02jBVcV7wrzlpKtCLlnNu63wVW1B/GHHqGmEVl4zAz435?=
- =?us-ascii?Q?HnnNZuSYkiFyJN4MroxtMc0y0MCYbUGSsim1oNdiQmkbrV8jSXSDhirtqFKA?=
- =?us-ascii?Q?imI6hKT/O+CdkJzFh5gAliY42hv+MH+LmBh97O01q4Yh8Y88f4Oyh9EnLYJs?=
- =?us-ascii?Q?bN0+okG3vFkWpQ8pLjISO4a9e+I2Vx/E6wJSR8LLtAtez59cT3URc4ZzDJdG?=
- =?us-ascii?Q?IiS4oxb6QGMREYeDqfyuJtTS86bCnfkxpQ2LfBzNH4l0z1ZhBFL/V+P/wtC2?=
- =?us-ascii?Q?pfo0oi/T7HTpboS9XK3mFAW2RDzr9+JflUEgPnsJMFl5vd/FTAQn4DkRnBw+?=
- =?us-ascii?Q?34B2u/raVrGgzpSa3Pp/uipwEDxxPrmEt0Lg7I+6oLvRTlcI9Zgt5UCrzX7Y?=
- =?us-ascii?Q?ROVOyiH3+z5xB+bcvnIIr846nCzkONuQKANZsvwCCDAc6oIAo4Mhln9IVYx6?=
- =?us-ascii?Q?BWiFNgmG+3y6sRabsLqn0bAQADI6D5H0i9h+aQcm4eEIXMUwKkPma45sk/kh?=
- =?us-ascii?Q?1oxhQBKvisqDBU4x+f2S9oQX4DfRjYXiSO7T8sYGHSnmDnicowHGgBATWGX7?=
- =?us-ascii?Q?+a+3DGBm/egBJq87nKAHUwXltHlkCLkIQCsW9Sk7F8k2vJDZ6Md3zQ3C4s0q?=
- =?us-ascii?Q?SDHQB6VmpyiqO6amZr7yyC6vp7VsndzFPDU/tNmg7fM58nyWig4kwggWJdE4?=
- =?us-ascii?Q?iUGeBvRpMSS5KAc1GloJ3pOGf0idD/Kn/oMyxaHDXs6FMrje1o6+4JIEMuTA?=
- =?us-ascii?Q?8nYT5D8ZzLdDpU2mSGWgccbiqHu4q6yt3QALM7ix5KDPworv3i+QibeHfaG2?=
- =?us-ascii?Q?pa8+kOFXq2rDUXymJTcgSiyZ/L41eHQVjfV85PB0wZubWnmzwtzoqt7nomZ9?=
- =?us-ascii?Q?xTX8v3m19GvvI2sM4bRHWfyywVJf3OmuIXFYTJn4/yim7LtVT63BCrdlY6eR?=
- =?us-ascii?Q?bruo/TrzrFE8wTGE7Yf6cZicVrUZV5LZD9a/SE8/DAn+vjva1ajdF1oIJLU8?=
- =?us-ascii?Q?/6Eue33eHezb4HFBRmYn8Vkwqvhs4aY4a902ZX6xEFJGqiUry9BzZjPi74x0?=
- =?us-ascii?Q?zmcLw6cunc5yZF6IbvyphR1yayQAizxw6kpMysmaMPywwB3WQonpnf+yL09l?=
- =?us-ascii?Q?z5oT9W8dtU8Gg2OixL59vaP+KBJJNTCg28uNEgY83z9sG9+WVpxivxEZi30c?=
- =?us-ascii?Q?7weqrIivxI4/i4F+QgRwbYANXqeBicBwy8RXfoRsit/W3NSrFQY6qFnh/nh2?=
- =?us-ascii?Q?p3G35/VTBMXMm0S9xHNeNo2voHgUoSrNOb4fvVLVA6QeqcB3gFFmvrvzuzRQ?=
- =?us-ascii?Q?z83EzF0r9C87Ns2xDZQcj4w2Q+7vQUJekOMO/2xo1iSayLkKQJH/kFcPBZvR?=
- =?us-ascii?Q?5ih3rR+iWXEal/lUGNHtI8aog5aCd3sSjyjlGmadi5bV7iOv5mavtbp7g1WH?=
- =?us-ascii?Q?frTXXdFAnI+aVUlmYlefCBaFuzyJte7S3n7XBcRvBBUeH84eQjPfhFz8eViQ?=
- =?us-ascii?Q?UJzG9wHmDOcNBHiuehaWaY8yfDLPLT7OWU7EsCY4V5+h+riwL4HqfCSaX7F2?=
- =?us-ascii?Q?WJn6wqIT/kFbtFAAF3MxkFqw91jSc7tl6ywkcmUv5l80S/+eJh1mauPHKgc4?=
- =?us-ascii?Q?M3BrYnvLyQ=3D=3D?=
+	Fri, 24 Jul 2026 18:45:37 +0000
+Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-490cf322ed0so5930225e9.1
+        for <linux-phy@lists.infradead.org>; Fri, 24 Jul 2026 11:45:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1784918734; x=1785523534; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:to
+         :from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=txtxniZ+9ec8EBGpFntrCaDEilaRw0NUEsRkxlT+KQE=;
+        b=FipDjnn33qD/qtRQ3Z6L6MlmzeOy4GTg6+HJ5HTdt1EjkFjSnUSlm/Sc5QVSsGHFiK
+         xcq/dSEGlwOcsJgypS9E2W5Ym+4LobD4OFZkqTYpJfkEVY8O9+tN9UYT0E9ikjM40rJi
+         1R+TsiIIeMhwtDkxSAwzRl0bJ8AgE64HjlBrAUHWqXUtGNaV/bixHqvqZp95RYXITlbu
+         MQoDeAtUv+dIBUYrc9xhShsYNAH2ujIO+VZPuQD0y/vppxZ/MlZBsHt6J4qI/1EU1UGG
+         cZ7uwPWHqtC+juKUBW10YlDB+VJpF2GRRp1oLAbUCezKUA5fIJi0C0gLblEhVNXE8tfY
+         xm/Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1784918734; x=1785523534;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:to
+         :from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=txtxniZ+9ec8EBGpFntrCaDEilaRw0NUEsRkxlT+KQE=;
+        b=jJYYBjSC+W6WTHug4639uxrNY4WwAKvOwxEcQpbChDP4PTnSOaa5HdXCw0rdgVq1Tq
+         xcmHv22Xbm0Eb2ApkI/YP0ssbPzrKT5CeyzAl45iT7ZyaEZA7dokNMxFn9DFSenTU2+Y
+         3T537iG6q5ws5RHsJGkJVdnw5ujDBLqRjuNirUzlLIP1ZsRN/+HWAiGVRuF+F6oN3K8z
+         NGK1k4O3gNEBfyE79evoI7qgrn7iI35bPQFL5LCV1FmQgZR0xzkQ/eCwGD8ARIIcI/yz
+         bSXoptwlEFu+zTGUjY19b1gYRuRDWz2tZ4EhCfA4hvs57iurOksClJO/X2zbuJrnjgRr
+         9j6A==
+X-Forwarded-Encrypted: i=1; AHgh+RoiUn20ktpq0spRznu4qSExpNu/DvkppqdjcznO7zyz5dXUhM6ALS6HUuppL+Qjz0JYABaTPGw9o84=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yxuh8QhpyXkpM34Ck4jbs/jR71FMUIffeKfKcPo66JD28/p7mLa
+	CVbFwOhAzftdNCp9QtJEYpwg5Dd586VOzqrG0wjEJma35XR8pntruRcg
+X-Gm-Gg: AR+sD10atygE7yRgeISTJhpvHBDAj/kMf5f2ZKFPKVMa+2a8vKsqChhwFR6j1vBZz1w
+	e7rdLuk2gWyRLQ1Y39Pn+pide6jmfIGoJ9uGY5h4T8mcc61mmMD2bV/f6ybRaqFhO/ztQeNA1+M
+	IzCtjoUBtFvt18r1WuCuJa7S0lW0WzkpgyCuqLbOirGwyS3ezwXVgEqlV+qUp2WMgop8jhMIgcn
+	9Yg1RpLJMXVhj85DNkFc3wysyk0UTYrujVwSLRjDw/8C71WLnLZMInwO4oApxVbBuAvxbqiNFJS
+	yF/elSpiUaDW/g0l+Nk4GVt8mb2DaITZsyxN2OswbpvoY3G/Gf7cT151imRaC9lHpDlyIqSvFIL
+	ONCxQzI/8UuwMU6WMY6TLRorlzcXu0+hBBdmAhSXTDDl22HlXmsqs69Vt9A2DLf+sPIlCVqUJzO
+	6+2JCgCmhHOx/PEqq/8rojSvyzWybGfbDzMmiwLASrOw87++nil1GQ56hAlcUGKE7n
+X-Received: by 2002:a05:600c:1d10:b0:495:5e3d:15e1 with SMTP id 5b1f17b1804b1-49573cd4133mr98180085e9.16.1784918733697;
+        Fri, 24 Jul 2026 11:45:33 -0700 (PDT)
+Received: from Ansuel-XPS24.localdomain (host-87-3-249-180.retail.telecomitalia.it. [87.3.249.180])
+        by smtp.googlemail.com with ESMTPSA id 5b1f17b1804b1-496b4858e85sm11278335e9.1.2026.07.24.11.45.32
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 24 Jul 2026 11:45:33 -0700 (PDT)
+From: Christian Marangi <ansuelsmth@gmail.com>
+To: Christian Marangi <ansuelsmth@gmail.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v11 0/3] airoha: an7581: USB support
+Date: Fri, 24 Jul 2026 20:45:19 +0200
+Message-ID: <20260724184523.193661-1-ansuelsmth@gmail.com>
+X-Mailer: git-send-email 2.53.0
 MIME-Version: 1.0
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: TY3PR01MB11346.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 314e7d11-20d1-4e2a-8930-08dee997e2ee
-X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Jul 2026 15:26:08.9327
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: TAvjVmJXHcQRIxBYmoP0uo4AvacQrgVfGFL0ql7aLEB+mBPZAlc5QJtmrJjop+Ezkb69ezx80VaBX974gKM7VXn/+6VT71JPDpuckGa2D5s=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: OS7PR01MB18410
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260724_082616_547417_7CBCB74F 
-X-CRM114-Status: GOOD (  29.17  )
+X-CRM114-CacheID: sfid-20260724_114536_183976_1816F1C7 
+X-CRM114-Status: GOOD (  17.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -154,108 +104,111 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi All,
+This is a major rework of the old v2 series.
 
-> -----Original Message-----
-> From: Biju Das <biju.das.jz@bp.renesas.com>
-> Sent: 22 July 2026 20:15
-> Subject: RE: [PATCH v4 0/9] Add RZ/G3L USB2.0 host support
-> 
-> Hi All,
-> 
-> > -----Original Message-----
-> > From: Biju <biju.das.au@gmail.com>
-> > Sent: 09 July 2026 09:31
-> > Subject: [PATCH v4 0/9] Add RZ/G3L USB2.0 host support
-> >
-> > From: Biju Das <biju.das.jz@bp.renesas.com>
-> >
-> > Hi All,
-> >
-> > This patch series aims to add USB2.0 host support for the RZ/G3L SMARC
-> > EVK. The RZ/G3L USB PHY block is similar to RZ/G3S, but each port has
-> > an OTG controller, unlike RZ/G3S, which has an OTG controller only on
-> > port 1. This series migrates regulator driver to use id-table so there is hard dependency between reset
-> driver and regulator driver.
-> >
-> > Merge strategy:
-> >   An Ack/Rb tag from Regulator Maintainer for patch#4.
-> >   Patch #1,#2,#3,#4 - Reset subsystem
-> >   Patch #5,#6,#7 - PHY subsystem
-> >   Patch #8,#9 - Renesas SoC
-> >
-> > v3->v4:
-> >  * Updated cover letter with merge strategy
-> >  * Reorder the phy binding patch for easy merging.
-> >  * Updated the commit description for patch #2,#3, #4.
-> >  * Moved the handling of regulator_driver_name to patch #3
-> >    in preparation for id_table match.
-> >  * Migrated to id_table match using driver_name and reduced the length
-> >    < 24.
-> >  * Dropped rzg3l specific platform driver.
-> >  * Dropped the tag for regulator driver,
-> >  * Added id_table handling by introducing a common probe().
-> > v2->v3:
-> >  * Replaced items->enum in reset controller bindings.
-> >  * Collected the tag for reset binding patch.
-> >  * Dropped clock patch as it is accepted.
-> > v1->v2:
-> >  * Dropped patch#6(Introduce helper for regulator registration)
-> >  * Passing pointer to an array of regulators to make it scalable.
-> >  * Dropped regulator1-vbus and added a regulators group node.
-> >  * Updated commit description for patch#1,#4,#6,#7,#8,#9 and #10.
-> >  * Added enum instead of const in the compatible section.
-> >  * Updated schema check.
-> >  * Collected tag for PHY binding patch.
-> >    in the regulator driver.
-> >  * Added regulators group node and its children in SoC dtsi.
-> >
-> > Biju Das (9):
-> >   dt-bindings: reset: renesas,rzg2l-usbphy-ctrl: Document RZ/G3L support
-> >   reset: rzg2l-usbphy-ctrl: Introduce info struct for match data
-> >   reset: rzg2l-usbphy-ctrl: Add RZ/G3L support
-> >   regulator: renesas-usb-vbus-regulator: Add RZ/G3L VBUS regulator
-> >     support
-> >   dt-bindings: phy: renesas,usb2-phy: Document RZ/G3L PHY bindings
-> >   phy: renesas: phy-rcar-gen3-usb2: Add RZ/G3L support
-> >   phy: renesas: phy-rcar-gen3-usb2: Fix devm action registration for
-> >     disabled VBUS regulator
-> >   arm64: dts: renesas: r9a08g046: Add USB2.0 device nodes
-> >   arm64: dts: renesas: r9a08g046l48-smarc: Add USB2.0 support
-> >
-> >  .../bindings/phy/renesas,usb2-phy.yaml        |   2 +
-> >  .../reset/renesas,rzg2l-usbphy-ctrl.yaml      |  48 +++++++-
-> >  arch/arm64/boot/dts/renesas/r9a08g046.dtsi    | 105 ++++++++++++++++++
-> >  .../boot/dts/renesas/r9a08g046l48-smarc.dts   |  49 ++++++++
-> >  drivers/phy/renesas/phy-rcar-gen3-usb2.c      |  20 ++--
-> >  .../regulator/renesas-usb-vbus-regulator.c    |  74 +++++++++++-
-> >  drivers/reset/reset-rzg2l-usbphy-ctrl.c       |  44 +++++---
-> >  7 files changed, 316 insertions(+), 26 deletions(-)
-> >
-> > --
-> > 2.43.0
-> 
-> Gentle ping.
+The SoC always support USB 2.0 but for USB 3.0 it needs additional
+configuration for the Serdes port. Such port can be either configured
+for USB usage or for PCIe lines or HSGMII and these are configured
+in the SCU space.
 
-Based on the feedback on [1],
+The previous implementation of a dedicated SSR driver was too
+complex and fragile for the simple task of configuring a register
+hence it was dropped and the handling is entirely in the PHY driver.
 
-I have modelled pwrrdy signal as power sequence driver and used
-with DSI driver and it works fine. So, it should work with USB PHY control
-driver as well.
+Everything was reducted to the dt-bindings to describe the Serdes line.
 
-So, there will binding change to dropping renesas,sysc-pwrrdy for RZ/G3L.
-and the driver will use Power sequence driver for configuring Power ready signal.
+Also the property for the PHY are renamed to a more suitable name and
+everything is now mandatory to simplify the implementation.
+(the PHY are always present and active on the SoC)
 
-What should I do for RZ/G3S as it uses renesas,sysc-pwrrdy? Should I leave like
-as it is to avoid ABI breakage? Or do you want me to add backward compatibility?
+Also other unrelated patch are dropped from this series.
 
-Please let me know.
+Changes v11:
+- Remove clk patch and move to dedicated series
 
-[1] https://lore.kernel.org/all/TY3PR01MB11346892D9619A8D1A6C2DF4A86CF2@TY3PR01MB11346.jpnprd01.prod.outlook.com/
+Changes v10:
+- Rebase on top of linux-next
+- Add review tag for DT patch
 
+Changes v9:
+- Add spinlock init
+- Add ack tag
+- Add review tag
+- Add additional comments for phys on USB 3.0
+- Add extra logic to make phys optional for USB 3.0
 
-Cheers,
-Biju
+Changes v8:
+- Squash header to clk Documentation patch
+- Address comments from AI Bot
+  Link: https://lore.kernel.org/all/20260520150912.11614-1-ansuelsmth@gmail.com/
+
+Changes v7:
+- Rework to double PHY implementation
+  (suggested by Rob)
+  Now the clk driver expose a PHY for Serdes port
+  USB PHY driver selects it
+- Rebase on top of linux-next
+  Link: https://lore.kernel.org/all/20260519220813.28468-1-ansuelsmth@gmail.com/
+
+Changes v6:
+- Fix kernel test robot (sparse warning)
+  Link: https://lore.kernel.org/all/20260306190156.22297-1-ansuelsmth@gmail.com/
+
+Changes v5:
+- Add Ack and Review tag from Connor
+- Implement Ethernet support in the USB driver
+  (testing support for this Serdes on a special reference board)
+- Use an7581 prefix for USB PHY driver
+  Link: https://lore.kernel.org/all/20251107160251.2307088-1-ansuelsmth@gmail.com/
+
+Changes v4:
+- Rename PCIe and USB PHY to AN7581
+- Drop airoha,scu (handled directly in driver)
+- Drop dt-bindings for monitor clock in favor of raw values
+- Better describe the usage of airoha,usb3-serdes
+- Simplify values of dt-bindings SSR SERDES
+  Link: https://lore.kernel.org/all/20251107160251.2307088-1-ansuelsmth@gmail.com/
+
+Changes v3:
+- Drop clk changes
+- Drop SSR driver
+- Rename property in Documentation
+- Simplify PHY handling
+- Move SSR handling inside the PHY driver
+  Link: https://lore.kernel.org/all/20251029173713.7670-1-ansuelsmth@gmail.com/
+
+Changes v2:
+- Drop changes for simple-mfd
+- Rework PHY node structure to single node
+- Drop port-id property in favor of serdes-port and
+  usb2-monitor-clock-sel
+- Make the SSR driver probe from the clock driver
+
+Christian Marangi (3):
+  dt-bindings: phy: Add documentation for Airoha AN7581 USB PHY
+  phy: move and rename Airoha PCIe PHY driver to dedicated directory
+  phy: airoha: Add support for Airoha AN7581 USB PHY
+
+ .../bindings/phy/airoha,an7581-usb-phy.yaml   |  62 ++
+ MAINTAINERS                                   |  11 +-
+ drivers/phy/Kconfig                           |  11 +-
+ drivers/phy/Makefile                          |   4 +-
+ drivers/phy/airoha/Kconfig                    |  24 +
+ drivers/phy/airoha/Makefile                   |   4 +
+ .../phy-an7581-pcie-regs.h}                   |   2 +-
+ .../phy-an7581-pcie.c}                        |   6 +-
+ drivers/phy/airoha/phy-an7581-usb.c           | 559 ++++++++++++++++++
+ 9 files changed, 665 insertions(+), 18 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
+ create mode 100644 drivers/phy/airoha/Kconfig
+ create mode 100644 drivers/phy/airoha/Makefile
+ rename drivers/phy/{phy-airoha-pcie-regs.h => airoha/phy-an7581-pcie-regs.h} (99%)
+ rename drivers/phy/{phy-airoha-pcie.c => airoha/phy-an7581-pcie.c} (99%)
+ create mode 100644 drivers/phy/airoha/phy-an7581-usb.c
+
+-- 
+2.53.0
+
 
 -- 
 linux-phy mailing list
