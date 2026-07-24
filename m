@@ -4,65 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43209C531CC
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Jul 2026 21:48:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 312D2C531F9
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Jul 2026 06:00:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MRWupGJDtc080AF5sonIhc6HEwW8b/WQuiRsqkRf+lA=; b=hyH3fNFrJsbiRJ
-	pl9seGIjUVUxvTnSwmPyDwHvpWY4UFz03qhu9NOdIabv+9xgBkcZnsXLfi86Dtmw4FOplMF3IYl1s
-	aIG1AUYyApahms6MFTq9WBVzChKAKxxYaGJcCwxNh7L5RIDDNgOuZzYwJLHCs5EAmiEvkYRXoll61
-	z74gns9pWg7Jkfa+Y9umH46DyVx0F8BakfPnUL56hAMtR3l6c4jvbQOGuFJAtViVxH6O+T57BIuQ6
-	4vJbaxxCdo/yiJiGb+1iVHrsLzZGOatAggw2yvEnrakLUd8/cpcorHKmbEkYWkYMN/EQWkMwSmi10
-	Gk+oAbKbpMt26rTq8ymA==;
+	List-Owner; bh=sfq86tTE9tlm28P6/cSi6zdtqFADSRcFQl5hqSHDnGk=; b=j9ZLM8s7EFi7Lt
+	NDTk83OSqox28oE9WaRRRC1Wd42aPhE/wTgYdjTTj5Pdr4pVsqBiAgZSxLV3AlX/cKuROTwBAYCAo
+	wD1aXQreMS5Y/MdHsDgGNpZuoFlXC7Tn3xZsnNZ2nhHFityR8dPLwSS0Ow5Pbedh82bXruuIH3dkL
+	/xM5a/mj+zVR5F9TgyRw6BRzfqtFc1Q5zIraxulv0BJfadVLAkYs015NH9zDv1/i9GKsDmfwDKZV0
+	sEKRO4GBL9lKLVrAdaBhcddkDmELtFBgl07xDV5Lyi8IFFrvYexNfMeOsHegO4qmWJXfBNKqN2MO9
+	j7DF3DB96Wt7SXXC8O7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wn1HS-0000000F8g8-3pe3;
-	Thu, 23 Jul 2026 21:48:38 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1wn8xb-0000000FXnE-23YC;
+	Fri, 24 Jul 2026 06:00:39 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wn1HQ-0000000F8ez-02BO
-	for linux-phy@lists.infradead.org;
-	Thu, 23 Jul 2026 21:48:37 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1784843313;
-	bh=0DKLloNkB21AKXQThOK9Wz9baK2f0lW80gZlTFUCfVM=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=k3nlLFv8ACJTu73Qgt70Tqeo8QC4ZWyGnDBDSqKTQeLWU3prsl67S/a9sea3qS618
-	 ZFa0TItBMoxfpdFh4pqM8u6CUKG65IRSrPgmCnelf2v4pngvBNEZVQVryJo3QqUORP
-	 zAw7q7zHbwoTKKLCt83fbH05adFbHm7zn3iwY3nO9is4DjKOF1En+Rnq3BLbAfDBhe
-	 FIz6yfn6PhE3JaRERuEPXbBh0DMmpYhYq++WYrfkUx4kZUzRT/9IErrKFJF/hpRwed
-	 coOueRVA2nVxt1OeXWb/9+ayCRCVaJOsMyTq9ZQ3qK18R2+uLKtXf6I1LhQcpMUEZa
-	 GCYlIikIliaig==
-Received: from [100.64.0.241] (unknown [100.64.0.241])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange x25519)
-	(No client certificate requested)
-	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id C92B017E001F;
-	Thu, 23 Jul 2026 23:48:32 +0200 (CEST)
-Message-ID: <84a30b28-f003-4ead-968e-641517fa3d67@collabora.com>
-Date: Fri, 24 Jul 2026 00:48:32 +0300
+	id 1wn8xa-0000000FXmM-0vp0;
+	Fri, 24 Jul 2026 06:00:38 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 305EC600AA;
+	Fri, 24 Jul 2026 06:00:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1C3A41F00A3A;
+	Fri, 24 Jul 2026 06:00:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1784872836;
+	bh=6rzPW0CUckbkrF39Ekx9Pi0vtsbA5yjRkuFGFKuxzek=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=SJ4S4muwxAjPqwN3bl5N3K9mlPX5ztOTcDpunS2J0kEzqUWBG0SS0UtzJGOf3bANn
+	 eyjQumooGnJtkNw7HW5mNwxNfaSN2DrMHU6EsxiTgVBmth+jxT8ol2i6DKRgn7/U74
+	 Nuahy8UsYiCHf6Q64qJ9zhYtA52xoHHWUsxCK3MLlJno1ItjqbmY+TCJcBBrMBDxUd
+	 hXvZtusw1l6p0s4FNmOkI9g/ZRaxyWOo4Y+Gqjkb4QVp6Q7Wuf6+SS8hXgs2MifcgY
+	 Jbx3MMJW0lKXITrAnkxqY6kgN8eUoXfd59iGo3vhR6P/zMHkPXnE1pCy1IyI02D2Xv
+	 C1TfCVVca16sw==
+Date: Fri, 24 Jul 2026 11:30:32 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Vladimir Oltean <vladimir.oltean@nxp.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Tanjeff Moos <tanjeff.moos@westermo.com>,
+	"Christophe Leroy (CS GROUP)" <chleroy@kernel.org>,
+	Michael Walle <mwalle@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+	Frank Li <Frank.Li@nxp.com>, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v4 phy-next 9/9] phy: lynx-10g: use RCW override
+ procedure for dynamic protocol change
+Message-ID: <amL_gPKbD0BQG10S@vaman>
+References: <20260721231603.67865-1-vladimir.oltean@nxp.com>
+ <20260721231603.67865-10-vladimir.oltean@nxp.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5 05/10] phy: rockchip: samsung-hdptx: Handle uncommitted
- PHY config changes
-To: sashiko-reviews@lists.linux.dev
-Cc: vkoul@kernel.org, olteanv@gmail.com, neil.armstrong@linaro.org,
- linux-phy@lists.infradead.org
-References: <20260723-hdptx-clk-fixes-v5-0-8e786067865f@collabora.com>
- <20260723-hdptx-clk-fixes-v5-5-8e786067865f@collabora.com>
- <20260723200041.0B3DF1F000E9@smtp.kernel.org>
-Content-Language: en-US
-From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-In-Reply-To: <20260723200041.0B3DF1F000E9@smtp.kernel.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260723_144836_213878_0A66BDF8 
-X-CRM114-Status: UNSURE (   3.59  )
-X-CRM114-Notice: Please train this message.
+Content-Disposition: inline
+In-Reply-To: <20260721231603.67865-10-vladimir.oltean@nxp.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,13 +76,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 7/23/26 11:00 PM, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 1 potential issue(s) to consider:
-> - [High] Ignored PLL configuration errors lead to silent hardware failures and a permanent power leak.
+On 22-07-26, 02:16, Vladimir Oltean wrote:
+> Up until this patch, the only protocol change supported was between
+> 1000Base-X/SGMII and 2500Base-X. The others require an RCW override
+> procedure which was lacking.
+> 
+> Since now the guts driver provides the means of applying this procedure,
+> make use of it and remove any comment which mentioned the limitation.
 
-Already discussed:
+Acked-by: Vinod Koul <vkoul@kernel.org>
 
-https://lore.kernel.org/all/88624071-de6b-4fd1-9984-f79270c2979f@collabora.com/
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
