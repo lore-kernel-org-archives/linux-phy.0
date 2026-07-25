@@ -4,79 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62177C531D0
-	for <linux-phy@archiver.kernel.org>; Sat, 25 Jul 2026 03:19:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E85CC5321B
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Jul 2026 04:51:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MSfP7Ct5Kxpr4IwyvnbwdCF0/PdppeSAgIIDvP6untI=; b=vdq5+1sPX62Xmw
-	esNHy7xCReyHvDOr/dOfjYv67HjBYOW5wVkG7pQYdH/jmRs/R+ee1Z4Mi0GpBnm03ZNbDzf0OcbQP
-	FjQIensgnQPgwmhNTTL+DQg/w21vPR2WpAEnCx6rkatfTIouOn2XYgXUF/qwe1dkgt3IhoWyFulY7
-	dteX9edKhzN57bR8DemqHSBTMBGstdjRGkX8RbatNSwspq43vQ5diUBp1Y1XJAyb3wCt8mN++pbyr
-	/JEEEWlsYK5T0pttArhVyw2jUvCw4UzlNKHDSpoQlNPIJK8Lp6jqdX2tE/SMatzTYFIBf3HlgGuRA
-	1UR52tYad35xSNxD2UFA==;
+	List-Owner; bh=fBwu5uDMIiGzLx9D+XPnxS3SBe4tlhROKtoimNDfAw8=; b=vdQHbZ+3KK/MsX
+	wt9d0OMU4RAZ0unIs4n9/C5M1Hy7piV3maJ0dWpGiQ0GVEDYBV8QPrasCwbXAsF8lkR9bVPCR+EVo
+	YfYh4lfGPEag+WJT3Fepl1q8MJLLSKC9EznESElep2OP8Gu9UfFc0a5vc9/xanZRoWl5OaF0fs/wZ
+	VczN2x3XKJqeqZMEf85MBy747wsFfaU8C+gKm4p5BBY9hu7UX5EPKeIUWoTU+MqJNGzWpHLsXdOzs
+	Z+jfo1Rhi4l/YPa1BK9cZ0i2Fy2rnjgX3AAg8xg45vxyqWvqFPp/9yB1Jjj1ebfHIUHcZuJmdFRCc
+	wqW7wpkVIhFyUh9snciA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wnSvU-0000000HYAL-06bP;
-	Sat, 25 Jul 2026 03:19:48 +0000
-Received: from mail-pz2-x01.google.com ([2607:f8b0:4864:3b::1])
+	id 1wnUMB-000000000VC-0gmo;
+	Sat, 25 Jul 2026 04:51:27 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wnSvR-0000000HY7Q-0uop
-	for linux-phy@lists.infradead.org;
-	Sat, 25 Jul 2026 03:19:46 +0000
-Received: by mail-pz2-x01.google.com with SMTP id 41be03b00d2f7-c8c1ebd68a1so683542a12.0
-        for <linux-phy@lists.infradead.org>; Fri, 24 Jul 2026 20:19:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1784949584; x=1785554384; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :content-type:mime-version:subject:date:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=DPm4vAPFuqHX+tZvYjtk0Fs8fzHRPkuRBc0bjXwe1GI=;
-        b=UKICH2nOe+vNF04M2Tjat6YmUVPeh0CeQ9mk64FbKG921YThot9vkXOkB3b8ZInegj
-         ziEdildnx4rq2GH0QDo37mEgTJ/VtU0nV3n8md3ckhKXpIYLLqcsC+qTkunatMfHtwWS
-         Dqlg6O7JTbKXApYtqMTHi6nibavTZirdcemHrVDcbe/4Lwyqn4NDZ3rQjgYLbEavBF06
-         GigOCuimWZUCx1/U4T0YRaFqMXGrj89OnPePkkAzIwh7mtJW50CkSyirYcyf+YN5wo/1
-         3CasEnHULbsHGVUnzGNhR2xZbFnr5wPh615K6S5ojc4hAFejp26dFnBgO5kfQn2Oz32d
-         Q5Fg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784949584; x=1785554384;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :content-type:mime-version:subject:date:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=DPm4vAPFuqHX+tZvYjtk0Fs8fzHRPkuRBc0bjXwe1GI=;
-        b=b9C/aOsd8AscxETArNRj1qv0RCkEwtR3I+M9Yb28Q4ky0V5XeQB2Ylq8+K8frBjcqQ
-         yLFqhdfy4mFabziI0J0RmgiF9jHh0aLkWHbxpR1vXWou5K8H6u/GbqmtKv3dKN77qhts
-         exxoSmMLZqj5mB76mAQNXT2q07UvnasZpuZe6sWUqp/ox0bC8RA3QgDrKB7ur4Pwf4sS
-         t3+SYsJ/qtean1exl3Ty7P4Wqlrz2miGW7QmWvwnht62O4dR8LjSGgZUR6TOmYw39zQ6
-         izPIG2rTdCAXKJnL0URym0MMgUw9B5rfAqPC9ofM5mpQvnDchEGxqxVcnnL0BRBn/3W6
-         CaDw==
-X-Forwarded-Encrypted: i=1; AHgh+Ro4gd+1CSzwZxVpqOUL/rn+xxGsZO9YUhHqi+hjSaHE3PpRUvLOMCV+Y7iRrMHke7vRFu4lkLQpO04=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyWlD1NhFzgZcvlAR+HCQDbmJHOfpNw5S70sFag1xj5RcGVVTPi
-	frbpL9QLyf3kX8hTzbRU1lWNbGPAB60POuw3nhsmPNJ1rI7xdIoJ0AQL
-X-Gm-Gg: AR+sD123rcsnjxLDqcYuQcls0AHqzxUHLdBdY6A+jieRZhJk6119wwX+LGJAqIvdeut
-	i5uy5BL2t2FQ2If31Q/62ihBuzK5uB/i1E/oQ9TB0/YxnYRzJ070Go/VIxphAbakun0VS7AxcxI
-	JLee0YYvvyqODNcQ+1Lxvc1UbtUl+u3Vp88NAyyN1bWZryjFZujuUR2BOk9fP7BJ6XG+NEB982y
-	8uB11f+fbwGK8sDxACGwab5m3Ijg1baVraE29E39co3KvWFt3o/kNJ0MQe7QuwfUN8jUJxvZ9dw
-	nofs0sVua4vpjSqiLPuoj4eVBay+jSDf+HPNWGfWew4n+0OOVzKZh+hsv4HRcaHyMi/iXg+seVU
-	BEWjB5C4NfMmLj3feL8oWV46otkC06aySne8DJ0f0IFcfx8X+ZSRa3Wc=
-X-Received: by 2002:a05:6a00:4c11:b0:847:8b0f:2508 with SMTP id d2e1a72fcca58-84e5942eaecmr647092b3a.13.1784949584567;
-        Fri, 24 Jul 2026 20:19:44 -0700 (PDT)
-Received: from [127.0.1.1] ([2a12:a305:4::403c])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-84e53432834sm640542b3a.50.2026.07.24.20.19.35
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 24 Jul 2026 20:19:43 -0700 (PDT)
-From: Cody Kang <codykang.hk@gmail.com>
-Date: Fri, 24 Jul 2026 23:16:49 -0400
-Subject: [PATCH 17/17] riscv: defconfig: spacemit: k3: enable display
- driver
+	id 1wnUM9-000000000TB-2lsg;
+	Sat, 25 Jul 2026 04:51:25 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id B30A34514D;
+	Sat, 25 Jul 2026 04:51:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 5A0F8C2BCFC;
+	Sat, 25 Jul 2026 04:51:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1784955084;
+	bh=Rkm4yLZkUVi1jkAlFm0cNMZPkaQrtPP2msdJ53rTp0g=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=knQSHNZuPe202s27pflHGQNgifQKNbHnZwraPtYZpbv5Up/ecjXqZLt/iruppJT7y
+	 LgHzRBAbmI4WKBxp785bFoMaCtjY+Rm97gFcfYW1EEwVse3eWGgG4ACsVn4hGG+ajn
+	 lvfj5XaeNnoLpx40T+N9OKTJwG44GaqxbTCPLGPiUQjA7w/zJjQVrsIaIzQy4Ot6ci
+	 X0FKJ9LYmJKrnSw7jnYVK5/P4+OWMwBj8vFZzp5nx73wFOP5VGahw8tK8DDrShrHd+
+	 +i5kJx8JpjUofuheAMdDZXoE/UCMtynRMEGEdU/H6G6oIZsQdS1C0hNU3KQovznea0
+	 KE1i51pdn6H2Q==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3A6B8C53219;
+	Sat, 25 Jul 2026 04:51:24 +0000 (UTC)
+From: Cody Kang via B4 Relay <devnull+codykang.hk.gmail.com@kernel.org>
+Date: Sat, 25 Jul 2026 00:51:13 -0400
+Subject: [PATCH RESEND 04/17] dt-bindings: soc: spacemit: allow eDP/DP PHY
+ PLL pixel clocks on K3 APMU
 MIME-Version: 1.0
-Message-Id: <20260724-k3-display-v1-17-f22a10a52867@gmail.com>
-References: <20260724-k3-display-v1-0-f22a10a52867@gmail.com>
-In-Reply-To: <20260724-k3-display-v1-0-f22a10a52867@gmail.com>
+Message-Id: <20260725-k3-display-v1-4-6de34d80e86c@gmail.com>
+References: <20260725-k3-display-v1-0-6de34d80e86c@gmail.com>
+In-Reply-To: <20260725-k3-display-v1-0-6de34d80e86c@gmail.com>
 To: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
  Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
@@ -93,10 +68,16 @@ Cc: dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
  linux-clk@vger.kernel.org, Cody Kang <codykang.hk@gmail.com>
 X-Mailer: b4 0.15.1
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260724_201945_273670_2B9AD292 
-X-CRM114-Status: UNSURE (   7.36  )
-X-CRM114-Notice: Please train this message.
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1784955080; l=2015;
+ i=codykang.hk@gmail.com; s=codykang; h=from:subject:message-id;
+ bh=To2Wz4JMP1yzDvV2UFHvJJLkK8aaYjCf2yPZVKorUr8=;
+ b=6QpiTRJLqJK2GsKELutClre7B0hn8nkeweqRCn/Wjj3e/UhBpvTQBMwgloDKX5My4q3x3I9xa
+ aORhJl5y09nDaAK1Y6fNjz9k5B9OvtAuzbi1wOuQ/XRjPa7ZKm6wGQN
+X-Developer-Key: i=codykang.hk@gmail.com; a=ed25519;
+ pk=Osn6/cs9Su/mHHw4P19cmVc3v2FMQfiWahjsN0vEkuk=
+X-Endpoint-Received: by B4 Relay for codykang.hk@gmail.com/codykang with
+ auth_id=895
+X-Original-From: Cody Kang <codykang.hk@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,36 +89,84 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Reply-To: codykang.hk@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable the Saturn DPU and the DP/eDP controller as modules, matching the
-other DRM drivers in this defconfig; the DP PHY follows through the
-controller's imply.
+From: Cody Kang <codykang.hk@gmail.com>
+
+The APMU's eDP pixel-clock muxes select the DP PHY PLLs as parents, so the
+K3 syscon takes two clock inputs the other variants do not have.
+
+Gate them behind the K3 compatible instead of widening the shared clock
+list, so a non-K3 syscon cannot silently accept clocks it has no mux for.
 
 Signed-off-by: Cody Kang <codykang.hk@gmail.com>
 ---
- arch/riscv/configs/defconfig | 2 ++
- 1 file changed, 2 insertions(+)
+ .../bindings/soc/spacemit/spacemit,k1-syscon.yaml  | 30 +++++++++++++++++++++-
+ 1 file changed, 29 insertions(+), 1 deletion(-)
 
-diff --git a/arch/riscv/configs/defconfig b/arch/riscv/configs/defconfig
-index 74ba5acc12a4..c38853d69d55 100644
---- a/arch/riscv/configs/defconfig
-+++ b/arch/riscv/configs/defconfig
-@@ -191,6 +191,8 @@ CONFIG_VIDEO_CADENCE_CSI2RX=m
- CONFIG_DRM=m
- CONFIG_DRM_RADEON=m
- CONFIG_DRM_NOUVEAU=m
-+CONFIG_DRM_SPACEMIT=m
-+CONFIG_SPACEMIT_INNO_DP=m
- CONFIG_DRM_SUN4I=m
- CONFIG_DRM_VIRTIO_GPU=m
- CONFIG_FB=y
+diff --git a/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml b/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml
+index d3a7c93c3c54..b8fc6632a392 100644
+--- a/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml
++++ b/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml
+@@ -31,14 +31,18 @@ properties:
+     maxItems: 1
+ 
+   clocks:
+-    maxItems: 4
++    minItems: 4
++    maxItems: 6
+ 
+   clock-names:
++    minItems: 4
+     items:
+       - const: osc
+       - const: vctcxo_1m
+       - const: vctcxo_3m
+       - const: vctcxo_24m
++      - const: edp0_pll_pxclk
++      - const: edp1_pll_pxclk
+ 
+   "#clock-cells":
+     const: 1
+@@ -95,6 +99,30 @@ allOf:
+         - clocks
+         - clock-names
+         - "#clock-cells"
++  # Only the K3 APMU exposes the two eDP/DP PHY PLL pixel clocks as extra
++  # inputs (parents of its eDP pixel-clock muxes); every other variant has
++  # the four base oscillator inputs only.
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: spacemit,k3-syscon-apmu
++    then:
++      properties:
++        clocks:
++          minItems: 4
++          maxItems: 6
++        clock-names:
++          minItems: 4
++          maxItems: 6
++    else:
++      properties:
++        clocks:
++          minItems: 4
++          maxItems: 4
++        clock-names:
++          minItems: 4
++          maxItems: 4
+ 
+ additionalProperties: false
+ 
 
 -- 
 2.43.0
+
 
 
 -- 
