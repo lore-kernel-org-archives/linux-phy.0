@@ -4,72 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9EEE8C531F9
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Jul 2026 21:51:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E2BAC531C9
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Jul 2026 03:17:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=A128PDE108ObX1f7+6i5HPQgiZaLQwShzKQEZ3pEZWA=; b=xeW8Ylf/im+/LQqz3+pM8he/Xv
-	VatZs45oV1A2yKJjaubI/UHQ13pWReLQvW6IIFQShIGM77auWJl32KAWDgea+rwFLC//vOCI3KJ0C
-	gOkXq9qN3Gb49HbcIQDyP+gB0O40396OTg4q+fk7qNzhiAivqEXdDE2ynfEOZMpXGMTfnyAk8YTCk
-	WMeM42ynK/hfB46E4adEO6VGlryilblc2+FDk7/NiOgbiWjkZNbpTjnHHEM+0bdcD5ASojwzALOcs
-	a3zEtvS0OE0h75ZvfS+RZV70XbfOaeolqz8kJADSYyzoQ3OewDMhgywpv6YlVRcqj6VJxTQWlRhZ3
-	1nuNwPmA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qac2heALQUIVCzmyw0Um9Cf+R3eN39oXIkwbJD1M9tA=; b=kfb4ayL5/bokot
+	FBRxuIdaxwH1r14bOFk5Zf73SyYKfX9FwVL9fp8BBfxdZj+HxDTw4yw1qG4EBcnwc9XClAqe19LAo
+	FW/dRmeRtl20PXsr9bnIesrmIBFKh8tJv4Q/sytZavMfUKqoMgWJn74WczhtFPvCEmxTykQiijD1y
+	yDn6heWVhJ2/whfk35VOJTmwFc9uFbEUT+RuPfJRNV4uepbGcV0+bbZ7QBSiFRZQ9UK16i+s6p8Rs
+	5OMiJLWgfnX8/VYaoPA1PVCxSM/oQv2/kEPq1d3mVi6kufHIRVR+D81ixQEWxhNMwKlWCbeeWV/v2
+	YvVaLhZS4aUMHgBlqIaw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wnNo0-0000000HHGU-0Sd3;
-	Fri, 24 Jul 2026 21:51:44 +0000
-Received: from sender4-op-o11.zoho.com ([136.143.188.11])
+	id 1wnStY-0000000HXTD-1Foe;
+	Sat, 25 Jul 2026 03:17:48 +0000
+Received: from mail-pz2-x01.google.com ([2607:f8b0:4864:3b::1])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wnNnx-0000000HHGA-31z8
+	id 1wnStW-0000000HXSc-1EIq
 	for linux-phy@lists.infradead.org;
-	Fri, 24 Jul 2026 21:51:43 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1784929893; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=oDXJGvsrkabItjiH+v4NuUbnqaJXs9R5UMnFLoeALWPjgS3E9uwieCTPysdaXlqtQx7Y0glSQUdvXkPfVvwkEzwSRINfHfr0Q1JTW1Gok8jUaiRMueLjhndyiVQEcdMN1phJAxTCQh34jm06Q7hH3JUtXoJTqWw0NUTOdpQaSuI=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1784929893; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=rxObKoBYz9bdL1QDIAY38u1ujROlN6uVzdz2O8QptDc=; 
-	b=RB0co4FTwKqnrPA6pjLLZ713gW0Q0PTePi1zV+IyVeuuPquzonPTmhgnAhfuWaJPv04lBdj46SpdD9TGnXpn6cJGlDjgUZQSya+A1FsKRJWvrHzlfBdA6Fd+y5A5rgUwFKSsFa0Jp9kAN5jt+1/1gHDoZeDsN4gBtS8i2dIHzQQ=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
-	dmarc=pass header.from=<sebastian.reichel@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1784929893;
-	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
-	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
-	bh=rxObKoBYz9bdL1QDIAY38u1ujROlN6uVzdz2O8QptDc=;
-	b=atvDK0mQ8rOk1q1Cl/hJbTPH1cdUWpWueM1L/ETUu7NRbP6HMTeR03A+Esw30YlC
-	ANd/Z77xm6JykrrewsP96vFrCHkqSaW4mDpHqCtppyS2/nXIUvHMMI3ORKglr0bcjn/
-	bD5iqewvFeSMvisjM9YKei0KR1agwMO2dn9+3vQ0=
-Received: by mx.zohomail.com with SMTPS id 178492989200395.17774346570991;
-	Fri, 24 Jul 2026 14:51:32 -0700 (PDT)
-Received: by venus (Postfix, from userid 1000)
-	id EE334181F16; Fri, 24 Jul 2026 23:51:27 +0200 (CEST)
-Date: Fri, 24 Jul 2026 23:51:27 +0200
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Thinh Nguyen <Thinh.Nguyen@synopsys.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org
-Subject: Re: [PATCH v5 3/5] phy: snps-eusb2: Set phy type to EUSB2
-Message-ID: <amPdeL2GWkNhPoal@venus>
-References: <20260723-eusb2-int-handling-v5-v5-0-f32ea6c1a318@oss.qualcomm.com>
- <20260723-eusb2-int-handling-v5-v5-3-f32ea6c1a318@oss.qualcomm.com>
+	Sat, 25 Jul 2026 03:17:47 +0000
+Received: by mail-pz2-x01.google.com with SMTP id 41be03b00d2f7-ca7a25cd87dso1015067a12.1
+        for <linux-phy@lists.infradead.org>; Fri, 24 Jul 2026 20:17:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1784949464; x=1785554264; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :content-type:mime-version:subject:date:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=+s3XIzGgmCw98QusnVJUh5PtZQnQQOXqs7KUawjh9Mc=;
+        b=DDZk516gbUIWk4IaELUOfkEOaIeDPE2eT6rLz7gFcgRX/CykXjcDxv6AxVgCEPLA62
+         AUaDu6b5YlaUH5nz4Ogv81JkPcoVbDU04vZfX8pfj3r68baliBODQjON5kstF0PQICLk
+         gYTk5zC19ST6XPMhzA0W/lQ6iGYHeF0RN+oRpFfBTahZ1AK+8rdRcyluLot9SnaRFFJG
+         6eYRT/Mbk5+3z6JVjCJmiGVVaNse83pL3WAJR2TbyEuyfCMz9djsYLble9odRhwK4wgm
+         hCvZe/VwSvV2gkcllJ34vja+aJtu4k99mLaUdZ6XpimoeRFWEalDtP7friyO733SjkLn
+         5Ymg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1784949464; x=1785554264;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :content-type:mime-version:subject:date:from:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=+s3XIzGgmCw98QusnVJUh5PtZQnQQOXqs7KUawjh9Mc=;
+        b=GXSqBUbu4eLVX8QX0yYPHfABBNpW2boE88fu7EEl9kwBU6wCkANGJEE0P8nAvWBpc7
+         DKDmaTqTLpxH1Ivki0AjVxnPmpm/OdVWEFL4XjRkM5KD5AaEdp/VUfIKXndWOALQmL9G
+         Wht3mDVpXmCQIULeXlYt7FoP4WTMVgmRkqWMLF1IStljK9d9HzXIlVkUKadSN0/qr/NI
+         cAGMeyX2qJazC8Ts5+ZXc9MxCvdUM0GxQlMoEQyBrqrKON5JUdEiEgVaudvDRQjBt7dM
+         nEne09/R31ptVc1YJmYX3gNSnR9N/NFRBtm4Ir0Q4UTvBDDGMeIQ4hBuTyrVzeJyZ1sx
+         Ucug==
+X-Forwarded-Encrypted: i=1; AHgh+RqAV982zHyefnBd0UW2z5PTJiaKJ+47TsFw5xNgIApk+AzT2GNhtuM1nMMgkzVYgkwrLIyV2o0j1U0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwrRRvtUAcmcOC4npr2PDczQwWtJBRQHeitII8Ad4t7VSS+AE7R
+	iYsOx7FPYl2jzhemMoltsYbqMK1BEf88pilFCmLXC/rhcah3hsJpDkqQ
+X-Gm-Gg: AR+sD10HfzJC4ePmc0cU9e9Y0NpYqoCb7L1+cFxaOd9tzeSb3Ox4cdydQ63T6mqtxhh
+	qAnEUXa5PwkyuXUtqLdZCR7GoamJFeXGv40LRekxqk0mjB6VDYOW4LHJIUGe7WmtLCx02Kqo3ED
+	wqgQ+eDBeD9E0CeFBgLWPKfzsAVG6Wi/sEd78dbpQyBaqoI34yF8zsgy5SLqK+TlxB+cBg12Rmo
+	dK4WMYMdSivG4irCYqZyh/p4UJvy8ancBfetAqfUy7RSkIdYmJgQFy4d7dZIPuhUv0q/HoRx73g
+	P2TTTeVnJQi+4nLRwwzzooZUCsruSFeGKIaSHSEeBQ7aFz0hwhIuTtTipaJuYmb0gTyqoqR0PCV
+	plNYfDYMM9gIdxKlFkQhdg5ck3MhsRZpHICqts9hYv2NPXRTyB2uYRfM=
+X-Received: by 2002:a05:6a00:9288:b0:848:2f77:e2da with SMTP id d2e1a72fcca58-84e595d33e9mr653832b3a.67.1784949464300;
+        Fri, 24 Jul 2026 20:17:44 -0700 (PDT)
+Received: from [127.0.1.1] ([2a12:a305:4::403c])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-84e53432834sm640542b3a.50.2026.07.24.20.17.36
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 24 Jul 2026 20:17:43 -0700 (PDT)
+From: Cody Kang <codykang.hk@gmail.com>
+Date: Fri, 24 Jul 2026 23:16:36 -0400
+Subject: [PATCH 04/17] dt-bindings: soc: spacemit: allow eDP/DP PHY PLL
+ pixel clocks on K3 APMU
 MIME-Version: 1.0
-In-Reply-To: <20260723-eusb2-int-handling-v5-v5-3-f32ea6c1a318@oss.qualcomm.com>
-X-Zoho-Virus-Status: 1
-X-Zoho-AV-Stamp: zmail-av-0.2.10.1.5.2/284.919.37
-X-ZohoMailClient: External
+Message-Id: <20260724-k3-display-v1-4-f22a10a52867@gmail.com>
+References: <20260724-k3-display-v1-0-f22a10a52867@gmail.com>
+In-Reply-To: <20260724-k3-display-v1-0-f22a10a52867@gmail.com>
+To: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@kernel.org>, 
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+ Haylen Chu <heylenay@4d2.org>, Michael Turquette <mturquette@baylibre.com>, 
+ Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, Paul Walmsley <pjw@kernel.org>, 
+ Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, 
+ Alexandre Ghiti <alex@ghiti.fr>
+Cc: dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org, 
+ devicetree@vger.kernel.org, spacemit@lists.linux.dev, 
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-clk@vger.kernel.org, Cody Kang <codykang.hk@gmail.com>
+X-Mailer: b4 0.15.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260724_145141_838264_04636595 
-X-CRM114-Status: GOOD (  16.09  )
+X-CRM114-CacheID: sfid-20260724_201746_330656_67CAE9E2 
+X-CRM114-Status: UNSURE (   8.62  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,109 +108,83 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0620034536444113557=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The APMU's eDP pixel-clock muxes select the DP PHY PLLs as parents, so the
+K3 syscon takes two clock inputs the other variants do not have.
 
---===============0620034536444113557==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="m55f6i4q6qo7c2yd"
-Content-Disposition: inline
+Gate them behind the K3 compatible instead of widening the shared clock
+list, so a non-K3 syscon cannot silently accept clocks it has no mux for.
 
+Signed-off-by: Cody Kang <codykang.hk@gmail.com>
+---
+ .../bindings/soc/spacemit/spacemit,k1-syscon.yaml  | 30 +++++++++++++++++++++-
+ 1 file changed, 29 insertions(+), 1 deletion(-)
 
---m55f6i4q6qo7c2yd
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH v5 3/5] phy: snps-eusb2: Set phy type to EUSB2
-MIME-Version: 1.0
+diff --git a/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml b/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml
+index d3a7c93c3c54..b8fc6632a392 100644
+--- a/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml
++++ b/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml
+@@ -31,14 +31,18 @@ properties:
+     maxItems: 1
+ 
+   clocks:
+-    maxItems: 4
++    minItems: 4
++    maxItems: 6
+ 
+   clock-names:
++    minItems: 4
+     items:
+       - const: osc
+       - const: vctcxo_1m
+       - const: vctcxo_3m
+       - const: vctcxo_24m
++      - const: edp0_pll_pxclk
++      - const: edp1_pll_pxclk
+ 
+   "#clock-cells":
+     const: 1
+@@ -95,6 +99,30 @@ allOf:
+         - clocks
+         - clock-names
+         - "#clock-cells"
++  # Only the K3 APMU exposes the two eDP/DP PHY PLL pixel clocks as extra
++  # inputs (parents of its eDP pixel-clock muxes); every other variant has
++  # the four base oscillator inputs only.
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: spacemit,k3-syscon-apmu
++    then:
++      properties:
++        clocks:
++          minItems: 4
++          maxItems: 6
++        clock-names:
++          minItems: 4
++          maxItems: 6
++    else:
++      properties:
++        clocks:
++          minItems: 4
++          maxItems: 4
++        clock-names:
++          minItems: 4
++          maxItems: 4
+ 
+ additionalProperties: false
+ 
 
-Hi,
+-- 
+2.43.0
 
-On Thu, Jul 23, 2026 at 04:09:06PM +0530, Krishna Kurapati wrote:
-> USB controllers like DWC3 are agnostic of the kind of phy (USB2/eUSB2)
-> connected to it. Set the phy type to EUSB2 to let the controller know
-> the phy type when queried during its probe.
->=20
-> Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-> ---
->  drivers/phy/phy-snps-eusb2.c | 4 ++++
->  1 file changed, 4 insertions(+)
->=20
-> diff --git a/drivers/phy/phy-snps-eusb2.c b/drivers/phy/phy-snps-eusb2.c
-> index f90bf7e95463..e139b17bcda5 100644
-> --- a/drivers/phy/phy-snps-eusb2.c
-> +++ b/drivers/phy/phy-snps-eusb2.c
-> @@ -13,6 +13,8 @@
->  #include <linux/regulator/consumer.h>
->  #include <linux/reset.h>
-> =20
-> +#include <dt-bindings/phy/phy.h>
-> +
->  #define EXYNOS_USB_PHY_HS_PHY_CTRL_RST	(0x0)
->  #define USB_PHY_RST_MASK		GENMASK(1, 0)
->  #define UTMI_PORT_RST_MASK		GENMASK(5, 4)
-> @@ -597,6 +599,8 @@ static int snps_eusb2_hsphy_probe(struct platform_dev=
-ice *pdev)
->  		return PTR_ERR(generic_phy);
->  	}
-> =20
-> +	phy_set_type(generic_phy, PHY_TYPE_EUSB2);
-
-Isn't there a potential race condition if it's handled in this way?
-
-1. phy-snps-eusb2 probe: PHY is registered
-2. dwc3 probes
-3. phy-snps-eusb2 probe: PHY type is set
-
-Greetings,
-
--- Sebastian
-
-> +
->  	dev_set_drvdata(dev, phy);
->  	phy_set_drvdata(generic_phy, phy);
-> =20
->=20
-> --=20
-> 2.34.1
->=20
->=20
-
---m55f6i4q6qo7c2yd
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmpj3lsACgkQ2O7X88g7
-+ppUyQ/9Em5Or2yxSmbUYLORK19KD1Ah9p71VebqMaZ/N4eIcJpgJ+U7LU//WbV0
-K/UeAVFd7AFU0w/aPAQBgz/WgUW406YPriExgZsr8CWHDQyWlmVrr0LVeCHy+x+Q
-UzeBQaZsXISMhjKClU0lVhcQHUoedsdj7CFydDsyuRoz/xZvc0TcJ79UMvrDqVAl
-jlksFfBQQ8pDU0N81xv0F5ESB5GUID27RAAT3UnCub9WwKqoTvxcrpkwqsIw4EgQ
-ttU/wwf7lM+9mzoYYXupTG8g2OuhpJSFdJTf0EHFh1una9EZ/5fy76xzESsSlQ6j
-Q+V91T74J94m3His2Tm9SHXzv2JFj7GG8Ayk6uvYzBlZJ8VBvEZajNyR0zmYHq6v
-TgNBh89YATTx/0QHiZPQC3bBiWNvsQDNkkQU/Rjk97UM2n09M3CH/Ymkcdgmb+f1
-H9/8wYK4RLJPFnOodSPqQFsXqBvYXAIgembbFCupDvPz76EycTHDIiscGiXQhVfw
-EdM2GOlvc77BrGSfCpjbULsLd1pqBHRwxQym15cTY8FUM4/d9ZqdS3+fDtY5URPv
-eayatF4MyBo8+jhol6prDNPvKuSxuPZnMZaskylhUMYvEElxTnHBBlnkWGyRFsYO
-T4pbgRFEclb/xZA/YYLdZ/7rtwsfqrAKjh2je+eKfh+eb3rpfxM=
-=Pqf2
------END PGP SIGNATURE-----
-
---m55f6i4q6qo7c2yd--
-
-
---===============0620034536444113557==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0620034536444113557==--
-
