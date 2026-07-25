@@ -4,52 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40BD1C54F40
-	for <linux-phy@archiver.kernel.org>; Sat, 25 Jul 2026 04:51:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D240FC54F4D
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Jul 2026 04:51:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GzrWKC2KAufIQLyq8RCcyqdsARn8IH1jt2sP265dR+0=; b=dWIpHpkK/7PaZ2
-	I5qcYG5gOJbVb9qA8db5L4fpNn5kQCW74Wod2PZ5Z4DyVZmwGggbqHyXuDAbV/Z/ZMzejibUrd6WO
-	5sLb8knrCzl8yYQahGd4ziS8AmwHuBeyt4TePzACapYICSh1xgJar4er7Rv2gJB5ZN8vw8a8OV/+L
-	2SDEjEk8je6Q1J4jai986DaDvfR7QVwf8CO7jfs3eCBHpr0svHKwkfvJihbM/1aQ/mrhJmk8+3zZS
-	qK8Ho2jRUP2/ZFs4SCcucrndWiiA0KNk47ooT5FC8PmIdfnDHonkOrso6SAzUZqiNfCd9seDl3IZW
-	ktALyWp+Zbm+KkJN8KtA==;
+	List-Owner; bh=yXRye+5zRVSvUSTIRaObKIfHIjnYHEcRtoNNBLeSdEA=; b=q+LUZc6uDQi6nP
+	vf8CcbC1URqAKTCE2Fh2Pb+hcjpdXpvfP2OguIXOldxp4SaAkUlBEwGOXpDU9znbzUN1t6giRpe7U
+	ACED0/kI8rXXVgJohAw9GRYlfjroBZPg/xw1mCPvXwLwESuPorFrqNipXjMVDKoM9UI/7k4rtKc7q
+	rWJEgdH4X5n3lpFY+TyK1sf2K2ypcST8pWDyRxbSghdSN6zJkmk5mMcnVuJzZqoap298zdif+TVXw
+	JpVoNiAHqzExSWlUpSXGjvsC9EpR/dXVqUhkDX4uPHtNL2lZAAP8jOhbHBlBL1sKxwk5VkRXD3nmt
+	l5s8/uYKQ2J+YPoBacmw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wnUMA-000000000U0-2DbV;
-	Sat, 25 Jul 2026 04:51:26 +0000
+	id 1wnUME-000000000aA-2B3M;
+	Sat, 25 Jul 2026 04:51:30 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wnUM8-000000000Sd-44i4;
-	Sat, 25 Jul 2026 04:51:25 +0000
+	id 1wnUMA-000000000TC-1nSe;
+	Sat, 25 Jul 2026 04:51:26 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 650C144060;
-	Sat, 25 Jul 2026 04:51:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 3713FC2BCFD;
-	Sat, 25 Jul 2026 04:51:24 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 5BAAA4519C;
+	Sat, 25 Jul 2026 04:51:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 12845C4AF13;
+	Sat, 25 Jul 2026 04:51:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1784955084;
-	bh=NE5pnwgEYXmw9dka1kEONCacx9bBT/Qa1Xqatoy7Md8=;
+	s=k20201202; t=1784955085;
+	bh=wonA2vEJhnyXD4bYv5jPRPqPzb4hwC+tlaZ3VFa9dHk=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=q9awtHJ/yVKgNlLSoquK2C5prnLB/0/QX/EgXpSZAUPt2WJsx9AY3ZXG35mcboqld
-	 fQ7Hf/NrGtrqVnaI7IC8pQyhwir97v73tzfUe2LtC+ENZwaudCWqxKPwDCByTfzu8U
-	 J0LonOK0ZGDJ0K8d2DxKEIFqyJJzrDMUV7vpRjbbK014vZLg3PA4YBWhM2TtWvvRNr
-	 KUyeu7XfpJKxsrpvxcjH3dfZy58HQK0yU3e26vENXagf3n9IbecfFN5DrdkovqnDAM
-	 UknsT0z5F7OCHh3XjiEorY2dlUmVGLznoAffVh2Jx160PD4TVkY+zIPuPa/E14BDO0
-	 SUEb05dDCM+iA==
+	b=AYuTlsUcxM5dFsQ7xt3r1TZt1hWoixxBMRPYeWjf9eZorntcJFx9lYPP9xM3dv+/7
+	 vm4KfLS20OkyY9CJFVtBvGYwKmtO2V0wM1Ij6D6sQbUXxz8H/+MxUeaqHPkRcQXcT+
+	 gXsuRYiaIvMDat0rt8GkEB3uqK26a2Xs+ZFRGvIOtIIrU2lyQ6V3GWzgzCSgbtnycu
+	 1yEM09Ar3Z17XRHO5aZbp0I4NDXMpjKU1bUqpvtm7sVsSY18mfT4OgpObKK5VP2w8p
+	 MCI1k+f+nO0MfGIpAMYk4YFCKSyn6nIZEbhR+BaadmLBzCE+3BaZXjpeDqLXkqNWgH
+	 7Y3FmcsqNKZEw==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 18906C53209;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E1EDAC53209;
 	Sat, 25 Jul 2026 04:51:24 +0000 (UTC)
 From: Cody Kang via B4 Relay <devnull+codykang.hk.gmail.com@kernel.org>
-Date: Sat, 25 Jul 2026 00:51:11 -0400
-Subject: [PATCH RESEND 02/17] dt-bindings: phy: add SpacemiT K3 Innosilicon
- DP PHY
+Date: Sat, 25 Jul 2026 00:51:22 -0400
+Subject: [PATCH RESEND 13/17] MAINTAINERS: add SpacemiT K3 display driver
+ entry
 MIME-Version: 1.0
-Message-Id: <20260725-k3-display-v1-2-6de34d80e86c@gmail.com>
+Message-Id: <20260725-k3-display-v1-13-6de34d80e86c@gmail.com>
 References: <20260725-k3-display-v1-0-6de34d80e86c@gmail.com>
 In-Reply-To: <20260725-k3-display-v1-0-6de34d80e86c@gmail.com>
 To: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
@@ -68,11 +68,11 @@ Cc: dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
  linux-clk@vger.kernel.org, Cody Kang <codykang.hk@gmail.com>
 X-Mailer: b4 0.15.1
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1784955080; l=2331;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1784955080; l=963;
  i=codykang.hk@gmail.com; s=codykang; h=from:subject:message-id;
- bh=xr0oQcfFPCJzaAeEJhH42CRWzbYWKnP3e2i7y0AjEKQ=;
- b=5SvNVVr58XiRYnVJORW96i5uRgcBnJtyJxdzAgLmdpTlgOoI4aHgXlZ/gGLz1ej06AA6XrI4E
- Rhnuba+0KFGD2QOWi+v4UrsLzPVvHeTHKjWsn/RZ8PasuwLQLQFcrIm
+ bh=sD70Be1EFEVlYgvCDT/fN9L+7DpFEJJVPuxwpoqy0M0=;
+ b=JunK0B0lMIefh4A2iXSV7mdOgkju4O+Ip2oD/jP3gQ1IV9rknEXR45NmcpGfCiwONNCsyxIa4
+ piKVtcIPjs8CV9u1I06GpLyqhHNqh9LkOPsNiDzAwapYUZCCiH8sZ9c
 X-Developer-Key: i=codykang.hk@gmail.com; a=ed25519;
  pk=Osn6/cs9Su/mHHw4P19cmVc3v2FMQfiWahjsN0vEkuk=
 X-Endpoint-Received: by B4 Relay for codykang.hk@gmail.com/codykang with
@@ -97,78 +97,35 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Cody Kang <codykang.hk@gmail.com>
 
-The SpacemiT K3 DisplayPort controller drives its four transmit lanes
-through an integrated Innosilicon DP PHY, one PHY per controller. Add a
-binding so the controller can reference its transmit PHY and the pixel
-clock the PHY's PLL sources.
-
-The PHY's registers are interleaved with its parent controller's inside
-one MMIO window, so it owns neither a reg nor a reset and is modelled as
-a child of the controller.
-
-It exposes its PLL-generated pixel clock through #clock-cells, so the
-APMU pixel-clock mux can select it as a parent through the clock
-framework.
+Cover the Saturn DPU, the Innosilicon DP/eDP controller, the DP PHY and
+their bindings.
 
 Signed-off-by: Cody Kang <codykang.hk@gmail.com>
 ---
- .../bindings/phy/spacemit,k3-inno-dp-phy.yaml      | 48 ++++++++++++++++++++++
- 1 file changed, 48 insertions(+)
+ MAINTAINERS | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/spacemit,k3-inno-dp-phy.yaml b/Documentation/devicetree/bindings/phy/spacemit,k3-inno-dp-phy.yaml
-new file mode 100644
-index 000000000000..f8f1ef372951
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/spacemit,k3-inno-dp-phy.yaml
-@@ -0,0 +1,48 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/spacemit,k3-inno-dp-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 6dea93a41962..9f2910a17c38 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -25436,6 +25436,16 @@ S:	Maintained
+ F:	Documentation/devicetree/bindings/i2c/spacemit,k1-i2c.yaml
+ F:	drivers/i2c/busses/i2c-k1.c
+ 
++SPACEMIT K3 DISPLAY DRIVER
++M:	Cody Kang <codykang.hk@gmail.com>
++L:	dri-devel@lists.freedesktop.org
++L:	linux-riscv@lists.infradead.org
++S:	Maintained
++F:	Documentation/devicetree/bindings/display/spacemit/
++F:	Documentation/devicetree/bindings/phy/spacemit,k3-inno-dp-phy.yaml
++F:	drivers/gpu/drm/spacemit/
++F:	drivers/phy/spacemit/phy-k3-inno-dp.c
 +
-+title: SpacemiT K3 Innosilicon DisplayPort PHY
-+
-+maintainers:
-+  - Cody Kang <codykang.hk@gmail.com>
-+
-+description:
-+  Innosilicon four-lane DisplayPort transmit PHY integrated in the SpacemiT
-+  K3 SoC, one per DisplayPort controller. Its registers are interleaved with
-+  the controller's own inside a single register window, so it is described as
-+  a child of the controller and owns neither a reg nor a reset.
-+
-+  The PHY provides the pixel clock its PLL generates, which the APMU
-+  pixel-clock mux takes as one of its inputs.
-+
-+properties:
-+  compatible:
-+    const: spacemit,k3-inno-dp-phy
-+
-+  "#phy-cells":
-+    const: 0
-+
-+  "#clock-cells":
-+    const: 0
-+
-+  clock-output-names:
-+    maxItems: 1
-+
-+required:
-+  - compatible
-+  - "#phy-cells"
-+  - "#clock-cells"
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    phy {
-+        compatible = "spacemit,k3-inno-dp-phy";
-+        #phy-cells = <0>;
-+        #clock-cells = <0>;
-+        clock-output-names = "edp0_pll_pxclk";
-+    };
+ SPANISH DOCUMENTATION
+ M:	Carlos Bilbao <carlos.bilbao@kernel.org>
+ R:	Avadhut Naik <avadhut.naik@amd.com>
 
 -- 
 2.43.0
