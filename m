@@ -4,54 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9129C531D0
-	for <linux-phy@archiver.kernel.org>; Sat, 25 Jul 2026 05:05:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3CA86C531C9
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Jul 2026 05:08:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UqmSBk1NlH1CRDB3hDm12BKsDG8FAdftnD3yv6ENjSo=; b=fK7sbgb0uCAqeQ
-	2CTjjfQMxVARFaTiqMxXCZ73Rdhn8mLswzV7uUlhYAeFRYJtZgvOtypYbgZTDetr8bJ6L7rIUCDfI
-	NOSPClk/y1X96XCk/A/TUcvJWfY/wsbpMoMlksxJAu3q8Vp573BUkhHqEmnCn8pcLv089z6v/HN85
-	dsDxTOj8mEPBhcU3R8RirgaGVnFxDKJHMgltK18PtBJmwH2nF9SevirCz8vJBnoJ/r7FyZTA6nJBR
-	0EFpjtSnwkC2jFrK7WuZVQoX+wd3zu3rdepDGgkWCOZBR5HlRNIHO0v0heLNu8y3aq8rVcPwNZUrj
-	wknr2iJOmci/0suSwy1Q==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qBfImRx9dSQIzZrsXKv3K9nmasDGRqLvQJwN9V0wJP8=; b=yphnil/aHd/BKe
+	/rOskRM7sdh8VeBBhsnW/YZRCZMUZHwbH3TVs3Mby0cFiL/QHCVatsmfCbIu2zXwzd9YGmnKlU2K8
+	Ng30s687/Yxfc5RUzS85Jlnzk8/mCcghxtBRqSKz4suqYeXxCY8qV9nfs9hCZ+myKhbSf5mU/YKne
+	UdP96wFS719uta8pCwlwdFve8mGZcSJco6tj86/sBDaA+mzZZztBJR5cPtAXxut7FitqrMIVyGgQ2
+	hOLKz2CWgThXpOY+SaKwMIMUHWbxWQfKJ8htxQ3khg+1/BgP0dXIH30/rqcssBzCUZS7Ust8qupzL
+	77mTES3AVTjvIImYVMkQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wnUZo-000000002xE-2L3m;
-	Sat, 25 Jul 2026 05:05:32 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wnUcJ-0000000038X-3sxb;
+	Sat, 25 Jul 2026 05:08:07 +0000
+Received: from mail-pj2-x0a.google.com ([2607:f8b0:4864:39::a])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wnUZn-000000002wv-15fE
+	id 1wnUcG-0000000037x-2i1y
 	for linux-phy@lists.infradead.org;
-	Sat, 25 Jul 2026 05:05:31 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id D830E42B8A;
-	Sat, 25 Jul 2026 05:05:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3FEEF1F000E9;
-	Sat, 25 Jul 2026 05:05:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784955930;
-	bh=GXJnhZf3O9BDdmnRyZyAEoVbDcvDgbstiYUjYyIK5V4=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=E+CsFBSPMJUxvNByeRBAHS33GnTsSf2C8eLSoiFRKe2mweYmEpgWemNj2+j3PWou0
-	 ExN97AD+wq2Nv7x/NN2EBfzGMWMVjIb5KTCgxirVqS3A2LVCqW0N2gpW/tWCNsveGF
-	 rPB9REUErKa7P0TzrdRJLULNeAn1es8o3b2HVyj2aF+T1eZM1j7mOPFEJaIOH6ys1a
-	 SUbEEquphRSAO/kdkI/qHxF1MR53g5zoO3J1B+QrJKLePkWPZh3Q9PTJQVAFcsJvAW
-	 tnfNaCjHRP+7eK3kz6uDlGhEgh0b7HZg+N2jdKchJ32VfDdrkREWbN7ZYrX6AMOL42
-	 0g/vQ0I1mdzYQ==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH RESEND 11/17] drm/spacemit: add Saturn DPU DRM device
- driver
-To: "Cody Kang" <codykang.hk@gmail.com>
-Cc: robh@kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, neil.armstrong@linaro.org, olteanv@gmail.com, vkoul@kernel.org, conor+dt@kernel.org
-In-Reply-To: <20260725-k3-display-v1-11-6de34d80e86c@gmail.com>
-References: <20260725-k3-display-v1-0-6de34d80e86c@gmail.com>
- <20260725-k3-display-v1-11-6de34d80e86c@gmail.com>
-Date: Sat, 25 Jul 2026 05:05:29 +0000
-Message-Id: <20260725050530.3FEEF1F000E9@smtp.kernel.org>
+	Sat, 25 Jul 2026 05:08:05 +0000
+Received: by mail-pj2-x0a.google.com with SMTP id 98e67ed59e1d1-38e8adc1d70so463839a91.1
+        for <linux-phy@lists.infradead.org>; Fri, 24 Jul 2026 22:08:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1784956083; x=1785560883; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:content-type:mime-version
+         :message-id:date:subject:from:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=lGkHba1dpLm3kZ77OrZxUFezmNhR7Fx9pZtETx4Zo3s=;
+        b=muiHkSowIO8eV5LmxrpXLtM1Ibti0micpGNrgvbgiSARkDdNFZXhgZFXOPxws46C3C
+         uUj9aQsbzzMdz7/GeK7tYYYlQ2ULQuFo2psN6JQpFBgnWKu51A9HsljHGchw9Ujj4JD0
+         lm9/DHYDs21nKvit55uwAFW1WFvB5FjO3EAipyYLKgUCR5y9aZp1x5cYpvfRjk6E7Jt4
+         o678KXnXVs/UibpadLRDv6ttisGnO+YVaWngDQL1NXvx2OUHQ8rmPlg0SZ+WePc6XVzh
+         88LU3TgHc+lYrn4Y40MMQbV1SHgzCcZJqm1mEu0n5u5zymSLRAogX6tQdm6/81TRNfMR
+         C5Ig==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1784956083; x=1785560883;
+        h=cc:to:content-transfer-encoding:content-type:mime-version
+         :message-id:date:subject:from:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=lGkHba1dpLm3kZ77OrZxUFezmNhR7Fx9pZtETx4Zo3s=;
+        b=m9SZNMVPurH03Vd4KLS3JLsWtsSTt9f3fclGye8t9zN63yozX4mUSy/wrN/SYWG6bv
+         TSeK89cqJUUqKnJ8VzvxpGFmevvzWAWct47NlhMQLei0bBMXHN/hqOF1W5E9f2EAITmQ
+         Yac2RACqyga7oLst6BDcth6tdzWkDmZwHWkcnT9Gy9ymrkMmgXrGZyOiI8+lQQGyNmHM
+         qnM4NIwNM8LO32Wc5ls2VcFsFWlfw75tIw0onp5Bvqg8w1+nU9LlWsw9ANHtjTP4gA2X
+         vA3LGfz5MOrD7JshQGrU1SJ8Xzmnfz4eCcBLjYcTkCwU/fz50jFntijzTpATUsWB7sH6
+         zk6w==
+X-Forwarded-Encrypted: i=1; AHgh+RqaaEWgvhiyTDFL8V/ar9TQEeU9qoJAWby73xaadRrqViQ7IkoV6oo9GdjUswtetf1mMkLuL0IMlVs=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyQhxKhKn7kjdr+z7f0OKGIxgVt+vB+7IONJWDIfpXClYvG1z8c
+	m+HXMb1qku7mfLcnyHk20yfpwin+plm9RNqEFYW8W/mmI7zhuP3K6EIv
+X-Gm-Gg: AR+sD13Md9OdjD4urcog+5CIlhmfNh/NLpy/03aDWhi2kKP9+8Kxj/7z6QQf+CpwOh8
+	SViYcLKW/px/gHD6u3IXKsIXegSF+h/ocbDEF1RuDAMMbFsN5BZFtL1eEW5mJx5UQBmqzvqxE7/
+	AIhHYf1e6ybzPip+6iVdEs1DwgPGENffocTgrUvxRquDw6KIptIMb9gY4YRJJpFeNhA3+HIxXDR
+	/AoGwj3el8ZND5eEo2eXJiKQbuEwkAm+Gz4Y9F5+IV0kuSq4FKoPoEs6NlsCktLotzJnGATeU7t
+	44CShFXWDuLjUlMR7wDWK6BPfLoatc2579tPyLuztgX9LYuIJQ2IhtGHzd9XS++YrG5RafHZNKZ
+	taSL9TUZqpGooL7nYAweGH8G5oVFu0kRb/2JKFQN/CeLkqeHdWg9IPxc=
+X-Received: by 2002:a05:6a00:4218:b0:84a:6726:62f9 with SMTP id d2e1a72fcca58-84e5942e629mr681366b3a.9.1784949429047;
+        Fri, 24 Jul 2026 20:17:09 -0700 (PDT)
+Received: from [127.0.1.1] ([2a12:a305:4::403c])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-84e53432834sm640542b3a.50.2026.07.24.20.17.01
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 24 Jul 2026 20:17:08 -0700 (PDT)
+From: Cody Kang <codykang.hk@gmail.com>
+Subject: [PATCH 00/17] drm/spacemit: add SpacemiT K3 display support
+Date: Fri, 24 Jul 2026 23:16:32 -0400
+Message-Id: <20260724-k3-display-v1-0-f22a10a52867@gmail.com>
+MIME-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIAJEqZGoC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
+ vPSU3UzU4B8JSMDIzMDc0Nj3Wxj3ZTM4oKcxErdVIu0tNQUM/NUS2MzJaCGgqLUtMwKsGHRsRB
+ +cWlSVmpyCcgEpdpaAGzX92NuAAAA
+X-Change-ID: 20260713-k3-display-e8ffed67e936
+To: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@kernel.org>, 
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+ Haylen Chu <heylenay@4d2.org>, Michael Turquette <mturquette@baylibre.com>, 
+ Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, Paul Walmsley <pjw@kernel.org>, 
+ Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, 
+ Alexandre Ghiti <alex@ghiti.fr>
+Cc: dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org, 
+ devicetree@vger.kernel.org, spacemit@lists.linux.dev, 
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-clk@vger.kernel.org, Cody Kang <codykang.hk@gmail.com>
+X-Mailer: b4 0.15.1
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260724_220804_691621_E141D118 
+X-CRM114-Status: GOOD (  17.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,95 +107,147 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIFN0YWxsaW5nIHRoZSBh
-dG9taWMgY29tbWl0IHBpcGVsaW5lIGJ5IGNhbGxpbmcgd2FpdF9mb3JfZmxpcF9kb25lKCkgYmVm
-b3JlIGNvbW1pdF9od19kb25lKCkKLSBbSGlnaF0gU2xlZXBpbmcgZnVuY3Rpb25zICh1c2xlZXBf
-cmFuZ2UpIGNhbGxlZCBmcm9tIGF0b21pYyBjb250ZXh0IGluIENSVEMgZW5hYmxlL2Rpc2FibGUK
-LSBbSGlnaF0gU2xlZXBpbmcgZnVuY3Rpb24gY2FsbGVkIGZyb20gYXRvbWljIGNvbnRleHQgaW4g
-cGxhbmUgdXBkYXRlIGR1ZSB0byBtaXNzaW5nIHByZXBhcmVfZmIKLS0KCi0tLSBQYXRjaCBbMTFd
-OiBbUEFUQ0ggUkVTRU5EIDExLzE3XSBkcm0vc3BhY2VtaXQ6IGFkZCBTYXR1cm4gRFBVIERSTSBk
-ZXZpY2UgZHJpdmVyIC0tLQpjb21taXQgZGI0M2JkNmFlNjc3YTg1OWNlYTc2Y2NmMjM5MGNhM2Qx
-MDlkMGZlMApBdXRob3I6IENvZHkgS2FuZyA8Y29keWthbmcuaGtAZ21haWwuY29tPgoKZHJtL3Nw
-YWNlbWl0OiBhZGQgU2F0dXJuIERQVSBEUk0gZGV2aWNlIGRyaXZlcgoKQWRkIHRoZSBEUk0gZGV2
-aWNlIGZvciB0aGUgU3BhY2VtaVQgSzMgU2F0dXJuIGRpc3BsYXkgcHJvY2Vzc2luZyB1bml0CmFu
-ZCBob29rIHRoZSBkcml2ZXIgdXAgdG8gdGhlIGJ1aWxkLiBUaGUgU29DIGhhcyB0d28gRFBVIGlu
-c3RhbmNlczsKZWFjaCBkcml2ZXMgb25lIENSVEMgdGhhdCBzY2FucyBvdXQgYSBzaW5nbGUgcHJp
-bWFyeSBwbGFuZSBpbiBsaW5lYXIKUkdCIGF0IHVwIHRvIDM4NDB4MjE2MEA2MCBhbmQgZmVlZHMg
-YSBkb3duc3RyZWFtIERQL2VEUCBjb250cm9sbGVyCm92ZXIgYW4gT0YtZ3JhcGggZW5kcG9pbnQu
-IEJ1ZmZlcnMgdXNlIGRybV9nZW1fc2htZW1faGVscGVyLiBUaGUKQUZCQy9jb21wcmVzc2VkIGRl
-Y29kZSBwYXRoIGlzIG5vdCBleHBvc2VkIGFuZCB3cml0ZWJhY2sgaXMgbm90CmltcGxlbWVudGVk
-LgoKWyAuLi4gXQoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUvZHJtL3NwYWNlbWl0L3NwYWNl
-bWl0X2RybS5jIGIvZHJpdmVycy9ncHUvZHJtL3NwYWNlbWl0L3NwYWNlbWl0X2RybS5jCj4gbmV3
-IGZpbGUgbW9kZSAxMDA2NDQKPiBpbmRleCAwMDAwMDAwMDAwMDAwLi45ZmI2YTc2NjFiNDg0Cj4g
-LS0tIC9kZXYvbnVsbAo+ICsrKyBiL2RyaXZlcnMvZ3B1L2RybS9zcGFjZW1pdC9zcGFjZW1pdF9k
-cm0uYwo+IEBAIC0wLDAgKzEsMTMyIEBACj4gKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBH
-UEwtMi4wCj4gKy8qCj4gKyAqIENvcHlyaWdodCAoQykgMjAyNS0yMDI2IFNwYWNlbWlUIENvLiwg
-THRkLgo+ICsgKgo+ICsgKi8KClsgLi4uIF0KCj4gK3N0YXRpYyB2b2lkIHNwYWNlbWl0X2RybV9h
-dG9taWNfY29tbWl0X3RhaWwoc3RydWN0IGRybV9hdG9taWNfY29tbWl0ICpvbGRfc3RhdGUpCj4g
-K3sKPiArCXN0cnVjdCBkcm1fZGV2aWNlICpkZXYgPSBvbGRfc3RhdGUtPmRldjsKPiArCj4gKwlk
-cm1fYXRvbWljX2hlbHBlcl9jb21taXRfbW9kZXNldF9kaXNhYmxlcyhkZXYsIG9sZF9zdGF0ZSk7
-Cj4gKwo+ICsJZHJtX2F0b21pY19oZWxwZXJfY29tbWl0X21vZGVzZXRfZW5hYmxlcyhkZXYsIG9s
-ZF9zdGF0ZSk7Cj4gKwo+ICsJZHJtX2F0b21pY19oZWxwZXJfY29tbWl0X3BsYW5lcyhkZXYsIG9s
-ZF9zdGF0ZSwKPiArCQkJCQlEUk1fUExBTkVfQ09NTUlUX0FDVElWRV9PTkxZKTsKPiArCj4gKwlk
-cm1fYXRvbWljX2hlbHBlcl93YWl0X2Zvcl9mbGlwX2RvbmUoZGV2LCBvbGRfc3RhdGUpOwo+ICsK
-PiArCWRybV9hdG9taWNfaGVscGVyX2NvbW1pdF9od19kb25lKG9sZF9zdGF0ZSk7CgpbU2V2ZXJp
-dHk6IEhpZ2hdCkRvZXMgY2FsbGluZyBkcm1fYXRvbWljX2hlbHBlcl93YWl0X2Zvcl9mbGlwX2Rv
-bmUoKSBiZWZvcmUKZHJtX2F0b21pY19oZWxwZXJfY29tbWl0X2h3X2RvbmUoKSBzdGFsbCB0aGUg
-Y29tbWl0IHBpcGVsaW5lPwoKZHJtX2F0b21pY19oZWxwZXJfY29tbWl0X2h3X2RvbmUoKSBzaWdu
-YWxzIHRoYXQgdGhlIGRyaXZlciBoYXMgZmluaXNoZWQKcHJvZ3JhbW1pbmcgdGhlIGhhcmR3YXJl
-LCB3aGljaCB1bmJsb2NrcyBzdWJzZXF1ZW50IG5vbi1ibG9ja2luZyBhdG9taWMgY29tbWl0cy4K
-CldhaXRpbmcgZm9yIHRoZSBWQkxBTksgcGFnZSBmbGlwIHRvIGNvbXBsZXRlIGJlZm9yZSBzaWdu
-YWxpbmcgaHdfZG9uZSBibG9ja3MKYWxsIHN1YnNlcXVlbnQgY29tbWl0cywgYXJ0aWZpY2lhbGx5
-IHNlcmlhbGl6aW5nIHRoZSBjb21taXQgcGlwZWxpbmUgYW5kCmRlZmVhdGluZyB0aGUgbm9uLWJs
-b2NraW5nIGRlc2lnbiBvZiBhdG9taWMgS01TLgoKQ291bGQgdGhpcyBsZWFkIHRvIFVJIHN0dXR0
-ZXIgYW5kIHBlcmZvcm1hbmNlIHJlZ3Jlc3Npb25zPwoKPiArCj4gKwlkcm1fYXRvbWljX2hlbHBl
-cl9jbGVhbnVwX3BsYW5lcyhkZXYsIG9sZF9zdGF0ZSk7Cj4gK30KCkkgYWxzbyBub3RpY2VkIGEg
-ZmV3IGFkZGl0aW9uYWwgcmVncmVzc2lvbnMgaW4gZmlsZXMgdGhhdCBhcHBlYXIgdG8gYmUgcGFy
-dCBvZgp0aGlzIGRyaXZlciBzZXJpZXM6CgpbU2V2ZXJpdHk6IEhpZ2hdCkFyZSB0aGVzZSB1c2xl
-ZXBfcmFuZ2UoKSBjYWxscyBzYWZlIGluIGF0b21pYyBjb250ZXh0PwoKQWNjb3JkaW5nIHRvIERS
-TSBzdWJzeXN0ZW0gZ3VpZGVsaW5lcywgQ1JUQyBhdG9taWMgZW5hYmxlL2Rpc2FibGUgY2FsbGJh
-Y2tzCmV4ZWN1dGUgaW4gYXRvbWljIGNvbnRleHQgZHVyaW5nIG5vbi1ibG9ja2luZyBjb21taXRz
-IHdoZXJlIHNsZWVwaW5nIGlzCmZvcmJpZGRlbi4KCkJvdGggc3BhY2VtaXRfY3J0Y19hdG9taWNf
-ZW5hYmxlKCkgYW5kIGRwdV9wbV9zdXNwZW5kKCkgKGNhbGxlZCBmcm9tCnNwYWNlbWl0X2NydGNf
-YXRvbWljX2Rpc2FibGUoKSkgaW52b2tlIHVzbGVlcF9yYW5nZSgpOgoKZHJpdmVycy9ncHUvZHJt
-L3NwYWNlbWl0L3NwYWNlbWl0X2NydGMuYzpzcGFjZW1pdF9jcnRjX2F0b21pY19lbmFibGUoKSB7
-CiAgICAuLi4KCQlkcHVfcmVzZXRfYXNzZXJ0KGFfY3J0Yy0+ZGV2LCAibWNsayIsIGFfY3J0Yy0+
-bWNsa19yZXNldCk7CgkJZHB1X3Jlc2V0X2Fzc2VydChhX2NydGMtPmRldiwgImFjbGsiLCBhX2Ny
-dGMtPmFjbGtfcmVzZXQpOwoJCWRwdV9yZXNldF9hc3NlcnQoYV9jcnRjLT5kZXYsICJkc2MiLCBh
-X2NydGMtPmRzY19yZXNldCk7CgkJdXNsZWVwX3JhbmdlKDEwMDAwLCAyMDAwMCk7CiAgICAuLi4K
-fQoKZHJpdmVycy9ncHUvZHJtL3NwYWNlbWl0L3NwYWNlbWl0X2NydGMuYzpkcHVfcG1fc3VzcGVu
-ZCgpIHsKICAgIC4uLgoJZHB1X3Jlc2V0X2Fzc2VydChkZXYsICJhY2xrIiwgYV9jcnRjLT5hY2xr
-X3Jlc2V0KTsKCWRwdV9yZXNldF9hc3NlcnQoZGV2LCAiZHNjIiwgYV9jcnRjLT5kc2NfcmVzZXQp
-OwoJdXNsZWVwX3JhbmdlKDEwMDAwLCAyMDAwMCk7CiAgICAuLi4KfQoKQ2FsbGluZyBzbGVlcGlu
-ZyBmdW5jdGlvbnMgaW4gdGhpcyBjb250ZXh0IGNhdXNlcyBrZXJuZWwgd2FybmluZ3MgYW5kIHN5
-c3RlbQppbnN0YWJpbGl0eS4KClNob3VsZCBub24tc2xlZXBpbmcgZGVsYXlzIGxpa2UgdWRlbGF5
-KCkgYmUgdXNlZCBpbnN0ZWFkPwoKCltTZXZlcml0eTogSGlnaF0KRG9lcyBzcGFjZW1pdF9wbGFu
-ZV9hdG9taWNfdXBkYXRlKCkgc2xlZXAgaW4gYXRvbWljIGNvbnRleHQ/CgpUaGUgRFJNIHN1YnN5
-c3RlbSBndWlkZWxpbmVzIGV4cGxpY2l0bHkgc3RhdGUgdGhhdCBQbGFuZSBhdG9taWMgdXBkYXRl
-IGNhbGxiYWNrcwpleGVjdXRlIGluIGF0b21pYyBjb250ZXh0IHdoZXJlIHNsZWVwaW5nIGlzIGZv
-cmJpZGRlbi4KCnNwYWNlbWl0X3BsYW5lX2F0b21pY191cGRhdGUoKSBjYWxscyBzcGFjZW1pdF9k
-bW11X21hcCgpOgoKZHJpdmVycy9ncHUvZHJtL3NwYWNlbWl0L3NwYWNlbWl0X3BsYW5lcy5jOnNw
-YWNlbWl0X3BsYW5lX2F0b21pY191cGRhdGUoKSB7CiAgICAuLi4KCQlyZXQgPSBzcGFjZW1pdF9k
-bW11X21hcChwbGFuZS0+c3RhdGUtPmZiLAoJCQkJCSZzcGFjZW1pdF9wc3RhdGUtPm1tdV90Ymws
-IHRidV9pZCwKCQkJCQlhX2NydGMtPmNsX3JkbWEsIHBsYW5lKTsKICAgIC4uLgp9Cgp3aGljaCB0
-aGVuIGNhbGxzIGRybV9nZW1fc2htZW1fZ2V0X3BhZ2VzX3NndCgpOgoKZHJpdmVycy9ncHUvZHJt
-L3NwYWNlbWl0L3NwYWNlbWl0X2RtbXUuYzpzcGFjZW1pdF9kbW11X21hcCgpIHsKICAgIC4uLgoJ
-c2d0ID0gZHJtX2dlbV9zaG1lbV9nZXRfcGFnZXNfc2d0KHRvX2RybV9nZW1fc2htZW1fb2JqKGZi
-LT5vYmpbMF0pKTsKCWlmIChJU19FUlIoc2d0KSkKICAgIC4uLgp9CgpUaGlzIGhlbHBlciBhY3F1
-aXJlcyBhIHNsZWVwaW5nIG11dGV4IHZpYSBkbWFfcmVzdl9sb2NrX2ludGVycnVwdGlibGUoKS4g
-VGhpcwpjYXVzZXMgYSBzbGVlcCBpbiBhdG9taWMgY29udGV4dCwgcmlza2luZyBrZXJuZWwgcGFu
-aWNzLgoKU2hvdWxkIHRoZSBkcml2ZXIgaW1wbGVtZW50IGEgcHJlcGFyZV9mYiBob29rIChlLmcu
-CmRybV9nZW1fc2htZW1fcGxhbmVfaGVscGVyX3ByZXBhcmVfZmIpIHRvIHBpbiB0aGUgcGFnZXMg
-YW5kIG9idGFpbiB0aGUgU0dUCm91dHNpZGUgb2YgdGhlIGF0b21pYyB1cGRhdGUgcGhhc2U/Cgot
-LSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIw
-MjYwNzI1LWszLWRpc3BsYXktdjEtMC02ZGUzNGQ4MGU4NmNAZ21haWwuY29tP3BhcnQ9MTEKCi0t
-IApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+This series adds display support for the SpacemiT K3 [2], a RISC-V SoC:
+a new DRM driver, a new PHY driver and three new bindings.
+
+The display path is three blocks deep:
+
+  Saturn DPU -> Innosilicon DP/eDP controller -> Innosilicon DP PHY
+
+The Saturn DPU is SpacemiT's own display processing unit. It has a private
+address translation unit and a command-list composer that replays a batch
+of register writes when a flush is latched. It exposes one CRTC with one
+primary plane. The K3 instantiates two DPUs, one per display path.
+
+The DPU driver arrives as five staged patches to keep each one a
+reasonable size. The driver only becomes buildable with that last patch.
+Bisect safe.
+
+The DP/eDP controller and its PHY are Innosilicon IP, also two instances
+of each. An instance behaves as embedded DisplayPort or as external
+DisplayPort purely according to what its output port is wired to, so the
+bindings do not distinguish them. The PHY's registers are interleaved
+with the controller's inside one MMIO window, which is why it is
+described as a child node and shares the controller's regmap.
+
+The pixel clock is generated by the DP PHY's PLL, and the SoC's APMU
+pixel-clock mux takes that PLL as an input. Rather than let the display
+driver reach into PHY registers, the PHY registers its PLL as a clock
+provider and the APMU mux is parented to it through the clock framework.
+That is what patches 2, 4, 5 and 6 are for, and it is also what keeps the
+APMU and the DP/eDP controller out of a devicetree provider cycle.
+
+As a first posting of the K3 display subsystem, this patchset supports:
+a single primary plane per CRTC, linear RGB scanout (no plane scaling,
+rotation, YUV or writeback). It does not support DSI, DSC or DP audio,
+and link rates are capped at HBR2.
+
+Based on drm-misc-next at commit 5b9af25f2d0b ("accel/ivpu: Remove
+unnecessary min_t()/max_t() usage"), v7.2-rc2 based.
+
+Testing this series needs a SpacemiT u-boot carrying display support
+[1]. SpacemiT expects to add that support into an official u-boot
+release in August 2026.
+
+Tested on two K3 boards:
+
+  - Pico-ITX: an eDP panel and an external DisplayPort monitor.
+  - CoM260-IFX: DisplayPort only, no eDP.
+
+Note: The eDP panel DTS enablement is not part of this series; a separate
+      series will follow showing how eDP can be verified.
+
+What was run on both boards, with modetest from libdrm and with kmscube:
+
+  - modetest -s, looped over 1920x1080, 1280x720 and 3840x2160
+    on DisplayPort and 2560x1600 on eDP
+  - kmscube, on each head and on both at once
+  - hot-plug and sink swap on the DisplayPort connector
+
+Both built-in and modular configurations were tested, and the runs above
+were repeated in both. Patch 17 defconfig adds them as modules.
+
+[1] https://github.com/spacemit-com/uboot-for-k3-display-verify/tree/k3-br-v1.0.y
+[2] https://www.spacemit.com/community/document/info?lang=en&nodepath=hardware/key_stone/k3
+
+Signed-off-by: Cody Kang <codykang.hk@gmail.com>
+---
+Cody Kang (17):
+      dt-bindings: display: spacemit: add K3 Saturn DPU controller
+      dt-bindings: phy: add SpacemiT K3 Innosilicon DP PHY
+      dt-bindings: display: spacemit: add K3 Innosilicon DP/eDP controller
+      dt-bindings: soc: spacemit: allow eDP/DP PHY PLL pixel clocks on K3 APMU
+      phy: spacemit: add Innosilicon DP TX PHY driver
+      clk: spacemit: k3: parent eDP/DP pixel clock to the PHY PLL
+      drm/spacemit: add Saturn DPU register model
+      drm/spacemit: add Saturn DPU core types, cmdlist and display MMU
+      drm/spacemit: add Saturn DPU hardware backend
+      drm/spacemit: add Saturn DPU KMS pipeline
+      drm/spacemit: add Saturn DPU DRM device driver
+      drm/spacemit: add Innosilicon DP/eDP controller bridge driver
+      MAINTAINERS: add SpacemiT K3 display driver entry
+      riscv: dts: spacemit: k3: add display nodes
+      riscv: dts: spacemit: k3-pico-itx: enable the DisplayPort output
+      riscv: dts: spacemit: k3-com260-ifx: enable the DisplayPort output
+      riscv: defconfig: spacemit: k3: enable display driver
+
+ .../display/spacemit/spacemit,k3-inno-dp.yaml      |  140 ++
+ .../display/spacemit/spacemit,k3-saturn-dpu.yaml   |  132 ++
+ .../bindings/phy/spacemit,k3-inno-dp-phy.yaml      |   48 +
+ .../bindings/soc/spacemit/spacemit,k1-syscon.yaml  |   30 +-
+ MAINTAINERS                                        |   10 +
+ arch/riscv/boot/dts/spacemit/k3-com260-ifx.dts     |   11 +
+ arch/riscv/boot/dts/spacemit/k3-display.dtsi       |  156 ++
+ arch/riscv/boot/dts/spacemit/k3-pico-itx.dts       |   11 +
+ arch/riscv/boot/dts/spacemit/k3-pinctrl.dtsi       |   22 +
+ arch/riscv/configs/defconfig                       |    2 +
+ drivers/clk/spacemit/ccu-k3.c                      |    4 +-
+ drivers/gpu/drm/Kconfig                            |    1 +
+ drivers/gpu/drm/Makefile                           |    1 +
+ drivers/gpu/drm/spacemit/Kconfig                   |   37 +
+ drivers/gpu/drm/spacemit/Makefile                  |   15 +
+ drivers/gpu/drm/spacemit/dpu/dpu_saturn.c          |  483 ++++
+ drivers/gpu/drm/spacemit/dpu/dpu_saturn.h          |   35 +
+ drivers/gpu/drm/spacemit/dpu/dpu_saturn_hee.c      |  896 +++++++
+ drivers/gpu/drm/spacemit/dpu/dpu_trace.h           |  350 +++
+ drivers/gpu/drm/spacemit/dpu/saturn_fbcmem.c       |  152 ++
+ drivers/gpu/drm/spacemit/dpu/saturn_fbcmem.h       |   21 +
+ drivers/gpu/drm/spacemit/dpu/saturn_regs/dpu_int.h |   25 +
+ drivers/gpu/drm/spacemit/dpu/saturn_regs/ops_hee.h |   52 +
+ .../gpu/drm/spacemit/dpu/saturn_regs/reg_map_hee.h |   64 +
+ .../drm/spacemit/dpu/saturn_regs/saturn_fields.h   |  298 +++
+ drivers/gpu/drm/spacemit/spacemit_cmdlist.c        |  304 +++
+ drivers/gpu/drm/spacemit/spacemit_cmdlist.h        |  146 ++
+ drivers/gpu/drm/spacemit/spacemit_crtc.c           |  815 +++++++
+ drivers/gpu/drm/spacemit/spacemit_crtc.h           |  259 +++
+ drivers/gpu/drm/spacemit/spacemit_dmmu.c           |  103 +
+ drivers/gpu/drm/spacemit/spacemit_dmmu.h           |   40 +
+ drivers/gpu/drm/spacemit/spacemit_dpu_ids.h        |   22 +
+ drivers/gpu/drm/spacemit/spacemit_dpu_reg.h        |  108 +
+ drivers/gpu/drm/spacemit/spacemit_drm.c            |  132 ++
+ drivers/gpu/drm/spacemit/spacemit_drm.h            |   68 +
+ drivers/gpu/drm/spacemit/spacemit_inno_dp.c        | 2443 ++++++++++++++++++++
+ drivers/gpu/drm/spacemit/spacemit_inno_dp.h        |  328 +++
+ drivers/gpu/drm/spacemit/spacemit_planes.c         |  376 +++
+ drivers/phy/spacemit/Kconfig                       |   13 +
+ drivers/phy/spacemit/Makefile                      |    1 +
+ drivers/phy/spacemit/phy-k3-inno-dp.c              |  948 ++++++++
+ 41 files changed, 9099 insertions(+), 3 deletions(-)
+---
+base-commit: 5b9af25f2d0b574b4058c9f8c84486a597168116
+change-id: 20260713-k3-display-e8ffed67e936
+
+Best regards,
+--  
+Cody Kang <codykang.hk@gmail.com>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
