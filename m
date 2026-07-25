@@ -4,52 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D240FC54F4D
-	for <linux-phy@archiver.kernel.org>; Sat, 25 Jul 2026 04:51:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F46FC54EFC
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Jul 2026 04:51:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yXRye+5zRVSvUSTIRaObKIfHIjnYHEcRtoNNBLeSdEA=; b=q+LUZc6uDQi6nP
-	vf8CcbC1URqAKTCE2Fh2Pb+hcjpdXpvfP2OguIXOldxp4SaAkUlBEwGOXpDU9znbzUN1t6giRpe7U
-	ACED0/kI8rXXVgJohAw9GRYlfjroBZPg/xw1mCPvXwLwESuPorFrqNipXjMVDKoM9UI/7k4rtKc7q
-	rWJEgdH4X5n3lpFY+TyK1sf2K2ypcST8pWDyRxbSghdSN6zJkmk5mMcnVuJzZqoap298zdif+TVXw
-	JpVoNiAHqzExSWlUpSXGjvsC9EpR/dXVqUhkDX4uPHtNL2lZAAP8jOhbHBlBL1sKxwk5VkRXD3nmt
-	l5s8/uYKQ2J+YPoBacmw==;
+	List-Owner; bh=wL/Aby541qmgjHCMArLwf9H1Ghp5m4ZLOfxWOCRriZY=; b=CdZefNJ9twDZ1/
+	dblhCp/kq6B/8jwFZUYYXOof+GbqiasfuHnY+/5/0yuxibEojpqSqd8ZXpY/S/XLCifvo50TpPT7I
+	YZ6PmEzuN1cyOTXEQey82KnEPkTQ4OQnTFxNPPdtQoGMX/yVNqxnjc6rIYY0XgbtE756JshbOV5yz
+	x8HKHHM3XRH48pXawLLh7ulDwazh/BPw6sdEkGNf8Fc21YdbWakB/iQTGb2awlIAA2fAs8lLM3IMQ
+	Fv1M1WGyhnqVFsZMOpE0Wq4A1gD4CqQkCEpRTJ1EgRvM731zxrxHznZDgiEhqhBXQ4H5cTmD5qByO
+	G4zUdCBGonago+EzdfHw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wnUME-000000000aA-2B3M;
-	Sat, 25 Jul 2026 04:51:30 +0000
+	id 1wnUMB-000000000WE-2XH0;
+	Sat, 25 Jul 2026 04:51:27 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wnUMA-000000000TC-1nSe;
-	Sat, 25 Jul 2026 04:51:26 +0000
+	id 1wnUM9-000000000TB-3GJm;
+	Sat, 25 Jul 2026 04:51:25 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5BAAA4519C;
-	Sat, 25 Jul 2026 04:51:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 12845C4AF13;
-	Sat, 25 Jul 2026 04:51:25 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id C3FBD45159;
+	Sat, 25 Jul 2026 04:51:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 80A2CC2BCFA;
+	Sat, 25 Jul 2026 04:51:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1784955085;
-	bh=wonA2vEJhnyXD4bYv5jPRPqPzb4hwC+tlaZ3VFa9dHk=;
+	s=k20201202; t=1784955084;
+	bh=qkGk1wlNqaNN6bkG4rJsjFh/Lw8nGvcRtQ/K1MBk0/Q=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=AYuTlsUcxM5dFsQ7xt3r1TZt1hWoixxBMRPYeWjf9eZorntcJFx9lYPP9xM3dv+/7
-	 vm4KfLS20OkyY9CJFVtBvGYwKmtO2V0wM1Ij6D6sQbUXxz8H/+MxUeaqHPkRcQXcT+
-	 gXsuRYiaIvMDat0rt8GkEB3uqK26a2Xs+ZFRGvIOtIIrU2lyQ6V3GWzgzCSgbtnycu
-	 1yEM09Ar3Z17XRHO5aZbp0I4NDXMpjKU1bUqpvtm7sVsSY18mfT4OgpObKK5VP2w8p
-	 MCI1k+f+nO0MfGIpAMYk4YFCKSyn6nIZEbhR+BaadmLBzCE+3BaZXjpeDqLXkqNWgH
-	 7Y3FmcsqNKZEw==
+	b=cuTPdma9dm0UBGeylVFQb5wMsRrbrBP3142oX94AEGAkHXVC/5Q8+VcabkfSBO2gQ
+	 mgRta5EAwlnSAAj/QUjbPBe3sXjuGGQfptBi6eIB8DwVCF11FcVX272kxx4G2QBJxt
+	 gXhbOJ1p6aG9nt1hJgAZ3CVDwKS7hRM5F/IHae3vtAtnDDS2+H60HaaetTqGGBpmAV
+	 C5fm/ZTWGvcD7vyDCj+b+fn1zrwhPUfDXW4Bs5sVDzSFd9WpJkwzVwEbVq5O2QedmN
+	 S7XhUl5TE17RSHeXa7MrD2/T/5wU+pmlJic5O3QdR+nn75ivWLqdGbR6vf2E0ag4GF
+	 //78c9qVzIWLg==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id E1EDAC53209;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 6E55BC53200;
 	Sat, 25 Jul 2026 04:51:24 +0000 (UTC)
 From: Cody Kang via B4 Relay <devnull+codykang.hk.gmail.com@kernel.org>
-Date: Sat, 25 Jul 2026 00:51:22 -0400
-Subject: [PATCH RESEND 13/17] MAINTAINERS: add SpacemiT K3 display driver
- entry
+Date: Sat, 25 Jul 2026 00:51:16 -0400
+Subject: [PATCH RESEND 07/17] drm/spacemit: add Saturn DPU register model
 MIME-Version: 1.0
-Message-Id: <20260725-k3-display-v1-13-6de34d80e86c@gmail.com>
+Message-Id: <20260725-k3-display-v1-7-6de34d80e86c@gmail.com>
 References: <20260725-k3-display-v1-0-6de34d80e86c@gmail.com>
 In-Reply-To: <20260725-k3-display-v1-0-6de34d80e86c@gmail.com>
 To: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
@@ -68,11 +67,11 @@ Cc: dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
  linux-clk@vger.kernel.org, Cody Kang <codykang.hk@gmail.com>
 X-Mailer: b4 0.15.1
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1784955080; l=963;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1784955080; l=19480;
  i=codykang.hk@gmail.com; s=codykang; h=from:subject:message-id;
- bh=sD70Be1EFEVlYgvCDT/fN9L+7DpFEJJVPuxwpoqy0M0=;
- b=JunK0B0lMIefh4A2iXSV7mdOgkju4O+Ip2oD/jP3gQ1IV9rknEXR45NmcpGfCiwONNCsyxIa4
- piKVtcIPjs8CV9u1I06GpLyqhHNqh9LkOPsNiDzAwapYUZCCiH8sZ9c
+ bh=aGb90Zcw0kJbWaMZg2zn95ns2mMfLtKTsOBJLIfiK9M=;
+ b=vkzSUYzfoeEPpEbRxt9JXkcm0bzNeaGDVnfaQNDnDVzARTnU+CLwTzszKCYNRzUP9XIBpyLId
+ GFFb1bJvOMpDHzDuIGkB4D0FCiVqr4ixMpxIy0op+xcfxLT12udXYqi
 X-Developer-Key: i=codykang.hk@gmail.com; a=ed25519;
  pk=Osn6/cs9Su/mHHw4P19cmVc3v2FMQfiWahjsN0vEkuk=
 X-Endpoint-Received: by B4 Relay for codykang.hk@gmail.com/codykang with
@@ -97,35 +96,460 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Cody Kang <codykang.hk@gmail.com>
 
-Cover the Saturn DPU, the Innosilicon DP/eDP controller, the DP PHY and
-their bindings.
+The Saturn display processing unit is programmed through a set of
+register blocks (composer, RDMA, timing generator, cmdlist engine,
+display MMU) laid out identically in both SoC instances. Add the block
+address map, the per-field word offset and mask tables consumed by the
+field accessors, the interrupt bit layout and the compositor and
+output-format ID encodings. The address map describes the whole
+IP block on purpose, including blocks the driver does not touch; the
+field tables carry the fields the driver programs, with each block's
+full word count kept as its NWORDS extent.
+
+Consumers arrive with the following patches; the driver only becomes
+buildable once the final patch adds the Kconfig and Makefile glue.
 
 Signed-off-by: Cody Kang <codykang.hk@gmail.com>
 ---
- MAINTAINERS | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ drivers/gpu/drm/spacemit/dpu/saturn_regs/dpu_int.h |  25 ++
+ .../gpu/drm/spacemit/dpu/saturn_regs/reg_map_hee.h |  64 +++++
+ .../drm/spacemit/dpu/saturn_regs/saturn_fields.h   | 298 +++++++++++++++++++++
+ drivers/gpu/drm/spacemit/spacemit_dpu_ids.h        |  22 ++
+ 4 files changed, 409 insertions(+)
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 6dea93a41962..9f2910a17c38 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -25436,6 +25436,16 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/i2c/spacemit,k1-i2c.yaml
- F:	drivers/i2c/busses/i2c-k1.c
- 
-+SPACEMIT K3 DISPLAY DRIVER
-+M:	Cody Kang <codykang.hk@gmail.com>
-+L:	dri-devel@lists.freedesktop.org
-+L:	linux-riscv@lists.infradead.org
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/display/spacemit/
-+F:	Documentation/devicetree/bindings/phy/spacemit,k3-inno-dp-phy.yaml
-+F:	drivers/gpu/drm/spacemit/
-+F:	drivers/phy/spacemit/phy-k3-inno-dp.c
+diff --git a/drivers/gpu/drm/spacemit/dpu/saturn_regs/dpu_int.h b/drivers/gpu/drm/spacemit/dpu/saturn_regs/dpu_int.h
+new file mode 100644
+index 000000000000..2c7fa00ba31e
+--- /dev/null
++++ b/drivers/gpu/drm/spacemit/dpu/saturn_regs/dpu_int.h
+@@ -0,0 +1,25 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (C) 2025-2026 SpacemiT Co., Ltd.
++ *
++ */
 +
- SPANISH DOCUMENTATION
- M:	Carlos Bilbao <carlos.bilbao@kernel.org>
- R:	Avadhut Naik <avadhut.naik@amd.com>
++#ifndef DPU_INT_REG_H
++#define DPU_INT_REG_H
++
++#include <linux/bits.h>
++
++#define DPU_INT_CMDLIST_CH_FRM_CFG_DONE_MASK	(0xff)
++#define DPU_INT_CMDLIST_CH_FRM_CFG_DONE		(DPU_INT_CMDLIST_CH_FRM_CFG_DONE_MASK << 11)
++#define DPU_INT_FRM_TIMING_UNFLOW		BIT(8)
++#define DPU_INT_CFG_RDY_CLR			BIT(5)
++#define DPU_INT_FRM_TIMING_CFG_LINE		BIT(4)
++#define DPU_INT_FRM_TIMING_CFG_EOF		(BIT(2) | BIT(3))
++#define DPU_INT_FRM_TIMING_EOF			BIT(1)
++#define DPU_INT_FRM_TIMING_VSYNC		BIT(0)
++#define DPU_REST_INT_BITS			(DPU_INT_FRM_TIMING_CFG_EOF | \
++						 DPU_INT_FRM_TIMING_CFG_LINE | \
++						 DPU_INT_FRM_TIMING_EOF | \
++						 DPU_INT_CMDLIST_CH_FRM_CFG_DONE)
++
++#endif
+diff --git a/drivers/gpu/drm/spacemit/dpu/saturn_regs/reg_map_hee.h b/drivers/gpu/drm/spacemit/dpu/saturn_regs/reg_map_hee.h
+new file mode 100644
+index 000000000000..9490021cdb91
+--- /dev/null
++++ b/drivers/gpu/drm/spacemit/dpu/saturn_regs/reg_map_hee.h
+@@ -0,0 +1,64 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (C) 2025-2026 SpacemiT Co., Ltd.
++ *
++ */
++
++#ifndef _SATURN_REG_MAP_hee_H_
++#define _SATURN_REG_MAP_hee_H_
++
++#include "dpu_int.h"
++
++/* Base address, then bit definitions */
++
++#define DPU_TOP_BASE_ADDR 0x0
++#define DPU_CTRL_BASE_ADDR 0x3c0 /* dpu_ctl_top start address */
++#define CMDLIST_BASE_ADDR 0x500
++#define DPU_INT_BASE_ADDR 0x700
++
++#define DPU_ONLINE_IRQ_MSK	(3 * 4)
++#define DPU_ONLINE_IRQ_STS	(12 * 4)
++
++#define DMA_TOP_BASE_ADDR (RDMA0_BASE_ADDR + 0x280)
++
++#define RDMA0_BASE_ADDR (0x00001000)
++#define RDMA1_BASE_ADDR (RDMA0_BASE_ADDR + 0x1000)
++#define RDMA2_BASE_ADDR (RDMA0_BASE_ADDR + 0xa000)
++#define RDMA3_BASE_ADDR (RDMA0_BASE_ADDR + 0xb000)
++
++#define MMU_BASE_ADDR (0x1100)
++#define MMU_TOP_BASE_ADDR (MMU_BASE_ADDR + 0x100)
++
++#define TBU0_ADDR 0x1100
++#define TBU1_ADDR 0x1180
++#define TBU2_ADDR 0x2100
++#define TBU3_ADDR 0x2180
++#define TBU4_ADDR 0xb100
++#define TBU5_ADDR 0xb180
++#define TBU6_ADDR 0xc100
++#define TBU7_ADDR 0xc180
++
++#define CMP0_BASE_ADDR 0x00018000
++#define CMP1_BASE_ADDR (CMP0_BASE_ADDR + 0x18000)
++#define CMP2_BASE_ADDR (CMP0_BASE_ADDR + 0x30000)
++
++#define PREPIPE_SCAL0_BASE_ADDR 0x14000
++#define PREPIPE_SCAL1_BASE_ADDR 0x14400
++#define PREPIPE_SCAL2_BASE_ADDR 0x14800
++#define PREPIPE_SCAL3_BASE_ADDR 0x14c00
++
++#define POST_PIPE_ADDR (CMP1_BASE_ADDR + 0x300)
++
++#define EE_ADDR (CMP1_BASE_ADDR + 0xd00)
++
++#define DPU_SCENE_CTL_BASE_ADDR (0x300)
++#define DPU_SCENE_CTL_SIZE 0x40
++#define DPU_SCENE_CTL_ADDR(i) (DPU_SCENE_CTL_BASE_ADDR + (i) * DPU_SCENE_CTL_SIZE)
++
++#define TMG0_BASE_ADDR (0x00051000 + 0x200)
++
++#define CMDLIST_CH_Y                 0x188
++#define CMDLIST_CH_START_CMPS_Y      0x90
++#define CMDLIST_CFG_READY            0x34
++
++#endif
+diff --git a/drivers/gpu/drm/spacemit/dpu/saturn_regs/saturn_fields.h b/drivers/gpu/drm/spacemit/dpu/saturn_regs/saturn_fields.h
+new file mode 100644
+index 000000000000..f745dfdaa83d
+--- /dev/null
++++ b/drivers/gpu/drm/spacemit/dpu/saturn_regs/saturn_fields.h
+@@ -0,0 +1,298 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (C) 2025-2026 SpacemiT Co., Ltd.
++ *
++ * Saturn DPU register field map: word offset and mask per field, consumed by
++ * the dpu_write()/dpu_read() accessors.
++ */
++
++#ifndef SATURN_FIELDS_H
++#define SATURN_FIELDS_H
++
++#include <linux/bits.h>
++
++/* CMDLIST_REG: 128 x 32-bit registers */
++#define CMDLIST_REG__NWORDS	128
++#define CMDLIST_REG__cmdlist_reg_0__cmdlist_ch_start_addrl_WORD(i)	(0 + (i))
++#define CMDLIST_REG__cmdlist_reg_0__cmdlist_ch_start_addrl_MASK	GENMASK(31, 4)
++#define CMDLIST_REG__cmdlist_reg_16__cmdlist_ch_start_addrh_WORD(i)	(16 + (i))
++#define CMDLIST_REG__cmdlist_reg_16__cmdlist_ch_start_addrh_MASK	GENMASK(5, 0)
++#define CMDLIST_REG__cmdlist_reg_48__cmdlist_ch_y_first_WORD(i)	(48 + (i))
++#define CMDLIST_REG__cmdlist_reg_48__cmdlist_ch_y_first_MASK	GENMASK(24, 12)
++
++/* CMPS_X_REG: 146 x 32-bit registers */
++#define CMPS_X_REG__NWORDS	146
++#define CMPS_X_REG__module_enable_WORD	0
++#define CMPS_X_REG__module_enable_MASK	GENMASK(0, 0)
++#define CMPS_X_REG__dst_w_WORD	1
++#define CMPS_X_REG__dst_w_MASK	GENMASK(15, 0)
++#define CMPS_X_REG__dst_h_WORD	1
++#define CMPS_X_REG__dst_h_MASK	GENMASK(31, 16)
++#define CMPS_X_REG__bg_color_r_WORD	2
++#define CMPS_X_REG__bg_color_r_MASK	GENMASK(9, 0)
++#define CMPS_X_REG__bg_color_g_WORD	3
++#define CMPS_X_REG__bg_color_g_MASK	GENMASK(9, 0)
++#define CMPS_X_REG__bg_color_b_WORD	4
++#define CMPS_X_REG__bg_color_b_MASK	GENMASK(9, 0)
++#define CMPS_X_REG__bg_color_a_WORD	5
++#define CMPS_X_REG__bg_color_a_MASK	GENMASK(7, 0)
++#define CMPS_X_REG__layer00_area_left_WORD	8
++#define CMPS_X_REG__layer00_area_left_MASK	GENMASK(15, 0)
++#define CMPS_X_REG__layer00_area_right_WORD	8
++#define CMPS_X_REG__layer00_area_right_MASK	GENMASK(31, 16)
++#define CMPS_X_REG__layer00_area_top_WORD	9
++#define CMPS_X_REG__layer00_area_top_MASK	GENMASK(15, 0)
++#define CMPS_X_REG__layer00_area_bottom_WORD	9
++#define CMPS_X_REG__layer00_area_bottom_MASK	GENMASK(31, 16)
++#define CMPS_X_REG__layer00_solid_color_r_WORD	10
++#define CMPS_X_REG__layer00_solid_color_r_MASK	GENMASK(9, 0)
++#define CMPS_X_REG__layer00_solid_color_g_WORD	11
++#define CMPS_X_REG__layer00_solid_color_g_MASK	GENMASK(9, 0)
++#define CMPS_X_REG__layer00_solid_color_b_WORD	12
++#define CMPS_X_REG__layer00_solid_color_b_MASK	GENMASK(9, 0)
++#define CMPS_X_REG__layer00_solid_color_a_WORD	13
++#define CMPS_X_REG__layer00_solid_color_a_MASK	GENMASK(7, 0)
++#define CMPS_X_REG__layer00_blend_mode_WORD	13
++#define CMPS_X_REG__layer00_blend_mode_MASK	GENMASK(15, 14)
++#define CMPS_X_REG__layer00_colorkey_en_WORD	13
++#define CMPS_X_REG__layer00_colorkey_en_MASK	GENMASK(18, 18)
++#define CMPS_X_REG__layer00_en_WORD	14
++#define CMPS_X_REG__layer00_en_MASK	GENMASK(0, 0)
++#define CMPS_X_REG__layer00_blend_sel_WORD	14
++#define CMPS_X_REG__layer00_blend_sel_MASK	GENMASK(2, 1)
++#define CMPS_X_REG__layer00_solid_en_WORD	14
++#define CMPS_X_REG__layer00_solid_en_MASK	GENMASK(3, 3)
++#define CMPS_X_REG__layer00_dma_id_WORD	14
++#define CMPS_X_REG__layer00_dma_id_MASK	GENMASK(7, 4)
++#define CMPS_X_REG__layer00_layer_alpha_WORD	14
++#define CMPS_X_REG__layer00_layer_alpha_MASK	GENMASK(15, 8)
++#define CMPS_X_REG__layer00_alpha_ratio_WORD	14
++#define CMPS_X_REG__layer00_alpha_ratio_MASK	GENMASK(23, 16)
++#define CMPS_X_REG__layer01_en_WORD	21
++#define CMPS_X_REG__layer01_en_MASK	GENMASK(0, 0)
++#define CMPS_X_REG__layer02_en_WORD	28
++#define CMPS_X_REG__layer02_en_MASK	GENMASK(0, 0)
++#define CMPS_X_REG__layer03_en_WORD	35
++#define CMPS_X_REG__layer03_en_MASK	GENMASK(0, 0)
++#define CMPS_X_REG__layer04_en_WORD	42
++#define CMPS_X_REG__layer04_en_MASK	GENMASK(0, 0)
++#define CMPS_X_REG__layer05_en_WORD	49
++#define CMPS_X_REG__layer05_en_MASK	GENMASK(0, 0)
++#define CMPS_X_REG__layer06_en_WORD	56
++#define CMPS_X_REG__layer06_en_MASK	GENMASK(0, 0)
++#define CMPS_X_REG__layer07_en_WORD	63
++#define CMPS_X_REG__layer07_en_MASK	GENMASK(0, 0)
++#define CMPS_X_REG__layer08_en_WORD	70
++#define CMPS_X_REG__layer08_en_MASK	GENMASK(0, 0)
++#define CMPS_X_REG__layer09_en_WORD	77
++#define CMPS_X_REG__layer09_en_MASK	GENMASK(0, 0)
++#define CMPS_X_REG__layer10_en_WORD	84
++#define CMPS_X_REG__layer10_en_MASK	GENMASK(0, 0)
++#define CMPS_X_REG__layer11_en_WORD	91
++#define CMPS_X_REG__layer11_en_MASK	GENMASK(0, 0)
++#define CMPS_X_REG__layer12_en_WORD	98
++#define CMPS_X_REG__layer12_en_MASK	GENMASK(0, 0)
++#define CMPS_X_REG__layer13_en_WORD	105
++#define CMPS_X_REG__layer13_en_MASK	GENMASK(0, 0)
++#define CMPS_X_REG__layer14_en_WORD	112
++#define CMPS_X_REG__layer14_en_MASK	GENMASK(0, 0)
++#define CMPS_X_REG__layer15_en_WORD	119
++#define CMPS_X_REG__layer15_en_MASK	GENMASK(0, 0)
++
++/* DMA_TOP_REG: 25 x 32-bit registers */
++#define DMA_TOP_REG__NWORDS	25
++#define DMA_TOP_REG__image_rr_ratio_WORD	1
++#define DMA_TOP_REG__image_rr_ratio_MASK	GENMASK(7, 0)
++#define DMA_TOP_REG__pixel_num_th_WORD	1
++#define DMA_TOP_REG__pixel_num_th_MASK	GENMASK(14, 9)
++#define DMA_TOP_REG__rdma_timeout_limit_WORD	2
++#define DMA_TOP_REG__rdma_timeout_limit_MASK	GENMASK(15, 0)
++#define DMA_TOP_REG__wdma_timeout_limit_WORD	2
++#define DMA_TOP_REG__wdma_timeout_limit_MASK	GENMASK(31, 16)
++
++/* DPU_CTL_REG: 15 x 32-bit registers */
++#define DPU_CTL_REG__NWORDS	15
++#define DPU_CTL_REG__nml_rch_en_WORD	0
++#define DPU_CTL_REG__nml_rch_en_MASK	GENMASK(9, 0)
++#define DPU_CTL_REG__nml_scl_en_WORD	0
++#define DPU_CTL_REG__nml_scl_en_MASK	GENMASK(13, 10)
++#define DPU_CTL_REG__nml_outctl_en_WORD	0
++#define DPU_CTL_REG__nml_outctl_en_MASK	GENMASK(18, 18)
++#define DPU_CTL_REG__nml_frm_timing_en_WORD	0
++#define DPU_CTL_REG__nml_frm_timing_en_MASK	GENMASK(25, 23)
++#define DPU_CTL_REG__both_cfg_rdy_WORD	2
++#define DPU_CTL_REG__both_cfg_rdy_MASK	GENMASK(0, 0)
++#define DPU_CTL_REG__video_mod_WORD	3
++#define DPU_CTL_REG__video_mod_MASK	GENMASK(0, 0)
++#define DPU_CTL_REG__dbg_mod_WORD	3
++#define DPU_CTL_REG__dbg_mod_MASK	GENMASK(1, 1)
++#define DPU_CTL_REG__timing_inter0_WORD	3
++#define DPU_CTL_REG__timing_inter0_MASK	GENMASK(7, 2)
++#define DPU_CTL_REG__timing_inter1_WORD	3
++#define DPU_CTL_REG__timing_inter1_MASK	GENMASK(13, 8)
++#define DPU_CTL_REG__sw_start_WORD	4
++#define DPU_CTL_REG__sw_start_MASK	GENMASK(0, 0)
++#define DPU_CTL_REG__nml_rch_vrt_reuse_WORD	7
++#define DPU_CTL_REG__nml_rch_vrt_reuse_MASK	GENMASK(9, 0)
++
++/* DPU_CTL_TOP_REG: 53 x 32-bit registers */
++#define DPU_CTL_TOP_REG__NWORDS	53
++#define DPU_CTL_TOP_REG__dpu_ctl_top_reg_0__cmdlist_rch_en_WORD(i)	(0 + (i))
++#define DPU_CTL_TOP_REG__dpu_ctl_top_reg_0__cmdlist_rch_en_MASK	GENMASK(0, 0)
++#define DPU_CTL_TOP_REG__dpu_ctl_top_reg_10__cmdlist_cmps_other_en_WORD(i)	(10 + (i))
++#define DPU_CTL_TOP_REG__dpu_ctl_top_reg_10__cmdlist_cmps_other_en_MASK	GENMASK(0, 0)
++#define DPU_CTL_TOP_REG__dpu_ctl_top_reg_10__cmdlist_cmps_top_en_WORD(i)	(10 + (i))
++#define DPU_CTL_TOP_REG__dpu_ctl_top_reg_10__cmdlist_cmps_top_en_MASK	GENMASK(1, 1)
++
++/* DPU_INTP_REG: 50 x 32-bit registers */
++#define DPU_INTP_REG__NWORDS	50
++
++/* EE_REG: 51 x 32-bit registers */
++#define EE_REG__NWORDS	51
++#define EE_REG__m_benable_WORD	0
++#define EE_REG__m_benable_MASK	GENMASK(0, 0)
++
++/* MMU_TBU_REG: 21 x 32-bit registers */
++#define MMU_TBU_REG__NWORDS	21
++#define MMU_TBU_REG__tbu_base_addr0_low_WORD	1
++#define MMU_TBU_REG__tbu_base_addr0_low_MASK	GENMASK(31, 0)
++#define MMU_TBU_REG__tbu_base_addr0_high_WORD	2
++#define MMU_TBU_REG__tbu_base_addr0_high_MASK	GENMASK(11, 0)
++#define MMU_TBU_REG__tbu_base_addr1_low_WORD	3
++#define MMU_TBU_REG__tbu_base_addr1_low_MASK	GENMASK(31, 0)
++#define MMU_TBU_REG__tbu_base_addr1_high_WORD	4
++#define MMU_TBU_REG__tbu_base_addr1_high_MASK	GENMASK(11, 0)
++#define MMU_TBU_REG__tbu_base_addr2_low_WORD	5
++#define MMU_TBU_REG__tbu_base_addr2_low_MASK	GENMASK(31, 0)
++#define MMU_TBU_REG__tbu_base_addr2_high_WORD	6
++#define MMU_TBU_REG__tbu_base_addr2_high_MASK	GENMASK(11, 0)
++#define MMU_TBU_REG__tbu_va0_WORD	7
++#define MMU_TBU_REG__tbu_va0_MASK	GENMASK(31, 0)
++#define MMU_TBU_REG__tbu_va1_WORD	8
++#define MMU_TBU_REG__tbu_va1_MASK	GENMASK(31, 0)
++#define MMU_TBU_REG__tbu_va2_WORD	9
++#define MMU_TBU_REG__tbu_va2_MASK	GENMASK(31, 0)
++#define MMU_TBU_REG__tbu_size0_WORD	10
++#define MMU_TBU_REG__tbu_size0_MASK	GENMASK(15, 0)
++#define MMU_TBU_REG__tbu_size1_WORD	11
++#define MMU_TBU_REG__tbu_size1_MASK	GENMASK(15, 0)
++#define MMU_TBU_REG__tbu_size2_WORD	12
++#define MMU_TBU_REG__tbu_size2_MASK	GENMASK(15, 0)
++#define MMU_TBU_REG__vsync_update_en_WORD	13
++#define MMU_TBU_REG__vsync_update_en_MASK	GENMASK(1, 1)
++
++/* MMU_TOP_REG: 23 x 32-bit registers */
++#define MMU_TOP_REG__NWORDS	23
++#define MMU_TOP_REG__rdma_timelimit_WORD	0
++#define MMU_TOP_REG__rdma_timelimit_MASK	GENMASK(31, 16)
++#define MMU_TOP_REG__sram0_tlb_axi_port_sel_WORD	1
++#define MMU_TOP_REG__sram0_tlb_axi_port_sel_MASK	GENMASK(1, 0)
++#define MMU_TOP_REG__sram1_tlb_axi_port_sel_WORD	1
++#define MMU_TOP_REG__sram1_tlb_axi_port_sel_MASK	GENMASK(3, 2)
++#define MMU_TOP_REG__dmac0_rd_outs_num_WORD	2
++#define MMU_TOP_REG__dmac0_rd_outs_num_MASK	GENMASK(7, 0)
++#define MMU_TOP_REG__dmac1_rd_outs_num_WORD	3
++#define MMU_TOP_REG__dmac1_rd_outs_num_MASK	GENMASK(7, 0)
++
++/* POSTPIPE_REG: 50 x 32-bit registers */
++#define POSTPIPE_REG__NWORDS	50
++#define POSTPIPE_REG__m_inwidth_WORD	13
++#define POSTPIPE_REG__m_inwidth_MASK	GENMASK(15, 0)
++#define POSTPIPE_REG__m_inheight_WORD	13
++#define POSTPIPE_REG__m_inheight_MASK	GENMASK(31, 16)
++
++/* RDMA_PATH_X_REG: 60 x 32-bit registers */
++#define RDMA_PATH_X_REG__NWORDS	60
++#define RDMA_PATH_X_REG__layer_mode_WORD	0
++#define RDMA_PATH_X_REG__layer_mode_MASK	GENMASK(1, 0)
++#define RDMA_PATH_X_REG__layer_cmpsr_id_WORD	0
++#define RDMA_PATH_X_REG__layer_cmpsr_id_MASK	GENMASK(15, 13)
++#define RDMA_PATH_X_REG__is_two_layers_WORD	1
++#define RDMA_PATH_X_REG__is_two_layers_MASK	GENMASK(0, 0)
++#define RDMA_PATH_X_REG__is_offline_WORD	1
++#define RDMA_PATH_X_REG__is_offline_MASK	GENMASK(1, 1)
++#define RDMA_PATH_X_REG__base_addr0_low_ly0_WORD	9
++#define RDMA_PATH_X_REG__base_addr0_low_ly0_MASK	GENMASK(31, 0)
++#define RDMA_PATH_X_REG__base_addr0_high_ly0_WORD	10
++#define RDMA_PATH_X_REG__base_addr0_high_ly0_MASK	GENMASK(1, 0)
++#define RDMA_PATH_X_REG__base_addr1_low_ly0_WORD	11
++#define RDMA_PATH_X_REG__base_addr1_low_ly0_MASK	GENMASK(31, 0)
++#define RDMA_PATH_X_REG__base_addr1_high_ly0_WORD	12
++#define RDMA_PATH_X_REG__base_addr1_high_ly0_MASK	GENMASK(1, 0)
++#define RDMA_PATH_X_REG__base_addr2_low_ly0_WORD	13
++#define RDMA_PATH_X_REG__base_addr2_low_ly0_MASK	GENMASK(31, 0)
++#define RDMA_PATH_X_REG__base_addr2_high_ly0_WORD	14
++#define RDMA_PATH_X_REG__base_addr2_high_ly0_MASK	GENMASK(1, 0)
++#define RDMA_PATH_X_REG__rdma_stride0_layer0_WORD	15
++#define RDMA_PATH_X_REG__rdma_stride0_layer0_MASK	GENMASK(15, 0)
++#define RDMA_PATH_X_REG__rdma_stride1_layer0_WORD	15
++#define RDMA_PATH_X_REG__rdma_stride1_layer0_MASK	GENMASK(31, 16)
++#define RDMA_PATH_X_REG__img_width_ly0_WORD	16
++#define RDMA_PATH_X_REG__img_width_ly0_MASK	GENMASK(15, 0)
++#define RDMA_PATH_X_REG__img_height_ly0_WORD	16
++#define RDMA_PATH_X_REG__img_height_ly0_MASK	GENMASK(31, 16)
++#define RDMA_PATH_X_REG__bbox_start_x_ly0_WORD	17
++#define RDMA_PATH_X_REG__bbox_start_x_ly0_MASK	GENMASK(15, 0)
++#define RDMA_PATH_X_REG__bbox_start_y_ly0_WORD	17
++#define RDMA_PATH_X_REG__bbox_start_y_ly0_MASK	GENMASK(31, 16)
++#define RDMA_PATH_X_REG__bbox_end_x_ly0_WORD	18
++#define RDMA_PATH_X_REG__bbox_end_x_ly0_MASK	GENMASK(15, 0)
++#define RDMA_PATH_X_REG__bbox_end_y_ly0_WORD	18
++#define RDMA_PATH_X_REG__bbox_end_y_ly0_MASK	GENMASK(31, 16)
++#define RDMA_PATH_X_REG__pixel_format_WORD	29
++#define RDMA_PATH_X_REG__pixel_format_MASK	GENMASK(5, 0)
++#define RDMA_PATH_X_REG__uv_swap_WORD	29
++#define RDMA_PATH_X_REG__uv_swap_MASK	GENMASK(6, 6)
++#define RDMA_PATH_X_REG__rot_mode_ly0_WORD	29
++#define RDMA_PATH_X_REG__rot_mode_ly0_MASK	GENMASK(10, 8)
++
++/* TMG_REG: 30 x 32-bit registers */
++#define TMG_REG__NWORDS	30
++#define TMG_REG__split_en_WORD	0
++#define TMG_REG__split_en_MASK	GENMASK(0, 0)
++#define TMG_REG__cmd_screen_WORD	0
++#define TMG_REG__cmd_screen_MASK	GENMASK(1, 1)
++#define TMG_REG__fm_timing_en_WORD	0
++#define TMG_REG__fm_timing_en_MASK	GENMASK(2, 2)
++#define TMG_REG__cmd_wait_en_WORD	0
++#define TMG_REG__cmd_wait_en_MASK	GENMASK(3, 3)
++#define TMG_REG__cmd_wait_te_WORD	0
++#define TMG_REG__cmd_wait_te_MASK	GENMASK(4, 4)
++#define TMG_REG__disp_ready_man_en_WORD	0
++#define TMG_REG__disp_ready_man_en_MASK	GENMASK(5, 5)
++#define TMG_REG__hsp_WORD	0
++#define TMG_REG__hsp_MASK	GENMASK(7, 7)
++#define TMG_REG__vsp_WORD	0
++#define TMG_REG__vsp_MASK	GENMASK(8, 8)
++#define TMG_REG__user_WORD	2
++#define TMG_REG__user_MASK	GENMASK(15, 12)
++#define TMG_REG__hfp_WORD	3
++#define TMG_REG__hfp_MASK	GENMASK(27, 16)
++#define TMG_REG__hsync_width_WORD	4
++#define TMG_REG__hsync_width_MASK	GENMASK(9, 0)
++#define TMG_REG__hbp_WORD	4
++#define TMG_REG__hbp_MASK	GENMASK(27, 16)
++#define TMG_REG__vfp_WORD	5
++#define TMG_REG__vfp_MASK	GENMASK(15, 0)
++#define TMG_REG__vsync_width_WORD	5
++#define TMG_REG__vsync_width_MASK	GENMASK(25, 16)
++#define TMG_REG__vbp_WORD	6
++#define TMG_REG__vbp_MASK	GENMASK(11, 0)
++#define TMG_REG__h_active_WORD	6
++#define TMG_REG__h_active_MASK	GENMASK(29, 16)
++#define TMG_REG__v_active_WORD	7
++#define TMG_REG__v_active_MASK	GENMASK(13, 0)
++#define TMG_REG__background_r_WORD	9
++#define TMG_REG__background_r_MASK	GENMASK(11, 0)
++#define TMG_REG__background_g_WORD	9
++#define TMG_REG__background_g_MASK	GENMASK(27, 16)
++#define TMG_REG__background_b_WORD	10
++#define TMG_REG__background_b_MASK	GENMASK(11, 0)
++#define TMG_REG__eof_1st_ln_dly_num_WORD	11
++#define TMG_REG__eof_1st_ln_dly_num_MASK	GENMASK(15, 0)
++#define TMG_REG__eof_2nd_ln_dly_num_WORD	11
++#define TMG_REG__eof_2nd_ln_dly_num_MASK	GENMASK(31, 16)
++#define TMG_REG__sof_pre_ln_num_WORD	14
++#define TMG_REG__sof_pre_ln_num_MASK	GENMASK(16, 0)
++
++#endif /* SATURN_FIELDS_H */
+diff --git a/drivers/gpu/drm/spacemit/spacemit_dpu_ids.h b/drivers/gpu/drm/spacemit/spacemit_dpu_ids.h
+new file mode 100644
+index 000000000000..41014dda927b
+--- /dev/null
++++ b/drivers/gpu/drm/spacemit/spacemit_dpu_ids.h
+@@ -0,0 +1,22 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (C) 2025-2026 SpacemiT Co., Ltd.
++ */
++
++#ifndef _SPACEMIT_DPU_IDS_H_
++#define _SPACEMIT_DPU_IDS_H_
++
++/* Saturn online compositor instance ids (hardware IRQ-table indices). */
++#define COMPOSER0	0
++#define COMPOSER1	1
++#define COMPOSER2	2
++#define COMPOSER3	3
++
++/* DPU output-format field encoding (dpuctrl out-format register). */
++#define OUTFMT_RGB121212	0
++#define OUTFMT_RGB101010	1
++#define OUTFMT_RGB888		2
++#define OUTFMT_RGB666		12
++#define OUTFMT_RGB565		13
++
++#endif /* _SPACEMIT_DPU_IDS_H_ */
 
 -- 
 2.43.0
