@@ -4,54 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44948C531C9
-	for <linux-phy@archiver.kernel.org>; Sat, 25 Jul 2026 05:04:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70D36C531C9
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Jul 2026 05:04:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TKc8a361rJjwIOYynZqquAjByMNZt90xrD0y9FRwEK0=; b=GCIzWToCx64p/H
-	sGC07S0thn8kx/LwIlMlAGD2Jtcto9lYfY5OTThL822jxxI2IPj3AVwq321/6NPvZidWQoEn9C3ww
-	ff92q/gUb0MvnR+0ZOkE8QvQpxO7dHgrQR90Woqeveu+RxtLV8I6yyKdR1hK5I6ZLl8FJ/ZmWnZLQ
-	Ob/xSl84iB+gmBeSFP4LeppgDfMI2n68G+bmM82P9sJ/2UlKcWdWnEigFO0Qfr8vi3mngefMS4OFY
-	/HhGUOGyHqPfBs79VokTiOFhmIJW4FwHO8nCr9D/IxsIsIYn0wwgmO4yNZf60QHTNMcCOJnz8HpUR
-	Iffy+KHfBHZO21p9bczA==;
+	List-Owner; bh=Ai6TLrnX1P0LGFiPLAE+ohZYj58NZSsGyh7PYPmiBzg=; b=ab+ZafnGW7g9WK
+	VkApuMvAvOiVjr72C5O0OQu9aMXrGLGToOI0LqGJDhrhBSu/EFpEqudtW50EPC5lOWY/2pjAkUdkB
+	laZdeLncEiTjmEAN+0y9IhqvQ0BV5XWYSvNKf1D9WgZI+C6mFHLO3uNESQT9EHfjIbz91YPvMgV7z
+	Tm3nAapS6BJI+G1cB7JXys8GYJYlnjCc1lJxVvFoZRiJmeqHwAS7aG2PeZ97pFpjOfKLm77sWqB3N
+	i2e/fG/DiuSqtoSjWzU+w7MSWBi9rVBWeVsBRllawkcD6kvdQpZ+PPWz8lnonR4z5kwIJMDXhCRMj
+	rNLyA1vuzEEoyqf4DX4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wnUYz-000000002sB-01RR;
-	Sat, 25 Jul 2026 05:04:41 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wnUZD-000000002tf-0gDB;
+	Sat, 25 Jul 2026 05:04:55 +0000
+Received: from mail-yx2-x00.google.com ([2607:f8b0:4864:41::])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wnUYx-000000002rt-43Vs
+	id 1wnUZA-000000002tF-0KAU
 	for linux-phy@lists.infradead.org;
-	Sat, 25 Jul 2026 05:04:40 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id B5E7340AC4;
-	Sat, 25 Jul 2026 05:04:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2A4CB1F00A3A;
-	Sat, 25 Jul 2026 05:04:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784955879;
-	bh=5XEF+qAkWLuT5nSe/bguE8gYGpt4U9yK4reEWVi3igs=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=awMd5Abg8UavHKA/stIUBpgXUGPnMi3cgoP7b4Hzg0BxqAXk7CevaHQB6f7uPnSOg
-	 JlyXRr0Luxl19BxhG5MKtSDda7cWVnxcZVQsWUjF2KLfJCRcWZppM8Vc++0Eb6IWCe
-	 N5YGoR4EcHHai+n30Y/jQftugbzNZq4nvz3zGd/yDMOkWtiLCjgHCjrul9guyZA1He
-	 ZLPAUXSRNjN8lFNXGxmAsT0jrdX8W2kJrG+RI1bPz0UyW74YkG+xH42lfw7WUTOcZ1
-	 SV/LZicOovhAol2woZzmuz64+Rw4frA7BpuJWuTMYY0XyrXPlv0ahcpDpRSdTCdQgs
-	 NIKhHyV68rGGQ==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH RESEND 08/17] drm/spacemit: add Saturn DPU core types,
- cmdlist and display MMU
-To: "Cody Kang" <codykang.hk@gmail.com>
-Cc: conor+dt@kernel.org, linux-phy@lists.infradead.org, vkoul@kernel.org, neil.armstrong@linaro.org, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, robh@kernel.org, olteanv@gmail.com
-In-Reply-To: <20260725-k3-display-v1-8-6de34d80e86c@gmail.com>
-References: <20260725-k3-display-v1-0-6de34d80e86c@gmail.com>
- <20260725-k3-display-v1-8-6de34d80e86c@gmail.com>
-Date: Sat, 25 Jul 2026 05:04:38 +0000
-Message-Id: <20260725050439.2A4CB1F00A3A@smtp.kernel.org>
+	Sat, 25 Jul 2026 05:04:54 +0000
+Received: by mail-yx2-x00.google.com with SMTP id 00721157ae682-7fc7dc7bebcso5461187b3.0
+        for <linux-phy@lists.infradead.org>; Fri, 24 Jul 2026 22:04:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1784955891; x=1785560691; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :content-type:mime-version:subject:date:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=iaLsLD73nlqoEEBpkzBJ+sIzt6lJ+EoxEBsqgtMe/4g=;
+        b=rQrC9i2+h2t18WxcK1oXOTvOYkoleEp/zAJ91v6Le5OgKrjzZtL2AWJaeiAwI92Ly8
+         9t9UE0neonoJ123PfQNS2L1o4qof9oFLTug6G8GGa89ZDgH0EBGjSfWMg155gEDDw/Sg
+         9tIT7VTZd1oG7sIQKeNciVoo0KwFKMMrW1Kb5s9uCQOuPnth6BMuP/tRwUeivq59WbX2
+         UISfZZ8Vf8zqb9yRNxGOJSYMAHFYUKLjX6xaI4XeSXxXx3ciL3hMVHyvBCw5/zdDsBgW
+         YsVQslRoNMOQvTazAxZqlPhfIPPZT1hzSI/+HyuSh+MEByS3nlTxLAvl53qQAGBRN0jV
+         ZZmA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1784955891; x=1785560691;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :content-type:mime-version:subject:date:from:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=iaLsLD73nlqoEEBpkzBJ+sIzt6lJ+EoxEBsqgtMe/4g=;
+        b=dGndSs2hKszicO4cDhsQ2B7Rgtrl6u1rgI/7VZUVrSB0RkVjZMpd0Y9tBhZYq4QEfq
+         PvnsMKQcJg/4dqxh7Meq54SNwwygmxvQzAVxk+JHxkONwgQpDmo1qXaMMCQ2ZiI9Tt5I
+         5tV1i1MCFlOx+AGvo8IORYzYRdRBp6++cuFr/bJHaRXgzEXGHXpWrQnDVdbKQE17Wi2C
+         KdfS0KzXDaCEerF+Uj4fXC2amLNvDSi9hsmHzZWCtjxk44GUNWwkEmZl2OK5udXtdTjm
+         SKhKReV4w8z1hT/72dv8q6SLmJnr56ZYNOwMBKR+shjWawSuB8iexjtecvlHBWy3akef
+         zu/w==
+X-Forwarded-Encrypted: i=1; AHgh+RpAb4jtw//PhToWhbc5zRv5KiREiiiNCYFDS00h7wOoNBbPJshw2HLMaHuHmii/IuTb6/hY9prPkGE=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxvsIwNXq/uRrzN+KGV+NuassSWucC59cv0RiGbCxdbWZ2qfFG0
+	IrL9ZuO0pAiRkCpHnycAv6Q6UXnI0i3nIyVMs6hWiBc4UwLzbZNK6Jfa
+X-Gm-Gg: AR+sD10n5WBSVkB0x2YZuidD/4XiD0hHPwnkSwzqHn31Z+F1CtXD1PUWJx96VSDHujH
+	Uv8Mq1yZLhNglgAb2xzqYLa3eMa7MF+LIUEU6S5azm2ElEA1saZ9RsLoK/69h3ub3KM3UPO4u9G
+	4G0X+nFIAy2Mo8o785LTg6lgnuWPYp+WYhp+MNmX+Lfh0zVukVJ4xacuVV327YWu+wjmm+6IILH
+	br6V7dm0hVk+rup3cNBcOhv8dwg25gHMTK0/VanECWCO4QAqdC7UcXx5vOfTPQrqgcGKVMUa9tr
+	GWKXIgnX//daUMbRIEFMpDXiWLtz3Z7fLhnk77Gnze86dZiGt56CHaoytLfrBa/iV5F/dQmcZZH
+	wmRLut7geeM+jx3C5lwus0LYK+uDZaTiVG8w0XnoUso15ENAkbhHlWhk=
+X-Received: by 2002:a05:6a00:3d12:b0:84e:915:d7e0 with SMTP id d2e1a72fcca58-84e5955e2edmr622971b3a.44.1784949472763;
+        Fri, 24 Jul 2026 20:17:52 -0700 (PDT)
+Received: from [127.0.1.1] ([2a12:a305:4::403c])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-84e53432834sm640542b3a.50.2026.07.24.20.17.44
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 24 Jul 2026 20:17:52 -0700 (PDT)
+From: Cody Kang <codykang.hk@gmail.com>
+Date: Fri, 24 Jul 2026 23:16:37 -0400
+Subject: [PATCH 05/17] phy: spacemit: add Innosilicon DP TX PHY driver
+MIME-Version: 1.0
+Message-Id: <20260724-k3-display-v1-5-f22a10a52867@gmail.com>
+References: <20260724-k3-display-v1-0-f22a10a52867@gmail.com>
+In-Reply-To: <20260724-k3-display-v1-0-f22a10a52867@gmail.com>
+To: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@kernel.org>, 
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+ Haylen Chu <heylenay@4d2.org>, Michael Turquette <mturquette@baylibre.com>, 
+ Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, Paul Walmsley <pjw@kernel.org>, 
+ Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, 
+ Alexandre Ghiti <alex@ghiti.fr>
+Cc: dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org, 
+ devicetree@vger.kernel.org, spacemit@lists.linux.dev, 
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-clk@vger.kernel.org, Cody Kang <codykang.hk@gmail.com>
+X-Mailer: b4 0.15.1
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260724_220452_246662_4ECE694B 
+X-CRM114-Status: GOOD (  20.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,243 +106,1019 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MTIgcG90ZW50aWFsIGlzc3VlKHMpIHRvIGNvbnNpZGVyOgotIFtDcml0aWNhbF0gRE1NVSBwYWdl
-IHRhYmxlIHNpemUgY2FsY3VsYXRpb24gdW5kZXJmbG93IGFsbG93cyBhcmJpdHJhcnkgcGh5c2lj
-YWwgbWVtb3J5IGFjY2Vzcy4KLSBbQ3JpdGljYWxdIFNoYWxsb3cgY29weSBvZiBETUEgYnVmZmVy
-cyBpbiBhdG9taWMgc3RhdGUgY2F1c2VzIGFjdGl2ZSBkaXNwbGF5IGNvcnJ1cHRpb24uCi0gW0hp
-Z2hdIGNydGNfY21kbGlzdF9hdG9taWNfY29tbWl0KCkgcGFzc2VzIGEgZ3VhcmFudGVlZCBOVUxM
-IHBvaW50ZXIgdG8gdGhlIGhhcmR3YXJlIGNvbW1hbmQgbGlzdCBleGVjdXRpb24gY2FsbGJhY2su
-Ci0gW0hpZ2hdIEdsb2JhbCBgY21kbGlzdF9ncm91cHNgIGFycmF5IGNhdXNlcyBkYXRhIHJhY2Vz
-IGFjcm9zcyBjb25jdXJyZW50IGF0b21pYyBjb21taXRzLgotIFtIaWdoXSBVbmNvbmRpdGlvbmFs
-IGRlcmVmZXJlbmNlIG9mIGBmaXJzdF9jbGAgaW4gYGNtZGxpc3RfYXRvbWljX2NvbW1pdCgpYCBj
-YXVzZXMgYSBrZXJuZWwgcGFuaWMgaWYgdGhlIGNvbW1hbmQgbGlzdCBncm91cCBpcyBlbXB0eS4K
-LSBbSGlnaF0gRE1NVSBtYXBzIG9ubHkgdGhlIGZpcnN0IEdFTSBvYmplY3QsIGJyZWFraW5nIG11
-bHRpLXBsYW5hciBmcmFtZWJ1ZmZlcnMuCi0gW0hpZ2hdIE5VTEwgcG9pbnRlciBkZXJlZmVyZW5j
-ZSBpbiBgZHB1X3BsYW5lX2luZm9gIHRyYWNlcG9pbnQuCi0gW0hpZ2hdIFNsZWVwaW5nIGluIGF0
-b21pYyBjb250ZXh0IHZpYSBgZHJtX2dlbV9zaG1lbV9nZXRfcGFnZXNfc2d0KClgLgotIFtIaWdo
-XSBNaXNzaW5nIGJvdW5kcyBjaGVjayBvbiBgbm9kX2xlbmAgY2F1c2VzIERNQSBidWZmZXIgb3Zl
-cmZsb3cuCi0gW01lZGl1bV0gVW5hbGlnbmVkIGJhc2UgdmlydHVhbCBhZGRyZXNzZXMgYXJlIHVz
-ZWQgZm9yIERNTVUgdHJhbnNsYXRpb24gcmVnaW9ucy4KLSBbTWVkaXVtXSBNZW1vcnkgbGVhayBv
-ZiBETUEgYnVmZmVycyB1cG9uIGF0b21pYyBzdGF0ZSBkZXN0cnVjdGlvbi4KLSBbTWVkaXVtXSBT
-cGVjdWxhdGl2ZSBhcnJheSBvdXQtb2YtYm91bmRzIGFjY2VzcyBpbiBgY21kbGlzdF9zb3J0X2J5
-X2dyb3VwKClgLgotLQoKLS0tIFBhdGNoIFs4XTogW1BBVENIIFJFU0VORCAwOC8xN10gZHJtL3Nw
-YWNlbWl0OiBhZGQgU2F0dXJuIERQVSBjb3JlIHR5cGVzLCBjbWRsaXN0IGFuZCBkaXNwbGF5IE1N
-VSAtLS0KY29tbWl0IGRjOTgzZDY4OTUxYzM1Nzc0NDdiYjg5N2UxN2M4MzNlNTU3ZGE5MDgKQXV0
-aG9yOiBDb2R5IEthbmcgPGNvZHlrYW5nLmhrQGdtYWlsLmNvbT4KCmRybS9zcGFjZW1pdDogYWRk
-IFNhdHVybiBEUFUgY29yZSB0eXBlcywgY21kbGlzdCBhbmQgZGlzcGxheSBNTVUKClRoaXMgY29t
-bWl0IGludHJvZHVjZXMgdGhlIHNoYXJlZCBkcml2ZXIgdHlwZXMsIE1NSU8gYWNjZXNzb3JzLCB0
-cmFjZQpldmVudHMsIGNvbW1hbmQtbGlzdCBidWlsZGVyLCBhbmQgRE1NVSB0YWJsZSBjb2RlIGZv
-ciB0aGUgU2F0dXJuIERQVS4KSXQgZW5hYmxlcyBiYXRjaGVkIHJlZ2lzdGVyIHByb2dyYW1taW5n
-IGJ5IGJ1aWxkaW5nIHBlci1tb2R1bGUgcmVnaXN0ZXIKbGlzdHMgaW4gbWVtb3J5LCB3aGljaCB0
-aGUgaGFyZHdhcmUgY29tbWFuZC1saXN0IGVuZ2luZSByZXBsYXlzLgoKPiBkaWZmIC0tZ2l0IGEv
-ZHJpdmVycy9ncHUvZHJtL3NwYWNlbWl0L2RwdS9kcHVfdHJhY2UuaCBiL2RyaXZlcnMvZ3B1L2Ry
-bS9zcGFjZW1pdC9kcHUvZHB1X3RyYWNlLmgKPiBpbmRleCAwMDAwMDAwMDAwMDAwLi5hYmZlMzRh
-NjdhNGJkIDEwMDY0NAo+IC0tLSAvZGV2L251bGwKPiArKysgYi9kcml2ZXJzL2dwdS9kcm0vc3Bh
-Y2VtaXQvZHB1L2RwdV90cmFjZS5oClsgLi4uIF0KPiArVFJBQ0VfRVZFTlQoZHB1X3BsYW5lX2lu
-Zm8sCj4gKwkgICAgVFBfUFJPVE8oc3RydWN0IGRybV9wbGFuZV9zdGF0ZSAqc3RhdGUsIHN0cnVj
-dCBkcm1fZnJhbWVidWZmZXIgKmZiLAo+ICsJCSAgICAgdTMyIHJkbWFfaWQsIHUzMiBhbHBoYSwg
-dTMyIHJvdGF0aW9uKSwKPiArCVRQX0FSR1Moc3RhdGUsIGZiLCByZG1hX2lkLCBhbHBoYSwgcm90
-YXRpb24pLAo+ICsJVFBfU1RSVUNUX19lbnRyeSgKPiArCQkJX19maWVsZCh1MzIsIHJkbWFfaWQp
-Cj4gKwkJCV9fZmllbGQodTMyLCBzcmNfdykKPiArCQkJX19maWVsZCh1MzIsIHNyY19oKQo+ICsJ
-CQlfX2ZpZWxkKHUzMiwgc3JjX3gpCj4gKwkJCV9fZmllbGQodTMyLCBzcmNfeSkKPiArCQkJX19m
-aWVsZCh1MzIsIGNydGNfdykKPiArCQkJX19maWVsZCh1MzIsIGNydGNfaCkKPiArCQkJX19maWVs
-ZCh1MzIsIGNydGNfeCkKPiArCQkJX19maWVsZCh1MzIsIGNydGNfeSkKPiArCQkJX19maWVsZCh1
-MzIsIHdpZHRoKQo+ICsJCQlfX2ZpZWxkKHUzMiwgaGVpZ2h0KQo+ICsJCQlfX2ZpZWxkKHUzMiwg
-Zm9ybWF0KQo+ICsJCQlfX2ZpZWxkKHUzMiwgYmxlbmRfbW9kZSkKPiArCQkJX19maWVsZCh1MzIs
-IGFscGhhKQo+ICsJCQlfX2ZpZWxkKHUzMiwgenBvcykKPiArCQkJX19maWVsZCh1MzIsIHJvdGF0
-aW9uKQo+ICsJKSwKPiArCVRQX2Zhc3RfYXNzaWduKAo+ICsJCQlfX2VudHJ5LT5yZG1hX2lkID0g
-cmRtYV9pZDsKPiArCQkJX19lbnRyeS0+c3JjX3cgPSBzdGF0ZS0+c3JjX3cgPj4gMTY7Cj4gKwkJ
-CV9fZW50cnktPnNyY19oID0gc3RhdGUtPnNyY19oID4+IDE2Owo+ICsJCQlfX2VudHJ5LT5zcmNf
-eCA9IHN0YXRlLT5zcmNfeCA+PiAxNjsKPiArCQkJX19lbnRyeS0+c3JjX3kgPSBzdGF0ZS0+c3Jj
-X3kgPj4gMTY7Cj4gKwkJCV9fZW50cnktPmNydGNfdyA9IHN0YXRlLT5jcnRjX3c7Cj4gKwkJCV9f
-ZW50cnktPmNydGNfaCA9IHN0YXRlLT5jcnRjX2g7Cj4gKwkJCV9fZW50cnktPmNydGNfeCA9IHN0
-YXRlLT5jcnRjX3g7Cj4gKwkJCV9fZW50cnktPmNydGNfeSA9IHN0YXRlLT5jcnRjX3k7Cj4gKwkJ
-CV9fZW50cnktPndpZHRoID0gZmItPndpZHRoOwo+ICsJCQlfX2VudHJ5LT5oZWlnaHQgPSBmYi0+
-aGVpZ2h0Owo+ICsJCQlfX2VudHJ5LT5mb3JtYXQgPSBmYi0+Zm9ybWF0LT5mb3JtYXQ7CgpbU2V2
-ZXJpdHk6IEhpZ2hdCkNhbiB0aGlzIGRlcmVmZXJlbmNlIGEgTlVMTCBwb2ludGVyPyBXaGVuIGEg
-cGxhbmUgaXMgZGlzYWJsZWQgZHVyaW5nIGFuCmF0b21pYyBjb21taXQsIHN0YXRlLT5mYiBtaWdo
-dCBiZSBOVUxMLiBVbmNvbmRpdGlvbmFsbHkgcmVhZGluZyBmYi0+d2lkdGgKaGVyZSBjb3VsZCBj
-YXVzZSBhIGtlcm5lbCBwYW5pYyBpZiB0cmFjaW5nIGlzIGVuYWJsZWQuCgo+ICsJCQlfX2VudHJ5
-LT5ibGVuZF9tb2RlID0gc3RhdGUtPnBpeGVsX2JsZW5kX21vZGU7Cj4gKwkJCV9fZW50cnktPmFs
-cGhhID0gYWxwaGE7Cj4gKwkJCV9fZW50cnktPnpwb3MgPSBzdGF0ZS0+enBvczsKPiArCQkJX19l
-bnRyeS0+cm90YXRpb24gPSByb3RhdGlvbjsKPiArCSksClsgLi4uIF0KPiBkaWZmIC0tZ2l0IGEv
-ZHJpdmVycy9ncHUvZHJtL3NwYWNlbWl0L3NwYWNlbWl0X2NtZGxpc3QuYyBiL2RyaXZlcnMvZ3B1
-L2RybS9zcGFjZW1pdC9zcGFjZW1pdF9jbWRsaXN0LmMKPiBpbmRleCAwMDAwMDAwMDAwMDAwLi43
-ODdkMzhlOWUxMzVmIDEwMDY0NAo+IC0tLSAvZGV2L251bGwKPiArKysgYi9kcml2ZXJzL2dwdS9k
-cm0vc3BhY2VtaXQvc3BhY2VtaXRfY21kbGlzdC5jClsgLi4uIF0KPiArdm9pZCBjbWRsaXN0X3Jl
-Z3NfcGFja2luZyhzdHJ1Y3QgY21kbGlzdCAqY2wsIGVudW0gY21kbGlzdF9tb2RlX3R5cGUgbW9k
-LAo+ICsJCQkgIHN0cnVjdCBjbWRsaXN0X3JlZ3MgKmNsX3JlZ3MpCj4gK3sKWyAuLi4gXQo+ICsJ
-Zm9yIChpID0gMDsgaSA8IGNsX3JlZ3MtPnNpemU7KSB7Cj4gKwkJdTMyIHZhbHVlW0NNRExJU1Rf
-Uk9XX1JFR1NdID0gezB4MH07Cj4gKwkJdTMyIG9mZnNldCwgc3Ryb2JlID0gMDsKPiArCQl1OCBy
-ZWdzX2luX3JvdyA9IDA7Cj4gKwo+ICsJCWlmIChjbF9yZWdzLT5mbGFnc1tpXSkgewo+ICsJCQlv
-ZmZzZXQgPSBjbF9yZWdzLT5iYXNlICsgaSAqIHNpemVvZih1MzIpOwo+ICsJCQlmb3IgKHU4IGog
-PSAwOyBqIDwgQ01ETElTVF9ST1dfUkVHUzsgaisrKSB7Cj4gKwkJCQlpbmRleCA9IGkgKyBqOwo+
-ICsJCQkJaWYgKGxpa2VseShpbmRleCA8IGNsX3JlZ3MtPnNpemUpKSB7Cj4gKwkJCQkJaWYgKGNs
-X3JlZ3MtPmZsYWdzW2luZGV4XSkgewo+ICsJCQkJCQl2YWx1ZVtqXSA9IHJlZ19iYXNlW2luZGV4
-XTsKPiArCQkJCQkJcmVnc19pbl9yb3crKzsKPiArCQkJCQkJc3Ryb2JlIHw9IENNRExJU1RfUkVH
-X1NUUk9CRShqKTsKPiArCQkJCQl9Cj4gKwkJCQl9IGVsc2Ugewo+ICsJCQkJCWJyZWFrOwo+ICsJ
-CQkJfQo+ICsJCQl9Cj4gKwkJCWh3ZGV2LT5jbWRsaXN0X2ZpbGxfZGF0YV9yb3coY2wsIHN0cm9i
-ZSwgb2Zmc2V0LCB2YWx1ZSk7Cj4gKwkJCS8qCj4gKwkJCSAqIHRoZSByb3cgY292ZXJzIHRoZSB3
-aG9sZSB3aW5kb3c7IGEgc2hvcnRlciBzdHJpZGUKPiArCQkJICogd291bGQgcmV2aXNpdCBjb3Zl
-cmVkIHdvcmRzIGFzIGR1cGxpY2F0ZSByb3dzCj4gKwkJCSAqLwo+ICsJCQlpICs9IENNRExJU1Rf
-Uk9XX1JFR1M7Cj4gKwkJCWNsLT5ub2RfbGVuKys7CgpbU2V2ZXJpdHk6IEhpZ2hdCklzIHRoZXJl
-IGEgcmlzayBvZiBvdmVyZmxvd2luZyB0aGUgRE1BIGNvbW1hbmQgbGlzdCBidWZmZXIgaGVyZT8g
-VGhlIGxvb3AKaW5jcmVtZW50cyBjbC0+bm9kX2xlbiBhbmQgd3JpdGVzIHRvIG1lbW9yeSwgYnV0
-IHRoZXJlIGRvZXNuJ3Qgc2VlbSB0byBiZQphIGJvdW5kcyBjaGVjayB0byBlbnN1cmUgdGhlIHBh
-Y2tlZCByb3dzIGRvIG5vdCBleGNlZWQgdGhlIGFsbG9jYXRlZApjYXBhY2l0eSBpbiBjbC0+c2l6
-ZS4KCj4gKwkJfSBlbHNlIHsKPiArCQkJaSsrOwo+ICsJCX0KPiArCX0KPiArCj4gKwlkcm1fZGJn
-KGFfY3J0Yy0+Y3J0Yy5kZXYsICJyb3dfbnVtID0gJWRcbiIsIGNsLT5ub2RfbGVuKTsKPiArfQo+
-ICsKPiArdm9pZCBjbWRsaXN0X3NvcnRfYnlfZ3JvdXAoc3RydWN0IGRybV9jcnRjICpjcnRjKQo+
-ICt7Cj4gKwlzdHJ1Y3QgY21kbGlzdCAqZmlyc3RfY2w7Cj4gKwlzdHJ1Y3QgY21kbGlzdCAqbGFz
-dF9jbDsKPiArCXN0cnVjdCBjbWRsaXN0ICpwOwo+ICsJc3RydWN0IGNtZGxpc3QgKnByZXY7Cj4g
-KwlzdHJ1Y3QgZHJtX3BsYW5lICpwbGFuZTsKPiArCXN0cnVjdCBzcGFjZW1pdF9jcnRjX3JkbWEg
-KnJkbWFzID0KPiArCQkJdG9fc3BhY2VtaXRfY3J0Y19zdGF0ZShjcnRjLT5zdGF0ZSktPnJkbWFz
-Owo+ICsJc3RydWN0IHNwYWNlbWl0X2RybV9wcml2YXRlICpwcml2ID0gY3J0Yy0+ZGV2LT5kZXZf
-cHJpdmF0ZTsKPiArCj4gKwlkcm1fYXRvbWljX2NydGNfZm9yX2VhY2hfcGxhbmUocGxhbmUsIGNy
-dGMpIHsKPiArCQlzdHJ1Y3Qgc3BhY2VtaXRfcGxhbmVfc3RhdGUgKnNwYWNlbWl0X3BzdGF0ZSA9
-Cj4gKwkJCXRvX3NwYWNlbWl0X3BsYW5lX3N0YXRlKHBsYW5lLT5zdGF0ZSk7Cj4gKwkJdTMyIHJk
-bWFfaWQgPSBzcGFjZW1pdF9wc3RhdGUtPnJkbWFfaWQ7Cj4gKwo+ICsJCWZpcnN0X2NsID0gJnNw
-YWNlbWl0X3BzdGF0ZS0+Y2w7Cj4gKwkJaWYgKCFmaXJzdF9jbC0+dmEpCj4gKwkJCWNvbnRpbnVl
-Owo+ICsKPiArCQlsYXN0X2NsID0gZmlyc3RfY2w7Cj4gKwkJbGFzdF9jbC0+bmV4dCA9IE5VTEw7
-Cj4gKwo+ICsJCXJkbWFzW3JkbWFfaWRdLmluX3VzZSA9IHRydWU7CgpbU2V2ZXJpdHk6IE1lZGl1
-bV0KQ291bGQgcmRtYV9pZCBleGNlZWQgdGhlIGJvdW5kcyBvZiB0aGUgYXJyYXk/IEl0IGlzIHVz
-ZWQgZGlyZWN0bHkgYXMgYW4KaW5kZXggZm9yIHRoZSByZG1hcyBhcnJheSB3aXRob3V0IGNoZWNr
-aW5nIGlmIGl0IGlzIHdpdGhpbiBod2Rldi0+cmRtYV9udW1zLgoKPiArCQlpZiAocHJpdi0+Y21k
-bGlzdF9ncm91cHNbcmRtYV9pZF0pIHsKCltTZXZlcml0eTogSGlnaF0KRG9lcyBtb2RpZnlpbmcg
-dGhlIGdsb2JhbCBwcml2LT5jbWRsaXN0X2dyb3VwcyBhcnJheSBoZXJlIGNhdXNlIGRhdGEgcmFj
-ZXM/ClNpbmNlIHRoaXMgYXJyYXkgaXMgc3RvcmVkIGluIHRoZSBzaGFyZWQgc3BhY2VtaXRfZHJt
-X3ByaXZhdGUgc3RydWN0dXJlLApjb25jdXJyZW50IGF0b21pYyBjb21taXRzIG9uIG11bHRpcGxl
-IENSVENzIG1pZ2h0IG92ZXJ3cml0ZSBlYWNoIG90aGVyJ3MKY29tbWFuZCBsaXN0cyB3aXRob3V0
-IGxvY2tpbmcuCgo+ICsJCQlwID0gcHJpdi0+Y21kbGlzdF9ncm91cHNbcmRtYV9pZF07Cj4gKwkJ
-CXByZXYgPSBOVUxMOwo+ICsJCQl3aGlsZSAocCkgewo+ICsJCQkJaWYgKGNsX3RvX3NwYWNlbWl0
-X3BzdGF0ZShwKS0+c3RhdGUuY3J0Y195IDwKPiArCQkJCSAgICBzcGFjZW1pdF9wc3RhdGUtPnN0
-YXRlLmNydGNfeSkgewo+ICsJCQkJCXByZXYgPSBwOwo+ICsJCQkJCXAgPSBwLT5uZXh0Owo+ICsJ
-CQkJfSBlbHNlIHsKPiArCQkJCQlicmVhazsKPiArCQkJCX0KPiArCQkJfQo+ICsJCQlpZiAoIXBy
-ZXYpIHsKPiArCQkJCXByaXYtPmNtZGxpc3RfZ3JvdXBzW3JkbWFfaWRdID0gZmlyc3RfY2w7Cj4g
-KwkJCQlsYXN0X2NsLT5uZXh0ID0gcDsKPiArCQkJfSBlbHNlIHsKPiArCQkJCXByZXYtPm5leHQg
-PSBmaXJzdF9jbDsKPiArCQkJCWxhc3RfY2wtPm5leHQgPSBwOwo+ICsJCQl9Cj4gKwkJfSBlbHNl
-IHsKPiArCQkJcHJpdi0+Y21kbGlzdF9ncm91cHNbcmRtYV9pZF0gPSBmaXJzdF9jbDsKPiArCQl9
-Cj4gKwl9Cj4gK30KPiArCj4gK3ZvaWQgY21kbGlzdF9hdG9taWNfY29tbWl0KHN0cnVjdCBkcm1f
-Y3J0YyAqY3J0YywKPiArCQkJICAgc3RydWN0IGRybV9jcnRjX3N0YXRlICpvbGRfc3RhdGUpCj4g
-K3sKWyAuLi4gXQo+ICsJZm9yIChpID0gMDsgaSA8IGh3ZGV2LT5yZG1hX251bXM7IGkrKykgewo+
-ICsJCWlmIChvbGRfcmRtYXNbaV0uaW5fdXNlKQo+ICsJCQlod2Rldi0+ZW5hYmxlX2NtZGxpc3Qo
-YV9jcnRjLCBod2RldiwgaSwgZmFsc2UpOwo+ICsKPiArCQlpZiAoY3VyX3JkbWFzW2ldLmluX3Vz
-ZSkgewo+ICsJCQlkcm1fZGJnKGNydGMtPmRldiwgImNtZGxpc3QgZ3JvdXAgPSAlZFxuIiwgaSk7
-Cj4gKwkJCWN1cl9jbCA9IHByaXYtPmNtZGxpc3RfZ3JvdXBzW2ldOwo+ICsJCQlmaXJzdF9jbCA9
-IGN1cl9jbDsKPiArCQkJd2hpbGUgKGN1cl9jbCkgewo+ICsJCQkJaHdkZXYtPmNtZGxpc3RfZmls
-bF9jb25mX3JvdyhjdXJfY2wsIGh3ZGV2LAo+ICsJCQkJCUNNRExJU1RfQ01QX0lOVkFMSUQpOwo+
-ICsJCQkJY21kbGlzdF9kdW1wX25vZGUoY3VyX2NsKTsKPiArCQkJCWN1cl9jbCA9IGN1cl9jbC0+
-bmV4dDsKPiArCQkJfQo+ICsJCQljaHkgPSBjbF90b19zcGFjZW1pdF9wc3RhdGUoZmlyc3RfY2wp
-LT5zdGF0ZS5jcnRjX3k7CgpbU2V2ZXJpdHk6IEhpZ2hdCkNvdWxkIGZpcnN0X2NsIGJlIE5VTEwg
-aGVyZT8gSWYgY3VyX3JkbWFzW2ldLmluX3VzZSBpcyB0cnVlIGJ1dApwcml2LT5jbWRsaXN0X2dy
-b3Vwc1tpXSBpcyBlbXB0eSwgZmlyc3RfY2wgd291bGQgYmUgTlVMTC4gVGhpcyBjYW4gaGFwcGVu
-CmlmIHBsYW5lcyBhcmUgcmVtb3ZlZCBmcm9tIHRoZSBzdGF0ZSBidXQgaW5fdXNlIHdhcyBjb3Bp
-ZWQgYXMgdHJ1ZSBmcm9tIHRoZQpvbGQgc3RhdGUuIFRoZSBjbF90b19zcGFjZW1pdF9wc3RhdGUg
-bWFjcm8gd291bGQgeWllbGQgYSBuZWdhdGl2ZSBvZmZzZXQKZnJvbSBOVUxMLCByZXN1bHRpbmcg
-aW4gYSBjcmFzaC4KCj4gKwkJCWFkZHJsID0gKGxvd2VyXzMyX2JpdHMocHJpdi0+Y21kbGlzdF9n
-cm91cHNbaV0tPnBhKSAmCj4gKwkJCQkgQ01ETElTVF9BRERSTF9BTElHTl9NQVNLKSA+PiBDTURM
-SVNUX0FERFJMX0FMSUdOX0JJVFM7Cj4gKwo+ICsJCQlhZGRyaCA9IHVwcGVyXzMyX2JpdHMocHJp
-di0+Y21kbGlzdF9ncm91cHNbaV0tPnBhKTsKPiArCQkJaHdkZXYtPmNmZ19jbWRsaXN0KGh3ZGV2
-LCBpLCBjaHksIGFkZHJsLCBhZGRyaCk7Cj4gKwkJCWh3ZGV2LT5lbmFibGVfY21kbGlzdChhX2Ny
-dGMsIGh3ZGV2LCBpLCB0cnVlKTsKPiArCQkJcHJpdi0+Y21kbGlzdF9ncm91cHNbaV0gPSBOVUxM
-Owo+ICsJCX0KPiArCX0KPiArfQo+ICsKWyAuLi4gXQo+ICt2b2lkIGNydGNfY21kbGlzdF9hdG9t
-aWNfY29tbWl0KHN0cnVjdCBzcGFjZW1pdF9jcnRjICphX2NydGMpCj4gK3sKPiArCXN0cnVjdCBj
-bWRsaXN0ICpjdXJfY2w7Cj4gKwlzdHJ1Y3QgZHJtX2NydGMgKmNydGMgPSAmYV9jcnRjLT5jcnRj
-Owo+ICsJc3RydWN0IHNwYWNlbWl0X2RybV9wcml2YXRlICpwcml2ID0gY3J0Yy0+ZGV2LT5kZXZf
-cHJpdmF0ZTsKPiArCXN0cnVjdCBzcGFjZW1pdF9od19kZXZpY2UgKmh3ZGV2ID0gcHJpdi0+aHdk
-ZXY7Cj4gKwl1OCBjcnRjX2lkID0gZHJtX2NydGNfaW5kZXgoY3J0Yyk7Cj4gKwl1OCBkZXZfaWQg
-PSBhX2NydGMtPmRldl9pZDsKPiArCj4gKwlkcm1fZGJnKGNydGMtPmRldiwgImNtZGxpc3QgZ3Jv
-dXAgPSAlZFxuIiwKPiArCQlod2Rldi0+cmRtYV9udW1zICsgY3J0Y19pZCk7Cj4gKwljdXJfY2wg
-PSBwcml2LT5jbWRsaXN0X2dyb3Vwc1tod2Rldi0+cmRtYV9udW1zICsgY3J0Y19pZF07Cj4gKwl3
-aGlsZSAoY3VyX2NsKSB7Cj4gKwkJaHdkZXYtPmNtZGxpc3RfZmlsbF9jb25mX3JvdyhjdXJfY2ws
-IGh3ZGV2LCBkZXZfaWQpOwo+ICsJCWNtZGxpc3RfZHVtcF9ub2RlKGN1cl9jbCk7Cj4gKwkJY3Vy
-X2NsID0gY3VyX2NsLT5uZXh0Owo+ICsJfQo+ICsJaHdkZXYtPmNydGNfY21kbGlzdChjdXJfY2ws
-IGh3ZGV2LCBwcml2LCBjcnRjX2lkLCBkZXZfaWQpOwoKW1NldmVyaXR5OiBIaWdoXQpEb2VzIHRo
-aXMgcGFzcyBhIGd1YXJhbnRlZWQgTlVMTCBwb2ludGVyIHRvIHRoZSBoYXJkd2FyZSBjYWxsYmFj
-az8KVGhlIHdoaWxlIGxvb3AgZXhoYXVzdHMgY3VyX2NsIHRvIE5VTEwsIHdoaWNoIGlzIHRoZW4g
-aW1tZWRpYXRlbHkgcGFzc2VkCnRvIGh3ZGV2LT5jcnRjX2NtZGxpc3QuIEl0IGxvb2tzIGxpa2Ug
-dGhlIGhlYWQgb2YgdGhlIGxpc3Qgc2hvdWxkIGJlCnBhc3NlZCBpbnN0ZWFkLgoKPiArfQo+ICsK
-PiArLyogQ2FsbGVkIGZyb20gYXRvbWljX2NoZWNrKCksIHdoZXJlIC1FTk9NRU0gaXMgc3RpbGwg
-YW4gYW5zd2VyLiAqLwo+ICtpbnQgc3BhY2VtaXRfY21kbGlzdF9hbGxvYyhzdHJ1Y3QgZGV2aWNl
-ICpkZXYsIHN0cnVjdCBjbWRsaXN0ICpjbCkKPiArewo+ICsJaWYgKGNsLT52YSkKPiArCQlyZXR1
-cm4gMDsKCltTZXZlcml0eTogQ3JpdGljYWxdCkRvZXMgcmV0dXJuaW5nIGVhcmx5IHdoZW4gY2wt
-PnZhIGlzIHByZXNlbnQgY2F1c2UgYWN0aXZlIGRpc3BsYXkgY29ycnVwdGlvbj8KQmVjYXVzZSBz
-dHJ1Y3QgY21kbGlzdCBpcyBlbWJlZGRlZCBkaXJlY3RseSBpbiB0aGUgcGxhbmUgc3RhdGUsIERS
-TSdzIHN0YXRlCmR1cGxpY2F0aW9uIHdpbGwgc2hhbGxvdy1jb3B5IGNsLT52YS4gSWYgYXRvbWlj
-X3VwZGF0ZSBtdXRhdGVzIHRoaXMgc2FtZQp2aXJ0dWFsIGFkZHJlc3Mgd2hpbGUgdGhlIGhhcmR3
-YXJlIGlzIGFjdGl2ZWx5IHJlYWRpbmcgaXQgZnJvbSB0aGUgb2xkCnN0YXRlLCBpdCBjb3VsZCBs
-ZWFkIHRvIHNjcmVlbiB0ZWFyaW5nIG9yIERQVSBoYW5ncy4gRE1BIGJ1ZmZlcnMgZm9yCmNvbW1h
-bmQgbGlzdHMgZ2VuZXJhbGx5IG5lZWQgdG8gYmUgbXVsdGktYnVmZmVyZWQgb3IgYWxsb2NhdGVk
-IHBlci1zdGF0ZS4KCj4gKwo+ICsJY2wtPnNpemUgPSBQRVJfQ01ETElTVF9TSVpFOwo+ICsJY2wt
-PnZhID0gZG1hX2FsbG9jX2NvaGVyZW50KGRldiwgY2wtPnNpemUsICZjbC0+cGEsCj4gKwkJCQkg
-ICAgR0ZQX0tFUk5FTCB8IF9fR0ZQX1pFUk8pOwo+ICsJaWYgKCFjbC0+dmEpCj4gKwkJcmV0dXJu
-IC1FTk9NRU07CgpbU2V2ZXJpdHk6IE1lZGl1bV0KSXMgdGhlcmUgYSBjb3JyZXNwb25kaW5nIGRt
-YV9mcmVlX2NvaGVyZW50KCkgZHVyaW5nIHN0YXRlIGRlc3RydWN0aW9uPwpJZiB0aGUgYWxsb2Nh
-dGVkIGNsLT52YSBpcyBuZXZlciBmcmVlZCB3aGVuIHRoZSBhdG9taWMgc3RhdGUgaXMgZGVzdHJv
-eWVkLAp0aGlzIG1pZ2h0IGNhdXNlIGEgc3RlYWR5IGxlYWsgb2YgRE1BIG1lbW9yeS4KCj4gKwo+
-ICsJcmV0dXJuIDA7Cj4gK30KWyAuLi4gXQo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0v
-c3BhY2VtaXQvc3BhY2VtaXRfZG1tdS5jIGIvZHJpdmVycy9ncHUvZHJtL3NwYWNlbWl0L3NwYWNl
-bWl0X2RtbXUuYwo+IGluZGV4IDAwMDAwMDAwMDAwMDAuLjJhZTMwZGQxYTRmMjMgMTAwNjQ0Cj4g
-LS0tIC9kZXYvbnVsbAo+ICsrKyBiL2RyaXZlcnMvZ3B1L2RybS9zcGFjZW1pdC9zcGFjZW1pdF9k
-bW11LmMKWyAuLi4gXQo+ICtpbnQgc3BhY2VtaXRfZG1tdV9tYXAoc3RydWN0IGRybV9mcmFtZWJ1
-ZmZlciAqZmIsIHN0cnVjdCBkcHVfbW11X3RibCAqbW11X3RibCwKPiArCQkgICAgICB1OCB0YnVf
-aWQsIHN0cnVjdCBjbWRsaXN0X3JlZ3MgKmNsX3JkbWEsCj4gKwkJIHN0cnVjdCBkcm1fcGxhbmUg
-KnBsYW5lKQo+ICt7Cj4gKwlzdHJ1Y3Qgc3BhY2VtaXRfZHJtX3ByaXZhdGUgKnByaXYgPSBmYi0+
-ZGV2LT5kZXZfcHJpdmF0ZTsKPiArCXN0cnVjdCBzcGFjZW1pdF9od19kZXZpY2UgKmh3ZGV2ID0g
-cHJpdi0+aHdkZXY7Cj4gKwljb25zdCBzdHJ1Y3QgZHJtX2Zvcm1hdF9pbmZvICpmb3JtYXQgPSBO
-VUxMOwo+ICsJc3RydWN0IHNnX3RhYmxlICpzZ3QgPSBOVUxMOwo+ICsJdTMyIHRvdGFsX3NpemUs
-IG9mZnNldDEsIG9mZnNldDI7Cj4gKwlzdHJ1Y3QgdGJ1X2luc3RhbmNlIHRidSA9IHsgfTsKPiAr
-CXU4IHBsYW5lX251bTsKPiArCXUzMiB2YWw7Cj4gKwo+ICsJZm9ybWF0ID0gZmItPmZvcm1hdDsK
-PiArCXNndCA9IGRybV9nZW1fc2htZW1fZ2V0X3BhZ2VzX3NndCh0b19kcm1fZ2VtX3NobWVtX29i
-aihmYi0+b2JqWzBdKSk7CgpbU2V2ZXJpdHk6IEhpZ2hdCldpbGwgdGhpcyBzbGVlcCBpbiBhdG9t
-aWMgY29udGV4dD8gVGhpcyBmdW5jdGlvbiBhcHBlYXJzIHRvIGJlIGNhbGxlZApkdXJpbmcgaGFy
-ZHdhcmUgcHJvZ3JhbW1pbmcgaW4gdGhlIGF0b21pYyBjb21taXQgcGhhc2UuIENhbGxpbmcKZHJt
-X2dlbV9zaG1lbV9nZXRfcGFnZXNfc2d0IGFsbG9jYXRlcyBtZW1vcnkgYW5kIGNhbiBhY3F1aXJl
-IGEgbXV0ZXgsCndoaWNoIGlzIGZvcmJpZGRlbiBpbiBhdG9taWMgY29udGV4dC4gQnVmZmVyIG1h
-cHBpbmcgdHlwaWNhbGx5IG5lZWRzIHRvIGJlCmRlZmVycmVkIHRvIHRoZSBzbGVlcGFibGUgcHJl
-cGFyZV9mYiBjYWxsYmFjay4KCltTZXZlcml0eTogSGlnaF0KRG9lcyBtYXBwaW5nIG9ubHkgZmIt
-Pm9ialswXSBicmVhayBtdWx0aS1wbGFuYXIgZnJhbWVidWZmZXJzPyBJZiB1c2Vyc3BhY2UKcHJv
-dmlkZXMgYSBtdWx0aS1wbGFuYXIgZnJhbWVidWZmZXIgd2hlcmUgdGhlIHBsYW5lcyByZXNpZGUg
-aW4gZGlmZmVyZW50IEdFTQpvYmplY3RzLCBleHRyYWN0aW5nIHRoZSBTRyB0YWJsZSBvbmx5IGZv
-ciBvYmpbMF0gd2lsbCByZXN1bHQgaW4gaW5jb3JyZWN0CnBoeXNpY2FsIG1lbW9yeSBwYWdlcyBm
-b3IgdGhlIHNlY29uZGFyeSBwbGFuZXMuCgo+ICsJaWYgKElTX0VSUihzZ3QpKQo+ICsJCXJldHVy
-biBQVFJfRVJSKHNndCk7Cj4gKwo+ICsJcGxhbmVfbnVtID0gZm9ybWF0LT5udW1fcGxhbmVzOwo+
-ICsKPiArCXRvdGFsX3NpemUgPSByb3VuZHVwKGZiLT5vYmpbMF0tPnNpemUsIFBBR0VfU0laRSk7
-Cj4gKwo+ICsJb2Zmc2V0MSA9IHBsYW5lX251bSA+IDEgPyBmYi0+b2Zmc2V0c1sxXSA6IHRvdGFs
-X3NpemU7Cj4gKwlvZmZzZXQyID0gcGxhbmVfbnVtID4gMiA/IGZiLT5vZmZzZXRzWzJdIDogdG90
-YWxfc2l6ZTsKPiArCj4gKwlzd2l0Y2ggKHBsYW5lX251bSkgewo+ICsJY2FzZSAzOgo+ICsJCXRi
-dS50dGJfcGFbMl0gPSBtbXVfdGJsLT5wYSArIChvZmZzZXQyID4+IFBBR0VfU0hJRlQpICogNDsK
-PiArCQl0YnUudGJ1X3ZhWzJdID0gVEJVX0JBU0VfVkEodGJ1X2lkKSArIG9mZnNldDI7CgpbU2V2
-ZXJpdHk6IE1lZGl1bV0KQ291bGQgYWRkaW5nIG9mZnNldDIgZGlyZWN0bHkgdG8gVEJVX0JBU0Vf
-VkEgcmVzdWx0IGluIHVuYWxpZ25lZCBiYXNlCnZpcnR1YWwgYWRkcmVzc2VzPyBJZiB1c2Vyc3Bh
-Y2Ugc3VwcGxpZXMgYW4gb2Zmc2V0IHRoYXQgaXMgbm90IGEgbXVsdGlwbGUKb2YgUEFHRV9TSVpF
-LCBwcm9ncmFtbWluZyBhbiB1bmFsaWduZWQgdmlydHVhbCBhZGRyZXNzIG1pZ2h0IGNvbmZ1c2Ug
-dGhlCmhhcmR3YXJlIE1NVS4KCj4gKwkJdGJ1LnR0Yl9zaXplWzJdID0gUEFHRV9BTElHTih0b3Rh
-bF9zaXplIC0gcm91bmRkb3duKG9mZnNldDIsIFBBR0VfU0laRSkpCj4gKwkJCQkgID4+IFBBR0Vf
-U0hJRlQ7CgpbU2V2ZXJpdHk6IENyaXRpY2FsXQpDYW4gdGhpcyBzaXplIGNhbGN1bGF0aW9uIHVu
-ZGVyZmxvdz8gSWYgYSBtYWxpY2lvdXMgdXNlcnNwYWNlIGNsaWVudApwcm92aWRlcyBvZmZzZXQy
-IHNtYWxsZXIgdGhhbiBvZmZzZXQxLCB0aGUgdW5zaWduZWQgc3VidHJhY3Rpb24Kb2Zmc2V0MiAt
-IHJvdW5kZG93bihvZmZzZXQxLCBQQUdFX1NJWkUpIHdpbGwgdW5kZXJmbG93IHRvIGEgbWFzc2l2
-ZQpwb3NpdGl2ZSB2YWx1ZS4gVGhpcyBjb3VsZCBwcm9ncmFtIHRoZSBETU1VIHdpdGggYSBodWdl
-IHRyYW5zbGF0aW9uIGJsb2NrLAphbGxvd2luZyBhcmJpdHJhcnkgb3V0LW9mLWJvdW5kcyBwaHlz
-aWNhbCBtZW1vcnkgcmVhZHMuCgo+ICsJCWZhbGx0aHJvdWdoOwo+ICsJY2FzZSAyOgo+ICsJCXRi
-dS50dGJfcGFbMV0gPSBtbXVfdGJsLT5wYSArIChvZmZzZXQxID4+IFBBR0VfU0hJRlQpICogNDsK
-PiArCQl0YnUudGJ1X3ZhWzFdID0gVEJVX0JBU0VfVkEodGJ1X2lkKSArIG9mZnNldDE7Cj4gKwkJ
-dGJ1LnR0Yl9zaXplWzFdID0gUEFHRV9BTElHTihvZmZzZXQyIC0gcm91bmRkb3duKG9mZnNldDEs
-IFBBR0VfU0laRSkpID4+IFBBR0VfU0hJRlQ7Cj4gKwkJZmFsbHRocm91Z2g7Cj4gKwljYXNlIDE6
-Cj4gKwkJdGJ1LnR0Yl9wYVswXSA9IG1tdV90YmwtPnBhOwo+ICsJCXRidS50YnVfdmFbMF0gPSBU
-QlVfQkFTRV9WQSh0YnVfaWQpOwo+ICsJCXRidS50dGJfc2l6ZVswXSA9IFBBR0VfQUxJR04ob2Zm
-c2V0MSkgPj4gUEFHRV9TSElGVDsKPiArCQlmYWxsdGhyb3VnaDsKPiArCWRlZmF1bHQ6Cj4gKwkJ
-YnJlYWs7Cj4gKwl9ClsgLi4uIF0KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nh
-c2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA3MjUtazMtZGlzcGxheS12MS0wLTZkZTM0ZDgwZTg2
-Y0BnbWFpbC5jb20/cGFydD04CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1waHkK
+The PHY's registers are interleaved into its parent DP controller's MMIO
+window rather than a window of its own, so it probes as a child of the
+controller, carries no reg or reset, and reaches its registers through
+the controller's regmap.
+
+It registers its pixel PLL as a clock provider. That lets the display
+controller ask for a mode's pixel rate through clk_set_rate(), and it
+lets the APMU pixel-clock mux parent to the PHY through the clock
+framework. Without it the controller and PHY would have to know each
+other's registers.
+
+Signed-off-by: Cody Kang <codykang.hk@gmail.com>
+---
+ drivers/phy/spacemit/Kconfig          |  13 +
+ drivers/phy/spacemit/Makefile         |   1 +
+ drivers/phy/spacemit/phy-k3-inno-dp.c | 948 ++++++++++++++++++++++++++++++++++
+ 3 files changed, 962 insertions(+)
+
+diff --git a/drivers/phy/spacemit/Kconfig b/drivers/phy/spacemit/Kconfig
+index 50b0005acf66..098f33998f73 100644
+--- a/drivers/phy/spacemit/Kconfig
++++ b/drivers/phy/spacemit/Kconfig
+@@ -23,3 +23,16 @@ config PHY_SPACEMIT_K1_USB2
+ 	help
+ 	  Enable this to support K1 USB 2.0 PHY driver. This driver takes care of
+ 	  enabling and clock setup and will be used by K1 udc/ehci/otg/xhci driver.
++
++config PHY_SPACEMIT_K3_INNO_DP
++	tristate "SpacemiT K3 Innosilicon DisplayPort PHY driver"
++	depends on (ARCH_SPACEMIT || COMPILE_TEST) && OF
++	depends on COMMON_CLK
++	select GENERIC_PHY
++	select REGMAP
++	help
++	  Enable support for the Innosilicon DisplayPort transmit PHY
++	  integrated in the SpacemiT K3 SoC. The PHY shares its MMIO window
++	  with its parent DP/eDP controller (drivers/gpu/drm/spacemit/) and
++	  exposes lane / rate / vswing / pre-emphasis control through the
++	  generic PHY framework.
+diff --git a/drivers/phy/spacemit/Makefile b/drivers/phy/spacemit/Makefile
+index a821a21d6142..960c5827f5e5 100644
+--- a/drivers/phy/spacemit/Makefile
++++ b/drivers/phy/spacemit/Makefile
+@@ -1,3 +1,4 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+ obj-$(CONFIG_PHY_SPACEMIT_K1_PCIE)		+= phy-k1-pcie.o
+ obj-$(CONFIG_PHY_SPACEMIT_K1_USB2)		+= phy-k1-usb2.o
++obj-$(CONFIG_PHY_SPACEMIT_K3_INNO_DP)		+= phy-k3-inno-dp.o
+diff --git a/drivers/phy/spacemit/phy-k3-inno-dp.c b/drivers/phy/spacemit/phy-k3-inno-dp.c
+new file mode 100644
+index 000000000000..9dd62edb7a5a
+--- /dev/null
++++ b/drivers/phy/spacemit/phy-k3-inno-dp.c
+@@ -0,0 +1,948 @@
++// SPDX-License-Identifier: GPL-2.0-only
++/*
++ * SpacemiT K3 Innosilicon DisplayPort PHY driver.
++ *
++ * Copyright (C) 2025-2026 SpacemiT Co., Ltd.
++ */
++
++#include <linux/bitfield.h>
++#include <linux/bitops.h>
++#include <linux/clk-provider.h>
++#include <linux/delay.h>
++#include <linux/iopoll.h>
++#include <linux/mod_devicetable.h>
++#include <linux/module.h>
++#include <linux/of.h>
++#include <linux/phy/phy.h>
++#include <linux/phy/phy-dp.h>
++#include <linux/platform_device.h>
++#include <linux/regmap.h>
++
++/* Offsets are into the parent controller's MMIO window */
++#define DPTX_PHY_CTRL			0x0100
++#define DPTX_PHY_CTRL_XMIT_EN		GENMASK(20, 17)
++#define DPTX_PHY_CTRL_NUM_LANES		GENMASK(6, 5)
++#define DPTX_PHY_CTRL_RATE		GENMASK(1, 0)
++
++/* One 6-bit slot per lane; only the low 4 bits of each slot are used. */
++#define DPTX_PHY_LANE_TRIM		0x0104
++#define DPTX_PHY_LANE_BITS_PER		6
++#define DPTX_PHY_LANE_FIELD_MASK	0xf	/* preemp[1:0] | vswing[1:0] */
++#define DPTX_PHY_LANE_VSWING_SHIFT	2	/* within the lane field */
++
++/* MPLL is the link PLL (lane rate) */
++#define DPTX_ANA_MPLL			0x0180
++#define DPTX_ANA_MPLL_FBDIV_LBIT	GENMASK(31, 24)
++#define DPTX_ANA_MPLL_FBDIV_HBIT	GENMASK(19, 16)
++#define DPTX_ANA_MPLL_PREDIV		GENMASK(13, 8)
++#define DPTX_ANA_MPLL_LOCKED		BIT(7)
++#define DPTX_ANA_MPLL_DACPD		BIT(5)
++#define DPTX_ANA_MPLL_DSMPD		BIT(4)
++#define DPTX_ANA_MPLL_PD		BIT(0)
++
++#define DPTX_ANA_MPLL_FRAC		0x0184
++#define DPTX_ANA_MPLL_FRAC_LBIT		GENMASK(23, 16)
++#define DPTX_ANA_MPLL_FRAC_MBIT		GENMASK(15, 8)
++#define DPTX_ANA_MPLL_FRAC_HBIT		GENMASK(7, 0)
++
++#define DPTX_ANA_MPLL_DIV		0x0188
++#define DPTX_ANA_MPLL_VCOCLK_DIV8_EN	BIT(16)
++#define DPTX_ANA_MPLL_POSTDIVEN		BIT(11)
++#define DPTX_ANA_MPLL_POSTDIV		GENMASK(10, 8)
++
++/* PREPLL is the pixel PLL exposed as a clock. */
++#define DPTX_ANA_PREPLL			0x0190
++#define DPTX_ANA_PREPLL_FBDIV2_LBIT	GENMASK(31, 24)
++#define DPTX_ANA_PREPLL_FBDIV2_HBIT	GENMASK(19, 16)
++#define DPTX_ANA_PREPLL_PREDIV		GENMASK(13, 8)
++#define DPTX_ANA_PREPLL_LOCKED		BIT(7)
++#define DPTX_ANA_PREPLL_DACPD		BIT(5)
++#define DPTX_ANA_PREPLL_DSMPD		BIT(4)
++#define DPTX_ANA_PREPLL_PCLK_NORMAL	BIT(1)
++#define DPTX_ANA_PREPLL_PD		BIT(0)
++
++#define DPTX_ANA_PREPLL_DIV		0x0194
++#define DPTX_ANA_PREPLL_PRECLK_DIVM	GENMASK(17, 16)
++#define DPTX_ANA_PREPLL_PRECLK_DIVAUX	GENMASK(12, 8)
++
++#define DPTX_ANA_PREPLL_CTRL		0x0198
++#define DPTX_ANA_PREPLL_PCLKDIV5_EN	BIT(31)
++#define DPTX_ANA_PREPLL_PCLK_DIVAUX	GENMASK(28, 24)
++#define DPTX_ANA_PREPLL_LOCK_BYPEN	BIT(17)
++#define DPTX_ANA_PREPLL_HDMI_EN		BIT(9)
++#define DPTX_ANA_PREPLL_DP_EN		BIT(8)
++
++#define DPTX_ANA_PREPLL_FRAC		0x019c
++#define DPTX_ANA_PREPLL_FRAC2_LBIT	GENMASK(23, 16)
++#define DPTX_ANA_PREPLL_FRAC2_MBIT	GENMASK(15, 8)
++#define DPTX_ANA_PREPLL_FRAC2_HBIT	GENMASK(7, 0)
++
++#define DPTX_ANA_TX_CTRL		0x01a0
++#define DPTX_ANA_MPLL_CLKDIV_16M	GENMASK(13, 8)
++
++/* PRECLK_DIVM register value -> divide factor */
++static const u8 k3_inno_dp_divm_factors[] = { 1, 2, 3, 5 };
++
++#define DPTX_VCO_MIN_KHZ		1000000
++#define DPTX_VCO_MAX_KHZ		3000000
++#define DPTX_PLL_FRAC_MOD		(1 << 24)
++#define DPTX_PLL_ERR_TOLERANCE		10
++
++struct k3_inno_dp_phy {
++	struct device	*dev;
++	struct regmap	*regmap;
++	struct phy	*phy;
++	u8		lanes;		/* tracks last set_lanes */
++
++	struct clk_hw	pxclk_hw;	/* the PREPLL's pixel clock */
++	unsigned long	pxclk_rate;	/* last programmed PREPLL rate */
++	u32		ref_clk_khz;	/* PLL reference */
++};
++
++static int k3_inno_dp_phy_power_on(struct phy *phy)
++{
++	struct k3_inno_dp_phy *p = phy_get_drvdata(phy);
++	u32 lane_en;
++	u32 val;
++	int ret;
++
++	switch (p->lanes) {
++	case 1:
++		lane_en = 0x1;
++		break;
++	case 2:
++		lane_en = 0x3;
++		break;
++	case 4:
++	default:
++		lane_en = 0xf;
++		break;
++	}
++
++	ret = regmap_write_bits(p->regmap, DPTX_ANA_MPLL, DPTX_ANA_MPLL_PD, 0);
++	if (ret)
++		return ret;
++	ret = regmap_write_bits(p->regmap, DPTX_ANA_PREPLL,
++				DPTX_ANA_PREPLL_PD, 0);
++	if (ret)
++		return ret;
++	usleep_range(2000, 4000);
++
++	ret = regmap_write_bits(p->regmap, DPTX_PHY_CTRL,
++				DPTX_PHY_CTRL_XMIT_EN,
++				FIELD_PREP(DPTX_PHY_CTRL_XMIT_EN, lane_en));
++	if (ret)
++		return ret;
++	usleep_range(2000, 4000);
++
++	ret = regmap_read_poll_timeout(p->regmap, DPTX_ANA_MPLL, val,
++				       val & DPTX_ANA_MPLL_LOCKED,
++				       2000, 10 * 1000);
++	if (ret) {
++		dev_err(p->dev, "DP PHY core PLL lock timed out\n");
++		return ret;
++	}
++
++	ret = regmap_read_poll_timeout(p->regmap, DPTX_ANA_PREPLL, val,
++				       val & DPTX_ANA_PREPLL_LOCKED,
++				       2000, 10 * 1000);
++	if (ret)
++		dev_err(p->dev, "DP PHY pixel PLL lock timed out\n");
++
++	return ret;
++}
++
++static int k3_inno_dp_phy_power_off(struct phy *phy)
++{
++	struct k3_inno_dp_phy *p = phy_get_drvdata(phy);
++
++	regmap_write_bits(p->regmap, DPTX_PHY_CTRL, DPTX_PHY_CTRL_XMIT_EN, 0);
++	usleep_range(2000, 4000);
++
++	regmap_write_bits(p->regmap, DPTX_ANA_PREPLL, DPTX_ANA_PREPLL_PD,
++			  DPTX_ANA_PREPLL_PD);
++	usleep_range(2000, 4000);
++
++	return 0;
++}
++
++static int k3_inno_dp_phy_set_lanes(struct k3_inno_dp_phy *p, u8 lanes)
++{
++	u32 val;
++	int ret;
++
++	switch (lanes) {
++	case 1:
++		val = 0;
++		break;
++	case 2:
++		val = 1;
++		break;
++	case 4:
++		val = 2;
++		break;
++	default:
++		return -EINVAL;
++	}
++
++	ret = regmap_write_bits(p->regmap, DPTX_PHY_CTRL,
++				DPTX_PHY_CTRL_NUM_LANES,
++				FIELD_PREP(DPTX_PHY_CTRL_NUM_LANES, val));
++	if (ret)
++		return ret;
++
++	p->lanes = lanes;
++	return 0;
++}
++
++struct k3_inno_dp_mpll_cfg {
++	unsigned int link_rate;		/* Mbps per lane */
++	u8 prediv;
++	u16 fbdiv;
++	u32 frac;
++	u8 postdiv;
++	u8 postdiv_en;
++	u8 frac_pd;
++	u8 vcoclk_div8_en;
++	u8 clk_16mdiv;
++};
++
++static const struct k3_inno_dp_mpll_cfg k3_inno_dp_mpll_cfgs[] = {
++	{
++		.link_rate	= 1620,
++		.prediv		= 0x02,
++		.fbdiv		= 0x87,
++		.frac		= 0,
++		.postdiv	= 0,
++		.postdiv_en	= 1,
++		.frac_pd	= 0x3,
++		.vcoclk_div8_en	= 1,
++		.clk_16mdiv	= 12,
++	}, {
++		.link_rate	= 2700,
++		.prediv		= 0x02,
++		.fbdiv		= 0xe1,
++		.frac		= 0,
++		.postdiv	= 0,
++		.postdiv_en	= 1,
++		.frac_pd	= 0x3,
++		.vcoclk_div8_en	= 1,
++		.clk_16mdiv	= 21,
++	}, {
++		.link_rate	= 5400,
++		.prediv		= 0x02,
++		.fbdiv		= 0xe1,
++		.frac		= 0,
++		.postdiv	= 0,
++		.postdiv_en	= 0,
++		.frac_pd	= 0x3,
++		.vcoclk_div8_en	= 0,
++		.clk_16mdiv	= 42,
++	},
++};
++
++static void k3_inno_dp_phy_program_mpll(struct k3_inno_dp_phy *p,
++					const struct k3_inno_dp_mpll_cfg *cfg)
++{
++	struct regmap *rm = p->regmap;
++
++	/*
++	 * Shared with an unwired HDMI path: select DP first, otherwise the
++	 * PLLs still lock but nothing reaches the lanes and AUX times out.
++	 */
++	regmap_write_bits(rm, DPTX_ANA_PREPLL_CTRL, DPTX_ANA_PREPLL_DP_EN,
++		DPTX_ANA_PREPLL_DP_EN);
++	regmap_write_bits(rm, DPTX_ANA_PREPLL_CTRL, DPTX_ANA_PREPLL_HDMI_EN, 0);
++
++	regmap_write_bits(rm, DPTX_ANA_MPLL, DPTX_ANA_MPLL_PD,
++		FIELD_PREP(DPTX_ANA_MPLL_PD, 1));
++	usleep_range(2000, 4000);
++
++	regmap_write_bits(rm, DPTX_ANA_MPLL, DPTX_ANA_MPLL_PREDIV,
++		FIELD_PREP(DPTX_ANA_MPLL_PREDIV, cfg->prediv));
++	regmap_write_bits(rm, DPTX_ANA_MPLL, DPTX_ANA_MPLL_FBDIV_LBIT,
++		FIELD_PREP(DPTX_ANA_MPLL_FBDIV_LBIT, cfg->fbdiv & 0xff));
++	regmap_write_bits(rm, DPTX_ANA_MPLL, DPTX_ANA_MPLL_FBDIV_HBIT,
++		FIELD_PREP(DPTX_ANA_MPLL_FBDIV_HBIT, (cfg->fbdiv >> 8) & 0xf));
++	regmap_write_bits(rm, DPTX_ANA_MPLL, DPTX_ANA_MPLL_DACPD,
++		FIELD_PREP(DPTX_ANA_MPLL_DACPD, (cfg->frac_pd >> 1) & 0x1));
++	regmap_write_bits(rm, DPTX_ANA_MPLL, DPTX_ANA_MPLL_DSMPD,
++		FIELD_PREP(DPTX_ANA_MPLL_DSMPD, cfg->frac_pd & 0x1));
++
++	regmap_write_bits(rm, DPTX_ANA_MPLL_FRAC, DPTX_ANA_MPLL_FRAC_LBIT,
++		FIELD_PREP(DPTX_ANA_MPLL_FRAC_LBIT, cfg->frac & 0xff));
++	regmap_write_bits(rm, DPTX_ANA_MPLL_FRAC, DPTX_ANA_MPLL_FRAC_MBIT,
++		FIELD_PREP(DPTX_ANA_MPLL_FRAC_MBIT, (cfg->frac >> 8) & 0xff));
++	regmap_write_bits(rm, DPTX_ANA_MPLL_FRAC, DPTX_ANA_MPLL_FRAC_HBIT,
++		FIELD_PREP(DPTX_ANA_MPLL_FRAC_HBIT, (cfg->frac >> 16) & 0xff));
++
++	regmap_write_bits(rm, DPTX_ANA_MPLL_DIV, DPTX_ANA_MPLL_POSTDIV,
++		FIELD_PREP(DPTX_ANA_MPLL_POSTDIV, cfg->postdiv));
++	regmap_write_bits(rm, DPTX_ANA_MPLL_DIV, DPTX_ANA_MPLL_POSTDIVEN,
++		FIELD_PREP(DPTX_ANA_MPLL_POSTDIVEN, cfg->postdiv_en));
++	regmap_write_bits(rm, DPTX_ANA_MPLL_DIV, DPTX_ANA_MPLL_VCOCLK_DIV8_EN,
++		FIELD_PREP(DPTX_ANA_MPLL_VCOCLK_DIV8_EN, cfg->vcoclk_div8_en));
++
++	regmap_write_bits(rm, DPTX_ANA_TX_CTRL, DPTX_ANA_MPLL_CLKDIV_16M,
++		FIELD_PREP(DPTX_ANA_MPLL_CLKDIV_16M, cfg->clk_16mdiv));
++
++	regmap_write_bits(rm, DPTX_ANA_PREPLL_CTRL, DPTX_ANA_PREPLL_LOCK_BYPEN,
++		FIELD_PREP(DPTX_ANA_PREPLL_LOCK_BYPEN, 1));
++
++	regmap_write_bits(rm, DPTX_ANA_MPLL, DPTX_ANA_MPLL_PD,
++		FIELD_PREP(DPTX_ANA_MPLL_PD, 0));
++	usleep_range(2000, 4000);
++}
++
++static int k3_inno_dp_phy_set_rate(struct k3_inno_dp_phy *p,
++				   unsigned int link_rate)
++{
++	const struct k3_inno_dp_mpll_cfg *cfg = NULL;
++	unsigned int i;
++	u32 sel;
++
++	switch (link_rate) {
++	case 1620:
++		sel = 0;
++		break;
++	case 2700:
++		sel = 1;
++		break;
++	case 5400:
++		sel = 2;
++		break;
++	default:
++		return -EINVAL;
++	}
++
++	for (i = 0; i < ARRAY_SIZE(k3_inno_dp_mpll_cfgs); i++) {
++		if (k3_inno_dp_mpll_cfgs[i].link_rate == link_rate) {
++			cfg = &k3_inno_dp_mpll_cfgs[i];
++			break;
++		}
++	}
++	if (!cfg)
++		return -EINVAL;
++
++	k3_inno_dp_phy_program_mpll(p, cfg);
++
++	return regmap_write_bits(p->regmap, DPTX_PHY_CTRL,
++				 DPTX_PHY_CTRL_RATE,
++				 FIELD_PREP(DPTX_PHY_CTRL_RATE, sel));
++}
++
++static int k3_inno_dp_phy_set_voltages(struct k3_inno_dp_phy *p,
++				       struct phy_configure_opts_dp *opts)
++{
++	u8 lane;
++	int ret;
++
++	for (lane = 0; lane < opts->lanes; lane++) {
++		unsigned int shift = lane * DPTX_PHY_LANE_BITS_PER;
++		u32 mask = DPTX_PHY_LANE_FIELD_MASK << shift;
++		u32 val  = (((opts->voltage[lane] & 0x3) << DPTX_PHY_LANE_VSWING_SHIFT) |
++			    (opts->pre[lane] & 0x3)) << shift;
++
++		ret = regmap_write_bits(p->regmap, DPTX_PHY_LANE_TRIM, mask,
++					val);
++		if (ret)
++			return ret;
++	}
++
++	return 0;
++}
++
++static int k3_inno_dp_phy_configure(struct phy *phy,
++				    union phy_configure_opts *opts)
++{
++	struct k3_inno_dp_phy *p = phy_get_drvdata(phy);
++	int ret;
++
++	if (opts->dp.set_lanes) {
++		ret = k3_inno_dp_phy_set_lanes(p, opts->dp.lanes);
++		if (ret)
++			return ret;
++	}
++
++	if (opts->dp.set_rate) {
++		ret = k3_inno_dp_phy_set_rate(p, opts->dp.link_rate);
++		if (ret)
++			return ret;
++	}
++
++	if (opts->dp.set_voltages) {
++		ret = k3_inno_dp_phy_set_voltages(p, &opts->dp);
++		if (ret)
++			return ret;
++	}
++
++	return 0;
++}
++
++static u32 k3_inno_dp_div64(u64 *n, u32 base)
++{
++	return do_div(*n, base);
++}
++
++static int k3_inno_dp_better_cfg(bool new_valid, bool new_is_int, u8 new_pre, u32 new_vco,
++				 bool best_valid, bool best_is_int, u8 best_pre, u32 best_vco)
++{
++	if (!new_valid)
++		return 0;
++	if (!best_valid)
++		return 1;
++
++	if (new_is_int && !best_is_int)
++		return 1;
++	if (!new_is_int && best_is_int)
++		return 0;
++
++	if (new_pre < best_pre)
++		return 1;
++	if (new_pre > best_pre)
++		return 0;
++
++	if (new_vco > best_vco)
++		return 1;
++
++	return 0;
++}
++
++struct k3_inno_dp_prepll_cfg {
++	u32 target_pclk_khz;
++	u32 vco_freq_khz;
++	u8 prediv;
++	u16 fbdiv;
++	u32 frac_pd;
++	u32 frac;
++	u8 div5_en;
++	u8 divm;
++	u8 divaux;
++	u8 divp;
++	u32 actual_pclk_khz;
++	bool valid;
++};
++
++static const struct k3_inno_dp_prepll_cfg k3_inno_dp_prepll_cfgs[] = {
++	{ 614400, 2460000, 0x05, 512,  0x3, 0x0, 0x0, 0x1, 0x01, 0x1, 614400, true },
++	{ 594000, 2376000, 0x01, 99,   0x3, 0x0, 0x0, 0x1, 0x01, 0x1, 594000, true },
++	{ 551040, 2760000, 0x05, 574,  0x3, 0x0, 0x1, 0x0, 0x00, 0x0, 551040, true },
++	{ 533250, 2130000, 0x08, 711,  0x3, 0x0, 0x0, 0x1, 0x01, 0x1, 533250, true },
++	{ 443250, 1770000, 0x08, 591,  0x3, 0x0, 0x0, 0x1, 0x01, 0x1, 443250, true },
++	{ 375000, 3000000, 0x01, 125,  0x3, 0x0, 0x0, 0x0, 0x04, 0x1, 375000, true },
++	{ 372000, 2980000, 0x01, 124,  0x3, 0x0, 0x0, 0x0, 0x04, 0x1, 372000, true },
++	{ 348500, 2790000, 0x06, 697,  0x3, 0x0, 0x0, 0x0, 0x04, 0x1, 348500, true },
++	{ 307200, 1540000, 0x01, 64,   0x3, 0x0, 0x1, 0x0, 0x00, 0x0, 307200, true },
++	{ 297000, 2376000, 0x01, 99,   0x3, 0x0, 0x0, 0x0, 0x04, 0x1, 297000, true },
++	{ 280000, 1680000, 0x01, 70,   0x3, 0x0, 0x0, 0x2, 0x01, 0x1, 280000, true },
++	{ 277440, 2770000, 0x05, 578,  0x3, 0x0, 0x0, 0x3, 0x01, 0x1, 277440, true },
++	{ 245760, 2457600, 0x05, 512,  0x3, 0x0, 0x0, 0x3, 0x01, 0x1, 245760, true },
++	{ 241500, 1932000, 0x02, 161,  0x3, 0x0, 0x0, 0x0, 0x04, 0x1, 241500, true },
++	{ 236000, 2830000, 0x01, 118,  0x3, 0x0, 0x0, 0x0, 0x06, 0x1, 236000, true },
++	{ 204800, 2048000, 0x03, 256,  0x3, 0x0, 0x0, 0x3, 0x01, 0x1, 204800, true },
++	{ 193250, 2320000, 0x08, 773,  0x3, 0x0, 0x0, 0x0, 0x06, 0x1, 193250, true },
++	{ 189000, 1510000, 0x01,  63,  0x3, 0x0, 0x0, 0x0, 0x04, 0x1, 189000, true },
++	{ 187500, 3000000, 0x01, 125,  0x3, 0x0, 0x0, 0x0, 0x08, 0x1, 187500, true },
++	{ 162000, 2592000, 0x01, 108,  0x3, 0x0, 0x0, 0x0, 0x08, 0x1, 162000, true },
++	{ 156000, 2810000, 0x01, 117,  0x3, 0x0, 0x0, 0x0, 0x09, 0x1, 156000, true },
++	{ 150000, 3000000, 0x01, 125,  0x3, 0x0, 0x0, 0x0, 0x0a, 0x1, 150000, true },
++	{ 148500, 2376000, 0x01, 99,   0x3, 0x0, 0x0, 0x0, 0x08, 0x1, 148500, true },
++	{ 146000, 1750000, 0x01, 73,   0x3, 0x0, 0x0, 0x0, 0x06, 0x1, 146000, true },
++	{ 142860, 2860000, 0x14, 2381, 0x3, 0x0, 0x0, 0x0, 0x0a, 0x1, 142860, true },
++	{ 140000, 2520000, 0x01, 105,  0x3, 0x0, 0x0, 0x0, 0x09, 0x1, 140000, true },
++	{ 138500, 2220000, 0x03, 277,  0x3, 0x0, 0x0, 0x0, 0x08, 0x1, 138500, true },
++	{ 122000, 2930000, 0x01, 122,  0x3, 0x0, 0x0, 0x0, 0x0c, 0x1, 122000, true },
++	{ 121750, 2920000, 0x04, 487,  0x3, 0x0, 0x0, 0x0, 0x0c, 0x1, 121750, true },
++	{ 108000, 2810000, 0x01, 117,  0x3, 0x0, 0x0, 0x0, 0x0d, 0x1, 108000, true },
++	{ 106500, 1700000, 0x01,  71,  0x3, 0x0, 0x0, 0x0, 0x08, 0x1, 106500, true },
++	{ 83500,  2000000, 0x02, 167,  0x3, 0x0, 0x0, 0x0, 0x0c, 0x1, 83500,  true },
++	{ 79500,  2540000, 0x01, 106,  0x3, 0x0, 0x0, 0x0, 0x10, 0x1, 79500,  true },
++	{ 75000,  3000000, 0x01, 125,  0x3, 0x0, 0x0, 0x0, 0x14, 0x1, 75000,  true },
++	{ 74250,  2376000, 0x01,  99,  0x3, 0x0, 0x0, 0x0, 0x10, 0x1, 74250,  true },
++	{ 65000,  1560000, 0x01,  65,  0x3, 0x0, 0x0, 0x0, 0x0c, 0x1, 65000,  true },
++	{ 40000,  2880000, 0x01, 120,  0x3, 0x0, 0x0, 0x0, 0x12, 0x2, 40000,  true },
++	{ 27000,  2810000, 0x01, 117,  0x3, 0x0, 0x0, 0x0, 0x1a, 0x2, 27000,  true },
++	{ 25600,  2300000, 0x01,  96,  0x3, 0x0, 0x0, 0x0, 0x0f, 0x3, 25600,  true },
++	{ 25200,  2520000, 0x01, 105,  0x3, 0x0, 0x0, 0x0, 0x19, 0x2, 25200,  true },
++};
++
++static u64 k3_inno_dp_abs_diff(u64 a, u64 b)
++{
++	return (a > b) ? (a - b) : (b - a);
++}
++
++static u32 k3_inno_dp_pll_rate_khz(u8 pre, u16 fb, u32 frac,
++				   u32 ref_clk_khz, u32 total_div)
++{
++	u64 vco_hz;
++	u64 ref_hz = (u64)ref_clk_khz * 1000;
++	u64 int_part;
++	u64 frac_part;
++
++	/* Integer part: (Ref * FB) / Pre */
++	int_part = ref_hz * fb;
++	int_part += (pre / 2);
++	k3_inno_dp_div64(&int_part, pre);
++
++	/* Fractional part: (Ref * Frac) / (Pre * 2^24) */
++	frac_part = ref_hz * frac;
++
++	frac_part += (pre / 2);
++	k3_inno_dp_div64(&frac_part, pre);
++
++	frac_part += (DPTX_PLL_FRAC_MOD / 2);
++	k3_inno_dp_div64(&frac_part, DPTX_PLL_FRAC_MOD);
++
++	vco_hz = int_part + frac_part;
++
++	/* Final Rate = VCO / total_div */
++	vco_hz += (total_div / 2);
++	k3_inno_dp_div64(&vco_hz, total_div);
++
++	vco_hz += 500;
++	k3_inno_dp_div64(&vco_hz, 1000);
++
++	return (u32)vco_hz;
++}
++
++static int k3_inno_dp_prepll_div_total(const struct k3_inno_dp_prepll_cfg *cfg,
++				       u32 *div_total)
++{
++	if (!cfg || !div_total || !cfg->valid)
++		return -EINVAL;
++
++	/* div5_en fixes div_total at 5; divp is unused on this path */
++	if (cfg->div5_en) {
++		*div_total = 5;
++		return 0;
++	}
++
++	if (!cfg->divp)
++		return -EINVAL;
++
++	if (cfg->divaux == 1) {
++		if (cfg->divm >= ARRAY_SIZE(k3_inno_dp_divm_factors))
++			return -EINVAL;
++
++		*div_total = 2 * k3_inno_dp_divm_factors[cfg->divm] * cfg->divp;
++		return 0;
++	}
++
++	if (cfg->divaux < 2)
++		return -EINVAL;
++
++	*div_total = 2 * cfg->divaux * cfg->divp;
++	return 0;
++}
++
++static bool k3_inno_dp_prepll_cfg_matches(const struct k3_inno_dp_prepll_cfg *cfg,
++					  u32 target_pclk_khz,
++					 u32 ref_clk_khz)
++{
++	u32 div_total;
++	u32 actual_pclk_khz;
++
++	if (k3_inno_dp_prepll_div_total(cfg, &div_total))
++		return false;
++
++	actual_pclk_khz = k3_inno_dp_pll_rate_khz(cfg->prediv, cfg->fbdiv,
++						  cfg->frac, ref_clk_khz,
++						  div_total);
++
++	if (cfg->actual_pclk_khz &&
++	    k3_inno_dp_abs_diff(actual_pclk_khz,
++				cfg->actual_pclk_khz) > DPTX_PLL_ERR_TOLERANCE)
++		return false;
++
++	return k3_inno_dp_abs_diff(actual_pclk_khz,
++				    target_pclk_khz) <= DPTX_PLL_ERR_TOLERANCE;
++}
++
++static const struct k3_inno_dp_prepll_cfg *k3_inno_dp_find_prepll_cfg(u32 pclk_khz,
++								      u32 ref_clk_khz)
++{
++	const struct k3_inno_dp_prepll_cfg *best_match = NULL;
++	u32 min_diff = 0xFFFFFFFF;
++	int num_configs = ARRAY_SIZE(k3_inno_dp_prepll_cfgs);
++
++	for (int i = 0; i < num_configs; i++) {
++		u32 current_target = k3_inno_dp_prepll_cfgs[i].target_pclk_khz;
++		u32 diff = k3_inno_dp_abs_diff(pclk_khz, current_target);
++
++		if (diff == 0 && k3_inno_dp_prepll_cfg_matches(&k3_inno_dp_prepll_cfgs[i],
++							       pclk_khz, ref_clk_khz)) {
++			return &k3_inno_dp_prepll_cfgs[i];
++		}
++
++		if ((pclk_khz / 100) == (current_target / 100) &&
++		    k3_inno_dp_prepll_cfg_matches(&k3_inno_dp_prepll_cfgs[i],
++						  pclk_khz, ref_clk_khz)) {
++			return &k3_inno_dp_prepll_cfgs[i];
++		}
++
++		if (diff < min_diff && diff < 500 &&
++		    k3_inno_dp_prepll_cfg_matches(&k3_inno_dp_prepll_cfgs[i],
++						  pclk_khz, ref_clk_khz)) {
++			min_diff = diff;
++			best_match = &k3_inno_dp_prepll_cfgs[i];
++		}
++	}
++
++	return best_match;
++}
++
++static int k3_inno_dp_solve_frac(u32 target_vco_khz, u32 ref_clk_khz,
++				 u8 *best_pre, u16 *best_fb, u32 *best_frac)
++{
++	u64 min_err = ~0ULL;
++	int found = 0;
++	bool best_is_int = false;
++	int pre;
++
++	for (pre = 1; pre <= 63; pre++) {
++		u64 ref_clk_hz = (u64)ref_clk_khz * 1000;
++		u64 target_vco_hz = (u64)target_vco_khz * 1000;
++
++		/*
++		 * Calculate required multiplier: Mult = (TargetVCO * Pre) / Ref
++		 */
++		u64 num = target_vco_hz * pre;
++		u64 den = ref_clk_hz;
++		u64 remainder;
++		u64 fb_val;
++		u64 frac_val;
++		u64 actual_vco;
++		u64 diff;
++		bool current_is_int;
++
++		fb_val = num;
++		remainder = k3_inno_dp_div64(&fb_val, (u32)den);
++
++		if (fb_val > 4095)
++			continue;
++
++		/* Frac = (Remainder * 2^24 + Ref/2) / Ref */
++		frac_val = remainder * DPTX_PLL_FRAC_MOD;
++		frac_val += (den / 2);
++		k3_inno_dp_div64(&frac_val, (u32)den);
++
++		if (frac_val > 0xFFFFFF)
++			frac_val = 0xFFFFFF;
++
++		/* VCO = (Ref * FB / Pre) + (Ref * Frac / (Pre * 2^24)) */
++		{
++			u64 vco_int, vco_frac;
++
++			vco_int = ref_clk_hz * fb_val;
++			k3_inno_dp_div64(&vco_int, pre);
++			vco_frac = ref_clk_hz * frac_val;
++			k3_inno_dp_div64(&vco_frac, pre);
++			k3_inno_dp_div64(&vco_frac, DPTX_PLL_FRAC_MOD);
++
++			actual_vco = vco_int + vco_frac;
++		}
++
++		diff = k3_inno_dp_abs_diff(actual_vco, target_vco_hz);
++		current_is_int = (frac_val == 0);
++
++		if (diff < min_err) {
++			min_err = diff;
++			*best_pre = pre;
++			*best_fb = (u16)fb_val;
++			*best_frac = (u32)frac_val;
++			best_is_int = current_is_int;
++			found = 1;
++		} else if (diff == min_err) {
++			if (current_is_int && !best_is_int) {
++				*best_pre = pre;
++				*best_fb = (u16)fb_val;
++				*best_frac = (u32)frac_val;
++				best_is_int = true;
++				found = 1;
++			}
++		}
++	}
++
++	return found ? 0 : -EINVAL;
++}
++
++/* divaux must be 1 for the DivM path and > 1 for the DivAux path. */
++static void k3_inno_dp_try_prepll(u32 target_pclk_khz, u32 ref_clk_khz,
++				  u32 div_total, u8 div5_en, u8 divaux,
++				  u8 divm, u8 divp,
++				  struct k3_inno_dp_prepll_cfg *best)
++{
++	struct k3_inno_dp_prepll_cfg curr = {0};
++	u32 target_vco = target_pclk_khz * div_total;
++	u32 actual_pclk;
++	u32 frac;
++	u16 fb;
++	u8 pre;
++
++	if (target_vco < DPTX_VCO_MIN_KHZ || target_vco > DPTX_VCO_MAX_KHZ)
++		return;
++
++	if (k3_inno_dp_solve_frac(target_vco, ref_clk_khz, &pre, &fb, &frac))
++		return;
++
++	actual_pclk = k3_inno_dp_pll_rate_khz(pre, fb, frac, ref_clk_khz,
++					      div_total);
++	if (k3_inno_dp_abs_diff(actual_pclk, target_pclk_khz) > DPTX_PLL_ERR_TOLERANCE)
++		return;
++
++	curr.valid = true;
++	curr.vco_freq_khz = target_vco;
++	curr.actual_pclk_khz = actual_pclk;
++	curr.prediv = pre;
++	curr.fbdiv = fb;
++	curr.frac = frac;
++	curr.frac_pd = (frac == 0) ? 3 : 0;
++	curr.div5_en = div5_en;
++	curr.divaux = divaux;
++	curr.divm = divm;
++	curr.divp = divp;
++
++	if (k3_inno_dp_better_cfg(curr.valid, curr.frac == 0, curr.prediv,
++				  curr.vco_freq_khz, best->valid,
++				    best->frac == 0, best->prediv,
++				    best->vco_freq_khz))
++		*best = curr;
++}
++
++static int k3_inno_dp_solve_prepll(u32 target_pclk_khz, u32 ref_clk_khz,
++				   struct k3_inno_dp_prepll_cfg *cfg)
++{
++	struct k3_inno_dp_prepll_cfg best = {0};
++	int pclk_div;
++	int i;
++
++	/* Strategy 1: Div5 path (VCO = PCLK * 5) */
++	k3_inno_dp_try_prepll(target_pclk_khz, ref_clk_khz, 5, 1, 0, 0, 0,
++			      &best);
++
++	for (pclk_div = 1; pclk_div <= 31; pclk_div++) {
++		/* Strategy 2: DivM path */
++		for (i = 0; i < ARRAY_SIZE(k3_inno_dp_divm_factors); i++)
++			k3_inno_dp_try_prepll(target_pclk_khz, ref_clk_khz,
++				2 * k3_inno_dp_divm_factors[i] * pclk_div, 0, 1,
++				i, pclk_div, &best);
++
++		/* Strategy 3: DivAux path */
++		for (i = 2; i <= 31; i++)
++			k3_inno_dp_try_prepll(target_pclk_khz, ref_clk_khz,
++					      2 * i * pclk_div,
++					      0, i, 0, pclk_div, &best);
++	}
++
++	if (!best.valid)
++		return -EINVAL;
++
++	*cfg = best;
++	return 0;
++}
++
++static void k3_inno_dp_program_prepll(struct k3_inno_dp_phy *p,
++				      const struct k3_inno_dp_prepll_cfg *cfg)
++{
++	regmap_write_bits(p->regmap, DPTX_ANA_PREPLL, DPTX_ANA_PREPLL_PD,
++		FIELD_PREP(DPTX_ANA_PREPLL_PD, 1));
++	usleep_range(2000, 4000);
++
++	regmap_write_bits(p->regmap, DPTX_ANA_PREPLL, DPTX_ANA_PREPLL_PREDIV,
++		FIELD_PREP(DPTX_ANA_PREPLL_PREDIV, cfg->prediv));
++
++	regmap_write_bits(p->regmap, DPTX_ANA_PREPLL,
++		DPTX_ANA_PREPLL_FBDIV2_LBIT,
++		FIELD_PREP(DPTX_ANA_PREPLL_FBDIV2_LBIT, cfg->fbdiv & 0xFF));
++	regmap_write_bits(p->regmap, DPTX_ANA_PREPLL,
++		DPTX_ANA_PREPLL_FBDIV2_HBIT,
++		FIELD_PREP(DPTX_ANA_PREPLL_FBDIV2_HBIT, (cfg->fbdiv >> 8) & 0xF));
++
++	regmap_write_bits(p->regmap, DPTX_ANA_PREPLL, DPTX_ANA_PREPLL_DACPD,
++		FIELD_PREP(DPTX_ANA_PREPLL_DACPD, (cfg->frac_pd >> 1) & 0x1));
++	regmap_write_bits(p->regmap, DPTX_ANA_PREPLL, DPTX_ANA_PREPLL_DSMPD,
++		FIELD_PREP(DPTX_ANA_PREPLL_DSMPD, cfg->frac_pd & 0x1));
++
++	regmap_write_bits(p->regmap, DPTX_ANA_PREPLL_FRAC,
++		DPTX_ANA_PREPLL_FRAC2_LBIT,
++		FIELD_PREP(DPTX_ANA_PREPLL_FRAC2_LBIT, cfg->frac & 0xFF));
++	regmap_write_bits(p->regmap, DPTX_ANA_PREPLL_FRAC,
++		DPTX_ANA_PREPLL_FRAC2_MBIT,
++		FIELD_PREP(DPTX_ANA_PREPLL_FRAC2_MBIT, (cfg->frac >> 8) & 0xFF));
++	regmap_write_bits(p->regmap, DPTX_ANA_PREPLL_FRAC,
++		DPTX_ANA_PREPLL_FRAC2_HBIT,
++		FIELD_PREP(DPTX_ANA_PREPLL_FRAC2_HBIT, (cfg->frac >> 16) & 0xFF));
++
++	regmap_write_bits(p->regmap, DPTX_ANA_PREPLL_DIV,
++		DPTX_ANA_PREPLL_PRECLK_DIVM,
++		FIELD_PREP(DPTX_ANA_PREPLL_PRECLK_DIVM, cfg->divm));
++	regmap_write_bits(p->regmap, DPTX_ANA_PREPLL_DIV,
++		DPTX_ANA_PREPLL_PRECLK_DIVAUX,
++		FIELD_PREP(DPTX_ANA_PREPLL_PRECLK_DIVAUX, cfg->divaux));
++
++	regmap_write_bits(p->regmap, DPTX_ANA_PREPLL_CTRL,
++		DPTX_ANA_PREPLL_PCLKDIV5_EN,
++		FIELD_PREP(DPTX_ANA_PREPLL_PCLKDIV5_EN, cfg->div5_en));
++	regmap_write_bits(p->regmap, DPTX_ANA_PREPLL_CTRL,
++		DPTX_ANA_PREPLL_PCLK_DIVAUX,
++		FIELD_PREP(DPTX_ANA_PREPLL_PCLK_DIVAUX, cfg->divp));
++
++	regmap_write_bits(p->regmap, DPTX_ANA_PREPLL,
++		DPTX_ANA_PREPLL_PCLK_NORMAL,
++		FIELD_PREP(DPTX_ANA_PREPLL_PCLK_NORMAL, 1));
++	usleep_range(2000, 4000);
++
++	regmap_write_bits(p->regmap, DPTX_ANA_PREPLL, DPTX_ANA_PREPLL_PD,
++		FIELD_PREP(DPTX_ANA_PREPLL_PD, 0));
++	usleep_range(2000, 4000);
++}
++
++#define to_k3_inno_dp_phy_clk(_hw) \
++	container_of(_hw, struct k3_inno_dp_phy, pxclk_hw)
++
++static unsigned long k3_inno_dp_pxclk_recalc_rate(struct clk_hw *hw,
++						  unsigned long parent_rate)
++{
++	struct k3_inno_dp_phy *p = to_k3_inno_dp_phy_clk(hw);
++
++	return p->pxclk_rate;
++}
++
++static int k3_inno_dp_pxclk_determine_rate(struct clk_hw *hw,
++					   struct clk_rate_request *req)
++{
++	struct k3_inno_dp_phy *p = to_k3_inno_dp_phy_clk(hw);
++	const struct k3_inno_dp_prepll_cfg *cfg;
++	struct k3_inno_dp_prepll_cfg solved;
++	u32 khz = div_u64(req->rate, 1000);
++	int ret;
++
++	cfg = k3_inno_dp_find_prepll_cfg(khz, p->ref_clk_khz);
++	if (cfg) {
++		req->rate = (unsigned long)cfg->actual_pclk_khz * 1000;
++		return 0;
++	}
++
++	ret = k3_inno_dp_solve_prepll(khz, p->ref_clk_khz, &solved);
++	if (ret)
++		return ret;
++
++	req->rate = (unsigned long)solved.actual_pclk_khz * 1000;
++
++	return 0;
++}
++
++static int k3_inno_dp_pxclk_set_rate(struct clk_hw *hw, unsigned long rate,
++				     unsigned long parent_rate)
++{
++	struct k3_inno_dp_phy *p = to_k3_inno_dp_phy_clk(hw);
++	const struct k3_inno_dp_prepll_cfg *cfg;
++	struct k3_inno_dp_prepll_cfg solved;
++	u32 khz = div_u64(rate, 1000);
++	int ret;
++
++	cfg = k3_inno_dp_find_prepll_cfg(khz, p->ref_clk_khz);
++	if (!cfg) {
++		ret = k3_inno_dp_solve_prepll(khz, p->ref_clk_khz, &solved);
++		if (ret) {
++			dev_err(p->dev, "no PLL setting for %lu Hz\n", rate);
++			return ret;
++		}
++		cfg = &solved;
++	}
++
++	k3_inno_dp_program_prepll(p, cfg);
++	p->pxclk_rate = (unsigned long)cfg->actual_pclk_khz * 1000;
++
++	return 0;
++}
++
++static const struct clk_ops k3_inno_dp_pxclk_ops = {
++	.recalc_rate	= k3_inno_dp_pxclk_recalc_rate,
++	.determine_rate	= k3_inno_dp_pxclk_determine_rate,
++	.set_rate	= k3_inno_dp_pxclk_set_rate,
++};
++
++static const struct phy_ops k3_inno_dp_phy_ops = {
++	.power_on	= k3_inno_dp_phy_power_on,
++	.power_off	= k3_inno_dp_phy_power_off,
++	.configure	= k3_inno_dp_phy_configure,
++	.owner		= THIS_MODULE,
++};
++
++static int k3_inno_dp_phy_probe(struct platform_device *pdev)
++{
++	struct device *dev = &pdev->dev;
++	struct k3_inno_dp_phy *p;
++	struct phy_provider *provider;
++	struct clk_init_data init = {};
++	int ret;
++
++	p = devm_kzalloc(dev, sizeof(*p), GFP_KERNEL);
++	if (!p)
++		return -ENOMEM;
++
++	p->dev = dev;
++
++	p->regmap = dev_get_regmap(dev->parent, "dp");
++	if (!p->regmap)
++		return dev_err_probe(dev, -ENODEV,
++				     "parent DP regmap not available\n");
++
++	p->phy = devm_phy_create(dev, dev->of_node, &k3_inno_dp_phy_ops);
++	if (IS_ERR(p->phy))
++		return dev_err_probe(dev, PTR_ERR(p->phy),
++				     "failed to create DP PHY\n");
++
++	phy_set_drvdata(p->phy, p);
++
++	provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
++	if (IS_ERR(provider))
++		return dev_err_probe(dev, PTR_ERR(provider),
++				     "failed to register PHY provider\n");
++
++	/* PHY takes a 24 MHz reference clock */
++	p->ref_clk_khz = 24000;
++
++	/* The APMU pixel-clock mux references this clock by name. */
++	of_property_read_string(dev->of_node, "clock-output-names", &init.name);
++	if (!init.name)
++		init.name = dev_name(dev);
++	init.ops = &k3_inno_dp_pxclk_ops;
++	init.parent_names = NULL;
++	init.num_parents = 0;
++	init.flags = 0;
++	p->pxclk_hw.init = &init;
++
++	ret = devm_clk_hw_register(dev, &p->pxclk_hw);
++	if (ret)
++		return dev_err_probe(dev, ret,
++				     "failed to register pixel clock\n");
++
++	ret = devm_of_clk_add_hw_provider(dev, of_clk_hw_simple_get,
++					  &p->pxclk_hw);
++	if (ret)
++		return dev_err_probe(dev, ret,
++				     "failed to add pixel clock provider\n");
++
++	return 0;
++}
++
++static const struct of_device_id k3_inno_dp_phy_of_match[] = {
++	{ .compatible = "spacemit,k3-inno-dp-phy" },
++	{ }
++};
++MODULE_DEVICE_TABLE(of, k3_inno_dp_phy_of_match);
++
++static struct platform_driver k3_inno_dp_phy_driver = {
++	.probe = k3_inno_dp_phy_probe,
++	.driver = {
++		.name		= "spacemit-k3-inno-dp-phy",
++		.of_match_table	= k3_inno_dp_phy_of_match,
++	},
++};
++module_platform_driver(k3_inno_dp_phy_driver);
++
++MODULE_DESCRIPTION("SpacemiT K3 Innosilicon DisplayPort PHY driver");
++MODULE_AUTHOR("Cody Kang <codykang.hk@gmail.com>");
++MODULE_LICENSE("GPL");
+
+-- 
+2.43.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
