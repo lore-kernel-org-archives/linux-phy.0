@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E85CC5321B
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3CC04C53219
 	for <linux-phy@archiver.kernel.org>; Sat, 25 Jul 2026 04:51:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,44 +12,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fBwu5uDMIiGzLx9D+XPnxS3SBe4tlhROKtoimNDfAw8=; b=vdQHbZ+3KK/MsX
-	wt9d0OMU4RAZ0unIs4n9/C5M1Hy7piV3maJ0dWpGiQ0GVEDYBV8QPrasCwbXAsF8lkR9bVPCR+EVo
-	YfYh4lfGPEag+WJT3Fepl1q8MJLLSKC9EznESElep2OP8Gu9UfFc0a5vc9/xanZRoWl5OaF0fs/wZ
-	VczN2x3XKJqeqZMEf85MBy747wsFfaU8C+gKm4p5BBY9hu7UX5EPKeIUWoTU+MqJNGzWpHLsXdOzs
-	Z+jfo1Rhi4l/YPa1BK9cZ0i2Fy2rnjgX3AAg8xg45vxyqWvqFPp/9yB1Jjj1ebfHIUHcZuJmdFRCc
-	wqW7wpkVIhFyUh9snciA==;
+	List-Owner; bh=RHFrdHL+gaOkGrvZdpqqE0V+gF77IjAGXDSfXuuoz3s=; b=J5Gir7nKjdhfnb
+	z4qBNf0zBdYlksPvdzi+HZAZPZ8UvsNVh0GbchnGsA8EJYM0ZHGwnCBhEYG9qCcZmK3Fqysdg5a6w
+	lUbrKTwVoWpckuyaGQpJtq7K6xa0BnW9havAcRZpr9tzkLJoFMXq+6QFuhcEHj+Kii1yc/qnwcs78
+	H6U+Ug2N7qQZpklpfF4xSVX85XPCibTUvKGI55zsyAy3k8VqQA5mee70t54Fza1qinWGFw5OwbvPX
+	3mKgvsqNNx0Yu9aomMBzHKUrFfbimIfMDQf3HVkrjfuvgjjADwGvpbpS3enIUwcnV2yBu0LNJZmrU
+	vxzkzZFRK7sIJa6j4+qw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wnUMB-000000000VC-0gmo;
-	Sat, 25 Jul 2026 04:51:27 +0000
+	id 1wnUMA-000000000Uh-3owQ;
+	Sat, 25 Jul 2026 04:51:26 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wnUM9-000000000TB-2lsg;
+	id 1wnUM9-000000000Se-0aIo;
 	Sat, 25 Jul 2026 04:51:25 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id B30A34514D;
+	by sea.source.kernel.org (Postfix) with ESMTP id 7B123450A1;
 	Sat, 25 Jul 2026 04:51:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 5A0F8C2BCFC;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 2D7E6C2BCF7;
 	Sat, 25 Jul 2026 04:51:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1784955084;
-	bh=Rkm4yLZkUVi1jkAlFm0cNMZPkaQrtPP2msdJ53rTp0g=;
+	bh=+nDPYav/94cgnVW9y054XagK3zb2CxZPpMU92q/oyK8=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=knQSHNZuPe202s27pflHGQNgifQKNbHnZwraPtYZpbv5Up/ecjXqZLt/iruppJT7y
-	 LgHzRBAbmI4WKBxp785bFoMaCtjY+Rm97gFcfYW1EEwVse3eWGgG4ACsVn4hGG+ajn
-	 lvfj5XaeNnoLpx40T+N9OKTJwG44GaqxbTCPLGPiUQjA7w/zJjQVrsIaIzQy4Ot6ci
-	 X0FKJ9LYmJKrnSw7jnYVK5/P4+OWMwBj8vFZzp5nx73wFOP5VGahw8tK8DDrShrHd+
-	 +i5kJx8JpjUofuheAMdDZXoE/UCMtynRMEGEdU/H6G6oIZsQdS1C0hNU3KQovznea0
-	 KE1i51pdn6H2Q==
+	b=kxwOUpRdxtdIsBDI0ojZKm5MOMhnF1j59drxcipEIRMEUZg2kuPr5ze0l6iikA59u
+	 XDFWlz0/w9tbXQnNwYxKXIS6HyedWESMh0X4fpnAcg7ViqxKXF4YyPajLRHYs9nPXz
+	 DxwwAITcND+oZSEau8rKJCMM3N4tfXftWEAp9hKvOi7tBx/DZALlSp1O6EN1RAVAGT
+	 j/nZwjcAElD18WDXBMb0Z46P3jPyVja3VjdRDl02O9sEGC9D/o79FPa7pg7TzXMqII
+	 9B3LyKS0dJP1epwsBpOIEH1dy3Nz4EgHvZjAV0Iz1PNJSyAHGlaO1PGxitTpgRxWOY
+	 rRo7qf+93IP1Q==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 3A6B8C53219;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 0796BC531D0;
 	Sat, 25 Jul 2026 04:51:24 +0000 (UTC)
 From: Cody Kang via B4 Relay <devnull+codykang.hk.gmail.com@kernel.org>
-Date: Sat, 25 Jul 2026 00:51:13 -0400
-Subject: [PATCH RESEND 04/17] dt-bindings: soc: spacemit: allow eDP/DP PHY
- PLL pixel clocks on K3 APMU
+Date: Sat, 25 Jul 2026 00:51:10 -0400
+Subject: [PATCH RESEND 01/17] dt-bindings: display: spacemit: add K3 Saturn
+ DPU controller
 MIME-Version: 1.0
-Message-Id: <20260725-k3-display-v1-4-6de34d80e86c@gmail.com>
+Message-Id: <20260725-k3-display-v1-1-6de34d80e86c@gmail.com>
 References: <20260725-k3-display-v1-0-6de34d80e86c@gmail.com>
 In-Reply-To: <20260725-k3-display-v1-0-6de34d80e86c@gmail.com>
 To: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
@@ -68,11 +68,11 @@ Cc: dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
  linux-clk@vger.kernel.org, Cody Kang <codykang.hk@gmail.com>
 X-Mailer: b4 0.15.1
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1784955080; l=2015;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1784955080; l=4589;
  i=codykang.hk@gmail.com; s=codykang; h=from:subject:message-id;
- bh=To2Wz4JMP1yzDvV2UFHvJJLkK8aaYjCf2yPZVKorUr8=;
- b=6QpiTRJLqJK2GsKELutClre7B0hn8nkeweqRCn/Wjj3e/UhBpvTQBMwgloDKX5My4q3x3I9xa
- aORhJl5y09nDaAK1Y6fNjz9k5B9OvtAuzbi1wOuQ/XRjPa7ZKm6wGQN
+ bh=e2HtZIpFAeEzBhd8fEr6izzVbI4e6Mu4fEJXjQ+ijhI=;
+ b=rDUDbppXFmGClymlOT79/iLKq4dlI8ONoh59JNFCmSbYfCmyd/VzYv2n7+ISDGTkglGvV6fhM
+ f8lXW8T3YG/BrE4hGAuRKiGRSwxpmZJiUTKIoN36OOlI5/JAljOykfa
 X-Developer-Key: i=codykang.hk@gmail.com; a=ed25519;
  pk=Osn6/cs9Su/mHHw4P19cmVc3v2FMQfiWahjsN0vEkuk=
 X-Endpoint-Received: by B4 Relay for codykang.hk@gmail.com/codykang with
@@ -97,72 +97,154 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Cody Kang <codykang.hk@gmail.com>
 
-The APMU's eDP pixel-clock muxes select the DP PHY PLLs as parents, so the
-K3 syscon takes two clock inputs the other variants do not have.
-
-Gate them behind the K3 compatible instead of widening the shared clock
-list, so a non-K3 syscon cannot silently accept clocks it has no mux for.
+Document the Saturn display processing unit found on the SpacemiT K3 SoC.
+The K3 instantiates two of them, one per display path. They share a
+compatible: an instance differs only in which register window, interrupt,
+clock and reset lines it takes.
 
 Signed-off-by: Cody Kang <codykang.hk@gmail.com>
 ---
- .../bindings/soc/spacemit/spacemit,k1-syscon.yaml  | 30 +++++++++++++++++++++-
- 1 file changed, 29 insertions(+), 1 deletion(-)
+ .../display/spacemit/spacemit,k3-saturn-dpu.yaml   | 132 +++++++++++++++++++++
+ 1 file changed, 132 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml b/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml
-index d3a7c93c3c54..b8fc6632a392 100644
---- a/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml
-+++ b/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml
-@@ -31,14 +31,18 @@ properties:
-     maxItems: 1
- 
-   clocks:
--    maxItems: 4
-+    minItems: 4
-+    maxItems: 6
- 
-   clock-names:
-+    minItems: 4
-     items:
-       - const: osc
-       - const: vctcxo_1m
-       - const: vctcxo_3m
-       - const: vctcxo_24m
-+      - const: edp0_pll_pxclk
-+      - const: edp1_pll_pxclk
- 
-   "#clock-cells":
-     const: 1
-@@ -95,6 +99,30 @@ allOf:
-         - clocks
-         - clock-names
-         - "#clock-cells"
-+  # Only the K3 APMU exposes the two eDP/DP PHY PLL pixel clocks as extra
-+  # inputs (parents of its eDP pixel-clock muxes); every other variant has
-+  # the four base oscillator inputs only.
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            const: spacemit,k3-syscon-apmu
-+    then:
-+      properties:
-+        clocks:
-+          minItems: 4
-+          maxItems: 6
-+        clock-names:
-+          minItems: 4
-+          maxItems: 6
-+    else:
-+      properties:
-+        clocks:
-+          minItems: 4
-+          maxItems: 4
-+        clock-names:
-+          minItems: 4
-+          maxItems: 4
- 
- additionalProperties: false
- 
+diff --git a/Documentation/devicetree/bindings/display/spacemit/spacemit,k3-saturn-dpu.yaml b/Documentation/devicetree/bindings/display/spacemit/spacemit,k3-saturn-dpu.yaml
+new file mode 100644
+index 000000000000..97ea9da4b68e
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/spacemit/spacemit,k3-saturn-dpu.yaml
+@@ -0,0 +1,132 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/spacemit/spacemit,k3-saturn-dpu.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: SpacemiT K3 Saturn Display Processing Unit
++
++maintainers:
++  - Cody Kang <codykang.hk@gmail.com>
++
++description:
++  The Saturn DPU is the display processing unit of the SpacemiT K3 SoC. It
++  composes the display planes and drives the timing for one display path. Its
++  output goes to a DisplayPort or embedded DisplayPort controller. The K3 has
++  two instances.
++
++properties:
++  compatible:
++    const: spacemit,k3-saturn-dpu
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    items:
++      - description: Online (live display) compose path.
++      - description: Offline (writeback) compose path.
++
++  interrupt-names:
++    items:
++      - const: online
++      - const: offline
++
++  clocks:
++    items:
++      - description: Pixel clock.
++      - description: Memory clock for the compose pipeline.
++      - description: AXI bus clock.
++      - description: DSI escape clock.
++      - description: DSC clock.
++
++  clock-names:
++    items:
++      - const: pxclk
++      - const: mclk
++      - const: aclk
++      - const: escclk
++      - const: dscclk
++
++  resets:
++    items:
++      - description: Memory clock domain.
++      - description: LCD domain, shared with the downstream controller.
++      - description: DSI escape clock domain.
++      - description: AXI clock domain.
++      - description: DSC domain.
++
++  reset-names:
++    items:
++      - const: mclk
++      - const: lcd
++      - const: esc
++      - const: aclk
++      - const: dsc
++
++  ports:
++    $ref: /schemas/graph.yaml#/properties/ports
++
++    properties:
++      port@0:
++        $ref: /schemas/graph.yaml#/properties/port
++        description: Video output to the DisplayPort or eDP controller.
++
++    required:
++      - port@0
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - interrupt-names
++  - clocks
++  - clock-names
++  - resets
++  - reset-names
++  - ports
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/spacemit,k3-clocks.h>
++    #include <dt-bindings/reset/spacemit,k3-resets.h>
++    #include <dt-bindings/interrupt-controller/irq.h>
++
++    soc {
++        #address-cells = <2>;
++        #size-cells = <2>;
++
++        dpu@c0340000 {
++            compatible = "spacemit,k3-saturn-dpu";
++            reg = <0x0 0xc0340000 0x0 0x54000>;
++            interrupts = <90 IRQ_TYPE_LEVEL_HIGH>,
++                         <89 IRQ_TYPE_LEVEL_HIGH>;
++            interrupt-names = "online", "offline";
++            clocks = <&syscon_apmu CLK_APMU_LCD_PXCLK>,
++                     <&syscon_apmu CLK_APMU_LCD_MCLK>,
++                     <&syscon_apmu CLK_APMU_DPU_ACLK>,
++                     <&syscon_apmu CLK_APMU_DSI_ESC>,
++                     <&syscon_apmu CLK_APMU_LCD_DSC>;
++            clock-names = "pxclk", "mclk", "aclk", "escclk", "dscclk";
++            resets = <&syscon_apmu RESET_APMU_LCD_MCLK>,
++                     <&syscon_apmu RESET_APMU_LCD>,
++                     <&syscon_apmu RESET_APMU_DSI_ESC>,
++                     <&syscon_apmu RESET_APMU_DPU_ACLK>,
++                     <&syscon_apmu RESET_APMU_LCD_DSCCLK>;
++            reset-names = "mclk", "lcd", "esc", "aclk", "dsc";
++
++            ports {
++                #address-cells = <1>;
++                #size-cells = <0>;
++
++                port@0 {
++                    reg = <0>;
++                    endpoint {
++                        remote-endpoint = <&edp0_in>;
++                    };
++                };
++            };
++        };
++    };
 
 -- 
 2.43.0
