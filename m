@@ -4,108 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0EDEFC531FA
-	for <linux-phy@archiver.kernel.org>; Sun, 26 Jul 2026 14:53:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4338BC531FA
+	for <linux-phy@archiver.kernel.org>; Sun, 26 Jul 2026 14:55:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NB+L8aglb2eBdq5xqWX8NCAiAXumxI77yJ0vFh238qM=; b=vfg6LFXO6GA9T+
-	/6TZ8i+OWq2k/C8u1jKgyaqf9/pRpKCgfoe6XRRxUj9OzzFdn8EW3KlWwdnAoeKCGmjohafAVDdG/
-	FRczCFtJ07cf0eIqh7eCOk492eEYepizuhnPIx7VySOqa7UfaU1+oEVvDA+q12iru1t9UyZvkL+BO
-	TaJUxvCbhjshoXDsqfEXPZwpiHdUlXoORU69AryC4t3MFRMymoIfio/ny8uTd7jZTlWzB2Y1eNQxz
-	+xqcESH/E986y0FBXY4pOgBrQU9jNmc3bc9Ds2DFak58oX3iO/a/r2bOTswjjXbbywdghZeQmkOhi
-	jGlwdqWOPOXVM9X1yWWg==;
+	List-Owner; bh=z2PIv+ozOHCPmHh25leDTGoV53/jQ4l2kzeRqM6Bop0=; b=mFtBC/FYhw1//z
+	hLiZq1jsagpsZT4yrFN3VOL5lABhtDt4IpvSQxE26dNpFviy9eT5pZes2s47nNlfz8IbBJVVVbme1
+	LbUdIAWyoOjguAAYIntbsaRliXM0JvuGNZ4yFYfhhVJ3Bx9yUNisECAX2NkrW2CpDqMa+SBPS8xj8
+	iwFIFOzDVjFLuglvU7PTHJGLhAPMv/W/6DP6GuCWcgTeaqvzNG8kLgOoNgJkw9Jj3N4HoBXpm9sEH
+	7U1xKCF1+7/jcgSlc6XMs04L1341Jkhiz9sVVne0KDWq28JPteCCsWJVKZvkaDx867//Hr+7LRXIt
+	l6gW/ZX8rVMLBGNSTgow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wo0Ei-00000001FhT-2wH8;
-	Sun, 26 Jul 2026 14:53:52 +0000
-Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
+	id 1wo0Ga-00000001FvZ-3NbY;
+	Sun, 26 Jul 2026 14:55:48 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wo0Ef-00000001FfY-0zBf
-	for linux-phy@lists.infradead.org;
-	Sun, 26 Jul 2026 14:53:51 +0000
-Received: by mail-ed1-x529.google.com with SMTP id 4fb4d7f45d1cf-69f4acf7047so273321a12.3
-        for <linux-phy@lists.infradead.org>; Sun, 26 Jul 2026 07:53:48 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1785077627; cv=none;
-        d=google.com; s=arc-20260327;
-        b=pxu7g7es4EgrqXT8vEGSxXokepn130YLzzg+EdI1zd79BSPVTkJJX6Oe7T4vTnzdSh
-         GnMXXD1fnSIF43rx6tcw5mkV1iuzVXYxWr57pvyiOR6RjCOX3EXNfIcH/EapbiumvjQs
-         2mAKOqlsI0tGv5AU98z6W35eZkjNSgZw4A/ceFIagUyPQNjYHBN1HjBiPKzzwSEmFla0
-         kKmkuARrEFVtQMcRP79PYXxj8tnGTSZH/EBvpaL5MJmsQ+GJVnUHb/vroD2g4kcSYv6k
-         POhVnshJgCqWAZY+gSHBtrF/7Z5w6O/ZxLs0HtCJzhO9mhPM6pjK8W7nrm0wrYO6RzrA
-         6M4w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:dkim-signature;
-        bh=Xy1dPJ6HKi7tYjJxDc2Ha4OJQEIkMNVF9gLqcXcYzos=;
-        fh=RDZT35AE5Llifo1AI8KNfVZtpjsFCaYjISbzs5zJSjg=;
-        b=qrWwOvvX3BtAANDUjX6B4fKPjwrzNxxvFR5eW+68rr4US63MmqW+P0B7bTgR30mPhb
-         CA/AUSgn0Q8q7xrxPTGsjEYjRTRwCbXK4gURVZS7E/lzkdMLOgx3BvX7336UJm/ILosH
-         eJTMl13tgmPkCNXQE3mC+v0yCY0kJgZcE0mnXZVHGp6HdBe/qlDtq5ZWAyJf+xWjVIuN
-         DKJIorgKpoYuNgzL6PjlonOp4Kc3cNWjAaY3882rGK3lorNKsvyFj2hlUXd3JI2kG+9I
-         9+CPLxUlW+oGYfXeWFWcDJPX373me6lCwHNRUGtWCPYnq+5w5jp27fWWY+nCvBk3ugU6
-         U5HA==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1785077627; x=1785682427; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=Xy1dPJ6HKi7tYjJxDc2Ha4OJQEIkMNVF9gLqcXcYzos=;
-        b=Ekd3CS3hKKyJSi/gx27tXl36itQsZdnczVRHm9k+CvbtHLfuoutQC+G2czA4/0whV/
-         +HDoJYryuyTueyCaFwRi4nypNTYY79vp3bCmb1KLdVFJJaUluW442FEO/47cNhCUqISk
-         IHKiSeUnocF3yN3JdTSht1IbPbbdT91sB45IaPzm148SkKwJfDGmgAi6EJu9ejwPgsnK
-         kGfI3eoNsF+6xLg+l/u2qDGDscVrffDxPmyaCP6ApkdiP5hv2VYmbkxs4bNYXZ0mANNJ
-         OsbQbL09BclVrM0Y1kkl6v/QFsMKV02SPqmSEqYyptO9znXjzwv73cm0tBt6mZnJFzDB
-         apAg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1785077627; x=1785682427;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=Xy1dPJ6HKi7tYjJxDc2Ha4OJQEIkMNVF9gLqcXcYzos=;
-        b=AhmgPHkoPoskbFBVGY+jllM7MQINQ7nowPekRWUvpzoiq9Lhu0Ek6p/CnhIYqjUmMx
-         RSAKVzXKz6YtbsY4GDXZFVzvTCzsfN4pnsDnZqXFq3Re9Ef6vccQ7d09sv5cep6TYTRY
-         s6684XrrNMsqRcppBcm12tRcW2b0gxhc+ckrPZkXcTZ5Jq3oebE6ztMocgHG9nuUO987
-         boJ5g7t6GtKfqZDvf1VZw66jY3ihRJeorO+5L8hwsmBDl6gzuW8r5x+iZgUXdWHSjKQg
-         vjGiBUGSJYBjWO35OHb3JqiK+cgwg1YUBvxM+HHhMk3dfCPnuMjzimhgQS7Xwrt2bdDI
-         2lyQ==
-X-Forwarded-Encrypted: i=1; AHgh+RpMSiCRh2agulW5O+XdvJTeKqOd3PxO7Rw982YvKcUWEEeF8nYrxaGr1RBrUV+8IqUdkqzo3IOKZ8M=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxFokRUIV9y8vzwKBnidlL4vSyZ7K1zKEoIi4UBp/Ctiv91UxUV
-	HgjXI1mBl5y+BlbO2uRc1hWqRBCqztGG+vsM38UT7BYW2svoVNC6TsefLg76x/qdg6qOZFbAJKe
-	yfhfo2gDXEDTNFOEGRvA+So1y2JFB4Ek=
-X-Gm-Gg: AR+sD13aRf2/d2zRR6Dhe7cu/Ed6X6vsV34ri2Z1/NOmZ35SNzAM+IKwEzqvHuvfJLu
-	iJvDxPE561cKwbSEriyAcA+eqz9v1fSV5HDjL5QtZMAPmcJxgtO8aCyUVldknjrL+bFxWEx31Bf
-	8HlOmYlFo4eSGIjzrIUMxP8GUuxndqjsNancbxBKc212+qvey4Ngn/z2rw1q4pzwJxml5pCBVQI
-	MK0syg7WJuSK3G0i3vX9JA+BLDjoKfiKZzxoErkHdGye49Gez7Fp+yYk50xJQ==
-X-Received: by 2002:a05:6402:450e:b0:69e:1246:a86a with SMTP id
- 4fb4d7f45d1cf-69fc0f3e1bfmr2140114a12.0.1785077626864; Sun, 26 Jul 2026
- 07:53:46 -0700 (PDT)
+	id 1wo0GZ-00000001FtV-0NBO;
+	Sun, 26 Jul 2026 14:55:47 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 6F8CB441F4;
+	Sun, 26 Jul 2026 14:55:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 2F33AC2BCF6;
+	Sun, 26 Jul 2026 14:55:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1785077746;
+	bh=AhRTLnCcwo6Mxg5rxROPb+PhKIVmCT4avAH9ngSVIfg=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=OKHYPPtqw8C+Eoebl5eQLaq/mx7M70v9x1xoRHbH690G6zRCla9eTihVrl+8KW7aX
+	 DbFworl7mT9Wh16GVcElaC00xS9JKPxoyPx/AftwEMEzIElZpahEbAUtweLQ4uRt0s
+	 1jC20zNj6Uj4roMzjFvnqy6jsqaPPUJQjoSJPV+K3xtA8Ks0ITkqacpGp2X9rb8/yC
+	 fP06y+7hh3wB9OpSmueb8Rgnp2VY7FF/8L6RD180GtDJGCsoeMRrpdWu4C53UOOZDv
+	 22BtVrYFNOXjTrDwCfHDDYKA8jPGkAWyeVSdLN4aCpIfkjyt+EcGpEMAP//5jvMW3Y
+	 zxW3Zd1dWNfWQ==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 0FAE0C53200;
+	Sun, 26 Jul 2026 14:55:46 +0000 (UTC)
+From: Jason Yang via B4 Relay <devnull+jason98166.gmail.com@kernel.org>
+Date: Sun, 26 Jul 2026 22:55:45 +0800
+Subject: [PATCH v2 2/4] phy: rockchip-samsung-dcphy: factor MIPI D-PHY
+ power on/off into helpers
 MIME-Version: 1.0
-References: <20260721-dcphy-rx-v1-v1-0-4fc83c0ccac9@gmail.com>
- <20260721-dcphy-rx-v1-v1-1-4fc83c0ccac9@gmail.com> <20260724-incredible-colorful-trogon-9df033@quoll>
-In-Reply-To: <20260724-incredible-colorful-trogon-9df033@quoll>
-From: =?UTF-8?B?5qWK5pm65oiQ?= <jason98166@gmail.com>
-Date: Sun, 26 Jul 2026 22:54:21 +0800
-X-Gm-Features: AUfX_myy7YsobI1pf_jlBSXk7SDYrWERjtETFkIdeKdn3VY9LKRwt38o3X4kakY
-Message-ID: <CAPwA33JUWPoWokeTFmP9RR5AzBqy2v7cEA8NUNr1-eUKyaaKYA@mail.gmail.com>
-Subject: Re: [PATCH 1/4] dt-bindings: phy: rockchip,rk3588-mipi-dcphy: support
- per-direction phys
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Heiko Stuebner <heiko@sntech.de>, Guochun Huang <hero.huang@rock-chips.com>, 
-	Philipp Zabel <p.zabel@pengutronix.de>, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260726_075349_291473_1AFBBD02 
-X-CRM114-Status: GOOD (  13.29  )
+Message-Id: <20260726-dcphy-rx-v1-v2-2-cf9cc34a412a@gmail.com>
+References: <20260726-dcphy-rx-v1-v2-0-cf9cc34a412a@gmail.com>
+In-Reply-To: <20260726-dcphy-rx-v1-v2-0-cf9cc34a412a@gmail.com>
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Guochun Huang <hero.huang@rock-chips.com>, 
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, Jason Yang <jason98166@gmail.com>
+X-Mailer: b4 0.13.0
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1785077744; l=2365;
+ i=jason98166@gmail.com; s=20260721; h=from:subject:message-id;
+ bh=4GcNX0JppuDhi+PdI+Mfy3wrN0LmkfCuqWcPPnXARtM=;
+ b=7RTRyehFkYV6XDnAq1vZCWfliIir2dDF6JR+64MZh8F5RlFqylgM2AClZEZ2AlJz2rgtvDzBx
+ goTqpE8OBPPDIQ5x3sT/qO9Tq5A5vaCthFli7QwdKlKoKFcfUhTZkdQ
+X-Developer-Key: i=jason98166@gmail.com; a=ed25519;
+ pk=xQmD001Q/ooHl39PxyQtusbUQmgbOsSfpFryRVWZ/k4=
+X-Endpoint-Received: by B4 Relay for jason98166@gmail.com/20260721 with
+ auth_id=887
+X-Original-From: Jason Yang <jason98166@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,30 +83,90 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Reply-To: jason98166@gmail.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgS3J6eXN6dG9mLAoKVGhhbmtzIGZvciB0aGUgcmV2aWV3LgoKPiBGaWxlbmFtZSBtdXN0IGZv
-bGxvdyBjb21wYXRpYmxlIG9yIGJpbmRpbmcgZmlsZW5hbWUsIHNvIHRoaXMgaXMKPiByb2NrY2hp
-cCxyazM1ODgtbWlwaS1kY3BoeS5oIGZvciBleGFtcGxlLgoKV2lsbCByZW5hbWUgaXQgdG8gcm9j
-a2NoaXAscmszNTg4LW1pcGktZGNwaHkuaCBpbiB2Mi4KClRoYW5rcywKSmFzb24KCktyenlzenRv
-ZiBLb3psb3dza2kgPGtyemtAa2VybmVsLm9yZz4g5pa8IDIwMjblubQ35pyIMjTml6XpgLHkupQg
-5LiL5Y2INTo0NeWvq+mBk++8mgo+Cj4gT24gVHVlLCBKdWwgMjEsIDIwMjYgYXQgMDY6MzU6MTlQ
-TSArMDgwMCwgSmFzb24gWWFuZyB3cm90ZToKPiA+ICAgIGNsb2NrczoKPiA+ICAgICAgbWF4SXRl
-bXM6IDIKPiA+IEBAIC04Miw2ICs5Miw2IEBAIGV4YW1wbGVzOgo+ID4gICAgICAgICAgICAgICAg
-ICAgPCZjcnUgU1JTVF9TX01JUElfRENQSFkwPjsKPiA+ICAgICAgICAgIHJlc2V0LW5hbWVzID0g
-Im1fcGh5IiwgImFwYiIsICJncmYiLCAic19waHkiOwo+ID4gICAgICAgICAgcm9ja2NoaXAsZ3Jm
-ID0gPCZtaXBpZGNwaHkwX2dyZj47Cj4gPiAtICAgICAgICAjcGh5LWNlbGxzID0gPDE+Owo+ID4g
-KyAgICAgICAgI3BoeS1jZWxscyA9IDwyPjsKPiA+ICAgICAgICB9Owo+ID4gICAgICB9Owo+ID4g
-ZGlmZiAtLWdpdCBhL2luY2x1ZGUvZHQtYmluZGluZ3MvcGh5L3BoeS1yb2NrY2hpcC1zYW1zdW5n
-LWRjcGh5LmggYi9pbmNsdWRlL2R0LWJpbmRpbmdzL3BoeS9waHktcm9ja2NoaXAtc2Ftc3VuZy1k
-Y3BoeS5oCj4gPiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+ID4gaW5kZXggMDAwMDAwMDAwMDAwLi42
-MGY2NjMwZjU4YjMKPiA+IC0tLSAvZGV2L251bGwKPiA+ICsrKyBiL2luY2x1ZGUvZHQtYmluZGlu
-Z3MvcGh5L3BoeS1yb2NrY2hpcC1zYW1zdW5nLWRjcGh5LmgKPgo+IEZpbGVuYW1lIG11c3QgZm9s
-bG93IGNvbXBhdGlibGUgb3IgYmluZGluZyBmaWxlbmFtZSwgc28gdGhpcyBpcwo+IHJvY2tjaGlw
-LHJrMzU4OC1taXBpLWRjcGh5LmggZm9yIGV4YW1wbGUuCj4KPiBCZXN0IHJlZ2FyZHMsCj4gS3J6
-eXN6dG9mCj4KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LXBoeQo=
+From: Jason Yang <jason98166@gmail.com>
+
+To prepare for adding a receiver (CSI) direction next to the existing
+transmitter (DSI) one, rename the transmitter power-on helper to
+samsung_mipi_dphy_tx_power_on() and gather its teardown into a new
+samsung_mipi_dphy_tx_power_off(), so both directions can later be
+powered on and off through symmetric helpers.
+
+No functional change intended.
+
+Signed-off-by: Jason Yang <jason98166@gmail.com>
+Assisted-by: Claude:claude-opus-4-8
+---
+ drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c | 19 +++++++++++--------
+ 1 file changed, 11 insertions(+), 8 deletions(-)
+
+diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
+index cbd780556da8..d0d77421bd4b 100644
+--- a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
++++ b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
+@@ -1332,7 +1332,7 @@ samsung_mipi_dphy_data_lane_timing_init(struct samsung_mipi_dcphy *samsung)
+ 	regmap_write(samsung->regmap, DPHY_MD3_TIME_CON4, 0x1f4);
+ }
+ 
+-static int samsung_mipi_dphy_power_on(struct samsung_mipi_dcphy *samsung)
++static int samsung_mipi_dphy_tx_power_on(struct samsung_mipi_dcphy *samsung)
+ {
+ 	int ret;
+ 
+@@ -1358,6 +1358,14 @@ static int samsung_mipi_dphy_power_on(struct samsung_mipi_dcphy *samsung)
+ 	return 0;
+ }
+ 
++static int samsung_mipi_dphy_tx_power_off(struct samsung_mipi_dcphy *samsung)
++{
++	samsung_mipi_dphy_lane_disable(samsung);
++	samsung_mipi_dcphy_pll_disable(samsung);
++
++	return 0;
++}
++
+ static int samsung_mipi_dcphy_power_on(struct phy *phy)
+ {
+ 	struct samsung_mipi_dcphy *samsung = phy_get_drvdata(phy);
+@@ -1368,7 +1376,7 @@ static int samsung_mipi_dcphy_power_on(struct phy *phy)
+ 
+ 	switch (samsung->type) {
+ 	case PHY_TYPE_DPHY:
+-		return samsung_mipi_dphy_power_on(samsung);
++		return samsung_mipi_dphy_tx_power_on(samsung);
+ 	default:
+ 		/* CPHY part to be implemented later */
+ 		return -EOPNOTSUPP;
+@@ -1383,16 +1391,11 @@ static int samsung_mipi_dcphy_power_off(struct phy *phy)
+ 
+ 	switch (samsung->type) {
+ 	case PHY_TYPE_DPHY:
+-		samsung_mipi_dphy_lane_disable(samsung);
+-		break;
++		return samsung_mipi_dphy_tx_power_off(samsung);
+ 	default:
+ 		/* CPHY part to be implemented later */
+ 		return -EOPNOTSUPP;
+ 	}
+-
+-	samsung_mipi_dcphy_pll_disable(samsung);
+-
+-	return 0;
+ }
+ 
+ static int
+
+-- 
+2.43.0
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
