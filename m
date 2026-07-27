@@ -4,44 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36FD3C531D0
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Jul 2026 07:35:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87458C531D0
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Jul 2026 07:50:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bpNdJJc1ijP2cTCZVUcRPpdKJGNu3x+XE+lHHgD7SXk=; b=plkRmtiVDgbUNk
-	VT654moi76m2Uh7iQ92XoNRc4zanPhYeM1XMc/LPoNdNUbh4KTGwIgJg4uJ1AzutTkreuSvGmB+ab
-	BDPgjhN72rBqFXPVAtEfabSBCNdhCF7wzpmQZfj6IVDA3DoJDoQ9dVbfKEFHir0VEniSY9YUUxWSI
-	KgPLFyv7jN9fv7cu7A2fINNVFOsz7i/xw1VszWuA3ZvgJSfyw4+t7Wx2sC+vaSVKkGkKet6aplgHG
-	NKNVwxYBJ0bpumJJcmeabdn7zM3aEGiEnt+o2hbU0braWPhKrp0Bcw/4WYdDtq+4L75M63zQs+z2Q
-	g5DCCBKVPGSH713LjZhA==;
+	List-Owner; bh=N+jPiRY2+WeK/GNJNAUKuFMKpIzs2NBs1rw+LlOBGlw=; b=UZn6D3CESfqzB5
+	NceJUbmC+2bOELIk3IRvz/YpIluvnOVAmwjMN5W4+qnqazQ5HV5FBCGHo957OXlo/uRKF2r40KLbl
+	sRtc+Cm5Ywc7xYJEgyLgVvvrm7oZB3Mdi8oK6UTWmh2DFXmvor8e5fYJ+kZZVsp9zlQMw4XhSiCzA
+	20HeBehkikH3buE7fEFXQzFgC2Xxlc04/JCyHatEH86vPHD1mHjQTKLRtGlavTSGqxJanecpfpR+F
+	1fGauBgff8LF4wS+mI3qdfNAw/YQln5P1dZeTh3plS2aQfFguqJJDCqeHnB9oQkjuOdMSKPsUzWyd
+	J0sZ+h6SeV5O14lfsCTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1woFsH-000000028YA-3kAb;
-	Mon, 27 Jul 2026 07:35:45 +0000
-Received: from mx1.white.stw.pengutronix.de ([2a0a:edc0:0:b01:1d::107])
+	id 1woG68-00000002BNu-0JBH;
+	Mon, 27 Jul 2026 07:50:04 +0000
+Received: from mx1.white.stw.pengutronix.de ([185.203.200.13])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1woFsC-000000028Vh-3fhv;
-	Mon, 27 Jul 2026 07:35:44 +0000
+	id 1woG65-00000002BNB-0dDn;
+	Mon, 27 Jul 2026 07:50:03 +0000
 Received: from drehscheibe.grey.stw.pengutronix.de (drehscheibe.grey.stw.pengutronix.de [IPv6:2a0a:edc0:0:c01:1d::a2])
 	(Authenticated sender: relay-from-drehscheibe.grey.stw.pengutronix.de)
-	by mx1.white.stw.pengutronix.de (Postfix) with ESMTPSA id 1D66B202054;
-	Mon, 27 Jul 2026 09:35:39 +0200 (CEST)
+	by mx1.white.stw.pengutronix.de (Postfix) with ESMTPSA id E93CF20203C;
+	Mon, 27 Jul 2026 09:49:58 +0200 (CEST)
 Received: from lupine.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::4e] helo=lupine)
 	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <p.zabel@pengutronix.de>)
-	id 1woFsB-001VMX-07;
-	Mon, 27 Jul 2026 09:35:39 +0200
+	id 1woG62-001VNt-2h;
+	Mon, 27 Jul 2026 09:49:58 +0200
 Received: from pza by lupine with local (Exim 4.98.2)
 	(envelope-from <p.zabel@pengutronix.de>)
-	id 1woFsA-000000006t9-3uCi;
-	Mon, 27 Jul 2026 09:35:38 +0200
-Message-ID: <084a860a77f18aaafcda4b223eec4fdcd96e75c9.camel@pengutronix.de>
-Subject: Re: [PATCH RESEND 10/17] drm/spacemit: add Saturn DPU KMS pipeline
+	id 1woG62-000000007Mr-32Va;
+	Mon, 27 Jul 2026 09:49:58 +0200
+Message-ID: <5537a40f12e80b89e330f37032016de6f3b9f4c7.camel@pengutronix.de>
+Subject: Re: [PATCH RESEND 12/17] drm/spacemit: add Innosilicon DP/eDP
+ controller bridge driver
 From: Philipp Zabel <p.zabel@pengutronix.de>
 To: codykang.hk@gmail.com, David Airlie <airlied@gmail.com>, Simona Vetter	
  <simona@ffwll.ch>, Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
@@ -58,15 +59,15 @@ Cc: dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org,
 	devicetree@vger.kernel.org, spacemit@lists.linux.dev, 
 	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
 	linux-clk@vger.kernel.org
-Date: Mon, 27 Jul 2026 09:35:38 +0200
-In-Reply-To: <20260725-k3-display-v1-10-6de34d80e86c@gmail.com>
+Date: Mon, 27 Jul 2026 09:49:58 +0200
+In-Reply-To: <20260725-k3-display-v1-12-6de34d80e86c@gmail.com>
 References: <20260725-k3-display-v1-0-6de34d80e86c@gmail.com>
-	 <20260725-k3-display-v1-10-6de34d80e86c@gmail.com>
+	 <20260725-k3-display-v1-12-6de34d80e86c@gmail.com>
 User-Agent: Evolution 3.56.2-0+deb13u1 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260727_003541_065302_40B5C584 
-X-CRM114-Status: GOOD (  17.87  )
+X-CRM114-CacheID: sfid-20260727_005001_372227_04A1BC67 
+X-CRM114-Status: GOOD (  22.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,90 +87,122 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 On Sa, 2026-07-25 at 00:51 -0400, Cody Kang via B4 Relay wrote:
 > From: Cody Kang <codykang.hk@gmail.com>
 > 
-> Add the atomic KMS implementation on top of the hardware backend: one
-> CRTC and one primary plane per DPU instance. atomic_check validates
-> the plane rectangle 1:1 against the mode and sizes the per-channel FBC
-> line buffer; atomic commit builds the cmdlist batches, maps the
-> framebuffer through the DMMU and arms the cfg-ready handshake, with
-> vblank events driven from the DPU interrupt.
+> Add the DP/eDP controller that sits downstream of the Saturn DPU. Two
+> identical instances share one compatible; the eDP-vs-DP role is board
+> wiring, so it is taken from the devicetree: an eDP panel always sits
+> under an aux-bus child node, an external DP connector never does.
+> 
+> The link is driven through the generic PHY framework, so the controller
+> never touches a PLL register. The controller's HPD interrupt is gated by
+> the DP pixel clock, which can be off exactly when a plug has to be
+> caught, so the connector is also polled and the interrupt path re-reads
+> the live level when it does fire.
 > 
 > Signed-off-by: Cody Kang <codykang.hk@gmail.com>
 > ---
->  drivers/gpu/drm/spacemit/spacemit_crtc.c   | 815 +++++++++++++++++++++++++++++
->  drivers/gpu/drm/spacemit/spacemit_planes.c | 376 +++++++++++++
->  2 files changed, 1191 insertions(+)
+>  drivers/gpu/drm/spacemit/Kconfig            |   19 +
+>  drivers/gpu/drm/spacemit/Makefile           |    3 +
+>  drivers/gpu/drm/spacemit/spacemit_inno_dp.c | 2443 +++++++++++++++++++++++++++
+>  drivers/gpu/drm/spacemit/spacemit_inno_dp.h |  328 ++++
+>  4 files changed, 2793 insertions(+)
 > 
-> diff --git a/drivers/gpu/drm/spacemit/spacemit_crtc.c b/drivers/gpu/drm/spacemit/spacemit_crtc.c
-> new file mode 100644
-> index 000000000000..b75ff6320501
-> --- /dev/null
-> +++ b/drivers/gpu/drm/spacemit/spacemit_crtc.c
-> @@ -0,0 +1,815 @@
 [...]
-> +/*
-> + * The assert and deassert orders are not mirror images: the hardware wants
-> + * these.
-> + */
-> +static void dpu_reset_assert(struct device *dev, const char *name,
-> +			     struct reset_control *rstc)
+> diff --git a/drivers/gpu/drm/spacemit/spacemit_inno_dp.c b/drivers/gpu/drm/spacemit/spacemit_inno_dp.c
+> new file mode 100644
+> index 000000000000..e88731d9b18b
+> --- /dev/null
+> +++ b/drivers/gpu/drm/spacemit/spacemit_inno_dp.c
+> @@ -0,0 +1,2443 @@
+[...]
+> +static int inno_dp_probe(struct platform_device *pdev)
 > +{
-> +	int ret = reset_control_assert(rstc);
-> +
-> +	if (ret)
-> +		dev_warn(dev, "failed to assert %s reset: %d\n", name, ret);
-> +}
-> +
-> +static void dpu_reset_deassert(struct device *dev, const char *name,
-> +			       struct reset_control *rstc)
-> +{
-> +	int ret = reset_control_deassert(rstc);
-> +
-> +	if (ret)
-> +		dev_warn(dev, "failed to deassert %s reset: %d\n", name, ret);
-> +}
-> +
-> +static int dpu_pm_suspend(struct device *dev)
-> +{
-> +	struct spacemit_drm_private *priv = dev_get_drvdata(dev);
-> +	struct spacemit_crtc *a_crtc = priv->a_crtc;
-> +
-> +	/*
-> +	 * Assert before gating: a reset asserted into an already-gated block
-> +	 * has no clock edges to propagate on and leaves the register file
-> +	 * untouched.
-> +	 */
-> +	dpu_reset_assert(dev, "lcd", a_crtc->lcd_reset);
-> +	dpu_reset_assert(dev, "esc", a_crtc->esc_reset);
-> +	dpu_reset_assert(dev, "mclk", a_crtc->mclk_reset);
+[...]
+> +	dp->reset = devm_reset_control_get_optional_exclusive(&pdev->dev, NULL);
 
-It looks like these three are mirrored, and could be handled by
-reset_control_bulk_assert/deassert().
+Since this is only asserted in probe and deasserted in remove, you
+could use devm_reset_control_get_optional_exclusive_deasserted() [1].
 
-> +	dpu_reset_assert(dev, "aclk", a_crtc->aclk_reset);
-> +	dpu_reset_assert(dev, "dsc", a_crtc->dsc_reset);
-> +	usleep_range(10000, 20000);
+[1] https://docs.kernel.org/driver-api/reset.html#c.devm_reset_control_get_optional_exclusive_deasserted
+
+> +	if (IS_ERR(dp->reset)) {
+> +		ret = dev_err_probe(dev, PTR_ERR(dp->reset),
+> +				    "failed to get reset\n");
+> +		return ret;
+> +	}
 > +
-> +	if (a_crtc->core && a_crtc->core->disable_clk)
-> +		a_crtc->core->disable_clk(a_crtc);
+> +	dp->pxclk = devm_clk_get(dev, "pxclk");
+> +	if (IS_ERR(dp->pxclk)) {
+> +		ret = dev_err_probe(dev, PTR_ERR(dp->pxclk),
+> +				    "failed to get pxclk\n");
+> +		return ret;
+> +	}
 > +
+> +	if (dp->edp_mode) {
+> +		dp->bridge.type = DRM_MODE_CONNECTOR_eDP;
+> +		/*
+> +		 * OP_DETECT is required: without it
+> +		 * drm_bridge_connector_detect() hard-codes CONNECTED for any
+> +		 * eDP connector and fbdev wedges at bind.
+> +		 */
+> +		dp->bridge.ops = DRM_BRIDGE_OP_DETECT | DRM_BRIDGE_OP_EDID |
+> +				 DRM_BRIDGE_OP_HPD;
+> +	} else {
+> +		dp->bridge.type = DRM_MODE_CONNECTOR_DisplayPort;
+> +		/*
+> +		 * No OP_HPD: the HPD interrupt is gated by the DP pixel clock.
+> +		 * Leaving it out marks the connector POLL_CONNECT |
+> +		 * POLL_DISCONNECT instead.
+> +		 */
+> +		dp->bridge.ops = DRM_BRIDGE_OP_DETECT | DRM_BRIDGE_OP_EDID |
+> +				 DRM_BRIDGE_OP_MODES;
+> +	}
+> +
+> +	if (dp->reset) {
+
+This check is not necessary, reset_control_deassert() handles NULL
+pointers.
+
+> +		ret = reset_control_deassert(dp->reset);
+
+If the _deasserted() variant is used above, this can be removed and the
+reset control doesn't need to be stored in dp.
+
+> +		if (ret) {
+> +			dev_err(dev, "failed to deassert reset: %d\n", ret);
+> +			return ret;
+> +		}
+> +	}
+> +
+[...]
 > +	return 0;
+> +
+> +err_clk:
+> +	clk_disable_unprepare(dp->pxclk);
+> +err_reset:
+> +	if (dp->reset)
+> +		reset_control_assert(dp->reset);
+
+Same as above. Remove the unnecessary check or manual assertion
+entirely.
+
+> +
+> +	return ret;
 > +}
 > +
-> +static int dpu_pm_resume(struct device *dev)
+> +static void inno_dp_remove(struct platform_device *pdev)
 > +{
-> +	struct spacemit_drm_private *priv = dev_get_drvdata(dev);
-> +	struct spacemit_crtc *a_crtc = priv->a_crtc;
+> +	struct spacemit_dp_dev *dp = platform_get_drvdata(pdev);
 > +
-> +	dpu_reset_deassert(dev, "mclk", a_crtc->mclk_reset);
-> +	dpu_reset_deassert(dev, "esc", a_crtc->esc_reset);
-> +	dpu_reset_deassert(dev, "lcd", a_crtc->lcd_reset);
-> +	dpu_reset_deassert(dev, "aclk", a_crtc->aclk_reset);
-> +	dpu_reset_deassert(dev, "dsc", a_crtc->dsc_reset);
+> +	component_del(&pdev->dev, &spacemit_dp_ops);
 > +
-> +	if (a_crtc->core && a_crtc->core->enable_clk)
-> +		a_crtc->core->enable_clk(a_crtc);
-> +
-> +	return 0;
+> +	if (dp) {
+> +		clk_disable_unprepare(dp->pxclk);
+> +		if (dp->reset)
+> +			reset_control_assert(dp->reset);
+
+Same as above.
+
+> +	}
 > +}
 
 regards
