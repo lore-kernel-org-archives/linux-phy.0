@@ -4,112 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43B04C531D0
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Jul 2026 13:57:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2883C531FC
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Jul 2026 14:03:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=be3TaZXskCMccuqshHXdBoNlSzxSbXREgjXRbWQ8EdU=; b=t0G7RXUOFLbc0G
-	AyAUCvTkiTreg1BfGloo95v9/FrqQZG2jHjERGz0x+29vC9WrniEZpbxMuVeFPMkjhtp3/E4EvR71
-	DO1KFxv5unj9UIWbTLpkP2K1vp8NoQfgiWZKuNNcn96/xtPUPH6aQto92pBg4cghGsWWdXtBJSZVU
-	mBtUN6NF3IgiJ1oLbXq1W1Kyf3NEm/oAcUL9HgszEH/yilyrTO5KwbwV5Rj8RZLxhFi+O2QncKytg
-	4sdljAEUN0Z48Dj+10lTpx/8NRNyFjJcRrllr8fbTsK0I8aAi8kSQxtK8PUeiZWG9Uvp2VzIcUhPN
-	Om/6cy74+/XGFGYKBbvg==;
+	List-Owner; bh=8a+0/XV2DadY1S/7uWzxJN5YYMb70sCaaVPtxArO6e4=; b=3Ko6DlG2zabQPr
+	SY9t2M31i3SmMD0ocOlR3MiE7/EfIp8ATM0etFNAEgbaO618lfXuH6RrPpTUpLWnQBElTlfCbOIWg
+	duDqIfBZPz4MQF/pirWWxrSmIhKjyLDRKE6UXXegx55ouycVNja39yywbh+Ec1OwyBqkwZjv7EAOn
+	8MBL/261mlk62xWfhUYo+II8rxdax1lU9sL25j4OeEl/+GYXkG0pPkmZkTyMfFq4U/py2RW2ssVx4
+	q0ZJY3GZQrxBcqjaUBQjDiS5cVaa9GtSUyAmn9zmZuFmZhB4QFMpd3bbgp1iK16gJZAOZZ75VXxvl
+	yecmCBXgUZ5v54UYjshw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1woLpM-00000002v7s-32TE;
-	Mon, 27 Jul 2026 13:57:08 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1woLvT-00000002vrx-27vi;
+	Mon, 27 Jul 2026 14:03:27 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1woLpL-00000002v6y-2EhA
-	for linux-phy@bombadil.infradead.org;
-	Mon, 27 Jul 2026 13:57:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=a2ecVVAzl7ah2+cxH73covTRhLHYFzycBQkVNDKcsK8=; b=fVQtXwUNt/777+FN69Yv5EHQpK
-	9gSB3qLmEqq/NiB6w0gj6JkZwGNZVqeAsdg9pP1q3/mWafi2/Fu5Q9xYnm4vgtcSwG6xWFCKMfZ+d
-	kt+LlDjaUR5FcG9K3ESM1cKb6voTdCDyxWphbnXWnyw/s+eE1keBPNP+OaK3KEflH+MgbqG3HOhUr
-	OCex3PDALU8IwUyT3xeomLDmO+gEOnSkPHc0DYgrtzmauubUqtZ7578WLgn8FnHdgHQoMVXSJyAJc
-	mrCAXsObJyTeaIWlRXkdXTGiVYcS/0/+TxWDIGv/9YzPLQ+xvAWEa5UE7WG7epBf3a8+TDnWzLMGP
-	mozc12oA==;
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1woLpH-000000048YH-483n
+	id 1woLvQ-00000002vqz-1nUJ
 	for linux-phy@lists.infradead.org;
-	Mon, 27 Jul 2026 13:57:06 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66RDlYPK855731
-	for <linux-phy@lists.infradead.org>; Mon, 27 Jul 2026 13:56:58 GMT
+	Mon, 27 Jul 2026 14:03:25 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66RDlbpU3895555
+	for <linux-phy@lists.infradead.org>; Mon, 27 Jul 2026 14:03:22 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	a2ecVVAzl7ah2+cxH73covTRhLHYFzycBQkVNDKcsK8=; b=TIsR+fhkLAqn97fF
-	3IecO4D/HO3BvQd3p5sWczqTPYJ0GyVe+92uT6DGlSZFywt498eYslrWKqaJ9XNw
-	UF1UVEjOPO3sDeAo0Viy8gXN847l1k6IRL6k+UNvBcO52KOHNK520w6PxM4bLaGZ
-	rlSQYjo5uvOa7s4aB/+g0Hn/ufgqm8DFFwxGLD4hiu68PYpHzVWoI4Pqa0VP0GOA
-	t17ZMFdNWnqwaygULCK2n6sPWNZXeEOl/qRggYUVlbcu4D/HK+clXMNlcNUGR9b9
-	Gt6EDyICndO2DivW14Lg9oinuy4h8u0f3G3jqaBaR3BtZyKU0G/W5V83fG8h4LCG
-	lrf0jQ==
-Received: from mail-qt1-f200.google.com (mail-qt1-f200.google.com [209.85.160.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fny9wj8db-1
+	N3R/LOwcFbmCVfeXnS28YoPT5GraPotTYYR1n8ulF+s=; b=RqXKs65tKoedSsuO
+	qRLKyLIUh5stufSeT5VKC1Eukq2TrjB7dIj10lTWSLWT/xKXJ+zGzeJajrbD4lvK
+	r8/sWGiERpdyUF8kLuIpb6G4PDNbBAh2x7RoM5/9hzwVNkQUOARXmTDjJQ9DnUEV
+	iF5HxGfcBuvz7p9Jt22DOvhwwuilHvhXsT/C+InRETTHaMaPn0EPAZqZ6uqLBsoc
+	CXKSw9+rRqKjyNqrNXHTBwKn4OZhFjW2o4LQvVhIe5vNiG4UtwWzxMsM6yZUkitT
+	NGg1SsWuaA3OwFo+d/o3AaegX5qJUJ71hurH8Ot5qBX6sQkzeA5HaiXusjfEbXat
+	x2pw5A==
+Received: from mail-ot1-f71.google.com (mail-ot1-f71.google.com [209.85.210.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fnsxs2wa3-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 27 Jul 2026 13:56:58 +0000 (GMT)
-Received: by mail-qt1-f200.google.com with SMTP id d75a77b69052e-51c21be5bb4so3192641cf.0
-        for <linux-phy@lists.infradead.org>; Mon, 27 Jul 2026 06:56:58 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Mon, 27 Jul 2026 14:03:22 +0000 (GMT)
+Received: by mail-ot1-f71.google.com with SMTP id 46e09a7af769-7e6027a5761so1353065a34.3
+        for <linux-phy@lists.infradead.org>; Mon, 27 Jul 2026 07:03:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1785160617; x=1785765417; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1785161002; x=1785765802; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:in-reply-to:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=a2ecVVAzl7ah2+cxH73covTRhLHYFzycBQkVNDKcsK8=;
-        b=QZun8nBqoHMoy6LQCRBKKsiLdNReTHf0Q+S3AM0OE6GVEfqgXUnCWjFVsvbnq48lMO
-         PS8O1m2HBYs1boaV/u9LRfQWCAJqTmKQi3n6e0NdJOmIXvzKeaBUyJ4gryzOvoqDPGmR
-         cfGHuwNkB3w5YhIYJeHVKiLI9YrwE8XVI50r7ZmJhp0R8SmcbuD1Jt0uLcVYvTFGh4a1
-         cOWpC57Y2MsqsHFnW/HXSMerdVs6lK3pAjG+OIT5oCV7rHUfxZcHbE9VUMNdHWa3PJ6f
-         WbCUi8tMCdlSRSPMTaB/QVpCszpavpqHKbU2HR/MmEQv9NkNkNUNhsPjFQx5WmSDUtsY
-         BeAg==
+        bh=N3R/LOwcFbmCVfeXnS28YoPT5GraPotTYYR1n8ulF+s=;
+        b=i+rTcRKJoCSdf5qqHNNdgsJAzChthmUdse+QMck3hu8mFlE2bw1DuS9BrrW6QatJ7b
+         2lnVGWanNRw3OqQ6T0nI+3iFI15FUYBT3UhF+fFXT+j4txn4RsxEIQ0btXLP5w7CxrxS
+         1SqrVTkpJR0SvqJhpcvxTNNQW7390zIubex9MSrKYQ5ADXe1pYYC6IP4nIW1Gxx8gP3e
+         zgdFyU4XEHUuymAMddE+OL+Gqhz0uAMoXh0Hg16PPBgyiwESPlQ5Su7IMrEAUZRfnmSg
+         yrWXxxQZQ/kILyM+1qeo8qvtfPTsfHAAYjYaRnhmLlYZYZTQ1jzh0LCWUeAvKpHZI9CA
+         FfZg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1785160617; x=1785765417;
+        d=1e100.net; s=20251104; t=1785161002; x=1785765802;
         h=content-transfer-encoding:content-type:in-reply-to:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=a2ecVVAzl7ah2+cxH73covTRhLHYFzycBQkVNDKcsK8=;
-        b=h2VvyEYN5dLEBfFR/1CBwiqJPsagJrRQOGSX61i/xvody1G3H+GktfBqnekAb//OEY
-         QBXsWd1w4Fp4AKj1qto3GIkWyvvl1wsXGcQuwo8NDZgxxECIxC1tdWfiqwC/ts1VjYVZ
-         M+SguWh4txImmiPQ2pmDMD+EGoGHbdtRfkd1PQV1h16P8pHEVzE7yYlc9qgG+QuLS1Rf
-         3mDUUMsYpGYe1qaHplGN5sD3xPijZhZSEMv+ErzxaUW5FTzy2TTPWv+REvWrKj/DSyTX
-         ViKbn9emFJ7VaCISe0ITI0hVibRQsJHY3b5qDEMjks2WhJEEUV1Llji7AqSS0sHgLlKQ
-         qhxw==
-X-Forwarded-Encrypted: i=1; AHgh+Rqf70Lt5enhc4SzM7MEKrHRsDYDo0hYkTFqZdFGKUerzQfM584XeFhKW938l+lMjj/DtGFVjqLn/nk=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwVfJXKCOR5I/7RLTmXjaYEZxDdAdc66S6IjBZND5f5KziyQvZY
-	rvWUrolIaT4N5gIrTtarbifwfzusCNrdARY5r9qhuaeiTV36RtHGVMevZE1q3H2/3BoZtQFfIza
-	Or5fCxOg/oeyQiFahNWBTaoCsM64VAFaA/5RfIOp2X/y6i8AGBSFdjPX2BklHDil99sqQ
-X-Gm-Gg: AR+sD127kSxOrrt2X7NutIxgGrmuc83Nsz24PrkBhk3mIDRTpI79tgMFN1CSrfjkY+4
-	xe9VoktlgpV+DtLVy+ceOUjYFuA4kFLuME9+TiKfVcafy7Py3LVAaaWpP7m7Hextw4uuNVuykk/
-	kbydw9ZAhoVtY5tmc+eieD1TIOB3T1UfJAA+sJl2kfWlcytpT7aM77FAOl9VXOQoQxbuKEiQRA9
-	POGI2PF2QDUgd6xVF8VZuKOFb7m64J2BfQH9FlEYRYpqa+XmevGmMWfuI/EivztqXuWWARIaeGy
-	xAUBNi2CIZJviZpOFi4RUBPZSJDrKEQxNOnrVoq2HOfSBeH6VHQDUpwL57mNOS3TlzBybPejmMC
-	ogd7GvFwnm/s/+n2xkuo9McVV
-X-Received: by 2002:ac8:5981:0:b0:517:5d21:9899 with SMTP id d75a77b69052e-529a85f9b2emr122121611cf.5.1785160617498;
-        Mon, 27 Jul 2026 06:56:57 -0700 (PDT)
-X-Received: by 2002:ac8:5981:0:b0:517:5d21:9899 with SMTP id d75a77b69052e-529a85f9b2emr122120981cf.5.1785160616824;
-        Mon, 27 Jul 2026 06:56:56 -0700 (PDT)
+        bh=N3R/LOwcFbmCVfeXnS28YoPT5GraPotTYYR1n8ulF+s=;
+        b=eKgdEeYXK5Zc1n3tTePCOvKil9xn/CtJWwu//ndR2osd5z+lBg1Ubx8jZAHKrpHf1N
+         Mb1YC64i0X1G244Z1631ODDXOTv1rsu7LVoIfWnYWEy/TJkPaW9nVW3hYmedeG+W3YYE
+         05rANHWx78EPc/5jA+xfkywuMJIDrTiHMaAa/23zLvHvV4EUheFfroMGlFXtGKxZPm8j
+         EQ9mTKDtCXLU1IlPKaoA/gsa2AmGnomSip1QTIh0cYvCxpitM2k0cCDwHOogr6ZJXlUO
+         ppuuf5GJb8uzDoC756k4ueM/VQ7bqX7c2wJgXK0+UJZRsEvSqLVRjk9zdyqEy36/b51o
+         DYCQ==
+X-Forwarded-Encrypted: i=1; AHgh+RrPe2QEltG4wpZ1EVuligqTvjaaZmj6KjRleZH2D6nceQbaR19wX++/MelBVsANzYPt9Jl3KouyHto=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy6QKpVCfcUtbni345E64DzULietqH4uKswewcBJX4yG0UASXMX
+	bX9dU2T/EHMFQD/0429shXTlvfN+YtrdEDFmbq0AMptVG5VWZ49HS2dExq2i7yD2qyO+DUykEip
+	XbVNRkBGMpuLVRe0vwyS3Zbne3lv1oAE10YfYeAhDkzLFkXV9iHDZTS1u5D9o3Mdt054z
+X-Gm-Gg: AR+sD13Li9GXsWHObcF5kzpI0pyYlGAOaRMNJAMQx5CqHlQKmvxSRqcJvotELNPlCl7
+	hNmHcAbyxlV6GKaXierCJlSKuf3RlzOhslc4MIVH75JPnqzMSUU2/tgGGcw0Go661SjC4jWQPu/
+	wi98qIlXoPEZ4N14sFj7cbIOmt4d00Yu7GsKZ6JjSK91y+SNJ9swOm1780y5IZvkJP3TJgzUqyN
+	93InPj1au8pBBwK0GVDbZMen13ypLHE9JuW8uO2Q236oFj2L6gebhdwTa0sq9GcFyU9BsnIFAMe
+	aCFtQfYWZ5DIEmkmhR6glNJ8AwliJ8T2Mk1dMEeX/DqAgdC0ZwzLAMqQwtgXPfOPPRFqOIkfWoX
+	kyqxH4tn2eujNehslAot2YO5D
+X-Received: by 2002:a05:6808:124d:b0:497:e695:3423 with SMTP id 5614622812f47-4ad528d7697mr142159b6e.0.1785161001707;
+        Mon, 27 Jul 2026 07:03:21 -0700 (PDT)
+X-Received: by 2002:a05:6808:124d:b0:497:e695:3423 with SMTP id 5614622812f47-4ad528d7697mr142119b6e.0.1785161001130;
+        Mon, 27 Jul 2026 07:03:21 -0700 (PDT)
 Received: from [192.168.120.193] ([178.235.128.140])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-69fb50bcfdcsm2876913a12.3.2026.07.27.06.56.54
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c1c32f1127fsm651110766b.55.2026.07.27.07.03.18
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 27 Jul 2026 06:56:56 -0700 (PDT)
-Message-ID: <3b0166c0-e1e7-4746-bcb9-ef78b9a86c8c@oss.qualcomm.com>
-Date: Mon, 27 Jul 2026 15:56:53 +0200
+        Mon, 27 Jul 2026 07:03:20 -0700 (PDT)
+Message-ID: <cbbb007a-fe6b-41ef-9930-fec17f40c946@oss.qualcomm.com>
+Date: Mon, 27 Jul 2026 16:03:17 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v7 2/6] phy: qcom: qmp-pcie: Add QMP PCIe Multi-PHY driver
+Subject: Re: [PATCH v7 3/6] arm64: dts: qcom: glymur: Add PCIe3 PHY and PCIe3a
+ controller nodes
 To: Qiang Yu <qiang.yu@oss.qualcomm.com>, Vinod Koul <vkoul@kernel.org>,
         Neil Armstrong <neil.armstrong@linaro.org>,
         Rob Herring <robh@kernel.org>,
@@ -121,43 +107,43 @@ To: Qiang Yu <qiang.yu@oss.qualcomm.com>, Vinod Koul <vkoul@kernel.org>,
         Bjorn Andersson <andersson@kernel.org>,
         Konrad Dybcio <konradybcio@kernel.org>
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        Manivannan Sadhasivam <mani@kernel.org>
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20260724-glymur_linkmode_0724-v7-0-65c8469c6b65@oss.qualcomm.com>
- <20260724-glymur_linkmode_0724-v7-2-65c8469c6b65@oss.qualcomm.com>
+ <20260724-glymur_linkmode_0724-v7-3-65c8469c6b65@oss.qualcomm.com>
 Content-Language: en-US
 From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20260724-glymur_linkmode_0724-v7-2-65c8469c6b65@oss.qualcomm.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzI3MDEzMyBTYWx0ZWRfX5/+1ZXhOIumk
- sX94lSbYo5rCxwy4dBULxoJp18cdHnB9mrtDR09gWaJdbmNChiGgABZqG6/JuBAbW41/VwQcUGc
- VigS76IlsGkvAW2WqGxEoFBANzyvvPDlqykobULb9tbu200Aj33VlIh80enmGOrxLMUn8j0b2R1
- 4mrVYCyXIYicnQsHMXkQ+0vsjiKwccfY1SCm0A2m0EhwXQ9GtPIpObdb/WpdDvVZ5pXRsj3jDsN
- hIEkcVlxurXbumbNm/vVbPeEMqiL+BxjMPcLJJEowcQu/Xt0uJO3WJRrmrGbs3WMr8VVt9xqPRL
- yMHuoRVUE6SQ5PZ+XbSHRszMA9qzR4yMnzbMnBGwN04krvnc2Rmj+zupY6rKAnkg28HsuTs9hjb
- GyF6Pu6VBiJk0KGBx8daM/TTbBISSHlycwuE4HciOkziP05MCJNYgjpEJSL2EjZiwY4BLWAxe0c
- f9WTn99wAz14/tXwCVg==
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzI3MDEzMyBTYWx0ZWRfX6vgwJJPzt7VR
- LWkR52vFG7BoHJx/9cc3NzAposY4nLlIhiFMrVLMnOoTHwNATHJLilRis1lMfn7H/6VlR+YYRsj
- 84EBxdwFewH75TnKJ8mb78j6DYy1I9s=
-X-Proofpoint-ORIG-GUID: XX8LFhRe-P_CHePlIh2FwZdlEYsdvONv
-X-Authority-Analysis: v=2.4 cv=E4b9Y6dl c=1 sm=1 tr=0 ts=6a6763aa cx=c_pps
- a=JbAStetqSzwMeJznSMzCyw==:117 a=PRfkaYvzSr8QmIIGAkY2Sg==:17
+In-Reply-To: <20260724-glymur_linkmode_0724-v7-3-65c8469c6b65@oss.qualcomm.com>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzI3MDEzNCBTYWx0ZWRfXxVYFzF98pB6a
+ YVPcO9816EaUyL9hzeJQQhTbauV418YIUm+300E/zSPU7ylKb1ZOZJb9vAxRHthpCMsiFiiDa8z
+ liPWqPYWJAUpig4iQ2MVNGrW4Z18G7L8ZMV0MO+vakY7/JzXsvDnFxLeayQlhPSz8HlroLOIGJE
+ oaIa8kBPuymamGzRqcwz/Q3jgmBxbiFiEhyvTU8sH09lZtd5gATF5SItR/HA5HVG63RiH4YRyJ3
+ QwB2CWgeegoTm93+viJGwfqBTenlt3+veRKRAFOblmzgnHRkoO+Wiwig7zEZybnvul4CYycF9S5
+ Tfla1LKYPhZ1YJ4uXtiIonl3t4HIAV0IT8IVCdcJPiBgJa6mTVjI6HFmcUthAvRAYgH7T8Of58q
+ fOuoAHuQY0lZfLBuxQlmQnuVQQA5xR4i2vy+Fg3JsHhN6bgS8HnNG25QG2tenlaCZNseJ797CnZ
+ RvdDWvFz5wG9UnKC1FA==
+X-Authority-Analysis: v=2.4 cv=EYr4hvmC c=1 sm=1 tr=0 ts=6a67652a cx=c_pps
+ a=OI0sxtj7PyCX9F1bxD/puw==:117 a=PRfkaYvzSr8QmIIGAkY2Sg==:17
  a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22
- a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=fUhyWj0mt7oSvnhCvGYA:9 a=QEXdDO2ut3YA:10
- a=uxP6HrT_eTzRwkO_Te1X:22
-X-Proofpoint-GUID: XX8LFhRe-P_CHePlIh2FwZdlEYsdvONv
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
+ a=EUspDBNiAAAA:8 a=kF0Kh6n4e_L3U_yLb1EA:9 a=QEXdDO2ut3YA:10
+ a=Z1Yy7GAxqfX1iEi80vsk:22
+X-Proofpoint-ORIG-GUID: yHJYddwM7MQOkYUpUh1lgsdz2fGy7xOi
+X-Proofpoint-GUID: yHJYddwM7MQOkYUpUh1lgsdz2fGy7xOi
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNzI3MDEzNCBTYWx0ZWRfX/jSQZ/F5a3NJ
+ RbY12XvAMk2SfNRjtKHII7hRAM0blqLKe4YRPEGUPei5yI3yyb+q7h7t9jjL86gtZl5EeLOc7wA
+ JjpIfc+TY7JcOpUqPsr+oE9+skiARFg=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-07-27_04,2026-07-24_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 clxscore=1015 priorityscore=1501 impostorscore=0 bulkscore=0
- lowpriorityscore=0 adultscore=0 suspectscore=0 malwarescore=0 phishscore=0
+ spamscore=0 adultscore=0 suspectscore=0 clxscore=1015 priorityscore=1501
+ bulkscore=0 impostorscore=0 lowpriorityscore=0 phishscore=0 malwarescore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607270133
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607270134
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260727_145704_450231_DC782BDD 
-X-CRM114-Status: GOOD (  26.04  )
+X-CRM114-CacheID: sfid-20260727_070324_589396_2700C9C9 
+X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -175,140 +161,21 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 7/24/26 12:01 PM, Qiang Yu wrote:
-> Some QMP PCIe PHY hardware blocks support multiple link topologies (e.g.
-> x8 or x4+x4) selected via a TCSR register. The existing single-instance
-> QMP PCIe PHY driver has no way to model this: it assumes a single cfg per
-> DT node and instantiates exactly one PHY.
+> Add the PCIe3 PHY and the PCIe3a controller nodes. PCIe3a and PCIe3b share
+> a single Gen5x8 QMP PHY that can be configured either as one x8 link or as
+> two independent x4 links (bifurcated).
 > 
-> Add a dedicated driver for this class of PHY. Match data carries a
-> per-mode cfg table; qmp_pcie_multiphy_probe() reads the current link
-> mode from the TCSR register pointed to by "qcom,link-mode", looks up the
-> corresponding cfg array, and instantiates one qmp_pcie per sub-PHY
-> required by that link mode, registering the clock and #phy-cells = <1> phy
-> providers so consumers can address individual sub-PHYs by index.
+> The shared PHY is modelled as a single pcie3_phy provider; each controller
+> selects its sub-PHY through &pcie3_phy (index 0 for PCIe3a, index 1 for
+> PCIe3b). Update the GCC pipe clock parent array to reference the new PHY's
+> clock outputs instead of the placeholders.
 > 
-> The driver inherits the phy setting and link-mode programmed by firmware,
-> so only the no_csr reset is used and no phy setting tables are provided.
-> 
-> Add the first match data and compatible, qcom,glymur-qmp-gen5x8-pcie-phy,
-> for the Glymur Gen5 PCIe PHY that can bifurcate into two x4 links or
-> operate as a single x8 link.
-> 
-> Reviewed-by: Manivannan Sadhasivam <mani@kernel.org>
 > Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
 > ---
-
-This looks really good, couple of follow-up improvement suggestions
-
-[...]
-
-> +static const char * const glymur_pciephy_a_reg_l[] = {
-> +	"port_a",
-> +};
-> +
-> +static const char * const glymur_pciephy_b_reg_l[] = {
-> +	"port_b",
-> +};
-> +
-> +static const char * const glymur_pciephy_reg_l[] = {
-> +	"port_a", "port_b",
-> +};
-
-I think we could construct these names at the call sites, with
-essentially something like
-
-for (i = 0; i < qmp->num_ports; i++) {
-	sprintf(buf, "port_%c\n", 'a' + i);
-}
-
-(is that too cheesy?)
-
-[...]
-
-> +err_power_off:
-> +	while (--i >= 0)
-> +		pm_runtime_put(qmp->pd_devs[i]);
-
-This probably can stay non-sync
-
-> +
-> +	return ret;
-> +}
-> +
-> +static void qmp_pcie_pd_power_off(struct qmp_pcie *qmp)
-> +{
-> +	const struct qmp_phy_cfg *cfg = qmp->cfg;
-> +	int i;
-> +
-> +	for (i = cfg->num_pds - 1; i >= 0; i--)
-> +		pm_runtime_put(qmp->pd_devs[i]);
-
-This should probably be _sync() as phy init/exit may be called in
-quick succession
-
-[...]
-
-> +static int __phy_pipe_clk_register(struct device *dev, struct device_node *np,
-> +				   int idx, struct clk_fixed_rate *fixed)
-> +{
-> +	struct clk_init_data init = { };
-> +	int ret;
-> +
-> +	ret = of_property_read_string_index(np, "clock-output-names", idx,
-> +					    &init.name);
-> +	if (ret) {
-> +		dev_err(dev, "%pOFn: No clock-output-names\n", np);
-> +		return ret;
-> +	}
-> +
-> +	init.ops = &clk_fixed_rate_ops;
-> +
-> +	if (!fixed->fixed_rate)
-> +		fixed->fixed_rate = 125000000;
-
-I think this always happens to be true in this driver
-
-[...]
-
-> +	num_pipe_outputs = of_property_count_strings(np, "clock-output-names");
-> +	if (num_pipe_outputs < 0)
-> +		num_pipe_outputs = 1;
-
-This can't happen (clock-output-names is required via bindings)
-
-[...]
-
-> +static int qmp_pcie_read_link_mode(struct device *dev, unsigned int *link_mode)
-> +{
-> +	struct regmap *map;
-> +	unsigned int args[1];
-> +	int ret;
-> +
-> +	map = syscon_regmap_lookup_by_phandle_args(dev->of_node, "qcom,link-mode",
-> +						   ARRAY_SIZE(args), args);
-> +	if (IS_ERR(map))
-> +		return PTR_ERR(map);
-> +
-> +	ret = regmap_read(map, args[0], link_mode);
-> +	if (ret)
-> +		return ret;
-> +
-> +	return 0;
-
-ret = xxx()
-if (ret)
-	return ret;
-
-return 0;
-
-can be collapsed to simply return regmap_read()
-
-with or without all that,
 
 Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 
 Konrad
-
 
 -- 
 linux-phy mailing list
