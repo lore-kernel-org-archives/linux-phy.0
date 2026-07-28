@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ACE56C54EFC
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A16B1C53219
 	for <linux-phy@archiver.kernel.org>; Tue, 28 Jul 2026 09:35:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,71 +12,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zqE83kQtGN15UZUH+GH3+Eev8TLPRPGgUjmDucJKHys=; b=UNZRm/43hhdRcj
-	3jTpfBrNejh6Y1mwl5nej8UdRC6aUgHkRozH7noBQ4uhSnSehWdvcQDVTZskbWEm6XtriiOESpBqA
-	qq/TPacTF9cMfzr9HJOvvKnVLHg/R8/uh3PTJXElzAkXuyoREk7ez3WkqXVIo3uStsbClduYpXe1U
-	8HVsST7JyB9RSzPFnbsQFLtCS4AjJTXq4wJZ2XhlNX96S27clVn1fyCl5zSOEIRh47fpGUwWrwahH
-	Gquq9okEZlM6QsR9dlx/yqGKG8C41GcE7Wf/rtK0gYbOWyE8WlbNL3kRssUFAGlHc4W8FzexK0mVL
-	pTibz6aFU0/ECecT8TqQ==;
+	List-Owner; bh=MYuCrt/Zn26QZwXLcCi9qixnTHufjwk3Vb4vQ5xaV+I=; b=sN8YxiFyRbuxgb
+	DYlANvvNnL8/zdHC5Oj+TfJhuzxbplJebPYz8O3y3lD+cJrSKgS3herrj6oJtwqd7ZOh8vxLjjwAj
+	FB5cVKVQdbkbmWNon0eKax2W7G8csmv9D8HjVNpQAk9wykk/GJDiSvMZd/JR1enqSF7M77ub44miT
+	QVIIJFkYsogXXGgcQbeuRogg3Mymb+5SA59pz8Ryj40ocaSu5F/DlOwjGSgbYrSD4IXJ3dLpwr2Eq
+	U41CXSuovMB/31BMXjPrL96CL8McyvrScNynsa+FfUzXGFyKvki6AqcKBOlDKZQqdNexKqRxJoMTK
+	tK3EGXGq6IjSPiPEZJxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1woeEA-00000004qbc-1ekS;
+	id 1woeEA-00000004qbV-1NkX;
 	Tue, 28 Jul 2026 09:35:58 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1woeE4-00000004qZ7-0Zbp
+	id 1woeE2-00000004qYQ-3z3h
 	for linux-phy@lists.infradead.org;
-	Tue, 28 Jul 2026 09:35:53 +0000
-Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-4954afac04bso41758855e9.0
-        for <linux-phy@lists.infradead.org>; Tue, 28 Jul 2026 02:35:51 -0700 (PDT)
+	Tue, 28 Jul 2026 09:35:52 +0000
+Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-4955158f26aso23262095e9.3
+        for <linux-phy@lists.infradead.org>; Tue, 28 Jul 2026 02:35:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1785231350; x=1785836150; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1785231349; x=1785836149; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=bJniRco96ZhJUJ+Yk+f3eF2otMHPdpjSj7bXg2cOCuQ=;
-        b=Ca+I9PN4RGYAkEap0V2Ala62ywANpn7L4kvPQpf9UrnSiE9auGrE0BVONi6jbteOCt
-         rg3v2t7N/0KcVmYsoAwKDOEQHNiC/m5QUhuf+T5KIVzzEeVICEJcd6q+ugnoFUbHROJP
-         Xw39k7wnpn14gXSRYCNY4sNA87haYQBgGeESselS5OpHK6lCi2VEihDLSr0rir/m+AQe
-         JqQREoES0Xgonu6ZnhrtMZmCausYiupqe6sLcgHDpnMDccARFJOovMzp4dJtkr4YTajK
-         Eur7Ux13EiWpwMvEfo66Pd5ocf1eL8perhKSjSRK8RkJvAE81wC6R0AVW4Uzgqf2Uy8S
-         B3FQ==
+        bh=NJSm/JnxrKE81FhHQMmn4pN/cUcvRnDeftlQtOhibp4=;
+        b=fVOd7Da4AeHHTaDa0h7LEVFfZ6rtz2kENY/CeJ2C18GlSVNC505VjIQOOupAghtDDB
+         AzHQaLx2o91ZvgyLk6KZYQkoxEQVHW0gHrAE6YN4LqLU+36nnURASLdoXmthOZIlKw8C
+         S1sSA5GDMBzoxdJLUrwhDrQ8+h9uLo3tEAEShdo7tItjkaoTtLA1tzTvBu7younHWpg8
+         d0MXEA+hQyBLiaEYg0z4k6T1PIqW1r+7wFq2Bjv9iQiDx0eYlOMmTa+fveGSyj3twWw+
+         uoba3gc5CTlC8bACuoglur3ehH69A+Ibu6N5rEPngdjAtMvhIBwmnnaXH9e+hKA2vO2b
+         ayhQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1785231350; x=1785836150;
+        d=1e100.net; s=20251104; t=1785231349; x=1785836149;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=bJniRco96ZhJUJ+Yk+f3eF2otMHPdpjSj7bXg2cOCuQ=;
-        b=k12OhfylX3q717zEOqRu9vH1GapOh90lf5rAu7QJ5vxRpEY8HWjld2GM34W0xopw6G
-         4CT2bkUzBcqP1rF9nGr4nuE52llpp9dlfVGcxjRU9O5zKNf1n/BdQCWiDseO3mknCtCh
-         rpOnL/tz96d+rJLFdsjoz8dS82GzQQ2vnS+02C2WdU93gMGzFO7lEMCAUSMCr0c0ZAXF
-         KcOBAeu9bwJa0IPs+ipHB5HKzraUgANkeRfEdf+ebGyHHU+fbSBLea5JmR3lyMvmdMzv
-         e43Ld0U5K/RqPCJD3vz3E39JHMjRJkZ6oO/zV2XUjyKq6BZl+mcaNNrJoHvexlZ5alye
-         +jzA==
-X-Forwarded-Encrypted: i=1; AHgh+RqkQM/PsL7T+sLdHIy1c7RIQUCYdHOa40Iw9oTisMOxdhKNfaxp7a5J0VR4tpaTtWodL6HDPVCHxGM=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwUBPx83B2ht4s4hrnBqKG6SQE5pu/GTBOOSt5at4XEM+S2Lu0B
-	OGRTyCwvGjR+jZov25YLOTUWs/GBO5HoDo9wFwqsb41lGDeBNKhPO5TUfKEKzOhFVclGKLp6gdL
-	vON1cy3M=
-X-Gm-Gg: AR+sD13ZMm0YVOuArs9Qw6348uko72uNG9q4WJnmPT+6RoF/X9GF6JtmeQvi6oENA+R
-	zO00SGzPn/xBAn1uyH3vgxhtRBrgx9ZiIRTXZW0+CjBtefc8FUalRSMi8CLtT2311WCRvVeloDw
-	FtGYgZOtcmV+R7LVm2KoERvPGkpov0ZJ621psH4ZLG4nJNrAoeUcliw0M4JezqF5aHpPWnW+cB1
-	2AqyMwRyQPH1AzHrk18WPbTDFI65lV4DlwYODNj15N4RXtC7EKq1PLmPRFKO7ULuAJsGN4zby+a
-	SfELMqeq2NNVNQydiYzUKTlECHGoOPjtJxFqa4wwv3vTIhum7dj6f7PU6nLYsUM3mM8f1tMHM4q
-	q/8nVT8RO7HjeMQSdBcRkI24fiFjssps5FZxTC3lZqHaf5I7E/1nrw0LfmTwqGh4xS7RTrXDJ6w
-	uC+81qPZLpD0CR
-X-Received: by 2002:a05:600c:5494:b0:493:c42e:5be0 with SMTP id 5b1f17b1804b1-496c60bede5mr17438645e9.0.1785231350341;
-        Tue, 28 Jul 2026 02:35:50 -0700 (PDT)
+        bh=NJSm/JnxrKE81FhHQMmn4pN/cUcvRnDeftlQtOhibp4=;
+        b=BllCgs6tJXIgeiVDmPy5qV7+D+9rKOSQuyEOSWQIW9z8slBTYjMUKYqvXOWqE4v0Du
+         DVMHII/wOA3GWh59VkRXEeViIN6KuOfu1DZZAA8NuTWpRGcj36iO16OMJBavw4uyYV1K
+         JEnObDH8gYaAIgLBQKjwLnMnddoHYQtc2rkcWAF9IO2M8HbkmIcHQDuog9apqh6GWuix
+         UPqWDIR5+f/bsNTUnUBtF3BpGbP3bFyVCNQKsLPe9RRaew5isxsURz3VUvBDOb/AZB1j
+         l7NBqGPsCnJOiCLzpg1w55vK1BJ4dBqfml2igbrT1zxZ4nu0/HkwSR+2VyyG9iIsbeM1
+         N14w==
+X-Forwarded-Encrypted: i=1; AHgh+RrlN7wN4zP3zcyO0Yd6JnWHz/wXt1SV3koMgC5Wcz6XnRWGRjrFsK6bITMv1NFqcwmHjl8JxUSCXXs=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzwdXfF1gc6yhBBxd32JLVB6IMHcBid/uCzSerDmwvHhLv31NsS
+	aFeU9MlJ9gCgRjqWoXDj5QxU3YBeyU8iQgyViuivFOPUl+Vx7cGTpiqW7XiC+hqp1+DmJlYdy1z
+	ggxQFABU=
+X-Gm-Gg: AR+sD12xv9kga62WrWqK5ppw6jVkCO43p7+RXqNkWK7LJkLUNHsAfkrCbcgj3LRstWc
+	vtHhkgu0MyAuaS/wkje11mz3pn/qDLY1Z2EAaYRLbXwD+LrGQaZpxhk3m9RCzXLj+Z2LSHxKVw0
+	iqkrv96TL2kFSgJRkvmwM8LlXmDnhgoa3McnXDFLril0mEehJ1cz1y2ZQDBgrnLOsHTq8AU9f3R
+	zknsr7xNAYRHcKzz2TSCFFOODZJwv70hnUW3QA7nbGH6PPVhkJc0TGIr6iy5+e4+3KOmU4rvKyS
+	6kO9kdCwHRgYWpwzrHQ+4bk30sukMNLfhIH2NcCJcgamhXAE1E85ZXjOlJR3tFleZ24CLuwYDRn
+	ZHtBNfjhlfKyQTVWmEccEZ2QF0qw+scdFZfQpG8VxBGEA1Zh5/97dbrzZm5Qr2h1fy7iT88gHix
+	ohWYlCbULLsqnZs4w7HVgkRCA=
+X-Received: by 2002:a05:600c:3103:b0:493:f278:ba2f with SMTP id 5b1f17b1804b1-496c643219amr16527625e9.9.1785231349157;
+        Tue, 28 Jul 2026 02:35:49 -0700 (PDT)
 Received: from [192.168.0.35] ([109.77.204.94])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-496c4632263sm68190825e9.15.2026.07.28.02.35.49
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-496c4632263sm68190825e9.15.2026.07.28.02.35.48
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 28 Jul 2026 02:35:50 -0700 (PDT)
+        Tue, 28 Jul 2026 02:35:48 -0700 (PDT)
 From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-Date: Tue, 28 Jul 2026 10:35:36 +0100
-Subject: [PATCH v13 5/5] dt-bindings: media: qcom,x1e80100-camss: Make
- vdd-csiphy supplies optional
+Date: Tue, 28 Jul 2026 10:35:35 +0100
+Subject: [PATCH v13 4/5] dt-bindings: media: qcom,x1e80100-camss: Describe
+ iommu entries
 MIME-Version: 1.0
-Message-Id: <20260728-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v13-5-ae811e2f0799@linaro.org>
+Message-Id: <20260728-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v13-4-ae811e2f0799@linaro.org>
 References: <20260728-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v13-0-ae811e2f0799@linaro.org>
 In-Reply-To: <20260728-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v13-0-ae811e2f0799@linaro.org>
 To: Bjorn Andersson <andersson@kernel.org>, 
@@ -97,26 +97,26 @@ Cc: linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org,
  Bryan O'Donoghue <bryan.odonoghue@linaro.org>, 
  Krzysztof Kozlowski <krzk@kernel.org>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=961;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2593;
  i=bryan.odonoghue@linaro.org; h=from:subject:message-id;
- bh=e5G/1gpd6w5RUemT1hHxSrPtt8y2TvG6ssB05XjEsgM=;
- b=owEBbQKS/ZANAwAKASJxO7Ohjcg6AcsmYgBqaHft0cPUUgit905GNCZrjqlTZe3rJ37IFM1ZU
- h/qDA6xynmJAjMEAAEKAB0WIQTmk/sqq6Nt4Rerb7QicTuzoY3IOgUCamh37QAKCRAicTuzoY3I
- Ost9D/9u3lYofi4F2s61/n/+5ucihnSYHuKfssGjxGNKFnR9qBCXN3za6mfLa6MHXNOd5ZQYl5i
- lh0dZXBbZFsaqajrCxaVd9d43+Q2xl4pOndOdFPIi4PJb9VBUNh1F+l/Y9SzaN4wTF5S00yFvBy
- 7t2HwD4Me0e7LsjbzObuQTH+jCgoBpFdSaVshQaacDyGM60vQRLjALYuhX82kjprBKtWxciay3e
- k10p9rpTyX10Y2ar4NP8ROMwgb2WL1ARBsssY4qApZ4Dm9YacTZ7rqDZRE58SZDXYiJi+awGdnI
- mOPTSkyimLYcV9VxEQsaSlOYXx1pL03cD874zDNEfUDFQcpO/Wm8fVWbssd6t05hNtSJ3gNSrE8
- RC5q8Lwp4YFCcYwiRZ9JDoJwmXd1PQcdpb3RXx//xPRUoOp26jcmZkBapcSoxdHwjp/D/vosKdG
- 8S7ybhQKBkZe9iNEAhKAT+6qUv1OkLwyTqR8nPvJraAjS6zboq/3saaUF3uwxUdWHdqZKY8syVd
- EoN0x4Hf3JJQ3yppVLD/O3VvFwDv6mkYb/+8br6X0VsP3ee176ovIi3sLBcuu4RprdSt65MoJ+G
- VSxaVjCDF95SwwZcNWkkaJ9IJJd1ZROe5336kXh7Gxh0lvay6y9dEFYOfMcWZHSZOfKDQ2UIyrs
- Gp3dhA7FPSIhK2A==
+ bh=5wHZsmRZJkX36FzDROcwG3gCmz+4LTBOmCoFC9DNaFs=;
+ b=owEBbQKS/ZANAwAKASJxO7Ohjcg6AcsmYgBqaHftKWpv80r/kd2OEz0SwpuOlD6R3IYkWLa1/
+ UqMkdNx1TuJAjMEAAEKAB0WIQTmk/sqq6Nt4Rerb7QicTuzoY3IOgUCamh37QAKCRAicTuzoY3I
+ Ou+qD/9XJ9Kr2dtNDMp3LaXCqRgLwCUXh9WHlrVvWg0IEUWaEpC+qyd6w4rm2xFbsJXMZ0Cv7LX
+ uBtcCNSqIDgb98WTUHsRlOCIKcV+N7Zc0DDczm9A0RR1ui19cgMcKZaY0dl6Tk2E3NpgZaOTXoq
+ MVcpByF+yJBRETBwq7kDhVMEqOIPiszmPlrWCgT+aoLZ3980RwZVrIy4d3wu3UlzoFGtYRyjFTu
+ 0irxHZfSOipWleivf/17UYZ/rkdb+ekKGdaQK0XAcuTlcirOXtmhrGOSw4EsRKFZtC6J4tTJh8w
+ dSh0whpXzhKJLmPtKSpq/iCL0hE5/WX912Jaap7RUjVR3AANyTVyC+Ud+MMQNxBNRLzDJq1evau
+ 1gpGTKQifnZs8NYzWyAjUJTF6UIT427qD2F410/GfVYAFZE4dGhiR9uOQTqHO5a6PuSpdma0H8b
+ fYW1wZY/ebjcEKGRxWa6w5FH20Ftd5WTjrf8sUc0ge1LCa28Cm/4wAKA7dJ5k/qheaEtp0/ttOd
+ fOlP4yBr+2PQ1IERSdxYS+Bq9K7twWG2rJ8KX3bWx6aSJLqfgDvx0BzkUZjXIqc8DiO5Ds4uEO0
+ Oifi1v9Xk2RNYux1Q0KT25uOybo2KDQExNIn6XaMDN9xM0cMfGuHQN8eaeCI0OlX1vPUPvezEt+
+ 5ShgyElMc0/0bHA==
 X-Developer-Key: i=bryan.odonoghue@linaro.org; a=openpgp;
  fpr=E693FB2AABA36DE117AB6FB422713BB3A18DC83A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260728_023552_213613_7B673341 
-X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-CacheID: sfid-20260728_023551_056993_43846592 
+X-CRM114-Status: UNSURE (   9.10  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -134,29 +134,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Moving the csiphy to peer nodes means making the current supplies optional.
-Optional since we still need to support the old way but, at the same time
-separate nodes means having rails per phy which is a key benefit of having
-separate nodes.
+The original iommus list included entries for ICP and BPS/IPE S1
+contexts. Only the five S1 HLOS stream IDs are required by the CAMSS
+ISP hardware: IFE/IFE_LITE read and write, SFE read and write, and
+CDM IFE. The remaining entries serve other hardware blocks which will
+be described in their own nodes as support is added.
 
 Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
 ---
- Documentation/devicetree/bindings/media/qcom,x1e80100-camss.yaml | 2 --
- 1 file changed, 2 deletions(-)
+ .../bindings/media/qcom,x1e80100-camss.yaml        | 26 ++++++++++++++++------
+ 1 file changed, 19 insertions(+), 7 deletions(-)
 
 diff --git a/Documentation/devicetree/bindings/media/qcom,x1e80100-camss.yaml b/Documentation/devicetree/bindings/media/qcom,x1e80100-camss.yaml
-index 126400772d028..57a838fe2d229 100644
+index 2d1662ef522b7..126400772d028 100644
 --- a/Documentation/devicetree/bindings/media/qcom,x1e80100-camss.yaml
 +++ b/Documentation/devicetree/bindings/media/qcom,x1e80100-camss.yaml
-@@ -186,8 +186,6 @@ required:
-   - iommus
-   - power-domains
-   - power-domain-names
--  - vdd-csiphy-0p8-supply
--  - vdd-csiphy-1p2-supply
-   - ports
+@@ -104,7 +104,22 @@ properties:
+       - const: sf_icp_mnoc
  
- additionalProperties: false
+   iommus:
+-    maxItems: 8
++    oneOf:
++      - items:
++          - description: S1 HLOS IFE and IFE_LITE non-protected read
++          - description: S1 HLOS IFE and IFE_LITE non-protected write
++          - description: S1 HLOS SFE non-protected read
++          - description: S1 HLOS SFE non-protected write
++          - description: S1 HLOS CDM IFE non-protected
++          - description: Legacy slot 0 - do not use
++          - description: Legacy slot 1 - do not use
++          - description: Legacy slot 2 - do not use
++      - items:
++          - description: S1 HLOS IFE and IFE_LITE non-protected read
++          - description: S1 HLOS IFE and IFE_LITE non-protected write
++          - description: S1 HLOS SFE non-protected read
++          - description: S1 HLOS SFE non-protected write
++          - description: S1 HLOS CDM IFE non-protected
+ 
+   power-domains:
+     items:
+@@ -332,13 +347,10 @@ examples:
+                                  "sf_icp_mnoc";
+ 
+             iommus = <&apps_smmu 0x800 0x60>,
++                     <&apps_smmu 0x820 0x60>,
++                     <&apps_smmu 0x840 0x60>,
+                      <&apps_smmu 0x860 0x60>,
+-                     <&apps_smmu 0x1800 0x60>,
+-                     <&apps_smmu 0x1860 0x60>,
+-                     <&apps_smmu 0x18e0 0x00>,
+-                     <&apps_smmu 0x1980 0x20>,
+-                     <&apps_smmu 0x1900 0x00>,
+-                     <&apps_smmu 0x19a0 0x20>;
++                     <&apps_smmu 0x18a0 0x0>;
+ 
+             power-domains = <&camcc CAM_CC_IFE_0_GDSC>,
+                             <&camcc CAM_CC_IFE_1_GDSC>,
 
 -- 
 2.54.0
