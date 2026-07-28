@@ -4,61 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 222D2C54F4C
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Jul 2026 06:31:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E38AC53219
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Jul 2026 06:45:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IxJNuhaVo+qRMTM1mNxrtKBfSUr2Uf7vw7ns9vLQtUw=; b=Wm1mbg+P8xu9Jf
-	en5wFKdqWzlKM4AxUD8Hwlc6ChqCPUyF3ZTgqHS/HbsKe9QLbzUd4n+0DqGec9g7kucYidGXB1Z/S
-	1DztPWV8z0Paa2s45+CP6iZ7+nk892y/hWEyskK2plBTaF36zwgMMgKcrdGzsoUD0w+WHfGPDaLbP
-	asQ/W3Ro0cZXbLEIZpKmgiYykncDaj1QNskIiyrDsXViSBEU36qOw8KoDYn8Fyh/qQMIHBfTlkfhC
-	FnTQTlFkB4KYHQ27e/FBs3TR33jzso4xEfbFdl5oaNQbeX4s8KUKKyxMiH8OTujKnBDHUhoRDm1Gi
-	ueYlNFklWCNFaAqMHr3w==;
+	List-Owner; bh=LZaHwEifDgL12adOdJJkCd9kHpbv3g/fxXrtQ1W8LfQ=; b=tMMTRHawIzfwMS
+	dFjSe7zKKPbaROUU9tCxyokVNczzejHEvwJOaZJ2yW3RBBC7LZ9mE6LxmKEkcwWoQEA6GQRc+sCpA
+	T1euzkwjJoYinw19rGnA5p2w890hVVZpakkORHzpYe2p16Fhas0pKgjUkiTo8GqkCnRgJRFPEqgJm
+	mHG3dOoD30XLpkflde0kdHRWV4z4r3K3FWoA1jxW5jklmHIXjI+OL19IdysMQFmiekckUKCwIZVzc
+	1H9YftrhkyN9J/JXBL7Gd6nIs2fEJddygteuVxztuCDZBsVy1+vycrz5sV+/A+onWx5Z1R7PY/nFW
+	S/DwuDDdG/Fy4INtfezQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wobLU-00000004Xu5-3VW2;
-	Tue, 28 Jul 2026 06:31:20 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wobYz-00000004Ymp-07pI;
+	Tue, 28 Jul 2026 06:45:17 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wobLS-00000004XtT-3EZ4;
-	Tue, 28 Jul 2026 06:31:18 +0000
+	id 1wobYy-00000004YmS-0u1M;
+	Tue, 28 Jul 2026 06:45:16 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 8613A43931;
-	Tue, 28 Jul 2026 06:31:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3C8461F000E9;
-	Tue, 28 Jul 2026 06:31:16 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 8B56B4115F;
+	Tue, 28 Jul 2026 06:45:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 13AC91F000E9;
+	Tue, 28 Jul 2026 06:45:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1785220278;
-	bh=lz3PR9OcYlfCk4wufRdu6End12F1+kNjFYW/Bo2K5NA=;
+	s=k20260515; t=1785221115;
+	bh=MvNmUb4ZS1d9lyY41zp5YX8a28fQAoF6vPrsy6o8k9A=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=epOvkjoI39bU5dVaYF3juBfYrce8bDlMCDRW1i4/Md+FEqQDazDLDGioiFYuV6u7/
-	 CPB+wKqyxPCTti2nMXwLBiFnr6TOuiPz5a7vDO5tipOKFvhlH/Bk4rtuMMuh8yRLKM
-	 8oGFpEOK+3AflIwKbliRCBkNJGjSIPYtA9m5LALQ/9kLZ39+2sflTNV97HB1Gm6zMU
-	 oPAd57sitVOiptbs7NlzqWfpEpZuK14bzauV1Sis/g5HrdK/zOMWwXrHLNPFkVHDgs
-	 ubFSjwpSOMRztYMsBNtkpIkJhuZbqaeXI/vqJU+VvO3MG3c3KJD8r6FxVf+4wbjkny
-	 Pjv49DrGtOiRg==
-Date: Tue, 28 Jul 2026 08:31:13 +0200
+	b=mS3iWNsCxRFptNaGej/d4kOdk/edC/2wt6OD25drgpgWUY5v64YiFZkp8kyoHiTw4
+	 ogq9mBBNRWVpWcIXTLLt3mPbWXVYdpJSYUfPFulB3ZgB4ULvdd09prYNtTdclJRraj
+	 jrxZp4IifxPshMBKheZqnHQLD6bJh3jr0dqrXR4s4OmH+wUCKLHfEfmN0Dkw1LBoyB
+	 UzpbtZ/asPoQLvePIAltatTPjiLgaZKWOigY6YbUWfkJZbWXMkvpwUYxHRGNTCA0ew
+	 zmnCXARDFvJtzDY9pCbNKG5arkQodN5lJo2JVO4SA9Ss2u3C9EwnZgyMyI3huuJKae
+	 GwLCNaeeJXHtw==
+Date: Tue, 28 Jul 2026 08:45:10 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Stefan =?utf-8?B?RMO2c2luZ2Vy?= <stefandoesinger@gmail.com>
-Cc: Michael Turquette <mturquette@baylibre.com>, 
-	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Philipp Zabel <p.zabel@pengutronix.de>, Brian Masney <bmasney@redhat.com>, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Russell King <linux@armlinux.org.uk>, Lee Jones <lee@kernel.org>, 
-	linux-clk@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, mfd@lists.linux.dev
-Subject: Re: [PATCH v8 02/12] dt-bindings: clk: zte: Add zx297520v3 matrix
- clock and reset controller
-Message-ID: <20260728-wealthy-raspberry-lobster-bcfc8f@quoll>
-References: <20260727-zx29clk-v8-0-7a107b00f1dd@gmail.com>
- <20260727-zx29clk-v8-2-7a107b00f1dd@gmail.com>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: chunfeng.yun@mediatek.com, vkoul@kernel.org, neil.armstrong@linaro.org, 
+	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, matthias.bgg@gmail.com, 
+	linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	kernel@collabora.com
+Subject: Re: [PATCH v3 1/2] dt-bindings: phy: Document MT8196 MediaTek
+ PCI-Express Gen4 S-PHY
+Message-ID: <20260728-upbeat-invaluable-perch-bbb938@quoll>
+References: <20260720152654.92216-1-angelogioacchino.delregno@collabora.com>
+ <20260720152654.92216-2-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260727-zx29clk-v8-2-7a107b00f1dd@gmail.com>
+In-Reply-To: <20260720152654.92216-2-angelogioacchino.delregno@collabora.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,26 +68,34 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBKdWwgMjcsIDIwMjYgYXQgMDk6MjQ6MTdQTSArMDMwMCwgU3RlZmFuIETDtnNpbmdl
-ciB3cm90ZToKPiBUaGlzIGNvbnRyb2xsZXIgY29udGFpbnMgY2xvY2tzIGFuZCByZXNldHMgZm9y
-IGhpZ2ggc3BlZWQgZGV2aWNlcyBvbiB0aGUKPiB6eDI5NzUyMHYzIGJvYXJkIGFuZCBoYXJkd2Fy
-ZSBzcGlubG9ja3MgdGhhdCBJIGV4cGVjdCB3aWxsIGJlIG5lY2Vzc2FyeQo+IHRvIGNvbW11bmlj
-YXRlIGNvcnJlY3RseSB3aXRoIHRoZSBMVEUgRFNQIGZpcm13YXJlIGJsb2IuCj4gCj4gSSBkb24n
-dCBrbm93IG11Y2ggYWJvdXQgdGhlIGh3bG9ja3MgeWV0IG90aGVyIHRoYW4gdGhhdCB0aGV5IGV4
-aXN0LCBzbwo+IHRoZXJlIGlzIG5vIGhlYWRlciB5ZXQgYWRkaW5nIG1lYW5pbmcgdG8gdGhlaXIg
-aW5kaWNlcy4gUHJlc3VtYWJseSB0aGF0Cj4gbWVhbmluZyBkb2Vzbid0IGV4aXN0IGluIGhhcmR3
-YXJlIGFuZCBpcyBkZSBmYWN0byBkZWZpbmVkIGJ5IFpURSdzCj4gZmlybXdhcmUgYmxvYnMgcnVu
-bmluZyBvbiB0aGUgcnByb2NzLgo+IAo+IFRoZSB6dGUtengyOTc1MjB2My1jcm0gZHJpdmVyIHdp
-bGwgaW5zdGFudGlhdGUgc2VwYXJhdGUgTUZEIGNoaWxkcmVuIGZvcgo+IGNsb2NrcyBhbmQgcmVz
-ZXRzLCB3aGljaCBhcmUgaGFuZGxlZCBieSBzZXBhcmF0ZSBjbG9jayBhbmQgcmVzZXQKPiBkcml2
-ZXJzLgo+IAo+IFNpZ25lZC1vZmYtYnk6IFN0ZWZhbiBEw7ZzaW5nZXIgPHN0ZWZhbmRvZXNpbmdl
-ckBnbWFpbC5jb20+Cj4gCj4gLS0tCgpSZXZpZXdlZC1ieTogS3J6eXN6dG9mIEtvemxvd3NraSA8
-a3J6eXN6dG9mLmtvemxvd3NraUBvc3MucXVhbGNvbW0uY29tPgoKQmVzdCByZWdhcmRzLApLcnp5
-c3p0b2YKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFk
-ZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
-eC1waHkK
+On Mon, Jul 20, 2026 at 05:26:53PM +0200, AngeloGioacchino Del Regno wrote:
+> This adds bindings for the PCI-Express Gen4 S-PHY found in newer
+> MediaTek SoCs, such as MT8196 and its variants.
+> 
+> In the current "revision 3", depending on the specific port, this
+> S-PHY supports up to two lanes of PCI-Express Gen 4 and both EP
+> and RC modes.
+> It is not clear whether revisions/versions earlier than 3 have
+> ever been shipped in any other MediaTek SoC.
+> 
+> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+> ---
+>  .../phy/mediatek,mt8196-pcie-sphy.yaml        | 93 +++++++++++++++++++
+>  1 file changed, 93 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/mediatek,mt8196-pcie-sphy.yaml
+
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
