@@ -4,64 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D855C53219
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Jul 2026 15:30:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2546C54F54
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Jul 2026 18:10:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rfpqj98tzaIkB+s2L0uJLK7kX64Zm6/yXFANun9QKVA=; b=Mg+N9CBs77T16+
-	m6Nt+CVWfSd5cspy0wSXR5tJzZ5wzgoXvNItNEj73CRO/38KFKDK12rnXp2wvJoLixZXcwcojJmeT
-	lig6QotoJlfQlexE/5/jJhyP5vuOGS82+9Ckes/Ww38HSWDsaSHYabubfXk3v22koNvghVpUsOIMW
-	ygrHCz7LFBqhZRyw0z4IUFKPbqXzNL66RUJT8OzlXNMJkHA0ttwPj1Aua8PIwoOh8B3QiEU5Ae2cp
-	8xNcTKI4LaVlTKpNPDYrBFmvK3AAWLmQfqPBObXrosmjcpTWj0Ng1bLVRvHOaZMqsAZ7tQRYnp4RB
-	msg+k9LptLBSnD+Nrhrg==;
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:
+	References:Message-Id:Cc:Date:In-Reply-To:From:Subject:Mime-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=g5RLG1zLF3FDt4R9OkAjdiO2NlzRi1/unb4JnqBhnnI=; b=uHddbA9Xfb+TviXfU8u4kEaf7U
+	JL23yrT9jBHr+rp7462FKA3DItFxtHosWaEuXroqDx9EvKB7+3YWNpcwjUaEZyZqheUeDyEzxq0DN
+	U7/SQ+AaVOUdkxLpt1WD5AVgoIdA/qWqBHI67rtnKkn0eM0QGqI5JNQy+LWv5FWNMUvB2XKznJU1/
+	w63Wqf2gLtBM3V7Z46s5sdlOfQsMv7vpTd1H/+r3pggSSaKWqTLKVts6qRseljX5E/pC9ubcti+qf
+	7gQoPCzsXyUzDOrC/ExE9tWtJB6yC5G74EfUbaJzAjU3dZ99+8BOxCDaf9diAgFHOwrtt/iV3ToRX
+	M7VUmyHg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wojl0-00000005eFx-3dSE;
-	Tue, 28 Jul 2026 15:30:14 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1womG7-000000063J4-0yNu;
+	Tue, 28 Jul 2026 18:10:31 +0000
+Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wojkz-00000005eFW-3Eqv;
-	Tue, 28 Jul 2026 15:30:13 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 8705641AC8;
-	Tue, 28 Jul 2026 15:30:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4301B1F000E9;
-	Tue, 28 Jul 2026 15:30:09 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1785252613;
-	bh=kHMHe8DXYFbv7HkrjiopSzw/zJOF/JWl21dsP0Poq2M=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=ewu4Kyfbqhdf1jvk5L9GXGpzcB33+Eg/6yRdLcE8d1JVDXQoTvVzDBnFDVp/7c6yB
-	 9hj7lZs4vQ4dmZWRWl2spgWiKe6kWE6rPE05cHxhVlMHih9pvWmaQet+wBCpbaKSi5
-	 7Cv2lmpeP4xsnVG92JBsR+FooE1So3SFUv4GAnZllYkeQDY48mIIYCI5EKXrDWvoyw
-	 Tk/qTuaOQwTAob3WfLD5POa/TEZCb2TGwOOtPiI/54aP+BWBAxcCQR4+JSN7cKicU8
-	 UlLxfOlHeDzwpyHdKzAYa1UaPOfhHNqnZhWwgrrdkY/jV/f02u1NYHxIeqCurGVGw2
-	 qNETRf1zaM8qQ==
-Message-ID: <5306f685-46df-4956-9402-a86834f913c7@kernel.org>
-Date: Tue, 28 Jul 2026 17:30:06 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 phy-next 0/9] RCW override for 10G Lynx dynamic
- protocol reconfiguration
-To: Vladimir Oltean <vladimir.oltean@nxp.com>, Vinod Koul <vkoul@kernel.org>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
- Ioana Ciornei <ioana.ciornei@nxp.com>,
+	id 1womG4-000000063Ho-35Bw
+	for linux-phy@lists.infradead.org;
+	Tue, 28 Jul 2026 18:10:30 +0000
+Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-47f92e3c14bso173780f8f.0
+        for <linux-phy@lists.infradead.org>; Tue, 28 Jul 2026 11:10:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1785262227; x=1785867027; darn=lists.infradead.org;
+        h=to:references:message-id:cc:date:in-reply-to:from:subject
+         :mime-version:content-type:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=zRqEh40r0PnAAxBC6Ehpg1QR1kIM64rXG8fPCVXya6U=;
+        b=Nq0UUy3GXa0cyznxKIqgKhKt2K56qKYS3hyXyNp9yT9B+YYChpBzyI3f+7ZndXj1fg
+         J3x5ryAZx07X7OlPMKRb5kOEwMw+6Z7JCY1YwoKiRLPURbarhD1ZZMxpgd/bcq/t9bSy
+         Pyy60hxoYVjwYQR+9FlcNX3Pc13q/iwJfNfGJ2ltKZzzvnoaC9EFxhfqJ5Kl2bp3dOVh
+         0guZoU+ACwtNKYK79uHDFuX3GzGWWF3QJWT2Qd/AeMrk8pUVqfZHhc3QvDJEp52GKWsi
+         LDI7ztgdd+7A45Ce8jCfdO7u8bguoYzZTPJo83P/dUh7iiveC2hGg8M8G12ymJhUhMi0
+         m37Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1785262227; x=1785867027;
+        h=to:references:message-id:cc:date:in-reply-to:from:subject
+         :mime-version:content-type:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=zRqEh40r0PnAAxBC6Ehpg1QR1kIM64rXG8fPCVXya6U=;
+        b=Mms5UufLR1vVwe31BVCfZmHZWTOxhCNNW56TomWhhtmxwBp1NtyOOBpbh5eAUl0RXj
+         a9pCt1PT7BvzIK4lk3h/gFiphld9MSBXjnVs0DKverr3u9rgsTkafsDXO1OIgzyi1XpD
+         KKiIfiDCBjNM5XtvA8YpY1ggSKgABMhloaDUcK594HcRfKHrRfHpDO8/nEkyPktekxkk
+         ia2bjM2AXImDyzhq7cM1U3KXJ/sd/18cAgbdyQyjSFRVYU+qMut/qZw7tn66Grcy8qkf
+         JPMCWiy4KTeuIIxOeLr3rgSJYGkQkdBK3zimngF/olFQaEmLhduEApyrT1G8bMWuDiLt
+         OfGg==
+X-Forwarded-Encrypted: i=1; AHgh+RrLNEB+sJwqxTtu7KD9KSmO79M2INCsxopGz2gfXTHRl4TB76Qcob2JUICkogQEx1Jb/akhKgNtuII=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxR1DrpwEdpPNYP4PaTJ872aMWhP/T1FoEsoa0nsLPfz9pfkQOt
+	vx99bom27UVjP6yjqChPjhuRqYML95K3h5o/QJAh8vuRJU9xBvUdtIqu
+X-Gm-Gg: AR+sD10+0WZhBwYWQdZpkLjHAgKs9MdvUKHkb2HZrev5SfbnU6sMuHkFlNX/MgRprEy
+	UhrBcS9oub3/ZjGcqd333Im/1KgYRbvIwDUMGetZ7assOaVIUM1QEwFumwkzQqN670DQSoK9m44
+	d9EDPCpV2k9DFulYCcVEuNexr5Ic2kKlSGSBr8Ah6nUvYqziwdUKmRwL+VucuYXRlSgRXLz6YP5
+	gRrdV36vX0cO/Ziqla452coPFyzbtze20jiLb4K8t0cn7xaM2L68JnHzcXpuMz4l93TMpJ4yCfn
+	KMOLZigRcDxAzdcisTlm0ZLn1YDlju7wqNioqfMFFexo+zqcLrFmdbmYH1tb07oG4v2gkOZT14U
+	NDAp+DDh3LtmYgp+qkETGYOxrsxmTBDAigeQsDkipvMCU2J3vRrR5uCnpiSurZB9KD4QBRrcAU0
+	sEvHiVQVn4KZXqJcuXVGa9CyXx4cwAEpE=
+X-Received: by 2002:a05:6000:230e:b0:47f:9720:4740 with SMTP id ffacd0b85a97d-47fb1e9f82amr4362694f8f.37.1785262226606;
+        Tue, 28 Jul 2026 11:10:26 -0700 (PDT)
+Received: from smtpclient.apple ([197.250.51.166])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-47fb6abd0a6sm800035f8f.10.2026.07.28.11.10.19
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 28 Jul 2026 11:10:25 -0700 (PDT)
+Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3864.600.51.1.1\))
+Subject: Re: [PATCH v8 01/12] dt-bindings: clk: zte: Add zx297520v3 top clock
+ and reset controller
+From: =?utf-8?Q?Stefan_D=C3=B6singer?= <stefandoesinger@gmail.com>
+In-Reply-To: <20260728-proficient-boobook-of-will-2cc94a@quoll>
+Date: Tue, 28 Jul 2026 21:10:03 +0300
+Cc: Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>,
+ Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Brian Masney <bmasney@redhat.com>,
+ Vinod Koul <vkoul@kernel.org>,
  Neil Armstrong <neil.armstrong@linaro.org>,
- Tanjeff Moos <tanjeff.moos@westermo.com>, Michael Walle <mwalle@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>, Frank Li <Frank.Li@nxp.com>,
- linux-kernel@vger.kernel.org, Conor Dooley <conor+dt@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Rob Herring <robh@kernel.org>
-References: <20260721231603.67865-1-vladimir.oltean@nxp.com>
- <20260723150105.da2cqgtb7t5vw2d3@skbuf>
- <20260728134746.p7zqstau6376xifj@skbuf>
-Content-Language: fr-FR
-From: "Christophe Leroy (CS GROUP)" <chleroy@kernel.org>
-In-Reply-To: <20260728134746.p7zqstau6376xifj@skbuf>
+ Russell King <linux@armlinux.org.uk>,
+ Lee Jones <lee@kernel.org>,
+ linux-clk@vger.kernel.org,
+ devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org,
+ mfd@lists.linux.dev
+Message-Id: <3A3A0D17-7A80-40FE-AB89-DDE8E9A7F72B@gmail.com>
+References: <20260727-zx29clk-v8-0-7a107b00f1dd@gmail.com>
+ <20260727-zx29clk-v8-1-7a107b00f1dd@gmail.com>
+ <20260728-proficient-boobook-of-will-2cc94a@quoll>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+X-Mailer: Apple Mail (2.3864.600.51.1.1)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260728_111028_789797_916AF651 
+X-CRM114-Status: GOOD (  14.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,64 +112,115 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============4256692720824105185=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgT2x0ZWFuLAoKTGUgMjgvMDcvMjAyNiDDoCAxNTo0NywgVmxhZGltaXIgT2x0ZWFuIGEgw6lj
-cml0wqA6Cj4gSGkgQ2hyaXN0b3BoZSwKPiAKPiBPbiBUaHUsIEp1bCAyMywgMjAyNiBhdCAwNjow
-MTowNVBNICswMzAwLCBWbGFkaW1pciBPbHRlYW4gd3JvdGU6Cj4+IE9uIFdlZCwgSnVsIDIyLCAy
-MDI2IGF0IDAyOjE1OjU0QU0gKzAzMDAsIFZsYWRpbWlyIE9sdGVhbiB3cm90ZToKPj4+IElvYW5h
-IENpb3JuZWkgKDQpOgo+Pj4gICAgc29jOiBmc2w6IGd1dHM6IHVzZSBhIG1hY3JvIHRvIGVuY29k
-ZSB0aGUgRENGRyBDQ1NSIHNwYWNlCj4+PiAgICBzb2M6IGZzbDogZ3V0czogYWRkIGEgZ2xvYmFs
-IHN0cnVjdHVyZSB0byBob2xkIHN0YXRlCj4+PiAgICBzb2M6IGZzbDogZ3V0czogYWRkIGEgY2Vu
-dHJhbCBmc2xfZ3V0c19yZWFkKCkgZnVuY3Rpb24KPj4+ICAgIHNvYzogZnNsOiBndXRzOiBtYWtl
-IGl0IGVhc2llciB0byBkZXRlcm1pbmUgb24gd2hpY2ggU29DIHdlIGFyZQo+Pj4gICAgICBydW5u
-aW5nCj4+Pgo+Pj4gVmxhZGltaXIgT2x0ZWFuICg1KToKPj4+ICAgIHNvYzogZnNsOiBndXRzOiBw
-ZXJmb3JtIGZzbF9ndXRzX2luaXQoKSBlcnJvciB0ZWFyZG93biBpbiByZXZlcnNlCj4+PiAgICAg
-IG9yZGVyIG9mIHNldHVwCj4+PiAgICBzb2M6IGZzbDogZ3V0czogbWFrZSBmc2xfc29jX2RhdGEg
-YXZhaWxhYmxlIGFmdGVyIGZzbF9ndXRzX2luaXQoKQo+Pj4gICAgZHQtYmluZGluZ3M6IGZzbDog
-bGF5ZXJzY2FwZS1kY2ZnOiBkZWZpbmUgRENGR19EQ1NSIHJlZ2lvbgo+Pj4gICAgc29jOiBmc2w6
-IGd1dHM6IGltcGxlbWVudCB0aGUgUkNXIG92ZXJyaWRlIHByb2NlZHVyZQo+Pj4gICAgcGh5OiBs
-eW54LTEwZzogdXNlIFJDVyBvdmVycmlkZSBwcm9jZWR1cmUgZm9yIGR5bmFtaWMgcHJvdG9jb2wg
-Y2hhbmdlCj4+Cj4+IEV2ZW4gdGhvdWdoIEkgaW50ZW5kZWQgdGhlc2UgY2hhbmdlcyBmb3IgbGlu
-dXgtcGh5ICh0aGV5IGFyZSBhbHNvCj4+IGJ1aWxkLXRlc3RlZCB0aGVyZSksIEknbSBmaW5lIGVp
-dGhlciB3aXRoIHRoZXNlIGNoYW5nZXMgdGFrZW4gdGhyb3VnaAo+PiBWaW5vZCdzIHRyZWUgd2l0
-aCBDaHJpc3RvcGhlJ3MgQUNLIGZvciBwYXRjaGVzIDEtOCwgb3IgdGhyb3VnaAo+PiBDaHJpc3Rv
-cGhlJ3MgdHJlZSB3aXRoIFZpbm9kJ3MgQUNLIGZvciBwYXRjaCA5LCByZWFsbHkuCj4+Cj4+IEkg
-c2VlIG9uIFBhdGNod29yayB0aGVyZSdzIGEgbWlub3IgaXNzdWUgaW4gdGhlIGNvbW1pdCBtZXNz
-YWdlIG9mIHBhdGNoIDMvOToKPj4gaHR0cHM6Ly9ldXIwMS5zYWZlbGlua3MucHJvdGVjdGlvbi5v
-dXRsb29rLmNvbS8/dXJsPWh0dHBzJTNBJTJGJTJGcGF0Y2h3b3JrLmtlcm5lbC5vcmclMkZwcm9q
-ZWN0JTJGbGludXgtcGh5JTJGcGF0Y2glMkYyMDI2MDcyMTIzMTYwMy42Nzg2NS00LXZsYWRpbWly
-Lm9sdGVhbiU0MG54cC5jb20lMkYmZGF0YT0wNSU3QzAyJTdDY2hyaXN0b3BoZS5sZXJveSU0MGNz
-Z3JvdXAuZXUlN0NkZmNhYTY4NDUyZmM0NmEzMjg1MTA4ZGVlY2FlZDQzNiU3QzhiODdhZjdkODY0
-NzRkYzc4ZGY0NWY2OWEyMDExYmI1JTdDMCU3QzAlN0M2MzkyMDg0MzI3OTM4NTEyMDQlN0NVbmtu
-b3duJTdDVFdGcGJHWnNiM2Q4ZXlKRmJYQjBlVTFoY0draU9uUnlkV1VzSWxZaU9pSXdMakF1TURB
-d01DSXNJbEFpT2lKWGFXNHpNaUlzSWtGT0lqb2lUV0ZwYkNJc0lsZFVJam95ZlElM0QlM0QlN0Mw
-JTdDJTdDJTdDJnNkYXRhPUFVWSUyQklaRWlGcDNhTEFPNEhsSFFDcko5Wm5DeUZxenNoUEVHcTZD
-cGZtVSUzRCZyZXNlcnZlZD0wCj4+ICJXQVJOSU5HOiAnc3RydXR1cmUnIG1heSBiZSBtaXNzcGVs
-bGVkIC0gcGVyaGFwcyAnc3RydWN0dXJlJz8iCj4+Cj4+IENvdWxkIHRoaXMgYmUgZml4ZWQgdXAg
-d2hpbGUgYXBwbHlpbmcsIGlmIHRoZXJlIGlzIG5vIG90aGVyIGZlZWRiYWNrPwo+IAo+IERvIHlv
-dSBoYXZlIGZlZWRiYWNrL2EgcHJlZmVyZW5jZSBmb3IgaG93IHRoZXNlIHBhdGNoZXMgc2hvdWxk
-IGJlIGhhbmRsZWQ/Cj4gCj4gSSBzZWUgVmlub2QgYWNrZWQgcGF0Y2ggOSwgc28gSSBndWVzcyB0
-aGF0IG1lYW5zIGhpcyBwcmVmZXJlbmNlIHdvdWxkIGJlCj4gZm9yIHlvdSB0byBwaWNrIHVwIHRo
-ZSBlbnRpcmUgc2VyaWVzICh3aGljaCBpcyBpbmRpdmlzaWJsZSkuCj4gCj4gSSBjaGVja2VkIHRo
-YXQgdGhlIHBhdGNoZXMgYXBwbHkgdG8geW91ciBzb2NfZnNsIGJyYW5jaDoKPiBodHRwczovL2V1
-cjAxLnNhZmVsaW5rcy5wcm90ZWN0aW9uLm91dGxvb2suY29tLz91cmw9aHR0cHMlM0ElMkYlMkZn
-aXQua2VybmVsLm9yZyUyRnB1YiUyRnNjbSUyRmxpbnV4JTJGa2VybmVsJTJGZ2l0JTJGY2hsZXJv
-eSUyRmxpbnV4LmdpdCUyRiUzRmglM0Rzb2NfZnNsJmRhdGE9MDUlN0MwMiU3Q2NocmlzdG9waGUu
-bGVyb3klNDBjc2dyb3VwLmV1JTdDZGZjYWE2ODQ1MmZjNDZhMzI4NTEwOGRlZWNhZWQ0MzYlN0M4
-Yjg3YWY3ZDg2NDc0ZGM3OGRmNDVmNjlhMjAxMWJiNSU3QzAlN0MwJTdDNjM5MjA4NDMyNzkzODc3
-MTI4JTdDVW5rbm93biU3Q1RXRnBiR1pzYjNkOGV5SkZiWEIwZVUxaGNHa2lPblJ5ZFdVc0lsWWlP
-aUl3TGpBdU1EQXdNQ0lzSWxBaU9pSlhhVzR6TWlJc0lrRk9Jam9pVFdGcGJDSXNJbGRVSWpveWZR
-JTNEJTNEJTdDMCU3QyU3QyU3QyZzZGF0YT14anB3UkNNSW5jV3BXODl6S3poaWwyMCUyQmNVaG5H
-NExQYUZOYnh3MXB1ZTglM0QmcmVzZXJ2ZWQ9MAo+IAoKSHVtIC4uLiBTZWVtcyBsaWtlIEkgb3Zl
-cmxvb2tlZCB5b3VyIG1lc3NhZ2UgYXMgaXQgd2FzIGZsYWdnZWQgcGh5LW5leHQgCmFuZCBJIHdh
-cyBvbiBzdW1tZXIgdmFjYXRpb24gb24gbGFzdCB0d28gd2Vla3MuCgpJJ20gZmluZSB3aXRoIHRh
-a2luZyB0aGVtIHZpYSBzb2NfZnNsIHRyZWUuIEkgd29uJ3QgdGFrZSB0aGVtIHRvZGF5IApiZWNh
-dXNlIEknbSBhbHJlYWR5IHB1c2hpbmcgYSBsYXJnZSBzZXJpZXMgZnJvbSBQYXVsIExvdXZlbCBi
-dXQgSSdkIHB1c2ggCnRoZW0gYnkgdG9tb3Jyb3cgb3IgdGh1cmRheS4KClBsZWFzZSByYWlzZSBo
-YW5kIGlmIG5vdGhpbmcgaGFwcGVuZWQgYnkgZnJpZGF5LgoKQ2hyaXN0b3BoZQoKLS0gCmxpbnV4
-LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+
+--===============4256692720824105185==
+Content-Type: multipart/signed;
+	boundary="Apple-Mail=_74B8EE53-C8E5-442D-8CD5-A08FCBF83C61";
+	protocol="application/pgp-signature";
+	micalg=pgp-sha256
+
+
+--Apple-Mail=_74B8EE53-C8E5-442D-8CD5-A08FCBF83C61
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+Hi Krzysztof,
+
+Thanks for the prompt review!
+
+> Am 28.07.2026 um 09:27 schrieb Krzysztof Kozlowski <krzk@kernel.org>:
+>=20
+>>=20
+>> +  resets:
+>> +    items:
+>> +      - description: USB phy reset
+>> +      - description: HSIC phy reset
+>> +
+>> +  reset-names:
+>> +    items:
+>> +      - const: usb
+>> +      - const: hsic
+>=20
+> You do not need these two. It's one device and DT does not represent
+> internal device wirings because they are redundant (deducible from the
+> compatible).
+
+Just to make sure I understand the implications: Remove the PHY resets =
+from the reset header (and driver) and have the PHY driver control them =
+directly via regmap instead of going through its reset sibling? That way =
+no self-consumption is necessary. At least that's the idea Sashiko put =
+into my head with "Could the driver interact with its own registers =
+directly?".
+
+The PHY driver would take exclusive ownership of the resets anyhow, so I =
+don't see anything in the way of just making it own the respective bits =
+in the 0x80 register through the shared regmap.
+
+>> +required:
+>> +  - compatible
+>> +  - reg
+>> +  - clocks
+>> +  - clock-names
+>> +  - interrupts
+>> +  - interrupt-names
+>> +  - resets
+>> +  - reset-names
+>> +  - syscon-reboot
+>> +  - "#clock-cells"
+>> +  - "#phy-cells"
+>> +  - "#reset-cells"
+>> +
+>> +unevaluatedProperties: false
+>=20
+> This was different last time and previous code was correct.
+
+Ok, I'll keep #phy-cells and ints optional and also make it possible to =
+provide only USB or HSIC ints.
+
+
+--Apple-Mail=_74B8EE53-C8E5-442D-8CD5-A08FCBF83C61
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment;
+	filename=signature.asc
+Content-Type: application/pgp-signature;
+	name=signature.asc
+Content-Description: Message signed with OpenPGP
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEQxb0tqoFWyeVMl1sPRO8yFRPGiIFAmpo8HsACgkQPRO8yFRP
+GiLPTA//VT+BJ+4K6QWEatqxIi67Rfy+A3mhALsMoPStAPoN8KELPVr+JoqLoFD8
+lz9s0uj1PXWN1CmBArx6Hzm1N35owUoP46VLnwqrIAR0gaor+PQPHJ9In5L6E6Lm
+SdUs0QfxWMV75E2IM1tTRf8MKa6SnCvEp72OAYdMgRzEd7f0vp9fV9716yb0Ej7q
+ZXG85U4f/1++S5XHoPxqFxrxunsJoX4GgVEmKyeB9N3spWjS7KykKo2UYFZEctFg
+RUiai7lO1I2X9DuFGkuVZcouCIcpB1eJHx7r3UOTwIG6kbTKHBjWoq32L2tjUY4B
+nSkU7vMfwUA387n/zdeisN6smcf0C8uH3g8PSozuzaojYQzAr5MjbmgDue2R1LQi
+wVfHBdREUJL1WHt25UgiE5EcBcrQhwxccqDuWbkXH9toxP0HUEpTn9gdB8yNdGQx
+HSLsQCaqOew5/9nPEnwn0X7q7FnnBSOYv6AQ5g96xPeuNDNQ2n8f80X8iBmy3qup
+tWM+cCViEhEkoLl0x+/XTO6vfljHztZCpv2Xey9PGs7HDtyJbBMTkcHdcCTFV9yo
+RKzQMdJgqmIfycOlUGL+eHCI1X9SGEZc7hcENPBn666TnnWf3XrsCKZNHFBCU85e
+HUylGFuzN2pdc1MzYxgwFIJhKLtsVV8pLrnR3WfCD/2F6XYb36g=
+=Oh+I
+-----END PGP SIGNATURE-----
+
+--Apple-Mail=_74B8EE53-C8E5-442D-8CD5-A08FCBF83C61--
+
+
+--===============4256692720824105185==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============4256692720824105185==--
+
