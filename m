@@ -4,54 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57F28C53209
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Jul 2026 20:13:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ACA07C53219
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Jul 2026 02:09:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mxzD9/8NS4pzF7CIJ120jHs0J6fuI2YMHoVJpcc42bo=; b=KMmrIKKy8cE2Mo
-	msBaylRC51HQVJ81Os7mNXNOXbqeKUJgfAcJj2HyWYZyQx1Qi4kD7HdkfUM07qrlxsl7q3IIZJeXa
-	jxmirJ20jXaoqOMFnhb11tuvBOlvWlXkGD6LuN/MJF19Chnftmy7VzK9KwTBlNna9+vTBYhjnJwzq
-	vzVecHDiyBHDiq5ZfOejCJjmnPkCxuPrenJI8Wj7Vxf9g+2nJuFHz1ym2GBv6XdZbhQkqjyHhmY3u
-	T1oXDPSoxQPJ0xVYmov+I1N0kvAnIuxjmZ5fiQ0WYd7/mDetvXaNEDQWjsrmkE+3wg8pRj5AwpJtg
-	WWz20ujzjqtSggzofx3g==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=2MQreYJGpTLnpnzXal/sP8s5pok3m4R71erWS+q0Ing=; b=CX3B9TqOQiEAzSTGYlaHh5mFuH
+	32eMrVu8Rd4EcVT7QRuAXF1ajmi/nMZS9WyTbIdLwhHfe5CeLHR2B/epeO/MFwm+4uyt84j5S5tkp
+	ELlWx9Ju8vLgb15DUFwrFkyALINGcYZkb08yKt7YWagCtGKXCaRn65iKzy5p0YRrWQx4WFHZePYYP
+	TPNwFTj9Idn+Dsfuk0047DMoDX8sxRnFHWaJ1VMzW0fNT5fUPNH4DTC9IJKQY3O16iq3Sq/l8F7mx
+	0oubnA5GgSFwcQRDAkKPn6O2Td6e3uLLdJmdSSeQurEzW4rBeLhEMcFJOU2NkkdbtyF6Uy/jI7qHL
+	wfEdxgzw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1woRhJ-00000003oVw-3iEh;
-	Mon, 27 Jul 2026 20:13:13 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1woXGG-00000004EOm-3TDY;
+	Tue, 28 Jul 2026 02:09:40 +0000
+Received: from sender4-op-o11.zoho.com ([136.143.188.11])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1woRhI-00000003oVe-3Ttc
-	for linux-phy@lists.infradead.org;
-	Mon, 27 Jul 2026 20:13:12 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id CA00B60008;
-	Mon, 27 Jul 2026 20:13:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B0BEB1F000E9;
-	Mon, 27 Jul 2026 20:13:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1785183191;
-	bh=5hxWJ8fLVh63dP5SxRY8c9B0C70IaVjp/E0hFXzcp0c=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=HC5MTNkkbzsz9CmhVs6Yg86O6w7xdM5/0MxP8D/qMOSFxqVMRvee/hvpwFfYdfZWk
-	 BRGUV263E7jlSEH4z7VK0+PPqyrHcJaLrxy5eIBHQdPum7Q8XDbmIHI/OqpUe8ziqg
-	 /inc46OwgLkpQ4mEN37gEgCNX4vbyav1fzbUPgmhUg3fEfUuwjqg6YyECihAAnAXJX
-	 wZ0d2j4F7FY3LiBB9J7CZ1uRnw/yyVjcm0IfZceAOQPCMvIS5mXotX4rGbTDxmDfHx
-	 CvIwK+vmFH6mfYaey90uDLYB3iRWQlJSM8xH9dstQz2Fb9gTyFXgivEvvtNIg8K8CE
-	 7HhEiCRFIY/og==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v8 12/12] ARM: dts: zte: Declare zx297520v3 CRM device
- nodes
-To: =?utf-8?b?U3RlZmFuIETDtnNpbmdlcg==?= <stefandoesinger@gmail.com>
-Cc: vkoul@kernel.org, neil.armstrong@linaro.org, linux-phy@lists.infradead.org, mfd@lists.linux.dev, lee@kernel.org, robh@kernel.org, olteanv@gmail.com, devicetree@vger.kernel.org, conor+dt@kernel.org
-In-Reply-To: <20260727-zx29clk-v8-12-7a107b00f1dd@gmail.com>
-References: <20260727-zx29clk-v8-0-7a107b00f1dd@gmail.com>
- <20260727-zx29clk-v8-12-7a107b00f1dd@gmail.com>
-Date: Mon, 27 Jul 2026 20:13:10 +0000
-Message-Id: <20260727201310.B0BEB1F000E9@smtp.kernel.org>
+	id 1woXGE-00000004EO2-0KGP;
+	Tue, 28 Jul 2026 02:09:39 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1785204503; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=ADvwHjaqTI7E0Ew6bj3umGfz0Hr7gp1rj6aB3gUM773C/DsZaYi8kEDT41qeczvA0IV3mu4P0OTpDjNk1gF6r7EwNOPXNEbxvpMJIEy0iVdU1J9l4c1iPBeOLUw8OC/zzxXQeYU9KX3Hxy51CgnSm5TJQVV6/Bb1VCfeTsnOrR0=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1785204503; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=RyEWZIgGoF00G9qiUl97iH+HUGBemn4hfiC+wbFVDiI=; 
+	b=nlSDbbaQ8REpRbXiHYh4dAJk2Jp298wpYTkR1Q+qPXdmhTmbgkd8H9ItP6GBCvWkl/UzYYkqwOf6GKUxHlEfuhwBDXLHrzncKukOK7cVtOTSajfbHuLodf4WD7R6kHRRcZP+dL8I5cceRtQVe1F8Pzw7ezpJZLX/AifT4YTg65w=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
+	dmarc=pass header.from=<sebastian.reichel@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1785204503;
+	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
+	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
+	bh=RyEWZIgGoF00G9qiUl97iH+HUGBemn4hfiC+wbFVDiI=;
+	b=R/daAVTSKLTAycVKPXjCmrhxZH0DDxBEiKhWVgKorykxEbxt8t7KEacDegxCEub9
+	h/AzVtHxD1eJEMyNv6BX1EjE7oWrc6Euc1bfL5JzxWviEJJIaq0/zyM8dHb9toFaMMZ
+	2L4JX7WXzvkWFwdMwGBHzelz54v7IbnVDHz1p+gM=
+Received: by mx.zohomail.com with SMTPS id 1785204500990426.00984876395273;
+	Mon, 27 Jul 2026 19:08:20 -0700 (PDT)
+Received: by venus (Postfix, from userid 1000)
+	id 759CE180524; Tue, 28 Jul 2026 04:08:14 +0200 (CEST)
+Date: Tue, 28 Jul 2026 04:08:14 +0200
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+To: Chaoyi Chen <kernel@airkyi.com>
+Cc: Andrzej Hajda <andrzej.hajda@intel.com>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>, 
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, Jonas Karlman <jonas@kwiboo.se>, 
+	Jernej Skrabec <jernej.skrabec@gmail.com>, Luca Ceresoli <luca.ceresoli@bootlin.com>, 
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
+	Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, 
+	Simona Vetter <simona@ffwll.ch>, Sandy Huang <hjc@rock-chips.com>, 
+	Heiko =?utf-8?Q?St=C3=BCbner?= <heiko@sntech.de>, Andy Yan <andy.yan@rock-chips.com>, 
+	Vinod Koul <vkoul@kernel.org>, Chaoyi Chen <chaoyi.chen@rock-chips.com>, 
+	Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, Heikki Krogerus <heikki.krogerus@linux.intel.com>, 
+	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH v4 0/5] This series is split from the v15 "Add Type-C DP
+ support for RK3399 EVB
+Message-ID: <amgMXujurBrB5B0L@venus>
+References: <20260727064408.101-1-kernel@airkyi.com>
+MIME-Version: 1.0
+In-Reply-To: <20260727064408.101-1-kernel@airkyi.com>
+X-Zoho-Virus-Status: 1
+X-Zoho-AV-Stamp: zmail-av-0.2.10.1.5.2/285.167.77
+X-ZohoMailClient: External
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260727_190938_182333_20FD467F 
+X-CRM114-Status: GOOD (  23.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,71 +87,156 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============8549633615244351447=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIFRoZSBsc3Bjcm0gZGV2
-aWNlIGRlZmluZXMgYSBoYXJkd2FyZSByZXNldCBkZXBlbmRlbmN5IG9uIG1hdHJpeGNybSAoWlgy
-OTc1MjBWM19MU1BfUkVTRVQpLCBidXQgdGhlIENSTSBkcml2ZXJzIG5ldmVyIHJlcXVlc3Qgb3Ig
-ZGVhc3NlcnQgaXQsIHdoaWNoIGNhbiBsZWFkIHRvIGEgaGFyZHdhcmUgaGFuZyB3aGVuIGFjY2Vz
-c2luZyB0aGUgcmVnaXN0ZXJzLgotIFtMb3ddIE5vZGVzIHVuZGVyIHRoZSBgc29jYCBidXMgYXJl
-IG5vdCBzb3J0ZWQgYnkgdGhlaXIgdW5pdCBhZGRyZXNzLgotIFtMb3ddIE5vbi1nZW5lcmljIG5v
-ZGUgbmFtZSBgc3lzY29uLXJlYm9vdGAuCi0tCgotLS0gUGF0Y2ggWzEyXTogW1BBVENIIHY4IDEy
-LzEyXSBBUk06IGR0czogenRlOiBEZWNsYXJlIHp4Mjk3NTIwdjMgQ1JNIGRldmljZSBub2RlcyAt
-LS0KY29tbWl0IGFlNDI0OTJiOGVmNmZjZTQ3MzE2NDZmNjkwN2JhNjNkYzk0ZTlmZmEKQXV0aG9y
-OiBTdGVmYW4gRMO2c2luZ2VyIDxzdGVmYW5kb2VzaW5nZXJAZ21haWwuY29tPgoKQVJNOiBkdHM6
-IHp0ZTogRGVjbGFyZSB6eDI5NzUyMHYzIENSTSBkZXZpY2Ugbm9kZXMKClRoaXMgY29tbWl0IHdp
-cmVzIHVwIHRoZSB6eDI5NzUyMHYzIENSTSBkZXZpY2Ugbm9kZXMsIGNsb2NrIGlucHV0cywKYW5k
-IHJlc2V0cywgZ2V0dGluZyByaWQgb2YgdGhlIHBsYWNlaG9sZGVyIHVhcnRjbGsgbm9kZS4KCj4g
-ZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3p0ZS96eDI5NzUyMHYzLmR0c2kgYi9hcmNo
-L2FybS9ib290L2R0cy96dGUvengyOTc1MjB2My5kdHNpCj4gLS0tIGEvYXJjaC9hcm0vYm9vdC9k
-dHMvenRlL3p4Mjk3NTIwdjMuZHRzaQo+ICsrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3p0ZS96eDI5
-NzUyMHYzLmR0c2kKClsgLi4uIF0KCj4gQEAgLTcwLDEzICs3NSw3NCBAQCBnaWM6IGludGVycnVw
-dC1jb250cm9sbGVyQGYyMDAwMDAwIHsKPiAgCQkJICAgICAgPDB4ZjIwNDAwMDAgMHgyMDAwMD47
-Cj4gIAkJfTsKPiAgCj4gKwkJdG9wY3JtOiBjbG9jay1jb250cm9sbGVyQDEzYjAwMCB7Cj4gKwkJ
-CWNvbXBhdGlibGUgPSAienRlLHp4Mjk3NTIwdjMtdG9wY3JtIiwgInN5c2NvbiI7Cj4gKwkJCXJl
-ZyA9IDwweDAwMTNiMDAwIDB4NDAwPjsKCltTZXZlcml0eTogTG93XQpBcmUgdGhlc2UgbmV3IG5v
-ZGVzIGluc2VydGVkIG91dCBvZiBvcmRlciByZWxhdGl2ZSB0byB0aGVpciB1bml0IGFkZHJlc3Nl
-cz8KClRoZSB0b3Bjcm0gbm9kZSBhdCAxM2IwMDAgaXMgcGxhY2VkIGJlZm9yZSBtYXRyaXhjcm0g
-YXQgMTMwNjAwMCwgYW5kIGxzcGNybQphdCAxNDAwMDAwIGlzIHBsYWNlZCBiZWZvcmUgdWFydDAg
-YXQgMTMxMDAwLiBJdCBpcyBjdXN0b21hcnkgdG8gc29ydCBub2Rlcwp1bmRlciBhIGJ1cyBieSB0
-aGVpciB1bml0IGFkZHJlc3MgdG8gbWFpbnRhaW4gcmVhZGFiaWxpdHkuCgpbIC4uLiBdCgo+ICsJ
-CQkjY2xvY2stY2VsbHMgPSA8MT47Cj4gKwkJCSNwaHktY2VsbHMgPSA8MT47Cj4gKwkJCSNyZXNl
-dC1jZWxscyA9IDwxPjsKPiArCj4gKwkJCXN5c2Nvbi1yZWJvb3Qgewo+ICsJCQkJY29tcGF0aWJs
-ZSA9ICJzeXNjb24tcmVib290IjsKPiArCQkJCW9mZnNldCA9IDwweDA+Owo+ICsJCQkJdmFsdWUg
-PSA8MHgxPjsKPiArCQkJCW1hc2sgPSA8MHgxPjsKPiArCQkJfTsKCltTZXZlcml0eTogTG93XQpT
-aG91bGQgdGhpcyBub2RlIHVzZSBhIGdlbmVyaWMgbmFtZSBsaWtlIHJlYm9vdCBpbnN0ZWFkIG9m
-IHN5c2Nvbi1yZWJvb3Q/CgpUaGUgRGV2aWNldHJlZSBzcGVjaWZpY2F0aW9uIHVzdWFsbHkgcmVj
-b21tZW5kcyBub2RlIG5hbWVzIHRvIHJlZmxlY3QgdGhlCmZ1bmN0aW9uIG9mIHRoZSBkZXZpY2Ug
-cmF0aGVyIHRoYW4gaXRzIHByb2dyYW1taW5nIG1vZGVsIG9yIGRyaXZlciBuYW1lLgoKPiArCQl9
-Owo+ICsKPiArCQltYXRyaXhjcm06IGNsb2NrLWNvbnRyb2xsZXJAMTMwNjAwMCB7Cj4gKwkJCWNv
-bXBhdGlibGUgPSAienRlLHp4Mjk3NTIwdjMtbWF0cml4Y3JtIjsKPiArCQkJcmVnID0gPDB4MDEz
-MDYwMDAgMHg0MDA+OwoKWyAuLi4gXQoKPiArCQlsc3Bjcm06IGNsb2NrLWNvbnRyb2xsZXJAMTQw
-MDAwMCB7Cj4gKwkJCWNvbXBhdGlibGUgPSAienRlLHp4Mjk3NTIwdjMtbHNwY3JtIjsKPiArCQkJ
-cmVnID0gPDB4MDE0MDAwMDAgMHgxMDA+Owo+ICsJCQkjY2xvY2stY2VsbHMgPSA8MT47Cj4gKwkJ
-CSNyZXNldC1jZWxscyA9IDwxPjsKClsgLi4uIF0KCj4gKwkJCWNsb2NrLW5hbWVzID0gIm1wbGwt
-ZDUiLCAibXBsbC1kNCIsICJtcGxsLWQ2IiwgIm1wbGwtZDgiLCAibXBsbC1kMTIiLAo+ICsJCQkJ
-ICAgICAgIm9zYzI2bSIsICJvc2MzMmsiLCAicGNsayIsICJ0ZG0td2NsayIsICJkcGxsLWQ0IjsK
-PiArCQkJcmVzZXRzID0gPCZtYXRyaXhjcm0gWlgyOTc1MjBWM19MU1BfUkVTRVQ+Owo+ICsJCX07
-CgpbU2V2ZXJpdHk6IEhpZ2hdCkRvZXMgdGhpcyBoYXJkd2FyZSByZXNldCBkZXBlbmRlbmN5IHJl
-cXVpcmUgZXhwbGljaXQgaGFuZGxpbmcgaW4gdGhlIGRyaXZlcj8KClRoZSBEVFMgY29ycmVjdGx5
-IGRlZmluZXMgdGhlIGRlcGVuZGVuY3ksIGJ1dCBsb29raW5nIGF0IHp4X2Nsa19jb21tb25fcHJv
-YmUoKQppbiBkcml2ZXJzL2Nsay96dGUvY2xrLXp4LmMsIHRoZSByZWdtYXAgaXMgb2J0YWluZWQg
-dXNpbmc6Cgpkcml2ZXJzL2Nsay96dGUvY2xrLXp4LmM6enhfY2xrX2NvbW1vbl9wcm9iZSgpIHsK
-ICAgIC4uLgogICAgbWFwID0gZGV2aWNlX25vZGVfdG9fcmVnbWFwKG9mX25vZGUpOwogICAgaWYg
-KElTX0VSUihtYXApKQogICAgICAgIHJldHVybiBQVFJfRVJSKG1hcCk7CiAgICAuLi4KfQoKQmVj
-YXVzZSB0aGUgbHNwY3JtIG5vZGUgbGFja3MgdGhlIHN5c2NvbiBjb21wYXRpYmxlIHN0cmluZywg
-dGhpcyBieXBhc3NlcyB0aGUKZ2VuZXJpYyBzeXNjb24gcmVzZXQgaGFuZGxpbmcuIEFzIG5laXRo
-ZXIgdGhlIE1GRCBkcml2ZXIgbm9yIGNoaWxkIGRyaXZlcnMKbWFudWFsbHkgZGVhc3NlcnQgdGhp
-cyByZXNldCwgd29uJ3Qgc3Vic2VxdWVudCByZWdpc3RlciBhY2Nlc3NlcyBoaXQgYSByZXNldApi
-bG9jayBhbmQgcG90ZW50aWFsbHkgaGFuZyB0aGUgaGFyZHdhcmU/Cgo+ICsKPiAgCQl1YXJ0MDog
-c2VyaWFsQDEzMTAwMCB7CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtv
-LmRldi8jL3BhdGNoc2V0LzIwMjYwNzI3LXp4MjljbGstdjgtMC03YTEwN2IwMGYxZGRAZ21haWwu
-Y29tP3BhcnQ9MTIKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LXBoeQo=
+
+--===============8549633615244351447==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="wslejz3kxq4lsyn3"
+Content-Disposition: inline
+
+
+--wslejz3kxq4lsyn3
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v4 0/5] This series is split from the v15 "Add Type-C DP
+ support for RK3399 EVB
+MIME-Version: 1.0
+
+Hello Chaoyi,
+
+On Mon, Jul 27, 2026 at 02:44:03PM +0800, Chaoyi Chen wrote:
+> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+>=20
+> [1] https://lore.kernel.org/all/20260304094152.92-1-kernel@airkyi.com/
+>=20
+> =3D=3D=3D=3D
+> 1. Generic Type-C DP HPD bridge
+>=20
+> Currently, several USB-C controller drivers register their own DP HPD
+> bridge via aux-hpd-bridge.c, each duplicating the same logic. For
+> devicetree based platforms, the USB-C controller may vary across boards,
+> and not every USB-C controller driver implements this feature. Patch 1
+> implements a generic DP HPD bridge that monitors Type-C bus events and
+> automatically creates an HPD bridge when a Type-C port device with DP
+> SVID is registered.
+>=20
+> 2. Multiple bridge model for CDN-DP
+>=20
+> The RK3399 has two USB/DP combo PHY and one CDN-DP controller. Patch 5
+> introduces a multi-bridge model where each PHY port gets a separate
+> encoder and bridge, allowing flexible selection of the output PHY port.
+> This is based on the DRM AUX HPD bridge rather than extcon.
+>=20
+> =3D=3D=3D=3D
+> Patch 1 adds generic USB Type-C DP HPD bridge (Dmitry, Heikki).
+> Patch 2 adds new API drm_aux_bridge_register_from_node() (Neil).
+> Patch 3 adds DRM AUX bridge support for RK3399 USBDP PHY (Neil).
+> Patch 4 drops CDN-DP's extcon dependency when Type-C is present (Dmitry).
+> Patch 5 adds multiple bridges to support PHY port selection (Dmitry, Luca=
+).
+>=20
+> Changes in v4:
+> - Link to v3: https://lore.kernel.org/all/20260717072323.96-1-kernel@airk=
+yi.com/
+> - Scan the entire typec_bus and attempt to register the hpd bridge,
+>   so as not to miss devices that were already added during initialization.
+
+While that may help with the module being loaded late, it does not
+help with triggering the module load in the first place.
+
+The module does not have any MODULE_DEVICE_TABLE() helping with
+that. So basically any system relying on the automatic hpd bridge
+registration and using a modular kernel (e.g. the arm64 defconfig or
+the kernels usually provided by Linux distributions) requires
+manually loading that module to get any graphical output.
+
+Greetings,
+
+-- Sebastian
+
+> Changes in v3:
+> - Link to v2: https://lore.kernel.org/all/20260608070805.88-1-kernel@airk=
+yi.com/
+>   (Sorry, I forgot to add the "v2" title, so it looks like v1.)
+> - Remove now-redundant call to drm_connector_attach_encoder()
+> - Rebase to v7.2-rc2
+>=20
+> Changes in v2:
+> - Link to v1: https://lore.kernel.org/all/20260521032854.103-1-kernel@air=
+kyi.com/
+> - Add copyright text.
+> - Remove useless goto.
+> - Fix incorrect function names in the documentation comments.
+> - Fix the check logic for dp->active_port (0 is valid).
+> - Fix the uninitialized prev_port.
+> - Remove duplicate logic from cdn_dp_switch_port().
+> - Fix the prototype of cdn_dp_bridge_hpd_notify().
+> - Properly release connector->fwnode.
+> - Properly release next_bridge.
+>=20
+> Chaoyi Chen (5):
+>   drm/bridge: Implement generic USB Type-C DP HPD bridge
+>   drm/bridge: aux: Add drm_aux_bridge_register_from_node()
+>   phy: rockchip: phy-rockchip-typec: Add DRM AUX bridge
+>   drm/rockchip: cdn-dp: Support handle lane info without extcon
+>   drm/rockchip: cdn-dp: Add multiple bridges to support PHY port
+>     selection
+>=20
+>  drivers/gpu/drm/bridge/Kconfig                |  10 +
+>  drivers/gpu/drm/bridge/Makefile               |   1 +
+>  drivers/gpu/drm/bridge/aux-bridge.c           |  26 +-
+>  .../gpu/drm/bridge/aux-hpd-typec-dp-bridge.c  |  64 ++++
+>  drivers/gpu/drm/rockchip/Kconfig              |   1 +
+>  drivers/gpu/drm/rockchip/cdn-dp-core.c        | 358 ++++++++++++++----
+>  drivers/gpu/drm/rockchip/cdn-dp-core.h        |  18 +-
+>  drivers/phy/rockchip/Kconfig                  |   2 +
+>  drivers/phy/rockchip/phy-rockchip-typec.c     |  13 +-
+>  include/drm/bridge/aux-bridge.h               |   6 +
+>  10 files changed, 428 insertions(+), 71 deletions(-)
+>  create mode 100644 drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
+>=20
+> --=20
+> 2.53.0
+>=20
+>=20
+
+--wslejz3kxq4lsyn3
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmpoDwoACgkQ2O7X88g7
++pq00g/+P6xQ6MSgg91MljD+vnTg2VTasRDBvjtKt4yJqP8hXXIFvfLaJaysp2kp
+dHor49WP4MhEzAbseLecHnyzcR8uDvl0MPwNJJ6J8Fb4yCMPPT+SG79m9YaxRW2Q
+cQ+nMvDcCQOQFU0vcxEN+CzOlexgXCVrRqEiLMPKYB8qTfT7AxnWE1Lg577QHP9J
+W8EInQO1Ail9XlLypdaGFN9tozuiufX8XmvDaV+LrJf3KZvt3uqsBa0l4aAzB6/W
+pg0ZGbO7x7hIO3bvIDsS83hmGDHdeMJrfxvcoBO1aeK+DDl0JdXdiefH6AT/tiKK
+4wuvIYP4vgrtZZKJtUsSRPuy46EKJnc4ID/b/vspsyqXReypNxKN4u/PzuFtXcbh
+yGGTU7rzrOq9BwRKryiMHekpbw7VlKPiOnWDzkXrQ0NJevDnEe4iG4DkS/RugOND
+tFKvrXgGUwLo4zd0VIQ43B0PX15qmbGG+XSvuxIqdDJpSddelcl4yNmfpSm2YD9y
+/6YocqSJ4lsMmkncKjAOt0KYCef2dsFh2UhezJrZNAZEzcfLRXjUn2s6rLJBq+m5
+ab30eeOoK7iqpeISWT7MJu1dGC7+WntBG7Wvu2tOz4R37lpbttnZ4mSigwOt2X7Y
+pd34j30G3aCD+Kz/lDVrKP04yHdqCRHsTioVnTqxptb894J0wgI=
+=Fuia
+-----END PGP SIGNATURE-----
+
+--wslejz3kxq4lsyn3--
+
+
+--===============8549633615244351447==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============8549633615244351447==--
+
