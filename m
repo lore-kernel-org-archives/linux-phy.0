@@ -4,106 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41228C54F4C
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Jul 2026 13:39:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 263AFC54F4C
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Jul 2026 13:42:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tRivfZYBcnyKBX8x1p0/eIrsS9FVQ3YCuGUzAspw87Q=; b=tZRArb4fGHAk17
-	TM1kc1dQJnDEaqPaC6EmTE1zQHb1Z1ptWxzYODaK1iuNh2HE+Q+DurlOz1RSMyHevxJpsly2yzBlJ
-	il5jlDgfqeWusHD8SNNgbClrbqoYTnTbtVo5nU5ZhDW+MFGcUX+HDE+O1LCqsWQ1xyXnNIvdWWQiR
-	kEnAmpGDSj1KwcuKMdIdQiYxgKIAV60ysNahC86ZJM40SgLVrE/Cz9PQRpQnFkh1XjzbnPf9yRgt5
-	0ne4sJOFzOm9XnmguEg2K6BeYsuyzDf8pd1+OjVHv+0y9q/WZJvJwEoxY80J56OoBZrDwO/df+7Ac
-	pbdzCq2IwUWV+7TlJ+ug==;
+	List-Owner; bh=2ef3GITjiaef+Ym4DF1qC28UumzciatZWAArtw1TbIk=; b=1rUI4xxmYYlhKB
+	949nMhmILoZcuAzwRMafdmbfuvFuD1seE6D18HwIzCO8VPLq8gz0DsZ2AZJvfcFj/rObbhfAn8vSC
+	xV2RPiAwnlcH9mZpR6q5VOdMih7n1ZSVg2vVEdaP0H6TzdfQluk1ZHwaWPP6HvZkaXOqnAoQsKYZ4
+	YNmB0lL5DOKCiSo6z7DuOcv7b0pS97UbUM2cYz51u0TB0Tyo7+zcG2UqhUsDQ6yYERxpzRDp1973/
+	+kdILJJZFvR98OpqVn+Ynvc7HQGDqyLzDftDhCniiG/R8SgbDG3TR95ZDiB8ZVTTPG4duJ4Zg2m/R
+	AhSluQEbjZEkk+FnK7dg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1woi1O-00000005MzD-2uAi;
-	Tue, 28 Jul 2026 13:39:02 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+	id 1woi4J-00000005NVb-3f1u;
+	Tue, 28 Jul 2026 13:42:03 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1woi1M-00000005MyX-1tki
+	id 1woi4I-00000005NVV-3MSd
 	for linux-phy@lists.infradead.org;
-	Tue, 28 Jul 2026 13:39:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1785245939;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=zIUOpHJxOe8ruIEi6QwPuhoVVlbLAzplV44Vn78Oxa4=;
-	b=b/cT3yDwaVlZApw72p8B0voBc3ndpVC3omJR7RTTEbOyH18U5+1PGoVSMfMRnAZCByw4GO
-	Eo9i5HXi71yIsw09H1nQcLcLEgAiHXdJgO+6EMXJPM71bXhj9Lp+F+J+sq+y0HNR3dP4oi
-	2iJepi4HmyxFSTsVxEglb0Siaj3WwOg=
-Received: from mail-qv1-f71.google.com (mail-qv1-f71.google.com
- [209.85.219.71]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-548-NEDHe5h-NXifscA04iw5sw-1; Tue, 28 Jul 2026 09:38:57 -0400
-X-MC-Unique: NEDHe5h-NXifscA04iw5sw-1
-X-Mimecast-MFC-AGG-ID: NEDHe5h-NXifscA04iw5sw_1785245937
-Received: by mail-qv1-f71.google.com with SMTP id 6a1803df08f44-8ec45d9628aso81217936d6.1
-        for <linux-phy@lists.infradead.org>; Tue, 28 Jul 2026 06:38:57 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1785245937; x=1785850737;
-        h=user-agent:in-reply-to:content-transfer-encoding
-         :content-disposition:content-type:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=zIUOpHJxOe8ruIEi6QwPuhoVVlbLAzplV44Vn78Oxa4=;
-        b=AV9my3UGl0KAh2Hoahx829cCzgURpZriG3A+HNtmzr7EariKrEV1596KhRsFTMLfOB
-         myGShXI1b/iqKdyqi0C9tS7mVte1Vlim0Ft/8wieulXm3m0lE2R4l02fHy0R//CYmlbC
-         o1ljmXKGP1p7tgXnMWoa6U+4x4Yn928Z09oeptYweW/AaClZ40CLRNrajkuTgKQByOA/
-         SZ5zyhQaX0CJrtfQvYWRqRstbrns/1npWMNZ0GTnqF7yuE1RweNiqksoMC5Tb4gczF0G
-         QKQOo6dzheGgjZ3anZZ4EurDF8qvPDuzuw86iyPVDoyKufLVfZlci3AdpijyIS2mQK6J
-         A0Xg==
-X-Forwarded-Encrypted: i=1; AHgh+RrYqvpuHMfreqaoXdpejXSqYnNCt0kE1+BPyHlGF2VkyBLBvZ2Ynliz2i+BgH0oTJF22d5pyUAHvw4=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yww58/3TSU9w78MKncDW0T5C/MfF/zmAG+aZ2+Wz1xftpGjonMf
-	ROC+w2ujqzj2i1b6h/2/Nk5VQ/m++4N0apdmUJCUg8Vt5RNPntZ2mqAEJMSsONi5Vzt45zlrwPD
-	jvrrDuTTnnxdvHM7JC6tkFyqIiaCJC1+0gJ9LzXO0eJKBncGKJaHS76uyZG2HxtjZ/eU=
-X-Gm-Gg: AR+sD10C3Aq9omNXdZoB8nVkAVYa+3dYYVZWBR2tCwZ3h8yH6KRSSMVRxnA+yFw/fRE
-	fxb73f0bPaEpzf6We8r1ULlM7XOUwe+WuuPcxkFMEgQXlI9IALzytRrq0R8QBmOqPNR8Pdk0wfD
-	A3n/QOe1MqzDemVxl8kGLRfQp9qAp328rXVgpLQHpfY/4vslPzCtvTIfWaSPmhfd91bFZ4c9FVf
-	/wbbrl7tjsmbtmuvBzX3cuTd3nYHtVftYOlpAz7KgrK+5eDjCH88GvOc336gIu8pb32eBTKH0nY
-	ilsJQzN63xn2oQTiZqhUD37iyGOTg62+V3N2eCJRaf6h+VuNBsZ6bN8oGsSiohRezu+NhssDt30
-	QVe4a5kvMvUPHzxSKgrm06ziUBaOUNJpghzs=
-X-Received: by 2002:a05:6214:5541:b0:8ef:aa2b:a668 with SMTP id 6a1803df08f44-90817395db2mr22709806d6.41.1785245936964;
-        Tue, 28 Jul 2026 06:38:56 -0700 (PDT)
-X-Received: by 2002:a05:6214:5541:b0:8ef:aa2b:a668 with SMTP id 6a1803df08f44-90817395db2mr22709306d6.41.1785245936406;
-        Tue, 28 Jul 2026 06:38:56 -0700 (PDT)
-Received: from redhat.com (c-73-183-53-213.hsd1.pa.comcast.net. [73.183.53.213])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-907e86d499dsm87709486d6.42.2026.07.28.06.38.54
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 28 Jul 2026 06:38:55 -0700 (PDT)
-Date: Tue, 28 Jul 2026 09:38:54 -0400
-From: Brian Masney <bmasney@redhat.com>
-To: Stefan =?iso-8859-1?Q?D=F6singer?= <stefandoesinger@gmail.com>
-Cc: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Russell King <linux@armlinux.org.uk>, Lee Jones <lee@kernel.org>,
-	linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org, mfd@lists.linux.dev
-Subject: Re: [PATCH v8 05/12] clk: zte: Add Clock registration infrastructure
-Message-ID: <amiw7mfPfSPjLHLH@redhat.com>
-References: <20260727-zx29clk-v8-0-7a107b00f1dd@gmail.com>
- <20260727-zx29clk-v8-5-7a107b00f1dd@gmail.com>
-MIME-Version: 1.0
-In-Reply-To: <20260727-zx29clk-v8-5-7a107b00f1dd@gmail.com>
-User-Agent: Mutt/2.4.0 (2026-06-19)
-X-Mimecast-Spam-Score: 0
-X-Mimecast-MFC-PROC-ID: xDBY_5Q7fnFs57pANwKX47J8fRp_uzT9KRz0oF2S8uA_1785245937
-X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260728_063900_648965_F8A055E2 
-X-CRM114-Status: GOOD (  47.34  )
+	Tue, 28 Jul 2026 13:42:02 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 8DA83435D1;
+	Tue, 28 Jul 2026 13:42:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 245601F000E9;
+	Tue, 28 Jul 2026 13:42:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1785246122;
+	bh=P47r+JjHw3M/YwlSf5r6vzSKPD+rJSdV/FQyNNs9Cvo=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=NVuGLulNuJeVxbw6y6q5fjo+ShzrXkt/QpJ6yIn7DRJ0jL2eNlzJ6gIctTrrqzJry
+	 /+GUIq/bT2BqCIOJXEbmfy5G0B8IY9jImnFoo2ZBGpyrCtVwhJW+5weJuyj34zalOe
+	 uM8MI5ttpJsKTL2vcl+3tu0gW+gvgzcQ242twyW8Wbn3p3C6behbgpryp6ITFfHWLp
+	 tiqGD4o8h1QEA8r8YhRmbLEKGMGKVZZawByYcHhUtt+ranKdvmjCClxOuXvV9efyG7
+	 DYy67tmVY9d2OUlvIr/vy400ZdcOwS0dVflRcrcT8G6b4/Q+TdCiwoVfX6doeNuT5s
+	 6Rs1OAsmlsYaw==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH RESEND] phy: broadcom: ns2-usbdrd: cancel delayed work
+To: "Hongyan Xu" <getshell@seu.edu.cn>
+Cc: vkoul@kernel.org, olteanv@gmail.com, linux-phy@lists.infradead.org, neil.armstrong@linaro.org
+In-Reply-To: <20260728133418.103-1-getshell@seu.edu.cn>
+References: <20260728133418.103-1-getshell@seu.edu.cn>
+Date: Tue, 28 Jul 2026 13:42:01 +0000
+Message-Id: <20260728134202.245601F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,382 +61,73 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Stefan,
-
-On Mon, Jul 27, 2026 at 09:24:20PM +0300, Stefan D=F6singer wrote:
-> The next patches will implement the regmap clocks and PLL driver. The
-> actual hardware specific clock listing will live in a separate module.
-> =
-
-> Signed-off-by: Stefan D=F6singer <stefandoesinger@gmail.com>
-> =
-
-> ---
-> =
-
-> Version 8:
-> Use ZX297520V3_CLK_NO_EXPORT=3D(~0u) for unexported clocks. While using 0,
-> and starting clock indices at 1, is a common pattern in existing
-> drivers, it exposes a driver implementation detail in the hardware
-> binding interface.
-> =
-
-> If desired, I can change the special index to a separate field in the
-> structs.
-> =
-
-> Fix the return value if the ->init() callback fails. (Sashiko)
-> =
-
-> Version 7:
-> *) Add fixed dividers to handle PLL subdivisions
-> *) Never register PLLs directly as exported clocks - everything on this
-> SoC goes through a gate before it leaves a controller.
-> =
-
-> Version 6:
-> *) Remove auxdev now that LSP clocks also use MFD
-> *) Error codepath fixes pointed out by Sashiko.
-> =
-
-> Version 5:
-> =
-
-> *) Pass the static clk data instead of calling get_match_data to prepare
-> for operating as an MFD child.
-> =
-
-> *) Don't use devm_kzalloc to allocate the auxiliary_device
-> structure. I guess Sashiko is right, and that's what "Because once the
-> device is placed on the bus the parent driver can not tell what other
-> code may have a reference to this data" is trying to tell me.
-> =
-
-> *) Fix error check for device_node_to_regmap.
-> ---
->  MAINTAINERS                  |   1 +
->  drivers/clk/Kconfig          |   1 +
->  drivers/clk/Makefile         |   1 +
->  drivers/clk/zte/Kconfig      |  16 +++++
->  drivers/clk/zte/Makefile     |   5 ++
->  drivers/clk/zte/clk-regmap.c |  34 ++++++++++
->  drivers/clk/zte/clk-zx.c     | 155 +++++++++++++++++++++++++++++++++++++=
-++++++
->  drivers/clk/zte/clk-zx.h     |  91 +++++++++++++++++++++++++
->  drivers/clk/zte/pll-zx.c     |  16 +++++
->  9 files changed, 320 insertions(+)
-> =
-
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index b04e9d43cfb0..692f005cb2c4 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -3883,6 +3883,7 @@ F:	Documentation/devicetree/bindings/clock/zte,zx29=
-7520v3-matrixcrm.yaml
->  F:	Documentation/devicetree/bindings/clock/zte,zx297520v3-topcrm.yaml
->  F:	arch/arm/boot/dts/zte/
->  F:	arch/arm/mach-zte/
-> +F:	drivers/clk/zte/
->  F:	drivers/mfd/zte-zx297520v3-crm.c
->  F:	include/dt-bindings/clock/zte,zx297520v3-clk.h
->  F:	include/dt-bindings/phy/zte,zx297520v3-topcrm.h
-> diff --git a/drivers/clk/Kconfig b/drivers/clk/Kconfig
-> index 1717ce75a907..6f0a863951ca 100644
-> --- a/drivers/clk/Kconfig
-> +++ b/drivers/clk/Kconfig
-> @@ -545,6 +545,7 @@ source "drivers/clk/uniphier/Kconfig"
->  source "drivers/clk/visconti/Kconfig"
->  source "drivers/clk/x86/Kconfig"
->  source "drivers/clk/xilinx/Kconfig"
-> +source "drivers/clk/zte/Kconfig"
->  source "drivers/clk/zynqmp/Kconfig"
->  =
-
->  # Kunit test cases
-> diff --git a/drivers/clk/Makefile b/drivers/clk/Makefile
-> index cc108a75a900..13a5478f1112 100644
-> --- a/drivers/clk/Makefile
-> +++ b/drivers/clk/Makefile
-> @@ -167,5 +167,6 @@ ifeq ($(CONFIG_COMMON_CLK), y)
->  obj-$(CONFIG_X86)			+=3D x86/
->  endif
->  obj-y					+=3D xilinx/
-> +obj-$(CONFIG_COMMON_CLK_ZTE)		+=3D zte/
->  obj-$(CONFIG_ARCH_ZYNQ)			+=3D zynq/
->  obj-$(CONFIG_COMMON_CLK_ZYNQMP)         +=3D zynqmp/
-> diff --git a/drivers/clk/zte/Kconfig b/drivers/clk/zte/Kconfig
-> new file mode 100644
-> index 000000000000..0222549dd211
-> --- /dev/null
-> +++ b/drivers/clk/zte/Kconfig
-> @@ -0,0 +1,16 @@
-> +# SPDX-License-Identifier: GPL-2.0-only
-> +#
-> +# ZTE Clock Drivers
-> +#
-> +
-> +config COMMON_CLK_ZTE
-> +	tristate "Clock driver for ZTE SoCs"
-> +	depends on ARCH_ZTE || COMPILE_TEST
-> +	default ARCH_ZTE
-> +	select MFD_SYSCON
-> +	help
-> +	  This option selects common clock infrastructure for ZTE based SoCs.
-> +	  You will need to enable one or more SoC specific drivers to make use
-> +	  of this.
-> +
-> +	  Enable this if you are building a kernel for a ZTE designed board.
-> diff --git a/drivers/clk/zte/Makefile b/drivers/clk/zte/Makefile
-> new file mode 100644
-> index 000000000000..27db07293165
-> --- /dev/null
-> +++ b/drivers/clk/zte/Makefile
-> @@ -0,0 +1,5 @@
-> +# SPDX-License-Identifier: GPL-2.0-only
-> +
-> +obj-$(CONFIG_COMMON_CLK_ZTE) +=3D clk-zte.o
-> +
-> +clk-zte-y +=3D clk-zx.o pll-zx.o clk-regmap.o
-> diff --git a/drivers/clk/zte/clk-regmap.c b/drivers/clk/zte/clk-regmap.c
-> new file mode 100644
-> index 000000000000..984abeb45ab2
-> --- /dev/null
-> +++ b/drivers/clk/zte/clk-regmap.c
-> @@ -0,0 +1,34 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright (c) 2014 MediaTek Inc.
-> + * Copyright (c) 2018 BayLibre, SAS.
-> + * Copyright (c) 2026 Stefan D=F6singer.
-> + * Author: Stefan D=F6singer <stefandoesinger@gmail.com>
-> + */
-> +
-> +#include <linux/clk-provider.h>
-> +#include <linux/device.h>
-> +#include <linux/regmap.h>
-> +#include <linux/errno.h>
-
-Sort the headers.
-
-> +
-> +#include "clk-zx.h"
-> +
-> +int zx_clk_register_gates(struct device *dev, struct regmap *regmap,
-> +			  const struct zx_gate_desc *desc, unsigned int num,
-> +			  struct clk_hw_onecell_data *clocks)
-> +{
-> +	return -ENODEV;
-> +}
-> +
-> +int zx_clk_register_dividers(struct device *dev, struct regmap *regmap,
-> +			     const struct zx_div_desc *desc, unsigned int num)
-> +{
-> +	return -ENODEV;
-> +}
-> +
-> +int zx_clk_register_muxes(struct device *dev, struct regmap *regmap,
-> +			  const struct zx_mux_desc *desc, unsigned int num,
-> +			  struct clk_hw_onecell_data *clocks)
-> +{
-> +	return -ENODEV;
-> +}
-> diff --git a/drivers/clk/zte/clk-zx.c b/drivers/clk/zte/clk-zx.c
-> new file mode 100644
-> index 000000000000..c9e9048d3ade
-> --- /dev/null
-> +++ b/drivers/clk/zte/clk-zx.c
-> @@ -0,0 +1,155 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +/*
-> + * Copyright (C) 2026 Stefan D=F6singer
-> + */
-> +
-> +#include <linux/clk-provider.h>
-> +#include <linux/mfd/syscon.h>
-> +#include <linux/module.h>
-> +#include <linux/errno.h>
-> +#include <linux/clk.h>
-> +#include <linux/err.h>
-
-Also sort the headers.
-
-> +
-> +#include "clk-zx.h"
-> +
-> +static int zx_clk_register_fixed_dividers(struct device *dev, struct reg=
-map *regmap,
-> +					  const struct zx_fixed_divider_desc *desc,
-> +					  unsigned int num)
-> +{
-> +	struct clk_hw *clk;
-> +	unsigned int i;
-> +
-> +	for (i =3D 0; i < num; ++i) {
-> +		clk =3D devm_clk_hw_register_fixed_factor(dev, desc[i].name, desc[i].p=
-arent,
-> +							CLK_SET_RATE_PARENT, 1, desc[i].div);
-> +		if (IS_ERR(clk)) {
-
-The { } is not needed here.
-
-> +			return dev_err_probe(dev, PTR_ERR(clk), "Failed to register clk %s\n",
-> +					     desc[i].name);
-> +		}
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static void zx_delete_clk_provider(void *data)
-> +{
-> +	of_clk_del_provider(data);
-> +}
-> +
-> +static void zx_clk_disable_unprepare_put(void *data)
-> +{
-> +	clk_disable_unprepare(data);
-> +	clk_put(data);
-> +}
-> +
-> +int zx_clk_common_probe(struct device *dev, struct device_node *of_node,
-> +			const struct zx_clk_data *data)
-> +{
-> +	unsigned int public_clk_count =3D 0, highest_id =3D 0;
-> +	struct clk_hw_onecell_data *clocks;
-> +	struct regmap *map;
-> +	struct clk *clk;
-> +	unsigned int i;
-> +	int res;
-> +
-> +	map =3D device_node_to_regmap(of_node);
-> +	if (IS_ERR(map))
-> +		return PTR_ERR(map);
-> +
-> +	for (i =3D 0; i < data->num_muxes; ++i) {
-> +		if (data->muxes[i].id !=3D ZX297520V3_CLK_NO_EXPORT) {
-> +			if (data->muxes[i].id > highest_id)
-> +				highest_id =3D data->muxes[i].id;
-> +			public_clk_count++;
-> +		}
-> +	}
-> +	for (i =3D 0; i < data->num_gates; ++i) {
-> +		if (data->gates[i].id !=3D ZX297520V3_CLK_NO_EXPORT) {
-> +			if (data->gates[i].id > highest_id)
-> +				highest_id =3D data->gates[i].id;
-> +			public_clk_count++;
-> +		}
-> +	}
-> +
-> +	if (WARN_ON(public_clk_count !=3D highest_id + 1))
-> +		return -EINVAL;
-> +
-> +	clocks =3D devm_kzalloc(dev, struct_size(clocks, hws, public_clk_count)=
-, GFP_KERNEL);
-> +	if (!clocks)
-> +		return -ENOMEM;
-> +	clocks->num =3D public_clk_count;
-> +
-> +	for (i =3D 0; i < data->num_inputs_enable; ++i) {
-> +		clk =3D of_clk_get_by_name(of_node, data->inputs_enable[i]);
-> +		if (IS_ERR(clk)) {
-> +			return dev_err_probe(dev, PTR_ERR(clk), "Input clk %s failure\n",
-> +					     data->inputs_enable[i]);
-> +		}
-> +
-> +		res =3D clk_prepare_enable(clk);
-> +		if (res) {
-> +			clk_put(clk);
-> +			return dev_err_probe(dev, res, "Input clk %s enable failure\n",
-> +					     data->inputs_enable[i]);
-> +		}
-> +		res =3D devm_add_action_or_reset(dev, zx_clk_disable_unprepare_put, cl=
-k);
-> +		if (res)
-> +			return res;
-> +	}
-> +	for (i =3D 0; i < data->num_inputs; ++i) {
-> +		/* FIXME: devm_get_clk_from_child doesn't do any tree traversal, so it=
- works here
-> +		 * whether "of_node" belongs to "dev" or a parent of "dev". Is it supp=
-osed to be
-> +		 * used that way though?
-> +		 */
-> +		clk =3D devm_get_clk_from_child(dev, of_node, data->inputs[i]);
-
-I don't know the intention of the original function without digging into
-the history. Can you just use of_clk_get_by_name(of_node, data->inputs[i])
-like you do in the for loop above for consistency?
-
-> +		if (IS_ERR(clk)) {
-> +			return dev_err_probe(dev, PTR_ERR(clk), "Input clk %s failure\n",
-> +					     data->inputs[i]);
-> +		}
-> +	}
-> +
-> +	if (data->init) {
-> +		res =3D data->init(map);
-> +		if (res)
-> +			return res;
-> +	}
-> +
-> +	res =3D zx_clk_register_fixed_dividers(dev, map, data->fixed_divs, data=
-->num_fixed_divs);
-> +	if (res)
-> +		return res;
-> +
-> +	res =3D zx_clk_register_plls(dev, map, data->plls, data->num_plls);
-> +	if (res)
-> +		return res;
-> +
-> +	res =3D zx_clk_register_muxes(dev, map, data->muxes, data->num_muxes, c=
-locks);
-> +	if (res)
-> +		return res;
-> +
-> +	res =3D zx_clk_register_dividers(dev, map, data->divs, data->num_divs);
-> +	if (res)
-> +		return res;
-> +
-> +	res =3D zx_clk_register_gates(dev, map, data->gates, data->num_gates, c=
-locks);
-> +	if (res)
-> +		return res;
-> +
-> +	/* This is to catch holes in the tables rather than registration errors=
-. The count vs
-> +	 * highest ID should catch most static issues. This check here will tri=
-gger if an ID is
-> +	 * reused by accident.
-> +	 */
-
-Comments need to be:
-
-  /*
-   * This is to ...
-   */
-
-> +	for (i =3D 0; i < public_clk_count; i++) {
-> +		if (WARN(!clocks->hws[i], "Clock %u not registered\n", i))
-> +			return -EINVAL;
-> +	}
-> +
-> +	res =3D of_clk_add_hw_provider(of_node, of_clk_hw_onecell_get, clocks);
-> +	if (res)
-> +		return res;
-> +	return devm_add_action_or_reset(dev, zx_delete_clk_provider, of_node);
-
-Use the devm_of_clk_add_hw_provider()
-
-Brian
-
-
--- =
-
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
+IFtIaWdoXSBSYWNlIENvbmRpdGlvbiBhbmQgTWlzc2luZyBMb2NraW5nIG9uIFNoYXJlZCBNTUlP
+IFJlZ2lzdGVycwotIFtIaWdoXSBTdGF0ZSBTeW5jaHJvbml6YXRpb24gLyBMb2dpYyBFcnJvcjog
+U3RhbGUgc3RhdGUgcmVhZHMgZHVyaW5nIGV4dGNvbiBub3RpZmljYXRpb25zCi0tCgotLS0gUGF0
+Y2ggWzFdOiBbUEFUQ0ggUkVTRU5EXSBwaHk6IGJyb2FkY29tOiBuczItdXNiZHJkOiBjYW5jZWwg
+ZGVsYXllZCB3b3JrIC0tLQpjb21taXQgNWUxMWI2ZmY2MTMzNTRjZWNjNjQzYTdlNDBkODAwMjE1
+Yjc4OTg2OQpBdXRob3I6IEhvbmd5YW4gWHUgPGdldHNoZWxsQHNldS5lZHUuY24+CgpwaHk6IGJy
+b2FkY29tOiBuczItdXNiZHJkOiBjYW5jZWwgZGVsYXllZCB3b3JrCgpuczJfZHJkX3BoeV9wcm9i
+ZSgpIGluaXRpYWxpemVzIHdxX2V4dGNvbi4gQm90aCBHUElPIElSUXMgYW5kIHRoZSBwcm9iZQp0
+YWlsIGNhbiBxdWV1ZSBpdC4gVGhpcyBwYXRjaCBhZGRzIGEgbWFuYWdlZCBjbGVhbnVwIGFjdGlv
+biB0byBjYW5jZWwKdGhlIGRlbGF5ZWQgd29yayBvbiB0ZWFyZG93biwgcHJldmVudGluZyBpdCBm
+cm9tIHJ1bm5pbmcgYWZ0ZXIgcmVzb3VyY2VzCmFyZSBmcmVlZC4KCj4gZGlmZiAtLWdpdCBhL2Ry
+aXZlcnMvcGh5L2Jyb2FkY29tL3BoeS1iY20tbnMyLXVzYmRyZC5jIGIvZHJpdmVycy9waHkvYnJv
+YWRjb20vcGh5LWJjbS1uczItdXNiZHJkLmMKPiBpbmRleCA4NDczZmE1NzQ1Mjk2Li5kMDk1OTY2
+OGRmNzkzIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L2Jyb2FkY29tL3BoeS1iY20tbnMyLXVz
+YmRyZC5jCj4gKysrIGIvZHJpdmVycy9waHkvYnJvYWRjb20vcGh5LWJjbS1uczItdXNiZHJkLmMK
+PiBAQCAtMzQyLDYgKzM0OSwxMCBAQCBzdGF0aWMgaW50IG5zMl9kcmRfcGh5X3Byb2JlKHN0cnVj
+dCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gIAo+ICAJSU5JVF9ERUxBWUVEX1dPUksoJmRyaXZl
+ci0+d3FfZXh0Y29uLCBleHRjb25fd29yayk7CgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgaXMgYSBw
+cmUtZXhpc3RpbmcgaXNzdWUsIGJ1dCBkb2VzIHRoZSBhc3luY2hyb25vdXMgZXhlY3V0aW9uIG9m
+CmV4dGNvbl93b3JrKCkgcmlzayBjb3JydXB0aW5nIHNoYXJlZCBNTUlPIHJlZ2lzdGVycz8KCmV4
+dGNvbl93b3JrKCkgY2FsbHMgY29ubmVjdF9jaGFuZ2UoKSwgd2hpY2ggZG9lcyByZWFkLW1vZGlm
+eS13cml0ZSBvcGVyYXRpb25zCm9uIHJlZ2lzdGVycyBsaWtlIElDRkdfRlNNX0NUUkwgd2l0aG91
+dCBsb2NraW5nOgoKZHJpdmVycy9waHkvYnJvYWRjb20vcGh5LWJjbS1uczItdXNiZHJkLmM6Y29u
+bmVjdF9jaGFuZ2UoKSB7CiAgICAgICAgLi4uCiAgICAgICAgdmFsID0gcmVhZGwoZHJpdmVyLT5p
+Y2ZnZHJkX3JlZ3MgKyBJQ0ZHX0ZTTV9DVFJMKTsKICAgICAgICAuLi4KICAgICAgICB2YWwgJj0g
+fihEUkRfSE9TVF9NT0RFIHwgRFJEX0RFVklDRV9NT0RFKTsKICAgICAgICB3cml0ZWwodmFsLCBk
+cml2ZXItPmljZmdkcmRfcmVncyArIElDRkdfRlNNX0NUUkwpOwogICAgICAgIC4uLgp9CgpDb25j
+dXJyZW50bHksIFBIWSBmcmFtZXdvcmsgb3BlcmF0aW9ucyBsaWtlIG5zMl9kcmRfcGh5X2luaXQo
+KSBhbmQKbnMyX2RyZF9waHlfcG93ZXJvbigpIGludm9rZWQgYnkgY29uc3VtZXJzIGNhbiBtb2Rp
+ZnkgdGhlIGV4YWN0IHNhbWUgcmVnaXN0ZXJzCm9uIGRpZmZlcmVudCBDUFVzOgoKZHJpdmVycy9w
+aHkvYnJvYWRjb20vcGh5LWJjbS1uczItdXNiZHJkLmM6bnMyX2RyZF9waHlfaW5pdCgpIHsKICAg
+ICAgICAuLi4KICAgICAgICB2YWwgPSByZWFkbChkcml2ZXItPmljZmdkcmRfcmVncyArIElDRkdf
+RlNNX0NUUkwpOwoKICAgICAgICBpZiAoZGF0YS0+bmV3X3N0YXRlID09IEVWVF9IT1NUKSB7CiAg
+ICAgICAgICAgICAgICB2YWwgJj0gfkRSRF9ERVZJQ0VfTU9ERTsKICAgICAgICAgICAgICAgIHZh
+bCB8PSBEUkRfSE9TVF9NT0RFOwogICAgICAgIC4uLgogICAgICAgIHdyaXRlbCh2YWwsIGRyaXZl
+ci0+aWNmZ2RyZF9yZWdzICsgSUNGR19GU01fQ1RSTCk7Cn0KClNob3VsZCB0aGVyZSBiZSBhIHNw
+aW5sb2NrIHNlcmlhbGl6aW5nIHRoZXNlIHJlZ2lzdGVyIGFjY2Vzc2VzIGFjcm9zcyBQSFkgb3Bz
+CmFuZCB0aGUgZXh0Y29uIHdvcmtxdWV1ZT8KCltTZXZlcml0eTogSGlnaF0KVGhpcyBpc24ndCBh
+IGJ1ZyBpbnRyb2R1Y2VkIGJ5IHRoaXMgcGF0Y2gsIGJ1dCBkb2VzIHRoZSBzdGF0ZSB1cGRhdGUg
+b3JkZXIgaW4KZXh0Y29uX3dvcmsoKSBjYXVzZSBjb25zdW1lciBkcml2ZXJzIHRvIHJlYWQgc3Rh
+bGUgc3RhdGU/CgpUaGUgd29ya3F1ZXVlIHN5bmNocm9ub3VzbHkgbm90aWZpZXMgY29uc3VtZXJz
+IHZpYSBleHRjb25fc2V0X3N0YXRlX3N5bmMoKQpiZWZvcmUgc2F2aW5nIHRoZSBuZXcgc3RhdGU6
+Cgpkcml2ZXJzL3BoeS9icm9hZGNvbS9waHktYmNtLW5zMi11c2JkcmQuYzpleHRjb25fd29yaygp
+IHsKICAgICAgICAuLi4KICAgICAgICBleHRjb25fc2V0X3N0YXRlX3N5bmMoZHJpdmVyLT5lZGV2
+LCBFWFRDT05fVVNCX0hPU1QsIHRydWUpOwogICAgICAgIHByX2RlYnVnKCJIb3N0IGNhYmxlIGNv
+bm5lY3RlZFxuIik7CiAgICAgICAgZHJpdmVyLT5kYXRhLT5uZXdfc3RhdGUgPSBFVlRfSE9TVDsK
+ICAgICAgICBjb25uZWN0X2NoYW5nZShkcml2ZXIpOwogICAgICAgIC4uLgp9CgpTaW5jZSBleHRj
+b25fc2V0X3N0YXRlX3N5bmMoKSBpcyBhIGJsb2NraW5nIG5vdGlmaWVyIGNoYWluLCBjb25zdW1l
+ciBkcml2ZXJzCmV4ZWN1dGUgdGhlaXIgY2FsbGJhY2tzIGltbWVkaWF0ZWx5LiBJZiBhIGNvbnN1
+bWVyIHJlYWN0cyBieSBjYWxsaW5nIHBoeV9pbml0KCkKb3IgcGh5X3Bvd2VyX29uKCksIHRob3Nl
+IGZ1bmN0aW9ucyB3aWxsIHJlYWQgdGhlIG9sZCwgdW5tb2RpZmllZApkYXRhLT5uZXdfc3RhdGUs
+IHdoaWNoIGNvdWxkIHJlc3VsdCBpbiBpbmNvcnJlY3QgaGFyZHdhcmUgY29uZmlndXJhdGlvbnMu
+CgpTaG91bGQgdGhlIGludGVybmFsIHN0YXRlIGFuZCBoYXJkd2FyZSBjb25maWd1cmF0aW9ucyBi
+ZSBmdWxseSB1cGRhdGVkIHByaW9yIHRvCmVtaXR0aW5nIHRoZSBleHRjb24gbm90aWZpY2F0aW9u
+PwoKPiArCXJldCA9IGRldm1fYWRkX2FjdGlvbl9vcl9yZXNldChkZXYsIG5zMl9kcmRfcGh5X2Nh
+bmNlbF93b3JrLCBkcml2ZXIpOwo+ICsJaWYgKHJldCkKPiArCQlyZXR1cm4gcmV0Owo+ICsKPiAg
+CWRyaXZlci0+aWRfaXJxID0gZ3Bpb2RfdG9faXJxKGRyaXZlci0+aWRfZ3Bpb2QpOwoKLS0gClNh
+c2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDcy
+ODEzMzQxOC4xMDMtMS1nZXRzaGVsbEBzZXUuZWR1LmNuP3BhcnQ9MQoKLS0gCmxpbnV4LXBoeSBt
+YWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
