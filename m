@@ -4,106 +4,132 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B578EC53219
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Jul 2026 13:42:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE07AC53219
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Jul 2026 13:48:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b8f71UaSEN0sdqeKgBUDEq8oMkC86W37n8jSj7EHyW4=; b=Zq/kKx+g1nqTCV
-	tqwKrDkTN/yoZ2wKEc0Ab+np7d76iTgUGy8DAJY0IjPEPR65qP0eCI2fuSq6mt0wnSXPHIaqfHI2s
-	QDuzhdn/MDT5jSkNbF920oug5krHGYLo22jaTOGDjZCKzbiwcRKF+g6OJ8DpF0uBtSxQfrWc3dKCb
-	t/oKg8VjNZvvAyL8JhyRddNI7tzZsT1dfsIzIwZKQ2ahD5ufn0NY5qizyljkDKp5RK0uod00au71x
-	atzCRy9uOCrDtUxO1noqt7tkmdcR7mjgIVkcyaC5zdn1swcG4NZCo/BIiNthGclt+y2tsq896Ujr+
-	KSPP1CWYn0mYRMVhzhSA==;
+	List-Owner; bh=SKyXmvvyvu0bwV1O7baYqwQ9kG/UrFZw7F3GrKITXkQ=; b=LmTHiez5EbPvk/
+	wvCjSH5RRv3Kp9sJt57/k/N+npjUxipRGu3fw+rL4UYGDJtQL785uxImtUM878TI2SH5bI1JNnCxg
+	9UGGYfFVdbWtfTYy6O5TtZQMd8ElGcFCBH0fhiH5iH/j2vjg6bnkvYXpQ+UHKRhiMTUUs10pKZQZv
+	L9fgupVkJgFFhLBHd/ckWWtu7TzF7br8OYApFt7RtvKGX245fRr7LdyDO4jIjRTfFbxKU/omvLs8y
+	HMtdYP1ogVFv1Ahz0DAu6ao/HaG7nmQFe8HPdVC58/3AuE9ti0PFUyBHhRq9B3Ou7yG+kQDLssVoR
+	ohklRocVUg9LYO5LLJxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1woi4X-00000005NYE-0CeC;
-	Tue, 28 Jul 2026 13:42:17 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+	id 1woiA3-00000005O59-34P8;
+	Tue, 28 Jul 2026 13:47:59 +0000
+Received: from mail-northeuropeazlp170120005.outbound.protection.outlook.com ([2a01:111:f403:c200::5] helo=DUZPR83CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1woi4V-00000005NXT-1GKR
-	for linux-phy@lists.infradead.org;
-	Tue, 28 Jul 2026 13:42:16 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1785246134;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=zkiuYMKfTZUCAQyXJDsyAYrYbc3+oqsrPiHuKHrbdH4=;
-	b=b5xZS8ljJjqwFg/cqyMMZ4hAQ4P0D3PvyhBy3Nkio9Y/kXKGO9Td8qsbU7173Z008lVIPy
-	k5iVc55R7RNmaUMO/QN4cEvkfktiAgtvUzZRMBu085LBTq5f95LaSobTf1Z9icLCUE46GB
-	JRQ8Yf/ol6pFANNRF8r/PeXcxI7Onyg=
-Received: from mail-qv1-f70.google.com (mail-qv1-f70.google.com
- [209.85.219.70]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-6-NMspw01xOVWqx2j05hj3zA-1; Tue, 28 Jul 2026 09:42:12 -0400
-X-MC-Unique: NMspw01xOVWqx2j05hj3zA-1
-X-Mimecast-MFC-AGG-ID: NMspw01xOVWqx2j05hj3zA_1785246130
-Received: by mail-qv1-f70.google.com with SMTP id 6a1803df08f44-8fdace20927so41822496d6.2
-        for <linux-phy@lists.infradead.org>; Tue, 28 Jul 2026 06:42:11 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1785246130; x=1785850930;
-        h=user-agent:in-reply-to:content-transfer-encoding
-         :content-disposition:content-type:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=zkiuYMKfTZUCAQyXJDsyAYrYbc3+oqsrPiHuKHrbdH4=;
-        b=qISp+vMfRGJQ9ZmDy9fD+yinmhoe5+S8ckNVCprZFvQTR+ldCRIvG6YPK/tH+Htd1N
-         fGt07VxgdhF9B5d5Q40dMA7PJRpNcoI8gMFay4j7yV8aN2K0wNcicwu2qOmdhowxWsc2
-         e+u1K3sUYm6sSjP44Ay4bjJhHqcReSecALKD6ZxBDEYIySTm6rog8M9xPIk7iCyX72QU
-         l/7h8ddWxbyjeHT6cq7iQ7vJkVTvdlerrtKGZCb08tAo4dmgNvJgFpg+qt6wHNUE2edD
-         wL3QiSLGNGCcT4OHBA2nj9fwSv3CmBBNGZRMfggIVIdmFDgQMcczdi6JsD70v0sL265y
-         4Vvw==
-X-Forwarded-Encrypted: i=1; AHgh+RpmhtuPeZLCgU6mZ9bDUgkL8YbnKbZ0efzhCJog+rIVbzMnN6YsykO1PJAvaXh3ktRAyoCAxWDEUsY=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx7AhnpxlNF6ogWVfPOagtwS8ZewGAPclHTr1N5GEhKXDJ4L1L6
-	dJolXtMn0CRsXhaD/DRLNMPVC8TzWvXoQO2bp9x7b3W6PXhgzEc86sfOKRxp667R712CcFRAp02
-	PiSROF0GMFPGgnUdbTleh2gSJ4VCHrPNM/0/6CydxU22cDND3wnK615GxIoQMOWtURDg=
-X-Gm-Gg: AR+sD12wGs5LWnvWyoq1tNI+S30wW/eOQb4yW96oUTtYvM13se6B8rh3lSOZjS6T/hE
-	ZOEwdSH7aEZ2SbWUt/IoUX7XY3gKvHLtV3lxgYHa8ADVeZmn5cCMD0BTe3DMm9BPNPWPILvGAXq
-	fTqAZaJprueNTmU82O5IJUEYsrj3CCqvpCDBSUrjG+55oQMbpvXXWA5S9wVGWCh+wmoTISpUaPf
-	FtjbHT7pLE8fJDhghNYjVoxG68m5T23ByB9cVHn1pdKPvEA9Iw/fgc0ktRCq34WY9aHui9NrTNB
-	ays7b4DQqYy7qmHD6rNkdlAiyw6dqlzgKftpjDXDRiKbROJ06G3RcxsDDwTrowMq8oOZ8SYch+B
-	bx9wUELWUfsWnDM1hUAcA3wO5asXBKxynQ+E=
-X-Received: by 2002:a05:6214:5545:b0:8e8:7de7:ec20 with SMTP id 6a1803df08f44-90816f640a7mr25742516d6.4.1785246130272;
-        Tue, 28 Jul 2026 06:42:10 -0700 (PDT)
-X-Received: by 2002:a05:6214:5545:b0:8e8:7de7:ec20 with SMTP id 6a1803df08f44-90816f640a7mr25741856d6.4.1785246129549;
-        Tue, 28 Jul 2026 06:42:09 -0700 (PDT)
-Received: from redhat.com (c-73-183-53-213.hsd1.pa.comcast.net. [73.183.53.213])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-907e86d499dsm87767676d6.42.2026.07.28.06.42.06
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 28 Jul 2026 06:42:07 -0700 (PDT)
-Date: Tue, 28 Jul 2026 09:42:06 -0400
-From: Brian Masney <bmasney@redhat.com>
-To: Stefan =?iso-8859-1?Q?D=F6singer?= <stefandoesinger@gmail.com>
-Cc: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Vinod Koul <vkoul@kernel.org>,
+	id 1woiA1-00000005O4O-0VWp;
+	Tue, 28 Jul 2026 13:47:58 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=tIjm/P9mt/IkI3g0KaT2J9wTTN8ZaOQBl+DAo271yOPGGQqg9U3qBkIvNr/JdUh12i3L0vik/B0wOlggM13PeJtwXEv4CSNYLZbAVm3mKrikp9qa3QxpS2l64BrGWzNpyDGOXatjzZpfkjU7/4rGZMZRz9lPIAsjMNWRLQE6w0mznGzeDr+rBkBZrTWWfJlRrVnLTYoVbiJLJZBuCmBHiglUTQkLtuA2BGuU0hoaFMKWhQOvz7lzoRMtpRK836JOtaL9whtb03xn67UMScNcSwHFBcMYyQr1sPJrAqqZ6g+cJI1mO5lTsWtGPPs6AejauRt9yFec5pBbux48hDJuEg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=JlU3GC/lZWKWvY0pjhRkOV34jKOVc8c3N92R/QR+uY8=;
+ b=HO2g+z1KpbnSePcDO0ZNKdPzOsy1n66vhEzvT5WziiCdc9tZRDILrf/wsE5J1JuvjRHxZdyer41CsxMyHiItJCMKzuWoLO5eVvMkWqDVfWurUTMvxv8KAwWKHsaN/4knA6Qx+DLCSNWYhowyCTtQm/eqoDx4x1Xg6+0+5k/TPtMEQLXLSv911SLH+MO2yN1LXcxJWhrt/D7Fjg+3zH2C4b9eQT6oNfr9qdJaQLuHWMKWT4ityMl1UEBQlh5dy3Sh988Ec95BSau/KbR5vXljReBS5cA/jXlSsxqrbN8MOzbiPhmQeJYynj0vyMeeUZ1ZuBAniJx4CFNaeZAaJFTFYQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=JlU3GC/lZWKWvY0pjhRkOV34jKOVc8c3N92R/QR+uY8=;
+ b=KZQCYhJxM+RCOlCWPP+8yIewbcejbNOr2plDurDXtoGKDMma+/1yE3GH2yBRSNTBiMNWy4s8POEnbRoRd8Sq/ekRUEtkCkX3fpCTFKHFXkNt3m2JR46A0jsOHSfzxRzKv4cGfQF5+Wt9XQ7pQB/Jw8cBI+OeJKHZrgoJvrZsSJYnpsjT0yWUJ/CtJZGErzVUtQBhm9Flu0e+HAkIgcJn8VGd97fPe6QTU12FrdWZUPqm91LXIDyzAQRGMUmnZjivK75bpLZwKOrF+14smUhxHJdpfUTBkQqzd+lBAv1bsF/0y/ZA414e/Y5Oaua+Pq+SuE2c13cka5O9RpZO9n4qSQ==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM0PR04MB6900.eurprd04.prod.outlook.com (2603:10a6:208:17d::10)
+ by AM9PR04MB8666.eurprd04.prod.outlook.com (2603:10a6:20b:43d::21) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.245.13; Tue, 28 Jul
+ 2026 13:47:50 +0000
+Received: from AM0PR04MB6900.eurprd04.prod.outlook.com
+ ([fe80::7fda:8431:ca1b:b023]) by AM0PR04MB6900.eurprd04.prod.outlook.com
+ ([fe80::7fda:8431:ca1b:b023%5]) with mapi id 15.21.0270.009; Tue, 28 Jul 2026
+ 13:47:50 +0000
+Date: Tue, 28 Jul 2026 16:47:46 +0300
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: "Christophe Leroy (CS GROUP)" <chleroy@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	Russell King <linux@armlinux.org.uk>, Lee Jones <lee@kernel.org>,
-	linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org, mfd@lists.linux.dev
-Subject: Re: [PATCH v8 06/12] clk: zte: Add regmap-based clocks
-Message-ID: <amixrkffNj_JuXtU@redhat.com>
-References: <20260727-zx29clk-v8-0-7a107b00f1dd@gmail.com>
- <20260727-zx29clk-v8-6-7a107b00f1dd@gmail.com>
-MIME-Version: 1.0
-In-Reply-To: <20260727-zx29clk-v8-6-7a107b00f1dd@gmail.com>
-User-Agent: Mutt/2.4.0 (2026-06-19)
-X-Mimecast-Spam-Score: 0
-X-Mimecast-MFC-PROC-ID: OZVZuybo9yNy4BIKLhXq-uvZY1b1L-9r33JraeAWOf8_1785246130
-X-Mimecast-Originator: redhat.com
+	Tanjeff Moos <tanjeff.moos@westermo.com>,
+	Michael Walle <mwalle@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+	Frank Li <Frank.Li@nxp.com>, linux-kernel@vger.kernel.org,
+	Conor Dooley <conor+dt@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH v4 phy-next 0/9] RCW override for 10G Lynx dynamic
+ protocol reconfiguration
+Message-ID: <20260728134746.p7zqstau6376xifj@skbuf>
+References: <20260721231603.67865-1-vladimir.oltean@nxp.com>
+ <20260723150105.da2cqgtb7t5vw2d3@skbuf>
 Content-Disposition: inline
+In-Reply-To: <20260723150105.da2cqgtb7t5vw2d3@skbuf>
+X-ClientProxiedBy: WA1PEPF00005B89.POLP291.PROD.OUTLOOK.COM
+ (2603:10a6:1d8::637) To AM0PR04MB6900.eurprd04.prod.outlook.com
+ (2603:10a6:208:17d::10)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM0PR04MB6900:EE_|AM9PR04MB8666:EE_
+X-MS-Office365-Filtering-Correlation-Id: e2e3ebdd-efba-42fe-6056-08deecaed0d0
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|10070799003|23010399003|19092799006|366016|1800799024|18002099003|22082099003|3023799007|4143699003|56012099006|11063799006|10067099003;
+X-Microsoft-Antispam-Message-Info: BWGoUu3W1r4cDYJbnzfdzwTwsNcb+lVoLDR+30DgfKpFQIqFvlbkuztPONQa8WmtdS5J0N4GmyC3vnGuVuANmaU7do7Bs1DqPCLu6GzNl8tKUGcOjz+WMx21b2QK1uB+QiFWtmgM4nS8xS69dY37hvqgVxYav2fPs9smGpTCjsrlAc0C17mAM57ysvoabRyMyd243IyAJrSfesUV7K+r7Y3f6TkkEzR8SFj6QdSOauGKNAhmmKRGgDq7cZIxf56ZJI7EPHEE2tDBKewrauKYdbdlnLAcy/DpxXrXBEVAmAkV20MXAaxf4NzUw+3B3bAc/3MNZkx3cC+ZsBRh7kfAZ1EIQLW0du2KbQlREZj5QX+dln1VfeFZbWJb6ETTmSiaO0We7J8aUG+xhv1NvnO4MC62Hsncg8VOD/JTv3bSUOO8ULrrKptdBjFAWdTUIzATNjbMmgcuYCdrDXh9MIl5kkvgsc7Wsc0Rd6560xlc6S003iaVLtuyFWQWijoUSyeCNyfr6GiOqEi9GHlVIC7JuKbNES1ld6agjLWZU3D2hL4dngkxV1sHMMYBTzRiRGIQ1Cu7jOrKyEU+lQopKm1V2bWv8tMrdYvdzM1khEi+dQwWm2PShbQZaY1mwZok/rRBQjEfaXLg2eDPbLgrfXUDJ2zpEFwyOFPEGNs9kF7yUu0=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6900.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(10070799003)(23010399003)(19092799006)(366016)(1800799024)(18002099003)(22082099003)(3023799007)(4143699003)(56012099006)(11063799006)(10067099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?/6nah6eYhYNIrWqDv/jLMRpM8EgfUP/rk2yy1jssModKUOFbKJ6F3GjWmiPc?=
+ =?us-ascii?Q?e3+tkeWUoGHoc8zm6w2M0/fgNnjyGJsV0/RAHA8K5dGRvQfKV55oC0VyewVA?=
+ =?us-ascii?Q?IiXpuFUEAe1MXktLS/PCGW7T5MMm1ocwhDICk2VTpCvxqcFEx5sGiiDYWJe4?=
+ =?us-ascii?Q?Vendp5M1nTuWHrWx0KDNaxNDjSkc35hXtDIYe9Bh/YcrejcK0ZgsDewh1wrn?=
+ =?us-ascii?Q?0cQwSt3z7qAlXtS4pQR+NDoPE63I1s4tg5DkEeTMa4aBl5B1bl1WZON7J8w4?=
+ =?us-ascii?Q?8QmUxsh45DOrsdXyssIa6nkEFyiW+oB2E8WYcObrORTuq4FQJJs+gOH2uUtr?=
+ =?us-ascii?Q?/XdiyBflnh2NSolovwNJuygXXTPUm0mdEkbMeEqrF9EEZYFJvoGsgIKaoo5J?=
+ =?us-ascii?Q?Nqw5OTklAJGYkotyFcSWP9ZmVLD/Tsxnd6efIF+UGrRL1isXLo/YHzTjxwgX?=
+ =?us-ascii?Q?nWNqAQmywl7IbwR86n5qLIkQ2wPOOh5ra4fSz/ppFlingk6QxTzr/1Qj7b1O?=
+ =?us-ascii?Q?XyFZV54WU5rDh9gVGT/Y0p0U1M8pqIXQySNkxvG4p3cJqKfStvOgdw4go4MA?=
+ =?us-ascii?Q?LctRDBCVxWmxbJcuZVnP60S1zVx5EAFASsFFpy6rNgZfclOJZkfI9F5qIlCQ?=
+ =?us-ascii?Q?w15LRdMEvvtrExeT7tdqI3qeX6GyLNQtk4b4mK02pFEzYqSUXL/N+THsa2k6?=
+ =?us-ascii?Q?JxyHVuZYhZBU42pze+myy3IslE+biAUC1aGxuZfTLqh3+P5j2/G08udUO1K2?=
+ =?us-ascii?Q?oJ3GQC3RW0kuGiL4gGC/ghglXJYnulCzJMU4d+vFL1J2wCWcs0Qvx74cvH6n?=
+ =?us-ascii?Q?byOB2QuAnuVbxWtb3HSx6ykknBQSwryfNE0MsNAB6Rc64iVOKTQ2JPpucXo6?=
+ =?us-ascii?Q?5+P2ML0DvIQg1UFzQ1BGbXLDdkc/5u9e9FLKMfp8gUN6YKLv64ohYvAHkIYq?=
+ =?us-ascii?Q?j91/TtaXf4qJHvwkmYNjdQdeq1OzZq13o8cM5nCJkz3W7mHjtO/odfIunqhP?=
+ =?us-ascii?Q?aBUS+hdEO0wVJbDacWx9JIqh5dAx2AJTKqMiNAO/DzaRz91VvMXPBLt1OzXJ?=
+ =?us-ascii?Q?EcF3UepFDY1p0vp4PrJb/pUVsDlLYEcnq49N1vq7jXWf3LFu+LYAP7GPNqhO?=
+ =?us-ascii?Q?pfugO3US5WOfm5pvXY7LO4UqRUL9hVQd9NGXZf5UDiLFNVl1NW2poACxMi+N?=
+ =?us-ascii?Q?F+yEjeMQ7jHlJn8tU7RIPOt/HIW6109opSWki95wLt3GaBYLJFrbfsE3Ba7t?=
+ =?us-ascii?Q?xNkZOjClK30X+GIpc5mfPSl/wAXD1ceboDRoxo7X7RZ/2Lh4h1TVWHxei1bk?=
+ =?us-ascii?Q?YobUptAOFFMeJZGvuFUW71MGoiS8j0aCQtbyNXulmitk2eRO+i8oeh5DzI00?=
+ =?us-ascii?Q?LQqbELhWrcQ2y0XJZFrUMRlX9fYs1Wmc1XBh6tAaZhUNyh3P9pIWedG+L1Dt?=
+ =?us-ascii?Q?KxZowZGZplhSOhL4X1TGl2YRWB7GvDlJvN3zp430A7noIOda8si1Lf6er7cx?=
+ =?us-ascii?Q?BCRrlB6DfL4GwrM1/YC6Rjy4NLRHmdZ5+ms0+Qqtj1M1XmO85Xezo7L4dGZC?=
+ =?us-ascii?Q?uv2bHy3XW/365nCnnQk2hw7PQ1NcdG3Zsnjpo/IMLkK3/xDksRF80tRXQfuk?=
+ =?us-ascii?Q?XmtS1XXBe4Ne2Ppcj7pBocCq3OHIUrTYD3KXGtWK5G33Mqc1RUoXsPuJ4Ze7?=
+ =?us-ascii?Q?STTO/JSIoQBpVsZsBIAuHjA4IzBQVEQndgU7aBX8dqaCMxr8PB70W0vOomY5?=
+ =?us-ascii?Q?VD6CtJlWPWb4L8sa6U1vpJSYNK75rdYhVs7LW5FSRQabXJdvWXVrlZyzUV55?=
+X-MS-Exchange-AntiSpam-MessageData-1: fHFVlo7oXjLr/UKcSFHsTvp1BZQ8XjrT/Uc=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e2e3ebdd-efba-42fe-6056-08deecaed0d0
+X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6900.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Jul 2026 13:47:50.7745
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: PBK2+LKgIryy3D459e7eQSgd8UhZIBc0lKKqiuG80LzOdjG10a5AnVMAJB1dU6wbhlDItK+8hRhoaJDDcTQrxg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB8666
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260728_064215_416641_08D37BC5 
-X-CRM114-Status: GOOD (  29.10  )
+X-CRM114-CacheID: sfid-20260728_064757_180279_9D20C9A4 
+X-CRM114-Status: GOOD (  16.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,298 +141,53 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jul 27, 2026 at 09:24:21PM +0300, Stefan D=F6singer wrote:
-> This is based on meson/clk-regmap.c, although slightly simplified. I
-> have kept the copyright lines at the top of the file to indicate its
-> origin.
-> =
+Hi Christophe,
 
-> I see that numerous clock drivers have their own incarnation of regmap-
-> based mux/div/gate clocks. If there is any version of it that is likely
-> to be elevated to shared code like clk-gate.c I'll copy that and try to
-> use it as unmodified as possible.
-> =
+On Thu, Jul 23, 2026 at 06:01:05PM +0300, Vladimir Oltean wrote:
+> On Wed, Jul 22, 2026 at 02:15:54AM +0300, Vladimir Oltean wrote:
+> > Ioana Ciornei (4):
+> >   soc: fsl: guts: use a macro to encode the DCFG CCSR space
+> >   soc: fsl: guts: add a global structure to hold state
+> >   soc: fsl: guts: add a central fsl_guts_read() function
+> >   soc: fsl: guts: make it easier to determine on which SoC we are
+> >     running
+> > 
+> > Vladimir Oltean (5):
+> >   soc: fsl: guts: perform fsl_guts_init() error teardown in reverse
+> >     order of setup
+> >   soc: fsl: guts: make fsl_soc_data available after fsl_guts_init()
+> >   dt-bindings: fsl: layerscape-dcfg: define DCFG_DCSR region
+> >   soc: fsl: guts: implement the RCW override procedure
+> >   phy: lynx-10g: use RCW override procedure for dynamic protocol change
+> 
+> Even though I intended these changes for linux-phy (they are also
+> build-tested there), I'm fine either with these changes taken through
+> Vinod's tree with Christophe's ACK for patches 1-8, or through
+> Christophe's tree with Vinod's ACK for patch 9, really.
+> 
+> I see on Patchwork there's a minor issue in the commit message of patch 3/9:
+> https://patchwork.kernel.org/project/linux-phy/patch/20260721231603.67865-4-vladimir.oltean@nxp.com/
+> "WARNING: 'struture' may be misspelled - perhaps 'structure'?"
+> 
+> Could this be fixed up while applying, if there is no other feedback?
 
-> Signed-off-by: Stefan D=F6singer <stefandoesinger@gmail.com>
-> =
+Do you have feedback/a preference for how these patches should be handled?
 
-> ---
-> =
+I see Vinod acked patch 9, so I guess that means his preference would be
+for you to pick up the entire series (which is indivisible).
 
-> Version 8: Use ZX297520V3_CLK_NO_EXPORT instead of 0 for unexported clock=
-s.
-> =
+I checked that the patches apply to your soc_fsl branch:
+https://git.kernel.org/pub/scm/linux/kernel/git/chleroy/linux.git/?h=soc_fsl
 
-> Version 6: Remove stray regmap (Sashiko)
-> =
+Thanks!
+Vladimir
 
-> Version 5: Use regmap_test_bits in zte_clk_regmap_gate_is_enabled
-> ---
->  drivers/clk/zte/clk-regmap.c | 218 +++++++++++++++++++++++++++++++++++++=
-+++++-
->  1 file changed, 215 insertions(+), 3 deletions(-)
-> =
-
-> diff --git a/drivers/clk/zte/clk-regmap.c b/drivers/clk/zte/clk-regmap.c
-> index 984abeb45ab2..671b81bcda4d 100644
-> --- a/drivers/clk/zte/clk-regmap.c
-> +++ b/drivers/clk/zte/clk-regmap.c
-> @@ -7,28 +7,240 @@
->   */
->  =
-
->  #include <linux/clk-provider.h>
-> +#include <linux/container_of.h>
->  #include <linux/device.h>
->  #include <linux/regmap.h>
-> +#include <linux/types.h>
->  #include <linux/errno.h>
-> +#include <linux/bits.h>
-> +#include <linux/err.h>
->  =
-
->  #include "clk-zx.h"
->  =
-
-> +struct zte_clk_regmap {
-> +	struct clk_hw	hw;
-> +	struct regmap	*map;
-> +	u16		reg;
-> +	u8		shift;
-> +	u8		size;
-> +};
-> +
-> +static inline struct zte_clk_regmap *to_zte_clk_regmap(struct clk_hw *hw)
-> +{
-> +	return container_of(hw, struct zte_clk_regmap, hw);
-> +}
-> +
-> +static int zte_clk_regmap_gate_enable(struct clk_hw *hw)
-> +{
-> +	struct zte_clk_regmap *clk =3D to_zte_clk_regmap(hw);
-> +
-> +	return regmap_set_bits(clk->map, clk->reg, BIT(clk->shift));
-> +}
-> +
-> +static void zte_clk_regmap_gate_disable(struct clk_hw *hw)
-> +{
-> +	struct zte_clk_regmap *clk =3D to_zte_clk_regmap(hw);
-> +
-> +	regmap_clear_bits(clk->map, clk->reg, BIT(clk->shift));
-> +}
-> +
-> +static int zte_clk_regmap_gate_is_enabled(struct clk_hw *hw)
-> +{
-> +	struct zte_clk_regmap *clk =3D to_zte_clk_regmap(hw);
-> +
-> +	return regmap_test_bits(clk->map, clk->reg, BIT(clk->shift));
-> +}
-> +
-> +static const struct clk_ops zte_clk_regmap_gate_ops =3D {
-> +	.enable		=3D zte_clk_regmap_gate_enable,
-> +	.disable	=3D zte_clk_regmap_gate_disable,
-> +	.is_enabled	=3D zte_clk_regmap_gate_is_enabled,
-> +};
-> +
->  int zx_clk_register_gates(struct device *dev, struct regmap *regmap,
->  			  const struct zx_gate_desc *desc, unsigned int num,
->  			  struct clk_hw_onecell_data *clocks)
->  {
-> -	return -ENODEV;
-> +	struct zte_clk_regmap *clk;
-> +	unsigned int i;
-> +	int res;
-> +
-> +	for (i =3D 0; i < num; ++i) {
-> +		struct clk_init_data init =3D {};
-> +
-> +		clk =3D devm_kzalloc(dev, sizeof(*clk), GFP_KERNEL);
-> +		if (!clk)
-> +			return -ENOMEM;
-> +
-> +		init.name =3D desc[i].name;
-> +		init.ops =3D &zte_clk_regmap_gate_ops;
-> +		init.parent_names =3D &desc[i].parent;
-> +		init.num_parents =3D 1;
-> +		init.flags =3D CLK_SET_RATE_PARENT | desc[i].flags;
-> +		clk->hw.init =3D &init;
-> +		clk->map =3D regmap;
-> +		clk->reg =3D desc[i].reg;
-> +		clk->shift =3D desc[i].shift;
-> +		clk->size =3D 1;
-> +
-> +		res =3D devm_clk_hw_register(dev, &clk->hw);
-> +		if (res)
-> +			return dev_err_probe(dev, res, "Failed to register clk %s\n", desc[i]=
-.name);
-> +
-> +		if (desc[i].id !=3D ZX297520V3_CLK_NO_EXPORT)
-> +			clocks->hws[desc[i].id] =3D &clk->hw;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static unsigned long zte_clk_regmap_div_recalc_rate(struct clk_hw *hw,
-> +						    unsigned long prate)
-> +{
-> +	struct zte_clk_regmap *clk =3D to_zte_clk_regmap(hw);
-> +	unsigned int val;
-> +	int ret;
-> +
-> +	ret =3D regmap_read(clk->map, clk->reg, &val);
-> +	if (ret)
-> +		/* Gives a hint that something is wrong */
-> +		return 0;
-> +
-> +	val >>=3D clk->shift;
-> +	val &=3D clk_div_mask(clk->size);
-> +	return divider_recalc_rate(hw, prate, val, NULL, 0, clk->size);
-
-Newline before the return
-
-> +}
-> +
-> +static int zte_clk_regmap_div_determine_rate(struct clk_hw *hw,
-> +					     struct clk_rate_request *req)
-> +{
-> +	struct zte_clk_regmap *clk =3D to_zte_clk_regmap(hw);
-> +
-> +	return divider_determine_rate(hw, req, NULL, clk->size, 0);
-> +}
-> +
-> +static int zte_clk_regmap_div_set_rate(struct clk_hw *hw, unsigned long =
-rate,
-> +				       unsigned long parent_rate)
-> +{
-> +	struct zte_clk_regmap *clk =3D to_zte_clk_regmap(hw);
-> +	unsigned int val;
-> +	int ret;
-> +
-> +	ret =3D divider_get_val(rate, parent_rate, NULL, clk->size, 0);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	val =3D (unsigned int)ret << clk->shift;
-> +	return regmap_update_bits(clk->map, clk->reg, clk_div_mask(clk->size) <=
-< clk->shift, val);
->  }
->  =
-
-> +static const struct clk_ops zte_clk_regmap_divider_ops =3D {
-> +	.recalc_rate =3D zte_clk_regmap_div_recalc_rate,
-> +	.determine_rate =3D zte_clk_regmap_div_determine_rate,
-> +	.set_rate =3D zte_clk_regmap_div_set_rate,
-> +};
-> +
->  int zx_clk_register_dividers(struct device *dev, struct regmap *regmap,
->  			     const struct zx_div_desc *desc, unsigned int num)
->  {
-> -	return -ENODEV;
-> +	struct zte_clk_regmap *clk;
-> +	unsigned int i;
-> +	int res;
-> +
-> +	for (i =3D 0; i < num; ++i) {
-> +		struct clk_init_data init =3D {};
-> +
-> +		clk =3D devm_kzalloc(dev, sizeof(*clk), GFP_KERNEL);
-> +		if (!clk)
-> +			return -ENOMEM;
-> +
-> +		init.name =3D desc[i].name;
-> +		init.ops =3D &zte_clk_regmap_divider_ops;
-> +		init.parent_names =3D &desc[i].parent;
-
-Use parent_data instead of parent_names
-
-> +		init.num_parents =3D 1;
-> +		init.flags =3D CLK_SET_RATE_PARENT;
-> +		clk->hw.init =3D &init;
-> +		clk->map =3D regmap;
-> +		clk->reg =3D desc[i].reg;
-> +		clk->shift =3D desc[i].shift;
-> +		clk->size =3D desc[i].size;
-> +
-> +		res =3D devm_clk_hw_register(dev, &clk->hw);
-> +		if (res)
-> +			return dev_err_probe(dev, res, "Failed to register clk %s\n", desc[i]=
-.name);
-> +	}
-> +
-> +	return 0;
->  }
->  =
-
-> +static u8 zte_clk_regmap_mux_get_parent(struct clk_hw *hw)
-> +{
-> +	struct zte_clk_regmap *clk =3D to_zte_clk_regmap(hw);
-> +	unsigned int val;
-> +	int ret;
-> +
-> +	ret =3D regmap_read(clk->map, clk->reg, &val);
-> +	if (ret)
-> +		return 0xff;
-> +
-> +	val >>=3D clk->shift;
-> +	val &=3D GENMASK(clk->size - 1, 0);
-> +	return clk_mux_val_to_index(hw, NULL, 0, val);
-> +}
-> +
-> +static int zte_clk_regmap_mux_set_parent(struct clk_hw *hw, u8 index)
-> +{
-> +	struct zte_clk_regmap *clk =3D to_zte_clk_regmap(hw);
-> +	unsigned int val =3D clk_mux_index_to_val(NULL, 0, index);
-> +
-> +	return regmap_update_bits(clk->map, clk->reg,
-> +				  GENMASK(clk->size - 1, 0) << clk->shift,
-> +				  val << clk->shift);
-> +}
-> +
-> +static int zte_clk_regmap_mux_determine_rate(struct clk_hw *hw, struct c=
-lk_rate_request *req)
-> +{
-> +	return clk_mux_determine_rate_flags(hw, req, 0);
-> +}
-> +
-> +static const struct clk_ops zte_clk_regmap_mux_ops =3D {
-> +	.get_parent =3D zte_clk_regmap_mux_get_parent,
-> +	.set_parent =3D zte_clk_regmap_mux_set_parent,
-> +	.determine_rate =3D zte_clk_regmap_mux_determine_rate,
-> +};
-> +
->  int zx_clk_register_muxes(struct device *dev, struct regmap *regmap,
->  			  const struct zx_mux_desc *desc, unsigned int num,
->  			  struct clk_hw_onecell_data *clocks)
->  {
-> -	return -ENODEV;
-> +	struct zte_clk_regmap *clk;
-> +	unsigned int i;
-> +	int res;
-> +
-> +	for (i =3D 0; i < num; ++i) {
-> +		struct clk_init_data init =3D {};
-> +
-> +		clk =3D devm_kzalloc(dev, sizeof(*clk), GFP_KERNEL);
-> +		if (!clk)
-> +			return -ENOMEM;
-> +
-> +		init.name =3D desc[i].name;
-> +		init.ops =3D &zte_clk_regmap_mux_ops;
-> +		init.parent_names =3D desc[i].parents;
-
-Use parent_data instead of parent_names
-
-Brian
-
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
