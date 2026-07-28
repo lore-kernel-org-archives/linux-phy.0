@@ -4,58 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61B90C53219
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Jul 2026 12:34:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91CE0C53219
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Jul 2026 12:43:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=jeOcEkS2GW1vB/bptq1q+e6ifBQe4JOIiYV4vhSsGDQ=; b=u5+DhsLREazrM1
-	BNDycsMBoLtijwDtls6CHtzs1y8CJaPxynShUeGvqXJvYDTtTKfW0pgIifcMBVRXUpbA4MILQy83L
-	ZQ72prKMm9GW08Rrjo2IT1/P5CRZZGTJYZAoYIAGPvgmKyUgu/e3azYW8k8XcO5wZQMj+sSmS+7dm
-	VLyVPa8K+oJhFYWpF6GuJehMa0DSmDJ96+rc3AFJV/WOjvB9TS+zep/YLoWwhdnxXLuBhH4kt8Cue
-	Oa30ZOAhDzoPqTco/iBpKN9j/kRFv6i2A/j/uzRa/zHH1MjICzoAgpO3/ldXVV9I5qqAfgZSOfRPT
-	/MgnmN2oHwZhwulWrSHw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OIG2eY+S+LpijxePSfIQFip1mU0G6NT/7sV9fkt+R7w=; b=LjEf5KPNbDsxIq
+	OTPORwynYJoThANv75eYTcM5QZcLk5T8GQ++QOeeOOU3/WAv2E5WLG82sntlKb0zmrt8hlndJJqKC
+	JERtYPZONHHTHCGdxaQLhLj3LrprR7rg9QDYvICmMF4n6rpPffcvo4hnNIUTxluJClIV9uQU9EzwU
+	GbjAYqrP+E3zbuz8zPJTe+H4hG757OoB+KllzT3NYHzgZABCMpsRQLEramIry9gbrOSqUFS1xcfbm
+	OFjUQaCswWVFz8GuGh57IUUT26o0cP+9LXLh9sPFxR54DKTyTAt2yFMfyYqfDTU6o0uH0BqOCadtj
+	Mcumrw0mCXWlsP0j6XjQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1woh14-00000005Fu2-3qHs;
-	Tue, 28 Jul 2026 12:34:38 +0000
-Received: from [101.71.155.101] (helo=mail-m155101.qiye.163.com)
+	id 1woh9q-00000005HSx-0wFQ;
+	Tue, 28 Jul 2026 12:43:42 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1woh11-00000005Fsa-3iHE
+	id 1woh9o-00000005HSc-1UR3
 	for linux-phy@lists.infradead.org;
-	Tue, 28 Jul 2026 12:34:37 +0000
-Received: from LAPTOP-99KJFSET (unknown [221.228.238.82])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 47e10a909;
-	Tue, 28 Jul 2026 20:34:26 +0800 (GMT+08:00)
-From: Hongyan Xu <getshell@seu.edu.cn>
-To: vkoul@kernel.org,
-	kishon@kernel.org
-Cc: Hongyan Xu <getshell@seu.edu.cn>,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	jianhao.xu@seu.edu.cn
-Subject: [PATCH] phy: broadcom: ns2-usbdrd: cancel delayed work
-Date: Tue, 28 Jul 2026 20:33:36 +0800
-Message-ID: <20260728123423.781-2-getshell@seu.edu.cn>
-X-Mailer: git-send-email 2.50.1.windows.1
-MIME-Version: 1.0
-X-HM-Tid: 0a9fa8b81cce03a1kunm4c64fbaeeecee
-X-HM-MType: 10
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVkaQxpLVkseTEpNSE9NSEpPGlYeHw
-	5VEwETFhoSFyQUDg9ZV1kYEgtZQVlJSUpVSUlDVUlIQ1VDSVlXWRYaDxIVHRRZQVlPS0hVSktJSE
-	5DQ1VKS0tVS1kG
-DKIM-Signature: a=rsa-sha256;
-	b=G/G032YcM8zK70HDohDwj7TGtfsPZ+snjRlCP5IQRXlN9WJb9DvXseozpFnAkhkZxbxuSxU0MO/dMwTCfONQXYdtnvxOBXN+7KQ2u6SqBAUJlmtbgcwh26Hnin2zX8W/1HsR1bWb8y4NRYRzVNf0RfhpzttRTR2MgtiswzvHxU0=; s=default; c=relaxed/relaxed; d=seu.edu.cn; v=1;
-	bh=2PPymfwvlSf6hPUOCIr3axymdBfQH+HIh++NrR2XsaI=;
-	h=date:mime-version:subject:message-id:from;
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260728_053436_547498_DC98B607 
-X-CRM114-Status: UNSURE (   9.52  )
-X-CRM114-Notice: Please train this message.
+	Tue, 28 Jul 2026 12:43:40 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 4D82160A9E;
+	Tue, 28 Jul 2026 12:43:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AC1161F000E9;
+	Tue, 28 Jul 2026 12:43:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1785242619;
+	bh=LADM8DYbYKlcYqYjSeGAIJ/GXFzY2x2RmiH/8l47JH0=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=Io/Fi4K5smdz+q/6mzf4cGPC9dYbvgu+/oXe7Y+IHB1Jmowhs+nRgmKGaxgOzEnv5
+	 Y1ij6x8TA95Xp3NVVv0FYbEaVH5sVC4FucCcHTmKGvoCgjFv07eH/jSYoDaTD7814f
+	 X5liZ6OT0LHm89C+NHQ0RR6+s3ytXVtEi6sXmH+fzeBbbgBlgOxHHBsm+qOzq3p09b
+	 x7bv6dK0RQWGaei3Np+uBdNB7xBUx+H6gUGa8tmLwqVeSonb99ZyKyQ4b4TUAzuuUD
+	 F2wS0t5r5Nz+achEk2hzao+Y5QnWIwlZIppXxvSIezTDtkffT2KPbyHD78y4MRrIMm
+	 U4/URE/as9zWA==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH] phy: broadcom: ns2-usbdrd: cancel delayed work
+To: "Hongyan Xu" <getshell@seu.edu.cn>
+Cc: neil.armstrong@linaro.org, linux-phy@lists.infradead.org, vkoul@kernel.org, olteanv@gmail.com
+In-Reply-To: <20260728123423.781-2-getshell@seu.edu.cn>
+References: <20260728123423.781-2-getshell@seu.edu.cn>
+Date: Tue, 28 Jul 2026 12:43:38 +0000
+Message-Id: <20260728124338.AC1161F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,59 +61,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-ns2_drd_phy_probe() initializes wq_extcon. Both GPIO IRQs and the probe
-tail can queue it. There is no remove hook, so the delayed work can run
-after driver-managed resources are being released.
-
-Add a managed cleanup action before requesting IRQs. Devres releases the
-IRQs first, then cancels the delayed work while extcon, GPIO and MMIO
-state is still valid.
-
-This issue was found by a static analysis tool.
-
-Signed-off-by: Hongyan Xu <getshell@seu.edu.cn>
----
- drivers/phy/broadcom/phy-bcm-ns2-usbdrd.c | 11 +++++++++++
- 1 file changed, 11 insertions(+)
-
-diff --git a/drivers/phy/broadcom/phy-bcm-ns2-usbdrd.c b/drivers/phy/broadcom/phy-bcm-ns2-usbdrd.c
-index 36ad02c33..54929edb1 100644
---- a/drivers/phy/broadcom/phy-bcm-ns2-usbdrd.c
-+++ b/drivers/phy/broadcom/phy-bcm-ns2-usbdrd.c
-@@ -264,6 +264,13 @@ static irqreturn_t gpio_irq_handler(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
-+static void ns2_drd_phy_cancel_work(void *data)
-+{
-+	struct ns2_phy_driver *driver = data;
-+
-+	cancel_delayed_work_sync(&driver->wq_extcon);
-+}
-+
- static const struct phy_ops ops = {
- 	.init		= ns2_drd_phy_init,
- 	.power_on	= ns2_drd_phy_poweron,
-@@ -342,6 +349,10 @@ static int ns2_drd_phy_probe(struct platform_device *pdev)
- 
- 	INIT_DELAYED_WORK(&driver->wq_extcon, extcon_work);
- 
-+	ret = devm_add_action_or_reset(dev, ns2_drd_phy_cancel_work, driver);
-+	if (ret)
-+		return ret;
-+
- 	driver->id_irq = gpiod_to_irq(driver->id_gpiod);
- 	if (driver->id_irq < 0) {
- 		dev_err(dev, "failed to get ID IRQ\n");
--- 
-2.50.1.windows.1
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
+IFtIaWdoXSBNaXNzaW5nIGxvY2tpbmcgYmV0d2VlbiBhc3luY2hyb25vdXMgZXh0Y29uIHdvcmtx
+dWV1ZSBhbmQgc3luY2hyb25vdXMgUEhZIG9wZXJhdGlvbnMsIGNvbWJpbmVkIHdpdGggaW5jb3Jy
+ZWN0IHN0YXRlIHN5bmNocm9uaXphdGlvbiBvcmRlcmluZy4KLS0KCi0tLSBQYXRjaCBbMV06IFtQ
+QVRDSF0gcGh5OiBicm9hZGNvbTogbnMyLXVzYmRyZDogY2FuY2VsIGRlbGF5ZWQgd29yayAtLS0K
+Y29tbWl0IDhkMjRiNGIyMDg3ZTFjZGQ0OTJmMTA0ODk2OGEwZDg5MDczMmU1ZGQKQXV0aG9yOiBI
+b25neWFuIFh1IDxnZXRzaGVsbEBzZXUuZWR1LmNuPgoKcGh5OiBicm9hZGNvbTogbnMyLXVzYmRy
+ZDogY2FuY2VsIGRlbGF5ZWQgd29yawoKVGhpcyBwYXRjaCBhZGRzIGEgbWFuYWdlZCBjbGVhbnVw
+IGFjdGlvbiB0byBjYW5jZWwgdGhlIGRlbGF5ZWQgd29yawp3cV9leHRjb24gYmVmb3JlIHJlcXVl
+c3RpbmcgSVJRcy4gVGhpcyBlbnN1cmVzIHRoZSB3b3JrIGRvZXMgbm90IHJ1bgphZnRlciBkcml2
+ZXItbWFuYWdlZCByZXNvdXJjZXMgaGF2ZSBiZWVuIHJlbGVhc2VkLgoKPiBkaWZmIC0tZ2l0IGEv
+ZHJpdmVycy9waHkvYnJvYWRjb20vcGh5LWJjbS1uczItdXNiZHJkLmMgYi9kcml2ZXJzL3BoeS9i
+cm9hZGNvbS9waHktYmNtLW5zMi11c2JkcmQuYwo+IGluZGV4IDg0NzNmYTU3NDUyOTYuLmQwOTU5
+NjY4ZGY3OTMgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9waHkvYnJvYWRjb20vcGh5LWJjbS1uczIt
+dXNiZHJkLmMKPiArKysgYi9kcml2ZXJzL3BoeS9icm9hZGNvbS9waHktYmNtLW5zMi11c2JkcmQu
+YwoKWyAuLi4gXQoKPiBAQCAtMzQyLDYgKzM0OSwxMCBAQCBzdGF0aWMgaW50IG5zMl9kcmRfcGh5
+X3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gIAo+ICAJSU5JVF9ERUxBWUVE
+X1dPUksoJmRyaXZlci0+d3FfZXh0Y29uLCBleHRjb25fd29yayk7Cj4gIAo+ICsJcmV0ID0gZGV2
+bV9hZGRfYWN0aW9uX29yX3Jlc2V0KGRldiwgbnMyX2RyZF9waHlfY2FuY2VsX3dvcmssIGRyaXZl
+cik7Cj4gKwlpZiAocmV0KQo+ICsJCXJldHVybiByZXQ7Cj4gKwoKW1NldmVyaXR5OiBIaWdoXQpU
+aGlzIGlzIGEgcHJlLWV4aXN0aW5nIGlzc3VlLCBidXQgSSBoYXZlIGEgcXVlc3Rpb24gYWJvdXQg
+aG93IHRoZQpleHRjb25fd29yayBkZWxheWVkIHdvcmsgaW50ZXJhY3RzIHdpdGggc3luY2hyb25v
+dXMgUEhZIG9wZXJhdGlvbnMuCgpJbiBleHRjb25fd29yaygpLCB3ZSBjYWxsIGV4dGNvbl9zZXRf
+c3RhdGVfc3luYygpIGJlZm9yZSB1cGRhdGluZwpkcml2ZXItPmRhdGEtPm5ld19zdGF0ZSBhbmQg
+Y2FsbGluZyBjb25uZWN0X2NoYW5nZSgpOgoKCWlmICghaWQgJiYgdmJ1cykgeyAvKiBIb3N0IGNv
+bm5lY3RlZCAqLwoJCWV4dGNvbl9zZXRfc3RhdGVfc3luYyhkcml2ZXItPmVkZXYsIEVYVENPTl9V
+U0JfSE9TVCwgdHJ1ZSk7CgkJcHJfZGVidWcoIkhvc3QgY2FibGUgY29ubmVjdGVkXG4iKTsKCQlk
+cml2ZXItPmRhdGEtPm5ld19zdGF0ZSA9IEVWVF9IT1NUOwoJCWNvbm5lY3RfY2hhbmdlKGRyaXZl
+cik7CgpCZWNhdXNlIGV4dGNvbl9zZXRfc3RhdGVfc3luYygpIGludm9rZXMgY29uc3VtZXIgbm90
+aWZpZXJzIHN5bmNocm9ub3VzbHksCmNvdWxkIGEgY29uc3VtZXIgaW1tZWRpYXRlbHkgY2FsbCBQ
+SFkgQVBJcyBsaWtlIG5zMl9kcmRfcGh5X2luaXQoKSBvcgpuczJfZHJkX3BoeV9wb3dlcm9uKCkg
+aW4gcmVzcG9uc2U/CgpJZiBzbywgdGhvc2UgUEhZIEFQSXMgd291bGQgcmVhZCBkcml2ZXItPmRh
+dGEtPm5ld19zdGF0ZSBiZWZvcmUgaXQgaGFzCmJlZW4gdXBkYXRlZCBieSB0aGUgd29ya3F1ZXVl
+LgoKRnVydGhlcm1vcmUsIHNpbmNlIHRoZXJlIGFwcGVhcnMgdG8gYmUgbm8gaW50ZXJuYWwgbG9j
+a2luZywgd291bGRuJ3QKY29uY3VycmVudCBjYWxscyB0byBuczJfZHJkX3BoeV9pbml0KCkgYW5k
+IGNvbm5lY3RfY2hhbmdlKCkgcmFjZSB3aGVuCnBlcmZvcm1pbmcgcmVhZC1tb2RpZnktd3JpdGUg
+b3BlcmF0aW9ucyBvbiB0aGUgUEhZIHJlZ2lzdGVycz8KCj4gIAlkcml2ZXItPmlkX2lycSA9IGdw
+aW9kX3RvX2lycShkcml2ZXItPmlkX2dwaW9kKTsKPiAgCWlmIChkcml2ZXItPmlkX2lycSA8IDAp
+IHsKPiAgCQlkZXZfZXJyKGRldiwgImZhaWxlZCB0byBnZXQgSUQgSVJRXG4iKTsKCi0tIApTYXNo
+aWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA3Mjgx
+MjM0MjMuNzgxLTItZ2V0c2hlbGxAc2V1LmVkdS5jbj9wYXJ0PTEKCi0tIApsaW51eC1waHkgbWFp
+bGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
