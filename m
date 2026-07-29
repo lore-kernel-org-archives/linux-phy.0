@@ -4,60 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22C52C53219
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Jul 2026 23:38:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F347EC54F52
+	for <linux-phy@archiver.kernel.org>; Wed, 29 Jul 2026 01:35:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+q3eRstIus3omkDjibuZYrh8ervXS4+YZNuFauO36ag=; b=qU+M0E5RiSG8Fz
-	apVMmY/wdwvbljaSbhbVLjXmdPml0q5xz3LlJvRTYLF9xw2Y9qTQMQj7FM9cuKMAjc8RSfZTcA9QT
-	bHbLUOpJAIF63j1aclnt+btgl6de+yscK5BdpcGtkfFIJQRlPGlaG/UYb2ZOLjlGpc+W5kmf57fhb
-	ao5Zhiml6YBR9vhHvAhn4VvliCUFFX7u7LlmYAWVBzIZz59fN2VfO/bQwNdvdkYYPFIWyVbzbCAAv
-	geRqPcExej5NH0kSf0X/a+aqJcX6MYmRpw/690+zoJ28B2ztr0dR3TB++53+QHzdd/9OZcr5oBhov
-	AXUOu6UuHcK82RdIfnjQ==;
+	List-Owner; bh=OnEiwMF75ROdcJ81EF79r2vNQewgcl2QFAC6sTNdzns=; b=yC1w66luG/TnVW
+	ETXr709VO0RaTrGBQQAKAIvIucH9W5x6sqWR9FvQuvL9ekFkXZu7z7Zqn5dX8lChZWzKkZt1fq/5S
+	EVyCxnLsrmjcXMXEgL38+nWU8AFdzo+cSlHxv+TumaWtqmZsxDvOfp/yDTWDoYlphkGBFKos6riJw
+	btWXoR33PDwWodCrwVvU9zOIZYzdKOHOysGIQsWE8dqo1yomJeAKQRnYINCH0+xw/ER6iYonhSZOx
+	eP//ETwgGuCafEnxe5yBT0pKVq26PgbI11CQu8IpVJ3LnrVozza3YC3dtSXdHsoVluFDq1MO+ZbPM
+	rZ1POyJMixZ8S0I4jiWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1worNE-00000006UcL-1d3f;
-	Tue, 28 Jul 2026 23:38:12 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wotCI-00000006bz4-0AXE;
+	Wed, 29 Jul 2026 01:35:02 +0000
+Received: from mail-m6080.netease.com ([210.79.60.80])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1worND-00000006UcE-2EJX
-	for linux-phy@lists.infradead.org;
-	Tue, 28 Jul 2026 23:38:11 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id D254A40361;
-	Tue, 28 Jul 2026 23:38:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 93E0C1F000E9;
-	Tue, 28 Jul 2026 23:38:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1785281890;
-	bh=lEFXPTpHisQaEXsrIG6LaLdD1i4QU2aGZ2O16KHXXs8=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=haCCh3RYAe4mGWCwNTcRLr+bB1qRfbF10cEHMsgUFEar5cehGK3SPTIqKrJYJ/GPR
-	 PmebK1BzFO3ZHYP1u94fTySeJnGOkCxdzk2OHNNNfXuwxM0noklp4OiXZRxNqMHX4i
-	 WvBQtUvigyUxrzRwt1Bw/LUiy5cqodR76t6iyd3JJCiuR+8q/YU1LbSzrl6WRWcgmv
-	 g1MQgMB9ghGRT6QI+2XUZKUMONv+M8EzcgB8TZeWtNdxYVOVU9wXq+vDKGnvCqtkOh
-	 ErM+nAdQWuXqfzZhXRWPdSfT9M8qcFku/ieWZidSfKHJgLYymCxcKQdddVy5ScLt7j
-	 BcKgH1errWklQ==
-Date: Tue, 28 Jul 2026 16:38:09 -0700
-From: Drew Fustini <fustini@kernel.org>
-To: Icenowy Zheng <zhengxingda@iscas.ac.cn>
-Cc: sashiko-reviews@lists.linux.dev, vkoul@kernel.org, conor+dt@kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	robh@kernel.org, olteanv@gmail.com, neil.armstrong@linaro.org
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: add binding for T-Head TH1520
- USB PHY
-Message-ID: <amk9YYzI+LqCHhcy@x1>
-References: <20260723084316.3573714-1-zhengxingda@iscas.ac.cn>
- <20260723084316.3573714-2-zhengxingda@iscas.ac.cn>
- <20260723084759.3BBF81F000E9@smtp.kernel.org>
- <8ccf1a36179881b1f9662e70d728322c62c88f78.camel@iscas.ac.cn>
+	id 1wotCE-00000006bw4-0Pj4;
+	Wed, 29 Jul 2026 01:35:00 +0000
+Received: from [172.16.12.90] (unknown [61.154.14.86])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 47f0092e5;
+	Wed, 29 Jul 2026 09:34:46 +0800 (GMT+08:00)
+Message-ID: <e4b1051c-fc91-44a7-ab29-1da888fcc0c2@rock-chips.com>
+Date: Wed, 29 Jul 2026 09:34:44 +0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8ccf1a36179881b1f9662e70d728322c62c88f78.camel@iscas.ac.cn>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 0/5] This series is split from the v15 "Add Type-C DP
+ support for RK3399 EVB
+To: Sebastian Reichel <sebastian.reichel@collabora.com>
+Cc: Andrzej Hajda <andrzej.hajda@intel.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Luca Ceresoli <luca.ceresoli@bootlin.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Sandy Huang <hjc@rock-chips.com>, =?UTF-8?Q?Heiko_St=C3=BCbner?=
+ <heiko@sntech.de>, Andy Yan <andy.yan@rock-chips.com>,
+ Vinod Koul <vkoul@kernel.org>,
+ Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-phy@lists.infradead.org
+References: <20260727064408.101-1-kernel@airkyi.com> <amgMXujurBrB5B0L@venus>
+ <e22072d9-7fee-4f83-9ae9-5428e45c7507@rock-chips.com>
+ <amh1sK_4KnD5zTlZ@venus>
+Content-Language: en-US
+From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+In-Reply-To: <amh1sK_4KnD5zTlZ@venus>
+X-HM-Tid: 0a9fab82895203a7kunm36abcb353ae33c
+X-HM-MType: 1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVlDHR0aVh1NT0xNSU0dS0hKSVYVFA
+	kWGhdVEwETFhoSFyQUDg9ZV1kYEgtZQVlNSlVKTk9VSk9VQ01ZV1kWGg8SFR0UWUFZT0tIVUJCSU
+	5LVUpLS1VKQktCWQY+
+DKIM-Signature: a=rsa-sha256;
+	b=euk3LVDokfDwuFpxIXJN4jzuLkRvCtZqL8jRDZoAMRvU+JjIgJ35lxzKyNXNiyGRtGCK9NBFxvWfNY3AwjI7dfY2R/DKuVwUmhyZKQT6VIaXik4yqyNkfEz9392PYWmVGRCtPRe5Cchs2S75m7iquG3+ruNflhaXQLxwkVZbv1o=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
+	bh=R4MBbntBTw+WzVk7B5pQ1YM1qPjQxWB0im3ZJJbI4sU=;
+	h=date:mime-version:subject:message-id:from;
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260728_183458_669118_E9135069 
+X-CRM114-Status: GOOD (  17.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,33 +82,77 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBKdWwgMjMsIDIwMjYgYXQgMTA6MDU6MjRQTSArMDgwMCwgSWNlbm93eSBaaGVuZyB3
-cm90ZTogPiDlnKggMjAyNi0wNy0yM+Wbm+eahCAwODo0NyArMDAwMO+8jHNhc2hpa28tYm90QGtl
-cm5lbC5vcmflhpnpgZPvvJoKPiA+IFRoYW5rIHlvdSBmb3IgeW91ciBjb250cmlidXRpb24hIFNh
-c2hpa28gQUkgcmV2aWV3IGZvdW5kIDIgcG90ZW50aWFsCj4gPiBpc3N1ZShzKSB0byBjb25zaWRl
-cjoKPiA+IC0gW01lZGl1bV0gVGhlICdyZWcnIHByb3BlcnR5IGlzIG9taXR0ZWQgZnJvbSB0aGUg
-J3JlcXVpcmVkJyBsaXN0IGZvcgo+ID4gYSBtZW1vcnktbWFwcGVkIFBIWS4KPiA+IC0gW01lZGl1
-bV0gVGhlICdhdmRkMzMtdXNiMy1zdXBwbHknIGlzIG9taXR0ZWQgZnJvbSB0aGUgJ3JlcXVpcmVk
-Jwo+ID4gbGlzdCBiYXNlZCBvbiBzb2Z0d2FyZSBsaW1pdGF0aW9ucyByYXRoZXIgdGhhbiBoYXJk
-d2FyZSBkZXNjcmlwdGlvbi4KPiAKPiBXZWxsIHRoaXMgaXMgYWxzbyB0byB3b3JrYXJvdW5kIHRo
-ZSBwcm9ibGVtIHJhaXNlZCBieSBTYXNoaWtvIHlvdXJzZWxmCj4gYXQgWzFdLgo+IAo+IEkgZGlk
-bid0IG1lbnRpb24gaXQgaW4gdGhlIGxvZyBiZWNhdXNlIEkgYW0gbm90IHN1cmUgd2hldGhlciB0
-aGlzIGlzIGEKPiByZWFsIHByb2JsZW0uCj4gCj4gWzFdCj4gaHR0cHM6Ly9zYXNoaWtvLmRldi8j
-L3BhdGNoc2V0LzIwMjYwNTA3MDgxNzEwLjQwOTA4MTQtMS16aGVuZ3hpbmdkYSU0MGlzY2FzLmFj
-LmNuP3BhcnQ9NgoKSSB0aGluayBTYXNoaWtvJ3MgY29tbWVudCBvbiB2MSB3YXMgaW5jb3JyZWN0
-LCBhbmQgYXZkZDMzLXVzYjMtc3VwcGx5CnNob3VsZCBiZSByZXF1aXJlZC4KClNhc2hpa28gY2xh
-aW1lZCB0aGF0IG1ha2luZyBhdmRkMzMtdXNiMy1zdXBwbHkgcmVxdWlyZWQgd291bGQgYnJlYWsK
-ZHRic19jaGVjayBmb3IgYm9hcmRzIHRoYXQgaW5jbHVkZSB0aDE1MjAuZHRzaSBidXQgZG8gbm90
-IHByb3ZpZGUgdGhlCnJlZ3VsYXRvci4gSG93ZXZlciwgZHRzY2hlbWEgZG9lcyBub3Qgd2FybiBh
-Ym91dCBtaXNzaW5nIHByb3BlcnRpZXMgaWYKdGhlIG5vZGUgaXMgZGlzYWJsZWQgWzFdLiBUaGVy
-ZWZvcmUsIG9ubHkgYm9hcmRzIHRoYXQgZW5hYmxlIHRoZSB1c2IgcGh5Cm5vZGUgd291bGQgbmVl
-ZCB0byBwcm92aWRlIGF2ZGQzMy11c2IzLXN1cHBseS4KClRoYW5rcywKRHJldwoKWzFdIGh0dHBz
-Oi8vZ2l0aHViLmNvbS9kZXZpY2V0cmVlLW9yZy9kdC1zY2hlbWEvYmxvYi9lYjBlNTNkMWM1YjA3
-MTg2NWFiYmY3ZDI1MTcyMTQzMWU4ZTZiZDcxL2R0c2NoZW1hL2R0Yl92YWxpZGF0ZS5weSNMMjU2
-CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+Hi Sebastian,
+
+On 7/28/2026 6:44 PM, Sebastian Reichel wrote:
+> Hello Chaoyi,
+> 
+> On Tue, Jul 28, 2026 at 10:33:48AM +0800, Chaoyi Chen wrote:
+>>>> Changes in v4:
+>>>> - Link to v3: https://lore.kernel.org/all/20260717072323.96-1-kernel@airkyi.com/
+>>>> - Scan the entire typec_bus and attempt to register the hpd bridge,
+>>>>   so as not to miss devices that were already added during initialization.
+>>>
+>>> While that may help with the module being loaded late, it does not
+>>> help with triggering the module load in the first place.
+>>>
+>>> The module does not have any MODULE_DEVICE_TABLE() helping with
+>>> that. So basically any system relying on the automatic hpd bridge
+>>> registration and using a modular kernel (e.g. the arm64 defconfig or
+>>> the kernels usually provided by Linux distributions) requires
+>>> manually loading that module to get any graphical output.
+>>>
+>>
+>> Thank you for pointing this out. I will add it in v5.
+> 
+> Add what exactly? As this code is quite generic, you don't have
+> anything for a MODULE_DEVICE_TABLE() (i.e. no OF, no I2C, ...).
+> 
+
+That is:
+
+static const struct typec_device_id dp_typec_id[] = {
+	{ USB_TYPEC_DP_SID },
+	{ },
+};
+MODULE_DEVICE_TABLE(typec, dp_typec_id);
+
+Just like the modules in drivers/usb/typec/altmodes/ .
+
+> One solution I see to keep the notifier design would be to add
+> 
+> MODULE_SOFTDEP("pre: aux-hpd-typec-dp-bridge")
+> 
+> to some other module and piggy-back on it. Alternatively integrate
+> it directly to some other module, such as "drm_display_helper",
+> which already has DRM_DISPLAY_DP_HELPER and DRM_DISPLAY_DP_TUNNEL.
+> Adding TypeC DP AltMode as part of it seems sensible to me.
+>
+
+I agree, placing it on the DRM side looks more reasonable.
+
+> FWIW I suggest you test booting your patches work with the arm64
+> defconfig before your next submission ;)
+>
+
+Oh, I will. It's just that I've always been using buildroot. I'll check 
+the situation with other distributions.
+
+
+> Greetings,
+> 
+> -- Sebastian
+
+-- 
+Best, 
+Chaoyi
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
