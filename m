@@ -4,59 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84662C53219
-	for <linux-phy@archiver.kernel.org>; Wed, 29 Jul 2026 15:51:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B127C53219
+	for <linux-phy@archiver.kernel.org>; Wed, 29 Jul 2026 19:28:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7EKtBeN6hJsAea6Cgg2Vg1UYfw8YStAYOfGwgbrcTY4=; b=idmXmltXVgxVD1
-	6Te5h1ZRVQR5RaVIEoulCqd7xYTHtfVpGTFh1vqbOnombYA9SFv2AiNC7TktmgxXAbLUH3WwDeDZ7
-	yopc8o+nM5J4hc6Z9AprYd35/OoAUbC4QdFD+C4E2LnF9tuUL8MH4rb15vfqRIju3iPPLFndaXCb4
-	MNPOFi1co1NYqkzArJ8/J5zjNFTNSI2OdUpTOOrLlFEb3g/g3J1tmwu1ps3XVFPYRyhilrm2HSvF7
-	lFk3SDjp3M5YoNnrf8faCMigYtTxfnlWbUkFLHb4OKK9GWsi9D19iAsZxHaMIQkd4mnCsHe83jXxw
-	D9ojorNdLtrxLXLeSi6A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=GAZUwP41JqXOJogVo4Toh+vBTCtrOqa8ndSS72s9EIo=; b=ygSTD0enZHiiS5
+	06c1fik/NmfLKyCHYcR5yL3Kn+3zfoek6tCxFlZMxxcCDtpEqcQD72QHS0+JJTmPhxUN2SIbQ6+zs
+	fbQIjJ3VnTYftnz5z3+h+QTTBfpsw6jT20iR5gls7KMWYYxVjIyyiSRJsBeK5ZIZ1+agfPm4+lSlq
+	4gpykUaeAyXu4bTFu0h1t4YPtjOi8mckWsMCR85K1jREqNmGVJfjbavbgn0wcZU3ZvcpgD4xnVZs9
+	jiy1kDovwdHE1GsPpdIGx3qMn1FYGGb6rL1cwKIF40fsaAfH5Fcsn7ye0nylUiUZo6ubTJtXnBSIe
+	Zr2G++IgnWd+y8ZiVhSQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wp6ZJ-00000008Ssq-0SdJ;
-	Wed, 29 Jul 2026 15:51:41 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wp9xQ-00000008tJ3-0zMj;
+	Wed, 29 Jul 2026 19:28:48 +0000
+Received: from mail-vk1-xa2f.google.com ([2607:f8b0:4864:20::a2f])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wp6ZI-00000008Ssh-3TsC
+	id 1wp9xN-00000008tIb-32M1
 	for linux-phy@lists.infradead.org;
-	Wed, 29 Jul 2026 15:51:40 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 1F7886001D;
-	Wed, 29 Jul 2026 15:51:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A955E1F000E9;
-	Wed, 29 Jul 2026 15:51:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1785340299;
-	bh=iW6++TsjsjkHVWeS+D4H1852AWqORztvK6zBY0Nmi1s=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=iFFYdS/eRmw1AtZ0pXDcFy2jjzYONtoxY17oelWuQmyEDhOkG4NASfnS6kuWFQByV
-	 0hsPg9lLQc0xs0MzA/pucX1whYc3gqk/5MAs1OZDjUs4AwQwdqxY6gZLub3tHNogpE
-	 dBVzWxxBhxHuLjJlyMYPqwyEV+juntfwYWwER0w8AeP6aGcTjZiZvF7xirxjFrjERN
-	 /ER66FEyU0IDYy0kHjB8dUKLNI0Oho6xmsvpfEzSKGWyuuK16RA9j1ghHURgeoudq8
-	 nrnV311BCTOAnMnGlvhxZ8lIav1DYT05u94ivhf5SWbbyHyvmSfEPO0qxokrt9XrZa
-	 5aVzpOxlRrTlg==
-Date: Wed, 29 Jul 2026 08:51:38 -0700
-From: Drew Fustini <fustini@kernel.org>
-To: Icenowy Zheng <zhengxingda@iscas.ac.cn>,
-	sashiko-reviews@lists.linux.dev
-Cc: neil.armstrong@linaro.org, linux-phy@lists.infradead.org,
-	robh@kernel.org, conor+dt@kernel.org, olteanv@gmail.com,
-	vkoul@kernel.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH v2 2/2] phy: add a driver for T-Head TH1520 USB PHY
-Message-ID: <amohirbdNtDLtXeH@x1>
-References: <20260723084316.3573714-1-zhengxingda@iscas.ac.cn>
- <20260723084316.3573714-3-zhengxingda@iscas.ac.cn>
- <20260723085527.BDB5A1F000E9@smtp.kernel.org>
+	Wed, 29 Jul 2026 19:28:46 +0000
+Received: by mail-vk1-xa2f.google.com with SMTP id 71dfb90a1353d-5bfa6766cf6so640675e0c.3
+        for <linux-phy@lists.infradead.org>; Wed, 29 Jul 2026 12:28:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1785353324; x=1785958124; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=Zw0RLxqDt8ltnYvxH2pSkXYrtGBRy0ZXfT9tg4nadNY=;
+        b=HwJHjqZLnWJytxP5jW6DOPc4t3jUcrN4dem1iEZOFhscI+d3lkv4w4NtDIDcYMjL4t
+         zalqZPR6Q3V3yBpg9kdt/O4TaWelXdgEtAd37Y9cxieMxvtx7C2uKxbt47CpwhMU1PBS
+         /QiHMe7MCra84tTjzwRN15C1nlx/uO1/TdtSa0KARpS3eC7zm9YVuX1F5rsAGNkOC1JQ
+         8bkfNwfTBkADg9MGdYb6VXn/NR1rXmsE8q+x9pc3KsVWzvdmbwFKkbqyMun7mS3zBbu7
+         YXYYJg8wXh913zbLt+yqlh73Gs9O5BE4t4xQSyFc4eS8PNBXBBgWDso/VsMgToi3h8av
+         myUA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1785353324; x=1785958124;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=Zw0RLxqDt8ltnYvxH2pSkXYrtGBRy0ZXfT9tg4nadNY=;
+        b=QJC35p/CdJq3aeir/agwkZE7xNP2z7cvgt/nxdi/HTBDU3nPJ7iiAsgMwOIh9P6DE3
+         bos/loPV634kCcG+wo+50giM7V4U0Mtit4KlPusOP/kftguu+dWatXGqpY04aJCqHIM3
+         xm+UR0EQ7SQV1kq2ZnhENUzFmSfBVI6j4PFCDPz7mus+au3EPbt61ZsAt5kQOGRgYoZf
+         fPkd1FuYkVo8+n+LYi4BRmuInlfmLXE4XqE6tqhCXs9DPtTlDFE3a7+iWXYiPO7H9HJf
+         eK0voOcve/aKrFiTMDLJalZGxAQbCnteaIYUD6oc7GBHXHi6fZAsPRD8DaILqmi7rXNU
+         3hTg==
+X-Forwarded-Encrypted: i=1; AHgh+RrizX+DKZRxJXl99HEhYNebKOaxAo3E1WgzbbchyzSsd8W/g8oMiDeG0QwDU+KOWA6kzmPY/aqAUFw=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwkeP+67M9r3Noz3hZLZxZTPOTf1NxvtceXsWKs+y2IPfjbPpia
+	hLHZnTMy53qHiQpyNztQTpyY3rKb/yhUvFmOggRLMueUpRsPfBnOs6Ea4BUmsg==
+X-Gm-Gg: AR+sD13By0nL/FAFj8Rt6cBV2jnEZkQj4cAB/k0LHIuuzmp51+r1BqHIL+PHid00bBv
+	WlRdKf/IJ/rCeOtKKEoxk2H/miz/ey76AEcFfs8ahM08t49Xxu1glCbK2CWwvw2Yg1p74+dkeXJ
+	5hMH4kBxZ06fVvns5JisF9whVnh5YYZpbo9FQ8pzmVeXrYpkQIXMZVkgSO9MXWsxlUP6NF+ZC0O
+	ASr71RGXOy+B7A0wOXgnszUPv3jZ7JQD/wtHRV1YwiEcuhIGQyzyygtjlpfsDz6nTFCS7v2fHNh
+	lcg+jXkL7DJgEt/mOA47dejXOv9DC6VZ0kRmhXshIaz9T1GR/UcS0iSzpreTdvN0P5RF+4Hfj4f
+	rSpbcYsootKxrsAES4Z1GgPEOmsFnzE2OoCY7rV4MBD7bUA9uhh/bEt3jMDapxcjFILZTma9zTA
+	cG6XVr4JKK/7OfgSLm7Bi0K3kdNhx97tnLrDONGQEAdKbFBu/xiFX8TTplw8YUfOcXhtu23OBuj
+	ev/R1DdJvmSpQu4GW2ugTAvBxPeh+PaFauObdA=
+X-Received: by 2002:a05:6102:84d7:b0:74a:b492:3a62 with SMTP id ada2fe7eead31-7549f34856dmr2616287137.4.1785353323905;
+        Wed, 29 Jul 2026 12:28:43 -0700 (PDT)
+Received: from fabio-X870-EAGLE-WIFI7.. ([2804:1b3:a801:60b4:a913:91a7:b883:6046])
+        by smtp.gmail.com with ESMTPSA id ada2fe7eead31-755a74c0b8dsm2078893137.6.2026.07.29.12.28.41
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 29 Jul 2026 12:28:43 -0700 (PDT)
+From: Fabio Estevam <festevam@gmail.com>
+To: vkoul@kernel.org
+Cc: neil.armstrong@linaro.org,
+	linux-phy@lists.infradead.org,
+	Fabio Estevam <festevam@nabladev.com>
+Subject: [PATCH] phy: freescale: fsl-samsung-hdmi: Balance runtime PM operations
+Date: Wed, 29 Jul 2026 16:28:30 -0300
+Message-ID: <20260729192830.487150-1-festevam@gmail.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260723085527.BDB5A1F000E9@smtp.kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260729_122845_768005_AD61DB44 
+X-CRM114-Status: UNSURE (   8.91  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,69 +99,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jul 23, 2026 at 08:55:27AM +0000, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 1 potential issue(s) to consider:
-> - [Low] Missing explicit inclusion of `<linux/delay.h>` for `udelay()`.
-[..]
-> > +static int th1520_usb_phy_init(struct phy *phy)
-> > +{
-> > +	struct th1520_usb_phy *th1520_phy = phy_get_drvdata(phy);
-> > +	int ret;
-> > +
-> > +	ret = clk_prepare_enable(th1520_phy->ref_clk);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	ret = reset_control_assert(th1520_phy->phy_reset);
-> > +	if (ret)
-> > +		goto err_disable_clk;
-> > +
-> > +	/*
-> > +	 * Do some initial PHY setup:
-> > +	 * - Set COMMONONN to allow the PHY to automatically power down.
-> > +	 * - Set REF_SSP_EN to enable feeding reference clock to SuperSpeed
-> > +	 *   PHY clock PLL.
-> > +	 */
-> > +	regmap_set_bits(th1520_phy->regmap, USB_SYS, USB_SYS_COMMONONN);
-> > +	regmap_set_bits(th1520_phy->regmap, USB_SSP_EN, USB_SSP_EN_REF_SSP_EN);
-> > +
-> > +	ret = reset_control_deassert(th1520_phy->phy_reset);
-> > +	if (ret)
-> > +		goto err_disable_clk;
-> > +
-> > +	udelay(10);
-> 
-> [Severity: Low]
-> This isn't a bug, but this code uses udelay() without explicitly including
-> <linux/delay.h>.
-> 
-> While it currently compiles due to indirect inclusions, should the header be
-> explicitly included to prevent build failures if the include chain is later
-> refactored?
+From: Fabio Estevam <festevam@nabladev.com>
 
-I noticed that checkpatch complains about 'udelay()':
+fsl_samsung_hdmi_phy_probe() enables runtime PM, but the remove
+callback does not disable it. Unbinding and rebinding the device
+therefore results in the following warning on reprobe:
 
-CHECK: usleep_range is preferred over udelay; see function description
-of usleep_range() and udelay().
+Unbalanced pm_runtime_enable!
 
-However, it seems that fsleep(10) may be a better choice than
-usleep_range(). It is used by phy-snps-eusb2.c, phy-rzg3e-usb3.c and
-phy-exynos5-usbdrd.c.
+Disable runtime PM after removing the clock provider.
 
-From include/linux/delay.h:
+Also undo the runtime PM operations when phy_clk_register() fails.
+Otherwise, a failed probe leaves runtime PM enabled and the usage
+counter incremented.
 
-static inline void fsleep(unsigned long usecs)
-{
-        if (usecs <= 10)
-                udelay(usecs);
-        else if (usecs < USLEEP_RANGE_UPPER_BOUND)
-                usleep_range(usecs, usecs + (usecs >> max_slack_shift));
-        else
-                msleep(DIV_ROUND_UP(usecs, USEC_PER_MSEC));
-}
+Signed-off-by: Fabio Estevam <festevam@nabladev.com>
+---
+ drivers/phy/freescale/phy-fsl-samsung-hdmi.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-Thanks,
-Drew
+diff --git a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
+index d010fec15671..0f25d81de61b 100644
+--- a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
++++ b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
+@@ -679,12 +679,15 @@ static int fsl_samsung_hdmi_phy_probe(struct platform_device *pdev)
+ 	return 0;
+ 
+ register_clk_failed:
++	pm_runtime_disable(phy->dev);
++	pm_runtime_put_noidle(phy->dev);
+ 	return ret;
+ }
+ 
+ static void fsl_samsung_hdmi_phy_remove(struct platform_device *pdev)
+ {
+ 	of_clk_del_provider(pdev->dev.of_node);
++	pm_runtime_disable(&pdev->dev);
+ }
+ 
+ static int __maybe_unused fsl_samsung_hdmi_phy_suspend(struct device *dev)
+-- 
+2.43.0
+
 
 -- 
 linux-phy mailing list
