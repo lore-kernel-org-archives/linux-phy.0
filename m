@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1FB73C55162
-	for <linux-phy@archiver.kernel.org>; Thu, 30 Jul 2026 09:53:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9CF1EC54FDF
+	for <linux-phy@archiver.kernel.org>; Thu, 30 Jul 2026 09:54:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dzp0yE/GSeMITzcXBOYuUTRMEAX3j4qBXL4tjeXyal8=; b=HOt1h0Wfh6AGcR
-	JX00JMNF2chSMSQ9migkczY7aiP3avw6XD2cyTdbo89xZSshktOIprt/HUSn3T4PQ0zQQxw1WYixi
-	ooij6SyyvepwwQ6EegFWn3gcz5jiff02qZNDS7OUvuxjH/aEE5gsC1xy64vVquRKA2rN7akebEbe/
-	PpJIOh9H+WmjupnWivKoPJFnN8RfH1SIdpqe3anMVd3tV+UBgRQ3apB23Y71rcIL+IGtwY1Ah9X8X
-	vw3mAqUkbwobZ83nZU4nk+1xJoxSFitTQUo1h4Tv5+JAxXeP8XwEfY0VxWuJWYFz9fCpxTwcLVUuf
-	I1cWIva90K0wTDONu73Q==;
+	List-Owner; bh=a/EeCSej6p8FJTKHTRMzxWdTtlEaYauX/YGdOiv6pn0=; b=iaa45EfjXnHyVN
+	lwNBRYQ4XkJnByTlgNyw67tBl015KEIZTjCzPrteyrR5CllRIr25NSkZ25qPsUDQjjd3gWqeRAITg
+	0Nc5j9VwgmNxFQHAFI88Ec0eacWM3kZ3lepXwcY6Hq3i5qwPlL6N6pN4BbHMSxnFkbH/NndZ/hfSn
+	ZjCECbNyhem3ulC1UQ7Du0zBJyEn9O/nInEeliKMYKI7DFVsTUJ3j1/IDl6tcpiFb4KJpN3K/w/Y2
+	Muo38NoNEkKAW5BA8aC+FnfftflDoQerDpdTrhK9Oc3glsxJc23irlz8pde6nKWwJ6BEPyBg81LkP
+	9h6WRuuinZ5dHWQNYuMQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpNSf-0000000A6Dd-39yh;
-	Thu, 30 Jul 2026 09:53:57 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1wpNSo-0000000A6Kx-1CoF;
+	Thu, 30 Jul 2026 09:54:06 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpNPM-0000000A3lV-1Etj;
-	Thu, 30 Jul 2026 09:50:33 +0000
+	id 1wpNPO-0000000A3mf-0A2H;
+	Thu, 30 Jul 2026 09:50:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1785405030;
-	bh=iOuM5MsCzqFgvCcI/Vxsc02Nc4c2nweSsknMPvd2D4Q=;
+	s=mail; t=1785405031;
+	bh=OziOb+FsEmp5/9DGqnKkZWUGGpg9PAiZr6kaXN8cN5g=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=c5pvp92Y5PZl9x0PRvCOneT/S31iAuVfDfxl/TpLHUEfx76LHldIfN48pehqdBIzS
-	 kSkC7ZFFl15lJomJm9LvlUDfE5Ei33YteVP0t7UuTfRyLR7yVna8hUGBEknqb0fT2j
-	 OzzJaVCH7Z84Ud5LtXy0OKlr0L64XAvnpkYyyZVD/9g3h0lXPqYZytbemrZY4+RMH2
-	 Bc/l6Ta+vDgf7ruCP6i2bXBj8UJB4oeGo1i3+g9e0SMWwzQ3dRoxb/eSrpc+tZfZjm
-	 fYYa49HxZ5b+LAJzhowgTwwwdB3VWYaGl1FxpwI4KdR0rN/FMEhMDsE4EZiUzMcM20
-	 rFFqoZbLqGtlA==
+	b=gHWixjy0VGFdmf4AlcH5nxADZAxDYkpBWYrDlnXSwgZy0L8OyN8PRfJT1cHf4aLWz
+	 2zdTwXihjyZgwYqoMccxIkDv0Dk291qZa7FHfOfjLf5+gCUe/z1WbtP1BCaFbvmV+I
+	 Hn3Eix7//jedtOgAVjPCMjxzr7BE3HNuXCs0ul5SnoHfWtMXQc9IpdgY4UeLbaLTZ+
+	 4kmsDUTplrHQpQ8i+HhI/GKu6rDtKcH9M8TxDLMjP8xb1iKVKMkP+QX12/wrUfKsGE
+	 F3AFBZeA5sINygUiZRHecW3zcyRHbO/5mVrP7QZNorpvfmB/gtOmgi7BMIi9M8S5Vm
+	 N1+jl3YNjasbg==
 Received: from yukiji.home (unknown [100.64.0.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: laeyraud)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 0DC6F17E097C;
-	Thu, 30 Jul 2026 11:50:29 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 9025017E0984;
+	Thu, 30 Jul 2026 11:50:30 +0200 (CEST)
 From: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-Date: Thu, 30 Jul 2026 11:49:19 +0200
-Subject: [PATCH v10 23/26] scsi: ufs: mediatek: Add MT8196 compatible,
- update copyright
+Date: Thu, 30 Jul 2026 11:49:20 +0200
+Subject: [PATCH v10 24/26] arm64: dts: mediatek: mt8195: Align ufshci node
+ to dt-bindings changes
 MIME-Version: 1.0
-Message-Id: <20260730-mt8196-ufs-v10-23-bc5ecef202dc@collabora.com>
+Message-Id: <20260730-mt8196-ufs-v10-24-bc5ecef202dc@collabora.com>
 References: <20260730-mt8196-ufs-v10-0-bc5ecef202dc@collabora.com>
 In-Reply-To: <20260730-mt8196-ufs-v10-0-bc5ecef202dc@collabora.com>
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
@@ -73,16 +73,17 @@ Cc: kernel@collabora.com, linux-arm-kernel@lists.infradead.org,
  Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, 
  Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1785404993; l=2453;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1785404993; l=2310;
  i=louisalexis.eyraud@collabora.com; s=20250113; h=from:subject:message-id;
- bh=0mXF3Fm43959ggl9oBxp2JhbanrvhYp5Kezx6g7GKK0=;
- b=WyYVRy9NAh7Ww+98BTaB4xOs52PWBIoI7Pmsh1vKgCpFIcgnDaj1TWL8yj2COaX9kntFLckVI
- 3Nhkldytvv1CiyQVCv2zciWTI3voGTcRxIO0UzYyGUoIcgSds8jYL58
+ bh=OziOb+FsEmp5/9DGqnKkZWUGGpg9PAiZr6kaXN8cN5g=;
+ b=WvQIc7rx7/cUucLoeSpzM/mTXZPNa2xB23FKnfB/OWX2CUe5WCaxrDNGO/a3vjhSJoAEy8CX0
+ sM1DrQFr7tKDG+oSjdZ6qzC03261GP54OyrJ4CECHDrFh+FdyAXx4rH
 X-Developer-Key: i=louisalexis.eyraud@collabora.com; a=ed25519;
  pk=CHFBDB2Kqh4EHc6JIqFn69GhxJJAzc0Zr4e8QxtumuM=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260730_025032_508805_A4A3F32F 
-X-CRM114-Status: GOOD (  11.72  )
+X-CRM114-CacheID: sfid-20260730_025034_253528_2D547F12 
+X-CRM114-Status: UNSURE (   9.94  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,70 +100,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+The MT8195 UFS host controller dt bindings now describe several extra
+required clocks that were previously missing from clock description
+and deprecates the freq-table-hz property use in favour of
+operating-points-v2 instead.
 
-THe MT8196's UFS controller has a new compatible. Add the necessary
-struct definitions to support it.
+Currently, the ufshci node declares the freq-table-hz property but all
+values contained in the array are zero, thus converting it to an OPP
+table is not needed.
 
-Also update the copyrights and authors, without tabs following spaces to
-avoid checkpatch errors, to list myself as having contributed to this
-driver after the preceding rework patches.
+So, add in ufshci node the rx_symbol clocks in clock list and remove
+freq-table-hz property.
+Also reorder properties in node.
 
-Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Reviewed-by: Peter Wang <peter.wang@mediatek.com>
-Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 Signed-off-by: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 ---
- drivers/ufs/host/ufs-mediatek.c | 17 +++++++++++++++--
- 1 file changed, 15 insertions(+), 2 deletions(-)
+ arch/arm64/boot/dts/mediatek/mt8195.dtsi | 21 ++++++++++-----------
+ 1 file changed, 10 insertions(+), 11 deletions(-)
 
-diff --git a/drivers/ufs/host/ufs-mediatek.c b/drivers/ufs/host/ufs-mediatek.c
-index 5dd72b826181..decf2f5814b4 100644
---- a/drivers/ufs/host/ufs-mediatek.c
-+++ b/drivers/ufs/host/ufs-mediatek.c
-@@ -1,9 +1,11 @@
- // SPDX-License-Identifier: GPL-2.0
- /*
-  * Copyright (C) 2019 MediaTek Inc.
-+ * Copyright (C) 2025 Collabora Ltd.
-  * Authors:
-- *	Stanley Chu <stanley.chu@mediatek.com>
-- *	Peter Wang <peter.wang@mediatek.com>
-+ *      Stanley Chu <stanley.chu@mediatek.com>
-+ *      Peter Wang <peter.wang@mediatek.com>
-+ *      Nicolas Frattaroli <nicolas.frattaroli@collabora.com> (Major cleanups)
-  */
- 
- #include <linux/arm-smccc.h>
-@@ -2222,6 +2224,10 @@ static const char *const ufs_mtk_regs_avdd12_ckbuf_avdd18[] = {
- 	"avdd12", "avdd12-ckbuf", "avdd18"
- };
- 
-+static const char *const ufs_mtk_regs_avdd12_ckbuf[] = {
-+	"avdd12", "avdd12-ckbuf"
-+};
+diff --git a/arch/arm64/boot/dts/mediatek/mt8195.dtsi b/arch/arm64/boot/dts/mediatek/mt8195.dtsi
+index 9aaf8b6edcb5..5ff7b7e543b7 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8195.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8195.dtsi
+@@ -1472,8 +1472,7 @@ mmc2: mmc@11250000 {
+ 		ufshci: ufshci@11270000 {
+ 			compatible = "mediatek,mt8195-ufshci";
+ 			reg = <0 0x11270000 0 0x2300>;
+-			interrupts = <GIC_SPI 137 IRQ_TYPE_LEVEL_HIGH 0>;
+-			phys = <&ufsphy>;
 +
- static const struct ufs_mtk_soc_data mt8183_data = {
- 	.has_avdd09 = true,
- 	.reg_names = ufs_mtk_regs_avdd12_avdd18,
-@@ -2234,10 +2240,17 @@ static const struct ufs_mtk_soc_data mt8192_8195_data = {
- 	.num_reg_names = ARRAY_SIZE(ufs_mtk_regs_avdd12_ckbuf_avdd18),
- };
- 
-+static const struct ufs_mtk_soc_data mt8196_data = {
-+	.has_avdd09 = true,
-+	.reg_names = ufs_mtk_regs_avdd12_ckbuf,
-+	.num_reg_names = ARRAY_SIZE(ufs_mtk_regs_avdd12_ckbuf),
-+};
-+
- static const struct of_device_id ufs_mtk_of_match[] = {
- 	{ .compatible = "mediatek,mt8183-ufshci", .data = &mt8183_data },
- 	{ .compatible = "mediatek,mt8192-ufshci", .data = &mt8192_8195_data },
- 	{ .compatible = "mediatek,mt8195-ufshci", .data = &mt8192_8195_data },
-+	{ .compatible = "mediatek,mt8196-ufshci", .data = &mt8196_data },
- 	{},
- };
- MODULE_DEVICE_TABLE(of, ufs_mtk_of_match);
+ 			clocks = <&infracfg_ao CLK_INFRA_AO_AES_UFSFDE>,
+ 				 <&infracfg_ao CLK_INFRA_AO_AES>,
+ 				 <&infracfg_ao CLK_INFRA_AO_UFS_TICK>,
+@@ -1481,15 +1480,15 @@ ufshci: ufshci@11270000 {
+ 				 <&infracfg_ao CLK_INFRA_AO_UNIPRO_TICK>,
+ 				 <&infracfg_ao CLK_INFRA_AO_UFS_MP_SAP_B>,
+ 				 <&infracfg_ao CLK_INFRA_AO_UFS_TX_SYMBOL>,
+-				 <&infracfg_ao CLK_INFRA_AO_PERI_UFS_MEM_SUB>;
+-			clock-names = "ufs", "ufs_aes", "ufs_tick",
+-					"unipro_sysclk", "unipro_tick",
+-					"unipro_mp_bclk", "ufs_tx_symbol",
+-					"ufs_mem_sub";
+-			freq-table-hz = <0 0>, <0 0>, <0 0>,
+-					<0 0>, <0 0>, <0 0>,
+-					<0 0>, <0 0>;
+-
++				 <&infracfg_ao CLK_INFRA_AO_PERI_UFS_MEM_SUB>,
++				 <&topckgen CLK_TOP_UFS_RX_SYMBOL>,
++				 <&topckgen CLK_TOP_UFS_RX_SYMBOL1>;
++			clock-names = "main", "aes", "tick", "unipro_sysclk",
++				      "unipro_tick", "unipro_mp_bclk",
++				      "tx_symbol", "mem_sub", "rx_symbol0",
++				      "rx_symbol1";
++			interrupts = <GIC_SPI 137 IRQ_TYPE_LEVEL_HIGH 0>;
++			phys = <&ufsphy>;
+ 			mediatek,ufs-disable-mcq;
+ 			status = "disabled";
+ 		};
 
 -- 
 2.55.0
