@@ -4,141 +4,152 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BDC5FC54FD2
-	for <linux-phy@archiver.kernel.org>; Thu, 30 Jul 2026 09:18:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 988F8C54FD2
+	for <linux-phy@archiver.kernel.org>; Thu, 30 Jul 2026 09:26:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G/5skq558FUtFlVaLEklBhxElzmg1tpgQOWbQobt1us=; b=1w8l7M5axWC5Os
-	x2H9BKqIPHuUyWW/ZJCDP+7KLm9PGu0YUqltIPlMOW8v6Xed1lE+/1NwIEgfkxipK145+K5IyDnVx
-	0jSmv9T9R0L973ovvhRX/+skdjwZsmL9jBJF5hEFQ7ACEqhy42GD2Wngj2nvRWjlJfS/R6P8LKW06
-	tnLvsOPgV+EGHm3ROqCy9c/Ncmt9bx3AWENyf96ZfoWjiohFmP62ga4akPKrYhcVx9EoYNFKNuq63
-	fy2YSSZvRfu9R4Nu5QvSFMfYQd7Tvbk9NOFE2bDgLcc4lI5AM/8k/olzg2xfv8UVkmvsQV0fkhM6Z
-	XN8e84iSshUeG9F7bSUw==;
+	List-Owner; bh=CnvG30AVPc6tvijG+v3nQfpYuKbXos8vnGYQdGK9rQM=; b=WFPTgSVs9XOFcb
+	utTms1FnvaGMWVZt1BjSrtuQU3llikwZP0Wy6+GPj4xeZcgBAdEJxsFArEoV9CXOLeX2r2uhKKb4X
+	948dn4TKctGK1SKZyD0tdmNqC4cNCsoj9EuJqmFii3aYL1wJenn8FlrFchAjP3jvUXS4LNdoMOMSb
+	OVHXImBP4eb2XbVrkaMcBevCQN+6Bm7RgNrNuJeLZb4NESsRV+ykcOdrQgBhOrE+30eF8gLrCcFxM
+	YVMB5MKezuq4ADczVdCc8bSauGk5Kq/4ANbP6/BYODwAinDRPhPkM4nv1esN0LNrhntAqtf4sZtu1
+	GU+JlxHjnf+kJa26e0+w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpMuC-00000009yln-0pvZ;
-	Thu, 30 Jul 2026 09:18:20 +0000
+	id 1wpN1c-00000009zxb-1IzJ;
+	Thu, 30 Jul 2026 09:26:00 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpMu9-00000009ylJ-2tpY
+	id 1wpN1a-00000009zvy-0MDR
 	for linux-phy@lists.infradead.org;
-	Thu, 30 Jul 2026 09:18:18 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66U8smhN1504741
-	for <linux-phy@lists.infradead.org>; Thu, 30 Jul 2026 09:18:17 GMT
+	Thu, 30 Jul 2026 09:25:59 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66U9FlF54082076
+	for <linux-phy@lists.infradead.org>; Thu, 30 Jul 2026 09:25:57 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=m7D6CIAxG2VxuD/7lWVUh+sF
-	Bcex9ieNa67C58ZvSVk=; b=LCM0Lqgo/VO/dh0bjt9RRFxsJInm3cQkhuUvlf8/
-	i9NuLZu5lWLbCn9MCvhBsjqdZ+rK6aovyJFylIEYvT/j9pZ9kqNa7ofq44P/XTH2
-	+9nu6bwd/3gFENAC9IGtt3ejxJCd3Iv+sktjlw3YVEwzqtOBQcuBzV+Dj3rWLxvd
-	FgNH7B6W/uM4Hd6tS7St7sGK+Jijw4L3RVhbVBl7SYMOIKXrzB+EgOfvGX0HtxPH
-	lSVCdHg4C0gxMIo5lC+aA06HYQjV2Y6rfuLgEWAinvJFCev/UQeFIwDG0FxMe6a+
-	nJsQ+xguY6LLwYQ0VTjN6Rmv26rwladL0LwW4+5pVhxiSw==
-Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fr3h1r43r-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	CpwG7cUwCiBQiNOvTzmfNMlN8+MeLdJPK4zcBEkWFB4=; b=djH7gx4ile1RlJg4
+	SoMWfm+PZI8SQ7T6KhXEmU5zRY/TWjmp5u8wMDGtp9mnYPuWd+TAcjdqiF9UmrlE
+	E3B6m0XJNsGaXTRS+o9ANbm7PBAXCoERL14DOzk/GfCwYzleJwRRh9RVOlQipfUZ
+	L7cXtrTDaJSsyrM/QWoSn1DJJWPm6GjD51trDw9kmx77fv0CkNTwPAe+7Tj3OkgT
+	C6hpb9/+Te204tTpVCa6cSkIf0v5uu8gVH0a7H9m1FE+MCjseV90VLrhgYiQUD87
+	XVSMWe0hZe+rJXa11yLw0m2QkAEF0NMsQUHhSK6heJZPWuVz5j266zc/xMecN6d+
+	YqnarA==
+Received: from mail-qt1-f200.google.com (mail-qt1-f200.google.com [209.85.160.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fr3tyg1de-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 30 Jul 2026 09:18:16 +0000 (GMT)
-Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2cceabd70f5so57455535ad.1
-        for <linux-phy@lists.infradead.org>; Thu, 30 Jul 2026 02:18:16 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Thu, 30 Jul 2026 09:25:56 +0000 (GMT)
+Received: by mail-qt1-f200.google.com with SMTP id d75a77b69052e-51ca37ce4c3so4248551cf.3
+        for <linux-phy@lists.infradead.org>; Thu, 30 Jul 2026 02:25:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1785403096; x=1786007896; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=m7D6CIAxG2VxuD/7lWVUh+sFBcex9ieNa67C58ZvSVk=;
-        b=bKEH6l4ZqsTSrsDOJ22/pDExFOThZzdrTE59gL8ctRYxeX7yZxa/JdkADxQFvczVhT
-         fKL7EV6UWQC7ynRRiOal2L4lDWJJlziBJWVPTVsJgjZkONJYrlfwog9fezym+StkrJVe
-         ZMqxjQg1NJbk1/94RF/C1V/2526EZWWs6nhi/6RCrFJzT2frM5TbJn8evf8ThHSnVuqA
-         BK5K3rAG+3oikHurH+ufJF1JUNTSM0NFgUCQgXHWLsOIVMpcK01JZc2/ub4A+wXJwdzb
-         uaz/Ptv2r6xnG6D8XkUQdz7G0C3gE1pEQnhEJQCbq3OsZ6qXApcsjIwNxGtIcU1mXmEl
-         TEQw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1785403096; x=1786007896;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+        d=oss.qualcomm.com; s=google; t=1785403556; x=1786008356; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=m7D6CIAxG2VxuD/7lWVUh+sFBcex9ieNa67C58ZvSVk=;
-        b=iccNc+3tqb0bM+MJTUnlr5wy9xSN1WNmR/V7I+xrOLYVVdO58t7Gr2u9ika4vIin4w
-         KoWyM2k7nQOwSG1k66RKL7K1XsXNND9D6cJ56OkyEdO6+AL2oRdQc/7x0TeF4mkynfhc
-         ncK5VJfnPzFJ1oe0UDTEaIS620/4LrgNihsUH/qOZCMokwcImiqEoMKsPxg9DzuQKz0f
-         5GNelx6WTbKQ0n2m4LsVEWvFMv2N7E7Onhlyoh+tDi3o4V+aODO8Q3ZdYqaTeryvfKRt
-         PQu1eeFo7HeYr2yfScQKo3kB4HW7nsukPya5Zsav2Li7slc48yxfsyKcm00Q8e2O0gt6
-         h5Cg==
-X-Forwarded-Encrypted: i=1; AHgh+Ro+CRa2Euxz6Dffi9/OcjLcl4iHY1lGKmFFgzhTJw3IaLgA/Vaiq5dSwNH4AHLgidwTNY6R4FCGa/g=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yygk9MxWEV8Hf9ZrSzlGXbdmm7ndFAJpBcRJuwUuzMu5hw4azwD
-	8aZQC9kI2zhpdK5Yc396+16k37xEGQlI3ze9KX7yd/I55L+1GTyG4ldhmrMLFMcxhtUwamyVXNG
-	7PZsd6MI5ZkdV+28YnaKsSiLgl/pwIu0FupE1XcghvAie4O9Sw5kcIuP7xZOG8GIYcgnO
-X-Gm-Gg: AR+sD11s/ueHbkjTgEhXZ8InxPHR0h3JBUvDoZ+f1pFkEF9YuCxaAkYemhGg65ZIujW
-	xVoCkPirAQxYrItOUOJ3IcLvzydMDPkO1TONemZSkuxzJNSZufwfI+BC+ocmd+y2ZRP+eU+/1R6
-	C7cmIRYVRWgkYr7qf5b8VzSd2rlFIUYyg7n42BWrXjJTzvgxzAxjE//22KtuHvGC/iVZM1frqVR
-	pwJ063Vp5Ey0F+H//jERb0sQbzI+n5YjAL+mU8b1N9Bc4xlxUMK5OsPiPyzXcx5mctExNjxl140
-	hZuVoTajvrnKTEtR5gVIEfmfZ53A/Xa4BuO29O79O0R/tvaQ+c5oYLOrWbyJVdI9IEbft8ZlqMt
-	MMOkpguUexKIH1DmGXDgYG+IoWbSHKaAK7CENK+PobB181Js=
-X-Received: by 2002:a17:902:ecc5:b0:2cf:ca89:4990 with SMTP id d9443c01a7336-2d035be854cmr19137975ad.17.1785403096184;
-        Thu, 30 Jul 2026 02:18:16 -0700 (PDT)
-X-Received: by 2002:a17:902:ecc5:b0:2cf:ca89:4990 with SMTP id d9443c01a7336-2d035be854cmr19137645ad.17.1785403095691;
-        Thu, 30 Jul 2026 02:18:15 -0700 (PDT)
-Received: from hu-qianyu-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2d022bc6d70sm23702795ad.39.2026.07.30.02.18.14
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 30 Jul 2026 02:18:15 -0700 (PDT)
-Date: Thu, 30 Jul 2026 02:18:12 -0700
-From: Qiang Yu <qiang.yu@oss.qualcomm.com>
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+        bh=CpwG7cUwCiBQiNOvTzmfNMlN8+MeLdJPK4zcBEkWFB4=;
+        b=JJHTwe/Pn8/8F0ZdYzmHZEyGZbsIXsdJFmA5BjwcMj/optqswAMM47+XW+AGuG+4QX
+         CGV4E4p8IYFm003TvZY/icGI9mxoZLbWiZJXONUGHSievmRiChne1P86x/YHHNXCbf2l
+         M001KXQEoz+EU97N0kGAA124eJrTUdyrXAVEn+nmuDc9HJf1FOfZCOo0dSw+1B9EqWLl
+         Ym7KtSBdL5gHIOamF6MmaDYkhOl+0tPh7YCXz7UaFyvQFpP54XBfPPB+wPPdg2xWvnr9
+         LdmJuTCTm4wHmUuMFOhfYZ2cKYEsC9TGJWfW6SnhbLY75pE4R1UN9dXPexVA6YSM4jPx
+         16vA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1785403556; x=1786008356;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=CpwG7cUwCiBQiNOvTzmfNMlN8+MeLdJPK4zcBEkWFB4=;
+        b=eaJwft9Bcq+zz/aZcC/6kov5pAnHyL1PPxJ6APu7RmE4Q/q8BSxLE2gn+hYKQX40d0
+         DoxnziDMwFk6NF4TOY/gX89Z7XgJVzIwaRoqFoUecZtBXHf+N+VoZkZLZwFqEoeBHvZb
+         PFHZuCnxKOYgje1ncE0p9D1N0NjLRF+Lzz0Kx5QP588N01c8Rh4sQzn8HvuN9FvpglL2
+         B83Nns9T/vVqHayNPEwg7qnL15KYDfvQIhWCgxlLCGygHIc1th90P0hzLRRxueqaU1iC
+         PZ6z1UcBVuqsrhxLCDsfkVaxzYCg3Rv6t1Zkg4O1Qbr2tYfyDup20Lh5QnxwGNAb/MQO
+         eFKw==
+X-Forwarded-Encrypted: i=1; AHgh+RpjSg4Lk/fjGqVU0lga5xZcEc19Yr61TNxRGIWIe4jo+yB5apugBd+0qL8FwkyNX++IbJziNXzsZW8=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx1WW6de2jvvD1td57b1Xn3qgNtxgYXSOM7HfiqtManjmB8BvJh
+	k6i+p0Bu0TJVR5g+IHpdw/QyxAxC7IAhJfg4soavGbr0jFNdZpKUrxBupyqGiKm+bo9yhgXIkEe
+	JX8d8HfQZs3HR8j1Ct+MJN2dY/Gk2a2pvLu00340OFZG3jnVrsQBbrh028Phi5kjFiObl
+X-Gm-Gg: AR+sD125QKC8Ea+T7G4MNCNMcr7OZd8piWCYHgCItqzj7E9on/vonIzMSHwV8IENY9K
+	yMk98B0i3fEWadPIt/8gxd04JZFNC2PJeZNFH05LdBU78zSUhtddfKb23ur660ljx/nl7C4VibR
+	8BJdtq70k85SZA7wncHYAObeDHs6qK1b4tZGrzYkN7OOunuskwIBTMD9R3BrN8Ypzu26AFcCD0d
+	HizC+GSiiWegCNl6IpnD9wkVnIElngBBE3XBOw6I8YqDX6vP1tp5C+MtVEYY/i3fuvmxZP/6a7M
+	GPXOOK/L4/XnUz2cle15GgW8jWURlg9SeI0Su8R4xsiVsRPWo4oJIBtZALyVEBVeCAEGTbwITnc
+	TQNvCsbh2SkSVHlF6ioAtn1ze
+X-Received: by 2002:a05:622a:4d8a:b0:51b:f40b:2faf with SMTP id d75a77b69052e-52b386e56d9mr33502251cf.4.1785403555722;
+        Thu, 30 Jul 2026 02:25:55 -0700 (PDT)
+X-Received: by 2002:a05:622a:4d8a:b0:51b:f40b:2faf with SMTP id d75a77b69052e-52b386e56d9mr33501871cf.4.1785403555230;
+        Thu, 30 Jul 2026 02:25:55 -0700 (PDT)
+Received: from [192.168.120.193] ([178.235.128.140])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c1fa8bb46f0sm46325366b.44.2026.07.30.02.25.53
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 30 Jul 2026 02:25:54 -0700 (PDT)
+Message-ID: <f122889b-1278-43b0-966b-562b5388e587@oss.qualcomm.com>
+Date: Thu, 30 Jul 2026 11:25:52 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v7 4/6] arm64: dts: qcom: glymur-crd: Add PHY supplies for
+ pcie3_phy
+To: Qiang Yu <qiang.yu@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>,
         Rob Herring <robh@kernel.org>,
         Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
+        Conor Dooley
+ <conor+dt@kernel.org>,
         Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>,
         Philipp Zabel <p.zabel@pengutronix.de>,
         Bjorn Andersson <andersson@kernel.org>,
         Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org,
         linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, Manivannan Sadhasivam <mani@kernel.org>
-Subject: Re: [PATCH v7 2/6] phy: qcom: qmp-pcie: Add QMP PCIe Multi-PHY driver
-Message-ID: <amsW1Efw7vXDqLrw@hu-qianyu-lv.qualcomm.com>
+        linux-kernel@vger.kernel.org
 References: <20260724-glymur_linkmode_0724-v7-0-65c8469c6b65@oss.qualcomm.com>
- <20260724-glymur_linkmode_0724-v7-2-65c8469c6b65@oss.qualcomm.com>
- <3b0166c0-e1e7-4746-bcb9-ef78b9a86c8c@oss.qualcomm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <3b0166c0-e1e7-4746-bcb9-ef78b9a86c8c@oss.qualcomm.com>
-X-Proofpoint-ORIG-GUID: FqKaLUGMR1g74PuO8nK4xvzqZJc_-DJW
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzMwMDA2OCBTYWx0ZWRfX9620F80xFuwP
- vL0+2RrQEn4r9Y/LkVtuY8MyslOcTz/iQcTYuJSOwOouMsCT3i9VHbg5wxuseZg1prKa+/ADLJ8
- 8SqFiyFetxtcR5HlzF1r8svv1VF9+c/QzgSRO9A7YyydxKqeNE0hz5zuvoStftvip5FfgMNuoAG
- uPEJRDhjFZRungoE7A5eEUrxkycWDSQDNX2335WYXra8ev7XtkNN5aqGFDcmfJmj0f4hR0qUDCt
- 95xRb7VOH0FS4QssoFLsCAPsZHuycJWW2BIanlvxV90ZO5KKwkj98/qv26JwKRlZJEZ+iDWLyBi
- gWrC777ZgNEBjosVKZMwSyR879OO0i+VFQLEZbqvz5UQYLx8Ys1x0ECtug2gEOhmUNn2JLVc2IC
- ymapjFEtsynhe6bSv9SVGTy9iCGr3/1rR3P2sMNXpizHMN4O0ej8uH/1UdpTRiS0ezrU29obQ50
- tz2M3sL4j02C3+eBlwg==
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzMwMDA2OCBTYWx0ZWRfX9I/8pT+nbLEm
- TgDZfARmR2Fkz/BqR3t11FCWjkH10UzEb7qab8VUJmkw6sOBtrsYqMVv2kgmarIlOSuq3g2VTbb
- EjsXU9sSPU4pn3LXsdUw2hAg6o3BVYQ=
-X-Proofpoint-GUID: FqKaLUGMR1g74PuO8nK4xvzqZJc_-DJW
-X-Authority-Analysis: v=2.4 cv=K/QS2SWI c=1 sm=1 tr=0 ts=6a6b16d8 cx=c_pps
- a=JL+w9abYAAE89/QcEU+0QA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=kj9zAlcOel0A:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22
- a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=B5iJy24gySRdRLL-o9UA:9 a=CjuIK1q_8ugA:10
- a=324X-CrmTo6CU4MGRt3R:22
+ <20260724-glymur_linkmode_0724-v7-4-65c8469c6b65@oss.qualcomm.com>
+ <74907d0a-cf14-43b6-bcfb-8c283926a820@oss.qualcomm.com>
+ <ammhm1mnHhn2okgJ@hu-qianyu-lv.qualcomm.com>
+ <2091d5bf-8c76-479b-98fd-fc75b3adf644@oss.qualcomm.com>
+ <amnDqhTpMffP9M1w@hu-qianyu-lv.qualcomm.com>
+ <cc185dfa-4271-4c63-89a9-05b8990db242@oss.qualcomm.com>
+ <amnM/dVT3tZeR4h7@hu-qianyu-lv.qualcomm.com>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <amnM/dVT3tZeR4h7@hu-qianyu-lv.qualcomm.com>
+X-Proofpoint-GUID: j6E0_0jb1-1d4MgOmeH1fSpGlwVh4D0N
+X-Authority-Analysis: v=2.4 cv=JZOMa0KV c=1 sm=1 tr=0 ts=6a6b18a4 cx=c_pps
+ a=JbAStetqSzwMeJznSMzCyw==:117 a=PRfkaYvzSr8QmIIGAkY2Sg==:17
+ a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
+ a=EUspDBNiAAAA:8 a=yc642J7MXfvTOP0XSmYA:9 a=QEXdDO2ut3YA:10
+ a=uxP6HrT_eTzRwkO_Te1X:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzMwMDA2OSBTYWx0ZWRfX+aOA8mBS4wJN
+ 2uT/TryiGvEx2GDsYAnTefnhFg40rlC5ZQ+rnkHUBbRW4KbD54omscG9vugtXfJphzgV0kFOrbP
+ 944UU2a2r7vuqYSEk5W+1u3cT2pDa+23Jmurd1825IXvbHM/5qzuUtO+peqIfnBAimQY+Wir5M4
+ JtcPMqg5PWqETPpoeIUvDHM4OssBb/cHk94VS0mJSuFkYhO820Y4W+6vpuWTIa/wHnbyU2MgUdt
+ GuRJ9VvJ6F4sKPoEvUqTxdM7ctO6NWf1QOcF5IvnkDDVrDttasq07cgkMTjOTyKClUr2+nLBM2x
+ RYmleji4qSR/1KnEP80jfS5TTojmxAY/Asd9TZy33jG1sJB71ecY3IipSzi2r7myxvFj4CT9wdu
+ 3bNNuVeDjTDaPEcJ7hR1tGYsrIpsSw3gXp5SDQvFLZSa3wqbNdZeAyj2rNtjpHwZ8mz1UIt3GgZ
+ DqZwjXeNxsLAqfMzmnQ==
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNzMwMDA2OSBTYWx0ZWRfX2bPd8PxlLy0j
+ wqrHiagsLV+ZhAJQ9ERbhlcGIxEx2S88EWK6RV5A3WoaieFgOBw7i7u2yhD2PxIm/cQpIuXoMuU
+ YYCx2BQ8GUh4hpMWm9qn5HtVfc7opXs=
+X-Proofpoint-ORIG-GUID: j6E0_0jb1-1d4MgOmeH1fSpGlwVh4D0N
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-07-30_02,2026-07-29_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 malwarescore=0 impostorscore=0 phishscore=0 adultscore=0
- bulkscore=0 lowpriorityscore=0 spamscore=0 suspectscore=0 priorityscore=1501
+ priorityscore=1501 suspectscore=0 lowpriorityscore=0 bulkscore=0 adultscore=0
+ phishscore=0 clxscore=1015 malwarescore=0 impostorscore=0 spamscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607300068
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2607300069
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260730_021817_740720_DCA5C986 
-X-CRM114-Status: GOOD (  35.93  )
+X-CRM114-CacheID: sfid-20260730_022558_131373_735C9164 
+X-CRM114-Status: GOOD (  12.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -155,153 +166,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jul 27, 2026 at 03:56:53PM +0200, Konrad Dybcio wrote:
-> On 7/24/26 12:01 PM, Qiang Yu wrote:
-> > Some QMP PCIe PHY hardware blocks support multiple link topologies (e.g.
-> > x8 or x4+x4) selected via a TCSR register. The existing single-instance
-> > QMP PCIe PHY driver has no way to model this: it assumes a single cfg per
-> > DT node and instantiates exactly one PHY.
-> > 
-> > Add a dedicated driver for this class of PHY. Match data carries a
-> > per-mode cfg table; qmp_pcie_multiphy_probe() reads the current link
-> > mode from the TCSR register pointed to by "qcom,link-mode", looks up the
-> > corresponding cfg array, and instantiates one qmp_pcie per sub-PHY
-> > required by that link mode, registering the clock and #phy-cells = <1> phy
-> > providers so consumers can address individual sub-PHYs by index.
-> > 
-> > The driver inherits the phy setting and link-mode programmed by firmware,
-> > so only the no_csr reset is used and no phy setting tables are provided.
-> > 
-> > Add the first match data and compatible, qcom,glymur-qmp-gen5x8-pcie-phy,
-> > for the Glymur Gen5 PCIe PHY that can bifurcate into two x4 links or
-> > operate as a single x8 link.
-> > 
-> > Reviewed-by: Manivannan Sadhasivam <mani@kernel.org>
-> > Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
-> > ---
-> 
-> This looks really good, couple of follow-up improvement suggestions
-> 
-> [...]
-> 
-> > +static const char * const glymur_pciephy_a_reg_l[] = {
-> > +	"port_a",
-> > +};
-> > +
-> > +static const char * const glymur_pciephy_b_reg_l[] = {
-> > +	"port_b",
-> > +};
-> > +
-> > +static const char * const glymur_pciephy_reg_l[] = {
-> > +	"port_a", "port_b",
-> > +};
-> 
-> I think we could construct these names at the call sites, with
-> essentially something like
-> 
-> for (i = 0; i < qmp->num_ports; i++) {
-> 	sprintf(buf, "port_%c\n", 'a' + i);
-> }
-> 
-> (is that too cheesy?)
-> 
-> [...]
-> 
-> > +err_power_off:
-> > +	while (--i >= 0)
-> > +		pm_runtime_put(qmp->pd_devs[i]);
-> 
-> This probably can stay non-sync
-> 
-> > +
-> > +	return ret;
-> > +}
-> > +
-> > +static void qmp_pcie_pd_power_off(struct qmp_pcie *qmp)
-> > +{
-> > +	const struct qmp_phy_cfg *cfg = qmp->cfg;
-> > +	int i;
-> > +
-> > +	for (i = cfg->num_pds - 1; i >= 0; i--)
-> > +		pm_runtime_put(qmp->pd_devs[i]);
-> 
-> This should probably be _sync() as phy init/exit may be called in
-> quick succession
+On 7/29/26 11:50 AM, Qiang Yu wrote:
+> On Wed, Jul 29, 2026 at 11:22:45AM +0200, Konrad Dybcio wrote:
+>> On 7/29/26 11:11 AM, Qiang Yu wrote:
+>>> On Wed, Jul 29, 2026 at 10:30:27AM +0200, Konrad Dybcio wrote:
+>>>> On 7/29/26 8:45 AM, Qiang Yu wrote:
+>>>>> On Mon, Jul 27, 2026 at 04:47:15PM +0200, Konrad Dybcio wrote:
+>>>>>> On 7/24/26 12:01 PM, Qiang Yu wrote:
+>>>>>>> CRD wires the shared Gen5x8 PCIe PHY's regulator supplies through
+>>>>>>> board-specific PMIC rails. Add the vdda-phy, vdda-pll, and
+>>>>>>> vdda-refgen0p9/1p2 supplies for &pcie3_phy.
+>>>>>>>
+>>>>>>> Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
+>>>>>>> ---
 
-I'd prefer to keep the async put here. The generic PHY core does the same
-in phy_power_off() (phy_pm_runtime_put() -> pm_runtime_put()), and the
-async behaviour is actually what helps the quick init/exit case: the
-idle/suspend request queued by pm_runtime_put() gets cancelled by the
-following pm_runtime_resume_and_get in rpm_resume() before the worker
-runs, so the power domain doesn't actually toggle. With _sync() the exit
-would drop the domain immediately and a closely following init would have
-to power it back up again.
+[...]
 
-- Qiang Yu
+>> Do we know what happens if UEFI sets this to x8-mode? (is that even
 > 
-> [...]
+> UEFI will not set it two x8 mode on crd.
 > 
-> > +static int __phy_pipe_clk_register(struct device *dev, struct device_node *np,
-> > +				   int idx, struct clk_fixed_rate *fixed)
-> > +{
-> > +	struct clk_init_data init = { };
-> > +	int ret;
-> > +
-> > +	ret = of_property_read_string_index(np, "clock-output-names", idx,
-> > +					    &init.name);
-> > +	if (ret) {
-> > +		dev_err(dev, "%pOFn: No clock-output-names\n", np);
-> > +		return ret;
-> > +	}
-> > +
-> > +	init.ops = &clk_fixed_rate_ops;
-> > +
-> > +	if (!fixed->fixed_rate)
-> > +		fixed->fixed_rate = 125000000;
+>> a concern on CRDs specifically though?) Will the second controller fail
+>> to probe and become a sync_state hog?
 > 
-> I think this always happens to be true in this driver
-> 
-> [...]
-> 
-> > +	num_pipe_outputs = of_property_count_strings(np, "clock-output-names");
-> > +	if (num_pipe_outputs < 0)
-> > +		num_pipe_outputs = 1;
-> 
-> This can't happen (clock-output-names is required via bindings)
-> 
-> [...]
-> 
-> > +static int qmp_pcie_read_link_mode(struct device *dev, unsigned int *link_mode)
-> > +{
-> > +	struct regmap *map;
-> > +	unsigned int args[1];
-> > +	int ret;
-> > +
-> > +	map = syscon_regmap_lookup_by_phandle_args(dev->of_node, "qcom,link-mode",
-> > +						   ARRAY_SIZE(args), args);
-> > +	if (IS_ERR(map))
-> > +		return PTR_ERR(map);
-> > +
-> > +	ret = regmap_read(map, args[0], link_mode);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	return 0;
-> 
-> ret = xxx()
-> if (ret)
-> 	return ret;
-> 
-> return 0;
-> 
-> can be collapsed to simply return regmap_read()
-> 
-> with or without all that,
-> 
-> Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-> 
-> Konrad
-> 
+> PCIe3b is not enabled in UEFI by default, if we enable it here, we will
+> see probe fail.
+
+OK, I'm happy with the patch as-is then
+
+Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+
+Konrad
 
 -- 
 linux-phy mailing list
