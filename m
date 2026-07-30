@@ -4,62 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A624C55164
-	for <linux-phy@archiver.kernel.org>; Thu, 30 Jul 2026 07:06:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45E48C55164
+	for <linux-phy@archiver.kernel.org>; Thu, 30 Jul 2026 08:14:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AOA3/fhjA0R2dgm2eTtYBnTMjleK2yFnEBcFF7bfVBI=; b=rvEnQnC4kfoy4y
-	G9Yzcn4fjXUXg4dX7/ge8JFtMf7HvVDzbaElBHxfWRWiXwjnvV3q6ud9yCyYQ848vbIMckxbvBT3j
-	/ICRpxvKr0607O4Crq1BjGluQ4fGrcqFin+a5JM6UD4nxQ6GCENDYwDBWn/dMdZMfFbWm5g3dVx42
-	wi+nITdbhqSF9EoCL8t50EBtlmhy+VKnpmO07uwLO1lmSCIqfUYCXPRegsa6c0AMzjYN/FWRyUxhi
-	w68kO0qCqRWZtxNQnGh9w5v4KPK5dd33JCjcUMnJV+sJRRoO1dWxuu9ohOocEtQWk0DklLGVgUrxs
-	76EDGw5rWErvnmRioO+w==;
+	List-Owner; bh=lso3uGSPy84LZOZXPeSuJYMTdZlJJKls3Qd5DIq6AMw=; b=x/cgj6fYUGg/iJ
+	L6q2qNX0INe+eUz4IHsmOMj0bh3jpLBRttypatK+1ZwxIyGbxeWVFOJ6T8evSyRxOBVEyPZ4Gobn8
+	Th3bCjaAFxNf5A17C9/IxaZ8mEfPoxz1vdMA3mdTBNLnRUH/7vg/AXu//IezoJo/OqiPkaYwMmWni
+	eEQpG+zwFCnhnWQqy0aHrOCs+zaEN7+f6ICTEMTgiBHmxXyKYZk2TH2J3iBFomjNvn1BPf3tBNj4/
+	wRyfHyMQncjjLA15dN+aPQ1AgJMWD9a9IGrhx1OY976hjS2atMWeboGHUITeDUIJQWw5pu19sE+hc
+	/dJ1Q8EhwanzY6/PLyCg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpKqP-00000009fu5-0B0f;
-	Thu, 30 Jul 2026 07:06:17 +0000
+	id 1wpLur-00000009paG-3SJk;
+	Thu, 30 Jul 2026 08:14:57 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpKqO-00000009ftv-0aqv
-	for linux-phy@lists.infradead.org;
-	Thu, 30 Jul 2026 07:06:16 +0000
+	id 1wpLuS-00000009pTV-3q8A;
+	Thu, 30 Jul 2026 08:14:32 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9591243CF6;
-	Thu, 30 Jul 2026 07:06:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 71C391F000E9;
-	Thu, 30 Jul 2026 07:06:14 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id AAFA643672;
+	Thu, 30 Jul 2026 08:14:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3E5E01F000E9;
+	Thu, 30 Jul 2026 08:14:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1785395175;
-	bh=Zix8LjF5UhuiY4ZYBd5W4c2txY75qw5wnv/OZ7u41fQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=c7zwg3YVWW30jGL8GIhjHPJDcsQPZwsgPFLSIKBGXMNbwZuGEuJ2q1po3UpKDAPb4
-	 ot8iBuF2EaoD0ND65kgNplGNkFMKcKRulQfdV7qvusUW4ll2Z5gpu0Ysj/5rj1TqVa
-	 5NPrDOw1bPbGCdJBF3JrjX+96OpTkczQ4g2aBVwP10wJU00EPHqvP6NY8duPffbpIL
-	 UD29pkmwzyi+pU6VVm57OqDioBGzWgBMQajh0s44wecetiTY/iUdH8Ovf++yLFAE7o
-	 +0uTUQ850yhUtz27cWm9qLI09SriqWpr4SaOBJS6TCqvab5FRn/dxCwPgnJbnX1bZF
-	 Dhv9hVw+Ot0oQ==
-Date: Thu, 30 Jul 2026 09:06:11 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Konrad Dybcio <konradybcio@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Bjorn Andersson <andersson@kernel.org>, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, usb4-upstream@oss.qualcomm.com, 
-	Raghavendra Thoorpu <rthoorpu@qti.qualcomm.com>, Mika Westerberg <westeri@kernel.org>, 
-	Sven Peter <sven@kernel.org>, Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Subject: Re: [PATCH v2 1/5] dt-bindings: phy: qcom,qmp-usb3-dp: Extend X1E
- description for USB4
-Message-ID: <20260730-logical-bustard-of-infinity-af2fff@quoll>
-References: <20260728-topic-usb4phy-v2-0-5d9dd5149ec7@oss.qualcomm.com>
- <20260728-topic-usb4phy-v2-1-5d9dd5149ec7@oss.qualcomm.com>
+	s=k20260515; t=1785399272;
+	bh=SwkH9XaoCa13wc4+S4EGR+0lca2+/4IaQb96VBK1TQA=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References;
+	b=DDjRuhBNK1vDBHwwDcwRemcaBGxrBHsfylBpk9kDXZvEtRahMvanJmpvZWgBVv84J
+	 yVfbP/gRptzDKqH0dnM6NfYddKHZ3TXzoFyODtDtZCWC9qVaZ+zGFhQ3vGu2h50neb
+	 t+z8+tyj6g5l8Q5i05KsGbclo4uzY+ABO16Cz6CMKSBQ+hrJ8jdok1M1VHUMGznZGp
+	 o5lj16rc1kbbZkokh5l7VBZj7/LoVWSxAixYzCvFG2O+FyUAMyIWtMour4YAEVWmaR
+	 Y+h1M76EZ6ZF77Ylmp1rVjtRgVA3hTJvcIJMcGzQonKC7l1GaFNEbVmxwut8OiRiYR
+	 6PXg2kUAH9J3A==
+From: "Christophe Leroy (CS GROUP)" <chleroy@kernel.org>
+To: linux-phy@lists.infradead.org,
+	Vladimir Oltean <vladimir.oltean@nxp.com>
+Cc: Christophe Leroy <chleroy@kernel.org>,
+	devicetree@vger.kernel.org,
+	linuxppc-dev@lists.ozlabs.org,
+	linux-arm-kernel@lists.infradead.org,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Tanjeff Moos <tanjeff.moos@westermo.com>,
+	Michael Walle <mwalle@kernel.org>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Frank Li <Frank.Li@nxp.com>,
+	linux-kernel@vger.kernel.org,
+	Conor Dooley <conor+dt@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH v4 phy-next 0/9] RCW override for 10G Lynx dynamic protocol reconfiguration
+Date: Thu, 30 Jul 2026 10:14:07 +0200
+Message-ID: <178539922189.574381.6258263697994334139.b4-ty@kernel.org>
+X-Mailer: git-send-email 2.54.0
+In-Reply-To: <20260721231603.67865-1-vladimir.oltean@nxp.com>
+References: <20260721231603.67865-1-vladimir.oltean@nxp.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260728-topic-usb4phy-v2-1-5d9dd5149ec7@oss.qualcomm.com>
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1716; i=chleroy@kernel.org; h=from:subject:message-id; bh=Qt+vOFxP9nNU5Yu1070glj6/XYtWpjM8nIz+zpYRJJ4=; b=owGbwMvMwCV2d0KB2p7V54MZT6slMWRls18UjW8ryxGu0F176CvH16WSOYzJUtvUowOq1hyLy DNI9FPsKGVhEONikBVTZDn+n3vXjK4vqflTd+nDzGFlAhnCwMUpABNRuM7IMNVulcS7qB/uh298 +bfu/OcU5kNBX1YsuCRyJqH3exHfljUMfyXsXdvfG+bZPippu3/8aK3YA5fapKtLlVtkr3TsyPc UYQYA
+X-Developer-Key: i=chleroy@kernel.org; a=openpgp; fpr=10FFE6F8B390DE17ACC2632368A92FEB01B8DD78
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,29 +84,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 28, 2026 at 12:10:12PM +0200, Konrad Dybcio wrote:
-> From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-> 
-> Some instances of the QMP combo PHY (called USB43DP) feature a third
-> functional sub-block, responsible for USB4/Thunderbolt 3 communication.
-> 
-> Compared to the today's state of the binding, one more clock (P2RR2P -
-> PHY-to-Router, Router-to-PHY) needs to be enabled for the PHY to be
-> able to switch to USB4 mode. Allow that for X1E.
-> 
-> Also, add a bindings define to let consumers access it.
-> 
-> Assisted-by: Claude Code:Sonnet 5
 
-This has checkpatch warnings.
+On Wed, 22 Jul 2026 02:15:54 +0300, Vladimir Oltean wrote:
+> Previous set "New Generic PHY driver for Lynx 10G SerDes":
+> https://lore.kernel.org/linux-phy/20260610151952.2141019-1-vladimir.oltean@nxp.com/
+> introduced the 10G Lynx SerDes driver with a reduced functionality set.
+> Namely, only minor protocol changes are supported (1GbE <-> 2.5GbE).
+> The major protocol changes need a procedure named RCW override,
+> explained in more detail in commits 6/8 and 7/8.
+> 
+> [...]
 
-With this fixed:
+Applied, thanks!
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+[1/9] soc: fsl: guts: perform fsl_guts_init() error teardown in reverse order of setup
+      commit: c200e79a5e3a9af0ed368f2f60ecbe37c3077d48
+[2/9] soc: fsl: guts: use a macro to encode the DCFG CCSR space
+      commit: 77a46f8fa169b1c01940c4c12851dd4a07f8de4a
+[3/9] soc: fsl: guts: add a global structure to hold state
+      commit: 2c498f7254acf7ec0c0c589c0e42024ffdd6e81b
+[4/9] soc: fsl: guts: add a central fsl_guts_read() function
+      commit: 51749b225c21889e4c59c5850ec14c392b8d17b0
+[5/9] soc: fsl: guts: make it easier to determine on which SoC we are running
+      commit: 9ee864e5c28b30b97db03b9e94c1624484a46e30
+[6/9] soc: fsl: guts: make fsl_soc_data available after fsl_guts_init()
+      commit: 989c49a752850789eec8a79a68613210b11bc765
+[7/9] dt-bindings: fsl: layerscape-dcfg: define DCFG_DCSR region
+      commit: 086923eb1fef29995ffdf75cb7574dc947caf5e8
+[8/9] soc: fsl: guts: implement the RCW override procedure
+      commit: f1ab3e661b457937cc1cb975e9f2090f6b6de6d7
+[9/9] phy: lynx-10g: use RCW override procedure for dynamic protocol change
+      commit: 2e233235fd463c65188626b9cc5e272c5ee96c07
 
 Best regards,
-Krzysztof
-
+-- 
+Christophe Leroy (CS GROUP) <chleroy@kernel.org>
 
 -- 
 linux-phy mailing list
