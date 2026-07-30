@@ -4,135 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6E6EC55164
-	for <linux-phy@archiver.kernel.org>; Thu, 30 Jul 2026 14:48:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B707BC5516D
+	for <linux-phy@archiver.kernel.org>; Thu, 30 Jul 2026 17:38:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hfWnULvF/DwwmfE06WlifgiE9DDoTW+buhI04xC20Yk=; b=kUWW5TM/H0s37+
-	XJzOnPjaFuK8AAT1ZcS/gRNaEI/BTPkuK5/xBheqNUeQtNuR3xHb5XdGvaETOEddZ5fpuZYHsmilz
-	LM1ddnzcFitCGtBiWK3fOjQIdwP76EwGXEJpnjHWvO0CAU95l16Z5kuNmhcQn8+QVxznIVkAUgwBF
-	liEuwU7CAXnm0HQ8LTCt59nHfPQMmY0MNDhSXB9Y7fLynxPwcLE4O0SceRWqSEVMNseP0teHZva51
-	0Ao+DAyneeXaoUZYb3bnSvwsJmIVxEm1i0UkPPxxWaHIkiOeiJtZsongZ1fBiraG0KLLrzCZLRuf0
-	+Ga3P2QRujDrfGsz64Lg==;
+	List-Owner; bh=gPquxRNrlBmwGtFkd6XSVro4/sF9P0OH8AKdgehhf7Q=; b=p5MhmZbfi1hQzn
+	jZFM4W0RAhQrGcPMrXTbKyupOOcfaofpl134ghZn3fQBrkI+Do67SOvhP2arXShj3CeSrFiHVk9zB
+	bHlhql5zJ+j5igAei4ownh+sfPk21579QVhlYD6NBHydc1lPiX4KuvVl7ZJ85LzsAXZJdiVyOQKcN
+	B7wx3T4uzs7rjeWv/NaPPE20dtfajPbgxkqiaR6ZGiZGhnjcHuYisBoWOOTFkV+rGJ3QPJF+LEgVH
+	Q0rZ3gYfmXy8uNJiTy41DdSoJuoaieMy/AeVfFECgRTRX3vohTxvqlPgLtGczCbLy3tA2Ql3zBYcN
+	oKOi9bx/2/jX6G67mEDg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpS3R-0000000AmxE-1q7e;
-	Thu, 30 Jul 2026 14:48:13 +0000
-Received: from mail-norwayeastazon11013014.outbound.protection.outlook.com ([40.107.159.14] helo=OSPPR02CU001.outbound.protection.outlook.com)
+	id 1wpUi3-0000000B6M1-0954;
+	Thu, 30 Jul 2026 17:38:19 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpS3M-0000000Amvn-1BeR;
-	Thu, 30 Jul 2026 14:48:11 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=iF29+JXSHfllUc9OppfzKAigUESgg45BynsJH3Doe8IyZQRaWOg22PN0zsvBHu/l7kUEopWtEswjok6yVfO2clYJQyWXh8YqlQr+cGLIyQocZjMWpBk8To5emuest8JeL7qwKz0orOuYHnJuWTTSpOzDZbWeaqc6Jw2wFxWQjkLgsUxQnLXyLjyMahs3Y9175uvHdX3sP5iwWbvupOrT0E9ruK22oRfBgOo/3uLig3cGZp5QHLqunAJyf79GAMZFIRndXzQJ7Ap97pYJCrgFgYFN27dY79zIH4JZR9JFmOBLS/64A9hPwqn/FoE1gcIH4d0ZvU2Hu6bkqMZS0SJ/jw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=YDjgDPDKQk/wYx0iSSMxSGL9AF0514xo2K15f21ARok=;
- b=l7D8UlKvFhzMF+8mOAlTfpv8BJ5K0icQNfE6EuOero+nzckLi+550u9Y35wBWo4zzB6OtbZVjydY4tEgS0e3FBlosA4zlAQ0X0snXOGgG71kpXQqd2J8I8Br91x0V5laO1IgfYr4eWTSOvfkGqnbRlYPUvlANlRcrdPB+MutAyq6EUfiWcxXxx3BmcOqv/M7HBIivAgeSizxrYi2uFmEw2yrxxfIUOjXdGyQ/hRPWS3cEFRtdPwkfwjxuP22CfgoQkKG9NPUa914rPtL0pd5Wd9NfSh/Usqb5+TOEb6CVqvuCaSt0gFuzEXpGlitWlq3Jn+g1BVMhpDUSYdJDU66Bw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=YDjgDPDKQk/wYx0iSSMxSGL9AF0514xo2K15f21ARok=;
- b=f6to4QpcK7OmULWl0TUUs4jAD7tkRZH5r4/XBA+kDhNvwBjjKiQb95kvwMkSu2S12CpRcSwpeyLfJHONgQ02Et9I5khA8oy9wQthQsWpkXCqT+kuLgO2PyDXybUJwxVQSpFwoXgWrvCzAtvhNalXTAmUY1GQKM7aQi6U1+f66uOVUdsWheQoIsRXpyOqOlQtm7JYNOXTx2pQMNBJ9cxss/KSxXPzZtatcaczGvUNEVi1YKT+uD5wpX12dLspa2a3QjMT5+jqhyR3oBkDwXKBx/1V8HEYFltbAj9VxglOfsLpBNWCsonOn744o5N9ig6Ss0VRsEVir8QoeWaZIiEMlQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by AM0PR04MB12052.eurprd04.prod.outlook.com (2603:10a6:20b:745::13) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.270.14; Thu, 30 Jul
- 2026 14:48:02 +0000
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c%7]) with mapi id 15.21.0270.012; Thu, 30 Jul 2026
- 14:48:02 +0000
-Date: Thu, 30 Jul 2026 09:47:51 -0500
-From: Frank Li <Frank.li@oss.nxp.com>
-To: haibo.chen@oss.nxp.com
-Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
-	Vincent Mailhol <mailhol@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Catalin Marinas <catalin.marinas@arm.com>,
-	Will Deacon <will@kernel.org>, Rob Herring <robh@kernel.org>,
+	id 1wpUhz-0000000B6L3-39GF
+	for linux-phy@lists.infradead.org;
+	Thu, 30 Jul 2026 17:38:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1785433094;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=PRVLUAMqt9btSYcKLPYN+Dg017FHNaeUxumso8uAL/U=;
+	b=MAx9AqKikPvn6iGcLjQRe1I8PVTczFfauGZlO2+upx1zr2ppAySmazVzPigFDSfY7T5nl8
+	6/iUNA0G9BU2d4Q3xe7U0koYmw9RLYl7N+M7B/cx+ikbKu+w/V5+DAFC0vy9YydWDCsu3v
+	6S5wInLcL4L0gYfsQ+4EAGl58wuWrpM=
+Received: from mail-yw1-f197.google.com (mail-yw1-f197.google.com
+ [209.85.128.197]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
+ us-mta-443-5Hs3DFG6M-CDn2Du9n4Lsw-1; Thu, 30 Jul 2026 13:38:12 -0400
+X-MC-Unique: 5Hs3DFG6M-CDn2Du9n4Lsw-1
+X-Mimecast-MFC-AGG-ID: 5Hs3DFG6M-CDn2Du9n4Lsw_1785433092
+Received: by mail-yw1-f197.google.com with SMTP id 00721157ae682-81aea53d559so1976107b3.0
+        for <linux-phy@lists.infradead.org>; Thu, 30 Jul 2026 10:38:12 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1785433092; x=1786037892;
+        h=user-agent:in-reply-to:content-transfer-encoding
+         :content-disposition:content-type:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=PRVLUAMqt9btSYcKLPYN+Dg017FHNaeUxumso8uAL/U=;
+        b=S+PEX/sM1GSBspxk4A572O6WH5+DUWXNlxwlxblzDUDI8V/BfzrEp6dOutXRwiNgP1
+         SHft7PAOUbTSKtJ/cUQqlg1UMFP5NCD2RWOuC8hjgsh591BMVug3mI1hq6Ke6hLGtJ6e
+         Kp2OP7YMo/roD5OCkv7rH5IzZlmQPLrPCqJdfX9p3SR9dIwkTyoV1bzbJOkIVhYKDxGs
+         /sp2Paz7Rb16U98yjjrWQTWE52QPIF6Ye2ATEAm5uDP133de5374Npwe9USZbaOyDKzj
+         5NwWxrlABUwJLX3U9u2xSn59swK4jud17DRm+sjsAmSKc2qzcbmhR8QGJwV5mQ7PpY4N
+         1PbQ==
+X-Forwarded-Encrypted: i=1; AHgh+RpOwerNYuhmEHBNO+DoxAHjcKZ2IIoREl1xfI1Ie9CaWofsZeI85pNmQghxHRcDm5WF0ndnlICaXzE=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxZk0WMPtJA3qk9rvf/wjBJE4yNsEMeTDvsugcwPV7yEgG9H4IS
+	0okbOK/vmb5Sg9l2zqaucEDa0/e3TfKUhl6uxNxpCMWgYH/EPOtRnxOBA1ZNAa9yHnyFvWbFeIN
+	q9Umscr23rm0J+ZqyTf2ZvFEoOVLwUbe9b6CdWXLyByTE5VnAqS+9QBEEs9G7skNALNo=
+X-Gm-Gg: AR+sD10DbICCnYiBInQ820ia2O/Qi08UjydsettSqulp3TQswQ08G9DFzkRWOCCeBJD
+	oskOFKJZ+hmXORRE84xYMeJReDmCE2Xq7a2Rs/yEaofQahuU/89lb+OdoLrUiEQXzPYyTIC0Qqf
+	U39HlRXuabQn4kT+3rnODYD3q4c768aLfhVbo1I5p7/B5cz4Lf8dxsccTemGRaGl1C8ioutwh6T
+	2j5GAaX5xY7idouvabLL5bi15Sq1SYCn+SFl+QlsPFHnEdxGLp8I5qXE+Qly5k3+gXc1fCv0Qle
+	oeUG1nFep5S0dzpNPe5qbIMULj8cDjlGDCAos6l5X1QR2viwxDeRTkCFn90dtL6/ubpi4G77Uf9
+	Pik/CE/fulOZU68vOQMA4z8YmGYzHt84m5H8=
+X-Received: by 2002:a05:690c:698f:b0:81e:fd36:ff73 with SMTP id 00721157ae682-81fb891d54cmr25018607b3.5.1785433091926;
+        Thu, 30 Jul 2026 10:38:11 -0700 (PDT)
+X-Received: by 2002:a05:690c:698f:b0:81e:fd36:ff73 with SMTP id 00721157ae682-81fb891d54cmr25018367b3.5.1785433091480;
+        Thu, 30 Jul 2026 10:38:11 -0700 (PDT)
+Received: from redhat.com (c-73-183-53-213.hsd1.pa.comcast.net. [73.183.53.213])
+        by smtp.gmail.com with ESMTPSA id 00721157ae682-81fb87315cdsm14274757b3.0.2026.07.30.10.38.09
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 30 Jul 2026 10:38:10 -0700 (PDT)
+Date: Thu, 30 Jul 2026 13:38:08 -0400
+From: Brian Masney <bmasney@redhat.com>
+To: Stefan =?iso-8859-1?Q?D=F6singer?= <stefandoesinger@gmail.com>
+Cc: Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Frank Li <Frank.Li@nxp.com>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>, linux-can@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
-	imx@lists.linux.dev, Haibo Chen <haibo.chen@nxp.com>,
-	qijian.guo@nxp.com
-Subject: Re: [PATCH 1/3] phy: phy-can-transceiver: default silent GPIO to
- high during probe
-Message-ID: <amtkF1NXKN_nR2vE@SMW015318>
-References: <20260730-can-share-silent-v1-0-63fd603f943d@nxp.com>
- <20260730-can-share-silent-v1-1-63fd603f943d@nxp.com>
-Content-Disposition: inline
-In-Reply-To: <20260730-can-share-silent-v1-1-63fd603f943d@nxp.com>
-X-ClientProxiedBy: SA0PR11CA0127.namprd11.prod.outlook.com
- (2603:10b6:806:131::12) To GV2PR04MB11799.eurprd04.prod.outlook.com
- (2603:10a6:150:2cf::9)
+	Conor Dooley <conor+dt@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Russell King <linux@armlinux.org.uk>, Lee Jones <lee@kernel.org>,
+	linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org, mfd@lists.linux.dev
+Subject: Re: [PATCH v8 05/12] clk: zte: Add Clock registration infrastructure
+Message-ID: <amuMADxexEuJJG44@redhat.com>
+References: <20260727-zx29clk-v8-0-7a107b00f1dd@gmail.com>
+ <amiw7mfPfSPjLHLH@redhat.com>
+ <ami0TaY84IslWZyo@redhat.com>
+ <MwDLqBgXR7G6dGkTtCaRrQ@gmail.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|AM0PR04MB12052:EE_
-X-MS-Office365-Filtering-Correlation-Id: 9fd7e265-6b32-4ed0-f544-08deee498e73
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|366016|1800799024|7416014|376014|23010399003|22082099003|18002099003|4143699003|56012099006|11063799006|10067099003;
-X-Microsoft-Antispam-Message-Info: DiJIlF0hx1wQ7gYh4JT/pHgCOhxwcq+v426Ns4SDOjveGBEtAKJwxyZ5zXc+H2y0TivXz69uy8M6hi6JfEnOh9w5VZHXiSDnY+CK1FeW7Q7tviiOt8nxiPadIx0ew6go3sm7ll9C3VvYoC0vl3d2arUz9qo6odRl/Ncpn0dhzb3/iQbNWOGvdn+2uq1HVRJ0Om1GSh5qUPnY5L1QKKT/WL7eouv8xMZ3gNhCdXNZM1l87DEr2xPIevYR+j2ZkMZognfJ9ZAf3BjAJ5d4/Za6UBQT3lBJeCJdj5EfzQYREQNU2yddo6ipzyklfPktm7wv0vsyLbSn6nfz2ZGx73Zl3+XgkVj63Rby1tPqk0e9FLSzHNjjFLc0LdkMICy2BTdbFIoKMb7on/MYagP4ps4UaoSPU0pwWNnlv9rCLO22k6F+FihraqAKNpcR27rYM1mO5vD+WmSGuboG/otEGsun/Bo2HigSY7X5LiQCFnAZQ73YrSzsrzoPqI6w/bihMVbREB5TFKShCC9m8bX6+WucxfIzAuw4XqRkrBFrYEOUprhQVZgHLBGhXwkGIS+H8EYk3+VhPfw6x+MnE6xrQcAZDddWKmFuIBIhQLypXA8HEUxmVvz/xpiZWtGURxtv0mJMSS0fZh72a+S6xCOKIIqt1Q==
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(366016)(1800799024)(7416014)(376014)(23010399003)(22082099003)(18002099003)(4143699003)(56012099006)(11063799006)(10067099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?QDPwx5PXDQDmj7OqZlvaOKO05+rWogxxgLhHXIAS2lRudSvsANNmaiMuVehp?=
- =?us-ascii?Q?1U3TFe386yBzW4lHegGDJbe2xL3JhYHC/unVbCWctrMk8T9A/DSVGcN8ovcO?=
- =?us-ascii?Q?lllyeddIsjl3B1qQw9SDNli3l7TbdqyOmzV7JGYeVflfRhskRNT4JXUczrQ6?=
- =?us-ascii?Q?e3YY5L/3HaRuJD2Lrex/ZoTjQ8rCTDgjgGk5uzueSreU347KPERZhLyieyHo?=
- =?us-ascii?Q?+Jap7c3MaLrWsxqjh+kmiVCn9yVQPwArjnEj6efH5yGkE3Atv8R7y/P6h0m6?=
- =?us-ascii?Q?xKTmMjTi/07ZbVkLoHxMZ0Yw7LFYvf3mMoOkNFOT0JfFs5Sb+HPvC9YKhOin?=
- =?us-ascii?Q?z3vtiuUJ6nqC5ppPT1Xefc4C6YkLOI0kA2PaQPT+xhSScyE9zM3yVXCQ4LRt?=
- =?us-ascii?Q?CHzATFO9ah8z87XGfJAUEAzbhAHNCtYl5zQXzBZMktV+yRrYceQtC3vBdZl8?=
- =?us-ascii?Q?SsQfqWVuoK3UoKdPxBawLk8MHlYM5W6U8RUokaTvoMSgqP4N8SIA03sQzxjx?=
- =?us-ascii?Q?CStNUNnTVAUerI1pNhGCYaUsl3DVYpu/MsjZwLOoaVyG4G7uzYmderdWmn1C?=
- =?us-ascii?Q?EbqyLLsBJGJaLVicSZY2DLEOMSDDdWTvWk4JxSh8psFCPAuV39ozeP/uX6JN?=
- =?us-ascii?Q?gSeJv2VnkKJ7OvgvT9BWWOX5jC6Qd9zzqICoIPRd/LTmeQ7nzwN6qCOSpDTN?=
- =?us-ascii?Q?q/4VJJUeqoWqxaRjlrBzZ7hvU/1z9QfQzAzb03NPVuw59exLAzsTavwmfh3V?=
- =?us-ascii?Q?8ehdv6urFKE+X3e7cCuN7qinFlr2qgEl+KDXLMfa7ZjFUpvl94PqioD7imrt?=
- =?us-ascii?Q?dCei4BGPt8ilwXgGwh8Wb+yK7WwMW/Ht6A8gkb/UGg2MEq0T62G1uElVKayB?=
- =?us-ascii?Q?7a94+OxCw+edyeJiL9eZqHBzMcmDYkr985wi0OEyy9ghPtBmlIopg3qaxN3a?=
- =?us-ascii?Q?0jboJNB2ivonQ06u1xYRjx5zAAYeBGKutAyMzzFC6Vbs/JgDX6Ispwogf6lD?=
- =?us-ascii?Q?zD2y8xnyDBs49PnGq89qXNN1ouIvtuTFy6CNOENwJpzuZRtbAp/77lvHZNY+?=
- =?us-ascii?Q?VZz6O7CijkXkuJg8LrkbWiRkEUlk1JZ4HnDMrZo5b1k4tovssEUzd7TmCC9K?=
- =?us-ascii?Q?92xi/j6Hz/AnyCwqGuypM79ucgn8LpcyqZ8GtiwUNpDtYtnWd4uAVhsl0mrQ?=
- =?us-ascii?Q?ZXwqz0CZWoEVwuSwPhiaOxu6YZsA/lnXvAawfbII+85VRKKZecVkQvnyDXC1?=
- =?us-ascii?Q?gtuHPlfAqi7m+CFYGM502HXnIlIsAI6F5m/UE2aeWoz3q2PRFUtLwaSRxRTI?=
- =?us-ascii?Q?6cW72w9biKgOU2SPg0h55ziEk81b6oclpj7UjS9lsvkOUUtBSX+lLfXqe24z?=
- =?us-ascii?Q?E0zip+Cba7zNDhpFYWlicgFZdNq/Yd/fxGdcAA6c5nyGjbfQ6TQePNdacBUc?=
- =?us-ascii?Q?tq8+YRHR16812CqAzj25cs08n2QsETI66iHsbT9lnPEHR+FnLQybA83nmTeJ?=
- =?us-ascii?Q?fom/jcHodp1P46kvBu5RhKo3aEgsVv7G/OIqB5ppqbX6AGC91NL889QhYTYQ?=
- =?us-ascii?Q?gK3JjxzW9ehKegq77Cb0+8DoSyrSTQ/MqZrHqCzM2o5hgCU1NjnjJn/Fc5pu?=
- =?us-ascii?Q?ChaPmhVhTESlzi3v0v0hNPJ7OvLowOICDW0HcdNJu29bMgTlMkZt46SK1vu5?=
- =?us-ascii?Q?+8WcKZnLEl/q+3w112TqLv72T9j+Gv1tZeY35bbPlf9VafyyHAwZvvZT3/o9?=
- =?us-ascii?Q?tiqpxIuCjkZHX38iOHXzbJM57DMoZtxFj9lIapb8aJHIsWuONLsP?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9fd7e265-6b32-4ed0-f544-08deee498e73
-X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Jul 2026 14:48:02.7264
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: HuKbR6GWJIbPThrHri/qvO0g8CQOIto0uZmjqldBYn1nI2LtZVUXwUziVXh69sFspBGg7Wst29LkW8HvY0T55hA5ayN4uzVHuFc1G6hlNN/yA0TkAagAZFL6a38Th2ZF
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB12052
+In-Reply-To: <MwDLqBgXR7G6dGkTtCaRrQ@gmail.com>
+User-Agent: Mutt/2.4.0 (2026-06-19)
+X-Mimecast-Spam-Score: 0
+X-Mimecast-MFC-PROC-ID: rDRhtyzCPFBetc16n3jystBk0XjD6mqPMVpUaW2OB4c_1785433092
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260730_074810_566808_60AAAFAC 
-X-CRM114-Status: GOOD (  19.80  )
+X-CRM114-CacheID: sfid-20260730_103815_866196_79085B96 
+X-CRM114-Status: GOOD (  21.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,57 +117,91 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jul 30, 2026 at 12:33:26PM +0800, haibo.chen@oss.nxp.com wrote:
-> From: Haibo Chen <haibo.chen@nxp.com>
->
-> The silent pin of the CAN transceiver is active high, asserting it puts
-> the transceiver into silent (listen-only) mode where the transmitter is
-> disabled.
->
-> At probe time, and before the PHY is powered on, the transceiver should
-> default to silent mode. This is the correct and lower-power state: the
-> transceiver should not actively drive the CAN bus until the PHY is
-> explicitly powered on. Requesting the silent GPIO as GPIOD_OUT_LOW leaves
-> the transceiver in normal mode by default, which is both incorrect and
-> wastes power.
->
-> Request the silent GPIO as GPIOD_OUT_HIGH so the transceiver starts in
-> silent mode, and let the power_on/power_off callbacks manage the mode
-> afterwards.
->
-> Signed-off-by: Haibo Chen <haibo.chen@nxp.com>
-> ---
+Hi Stefan,
 
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
+On Wed, Jul 29, 2026 at 12:25:34AM +0300, Stefan D=F6singer wrote:
+> Thanks for the review!
+> =
 
->  drivers/phy/phy-can-transceiver.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/drivers/phy/phy-can-transceiver.c b/drivers/phy/phy-can-transceiver.c
-> index 75dc49e75ca0e0e90a1b1b140dcaf8033ec02c50..9aa30662105f063fb6d0e60fd04a95c8d635a515 100644
-> --- a/drivers/phy/phy-can-transceiver.c
-> +++ b/drivers/phy/phy-can-transceiver.c
-> @@ -198,7 +198,7 @@ static int can_transceiver_phy_probe(struct platform_device *pdev)
->
->  		if (drvdata->flags & CAN_TRANSCEIVER_SILENT_PRESENT) {
->  			silent_gpio = devm_gpiod_get_index_optional(dev, "silent", i,
-> -								    GPIOD_OUT_LOW);
-> +								    GPIOD_OUT_HIGH);
->  			if (IS_ERR(silent_gpio))
->  				return PTR_ERR(silent_gpio);
->  			can_transceiver_phy->silent_gpio = silent_gpio;
->
-> --
-> 2.34.1
->
->
+> Am Dienstag, 28. Juli 2026, 16:53:17 Ostafrikanische Zeit schrieben Sie:
+> > Looking into the other patches. There's more mixing of the clk provider
+> > calling the clk consumer APIs here. It looks like this just takes a
+> > reference and holds them. Would moving to parent_data address this?
+> =
 
--- 
+> I think so. parent_data::fw_name is indeed something I have been looking =
+for =
+
+> and didn't stumble across myself. And I suspect when you say "use =
+
+> parent_data", you don't mean "use parent_data.name everywhere".
+> =
+
+> But it raises the question of how to handle internal clocks, e.g. foo_gat=
+e-
+> >foo_div->foo_mux->clock-26m. Only "clock-26m" is passed through the DT a=
+nd =
+
+> found via fw_name, and only foo_gate is exported.
+> =
+
+> For the other clocks I currently rely on the string matching to resolve t=
+he =
+
+> parent named in the static init data to an actual registered clk_hw. The =
+
+> alternative I see is storing the struct clk_hw * in a table by index and =
+pass =
+
+> it in parent_data.hw, but that'd require managing the extra indices. Or b=
+uild =
+
+> a clock-local name->clk_hw lookup, but then I am just reinventing the old=
+ name =
+
+> matching.
+> =
+
+> Am I missing something obvious? Is there a canonical implementation somew=
+here =
+
+> that implements modern best practices? I learned that looking at existing =
+
+> drivers isn't always a reliable guide.
+
+You'll want to register all of the clocks with the subsystem. Take a
+look at drivers/clk/qcom/gcc-sa8775p.c and here's an example I picked
+at random that shows how you can reference the parents with the
+parent_data:
+
+static const struct clk_parent_data gcc_parent_data_8[] =3D {
+        { .index =3D DT_BI_TCXO },
+        { .hw =3D &gcc_gpll7.clkr.hw },
+        { .index =3D DT_RXC1_REF_CLK },
+        { .hw =3D &gcc_gpll0_out_even.clkr.hw },
+};
+
+static struct clk_rcg2 gcc_emac1_rgmii_clk_src =3D {
+	...
+        .clkr.hw.init =3D &(const struct clk_init_data){
+                .name =3D "gcc_emac1_rgmii_clk_src",
+                .parent_data =3D gcc_parent_data_8,
+                .num_parents =3D ARRAY_SIZE(gcc_parent_data_8),
+                .ops =3D &clk_rcg2_shared_ops,
+        },
+};      =
+
+
+Brian
+
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
