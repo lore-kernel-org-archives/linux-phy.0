@@ -4,54 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD777C55175
-	for <linux-phy@archiver.kernel.org>; Sun,  2 Aug 2026 14:25:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F4BBC55175
+	for <linux-phy@archiver.kernel.org>; Sun,  2 Aug 2026 14:31:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1lavWz3z3aaTydn/+Z1VxPG7QGl7laeI5EnbBB1xQBs=; b=dmkzJVTv1ceggm
-	HOnEaX6tG5XOMdE5S8gYhJjCUdFGuo88LXcsk7ahNtN8gpFT1a99E2mZBe40TfeLZu1wRlNCli501
-	FggIGyAiehp8FIkuh/Rbue2kzotogGsKcs12Bz2afuwlKET9IMUmZ9zIQzXXYoBE5xHglQRgQY/2z
-	7Bwi6aebE1u3dURaDTRo2mc1x1F+BBHhhS5VTkNYjf987djHlL7cbDilP8TXoUkoMgyBDcYrp2nYN
-	YynbSPQSfhh+c7c/bGdclZ2OlQRxbGNPmeCeW6ww3yZTIWPMjMWtKD8vgbeEeB8bojRTq//bukTdO
-	MgZ/dv3OcwQOiKDzalDg==;
+	List-Owner; bh=m9L+UWmUCPWZ1/16wqX+e8hvOZJwIlkOJcuT+dJl9fU=; b=z+TLS/mFQxkl/i
+	ND15Niespc9pLczv2l4EoqQL2s/sZUPeGvB8eOdNYcFOfVO/YpSZ2H7QMZrqMbBAXtqd62hwv53uA
+	i1gR0R4GlxTx0jg1jKdQvZ0QjyKHB15dW5cYQxq17hrUtnfjpPF/sTFPl+FapeBfYdoPZFLRJs7yM
+	jN+mlnER2+yi+Trm/d7efIZhyHUw9BIVF+/DSAfZmcyXy4yHBJZ2jP1lOHpUMRu+AAVdn6jVWcSOF
+	+VSJlUt31iTl9uo6TzH1cITLC79M50BOgOZLf/oxv04rem/ODgHcB+JK9nuNzbISQDe2gkM2yBCpz
+	ZFKo3fOij1dUxrGA6qtQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wqX8N-0000000FiDl-1Pfx;
-	Sun, 02 Aug 2026 14:25:47 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wqXDj-0000000FiQC-3wXB;
+	Sun, 02 Aug 2026 14:31:19 +0000
+Received: from vps0.lunn.ch ([156.67.10.101])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wqX8L-0000000FiD7-2h0r
-	for linux-phy@lists.infradead.org;
-	Sun, 02 Aug 2026 14:25:45 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 1BE6360DD8;
-	Sun,  2 Aug 2026 14:25:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1B61F1F000E9;
-	Sun,  2 Aug 2026 14:25:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1785680744;
-	bh=cl53CQ7ODMQtZ2fnkPnRVoAG6vvhuGOqM5Qi0fvSgec=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=DJnwVJF+4yIVAChXeWaic97jZAF/u7hjs7GhlTFROgdPwMqQVYzMyjtD/HXUZfUJk
-	 estbUiJZ0XzLUOg1rW/Ak4UMzxqBcuRBd7XM+92CRlT8FvD5BQD0OE/DcCO19k4JYJ
-	 uoB9iOv0EN+9OuLWK8Zyyc6qyalBtCgkMS3ndAIkKi7/gpOiceURLBTaV10TYxStfg
-	 44/djKEfT89b19tFDinTn/cTNkLfu/u7/eEr2yxE44zvpiA2Ce04Z3b+tEwOdLAAo2
-	 lzClh/kQFxa/3SSFMhV51nHikLXMDTZPpxWB38XIzsrbRNEGJL35/WeL7UQykZ4+ua
-	 VIoPPorU+yDxA==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v2 09/10] arm64: dts: rockchip: rk3568-photonicat:
- enable SGMII LAN port
-To: "Coia Prant" <coiaprant@gmail.com>
-Cc: neil.armstrong@linaro.org, devicetree@vger.kernel.org, conor+dt@kernel.org, wsa+renesas@sang-engineering.com, olteanv@gmail.com, linux-phy@lists.infradead.org, robh@kernel.org, vkoul@kernel.org
-In-Reply-To: <20260801142244.679437-11-coiaprant@gmail.com>
+	id 1wqXDg-0000000FiPF-4BAx;
+	Sun, 02 Aug 2026 14:31:18 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+	s=20171124; h=In-Reply-To:Content-Disposition:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:From:Sender:Reply-To:Subject:
+	Date:Message-ID:To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Content-Disposition:In-Reply-To:References;
+	bh=4ggfcMH1kahDYCbGmOP7Ajq6AppNr+Gjq/mgURpxy5I=; b=mwJ8aLS5VQNSjkOn0xGqK75CSS
+	ID9sYCVvsHAz13X3MKwofvRBt/1ztsO5fCZWY3TiJPfbpJvg4z0CbN/yXWkCVv0CsdWMKdYOX9w3V
+	Q/kqDeBdHJ644FGsUU7rpNRuhgbEdHjiGAzK3XRkn7gfITAj1dVfYo18jnu8wQokMBjs=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
+	(envelope-from <andrew@lunn.ch>)
+	id 1wqXDI-00FZzM-7S; Sun, 02 Aug 2026 16:30:52 +0200
+Date: Sun, 2 Aug 2026 16:30:52 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: Coia Prant <coiaprant@gmail.com>
+Cc: Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S . Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
+	Maxime Chevallier <maxime.chevallier@bootlin.com>,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+	Romain Gantois <romain.gantois@bootlin.com>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Russell King <linux@armlinux.org.uk>,
+	Shawn Lin <shawn.lin@rock-chips.com>,
+	David Heidelberg <david@ixit.cz>, netdev@vger.kernel.org,
+	linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	linux-renesas-soc@vger.kernel.org,
+	Jiawen Wu <jiawenwu@trustnetic.com>
+Subject: Re: [PATCH v2 06/10] net: pcs: xpcs: add ANRESTART support for SGMII
+ link recovery
+Message-ID: <2886b24e-1c3d-48f7-8b22-9620fa0404f7@lunn.ch>
 References: <20260801142244.679437-2-coiaprant@gmail.com>
- <20260801142244.679437-11-coiaprant@gmail.com>
-Date: Sun, 02 Aug 2026 14:25:43 +0000
-Message-Id: <20260802142544.1B61F1F000E9@smtp.kernel.org>
+ <20260801142244.679437-8-coiaprant@gmail.com>
+ <cfddb747-11d0-476d-8402-e0886cca582e@lunn.ch>
+ <CALj3r0i1TCTgvm8FrJAJqmZgoJp61NCxc_xmVYaDFd-gh4H=7w@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CALj3r0i1TCTgvm8FrJAJqmZgoJp61NCxc_xmVYaDFd-gh4H=7w@mail.gmail.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260802_073117_031160_ADC27292 
+X-CRM114-Status: GOOD (  14.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,41 +88,38 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0xvd10gVGhlIFlUODUyMVNDIFBI
-WSBub2RlIHNwZWNpZmllcyAxMEcgRW5lcmd5IEVmZmljaWVudCBFdGhlcm5ldCAoRUVFKSBlcnJh
-dGEgcHJvcGVydGllcyAoYGVlZS1icm9rZW4tMTBndGAsIGBlZWUtYnJva2VuLTEwZ2t4NGAsIGBl
-ZWUtYnJva2VuLTEwZ2tyYCkgZGVzcGl0ZSBiZWluZyBhIEdpZ2FiaXQgUEhZLgotLQoKLS0tIFBh
-dGNoIFs5XTogW1BBVENIIHYyIDA5LzEwXSBhcm02NDogZHRzOiByb2NrY2hpcDogcmszNTY4LXBo
-b3RvbmljYXQ6IGVuYWJsZSBTR01JSSBMQU4gcG9ydCAtLS0KY29tbWl0IDA4ZWU0YmY4N2Y2MmFh
-YTU5M2I2MmZmYjBhMzdmOGY4NjE4YTZhMmEKQXV0aG9yOiBDb2lhIFByYW50IDxjb2lhcHJhbnRA
-Z21haWwuY29tPgoKYXJtNjQ6IGR0czogcm9ja2NoaXA6IHJrMzU2OC1waG90b25pY2F0OiBlbmFi
-bGUgU0dNSUkgTEFOIHBvcnQKClRoaXMgY29tbWl0IGVuYWJsZXMgdGhlIFNHTUlJIExBTiBwb3J0
-IG9uIHRoZSBBcmlhYm9hcmQgUGhvdG9uaWNhdCwKYWRkaW5nIHRoZSBuZWNlc3NhcnkgWFBDUywg
-R01BQzAsIGFuZCBNRElPMCBub2RlcyB0byBtYWtlIHRoZSBNb3RvcmNvbW0KWVQ4NTIxU0MgR2ln
-YWJpdCBFdGhlcm5ldCBQSFkgZnVuY3Rpb25hbC4KCj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQv
-Ym9vdC9kdHMvcm9ja2NoaXAvcmszNTY4LXBob3RvbmljYXQuZHRzIGIvYXJjaC9hcm02NC9ib290
-L2R0cy9yb2NrY2hpcC9yazM1NjgtcGhvdG9uaWNhdC5kdHMKPiAtLS0gYS9hcmNoL2FybTY0L2Jv
-b3QvZHRzL3JvY2tjaGlwL3JrMzU2OC1waG90b25pY2F0LmR0cwo+ICsrKyBiL2FyY2gvYXJtNjQv
-Ym9vdC9kdHMvcm9ja2NoaXAvcmszNTY4LXBob3RvbmljYXQuZHRzClsgLi4uIF0KPiBAQCAtMzQx
-LDYgKzM1MiwzOSBAQCAmaTJzMF84Y2ggewo+ICAJc3RhdHVzID0gIm9rYXkiOwo+ICB9Owo+ICAK
-PiArJm1kaW8wIHsKPiArCXNnbWlpX3BoeTogZXRoZXJuZXQtcGh5QDMgewo+ICsJCWNvbXBhdGli
-bGUgPSAiZXRoZXJuZXQtcGh5LWlkMDAwMC4wMTFhIjsKPiArCQlyZWcgPSA8MHgzPjsKPiArCQlt
-YXgtc3BlZWQgPSA8MTAwMD47Cj4gKwkJZWVlLWJyb2tlbi0xMGd0Owo+ICsJCWVlZS1icm9rZW4t
-MTBna3g0Owo+ICsJCWVlZS1icm9rZW4tMTBna3I7CgpbU2V2ZXJpdHk6IExvd10KQXJlIHRoZXNl
-IDEwRyBFbmVyZ3kgRWZmaWNpZW50IEV0aGVybmV0IChFRUUpIGVycmF0YSBwcm9wZXJ0aWVzIGlu
-dGVuZGVkIGZvcgp0aGlzIEdpZ2FiaXQgUEhZPyBTaW5jZSBtYXgtc3BlZWQgaXMgbGltaXRlZCB0
-byAxMDAwLCB0aGVzZSAxMEctc3BlY2lmaWMKcHJvcGVydGllcyBhcHBlYXIgdG8gYmUgaW5hcHBs
-aWNhYmxlIHRvIHRoaXMgZGV2aWNlLgoKPiArCQlyZXNldC1hc3NlcnQtdXMgPSA8MjAwMDA+Owo+
-ICsJCXJlc2V0LWRlYXNzZXJ0LXVzID0gPDEwMDAwMD47CgotLSAKU2FzaGlrbyBBSSByZXZpZXcg
-wrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYwODAxMTQyMjQ0LjY3OTQzNy0y
-LWNvaWFwcmFudEBnbWFpbC5jb20/cGFydD05CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdAps
-aW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On Sun, Aug 02, 2026 at 11:11:40AM +0800, Coia Prant wrote:
+> Hi Andrew,
+> 
+> Thanks for the careful review.
+> 
+> > This probably needs more wide spread testing. I would be afraid that
+> > if you kick off an AN cycle, you loose the link until it completes?
+> > You would of noticed that on your hardware, but other hardware
+> > obviously behaves differently...
+> 
+> The trigger condition is: link is down AND an_complete is set.
+
+Ah, i missed the "link is down" check. That makes it safer.
+
+I still find it interesting that this devices is different. Has the
+silicon vendor done the integration of the licensed IP wrong?
+
+> Regarding testing:
+> - Jiawen Wu has tested this on Wangxun NICs and reported no regression
+>   (Tested-by tag included in the patch).
+
+Probably Maxime will test on the platform he has, but i don't know if
+any use the XPCS.
+
+	Andrew
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
