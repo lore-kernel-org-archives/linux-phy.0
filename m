@@ -4,54 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5ECAEC55184
-	for <linux-phy@archiver.kernel.org>; Mon,  3 Aug 2026 09:30:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB433C55184
+	for <linux-phy@archiver.kernel.org>; Mon,  3 Aug 2026 11:04:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lO+jDOMDhNIvSPoonIC//zxaPf84hSRpgnyTKN86/po=; b=W0xIp4UdmcgNqF
-	vvO7J136uCSjQpO26MQUZQLW/yi/l382XQnD/qL40Cb+DoI6WJdxoYIkeS1wSE8fV2UM+RBHON0eH
-	Z1Lh6+vuZORhqnceQEaH3imJE7TXN3lgRmOOoLT/MJdzjfozj1Vd49sp9u80gQUkXDHHRZFQala8Y
-	bpwvusbOMBUnWPn88BBxpXu1B2h66ZFnFXqDh/7N1BlQv/n836SQc/+7+iKiQIe4dFNQjTqJffZDn
-	j9sOSU8P4sIzDshyi+761dIs31PnFUbtg1WctKK/z5ggi59pMOvnMTSq1D8Cmmxk7a8NWO+/BY/qA
-	ecsBJh4veFwc8sYLMSMA==;
+	List-Owner; bh=mAWSwph9r+XjSRAJriDMfArkzxaSskQNpiL7kBAZb/I=; b=QE0g3fQToe82Ip
+	tNaqWa+Yg5giMIUckoVzBZmFEECKbptEYMDyqPTm8H2s6n9GqSGyXAXX2nir5AL6wzzKVc83Lrpy+
+	e553dFDe2DC/DJZtKV1Dey3tE0WRAIlTBOv/4oxboRuG1I9m1BsjLad5/QfWd4dTw/sGVuZZCCnS0
+	YLU3z6uGMDo5ILRMz8i3pCjHWpdNA8Ta3XWtyWUaAFYCI8hxugPd98B7b1pdNja00mlGW3nfZXuV5
+	OFowpSzJm1SgZxWk6J5coYpSpm8WMj/wdRQlwDogMbpNJe2OckaAthQVRO3uTw4DAqGO0mrEP32t1
+	LqqzkFV7vpqUq1LUGsMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wqp0Q-0000000Ggun-3kyT;
-	Mon, 03 Aug 2026 09:30:46 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wqqT2-0000000GuZj-1h80;
+	Mon, 03 Aug 2026 11:04:24 +0000
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wqp0Q-0000000Ggug-1eFC
-	for linux-phy@lists.infradead.org;
-	Mon, 03 Aug 2026 09:30:46 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id D690843893;
-	Mon,  3 Aug 2026 09:30:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 548671F000E9;
-	Mon,  3 Aug 2026 09:30:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1785749445;
-	bh=Q94vXQPGl/Cm4YahreUaaYMC+pJJZe33gSYxR+GoHGw=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=NzTYonKGHCmVfRHYOEZ4mRJ52QIOoLt8WPIEBtJXyoW3EJlRZ4ICYbYF8cOl+M9Z4
-	 ux57YgHt2CjAl8R08gz+rs5iHQJv/bnIWMDlkcqmXoWiHPudbU0kPuBtyTrbqCzt1P
-	 qKgevM7jLUYT90E0NSxOomelXutL3TUuR5oH0j6NAAyxX7dazMZv4aUEUhFUtKVouz
-	 M8vy6mUOtZMTiEeDAd+FAfqpvPlJS/W/CMRtJUYmjzRh7pc9FjhOjBHO3QpjwWyiw1
-	 xmA2wYTinmPtTXUFuf3oyE7zHDZsOTwYegmqAh6K00W/M4Q+rrHr3ORZNUkfHnThlL
-	 p+/kT0dtabXLA==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v4 4/4] phy: qualcomm: qmp-combo: Add support for Hawi
- SoC
-To: "Mukesh Ojha" <mukesh.ojha@oss.qualcomm.com>
-Cc: devicetree@vger.kernel.org, olteanv@gmail.com, linux-phy@lists.infradead.org, conor+dt@kernel.org, vkoul@kernel.org, robh@kernel.org, neil.armstrong@linaro.org
-In-Reply-To: <20260803091441.3040830-5-mukesh.ojha@oss.qualcomm.com>
-References: <20260803091441.3040830-1-mukesh.ojha@oss.qualcomm.com>
- <20260803091441.3040830-5-mukesh.ojha@oss.qualcomm.com>
-Date: Mon, 03 Aug 2026 09:30:44 +0000
-Message-Id: <20260803093045.548671F000E9@smtp.kernel.org>
+	id 1wqqSz-0000000GuYz-3Ga5;
+	Mon, 03 Aug 2026 11:04:22 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1785755053; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=hQ0MpJ9A3P3+L5VntZJclLcy7Kg4rETAnyVcG02PM4ZKRrVXL4rNykvlj6OzZPNmIzaKpouofqSulkfv/pCciGwPBoQogvAIhYYDU4mFsbakFPtAXx8X57YZR8GDuYG8uBzy9GGOD9kX/6SBUh2kecXQDTnMO8y4As8xwv8HBRo=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1785755053; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=vEjfuOOqjt4DKH+Agnkv8+PSzwehlSi9y606REMac8k=; 
+	b=NN0GW/XzKfqszrKUbUDODRNhjmkKYzUOyB1MmRzDhmAQwU7nDT9RiGGccv/lgfr1fuocuK+GpfIX217hiEtoyLXUpyjuB7M6+/u2ZPsMS2BQtl6YWR9F08aykeOOrDl/M5syiQAufm+AbVqDHDRh+Moyt5+6MqJOWdejZhglgzE=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=michael.riesch@collabora.com;
+	dmarc=pass header.from=<michael.riesch@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1785755053;
+	s=zohomail; d=collabora.com; i=michael.riesch@collabora.com;
+	h=Message-ID:Date:Date:MIME-Version:Subject:Subject:To:To:Cc:Cc:From:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:Message-Id:Reply-To;
+	bh=vEjfuOOqjt4DKH+Agnkv8+PSzwehlSi9y606REMac8k=;
+	b=YmslsaxG4pGR0uRF+wFiDwdG+68+XDpe+xbWRA4G5/fEC/yC73+yew9Z3yc40h1r
+	7fiV9ZV8CoN5NjdzRpZOupXOJ4zRUOr4w5BpzlxMnGvxFPQJfxPac1ySZ3QVXg/zasg
+	peZnfCqRls+GmQbtS0GojJ4U75BGM13gKde5pvfU=
+Received: by mx.zohomail.com with SMTPS id 1785755051075901.122732738344;
+	Mon, 3 Aug 2026 04:04:11 -0700 (PDT)
+Message-ID: <e4a4eef8-3c42-407b-a6b7-e2f9a32da29e@collabora.com>
+Date: Mon, 3 Aug 2026 13:04:07 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 3/3] phy: rockchip: phy-rockchip-inno-csidphy: add
+ clock lane phase tuning
+To: Gerald Loacker <gerald.loacker@wolfvision.net>,
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+ Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org
+References: <20260725-feature-mipi-csi-dphy-4k60-v4-0-5b2c4626d31e@wolfvision.net>
+ <20260725-feature-mipi-csi-dphy-4k60-v4-3-5b2c4626d31e@wolfvision.net>
+Content-Language: en-US
+From: Michael Riesch <michael.riesch@collabora.com>
+In-Reply-To: <20260725-feature-mipi-csi-dphy-4k60-v4-3-5b2c4626d31e@wolfvision.net>
+X-ZohoMailClient: External
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260803_040421_891411_ED3E5D00 
+X-CRM114-Status: GOOD (  20.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,76 +79,105 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIE1pc3NpbmcgRGlzcGxh
-eVBvcnQgaW5pdGlhbGl6YXRpb24gY2FsbGJhY2tzIGluIGBoYXdpX3VzYjNkcHBoeV9jZmdgIHdp
-bGwgY2F1c2UgYSBOVUxMIHBvaW50ZXIgZGVyZWZlcmVuY2Ugd2hlbiB0aGUgRFAgUEhZIGlzIGlu
-aXRpYWxpemVkLgotIFtIaWdoXSBUaGUgQU9OIHRvZ2dsZSByZWdpc3RlcnMgd2lsbCBub3QgYmUg
-Y2xlYXJlZCBiZWNhdXNlIGBjZmctPnJlZ3NbUVBIWV9BT05fVE9HR0xFX0VOQUJMRV1gIGV2YWx1
-YXRlcyB0byBmYWxzZSBmb3IgdGhlIEhhd2kgVjEwIFBIWS4KLS0KCi0tLSBQYXRjaCBbNF06IFtQ
-QVRDSCB2NCA0LzRdIHBoeTogcXVhbGNvbW06IHFtcC1jb21ibzogQWRkIHN1cHBvcnQgZm9yIEhh
-d2kgU29DIC0tLQpjb21taXQgNzRhN2Y4NzY0NWI0ZDZkYTBhMzQxMDE0ZjUyOTllMWFkMjBhZTBk
-NQpBdXRob3I6IFJvbmFrIFJhaGVqYSA8cm9uYWsucmFoZWphQG9zcy5xdWFsY29tbS5jb20+Cgpw
-aHk6IHF1YWxjb21tOiBxbXAtY29tYm86IEFkZCBzdXBwb3J0IGZvciBIYXdpIFNvQwoKQWRkIHN1
-cHBvcnQgZm9yIHRoZSBVU0IzLURQIGNvbWJvIFBIWSBmb3VuZCBvbiBIYXdpIHBsYXRmb3JtLgpU
-aGUgUU1QIFBIWSBmb3IgSGF3aSB1c2VzIFFTRVJERVMgVjEwIHJlZ2lzdGVyIGxheW91dHMuCgo+
-IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtY29tYm8uYyBi
-L2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1jb21iby5jCj4gaW5kZXggY2RjZmFk
-MmU4NmIxZC4uYWU4MGVlZTYyOGM1ZSAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS9xdWFsY29t
-bS9waHktcWNvbS1xbXAtY29tYm8uYwo+ICsrKyBiL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1x
-Y29tLXFtcC1jb21iby5jCgpbIC4uLiBdCgo+IEBAIC0yNzA1LDYgKzI4OTUsMjcgQEAgc3RhdGlj
-IGNvbnN0IHN0cnVjdCBxbXBfcGh5X2NmZyB4MWU4MDEwMF91c2IzZHBwaHlfY2ZnID0gewo+ICAJ
-LnJlZ3MJCQk9IHFtcF92Nl9uNF91c2IzcGh5X3JlZ3NfbGF5b3V0LAo+ICB9Owo+ICAKPiArc3Rh
-dGljIGNvbnN0IHN0cnVjdCBxbXBfcGh5X2NmZyBoYXdpX3VzYjNkcHBoeV9jZmcgPSB7Cj4gKwku
-b2Zmc2V0cwkJPSAmcW1wX2NvbWJvX29mZnNldHNfdjEwLAo+ICsKPiArCS5zZXJkZXNfdGJsCQk9
-IGhhd2lfdXNiM19zZXJkZXNfdGJsLAo+ICsJLnNlcmRlc190YmxfbnVtCQk9IEFSUkFZX1NJWkUo
-aGF3aV91c2IzX3NlcmRlc190YmwpLAo+ICsJLnR4X3RibAkJCT0gaGF3aV91c2IzX3R4X3RibCwK
-PiArCS50eF90YmxfbnVtCQk9IEFSUkFZX1NJWkUoaGF3aV91c2IzX3R4X3RibCksCj4gKwkucnhf
-dGJsCQkJPSBoYXdpX3VzYjNfcnhfdGJsLAo+ICsJLnJ4X3RibF9udW0JCT0gQVJSQVlfU0laRSho
-YXdpX3VzYjNfcnhfdGJsKSwKPiArCS5wY3NfdGJsCQk9IGhhd2lfdXNiM19wY3NfdGJsLAo+ICsJ
-LnBjc190YmxfbnVtCQk9IEFSUkFZX1NJWkUoaGF3aV91c2IzX3Bjc190YmwpLAo+ICsJLnBjc191
-c2JfdGJsCQk9IGhhd2lfdXNiM19wY3NfdXNiX3RibCwKPiArCS5wY3NfdXNiX3RibF9udW0JPSBB
-UlJBWV9TSVpFKGhhd2lfdXNiM19wY3NfdXNiX3RibCksCj4gKwo+ICsJLnJlZ3MJCQk9IHFtcF92
-MTBfdXNiM3BoeV9yZWdzX2xheW91dCwKCltTZXZlcml0eTogSGlnaF0KRG9lcyB0aGlzIGNvbmZp
-Z3VyYXRpb24gbWlzcyB0aGUgbWFuZGF0b3J5IERpc3BsYXlQb3J0IGZ1bmN0aW9uIHBvaW50ZXJz
-Cmxpa2UgZHBfYXV4X2luaXQsIGNvbmZpZ3VyZV9kcF90eCwgYW5kIGNvbmZpZ3VyZV9kcF9waHk/
-CgpJZiBhIERpc3BsYXlQb3J0IGNsaWVudCBjYWxscyBwaHlfaW5pdCgpIG9yIHBoeV9wb3dlcl9v
-bigpLCB0aGUgZHJpdmVyCmV4ZWN1dGVzIHFtcF9jb21ib19kcF9pbml0KCkgYW5kIHFtcF9jb21i
-b19kcF9wb3dlcl9vbigpIHdoaWNoCnVuY29uZGl0aW9uYWxseSBjYWxsIHRoZXNlIGZ1bmN0aW9u
-IHBvaW50ZXJzLiBCZWNhdXNlIHRoZXkgYXJlIG9taXR0ZWQgaGVyZSwKdGhleSB3aWxsIGJlIE5V
-TEwgYW5kIGNhdXNlIGEgTlVMTCBwb2ludGVyIGRlcmVmZXJlbmNlIHJlZ3Jlc3Npb24uCgo+ICsJ
-LnJlc2V0X2xpc3QJCT0gbXNtODk5Nl91c2IzcGh5X3Jlc2V0X2wsCj4gKwkubnVtX3Jlc2V0cwkJ
-PSBBUlJBWV9TSVpFKG1zbTg5OTZfdXNiM3BoeV9yZXNldF9sKSwKPiArCS52cmVnX2xpc3QJCT0g
-cW1wX3BoeV92cmVnX2wsCj4gKwkubnVtX3ZyZWdzCQk9IEFSUkFZX1NJWkUocW1wX3BoeV92cmVn
-X2wpLAo+ICt9Owo+ICsKPiAgc3RhdGljIGNvbnN0IHN0cnVjdCBxbXBfcGh5X2NmZyBzbTYzNTBf
-dXNiM2RwcGh5X2NmZyA9IHsKPiAgCS5vZmZzZXRzCQk9ICZxbXBfY29tYm9fb2Zmc2V0c192MywK
-ClsgLi4uIF0KCj4gQEAgLTM3MDYsOSArMzkyMiw5IEBAIHN0YXRpYyBpbnQgcW1wX2NvbWJvX2Nv
-bV9pbml0KHN0cnVjdCBxbXBfY29tYm8gKnFtcCwgYm9vbCBmb3JjZSkKPiAgCQkJU1dfVVNCM1BI
-WV9SRVNFVF9NVVggfCBTV19VU0IzUEhZX1JFU0VUKTsKPiAgCj4gIAkvKiBvdmVycmlkZSBoYXJk
-d2FyZSBjb250cm9sIGZvciByZXNldCBvZiBxbXAgcGh5ICovCj4gLQlpZiAocGNzX2FvbiAmJiBj
-ZmctPnJlZ3NbUVBIWV9BT05fVE9HR0xFX0VOQUJMRV0pIHsKPiAtCQlxcGh5X2NscmJpdHMocGNz
-X2FvbiwgY2ZnLT5yZWdzW1FQSFlfQU9OX1RPR0dMRV9FTkFCTEVdLCAweDEpOwo+IC0JCXFwaHlf
-Y2xyYml0cyhwY3NfYW9uLCBjZmctPnJlZ3NbUVBIWV9EUF9BT05fVE9HR0xFX0VOQUJMRV0sIDB4
-MSk7Cj4gKwlpZiAoYW9uX3RvZ2dsZSAmJiBjZmctPnJlZ3NbUVBIWV9BT05fVE9HR0xFX0VOQUJM
-RV0pIHsKCltTZXZlcml0eTogSGlnaF0KV2lsbCB0aGlzIGNvbmRpdGlvbiBmYWlsIHRvIGNsZWFy
-IHRoZSBBT04gdG9nZ2xlIHJlZ2lzdGVycyBmb3IgdGhlIEhhd2kgVjEwClBIWT8KClNpbmNlIFFQ
-SFlfVjEwX0NPTV9BT05fVVNCM19BT05fVE9HR0xFX0VOQUJMRSBpcyBkZWZpbmVkIGFzIDB4MDAs
-CmNmZy0+cmVnc1tRUEhZX0FPTl9UT0dHTEVfRU5BQkxFXSBldmFsdWF0ZXMgdG8gMC4gVGhpcyBj
-YXVzZXMgdGhlIGNvbmRpdGlvbgp0byBmYWlsIGFuZCBza2lwcyB0aGUgcXBoeV9jbHJiaXRzKCkg
-ZXhlY3V0aW9uLCBsZWF2aW5nIHRoZSBoYXJkd2FyZSByZXNldApjb250cm9sIGltcHJvcGVybHkg
-Y29uZmlndXJlZCBhbmQgcG90ZW50aWFsbHkgY2F1c2luZyBhIHJlZ3Jlc3Npb24uCgo+ICsJCXFw
-aHlfY2xyYml0cyhhb25fdG9nZ2xlLCBjZmctPnJlZ3NbUVBIWV9BT05fVE9HR0xFX0VOQUJMRV0s
-IDB4MSk7Cj4gKwkJcXBoeV9jbHJiaXRzKGFvbl90b2dnbGUsIGNmZy0+cmVnc1tRUEhZX0RQX0FP
-Tl9UT0dHTEVfRU5BQkxFXSwgMHgxKTsKPiAgCX0KPiAgCj4gIAkvKiBVc2Ugc29mdHdhcmUgYmFz
-ZWQgcG9ydCBzZWxlY3QgYW5kIHN3aXRjaCBvbiB0eXBlYyBvcmllbnRhdGlvbiAqLwoKLS0gClNh
-c2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDgw
-MzA5MTQ0MS4zMDQwODMwLTEtbXVrZXNoLm9qaGFAb3NzLnF1YWxjb21tLmNvbT9wYXJ0PTQKCi0t
-IApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Hi Gerald,
+
+On 7/25/26 18:56, Gerald Loacker wrote:
+> At high data rates like 4K60 (2500 Mbps), such as when using an
+> LT6911GXD bridge chip on an RK3588 board, fixed default timing parameters
+> can cause signal integrity issues and clock-data recovery failures.
+> The driver currently lacks a mechanism to adjust the clock lane sampling
+> phase to compensate for board-specific trace variations.
+> 
+> Resolve this by parsing and applying the optional 'rockchip,clk-lane-phase'
+> device tree property. This enables board-specific tuning of the clock
+> lane sampling phase in ~40 ps steps (range 0-7) to optimize link
+> stability. If the property is absent, the driver falls back to the
+> hardware default.
+> 
+> Signed-off-by: Gerald Loacker <gerald.loacker@wolfvision.net>
+
+Reviewed-by: Michael Riesch <michael.riesch@collabora.com>
+
+Thanks and best regards,
+Michael
+
+> ---
+>  drivers/phy/rockchip/phy-rockchip-inno-csidphy.c | 25 ++++++++++++++++++++++++
+>  1 file changed, 25 insertions(+)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c b/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c
+> index 5281f8dea0ad3..d989f1649b0e4 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c
+> @@ -69,6 +69,10 @@
+>  #define RK1808_CSIDPHY_CLK_CALIB_EN		0x168
+>  #define RK3568_CSIDPHY_CLK_CALIB_EN		0x168
+>  
+> +#define CSIDPHY_LANE_CLK_3_PHASE		0x38
+> +#define CSIDPHY_CLK_PHASE_MASK			GENMASK(6, 4)
+> +#define CSIDPHY_CLK_PHASE_DEFAULT		3
+> +
+>  #define RESETS_MAX				2
+>  
+>  /*
+> @@ -151,6 +155,7 @@ struct rockchip_inno_csidphy {
+>  	const struct dphy_drv_data *drv_data;
+>  	struct phy_configure_opts_mipi_dphy config;
+>  	u8 hsfreq;
+> +	int clk_phase;
+>  };
+>  
+>  static inline void write_grf_reg(struct rockchip_inno_csidphy *priv,
+> @@ -304,6 +309,13 @@ static int rockchip_inno_csidphy_power_on(struct phy *phy)
+>  		rockchip_inno_csidphy_ths_settle(priv, priv->hsfreq,
+>  						 CSIDPHY_LANE_THS_SETTLE(i));
+>  
+> +	if (priv->clk_phase >= 0) {
+> +		val = readl(priv->phy_base + CSIDPHY_LANE_CLK_3_PHASE);
+> +		val &= ~CSIDPHY_CLK_PHASE_MASK;
+> +		val |= FIELD_PREP(CSIDPHY_CLK_PHASE_MASK, priv->clk_phase);
+> +		writel(val, priv->phy_base + CSIDPHY_LANE_CLK_3_PHASE);
+> +	}
+> +
+>  	write_grf_reg(priv, GRF_DPHY_CSIPHY_CLKLANE_EN, 0x1);
+>  	write_grf_reg(priv, GRF_DPHY_CSIPHY_DATALANE_EN,
+>  		      GENMASK(priv->config.lanes - 1, 0));
+> @@ -449,6 +461,7 @@ static int rockchip_inno_csidphy_probe(struct platform_device *pdev)
+>  	struct device *dev = &pdev->dev;
+>  	struct phy_provider *phy_provider;
+>  	struct phy *phy;
+> +	u32 phase;
+>  	int ret;
+>  
+>  	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
+> @@ -464,6 +477,18 @@ static int rockchip_inno_csidphy_probe(struct platform_device *pdev)
+>  		return -ENODEV;
+>  	}
+>  
+> +	priv->clk_phase = -1;
+> +	if (device_property_read_u32(dev, "rockchip,clk-lane-phase",
+> +				     &phase) == 0) {
+> +		if (phase > 7) {
+> +			dev_warn(dev,
+> +				 "invalid rockchip,clk-lane-phase %u, using default %u\n",
+> +				 phase, CSIDPHY_CLK_PHASE_DEFAULT);
+> +			phase = CSIDPHY_CLK_PHASE_DEFAULT;
+> +		}
+> +		priv->clk_phase = phase;
+> +	}
+> +
+>  	priv->grf = syscon_regmap_lookup_by_phandle(dev->of_node,
+>  						    "rockchip,grf");
+>  	if (IS_ERR(priv->grf)) {
+> 
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
