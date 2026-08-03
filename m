@@ -4,93 +4,154 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93F8DC55822
-	for <linux-phy@archiver.kernel.org>; Mon,  3 Aug 2026 17:48:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CA2AC55196
+	for <linux-phy@archiver.kernel.org>; Mon,  3 Aug 2026 19:28:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=QnzpvNDVmhA9tv06MtU8QzyH9utVB6BRlgQgIu5/dMs=; b=I1SNTedwANxZ0binC6QPu9dAUd
-	eg/HivqKwx9nwvctcMBgqZ4hbCsNJ4shHGpblX87PtlFGpVi7hnSPoeP8Xa5w1UJf1aCiKxST4DTG
-	EbbAcT2LkqodMpqPVP3MQFvqLNtySLTsLgaFrUpeAf0WpeyjaIpH/vK083edW3jpcHGhfCR+4AFF7
-	8Ti58ATh+lO1VdFY27x3dHJgbuJcbX5IpwwhCBrAYKkO/giYfcd8toLxx0WrBNyYhJ4SEDmj33wM9
-	KHqjtxvXm5l+Dl7XXshhPdwT1ugRQNWQ1k/Z3xu/Zz9+5TPLhAMi/zu9i+07rapy/uYQClsDAipIb
-	JFyDwX0Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zLV5Q/aJQ6r/90Qqusv1X+nv9PSvnv7NWWI6v5v0qnk=; b=r5LNt6oJXk5feD
+	xAhvUGbfx3KeYS4We+FNw3VQMM/7M9pJ/KeNl9cco6Uw1pAbQMZzequ607lLvEgXHOsxaMHxcAJoQ
+	zZtprxau8MeSGtBHNGj33lUdx1cqB7QOijxpTDTozCDyJS7gM5SIAyZL8/6layxG89EhqYII6edAR
+	BavVo9sktWuf19P5GjyrcrHtDnKn7VXg7r7NubzB/kYn4RIp2yGoot0ABKyPlpDJxkRLGNYj/cwJa
+	HuwWyd3tMo9knGpAqbJqWNRDBZsO6wqIjnTbeN883xCa37aJO4PTTNVCJPpo9yBYRcOcFzERRNVoD
+	em+qmt+GLDVaZGX0MSfQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wqwmH-00000000GVu-3iUk;
-	Mon, 03 Aug 2026 17:48:41 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+	id 1wqyKq-00000000RBK-04mh;
+	Mon, 03 Aug 2026 19:28:28 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wqwmC-00000000GTr-43ID
+	id 1wqyKo-00000000RAv-0V90
 	for linux-phy@lists.infradead.org;
-	Mon, 03 Aug 2026 17:48:40 +0000
-Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-49802c418b5so19466065e9.1
-        for <linux-phy@lists.infradead.org>; Mon, 03 Aug 2026 10:48:36 -0700 (PDT)
+	Mon, 03 Aug 2026 19:28:27 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 673Gw9vd1529728
+	for <linux-phy@lists.infradead.org>; Mon, 3 Aug 2026 19:28:25 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=N3tFl8kBLYf1uAtp7p/G52
+	iZLQ+hHS93kntf/l2tBFU=; b=EEfETHIitGq1Z2YOhAte/3UKJPoXSlwVJxDou5
+	f9LctNIp0pabbaFaxyANYCCuTvocp9Vd+HEnGQnMmTFBIWgjABie9gSJdwaViXQS
+	ce7v9pyWRnhtUEqEhOgixaGUvfGBdNcqi79yy2Y6K1BuAYAKZ2xUziOfRyy3bK22
+	2hzt8NuY5DTw2RTVkXqdoyIDQS7+zbIQGykoRgMPLr8Tpq9aAKS+aKu4FT5nuvok
+	zAp7kSsECitZ6vL/Wcw+pZYK9ILHR1bp0O0XwfbJg2vnOtKScUTxE1MvaF4QvATx
+	BbaTJWLrXO+SGbC2eOPHnsX0oPUOELNHgpJH650KI8fMcGrQ==
+Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com [209.85.215.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ftnrbbba4-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 03 Aug 2026 19:28:24 +0000 (GMT)
+Received: by mail-pg1-f200.google.com with SMTP id 41be03b00d2f7-cab3e9cd922so2484423a12.0
+        for <linux-phy@lists.infradead.org>; Mon, 03 Aug 2026 12:28:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1785779315; x=1786384115; darn=lists.infradead.org;
-        h=content-type:mime-version:references:in-reply-to:message-id:date
-         :subject:cc:to:from:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=HnDKjAsExIlIO6cGLAGlNzQp1IiRGZFjDF5mAKUFBPE=;
-        b=B7yf0dcy2Kf7AMYjkWntq0vP7h3M5z3tJzb+5OI33CbnJYHg+Xtan+zDjzUCPSTglN
-         R3ep3m2D863yj6MHbJaYuwcD0JWVfDScCuDfbB1uBZ+r1PTm5hkTfebsr2nK8Gg7901j
-         WA8JXhq8oUkmKVHcqCA4qqaGoh2ffI2ez23KO8mu+Pj8iNFJI2saQVxlTAG+YUsX4pu5
-         On1VzezJXkokr5voefXF/aMyP94yRFv4mHM299wCTiF5sqiWL3xxlgibDHgHjhh+7USX
-         di8mVRnsMZDBfuHUq4ZNkvQxrO8agQHG+HA0W3RJXqfCstkL2E6uEXAQ5a9ox+xhU9ya
-         qCPg==
+        d=oss.qualcomm.com; s=google; t=1785785304; x=1786390104; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:content-type:mime-version
+         :message-id:date:subject:from:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=N3tFl8kBLYf1uAtp7p/G52iZLQ+hHS93kntf/l2tBFU=;
+        b=ON+RoEWS2N9NXZpKBOf2piH/cp4jRY5/XjwbKuA+KSTdEKXP6h5zoCsd5FIwnFhkiq
+         xd64vZOnEUQQtBK5U0jf2dBWUlS4/KecM9Ff+WzuyoBTa/hcuKCkkQEAmTj8yrF0SEEt
+         LKhMxQxC5SjqyIJ9FDqVm9LP2TnkuEzCjCMFPWBeym16A8wZ6AEOd5BRpGBFmcFTg2so
+         4d0tAgQlkQ7In+0hFb/9pnkwzA5/JsgRUvOn5PVeRswny5Awq50EYy0tJbhHGHpXH9a9
+         VEoMLDVzFK8KezaIAKRlE8L737AE/+k3cYvVrvjwqhXpDEuxCKch8+ecLWgUhKm3hW46
+         6aLQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1785779315; x=1786384115;
-        h=content-type:mime-version:references:in-reply-to:message-id:date
-         :subject:cc:to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=HnDKjAsExIlIO6cGLAGlNzQp1IiRGZFjDF5mAKUFBPE=;
-        b=ouIB/U71lZb/bwH32IYXg/xn7f6+vJi5j97mIrcV4kWNNPvjBkLjwe72s1zBFUewJa
-         dHYmfkyeUhzi79iC6lSM4aDbhULoZxx1lmihP0YGUynDLB0xMl8tj0jkkvuiYD7D6dHo
-         Vv0p6qSP9hUYvIm7JW2foRH/gMlm3o5NecPVO9dCR7Uvm8e8x2awvOqRMi086zCqeBjo
-         iHabue+ILetecLUqcfkgYqGg4m978otNPvfVODEXLtspeSYaU8ZCtmRz21UCdbkuddK8
-         o945TyIRYD7Z0tmbaE8sVnLdERUgpughAzXIVpkK6d7T5yddxNoPaJ5dRufmaA8iKIY3
-         v1zg==
-X-Forwarded-Encrypted: i=1; AHgh+RrJJcUU5UUFXtiEAcgbCxTWrG16u7R938rxgmb+YheP5SZU6w3kT/TXbHvM2qlVY0HCXFWj8keovsI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyO/95qYSUQvrNqmVFgzrQnKGIKbrZyJprtPQoqc6nPmEwqcMgS
-	GEveMFnrwIuiyPb1RYCv+bsQKIMFI1DWdk6Q3NuCy9WKRu77lVTS24e1
-X-Gm-Gg: AR+sD12WhJMqy0U8frlcz4emYtTytxIrZ8rHKkzBz/Ma9oOAiXb06iPkPlsmNtO4JFn
-	EMrP0QqBRjrbjx4EVDLXOCjOdSVPqWAm3IO/YDtDcU+8DJQBywg9akotBVw+hqnNdUl3h9ZPopj
-	TPlyD/3yJFN4m8zTqCHdithKJmDtHDY8owNcCJsKtUSA/dy6uhOpkbisTvqfbKMjR0UZ/+vD/Rf
-	LMAQUkXKogCnzBbXc8r6b/+LVpDh918U0YgScu32C3wwbGGc8RnRHdjGsPQuLWMHUEzPvsJYMNY
-	TNrUMaAS2kj7Cuv++EhMIJ2PhooDH+UpQjTitzx9cwPXyxU5Rhs/q4Xn8MQkOF7eVLXS1AGHoPl
-	pZGpmN+SjoPfVpmrHelbbaGqiErBR8/N1SpLCNfuJcVhLcJZkvpHW1Yc6I1UIndB+mxrY1rnnMI
-	o+/LrCB2NRMgGdERITs4rb/FpUqDU5DG/A/qYYUAezdUoeiCn+kYenVU+pirvWiM76jM2UqhysE
-	g==
-X-Received: by 2002:a05:600c:314f:b0:495:4572:21af with SMTP id 5b1f17b1804b1-4980c673252mr206970055e9.9.1785779314611;
-        Mon, 03 Aug 2026 10:48:34 -0700 (PDT)
-Received: from strix.localnet ([197.250.226.155])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-49807b5b4a2sm295532795e9.1.2026.08.03.10.48.28
+        d=1e100.net; s=20251104; t=1785785304; x=1786390104;
+        h=cc:to:content-transfer-encoding:content-type:mime-version
+         :message-id:date:subject:from:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=N3tFl8kBLYf1uAtp7p/G52iZLQ+hHS93kntf/l2tBFU=;
+        b=n/EBLkQzIPP2odyCL7W2DYetBO81Xr4PgzWS98HYG+mtVZqLCTtH4wEG+3Fx+kizQ3
+         mdWeh4kZLOcrnAFZpcrKDk+WkRHa7lEqKaxTEd4mUEyeLYQryQFw6A6LspBY+OCHraGe
+         7Bf+53G8mRQgdV4vF/TMO62Ljn/DroGpC6NSbr0TBIqZmM9bI4Qz+hOJxsbduOBbwTp2
+         ml6+1T/1P49Fcai3zAEV4dG/fiW66RIheK2Mai8gq8OzaRKlBhlbhNFpCe5BMScSzWGC
+         jHXqtOOPNk85xg8wVfGJe7iZ1Kr/81vVzRRctHSIGG6RGYfyvPdqEEbbDYJevMiqXTEg
+         l6Uw==
+X-Forwarded-Encrypted: i=1; AHgh+Rp4e4a1q3UxsSsxnhpRJ9QfHToVNf2tti8vODvjv7SsVYIjWw6ojao7G6k5rTWMUuZBAwsaXgyjYdQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyT4K1iA6PlG+6RbobY1iBs781rLgv7sZbZdHcSxhb5C0kPoUZK
+	1DmG1T2BwJkQ8eOkwDHV5qASuulZHRSCKqRcO6mSHHHl4Jbodfm5kp4H35D10gVme9WqbI12+D1
+	ta2HiJ6uKprSYAOqNrOUbzf5UrAVml552FEAw1FGn1Z+960l713jVcot/Os6lgd06ja02
+X-Gm-Gg: AR+sD11426sXRKqPjUoTGOvhHAYdOOsI5QhkQB5stCTXzSsGlCYv8hbjmyLXgT8T/hl
+	AHCcFV27RpnmDZxhL7wSbLW/7M2WzzmqODpZ10VlDIVQJ0uycfy+TZLAF1LkZ0+zuxPxj4ItSRh
+	rVBS70qQTXPVceWu5rcbIGb26hVWDivrSb3DCFon6Hk/jEvWvLErnW87+7rWAdDIj+CT19re4Xp
+	88gjpLiQkaC6tI77VV/sirtUfE3B+zv0fRzZTKUYtbzoY3apQ8VdqM3UYZybV8oYq6ZbT6hloPq
+	2ajdWuModcbdsLfW4xCN9C2J+skSZg9mGOJpnDCNXm/BDeDqhMqc6sDHGD5MDe5K2w5Gsfpd9jP
+	2/H36gQC470+lAhaURzOoyXZewNSp0w==
+X-Received: by 2002:a05:6a21:498:b0:3c4:3672:ba2 with SMTP id adf61e73a8af0-3c92a98d45bmr11342925637.71.1785785303683;
+        Mon, 03 Aug 2026 12:28:23 -0700 (PDT)
+X-Received: by 2002:a05:6a21:498:b0:3c4:3672:ba2 with SMTP id adf61e73a8af0-3c92a98d45bmr11342878637.71.1785785303153;
+        Mon, 03 Aug 2026 12:28:23 -0700 (PDT)
+Received: from hu-mohdayaa-hyd.qualcomm.com ([202.46.23.25])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3153dd4e5b0sm38622738eec.1.2026.08.03.12.28.17
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 03 Aug 2026 10:48:33 -0700 (PDT)
-From: Stefan =?UTF-8?B?RMO2c2luZ2Vy?= <stefandoesinger@gmail.com>
-To: Brian Masney <bmasney@redhat.com>
-Cc: Michael Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Russell King <linux@armlinux.org.uk>, Lee Jones <lee@kernel.org>,
- linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-phy@lists.infradead.org, mfd@lists.linux.dev
-Subject: Re: [PATCH v9 05/12] clk: zte: Add Clock registration infrastructure
-Date: Mon, 03 Aug 2026 20:48:18 +0300
-Message-ID: <ky2t5IqOTfWMdfZsXE91Gg@gmail.com>
-In-Reply-To: <anC72Cf1zKcLYWlC@redhat.com>
-References: <20260802-zx29clk-v9-0-d05530d85d28@gmail.com>
- <20260802-zx29clk-v9-5-d05530d85d28@gmail.com> <anC72Cf1zKcLYWlC@redhat.com>
+        Mon, 03 Aug 2026 12:28:22 -0700 (PDT)
+From: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
+Subject: [PATCH v2 0/6] Fix regulator voting for the Qualcomm SGMII SerDes
+ PHY
+Date: Tue, 04 Aug 2026 00:57:56 +0530
+Message-Id: <20260804-b4-sgmiieth_serdes_regulator-v2-0-c4bc688177dd@oss.qualcomm.com>
 MIME-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIALzrcGoC/x3MWwqDMBBG4a3IPDcQoy3WrZQixvzGgXphxoog7
+ t3g4/dwzkEKYSjV2UGCjZXnKcE9MuqGdoowHJLJWfeylS2ML43GkRnr0KQ2QBtB/P/adRZju/6
+ NZxW8zx2lxSLoeb/3n+95XmFl44puAAAA
+X-Change-ID: 20260803-b4-sgmiieth_serdes_regulator-0cf9e58dbb12
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+        Krzysztof Kozlowski <krzk@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Bartosz Golaszewski <brgl@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        Wasim Nazir <wasim.nazir@oss.qualcomm.com>,
+        Mohd Ayaan Anwar <quic_mohdayaa@quicinc.com>,
+        Umang Chheda <umang.chheda@oss.qualcomm.com>,
+        Yijie Yang <quic_yijiyang@quicinc.com>
+Cc: Loic Poulain <loic.poulain@oss.qualcomm.com>,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1785785297; l=4211;
+ i=mohd.anwar@oss.qualcomm.com; s=20250907; h=from:subject:message-id;
+ bh=kcWOMlj/WAm/ZutVbNkBx+4jW+1Soq90wUY0HzJezuw=;
+ b=avz68rJMCtL0b+QIapBwZbqEwAuODhVGmCfme0SBOB7pYtKXFDnmQlcE15wQ3sK8wemigAtOI
+ nESIZTZM4mrD9rKCPoYPfueKFGzuVvoBV2yjmd0/KwJtTeZB+qz0UcM
+X-Developer-Key: i=mohd.anwar@oss.qualcomm.com; a=ed25519;
+ pk=7JNY72mz7r6hQstsamPYlUbLhQ5+W64pY4LgfSh9DJU=
+X-Proofpoint-Spam-Info: AW1haW4tMjYwODAzMDE3MiBTYWx0ZWRfXxJUWNESC1iW9
+ 6TSr3BXThvBtx7YFsghj07q3eHfA4oxTzYOCBgdzDSEo4iRU/1vY9OogMKj7rRVhM2+KgYJDMwf
+ qFcSIjPC/dVpB1cvWnTWuW2F9U6MoJc=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODAzMDE3MiBTYWx0ZWRfX095DJvgpsLr2
+ J98N9iYjQsKRozAsboh+xNmkgMdUFIhaTxytXTiYKIBFalf3zXo/QFcF7GKjSZSjjPl6tG0sl/e
+ HOvw1/47waVID7/riW0/eScR5+fwQL87Dl8wuk06PAsisNBsyemnoohnRyUFxNJy56gKzB0weM7
+ y6gBgI0gveVbi40FbR9ZYb7o/SM4mc+rtjhijpoGaasAubUsEOFcImmSZc1O4DfAK6CVJRAR9jF
+ JKblHT2ohah85PlvLLmp06Qzdedj7ZwmlYVnEMwjUt6Zv/yg8cq3Rt3/y1i3b6NM1mEU9y70WDr
+ 4zinK0qXdtW0oOfQijez4Y9bvWJYe2bYPnKr0Pxs9n3rt9IwdThvZoZYmj3A6eIzujwnblPScZU
+ 4Nhty8zZsGw6KFf2AqYux+9JKR/ThvPvN1XA1fDBfzCLRr02dzLG503Q2oriQ5ftdon0TN+6lzo
+ orz5+6WYGsKQOlILbmA==
+X-Authority-Analysis: v=2.4 cv=RNSD2Yi+ c=1 sm=1 tr=0 ts=6a70ebd8 cx=c_pps
+ a=oF/VQ+ItUULfLr/lQ2/icg==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+ a=IkcTkHD0fZMA:10 a=Sv0fKeRqtYgA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=t6hOiKbQElhDP0ySfcYA:9 a=QEXdDO2ut3YA:10
+ a=3WC7DwWrALyhR5TkjVHa:22
+X-Proofpoint-GUID: Nf6zT2FH72Wq2gdVIsI2LS6rSaTOD_Yn
+X-Proofpoint-ORIG-GUID: Nf6zT2FH72Wq2gdVIsI2LS6rSaTOD_Yn
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-08-03_04,2026-08-03_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ spamscore=0 suspectscore=0 clxscore=1015 adultscore=0 lowpriorityscore=0
+ malwarescore=0 phishscore=0 impostorscore=0 priorityscore=1501 bulkscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2608030172
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260803_104837_099884_57CBB0FF 
-X-CRM114-Status: GOOD (  24.67  )
+X-CRM114-CacheID: sfid-20260803_122826_282689_C957567A 
+X-CRM114-Status: GOOD (  19.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,126 +163,97 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============6130973423848357069=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============6130973423848357069==
-Content-Type: multipart/signed; boundary="nextPartnWZPMUIwR7W-Gw2dYxPvgg";
- micalg="pgp-sha256"; protocol="application/pgp-signature"
+This is a long overdue v2 of the original patch series which tried to
+address a SerDes power-up failure observed on the QCS8300 Ride board
+using the phy-qcom-sgmii-eth driver. After going through a rabbit hole
+of hardware schematics and power data, I now have a fuller picture of
+this IP.
 
---nextPartnWZPMUIwR7W-Gw2dYxPvgg
-Content-Transfer-Encoding: 7Bit
-Content-Type: text/plain; charset="utf-8"; protected-headers="v1"
-From: Stefan =?UTF-8?B?RMO2c2luZ2Vy?= <stefandoesinger@gmail.com>
-To: Brian Masney <bmasney@redhat.com>
-Subject: Re: [PATCH v9 05/12] clk: zte: Add Clock registration infrastructure
-Date: Mon, 03 Aug 2026 20:48:18 +0300
-Message-ID: <ky2t5IqOTfWMdfZsXE91Gg@gmail.com>
-In-Reply-To: <anC72Cf1zKcLYWlC@redhat.com>
-MIME-Version: 1.0
+The Qualcomm SGMII SerDes PHY (used in Lemans and Monaco SoCs) is
+powered by two voltage rails. The schematics call them vdda-0p9 and
+vdda-1p2, so that's what we follow in the series. Additionally, the
+0.9V regulator draws a peak current of 46 mA and the 1.2V regulator
+draws a peak current of 15 mA.
 
-Hi Brian,
+If both rails are not enabled, we see the original issue where the
+SerDes calibration times out:
 
-Thanks again for the review!
+  qcom-dwmac-sgmii-phy 8909000.phy: QSERDES_COM_C_READY_STATUS timed-out
+  qcom-ethqos 23040000.ethernet eth0: __stmmac_open: Serdes powerup failed
 
-Am Montag, 3. August 2026, 19:03:36 Ostafrikanische Zeit schrieb Brian Masney:
-> > +	/*
-> > +	 * Sanity check: Make sure all parents are there and write a clear
-> > message rather than +	 * leave potential orphans.
-> > +	 */
-> 
-> It's not common for clk drivers to have a validate function like this.
-> That said, I know you are reverse engineering what's in the downstream
-> BSP without documentation, and there is value in having this. I think
-> it'd be useful to clarify that in the comments because code usually gets
-> copied and pasted between drivers over time.
->
-> That said, once it's verified that the clock tree is correct, can these
-> checks be eventually dropped so that this validation logic isn't ran on
-> every boot?
+Currently, the DT nodes across affected boards incorrectly describe
+only a single regulator via the generic 'phy-supply' property (and in
+some cases point to the wrong rail entirely). Moreover, the driver does
+not set the proper current loads and just relies on an enable vote.
 
-Yes, I plan to remove it eventually when support for the SoC is more mature. 
-It has saved me some head-scratching as I have been working and re-working the 
-clock tree. I'll clarify its driver specific role in the next submission.
+This series corrects this by:
 
-Another option I contemplated is wrapping it in #ifdef DEBUG. What do you 
-think about that?
+  1. Fixing the DT binding to describe both named supplies.
+  2. Fixing all affected board DTS to use the correct vdda-0p9-supply
+     and vdda-1p2-supply properties.
+  3. Adding bulk regulator support to the PHY driver so it enables both
+     supplies and sets the proper current loads.
 
-> > +struct zx_clk_export {
-> > +	unsigned int priv;
-> > +	unsigned int binding;
-> > +};
-> 
-> Sashiko flagged this as unused.
+The patches are sequenced to maintain bisectability. With the driver
+change, the PHY framework will continue to vote for the regulator
+described by 'phy-supply'. The DT changes which follow then remove
+'phy-supply' in favour of 'vdda-0p9' and 'vdda-1p2'.
 
-Indeed, that is a leftover from earlier - before I realized a simple unsigned 
-int[] does the job fine.
+Testing:
+This series was tested on the following Lemans and Monaco based boards.
+  1. Lemans IQ-9075 EVK with the IFP+ Mezzanine attach (dual GMAC +
+ QCOM SGMII SerDes + QCA8081 PHY)
+  2. Lemans QCS9100 Ride (dual GMAC + QCOM SGMII SerDes + AQR115C PHY)
+  3. Monaco IQ-8275 EVK (single GMAC + QCOM SGMII SerDes + QCA8081 PHY)
+  4. Monaco QCS8300 Ride (dual GMAC + QCOM SGMII SerDes + AQR115C PHY)
+To conclusively test the new regulator voting, I tested builds with all
+the other consumers of the regulators disabled from the DTS to ensure
+that the phy-qcom-sgmii-eth driver held the only vote.
+
+Changes since v1:
+  - Fixed the DT bindings to describe the actual SerDes PHY hardware,
+    which actually has two supplies rather than only one - Krzysztof.
+  - Use regulator_bulk_* APIs to properly set the current loads of the
+    two supplies - Konrad.
+  - Fixed Lemans board DTS files that incorrectly voted for vreg_l5a;
+    the correct rails per the power diagram are vreg_l4a (0.9V) and
+    vreg_l1c (1.2V).
+  - Link to v1: https://lore.kernel.org/linux-arm-msm/20251124-sgmiieth_serdes_regulator-v1-0-73ae8f9cbe2a@oss.qualcomm.com/T/#m0b93e06a0d6a09c4c1b65c500b475958ed5e288d.
+
+Signed-off-by: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
 
 ---
+Mohd Ayaan Anwar (6):
+      dt-bindings: phy: qcom,sa8775p-dwmac-sgmii-phy: add named voltage rails and deprecate phy-supply
+      phy: qcom: sgmii-eth: vote for both voltage rails with correct current loads
+      arm64: dts: qcom: lemans-evk: fix SerDes PHY regulator supplies
+      arm64: dts: qcom: lemans-ride-common: fix SerDes PHY regulator supplies
+      arm64: dts: qcom: monaco-evk: fix SerDes PHY regulator supplies
+      arm64: dts: qcom: qcs8300-ride: fix SerDes PHY regulator supplies
 
-I have a long-standing question about tristate/module support for drivers like 
-this: I don't think the driver can realistically be unloaded. I have been 
-testing driver unloading by removing the UART clocks from the DT (otherwise 
-the clock driver is busy) and marking all clocks critical (otherwise 
-unloading/unbinding will shut down the UART (and more) and lock me out of the 
-system).
+ .../bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml | 11 +++++++
+ .../boot/dts/qcom/lemans-evk-ifp-mezzanine.dtso    |  3 +-
+ arch/arm64/boot/dts/qcom/lemans-evk.dts            |  3 +-
+ arch/arm64/boot/dts/qcom/lemans-ride-common.dtsi   |  8 +++--
+ arch/arm64/boot/dts/qcom/monaco-evk.dts            |  3 +-
+ arch/arm64/boot/dts/qcom/qcs8300-ride.dts          |  4 ++-
+ drivers/phy/qualcomm/phy-qcom-sgmii-eth.c          | 37 +++++++++++++++++++---
+ 7 files changed, 59 insertions(+), 10 deletions(-)
+---
+base-commit: 415606a7be939835db9b0d6b711887586646346d
+change-id: 20260803-b4-sgmiieth_serdes_regulator-0cf9e58dbb12
 
-I have made it tristate because from early research into clock driver state of 
-the art I gathered it was desired, even for drivers necessary for fundamental 
-operation [0]. Did I understand this correctly? It also uncovered some linking 
-errors that weren't obvious when compiling the driver into the kernel.
+Best regards,
+-- 
+Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
 
-That said, I'd prefer to mark my init tables discardable with __initdata and 
-think the module load support is going to go untested and bitrot over time.
-
-Cheers,
-Stefan
-
-0: Chen-Yu Tsai's tak here mostly: https://www.youtube.com/watch?v=d1VIAnVb3hI
-
---nextPartnWZPMUIwR7W-Gw2dYxPvgg
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part.
-Content-Transfer-Encoding: 7Bit
-
------BEGIN PGP SIGNATURE-----
-
-iQJPBAABCAA5FiEEQxb0tqoFWyeVMl1sPRO8yFRPGiIFAmpw1GIbFIAAAAAABAAO
-bWFudTIsMi41KzEuMTIsMiwyAAoJED0TvMhUTxoi7TkP/05WuGUn0opY7QQ8sZB6
-OuKTG5SinWEzjuroAKgG/nD8WOveL+GRtp0cJ8+CUdvw0WpzZQeuRnSX/zDbSvXa
-2G3pIBOvMcd0MOBBaEHUAtOHArZybsIuoFTVTzsaAYyHf2B7cc7KVbJZWRztmYSH
-Z/OUYaxPHYoD6cHC4FlSNHyJplDqLj0LpgZOwY4zP0jaWLbEJpkCTK9Izl+ZIB4N
-Q15I4WFfnyUi+J+3/mM3Rl4UYrS0U55ydarl5Io0PUsY/ORocxQY7jhXTvFyVmGV
-xEythQnLVsvYici8F6d1tA/VcdG5jbo/JxRgrG53yGGuZX7x31CampUCrUOJRJ7t
-bMsQwZz/VwpxL11Pg92G9bI3mzCHb+CZDRLT5zh+DN8cOkF5u4GBnI0CPKaqFAdw
-deFt0WVnrrosFn0Vf0p17OrTiycj+f72S3L97DLCiH+0A02LR5XC6rxe5ia0xsFj
-zXVl/z67OSLLN+g00eH/Gm7t6wSmRHdNY8QYBxaoIfY7NSPC4sfAm0BPcRfOtHEe
-aN2QkZlUqy6LOPzLMKJXsVo1oXp94QXx5YgJpObLC1OH2GasPwX+teqCVXGyJZpt
-we0fT64SnRaq5A4TfIcEcb2QJZUmH6znzcgROxCXZIJ1Dla1nW0ASQlNw2z5btj/
-bbygfsidb6/n+WxVmEd5JJI+
-=Lf/s
------END PGP SIGNATURE-----
-
---nextPartnWZPMUIwR7W-Gw2dYxPvgg--
-
-
-
-
-
---===============6130973423848357069==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============6130973423848357069==--
-
-
-
-
