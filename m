@@ -4,66 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C225C5518F
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Aug 2026 08:01:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BB79C55172
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Aug 2026 08:07:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=fYnuFFKOuizI8gEHmgRGb/wibjY0gcS6xT3lvU0uzew=; b=3cl+q7knbsbBb4
-	q3vNhAqDb/nXLBYFQNHEvBUIonQs+bOPj6WUlQp2wlFli3/SWRzkiGMZNzMQHy3wVa9zsxqrZ+djS
-	xMxH7Y81E1gJebQFZ/t6AP2vmCD3iegEd1rFbsjcOwj0G+TseKNiX2MWQr1mqmGiKAJrNqn32z98R
-	KD/+M/RRdYZUin55eKUArRC4NG9u0yYhp4vwpkVyNhiouIzvIE1OO5vlMV/GUXBoAaM0HIgcOvmBU
-	SvipyDQb2PLeB2KIPH7jgbVHWyLrRBzzvako8PF7OuweMPDkMfhC5aaRtuQYAYYsnSA1XuTH3K7Nh
-	uQ4o/pd++kPjokzBhDRQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bN2U2O43tuqsoM6c6j05xwf6vsEJjvK/vNhMfN6EBls=; b=hevK1Oml6T4vM1
+	SrlC6H0r2t089F+n9AaudY2WdosyLAwEV1qMTVX7oDqn+UA+861ye7kCoa/3qZtEQotBhhJ6JMt+2
+	haKdFmVVfzB42X78KtzercxKeOysYhMFk+AD3b/LW4JHl2GQ4OruYTdYrnBWntOuae8eDa5Fafkg7
+	HH0nIsCsmU2OC4haljLIkHxU1xpECmVQIjyYnHNJQ2FNbcoYEvBcERp/0gw1jnXqc3/pOl8fxRhcz
+	V5Hm3T7kswqNAi3td8uUBNhxESvYqNdLj7/5Q6BKRALj2w5yrWnuMxo/mEYaaon481fQqV0Ct5FKw
+	3T53fCGxKyY//9wwi3fg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrA5u-00000001Hgi-2wCV;
-	Tue, 04 Aug 2026 08:01:50 +0000
-Received: from mailgw.kylinos.cn ([124.126.103.232])
+	id 1wrABm-00000001Hy3-18LM;
+	Tue, 04 Aug 2026 08:07:54 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrA5r-00000001HgG-3CxB
+	id 1wrABl-00000001Hxx-0S30
 	for linux-phy@lists.infradead.org;
-	Tue, 04 Aug 2026 08:01:49 +0000
-X-UUID: b97856108fda11f1aa26b74ffac11d73-20260804
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.3.12,REQID:06757633-1992-4a87-b94c-4273af87387e,IP:0,U
-	RL:0,TC:0,Content:0,EDM:25,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION
-	:release,TS:25
-X-CID-META: VersionHash:e7bac3a,CLOUDID:9857d5b3b115e6258089169eafab1f3b,BulkI
-	D:nil,BulkQuantity:0,Recheck:0,SF:102|850|865|898,TC:nil,Content:0|15|50,E
-	DM:5,IP:nil,URL:0,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:
-	0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 2,SSN|SDN
-X-CID-BAS: 2,SSN|SDN,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR
-X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
-X-UUID: b97856108fda11f1aa26b74ffac11d73-20260804
-X-User: xiaopei01@kylinos.cn
-Received: from localhost.localdomain [(10.44.16.150)] by mailgw.kylinos.cn
-	(envelope-from <xiaopei01@kylinos.cn>)
-	(Generic MTA with TLSv1.3 TLS_AES_256_GCM_SHA384 256/256)
-	with ESMTP id 743126441; Tue, 04 Aug 2026 16:01:40 +0800
-From: Pei Xiao <xiaopei01@kylinos.cn>
-To: yoshihiro.shimoda.uh@renesas.com,
-	vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	geert+renesas@glider.be,
-	magnus.damm@gmail.com,
-	linux-renesas-soc@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Cc: Pei Xiao <xiaopei01@kylinos.cn>
-Subject: [PATCH] phy: renesas: rcar-gen3-usb2: Fix use-after-free in rcar_gen3_phy_usb2_remove due to race condition
-Date: Tue,  4 Aug 2026 16:01:36 +0800
-Message-Id: <d265021fb7fe432e32eedbe9e075fb041c15cbe6.1785830417.git.xiaopei01@kylinos.cn>
-X-Mailer: git-send-email 2.25.1
+	Tue, 04 Aug 2026 08:07:53 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 23401600AA;
+	Tue,  4 Aug 2026 08:07:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D26C81F000E9;
+	Tue,  4 Aug 2026 08:07:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1785830871;
+	bh=96QAblQgxs5giL1aBFkUCjlInxNt133EFpvfjqgdHBo=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=Drn5kOPdRxZal90axb1HjUVJ5oMdCRXxkBMudyVqlaNd90X7Tzh35f03hKBwcdHxX
+	 bgD9zpDnnpDd2BAtBVjPc7iVPzlCpCCaru+IipkSfdcVGJUPJxTvomav4ktKzM2aqe
+	 7z+yCrwa0LU1D/BzHknmr/Ggyj1dPh70ZV5hD2ixyrk8hNHhC/8nToTDf+vaImuclA
+	 J+aoHHfh7YQvcNLV4bC8qxDszRguw78nSrllNZNQeIAifxio3jpqXjR6/QRHnnb4xE
+	 NlK7L+aqZFzqOcQED04NwrCz0eu9fuYEd5dymEl0wzK1Fu3K+i8wpHkQvMOjHqxFW6
+	 IIZkR+CGP2w+Q==
+Date: Tue, 4 Aug 2026 10:07:48 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Mattijs Korpershoek <mkorpershoek@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: Add sa8255p high-speed USB PHY
+Message-ID: <20260804-active-sensible-reindeer-f459a3@quoll>
+References: <20260730-phy-qcom-snps-femto-v2-8255-v1-0-8b8bf5105a68@kernel.org>
+ <20260730-phy-qcom-snps-femto-v2-8255-v1-1-8b8bf5105a68@kernel.org>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260804_010148_113400_858F06E8 
-X-CRM114-Status: GOOD (  11.88  )
+Content-Disposition: inline
+In-Reply-To: <20260730-phy-qcom-snps-femto-v2-8255-v1-1-8b8bf5105a68@kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,68 +73,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In rcar_gen3_phy_usb2_probe, &channel->work is bound with
-rcar_gen3_phy_usb2_work. rcar_gen3_phy_usb2_irq can schedule this work
-on system_wq via rcar_gen3_device_recognition(), and the role sysfs
-store can also schedule it via rcar_gen3_init_for_host() /
-rcar_gen3_init_for_peri().
+On Thu, Jul 30, 2026 at 03:58:14PM +0200, Mattijs Korpershoek wrote:
+> SA8255p platform abstracts resources such as clocks, interconnect and
+> GPIO pins configuration in Firmware. SCMI power protocol is used to
+> request resource configurations.
+> 
+> Two power domains can be requested: transfer and core.
+> transfer controls clocks and interconnects and core controls
+> the GDSC, resets and TLMM (GPIOs).
+> 
+> Add a new binding for the Qualcomm SA8255p Synopsys Femto High-Speed
+> USB PHY V2 found in SA8255P.
+> 
+> Signed-off-by: Mattijs Korpershoek <mkorpershoek@kernel.org>
+> ---
+>  .../bindings/phy/qcom,sa8255p-usb-hs-phy.yaml      | 52 ++++++++++++++++++++++
+>  1 file changed, 52 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,sa8255p-usb-hs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sa8255p-usb-hs-phy.yaml
+> new file mode 100644
+> index 000000000000..09f7ca6e7f72
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/qcom,sa8255p-usb-hs-phy.yaml
+> @@ -0,0 +1,52 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/qcom,sa8255p-usb-hs-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Qualcomm SA8255p Synopsys Femto High-Speed USB PHY V2
+> +
+> +maintainers:
+> +  - Mattijs Korpershoek <mkorpershoek@kernel.org>
+> +
+> +properties:
+> +  compatible:
+> +    const: qcom,sa8255p-usb-hs-phy
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +  power-domains:
+> +    maxItems: 2
+> +
+> +  power-domain-names:
+> +    items:
+> +      - const: transfer
+> +      - const: core
 
-If we remove the device, rcar_gen3_phy_usb2_remove makes cleanup and
-the memory allocated for channel with devm_kzalloc() is released by
-the devm cleanup after the remove callback returns, while the work
-mentioned above may still be pending or running. The sequence of
-operations that may lead to a UAF bug is as follows:
+Here and in your other binding you call these 'transfer' and 'core' but
+all other bindings call them 'power' and 'perf'. Why this difference?
+What are these domains responsible for?
 
-CPU0                                      CPU1
+Commit msg is pretty useless here - repeats the diff. I can read the
+diff but I still do not understand why such naming.
 
-                                          | rcar_gen3_phy_usb2_irq
-                                          | rcar_gen3_device_recognition
-                                          | rcar_gen3_init_for_host
-                                          | schedule_work(&ch->work)
-rcar_gen3_phy_usb2_remove                 |
-device_remove_file(&pdev->dev,            |
-                   &dev_attr_role)        |
-// remove returns                         |
-// devm cleanup: free_irq,                |
-// kfree(channel)                         |
-                                          | rcar_gen3_phy_usb2_work
-                                          | // use ch (use-after-free)
+And why core is not the first one? It clearly feels like the power
+domain thus the main one.
 
-Fix it by disabling the OTG interrupts, so the IRQ handler cannot
-schedule new work, and canceling the work before the remaining cleanup
-in rcar_gen3_phy_usb2_remove and the devm release of channel.
-
-Fixes: c14f8a4032ef ("phy: rcar-gen3-usb2: fix mutex_lock calling in interrupt")
-Assisted-by: Codex:deepseek-v4-flash
-Signed-off-by: Pei Xiao <xiaopei01@kylinos.cn>
----
- drivers/phy/renesas/phy-rcar-gen3-usb2.c | 10 +++++++++-
- 1 file changed, 9 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-index 9a45d840efeb..fa0e680a4b91 100644
---- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-+++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-@@ -1067,8 +1067,16 @@ static void rcar_gen3_phy_usb2_remove(struct platform_device *pdev)
- {
- 	struct rcar_gen3_chan *channel = platform_get_drvdata(pdev);
- 
--	if (channel->is_otg_channel)
-+	if (channel->is_otg_channel) {
-+		/* Disable OTG interrupts so the IRQ handler cannot
-+		 * schedule new work.
-+		 */
-+		rcar_gen3_control_otg_irq(channel, 0);
-+
- 		device_remove_file(&pdev->dev, &dev_attr_role);
-+
-+		cancel_work_sync(&channel->work);
-+	}
- }
- 
- static int rcar_gen3_phy_usb2_suspend(struct device *dev)
--- 
-2.25.1
+Best regards,
+Krzysztof
 
 
 -- 
