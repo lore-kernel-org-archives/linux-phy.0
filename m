@@ -4,54 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5357BC55184
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Aug 2026 15:59:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5755EC55184
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Aug 2026 18:06:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zq6YrrnI0vkAwsTL0mzOh7SAxcpyVSpjqX+y7/X2AzE=; b=G11oMGApRsMYdP
-	KYWG1wRIAHAJSYYrEdxqT5Lw1FEkwkQvtnCEVCgRi7nKmB69mvt0T8d9mHYKYyafO5napQtKbtsMp
-	MENt7ODQyfNCS8fvYcw8DvNxheQkJeGmLhDPoaNYUuuNhpHXmdVxwZSgpKhhRQzjadEYvmTPWMMcK
-	reuDapVSS3LTCWAl9SczmlRniBN24+UbIv7cGtur+wirhz0FSnvw3wOAnmOaIS83d90i8nZILhY8P
-	sSoocSpELW044AZLIrvfSmunJ9avFuLlTr7abtCGvbMT3fnMdDmsp+XC+ieqtl3r5j83+5Ipawgh4
-	YZG2qT/7F1lHFmOaajqg==;
+	List-Owner; bh=zeXwqhensTAhCjJbnU+KFQCTsQNRgAqvtmlqEQRbd+s=; b=A+Y6Seu6Yi3FLw
+	CgRt+lWDTgRNW5FbtmcSxNi611Yvp8Am/p+LNbsQXr3TD7L6fO7t4BTsiVBO3ZLZHL4VtD5OZXLaS
+	qpWWdp4fsGrS9h16cpJuMIZy+P7VzU0/Km5Y00IcVKgcAlMkTvxZBKBHxuMbGIwkV9hMtzQ6cPnmS
+	M0sYgM5yAoE5PnQxch/VA0O9LQWXZ26oF/vhBJTuWu0CEFCsEUZEm/DwTwTGDjTAF/ZvMgiOBc/VY
+	74p/GkBRRIexPaia6ido+jXC/qt/8bEovT3deg+bw0Ep6HjkArjQUmbA1ohB0j0n7W8eCHR1dJdXa
+	4kTiWpyHZiuIT5Oo4WtA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrHXp-00000002Fsi-2s0i;
-	Tue, 04 Aug 2026 15:59:09 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wrJXO-00000002ZWY-2r1j;
+	Tue, 04 Aug 2026 18:06:50 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrHXo-00000002FsQ-1yvr
+	id 1wrJXO-00000002ZWQ-10qm
 	for linux-phy@lists.infradead.org;
-	Tue, 04 Aug 2026 15:59:08 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 901C460A75;
-	Tue,  4 Aug 2026 15:59:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EEBAF1F000E9;
-	Tue,  4 Aug 2026 15:59:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1785859147;
-	bh=RFPl7KoBGs2M2IOPGst5iLfx9s5X088SeFqClnJFRmQ=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=b5bA8EXTLbt++HTVVYmR0MNcaNyGqHeYDb2TK2w9XrxF/o+YlsfiEmW9OmfpGp0sA
-	 f6GGLVvU9ZD2/8gz5EgGCeyRcKhpS344bjIKyqCRON+csK0L/8349JqKWH/M5iFC66
-	 iL3Km+VjCCTAW2Q7Y4z7ZBNBRf4vGWQFQcH22EFS4rH1Wpu4dBIhMapyJOhgn/10X6
-	 9bRBQ8AwzTG576XX13SdBorTuI2kh26EkhlxUu+3zK+6BNJYhePbSYhkeyIC87yTKe
-	 hI2I2MIhmVryA5CIHNn6fqc2IduDtqaIYCUYDhOno2J4I6GxXSmqm1zSuosJE4zCBQ
-	 tKoSxd3XUqM6w==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v2 3/3] phy: renesas: rcar-gen2: Use dev_err_probe() in
- probe
-To: "Felix Gu" <ustc.gu@gmail.com>
-Cc: linux-phy@lists.infradead.org, wsa+renesas@sang-engineering.com, olteanv@gmail.com, vkoul@kernel.org, neil.armstrong@linaro.org
-In-Reply-To: <20260804-rcar-gen2-v2-3-829cb84112ca@gmail.com>
-References: <20260804-rcar-gen2-v2-0-829cb84112ca@gmail.com>
- <20260804-rcar-gen2-v2-3-829cb84112ca@gmail.com>
-Date: Tue, 04 Aug 2026 15:59:06 +0000
-Message-Id: <20260804155906.EEBAF1F000E9@smtp.kernel.org>
+	Tue, 04 Aug 2026 18:06:50 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 81C7044E96;
+	Tue,  4 Aug 2026 18:06:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 63BC1C2BCFA;
+	Tue,  4 Aug 2026 18:06:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1785866809;
+	bh=DEG8euhd5JLh30PfhiVY4dSvqS4JvY1creVU//YkYZk=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=UCCLiva3GND3f7J4K+3GqvVW4zUaRuCrXqav9EDoZ4Auh2nbO3jM9c2icfWVkefi1
+	 KT2KEG+Icbo3i+mIzslGuDw0NVfb+tcPScB1WPoS/W57D6ZnPuGh1M8YXv6G8TAKH5
+	 iwg4wb+RiFm4KR3Jp9NDMZjPQNtgWSLml7icHEwVm5msiGrIYIb4mAKOybVbY+lIos
+	 DETFdHTVmzgeBMSyfjrXbsWqClR21muy2aK4vAoRY+LKvBqAJBaMJ4pJBWAkIOJWzy
+	 VB7n/VY5OkZuQQUk2JLmgjo2CsDu0sMHfSRunFFxrkI3cdVakj3+MaAm1Nsu145RrO
+	 08nQY5qzYRnzw==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3D332C55ABF;
+	Tue,  4 Aug 2026 18:06:49 +0000 (UTC)
+From: Esteban Urrutia via B4 Relay <devnull+esteuwu.proton.me@kernel.org>
+Date: Tue, 04 Aug 2026 14:06:20 -0400
+Subject: [PATCH RESEND v3 2/2] phy: qcom: qmp-combo: Add SM8475 support
+MIME-Version: 1.0
+Message-Id: <20260804-sm8475-bup-usbss-v3-2-9a5b9ebf62de@proton.me>
+References: <20260804-sm8475-bup-usbss-v3-0-9a5b9ebf62de@proton.me>
+In-Reply-To: <20260804-sm8475-bup-usbss-v3-0-9a5b9ebf62de@proton.me>
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ phone-devel@vger.kernel.org, Esteban Urrutia <esteuwu@proton.me>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1785866807; l=11066;
+ i=esteuwu@proton.me; s=20260622; h=from:subject:message-id;
+ bh=RVLN86+UQKtmY9cCYU0KqvQIUlUqHpXKayiKQtybKmE=;
+ b=1OLikSOyFbzGg4MugOsigtSqoYLW7mBdItDMBikuIMFWSJPcbADVxWJe1RSJTfxcZqAlt9p5Y
+ F7sgg4KozG5CV/oRpideoWd16YbJkmmBtPN1j8NYSG+oz/qREwV4C5+
+X-Developer-Key: i=esteuwu@proton.me; a=ed25519;
+ pk=wToFt4mOAWkzbqb15Ye1hrhevI13vK9BcMUFiQ/me1M=
+X-Endpoint-Received: by B4 Relay for esteuwu@proton.me/20260622 with
+ auth_id=835
+X-Original-From: Esteban Urrutia <esteuwu@proton.me>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,79 +81,248 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Reply-To: esteuwu@proton.me
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
-IFtIaWdoXSBUaGUgUEhZIHByb3ZpZGVyIGlzIHJlZ2lzdGVyZWQgYmVmb3JlIHRoZSBkcml2ZXIg
-ZGF0YSBpcyBzZXQsIGNyZWF0aW5nIGEgcmFjZSB3aW5kb3cgd2hlcmUgUEhZIGxvb2t1cCBjYW4g
-ZmFpbC4KLSBbSGlnaF0gVGhlIGRyaXZlciBzYXZlcyBhIHNjb3BlZCBkZXZpY2Ugbm9kZSBwb2lu
-dGVyIGludG8gYSBwZXJzaXN0ZW50IHN0cnVjdHVyZSB3aXRob3V0IGluY3JlbWVudGluZyBpdHMg
-cmVmZXJlbmNlIGNvdW50LCBsZWFkaW5nIHRvIGEgZGFuZ2xpbmcgcG9pbnRlci4KLSBbSGlnaF0g
-QSBUaW1lLU9mLUNoZWNrIHRvIFRpbWUtT2YtVXNlIChUT0NUT1UpIHJhY2UgY29uZGl0aW9uIHdp
-dGggZGV2aWNlIHRyZWUgbW9kaWZpY2F0aW9ucyBjYW4gbGVhZCB0byBhbiBhcnJheSBvdXQtb2Yt
-Ym91bmRzIGFjY2Vzcy4KLS0KCi0tLSBQYXRjaCBbM106IFtQQVRDSCB2MiAzLzNdIHBoeTogcmVu
-ZXNhczogcmNhci1nZW4yOiBVc2UgZGV2X2Vycl9wcm9iZSgpIGluIHByb2JlIC0tLQpjb21taXQg
-NzA5ZDliODIxODA4N2FiYzY1MjZiMjliMzgyODU2ZWI1M2NjYjNiYQpBdXRob3I6IEZlbGl4IEd1
-IDx1c3RjLmd1QGdtYWlsLmNvbT4KCiAgICBwaHk6IHJlbmVzYXM6IHJjYXItZ2VuMjogVXNlIGRl
-dl9lcnJfcHJvYmUoKSBpbiBwcm9iZQogICAgCiAgICBDb252ZXJ0IHRoZSBlcnJvciBwYXRocyBp
-biByY2FyX2dlbjJfcGh5X3Byb2JlKCkgdG8gZGV2X2Vycl9wcm9iZSgpLgoKPiBkaWZmIC0tZ2l0
-IGEvZHJpdmVycy9waHkvcmVuZXNhcy9waHktcmNhci1nZW4yLmMgYi9kcml2ZXJzL3BoeS9yZW5l
-c2FzL3BoeS1yY2FyLWdlbjIuYwo+IGluZGV4IGIxODcyN2VkNDFhMTAuLjU4MWY2NzY4ZTJiYjIg
-MTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9waHkvcmVuZXNhcy9waHktcmNhci1nZW4yLmMKPiArKysg
-Yi9kcml2ZXJzL3BoeS9yZW5lc2FzL3BoeS1yY2FyLWdlbjIuYwpbIC4uLiBdCj4gQEAgLTM4OCwx
-MCArMzg0LDkgQEAgc3RhdGljIGludCByY2FyX2dlbjJfcGh5X3Byb2JlKHN0cnVjdCBwbGF0Zm9y
-bV9kZXZpY2UgKnBkZXYpCj4gIAkJY2hhbm5lbC0+c2VsZWN0ZWRfcGh5ID0gLTE7CgpbU2V2ZXJp
-dHk6IEhpZ2hdClRoaXMgaXNuJ3QgYSBidWcgaW50cm9kdWNlZCBieSB0aGlzIHBhdGNoLCBidXQg
-Y291bGQgdGhlIGFzc2lnbm1lbnQgdG8KY2hhbm5lbC0+b2Zfbm9kZSBqdXN0IGFib3ZlIHRoaXMg
-bGluZSByZXN1bHQgaW4gYSBkYW5nbGluZyBwb2ludGVyPwoKTG9va2luZyBhdCByY2FyX2dlbjJf
-cGh5X3Byb2JlKCksIHRoZSBsb29wIHVzZXMKZm9yX2VhY2hfY2hpbGRfb2Zfbm9kZV9zY29wZWQo
-ZGV2LT5vZl9ub2RlLCBucCkgd2hpY2ggYXV0b21hdGljYWxseQpkZWNyZW1lbnRzIHRoZSByZWZl
-cmVuY2UgY291bnQgb2YgbnAgYXQgdGhlIGVuZCBvZiBlYWNoIGl0ZXJhdGlvbi4KClNpbmNlIGNo
-YW5uZWwtPm9mX25vZGUgPSBucCBzdG9yZXMgdGhpcyBwb2ludGVyIGludG8gdGhlIHBlcnNpc3Rl
-bnQKY2hhbm5lbCBzdHJ1Y3R1cmUgd2l0aG91dCBjYWxsaW5nIG9mX25vZGVfZ2V0KG5wKSwgd291
-bGRuJ3QgdGhpcyBsZWF2ZQpjaGFubmVsLT5vZl9ub2RlIHBvaW50aW5nIHRvIGZyZWVkIG1lbW9y
-eSBvbmNlIHRoZSBzY29wZSBlbmRzPwoKW1NldmVyaXR5OiBIaWdoXQpUaGlzIGlzbid0IGEgYnVn
-IGludHJvZHVjZWQgYnkgdGhpcyBwYXRjaCwgYnV0IGlzIHRoZXJlIGEgcmlzayBvZiBhbgpvdXQt
-b2YtYm91bmRzIGFycmF5IGFjY2VzcyBpbiB0aGlzIGxvb3A/CgpFYXJsaWVyIGluIHJjYXJfZ2Vu
-Ml9waHlfcHJvYmUoKSwgZHJ2LT5jaGFubmVscyBpcyBhbGxvY2F0ZWQgYmFzZWQgb24Kb2ZfZ2V0
-X2NoaWxkX2NvdW50KCk6CgogICAgZHJ2LT5udW1fY2hhbm5lbHMgPSBvZl9nZXRfY2hpbGRfY291
-bnQoZGV2LT5vZl9ub2RlKTsKICAgIGRydi0+Y2hhbm5lbHMgPSBkZXZtX2tjYWxsb2MoZGV2LCBk
-cnYtPm51bV9jaGFubmVscywgLi4uKTsKCklmIGEgZHluYW1pYyBkZXZpY2UgdHJlZSBvdmVybGF5
-IGFkZHMgYSBjaGlsZCBub2RlIGNvbmN1cnJlbnRseSBiZWZvcmUgb3IKZHVyaW5nIHRoZSBmb3Jf
-ZWFjaF9jaGlsZF9vZl9ub2RlX3Njb3BlZCgpIGxvb3AsIHRoZSBsb29wIHdpbGwgaXRlcmF0ZQpt
-b3JlIHRpbWVzIHRoYW4gZHJ2LT5udW1fY2hhbm5lbHMuIFdvdWxkIHRoZSBhc3NpZ25tZW50CmNo
-YW5uZWwgPSBkcnYtPmNoYW5uZWxzICsgaSB0aGVuIHdyaXRlIHBhc3QgdGhlIGVuZCBvZiB0aGUg
-YWxsb2NhdGlvbj8KCj4gIAkJZXJyb3IgPSBvZl9wcm9wZXJ0eV9yZWFkX3UzMihucCwgInJlZyIs
-ICZjaGFubmVsX251bSk7Cj4gLQkJaWYgKGVycm9yIHx8IGNoYW5uZWxfbnVtID49IGRhdGEtPm51
-bV9jaGFubmVscykgewo+IC0JCQlkZXZfZXJyKGRldiwgIkludmFsaWQgXCJyZWdcIiBwcm9wZXJ0
-eVxuIik7Cj4gLQkJCXJldHVybiBlcnJvciA/OiAtRUlOVkFMOwo+IC0JCX0KPiArCQlpZiAoZXJy
-b3IgfHwgY2hhbm5lbF9udW0gPj0gZGF0YS0+bnVtX2NoYW5uZWxzKQo+ICsJCQlyZXR1cm4gZGV2
-X2Vycl9wcm9iZShkZXYsIGVycm9yID86IC1FSU5WQUwsCj4gKwkJCQkJICAgICAiSW52YWxpZCBc
-InJlZ1wiIHByb3BlcnR5XG4iKTsKPiAgCQljaGFubmVsLT5zZWxlY3RfbWFzayA9IHNlbGVjdF9t
-YXNrW2NoYW5uZWxfbnVtXTsKWyAuLi4gXQo+IEBAIC00MTQsMTAgKzQwOCw5IEBAIHN0YXRpYyBp
-bnQgcmNhcl9nZW4yX3BoeV9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ICAJ
-fQo+ICAKPiAgCXByb3ZpZGVyID0gZGV2bV9vZl9waHlfcHJvdmlkZXJfcmVnaXN0ZXIoZGV2LCBy
-Y2FyX2dlbjJfcGh5X3hsYXRlKTsKPiAtCWlmIChJU19FUlIocHJvdmlkZXIpKSB7Cj4gLQkJZGV2
-X2VycihkZXYsICJGYWlsZWQgdG8gcmVnaXN0ZXIgUEhZIHByb3ZpZGVyXG4iKTsKPiAtCQlyZXR1
-cm4gUFRSX0VSUihwcm92aWRlcik7Cj4gLQl9Cj4gKwlpZiAoSVNfRVJSKHByb3ZpZGVyKSkKPiAr
-CQlyZXR1cm4gZGV2X2Vycl9wcm9iZShkZXYsIFBUUl9FUlIocHJvdmlkZXIpLAo+ICsJCQkJICAg
-ICAiRmFpbGVkIHRvIHJlZ2lzdGVyIFBIWSBwcm92aWRlclxuIik7Cj4gIAo+ICAJZGV2X3NldF9k
-cnZkYXRhKGRldiwgZHJ2KTsKCltTZXZlcml0eTogSGlnaF0KVGhpcyBpc24ndCBhIGJ1ZyBpbnRy
-b2R1Y2VkIGJ5IHRoaXMgcGF0Y2gsIGJ1dCBkb2VzIHRoZSByZWdpc3RyYXRpb24gb3JkZXIKY3Jl
-YXRlIGEgcmFjZSBjb25kaXRpb24/CgpUaGUgUEhZIHByb3ZpZGVyIGlzIHJlZ2lzdGVyZWQgdmlh
-IGRldm1fb2ZfcGh5X3Byb3ZpZGVyX3JlZ2lzdGVyKCkgYmVmb3JlCmRldl9zZXRfZHJ2ZGF0YShk
-ZXYsIGRydikgaXMgY2FsbGVkLgoKSWYgYSBjb25jdXJyZW50IGRlZmVycmVkIHByb2JlIG9yIG1v
-ZHVsZSBsb2FkIGNhbGxzIHJjYXJfZ2VuMl9waHlfeGxhdGUoKQpkdXJpbmcgdGhpcyB3aW5kb3cs
-IGl0IHdpbGwgdHJ5IHRvIGFjY2VzcyBkcml2ZXIgZGF0YSB0aGF0IGhhc24ndCBiZWVuIHNldAp5
-ZXQuIFNob3VsZCBkZXZfc2V0X2RydmRhdGEoKSBiZSBjYWxsZWQgYmVmb3JlIGV4cG9zaW5nIHRo
-ZSBQSFkgcHJvdmlkZXIKdG8gdGhlIHN5c3RlbT8KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBo
-dHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA4MDQtcmNhci1nZW4yLXYyLTAtODI5
-Y2I4NDExMmNhQGdtYWlsLmNvbT9wYXJ0PTMKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0Cmxp
-bnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+From: Esteban Urrutia <esteuwu@proton.me>
+
+Has been tested with the following capabilities:
+- USB Type-C at 10Gb/s
+- DP Alt Mode, using HBR2
+- USB Type-C at 480Mb/s + DP Alt Mode, using HBR2
+
+RX and PCS USB tables had to be added, while serdes, TX and PCS tables were
+reused from other SoCs.
+
+Some SoCs such as SAR2130P, SM7550, SM7635 and SM8475 use 4nm-v1 PLLs.
+For SM8475, trying to use qmp_v6_dp_serdes_tbl structs (which are for
+4nm-v1.1 PLLs) causes link training to fail because of ref clock
+differences, which in turn makes these structs differ.
+Add structs for v1 PLLs as well.
+
+Signed-off-by: Esteban Urrutia <esteuwu@proton.me>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 169 ++++++++++++++++++++++++++++++
+ 1 file changed, 169 insertions(+)
+
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index 9bd666ac2c49..8b46f36bd24c 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -1063,6 +1063,55 @@ static const struct qmp_phy_init_tbl sm8350_usb3_pcs_usb_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QPHY_V5_PCS_USB3_RXEQTRAINING_DFE_TIME_S2, 0x07),
+ };
+ 
++static const struct qmp_phy_init_tbl sm8475_usb3_rx_tbl[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_FO_GAIN, 0x0a),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_SO_GAIN, 0x06),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_FASTLOCK_FO_GAIN, 0x2f),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_SO_SATURATION_AND_ENABLE, 0x7f),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_FASTLOCK_COUNT_LOW, 0xff),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_FASTLOCK_COUNT_HIGH, 0x0f),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_PI_CONTROLS, 0x99),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_SB2_THRESH1, 0x08),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_SB2_THRESH2, 0x08),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_SB2_GAIN1, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_UCDR_SB2_GAIN2, 0x08),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_AUX_DATA_TCOARSE_TFINE, 0xa0),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_VGA_CAL_CNTRL1, 0x54),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_VGA_CAL_CNTRL2, 0x0f),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_GM_CAL, 0x13),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_EQU_ADAPTOR_CNTRL2, 0x0f),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_EQU_ADAPTOR_CNTRL3, 0x4a),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_EQU_ADAPTOR_CNTRL4, 0x0a),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_IDAC_TSETTLE_LOW, 0x07),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_IDAC_TSETTLE_HIGH, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_EQ_OFFSET_ADAPTOR_CNTRL1, 0x47),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_SIGDET_CNTRL, 0x04),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_SIGDET_DEGLITCH_CNTRL, 0x0e),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_00_LOW, 0x3f),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_00_HIGH, 0xff),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_00_HIGH2, 0xff),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_00_HIGH3, 0xdf),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_00_HIGH4, 0xfe),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_01_LOW, 0xdc),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_01_HIGH, 0x5c),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_01_HIGH2, 0x9c),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_01_HIGH3, 0x1d),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_RX_MODE_01_HIGH4, 0x09),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_DFE_EN_TIMER, 0x04),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_DFE_CTLE_POST_CAL_OFFSET, 0x38),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_DCC_CTRL1, 0x0c),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_VTH_CODE, 0x10),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_SIGDET_CAL_CTRL1, 0x14),
++	QMP_PHY_INIT_CFG(QSERDES_V6_RX_SIGDET_CAL_TRIM, 0x08),
++};
++
++static const struct qmp_phy_init_tbl sm8475_usb3_pcs_usb_tbl[] = {
++	QMP_PHY_INIT_CFG(QPHY_V6_PCS_USB3_LFPS_DET_HIGH_COUNT_VAL, 0xf8),
++	QMP_PHY_INIT_CFG(QPHY_V6_PCS_USB3_RXEQTRAINING_DFE_TIME_S2, 0x07),
++	QMP_PHY_INIT_CFG(QPHY_V6_PCS_USB3_RCVR_DTCT_DLY_U3_L, 0x40),
++	QMP_PHY_INIT_CFG(QPHY_V6_PCS_USB3_RCVR_DTCT_DLY_U3_H, 0x00),
++};
++
+ static const struct qmp_phy_init_tbl sm8550_usb3_serdes_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE1_MODE1, 0xc0),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE2_MODE1, 0x01),
+@@ -1337,6 +1386,29 @@ static const struct qmp_phy_init_tbl qmp_v5_5nm_dp_tx_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V5_5NM_TX_TX_BAND, 0x01),
+ };
+ 
++static const struct qmp_phy_init_tbl qmp_v6_dp_v1_serdes_tbl[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SVS_MODE_CLK_SEL, 0x15),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYSCLK_EN_SEL, 0x3b),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYS_CLK_CTRL, 0x02),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CLK_ENABLE1, 0x0c),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYSCLK_BUF_ENABLE, 0x06),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CLK_SELECT, 0x30),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_IVCO, 0x0f),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE0, 0x36),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE0, 0x16),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE0, 0x06),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START1_MODE0, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CMN_CONFIG_1, 0x12),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_INTEGLOOP_GAIN0_MODE0, 0x3f),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_INTEGLOOP_GAIN1_MODE0, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_MAP, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BG_TIMER, 0x0e),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CORE_CLK_DIV_MODE0, 0x14),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_CTRL, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_BIAS_EN_CLK_BUFLR_EN, 0x17),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CORE_CLK_EN, 0x0f),
++};
++
+ static const struct qmp_phy_init_tbl qmp_v6_dp_serdes_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SVS_MODE_CLK_SEL, 0x15),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYSCLK_EN_SEL, 0x3b),
+@@ -1471,6 +1543,54 @@ static const struct qmp_phy_init_tbl qmp_v8_n3p_dp_tx_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX1_RESTRIM_POST_CAL_OFFSET, 0x10),
+ };
+ 
++static const struct qmp_phy_init_tbl qmp_v6_dp_v1_serdes_tbl_rbr[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_SEL_1, 0x05),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x69),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START2_MODE0, 0x80),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START3_MODE0, 0x07),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x6f),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x08),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP_EN, 0x04),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0xe2),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x18),
++};
++
++static const struct qmp_phy_init_tbl qmp_v6_dp_v1_serdes_tbl_hbr[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_SEL_1, 0x03),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x69),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START2_MODE0, 0x80),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START3_MODE0, 0x07),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x0f),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x0e),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP_EN, 0x08),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0xe2),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x18),
++};
++
++static const struct qmp_phy_init_tbl qmp_v6_dp_v1_serdes_tbl_hbr2[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_SEL_1, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x8c),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START2_MODE0, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START3_MODE0, 0x0a),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x1f),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x1c),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP_EN, 0x08),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0x2e),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x21),
++};
++
++static const struct qmp_phy_init_tbl qmp_v6_dp_v1_serdes_tbl_hbr3[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_SEL_1, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x69),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START2_MODE0, 0x80),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START3_MODE0, 0x07),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x2f),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x2a),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP_EN, 0x08),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0xe2),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x18),
++};
++
+ static const struct qmp_phy_init_tbl qmp_v6_dp_serdes_tbl_rbr[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_SEL_1, 0x05),
+ 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x34),
+@@ -2838,6 +2958,51 @@ static const struct qmp_phy_cfg sm8350_usb3dpphy_cfg = {
+ 	.has_pwrdn_delay	= true,
+ };
+ 
++static const struct qmp_phy_cfg sm8475_usb3dpphy_cfg = {
++	.offsets		= &qmp_combo_offsets_v3,
++
++	.serdes_tbl		= sar2130p_usb3_serdes_tbl,
++	.serdes_tbl_num		= ARRAY_SIZE(sar2130p_usb3_serdes_tbl),
++	.tx_tbl			= sm8550_usb3_tx_tbl,
++	.tx_tbl_num		= ARRAY_SIZE(sm8550_usb3_tx_tbl),
++	.rx_tbl			= sm8475_usb3_rx_tbl,
++	.rx_tbl_num		= ARRAY_SIZE(sm8475_usb3_rx_tbl),
++	.pcs_tbl		= sm8550_usb3_pcs_tbl,
++	.pcs_tbl_num		= ARRAY_SIZE(sm8550_usb3_pcs_tbl),
++	.pcs_usb_tbl		= sm8475_usb3_pcs_usb_tbl,
++	.pcs_usb_tbl_num	= ARRAY_SIZE(sm8475_usb3_pcs_usb_tbl),
++
++	.dp_serdes_tbl		= qmp_v6_dp_v1_serdes_tbl,
++	.dp_serdes_tbl_num	= ARRAY_SIZE(qmp_v6_dp_v1_serdes_tbl),
++	.dp_tx_tbl		= qmp_v6_dp_tx_tbl,
++	.dp_tx_tbl_num		= ARRAY_SIZE(qmp_v6_dp_tx_tbl),
++
++	.serdes_tbl_rbr		= qmp_v6_dp_v1_serdes_tbl_rbr,
++	.serdes_tbl_rbr_num	= ARRAY_SIZE(qmp_v6_dp_v1_serdes_tbl_rbr),
++	.serdes_tbl_hbr		= qmp_v6_dp_v1_serdes_tbl_hbr,
++	.serdes_tbl_hbr_num	= ARRAY_SIZE(qmp_v6_dp_v1_serdes_tbl_hbr),
++	.serdes_tbl_hbr2	= qmp_v6_dp_v1_serdes_tbl_hbr2,
++	.serdes_tbl_hbr2_num	= ARRAY_SIZE(qmp_v6_dp_v1_serdes_tbl_hbr2),
++	.serdes_tbl_hbr3	= qmp_v6_dp_v1_serdes_tbl_hbr3,
++	.serdes_tbl_hbr3_num	= ARRAY_SIZE(qmp_v6_dp_v1_serdes_tbl_hbr3),
++
++	.swing_hbr_rbr		= &qmp_dp_v5_voltage_swing_hbr_rbr,
++	.pre_emphasis_hbr_rbr	= &qmp_dp_v6_pre_emphasis_hbr_rbr,
++	.swing_hbr3_hbr2	= &qmp_dp_v5_voltage_swing_hbr3_hbr2,
++	.pre_emphasis_hbr3_hbr2 = &qmp_dp_v5_pre_emphasis_hbr3_hbr2,
++
++	.dp_aux_init		= qmp_v4_dp_aux_init,
++	.configure_dp_tx	= qmp_v4_configure_dp_tx,
++	.configure_dp_clocks	= qmp_v3_configure_dp_clocks,
++	.configure_dp_phy	= qmp_v4_configure_dp_phy,
++
++	.regs			= qmp_v6_usb3phy_regs_layout,
++	.reset_list		= msm8996_usb3phy_reset_l,
++	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
++	.vreg_list		= qmp_phy_vreg_l,
++	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
++};
++
+ static const struct qmp_phy_cfg sm8550_usb3dpphy_cfg = {
+ 	.offsets		= &qmp_combo_offsets_v3,
+ 
+@@ -5001,6 +5166,10 @@ static const struct of_device_id qmp_combo_of_match_table[] = {
+ 		.compatible = "qcom,sm8450-qmp-usb3-dp-phy",
+ 		.data = &sm8350_usb3dpphy_cfg,
+ 	},
++	{
++		.compatible = "qcom,sm8475-qmp-usb3-dp-phy",
++		.data = &sm8475_usb3dpphy_cfg,
++	},
+ 	{
+ 		.compatible = "qcom,sm8550-qmp-usb3-dp-phy",
+ 		.data = &sm8550_usb3dpphy_cfg,
+
+-- 
+2.55.0
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
