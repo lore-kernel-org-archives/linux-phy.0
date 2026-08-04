@@ -4,72 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D10BEC55184
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Aug 2026 11:19:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C897FC55ABF
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Aug 2026 11:19:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R5QDycdtyFLkZ7j/qD0pvSk8nMdLa/T06A0emyEyEaY=; b=4Pq2R+jEPaegBL
-	/QOQ6VePNwJJUb9an/iXdfaSdRHFQEekBshmbJAloT7WlQYkXYFGF8Zh3vlHuMso1Os6WIkBscFvB
-	JypmG/+Ul3ZU07yD4bOWKdvV7i3D5cq75CeXNepXwMEVacsbO91YoROww8h4ht93m1n5r3xWoQUpw
-	r2AsuhrVpInUYOxgpI7L5bqJq8wCzDyLD+SMe0bKnUOWEPeBttg8RLM96EiblB23ocGpfyO6Egpm+
-	wzmiZGVSZrjj0SnPWB/qHHVODVcfyLMUmcJusNvPlnYj8E877XXeHhn00A3vyJoD6Kv3bVAGji4KX
-	9LlFp73wivq7g9clLnzQ==;
+	List-Owner; bh=5ickWd4wEDgqokk1ms998w6DntjI7ctSJ+XBdN+e4Cw=; b=TJfzRW88gf3F/V
+	4iCV/ay+mGUIkcUfT1M0B1sjOh8K2IWlDJ6TwyQH83qPVgWuVbBcHnCike936r3eLKCgRv8h+vAWX
+	p2Yr/gx8JpVkJ4PlrS9IlwCjzdCX3Ie6voGr//Uf+fXmllODpY7yuGEGCP6pwUUeq350NzTo6pwy1
+	/ejH452Po2/SjKAYTfk/T2KREdo1ltSCG8wKEjUEaQbSPfwpruEKpzIskUqQuU+LQzP+pa1YIs8wd
+	hPKG8GNPkaOr/uWcdvmk/8geVJ6tHVkO6Ngjg7DgBw+zg3yMoN78Aa7efUj+m6Qjmom2wwQaFdFu+
+	Y7jbhtbl0LmhfiId41YQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrDAt-00000001fNV-1mHZ;
-	Tue, 04 Aug 2026 11:19:11 +0000
-Received: from mail-wr1-x431.google.com ([2a00:1450:4864:20::431])
+	id 1wrDAu-00000001fOE-29Mi;
+	Tue, 04 Aug 2026 11:19:12 +0000
+Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrDAp-00000001fMP-1gw2
+	id 1wrDAq-00000001fMT-17kC
 	for linux-phy@lists.infradead.org;
-	Tue, 04 Aug 2026 11:19:09 +0000
-Received: by mail-wr1-x431.google.com with SMTP id ffacd0b85a97d-47f93b2fe4cso2767650f8f.0
-        for <linux-phy@lists.infradead.org>; Tue, 04 Aug 2026 04:19:06 -0700 (PDT)
+	Tue, 04 Aug 2026 11:19:10 +0000
+Received: by mail-wr1-x435.google.com with SMTP id ffacd0b85a97d-47fe377a217so1184660f8f.1
+        for <linux-phy@lists.infradead.org>; Tue, 04 Aug 2026 04:19:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=sigma-star.at; s=google; t=1785842345; x=1786447145; darn=lists.infradead.org;
+        d=sigma-star.at; s=google; t=1785842346; x=1786447146; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=2ZghHONKKBi4x/YVb7PG1LTu4YhILxIkRapbWwNntgo=;
-        b=PXyPlmvlerhWWyyRzVvTIUMvI8+zoBD6rZoMfSHIcbQH4HuTFtU0gNHFUtQaszjIwW
-         aD9wJHKWupJmWMQ5jRBeqCcAOv8C6S9b8x6ApoJcFBc1niulXFMCqxGA0D91YhO+tmD8
-         hTyPT+MFTJPjdbk6K23vtToDpr5hN6chxs01/BWvbWTyEy3s6tFW2x8HM5WvHVZprcc5
-         EdbEYYd9xgwxRQ6RK5s4lDu301KQczTTd1UoeAjqWs8s7dyf2Rhp3Mq7aTS9U2Yf4UyV
-         6oaMcMKbDTbs7ZJXR6Vf7wtzymIPv7zH8iU6400v6T6gh6Us2GyR+2WHx6NwHlSo8VQm
-         eJ5A==
+        bh=r/Pn7fYrfwB6rmj/rjlsk7/vDnAshiosKPLQwaQozE0=;
+        b=qZDT3H9CFIBZvdpvRGwpfmr3XbpjwHZHtBIUO1HAEcs11ZZ70CoWW4AmfWj2trGPvG
+         7lHzTuNrfgbC2J6uExw1oQEefv10+5Bv/jCvT02T/OFYaexISpZbR5HCHY8Q4s+ud9BY
+         /ClsQqNaQbcL5B+1wpeoSXUBtrZgkYDQncPIzcOLRDpyb4GOScZl2o13wm+5wbdO0HGm
+         FOkMHB35ht91Ie2R14F3EuPyjOtkX2BkpYQipGY7lb6nULbrrDcwyvxV9D8NshF/jSQO
+         iX92dWkgoTyCXD/nalooZp8009ouaBMpi6/Rs6hWlFhuOCn12t1C96K9QpqasUIZM3HO
+         ShBg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1785842345; x=1786447145;
+        d=1e100.net; s=20251104; t=1785842346; x=1786447146;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=2ZghHONKKBi4x/YVb7PG1LTu4YhILxIkRapbWwNntgo=;
-        b=o4ni6ghimHB5kksXywGXaKmIC2LcJGlLC0dVuWlob9SG37UnaP5DXViGGopJANKB2b
-         G+ICKifZb+At9Sews0wV0cSpsLY68MCvMehMdIx3Ul3fnBGFkNBFX0IgcaXGZKLyRFQo
-         NqTs/8LY6n/WxzRbGjKBqT9tnalBPj7Ah3UeV2E6IGDNPT5FOmOynOuTQ5KmCMqtyEnb
-         8oIvN+8EyjgcV8Nk7auxAFBthb8UbHtmgu52IH1ubIHtU7MJ6KAMWebBCAH0j8M3BIUw
-         i+rb5yXc4Z1SQu0HEZrOel5YfT8z+EQT/ehAKJiSJ9E6xHSUSVqDnTRBEiA+5A2U8cLZ
-         spYQ==
-X-Gm-Message-State: AOJu0YzfcIuBddyTpk99L0QtgBWWQW40yXX8KlRdLC7qHRjko53JWjuY
-	ffS3wROGzBShx1MNRwRDUu5wBvACrZdQyju48Cr/p9cqwazqHCMstdMDqLYUancL13sPAnXEs/w
-	ELZF8RP77VA==
-X-Gm-Gg: AR+sD111LOIAiaqcA+2KT6j3nqoR1COXXqjDyorqQhxqEykjH4/6NukEeFIzwDSNxpj
-	MmA9pi0NT91tJtC97x+ZVq6x/X4rqNAJCI+LPNunuhQPF78cuE0TE5xT27PrR8KzawSnCu511PZ
-	K8jjWaf8Zt+qHgYtet9AF7Y2WAbIZvoylWX4ciaDtQI7c6IwwmlqjgNoSCz42umO/8a5ZQznBUw
-	g5qMdNEeLqsXOr9Is2Q4m8pB0ijx0lOSywQSGPDkGYHyntZD9w806MCweZP35BbpfjHpdspcDuu
-	mHq7RIKFuE3MexY7DpDgn2oXA3gUQdhEL2feYfwCvQp524XsWFm2p7L45PZQPjSVnjK4Z7ZxbR6
-	7hBJ0SYDcWuDYXYphRGmeCJo9ClDWywVGTbjEoMw8cHGUEVev9RQEoQGYYT7HitJQJ/SPuS1ciu
-	6NTADsV8oTlQR54w7CgNTGAUR/LWwB3n4Lm0oAwLSgwUAspIiZNtuCVLveaYQA8wISiRwnNZB5I
-	VvUC3xAKa6OQ9egv96NTfKQBsy0q/z6CbgCZNE=
-X-Received: by 2002:a05:6000:41de:b0:47f:25db:8161 with SMTP id ffacd0b85a97d-47fd72fa195mr38835127f8f.28.1785842345442;
-        Tue, 04 Aug 2026 04:19:05 -0700 (PDT)
+        bh=r/Pn7fYrfwB6rmj/rjlsk7/vDnAshiosKPLQwaQozE0=;
+        b=cD4LfFgkZLMfnINJrR6fV9VRfQVhvwa8DsTVM7mmWcprrTfLrK+1rcR1WaNtrzCAbe
+         geLTRZzvF7A+mSUUAnchLM5qap0+ZRXrRcBIv2VB4FSmBnB2S3xzvSzID+rA2uVCieHj
+         SbjX6NrDgjfcxjXh/QExMXmfTNs34C1TvUtBxcFVoiKlcu6FZdBuUIjviKxt2FtyA7XP
+         720k3tebfUfsuICQZOX3FLIHiWFF+n49X7xJ/hdjmLzeJoeBZG3RilyF6ds2IuvZBL08
+         Xr4eUsP1oUJ9tzskdgG9A6H6PpCAz6SQTfgmJ0sdZvYEzPXrDHcXNFlbvNKlOy8Ws31Q
+         JFlg==
+X-Gm-Message-State: AOJu0YzRF/FEgmQzUGmDvcnae+ffT03EqFXDE3asgpGYkNCmh1pc5Ou6
+	x8roiFIHxdRXrpfurRxUIp/zNogOYur7nSf7J3+oZj3q7FCKDTEXrCgQAz1axsnkex97sA/DaFW
+	Tmre7qY3BCg==
+X-Gm-Gg: AR+sD10B2b4l715rU2yl2kCn6epzZc/NUsUiMeJ940tJsf/klp9AwUJBqjfMhhI5zZF
+	yBoykyTivN77s4yV+KcJ2ViDfp4zwOnHvFi7ZshxMjjHH2RHn5VnGPvCY6Kkq+8EtG0OC0o8zmh
+	vzw54qEGMmkSv9cY6Izc8zBLrgaXrF5H0kQ9EUcufQg8TZDYcmGCm9bAl8wOXrM9DRgRspkWRq5
+	6VjpODBsTRvomtEP5alugtdlxZAm1ySdswzEiMI65pszrRWZuvKFhvZnwD5Fru2KeKBd30c2Ivl
+	Ay9QzbZRP1ZNtuNmtQVh95SJ3JkOqN7cyditOXIanQga7cr7ApVvJQK1zg9iENRagVkhrSn1I/X
+	jDqCknKCH2tPv8v0trCkcuJTagQxdh+z/DA1R4e+tXDdE7vaE3IGviE/MnEZbK61penDX5Uopka
+	LKOqIIgmNv4oOU1wMyKHccROG1Rt/sfDdtXpykP5PpHhRDL6ATfwOmWPpPlW3KgxRTO/+HxS9+N
+	JKBu1cPJRhx6Vn6+5O5oIB6MwPU
+X-Received: by 2002:a05:600c:4685:b0:493:e365:7630 with SMTP id 5b1f17b1804b1-4980eb66053mr241139075e9.14.1785842346425;
+        Tue, 04 Aug 2026 04:19:06 -0700 (PDT)
 Received: from localtoast.corp.sigma-star.at ([82.150.214.1])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-47fd458b05fsm44414682f8f.28.2026.08.04.04.19.04
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-47fd458b05fsm44414682f8f.28.2026.08.04.04.19.05
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 04 Aug 2026 04:19:05 -0700 (PDT)
+        Tue, 04 Aug 2026 04:19:06 -0700 (PDT)
 From: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
 To: linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
@@ -84,16 +84,17 @@ To: linux-phy@lists.infradead.org,
 Cc: Julian.FRIEDRICH@frequentis.com,
 	upstream+omap@sigma-star.at,
 	David Oberhollenzer <david.oberhollenzer@sigma-star.at>
-Subject: [PATCH 1/2] phy: ti: ti-pipe3: allow configuring ACSPCIe TX/RX mode
-Date: Tue,  4 Aug 2026 13:18:48 +0200
-Message-ID: <20260804111849.92046-2-david.oberhollenzer@sigma-star.at>
+Subject: [PATCH 2/2] dt-bindings: phy: ti,phy-usb3: document aspcie reference clock setting
+Date: Tue,  4 Aug 2026 13:18:49 +0200
+Message-ID: <20260804111849.92046-3-david.oberhollenzer@sigma-star.at>
 X-Mailer: git-send-email 2.55.0
 In-Reply-To: <20260804111849.92046-1-david.oberhollenzer@sigma-star.at>
 References: <20260804111849.92046-1-david.oberhollenzer@sigma-star.at>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260804_041907_486762_C3EDDD13 
-X-CRM114-Status: GOOD (  15.10  )
+X-CRM114-CacheID: sfid-20260804_041908_329463_E0CFCD2A 
+X-CRM114-Status: UNSURE (   8.38  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,73 +111,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Besides power control, the PHY control logic in the OMAP PCIe PHY
-subsystem has a configurable reference clock selection. It can
-either use the ljcb_clkp/ljcb_clkn pin as inputs, recovering the
-clock from the bus (RX mode), or generate the reference clock
-internally, driving the bus pins as outputs (TX mode).
-
-This patch adds a device tree setting to the PIPE3 PHY, allowing
-the syscon node, register offset and RX/TX mode setting to be
-attached and set up correctly.
+Add syscon-acspcie-tx-rx property to the PHY bindings.
 
 Signed-off-by: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
 ---
- drivers/phy/ti/phy-ti-pipe3.c | 27 +++++++++++++++++++++++++++
- 1 file changed, 27 insertions(+)
+ Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-diff --git a/drivers/phy/ti/phy-ti-pipe3.c b/drivers/phy/ti/phy-ti-pipe3.c
-index b5543b5c674c..801a6239328e 100644
---- a/drivers/phy/ti/phy-ti-pipe3.c
-+++ b/drivers/phy/ti/phy-ti-pipe3.c
-@@ -115,6 +115,9 @@
- #define MEM_CDR_LOS_SOURCE_MASK		GENMASK(10, 9)
- #define MEM_CDR_LOS_SOURCE_SHIFT	9
+diff --git a/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml b/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml
+index 84f538aa587c..4fb017df2898 100644
+--- a/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml
++++ b/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml
+@@ -52,6 +52,15 @@ properties:
+       enum: [wkupclk, sysclk, refclk, dpll_ref,
+              dpll_ref_m2, phy-div, div-clk]
  
-+#define PCIE_TX_RX_CTRL_MASK		GENMASK(17, 16)
-+#define PCIE_TX_RX_CTRL_SHIFT		16
++  syscon-acspcie-tx-rx:
++    $ref: /schemas/types.yaml#/definitions/phandle-array
++    maxItems: 1
++    items:
++      items:
++        - description: Phandle to the system control module
++        - description: Register offset of CTRL_CORE_SMA_SW_6
++        - description: Setting for PCIE_TX_RX_CONTROL
 +
- /*
-  * This is an Empirical value that works, need to confirm the actual
-  * value required for the PIPE3PHY_PLL_CONFIGURATION2.PLL_IDLE status
-@@ -785,6 +788,24 @@ static int ti_pipe3_get_pll_base(struct ti_pipe3 *phy)
- 	return PTR_ERR_OR_ZERO(phy->pll_ctrl_base);
- }
- 
-+static int ti_pipe3_acspcie_tx_rx_mode(struct ti_pipe3 *phy)
-+{
-+	struct device_node *np = phy->dev->of_node;
-+	struct regmap *regmap;
-+	unsigned int args[2];
-+
-+	regmap = syscon_regmap_lookup_by_phandle_args(np,
-+						      "syscon-acspcie-tx-rx",
-+						      2, args);
-+	if (IS_ERR(regmap)) {
-+		dev_warn(phy->dev, "can't get syscon-acspcie-tx-rx\n");
-+		return -EINVAL;
-+	}
-+
-+	return regmap_update_bits(regmap, args[0], PCIE_TX_RX_CTRL_MASK,
-+				  args[1] << PCIE_TX_RX_CTRL_SHIFT);
-+}
-+
- static int ti_pipe3_probe(struct platform_device *pdev)
- {
- 	struct ti_pipe3 *phy;
-@@ -807,6 +828,12 @@ static int ti_pipe3_probe(struct platform_device *pdev)
- 	phy->dpll_map = data->dpll_map;
- 	phy->settings = data->settings;
- 
-+	if (phy->mode == PIPE3_MODE_PCIE) {
-+		ret = ti_pipe3_acspcie_tx_rx_mode(phy);
-+		if (ret)
-+			dev_warn(dev, "failed to set ACSPCIe TX/RX mode\n");
-+	}
-+
- 	ret = ti_pipe3_get_pll_base(phy);
- 	if (ret)
- 		return ret;
+   syscon-phy-power:
+     $ref: /schemas/types.yaml#/definitions/phandle-array
+     maxItems: 1
 -- 
 2.55.0
 
