@@ -4,76 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B7B2C55838
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Aug 2026 00:43:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F028C55822
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Aug 2026 07:26:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=BZ+BIq91ZpioCn57Buthz81Y2iJeYoFWDlzIpEGCBC8=; b=qaOcj5SHRefe1sxmQIwmnIs9fG
-	sfMZ09YyVPbnFXF8kkOzAt/T089UzzDr4OIOkX+XvJeuOV47EJW78XT8EiIidutbNOE/QZWsfbWFt
-	aVepmrPVhx1X5GDbV7PX9Cl1RPN8ALLWHW4Z7NZlaXVCGNPO8jTyId8NkzlBzt//ZR2F2kc3vr1y3
-	B4irV7fiq9c5XngSEHy7yjWPIzr8nP039Q7F7F/SaSaCkyUD4UMi+TUfKtHe3lPYlrSKKilajlbnL
-	CpIUzC8F5Ae77GrECyI12R/a0zYezPEbfO08+KnaPYVytX+170n+8kLPHP287BTI6THHfG2fEywKU
-	cbu6FSpw==;
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0SjfrQiMsG5e5suYJcMmtc/gTdtSkmD7MRTdvxvMvtY=; b=vw8YBoQlODitx+
+	fldDiRTQFtRPnN371ETLFX8qzsvooVNnKb6YrajOtUUB0Im1Knr7gYpXG82L/mj6Pe4mGutB8GgM6
+	uaVInalRklJzqbq+MFe7Ss4dxi7tK/efSWxpQOKcznmt2mxdvjNyv9OxT02SjIOCQXFMOPndWSh+f
+	vs1tsm9Ro+C6OUnCpcwOO7fpo7PRU/bo1Obzvg/26qyrwBVpDqVny/3IhiUv9EwabgMy2FOlff+0P
+	7aaHINximyARjU/VrxEK9GEJfx9AprOZCX9Iqmf5f8sZ+IHjGarJea78DQTYij4MY6b1mk6OuqyvN
+	fudRFlKECqgOg8rjkMeQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrPjY-00000002zt4-2Fwv;
-	Wed, 05 Aug 2026 00:43:48 +0000
-Received: from sender4-op-o11.zoho.com ([136.143.188.11])
+	id 1wrW1i-00000003P6r-3SbM;
+	Wed, 05 Aug 2026 07:26:58 +0000
+Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrPjW-00000002zrV-1lAb
+	id 1wrW1f-00000003P6B-29dp
 	for linux-phy@lists.infradead.org;
-	Wed, 05 Aug 2026 00:43:47 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1785890613; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=UQHnXoD//Gz2T8zIJBEkeBGLVOAXnVA33BGDBl8dAaTXzPbIAR1o+gQ3aVBLuowKR44uJpmsCMiSQ+ybjdpczh4U+tgnCn4V/mky/LKW/T42FaNmcujJHx9CHZkKoSYA+BaxLJ3j8p5z6pPq5WVqKKRVux9tBPvK7wSM9AWGWFM=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1785890613; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=kMFxhAvlZbwz04r3OCur+VbCpZgLiP+AVky+d0HJcVc=; 
-	b=KQGs0/qIzgwNmpZxuUz3p3GLKZrimd43ui0EtL4+uczdskEeREae1WYvsBDjZtJkvLkIU8NBWarZyenLJBGFvkEmP1tzTdMwlR3rnwB1zkeSpevyfmVEN/ycGUctDm5rtXib5nhdpi934G7C8BGVCP69SIGjkubXjjYez932ovo=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
-	dmarc=pass header.from=<sebastian.reichel@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1785890613;
-	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
-	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
-	bh=kMFxhAvlZbwz04r3OCur+VbCpZgLiP+AVky+d0HJcVc=;
-	b=CUcGSUEzavxdYeZiAV2laP8VnF3HD6RkSbGCtYaArWboaWY8l5QacHdfadXkKEsy
-	k8Y+6XyLw2/z6RkBEGPv1/FFdThumXyYMcidpTIgP7AXy+C3Xr+qMD//sUUFi3vHZhi
-	bzxHIfNHlm4wdVjVfxHsQNPatevPNjfXOv+ATiDQ=
-Received: by mx.zohomail.com with SMTPS id 17858906112431002.6678491356571;
-	Tue, 4 Aug 2026 17:43:31 -0700 (PDT)
-Received: by venus (Postfix, from userid 1000)
-	id 2306118082F; Wed, 05 Aug 2026 02:43:27 +0200 (CEST)
-Date: Wed, 5 Aug 2026 02:43:26 +0200
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Thinh Nguyen <Thinh.Nguyen@synopsys.com>
-Cc: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>, 
-	Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
-	Conor Dooley <conor+dt@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, 
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>, 
-	"linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>
-Subject: Re: [PATCH v5 3/5] phy: snps-eusb2: Set phy type to EUSB2
-Message-ID: <anKG8g7QdAKkYJDH@venus>
-References: <20260723-eusb2-int-handling-v5-v5-0-f32ea6c1a318@oss.qualcomm.com>
- <20260723-eusb2-int-handling-v5-v5-3-f32ea6c1a318@oss.qualcomm.com>
- <amPdeL2GWkNhPoal@venus>
- <49d0e412-4561-4f4f-b00b-b77dc9cf143b@oss.qualcomm.com>
- <anJmrEe9IcV_iaac@vbox>
+	Wed, 05 Aug 2026 07:26:57 +0000
+Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-49553515a8bso8769715e9.1
+        for <linux-phy@lists.infradead.org>; Wed, 05 Aug 2026 00:26:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=sigma-star.at; s=google; t=1785914813; x=1786519613; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=twTeQfheFVdLzfrMuJjB8uMdt+x4381kwqcX7wxLE60=;
+        b=qa3gcsnY5N/b+FgDodw+j5g6dGMJ/JA78JEKviSsapQ7vmY/aa95Z7IJSgFFrEnOgu
+         Hu4gsqgfniTI99uOlK00iLuZXfFGAaTzl3UCXgEb8q/eRp7ufvgE8zm9hYlyPD+bHXXE
+         hpVoKyuz15QpT0EnE3Fvgmr/e95I9TsnRRGb7qdnra/TiKn4Rh2NvMJKrcpFNLflB1Ol
+         /zjaxmT0B8AkctmV1viez6t5ec3N9yds2hjVX+IgW8NCeLifMbVQY4NjAkUTHaxCplrL
+         +MTByf+uTqipizctozryzUhFQGI8fAbDmfafhF8gJ3mImHiJAEwK8YU5+7fiQClu9c/1
+         Cfgw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1785914813; x=1786519613;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=twTeQfheFVdLzfrMuJjB8uMdt+x4381kwqcX7wxLE60=;
+        b=cb7ddEyWRWELmqkFd0qYV3IAsbx/WeVLirnBm7uToaUznK2vlSg22n4JHaz+CyWCop
+         FtdFjPeuo/x+AX4xG/uD4jEkOuvncZmeR49cr6PHmYVCMXHxfDmAwUVsg175whBIwsjs
+         bm8qCMJeR0wDTw3OMU9STxbYJ41Stagw8PkOiG8UwBPXdMdN5cR5Ok61+CuVvSo1jllG
+         aDqXB7W8SPnEW9pVHXm9XTUnVCN9NFBX7lWTvNi5aKFMIPxtiUMMnZ0Eu8nJBO+rNMkn
+         XbA2RWvwVm79Pgejz/FMVBJcHVsMKKjUHliudQVhpknHSC3THYQRuFeecR+98llCZnt7
+         Qy7Q==
+X-Forwarded-Encrypted: i=1; AHgh+RpwmmMZpLUe3ZRXujRHqkxfe15c8iAHSARDSZboAuRiT80aLtj0+OoLLax+ikjaos+EqE9CX+XiURA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwvuLFBTXN94B4lC5FrU9Qi/3SdQNZDtJ0oXHA/SkWAs+xFwcBe
+	P5c2r2Hj8QJAq3x47UF08f4ql5OBANgA4cW4OknC/yEPEKpA4hBf5YZ4HduNhFBWnus=
+X-Gm-Gg: AR+sD1332Mb5qZkQf0Hz2+NGFCXJRFHNq3ypDua1cIQDa3BBvAkg+V5nSmWSjyR0BU6
+	4WLWeNxanaIdcIeSvlRs2k0LKziBATpQu7oOCCytN0vdBcwXRjkz9CCIF4oob7rZMsBf2bfITry
+	D0hBi7AzxPPN6640/dx32sgplajOSAjmtbYugzevPKgkbGbCGoNAk2Cv60fbxypAff88yV3roV4
+	3yN5GrzSn4C1giSXIuUyK14669/rBNO3TL6YubzLTlfdmT1KEoP4vNtzS3U74RPE0xkb+Z3537W
+	59YnFaFj/sStZGFZXVH3u6D+pbU0rYlLF4gqhb5WHk2NDki3jNZ5h7vgZeFOFEL1s6P5/jKHso8
+	6w090qaz0yU0T8712uWs/+uB4UNd1C0bvgDN4uiEsSJKoUkkZPGgjA6Hoftifsd2fVkj1og5xmC
+	IUxs/M/5pETqrPNUi1S/sxpcjcxlP7/PXERr3AlDChsK6Rcvbxzu/sc0fl1kCzmu9dmFj5M99pS
+	F6zKmbs8mk=
+X-Received: by 2002:a05:600c:3589:b0:493:c845:bc20 with SMTP id 5b1f17b1804b1-4994e79ab0emr51987475e9.4.1785914813464;
+        Wed, 05 Aug 2026 00:26:53 -0700 (PDT)
+Received: from [10.115.255.165] ([82.150.214.1])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-49949fcb345sm153939695e9.6.2026.08.05.00.26.52
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 05 Aug 2026 00:26:53 -0700 (PDT)
+Message-ID: <a88bbbb3-2a6b-4b2b-85ec-479d3ba5299a@sigma-star.at>
+Date: Wed, 5 Aug 2026 09:26:52 +0200
 MIME-Version: 1.0
-In-Reply-To: <anJmrEe9IcV_iaac@vbox>
-X-Zoho-Virus-Status: 1
-X-Zoho-AV-Stamp: zmail-av-0.2.10.1.5.2/285.885.97
-X-ZohoMailClient: External
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/2] phy: ti: ti-pipe3: allow configuring ACSPCIe TX/RX
+ mode
+To: sashiko-reviews@lists.linux.dev
+Cc: vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com,
+ robh@kernel.org, conor+dt@kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org
+References: <20260804111849.92046-1-david.oberhollenzer@sigma-star.at>
+ <20260804111849.92046-2-david.oberhollenzer@sigma-star.at>
+ <20260804112702.497CF1F000E9@smtp.kernel.org>
+Content-Language: en-US
+From: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+In-Reply-To: <20260804112702.497CF1F000E9@smtp.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260804_174346_570434_D28ED0D6 
-X-CRM114-Status: GOOD (  26.79  )
+X-CRM114-CacheID: sfid-20260805_002655_993549_E11ACCB1 
+X-CRM114-Status: GOOD (  13.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,115 +102,62 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0285703465423744534=="
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============0285703465423744534==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="jcdpp3jngealual5"
-Content-Disposition: inline
-
-
---jcdpp3jngealual5
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH v5 3/5] phy: snps-eusb2: Set phy type to EUSB2
-MIME-Version: 1.0
-
 Hi,
 
-On Tue, Aug 04, 2026 at 10:28:53PM +0000, Thinh Nguyen wrote:
-> On Sun, Jul 26, 2026, Krishna Kurapati wrote:
-> > On 7/25/2026 3:21 AM, Sebastian Reichel wrote:
-> > > On Thu, Jul 23, 2026 at 04:09:06PM +0530, Krishna Kurapati wrote:
-> > > > USB controllers like DWC3 are agnostic of the kind of phy (USB2/eUS=
-B2)
-> > > > connected to it. Set the phy type to EUSB2 to let the controller kn=
-ow
-> > > > the phy type when queried during its probe.
-> > > >=20
-> > > > Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-> > > > ---
-> > > >   drivers/phy/phy-snps-eusb2.c | 4 ++++
-> > > >   1 file changed, 4 insertions(+)
-> > > >=20
-> > > > diff --git a/drivers/phy/phy-snps-eusb2.c b/drivers/phy/phy-snps-eu=
-sb2.c
-> > > > index f90bf7e95463..e139b17bcda5 100644
-> > > > --- a/drivers/phy/phy-snps-eusb2.c
-> > > > +++ b/drivers/phy/phy-snps-eusb2.c
-> > > > @@ -13,6 +13,8 @@
-> > > >   #include <linux/regulator/consumer.h>
-> > > >   #include <linux/reset.h>
-> > > > +#include <dt-bindings/phy/phy.h>
-> > > > +
-> > > >   #define EXYNOS_USB_PHY_HS_PHY_CTRL_RST	(0x0)
-> > > >   #define USB_PHY_RST_MASK		GENMASK(1, 0)
-> > > >   #define UTMI_PORT_RST_MASK		GENMASK(5, 4)
-> > > > @@ -597,6 +599,8 @@ static int snps_eusb2_hsphy_probe(struct platfo=
-rm_device *pdev)
-> > > >   		return PTR_ERR(generic_phy);
-> > > >   	}
-> > > > +	phy_set_type(generic_phy, PHY_TYPE_EUSB2);
-> > >=20
-> > > Isn't there a potential race condition if it's handled in this way?
-> > >=20
-> > > 1. phy-snps-eusb2 probe: PHY is registered
-> > > 2. dwc3 probes
-> > > 3. phy-snps-eusb2 probe: PHY type is set
-> > >=20
-> >=20
-> > How about we do this get_type call after dwc3_probe call during
-> > dwc3_qcom_probe. That way we can ensure phy is up for sure since core i=
-nit
-> > has to happen as part of dwc3_probe.
->=20
-> There should be no race here. The phy_set_type() is called before the
-> phy is registered. dwc3-qcom would get -EPROBE_DEFER if it probes before
-> the phy is registered.
+On 8/4/26 1:27 PM, sashiko-bot@kernel.org wrote:
+>> +
+>> +	regmap = syscon_regmap_lookup_by_phandle_args(np,
+>> +						      "syscon-acspcie-tx-rx",
+>> +						      2, args);
+>> +	if (IS_ERR(regmap)) {
+>> +		dev_warn(phy->dev, "can't get syscon-acspcie-tx-rx\n");
+>> +		return -EINVAL;
+> 
+> [Severity: High]
+> Does this code inadvertently break probe deferral?
+> 
+> If the syscon provider is not yet ready, syscon_regmap_lookup_by_phandle_args()
+> will return -EPROBE_DEFER.
 
-Indeed, it was me being stupid. I blame the heat :)
+It will not. syscon_regmap_lookup_by_phandle_args() internally wraps
+of_parse_phandle_with_fixed_args(), the implementation of which can
+either return -EINVAL or -ENODEV.
 
-Greetings,
+The only additional error path in syscon_regmap_lookup_by_phandle_args()
+also returns -ENODEV. At worst, this will mask -ENODEV as -EINVAL.
 
--- Sebastian
+> 
+>> +	if (phy->mode == PIPE3_MODE_PCIE) {
+>> +		ret = ti_pipe3_acspcie_tx_rx_mode(phy);
+>> +		if (ret)
+>> +			dev_warn(dev, "failed to set ACSPCIe TX/RX mode\n");
+>> +	}
+>> +
+>>   	ret = ti_pipe3_get_pll_base(phy);
+> > Is it intentional that the error returned from ti_pipe3_acspcie_tx_rx_mode()
+> is ignored?
 
---jcdpp3jngealual5
-Content-Type: application/pgp-signature; name="signature.asc"
+Yes, I tried to following established convention by modeling the implementation
+after other drivers that need to set syscon register bits during probe.
 
------BEGIN PGP SIGNATURE-----
+For instance, the dra7 pcie driver. See: dra7xx_pcie_unaligned_memaccess() or
+dra7xx_pcie_configure_two_lane(). Those follow the same structure,
+returning -EINVAL on lookup failure or the result from regmap_update_bits().
 
-iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmpyhysACgkQ2O7X88g7
-+ppYFg/9FOy4dS3z38lF7xVBpJaJQCBs6P4YrVrHM76r5DgrcoqrPbL2bhsEa2X9
-drQ6MVLNMTbUFblSmGPrhqc+j2pOnaREhsuvY3oV3uly0V3a98FoZGN/1jw/CPb3
-xPeriVcMIsIGYgoUwFYDBBO+Nvg8esnHOl4KtjyqVxaOFdAN8qt0hLfknAtM6iYk
-ibfblNSnTIql1bo7A/W9CrzWHa8jDPR9awAtZRBKij1hOXf6HkVBrhomZLb7IIdY
-T3G14//GbWUWBhJsv0Ehzn3GV2Teh4TOT63xcKuM9D7R3r9pUy5K5+3UO3S/xKc4
-YnCYyWVWYgqCnblXzg8gl6P+V7iM5fNhxu1Ah3JDWX7xl7YjfoqUd8cPx/zGjmNf
-jvS98X/M8a/xaQBFVnkRXqhE5B4/YoVN60CcyVL+1QmI8pOmfKcdY0jjsOPp72e1
-1FeXYzSeYRwP7gGrIoAsk8Cct6C5GJ/1dAkVnX7UV0MpFDSYE4uHuMmPNSpamXWl
-Yi5mSdDnsAo5YtpxSRrz/S4YXda3pqRyue/hrtyHnmMdAdllHGak9TQOw5Bk1iJp
-5Z+ksKnrzG5SUuDyCoGmPLh6bpcrOyQlc1vdBgScfRhjFW/7PxYZXrvdh06xdT0v
-hYvCxGHPoSm2rw7YTlUhYXGX9/q3G5bxNk9U0ar5hDFpQ/7Tp48=
-=pTrD
------END PGP SIGNATURE-----
+Where the setting is optional, a warning is issued on failure, but the probe
+then simply continues.
 
---jcdpp3jngealual5--
+Thanks,
 
+David
 
---===============0285703465423744534==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0285703465423744534==--
-
