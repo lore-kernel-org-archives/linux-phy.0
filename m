@@ -4,93 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F028C55822
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Aug 2026 07:26:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42682C55822
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Aug 2026 07:29:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0SjfrQiMsG5e5suYJcMmtc/gTdtSkmD7MRTdvxvMvtY=; b=vw8YBoQlODitx+
-	fldDiRTQFtRPnN371ETLFX8qzsvooVNnKb6YrajOtUUB0Im1Knr7gYpXG82L/mj6Pe4mGutB8GgM6
-	uaVInalRklJzqbq+MFe7Ss4dxi7tK/efSWxpQOKcznmt2mxdvjNyv9OxT02SjIOCQXFMOPndWSh+f
-	vs1tsm9Ro+C6OUnCpcwOO7fpo7PRU/bo1Obzvg/26qyrwBVpDqVny/3IhiUv9EwabgMy2FOlff+0P
-	7aaHINximyARjU/VrxEK9GEJfx9AprOZCX9Iqmf5f8sZ+IHjGarJea78DQTYij4MY6b1mk6OuqyvN
-	fudRFlKECqgOg8rjkMeQ==;
+	List-Owner; bh=oDVkJVQOLJNBCDaW7AIiwAJeE3fi/m2l2PHysNx5PtY=; b=kV0SJUgAgpFZjX
+	gie3LqW0wgHfh1wmssDeBfepWj2DTGbSeagoTdvBVcCvLvbMMlzMQcAx8Ip8iO7zBNk7bXlYIMmQ0
+	fOkLxVeYyTPozibA+uPZTBS40vluKO7vkuZWJct1Z1R2fSaEjPDZT1NwLTM4tIzhjLXCIKB5mlTKR
+	m3gJ1k4gWJvfoU/QZgtXBMa6bT4qk7psGHeu3z8spa+xKTnzBHg7ENIP8f2gv0MpsrT2heMoIxFxU
+	VansGTU6rUUmThrAQkCZEPjOzlzYaz9K+4ejESjgxIgIGcaNl2kCF0F0wEYWGQowGa8XiZSdbxm52
+	ymmWfMZ/C+JkmXVjHkpA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrW1i-00000003P6r-3SbM;
-	Wed, 05 Aug 2026 07:26:58 +0000
-Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
+	id 1wrW4S-00000003POY-44Ay;
+	Wed, 05 Aug 2026 07:29:48 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrW1f-00000003P6B-29dp
-	for linux-phy@lists.infradead.org;
-	Wed, 05 Aug 2026 07:26:57 +0000
-Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-49553515a8bso8769715e9.1
-        for <linux-phy@lists.infradead.org>; Wed, 05 Aug 2026 00:26:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=sigma-star.at; s=google; t=1785914813; x=1786519613; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=twTeQfheFVdLzfrMuJjB8uMdt+x4381kwqcX7wxLE60=;
-        b=qa3gcsnY5N/b+FgDodw+j5g6dGMJ/JA78JEKviSsapQ7vmY/aa95Z7IJSgFFrEnOgu
-         Hu4gsqgfniTI99uOlK00iLuZXfFGAaTzl3UCXgEb8q/eRp7ufvgE8zm9hYlyPD+bHXXE
-         hpVoKyuz15QpT0EnE3Fvgmr/e95I9TsnRRGb7qdnra/TiKn4Rh2NvMJKrcpFNLflB1Ol
-         /zjaxmT0B8AkctmV1viez6t5ec3N9yds2hjVX+IgW8NCeLifMbVQY4NjAkUTHaxCplrL
-         +MTByf+uTqipizctozryzUhFQGI8fAbDmfafhF8gJ3mImHiJAEwK8YU5+7fiQClu9c/1
-         Cfgw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1785914813; x=1786519613;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=twTeQfheFVdLzfrMuJjB8uMdt+x4381kwqcX7wxLE60=;
-        b=cb7ddEyWRWELmqkFd0qYV3IAsbx/WeVLirnBm7uToaUznK2vlSg22n4JHaz+CyWCop
-         FtdFjPeuo/x+AX4xG/uD4jEkOuvncZmeR49cr6PHmYVCMXHxfDmAwUVsg175whBIwsjs
-         bm8qCMJeR0wDTw3OMU9STxbYJ41Stagw8PkOiG8UwBPXdMdN5cR5Ok61+CuVvSo1jllG
-         aDqXB7W8SPnEW9pVHXm9XTUnVCN9NFBX7lWTvNi5aKFMIPxtiUMMnZ0Eu8nJBO+rNMkn
-         XbA2RWvwVm79Pgejz/FMVBJcHVsMKKjUHliudQVhpknHSC3THYQRuFeecR+98llCZnt7
-         Qy7Q==
-X-Forwarded-Encrypted: i=1; AHgh+RpwmmMZpLUe3ZRXujRHqkxfe15c8iAHSARDSZboAuRiT80aLtj0+OoLLax+ikjaos+EqE9CX+XiURA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwvuLFBTXN94B4lC5FrU9Qi/3SdQNZDtJ0oXHA/SkWAs+xFwcBe
-	P5c2r2Hj8QJAq3x47UF08f4ql5OBANgA4cW4OknC/yEPEKpA4hBf5YZ4HduNhFBWnus=
-X-Gm-Gg: AR+sD1332Mb5qZkQf0Hz2+NGFCXJRFHNq3ypDua1cIQDa3BBvAkg+V5nSmWSjyR0BU6
-	4WLWeNxanaIdcIeSvlRs2k0LKziBATpQu7oOCCytN0vdBcwXRjkz9CCIF4oob7rZMsBf2bfITry
-	D0hBi7AzxPPN6640/dx32sgplajOSAjmtbYugzevPKgkbGbCGoNAk2Cv60fbxypAff88yV3roV4
-	3yN5GrzSn4C1giSXIuUyK14669/rBNO3TL6YubzLTlfdmT1KEoP4vNtzS3U74RPE0xkb+Z3537W
-	59YnFaFj/sStZGFZXVH3u6D+pbU0rYlLF4gqhb5WHk2NDki3jNZ5h7vgZeFOFEL1s6P5/jKHso8
-	6w090qaz0yU0T8712uWs/+uB4UNd1C0bvgDN4uiEsSJKoUkkZPGgjA6Hoftifsd2fVkj1og5xmC
-	IUxs/M/5pETqrPNUi1S/sxpcjcxlP7/PXERr3AlDChsK6Rcvbxzu/sc0fl1kCzmu9dmFj5M99pS
-	F6zKmbs8mk=
-X-Received: by 2002:a05:600c:3589:b0:493:c845:bc20 with SMTP id 5b1f17b1804b1-4994e79ab0emr51987475e9.4.1785914813464;
-        Wed, 05 Aug 2026 00:26:53 -0700 (PDT)
-Received: from [10.115.255.165] ([82.150.214.1])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-49949fcb345sm153939695e9.6.2026.08.05.00.26.52
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 05 Aug 2026 00:26:53 -0700 (PDT)
-Message-ID: <a88bbbb3-2a6b-4b2b-85ec-479d3ba5299a@sigma-star.at>
-Date: Wed, 5 Aug 2026 09:26:52 +0200
+	id 1wrW4R-00000003POD-2fPs;
+	Wed, 05 Aug 2026 07:29:47 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 166BC4175F;
+	Wed,  5 Aug 2026 07:29:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 35E0F1F000E9;
+	Wed,  5 Aug 2026 07:29:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1785914986;
+	bh=kJXq08sJkug6Mcz5qGLPAxyPM7bBnkDiej3zEpwgtzY=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=VfuCMa2ZSKpC7x6V3r4+9Q7OvelZRJaKlPLGdse6v7At7B0BQfHZjm68xaWRUeISH
+	 FYcMOx5aVLYwrJkeRLYCRlRRme3pn+edrgFN8umcaH9bNx4D4Xw/0aKcv3f1LKY3G2
+	 vDU9geH1EyduSUlp4DQj7H5IZTrAXSyXJYM78aeqdHybSlw8hbvabPEfAMksFpqkLx
+	 +Z4kkdPrskRmrW6PmQRNucRRvOrlVdE/uUagFA8wOezUrXNxHKcfwPPkeZ3aM+Y9G9
+	 wyLXAB5hS6odKAaIX/8CoV1KTWblG+sr+a20aMJCT8lIEfvup6NUebxEjg10Cd6bNK
+	 NtlH/WP425dkQ==
+Date: Wed, 5 Aug 2026 09:29:42 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Coia Prant <coiaprant@gmail.com>
+Cc: Andrew Lunn <andrew+netdev@lunn.ch>, 
+	"David S . Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>, 
+	Maxime Chevallier <maxime.chevallier@bootlin.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
+	Alexandre Torgue <alexandre.torgue@foss.st.com>, Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>, 
+	Romain Gantois <romain.gantois@bootlin.com>, Heiner Kallweit <hkallweit1@gmail.com>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Russell King <linux@armlinux.org.uk>, 
+	Shawn Lin <shawn.lin@rock-chips.com>, David Heidelberg <david@ixit.cz>, netdev@vger.kernel.org, 
+	linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-stm32@st-md-mailman.stormreply.com, linux-renesas-soc@vger.kernel.org
+Subject: Re: [PATCH v2 04/10] dt-bindings: net: pcs: add rockchip,rk3568-xpcs
+ binding
+Message-ID: <20260805-stirring-wondrous-mule-faf37d@quoll>
+References: <20260801142244.679437-2-coiaprant@gmail.com>
+ <20260801142244.679437-6-coiaprant@gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] phy: ti: ti-pipe3: allow configuring ACSPCIe TX/RX
- mode
-To: sashiko-reviews@lists.linux.dev
-Cc: vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com,
- robh@kernel.org, conor+dt@kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org
-References: <20260804111849.92046-1-david.oberhollenzer@sigma-star.at>
- <20260804111849.92046-2-david.oberhollenzer@sigma-star.at>
- <20260804112702.497CF1F000E9@smtp.kernel.org>
-Content-Language: en-US
-From: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
-In-Reply-To: <20260804112702.497CF1F000E9@smtp.kernel.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260805_002655_993549_E11ACCB1 
-X-CRM114-Status: GOOD (  13.64  )
+Content-Disposition: inline
+In-Reply-To: <20260801142244.679437-6-coiaprant@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,60 +76,208 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
-
-On 8/4/26 1:27 PM, sashiko-bot@kernel.org wrote:
->> +
->> +	regmap = syscon_regmap_lookup_by_phandle_args(np,
->> +						      "syscon-acspcie-tx-rx",
->> +						      2, args);
->> +	if (IS_ERR(regmap)) {
->> +		dev_warn(phy->dev, "can't get syscon-acspcie-tx-rx\n");
->> +		return -EINVAL;
+On Sat, Aug 01, 2026 at 10:22:28PM +0800, Coia Prant wrote:
+> Add device tree binding documentation for the Synopsys DesignWare
+> XPCS integrated on the Rockchip RK3568 SoC.
 > 
-> [Severity: High]
-> Does this code inadvertently break probe deferral?
+> The XPCS is accessed over the APB3 bus and internally connected to
+> a Naneng Combo SerDes PHY.  It supports 1000BASE-X, SGMII, and
+> QSGMII modes, with four MII ports.
 > 
-> If the syscon provider is not yet ready, syscon_regmap_lookup_by_phandle_args()
-> will return -EPROBE_DEFER.
+> The binding describes:
+> - Required properties: compatible, reg, clocks, clock-names
+> - Optional properties: phys, phy-names, power-domains
+> - pcs-mii sub-nodes for each MII port (reg 0..3)
 
-It will not. syscon_regmap_lookup_by_phandle_args() internally wraps
-of_parse_phandle_with_fixed_args(), the implementation of which can
-either return -EINVAL or -ENODEV.
+Irrelevant paragraph. We can read the diff. Drop.
 
-The only additional error path in syscon_regmap_lookup_by_phandle_args()
-also returns -ENODEV. At worst, this will mask -ENODEV as -EINVAL.
+A nit, subject: drop second/last, redundant "binding". The
+"dt-bindings" prefix is already stating that these are bindings.
+See also:
+https://elixir.bootlin.com/linux/v7.1-rc7/source/Documentation/devicetree/bindings/submitting-patches.rst#L23
 
 > 
->> +	if (phy->mode == PIPE3_MODE_PCIE) {
->> +		ret = ti_pipe3_acspcie_tx_rx_mode(phy);
->> +		if (ret)
->> +			dev_warn(dev, "failed to set ACSPCIe TX/RX mode\n");
->> +	}
->> +
->>   	ret = ti_pipe3_get_pll_base(phy);
-> > Is it intentional that the error returned from ti_pipe3_acspcie_tx_rx_mode()
-> is ignored?
+> Signed-off-by: Coia Prant <coiaprant@gmail.com>
+> ---
+>  .../bindings/net/pcs/rockchip-dwxpcs.yaml     | 127 ++++++++++++++++++
+>  1 file changed, 127 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/net/pcs/rockchip-dwxpcs.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/net/pcs/rockchip-dwxpcs.yaml b/Documentation/devicetree/bindings/net/pcs/rockchip-dwxpcs.yaml
+> new file mode 100644
+> index 0000000000000..3e3f3a388d822
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/net/pcs/rockchip-dwxpcs.yaml
+> @@ -0,0 +1,127 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/net/pcs/rockchip-dwxpcs.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Rockchip RK3568 Synopsys DesignWare Ethernet PCS
+> +
+> +maintainers:
+> +  - Coia Prant <coiaprant@gmail.com>
+> +
+> +description: |
+> +  Rockchip RK3568 SoC integrates a Synopsys DesignWare Ethernet Physical
+> +  Coding Sublayer (XPCS).
+> +  The PCS provides an interface between the Media Access Control (MAC)
+> +  and the Physical Medium Attachment (PMA) sublayer through a Media
+> +  Independent Interface (GMII).
+> +
+> +  The XPCS is accessed over the APB3 bus and internally connected to a
+> +  Naneng Combo SerDes PHY.
+> +  It supports 1000BASE-X, SGMII and QSGMII modes.
+> +
+> +  The block contains four MII ports (pcs-mii@0..3) that can be
+> +  individually enabled and routed to one of the Ethernet GMAC controllers
+> +  via the pcs-handle property in the MAC device tree node.
+> +
+> +properties:
+> +  compatible:
+> +    const: rockchip,rk3568-xpcs
+> +
+> +  '#address-cells':
+> +    const: 1
+> +
+> +  '#size-cells':
+> +    const: 0
 
-Yes, I tried to following established convention by modeling the implementation
-after other drivers that need to set syscon register bits during probe.
+reg is always the second property.
 
-For instance, the dra7 pcie driver. See: dra7xx_pcie_unaligned_memaccess() or
-dra7xx_pcie_configure_two_lane(). Those follow the same structure,
-returning -EINVAL on lookup failure or the result from regmap_update_bits().
+Also, use consistent style of quotes.
 
-Where the setting is optional, a warning is issued on failure, but the probe
-then simply continues.
+> +
+> +  reg:
+> +    description: |
+> +      Base address and size of the XPCS register space mapped over the
+> +      APB3 bus.
 
-Thanks,
+Drop description, redundant.
 
-David
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    description: |
+> +      Clock sources for the XPCS:
+> +      - csr: APB3 bus interface clock (clk_csr_i), required for register
+> +        access.
+> +      - eee: EEE clock (clk_eee_i), required for Energy Efficient
+> +        Ethernet (EEE) operation.
+> +    minItems: 2
+> +    maxItems: 2
 
+No, instead list items with description.
+
+> +
+> +  clock-names:
+> +    items:
+> +      - const: csr
+> +      - const: eee
+> +
+> +  phys:
+> +    description: |
+
+Do not need '|' unless you need to preserve formatting.
+
+> +      The phandle of SerDes PHY (Naneng Combo PHY) that provides
+> +      the serial lanes for 1000BASE-X / SGMII / QSGMII.
+> +      The SerDes must be powered on and initialised before any XPCS
+> +      register access.
+> +    maxItems: 1
+> +
+> +  phy-names:
+> +    const: serdes
+> +
+> +  power-domains:
+> +    description: |
+> +      Power domain for the XPCS.
+
+Drop sentence and |
+
+> +      On RK3568 this is typically the PD_PIPE power domain, which also
+> +      supplies the SerDes PHY.
+> +    maxItems: 1
+> +
+> +patternProperties:
+> +  "^pcs-mii@[0-3]$":
+
+Why `git grep pcs-mii@` gives me no results? Are you doing this
+similarly to existing devices or is this quite different device than
+every other hardware?
+
+> +    type: object
+> +    description: |
+
+Same here
+
+> +      One of the four MII ports of the XPCS.
+> +      The port number is specified by the reg property (0..3).
+
+Drop sentence, redundant. Schema tells that.
+
+> +      The port is linked to an Ethernet MAC controller via the
+> +      pcs-handle property in the MAC's device tree node.
+> +
+> +    properties:
+> +      reg:
+> +        minimum: 0
+> +        maximum: 3
+> +        description: |
+
+As well
+
+> +          MII port number of PCS.
+> +
+> +      status: true
+
+Nope, do you see anywhere code like this?
+
+> +
+> +    required:
+> +      - reg
+> +
+> +    additionalProperties: false
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - clock-names
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/rk3568-cru.h>
+> +    #include <dt-bindings/power/rk3568-power.h>
+> +    #include <dt-bindings/phy/phy.h>
+> +
+> +    pcs@fda00000 {
+> +      compatible = "rockchip,rk3568-xpcs";
+> +      #address-cells = <1>;
+> +      #size-cells = <0>;
+> +      reg = <0xfda00000 0x200000>;
+> +      clocks = <&cru PCLK_XPCS>, <&cru CLK_XPCS_EEE>;
+> +      clock-names = "csr", "eee";
+> +      phys = <&combphy2 PHY_TYPE_SGMII>;
+> +      phy-names = "serdes";
+> +      power-domains = <&power RK3568_PD_PIPE>;
+> +
+> +      pcs-mii@0 {
+> +        reg = <0>;
+> +      };
+> +    };
+> -- 
+> 2.47.3
+> 
 
 -- 
 linux-phy mailing list
