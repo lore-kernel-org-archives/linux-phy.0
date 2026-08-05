@@ -4,59 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A99C7C55182
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Aug 2026 07:39:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4653AC55ABA
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Aug 2026 08:42:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dfybPnKtEjzBbG78TzXByJUxuPeAdbVGlOoko4L5kj8=; b=zNfpLZmZ+iI1n/
-	hrqP9JXMj9gKKk2Pi/8JCDclD3MIJ7M1iD/pdkfNMb+1Y2pWqMct3bwdmhy1oTz0dwkbkDGfanZGJ
-	SKp7bREAy2A0elhBCifDTHV8D0ibINOGMQCP0wyd7GeUa28R94wW9ORem+d6md+AH5DU2r49Lo7yo
-	csK0ZFY/GAZBe+jhPodJlS3wTWwtX/aLZVtEPacrTL27Bxa7qyjN0yalaWZV6dNeHxetzMOaOk2/f
-	TUVOB/1CgIH0uEIsHEaOOLOcChIn7VwsbCLB2M0Iqj87Gckwfl6fFI8GGF5G5UpxFX0SPtdBFoNWt
-	vB/6100EKi4+2AchhCzw==;
+	List-Owner; bh=hDqo0YT2ZS35WnIFqUuCgam4mve6guTWBjPdZEntdic=; b=gAlVS/6Wtid5as
+	lCgd8Yyw2/c24rj/k55GrlSsRIuZvLjvvy+BUez2+gaw4suD4n4BHVAK+tGnQ4rOMC8jZjIkUbfO2
+	T/TAGAmVpPOheOZcn3wNnBEUI7TVJ47BFvtu9RMNw8jWEBKQ8kAG8OYCYOQpXLghZv+NSJOMmZMzR
+	WAU6neEUvwS7G7HxrSQ8bUkOLMLXKhR7ADsnIO4icC7tc5AfcbHAqs2ERbWgR1WWdkpuMV5j6kYsI
+	cyAIs5pxmu/NwLbQ/r5afGlC+V1UdVfdNpfqIMk6sgTvPwSXfZwjM8lBfWrWABHjGVQAfkQFdmEbF
+	jJuE+323LjzaP2ZLG9Og==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrWDZ-00000003QOe-0XZi;
-	Wed, 05 Aug 2026 07:39:13 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wrXD7-00000003Xxx-0yyE;
+	Wed, 05 Aug 2026 08:42:49 +0000
+Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrWDX-00000003QOV-27jN
+	id 1wrXD3-00000003XxN-32Ma
 	for linux-phy@lists.infradead.org;
-	Wed, 05 Aug 2026 07:39:11 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id AA960600AE;
-	Wed,  5 Aug 2026 07:39:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3347C1F000E9;
-	Wed,  5 Aug 2026 07:39:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1785915549;
-	bh=vn3RpXvpxXIGbd3ddD9ECwKW6PZImCdLNKEfBy8sGa4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=dQ5n6mhfggqpd3YWcbezcHtrc4sFfIhkvGGQsK4o1Hhrctwh0fu1BgfRwaD1cdl7d
-	 m+HX4DLe/ueBkTGN9nubfUfVw5HOjGKlHQRvp0WDniXF1BYFyWROskAS81wlu+1J8b
-	 RJc245haS6pO7ruURKnFkhj6aZST6EDvMg6bjtKG2ezr60r4VYu1btlxmNsRM2MIxS
-	 CpuqDV1Hfr/5E1zfQCEph4LrjLxQRz5qGxPG6KG0FtRyw10ZifV0FhQpIP7c1FPthX
-	 jhrx1vujVe/vcf2nNGx0P77TaHlUAQlrlWcB3laHoQtQ1UDSVAkKehnF9UNsFTT4Wd
-	 t4plxCy00BvRw==
-Date: Wed, 5 Aug 2026 09:39:04 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, robh@kernel.org, 
-	krzk+dt@kernel.org, conor+dt@kernel.org, johan@kernel.org, rogerq@ti.com, 
-	Julian.FRIEDRICH@frequentis.com, upstream+omap@sigma-star.at
+	Wed, 05 Aug 2026 08:42:47 +0000
+Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-49556f97a9dso4446525e9.1
+        for <linux-phy@lists.infradead.org>; Wed, 05 Aug 2026 01:42:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=sigma-star.at; s=google; t=1785919364; x=1786524164; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=EQIOeZPTsJ+5KJmdvOKBti/mfnMsa2qcUPhVItieKt0=;
+        b=RQySPudBWxr5Vbbd6YHuOVNx1AnrBq8BE+rA3LB8/dEdQ0gyiPrqThfptP9LpWNhzN
+         qtf4atXOgYzVkx+2JOOBAQgbvLu8+CfEVsM6eAeMC0k6VMLHCNmuiufvZwHG9ox/3l50
+         viBfa93Hidvq9gJ1/Cs4J9U8Ced754FznJCU8Kzw3nWXC3bfdtRKdepAe68JVOI5xqxc
+         Nl+ZtG3jlTc+y/MqKbZhJzS0a53mdb3G2SHSSS5rBOi1b8m/0/d6//6/op8dLljvB5Fj
+         9PscDiIQVgZ1ec51gOl3vGiGoA3KgkzQlQ0rivV3KuIrxTTVvyLScM4PJB/4F74FtjQx
+         GUfw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1785919364; x=1786524164;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=EQIOeZPTsJ+5KJmdvOKBti/mfnMsa2qcUPhVItieKt0=;
+        b=JNknVFJ2vb2iRId67aP2bY8RtGzW37ASTgFitYjkeIJYCdY3DQMvcu0+8omgHy/MPQ
+         wb9OT54zx76qE12VOLk5yFxyxWMm7FNgCwTPdU2ZDZ9Sz831jBnIA8rIHALGh71BGTR3
+         zVSz3zDVUQPVtSVzI0PdVzj9ZWAPUJeuu94GTY4UTYWi5XbGGU7iOw125D1fYPU0pd/Z
+         MonGPYC8iGQaFb9lTV5TjoE/2KGddIgz+0gmJ+ek82hxZQHAjl+a0ArSSj6+1NaYS+4r
+         SVsJKaym4joh5jER3ynM2T7298kONM9IaJUxJ0bv+wnSJYrrVtSD17qHqbVhpEfogmRD
+         pb8Q==
+X-Gm-Message-State: AOJu0YxDx3vhZui1ZJZlT3QQv4bu9d5ThJHJVcWR8/klRVB9/f4TMDBn
+	xK42MdQjGMLTL8z49wdfLnBV8oyulTW+e7vWTUMahA6xtnYHbQ9by96Tg0zTPmQijPI=
+X-Gm-Gg: AR+sD11uK0rN6fprQKy9X+/SCKsLPu4SpLEloK6TbUoeSMljYeYtmsVLewgDG5qlP8H
+	T6XYA88FFKtXfAFRjlOWOUHqt8BLQToURgpzVwCXOBV3rw9fb6ufJ4M+U9oEKR+T8N+530Rw3Cu
+	zuDLfYhyY4CufIxqmtL/IqFU5+2UDbmPPVpodSgqNjILG+TmZYtmxTRIkKf8iEuwo7B1necdWOr
+	klA8YyUJPfPdiU02K671VU4zKrlIcEehdZdG7Zm1lKMIAXHdCxrcKZgFYj7xSItUiJKuxxQ6c0U
+	NJb0WVJWe5MLIPYDEvmKywH9l7xzVkU6T1lzRdoecg43RiP/gz9pXtsYgfensisPNNmPSrXhEh6
+	z8DMGnBc/yxqOYnC4gQj/KyJ1+Np6VDx+lOwZs/AicAGl+CrE+X27vlFPMJcpCqRcNt8dgZLhNE
+	l3qQC4TjfNAMRICkIkcNvfUwQdrUz58IMzyW5JcDET9fC61i0UVLy/JdEz2viyfm4BrEFUyGknF
+	4yAjUaOMug=
+X-Received: by 2002:a05:600c:4454:b0:497:fecd:5b00 with SMTP id 5b1f17b1804b1-4994e7c0377mr56478105e9.9.1785919363850;
+        Wed, 05 Aug 2026 01:42:43 -0700 (PDT)
+Received: from [10.115.255.165] ([82.150.214.1])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4994dfe64e0sm70877995e9.6.2026.08.05.01.42.42
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 05 Aug 2026 01:42:43 -0700 (PDT)
+Message-ID: <5f10e213-2ab3-4309-a01e-5d0f098a5b35@sigma-star.at>
+Date: Wed, 5 Aug 2026 10:42:42 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH 2/2] dt-bindings: phy: ti,phy-usb3: document aspcie
  reference clock setting
-Message-ID: <20260805-uptight-onyx-unicorn-cfd0ce@quoll>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org,
+ robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, johan@kernel.org,
+ rogerq@ti.com, Julian.FRIEDRICH@frequentis.com, upstream+omap@sigma-star.at
 References: <20260804111849.92046-1-david.oberhollenzer@sigma-star.at>
  <20260804111849.92046-3-david.oberhollenzer@sigma-star.at>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260804111849.92046-3-david.oberhollenzer@sigma-star.at>
+ <20260805-uptight-onyx-unicorn-cfd0ce@quoll>
+Content-Language: en-US
+From: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+In-Reply-To: <20260805-uptight-onyx-unicorn-cfd0ce@quoll>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260805_014246_102572_F669F8A3 
+X-CRM114-Status: GOOD (  11.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,50 +102,49 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Aug 04, 2026 at 01:18:49PM +0200, David Oberhollenzer wrote:
-> Add syscon-acspcie-tx-rx property to the PHY bindings.
+Hi,
 
-Why? Actually better to explain WHY in the property description.
-
+On 8/5/26 9:39 AM, Krzysztof Kozlowski wrote:
 > 
-> Signed-off-by: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
-> ---
->  Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml | 9 +++++++++
->  1 file changed, 9 insertions(+)
+> Not a valid naming, missing vendor prefix and syscon looks like
+> Linuxism, since you called it "system control module".
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml b/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml
-> index 84f538aa587c..4fb017df2898 100644
-> --- a/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml
-> +++ b/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml
-> @@ -52,6 +52,15 @@ properties:
->        enum: [wkupclk, sysclk, refclk, dpll_ref,
->               dpll_ref_m2, phy-div, div-clk]
->  
-> +  syscon-acspcie-tx-rx:
 
-Please organize the patch documenting the compatible (DT bindings)
-before the patch using that compatible.
-See also: https://elixir.bootlin.com/linux/v6.14-rc6/source/Documentation/devicetree/bindings/submitting-patches.rst#L46
+I agree that this is a very vendor specific kluge and I suspected
+it might need a vendor prefix. However, I ultimately tried to stick
+to existing conventions.
 
-Not a valid naming, missing vendor prefix and syscon looks like
-Linuxism, since you called it "system control module".
+There are 3 more syscon properties defined for this device:
+  - syscon-phy-power
+  - syscon-pllreset
+  - syscon-pcs
 
-> +    $ref: /schemas/types.yaml#/definitions/phandle-array
-> +    maxItems: 1
-> +    items:
-> +      items:
+None of them have a vendor prefix, all of them use the
+description "system control module".
 
-Missing -
+I take it, the existing properties already break best practices
+that were established later? Or is there another reason they
+lack a vendor prefix?
 
-Also, update the example.
+>> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+>> +    maxItems: 1
+>> +    items:
+>> +      items:
+> 
+> Missing -
+> 
+Likewise, I simply copied from the syscon blocks and made some
+minor changes. Hence also the identical description. So this is
+broken for the existing properties as well?
 
-Best regards,
-Krzysztof
+Thanks,
+
+David
 
 
 -- 
