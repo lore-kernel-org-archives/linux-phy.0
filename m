@@ -4,65 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF1CEC56205
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Aug 2026 16:26:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF783C56208
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Aug 2026 16:26:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wRD38o28NnNPAWYNyLPCcDNVqyduTTf59H5iVmKkdFU=; b=MalD+zC62HT99e
-	f5exJ80y7LoZdHk1k0XV/gNI+nDtwY2KDaIuPr9c5IGDDrOAp9vSU9QujPBuRxkHHN7UK7XcKWnHz
-	/mjY1xzW2fSVQNl9YIByZpRXBfl1Je96BV7ew0rGXQAfZBlceIwp3a3nl63CXWnQtNfmhb3fLnM9d
-	sOBrN+TDn5zs44PzVmAkLq0NR7RfxD84Ec8jUQxR9fIkx6ysDRpsOcyc5Z0sFfn4jk5LUFaNaFf0+
-	HBBYSdKqsSdoanU8Zk+jMWnNxpSuQhV3WfoYT77q9W2AQaB+XKJSuNWCSYA2A4Fy5XHheeNV0Omgv
-	tMnID7YwnUbucpz/bEwQ==;
+	List-Owner; bh=9dm+pcNDbOLRNBLeka/nBgdOXj6W1pOtuXZ0FOHqltg=; b=uz6TIIlUOp+df6
+	igE9gY1WbrPZDfcolhFjbg3I83D9eouvjDeLMbIKtIpn1oNgsq54vVjq1GnZ4crl8DUY/43+AOlHz
+	JBxQbXYaswwgCS5pmqidDmvG+E7aSUOrR6iOGarV0kdCUibkUs0rGHZ+2QNMwPVTXnDG3g5lmaCCD
+	6r+7iQHk/wQKFNG9+MlzqGDv3mbsEemYL0+FrCXJk7V9dJj/bo0OkiQukLVNt5/FetZsVpG1rjZp8
+	A514jFPue7UXOWynjdr/dIXrsfHmw27z8FnAPfnzhc4q85VWIN6KNZmHtMT+vRCfGhIdBFr4IxlkN
+	JRsC1czLlC2vDGO4HlMQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1ws0v9-00000006Ckg-2uWw;
-	Thu, 06 Aug 2026 16:26:15 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1ws0vD-00000006ClQ-33eZ;
+	Thu, 06 Aug 2026 16:26:19 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1ws0v8-00000006Cka-2WwD
+	id 1ws0vC-00000006Cl5-1vg5
 	for linux-phy@lists.infradead.org;
-	Thu, 06 Aug 2026 16:26:14 +0000
+	Thu, 06 Aug 2026 16:26:18 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 07BC540F05;
+	by tor.source.kernel.org (Postfix) with ESMTP id E16EF60AB1;
+	Thu,  6 Aug 2026 16:26:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 82D751F00A3A;
 	Thu,  6 Aug 2026 16:26:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 34D0C1F000E9;
-	Thu,  6 Aug 2026 16:26:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786033573;
-	bh=FKkPZaVYoltg/L8op3kBjttnUeSwREqYX0CaIydI8ow=;
+	s=k20260515; t=1786033577;
+	bh=J7FU8gW2VUhAfd7BYGs2hAuYby6wONMtKH3laYXT+I8=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=Yo1YvEtlsSycfv4PyQF/qZI7okNOuWjDJ4W4tB3NbkJALUqICb3yHIaoxuxpo3ZEU
-	 DiPf8Kk9ydFEK5BRVNVo3c4hKYCKIcuZUr4jnZQTp7mBo0NxCSnl++Tfnl0cnxeLfI
-	 /CHdZ4c5LGB/UNEvZHM5ALOHiqzLdY/W7JrWJpVL2jc6QMYRSbHHvj3jrPD8LSzuaE
-	 a54ehei8mxy/pLchdt5QJbqQQW22uWWpo8JdR56ldN5yWolP5hRvtNlSQqtsdBGp4k
-	 Qzqu8TbWgdoZxZYbX41RBlxg/QP3knQhX/45Mw3UpNG3HiCGVN5InNKk6l/f6oPiSi
-	 sHmciL2c0GLwA==
+	b=I2YXq+KsUedHGxOYgPSJ3xf9cpbYMZaMo1D8hCe4nhKzpv+LG4lBfJNkL7RpDYn7R
+	 rIcXmbnV7SVUCFuyXU4Iq4L0E+ID59GNKgj5fU/Kp7Us3PLk/djskQLxa4kYveyi7X
+	 8ym28if7WAjeswo8sbTobs0EZC6inBE3w1iqHhlleSWibeAdh1BrP0UP7VWNkS8BaN
+	 D/VMGKaHUl7ggoaWDsBNKT+IEStQZkbjEKXO0dFBaFja8PZFbQEcO4vDwmKdW+Oh7X
+	 w7YbAZemHT5o109PqL2uS5wCytfs/C2LVf5iByIr2poT9dzBpqkVsi20qUJW4PKhh3
+	 Hg5kvM1GH6QUA==
 From: Vinod Koul <vkoul@kernel.org>
-To: Philipp Zabel <p.zabel@pengutronix.de>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Geert Uytterhoeven <geert+renesas@glider.be>, 
- Michael Turquette <mturquette@baylibre.com>, 
- Stephen Boyd <sboyd@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>, 
- Bartosz Golaszewski <brgl@kernel.org>, Mark Brown <broonie@kernel.org>, 
- Magnus Damm <magnus.damm@gmail.com>, Biju <biju.das.au@gmail.com>
-Cc: Biju Das <biju.das.jz@bp.renesas.com>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org, 
- linux-renesas-soc@vger.kernel.org, 
- Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
-In-Reply-To: <20260806102236.149159-1-biju.das.jz@bp.renesas.com>
-References: <20260806102236.149159-1-biju.das.jz@bp.renesas.com>
-Subject: Re: (subset) [PATCH v6 00/10] Add RZ/G3L USB2.0 host support
-Message-Id: <178603356779.674490.693458204654739135.b4-ty@kernel.org>
-Date: Thu, 06 Aug 2026 21:56:07 +0530
+To: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Esteban Urrutia <esteuwu@proton.me>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ phone-devel@vger.kernel.org, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+In-Reply-To: <20260804-sm8475-bup-usbss-v3-0-9a5b9ebf62de@proton.me>
+References: <20260804-sm8475-bup-usbss-v3-0-9a5b9ebf62de@proton.me>
+Subject: Re: [PATCH RESEND v3 0/2] Initial QMP USB PHY support for SM8475
+Message-Id: <178603357411.674490.11520339407340817802.b4-ty@kernel.org>
+Date: Thu, 06 Aug 2026 21:56:14 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
@@ -82,29 +74,22 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 06 Aug 2026 11:22:19 +0100, Biju wrote:
-> This patch series aims to add USB2.0 host support for the RZ/G3L SMARC
-> EVK. The RZ/G3L USB PHY block is similar to RZ/G3S, but each port
-> has an OTG controller, unlike RZ/G3S, which has an OTG controller only on
-> port 1. This series migrates regulator driver to use id-table so there
-> is hard dependency between reset driver and regulator driver.
+On Tue, 04 Aug 2026 14:06:18 -0400, Esteban Urrutia wrote:
+> Based on the following patch:
+> [1] https://lore.kernel.org/all/20260711-sm8450-qol-qmp-v2-2-d14353bd6ff4@proton.me/
 > 
-> Merge strategy:
->   An Ack/Rb tag from Regulator Maintainer for patch#1 and #5.
->   Patch #1,#2,#3,#4,#5 - Reset subsystem
->   Patch #5,#6,#7 - PHY subsystem
->   Patch #8,#9 - Renesas SoC
+> This series adds support for the QMP USB PHY found in the SM8475 SoC.
+> The initialization sequence varies noticeably when compared to the one
+> used in the SM8450 SoC, hence the need to add support for this PHY.
 > 
 > [...]
 
 Applied, thanks!
 
-[06/10] dt-bindings: phy: renesas,usb2-phy: Document RZ/G3L PHY bindings
-        commit: e6c3be558da06062a6a6fcbb8d33986832db3d60
-[07/10] phy: renesas: phy-rcar-gen3-usb2: Add RZ/G3L support
-        commit: 881f6b6f4ccdbdd6b856a574445694bb1f56d79e
-[08/10] phy: renesas: phy-rcar-gen3-usb2: Fix devm action registration for disabled VBUS regulator
-        commit: 49c9b71b45081e5e5eeb507a2d6edb80d332dc59
+[1/2] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy: Add SM8475 QMP PHY
+      commit: f8bb67fa3651d494427194c1e283886ad4cdbde0
+[2/2] phy: qcom: qmp-combo: Add SM8475 support
+      commit: 9583243a524c0ea4dd08541900ab2c7da95ce13f
 
 Best regards,
 -- 
