@@ -4,53 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 67991C56208
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Aug 2026 16:56:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1588BC5AC7C
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Aug 2026 17:57:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SyrrJ4NztCxvBcMKCG7EP59SJAlWoXeS8ASqaKAce0E=; b=2/9txqi8JgueTL
-	jagAZ1jn+/HiGnvHOh/t2P0JxbwsygwAT649JbtvNkqW+p/K9qvSJIXYGFEy30aFVdbEBt/yMGGof
-	LV2Gv2ppJQHez2c03i8decflO9b/O8Y8m8cB+BVTujaFwyvLX01oYtKKpjW1XzBC6rhAhpm97UPUK
-	vassi24QDTRVWDRVU8i7WJJD4v38Q5eMeqhp251hhaTnCv4Xcz/hBuwHalHUT2fu+wWOiyQBsHzxb
-	ooHsTCb1ZJ2hswAA1qy5eujmGxdpbQgs5HtIwDUxmECvnvGXChNworFp+KthKJzXL4hfUXZcI6aE7
-	yP04regrgxaURFDtMHRA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=j5Aw6VUoddecBO0Za1ZL9im3KOduJ65dVhveCSKiFDc=; b=agg3XTsjZRCsDzR191iS07R1It
+	sgHDWTZJSdOl3qrRG0Nk49mf7OaTRrbsvu0Lf4KXRUXwnHHFE4SCmO8aYIyYg9JdNQBxiQ7PTiXq+
+	h/u35syFxIuH+B/EPS+FmAffeR5Dm1FhPnvr3egv5Zd2ejCv3xG/g79q/CJKoswF8p7r/HfInViaT
+	56VbicKSG5sc6yZak3MKPSCLZkORkrs+Kw1JG0rpAwcm0Wr+UomX29vc5ob5MTGg5KQJYOJ+6wGEd
+	o61YR5blYPQspWE4oZRUPLGjMQdkRrTRVuSUa66Mkmzf8G7L/Yp9kIr1nylKeCX11wdmMpCo4tmHH
+	I4/L+KrQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1ws1OZ-00000006H4c-44fu;
-	Thu, 06 Aug 2026 16:56:39 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1ws2Lm-00000006PyT-1WxS;
+	Thu, 06 Aug 2026 17:57:50 +0000
+Received: from sender4-op-o11.zoho.com ([136.143.188.11])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1ws1OY-00000006H4M-3R7i
-	for linux-phy@lists.infradead.org;
-	Thu, 06 Aug 2026 16:56:38 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 2FA554358E;
-	Thu,  6 Aug 2026 16:56:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8E41A1F000E9;
-	Thu,  6 Aug 2026 16:56:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786035398;
-	bh=jQalDzxS4F0x5EYDYWJ38lpm4ErORvj/HvawwC8RNU8=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=CJHvE8UeK6g0Q/nkJVrZ9dMbRr+2R73DUYQ/u1NZ7K4hkbHErHBlCaBVTVe36Bn/K
-	 GqG+nGhxejIUCO8fN/5zNCwxBNB5U3jPogsqFntzDEw535k+k/mC751zHZDcrWdVVe
-	 jeFbrgorWskrjs/qXGO0+AEKEGRNoXOKOacNZ5y9yjKI+8mBkkoAuD916+5TPet16q
-	 JrmkMvKNxxg1i0UBSbOfa53IBoC7CbbJRM+YV6Efq8HWux+I78aeuforPUwlnH5z8s
-	 43XsUO2PMgGHf/Yi5RiHZiHcxWm7bcbZVrJwLe2xdAADUd7EwUo2B3k/MKuQAwhmMP
-	 dEbUogmm/m9fQ==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v6 2/2] phy: qcom-qmp-ufs: Add UFS PHY support on Hawi
-To: palash.kambar@oss.qualcomm.com
-Cc: vkoul@kernel.org, linux-scsi@vger.kernel.org, neil.armstrong@linaro.org, robh@kernel.org, devicetree@vger.kernel.org, conor+dt@kernel.org, olteanv@gmail.com, linux-phy@lists.infradead.org
-In-Reply-To: <20260806161301.1010876-3-palash.kambar@oss.qualcomm.com>
-References: <20260806161301.1010876-1-palash.kambar@oss.qualcomm.com>
- <20260806161301.1010876-3-palash.kambar@oss.qualcomm.com>
-Date: Thu, 06 Aug 2026 16:56:37 +0000
-Message-Id: <20260806165637.8E41A1F000E9@smtp.kernel.org>
+	id 1ws2Lj-00000006Pxr-2JmO;
+	Thu, 06 Aug 2026 17:57:48 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1786039023; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=ZFXJbF+uCUZNw+eEaDW5/JhYp93Db5Hqqko0UmTN24ysW6SuIQSB2aLdBUhpgCgz7qHVmKwUru53W6h67x2JkC7lxCbfI20cXJBpNaBout4CgQ2tNm/0ZkwrdzxvoUb9mHtrlIeC+ErP3lJc5U3VTvz0pjXis/NDzgUlGLjMl7U=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1786039023; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=7t2ppmEV8KZPQctXq3NUCSS5AXEtR6dC/YbrnTJetEs=; 
+	b=NjPBIc8XI2v5ookPpLYAmEprwtm2lmLdWHJ32BMu8hEwM4lddPgXhmnGWsc4kiw3WC0bpEOKC198UY0zBXo4GdKOqr/gphV5L9TEEW9R7Zvl6VysD1IKdqkA0/xNhcFoE6Uv9ypOvpOc6/YkpQGGpFCa8Xm7odQLpkuJ42bVNgI=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
+	dmarc=pass header.from=<sebastian.reichel@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1786039023;
+	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
+	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
+	bh=7t2ppmEV8KZPQctXq3NUCSS5AXEtR6dC/YbrnTJetEs=;
+	b=A88Zm4h1XJd75PKpCw9Qd2ouL8JgScvKbLul8lq5fGefFN3GsNc6BoxuM+i6F2LG
+	B91VeeXuXo8UKZpI+4YlP43oNGHJKYw7wrpdTd6F9vTk7oiYPCbeyh7eMwd/KrMi3X/
+	zhBg1wdeFxC1yohQ4BnYDH6mPQBSssxidTYOwGMg=
+Received: by mx.zohomail.com with SMTPS id 178603901993027.6707984562496;
+	Thu, 6 Aug 2026 10:56:59 -0700 (PDT)
+Received: by venus (Postfix, from userid 1000)
+	id D00661808BD; Thu, 06 Aug 2026 19:56:53 +0200 (CEST)
+Date: Thu, 6 Aug 2026 19:56:53 +0200
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+To: Chaoyi Chen <kernel@airkyi.com>
+Cc: Andrzej Hajda <andrzej.hajda@intel.com>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>, 
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, Jonas Karlman <jonas@kwiboo.se>, 
+	Jernej Skrabec <jernej.skrabec@gmail.com>, Luca Ceresoli <luca.ceresoli@bootlin.com>, 
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
+	Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, 
+	Simona Vetter <simona@ffwll.ch>, Sandy Huang <hjc@rock-chips.com>, 
+	Heiko =?utf-8?Q?St=C3=BCbner?= <heiko@sntech.de>, Andy Yan <andy.yan@rock-chips.com>, 
+	Vinod Koul <vkoul@kernel.org>, Chaoyi Chen <chaoyi.chen@rock-chips.com>, 
+	Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, Heikki Krogerus <heikki.krogerus@linux.intel.com>, 
+	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH v6 1/7] drm/bridge: aux-hpd-bridge: Add
+ drm_dev_has_dp_hpd_bridge()
+Message-ID: <anTHNpUryNm72aGM@venus>
+References: <20260804070730.68-1-kernel@airkyi.com>
+ <20260804070730.68-2-kernel@airkyi.com>
+MIME-Version: 1.0
+In-Reply-To: <20260804070730.68-2-kernel@airkyi.com>
+X-Zoho-Virus-Status: 1
+X-Zoho-AV-Stamp: zmail-av-0.2.10.1.5.2/286.26.37
+X-ZohoMailClient: External
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260806_105747_622896_8DFD1D31 
+X-CRM114-Status: GOOD (  26.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,68 +88,198 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============5998716626371946564=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIE1pc3NpbmcgY29uZmln
-dXJhdGlvbiBvdmVybGF5IGZvciBVRlMgR2VhciA0IGluIEhhd2kgVUZTIFBIWQotLQoKLS0tIFBh
-dGNoIFsyXTogW1BBVENIIHY2IDIvMl0gcGh5OiBxY29tLXFtcC11ZnM6IEFkZCBVRlMgUEhZIHN1
-cHBvcnQgb24gSGF3aSAtLS0KY29tbWl0IDY5ZDJhYjI5YjRmYmQzYTI3ZDg2MWM3NjE5YzNhNTQ2
-ODk4NzU4ZDYKQXV0aG9yOiBQYWxhc2ggS2FtYmFyIDxwYWxhc2gua2FtYmFyQG9zcy5xdWFsY29t
-bS5jb20+CgpwaHk6IHFjb20tcW1wLXVmczogQWRkIFVGUyBQSFkgc3VwcG9ydCBvbiBIYXdpCgpU
-aGlzIHBhdGNoIGFkZHMgdGhlIGluaXQgc2VxdWVuY2UgdGFibGVzIGFuZCBjb25maWd1cmF0aW9u
-IGZvciB0aGUgVUZTIFFNUApQSFkgZm91bmQgaW4gdGhlIEhhd2kgU29DLgoKPiBkaWZmIC0tZ2l0
-IGEvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXVmcy5jIGIvZHJpdmVycy9waHkv
-cXVhbGNvbW0vcGh5LXFjb20tcW1wLXVmcy5jCj4gaW5kZXggMGY0YWQyNGFhNDA1OC4uZDRhY2Ey
-MmMxODFlNCAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAt
-dWZzLmMKPiArKysgYi9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtdWZzLmMKClsg
-Li4uIF0KCj4gQEAgLTE4NDUsNiArMTg2OCwxMTkgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBxbXBf
-cGh5X2NmZyBzbTg3NTBfdWZzcGh5X2NmZyA9IHsKPiAgCj4gIH07Cj4gIAo+ICtzdGF0aWMgY29u
-c3Qgc3RydWN0IHFtcF9waHlfaW5pdF90YmwgaGF3aV91ZnNwaHlfc2VyZGVzW10gPSB7CgpbIC4u
-LiBdCgo+ICtzdGF0aWMgY29uc3Qgc3RydWN0IHFtcF9waHlfaW5pdF90YmwgaGF3aV91ZnNwaHlf
-ZzVfcGNzW10gPSB7Cj4gKwlRTVBfUEhZX0lOSVRfQ0ZHKFFQSFlfVjdfUENTX1VGU19QTExfQ05U
-TCwgMHgzYiksCj4gKwlRTVBfUEhZX0lOSVRfQ0ZHKFFQSFlfVjdfUENTX1VGU19UWF9IU0dFQVJf
-Q0FQQUJJTElUWSwgMHgwNSksCj4gKwlRTVBfUEhZX0lOSVRfQ0ZHKFFQSFlfVjdfUENTX1VGU19S
-WF9IU0dFQVJfQ0FQQUJJTElUWSwgMHgwNSksCj4gK307Cj4gKwo+ICtzdGF0aWMgY29uc3Qgc3Ry
-dWN0IHFtcF9waHlfY2ZnIGhhd2lfdWZzcGh5X2NmZyA9IHsKPiArCS5sYW5lcwkJCT0gMiwKPiAr
-Cj4gKwkub2Zmc2V0cwkJPSAmcW1wX3Vmc19vZmZzZXRzX3Y3LAo+ICsJLm1heF9zdXBwb3J0ZWRf
-Z2Vhcgk9IFVGU19IU19HNSwKPiArCj4gKwkudGJscyA9IHsKPiArCQkuc2VyZGVzCQk9IGhhd2lf
-dWZzcGh5X3NlcmRlcywKPiArCQkuc2VyZGVzX251bQk9IEFSUkFZX1NJWkUoaGF3aV91ZnNwaHlf
-c2VyZGVzKSwKPiArCQkudHgJCT0gaGF3aV91ZnNwaHlfdHgsCj4gKwkJLnR4X251bQkJPSBBUlJB
-WV9TSVpFKGhhd2lfdWZzcGh5X3R4KSwKPiArCQkucngJCT0gaGF3aV91ZnNwaHlfcngsCj4gKwkJ
-LnJ4X251bQkJPSBBUlJBWV9TSVpFKGhhd2lfdWZzcGh5X3J4KSwKPiArCQkucGNzCQk9IGhhd2lf
-dWZzcGh5X3BjcywKPiArCQkucGNzX251bQk9IEFSUkFZX1NJWkUoaGF3aV91ZnNwaHlfcGNzKSwK
-PiArCX0sCj4gKwo+ICsJLnRibHNfaHNfb3ZlcmxheVswXSA9IHsKPiArCQkucGNzCQk9IGhhd2lf
-dWZzcGh5X2c1X3BjcywKPiArCQkucGNzX251bQk9IEFSUkFZX1NJWkUoaGF3aV91ZnNwaHlfZzVf
-cGNzKSwKPiArCQkubWF4X2dlYXIJPSBVRlNfSFNfRzUsCj4gKwl9LAoKW1NldmVyaXR5OiBIaWdo
-XQpEb2VzIHRoaXMgY29uZmlndXJhdGlvbiBuZWVkIGEgZmFsbGJhY2sgb3ZlcmxheSBmb3IgR2Vh
-ciA0PwoKTG9va2luZyBhdCBxbXBfdWZzX2dldF9nZWFyX292ZXJsYXkoKSwgaWYgdGhlIFVGUyBj
-b250cm9sbGVyIG5lZ290aWF0ZXMgR2VhciA0CihvciBsb3dlcikgd2l0aCB0aGUgY29ubmVjdGVk
-IFVGUyBkZXZpY2UsIGl0IHdpbGwgcmV0dXJuIC1FSU5WQUwgYmVjYXVzZSB0aGUKb25seSBvdmVy
-bGF5IHByb3ZpZGVkIGhlcmUgaGFzIG1heF9nZWFyID0gVUZTX0hTX0c1OgoKCWZvciAoaWR4ID0g
-TlVNX09WRVJMQVkgLSAxOyBpZHggPj0gMDsgaWR4LS0pIHsKCQltYXhfZ2VhciA9IGNmZy0+dGJs
-c19oc19vdmVybGF5W2lkeF0ubWF4X2dlYXI7CgoJCS8qIFNraXAgaWYgdGhlIHRhYmxlIGlzIG5v
-dCBhdmFpbGFibGUgKi8KCQlpZiAobWF4X2dlYXIgPT0gMCkKCQkJY29udGludWU7CgoJCS8qIERp
-cmVjdCBtYXRjaGluZywgYmFpbCAqLwoJCWlmIChxbXAtPnN1Ym1vZGUgPT0gbWF4X2dlYXIpCgkJ
-CXJldHVybiBpZHg7CgoJCS8qIElmIG5vIGRpcmVjdCBtYXRjaGluZywgdGhlIGxvd2VzdCBnZWFy
-IGlzIHRoZSBiZXN0IG1hdGNoaW5nICovCgkJaWYgKG1heF9nZWFyIDwgZmxvb3JfbWF4X2dlYXIp
-IHsKCQkJcmV0ID0gaWR4OwoJCQlmbG9vcl9tYXhfZ2VhciA9IG1heF9nZWFyOwoJCX0KCX0KCgly
-ZXR1cm4gcmV0OwoKV2l0aG91dCBhbiBvdmVybGF5IHdoZXJlIG1heF9nZWFyIDwgNSwgaXQgZmFp
-bHMgdG8gZmluZCBhIGZhbGxiYWNrLiBJZiB0aGUKb3ZlcmxheSBmYWlscyB0byBhcHBseSwgY3Jp
-dGljYWwgaGFyZHdhcmUgY29uZmlndXJhdGlvbnMgbGlrZQpRUEhZX1Y3X1BDU19VRlNfUExMX0NO
-VEwgYW5kIHRoZSBIU0dFQVIgY2FwYWJpbGl0aWVzIGFyZSBvbWl0dGVkIHNpbmNlIHRoZXkKYXJl
-IG9ubHkgcHJlc2VudCBpbiB0aGUgRzUgb3ZlcmxheSBhbmQgbm90IGluIHRoZSBiYXNlIGhhd2lf
-dWZzcGh5X3BjcyB0YWJsZS4KCldpbGwgdGhpcyBjYXVzZSBVRlMgbGluayBmYWlsdXJlIGFuZCBy
-ZW5kZXIgdGhlIHN0b3JhZ2UgdW51c2FibGUgZm9yIGFueSBnZWFyCmJlbG93IEc1PwoKPiArCj4g
-KwkudnJlZ19saXN0CQk9IGhhd2lfdWZzcGh5X3ZyZWdfbCwKPiArCS5udW1fdnJlZ3MJCT0gQVJS
-QVlfU0laRShoYXdpX3Vmc3BoeV92cmVnX2wpLAo+ICsJLnJlZ3MJCQk9IHVmc3BoeV92N19yZWdz
-X2xheW91dCwKPiArfTsKCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28u
-ZGV2LyMvcGF0Y2hzZXQvMjAyNjA4MDYxNjEzMDEuMTAxMDg3Ni0xLXBhbGFzaC5rYW1iYXJAb3Nz
-LnF1YWxjb21tLmNvbT9wYXJ0PTIKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBo
-eUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LXBoeQo=
+
+--===============5998716626371946564==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="lmyx267gariqvzno"
+Content-Disposition: inline
+
+
+--lmyx267gariqvzno
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v6 1/7] drm/bridge: aux-hpd-bridge: Add
+ drm_dev_has_dp_hpd_bridge()
+MIME-Version: 1.0
+
+Hi,
+
+On Tue, Aug 04, 2026 at 03:07:24PM +0800, Chaoyi Chen wrote:
+> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+>=20
+> Add a new API to check whether a DisplayPort HPD bridge has already
+> been registered. This helps avoid duplicate registration of the same
+> HPD bridge, although the current framework allows doing so.
+>=20
+> Suggested-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+> ---
+
+Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+Tested-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+
+I still see the bridge registered twice for fusb302. Apparently the
+the new notifier is faster than the explicit registration in the
+driver. The code added here works though; reloading
+aux_hpd_typec_dp_bridge does not register more and more bridges :)
+
+Greetings,
+
+-- Sebastian
+
+>  drivers/gpu/drm/bridge/aux-hpd-bridge.c | 42 ++++++++++++++++++++++++-
+>  include/drm/bridge/aux-bridge.h         |  6 ++++
+>  2 files changed, 47 insertions(+), 1 deletion(-)
+>=20
+> diff --git a/drivers/gpu/drm/bridge/aux-hpd-bridge.c b/drivers/gpu/drm/br=
+idge/aux-hpd-bridge.c
+> index f02a38a2638a..a56c88eba005 100644
+> --- a/drivers/gpu/drm/bridge/aux-hpd-bridge.c
+> +++ b/drivers/gpu/drm/bridge/aux-hpd-bridge.c
+> @@ -12,6 +12,8 @@
+>  #include <drm/drm_bridge.h>
+>  #include <drm/bridge/aux-bridge.h>
+> =20
+> +#define DRM_AUX_HPD_BRIDGE_NAME	"dp_hpd_bridge"
+> +
+>  static DEFINE_IDA(drm_aux_hpd_bridge_ida);
+> =20
+>  struct drm_aux_hpd_bridge_data {
+> @@ -36,6 +38,44 @@ static void drm_aux_hpd_bridge_free_adev(void *_adev)
+>  	auxiliary_device_uninit(_adev);
+>  }
+> =20
+> +static int hpd_bridge_match(struct device *dev, const void *data)
+> +{
+> +	const struct device_node *np =3D data;
+> +	struct auxiliary_device *adev;
+> +
+> +	if (!dev_is_auxiliary(dev))
+> +		return 0;
+> +
+> +	adev =3D to_auxiliary_dev(dev);
+> +	if (strcmp(adev->name, DRM_AUX_HPD_BRIDGE_NAME))
+> +		return 0;
+> +
+> +	return adev->dev.platform_data =3D=3D np;
+> +}
+> +
+> +/**
+> + * drm_dev_has_dp_hpd_bridge - check whether a HPD DisplayPort bridge is=
+ registered
+> + * @parent: device instance providing this bridge
+> + * @np: device node pointer corresponding to this bridge instance
+> + *
+> + * Walk the children of @parent and check whether a HPD DisplayPort brid=
+ge for
+> + * the given @np has already been registered via devm_drm_dp_hpd_bridge_=
+add().
+> + *
+> + * Return: true if a HPD bridge for @parent / @np already exists, false =
+otherwise
+> + */
+> +bool drm_dev_has_dp_hpd_bridge(struct device *parent, struct device_node=
+ *np)
+> +{
+> +	struct device *child;
+> +
+> +	child =3D device_find_child(parent, np, hpd_bridge_match);
+> +	if (child) {
+> +		put_device(child);
+> +		return true;
+> +	}
+> +	return false;
+> +}
+> +EXPORT_SYMBOL_GPL(drm_dev_has_dp_hpd_bridge);
+> +
+>  /**
+>   * devm_drm_dp_hpd_bridge_alloc - allocate a HPD DisplayPort bridge
+>   * @parent: device instance providing this bridge
+> @@ -63,7 +103,7 @@ struct auxiliary_device *devm_drm_dp_hpd_bridge_alloc(=
+struct device *parent, str
+>  	}
+> =20
+>  	adev->id =3D ret;
+> -	adev->name =3D "dp_hpd_bridge";
+> +	adev->name =3D DRM_AUX_HPD_BRIDGE_NAME;
+>  	adev->dev.parent =3D parent;
+>  	adev->dev.release =3D drm_aux_hpd_bridge_release;
+>  	adev->dev.platform_data =3D of_node_get(np);
+> diff --git a/include/drm/bridge/aux-bridge.h b/include/drm/bridge/aux-bri=
+dge.h
+> index c2f5a855512f..cca07a8e2d45 100644
+> --- a/include/drm/bridge/aux-bridge.h
+> +++ b/include/drm/bridge/aux-bridge.h
+> @@ -25,6 +25,7 @@ struct auxiliary_device *devm_drm_dp_hpd_bridge_alloc(s=
+truct device *parent, str
+>  int devm_drm_dp_hpd_bridge_add(struct device *dev, struct auxiliary_devi=
+ce *adev);
+>  struct device *drm_dp_hpd_bridge_register(struct device *parent,
+>  					  struct device_node *np);
+> +bool drm_dev_has_dp_hpd_bridge(struct device *parent, struct device_node=
+ *np);
+>  void drm_aux_hpd_bridge_notify(struct device *dev, enum drm_connector_st=
+atus status);
+>  #else
+>  static inline struct auxiliary_device *devm_drm_dp_hpd_bridge_alloc(stru=
+ct device *parent,
+> @@ -44,6 +45,11 @@ static inline struct device *drm_dp_hpd_bridge_registe=
+r(struct device *parent,
+>  	return NULL;
+>  }
+> =20
+> +static inline bool drm_dev_has_dp_hpd_bridge(struct device *parent, stru=
+ct device_node *np)
+> +{
+> +	return false;
+> +}
+> +
+>  static inline void drm_aux_hpd_bridge_notify(struct device *dev, enum dr=
+m_connector_status status)
+>  {
+>  }
+> --=20
+> 2.53.0
+>=20
+
+--lmyx267gariqvzno
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmp0yuIACgkQ2O7X88g7
++po3bQ//XxQC2aSQqCssQjBwMzPwUFwLFuI1cswQEnui/0Ma+SOGA796JIx+7t4U
+aaoov8lNcVLA8v6jA+VHswHsj+iy31uUHdXOJDl06b3CS+wNvxLbelMMQUQ+liFr
+XxJ/pgkwSeDY455N996scnB1WG+tYQJSquY95aTlHFitgcp9sLUQ8gQjSNits0nq
+qteTIoAV/wzBIAn3gH1XY/aEGSQHg/rXMi+/E8NNgZxuKcMABIbkipi7CG0PGL6F
+1GR7OzGOJBAaYBCOTzf+IXXSOs9URotGfXp60kU4ClIGR9WcrdeM+vBVVQteTQeB
+d5Cxu7dPTMIeGtpB37xLwlVHb187pE7szjjBi1SWpf5IXv4S3feA5uZnpTwagsR8
+rXsD/jEDWZ/3oi5CtDdtAduZEGIxBNAKY2yzC9xze+vM0j8i6RoOHwBTa4vwL7A2
+ZwbLdiz+S29nlbImHxcN7riTJOcU31V6ccXtdYVn2REqNzi4wn7kzxP2zMG/pfDr
+QpvXOj9UtsFZyo/uCukbBFu6jP6pu08u0qdTa6AUAXYsSgkfaV9jVyDtPboX6fp3
+1kxaxqm5IcwdOa6Nz9brODhsigM+qqMrd3WGGurmW4sN8ADfz5Vsdv4dMXOlUGO4
+kT0gbbmbtdS1GZ4S6BDC7sNiokDFT0JCJwwL0dIwfiJRr9y1aUU=
+=GGPA
+-----END PGP SIGNATURE-----
+
+--lmyx267gariqvzno--
+
+
+--===============5998716626371946564==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============5998716626371946564==--
+
