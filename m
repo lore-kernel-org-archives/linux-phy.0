@@ -4,65 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5CF5C55ABF
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Aug 2026 10:14:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 228E3C55ABF
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Aug 2026 10:18:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1Y3o6M5JlMJhL/VosdQJoa53iARDOpyIfPhlLjiXOo0=; b=uqKPu15Hw3GFP3
-	CZ9pcaAsdN67R8v40IiD0gCyEWFkr0sX0loT4RsgDPiI7z19TmgoKfBtI3qz14aVdC9kxq/IWikal
-	3UZ3DrDg8K50Klv7g5ul5s81bxs7Soher5KkNqqG8doBP6NCozCz4g4R5FkZnbIZ+QXaMTFHtwaJg
-	/DNI22NaxccpXgJBEmKl5L6dIijxztrFuQcXcTQf8F/GjMRUwSGoKy0Nuvp94ysATgozvEVovECJ9
-	RT8dm3ypG5Qvy6oa+EOqJLGknWNaagzuCqtSkaZ6KmHiuMQKUhHaF2Ig2zk6P3MN7PD4c/4BgE2iT
-	kTEQ67qRBMsp9ctBZ5SA==;
+	List-Owner; bh=uZqssORLz8G4cbEaEFaxMuhaS/iuJDRI+J/fCJMX0O4=; b=s7wYwYnH7b3wUI
+	xJed5kNjsZiaJu6kUVdtibma2aGsPDScl3aeixzensjxmhB2pL24OQbF47rQpliP0CN9eBw9TvFKT
+	4OvD7S4jCMBhJyUpyiDmlr+r5KAIRsKJL3yuWSUOMj615pwiumQR0Sdwv8U9QKhbOMj7gLMgrufYU
+	D9q4QYhNqByGIldMO4TTOmB1J03JevRCJ2rn9dR+TUWNsmBKVO14fHpHeXv5WT8D9W2ZVgfuIBfx+
+	tyqsQqY/vO/MOwDcvQfKtfP5m9L+D+mg54thnfapY7CMvsIXFXUbHfjFijT9BoR1/usYuPoSx95xF
+	CZg+O/P7He+8wsksyZZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrv7U-00000005WyX-1jkM;
-	Thu, 06 Aug 2026 10:14:36 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wrvBc-00000005XAJ-3Y5g;
+	Thu, 06 Aug 2026 10:18:52 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrv7T-00000005WyR-49So
+	id 1wrvBc-00000005XA9-0o9h
 	for linux-phy@lists.infradead.org;
-	Thu, 06 Aug 2026 10:14:36 +0000
+	Thu, 06 Aug 2026 10:18:52 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 4AF02406D9;
-	Thu,  6 Aug 2026 10:14:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7914F1F000E9;
-	Thu,  6 Aug 2026 10:14:34 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 2343F60A64;
+	Thu,  6 Aug 2026 10:18:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1664D1F000E9;
+	Thu,  6 Aug 2026 10:18:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786011275;
-	bh=61XgkMM07gBRPH/k9a3fWkX3L6dqNGB3mydbDQoPPwE=;
+	s=k20260515; t=1786011530;
+	bh=d5+BfjrEj586Zl8B6gP6KpwVxu5qt+ur0FYZiUxu65s=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=khBNYcVYFFAvHmUi1pMMmsz5k/31nzGhSQUv5gKP0AKWpKPJSa+wBeHLfjcbccA2L
-	 ld2p2Qu3GyDKukusEUgt5DA88Zb6EmUreI5Fz09YiNTh/PLdKz2MqbXsQSmkNWrGXh
-	 7kh3iPIAvgGb7ap+yTRHqHHW2avnJVNqa7SQgxcIDnQdbApjJfhKKBrED1dmlNXPdA
-	 ycaSdqOF6hJjiCp/nkQDDCUCPfnOPqw/Nu6pnly5568YTlqn/5r2k/jEo4/2DE0QSn
-	 beV5VRWWmqtYl49AsB/JC7Fhiqm98gxtoaLGDNmOewqLBPjwE9UREHHP3zltB2G0ts
-	 W+S4oI2+YD4Bg==
-Date: Thu, 6 Aug 2026 15:44:31 +0530
+	b=kLbfudQFL2Ln9puUnNS+roz2YKwwkLruSoTTgdy0Yu9iCLCllMUywowomDwyvFcG4
+	 c4SI3N7kE+QJ87zFvAG9JdRYvEAJXuCRJ0u2B1NsqMcByMzt9f0QzhQLlkbqPwwK6K
+	 3kT9nCGNV9mPddv/LrWkVoyhIBuc+TRcxehLEUP/ktzI+4Uegb84EEtAVs+HCtZgZT
+	 Wtrs0ljMsmn4ryyKL3kqraWJ9XEkxMUS5QzV643QpKkYxV3ieSZ3sGe7Mt7PanQ+1+
+	 m9cVbMAtlI9IaFNd4lAsFmJDOJvSVzVGD3jdwYHCZ4X1RJ6DXmUWOfStVAviaT7TDX
+	 0HTGGTBbRNkDQ==
+Date: Thu, 6 Aug 2026 15:48:47 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
-Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Wesley Cheng <quic_wcheng@quicinc.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-usb@vger.kernel.org,
-	Ronak Raheja <ronak.raheja@oss.qualcomm.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-Subject: Re: [PATCH v4 3/4] dt-bindings: usb: qcom,snps-dwc3: Add Hawi
- compatible
-Message-ID: <anReh4gzTjkD4u7c@vaman>
-References: <20260803091441.3040830-1-mukesh.ojha@oss.qualcomm.com>
- <20260803091441.3040830-4-mukesh.ojha@oss.qualcomm.com>
+To: palash.kambar@oss.qualcomm.com
+Cc: neil.armstrong@linaro.org, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, mani@kernel.org, alim.akhtar@samsung.com,
+	bvanassche@acm.org, andersson@kernel.org,
+	dmitry.baryshkov@oss.qualcomm.com, abel.vesa@oss.qualcomm.com,
+	luca.weiss@fairphone.com, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org,
+	nitin.rawat@oss.qualcomm.com
+Subject: Re: [PATCH v5 1/2] phy: qcom-qmp-ufs: Add UFS PHY support on Hawi
+Message-ID: <anRfh9Pk-IYdVq27@vaman>
+References: <20260803130852.1432714-1-palash.kambar@oss.qualcomm.com>
+ <20260803130852.1432714-2-palash.kambar@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260803091441.3040830-4-mukesh.ojha@oss.qualcomm.com>
+In-Reply-To: <20260803130852.1432714-2-palash.kambar@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,12 +76,332 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 03-08-26, 14:44, Mukesh Ojha wrote:
-> From: Ronak Raheja <ronak.raheja@oss.qualcomm.com>
+On 03-08-26, 18:38, palash.kambar@oss.qualcomm.com wrote:
+> From: Palash Kambar <palash.kambar@oss.qualcomm.com>
 > 
-> Document the Synopsys DWC3 USB controller found on the Hawi platform.
+> Add the init sequence tables and config for the UFS QMP phy found in
+> the Hawi SoC.
+> 
+> Reviewed-by: Manivannan Sadhasivam <mani@kernel.org>
+> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 
-This one fails on phy/next :-(
+You guys should have caught the mismatch ...
+
+> Signed-off-by: Palash Kambar <palash.kambar@oss.qualcomm.com>
+> ---
+>  .../phy/qualcomm/phy-qcom-qmp-pcs-ufs-v7.h    |  24 +++
+>  .../qualcomm/phy-qcom-qmp-qserdes-com-v8.h    |  13 +-
+>  .../phy-qcom-qmp-qserdes-txrx-ufs-v8.h        |  37 +++++
+>  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c       | 139 ++++++++++++++++++
+>  4 files changed, 212 insertions(+), 1 deletion(-)
+>  create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v7.h
+>  create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v8.h
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v7.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v7.h
+> new file mode 100644
+> index 000000000000..e80d3dd6a190
+> --- /dev/null
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-ufs-v7.h
+> @@ -0,0 +1,24 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+> + * Copyright (c) 2026, The Linux Foundation. All rights reserved.
+> + */
+> +
+> +#ifndef QCOM_PHY_QMP_PCS_UFS_V7_H_
+> +#define QCOM_PHY_QMP_PCS_UFS_V7_H_
+> +
+> +/* Only for QMP V7 PHY - UFS PCS registers */
+> +#define QPHY_V7_PCS_UFS_PHY_START			0x000
+> +#define QPHY_V7_PCS_UFS_POWER_DOWN_CONTROL		0x004
+> +#define QPHY_V7_PCS_UFS_SW_RESET			0x008
+> +#define QPHY_V7_PCS_UFS_PCS_CTRL1			0x01C
+
+small case please :-(
+
+> +#define QPHY_V7_PCS_UFS_PLL_CNTL			0x028
+> +#define QPHY_V7_PCS_UFS_TX_LARGE_AMP_DRV_LVL		0x02C
+
+here
+
+> +#define QPHY_V7_PCS_UFS_TX_HSGEAR_CAPABILITY		0x060
+> +#define QPHY_V7_PCS_UFS_RX_HSGEAR_CAPABILITY		0x094
+> +#define QPHY_V7_PCS_UFS_LINECFG_DISABLE			0x140
+> +#define QPHY_V7_PCS_UFS_RX_SIGDET_CTRL2			0x150
+> +#define QPHY_V7_PCS_UFS_READY_STATUS			0x16c
+
+and this is small!!
+
+> +#define QPHY_V7_PCS_UFS_TX_MID_TERM_CTRL1		0x1b8
+> +#define QPHY_V7_PCS_UFS_MULTI_LANE_CTRL1		0x1c0
+> +
+> +#endif
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v8.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v8.h
+> index d8ac4c4a2c31..d416113bcb3c 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v8.h
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v8.h
+> @@ -1,6 +1,6 @@
+>  /* SPDX-License-Identifier: GPL-2.0 */
+>  /*
+> - * Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
+> + * Copyright (c) 2026, The Linux Foundation. All rights reserved.
+>   */
+>  
+>  #ifndef QCOM_PHY_QMP_QSERDES_COM_V8_H_
+> @@ -71,5 +71,16 @@
+>  #define QSERDES_V8_COM_ADDITIONAL_MISC			0x1b4
+>  #define QSERDES_V8_COM_CMN_STATUS			0x2c8
+>  #define QSERDES_V8_COM_C_READY_STATUS			0x2f0
+> +#define QSERDES_V8_COM_PLL_IVCO_MODE1				0xf8
+> +#define QSERDES_V8_COM_CMN_IETRIM				0xfc
+> +#define QSERDES_V8_COM_CMN_IPTRIM				0x100
+> +#define QSERDES_V8_COM_VCO_TUNE_CTRL				0x13c
+> +#define QSERDES_V8_COM_ADAPTIVE_ANALOG_CONFIG			0x268
+> +#define QSERDES_V8_COM_CP_CTRL_ADAPTIVE_MODE0			0x26c
+> +#define QSERDES_V8_COM_PLL_RCCTRL_ADAPTIVE_MODE0		0x270
+> +#define QSERDES_V8_COM_PLL_CCTRL_ADAPTIVE_MODE0			0x274
+> +#define QSERDES_V8_COM_CP_CTRL_ADAPTIVE_MODE1			0x278
+> +#define QSERDES_V8_COM_PLL_RCCTRL_ADAPTIVE_MODE1		0x27c
+> +#define QSERDES_V8_COM_PLL_CCTRL_ADAPTIVE_MODE1			0x280
+>  
+>  #endif
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v8.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v8.h
+> new file mode 100644
+> index 000000000000..5f923c3e64ec
+> --- /dev/null
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v8.h
+> @@ -0,0 +1,37 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+> + * Copyright (c) 2026, The Linux Foundation. All rights reserved.
+> + */
+> +
+> +#ifndef QCOM_PHY_QMP_QSERDES_TXRX_UFS_V8_H_
+> +#define QCOM_PHY_QMP_QSERDES_TXRX_UFS_V8_H_
+> +
+> +#define QSERDES_UFS_V8_TX_RES_CODE_LANE_OFFSET_TX		(0x34)
+> +#define QSERDES_UFS_V8_TX_RES_CODE_LANE_OFFSET_RX		(0x38)
+> +#define QSERDES_UFS_V8_TX_LANE_MODE_1				(0x80)
+> +#define QSERDES_UFS_V8_RX_UCDR_FO_GAIN_RATE2			(0x1BC)
+> +#define QSERDES_UFS_V8_RX_UCDR_FO_GAIN_RATE4			(0x1C4)
+> +#define QSERDES_UFS_V8_RX_UCDR_SO_GAIN_RATE4			(0x1DC)
+> +#define QSERDES_UFS_V8_RX_EQ_OFFSET_ADAPTOR_CNTRL1		(0x2C8)
+> +#define QSERDES_UFS_V8_RX_UCDR_PI_CONTROLS			(0x1E4)
+> +#define QSERDES_UFS_V8_RX_OFFSET_ADAPTOR_CNTRL3			(0x2D0)
+
+:-( and so on!
+
+
+> +#define QSERDES_UFS_V8_RX_UCDR_FASTLOCK_COUNT_HIGH_RATE4	(0x120)
+> +#define QSERDES_UFS_V8_RX_UCDR_FASTLOCK_FO_GAIN_RATE4		(0xD4)
+> +#define QSERDES_UFS_V8_RX_UCDR_FASTLOCK_SO_GAIN_RATE4		(0xEC)
+> +#define QSERDES_UFS_V8_RX_VGA_CAL_MAN_VAL			(0x288)
+> +#define QSERDES_UFS_V8_RX_EQU_ADAPTOR_CNTRL4			(0x2B0)
+> +#define QSERDES_UFS_V8_RX_MODE_RATE_0_1_B4			(0x324)
+> +#define QSERDES_UFS_V8_RX_MODE_RATE4_SA_B7			(0x3B4)
+> +#define QSERDES_UFS_V8_RX_MODE_RATE4_SA_B9			(0x3BC)
+> +#define QSERDES_UFS_V8_RX_MODE_RATE4_SB_B7			(0x3E0)
+> +#define QSERDES_UFS_V8_RX_MODE_RATE4_SB_B9			(0x3E8)
+> +#define QSERDES_UFS_V8_RX_MODE_RATE5_SA_B7			(0x40C)
+> +#define QSERDES_UFS_V8_RX_MODE_RATE5_SA_B9			(0x414)
+> +#define QSERDES_UFS_V8_RX_MODE_RATE5_SB_B7			(0x438)
+> +#define QSERDES_UFS_V8_RX_MODE_RATE5_SB_B9			(0x440)
+> +#define QSERDES_UFS_V8_RX_UCDR_SO_SATURATION			(0xF4)
+> +#define QSERDES_UFS_V8_RX_TERM_BW_CTRL0				(0x1AC)
+> +#define QSERDES_UFS_V8_RX_DLL0_FTUNE_CTRL			(0x498)
+> +#define QSERDES_UFS_V8_RX_SIGDET_CAL_TRIM			(0x4d0)
+> +
+> +#endif
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> index 0f4ad24aa405..d4aca22c181e 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> @@ -29,9 +29,11 @@
+>  #include "phy-qcom-qmp-pcs-ufs-v4.h"
+>  #include "phy-qcom-qmp-pcs-ufs-v5.h"
+>  #include "phy-qcom-qmp-pcs-ufs-v6.h"
+> +#include "phy-qcom-qmp-pcs-ufs-v7.h"
+>  
+>  #include "phy-qcom-qmp-qserdes-txrx-ufs-v6.h"
+>  #include "phy-qcom-qmp-qserdes-txrx-ufs-v7.h"
+> +#include "phy-qcom-qmp-qserdes-txrx-ufs-v8.h"
+>  
+>  /* QPHY_PCS_READY_STATUS bit */
+>  #define PCS_READY				BIT(0)
+> @@ -84,6 +86,13 @@ static const unsigned int ufsphy_v6_regs_layout[QPHY_LAYOUT_SIZE] = {
+>  	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V6_PCS_UFS_POWER_DOWN_CONTROL,
+>  };
+>  
+> +static const unsigned int ufsphy_v7_regs_layout[QPHY_LAYOUT_SIZE] = {
+> +	[QPHY_START_CTRL]		= QPHY_V7_PCS_UFS_PHY_START,
+> +	[QPHY_PCS_READY_STATUS]		= QPHY_V7_PCS_UFS_READY_STATUS,
+> +	[QPHY_SW_RESET]			= QPHY_V7_PCS_UFS_SW_RESET,
+> +	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V7_PCS_UFS_POWER_DOWN_CONTROL,
+> +};
+> +
+>  static const struct qmp_phy_init_tbl milos_ufsphy_serdes[] = {
+>  	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYSCLK_EN_SEL, 0xd9),
+>  	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CMN_CONFIG_1, 0x16),
+> @@ -1307,6 +1316,11 @@ static const struct regulator_bulk_data sm8750_ufsphy_vreg_l[] = {
+>  	{ .supply = "vdda-pll", .init_load_uA = 18300 },
+>  };
+>  
+> +static const struct regulator_bulk_data hawi_ufsphy_vreg_l[] = {
+> +	{ .supply = "vdda-phy", .init_load_uA = 324000 },
+> +	{ .supply = "vdda-pll", .init_load_uA = 27000 },
+> +};
+> +
+>  static const struct qmp_ufs_offsets qmp_ufs_offsets = {
+>  	.serdes		= 0,
+>  	.pcs		= 0xc00,
+> @@ -1325,6 +1339,15 @@ static const struct qmp_ufs_offsets qmp_ufs_offsets_v6 = {
+>  	.rx2		= 0x1a00,
+>  };
+>  
+> +static const struct qmp_ufs_offsets qmp_ufs_offsets_v7 = {
+> +	.serdes		= 0,
+> +	.pcs		= 0x0400,
+> +	.tx		= 0x2000,
+> +	.rx		= 0x2000,
+> +	.tx2		= 0x3000,
+> +	.rx2		= 0x3000,
+> +};
+> +
+>  static const struct qmp_phy_cfg milos_ufsphy_cfg = {
+>  	.lanes			= 2,
+>  
+> @@ -1845,6 +1868,119 @@ static const struct qmp_phy_cfg sm8750_ufsphy_cfg = {
+>  
+>  };
+>  
+> +static const struct qmp_phy_init_tbl hawi_ufsphy_serdes[] = {
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_SYSCLK_EN_SEL, 0xd9),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_CMN_CONFIG_1, 0x16),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_HSCLK_SEL_1, 0x11),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_HSCLK_HS_SWITCH_SEL_1, 0x00),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_LOCK_CMP_EN, 0x01),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_LOCK_CMP_CFG, 0x60),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_PLL_IVCO, 0x1f),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_PLL_IVCO_MODE1, 0x1f),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_CMN_IETRIM, 0x07),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_CMN_IPTRIM, 0x20),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_VCO_TUNE_MAP, 0x04),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_VCO_TUNE_CTRL, 0x40),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_ADAPTIVE_ANALOG_CONFIG, 0x06),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_DEC_START_MODE0, 0x41),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_CP_CTRL_MODE0, 0x06),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_PLL_RCTRL_MODE0, 0x18),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_PLL_CCTRL_MODE0, 0x14),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_CP_CTRL_ADAPTIVE_MODE0, 0x06),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_PLL_RCCTRL_ADAPTIVE_MODE0, 0x18),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_PLL_CCTRL_ADAPTIVE_MODE0, 0x14),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_LOCK_CMP1_MODE0, 0x7f),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_LOCK_CMP2_MODE0, 0x06),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0x92),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x1e),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_DEC_START_MODE1, 0x4c),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_CP_CTRL_MODE1, 0x06),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_PLL_RCTRL_MODE1, 0x18),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_PLL_CCTRL_MODE1, 0x14),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_CP_CTRL_ADAPTIVE_MODE1, 0x06),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_PLL_RCCTRL_ADAPTIVE_MODE1, 0x18),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_PLL_CCTRL_ADAPTIVE_MODE1, 0x14),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_LOCK_CMP1_MODE1, 0x99),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_LOCK_CMP2_MODE1, 0x07),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_BIN_VCOCAL_CMP_CODE1_MODE1, 0xbe),
+> +	QMP_PHY_INIT_CFG(QSERDES_V8_COM_BIN_VCOCAL_CMP_CODE2_MODE1, 0x23),
+> +};
+> +
+> +static const struct qmp_phy_init_tbl hawi_ufsphy_tx[] = {
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_TX_LANE_MODE_1, 0x0c),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_TX_RES_CODE_LANE_OFFSET_TX, 0x07),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_TX_RES_CODE_LANE_OFFSET_RX, 0x17),
+> +};
+> +
+> +static const struct qmp_phy_init_tbl hawi_ufsphy_rx[] = {
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_UCDR_FO_GAIN_RATE2, 0x0c),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_UCDR_FO_GAIN_RATE4, 0x0c),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_UCDR_SO_GAIN_RATE4, 0x04),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_EQ_OFFSET_ADAPTOR_CNTRL1, 0x14),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_UCDR_PI_CONTROLS, 0x07),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_OFFSET_ADAPTOR_CNTRL3, 0x0e),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_UCDR_FASTLOCK_COUNT_HIGH_RATE4, 0x02),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_UCDR_FASTLOCK_FO_GAIN_RATE4, 0x1c),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_UCDR_FASTLOCK_SO_GAIN_RATE4, 0x06),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_VGA_CAL_MAN_VAL, 0x8e),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_EQU_ADAPTOR_CNTRL4, 0x0f),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_MODE_RATE_0_1_B4, 0xb8),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_MODE_RATE4_SA_B7, 0x66),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_MODE_RATE4_SA_B9, 0x1f),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_MODE_RATE4_SB_B7, 0x66),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_MODE_RATE4_SB_B9, 0x1f),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_MODE_RATE5_SA_B7, 0x66),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_MODE_RATE5_SA_B9, 0x1f),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_MODE_RATE5_SB_B7, 0x66),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_MODE_RATE5_SB_B9, 0x1f),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_UCDR_SO_SATURATION, 0x1f),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_TERM_BW_CTRL0, 0xfa),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_DLL0_FTUNE_CTRL, 0x30),
+> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V8_RX_SIGDET_CAL_TRIM, 0x77),
+> +};
+> +
+> +static const struct qmp_phy_init_tbl hawi_ufsphy_pcs[] = {
+> +	QMP_PHY_INIT_CFG(QPHY_V7_PCS_UFS_TX_MID_TERM_CTRL1, 0x43),
+> +	QMP_PHY_INIT_CFG(QPHY_V7_PCS_UFS_PCS_CTRL1, 0x42),
+> +	QMP_PHY_INIT_CFG(QPHY_V7_PCS_UFS_TX_LARGE_AMP_DRV_LVL, 0x0f),
+> +	QMP_PHY_INIT_CFG(QPHY_V7_PCS_UFS_RX_SIGDET_CTRL2, 0x68),
+> +	QMP_PHY_INIT_CFG(QPHY_V7_PCS_UFS_MULTI_LANE_CTRL1, 0x02),
+> +};
+> +
+> +static const struct qmp_phy_init_tbl hawi_ufsphy_g5_pcs[] = {
+> +	QMP_PHY_INIT_CFG(QPHY_V7_PCS_UFS_PLL_CNTL, 0x3b),
+> +	QMP_PHY_INIT_CFG(QPHY_V7_PCS_UFS_TX_HSGEAR_CAPABILITY, 0x05),
+> +	QMP_PHY_INIT_CFG(QPHY_V7_PCS_UFS_RX_HSGEAR_CAPABILITY, 0x05),
+> +};
+> +
+> +static const struct qmp_phy_cfg hawi_ufsphy_cfg = {
+> +	.lanes			= 2,
+> +
+> +	.offsets		= &qmp_ufs_offsets_v7,
+> +	.max_supported_gear	= UFS_HS_G5,
+> +
+> +	.tbls = {
+> +		.serdes		= hawi_ufsphy_serdes,
+> +		.serdes_num	= ARRAY_SIZE(hawi_ufsphy_serdes),
+> +		.tx		= hawi_ufsphy_tx,
+> +		.tx_num		= ARRAY_SIZE(hawi_ufsphy_tx),
+> +		.rx		= hawi_ufsphy_rx,
+> +		.rx_num		= ARRAY_SIZE(hawi_ufsphy_rx),
+> +		.pcs		= hawi_ufsphy_pcs,
+> +		.pcs_num	= ARRAY_SIZE(hawi_ufsphy_pcs),
+> +	},
+> +
+> +	.tbls_hs_overlay[0] = {
+> +		.pcs		= hawi_ufsphy_g5_pcs,
+> +		.pcs_num	= ARRAY_SIZE(hawi_ufsphy_g5_pcs),
+> +		.max_gear	= UFS_HS_G5,
+> +	},
+> +
+> +	.vreg_list		= hawi_ufsphy_vreg_l,
+> +	.num_vregs		= ARRAY_SIZE(hawi_ufsphy_vreg_l),
+> +	.regs			= ufsphy_v7_regs_layout,
+> +};
+> +
+>  static void qmp_ufs_serdes_init(struct qmp_ufs *qmp, const struct qmp_phy_cfg_tbls *tbls)
+>  {
+>  	void __iomem *serdes = qmp->serdes;
+> @@ -2259,6 +2395,9 @@ static int qmp_ufs_probe(struct platform_device *pdev)
+>  
+>  static const struct of_device_id qmp_ufs_of_match_table[] = {
+>  	{
+> +		.compatible = "qcom,hawi-qmp-ufs-phy",
+> +		.data = &hawi_ufsphy_cfg,
+> +	}, {
+>  		.compatible = "qcom,milos-qmp-ufs-phy",
+>  		.data = &milos_ufsphy_cfg,
+>  	}, {
+> -- 
+> 2.34.1
 
 -- 
 ~Vinod
