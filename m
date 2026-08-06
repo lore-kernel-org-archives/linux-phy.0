@@ -4,101 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6277C55ABF
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Aug 2026 10:22:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BFA69C56208
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Aug 2026 10:22:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ide2dV/KKxYB9ydgAb/+quV3sOZB87F9Kh6kJ32uZlI=; b=pvccnUjD2x+1PH
-	j3/NKaSpROdqaL5MNtRy6ng9+we67CyJgxYha0ystjGjhGQ6aa786H9YlSdrH8m67rbWVCKBpHsCV
-	FkqRWG1wwzGIrBnInxgKewSxHWc//WyZwu/xiQiT6w1Z7+B0zhGvv6tNoV/sJ+We/oo8N3Ilvxz/l
-	dyBZHOqj5NI2Upk+haoNeTrr4NuoMRjl3edbQDXsiUxofMBxz+n3Ptv9U79mE5PqqT0j2lVRlipiS
-	/DFO2JOflZyILzgFaCn7DXxDZDPE2R0YwqTB379d4BgMdfGzezdeOnp1IkJrLk4zs1usiNaPHgkY2
-	vO4iFoBx7PDOd226rMpg==;
+	List-Owner; bh=Tc6F78iMr3G4Vu27dJgJzXBfEZUYzuSBqdk11bbpdAk=; b=kPyynENtoLTY9w
+	w3Op4FScqq5RsGvFoUA272CuL9ZwhZlRc+FH+BaxCxEPLCCF5GVSIYNZ69Uu59AI3NTFgZBU7pfPZ
+	Xdgj1YMOUlnD10oqWzTDeM7QceWDKdhL1q6cLF8/kddHV5al+HmjY2KHSQwTiwJowpP4mU+e1cJVA
+	zQdpUl5/kJEoHmESR/xIOnl1Yr2+L9CYEespT1odqQQ7XeYQqBy12bvRPMbckfbQ6FBFfW0zWcNzK
+	IxD0PRl1ZY1ny11hzgEL5o4sm4Hm+YL/U0OKrAK1VVDGw+B/SLKr9L/DMUyobaGYpfxZUuWzwCt7d
+	+jUBQZbekaF8WelNjXrA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrvFQ-00000005XTN-1oTu;
-	Thu, 06 Aug 2026 10:22:48 +0000
-Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
+	id 1wrvFR-00000005XTs-22Ak;
+	Thu, 06 Aug 2026 10:22:49 +0000
+Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrvFO-00000005XSG-1785
+	id 1wrvFP-00000005XSI-0xd6
 	for linux-phy@lists.infradead.org;
-	Thu, 06 Aug 2026 10:22:47 +0000
-Received: by mail-wr1-x435.google.com with SMTP id ffacd0b85a97d-47f96c5b722so1223538f8f.0
-        for <linux-phy@lists.infradead.org>; Thu, 06 Aug 2026 03:22:45 -0700 (PDT)
+	Thu, 06 Aug 2026 10:22:48 +0000
+Received: by mail-wr1-x42c.google.com with SMTP id ffacd0b85a97d-47f96c5b722so1223552f8f.0
+        for <linux-phy@lists.infradead.org>; Thu, 06 Aug 2026 03:22:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1786011764; x=1786616564; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1786011765; x=1786616565; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=wE1rP+31RmT4ilzk4EfZDJMKx3C1i7D5wMzh/zw/hTc=;
-        b=VRe6vW5BpTYOGx9U5xfSM0c445+rU9tj8jZNVw6BG1qmXmT9OBoS7hw0KQC/TFB8j0
-         1xdwIJ9Vu8qxSZbQIn5N/KCkZRKdfWk9+Nm3f1MEYDd0Spmku0eQZRLekkaTfbmA8tt8
-         XLX4/cO5BpNsC7o0FAtwjjNL5HbqZc4UPOPfFYAtQj9KGGdmOG9Y5VKLTgvWeY8i/RcA
-         ay5vNCnxvQFzgIkX/tFHCqFkb7NKj05UCktmQlInBiiNe//LIZWUujTNYXTCE6zbrTxL
-         Ii1JP2OxLXPvp5RqGmbq3dVtghBba4EnktuKnwkYMNwz0pfIZgO5mAp+HDgZEkyKvjiD
-         6g0w==
+        bh=oK9LWHF1p6qfBGmnjDoGNT+oihBS0Hqu0q6BfX3ivmY=;
+        b=FWU+b/m2j059l7/a4B6bKYrUJg0r637EGD0moGuXoRkB8BwAOoDQLnx23+nZnRjZZS
+         J6Jnwcrpmo9Ter+JfrO0vMxQzZtCugzi/crsqng02MO1Wy7J8iclZZI0CB55ptJYHGfM
+         q+bCtGY3BP3eJQBNV34R/jQYYQRdv7lCCpkelw3/nLQ25Zpk3nt6X+gIXA4uAN2txi0s
+         zWzHDZz3CP7RBLdgKZcH46RuEz1SHP8iu1CHIABoeBFM4nzsT/kHrvxPODfuhATyWEvW
+         WyACw5bXQqIGZu7k+qkkdVsu6NiigN+VLnIBKak0w/xD7MSZdBohUV48MvZQNqdfgqXV
+         XSVw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1786011764; x=1786616564;
+        d=1e100.net; s=20251104; t=1786011765; x=1786616565;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=wE1rP+31RmT4ilzk4EfZDJMKx3C1i7D5wMzh/zw/hTc=;
-        b=KOIioNMYlW+bY8Cfuvedk7badV0FpVLpKPsz85prK7y8XXCUhgD6iSC97B/atVf38T
-         +taoc2x8UT7HNQ/WdYKnZ2e36bUXyEEjhhoEdFjllUNMGKN2zxwWXFvo34g1lkHuCa+K
-         xIaAVw7cAPMV9RWAxgVgjFmcJyon6FDGnstPkao0a8G0A8o0eietXeHFK44VRwDNoc51
-         EwVkBH5dpO2WXFZBh5DsEvkUC456egLVmP+1P1mZCREx2aKeqc/p8Te9+ghPmSaLYfGF
-         xsDXyk5VPs+S2RVvO5TrBkWMHXYDNRyPW4LLeD8PycR1HtN6xCnDkPcIMLmAuttT83wD
-         FsZQ==
-X-Forwarded-Encrypted: i=1; AHgh+Rp2IvfcIHHeiLynfnC+cDyBjNDIrH00/WeN1X3guE0QG9Y2ncuV9IZ8TL7lPNTmaxJvF4a3qfAKYqo=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzcleXIDdL61m5DTFyCq/josEtkFracd6toEGTQCTMTXTv0seV2
-	WPPkJlN3E7mT27Q5MXHU80jcMPtLGS3kZfCIvxXi8S5GeDoQjKaDLrbn
-X-Gm-Gg: AR+sD119tQJMWC20UZ5A6kdXkTxb+HUaOiFwFIeH9nRr9ud975/8YJvoi63lDi2K1Uj
-	cajqiVAiqgcOz0r1pZZzabBEV25MAUcS5msRnyfWLZktly5qG1/D8q0BX7rRNTJ+Nhriidj/HWL
-	/lO9WmydgsPhwMBnWjoGjdhgcozs6KffoG1s5meTkhGgqzqE8bsdA/ZIGbAGAiFPAIJHONi/eCL
-	wToeoVaqURVZ9dBTOrj2SSzZ6JNske89F+87dku9UvEhA1Llp/7aCBJhCabzBoBmRSn76IAIuBF
-	bvLrQ0ydykANyr5e64zpX4+CVUxbPCPNJFIrlV9pbvXORlZFKtSiebCRva219q6xtOdnAZbVa/A
-	DH3l0KrjMN1iAF44rCbO2A7IVlbThHaWq8/ZCofpTuL9ab8Qs1q+cDLYNrVsIek4m6PNMcu9yQ+
-	Ll2oSGG6LjII5E+gMzcUHooKcre3HO6fn9V4xeZT60VwLswYZJWXsZj/GxjWJuGIWfoQMMCNtJV
-	bu5GywyHb3m
-X-Received: by 2002:a05:6000:604:b0:47f:7526:598 with SMTP id ffacd0b85a97d-47fec5037eamr21046463f8f.12.1786011764300;
-        Thu, 06 Aug 2026 03:22:44 -0700 (PDT)
+        bh=oK9LWHF1p6qfBGmnjDoGNT+oihBS0Hqu0q6BfX3ivmY=;
+        b=hrbgvGSTp+td3Csb3/GViGdL6IhA9ghmpvEO0Er8zQZA9JJ/jEIHMveLDWoYD8bnc3
+         u62NQk2gZ0WA9uwWCq2+OTVGkCdJx2hLxrKvsEI8EKUUD2hBp0dlzCKSR0QBFnSjDK3M
+         zQPCkAVsxSRQ9F+O0yjJ2rK11AQ/JDXzQy0hINT0HrlrX7/788EUOexNZxFkZpoLQ0V+
+         OQ4TDSx0ey05O/516veqpG8vCfXYhLA41lCAtE+SqFr4B3ZDf/gp21jS7M1/75yYV/vr
+         GQJL4ntwvZpKeFTt2sZ3/xcUDpwofDSSw0osYBI1IgwTIsJnEo6kcZ6U0Pumru0dJvwy
+         xmZQ==
+X-Forwarded-Encrypted: i=1; AHgh+RoIKaLCw6/8d7/gQvbrfj1gy8wSTL/AdHV0kXdpPxcISyy0L4IpIoptHm+At1hnN4/9t/jYsPcrZEA=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz08bribukh7pqv3De7VzD7oGEY1SJvohi+o062k/nBFuASrAPL
+	6UjKt4Q3Jka90x4O2mSSVUB4iRL9uGrOzMyM0eXlnlPVb/ZTMXFTXPc+
+X-Gm-Gg: AR+sD13mhqnlqlwQOTxhnNFocYytQ/tAee4JSTpYHSXa5ZOALUg5e57kbf5cid0hAgh
+	rj3EMg41FChKrmedX/VjXsHR+QK8a/z2rIKvwijnNN3W+PYaqNE2tjl5ACtXbtFDF+8zXJNvAXU
+	+AZiCMsry4s1hDDwP7n74JcVi4ZRT4WXNaFVFpzw3yydkcqK4oztSI1LOZAmIkW450Fie6ugbaw
+	SU7zezQiIVYfnz5hr8CGiMksXz+WLqMJwTLnkVO+ACQFMoCtiVZAdenjGbdE2gRS922j5yd+yTr
+	lERSdlAcdeDq++kN/4wdrficMnQCUfHAaGisdtjTwdnatRRFUSSD5dyyjWtihP9gzVCkeW95/Kp
+	iTNqdoAuUzBkC0+WvR5o1hOXmSJS61sVuWNjkU3v0B7gejmHZgmIa1S5QUScbCRWZJ20kLGCQqP
+	6l7aIj9m6Xh2ZRXCLMmBzUtUR4gAfJa5/532cmVtUdZBRHzzAB2tG3fvri6qkDOv9Iktjg1IQvT
+	BVg5qO6mMvJ
+X-Received: by 2002:a05:6000:1844:b0:47f:9c6f:8844 with SMTP id ffacd0b85a97d-47fec4f8017mr19647350f8f.9.1786011765177;
+        Thu, 06 Aug 2026 03:22:45 -0700 (PDT)
 Received: from localhost.localdomain ([2a00:23c4:a702:d301:a173:17cc:14ec:8d1])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-47ff7b183b2sm5634553f8f.24.2026.08.06.03.22.43
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-47ff7b183b2sm5634553f8f.24.2026.08.06.03.22.44
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
         Thu, 06 Aug 2026 03:22:44 -0700 (PDT)
 From: Biju <biju.das.au@gmail.com>
 X-Google-Original-From: Biju <biju.das.jz@bp.renesas.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
+To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+	Vinod Koul <vkoul@kernel.org>,
 	Geert Uytterhoeven <geert+renesas@glider.be>,
 	Magnus Damm <magnus.damm@gmail.com>
 Cc: Biju Das <biju.das.jz@bp.renesas.com>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
 	linux-renesas-soc@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
 	Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
-	Biju Das <biju.das.au@gmail.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-Subject: [PATCH v6 06/10] dt-bindings: phy: renesas,usb2-phy: Document RZ/G3L PHY bindings
-Date: Thu,  6 Aug 2026 11:22:25 +0100
-Message-ID: <20260806102236.149159-7-biju.das.jz@bp.renesas.com>
+	Biju Das <biju.das.au@gmail.com>
+Subject: [PATCH v6 07/10] phy: renesas: phy-rcar-gen3-usb2: Add RZ/G3L support
+Date: Thu,  6 Aug 2026 11:22:26 +0100
+Message-ID: <20260806102236.149159-8-biju.das.jz@bp.renesas.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20260806102236.149159-1-biju.das.jz@bp.renesas.com>
 References: <20260806102236.149159-1-biju.das.jz@bp.renesas.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260806_032246_321593_4B95F730 
-X-CRM114-Status: UNSURE (   9.41  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260806_032247_303685_5B61B75A 
+X-CRM114-Status: GOOD (  11.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,47 +111,45 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Biju Das <biju.das.jz@bp.renesas.com>
 
-Add device tree binding support for the RZ/G3L (r9a08g046) USB2 PHY.
-The RZ/G3L USB PHY is almost identical to the RZ/G3S USB PHY, the
-difference being 2 OTG blocks on RZ/G3L compared to 1 on RZ/G3S.
+Add renesas,usb2-phy-r9a08g046 to the OF match table, reusing
+rz_g3s_phy_usb2_data as the PHY configuration is shared with RZ/G3S.
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+While the PHY data is shared, RZ/G3L differs from RZ/G3S in that it has
+two OTG controllers, OTG interrupts on port 2, and a controllable
+OTG_PERI bit in COMMCTRL for host/device switching on the port 2 USB
+controller, which is fixed to host-only on RZ/G3S.
+
 Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
 ---
 v5->v6:
- * No change
+ * No change.
 v4->v5:
- * No change
+ * No change.
 v3->v4:
- * Moved the patch for easy merging.
+ * No change.
 v2->v3:
- * No change
+ * No change.
 v1->v2:
- * Collected tag.
+ * Updated commit description.
 ---
- Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/phy/renesas/phy-rcar-gen3-usb2.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml b/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
-index 9740e5b335f9..d6b9d08ceec6 100644
---- a/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
-@@ -16,6 +16,7 @@ properties:
-           - enum:
-               - renesas,usb2-phy-r8a77470  # RZ/G1C
-               - renesas,usb2-phy-r9a08g045 # RZ/G3S
-+              - renesas,usb2-phy-r9a08g046 # RZ/G3L
-               - renesas,usb2-phy-r9a09g057 # RZ/V2H(P)
- 
-       - items:
-@@ -132,6 +133,7 @@ allOf:
-             enum:
-               - renesas,usb2-phy-r9a09g057
-               - renesas,usb2-phy-r9a08g045
-+              - renesas,usb2-phy-r9a08g046
-               - renesas,rzg2l-usb2-phy
-     then:
-       properties:
+diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+index 9a45d840efeb..d06fb52ed5f1 100644
+--- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
++++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+@@ -721,6 +721,10 @@ static const struct of_device_id rcar_gen3_phy_usb2_match_table[] = {
+ 		.compatible = "renesas,usb2-phy-r9a08g045",
+ 		.data = &rz_g3s_phy_usb2_data,
+ 	},
++	{
++		.compatible = "renesas,usb2-phy-r9a08g046",
++		.data = &rz_g3s_phy_usb2_data,
++	},
+ 	{
+ 		.compatible = "renesas,usb2-phy-r9a09g057",
+ 		.data = &rz_v2h_phy_usb2_data,
 -- 
 2.43.0
 
