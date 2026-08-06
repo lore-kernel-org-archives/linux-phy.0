@@ -4,108 +4,120 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 149A1C55ABF
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Aug 2026 23:15:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A94AC55ABF
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Aug 2026 06:49:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g2eoedxDzburBdPoUbE4bhSVY7lBf6Z9hiNvsu1XYXA=; b=bZxB5xfAcpvAZJ
-	hQRfZU4qiXpEMdZaQroQBXeMhSda3WAgg25mCVjF6ya4ITLWXr6ymJsrN9kNnHYu33Ghk87zRItpX
-	AhQrPAfvGJR+NS3Pr0S6KNueaJXAGnQzrrbYvdXoTwGQuUfiwSSgyX5lZm3oSpvVFeGnOQkuUiHBi
-	1G6FDzuaokb4m0puLdPSUGKdG2VHfxPd/rDh1QfCB/6nVK8NaWlcLiipriozj+tieBe4SQhfP4DT1
-	CzMK/1b0Dkb2CQA3JoKajE73QI2DR/6Ri0aRFJzmhPRJC861AyPcfj9ClYIiIVnFNS/L52VOfGrSd
-	+/doD/SeYl2+ko+uyCDw==;
+	List-Owner; bh=xOj67LMa0525iEFjfQU8tT8aBs482WVvbs49Z+NGzvw=; b=BwVGCFYt5jI5oo
+	1biuOSSHybAZSJBuGE4+Ascy2/BklfN05ztDaieTO50OSAEatpArMy0w0RZyonQ22dMb0kDmCUrb7
+	W41+EgZT/W5TWVo3oyGJq6yGvRmBtTW9QwK6fV5n+iq2Ps6EzAHdij2N9rLQGTpKW/rUwTlUC2qQ+
+	7DEOpVCt7rxwnMpSvFPmn0HcFr6L6bNMm9DwCx7PUG0ZPshUtl/oXsU2V20JjiIOKXhSI3+cj0V9k
+	qJTdEaPKCzLH+tU7Zu9N65fqmfaexptz47Pr3B6NJ4WQ87R5rOCnvXdo2OsCbAs7y10jUxjdpxN5U
+	XhJ6T1r8pVRk2FP6z2rQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrkpO-00000004dnF-1wcw;
-	Wed, 05 Aug 2026 23:15:14 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+	id 1wrruj-000000055Ea-2lvr;
+	Thu, 06 Aug 2026 06:49:13 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrkpL-00000004dmQ-1EbK
-	for linux-phy@lists.infradead.org;
-	Wed, 05 Aug 2026 23:15:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1785971709;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=jX93A5wJoAu0JKunu6l9UvEvI322kw4iodDAJblYaVI=;
-	b=aB7G8zlGi4Cv1fQ5/8fmyoJCyb4pfLo9GRLrPNUQ5XmuX6B03VVUk0RIJTl0KCsCXpqRG8
-	5PMiI/+7cNLIYwK3lM7tjWAiZiEbOAFJjPOT1QWFRk+dYjmfm5XoU3FL89zu7VWrCD9a7H
-	ouwKSJRmefSwZ5YEuywgnh91/sr8Aes=
-Received: from mail-yw1-f199.google.com (mail-yw1-f199.google.com
- [209.85.128.199]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-596-GxaiKSnSOkisXF29Wd4kZg-1; Wed, 05 Aug 2026 19:15:08 -0400
-X-MC-Unique: GxaiKSnSOkisXF29Wd4kZg-1
-X-Mimecast-MFC-AGG-ID: GxaiKSnSOkisXF29Wd4kZg_1785971708
-Received: by mail-yw1-f199.google.com with SMTP id 00721157ae682-81ebb5e11caso42408777b3.2
-        for <linux-phy@lists.infradead.org>; Wed, 05 Aug 2026 16:15:08 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1785971708; x=1786576508;
-        h=user-agent:in-reply-to:content-transfer-encoding
-         :content-disposition:content-type:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=jX93A5wJoAu0JKunu6l9UvEvI322kw4iodDAJblYaVI=;
-        b=a/65zkpF6eDgdN8drKqq69iviDZgkgB7jB/3V4Pl7wcCPLqPe3pDNqXQlN96wO3ugt
-         TPjX6C22DNpTCn4DMysRXr+M7La7+yIQljl1K/10imaY5ZGnYi4Kpn3P+83/pdo4UB9d
-         nrFVbSjjGWBbonYrXhDtypRPT5wo1Pdc5AiqQzdTCpebQIoFsIKELkuYZsnuCPXKCa4n
-         svuZMPplwI6/I+shypVtdpo38EJWfehmUY2n0XgNzWxWFNXxdx2ZDGb7nEIQgRcOfYpM
-         qdJO/mM33quD/QJoNuVKhN8If30CVakKn51sAFImrY67J1JKOLJ9G2glwAtGy44whDoc
-         pNNg==
-X-Forwarded-Encrypted: i=1; AHgh+RqCkVthRXfoD6B39cUtWZiagL/3vq4Zi9rW/uE9/POlfuDY6/Vf/T8QNs9C4hEc4T45NLql/WvSjwE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxQWw6/iTNMbk0Fw2GHuMw9KFgdU8OZD3cDKkfTkYyA2oHF7dNV
-	eJtrUY08dX8Ia2dmb934QN5vzh7SSYn3WFqcDKJfTTb3seK26T5cCxTtBwy+9WpS+f69UA9IERv
-	ltHYLXPGyWq/xWZyAjTZG/IgMTMKVhrMK77RawL/ye8cnepM8M1YdCMqpnLBCyRQ2cUY=
-X-Gm-Gg: AR+sD128WPsHN7prvmyVgxhTRG549A1UtLUwkyII7XvmXkgqayMI4CCo4nEE2jj/H3I
-	D9fUEngTPFnPzimsoGjZPB80LVsTpANGZ/+0LvODYw/bVfNgc1iTKu3rS30pya6B+6LPG7Y0wDD
-	SJMi9wXVM1QXWVJR6QNDObm7ToQ8mlzdJ9BODcTNNrrYGydT56gKOLCB6CzpsMcn/SXp/SX7GOl
-	QmIzTBjIaRox8X1Vk5ZMtz3wdqjXPyKKvbdWjy67LYIS9iLr5D12iXbeH9cAkbP3bTtjwVXILR5
-	uMV0koMiWiHscUZfq8QdY1SOX+z55CSE3PoQTH7i6hUHmxKwv3Ml03L2wJgEy6qlQ91qn/ke7L1
-	OuKyp4iXc0aHw5q7QmYtx7avGPz1gRbk8NMA=
-X-Received: by 2002:a05:690c:4882:b0:80d:c9d9:e1a9 with SMTP id 00721157ae682-820229a0978mr60602327b3.27.1785971708266;
-        Wed, 05 Aug 2026 16:15:08 -0700 (PDT)
-X-Received: by 2002:a05:690c:4882:b0:80d:c9d9:e1a9 with SMTP id 00721157ae682-820229a0978mr60601867b3.27.1785971707809;
-        Wed, 05 Aug 2026 16:15:07 -0700 (PDT)
-Received: from redhat.com (c-73-183-53-213.hsd1.pa.comcast.net. [73.183.53.213])
-        by smtp.gmail.com with ESMTPSA id 00721157ae682-820134a9e21sm29018917b3.42.2026.08.05.16.15.05
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 05 Aug 2026 16:15:07 -0700 (PDT)
-Date: Wed, 5 Aug 2026 19:15:04 -0400
-From: Brian Masney <bmasney@redhat.com>
-To: Stefan =?iso-8859-1?Q?D=F6singer?= <stefandoesinger@gmail.com>
-Cc: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Russell King <linux@armlinux.org.uk>, Lee Jones <lee@kernel.org>,
-	linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org, mfd@lists.linux.dev
-Subject: Re: [PATCH v9 05/12] clk: zte: Add Clock registration infrastructure
-Message-ID: <anPD-I9GDyOZSDO7@redhat.com>
-References: <20260802-zx29clk-v9-0-d05530d85d28@gmail.com>
- <20260802-zx29clk-v9-5-d05530d85d28@gmail.com>
- <anC72Cf1zKcLYWlC@redhat.com>
- <ky2t5IqOTfWMdfZsXE91Gg@gmail.com>
+	id 1wrrui-000000055EG-0RPv;
+	Thu, 06 Aug 2026 06:49:12 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id BC3B760A64;
+	Thu,  6 Aug 2026 06:49:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7202B1F000E9;
+	Thu,  6 Aug 2026 06:48:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1785998948;
+	bh=3aNbsAERipFsx+yzQGv3WCU2Y9Zc5fWn7EPOiXhK8f8=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=fUjhy0vLKfClXxk6YvO7DPT0idsViF/fGh4Q8xpBEsMQnDrYmDR+FPbrSlP8klYpi
+	 CspRJKPJ0NcfRS4q20LNYzEjh2chLl6jfqUnU4f8aN0/lQV1EJG8YpqvQzqTfSmD71
+	 2SRYTMjbFvmfdoRa7VjCqWLPGkWbPW8RwEC8zjxHzu5adB0cCv29A14MBKLcVGA+in
+	 eqWSuRlIhCWXWL6US0yrikt+i0Dbh3Ji7PIjPqAhmcYHLIklA9l+a7U9YC0OOeOMIr
+	 JqJcJ2Z2RCx7QNRjJqrZ8b+y+7tzu+wuSyPgHnYgyqXhgkvq0+lCY13c1DVrNzEQTJ
+	 TZTbeNDC6Ma1g==
+Message-ID: <b90b8790-b0dc-4383-a9b7-fe9ba3f6edfd@kernel.org>
+Date: Thu, 6 Aug 2026 08:48:53 +0200
 MIME-Version: 1.0
-In-Reply-To: <ky2t5IqOTfWMdfZsXE91Gg@gmail.com>
-User-Agent: Mutt/2.4.0 (2026-06-19)
-X-Mimecast-Spam-Score: 0
-X-Mimecast-MFC-PROC-ID: VmKhqRhDVpKv1hHGkSixP0UPP47UQEXRcOjDrsw5VdY_1785971708
-X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260805_161511_402943_34EF4887 
-X-CRM114-Status: GOOD (  18.76  )
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 04/10] dt-bindings: net: pcs: add rockchip,rk3568-xpcs
+ binding
+To: Coia Prant <coiaprant@gmail.com>
+Cc: Andrew Lunn <andrew+netdev@lunn.ch>,
+ "David S . Miller" <davem@davemloft.net>, Eric Dumazet
+ <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
+ Paolo Abeni <pabeni@redhat.com>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Vinod Koul <vkoul@kernel.org>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Romain Gantois <romain.gantois@bootlin.com>,
+ Heiner Kallweit <hkallweit1@gmail.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Russell King <linux@armlinux.org.uk>, Shawn Lin <shawn.lin@rock-chips.com>,
+ David Heidelberg <david@ixit.cz>, netdev@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-renesas-soc@vger.kernel.org
+References: <20260801142244.679437-2-coiaprant@gmail.com>
+ <20260801142244.679437-6-coiaprant@gmail.com>
+ <20260805-stirring-wondrous-mule-faf37d@quoll>
+ <CALj3r0hbp-zS7Sv-6T3uBOCq2ZO4XZHKvkD4dTZ3gXRS=90JUQ@mail.gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
+ cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
+ JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
+ gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
+ J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
+ NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
+ BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
+ vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
+ Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
+ TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
+ S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGPBBMBCgA5AhsDBgsJCAcDAgYVCAIJCgsE
+ FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJp2mE8AAoJEBuTQ307QWKbeaIP
+ /ihHTkTW4KsN/DQ945JJbyu5tI0J80Wue7QyyLPglyKfhgb5cLLNPpOC8cCIJsc7+W3i2P38
+ s2c1cOH6CYGE7E9ur3Vfme8NW2S2I/Z8VC7bZnzyS23wT17LrsdS/qCpx4o8U+pt/xdXDKph
+ EGRYrIEmMpUWvyYzyYKGIe25FtaayIIKpq8eZYyFcp2f/sG5IkOW5uZzHPMPdcm87jU7fyuQ
+ rAU2vx9r+ulUfQ/q9Z2roC/ode3l7t2pN7BCBCsUDp6JCrUyZrtT1e7EbA0ZRP3aOBNk2P2E
+ DQOgJGjGdO5Yx2Y9LFtltu6JbsBJHi1syGRX3AtQYOMc4Y1WGoeZJmMlvKj2ZqqXNkcWi2DS
+ IQEWB0uW6CqFsBBIMGDa+6OzdaVO/uAVXWDWml02Men3CILdI1MbVjoh8ECqYUY7OQ+JJvNN
+ vnliuq5WM3Ghd3jg/LZZrxXjdIginRHFQCjIJYLKpLZWm1/iDFedcfzqRNYmTtqscdCNHW41
+ oT3Z7BmO9xwdjuwBS6nmS6JJwkbf5Ot2QR4pB/DRU7ZwjT1qHe+9r9gF32wXVQatHNGK/VVu
+ sfwOnkdxCWkp/qb2gdQRmZh+SedStWshigH6sNfuHBloF/q+hjMRc8b2m326OZdrbSHwY1Sz
+ vti8Hn7n8NjdHO9LKB7BIdjkA9DA5WsqOuVCzsFNBFVDXDQBEADNkrQYSREUL4D3Gws46JEo
+ Z9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLueMNsWLJBv
+ BaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6eiOMheesVS
+ 5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wAGldWsRxb
+ f3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA6z6lBZn0
+ WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9YegxWKvX
+ XHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt91pFzBSO
+ IpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gUBLHFTg2h
+ YnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/JoFzZ4B0
+ p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu4vXVFBYI
+ GmpyNPYzRm0QPwARAQABwsF2BBgBCgAgAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtBYpsFAmna
+ YUkACgkQG5NDfTtBYptX+BAApg32CkxwNucNEi8WfWA8oKkW0y8YDuY6ORMo9FWNGiT/OTy0
+ vyJrLocrpn86zwfjVp+eCrssPYh8eqJfnWqmYv6ACQtHPYzPZQ3mSo8H97Z01oUxITzCxpXm
+ ZkLgPIqtDPcC2E3dPM/fVxcyowM8XsaMA9wcsaUYrta8toOq2b9tKcjleKMfMrm0gQ9u7wUc
+ QbLkwj6TCLOwucb07GXzLTNF9PZmaDUpKAZjMjmrW+le+SFvQbhamx0rxLWPR0NWntXpbCn+
+ +ACch03p/JyTBVktxFsFyCt7pTPE1kEaeuXBTe/a2D9iQvRxRW19LvuO2e59/u1wYUiH/orz
+ wbIC2S4dBsPAPihL3ztOU1yE86GPyQtSE0kU+/7snnLt4QGi6PChf3t5gnNjAzjUUovO8rgI
+ c+5yN5heq5loYHgK6OQ9OlHzsPHO9e9MOQcKlFycs1pyijFGzDwdNUm/SchK8iWT2QApTx4A
+ K9bCVaboTA2T77QYkRcRJYSsO1alGX0ome/hMLD1daXlkrNUp1HWa3K4iytLRXjCSIorWiGs
+ n+q3krnpXu3TFkA8qtOFZMdnIiFuiq1yLT8hptsV5xh1TA2nsVvSYiaCr3q4s4BKjS/KrLDb
+ qoxzw8ISjdUp4pA85vb6YLCmb39NgidD+7PmAr65lBNveIFynTgsja1rRQ4=
+In-Reply-To: <CALj3r0hbp-zS7Sv-6T3uBOCq2ZO4XZHKvkD4dTZ3gXRS=90JUQ@mail.gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,57 +129,98 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Stefan,
+On 05/08/2026 19:20, Coia Prant wrote:
+> Hi Krzysztof,
+> 
+> Thanks for the detailed review. Here's my response to each point:
+> 
+>>> +title: Rockchip RK3568 Synopsys DesignWare Ethernet PCS
+>>> +
+>>> +maintainers:
+>>> +  - Coia Prant <coiaprant@gmail.com>
+>>> +
+>>> +description: |
+>>> +  Rockchip RK3568 SoC integrates a Synopsys DesignWare Ethernet Physical
+>>> +  Coding Sublayer (XPCS).
+>>> +  The PCS provides an interface between the Media Access Control (MAC)
+>>> +  and the Physical Medium Attachment (PMA) sublayer through a Media
+>>> +  Independent Interface (GMII).
+>>> +
+>>> +  The XPCS is accessed over the APB3 bus and internally connected to a
+>>> +  Naneng Combo SerDes PHY.
+>>> +  It supports 1000BASE-X, SGMII and QSGMII modes.
+>>> +
+>>> +  The block contains four MII ports (pcs-mii@0..3) that can be
+>>> +  individually enabled and routed to one of the Ethernet GMAC controllers
+>>> +  via the pcs-handle property in the MAC device tree node.
+> 
+> 1. Commit message: I'll drop the redundant description paragraph and keep
+>    only the essential information.
+> 
+> 2. Subject: I'll drop the redundant "binding" word.
+> 
+>> +properties:
+>> +  compatible:
+>> +    const: rockchip,rk3568-xpcs
+>> +
+>> +  '#address-cells':
+>> +    const: 1
+>> +
+>> +  '#size-cells':
+>> +    const: 0
+> 
+> 3. reg order: I'll move reg to the second property (after compatible).
+> 
+> 4. Quotes: I'll use consistent quoting style throughout.
+> 
+>> +  reg:
+>> +    description: |
+>> +      Base address and size of the XPCS register space mapped over the
+>> +      APB3 bus.
+> 
+> 5. reg description: I'll drop it as redundant.
+> 
+>> +  clocks:
+>> +    description: |
+>> +      Clock sources for the XPCS:
+>> +      - csr: APB3 bus interface clock (clk_csr_i), required for register
+>> +        access.
+>> +      - eee: EEE clock (clk_eee_i), required for Energy Efficient
+>> +        Ethernet (EEE) operation.
+>> +    minItems: 2
+>> +    maxItems: 2
+> 
+> 6. clocks: I'll change to items with descriptions instead of min/maxItems.
+> 
+>> +  clock-names:
+>> +    items:
+>> +      - const: csr
+>> +      - const: eee
+>> +
+>> +  phys:
+>> +    description: |
+> 
+> 7. description formatting: I'll remove unnecessary '|' where not needed.
+> 
+>> +  power-domains:
+>> +    description: |
+>> +      Power domain for the XPCS.
+> 
+> 8. power-domains description: I'll drop the redundant part.
 
-On Mon, Aug 03, 2026 at 08:48:18PM +0300, Stefan D=F6singer wrote:
-> I have a long-standing question about tristate/module support for drivers=
- like =
-
-> this: I don't think the driver can realistically be unloaded. I have been =
-
-> testing driver unloading by removing the UART clocks from the DT (otherwi=
-se =
-
-> the clock driver is busy) and marking all clocks critical (otherwise =
-
-> unloading/unbinding will shut down the UART (and more) and lock me out of=
- the =
-
-> system).
-> =
-
-> I have made it tristate because from early research into clock driver sta=
-te of =
-
-> the art I gathered it was desired, even for drivers necessary for fundame=
-ntal =
-
-> operation [0]. Did I understand this correctly? It also uncovered some li=
-nking =
-
-> errors that weren't obvious when compiling the driver into the kernel.
-
-Leave it as a tristate since that's how most clk drivers are built. Also
-think about this from the standpoint from the perspective of a generic
-distro like Fedora or Debian. Support for lots of SoCs will be enabled
-in the kernel configuration. Some SoCs that may be deemed to be not as
-popular for that distro may have their clk drivers compiled as modules.
-(We at least do that in Fedora -- can't speak to Debian.) That way they
-are available if needed, however the generic kernel image doesn't have
-a huge number of built in clk drivers. Some more popular SoCs where the
-distro may run will have these drivers set to built in to help with boot
-speed.
-
-Brian
+I don't understand any of these. There are none of my quotes. I don't
+get what you are referring to.
 
 
--- =
+Best regards,
+Krzysztof
 
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
