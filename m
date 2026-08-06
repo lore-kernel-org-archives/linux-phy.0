@@ -4,54 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0E57C55ABF
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Aug 2026 09:24:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5CF5C55ABF
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Aug 2026 10:14:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bNhNi0iu0+GBbxwq9xn10IGNJn1pot9uC8xJdl9AkiA=; b=vfPIJssaiwYpaS
-	LAjtA7pgbfdhONYGZk4OvMH46y4JKA4eJACTklkebKhLIq7Ri2ZOZJhSkm3iDyYNFUuiTk6BePwdO
-	HxE/3NZE/BJzpUv0tGViVaKb3moSxgRHHHdvfEbvS88ued2covUGzsvCZjzMYCOyfU3U3PwoFubZo
-	g5g49KnUmkV4oH0nOsAlHMT3EmWvp/X0pCeFKSarl3+SxQmUCxCzY0lkwkatqk8oMrP7V4QGehrNd
-	H8xFosR507OdqZ4jyk/43nKkATKp/IwvolNP26ATz9QWbbI+NcfiILT2ni4Km2mDIXWTT2cS2N7hm
-	eLVPyE4VWIeWXliHyrhA==;
+	List-Owner; bh=1Y3o6M5JlMJhL/VosdQJoa53iARDOpyIfPhlLjiXOo0=; b=uqKPu15Hw3GFP3
+	CZ9pcaAsdN67R8v40IiD0gCyEWFkr0sX0loT4RsgDPiI7z19TmgoKfBtI3qz14aVdC9kxq/IWikal
+	3UZ3DrDg8K50Klv7g5ul5s81bxs7Soher5KkNqqG8doBP6NCozCz4g4R5FkZnbIZ+QXaMTFHtwaJg
+	/DNI22NaxccpXgJBEmKl5L6dIijxztrFuQcXcTQf8F/GjMRUwSGoKy0Nuvp94ysATgozvEVovECJ9
+	RT8dm3ypG5Qvy6oa+EOqJLGknWNaagzuCqtSkaZ6KmHiuMQKUhHaF2Ig2zk6P3MN7PD4c/4BgE2iT
+	kTEQ67qRBMsp9ctBZ5SA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wruKb-00000005NHi-0eZN;
-	Thu, 06 Aug 2026 09:24:05 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wrv7U-00000005WyX-1jkM;
+	Thu, 06 Aug 2026 10:14:36 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wruKZ-00000005NHE-3Q9H
+	id 1wrv7T-00000005WyR-49So
 	for linux-phy@lists.infradead.org;
-	Thu, 06 Aug 2026 09:24:03 +0000
+	Thu, 06 Aug 2026 10:14:36 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 4BE2643BA0;
-	Thu,  6 Aug 2026 09:24:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C99EA1F000E9;
-	Thu,  6 Aug 2026 09:24:02 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 4AF02406D9;
+	Thu,  6 Aug 2026 10:14:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7914F1F000E9;
+	Thu,  6 Aug 2026 10:14:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786008243;
-	bh=up11rVXLx75AiQsr8W6lfkI9GdtNtLi1dz7x1W6CiqY=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=Km7Y9cBfw6LK11k1QtQ5z3s8eO4mm1NiVmr+Xfx+/hf/RXcVzIiiBSwpXYd8hZ8YV
-	 sRbEMzvrlcvxG8OkL6CRGtubR0ImpTFY6u4wXHPnTH805a34AkD6Xvdj05UrIgtcHZ
-	 BlNRHEkiOgl7XHpnAge8LRQcJgOaSeNrMOShTfMGyUF6IWhQ/5nyuW5dImKry9vkH1
-	 SLDh/TCW2UfENXFTRzBH0wMioIIiqKT1YMGm496FQG5lq9ef1SyAI0VJD0tAQJ0Y3A
-	 KctMu1TvFPOBLohu9YVs04VPsb/TpJwHDYEkZFWD2ARalxPVsVOlN48HQFdgl/wRyd
-	 IPo0/bbytgHsQ==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v2 2/2] phy: ti: ti-pipe3: allow configuring ACSPCIe
- TX/RX mode
-To: "David Oberhollenzer" <david.oberhollenzer@sigma-star.at>
-Cc: neil.armstrong@linaro.org, conor+dt@kernel.org, linux-phy@lists.infradead.org, vkoul@kernel.org, olteanv@gmail.com, robh@kernel.org, devicetree@vger.kernel.org
-In-Reply-To: <20260806091112.164695-3-david.oberhollenzer@sigma-star.at>
-References: <20260806091112.164695-1-david.oberhollenzer@sigma-star.at>
- <20260806091112.164695-3-david.oberhollenzer@sigma-star.at>
-Date: Thu, 06 Aug 2026 09:24:02 +0000
-Message-Id: <20260806092402.C99EA1F000E9@smtp.kernel.org>
+	s=k20260515; t=1786011275;
+	bh=61XgkMM07gBRPH/k9a3fWkX3L6dqNGB3mydbDQoPPwE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=khBNYcVYFFAvHmUi1pMMmsz5k/31nzGhSQUv5gKP0AKWpKPJSa+wBeHLfjcbccA2L
+	 ld2p2Qu3GyDKukusEUgt5DA88Zb6EmUreI5Fz09YiNTh/PLdKz2MqbXsQSmkNWrGXh
+	 7kh3iPIAvgGb7ap+yTRHqHHW2avnJVNqa7SQgxcIDnQdbApjJfhKKBrED1dmlNXPdA
+	 ycaSdqOF6hJjiCp/nkQDDCUCPfnOPqw/Nu6pnly5568YTlqn/5r2k/jEo4/2DE0QSn
+	 beV5VRWWmqtYl49AsB/JC7Fhiqm98gxtoaLGDNmOewqLBPjwE9UREHHP3zltB2G0ts
+	 W+S4oI2+YD4Bg==
+Date: Thu, 6 Aug 2026 15:44:31 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Wesley Cheng <quic_wcheng@quicinc.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-usb@vger.kernel.org,
+	Ronak Raheja <ronak.raheja@oss.qualcomm.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Subject: Re: [PATCH v4 3/4] dt-bindings: usb: qcom,snps-dwc3: Add Hawi
+ compatible
+Message-ID: <anReh4gzTjkD4u7c@vaman>
+References: <20260803091441.3040830-1-mukesh.ojha@oss.qualcomm.com>
+ <20260803091441.3040830-4-mukesh.ojha@oss.qualcomm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260803091441.3040830-4-mukesh.ojha@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,64 +74,22 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIFRoZSBkcml2ZXIgbWlz
-aGFuZGxlcyBlcnJvcnMgZnJvbSB0aGUgYHRpLHN5c2Nvbi1hY3NwY2llLXR4LXJ4YCBwcm9wZXJ0
-eSBsb29rdXAsIGJyZWFraW5nIHByb2JlIGRlZmVycmFsIGFuZCBzaWxlbnRseSBzd2FsbG93aW5n
-IGNvbmZpZ3VyYXRpb24gZmFpbHVyZXMuCi0tCgotLS0gUGF0Y2ggWzJdOiBbUEFUQ0ggdjIgMi8y
-XSBwaHk6IHRpOiB0aS1waXBlMzogYWxsb3cgY29uZmlndXJpbmcgQUNTUENJZSBUWC9SWCBtb2Rl
-IC0tLQpjb21taXQgMWNiZjQzNDk5MzI3MDhjMmMwOTdkZTEwNWE1YzEzZDdiYWVhZWI2MQpBdXRo
-b3I6IERhdmlkIE9iZXJob2xsZW56ZXIgPGRhdmlkLm9iZXJob2xsZW56ZXJAc2lnbWEtc3Rhci5h
-dD4KCnBoeTogdGk6IHRpLXBpcGUzOiBhbGxvdyBjb25maWd1cmluZyBBQ1NQQ0llIFRYL1JYIG1v
-ZGUKClRoaXMgY29tbWl0IGFsbG93cyBjb25maWd1cmluZyB0aGUgQUNTUENJZSBUWC9SWCBtb2Rl
-IGZvciBQQ0llIFBIWXMuCkl0IHJlYWRzIHRoZSBzeXNjb24gcHJvcGVydHkgZnJvbSB0aGUgZGV2
-aWNlIHRyZWUgYW5kIHVwZGF0ZXMgdGhlIG1vZGUKc2VsZWN0aW9uIGJpdHMgaW4gdGhlIHNwZWNp
-ZmllZCByZWdpc3Rlci4KCj4gLS0tIGEvZHJpdmVycy9waHkvdGkvcGh5LXRpLXBpcGUzLmMKPiAr
-KysgYi9kcml2ZXJzL3BoeS90aS9waHktdGktcGlwZTMuYwoKWyAuLi4gXQoKPiBAQCAtNzg1LDYg
-Kzc4OCwyNCBAQCBzdGF0aWMgaW50IHRpX3BpcGUzX2dldF9wbGxfYmFzZShzdHJ1Y3QgdGlfcGlw
-ZTMgKnBoeSkKPiAgCXJldHVybiBQVFJfRVJSX09SX1pFUk8ocGh5LT5wbGxfY3RybF9iYXNlKTsK
-PiAgfQo+ICAKPiArc3RhdGljIGludCB0aV9waXBlM19hY3NwY2llX3R4X3J4X21vZGUoc3RydWN0
-IHRpX3BpcGUzICpwaHkpCj4gK3sKPiArCXN0cnVjdCBkZXZpY2Vfbm9kZSAqbnAgPSBwaHktPmRl
-di0+b2Zfbm9kZTsKPiArCXN0cnVjdCByZWdtYXAgKnJlZ21hcDsKPiArCXVuc2lnbmVkIGludCBh
-cmdzWzJdOwo+ICsKPiArCXJlZ21hcCA9IHN5c2Nvbl9yZWdtYXBfbG9va3VwX2J5X3BoYW5kbGVf
-YXJncyhucCwKPiArCQkJCQkJICAgICAgInRpLHN5c2Nvbi1hY3NwY2llLXR4LXJ4IiwKPiArCQkJ
-CQkJICAgICAgMiwgYXJncyk7Cj4gKwlpZiAoSVNfRVJSKHJlZ21hcCkpIHsKPiArCQlkZXZfd2Fy
-bihwaHktPmRldiwgImNhbid0IGdldCB0aSxzeXNjb24tYWNzcGNpZS10eC1yeFxuIik7Cj4gKwkJ
-cmV0dXJuIC1FSU5WQUw7Cj4gKwl9CgpbU2V2ZXJpdHk6IEhpZ2hdCkRvZXMgY29udmVydGluZyBh
-bGwgc3lzY29uIGxvb2t1cCBlcnJvcnMgdG8gLUVJTlZBTCBicmVhayBwcm9iZSBkZWZlcnJhbD8K
-CklmIHN5c2Nvbl9yZWdtYXBfbG9va3VwX2J5X3BoYW5kbGVfYXJncygpIHJldHVybnMgLUVQUk9C
-RV9ERUZFUiBiZWNhdXNlIHRoZQpzeXNjb24gZHJpdmVyIHByb2JlcyBsYXRlciwgdGhpcyBjb252
-ZXJ0cyB0aGUgZXJyb3IgdG8gLUVJTlZBTCBhbmQgcHJldmVudHMKdGhlIGRyaXZlciBmcm9tIGRl
-ZmVycmluZyBwcm9wZXJseS4KCkFkZGl0aW9uYWxseSwgaWYgdGhpcyBwcm9wZXJ0eSBpcyBvcHRp
-b25hbCBvbiBvbGRlciBkZXZpY2UgdHJlZXMsIHdvdWxkIGFuCi1FTk9FTlQgcmV0dXJuIGNhdXNl
-IHNwdXJpb3VzIHdhcm5pbmdzIGluIHRoZSBrZXJuZWwgbG9nPwoKPiArCj4gKwlyZXR1cm4gcmVn
-bWFwX3VwZGF0ZV9iaXRzKHJlZ21hcCwgYXJnc1swXSwgUENJRV9UWF9SWF9DVFJMX01BU0ssCj4g
-KwkJCQkgIGFyZ3NbMV0gPDwgUENJRV9UWF9SWF9DVFJMX1NISUZUKTsKPiArfQo+ICsKPiAgc3Rh
-dGljIGludCB0aV9waXBlM19wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ICB7
-Cj4gIAlzdHJ1Y3QgdGlfcGlwZTMgKnBoeTsKClsgLi4uIF0KCj4gQEAgLTgwNyw2ICs4MjgsMTIg
-QEAgc3RhdGljIGludCB0aV9waXBlM19wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2
-KQo+ICAJcGh5LT5kcGxsX21hcCA9IGRhdGEtPmRwbGxfbWFwOwo+ICAJcGh5LT5zZXR0aW5ncyA9
-IGRhdGEtPnNldHRpbmdzOwo+ICAKPiArCWlmIChwaHktPm1vZGUgPT0gUElQRTNfTU9ERV9QQ0lF
-KSB7Cj4gKwkJcmV0ID0gdGlfcGlwZTNfYWNzcGNpZV90eF9yeF9tb2RlKHBoeSk7Cj4gKwkJaWYg
-KHJldCkKPiArCQkJZGV2X3dhcm4oZGV2LCAiZmFpbGVkIHRvIHNldCBBQ1NQQ0llIFRYL1JYIG1v
-ZGVcbiIpOwo+ICsJfQo+ICsKPiAgCXJldCA9IHRpX3BpcGUzX2dldF9wbGxfYmFzZShwaHkpOwo+
-ICAJaWYgKHJldCkKPiAgCQlyZXR1cm4gcmV0OwoKW1NldmVyaXR5OiBIaWdoXQpEb2VzIHRoaXMg
-c2VxdWVuY2Ugc2lsZW50bHkgc3dhbGxvdyB0aGUgY29uZmlndXJhdGlvbiBmYWlsdXJlPwoKVGhl
-IGVycm9yIGNvZGUgZnJvbSB0aV9waXBlM19hY3NwY2llX3R4X3J4X21vZGUoKSBpcyBjYXB0dXJl
-ZCBpbiByZXQgYW5kCmxvZ2dlZCwgYnV0IHByb2JlIGV4ZWN1dGlvbiBjb250aW51ZXMuCgpCZWNh
-dXNlIHRpX3BpcGUzX2dldF9wbGxfYmFzZSgpIHVuY29uZGl0aW9uYWxseSByZXR1cm5zIDAgZm9y
-IFBDSWUgbW9kZQpyaWdodCBhZnRlciB0aGlzIGNoZWNrLCB0aGUgdmFsdWUgaW4gcmV0IGlzIGlt
-bWVkaWF0ZWx5IG92ZXJ3cml0dGVuLCBhbmQgdGhlCnByb2JlIHdpbGwgbm90IGFib3J0LgoKQ291
-bGQgdGhpcyBsZWF2ZSB0aGUgUENJZSBidXMgaW4gYSBub24tZnVuY3Rpb25hbCBzdGF0ZSB3aXRo
-b3V0IGV4cGxpY2l0bHkKZmFpbGluZyB0aGUgZHJpdmVyIHByb2JlPwoKLS0gClNhc2hpa28gQUkg
-cmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDgwNjA5MTExMi4x
-NjQ2OTUtMS1kYXZpZC5vYmVyaG9sbGVuemVyQHNpZ21hLXN0YXIuYXQ/cGFydD0yCgotLSAKbGlu
-dXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On 03-08-26, 14:44, Mukesh Ojha wrote:
+> From: Ronak Raheja <ronak.raheja@oss.qualcomm.com>
+> 
+> Document the Synopsys DWC3 USB controller found on the Hawi platform.
+
+This one fails on phy/next :-(
+
+-- 
+~Vinod
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
