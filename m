@@ -4,58 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C300C56208
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Aug 2026 16:26:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 686D9C56205
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Aug 2026 16:26:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QgPlxbiFsYDWWVdpwrdP5S/oo9+g+keYuKIcvEJtAmg=; b=bzgftnVhedL11l
-	2ZNUc+YT3pD8T6MGOftvt9KLhs97fXEqXzWeeUNafDw+eJ+2hWa8N48MTouXZeBDGlBhvCKDyki0a
-	Eu+lvVPex4Ju2LXYJ+jIAX+16dEQwbrMknA8mlgLz5jEVFO5rtnWZrBv/2JnNIaRSzAbgb4DCPo7y
-	AIlKkYzWbUw0O7acomb9nw6yDFhUB3q51FJ8XNjtD6Sbhrov6WzLtZjjNi//pLvs9h4XSzcSM77A7
-	GY2hLbddGzPvWKxvMkStikNfyJxQTR8A6obfrwu1J6ptshQWtov8mkoIzrYcqCTWi3qN6nP7OVg6H
-	3jSbCgtAE1r1OmQS1fRQ==;
+	List-Owner; bh=CERErliy8GBy4Tzc6BxlL8Xs5P+VOaGWdVuV3x09p8U=; b=V+t/kDhEYImnhe
+	MbgYFT5SfhPAdHmfTF4uSbzTfaLODw76nQQiNqqDix/dS36z2OULYIxkqGWuXfLA/JXEO06sk0Gms
+	ZTiS5aI8IHjnryL3JjuypgyZ6JTQxbV7RXlj3uEvlsm+qt2zghrXqQGD7G3pYgluyRXf0eUX4adpt
+	ofRKszAy1ksY+Gs7V+f87bfECskGXxJJoWuteuQcbF+i6bLTNXbgQKnapmZ6a6oUNS3apgKyPRnHW
+	lE8BF6QCXg2YowiM2b11HqKfFOjhtZpTrNzev3XCMPXl0udX60iZONxtVtDfk4SegJh7Td5dxTLtZ
+	9lxBMmZQix1GNlKK77gg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1ws0vH-00000006CmA-3WVX;
-	Thu, 06 Aug 2026 16:26:23 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1ws0vK-00000006Cn4-3ebF;
+	Thu, 06 Aug 2026 16:26:26 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1ws0vG-00000006Clv-46n4;
-	Thu, 06 Aug 2026 16:26:23 +0000
+	id 1ws0vJ-00000006Cme-212o
+	for linux-phy@lists.infradead.org;
+	Thu, 06 Aug 2026 16:26:25 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 6BE5F60AB1;
+	by sea.source.kernel.org (Postfix) with ESMTP id 2AB4A43DA5;
+	Thu,  6 Aug 2026 16:26:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BA6881F00A3A;
 	Thu,  6 Aug 2026 16:26:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4572D1F000E9;
-	Thu,  6 Aug 2026 16:26:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786033582;
-	bh=Jg/NzKtGUicQWYfSzQGG+OdidfzVR9+xwhvbX8IlS8E=;
+	s=k20260515; t=1786033585;
+	bh=hhiYScBrKlTTcqBuDww6OOpw5eUnNsDP/4rsblKpdrA=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=RCI2qc4E7HelIbD+i/JZbV5at6mCpJjahlktbvQkfbRJpNdXwsOoqJeZLa6gbG0j5
-	 JOydWYADGn/69AphEUC4zJQI2ZEokL9xVVeKYvy2atuFWt7is3PCmat/TnspVVlPps
-	 fMnL+P09IBYhccuCp2IcoadHHft4MhuwRjXo1uNz0kOzIYdnvdky4CLdWqVbFMMfAS
-	 69z7dwN4ORxQdPKO82RqOKsxJ+dovsmN2SneARRlezt22akS3CnJGrqwmZUV/IUbqQ
-	 Di413xABZy9eqjoRvUQo3n+SvMRY3nUwzlEDVQzJ3lq1fOE2JsQc8yrq2qGSgNvngN
-	 eZy7hmH52RCSw==
+	b=mLqJ87rK9BZBPb51BmliB0sCFymD9X7a92ABxsTTGgePTP07ch5O8KWhR9iCo4YPl
+	 3TLsnC8QsU8EgYIThWKyEHJiE9gGmi7rcIssNd6OR2LkzBczlq93nnc0z8OW9cS2kc
+	 HgKB4O1TN1gtRkSFh16P68xRSAM0ssOjITDcrZJh3l3c/hCS/aJPj/S3/shDeEh6Sn
+	 1xDNiSLghMnkIE7ryZBffth5T6AKxQHYU0caZXsnzFS1WzmJFXv9gE2YH4zWtJlaDB
+	 awFOlvWsKtzXfoumz/nB6Wz4XcrGEgh4a8L2LeoTrNIjEwjtn2Xi69+CMA+NttJ6/E
+	 hd8pNwC5mooQw==
 From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>, Frank Li <Frank.Li@nxp.com>, 
- Sascha Hauer <s.hauer@pengutronix.de>, 
- Pengutronix Kernel Team <kernel@pengutronix.de>, 
- Fabio Estevam <festevam@gmail.com>, Jun Li <jun.li@nxp.com>, 
- Xu Yang <xu.yang_2@oss.nxp.com>
-Cc: linux-phy@lists.infradead.org, imx@lists.linux.dev, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Felix Gu <ustc.gu@gmail.com>, stable@vger.kernel.org, 
- Xu Yang <xu.yang_2@nxp.com>
-In-Reply-To: <20260731-imx8mp-usb-phy-improvement-v8-0-2ec8d6b3854d@nxp.com>
-References: <20260731-imx8mp-usb-phy-improvement-v8-0-2ec8d6b3854d@nxp.com>
-Subject: Re: [PATCH v8 0/6] phy: fsl-imx8mq-usb: few improvements
-Message-Id: <178603357786.674490.1895923542917045365.b4-ty@kernel.org>
-Date: Thu, 06 Aug 2026 21:56:17 +0530
+To: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Geert Uytterhoeven <geert+renesas@glider.be>, 
+ Magnus Damm <magnus.damm@gmail.com>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
+ Felix Gu <ustc.gu@gmail.com>
+Cc: linux-phy@lists.infradead.org, linux-renesas-soc@vger.kernel.org, 
+ linux-kernel@vger.kernel.org
+In-Reply-To: <20260803-rcar-gen2-v1-1-9aa35c36d7d7@gmail.com>
+References: <20260803-rcar-gen2-v1-1-9aa35c36d7d7@gmail.com>
+Subject: Re: [PATCH] phy: renesas: rcar-gen2: Fix double of_node_put on phy
+ creation failure
+Message-Id: <178603358234.674490.1366685578663811310.b4-ty@kernel.org>
+Date: Thu, 06 Aug 2026 21:56:22 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
@@ -75,33 +75,20 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 31 Jul 2026 16:11:18 +0800, Xu Yang wrote:
-> Patch #1 fix Type-C switch resource leak if probe() fails.
-> Patch #3 add runtime PM support to avoid register access issue if the
->       USB controller enters into runtime suspended state, in this state
->       accessing USB PHY register may lack some resources. This will also
->       avoid regulator leak if power_on() fails.
-> Patch #4 add debug control register regmap
-> Patch #5 add imx8mq_usb_phy_drvdata drvdata for better extension
-> Patch #6 correct i.MX8MP USB runtime wakeup issue after introduce runtime
->       PM support.
+On Mon, 03 Aug 2026 20:43:24 +0800, Felix Gu wrote:
+> for_each_child_of_node_scoped() releases the node reference on scope
+> exit, so the explicit of_node_put(np) in the devm_phy_create() error
+> path drops it twice.
+> 
+> Drop the redundant of_node_put() and let the scoped cleanup handle it.
+> 
 > 
 > [...]
 
 Applied, thanks!
 
-[1/6] phy: fsl-imx8mq-usb: fix typec switch leak on probe error path
-      commit: 87a1805b1c346b092c34f96f3806f207792910e1
-[2/6] phy: fsl-imx8mq-usb: set usb phy to be wakeup capable
-      commit: 2602012b8c625e63493647356d7290ee7c8fef2b
-[3/6] phy: fsl-imx8mq-usb: add runtime PM support
-      commit: 56eec5d9665cebe580d41cdf2ea7abb52d23e122
-[4/6] phy: fsl-imx8mq-usb: add control register regmap
-      commit: 01e9e84a43a1b4e9f67b5bd36be3d127d773a223
-[5/6] phy: fsl-imx8mq-usb: introduce per-variant driver data structure
-      commit: 2d9dcffd5d3995ba04feeeebe800cbf1c0d4bbbe
-[6/6] phy: fsl-imx8mq-usb: keep PHY power domain runtime always-on for i.MX8MP
-      commit: ee9e2b39ea4890f804b0c75c8a40a0f68ecd8d0a
+[1/1] phy: renesas: rcar-gen2: Fix double of_node_put on phy creation failure
+      commit: b780b8929c759cfa7a892d58625a5ad46cb1cbd2
 
 Best regards,
 -- 
