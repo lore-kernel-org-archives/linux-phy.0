@@ -4,69 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12486C56205
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Aug 2026 15:35:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68F18C56208
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Aug 2026 15:52:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2PqIm0YlIVnwYGDegCUrrd09b0OKWIiVc4vZUKRZPj4=; b=lyL5mTvmPbGgCs
-	h3vWejw/GTH/d6kSYGRGo1oWwDA1gsgilI0DlMxMj0DuESV1hLkv+IHLExwl3DXAJ9i3dyVfXvipe
-	8ep3T1PrSBK/vu3UnxWqs9MuTTLtzGoBfsQOZWz6XNLv0SJ0sbL4UQmCpLYKJ+H0PTDRGJq8KQvAv
-	9K5gTmVX6ed7yvFubfpK9IS2rNd5zmgsoJk1cczljKKoIfz+oAilGcXO2EXmNcQkCN+QKcPT+h2FD
-	FUWwJTW0X7QhW3xuPbSR+ULRhkon2nwUr7Zatl+2EmPQCwOrIFpr9bUgE8ijDn+ZZwFuyO5di/pB7
-	kYA6aUg8ylxCrvZgTmmQ==;
+	List-Owner; bh=15L0llidia4kuevrb9UNZuKSGgKlSp03zDG0jXF9WvA=; b=0tOVEsq6y3GsPW
+	O0vgzAjTnZ714eAyjeN7opCSPGfitQbveLkfMhVGKU99ZdO31bp4P9lvXvpj5ZYPXzBYslHkiy+oT
+	DWLoeaqb2iVRnyA4t6Y8kKJT1k5hWDF0pVALpibM8huRqBsVYXyvz5zRvCcIRUY/X4LWQZwHADmTb
+	kpWlHp19b8sDFvvaii3eQ/tzQ2o4ZBo9QR6Vx4QIvcYygTOJfEuLuSBiRAVcEFVkb4QbGe4J68lXb
+	VvvQDe2rSLJJlkHRNL1/GiaaCc0kfYNkiPnN/vPqFsnPUoAevqBscAxb1G7aujnpjOUYPtNzbvuDo
+	fQ++TRumVvg4Bt7/MQEg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1ws08T-0000000672o-3AEU;
-	Thu, 06 Aug 2026 15:35:57 +0000
+	id 1ws0Ov-000000068rH-44sH;
+	Thu, 06 Aug 2026 15:52:57 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1ws08S-0000000672e-49TM
-	for linux-phy@lists.infradead.org;
-	Thu, 06 Aug 2026 15:35:57 +0000
+	id 1ws0Ou-000000068r0-1EkM;
+	Thu, 06 Aug 2026 15:52:56 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 4A43A43C7F;
-	Thu,  6 Aug 2026 15:35:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6E0BE1F000E9;
-	Thu,  6 Aug 2026 15:35:55 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 638D4416A9;
+	Thu,  6 Aug 2026 15:52:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 87C151F000E9;
+	Thu,  6 Aug 2026 15:52:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786030556;
-	bh=rTALtVCTWiqqvu2b5JHcdJ0kQIZASw+ob8p+ahO3JL8=;
+	s=k20260515; t=1786031574;
+	bh=XPw3enwGX95RXfElNSyDCr0BeaHfU7WQp7mz5RFXKzs=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=fTvH/wTS3GJdsfzZSBY8DNgaOPK8tS0wAVq6u4Ri99+UQNrVgSC0win7XrCqGcdBn
-	 LfH+MjLuTxBTL0anHAud5qifSlhxn6C7S//Y9ukufU8AOxMhSO3DwQA8TLx/tndKzn
-	 jsta7oksmM2CoBwh0QwB130sKtxn8ILRg7A7fwqDZk9GXHwipYqxhAUVjJwBUwUeeC
-	 7wYZdRcp/OE8BRgsSS/bG2rCDntdMTtW2RxpPPqNzxlxLcIvdHIgYOQ7kHa+KFstP1
-	 F0Ttg7FtNheDGfudK53BzDbJRkHU3dNbEA3KOiDYbtw8uU8nl6FOhsu29yvNZ9aC+0
-	 JiA7p8DV0tVnw==
-Date: Thu, 6 Aug 2026 21:05:52 +0530
+	b=fujBcfWbb/WrGIyEmwZYzP7zqQl3QbxQvW98rB9PYwQJJE155W19yVWFpYNCfoias
+	 JBMnQYTKi8jWnV0d2sg6waH3TA7Y0i/Cn2z0WaVLsjsTwaDkiVQ2sELtwWEhcCBpM2
+	 h1F+h2E47iil+pbDsuNa+1BqsRyPGd+QCEOEJldZ3u5jKl0QB2m44X0dhXOU3LVtxJ
+	 QwC+U0ZIQeQJUl6XH8726PwjE4vnOS+x2ovZ45og3/9UQ9uj/5xek4axw2uEUBb0MG
+	 4fv/dEQgWkDJZ0I6t6lBegAPB2i78qYdWdiE9IW4K2qblYFtmWs89HiB3XiPOvde5z
+	 ZVwzPNdV4rftA==
+Date: Thu, 6 Aug 2026 21:22:50 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Manivannan Sadhasivam <mani@kernel.org>
-Cc: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Wesley Cheng <quic_wcheng@quicinc.com>,
+To: Chaoyi Chen <kernel@airkyi.com>
+Cc: Andrzej Hajda <andrzej.hajda@intel.com>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-usb@vger.kernel.org,
-	Ronak Raheja <ronak.raheja@oss.qualcomm.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-Subject: Re: [PATCH v4 3/4] dt-bindings: usb: qcom,snps-dwc3: Add Hawi
- compatible
-Message-ID: <anSp2EbXtakSWvmq@vaman>
-References: <20260803091441.3040830-1-mukesh.ojha@oss.qualcomm.com>
- <20260803091441.3040830-4-mukesh.ojha@oss.qualcomm.com>
- <anReh4gzTjkD4u7c@vaman>
- <xd7gii4lmzv5xm2xylt53lnp7l5clerjxrei5cdu24mbdktzaf@do5ozmvodv3w>
+	Robert Foss <rfoss@kernel.org>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Sandy Huang <hjc@rock-chips.com>,
+	Heiko =?iso-8859-1?Q?St=FCbner?= <heiko@sntech.de>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Chaoyi Chen <chaoyi.chen@rock-chips.com>,
+	Sebastian Reichel <sebastian.reichel@collabora.com>,
+	Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
+	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v6 5/7] phy: rockchip: phy-rockchip-typec: Add DRM AUX
+ bridge
+Message-ID: <anSt0gsVo29rLRqd@vaman>
+References: <20260804070730.68-1-kernel@airkyi.com>
+ <20260804070730.68-6-kernel@airkyi.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <xd7gii4lmzv5xm2xylt53lnp7l5clerjxrei5cdu24mbdktzaf@do5ozmvodv3w>
+In-Reply-To: <20260804070730.68-6-kernel@airkyi.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,23 +89,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 06-08-26, 17:24, Manivannan Sadhasivam wrote:
-> On Thu, Aug 06, 2026 at 03:44:31PM +0530, Vinod Koul wrote:
-> > On 03-08-26, 14:44, Mukesh Ojha wrote:
-> > > From: Ronak Raheja <ronak.raheja@oss.qualcomm.com>
-> > > 
-> > > Document the Synopsys DWC3 USB controller found on the Hawi platform.
-> > 
-> > This one fails on phy/next :-(
-> > 
+On 04-08-26, 15:07, Chaoyi Chen wrote:
+> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
 > 
-> This one is supposed to go through USB tree. Too bad that cover letter didn't
-> talk about it, but it should've been sent separately in the first place...
+> Using the DRM_AUX_BRIDGE helper to create the transparent DRM bridge
+> device.
 
-Yeah my bad as well. I should have checked.
-
-Good news 1,2,4 applies :-)
-Should be in pipes after my builder finishes... Later tonight
+Acked-by: Vinod Koul <vkoul@kernel.org>
 
 -- 
 ~Vinod
