@@ -4,62 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C57D0C5AC7C
-	for <linux-phy@archiver.kernel.org>; Fri,  7 Aug 2026 12:18:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D047C5AC7A
+	for <linux-phy@archiver.kernel.org>; Fri,  7 Aug 2026 12:33:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Snf9GWJdGzS8FxoB0frRz3CZQupcBGeKbe5miYOAkM0=; b=lC1/BNe+jUIvW7
-	xAvpfBn7enynzhzHsmuxPSa59VzGD7rSgxSh7lcRtcaHpqJ03D0w4mg8F9bP5zXGh1ikK3wI+u9WJ
-	y/JWEljZMfng8u1rfa0zm+GYr17MGQdMvZPh7Kotyw0gY9SsFLzYPeS8MYAX210bZzPL5t7YU3uFO
-	Ac9P/xfFzys59WppDud5eUn1iu4uruesIP6zUjNkloXKpiHL03u+A8tiTFlfDvl60UlyC8hbyH+LG
-	PJgdCEPUCdpRTimG6UNFd/BSvE+MGkIMviL7nnJO8Wh5k+ykj9kD9u8ka1RRf4601LECtNDhClK3N
-	ALZJrdf4kSVjI9rXw1iw==;
+	List-Owner; bh=0oF5e7rCnlwPs5lqfts8VMIAdqkqzv4ZaXBZXHt/+us=; b=OHLOuPFLoOokso
+	8S+/bwDLzuWQi4AGcz1NJel4tX/P/ggINQf1BsWbSPR5SArggfEWRoi/gdFsgRd1BYgaAItsO9cyO
+	uXFcUFG37F85lZFji+uNjJNKI5Sq/ul6M4TsiGL8WQN41AYO44Lwqk0Z01aQnSTcqGMc8SZqa/uJP
+	azzibOpC3uJFvYQKsdKXfJVdeMrJ/ahVUfiv5jIicoFmUqm50/97cRRzqCJ5+yvApyH51KcvEhHku
+	Frlj3rmSw54USPjp/9+Gqq9pUhkUvTEJkPD336xogieobniHtUZbu7DOucSi/ino43tZGCI2MHgH7
+	pXlX0U2UB+n0/61Gc1DQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsJWd-000000080LC-29BS;
-	Fri, 07 Aug 2026 12:18:11 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wsJld-000000081IR-1Awo;
+	Fri, 07 Aug 2026 12:33:41 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsJWc-000000080Kx-3N8S
+	id 1wsJlc-000000081IG-0asl
 	for linux-phy@lists.infradead.org;
-	Fri, 07 Aug 2026 12:18:10 +0000
+	Fri, 07 Aug 2026 12:33:40 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 31403600D8;
-	Fri,  7 Aug 2026 12:18:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A8B061F00AC4;
-	Fri,  7 Aug 2026 12:18:02 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 79DEC40696;
+	Fri,  7 Aug 2026 12:33:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8E6D31F000E9;
+	Fri,  7 Aug 2026 12:33:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786105088;
-	bh=hRYmEDOjT6HknsqMzt88izSGG50xsp5fB4RzjMuEN3M=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=HRfmfWVf7tzYawTMyWoz0fPJuKHape63Rft2tbMoZwxlCPyPxDjadlpk14XdfAmIx
-	 DOHzXfC8051vs8BD2sydlMCxsNvA2EF9SUXZccfgGIL462qiAd/2It/jyHcvqTv/NF
-	 CchZ4QscyM7Ud+ZEJr8sm67KktdScJoahiOHJq0qE7XPaIdH72dJJ9wtSejYud9LE6
-	 okgorE3WX/dMXYgzJ1bVI2iZiUG/wFz/VFrmIUwWMrcD7wGBREnL/JxuXJ1qSi8wAl
-	 2chHMGTpt/fTe10mI0CkYnI4S9kyz8FTFkvNt8DvVI8Mtk2SgAwR2gX9az1rc4CiD/
-	 DckoZAfN7cBqQ==
-Date: Fri, 7 Aug 2026 14:17:57 +0200
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Konrad Dybcio <konradybcio@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Bjorn Andersson <andersson@kernel.org>, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, usb4-upstream@oss.qualcomm.com, 
-	Raghavendra Thoorpu <rthoorpu@qti.qualcomm.com>, Mika Westerberg <westeri@kernel.org>, 
-	Sven Peter <sven@kernel.org>, Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Subject: Re: [PATCH v3 2/5] phy: core: Define TBT phy_mode
-Message-ID: <rb47gnay6drypdef44ddf3cm3zdwxb5pcl4wwboyz4lftth2sb@xmc5dgpokgkl>
-References: <20260730-topic-usb4phy-v3-0-ccf0f7ea98b5@oss.qualcomm.com>
- <20260730-topic-usb4phy-v3-2-ccf0f7ea98b5@oss.qualcomm.com>
+	s=k20260515; t=1786106019;
+	bh=i9losdAECiBM8oEcHaNb7WL0fGPaUuj+15/i2rCME1I=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date;
+	b=RhrNh0LVfPsxfSfCUfH8NH0UFkb4oADC07ruWkfJNA5010mD/ahze8iHl6GmoQJu/
+	 nzeAqeg+RMiUqX1z+jVm3ah4M3pi8HycRD6/0FTchLUfzmWP6Lg6VG2PD5yt3JEhgn
+	 YOFDx+d1MEaeDDVhZ9uR7HZ0ndc2HCqIY/XFVszNo95r7w3nU7fPFgKmLdhD2CFxCH
+	 Lo25yaitdeiYnAHjpmYmvEsszccX1MtszY26+xCuVXa/a0gEUYXNlQ2YZr+0ObVv0N
+	 TNBZ8umbaqqG/AHz5JUpAV3H9UcWt5mkKkqLqZX1IserlM3wN2BbMI2a7zCUMF4eJT
+	 zwG9wZ5y2B9ng==
+From: Vinod Koul <vkoul@kernel.org>
+To: neil.armstrong@linaro.org, robh@kernel.org, krzk+dt@kernel.org, 
+ conor+dt@kernel.org, mani@kernel.org, alim.akhtar@samsung.com, 
+ bvanassche@acm.org, andersson@kernel.org, dmitry.baryshkov@oss.qualcomm.com, 
+ abel.vesa@oss.qualcomm.com, luca.weiss@fairphone.com, 
+ palash.kambar@oss.qualcomm.com
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-scsi@vger.kernel.org, nitin.rawat@oss.qualcomm.com
+In-Reply-To: <20260526090956.2340262-1-palash.kambar@oss.qualcomm.com>
+References: <20260526090956.2340262-1-palash.kambar@oss.qualcomm.com>
+Subject: Re: [PATCH v3 0/3] Add Hawi UFS PHY and Controller support
+Message-Id: <178610601225.740291.16313821217075665373.b4-ty@kernel.org>
+Date: Fri, 07 Aug 2026 18:03:32 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260730-topic-usb4phy-v3-2-ccf0f7ea98b5@oss.qualcomm.com>
+X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,29 +69,41 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBKdWwgMzAsIDIwMjYgYXQgMDQ6MTk6MTRQTSArMDIwMCwgS29ucmFkIER5YmNpbyB3
-cm90ZToKPiBGcm9tOiBLb25yYWQgRHliY2lvIDxrb25yYWQuZHliY2lvQG9zcy5xdWFsY29tbS5j
-b20+Cj4gCj4gVGhlcmUgZXhpc3QgT1MtYWNjZXNzaWJsZSBVU0I0IGFuZCBUaHVuZGVyYm9sdCBQ
-SFlzIHRoYXQgbmVlZCBzcGVjaWZpYwo+IGNvbmZpZ3VyYXRpb24uIERlZmluZSBhIG5ldyBwaHlf
-bW9kZSBmb3IgdGhlbS4KPiAKPiBDdXJyZW50bHksIFVTQjQgYW5kIFRCVDMgYXJlIGRlZmluZWQg
-YXMgc3VibW9kZXMsIGJlY2F1c2UgdGhleSdyZSBxdWl0ZQo+IGRpc3RpbmN0LCBtb3N0IHZpc2li
-bHkgaW4gdGhlIGVsZWN0cmljYWwvYW5hbG9nIGFzcGVjdHMgKHNsaWdodGx5Cj4gZGlmZmVyZW50
-IGZyZXF1ZW5jaWVzLCB0aW1pbmdzLCBldGMuKS4gVGhpcyByZXN1bHRzIGluIGEgbmVlZCB0byBt
-YWtlCj4gdGhlIFBIWSBhd2FyZSBvZiB0aGUgYWN0dWFsIG1vZGUgbmVlZGVkIChhdCBsZWFzdCBp
-biB0aGUgUXVhbGNvbW0KPiBpbXBsZW1lbnRhdGlvbiwgYnV0IEkgYmVsaWV2ZSB0aGF0J2xsIGJl
-IGEgZ2VuZXJhbCBuZWVkKS4KPiAKPiBOZXdlciB2ZXJzaW9ucyBvZiBUQlQgYXJlIGJhc2ljYWxs
-eSBzdXBlcnNldHMgb2YgVVNCNCB3aXRoIGhpZ2hlcgo+IGhvc3Qtc2lkZSByZXF1aXJlbWVudHMs
-IHNvIHRoZXNlIGFyZSBub3QgZGVmaW5lZC4gVGhpcyBjYW4gYWx3YXlzIGJlCj4gY2hhbmdlZCBh
-cyBuZWNlc3NhcnkuCj4gCj4gUmV2aWV3ZWQtYnk6IERtaXRyeSBCYXJ5c2hrb3YgPGRtaXRyeS5i
-YXJ5c2hrb3ZAb3NzLnF1YWxjb21tLmNvbT4KPiBTaWduZWQtb2ZmLWJ5OiBLb25yYWQgRHliY2lv
-IDxrb25yYWQuZHliY2lvQG9zcy5xdWFsY29tbS5jb20+CgpSZXZpZXdlZC1ieTogTWFuaXZhbm5h
-biBTYWRoYXNpdmFtIDxtYW5pdmFubmFuLnNhZGhhc2l2YW1Ab3NzLnF1YWxjb21tLmNvbT4KCi0g
-TWFuaQoKLS0gCuCuruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDgrprgrqTgrr7grprgrr/grrXg
-rq7gr40KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRl
-YWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
-LXBoeQo=
+
+On Tue, 26 May 2026 14:39:53 +0530, palash.kambar@oss.qualcomm.com wrote:
+> This series introduces devicetree binding documentation and PHY
+> initialization support required to enable UFS on this platform.
+> 
+> 1. Devicetree binding documentation for the QMP UFS PHY
+>      used on Qualcomm Hawi.
+>   2. Devicetree binding documentation for the UFS controller
+>      instance present on the Hawi platform.
+>   3. Initialization sequence tables and configuration required
+>      for the QMP UFS PHY on Hawi SoC.
+> 
+> [...]
+
+Applied, thanks!
+
+[1/3] dt-bindings: phy: qcom,sc8280xp-qmp-ufs-phy: Add Hawi UFS PHY compatible
+      commit: 24d886d9344c7973e202a7f275ff8280b742446c
+[2/3] scsi: ufs: qcom: dt-bindings: Document the Hawi UFS controller
+      (no commit info)
+[3/3] phy: qcom-qmp-ufs: Add UFS PHY support on Hawi
+      commit: 2f7b4bc47b1e22c3e510ff6e25985edbe9cd9f97
+
+Best regards,
+-- 
+~Vinod
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
