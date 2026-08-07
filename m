@@ -4,73 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E39C2C5ACAB
-	for <linux-phy@archiver.kernel.org>; Fri,  7 Aug 2026 21:33:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB49DC5AD2B
+	for <linux-phy@archiver.kernel.org>; Fri,  7 Aug 2026 22:58:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/zlVZWplDWuZoA2rBMWkls1Dh5lYeWH2QSo5+ossItk=; b=IWYdfeZbIChT44
-	/Pgg4k8MRK9ln0MDU8yz0lDrGQbUSWshuQRY/LK6JZndEEwwMmQ1kmL/geMSqqG0+FUzM3ABC/Y7W
-	QZf0G4dWuG41Qdk09XyZmDNMNwk+6uuxrMfkAo64kx1zGRuQypvPM/hfRaA1LGPjA4r2LHJc6I2cp
-	u3WXoiIxyw/3fWSandJ9+L/iIAeK/CfVPPUmgp2XtGM/3MdQVePAk4foYo/6gX1NyC3Jy/o96ZTt5
-	2DVvxwsGL2kEyVEB9MW4CEdWwAn/vlHOsgzPxhUN6zoUm0cDmHjCMeKg5dGCwnFV9my7rs1Qge+b/
-	vFcfO9Kh7teRKs3xl17g==;
+	List-Owner; bh=jhRi/J/k5je0wYUyjrtzBlY0RlScxrLMqwyF27vds8Q=; b=oCRPUQyH0c8yc9
+	astOgl/7xLmJ0+n2VkLAhOLF93CRRvXP0utNFqDAzyARjp7P9Nd0BbTOrFdoT8N0ncSEy2CkMVLoW
+	eBrourbikH7IQeXqST2rIGB7A+2rI+fJ61IxyWZc3HOYznMfrM/EuS2laS8hgaGgBncucUZZMnOWa
+	9LGVQWDyeKKNdMqk8QoaJdd/xmgKEd8uWh884rsYR3Y0HJ5DUHHg+21JJjQw6TRP/+i2FI4EgjJV3
+	CO+Wyre+GI1mUaUyYXi5VptURNcJ7YeNVssu71TpZPU0IV32PxdHITBR+J2uv5DAr2BtQisQ64y1m
+	bDQ+489dDxntBp+f3L3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsSCH-00000008lnS-1edR;
-	Fri, 07 Aug 2026 21:33:45 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1wsTWT-00000008qD9-1GLh;
+	Fri, 07 Aug 2026 22:58:41 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsSCE-00000008ln1-2zIn;
-	Fri, 07 Aug 2026 21:33:43 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1786138415; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=Wc23WidJGbIWp8Fc9+M+I68bZ4PE3481CJXMH84ECEWzumbc0wNNsxO+/eCvPGGyz2F+4cPGXI8HdocWkO0gPZmjOeJbsHsV3tivVdlZ1T4hTuuGjAeOdpxBPAPvezjK/OQrQeKCbARbZmrM7PAz7WyUYou4xOZx0cBjnJCkBcs=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1786138415; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=pHBBxbPUVANpahMUOGZWz4stezBioU5NTMq0eeFgIz8=; 
-	b=CZ1Zq/UXMOXV8BWTC7lqowJhTyKrjo3mdIzxHp+IVlTuwMdLTo/5yiiidivXnQnMg+7fWe1t0uKVMz3YOSvzRF+Hh4CMSLuWHdGVNgjvaVr3zVVO3IqiWAcYdZtH/QdLs6n8z/WEMVXpu5WPtN/f/OQDO3kfPgZPcd/DEP5998w=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=michael.riesch@collabora.com;
-	dmarc=pass header.from=<michael.riesch@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1786138415;
-	s=zohomail; d=collabora.com; i=michael.riesch@collabora.com;
-	h=Message-ID:Date:Date:MIME-Version:Subject:Subject:To:To:Cc:Cc:From:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:Message-Id:Reply-To;
-	bh=pHBBxbPUVANpahMUOGZWz4stezBioU5NTMq0eeFgIz8=;
-	b=bJpBgN4XzSb+MF16ZgRzB3MeQ8Wh9DbgPv4TJJezvakTcET2asvMlAfgzZLS6roH
-	iL2djC89XDNBWidHr7yQ8DpHNX0sW39++lmX8eU9EPOkLbTMnXIgCnsMWK0lgrxgCFI
-	yRxOWBaPytGeg/DBKbZtGqe44RrBeNh9EFAAC2l0=
-Received: by mx.zohomail.com with SMTPS id 1786138412992223.01443850100577;
-	Fri, 7 Aug 2026 14:33:32 -0700 (PDT)
-Message-ID: <2f63364d-6653-4f78-ab0f-c75b4fd5bb9c@collabora.com>
-Date: Fri, 7 Aug 2026 23:33:28 +0200
+	id 1wsTWR-00000008qCw-3sOW;
+	Fri, 07 Aug 2026 22:58:39 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 65FA940601;
+	Fri,  7 Aug 2026 22:58:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1850B1F00A3A;
+	Fri,  7 Aug 2026 22:58:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1786143519;
+	bh=qgInBwua0KUqVGKuYZJWYzxoohAhBjTD4eh1gVZ7K0o=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=iDcH522zJTzA2rzdF1COT9Mk3P+fOQfQx4rc7GU5PEwIbnvkM4P8DVTqv9Jj2rzCL
+	 SVNi1R/LH+2a6XUR9HD3jZXNO7XYQnBWqRWNgz8dngu/aVpjedIk886Hv/aOuSk/u6
+	 Lmtuj8UtavBqD5SpF1az/9X6Us2c4J6Acjb+hEQ8qwSywzFWKDNNm0uHBw96av3dXg
+	 tt0IheujypKLcoHNucMpdcSGTaUOL27nOAv11MxQ4osBJH5Ebktelqsgh3g/BYad4q
+	 BVOIIigxP2eCJaJRu2x6caoD18RbP54rBsyLQFO0fx5Q/gghubRfr0I2942249/oG5
+	 pcKp4SmXXKyoQ==
+Date: Fri, 7 Aug 2026 17:58:38 -0500
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Cody Kang <codykang.hk@gmail.com>
+Cc: linux-clk@vger.kernel.org, Albert Ou <aou@eecs.berkeley.edu>,
+	linux-riscv@lists.infradead.org, Stephen Boyd <sboyd@kernel.org>,
+	Paul Walmsley <pjw@kernel.org>, spacemit@lists.linux.dev,
+	devicetree@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
+	linux-kernel@vger.kernel.org, Alexandre Ghiti <alex@ghiti.fr>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Brian Masney <bmasney@redhat.com>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Haylen Chu <heylenay@4d2.org>,
+	Yixun Lan <dlan@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+	Palmer Dabbelt <palmer@dabbelt.com>, linux-phy@lists.infradead.org,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Vinod Koul <vkoul@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
+	dri-devel@lists.freedesktop.org,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Simona Vetter <simona@ffwll.ch>
+Subject: Re: [PATCH RESEND 01/17] dt-bindings: display: spacemit: add K3
+ Saturn DPU controller
+Message-ID: <178614351779.2207398.16648513134637713806.robh@kernel.org>
+References: <20260725-k3-display-v1-0-6de34d80e86c@gmail.com>
+ <20260725-k3-display-v1-1-6de34d80e86c@gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/4] dt-bindings: phy: rockchip,rk3588-mipi-dcphy:
- support per-direction phys
-To: Vinod Koul <vkoul@kernel.org>
-Cc: jason98166@gmail.com, Neil Armstrong <neil.armstrong@linaro.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Guochun Huang <hero.huang@rock-chips.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20260726-dcphy-rx-v1-v2-0-cf9cc34a412a@gmail.com>
- <20260726-dcphy-rx-v1-v2-1-cf9cc34a412a@gmail.com>
- <82da3622-9c3a-454c-87bc-fb4ec7adb68d@collabora.com> <anSuxfeitSqmSHNr@vaman>
-Content-Language: en-US
-From: Michael Riesch <michael.riesch@collabora.com>
-In-Reply-To: <anSuxfeitSqmSHNr@vaman>
-X-ZohoMailClient: External
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260807_143342_814319_EF3BD8F8 
-X-CRM114-Status: UNSURE (   7.62  )
-X-CRM114-Notice: Please train this message.
+Content-Disposition: inline
+In-Reply-To: <20260725-k3-display-v1-1-6de34d80e86c@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,31 +85,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinoud,
 
-Thanks for your feedback.
-
-On 8/6/26 17:56, Vinod Koul wrote:
-> On 03-08-26, 13:17, Michael Riesch wrote:
+On Sat, 25 Jul 2026 00:51:10 -0400, Cody Kang wrote:
+> Document the Saturn display processing unit found on the SpacemiT K3 SoC.
+> The K3 instantiates two of them, one per display path. They share a
+> compatible: an instance differs only in which register window, interrupt,
+> clock and reset lines it takes.
 > 
->>> +      Two cells select the PHY type and the direction, so that the
->>> +      transmitter (DSI) and the receiver (CSI) can be described as
->>> +      independent consumers of the same PHY:
->>> +        - <PHY_TYPE_DPHY RK_DCPHY_DIR_TX>
->>> +        - <PHY_TYPE_DPHY RK_DCPHY_DIR_RX>
->>
->> How is that Rockchip specific? As you state above this is either MIPI
->> CSI or MIPI DSI, two perfectly standard protocols.
->>
->> @all Would it be reasonable to introduce PHY_TYPE_CSI and PHY_TYPE_DSI?
-> 
-> I think yes...
+> Signed-off-by: Cody Kang <codykang.hk@gmail.com>
+> ---
+>  .../display/spacemit/spacemit,k3-saturn-dpu.yaml   | 132 +++++++++++++++++++++
+>  1 file changed, 132 insertions(+)
 > 
 
-Jason, could you incorporate that in a v3?
-
-Thanks for your work and best regards,
-Michael
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 
 
 -- 
