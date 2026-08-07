@@ -4,64 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40900C5AC7A
-	for <linux-phy@archiver.kernel.org>; Fri,  7 Aug 2026 05:00:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 856EBC5AC82
+	for <linux-phy@archiver.kernel.org>; Fri,  7 Aug 2026 06:53:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0kHqEOzcD9ZmJR71kPkgd2VxmvCGmOT7/MlAtphgFtU=; b=eCeIWqf5ctNaQW
-	sbGxc94tuRkt/NscE1ZZF0b00ouch4agRKCXsh5GDLCEd7VT3JYl4K7LltTJ4KqVYUfKVRDzzD/52
-	ObhE0U5lnyb/lJP0hS/02sOQ/pp4ZK3FafSUmVwe3KB0oFK0to/FRyIL44fAeLUd5zz5oo39vb8U9
-	H7dGaTVbhR3AGQGRj/l9YlU9OsqH8H/+iiiM7SYQLbLIWcdsep0ux1VMs601kncsd/jurvbmo+Lge
-	MyXrc3A8ILZjSRjJ9PAg2M9FMDAiSZqwD8TvJA1o6uYpp7c2xZPAbakM8AGyWL0jBnOmIqrdsJeTy
-	XB89sh0x7uWAJwP1vP+A==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=5ARJleXtmsg2Kfr2kiX2uCizDkOOKxriliyrDMQh8sY=; b=Yb9uZqDY//Wrsfzho67UBDkZHz
+	zTHkyQzHov/z50XepEmumm5HuEMQBRtyEeoqF3is8KRwvtSIm+poS5RcpJ+qzklXf85MVvr8O6LR6
+	VeSw0UON8dJtIrT8LO3jEQiib1gmRHweIJzxyHnRl6Uvbem1GA4diMfBulbbSG/JRiYPi/gFgZrwK
+	tPKgtH1t+J6kOg2p5VFL3eWoIuP4rlNBYNTvgw8V/LbgR3fGdvSYfTRzwVl94dBF1HQ2mhko/0M//
+	oGWhlxY0tSW8Xo+vfuw5WI7Eqys+q4UR2Q1Y54n3Xj6fhp6f/gdIt3K9kUdTZU3aTNwAlJmYomVFT
+	1IvfY6Mg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsCgs-000000076ef-23v0;
-	Fri, 07 Aug 2026 05:00:18 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wsESj-00000007CBA-4579;
+	Fri, 07 Aug 2026 06:53:49 +0000
+Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsCgr-000000076eY-1g0a
+	id 1wsESh-00000007CAX-3z13
 	for linux-phy@lists.infradead.org;
-	Fri, 07 Aug 2026 05:00:17 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id B219E600B1;
-	Fri,  7 Aug 2026 05:00:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BA95D1F000E9;
-	Fri,  7 Aug 2026 05:00:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786078814;
-	bh=g+D3AJQFvhPRzkoa0tC39NTBMn/lH/wnQoRYJfVrN6E=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=c+22CknR52MxQ5QmipW9AJNvWJIzeZdLGQCZLx6zwxqeuCX5PKIkyExW9XMCx6eS5
-	 kkJW7HMJjTwxIsA/8W6bi0t6KmrQvTVIXnj5X7sAN2FqiK5afxmDaHfZJA2SkgYrXz
-	 fpleSr2++RNZvTBkaYOvMRgbwvfy5lMk+Z/TZouyTfmtGF2HNQO0qxmOU3kqza/GU1
-	 H7JGB595GwmKjuZ+2xo1AN5BBiLIAE9uzaIsYTxjdpq5nr4ffSQ6Ll5dMlZEylCIN7
-	 fHnse4Osb0H9v47evb60F/x3EV4MejEDkogg/96oi8znWlINaLlUU1Ku6N0fPXFJnI
-	 dKi0sxURLxtyg==
-Date: Fri, 7 Aug 2026 06:59:53 +0200
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
-Cc: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
-	Krzysztof Kozlowski <krzk@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Bartosz Golaszewski <brgl@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konradybcio@kernel.org>, Wasim Nazir <wasim.nazir@oss.qualcomm.com>, 
-	Mohd Ayaan Anwar <quic_mohdayaa@quicinc.com>, Umang Chheda <umang.chheda@oss.qualcomm.com>, 
-	Yijie Yang <quic_yijiyang@quicinc.com>, Loic Poulain <loic.poulain@oss.qualcomm.com>, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 0/6] Fix regulator voting for the Qualcomm SGMII
- SerDes PHY
-Message-ID: <efu6xalzkpim3cu2r4mkzksseviqrxqmpmblm24r3ip6bwt3dh@nqntulmbkgwa>
-References: <20260804-b4-sgmiieth_serdes_regulator-v2-0-c4bc688177dd@oss.qualcomm.com>
+	Fri, 07 Aug 2026 06:53:49 +0000
+Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-4955de8797cso20224395e9.3
+        for <linux-phy@lists.infradead.org>; Thu, 06 Aug 2026 23:53:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=baylibre.com; s=google; t=1786085625; x=1786690425; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=nUIF+ZoBfnPhDtlVbHIbfV3H6x1dAyvkNT/RRT7NjLI=;
+        b=pETEp/X67WV1Pq3Hn9+mM6dPd+On+nmMihue1f8NyvG8QgovGGWMRVTlQLwt2XwOsk
+         uPR07bap09m0ZdLdA4Tzkhyelh/kSzOSq5n7tmauoujuuDNOunRwl1E8GUWTeWX29vh5
+         SXEScR99TrCRcLZb7KyVLDIGcILbVHxJi1rtYtIWOfAQiBtomA36sIWKfYvS1uhcn7IR
+         3lXU6Qds4XG8qFxQ1O84m+98NHS9TxPF7hUylE/R4SoMDlZ5k+ZDewJzRE/i3KES1dNy
+         cV5XF2w40Ox5nd2IEW9y1fV0rLyx5jdx8r2UqIRvN6j4t2Ge8+E6O7XcKcI4LMfpquj6
+         hW4g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1786085625; x=1786690425;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=nUIF+ZoBfnPhDtlVbHIbfV3H6x1dAyvkNT/RRT7NjLI=;
+        b=ccz+jLtIBK7AuRXYGY/WBQCXfhazv/PSeTHorBmk4d8A815wQkExOEBFCMlIK0iri8
+         Mdt+MDf86YHC2FEIN8g0RgjvDZNOlPwlJb+bschZO7xLoRbac5qc+cMx9wDBPhNcCIjo
+         8vMZdyDtbU2q07tPGn4BSNL/IpzOcTzwVAwp7k1j2aUXabrR/28tNeLR3TDhs1J3ptNd
+         PGQoEf8bdwZ5mNCEWHItpNw52BOk1f9Gcwgrp6VRTjGrrUu0ZzMgjBavVj15iegWE1iO
+         AisM0NHp23s7LgGE59sKaY7YnieMBdj+SmT9Y2A0BOo/puVTVIn4E0qpVuEaCluSpxcq
+         20LA==
+X-Forwarded-Encrypted: i=1; AHgh+RrBFMy9R6QbU9eP+5SdZUB4B/tAXBf/+n+jRtTWTUaddd5uwp/E020xYIwBnOyNkFmI3tfWj0haxfk=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz+r1mQv01cOhmDmTQ3EIJT9zy7h7errolP/a7nJ0j/Fo1euxp6
+	sl4IyguvF3ay/A/PirvO9slN2ZaGVn/88qsxwVPtEucRuYp3rVmMpLdhxf/+h4Ii5MQ=
+X-Gm-Gg: AR+sD12KBnc91nnmeMvgj7A3lA7wGm/wYTeCjJYqw9ncBwLYj1dXOwDgTXrMwWnUwzF
+	IfvIxKvl+ydpwF/NMRI/ueMOh2xy8pc2MS1LpjuyVdPnBNKhjvq3QOw3JSAlON0f4b3TqBHmYan
+	iBjSwnD19QkSMMj4MHLLbNLMPDynbPgmQFBedvKMzNoUXOhNgkW3sr3vwQMOq0Xwr8DXTLfwqsG
+	kWsE6PAzQBLcjBfyWwbBt8aZZtMN9Hk4Vb6bBSDg+8UzhggGfI/FohQLtotTIDNa5A5Z5J6u/PO
+	ZsQaYAOSjM80rMwdCF0QTFswALVvbAv6kiiqOljnrYORKOrou1zbxWuzUoBwozyD31pO0zQH9X9
+	JdNw8WsxIIApae9RqgFGKD5uQtIu27tzfhB0MiQyFItUXEiG2lbAXIsm+Htp2yAx8h253MCsCCy
+	VJYjgHtE7MTXrhwWRVK0El7QC9gyDElolisdscIhvYAaV2RNUpYpMCjQcLutZUigy/DdU0Iklpo
+	SQlSI44ZMLB7TuLpR9VZeeDRAgHzF0Xkem02kyZPTyB3+THQFYl
+X-Received: by 2002:a05:600c:4fcb:b0:495:5890:8f6c with SMTP id 5b1f17b1804b1-4995e084875mr16392445e9.7.1786085625549;
+        Thu, 06 Aug 2026 23:53:45 -0700 (PDT)
+Received: from localhost (p200300f65f017104bf0aa590e17c3201.dip0.t-ipconnect.de. [2003:f6:5f01:7104:bf0a:a590:e17c:3201])
+        by smtp.gmail.com with UTF8SMTPSA id 5b1f17b1804b1-4995422016fsm98840415e9.8.2026.08.06.23.53.44
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 06 Aug 2026 23:53:44 -0700 (PDT)
+Date: Fri, 7 Aug 2026 08:53:44 +0200
+From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
+To: Cody Kang <codykang.hk@gmail.com>
+Cc: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
+	Thomas Zimmermann <tzimmermann@suse.de>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@kernel.org>, 
+	Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+	Haylen Chu <heylenay@4d2.org>, Michael Turquette <mturquette@baylibre.com>, 
+	Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, Paul Walmsley <pjw@kernel.org>, 
+	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, 
+	Alexandre Ghiti <alex@ghiti.fr>, dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org, 
+	devicetree@vger.kernel.org, spacemit@lists.linux.dev, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-clk@vger.kernel.org
+Subject: Re: [PATCH 05/17] phy: spacemit: add Innosilicon DP TX PHY driver
+Message-ID: <anWAmitXSFRUw1W2@monoceros>
+References: <20260724-k3-display-v1-0-f22a10a52867@gmail.com>
+ <20260724-k3-display-v1-5-f22a10a52867@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260804-b4-sgmiieth_serdes_regulator-v2-0-c4bc688177dd@oss.qualcomm.com>
+In-Reply-To: <20260724-k3-display-v1-5-f22a10a52867@gmail.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260806_235348_002329_F8F0F69D 
+X-CRM114-Status: UNSURE (   7.59  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,68 +107,64 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============7781261538110786981=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCBBdWcgMDQsIDIwMjYgYXQgMTI6NTc6NTZBTSArMDUzMCwgTW9oZCBBeWFhbiBBbndh
-ciB3cm90ZToKPiBUaGlzIGlzIGEgbG9uZyBvdmVyZHVlIHYyIG9mIHRoZSBvcmlnaW5hbCBwYXRj
-aCBzZXJpZXMgd2hpY2ggdHJpZWQgdG8KPiBhZGRyZXNzIGEgU2VyRGVzIHBvd2VyLXVwIGZhaWx1
-cmUgb2JzZXJ2ZWQgb24gdGhlIFFDUzgzMDAgUmlkZSBib2FyZAo+IHVzaW5nIHRoZSBwaHktcWNv
-bS1zZ21paS1ldGggZHJpdmVyLiBBZnRlciBnb2luZyB0aHJvdWdoIGEgcmFiYml0IGhvbGUKPiBv
-ZiBoYXJkd2FyZSBzY2hlbWF0aWNzIGFuZCBwb3dlciBkYXRhLCBJIG5vdyBoYXZlIGEgZnVsbGVy
-IHBpY3R1cmUgb2YKPiB0aGlzIElQLgo+IAo+IFRoZSBRdWFsY29tbSBTR01JSSBTZXJEZXMgUEhZ
-ICh1c2VkIGluIExlbWFucyBhbmQgTW9uYWNvIFNvQ3MpIGlzCj4gcG93ZXJlZCBieSB0d28gdm9s
-dGFnZSByYWlscy4gVGhlIHNjaGVtYXRpY3MgY2FsbCB0aGVtIHZkZGEtMHA5IGFuZAo+IHZkZGEt
-MXAyLCBzbyB0aGF0J3Mgd2hhdCB3ZSBmb2xsb3cgaW4gdGhlIHNlcmllcy4gQWRkaXRpb25hbGx5
-LCB0aGUKPiAwLjlWIHJlZ3VsYXRvciBkcmF3cyBhIHBlYWsgY3VycmVudCBvZiA0NiBtQSBhbmQg
-dGhlIDEuMlYgcmVndWxhdG9yCj4gZHJhd3MgYSBwZWFrIGN1cnJlbnQgb2YgMTUgbUEuCj4gCj4g
-SWYgYm90aCByYWlscyBhcmUgbm90IGVuYWJsZWQsIHdlIHNlZSB0aGUgb3JpZ2luYWwgaXNzdWUg
-d2hlcmUgdGhlCj4gU2VyRGVzIGNhbGlicmF0aW9uIHRpbWVzIG91dDoKPiAKPiAgIHFjb20tZHdt
-YWMtc2dtaWktcGh5IDg5MDkwMDAucGh5OiBRU0VSREVTX0NPTV9DX1JFQURZX1NUQVRVUyB0aW1l
-ZC1vdXQKPiAgIHFjb20tZXRocW9zIDIzMDQwMDAwLmV0aGVybmV0IGV0aDA6IF9fc3RtbWFjX29w
-ZW46IFNlcmRlcyBwb3dlcnVwIGZhaWxlZAo+IAo+IEN1cnJlbnRseSwgdGhlIERUIG5vZGVzIGFj
-cm9zcyBhZmZlY3RlZCBib2FyZHMgaW5jb3JyZWN0bHkgZGVzY3JpYmUKPiBvbmx5IGEgc2luZ2xl
-IHJlZ3VsYXRvciB2aWEgdGhlIGdlbmVyaWMgJ3BoeS1zdXBwbHknIHByb3BlcnR5IChhbmQgaW4K
-PiBzb21lIGNhc2VzIHBvaW50IHRvIHRoZSB3cm9uZyByYWlsIGVudGlyZWx5KS4gTW9yZW92ZXIs
-IHRoZSBkcml2ZXIgZG9lcwo+IG5vdCBzZXQgdGhlIHByb3BlciBjdXJyZW50IGxvYWRzIGFuZCBq
-dXN0IHJlbGllcyBvbiBhbiBlbmFibGUgdm90ZS4KPiAKPiBUaGlzIHNlcmllcyBjb3JyZWN0cyB0
-aGlzIGJ5Ogo+IAo+ICAgMS4gRml4aW5nIHRoZSBEVCBiaW5kaW5nIHRvIGRlc2NyaWJlIGJvdGgg
-bmFtZWQgc3VwcGxpZXMuCj4gICAyLiBGaXhpbmcgYWxsIGFmZmVjdGVkIGJvYXJkIERUUyB0byB1
-c2UgdGhlIGNvcnJlY3QgdmRkYS0wcDktc3VwcGx5Cj4gICAgICBhbmQgdmRkYS0xcDItc3VwcGx5
-IHByb3BlcnRpZXMuCj4gICAzLiBBZGRpbmcgYnVsayByZWd1bGF0b3Igc3VwcG9ydCB0byB0aGUg
-UEhZIGRyaXZlciBzbyBpdCBlbmFibGVzIGJvdGgKPiAgICAgIHN1cHBsaWVzIGFuZCBzZXRzIHRo
-ZSBwcm9wZXIgY3VycmVudCBsb2Fkcy4KPiAKPiBUaGUgcGF0Y2hlcyBhcmUgc2VxdWVuY2VkIHRv
-IG1haW50YWluIGJpc2VjdGFiaWxpdHkuIFdpdGggdGhlIGRyaXZlcgo+IGNoYW5nZSwgdGhlIFBI
-WSBmcmFtZXdvcmsgd2lsbCBjb250aW51ZSB0byB2b3RlIGZvciB0aGUgcmVndWxhdG9yCj4gZGVz
-Y3JpYmVkIGJ5ICdwaHktc3VwcGx5Jy4gVGhlIERUIGNoYW5nZXMgd2hpY2ggZm9sbG93IHRoZW4g
-cmVtb3ZlCj4gJ3BoeS1zdXBwbHknIGluIGZhdm91ciBvZiAndmRkYS0wcDknIGFuZCAndmRkYS0x
-cDInLgo+IAo+IFRlc3Rpbmc6Cj4gVGhpcyBzZXJpZXMgd2FzIHRlc3RlZCBvbiB0aGUgZm9sbG93
-aW5nIExlbWFucyBhbmQgTW9uYWNvIGJhc2VkIGJvYXJkcy4KPiAgIDEuIExlbWFucyBJUS05MDc1
-IEVWSyB3aXRoIHRoZSBJRlArIE1lenphbmluZSBhdHRhY2ggKGR1YWwgR01BQyArCj4gIFFDT00g
-U0dNSUkgU2VyRGVzICsgUUNBODA4MSBQSFkpCj4gICAyLiBMZW1hbnMgUUNTOTEwMCBSaWRlIChk
-dWFsIEdNQUMgKyBRQ09NIFNHTUlJIFNlckRlcyArIEFRUjExNUMgUEhZKQo+ICAgMy4gTW9uYWNv
-IElRLTgyNzUgRVZLIChzaW5nbGUgR01BQyArIFFDT00gU0dNSUkgU2VyRGVzICsgUUNBODA4MSBQ
-SFkpCj4gICA0LiBNb25hY28gUUNTODMwMCBSaWRlIChkdWFsIEdNQUMgKyBRQ09NIFNHTUlJIFNl
-ckRlcyArIEFRUjExNUMgUEhZKQo+IFRvIGNvbmNsdXNpdmVseSB0ZXN0IHRoZSBuZXcgcmVndWxh
-dG9yIHZvdGluZywgSSB0ZXN0ZWQgYnVpbGRzIHdpdGggYWxsCj4gdGhlIG90aGVyIGNvbnN1bWVy
-cyBvZiB0aGUgcmVndWxhdG9ycyBkaXNhYmxlZCBmcm9tIHRoZSBEVFMgdG8gZW5zdXJlCj4gdGhh
-dCB0aGUgcGh5LXFjb20tc2dtaWktZXRoIGRyaXZlciBoZWxkIHRoZSBvbmx5IHZvdGUuCj4gCj4g
-Q2hhbmdlcyBzaW5jZSB2MToKPiAgIC0gRml4ZWQgdGhlIERUIGJpbmRpbmdzIHRvIGRlc2NyaWJl
-IHRoZSBhY3R1YWwgU2VyRGVzIFBIWSBoYXJkd2FyZSwKPiAgICAgd2hpY2ggYWN0dWFsbHkgaGFz
-IHR3byBzdXBwbGllcyByYXRoZXIgdGhhbiBvbmx5IG9uZSAtIEtyenlzenRvZi4KPiAgIC0gVXNl
-IHJlZ3VsYXRvcl9idWxrXyogQVBJcyB0byBwcm9wZXJseSBzZXQgdGhlIGN1cnJlbnQgbG9hZHMg
-b2YgdGhlCj4gICAgIHR3byBzdXBwbGllcyAtIEtvbnJhZC4KPiAgIC0gRml4ZWQgTGVtYW5zIGJv
-YXJkIERUUyBmaWxlcyB0aGF0IGluY29ycmVjdGx5IHZvdGVkIGZvciB2cmVnX2w1YTsKPiAgICAg
-dGhlIGNvcnJlY3QgcmFpbHMgcGVyIHRoZSBwb3dlciBkaWFncmFtIGFyZSB2cmVnX2w0YSAoMC45
-VikgYW5kCj4gICAgIHZyZWdfbDFjICgxLjJWKS4KPiAgIC0gTGluayB0byB2MTogaHR0cHM6Ly9s
-b3JlLmtlcm5lbC5vcmcvbGludXgtYXJtLW1zbS8yMDI1MTEyNC1zZ21paWV0aF9zZXJkZXNfcmVn
-dWxhdG9yLXYxLTAtNzNhZThmOWNiZTJhQG9zcy5xdWFsY29tbS5jb20vVC8jbTBiOTNlMDZhMGQ2
-YTA5YzRjMWI2NWM1MDBiNDc1OTU4ZWQ1ZTI4OGQuCj4gCj4gU2lnbmVkLW9mZi1ieTogTW9oZCBB
-eWFhbiBBbndhciA8bW9oZC5hbndhckBvc3MucXVhbGNvbW0uY29tPgoKUmV2aWV3ZWQtYnk6IE1h
-bml2YW5uYW4gU2FkaGFzaXZhbSA8bWFuaXZhbm5hbi5zYWRoYXNpdmFtQG9zcy5xdWFsY29tbS5j
-b20+CgotIE1hbmkKCi0tIArgrq7grqPgrr/grrXgrqPgr43grqPgrqngr40g4K6a4K6k4K6+4K6a
-4K6/4K614K6u4K+NCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1waHkK
+
+--===============7781261538110786981==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="pjrvltbz7ftd6xiv"
+Content-Disposition: inline
+
+
+--pjrvltbz7ftd6xiv
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Subject: Re: [PATCH 05/17] phy: spacemit: add Innosilicon DP TX PHY driver
+MIME-Version: 1.0
+
+Hello,
+
+On Fri, Jul 24, 2026 at 11:16:37PM -0400, Cody Kang wrote:
+> +#include <linux/mod_devicetable.h>
+> [...]
+> +#include <linux/platform_device.h>
+
+Please drop the include for <linux/mod_devicetable.h>,
+<linux/platform_device.h> already provides of_device_id.
+
+Thanks
+Uwe
+
+--pjrvltbz7ftd6xiv
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEP4GsaTp6HlmJrf7Tj4D7WH0S/k4FAmp1gPUACgkQj4D7WH0S
+/k5t1Af+IUdmJ1rwWz3XTKVvTnkiumXy+BBJlthTfpRB3pFeiGILfF6fTXLHen+q
+HI5KuCh4tnAo/jb3zLCDqO0RRmh14m5WlEgbMnFB9NGgBsbmj77K/WjLo2asTvFN
+zTn9nrSjAtcmoJs0h4hIB3zaaueCYiWTGq8S2lIKH5D3xMUy61+006h2s5Dtrzlc
+fHv743vCRkGoaGQWxHvpsgkx8Sp7WXEwZQyMaRvSggG2FiskKlV5pyM35siiJuAA
+re4sCShFRtGFOhGjKK+mM7y8skzgBNqDocWT4sYp0QYeW6w8nwNHyKh3KUN//afs
+1fDWRTlDMEJQqbI9K3OToPHbVguUIA==
+=glOr
+-----END PGP SIGNATURE-----
+
+--pjrvltbz7ftd6xiv--
+
+
+--===============7781261538110786981==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============7781261538110786981==--
+
