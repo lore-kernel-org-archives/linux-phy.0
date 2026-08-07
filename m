@@ -4,57 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5F52C5AC7C
-	for <linux-phy@archiver.kernel.org>; Fri,  7 Aug 2026 12:33:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D78E2C5AC7C
+	for <linux-phy@archiver.kernel.org>; Fri,  7 Aug 2026 12:34:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kiQ8//c67U7LjFA+34ZxAIUmP+7qGwDCJolPhrpWlBc=; b=G3pbjMB7hWIBY7
-	CDVhLVqGHRmpIQTgFx+C8i+6dGcBtqxBVnRwOO5+n7Q0o1WOOBxVE0OcH2puE4LzzanPpvEkyI4AF
-	gkGFwU9HfptEcb646+bCuIn09tR/00ot53OlqICyh0vLcPK3BDS7rrdGhCOli9bWk3gDmnJyj6/pR
-	HR8RDTJ6Jsz8HD4YeGXfFVFNdKwKtN80G48Buyvp8HKVrr3gefc1Va+e3/sR2awFeVhqM/mf5s5zW
-	4UQUeKT97HgAGG1pzgs5D6857oIqqHwU8SR3moMzWFnNGn7VQ3Y5aWDx63Kh3H9ZJlaDzQKT3y+Dm
-	Rs02Yb6fSka1nEjpK73w==;
+	List-Owner; bh=VNvaahYCUcUe4SckEs0VWYZ+aWKt7s1NagmTZsCm5As=; b=FxpBO2Uy3DiUUZ
+	vc0WE8shFMlK/WaXRjAy1NsPtfTSdeG2ZOf/Ff507p+a+Z+3ebuWQqAePsK5rnKw7x5O/dM2S1uyC
+	TCCF4BBII0nkLfh5LpkCSMGO+Zx0n1+M2O6BwWXHEQKmgu5FF70lbLiCrkpFTamTQ6TI8/tdfS+Gn
+	1H7YAa3ex2hRanISW/VpLke7e5sNyFNW0uwpaErOgz9FuRYWm9foFx1ef8HV1CvdIbQgzv4GAAwDW
+	BnrI0C7Wrr0gztKQMdO5QBI/BN4NQext08YmudDuA0bM9DdcGvq8AqzQCxvMi6L6yNr+NCv+X2vwC
+	Xnn5q7Y+CYV0Sw/yPV7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsJlt-000000081LF-22WR;
-	Fri, 07 Aug 2026 12:33:57 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wsJlz-000000081Ly-2HWZ;
+	Fri, 07 Aug 2026 12:34:03 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsJls-000000081Kr-0kJm
+	id 1wsJly-000000081Ll-2NZQ
 	for linux-phy@lists.infradead.org;
-	Fri, 07 Aug 2026 12:33:56 +0000
+	Fri, 07 Aug 2026 12:34:02 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 9F1336013A;
+	by sea.source.kernel.org (Postfix) with ESMTP id 1C75A40A5A;
+	Fri,  7 Aug 2026 12:34:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1A18B1F01558;
 	Fri,  7 Aug 2026 12:33:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DB46B1F00A3E;
-	Fri,  7 Aug 2026 12:33:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786106035;
-	bh=2G5QrksURiMeIT/q/6FHj47gLmRyNC1EX+w+zin3eP0=;
+	s=k20260515; t=1786106042;
+	bh=CWUeE7zbWeo/eTSF+wA67IMWhRrqgAw1fJQs/s5GWyc=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=gGt6h145un9n000dCvMK/LNWXZQkqckAB+D8aozy6tsznAGtAW28SjTWmKmAUwuJS
-	 krRAsvGcFrGFa4IgPTh5ADDjsSS2qG7GTkUE57tHOICJWtb4/uQaRJHHVB4VMCX4pJ
-	 TdiSEE20QM3Fbe5Of8G8i34BJxEAuYmYHk88upQByfXD9BrLcxS/6yCsXn0jseo6di
-	 A2skzs9qq5lX5jL5+4XbLneLULZ6G5ZBfHViPqvQUqOnKprwDHRQuiMBUfJoj8+BOW
-	 z0XqniZoVWpJ8HVm9rpGUFl/LIneT5Te3XGtVNpDvJx2/7g4YVrjGqEzyCPrdSvvUj
-	 Q81f/Qy6gfGZA==
+	b=l04coC6zp1E7HZzaRmx1VneHw6rDPa//nvL9FyFq+m29vsgFB04sAkuqMD/pm7jwf
+	 bHOLZsRL68nnKa/Ayw0JZVYmAVmL+hp3rMyGLSc4tX/6VOFU72Mrf8AsxWoT1s5PCK
+	 7IlztcXcf+rjnT8gTm92ouySFC7ExXL1XXKcPbJ9qrghogOPsun+/sOlOv0cr4U3pe
+	 OlMafxlJUAxmSHnUaUtMuzE6RHwu6rhQMmzprqFw775pbg56eh/bSkkVGGjPD2BJg1
+	 S03il/LDkWhkY23BvzmCWBY8wElLj4kgbeJSJTag1W0G54FKGnzwk9t2nVoaZcbu85
+	 ehd1TSqF+otmg==
 From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>, 
- Abel Vesa <abelvesa@kernel.org>, 
- Wesley Cheng <wesley.cheng@oss.qualcomm.com>, 
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
- linux-phy@lists.infradead.org
-In-Reply-To: <20260722-qmp-drop-duplicate-v8-v1-1-795eb7de0322@oss.qualcomm.com>
-References: <20260722-qmp-drop-duplicate-v8-v1-1-795eb7de0322@oss.qualcomm.com>
-Subject: Re: [PATCH] phy: qcom-qmp: qserdes-com: drop duplicate v8 DP
- headers
-Message-Id: <178610603149.740291.7533615155584245879.b4-ty@kernel.org>
-Date: Fri, 07 Aug 2026 18:03:51 +0530
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
+ Krzysztof Kozlowski <krzk@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Bartosz Golaszewski <brgl@kernel.org>, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konradybcio@kernel.org>, 
+ Wasim Nazir <wasim.nazir@oss.qualcomm.com>, 
+ Mohd Ayaan Anwar <quic_mohdayaa@quicinc.com>, 
+ Umang Chheda <umang.chheda@oss.qualcomm.com>, 
+ Yijie Yang <quic_yijiyang@quicinc.com>, 
+ Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
+Cc: Loic Poulain <loic.poulain@oss.qualcomm.com>, 
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20260804-b4-sgmiieth_serdes_regulator-v2-0-c4bc688177dd@oss.qualcomm.com>
+References: <20260804-b4-sgmiieth_serdes_regulator-v2-0-c4bc688177dd@oss.qualcomm.com>
+Subject: Re: (subset) [PATCH v2 0/6] Fix regulator voting for the Qualcomm
+ SGMII SerDes PHY
+Message-Id: <178610603469.740291.829141301645845928.b4-ty@kernel.org>
+Date: Fri, 07 Aug 2026 18:03:54 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
@@ -74,21 +83,27 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Wed, 22 Jul 2026 13:34:42 +0300, Dmitry Baryshkov wrote:
-> Commit 212cdedcac11 ("phy: qcom-qmp: qserdes-com: Add v8
-> DP-specific qserdes register offsets") and commit d10736db98d2 ("phy:
-> qualcomm: qmp-combo: Add DP offsets and settings for Glymur platforms")
-> added identical header files for DisplayPort-specific registers on V8
-> PHYs, having different names. Get rid of one of the copies, reverting
-> commit d10736db98d2 ("phy: qualcomm: qmp-combo: Add DP offsets and
-> settings for Glymur platforms")
+On Tue, 04 Aug 2026 00:57:56 +0530, Mohd Ayaan Anwar wrote:
+> This is a long overdue v2 of the original patch series which tried to
+> address a SerDes power-up failure observed on the QCS8300 Ride board
+> using the phy-qcom-sgmii-eth driver. After going through a rabbit hole
+> of hardware schematics and power data, I now have a fuller picture of
+> this IP.
+> 
+> The Qualcomm SGMII SerDes PHY (used in Lemans and Monaco SoCs) is
+> powered by two voltage rails. The schematics call them vdda-0p9 and
+> vdda-1p2, so that's what we follow in the series. Additionally, the
+> 0.9V regulator draws a peak current of 46 mA and the 1.2V regulator
+> draws a peak current of 15 mA.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] phy: qcom-qmp: qserdes-com: drop duplicate v8 DP headers
-      commit: 4b04c8779a50ab27afb0b471ff1ced3061e440cb
+[1/6] dt-bindings: phy: qcom,sa8775p-dwmac-sgmii-phy: add named voltage rails and deprecate phy-supply
+      commit: 3719850f1b70dd3f01173be830cb0a1d2bc03a4e
+[2/6] phy: qcom: sgmii-eth: vote for both voltage rails with correct current loads
+      commit: 4f81684a1d1018d7d0e5579f08d95e7701279358
 
 Best regards,
 -- 
