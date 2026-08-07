@@ -4,71 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB49DC5AD2B
-	for <linux-phy@archiver.kernel.org>; Fri,  7 Aug 2026 22:58:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C97DC5AD05
+	for <linux-phy@archiver.kernel.org>; Fri,  7 Aug 2026 23:00:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jhRi/J/k5je0wYUyjrtzBlY0RlScxrLMqwyF27vds8Q=; b=oCRPUQyH0c8yc9
-	astOgl/7xLmJ0+n2VkLAhOLF93CRRvXP0utNFqDAzyARjp7P9Nd0BbTOrFdoT8N0ncSEy2CkMVLoW
-	eBrourbikH7IQeXqST2rIGB7A+2rI+fJ61IxyWZc3HOYznMfrM/EuS2laS8hgaGgBncucUZZMnOWa
-	9LGVQWDyeKKNdMqk8QoaJdd/xmgKEd8uWh884rsYR3Y0HJ5DUHHg+21JJjQw6TRP/+i2FI4EgjJV3
-	CO+Wyre+GI1mUaUyYXi5VptURNcJ7YeNVssu71TpZPU0IV32PxdHITBR+J2uv5DAr2BtQisQ64y1m
-	bDQ+489dDxntBp+f3L3w==;
+	List-Owner; bh=EZHkvXR/WrktRv7GuGgAGvXTNl23/u4w6oztQpCsCg0=; b=HS15Nca0bH/DwD
+	gt1bqn93wcO7FLYFHfoKhkKxZacmn8a5MRZlz7qmuTmXz4Sw+RKrROEm0M30x5/sgeCrTjeHKoo9/
+	ivjZMBHoqQogi7mlvIMt/iqopPHuPrQwbiG6sY5zBukIlgPofh2M9pQopElGQKjeOc7Zh1bLBv4Ax
+	1oKyU82c59m2omTtdFb0rtN/+MQ3RHcmhIpZAfQ1eQoc1fzFMklwNl69cNOHFkuWFiOWMwkDyzVli
+	00pYL6+jALs8fo8l2MV7DBk2kGPNuodQFEOx1w7ZYD0jYM9dOrIysLqDbhy+fUkxNrd9PQAgNWJA+
+	1H0cePmzmPdonfqCAmpw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsTWT-00000008qD9-1GLh;
-	Fri, 07 Aug 2026 22:58:41 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wsTXo-00000008qQM-2bli;
+	Fri, 07 Aug 2026 23:00:04 +0000
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsTWR-00000008qCw-3sOW;
-	Fri, 07 Aug 2026 22:58:39 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 65FA940601;
-	Fri,  7 Aug 2026 22:58:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1850B1F00A3A;
-	Fri,  7 Aug 2026 22:58:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786143519;
-	bh=qgInBwua0KUqVGKuYZJWYzxoohAhBjTD4eh1gVZ7K0o=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=iDcH522zJTzA2rzdF1COT9Mk3P+fOQfQx4rc7GU5PEwIbnvkM4P8DVTqv9Jj2rzCL
-	 SVNi1R/LH+2a6XUR9HD3jZXNO7XYQnBWqRWNgz8dngu/aVpjedIk886Hv/aOuSk/u6
-	 Lmtuj8UtavBqD5SpF1az/9X6Us2c4J6Acjb+hEQ8qwSywzFWKDNNm0uHBw96av3dXg
-	 tt0IheujypKLcoHNucMpdcSGTaUOL27nOAv11MxQ4osBJH5Ebktelqsgh3g/BYad4q
-	 BVOIIigxP2eCJaJRu2x6caoD18RbP54rBsyLQFO0fx5Q/gghubRfr0I2942249/oG5
-	 pcKp4SmXXKyoQ==
-Date: Fri, 7 Aug 2026 17:58:38 -0500
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Cody Kang <codykang.hk@gmail.com>
-Cc: linux-clk@vger.kernel.org, Albert Ou <aou@eecs.berkeley.edu>,
-	linux-riscv@lists.infradead.org, Stephen Boyd <sboyd@kernel.org>,
-	Paul Walmsley <pjw@kernel.org>, spacemit@lists.linux.dev,
-	devicetree@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
-	linux-kernel@vger.kernel.org, Alexandre Ghiti <alex@ghiti.fr>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Brian Masney <bmasney@redhat.com>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>, Haylen Chu <heylenay@4d2.org>,
-	Yixun Lan <dlan@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
-	Palmer Dabbelt <palmer@dabbelt.com>, linux-phy@lists.infradead.org,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Vinod Koul <vkoul@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
-	dri-devel@lists.freedesktop.org,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Simona Vetter <simona@ffwll.ch>
-Subject: Re: [PATCH RESEND 01/17] dt-bindings: display: spacemit: add K3
- Saturn DPU controller
-Message-ID: <178614351779.2207398.16648513134637713806.robh@kernel.org>
-References: <20260725-k3-display-v1-0-6de34d80e86c@gmail.com>
- <20260725-k3-display-v1-1-6de34d80e86c@gmail.com>
+	id 1wsTXl-00000008qPl-3jON;
+	Fri, 07 Aug 2026 23:00:03 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1786143593; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=LLvs2gpzS8SgUtUeacIC+uzGYsrA51G8l+88ra5+zuOVvfPhbzDxcn5hA9Qx4vze4dBxsH2fEHaJOuy+KVY7xg82Jo9ibM9xX/7fRL7JY45G5/eCBCO/EJk1+9erZrTwqeo3ut/wCSO/LwluLBSTyhwKiP65QnRD/J9y7NMmfDU=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1786143593; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=PovC8tV+FAuVh4jx5hdX+cj317qClrsgi5NccKsJXzY=; 
+	b=hv/wsn2ijQkgORKJ7b0MjtG2iTAEQkVwgr1utp3aGUuITv5EBw/ZAiUXHmCMBKSa+NsYa+qZO+X2hg4E+DSd8tQeLWeQdiRWZvANI4IdMKVM2xjb2ow9ky4mc+HBNXlLLkulWZdN0afYpXxS7asXKcaqs0rheAc8TJFs6rsK9hE=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=michael.riesch@collabora.com;
+	dmarc=pass header.from=<michael.riesch@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1786143593;
+	s=zohomail; d=collabora.com; i=michael.riesch@collabora.com;
+	h=Message-ID:Date:Date:MIME-Version:Subject:Subject:To:To:Cc:Cc:From:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:Message-Id:Reply-To;
+	bh=PovC8tV+FAuVh4jx5hdX+cj317qClrsgi5NccKsJXzY=;
+	b=XeCRWaiXBEkaCg/JPc5k0y2jYej7omXUEAkV69DJrmxWCawPoKVeAEYZv/6RS739
+	gQmdeVP13IIi8B9bsX39gH5MNe+IQPjt3lEksjayj5Bq6FtYY4/bU+H61C0MhvG/0zd
+	n6zT2PKhOXXsN8MICg9TBwH5pWR5hT0XurlMt0aA=
+Received: by mx.zohomail.com with SMTPS id 1786143591981605.2798606263314;
+	Fri, 7 Aug 2026 15:59:51 -0700 (PDT)
+Message-ID: <00d6ee9d-0ef1-41d4-8cd7-affb320b84f4@collabora.com>
+Date: Sat, 8 Aug 2026 00:59:47 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260725-k3-display-v1-1-6de34d80e86c@gmail.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 3/4] phy: rockchip-samsung-dcphy: model TX and RX as
+ separate PHYs
+To: =?UTF-8?B?5qWK5pm65oiQ?= <jason98166@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Guochun Huang <hero.huang@rock-chips.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20260726-dcphy-rx-v1-v2-0-cf9cc34a412a@gmail.com>
+ <20260726-dcphy-rx-v1-v2-3-cf9cc34a412a@gmail.com>
+ <7e55b8bc-d11d-4b25-99ee-d5d181be158f@collabora.com>
+ <CAPwA33Jnp6N7a=2tcrgEzFxXRpbxEO25ktrRDiea--9Uy5upNQ@mail.gmail.com>
+Content-Language: en-US
+From: Michael Riesch <michael.riesch@collabora.com>
+In-Reply-To: <CAPwA33Jnp6N7a=2tcrgEzFxXRpbxEO25ktrRDiea--9Uy5upNQ@mail.gmail.com>
+X-ZohoMailClient: External
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260807_160001_994243_1FF040C6 
+X-CRM114-Status: GOOD (  24.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,28 +83,67 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Sat, 25 Jul 2026 00:51:10 -0400, Cody Kang wrote:
-> Document the Saturn display processing unit found on the SpacemiT K3 SoC.
-> The K3 instantiates two of them, one per display path. They share a
-> compatible: an instance differs only in which register window, interrupt,
-> clock and reset lines it takes.
-> 
-> Signed-off-by: Cody Kang <codykang.hk@gmail.com>
-> ---
->  .../display/spacemit/spacemit,k3-saturn-dpu.yaml   | 132 +++++++++++++++++++++
->  1 file changed, 132 insertions(+)
-> 
-
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgSmFzb24sCgpPbiA4LzQvMjYgMDc6MzgsIOaliuaZuuaIkCB3cm90ZToKPiBbLi4uXQo+PiBU
+aGlzIGFwcHJvYWNoIHdpdGggdGhlICJmaXJzdCIgdmFyaWFibGUgc2VlbXMgdW5pbnR1aXRpdmUu
+IElmIHlvdSBuZWVkCj4+IHJlZmVyZW5jZSBjb3VudGluZyBvbiB0aGUgQklBUyBibG9jaywgdGhl
+biB1c2UgYSBzdGF0ZSB2YXJpYWJsZQo+PiAiYmlhc19wb3dlcmVkIiwgdXNlIGEgbXV0ZXggdGhh
+dCBwcm90ZWN0cyBpdCwgYW5kIGNhbGwKPj4gc2Ftc3VuZ19taXBpX2RjcGh5X2JpYXNfYmxvY2tf
+e2VuLGRpc31hYmxlIChmcm9tCj4+IHNhbXN1bmdfbWlwaV9kY3BoeV9wb3dlcntvbiwgb2ZmfSkg
+dW5jb25kaXRpb25hbGx5LiBUaG9zZSBtZXRob2RzIHNoYWxsCj4+IGFjcXVpcmUgdGhlIG11dGV4
+LCBjaGVjayB0aGUgc3RhdGUgdmFyaWFibGUsIHtlbixkaXN9YWJsZSB0aGUgQklBUwo+PiBibG9j
+aywgc2V0IHRoZSBzdGF0ZSB2YXJpYWJsZSBhY2NvcmRpbmdseSwgcmVsZWFzZSB0aGUgbXV0ZXgu
+Cj4+Cj4+IFsuLi5dCj4+Cj4+IE5vdCBzdXJlIHdoZXRoZXIgeW91IGFjdHVhbGx5IG5lZWQgdG8g
+dHJhY2sgdGhlIHBvd2VyIHN0YXR1cyBvZiB0aGUKPj4gaW5kaXZpZHVhbCBQSFlzIChtYXliZSB5
+b3UgYWN0dWFsbHkgbmVlZCB0byB0cmFjayB0aGUgQklBUyBibG9jayBzdGF0dXMKPj4gYWxvbmUp
+IGJ1dCBhbnl3YXkgSSB3b3VsZCBhcHByZWNpYXRlIGlmCj4+ICJzYW1zdW5nX21pcGlfZHBoeV90
+eF9wb3dlcl97b24sb2ZmfSIgd291bGQgc2V0IHRoZSAicGQtPnBvd2VyZWQiCj4+IHZhcmlhYmxl
+Lgo+IAo+IEJvdGggb2YgdGhlc2UgbGVhZCB0byB0aGUgc2FtZSBjaGFuZ2UuIFlvdSBhcmUgcmln
+aHQgdG8gYmUgdW5zdXJlCj4gYWJvdXQgdGhlIHBlci1QSFkgZmxhZyAtIEkgY2hlY2tlZCwgYW5k
+IGl0cyBvbmx5IHJlYWRlcnMgYXJlIHRoZSB0d28KPiAiZmlyc3QiIGNvbXB1dGF0aW9ucywgd2hp
+Y2ggb25seSBkZWNpZGUgYWJvdXQgdGhlIHNoYXJlZCBibG9jay4gU28gdGhlCj4gdHdvIGZsYWdz
+IGJlY29tZSBvbmUgY291bnQgaW4gdGhlIHBhcmVudCwgdGFrZW4gYW5kIGRyb3BwZWQgaW5zaWRl
+Cj4gc2Ftc3VuZ19taXBpX2RwaHlfe3R4LHJ4fV9wb3dlcl97b24sb2ZmfSwgYW5kIHRoZSAiZmly
+c3QiIGNvbXB1dGF0aW9ucwo+IGdvIGF3YXkuIEkgd2VudCBmb3IgYSBjb3VudCByYXRoZXIgdGhh
+biBhIHNpbmdsZSBmbGFnIGJlY2F1c2UgdGhlCj4gcmVsZWFzZSBzaWRlIGhhcyB0byBkaXN0aW5n
+dWlzaCAidGhlIG90aGVyIGRpcmVjdGlvbiBpcyBzdGlsbCB1c2luZwo+IGl0IiBmcm9tICJub2Jv
+ZHkgaXMgbGVmdCIuCj4gCj4gVGhlIHNoYXJlZC1ibG9jayBoZWxwZXIgd2lsbCB1c2UgbG9ja2Rl
+cF9hc3NlcnRfaGVsZCgpIHJhdGhlciB0aGFuCj4gdGFrZSB0aGUgbXV0ZXggaXRzZWxmLCBzaW5j
+ZSBzYW1zdW5nX21pcGlfZGNwaHlfcG93ZXJfe29uLG9mZn0gYWxyZWFkeQo+IGhvbGQgaXQsIGFz
+IHlvdSBub3RlZC4KPiAKPiBPbmUgdGhpbmcgSSBhbSB1bnN1cmUgYWJvdXQgaXMgdGhlIGVuYWJs
+ZS9kaXNhYmxlIHBhaXJpbmcuIEkgY291bGQgbm90Cj4gZmluZCBhbiBlbmFibGUgZm9yIHRoaXMg
+YmxvY2sgLSB0aGUgZm91ciBCSUFTIHJlZ2lzdGVycyBvbmx5IHNlbGVjdAo+IGJpYXMgY3VycmVu
+dHMsIHJlZmVyZW5jZSB2b2x0YWdlcywgdGhlIEhTIG91dHB1dCBsZXZlbCBhbmQgdGhlIEJHUgo+
+IGNob3BwZXIgZGl2aWRlciwgd2hpbGUgUExMX0NPTjAgaW4gdGhlIHNhbWUgY29tbW9uIGJsb2Nr
+IGRvZXMgaGF2ZSBhCj4gUExMX0VOLiBJZiB0aGF0IHJlYWRpbmcgaXMgcmlnaHQsIHRoZXJlIGlz
+IG5vdGhpbmcgdG8gdHVybiBvZmYgYW5kIHRoZQo+IHJlbGVhc2Ugc2lkZSB3b3VsZCBvbmx5IGRy
+b3AgdGhlIGNvdW50IC0gaW4gd2hpY2ggY2FzZSBtYXliZSB0aGUKPiAiZW5hYmxlIiBuYW1lIGlz
+IHdvcnRoIHJldmlzaXRpbmcgYXMgd2VsbC4gRG9lcyB0aGF0IG1hdGNoIHlvdXIKPiB1bmRlcnN0
+YW5kaW5nIG9mIHRoaXMgYmxvY2s/CgpNeSB1bmRlcnN0YW5kaW5nIG9mIHRoaXMgYmxvY2sgY29t
+ZXMgZnJvbSB0aGUgVFJNIGFuZCB0aGUgZG93bnN0cmVhbQpkcml2ZXIuIFRSTSBzdGF0ZXMgdGhh
+dCB0aGUgQklBUyBibG9jayBpcyBjb21tb24gKD0gc2hhcmVkIGJldHdlZW4gUlgKYW5kIFRYKSwg
+YnV0IERvd25zdHJlYW0gZHJpdmVyIGRvZXMgbm90IGNhcmUgYW5kIGp1c3Qgd3JpdGVzIHRoZQpz
+ZXR0aW5ncyBmb3IgUlggYW5kIFRYIHVuY29uZGl0aW9uYWxseS4KClRoZXJlIGlzIGFsc28gc29t
+ZXRoaW5nIHdlaXJkOiB0aGUgcmVnaXN0ZXIgZGVzY3JpcHRpb24gaW4gdGhlIEdSRgppbmRpY2F0
+ZXMgdGhhdCBSWCBjb3VsZCBiZSBpbiBDUEhZIGFuZCBUWCBpbiBEUEhZIG1vZGUuIEJ1dCBDUEhZ
+IGFuZApEUEhZIHJlcXVpcmUgZGlmZmVyZW50IHZhbHVlcyBmb3IgdGhlIERDUEhZX00wX0JJQVNf
+Q09ONC4gSSdsbCB0cnkgdG8KYXNrIFJvY2tjaGlwIHBlb3BsZSBhYm91dCB0aGlzLgoKQlRXIG5v
+IG9iamVjdGlvbnMgdG8gcmVuYW1pbmcgdGhpcyB0byBlLmcuICIqX2NvbmZpZ3VyZSgpIiBhbmQg
+dXNlIGEKZmxhZyAiYm9vbCBjb25maWd1cmVkOyIgaWYgcmVxdWlyZWQuCgo+IFNlcGFyYXRlbHks
+IEkgbm90aWNlZCAiZmlyc3QiIGFsc28gZ3VhcmRzIHRoZSBBUEIgcmVzZXQsIGFuZCBvbmx5IGlu
+Cj4gdGhlIHRyYW5zbWl0dGVyIHBhdGggLSBvbmNlIDQvNCBlbmFibGVzIHRoZSByZWNlaXZlciwg
+YSByZWNlaXZlci1maXJzdAo+IHBvd2VyLW9uIGRvZXMgbm90IGdldCBvbmUuIEkgcGxhbiB0byBt
+b3ZlIGl0IGludG8gdGhlIHNhbWUgc2hhcmVkLWJsb2NrCj4gcGF0aCBzbyBib3RoIGRpcmVjdGlv
+bnMgYmVoYXZlIHRoZSBzYW1lLCBhbmQgY2hlY2sgYm90aCBwb3dlci1vbgo+IG9yZGVycyBvbiB0
+aGUgYm9hcmQgYmVmb3JlIHNlbmRpbmcgdjMuCj4gCj4gSSB3b3VsZCBsaWtlIHRvIGZvbGQgYWxs
+IG9mIHRoaXMgaW50byB2MyB0b2dldGhlciB3aXRoIHdoYXRldmVyIGNvbWVzCj4gb3V0IG9mIHRo
+ZSBQSFlfVFlQRV9DU0kvUEhZX1RZUEVfRFNJIGRpc2N1c3Npb24gaW4gcGF0Y2ggMS80LCBzaW5j
+ZQo+IHRoYXQgZGVjaWRlcyBob3cgdGhlIHR3byBQSFlzIGFyZSB0b2xkIGFwYXJ0LgoKT0ssIG1h
+a2VzIHNlbnNlLiBMb29raW5nIGZvcndhcmQgdG8gdjMhCgpUaGFua3MgYW5kIGJlc3QgcmVnYXJk
+cywKTWljaGFlbAoKPiBbLi4uXQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
+bGlzdGluZm8vbGludXgtcGh5Cg==
