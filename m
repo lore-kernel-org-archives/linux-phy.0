@@ -4,76 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3BEEC55174
-	for <linux-phy@archiver.kernel.org>; Sat,  8 Aug 2026 14:07:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A901DC55174
+	for <linux-phy@archiver.kernel.org>; Sat,  8 Aug 2026 14:14:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Subject:Cc:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cdI2qknbE6GVFtphcLdqbudQuAuGzpk2zrueiaumSvs=; b=mgechZ9XypeGUn
-	xyeEJU9Wr40opurYefvpxeFug6SR6nuWPj3s/JIxwLBvcMONeZqRWOTaoH3wwQ3l/5lM4AmBKa3X6
-	mmiUogE3hY0kfYs9ADQzdJ+upkCNWMWYShzO3UNkrF4j/yte/2opIrqn9JeeDMPUyTK9ARkeMsEPD
-	f2HI0a3GxCIMRjyBCKOjINl/DpSijd+s64+p6z3wV3UQ+q1SS6DK1ykuWZiOcrK6JEh/wNxICz4ZZ
-	CmBXxT4QI//Kq379Ir9gsj/YLFDc2NfqYCUMlXitLUg/kGEcumogdzXUObKBqo3z7080Xo9mdkzeS
-	p8H5JLkr0kr3ELjECh6Q==;
+	List-Owner; bh=eFax1X3Tn23SVGLDJJ3CRQiiFwOmNh4pa6QwjG6tAoY=; b=IwHWC98iQbQGN6
+	MF6zwW1EurvE/A22RYUHo1iuY/IRoisjYtvlTODsfi4rWFEexKygs9tPUeQOdRCHjzXQ63IHl/R2h
+	S/j6MyjCaizvSnMX64vBs30cz6N9khMvxo2s7MjMBw3icw3BdFyiIR2cWWfneIootAC1JGqb7tVWC
+	lRcEw18RZHmLQpieFngXOZMD8f3ZI9ARba8D3yjCdZhQzF9/glq5NB5y97PH2bCJcbHTb6uLCzfbS
+	PX0modx0kYYcObdUPIKqrJLZoPXJmUNbq8R+6csaq4iftlrK1CHBkt3O2lGBx1pAruk8XBfff9ZEf
+	pvN3w/h+biIeVt/VxZXw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wshhd-00000009R3a-2ccn;
-	Sat, 08 Aug 2026 14:07:09 +0000
-Received: from mail-pz2-x00.google.com ([2607:f8b0:4864:3b::])
+	id 1wshom-00000009RQM-1X23;
+	Sat, 08 Aug 2026 14:14:32 +0000
+Received: from mail-pj2-x01.google.com ([2607:f8b0:4864:39::1])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wshhb-00000009R2n-3A05
+	id 1wshoj-00000009RPi-3hfq
 	for linux-phy@lists.infradead.org;
-	Sat, 08 Aug 2026 14:07:08 +0000
-Received: by mail-pz2-x00.google.com with SMTP id 41be03b00d2f7-c888c001628so308287a12.0
-        for <linux-phy@lists.infradead.org>; Sat, 08 Aug 2026 07:07:07 -0700 (PDT)
+	Sat, 08 Aug 2026 14:14:31 +0000
+Received: by mail-pj2-x01.google.com with SMTP id d9443c01a7336-2ce7ac92dfcso4972205ad.1
+        for <linux-phy@lists.infradead.org>; Sat, 08 Aug 2026 07:14:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1786198027; x=1786802827; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1786198469; x=1786803269; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:mime-version:references
          :in-reply-to:subject:cc:to:from:message-id:date:from:to:cc:subject
          :date:message-id:reply-to:content-type;
-        bh=zrxXzmuLnBiNnwK74e3uO+cSnorKNXKL/VAH2ROuE74=;
-        b=KulHioTedNLhbbSE2yAeS9uAbztHLmpjk2dTQi6/L7PFPYr+lYljKQKcuU/TG1neR1
-         nfhbZDRTGyh4jD7+ou06F4nmmm4AgW2BpmHRWhox1TeYW7IJTQJXV/LaV+aVbk/V9aMo
-         oFIOMBXUqRqmK34xty2SshH7RFQVMbO3bzHa5ploilCFL2oJffk3RlUr7ASFROpZnNX3
-         sPwI/pNsy1PzpMsJnR3+7MJ87Mavr4tZb0HbX2+FrCoKNWQVZY4A0BTR1xTLoHDQ1B3W
-         N903MC5X665G2KxB5RrvO2pL0La1rTyNsLQ10xFk0AdO60Lnjcc4s9ICubvdh3Za5Lo1
-         9YXw==
+        bh=cRCYRkrqsjrsSzRNFotYZZ98meWVRPcoRMuLiucayfo=;
+        b=GPdeNM9+2mvsqviu7qFz3LsNv7LjUsnTJtMFGeBc7IcZAZBLkdrIwgVfIrp0kK2QYB
+         XSDBB1+WqtEOkPMDmXP5gRusWF2lUfks659X3n0UTKoyC1VI8Ccu7AQ5aLfkx0eYQIfj
+         fsOg9BaGMCXDOg3bnmvFaaRoK3U1/mT4o0wzKOF/rUKXuKpzTT6/1L9HKnqdMv8Ut+yI
+         WzaBKyKQRxArmxZx+lfAqBGouE0jUzDJVRa1YqPm0YrD9cv/Q+ll6qtZmTbP9M7n/Oi7
+         setgE6eu4gVMCmlXyfSn9JEU1FI2fUF7QJS87CCRg+VpL3dwCzWmnaQ15AdiG6lMche0
+         1u1w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1786198027; x=1786802827;
+        d=1e100.net; s=20251104; t=1786198469; x=1786803269;
         h=content-transfer-encoding:content-type:mime-version:references
          :in-reply-to:subject:cc:to:from:message-id:date:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=zrxXzmuLnBiNnwK74e3uO+cSnorKNXKL/VAH2ROuE74=;
-        b=Y9LtHj6EKRaSHMI9NfvYlCKDHzbS8ikoiGmSE+gfE5jB85YI4oAFjJaRs3j1GZepcZ
-         L74j0ovgJsZPcO3n6pgwHSZOFGvwONO0NoMn9IIeXiOcJexkUzfj6G2ToPykwBhr34ri
-         BgnogkpVHivqghy8RqkSHg3rcDmkoY5WCC6/3Cfy5qcIZlozJOCg6xXevl1A0p7tPS3U
-         lWVOsjbrwEJA87b3bHwAB+C2du+MV04BZc8zJYiAK6wEBD7pbQM/zUAxhcsQS2WEyncV
-         fFQWDEIq1fYutRkjmzbGtvPIESwfouwUcVU7EYdicRa++HSMIAG4hFFbtuBcW+9gSuuf
-         RRrw==
-X-Forwarded-Encrypted: i=1; AHgh+RpWRoK3wg4I8ad02p78dMMKMTK+e4dL2VKscQxHqG9ev2nfvPZtRLccO/FQEkzoslHXkZ0X5eiN3tQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzmpUesHT17I0cE/+5RXqe0w5tWR/ad3WE8uU1TtIotvmxjuj9T
-	7uVj7SbWL5smSswXw97Nkdslp7CUZjcx+kxYwTeTqpKGA1+STn6iTNl5
-X-Gm-Gg: AR+sD13btt8mxraZVnMCkueCbuSWH6DE2IvPAVkc4a8J4vVF5NkfBStE07bv4kVV0uw
-	boOA6+WfeWuQGtD28qXUTKy9axlcgZoP8QJih8ib+ausvVWgnpUvfAzaKHVitL7ZG/JHkzDI01f
-	kuNLilCrISWOBo5+O6jloRCg3/TtXooO644EUMTsvnhwLZsafsnGbhv4z3Yp8oe+VEaMcB82Xle
-	Jre+BnKL30Wftr/ukalPb7og9PeeCRmOpLRcZmOL2CkxbtdxCGno8jG/gDTCPhC2yNopWSK0zZa
-	H1YSJlxhaM7I84dDewtbO/F0S52nL+Pr2KPubx0lOsxCPXZ4ZVPGpXTIVKHvrd3UCpJKW4o4OSQ
-	OGodTGHJ8Su2e2VEu/TFn7XRLVFq56WFK50Qo6NQEhyAhwxPq+nlyzYLa4vcjhwf2tDnMkfcFPw
-	MxAPTfwJE+FhFIbbLDTo7q0Ze8vrdGP3HNQpZHsuM=
-X-Received: by 2002:a05:6a00:2286:b0:848:76af:db37 with SMTP id d2e1a72fcca58-84f694200b5mr7899614b3a.7.1786198026809;
-        Sat, 08 Aug 2026 07:07:06 -0700 (PDT)
+        bh=cRCYRkrqsjrsSzRNFotYZZ98meWVRPcoRMuLiucayfo=;
+        b=OmOVcHwL8lANcAbG8PSPmGWzCH/J1uIHLohjwPHoLP3nGqDV/Dy/ZDLEHVuPCoRsjX
+         CPwd3LiH98fDIEZRc9u8uCAVf8gbGDuxh2t7hge1h1b41+1OduWbxH4jItAcH988bG33
+         3xemt8RHPw6exXRx/9sKRUkDA3V9gps3Gk9jRkB9AiPS2jtQZGiZNRPBstVbiEzJMI0r
+         wadPBsNO8V+hAIrs3Vy7PHdLQSroGcU7syYUEqjHRhtfuB2cI261znLT/6Bvrx+b/+6i
+         Xvd541At/RARXqJ8RGudGak27LxJQfpuUdTu6R7jnlEUziKb4z75UnO9iMkC0YRhpACN
+         vmOA==
+X-Forwarded-Encrypted: i=1; AHgh+RqqbexUAbQWiYC6NvXIAtA3+5qu55epHptdI0mYn640+h1ocksZ6/SaoP2/eShGenc8URhwtLcFLmU=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy3v5WqQx+qyBzqE1bLBM7datIRLdqD/GfTxiuIYUaKWT5NZc8L
+	3XRZrxGiIgzg4geQwNhswnvNyiW/GVWL61q9IcVoCQzs3kbxOkfZHrg9SJg/Uj60EuWHAA==
+X-Gm-Gg: AR+sD101wQNOvAsjFoYWz5nbPtRE6J/jh+7esyIp8pC61dmczE+5teB3OysVDo8UsvW
+	zf/tmVIra3qx9qXsViBuev6wl4KTWClHMhR3ccocL6kScxKMT0PlukQq6WBeDfvXRmdMLbogOIp
+	R0T+Qav+jxam01C++bLiiewAJVvnOEC68oRfyEkCIml/63WiLBwcxeR7GI8hkqnzz01k7TgAeF1
+	hFsckm+NqMLl0I3cs4uyZHpmBfXF28DQtTSLzKpVwOiqS1+/QD2RDF9up2bifM0bh4IX85GyrHk
+	OPeLapXv9GTSJGM71oEdLAXXsMdhuGDWIiETHM39R2SGcK1Fu2Y9cnGJlrejr5MtGAlLffYEErc
+	FTadLAuofGeggv4uzANVGF8iaqXQa7q/QQQjUdx/fZIr6oXvm2+M11qHduQGB+npWOu5ePPOSw7
+	SJ8dmfiSFF2MT3KVXuSxPMVxJVVtTfmNwL1X4apdU=
+X-Received: by 2002:a17:903:f90:b0:2c9:b2c1:13ec with SMTP id d9443c01a7336-2d294c225a1mr141926765ad.11.1786198469018;
+        Sat, 08 Aug 2026 07:14:29 -0700 (PDT)
 Received: from localhost ([2403:2c80:17:1e::20db])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-cbe8f372b5bsm1905209a12.25.2026.08.08.07.07.05
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2d14dbeaa7bsm19180265ad.41.2026.08.08.07.14.28
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 08 Aug 2026 07:07:06 -0700 (PDT)
-Date: Sat, 08 Aug 2026 22:07:03 +0800
-Message-ID: <7b4b8457715c2e447f3b3522e519f0af.codykang.hk@gmail.com>
+        Sat, 08 Aug 2026 07:14:28 -0700 (PDT)
+Date: Sat, 08 Aug 2026 22:14:25 +0800
+Message-ID: <16421007bf6b2a251ccf51cbb5bf3694.codykang.hk@gmail.com>
 From: Cody Kang <codykang.hk@gmail.com>
-To: Yao Zi <me@ziyao.cc>
+To: Uwe =?utf-8?q?Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
 Cc: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
@@ -88,15 +88,16 @@ Cc: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
  linux-riscv@lists.infradead.org, devicetree@vger.kernel.org,
  spacemit@lists.linux.dev, linux-kernel@vger.kernel.org,
  linux-phy@lists.infradead.org, linux-clk@vger.kernel.org
-Subject: Re: [PATCH RESEND 12/17] drm/spacemit: add Innosilicon DP/eDP
- controller bridge driver
-In-Reply-To: <amdPPBOH-Dk4oU7y@pie>
+Subject: Re: [PATCH RESEND 05/17] phy: spacemit: add Innosilicon DP TX PHY driver
+In-Reply-To: <amnzTxDYtSBojHdY@monoceros>
 References: <20260725-k3-display-v1-0-6de34d80e86c@gmail.com>
- <20260725-k3-display-v1-12-6de34d80e86c@gmail.com> <amdPPBOH-Dk4oU7y@pie>
+ <20260725-k3-display-v1-5-6de34d80e86c@gmail.com>
+ <amnzTxDYtSBojHdY@monoceros>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260808_070707_794243_4ECD3E3E 
-X-CRM114-Status: GOOD (  26.96  )
+X-CRM114-CacheID: sfid-20260808_071429_919903_BACD39E2 
+X-CRM114-Status: UNSURE (   8.29  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,129 +109,19 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Yao Zi,
-
-On Mon, 27 Jul 2026 12:29:48 +0000, Yao Zi wrote:
-> On Sat, Jul 25, 2026 at 12:51:21AM -0400, Cody Kang via B4 Relay wrote:
-> > From: Cody Kang <codykang.hk@gmail.com>
-> >
-> > Add the DP/eDP controller that sits downstream of the Saturn DPU. Two
-> > identical instances share one compatible; the eDP-vs-DP role is board
-> > wiring, so it is taken from the devicetree: an eDP panel always sits
-> > under an aux-bus child node, an external DP connector never does.
-> >
-> > The link is driven through the generic PHY framework, so the controller
-> > never touches a PLL register. The controller's HPD interrupt is gated by
-> > the DP pixel clock, which can be off exactly when a plug has to be
-> > caught, so the connector is also polled and the interrupt path re-reads
-> > the live level when it does fire.
-> >
-> > Signed-off-by: Cody Kang <codykang.hk@gmail.com>
-> > ---
-> >  drivers/gpu/drm/spacemit/Kconfig            |   19 +
-> >  drivers/gpu/drm/spacemit/Makefile           |    3 +
-> >  drivers/gpu/drm/spacemit/spacemit_inno_dp.c | 2443 +++++++++++++++++++++++++++
-> >  drivers/gpu/drm/spacemit/spacemit_inno_dp.h |  328 ++++
-> >  4 files changed, 2793 insertions(+)
->
-> ...
->
-> > +static int inno_dp_probe(struct platform_device *pdev)
-> > +{
-> > +	struct device *dev = &pdev->dev;
-> > +	struct device_node *aux_bus_np;
-> > +	struct spacemit_dp_dev *dp;
-> > +	struct resource *res;
-> > +	int ret;
->
-> ...
->
-> > +	dp->pxclk = devm_clk_get(dev, "pxclk");
-> > +	if (IS_ERR(dp->pxclk)) {
-> > +		ret = dev_err_probe(dev, PTR_ERR(dp->pxclk),
-> > +				    "failed to get pxclk\n");
-> > +		return ret;
-> > +	}
->
-> It seems pxclk is only enabled in probe() and disabled in remove(),
-> please consider using devm_clk_get_optional_enabled().
-
-Thanks for the review. You are right that the disable belongs to
-devres. I will move the disable to a devm action registered
-after the populate.
-
-But the _enabled part of devm_clk_get_optional_enabled() doesn't
-fit here: it hands the disable to devres at get time, before the
-PHY child is populated, so on unbind pxclk would be disabled only
-after the PHY PLL it is parented on is gone, and the clock core
-would warn.
-
-I will keep the non-optional getter, since the binding requires
-the clocks.
-
-> ...
->
-> > +	if (dp->pxclk) {
-> > +		ret = clk_prepare_enable(dp->pxclk);
-> > +		if (ret) {
-> > +			dev_err(dev, "failed to enable pxclk: %d\n", ret);
-> > +			goto err_reset;
-> > +		}
-> > +	}
->
-> So this check could be dropped.
-
-Yes, all the if (dp->pxclk) guards are dead code; will drop them
-in v2.
-
-> ...
->
-> > +	/*
-> > +	 * The PHY exposes its PLL as the APMU pixel-clock mux's external
-> > +	 * parent.
-> > +	 */
-> > +	dp->pll_clk = devm_clk_get(dev, "pll");
-> > +	if (IS_ERR(dp->pll_clk)) {
-> > +		ret = dev_err_probe(dev, PTR_ERR(dp->pll_clk),
-> > +				    "failed to get PHY pixel clock\n");
-> > +		goto err_clk;
-> > +	}
->
-> Same for the "pll" clock.
-
-We never enable "pll" ourselves (it is only a parent and rate
-target), so it will stay a plain non-optional devm_clk_get().
-
-> > +	if (dp->pxclk) {
-> > +		ret = clk_set_parent(dp->pxclk, dp->pll_clk);
-> > +		if (ret) {
-> > +			dev_err(dev, "failed to route eDP pixel mux to PHY PLL: %d\n", ret);
-> > +			goto err_clk;
-> > +		}
-> > +	}
-> > +	 */
-> > +	ret = devm_request_threaded_irq(dev, dp->irq, spacemit_dp_irq_handler,
-> > +					spacemit_dp_hotplug_event_handler,
-> > +					IRQF_NO_AUTOEN, dev_name(dev), dp);
-> > +	if (ret) {
-> > +		dev_err(dev, "failed to request irq %d: %d\n", dp->irq, ret);
-> > +		goto err_clk;
-> > +	}
->
-> Since 55b48e23f5c4 ("genirq/devres: Add error handling in
-> devm_request_*_irq()") devm_request_threaded_irq() automatically throws
-> an error message when it fails, so this error message is redundant.
-
-Right, will drop it.
-
-Cody
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgVXdlLAoKT24gV2VkLCAyOSBKdWwgMjAyNiAxNDozNjozMSArMDIwMCwgVXdlIEtsZWluZS1L
+w7ZuaWcgd3JvdGU6Cj4gSGVsbG8sCj4KPiBPbiBTYXQsIEp1bCAyNSwgMjAyNiBhdCAxMjo1MTox
+NEFNIC0wNDAwLCBDb2R5IEthbmcgdmlhIEI0IFJlbGF5IHdyb3RlOgo+ID4gKyNpbmNsdWRlIDxs
+aW51eC9tb2RfZGV2aWNldGFibGUuaD4KPiA+IFsuLi5dCj4gPiArI2luY2x1ZGUgPGxpbnV4L3Bs
+YXRmb3JtX2RldmljZS5oPgo+Cj4gPGxpbnV4L3BsYXRmb3JtX2RldmljZS5oPiBhbHJlYWR5IG1h
+a2VzIHN1cmUgdGhhdCBvZl9kZXZpY2VfaWQKPiBpcyBhdmFpbGFibGUgYW5kIDxsaW51eC9tb2Rf
+ZGV2aWNldGFibGUuaD4gd2lsbCBnbyBhd2F5IHNvb24uCj4KPiBTbyBwbGVhc2UgZHJvcCB0aGUg
+bGF0dGVyICNpbmNsdWRlLgoKVGhhbmtzIGZvciB0aGUgcmV2aWV3LiBXaWxsIGRvIGluIHYyLgoK
+Q29keQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
+cGh5Cg==
