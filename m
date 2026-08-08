@@ -4,72 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0A7EC5AD05
-	for <linux-phy@archiver.kernel.org>; Fri,  7 Aug 2026 23:08:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4066C5AD2B
+	for <linux-phy@archiver.kernel.org>; Sat,  8 Aug 2026 00:09:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:From:To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QstRLIcKdSIcQSnq+vjgTpFRIrfSsZIjFJSOMFAqcsQ=; b=HTbBOfxvW2JKTx
-	uh29pkc8HMD36+FvoEplGMmRvJXE9ymUHMdnnMC6T0beVl6by7l/rhq9mO4xi63tPwoCzWF33Phl2
-	OIDs4Wsmfp7r1757itJZRvZAn13Qwi26b69GznYNI/8rAofVsGKNF9HCaa7wwUMp10mBY8CYvVZPl
-	W1AbmiRag8XfUKi2H6/ehgit6yu/M9Ou5mTQgJwSON4Pcqcrcl7UnLejF9++0vdu4fjQs/GSFzLSn
-	kArtfU+1naUQOB7S0MeIOLJW2QQB3QFbIqRKH7sB87Hq0nl6GlDNJzsktMyGfRsnr7yGCyRs3OKT/
-	RCkx9yhRgVn1I/cKiFLA==;
+	List-Owner; bh=bGF71Tf3yQJm8XHeWPtV3+kGM1VGGgfTLW1aTtHY8rw=; b=SHg/DBbnzhXI66
+	VN0K8g7znpwij3EFhKYAGurnFDkMzbeEUPZcCFseuVGg3PdLFUEzf1UEMW1QUlzoWMt0jiEowyAlT
+	4Ntl9bUG/v33McB9LyFGUb8jAD7hrJzCm4Yr24hukKnB3ox4PvbY/EozUuKFE8mYCfYIGhL4mzPSX
+	w6x21ErExG1qt6rgFE8AA0KD+1+TTXL0hVdFnbynsw0SAOwbod6NUE/pUad7LGewaVRmcbSOu9wql
+	bsjA9F952JAwAAEphemMUWQK5NDJMdGun1ziNm8aojn1DF4tc792HabUX0e0P71H8X3VIgCsHGCbZ
+	JOUT20abvXzTjaXI957Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsTfw-00000008r40-1QDi;
-	Fri, 07 Aug 2026 23:08:28 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wsUd4-00000008tkv-46Sx;
+	Sat, 08 Aug 2026 00:09:35 +0000
+Received: from mail-43101.protonmail.ch ([185.70.43.101])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsTfu-00000008r3k-1aUn;
-	Fri, 07 Aug 2026 23:08:26 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id A1D386001A;
-	Fri,  7 Aug 2026 23:08:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 238321F000E9;
-	Fri,  7 Aug 2026 23:08:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786144105;
-	bh=wQ0JD0AB/ZMckaLhyMCcytJcM09nVahiftP8BN/zRr4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=fnEINRfI/WLStiFHgYr/N4vDshm6MANIZ293vGjTgkzrxM9QK3Hpe/ipWqLpB8Nk2
-	 bW/kjk4FPdSBkuQtNkbkj8Uf5GqBo+ZqHzgzukevc1IOlnVdLNonX9i+Awx2kyBK75
-	 Vn7VDhMxtF6+1jS4/eDR1xCcJYmCSs66odGLe5emtBWSvtnEGuyUVI1xHc5L4Cz9pU
-	 MHEKjmP5IXncmal1qT1VdKixTr5Cyb9rX7KU4yLnlhFCjENjewgVIlftfdWVXHB3OG
-	 b3SV5BorbrpdPGg0xi/N2HjaSUa7bkr2IQ6WepaCNehV9qPEvLtkYCk0VGjZ2p/Ia8
-	 8FhMav+rBrC3A==
-Date: Fri, 7 Aug 2026 18:08:24 -0500
-From: Rob Herring <robh@kernel.org>
-To: Cody Kang <codykang.hk@gmail.com>
-Cc: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Haylen Chu <heylenay@4d2.org>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Paul Walmsley <pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
-	dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org,
-	devicetree@vger.kernel.org, spacemit@lists.linux.dev,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-clk@vger.kernel.org
-Subject: Re: [PATCH RESEND 04/17] dt-bindings: soc: spacemit: allow eDP/DP
- PHY PLL pixel clocks on K3 APMU
-Message-ID: <20260807230824.GA2220945-robh@kernel.org>
-References: <20260725-k3-display-v1-0-6de34d80e86c@gmail.com>
- <20260725-k3-display-v1-4-6de34d80e86c@gmail.com>
+	id 1wsUd1-00000008tk6-0oML
+	for linux-phy@lists.infradead.org;
+	Sat, 08 Aug 2026 00:09:33 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
+	s=protonmail; t=1786147764; x=1786406964;
+	bh=lDRaQu6/9wkhlDCv2yTHfkldEo5fvukdaDSbjb18JJE=;
+	h=Date:To:From:Cc:Subject:Message-ID:In-Reply-To:References:
+	 Feedback-ID:From:To:Cc:Date:Subject:Reply-To:Feedback-ID:
+	 Message-ID:BIMI-Selector;
+	b=H0Midps+lnpM9dRKAzZs8LO8dpNxkBv/G9YcUw0UkuZN/5JCwuC8erTfZRGrIw/zN
+	 oTReXtNmVQKNncv6ZY6MBoXdCECZ/gC+a/g4UWmzLPa/Q6haSPqm+5dbbUMYKQMqzn
+	 Sj/Jn6DdVr1j+OS25MljK+RJA+wnLYbtT291XFBHcAhZI7TcBT56vgJhnXGflGBSZ3
+	 8c6Fz2KQEw7FD1HmHJyLk9FlqPrYIJ8iQQS7Ld7ImgZfDh1E/OFzr7TEJy3KrS5tNL
+	 la0xbLjQuPYFpEvt9nD5W9fj5dyfCjrr7dUiuHscI+3AAKwQ3Ka5HqozecSRuiShVk
+	 aadVyZFjCN5qQ==
+Date: Sat, 08 Aug 2026 00:09:16 +0000
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, Dmitry Baryshkov <lumag@kernel.org>, Bjorn Andersson <andersson@kernel.org>
+From: Esteban Urrutia <esteuwu@proton.me>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, phone-devel@vger.kernel.org, Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Subject: Re: [PATCH v2 2/2] phy: qcom: qmp-combo: Drop qmp_v4_calibrate_dp_phy
+Message-ID: <32cfbf72-f2a9-4919-aedb-49f76a400362@proton.me>
+In-Reply-To: <20260711-sm8450-qol-qmp-v2-2-d14353bd6ff4@proton.me>
+References: <20260711-sm8450-qol-qmp-v2-0-d14353bd6ff4@proton.me> <20260711-sm8450-qol-qmp-v2-2-d14353bd6ff4@proton.me>
+Feedback-ID: 147889766:user:proton
+X-Pm-Message-ID: 650ffaff1a53d7802a9dba88bf6b3af193d76c97
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260725-k3-display-v1-4-6de34d80e86c@gmail.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260807_170931_851786_A75C0620 
+X-CRM114-Status: UNSURE (   7.46  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,75 +70,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Jul 25, 2026 at 12:51:13AM -0400, Cody Kang wrote:
-> The APMU's eDP pixel-clock muxes select the DP PHY PLLs as parents, so the
-> K3 syscon takes two clock inputs the other variants do not have.
+On 7/11/26 11:13 PM, Esteban Urrutia via B4 Relay wrote:
+> From: Esteban Urrutia <esteuwu@proton.me>
 > 
-> Gate them behind the K3 compatible instead of widening the shared clock
-> list, so a non-K3 syscon cannot silently accept clocks it has no mux for.
+> There are no downstream device trees that specify five values in the
+> qcom,aux-cfg1-settings array.
+> Plus, after cross referencing both downstream device trees and entries
+> which refer this function, only 0x13 is specified.
+> Since 0x13 is written at initialization time, drop this function as a
+> whole, and remove now unused variable assignations.
 > 
-> Signed-off-by: Cody Kang <codykang.hk@gmail.com>
-> ---
->  .../bindings/soc/spacemit/spacemit,k1-syscon.yaml  | 30 +++++++++++++++++++++-
->  1 file changed, 29 insertions(+), 1 deletion(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml b/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml
-> index d3a7c93c3c54..b8fc6632a392 100644
-> --- a/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml
-> +++ b/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml
-> @@ -31,14 +31,18 @@ properties:
->      maxItems: 1
->  
->    clocks:
-> -    maxItems: 4
-> +    minItems: 4
-> +    maxItems: 6
->  
->    clock-names:
-> +    minItems: 4
->      items:
->        - const: osc
->        - const: vctcxo_1m
->        - const: vctcxo_3m
->        - const: vctcxo_24m
-> +      - const: edp0_pll_pxclk
-> +      - const: edp1_pll_pxclk
->  
->    "#clock-cells":
->      const: 1
-> @@ -95,6 +99,30 @@ allOf:
->          - clocks
->          - clock-names
->          - "#clock-cells"
-> +  # Only the K3 APMU exposes the two eDP/DP PHY PLL pixel clocks as extra
-> +  # inputs (parents of its eDP pixel-clock muxes); every other variant has
-> +  # the four base oscillator inputs only.
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: spacemit,k3-syscon-apmu
-> +    then:
-> +      properties:
+> Fixes: aff188feb5e1 ("phy: qcom-qmp: add support for sm8250-usb3-dp phy")
+> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+> Signed-off-by: Esteban Urrutia <esteuwu@proton.me>
 
-> +        clocks:
-> +          minItems: 4
-> +          maxItems: 6
-> +        clock-names:
-> +          minItems: 4
-> +          maxItems: 6
-> +    else:
-> +      properties:
-> +        clocks:
-> +          minItems: 4
-> +          maxItems: 4
-> +        clock-names:
-> +          minItems: 4
-> +          maxItems: 4
+Could this commit in question please be picked as a subset of this
+patch?
+This commit should have been picked along with [1] since
+calibrate_dp_phy is not present in it because of this very commit.
 
-4 is already the minimum, so it can be dropped on all of these.
+Regards,
+Esteban
 
-Rob
+[1] https://lore.kernel.org/linux-arm-msm/178603357411.674490.11520339407340817802.b4-ty@kernel.org/T/#t
+
 
 -- 
 linux-phy mailing list
