@@ -4,56 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4066C5AD2B
-	for <linux-phy@archiver.kernel.org>; Sat,  8 Aug 2026 00:09:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43436C5AC67
+	for <linux-phy@archiver.kernel.org>; Sat,  8 Aug 2026 05:04:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:From:To:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bGF71Tf3yQJm8XHeWPtV3+kGM1VGGgfTLW1aTtHY8rw=; b=SHg/DBbnzhXI66
-	VN0K8g7znpwij3EFhKYAGurnFDkMzbeEUPZcCFseuVGg3PdLFUEzf1UEMW1QUlzoWMt0jiEowyAlT
-	4Ntl9bUG/v33McB9LyFGUb8jAD7hrJzCm4Yr24hukKnB3ox4PvbY/EozUuKFE8mYCfYIGhL4mzPSX
-	w6x21ErExG1qt6rgFE8AA0KD+1+TTXL0hVdFnbynsw0SAOwbod6NUE/pUad7LGewaVRmcbSOu9wql
-	bsjA9F952JAwAAEphemMUWQK5NDJMdGun1ziNm8aojn1DF4tc792HabUX0e0P71H8X3VIgCsHGCbZ
-	JOUT20abvXzTjaXI957Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=jLLMU5NnKWlGkAclZmCbQ2kJkG3Td/M7Jcn83KuvKhw=; b=aLbQgov6elnimHXSH/DY7hX5KG
+	T0/rcz4T9T/MF5S+ZnPIRRKfsxGIW0CC6zJaItBr3hmcd+EsRX0/kkt/UekwYVtyqIy2fAdUoEldk
+	zpTprIhngvF3bwv4lTf2OAqWOIuM/Mj9XdXpMW6CluBYZORkGMnM2y2MzFTncBRTqxdUVkbQ/b9A1
+	nZ+DJYkGMUGOl63dujY4mgGX9zzZsRIaybhCYyPYsH4D+GK1UibHqI1H4WqR+1WjyReidBEaVyMP0
+	8Kod/zecbj+HctELPHdfNBotV94QPCeANvJZKG7lvasYUD0Yc3P5cnFOGqp3rlgqa+NMoa6XVhuK3
+	KuPBy4dg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsUd4-00000008tkv-46Sx;
-	Sat, 08 Aug 2026 00:09:35 +0000
-Received: from mail-43101.protonmail.ch ([185.70.43.101])
+	id 1wsZEG-000000093d7-2eJi;
+	Sat, 08 Aug 2026 05:04:16 +0000
+Received: from mail-pl1-x62d.google.com ([2607:f8b0:4864:20::62d])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsUd1-00000008tk6-0oML
+	id 1wsZEE-000000093cR-1QnP
 	for linux-phy@lists.infradead.org;
-	Sat, 08 Aug 2026 00:09:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
-	s=protonmail; t=1786147764; x=1786406964;
-	bh=lDRaQu6/9wkhlDCv2yTHfkldEo5fvukdaDSbjb18JJE=;
-	h=Date:To:From:Cc:Subject:Message-ID:In-Reply-To:References:
-	 Feedback-ID:From:To:Cc:Date:Subject:Reply-To:Feedback-ID:
-	 Message-ID:BIMI-Selector;
-	b=H0Midps+lnpM9dRKAzZs8LO8dpNxkBv/G9YcUw0UkuZN/5JCwuC8erTfZRGrIw/zN
-	 oTReXtNmVQKNncv6ZY6MBoXdCECZ/gC+a/g4UWmzLPa/Q6haSPqm+5dbbUMYKQMqzn
-	 Sj/Jn6DdVr1j+OS25MljK+RJA+wnLYbtT291XFBHcAhZI7TcBT56vgJhnXGflGBSZ3
-	 8c6Fz2KQEw7FD1HmHJyLk9FlqPrYIJ8iQQS7Ld7ImgZfDh1E/OFzr7TEJy3KrS5tNL
-	 la0xbLjQuPYFpEvt9nD5W9fj5dyfCjrr7dUiuHscI+3AAKwQ3Ka5HqozecSRuiShVk
-	 aadVyZFjCN5qQ==
-Date: Sat, 08 Aug 2026 00:09:16 +0000
-To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, Dmitry Baryshkov <lumag@kernel.org>, Bjorn Andersson <andersson@kernel.org>
-From: Esteban Urrutia <esteuwu@proton.me>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, phone-devel@vger.kernel.org, Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Subject: Re: [PATCH v2 2/2] phy: qcom: qmp-combo: Drop qmp_v4_calibrate_dp_phy
-Message-ID: <32cfbf72-f2a9-4919-aedb-49f76a400362@proton.me>
-In-Reply-To: <20260711-sm8450-qol-qmp-v2-2-d14353bd6ff4@proton.me>
-References: <20260711-sm8450-qol-qmp-v2-0-d14353bd6ff4@proton.me> <20260711-sm8450-qol-qmp-v2-2-d14353bd6ff4@proton.me>
-Feedback-ID: 147889766:user:proton
-X-Pm-Message-ID: 650ffaff1a53d7802a9dba88bf6b3af193d76c97
+	Sat, 08 Aug 2026 05:04:15 +0000
+Received: by mail-pl1-x62d.google.com with SMTP id d9443c01a7336-2cace91f112so2480785ad.0
+        for <linux-phy@lists.infradead.org>; Fri, 07 Aug 2026 22:04:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1786165453; x=1786770253; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=8uD24huWZm6XpJh9wT7WOr3BJsSLtwFgAarL6fJ9kQ4=;
+        b=VIrSnP6UWm76BnKBNDY0J3wdUZJ45wL1N1018jVOX5iTNavYup0EACJVc5oCDRbMO3
+         WZlOjSqRbwyK2/L4Yhkw/TDYrUiVvovJzBMJ/O9pnEAdkpY4OO7T7yz3KyBWnbFZTaZH
+         mhzPsDOH3/2gba4/jNiUFosj2xwNhR6fjw7LeUSlAVSzdZoJZblF8lSn2CpKJHNv8+qX
+         F0HoXvtdt7Zg/FfZ/RTAGLYLl+okG1h8Uc4aXFO7/+PTHDj6er0pQLUFrc0WuTHh9HcC
+         8T6TDSyi1FJNQFuuqj7OIt3VjIMPhkqxtZowu/TBXfz83XZeWpr68icMRnQRVBpP5lrU
+         ZwsQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1786165453; x=1786770253;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=8uD24huWZm6XpJh9wT7WOr3BJsSLtwFgAarL6fJ9kQ4=;
+        b=hRfJ62/68ebt7lAmVGhV1rsRwFlKqP4AaVU8SfrFSJxSnL0PIN18GC1wFs8PiVOVr1
+         FY+2/WEVAB76YaR8oLjVQdG8Uf62xtrnuJQWWEHK4xv4ModlZdJCAHH4HAYzD6gJUHy7
+         JyvLhnzELtu2EagTuzNjinF8qhSox5AvVRyKu/NvRCzxXgW3B3LZ+pgFKH0vCElSnkjK
+         jlnaaelGwrOvkoHj58C7ZWjrl9uJY5prIaY6fZhpKXbG5lOdry2xxgwUWe1COQrC6ME/
+         n3sM/X99OJ/9MWYS0D28OhO75W+oeTzaKOM1iJ3R8rztdHhip9nv6vt0EC9jU6VQmYzZ
+         Beuw==
+X-Forwarded-Encrypted: i=1; AHgh+RrnYl//yBrwPQrROlQfHPOtjE9uROtHcjiGZ4vGaqCIqHY5lJFbbTbW8x/6QFx+rNS/GTjTC2FXD1c=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyZ2bp4NU6vL5xF46KSxNxWapLszYMlXWTBfYNG0W2mAOeia+27
+	+FTkfxHZ7Vwis9a6+O5Qpd1XNZQrLfUsICjeQmP0DUXcy2UnFAUFho+r
+X-Gm-Gg: AR+sD10tK9S8za0mMYuFzGMYDastpy/PW/Awqq26BY2rSD+IknD/aO7FqyuzxG9kEM0
+	2N8yd+L6b1PCYWm5gGQSNpiMJBz0haoQTN2H//ZAeOEdMftRHUGHy5InOg7icV4TtJfdC1Yi8wh
+	PRGZ3unm4yrvZDhgLLDTz1Ht5rIGSwnk8i0R9ULCRjoX+gGCLG+PuqpGJ2aAG/owAdy8o4cJCLq
+	h27IM4LgNZKF3x0ZKpPWKYuPOvaGAcu9pPGDKls0LOuPdr9GHu9HaAmLASF597ZJA4n9AE8FKNL
+	xbmAwB52tTq90mJ0zWGsZAnT/WTl/wAgVQ5smgoPDWd27q4ezD4XzKzFDcU3DVqDdz57QJzt3f7
+	M6BGHJ6mM0QoGBE4kMrjr86FbPf2wQJqAmZsTAtzPgEAfkcTrOKpyVudc9GEbj2w//gBngFQeF0
+	LOkye+u79uUIjub6n6iM9L5M3Mi8d/YNGxTQ==
+X-Received: by 2002:a17:903:fa5:b0:2c9:d8c6:1dc3 with SMTP id d9443c01a7336-2d0ca1611famr339026475ad.0.1786165453023;
+        Fri, 07 Aug 2026 22:04:13 -0700 (PDT)
+Received: from localhost ([2a12:a305:4::40fb])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2d14cce7830sm15452855ad.29.2026.08.07.22.04.12
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 07 Aug 2026 22:04:12 -0700 (PDT)
+Date: Sat, 8 Aug 2026 01:03:52 -0400
+From: Guodong Xu <docular.xu@gmail.com>
+To: Philipp Zabel <p.zabel@pengutronix.de>
+Cc: codykang.hk@gmail.com, David Airlie <airlied@gmail.com>, 
+	Simona Vetter <simona@ffwll.ch>, Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+	Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+	Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Haylen Chu <heylenay@4d2.org>, 
+	Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, 
+	Brian Masney <bmasney@redhat.com>, Paul Walmsley <pjw@kernel.org>, 
+	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, 
+	Alexandre Ghiti <alex@ghiti.fr>, dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org, 
+	devicetree@vger.kernel.org, spacemit@lists.linux.dev, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-clk@vger.kernel.org
+Subject: Re: [PATCH RESEND 10/17] drm/spacemit: add Saturn DPU KMS pipeline
+Message-ID: <wr3264hzlya6zep433nr3u2acukizilkrqpkj444kfqeyaeorj@2rc4zo2cqcer>
+References: <20260725-k3-display-v1-0-6de34d80e86c@gmail.com>
+ <20260725-k3-display-v1-10-6de34d80e86c@gmail.com>
+ <084a860a77f18aaafcda4b223eec4fdcd96e75c9.camel@pengutronix.de>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <084a860a77f18aaafcda4b223eec4fdcd96e75c9.camel@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260807_170931_851786_A75C0620 
-X-CRM114-Status: UNSURE (   7.46  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260807_220414_421024_159610CE 
+X-CRM114-Status: GOOD (  17.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -65,35 +107,113 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 7/11/26 11:13 PM, Esteban Urrutia via B4 Relay wrote:
-> From: Esteban Urrutia <esteuwu@proton.me>
-> 
-> There are no downstream device trees that specify five values in the
-> qcom,aux-cfg1-settings array.
-> Plus, after cross referencing both downstream device trees and entries
-> which refer this function, only 0x13 is specified.
-> Since 0x13 is written at initialization time, drop this function as a
-> whole, and remove now unused variable assignations.
-> 
-> Fixes: aff188feb5e1 ("phy: qcom-qmp: add support for sm8250-usb3-dp phy")
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-> Signed-off-by: Esteban Urrutia <esteuwu@proton.me>
+On 2026-07-27 09:35, Philipp Zabel wrote:
+>On Sa, 2026-07-25 at 00:51 -0400, Cody Kang via B4 Relay wrote:
+>> From: Cody Kang <codykang.hk@gmail.com>
+>>
+>> Add the atomic KMS implementation on top of the hardware backend: one
+>> CRTC and one primary plane per DPU instance. atomic_check validates
+>> the plane rectangle 1:1 against the mode and sizes the per-channel FBC
+>> line buffer; atomic commit builds the cmdlist batches, maps the
+>> framebuffer through the DMMU and arms the cfg-ready handshake, with
+>> vblank events driven from the DPU interrupt.
+>>
+>> Signed-off-by: Cody Kang <codykang.hk@gmail.com>
+>> ---
+>>  drivers/gpu/drm/spacemit/spacemit_crtc.c   | 815 +++++++++++++++++++++++++++++
+>>  drivers/gpu/drm/spacemit/spacemit_planes.c | 376 +++++++++++++
+>>  2 files changed, 1191 insertions(+)
+>>
+>> diff --git a/drivers/gpu/drm/spacemit/spacemit_crtc.c b/drivers/gpu/drm/spacemit/spacemit_crtc.c
+>> new file mode 100644
+>> index 000000000000..b75ff6320501
+>> --- /dev/null
+>> +++ b/drivers/gpu/drm/spacemit/spacemit_crtc.c
+>> @@ -0,0 +1,815 @@
+>[...]
+>> +/*
+>> + * The assert and deassert orders are not mirror images: the hardware wants
+>> + * these.
+>> + */
+>> +static void dpu_reset_assert(struct device *dev, const char *name,
+>> +			     struct reset_control *rstc)
+>> +{
+>> +	int ret = reset_control_assert(rstc);
+>> +
+>> +	if (ret)
+>> +		dev_warn(dev, "failed to assert %s reset: %d\n", name, ret);
+>> +}
+>> +
+>> +static void dpu_reset_deassert(struct device *dev, const char *name,
+>> +			       struct reset_control *rstc)
+>> +{
+>> +	int ret = reset_control_deassert(rstc);
+>> +
+>> +	if (ret)
+>> +		dev_warn(dev, "failed to deassert %s reset: %d\n", name, ret);
+>> +}
+>> +
+>> +static int dpu_pm_suspend(struct device *dev)
+>> +{
+>> +	struct spacemit_drm_private *priv = dev_get_drvdata(dev);
+>> +	struct spacemit_crtc *a_crtc = priv->a_crtc;
+>> +
+>> +	/*
+>> +	 * Assert before gating: a reset asserted into an already-gated block
+>> +	 * has no clock edges to propagate on and leaves the register file
+>> +	 * untouched.
+>> +	 */
+>> +	dpu_reset_assert(dev, "lcd", a_crtc->lcd_reset);
+>> +	dpu_reset_assert(dev, "esc", a_crtc->esc_reset);
+>> +	dpu_reset_assert(dev, "mclk", a_crtc->mclk_reset);
+>
+>It looks like these three are mirrored, and could be handled by
+>reset_control_bulk_assert/deassert().
+>
+>> +	dpu_reset_assert(dev, "aclk", a_crtc->aclk_reset);
+>> +	dpu_reset_assert(dev, "dsc", a_crtc->dsc_reset);
 
-Could this commit in question please be picked as a subset of this
-patch?
-This commit should have been picked along with [1] since
-calibrate_dp_phy is not present in it because of this very commit.
+Is there a reason these two cannot be mirrored in order? Please double
+check. As I checked the vendor tree, the suspend/resume side appear to be
+copy/paste rather than a deliberate ordering.
 
-Regards,
-Esteban
+Please double-check. Unless I'm missing something, I suggest to bulk them.
 
-[1] https://lore.kernel.org/linux-arm-msm/178603357411.674490.11520339407340817802.b4-ty@kernel.org/T/#t
+Thanks,
+Guodong
 
+>> +	usleep_range(10000, 20000);
+>> +
+>> +	if (a_crtc->core && a_crtc->core->disable_clk)
+>> +		a_crtc->core->disable_clk(a_crtc);
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static int dpu_pm_resume(struct device *dev)
+>> +{
+>> +	struct spacemit_drm_private *priv = dev_get_drvdata(dev);
+>> +	struct spacemit_crtc *a_crtc = priv->a_crtc;
+>> +
+>> +	dpu_reset_deassert(dev, "mclk", a_crtc->mclk_reset);
+>> +	dpu_reset_deassert(dev, "esc", a_crtc->esc_reset);
+>> +	dpu_reset_deassert(dev, "lcd", a_crtc->lcd_reset);
+>> +	dpu_reset_deassert(dev, "aclk", a_crtc->aclk_reset);
+>> +	dpu_reset_deassert(dev, "dsc", a_crtc->dsc_reset);
+>> +
+>> +	if (a_crtc->core && a_crtc->core->enable_clk)
+>> +		a_crtc->core->enable_clk(a_crtc);
+>> +
+>> +	return 0;
+>> +}
+>
+>regards
+>Philipp
 
 -- 
 linux-phy mailing list
