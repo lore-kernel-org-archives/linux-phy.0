@@ -4,74 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 386B0C5AC67
-	for <linux-phy@archiver.kernel.org>; Sat,  8 Aug 2026 13:22:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9D10C55174
+	for <linux-phy@archiver.kernel.org>; Sat,  8 Aug 2026 13:31:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Subject:Cc:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V3zO4oPsHja23o5+ZMa5I5KCEAMNdmPD6VJXIHYH2Gs=; b=lx3xle9TJdbeJm
-	w40Dif+2F95sd5FoaWPdElYIRUdEsParJdMR9cAqUom1hapcUX40oOuHBN0iQAvVOWLT6FhP7lzws
-	QxERLyzxLPHuWOYPv9enHpqP16velcLyIiOZd6GyqUcZnnwsN7hiZ7XeFONK2eVj+YNIrFTPADIXh
-	/G3k1Pfgy8woAnhrA1NCjIuoPk+ljgj4N/hW0zWNCI+ijD5nLetq/9+/J0LiXsaDnbASD2QqbadZ/
-	q0/kWTNZZxICuWeyq4OJiaadCy7HlBZbEf14gLC+9vv7zFygPQvmxEJXtOUlkA1B3mjPM6aw6aHFG
-	SdMn7IoXt7xMNcQfgnoA==;
+	List-Owner; bh=4M4UFgMiA/kjGbxRezpWv5tdN+ESXZuG14k4MpMW2gc=; b=W2rGpBmacelbss
+	8MfYS2Qx8e9ZnF/4HhoeD2E4ujvce7xLvEBfXdZYsh120Ocvxp8rRfY5dhXWIv4f4VsbhaWrR1bYf
+	5FVv8ae4nOESWazN/rMSVPR/YTdWqtdlS4LJ4hxkZHSO5tZzpY5i6enhKNBFDbvjUguDTzmw2hUzG
+	9SdKzmRJc6rbM4T+mKnetmaDDYSQ03r2wlYXfJ4ivZqBZCkopKdlaVKzMZrdPtp7qij6uKnfDMflu
+	PDv8dewLsO8FMJj4h0fiMAekkMXz8Yew3INCwiRB7BcCCXGwvaA+B7Wtb6A6k5sVu2vBfGJD+01uS
+	Yx0KXE9pNO+Rg3s+Ivgw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsh01-00000009OgV-2kBR;
-	Sat, 08 Aug 2026 13:22:05 +0000
-Received: from mail-pj2-x08.google.com ([2607:f8b0:4864:39::8])
+	id 1wsh8e-00000009Pms-1qrT;
+	Sat, 08 Aug 2026 13:31:00 +0000
+Received: from mail-pz2-x01.google.com ([2607:f8b0:4864:3b::1])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsgzy-00000009Ofe-3aDL
+	id 1wsh8b-00000009PmB-3Y5r
 	for linux-phy@lists.infradead.org;
-	Sat, 08 Aug 2026 13:22:04 +0000
-Received: by mail-pj2-x08.google.com with SMTP id 98e67ed59e1d1-38fd9408220so161999a91.1
-        for <linux-phy@lists.infradead.org>; Sat, 08 Aug 2026 06:22:02 -0700 (PDT)
+	Sat, 08 Aug 2026 13:30:59 +0000
+Received: by mail-pz2-x01.google.com with SMTP id 41be03b00d2f7-c96a1a43f5bso15539a12.0
+        for <linux-phy@lists.infradead.org>; Sat, 08 Aug 2026 06:30:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1786195322; x=1786800122; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1786195857; x=1786800657; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:mime-version:references
          :in-reply-to:subject:cc:to:from:message-id:date:from:to:cc:subject
          :date:message-id:reply-to:content-type;
-        bh=li/c4+/312t4GgA151ifIixBtg8Isry/It3D3W9Em4A=;
-        b=Zk6iBzD1+UtWy+n5HTeQCPn9oDCVKvBirzMQUDJqB1ryf8dfX+V06Zr20qJjPlAWWr
-         VP5WJtuSmi2EaOWpH0NS0bRrt3yrk1Q1rwLq2xL1FraTmWttVKETOr6vbUd12whS7Fp0
-         eZv2g6e/eBNgVC1jACnMVKWv7mZOTFzdXW6FENXwdv4gjObBL6uLyZbK4w5yDijt4+pu
-         CAQ81cFeNqKJbucNvir4dBcO3E0215p4F6lxI7IgrvoLcZQnlc+eY476CGWcZOq/KhwE
-         6SXGuKGQkpvZ59tOUNnkVgEh1WUwJ/mzgB6EeVJ17LMzzNkZLbS4YKDGLt6LpRiqW27F
-         MQEA==
+        bh=6zYCYgrPHJ1R0IyDM9ZJHQW95fmf52/M7XVvd8snhDU=;
+        b=RvM2L+eVTE3dJONTBxEncLOeOKDdHINbZ8l/+rRCpEOFP/AQhQQvl68Xz2F49p/U7V
+         FmIrOQpbrKjhSJqhZjVbbNq4I0QaajXhFNRmVsYy2VqjwTFIps6HbzvaXnpwMPf2weEe
+         CGLEmrE1OLNZZNCPo0XCcu7zR7E+IXJRNc7vxIQvTwhMjr2U1g84BBu1V6j2AaaLb2j+
+         r/ljojxG8Vd+nYt157iC6TfhUjfYV9UDOh5XzVg8eXWPPXi44w5V6oV6XhG1aE0oXQuD
+         86toMTw3LuYWaM49ORBhZsrOnjW3nTyQrPI5tejhoUxHRqWWS24wu0S+NAIzTgcgIUH5
+         +a2A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1786195322; x=1786800122;
+        d=1e100.net; s=20251104; t=1786195857; x=1786800657;
         h=content-transfer-encoding:content-type:mime-version:references
          :in-reply-to:subject:cc:to:from:message-id:date:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=li/c4+/312t4GgA151ifIixBtg8Isry/It3D3W9Em4A=;
-        b=b6CuMTB7Xj8pkkpPK32q/DMjpNl6fsDiMLapM3FzPE86JCFIrocABcRJMgbeLyJINE
-         d6nPtfxMnedr1+2KfOqu84pIpMANOX2zRoXdc02Y0tiW+LPtDAAqFXvNc+ocgDsqBp/x
-         223N/fp6s9Si/CI09UNcAqiBUFNRx2ZN2bHKJ5DmBgXtl/YxHDFG9WPPOQUZqkVjLkFX
-         xQ61FUAMkBXIFUvfzHuGUqXbRbjHyxqyWsbHtJzq5NMeNVE6IqSKtmUWOEdjtoG5Kvkj
-         k+0jxDLCPTENhUIeo/rIRI+ZtMsWIOE9vi+8GQYLKtnHUNrKAq/JXCYmRVVcCGQqyHDc
-         P+dw==
-X-Forwarded-Encrypted: i=1; AHgh+RpxfN1cs+sSDmA/CzkHUIe7gilsKxZWoI4cVrMPKBoY1tHsXRdDK8IILRekiUArb+DqhealR95DxoA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxN5eBltgu6isNRZon7qAWwL5fjy17gOBKTF4qyUvCkRO7jHeOB
-	Nwbw2vOTfNBN//LFefEVg2qfjowN7VaCvBT8+s7X753433O6ySjEBd8h
-X-Gm-Gg: AR+sD115PNDZ05TFlr8hTWdZdqlLtuRHgLNZZciST+wxwgfJRLzx3ng0NGHBsNXIR7s
-	B3lDt3jLSpTfB1foRwz2UhSsqWiAlJpYy+loKdnOxpFK3BPa/kLs+vHfqx1Dv9GEB1CmeaJWCTG
-	c7njF53puok/oKjfqu7/6dWK9Sh20dn2lFeQNfR+6XHsD3tYVdJ+5sda91sWVJMQ1eShG1hhghd
-	GjlbrduJEX+zMchWJg+QxXRfqp2xsbjXsuI4KPlmTinkn6GyXRVeoEXRel0WU5idDGetHaTCvb5
-	bPi80a+GDJZA47OJGpazKojbNLEEU0VzonncJKmshi66hhEmHHBQMfGURjo6dzd03iHL8JY+aUN
-	88bLp3hrdnWVPAfos1iy1s87Wvo3v412q4mnb449SgEOfetxKj2lIacVjjSU+ydljwex6uc9Djm
-	3yD3R9MAEdChTm1x9LR1zZnmg725jfcQr32xGTS7U=
-X-Received: by 2002:a17:90b:17c5:b0:37c:607b:2cd9 with SMTP id 98e67ed59e1d1-3903b9f3ee3mr28104214a91.0.1786195321821;
-        Sat, 08 Aug 2026 06:22:01 -0700 (PDT)
+        bh=6zYCYgrPHJ1R0IyDM9ZJHQW95fmf52/M7XVvd8snhDU=;
+        b=ZUpmPC823RNkx2SLtpu7PTs/X4sH/5JXBoZ1f9l3DMoTQam9OuEAMcEdA1Hr0A2Udg
+         MOFgDZ9pc9wAn2U3Dzqs67MUsOOp53np22PVAp7UlCAw0eKZCe7SNGYCNzvEeSQV/aof
+         ZDHWsGqeTU2FwEVMeZ/mg/RXxDGRzwCevuPMezwppLl1IauoASSZqYS6jTbG4xTNqp3V
+         Wdpejx36RkqDs2E5T1NC0gQaVqAn5LetiC0nvsjqPLWf0sdenLEpeuTqmK/Quz/ePPcX
+         EaEfVl9nvlZo8BHBKfedlq6pPF4QUH8UYfuqOsWzY0RlrrjHV6hnwsGo4+YlHq4V6stg
+         bMqw==
+X-Forwarded-Encrypted: i=1; AHgh+RrgHV8ng+DMuABCd5r71GMgcwyYIh3BN0tnFbHFxMH37TbPw6CGND0T8G/0C2AF4sdOc22NRnQG2As=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyJT37xKaZWsk8NWyk4eSPhxkVftLT9oyJ/iAmbKEQjI9C4LfBf
+	t3d9ZN6CGgop3D6MJ+tSK47qj0DYLhm2k310Hf89i/Yr1QRc5lojEf3c
+X-Gm-Gg: AR+sD10hdw2CkZBvNKg/iqBKLGcH2PFWsRMDZVrTpkSqMO1MutUrdCoGKB6PUVfQ0xI
+	/G44PoQ9ToPPTDdOQq2nm6wJ8eEUOiYw4fHLQIHqvTkKcGKhHL2uboCyyABFiCwjgUW9/zy/Jjx
+	8fIcKpajPiYt3lhYFUvl2UWt2KC7UQu4MOd3mdPswx4zRMHIN6zJomQ/YUZLZWZlPPkIId0fGpY
+	YV9E500hUF+sBDuU0f+ZfxooOqMhfB5vt68YA6uqhyhI3L8Qt4Tp75q7E9pFKlnFXVVFR6bpENq
+	FFY79+XfWlO/aYZmwKkjhS0eCu/dhG9Mha0pTdXl5d02QNtn6+Ebu5Cenwj0eUvpiwNFUUO9Qoe
+	X1lLCkvvIUU5qq/+yRa1SstUnbFHYFj6xCEOdbr3LTmrIokEkcCwk/1F52TwporW4wVQohl0Bao
+	PeQ5goChlTzcXQjPW2M9XcWInqTegHug+FaR+046eyxTLTb6qvlQ==
+X-Received: by 2002:a05:6a00:240c:b0:842:3838:cb03 with SMTP id d2e1a72fcca58-84f6b778b44mr5395163b3a.11.1786195856790;
+        Sat, 08 Aug 2026 06:30:56 -0700 (PDT)
 Received: from localhost ([2403:2c80:17:1e::20db])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-390b343e662sm2307387a91.2.2026.08.08.06.22.00
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-84f5a51e9a9sm2125357b3a.37.2026.08.08.06.30.54
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 08 Aug 2026 06:22:01 -0700 (PDT)
-Date: Sat, 08 Aug 2026 21:21:57 +0800
-Message-ID: <c73cc405df108dd7c3c5da95a1f8cddc.codykang.hk@gmail.com>
+        Sat, 08 Aug 2026 06:30:56 -0700 (PDT)
+Date: Sat, 08 Aug 2026 21:30:52 +0800
+Message-ID: <b66d3009f9cf310ca0f068999bd475ac.codykang.hk@gmail.com>
 From: Cody Kang <codykang.hk@gmail.com>
 To: Philipp Zabel <p.zabel@pengutronix.de>
 Cc: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
@@ -88,15 +88,16 @@ Cc: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
  devicetree@vger.kernel.org, spacemit@lists.linux.dev,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-clk@vger.kernel.org
-Subject: Re: [PATCH RESEND 10/17] drm/spacemit: add Saturn DPU KMS pipeline
-In-Reply-To: <084a860a77f18aaafcda4b223eec4fdcd96e75c9.camel@pengutronix.de>
+Subject: Re: [PATCH RESEND 12/17] drm/spacemit: add Innosilicon DP/eDP
+ controller bridge driver
+In-Reply-To: <5537a40f12e80b89e330f37032016de6f3b9f4c7.camel@pengutronix.de>
 References: <20260725-k3-display-v1-0-6de34d80e86c@gmail.com>
- <20260725-k3-display-v1-10-6de34d80e86c@gmail.com>
- <084a860a77f18aaafcda4b223eec4fdcd96e75c9.camel@pengutronix.de>
+ <20260725-k3-display-v1-12-6de34d80e86c@gmail.com>
+ <5537a40f12e80b89e330f37032016de6f3b9f4c7.camel@pengutronix.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260808_062203_117967_3DBE3B4C 
-X-CRM114-Status: GOOD (  22.03  )
+X-CRM114-CacheID: sfid-20260808_063057_883682_AF6CEF22 
+X-CRM114-Status: GOOD (  30.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,72 +116,113 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Hi Philipp,
 
-On Mon, 27 Jul 2026 09:35:38 +0200, Philipp Zabel wrote:
+On Mon, 27 Jul 2026 09:49:58 +0200, Philipp Zabel wrote:
 > On Sa, 2026-07-25 at 00:51 -0400, Cody Kang via B4 Relay wrote:
 > > From: Cody Kang <codykang.hk@gmail.com>
 > >
-> > Add the atomic KMS implementation on top of the hardware backend: one
-> > CRTC and one primary plane per DPU instance. atomic_check validates
-> > the plane rectangle 1:1 against the mode and sizes the per-channel FBC
-> > line buffer; atomic commit builds the cmdlist batches, maps the
-> > framebuffer through the DMMU and arms the cfg-ready handshake, with
-> > vblank events driven from the DPU interrupt.
+> > Add the DP/eDP controller that sits downstream of the Saturn DPU. Two
+> > identical instances share one compatible; the eDP-vs-DP role is board
+> > wiring, so it is taken from the devicetree: an eDP panel always sits
+> > under an aux-bus child node, an external DP connector never does.
+> >
+> > The link is driven through the generic PHY framework, so the controller
+> > never touches a PLL register. The controller's HPD interrupt is gated by
+> > the DP pixel clock, which can be off exactly when a plug has to be
+> > caught, so the connector is also polled and the interrupt path re-reads
+> > the live level when it does fire.
 > >
 > > Signed-off-by: Cody Kang <codykang.hk@gmail.com>
 > > ---
-> >  drivers/gpu/drm/spacemit/spacemit_crtc.c   | 815 +++++++++++++++++++++++++++++
-> >  drivers/gpu/drm/spacemit/spacemit_planes.c | 376 +++++++++++++
-> >  2 files changed, 1191 insertions(+)
+> >  drivers/gpu/drm/spacemit/Kconfig            |   19 +
+> >  drivers/gpu/drm/spacemit/Makefile           |    3 +
+> >  drivers/gpu/drm/spacemit/spacemit_inno_dp.c | 2443 +++++++++++++++++++++++++++
+> >  drivers/gpu/drm/spacemit/spacemit_inno_dp.h |  328 ++++
+> >  4 files changed, 2793 insertions(+)
 > >
-> > diff --git a/drivers/gpu/drm/spacemit/spacemit_crtc.c b/drivers/gpu/drm/spacemit/spacemit_crtc.c
-> > new file mode 100644
-> > index 000000000000..b75ff6320501
-> > --- /dev/null
-> > +++ b/drivers/gpu/drm/spacemit/spacemit_crtc.c
-> > @@ -0,0 +1,815 @@
 > [...]
-> > +/*
-> > + * The assert and deassert orders are not mirror images: the hardware wants
-> > + * these.
-> > + */
-> > +static void dpu_reset_assert(struct device *dev, const char *name,
-> > +			     struct reset_control *rstc)
+> > diff --git a/drivers/gpu/drm/spacemit/spacemit_inno_dp.c b/drivers/gpu/drm/spacemit/spacemit_inno_dp.c
+> > new file mode 100644
+> > index 000000000000..e88731d9b18b
+> > --- /dev/null
+> > +++ b/drivers/gpu/drm/spacemit/spacemit_inno_dp.c
+> > @@ -0,0 +1,2443 @@
+> [...]
+> > +static int inno_dp_probe(struct platform_device *pdev)
 > > +{
-> > +	int ret = reset_control_assert(rstc);
-> > +
-> > +	if (ret)
-> > +		dev_warn(dev, "failed to assert %s reset: %d\n", name, ret);
-> > +}
-> > +
-> > +static void dpu_reset_deassert(struct device *dev, const char *name,
-> > +			       struct reset_control *rstc)
-> > +{
-> > +	int ret = reset_control_deassert(rstc);
-> > +
-> > +	if (ret)
-> > +		dev_warn(dev, "failed to deassert %s reset: %d\n", name, ret);
-> > +}
-> > +
-> > +static int dpu_pm_suspend(struct device *dev)
-> > +{
-> > +	struct spacemit_drm_private *priv = dev_get_drvdata(dev);
-> > +	struct spacemit_crtc *a_crtc = priv->a_crtc;
-> > +
-> > +	/*
-> > +	 * Assert before gating: a reset asserted into an already-gated block
-> > +	 * has no clock edges to propagate on and leaves the register file
-> > +	 * untouched.
-> > +	 */
-> > +	dpu_reset_assert(dev, "lcd", a_crtc->lcd_reset);
-> > +	dpu_reset_assert(dev, "esc", a_crtc->esc_reset);
-> > +	dpu_reset_assert(dev, "mclk", a_crtc->mclk_reset);
+> [...]
+> > +	dp->reset = devm_reset_control_get_optional_exclusive(&pdev->dev, NULL);
 >
-> It looks like these three are mirrored, and could be handled by
-> reset_control_bulk_assert/deassert().
+> Since this is only asserted in probe and deasserted in remove, you
+> could use devm_reset_control_get_optional_exclusive_deasserted() [1].
 
-Thanks for the review. Indeed, reset_control_bulk_deassert()
-walking the array in reverse gives exactly the mirrored order the
-hardware wants. Will fix in v2.
+Thanks for the review. Will do in v2. The binding marks resets as
+required, which means I shouldn't use _optional in the first place.
+I will use the non-optional devm_reset_control_get_exclusive_deasserted().
+
+> [1] https://docs.kernel.org/driver-api/reset.html#c.devm_reset_control_get_optional_exclusive_deasserted
+>
+> > +	if (IS_ERR(dp->reset)) {
+> > +		ret = dev_err_probe(dev, PTR_ERR(dp->reset),
+> > +				    "failed to get reset\n");
+> > +		return ret;
+> > +	}
+> > +
+> > +	dp->pxclk = devm_clk_get(dev, "pxclk");
+> > +	if (IS_ERR(dp->pxclk)) {
+> > +		ret = dev_err_probe(dev, PTR_ERR(dp->pxclk),
+> > +				    "failed to get pxclk\n");
+> > +		return ret;
+> > +	}
+> > +
+> > +	if (dp->edp_mode) {
+> > +		dp->bridge.type = DRM_MODE_CONNECTOR_eDP;
+> > +		/*
+> > +		 * OP_DETECT is required: without it
+> > +		 * drm_bridge_connector_detect() hard-codes CONNECTED for any
+> > +		 * eDP connector and fbdev wedges at bind.
+> > +		 */
+> > +		dp->bridge.ops = DRM_BRIDGE_OP_DETECT | DRM_BRIDGE_OP_EDID |
+> > +				 DRM_BRIDGE_OP_HPD;
+> > +	} else {
+> > +		dp->bridge.type = DRM_MODE_CONNECTOR_DisplayPort;
+> > +		/*
+> > +		 * No OP_HPD: the HPD interrupt is gated by the DP pixel clock.
+> > +		 * Leaving it out marks the connector POLL_CONNECT |
+> > +		 * POLL_DISCONNECT instead.
+> > +		 */
+> > +		dp->bridge.ops = DRM_BRIDGE_OP_DETECT | DRM_BRIDGE_OP_EDID |
+> > +				 DRM_BRIDGE_OP_MODES;
+> > +	}
+> > +
+> > +	if (dp->reset) {
+>
+> This check is not necessary, reset_control_deassert() handles NULL
+> pointers.
+>
+> > +		ret = reset_control_deassert(dp->reset);
+>
+> If the _deasserted() variant is used above, this can be removed and the
+> reset control doesn't need to be stored in dp.
+>
+> > +		if (ret) {
+> > +			dev_err(dev, "failed to deassert reset: %d\n", ret);
+> > +			return ret;
+> > +		}
+> > +	}
+> > +
+> [...]
+> > +	return 0;
+> > +
+> > +err_clk:
+> > +	clk_disable_unprepare(dp->pxclk);
+> > +err_reset:
+> > +	if (dp->reset)
+> > +		reset_control_assert(dp->reset);
+>
+> Same as above. Remove the unnecessary check or manual assertion
+> entirely.
+
+Agree, all of these will be fixed in v2.
 
 Cody
 
