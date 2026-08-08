@@ -4,76 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9D10C55174
-	for <linux-phy@archiver.kernel.org>; Sat,  8 Aug 2026 13:31:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3BEEC55174
+	for <linux-phy@archiver.kernel.org>; Sat,  8 Aug 2026 14:07:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Subject:Cc:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4M4UFgMiA/kjGbxRezpWv5tdN+ESXZuG14k4MpMW2gc=; b=W2rGpBmacelbss
-	8MfYS2Qx8e9ZnF/4HhoeD2E4ujvce7xLvEBfXdZYsh120Ocvxp8rRfY5dhXWIv4f4VsbhaWrR1bYf
-	5FVv8ae4nOESWazN/rMSVPR/YTdWqtdlS4LJ4hxkZHSO5tZzpY5i6enhKNBFDbvjUguDTzmw2hUzG
-	9SdKzmRJc6rbM4T+mKnetmaDDYSQ03r2wlYXfJ4ivZqBZCkopKdlaVKzMZrdPtp7qij6uKnfDMflu
-	PDv8dewLsO8FMJj4h0fiMAekkMXz8Yew3INCwiRB7BcCCXGwvaA+B7Wtb6A6k5sVu2vBfGJD+01uS
-	Yx0KXE9pNO+Rg3s+Ivgw==;
+	List-Owner; bh=cdI2qknbE6GVFtphcLdqbudQuAuGzpk2zrueiaumSvs=; b=mgechZ9XypeGUn
+	xyeEJU9Wr40opurYefvpxeFug6SR6nuWPj3s/JIxwLBvcMONeZqRWOTaoH3wwQ3l/5lM4AmBKa3X6
+	mmiUogE3hY0kfYs9ADQzdJ+upkCNWMWYShzO3UNkrF4j/yte/2opIrqn9JeeDMPUyTK9ARkeMsEPD
+	f2HI0a3GxCIMRjyBCKOjINl/DpSijd+s64+p6z3wV3UQ+q1SS6DK1ykuWZiOcrK6JEh/wNxICz4ZZ
+	CmBXxT4QI//Kq379Ir9gsj/YLFDc2NfqYCUMlXitLUg/kGEcumogdzXUObKBqo3z7080Xo9mdkzeS
+	p8H5JLkr0kr3ELjECh6Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsh8e-00000009Pms-1qrT;
-	Sat, 08 Aug 2026 13:31:00 +0000
-Received: from mail-pz2-x01.google.com ([2607:f8b0:4864:3b::1])
+	id 1wshhd-00000009R3a-2ccn;
+	Sat, 08 Aug 2026 14:07:09 +0000
+Received: from mail-pz2-x00.google.com ([2607:f8b0:4864:3b::])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsh8b-00000009PmB-3Y5r
+	id 1wshhb-00000009R2n-3A05
 	for linux-phy@lists.infradead.org;
-	Sat, 08 Aug 2026 13:30:59 +0000
-Received: by mail-pz2-x01.google.com with SMTP id 41be03b00d2f7-c96a1a43f5bso15539a12.0
-        for <linux-phy@lists.infradead.org>; Sat, 08 Aug 2026 06:30:57 -0700 (PDT)
+	Sat, 08 Aug 2026 14:07:08 +0000
+Received: by mail-pz2-x00.google.com with SMTP id 41be03b00d2f7-c888c001628so308287a12.0
+        for <linux-phy@lists.infradead.org>; Sat, 08 Aug 2026 07:07:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1786195857; x=1786800657; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1786198027; x=1786802827; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:mime-version:references
          :in-reply-to:subject:cc:to:from:message-id:date:from:to:cc:subject
          :date:message-id:reply-to:content-type;
-        bh=6zYCYgrPHJ1R0IyDM9ZJHQW95fmf52/M7XVvd8snhDU=;
-        b=RvM2L+eVTE3dJONTBxEncLOeOKDdHINbZ8l/+rRCpEOFP/AQhQQvl68Xz2F49p/U7V
-         FmIrOQpbrKjhSJqhZjVbbNq4I0QaajXhFNRmVsYy2VqjwTFIps6HbzvaXnpwMPf2weEe
-         CGLEmrE1OLNZZNCPo0XCcu7zR7E+IXJRNc7vxIQvTwhMjr2U1g84BBu1V6j2AaaLb2j+
-         r/ljojxG8Vd+nYt157iC6TfhUjfYV9UDOh5XzVg8eXWPPXi44w5V6oV6XhG1aE0oXQuD
-         86toMTw3LuYWaM49ORBhZsrOnjW3nTyQrPI5tejhoUxHRqWWS24wu0S+NAIzTgcgIUH5
-         +a2A==
+        bh=zrxXzmuLnBiNnwK74e3uO+cSnorKNXKL/VAH2ROuE74=;
+        b=KulHioTedNLhbbSE2yAeS9uAbztHLmpjk2dTQi6/L7PFPYr+lYljKQKcuU/TG1neR1
+         nfhbZDRTGyh4jD7+ou06F4nmmm4AgW2BpmHRWhox1TeYW7IJTQJXV/LaV+aVbk/V9aMo
+         oFIOMBXUqRqmK34xty2SshH7RFQVMbO3bzHa5ploilCFL2oJffk3RlUr7ASFROpZnNX3
+         sPwI/pNsy1PzpMsJnR3+7MJ87Mavr4tZb0HbX2+FrCoKNWQVZY4A0BTR1xTLoHDQ1B3W
+         N903MC5X665G2KxB5RrvO2pL0La1rTyNsLQ10xFk0AdO60Lnjcc4s9ICubvdh3Za5Lo1
+         9YXw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1786195857; x=1786800657;
+        d=1e100.net; s=20251104; t=1786198027; x=1786802827;
         h=content-transfer-encoding:content-type:mime-version:references
          :in-reply-to:subject:cc:to:from:message-id:date:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=6zYCYgrPHJ1R0IyDM9ZJHQW95fmf52/M7XVvd8snhDU=;
-        b=ZUpmPC823RNkx2SLtpu7PTs/X4sH/5JXBoZ1f9l3DMoTQam9OuEAMcEdA1Hr0A2Udg
-         MOFgDZ9pc9wAn2U3Dzqs67MUsOOp53np22PVAp7UlCAw0eKZCe7SNGYCNzvEeSQV/aof
-         ZDHWsGqeTU2FwEVMeZ/mg/RXxDGRzwCevuPMezwppLl1IauoASSZqYS6jTbG4xTNqp3V
-         Wdpejx36RkqDs2E5T1NC0gQaVqAn5LetiC0nvsjqPLWf0sdenLEpeuTqmK/Quz/ePPcX
-         EaEfVl9nvlZo8BHBKfedlq6pPF4QUH8UYfuqOsWzY0RlrrjHV6hnwsGo4+YlHq4V6stg
-         bMqw==
-X-Forwarded-Encrypted: i=1; AHgh+RrgHV8ng+DMuABCd5r71GMgcwyYIh3BN0tnFbHFxMH37TbPw6CGND0T8G/0C2AF4sdOc22NRnQG2As=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyJT37xKaZWsk8NWyk4eSPhxkVftLT9oyJ/iAmbKEQjI9C4LfBf
-	t3d9ZN6CGgop3D6MJ+tSK47qj0DYLhm2k310Hf89i/Yr1QRc5lojEf3c
-X-Gm-Gg: AR+sD10hdw2CkZBvNKg/iqBKLGcH2PFWsRMDZVrTpkSqMO1MutUrdCoGKB6PUVfQ0xI
-	/G44PoQ9ToPPTDdOQq2nm6wJ8eEUOiYw4fHLQIHqvTkKcGKhHL2uboCyyABFiCwjgUW9/zy/Jjx
-	8fIcKpajPiYt3lhYFUvl2UWt2KC7UQu4MOd3mdPswx4zRMHIN6zJomQ/YUZLZWZlPPkIId0fGpY
-	YV9E500hUF+sBDuU0f+ZfxooOqMhfB5vt68YA6uqhyhI3L8Qt4Tp75q7E9pFKlnFXVVFR6bpENq
-	FFY79+XfWlO/aYZmwKkjhS0eCu/dhG9Mha0pTdXl5d02QNtn6+Ebu5Cenwj0eUvpiwNFUUO9Qoe
-	X1lLCkvvIUU5qq/+yRa1SstUnbFHYFj6xCEOdbr3LTmrIokEkcCwk/1F52TwporW4wVQohl0Bao
-	PeQ5goChlTzcXQjPW2M9XcWInqTegHug+FaR+046eyxTLTb6qvlQ==
-X-Received: by 2002:a05:6a00:240c:b0:842:3838:cb03 with SMTP id d2e1a72fcca58-84f6b778b44mr5395163b3a.11.1786195856790;
-        Sat, 08 Aug 2026 06:30:56 -0700 (PDT)
+        bh=zrxXzmuLnBiNnwK74e3uO+cSnorKNXKL/VAH2ROuE74=;
+        b=Y9LtHj6EKRaSHMI9NfvYlCKDHzbS8ikoiGmSE+gfE5jB85YI4oAFjJaRs3j1GZepcZ
+         L74j0ovgJsZPcO3n6pgwHSZOFGvwONO0NoMn9IIeXiOcJexkUzfj6G2ToPykwBhr34ri
+         BgnogkpVHivqghy8RqkSHg3rcDmkoY5WCC6/3Cfy5qcIZlozJOCg6xXevl1A0p7tPS3U
+         lWVOsjbrwEJA87b3bHwAB+C2du+MV04BZc8zJYiAK6wEBD7pbQM/zUAxhcsQS2WEyncV
+         fFQWDEIq1fYutRkjmzbGtvPIESwfouwUcVU7EYdicRa++HSMIAG4hFFbtuBcW+9gSuuf
+         RRrw==
+X-Forwarded-Encrypted: i=1; AHgh+RpWRoK3wg4I8ad02p78dMMKMTK+e4dL2VKscQxHqG9ev2nfvPZtRLccO/FQEkzoslHXkZ0X5eiN3tQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzmpUesHT17I0cE/+5RXqe0w5tWR/ad3WE8uU1TtIotvmxjuj9T
+	7uVj7SbWL5smSswXw97Nkdslp7CUZjcx+kxYwTeTqpKGA1+STn6iTNl5
+X-Gm-Gg: AR+sD13btt8mxraZVnMCkueCbuSWH6DE2IvPAVkc4a8J4vVF5NkfBStE07bv4kVV0uw
+	boOA6+WfeWuQGtD28qXUTKy9axlcgZoP8QJih8ib+ausvVWgnpUvfAzaKHVitL7ZG/JHkzDI01f
+	kuNLilCrISWOBo5+O6jloRCg3/TtXooO644EUMTsvnhwLZsafsnGbhv4z3Yp8oe+VEaMcB82Xle
+	Jre+BnKL30Wftr/ukalPb7og9PeeCRmOpLRcZmOL2CkxbtdxCGno8jG/gDTCPhC2yNopWSK0zZa
+	H1YSJlxhaM7I84dDewtbO/F0S52nL+Pr2KPubx0lOsxCPXZ4ZVPGpXTIVKHvrd3UCpJKW4o4OSQ
+	OGodTGHJ8Su2e2VEu/TFn7XRLVFq56WFK50Qo6NQEhyAhwxPq+nlyzYLa4vcjhwf2tDnMkfcFPw
+	MxAPTfwJE+FhFIbbLDTo7q0Ze8vrdGP3HNQpZHsuM=
+X-Received: by 2002:a05:6a00:2286:b0:848:76af:db37 with SMTP id d2e1a72fcca58-84f694200b5mr7899614b3a.7.1786198026809;
+        Sat, 08 Aug 2026 07:07:06 -0700 (PDT)
 Received: from localhost ([2403:2c80:17:1e::20db])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-84f5a51e9a9sm2125357b3a.37.2026.08.08.06.30.54
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-cbe8f372b5bsm1905209a12.25.2026.08.08.07.07.05
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 08 Aug 2026 06:30:56 -0700 (PDT)
-Date: Sat, 08 Aug 2026 21:30:52 +0800
-Message-ID: <b66d3009f9cf310ca0f068999bd475ac.codykang.hk@gmail.com>
+        Sat, 08 Aug 2026 07:07:06 -0700 (PDT)
+Date: Sat, 08 Aug 2026 22:07:03 +0800
+Message-ID: <7b4b8457715c2e447f3b3522e519f0af.codykang.hk@gmail.com>
 From: Cody Kang <codykang.hk@gmail.com>
-To: Philipp Zabel <p.zabel@pengutronix.de>
+To: Yao Zi <me@ziyao.cc>
 Cc: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
@@ -82,22 +82,21 @@ Cc: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
  Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
  Haylen Chu <heylenay@4d2.org>, Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>,
- Paul Walmsley <pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
- Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
- dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org,
- devicetree@vger.kernel.org, spacemit@lists.linux.dev,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-clk@vger.kernel.org
+ Philipp Zabel <p.zabel@pengutronix.de>, Paul Walmsley <pjw@kernel.org>,
+ Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ Alexandre Ghiti <alex@ghiti.fr>, dri-devel@lists.freedesktop.org,
+ linux-riscv@lists.infradead.org, devicetree@vger.kernel.org,
+ spacemit@lists.linux.dev, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-clk@vger.kernel.org
 Subject: Re: [PATCH RESEND 12/17] drm/spacemit: add Innosilicon DP/eDP
  controller bridge driver
-In-Reply-To: <5537a40f12e80b89e330f37032016de6f3b9f4c7.camel@pengutronix.de>
+In-Reply-To: <amdPPBOH-Dk4oU7y@pie>
 References: <20260725-k3-display-v1-0-6de34d80e86c@gmail.com>
- <20260725-k3-display-v1-12-6de34d80e86c@gmail.com>
- <5537a40f12e80b89e330f37032016de6f3b9f4c7.camel@pengutronix.de>
+ <20260725-k3-display-v1-12-6de34d80e86c@gmail.com> <amdPPBOH-Dk4oU7y@pie>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260808_063057_883682_AF6CEF22 
-X-CRM114-Status: GOOD (  30.47  )
+X-CRM114-CacheID: sfid-20260808_070707_794243_4ECD3E3E 
+X-CRM114-Status: GOOD (  26.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,10 +113,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Philipp,
+Hi Yao Zi,
 
-On Mon, 27 Jul 2026 09:49:58 +0200, Philipp Zabel wrote:
-> On Sa, 2026-07-25 at 00:51 -0400, Cody Kang via B4 Relay wrote:
+On Mon, 27 Jul 2026 12:29:48 +0000, Yao Zi wrote:
+> On Sat, Jul 25, 2026 at 12:51:21AM -0400, Cody Kang via B4 Relay wrote:
 > > From: Cody Kang <codykang.hk@gmail.com>
 > >
 > > Add the DP/eDP controller that sits downstream of the Saturn DPU. Two
@@ -138,91 +137,96 @@ On Mon, 27 Jul 2026 09:49:58 +0200, Philipp Zabel wrote:
 > >  drivers/gpu/drm/spacemit/spacemit_inno_dp.c | 2443 +++++++++++++++++++++++++++
 > >  drivers/gpu/drm/spacemit/spacemit_inno_dp.h |  328 ++++
 > >  4 files changed, 2793 insertions(+)
-> >
-> [...]
-> > diff --git a/drivers/gpu/drm/spacemit/spacemit_inno_dp.c b/drivers/gpu/drm/spacemit/spacemit_inno_dp.c
-> > new file mode 100644
-> > index 000000000000..e88731d9b18b
-> > --- /dev/null
-> > +++ b/drivers/gpu/drm/spacemit/spacemit_inno_dp.c
-> > @@ -0,0 +1,2443 @@
-> [...]
+>
+> ...
+>
 > > +static int inno_dp_probe(struct platform_device *pdev)
 > > +{
-> [...]
-> > +	dp->reset = devm_reset_control_get_optional_exclusive(&pdev->dev, NULL);
+> > +	struct device *dev = &pdev->dev;
+> > +	struct device_node *aux_bus_np;
+> > +	struct spacemit_dp_dev *dp;
+> > +	struct resource *res;
+> > +	int ret;
 >
-> Since this is only asserted in probe and deasserted in remove, you
-> could use devm_reset_control_get_optional_exclusive_deasserted() [1].
-
-Thanks for the review. Will do in v2. The binding marks resets as
-required, which means I shouldn't use _optional in the first place.
-I will use the non-optional devm_reset_control_get_exclusive_deasserted().
-
-> [1] https://docs.kernel.org/driver-api/reset.html#c.devm_reset_control_get_optional_exclusive_deasserted
+> ...
 >
-> > +	if (IS_ERR(dp->reset)) {
-> > +		ret = dev_err_probe(dev, PTR_ERR(dp->reset),
-> > +				    "failed to get reset\n");
-> > +		return ret;
-> > +	}
-> > +
 > > +	dp->pxclk = devm_clk_get(dev, "pxclk");
 > > +	if (IS_ERR(dp->pxclk)) {
 > > +		ret = dev_err_probe(dev, PTR_ERR(dp->pxclk),
 > > +				    "failed to get pxclk\n");
 > > +		return ret;
 > > +	}
-> > +
-> > +	if (dp->edp_mode) {
-> > +		dp->bridge.type = DRM_MODE_CONNECTOR_eDP;
-> > +		/*
-> > +		 * OP_DETECT is required: without it
-> > +		 * drm_bridge_connector_detect() hard-codes CONNECTED for any
-> > +		 * eDP connector and fbdev wedges at bind.
-> > +		 */
-> > +		dp->bridge.ops = DRM_BRIDGE_OP_DETECT | DRM_BRIDGE_OP_EDID |
-> > +				 DRM_BRIDGE_OP_HPD;
-> > +	} else {
-> > +		dp->bridge.type = DRM_MODE_CONNECTOR_DisplayPort;
-> > +		/*
-> > +		 * No OP_HPD: the HPD interrupt is gated by the DP pixel clock.
-> > +		 * Leaving it out marks the connector POLL_CONNECT |
-> > +		 * POLL_DISCONNECT instead.
-> > +		 */
-> > +		dp->bridge.ops = DRM_BRIDGE_OP_DETECT | DRM_BRIDGE_OP_EDID |
-> > +				 DRM_BRIDGE_OP_MODES;
-> > +	}
-> > +
-> > +	if (dp->reset) {
 >
-> This check is not necessary, reset_control_deassert() handles NULL
-> pointers.
+> It seems pxclk is only enabled in probe() and disabled in remove(),
+> please consider using devm_clk_get_optional_enabled().
+
+Thanks for the review. You are right that the disable belongs to
+devres. I will move the disable to a devm action registered
+after the populate.
+
+But the _enabled part of devm_clk_get_optional_enabled() doesn't
+fit here: it hands the disable to devres at get time, before the
+PHY child is populated, so on unbind pxclk would be disabled only
+after the PHY PLL it is parented on is gone, and the clock core
+would warn.
+
+I will keep the non-optional getter, since the binding requires
+the clocks.
+
+> ...
 >
-> > +		ret = reset_control_deassert(dp->reset);
->
-> If the _deasserted() variant is used above, this can be removed and the
-> reset control doesn't need to be stored in dp.
->
+> > +	if (dp->pxclk) {
+> > +		ret = clk_prepare_enable(dp->pxclk);
 > > +		if (ret) {
-> > +			dev_err(dev, "failed to deassert reset: %d\n", ret);
-> > +			return ret;
+> > +			dev_err(dev, "failed to enable pxclk: %d\n", ret);
+> > +			goto err_reset;
 > > +		}
 > > +	}
-> > +
-> [...]
-> > +	return 0;
-> > +
-> > +err_clk:
-> > +	clk_disable_unprepare(dp->pxclk);
-> > +err_reset:
-> > +	if (dp->reset)
-> > +		reset_control_assert(dp->reset);
 >
-> Same as above. Remove the unnecessary check or manual assertion
-> entirely.
+> So this check could be dropped.
 
-Agree, all of these will be fixed in v2.
+Yes, all the if (dp->pxclk) guards are dead code; will drop them
+in v2.
+
+> ...
+>
+> > +	/*
+> > +	 * The PHY exposes its PLL as the APMU pixel-clock mux's external
+> > +	 * parent.
+> > +	 */
+> > +	dp->pll_clk = devm_clk_get(dev, "pll");
+> > +	if (IS_ERR(dp->pll_clk)) {
+> > +		ret = dev_err_probe(dev, PTR_ERR(dp->pll_clk),
+> > +				    "failed to get PHY pixel clock\n");
+> > +		goto err_clk;
+> > +	}
+>
+> Same for the "pll" clock.
+
+We never enable "pll" ourselves (it is only a parent and rate
+target), so it will stay a plain non-optional devm_clk_get().
+
+> > +	if (dp->pxclk) {
+> > +		ret = clk_set_parent(dp->pxclk, dp->pll_clk);
+> > +		if (ret) {
+> > +			dev_err(dev, "failed to route eDP pixel mux to PHY PLL: %d\n", ret);
+> > +			goto err_clk;
+> > +		}
+> > +	}
+> > +	 */
+> > +	ret = devm_request_threaded_irq(dev, dp->irq, spacemit_dp_irq_handler,
+> > +					spacemit_dp_hotplug_event_handler,
+> > +					IRQF_NO_AUTOEN, dev_name(dev), dp);
+> > +	if (ret) {
+> > +		dev_err(dev, "failed to request irq %d: %d\n", dp->irq, ret);
+> > +		goto err_clk;
+> > +	}
+>
+> Since 55b48e23f5c4 ("genirq/devres: Add error handling in
+> devm_request_*_irq()") devm_request_threaded_irq() automatically throws
+> an error message when it fails, so this error message is redundant.
+
+Right, will drop it.
 
 Cody
 
