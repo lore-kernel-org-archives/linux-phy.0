@@ -4,98 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43436C5AC67
-	for <linux-phy@archiver.kernel.org>; Sat,  8 Aug 2026 05:04:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DFECCC55174
+	for <linux-phy@archiver.kernel.org>; Sat,  8 Aug 2026 09:45:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=jLLMU5NnKWlGkAclZmCbQ2kJkG3Td/M7Jcn83KuvKhw=; b=aLbQgov6elnimHXSH/DY7hX5KG
-	T0/rcz4T9T/MF5S+ZnPIRRKfsxGIW0CC6zJaItBr3hmcd+EsRX0/kkt/UekwYVtyqIy2fAdUoEldk
-	zpTprIhngvF3bwv4lTf2OAqWOIuM/Mj9XdXpMW6CluBYZORkGMnM2y2MzFTncBRTqxdUVkbQ/b9A1
-	nZ+DJYkGMUGOl63dujY4mgGX9zzZsRIaybhCYyPYsH4D+GK1UibHqI1H4WqR+1WjyReidBEaVyMP0
-	8Kod/zecbj+HctELPHdfNBotV94QPCeANvJZKG7lvasYUD0Yc3P5cnFOGqp3rlgqa+NMoa6XVhuK3
-	KuPBy4dg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0ytDYT/ZC7EahWVo5NdZx8hybw+QAobWwEnEaXFZOJA=; b=vSFTQX1ADv07Ml
+	1Eg3hvU0dnz8/6vNeM0NHSN+nkXwZkFZQMESuD1yDSuNZKttNGccN5u/JfwY6wujTGI8kpRe5CZJG
+	LDK4hz0g04Kqf7TuVbDrJf7rWohl5zY77GyHwWcJnmaoHWUJH2+jyqT1pG+R0j1teXvt0DYR/X+ku
+	XAw6iwc5HRv4BhfsUWeOLg0575RP/cMgAy4fIHCnNK5TZpBRjLCwpPna0KdjmkanwivH8fy2uMqeF
+	ymj9K2NxQXW0gRD1HVwBni/UPHVH6qjGGDdyhmC8jIlMwLZSoHKv7FrMXasuFotjFjO/ABYsFkYyz
+	MKYWFNaz859yxAS2cKdw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsZEG-000000093d7-2eJi;
-	Sat, 08 Aug 2026 05:04:16 +0000
-Received: from mail-pl1-x62d.google.com ([2607:f8b0:4864:20::62d])
+	id 1wsdcd-00000009EfA-1maZ;
+	Sat, 08 Aug 2026 09:45:43 +0000
+Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsZEE-000000093cR-1QnP
+	id 1wsdca-00000009EdR-0dCu
 	for linux-phy@lists.infradead.org;
-	Sat, 08 Aug 2026 05:04:15 +0000
-Received: by mail-pl1-x62d.google.com with SMTP id d9443c01a7336-2cace91f112so2480785ad.0
-        for <linux-phy@lists.infradead.org>; Fri, 07 Aug 2026 22:04:13 -0700 (PDT)
+	Sat, 08 Aug 2026 09:45:42 +0000
+Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-4957952e0f8so323965e9.2
+        for <linux-phy@lists.infradead.org>; Sat, 08 Aug 2026 02:45:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1786165453; x=1786770253; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=8uD24huWZm6XpJh9wT7WOr3BJsSLtwFgAarL6fJ9kQ4=;
-        b=VIrSnP6UWm76BnKBNDY0J3wdUZJ45wL1N1018jVOX5iTNavYup0EACJVc5oCDRbMO3
-         WZlOjSqRbwyK2/L4Yhkw/TDYrUiVvovJzBMJ/O9pnEAdkpY4OO7T7yz3KyBWnbFZTaZH
-         mhzPsDOH3/2gba4/jNiUFosj2xwNhR6fjw7LeUSlAVSzdZoJZblF8lSn2CpKJHNv8+qX
-         F0HoXvtdt7Zg/FfZ/RTAGLYLl+okG1h8Uc4aXFO7/+PTHDj6er0pQLUFrc0WuTHh9HcC
-         8T6TDSyi1FJNQFuuqj7OIt3VjIMPhkqxtZowu/TBXfz83XZeWpr68icMRnQRVBpP5lrU
-         ZwsQ==
+        d=gmail.com; s=20251104; t=1786182338; x=1786787138; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=O7MAb3Uu0LO6yvv+qCiCK5kQU9lkaEhyw4ok7BL0cqY=;
+        b=D7Us/c12tKs3k/Faop+3qjklkbN3x6o8Et39AR1mI0B4AGTRbWceumomM663Tqz25G
+         FHopgltZwEe2VOKKUprTYhL9WkbgpwReeoxo2hc9GaLi2VPv+UclNByslqd1+N90vvGj
+         BpAP4CrNagaAxdAfM6v2cSRZDP8gJxE+IhT4ioVz+vCKVxWQtVHB6G3g0buApcnnQnFE
+         rYMbCQLwTKToLk/tTMbqDMi180YGilZMa3LlmXSg+pbTqSLS/XONpmhNrz/G3k2twvn+
+         5DqXl9+0bQjfPgkBpIiZ4/Kc9BFNVtt5eZ0xdKYwHZxwfGHzQGm0LoPT0Nt7CvcuwQdq
+         V3Yg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1786165453; x=1786770253;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=8uD24huWZm6XpJh9wT7WOr3BJsSLtwFgAarL6fJ9kQ4=;
-        b=hRfJ62/68ebt7lAmVGhV1rsRwFlKqP4AaVU8SfrFSJxSnL0PIN18GC1wFs8PiVOVr1
-         FY+2/WEVAB76YaR8oLjVQdG8Uf62xtrnuJQWWEHK4xv4ModlZdJCAHH4HAYzD6gJUHy7
-         JyvLhnzELtu2EagTuzNjinF8qhSox5AvVRyKu/NvRCzxXgW3B3LZ+pgFKH0vCElSnkjK
-         jlnaaelGwrOvkoHj58C7ZWjrl9uJY5prIaY6fZhpKXbG5lOdry2xxgwUWe1COQrC6ME/
-         n3sM/X99OJ/9MWYS0D28OhO75W+oeTzaKOM1iJ3R8rztdHhip9nv6vt0EC9jU6VQmYzZ
-         Beuw==
-X-Forwarded-Encrypted: i=1; AHgh+RrnYl//yBrwPQrROlQfHPOtjE9uROtHcjiGZ4vGaqCIqHY5lJFbbTbW8x/6QFx+rNS/GTjTC2FXD1c=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyZ2bp4NU6vL5xF46KSxNxWapLszYMlXWTBfYNG0W2mAOeia+27
-	+FTkfxHZ7Vwis9a6+O5Qpd1XNZQrLfUsICjeQmP0DUXcy2UnFAUFho+r
-X-Gm-Gg: AR+sD10tK9S8za0mMYuFzGMYDastpy/PW/Awqq26BY2rSD+IknD/aO7FqyuzxG9kEM0
-	2N8yd+L6b1PCYWm5gGQSNpiMJBz0haoQTN2H//ZAeOEdMftRHUGHy5InOg7icV4TtJfdC1Yi8wh
-	PRGZ3unm4yrvZDhgLLDTz1Ht5rIGSwnk8i0R9ULCRjoX+gGCLG+PuqpGJ2aAG/owAdy8o4cJCLq
-	h27IM4LgNZKF3x0ZKpPWKYuPOvaGAcu9pPGDKls0LOuPdr9GHu9HaAmLASF597ZJA4n9AE8FKNL
-	xbmAwB52tTq90mJ0zWGsZAnT/WTl/wAgVQ5smgoPDWd27q4ezD4XzKzFDcU3DVqDdz57QJzt3f7
-	M6BGHJ6mM0QoGBE4kMrjr86FbPf2wQJqAmZsTAtzPgEAfkcTrOKpyVudc9GEbj2w//gBngFQeF0
-	LOkye+u79uUIjub6n6iM9L5M3Mi8d/YNGxTQ==
-X-Received: by 2002:a17:903:fa5:b0:2c9:d8c6:1dc3 with SMTP id d9443c01a7336-2d0ca1611famr339026475ad.0.1786165453023;
-        Fri, 07 Aug 2026 22:04:13 -0700 (PDT)
-Received: from localhost ([2a12:a305:4::40fb])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2d14cce7830sm15452855ad.29.2026.08.07.22.04.12
+        d=1e100.net; s=20251104; t=1786182338; x=1786787138;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=O7MAb3Uu0LO6yvv+qCiCK5kQU9lkaEhyw4ok7BL0cqY=;
+        b=BwKL5tj/PDDuWSO2tre2XvGkDkXgXfmvFVVDcpITq4SgxWHfD4cLRCyfg3IWUV7QDg
+         R2Hv8oPEc52/AhFxMQVIUiCemvbTZ+l1UJnH/d8mw504WOLr/5oA14tLS2Zi4nyOCcv2
+         amuKZuvvKt8uq8Z32UtBKFF132C4aAeSFifpBtDrKbSimpEivqaUSu8Vp6U3JpP4NVFn
+         LVXvhjFTXZJTn5gz5LobpIUi1ApJC4hdA5tgCYtOhwj2JurdtlHAPvzJc5blxI8A/8DM
+         HvvhsXu4+RGDkRcEgFHh9DQSvnf+15pHIRa2E3ZfFHzuDA2bVT/NpFpQWWwket0B4B8F
+         UVwg==
+X-Forwarded-Encrypted: i=1; AHgh+Rq4yMQXdNmEbEQ6AjYwq/GEVPfPYzGDBMnUWXupsGFP7tcL8pZK1jbKIU6XQOWTJpfVbCsCTYJalwY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyNPm7VnMqKf1RwNqt1F88NKQxC1hK1exoKBC2zXfG34mi5i5zM
+	9m2YcfHLnphDt7lOhPTLpEvowLhFFkEvk4YDkuSwd2CzZmL6u2+MITpU
+X-Gm-Gg: AR+sD13YGA/TmB1bWB/oSq1hFFBVb7nlID9B2veZzjPB+EYz7lb5GnZesCiPaRWV6sj
+	59Zaqulqg9SLup+Kke8qZL5kYVZUkOLC+Jf1foZObYK+EPQXoTvzMutju0eX638xpKxEbgqItyv
+	3KDrhcnmoXfVywCSyq9cJbODOEInUERxmbrxm36xL6DsCEY3MS2ejEjH4W/6tfmquIO9ldO1qYu
+	tckypqSqUQRyTCoiPrTAIhgFU1XcuI8wrut0EBUiRScDt+S5WhlJ33uxxdgqtgu7M3kqcZNICD+
+	wlT+gHF89ZaIpN++CmnR8r1o+3fmnylkUH8z2j8TMXnw7X67F4asOiYTCTwTwHWFwG2owFaoogR
+	aDKpFaeMnNcR6X1etGSajxL14oRQMM6v7V0StB8BxCok+Ackza9S9Sj+RgJuCq9vCHoF4r67nHA
+	kitVpsnk293fbuy7R+C5s1HGZnJbDrfNLh5uweeRrJ48Q8shZzgTKM0aqdMoP7z4Q3piMcDzDbw
+	mpJEQ3mIGApkTW0cxXuJgiqixm7WJMvVhjsSrBoVGqAH4lYosvhbfxm+3XMH50p0Q1cug==
+X-Received: by 2002:a05:6000:290a:b0:47f:7526:5a0 with SMTP id ffacd0b85a97d-47fec47628bmr22114967f8f.0.1786182338193;
+        Sat, 08 Aug 2026 02:45:38 -0700 (PDT)
+Received: from OrangePi5-Plus.BB-HOME (20014C4E1B8E20009911270F4BEC2300.dsl.pool.telekom.hu. [2001:4c4e:1b8e:2000:9911:270f:4bec:2300])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48002145966sm12913518f8f.5.2026.08.08.02.45.35
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 07 Aug 2026 22:04:12 -0700 (PDT)
-Date: Sat, 8 Aug 2026 01:03:52 -0400
-From: Guodong Xu <docular.xu@gmail.com>
-To: Philipp Zabel <p.zabel@pengutronix.de>
-Cc: codykang.hk@gmail.com, David Airlie <airlied@gmail.com>, 
-	Simona Vetter <simona@ffwll.ch>, Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
-	Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
-	Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Haylen Chu <heylenay@4d2.org>, 
-	Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, 
-	Brian Masney <bmasney@redhat.com>, Paul Walmsley <pjw@kernel.org>, 
-	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, 
-	Alexandre Ghiti <alex@ghiti.fr>, dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org, 
-	devicetree@vger.kernel.org, spacemit@lists.linux.dev, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-clk@vger.kernel.org
-Subject: Re: [PATCH RESEND 10/17] drm/spacemit: add Saturn DPU KMS pipeline
-Message-ID: <wr3264hzlya6zep433nr3u2acukizilkrqpkj444kfqeyaeorj@2rc4zo2cqcer>
-References: <20260725-k3-display-v1-0-6de34d80e86c@gmail.com>
- <20260725-k3-display-v1-10-6de34d80e86c@gmail.com>
- <084a860a77f18aaafcda4b223eec4fdcd96e75c9.camel@pengutronix.de>
+        Sat, 08 Aug 2026 02:45:37 -0700 (PDT)
+From: Igor Paunovic <royalnet026@gmail.com>
+To: Sebastian Reichel <sebastian.reichel@collabora.com>
+Cc: Igor Paunovic <royalnet026@gmail.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Dmitry Baryshkov <lumag@kernel.org>,
+	Yubing Zhang <yubing.zhang@rock-chips.com>,
+	Alexey Charkov <alchark@flipper.net>,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	kernel@collabora.com,
+	devicetree@vger.kernel.org,
+	linux-usb@vger.kernel.org,
+	William Wu <william.wu@rock-chips.com>
+Subject: Re: [PATCH v13 00/35] phy: rockchip: usbdp: Clean up the mess
+Date: Sat,  8 Aug 2026 11:45:18 +0200
+Message-ID: <20260808094519.8417-1-royalnet026@gmail.com>
+X-Mailer: git-send-email 2.53.0
+In-Reply-To: <20260714-rockchip-usbdp-cleanup-v13-0-6cb3e769d4c5@collabora.com>
+References: <20260714-rockchip-usbdp-cleanup-v13-0-6cb3e769d4c5@collabora.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <084a860a77f18aaafcda4b223eec4fdcd96e75c9.camel@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260807_220414_421024_159610CE 
-X-CRM114-Status: GOOD (  17.59  )
+X-CRM114-CacheID: sfid-20260808_024540_201264_83CA529F 
+X-CRM114-Status: UNSURE (   9.34  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,113 +117,34 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2026-07-27 09:35, Philipp Zabel wrote:
->On Sa, 2026-07-25 at 00:51 -0400, Cody Kang via B4 Relay wrote:
->> From: Cody Kang <codykang.hk@gmail.com>
->>
->> Add the atomic KMS implementation on top of the hardware backend: one
->> CRTC and one primary plane per DPU instance. atomic_check validates
->> the plane rectangle 1:1 against the mode and sizes the per-channel FBC
->> line buffer; atomic commit builds the cmdlist batches, maps the
->> framebuffer through the DMMU and arms the cfg-ready handshake, with
->> vblank events driven from the DPU interrupt.
->>
->> Signed-off-by: Cody Kang <codykang.hk@gmail.com>
->> ---
->>  drivers/gpu/drm/spacemit/spacemit_crtc.c   | 815 +++++++++++++++++++++++++++++
->>  drivers/gpu/drm/spacemit/spacemit_planes.c | 376 +++++++++++++
->>  2 files changed, 1191 insertions(+)
->>
->> diff --git a/drivers/gpu/drm/spacemit/spacemit_crtc.c b/drivers/gpu/drm/spacemit/spacemit_crtc.c
->> new file mode 100644
->> index 000000000000..b75ff6320501
->> --- /dev/null
->> +++ b/drivers/gpu/drm/spacemit/spacemit_crtc.c
->> @@ -0,0 +1,815 @@
->[...]
->> +/*
->> + * The assert and deassert orders are not mirror images: the hardware wants
->> + * these.
->> + */
->> +static void dpu_reset_assert(struct device *dev, const char *name,
->> +			     struct reset_control *rstc)
->> +{
->> +	int ret = reset_control_assert(rstc);
->> +
->> +	if (ret)
->> +		dev_warn(dev, "failed to assert %s reset: %d\n", name, ret);
->> +}
->> +
->> +static void dpu_reset_deassert(struct device *dev, const char *name,
->> +			       struct reset_control *rstc)
->> +{
->> +	int ret = reset_control_deassert(rstc);
->> +
->> +	if (ret)
->> +		dev_warn(dev, "failed to deassert %s reset: %d\n", name, ret);
->> +}
->> +
->> +static int dpu_pm_suspend(struct device *dev)
->> +{
->> +	struct spacemit_drm_private *priv = dev_get_drvdata(dev);
->> +	struct spacemit_crtc *a_crtc = priv->a_crtc;
->> +
->> +	/*
->> +	 * Assert before gating: a reset asserted into an already-gated block
->> +	 * has no clock edges to propagate on and leaves the register file
->> +	 * untouched.
->> +	 */
->> +	dpu_reset_assert(dev, "lcd", a_crtc->lcd_reset);
->> +	dpu_reset_assert(dev, "esc", a_crtc->esc_reset);
->> +	dpu_reset_assert(dev, "mclk", a_crtc->mclk_reset);
->
->It looks like these three are mirrored, and could be handled by
->reset_control_bulk_assert/deassert().
->
->> +	dpu_reset_assert(dev, "aclk", a_crtc->aclk_reset);
->> +	dpu_reset_assert(dev, "dsc", a_crtc->dsc_reset);
+Hi Sebastian,
 
-Is there a reason these two cannot be mirrored in order? Please double
-check. As I checked the vendor tree, the suspend/resume side appear to be
-copy/paste rather than a deliberate ordering.
+The Tested-by tag is at the bottom.  It comes from the same test run
+as my reply to the dw-dp v11 cover letter: Orange Pi 5 Plus (RK3588),
+drm-misc-next of 2026-08-07, this series and dw-dp v11 on top, plus a
+local board DT patch that enables DP Alt Mode on the USB-C connector.
+All 35 patches applied without conflicts.
 
-Please double-check. Unless I'm missing something, I suggest to bulk them.
+Scope, so that the tag is not read too widely: I exercised the
+DisplayPort AltMode path only.  Modes up to 2560x1440@144 are clean at
+the stock VOP2 ACLK rate, and 3840x2160@120 works once that clock is
+raised - a VOP2 limitation unrelated to this series, which I have
+reported in a separate thread.  I did not stress-test USB3 host or
+device mode, and I did not run repeated hotplug cycles.
 
-Thanks,
-Guodong
+Patch 16/35 ("phy: rockchip: usbdp: Register DP aux bridge") is what
+makes dw-dp probe at all on this board; without it the whole rockchip
+display subsystem stays down, HDMI outputs included.  The details are
+in the dw-dp v11 thread rather than here.
 
->> +	usleep_range(10000, 20000);
->> +
->> +	if (a_crtc->core && a_crtc->core->disable_clk)
->> +		a_crtc->core->disable_clk(a_crtc);
->> +
->> +	return 0;
->> +}
->> +
->> +static int dpu_pm_resume(struct device *dev)
->> +{
->> +	struct spacemit_drm_private *priv = dev_get_drvdata(dev);
->> +	struct spacemit_crtc *a_crtc = priv->a_crtc;
->> +
->> +	dpu_reset_deassert(dev, "mclk", a_crtc->mclk_reset);
->> +	dpu_reset_deassert(dev, "esc", a_crtc->esc_reset);
->> +	dpu_reset_deassert(dev, "lcd", a_crtc->lcd_reset);
->> +	dpu_reset_deassert(dev, "aclk", a_crtc->aclk_reset);
->> +	dpu_reset_deassert(dev, "dsc", a_crtc->dsc_reset);
->> +
->> +	if (a_crtc->core && a_crtc->core->enable_clk)
->> +		a_crtc->core->enable_clk(a_crtc);
->> +
->> +	return 0;
->> +}
->
->regards
->Philipp
+Thanks for the series.
+
+Tested-by: Igor Paunovic <royalnet026@gmail.com>
 
 -- 
 linux-phy mailing list
