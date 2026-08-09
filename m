@@ -4,89 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB935C5AC67
-	for <linux-phy@archiver.kernel.org>; Sun,  9 Aug 2026 01:01:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D7EBC5AD2C
+	for <linux-phy@archiver.kernel.org>; Sun,  9 Aug 2026 03:26:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Subject:Cc:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GcRe5JmcNIRd+Z9KI2/RUmRnjaVKgJkl884IkUBD+sU=; b=2jBEnMe34LX2Hv
-	mpuD1iqMtOJSn4QOheLkb9OrJACI9yA65E6LggEPqk3wk4kKynWJ638Q4hfVpANZs8bEY5E0Q2njM
-	zVd0r2W9sgxohIsK2Vx+VlZC/afTPsGcy0GWok4g1xISqirFSbJ8M0Afaam5lCIW8uDs5TnRlSki/
-	H4s4lP2/8rJcQpQl6LxbdiAeaQGvyn3nO4fTsY1KIwSggwEJuR620VXhakHyM4hZBr5VsuMsaq9YU
-	Q6qGYawuD2A0W6acZo24/FtSKSeMztMrJexThJar4K8Hof4/kJLO8YEAvDrh0uFt3OHL725AVfr6r
-	3ndpcrPneCVcXuYfzV9A==;
+	List-Owner; bh=xciGepvK65kTGL7FfSU03LPFasyDRxtz+Do96lthVRs=; b=yui8MLw5zAMsTf
+	xPxMqFRu0x7gKImh1WHvVNXvCcYH6iN2r3d7AfUzwkOoPdfsSKajoZo+8K4sTYqZqF1UQRiI2pXy3
+	OcCYlZaBzijJIzYOBzSRXJJ04EokVGfWtvu259qUF5xsN9bYESJg9Xkh4hcWQXtQMfa5JlV6Oql19
+	el/o2x3EIQsA/twiUg2cAEpM+RtlWhWZmPFD8VVmRHCiZ9EQ1Kq0YpDqocQXCQz+sB/Hm/Prv89RI
+	uCp3m5Fa22etLrbds9ejzgEOaRsbUIPv345fQTnS1ogidIp2b2AHpLxvrV7O4tobTzVMATAfPdppc
+	gVbJ/YY6cxl0wAHHk74w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsrv0-00000009rKE-1TlR;
-	Sun, 09 Aug 2026 01:01:38 +0000
-Received: from mail-pz2-x00.google.com ([2607:f8b0:4864:3b::])
+	id 1wsuBP-00000009xDX-4BI1;
+	Sun, 09 Aug 2026 03:26:44 +0000
+Received: from mail-pj2-x06.google.com ([2607:f8b0:4864:39::6])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsruy-00000009rJr-0EZR
+	id 1wsuBN-00000009xCi-2aKn
 	for linux-phy@lists.infradead.org;
-	Sun, 09 Aug 2026 01:01:37 +0000
-Received: by mail-pz2-x00.google.com with SMTP id 41be03b00d2f7-c888c001628so530438a12.0
-        for <linux-phy@lists.infradead.org>; Sat, 08 Aug 2026 18:01:35 -0700 (PDT)
+	Sun, 09 Aug 2026 03:26:43 +0000
+Received: by mail-pj2-x06.google.com with SMTP id 98e67ed59e1d1-38f25802c19so365137a91.1
+        for <linux-phy@lists.infradead.org>; Sat, 08 Aug 2026 20:26:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1786237295; x=1786842095; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:mime-version:references
-         :in-reply-to:subject:cc:to:from:message-id:date:from:to:cc:subject
+        d=gmail.com; s=20251104; t=1786246001; x=1786850801; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
          :date:message-id:reply-to:content-type;
-        bh=bTU4eIZnw4U9ZhD6oNkBxDN+wvA8F1rOyrlQvDjEprA=;
-        b=iXEe6yBC+xU5ThuxJHgC964gG3W3wj8LTffVclEAhSHK5dYVQPB4exhQjPYc6jyvuj
-         FxJyxEe76ntjvVCWpIn7yoUOP/HUafVACFQ1tfg0a2A7WCVYg5H6/+Ly9R15khIzGKg9
-         WoGzv6c0S3njEPkppshAY8W4WC8huEVsNDHH7A6o+OslqdBsDkW0iGnjjLmyKNX8s8f1
-         hqWPhBt5sgij5yo+YfH9PPFIesueZRihAZQwQQt76VymRtlUeRk7L+DP5TDNFYNEpvcB
-         kIvVLV0k5CfWt88kEJNzPFRS20aZJqc9A5DosrDoyX9QfIix6R80LAvpcp07YmXlPQoC
-         ej5g==
+        bh=i+2ZP2VpD4hdDzBsnG2msnBM+iMSdLsJB7PET2eMgj0=;
+        b=YnHisOsK4l2dsnWXxBO9eJ++CISU+RORuRWipHn8kqPmPht8SW7sPgkTkZI2Q284Iu
+         yX0HAuyNhwvI9poqzXTWWglMbFpVRUSkUwq+7ToUsj6xdAZ1nOOL6HOG5ywAO1Jati72
+         KCJKkTsMeOV8ymux+MBJh05Epl8CaaDuajIm2JstNs74J4+818j+JGUEf5hzaaioIXyX
+         NuR9JPdLu9002RTeWzmmGpvACFyzjWDaImiPygNa3dEOeXx8KWcv5oI08IvltqWyvsnZ
+         F6x7EFMHiJO2vfNc0wcihs7FV3T7dgTSejadXE3nFqJ4xeDfYmDQqQvmb/aClqqthujE
+         BEMg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1786237295; x=1786842095;
-        h=content-transfer-encoding:content-type:mime-version:references
-         :in-reply-to:subject:cc:to:from:message-id:date:x-gm-gg
+        d=1e100.net; s=20251104; t=1786246001; x=1786850801;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=bTU4eIZnw4U9ZhD6oNkBxDN+wvA8F1rOyrlQvDjEprA=;
-        b=Xsrtj8w3dSIK7SPoDUfDQoc8m1JFaDJzzfvm3sMdZDgkFn7NznbQ5iLY8o8rmHU/0p
-         Wr6v0OEGwpZUNchlLxK1C6y54RRZ+1GtkZio8BK7DYJaIf8Hng/UAHGvOgXA6HjRVTf8
-         JCzHC8ZTM0SUyqbxC+c7G+EI97odO3rql5VwO5+WiFQ0UzYeTIEnuVUEhXiiyVDVWuCW
-         9H1VJR7mOCtPu53ZbJVqCrkcaAIuWmOePc2YbvF6OyCU9C3c4vsA95ja+jaUsSYGGszM
-         qKSv3ZQFUC7RN+E3mhLH51/ttUfXMmxcNuj8fqt3+Xx03MgJ+t6aTcNWHuGooWQJvNOS
-         7TWQ==
-X-Forwarded-Encrypted: i=1; AHgh+Rp3Xcqn/589ogjwJL4J2p94SYmH5IYr8/sApDoMngWibt98AYtcUkkwiTMn8ktnaiteHwtoxOF8f8o=@lists.infradead.org
-X-Gm-Message-State: AOJu0Ywe0cS3De9awQapka6/77N8FJQ4DAf6GqEZ5gPnGXhj3ju7Dylj
-	u0dsgozgs4H0VJ7uBjY/IWgvXl/XXtiR6sreXSDIAzY74hFaasVjWVAt
-X-Gm-Gg: AR+sD123fJhENlSVQIXrEhrve1JxnGIw2t0QpQqcgv7J8ZW+Qpy1Ge7ZOhcUT0MS4vG
-	l/A8ah9491MDG0xzdqs5DNpwMsl7yWTp8Yu/3lag3tf5UCBr/pm7alDXmImf63HG6ga7cujXPX3
-	/lKXz7iGk2dGWMfUkSGMDq8EnXhMWg830Oju+XZF5zB4UIGDbawxYmagF9TslhdEAutm2Wi7evq
-	aieYryJhSSYg4df7/OYD5W0iZfdfc+LCeT8+LOrkzwMs+C+IWJhughI2soW0u7Y6Ck0BElwviAu
-	DmuhCDvNlmuzLAB9TWKPLy7soB5jdORhpnsHAsoMNMQQY2M8+5SLp+PLTeBnJ32CK11kQ8/bUV+
-	0xDv+eF4tERvgdRwArOwT/KBRehpQ9rgsWo8HCgMdWXYRK1wjfDUvxSZrANHuFR0PGPVwI01o1A
-	CcyOMrPwd7vwES2tCERCJBB7CFD9AFTPCqriA9iLE=
-X-Received: by 2002:a05:6a00:2a0e:b0:848:6c37:cd74 with SMTP id d2e1a72fcca58-84f696a0369mr12238522b3a.22.1786237295147;
-        Sat, 08 Aug 2026 18:01:35 -0700 (PDT)
-Received: from localhost ([2403:2c80:17:1e::20db])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-84f5a55f304sm2378524b3a.49.2026.08.08.18.01.32
+        bh=i+2ZP2VpD4hdDzBsnG2msnBM+iMSdLsJB7PET2eMgj0=;
+        b=ShmHg7m4VqXgrLXaclsAxLb8qy/yfJr5hU/qW4o9mlDHCzBc5hchq+HLBL1r2+fqXY
+         e1YgI0Ki30lw8Ufog2Th/KAIqblUIRCN4hCp9OV3vHXzd9ARw2zKyIKA4ExCSBBx8Xhb
+         1jZXCexLffaH+WUbAp4K99bB6pjlVrflD6ils2DG+aiKINAO1r61H4nUYEL2I89gNMiC
+         N+mdi/s9xI2vZwEWNR3Oz1ELx0Kdy2GzQ6VJUPzA8Q4Xg57T489f4HXjPJyYl7loxy/6
+         ZzD/JSHxFtkcjbtUo2sc4llyM0meMXWzWKcw2s4eY5lRWQqUY4s5oyPePkzrWXJ3RhIo
+         qttw==
+X-Forwarded-Encrypted: i=1; AHgh+RrtnIRWlaS1wVuPq9cXUTwxbHUJwM9bsbYlj/VcgZQskvvkfawyPFymix75MdUqec8beBROHAFJVFU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwUzZzplsnhODI8zcqBuKw3z8W28PqHSkBOBs6cKYGPItN+aLuf
+	lvi0yktEo9FuOCHrGphXQDMpS319oFQWMUXcto7nlB5sLgdyoejO3gr+
+X-Gm-Gg: AR+sD11Aa4Uzhhs810Yg/5W6VqDxgftTGnZiEL/b2BJRcHNDhXdKttrHhMAIVdY/C3J
+	DDOGBX4bf+ImIWAeSrbw+qH15QAtidmXwEvow5thAdE3k922+LcrdNM2x3h54qSICQ4hocrzl7/
+	8u1qWKMWpLzfkEVDvYvnoL8aUXEZVyt/k3Hw5jN3bZKbCqlyNVlFXfy8avQSVNnemgxt52L7ChS
+	h0j+V5Gaq3BAKPKQfLjaDvOFZigQXbVUpQOVYfQ6bnjGRSs+E1sZLOTv2wgchjPt6gxFjz3AkZr
+	3RtVFMS1fhR4+0VihDZLAB7J7WDfyr8koP7NqcVRYBkdRiQw+E7rHGua3n2Q5MPVRfhblp0oBTi
+	BSTXJSOBpJO6wOIohtbvoW76h+xBk/5hkDpLl15L2XITfadL0rRuKKWw8SYnAbVTwZNpGvZoqou
+	s0V3yYkof3O57b2/A3zbFv4I+F6QPCVuwzeg==
+X-Received: by 2002:a17:90b:390e:b0:38e:9ef9:eb97 with SMTP id 98e67ed59e1d1-392823ea541mr9657081a91.16.1786246000598;
+        Sat, 08 Aug 2026 20:26:40 -0700 (PDT)
+Received: from localhost ([2403:2c80:6::10db])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-390b35ca2b7sm3210539a91.4.2026.08.08.20.26.39
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 08 Aug 2026 18:01:33 -0700 (PDT)
-Date: Sun, 09 Aug 2026 09:01:28 +0800
-Message-ID: <4da43aa690649fda8565941ee576338b.codykang.hk@gmail.com>
+        Sat, 08 Aug 2026 20:26:40 -0700 (PDT)
+Date: Sun, 9 Aug 2026 11:26:35 +0800
 From: Cody Kang <codykang.hk@gmail.com>
-To: sashiko-reviews@lists.linux.dev
-Cc: vkoul@kernel.org, robh@kernel.org, conor+dt@kernel.org,
- dri-devel@lists.freedesktop.org, olteanv@gmail.com,
- linux-phy@lists.infradead.org, neil.armstrong@linaro.org,
- devicetree@vger.kernel.org, sashiko-bot@kernel.org
-Subject: Re: [PATCH 11/17] drm/spacemit: add Saturn DPU DRM device driver
-In-Reply-To: <20260725051713.B60E61F000E9@smtp.kernel.org>
-References: <20260724-k3-display-v1-0-f22a10a52867@gmail.com>
- <20260724-k3-display-v1-11-f22a10a52867@gmail.com>
- <20260725051713.B60E61F000E9@smtp.kernel.org>
+To: Guodong Xu <docular.xu@gmail.com>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>, 
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
+	Thomas Zimmermann <tzimmermann@suse.de>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@kernel.org>, 
+	Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+	Haylen Chu <heylenay@4d2.org>, Michael Turquette <mturquette@baylibre.com>, 
+	Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>, 
+	Paul Walmsley <pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>, 
+	Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>, dri-devel@lists.freedesktop.org, 
+	linux-riscv@lists.infradead.org, devicetree@vger.kernel.org, spacemit@lists.linux.dev, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, linux-clk@vger.kernel.org
+Subject: Re: [PATCH RESEND 10/17] drm/spacemit: add Saturn DPU KMS pipeline
+Message-ID: <ko2cc6jyezfyqzg2rdftyebeydw6nfd65ajvu46acfewhnrqxi@om2uhqdlhmzv>
+References: <20260725-k3-display-v1-0-6de34d80e86c@gmail.com>
+ <20260725-k3-display-v1-10-6de34d80e86c@gmail.com>
+ <084a860a77f18aaafcda4b223eec4fdcd96e75c9.camel@pengutronix.de>
+ <wr3264hzlya6zep433nr3u2acukizilkrqpkj444kfqeyaeorj@2rc4zo2cqcer>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <wr3264hzlya6zep433nr3u2acukizilkrqpkj444kfqeyaeorj@2rc4zo2cqcer>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260808_180136_126080_04E71C5D 
-X-CRM114-Status: GOOD (  21.28  )
+X-CRM114-CacheID: sfid-20260808_202641_659749_D2B29DA8 
+X-CRM114-Status: GOOD (  16.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,112 +113,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, 25 Jul 2026 05:17:13 +0000, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 2 potential issue(s) to consider:
-> - [High] Missing IS_ERR() check for 'match' causes an ERR_PTR dereference inside component_master_add_with_match().
-> - [Medium] The atomic commit tail stalls the commit pipeline by waiting for flip completion before signaling hardware done.
-> --
->
-> --- Patch [11]: [PATCH 11/17] drm/spacemit: add Saturn DPU DRM device driver ---
-> commit e12174b9614adeccb5a06f03b5944837004e96f4
-> Author: Cody Kang <codykang.hk@gmail.com>
->
-> drm/spacemit: add Saturn DPU DRM device driver
->
-> This commit adds the DRM device for the SpacemiT K3 Saturn display processing
-> unit. The SoC has two DPU instances, each driving one CRTC that scans out a
-> single primary plane in linear RGB, feeding a downstream DP/eDP controller
-> over an OF-graph endpoint.
->
-> > diff --git a/drivers/gpu/drm/spacemit/spacemit_drm.c b/drivers/gpu/drm/spacemit/spacemit_drm.c
-> > new file mode 100644
-> > --- /dev/null
-> > +++ b/drivers/gpu/drm/spacemit/spacemit_drm.c
-> > @@ -0,0 +1,132 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Copyright (C) 2025-2026 SpacemiT Co., Ltd.
-> > + *
-> > + */
->
-> [ ... ]
->
-> > +static void spacemit_drm_atomic_commit_tail(struct drm_atomic_commit *old_state)
-> > +{
-> > +	struct drm_device *dev = old_state->dev;
-> > +
-> > +	drm_atomic_helper_commit_modeset_disables(dev, old_state);
-> > +
-> > +	drm_atomic_helper_commit_modeset_enables(dev, old_state);
-> > +
-> > +	drm_atomic_helper_commit_planes(dev, old_state,
-> > +					DRM_PLANE_COMMIT_ACTIVE_ONLY);
-> > +
-> > +	drm_atomic_helper_wait_for_flip_done(dev, old_state);
-> > +
-> > +	drm_atomic_helper_commit_hw_done(old_state);
->
-> [Severity: Medium]
-> Does calling drm_atomic_helper_wait_for_flip_done() before
-> drm_atomic_helper_commit_hw_done() stall the commit pipeline?
+On Sat, Aug 08, 2026 at 01:03:52AM -0400, Guodong Xu wrote:
+> On 2026-07-27 09:35, Philipp Zabel wrote:
+> > On Sa, 2026-07-25 at 00:51 -0400, Cody Kang via B4 Relay wrote:
+> > > From: Cody Kang <codykang.hk@gmail.com>
+> > > 
+> > > +	/*
+> > > +	 * Assert before gating: a reset asserted into an already-gated block
+> > > +	 * has no clock edges to propagate on and leaves the register file
+> > > +	 * untouched.
+> > > +	 */
+> > > +	dpu_reset_assert(dev, "lcd", a_crtc->lcd_reset);
+> > > +	dpu_reset_assert(dev, "esc", a_crtc->esc_reset);
+> > > +	dpu_reset_assert(dev, "mclk", a_crtc->mclk_reset);
+> > 
+> > It looks like these three are mirrored, and could be handled by
+> > reset_control_bulk_assert/deassert().
+> > 
+> > > +	dpu_reset_assert(dev, "aclk", a_crtc->aclk_reset);
+> > > +	dpu_reset_assert(dev, "dsc", a_crtc->dsc_reset);
+> 
+> Is there a reason these two cannot be mirrored in order? Please double
+> check. As I checked the vendor tree, the suspend/resume side appear to be
+> copy/paste rather than a deliberate ordering.
+> 
+> Please double-check. Unless I'm missing something, I suggest to bulk them.
 
-Deliberate: the cmdlist engine reads the old state's DMA buffers
-until the frame boundary, so the next commit must not start
-programming (nor the old buffers be freed) before the flip
-completes. Will add a comment in v2 saying so.
-
-> By waiting for the flip completion before signaling hardware done, the CPU work
-> for the next frame (such as state preparation and buffer pinning) is blocked
-> until the hardware flip completes.
->
-> Should commit_hw_done() be called before wait_for_flip_done() to avoid
-> degrading atomic commit performance?
->
-> > +
-> > +	drm_atomic_helper_cleanup_planes(dev, old_state);
-> > +}
->
-> [ ... ]
->
-> > +int spacemit_drm_of_component_probe(struct device *dev)
-> > +{
-> > +	struct device_node *ports, *port, *ep;
-> > +	struct device_node *remote;
-> > +	struct component_match *match = NULL;
->
-> [ ... ]
->
-> > +	for_each_child_of_node(ports, port) {
-> > +		if (!of_node_name_eq(port, "port"))
-> > +			continue;
-> > +		for_each_child_of_node(port, ep) {
-> > +			if (!of_node_name_eq(ep, "endpoint"))
-> > +				continue;
-> > +			remote = of_graph_get_remote_port_parent(ep);
-> > +			if (!remote)
-> > +				continue;
-> > +			if (of_device_is_available(remote))
-> > +				drm_of_component_match_add(dev, &match,
-> > +							   compare_of, remote);
-> > +			of_node_put(remote);
-> > +		}
-> > +	}
-> > +	of_node_put(ports);
-> > +
-> > +	if (!match) {
-> > +		dev_err(dev, "no downstream component available\n");
-> > +		return -ENODEV;
-> > +	}
-> > +
-> > +	return component_master_add_with_match(dev, &spacemit_drm_master_ops,
-> > +					       match);
->
-> [Severity: High]
-> Can match be an ERR_PTR here instead of just NULL?
-
-Real; will add the IS_ERR() check in v2.
+Agree, I'll check.
 
 Cody
+
 
 -- 
 linux-phy mailing list
