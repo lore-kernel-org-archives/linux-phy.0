@@ -4,52 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF49EC5AE49
-	for <linux-phy@archiver.kernel.org>; Sun,  9 Aug 2026 13:15:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9EB08C5B561
+	for <linux-phy@archiver.kernel.org>; Sun,  9 Aug 2026 13:15:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mPUukFEMH/Q5VV14fHKoq+IWKdl6MjkDh3X+tKzDOao=; b=P/IqcyVRlcWhO2
-	BLoQYW/8pDwCPygLMNFNHFF34+xyvhITQOqjHYmwvtALd7x5ijlSfpJjQ0Z+Aeq3H1NfEFc26UZnN
-	23hRDQ7kQGLfbEzTKKYjV+hI/HlIY7ayuAuQ+k6B92dPZClsrNgPvbNfWlkgHcz6OZj43t6fUiU4V
-	1fOdb31hWFMXd497jbB2GsAfYRUWoAcYUimsSCf732petziqD2PCwwmEo2dFL/Uk1rQt6kcUriLCW
-	vMCyx2FxuTIQC1py1CytzimKMh0e1D7U5iaDJCgLy9rzH5I3rPAoViYVhrx84p11E/Bc/mH6SjMFn
-	yZBCdEOTkQGr2+eGgzsw==;
+	List-Owner; bh=YkMWLUHpI+HwCD28QgWA6DYyd/rAX3JYd+v8SP4qVEc=; b=nyOvmLvSK30UJB
+	3BYtj4RWgU17fbqZ0hDo98hEjZdnGJf47u1+QLdR7PiAwTAWyiEElvheV1tf9stRNOBTgsUl5fJsJ
+	fl6+kkjm2MnDYUgAlFLXGesOMMeYVaQNbvrLwSGFLUeWF+f94SFQcGJOvzJkF13LM2b+PzCnliL11
+	H/h+LrQZTNm2IhN/ZPiIPVLjN+D+J7jROa72iZ51Znn+7Kc9MHhs9TyBm01dkesZoQPywc6oLOwnb
+	uHu0Hz1O6MEr4Op8zZpVK7qCEJtceK6rEliY0QSBhjl+iEsjbuQdsSGUEXydotecYlSeZW9eQ4p+I
+	U+xT9eUSD2tG7tIhx6nQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wt3N4-0000000AJe3-2nAO;
-	Sun, 09 Aug 2026 13:15:23 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wt3N6-0000000AJgX-3zRq;
+	Sun, 09 Aug 2026 13:15:24 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wt3N3-0000000AJcl-2cB4;
-	Sun, 09 Aug 2026 13:15:21 +0000
+	id 1wt3N3-0000000AJd1-468X;
+	Sun, 09 Aug 2026 13:15:22 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 6BBE943EB6;
+	by sea.source.kernel.org (Postfix) with ESMTP id B24AF44F2A;
 	Sun,  9 Aug 2026 13:15:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 38042C2BCF5;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 79245C2BD01;
 	Sun,  9 Aug 2026 13:15:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1786281320;
-	bh=uWHJNFEDwNhxfzEsQVN+MYBNDHqcBjEugM8Y0dLDGg0=;
+	bh=4OU6Od8el7QzsKN2rqPzw6rTUFmkgSbklP0M50hiEXw=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=schp2qo4nsd55MUrHUMuKXxyW9TuDXBWJ1LlwS/L8Mz5q3jwRR7E//FwIdaXZs6dx
-	 o2Lmom99rm6bGVNbMt3HWnU8TFPTHfeVxKC5XAWXfx9bEhvco9eUKIswjho9II1VEf
-	 skt/Z1H3xEln5aZNyNbnIHIDI/A8iIPRIFoHWJD69rzd4dhlGExDLqlkx6/Wf/3rv4
-	 lW/5MK768/ZyHhu20W7G0hx3lu9ZRppRiTgmJEjhcSZa9zKeIDx/AOWB3TOS9khmVR
-	 Qz4tqmB+GbbrUz0zTvdc/stOZQr4zqWkvSmK4TivHi1tTVSOB2bDjfhfVcYM5AR60D
-	 GmlKAGYGJUS3Q==
+	b=K+m6ZLjKe1Jn7Ok0Exl2WTg03ARqZvJK25znyWryDMYsDLTpRBLQnGI1eWdIndTr7
+	 w2CaJYPHgKRUL6FVM/BQCFVnse02D+Ewv1CwAz/iFit3c69xcqExsHPTerW35jmSwQ
+	 RGy9b0asT+0oggCTkGFzYiorSj3b0W853GUirj5yZpBE2VDxFhysqzOgujblD2j3At
+	 dhkcf7PF0rJBkH+yZ7csduGnM/0ePfTMrIXpih564RJzF2Y8FbM3wDsKEg4OZV9zio
+	 Sp8uCT1GjnwfxaIEqRMUUu4Et0aU3VcUC9NyPMaf7stHw5oqq3aRGPOoPN2We6P2Qd
+	 8p6K/FobUzBPw==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 171CCC5AC80;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 60B26C5AD6A;
 	Sun,  9 Aug 2026 13:15:20 +0000 (UTC)
 From: Cody Kang via B4 Relay <devnull+codykang.hk.gmail.com@kernel.org>
-Date: Sun, 09 Aug 2026 21:14:10 +0800
-Subject: [PATCH v2 01/17] dt-bindings: display: spacemit: add K3 Saturn DPU
- controller
+Date: Sun, 09 Aug 2026 21:14:13 +0800
+Subject: [PATCH v2 04/17] dt-bindings: soc: spacemit: allow eDP/DP PHY PLL
+ pixel clocks on K3 APMU
 MIME-Version: 1.0
-Message-Id: <20260809-k3-display-v2-1-327d7910bf71@gmail.com>
+Message-Id: <20260809-k3-display-v2-4-327d7910bf71@gmail.com>
 References: <20260809-k3-display-v2-0-327d7910bf71@gmail.com>
 In-Reply-To: <20260809-k3-display-v2-0-327d7910bf71@gmail.com>
 To: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
@@ -70,11 +70,11 @@ Cc: dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
  linux-clk@vger.kernel.org, Cody Kang <codykang.hk@gmail.com>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1786281298; l=4691;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1786281298; l=1913;
  i=codykang.hk@gmail.com; s=codykang; h=from:subject:message-id;
- bh=BmFVX9AQPaf/054idrgE6KVKK1IoNznGkA+GRXEpG9M=;
- b=/yT1v9ef3dtpOxKhsnKQ6uDojXxRxTguGnrCGEHMzwSEdtLmy/6hQaxRTrGavkrSIIhV91ENi
- Keu/o38CU+fDXhx68dbKaDqN0e5YjIYpM1GaAE80y4Kp71TuxHmZXYS
+ bh=XIXdh8tM1nuisKWRso6HNY0wYA1fsQzlAJKbSvbCocs=;
+ b=ZL1gtNAJ4clzcCfAX4wu5YkJYSmn8UV14NVeaPo5RRhKJCeJA0cgvPk+y1y+V0zqhhft+IuII
+ HXqR64HqL3tDmZ+AnT4xjeisv3x891Vekpy0Vs56fjQPZA9o3Vf8Iu2
 X-Developer-Key: i=codykang.hk@gmail.com; a=ed25519;
  pk=Osn6/cs9Su/mHHw4P19cmVc3v2FMQfiWahjsN0vEkuk=
 X-Endpoint-Received: by B4 Relay for codykang.hk@gmail.com/codykang with
@@ -99,159 +99,68 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Cody Kang <codykang.hk@gmail.com>
 
-Document the Saturn display processing unit found on the SpacemiT K3 SoC.
-The K3 instantiates two of them, one per display path. They share a
-compatible: an instance differs only in which register window, interrupt,
-clock and reset lines it takes.
+The APMU's eDP pixel-clock muxes select the DP PHY PLLs as parents, so the
+K3 syscon takes two clock inputs the other variants do not have.
 
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+Gate them behind the K3 compatible instead of widening the shared clock
+list, so a non-K3 syscon cannot silently accept clocks it has no mux for.
+
 Signed-off-by: Cody Kang <codykang.hk@gmail.com>
 
 ---
 v2:
-- add Reviewed-by: Rob Herring (Arm)
+- drop the redundant minItems: 4; four is already the minimum
+  (Rob Herring)
 ---
- .../display/spacemit/spacemit,k3-saturn-dpu.yaml   | 132 +++++++++++++++++++++
- 1 file changed, 132 insertions(+)
+ .../bindings/soc/spacemit/spacemit,k1-syscon.yaml   | 21 ++++++++++++++++++++-
+ 1 file changed, 20 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/display/spacemit/spacemit,k3-saturn-dpu.yaml b/Documentation/devicetree/bindings/display/spacemit/spacemit,k3-saturn-dpu.yaml
-new file mode 100644
-index 0000000000000..97ea9da4b68e4
---- /dev/null
-+++ b/Documentation/devicetree/bindings/display/spacemit/spacemit,k3-saturn-dpu.yaml
-@@ -0,0 +1,132 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/display/spacemit/spacemit,k3-saturn-dpu.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: SpacemiT K3 Saturn Display Processing Unit
-+
-+maintainers:
-+  - Cody Kang <codykang.hk@gmail.com>
-+
-+description:
-+  The Saturn DPU is the display processing unit of the SpacemiT K3 SoC. It
-+  composes the display planes and drives the timing for one display path. Its
-+  output goes to a DisplayPort or embedded DisplayPort controller. The K3 has
-+  two instances.
-+
-+properties:
-+  compatible:
-+    const: spacemit,k3-saturn-dpu
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    items:
-+      - description: Online (live display) compose path.
-+      - description: Offline (writeback) compose path.
-+
-+  interrupt-names:
-+    items:
-+      - const: online
-+      - const: offline
-+
-+  clocks:
-+    items:
-+      - description: Pixel clock.
-+      - description: Memory clock for the compose pipeline.
-+      - description: AXI bus clock.
-+      - description: DSI escape clock.
-+      - description: DSC clock.
-+
-+  clock-names:
-+    items:
-+      - const: pxclk
-+      - const: mclk
-+      - const: aclk
-+      - const: escclk
-+      - const: dscclk
-+
-+  resets:
-+    items:
-+      - description: Memory clock domain.
-+      - description: LCD domain, shared with the downstream controller.
-+      - description: DSI escape clock domain.
-+      - description: AXI clock domain.
-+      - description: DSC domain.
-+
-+  reset-names:
-+    items:
-+      - const: mclk
-+      - const: lcd
-+      - const: esc
-+      - const: aclk
-+      - const: dsc
-+
-+  ports:
-+    $ref: /schemas/graph.yaml#/properties/ports
-+
-+    properties:
-+      port@0:
-+        $ref: /schemas/graph.yaml#/properties/port
-+        description: Video output to the DisplayPort or eDP controller.
-+
-+    required:
-+      - port@0
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - interrupt-names
-+  - clocks
-+  - clock-names
-+  - resets
-+  - reset-names
-+  - ports
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/spacemit,k3-clocks.h>
-+    #include <dt-bindings/reset/spacemit,k3-resets.h>
-+    #include <dt-bindings/interrupt-controller/irq.h>
-+
-+    soc {
-+        #address-cells = <2>;
-+        #size-cells = <2>;
-+
-+        dpu@c0340000 {
-+            compatible = "spacemit,k3-saturn-dpu";
-+            reg = <0x0 0xc0340000 0x0 0x54000>;
-+            interrupts = <90 IRQ_TYPE_LEVEL_HIGH>,
-+                         <89 IRQ_TYPE_LEVEL_HIGH>;
-+            interrupt-names = "online", "offline";
-+            clocks = <&syscon_apmu CLK_APMU_LCD_PXCLK>,
-+                     <&syscon_apmu CLK_APMU_LCD_MCLK>,
-+                     <&syscon_apmu CLK_APMU_DPU_ACLK>,
-+                     <&syscon_apmu CLK_APMU_DSI_ESC>,
-+                     <&syscon_apmu CLK_APMU_LCD_DSC>;
-+            clock-names = "pxclk", "mclk", "aclk", "escclk", "dscclk";
-+            resets = <&syscon_apmu RESET_APMU_LCD_MCLK>,
-+                     <&syscon_apmu RESET_APMU_LCD>,
-+                     <&syscon_apmu RESET_APMU_DSI_ESC>,
-+                     <&syscon_apmu RESET_APMU_DPU_ACLK>,
-+                     <&syscon_apmu RESET_APMU_LCD_DSCCLK>;
-+            reset-names = "mclk", "lcd", "esc", "aclk", "dsc";
-+
-+            ports {
-+                #address-cells = <1>;
-+                #size-cells = <0>;
-+
-+                port@0 {
-+                    reg = <0>;
-+                    endpoint {
-+                        remote-endpoint = <&edp0_in>;
-+                    };
-+                };
-+            };
-+        };
-+    };
+diff --git a/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml b/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml
+index d3a7c93c3c54f..a6ef456fe14be 100644
+--- a/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml
++++ b/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml
+@@ -31,14 +31,18 @@ properties:
+     maxItems: 1
+ 
+   clocks:
+-    maxItems: 4
++    minItems: 4
++    maxItems: 6
+ 
+   clock-names:
++    minItems: 4
+     items:
+       - const: osc
+       - const: vctcxo_1m
+       - const: vctcxo_3m
+       - const: vctcxo_24m
++      - const: edp0_pll_pxclk
++      - const: edp1_pll_pxclk
+ 
+   "#clock-cells":
+     const: 1
+@@ -95,6 +99,21 @@ allOf:
+         - clocks
+         - clock-names
+         - "#clock-cells"
++  # Only the K3 APMU exposes the two eDP/DP PHY PLL pixel clocks as extra
++  # inputs (parents of its eDP pixel-clock muxes); every other variant has
++  # the four base oscillator inputs only.
++  - if:
++      not:
++        properties:
++          compatible:
++            contains:
++              const: spacemit,k3-syscon-apmu
++    then:
++      properties:
++        clocks:
++          maxItems: 4
++        clock-names:
++          maxItems: 4
+ 
+ additionalProperties: false
+ 
 
 -- 
 2.43.0
