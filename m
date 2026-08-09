@@ -4,52 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9EB08C5B561
-	for <linux-phy@archiver.kernel.org>; Sun,  9 Aug 2026 13:15:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E7FDC5B55D
+	for <linux-phy@archiver.kernel.org>; Sun,  9 Aug 2026 13:15:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YkMWLUHpI+HwCD28QgWA6DYyd/rAX3JYd+v8SP4qVEc=; b=nyOvmLvSK30UJB
-	3BYtj4RWgU17fbqZ0hDo98hEjZdnGJf47u1+QLdR7PiAwTAWyiEElvheV1tf9stRNOBTgsUl5fJsJ
-	fl6+kkjm2MnDYUgAlFLXGesOMMeYVaQNbvrLwSGFLUeWF+f94SFQcGJOvzJkF13LM2b+PzCnliL11
-	H/h+LrQZTNm2IhN/ZPiIPVLjN+D+J7jROa72iZ51Znn+7Kc9MHhs9TyBm01dkesZoQPywc6oLOwnb
-	uHu0Hz1O6MEr4Op8zZpVK7qCEJtceK6rEliY0QSBhjl+iEsjbuQdsSGUEXydotecYlSeZW9eQ4p+I
-	U+xT9eUSD2tG7tIhx6nQ==;
+	List-Owner; bh=usjfJJe6TqMTHYm8j4O5EjLkRFeKMRorvP5MVe4Ym1s=; b=tzjwNFmMSG+Xnu
+	B/QZ4hBXV5kqs9u2xcv+ur90s2WPZuDqFu5WTPojCLc6Ob7Nx1OebQgnPztM9WAUVjixnQ6mJLmJ6
+	IKmdoBWBOOC8Ok/nVgJVI0g0aESj+DlQrb6gKq+PPqNROcrit3Wja1PkO4Lc8hVQRRnqZPiaF3vfW
+	D8iEZ9O6u7LeEKw0GLTJ7tS7GQaJVCbVtVo1HYBjVnSZ0dmOwcFbBGkes89iUdOcB9eoPipXYK+vj
+	GqIpATxspMZRjK/494mRH9m9tID2W/IC7cwKinGkrSHKtAlnoe6VKlCM1+5rSeminUi8hEPcYy1Bx
+	TufAuvuojMPE18dJVKaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wt3N6-0000000AJgX-3zRq;
-	Sun, 09 Aug 2026 13:15:24 +0000
+	id 1wt3N5-0000000AJfW-3QY5;
+	Sun, 09 Aug 2026 13:15:23 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wt3N3-0000000AJd1-468X;
-	Sun, 09 Aug 2026 13:15:22 +0000
+	id 1wt3N3-0000000AJcq-3sbg;
+	Sun, 09 Aug 2026 13:15:21 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id B24AF44F2A;
+	by sea.source.kernel.org (Postfix) with ESMTP id 9A59E44EE8;
 	Sun,  9 Aug 2026 13:15:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 79245C2BD01;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 62849C2BD05;
 	Sun,  9 Aug 2026 13:15:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1786281320;
-	bh=4OU6Od8el7QzsKN2rqPzw6rTUFmkgSbklP0M50hiEXw=;
+	bh=9peFgrnHqlLJn8Ue7sGrY5PiSn7KpFqxvAykcmftCp8=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=K+m6ZLjKe1Jn7Ok0Exl2WTg03ARqZvJK25znyWryDMYsDLTpRBLQnGI1eWdIndTr7
-	 w2CaJYPHgKRUL6FVM/BQCFVnse02D+Ewv1CwAz/iFit3c69xcqExsHPTerW35jmSwQ
-	 RGy9b0asT+0oggCTkGFzYiorSj3b0W853GUirj5yZpBE2VDxFhysqzOgujblD2j3At
-	 dhkcf7PF0rJBkH+yZ7csduGnM/0ePfTMrIXpih564RJzF2Y8FbM3wDsKEg4OZV9zio
-	 Sp8uCT1GjnwfxaIEqRMUUu4Et0aU3VcUC9NyPMaf7stHw5oqq3aRGPOoPN2We6P2Qd
-	 8p6K/FobUzBPw==
+	b=VaDtLmzBLiMCHaK7iB/0prE+fswjBrAjperEeS8++CktfySTSqr1icijjETkqoUd+
+	 e8qWZiF60I32xao/6FPEhKpubjodK5H4nCbone3/+HnfNquDIyH2T+kdHPJSyyWBS1
+	 Og66F/uEoP7t9rBnChSfL1UR+Gk878Hl6Wxiwz82/i5AmENeW1eZYOtvAkIYoRmZ/t
+	 srsWcj/V/kepMtegRPxRI5I2lJHEWiyD9NSLzD2vr0Uf9aEqCyQzrt7jyXjWZQOSNA
+	 jSi2c4Q0kU0JwmICxOGB/NdOynyLrjnxVv0+dh7+OuwEMh118TxZ1fj9BM32B0Dt20
+	 yqgM1+jN6bmDA==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 60B26C5AD6A;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 43741C5AD2C;
 	Sun,  9 Aug 2026 13:15:20 +0000 (UTC)
 From: Cody Kang via B4 Relay <devnull+codykang.hk.gmail.com@kernel.org>
-Date: Sun, 09 Aug 2026 21:14:13 +0800
-Subject: [PATCH v2 04/17] dt-bindings: soc: spacemit: allow eDP/DP PHY PLL
- pixel clocks on K3 APMU
+Date: Sun, 09 Aug 2026 21:14:12 +0800
+Subject: [PATCH v2 03/17] dt-bindings: display: spacemit: add K3
+ Innosilicon DP/eDP controller
 MIME-Version: 1.0
-Message-Id: <20260809-k3-display-v2-4-327d7910bf71@gmail.com>
+Message-Id: <20260809-k3-display-v2-3-327d7910bf71@gmail.com>
 References: <20260809-k3-display-v2-0-327d7910bf71@gmail.com>
 In-Reply-To: <20260809-k3-display-v2-0-327d7910bf71@gmail.com>
 To: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
@@ -70,11 +70,11 @@ Cc: dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
  linux-clk@vger.kernel.org, Cody Kang <codykang.hk@gmail.com>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1786281298; l=1913;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1786281298; l=4802;
  i=codykang.hk@gmail.com; s=codykang; h=from:subject:message-id;
- bh=XIXdh8tM1nuisKWRso6HNY0wYA1fsQzlAJKbSvbCocs=;
- b=ZL1gtNAJ4clzcCfAX4wu5YkJYSmn8UV14NVeaPo5RRhKJCeJA0cgvPk+y1y+V0zqhhft+IuII
- HXqR64HqL3tDmZ+AnT4xjeisv3x891Vekpy0Vs56fjQPZA9o3Vf8Iu2
+ bh=VkHwjITfjJFDv2SvE3j5UStndtyWrAWLVP3FHNwGNeE=;
+ b=llT07l7DIsiM1lHB9+w0LQewfBUC5/hb1VcZ0hJjSrb8Ow6g31WJRK2i5vaKmSyMD124koK0Q
+ K6KHDPcB+R9D74X0khdGbM21yXzK69ex/5hgwdfO70l2URTSLWsPGkr
 X-Developer-Key: i=codykang.hk@gmail.com; a=ed25519;
  pk=Osn6/cs9Su/mHHw4P19cmVc3v2FMQfiWahjsN0vEkuk=
 X-Endpoint-Received: by B4 Relay for codykang.hk@gmail.com/codykang with
@@ -99,68 +99,168 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Cody Kang <codykang.hk@gmail.com>
 
-The APMU's eDP pixel-clock muxes select the DP PHY PLLs as parents, so the
-K3 syscon takes two clock inputs the other variants do not have.
+Both K3 instances are the same IP and share one compatible; which one
+behaves as eDP is decided by what its downstream port is wired to, not by
+which register window it sits in, so the binding does not distinguish them.
 
-Gate them behind the K3 compatible instead of widening the shared clock
-list, so a non-K3 syscon cannot silently accept clocks it has no mux for.
-
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 Signed-off-by: Cody Kang <codykang.hk@gmail.com>
 
 ---
 v2:
-- drop the redundant minItems: 4; four is already the minimum
-  (Rob Herring)
+- make port@1 required (Rob Herring)
+- add Reviewed-by: Rob Herring (Arm)
 ---
- .../bindings/soc/spacemit/spacemit,k1-syscon.yaml   | 21 ++++++++++++++++++++-
- 1 file changed, 20 insertions(+), 1 deletion(-)
+ .../display/spacemit/spacemit,k3-inno-dp.yaml      | 141 +++++++++++++++++++++
+ 1 file changed, 141 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml b/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml
-index d3a7c93c3c54f..a6ef456fe14be 100644
---- a/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml
-+++ b/Documentation/devicetree/bindings/soc/spacemit/spacemit,k1-syscon.yaml
-@@ -31,14 +31,18 @@ properties:
-     maxItems: 1
- 
-   clocks:
--    maxItems: 4
-+    minItems: 4
-+    maxItems: 6
- 
-   clock-names:
-+    minItems: 4
-     items:
-       - const: osc
-       - const: vctcxo_1m
-       - const: vctcxo_3m
-       - const: vctcxo_24m
-+      - const: edp0_pll_pxclk
-+      - const: edp1_pll_pxclk
- 
-   "#clock-cells":
-     const: 1
-@@ -95,6 +99,21 @@ allOf:
-         - clocks
-         - clock-names
-         - "#clock-cells"
-+  # Only the K3 APMU exposes the two eDP/DP PHY PLL pixel clocks as extra
-+  # inputs (parents of its eDP pixel-clock muxes); every other variant has
-+  # the four base oscillator inputs only.
-+  - if:
-+      not:
-+        properties:
-+          compatible:
-+            contains:
-+              const: spacemit,k3-syscon-apmu
-+    then:
-+      properties:
-+        clocks:
-+          maxItems: 4
-+        clock-names:
-+          maxItems: 4
- 
- additionalProperties: false
- 
+diff --git a/Documentation/devicetree/bindings/display/spacemit/spacemit,k3-inno-dp.yaml b/Documentation/devicetree/bindings/display/spacemit/spacemit,k3-inno-dp.yaml
+new file mode 100644
+index 0000000000000..491d25730da9f
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/spacemit/spacemit,k3-inno-dp.yaml
+@@ -0,0 +1,141 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/spacemit/spacemit,k3-inno-dp.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: SpacemiT K3 Innosilicon DisplayPort / embedded DisplayPort Controller
++
++maintainers:
++  - Cody Kang <codykang.hk@gmail.com>
++
++description:
++  Innosilicon DisplayPort transmit controller integrated in the SpacemiT K3
++  SoC. The K3 has two instances of the same block sharing one compatible;
++  each acts as embedded or external DisplayPort depending on whether its
++  output port drives a panel or a connector.
++
++properties:
++  compatible:
++    const: spacemit,k3-inno-dp
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++    description: Link and hot-plug events.
++
++  clocks:
++    items:
++      - description: Pixel clock for the controller.
++      - description:
++          Pixel clock generated by the DP PHY PLL; the pixel clock above is
++          parented onto it in use.
++
++  clock-names:
++    items:
++      - const: pxclk
++      - const: pll
++
++  resets:
++    maxItems: 1
++    description: Controller-wide reset signal.
++
++  phys:
++    maxItems: 1
++    description: Phandle to the K3 Innosilicon DP PHY.
++
++  phy-names:
++    items:
++      - const: dp
++
++  ports:
++    $ref: /schemas/graph.yaml#/properties/ports
++
++    properties:
++      port@0:
++        $ref: /schemas/graph.yaml#/properties/port
++        description: Video input from the DPU.
++
++      port@1:
++        $ref: /schemas/graph.yaml#/properties/port
++        description: Output to the panel or to the DisplayPort connector.
++
++    required:
++      - port@0
++      - port@1
++
++  aux-bus:
++    $ref: /schemas/display/dp-aux-bus.yaml#
++    description:
++      The DisplayPort AUX bus. Present when the output drives an embedded
++      panel, which is described as a child of this node and identifies itself
++      over AUX. Absent when the output is a connector.
++
++  phy:
++    $ref: /schemas/phy/spacemit,k3-inno-dp-phy.yaml#
++    description:
++      The DisplayPort PHY. Its registers live inside this controller's
++      register window, so it is described here as a child node.
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++  - resets
++  - phys
++  - phy-names
++  - ports
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/spacemit,k3-clocks.h>
++    #include <dt-bindings/reset/spacemit,k3-resets.h>
++    #include <dt-bindings/interrupt-controller/irq.h>
++
++    soc {
++        #address-cells = <2>;
++        #size-cells = <2>;
++
++        edp@cac84000 {
++            compatible = "spacemit,k3-inno-dp";
++            reg = <0x0 0xcac84000 0x0 0x4000>;
++            interrupts = <132 IRQ_TYPE_LEVEL_HIGH>;
++            clocks = <&syscon_apmu CLK_APMU_EDP0_PXCLK>, <&edp0_phy>;
++            clock-names = "pxclk", "pll";
++            resets = <&syscon_apmu RESET_APMU_EDP0>;
++            phys = <&edp0_phy>;
++            phy-names = "dp";
++
++            edp0_phy: phy {
++                compatible = "spacemit,k3-inno-dp-phy";
++                #phy-cells = <0>;
++                #clock-cells = <0>;
++                clock-output-names = "edp0_pll_pxclk";
++            };
++
++            ports {
++                #address-cells = <1>;
++                #size-cells = <0>;
++
++                port@0 {
++                    reg = <0>;
++                    endpoint {
++                        remote-endpoint = <&dpu0_out>;
++                    };
++                };
++
++                port@1 {
++                    reg = <1>;
++                    endpoint {
++                        remote-endpoint = <&panel_in>;
++                    };
++                };
++            };
++        };
++    };
 
 -- 
 2.43.0
