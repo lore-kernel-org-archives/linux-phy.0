@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74B09C5B55D
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59054C5AE49
 	for <linux-phy@archiver.kernel.org>; Sun,  9 Aug 2026 13:15:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,44 +12,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NR83/hl/0YGfVo+xN3Vg++p8tt7b349sPAeF9ZiQEkM=; b=vKkGhH/6lv+O97
-	yuFcJDCf9+AHsn77si4N3eGpoHl8aThUhE/GlARsZ9gz3Sqh9xoTldjUGr1NyGkYoG2yAQU9fVACf
-	FQVuibXCVB4+ebBA3sdSINbQubU/hiGgpnQFUrJ5AGcT4/YGIEG4mCnM5ah1s7sgfh1aJwoo7Svk1
-	XnDRy1D+QS9yBNJzUjKHTvXQNFEsv/IoPI7T0nqGR9Qfn1pM7TW5KG2vwW3g0Dx/lXUdLXjCZha0T
-	9i+YvSTo46S2MM/b82TueY+aDzhWjt7sRgAOiDUrfqZO70LTqFSkA7nVXxEL0RkQ0KxpBQ3fJ9AMo
-	qkIjNpIEaH+mHNYv4A6A==;
+	List-Owner; bh=9BZZY+iJxwpAvAcBI9bIrClHNlLh1Ng5pIw2LOz1lr0=; b=32h+DyPsFd6Nm4
+	tJwOIN8Njl93jXq8TUoKPEeGOcNHYt7iLToXxh7cW731aDVJy+dT5NUSwyQFcYtDts82RSFwj8/5S
+	+GemPhTmNIIj00tMqij6O2bvaTh/cckn2Hm0+yMGnr6sojmk14LNWdZ09exPzrNJen86TJfaZjmaA
+	5cSw3BdDBcOilunJjnkJmEs74qjKlL1lmlfh+B+VjkfE/yXLvWbZo0LL65pN4R+2AoCGjvNXYmhdq
+	DbEfSO0x/YI452ZApHn40MytRwR/8+hmrzI3dtVJ+tLvX4I4IulBIw9TwTRlqPTk1Rhbtd0ZlLHaq
+	+Ncqec+IPZDZlhDugTWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wt3NC-0000000AJlC-0FmE;
+	id 1wt3NC-0000000AJky-01rw;
 	Sun, 09 Aug 2026 13:15:30 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wt3N5-0000000AJdM-14tF;
+	id 1wt3N5-0000000AJe5-0ElH;
 	Sun, 09 Aug 2026 13:15:23 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 2CAD144F26;
-	Sun,  9 Aug 2026 13:15:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 097E5C4AF17;
-	Sun,  9 Aug 2026 13:15:22 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id E16364500E;
+	Sun,  9 Aug 2026 13:15:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id BF6E7C32786;
+	Sun,  9 Aug 2026 13:15:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1786281322;
-	bh=O/gy+7ikoIGYFqGk7dSJq+Z8323rgtlWmSpMoXE7uHk=;
+	s=k20201202; t=1786281321;
+	bh=vKDbRg4XZkgHrtO10qse7GVmheGJdzt6mePjP73cFlY=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=CKF0vcWc0Tp9idoG7RnCLeFuB+cP6GX7nSWWLLNdaJyL6eGh8iZwnfT7Xgg1wwapH
-	 7B9INOuawTWKBqchSe0z4WhTwLUwQ1h+mWvRVrUpkt6IdRF+VnrLpxGJwTt2AIKz+E
-	 +Q9/leCAgd3+9MGOJW3V4qHxNxnSOVMHlA81tf9k2sinAkvDlzndYuWZSCaYEdJE3d
-	 0R9bKGWwJJG225trX2kNOUGFLOZeywSf6rMKfhTSK0Q88+WBEM8XFRPqDSEgDdEU6K
-	 niQTiIqyVZjxfZTGczJu5ZbxpyzZmonVvIo2N4q4b+xaG3TuxDHVz9kIj6yjFH5sTN
-	 5lmBvCRp+es0g==
+	b=VDrlU8hvT5rqwUD0/4XgOm6cN3J5w+qoRGpMVvfzXblecbUsBiDnZPtXPdfESlxA7
+	 Ec7UiL7oVxtPA6HDKrIG3qD/Y/k4V6nOAuCR/yJf3HQzt80IG1co177opkDm/gGfPR
+	 UfXX/LRHpo+lWcbq/ZeG/lA+wk51j/1CXgmoOsh0NhdW3Bmpl7L5J5/G6rzBSuQB97
+	 ZbY+50IO9w1e8r9YYW2rNNKmsE+MxMPy+gfE3rFQ2E34f8tq7XXVH8FiH4mGb7ZCgx
+	 ujPi+kPpM6z5Tg7P7QRjnCtXXJR22q++xOQZtPd+SluQvVZVFYEDygzEYPrzg0EJyL
+	 V31M5LEwk5N7g==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id E7581C5AE49;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id A6F26C5AD7B;
 	Sun,  9 Aug 2026 13:15:21 +0000 (UTC)
 From: Cody Kang via B4 Relay <devnull+codykang.hk.gmail.com@kernel.org>
-Date: Sun, 09 Aug 2026 21:14:24 +0800
-Subject: [PATCH v2 15/17] riscv: dts: spacemit: k3-pico-itx: enable the
- DisplayPort output
+Date: Sun, 09 Aug 2026 21:14:22 +0800
+Subject: [PATCH v2 13/17] MAINTAINERS: add SpacemiT K3 display driver entry
 MIME-Version: 1.0
-Message-Id: <20260809-k3-display-v2-15-327d7910bf71@gmail.com>
+Message-Id: <20260809-k3-display-v2-13-327d7910bf71@gmail.com>
 References: <20260809-k3-display-v2-0-327d7910bf71@gmail.com>
 In-Reply-To: <20260809-k3-display-v2-0-327d7910bf71@gmail.com>
 To: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
@@ -70,11 +69,11 @@ Cc: dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
  linux-clk@vger.kernel.org, Cody Kang <codykang.hk@gmail.com>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1786281298; l=1657;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1786281298; l=990;
  i=codykang.hk@gmail.com; s=codykang; h=from:subject:message-id;
- bh=f6AWNhFHBVugadRXy825UXfqfIA5V4WHWi7g2cKDzEA=;
- b=xsBP+WDV0YgPblSwdQTYRgUoo+7j25oQbGMeV15Oo5VLXQElwb/trsXN324uE70W0yTaSotom
- fGFw889AQz7BNY7AnD+lLBvyL8uqdsMWBp69eKwl2JB7fbCHiX4Empl
+ bh=uE//zxGHdM4vouTm7VJyhpSaodElUoNAgs+MFj3YrE4=;
+ b=HsG8S4sGhDTpwnC8X70jlY2o1/CvltfjMRBHZVAdSD/xf4d4GzoxH6Zo2wJZBdGtzkt5d13WA
+ ZVva0mj0VbpAvha5Aw5jH0tuaOCPDC5pqcXdOTyh98XsBnX9YRkQoEQ
 X-Developer-Key: i=codykang.hk@gmail.com; a=ed25519;
  pk=Osn6/cs9Su/mHHw4P19cmVc3v2FMQfiWahjsN0vEkuk=
 X-Endpoint-Received: by B4 Relay for codykang.hk@gmail.com/codykang with
@@ -99,8 +98,8 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Cody Kang <codykang.hk@gmail.com>
 
-Pico-ITX brings the second DPU's output to an external DisplayPort
-connector. Enable that DPU and the DisplayPort controller it feeds.
+Cover the Saturn DPU, the Innosilicon DP/eDP controller, the DP PHY and
+their bindings.
 
 Signed-off-by: Cody Kang <codykang.hk@gmail.com>
 
@@ -108,58 +107,30 @@ Signed-off-by: Cody Kang <codykang.hk@gmail.com>
 v2:
 - no change
 ---
- arch/riscv/boot/dts/spacemit/k3-pico-itx.dts | 11 +++++++++++
- arch/riscv/boot/dts/spacemit/k3-pinctrl.dtsi | 11 +++++++++++
- 2 files changed, 22 insertions(+)
+ MAINTAINERS | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-diff --git a/arch/riscv/boot/dts/spacemit/k3-pico-itx.dts b/arch/riscv/boot/dts/spacemit/k3-pico-itx.dts
-index b89c1521e6649..6c31460990a75 100644
---- a/arch/riscv/boot/dts/spacemit/k3-pico-itx.dts
-+++ b/arch/riscv/boot/dts/spacemit/k3-pico-itx.dts
-@@ -6,6 +6,7 @@
- #include <dt-bindings/gpio/gpio.h>
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 6dea93a419624..9f2910a17c387 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -25436,6 +25436,16 @@ S:	Maintained
+ F:	Documentation/devicetree/bindings/i2c/spacemit,k1-i2c.yaml
+ F:	drivers/i2c/busses/i2c-k1.c
  
- #include "k3.dtsi"
-+#include "k3-display.dtsi"
- #include "k3-pinctrl.dtsi"
- 
- / {
-@@ -221,3 +222,13 @@ hub@1 {
- &usb2_phy {
- 	status = "okay";
- };
++SPACEMIT K3 DISPLAY DRIVER
++M:	Cody Kang <codykang.hk@gmail.com>
++L:	dri-devel@lists.freedesktop.org
++L:	linux-riscv@lists.infradead.org
++S:	Maintained
++F:	Documentation/devicetree/bindings/display/spacemit/
++F:	Documentation/devicetree/bindings/phy/spacemit,k3-inno-dp-phy.yaml
++F:	drivers/gpu/drm/spacemit/
++F:	drivers/phy/spacemit/phy-k3-inno-dp.c
 +
-+&dpu1_crtc0 {
-+	status = "okay";
-+};
-+
-+&dp1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&dp1_1_cfg>;
-+	status = "okay";
-+};
-diff --git a/arch/riscv/boot/dts/spacemit/k3-pinctrl.dtsi b/arch/riscv/boot/dts/spacemit/k3-pinctrl.dtsi
-index 3ee1471f37985..2f36eba20f1ee 100644
---- a/arch/riscv/boot/dts/spacemit/k3-pinctrl.dtsi
-+++ b/arch/riscv/boot/dts/spacemit/k3-pinctrl.dtsi
-@@ -11,6 +11,17 @@
- #define K3_GPIO(x)	(x / 32) (x % 32)
- 
- &pinctrl {
-+	/omit-if-no-ref/
-+	dp1_1_cfg: dp1-1-cfg {
-+		dp1-pins {
-+			pinmux = <K3_PADCONF(24, 6)>;	/* dp1 hpd */
-+
-+			bias-disable;
-+			drive-strength = <25>;
-+			power-source = <3300>;
-+		};
-+	};
-+
- 	gmac0_rgmii_0_cfg: gmac0-rgmii-0-cfg {
- 		gmac0-rgmii-0-pins {
- 			pinmux = <K3_PADCONF(0, 1)>,	/* gmac0_rxdv */
+ SPANISH DOCUMENTATION
+ M:	Carlos Bilbao <carlos.bilbao@kernel.org>
+ R:	Avadhut Naik <avadhut.naik@amd.com>
 
 -- 
 2.43.0
