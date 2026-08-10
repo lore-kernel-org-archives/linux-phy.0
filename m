@@ -4,54 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F717C5AC82
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Aug 2026 12:07:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14A2BC5AE5D
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Aug 2026 12:10:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6pKJKDrY0ff3wzabgjd8FXrZcsAQ5SdSxfaUjszD+xQ=; b=H6VrUDuiBJDhau
-	+MimggMqkfamP1AaykmyVA5sZbgj53EeXKZMksbUmjOkYYBGEGmLn09k/GFKmaxSBjkk+U1vzy6vx
-	gmSLb6ITNc7jErVF4/yfAZuMCOk6UEix07p33kZgwMT6tufWHKDKVr7nrLfPF1kr50U0qGQspoAY+
-	upnTMfDDNG8I8sIbWIVZPr7qJtRzw7eeLVPk/7CxS6hVcLr1W/iAy5h+fAMVoJQJZ3nYPRXyS3vm5
-	uq9k6uDWBq/611uGrytuTcQqzjuys9VRv44xJd8UQS4H9M6jeeK4zxEOwxV9+/VUvkkQIy6EAbcWE
-	dj741B9dZmn9Epu5gh2g==;
+	List-Owner; bh=zybMOwMV/H8HEG/sl3c/gBSji9xF9exG4YOD425GIK4=; b=mnHtHSkyHoYLap
+	TSf9SF8+ujelw2ZYVZOIKpFmNFAi63SamkXvpvot/vidlJ7aPLvpYq3BAzNCteOoc+U5stA50GyM6
+	vaK5Z9iVZRPAs+4XTnDQ3bv1VLYOpa84kSZY5x32waG3af2ttQGxNTd4f2F15oE/XLstVw/hcINEQ
+	qAdV07VLXFgRM1hw/+WD80GQ+B8smio/VLCWQ6cuydeqiKTcQrjSFYqfNau42pY3cONS02Z/Xzu+1
+	EWJM/ALTOUjV1luAdmnErUMFJ7UzmFjt0VRB/3kfNWJIL263KMRnILFFMlkLvEJqXUL8QpekZBEDx
+	lfMRa02UH6WIDcQdVtZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtOmo-0000000Bgsn-3Vh2;
-	Mon, 10 Aug 2026 12:07:22 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wtOpa-0000000Bh9s-2roi;
+	Mon, 10 Aug 2026 12:10:14 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtOmn-0000000Bgsd-06FS
-	for linux-phy@lists.infradead.org;
-	Mon, 10 Aug 2026 12:07:21 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 443B9600DA;
-	Mon, 10 Aug 2026 12:07:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3AD161F00A3A;
-	Mon, 10 Aug 2026 12:07:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786363639;
-	bh=YRHPFMgdaA0yiUbbK8fEIq4YxUNO4dVldMnmHB8GPGU=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=V7Skn+yotrckp+a0sTthvv3EhH3kYOIhz7IjmBJQ3qQnWkxmOyq+j9p7/P5Ugmad6
-	 tqiZjC7vyyrGBMgot7ExPA7aAcrG0RW33BoukRJAO9PZs6wzeFL32tPmFyIrMm+QN7
-	 7rq71ozSCPVG2lL4fuEx8D+KyNnGrlozBOpiHuGqWJK9PaMs/tCSV3yVbtpRKyk7M/
-	 9GrV98LcLEgP6ipRQMuEoTwV7Zc9PmgiAzAc9UJk7o4rimUGFKVXpIjSEIKgNxFnke
-	 br29Xc8j5fRmKNnaRzLzZ/vUJAHUgUPjciKnqH/8x7PyZhPluFJvsfNEgmjkHj+Fay
-	 RkHIeAK+Yhx5Q==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH 10/10] ARM: dts: qcom: apq8074-dragonboard: enable the
- USB3 host
-To: "Dmitry Baryshkov" <dmitry.baryshkov@oss.qualcomm.com>
-Cc: vkoul@kernel.org, neil.armstrong@linaro.org, robh@kernel.org, linux-phy@lists.infradead.org, olteanv@gmail.com, devicetree@vger.kernel.org, conor+dt@kernel.org
-In-Reply-To: <20260810-msm8974-usb3-v1-10-1a47e1185524@oss.qualcomm.com>
-References: <20260810-msm8974-usb3-v1-0-1a47e1185524@oss.qualcomm.com>
- <20260810-msm8974-usb3-v1-10-1a47e1185524@oss.qualcomm.com>
-Date: Mon, 10 Aug 2026 12:07:17 +0000
-Message-Id: <20260810120718.3AD161F00A3A@smtp.kernel.org>
+	id 1wtOpW-0000000Bh7O-3jEs;
+	Mon, 10 Aug 2026 12:10:10 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 6403143E28;
+	Mon, 10 Aug 2026 12:10:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 0AE48C2BCF4;
+	Mon, 10 Aug 2026 12:10:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1786363810;
+	bh=u/xE6kMTpgEqTDti8OA+5hTsroD4qAS6oCcbdy5lRqw=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=CRmerNKTIVlgXXoc1sg3jZ4F3ZaSDEWR2FrzIU8dzo3Kr6IWt73er7K7CmA9piORP
+	 PBWN+BKsEiiC62ARY01mxExrk/Vx2MXT5D611VvG6jU1Y6KvQ2x5/E9wGtx1bdxmBO
+	 g1+jIDUlHGCMSlXfUN5xVDdd6JB/WrRNZdvJN1QXlMzk2PEXpUas5Tmmfs/I0sS40A
+	 fueOf4B8B/leZKrAyYYam8fVa6VF3+VMdB9oBM3BG6gCfl2+gtsYRKni9kbub7AUfD
+	 y+hcm0bZAt+lzP0qiwL4+HjHIkTiUXeFwy6d01DKVcmG8wdwROAbCk+jHa4QCqyr0G
+	 me3VOAi32wb2w==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id DEE7FC5AC82;
+	Mon, 10 Aug 2026 12:10:09 +0000 (UTC)
+From: Jason Yang via B4 Relay <devnull+jason98166.gmail.com@kernel.org>
+Date: Mon, 10 Aug 2026 20:10:10 +0800
+Subject: [PATCH v3 2/5] dt-bindings: phy: rockchip,rk3588-mipi-dcphy: allow
+ DSI and CSI consumers
+MIME-Version: 1.0
+Message-Id: <20260810-dcphy-rx-v1-v3-2-a2d25c29adfc@gmail.com>
+References: <20260810-dcphy-rx-v1-v3-0-a2d25c29adfc@gmail.com>
+In-Reply-To: <20260810-dcphy-rx-v1-v3-0-a2d25c29adfc@gmail.com>
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Guochun Huang <hero.huang@rock-chips.com>, 
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: Michael Riesch <michael.riesch@collabora.com>, 
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>, 
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, Jason Yang <jason98166@gmail.com>
+X-Mailer: b4 0.13.0
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1786363808; l=1904;
+ i=jason98166@gmail.com; s=20260721; h=from:subject:message-id;
+ bh=L0YFn/UorcpfoUu13dEjPV7h6qsLNW5q4tce+B7/JmY=;
+ b=2pBufMxgPOxO3btd9FczwqemLe23DIEutco22KEz5ID7y3QW4jQ/bxM0oeyYGZqlsKxMMvIKo
+ dJ0U+RwUZ62C2KJvvdxYPdF18H7iJdfnViN38Rwc1YIVucNEv2800w5
+X-Developer-Key: i=jason98166@gmail.com; a=ed25519;
+ pk=xQmD001Q/ooHl39PxyQtusbUQmgbOsSfpFryRVWZ/k4=
+X-Endpoint-Received: by B4 Relay for jason98166@gmail.com/20260721 with
+ auth_id=887
+X-Original-From: Jason Yang <jason98166@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,90 +85,60 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Reply-To: jason98166@gmail.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-NCBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIFRoZSBgcmVzZXQtZ3Bp
-b3NgIGFuZCBgdmRkLXN1cHBseWAgcHJvcGVydGllcyBmb3IgdGhlIFVTQiBodWJzIGFuZCBwZXJp
-cGhlcmFscyB3aWxsIGJlIGNvbXBsZXRlbHkgaWdub3JlZCBiZWNhdXNlIHRoZWlyIGNvbXBhdGli
-bGUgc3RyaW5ncyBhcmUgbm90IHN1cHBvcnRlZCBieSB0aGUga2VybmVsJ3Mgb25ib2FyZCBVU0Ig
-ZGV2IGRyaXZlci4KLSBbSGlnaF0gYHFjb21faXBxODA2eF91c2JfaHNfcGh5X2luaXQoKWAgb3Zl
-cndyaXRlcyB0aGUgZW50aXJlIGBIU1VTQl9QSFlfQ1RSTF9SRUdgLCBkZXN0cm95aW5nIGJvb3Rs
-b2FkZXItY29uZmlndXJlZCBmcmVxdWVuY3kgc3RyYXBzIGZvciBNU004OTc0LgotIFtIaWdoXSBT
-dXBlclNwZWVkIFVTQiBkZXZpY2VzIChBWDg4MTc5IGFuZCBQTDI3NzUpIGFyZSBpbmNvcnJlY3Rs
-eSBuZXN0ZWQgdW5kZXIgdGhlIEhpZ2hTcGVlZCBodWIgKGBodWJfMl8wYCkgaW5zdGVhZCBvZiB0
-aGUgU3VwZXJTcGVlZCBodWIgKGBodWJfM18wYCkuCi0gW0hpZ2hdIFRoZSBTdXBlclNwZWVkIGh1
-YiAoYGh1Yl8zXzBgKSBpcyBhc3NpZ25lZCBhbiBpbnZhbGlkIHBvcnQgYWRkcmVzcyAoYHJlZyA9
-IDwyPmApLCBicmVha2luZyBEVCBub2RlIG1hcHBpbmcgZm9yIGJvdGggcm9vdCBodWJzLgotLQoK
-LS0tIFBhdGNoIFsxMF06IFtQQVRDSCAxMC8xMF0gQVJNOiBkdHM6IHFjb206IGFwcTgwNzQtZHJh
-Z29uYm9hcmQ6IGVuYWJsZSB0aGUgVVNCMyBob3N0IC0tLQpjb21taXQgMzE2YjhiMWJiZmQyY2Fi
-ZTY2ZmUwMjkzZjllZDYxZTNhNDhlYzE5NwpBdXRob3I6IERtaXRyeSBCYXJ5c2hrb3YgPGRtaXRy
-eS5iYXJ5c2hrb3ZAb3NzLnF1YWxjb21tLmNvbT4KCkFSTTogZHRzOiBxY29tOiBhcHE4MDc0LWRy
-YWdvbmJvYXJkOiBlbmFibGUgdGhlIFVTQjMgaG9zdAoKVGhlIFVTQjMgcG9ydCBvZiB0aGUgZHJh
-Z29uYm9hcmQgZHJpdmVzIHRoZSBvbmJvYXJkIFRVU0I4MDQwQSBodWIgd2l0aAp0aGUgQVg4ODE3
-OSBHYkUgY29udHJvbGxlciBhbmQgdGhlIFBMMjc3NSBVU0ItU0FUQSBicmlkZ2UgYmVoaW5kIGl0
-LgpUaGlzIGNvbW1pdCBlbmFibGVzIHRoZSBEV0MzIGNvbnRyb2xsZXIgaW4gaG9zdCBtb2RlIGFs
-b25nIHdpdGggaXRzIFBIWXMKYW5kIGRlc2NyaWJlcyB0aGUgb25ib2FyZCBjaGFpbiBhcyBkZXZp
-Y2Ugbm9kZXMgdW5kZXIgdGhlIGNvbnRyb2xsZXIuCgo+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9i
-b290L2R0cy9xY29tL3Fjb20tYXBxODA3NC1kcmFnb25ib2FyZC5kdHMgYi9hcmNoL2FybS9ib290
-L2R0cy9xY29tL3Fjb20tYXBxODA3NC1kcmFnb25ib2FyZC5kdHMKPiAtLS0gYS9hcmNoL2FybS9i
-b290L2R0cy9xY29tL3Fjb20tYXBxODA3NC1kcmFnb25ib2FyZC5kdHMKPiArKysgYi9hcmNoL2Fy
-bS9ib290L2R0cy9xY29tL3Fjb20tYXBxODA3NC1kcmFnb25ib2FyZC5kdHMKClsgLi4uIF0KCj4g
-KwkvKiBUSSBUVVNCODA0MEEgZm91ciBwb3J0IGh1YiAqLwo+ICsJaHViXzJfMDogaHViQDEgewo+
-ICsJCWNvbXBhdGlibGUgPSAidXNiNDUxLDgwNDMiOwoKW1NldmVyaXR5OiBIaWdoXQpXaWxsIHRo
-ZSByZXNldC1ncGlvcyBhbmQgdmRkLXN1cHBseSBwcm9wZXJ0aWVzIGJlIGlnbm9yZWQgaGVyZT8K
-ClRoZSBuZXcgY29tcGF0aWJsZSBzdHJpbmdzICh1c2I0NTEsODA0MywgdXNiNDUxLDgwNDEsIHVz
-YjY3YiwyNzc1LAp1c2JiOTUsMTc5MCkgZG8gbm90IGFwcGVhciB0byBiZSBzdXBwb3J0ZWQgYnkg
-dGhlIG9uYm9hcmRfdXNiX2RldiBkcml2ZXIncwpvbmJvYXJkX2Rldl9tYXRjaCBhcnJheS4gVGhl
-IGdlbmVyaWMgVVNCIGNvcmUgcGFyc2VzIHRoZXNlIG5vZGVzIGJ1dCBkb2VzCm5vdCBuYXRpdmVs
-eSBoYW5kbGUgcmVzZXQtZ3Bpb3MuCgpDb3VsZCB0aGlzIGNhdXNlIHRoZSByZXNldCBsaW5lcyB0
-byBmbG9hdCBhbmQgcG93ZXIgc2VxdWVuY2luZyB0byBiZQp1bm1hbmFnZWQsIHByZXZlbnRpbmcg
-cHJvcGVyIGVudW1lcmF0aW9uPwoKPiArCQlyZWcgPSA8MT47Cj4gKwkJcGVlci1odWIgPSA8Jmh1
-Yl8zXzA+Owo+ICsJCXJlc2V0LWdwaW9zID0gPCZwbTg5NDFfZ3Bpb3MgNiBHUElPX0FDVElWRV9M
-T1c+Owo+ICsJCXZkZC1zdXBwbHkgPSA8JnB3cl9jXzNwMz47Cj4gKwkJI2FkZHJlc3MtY2VsbHMg
-PSA8MT47Cj4gKwkJI3NpemUtY2VsbHMgPSA8MD47Cj4gKwo+ICsJCS8qIFByb2xpZmljIFBMMjc3
-NSBVU0ItU0FUQSBicmlkZ2Ugb24gdGhlIEROMCBwb3J0ICovCj4gKwkJZGV2aWNlQDEgewo+ICsJ
-CQljb21wYXRpYmxlID0gInVzYjY3YiwyNzc1IjsKCltTZXZlcml0eTogSGlnaF0KQXJlIHRoZSBT
-dXBlclNwZWVkIFVTQiBkZXZpY2VzIChBWDg4MTc5IGFuZCBQTDI3NzUpIG5lc3RlZCB1bmRlciB0
-aGUKaW5jb3JyZWN0IGh1YiBoZXJlPwoKU2luY2UgdGhlc2UgYXJlIFN1cGVyU3BlZWQgY2FwYWJs
-ZSBkZXZpY2VzLCB0aGV5IHdpbGwgZW51bWVyYXRlIG9uIHRoZQpTdXBlclNwZWVkIGJ1cy4gQnkg
-cGxhY2luZyB0aGVtIHVuZGVyIHRoZSBIaWdoU3BlZWQgaHViIChodWJfMl8wKSBpbnN0ZWFkCm9m
-IHRoZSBTdXBlclNwZWVkIGh1YiAoaHViXzNfMCksIHRoZSBVU0IgY29yZSB3b24ndCBiZSBhYmxl
-IHRvIG1hdGNoIHRoZQplbnVtZXJhdGVkIGRldmljZSB0byBhIERUIGNoaWxkLgoKV2lsbCB0aGlz
-IGNhdXNlIGRldmljZS1zcGVjaWZpYyBEVCBwcm9wZXJ0aWVzIGxpa2UgcmVzZXQtZ3Bpb3MgdG8g
-YmUKc2lsZW50bHkgaWdub3JlZCBkdXJpbmcgVVNCIGVudW1lcmF0aW9uPwoKPiArCQkJcmVnID0g
-PDE+Owo+ICsJCQlyZXNldC1ncGlvcyA9IDwmcG04OTQxX2dwaW9zIDEwIEdQSU9fQUNUSVZFX0xP
-Vz47Cj4gKwkJCXZkZC1zdXBwbHkgPSA8JnB3cl9jXzNwMz47Cj4gKwkJfTsKPiArCj4gKwkJLyog
-QVNJWCBBWDg4MTc5IFVTQi1HYkUgY29udHJvbGxlciBvbiB0aGUgRE4yIHBvcnQgKi8KPiArCQll
-dGhlcm5ldEAzIHsKPiArCQkJY29tcGF0aWJsZSA9ICJ1c2JiOTUsMTc5MCI7Cj4gKwkJCXJlZyA9
-IDwzPjsKPiArCQkJcmVzZXQtZ3Bpb3MgPSA8JnBtODk0MV9ncGlvcyA5IEdQSU9fQUNUSVZFX0xP
-Vz47Cj4gKwkJCXZkZC1zdXBwbHkgPSA8JnB3cl9jXzNwMz47Cj4gKwkJfTsKPiArCX07Cj4gKwo+
-ICsJaHViXzNfMDogaHViQDIgewo+ICsJCWNvbXBhdGlibGUgPSAidXNiNDUxLDgwNDEiOwo+ICsJ
-CXJlZyA9IDwyPjsKCltTZXZlcml0eTogSGlnaF0KSXMgdGhpcyBwb3J0IGFkZHJlc3MgdmFsaWQg
-Zm9yIHRoZSBTdXBlclNwZWVkIGh1Yj8KClRoZSBBUFE4MDc0IERXQzMgY29udHJvbGxlciBoYXMg
-YSBzaW5nbGUgcGh5c2ljYWwgcG9ydCwgbWVhbmluZyBib3RoIHJvb3QgaHVicwpzaG91bGQgZXhw
-b3NlIGV4YWN0bHkgb25lIHBvcnQgKHBvcnQgMSkuIEJlY2F1c2UgdGhpcyB1c2VzIHJlZyA9IDwy
-PiwgdGhlClVTQiAzLjAgcm9vdCBodWIgd2lsbCBsb29rIGZvciBwb3J0IDEgYW5kIGluc3RlYWQg
-ZmluZCBodWJfMl8wICh3aGljaCBoYXMKcmVnID0gPDE+KS4KCkRvZXMgdGhpcyBsZWF2ZSBodWJf
-M18wIG9ycGhhbmVkIGFuZCBicmVhayBEVCBub2RlIG1hcHBpbmc/Cgo+ICsJCXBlZXItaHViID0g
-PCZodWJfMl8wPjsKPiArCQlyZXNldC1ncGlvcyA9IDwmcG04OTQxX2dwaW9zIDYgR1BJT19BQ1RJ
-VkVfTE9XPjsKPiArCQl2ZGQtc3VwcGx5ID0gPCZwd3JfY18zcDM+Owo+ICsJfTsKPiArfTsKCkEg
-cmVsYXRlZCBpc3N1ZSBhcHBlYXJzIHRvIGV4aXN0IGluIHRoZSBQSFkgaW5pdGlhbGl6YXRpb24g
-c2VxdWVuY2UgZm9yIHRoaXMKaGFyZHdhcmU6Cgpkcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNv
-bS1pcHE4MDZ4LXVzYi5jOnFjb21faXBxODA2eF91c2JfaHNfcGh5X2luaXQoKSB7CiAgICAuLi4K
-ICAgIHdyaXRlbCh2YWwsIHBoeV9kd2MzLT5iYXNlICsgSFNVU0JfUEhZX0NUUkxfUkVHKTsKICAg
-IC4uLgp9CgpbU2V2ZXJpdHk6IEhpZ2hdCkRvZXMgcWNvbV9pcHE4MDZ4X3VzYl9oc19waHlfaW5p
-dCgpIG92ZXJ3cml0ZSB0aGUgZW50aXJlIEhTVVNCX1BIWV9DVFJMX1JFRz8KCklmIHRoZSBNU004
-OTc0IEhTIFBIWSBwcm9iZSByZXVzZXMgdGhpcyBmdW5jdGlvbiwgY2FsbGluZyB3cml0ZWwoKSB3
-aXRob3V0IGEKcHJpb3IgcmVhZGwoKSB3aWxsIGRlc3Ryb3kgdGhlIGJvb3Rsb2FkZXItY29uZmln
-dXJlZCByZWZlcmVuY2UgZnJlcXVlbmN5CnN0cmFwcy4gVGhpcyBzZWVtcyB0byBjb250cmFkaWN0
-IHRoZSByZXF1aXJlbWVudCB0byBwcmVzZXJ2ZSB0aGVzZSBzdHJhcApiaXRzLgoKLS0gClNhc2hp
-a28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDgxMC1t
-c204OTc0LXVzYjMtdjEtMC0xYTQ3ZTExODU1MjRAb3NzLnF1YWxjb21tLmNvbT9wYXJ0PTEwCgot
-LSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+From: Jason Yang <jason98166@gmail.com>
+
+The Samsung MIPI D-/C-PHY block on RK3588 drives a MIPI DSI
+transmitter and, on the same PHY, can receive from a MIPI CSI camera.
+Describing both as independent consumers of one PHY requires the
+devicetree to tell them apart.
+
+Let the existing single cell also take PHY_TYPE_DSI or PHY_TYPE_CSI,
+selecting the PHY by the protocol the consumer speaks. PHY_TYPE_DPHY
+stays accepted and equivalent to PHY_TYPE_DSI so shipped device trees
+remain valid, and PHY_TYPE_CPHY keeps selecting a C-PHY transmitter.
+The receiver support added by this series is D-PHY only.
+
+Signed-off-by: Jason Yang <jason98166@gmail.com>
+Assisted-by: Claude:claude-fable-5
+---
+ .../devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml   | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
+
+diff --git a/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml b/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml
+index c8ff5ba22a86..1f7c2e2ddfc1 100644
+--- a/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml
++++ b/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml
+@@ -22,9 +22,14 @@ properties:
+   "#phy-cells":
+     const: 1
+     description: |
+-      Argument is mode to operate in. Supported modes are:
+-        - PHY_TYPE_DPHY
+-        - PHY_TYPE_CPHY
++      The block contains a MIPI transmitter and a MIPI receiver, which
++      can be referenced independently. The argument selects one of
++      them:
++        - PHY_TYPE_DSI: the transmitter, for a MIPI DSI host
++        - PHY_TYPE_CSI: the receiver, for a MIPI CSI-2 host
++        - PHY_TYPE_DPHY: the transmitter in D-PHY mode; equivalent to
++          PHY_TYPE_DSI and kept for existing device trees
++        - PHY_TYPE_CPHY: the transmitter in C-PHY mode
+       See include/dt-bindings/phy/phy.h for constants.
+ 
+   clocks:
+
+-- 
+2.43.0
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
