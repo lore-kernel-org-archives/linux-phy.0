@@ -4,80 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9057BC5AD55
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Aug 2026 11:16:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76826C5AC82
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Aug 2026 11:28:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:
-	References:MIME-Version:In-Reply-To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=iqLN3+NvKkx4VaEhI8Oew2VQzolbMpyVwxXzw3WKo+A=; b=mBVeWNjsdGXQCIMWkw57AmPeFd
-	kfvSDIZ7QoTMtGPm5xJ03SswYKGfscuU09l0TD6TOcxrZTOfpowru55XKrXEETVUB7k17jPqH+ihB
-	n9Dlf6xOf8Ff3DSbE0krH2ItBug6FsgWYLhKBsfsnfdOaHVCEXAq9Lhy+6+IdQoTBzgv0/S53YJKm
-	bTaf/WkHIqEtSAz3cpM/dOr88/l93gI1LXZrwPGYCjRFHmEXideEz6zHqguZakvLw6SAjW3NnvgKe
-	01PCqywgGZkZZ1pQr+j7Em9PP25Ofcc0Kqh7JPE6hkSNt0Vt4xRWUNg5wbEWAaBxkEt6FsBBWmVEa
-	pswItV4g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IOuNLoGZL1SEdgNbknuTueH46qQBEMj7zfwLYJU6VSQ=; b=D4ZgXM3W+hiC2Y
+	FZlCSN0VEoY3JU8kOhA98oGKgDuVZoIuWqIVr1p1CQsQI6JpOpZEIotFPs7BeDMAQUZR4w0ZEm4CB
+	yIYuOzZulgVmN/dV2f99YcqusdOGTyic38TIamzrgyCe03BV4R8UxgGY6dKrPGDXI9o6T7f6TOxu+
+	h69bYmdckTMb4gLGTWWsh4KNbAbti6rLlFAgXvWhrjyTI7mYPPYE5xR4q+uNX7FLIqjxmjQFY4RdN
+	++fKby0sBlZgh2ZvYHC+sEqhfGmAOGD0rwMkNH+e4XCOJUlTD21p9RrgTTe8qmxtrWQ9MfAbTUZPu
+	IuvIGS83mFYKNvPJHOig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtNzB-0000000Ba4b-1GjV;
-	Mon, 10 Aug 2026 11:16:05 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wtOAn-0000000Bcre-05Ri;
+	Mon, 10 Aug 2026 11:28:05 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtNzA-0000000Ba4V-1Qnw
+	id 1wtOAk-0000000Bcq3-3n6b
 	for linux-phy@lists.infradead.org;
-	Mon, 10 Aug 2026 11:16:04 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 1120F43D77
-	for <linux-phy@lists.infradead.org>; Mon, 10 Aug 2026 11:16:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E7F3B1F00ADF
-	for <linux-phy@lists.infradead.org>; Mon, 10 Aug 2026 11:16:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786360563;
-	bh=KqqXjK5wKyje470GpH3zQbrt/NfiaPoZDgrm3GDppTI=;
-	h=From:In-Reply-To:References:Date:Subject:To:Cc;
-	b=mREg9nz3r8yXiZ3cn0P6ocvo/JVbB8mqbQvjL7/P1HymKkdAbjfs0Q+ylF11Xb8aN
-	 Khj86WXmKiCrXATFwUGqmVsdfcnm+7LpB8XelP6GNs/IE4LyZ59vEThtDEHzcZ8mJI
-	 WmyeJhgkwdDQ82+bP/t3xoBuDwnGcJ99FBXSESdI+K6aRLIrrCpdvQx0fDizqGQkfo
-	 lBgpsUv5Otf9KCniNreoiIufyajjrnxpYYJgSIh8aFW545AyspSbU3RBTOivgj/taA
-	 /vvLzLZ4F9CGXXFl41QZ2qtpVaI3/k9BOlrfsdELf/J2pnsjCH8OhaxvILIlhgHg1e
-	 FjHJnyc8IG2Kg==
-Received: by mail-lf1-f53.google.com with SMTP id 2adb3069b0e04-5b0117d49dcso1407201e87.3
-        for <linux-phy@lists.infradead.org>; Mon, 10 Aug 2026 04:16:03 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AHgh+RoGoOYv8atoLhvxjLnTJ5c4t6Vqrn9vjQBJUnhAzqvmqKy4HZubWQ6tSI0hIye69ty0n7Gi6jb4UDo=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz7/NZxbHFyi3OpmKeBPF/PQOOVUWEUskgKsQcZ2PYplol28T1S
-	ALSDT5yhu1OOnQwMyav0lUGYLkSqb9eLw5fR/tvyboHGiUsT9lVzBe2B5YtVTdArddqKD8gO520
-	NpwTjIKkjNaLaBjUhx/EspmCB/GHa3BZkcii1R+3TZQ==
-X-Received: by 2002:ac2:5b47:0:b0:5b0:1708:afa6 with SMTP id
- 2adb3069b0e04-5b3181cec8fmr107659e87.43.1786360562682; Mon, 10 Aug 2026
- 04:16:02 -0700 (PDT)
-Received: from 969154062570 named unknown by gmailapi.google.com with
- HTTPREST; Mon, 10 Aug 2026 06:16:01 -0500
-Received: from 969154062570 named unknown by gmailapi.google.com with
- HTTPREST; Mon, 10 Aug 2026 06:16:01 -0500
-From: Bartosz Golaszewski <brgl@kernel.org>
-In-Reply-To: <20260804-b4-sgmiieth_serdes_regulator-v2-6-c4bc688177dd@oss.qualcomm.com>
+	Mon, 10 Aug 2026 11:28:04 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 67A9SKNt2341903;
+	Mon, 10 Aug 2026 11:27:59 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=H0NKqQtzSnk
+	PjFUMFltWTCYP2upTtwJOXyI49W39z7Q=; b=kzw3aZoNM0eBwLuO203DKz7AUvS
+	SdkYipvOQJQhjpxQ+QybrwJytcrsbOykGnCNzadHktL8qrmh1ss3Ibtp/P9PbqT7
+	B1QXNS+XaUUSS+9ushebus5j9GNToTzx6BfuJSqvKV+vc9QyKSRIPaNEwPKtLv36
+	S3YoIfHK1XX5UoXmLXZYnaiSoTQyN9dVhM6gH9E4SoTfqGRkz6zLBaqdadudFlLu
+	Y4y1gZhZpeEWi3MoRg2dbcZy9lJ3i1IMUyGUE5AcGi7uCp79r/S48P1qeaeUIZHj
+	e5E4CxbVMxP5RKPOSLFQTjjA7VrDvNNytbmUBtbYtl8cu9H0nx3K2PPyD1w==
+Received: from aptaippmta01.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fy19kj87m-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 10 Aug 2026 11:27:58 +0000 (GMT)
+Received: from pps.filterd (APTAIPPMTA01.qualcomm.com [127.0.0.1])
+	by APTAIPPMTA01.qualcomm.com (8.18.1.7/8.18.1.7) with ESMTP id 67ABRu41004196;
+	Mon, 10 Aug 2026 11:27:56 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 4fwwhj4wag-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 10 Aug 2026 11:27:56 +0000 (GMT)
+Received: from APTAIPPMTA01.qualcomm.com (APTAIPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.18.1.12/8.18.1.12) with ESMTP id 67ABRua0004178;
+	Mon, 10 Aug 2026 11:27:56 GMT
+Received: from cse-cd02-lnx.qualcomm.com (smtphost-taiwan.qualcomm.com [10.249.136.33])
+	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 67ABRtmf004165
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 10 Aug 2026 11:27:56 +0000 (GMT)
+Received: by cse-cd02-lnx.qualcomm.com (Postfix, from userid 4438065)
+	id 800B548E21; Mon, 10 Aug 2026 19:27:54 +0800 (CST)
+From: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+        Manivannan Sadhasivam <mani@kernel.org>,
+        Abel Vesa <abelvesa@kernel.org>
+Cc: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
+        Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>,
+        Qiang Yu <qiang.yu@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org
+Subject: [PATCH v1 2/4] phy: qcom: qmp-pcie: Add qref and refgen regulator vote for QCS8300 and SA8775p PHY
+Date: Mon, 10 Aug 2026 19:27:33 +0800
+Message-ID: <20260810112735.1326807-3-ziyue.zhang@oss.qualcomm.com>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20260810112735.1326807-1-ziyue.zhang@oss.qualcomm.com>
+References: <20260810112735.1326807-1-ziyue.zhang@oss.qualcomm.com>
 MIME-Version: 1.0
-References: <20260804-b4-sgmiieth_serdes_regulator-v2-0-c4bc688177dd@oss.qualcomm.com>
- <20260804-b4-sgmiieth_serdes_regulator-v2-6-c4bc688177dd@oss.qualcomm.com>
-Date: Mon, 10 Aug 2026 06:16:01 -0500
-X-Gmail-Original-Message-ID: <CAMRc=McVMyM8vRq2JR8aCVvNKCutV9D+J4R8zizUG2kf7ra1xg@mail.gmail.com>
-X-Gm-Features: AUfX_mxh8nhhV7PpY5aNGc_B2bOST12W9YV58LCffhOyHw53XBZ3qAYQYNo6m1U
-Message-ID: <CAMRc=McVMyM8vRq2JR8aCVvNKCutV9D+J4R8zizUG2kf7ra1xg@mail.gmail.com>
-Subject: Re: [PATCH v2 6/6] arm64: dts: qcom: qcs8300-ride: fix SerDes PHY
- regulator supplies
-To: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
-Cc: Loic Poulain <loic.poulain@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
-	Krzysztof Kozlowski <krzk@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Bartosz Golaszewski <brgl@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konradybcio@kernel.org>, Wasim Nazir <wasim.nazir@oss.qualcomm.com>, 
-	Mohd Ayaan Anwar <quic_mohdayaa@quicinc.com>, Umang Chheda <umang.chheda@oss.qualcomm.com>, 
-	Yijie Yang <quic_yijiyang@quicinc.com>
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-ORIG-GUID: Dnkk-s0dGM2SP0WcvzMuSj8sYVFmiZ0W
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODEwMDEwMSBTYWx0ZWRfX1PMTX4R/p4V2
+ uK6Y9p1gyNksqIJO5i4qr3GLcQbLdfEhmjW2wOI0YNn4Vv6VB+iSAXCPu9RKqODUFNby+6XozZT
+ Q4AB4eX5T8nurqAcYcloUuoNVdPCUiGuFURmGS5UXdFDQhbSN8QF8jMDVeePwxfUNeSHRMu7gVR
+ jqvJpXo6OOWzzeP2WAz6FiOPjvDi32OSHnkmHpj04104VL0FO2BsUf8cAPXwsNGOknKkij8kFlf
+ axFxqboWJx+BPmuSg79lqbUkcggIe/YL78g2WzhIUsvGik3kuydVe1m02iBUBFEdjUSnpr4D2KE
+ qDW4mNJWJ9pR9XrzVFCXt5KfUPUagihJot3I7GDNz0t3Cy7cY27TeKatGWZXAEtcScrtc+w70qa
+ LPqBD4TliHb20zT11t5Y6bgoUWhT3yjoWUMvmcRvu7kr6WJb6mGputlDRxJtrx3mFPblhSY5Rra
+ RH/syAtOsZWK3/bHNNQ==
+X-Proofpoint-Spam-Info: AW1haW4tMjYwODEwMDEwMSBTYWx0ZWRfXz5r+YAgbRJl3
+ Q5S8r5/y1DUzZ5b7dHmDLISEFCvad++6P/P6yipAVzcIJv5xr9wBghXZ8G4HUgkxN0ZCBjKFxSw
+ tbbXoU+exE3Mt6XFynHzc29qCfHcGgk=
+X-Proofpoint-GUID: Dnkk-s0dGM2SP0WcvzMuSj8sYVFmiZ0W
+X-Authority-Analysis: v=2.4 cv=abxRWxot c=1 sm=1 tr=0 ts=6a79b5bf cx=c_pps
+ a=nuhDOHQX5FNHPW3J6Bj6AA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=Sv0fKeRqtYgA:10 a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22
+ a=eoimf2acIAo5FJnRuUoq:22 a=EUspDBNiAAAA:8 a=oDW96ipbCRtAeguNJTsA:9
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-08-10_02,2026-08-07_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ adultscore=0 lowpriorityscore=0 malwarescore=0 suspectscore=0 impostorscore=0
+ priorityscore=1501 spamscore=0 phishscore=0 clxscore=1011 bulkscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2608100101
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260810_042802_950389_C48F9CF2 
+X-CRM114-Status: GOOD (  12.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,43 +127,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 3 Aug 2026 21:28:02 +0200, Mohd Ayaan Anwar
-<mohd.anwar@oss.qualcomm.com> said:
-> The SerDes PHY node was configured with 'phy-supply = <&vreg_l5a>',
-> which only covered the 1.2V rail. The 0.9V rail (vreg_l4a) was missing
-> entirely.
->
-> Replace phy-supply with the two named properties vdda-0p9-supply
-> (vreg_l4a) and vdda-1p2-supply (vreg_l5a).
->
-> Fixes: 787cb3b4c434 ("arm64: dts: qcom: qcs8300-ride: enable ethernet0")
-> Signed-off-by: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
-> ---
->  arch/arm64/boot/dts/qcom/qcs8300-ride.dts | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
->
-> diff --git a/arch/arm64/boot/dts/qcom/qcs8300-ride.dts b/arch/arm64/boot/dts/qcom/qcs8300-ride.dts
-> index 1ff39530ea3deebe454416d70a289e44c2d89e3f..76c34215dbdf07e520fe96d350f52da8c4485c97 100644
-> --- a/arch/arm64/boot/dts/qcom/qcs8300-ride.dts
-> +++ b/arch/arm64/boot/dts/qcom/qcs8300-ride.dts
-> @@ -702,7 +702,9 @@ &remoteproc_gpdsp {
->  };
->
->  &serdes0 {
-> -	phy-supply = <&vreg_l5a>;
-> +	vdda-0p9-supply = <&vreg_l4a>;
-> +	vdda-1p2-supply = <&vreg_l5a>;
-> +
->  	status = "okay";
->  };
->
->
-> --
-> 2.34.1
->
->
+Add a new sa8775p_qmp_phy_vreg_l that includes vdda-phy, vdda-pll,
+vdda-qref, vdda-refgen and refgen supplies, and use it for QCS8300
+and SA8775p PCIe PHY configurations. This avoids modifying
+sm8550_qmp_phy_vreg_l and breaking SM8550 and SM8650.
 
-Reviewed-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+Note that due to a hardware issue, QREF actually depends on refgen3
+rather than refgen2 as documented; refgen3 is therefore voted manually
+via the refgen supply as a workaround.
+
+Fixes: a05b6d5135ec ("phy: qcom-qmp-pcie: add support for sa8775p")
+Fixes: ebf198f17b5a ("phy: qcom-qmp-pcie: add dual lane PHY support for QCS8300")
+Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index 27034bb62d0d..5d6186512c14 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -4018,6 +4018,10 @@ static const char * const sm8550_qmp_phy_vreg_l[] = {
+ 	"vdda-phy", "vdda-pll", "vdda-qref",
+ };
+ 
++static const char * const sa8775p_qmp_phy_vreg_l[] = {
++	"vdda-phy", "vdda-pll", "vdda-qref", "vdda-refgen", "refgen",
++};
++
+ /* list of resets */
+ static const char * const ipq8074_pciephy_reset_l[] = {
+ 	"phy", "common",
+@@ -4508,8 +4512,8 @@ static const struct qmp_phy_cfg qcs8300_qmp_gen4x2_pciephy_cfg = {
+ 
+ 	.reset_list		= sdm845_pciephy_reset_l,
+ 	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
+-	.vreg_list		= qmp_phy_vreg_l,
+-	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
++	.vreg_list		= sa8775p_qmp_phy_vreg_l,
++	.num_vregs		= ARRAY_SIZE(sa8775p_qmp_phy_vreg_l),
+ 	.regs			= pciephy_v5_regs_layout,
+ 
+ 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+@@ -5218,8 +5222,8 @@ static const struct qmp_phy_cfg sa8775p_qmp_gen4x2_pciephy_cfg = {
+ 
+ 	.reset_list		= sdm845_pciephy_reset_l,
+ 	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
+-	.vreg_list		= qmp_phy_vreg_l,
+-	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
++	.vreg_list		= sa8775p_qmp_phy_vreg_l,
++	.num_vregs		= ARRAY_SIZE(sa8775p_qmp_phy_vreg_l),
+ 	.regs			= pciephy_v5_regs_layout,
+ 
+ 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+@@ -5259,8 +5263,8 @@ static const struct qmp_phy_cfg sa8775p_qmp_gen4x4_pciephy_cfg = {
+ 
+ 	.reset_list		= sdm845_pciephy_reset_l,
+ 	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
+-	.vreg_list		= qmp_phy_vreg_l,
+-	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
++	.vreg_list		= sa8775p_qmp_phy_vreg_l,
++	.num_vregs		= ARRAY_SIZE(sa8775p_qmp_phy_vreg_l),
+ 	.regs			= pciephy_v5_regs_layout,
+ 
+ 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+-- 
+2.43.0
+
 
 -- 
 linux-phy mailing list
