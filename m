@@ -4,8 +4,8 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 640BAC5AE5D
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Aug 2026 11:13:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A05AAC5AC82
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Aug 2026 11:15:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -13,60 +13,60 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:MIME-Version:In-Reply-To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=IeIuBdARseVcwgpyQfUFPI/SYwLl3vzScNX+Gcbid4s=; b=FIf9oKl9ukysa/rJfzypjGh37J
-	EUoLbr5JCncW+eFFpSLt0P8kj83jBPhS8qIuRh71cqKlfmeB6cVBnSaxiy3+0NJU6HiuIl3h8g9MK
-	8njIDQTF/9r+1TIg7SA49NV8Shs/PA1lSLqzvK46L/kqaaw0ht+l1gfmZsMAjVL1Lv+mUAzWtBU+l
-	y+WZzENNMMaXdNnvqfXgI/Rg9G9foBAKXTOnEle0EfIDxUn8WhLlBd5gV5Ms4YajXJWJvSL9qxw8C
-	hQ6hXtr6c6j1qJvAmvT2LWuW1woKmrAmSnwlZLCZjCe8FZoMTjjPCC/TKu+b+5vB+xmxcpfJwbiPW
-	8+ZvC6fA==;
+	bh=9aXkviEggMokJ+SxMK5Jr0YXk9FG8RonnR2Iq4K/+XU=; b=g2DWB3XJjXNgOf6yb8wjklsg/j
+	3iWLS8NDZbry5YPXC0kLyvxs50mRpaph+JQ5tCmFU+KRTWILyAyUHG2hLirVGLIrabmrBsstenKPq
+	+o4d+QPOSEQzlUS6ynfzmGuIJrKv3fFIJZ5kAL49mUcVdXDIzbd/eUR92fAUo673ONZJ/Lw6O+XsP
+	7AJq4JpjwzEIIj6zl568ESCsrdyF+darsxA1Q+um1Mr5SCIULzw+m2exyBBahqkKXsmC63Zff38Sc
+	vUMjunvO//kVKUsxYZcTYs4tuHbHd8Nub/WPSw76c5UlCG27pD0wSjs7eVwDWPVUp83kuQ0LWW9TX
+	R3qTZMnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtNww-0000000BZrG-05cj;
-	Mon, 10 Aug 2026 11:13:46 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wtNyB-0000000BZzS-1Oyb;
+	Mon, 10 Aug 2026 11:15:03 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtNwu-0000000BZr3-1END
+	id 1wtNyA-0000000BZzK-1mny
 	for linux-phy@lists.infradead.org;
-	Mon, 10 Aug 2026 11:13:44 +0000
+	Mon, 10 Aug 2026 11:15:02 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9056F43D84
-	for <linux-phy@lists.infradead.org>; Mon, 10 Aug 2026 11:13:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6BFC61F00ADB
-	for <linux-phy@lists.infradead.org>; Mon, 10 Aug 2026 11:13:42 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id D561B43CC9
+	for <linux-phy@lists.infradead.org>; Mon, 10 Aug 2026 11:15:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B9EDA1F00ADB
+	for <linux-phy@lists.infradead.org>; Mon, 10 Aug 2026 11:15:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786360422;
-	bh=apJ+Wd3xen3OiCkSn7zvoO866Ug5lbpClYMSDMZySoE=;
+	s=k20260515; t=1786360501;
+	bh=PL8KOKhKf9Aaj5bOJoSZpWa9+kUfSiQO0s6EjxaVVPg=;
 	h=From:In-Reply-To:References:Date:Subject:To:Cc;
-	b=Nw+HtS8HuhE+MDZdUnvaFuTM7dmOwksv1xz+De2T1NseC4/RztBkdOOCQkkp2mUOv
-	 EbpqK10RGM++KomkBX/jFgCsn1Y7mc/s3lCC2X7QNMkgDS2bJI3ycMrbr3hoKFumYI
-	 54VuZ5MqcmylwH/XCmAKTnHRZYkRxHQeq+cu1G9GKmNZ9BcWTztdwa4ydU+knzwrqY
-	 j2QxQ6Zd3pJh+XHZfK0PnaXuD8+zU1z3xDbWc3XroDAYlDQHu6Dcj/dwF1bjmAs0Sr
-	 +j5KMRc73vSfY9kJt/uEafqLtfPnctafHIZCoRMEswKTC9feCAJvh4J8meFxiHaa80
-	 lR0LlGQh0fNkw==
-Received: by mail-lf1-f44.google.com with SMTP id 2adb3069b0e04-5b013aa02b2so4881642e87.0
-        for <linux-phy@lists.infradead.org>; Mon, 10 Aug 2026 04:13:42 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AHgh+Ro7O3bLQycODEyirDBcD3BssrPBys/7ywiiSNpmGqjZS5vE/tkEzl9DbLhFtlTSqyhIAevxXNjVsLo=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxxPoSrKdXFNeBcwCT0CWQoJbIfGGSao/t7rs2B65I+vtNpr+lF
-	8+Jla92Y858SkHYtwtbqu10GqKNrDHp1Sw4V+llsWZpFYoNj5q8o0830ujwf9AB0zmO6d6GSvtK
-	fD6D4IDnk40tG65jizAqYeURoZInLj0I9ET+XOBWReQ==
-X-Received: by 2002:a05:6512:3986:b0:5ae:9be8:1ad7 with SMTP id
- 2adb3069b0e04-5b30c156af4mr3019492e87.18.1786360421140; Mon, 10 Aug 2026
- 04:13:41 -0700 (PDT)
+	b=TwSwcFYRlTqKedTh+mzozly2isd+BuGKYCpISJczRZDq32HxHMtWAxx8O5FyBdUzN
+	 bScfyLXye7gSEgCLms7IRWrMD1Z+eHtB5E5z55HFRfEkoc3NTbL634zqtm6+wdxJwp
+	 TWHI3RqWmVXMj5bd0t32nLmAP4Zt3K8NRNxqFZWW0H0+t/j58qH7R1xsY20peW7IZ+
+	 H7qF2XAYPWjZ7vdcC6TE8eW8v+9y04TXUVb4dc9yd/RuTlFsJtCI3Z4zDj3CABtdmf
+	 pCBcc6LoMnVlZlxwZc0niPYLoyqTAa0qEDZR8y9AFxRDrtponfUQ6D9hQy8OHVpb7+
+	 BfrfnE4Rhsa/w==
+Received: by mail-lf1-f44.google.com with SMTP id 2adb3069b0e04-5aeb59d54b1so1853325e87.1
+        for <linux-phy@lists.infradead.org>; Mon, 10 Aug 2026 04:15:01 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AHgh+RpHaWQBZYxB2qE5GPBp1s4e+3CDPKO9Eti+421VNYxW48OntbjJWpHFTcu6IyyKCZrdNlNNnP82HJI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwftbPb5crNvdgmQgZRlCLeeVYJJNiIbYbvZGX9WHnOfE2CdSHl
+	ktNQlJfYkcG6bnLUhGgdABwPNXK7+c+PPwxspY26uNSkkKtB/2K/cJNHh1MDGjDvGsHmjXviSvO
+	S28MOUKgL1PEn3MnrZ+HaviJoaFLcZZKCkkTM/asSCw==
+X-Received: by 2002:a05:6512:31c2:b0:5b1:53e9:439e with SMTP id
+ 2adb3069b0e04-5b30b770611mr2868770e87.36.1786360500188; Mon, 10 Aug 2026
+ 04:15:00 -0700 (PDT)
 Received: from 969154062570 named unknown by gmailapi.google.com with
- HTTPREST; Mon, 10 Aug 2026 06:13:39 -0500
+ HTTPREST; Mon, 10 Aug 2026 06:14:59 -0500
 Received: from 969154062570 named unknown by gmailapi.google.com with
- HTTPREST; Mon, 10 Aug 2026 06:13:39 -0500
+ HTTPREST; Mon, 10 Aug 2026 06:14:58 -0500
 From: Bartosz Golaszewski <brgl@kernel.org>
-In-Reply-To: <20260804-b4-sgmiieth_serdes_regulator-v2-1-c4bc688177dd@oss.qualcomm.com>
+In-Reply-To: <20260804-b4-sgmiieth_serdes_regulator-v2-2-c4bc688177dd@oss.qualcomm.com>
 MIME-Version: 1.0
 References: <20260804-b4-sgmiieth_serdes_regulator-v2-0-c4bc688177dd@oss.qualcomm.com>
- <20260804-b4-sgmiieth_serdes_regulator-v2-1-c4bc688177dd@oss.qualcomm.com>
-Date: Mon, 10 Aug 2026 06:13:39 -0500
-X-Gmail-Original-Message-ID: <CAMRc=Mf1Mk03YXa0aYPSwMr+iZxtUKaQR6Erp3m0oO=g1U4Qpg@mail.gmail.com>
-X-Gm-Features: AUfX_mxgJ-CVdRVanRZmxExwdSzq95SDKkVdHawKuf8WIZ0HaFMuUt_H9gU2wxc
-Message-ID: <CAMRc=Mf1Mk03YXa0aYPSwMr+iZxtUKaQR6Erp3m0oO=g1U4Qpg@mail.gmail.com>
-Subject: Re: [PATCH v2 1/6] dt-bindings: phy: qcom,sa8775p-dwmac-sgmii-phy:
- add named voltage rails and deprecate phy-supply
+ <20260804-b4-sgmiieth_serdes_regulator-v2-2-c4bc688177dd@oss.qualcomm.com>
+Date: Mon, 10 Aug 2026 06:14:58 -0500
+X-Gmail-Original-Message-ID: <CAMRc=McoiO0tt86j0dJVZhgkJgka8QzhK_ZxCSC-KLurJd+WvQ@mail.gmail.com>
+X-Gm-Features: AUfX_mwrK3Sw1jbkCjG4pdlxLzUHdwgQvzVqBa_KtddB8v6HyExvITEq4wDqjk4
+Message-ID: <CAMRc=McoiO0tt86j0dJVZhgkJgka8QzhK_ZxCSC-KLurJd+WvQ@mail.gmail.com>
+Subject: Re: [PATCH v2 2/6] phy: qcom: sgmii-eth: vote for both voltage rails
+ with correct current loads
 To: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
 Cc: Loic Poulain <loic.poulain@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org, 
 	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
@@ -94,48 +94,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 3 Aug 2026 21:27:57 +0200, Mohd Ayaan Anwar
+On Mon, 3 Aug 2026 21:27:58 +0200, Mohd Ayaan Anwar
 <mohd.anwar@oss.qualcomm.com> said:
-> The Qualcomm SGMII SerDes PHY has two distinct voltage supply rails,
-> vdda-0p9 and vdda-1p2. The binding incorrectly described only a single
-> generic supply via 'phy-supply'.
+> The SerDes PHY has two voltage supply rails, vdda-0p9 and vdda-1p2,
+> that must both be enabled for calibration to succeed. Without them:
 >
-> Deprecate 'phy-supply' and instead add two named supply properties. The
-> 0.9V rail draws a peak current of 46 mA and the 1.2V rail draws 15 mA.
+>   qcom-dwmac-sgmii-phy 8909000.phy: QSERDES_COM_C_READY_STATUS timed-out
+>   qcom-ethqos 23040000.ethernet eth0: __stmmac_open: Serdes powerup failed
 >
-> Fixes: 97b795125704 ("dt-bindings: phy: describe the Qualcomm SGMII PHY")
+> The driver relied solely on the PHY framework's implicit enable of
+> 'phy-supply', which only voted for a single rail and set no current
+> load. Use devm_regulator_bulk_get_const() to acquire both supplies and
+> set the peak current loads (46 mA for vdda-0p9, 15 mA for vdda-1p2)
+> as required by the hardware.
+>
+> Fixes: 601d06277007 ("phy: qcom: add the SGMII SerDes PHY driver")
 > Signed-off-by: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
 > ---
->  .../devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml | 11 +++++++++++
->  1 file changed, 11 insertions(+)
->
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml
-> index 90fc8c039219c739eae05cc17108a9a2fc6193df..e573abcb937df914ced25ec87add7955bbba7b87 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml
-> @@ -35,6 +35,17 @@ properties:
->    phy-supply:
->      description:
->        Phandle to a regulator that provides power to the PHY.
-> +    deprecated: true
-> +
-> +  vdda-0p9-supply:
-> +    description:
-> +      Phandle to a 0.9V regulator supply to the PHY, which draws a peak
-> +      current of 46 mA.
-> +
-> +  vdda-1p2-supply:
-> +    description:
-> +      Phandle to a 1.2V regulator supply to the PHY, which draws a peak
-> +      current of 15 mA.
->
->    "#phy-cells":
->      const: 0
->
-> --
-> 2.34.1
->
->
+
+Thanks for doing this Mohd!
 
 Reviewed-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 
