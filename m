@@ -4,97 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6096CC5AD7B
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Aug 2026 15:42:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69839C5AD55
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Aug 2026 15:42:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tI2YlxOeK75DjGfyvNLn2AzIu/UF5ZeMuG5v+cGYNw8=; b=a5jyBR6GbYksjx
-	dcP+5imU3y0BpXl5BBjvlfk0p1xHmlo788Z44YTfm68Lw3am3GYJayVE6oY7qLeg1sWpjzE+UpYDR
-	Znjyqb5AvBERBgk9x0l4885MmUVbbh+INnFyxJ2F8RF1HsyQrE7IKHw1mtT4/d9A/1z1XJqGuMjVw
-	d/+vSHjBpWmPjzMuUmgGAGn9kn/BQIY3LUGnJ/Pr71Pacm+ABt1/WMxsPE4EKfen4ajbqXjwei6hb
-	CZvkQt5gCkHaEA3hOhGyD8BzAq3WlwzE+/xq2rgMEBIu0AaaJiLhOvJfs742ebSqtDUDbJQDqtj5P
-	CBgzUx2T1wlhrGg7qsFg==;
+	List-Owner; bh=vMtCgAeprWnA31RoAYkA2PI9V2ztbvAHofctZxkqQXI=; b=sIxBoUFhsROgOE
+	2JpXjpH7eaHPtwADvDEI7H674FuQtDXUd7uw8jdf1rEy9/CVfZRJipBCASp0XDRJY7T3Ynv0F2fUF
+	KgwUU6rhiF7ShmWnm0g/EOoN4fBBcegq8y0ycbXaegw6hVXot0PESXNlUmzotLCemKua+VHprY3fu
+	zy1+1B/ra6QfrmXZn8nsLnln8dHUgrMpFGnESnsZrSZKcxtOP+GHLRoGXwBohE9Wkwv0tPNJVvb5E
+	bLO9Nbh+YsKrstXXTfR3NjPVB4Mq48WFg9dQtGIQK3Dd0mTmzSyk6hlmMEZnZSYi5IWTzmiSNR4Pe
+	mX8+aqEssPcW9+sxQANg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtS95-0000000CIbV-0Ltk;
-	Mon, 10 Aug 2026 15:42:35 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wtS99-0000000CIcV-0WB2;
+	Mon, 10 Aug 2026 15:42:39 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtS91-0000000CIZi-39ju
+	id 1wtS97-0000000CIc2-2unV
+	for linux-phy@bombadil.infradead.org;
+	Mon, 10 Aug 2026 15:42:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
+	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
+	From:Sender:Reply-To:Content-ID:Content-Description;
+	bh=vKWiI1N+R0cjOLHZF/QZRa5LZDuo/wMrVcjfTjWK7o8=; b=KYAEcNG/4ypTz+7fN5p01UKsba
+	QktRV9FBUVfB0aq1lzZd7ez8CbzooG/25O4kyVMubhyiHr9pO8AD1POCkECMSS/BejEc2bxAI9ZYY
+	RxM5xv951xv2misPfArDvm0BIAMhoOp9Q4qnnN2SPq/QneQrSKBpIiHvz9ujFacbGxVtjx06h3cO8
+	IHATx62gIJbr8YlK6KJf4kCdScG6V9w8u4dlT2tAlm2+06kB13sOOocfxOy8a0MVfFh4+nyv13Xad
+	KaT5P8H8Mig0cb4KEaAXi1yO3vG+y1UOKBt7xItfqHU3QFmS1VhBjDWnA9SpMcctFM5AgLJwqtofK
+	5cFOj2Bg==;
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
+	id 1wtS94-0000000DxMi-3c2V
 	for linux-phy@lists.infradead.org;
-	Mon, 10 Aug 2026 15:42:34 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 67AFWf9G1299355
-	for <linux-phy@lists.infradead.org>; Mon, 10 Aug 2026 15:42:31 GMT
+	Mon, 10 Aug 2026 15:42:36 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 67AFWMFm2057365
+	for <linux-phy@lists.infradead.org>; Mon, 10 Aug 2026 15:42:33 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	I+hOVlvodWUaHCF6f8ct+3ncKE/NpJynp45drgitce8=; b=jHfxMlLMUSqIKNqk
-	RolHCMaBomN8/F0ZFjIgz3uMj8kZs+53IRllyuqSJaYSntJUDOynfw2sW2iDmA4s
-	AHNWQbEKcsOpvHfF2KlpsL2zGfFme3o2+gvJzvdc7yc3UwZr/61Vq3TddCuvVWzo
-	xu6ZuVez09e6JysCkQsZbQT55ZSi/Q2lwEp/g4/UDzulrP5CXybWoldpzSe3xn4F
-	vFzYAqmTqh7hd3Lub26fS0Mlwbwb30zqycD5ckTRuqeat1+CfEcfRLCrxukLGvgh
-	Jne7RezkSJpqmfbCW0TT7rvPT7dn/pS/jmNSkkdZw67XrOlUV6WxMP+vVQ4Yg0il
-	LqMfqw==
-Received: from mail-qv1-f72.google.com (mail-qv1-f72.google.com [209.85.219.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fy8v929tc-1
+	vKWiI1N+R0cjOLHZF/QZRa5LZDuo/wMrVcjfTjWK7o8=; b=akwxgGYiNPm5S6/R
+	anwWFKN6u5wXh1RpndWx0GoZzEvRB9Q4YUuBSeCNqbSLlmREGasCbyNPAFBdnVj3
+	OID1TpwEwliR9wN+DOJu4bEHENYrriebnfAzzn15Cn4ZFvA/m3CXwmxk2C3VUL9l
+	ZMZwml/RTa+xuu4areXhKv2T2x+NbY0XErjsMYHSnPeR3mdCPveC2YmO5YvbJ6Uc
+	xgf/Je96SLn/+j1YOTMFjoUfqhTRBxuLOpvckdPrDQp/x//F6ynUO4PWLSRR2EI3
+	N85cahiSExYKnkN7dRtVVMgcqzXFxy1Vwcfj3dZb+hcnmeKahHgzgbq9r8mYQID0
+	3KxkoA==
+Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com [209.85.160.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fy8v2act0-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 10 Aug 2026 15:42:31 +0000 (GMT)
-Received: by mail-qv1-f72.google.com with SMTP id 6a1803df08f44-8e9489f62bfso22814536d6.2
-        for <linux-phy@lists.infradead.org>; Mon, 10 Aug 2026 08:42:31 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Mon, 10 Aug 2026 15:42:33 +0000 (GMT)
+Received: by mail-qt1-f197.google.com with SMTP id d75a77b69052e-51c20762d21so26982241cf.0
+        for <linux-phy@lists.infradead.org>; Mon, 10 Aug 2026 08:42:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1786376550; x=1786981350; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1786376553; x=1786981353; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=I+hOVlvodWUaHCF6f8ct+3ncKE/NpJynp45drgitce8=;
-        b=EQVV8+Yzoex7O40ogG7tyyeEANn+pxT+P76+MiFFs9gbOE4pp1zRO7uoO10OiYV0fP
-         MI+NV2o8s7tlwSJVXDQ113JsQs12J6gDW1mMk2V9pIkSTpINceCAlC79n/abV9hsqYP2
-         QpbEdPtxmxIsuaxZ89tb27sHYDgjc1ZJmU7WoS4Ll0Gs+z57sLsB24H5nn8IBnGpOm88
-         fipzsMXSJbZoBhc0yU0c7bzFJJ8wMbKGssSzywKsFEVYn5llw/b8cBxjZX8mCKwrM6je
-         mFLuYnrEE75/6/w09rnXJYn1fQ/G5gMIh+Ck/1mjvzy9DEApxGBGxfOJq0GoQgtChoA8
-         x79w==
+        bh=vKWiI1N+R0cjOLHZF/QZRa5LZDuo/wMrVcjfTjWK7o8=;
+        b=ZMLCwp9mou0Wv42qxbHlbYooNj5GLtEoqdlV6Wrjc3GDtjpjN6Vaecd+M/MMYOffBa
+         YkSpe8gsgWpI8OedmeJyugPxT+t0HGIUWChMXebqXugUJFO3DqodOaz5owPn+yQEQS9i
+         AzFTKFFifydPKIVhlplUnRdIGDg0K/KIAxNdwMDumI3tEgkHTZSQWk78pdmVUQfR2zgY
+         M5DuuORKcVl4A4Foy+LGEz6ko2Q6iBNLI0I4w2NCzLrSRTVglmToMvDH/ESmqpVv+UWB
+         RCG6GPIvPqVKEVUnLmi9XYp49lcICCgHsO46MtoTy4yYJ4kcpOQwPJ+ms2/RR+5WE6lF
+         NHHw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1786376550; x=1786981350;
+        d=1e100.net; s=20251104; t=1786376553; x=1786981353;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=I+hOVlvodWUaHCF6f8ct+3ncKE/NpJynp45drgitce8=;
-        b=ZKW/xbiuZMLVdRwRKlgkzDYBFONsvsPfkySpqB8Elmr8Ki0Xq+j0I+0Nyu32qgtLxx
-         /+Dkro2qt9JV8qEQJIQEa8Gssw5W4Ln0iODodfZc7p+/QTaDX3M4WOxTh2hLIe1185m1
-         PPrarK8PLiabETdv4NFq2a2+AiQnwuxPFlrUYBBszPdRnHqXechtt5G/feUNkJVT1CS1
-         kjatojr/HAW0fbhD+kGaxid1TogJA+qvhh+jQFx05EyzJaGaT5nETBHC2GKrGbATe1IZ
-         25WtJpZlErzlSpsXgvPGuwDmlRR8b103hohwvZqS8X4COGmWtn1jBVKP3NcBVZ6EsxEY
-         wibg==
-X-Forwarded-Encrypted: i=1; AHgh+Ro/aqeNBAA+dOgdCi34bk4sj6fFQiqwbVwREcU+Ol3XPkJ5HSiG9042k9jlGNpmc7wAJ7+TYnNkNvI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzuwLQPLtaWF2wI+K6tF6MMG0YuMapEQ+3c9ngaiIkxCbhVl7oK
-	ZHzzjEY2LkPvvl1Y/vkvPHr+1QIOIvc6Pw9NEJrMEDdbfXE2GZD+VuxHpxruJ6ocUq3Q/xVBqjM
-	FVsF/F50fRucKCckZi9RGiNzqvY7gz4wmnx8ltsmWm93pW5cd3PVJDL6MKF6gS4mtNjjT
-X-Gm-Gg: AR+sD10VRSQR9eSFuedhvxNDsDVJZQmhKpA22WiNvHlQEcmfIWyghzy2CxVeZbylynT
-	tPNW1WEIRTHDbPiRdXEVS+xaQjIJmlmNRgiz609q5Ugwv9oWV/1d5n0RYW/KRKY5kva3GXkakuA
-	L5Mn0KiHKoPwDogUgUVXF4jbocqg6gysCm0zqFHkzcSr+e89RDidFg6tZZsrs/J0UN/Go6YvPi6
-	T9WbMNNN+rmbqY4aHqarmm3bNbwdBZXc9n959R+cTeXLI2OLvSFRy0vOJ8DcNYURLaJST/VOOGD
-	3b7eaK5C6QwvQ6VTcivASg6oaRz94LMYOVBSxSCEqIxcWQsiIrn79XhXL+gLCC2iwI1dzIlbEge
-	U/B8k8CJ0GfRz9taRLE+sL/75J3XDs7vhQYYjyCELx3sN3RGtlJ8LNlQVCsxo64+yuThB9LGMxw
-	8UpsAVKeBScw84uA==
-X-Received: by 2002:a05:622a:1f09:b0:51c:167d:b328 with SMTP id d75a77b69052e-52d4c251541mr32256321cf.40.1786376550312;
-        Mon, 10 Aug 2026 08:42:30 -0700 (PDT)
-X-Received: by 2002:a05:622a:1f09:b0:51c:167d:b328 with SMTP id d75a77b69052e-52d4c251541mr32255431cf.40.1786376549857;
-        Mon, 10 Aug 2026 08:42:29 -0700 (PDT)
+        bh=vKWiI1N+R0cjOLHZF/QZRa5LZDuo/wMrVcjfTjWK7o8=;
+        b=s9mB2KO3gaC8w5GHkHvFbe7cC7EAqWm5Jb+vHE/nm4hDSSp7w4LWwYq1zKzNOeLV6q
+         4X9XfJk23bOJQJ7EFsOo3WISNYAXJVZxywg0xt+Cn3pgYPoZiw8O6DkYA0nD3gikbKad
+         s7oIROnRjee2kGvqx4O3OMUo00VYGyPHcAqnJsVEJ6PF5GctCuD2PbxrDGHFf9TA8TTM
+         q37wJSU46HaFienMQG7l4XyYXU6XgkwrNyIeMfkUsrAIlCnZer54aOw4ZxOBiV8mry74
+         IJJA04tP7LzHxpsvMkXirlIWUKXhUjZOEoyTs5mflwV5gNQ/W9R8sU8CAdpTf6vofLzI
+         BWHw==
+X-Forwarded-Encrypted: i=1; AHgh+RocnhsifdSVsJLFqzFEv2vRvirELmn3dMigQrLyPExuaE33+QA+658ywPfgNEyjlYLMkeqz+kdy/+A=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwfG5lRFQTCxnEtITxrs1PI8cSwLrBGFfDElm1gYXv0qg07D3cI
+	R8GHS9TZOj8wCOZTxA7gAGSY3wYi4QZDX+Zr9Xw5koBZD7O6bNJvG94W9P1LdEwjZlwv8NkrsLR
+	TvDDwjTWgYvxYG8i58+UBEfJ9Qw3LmJsq7qYr1/Za6VJwlXrdJBABjRgFLp/my6hqhupu
+X-Gm-Gg: AR+sD12jdfzQ2JFgj4Z/3bkc/dQOAAlQiQ0bVypn8ZwMOOUOUmqqV45C/Uv5SNMlHLE
+	ga21LLpLApfvZyW55rsjZ1LeEpjfeNmTjijkRMZq/kFToWw+b7gzJRyFkiJ0igxD/TmjBb3zTOj
+	YXVbC0exu+FjjUISOY2PwiLti8kVhM9urYD5TaoLg8BuxUApuegHlHlZl6BLPjQgF3pCgQ2WhAR
+	JMfk2dZlUw9XnejzwQWWkCVZv2yShkh7fQT6iLHi+O3PH8xjxvVuHKReSkgTs+LHR36WHvsVjA5
+	EYnxR8jiPROndP3zPhdxsgmxBUL0z+JKMm0HdFvE3aAisi0zUdP8Agv/czVdzsOXwBbzkUWbzAS
+	Bw8XRvC9giZ3+VYg1nJr9isu6lqGaAuehwBr805n9NzgavEWJ8yENwfENYIsLcWGJYW6VLBMNQo
+	yMg8jRsgSgXagybg==
+X-Received: by 2002:ac8:5cc5:0:b0:51c:207f:6524 with SMTP id d75a77b69052e-52d1919e59dmr265070311cf.37.1786376552603;
+        Mon, 10 Aug 2026 08:42:32 -0700 (PDT)
+X-Received: by 2002:ac8:5cc5:0:b0:51c:207f:6524 with SMTP id d75a77b69052e-52d1919e59dmr265069211cf.37.1786376551886;
+        Mon, 10 Aug 2026 08:42:31 -0700 (PDT)
 Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5b3056f1bbdsm2071673e87.82.2026.08.10.08.42.28
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5b3056f1bbdsm2071673e87.82.2026.08.10.08.42.30
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 10 Aug 2026 08:42:28 -0700 (PDT)
+        Mon, 10 Aug 2026 08:42:30 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Date: Mon, 10 Aug 2026 18:42:13 +0300
-Subject: [PATCH 09/10] ARM: dts: qcom: msm8974: add the HSIC USB controller
+Date: Mon, 10 Aug 2026 18:42:14 +0300
+Subject: [PATCH 10/10] ARM: dts: qcom: apq8074-dragonboard: enable the HSIC
+ host
 MIME-Version: 1.0
-Message-Id: <20260810-msm8974-usb-hsic-v1-9-e5f93ea76ffa@oss.qualcomm.com>
+Message-Id: <20260810-msm8974-usb-hsic-v1-10-e5f93ea76ffa@oss.qualcomm.com>
 References: <20260810-msm8974-usb-hsic-v1-0-e5f93ea76ffa@oss.qualcomm.com>
 In-Reply-To: <20260810-msm8974-usb-hsic-v1-0-e5f93ea76ffa@oss.qualcomm.com>
 To: Bartosz Golaszewski <brgl@kernel.org>,
@@ -116,47 +132,47 @@ Cc: Krzysztof Kozlowski <krzk@kernel.org>, linux-arm-msm@vger.kernel.org,
         linux-phy@lists.infradead.org, Greg Kroah-Hartman <gregkh@suse.de>,
         Peter Chen <peter.chen@nxp.com>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3085;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1766;
  i=dmitry.baryshkov@oss.qualcomm.com; h=from:subject:message-id;
- bh=AoZJqVVSo+ZoP1B5mllGlVyWEAwh6nCg4CrfFN4+HPk=;
- b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBqefFRg39N0tUH8uaZmrJ4GFul6JSkWDtgH3bqy
- rr5MP2jP92JATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCannxUQAKCRCLPIo+Aiko
- 1SiVB/40EuDT4bcTQdsQdEN3kOWqySmkpWkj9bLL9kuiS+NlkLln6QGcFc13/zxSkQSk16yZEZ1
- h1K+H0irtCBFzFGTidDD9UA/gadXnkDrAwxrO363i3O2rr0HPV0bwmf2pZO1vsEyu2Nv352E0I8
- SzD0FflaDxjAJw11WAHgly1oyJq176j8h5+3ONtci7mAV+2N9m+zFJtVrNxz2QmZoMr5VrwgqgS
- qU/4/Pg/4oEKd790sT7a2LSAXiIrG961BRz8xhsORLvADKhfalwb++/kX9yXPjjgGq/FXx0uFxF
- ML67h1d8LFVTGKXfnticFrcAaXfHw5Gcci0GGDf6IGAZqsl9
+ bh=vDDm9UNNeBZngu98OmnO9mFNj134tAZMEgio5MqFpBQ=;
+ b=owGbwMvMwMXYbdNlx6SpcZXxtFoSQ1blx0DxUsOgB3I8DaoFadt+iH/JjhX68Vl7069yvqQUu
+ 5qu1bqdjMYsDIxcDLJiiiw+BS1TYzYlh33YMbUeZhArE8gUBi5OAZjI2f3s/7OLY/ZetjCx/rFQ
+ 50HID9O4R5eSlr52Wb7Mjzs9J23y/jCD6xp2O7h3FXfMFb7+PbHfkmXKvmaFGzEN2T0tug8CZuT
+ UWchwZxd8TLvSse6Tc6FYxtRZXklLFIOU/Nm4+W2SfjmGp7TGcPp5xByzcc2yKZ9w+vxO7XNuoT
+ qry9YX3VkvvviGQ4PV8QPL+VgsTXlmvuhJOV5fHHB+t1t1kC2PQPMRoZffui/Wi0ULG5/7eeHN8
+ gZ9juWri/RkO7+HZqWZuhSLLDys3zttx+tPZSZdvGkzhYKCBSJS1xYdXLZ9psj5BMFrpUJ5c9Km
+ Mynsm/s/ZteSbGPVVx4avTuav0+5PvntR/EXJ4vqhFIA
 X-Developer-Key: i=dmitry.baryshkov@oss.qualcomm.com; a=openpgp;
  fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
-X-Proofpoint-Spam-Info: AW1haW4tMjYwODEwMDEzNSBTYWx0ZWRfX3lEYKoVdKhGQ
- o+yxya13wWymq+3AcgCMthSO/Tz7EI19dMP+O7f6rlk3JkhvwV4YlcIPlmHUJhUNN/H0NzCdlSs
- X0ApeLjzSEgRRufnupYQrt3VyYstV/o=
-X-Proofpoint-ORIG-GUID: Jr3jvJZV8QllAd96yw374yZ6u_qDOWCq
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODEwMDEzNSBTYWx0ZWRfX7HHCqa4BB+sN
- kYDdbt+4MKZ6N/bKPGXSZmNRt5fMmSlXcWkwmPlhC/p8h2gnVOUT+zRi852lpEj8iXP+YNB9k8y
- l3ukJP42Y4K7NncPR/5tAnbw47tVYQBMMOUaQ8sxc9EdofdGIkpuSQ5Ic5xsGT/h3s4f0aQBenT
- oaaAykvWhfnk5FW7005XmMowQvEehMSSBieJ+s0vyMvCmrzRuWHxdHeq9yWhOeQ39CX3l8otoFX
- tY58NsskgUgoUMaRqURlYfsY2VtHkki7ZjngRWcg7sTxbfzZJxSN0X+OS2Ig/7tPDoOjTjgXCpH
- cUytbfpplhYBdAO43K2kPtBTFy9gG2p2ODk4yhL7y+g+rryYJ6Lb/aDbtMcIMBo0eOwIVIH5ccT
- 9hKuIMAv5SZKqg/MUWI3dYZPUXiaZdk9Q+wGNKwczzafzCTrStXhOS5m5Bgr6zThB/6S0r0Iqji
- mdtl7KglRvLHAUS6Gyw==
-X-Authority-Analysis: v=2.4 cv=T5m8ifKQ c=1 sm=1 tr=0 ts=6a79f167 cx=c_pps
- a=7E5Bxpl4vBhpaufnMqZlrw==:117 a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10
+X-Authority-Analysis: v=2.4 cv=S9PpBosP c=1 sm=1 tr=0 ts=6a79f169 cx=c_pps
+ a=EVbN6Ke/fEF3bsl7X48z0g==:117 a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10
  a=Sv0fKeRqtYgA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22 a=EUspDBNiAAAA:8
- a=SNm9lHMw0LAWI6_J5M0A:9 a=QEXdDO2ut3YA:10 a=pJ04lnu7RYOZP9TFuWaZ:22
-X-Proofpoint-GUID: Jr3jvJZV8QllAd96yw374yZ6u_qDOWCq
+ a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22 a=EUspDBNiAAAA:8
+ a=VFyZVMh9rlY2QtTs7IkA:9 a=QEXdDO2ut3YA:10 a=a_PwQJl-kcHnX1M80qC6:22
+X-Proofpoint-ORIG-GUID: IYeLfPntWQsisQTEamagDc_m4PZvkeqn
+X-Proofpoint-GUID: IYeLfPntWQsisQTEamagDc_m4PZvkeqn
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODEwMDEzNSBTYWx0ZWRfX1XnOhOf8e3IV
+ i/rMBqxQYCtQw+bVpN/l40ME64QhzJJ0JSGtzJJu6+sCC1f7CCsQwWkGT2bO37FtNKoaBVv8oUU
+ qFAidwNOwrWnOKh6goK8VG8pcHTbJeemB5nqUMY5GdngO7eCMt0apac+Qe7mmW/Fm0uelkAP2fH
+ fg8aYOM5NSKYvEceA+fI7o8FIcFUHXALsNkjmXlu5Kth0ChMkpT5itQvDo8tDjHguDYpn8Sejfj
+ 13GsHpINPe8kBMF47otUS8lHqan+Ajfu40wIsfgmD2NxOY98+VZoj0Mm1ay1wi1PswvTjUln2PB
+ HKrL0rR/Kng4aQJF/pB/WMjHKfOXKt0cgVo9LT1aCEIBrf1QGoWn0G/BXdbKVAyOYPZia/rG804
+ 3PRqMqB7CslkphjnfDcLlABKiHexR91JyDcd5oHd3vkyrPdrwEctjCT6r4yYWZsHvXzBvSVZ7ou
+ Cdh20iBTnf9M16OU/ag==
+X-Proofpoint-Spam-Info: AW1haW4tMjYwODEwMDEzNSBTYWx0ZWRfX02esc1iPFDPZ
+ Cibj0MmSNmkSpdLO8U2SHR1nnFuaOdX0IgShzzcOow3qtXsxt/+vYfl0niWa7M/9svIeeeXPiSf
+ v1ybmGY721SpSUeeANGR2Nll2nMR9dQ=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-08-10_03,2026-08-10_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 adultscore=0 clxscore=1015 suspectscore=0 phishscore=0
- spamscore=0 malwarescore=0 priorityscore=1501 bulkscore=0 lowpriorityscore=0
+ phishscore=0 bulkscore=0 adultscore=0 lowpriorityscore=0 malwarescore=0
+ priorityscore=1501 clxscore=1015 suspectscore=0 impostorscore=0 spamscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2608100135
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260810_084231_801549_749A5C90 
-X-CRM114-Status: GOOD (  13.51  )
+X-CRM114-CacheID: sfid-20260810_164235_183730_CF1A7C7C 
+X-CRM114-Status: GOOD (  12.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -173,109 +189,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The MSM8974 HSIC USB host - a third Chipidea controller with a
-dedicated HSIC PHY on the special hsic_strobe/hsic_data pads - is not
-described, leaving boards with HSIC-attached hubs or modems without
-upstream support.
+The dragonboard carries an SMSC USB4604 HSIC hub, but with the HSIC
+controller undescribed the whole HSIC-attached part of the board is
+dead.
 
-Add the controller and PHY nodes. The PHY is a ULPI bus driver present
-inside the ulpi subnode.
+Enable the HSIC controller. The USB4604 hub isn't controllable through
+the I2C because of the board design issues, so reference it as a simple
+USB device, describing the reset line.
 
 Assisted-by: Claude:claude-fable-5
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 ---
- arch/arm/boot/dts/qcom/qcom-msm8974.dtsi | 71 ++++++++++++++++++++++++++++++++
- 1 file changed, 71 insertions(+)
+ .../arm/boot/dts/qcom/qcom-apq8074-dragonboard.dts | 27 ++++++++++++++++++++++
+ 1 file changed, 27 insertions(+)
 
-diff --git a/arch/arm/boot/dts/qcom/qcom-msm8974.dtsi b/arch/arm/boot/dts/qcom/qcom-msm8974.dtsi
-index bac3c8772e0a..72cd369927b2 100644
---- a/arch/arm/boot/dts/qcom/qcom-msm8974.dtsi
-+++ b/arch/arm/boot/dts/qcom/qcom-msm8974.dtsi
-@@ -760,6 +760,49 @@ usb3_ss_phy: phy@f92f8830 {
- 			status = "disabled";
- 		};
+diff --git a/arch/arm/boot/dts/qcom/qcom-apq8074-dragonboard.dts b/arch/arm/boot/dts/qcom/qcom-apq8074-dragonboard.dts
+index 083fd8fa0aea..02183b37ddbe 100644
+--- a/arch/arm/boot/dts/qcom/qcom-apq8074-dragonboard.dts
++++ b/arch/arm/boot/dts/qcom/qcom-apq8074-dragonboard.dts
+@@ -158,6 +158,14 @@ &mdss {
+ };
  
-+		usb_hsic: usb@f9a00000 {
-+			compatible = "qcom,ci-hdrc";
-+			reg = <0xf9a00000 0x200>,
-+			      <0xf9a00200 0x200>;
-+			interrupts = <GIC_SPI 136 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 148 IRQ_TYPE_EDGE_RISING>;
-+			assigned-clocks = <&gcc GCC_USB_HSIC_SYSTEM_CLK>,
-+					  <&gcc GCC_USB_HSIC_CLK>,
-+					  <&gcc GCC_USB_HSIC_IO_CAL_CLK>;
-+			assigned-clock-rates = <75000000>,
-+					       <480000000>,
-+					       <9600000>;
-+			clocks = <&gcc GCC_USB_HSIC_AHB_CLK>,
-+				 <&gcc GCC_USB_HSIC_SYSTEM_CLK>;
-+			clock-names = "iface", "core";
-+			resets = <&gcc GCC_USB_HS_HSIC_BCR>;
-+			reset-names = "core";
-+			power-domains = <&gcc USB_HS_HSIC_GDSC>;
-+			phys = <&usb_hsic_phy>;
-+			phy-names = "usb-phy";
-+			phy_type = "ulpi";
-+			dr_mode = "host";
-+			ahb-burst-config = <0>;
+ &pm8941_gpios {
++	hsic_hub_rst_default: hsic-hub-rst-state {
++		pins = "gpio8";
++		function = "normal";
++		drive-push-pull;
++		qcom,drive-strength = <PMIC_GPIO_STRENGTH_MED>;
++		power-source = <PM8941_GPIO_VPH>;
++	};
 +
-+			status = "disabled";
-+
-+			ulpi {
-+				usb_hsic_phy: phy {
-+					compatible = "qcom,usb-hsic-phy-msm8974",
-+						     "qcom,usb-hsic-phy";
-+					clocks = <&gcc GCC_USB_HSIC_CLK>,
-+						 <&gcc GCC_USB_HSIC_IO_CAL_CLK>,
-+						 <&gcc GCC_USB_HSIC_IO_CAL_SLEEP_CLK>;
-+					clock-names = "phy", "cal", "cal_sleep";
-+					#phy-cells = <0>;
-+
-+					pinctrl-names = "init", "default";
-+					pinctrl-0 = <&hsic_gpio_state>;
-+					pinctrl-1 = <&hsic_state>;
-+				};
-+			};
-+		};
-+
- 		usb: usb@f9a55000 {
- 			compatible = "qcom,ci-hdrc";
- 			reg = <0xf9a55000 0x200>,
-@@ -1677,6 +1720,34 @@ tlmm: pinctrl@fd510000 {
- 			#interrupt-cells = <2>;
- 			interrupts = <GIC_SPI 208 IRQ_TYPE_LEVEL_HIGH>;
+ 	msm_keys_default: pm8941-gpio-keys-state {
+ 		pins = "gpio5", "gpio23";
+ 		function = "normal";
+@@ -487,6 +495,25 @@ &usb_hs2_phy {
+ 	qcom,init-seq = /bits/ 8 <0x1 0x63>;
+ };
  
-+			hsic_gpio_state: hsic-gpio-state {
-+				data-strobe-pins {
-+					pins = "gpio144", "gpio145";
-+					function = "gpio";
-+					drive-strength = <2>;
-+					bias-pull-down;
-+				};
++&usb_hsic {
++	pinctrl-0 = <&hsic_hub_rst_default>;
++	pinctrl-names = "default";
 +
-+				ctl-pins {
-+					pins = "hsic_data", "hsic_strobe";
-+					function = "gpio";
-+				};
-+			};
++	status = "okay";
 +
-+			hsic_state: hsic-state {
-+				data-strobe-pins {
-+					pins = "gpio144", "gpio145";
-+					function = "hsic";
-+					drive-strength = <12>;
-+					bias-disable;
-+				};
++	#address-cells = <1>;
++	#size-cells = <0>;
 +
-+				ctl-pins {
-+					pins = "hsic_data", "hsic_strobe";
-+					function = "hsic_ctl";
-+				};
-+			};
++	/* SMSC USB4604 hub, standalone mode (SMBus config not usable) */
++	hub@1 {
++		compatible = "usb424,4604";
++		reg = <1>;
++		clocks = <&rpmcc RPM_SMD_CXO_D1>;
++		reset-gpios = <&pm8941_gpios 8 GPIO_ACTIVE_LOW>;
++		vdd-supply = <&pm8941_s3>;
++	};
++};
 +
- 			sdc1_off: sdc1-off-state {
- 				clk-pins {
- 					pins = "sdc1_clk";
+ &usb3 {
+ 	dr_mode = "host";
+ 
 
 -- 
 2.47.3
