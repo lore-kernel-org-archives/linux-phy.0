@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76826C5AC82
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Aug 2026 11:28:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36947C5AD55
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Aug 2026 11:28:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IOuNLoGZL1SEdgNbknuTueH46qQBEMj7zfwLYJU6VSQ=; b=D4ZgXM3W+hiC2Y
-	FZlCSN0VEoY3JU8kOhA98oGKgDuVZoIuWqIVr1p1CQsQI6JpOpZEIotFPs7BeDMAQUZR4w0ZEm4CB
-	yIYuOzZulgVmN/dV2f99YcqusdOGTyic38TIamzrgyCe03BV4R8UxgGY6dKrPGDXI9o6T7f6TOxu+
-	h69bYmdckTMb4gLGTWWsh4KNbAbti6rLlFAgXvWhrjyTI7mYPPYE5xR4q+uNX7FLIqjxmjQFY4RdN
-	++fKby0sBlZgh2ZvYHC+sEqhfGmAOGD0rwMkNH+e4XCOJUlTD21p9RrgTTe8qmxtrWQ9MfAbTUZPu
-	IuvIGS83mFYKNvPJHOig==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=G+GW6jGphJrzxjjqmSyT0PNWVzdBE0xGWzfbRI0CODs=; b=DWPyuFB49B3F/h
+	N+icwRpV609w3JOS/T7UBLX2os4gzV2yBtWctwDG2jfE4cMpkd6A1naaIEJGLpDg7VGWuH2GaUN30
+	JU/81oxFpqirqx2Xx1fV2LzbPUggEeV+wg0PGHzad0Tj4CUgoMUrBgcEqYLw0mQFmeb62eWCNpQX4
+	f+UIMxYi8C5NO+t8NEFjrEwD7Jx1SPOr6FBKgLV93/02s7L74ciWuI+4+7o6SqZSw2S3DUdDAIXaJ
+	59nmXHh5gwERXBFizhbqFOWL4oVjm58oAYwDG8CBlEOyQVPhftI/XT1I51QRP3mVQ3uxdjvlKTnb1
+	FachfCdLRIHELanANwGw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtOAn-0000000Bcre-05Ri;
-	Mon, 10 Aug 2026 11:28:05 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wtOAo-0000000BcsE-0JdC;
+	Mon, 10 Aug 2026 11:28:06 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtOAk-0000000Bcq3-3n6b
+	id 1wtOAl-0000000Bcq2-1Omp
 	for linux-phy@lists.infradead.org;
 	Mon, 10 Aug 2026 11:28:04 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 67A9SKNt2341903;
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 67A9STIN1486614;
 	Mon, 10 Aug 2026 11:27:59 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=H0NKqQtzSnk
-	PjFUMFltWTCYP2upTtwJOXyI49W39z7Q=; b=kzw3aZoNM0eBwLuO203DKz7AUvS
-	SdkYipvOQJQhjpxQ+QybrwJytcrsbOykGnCNzadHktL8qrmh1ss3Ibtp/P9PbqT7
-	B1QXNS+XaUUSS+9ushebus5j9GNToTzx6BfuJSqvKV+vc9QyKSRIPaNEwPKtLv36
-	S3YoIfHK1XX5UoXmLXZYnaiSoTQyN9dVhM6gH9E4SoTfqGRkz6zLBaqdadudFlLu
-	Y4y1gZhZpeEWi3MoRg2dbcZy9lJ3i1IMUyGUE5AcGi7uCp79r/S48P1qeaeUIZHj
-	e5E4CxbVMxP5RKPOSLFQTjjA7VrDvNNytbmUBtbYtl8cu9H0nx3K2PPyD1w==
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=GLtADaCxoAc5C48lEHTGg/Hu0SoWPMGSgGP
+	wtfvto1o=; b=BRFNP0NrGmFYQMvSps54CsmmIQiyEacUvXfkjrVqr7LlEDnZOle
+	Olsnrktjg0ekWiWZh6M+18uvExC0vJwtVd7JEgYYXWpADbCERaah8Jsy8FRQ6v8A
+	Gxc+XEYbEKXZ2NRQ3UVZ4rBo+w3lXErdEBePQUG3NXhfvs/2Ry3zLLQXL4iciHUE
+	Dlr53pF0dLA7E1V9NtpcWxe6so4NquVWiFnWd/DFe4xWoOhhhvZxyKTYD0NuZWca
+	1+tdLd+onDcCO4Wa15eNC3/chy7bY3+V8DdV2HQjDioCS+LguPoW4LGZo6c71ymC
+	if83ev+12l1YV8uubU/SwC84XrzQ2RkOmZw==
 Received: from aptaippmta01.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fy19kj87m-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fy18xt8yq-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 10 Aug 2026 11:27:58 +0000 (GMT)
+	Mon, 10 Aug 2026 11:27:59 +0000 (GMT)
 Received: from pps.filterd (APTAIPPMTA01.qualcomm.com [127.0.0.1])
-	by APTAIPPMTA01.qualcomm.com (8.18.1.7/8.18.1.7) with ESMTP id 67ABRu41004196;
+	by APTAIPPMTA01.qualcomm.com (8.18.1.7/8.18.1.7) with ESMTP id 67ABRuUL004175;
 	Mon, 10 Aug 2026 11:27:56 GMT
 Received: from pps.reinject (localhost [127.0.0.1])
-	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 4fwwhj4wag-1
+	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 4fwwhj4wa9-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Mon, 10 Aug 2026 11:27:56 +0000 (GMT)
 Received: from APTAIPPMTA01.qualcomm.com (APTAIPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.18.1.12/8.18.1.12) with ESMTP id 67ABRua0004178;
+	by pps.reinject (8.18.1.12/8.18.1.12) with ESMTP id 67ABNMQQ031174;
 	Mon, 10 Aug 2026 11:27:56 GMT
 Received: from cse-cd02-lnx.qualcomm.com (smtphost-taiwan.qualcomm.com [10.249.136.33])
-	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 67ABRtmf004165
+	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 67ABRt0Y004166
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Mon, 10 Aug 2026 11:27:56 +0000 (GMT)
 Received: by cse-cd02-lnx.qualcomm.com (Postfix, from userid 4438065)
-	id 800B548E21; Mon, 10 Aug 2026 19:27:54 +0800 (CST)
+	id 78C1248E1D; Mon, 10 Aug 2026 19:27:54 +0800 (CST)
 From: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
         Rob Herring <robh@kernel.org>,
@@ -74,43 +74,42 @@ Cc: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
         Qiang Yu <qiang.yu@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org,
         linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
         linux-kernel@vger.kernel.org
-Subject: [PATCH v1 2/4] phy: qcom: qmp-pcie: Add qref and refgen regulator vote for QCS8300 and SA8775p PHY
-Date: Mon, 10 Aug 2026 19:27:33 +0800
-Message-ID: <20260810112735.1326807-3-ziyue.zhang@oss.qualcomm.com>
+Subject: [PATCH v1 0/4] Add qref and refgen regulator support for QCS8300 and SA8775p PCIe PHYs
+Date: Mon, 10 Aug 2026 19:27:31 +0800
+Message-ID: <20260810112735.1326807-1-ziyue.zhang@oss.qualcomm.com>
 X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20260810112735.1326807-1-ziyue.zhang@oss.qualcomm.com>
-References: <20260810112735.1326807-1-ziyue.zhang@oss.qualcomm.com>
 MIME-Version: 1.0
 X-QCInternal: smtphost
 X-QCInternal: smtphost
-X-Proofpoint-ORIG-GUID: Dnkk-s0dGM2SP0WcvzMuSj8sYVFmiZ0W
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODEwMDEwMSBTYWx0ZWRfX1PMTX4R/p4V2
- uK6Y9p1gyNksqIJO5i4qr3GLcQbLdfEhmjW2wOI0YNn4Vv6VB+iSAXCPu9RKqODUFNby+6XozZT
- Q4AB4eX5T8nurqAcYcloUuoNVdPCUiGuFURmGS5UXdFDQhbSN8QF8jMDVeePwxfUNeSHRMu7gVR
- jqvJpXo6OOWzzeP2WAz6FiOPjvDi32OSHnkmHpj04104VL0FO2BsUf8cAPXwsNGOknKkij8kFlf
- axFxqboWJx+BPmuSg79lqbUkcggIe/YL78g2WzhIUsvGik3kuydVe1m02iBUBFEdjUSnpr4D2KE
- qDW4mNJWJ9pR9XrzVFCXt5KfUPUagihJot3I7GDNz0t3Cy7cY27TeKatGWZXAEtcScrtc+w70qa
- LPqBD4TliHb20zT11t5Y6bgoUWhT3yjoWUMvmcRvu7kr6WJb6mGputlDRxJtrx3mFPblhSY5Rra
- RH/syAtOsZWK3/bHNNQ==
-X-Proofpoint-Spam-Info: AW1haW4tMjYwODEwMDEwMSBTYWx0ZWRfXz5r+YAgbRJl3
- Q5S8r5/y1DUzZ5b7dHmDLISEFCvad++6P/P6yipAVzcIJv5xr9wBghXZ8G4HUgkxN0ZCBjKFxSw
- tbbXoU+exE3Mt6XFynHzc29qCfHcGgk=
-X-Proofpoint-GUID: Dnkk-s0dGM2SP0WcvzMuSj8sYVFmiZ0W
-X-Authority-Analysis: v=2.4 cv=abxRWxot c=1 sm=1 tr=0 ts=6a79b5bf cx=c_pps
+X-Proofpoint-Spam-Info: AW1haW4tMjYwODEwMDEwMCBTYWx0ZWRfXyJUVYUcIO01n
+ CMvHAoTLWSlbpJ9XIa0qU/xlt/r5hCSykH8Khp+Btx3EElxsuP6mbDIWI9lY1pQ/H1bHnWePgry
+ VJZlXocUz19c8VvEUuweM+guUrQYTQ8=
+X-Proofpoint-ORIG-GUID: KdytFahG2h8pjEQYGZMrQLgobRe5hvpU
+X-Proofpoint-GUID: KdytFahG2h8pjEQYGZMrQLgobRe5hvpU
+X-Authority-Analysis: v=2.4 cv=bfZbluPB c=1 sm=1 tr=0 ts=6a79b5bf cx=c_pps
  a=nuhDOHQX5FNHPW3J6Bj6AA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
  a=Sv0fKeRqtYgA:10 a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22
- a=eoimf2acIAo5FJnRuUoq:22 a=EUspDBNiAAAA:8 a=oDW96ipbCRtAeguNJTsA:9
+ a=3WHJM1ZQz_JShphwDgj5:22 a=MXBiqbVMOIXyEl0c16YA:9
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODEwMDEwMCBTYWx0ZWRfX1G0SQ2F310xC
+ YHUVfOyAKxatOl1nwfKcgzRR6UukYa312xNKBLOnFKrEGwaQum48QptX/lQe8fEguoTXKMW2kkW
+ CZ/IbK3MhTkGZqJ8ErDR0/WkHCsSVE2v9sGMVKd5G6j3fMg/36H05eOIBfxL+J+EjcHd3seyWA2
+ k2gZOHzr5AGqWICauoO/RjP6AW3R7F1GqOtMibJyJYHuvSKwNdpaU3guttjedWdZftXF0Oe0yr3
+ pw8Y4FwYfqd4v1ieLVPYLIt3Ohckce8BtCl49P+uCI8hG0UuCZYUh9t+Yk7QUWuLv/riqc+xNfN
+ wUgnRDZHBagkRSL6p0zgqbzTzzxE4m0IPOQckwG8rkyfFW4SbQRoXAdTFke6VGPV6w4NEcQCGyz
+ bOgLagSEWQwyBIIZXoI7kGTyWx5jDozKYnDCvij45Vt694uHkw5njOznlrWxjacTEV5EnKIXZp/
+ W94T1Z6OKgdN8z3TUSA==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-08-10_02,2026-08-07_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 lowpriorityscore=0 malwarescore=0 suspectscore=0 impostorscore=0
- priorityscore=1501 spamscore=0 phishscore=0 clxscore=1011 bulkscore=0
+ impostorscore=0 spamscore=0 lowpriorityscore=0 malwarescore=0 clxscore=1015
+ priorityscore=1501 phishscore=0 bulkscore=0 suspectscore=0 adultscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2608100101
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2608100100
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260810_042802_950389_C48F9CF2 
-X-CRM114-Status: GOOD (  12.47  )
+X-CRM114-CacheID: sfid-20260810_042803_484659_AE6CA762 
+X-CRM114-Status: UNSURE (   9.94  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,70 +126,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a new sa8775p_qmp_phy_vreg_l that includes vdda-phy, vdda-pll,
-vdda-qref, vdda-refgen and refgen supplies, and use it for QCS8300
-and SA8775p PCIe PHY configurations. This avoids modifying
-sm8550_qmp_phy_vreg_l and breaking SM8550 and SM8650.
+This series adds qref and refgen regulator support for the PCIe QMP PHYs
+on QCS8300 and SA8775p platforms.
 
-Note that due to a hardware issue, QREF actually depends on refgen3
-rather than refgen2 as documented; refgen3 is therefore voted manually
-via the refgen supply as a workaround.
+The PCIe PHYs on these SoCs require dedicated qref and refgen voltage
+supplies for stable operation. Without enabling these supplies, PCIe may
+be unstable and the system can occasionally crash under certain scenarios.
 
-Fixes: a05b6d5135ec ("phy: qcom-qmp-pcie: add support for sa8775p")
-Fixes: ebf198f17b5a ("phy: qcom-qmp-pcie: add dual lane PHY support for QCS8300")
-Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
----
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 16 ++++++++++------
- 1 file changed, 10 insertions(+), 6 deletions(-)
+The refgen supply in particular works around a hardware issue where both
+QREF and the PCIe PHY are expected to depend on refgen2, but QREF actually
+depends on refgen3. This series therefore votes for refgen3 manually via
+the refgen supply.
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 27034bb62d0d..5d6186512c14 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -4018,6 +4018,10 @@ static const char * const sm8550_qmp_phy_vreg_l[] = {
- 	"vdda-phy", "vdda-pll", "vdda-qref",
- };
- 
-+static const char * const sa8775p_qmp_phy_vreg_l[] = {
-+	"vdda-phy", "vdda-pll", "vdda-qref", "vdda-refgen", "refgen",
-+};
-+
- /* list of resets */
- static const char * const ipq8074_pciephy_reset_l[] = {
- 	"phy", "common",
-@@ -4508,8 +4512,8 @@ static const struct qmp_phy_cfg qcs8300_qmp_gen4x2_pciephy_cfg = {
- 
- 	.reset_list		= sdm845_pciephy_reset_l,
- 	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
--	.vreg_list		= qmp_phy_vreg_l,
--	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-+	.vreg_list		= sa8775p_qmp_phy_vreg_l,
-+	.num_vregs		= ARRAY_SIZE(sa8775p_qmp_phy_vreg_l),
- 	.regs			= pciephy_v5_regs_layout,
- 
- 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
-@@ -5218,8 +5222,8 @@ static const struct qmp_phy_cfg sa8775p_qmp_gen4x2_pciephy_cfg = {
- 
- 	.reset_list		= sdm845_pciephy_reset_l,
- 	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
--	.vreg_list		= qmp_phy_vreg_l,
--	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-+	.vreg_list		= sa8775p_qmp_phy_vreg_l,
-+	.num_vregs		= ARRAY_SIZE(sa8775p_qmp_phy_vreg_l),
- 	.regs			= pciephy_v5_regs_layout,
- 
- 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
-@@ -5259,8 +5263,8 @@ static const struct qmp_phy_cfg sa8775p_qmp_gen4x4_pciephy_cfg = {
- 
- 	.reset_list		= sdm845_pciephy_reset_l,
- 	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
--	.vreg_list		= qmp_phy_vreg_l,
--	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-+	.vreg_list		= sa8775p_qmp_phy_vreg_l,
-+	.num_vregs		= ARRAY_SIZE(sa8775p_qmp_phy_vreg_l),
- 	.regs			= pciephy_v5_regs_layout,
- 
- 	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+Ziyue Zhang (4):
+  dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add vdda-refgen and
+    refgen supply properties
+  phy: qcom: qmp-pcie: Add qref and refgen regulator vote for QCS8300
+    and SA8775p PHY
+  arm64: dts: qcom: qcs8300: Add qref and refgen supply for PCIe PHYs
+  arm64: dts: qcom: sa8775p: Add qref and refgen supply for PCIe PHYs
+
+ .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml       | 27 +++++++++++++++++++
+ arch/arm64/boot/dts/qcom/lemans-evk.dts       |  4 +++
+ .../boot/dts/qcom/lemans-ride-common.dtsi     |  4 +++
+ arch/arm64/boot/dts/qcom/monaco-evk.dts       |  4 +++
+ .../arm64/boot/dts/qcom/monaco-monza-som.dtsi |  4 +++
+ arch/arm64/boot/dts/qcom/monaco.dtsi          |  4 +++
+ arch/arm64/boot/dts/qcom/qcs8300-ride.dts     |  4 +++
+ arch/arm64/boot/dts/qcom/qcs9100-ride-r3.dts  |  8 ++++++
+ arch/arm64/boot/dts/qcom/qcs9100-ride.dts     |  8 ++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 16 ++++++-----
+ 10 files changed, 77 insertions(+), 6 deletions(-)
+
 -- 
 2.43.0
 
