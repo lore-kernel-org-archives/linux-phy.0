@@ -4,89 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 04615C5AC67
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Aug 2026 04:09:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B594DC5AD55
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Aug 2026 05:43:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MVVaY88NQ5+fQGoQ7pD1DZh+E6YmWEWZ5KxScwZcyIc=; b=xxa/75rUcPAaD+
-	wamBD4LtoPlhsWAuIpqysxxOiDClPwHHUQrhCAawFDO7FSuGy56MH52TqAYda9+w5nxc6xWwCh8mZ
-	d/zzCuxdnHRszBLkwaj+NwBlY6S/DY6sY3KzU3zrVhAyTrTXJHdoTtpWFYqi0Ap+hmER3Rl0oA0tR
-	eTjckj4Myu0tDl6Q3Lo7vnWfFFB5etz3e0avIAFza0EaH1rsXvWEszfktEbLRmLia3m70Vv8kmvwx
-	DwwFejXEVfK4rsrPBdjA0nfLzRN/DwXC7ukKe5+siDtbSLHQ04MLBXP34V5mqDrS1I/6vPZZoqNcQ
-	6nHwmIHMwDm68xqxGWWQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=K7iu8Yx9gesKUyWkUxcFNcD+jfHAVulLpmvTSgtfZOM=; b=NBxzpQTCC2jEzbGX+Z1hpGu/4y
+	adBOVezfzd2e0yWW22nYBh+bYIImlLgwfu16HP9XnrLbXZDBnc2xp+yUfPk+k1WWnTjAm4QAUJ9Bj
+	v4dwqQRWHFLutBXEpGRkaVRhbfW9QuBDv0tScL7UKuZZzvLAfCrsUqjSpSe15YUJH47zKKxU0Ani8
+	pJgbhMyKP6vR57vTDjmeVm8mMW+bMrsGbfHhEp1mOJQrrFw0s2bU02s+k3yu9DOpTH3esccIpnsuU
+	XDLelssmzEja1CLV//2x1/VitxIPqKbBU9pFJodNt1kL11ALjgspWzs6dyxuzdEUG+TQ1QXl9xoW4
+	TjzqGX1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtdnj-0000000DEqA-1PPF;
-	Tue, 11 Aug 2026 04:09:19 +0000
-Received: from mail-pl1-x62f.google.com ([2607:f8b0:4864:20::62f])
+	id 1wtfGp-0000000DKbO-0rVs;
+	Tue, 11 Aug 2026 05:43:27 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtdng-0000000DEoy-3iqm
-	for linux-phy@lists.infradead.org;
-	Tue, 11 Aug 2026 04:09:18 +0000
-Received: by mail-pl1-x62f.google.com with SMTP id d9443c01a7336-2cace91f112so29845655ad.0
-        for <linux-phy@lists.infradead.org>; Mon, 10 Aug 2026 21:09:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1786421356; x=1787026156; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=DJlEafp6iccF9h9o6L+laBWKHv5r162wbzlbDYkDTLA=;
-        b=JRbOyMMsiT2BD98w7H4QiT8J3KppJJQdIT2JM7plIDF6vymQnyNtQqb8AK9Kc91/kB
-         owVcVO3J7wBQYjxjcfVd3La8KT1ZGlOaODnYyAKrMdgqMbEtdp35UHGzmc6VeBLYCxk1
-         EHenAQWxb5MUnX2HVD3Vohhh7xWbHlV25dC9GSO14FBKSw97XplJz/Hn6Hj+DLJtPf7O
-         nfTL8mYbjbJPR/iOkeuRTqUrrpP+QhZmMx99gmXmEhD1p2YYI8wEtyFJvTqyfvkXZBQ/
-         OKKAAhrdQrWqXM7Ocm7sQQT6ZSnSXZbnbUTEk8kJdvo6Nl1Qs18zGjZipjHB62s3NNoJ
-         Lj+w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1786421356; x=1787026156;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=DJlEafp6iccF9h9o6L+laBWKHv5r162wbzlbDYkDTLA=;
-        b=tUGfypGP1UCK+5F7gH9j5UMzGNIsN8M6N2NnPPkmvlFnYSR6Gh4PBqsYuzeaAnTVqj
-         8BH543KrPCShgaO6vVbaG9HreGbhyik4MUL8C6bjbRfeuua13Rf/HD1iPVrtV7Wwxapt
-         ZKbo9SipfXeqOVw5RoI51fv0g3WI5HE/83SbPd3BJltdf3+RjurxyONpE7tqjEQ+lpU/
-         Fq9W4cPTo+rNnAI0CcC0fCr3LWrH87UcNPJ0Zi957a8YyTA8kk3mtmd4CSdBebhwk5O5
-         axvBMH230Du9mdvy12fgG1/hhXYULuwLDs6SIVgaXqSoolbynvVsDk2DgH5ArsDmTaGD
-         8HQQ==
-X-Forwarded-Encrypted: i=1; AHgh+Ro0YUdYyoSl8rMulu49mE14ivEIZoFIkgubHMds1Ch/VehL8KU3PjayAcScu4ZeuBfBs5npVZmtsmw=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx9W0jjx3AUv4jZm92Q1adjQ0n0w8UOXBqYaWFQiTsV0Ssk47aQ
-	3q2LBwCP+GpDXOGoHWeX3tWpGcNpG67v2NVxhMVT8FbVnUGlk4U/bGXW
-X-Gm-Gg: AR+sD13CtY4Sciqs4mtlo0D6wdxJTxE7Zvm1w3Lc7TRnJ7v/WN/EfdrGc0OHVQXokAD
-	uuGR6lwnqlk3ESQOHf2W/jRWE66eJ2e2WqpFVrdsbQC1QvkckydQXuwZc27Qrll4jOTp7tddoIz
-	NB2ws50BrLn+eiJn9BpVtTRP2+tTunmU99W3Swu/OkYi8Fegk48Ndt4cbP2liR7Bdat7Q+vGBJc
-	QtySgdG0aBQ/CEl6MAhT9iv94HcColT+6y+N5WCxhHc6F8npZTYjsJsz6b0jYU8VaEcs59Vpb4P
-	Vp+feIrNJdTdBLDln1WqiIq0rW9tkCuDX620lKhpsq3daL76oCg+g7fcV3Z1641jA/grPoSskGS
-	BAq1JWkWGksKweGaG7lJtx1hz4HZPerSbMogJp3loLkeQwjCxm2O2rT4ftSqVwiHtI/OpkP0Liu
-	45ZRIkrapS6HgqfUU0ruxayAJfYVQJPCGoVH9QtuI8UQ/YGL15uAa464IoYkFQJGtU6gY4A9Gi+
-	44oEGzORB5rxwBiE2pT/5J3W3teHhvN7TofUUODOu6XBMsEpAW6VyH1gsESTLd1E7BIgEacNSdb
-	62sntPEdICQXsqg=
-X-Received: by 2002:a05:6a20:bea6:b0:3c3:66c5:68cc with SMTP id adf61e73a8af0-3cc2bafad57mr930131637.21.1786421355638;
-        Mon, 10 Aug 2026 21:09:15 -0700 (PDT)
-Received: from phuc-desktop.. ([183.91.15.56])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-cbed8e74420sm153602a12.15.2026.08.10.21.09.13
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 10 Aug 2026 21:09:15 -0700 (PDT)
-From: phucduc.bui@gmail.com
-To: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Cc: Heiko Stuebner <heiko@sntech.de>,
-	bui duc phuc <phucduc.bui@gmail.com>
-Subject: [PATCH] phy: rockchip: inno-usb2: Handle errors from optional IRQ lookup
-Date: Tue, 11 Aug 2026 11:09:00 +0700
-Message-ID: <20260811040900.7151-1-phucduc.bui@gmail.com>
-X-Mailer: git-send-email 2.43.0
+	id 1wtfGi-0000000DKaP-11Hs;
+	Tue, 11 Aug 2026 05:43:20 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with UTF8SMTP id 888D6417A0;
+	Tue, 11 Aug 2026 05:43:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with UTF8SMTPSA id 8BDE61F000E9;
+	Tue, 11 Aug 2026 05:43:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1786426999;
+	bh=YMGTU+vf49B9TdnxXNYL8pil652GojAXCJRKNGBLc/w=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=Extm0du5n7L50sNNJpgM5PNYO8U2aUnoW7xIcOy0qQq1OG+1JkcD9nqWitFPDpd78
+	 zEP9WTJzYlRiVkhXGneXd5MLP0weKKeXtrjhGf+qJEXM7FbBi8Tv0GD3gqvlHrnjE3
+	 N2Y6gqBZFEg5bWlrxHDJ9OefwDnjT50hKkSOdhwkk+77PzQxfGq1Fjzc9pk9ZQF9K+
+	 woDxKQOwqTW1icqSssV3Mco9Tt9eceuABCXQx17oS67EuQI2ZVs9e96J96yMjPCZbl
+	 cXiTDwylteCFXODDBZu806lj45mQs0ju0rJw5A/MiCmL7AbL5iTHf6PRFiR/punGj+
+	 heRkFRnTFpxqg==
+Date: Tue, 11 Aug 2026 07:43:16 +0200
+From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <ukleinek@kernel.org>
+To: Jakub Kicinski <kuba@kernel.org>
+Cc: Vladislav Leonov <vlad@zlab.su>, linux-rockchip@lists.infradead.org, 
+	linux-arm-kernel@lists.infradead.org, Simon Glass <sjg@chromium.org>, linux-clk@vger.kernel.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	Alexandre Torgue <alexandre.torgue@foss.st.com>, Andi Shyti <andi.shyti@kernel.org>, 
+	Andrew Lunn <andrew+netdev@lunn.ch>, Aurelien Jarno <aurelien@aurel32.net>, 
+	Brian Masney <bmasney@redhat.com>, Conor Dooley <conor+dt@kernel.org>, 
+	Daniel Golle <daniel@makrotopia.org>, "David S. Miller" <davem@davemloft.net>, 
+	David Wu <david.wu@rock-chips.com>, Eric Dumazet <edumazet@google.com>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Heiko Stuebner <heiko@sntech.de>, 
+	Herbert Xu <herbert@gondor.apana.org.au>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+	Mark Brown <broonie@kernel.org>, Maxime Chevallier <maxime.chevallier@bootlin.com>, 
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>, Michael Turquette <mturquette@baylibre.com>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, 
+	Olivia Mackall <olivia@selenic.com>, Paolo Abeni <pabeni@redhat.com>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, Rob Herring <robh@kernel.org>, Stephen Boyd <sboyd@kernel.org>, 
+	Vinod Koul <vkoul@kernel.org>, linux-crypto@vger.kernel.org, linux-i2c@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-pwm@vger.kernel.org, linux-spi@vger.kernel.org, 
+	linux-stm32@st-md-mailman.stormreply.com, linux-usb@vger.kernel.org, netdev@vger.kernel.org
+Subject: Re: [PATCH 00/25] ARM: rockchip: Add peripheral support for RV1106
+Message-ID: <anq1ouUnKA02Eauj@monoceros>
+References: <20260810121121.210040-1-vlad@zlab.su>
+ <20260810113548.7fd24d56@kernel.org>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260810_210916_931850_7570C5A6 
-X-CRM114-Status: GOOD (  11.56  )
+In-Reply-To: <20260810113548.7fd24d56@kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,48 +79,76 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============5711805680262846915=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: bui duc phuc <phucduc.bui@gmail.com>
 
-platform_get_irq_optional() can return errors such as -EPROBE_DEFER,
-but the driver currently stores the return value directly in rphy->irq
-and continues probing.
+--===============5711805680262846915==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="l56ppkyuc6yjydul"
+Content-Disposition: inline
 
-Propagate negative errors other than -ENXIO using dev_err_probe(), and
-only assign the IRQ to rphy->irq when a valid IRQ number is returned.
 
-Signed-off-by: bui duc phuc <phucduc.bui@gmail.com>
----
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 7 ++++++-
- 1 file changed, 6 insertions(+), 1 deletion(-)
+--l56ppkyuc6yjydul
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH 00/25] ARM: rockchip: Add peripheral support for RV1106
+MIME-Version: 1.0
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-index 7d8a533f24ae..6079e776b4bb 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-@@ -1390,7 +1390,12 @@ static int rockchip_usb2phy_probe(struct platform_device *pdev)
- 	phy_cfgs = device_get_match_data(dev);
- 	rphy->chg_state = USB_CHG_STATE_UNDEFINED;
- 	rphy->chg_type = POWER_SUPPLY_TYPE_UNKNOWN;
--	rphy->irq = platform_get_irq_optional(pdev, 0);
-+	ret = platform_get_irq_optional(pdev, 0);
-+	if (ret < 0 && ret != -ENXIO)
-+		return dev_err_probe(dev, ret, "failed to get IRQ resource\n");
-+	if (ret > 0)
-+		rphy->irq = ret;
-+
- 	platform_set_drvdata(pdev, rphy);
- 
- 	if (!phy_cfgs)
--- 
-2.43.0
+On Mon, Aug 10, 2026 at 11:35:48AM -0700, Jakub Kicinski wrote:
+> On Mon, 10 Aug 2026 15:10:51 +0300 Vladislav Leonov wrote:
+> > Basic support for the Rockchip RV1106/RV1103 SoCs currently under revie=
+w.
+> > This series builds on top of that and enables the peripherals needed to
+> > bring up a board beyond a serial console:
+>=20
+> Don't expect maintainers to dig out patches for their subsystems
+> from a big series. This is not how upstream development works.
 
+I see this from time to time and I personally think it's fine to have
+these patches together. Also the only the patch that affects my
+subsystem was Cc:d to me which is how I like it (but I think opinions
+differ on that one, too).
+
+`b4 am -P _` is great!
+
+> Repost 4+5 as a separate series to networking..
+
+=2E.ooOO(It worked! :-)
+
+Best regards
+Uwe
+
+--l56ppkyuc6yjydul
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEP4GsaTp6HlmJrf7Tj4D7WH0S/k4FAmp6tnIACgkQj4D7WH0S
+/k4zEQf+MYRctJ734gymTU2g5TLMo295bcq0j0eEePOAdI6qDQPd95D0hAtgUEkt
+4cke2U6VUYvUyjrFyYBRIGUYGXlEBi8gWY+OEGO3fIZxlGHuQx78Dc6DP7G1Fwft
+Ss7cDBRXPd6Rz4yUkuh8gv1ajvzZbP93qgNy+PYkPVurLQoBKMEckIJ62+Beltca
+0+MG5Pptj/qnZAlIefzdk51PPWtMMzIUTP5PmOCIfE5HlxTcfLWKGiS01H0OIip6
+q4Mj5mEEySKrAaGz9TBfGv0T1AJA6/Dbzqn8X9BKcuOQ4C0VxJ8T1nFhQzEBtCqw
+f6yJy4qiT12FVPcrMFlEBIfbUoLrEg==
+=aKZl
+-----END PGP SIGNATURE-----
+
+--l56ppkyuc6yjydul--
+
+
+--===============5711805680262846915==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============5711805680262846915==--
+
