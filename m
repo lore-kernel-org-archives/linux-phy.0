@@ -4,70 +4,105 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B594DC5AD55
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Aug 2026 05:43:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DDFF1C5AD7B
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Aug 2026 06:18:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=K7iu8Yx9gesKUyWkUxcFNcD+jfHAVulLpmvTSgtfZOM=; b=NBxzpQTCC2jEzbGX+Z1hpGu/4y
-	adBOVezfzd2e0yWW22nYBh+bYIImlLgwfu16HP9XnrLbXZDBnc2xp+yUfPk+k1WWnTjAm4QAUJ9Bj
-	v4dwqQRWHFLutBXEpGRkaVRhbfW9QuBDv0tScL7UKuZZzvLAfCrsUqjSpSe15YUJH47zKKxU0Ani8
-	pJgbhMyKP6vR57vTDjmeVm8mMW+bMrsGbfHhEp1mOJQrrFw0s2bU02s+k3yu9DOpTH3esccIpnsuU
-	XDLelssmzEja1CLV//2x1/VitxIPqKbBU9pFJodNt1kL11ALjgspWzs6dyxuzdEUG+TQ1QXl9xoW4
-	TjzqGX1w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FgMf2RHK3DsMhuxqUIOlGJsnPD7CMdW9J1CJoqCRMbw=; b=bgej2x8U6A9uSu
+	cqllrCzn+SOlJAXHY0uswrT0QFPmbgpJD2DDedp/SqKuIoxwC10VgK5PjE+8aUVM3vkQR6Vp92Ba6
+	aEYFyubTQF5EGK7I37fvLAqSHSfTw0GiIw91efVdKAqxJCNemPJ5H7SoLUUakq7DHR7qwwMlXC2Rp
+	p0mMSwPfMXFO7FGrPRkZn3PMvzDd9yaq2WOa3A2nZyViJ/zaqolobRZLUnT5sR+Z2LhZDg8YcBrgH
+	xFsfo6Q5ajv47wi6P1Bd8ulQzLTYIBwLK6GfYiKUPrG/vSxo0cQEldLovAS8DiSDDkKfDVCs4xipF
+	5gsKn+MiI7YyKPGJg2Pw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtfGp-0000000DKbO-0rVs;
-	Tue, 11 Aug 2026 05:43:27 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wtfod-0000000DPAR-1l4r;
+	Tue, 11 Aug 2026 06:18:23 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtfGi-0000000DKaP-11Hs;
-	Tue, 11 Aug 2026 05:43:20 +0000
+	id 1wtfob-0000000DPAI-3XeI
+	for linux-phy@lists.infradead.org;
+	Tue, 11 Aug 2026 06:18:21 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with UTF8SMTP id 888D6417A0;
-	Tue, 11 Aug 2026 05:43:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with UTF8SMTPSA id 8BDE61F000E9;
-	Tue, 11 Aug 2026 05:43:18 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id EF91C600AD;
+	Tue, 11 Aug 2026 06:18:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7EC9D1F000E9;
+	Tue, 11 Aug 2026 06:18:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786426999;
-	bh=YMGTU+vf49B9TdnxXNYL8pil652GojAXCJRKNGBLc/w=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=Extm0du5n7L50sNNJpgM5PNYO8U2aUnoW7xIcOy0qQq1OG+1JkcD9nqWitFPDpd78
-	 zEP9WTJzYlRiVkhXGneXd5MLP0weKKeXtrjhGf+qJEXM7FbBi8Tv0GD3gqvlHrnjE3
-	 N2Y6gqBZFEg5bWlrxHDJ9OefwDnjT50hKkSOdhwkk+77PzQxfGq1Fjzc9pk9ZQF9K+
-	 woDxKQOwqTW1icqSssV3Mco9Tt9eceuABCXQx17oS67EuQI2ZVs9e96J96yMjPCZbl
-	 cXiTDwylteCFXODDBZu806lj45mQs0ju0rJw5A/MiCmL7AbL5iTHf6PRFiR/punGj+
-	 heRkFRnTFpxqg==
-Date: Tue, 11 Aug 2026 07:43:16 +0200
-From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <ukleinek@kernel.org>
-To: Jakub Kicinski <kuba@kernel.org>
-Cc: Vladislav Leonov <vlad@zlab.su>, linux-rockchip@lists.infradead.org, 
-	linux-arm-kernel@lists.infradead.org, Simon Glass <sjg@chromium.org>, linux-clk@vger.kernel.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	Alexandre Torgue <alexandre.torgue@foss.st.com>, Andi Shyti <andi.shyti@kernel.org>, 
-	Andrew Lunn <andrew+netdev@lunn.ch>, Aurelien Jarno <aurelien@aurel32.net>, 
-	Brian Masney <bmasney@redhat.com>, Conor Dooley <conor+dt@kernel.org>, 
-	Daniel Golle <daniel@makrotopia.org>, "David S. Miller" <davem@davemloft.net>, 
-	David Wu <david.wu@rock-chips.com>, Eric Dumazet <edumazet@google.com>, 
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Heiko Stuebner <heiko@sntech.de>, 
-	Herbert Xu <herbert@gondor.apana.org.au>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
-	Mark Brown <broonie@kernel.org>, Maxime Chevallier <maxime.chevallier@bootlin.com>, 
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>, Michael Turquette <mturquette@baylibre.com>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, 
-	Olivia Mackall <olivia@selenic.com>, Paolo Abeni <pabeni@redhat.com>, 
-	Philipp Zabel <p.zabel@pengutronix.de>, Rob Herring <robh@kernel.org>, Stephen Boyd <sboyd@kernel.org>, 
-	Vinod Koul <vkoul@kernel.org>, linux-crypto@vger.kernel.org, linux-i2c@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-pwm@vger.kernel.org, linux-spi@vger.kernel.org, 
-	linux-stm32@st-md-mailman.stormreply.com, linux-usb@vger.kernel.org, netdev@vger.kernel.org
-Subject: Re: [PATCH 00/25] ARM: rockchip: Add peripheral support for RV1106
-Message-ID: <anq1ouUnKA02Eauj@monoceros>
-References: <20260810121121.210040-1-vlad@zlab.su>
- <20260810113548.7fd24d56@kernel.org>
+	s=k20260515; t=1786429100;
+	bh=fypE+WJeEIwmW1JOycblonvFMefcQW9eNEyTfiP9ohc=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=E0fqkw5VDWriCOcHexkmUZM6UJ6MpPpB0wllgQLkIw1TZ7tmXXY6qZ+zydvb9UnYr
+	 NrvQsxIjT1AY0w4xaGZPzt4kkHBpxuDYEgtwjZkHFHvyVe8hnjpJHyfz6ug0n5l1uP
+	 KqZOtOxFYHYBbKVCUjqIS5GUncQfcCHf/Oo41QKr/cqdI6UM5AJRFgn2IEAY9fKU4y
+	 c1xrRLJRoy4pJXYscWNP7S9ogVgCAHQZ4Nvnseq5PPDMkYnckEIxME4bbNBT2vmL8J
+	 InkNFDdXxsOY4lTcYr6trbp5qZaItLjMhPv8fKxhd0GVWxeCDfOTZ8HWKIKYgJt2+g
+	 EgsBJyRt/JxPw==
+Message-ID: <162bfbf1-f8da-4083-96e9-2557688b0072@kernel.org>
+Date: Tue, 11 Aug 2026 08:18:13 +0200
 MIME-Version: 1.0
-In-Reply-To: <20260810113548.7fd24d56@kernel.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/2] dt-bindings: phy: Add sa8255p high-speed USB PHY
+To: Mattijs Korpershoek <mkorpershoek@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20260730-phy-qcom-snps-femto-v2-8255-v1-0-8b8bf5105a68@kernel.org>
+ <20260730-phy-qcom-snps-femto-v2-8255-v1-1-8b8bf5105a68@kernel.org>
+ <20260804-active-sensible-reindeer-f459a3@quoll> <87a4qu2f98.fsf@kernel.org>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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
+In-Reply-To: <87a4qu2f98.fsf@kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,76 +114,94 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5711805680262846915=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 10/08/2026 16:59, Mattijs Korpershoek wrote:
+>>> +  power-domain-names:
+>>> +    items:
+>>> +      - const: transfer
+>>> +      - const: core
+>>
+>> Here and in your other binding you call these 'transfer' and 'core' but
+>> all other bindings call them 'power' and 'perf'. Why this difference?
+> 
+> Thanks for the question. I had to do some digging because I did not know
+> the answer to this.
+> 
+> Per my understanding, the SCMI firmware (in my case, gearvm) exposes
+> multiple protocols identified by a protocol_id.
+> 
+> For example, power domains have protocol_id=0x11 and and performance
+> domain have protocol_id=0x13. This is defined in ARM's den0056 spec:
+> https://support.arm.com/documentation/den0056/f/
+> 
+> Each USB phy has 2 distinct power domains.
+> This can be observed at runtime from linux via:
+> 
+> /sys/kernel/debug/pm_genpd # grep 'scmi-power-usb0.*phy.*' pm_genpd_summary
+> scmi-power-usb0-ss-phy-pm       off-0                           0
+> scmi-power-usb0-ss-phy-rpm      off-0                           0
+> scmi-power-usb0-hs-phy-pm       off-0                           0
+> scmi-power-usb0-hs-phy-rpm      off-0                           0
 
---===============5711805680262846915==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="l56ppkyuc6yjydul"
-Content-Disposition: inline
-
-
---l56ppkyuc6yjydul
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH 00/25] ARM: rockchip: Add peripheral support for RV1106
-MIME-Version: 1.0
-
-On Mon, Aug 10, 2026 at 11:35:48AM -0700, Jakub Kicinski wrote:
-> On Mon, 10 Aug 2026 15:10:51 +0300 Vladislav Leonov wrote:
-> > Basic support for the Rockchip RV1106/RV1103 SoCs currently under revie=
-w.
-> > This series builds on top of that and enables the peripherals needed to
-> > bring up a board beyond a serial console:
->=20
-> Don't expect maintainers to dig out patches for their subsystems
-> from a big series. This is not how upstream development works.
-
-I see this from time to time and I personally think it's fine to have
-these patches together. Also the only the patch that affects my
-subsystem was Cc:d to me which is how I like it (but I think opinions
-differ on that one, too).
-
-`b4 am -P _` is great!
-
-> Repost 4+5 as a separate series to networking..
-
-=2E.ooOO(It worked! :-)
-
-Best regards
-Uwe
-
---l56ppkyuc6yjydul
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEP4GsaTp6HlmJrf7Tj4D7WH0S/k4FAmp6tnIACgkQj4D7WH0S
-/k4zEQf+MYRctJ734gymTU2g5TLMo295bcq0j0eEePOAdI6qDQPd95D0hAtgUEkt
-4cke2U6VUYvUyjrFyYBRIGUYGXlEBi8gWY+OEGO3fIZxlGHuQx78Dc6DP7G1Fwft
-Ss7cDBRXPd6Rz4yUkuh8gv1ajvzZbP93qgNy+PYkPVurLQoBKMEckIJ62+Beltca
-0+MG5Pptj/qnZAlIefzdk51PPWtMMzIUTP5PmOCIfE5HlxTcfLWKGiS01H0OIip6
-q4Mj5mEEySKrAaGz9TBfGv0T1AJA6/Dbzqn8X9BKcuOQ4C0VxJ8T1nFhQzEBtCqw
-f6yJy4qiT12FVPcrMFlEBIfbUoLrEg==
-=aKZl
------END PGP SIGNATURE-----
-
---l56ppkyuc6yjydul--
+What about perf domains?
 
 
---===============5711805680262846915==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> 
+> In the case of the other bindings - for example i2c - there is only one
+> power domain (0x11) and one perf domain (protocol_id 0x13):
+> 
+> /sys/kernel/debug/pm_genpd # grep i2c0 pm_genpd_summary
+> scmi-perf-i2c0_7                on                              0
+> scmi-power-i2c0                 off-0                           0
+> 
+> I hope that explains the naming difference. Please let me know if this
+> is still unclear.
+> 
+>> What are these domains responsible for?
+> 
+> If we take the example of the high-speed (hs) phy, we can see that on
+> the firmware side, the only difference is the -pm or -rpm suffix.
+> When Linux requests scmi-power-usb0-hs-phy-pm (mapped to 'core' in the
+> bindings), the SCMI firmware (gearvm) will interact with the reset line,
+> the clks and the regulator.
+> When requesting scmi-power-usb0-hs-phy-rpms (mapped to 'transfer' in the
+> bindings), the SCMI firmware will only interact with the USB clocks
+> (reset and regulators remain unchanged).
+> 
+>>
+>> Commit msg is pretty useless here - repeats the diff. I can read the
+>> diff but I still do not understand why such naming.
+> 
+> 'core' controls reset, clocks and regulators.
+> 'transfer' only controls clocks. Putting 'transfer' to 'off' is
+> interesting in case of runtime suspend/resume as it cuts the data
+> transfer (by disabling usb clock)
+
+Either the binding or the commit msg should be clear that these are
+power domains responsible only for power on SA platform, not for perf
+(so a power power domain... ehh :/)
+
+> 
+> Is it more clear that way?
+> 
+>>
+>> And why core is not the first one? It clearly feels like the power
+>> domain thus the main one.
+> 
+> The order is based on how it's defined in the SCMI firmware. It's not a
+
+
+Then core goes before transfer.
+
+
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============5711805680262846915==--
-
