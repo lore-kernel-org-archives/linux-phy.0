@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AAE70C5B56A
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Aug 2026 17:03:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6ECAC5B56A
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Aug 2026 17:03:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=efX+NVAgO4zWyzkzw6c1hXHS5hgFV1Q6CibzMZCGTP8=; b=o+SMpXIUtfyKsz
-	N4MzCLiZiSM2DQWhTiJZ1VsHAhe52wIYGnZiqX6uagYTxPFFlFGunC3pE5w/4IOHFJD9OPyKj2/wC
-	KWg1r+IXXf3onwiO0NtS2NtKTcE8JpeiQe85M2GAYIiDQw+/4cfcp7j+u5N7RRiYBzV6GNDjen84J
-	u1TRXZ6H5g0p81Zypu0w2bTHxrWSb+7dUWZcjzn5tieVCs4SAPm0vdd1j/KHc8LHPIjegsk8pRkl7
-	2Ih0PB70n2+Ca62OMev9aBzDS0e5nJmijBzYz+IdYtWfDMlcsRgJgsaxzUTsKib0GqbfD/FMRn1f+
-	ZbPSfblZ+Jq7sFeMjcjA==;
+	List-Owner; bh=Afnj79DhswReD/VY0K9q1BYMfIjjDKEChLaiPmrLgso=; b=hMWZTfm6KTVmha
+	SuaLgBbcvOy2TSXytHF7A4umeU0MX/Am+FdzFkPhYGilvmaAle2MgWt1kZS52tl61SQZ7SddkI7rh
+	Qs4N3kkdgOYEtMd06RNcJA2hAf9HDJ5hTNEfnN9mToPqeM2GSqUws8x+l4fi8UctD9cGjV/idHQio
+	k04ZC/Gz7rdZyJrdBdigXo6g80SXYTqMhHP2fAhjd5utqORA0dFltwLfLHEbPE58b+mUlALPmn9tF
+	HBSBvSE3Sn00kgekCLJhOrOFBBoeSE8SU7C/rN+xud3Ig/bV5IEjz74i6t2UH4IK6ab3l3d7LIZ0P
+	VzPWtGOsC65lwiy7uM5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtpsr-0000000EaKf-13Fi;
-	Tue, 11 Aug 2026 17:03:25 +0000
+	id 1wtpsv-0000000EaMK-1FSr;
+	Tue, 11 Aug 2026 17:03:29 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtpsq-0000000EaKP-1PLz
+	id 1wtpsu-0000000EaMA-399F
 	for linux-phy@lists.infradead.org;
-	Tue, 11 Aug 2026 17:03:24 +0000
+	Tue, 11 Aug 2026 17:03:28 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id E625C43744;
-	Tue, 11 Aug 2026 17:03:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EA43D1F00A3A;
-	Tue, 11 Aug 2026 17:03:18 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 8304F43BE0;
+	Tue, 11 Aug 2026 17:03:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 78D9C1F000E9;
+	Tue, 11 Aug 2026 17:03:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786467803;
-	bh=R7+SYlMBF01F6LVt2QHUIxWBhZCgFZwi08xjiut6eoo=;
+	s=k20260515; t=1786467808;
+	bh=B5B+nywXoLAyizGyLTqjlYdjdl/5C/N0v2eS0w9gbkM=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=XV7P5E05kYPlhke/8MmWCKe4LvpoCbUHhX9zWNiK9VPiSpUhjtYNSjUlBlmHdvuHT
-	 uFlgw3MNA+bFgsNn5kPkeqaOehXBDGCmdkPS9C92tTpmaeJYd+LsdXKGAQlEPNKPoE
-	 zZ+1RvsDJ1zte5oy2g7EvobLXLEmSaXnARVfu557n5zLoZ0q3jp3m6G7WOujOqpMqf
-	 7XrKrZieLTEaP8ksXXwk4vTzDksWc3ij12KFYaxHv/YI724WZbS5B5FrthyZQMFZB6
-	 ycLI2e0Rdk9gyEEZIA6NAl71XCGD1l2lRpZ759iPgwiOcJche/XW15E5jF9C3shkR0
-	 jP1V0HcrLyRGg==
+	b=MA9BVoM7SANZVIabB5nmLtRzOkrpEtAwM2fnSUMlbMaRU1Fsdn8w7bkDGIGsQ78Wh
+	 77lbwX4VXJJe4KnqIHr0jWR6P5sFxGlxVgFJkrcw9+KELcJFdZrYztQxsCKgNojE+u
+	 vVvFJeoq/BpMDpon10cWfqsU7Wx6H27AdnGDx1Vr220dmixLOSLDLYczRYw41dThix
+	 jzcNGlI0D+BuG65S31Y2kaPXdE9j/KkhkQcePgOfBPP+n86quBKCaUYkNlGWO362nd
+	 EszzaL+EZV0+VQbL9Cn9x6kN+togdJpXu2l6yAmOMAhtPzYUSXhR1sBokQZSSKUuPA
+	 wlajl5y4GLjmA==
 From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>, 
- Philipp Zabel <p.zabel@pengutronix.de>, 
- Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konradybcio@kernel.org>, 
- Qiang Yu <qiang.yu@oss.qualcomm.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20260730-glymur_linkmode_0731-v8-0-a455265ad8bf@oss.qualcomm.com>
-References: <20260730-glymur_linkmode_0731-v8-0-a455265ad8bf@oss.qualcomm.com>
-Subject: Re: (subset) [PATCH v8 0/6] Add QMP PCIe Multi-PHY support
-Message-Id: <178646779847.1081354.9443968795839438752.b4-ty@kernel.org>
-Date: Tue, 11 Aug 2026 22:33:18 +0530
+To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Geert Uytterhoeven <geert+renesas@glider.be>, 
+ Magnus Damm <magnus.damm@gmail.com>, 
+ Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>, 
+ Prabhakar <prabhakar.csengg@gmail.com>
+Cc: linux-renesas-soc@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, 
+ Prabhakar <prabhakar.csengg+renesas@gmail.com>, 
+ Biju Das <biju.das.jz@bp.renesas.com>, 
+ Fabrizio Castro <fabrizio.castro.jz@renesas.com>, 
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <20260702125855.3157253-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+References: <20260702125855.3157253-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: Re: [PATCH] phy: renesas: rcar-gen3-usb2: Ignore missing VBUS
+ regulator
+Message-Id: <178646780408.1081354.3801368626858811843.b4-ty@kernel.org>
+Date: Tue, 11 Aug 2026 22:33:24 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
@@ -80,25 +80,22 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 30 Jul 2026 22:13:49 -0700, Qiang Yu wrote:
-> Some QMP PCIe PHY hardware blocks can be configured through a link-mode
-> register into different link topologies, such as a single wide link, or
-> multiple independent narrower links (e.g. x8 or x4+x4 mode on the Glymur
-> PCIe3 PHY).
+On Thu, 02 Jul 2026 13:58:55 +0100, Prabhakar wrote:
+> Commit b6d7dd157763 ("phy: renesas: rcar-gen3-usb2: Add regulator for
+> OTG VBUS control") introduced support for controlling OTG VBUS through
+> the regulator framework.
 > 
-> Earlier revisions tried to extend the existing single-instance
-> phy-qcom-qmp-pcie.c driver to cover this hardware. That added a large
-> amount of conditional, multi-PHY logic to a driver whose data model
-> assumes one PHY per node.
+> As part of this change, the driver started requesting an exclusive "vbus"
+> regulator for OTG-capable PHYs with no_adp_ctrl set. The lookup failure
+> was propagated unconditionally, causing probe to fail on platforms where
+> no VBUS regulator is described.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/6] dt-bindings: phy: qcom: Add Glymur QMP PCIe multiple link-mode PHY
-      commit: 5619458024925b3a488f9046b3ab26647582b99f
-[2/6] phy: qcom: qmp-pcie: Add QMP PCIe Multi-PHY driver
-      commit: 1781be3c8a5ddf40f5f9e7b9dc32cc577d491062
+[1/1] phy: renesas: rcar-gen3-usb2: Ignore missing VBUS regulator
+      commit: 9ea8d49c6cc6e217f5f5818369f659dc25bf89bf
 
 Best regards,
 -- 
