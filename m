@@ -4,69 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D77E2C5AC67
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Aug 2026 09:59:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB655C5CFC1
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Aug 2026 10:33:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=6aU+yotOm+uhecsUrASHjM/4WFLjLQWmhWg+mK3NsS4=; b=K5MWD9h1PDpkBIeC8QMuOQquW3
-	GD9BGqEzGVjrCk9cOP1IJcGhURlkUWpaeyHEC5q/MCs8sJlEeor2+q//bSEaRXf1jkgNyoxEKWCVk
-	dpikCSgedNjm+A+c520vTJjaZlgl4WcS6i6akiafH/5GGO0CjQ3gP1LR4vO0DsMV97sojuX39lzV0
-	vvvAJMyc4QK3lIULu6Ub9HjH14lWmjDzpbmp0ZWFJ0ayZyluUzTNKtR1qArz3j/WIwnN6vR//Lozo
-	xA+lDdJxuukL7BtULzwzSTS0A8Ich7zEmN+nlGMgHJCckGIbDzo6XRD7+vczNrWHrffhrdVY0QiYl
-	0ZxVuj/Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Rf0JV75Hy21iOCjWL3AZ+SVU2Zdf2A126BmRsKO5q0E=; b=PhOBcHfUa2BjKW
+	V/Kb9/uiSi2RhfE2Ihna+1r8sdIlP+GTLZWj38tI9AAGNjQkA+LXr4jClRifKW0+F084eL1ZO2atY
+	ibu62D/OyLmZH02q6/Vb8dM+IwTf71P6WB2GFE1b1Q2DHrHdrty+h6Qzkl2kNl2d3/JKSITTIxxbQ
+	z9X8yDPr2CAnTbwgXegsOKz7acpFbuIeji12a6fu4cEXFslRZ1OTzWSf661e8hqGsIJ54H4OhlGF7
+	f612S8C884lQ31sJGP2FKasFYmCcH6HPv1uzeJdfq3L8wugGLHd/9GwAvqQ1+cFEaDTj8iAMMZchz
+	yZlvR7iDXts1bzT3sj4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtjGJ-0000000DnI4-1dUY;
-	Tue, 11 Aug 2026 09:59:11 +0000
-Received: from sender4-op-o11.zoho.com ([136.143.188.11])
+	id 1wtjnl-0000000DrKg-1SRy;
+	Tue, 11 Aug 2026 10:33:45 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtjGG-0000000DnHT-31zH;
-	Tue, 11 Aug 2026 09:59:10 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1786442340; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=mozdD34E4HH/pFm4wiHNJ87c+Ef+T33FbHRHh6+1lyARiPBEAfC6hFExK97HJnMHzuHn6Y4toAgcpdmGW2nDjl+xcyJ4YKptmktfRMFSaEYqaAiccykLeCvWnmMR9XmPaLf5c7HUcLypv5DRdgapqXhpEs74cNpGlhThaedlgDE=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1786442339; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=vxEvYYyBezC75jJQ3RoOdEPHjpblgm6x4Qw72BfL7go=; 
-	b=dRYVxinFWS4Cyz6dnjnWghMDEljDMW2CmV8rSDFFbbgGSKsOQGDMYsJVUT/NkkhRz1nZCw70JSSil6vQ5YYWbbU2XmnQYt7Ok255hobSUo7s2sUEbccixbgB9qZPSPR7gDekWfwHJS09EHAYv7pQJavL6OpAE0+QGw/ILADr0eM=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
-	dmarc=pass header.from=<sebastian.reichel@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1786442339;
-	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
-	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
-	bh=vxEvYYyBezC75jJQ3RoOdEPHjpblgm6x4Qw72BfL7go=;
-	b=Ay4ArX61ikZruc/9fj3NHKqtev6eLxj+Xzb6ZJQNYC3pn7icSlhGEbuHwbU8DEkc
-	c5zHKCSWF6qM8EsJ9DQM7Mr1qjKd0dhrfPvOvT51vZnEs2nOpvVrvf5jAhcPUaUlYzu
-	j3cbKzB+fvvsDJuC106wLBWm+8j5nXzsBbu+s6JI=
-Received: by mx.zohomail.com with SMTPS id 1786442337024779.1505974458477;
-	Tue, 11 Aug 2026 02:58:57 -0700 (PDT)
-Received: by venus (Postfix, from userid 1000)
-	id 5B52B18025E; Tue, 11 Aug 2026 11:58:53 +0200 (CEST)
-Date: Tue, 11 Aug 2026 11:58:53 +0200
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: jason98166@gmail.com
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Heiko Stuebner <heiko@sntech.de>, linux-phy@lists.infradead.org, 
-	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	stable@vger.kernel.org
-Subject: Re: [PATCH] phy: rockchip-samsung-dcphy: fix out-of-range
- max_register
-Message-ID: <anryDBa6t1k_VhY3@venus>
-References: <20260811-dcphy-maxreg-v1-v1-1-aa63f6a63a64@gmail.com>
+	id 1wtjnk-0000000DrKV-3OEp
+	for linux-phy@lists.infradead.org;
+	Tue, 11 Aug 2026 10:33:44 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 343FF40B69;
+	Tue, 11 Aug 2026 10:33:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 830E91F000E9;
+	Tue, 11 Aug 2026 10:33:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1786444424;
+	bh=bTsX1N6QHwCuJeFFe3YjLPIoFhtDQnpbmhVY27s3hsE=;
+	h=From:To:Cc:Subject:In-Reply-To:References:Date;
+	b=QDWLU/xtCMtBsLDpa7JdYppM374StpI9vCcLBbjQ/c/vI+uy2pXTzQR6jFcaQVrlD
+	 MnX1ML4klel13J7YI0ZzKkXsRoWlcKndUtTttWH8/RsZ0tClwwpMvSJBQRG251NCwb
+	 pwfk/Hlhzsmvx4YcdQMAdiUk/+mZ7m8O1x4zUNMLcbuYq7CuL0/o3oF3cNnmhSnjuH
+	 fVzcZrDP8hniJA7qzdLtmycS08ZWsxHZahH1ta7v0e6G8ujGjhpbAGyosFE2Dy/f+r
+	 YlSevHhUpc5060KIpyXVT8Co6HW/9e6qCkiL97s/i1mo8QGR7ikHQozvI/WmtVWW4e
+	 1cdZESnLgstRg==
+From: Mattijs Korpershoek <mkorpershoek@kernel.org>
+To: Krzysztof Kozlowski <krzk@kernel.org>, Mattijs Korpershoek
+ <mkorpershoek@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, Krzysztof
+ Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: Add sa8255p high-speed USB PHY
+In-Reply-To: <162bfbf1-f8da-4083-96e9-2557688b0072@kernel.org>
+References: <20260730-phy-qcom-snps-femto-v2-8255-v1-0-8b8bf5105a68@kernel.org>
+ <20260730-phy-qcom-snps-femto-v2-8255-v1-1-8b8bf5105a68@kernel.org>
+ <20260804-active-sensible-reindeer-f459a3@quoll>
+ <87a4qu2f98.fsf@kernel.org>
+ <162bfbf1-f8da-4083-96e9-2557688b0072@kernel.org>
+Date: Tue, 11 Aug 2026 12:33:41 +0200
+Message-ID: <877blx2bga.fsf@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20260811-dcphy-maxreg-v1-v1-1-aa63f6a63a64@gmail.com>
-X-Zoho-Virus-Status: 1
-X-Zoho-AV-Stamp: zmail-av-0.2.10.1.5.2/286.434.97
-X-ZohoMailClient: External
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260811_025908_795547_C3C6C91E 
-X-CRM114-Status: GOOD (  24.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,129 +72,151 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5905739266998329339=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============5905739266998329339==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="hezfusjcjm6tq3wn"
-Content-Disposition: inline
+On Tue, Aug 11, 2026 at 08:18, Krzysztof Kozlowski <krzk@kernel.org> wrote:
 
+> On 10/08/2026 16:59, Mattijs Korpershoek wrote:
+>>>> +  power-domain-names:
+>>>> +    items:
+>>>> +      - const: transfer
+>>>> +      - const: core
+>>>
+>>> Here and in your other binding you call these 'transfer' and 'core' but
+>>> all other bindings call them 'power' and 'perf'. Why this difference?
+>> 
+>> Thanks for the question. I had to do some digging because I did not know
+>> the answer to this.
+>> 
+>> Per my understanding, the SCMI firmware (in my case, gearvm) exposes
+>> multiple protocols identified by a protocol_id.
+>> 
+>> For example, power domains have protocol_id=0x11 and and performance
+>> domain have protocol_id=0x13. This is defined in ARM's den0056 spec:
+>> https://support.arm.com/documentation/den0056/f/
+>> 
+>> Each USB phy has 2 distinct power domains.
+>> This can be observed at runtime from linux via:
+>> 
+>> /sys/kernel/debug/pm_genpd # grep 'scmi-power-usb0.*phy.*' pm_genpd_summary
+>> scmi-power-usb0-ss-phy-pm       off-0                           0
+>> scmi-power-usb0-ss-phy-rpm      off-0                           0
+>> scmi-power-usb0-hs-phy-pm       off-0                           0
+>> scmi-power-usb0-hs-phy-rpm      off-0                           0
+>
+> What about perf domains?
 
---hezfusjcjm6tq3wn
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH] phy: rockchip-samsung-dcphy: fix out-of-range
- max_register
-MIME-Version: 1.0
+The perf domains for USB are also exposed by the SCMI firmware and are
+also registered with genpd:
 
-Hi,
+/sys/kernel/debug/pm_genpd # grep usb0 pm_genpd_summary
+scmi-perf-usb0-ss-phy_86        on                              0
+scmi-perf-usb0-hs-phy_85        on                              0
+scmi-power-usb0-ss-phy-pm       off-0                           0
+scmi-power-usb0-ss-phy-rpm      off-0                           0
+scmi-power-usb0-hs-phy-pm       off-0                           0
+scmi-power-usb0-hs-phy-rpm      off-0                           0
+scmi-perf-usb0_0                on                              0
+scmi-power-usb0-pm              off-0                           0
+scmi-power-usb0-rpm             off-0                           0
 
-On Tue, Aug 11, 2026 at 04:10:22PM +0800, Jason Yang via B4 Relay wrote:
-> From: Jason Yang <jason98166@gmail.com>
->=20
-> The PHY register block is 64KB, so with a register stride of 4 the
-> last accessible register sits at offset 0xfffc. max_register names
-> 0x10000, one register past the end of the mapping: dumping the
-> registers through the regmap debugfs interface reads beyond the
-> ioremapped region and oopses on the unmapped page. The oops fires
-> with the regmap lock held, so later PHY operations deadlock.
->=20
-> Fixes: b2a1a2ae7818 ("phy: rockchip: Add Samsung MIPI D-/C-PHY driver")
-> Cc: stable@vger.kernel.org
-> Signed-off-by: Jason Yang <jason98166@gmail.com>
-> Assisted-by: Claude:claude-opus-5
-> ---
-> Observed on an RK3588 board (v7.2-rc4): reading the debugfs
-> registers file for this PHY faults deterministically at offset
-> 0x10000 (translation fault in regmap_mmio_read32le), and every
-> later PHY operation then blocks on the leaked lock. With
-> max_register corrected the dump walks 0x0000-0xfffc and completes,
-> and the PHY keeps working afterwards.
->=20
-> Growing the mapping is not an option: the TRM address map lists
-> each MIPI CD PHY as a 64KB block and the second PHY starts at the
-> next 64KB boundary, so offset 0x10000 of one PHY is register zero
-> of the other.
->=20
-> The same mistake was fixed the same way in c7d436a6c1a2
-> ("dmaengine: xilinx: xdma: Fix regmap max_register").
->=20
-> This is independent of the D-PHY receiver series for the same
-> driver and applies in either order.
-> ---
+They are marked as "on" here GENPD_FLAG_ALWAYS_ON is set in
+scmi_perf_domain.c
 
-Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+If we query the SCMI firmware using raw commands, we can get some more
+information about the perf domain:
 
-Greetings,
+# Get the OPP table for domain 0:
+/sys/kernel/debug/scmi/12 # printf '\x04\x4c\x18\x00\x00\x00\x00\x00\x00\x00\x00\x00' > /sys/kernel/debug/scmi/12/raw/message
+/sys/kernel/debug/scmi/12 # xxd /sys/kernel/debug/scmi/12/raw/message
+00000000: 044c 1800 0000 0000 0800 0000 0a00 0000  .L..............
+00000010: 0000 0000 0000 0000 0b00 0000 0000 0000  ................
+00000020: 0000 0000 0c00 0000 0000 0000 0000 0000  ................
+00000030: 0d00 0000 0000 0000 0000 0000 0e00 0000  ................
+00000040: 0000 0000 0000 0000 0f00 0000 0000 0000  ................
+00000050: 0000 0000 1000 0000 0000 0000 0000 0000  ................
+00000060: 1100 0000 0000 0000 0000 0000            ............
 
--- Sebastian
+This gives us 8 opps, from 0x0a to 0x11, which look like opaque values.
 
->  drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->=20
-> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c b/drivers/=
-phy/rockchip/phy-rockchip-samsung-dcphy.c
-> index cbd780556da8..18f5f582d1d7 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
-> @@ -1526,7 +1526,7 @@ static const struct regmap_config samsung_mipi_dcph=
-y_regmap_config =3D {
->  	.reg_bits =3D 32,
->  	.val_bits =3D 32,
->  	.reg_stride =3D 4,
-> -	.max_register =3D 0x10000,
-> +	.max_register =3D 0xfffc,
->  };
-> =20
->  static struct phy *samsung_mipi_dcphy_xlate(struct device *dev,
->=20
-> ---
-> base-commit: 1590cf0329716306e948a8fc29f1d3ee87d3989f
-> change-id: 20260811-dcphy-maxreg-v1-74a99944cf52
->=20
+I did not need to initialize the perf domains (in the driver) in order
+to get USB working on my Ride4 (SA8775P) board.
+Since the SCMI firmware exposes the perf domains, should I describe them
+in the bindings, as optional?
+
+>
+>
+>> 
+>> In the case of the other bindings - for example i2c - there is only one
+>> power domain (0x11) and one perf domain (protocol_id 0x13):
+>> 
+>> /sys/kernel/debug/pm_genpd # grep i2c0 pm_genpd_summary
+>> scmi-perf-i2c0_7                on                              0
+>> scmi-power-i2c0                 off-0                           0
+>> 
+>> I hope that explains the naming difference. Please let me know if this
+>> is still unclear.
+>> 
+>>> What are these domains responsible for?
+>> 
+>> If we take the example of the high-speed (hs) phy, we can see that on
+>> the firmware side, the only difference is the -pm or -rpm suffix.
+>> When Linux requests scmi-power-usb0-hs-phy-pm (mapped to 'core' in the
+>> bindings), the SCMI firmware (gearvm) will interact with the reset line,
+>> the clks and the regulator.
+>> When requesting scmi-power-usb0-hs-phy-rpms (mapped to 'transfer' in the
+>> bindings), the SCMI firmware will only interact with the USB clocks
+>> (reset and regulators remain unchanged).
+>> 
+>>>
+>>> Commit msg is pretty useless here - repeats the diff. I can read the
+>>> diff but I still do not understand why such naming.
+>> 
+>> 'core' controls reset, clocks and regulators.
+>> 'transfer' only controls clocks. Putting 'transfer' to 'off' is
+>> interesting in case of runtime suspend/resume as it cuts the data
+>> transfer (by disabling usb clock)
+>
+> Either the binding or the commit msg should be clear that these are
+> power domains responsible only for power on SA platform, not for perf
+> (so a power power domain... ehh :/)
+
+Yeah, the terminology is a bit confusing. In the SCMI spec, we have: *
+"Power domain management protocol" for protocol_id=0x11 * "Performance
+domain management protocol" for protocol_id=0x13
+
+Since linux models both via genpd (drivers/pmdomain) we end up with a
+"power power domain" and a "perf power domain".
+
+I will rephrase the commit msg in the next version.
+
+>
+>> 
+>> Is it more clear that way?
+>> 
+>>>
+>>> And why core is not the first one? It clearly feels like the power
+>>> domain thus the main one.
+>> 
+>> The order is based on how it's defined in the SCMI firmware. It's not a
+>
+>
+> Then core goes before transfer.
+
+Ok, will change in v2 and update the other series as well.
+
+Thanks again for the reviews.
+
+>
+>
 > Best regards,
-> --=20
-> Jason Yang <jason98166@gmail.com>
->=20
->=20
-
---hezfusjcjm6tq3wn
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmp68lYACgkQ2O7X88g7
-+poK9g/+Nqc7myb/yuNbrNPi5imh9k6+yt7OLjibqi6W+/7Q+E00IAwOkcqqi/CQ
-Ar2C9sq/SbG3++kYmuLFSeTuFNdrMJnFBTV7aRSLv/Q2+ZDuOwcKpEeHXZvajLVZ
-FPYqXwJo3bK5gzRmBmEZRZ4vLETayDoBj3NCcQ7vDj3EQYi1JealpGoWHqa97sPb
-zPW/HGPprwR7RNLde/oWaz4dlW2oGNA0eOD3W6/KN6kwfuwXkTNZLWU1ITYVCKtt
-NzJY+zJKBAvKuMuGODfST0q4yY3+zY5YDHmLGO7kaDzowEVMg3YRhD1o1DRiicuh
-WafZFqbnbA0roPZyLHoAsJoTK8M/mjzhjcBmTpFC2X4MUeKs7thtb7TIMegRaR9A
-2NzBDw+S/Yt+pVc15FgrZ5bB5JvEGeI4FsNpQglnrgvsINcmKw/xD+zx8QXE2fJU
-Kq/iBRw4hDvINts9hXIu8c5Xi+VwIgB4GC2dM7ml2Su5puqHHfXSQx4BamFYNoiq
-ojRmpJjrCI598iHBR4CfTbFRGKJbgQEML/dmSGtuGtFuu5dSlxqP+xvW4kA4Aibi
-iTl7sV6KA/+zHYRFtLoWzyapkBzueOZXG73d+xUpvzjmKCSUMF0cBh4XQdNuBuOX
-utzPltFrDO9mrzRemCRTLnYsdtxW5/Q8A0YGSBfOSHJAE+m5Yso=
-=54wT
------END PGP SIGNATURE-----
-
---hezfusjcjm6tq3wn--
-
-
---===============5905739266998329339==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> Krzysztof
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============5905739266998329339==--
-
