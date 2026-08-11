@@ -4,56 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D73AC5CFCF
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Aug 2026 16:44:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AAE70C5B56A
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Aug 2026 17:03:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ANaeQH9AsemplDh7f6BZ0CXnKcj4M7tSbweZVYku6FY=; b=ybXP8rCIhJvgz+
-	JvrEPio/Nx3Yp1dlcmkG3Z438vRnkPgBzMcNOKXGyaUUfFRxxBu/QV9iuHo5Na/MdLDc4fNt39Mj4
-	KVta2prtrb4kn1YXaw6NW7WIbmfNruotjnyASpAGKJeUCpFXlqXK+YzpROQLgVuUsTwsMR4dl/OUm
-	ipzO6BjUBDZ0HrTbqpK2B0LBV+t6RKN9m+kZglXe/ZlF9A1CeqmpJep8e4MM+0KB/YRT2sq5w/Z/J
-	orXiKbXXb5ufCQCl7rMjEowFZvJwmPrGIGnhVF49MTkQEM4ajbhkUxsuM/QVdsoIbk4Ts8WMhVH9n
-	ErFIkNs/mRO0iuenyp4w==;
+	List-Owner; bh=efX+NVAgO4zWyzkzw6c1hXHS5hgFV1Q6CibzMZCGTP8=; b=o+SMpXIUtfyKsz
+	N4MzCLiZiSM2DQWhTiJZ1VsHAhe52wIYGnZiqX6uagYTxPFFlFGunC3pE5w/4IOHFJD9OPyKj2/wC
+	KWg1r+IXXf3onwiO0NtS2NtKTcE8JpeiQe85M2GAYIiDQw+/4cfcp7j+u5N7RRiYBzV6GNDjen84J
+	u1TRXZ6H5g0p81Zypu0w2bTHxrWSb+7dUWZcjzn5tieVCs4SAPm0vdd1j/KHc8LHPIjegsk8pRkl7
+	2Ih0PB70n2+Ca62OMev9aBzDS0e5nJmijBzYz+IdYtWfDMlcsRgJgsaxzUTsKib0GqbfD/FMRn1f+
+	ZbPSfblZ+Jq7sFeMjcjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtpaj-0000000EXXM-02ds;
-	Tue, 11 Aug 2026 16:44:41 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wtpsr-0000000EaKf-13Fi;
+	Tue, 11 Aug 2026 17:03:25 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtpag-0000000EXWg-3kJL
+	id 1wtpsq-0000000EaKP-1PLz
 	for linux-phy@lists.infradead.org;
-	Tue, 11 Aug 2026 16:44:38 +0000
+	Tue, 11 Aug 2026 17:03:24 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 57E04600AE;
-	Tue, 11 Aug 2026 16:44:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2A7101F00A3D;
-	Tue, 11 Aug 2026 16:44:36 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id E625C43744;
+	Tue, 11 Aug 2026 17:03:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EA43D1F00A3A;
+	Tue, 11 Aug 2026 17:03:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786466678;
-	bh=AtfBFpLGShPZWATDKrUP0e0nAycm4kCCFnpD/uNXxBo=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=Md8r6Qw09HWoz6po61gwelyjUhG3+t+RzhCnnl6Y1rUkQzZBKGXxB7td5AP7zBXiR
-	 5O+mwMG6NOQoQCtO7/r8d73G+gRPq/w1/s/5rv2FoU/QPst0Km7MTGEAwKwc5mTNGp
-	 mabNBDSl7nxTSdZDaAcfBKVSBAwdBslrQ9VkUu6JhwQ7GC3ADyo4Tqz4YCAGO9eftW
-	 4Od+g7hGA06xi4HgNObkWR/6FsvulGZJ+PpG01pOBusxAj/AquE7Z2fB00D4cJaRhe
-	 BehfVVPjxQiOJlHhC2sLWjoF3OHQd+OCZ3kVgyuXh7kXnq6G0fxiY90pDjLLOinA7C
-	 SoEFqICNcCzWQ==
-Date: Tue, 11 Aug 2026 22:14:33 +0530
+	s=k20260515; t=1786467803;
+	bh=R7+SYlMBF01F6LVt2QHUIxWBhZCgFZwi08xjiut6eoo=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date;
+	b=XV7P5E05kYPlhke/8MmWCKe4LvpoCbUHhX9zWNiK9VPiSpUhjtYNSjUlBlmHdvuHT
+	 uFlgw3MNA+bFgsNn5kPkeqaOehXBDGCmdkPS9C92tTpmaeJYd+LsdXKGAQlEPNKPoE
+	 zZ+1RvsDJ1zte5oy2g7EvobLXLEmSaXnARVfu557n5zLoZ0q3jp3m6G7WOujOqpMqf
+	 7XrKrZieLTEaP8ksXXwk4vTzDksWc3ij12KFYaxHv/YI724WZbS5B5FrthyZQMFZB6
+	 ycLI2e0Rdk9gyEEZIA6NAl71XCGD1l2lRpZ759iPgwiOcJche/XW15E5jF9C3shkR0
+	 jP1V0HcrLyRGg==
 From: Vinod Koul <vkoul@kernel.org>
-To: Manivannan Sadhasivam <mani@kernel.org>
-Cc: neil.armstrong@linaro.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] MAINTAINERS: Add Manivannan Sadhasivam as the Reviewer
- for Generic PHY Framework
-Message-ID: <antRcTHySshDaZ5m@vaman>
-References: <20260811143417.336664-1-mani@kernel.org>
+To: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konradybcio@kernel.org>, 
+ Qiang Yu <qiang.yu@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <20260730-glymur_linkmode_0731-v8-0-a455265ad8bf@oss.qualcomm.com>
+References: <20260730-glymur_linkmode_0731-v8-0-a455265ad8bf@oss.qualcomm.com>
+Subject: Re: (subset) [PATCH v8 0/6] Add QMP PCIe Multi-PHY support
+Message-Id: <178646779847.1081354.9443968795839438752.b4-ty@kernel.org>
+Date: Tue, 11 Aug 2026 22:33:18 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260811143417.336664-1-mani@kernel.org>
+X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,35 +79,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11-08-26, 16:34, Manivannan Sadhasivam wrote:
-> I'm volunteering to review the PHY patches. Hence, add myself as the
-> Reviewer.
 
-Thank you Mani
-
+On Thu, 30 Jul 2026 22:13:49 -0700, Qiang Yu wrote:
+> Some QMP PCIe PHY hardware blocks can be configured through a link-mode
+> register into different link topologies, such as a single wide link, or
+> multiple independent narrower links (e.g. x8 or x4+x4 mode on the Glymur
+> PCIe3 PHY).
 > 
-> Signed-off-by: Manivannan Sadhasivam <mani@kernel.org>
-> ---
->  MAINTAINERS | 1 +
->  1 file changed, 1 insertion(+)
+> Earlier revisions tried to extend the existing single-instance
+> phy-qcom-qmp-pcie.c driver to cover this hardware. That added a large
+> amount of conditional, multi-PHY logic to a driver whose data model
+> assumes one PHY per node.
 > 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 15011f5752a9..ef8b09df37db 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -10920,6 +10920,7 @@ F:	include/uapi/asm-generic/
->  GENERIC PHY FRAMEWORK
->  M:	Vinod Koul <vkoul@kernel.org>
->  R:	Neil Armstrong <neil.armstrong@linaro.org>
-> +R:	Manivannan Sadhasivam <mani@kernel.org>
->  L:	linux-phy@lists.infradead.org
->  S:	Supported
->  Q:	https://patchwork.kernel.org/project/linux-phy/list/
-> -- 
-> 2.43.0
+> [...]
 
+Applied, thanks!
+
+[1/6] dt-bindings: phy: qcom: Add Glymur QMP PCIe multiple link-mode PHY
+      commit: 5619458024925b3a488f9046b3ab26647582b99f
+[2/6] phy: qcom: qmp-pcie: Add QMP PCIe Multi-PHY driver
+      commit: 1781be3c8a5ddf40f5f9e7b9dc32cc577d491062
+
+Best regards,
 -- 
 ~Vinod
+
+
 
 -- 
 linux-phy mailing list
