@@ -4,64 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28AB0C5B572
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Aug 2026 17:03:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78233C5B572
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Aug 2026 17:03:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VEqPwh//w6mw2KvR1pNnHgrVanNLFrlOt7m1vAm+n2M=; b=P5byBDrW9Jt5Km
-	EDM4uySA/GDEuutnscA0/s9FAuRtM5oM2TWDCFy7CaS2tW/QOuOdg/7hKabvUVdHkPppcBoZgU5dX
-	4F8QhPpLXQu5PExA1drRnJCnoNQhy044wfFeAIbvD/WCo6ZT4ekJZ0gpRuhdn9YiYagu0pzMkx2fF
-	nBEi3kdUh0OIe3PNEnNjH8iuncjRqsPHULw8ChmVYZSENBngI7RzGPj5pmf8LCLyCe/cQwxt+z/G+
-	BQeHukkWxTUqsXWp0sMQfA1oT88HX69wGMIPXXylwAdCB1VXlF72x6iB2aQeSz3PA9uGEyn6MGsXs
-	S7rb/Cw15M7jyO6lMLBA==;
+	List-Owner; bh=jo2dGdD7RdrIG6VelkA4/oRPCNPj/9IjOxCpZnZPNO4=; b=hktt3ACkNYSUjY
+	tjLysqhpesCgedvKoSsZZpQpa/1pBoPpJ80B2M21tf5SetILUQ7JNLOh6EgSMPov4kXn35HnSoM6a
+	CWQTzj6biUb07NWJTKFYg5IuEarRg8UO9eXdtAhqtuvQdKu5+FMLFPOAq6BCrxRrw5LPwZjMw2RPp
+	zxdZjToQvQNaJ4cEutsyYJlWupOB0gG9YPd+kWanFWBlIpS1AS9o40+jcicbLzgLwDYxB6wWlq5Jw
+	4D+cAeLIBy4kBbhD9gc5BsKWm9tdwdlY7h7Hev4hu3pqXszHsBVJVFvgsKzL7QOu2uMJ4zmkSUGfg
+	fc5xGIGmHdqa9rS+wn9w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtptE-0000000EaTy-38bg;
-	Tue, 11 Aug 2026 17:03:48 +0000
+	id 1wtptH-0000000EaVj-08IZ;
+	Tue, 11 Aug 2026 17:03:51 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtptD-0000000EaSy-0LsX
-	for linux-phy@lists.infradead.org;
-	Tue, 11 Aug 2026 17:03:47 +0000
+	id 1wtptE-0000000EaTu-3JAN;
+	Tue, 11 Aug 2026 17:03:48 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id B2569600AF;
+	by tor.source.kernel.org (Postfix) with ESMTP id 3E5D0600C8;
+	Tue, 11 Aug 2026 17:03:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1144F1F000E9;
 	Tue, 11 Aug 2026 17:03:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 03F791F00A3A;
-	Tue, 11 Aug 2026 17:03:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786467824;
-	bh=0BT4ZisNR0PpCyKwJW08nRlJ32F0v3BRiESx6zP347c=;
+	s=k20260515; t=1786467827;
+	bh=cMyTTa5KAjyZtVZZYKXgPBl0VYfKOHY5hZtIr8dRpwY=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=PC4Mo+KqY+4zTzmkQudd3iCkap3WG23VfQuCeYXBLquC3kckEFPT3JRHCFzwaEHib
-	 exdS2jyX4aPTM+ELrupwPy2Ef0xmUK6gQVagTBspchoXgiS00N647zP9BzTEJJodSR
-	 XVVr1zVhrIRI92symD9QC3OsxLnC71kkT2gTzBUEnjWHcVSTlnNhKWAGJn6BLmIiAe
-	 60Ri0wsOIbnBUFpgSULTjxN1q6jHH9AOh+h+icGs7M2V1EAordwaSanSmy6e1fcT22
-	 kXNNQ7Jqd7VyuBmyz+IWjflXCiPnNAZIQvc6tBd+qZMDMui6tQdeHSaO00MrkxhLNB
-	 VXHEFL60fhZcQ==
+	b=j/JpIADsBUI1Do9UvT+M2IL3RJVAsIYBy++rjBQHQQHLLM+d5+h9eruafLfp8U1+3
+	 avw4Ti5i5yCFSJXep9tH9anl4xuTsc3VrqEcrfCzu+cIFOCCRtyB9D2UoiywJhksjA
+	 WLRgrAfHQFpN2OP5Rt815NVXPUHyXuJ2orgkDHkYLboUDOj8eP6BpRe/H998SWMsit
+	 gmTBu5RqqbtIjMgDe/tsslGoo/i0bkiPJcwPWUFAcV5bwWVF3gGKdmvbkO6W3w+je5
+	 Zq+vYrHT+hufTg8FbMjqkDkQ7OC5L6BfgPs4XXTE7kyC/PKLyaTfBZhGvd7WxTxMaK
+	 2h7MBXrF55fsg==
 From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>, 
- Philipp Zabel <p.zabel@pengutronix.de>, 
- Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konradybcio@kernel.org>, 
- Qiang Yu <qiang.yu@oss.qualcomm.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
- Abel Vesa <abel.vesa@oss.qualcomm.com>
-In-Reply-To: <20260807-glymur_linkmode_0807-v9-0-dd1c7e236e29@oss.qualcomm.com>
-References: <20260807-glymur_linkmode_0807-v9-0-dd1c7e236e29@oss.qualcomm.com>
-Subject: Re: (subset) [PATCH v9 0/6] Add QMP PCIe Multi-PHY support
-Message-Id: <178646781857.1081354.13726226205330576102.b4-ty@kernel.org>
-Date: Tue, 11 Aug 2026 22:33:38 +0530
+To: Jason Yang <jason98166@gmail.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Heiko Stuebner <heiko@sntech.de>, 
+ Sebastian Reichel <sebastian.reichel@collabora.com>, 
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ stable@vger.kernel.org
+In-Reply-To: <20260811-dcphy-maxreg-v1-v1-1-aa63f6a63a64@gmail.com>
+References: <20260811-dcphy-maxreg-v1-v1-1-aa63f6a63a64@gmail.com>
+Subject: Re: [PATCH] phy: rockchip-samsung-dcphy: fix out-of-range
+ max_register
+Message-Id: <178646782464.1081354.15306186863821576156.b4-ty@kernel.org>
+Date: Tue, 11 Aug 2026 22:33:44 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
@@ -81,25 +74,20 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 07 Aug 2026 02:51:09 -0700, Qiang Yu wrote:
-> Some QMP PCIe PHY hardware blocks can be configured through a link-mode
-> register into different link topologies, such as a single wide link, or
-> multiple independent narrower links (e.g. x8 or x4+x4 mode on the Glymur
-> PCIe3 PHY).
-> 
-> Earlier revisions tried to extend the existing single-instance
-> phy-qcom-qmp-pcie.c driver to cover this hardware. That added a large
-> amount of conditional, multi-PHY logic to a driver whose data model
-> assumes one PHY per node.
+On Tue, 11 Aug 2026 16:10:22 +0800, Jason Yang wrote:
+> The PHY register block is 64KB, so with a register stride of 4 the
+> last accessible register sits at offset 0xfffc. max_register names
+> 0x10000, one register past the end of the mapping: dumping the
+> registers through the regmap debugfs interface reads beyond the
+> ioremapped region and oopses on the unmapped page. The oops fires
+> with the regmap lock held, so later PHY operations deadlock.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/6] dt-bindings: phy: qcom: Add Glymur QMP PCIe multiple link-mode PHY
-      commit: 5619458024925b3a488f9046b3ab26647582b99f
-[2/6] phy: qcom: qmp-pcie: Add QMP PCIe Multi-PHY driver
-      commit: 1781be3c8a5ddf40f5f9e7b9dc32cc577d491062
+[1/1] phy: rockchip-samsung-dcphy: fix out-of-range max_register
+      commit: 4486e75ba647bd8b98fc1f053101b40caceeed4b
 
 Best regards,
 -- 
