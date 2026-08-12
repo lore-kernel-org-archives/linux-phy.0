@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7AB37C5AD5A
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 983C3C5CFDB
 	for <linux-phy@archiver.kernel.org>; Wed, 12 Aug 2026 09:34:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,45 +12,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gyHrcJE4dK1pJvroyl6EzvmqALnPGezt6ZFOdETQieg=; b=RqmGOwVoa/PT/U
-	QMzIprVtkiGpPemwqYOtW7qmfMK59mQSnqbXoxW4TScIdilk6XU54jF/ua7dje0YO1BPebd5TAnI8
-	e4NEvRBuo1UFGrZ+3O0L8QjR0YXLcVoO2FVA2X9PagBwNUrtAkI3OVTEJ7YYJwOhAfqfUJe7Twgsy
-	885RstO7L8es6OGLGcaS8YbEv7YXR7UvkQvANv2lFTW8VZIeGY6lQ2DLiH2/pi4OMJtbxR3WWfzQ3
-	P6hGiz+8wcVl78iMWTXpKlQIBzALu4vxfqrXe9l7ZHzdcolAt9itVkBsbFP5wIOZ3KsRa7mQLd9eG
-	XaZIqso6WAHuLwWzlw2w==;
+	List-Owner; bh=vEGFFQn+QBSwPg/sQti49I61+rQFAtSTpow3SCWJppU=; b=xoK5GXdxCij8Nz
+	NhoGFXC2R5QRcuKSvvRLnE2cMHhNYqjE418XtxeXi2YqPDzmIfiCYuyhGdXIaQziy6ftGC6veL+ZY
+	uoqy5KwqzI9xatle2ZyUy9mTTOHbfSQ8aqo8QtRJK9e6XFwbX7ULgMs7yz9SFbnWowJ5bVfnkF6yc
+	VLP+OtbsOs4SZFLI68WgQgIXxAupUrdTXzXeK//E+j8WTHyYCsxHBKp3x3XDyyA1dQb4EttzyJAjk
+	bNrA+pC6FYIaPWkV+9u6KWtMS4Q77QPvQ0D3Csju1r1AQIOuuMEEMLu4sjLi260fRVMDBnivgqwlr
+	e+wnTyh2l8OhVpsaR2Rw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wu5MJ-0000000Flhs-0JcF;
+	id 1wu5MJ-0000000Fli5-1Nc2;
 	Wed, 12 Aug 2026 09:34:51 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wu5MD-0000000Fler-3JB1
+	id 1wu5ME-0000000Fler-05pV
 	for linux-phy@lists.infradead.org;
-	Wed, 12 Aug 2026 09:34:45 +0000
+	Wed, 12 Aug 2026 09:34:46 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 31E3644FC6;
+	by sea.source.kernel.org (Postfix) with ESMTP id 5A10645013;
 	Wed, 12 Aug 2026 09:34:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id D4F65C4AF09;
-	Wed, 12 Aug 2026 09:34:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 25F3CC4AF13;
+	Wed, 12 Aug 2026 09:34:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1786527284;
-	bh=pOMw1Eu8wnhIdeSjF6BvWPDaMBzo8BAut94HrKLQWS4=;
+	s=k20201202; t=1786527285;
+	bh=CEJImADqksx/jnXCqycUUtZetr8Js6Q6vJkHmpvfFMY=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=FvRtW7DPlnsCVvoDoL/fPQi0xcpURitW+9klX2ztdf0JOXDC7VDslMRkaUZIzdKJh
-	 Fsq6cnhggdUaTcpME1EFDgTfaKcRB5G3JzH5Eg3MOHKmlhSoGonsEdsYKgokILPuPE
-	 6R7HX+RSrk9F7jSt00xr/zxBY/n8+ygQ8uNWPCUwTr0Mj2qP8tlQhHH2wDqYt15sZ+
-	 4iJqXkhUtR7pqM2zayaVjdruP2E1AmluiMtKx3q/4FC/t8Vjc7j9i3YJbxTQkEwRDj
-	 ZXPG0RoHAi1psv26Sqx6Z08WbzS4jQRSb/7MNJUfCGAQVN2CqMhyaJJ73BaoQvCgmi
-	 /nUMCoc1ePk1Q==
+	b=SglLNjLYb7ZnTC1At5krlFVzjjPOcHrKdU1GWgBxXHO4Z4lOq9RlkjU1slYZrYHAM
+	 6+y1KzcewjQlSZuzaDgu0gRhNElBz6AdPjqpRzVFZiUREKe7rxyuR3oJL4g6EphoRK
+	 M51HNTh7JriSAMh4S8Z9ndmL+wpDwulZ02SmuQ5ZVmwu02BgGJk2KCS6faQ4oUf3ee
+	 K31vg8y56QoDQNE8bVOGiwyIOcUgneRd+E70tL1Mw4T0fwIswaupatiivmGeHTxW9R
+	 P91riIDYaHEwFr4RCp1wlM+kocg5IkMDoGoJgN/GD8g5wYApS+5Xwnda3mw8EL9itA
+	 jRiVHL1fe9S+Q==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id BF884C5DF61;
-	Wed, 12 Aug 2026 09:34:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 0FA52C5CFDB;
+	Wed, 12 Aug 2026 09:34:45 +0000 (UTC)
 From: George Moussalem via B4 Relay <devnull+george.moussalem.outlook.com@kernel.org>
-Date: Wed, 12 Aug 2026 13:34:41 +0400
-Subject: [PATCH v2 06/14] dt-bindings: usb: qcom,snps-dwc3: Add clocks for
- USB3 on Qualcomm IPQ5332
+Date: Wed, 12 Aug 2026 13:34:46 +0400
+Subject: [PATCH v2 11/14] arm64: dts: qcom: ipq5018: Add Super-Speed UNIPHY
+ to USB node
 MIME-Version: 1.0
-Message-Id: <20260812-ipq5018-usb3-v2-6-8f355d7ff0ef@outlook.com>
+Message-Id: <20260812-ipq5018-usb3-v2-11-8f355d7ff0ef@outlook.com>
 References: <20260812-ipq5018-usb3-v2-0-8f355d7ff0ef@outlook.com>
 In-Reply-To: <20260812-ipq5018-usb3-v2-0-8f355d7ff0ef@outlook.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -68,11 +68,11 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  linux-usb@vger.kernel.org, George Moussalem <george.moussalem@outlook.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1786527282; l=1443;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1786527282; l=865;
  i=george.moussalem@outlook.com; s=20250321; h=from:subject:message-id;
- bh=FrZ92+JY6xObNWk+ENo3Z1dORVi7W/FDONI5nxpufY0=;
- b=k7TduvLaDJNt/6eSZS3/emidYhD1YnKCkfcymUxouaifQGrT9SFN+TVO3CTGf7/uexHa9FQtk
- ATA5CChM5R8AEzasy2DuWU4neWkDIkEQB8OV7UUIPt6hMoqxEgDq6mn
+ bh=8bhPK8flz4g64F9hoc1dqcAmebxhDioRZihPcA2zzas=;
+ b=iOasZLYsfLMSMhH9mM8vLaYok33PTvlCo51GrOdO8jsqdez68kqQWKaAJxpHPR/pO1sskcx58
+ mnRboKr4eYSBm4XSpjZIl4xKcxLDwhOeFn4znV2GDxVVVaISZOc2vT1
 X-Developer-Key: i=george.moussalem@outlook.com; a=ed25519;
  pk=/PuRTSI9iYiHwcc6Nrde8qF4ZDhJBlUgpHdhsIjnqIk=
 X-Endpoint-Received: by B4 Relay for george.moussalem@outlook.com/20250321
@@ -95,55 +95,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Praveenkumar I <quic_ipkumar@quicinc.com>
+From: George Moussalem <george.moussalem@outlook.com>
 
-Add aux and lfps clocks in Qualcomm IPQ5332. These clocks are required
-only for USB Super-Speed support.
+Add the USB3 UNIPHY node to the USB controller node.
+In addition, switch to the pipe clock supplied by the USB3 UNIPHY
+instead of the UTMI clock.
 
-Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
 Signed-off-by: George Moussalem <george.moussalem@outlook.com>
 ---
- .../devicetree/bindings/usb/qcom,snps-dwc3.yaml      | 20 +++++++++++++++++++-
- 1 file changed, 19 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/qcom/ipq5018.dtsi | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/usb/qcom,snps-dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,snps-dwc3.yaml
-index ea60f7220afe..ce36109f5df7 100644
---- a/Documentation/devicetree/bindings/usb/qcom,snps-dwc3.yaml
-+++ b/Documentation/devicetree/bindings/usb/qcom,snps-dwc3.yaml
-@@ -173,7 +173,6 @@ allOf:
-           contains:
-             enum:
-               - qcom,ipq4019-dwc3
--              - qcom,ipq5332-dwc3
-     then:
-       properties:
-         clocks:
-@@ -185,6 +184,25 @@ allOf:
-             - const: sleep
-             - const: mock_utmi
+diff --git a/arch/arm64/boot/dts/qcom/ipq5018.dtsi b/arch/arm64/boot/dts/qcom/ipq5018.dtsi
+index c98889a7c26c..01b8181ffa40 100644
+--- a/arch/arm64/boot/dts/qcom/ipq5018.dtsi
++++ b/arch/arm64/boot/dts/qcom/ipq5018.dtsi
+@@ -631,10 +631,8 @@ usb: usb@8a00000 {
  
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - qcom,ipq5332-dwc3
-+    then:
-+      properties:
-+        clocks:
-+          minItems: 5
-+          maxItems: 5
-+        clock-names:
-+          items:
-+            - const: core
-+            - const: sleep
-+            - const: mock_utmi
-+            - const: aux
-+            - const: lfps
-+
-   - if:
-       properties:
-         compatible:
+ 			resets = <&gcc GCC_USB0_BCR>;
+ 
+-			phys = <&usbphy0>;
+-			phy-names = "usb2-phy";
+-
+-			qcom,select-utmi-as-pipe-clk;
++			phys = <&usbphy0>, <&usbphy1>;
++			phy-names = "usb2-phy", "usb3-phy";
+ 
+ 			tx-fifo-resize;
+ 			snps,is-utmi-l1-suspend;
 
 -- 
 2.53.0
