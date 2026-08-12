@@ -4,111 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD6DCC5B572
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Aug 2026 18:16:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C72A0C5B56A
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Aug 2026 18:19:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7+bkF/pKRZcqH7AN/k5nx1Kbp4dU2DGOeSz4dlpeWQk=; b=gHBqUNwPIhWgjl
-	fv/OqF/CR5ox06spLY7wz2s0pVljH02+0BaEiowcTr4dBKe6RzH3ANMKpouO/B/exgmNfCbFq2b+G
-	9Zi+MbDI+CUb1ItB+8VQX1DrgjFmNdzs2jWfN4p9vcEsc36ld0E8G24O4RPBJHLrn7aueDD1oFpk9
-	j14PMqji6ZsIHXI8kqX+NPPyfur2BWkgW//xrmA0ZWHG2E2cCQ/QMiBB5nSQiOCMSLAMuRhcQc7dL
-	QB3kAowxxCHneUhpAX4u9YJFUWI6/DbtNnXW2m5ZOmIR6z2H/LxSqvaEIJy2fC/gyy9DJjNoNXA6Q
-	HsjgkdhfIzC1jKxA8d9g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=he1jO7eqIaBJ1CT1ggQ6Eq36t/85uXWDYwL7KNYw56M=; b=NHfLfspPiJCXy/
+	GbOQTVXDD3exvOsX6X3DaWo53cISrRXN3Zhjo6NaWgr00iiK01FCirJXghDJetI/fCcfEikbQhevK
+	NQdSb3kNgll9U7wJaQN8fQNwBNBa8VQNoNuJomOi+Dh3yKDHWltXz0NfD6Rw3dZKHnTtRHS49B8pS
+	E8UarA94+SStaZFlXNZQQunL/ukxdOFO47D6e0mxACPb1CZR/ikQAurC0/JDORHwPZq+k7HStw2UP
+	A1f/6R5Vj6qMiQb+SYBLB4k9TTo0kk0taw5Pj3/lL20UgqO1CB+vp6ZYuWx1bK3xRVtZcx6fQb26E
+	x5xBGdHiMFxeilw/t+pg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wuDUd-0000000Gm2W-3dXB;
-	Wed, 12 Aug 2026 18:15:59 +0000
-Received: from mail-ej1-x630.google.com ([2a00:1450:4864:20::630])
+	id 1wuDXc-0000000GmJz-21K5;
+	Wed, 12 Aug 2026 18:19:04 +0000
+Received: from mail-ot1-x32d.google.com ([2607:f8b0:4864:20::32d])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wuDUb-0000000Gm1S-1YR3
+	id 1wuDXa-0000000GmIk-04hg
 	for linux-phy@lists.infradead.org;
-	Wed, 12 Aug 2026 18:15:58 +0000
-Received: by mail-ej1-x630.google.com with SMTP id a640c23a62f3a-c2074710751so205512166b.1
-        for <linux-phy@lists.infradead.org>; Wed, 12 Aug 2026 11:15:56 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1786558555; cv=none;
-        d=google.com; s=arc-20260327;
-        b=IgUozefbwtHdxaYgKGJNrthKVECLRizMbiLCC/OF14TGW33qimKQOD7ZQ82iDcJvgR
-         ljdEN8IaWfa+qrtaBhNOXNcd8ia0025eHIICddiMfIeZnytA61hr1uFcvJKNIhc8S/tm
-         HgoB1aPAMF5bqKpl6YIJedUxOUGV3ognr2X62YCqOYFAUEKFrmfTfLYS+TSEZu3K6X/9
-         I7PFpLmQpIFrW+4/w0Y16i/0OGcLmTKd8UeNbjfHjEusVvFgxBY55nNPcMEyHG49NiM7
-         NWyroh9Cl9jMk4xdUACYRLHv5wZNKnLIMydTgnnCp1bpZWIdJ3Cf/+vkqEfKkDVngojl
-         3u4g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:dkim-signature;
-        bh=PgwvOoLAHdeH5x1LPpK/Ic794djJ4NRcQySFzYPO0Xs=;
-        fh=9a6/qfecR1hOlDSh9oe+yILXnj2rO7udnaqtLwXBzzY=;
-        b=YB/YAQCc5xIS0Iw38+g6/EZplcv4qRkimAej3bMo/JH9LWIAuHiWA9eDbdNmNLwgup
-         Utsvhfu/qz0Nc8ikIqi0UE4bMQ2Vep2CRznlz/6CK3yd5IsmzASIR3uxQpAP90ub+fuL
-         iT0xTsxhcl7bmBt83IA8RwSfo3rPhJmKKdU1HK+VroyNpsawVJrSXiyBmOjDlJK/qtLi
-         m7ArB4/0VkhqDliMyJT8l9QJ0vGjhKLi0SRI730GDpLrKmd9KQ/bHfnMnqLNpOpbXG4o
-         rs+LhachwOj+I6r6r8PhwYDdWMXMgEZCxv9bYXo637VGhjHDN6F70YEdUFzWk4woqKJJ
-         rSBg==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
+	Wed, 12 Aug 2026 18:19:03 +0000
+Received: by mail-ot1-x32d.google.com with SMTP id 46e09a7af769-7e9ecb1e13cso1474450a34.3
+        for <linux-phy@lists.infradead.org>; Wed, 12 Aug 2026 11:19:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1786558555; x=1787163355; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=PgwvOoLAHdeH5x1LPpK/Ic794djJ4NRcQySFzYPO0Xs=;
-        b=NnUnDbAYTQbOwj/fxcFXA9n2iavnR2lp5BkZkAi8ybEwdmAlrLpefxCKDZTGO7RdRQ
-         yse/7WtV9ZxNI31ACFsnfcFjvsNPy4Ztj5uvq1SwtI/Fgnz+Z0TAmNJYrnwsgXjFm7Zt
-         ZpWWZxeLETdb5NdxANerTHuCGNJ2rEKCPLOMkQkXnvnZZxNFO/AXacAwNTaKkIPPooW2
-         sAkW0rc00GPgwEvCAgPhg8r6ap0vfTC6j+kpJVJgwZsU8yXqK4rEZ+Ulg0ZX42uZOnMI
-         kT0OGEBe14bHSVvGaGu4lhQyNAK6y32/qCoTCSOCIl6WcPmXP2eiXNfQZ5h435PwOyLB
-         Bayw==
+        d=gmail.com; s=20251104; t=1786558741; x=1787163541; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=m0TVCaE8Q+34m7ChzAdVqyf9wcVW6q1366258ZKAIuQ=;
+        b=OHZ5FabsCffAuXuDZYg4BYW1TTrAZptZVFEb9xzQwLJQ1yaLQg2VA/9QQbp3swPgeX
+         stPpp4CWJPGJKsKc2N6sEhP0U6xQoSIVioBG79LJ5+LVa2IRL0WOb5e+22VeP0e91urX
+         0Z+2yT6IggAfiPtz9Msptrhs7iPvkrxQk8LDFiCwnGhpfVVUY4ezDSu+y7psgru7kDWE
+         Ns4YLNeGggwr1sM2IM3tHSe4CwBM0q7DsjzjLFssUmfJ+8Ch2ZZ/pr9vED+pVHNzMT6f
+         Pbe5lD68033ejJ/GRm/iM4i0QK+o+2oNAxF7+3HWLj4HUGBiMfAnzETak4BlVd6sZNGz
+         +rZw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1786558555; x=1787163355;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=PgwvOoLAHdeH5x1LPpK/Ic794djJ4NRcQySFzYPO0Xs=;
-        b=M24HYIKVTfS8xQCAZAsx4gJ6zFBG2iZ1e4ea2hBJFAbd2CQjdsAh+W2FpqOXHGzAVF
-         5Y40UlcilkE69HFXSwu4ny+g1t1+ER1pjUJtOH3dkabJN+AIC4w5EaRU3f+Cul5RvL2K
-         eWm5sNbq5yEoGQvf6MnUguZMnMNo/zteUcxMTaYjqh71T2ub/klI2IlNWiV77p74/SZ6
-         jhP29PISoEeRQjdZdRzB1BWyTC4BB4U+Ke64D1ta0B/VDTR0qMRT3+rHIi7GIjR0H7Mw
-         Tnrn++OUb5ZZequPzkqxZuxg/vV8/Fyow5DLd+o/cxi8ZtEroxnf6YZC/Hfwy1wu7Ik4
-         oCug==
-X-Gm-Message-State: AOJu0YzOHwL73EkRXiWLP6ebSONsjCQ5SalFCU86aogFE5rXQFp/z8j6
-	1Pq0a8KKVVNPRzX1uwlD05TKjWVZyd5qQADDUXWBlJgkKIOpRqNXwSzFRfXxs/6S0TMpkN/XzX9
-	xO1HXamhObOj2hIYEfHlkzvEpb/E2mY0=
-X-Gm-Gg: AR+sD10y2CbwBZEorU3/9YidQMFJjDSVNTYgAXfsrPPL5VPQTxZ5qFRXu6zHchh//bW
-	PF+blEINVJn9FjgOZV/kAxQSVHqKVQKHG+taSSOaBvcvh7AFqxH0jjHH3JOnwbDdIk7h/KEsomF
-	/vCpTccWVHP+ONgLBOLSnrSM5gyuv3ztjqiZruVnMTmB6jLzYPlZyxfMAX3CRzf4svcUWbytd9w
-	OEYkJC8ADGNWxYbBk4GT/hjIcBowYuPRhi0iCgykI2zJoAwg7yAV+noN1BPzn1YFYuXS5n8UPcq
-	wd8EnxfTTKBL54D8go17dzpe8OUQ+Bc2u2bPEzVjN0guY0AFHHW1jQwysFdKZVpxcl8nhytSVM6
-	IjaRsNfCEwqaDV6xD7p3xKf5Zz4sKlixqwsd+CxhGAcVmtPhFsZyBiYLZTQR4aLdJp1ui7BN1b0
-	howux1YShG1R76eQY02+H33nf8bvg5F2zR5kOgCzahJhyWpa/n45jz7YY=
-X-Received: by 2002:a17:907:c0d:b0:c20:899:b8bc with SMTP id
- a640c23a62f3a-c2108ee3cf0mr7867166b.6.1786558554870; Wed, 12 Aug 2026
- 11:15:54 -0700 (PDT)
-MIME-Version: 1.0
-References: <20260304041400.7236-1-rosenp@gmail.com> <djjg6jwpuu6l5wcc7zbxfi7j4n5hircmhivxohdtgufzrp6rlb@l6eyfdyfrxix>
-In-Reply-To: <djjg6jwpuu6l5wcc7zbxfi7j4n5hircmhivxohdtgufzrp6rlb@l6eyfdyfrxix>
+        d=1e100.net; s=20251104; t=1786558741; x=1787163541;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=m0TVCaE8Q+34m7ChzAdVqyf9wcVW6q1366258ZKAIuQ=;
+        b=J6dYUxXG4mJmrHXP39LIrtPPduBqQq2f0KL7bPMkchoeo0kbJJ01DYnXVkVjzrL3by
+         4aX2Np3pOSG0Jh0EsZxC0C+kvlrf4gtm4JNcz3QNnmw3H9S1CGr0ZYwuY+toRdWJfBng
+         HJ7+M7eDLVxx0cB/MHCVz3sxDQ0tDMVFkohME3rK0/wIhIe/cUXPVSKtO/8vZoRUFHKG
+         1qf/QAWYqzWJD2vEa19XEjHH+PtUwS2MAvtaTGGxZJIR0fAgP5zeqqL6XMqYdfSKRBB8
+         XPb48GWh4yw5fNH2XfxDSlr7REZ16Skp5Yzfc+G5Z8gR5Ky1ySc3qOwpwar8hZdsdTR+
+         0KTg==
+X-Gm-Message-State: AOJu0YzcHIsR0ihptvISCjc3zXqtYZBc+ZYln1cm8l4By/2igceqQTjK
+	1DcdlsUhv8kCzyjam+3QVhOzaYSy7Td/t20gdVJ56dHL7y17L9jdze+ewCs3GaW9
+X-Gm-Gg: AR+sD11km1/Lbe5K/LLmtMkoytkRVzJE8cUQ0oXwh40gOdPDTXwR/464ujQQr27cXbP
+	MiilqYFwm9l3WVofjK4FNy7Q0FgV5NbajD0wuyAxWbUfY73+Ur7dBKwjHzGLPqBZprHNIsAgBXC
+	ftwrqyTW+lY3Ia1Z9WyotR53nbof/eNd48TbckZNbY5c0yOv2ZDEeR5dz7tajQza+JbNmOEXGTz
+	7/YYm7CEkN+oc7q7FBbg4IXUXQhKFL5IU+ey/L847NN6rQ33AhLcZqsscSFczG1rhbjBly6MLjj
+	7hsuW6BZwSGnNdcdqHFBk7UWOk7xbU2+CNG8TeAsN39C3smEHKTBkggjUwOIxH+hzZO1yahMjcN
+	EDhxDU5C40xZQNa1oDng3Ns3Zje/MciXD9RY+XyEyFvGJCQdhtxtqGQQctpGsnOBo9qNQa0aESs
+	CpgOVjGH12QBsVugwTZk00ryadwv+P2LpgNfqklETfonDtlm5WgOuHL6N0Emmmx1E+aGlHwHQgG
+	B6eQpQ8xvImTJEioce1aV7mZ/Qq9dgxL1bDiCWb7c0JLHLIQO1HXyvZs8cDAZzBQY7/YvJJZVJZ
+	gSd7I4IIoQjwT/D3Fkn3oSJnfsB5fYNpUEEqsg==
+X-Received: by 2002:a05:6830:828d:b0:7e6:f582:955e with SMTP id 46e09a7af769-7f3b79a016dmr6963465a34.10.1786558740714;
+        Wed, 12 Aug 2026 11:19:00 -0700 (PDT)
+Received: from ryzen.lan ([2601:644:8000:7a86::e35])
+        by smtp.gmail.com with ESMTPSA id 46e09a7af769-7f3b3420373sm3589768a34.19.2026.08.12.11.18.58
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 12 Aug 2026 11:19:00 -0700 (PDT)
 From: Rosen Penev <rosenp@gmail.com>
-Date: Wed, 12 Aug 2026 11:15:43 -0700
-X-Gm-Features: AUfX_mxqbIvZ73kcSiSnSMXY77gQTI6q5M4UWPSGxgp8t1CwI1GTwLlXmGpI4Co
-Message-ID: <CAKxU2N_VYNgYKhS11Frzio4fbg_ZnDsvCfEypvxSiw3-JV0_QQ@mail.gmail.com>
-Subject: Re: [PATCH] phy: mediatek: tphy: simplify main allocation
-To: Manivannan Sadhasivam <mani@kernel.org>
-Cc: linux-phy@lists.infradead.org, Chunfeng Yun <chunfeng.yun@mediatek.com>, 
-	Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Matthias Brugger <matthias.bgg@gmail.com>, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, Kees Cook <kees@kernel.org>, 
-	"Gustavo A. R. Silva" <gustavoars@kernel.org>, 
-	"moderated list:ARM/Mediatek USB3 PHY DRIVER" <linux-arm-kernel@lists.infradead.org>, 
-	"moderated list:ARM/Mediatek USB3 PHY DRIVER" <linux-mediatek@lists.infradead.org>, 
-	"open list:ARM/Mediatek SoC support" <linux-kernel@vger.kernel.org>, 
-	"open list:KERNEL HARDENING (not covered by other areas):Keyword:b__counted_by(_le|_be)?b" <linux-hardening@vger.kernel.org>
+To: linux-phy@lists.infradead.org
+Cc: Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Kees Cook <kees@kernel.org>,
+	"Gustavo A. R. Silva" <gustavoars@kernel.org>,
+	linux-arm-kernel@lists.infradead.org (moderated list:ARM/Mediatek USB3 PHY DRIVER),
+	linux-mediatek@lists.infradead.org (moderated list:ARM/Mediatek USB3 PHY DRIVER),
+	linux-kernel@vger.kernel.org (open list:ARM/Mediatek SoC support),
+	linux-hardening@vger.kernel.org (open list:KERNEL HARDENING (not covered by other areas):Keyword:\b__counted_by(_le|_be|_ptr)?\b)
+Subject: [PATCHv2] phy: mediatek: tphy: simplify main allocation
+Date: Wed, 12 Aug 2026 11:18:57 -0700
+Message-ID: <20260812181857.64544-1-rosenp@gmail.com>
+X-Mailer: git-send-email 2.55.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260812_111557_423587_C98C0AFE 
-X-CRM114-Status: GOOD (  12.49  )
+X-CRM114-CacheID: sfid-20260812_111902_085264_F655FB01 
+X-CRM114-Status: GOOD (  12.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,23 +102,76 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkLCBBdWcgMTIsIDIwMjYgYXQgNjozMuKAr0FNIE1hbml2YW5uYW4gU2FkaGFzaXZhbSA8
-bWFuaUBrZXJuZWwub3JnPiB3cm90ZToKPgo+IE9uIFR1ZSwgTWFyIDAzLCAyMDI2IGF0IDA4OjE0
-OjAwUE0gLTA4MDAsIFJvc2VuIFBlbmV2IHdyb3RlOgo+ID4gVXNlIGEgZmxleGlibGUgYXJyYXkg
-bWVtYmVyIHRvIHJlcGxhY2Uga3phbGxvYyArIGtjYWxsb2Mgd2l0aCBhIHNpbmdsZQo+ID4ga3ph
-bGxvYy4KPiA+Cj4gPiBTaHVmZmxlZCBzb21lIGNvZGUgYXJvdW5kIGFzIF9fY291bnRlZF9ieSBy
-ZXF1aXJlcyB0aGUgY291bnRpbmcgdmFyaWFibGUKPiA+IHRvIGJlIGFzc2lnbmVkIGZpcnN0Lgo+
-ID4KPiA+IFJlbW92ZWQgTlVMTCBjaGVjayBmcm9tIG9mX2dldF9tYXRjaF9kYXRhIGFzIGl0J3Mg
-bmV2ZXIgTlVMTCBwZXIgdGhlCj4gPiBkZXZpY2UgdGFibGUuCj4gPgo+Cj4gUGxlYXNlIGRvIG5v
-dCBjb21iaW5lIG11bHRpcGxlIGZpeGVzIGluIGEgc2luZ2xlIHBhdGNoLiBBbHNvLCB0aGUgTlVM
-TCBjaGVjayBjYW4KPiBiZSBrZXB0IGZvciB0aGUgY2FzZSBvZiBzYW5pdHkgYXMgaXQgd291bGRu
-J3QgaHVydC4KaG1tPyBUaGVyZSBhcmUgbm8gZml4ZXMgaGVyZS4gSnVzdCBhIEZBTSBjb252ZXJz
-aW9uLgo+Cj4gLSBNYW5pCj4KPiAtLQo+IOCuruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDgrprg
-rqTgrr7grprgrr/grrXgrq7gr40KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBo
-eUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Use a flexible array member to replace kzalloc + kcalloc with a single
+kzalloc.
+
+Shuffled some code around as __counted_by requires the counting variable
+to be assigned first.
+
+Removed NULL check from of_get_match_data as it's never NULL per the
+device table.
+
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
+---
+ v2: add back NULL check
+ drivers/phy/mediatek/phy-mtk-tphy.c | 17 +++++++----------
+ 1 file changed, 7 insertions(+), 10 deletions(-)
+
+diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
+index acf506529507..e9b9e667b319 100644
+--- a/drivers/phy/mediatek/phy-mtk-tphy.c
++++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+@@ -340,10 +340,10 @@ struct mtk_tphy {
+ 	struct device *dev;
+ 	void __iomem *sif_base;	/* only shared sif */
+ 	const struct mtk_phy_pdata *pdata;
+-	struct mtk_phy_instance **phys;
+-	int nphys;
+ 	int src_ref_clk; /* MHZ, reference clock for slew rate calibrate */
+ 	int src_coef; /* coefficient for slew rate calibrate */
++	int nphys;
++	struct mtk_phy_instance *phys[] __counted_by(nphys);
+ };
+ 
+ #if IS_ENABLED(CONFIG_DEBUG_FS)
+@@ -1572,22 +1572,19 @@ static int mtk_tphy_probe(struct platform_device *pdev)
+ 	struct mtk_tphy *tphy;
+ 	struct resource res;
+ 	int port, ret;
++	size_t nphys;
+ 
+-	tphy = devm_kzalloc(dev, sizeof(*tphy), GFP_KERNEL);
++	nphys = of_get_child_count(np);
++	tphy = devm_kzalloc(dev, struct_size(tphy, phys, nphys), GFP_KERNEL);
+ 	if (!tphy)
+ 		return -ENOMEM;
+ 
++	tphy->nphys = nphys;
++	tphy->dev = dev;
+ 	tphy->pdata = of_device_get_match_data(dev);
+ 	if (!tphy->pdata)
+ 		return -EINVAL;
+ 
+-	tphy->nphys = of_get_child_count(np);
+-	tphy->phys = devm_kcalloc(dev, tphy->nphys,
+-				       sizeof(*tphy->phys), GFP_KERNEL);
+-	if (!tphy->phys)
+-		return -ENOMEM;
+-
+-	tphy->dev = dev;
+ 	platform_set_drvdata(pdev, tphy);
+ 
+ 	sif_res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-- 
+2.55.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
