@@ -4,43 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15628C5CFC1
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Aug 2026 01:03:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A75F7C5CFE7
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Aug 2026 01:03:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wumsdX3tac5RB4tNgqvG6IJ4PrBow0a9IHfsHV9e9eI=; b=OaK9uKiuGpNMV4
-	sitWERAED9k+fB1TzA0bF5TKhLcsdNEMSwnAtKFFQ5dVDjiixiycLP13JE4Fi2Ml2zkzMo7HVed37
-	1r3I5EQMLMQnjN4/rUtmbpUki9pGmfOd/y7LN7YpNxqxKfLvF/+KyAsNEkB09QDLWFYOc83TBz8or
-	VOv9O1Ns+unB61/qdntinhcyRt795u3VJPelpW5HDiYRIJjmdXWgz9fWX/Uzth2tLhRW58Tbzp0e7
-	UPl1UsPvp1Hn+DfGQlA3WlRhdeXigxOVSk5wx1oQvsGPCaQJX+AFgGHS4nh4WXqw1ypLUnVckFzmZ
-	6x3HyHp2rdF1M2j7wVPQ==;
+	List-Owner; bh=jpF7QBR55KA+FIx7+5nNZQncQmEuUjMU8SMs4ZNelKQ=; b=tB16GCe8DQ6++x
+	tfNwJTBZHmkbcWhzBJ55z3l5QIltKqtNzZb/PNcy4/M65X3Fe0/SSEedH0Di9/d4mKCJz+cVbTdZX
+	N7fd1Vr0CEYnEqFftwX6dE07TgzZbd/ohNtxyZj/i0RJso/auDTrbhP/kDDqmuhmBstfvYhVsmT2l
+	EhFdcsQL/CGY4nQY0ZbzbRqQhWA2c71Scit2DvSVHHDhAOq9gX2602n5eXTuagdM1d8dDJlNLV3ny
+	PxjCvHKjl956AcmbpqsBdMZbDG3ry8qINvt6IyKbXshCH9QdPokHiWgcEdqLRWCvPdp3im4sNdGte
+	BeFKJCFGA/XNXtNZFkcA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtxNJ-0000000FB0z-2XXu;
-	Wed, 12 Aug 2026 01:03:24 +0000
-Received: from mx.nabladev.com ([178.251.229.89])
+	id 1wtxNP-0000000FB4z-15dQ;
+	Wed, 12 Aug 2026 01:03:27 +0000
+Received: from mx.nabladev.com ([2a00:f820:417:0:178:251:229:89])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtxNB-0000000FAtZ-2NHG;
-	Wed, 12 Aug 2026 01:03:15 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 7D85D11A16E;
-	Wed, 12 Aug 2026 03:03:06 +0200 (CEST)
+	id 1wtxNG-0000000FAxd-41WP;
+	Wed, 12 Aug 2026 01:03:25 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id D543D11A195;
+	Wed, 12 Aug 2026 03:03:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nabladev.com;
-	s=dkim; t=1786496587; h=from:subject:date:message-id:to:cc:mime-version:
+	s=dkim; t=1786496592; h=from:subject:date:message-id:to:cc:mime-version:
 	 content-transfer-encoding:in-reply-to:references;
-	bh=IbAA6pvCgsmhB06HsWXQ/egn4NMOuHY9bVEh1SlCYDo=;
-	b=MpknEq/LD8wmGY05KGZMorJ6MJ11A4gGCvWiGrDnT8x5kgR/ApDQoG4EaRAJg80Oz/e15z
-	nYRiNrQRFmvtTnwWNb6ghLz4Wbe5z3W/Txy6UeINDTIRAOAZUoI0QkIotK4EZvA7QszI82
-	0uV4iEsg3MtSns5/x6PIUsimc3IAoB4MtPYw0rKEDH5lGinh5J6AjyPwxI78Exrk+sZQF6
-	CH9JVvYhDqmL7z47mdnD+99AlHB7m1fllQwr+8r/Ch86YDW7mgkj/atmsttKbt95udoa17
-	ZevcKDgvipv0QhvuBZEOH2AscYWEQ5K8aAGHXLz3okFXKflG7ho7A/dxXLZ1jg==
+	bh=/y0h0XBkWfzpZGbn2+ONwS3q9qDmIFhWudnEFeJ59eY=;
+	b=Ll7s98JJVQDiY0e/l4m7Dar4+0mwNdLcNkFHdSxbO3R2L3z2FL3Y3ksub1NsxeAXzDSYV6
+	w4NlgeKUg1KyJvPxBecY8KPcuFwEs7wDo7qsSmSWacuoM7A85y2Z3mElBGFg4qsUefLaAZ
+	EYF1R33pNa1hoZypjLxTQ/HAVlC2W2eRUC0CT2yuaO5hZsa3JkNyfdr0ooQR7AjzdbDuqq
+	Hh00nQ8KlkD2zcGoyjJ3eBqO9q8CsEtNwnXUwAUFOIFSh2SY4A0IKfMjb9dz1EskLn7q2L
+	WVd5fm+WTRfLCPrL8U2OylIiIgJ0kVkdMMpTKWf9p1yjOOnmf9JskCbOx6jJeg==
 From: Marek Vasut <marex@nabladev.com>
 To: linux-usb@vger.kernel.org
-Cc: Marek Vasut <marex@nabladev.com>,
-	Pankaj Dev <pankaj.dev@st.com>,
+Cc: Pankaj Dev <pankaj.dev@st.com>,
+	Marek Vasut <marex@nabladev.com>,
 	Alexandre Torgue <alexandre.torgue@foss.st.com>,
 	Christian Bruel <christian.bruel@foss.st.com>,
 	Conor Dooley <conor+dt@kernel.org>,
@@ -60,17 +60,18 @@ Cc: Marek Vasut <marex@nabladev.com>,
 	linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-stm32@st-md-mailman.stormreply.com
-Subject: [PATCH 7/8] arm64: dts: st: Add USB nodes on stm32mp231
-Date: Wed, 12 Aug 2026 02:55:47 +0200
-Message-ID: <20260812010157.1772849-8-marex@nabladev.com>
+Subject: [PATCH 8/8] arm64: dts: st: Add USB nodes on stm32mp251
+Date: Wed, 12 Aug 2026 02:55:48 +0200
+Message-ID: <20260812010157.1772849-9-marex@nabladev.com>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20260812010157.1772849-1-marex@nabladev.com>
 References: <20260812010157.1772849-1-marex@nabladev.com>
 MIME-Version: 1.0
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260811_180314_272484_336B8BF2 
-X-CRM114-Status: GOOD (  11.15  )
+X-CRM114-CacheID: sfid-20260811_180320_488557_14272088 
+X-CRM114-Status: UNSURE (   9.70  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,10 +88,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add USB controller and PHY nodes to stm32mp231 DT.
+From: Pankaj Dev <pankaj.dev@st.com>
+
+Add USB controller and PHY nodes to stm32mp251 DT.
 This includes two USB 2.0 FEMTO PHYs, USB 2.0 host
-controller and DWC3 DRD controller nodes. Include
-missing COMBOPHY for the USB 3.0 controller.
+controller and DWC3 DRD controller nodes.
 
 Signed-off-by: Marek Vasut <marex@nabladev.com>
 Signed-off-by: Pankaj Dev <pankaj.dev@st.com>
@@ -117,23 +119,15 @@ Cc: linux-phy@lists.infradead.org
 Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-usb@vger.kernel.org
 ---
- arch/arm64/boot/dts/st/stm32mp231.dtsi | 77 ++++++++++++++++++++++++++
- 1 file changed, 77 insertions(+)
+ arch/arm64/boot/dts/st/stm32mp251.dtsi | 61 ++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/st/stm32mp231.dtsi b/arch/arm64/boot/dts/st/stm32mp231.dtsi
-index 4505fc0e3b537..b8cef81eceeb1 100644
---- a/arch/arm64/boot/dts/st/stm32mp231.dtsi
-+++ b/arch/arm64/boot/dts/st/stm32mp231.dtsi
-@@ -7,6 +7,7 @@
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/regulator/st,stm32mp25-regulator.h>
- #include <dt-bindings/reset/st,stm32mp25-rcc.h>
-+#include <dt-bindings/phy/phy.h>
- 
- / {
- 	#address-cells = <2>;
-@@ -146,6 +147,26 @@ timer {
- 		always-on;
+diff --git a/arch/arm64/boot/dts/st/stm32mp251.dtsi b/arch/arm64/boot/dts/st/stm32mp251.dtsi
+index 6e985f115b195..c54bd4554c33a 100644
+--- a/arch/arm64/boot/dts/st/stm32mp251.dtsi
++++ b/arch/arm64/boot/dts/st/stm32mp251.dtsi
+@@ -168,6 +168,26 @@ timer {
+ 		arm,no-tick-in-suspend;
  	};
  
 +	usb2_phy1: usb2-phy1 {
@@ -158,34 +152,11 @@ index 4505fc0e3b537..b8cef81eceeb1 100644
 +
  	soc@0 {
  		compatible = "simple-bus";
- 		ranges = <0x0 0x0 0x0 0x80000000>;
-@@ -769,6 +790,21 @@ dcmipp: dcmipp@48030000 {
- 				status = "disabled";
- 			};
- 
-+			combophy: phy@480c0000 {
-+				compatible = "st,stm32mp25-combophy";
-+				reg = <0x480c0000 0x1000>;
-+				#phy-cells = <1>;
-+				clocks = <&rcc CK_BUS_USB3PCIEPHY>, <&rcc CK_KER_USB3PCIEPHY>;
-+				clock-names = "apb", "ker";
-+				resets = <&rcc USB3PCIEPHY_R>;
-+				reset-names = "phy";
-+				access-controllers = <&rifsc 67>;
-+				power-domains = <&cluster_pd>;
-+				wakeup-source;
-+				interrupts-extended = <&exti1 45 IRQ_TYPE_EDGE_FALLING>;
-+				status = "disabled";
-+			};
-+
- 			sdmmc1: mmc@48220000 {
- 				compatible = "st,stm32mp25-sdmmc2", "arm,pl18x", "arm,primecell";
- 				reg = <0x48220000 0x400>, <0x44230400 0x8>;
-@@ -862,6 +898,47 @@ stmmac_axi_config_1: stmmac-axi-config {
- 					snps,wr_osr_lmt = <0x7>;
+ 		#address-cells = <1>;
+@@ -1746,6 +1766,47 @@ stmmac_axi_config_1: stmmac-axi-config {
  				};
  			};
-+
+ 
 +			usbh_ohci: usb@482e0000 {
 +				compatible = "generic-ohci";
 +				reg = <0x482e0000 0x1000>;
@@ -226,9 +197,10 @@ index 4505fc0e3b537..b8cef81eceeb1 100644
 +				st,syscfg = <&syscfg 0x4800>;
 +				status = "disabled";
 +			};
- 		};
- 
- 		bsec: efuse@44000000 {
++
+ 			pcie_ep: pcie-ep@48400000 {
+ 				compatible = "st,stm32mp25-pcie-ep";
+ 				reg = <0x48400000 0x100000>,
 -- 
 2.53.0
 
