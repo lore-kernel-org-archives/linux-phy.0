@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BECF0C5CFEE
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Aug 2026 09:34:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CAF78C5DF64
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Aug 2026 09:34:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mDnWdR3CUiVeAU7lhb0DMT49LVbARCvRc46Lt7O+R4s=; b=kzgWZpfb2EEgj6
-	ByAoFX9EFLWLbfMkMvYTc2CI/dPfs2uPi3skMv5PmrxGXqw9DqHB1UbVf4Bsy5AxFWQpiisMRpryJ
-	jx276K3wzIxubaVgINyyMW3j+pq9gjwMSHUsyARtUwkTBkvE2vJa84c2LSk3qV/ECZuxKYtrZs/7s
-	ySg1kN9FX3pzpGcv2U0cGd3nR0Rr2WkUU7OG7jyjUtN+qutn78dXmB3/A65nFd65Z6bpQwmQDppvR
-	T6ETUEL5tL60043EEqEPyO+ZTlwNfXUklHfdO7LLrExVTOWlpLO2WTSAN1u1FGBc7t6F5rt2BKVmY
-	UxQRwmu/PTrzAseVsHtA==;
+	List-Owner; bh=/V57QP3nn5cJ9hZx6Qu97AmO/moemfKw6WFfiClUbOU=; b=1cwc9nMe4qaar9
+	pEzWzLEZpO3V3Oa22ybmjbhLjrAjgJizNMNqvC48Tlh32WE29tPJpxL91sEO+xbQHr5NmnH/XEt2e
+	NdK9rVeeJ+Yb8zemgysP07c+Z/0WHoaLsCjs/Nl01hWLPJbHTZEh1COta4o4W/negw1iGLJMzXKAA
+	jy5e7kNIZ+eSkXMcW6y+103+reDQjwIeOU84GaqtkklxElH6uVDUqICsLk7qnTe+w16Ww1xMvZrmn
+	3Kd4qF6iqz9pZZfcH2O7NeSMAXBjcH30HIOKzzifcK388H3ZTvdRQPsAjP0teklpoKw/N4KjB6DGM
+	oyWMFnPVSHTF3rjiytkg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wu5MJ-0000000FliQ-251f;
-	Wed, 12 Aug 2026 09:34:51 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wu5ML-0000000Fljs-15u6;
+	Wed, 12 Aug 2026 09:34:53 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wu5MD-0000000FleW-3t6l
+	id 1wu5ME-0000000Flf8-199r
 	for linux-phy@lists.infradead.org;
 	Wed, 12 Aug 2026 09:34:46 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 19AAF43F1B;
+	by sea.source.kernel.org (Postfix) with ESMTP id 5B00A4501C;
 	Wed, 12 Aug 2026 09:34:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id BDF34C4AF0C;
-	Wed, 12 Aug 2026 09:34:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 161C2C4AF0F;
+	Wed, 12 Aug 2026 09:34:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1786527284;
-	bh=TxZEg/967MIvOveyPvlS6NGS5qBdrqXFzdbhFtlshy8=;
+	s=k20201202; t=1786527285;
+	bh=lPWoL23l+8iQd44dS0Bo1JaT1Zz2Qstnv2s1Mec3s+8=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=ts/Nc7eBX8jYP6ChSXm+ZY+mqGRFE2ueBJcVhmYmrCOWqJZkUEEYOlEs9BvPPg76r
-	 6r6R3XlsU/0c43qXr1DJNscFpT5KG/V97LBRVRs+V146WOgZIruUSeG3AA3JDgwW5D
-	 +sop/5BzcYjR+JYSjqyHTmVTU9s702Uy64wzbo+dN3RC2g5hCp0iCBSoZTtKzfLPDf
-	 68XazAAvBAMGGTl65Oz9oRZmGPIP1TIH/7FZqb/7BtiriQw2cw0xBzRMJn9O7Xe1Ar
-	 pc+FFng3qQCr/CUao6FaBEzeGs8Ubuoo2UgbYP7+0v4Q1NSX8tc/1UTOULJLGbnzMe
-	 kUBwc7LSckYRg==
+	b=PrEiQf9Q2MEH4HgPCGa1H2FSY8ThQN+oSr7VprdHt+ejtJvlwvZlZXNBLIa797h23
+	 xiF3KISCOYEUiF+S3hrS2m6AnuFpdDqcS+/g/KibT/AJQUfX3DAUznnHWDr/8lT70q
+	 QWLG3RhHPQCy1+afG9FtaqKvsauzaJrVcDJuXz5YUdEgqKfr9aUi2hslRcKwJ7+tyd
+	 LtOFKNWcUgYDQVNpu3CLlTNq4q2jJ9IBkaIc44tkXxLE1vMAmBKP8VAKWVG43N01Qg
+	 wLMbtDyUZu9aajfuDVjUULoowNNK84u/OM5hhOwyGAOurCM18kNROzxML61G3lhnEa
+	 BC2yleAnuJxdQ==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 952ABC5AD5A;
-	Wed, 12 Aug 2026 09:34:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 01CB4C5AD5A;
+	Wed, 12 Aug 2026 09:34:45 +0000 (UTC)
 From: George Moussalem via B4 Relay <devnull+george.moussalem.outlook.com@kernel.org>
-Date: Wed, 12 Aug 2026 13:34:38 +0400
-Subject: [PATCH v2 03/14] arm64: dts: qcom: ipq5018: Add USB Super-Speed
- PHY node
+Date: Wed, 12 Aug 2026 13:34:45 +0400
+Subject: [PATCH v2 10/14] arm64: dts: qcom: ipq5332: Add Super-Speed UNIPHY
+ to USB node
 MIME-Version: 1.0
-Message-Id: <20260812-ipq5018-usb3-v2-3-8f355d7ff0ef@outlook.com>
+Message-Id: <20260812-ipq5018-usb3-v2-10-8f355d7ff0ef@outlook.com>
 References: <20260812-ipq5018-usb3-v2-0-8f355d7ff0ef@outlook.com>
 In-Reply-To: <20260812-ipq5018-usb3-v2-0-8f355d7ff0ef@outlook.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -68,11 +68,11 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  linux-usb@vger.kernel.org, George Moussalem <george.moussalem@outlook.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1786527282; l=1332;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1786527282; l=985;
  i=george.moussalem@outlook.com; s=20250321; h=from:subject:message-id;
- bh=riheTfE3kh2GSOSS8RnJjpesQWZx6C7ohPUXJLruDeM=;
- b=MGGdMWSaw90KDhnG0Bo2qowHXR3DKAMO2S3WqejJu/XPmdeUVGpmNtNf3IrH/nLhiKJ1nGY6o
- ZbWxBWVjBVQCYSOx3kH1wVqDZdPde9G9MX2jjE3ynywxNAKgfJWTldY
+ bh=rAa8xnID9wmdueBQ/cZWnFq7q+M1tI3cAzU0GkmPT8o=;
+ b=P0a3iZfEx04ciMLlDTrFS0/R6gKS905M4fKM5nH6/RFXWzZeQUUnR3kSL9kkVYSKMTcpf5TJf
+ Xq8q8ZGTzGuCW+Fga3yqhOYtaz9zv0CxTAnJ3+yrUvWoMvoefa08B63
 X-Developer-Key: i=george.moussalem@outlook.com; a=ed25519;
  pk=/PuRTSI9iYiHwcc6Nrde8qF4ZDhJBlUgpHdhsIjnqIk=
 X-Endpoint-Received: by B4 Relay for george.moussalem@outlook.com/20250321
@@ -95,53 +95,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: George Moussalem <george.moussalem@outlook.com>
+From: Praveenkumar I <quic_ipkumar@quicinc.com>
 
-Add USB Super-Speed UNIPHY node and populate the USB DT clock on the GCC
-node for the GCC to gate the PIPE clock supplied by the USB3 PHY.
+Add the USB3 UNIPHY node to the USB controller node.
+In addition, switch to the pipe clock supplied by the USB3 UNIPHY
+instead of the UTMI clock.
 
+Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
 Signed-off-by: George Moussalem <george.moussalem@outlook.com>
 ---
- arch/arm64/boot/dts/qcom/ipq5018.dtsi | 19 ++++++++++++++++++-
- 1 file changed, 18 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/qcom/ipq5332.dtsi | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/qcom/ipq5018.dtsi b/arch/arm64/boot/dts/qcom/ipq5018.dtsi
-index 4fc627b47fe7..d259a841ad17 100644
---- a/arch/arm64/boot/dts/qcom/ipq5018.dtsi
-+++ b/arch/arm64/boot/dts/qcom/ipq5018.dtsi
-@@ -179,6 +179,23 @@ usbphy0: phy@5b000 {
- 			status = "disabled";
- 		};
+diff --git a/arch/arm64/boot/dts/qcom/ipq5332.dtsi b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
+index 664586979ec4..6253443c8d7f 100644
+--- a/arch/arm64/boot/dts/qcom/ipq5332.dtsi
++++ b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
+@@ -523,10 +523,8 @@ usb: usb@8a00000 {
+ 					<&gcc MASTER_SNOC_USB &gcc SLAVE_SNOC_USB>;
+ 			interconnect-names = "usb-ddr", "apps-usb";
  
-+		usbphy1: phy@5d000 {
-+			compatible = "qcom,ipq5018-uniphy-usb-ss-phy";
-+			reg = <0x0005d000 0x800>;
-+
-+			clocks = <&gcc GCC_USB0_PHY_CFG_AHB_CLK>,
-+				 <&gcc GCC_USB0_PIPE_CLK>;
-+
-+			resets = <&gcc GCC_USB0_PHY_BCR>;
-+
-+			#clock-cells = <0>;
-+			#phy-cells = <0>;
-+
-+			qcom,phy-usb-mux-sel = <&tcsr 0x10540>;
-+
-+			status = "disabled";
-+		};
-+
- 		pcie1_phy: phy@7e000 {
- 			compatible = "qcom,ipq5018-uniphy-pcie-phy";
- 			reg = <0x0007e000 0x800>;
-@@ -436,7 +453,7 @@ gcc: clock-controller@1800000 {
- 				 <&sleep_clk>,
- 				 <&pcie0_phy>,
- 				 <&pcie1_phy>,
--				 <0>,
-+				 <&usbphy1>,
- 				 <&gephy_rx_clk>,
- 				 <&gephy_tx_clk>,
- 				 <0>,
+-			phys = <&usbphy0>;
+-			phy-names = "usb2-phy";
+-
+-			qcom,select-utmi-as-pipe-clk;
++			phys = <&usbphy0>, <&usbphy1>;
++			phy-names = "usb2-phy", "usb3-phy";
+ 
+ 			tx-fifo-resize;
+ 			snps,is-utmi-l1-suspend;
 
 -- 
 2.53.0
