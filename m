@@ -4,65 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6BE0EC5B56A
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Aug 2026 13:03:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22350C5B56A
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Aug 2026 13:15:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2Hc3wNsMTAHrTW4xI/mYCP/6J19NhigM71TOWNMaIXo=; b=Tc7G+MbiokIYMC
-	JP+NsHpC3ebiJxKcoOF418T09vsr6n2hL/eqtRUCPxeKPXKaYvyUYWqOX9qt21bRZBu/Pxk99YWBr
-	vEvLR3ryXkDyLcclGHx7xe7LT6RxtbQUTGWhah9EqydIj2Q2Try2ek/9ak8WH3xdXjjMmKTjUNSRL
-	zIkF60hDQSKyYBLqYb5fsJdkCxYQ/E729ewi5TWO6/MA0iuORMopRcyoFvS5UGErlHWRiJKeFQSjw
-	lxlUpfisnAiWR70ss7hFtzX+XrVcRKo+D8c2yLQjQyzF5eOiaxs18i0eEnoPMFbmlEWmIFbwMiYxO
-	Vn/stoAyuMbkCEofW+ig==;
+	List-Owner; bh=V+nYzYViZKzuw32SCaRBHXWh16JtE/jcobOvKe9SEFQ=; b=auF5uJTDPDPkg3
+	YB8e1DO3nTL9VLESUVjFE3bpyTbOKPEfu/u9fJZK7xRL2E1kXimzIJBmN1fr3UYntI8qlO1phcJbQ
+	pumwtf2FTlNIjt/z02mFyHaWUafHlOsrhchXPT71hm6i/ot15pnuMFg8APB2+sc0YS0ssPVo4d+6k
+	CyNpqMRNXQ0J2eZV7GLQkLKj/DxpTQ/q/MzZPUIDVKlUKVbHItes4xfKLJmtXiqh87+vaLQMqX5rt
+	ALnHgfDSLp1V74EhVadKr9kJF5kd3MlscGuGc8JWZApdKkqPJZWV+N4E2fT9q5GEdSTQh1zt+uHsJ
+	ofr/tgPjokP7lfTJJcMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wu8cW-0000000GFGm-0Q4k;
-	Wed, 12 Aug 2026 13:03:48 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wu8nX-0000000GG6Q-3SdH;
+	Wed, 12 Aug 2026 13:15:11 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wu8cV-0000000GFGE-00eR
-	for linux-phy@lists.infradead.org;
-	Wed, 12 Aug 2026 13:03:47 +0000
+	id 1wu8nW-0000000GG5w-1rw1;
+	Wed, 12 Aug 2026 13:15:10 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 1615560A85;
-	Wed, 12 Aug 2026 13:03:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 65F8E1F00ACF;
-	Wed, 12 Aug 2026 13:03:40 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id CDD454050C;
+	Wed, 12 Aug 2026 13:15:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7C9181F000E9;
+	Wed, 12 Aug 2026 13:15:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786539825;
-	bh=bytXpQgpZnzKEOXost0E8oAB4XFlFhdZruCl5tty8JI=;
+	s=k20260515; t=1786540509;
+	bh=7MDSrybxRiXLZo7xpuDMnJEHVcp0ujnYiamwQaTaTIs=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=O0pT2/LOw05vWQSgqCTFVdqD/3AqwaHcn8ihBa0+WafMqARXwj2Elajlrpraxb5km
-	 CIQaAOftqPpldZAdimWEMqftMDt4LzZmsWdH8q7Tq4tfgBAbaV6RIqB/g6NKqw+4UE
-	 0xAEj1zQxlpJi9iGVBT73poiicjs9btSpbCAOrE5/sOezQl/QN/VrECREL1b+KJZUT
-	 AwfBK0Sy8TKAYMj0Olvp7ukhrOdozWS7irxJJ2WT8tXDimnMgQmRDPsybH9dHCIMtd
-	 Ulsth0jPqf5lf224LrdBPhqlCDVjNLmDdMRGn5LRa787aorGTdhCl6WBwUatwjA1wc
-	 DteuX27jkGYvA==
-Date: Wed, 12 Aug 2026 15:03:34 +0200
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Sushrut Shree Trivedi <sushrut.trivedi@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Bjorn Helgaas <bhelgaas@google.com>, Lorenzo Pieralisi <lpieralisi@kernel.org>, 
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
-	Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>, Bartosz Golaszewski <brgl@kernel.org>, 
-	Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org
-Subject: Re: [PATCH 2/9] dt-bindings: PCI: qcom: Document the Shikra PCIe
- Controller
-Message-ID: <xxoyame76suxnhzglpccdxmvrpal3n5bgxhvcjeqyznepe2cyr@bud6ob4ecw7q>
-References: <20260701-shikra-upstream-v1-0-e1a721eb8943@oss.qualcomm.com>
- <20260701-shikra-upstream-v1-2-e1a721eb8943@oss.qualcomm.com>
- <hf6szamduxopeuvkjkxxteqauirsgfq36pih7go2wf25o4zmv4@vhmhe3gyzgo5>
- <7a17da3d-c838-4877-8a62-5551dbdaa9e5@oss.qualcomm.com>
+	b=hfxQh1zZx8aeCxAPv8Y2gC3HJw1t+tW+7Jdh48gx4HKMOF/2n2zpY7W7XT8uaEqZw
+	 bV0u2rFKUhIad6Fd3QnVz13bpzLJFLE/SUvDXQcu2/CXtkf3HXBSXcxRcNfkAkAru1
+	 YzoFj4g6R/0ThkBHFTKBi9OOOmbNM2HAZrP9dj+FRcV0fb/v1qEdYyBEZmekSAEqtL
+	 MDRsQIlIv4IDdvAn3u0ft+34JfjBxeDDOEhP0Z6OcL2N9T6qTylbPqzjTNJkD6cXVm
+	 KVQSRnL0oTtiMV5LFPcbCl5l/Zcfhk3Cthrw2+rG5pvHg8lFd3FijN9JSHGcqadMjg
+	 i2ZUR8Ag9/wwg==
+Date: Wed, 12 Aug 2026 14:15:03 +0100
+From: Lee Jones <lee@kernel.org>
+To: Stefan =?iso-8859-1?Q?D=F6singer?= <stefandoesinger@gmail.com>
+Cc: Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Brian Masney <bmasney@redhat.com>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Russell King <linux@armlinux.org.uk>, linux-clk@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	mfd@lists.linux.dev
+Subject: Re: [PATCH v10 04/12] mfd: zx297520v3: Add a clock and reset MFD
+ driver
+Message-ID: <20260812131503.GR1072730@google.com>
+References: <20260810-zx29clk-v10-0-63846490712c@gmail.com>
+ <20260810-zx29clk-v10-4-63846490712c@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <7a17da3d-c838-4877-8a62-5551dbdaa9e5@oss.qualcomm.com>
+In-Reply-To: <20260810-zx29clk-v10-4-63846490712c@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,99 +74,331 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkLCBBdWcgMTIsIDIwMjYgYXQgMTE6MjU6MTJBTSArMDUzMCwgU3VzaHJ1dCBTaHJlZSBU
-cml2ZWRpIHdyb3RlOgoKWy4uLl0KCj4gPiA+ICsgICAgI2luY2x1ZGUgPGR0LWJpbmRpbmdzL2Ns
-b2NrL3Fjb20scnBtY2MuaD4KPiA+ID4gKwo+ID4gPiArICAgIHNvYyB7Cj4gPiA+ICsgICAgICAg
-ICNhZGRyZXNzLWNlbGxzID0gPDI+Owo+ID4gPiArICAgICAgICAjc2l6ZS1jZWxscyA9IDwyPjsK
-PiA+ID4gKwo+ID4gR2V0IHJpZCBvZiAnc29jJyBub2RlLgo+IElmIHdlIHJlbW92ZSBzb2Mgbm9k
-ZSwgZHQtc2NoZW1hIHVzZXMgYWRkcmVzcy1jZWxscyA9IDwxPiwKPiBzaXplLWNlbGxzwqAgPSA8
-MT4gZm9yIGR0LWJpbmRpbmcgY2hlY2sgYW5kIHRocm93cyBlcnJvcnMuCj4gCj4gRG8geW91IHN1
-Z2dlc3QgaWdub3JpbmcgdGhvc2UgZXJyb3JzID8KCk5vLCB5b3UgbmVlZCB0byBtYWtlIHRoZSAn
-cmVnJyBlbnRyaWVzIDEgY2VsbC4KCj4gPiAKPiA+ID4gKyAgICAgICAgcGNpZUA0NWU4MDAwIHsK
-PiA+ID4gKyAgICAgICAgICBkZXZpY2VfdHlwZSA9ICJwY2kiOwo+ID4gPiArICAgICAgICAgIGNv
-bXBhdGlibGUgPSAicWNvbSxzaGlrcmEtcGNpZSI7Cj4gPiA+ICsgICAgICAgICAgcmVnID0gPDB4
-MCAweDA0NWU4MDAwIDB4MCAweDMwMDA+LAo+ID4gPiArICAgICAgICAgICAgICAgIDwweDAgMHg2
-MDAwMDAwMCAweDAgMHhmMWQ+LAo+ID4gPiArICAgICAgICAgICAgICAgIDwweDAgMHg2MDAwMGYy
-MCAweDAgMHhhOD4sCj4gPiA+ICsgICAgICAgICAgICAgICAgPDB4MCAweDYwMDAxMDAwIDB4MCAw
-eDEwMDA+LAo+ID4gPiArICAgICAgICAgICAgICAgIDwweDAgMHg2MDEwMDAwMCAweDAgMHgxMDAw
-MDA+LAo+ID4gPiArICAgICAgICAgICAgICAgIDwweDAgMHgwNDVlYjAwMCAweDAgMHgxMDAwPjsK
-PiA+ID4gKyAgICAgICAgICByZWctbmFtZXMgPSAicGFyZiIsCj4gPiA+ICsgICAgICAgICAgICAg
-ICAgICAgICAgImRiaSIsCj4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAgImVsYmkiLAo+ID4g
-PiArICAgICAgICAgICAgICAgICAgICAgICJhdHUiLAo+ID4gPiArICAgICAgICAgICAgICAgICAg
-ICAgICJjb25maWciLAo+ID4gPiArICAgICAgICAgICAgICAgICAgICAgICJtaGkiOwo+ID4gPiAr
-ICAgICAgICAgICNhZGRyZXNzLWNlbGxzID0gPDM+Owo+ID4gPiArICAgICAgICAgICNzaXplLWNl
-bGxzID0gPDI+Owo+ID4gPiArICAgICAgICAgIHJhbmdlcyA9IDwweDAxMDAwMDAwIDB4MCAweDAw
-MDAwMDAwIDB4MCAweDYwMjAwMDAwIDB4MCAweDEwMDAwMD4sCj4gPiA+ICsgICAgICAgICAgICAg
-ICAgICAgPDB4MDIwMDAwMDAgMHgwIDB4NjAzMDAwMDAgMHgwIDB4NjAzMDAwMDAgMHgwIDB4M2Qw
-MDAwMD4sCj4gPiA+ICsgICAgICAgICAgICAgICAgICAgPDB4MDMwMDAwMDAgMHg0IDB4MDAwMDAw
-MDAgMHg0IDB4MDAwMDAwMDAgMHgzIDB4MDAwMDAwMD47Cj4gPiA+ICsgICAgICAgICAgYnVzLXJh
-bmdlID0gPDB4MDAgMHhmZj47Cj4gPiA+ICsKPiA+ID4gKyAgICAgICAgICBsaW51eCxwY2ktZG9t
-YWluID0gPDA+Owo+ID4gPiArICAgICAgICAgIG51bS1sYW5lcyA9IDwxPjsKPiA+ID4gKwo+ID4g
-PiArICAgICAgICAgIGludGVycnVwdHMgPSA8R0lDX1NQSSA0OTEgSVJRX1RZUEVfTEVWRUxfSElH
-SCAwPiwKPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgPEdJQ19TUEkgNDkyIElSUV9UWVBF
-X0xFVkVMX0hJR0ggMD4sCj4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAgIDxHSUNfU1BJIDQ5
-MyBJUlFfVFlQRV9MRVZFTF9ISUdIIDA+LAo+ID4gPiArICAgICAgICAgICAgICAgICAgICAgICA8
-R0lDX1NQSSA0OTQgSVJRX1RZUEVfTEVWRUxfSElHSCAwPiwKPiA+ID4gKyAgICAgICAgICAgICAg
-ICAgICAgICAgPEdJQ19TUEkgNDk1IElSUV9UWVBFX0xFVkVMX0hJR0ggMD4sCj4gPiA+ICsgICAg
-ICAgICAgICAgICAgICAgICAgIDxHSUNfU1BJIDQ5NiBJUlFfVFlQRV9MRVZFTF9ISUdIIDA+LAo+
-ID4gPiArICAgICAgICAgICAgICAgICAgICAgICA8R0lDX1NQSSA0OTcgSVJRX1RZUEVfTEVWRUxf
-SElHSCAwPiwKPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgPEdJQ19TUEkgNDk4IElSUV9U
-WVBFX0xFVkVMX0hJR0ggMD4sCj4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAgIDxHSUNfU1BJ
-IDQ4OSBJUlFfVFlQRV9MRVZFTF9ISUdIIDA+Owo+ID4gPiArICAgICAgICAgIGludGVycnVwdC1u
-YW1lcyA9ICJtc2kwIiwKPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAibXNpMSIs
-Cj4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgIm1zaTIiLAo+ID4gPiArICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICJtc2kzIiwKPiA+ID4gKyAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAibXNpNCIsCj4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgIm1zaTUi
-LAo+ID4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICJtc2k2IiwKPiA+ID4gKyAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAibXNpNyIsCj4gPiA+ICsgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgImdsb2JhbCI7Cj4gPiA+ICsKPiA+ID4gKyAgICAgICAgICBpbnRlcnJ1cHQtbWFw
-ID0gPDAgMCAwIDEgJmludGMgMCAwIDAgNDk5IElSUV9UWVBFX0xFVkVMX0hJR0g+LAo+ID4gPiAr
-ICAgICAgICAgICAgICAgICAgICAgICAgICA8MCAwIDAgMiAmaW50YyAwIDAgMCA1MDAgSVJRX1RZ
-UEVfTEVWRUxfSElHSD4sCj4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgIDwwIDAgMCAz
-ICZpbnRjIDAgMCAwIDUwMSBJUlFfVFlQRV9MRVZFTF9ISUdIPiwKPiA+ID4gKyAgICAgICAgICAg
-ICAgICAgICAgICAgICAgPDAgMCAwIDQgJmludGMgMCAwIDAgNTAyIElSUV9UWVBFX0xFVkVMX0hJ
-R0g+Owo+ID4gPiArICAgICAgICAgIGludGVycnVwdC1tYXAtbWFzayA9IDwwIDAgMCAweDc+Owo+
-ID4gPiArICAgICAgICAgICNpbnRlcnJ1cHQtY2VsbHMgPSA8MT47Cj4gPiA+ICsKPiA+ID4gKyAg
-ICAgICAgICBjbG9ja3MgPSA8JmdjYyBHQ0NfUENJRV9BVVhfQ0xLPiwKPiA+ID4gKyAgICAgICAg
-ICAgICAgICAgICA8JmdjYyBHQ0NfUENJRV9DRkdfQUhCX0NMSz4sCj4gPiA+ICsgICAgICAgICAg
-ICAgICAgICAgPCZnY2MgR0NDX1BDSUVfTVNUUl9BWElfQ0xLPiwKPiA+ID4gKyAgICAgICAgICAg
-ICAgICAgICA8JmdjYyBHQ0NfUENJRV9TTFZfQVhJX0NMSz4sCj4gPiA+ICsgICAgICAgICAgICAg
-ICAgICAgPCZnY2MgR0NDX1BDSUVfU0xWX1EyQV9BWElfQ0xLPiwKPiA+ID4gKyAgICAgICAgICAg
-ICAgICAgICA8JmdjYyBHQ0NfRERSU1NfTUVNTk9DX1BDSUVfU0ZfQ0xLPiwKPiA+ID4gKyAgICAg
-ICAgICAgICAgICAgICA8JmdjYyBHQ0NfUENJRV9USUxFX0FYSV9TWVNfTk9DX0NMSz4sCj4gPiA+
-ICsgICAgICAgICAgICAgICAgICAgPCZnY2MgR0NDX1FNSVBfUENJRV9DRkdfQUhCX0NMSz47Cj4g
-PiA+ICsgICAgICAgICAgY2xvY2stbmFtZXMgPSAiYXV4IiwKPiA+ID4gKyAgICAgICAgICAgICAg
-ICAgICAgICAgICJjZmciLAo+ID4gPiArICAgICAgICAgICAgICAgICAgICAgICAgImJ1c19tYXN0
-ZXIiLAo+ID4gPiArICAgICAgICAgICAgICAgICAgICAgICAgImJ1c19zbGF2ZSIsCj4gPiA+ICsg
-ICAgICAgICAgICAgICAgICAgICAgICAic2xhdmVfcTJhIiwKPiA+ID4gKyAgICAgICAgICAgICAg
-ICAgICAgICAgICJkZHJzc19tZW1ub2NfcGNpZSIsCj4gPiA+ICsgICAgICAgICAgICAgICAgICAg
-ICAgICAidGlsZSIsCj4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAicW1pcF9wY2llX2Fo
-YiI7Cj4gPiA+ICsKPiA+ID4gKyAgICAgICAgICBhc3NpZ25lZC1jbG9ja3MgPSA8JmdjYyBHQ0Nf
-UENJRV9BVVhfQ0xLPjsKPiA+ID4gKyAgICAgICAgICBhc3NpZ25lZC1jbG9jay1yYXRlcyA9IDwx
-OTIwMDAwMD47Cj4gPiA+ICsKPiA+ID4gKyAgICAgICAgICBpbnRlcmNvbm5lY3RzID0gPCZzeXN0
-ZW1fbm9jIE1BU1RFUl9QQ0lFMl8wIFJQTV9BTFdBWVNfVEFHCj4gPiA+ICsgICAgICAgICAgICAg
-ICAgICAgICAgICAgICZtY192aXJ0IFNMQVZFX0VCSV9DSDAgUlBNX0FMV0FZU19UQUc+LAo+ID4g
-PiArICAgICAgICAgICAgICAgICAgICAgICAgICA8Jm1lbV9ub2MgTUFTVEVSX0FNUFNTX00wIFJQ
-TV9BQ1RJVkVfVEFHCj4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICZjb25maWdfbm9j
-IFNMQVZFX1BDSUUyXzAgUlBNX0FDVElWRV9UQUc+Owo+ID4gPiArCj4gPiA+ICsgICAgICAgICAg
-aW50ZXJjb25uZWN0LW5hbWVzID0gInBjaWUtbWVtIiwKPiA+ID4gKyAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAiY3B1LXBjaWUiOwo+ID4gPiArCj4gPiA+ICsgICAgICAgICAgaW9tbXUt
-bWFwID0gPDB4MCAmYXBwc19zbW11IDB4ODAwIDB4MT4sCj4gPiA+ICsgICAgICAgICAgICAgICAg
-ICAgICAgPDB4MTAwICZhcHBzX3NtbXUgMHg4MDEgMHgxPjsKPiA+ID4gKwo+ID4gPiArICAgICAg
-ICAgIHJlc2V0cyA9IDwmZ2NjIEdDQ19QQ0lFX0JDUj47Cj4gPiA+ICsgICAgICAgICAgcmVzZXQt
-bmFtZXMgPSAicGNpIjsKPiA+ID4gKwo+ID4gPiArICAgICAgICAgIHBvd2VyLWRvbWFpbnMgPSA8
-JmdjYyBHQ0NfUENJRV9HRFNDPjsKPiA+ID4gKwo+ID4gPiArICAgICAgICAgIG1heC1saW5rLXNw
-ZWVkID0gPDI+Owo+ID4gWW91IGRvbid0IG5lZWQgJ21heC1saW5rLXNwZWVkJyB1bmxlc3MgeW91
-IHdhbnQgdG8gbGltaXQgdGhlIGxpbmsgc3BlZWQuCj4gVGhpcyBpcyBuZWVkZWQgc2luY2UgU2hp
-a3JhIGNvbnRyb2xsZXIgc3VwcG9ydHMgR2VuMyBidXQgdGhlIFBIWQo+IGlzIG9ubHkgY2FwYWJs
-ZSBvZiBHZW4yLiBXaXRob3V0IGxpbWl0aW5nIHRoZSBzcGVlZCwgbGluay11cCBmYWlscy4KClRo
-aXMgaXMgYSBjcml0aWNhbCBsaW1pdGF0aW9uIHRoYXQgc2hvdWxkJ3ZlIGJlZW4gbWVudGlvbmVk
-IGluIHRoZSBjb21taXQKbWVzc2FnZS4KCi0gTWFuaQoKLS0gCuCuruCuo+Cuv+CuteCuo+CvjeCu
-o+CuqeCvjSDgrprgrqTgrr7grprgrr/grrXgrq7gr40KCi0tIApsaW51eC1waHkgbWFpbGluZyBs
-aXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFk
-Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On Mon, 10 Aug 2026, Stefan D=F6singer wrote:
+
+> This driver registers child devices for the zx297520v3 clock and reset
+> controllers. The clk-zx297520v3 and reset-zte-zx297520v3 submitted in
+> the next patches will drive the respective functionalities.
+> =
+
+> Signed-off-by: Stefan D=F6singer <stefandoesinger@gmail.com>
+> =
+
+> ---
+> =
+
+> What I am still unsure about: How much sense does it make to have this
+> module-capable and able to unbind: In practice, the board doesn't work
+> without this driver and its clock and reset children.
+> =
+
+> Changes v9:
+> Deassert the LSP reset and enable the LSP pclk here. In practice the
+> boot rom needs to do that because it prints to an LSP-connected UART and
+> reads the boot policy from the LSP connected flash chip.
+> =
+
+> In doing so, I migrated the match data to an enum as mfd.md suggests.
+> =
+
+> Changes v8:
+> *) Remove .of_compatible from PHY mfd child
+> =
+
+> *) Move to drivers/mfd (Sashiko)
+> =
+
+> For me either soc/zte or mfd/ is fine. Note though that this MFD parent
+> is very specific to the zx297520v3 SoC. I don't expect this to be reused
+> anywhere else. There are two more MFD-ish devices in there: soc_sys at
+> 0x140000, which I plan to handle in the same driver, and an i2c PMIC,
+> which would get its own host driver.
+> =
+
+> *) Use PLATFORM_DEVID_AUTO (Sashiko). NONE was intentional as I only
+> ever expect one instance, but I don't see any harm in doing the standard
+> thing and use AUTO
+> =
+
+> *) On the suggestion not to put the link to mfd_cells[] into match data:
+> I see that it is spelled out in Sashiko's mfd.md, written by Lee Jones,
+> the MFD maintainer. I would appreciate some education on the rationale
+> behind it: Putting a pointer into the void *data is a common pattern in
+> the kernel. I don't understand in which situation this can possibly
+> break?
+> =
+
+> Both structs are static const in the same compilation unit. data is a
+> const void *, not a uintptr_t or kernel_ulong_t, so it seems passing a
+> pointer is the intended use. What am I missing?
+> =
+
+> Changes v7:
+> Add phy MFD child
+> =
+
+> Changes v6: Make the ZTE SoC driver section depend on HAS_IOMEM
+> (Sashiko). The entire MFD section, which contains MFD_CORE, depends on
+> HAS_IOMEM even with COMPILE_TEST.
+> =
+
+> Add a NULL ptr check for of_device_get_match_data (Sashiko). While not
+> uniform, rave-sp, rohm-bd9576, atc260x, da9052-i2c protect against
+> incorrect manual attachment that way.
+> =
+
+> Add lspclk here as well in an attempt to satisfy both Conor Dooley, who
+> asks for MFD for top and matrix, and Philipp Zabel, who prefers aux but
+> at least wants the reset driver limited to one driver type.
+> =
+
+> Changes v5: Use MFD instead of Aux bus for top and matrix crm because of
+> extra functionality: Reboot in top, hwlock in Matrix.
+> =
+
+> LSP clocks stay with the aux bus and are thus not handled in this
+> driver. The clk driver will bind directly to the lspcrm node.
+> ---
+>  MAINTAINERS                      |   1 +
+>  drivers/mfd/Kconfig              |  13 +++++
+>  drivers/mfd/Makefile             |   2 +
+>  drivers/mfd/zte-zx297520v3-crm.c | 117 +++++++++++++++++++++++++++++++++=
+++++++
+>  4 files changed, 133 insertions(+)
+> =
+
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 61dbe959acf5..d50c03fd5a76 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -3909,6 +3909,7 @@ F:	Documentation/devicetree/bindings/clock/zte,zx29=
+7520v3-matrixcrm.yaml
+>  F:	Documentation/devicetree/bindings/clock/zte,zx297520v3-topcrm.yaml
+>  F:	arch/arm/boot/dts/zte/
+>  F:	arch/arm/mach-zte/
+> +F:	drivers/mfd/zte-zx297520v3-crm.c
+>  F:	include/dt-bindings/clock/zte,zx297520v3-clk.h
+>  F:	include/dt-bindings/phy/zte,zx297520v3-topcrm.h
+>  F:	include/dt-bindings/reset/zte,zx297520v3-reset.h
+> diff --git a/drivers/mfd/Kconfig b/drivers/mfd/Kconfig
+> index e4fd4572472f..08138713dfc0 100644
+> --- a/drivers/mfd/Kconfig
+> +++ b/drivers/mfd/Kconfig
+> @@ -2578,5 +2578,18 @@ config MFD_MAX7360
+>  	  additional drivers must be enabled in order to use the functionality
+>  	  of the device.
+>  =
+
+> +config MFD_ZTE_ZX297520V3_CRM
+> +	tristate "ZTE zx297520v3 Clock and Reset Manager"
+> +	depends on ARCH_ZTE || COMPILE_TEST
+> +	select MFD_CORE
+> +	select REGMAP_MMIO
+
+Is this used?
+
+>  	default SOC_ZX297520V3
+>  	help
+>  	  Say yes here to enable the driver for the ZTE zx297520v3 clock and
+>  	  reset manager MFD driver. This driver provides the host device for
+>  	  the clock and reset drivers and is required to boot the SoC. You
+>  	  will also need to enable CLK_ZTE_ZX297520V3 and RESET_ZTE_ZX297520V3
+>  	  to build the actual clock and reset child drivers.
+> +
+>  endmenu
+>  endif
+> diff --git a/drivers/mfd/Makefile b/drivers/mfd/Makefile
+> index 72d3944b0ad8..ab0cba2042a2 100644
+> --- a/drivers/mfd/Makefile
+> +++ b/drivers/mfd/Makefile
+> @@ -304,3 +304,5 @@ obj-$(CONFIG_MFD_RSMU_SPI)	+=3D rsmu_spi.o rsmu_core.o
+>  obj-$(CONFIG_MFD_UPBOARD_FPGA)	+=3D upboard-fpga.o
+>  =
+
+>  obj-$(CONFIG_MFD_LOONGSON_SE)	+=3D loongson-se.o
+> +
+> +obj-$(CONFIG_MFD_ZTE_ZX297520V3_CRM)	+=3D zte-zx297520v3-crm.o
+> diff --git a/drivers/mfd/zte-zx297520v3-crm.c b/drivers/mfd/zte-zx297520v=
+3-crm.c
+> new file mode 100644
+> index 000000000000..550ce4ad7ec5
+> --- /dev/null
+> +++ b/drivers/mfd/zte-zx297520v3-crm.c
+> @@ -0,0 +1,117 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * Copyright (C) 2026 Stefan D=F6singer
+
+Personal copyright, are you sure?
+
+Is that okay with ZTE?
+
+> + */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/err.h>
+> +#include <linux/errno.h>
+> +#include <linux/mfd/core.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/reset.h>
+> +
+> +enum zx297520v3_parent_type {
+> +	ZX297520V3_INVALID =3D 0,
+> +	ZX297520V3_TOPCRM,
+> +	ZX297520V3_MATRIXCRM,
+> +	ZX297520V3_LSPCRM,
+
+None of these are readable.  I suggest you improve the nomenclature.
+
+> +};
+> +
+> +static const struct mfd_cell zx297520v3_topcrm_cells[] =3D {
+> +	{
+> +		.name =3D "zx297520v3-topclk",
+> +	},
+> +	{
+> +		.name =3D "zx297520v3-topreset",
+> +	},
+> +	{
+> +		.name =3D "reboot",
+> +		.of_compatible =3D "syscon-reboot",
+> +	},
+> +	{
+> +		.name =3D "zx297520v3-usb-phy",
+> +	},
+> +};
+> +
+> +static const struct mfd_cell zx297520v3_matrixcrm_cells[] =3D {
+> +	{
+> +		.name =3D "zx297520v3-matrixclk",
+> +	},
+> +	{
+> +		.name =3D "zx297520v3-matrixreset",
+> +	},
+> +	/* A set of hwlock controllers is found here as well, but no driver is =
+implemented yet */
+
+Drop this.
+
+> +};
+> +
+> +static const struct mfd_cell zx297520v3_lspcrm_cells[] =3D {
+> +	{
+> +		.name =3D "zx297520v3-lspclk",
+> +	},
+> +	{
+> +		.name =3D "zx297520v3-lspreset",
+> +	},
+> +};
+
+Use MFD_CELL_*() in all of the above.
+
+> +
+> +static int zx297520v3_crm_probe(struct platform_device *pdev)
+> +{
+> +	enum zx297520v3_parent_type type;
+> +	struct device *dev =3D &pdev->dev;
+> +	const struct mfd_cell *cells;
+> +	struct reset_control *rst;
+> +	unsigned int num_cells;
+> +	struct clk *pclk;
+> +
+> +	type =3D (enum zx297520v3_parent_type)(kernel_ulong_t)of_device_get_mat=
+ch_data(dev);
+
+This should be firmware agnostic.
+
+device_get*()
+
+> +	switch (type) {
+> +	case ZX297520V3_TOPCRM:
+> +		cells =3D zx297520v3_topcrm_cells;
+> +		num_cells =3D ARRAY_SIZE(zx297520v3_topcrm_cells);
+> +		break;
+> +
+> +	case ZX297520V3_MATRIXCRM:
+> +		cells =3D zx297520v3_matrixcrm_cells;
+> +		num_cells =3D ARRAY_SIZE(zx297520v3_matrixcrm_cells);
+> +		break;
+> +
+> +	case ZX297520V3_LSPCRM:
+> +		cells =3D zx297520v3_lspcrm_cells;
+> +		num_cells =3D ARRAY_SIZE(zx297520v3_lspcrm_cells);
+> +
+> +		pclk =3D devm_clk_get_enabled(dev, "pclk");
+> +		if (IS_ERR(pclk))
+> +			return dev_err_probe(dev, PTR_ERR(pclk), "Could not get pclk\n");
+
+Place pclk in 's so we know that's its name.
+
+> +
+> +		rst =3D devm_reset_control_get_exclusive_deasserted(dev, NULL);
+
+Does 'rst' have to be shortened?
+
+> +		if (IS_ERR(rst))
+> +			return dev_err_probe(dev, PTR_ERR(rst), "Could not get reset\n");
+
+Could we make this error message more descriptive and clear, perhaps using
+'Failed to deassert reset control'?
+
+> +		break;
+> +
+> +	default:
+> +		return -ENODEV;
+> +	}
+> +
+> +	return devm_mfd_add_devices(dev, PLATFORM_DEVID_AUTO, cells, num_cells,=
+ NULL, 0, NULL);
+> +}
+> +
+> +static const struct of_device_id of_match_zx297520v3_crm[] =3D {
+> +	{ .compatible =3D "zte,zx297520v3-topcrm", .data =3D (void *)ZX297520V3=
+_TOPCRM },
+> +	{ .compatible =3D "zte,zx297520v3-matrixcrm", .data =3D (void *)ZX29752=
+0V3_MATRIXCRM },
+> +	{ .compatible =3D "zte,zx297520v3-lspcrm", .data =3D (void *)ZX297520V3=
+_LSPCRM },
+> +	{ }
+> +};
+> +MODULE_DEVICE_TABLE(of, of_match_zx297520v3_crm);
+> +
+> +static struct platform_driver zx297520v3_crm =3D {
+> +	.probe =3D zx297520v3_crm_probe,
+> +	.driver =3D {
+> +		.name =3D "zx297520v3-crm",
+> +		.of_match_table =3D of_match_zx297520v3_crm,
+> +	},
+> +};
+> +module_platform_driver(zx297520v3_crm);
+> +
+> +MODULE_AUTHOR("Stefan D=F6singer <stefandoesinger@gmail.com>");
+> +MODULE_DESCRIPTION("ZTE zx297520v3 CRM MFD host driver");
+
+Drop the term MFD.
+
+> +MODULE_LICENSE("GPL");
+> =
+
+> -- =
+
+> 2.54.0
+> =
+
+
+-- =
+
+Lee Jones
+
+-- =
+
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
