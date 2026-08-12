@@ -4,53 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 449F0C5DF66
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Aug 2026 09:34:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85CB2C5CFDB
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Aug 2026 09:34:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/Ty+27gG3dtucbe7YYAHOMse1IsPZEQC5W/GnSMn/h0=; b=Q28V3LyewclLXK
-	HsKgsvPwv1/baTVa3CKpkHUAwbbcyldKi/ZU+c+yUSq9BvXQMJHVa/pVvgFbL2EyWM09PD/k59/pT
-	XPO6wbh0X/t66NkexDpry/px0N80Va9gAF9YnOSGN+dZdMlFYDaR8h2mspA9jZcfxorA8Erx+m4AU
-	xJny2Nm6WgxbNk4jqO0Z1jWykXNkY8GELc/Y007wcU7eDsUc6nWCLZapC9o+n379sDftM2YmRM/Un
-	bvLZK5BIsQTsCW3/BB8ilK4wJGUKnyUe852marTDCwlEGYtlSQgAk5vIiPQmUpJoYPtYomIqGv5Ae
-	YMxsu+V8Ugdfvro7yFFg==;
+	List-Owner; bh=N/Fy6gfOPTePUxgyosZGSe/S2gOz0oPv1QEbQG3h+j0=; b=XbRQLFJzR8wn3V
+	h+D+jPmT/OwfiubhlSncDsBX4G+cNRixI1aCZBR8ygw8SSfN/7iYHUSusIkfHKVwL3uOsW28vm0MZ
+	83ZEluh0+/sM0RYH5QMLztSBKW1yp1xJ0pbtAFmYEyoiIjK2h8mjfNSG0Lc/FNzTvZl2Q0LxCYev7
+	gb1ntOLeyf7N0cymN5mgpSZ1lNUHXMKtK58iZqDCkfDbCx5tCKp/rFNKeaYIUS2RAqtdGDaamXtTJ
+	GgodnAXgEVPtfmq/ouAbW2xFhIugCfsbc2QO92VI6V5SD/iBwMT/YHM2heHvCLvw8V/QKSa9CJA7N
+	CIXDun92/tzgDHbyJRnA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wu5ML-0000000Flkf-3Ksh;
-	Wed, 12 Aug 2026 09:34:53 +0000
+	id 1wu5MM-0000000FllI-1dlL;
+	Wed, 12 Aug 2026 09:34:54 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wu5ME-0000000Fler-12QB
+	id 1wu5ME-0000000FlfK-23bO
 	for linux-phy@lists.infradead.org;
 	Wed, 12 Aug 2026 09:34:46 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 6EDDA45044;
+	by sea.source.kernel.org (Postfix) with ESMTP id 7D97543D2D;
 	Wed, 12 Aug 2026 09:34:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 3DFA5C2BCB9;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 56E19C2BCFA;
 	Wed, 12 Aug 2026 09:34:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1786527285;
-	bh=7Zgspg2cpl6a219QZ8lKlBpC1rJx9A4XKCi4EwWakz4=;
+	bh=3BaE5P2Yt8vo4lMA9XvS6KLHXerUNkBfKwoyVyjmA2M=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=OerUFEAxmp1R9K2WcROdmtYEG50/RQvzrOp9B5RxAzjK3sQAIezncrTUgqZgaNn6T
-	 qxVTU3ECVjgmXcNzoV9GCW06Bn+71uO1SnI75NUIox6jPoe51XFM4LiMfuBYrHD4rb
-	 azWjRDDdJN7HB8yEsvr56eUzzQOyLwNnf+WQ+nERh0+6oTVklcVurW5/18rqtXtiGP
-	 MssRhuMZMShcf0oasjAr8276cWR2NAZxHidzfHnENZKw4IyY6Fqlif7UYZ6GX5jcoa
-	 hRrv2ZsSeoi8WNZVYIGfT3FEvALmWxtou7mcHyeR/YJKhvcvebyIpP2OrQfuzaHvYP
-	 0M+NQlMDk7OcQ==
+	b=QOgtpdKBhUVwrobCMyHPpRFKKiJ8O/LvuV3+ZCE445xSr+8Uxw+0VBlOHmUP6ikef
+	 heWXkFmdnR4s2c0AfNm2DIE/8ZOH6IAQLD15u1q4JE8fqiAqKqkEQSbZAqYkJWDYBC
+	 C1oSjExbS/ks6cG0vyJqQ3Ri+l2m7RcC4P1GzbHc2j4nlIG+/BAcsdKM+R0yZ/UUSb
+	 DVH1m9RPVCtFzWV6i/bJCfvOtrIr6WrWsUeBeeE66hJG4gNEA5ZlQ3HCTDCR4Vyo2S
+	 GK3kiZ4vilPPZMX+q1KuQquLUo1E+Vfh+FKeQXphFbQ134bCciH9nVm0S2n/Kw5Uxo
+	 HAOTbTv/CLbYQ==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 2C3DAC5CFEE;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 39C24C5DF61;
 	Wed, 12 Aug 2026 09:34:45 +0000 (UTC)
 From: George Moussalem via B4 Relay <devnull+george.moussalem.outlook.com@kernel.org>
-Date: Wed, 12 Aug 2026 13:34:48 +0400
-Subject: [PATCH v2 13/14] arm64: dts: qcom: ipq5018: Enable USB Super-Speed
- PHY
+Date: Wed, 12 Aug 2026 13:34:49 +0400
+Subject: [PATCH v2 14/14] arm64: defconfig: Enable qcom USB UNIPHY driver
 MIME-Version: 1.0
-Message-Id: <20260812-ipq5018-usb3-v2-13-8f355d7ff0ef@outlook.com>
+Message-Id: <20260812-ipq5018-usb3-v2-14-8f355d7ff0ef@outlook.com>
 References: <20260812-ipq5018-usb3-v2-0-8f355d7ff0ef@outlook.com>
 In-Reply-To: <20260812-ipq5018-usb3-v2-0-8f355d7ff0ef@outlook.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -66,13 +65,14 @@ To: Vinod Koul <vkoul@kernel.org>,
  Wesley Cheng <quic_wcheng@quicinc.com>
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-usb@vger.kernel.org, George Moussalem <george.moussalem@outlook.com>
+ linux-usb@vger.kernel.org, George Moussalem <george.moussalem@outlook.com>, 
+ Krzysztof Kozlowski <krzk@kernel.org>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1786527282; l=1078;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1786527282; l=798;
  i=george.moussalem@outlook.com; s=20250321; h=from:subject:message-id;
- bh=mqT4fUHiS6tNRhSdjnTI3aemIVcVL9vUJPPDNDpgcvM=;
- b=qybIHF+s5v1NyNyS8IxUiy4ByiNmC5uvk2E2MxcCfRck+On3NOjNpbgSzSuOLekr36997faes
- fk0HgB6X4OuBweXUd68uRBwhjQAcHkf+Cp2PaeVJ1IR7k9uB1GmwqU5
+ bh=zrQ8Wh0YrykyPakfOtquLxPzDH9GvGWTD/vsNafpQc8=;
+ b=e9MkbPrNY2YklKgVhYOaKoJ5dXbJojlUCPnLDcEhKBulG4jA8t21WWO1+DnxQQtgv0YiS6qxj
+ ZDo7mraPW5aD8eNg1pBlWWiYj75/iR1D+A+LEhMhM5dMQQqD+3aVBv0
 X-Developer-Key: i=george.moussalem@outlook.com; a=ed25519;
  pk=/PuRTSI9iYiHwcc6Nrde8qF4ZDhJBlUgpHdhsIjnqIk=
 X-Endpoint-Received: by B4 Relay for george.moussalem@outlook.com/20250321
@@ -95,47 +95,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: George Moussalem <george.moussalem@outlook.com>
+From: Praveenkumar I <quic_ipkumar@quicinc.com>
 
-Add the 5V supply regulator and enable USB Super-Speed PHY support.
+Enable USB UNIPHY driver present in Qualcomm IPQ5332.
 
+Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Signed-off-by: George Moussalem <george.moussalem@outlook.com>
 ---
- arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+ arch/arm64/configs/defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts b/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
-index 8efb2b21ed9e..ca29f271e673 100644
---- a/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
-+++ b/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
-@@ -22,6 +22,14 @@ aliases {
- 	chosen {
- 		stdout-path = "serial0:115200n8";
- 	};
-+
-+	regulator_fixed_5p0: regulator-s0500 {
-+		compatible = "regulator-fixed";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		regulator-name = "fixed_5p0";
-+		gpios = <&tlmm 24 GPIO_ACTIVE_LOW>;
-+	};
- };
- 
- &blsp1_uart1 {
-@@ -119,6 +127,12 @@ &usbphy0 {
- 	status = "okay";
- };
- 
-+&usbphy1 {
-+	vdd-supply = <&regulator_fixed_5p0>;
-+
-+	status = "okay";
-+};
-+
- &xo_board_clk {
- 	clock-div = <4>;
- 	clock-mult = <1>;
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index 6ec8d3a69c98..301cc21200bb 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -1782,6 +1782,7 @@ CONFIG_PHY_QCOM_QUSB2=m
+ CONFIG_PHY_QCOM_EUSB2_REPEATER=m
+ CONFIG_PHY_QCOM_M31_USB=m
+ CONFIG_PHY_QCOM_M31_EUSB=m
++CONFIG_PHY_QCOM_UNIPHY_USB_22ULL=m
+ CONFIG_PHY_QCOM_USB_HS=m
+ CONFIG_PHY_QCOM_USB_SNPS_FEMTO_V2=m
+ CONFIG_PHY_QCOM_USB_HS_28NM=m
 
 -- 
 2.53.0
