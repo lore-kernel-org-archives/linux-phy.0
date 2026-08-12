@@ -4,54 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DBAF8C5CFC1
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Aug 2026 01:12:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8549BC5AC67
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Aug 2026 02:20:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4UIp7BRWqLt+OlhMCZ5XViOEMvDdCtZZFFGMjk8hufg=; b=oi0uPZe+PNXZr2
-	unX6q/deaEMH54PsIb3ZWKK0scej7MNCIrtNxyRP5hZhLPYHI1Yl1qyWIADqObvffg4QqYtiQRusY
-	KYzkcP/TX6SPzY4lBHFb55ySswBSdF2XUGzqNJV4Qa1Ed7QzJdnvKw7psto1LeD2p3dbLBXQODGNn
-	L3DIJRzRDr8YMcJkttRnlyH6fIX3tRVApuUp7LEd4K8AFS78Uasm7hlsIs8QHI7lZiuxEjJzW249y
-	gxjJWOibebraP7s0QYmJH65YUoa6baTTtNHVCv+EXVfnQrah/hTDnsl05tCvtqF+xA99itsPsK1Xt
-	SukwiB/PX1prg4G6adCw==;
+	List-Owner; bh=UTj3dtgxAVrJKBzHEaOiWojRB5ZqFyAg7GgiFE0Ah/0=; b=EHC3bonKzHsxBY
+	nWbZW8IwGDX2RRuppHT5bl0Fk/uRRYSzZHyrnRIrdjPnPS+8v2+x1WR93WqzyIXlSF6d+sR4Gbny/
+	kr4dQP9JeRzAARehzq5qrnFmHyM9JqPOuADYUfIDX4XJpvFkXlFd3iwaM9tmrWSSMl9aM+iPE41WH
+	S/3CnVjNi4877rNfHdNlsDk8YJLLtSzgfWwflSSK54uDN7Ku61IDP8nUrgny7btpuCtm33UxYIKCL
+	wbwE2VKFbP7OpxwuCXARDrfhVWfVs826PXERPcvuq/61GQ5fZUuq3JMFwMpfqaSJGHFacYLVtg6AY
+	PA6komsCCYpusoRYekyQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtxWN-0000000FBuO-2PkN;
-	Wed, 12 Aug 2026 01:12:43 +0000
+	id 1wtya5-0000000FGSD-0Bqd;
+	Wed, 12 Aug 2026 02:20:37 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtxWM-0000000FBuI-0UZe
+	id 1wtya1-0000000FGRm-1pBZ
 	for linux-phy@lists.infradead.org;
-	Wed, 12 Aug 2026 01:12:42 +0000
+	Wed, 12 Aug 2026 02:20:33 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id AD60843A92;
-	Wed, 12 Aug 2026 01:12:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2C7D41F00A3A;
-	Wed, 12 Aug 2026 01:12:41 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id D1F3F41525;
+	Wed, 12 Aug 2026 02:20:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8FB891F000E9;
+	Wed, 12 Aug 2026 02:20:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786497161;
-	bh=1nASlmuS+v0jwRQC+UuinvC4MnCWsadWTWifB+SK38k=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=O55lGvysKAoyApyyk9+lgSWZ84r9gRh6DbpgDka+io+0zA23Tm2z58Ka6YbgYXAMu
-	 2x+Ce9eRGpcmPewY/OrnuZHIxfIRItAQ6DW4bWaaGH+474FtlJy6pCcGNYaf8/6nqV
-	 y3yYHgTwLFbVTuFpiVltstkPAK7qiN5T70sXLbfipT5gUXxTJCtRHLqiRx4GCd6iA7
-	 +0AT2qZK4FqIhWEdS3dVmGFjpDE7l0tKv9f4wvtv7CyecHJxwTllv4OYXQS/0IKupR
-	 6p3PF2US8lvEr/xShiOprfu7Bwenu2yscRRdFzgDKLVC/wAm2sJElE4se6GTHrVee+
-	 akMA/FjTJx/gw==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH 2/8] phy: stm32: Add support for ST STM32MP25 USB2-FEMTO
- PHY
-To: "Marek Vasut" <marex@nabladev.com>
-Cc: robh@kernel.org, devicetree@vger.kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com, linux-phy@lists.infradead.org, conor+dt@kernel.org
-In-Reply-To: <20260812010157.1772849-3-marex@nabladev.com>
-References: <20260812010157.1772849-1-marex@nabladev.com>
- <20260812010157.1772849-3-marex@nabladev.com>
-Date: Wed, 12 Aug 2026 01:12:40 +0000
-Message-Id: <20260812011241.2C7D41F00A3A@smtp.kernel.org>
+	s=k20260515; t=1786501232;
+	bh=W6K7AJPCj2c8QjILmtFakdTykNFHwT3Mct84yCpHZ74=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=lGAEoycATjOLptjfutdd6e0dG4ZVQUff1fb2W1ZaHJk5UAB3I1ZRWYsbf/P7wTXXN
+	 6+EELHLBgttgQk1nH+18nWb78+0E5UUYfp8reqYE6eq+almfv2Q8lNASjK8klvTsIo
+	 8UhpTwI2tTvAB+bP23bUvHbos3VICqni9QnERQQIvZwigJoTHaED0ta1l5IAFMsiG4
+	 wNguwo/K8/Gc3Y3js7UpqTQZc/mruSlSfDXFU238y2I0699OKwu5wTJSqpUorm8vgZ
+	 SoTYXZSOF2M6z4BwZecTpUG1V3emuz7vVyC3jDsCy1RwkuoeaOvLZbxRKpViKYXJkL
+	 bDdEGoRBpYp8w==
+Date: Tue, 11 Aug 2026 21:20:31 -0500
+From: Rob Herring <robh@kernel.org>
+To: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, vkoul@kernel.org,
+	neil.armstrong@linaro.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+	johan@kernel.org, rogerq@ti.com, Julian.FRIEDRICH@frequentis.com,
+	upstream+omap@sigma-star.at
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: ti,phy-usb3: Add aspcie
+ reference clock setting
+Message-ID: <20260812022031.GA554483-robh@kernel.org>
+References: <20260806091112.164695-1-david.oberhollenzer@sigma-star.at>
+ <20260806091112.164695-2-david.oberhollenzer@sigma-star.at>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260806091112.164695-2-david.oberhollenzer@sigma-star.at>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,134 +69,104 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-NSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIEVycm9yIHBhdGhzIGlu
-IGBzdG0zMl91c2IycGh5X2VuYWJsZWAgYW5kIGBzdG0zMl91c2IycGh5X2Rpc2FibGVgIGZhaWwg
-dG8gYmFsYW5jZSB0aGUgYGVuX3JlZmNudGAgcmVmZXJlbmNlIGNvdW50ZXIuCi0gW0hpZ2hdIENv
-bmN1cnJlbnQgaGFyZHdhcmUgaW5pdGlhbGl6YXRpb24gYmV0d2VlbiB0aGUgUEhZIGZyYW1ld29y
-ayBhbmQgdGhlIENsb2NrIGZyYW1ld29yayBpcyBub3Qgc2VyaWFsaXplZC4KLSBbSGlnaF0gU3lz
-dGVtIHN1c3BlbmQvcmVzdW1lIGxvZ2ljIGZhaWxzIHRvIGNvcnJlY3RseSBzdXNwZW5kIGFuZCBy
-ZXN0b3JlIGhhcmR3YXJlIHN0YXRlLgotIFtNZWRpdW1dIENvbmZpZ3VyaW5nIHRoZSBob3N0LW9u
-bHkgUEhZIGludG8gZGV2aWNlIG1vZGUgcGh5c2ljYWxseSBjb3JydXB0cyB0aGUgcmVmZXJlbmNl
-IGNsb2NrIHNlbGVjdGlvbiByZWdpc3Rlci4KLSBbTG93XSBNaXNzaW5nIHZhbGlkYXRpb24gb2Yg
-YGRldmljZV9nZXRfbWF0Y2hfZGF0YSgpYCByZXR1cm4gdmFsdWUgbGVhZHMgdG8gYSBOVUxMIHBv
-aW50ZXIgZGVyZWZlcmVuY2UuCi0tCgotLS0gUGF0Y2ggWzJdOiBbUEFUQ0ggMi84XSBwaHk6IHN0
-bTMyOiBBZGQgc3VwcG9ydCBmb3IgU1QgU1RNMzJNUDI1IFVTQjItRkVNVE8gUEhZIC0tLQpjb21t
-aXQgZjJhZGQ3ZmY2MjFlOWYxMTA4NzI3MTg2MWExOThhMjdlMWRhODE4YQpBdXRob3I6IFBhbmth
-aiBEZXYgPHBhbmthai5kZXZAc3QuY29tPgpwaHk6IHN0bTMyOiBBZGQgc3VwcG9ydCBmb3IgU1Qg
-U1RNMzJNUDI1IFVTQjItRkVNVE8gUEhZCgpUaGlzIGNvbW1pdCBhZGRzIHRoZSBVU0IyIFBIWSBk
-cml2ZXIgZm9yIFNUTTMyTVAyNSBVU0IyIGNvbnRyb2xsZXJzLiBJdApzdXBwb3J0cyBib3RoIHRo
-ZSBVU0IyLjAgaG9zdC1vbmx5IGNvbnRyb2xsZXIgYW5kIHRoZSBVU0IgMi4wIHBhcnQgb2YgdGhl
-CkRXQzMgY29udHJvbGxlciBieSBkaWZmZXJlbnRpYXRpbmcgdGhlbSB2aWEgY29tcGF0aWJsZSBz
-dHJpbmdzLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvc3QvcGh5LXN0bTMyLXVzYjJwaHku
-YyBiL2RyaXZlcnMvcGh5L3N0L3BoeS1zdG0zMi11c2IycGh5LmMKPiBuZXcgZmlsZSBtb2RlIDEw
-MDY0NAo+IGluZGV4IDAwMDAwMDAwMDAwMDAuLmQ5MDIzNTRmODhiNjkKPiAtLS0gL2Rldi9udWxs
-Cj4gKysrIGIvZHJpdmVycy9waHkvc3QvcGh5LXN0bTMyLXVzYjJwaHkuYwpbIC4uLiBdCj4gK3N0
-YXRpYyBpbnQgc3RtMzJfdXNiMnBoeV9lbmFibGUoc3RydWN0IHN0bTMyX3VzYjJwaHkgKnBoeV9k
-ZXYpCj4gK3sKPiArCWNvbnN0IHN0cnVjdCBzdG0zMm1wMl91c2IycGh5X2h3X2RhdGEgKnBoeV9k
-YXRhID0gcGh5X2Rldi0+aHdfZGF0YTsKPiArCXVuc2lnbmVkIGxvbmcgcmF0ZTsKPiArCWludCBy
-ZWZzZWwsIHJldDsKPiArCj4gKwkvKiBDaGVjayBpZiBhIHBoeSBpcyBhbHJlYWR5IGluaXQgb3Ig
-Y2xrNDggaW4gdXNlICovCj4gKwlpZiAoYXRvbWljX2luY19yZXR1cm4oJnBoeV9kZXYtPmVuX3Jl
-ZmNudCkgPiAxKQo+ICsJCXJldHVybiAwOwoKW1NldmVyaXR5OiBIaWdoXQpJcyB0aGVyZSBhIHJh
-Y2UgY29uZGl0aW9uIGhlcmUgaWYgYm90aCB0aGUgUEhZIGFuZCBDbG9jayBmcmFtZXdvcmtzCmF0
-dGVtcHQgdG8gZW5hYmxlIHRoZSBoYXJkd2FyZSBjb25jdXJyZW50bHk/CgpJZiBUaHJlYWQgQSBj
-YWxscyBzdG0zMl91c2IycGh5X2VuYWJsZSgpIHZpYSBwaHlfaW5pdCBhbmQgVGhyZWFkIEIgY2Fs
-bHMKaXQgdmlhIGNsa19wcmVwYXJlIGNvbmN1cnJlbnRseToKClRocmVhZCBBIGluY3JlbWVudHMg
-ZW5fcmVmY250IHRvIDEgYW5kIHByb2NlZWRzIHdpdGggaW5pdGlhbGl6YXRpb24uClRocmVhZCBC
-IGluY3JlbWVudHMgZW5fcmVmY250IHRvIDIgYW5kIHJldHVybnMgc3VjY2VzcyBpbW1lZGlhdGVs
-eS4KClNpbmNlIG5vIG11dGV4IGlzIGhlbGQgZHVyaW5nIHRoZSBtdWx0aS1zdGVwIGhhcmR3YXJl
-IGluaXRpYWxpemF0aW9uLApjb3VsZCBUaHJlYWQgQiBzdGFydCB1c2luZyB0aGUgaGFyZHdhcmUg
-YmVmb3JlIFRocmVhZCBBIGhhcyBmaW5pc2hlZApjb25maWd1cmluZyBpdD8KCj4gKwo+ICsJcmF0
-ZSA9IGNsa19nZXRfcmF0ZShwaHlfZGV2LT5waHlyZWYpOwo+ICsJaWYgKHJhdGUgPT0gMTkyMDAw
-MDApCj4gKwkJcmVmc2VsID0gMDsKPiArCWVsc2UgaWYgKHJhdGUgPT0gMjAwMDAwMDApCj4gKwkJ
-cmVmc2VsID0gMTsKPiArCWVsc2UgaWYgKHJhdGUgPT0gMjQwMDAwMDApCj4gKwkJcmVmc2VsID0g
-MjsKPiArCWVsc2UKPiArCQlyZXR1cm4gLUVJTlZBTDsKPiArCj4gKwlyZXQgPSByZWdtYXBfdXBk
-YXRlX2JpdHMocGh5X2Rldi0+cmVnbWFwLAo+ICsJCQkJIHBoeV9kZXYtPmNyX29mZnNldCwKPiAr
-CQkJCSBwaHlfZGF0YS0+cGh5cmVmc2VsX21hc2ssCj4gKwkJCQkgZmllbGRfcHJlcChwaHlfZGF0
-YS0+cGh5cmVmc2VsX21hc2ssIHJlZnNlbCkpOwo+ICsJaWYgKHJldCkKPiArCQlyZXR1cm4gcmV0
-OwoKW1NldmVyaXR5OiBIaWdoXQpJZiByZWdtYXBfdXBkYXRlX2JpdHMoKSBmYWlscywgZG9lcyB0
-aGlzIHJldHVybiBlYXJseSB3aXRob3V0IGRlY3JlbWVudGluZwplbl9yZWZjbnQ/CgpUaGlzIGxv
-b2tzIGxpa2UgaXQgY291bGQgbGVhdmUgdGhlIHJlZmVyZW5jZSBjb3VudGVyIHBlcm1hbmVudGx5
-IGluY3JlbWVudGVkLApwcmV2ZW50aW5nIGZ1dHVyZSBhdHRlbXB0cyB0byBpbml0aWFsaXplIHRo
-ZSBQSFkgb3IgY2xvY2sgaWYgYSByZXNvdXJjZQphbGxvY2F0aW9uIGZhaWxzIGhlcmUgb3IgaW4g
-c3Vic2VxdWVudCBzdGVwcyBsaWtlIHJlZ3VsYXRvcl9lbmFibGUoKS4KCj4gKwo+ICsJaWYgKHBo
-eV9kYXRhLT5pc191c2IyX2hvc3Rfb25seSkgewpbIC4uLiBdCj4gK3N0YXRpYyBpbnQgc3RtMzJf
-dXNiMnBoeV9kaXNhYmxlKHN0cnVjdCBzdG0zMl91c2IycGh5ICpwaHlfZGV2KQo+ICt7Cj4gKwlp
-bnQgcmV0Owo+ICsKPiArCS8qIENoZWNrIGlmIGEgcGh5IGlzIHN0aWxsIGluaXQgb3IgY2xrNDgg
-aW4gdXNlICovCj4gKwlpZiAoYXRvbWljX2RlY19yZXR1cm4oJnBoeV9kZXYtPmVuX3JlZmNudCkg
-PiAwKQo+ICsJCXJldHVybiAwOwo+ICsKPiArCXJldCA9IHJlc2V0X2NvbnRyb2xfYXNzZXJ0KHBo
-eV9kZXYtPnJzdGMpOwo+ICsJaWYgKHJldCkKPiArCQlyZXR1cm4gcmV0OwoKW1NldmVyaXR5OiBI
-aWdoXQpJZiByZXNldF9jb250cm9sX2Fzc2VydCgpIGZhaWxzLCBkb2VzIHRoaXMgc2tpcCB0aGUg
-cmVtYWluaW5nIGhhcmR3YXJlIGRpc2FibGUKc3RlcHMgd2hpbGUgbGVhdmluZyBlbl9yZWZjbnQg
-YWxyZWFkeSBkZWNyZW1lbnRlZD8KCj4gKwo+ICsJY2xrX2Rpc2FibGVfdW5wcmVwYXJlKHBoeV9k
-ZXYtPnBoeXJlZik7Cj4gKwo+ICsJcmV0dXJuIHJlZ3VsYXRvcl9kaXNhYmxlKHBoeV9kZXYtPnZk
-ZDMzKTsKPiArfQo+ICsKPiArc3RhdGljIGludCBzdG0zMl91c2IycGh5X3NldF9tb2RlKHN0cnVj
-dCBwaHkgKnBoeSwgZW51bSBwaHlfbW9kZSBtb2RlLCBpbnQgc3VibW9kZSkKPiArewo+ICsJc3Ry
-dWN0IHN0bTMyX3VzYjJwaHkgKnBoeV9kZXYgPSBwaHlfZ2V0X2RydmRhdGEocGh5KTsKPiArCWNv
-bnN0IHN0cnVjdCBzdG0zMm1wMl91c2IycGh5X2h3X2RhdGEgKnBoeV9kYXRhID0gcGh5X2Rldi0+
-aHdfZGF0YTsKPiArCXUzMiB2YWwsIG1hc2sgPSBTWVNDRkdfVVNCMlBIWTJDUl9VU0IyUEhZMkNN
-TjsKPiArCWludCByZXQ7Cj4gKwo+ICsJaWYgKG1vZGUgPT0gUEhZX01PREVfVVNCX0hPU1QpIHsK
-WyAuLi4gXQo+ICsJfSBlbHNlIGlmIChtb2RlID09IFBIWV9NT0RFX1VTQl9ERVZJQ0UpIHsKPiAr
-CQl2YWwgPSBTWVNDRkdfVVNCMlBIWTJDUl9VU0IyUEhZMkNNTiB8Cj4gKwkJICAgICAgU1lTQ0ZH
-X1VTQjJQSFkyQ1JfVkJVU1ZMREVYVFNFTDsKPiArCQltYXNrIHw9IFNZU0NGR19VU0IyUEhZMkNS
-X1ZCVVNWQUxJRCB8Cj4gKwkJCVNZU0NGR19VU0IyUEhZMkNSX1ZCVVNWTERFWFRTRUwgfAo+ICsJ
-CQlTWVNDRkdfVVNCMlBIWTJDUl9WQlVTVkxERVhUOwo+ICsJCWlmIChzdWJtb2RlICE9IFVTQl9S
-T0xFX05PTkUpCj4gKwkJCXZhbCB8PSBTWVNDRkdfVVNCMlBIWTJDUl9WQlVTVkxERVhUOwo+ICsJ
-fSBlbHNlIHsKPiArCQlyZXR1cm4gLUVJTlZBTDsKPiArCX0KPiArCj4gKwlyZXQgPSByZWdtYXBf
-dXBkYXRlX2JpdHMocGh5X2Rldi0+cmVnbWFwLCBwaHlfZGV2LT5jcl9vZmZzZXQsIG1hc2ssIHZh
-bCk7CgpbU2V2ZXJpdHk6IE1lZGl1bV0KSWYgZGV2aWNlIG1vZGUgaXMgbWlzdGFrZW5seSByZXF1
-ZXN0ZWQgb24gdGhlIGhvc3Qtb25seSBQSFkgdmFyaWFudCwgZG9lcwp0aGlzIHVuY29uZGl0aW9u
-YWxseSB3cml0ZSB0aGUgZGV2aWNlLW1vZGUgY29uZmlndXJhdGlvbiB0byBiaXRzIDQsIDUsIGFu
-ZCA2Cm9mIFNZU0NGR19VU0IyUEhZMkNSPwoKTG9va2luZyBhdCB0aGUgaGFyZHdhcmUgZGF0YSBk
-ZWZpbml0aW9uIGZvciB0aGUgaG9zdC1vbmx5IFBIWToKCnN0YXRpYyBjb25zdCBzdHJ1Y3Qgc3Rt
-MzJtcDJfdXNiMnBoeV9od19kYXRhIHN0bTMybXAyNV91c2IycGh5MV9od2RhdGEgPSB7CiAgICAu
-cGh5cmVmc2VsX21hc2sgPSBHRU5NQVNLKDYsIDQpLAogICAgLmlzX3VzYjJfaG9zdF9vbmx5ID0g
-dHJ1ZSwKfTsKClNpbmNlIHRob3NlIGV4YWN0IGJpdHMgYXJlIHVzZWQgZm9yIHRoZSByZWZlcmVu
-Y2UgY2xvY2sgc2VsZWN0aW9uLCBjb3VsZAp0aGlzIHNpbGVudGx5IGNvcnJ1cHQgdGhlIFBIWSBj
-bG9jayBjb25maWd1cmF0aW9uPwoKPiArCWlmIChyZXQpCj4gKwkJcmV0dXJuIHJldDsKWyAuLi4g
-XQo+ICtzdGF0aWMgaW50IHN0bTMyX3VzYjJwaHlfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2Rldmlj
-ZSAqcGRldikKPiArewpbIC4uLiBdCj4gKwlwaHlfZGV2LT5yZWdtYXAgPSBzeXNjb25fcmVnbWFw
-X2xvb2t1cF9ieV9waGFuZGxlX2FyZ3MoZGV2LT5vZl9ub2RlLCAic3Qsc3lzY2ZnIiwgMSwKPiAr
-CQkJCQkJCSAgICAgICAmcGh5X2Rldi0+Y3Jfb2Zmc2V0KTsKPiArCWlmIChJU19FUlIocGh5X2Rl
-di0+cmVnbWFwKSkgewo+ICsJCXJldHVybiBkZXZfZXJyX3Byb2JlKGRldiwgUFRSX0VSUihwaHlf
-ZGV2LT5yZWdtYXApLAo+ICsJCQkJICAgICAiTm8gc3Qsc3lzY2ZnIHBoYW5kbGUgc3BlY2lmaWVk
-XG4iKTsKPiArCX0KPiArCj4gKwlwaHlfZGV2LT5od19kYXRhID0gZGV2aWNlX2dldF9tYXRjaF9k
-YXRhKGRldik7CgpbU2V2ZXJpdHk6IExvd10KSWYgdGhlIGRyaXZlciBpcyBtYW51YWxseSBib3Vu
-ZCB2aWEgc3lzZnMgdG8gYSBkZXZpY2UgdGhhdCBkb2VzIG5vdCBtYXRjaAp0aGUgT0YgY29tcGF0
-aWJsZSBzdHJpbmdzLCBkZXZpY2VfZ2V0X21hdGNoX2RhdGEoKSBjb3VsZCByZXR1cm4gTlVMTC4K
-ClNpbmNlIHRoZSByZXR1cm4gdmFsdWUgaXMgbm90IHZhbGlkYXRlZCBoZXJlLCBjb3VsZCB0aGlz
-IGxlYWQgdG8gYSBOVUxMCnBvaW50ZXIgZGVyZWZlcmVuY2Ugd2hlbiBwaHlfZGF0YS0+cGh5cmVm
-c2VsX21hc2sgaXMgYWNjZXNzZWQgbGF0ZXIgaW4Kc3RtMzJfdXNiMnBoeV9lbmFibGUoKT8KCj4g
-Kwo+ICsJcGh5ID0gZGV2bV9waHlfY3JlYXRlKGRldiwgTlVMTCwgJnN0bTMyX3VzYjJwaHlfZGF0
-YSk7Cj4gKwlpZiAoSVNfRVJSKHBoeSkpCj4gKwkJcmV0dXJuIGRldl9lcnJfcHJvYmUoZGV2LCBQ
-VFJfRVJSKHBoeSksICJGYWlsZWQgdG8gY3JlYXRlIFBIWVxuIik7ClsgLi4uIF0KPiArc3RhdGlj
-IGludCBzdG0zMl91c2IycGh5X3N1c3BlbmQoc3RydWN0IGRldmljZSAqZGV2KQo+ICt7Cj4gKwlz
-dHJ1Y3Qgc3RtMzJfdXNiMnBoeSAqcGh5X2RldiA9IGRldl9nZXRfZHJ2ZGF0YShkZXYpOwo+ICsK
-PiArCWlmIChwaHlfZGV2LT5pc19pbml0KQo+ICsJCXJldHVybiBzdG0zMl91c2IycGh5X2Rpc2Fi
-bGUocGh5X2Rldik7Cj4gKwo+ICsJcmV0dXJuIDA7Cj4gK30KPiArCj4gK3N0YXRpYyBpbnQgc3Rt
-MzJfdXNiMnBoeV9yZXN1bWUoc3RydWN0IGRldmljZSAqZGV2KQo+ICt7Cj4gKwlzdHJ1Y3Qgc3Rt
-MzJfdXNiMnBoeSAqcGh5X2RldiA9IGRldl9nZXRfZHJ2ZGF0YShkZXYpOwo+ICsKPiArCWlmIChw
-aHlfZGV2LT5pc19pbml0KQo+ICsJCXJldHVybiBzdG0zMl91c2IycGh5X2VuYWJsZShwaHlfZGV2
-KTsKPiArCj4gKwlyZXR1cm4gMDsKPiArfQoKW1NldmVyaXR5OiBIaWdoXQpEb2VzIHRoaXMgc3lz
-dGVtIHN1c3BlbmQvcmVzdW1lIGxvZ2ljIHByb3Blcmx5IHNhdmUgYW5kIHJlc3RvcmUgaGFyZHdh
-cmUKc3RhdGUgd2hlbiBib3RoIHRoZSBQSFkgYW5kIGNsb2NrIGNvbnN1bWVycyBhcmUgYWN0aXZl
-PwoKSWYgZW5fcmVmY250IGlzIDIsIGNhbGxpbmcgc3RtMzJfdXNiMnBoeV9kaXNhYmxlKCkgZHVy
-aW5nIHN1c3BlbmQgd2lsbCBtZXJlbHkKZGVjcmVtZW50IHRoZSBjb3VudGVyIHRvIDEgYW5kIHNr
-aXAgdGhlIGFjdHVhbCBoYXJkd2FyZSB0ZWFyZG93bi4gQ29udmVyc2VseSwKb24gcmVzdW1lLCBz
-dG0zMl91c2IycGh5X2VuYWJsZSgpIGluY3JlbWVudHMgdGhlIGNvdW50ZXIgdG8gMiBhbmQgc2tp
-cHMKaGFyZHdhcmUgaW5pdGlhbGl6YXRpb24uCgpJZiBwb3dlciBpcyBsb3N0IGR1cmluZyBzdXNw
-ZW5kLCBjb3VsZCB0aGUgaGFyZHdhcmUgcmVtYWluIGNvbXBsZXRlbHkKdW5pbml0aWFsaXplZCB1
-cG9uIHJlc3VtZT8KCkFkZGl0aW9uYWxseSwgc3RtMzJfdXNiMnBoeV9yZXN1bWUoKSBkb2VzIG5v
-dCBhcHBlYXIgdG8gY2FsbApzdG0zMl91c2IycGh5X3NldF9tb2RlKCksIHdoaWNoIG1pZ2h0IG1l
-YW4gdGhlIFBIWSBtb2RlIGNvbmZpZ3VyYXRpb24gaXMgbG9zdAphZnRlciByZXN1bWluZy4KCi0t
-IApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAy
-NjA4MTIwMTAxNTcuMTc3Mjg0OS0xLW1hcmV4QG5hYmxhZGV2LmNvbT9wYXJ0PTIKCi0tIApsaW51
-eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On Thu, Aug 06, 2026 at 11:11:11AM +0200, David Oberhollenzer wrote:
+> The PHY control logic in the OMAP PCIe PHY subsystem has a
+> configurable reference clock selection. It can either use
+> the ljcb_clkp/ljcb_clkn pin as inputs, recovering the clock
+> from the bus (RX mode), or generate the reference clock
+> internally, driving the bus pins as outputs (TX mode).
+> 
+> The setting is exposed through a register in a system controller.
+> A device tree property is added to specify the syscon node,
+> register offset and mode value.
+> 
+> Signed-off-by: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+> ---
+>  .../devicetree/bindings/phy/ti,phy-usb3.yaml  | 39 +++++++++++++++++++
+>  1 file changed, 39 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml b/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml
+> index 84f538aa587c..11787b042345 100644
+> --- a/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml
+> +++ b/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml
+> @@ -52,6 +52,20 @@ properties:
+>        enum: [wkupclk, sysclk, refclk, dpll_ref,
+>               dpll_ref_m2, phy-div, div-clk]
+>  
+> +  ti,syscon-acspcie-tx-rx:
+> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+> +    description: |
+
+Don't need '|' unless there is formatting to preserve.
+
+> +      Syscon register and setting to configure the clock buffer to run
+> +      in RX mode (clock pins are inputs, the clock is recovered from
+> +      the bus), or in TX mode (pins are outputs, internal reference
+> +      clock drives the bus).
+
+Wrap lines at 80 chars.
+
+> +    maxItems: 1
+> +    items:
+> +      items:
+> +        - description: Phandle to the system control module
+> +        - description: Register offset of CTRL_CORE_SMA_SW_6
+> +        - description: Setting for PCIE_TX_RX_CONTROL
+> +
+>    syscon-phy-power:
+>      $ref: /schemas/types.yaml#/definitions/phandle-array
+>      maxItems: 1
+> @@ -94,6 +107,17 @@ allOf:
+>      else:
+>        properties:
+>          syscon-pllreset: false
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: ti,phy-pipe3-pcie
+> +    then:
+> +      properties:
+> +        ti,syscon-acspcie-tx-rx: true
+
+This has no effect. Invert the if and move the else here.
+
+> +    else:
+> +      properties:
+> +        ti,syscon-acspcie-tx-rx: false
+>  
+>  required:
+>    - reg
+> @@ -135,4 +159,19 @@ examples:
+>          syscon-pllreset = <&scm_conf 0x3fc>;
+>          #phy-cells = <0>;
+>      };
+> +
+> +  - |
+> +    /* TI PIPE3 PCIE PHY */
+> +    pcie-phy@4a0a4000 {
+> +        compatible = "ti,phy-pipe3-pcie";
+> +        reg = <0x4a0a4000 0x80>,  /* phy_rx */
+> +              <0x4a0a4400 0x64>;  /* phy_tx */
+> +        reg-names = "phy_rx", "phy_tx";
+> +        clocks = <&dpll_pcie_ref_ck>, <&dpll_pcie_ref_m2ldo_ck>;
+> +        clock-names = "dpll_ref", "dpll_ref_m2";
+> +        #phy-cells = <0>;
+> +        syscon-phy-power = <&scm_conf_pcie 0x1c>;
+> +        syscon-pcs = <&scm_conf_pcie 0x10>;
+> +        ti,syscon-acspcie-tx-rx = <&scm_conf1 0x10 0x2>;
+> +    };
+>  ...
+> -- 
+> 2.55.0
+> 
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
