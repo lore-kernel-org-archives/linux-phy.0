@@ -4,60 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9065FC5CFCF
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Aug 2026 12:33:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5EB33C5B572
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Aug 2026 13:07:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V7pb2YoGvgzjn9Dz/l3U5IHq4i+dBX15ZInnVX3B070=; b=GVJzoXeLVTMdY2
-	URttv1GaV2fbUKF3jG6MDTvFm3TJJJoJZRH6xtH2pdn93vWuAljUcEwSLZ+5EkTTvvLLE5ikel7NI
-	MwNpFOgcnhhlLlNze44O7NM87mvSOIyEe0RnjBytnDUmVrRfYVzzMl0UQTAmy3YradcyYMDh2JzOe
-	K51ANei7jvXvObIc87ehJGJgu2MzXubmZQfarqcpeNDGmuZ1Nrvn2G+ehM5v6D7jbB3zBOTfy0FOv
-	KVsgMtF7fw6aj+yXSspjNtqCoEu7FRE7UsqVfJ6rjNputIkULh7/m+152HhcA/SkQq4Q4fbwiOhEj
-	8XtlAdvE8a6Uzikj2UWQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Ry93zbw9mr+n06jKbK37iq7kUolKROkAsU0tegrvMTU=; b=susMKQDQUW6udO
+	vhGeufKsA73aPFUwUtv3SpQuf/h62CKLM/wragkvekmYW0V8igiF0EurI3CZ15DUJqvbM0Yi1vrky
+	NwgxhmIsgBvHcq7nAE9JDerdVWqjvu1I/dCCdhcourNL78FcIEr4OJr27qDTVVaImw1OESejEsgW7
+	MtB+LFMUN778+BIfBKX4+GA8UYQKzlinJpbA8pIhqbNyAZrogd/2YbS6R8Gi38vxWasslBG4z2qdP
+	9318UhdR5ehB1eoyMspuT/YulTEeUcYvU0rTdqBWy/Kp13C4biHqvDPd7Sm0pFZ+m9nUDj91Nz5Op
+	5ES9nAcSNNldrALmNjPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wuUca-00000000eu7-3mxo;
-	Thu, 13 Aug 2026 12:33:20 +0000
-Received: from foss.arm.com ([217.140.110.172])
-	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wuUcX-00000000etb-15Y3;
-	Thu, 13 Aug 2026 12:33:18 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5C3B31596;
-	Thu, 13 Aug 2026 05:33:09 -0700 (PDT)
-Received: from [192.168.178.24] (usa-sjc-mx-foss1.foss.arm.com [172.31.20.19])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 93DE83F632;
-	Thu, 13 Aug 2026 05:33:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=arm.com; s=foss;
-	t=1786624393; bh=wYiskiVpPHkqGpXdzCE9ilweKg2KRA5SMT0ofp0eC+M=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=QS9BflcBYHyjjteMEGTsMTcTkPxJrzWu1heAqjg9AEEbN4QtRX9Q4QjVysf/86xBk
-	 Bu82MfaEhNcRkU/ZPQfX662DMSwp+YcetHIG4e27y8CPy3B+TUe1CgC8AjChf1AajW
-	 VBk5xT00tkuvB9JXQr/B7DPnmvxhFh9ATx4Ljm3I=
-Message-ID: <6f70366a-227a-49e2-85d7-186bf47077e5@arm.com>
-Date: Thu, 13 Aug 2026 14:33:10 +0200
+	id 1wuV9N-00000000hzf-3wR3;
+	Thu, 13 Aug 2026 13:07:13 +0000
+Received: from smtpbguseast3.qq.com ([54.243.244.52])
+	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
+	id 1wuV9K-00000000hwU-1cun;
+	Thu, 13 Aug 2026 13:07:12 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=uniontech.com;
+	s=onoh2408; t=1786626376;
+	bh=nJ3DjTBgFoGEsLV5b+erjzQOcSw5I5/IyYlcPZdcDEs=;
+	h=From:To:Subject:Date:Message-ID:MIME-Version;
+	b=Icyn6c8yhdHQAlx4W0szQLanIZtkiDmin71gdpSPyrvseqstoBx/3lutSSjhE90S8
+	 GZbfZ2S1RauSutzc7fuyy5YGfq5Aj2ebY5wBgKQKKdyHSc//gthF2A4QW62oNaZoYe
+	 VkdeR+IUVzzcuvVy3vbpHo70JmH2RByS/iRVgOVg=
+X-QQ-mid: esmtpgz12t1786626355t9ca26cba
+X-QQ-Originating-IP: dHhI7VBaezRAp4X4gI1x1FX2IMsrpI09Qjr/PigbalE=
+Received: from PEN202512010004 ( [113.57.152.160])
+	by bizesmtp.qq.com (ESMTP) with 
+	id ; Thu, 13 Aug 2026 21:05:53 +0800 (CST)
+X-QQ-SSF: 0000000000000000000000000000000
+X-QQ-GoodBg: 1
+X-BIZMAIL-ID: 588101152483150386
+EX-QQ-RecipientCnt: 12
+From: raoxu <raoxu@uniontech.com>
+To: vkoul@kernel.org
+Cc: wens@kernel.org,
+	jernej.skrabec@gmail.com,
+	samuel@sholland.org,
+	neil.armstrong@linaro.org,
+	andre.przywara@arm.com,
+	marco.crivellari@suse.com,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-sunxi@lists.linux.dev,
+	linux-kernel@vger.kernel.org,
+	raoxu@uniontech.com
+Subject: [PATCH v2] phy: allwinner: sun4i-usb: disable the PHY2 PMU clock after SIDDQ setup
+Date: Thu, 13 Aug 2026 21:05:42 +0800
+Message-ID: <CE85F490F5646A2C+20260813130542.2425068-1-raoxu@uniontech.com>
+X-Mailer: git-send-email 2.50.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: allwinner: sun4i-usb: disable the PHY2 PMU clock
- after SIDDQ setup
-To: Xu Rao <raoxu@uniontech.com>
-Cc: jernej.skrabec@gmail.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-sunxi@lists.linux.dev, marco.crivellari@suse.com,
- neil.armstrong@linaro.org, samuel@sholland.org, vkoul@kernel.org,
- wens@kernel.org
-References: <d8042dd2-303e-4f24-b7bf-74ae080f4ae6@arm.com>
- <8976A02CE2417DF2+20260707032106.985208-1-raoxu@uniontech.com>
-Content-Language: en-GB
-From: Andre Przywara <andre.przywara@arm.com>
-In-Reply-To: <8976A02CE2417DF2+20260707032106.985208-1-raoxu@uniontech.com>
+X-QQ-SENDSIZE: 520
+Feedback-ID: esmtpgz:uniontech.com:qybglogicsvrgz:qybglogicsvrgz6b-0
+X-QQ-XMAILINFO: MvyKdZyVtFx3ogxxWRGDkb3wjkVowJkMY7zgE3kzwgOz3wTrVGElr46w
+	3Stlq7ADwX6crnNIfcueySAkOPttnBR3+N0tWSpJ+Hf8bILjwodltDfDMAys3dpWJ5A2Sr/
+	kzkC6/fws1aw9SZgCdts4gEKQNjSQ/VxciLKeYWzg+FkQbef38BKrY/8HtMgagSH+DyDaUC
+	A3Az1uhdWcVii3UHm8GHeDCcFLwNUyz/B4aQkA78dbQl4j/8x49oy4H08kvKj6Nd7xIS8tS
+	qhHF9mujbFd8JKTe1XDICdF27ULL1pE/p1xIgDtH5qoNkzHU2V2TES9Z6dV9f+skkLfuN9x
+	E/c5PvOI3Y8rByc1gcS6U98anIjR8ToinuSCtecagKaM3CR7ra+CAR7ALMctB57Qe08oKB1
+	Cj6uh7xNk+RUl9cxw9xqwEp1Oq6nB7864/6o/fZ5g7Etfj68ZmNLjSM+LtaegcmJ/V2a+Wh
+	Aos1SVlPZ3t3JubC8C5c06YAN59cXkmyfRM6ZajPi94c5xnqkVx5N0XWN9TGZ99AMvaD7be
+	B0IBl4Wnev9FLc6rWF9IvEVYq+jIslNiR1WENa0ClGt1/hHImu/ZCv706b5Iko4znp6AMdK
+	rJagUlF24IeEriPsfY+Nm9MmFjax2O3oWZiRCOCK/sQsrMJpdI9phgMbTEPY9xnv1fItS06
+	69hyGvKKHqeK9RIspeXqEOTiWQs2UDZjlqmme1KWokWX2TZhgKeGcYhryy78+Q5k5PfTYDg
+	GzIZ7J9SU0/vNnZxzD6W625AV0NmYmsKlWBoGnTv/sPZk0No5biElFnueUOT4UCnuF26Weu
+	8ZB8oXUqEOkdQZU6hy6ZwAjgrDR/uccHiJSjrbYbpHuotLsCbhiFDlUJ+eFBLi8UfkZnL+g
+	2zL+8mTfbRoNvcc2PTbYQXLNIVEuj8Go9gAVuhA5amJLYWNLnJhLQDurUBtG2vuBa0m7AA6
+	F+jBCXCms9N2koilwDDuDkL4a3rHLRUXNQg2Qjw2y3EKz5PizeTUUzS/4FnOygjZalRCwll
+	ErQo+qK/vGO565+9eNg1UZ3aWlVkQL9HVdGs50bMUHehIe1YdTDrq0TmOjySWE9Hdu8xA4z
+	w==
+X-QQ-XMRINFO: NS+P29fieYNwqS3WCnRCOn9D1NpZuCnCRA==
+X-QQ-RECHKSPAM: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260813_053317_507663_87339A0F 
-X-CRM114-Status: GOOD (  22.32  )
+X-CRM114-CacheID: sfid-20260813_060710_968771_418C1F17 
+X-CRM114-Status: GOOD (  10.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,77 +95,57 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+From: Xu Rao <raoxu@uniontech.com>
 
-On 7/7/26 05:21, Xu Rao wrote:
-> Hi Andre,
-> 
->>> - clk_disable_unprepare(phy->clk2);
->>> + clk_disable_unprepare(phy2->clk2);
->>
->> Interesting, this looks about right, and matches the comment above,
->> noting that phy2->clk2 is just temporarily needed. I don't remember
->> further details, only that this workaround was quite annoying and messy ;-)
+sun4i_usb_phy_init() temporarily enables PHY2's clk2 when a SoC needs
+PHY2 SIDDQ setup while initializing another PHY. However, after updating
+PHY2's PMU register it disables the clk2 pointer from the PHY currently
+being initialized instead.
 
-I checked it again, and indeed we need this clock to access the PMU for 
-PHY2, otherwise those PMU registers are RAZ/WI. Interestingly this only 
-applies to PHY2, the other PHY's PMU area can be accessed without any 
-extra clocks. And also this extra clock is actually CLK_BUS_EHCI2, so 
-it's already enabled by the EHCI driver (if this port is enabled).
+Only PHY2 on H616 has a clk2 clock. No other PHY on H616 has a clk2
+clock, so phy->clk2 is NULL in this path and disabling it is a no-op.
+This is why disabling the wrong clock did not cause an additional
+functional failure.
 
->> However I am wondering how this worked so far: This should sabotage the
->> access to the local REG_HCI_PHY_CTL access in the next few lines ...
->> Any idea why this worked nevertheless?
-> 
-> Yes, the current code is wrong, but the visible effect is limited.
-> 
-> In sun4i_usb_phy_init(), the auxiliary SIDDQ path explicitly enables
-> phy2->clk2 and then accesses phy2->pmu + REG_HCI_PHY_CTL. So the clock
-> that has to be disabled at the end of that block is phy2->clk2.
-> 
-> The current code disables phy->clk2 instead, which is a different object.
-> That does not undo the temporary phy2->clk2 enable.
-> 
-> The reason this has not shown up as an obvious functional failure is that
-> phy->clk2 is an optional PMU clock. On systems where the non-PHY2 PMU
-> clock is not provided, the wrong clk_disable_unprepare(phy->clk2) does
-> not actually disable a local PMU clock.
+The temporary phy2->clk2 enable therefore remains unmatched, leaking a
+clock enable reference each time this path is executed.
 
-To be more precise: it's only PHY2 on the H616 that has this "clk2", for 
-everyone else it's NULL and so any clock operations are NOPs. That's why 
-disabling clk2 of PHY0, PHY1, or PHY3 does not do anything at all.
+Disable the same PHY2 clk2 that was enabled for the auxiliary PMU access.
 
-> In that case, the practical
-> visible issue is simply that the temporary phy2->clk2 enable is not
-> matched by a corresponding disable.
-
-Yes, it purely a leak of this clock that's happening here. That explains 
-why it worked before, and makes the fix good to go:
-
+Fixes: b45c6d80325b ("phy: sun4i-usb: Introduce port2 SIDDQ quirk")
 Reviewed-by: Andre Przywara <andre.przywara@arm.com>
+Signed-off-by: Xu Rao <raoxu@uniontech.com>
+---
+Changes in v2:
+- Explain why disabling phy->clk2 did not cause additional harm: no
+  other PHY on H616 has clk2, so phy->clk2 is NULL and the operation is
+  a no-op.
+- Clarify that the concrete issue is the unmatched PHY2 clk2 enable.
+- Add the Fixes tag and Andre's Reviewed-by.
 
-Can you add a sentence with the explanation of why disabling the wrong 
-clock did not do any harm? Like: "No other PHY uses a clk2 clock, so the 
-pointer was NULL, and disabling the wrong clock did nothing."
+ drivers/phy/allwinner/phy-sun4i-usb.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Cheers,
-Andre.
+diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
+index e2fbf8ccf99e..839856c09e30 100644
+--- a/drivers/phy/allwinner/phy-sun4i-usb.c
++++ b/drivers/phy/allwinner/phy-sun4i-usb.c
+@@ -318,7 +318,7 @@ static int sun4i_usb_phy_init(struct phy *_phy)
+ 			writel(val, phy2->pmu + REG_HCI_PHY_CTL);
+ 		}
 
+-		clk_disable_unprepare(phy->clk2);
++		clk_disable_unprepare(phy2->clk2);
+ 	}
 
-
-
-> So the failure is not that the following local REG_HCI_PHY_CTL access is
-> known to break today. The concrete bug is that the auxiliary path enables
-> one clock and disables another one.
-> 
-> Thanks,
-> Xu Rao
-
+ 	if (phy->pmu && data->cfg->hci_phy_ctl_clear) {
+--
+2.50.1
 
 -- 
 linux-phy mailing list
