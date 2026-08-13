@@ -4,95 +4,114 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D558CC5AC67
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Aug 2026 08:38:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0074AC5AC67
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Aug 2026 08:40:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Subject:Cc:To:From:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EIQoDWNYScr7/Rvj7wakPXl+fGQB2h+LJwzrvmfEd/I=; b=tI7RLQAuMMYs+W
-	o5gSq1KUCZr1/sTRPECYghpRqQqSFSbAW4Z11HkiTDD2ulAFUaLziszIxRwblRGB//n46u4cSEXAe
-	K8Hn4STBkk0aqPXTdiXv7dyZOxjiBXCs6uiQY58MsK1VcQr6a7CXf/dO0kN1EO2ZGK0zDPXzn+pzH
-	OccQLzcI1mhV6QO1KjmNYH8iT90AJ1fIUqfylnMrGlpHnTGBKWLFbV52aYDjomcyi19MS4DQYjRDa
-	rPr6Tr8XgX7oD2d2Mk+XwTWk+LUIrbOVz8IGXo31YKGCPdm0rO7NmwkWDIolqY4wU3XJSbxsusX/9
-	nBgE9hsVIGB1vceuMHcA==;
+	List-Owner; bh=szoxkXkEjEI3HeitcWp+RERXnF1qFiNybtbvXGbE1yc=; b=0YV/DvZuPw04UT
+	hPSssOICiR7ajsDLyD+aXo4vfwHzv+hkulyL6xgsielEssc9rGT5ueKQOVusVgsaHwrXtciexP12Y
+	Kq8fK3NXXFa6+zNjb+RF6NPXQVZsYalgq23rLW1tEC1HCEz99ylbZJg8m6rSgvUz/uRIRFR3J7CiZ
+	9gT1tbbwtVD1Zr1h8SBK/w0WkwuzHs9Ng9uVPcRIfwfqdoyOrT5/RY5ZPhejSSBhsiZng2f1flavS
+	7QkMovTCpKaDLPEZRpNlNsYhB1QIvZl6DYUssCIfkKDjOjlnBET82qWIFOeV+tFoGhqKJI0myMkoR
+	SyNo0gUk9VIXxc11nztw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wuQxO-00000000B6A-1S0B;
-	Thu, 13 Aug 2026 08:38:34 +0000
-Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
+	id 1wuQze-00000000Ba0-2MH7;
+	Thu, 13 Aug 2026 08:40:54 +0000
+Received: from mail-ed1-x52d.google.com ([2a00:1450:4864:20::52d])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wuQxL-00000000B5b-3dDe
+	id 1wuQzb-00000000BXJ-1cH7
 	for linux-phy@lists.infradead.org;
-	Thu, 13 Aug 2026 08:38:32 +0000
-Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-49954b88fffso4907195e9.0
-        for <linux-phy@lists.infradead.org>; Thu, 13 Aug 2026 01:38:31 -0700 (PDT)
+	Thu, 13 Aug 2026 08:40:53 +0000
+Received: by mail-ed1-x52d.google.com with SMTP id 4fb4d7f45d1cf-698ae9da373so296720a12.3
+        for <linux-phy@lists.infradead.org>; Thu, 13 Aug 2026 01:40:50 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1786610449; cv=none;
+        d=google.com; s=arc-20260327;
+        b=aR147jxqGuKz8zIbVqTT9Fu30O2PV4MAyiaTbo3BQWsuew8hMo7aFXUHp5oUEuW5H4
+         L5vaPcpvlT+cCw+Qj3Bc61jEiwBzJiKfm00XgvdKrGDkWdgCYRY806AU/NV7PgnmIk4u
+         pEDX2uffbIkeuongPl+MzrejBduj7P+DNGEAhvicp/Vo7Fuwg7PGft1gWNQSfrnpjkz0
+         IgwHdnTP1JBGIuwbcEbKmJCca35JX88ZlPO2BiHssxu+8/GR3R8E2HgXKYsK7BlNqTgu
+         eCljycAqgciZIcOLGqCf/1fwOndwm6tlzomTX8RYDfvR9XK4PfPNc9z+7vLr8/7F23g8
+         CkXQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:dkim-signature;
+        bh=TClEoJsq0ggVTCXaYTDr62G718iMq9uV18dUpEwxTBg=;
+        fh=5lPLY8esTIN7yBLZmVXxWJYhg9oOhhDOW+bHeF/5mNY=;
+        b=NT5d1bamDgaZgZLHtlLYyhDb9DmEO/8tq8X3jrSDGaGNXFklJdSRXrjhN10BXjZrG/
+         gZyfjGwAK7E2TFRyrIgQRTRy04iSNgBRd3qHso1uoQYMDSP9q03JQkENUlGivRnBmeaj
+         ZY3UKXtWqN96SbJzxzmLU6gz/ufE5O2zYvXcy/Z6vbc8Qz69f6aBGoKlelWI6hyQ7N0s
+         hOs2nMd56IdjiWM4IfAqQpaTWmIHt2X1WFL6T4vIh5kMtMsAlaPMb+ngEJR56E8xHuHb
+         ByVpDE3ZUBhg3qKwdKqQ9BVJH/xxpW+X/kH5awky2LcRviHKWxjMumZas8kbPZoZgOmq
+         AFPQ==;
+        darn=lists.infradead.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1786610310; x=1787215110; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:subject:cc:to:from:date:message-id:from:to:cc:subject
+        d=gmail.com; s=20251104; t=1786610449; x=1787215249; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:cc:to:subject:message-id
+         :date:from:in-reply-to:references:mime-version:from:to:cc:subject
          :date:message-id:reply-to:content-type;
-        bh=fYxN56Q1FiCTvNsl0xjkJkMf+TLROP+6g/NIvXZPeBM=;
-        b=IKnUdyIqb3k4gadEg3B8QCEjbOGwVP9L5iPPo5fPq2DjFF01EXtxApYzQf6t1N/r9F
-         sGVJ06LQB/WovhcKlmSEFJGXcMF8SP4VWEcxinrbxof43QiEAzZWaFBYptJ/VyADtuzZ
-         0sP3trfz0m0oETvxkHwmpaFuqxnHfFWhKTWScK2JV4b7eAinSqkX6Py7iPnyyGbkAZ+G
-         mrKel9mffmA0Cg2l5mR9SaST1aH5Y6MqgkWS+qkAlFxCAh9rINgk0XAD1g2nyM6l+rk8
-         er6J+pTmr2RF5BUKIRK4buJMTzWu1702TfjGruLa8KQANG8oZ6C6js0vYFjEMNP/kQU+
-         U/2A==
+        bh=TClEoJsq0ggVTCXaYTDr62G718iMq9uV18dUpEwxTBg=;
+        b=Gw27tNjapMS6DTpdnSLf3ZyrIXZl1HR4bV3qvG+OtewWtiYxDOSljAewqoMZdsjIT8
+         3eV1rvPLHI8XvSyFGS3ZzaFIgugWjp5gJUNAhwjYmVhNfepV3vK29xTZqvZNUGWLjTlK
+         yAq5EdHrlXfZibOe6LEZvHJGLd83yXWrE9iysNEtdJKIhRcutUxCPTWKmdTkHX3LiHtM
+         uuwKt3joMd7AhGqIQoxD3rGPf+KdmThvdx9V6/r6oydbwz7zOIufmN7BlBWIgRjJ3heQ
+         lggxb9LyEQexw3aeBHn8eeN2CQhxCvh48MXWjjrC7EhKSB1LAxhv7H7e+WQApzWIWZqL
+         MVyA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1786610310; x=1787215110;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:subject:cc:to:from:date:message-id:x-gm-gg
+        d=1e100.net; s=20251104; t=1786610449; x=1787215249;
+        h=content-transfer-encoding:content-type:cc:to:subject:message-id
+         :date:from:in-reply-to:references:mime-version:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=fYxN56Q1FiCTvNsl0xjkJkMf+TLROP+6g/NIvXZPeBM=;
-        b=WpGO5kv5qnupDX9gEAHsMr/Z3BeNC6P8AM2FxsEB4H4rB8cSndM0tLzG3rtpYqA2FV
-         yrii7eLjCYRdFLbAIYUyp7tKZKVF4hOQvUd4Ju6x0rmVwpvC2sPnyaDGcvE0/Z6ALNi2
-         VdW0VoPhB38v/wwyS+j2XdSizj/Fy/8AArmJgflJpHwfECBKZ+LLifJJkp0pR8PKC95H
-         HZGsGgnuoq2wJexIz3zHBjubpe8qxDLE8+vnH2XNE1wfaNxKlYPG8u4FiInjO1ssIzVr
-         LeAcdvtJgZ3X9QjGysL6qxpU2S+WiAtDWECcxgXggxGslS5RQIgJWAQLDe01VXEk69VJ
-         lDnA==
-X-Forwarded-Encrypted: i=1; AHgh+RoP2cipXdUx/8E0WSCjLQS6zQqlV0XaXhKBzmHsbA65jhQcJPd1QO8MMNNTkiJbkAHDCIM4XBJrhIc=@lists.infradead.org
-X-Gm-Message-State: AOJu0Ywm/W3rQajeRz3ZzHCiTBSJ8GK9gRR5gQXtk/Hz+v2f+AcXjvqy
-	SwFOF0pjhMQHlDDh3cXXi8mzpzi84tt4RB9CPTQ5VK43lo/wd4Rz4HKe
-X-Gm-Gg: AR+sD119WWkmd/7fn+dGejkONoicLOgsGAu9kb14nuO6yb5h5I5avAS1pzZ7Riev1vy
-	zi6xJOWsf/illqJ35ZXSYqdLDY52EPZUrENwl9IrPwHnGlfQMRADn+e9pXTZFj4qgsaQxL4LAf4
-	NznuGoWpwBIm0HOUSMtf4Deje3zpCTpifoSkzxSfTtRCyz1oUcYzon4tWYyI0OmAf7u4VMKYyr7
-	GhF3Z12eCiBVMooKV26VmO0Rg21pYTqkDKHK1X2tSnbwuu/4ygJS0wt59v20jw/afIVLRE4RK0d
-	q2vNA8CGXY3kyEnMrHaz8IOqewZDsU1l5YEP5GmRTH4X9n+DvV6WOrfV+BtdnzJwC8Ge4MNLFak
-	LojIthS59ZzlW96reqI6+6EtSMXwnKY0ywc4/Gg7+kURc2um11Lg3lqZ9E9K64sUFQdm6KO/JiC
-	NiEEVYS5jJdmcg/RcqKX+jQQyi83zg2CfOx25G67oLXIxrgCIaXsMKwMDjbCzH3O1Sd7nXnWwJ3
-	v2qbw3+FTo89FGFjt80fswJRGBfmik=
-X-Received: by 2002:a05:600c:4fcd:b0:495:63e4:7f78 with SMTP id 5b1f17b1804b1-499821e8016mr39965765e9.10.1786610309976;
-        Thu, 13 Aug 2026 01:38:29 -0700 (PDT)
-Received: from Ansuel-XPS. (host-87-20-3-207.retail.telecomitalia.it. [87.20.3.207])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4815a56981csm4384046f8f.10.2026.08.13.01.38.28
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 13 Aug 2026 01:38:29 -0700 (PDT)
-Message-ID: <6a7d8285.ebbd881c.33c407.30ab@mx.google.com>
-X-Google-Original-Message-ID: <an2CgeKA7uWbj0Wv@Ansuel-XPS.>
-Date: Thu, 13 Aug 2026 10:38:25 +0200
-From: Christian Marangi <ansuelsmth@gmail.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: Add documentation for Airoha
- AN7583 USB PHY
-References: <20260811124724.702467-1-ansuelsmth@gmail.com>
- <20260811124724.702467-2-ansuelsmth@gmail.com>
- <20260813-xanthic-sawfly-of-greatness-47e9bc@quoll>
+        bh=TClEoJsq0ggVTCXaYTDr62G718iMq9uV18dUpEwxTBg=;
+        b=l0CDk5zQ7YckWVx5c4jubKISIvmevsVxenTmQtL55Lw++6VVUlEfazAoZ+Vyf6eBaN
+         3LzyvVL1isd2jY3NTgOJlWRst9WPwp01tv3qrzGqiSTLKTo14JHD1PrxpIPTLU+daOVE
+         RmXTMN5QyTR2QeoYdmb2dlyt32KHkUcVL59siBew8ggxhgxqM1kEARph8khOlKISbQjv
+         UPs5xLO9ITUp6FE23GyvOphNwsgK0I6Ai7pR6izvaKSHPerOR2TXGlBO12HqW2fOtk5i
+         fDElN4cZSBIP+MNSpHYwNnBXmv0akTcNtQRlsIZvTLFNAUO1iqsbvLfmJBPGa9v6w2m4
+         /lyA==
+X-Forwarded-Encrypted: i=1; AHgh+Rok7j8BQY2ANvrhB/22PyL1Re+t5KuZ91y3SkMuGwKOsteI53OJLTAsOy+OqPIuiizL0HBdtv/SbS8=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx8azHeMXXXar9Xninsoa7Gr1DHNbpzR0x8Of2WYdT0b94eF9jI
+	JoCpcqOvQGoCUTKwJUqte78pD0bR1YMHz6kyn2lxOMK1pMSa1j0c+pecm5LaIzVCLKMpV5IfZIj
+	3TGrokk/w0Rzj87DjD9IB0yGn0wJRqYE=
+X-Gm-Gg: AR+sD12X1o4ZbnxEtzigp7eh5Us/xSoN9b11ROBxewn697g6JiJuDxrfvn39LxsdF2+
+	nbXLma3lFSDusPHIbSgcPleS6W2TuiJ8ZT4Gxe0Quo+zDDzhxv6TnKYMI9TUfb+VydlmHG5hPWK
+	eOldHKVtNp5O4InE7V//ulxH/0WDgxW8sbcy1MuH7yRn3RKl7AGKRXqk32sqYk5R2rvzrkQoQ/v
+	WWp4FXawg3W4SqFeqgiZL82kRfjV++arkCX5Sgp2CkdB24rdBP58k+/ygX8VUwtQ8+lXE+hM2qQ
+	javk7Qg1VmW8SfjiNIBte6LbbCccBjLxq+bWBbH5J7oc+HI8YvmN6A==
+X-Received: by 2002:a05:6402:1f86:b0:6a0:19c8:f9c0 with SMTP id
+ 4fb4d7f45d1cf-6a381bd91aamr837533a12.4.1786610448674; Thu, 13 Aug 2026
+ 01:40:48 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260813-xanthic-sawfly-of-greatness-47e9bc@quoll>
+References: <20260810-dcphy-rx-v1-v3-0-a2d25c29adfc@gmail.com>
+ <20260810-dcphy-rx-v1-v3-1-a2d25c29adfc@gmail.com> <20260812-refreshing-rampant-gecko-b38ef9@quoll>
+ <CAPwA33KM-sWkPVrP1h+swLinvrCZHzxPeS7h25KEO87Q_6WZuA@mail.gmail.com>
+ <an0FMnDSWbud8hPc@venus> <CAPwA33+7k7HMC7ezwH+MGn64iRHT6tVNK55t6gaC0nkkqWoE4w@mail.gmail.com>
+ <20260813-imposing-cunning-raven-fcad40@quoll>
+In-Reply-To: <20260813-imposing-cunning-raven-fcad40@quoll>
+From: =?UTF-8?B?5qWK5pm65oiQ?= <jason98166@gmail.com>
+Date: Thu, 13 Aug 2026 16:40:37 +0800
+X-Gm-Features: AUfX_mye9jktuvnjIqJR--jOE-SjnI1mJ-tyZFHa_AmY4WZ5Toj9QFewcV4UoB8
+Message-ID: <CAPwA33L-x=H+FU6-c9A8uKqhKbsfxcAJaaG49rUfnjvWk0f5mA@mail.gmail.com>
+Subject: Re: [PATCH v3 1/5] dt-bindings: phy: Add PHY_TYPE_DSI and
+ PHY_TYPE_CSI definitions
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Sebastian Reichel <sebastian.reichel@collabora.com>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Heiko Stuebner <heiko@sntech.de>, Guochun Huang <hero.huang@rock-chips.com>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, Michael Riesch <michael.riesch@collabora.com>, 
+	"Bryan O'Donoghue" <bryan.odonoghue@linaro.org>, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260813_013831_944775_8CCE7563 
-X-CRM114-Status: GOOD (  33.48  )
+X-CRM114-CacheID: sfid-20260813_014051_462878_D6D86920 
+X-CRM114-Status: GOOD (  24.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,184 +123,57 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Aug 13, 2026 at 10:33:31AM +0200, Krzysztof Kozlowski wrote:
-> On Tue, Aug 11, 2026 at 02:47:22PM +0200, Christian Marangi wrote:
-> > Add documentation for Airoha AN7583 USB PHY that describe the USB PHY
-> > for the USB controller.
-> > 
-> > Airoha AN7583 SoC support a maximum of 2 USB port. The USB 2.0 mode is
-> > always supported. The USB 3.0 mode is optional and depends on the Serdes
-> > mode currently configured on the system for the relevant USB port.
-> > 
-> > To correctly calibrate, the USB 2.0 port require correct value in
-> > "airoha,usb2-monitor-clk-sel" property. Both the 2 USB 2.0 port permit
-> > selecting one of the 4 monitor clock for calibration (internal clock not
-> > exposed to the system) but each port have only one of the 4 actually
-> > connected in HW hence the correct value needs to be specified in DT
-> > based on board and the physical port. Normally it's monitor clock 1 for
-> > USB1 and monitor clock 2 for USB2.
-> > 
-> > To correctly setup the Serdes mode attached to the USB 3.0 mode, a phys
-> > property is required with the phandle pointing to the correct Serdes port
-> > provided by the SCU node. Providing the phys property is optional if USB
-> > 3.0 is not used.
-> > 
-> > The second USB PHY on Airoha AN7583 SoC is used for PCIe Gen2 usage and
-> > similar to USB 3.0 require a phys property to configure the serdes.
-> > 
-> > Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
-> > ---
-> >  .../bindings/phy/airoha,an7583-usb-phy.yaml   | 205 ++++++++++++++----
-> >  1 file changed, 168 insertions(+), 37 deletions(-)
-> > 
-> > diff --git a/Documentation/devicetree/bindings/phy/airoha,an7583-usb-phy.yaml b/Documentation/devicetree/bindings/phy/airoha,an7583-usb-phy.yaml
-> > index a6e2c0b1acc4..46b311040e02 100644
-> > --- a/Documentation/devicetree/bindings/phy/airoha,an7583-usb-phy.yaml
-> > +++ b/Documentation/devicetree/bindings/phy/airoha,an7583-usb-phy.yaml
-> > @@ -26,64 +26,195 @@ description: >
-> >  
-> >  properties:
-> >    compatible:
-> > -    const: airoha,an7583-usb-phy
-> > +    enum:
-> > +      - airoha,an7583-usb-phy
-> > +      - airoha,an7583-pcie-phy
-> 
-> Keep the list sorted.
-> 
-> >  
-> >    reg:
-> > -    items:
-> > -      - description: phy register
-> > -      - description: ana register
-> > -      - description: pma register
-> > -      - description: dig register
-> > +    minItems: 3
-> > +    maxItems: 4
-> >  
-> >    reg-names:
-> > -    itmes:
-> > -      const: phy
-> > -      const: ana
-> > -      const: pma
-> > -      const: dif
-> > +    minItems: 3
-> > +    maxItems: 4
-> >  
-> > -  usb2-phy:
-> > +  '#address-cells':
-> > +    const: 1
-> > +
-> > +  '#size-cells':
-> > +    const: 0
-> 
-> I don't understand this diff. Why do you add cells if you do not have
-> chidlren with addressing for new device (pcie)?
-> 
-> > +
-> > +  usb3-phy:
-> >      type: object
-> >  
-> >      properties:
-> > -      reg: [0, 0x1000]
-> > +      phys:
-> > +        items:
-> > +          - description: phandle to Serdes PHY
-> >  
-> > -    airoha,usb2-monitor-clk-sel:
-> > -      description: Describe what oscillator across the available 4
-> > -        should be selected for USB 2.0 Slew Rate calibration.
-> > -      $ref: /schemas/types.yaml#/definitions/uint32
-> > -      enum: [0, 1, 2, 3]
-> > +      '#phy-cells':
-> > +        description: The cell contains the mode, PHY_TYPE_USB2 or PHY_TYPE_USB3,
-> > +          as defined in dt-bindings/phy/phy.h.
-> > +        const: 1
-> >  
-> > -    '#phy-cells':
-> > -      description: The cell contains the mode, PHY_TYPE_USB2 or PHY_TYPE_USB3,
-> > -        as defined in dt-bindings/phy/phy.h.
-> > -      const: 1
-> > +    required:
-> > +      - phys
-> > +      - '#phy-cells'
-> >  
-> > -  usb3-phy:
-> > +    additionalProperties: false
-> > +
-> > +  pcie-phy:
-> > +    type: object
-> > +
-> > +    properties:
-> > +      phys:
-> > +        items:
-> > +          - description: phandle to Serdes PHY
-> > +
-> > +      '#phy-cells':
-> > +        description: The cell contains the mode, PHY_TYPE_PCIE or PHY_TYPE_USB3,
-> > +          as defined in dt-bindings/phy/phy.h.
-> > +        const: 1
-> > +
-> > +    required:
-> > +      - phys
-> > +      - '#phy-cells'
-> > +
-> > +    additionalProperties: false
-> >  
-> > -  phys:
-> > -    items:
-> > -      - description: phandle to Serdes PHY. Optional if USB 3.0 is not used.
-> > +patternProperties:
-> > +  '^usb2-phy@[0-9-a-f]+$':
-> > +    type: object
-> > +
-> > +    properties:
-> > +      reg:
-> > +        enum: [0x0, 0x1000]
-> >  
-> > +      airoha,usb2-monitor-clk-sel:
-> > +        description: Describe what oscillator across the available 4
-> > +          should be selected for USB 2.0 Slew Rate calibration.
-> > +        $ref: /schemas/types.yaml#/definitions/uint32
-> > +        enum: [0, 1, 2, 3]
-> > +
-> > +      '#phy-cells':
-> > +        description: The cell contains the mode, PHY_TYPE_USB2 or PHY_TYPE_USB3,
-> > +          as defined in dt-bindings/phy/phy.h.
-> > +        const: 1
-> > +
-> > +    required:
-> > +      - reg
-> > +      - airoha,usb2-monitor-clk-sel
-> > +      - '#phy-cells'
-> > +
-> > +    additionalProperties: false
-> 
-> Looking at the amount of changes this should not be the same binding.
-> Also, things would be simpler if children were called 'phy', but OTOH
-> why do you need children in the first place? Your pcie-phy child has no
-> resources, except phy which can go to the parent device.
-> 
-
-Yes while writing the schema I also got this doubt that I should have just
-made 2 different schema. I wanted to put everything in one as they are the
-same HW and driver.
-
-I will just split these 2 to simplify it.
-
-The child is just for consistency with the USB and easier implementation on
-the driver. But I guess for DT this is a no go. I will rework the driver to
-drop the redundant child for the PCIe variant.
-
--- 
-	Ansuel
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SSBhbSBzb3JyeSBhYm91dCB0aGlzLiBTaW5jZSBJdCdzIG15IGZpcnN0IHRpbWUgdG8gY29tbWl0
+IHBhdGNoIHRvIHRoZQprZXJuZWwsIEkgd2FudCB0byBtYWtlIHN1cmUgbXkgY29kZSBhbmQgcmVw
+bHkgaXMgY29ycmVjdCwKc28gSSBhY3R1YWxseSBwYXN0ZSBteSByZXBseSB0byBBSSBiZWZvcmUg
+SSBzZW5kLCBsZXQgQUkgdG8gcmV3cml0ZSBteQp3b3Jkcy4gSSB3aWxsIGZpeCBteSBhcHByb2Fj
+aCwgYW5kIG1ha2Ugc3VyZSBWNCBhbmQgYWZ0ZXJ3YXJkIHdvcmsKaXMgd29ydGggdG8gcmV2aWV3
+LgoKQmVzdCByZWdhcmRzLApKYXNvbgoKS3J6eXN6dG9mIEtvemxvd3NraSA8a3J6a0BrZXJuZWwu
+b3JnPiDmlrwgMjAyNuW5tDjmnIgxM+aXpemAseWbmyDkuIvljYgzOjU55a+r6YGT77yaCj4KPiBP
+biBUaHUsIEF1ZyAxMywgMjAyNiBhdCAxMjozMzo1MlBNICswODAwLCDmpYrmmbrmiJAgd3JvdGU6
+Cj4gPiBIaSBTZWJhc3RpYW4sCj4gPgo+ID4gVGhhbmtzIGZvciB0aGUgcmV2aWV3Lgo+ID4KPiA+
+ID4gWW91ciBuZXcgYmluZGluZyBpcyBsYWNraW5nIHRvby4gSWYgeW91IHNlbGVjdCA8Jm1pcGlk
+Y3BoeTAgUEhZX1RZUEVfQ1NJPgo+ID4gPiB5b3UgZGVmaW5lZCB0aGUgZGlyZWN0aW9uIG9mIHRo
+ZSBQSFksIGJ1dCB3aWxsIGl0IG9wZXJhdGUgaW4gQy1QSFkgb3IgaW4KPiA+ID4gRC1QSFkgbW9k
+ZT8KPiA+Cj4gPiBZb3UgYXJlIHJpZ2h0LCBhbmQgSSBhbSBzb3JyeSAtIHRoaXMgaXMgYSByZWdy
+ZXNzaW9uIEkgaW50cm9kdWNlZCBpbiB2My4KPiA+Cj4gPiB2MiBhbHJlYWR5IGRlc2NyaWJlZCB0
+aGVzZSBhcyB0d28gc2VwYXJhdGUgY2VsbHM6IHRoZSBmaXJzdCBzZWxlY3RlZCB0aGUKPiA+IGVs
+ZWN0cmljYWwgbGF5ZXIsIGFuZCB0aGUgc2Vjb25kIHNlbGVjdGVkIHRoZSBkaXJlY3Rpb24uIE1p
+Y2hhZWwgUmllc2NoCj4gPiBzdWdnZXN0ZWQgdXNpbmcgdGhlIGdlbmVyaWMgUEhZX1RZUEVfRFNJ
+L1BIWV9UWVBFX0NTSSBjb25zdGFudHMgZm9yIHRoZQo+ID4gc2Vjb25kIGNlbGwgaW5zdGVhZCBv
+ZiB0aGUgUm9ja2NoaXAtcHJpdmF0ZSBSS19EQ1BIWV9ESVJfKiBjb25zdGFudHMgWzFdLAo+ID4g
+YW5kIFZpbm9kIEtvdWwgYWdyZWVkIFsyXS4KPiA+Cj4gPiBJbiB2Mywgd2hpbGUgbWFraW5nIHRo
+YXQgY2hhbmdlLCBJIGFsc28gbWlzdGFrZW5seSBjb2xsYXBzZWQgdGhlIHR3byBjZWxscwo+ID4g
+aW50byBvbmUuIFRoYXQgaXMgd2hhdCBsb3N0IHRoZSBlbGVjdHJpY2FsLWxheWVyIGluZm9ybWF0
+aW9uIHlvdSBwb2ludGVkCj4gPiBvdXQuCj4gPgo+ID4gRm9yIHY0LCBJIHdpbGwgZ28gYmFjayB0
+byB0aGUgdjIgbGF5b3V0IGFuZCBvbmx5IHJlbmFtZSB0aGUgc2Vjb25kIGNlbGwuCj4gPiBUaGlz
+IGtlZXBzIHRoZSB0d28gZGltZW5zaW9ucyBzZXBhcmF0ZSwgd2l0aCBlYWNoIGNlbGwgZGVzY3Jp
+YmluZyBvbmUKPiA+IHRoaW5nOgo+ID4KPiA+IC8qIE1JUEkgRFNJIGhvc3QgLSB0aGUgdHJhbnNt
+aXR0ZXIgKi8KPiA+IHBoeXMgPSA8Jm1pcGlkY3BoeTAgUEhZX1RZUEVfRFBIWSBQSFlfVFlQRV9E
+U0k+Owo+ID4KPiA+IC8qIE1JUEkgQ1NJLTIgaG9zdCAtIHRoZSByZWNlaXZlciAqLwo+ID4gcGh5
+cyA9IDwmbWlwaWRjcGh5MCBQSFlfVFlQRV9EUEhZIFBIWV9UWVBFX0NTST47Cj4gPgo+ID4gVGhl
+IHNhbWUgYXBwbGllcyB0byBDLVBIWSwgc28gdGhlIGJpbmRpbmcgY2FuIGV4cHJlc3MgYWxsIGZv
+dXIgY29tYmluYXRpb25zCj4gPiB3aXRob3V0IGFueSBmdXJ0aGVyIGNoYW5nZXM6Cj4gPgo+ID4g
+cGh5cyA9IDwmbWlwaWRjcGh5MCBQSFlfVFlQRV9DUEhZIFBIWV9UWVBFX0RTST47Cj4gPiBwaHlz
+ID0gPCZtaXBpZGNwaHkwIFBIWV9UWVBFX0NQSFkgUEhZX1RZUEVfQ1NJPjsKPiA+Cj4gPiBUaGUg
+ZHJpdmVyIGFjY2VwdHMgYWxsIGZvdXIgY29tYmluYXRpb25zIGF0IHBoeV9nZXQoKSB0aW1lIGFu
+ZCByZXR1cm5zCj4gPiAtRU9QTk9UU1VQUCBmcm9tIHBvd2VyX29uKCkgZm9yIHRoZSBDLVBIWSBj
+b21iaW5hdGlvbnMsIGFzIGl0IGRpZCBiZWZvcmUKPiA+IHRoaXMgc2VyaWVzLiBCb2FyZHMgdGhh
+dCBvbmx5IHdpcmUgdXAgdGhlIHRyYW5zbWl0dGVyIGtlZXAKPiA+ICcjcGh5LWNlbGxzID0gPDE+
+Jywgc28gdGhlIGV4aXN0aW5nIGluLXRyZWUgZGV2aWNlIHRyZWVzIHJlbWFpbiB1bmFmZmVjdGVk
+Lgo+ID4KPiA+IEJlZm9yZSBzZW5kaW5nIHY0LCBJIHdpbGwgZ28gdGhyb3VnaCB0aGUgY29kZSBh
+bmQgY29tbWl0IG1lc3NhZ2VzIGFnYWluLAo+ID4gc28gdGhhdCB0aGUgcmVhc29uaW5nIGFib3Zl
+IGlzIGNhcHR1cmVkIGluIHRoZSBjb21taXRzIHRoZW1zZWx2ZXMgcmF0aGVyCj4gPiB0aGFuIG9u
+bHkgaW4gdGhpcyB0aHJlYWQuIEkgd2lsbCBhbHNvIHJlLXRlc3QgdGhlIHNlcmllcyBvbiB0aGUg
+Ym9hcmQuCj4KPiBXaGF0IGlzIHdpdGggdGhpcyBwcmFjdGljZSAodGhpcmQgcG9zdGluZyBJIHNl
+ZSB0aGlzIHdlZWspIG9mIHBhc3RpbmcKPiBhcyByZXBseSBwcm9tcHRzL3Rhc2tzIGZvciBBST8K
+Pgo+IEFsbCB0aGlzIGlzIGp1c3Qgd3JvbmcgYXBwcm9hY2ggYW5kIHlvdXIgcGF0Y2hlcyB3aWxs
+IGJlIGlnbm9yZWQgaWYgeW91Cj4gYWN0IGFzIGEgcHJveHkgYW5kIGtlZXAgcGxheWluZyB3aXRo
+IHVzIHRoYXQgd2F5Lgo+Cj4gQmVzdCByZWdhcmRzLAo+IEtyenlzenRvZgo+CgotLSAKbGludXgt
+cGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
