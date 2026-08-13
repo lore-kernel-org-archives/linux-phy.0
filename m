@@ -4,71 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD144C5CFDB
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Aug 2026 09:44:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12308C5B572
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Aug 2026 10:17:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:Subject:References:Cc:
-	To:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xn4EHTcSmOcg8ku9bCnyP3l/i34Nb77SCq+0tAt99pY=; b=Tg1CDO9vR32QHe
-	MwPYDUdB5Cm2shYBTFs0UDGMZ4QiHLvUWU8UE50YOuTVPvKO9NH57cofetNHrkRsJT4x4ysQonAgL
-	1nQwkE9DFtjyFYQhBcoY3iK+il1fkKhfikCpACyY93xa+zr1s+1pwfmqsOV0Lz/o76WPrnaZQlMIq
-	s2DmBDyIQNU7x+gMZwlv8HWY3YexwuneoJci+5/VxLHJZkqPZ4/TspGnZ4P2og6cCFx1cFlCH29vC
-	bq5Ag9A8WWekpeIzL9zSUXKyqh9FzVL44p2zJLWxcjYGAdZabD4pb6rCEL8UleO2UtByQSBBIk4Ij
-	gbXLO6gXLCbd2+ziA1+w==;
+	List-Owner; bh=mUkcfN6tGyMp7jYe0GqisnrTSu4fwMmcEursvOa4mBw=; b=GrBvtslqfPMEG8
+	b259a+dEChUnaSSAaSgYF6MBXL7tkXxh95kQYNS517gfYs397V/JVO5reAGpPI9GcIw12623ho8qt
+	Av2y7qbkS3BV72PHEIcdltLUmJkJQF4G/sCdAbthY1HyAasek70Mu1N8axSWOO0Jm0MOc4wRBMU0e
+	2OU08TWSAXaEu1b3r6b6cow467s3tjgjs1gP8a1TDSdWSpTWMsWN2c1/injZaJ2WEnp7/9XW+gf+Q
+	RJhWTArdmV/wptyr+SVgg/hdWSTVaZQuYzXeg1/fFO7iQU2RjEcCPrnVH7RpK4gXI86rn9rs/WS0I
+	fly8y9OvdtVkcXsO7R2g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wuRzC-00000000Lzp-1nyX;
-	Thu, 13 Aug 2026 09:44:30 +0000
-Received: from mout.web.de ([212.227.15.4])
+	id 1wuSVN-00000000Rbq-2scB;
+	Thu, 13 Aug 2026 10:17:45 +0000
+Received: from mx.nabladev.com ([178.251.229.89])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wuRz8-00000000Lyn-400H;
-	Thu, 13 Aug 2026 09:44:28 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=web.de;
-	s=s29768273; t=1786614242; x=1787219042; i=markus.elfring@web.de;
-	bh=+aupOxole8doPnhUl+CX4EmAgyb7a0s+Mr7BO//ceAc=;
-	h=X-UI-Sender-Class:Message-ID:Date:MIME-Version:To:Cc:References:
-	 Subject:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:
-	 cc:content-transfer-encoding:content-type:date:from:message-id:
-	 mime-version:reply-to:subject:to;
-	b=jyysQfrGRQVBzCzpunlQOSDXDiCoOriRVmnk/jPTWbChA1sFBztlKNFp94TqbcaH
-	 QPPAWBZfdnmSy3pSjmjm/UMuqegnoBfOPjxRUKJ+ScO504Um1UpJfbCMRjbDQ2BgY
-	 zF59SLHfYrfCTP8eF90I1ZjndLi7Ecqf1NF13nzglDTBIzWW+DBfMbYnsQaIH1miD
-	 nVQa7+TE7YGR/Ha2VzVjCX5wbXg9vAWBc1jjh4yM5Ot+aWTvfggZ7ow6eHbLfp6my
-	 xfrxMqhWqTRlq1HS1w7yHFel+ZTClbiEztQ13tqLi/1HgloJjny0eYChHOitQCsgJ
-	 raYsIES2YX2khbb1dQ==
-X-UI-Sender-Class: 814a7b36-bfc1-4dae-8640-3722d8ec6cd6
-Received: from client.hidden.invalid by smtp.web.de (mrweb006
- [213.165.67.108]) with ESMTPSA (Nemesis) id 1MTOlk-1wQrrq1Ko8-00IIGE; Thu, 13
- Aug 2026 11:44:02 +0200
-Message-ID: <e46362c2-085d-4083-96a3-3e289553d1e2@web.de>
-Date: Thu, 13 Aug 2026 11:43:49 +0200
+	id 1wuSVK-00000000RbA-3NqZ;
+	Thu, 13 Aug 2026 10:17:44 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id BE8F1112995;
+	Thu, 13 Aug 2026 12:17:22 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nabladev.com;
+	s=dkim; t=1786616247;
+	h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding:content-language:in-reply-to:references;
+	bh=/BuHPpnzZHteKsYDuUbfARlxgNnfnDbxBH+K+gw6fwA=;
+	b=UNgWn58Z7/RgRQnUiTN0w24Zxt47G2xD545mja3bMa1O29zmbIonUCe/pmi3b379YvLdnG
+	D4wtCOg3j5fEz/XiYXbH1J8beRq6WTjZcKSkp6xen+e05mXvx6X/f1I2I5jZHGwUq9nMpO
+	FCLTTZaYF7YiGNnxzamTK1yoFj8WgvixzW+6SQvpdOpNhlzSEQDNLssSebZrKEDxbv2RpF
+	4ufPn+CO/Bm1HBtbf/XVl/AaJ2NRJtK8zo3KCWxyLXWxUUDAd2dFdKGeI50Zv3UJq+l2HL
+	JVNCpsuXSwijoIhVBm1V40Du/rNbhB2bryA+PnRr/wXg9gu+wq/B7bM69TPFjg==
+Message-ID: <9921697d-ea7a-42da-b172-54412082ec8f@nabladev.com>
+Date: Thu, 13 Aug 2026 12:17:21 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-To: Rosen Penev <rosenp@gmail.com>, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-Cc: LKML <linux-kernel@vger.kernel.org>, kernel-janitors@vger.kernel.org,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
- Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>,
- Masami Hiramatsu <mhiramat@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>, Vinod Koul <vkoul@kernel.org>
-References: <20260304041602.7539-1-rosenp@gmail.com>
-Subject: Re: [PATCH] phy: uniphier-usb3: no devm for nvmem_cell_get
-Content-Language: en-GB, de-DE
-From: Markus Elfring <Markus.Elfring@web.de>
-In-Reply-To: <20260304041602.7539-1-rosenp@gmail.com>
-X-Provags-ID: V03:K1:nIF3iz0+uhpRJ4xGWUPICsuDAzvKkYWZtaBvengcTLhg0VO/Pwf
- J0PHbBoUaQ9VdGug6mSrSbECYiB/gWLVyDh9fOS3a0tlSsCcBNJrwbTlNeA+8a8yLZWT0I8
- mMZqAPTwTRTruBh1Rf7BNJ9YQRm6YxOK7HvjcR58lnBzPlYZgJnZOU4l5SO7ko34Oe9L/ZU
- jG5FzRwa0umtGbgJA8w2w==
-UI-OutboundReport: notjunk:1;M01:P0:OGAHi3DHNNs=;Lw+VYNinj+YZT+JUNmgnIzQL215 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
+Subject: Re: [PATCH 1/8] dt-bindings: phy: Document ST STM32MP25 USB2-FEMTO
+ PHY
+To: Rob Herring <robh@kernel.org>
+Cc: Krzysztof Kozlowski <krzk@kernel.org>, linux-usb@vger.kernel.org,
+ Pankaj Dev <pankaj.dev@st.com>, Fabrice Gasnier
+ <fabrice.gasnier@foss.st.com>, Rahul Kumar <rahul.kumar05@st.com>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Christian Bruel <christian.bruel@foss.st.com>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Rosen Penev <rosenp@gmail.com>,
+ Thinh Nguyen <Thinh.Nguyen@synopsys.com>, Vinod Koul <vkoul@kernel.org>,
+ devicetree@vger.kernel.org, kernel@dh-electronics.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com
+References: <20260812010157.1772849-1-marex@nabladev.com>
+ <20260812010157.1772849-2-marex@nabladev.com>
+ <20260812-silky-omniscient-dalmatian-b268cb@quoll>
+ <ff691741-a110-44e8-90e7-ac54a96de1af@nabladev.com>
+ <ff957fbb-b8ed-485d-adaa-18258ed693a6@kernel.org>
+ <ea21d4fb-04a1-4280-9a73-6f566be2b015@nabladev.com>
+ <20260812225105.GB693080-robh@kernel.org>
+Content-Language: en-US
+From: Marek Vasut <marex@nabladev.com>
+In-Reply-To: <20260812225105.GB693080-robh@kernel.org>
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260813_024427_355730_260694F8 
-X-CRM114-Status: UNSURE (   4.21  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260813_031743_094518_EF2FEADC 
+X-CRM114-Status: GOOD (  12.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,18 +84,52 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> There is absolutely no reason to extend the lifetime of nvmem_cell_get
-> to after removal of the driver. Use and free right after use.
+On 8/13/26 12:51 AM, Rob Herring wrote:
+> On Wed, Aug 12, 2026 at 08:30:33PM +0200, Marek Vasut wrote:
+>> On 8/12/26 1:22 PM, Krzysztof Kozlowski wrote:
+>>> On 12/08/2026 12:56, Marek Vasut wrote:
+>>>> On 8/12/26 12:15 PM, Krzysztof Kozlowski wrote:
+>>>>> On Wed, Aug 12, 2026 at 02:55:41AM +0200, Marek Vasut wrote:
+>>>>>> From: Pankaj Dev <pankaj.dev@st.com>
+>>>>>>
+>>>>>> Document USB2 PHY for STM32MP25 USB2 controllers, which includes the
+>>>>>> USB2.0 host-only controller and USB 2.0 part of the DWC3 controller.
+>>>>>> Two such PHYs in total are present in STM32MP25 SoC, they both are
+>>>>>> slightly different, therefore they use different compatible string
+>>>>>
+>>>>> What is slightly different? This should be either here, or better, in
+>>>>> "description" part.
+>>>>
+>>>> They are both Synopsys FEMTO-PHY , but they are each attached to a
+>>>> different controller (one to USB 2.0 host , the other to DWC3 DRD) , and
+>>>> their control bits in the system controller register are different for
+>>>> each variant.
+>>>>
+>>>> I extended the description in V2.
+>>>
+>>> Depending on the actual difference, this rather belongs to the phandle
+>>> to syscon, instead of separate compatible.
+>>
+>> Modeling that in the phandle to syscon won't scale, the PHY driver is simple
+>> thus far and does not control all the bits in that syscon, if we were to
+>> somehow extend the phandle to syscon to describe the various bit mappings
+>> and differences in it, it would look awful quickly. Hence the separate
+>> compatible strings, so the driver can match on them, derive match data from
+>> them and use the match data to figure out differences of each instance.
+> 
+> There's no 'reg' so the syscon is the only control interface, right?
 
-How do you think about to increase the application of scope-based resource management?
+Correct.
 
-Regards,
-Markus
+> So this should be child node of the syscon (with a reg property).
+All right, will do in V2 (already done locally).
+
+Thanks !
 
 -- 
 linux-phy mailing list
