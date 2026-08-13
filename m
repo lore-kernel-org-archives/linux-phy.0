@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96551C5DF6A
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Aug 2026 20:52:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07979C5DF66
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Aug 2026 20:52:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jBg5L7Ju+VsKd0lmIsVlBwqbYdEFt9CS2z7Cqncx8LQ=; b=cWlljtypXYfaJE
-	S9fWu3yjn9Eo4GRuDtY1n6ohAQk+Gji6cARCY2skAAlVmGD+mGX1XhWG5j+8JeCty0fiunzBnFB4R
-	nDqfPjE3nW+Tozlc1llDKCEIdDaQRVlPNp2Rt1ZENX5PBYeJnhZCWNfY9KOoVNczqBS2Nd3aVgzZX
-	GVNFS/zKf9mNfGwxdj9P7imdo+N3Xvtb4/WY5vXzCGNuXZwDeW/g0cvlV4DiTMMjd2CEUDSiBW1/l
-	H3nvxnl4CCcOVer2DTYyvfc1gpjg55vYkaGkD/v/qRAv4v591G3lGXHRyVVe6QkhvN8PqDjW3msak
-	z9tPEbuqPggpZ10ueR/Q==;
+	List-Owner; bh=Etbnr9/tIq8eUN81lUPw6y6m5w/FuYHY/rSk19hfkkU=; b=lKII8Mn3Vcgpd5
+	OQqj6Oo97ItFY7LmBdKS1oRPFlJQRWN2BjIUttjBf2RBioLfeCYfC9zDCG0kHv0S1R+SRLGFWSSO1
+	lI7vzBnE4RnoS3BYxrz7aAbN+zgA1DyqiBkR322UGidlR3fLJylzx7DGlXY0sw3t5daxLrR+VfKhU
+	hoJbRqYPbvD7k/nVfOnpZqsh7PWfBhgjuewX0JRN95rMkv3dtAun5OB8E7wvoZQnD4GdY6vJs0H9K
+	+KUBwlMsOYeH2yFTUzwAioOKYCU5GdJkVVHAjPPhKQZObXH2loYmbOsr82FfsDYq6UOMezcnAPjeL
+	pWeIG0rw3V0XvtxIkl0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wucQ4-00000001YWH-0jBu;
-	Thu, 13 Aug 2026 20:52:56 +0000
+	id 1wucQ5-00000001YZk-2UGA;
+	Thu, 13 Aug 2026 20:52:57 +0000
 Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wucPD-00000001XIH-0YSg;
-	Thu, 13 Aug 2026 20:52:06 +0000
+	id 1wucPD-00000001XIa-1O5t;
+	Thu, 13 Aug 2026 20:52:07 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1786654310;
-	bh=DRXGZ9p7V1/mxjzbN8TrhXQcxeu/SF2V+MgG6q/rcw4=;
+	bh=44ZpQFUM80vYgox7xZ/LA1egQ+gyiMQUbepipkmRbak=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=Nv4x1Cpvz1JnVCQQn7THa67sUsto/PeLMeRJsJMScgQLhHCx5qWCQ626SzJwT+ipa
-	 oDEAO2AGVEqNwO0qLAmG35mm2nAIpOPtFEkBiXGJ4NRkEUH+kmuthVS2V9GTWJGib2
-	 ogC5Hmz/xwm+FGUeQDAgtWIaRMq9JKXm41frLe7mXycgom5+rqSWDj+yceZuA/lbN6
-	 EDD45HwCfJQR1o2RcyIhixORexYCiFBMrLWszjuXozAhHHNkT3RXX2SHd2o5tM4WE3
-	 IyFYWCiyVa8fxSqbRM7E2bJVWxmXusPpGfw56eTQR1lOv8v9+JM64u5diNTIKdyilA
-	 e1LWHBPK5zZFA==
+	b=d1UaQ369FD+Y8Xt4k3Dy/70w4jvZc1mvfgkpvd5i6JzS0kHaFQ5Rfptpr4v8ncAEy
+	 RjZ9r056brVPPWgG8DnietpSChRALAA/nSR1PbkiBb4IN5ZBLFVjjIKKI0yum0Dc3P
+	 mPn9my9Qtv6zQwywXK7P6SentnP2TCpeht6P1l3zqm3t/XwPV3+4/Mp9R9XvSfJbTQ
+	 GfgpFKaIwADIuvfp54grCNcZp5675RAFXoFqOenNDXK7UlP4CL0kFqJMwkutJXA7Bg
+	 WYVnGC8bcaDviERVBCiLcpqBIZ9ObfHKW9O+0Q3yO6FlxEO3UdMI2hC2HlnDO0xiIv
+	 HRa5a2NYLIRBw==
 Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519)
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 96CD717E1412;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id B79BE17E14D0;
 	Thu, 13 Aug 2026 22:51:50 +0200 (CEST)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id B1812480065; Thu, 13 Aug 2026 22:51:49 +0200 (CEST)
+	id B7B92480069; Thu, 13 Aug 2026 22:51:49 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Thu, 13 Aug 2026 22:52:02 +0200
-Subject: [PATCH v14 19/38] phy: rockchip: usbdp: Re-init the PHY on
- orientation change
+Date: Thu, 13 Aug 2026 22:52:06 +0200
+Subject: [PATCH v14 23/38] phy: rockchip: usbdp: Hold mutex in DP PHY
+ configure
 MIME-Version: 1.0
-Message-Id: <20260813-rockchip-usbdp-cleanup-v14-19-b5ad9c68fa11@collabora.com>
+Message-Id: <20260813-rockchip-usbdp-cleanup-v14-23-b5ad9c68fa11@collabora.com>
 References: <20260813-rockchip-usbdp-cleanup-v14-0-b5ad9c68fa11@collabora.com>
 In-Reply-To: <20260813-rockchip-usbdp-cleanup-v14-0-b5ad9c68fa11@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>, 
@@ -67,28 +67,29 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
  linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
  kernel@collabora.com, devicetree@vger.kernel.org, linux-usb@vger.kernel.org, 
- Sebastian Reichel <sebastian.reichel@collabora.com>
+ Sebastian Reichel <sebastian.reichel@collabora.com>, 
+ Sashiko <sashiko-bot@kernel.org>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1326;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1410;
  i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=DRXGZ9p7V1/mxjzbN8TrhXQcxeu/SF2V+MgG6q/rcw4=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGp+LmQT5DejwXvNJchdzLQ3Mt6HljWSUwqQU
- CutrxoaF1atb4kCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqfi5kAAoJENju1/PI
- O/qaptkQAKL4RVLm+JOiRRYPfvlsojLvVjCjKZ92tkzFvrMhc/Dv2rodKUiN2eDA3ynL4V2ywY2
- fI2vE4NM41TiFBKCHoRfWyZDSpyBJuMaj6QkqHJG0QK2YEkuUtR5vLy6JHtxVg2JKWq3WAFoke2
- WDtodDjxj0HDvBlBdrFdbVu7FXMYFVypoDiPO4AdHMRjhVyy6sk3obpNE3M9TPlF5MXSlDgn7+u
- DUeGG0SDaojXCjgU3RW+rUr+TyN4IhK1kU3nsEufu7fRprDq7x79VCTVy/SpizczHOQBSh6m4kh
- yO+1yvHj2OyUzfUmDT4UxrH6SdayYQNmyr1pYmTWoEPDl9Kme53HFWXYOldaJHtK3/vqa51vbU6
- iAEkaQJXomOQqRyuXn3mu8eKSOC4g3tJHYbOfk6KHwHjOpIi4V9Kg63k5ONlO+b3B8sOdVKyiem
- aE645AlUDgAoUGJi0+pny7BNSrqgVi4er/3hUJSj3WDG+7WEoGcO8RYkhhuBFQGP1Vgb0p8iUCU
- 48nVNYu93yN2/tnw4i/aonfeJwjXqeEPbumPKNvOYBgeoqKXA/7m5ZVdtVgmbWaTZ3a0Gn6j0r8
- 5+0VdvsQ0a706rBwSZTvbcNdOaiB63KInVXVFHpVmcC2rETooOJr628BdjElUQHX8uDssSQOr2D
- XWcMfXsvcQyc7CqtMu9E0Zg==
+ bh=44ZpQFUM80vYgox7xZ/LA1egQ+gyiMQUbepipkmRbak=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGp+LmQaXXlHODS7QxbxdpWo5a4aJ77ht96kR
+ t4iHcxRu4695IkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqfi5kAAoJENju1/PI
+ O/qafFcP/RbtX86JnHjpEjJrAPd5foYzfWkkebm73/F5nmwDk7Hut4ajtV7CvtPxTko7dl4x0Lq
+ chgbxf4x4ht7KWZfMJd1+eGF7Ow/6k0tucoBQBdP4uy0CCzYET3AbK8xrcwGGlRhBjJNDTBsZmQ
+ kRlIdVu5+NWhfZSMrhm//b5TdBm7K8VStH9PvyPYq5gWLqfrjN+Xs7I00gnw9B5reo0i5NUX7CY
+ gg6/p9xQUgcXlNv7/tCgx4UMwLfSwMSTtSqIXdo1GMPwLmFdoWELF3O75MzgMtfYA8SwGsa0UUQ
+ bSjx9nRb9fiDIxPx0W5OSJNnTdcwnBoqrDp6gve6FBlhZf1Kj5jcddAy7uK9vF0Y3iaiCS3kDsH
+ Jttvlk02CI1ZLMyTIG7mhPWYH0bXe/S+ASdq1W7msTuEqyhyoGlqX6n93MHIYJEDqqKPnkJ6C/u
+ 48B0N5q3e8k2ENbxDukU7UiX9Ryp7iOCgXOsZ/6MUBA89MRSgLi82Lyf97YuuDpF/4kKZYdBIto
+ SwfO4QMLU6v+NH/KvURH1xLZTpoGJ1z2SzkrW88rkAMs7poxhOT2Kb2BCxfZIvEZHUGY729c+7I
+ i/3cgySgyfcJ+vyBShY7yvgrSl7BToe4+kSqtdb/6INGGKE+p78gMlKYoqTcBSx/JBVjgqkw7Ia
+ BDsSY8NwuUuPEQSSVc84qnw==
 X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
  fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260813_135203_370629_9DF48EA9 
-X-CRM114-Status: GOOD (  10.36  )
+X-CRM114-CacheID: sfid-20260813_135203_621947_B8BC92B2 
+X-CRM114-Status: GOOD (  10.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,40 +106,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Changing the cable orientation reconfigures the lane muxing, which
-requires re-initializing the PHY. Without this DP functionality
-breaks, if the cable is re-plugged with swapped orientation.
+rk_udphy_dp_phy_configure() accesses some variables from the struct
+rk_udphy, which are updated independently from the USB-C framework.
 
+The USB-C mux/orientation switch functions already hold a mutex to
+ensure mutual exclusive access to the struct rk_udphy states, so
+simply hold the same one in the DP PHY configuration function.
+
+Reproducing problems due to this on real hardware would be really hard,
+but could be possible when quickly re-connecting the USB-C connector.
+
+Fixes: 2f70bbddeb45 ("phy: rockchip: add usbdp combo phy driver")
+Reported-by: Sashiko <sashiko-bot@kernel.org>
+Closes: https://lore.kernel.org/linux-phy/20260612164627.23D391F000E9@smtp.kernel.org/
 Tested-by: Igor Paunovic <royalnet026@gmail.com> # Orange Pi 5 Plus
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index e44d19c9d119..4b454798c4ed 100644
+index 8c165bcab796..b40b5d9ce587 100644
 --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -620,6 +620,7 @@ static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
- 				 enum typec_orientation orien)
- {
- 	struct rk_udphy *udphy = typec_switch_get_drvdata(sw);
-+	bool flipped = orien == TYPEC_ORIENTATION_REVERSE;
+@@ -1154,6 +1154,8 @@ static int rk_udphy_dp_phy_configure(struct phy *phy,
+ 	u32 i, val, lane;
+ 	int ret;
  
- 	mutex_lock(&udphy->mutex);
- 
-@@ -631,7 +632,10 @@ static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
- 		goto unlock_ret;
- 	}
- 
--	udphy->flip = orien == TYPEC_ORIENTATION_REVERSE;
-+	if (udphy->flip != flipped)
-+		udphy->phy_needs_reinit = true;
++	guard(mutex)(&udphy->mutex);
 +
-+	udphy->flip = flipped;
- 	rk_udphy_set_typec_default_mapping(udphy);
- 	rk_udphy_usb_bvalid_enable(udphy, true);
- 
+ 	if (dp->set_rate) {
+ 		ret = rk_udphy_dp_phy_verify_link_rate(udphy, dp);
+ 		if (ret)
 
 -- 
 2.53.0
