@@ -4,75 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9EB9C5CFDB
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Aug 2026 22:51:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF69AC5AD5A
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Aug 2026 00:03:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=da81RIOqynyL4ZPOazGOnRqPRC71lahE9YkF4+C+KfM=; b=zytQEfU+zOmUpc
-	ihBgBGdvIKuMaXaFDWXM4Y6q6J0S3E4osWNvtn+mRrk0JqDiE2Pp6uea86hK1znPklph0jyaZ5YvT
-	tVQE/xOspaehKqiYIdgxL1HTltfLKzFN9+bqL1GwogWUjK3rII9FR2d1KVoBh2gFBod3WdAhvFtLK
-	h7u9YnfaG7DzknydZ7yzrcnW7TS+pZjumF1uSGB+/qx0v0oU7T405HoAlQAFDbsAFUc/oR3jfBxtE
-	kXjUM7SdslCvJtgMCpfOm0ptzR62RnUGtinZ+zEcV3UiK2gnbrvfVhviCAtgXB7B1LiqQiPqifi6V
-	2Pt8HGowujJkKBs6GN6A==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=S/iPhuwL0Hx6iexRB5rvQhK2i5XWgVtC2OOgquBV3eM=; b=dfbW9xK26ZA98Q0MVpGIgCTvru
+	6BCVeCjAeVAl353sQ3dPBfqb32vb8OZDRwSlP0muYinQizPqbCbMpOoCQbi4xxqiIzTXhIDT99me9
+	UI+JDXp+uUWgs0aM2SOHMbjW1JXkvWvjdJlH0OmRTMrSbnjXjhf/YMqACyrPg4K1rBdCx1F42c2nW
+	A3hSoz8z3qKnNsG630T0SiPmgs4o3DqT5ILD3tmFqnUQKHm7tzGpXKlFFCBIy+hgW4mc2F7RWGnXG
+	MjkGrRG6dxsncgPJktwOZbe9svkOFdmG4WtUhDWkVhCoq+b4GSgwLCjD0UkbIrtx1PhHiL5FtBGbx
+	cq7XDDCg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wuHmu-0000000H6be-0kA8;
-	Wed, 12 Aug 2026 22:51:08 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wuIuV-0000000HBNg-0Rv7;
+	Thu, 13 Aug 2026 00:03:03 +0000
+Received: from sender4-op-o11.zoho.com ([136.143.188.11])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wuHms-0000000H6bC-28lN;
-	Wed, 12 Aug 2026 22:51:06 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id DB76B42D67;
-	Wed, 12 Aug 2026 22:51:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9CA8B1F000E9;
-	Wed, 12 Aug 2026 22:51:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786575065;
-	bh=q94daslctU9u8EUSFugtHPk2cVBdSnc1E2aM20T8veU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=GbmnXaWeCQaaqrT8Hp/zNHy8kss73W/neIJN1E9VGPX08O8vxf+frHXmvQsJO11Pj
-	 KEDci1oe6firfMN35BT3WQzabTnykjeteGsUCxySrWPYwgqKNjdYQwukD9pSBLnLhw
-	 eWM7OMMdS/widY/WecnKrnZ8Ermx8XAFjf6F2TXOy5e0T+cJSvb9WXeZl+lxyTVZtr
-	 FWqZWVM6xnchqFpC0bZpcGPKSGAKM9kzKPWLAt8D1+jfiwdepwXXLReZ0pwGOYuP1p
-	 DxV9WyH04g/bVqIj4TQE49i+1L1XYiihUebgNV0Ge7ocKfF2qzyWEdYE0KjQOh6n29
-	 pFU+uCfjZ4uAw==
-Date: Wed, 12 Aug 2026 17:51:05 -0500
-From: Rob Herring <robh@kernel.org>
-To: Marek Vasut <marex@nabladev.com>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>, linux-usb@vger.kernel.org,
-	Pankaj Dev <pankaj.dev@st.com>,
-	Fabrice Gasnier <fabrice.gasnier@foss.st.com>,
-	Rahul Kumar <rahul.kumar05@st.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Christian Bruel <christian.bruel@foss.st.com>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Rosen Penev <rosenp@gmail.com>,
-	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
-	Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
-	kernel@dh-electronics.com, linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-stm32@st-md-mailman.stormreply.com
-Subject: Re: [PATCH 1/8] dt-bindings: phy: Document ST STM32MP25 USB2-FEMTO
- PHY
-Message-ID: <20260812225105.GB693080-robh@kernel.org>
-References: <20260812010157.1772849-1-marex@nabladev.com>
- <20260812010157.1772849-2-marex@nabladev.com>
- <20260812-silky-omniscient-dalmatian-b268cb@quoll>
- <ff691741-a110-44e8-90e7-ac54a96de1af@nabladev.com>
- <ff957fbb-b8ed-485d-adaa-18258ed693a6@kernel.org>
- <ea21d4fb-04a1-4280-9a73-6f566be2b015@nabladev.com>
+	id 1wuIuS-0000000HBMy-0kN1;
+	Thu, 13 Aug 2026 00:03:01 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1786579367; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=mE3WnUoLG3PUyof3yAn4yRvDiIrO4wbFpZ5Ud92qrGj9XTtKGSa6tSlrA7R303WjqU26tuU0tyz7jDpZaOh0fOtogp4MN5CqiqY4yfQ9ANQb4CrFe9MA2Ue48RzMu5aN0KYbtzZpi9hF2v0F0/U/H+BsVg1fQ+0jXO+uCgbnSFA=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1786579367; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=GwCTpCXh9rcScl0BR+msQzZZgOaQLIyE12sHaz6kHFY=; 
+	b=ORJ/bNkhDm2UONTIxn3MZ0yL7MMfKYIt8+e8BY3FnlcHaDIHrsMMZcSBffinQCYWsn+N47d3a7iePjYpIsGuLP8lNidJqlhQqs80gLdAIAXXxLsv11Auqw5ykW/mn424uUV1Esz8M+e6/37Vwc2c+ACm6C9q1JwzHs/Iz2c77tk=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
+	dmarc=pass header.from=<sebastian.reichel@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1786579367;
+	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
+	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
+	bh=GwCTpCXh9rcScl0BR+msQzZZgOaQLIyE12sHaz6kHFY=;
+	b=hpIspdneOTXlzv3nDG+Xon+wLKRBuMicjfpQglMZOWyYeHtal3rudHDv+pagWEPq
+	ScfCMYxDfDXByWgGdIdW2W8BrktQYqrgjd9cdxXIEJVy0I3JjC+wrePejalVGThQZuC
+	BogdP3Lfalu7LOXLIM9h5OaVut02sx9zWcubYmok=
+Received: by mx.zohomail.com with SMTPS id 1786579364116535.4259576810091;
+	Wed, 12 Aug 2026 17:02:44 -0700 (PDT)
+Received: by venus (Postfix, from userid 1000)
+	id B01EC18057D; Thu, 13 Aug 2026 02:02:38 +0200 (CEST)
+Date: Thu, 13 Aug 2026 02:02:38 +0200
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+To: =?utf-8?B?5qWK5pm65oiQ?= <jason98166@gmail.com>
+Cc: Krzysztof Kozlowski <krzk@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Heiko Stuebner <heiko@sntech.de>, Guochun Huang <hero.huang@rock-chips.com>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, Michael Riesch <michael.riesch@collabora.com>, 
+	Bryan O'Donoghue <bryan.odonoghue@linaro.org>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v3 1/5] dt-bindings: phy: Add PHY_TYPE_DSI and
+ PHY_TYPE_CSI definitions
+Message-ID: <an0FMnDSWbud8hPc@venus>
+References: <20260810-dcphy-rx-v1-v3-0-a2d25c29adfc@gmail.com>
+ <20260810-dcphy-rx-v1-v3-1-a2d25c29adfc@gmail.com>
+ <20260812-refreshing-rampant-gecko-b38ef9@quoll>
+ <CAPwA33KM-sWkPVrP1h+swLinvrCZHzxPeS7h25KEO87Q_6WZuA@mail.gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ea21d4fb-04a1-4280-9a73-6f566be2b015@nabladev.com>
+In-Reply-To: <CAPwA33KM-sWkPVrP1h+swLinvrCZHzxPeS7h25KEO87Q_6WZuA@mail.gmail.com>
+X-Zoho-Virus-Status: 1
+X-Zoho-AV-Stamp: zmail-av-0.2.10.1.5.2/286.560.97
+X-ZohoMailClient: External
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260812_170300_256871_32FC6362 
+X-CRM114-Status: GOOD (  39.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,49 +84,186 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============5535994331498190423=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Aug 12, 2026 at 08:30:33PM +0200, Marek Vasut wrote:
-> On 8/12/26 1:22 PM, Krzysztof Kozlowski wrote:
-> > On 12/08/2026 12:56, Marek Vasut wrote:
-> > > On 8/12/26 12:15 PM, Krzysztof Kozlowski wrote:
-> > > > On Wed, Aug 12, 2026 at 02:55:41AM +0200, Marek Vasut wrote:
-> > > > > From: Pankaj Dev <pankaj.dev@st.com>
-> > > > > 
-> > > > > Document USB2 PHY for STM32MP25 USB2 controllers, which includes the
-> > > > > USB2.0 host-only controller and USB 2.0 part of the DWC3 controller.
-> > > > > Two such PHYs in total are present in STM32MP25 SoC, they both are
-> > > > > slightly different, therefore they use different compatible string
-> > > > 
-> > > > What is slightly different? This should be either here, or better, in
-> > > > "description" part.
-> > > 
-> > > They are both Synopsys FEMTO-PHY , but they are each attached to a
-> > > different controller (one to USB 2.0 host , the other to DWC3 DRD) , and
-> > > their control bits in the system controller register are different for
-> > > each variant.
-> > > 
-> > > I extended the description in V2.
-> > 
-> > Depending on the actual difference, this rather belongs to the phandle
-> > to syscon, instead of separate compatible.
-> 
-> Modeling that in the phandle to syscon won't scale, the PHY driver is simple
-> thus far and does not control all the bits in that syscon, if we were to
-> somehow extend the phandle to syscon to describe the various bit mappings
-> and differences in it, it would look awful quickly. Hence the separate
-> compatible strings, so the driver can match on them, derive match data from
-> them and use the match data to figure out differences of each instance.
 
-There's no 'reg' so the syscon is the only control interface, right? So 
-this should be child node of the syscon (with a reg property).
+--===============5535994331498190423==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="kvsrere4zmtnxm4a"
+Content-Disposition: inline
 
-Rob
+
+--kvsrere4zmtnxm4a
+Content-Type: text/plain; protected-headers=v1; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v3 1/5] dt-bindings: phy: Add PHY_TYPE_DSI and
+ PHY_TYPE_CSI definitions
+MIME-Version: 1.0
+
+Hi,
+
+On Wed, Aug 12, 2026 at 08:24:11PM +0800, =E6=A5=8A=E6=99=BA=E6=88=90 wrote:
+> Thanks for the review.
+>=20
+> > I read above, but still do not get why TYPE_DPHY/CPHY is not enough.
+> > Isn't DPHY implying it is DSI?
+>=20
+> I see your point, and I did not explain this clearly enough in the previo=
+us
+> version.
+>=20
+> D-PHY only describes the electrical layer, and both MIPI DSI and MIPI CSI=
+-2
+> can run on top of it. A CSI-2 receiver's PHY is a D-PHY just as much as a
+> DSI transmitter's is, so PHY_TYPE_DPHY alone does not tell us which one t=
+he
+> consumer is asking for.
+>=20
+> That is the problem here. The RK3588 DC-PHY exposes both a transmitter and
+> a receiver from a single PHY block, which can be used by two independent
+> consumers at the same time. This is not a theoretical concern: on this
+> board a DSI panel is scanning out while the same PHY receives CSI-2 frames
+> from a camera. With only the electrical layer to identify the PHY, both
+> consumers would end up with the same phandle cell:
+>=20
+> dsi@fde20000 {
+> phys =3D <&mipidcphy0 PHY_TYPE_DPHY>; /* wants the TX */
+> };
+>=20
+> csi2@fdd10000 {
+> phys =3D <&mipidcphy0 PHY_TYPE_DPHY>; /* wants the RX */
+> };
+>=20
+> There is then nothing in .of_xlate() to distinguish the two requests.
+>=20
+> I will make this clearer in the v4 commit message and include the example
+> above so that the reasoning is easier to follow.
+>=20
+> For context, v2 described the direction with a Rockchip-private
+> RK_DCPHY_DIR_* enum. Michael Riesch suggested using generic constants
+> instead [1], and Vinod agreed [2].
+>=20
+> [1] https://lore.kernel.org/r/82da3622-9c3a-454c-87bc-fb4ec7adb68d@collab=
+ora.com
+> [2] https://lore.kernel.org/r/anSuxfeitSqmSHNr@vaman
+
+Your new binding is lacking too. If you select <&mipidcphy0 PHY_TYPE_CSI>
+you defined the direction of the PHY, but will it operate in C-PHY or in
+D-PHY mode?
+
+Greetings,
+
+-- Sebastian
+
+> > Your tag goes the last.
+>=20
+> Sure, I will fix this in v4. The Signed-off-by tag will come last, and I
+> will check the whole series again.
+>=20
+> > Two simple defines needed Claude.
+>=20
+> Yes, I agree that these two defines themselves are simple and do not real=
+ly
+> need AI assistance.
+>=20
+> I added the Assisted-by tag because I used AI during the development of t=
+he
+> series as a whole, including cross-checking the code, writing additional
+> test cases, and looking up the relevant sections of the TRM. (I checked t=
+he
+> corresponding sections in the TRM myself, reviewed the test cases, and
+> re-ran them on the hardware before sending the series.)
+>=20
+> I also checked the current mainline guidance in
+> Documentation/process/submitting-patches.rst and
+> Documentation/process/coding-assistants.rst. Since I was not sure how much
+> AI involvement should warrant tagging individual patches, I chose to mark
+> the whole series consistently.
+>=20
+> That said, I am happy to drop the tag from this patch in v4 if you prefer=
+ -
+> I wrote these two lines myself.
+>=20
+> Thanks,
+> Jason
+>=20
+>=20
+> Krzysztof Kozlowski <krzk@kernel.org> =E6=96=BC 2026=E5=B9=B48=E6=9C=8812=
+=E6=97=A5=E9=80=B1=E4=B8=89 =E4=B8=8B=E5=8D=886:51=E5=AF=AB=E9=81=93=EF=BC=
+=9A
+> >
+> > On Mon, Aug 10, 2026 at 08:10:09PM +0800, Jason Yang wrote:
+> > > MIPI D-PHY and C-PHY blocks are increasingly direction-agnostic: the
+> > > same PHY IP can drive a MIPI DSI display or receive from a MIPI CSI-2
+> > > camera, and combo blocks like the Samsung IP on RK3588 expose both
+> > > directions to independent consumers at the same time. A binding that
+> > > needs to tell the two consumers apart has nothing generic to reach
+> > > for: most constants in this header name a protocol (PHY_TYPE_USB3,
+> > > PHY_TYPE_DP, ...), while the MIPI entries name only the electrical
+> > > layer.
+> > >
+> > > Add PHY_TYPE_DSI and PHY_TYPE_CSI to select a PHY by the MIPI
+> > > protocol it speaks, which also implies the direction. They do not
+> > > replace PHY_TYPE_DPHY/PHY_TYPE_CPHY, which remain the right choice
+> > > where the cell selects the electrical layer. First user is the
+> > > Rockchip RK3588 MIPI DC-PHY binding.
+> >
+> > I read above, but still do not get why TYPE_DPHY/CPHY is not enough.
+> > Isn't DPHY implying it is DSI?
+> >
+> > >
+> > > Suggested-by: Michael Riesch <michael.riesch@collabora.com>
+> > > Signed-off-by: Jason Yang <jason98166@gmail.com>
+> >
+> > Your tag goes the last.
+> >
+> > > Assisted-by: Claude:claude-fable-5
+> >
+> > Two simple defines needed Claude. Great, that probably makes AI
+> > conglomerates very happy that we do not type even two lines anymore and
+> > need their resource-hungry data centers to do that for us.
+> >
+> > Best regards,
+> > Krzysztof
+> >
+>=20
+
+--kvsrere4zmtnxm4a
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmp9CZsACgkQ2O7X88g7
++poMdA/+ICtBJCzEX7PKeAy7Yv55VjRVuT2TXm2zXEzL51T3bDJexKUirtRbfMe8
+MVsbhgPXfK0DqnsEqb3nRuKmW7ZFM73jfdVwkBHNHbbT9B8X6EjTqxWWKhJ1I7Rq
+wRx0Ibvgibz+Cua/l19VI15cVzD2/qSiOQVGgQ1ZJMB7bFRhUR5mFycUFnDpqeSZ
+Z6zPjsLlr9akUUFD0DM9uhLWPEdGbcfbOFDZMDmiby8QMuaL8Tiu/EEwIU/8CZyr
+2LUUB7m9bZlIU+sWiSs8O8Lt3sRApYLcHOhEL6fVbeK14hjtKCTUDRu/aQVRMftM
+p5pUwddJbbaoOYo8JAj1bj1M9HtAB0RhClp6zZ8hNsj9JWNaszbwi9K9T7TXW29E
+gAxx6+S5K4fQW/G74cRGdPfu76njGl38OMYd5zzKmq612AL2r0fDDQL6Be8FCCb3
++amOu/h5bmtgq70/RtQvHC+gqvFU34KnOqkK1hZdOJR4cNZbdId4ZmdQvERrYozu
+CCCs9odN81VkRfdoWGEt5/eOyBSIdmY//4fjQlnwS9xaTnUdc2nXNTpMvtksbdAO
+G7rjixC0wzTL9nm+0ApIRPyOf9eE1B4uQU1a7HRhO5uK+IbXqpIbFe73ffGPL28b
+bga6qoBymYm693W+bXUAyLRQuNNIYNp4/FMCx6z3hKHDrv5lLa8=
+=EA91
+-----END PGP SIGNATURE-----
+
+--kvsrere4zmtnxm4a--
+
+
+--===============5535994331498190423==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============5535994331498190423==--
+
