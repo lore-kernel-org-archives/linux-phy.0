@@ -4,52 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8B435C5B572
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Aug 2026 20:52:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4594AC5DF66
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Aug 2026 20:52:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rl2qAUzBNW7iqYqQI1vo1/y6D8ieyFx+aEB9zMONZXk=; b=jXp4BNI7DhAj6e
-	XVoqlyyxwrOgR3MQxbwL4mC5rt2X/Le23XpZDeRIh8MGhCeBFeYGmDgTzpynOHlMIj4KMGZFm5fUQ
-	543rcpsGXVuUQtuhwN2/XrubBDbv97ThzVuRoMV1ZWo0gw65EZytsTVM7u3sh3CrSuSoYaVE2Rrl7
-	i2PfR/rZrbBQvCusCKcULqdpYapmyaqayo3mzWG4AsEBlHSSwr5MM1gjWH3gwxbRxoI3YCWrL/ZdS
-	2tv2XSj9XELBLb2eF7SHMwUgdy6KE1O/6tciCkaDjOqw2P13yCULfhIUc+Ej/yOJnEU8ULiO0k6ql
-	LVlfjkhCnXopVOizyG+Q==;
+	List-Owner; bh=9Nr4wgATzhJwhOLiIOLLfjPQQccrW6Gwv6iyR04h+lI=; b=InF9iPy+WCDNI/
+	iWkfT+T7NLJMR8uGVxYTPXq5ndgeBd6ubehpDRcIrQk2I7JFd88axAtSvmt2stw+0eJvgoIfJLqJg
+	7AmjbsIylB2YgVzvQjQJWrs10hXm3kqZX6KURQ4AnaSsttTecO0mRuRGvglBV0kInh5JLmTAdw02N
+	XLvw1npNOflVz6QAA+8erjQCjnVxBZRFh2vgdzhDshUn3bWn4naV7XFiKkNvPFjzj3WwhGU5MJ/hD
+	SMKFjFUxdXV2Et7Zf04cyXoNKJF6p9Udp8MepqaQ9EoWlYH7moMUWtRW9EnFnvJ9U4CAhgWt0aKqe
+	iF9ZFQhronqZiPfZsQNA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wucPf-00000001XvK-0wHt;
-	Thu, 13 Aug 2026 20:52:31 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1wucPm-00000001Y3Q-3uWb;
+	Thu, 13 Aug 2026 20:52:38 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wucP9-00000001XDh-2DCA;
-	Thu, 13 Aug 2026 20:52:01 +0000
+	id 1wucPA-00000001XEJ-0L5f;
+	Thu, 13 Aug 2026 20:52:03 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1786654310;
-	bh=F5HBTNrUTZP99GdpFwb2DnCb/PErZaXCXmFP4cHspV8=;
+	bh=d+vGxQVXhNCJ8rbP5aExKtS99bfRBlYn/0PUloa4QH0=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=km31wucKwNzGWmXbd4rLhdZOO/tYFvQiclee77qWAlTk6UlATX9acYpz/0PGm3L7l
-	 UnE8xn6l8IsYh5ZA/HBctPr5Rq9BaSABFIxExuZvY1QCKfD+5GOaNdOKUL2fhO7y0o
-	 8Mts/EkBjhY/rzgcJOEPqCgqXjniYlS+kAwjgtrpKJaSSFh/BNAmJUkFB2zWv0XtTe
-	 d376C//7xlaXY/JeGKYevxZTnNAYLZbvC5JfIh9rmg2KLvc6E/py7Ab3KYBHo+NnSS
-	 XvN2/2u61GPtML2OLj7B2FKem2aZKzLEdF+YMnRBYohhrRglsy+s1371+hOipGtS4P
-	 mBPgTiYXVZ3Zw==
+	b=X/hrHVl4thqdT8ZRio5q/XXTmLhT1WFe6OCYYUG9fO18eYay86bw26VsX/dbeanhj
+	 4PENLUONKFqTUOhW55ry7ARMyk+eGVIo9mEaqQIVvElHlCbJqRTwwwCEivXqBpbqv5
+	 UN3+jEnvmhq3BfX3ET0wv/m7BD4oBPtJuVwiS7ucWZ+BLrLM5I3HsI+5FvqZxuLwAY
+	 8B6YSA8nkAFLI7V1X44wiv6UZWGBH/CylRxg+o5uk3CQASCX6hVKnNkR3/HMYh2ek5
+	 ShPWs8lHnt7Cu49EtZGp2byWFQkGZGJ4PYUaMg2F2OPqQt1HX0s4KeQ7yvnxhMFpwg
+	 GOz1iSdEmAElg==
 Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519)
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 5C4A117E12AE;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 4183417E10BE;
 	Thu, 13 Aug 2026 22:51:50 +0200 (CEST)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id A9D6B480052; Thu, 13 Aug 2026 22:51:49 +0200 (CEST)
+	id A195348003D; Thu, 13 Aug 2026 22:51:49 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Thu, 13 Aug 2026 22:51:57 +0200
-Subject: [PATCH v14 14/38] phy: rockchip: usbdp: Use FIELD_PREP_WM16_CONST
+Date: Thu, 13 Aug 2026 22:51:52 +0200
+Subject: [PATCH v14 09/38] phy: rockchip: usbdp: Fix LFPS detect threshold
+ control
 MIME-Version: 1.0
-Message-Id: <20260813-rockchip-usbdp-cleanup-v14-14-b5ad9c68fa11@collabora.com>
+Message-Id: <20260813-rockchip-usbdp-cleanup-v14-9-b5ad9c68fa11@collabora.com>
 References: <20260813-rockchip-usbdp-cleanup-v14-0-b5ad9c68fa11@collabora.com>
 In-Reply-To: <20260813-rockchip-usbdp-cleanup-v14-0-b5ad9c68fa11@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>, 
@@ -66,28 +67,29 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
  linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
  kernel@collabora.com, devicetree@vger.kernel.org, linux-usb@vger.kernel.org, 
- Sebastian Reichel <sebastian.reichel@collabora.com>
+ Sebastian Reichel <sebastian.reichel@collabora.com>, 
+ William Wu <william.wu@rock-chips.com>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1615;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1590;
  i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=F5HBTNrUTZP99GdpFwb2DnCb/PErZaXCXmFP4cHspV8=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGp+LmQN09nLHbgrdeTMQF4daw6ph71ZGKvvv
- 4JCKUpL2YdD8YkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqfi5kAAoJENju1/PI
- O/qazvEQAKiRurpxY+fQU6pK4O/XrbXbdZNWSdWL1Xy8qH11SSgVdx2BqnkMvKcIJZtOtNYMY6x
- JhX/jeRDZGFzMm3k1V8z/FgWyANsoXJPek0kzCL72kF1KUdBXd2VA1P0zRuq4ig6skwE1jWUjEv
- l/8tj7A62/SUtL5ctfbLhWKn4bOLE4OMABxcRQEFg/hdpj/aVRPAOCPUvbYqaRQx9ybYXBsDDYH
- FrRDke8x+LqNJjjy/hIrp7mtbDDHWkLnnZNf6cSn26g75scjNNpqY5YUqtkaQ/xrXetO+g59zBL
- AaASTGuMHipeUYDm7WYPBHTaPtJue1Nz8/1Z7DCjGYtr2Q/QNZyaMuZehU3dW3YuxdRU6uV8ZXs
- sDidZwJLga9vilIf6rd6BKsLRThlbl6y6nObQ9D/bDDgqmgeEz2wjQyGnzaCgTw5HfLf0Qq++LF
- rMpvZHtdKHoqH9p7LNLPuzls5x6qA8SPwWFc9a2EyBI13OvuSGOCWSnX7fHbx2RFIB1jpQmzSBZ
- gQGD3+umH18uDoUaa6Q/hbj0BEq14SqYzYCKn68Ykk6VejcLHe2p1nrjfrd5FmV/NofovBHSC8C
- Q4uYQ3wIvCIfe0F3+oszQxIUkh/O1qGdv4+NVUvftUzB/fpWMNFAzovQL2lR6moQsxzCJTt4yv0
- PRU/JlxRXfHIer5dWwg4toQ==
+ bh=jqk8lmE8/yQnrP3NdFs0iqp55s5naGRZj6PxeCD9eM8=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGp+LmQm4F1raePEo8QwGFNO9cG97bYItivXS
+ LaeWnivAEpSV4kCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqfi5kAAoJENju1/PI
+ O/qaPpIP/1TBR81PN/x8AeIVjBEeAGS5G7jOc8nJRRYXHckW5ceHyp8zeE+hZjNz4N/tJ9lDqeM
+ 3FM3aVwylQTcDJXiN0fB5+Y7671cif0gvX9PZ3QcmoJpiwlN7/sdTiiiDSZ27AWHeUL8O09VDHe
+ xCpyO6x3gagadiDyI6CymtijX5wAWAqihHTIZt2k/6PmumesKe4dtGyMJj5kH2pYl71vRUrvz++
+ HM6cSKFJ0nD6avWcYXVxaYwuhhvKvebMA6U11rWpBqmR0kPyFaeZ20o56Ao4UAFSYd3tHcGunSE
+ 5QvrFAmHa0rYzZqt4CRNHiH4C4nzxV7VTaaTP9Wn07r8TICaZFLFUeVHi9d55OBUtHIoYeXNEQs
+ fEXnix/wRaZBMzD0toKfutYzgcPGsYEacgqzevP7VoG+yx19nfo1qtynWjdzk092GE6HTvf7rHt
+ I6QX/UmJgKfY8HtLz8UJRRwYqenU3H2C8vJNgi1Xkcq3tyCL4VHeoKkgfI4NHGiZGjV3i+PtPB5
+ hNJ5EPn9qzDlgvYjEsS2XcME1P5A3dLHYcsYILB+zONveC23Vn+qUnHDrQ7hoqoD0ff0WzJPpR3
+ vTD+BPfbOjw0MS9y8r/r5uZVRaGnmWhv0Qyaa9XlqWZohh/gdihrwI03LP3TCJNVYE0u9fyYzwo
+ r65sMwSOfbSWB8Q7ialM3hQ==
 X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
  fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260813_135159_732711_1C171B91 
-X-CRM114-Status: GOOD (  11.54  )
+X-CRM114-CacheID: sfid-20260813_135200_485134_88A01650 
+X-CRM114-Status: GOOD (  10.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,47 +106,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Cleanup code by replacing open-coded version of FIELD_PREP_WM16_CONST
-with the existing helper macro.
+From: William Wu <william.wu@rock-chips.com>
 
+According to the LFPS Tx Low Power/LFPS Rx Detect Threshold [1],
+the device under test(DUT) must not respond if LFPS below the
+minimum LFPS Rx Detect Threshold 100mV. Test fail on Rockchip
+platforms, because the default LFPS detect threshold is set to
+65mV.
+
+The USBDP PHY LFPS detect threshold voltage could be set to
+30mV ~ 140mV, and since there could be 10-20% PVT variation,
+we set LFPS detect threshold voltage to 110mV.
+
+[1] https://compliance.usb.org/resources/LFPS_Rx_Tx_Low_Power_Compliance_Update_Rev5.pdf
+
+Signed-off-by: William Wu <william.wu@rock-chips.com>
+[Taken over from rockchip's kernel tree; the registers are not described
+in the TRM]
 Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 Tested-by: Igor Paunovic <royalnet026@gmail.com> # Orange Pi 5 Plus
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index 7fb864a1486c..05593e98c16d 100644
+index cb6acadfbccf..982315535caf 100644
 --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -12,6 +12,7 @@
- #include <linux/clk.h>
- #include <linux/delay.h>
- #include <linux/gpio.h>
-+#include <linux/hw_bitfield.h>
- #include <linux/mfd/syscon.h>
- #include <linux/mod_devicetable.h>
- #include <linux/module.h>
-@@ -75,7 +76,6 @@
- #define TRSV_LN2_MON_RX_CDR_DONE_OFFSET		0x1b84	/* trsv_reg06E1 */
- #define TRSV_LN2_MON_RX_CDR_LOCK_DONE		BIT(0)
+@@ -413,7 +413,8 @@ static const struct reg_sequence rk_udphy_init_sequence[] = {
+ 	{0x0070, 0x7d}, {0x0074, 0x68},
+ 	{0x0af4, 0x1a}, {0x1af4, 0x1a},
+ 	{0x0440, 0x3f}, {0x10d4, 0x08},
+-	{0x20d4, 0x08}, {0x0024, 0x6e}
++	{0x20d4, 0x08}, {0x0024, 0x6e},
++	{0x09c0, 0x0a}, {0x19c0, 0x0a}
+ };
  
--#define BIT_WRITEABLE_SHIFT			16
- #define PHY_AUX_DP_DATA_POL_NORMAL		0
- #define PHY_AUX_DP_DATA_POL_INVERT		1
- #define PHY_LANE_MUX_USB			0
-@@ -104,8 +104,8 @@ struct rk_udphy_grf_reg {
- #define _RK_UDPHY_GEN_GRF_REG(offset, mask, disable, enable) \
- {\
- 	offset, \
--	FIELD_PREP_CONST(mask, disable) | (mask << BIT_WRITEABLE_SHIFT), \
--	FIELD_PREP_CONST(mask, enable) | (mask << BIT_WRITEABLE_SHIFT), \
-+	FIELD_PREP_WM16_CONST(mask, disable), \
-+	FIELD_PREP_WM16_CONST(mask, enable), \
- }
- 
- #define RK_UDPHY_GEN_GRF_REG(offset, bitend, bitstart, disable, enable) \
+ static inline int rk_udphy_grfreg_write(struct regmap *base,
 
 -- 
 2.53.0
