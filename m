@@ -4,53 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4202AC5B572
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Aug 2026 20:53:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF513C5B572
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Aug 2026 20:57:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AmWOkarMVkjYN3nE7oaSd2j8R8mb9DeTyKVWlpzf6lY=; b=UjfWJoW/j8iYep
-	nuw7DZrhspZOmDe/7cjY+QU+/I+P6nTeAgFziWR+2c6nTrI0a/bhqS0SCnjrr4nVLZDINuQmlC2UT
-	EHxl7/gxgrceaGCadHLhFg6QR3Y7LPruA+VoFaqaqGV9c6mg4to7WKF4F9yGtjORoTBPdq76GhVnQ
-	FuD5geB4dF7uY5C+mFWXRzKdK6cIFFdeXV2qa//EeTDf4zD8pl3i+rRlzezoJZZ1wakKnA2QZQ5zO
-	Xb44eUKXelgeHVeS4vr9qD/zfCR9kzcrOURZwMcyjWIrkJ2VUqe+bOtnxwsWWoZ8Y9GNJOvDVPKms
-	npCJHIs8b5qjUPfQ/w4A==;
+	List-Owner; bh=WfnIFpVlFZYMO2relRz8ZyplRPziPRjcZJhe1xa0hAY=; b=Q6byIaS03NKyN7
+	LdvTR/4ds/VoHYXY4cxsVEhZXYW+6TNlIH9Cd7kVRVsBV2rqhAmt4US0eIZt+FMmIFcAaLIcuZwGq
+	krsv6XvO23T/o/ZEou1GGSyPti8ZV1wvVNeSNKunGCIHeuNRiQvgiC4AzAyfIS/kh55x80uWE6Ufl
+	EnF4tGCCoHwHr3INIJs3SaYCttBUZJjD77BThNW1A+fHnOIKVHVnUaF2LUjkMSLvCFVUioHIAGoKj
+	qn6AZLb5+fzRQVc806YE2shs6QH6ASvNNB6+XPWBZbACajvtKuMUyYVg7Mcxorkr5rNjvU/Ban8jy
+	gX6hDeOE+puiYLwrudjQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wucQs-00000001ZzB-20PD;
-	Thu, 13 Aug 2026 20:53:46 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1wucUs-00000001b0d-1mF3;
+	Thu, 13 Aug 2026 20:57:54 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wucPF-00000001XLM-1dMN;
-	Thu, 13 Aug 2026 20:52:10 +0000
+	id 1wucUo-00000001axd-3TDl;
+	Thu, 13 Aug 2026 20:57:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1786654311;
-	bh=spmEcyu0k2MKd0qFutZPYWVRo/y0CcX0idupQElCsbw=;
+	s=mail; t=1786654668;
+	bh=X784y4ioTXNvn0MvPoNsXB2pINmg+LntRai9Nz+Cy9Y=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=S+MRqUfO7DD5gbCC5qWahySKuVXZplJWRGZbml2Sj4rVc6g4ge964/MyOArJVHfE7
-	 UB50xan7f8w9p4brNFsB1m7SV4rMDNadtFbGl5yJciAlGwYpxWmeS37kdjRIs27XFr
-	 vp76DUv3wRqyDtNDwTJkA6uDjuhCZEKcWOjuB1OkNvWA950vTX5BPxcSkI6TSDeCi0
-	 yYeB9p9SmY2SKZxuo+7Se0G6B8b8qBRGPoIH9Mrvmhuz+ZYb1KByUbjXXN5npwhpc1
-	 48Z9HEx6qNoal20rMlTnBApmRNSY/W3ENdtZszSAHj/57dVEzG9z9bc8ETWmJhh+5v
-	 br+73SiYWIEyA==
+	b=WCE/7yYGnJDC5KZLOzKxiOGT+kjwrbBd7h8QSpAZtYpTiDtd/gOCmYJB6Ohiwfm03
+	 FtdNm8DjCJGFBvElnknteVxP/ybaffvsVygbRgrn8XEZlZ7AYwSXXfD6CG5jGPC/Wl
+	 UIiKwzjF8TpBKzuQ6z1rbe6jNEu1a8B2nlcXjBFNjXnlUQG90ajfbOkDzVs1YtRAJG
+	 SfPsIsKWiUU7JRtkA7xI/3KK613EtQxWVsTnvHYr2bBcfv9INjgjynmmBxvacaBq12
+	 eHdg8ap2t1W0BpS01mtIYOdJ0uql7x6SYgzvfHDbHOcIltNh8xlt6OAcmOBcB95Gp2
+	 l1ZhfzuTUEiDQ==
 Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519)
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 0616C17E15A5;
-	Thu, 13 Aug 2026 22:51:51 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 8E50417E071A;
+	Thu, 13 Aug 2026 22:57:48 +0200 (CEST)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id C830D480077; Thu, 13 Aug 2026 22:51:49 +0200 (CEST)
+	id AE828480062; Thu, 13 Aug 2026 22:51:49 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Thu, 13 Aug 2026 22:52:16 +0200
-Subject: [PATCH v14 33/38] phy: rockchip: usbdp: Add phy reset notification
- support
+Date: Thu, 13 Aug 2026 22:52:00 +0200
+Subject: [PATCH v14 17/38] phy: rockchip: usbdp: Drop DP HPD handling
 MIME-Version: 1.0
-Message-Id: <20260813-rockchip-usbdp-cleanup-v14-33-b5ad9c68fa11@collabora.com>
+Message-Id: <20260813-rockchip-usbdp-cleanup-v14-17-b5ad9c68fa11@collabora.com>
 References: <20260813-rockchip-usbdp-cleanup-v14-0-b5ad9c68fa11@collabora.com>
 In-Reply-To: <20260813-rockchip-usbdp-cleanup-v14-0-b5ad9c68fa11@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>, 
@@ -69,26 +68,26 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  kernel@collabora.com, devicetree@vger.kernel.org, linux-usb@vger.kernel.org, 
  Sebastian Reichel <sebastian.reichel@collabora.com>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2051;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=5926;
  i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=spmEcyu0k2MKd0qFutZPYWVRo/y0CcX0idupQElCsbw=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGp+LmUiDe07eDCnaZ5KbEnAis6ILxTW+4ylp
- e7mb3mS/ca6EIkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqfi5lAAoJENju1/PI
- O/qadqMP/jNqqMAC6NZiBIRANjgie+u8VGHTTTFrHYl1wYztaRtRiCA1NSd3zUFXhToldmRKCpA
- eTHbd1rotrkR1kRh+qmpeORZ7pgrgPWT+03PFGzBaIHAaclP/6PtZCNPbIvECky6Ne8qq8aZEUl
- hKJxkj96uvVdZcb3ibdhd+M6HNAlt7Kgpcm+2Pm7LKSy0IExhTeR9AYWaVCLgWvJUefDlsC7uVA
- /mdYQELqxbaVZU3dLOTzMPXEdkkC0aWTqdSYqRjuSpemHdsd+YpmGpkiX/oFIxjAfvBW6fRtdaM
- sFZCg+nUFDUgG0b8twyfFGJrdHx8legewT1OFooi4V3yqb+lGuu/yH3MW50RNv/7U7gWTbIfddA
- HEZtwki3kT+9D2nNC3vtWOA6qhhv/fseKx5/TZerTGdWp1cUziFNsTxNGQ8HwDMSg6bxJEZIHvj
- NHWNYCjeXt8VsAxv7ujExQliXfmGFBVFE4RfanUDFXGmz+aTwyDlZ96otrJvCSccfQfIlasQvtH
- C8+3muijy3Hn/5XiGifPxmiak+uQLw9yabqSZFGbuYGW5fyY+E3WKiez2OgB9oLlOjJ015HDZkZ
- M1VS1fCVFpba2TZrDutdhtszU66cYAUy50RaVpG2Xl3vZKxHVZi1mPBu9vRD+dlERgTYOVCLGAj
- 9Flgn3xp5Rz21y7td6+kjGg==
+ bh=X784y4ioTXNvn0MvPoNsXB2pINmg+LntRai9Nz+Cy9Y=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGp+LmSYNcy7IhpcMygvSPvoChoW/sfr6R6pT
+ 2RZ9J8ngsKtqYkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqfi5kAAoJENju1/PI
+ O/qaQqoP/0KcnJ24cXCsYHhVvxZTdeDdE1zlnB5UlMLpZoVmLPcM+KUyW3FlY6qAM79xK/5FpmI
+ ofoMK0bPw1jZKwh5QHKD5NpnhMYhGF2YR3Sokj7IylIbkjLla2rKnJIB1kIOXOmMb3Xn3K5B1WW
+ 0FnNWgbOwkLe1eO6irYBFJzgk+gx6SCedd1xdczysqzcVDfsSaM5d3HsZ0YZr2DFy5zBpzC1bfa
+ PO9gBJ/PvVd2ugR5njM5/a0+YvcfEYeONZtEndQKRuN//Bu8VjyXksFT/39Ru/Sf1MduAauA/0V
+ uuxqVrrxFgOStSe4Faug7E7xqJTgXtOmrBnKwCW43lSy2WEvaz8pdTFLpv7lYbylvsUDAGPhvbX
+ vvC52NoVJLvYcfUhLEUfOytjdNKVIgQpQJeka5hi55zL42B4+QUlkxiWBPcqaLPmKmxsqNxTbpt
+ kJtIV7KkiJxSww+cdAUxJbZqmB1qAqFO5U1052qQ/mhRXRzBl4txnfEz7IStZv50SYphDpcHeIt
+ fmLWP3h+SnmPMZ9t9VW7uhEvQMj+KtT44erz3RbVqEZRlHEf01kfbsmQ7zDhTNUMF3ZJIBtrCkv
+ S+vDxvh//6j14ocXRsw+kqXb8RVZuu4jffHTi2L+epg2NFSVWWZejjG4vJTfOaCAiKvxSa6UZvc
+ RHmSr8bOVZObq6ZV0vYczpw==
 X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
  fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260813_135205_581767_5E6F88A7 
-X-CRM114-Status: GOOD (  12.63  )
+X-CRM114-CacheID: sfid-20260813_135751_020376_56F7ACB3 
+X-CRM114-Status: GOOD (  20.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,65 +104,199 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-To resolve issues with running into permanent "cmn ana lcpll lock
-timeout" errors after a few device replugs, add support for reset
-notifications, which will be handled by the DWC3 driver to gracefully
-handle the PHY being disabled. This avoids corrupting the controller's
-internal state and the PIPE interface between the USB3 controller and
-the PHY, thus fixing the issue.
+Drop the HPD handling logic from the USBDP PHY. The registers involved
+require the display controller power domain being enabled and thus the
+HPD signal should be handled by the displayport controller itself.
+Apart from that the HPD handling as it is done here is incorrect and
+misses hotplug events happening after the USB-C connector (e.g. when
+a USB-C to HDMI adapter is involved and the HDMI cable is replugged).
+
+Proper USB-C DP HPD support requires some restructuring of the DP
+controller driver, which will happen independent of this patch. The
+mainline kernel does not yet support USB-C DP AltMode on RK3588 and
+RK3576, so it is fine to drop this code without adding the counterpart
+in the DRM in an atomic change.
 
 Tested-by: Igor Paunovic <royalnet026@gmail.com> # Orange Pi 5 Plus
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 19 +++++++++++++++++--
- 1 file changed, 17 insertions(+), 2 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 85 ++++---------------------------
+ 1 file changed, 9 insertions(+), 76 deletions(-)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index 59b836a3796c..21f282216aef 100644
+index 8ac6a83b0b2a..24108816e3b9 100644
 --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -1005,24 +1005,39 @@ static int rk_udphy_power_on(struct rk_udphy *udphy, u8 mode)
+@@ -128,7 +128,6 @@ struct rk_udphy_grf_cfg {
+ 
+ struct rk_udphy_vogrf_cfg {
+ 	/* vo-grf */
+-	struct rk_udphy_grf_reg hpd_trigger;
+ 	u32 dp_lane_reg;
+ };
+ 
+@@ -186,14 +185,11 @@ struct rk_udphy {
+ 	u32 dp_lane_sel[4];
+ 	u32 dp_aux_dout_sel;
+ 	u32 dp_aux_din_sel;
+-	bool dp_sink_hpd_sel;
+-	bool dp_sink_hpd_cfg;
+ 	unsigned int link_rate;
+ 	unsigned int lanes;
+ 	u8 bw;
+ 	int id;
+ 
+-	bool dp_in_use;
+ 	int dp_lanes;
+ 
+ 	/* PHY const config */
+@@ -577,19 +573,6 @@ static void rk_udphy_dp_lane_enable(struct rk_udphy *udphy, int dp_lanes)
+ 				   CMN_DP_CMN_RSTN, FIELD_PREP(CMN_DP_CMN_RSTN, 0x0));
+ }
+ 
+-static void rk_udphy_dp_hpd_event_trigger(struct rk_udphy *udphy, bool hpd)
+-{
+-	const struct rk_udphy_cfg *cfg = udphy->cfgs;
+-
+-	udphy->dp_sink_hpd_sel = true;
+-	udphy->dp_sink_hpd_cfg = hpd;
+-
+-	if (!udphy->dp_in_use)
+-		return;
+-
+-	rk_udphy_grfreg_write(udphy->vogrf, &cfg->vogrfcfg[udphy->id].hpd_trigger, hpd);
+-}
+-
+ static void rk_udphy_mode_set(struct rk_udphy *udphy, u8 mode)
+ {
+ 	if (udphy->mode == mode)
+@@ -1000,29 +983,6 @@ static void rk_udphy_power_off(struct rk_udphy *udphy, u8 mode)
+ 		rk_udphy_disable(udphy);
+ }
+ 
+-static int rk_udphy_dp_phy_init(struct phy *phy)
+-{
+-	struct rk_udphy *udphy = phy_get_drvdata(phy);
+-
+-	mutex_lock(&udphy->mutex);
+-
+-	udphy->dp_in_use = true;
+-
+-	mutex_unlock(&udphy->mutex);
+-
+-	return 0;
+-}
+-
+-static int rk_udphy_dp_phy_exit(struct phy *phy)
+-{
+-	struct rk_udphy *udphy = phy_get_drvdata(phy);
+-
+-	mutex_lock(&udphy->mutex);
+-	udphy->dp_in_use = false;
+-	mutex_unlock(&udphy->mutex);
+-	return 0;
+-}
+-
+ static int rk_udphy_dp_phy_power_on(struct phy *phy)
+ {
+ 	struct rk_udphy *udphy = phy_get_drvdata(phy);
+@@ -1254,8 +1214,6 @@ static int rk_udphy_dp_phy_configure(struct phy *phy,
+ }
+ 
+ static const struct phy_ops rk_udphy_dp_phy_ops = {
+-	.init		= rk_udphy_dp_phy_init,
+-	.exit		= rk_udphy_dp_phy_exit,
+ 	.power_on	= rk_udphy_dp_phy_power_on,
+ 	.power_off	= rk_udphy_dp_phy_power_off,
+ 	.configure	= rk_udphy_dp_phy_configure,
+@@ -1309,6 +1267,14 @@ static int rk_udphy_typec_mux_set(struct typec_mux_dev *mux,
+ 	struct rk_udphy *udphy = typec_mux_get_drvdata(mux);
+ 	u8 mode;
+ 
++	/*
++	 * Ignore mux events not involving DP AltMode, because
++	 * the mode field is being reused, e.g. state->mode == 4
++	 * could be either TYPEC_MODE_USB4 or TYPEC_DP_STATE_C.
++	 */
++	if (!state->alt || state->alt->svid != USB_TYPEC_DP_SID)
++		return 0;
++
+ 	mutex_lock(&udphy->mutex);
+ 
+ 	switch (state->mode) {
+@@ -1340,22 +1306,7 @@ static int rk_udphy_typec_mux_set(struct typec_mux_dev *mux,
+ 		break;
  	}
  
- 	if (udphy->status == UDPHY_MODE_NONE) {
-+		phy_notify_reset(udphy->phy_u3, PHY_NOTIFY_PRE_RESET);
-+
-+		rk_udphy_u3_port_disable(udphy, true);
-+		udelay(10);
-+
- 		ret = rk_udphy_setup(udphy);
--		if (ret)
-+		if (ret) {
-+			phy_notify_reset(udphy->phy_u3, PHY_NOTIFY_POST_RESET);
- 			return ret;
-+		}
+-	if (state->alt && state->alt->svid == USB_TYPEC_DP_SID) {
+-		struct typec_displayport_data *data = state->data;
+-
+-		if (!data) {
+-			rk_udphy_dp_hpd_event_trigger(udphy, false);
+-		} else if (data->status & DP_STATUS_IRQ_HPD) {
+-			rk_udphy_dp_hpd_event_trigger(udphy, false);
+-			usleep_range(750, 800);
+-			rk_udphy_dp_hpd_event_trigger(udphy, true);
+-		} else if (data->status & DP_STATUS_HPD_STATE) {
+-			rk_udphy_mode_set(udphy, mode);
+-			rk_udphy_dp_hpd_event_trigger(udphy, true);
+-		} else {
+-			rk_udphy_dp_hpd_event_trigger(udphy, false);
+-		}
+-	}
++	rk_udphy_mode_set(udphy, mode);
  
- 		if (!udphy->hs && udphy->mode & UDPHY_MODE_USB)
- 			rk_udphy_u3_port_disable(udphy, false);
- 		udphy->phy_needs_reinit = false;
-+
-+		phy_notify_reset(udphy->phy_u3, PHY_NOTIFY_POST_RESET);
- 	} else if (udphy->phy_needs_reinit) {
-+		phy_notify_reset(udphy->phy_u3, PHY_NOTIFY_PRE_RESET);
-+
- 		rk_udphy_u3_port_disable(udphy, true);
- 		udelay(10);
+ 	mutex_unlock(&udphy->mutex);
+ 	return 0;
+@@ -1510,20 +1461,6 @@ static int rk_udphy_probe(struct platform_device *pdev)
+ 	return 0;
+ }
  
- 		ret = rk_udphy_init(udphy);
--		if (ret)
-+		if (ret) {
-+			phy_notify_reset(udphy->phy_u3, PHY_NOTIFY_POST_RESET);
- 			return ret;
-+		}
- 
- 		if (!udphy->hs && udphy->mode & UDPHY_MODE_USB)
- 			rk_udphy_u3_port_disable(udphy, false);
- 		udphy->phy_needs_reinit = false;
-+
-+		phy_notify_reset(udphy->phy_u3, PHY_NOTIFY_POST_RESET);
- 	}
- 
- 	udphy->status |= mode;
+-static int __maybe_unused rk_udphy_resume(struct device *dev)
+-{
+-	struct rk_udphy *udphy = dev_get_drvdata(dev);
+-
+-	if (udphy->dp_sink_hpd_sel)
+-		rk_udphy_dp_hpd_event_trigger(udphy, udphy->dp_sink_hpd_cfg);
+-
+-	return 0;
+-}
+-
+-static const struct dev_pm_ops rk_udphy_pm_ops = {
+-	SET_LATE_SYSTEM_SLEEP_PM_OPS(NULL, rk_udphy_resume)
+-};
+-
+ static const char * const rk_udphy_rst_list[] = {
+ 	"init", "cmn", "lane", "pcs_apb", "pma_apb"
+ };
+@@ -1547,7 +1484,6 @@ static const struct rk_udphy_cfg rk3576_udphy_cfgs = {
+ 	},
+ 	.vogrfcfg = {
+ 		{
+-			.hpd_trigger	= RK_UDPHY_GEN_GRF_REG(0x0000, 11, 10, 1, 3),
+ 			.dp_lane_reg    = 0x0000,
+ 		},
+ 	},
+@@ -1588,11 +1524,9 @@ static const struct rk_udphy_cfg rk3588_udphy_cfgs = {
+ 	},
+ 	.vogrfcfg = {
+ 		{
+-			.hpd_trigger	= RK_UDPHY_GEN_GRF_REG(0x0000, 11, 10, 1, 3),
+ 			.dp_lane_reg	= 0x0000,
+ 		},
+ 		{
+-			.hpd_trigger	= RK_UDPHY_GEN_GRF_REG(0x0008, 11, 10, 1, 3),
+ 			.dp_lane_reg	= 0x0008,
+ 		},
+ 	},
+@@ -1628,7 +1562,6 @@ static struct platform_driver rk_udphy_driver = {
+ 	.driver		= {
+ 		.name	= "rockchip-usbdp-phy",
+ 		.of_match_table = rk_udphy_dt_match,
+-		.pm = &rk_udphy_pm_ops,
+ 	},
+ };
+ module_platform_driver(rk_udphy_driver);
 
 -- 
 2.53.0
