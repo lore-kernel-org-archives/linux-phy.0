@@ -4,73 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63D22C5CFC1
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Aug 2026 10:19:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8742C5CFCF
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Aug 2026 17:46:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tGOYi0+LZostwuL2F1Wk6f98tjWshAn5zK7tVmPmPWc=; b=JQG+T7NlX1RV4v
-	6pCqTNRB+2czJkPbE3apT5CiUMMjYA4tGjxQDczWgwmlpZ2ICVf1GGaoNtrWBOq3C/RkLnJZHEPUh
-	sojoHuuvVYfeKF9o7Ucwh9CAP2UcCNkeudMIms2oYp4iHDEAABylVXsIoWNV7m2iw8aKyjmxr4xw8
-	jCMUo/Vqm4ZGstt3fWFh54jVH8el0/4R42jRtHH0AqJfSuf/7a7hUCKUlWuRThml5qHw4rwy7S6T/
-	9cuKQZwkJMHBs18Lmcv+ULr/xON4LBNLnzIa6hJoM3xyMQ6Hi6qVp0e6qNqMVx1ordmjk8DrqLGG6
-	3vx2mddIwNzal8NHXHXQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=eLhh5JTFj/dF/0nYoiVPbVbIiSk1WdZ9AiYOtNiwZWU=; b=uMR9UC4u82Nv0bkVxx59RDw3l/
+	37ngSIgmUx8yCpZMFKLBDqh/V2z3uQYFuFy0IUgRj2NNdeWgadnCAP96qmNzw8sM3F+0a2xRgFUf5
+	e2Mu2Z04sBl7uuEQTg3Um705XY7r62OB+jC1ufJ/0oetaopW1KYrFd3UkMtT/73IyrhLV4f9tRnNY
+	wYI3Rywo2K60qdvrfAAlZNP9TOLshRtxge74QwidEitNsfQs5nLZ0MxPeamYVSCHalhGnblSAzNHS
+	phYDqFtsLZMpKyH+WhMn1vlGaliivddVy1Cfv40l04g5IGegm594vcknoNwhdKNahkx+tgeTzPodt
+	aNMrpbcA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wup0E-00000002UyJ-0QFe;
-	Fri, 14 Aug 2026 10:19:06 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wuvzD-000000030Tl-0CkS;
+	Fri, 14 Aug 2026 17:46:31 +0000
+Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wup0C-00000002Uxi-185X;
-	Fri, 14 Aug 2026 10:19:04 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 91B34600C3;
-	Fri, 14 Aug 2026 10:19:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3B73A1F000E9;
-	Fri, 14 Aug 2026 10:18:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786702742;
-	bh=NXdGXpEaeSzo6LucHd30eYR/GtpdrDPatB4CgfYUQF4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=E/QXCTjI36E8mBXEr6GvChfoeqasCRqIBQhD+HHSxLkNy/ZkATKjNyVKWxSFnDy3R
-	 o01xFHf7H63TWszeKcUx7lJTvk6qMIXPWPoBzJ0h+EbMzWr9dH+9Qd9GE1k7YFp2TH
-	 1sPCvaVkqjB7uR5mqkCfGoaaqNsu7Ki3477kNdUXzrn8/OMane3Gl+7vb5UHmJAvyp
-	 tFmN/agBMSAAgKSRAth53CIWXe/CE7KXsmUdELHOi4gIJnxwIpn0l1InPUPcP0IFW6
-	 jVhFtxWsRp0/vyYrS8gXqIVkj88/r3e3OoAwlgujhMK+I00XX6qpxww0bQsGeAptdA
-	 Of4GkzD49p0Dg==
-Date: Fri, 14 Aug 2026 12:18:45 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <ukleinek@kernel.org>
-Cc: Jakub Kicinski <kuba@kernel.org>, Vladislav Leonov <vlad@zlab.su>, 
-	linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
-	Simon Glass <sjg@chromium.org>, linux-clk@vger.kernel.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, Alexandre Torgue <alexandre.torgue@foss.st.com>, 
-	Andi Shyti <andi.shyti@kernel.org>, Andrew Lunn <andrew+netdev@lunn.ch>, 
-	Aurelien Jarno <aurelien@aurel32.net>, Brian Masney <bmasney@redhat.com>, 
-	Conor Dooley <conor+dt@kernel.org>, Daniel Golle <daniel@makrotopia.org>, 
-	"David S. Miller" <davem@davemloft.net>, David Wu <david.wu@rock-chips.com>, 
-	Eric Dumazet <edumazet@google.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
-	Heiko Stuebner <heiko@sntech.de>, Herbert Xu <herbert@gondor.apana.org.au>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Mark Brown <broonie@kernel.org>, 
-	Maxime Chevallier <maxime.chevallier@bootlin.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
-	Michael Turquette <mturquette@baylibre.com>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, Olivia Mackall <olivia@selenic.com>, 
-	Paolo Abeni <pabeni@redhat.com>, Philipp Zabel <p.zabel@pengutronix.de>, 
-	Rob Herring <robh@kernel.org>, Stephen Boyd <sboyd@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
-	linux-crypto@vger.kernel.org, linux-i2c@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-pwm@vger.kernel.org, linux-spi@vger.kernel.org, 
-	linux-stm32@st-md-mailman.stormreply.com, linux-usb@vger.kernel.org, netdev@vger.kernel.org
-Subject: Re: [PATCH 00/25] ARM: rockchip: Add peripheral support for RV1106
-Message-ID: <20260814-vivacious-nickel-copperhead-c746f6@quoll>
-References: <20260810121121.210040-1-vlad@zlab.su>
- <20260810113548.7fd24d56@kernel.org>
- <anq1ouUnKA02Eauj@monoceros>
+	id 1wuvzA-000000030Sv-32QF
+	for linux-phy@lists.infradead.org;
+	Fri, 14 Aug 2026 17:46:29 +0000
+Received: by mail-wr1-x435.google.com with SMTP id ffacd0b85a97d-47fd66a094eso522726f8f.3
+        for <linux-phy@lists.infradead.org>; Fri, 14 Aug 2026 10:46:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1786729586; x=1787334386; darn=lists.infradead.org;
+        h=content-type:mime-version:references:in-reply-to:message-id:date
+         :subject:cc:to:from:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=i1r2xPJfkJhEKLocmkcDET9WPaG8FwcMD2/2OeeTJFY=;
+        b=NYjsuojqx/awVlXbWQbx9+J4VzNwpm33lIIZSm9klGKXxTs7rkW+7ZiCPwm7edOO3v
+         PVP7lX5oFjLVNqOammhF8IHQ4/kuv3e6pOGz/t1d9OyYibIasdzJKvJU3BD7nCIRTRP5
+         JKzmLn60vkAKmLCGY7eKHz3Z0wmSVgehr+BFXyQpzPuJkkTau0wm+YupktMzd6cZkndG
+         dryOLsn+CIn9vh8t7B2TH97tPc3PuGpI+l1IIxO6yLK2odZLW/w3+B3low7S1MtsQDQj
+         TZB805SyMDpm5ZDb0AKF825I++uOgj0TB+ixaTRAe4NZCJPCkFRn8RUECqiJ5ncQUVyp
+         TjZg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1786729586; x=1787334386;
+        h=content-type:mime-version:references:in-reply-to:message-id:date
+         :subject:cc:to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=i1r2xPJfkJhEKLocmkcDET9WPaG8FwcMD2/2OeeTJFY=;
+        b=TDWkFo6se41iVhIfi6jhKZq3n42heuNd7B2MqbOQjzUhh288S0dlHO+9eVNTHMqPhJ
+         BtLhWDHRJrW5iDviNHp5ZSdIMKub1FPCygUh/yKzEaVyi33BAP8dfJzOrkZq9QEU11V5
+         t4TuM30mxxUZOx34XSkEHAhkGg0VrBIGS0X0IE6gkQlxyEU26JBTXWQNlaEV7nwgQnCO
+         Sm3fGFNQL1Pyc5yHVj4WLohIIyrAakWCbNQE3aiS8qosr2QyaI/Wup30tWmNrg5xZNdI
+         ReD6ImndjghcX88ZJgWi0sU+3G7hVqirMbuxsPIssgBIMiS9GnU+kemYwMyFBwfYnKXp
+         4+PQ==
+X-Forwarded-Encrypted: i=1; AHgh+RrJP0cVqrj8O95om6GvVR1AmIkVJjW9srzBB/JhR4rBwwfEGImGU1B9X7oM2lWraXIJfKlR7hYbw0Y=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyuDHNdJ9fQCP1zusT3lTAvUzH5aE1DXvH7zC4FI4Gf6GChrQKE
+	vmK5wTazpf51VAJMP70tscsiQFjGUpPODSQd8qlzChNrgGyLhjWKbdv+
+X-Gm-Gg: AR+sD104ezALB4qmCzCA7KXeb7y6miDOC+x54NxZPCw8AoYg9SSCRu06Ta0PcH/8hGs
+	9f9hImbTzsXw6/STPCPwas0iwriaSe38j4wP75hM1/xSJX+cavZ3OhVDKUit3+9+IEzEW1hMJ80
+	tnqlGHIqljZdnpzzPeh56OKdNLA7yeog4RQAVverGGESGqPLqtxNRTDor6siK4jO+NFDmCXBueX
+	DCKl+SQMO7NyHyhjUmswdftP8QhUTnHRVF95lB2bPd5Zpg8qmtaTVfzw5LdOdMzMOC/0FhryRAH
+	mGHh8eE6Fv0d+qdgBv3EiT13kcD9Mw3NHXO2z2em/tqPJ4CWDN/B2I4vg/JnuCJWyPI8CJeP9zH
+	9QpgsicVOGegM1YXWVIzir/Prt7PZkN06rZWG0LoQF4PBl0n/xsp/Fxu4puPRfuCz3+6VQ8FN/S
+	lS968O9Ym8L4mg8F32+xsPsmoCDpZ6XW+dWzZzZYOw485AhzPKyWCHT0y5SheZX5yruao2UXUi+
+	ulMqJS1m0E=
+X-Received: by 2002:a05:6000:2087:b0:47f:96e6:70a with SMTP id ffacd0b85a97d-481606bcec4mr8999132f8f.0.1786729586010;
+        Fri, 14 Aug 2026 10:46:26 -0700 (PDT)
+Received: from strix.localnet ([197.250.226.224])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4815f219d3dsm10124274f8f.14.2026.08.14.10.46.20
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 14 Aug 2026 10:46:24 -0700 (PDT)
+From: Stefan =?UTF-8?B?RMO2c2luZ2Vy?= <stefandoesinger@gmail.com>
+To: Lee Jones <lee@kernel.org>
+Cc: Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Brian Masney <bmasney@redhat.com>,
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+ Russell King <linux@armlinux.org.uk>, linux-clk@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ mfd@lists.linux.dev
+Subject: Re: [PATCH v10 04/12] mfd: zx297520v3: Add a clock and reset MFD driver
+Date: Fri, 14 Aug 2026 20:46:11 +0300
+Message-ID: <gxF9XGmoS_qmWIfVagXDVQ@gmail.com>
+In-Reply-To: <20260812131503.GR1072730@google.com>
+References: <20260810-zx29clk-v10-0-63846490712c@gmail.com>
+ <20260810-zx29clk-v10-4-63846490712c@gmail.com>
+ <20260812131503.GR1072730@google.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <anq1ouUnKA02Eauj@monoceros>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260814_104628_793514_F7C91CFD 
+X-CRM114-Status: GOOD (  18.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,32 +103,134 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============8297634878688348676=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCBBdWcgMTEsIDIwMjYgYXQgMDc6NDM6MTZBTSArMDIwMCwgVXdlIEtsZWluZS1Lw7Zu
-aWcgd3JvdGU6Cj4gT24gTW9uLCBBdWcgMTAsIDIwMjYgYXQgMTE6MzU6NDhBTSAtMDcwMCwgSmFr
-dWIgS2ljaW5za2kgd3JvdGU6Cj4gPiBPbiBNb24sIDEwIEF1ZyAyMDI2IDE1OjEwOjUxICswMzAw
-IFZsYWRpc2xhdiBMZW9ub3Ygd3JvdGU6Cj4gPiA+IEJhc2ljIHN1cHBvcnQgZm9yIHRoZSBSb2Nr
-Y2hpcCBSVjExMDYvUlYxMTAzIFNvQ3MgY3VycmVudGx5IHVuZGVyIHJldmlldy4KPiA+ID4gVGhp
-cyBzZXJpZXMgYnVpbGRzIG9uIHRvcCBvZiB0aGF0IGFuZCBlbmFibGVzIHRoZSBwZXJpcGhlcmFs
-cyBuZWVkZWQgdG8KPiA+ID4gYnJpbmcgdXAgYSBib2FyZCBiZXlvbmQgYSBzZXJpYWwgY29uc29s
-ZToKPiA+IAo+ID4gRG9uJ3QgZXhwZWN0IG1haW50YWluZXJzIHRvIGRpZyBvdXQgcGF0Y2hlcyBm
-b3IgdGhlaXIgc3Vic3lzdGVtcwo+ID4gZnJvbSBhIGJpZyBzZXJpZXMuIFRoaXMgaXMgbm90IGhv
-dyB1cHN0cmVhbSBkZXZlbG9wbWVudCB3b3Jrcy4KPiAKPiBJIHNlZSB0aGlzIGZyb20gdGltZSB0
-byB0aW1lIGFuZCBJIHBlcnNvbmFsbHkgdGhpbmsgaXQncyBmaW5lIHRvIGhhdmUKPiB0aGVzZSBw
-YXRjaGVzIHRvZ2V0aGVyLiBBbHNvIHRoZSBvbmx5IHRoZSBwYXRjaCB0aGF0IGFmZmVjdHMgbXkK
-PiBzdWJzeXN0ZW0gd2FzIENjOmQgdG8gbWUgd2hpY2ggaXMgaG93IEkgbGlrZSBpdCAoYnV0IEkg
-dGhpbmsgb3BpbmlvbnMKPiBkaWZmZXIgb24gdGhhdCBvbmUsIHRvbykuCj4gCj4gYGI0IGFtIC1Q
-IF9gIGlzIGdyZWF0IQoKWWVhaCwgYW5kIHdpdGggRFRTIGJlaW5nIHBhdGNoIDMsIHBhdGNoIDYs
-IDEwIC4uLiAgYW5kIHNvIG9uLCBpdCBpcwpldmVyeSBlYXN5IHRvIHJldmlldyBhbmQgcGljayB1
-cC4KCk5vLCB0aGVyZSBpcyBvbmx5IG9uZSBjYXNlIG9mIGNvbWJpbmluZyBtdWx0aXBsZSBzdWJz
-eXN0ZW1zIHRvZ2V0aGVyIC0KdXBzdHJlYW1pbmcgbmV3IFNvQyB2ZW5kb3IuIEFsbCBvdGhlciBj
-YXNlcyBhcmUgd3JvbmcgYW5kIHNwcmVhZGluZyBEVFMKYWxsIG92ZXIgaXMganVzdCBwcm9vZiB0
-aGF0IHRoaXMgaXMgcG9vcmx5IHJlYWRhYmxlIGFuZCBwb29ybHkKcmV2aWV3YWJsZS4KCk5vdCBl
-dmVuIG1lbnRpb25pbmcgdGhlIHJ1bGVzIG9mIGRlcGVuZGVuY3kgb24gRFRTIGV4cHJlc3NlZCBp
-bgpzdWJtaXR0aW5nIHBhdGNoZXMuCgpCZXN0IHJlZ2FyZHMsCktyenlzenRvZgoKCi0tIApsaW51
-eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+--===============8297634878688348676==
+Content-Type: multipart/signed; boundary="nextParthu9EI7NhQy6giXCUf6L9sg";
+ micalg="pgp-sha256"; protocol="application/pgp-signature"
+
+--nextParthu9EI7NhQy6giXCUf6L9sg
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"; protected-headers="v1"
+From: Stefan =?UTF-8?B?RMO2c2luZ2Vy?= <stefandoesinger@gmail.com>
+To: Lee Jones <lee@kernel.org>
+Date: Fri, 14 Aug 2026 20:46:11 +0300
+Message-ID: <gxF9XGmoS_qmWIfVagXDVQ@gmail.com>
+In-Reply-To: <20260812131503.GR1072730@google.com>
+MIME-Version: 1.0
+
+Hi,
+
+Thanks for your feedback!
+
+Am Mittwoch, 12. August 2026, 16:15:03 Ostafrikanische Zeit schrieb Lee Jon=
+es:
+> > +config MFD_ZTE_ZX297520V3_CRM
+> > +	tristate "ZTE zx297520v3 Clock and Reset Manager"
+> > +	depends on ARCH_ZTE || COMPILE_TEST
+> > +	select MFD_CORE
+> > +	select REGMAP_MMIO
+>=20
+> Is this used?
+
+Thinking about it: Not in the way the build system cares, so I'll remove it.
+
+The MFD child drivers call device_node_to_regmap(dev->parent->of_node), so =
+a=20
+MMIO regmap gets constructed for the MFD parent. But since the calls are in=
+=20
+the child drivers, REGMAP_MMIO shouldn't be needed to build and run this=20
+particular driver, and the child drivers enable REGMAP_MMIO on their own.
+
+
+> > + * Copyright (C) 2026 Stefan D=C3=B6singer
+>=20
+> Personal copyright, are you sure?
+>=20
+> Is that okay with ZTE?
+
+I'm not affiliated with them. This work is my personal hobby project to hav=
+e=20
+some fun and learn things.
+
+I'm not copying code from their kernel dumps either, the quality of the=20
+drivers there is pretty atrocious.
+
+If ZTE wants to have copyright of the upstream drivers I won't stop them fr=
+om=20
+doing the work themselves :-)
+
+> > +enum zx297520v3_parent_type {
+> > +      ZX297520V3_INVALID =3D 0,
+> > +      ZX297520V3_TOPCRM,
+> > +      ZX297520V3_MATRIXCRM,
+> > +      ZX297520V3_LSPCRM,
+>=20
+> None of these are readable.  I suggest you improve the nomenclature.
+
+I saw that most existing drivers use "undecorated" device names, i.e.=20
+"TOPCRM", "MATRIXCRM", "LSPCRM" in this driver's case. I am concerned that=
+=20
+"TOPCRM" is generic enough that a (future) global header might define a mac=
+ro=20
+or enum value with that name, so I opted to semi-namespace them with the So=
+C=20
+name.
+
+=46ollowing the example of max*.c, what do you think of TYPE_TOPCRM,=20
+TYPE_MATRIXCRM etc?
+
+The rest of your comments are clear to me, I'll implement them in the next=
+=20
+submission.
+
+Cheers,
+Stefan
+
+--nextParthu9EI7NhQy6giXCUf6L9sg
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part.
+Content-Transfer-Encoding: 7Bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQJPBAABCAA5FiEEQxb0tqoFWyeVMl1sPRO8yFRPGiIFAmp/VGMbFIAAAAAABAAO
+bWFudTIsMi41KzEuMTIsMiwyAAoJED0TvMhUTxoiPokP/iptbRf3/QgYkQF1HNMx
+5pOuSmrcFnzvT8WG+mpgA+2uorsOmUfPhxRF+BA9CgOgazibEyWWETdrkvPHy+/f
+See03pTw5mH4LSt90AOqFDCck47OmmAfzY3AP48o61IR47EiB5eFxf0r1S35tYuE
+ms1C/2a98Rw60mw+eFUz3iBHWOI5fX2+DXZjOaEf/Q7d5KsZyiHOg5QUop8bsmCh
+YRKrMdRwLIbT8nZQyEwLiMJlFGvzdDrZc2Vo39rsPFrRjP+FZGvUc7YIymjWXYi0
+m/GfFV6RQSmxxph+zLCnYfoG2MeHDc+ihgBRACTeYXy3B6FbOUNVfsCB3ENvw/4K
+P+OhBdxhxSIswe5KMDR1zUAeCQfNCsnrzXlLyhMxuFm1VwgzA/DJOucR96rj69hl
+Cne8/8AqirlMgKLNek1Fsze0DkKuxOLMsrDVHYTvlMMt/giA0EtsoQT9iNp7z0Q0
+/dqmTve95/f18m4sorji135TkTiEpmYTdtn1FZVY/2/aUD4z907S7mAomm7kYviq
+jIesXSWzh9SFfRugYKDWsk9AqiP7Av77bafFuLzpgQ5MBnsDPpYTdCZR0ngLaP3F
+phrCAX4IayRFni2+kBYkRMgaGosJolehc+mC04px0CwobqERnJGQGlVbRvuPYVJv
+jL7hUaUKDj90M7cPPNEtjQf9
+=kRv0
+-----END PGP SIGNATURE-----
+
+--nextParthu9EI7NhQy6giXCUf6L9sg--
+
+
+
+
+
+--===============8297634878688348676==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============8297634878688348676==--
+
+
+
+
