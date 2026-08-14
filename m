@@ -4,136 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27FD6C5CFCF
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Aug 2026 02:31:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EAFAEC5CFCF
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Aug 2026 02:41:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wzJ/hTnH3DUOqDnmhn+oYQ3/6XFrJWLS/qPiiOGhtrs=; b=27ZIMQocvw/xuJ
-	MZ/9ZCdd/HDeacTa0XebWgRWhCLbRBRzFFnBa9q+8yDGII5DBVA3O4hIguATbVd/79AoaXToYpvYE
-	aMJcsu0234ceLDe83SB5gDcRqDix4l08lw8nQ/VFWk3xev48blvK+XGjna9bOYCT2IQGz9shJhFFg
-	KEbG6aK6EYyrx0v/2GMbXDyNQiqDHSfq0JbCBRUSCyWTGeEVsLie5lVZrG6WpDoZihuQiBlUBCqR2
-	yjYWOUdvxXph+TnzkvSUBmLK94U2114vbKi6why5QdQJctROiy1aVpokLLdWxrjkzKqw3vdsUA1zL
-	U6oUs1FGFrcV/GmaR9Wg==;
+	List-Owner; bh=/G8VewqeC+u9BYCZ1gBo1k/hL+pZW3JrRVacHQ7jjL0=; b=1X59otLV6upSz5
+	mMfqwe/b1wxiEenCYngfefBOZKQy8JlaoRSkujQXwCkappG7j0Nz3mV3H+NhMjO7k/rDKX0twssem
+	TV9yWiCqbNgkNm/V0/6BZaGnCLMU08tjoVYlhmSDReeYdvFqtEuRHsX/vjE8c9iQa20osah0iEMKR
+	M5bIYLpWyoBC8BVSCiY/CUltzsPc1OTnb4Uf0RQB7vdDE3XwKiFD+Gl2Vcd6bM/LCQ5+769m0gjSC
+	LZvOFP45vdEfoDw/CRbbWCakUNHYnam+Ks/kGJq9CYWjYS7vl5c+Sy8jDM/XwCnc0LDBeSfgodf0R
+	L5CoTX4x2dMGHdFHTeRQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wuhhd-00000001rl5-32fk;
-	Fri, 14 Aug 2026 02:31:25 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1wuhrm-00000001sOH-250R;
+	Fri, 14 Aug 2026 02:41:54 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wuhha-00000001rkb-37KH
+	id 1wuhrk-00000001sOB-40vj
 	for linux-phy@lists.infradead.org;
-	Fri, 14 Aug 2026 02:31:24 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 67E1A2O43188045
-	for <linux-phy@lists.infradead.org>; Fri, 14 Aug 2026 02:31:21 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	OF1Hc5Uoa6cnyFrVjXhCW/ubLN+IGaBWjiwYGQl3IWU=; b=Cb5uATciTI3Q/NUp
-	J2oUnd5E7hLpWVxMHGFTS0sVVFZKy8HS8eNbaGXFFNQNhNNpaZxSLKX8q25AOLWx
-	IOkj7cF9wD0w8AfZ8HDeGYFlw7rjBXVwdyo1Ozi0qtZlixnorMCyZaHuqKbf9fZn
-	1/TAuWmnMJ3dURKwJq5yka2YrAVUtWVngzt8fES2mhh9CBLkJU/fdjUPNDlsYbAg
-	wqummnWO2L/JP3GBUKtyNJZf7+wSfmOGuodMviHF76Wh6xWYuTBPhQ+dGAdBF/AO
-	HoD8enmJohJYMlZT2uIp3ui+4wpiEh8MNarCnf0OZ6+3LWKeF5T1DhrULRTCzjFJ
-	4AH3tQ==
-Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4g1hgy21a6-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 14 Aug 2026 02:31:21 +0000 (GMT)
-Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2cc5faecf01so11294035ad.1
-        for <linux-phy@lists.infradead.org>; Thu, 13 Aug 2026 19:31:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1786674680; x=1787279480; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=OF1Hc5Uoa6cnyFrVjXhCW/ubLN+IGaBWjiwYGQl3IWU=;
-        b=SzgzgjYAubXeJRFmbygNwYitG08k2v1uxc3xgtyqYNbi8lQHg5zfx+tlTaPfXczNlC
-         50WcK+mvRmjEQUARJSymHHY+15fWuGb6ompyZAzReEta6Mw41ryOkh1Zdop1dXN+xJ/s
-         kmtFRZNfh935yZl1lp13O0ugUJ7by/0MryDnF4w9NATDLMQJu0OckhBMUYJLlkGdJgZL
-         PmPyw3prhQ3+PKhUl3Wz3hoHch6JbP2ErkVdDoFSBcaM2syF+5lKntLKXbOiSVJTHIu1
-         2hKni2Dmn4oYFKFf7QSkUS4gi7C3qSFt2pOgF8IPby7l6S4OJBtP41Ihzx7EE4x0XCMu
-         an/w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1786674680; x=1787279480;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=OF1Hc5Uoa6cnyFrVjXhCW/ubLN+IGaBWjiwYGQl3IWU=;
-        b=Qj8xpieXrWF3kFRE2S9FD5t3iAijDxU1YSWj8/sQ+VxcRXTWWsWioL5mfrX+FNarOL
-         1t8XHNy0HVq+g3S66r+tpMkeVwbPidNzdlOvCl8O1X/jDTfHrBGT8Hlvx+ThqGPfGzJ7
-         YAfzEuBA0wbCB0/TG2dqTI007l+kGnZ/XerthHufA+IL0tg95+FwVZ/1sXCWyHJMq+9I
-         8H6GB7h9XtBf9UPSLFdE65uter9/sramtdN55dEUlJsPcw+FbmUS+9JhT9m88VlB5bHI
-         HXCZpwzpY+dawOkNqQQi/PhvNPSES0Yn8Q5eTvLuyCKRRzigw1FQcXFjl46Xp+IV+JSL
-         QqLg==
-X-Forwarded-Encrypted: i=1; AHgh+RouDIMmunlOV9g1alkd8kRGWY0BMUiCMmKKfRyxSh2NOgX72eoqWPxPtidqxkLmFYN52lsCEaosX18=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw4zEZFEcL74HnDacNcmWgkgL7VFeSp1N3RpiAyi0wgzclEid+R
-	sU1GlbWEdAz2kw9ELJ+iDn05+yU2xVMGePDZyLdeEC17Ku7nJ4+Y+j364d41xg7djnJcQPc7G3W
-	39JbmNBN6vxJ9iGAiHbleCmfwb9ihdw9TyN5fuZmRXj8i/y7FV6c+U92ucS6MjNigxHCY
-X-Gm-Gg: AR+sD13Zixxa43J3DiskK0SXMZ79OrEk0BFVu7Mi88SVCs23ZgskLUrfwutFROBqEN6
-	85eqOe/+wYc8GlptBWqMYPvBZLnx3BEks8X3E7tqptt06t+2C//Dd3gEyq/7xy5uhA4XNzur0fQ
-	JQFef0waDHxg9ZC/QThOKgP5zRlRVFMC2tqDSi/aJDjH6DqNqS6ZDYOWKMXMHf7DmBliYABebdy
-	nLxWwlBfy7EhMJzvSLICZlluAtLqnZCNz/Ht0lQ1guEMV6ITgz/7otiLKhK5nWuKN+sC90Hhg/l
-	fyl0sm/VGNbOoiSjFQKbY0aV7YYvUSnENLGB+7QwIdxX2k21/ROMSpIpNa+TiRR2yWOYYCEKlpu
-	xxIlOjKX6uzLMT3Oshyn/5FhkKBCvX3tCxrrGMXCd+mCI01JmxX0P33AAfQWqw4fyvl0L3t8=
-X-Received: by 2002:a17:903:1850:b0:2d0:cc92:f7a3 with SMTP id d9443c01a7336-2d3b0801491mr31372805ad.2.1786674680301;
-        Thu, 13 Aug 2026 19:31:20 -0700 (PDT)
-X-Received: by 2002:a17:903:1850:b0:2d0:cc92:f7a3 with SMTP id d9443c01a7336-2d3b0801491mr31372055ad.2.1786674679694;
-        Thu, 13 Aug 2026 19:31:19 -0700 (PDT)
-Received: from [10.133.33.231] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2d3ae7a4521sm3575675ad.19.2026.08.13.19.31.17
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 13 Aug 2026 19:31:19 -0700 (PDT)
-Message-ID: <c37708f3-5043-4ad5-944e-64ceedeecad6@oss.qualcomm.com>
-Date: Fri, 14 Aug 2026 10:31:15 +0800
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V1] dt-bindings: phy: qcom,sc8280xp-qmp-ufs-phy: Add QMP
- UFS PHY compatible for Maili
-To: Nitin Rawat <nitin.rawat@oss.qualcomm.com>, vkoul@kernel.org,
-        krzk+dt@kernel.org, robh@kernel.org, conor+dt@kernel.org
-Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
-        devicetree@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20260814004725.1368027-1-nitin.rawat@oss.qualcomm.com>
-Content-Language: en-US
-From: Jingyi Wang <jingyi.wang@oss.qualcomm.com>
-In-Reply-To: <20260814004725.1368027-1-nitin.rawat@oss.qualcomm.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODE0MDAxOSBTYWx0ZWRfX1gSCsWPBWKvE
- Ylasf+gHIDVuiA/6u1s7Q1z5jWOm25DZgqbJAWMQxGeG2JS8wT+bBi1Z082kx5rEgQ63lqNDdOh
- dvYHGonyVqtY0KkRM7tT9QsCmuTJyKZfyBs9OovlJd+7deQOv0rVCFLzkZZQQNoGyxKg9JVg6d2
- pVD+wMI5JUmWjWEyr6Mk8YYdQurRSjQG+INAfWc300cMefe9kJyxbPhJDmkl7VLwaPutAv5bWXd
- MJXDkU3QfNpNAbqHWwqv0VimVz22wnuUtdMVChCr5iQ7oh1TBgCSdJYAHe3LQ8lD9pVZtCtwbIt
- TP0TlWjlE9XJ70gTUEfSPR9EzD7dNtlgRDRP/kr0XkKgFCNKVhRZygH/Y9buidoK1EgYfTGS1VA
- Ye2BvsvOA9dY0XY1I7moGe8cG5lMbkYAXF+ppNp5OyTtqZ07aVUNN8IvykkrL7JZeybu8b9bACj
- wa30M1jXKk+7fV14aJQ==
-X-Authority-Analysis: v=2.4 cv=AaSB2XXG c=1 sm=1 tr=0 ts=6a7e7df9 cx=c_pps
- a=cmESyDAEBpBGqyK7t0alAg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=IkcTkHD0fZMA:10 a=Sv0fKeRqtYgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
- a=EUspDBNiAAAA:8 a=F2GsAIeIfKtvr_1J208A:9 a=QEXdDO2ut3YA:10
- a=1OuFwYUASf3TG4hYMiVC:22
-X-Proofpoint-ORIG-GUID: BegoAk3BuqX-hp-VNOfrve-x9r4aukd0
-X-Proofpoint-GUID: BegoAk3BuqX-hp-VNOfrve-x9r4aukd0
-X-Proofpoint-Spam-Info: AW1haW4tMjYwODE0MDAxOSBTYWx0ZWRfX8hqNF2hJiNf7
- hq41X1rLXvyzhCATW0gz70aWYUtW4dOVKhVf7SLAtngCCaJm963bA4f9c7GeqSe05yfxa6HLAh1
- kF8Q04gxWJPqY6Z5m9fZtDdZzvCQouk=
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-08-14_01,2026-08-12_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 malwarescore=0 clxscore=1011 priorityscore=1501 spamscore=0
- impostorscore=0 suspectscore=0 bulkscore=0 lowpriorityscore=0 phishscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2608140019
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260813_193122_936298_798481D6 
-X-CRM114-Status: GOOD (  15.59  )
+	Fri, 14 Aug 2026 02:41:53 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id E3FAD600AD;
+	Fri, 14 Aug 2026 02:41:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 31F801F000E9;
+	Fri, 14 Aug 2026 02:41:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1786675311;
+	bh=WqTd6hTvZP+7jr4CnwgT2uItwEHTmJCWS0N2lOJVzwQ=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=NxttqOd3EAC4rRwNzQFauADKHZyKwAoZmPVJUKdsv69f1sc53/Ryt22QSl4pZ1tgh
+	 uoRUV2vvpp4ORqZ/r38+mcfqNaZFJPpMVAKQ6/oP7VwcLiCAn7CPD4ftgAokgjmLel
+	 /DsRVD7njV0CzB4x5uR3OXRcmf+PXikL/k1fWyDm65EAVkJLdFaLsgfr7/+SxP2wt/
+	 o7jdVct2d0eLes/9BhUWzVx7rxiADfC4rVdx1UBVkJNaaZOeqJ1OdBNGgJRDAHZAAw
+	 yvFJMDY0V/kjM0vbpHrqVDM5mKRmECD53EcP8VyrYT2QEk8Kv9VJHiDU9T+7uCoDus
+	 GXjp6GSsXr0Og==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v14 10/38] phy: rockchip: usbdp: Add missing mode_change
+ update
+To: "Sebastian Reichel" <sebastian.reichel@collabora.com>
+Cc: robh@kernel.org, conor+dt@kernel.org, devicetree@vger.kernel.org, vkoul@kernel.org, olteanv@gmail.com, linux-phy@lists.infradead.org, neil.armstrong@linaro.org
+In-Reply-To: <20260813-rockchip-usbdp-cleanup-v14-10-b5ad9c68fa11@collabora.com>
+References: <20260813-rockchip-usbdp-cleanup-v14-0-b5ad9c68fa11@collabora.com>
+ <20260813-rockchip-usbdp-cleanup-v14-10-b5ad9c68fa11@collabora.com>
+Date: Fri, 14 Aug 2026 02:41:50 +0000
+Message-Id: <20260814024151.31F801F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -145,53 +63,84 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 8/14/2026 8:47 AM, Nitin Rawat wrote:
-> Document the QMP UFS PHY compatible for Qualcomm Maili to support
-> physical layer functionality for UFS found on the SoC. Use fallback to
-> indicate the compatibility of the QMP UFS PHY on the Maili with that on
-> the Hawi.
-> 
-> Signed-off-by: Nitin Rawat <nitin.rawat@oss.qualcomm.com>
-> Signed-off-by: Jingyi Wang <jingyi.wang@oss.qualcomm.com>
-> ---
-
-incorrect DCO chain, the last SoB should be same as the one who
-send the patch.
-
-Thanks,
-Jingyi
-
->   .../devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml    | 4 ++++
->   1 file changed, 4 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
-> index 7e83cb3238ec..d94503fc26e7 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
-> @@ -16,6 +16,10 @@ description:
->   properties:
->     compatible:
->       oneOf:
-> +      - items:
-> +          - enum:
-> +              - qcom,maili-qmp-ufs-phy
-> +          - const: qcom,hawi-qmp-ufs-phy
->         - items:
->             - enum:
->                 - qcom,qcs8300-qmp-ufs-phy
-> --
-> 2.34.1
-> 
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
+IFtIaWdoXSBUeXBlLUMgc3RhdGUgZmFsbGJhY2sgdG8gVVNCL1NhZmUgbW9kZXMgc2tpcHMgdGhl
+IFBIWSBtb2RlIHVwZGF0ZSBhbmQgSFBEIHJlc2V0LCBwZXJtYW5lbnRseSBicmVha2luZyBVU0Ig
+My4wIGFuZCBsZWF2aW5nIGEgZ2hvc3QgRGlzcGxheVBvcnQgY29ubmVjdGlvbi4KLSBbSGlnaF0g
+VGhlIFBIWSBkcml2ZXIgaW5kZWZpbml0ZWx5IGxlYWtzIGFjdGl2ZSBwb3dlciBzdGF0ZXMgKGNs
+b2NrcyBhbmQgcmVzZXRzKSBpZiB0aGUgVHlwZS1DIG11eCBtb2RlIGNoYW5nZXMgYmVmb3JlIHRo
+ZSBVU0Igb3IgRFAgY29udHJvbGxlcnMgZXhlY3V0ZSB0aGVpciB0ZWFyZG93biByb3V0aW5lcy4K
+LS0KCi0tLSBQYXRjaCBbMTBdOiBbUEFUQ0ggdjE0IDEwLzM4XSBwaHk6IHJvY2tjaGlwOiB1c2Jk
+cDogQWRkIG1pc3NpbmcgbW9kZV9jaGFuZ2UgdXBkYXRlIC0tLQpjb21taXQgOWJlZDRmYTA4ZGQx
+MTY3MTZhMzlmMjI4YmRkOTYxYzY2YThmOGI2NApBdXRob3I6IFNlYmFzdGlhbiBSZWljaGVsIDxz
+ZWJhc3RpYW4ucmVpY2hlbEBjb2xsYWJvcmEuY29tPgoKcGh5OiByb2NrY2hpcDogdXNiZHA6IEFk
+ZCBtaXNzaW5nIG1vZGVfY2hhbmdlIHVwZGF0ZQoKcmtfdWRwaHlfc2V0X3R5cGVjX2RlZmF1bHRf
+bWFwcGluZygpIHVwZGF0ZXMgdGhlIGF2YWlsYWJsZSBtb2RlcywKYnV0IGRvZXMgbm90IHNldCB0
+aGUgbW9kZV9jaGFuZ2UgYXMgcmVxdWlyZWQuIFRoaXMgcmVzdWx0cyBpbgptaXNzaW5nIHJlLWlu
+aXRpYWxpemF0aW9uIGFuZCB0aHVzIG5vbi13b3JraW5nIERpc3BsYXlQb3J0LgoKPiBkaWZmIC0t
+Z2l0IGEvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLXVzYmRwLmMgYi9kcml2ZXJz
+L3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtdXNiZHAuYwo+IGluZGV4IDk4MjMxNTUzNWNhZjcu
+Ljc1NDBjODk3ZGRlMTMgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJv
+Y2tjaGlwLXVzYmRwLmMKPiArKysgYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAt
+dXNiZHAuYwo+IEBAIC02MTcsNiArNjE3LDE1IEBAIHN0YXRpYyB2b2lkIHJrX3VkcGh5X2RwX2hw
+ZF9ldmVudF90cmlnZ2VyKHN0cnVjdCBya191ZHBoeSAqdWRwaHksIGJvb2wgaHBkKQo+ICAJcmtf
+dWRwaHlfZ3JmcmVnX3dyaXRlKHVkcGh5LT52b2dyZiwgJmNmZy0+dm9ncmZjZmdbdWRwaHktPmlk
+XS5ocGRfdHJpZ2dlciwgaHBkKTsKPiAgfQo+ICAKPiArc3RhdGljIHZvaWQgcmtfdWRwaHlfbW9k
+ZV9zZXQoc3RydWN0IHJrX3VkcGh5ICp1ZHBoeSwgdTggbW9kZSkKPiArewo+ICsJaWYgKHVkcGh5
+LT5tb2RlID09IG1vZGUpCj4gKwkJcmV0dXJuOwo+ICsKPiArCXVkcGh5LT5tb2RlX2NoYW5nZSA9
+IHRydWU7Cj4gKwl1ZHBoeS0+bW9kZSA9IG1vZGU7Cj4gK30KCltTZXZlcml0eTogSGlnaF0KVGhp
+cyBpc24ndCBhIGJ1ZyBpbnRyb2R1Y2VkIGJ5IHRoaXMgcGF0Y2gsIGJ1dCBzaW5jZSB3ZSBhcmUg
+dXBkYXRpbmcgaG93IHRoZQptb2RlIGlzIHNldCwgY2FuIHRoaXMgYXN5bmNocm9ub3VzIHVwZGF0
+ZSB0byB1ZHBoeS0+bW9kZSBsZWFkIHRvIGEgcG93ZXIgc3RhdGUKbGVhaz8KCklmIHRoZSBUeXBl
+LUMgc3Vic3lzdGVtIGFzeW5jaHJvbm91c2x5IHVwZGF0ZXMgdGhlIHJlcXVlc3RlZCBtb2RlIHZp
+YQpya191ZHBoeV90eXBlY19tdXhfc2V0KCkgKGUuZy4sIGNoYW5naW5nIGZyb20gVURQSFlfTU9E
+RV9EUF9VU0IgdG8KVURQSFlfTU9ERV9EUCksIGRvZXMgdGhpcyBjYXVzZSBsYXRlciB0ZWFyZG93
+biByb3V0aW5lcyB0byBmYWlsPwoKRm9yIGV4YW1wbGUsIHdoZW4gdGhlIFVTQiBjb250cm9sbGVy
+IHN1c3BlbmRzIGFuZCBjYWxscyBwaHlfZXhpdCgpIG9yCnBoeV9wb3dlcl9vZmYoKSwgcm91dGlu
+ZXMgbGlrZSBya191ZHBoeV91c2IzX3BoeV9leGl0KCkgY2hlY2sgdGhlIG1vZGU6Cgpkcml2ZXJz
+L3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtdXNiZHAuYzpya191ZHBoeV91c2IzX3BoeV9leGl0
+KCkgewogICAgLi4uCgkvKiBEUCBvbmx5IG9yIGhpZ2gtc3BlZWQgKi8KCWlmICghKHVkcGh5LT5t
+b2RlICYgVURQSFlfTU9ERV9VU0IpIHx8IHVkcGh5LT5ocykKCQlnb3RvIHVubG9jazsKICAgIC4u
+Lgp9CgpTaW1pbGFybHkgaW4gcmtfdWRwaHlfcG93ZXJfb2ZmKCk6Cgpkcml2ZXJzL3BoeS9yb2Nr
+Y2hpcC9waHktcm9ja2NoaXAtdXNiZHAuYzpya191ZHBoeV9wb3dlcl9vZmYoKSB7CiAgICAuLi4K
+CWlmICghKHVkcGh5LT5tb2RlICYgbW9kZSkpIHsKCQlkZXZfaW5mbyh1ZHBoeS0+ZGV2LCAibW9k
+ZSAweCUwMnggaXMgbm90IHN1cHBvcnRcbiIsIG1vZGUpOwoJCXJldHVybjsKCX0KICAgIC4uLgp9
+CgpCZWNhdXNlIHVkcGh5LT5tb2RlIGhhcyBhbHJlYWR5IGNoYW5nZWQsIGRvIHRoZXNlIGZ1bmN0
+aW9ucyByZXR1cm4gZWFybHkKd2l0aG91dCBjbGVhcmluZyB0aGUgVVNCIGJpdCBmcm9tIHVkcGh5
+LT5zdGF0dXMsIGxlYXZpbmcgYWN0aXZlIGhhcmR3YXJlCmNsb2NrcyBhbmQgcmVzZXRzIGxlYWtl
+ZCBpbmRlZmluaXRlbHk/CgpbIC4uLiBdCgo+IEBAIC0xMzYxLDEwICsxMzcwLDcgQEAgc3RhdGlj
+IGludCBya191ZHBoeV90eXBlY19tdXhfc2V0KHN0cnVjdCB0eXBlY19tdXhfZGV2ICptdXgsCj4g
+IAkJCXVzbGVlcF9yYW5nZSg3NTAsIDgwMCk7Cj4gIAkJCXJrX3VkcGh5X2RwX2hwZF9ldmVudF90
+cmlnZ2VyKHVkcGh5LCB0cnVlKTsKPiAgCQl9IGVsc2UgaWYgKGRhdGEtPnN0YXR1cyAmIERQX1NU
+QVRVU19IUERfU1RBVEUpIHsKPiAtCQkJaWYgKHVkcGh5LT5tb2RlICE9IG1vZGUpIHsKPiAtCQkJ
+CXVkcGh5LT5tb2RlID0gbW9kZTsKPiAtCQkJCXVkcGh5LT5tb2RlX2NoYW5nZSA9IHRydWU7Cj4g
+LQkJCX0KPiArCQkJcmtfdWRwaHlfbW9kZV9zZXQodWRwaHksIG1vZGUpOwo+ICAJCQlya191ZHBo
+eV9kcF9ocGRfZXZlbnRfdHJpZ2dlcih1ZHBoeSwgdHJ1ZSk7Cj4gIAkJfSBlbHNlIHsKPiAgCQkJ
+cmtfdWRwaHlfZHBfaHBkX2V2ZW50X3RyaWdnZXIodWRwaHksIGZhbHNlKTsKCltTZXZlcml0eTog
+SGlnaF0KVGhpcyBpcyBhIHByZS1leGlzdGluZyBpc3N1ZSwgYnV0IEkgaGF2ZSBhIHF1ZXN0aW9u
+IGFib3V0IHRoZSBicm9hZGVyIGxvZ2ljCmluIHJrX3VkcGh5X3R5cGVjX211eF9zZXQoKSB3aGVu
+IHRoZSBtb2RlIGNoYW5nZXMuCgpXaGVuIHRoZSBUeXBlLUMgcG9ydCBleGl0cyBBbHQgTW9kZSB0
+byBhIHNhZmUgb3IgVVNCLW9ubHkgc3RhdGUsIGRvZXMgdGhpcwpza2lwIHRoZSBQSFkgbW9kZSB1
+cGRhdGUgYW5kIEhQRCByZXNldCBlbnRpcmVseT8KCkl0IGxvb2tzIGxpa2UgdGhlIHZpdGFsIHN0
+YXRlIHVwZGF0ZXMgKGluY2x1ZGluZyB0aGUgbmV3IHJrX3VkcGh5X21vZGVfc2V0KCkKY2FsbCkg
+YXJlIGdhdGVkIGJlaGluZCBhbiBlYXJsaWVyIGNoZWNrIGluIHJrX3VkcGh5X3R5cGVjX211eF9z
+ZXQoKToKCmRyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC11c2JkcC5jOnJrX3VkcGh5
+X3R5cGVjX211eF9zZXQoKSB7CiAgICAuLi4KCWlmIChzdGF0ZS0+YWx0ICYmIHN0YXRlLT5hbHQt
+PnN2aWQgPT0gVVNCX1RZUEVDX0RQX1NJRCkgewoJCXN0cnVjdCB0eXBlY19kaXNwbGF5cG9ydF9k
+YXRhICpkYXRhID0gc3RhdGUtPmRhdGE7CiAgICAuLi4KfQoKQmVjYXVzZSBzdGF0ZS0+YWx0IGlz
+IE5VTEwgd2hlbiBleGl0aW5nIERpc3BsYXlQb3J0IEFsdCBNb2RlLCB0aGlzIGJsb2NrIGlzCmJ5
+cGFzc2VkLiBDYW4gdGhpcyBsZWF2ZSB1ZHBoeS0+bW9kZSBzdHVjayBpbiBVRFBIWV9NT0RFX0RQ
+LCBwb3RlbnRpYWxseQpicmVha2luZyBVU0IgMy4wIGZ1bmN0aW9uYWxpdHkgYW5kIGxlYXZpbmcg
+YSBnaG9zdCBEaXNwbGF5UG9ydCBjb25uZWN0aW9uPwoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3
+IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDgxMy1yb2NrY2hpcC11c2JkcC1j
+bGVhbnVwLXYxNC0wLWI1YWQ5YzY4ZmExMUBjb2xsYWJvcmEuY29tP3BhcnQ9MTAKCi0tIApsaW51
+eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8v
+bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
