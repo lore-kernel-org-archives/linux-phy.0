@@ -4,45 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 242C3C5CFDB
-	for <linux-phy@archiver.kernel.org>; Sat, 15 Aug 2026 09:15:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38CC9C5CFC1
+	for <linux-phy@archiver.kernel.org>; Sat, 15 Aug 2026 09:15:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4t9einyeH5gvMIY3UR3BAsLqxilk0eJfQpUMxMM6wMI=; b=ZEQEvnFKI8jtLI
-	AM5j/S2Ghs4RpvwA3PCCaoqXut1yeHdaTNnGn6diKuwomvqWyWA19eJ51ocH6uuThGGPrX+Kz+IiC
-	NVoG9Cx1tLz5wksZ0PXjb5JHO5XMN5vNmlAEh1DPYXOd8XavNePPkK0G81L9ZxSc4bjOPtqpDt1Mb
-	PQdMO5+rN8735Omlc2gKkH4TucRBTie2Ink8W52h4EpuZXLwLPcvOhW2IbPV/bZcv8b8FNPrxme1o
-	GEsQQQZcsZ140QFccbEN3E58rKwo92czOxWOvzDwdpQMwqD9sYM0UmE2/NmTFDKG1PnfZ7vW4OiLw
-	HN3hT3CHW3lb0FRD81Ag==;
+	List-Owner; bh=KGV4gL8oDLWYc/FzaerKxXSv0VQCDnw91Hd5A2lIwmg=; b=Jl9WLS+WCFgwyr
+	KBKD4lDJypPeYvvwJo6mgcsGnMvBkwVyH7MoWf1yRQsEwIFoIuU6OFI52vylr7Qz6YZLhyjD6e8hj
+	unOZ2qWrFCka9nJwlEtTxjafZg21HpR9zm/CIj3WOiNLnNbQIBBlhil+NZI9gdIGvSyvkreH3QRBy
+	iwR3kEVR8lQiz6qcdeJUD4swW524yNE+F6g2+kRax1k7Epx0wIYDI7vF/44ZndHv3RYgzWpQdGA8N
+	+ww7qXuNgq/nVqVsDtDjzH/ssAeEfKSfws4SJVrrHyP2wP/RZdzpYysCa7cdQp/c786yZTW02a2BA
+	HmTrLCXup9Q6K2C9YZFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wvATq-00000003hPH-3W13;
-	Sat, 15 Aug 2026 09:15:06 +0000
-Received: from layka.disroot.org ([178.21.23.139])
+	id 1wvAU4-00000003hQL-3l2i;
+	Sat, 15 Aug 2026 09:15:20 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wvATo-00000003hOY-0Y6o
+	id 1wvAU2-00000003hPz-3fCb
+	for linux-phy@bombadil.infradead.org;
+	Sat, 15 Aug 2026 09:15:18 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Type:Content-ID:Content-Description;
+	bh=fqjYy2xILnWjl2lkL90///QfR16Zq8dcQm4tSrO5zQY=; b=AgeAfjI7btY4qTHx8SDGTfSFsM
+	7N6FxU2M5tMSIH9eEf1dJ3gI1J2eN9BjAJVCTGqne7BlA4Caxiae2Y3azRyC6T26cn9N0OljBWAph
+	e4Qqfj9rjK4zBP7UMXb7advxKi+lOpbYLeISyMV+eRxsn/X0tgkW59MbN232U5FKF3b5GLEO2eu1A
+	MCHqCQbZn3wsJ9tqCwvMguQZABluu2SQJ6rcJzKN6oXB1qAG0L+PWgX+hILuSrKiqariSyt/PYjdD
+	wBW/HPfXcKID3qZGOqXYOPq0we69gIf0EKJAZg3lagLf+RAt9v9une6KC/Aci/fqCHiJwItE5bV9B
+	9Ei5ivPQ==;
+Received: from layka.disroot.org ([178.21.23.139])
+	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
+	id 1wvATz-0000000HNYP-3OzE
 	for linux-phy@lists.infradead.org;
-	Sat, 15 Aug 2026 09:15:05 +0000
+	Sat, 15 Aug 2026 09:15:17 +0000
 Received: from mail01.layka.lan (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id 5AA9A881CC;
-	Sat, 15 Aug 2026 11:14:50 +0200 (CEST)
+	by disroot.org (Postfix) with ESMTP id DE980882DB;
+	Sat, 15 Aug 2026 11:14:49 +0200 (CEST)
 X-Virus-Scanned: SPAM Filter at disroot.org
 Received: from layka.disroot.org ([127.0.0.1])
  by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id r1S2K92VLyO6; Sat, 15 Aug 2026 11:14:46 +0200 (CEST)
+ id 64-xFJu9MUjY; Sat, 15 Aug 2026 11:14:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1786785286; bh=iTMFW9PtcXtthHHYIKyXUPqjK5gtUDESdCp0WUlX6Q4=;
+	t=1786785289; bh=dSApdouRs74AgqrQBX4yQQP2Zh1Ae09ZBK7ma9JanCg=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=LWY/NZrxuEuMwc4xc5Q4xjZlZG8Mi6MZLDWmcj6s4zSiV0jxlCftuFaf0Cz6BSscW
-	 7aPSyKjiQBwhWul2jbY/cv8iJlqKN1zDMpaB2VsXqHuUq0GzoiAu2JlDss+evIxrNM
-	 d23oDfqtAxbl+0afhphAs6OmUcZ7yjESlGYmyPzs5e+Ywk1visxdfx0KR68woBx5jj
-	 PVd+BF8vesBfpGEH/FTjV+SvX9BafrN8ddSnjA1nrCQwqzPl5pMf1VLXZY4v7G6x6L
-	 ICwKqluD/jJLIP8jyE0Z3DkN7ziICytWrhJoT2cIvBRikYjQ+WoTeOmv4Hx4sBc0QQ
-	 sDayj/k861oRw==
+	b=dFCKoU8DbL4a5Bprz4F1PUCe+ZteIm2NW0HGwhqoM6cRmR/chURAkp0/3oyBU1s3q
+	 cm2mlmRYOF6Mz1NJHuipuQb7UyjlPkL6qc4cC6vZisJhm8uhw6XwVeqg5BDZGYWyWH
+	 k3B2RjGdCK66P/lm0HyjoqXUColQtBrukbwezIteFHJtyy+tEEQGq8g+l1+0vZwdxC
+	 MFQv1U9i3vhiiqmZmm1/uhRT5CXrkjxEMmSVyzFpb4GwEwRiq4x/3vSkzF8q5mSQAe
+	 P8OUPz9CdlX+XWqId3O5IEdkPJ4Fl7rpJlmTzv0sTNdITiZuoOhSxp+llAv84UF2B6
+	 36lqX4i93kH0w==
 From: Rustam Adilov <adilov@disroot.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
@@ -55,16 +70,17 @@ To: Vinod Koul <vkoul@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org
 Cc: Rustam Adilov <adilov@disroot.org>,
-	Michael Zavertkin <misha.zavertkin@mail.ru>
-Subject: [PATCH v7 5/6] phy: realtek: usb2: add support for RTL9607C USB2 PHY
-Date: Sat, 15 Aug 2026 14:13:39 +0500
-Message-ID: <20260815091340.26910-6-adilov@disroot.org>
+	Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+Subject: [PATCH v7 6/6] phy: realtek: Make configs available for MACH_REALTEK_RTL
+Date: Sat, 15 Aug 2026 14:13:40 +0500
+Message-ID: <20260815091340.26910-7-adilov@disroot.org>
 In-Reply-To: <20260815091340.26910-1-adilov@disroot.org>
 References: <20260815091340.26910-1-adilov@disroot.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260815_021504_445327_3975A71F 
-X-CRM114-Status: GOOD (  13.51  )
+X-CRM114-CacheID: sfid-20260815_101516_128248_1362A73B 
+X-CRM114-Status: UNSURE (   8.72  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,147 +97,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for the usb2 phy of RTL9607C series based SoCs.
-Add the macros and phy config struct for rtl9607.
+Add the MACH_REALTEK_RTL to the if statement to make the config
+options available for Realtek RTL SoCs as well.
 
-RTL9607C requires to clear a "force host disconnect" bit in the
-specific register (which is at an offset from reg_wrap_vstatus)
-before proceeding with phy parameter writes. Since it belongs into
-the vstatus register region, it requires the use of added read and
-write helper functions.
-
-Add the bool variable to the driver data struct and hide this whole
-procedure under the if statement that checks this new variable.
-
-Add the appropriate big endian read and write functions for rtl9607
-and assign them to its rtl9607_phy_reg_desc struct.
-
-Co-developed-by: Michael Zavertkin <misha.zavertkin@mail.ru>
-Signed-off-by: Michael Zavertkin <misha.zavertkin@mail.ru>
+Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 Signed-off-by: Rustam Adilov <adilov@disroot.org>
 ---
- drivers/phy/realtek/phy-rtk-usb2.c | 66 ++++++++++++++++++++++++++++++
- 1 file changed, 66 insertions(+)
+ drivers/phy/realtek/Kconfig | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/phy/realtek/phy-rtk-usb2.c b/drivers/phy/realtek/phy-rtk-usb2.c
-index 2ddad7be7353..990ceca37ef8 100644
---- a/drivers/phy/realtek/phy-rtk-usb2.c
-+++ b/drivers/phy/realtek/phy-rtk-usb2.c
-@@ -26,6 +26,12 @@
- #define PHY_VCTRL_SHIFT 8
- #define PHY_REG_DATA_MASK 0xff
+diff --git a/drivers/phy/realtek/Kconfig b/drivers/phy/realtek/Kconfig
+index 75ac7e7c31ae..76f9215d8b94 100644
+--- a/drivers/phy/realtek/Kconfig
++++ b/drivers/phy/realtek/Kconfig
+@@ -3,7 +3,7 @@
+ # Phy drivers for Realtek platforms
+ #
  
-+#define PHY_9607_VSTS_BUSY BIT(17)
-+#define PHY_9607_NEW_REG_REQ BIT(13)
-+
-+#define PHY_9607_FORCE_DISCONNECT_REG 0x10
-+#define PHY_9607_FORCE_DISCONNECT_BIT BIT(5)
-+
- #define GET_LOW_NIBBLE(addr) ((addr) & 0x0f)
- #define GET_HIGH_NIBBLE(addr) (((addr) & 0xf0) >> 4)
+-if ARCH_REALTEK || COMPILE_TEST
++if ARCH_REALTEK || MACH_REALTEK_RTL || COMPILE_TEST
  
-@@ -107,6 +113,7 @@ struct phy_cfg {
- 	bool use_default_parameter;
- 	bool is_double_sensitivity_mode;
- 	const struct phy_reg_desc *reg_desc;
-+	bool force_host_disconnect;
- };
+ config PHY_RTK_RTD_USB2PHY
+ 	tristate "Realtek RTD USB2 PHY Transceiver Driver"
+@@ -29,4 +29,4 @@ config PHY_RTK_RTD_USB3PHY
+ 	  DWC3 USB IP. This driver will do the PHY initialization
+ 	  of the parameters.
  
- struct phy_parameter {
-@@ -144,6 +151,16 @@ static void rtk_usb2phy_write(u32 val, void __iomem *reg)
- 	writel(val, reg);
- }
- 
-+static u32 rtk_usb2phy_read_be(void __iomem *reg)
-+{
-+	return ioread32be(reg);
-+}
-+
-+static void rtk_usb2phy_write_be(u32 val, void __iomem *reg)
-+{
-+	iowrite32be(val, reg);
-+}
-+
- /* mapping 0xE0 to 0 ... 0xE7 to 7, 0xF0 to 8 ,,, 0xF7 to 15 */
- static inline int page_addr_to_array_index(u8 addr)
- {
-@@ -600,6 +617,23 @@ static int do_rtk_phy_init(struct rtk_phy *rtk_phy, int index)
- 		goto do_toggle;
- 	}
- 
-+	if (phy_cfg->force_host_disconnect) {
-+		const struct phy_reg_desc *reg_desc = phy_reg->desc;
-+		void __iomem *vstatus = phy_reg->reg_wrap_vstatus;
-+		u32 temp;
-+
-+		temp = reg_desc->read(vstatus + PHY_9607_FORCE_DISCONNECT_REG);
-+
-+		/* disable force-host-disconnect */
-+		temp &= ~PHY_9607_FORCE_DISCONNECT_BIT;
-+
-+		reg_desc->write(temp, vstatus + PHY_9607_FORCE_DISCONNECT_REG);
-+		temp = reg_desc->read(vstatus + PHY_9607_FORCE_DISCONNECT_REG);
-+
-+		/* allow IP to startup */
-+		usleep_range(10000, 11000);
-+	}
-+
- 	/* Set page 0 */
- 	phy_data_page = phy_cfg->page0;
- 	rtk_phy_set_page(phy_reg, 0);
-@@ -1109,6 +1143,14 @@ static const struct phy_reg_desc rtd_phy_reg_desc = {
- 	.write = rtk_usb2phy_write,
- };
- 
-+static const struct phy_reg_desc rtl9607_phy_reg_desc = {
-+	.vstatus_offset = 0xc,
-+	.vstatus_busy = PHY_9607_VSTS_BUSY,
-+	.new_reg_req = PHY_9607_NEW_REG_REQ,
-+	.read = rtk_usb2phy_read_be,
-+	.write = rtk_usb2phy_write_be,
-+};
-+
- static const struct phy_cfg rtd1295_phy_cfg = {
- 	.page0_size = MAX_USB_PHY_PAGE0_DATA_SIZE,
- 	.page0 = { [0] = {0xe0, 0x90},
-@@ -1342,6 +1384,29 @@ static const struct phy_cfg rtd1315e_phy_cfg = {
- 	.reg_desc = &rtd_phy_reg_desc,
- };
- 
-+static const struct phy_cfg rtl9607_phy_cfg = {
-+	.page0_size = MAX_USB_PHY_PAGE0_DATA_SIZE,
-+	.page0 = { [0] = {0xe0, 0x95},
-+		   [4] = {0xe4, 0x6a},
-+		  [12] = {0xf3, 0x31}, },
-+	.page1_size = MAX_USB_PHY_PAGE1_DATA_SIZE,
-+	.page1 = { [0] = {0xe0, 0x26}, },
-+	.page2_size = MAX_USB_PHY_PAGE2_DATA_SIZE,
-+	.page2 = { [7] = {0xe7, 0x33}, },
-+	.num_phy = 1,
-+	.check_efuse_version = CHECK_EFUSE_V2,
-+	.efuse_dc_driving_rate = EFUS_USB_DC_CAL_RATE,
-+	.dc_driving_mask = 0x1f,
-+	.efuse_dc_disconnect_rate = EFUS_USB_DC_DIS_RATE,
-+	.dc_disconnect_mask = 0xf,
-+	.usb_dc_disconnect_at_page0 = true,
-+	.do_toggle = true,
-+	.driving_updated_for_dev_dis = 0x8,
-+	.is_double_sensitivity_mode = true,
-+	.reg_desc = &rtl9607_phy_reg_desc,
-+	.force_host_disconnect = true,
-+};
-+
- static const struct of_device_id usbphy_rtk_dt_match[] = {
- 	{ .compatible = "realtek,rtd1295-usb2phy", .data = &rtd1295_phy_cfg },
- 	{ .compatible = "realtek,rtd1312c-usb2phy", .data = &rtd1312c_phy_cfg },
-@@ -1352,6 +1417,7 @@ static const struct of_device_id usbphy_rtk_dt_match[] = {
- 	{ .compatible = "realtek,rtd1395-usb2phy-2port", .data = &rtd1395_phy_cfg_2port },
- 	{ .compatible = "realtek,rtd1619-usb2phy", .data = &rtd1619_phy_cfg },
- 	{ .compatible = "realtek,rtd1619b-usb2phy", .data = &rtd1619b_phy_cfg },
-+	{ .compatible = "realtek,rtl9607-usb2phy", .data = &rtl9607_phy_cfg },
- 	{},
- };
- MODULE_DEVICE_TABLE(of, usbphy_rtk_dt_match);
+-endif # ARCH_REALTEK || COMPILE_TEST
++endif # ARCH_REALTEK || MACH_REALTEK_RTL || COMPILE_TEST
 -- 
 2.55.0
 
