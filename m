@@ -4,73 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42AA9C5AD5A
-	for <linux-phy@archiver.kernel.org>; Sat, 15 Aug 2026 04:20:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 665AEC5DF6D
+	for <linux-phy@archiver.kernel.org>; Sat, 15 Aug 2026 09:14:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+jlCL80LAZz0AbVei+5pWJrXr/ZcjJ9wPyHC4nDzDOA=; b=WYOsl7Mx2xDTI5
-	CGysIJ4wq08oQlfAz4tzkltF31RW/Aw0IeIQaowNmpF92LQ7yPA+oOQq/G0K3eaC8TUPKVW0iYH0e
-	l21AOu7Z1rC/aih9dfddSqcImrhNxg8najkzMlGikIyNh5bXi0qWIiLbDsSj4pftOi6tMTjSOtvOG
-	bC5HHWBO2xlOPUxhiycPK9AaDBVlkdzXgXW32gjFK12HVTanNSEuMWGJl2/QIJ+H2HRdqRY3O8Z9P
-	dhCJXLli9nq9PJIKa7jhEXIz1HDFkl1EI8i+9V2cfw5PmnWTwsnm+nzPnVsYLSI3ozkYqjGmiud1j
-	aKQCukZIEI0FoK2PtjZA==;
+	List-Owner; bh=msaKiRLBcKdENt6BoUHpk55C2C0n75Qo1nOH4wsGLuQ=; b=SrCgf49EPHLZv/
+	KZnEgTlN95HKeVw5ixDThug0D8W36kUCWytoAAA3fiiH6wlKBEZskHE830LcE92H2IZS8otGX90TD
+	2of63Wvh8+sEQYFSbprca2oAZOBdFfiLexSKZ/PZ2QSMRR4us/DpqMxBAw5q/yS80qSPgs+GElTdz
+	mRTZHIlq3c+s+kDYVDUzi6MQXrZF4ZK5B+IJEnqrcfhHrBem13oRm3qHqEY5wlWQ/n3/lb+nH4Hcr
+	TpDVm/YGFpyZO5F0EYlQMOAPPnlohgMzCyr6Gx8RGHg/bbZDAXCoffF+jJswZVH8cW/Fi29cIevSh
+	0oKJ/Be2bfds7xGpViJQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wv5sp-00000003Tkl-0WZy;
-	Sat, 15 Aug 2026 04:20:35 +0000
-Received: from smtp81.cstnet.cn ([159.226.251.81] helo=cstnet.cn)
+	id 1wvATX-00000003hKY-3Kmo;
+	Sat, 15 Aug 2026 09:14:47 +0000
+Received: from layka.disroot.org ([178.21.23.139])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wv5sk-00000003Tjw-0PvH
+	id 1wvATU-00000003hJf-2rpi
 	for linux-phy@lists.infradead.org;
-	Sat, 15 Aug 2026 04:20:33 +0000
-Received: from edelgard.fodlan.icenowy.me (unknown [120.85.96.94])
-	by APP-03 (Coremail) with SMTP id rQCowABHUD4E6X9qdn5xBQ--.61198S2;
-	Sat, 15 Aug 2026 12:20:20 +0800 (CST)
-Message-ID: <4a9f42be8c540feaf3e9b7c63e15ac2cf9548941.camel@iscas.ac.cn>
-Subject: Re: [PATCH v2 0/2] phy: add support for TH1520 USB PHY
-From: Icenowy Zheng <zhengxingda@iscas.ac.cn>
-To: Drew Fustini <fustini@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
- <neil.armstrong@linaro.org>,  Rob Herring <robh@kernel.org>, Krzysztof
- Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,  Wei Fu
- <wefu@redhat.com>, Drew Fustini <dfustini@tenstorrent.com>, Jisheng Zhang	
- <jszhang@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, Han Gao <rabenda.cn@gmail.com>, Yao Zi	
- <ziyao@disroot.org>
-Date: Sat, 15 Aug 2026 12:20:19 +0800
-In-Reply-To: <an-tu75UOjleqcA7@thelio>
-References: <20260723084316.3573714-1-zhengxingda@iscas.ac.cn>
-	 <an-tu75UOjleqcA7@thelio>
-User-Agent: Evolution 3.58.3 
+	Sat, 15 Aug 2026 09:14:45 +0000
+Received: from mail01.layka.lan (localhost [127.0.0.1])
+	by disroot.org (Postfix) with ESMTP id 53F92882CB;
+	Sat, 15 Aug 2026 11:14:41 +0200 (CEST)
+X-Virus-Scanned: SPAM Filter at disroot.org
+Received: from layka.disroot.org ([127.0.0.1])
+ by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
+ id NKqDhHViGYTz; Sat, 15 Aug 2026 11:14:40 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
+	t=1786785280; bh=fy1Yhltaa1Q3i0THgRe8+wftvG07v8/paH+tXjFdftg=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References;
+	b=dTiyPCvuNjw2mJ3U9xgC06JwyMT8JPvWV1j6AYiXXBuDKCsjEhtLGw5QAqh9xXMzM
+	 3Sv/cSph5wZLLZ7DwWjd2Akjg81vdayQS47TGT1PRLtS5Fv/VdwJyRDSK2RFtrZfwJ
+	 wx0x09BCLGgwMk77tnMmJ96Pqblyv6t3tCn87gPX77SMWhEbnO1bJ+HP4nQrNs2q9W
+	 r80nLwmuetmEsL9K9HyRN7DRO9+FA97B5ojw3oKEbIIk8zmzdDKUpedmZMOzQ9d26k
+	 wN1yG6wbG4Ff4DYEDgKv+FNfecV8hzV+znMw0+PhMH7iykVxsFxC9/N1WNN324DB8I
+	 l6kjjpPVx9llg==
+From: Rustam Adilov <adilov@disroot.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Stanley Chang <stanley_chang@realtek.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Cc: Rustam Adilov <adilov@disroot.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
+	Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+Subject: [PATCH v7 3/6] dt-bindings: phy: realtek,usb2phy.yaml: extend for resets and RTL9607C support
+Date: Sat, 15 Aug 2026 14:13:37 +0500
+Message-ID: <20260815091340.26910-4-adilov@disroot.org>
+In-Reply-To: <20260815091340.26910-1-adilov@disroot.org>
+References: <20260815091340.26910-1-adilov@disroot.org>
 MIME-Version: 1.0
-X-CM-TRANSID: rQCowABHUD4E6X9qdn5xBQ--.61198S2
-X-Coremail-Antispam: 1UD129KBjvJXoW7WF1fKw4DCry7WFy7GrW7Arb_yoW8Gw1Upa
-	yxGFyrJFyDKrn3Gr1xX3WUCry5tr18J345Kr17W3W5XFyUGr1jqa4DWryj9rWUJr48Xr17
-	trn8JFy7uF1jywUanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDU0xBIdaVrnRJUUUPEb7Iv0xC_Zr1lb4IE77IF4wAFF20E14v26r4j6ryUM7CY07I2
-	0VC2zVCF04k26cxKx2IYs7xG6rWj6s0DM7CIcVAFz4kK6r1j6r18M28lY4IEw2IIxxk0rw
-	A2F7IY1VAKz4vEj48ve4kI8wA2z4x0Y4vE2Ix0cI8IcVAFwI0_JFI_Gr1l84ACjcxK6xII
-	jxv20xvEc7CjxVAFwI0_Gr0_Cr1l84ACjcxK6I8E87Iv67AKxVW8Jr0_Cr1UM28EF7xvwV
-	C2z280aVCY1x0267AKxVW8Jr0_Cr1UM2AIxVAIcxkEcVAq07x20xvEncxIr21l5I8CrVAC
-	Y4xI64kE6c02F40Ex7xfMcIj6xIIjxv20xvE14v26r1j6r18McIj6I8E87Iv67AKxVWUJV
-	W8JwAm72CE4IkC6x0Yz7v_Jr0_Gr1lF7xvr2IY64vIr41lFcxC0VAYjxAxZF0Ew4CEw7xC
-	0wACY4xI67k04243AVC20s07M4IIrI8v6xkF7I0E8cxan2IY04v7MxkF7I0En4kS14v26r
-	1q6r43MxAIw28IcxkI7VAKI48JMxC20s026xCaFVCjc4AY6r1j6r4UMI8I3I0E5I8CrVAF
-	wI0_Jr0_Jr4lx2IqxVCjr7xvwVAFwI0_JrI_JrWlx4CE17CEb7AF67AKxVWUtVW8ZwCIc4
-	0Y0x0EwIxGrwCI42IY6xIIjxv20xvE14v26r1j6r1xMIIF0xvE2Ix0cI8IcVCY1x0267AK
-	xVW8JVWxJwCI42IY6xAIw20EY4v20xvaj40_Jr0_JF4lIxAIcVC2z280aVAFwI0_Jr0_Gr
-	1lIxAIcVC2z280aVCY1x0267AKxVW8JVW8Jr1l6VACY4xI67k04243AbIYCTnIWIevJa73
-	UjIFyTuYvjxUczuAUUUUU
-X-Originating-IP: [120.85.96.94]
-X-CM-SenderInfo: x2kh0wp0lqwv3d6l2u1dvotugofq/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260814_212030_519742_9B09ADFA 
-X-CRM114-Status: GOOD (  11.71  )
+X-CRM114-CacheID: sfid-20260815_021444_858231_B97BC443 
+X-CRM114-Status: UNSURE (   9.39  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,34 +78,101 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-5ZyoIDIwMjYtMDgtMTTkupTnmoQgMTc6MDcgLTA3MDDvvIxEcmV3IEZ1c3RpbmnlhpnpgZPvvJoK
-PiBPbiBUaHUsIEp1bCAyMywgMjAyNiBhdCAwNDo0MzoxNFBNICswODAwLCBJY2Vub3d5IFpoZW5n
-IHdyb3RlOgo+ID4gVGhpcyBwYXRjaHNldCBpcyBzcGxpdHRlZCBmcm9tIHRoZSAiQWRkIFRIMTUy
-MCBVU0Igc3VwcG9ydCIKPiA+IHBhdGNoc2V0LAo+ID4gd2l0aCBvbmx5IHRoZSBQSFkgYmluZGlu
-Zy9kcml2ZXIgcGFydC4KPiA+IAo+ID4gSWNlbm93eSBaaGVuZyAoMik6Cj4gPiDCoCBkdC1iaW5k
-aW5nczogcGh5OiBhZGQgYmluZGluZyBmb3IgVC1IZWFkIFRIMTUyMCBVU0IgUEhZCj4gPiDCoCBw
-aHk6IGFkZCBhIGRyaXZlciBmb3IgVC1IZWFkIFRIMTUyMCBVU0IgUEhZCj4gPiAKPiA+IMKgLi4u
-L2JpbmRpbmdzL3BoeS90aGVhZCx0aDE1MjAtdXNiLXBoeS55YW1swqDCoMKgIHzCoCA3MyArKysr
-KysrCj4gPiDCoGRyaXZlcnMvcGh5L0tjb25maWfCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHzCoMKgIDEgKwo+ID4gwqBkcml2ZXJzL3BoeS9NYWtl
-ZmlsZcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHzC
-oMKgIDEgKwo+ID4gwqBkcml2ZXJzL3BoeS90aGVhZC9LY29uZmlnwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB8wqAgMTEgKysKPiA+IMKgZHJpdmVycy9waHkvdGhlYWQv
-TWFrZWZpbGXCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB8wqDCoCAyICsK
-PiA+IMKgZHJpdmVycy9waHkvdGhlYWQvcGh5LXRoMTUyMC11c2IuY8KgwqDCoMKgwqDCoMKgwqDC
-oMKgwqAgfCAxODAKPiA+ICsrKysrKysrKysrKysrKysrKwo+ID4gwqA2IGZpbGVzIGNoYW5nZWQs
-IDI2OCBpbnNlcnRpb25zKCspCj4gPiDCoGNyZWF0ZSBtb2RlIDEwMDY0NAo+ID4gRG9jdW1lbnRh
-dGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS90aGVhZCx0aDE1MjAtdXNiLXBoeS55YW1sCj4g
-PiDCoGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL3BoeS90aGVhZC9LY29uZmlnCj4gPiDCoGNy
-ZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL3BoeS90aGVhZC9NYWtlZmlsZQo+ID4gwqBjcmVhdGUg
-bW9kZSAxMDA2NDQgZHJpdmVycy9waHkvdGhlYWQvcGh5LXRoMTUyMC11c2IuYwo+ID4gCj4gPiAt
-LSAKPiA+IDIuNTIuMAo+IAo+IEhpLCBhcmUgeW91IHBsYW5uaW5nIHRvIHNlbmQgYW4gdXBkYXRl
-ZCB2ZXJzaW9uPwoKSSBhbSBub3QgcGxhbm5pbmcgYmVmb3JlIGdldHRpbmcgYW55IHJldmlldyBm
-cm9tIFBIWSBtYWludGFpbmVycy4KClRoYW5rcywKSWNlbm93eQoKPiAKPiBUaGFua3MsCj4gRHJl
-dwotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+Add the "realtek,rtl9607-usb2phy" compatible for USB2 PHY on the RTL9607C
+SoC series.
+
+Add a resets property to properties to describe the usb2phy reset line.
+
+In RTL9607C, USB2 PHY reset line is from "IP Enable controller" which is
+multipurpose and handle activating various SoC peripherals.
+
+It is unclear whether RTD SoCs have something similar to that so set
+the resets to false for these devices.
+
+RTL9607C requires the "resets" to be specified so add the corresponding
+if check for the "realtek,rtl9607-usb2phy" compatible.
+
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Acked-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+Signed-off-by: Rustam Adilov <adilov@disroot.org>
+---
+ .../bindings/phy/realtek,usb2phy.yaml         | 25 ++++++++++++++++++-
+ 1 file changed, 24 insertions(+), 1 deletion(-)
+
+diff --git a/Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml b/Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml
+index 9911ada39ee7..7b50833c8e19 100644
+--- a/Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml
++++ b/Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml
+@@ -11,7 +11,8 @@ maintainers:
+   - Stanley Chang <stanley_chang@realtek.com>
+ 
+ description: |
+-  Realtek USB 2.0 PHY support the digital home center (DHC) RTD series SoCs.
++  Realtek USB 2.0 PHY support the digital home center (DHC) RTD and
++  RTL9607C series SoCs.
+   The USB 2.0 PHY driver is designed to support the XHCI controller. The SoCs
+   support multiple XHCI controllers. One PHY device node maps to one XHCI
+   controller.
+@@ -57,6 +58,12 @@ description: |
+   XHCI controller#1 -- usb2phy -- phy#0
+   XHCI controller#2 -- usb2phy -- phy#0
+ 
++  RTL9607C SoCs USB
++  The USB architecture includes OHCI and EHCI controllers.
++  Both of them map to one USB2.0 PHY.
++  OHCI controller#0 -- usb2phy -- phy#0
++  EHCI controller#0 -- usb2phy -- phy#0
++
+ properties:
+   compatible:
+     enum:
+@@ -69,6 +76,7 @@ properties:
+       - realtek,rtd1395-usb2phy-2port
+       - realtek,rtd1619-usb2phy
+       - realtek,rtd1619b-usb2phy
++      - realtek,rtl9607-usb2phy
+ 
+   reg:
+     items:
+@@ -130,6 +138,9 @@ properties:
+     minimum: -8
+     maximum: 8
+ 
++  resets:
++    maxItems: 1
++
+ required:
+   - compatible
+   - reg
+@@ -157,6 +168,18 @@ allOf:
+     then:
+       properties:
+         realtek,driving-level-compensate: false
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - realtek,rtl9607-usb2phy
++    then:
++      required:
++        - resets
++    else:
++      properties:
++        resets: false
+ 
+ additionalProperties: false
+ 
+-- 
+2.55.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
