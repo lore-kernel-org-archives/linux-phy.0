@@ -4,54 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0C21C5CFDB
-	for <linux-phy@archiver.kernel.org>; Sat, 15 Aug 2026 09:29:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF9AEC5CFC1
+	for <linux-phy@archiver.kernel.org>; Sat, 15 Aug 2026 12:16:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W6RdR7++FQxC8Phj5XOOselDxEBjmIshX4ihMdRqVTE=; b=kZbzVQc1W2I79Q
-	xvguWLvNTfRy1VumrOHMq9TWw2dWuI7/JK7Lss1r//7AS9j7kPZrNa/YEqE32VFjU7BI+r6X+GiXf
-	ydzzad4leRjQfttVX+uL9oJ2bus7+6jVHknO9zKOtw1QwRzlwKXKdrz3CpeL/wjK9/bL6Jv/Mqwwv
-	4CykBzvlr5V6zXnkttvsxYAGqdO8jq7b33XlCTjLp4mnGM6xK6AWgJ5LxHYXw8adH0ShgiIagUYdV
-	rv0rlyHjTrqz3+v8LVp203b/HVg1KxMtnMMEdf4awIzxQmgnC23iTN7BleqbFpHuEFRjQWl6XQO2x
-	q/FuOCfhfqxS0v37IoPQ==;
+	List-Owner; bh=PAM+0FIP0YoAceFGcg3eNpQdYjHno01P9b/L5Sbdqr0=; b=TgOiOOB1pnwBmB
+	60A+3WKGkgC3l+HX7XDpJP2nJovArnmHLgs6LjlDUfeQ/8YyiX4gccTqGL1RGmVbBl19z3mWWVJb/
+	2NIyIE7NeQazvTykKrc5MD5RRUlQRz2w7AWMNnqlo06+hCSqt4PgtjUNC8Yr/wjrlG6FNpj12yinR
+	ckl/2G7+oIWTzeOQPDr0QYnaUqJ3uJd61CrnHlqiNr+/zDyMhbQVasGmX8fS3AywrPT05ixydOcfn
+	EglmE/dp9zs/VVB/0fMmQOTs36v81ClZayrOT48byyqg+tK8WCL5i3a65h7TIGTjyq0d26qdSrlU/
+	ypWjwx9FxbaAMqGBqaAA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wvAiD-00000003i3q-2B0P;
-	Sat, 15 Aug 2026 09:29:57 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wvDJT-00000003o8I-401z;
+	Sat, 15 Aug 2026 12:16:35 +0000
+Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wvAiB-00000003i3k-1v8p
+	id 1wvDJR-00000003o6m-2Ony
 	for linux-phy@lists.infradead.org;
-	Sat, 15 Aug 2026 09:29:55 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id C1D7F60008;
-	Sat, 15 Aug 2026 09:29:54 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E61ED1F000E9;
-	Sat, 15 Aug 2026 09:29:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786786194;
-	bh=yxcmxBndzvKDGTFViWT6R+/5sUpaWul9J56V9sHIJck=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=kDbSp7dtycgOgBWpuG9GwZ0ACsGk0MfRmok2AYXCdC+vcrN28C3TgY0Q2nNvDKSJK
-	 bifxKP6l1+PmOTAPJt6mImEyfBfvH6xv0Ra6ZqwWadjH/cLpFnOGIw3INfE68K/kIA
-	 AYtBb7lnDKFlUGkpliS4A/+8lCdgGk15bsBa+Na1r+y/WRodUGuUXQQIK0fJyu6nqk
-	 sLLcoZi4MZ9uPAL3MUG6V4f2zZZGn57rPcY+UkebmZlEtEhbpa6vF5xA7kD6csdjiW
-	 qXGshdNjVYVR3oPkD+wzvIbfWtMi3ts4kKZYlPskK5tiKodaOsT0KuO0tZleReNcAo
-	 EV4pO6EChB+ow==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v7 5/6] phy: realtek: usb2: add support for RTL9607C
- USB2 PHY
-To: "Rustam Adilov" <adilov@disroot.org>
-Cc: neil.armstrong@linaro.org, linux-phy@lists.infradead.org, olteanv@gmail.com, robh@kernel.org, conor+dt@kernel.org, devicetree@vger.kernel.org, vkoul@kernel.org
-In-Reply-To: <20260815091340.26910-6-adilov@disroot.org>
-References: <20260815091340.26910-1-adilov@disroot.org>
- <20260815091340.26910-6-adilov@disroot.org>
-Date: Sat, 15 Aug 2026 09:29:53 +0000
-Message-Id: <20260815092953.E61ED1F000E9@smtp.kernel.org>
+	Sat, 15 Aug 2026 12:16:34 +0000
+Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-4954c08a7c8so1576775e9.3
+        for <linux-phy@lists.infradead.org>; Sat, 15 Aug 2026 05:16:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1786796191; x=1787400991; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=omHTfKpsU+DWgQY2twAMRzTMu3eHiMgDqoPsISGHyO0=;
+        b=S5U3iMPD7jMv9K4XgktVc/Hc8O2yj/ajZG7T45jkYNgtqkupFtLn3Pe11pID+FVeAF
+         4onmLgZJn3aR6V88QFuI10wRaKusMuMNcBX32CqjdqElFm85owSOSPRom3S3n1k0HOVT
+         AQZTQiMVE2JUusnxY+l3zEjm9+2r07+nFOTbn0w4mPFHt5zUCY8gIhlUSb7rJWSpBxtF
+         Q2XOhW2W9wqs7/joDL/bUFcGkswlq+SOP3hf+NhNRizsm45Dly4bXdhzvaA4p+1XiYyK
+         dM75/7D9Spg2CC7PFwe8LNqNQlA4+4N1tCEwktKaCt2b864KDhz1DnJoEHBnYZKBig5/
+         STEg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1786796191; x=1787400991;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=omHTfKpsU+DWgQY2twAMRzTMu3eHiMgDqoPsISGHyO0=;
+        b=cubQ6FIB7vUlcpTWX0hmlHDv4JKnw9iRy4/qp8fjfbYQ4B0bD9UdHxU5t9da3lyEJN
+         Ptlc6JbKVoZlAKl++5D0s/m/OQOn472WrEiCyjh7l8lcOMUk/tV6adf6jVTP0TKV841j
+         XxdQJcqV25hXNni61dbMioFv0yFNki+jtvVioW38ZotMP/ksMy6WUe9/T0XjlY6V9zwE
+         UjCscZJlGS0nb8RvjMy+P/ri7tUI+XpkSMceQ61OauKNTrDS5X3MPJ4dj3INIH8DzyoY
+         l/kw4xYUJsBN8yaSLPpmIc5BKjiioRsWhQ8AAuOcPRB36y2Wa+gPFhY6ZJecVMezSnjE
+         v37Q==
+X-Forwarded-Encrypted: i=1; AHgh+Rolkxrd6/5CIXF88/9ZKF3OpcefsxqXn1JHtZGVdtdGYxv5bMwJCQCbTlp476KVt6mfUgiEuDLLNoI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzFDwfn8ZxCI8FjrATvpsI8QOru0rdG/E9aiHcR5sZLTEslsVcl
+	NhdjRLzrgpBPUCpiN5UPBKaRNOphZFWqnFPUi039XUhVe5tSeyyTzp/z
+X-Gm-Gg: AR+sD13itgDHdr92AoXvw7IggLVjZGahHw469HHZZMrAXnl6dTkhLIHnEu0J8qOjPhz
+	cM2wBS8E6Z2Wdmq18lNJqH4zuqd/PWQYvfYwb1v2bON5w3ui7cou7AKGtTaFmETgVQ+PPfyaGUh
+	u5UUlcz2JDQQazjHBi3q9xR690bRy/9XCqlt75P8Su6Nl3xkzeGdjSXoVvqIn1RYpQrf3+qLWno
+	Rh6mNVDTxQZ74c+YkjHzFX2JP09b6W3qgEdVU4p6fJXX2E/Yue/26nwmF6L6miXJUGYteD6qhQn
+	H5psicYKhCU2Urhr0vySSUYX1MowlwekxPmAi2Pse8G/fxLGMrRjorCEBbx9rSSMcT3b9fRuqm7
+	2h2WFMSs1KbqlZDPrDoASZwdmHw7q/ohPw7URXg28yIfxudUufYPPbTyU8lcPecHoz8oSEmbc7M
+	wzBbiOaJjXQX5mZTvZEX+3nX3B9fkhrAIKvf1kkl27S0SPo2Gt7L3C39r95YwlpfNDsB+Oj1EEg
+	0HaSmXLxoFTdF709G0B/BswR82IBMu30Om0vgERtnPXQavw+bhUYqeVriGqdLqT9l4R
+X-Received: by 2002:a05:600c:630c:b0:495:7561:a9cc with SMTP id 5b1f17b1804b1-499879b1c50mr91017745e9.4.1786796191200;
+        Sat, 15 Aug 2026 05:16:31 -0700 (PDT)
+Received: from OrangePi5-Plus.BB-HOME (20014C4E1B932600BF05B505F15B0ECC.dsl.pool.telekom.hu. [2001:4c4e:1b93:2600:bf05:b505:f15b:ecc])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-499899afa63sm113425555e9.1.2026.08.15.05.16.29
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 15 Aug 2026 05:16:30 -0700 (PDT)
+From: Igor Paunovic <royalnet026@gmail.com>
+To: Sebastian Reichel <sebastian.reichel@collabora.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>
+Cc: Igor Paunovic <royalnet026@gmail.com>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Dmitry Baryshkov <lumag@kernel.org>,
+	Yubing Zhang <yubing.zhang@rock-chips.com>,
+	Alexey Charkov <alchark@flipper.net>,
+	William Wu <william.wu@rock-chips.com>,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-usb@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	kernel@collabora.com
+Subject: Re: [PATCH v14 00/38] phy: rockchip: usbdp: Clean up the mess
+Date: Sat, 15 Aug 2026 14:16:01 +0200
+Message-ID: <20260815121608.64818-1-royalnet026@gmail.com>
+X-Mailer: git-send-email 2.53.0
+In-Reply-To: <20260813-rockchip-usbdp-cleanup-v14-0-b5ad9c68fa11@collabora.com>
+References: <20260813-rockchip-usbdp-cleanup-v14-0-b5ad9c68fa11@collabora.com>
+MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260815_051633_684690_D909CD90 
+X-CRM114-Status: GOOD (  25.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,102 +117,183 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-NiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpOZXcgaXNzdWVzOgotIFtNZWRpdW1d
-IFRoZSBydGw5NjA3X3BoeV9jZmcgc3RydWN0dXJlIG9taXRzIHRoZSAuY2hlY2tfZWZ1c2UgZmxh
-ZywgY2F1c2luZyBlRnVzZSBwYXJhbWV0ZXJzIHRvIGJlIGlnbm9yZWQuCi0gW01lZGl1bV0gVGhl
-IHBhZ2UwIHJlZ2lzdGVyIGNvbmZpZ3VyYXRpb24gc3RvcmVzIGFkZHJlc3MgMHhmMyBhdCB0aGUg
-d3JvbmcgaW5kZXgsIGNvcnJ1cHRpbmcgZGVidWdmcyBvdXRwdXQuCgpQcmUtZXhpc3RpbmcgaXNz
-dWVzOgotIFtIaWdoXSBVbmNoZWNrZWQgcmV0dXJuIHZhbHVlIGZyb20gb2ZfaW9tYXAoKSBsZWFk
-cyB0byBhIE5VTEwgcG9pbnRlciBkZXJlZmVyZW5jZS4KLSBbSGlnaF0gUG9pbnRlciBhcml0aG1l
-dGljIG9uIHZvaWQgX19pb21lbSAqIGNhdXNlcyB1bmFsaWduZWQgZGV2aWNlIHJlZ2lzdGVyIGFj
-Y2Vzc2VzLgotIFtIaWdoXSBTaWduZWQgY2hhciBpbnRlZ2VyIHByb21vdGlvbiBjb3JydXB0cyBy
-ZWdpc3RlciB3cml0ZXMgb24gYXJjaGl0ZWN0dXJlcyB3aXRoIHNpZ25lZCBjaGFycyAoZS5nLiwg
-TUlQUykuCi0gW0hpZ2hdIFNpbGVudCBmYWlsdXJlIHdoZW4gZG9fcnRrX3BoeV9pbml0KCkgZmFp
-bHMgZm9yIG11bHRpLXBvcnQgU29Dcy4KLS0KCi0tLSBQYXRjaCBbNV06IFtQQVRDSCB2NyA1LzZd
-IHBoeTogcmVhbHRlazogdXNiMjogYWRkIHN1cHBvcnQgZm9yIFJUTDk2MDdDIFVTQjIgUEhZIC0t
-LQpjb21taXQgNmE1YjRlMjIzNTMxNGQ0NzMwY2NkMTQ3YmUxMjE0OGIxOWFmYzk4NApBdXRob3I6
-IFJ1c3RhbSBBZGlsb3YgPGFkaWxvdkBkaXNyb290Lm9yZz4KCiAgICBwaHk6IHJlYWx0ZWs6IHVz
-YjI6IGFkZCBzdXBwb3J0IGZvciBSVEw5NjA3QyBVU0IyIFBIWQogICAgCiAgICBBZGQgc3VwcG9y
-dCBmb3IgdGhlIHVzYjIgcGh5IG9mIFJUTDk2MDdDIHNlcmllcyBiYXNlZCBTb0NzLgogICAgQWRk
-IHRoZSBtYWNyb3MgYW5kIHBoeSBjb25maWcgc3RydWN0IGZvciBydGw5NjA3LgoKPiBkaWZmIC0t
-Z2l0IGEvZHJpdmVycy9waHkvcmVhbHRlay9waHktcnRrLXVzYjIuYyBiL2RyaXZlcnMvcGh5L3Jl
-YWx0ZWsvcGh5LXJ0ay11c2IyLmMKPiBpbmRleCAyZGRhZDdiZTczNTM0Li45OTBjZWNhMzdlZjhh
-IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L3JlYWx0ZWsvcGh5LXJ0ay11c2IyLmMKPiArKysg
-Yi9kcml2ZXJzL3BoeS9yZWFsdGVrL3BoeS1ydGstdXNiMi5jCgpbIC4uLiBdCgo+IEBAIC0xMzQy
-LDYgKzEzODQsMjkgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBwaHlfY2ZnIHJ0ZDEzMTVlX3BoeV9j
-ZmcgPSB7Cj4gIAkucmVnX2Rlc2MgPSAmcnRkX3BoeV9yZWdfZGVzYywKPiAgfTsKPiAgCj4gK3N0
-YXRpYyBjb25zdCBzdHJ1Y3QgcGh5X2NmZyBydGw5NjA3X3BoeV9jZmcgPSB7Cj4gKwkucGFnZTBf
-c2l6ZSA9IE1BWF9VU0JfUEhZX1BBR0UwX0RBVEFfU0laRSwKPiArCS5wYWdlMCA9IHsgWzBdID0g
-ezB4ZTAsIDB4OTV9LAoKW1NldmVyaXR5OiBIaWdoXQpUaGlzIGlzIGEgcHJlLWV4aXN0aW5nIGlz
-c3VlLCBidXQgZG9lcyB3cml0aW5nIDB4OTUgaGVyZSBjb3JydXB0IHRoZSByZWdpc3RlcgpvbiBh
-cmNoaXRlY3R1cmVzIGxpa2UgTUlQUz8KCnJ0a19waHlfd3JpdGUoKSB0YWtlcyBkYXRhIGFzIGEg
-c2lnbmVkIGNoYXI6Cgpkcml2ZXJzL3BoeS9yZWFsdGVrL3BoeS1ydGstdXNiMi5jOnJ0a19waHlf
-d3JpdGUoKSB7Ci4uLgoJcmVnX2Rlc2MtPndyaXRlKCh1MzIpZGF0YSA8PCBzaGlmdF9iaXRzLAou
-Li4KfQoKT24gYXJjaGl0ZWN0dXJlcyB3aGVyZSBjaGFyIGlzIHNpZ25lZCBieSBkZWZhdWx0LCBh
-IHZhbHVlIG9mIDB4OTUgaXMKaW50ZXJwcmV0ZWQgYXMgYSBuZWdhdGl2ZSBudW1iZXIgKC0xMDcp
-LiBXaGVuIGNhc3QgdG8gdTMyLCBpdCB1bmRlcmdvZXMgc2lnbgpleHRlbnNpb24gdG8gMHhGRkZG
-RkY5NSwgYW5kIGFmdGVyIHNoaWZ0aW5nLCBpdCBjYW4gY2xvYmJlciB0aGUgdXBwZXIgYml0cwpv
-ZiB0aGUgc2hhcmVkIHJlZ193cmFwX3ZzdGF0dXMgcmVnaXN0ZXIuCgo+ICsJCSAgIFs0XSA9IHsw
-eGU0LCAweDZhfSwKPiArCQkgIFsxMl0gPSB7MHhmMywgMHgzMX0sIH0sCgpbU2V2ZXJpdHk6IE1l
-ZGl1bV0KV2lsbCB0aGlzIG1hcCB0byB0aGUgY29ycmVjdCBkZWJ1Z2ZzIG91dHB1dD8KCkFkZHJl
-c3MgMHhmMyBtYXRoZW1hdGljYWxseSBtYXBzIHRvIGFycmF5IGluZGV4IDExIHZpYSB0aGUgc3Ry
-aWN0IG1hcHBpbmcKZm9ybXVsYSBpbiBwYWdlX2FkZHJfdG9fYXJyYXlfaW5kZXgoKS4gQmVjYXVz
-ZSBpdCBpcyBwbGFjZWQgYXQgaW5kZXggMTIKaGVyZSwgd2hlbiBydGtfdXNiMl9wYXJhbWV0ZXJf
-c2hvdygpIGNvbXB1dGVzIHRoZSB0YXJnZXQgcmVhZCBhZGRyZXNzCmR5bmFtaWNhbGx5LCBpdCB3
-aWxsIHJlYWQgZnJvbSAweGY0IGFuZCBkaXNwbGF5IGl0IGFsb25nc2lkZSB0aGUgZXhwZWN0ZWQK
-MHhmMyBkYXRhLgoKPiArCS5wYWdlMV9zaXplID0gTUFYX1VTQl9QSFlfUEFHRTFfREFUQV9TSVpF
-LAo+ICsJLnBhZ2UxID0geyBbMF0gPSB7MHhlMCwgMHgyNn0sIH0sCj4gKwkucGFnZTJfc2l6ZSA9
-IE1BWF9VU0JfUEhZX1BBR0UyX0RBVEFfU0laRSwKPiArCS5wYWdlMiA9IHsgWzddID0gezB4ZTcs
-IDB4MzN9LCB9LAo+ICsJLm51bV9waHkgPSAxLAo+ICsJLmNoZWNrX2VmdXNlX3ZlcnNpb24gPSBD
-SEVDS19FRlVTRV9WMiwKCltTZXZlcml0eTogTWVkaXVtXQpJcyB0aGUgLmNoZWNrX2VmdXNlIGZs
-YWcgbWlzc2luZyBoZXJlPwoKV2l0aG91dCAuY2hlY2tfZWZ1c2UgPSB0cnVlLCB0aGUgZUZ1c2Ug
-cGFyYW1ldGVycyBsaWtlIGNoZWNrX2VmdXNlX3ZlcnNpb24KYW5kIGVmdXNlX2RjX2RyaXZpbmdf
-cmF0ZSBzcGVjaWZpZWQgaW4gdGhpcyBzdHJ1Y3R1cmUgYXBwZWFyIHRvIGJlIGlnbm9yZWQKYnkg
-Z2V0X3BoeV9kYXRhX2J5X2VmdXNlKCksIGxlYXZpbmcgdGhlIGhhcmR3YXJlIHVuY2FsaWJyYXRl
-ZC4KCj4gKwkuZWZ1c2VfZGNfZHJpdmluZ19yYXRlID0gRUZVU19VU0JfRENfQ0FMX1JBVEUsCj4g
-KwkuZGNfZHJpdmluZ19tYXNrID0gMHgxZiwKPiArCS5lZnVzZV9kY19kaXNjb25uZWN0X3JhdGUg
-PSBFRlVTX1VTQl9EQ19ESVNfUkFURSwKPiArCS5kY19kaXNjb25uZWN0X21hc2sgPSAweGYsCj4g
-KwkudXNiX2RjX2Rpc2Nvbm5lY3RfYXRfcGFnZTAgPSB0cnVlLAo+ICsJLmRvX3RvZ2dsZSA9IHRy
-dWUsCj4gKwkuZHJpdmluZ191cGRhdGVkX2Zvcl9kZXZfZGlzID0gMHg4LAo+ICsJLmlzX2RvdWJs
-ZV9zZW5zaXRpdml0eV9tb2RlID0gdHJ1ZSwKPiArCS5yZWdfZGVzYyA9ICZydGw5NjA3X3BoeV9y
-ZWdfZGVzYywKPiArCS5mb3JjZV9ob3N0X2Rpc2Nvbm5lY3QgPSB0cnVlLAo+ICt9Owo+ICsKClsg
-Li4uIF0KCltTZXZlcml0eTogSGlnaF0KVGhpcyBpc24ndCBhIGJ1ZyBpbnRyb2R1Y2VkIGJ5IHRo
-aXMgcGF0Y2gsIGJ1dCBsb29raW5nIGF0IHRoZSBleGlzdGluZwpwYXJzZV9waHlfZGF0YSgpIGZ1
-bmN0aW9uOgoKZHJpdmVycy9waHkvcmVhbHRlay9waHktcnRrLXVzYjIuYzpwYXJzZV9waHlfZGF0
-YSgpIHsKLi4uCglwaHlfcGFyYW1ldGVyLT5waHlfcmVnLnJlZ193cmFwX3ZzdGF0dXMgPSBvZl9p
-b21hcChucCwgMCk7Ci4uLgp9CgpEb2VzIHRoaXMgY29kZSBkZXJlZmVyZW5jZSBhIE5VTEwgcG9p
-bnRlciBkdXJpbmcgZGV2aWNlIHByb2JlIGlmIHRoZSBkZXZpY2UKdHJlZSBsYWNrcyB0aGUgcmVx
-dWlyZWQgcmVnIHByb3BlcnRpZXM/CgpUaGUgcmV0dXJuIHZhbHVlcyBmcm9tIG9mX2lvbWFwKCkg
-YXJlIGFzc2lnbmVkIGFuZCBzdWJzZXF1ZW50bHkgZGVyZWZlcmVuY2VkCndpdGhvdXQgYW55IHZh
-bGlkYXRpb24uCgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgaXMgYSBwcmUtZXhpc3RpbmcgaXNzdWUs
-IGJ1dCBkb2VzIGFkZGluZyBpbmRleCB0byB0aGUgb2ZfaW9tYXAoKSByZXN1bHQKY2F1c2UgdW5h
-bGlnbmVkIGRldmljZSByZWdpc3RlciBhY2Nlc3Nlcz8KCkxvb2tpbmcgYXQgdGhlIGV4aXN0aW5n
-IHBhcnNlX3BoeV9kYXRhKCkgZnVuY3Rpb246Cgpkcml2ZXJzL3BoeS9yZWFsdGVrL3BoeS1ydGst
-dXNiMi5jOnBhcnNlX3BoeV9kYXRhKCkgewouLi4KCXBoeV9wYXJhbWV0ZXItPnBoeV9yZWcucmVn
-X2d1c2IycGh5YWNjMCA9IG9mX2lvbWFwKG5wLCAxKSArIGluZGV4OwouLi4KfQoKU2luY2Ugb2Zf
-aW9tYXAoKSByZXR1cm5zIHZvaWQgX19pb21lbSAqLCBHQ0MgdHJlYXRzIHRoZSBwb2ludGVyIGFy
-aXRobWV0aWMKYXMgMS1ieXRlIGVsZW1lbnRzLiBGb3IgbXVsdGktcG9ydCBQSFlzIHdoZXJlIGlu
-ZGV4ID4gMCwgdGhpcyBhZGRzIGV4YWN0bHkKMSBieXRlIHRvIHRoZSBiYXNlIGFkZHJlc3MsIHdo
-aWNoIHdpbGwgdHJpZ2dlciBhbGlnbm1lbnQgZXhjZXB0aW9ucyBkdXJpbmcKc3Vic2VxdWVudCAz
-Mi1iaXQgd3JpdGVsKCkgY2FsbHMgb24gYXJjaGl0ZWN0dXJlcyBsaWtlIEFSTTY0LgoKW1NldmVy
-aXR5OiBIaWdoXQpUaGlzIGlzIGEgcHJlLWV4aXN0aW5nIGlzc3VlLCBidXQgZG9lcyB0aGUgaW5p
-dGlhbGl6YXRpb24gbG9vcCBtYXNrIGVycm9ycwpmb3IgbXVsdGktcG9ydCBTb0NzPwoKTG9va2lu
-ZyBhdCB0aGUgZXhpc3RpbmcgcnRrX3BoeV9pbml0KCkgZnVuY3Rpb246Cgpkcml2ZXJzL3BoeS9y
-ZWFsdGVrL3BoeS1ydGstdXNiMi5jOnJ0a19waHlfaW5pdCgpIHsKLi4uCglmb3IgKGkgPSAwOyBp
-IDwgcnRrX3BoeS0+bnVtX3BoeTsgaSsrKQoJCXJldCA9IGRvX3J0a19waHlfaW5pdChydGtfcGh5
-LCBpKTsKLi4uCn0KCklmIGRvX3J0a19waHlfaW5pdCgpIGZhaWxzIGZvciBhbnkgcG9ydCBleGNl
-cHQgdGhlIGxhc3Qgb25lLCByZXQgaXMKb3ZlcndyaXR0ZW4gYnkgdGhlIHJlc3VsdCBvZiB0aGUg
-c3Vic2VxdWVudCBQSFkncyBpbml0aWFsaXphdGlvbiwgc2lsZW50bHkKaWdub3JpbmcgZWFybGll
-ciBmYWlsdXJlcyB3aGlsZSBpbmNvcnJlY3RseSByZXBvcnRpbmcgcHJvYmUgc3VjY2Vzcy4KCi0t
-IApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAy
-NjA4MTUwOTEzNDAuMjY5MTAtMS1hZGlsb3ZAZGlzcm9vdC5vcmc/cGFydD01CgotLSAKbGludXgt
-cGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+Hi Sebastian,
+
+I retested v14 on my Orange Pi 5 Plus, this time covering the phy-core
+notifier patch and the new dwc3 glue patches (28/38-31/38), which do not
+carry my tag yet.
+
+Test kernel: 7.2.0-rc7, built from your rockchip-devel branch at
+ea51774c5c42 ("usb: typec: mux: initialize mux switch array"), which
+already contains the whole v14 series (I checked that 1/38 and 28/38-32/38
+are in that history, plus all 32 "phy: rockchip: usbdp:" commits are
+ancestors of it).
+
+On top of that base I carry 50 local commits - display, GPU, media and
+platform work. None of them touch drivers/usb/, drivers/usb/typec/ or
+phy-rockchip-usbdp.c, but two are worth naming so you know exactly what
+was under test:
+
+  - drivers/phy/rockchip/phy-rockchip-snps-pcie3.c: a one-line fix to the
+    PCIe combo PHY SRAM-init check. Unrelated to this series.
+
+  - arch/arm64/boot/dts/rockchip/rk3588-orangepi-5-plus.dts: in mainline
+    this board still has the old single-"port" graph for usbdp_phy0 and no
+    altmodes node on the usb-c-connector, so there is no DP alt mode to
+    exercise at all. I carry a local DT patch that converts usbdp_phy0 to
+    the four-port "ports" graph and usb_host0_xhci to the two-port graph
+    your bindings describe, and adds an altmodes/displayport node
+    (svid 0xff01) to the connector. That DT change is mine, it is not in
+    mainline and not part of v14 - so everything below is your v14 code,
+    unmodified, driven by that DT.
+
+The USB-C link runs through an Epico EC65 "UltraLink 8K/60Hz HDMI to
+USB-C" cable - an active DP alt-mode to HDMI converter (GsCooLink chip,
+USB VID 0x3679) - into the HDMI input of a Samsung Odyssey G70B. So the
+DP link partner your code negotiates with is that converter, not a
+monitor directly.
+
+What I actually exercised, running this kernel as my daily driver since it
+booted on 2026-08-14 at 20:09 local time (17+ hours of continuous uptime
+when I ran these checks):
+
+- The new glue driver is bound to both controllers:
+
+    /sys/bus/platform/drivers/dwc3-rockchip/fc000000.usb
+    /sys/bus/platform/drivers/dwc3-rockchip/fc400000.usb
+
+- DisplayPort alt mode is active at the Type-C layer:
+
+    /sys/class/typec/port0-partner/port0-partner.0/svid   = ff01
+    /sys/class/typec/port0-partner/port0-partner.0/mode   = 1
+    /sys/class/typec/port0-partner/port0-partner.0/active = yes
+
+  driving DP-1 at 3840x2160@120 with HDR, simultaneously with two HDMI
+  outputs: HDMI-A-1 to a Sony TV at 3840x2160@60 and HDMI-A-2 to a second
+  Odyssey G70B at 3840x2160@120, both with HDR.
+
+  Two caveats about DP-1, both pre-existing on my setup and unrelated to
+  your series: the converter emits a broken Y420VDB block, so I feed the
+  connector a corrected EDID through edid_override, and after the EDK2
+  firmware hand-off DP-1 comes up "disconnected" with the cable present,
+  so a boot script does one unbind/bind of the fusb302 i2c device to kick
+  it. Neither workaround was touched during the hotplug test below.
+
+- Hot unplug/replug of the USB-C cable. The xHCI host controller was
+  re-registered and the DisplayPort output came back on its own, with no
+  manual intervention:
+
+    13:00:56  kernel: xhci-hcd xhci-hcd.6.auto: USB bus 4 deregistered
+    13:00:57  kwin_wayland_drm: Removing output
+    13:01:26  kernel: xhci-hcd xhci-hcd.6.auto: xHCI Host Controller
+    13:01:26  kernel: xhci-hcd xhci-hcd.6.auto: Host supports USB 3.0 SuperSpeed
+    13:01:29  kwin_wayland_drm: New output on GPU /dev/dri/card0: Odyssey G70B
+
+  (kernel and compositor lines interleaved, abridged.) Note the ~30 s
+  between disconnect and re-registration - PD/alt-mode negotiation with
+  this converter is slow. After the replug the connector is back at
+  3840x2160@120 with HDR.
+
+- No messages at all from dwc3, dwc3-rockchip or the usbdp PHY for the
+  whole uptime, before or after the replug.
+
+  For completeness, the DP controller does print a burst of 32
+  "dw-dp fde50000.dp: timeout waiting for AUX reply" right after the cable
+  is pulled - that is the DRM side probing a dead link, it clears on
+  replug and is not from your code. The converter's billboard device also
+  logs one "cdc_acm 3-1:1.1: probe with driver cdc_acm failed with error
+  -22" per connect - a converter quirk, seen daily on this setup since
+  long before this kernel.
+
+One thing I should not hide: I do get a WARN from tcpm, but I trigger it
+myself and it is not from this series:
+
+  WARNING: drivers/base/devres.c:1184 at devm_kfree+0xb8/0xd0
+  Call trace:
+    devm_kfree
+    tcpm_port_unregister_pd [tcpm]
+    tcpm_unregister_port [tcpm]
+    devm_tcpm_unregister_port [tcpm]
+    devm_action_release / release_nodes / devres_release_group
+    i2c_device_remove / device_release_driver_internal / unbind_store
+
+(trace abridged.) It fires when the boot script mentioned above explicitly
+unbinds fusb302 (i2c 6-0022), i.e. on the devres teardown path introduced
+by 48bf0f5f9ec8
+("usb: typec: tcpm: add device managed port registration") and fcdd23c1984e
+("usb: typec: fusb302: Switch to device managed resources") in
+rockchip-devel. Those are not part of v14 and I have not root-caused this,
+but since they are in the branch I tested I thought you would rather know.
+It does not fire on a normal cable unplug/replug, only on an explicit
+driver unbind.
+
+I am sending the Tested-by tags as separate replies to 28/38, 29/38, 30/38
+and 31/38, so that they land on exactly those patches.
+
+I am deliberately not tagging 32/38 ("fix USB-C reconnect in gadget mode").
+I have never used this board in gadget mode, so I cannot claim to have
+tested that path.
+
+One build issue to report, starting at 31/38
+============================================
+
+The new glue driver cannot be built as a module once 31/38 is applied.
+29/38 alone is fine - the glue it introduces only pulls in module.h,
+platform_device.h, pm_runtime.h and glue.h. It is 31/38 that adds
+#include "io.h" and the dwc3_readl()/dwc3_writel() calls.
+
+Reproducer: ea51774c5c42, arm64 defconfig plus CONFIG_USB_DWC3=y,
+CONFIG_USB_DWC3_ROCKCHIP=m, CONFIG_TRACEPOINTS=y. The build then fails at
+modpost:
+
+  ERROR: modpost: "__tracepoint_dwc3_readl" [drivers/usb/dwc3/dwc3-rockchip.ko] undefined!
+  ERROR: modpost: "__traceiter_dwc3_readl" [drivers/usb/dwc3/dwc3-rockchip.ko] undefined!
+  ERROR: modpost: "__tracepoint_dwc3_writel" [drivers/usb/dwc3/dwc3-rockchip.ko] undefined!
+  ERROR: modpost: "__traceiter_dwc3_writel" [drivers/usb/dwc3/dwc3-rockchip.ko] undefined!
+  make[2]: *** [scripts/Makefile.modpost:147: Module.symvers] Error 1
+  [...]
+
+dwc3_readl()/dwc3_writel() call trace_dwc3_readl()/trace_dwc3_writel(),
+and the dwc3 tracepoints are not exported - there is no
+EXPORT_TRACEPOINT_SYMBOL* anywhere in drivers/usb/dwc3/ - so a separate
+module cannot reference them. With CONFIG_TRACEPOINTS=n the trace_* calls
+become empty inlines and this should not trigger; I only tested
+CONFIG_TRACEPOINTS=y.
+
+dwc3-rockchip.c is the only glue driver in drivers/usb/dwc3/ that calls
+the core's dwc3_readl()/dwc3_writel(). dwc3-st.c also includes io.h, but
+it reads through its own st_dwc3_readl()/st_dwc3_writel(), and e.g.
+dwc3-keystone.c defines kdwc3_readl()/kdwc3_writel() - though those all
+access their own glue registers, not the core register block.
+
+Two ways to fix it, whichever you prefer:
+
+  - EXPORT_TRACEPOINT_SYMBOL_GPL(dwc3_readl) and (dwc3_writel) in
+    drivers/usb/dwc3/trace.c, or
+  - open-code the access in the glue, e.g.
+    readl(dwc->regs + DWC3_GUSB3PIPECTL(port) - DWC3_GLOBALS_REGS_START),
+    at the cost of losing the dwc3_readl/dwc3_writel trace events.
+
+I worked around it locally with CONFIG_USB_DWC3_ROCKCHIP=y, which is how
+the kernel I tested above was built. Note that "default USB_DWC3" means
+the glue follows the core: with CONFIG_USB_DWC3=y the default is =y and
+the problem stays hidden, but with CONFIG_USB_DWC3=m the default would be
+=m. I have not build-tested the CONFIG_USB_DWC3=m case. The Kconfig entry
+added by 29/38 does promise "Say 'Y' or 'M' if you have such device."
+
+This reply was prepared with the help of Claude (Anthropic). The board,
+the tests and the measurements are mine, and I checked every claim above
+before sending.
+
+Best regards,
+Igor
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
