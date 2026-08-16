@@ -4,39 +4,39 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8F7AC5DF66
-	for <linux-phy@archiver.kernel.org>; Sun, 16 Aug 2026 21:39:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DAB2AC5DF66
+	for <linux-phy@archiver.kernel.org>; Sun, 16 Aug 2026 21:39:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XwF2ci1I0D6dUg6u2y+zqyru+KJ+RfOSexaV+dZEI0Y=; b=lVHDLdMcl0bkK+
-	XUIuW45LQ7YJmy0sBxAQ8Yq+G0H9IXbTQqvnxp0jvKaGEo4EUdJ31NORsCJHj/uF9FiLqDTVQQOF3
-	ikemMFD5BT9yJyINtay2EWCVxVbNkn6j9bVffvrCkihnyFBXvUnhvQQLaCGIEjZcx+IjZF3EC2CtM
-	3VWiZqyIjnoKe6Zy7e2X+yR63/2V+/N+cre3oFPuy4OSp7W4rgpzLUo/pVa6asuMNWwYXzVSa6Cf0
-	G8LCfTa3/o/rVgGfZcR41A2mez7UCqH76sfgqJQUKM+nTT6Hq4/brmpPgga5FX/KAVd2irVgmnhx6
-	Nwmop+KRIhTh1BKTUsFg==;
+	List-Owner; bh=oR48cOpiw9nyTR2FaPRpm0//G2jlEi/NO5AN32gLt2w=; b=Yjel3yMsTzGNPU
+	1R0tqmlELst9Gyk53cBUfbuMSkalvdaevSGgSVKUs7lNqP8fiWLzeKhlqhNB/hVbrJgcwhlGxbjxd
+	RvxrBhGbtrX+QZfqxqRAUHeLJvgIaEmn5wRXxqfh1UnlQrPB4HPmJurN9OyZOfeXcH1DonpR+g+Ww
+	w6+Fj8OOuM//kKMLIal8N6jj16mwitrCiuhWLToAkTnHEal65+0Ss8MRfZ25ZV7zSCuECex/1o+YX
+	Aq4RuSM0PLhdO7ig2vnfPG2rE74RcsLxs11JCCd24COts94ytMLAuEfe6lQK79JJjw3UeIxVDlmpk
+	Nzes94Wpo0nfna302OnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wviZk-000000057Fa-1cpp;
-	Sun, 16 Aug 2026 21:39:28 +0000
-Received: from mx.nabladev.com ([178.251.229.89])
+	id 1wviZo-000000057Il-2LJa;
+	Sun, 16 Aug 2026 21:39:32 +0000
+Received: from mx.nabladev.com ([2a00:f820:417:0:178:251:229:89])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wviZf-000000057C4-0Gpp;
-	Sun, 16 Aug 2026 21:39:24 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 02E5611C1E9;
-	Sun, 16 Aug 2026 23:39:15 +0200 (CEST)
+	id 1wviZk-000000057ER-18ap;
+	Sun, 16 Aug 2026 21:39:29 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 6045E11C1F4;
+	Sun, 16 Aug 2026 23:39:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nabladev.com;
-	s=dkim; t=1786916357; h=from:subject:date:message-id:to:cc:mime-version:
+	s=dkim; t=1786916362; h=from:subject:date:message-id:to:cc:mime-version:
 	 content-transfer-encoding:in-reply-to:references;
-	bh=jJt7Jm9dS7j9+nHkmEwZyfgLjpjrq0IoWW70XFyDFMw=;
-	b=JlmMipJYWFu50hMoEGIywKogQMbyPOoDgARWAYc+At18F4h07+HOt3ecGckmHhuBZb33oW
-	TBLYWAM9eLJmAQx8JMo2uH5uxEEAYnIoEt0vMphwLPh0DNQnS6kSBh4095nSlnKBLgQpqW
-	hAT8mY/6UP64AyzAT02vPMRXJpMW1iuVndThS0BUa1mCBNmMBZUn+P8P4faSDxVO+kG0LH
-	mZgJrLoXjxl7DHSe7F+NP2yKDtYvBojl3fAkJlCdCjmlFFDH/goc9jS5S2vlaw7IPSZxAN
-	zu+WBC6bZ8epiClcbWA0aU3WbEO5uyJDJG03ycUp3XkK/O1dfjW3TeTF6cQX3A==
+	bh=QP/6fSBavnugcpPHEyvwMnqH3KyZ0x7/oTTOBjqzH5U=;
+	b=MaAIT7YmCM5HPtGDMig+bYXE9l4yxgmOgCCAwVlnhpoPyUhMQ/DAqJ8wx3jS46vi8QwhzI
+	GFbLw4GqOeEkQ/v3ZBAs8FjgrBoO9GpWJmgfuzqbSzhVwtKvRu+5hOeHsphHNYghwPsZax
+	QhjKhKryhk10KlWAuF+1b3fb9WuFtpB8lInqdB4Gmnhgz7mj2WjMcp2KkHVX4gD8NsT5Sy
+	HWtEWNQI1w4OYOXGWNTPiVNvp+/rTE47xUzlwN+Luhevi6yH4U3KFCwLfAurz4XJyz4EDO
+	TUoDjqJyqrutnBlZiIR3Z+wKXYBnLuAZJBypnMLPLYE5yUgZcr9AuHHTAq8gbA==
 From: Marek Vasut <marex@nabladev.com>
 To: linux-usb@vger.kernel.org
 Cc: Marek Vasut <marex@nabladev.com>,
@@ -60,17 +60,17 @@ Cc: Marek Vasut <marex@nabladev.com>,
 	linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-stm32@st-md-mailman.stormreply.com
-Subject: [PATCH v2 3/9] dt-bindings: usb: generic-ehci: Document access-controllers property
-Date: Sun, 16 Aug 2026 23:37:05 +0200
-Message-ID: <20260816213849.1044073-4-marex@nabladev.com>
+Subject: [PATCH v2 4/9] dt-bindings: usb: generic-ohci: Document access-controllers property
+Date: Sun, 16 Aug 2026 23:37:06 +0200
+Message-ID: <20260816213849.1044073-5-marex@nabladev.com>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20260816213849.1044073-1-marex@nabladev.com>
 References: <20260816213849.1044073-1-marex@nabladev.com>
 MIME-Version: 1.0
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260816_143923_250173_5C038B08 
-X-CRM114-Status: UNSURE (   8.80  )
+X-CRM114-CacheID: sfid-20260816_143928_481984_F61C7067 
+X-CRM114-Status: UNSURE (   8.28  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -88,7 +88,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document the access-controllers for EHCI USB controllers in case
+Document the access-controllers for OHCI USB controllers in case
 access checks need to be performed to use them.
 
 Signed-off-by: Marek Vasut <marex@nabladev.com>
@@ -117,16 +117,16 @@ Cc: linux-usb@vger.kernel.org
 ---
 V2: No change
 ---
- Documentation/devicetree/bindings/usb/generic-ehci.yaml | 3 +++
+ Documentation/devicetree/bindings/usb/generic-ohci.yaml | 3 +++
  1 file changed, 3 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/usb/generic-ehci.yaml b/Documentation/devicetree/bindings/usb/generic-ehci.yaml
-index ae9fb70d0212c..6bca56681cdfe 100644
---- a/Documentation/devicetree/bindings/usb/generic-ehci.yaml
-+++ b/Documentation/devicetree/bindings/usb/generic-ehci.yaml
-@@ -80,6 +80,9 @@ properties:
-     minItems: 1
-     maxItems: 2
+diff --git a/Documentation/devicetree/bindings/usb/generic-ohci.yaml b/Documentation/devicetree/bindings/usb/generic-ohci.yaml
+index 322808aaa2839..8e3522a3faa76 100644
+--- a/Documentation/devicetree/bindings/usb/generic-ohci.yaml
++++ b/Documentation/devicetree/bindings/usb/generic-ohci.yaml
+@@ -65,6 +65,9 @@ properties:
+   reg:
+     maxItems: 1
  
 +  access-controllers:
 +    maxItems: 1
