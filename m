@@ -4,74 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A1D7C5B572
-	for <linux-phy@archiver.kernel.org>; Sun, 16 Aug 2026 18:12:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E09CBC5B572
+	for <linux-phy@archiver.kernel.org>; Sun, 16 Aug 2026 21:39:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9l/3sWgFmHNiU6FNP4x6Sy9yb3P/1ZsL+rdwfuV4IUQ=; b=E/uiF6zTNOKHyJ
-	SOBZjsbEAbLzZNrR3MIU/yKmQyQr8Rc/6huL7sMpaXKnUyf3gdqgktM1pmJ7vCeqajDMsc2qTPeF0
-	QzQEThIPTWHiA6prIckEB21ifGXkSVGbZTjtKXOhLS+3FSPiA3b5TZ61JibGBGtwBJ6cVQYa8p8lA
-	/5UDdZ9u/NhSpGWZurvPfIR964lqU4VhDVc8EsSnA2SZ+PqoAr77GZ3d7T04stAL8Ctk35oPbnBn+
-	bn69UF/R8lF9kjenXX4Ggvy2kg6wph60Cm/bRBQhtTn0B5Ol5YPO8KLpeJe6gSugOtoSv5dN9E7E8
-	ghUg03uoJ1M+nhTh03vw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bztQZu9z4ORrKRaFam0nQ6xTuWRfzvpGZeHddWZ7Pg8=; b=wVH6M8Ra6if3Ld
+	74s09NEkqkDv39iFPgvnufM4fY6Q8+R9xSa7U9xwoSIDukC9SSxg41A7LPnNE7u+HNl4RjRmXBx+d
+	6SM43o1G4tL9wn8fcQjhuwGaoGgStwpLEdgjzkk8Npc/NI5MrCXnNAeQ4EaFY8anYN8fo17/Itv0x
+	RLCu3kmzZC8JwpzDtQ9hBjcEbR7ZzUaMh9RGs1QL3VRIMpV41D6O1i5ehbvx/vDo8Zg0K9acIJ6JM
+	tx0gVv6j/+/q9giWVaEd8WXsa6A2L0B6LJSXIgJKRjWlS+OPoXN9DgC/7UDHDbwbhC9fqkoTvwBJl
+	VTCdIMaIGlgSrpzfp5XA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wvfL5-00000004yek-0iGp;
-	Sun, 16 Aug 2026 18:12:07 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wviZX-0000000579j-2jkZ;
+	Sun, 16 Aug 2026 21:39:15 +0000
+Received: from mx.nabladev.com ([178.251.229.89])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wvfL3-00000004yeU-3BhI;
-	Sun, 16 Aug 2026 18:12:05 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 7328F60120;
-	Sun, 16 Aug 2026 18:12:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id ABE301F000E9;
-	Sun, 16 Aug 2026 18:12:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786903924;
-	bh=shbxNjSwtOu6lTbGry+vOL2dBkYNSUjGouYEXzD95eA=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=fID2NsCdGux2mZG02sRND6KNPxGYYqZ6FQgJ/HolCE+szt/U1siKveWp1W3lSs1B7
-	 xCewy2jL2sUe8hVn0fXQqaKJXEeoE5QGDYjazRNrLxhqvGrFuc6EI+gq9bfXheOAqG
-	 eCAPpnU2afoT1MFxjrbjQujw7lIMND3wYqwLewjF08pWNPC67yfgPdiNxrk7Ev9HqJ
-	 M9K8EuqZNQyqYju8U0e+0hsJYWGYYoB3tlgS0GGDTsw4gqP2p7TfPro1blkbMwcj3P
-	 4mifWLHPFNs7KUqFiDpkHZOGo+VTNX3crRW0AvU8O48EghulX5g9AXc4/p+XkIM1AG
-	 IjrCAehb45wXw==
-Date: Sun, 16 Aug 2026 11:12:02 -0700
-From: Drew Fustini <fustini@kernel.org>
-To: Icenowy Zheng <uwu@icenowy.me>
-Cc: Guo Ren <guoren@kernel.org>, Fu Wei <wefu@redhat.com>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
+	id 1wviZU-0000000578t-2gSl;
+	Sun, 16 Aug 2026 21:39:14 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id B360311C019;
+	Sun, 16 Aug 2026 23:38:55 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nabladev.com;
+	s=dkim; t=1786916340; h=from:subject:date:message-id:to:cc:mime-version:
+	 content-transfer-encoding; bh=ip7IdjXpbTEeQtpgf2f2+OGWRKdS1gcsDSa0BlUX+KU=;
+	b=XOIUTmIUxl/DqvjJpR1nE8U/RUOpYhlbUN+4T7+ENF4+546kRJlhejTar7pkICTFh6acro
+	WyGqIAhfkmeq0+KXDiFBLDmeup6DF6KeT64pVUVn8AwlFuVXpmd2Usk9WPdXPyqfq/bNGQ
+	dkFB/0wzpBnn0gdpM/RZV4FQ5nlk/1AUkKeUaLVE1vKc+aQPr2MPcpkJmFRoQq8eJTnJhz
+	eyr1RSkEmNeCwYoiN5+ez9V9a6a1ucQhb7Yvc+juDoZMBKX4Khj23evYdXcjOYtYyAVdcG
+	CWJDEWpCK4Ias1lNJtW3rZYP6yHkHkL6aSZAFavVSKu5qdlah8Ziew31RFGH9A==
+From: Marek Vasut <marex@nabladev.com>
+To: linux-usb@vger.kernel.org
+Cc: Marek Vasut <marex@nabladev.com>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Christian Bruel <christian.bruel@foss.st.com>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Fabrice Gasnier <fabrice.gasnier@foss.st.com>,
 	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Paul Walmsley <pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
-	Jisheng Zhang <jszhang@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-riscv@lists.infradead.org, linux-clk@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-gpio@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-usb@vger.kernel.org, Han Gao <rabenda.cn@gmail.com>,
-	Yao Zi <ziyao@disroot.org>
-Subject: Re: [PATCH 02/12] clk: thead: th1520-ap: add support for MISC subsys
- clocks
-Message-ID: <aoH9cvTC8vD4NYpB@x1>
-References: <20260507081710.4090814-1-zhengxingda@iscas.ac.cn>
- <20260507081710.4090814-3-zhengxingda@iscas.ac.cn>
- <aier9XppLeCkJydw@thelio>
- <93b867c1b7f5526cc25cb04f838432cd752f5981.camel@icenowy.me>
- <aievi0s-3SO8hV6a@thelio>
- <aijpEqzJ7fM7rGMH@thelio>
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Pankaj Dev <pankaj.dev@st.com>,
+	Rahul Kumar <rahul.kumar05@st.com>,
+	Rob Herring <robh@kernel.org>,
+	Rosen Penev <rosenp@gmail.com>,
+	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	devicetree@vger.kernel.org,
+	kernel@dh-electronics.com,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-stm32@st-md-mailman.stormreply.com
+Subject: [PATCH v2 0/9] arm64: dts: phy: st: usb: Add STM32MP2 USB support
+Date: Sun, 16 Aug 2026 23:37:02 +0200
+Message-ID: <20260816213849.1044073-1-marex@nabladev.com>
+X-Mailer: git-send-email 2.53.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <aijpEqzJ7fM7rGMH@thelio>
+X-Last-TLS-Session-Version: TLSv1.3
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260816_143912_914709_726A1E78 
+X-CRM114-Status: GOOD (  10.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,44 +79,81 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCBKdW4gMDksIDIwMjYgYXQgMDk6MzM6MjJQTSAtMDcwMCwgRHJldyBGdXN0aW5pIHdy
-b3RlOgo+IE9uIE1vbiwgSnVuIDA4LCAyMDI2IGF0IDExOjE1OjM5UE0gLTA3MDAsIERyZXcgRnVz
-dGluaSB3cm90ZToKPiA+IE9uIFR1ZSwgSnVuIDA5LCAyMDI2IGF0IDAyOjAxOjQzUE0gKzA4MDAs
-IEljZW5vd3kgWmhlbmcgd3JvdGU6Cj4gPiA+IOWcqCAyMDI2LTA2LTA45LiA55qEIDIzOjAwIC0w
-NzAw77yMRHJldyBGdXN0aW5p5YaZ6YGT77yaCj4gPiA+ID4gT24gVGh1LCBNYXkgMDcsIDIwMjYg
-YXQgMDQ6MTc6MDBQTSArMDgwMCwgSWNlbm93eSBaaGVuZyB3cm90ZToKPiA+ID4gPiA+IFRoZSBU
-SDE1MjAgU29DIGNvbnRhaW5zIGEgTUlTQ19TVUJTWVMgY2xvY2sgY29udHJvbGxlciwgd2hpY2gK
-PiA+ID4gPiA+IGFsbG93cwo+ID4gPiA+ID4gY29udHJvbGxpbmcgb2YgVVNCIHJlbGF0ZWQgY2xv
-Y2tzIGFuZCBNTUMvU0QgY29udHJvbGxlciBBSEIgYnVzCj4gPiA+ID4gPiBjbG9ja3MuCj4gPiA+
-ID4gPiAKPiA+ID4gPiA+IEFkZCBzdXBwb3J0IGZvciB0aGlzIGNsb2NrIGNvbnRyb2xsZXIsIGlu
-IG9yZGVyIHRvIGVuYWJsZSBVU0IKPiA+ID4gPiA+IHN1cHBvcnQuCj4gPiA+ID4gPiAKPiA+ID4g
-PiA+IFNpZ25lZC1vZmYtYnk6IEljZW5vd3kgWmhlbmcgPHpoZW5neGluZ2RhQGlzY2FzLmFjLmNu
-Pgo+ID4gPiA+ID4gLS0tCj4gPiA+ID4gPiDCoGRyaXZlcnMvY2xrL3RoZWFkL2Nsay10aDE1MjAt
-YXAuYyB8IDY0Cj4gPiA+ID4gPiArKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrCj4gPiA+
-ID4gPiDCoDEgZmlsZSBjaGFuZ2VkLCA2NCBpbnNlcnRpb25zKCspCj4gPiA+ID4gPiAKPiA+ID4g
-PiA+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2Nsay90aGVhZC9jbGstdGgxNTIwLWFwLmMKPiA+ID4g
-PiA+IGIvZHJpdmVycy9jbGsvdGhlYWQvY2xrLXRoMTUyMC1hcC5jCj4gPiA+ID4gPiBpbmRleCAz
-YTY4NDdmMWM5NTBmLi4yNGY3ODVmMGIzMjlhIDEwMDY0NAo+ID4gPiA+ID4gLS0tIGEvZHJpdmVy
-cy9jbGsvdGhlYWQvY2xrLXRoMTUyMC1hcC5jCj4gPiA+ID4gPiArKysgYi9kcml2ZXJzL2Nsay90
-aGVhZC9jbGstdGgxNTIwLWFwLmMKPiA+ID4gPiBbLi4uXQo+ID4gPiA+ID4gQEAgLTE2MDksNiAr
-MTY2MywxMiBAQCBzdGF0aWMgaW50IHRoMTUyMF9jbGtfcHJvYmUoc3RydWN0Cj4gPiA+ID4gPiBw
-bGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gPiA+ID4gPiDCoAkJCXJldHVybiByZXQ7Cj4gPiA+ID4g
-PiDCoAl9Cj4gPiA+ID4gPiDCoAo+ID4gPiA+ID4gKwlpZiAocGxhdF9kYXRhID09ICZ0aDE1MjBf
-YXBfcGxhdGRhdGEpIHsKPiA+ID4gPiA+ICsJCXJldCA9IGRldm1fY2xrX2h3X3JlZ2lzdGVyKGRl
-diwKPiA+ID4gPiA+ICZ1c2Jfc3VzcGVuZF9kaXZfY2xrLmh3KTsKPiA+ID4gPiA+ICsJCWlmIChy
-ZXQpCj4gPiA+ID4gPiArCQkJcmV0dXJuIHJldDsKPiA+ID4gPiA+ICsJfQo+ID4gPiA+IAo+ID4g
-PiA+IFNob3VsZCB1c2Jfc3VzcGVuZF9kaXZfY2xrLmh3IGluc3RlYWQgYmUgcmVnaXN0ZXJlZCB1
-bmRlcgo+ID4gPiA+ICdpZiAocGxhdF9kYXRhID09ICZ0aDE1MjBfYXBfcGxhdGRhdGEpJz8KPiA+
-ID4gCj4gPiA+IERvIHlvdSBtZWFuIG1pc2NfcGxhdGRhdGE/Cj4gPiA+IAo+ID4gPiBZZXMsIHRo
-aXMgaXMgYW4gY29weS1uLXBhc3RlIGVycm9yIHRoYXQgZGVzZXJ2ZXMgYSBmaXguCj4gPiAKPiA+
-IEhhaCwgeWVzLCBJIGFsc28gaGFkIGEgdHlwbyA6KQo+IAo+IEFzc3VtaW5nIHRoYXQgZ2V0cyBm
-aXhlZCBpbiB0aGUgbmV4dCByZXY6Cj4gCj4gUmV2aWV3ZWQtYnk6IERyZXcgRnVzaW5pIDxmdXN0
-aW5pQGtlcm5lbC5vcmc+CgpJIHdpbGwgZml4dXAgdGhlIHR5cG8gYW5kIGFwcGx5IHRvIHRoZWFk
-LWNsay1mb3ItbmV4dCBvbmNlIDcuMy1yYzEgaXMKcmVsZWFzZWQuCgpUaGFua3MsCkRyZXcKCi0t
-IApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Add USB support for STM32MP23xx/STM32MP25xx SoCs. This includes USB 2.0
+FEMTO-PHY driver, DWC3 glue code and DT adjustments. Parts of this are
+taken from ST downstream kernel fork, reduced, or rewritten, since not
+all of the content there was useful and bits which might be missing and
+are useful can be added later.
+
+Unlike the downstream implementation, the DWC3 glue code is using plain
+dwc3-generic-plat, the EHCI and OHCI controllers are instantiated as
+plain generic controllers without any wrapper glue driver, and the USB2
+PHY driver is simplified.
+
+Both USB 2.0 Host controller and DWC3 super-speed controller are tested.
+
+Marek Vasut (6):
+  dt-bindings: usb: generic-ehci: Document access-controllers property
+  dt-bindings: usb: generic-ohci: Document access-controllers property
+  dt-bindings: usb: dwc3: Document ST STM32MP2 DWC3 xHCI USB controller
+  usb: dwc3: dwc3-generic-plat: Add ST STM32MP2 DWC3 xHCI USB controller
+    glue
+  dt-bindings: arm: stm32: Switch st,stm32mp23/25-syscfg into simple-mfd
+  arm64: dts: st: Add USB nodes on stm32mp231
+
+Pankaj Dev (3):
+  dt-bindings: phy: Document ST STM32MP25 USB2-FEMTO PHY
+  phy: stm32: Add support for ST STM32MP25 USB2-FEMTO PHY
+  arm64: dts: st: Add USB nodes on stm32mp251
+
+ .../bindings/arm/stm32/st,stm32-syscon.yaml   |   7 +-
+ .../bindings/phy/st,stm32-usb2phy.yaml        |  73 ++++
+ .../devicetree/bindings/usb/generic-ehci.yaml |   3 +
+ .../devicetree/bindings/usb/generic-ohci.yaml |   3 +
+ .../bindings/usb/st,stm32mp25-dwc3.yaml       | 108 ++++++
+ arch/arm64/boot/dts/st/stm32mp231.dtsi        |  81 +++-
+ arch/arm64/boot/dts/st/stm32mp251.dtsi        |  65 +++-
+ drivers/phy/st/Kconfig                        |  10 +
+ drivers/phy/st/Makefile                       |   1 +
+ drivers/phy/st/phy-stm32-usb2phy.c            | 361 ++++++++++++++++++
+ drivers/usb/dwc3/dwc3-generic-plat.c          |  44 +++
+ 11 files changed, 751 insertions(+), 5 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/st,stm32-usb2phy.yaml
+ create mode 100644 Documentation/devicetree/bindings/usb/st,stm32mp25-dwc3.yaml
+ create mode 100644 drivers/phy/st/phy-stm32-usb2phy.c
+
+Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>
+Cc: Christian Bruel <christian.bruel@foss.st.com>
+Cc: Conor Dooley <conor+dt@kernel.org>
+Cc: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Pankaj Dev <pankaj.dev@st.com>
+Cc: Rahul Kumar <rahul.kumar05@st.com>
+Cc: Rob Herring <robh@kernel.org>
+Cc: Rosen Penev <rosenp@gmail.com>
+Cc: Thinh Nguyen <Thinh.Nguyen@synopsys.com>
+Cc: Vinod Koul <vkoul@kernel.org>
+Cc: devicetree@vger.kernel.org
+Cc: kernel@dh-electronics.com
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+Cc: linux-phy@lists.infradead.org
+Cc: linux-stm32@st-md-mailman.stormreply.com
+Cc: linux-usb@vger.kernel.org
+
+-- 
+2.53.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
