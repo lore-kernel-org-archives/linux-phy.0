@@ -4,46 +4,42 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03D2DC5B572
-	for <linux-phy@archiver.kernel.org>; Sun, 16 Aug 2026 21:39:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46BDAC5DF66
+	for <linux-phy@archiver.kernel.org>; Sun, 16 Aug 2026 21:39:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=818+Fu5bFlfeJegsWVxOtFiMPLVjDBYeXHnFJFBAhhE=; b=pQvsDVC19aDPw2
-	LNYdUNw7WDBYbNDZ8giEHgk8HxgwRjm0jJyOuUkXQTglv8skjn3YtUj7KGDQlhD85hBbhjZ3697l2
-	MSi4USJG+bDGzH29yrtykL36CjITVga+vs39nDgH0wun95Yqj928qhNh9Elj1DcNOMooG/W5PPHHu
-	MR1BoifSdlSkJPgCYtiKNF1nJ/JjwCy25EyFv1pAdZtfb6NZVgmIq+QKjMyeYH+OyK9BQTNCGHNx3
-	4UpFGE9jopZIWt9HNeBvlnz3bNSWrfutopCv/VkLfiom+IULhdKaXvWMhbeKZxoQeFudMAosmRDBS
-	M848+HeNAKAn9d+ssoAQ==;
+	List-Owner; bh=xU2R6b8ArWuuPkrgQRk9m4snEZtEVyal/DyPqUIGYmU=; b=YrOqXjsIQbGGnM
+	p062tSaqMQqGs4muiVgTjGssIdgPnghtJDfMrwfLcsk4Elzd80X+z2LZoXyaucM5kAAQ83v5BqNY9
+	p7LEhSh7X83pn8KSZozMfFskA106D6Jsv233ImosPSzUHC+i5AZjeFx/JxhwtX6T7lTjZWT3ejnF5
+	ldagMQah0ypGZBJgmUkpiquLBCzGK6E37LD1N/4V8R6uOONzW47k9zSHcUFa8l1xB+Ue1yvflh4+4
+	Rh2ibWUmQEXiYn748TlxEwiZjrJND6mI35txBsCTMlCNix70MdO8aW6d4reXIZ7LS20kRvRRZy+Vq
+	3LUvfHiDlTdk/Mbgogdg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wviZs-000000057Ln-2zAT;
-	Sun, 16 Aug 2026 21:39:36 +0000
-Received: from mx.nabladev.com ([2a00:f820:417:0:178:251:229:89])
+	id 1wviZx-000000057Qf-3jbr;
+	Sun, 16 Aug 2026 21:39:41 +0000
+Received: from mx.nabladev.com ([178.251.229.89])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wviZp-000000057IY-3A2z;
-	Sun, 16 Aug 2026 21:39:35 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id BAAE611C1F1;
-	Sun, 16 Aug 2026 23:39:26 +0200 (CEST)
+	id 1wviZv-000000057Mq-0Xak;
+	Sun, 16 Aug 2026 21:39:40 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 28CF511C1F3;
+	Sun, 16 Aug 2026 23:39:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nabladev.com;
-	s=dkim; t=1786916367;
-	h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	s=dkim; t=1786916373; h=from:subject:date:message-id:to:cc:mime-version:
 	 content-transfer-encoding:in-reply-to:references;
-	bh=/WPNd7bAkhsYaqHEPW2/1kC0IadD/2WCrHtK65muLRo=;
-	b=d/sBAf5CX3dKn8/AGUW0OPKomcIFG0upXbclzPfvKOhL9MwcLJ4bmMnD3vvsQqWnEB2gZb
-	mXkjcLPgunI8Z66UakjDHTQdfOYKIWB3kQwecd9FrMSOsnRCh3OlCHZiOdNYOjXiZMEasn
-	xCFnULBf9RrYdvnQrdyn3FlNhwL4RZdqoYex4SoqMXZFyxiHbgrdpkjbNF/SCSBPNkXpI/
-	fPUmhafFVbxJH9NB2vqcdMLBEmTKkCxLoArt1ckoUV6sOwUC+N6biUxRF7e9oKKWW29nto
-	ewzBzr1MS8nkDxsDIfV9+dwJxtygvElcV4OZ1iWxkZhvfwLladKU28Ax8BVOCA==
+	bh=8hmtfOL27pdP3gIcKVEn5KQYTM4Wl55vR9a4nrxZqs0=;
+	b=YqU+CDwL76yPkmUXDi4CsuZ+KSVMQ/GB1bZA82mG/TFqhuSI8bkWEyAz03Xm7mh62oAJJP
+	+2d8bofpJYNABaSGNrFjuYOpmK0V90GFDTWTFZ/tEblEXDuCwZZ1JNFSz6aiax0gFXx3uK
+	Ygee1ULP00ACKFHhuKwH04oOWdxJjuVVHXtCXN1oOape/gSJjmxTUSNlFGMbIqjDsFBU1V
+	V1DEAFqytu8eo5hzJg+AnFDT+i+qwa7Nybxn1VSOxUavnyn+aMUSld9UJthaqvwwtfvsAH
+	EMO37tbqrQzvzEEHoyBwMVS/74z1jimWnW575qL8jRmM3XQqHpqJxOl0uOAytw==
 From: Marek Vasut <marex@nabladev.com>
 To: linux-usb@vger.kernel.org
 Cc: Marek Vasut <marex@nabladev.com>,
-	Pankaj Dev <pankaj.dev@st.com>,
-	=?UTF-8?q?Cl=C3=A9ment=20Le=20Goffic?= <clement.legoffic@foss.st.com>,
-	Gatien Chevallier <gatien.chevallier@foss.st.com>,
 	Alexandre Torgue <alexandre.torgue@foss.st.com>,
 	Christian Bruel <christian.bruel@foss.st.com>,
 	Conor Dooley <conor+dt@kernel.org>,
@@ -52,6 +48,7 @@ Cc: Marek Vasut <marex@nabladev.com>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
+	Pankaj Dev <pankaj.dev@st.com>,
 	Rahul Kumar <rahul.kumar05@st.com>,
 	Rob Herring <robh@kernel.org>,
 	Rosen Penev <rosenp@gmail.com>,
@@ -63,17 +60,17 @@ Cc: Marek Vasut <marex@nabladev.com>,
 	linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-stm32@st-md-mailman.stormreply.com
-Subject: [PATCH v2 5/9] dt-bindings: usb: dwc3: Document ST STM32MP2 DWC3 xHCI USB controller
-Date: Sun, 16 Aug 2026 23:37:07 +0200
-Message-ID: <20260816213849.1044073-6-marex@nabladev.com>
+Subject: [PATCH v2 6/9] usb: dwc3: dwc3-generic-plat: Add ST STM32MP2 DWC3 xHCI USB controller glue
+Date: Sun, 16 Aug 2026 23:37:08 +0200
+Message-ID: <20260816213849.1044073-7-marex@nabladev.com>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20260816213849.1044073-1-marex@nabladev.com>
 References: <20260816213849.1044073-1-marex@nabladev.com>
 MIME-Version: 1.0
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260816_143934_072275_64A814D0 
-X-CRM114-Status: GOOD (  11.46  )
+X-CRM114-CacheID: sfid-20260816_143939_468946_602B585B 
+X-CRM114-Status: GOOD (  12.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,90 +82,124 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhlIFNUIFNUTTMyTVAyIFNvQyBjb250YWlucyBzaW5nbGUgaW5zdGFuY2Ugb2YgRFdDMyBVU0Ig
-Y29udHJvbGxlciB3aXRoCmdsdWUgbG9naWMgd3JhcHBlciBhcm91bmQgaXQgY29udHJvbGxlZCBi
-eSBzeXNjb24uIERvY3VtZW50IHRoZSBnbHVlCmxvZ2ljIGFuZCBEV0MzIGNvbnRyb2xsZXIuCgpD
-by1kZXZlbG9wZWQtYnk6IFBhbmthaiBEZXYgPHBhbmthai5kZXZAc3QuY29tPgpTaWduZWQtb2Zm
-LWJ5OiBQYW5rYWogRGV2IDxwYW5rYWouZGV2QHN0LmNvbT4KQ28tZGV2ZWxvcGVkLWJ5OiBDbMOp
-bWVudCBMZSBHb2ZmaWMgPGNsZW1lbnQubGVnb2ZmaWNAZm9zcy5zdC5jb20+ClNpZ25lZC1vZmYt
-Ynk6IENsw6ltZW50IExlIEdvZmZpYyA8Y2xlbWVudC5sZWdvZmZpY0Bmb3NzLnN0LmNvbT4KQ28t
-ZGV2ZWxvcGVkLWJ5OiBHYXRpZW4gQ2hldmFsbGllciA8Z2F0aWVuLmNoZXZhbGxpZXJAZm9zcy5z
-dC5jb20+ClNpZ25lZC1vZmYtYnk6IEdhdGllbiBDaGV2YWxsaWVyIDxnYXRpZW4uY2hldmFsbGll
-ckBmb3NzLnN0LmNvbT4KU2lnbmVkLW9mZi1ieTogTWFyZWsgVmFzdXQgPG1hcmV4QG5hYmxhZGV2
-LmNvbT4KLS0tCkNjOiBBbGV4YW5kcmUgVG9yZ3VlIDxhbGV4YW5kcmUudG9yZ3VlQGZvc3Muc3Qu
-Y29tPgpDYzogQ2hyaXN0aWFuIEJydWVsIDxjaHJpc3RpYW4uYnJ1ZWxAZm9zcy5zdC5jb20+CkNj
-OiBDb25vciBEb29sZXkgPGNvbm9yK2R0QGtlcm5lbC5vcmc+CkNjOiBGYWJyaWNlIEdhc25pZXIg
-PGZhYnJpY2UuZ2FzbmllckBmb3NzLnN0LmNvbT4KQ2M6IEdyZWcgS3JvYWgtSGFydG1hbiA8Z3Jl
-Z2toQGxpbnV4Zm91bmRhdGlvbi5vcmc+CkNjOiBLcnp5c3p0b2YgS296bG93c2tpIDxrcnprK2R0
-QGtlcm5lbC5vcmc+CkNjOiBNYXhpbWUgQ29xdWVsaW4gPG1jb3F1ZWxpbi5zdG0zMkBnbWFpbC5j
-b20+CkNjOiBOZWlsIEFybXN0cm9uZyA8bmVpbC5hcm1zdHJvbmdAbGluYXJvLm9yZz4KQ2M6IFBh
-bmthaiBEZXYgPHBhbmthai5kZXZAc3QuY29tPgpDYzogUmFodWwgS3VtYXIgPHJhaHVsLmt1bWFy
-MDVAc3QuY29tPgpDYzogUm9iIEhlcnJpbmcgPHJvYmhAa2VybmVsLm9yZz4KQ2M6IFJvc2VuIFBl
-bmV2IDxyb3NlbnBAZ21haWwuY29tPgpDYzogVGhpbmggTmd1eWVuIDxUaGluaC5OZ3V5ZW5Ac3lu
-b3BzeXMuY29tPgpDYzogVmlub2QgS291bCA8dmtvdWxAa2VybmVsLm9yZz4KQ2M6IGRldmljZXRy
-ZWVAdmdlci5rZXJuZWwub3JnCkNjOiBrZXJuZWxAZGgtZWxlY3Ryb25pY3MuY29tCkNjOiBsaW51
-eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKQ2M6IGxpbnV4LWtlcm5lbEB2Z2VyLmtl
-cm5lbC5vcmcKQ2M6IGxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCkNjOiBsaW51eC1zdG0z
-MkBzdC1tZC1tYWlsbWFuLnN0b3JtcmVwbHkuY29tCkNjOiBsaW51eC11c2JAdmdlci5rZXJuZWwu
-b3JnCi0tLQpWMjogRml4IHVwIFNvYi9DZGIgbGluZXMKLS0tCiAuLi4vYmluZGluZ3MvdXNiL3N0
-LHN0bTMybXAyNS1kd2MzLnlhbWwgICAgICAgfCAxMDggKysrKysrKysrKysrKysrKysrCiAxIGZp
-bGUgY2hhbmdlZCwgMTA4IGluc2VydGlvbnMoKykKIGNyZWF0ZSBtb2RlIDEwMDY0NCBEb2N1bWVu
-dGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvdXNiL3N0LHN0bTMybXAyNS1kd2MzLnlhbWwKCmRp
-ZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvdXNiL3N0LHN0bTMy
-bXAyNS1kd2MzLnlhbWwgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvdXNiL3N0
-LHN0bTMybXAyNS1kd2MzLnlhbWwKbmV3IGZpbGUgbW9kZSAxMDA2NDQKaW5kZXggMDAwMDAwMDAw
-MDAwMC4uZTM3N2VmZWY0MzUwMwotLS0gL2Rldi9udWxsCisrKyBiL0RvY3VtZW50YXRpb24vZGV2
-aWNldHJlZS9iaW5kaW5ncy91c2Ivc3Qsc3RtMzJtcDI1LWR3YzMueWFtbApAQCAtMCwwICsxLDEw
-OCBAQAorIyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogKEdQTC0yLjAgT1IgQlNELTItQ2xhdXNl
-KQorJVlBTUwgMS4yCistLS0KKyRpZDogaHR0cDovL2RldmljZXRyZWUub3JnL3NjaGVtYXMvdXNi
-L3N0LHN0bTMybXAyNS1kd2MzLnlhbWwjCiskc2NoZW1hOiBodHRwOi8vZGV2aWNldHJlZS5vcmcv
-bWV0YS1zY2hlbWFzL2NvcmUueWFtbCMKKwordGl0bGU6IFNUTWljcm9lbGVjdHJvbmljcyBTVE0z
-MiBNUFUgRFdDMyBVU0IgU29DIGNvbnRyb2xsZXIKKworZGVzY3JpcHRpb246CisgIFRoZSBTVE0z
-MiBNUFUgRFdDMyBVU0IgU29DIGNvbnRyb2xsZXIgYmxvY2sgc3VwcG9ydHMgYm90aAorICBIb3N0
-KFNTL0hTL0ZTL0xTKSBhbmQgRGV2aWNlKFNTL0hTL0ZTKSBtb2RlIG9wZXJhdGlvbgorCittYWlu
-dGFpbmVyczoKKyAgLSBGYWJyaWNlIEdhc25pZXIgPGZhYnJpY2UuZ2FzbmllckBmb3NzLnN0LmNv
-bT4KKyAgLSBNYXJlayBWYXN1dCA8bWFyZXhAbmFibGFkZXYuY29tPgorCitwcm9wZXJ0aWVzOgor
-ICBjb21wYXRpYmxlOgorICAgIGNvbnN0OiBzdCxzdG0zMm1wMjUtZHdjMworCisgIHJlZzoKKyAg
-ICBtYXhJdGVtczogMQorCisgIGFjY2Vzcy1jb250cm9sbGVyczoKKyAgICBtYXhJdGVtczogMQor
-CisgIGNsb2NrczoKKyAgICBtaW5JdGVtczogMworICAgIG1heEl0ZW1zOiAzCisKKyAgY2xvY2st
-bmFtZXM6CisgICAgaXRlbXM6CisgICAgICAtIGNvbnN0OiByZWYKKyAgICAgIC0gY29uc3Q6IGJ1
-c19lYXJseQorICAgICAgLSBjb25zdDogc3VzcGVuZAorCisgIGRyX21vZGU6CisgICAgJHJlZjog
-L3NjaGVtYXMvdHlwZXMueWFtbCMvZGVmaW5pdGlvbnMvc3RyaW5nCisgICAgZW51bTogW2hvc3Qs
-IHBlcmlwaGVyYWwsIG90Z10KKworICBpbnRlcnJ1cHRzOgorICAgIG1heEl0ZW1zOiAxCisKKyAg
-cGh5czoKKyAgICBtaW5JdGVtczogMQorICAgIG1heEl0ZW1zOiAyCisKKyAgcGh5LW5hbWVzOgor
-ICAgIG1pbkl0ZW1zOiAxCisgICAgaXRlbXM6CisgICAgICAtIGNvbnN0OiB1c2IyLXBoeQorICAg
-ICAgLSBjb25zdDogdXNiMy1waHkKKworICByZXNldHM6CisgICAgbWluSXRlbXM6IDEKKworICBz
-dCxzeXNjZmc6CisgICAgJHJlZjogL3NjaGVtYXMvdHlwZXMueWFtbCMvZGVmaW5pdGlvbnMvcGhh
-bmRsZS1hcnJheQorICAgIGRlc2NyaXB0aW9uOiBQaGFuZGxlIHRvIHN5c3RlbSBjb25maWd1cmF0
-aW9uIGNvbnRyb2xsZXIuCisgICAgaXRlbXM6CisgICAgICAtIGl0ZW1zOgorICAgICAgICAgIC0g
-ZGVzY3JpcHRpb246IHBoYW5kbGUgdG8gc3lzY2ZnCisgICAgICAgICAgLSBkZXNjcmlwdGlvbjog
-VVNCM0RSIGNvbnRyb2wgb2Zmc2V0IHdpdGhpbiBzeXNjZmcKKworICBzdCxlbmFibGUtcG9ydC1w
-b3dlci1jb250cm9sOgorICAgIHR5cGU6IGJvb2xlYW4KKyAgICBkZXNjcmlwdGlvbjogRW5hYmxl
-IEhvc3QtTW9kZSBQb3J0IFBvd2VyIENvbnRyb2wgKGJpdC0zIG9mIGNhcGFiaWxpdHkgcGFyYW0g
-SENDUEFSQU1TKQorCisgIHN0LG92cmN1ci1hY3RpdmUtbG93OgorICAgIHR5cGU6IGJvb2xlYW4K
-KyAgICBkZXNjcmlwdGlvbjogT3Zlci1DdXJyZW50IHNpZ25hbCBwb2xhcml0eSBpcyBhY3RpdmUt
-bG93CisKKyAgc3QsdmJ1c2VuLWFjdGl2ZS1sb3c6CisgICAgdHlwZTogYm9vbGVhbgorICAgIGRl
-c2NyaXB0aW9uOiBWQlVTLUVOQUJMRSBzaWduYWwgcG9sYXJpdHkgaXMgYWN0aXZlLWxvdworCity
-ZXF1aXJlZDoKKyAgLSBjb21wYXRpYmxlCisgIC0gcmVnCisgIC0gY2xvY2tzCisgIC0gY2xvY2st
-bmFtZXMKKyAgLSBpbnRlcnJ1cHRzCisgIC0gcGh5cworICAtIHBoeS1uYW1lcworICAtIHJlc2V0
-cworICAtIHN0LHN5c2NmZworCit1bmV2YWx1YXRlZFByb3BlcnRpZXM6IGZhbHNlCisKK2V4YW1w
-bGVzOgorICAtIHwKKyAgICAjaW5jbHVkZSA8ZHQtYmluZGluZ3MvY2xvY2svc3Qsc3RtMzJtcDI1
-LXJjYy5oPgorICAgICNpbmNsdWRlIDxkdC1iaW5kaW5ncy9pbnRlcnJ1cHQtY29udHJvbGxlci9h
-cm0tZ2ljLmg+CisgICAgI2luY2x1ZGUgPGR0LWJpbmRpbmdzL3Jlc2V0L3N0LHN0bTMybXAyNS1y
-Y2MuaD4KKworICAgIHVzYjNkcjogdXNiQDQ4MzAwMDAwIHsKKyAgICAgICAgY29tcGF0aWJsZSA9
-ICJzdCxzdG0zMm1wMjUtZHdjMyI7CisgICAgICAgIHJlZyA9IDwweDQ4MzAwMDAwIDB4MTAwMDAw
-PjsKKyAgICAgICAgY2xvY2tzID0gPCZyY2MgQ0tfS0VSX1VTQjJQSFkyPiwgPCZyY2MgQ0tfQlVT
-X1VTQjNEUj4sIDwmcmNjIENLX0tFUl9VU0IyUEhZMj47CisgICAgICAgIGNsb2NrLW5hbWVzID0g
-InJlZiIsICJidXNfZWFybHkiLCAic3VzcGVuZCI7CisgICAgICAgIGludGVycnVwdHMgPSA8R0lD
-X1NQSSAyMjggSVJRX1RZUEVfTEVWRUxfSElHSD47CisgICAgICAgIHBoeXMgPSA8JnVzYjJfcGh5
-PiwgPCZ1c2IzX3BoeT47CisgICAgICAgIHBoeS1uYW1lcyA9ICJ1c2IyLXBoeSIsICJ1c2IzLXBo
-eSI7CisgICAgICAgIHJlc2V0cyA9IDwmcmNjIFVTQjNEUl9SPjsKKyAgICAgICAgc3Qsb3ZyY3Vy
-LWFjdGl2ZS1sb3c7CisgICAgICAgIHN0LHN5c2NmZyA9IDwmc3lzY2ZnIDB4NDgwMD47CisgICAg
-ICAgIHN0LHZidXNlbi1hY3RpdmUtbG93OworICAgIH07Ci0tIAoyLjUzLjAKCgotLSAKbGludXgt
-cGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+The ST STM32MP2 SoC contains one instance of DWC3 USB controller with
+glue logic wrapper around it controlled by syscon. Extend the generic
+DWC3 platform driver with ST STM32MP2 glue logic specifics.
+
+Signed-off-by: Marek Vasut <marex@nabladev.com>
+---
+Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>
+Cc: Christian Bruel <christian.bruel@foss.st.com>
+Cc: Conor Dooley <conor+dt@kernel.org>
+Cc: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Pankaj Dev <pankaj.dev@st.com>
+Cc: Rahul Kumar <rahul.kumar05@st.com>
+Cc: Rob Herring <robh@kernel.org>
+Cc: Rosen Penev <rosenp@gmail.com>
+Cc: Thinh Nguyen <Thinh.Nguyen@synopsys.com>
+Cc: Vinod Koul <vkoul@kernel.org>
+Cc: devicetree@vger.kernel.org
+Cc: kernel@dh-electronics.com
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+Cc: linux-phy@lists.infradead.org
+Cc: linux-stm32@st-md-mailman.stormreply.com
+Cc: linux-usb@vger.kernel.org
+---
+V2: No change
+---
+ drivers/usb/dwc3/dwc3-generic-plat.c | 44 ++++++++++++++++++++++++++++
+ 1 file changed, 44 insertions(+)
+
+diff --git a/drivers/usb/dwc3/dwc3-generic-plat.c b/drivers/usb/dwc3/dwc3-generic-plat.c
+index ca69ac0eb07ce..0946ed61647b6 100644
+--- a/drivers/usb/dwc3/dwc3-generic-plat.c
++++ b/drivers/usb/dwc3/dwc3-generic-plat.c
+@@ -22,6 +22,12 @@
+ #define EIC7700_HSP_AXI_LP_XM_CSYSREQ	BIT(0)
+ #define EIC7700_HSP_AXI_LP_XS_CSYSREQ	BIT(16)
+ 
++#define STM32MP2_USB3DRCR_HOST_PORT_POWER_CONTROL_PRESENT	BIT(0)
++#define STM32MP2_USB3DRCR_OVRCUR_POLARITY			BIT(1)
++#define STM32MP2_USB3DRCR_VBUSEN_POLARITY			BIT(2)
++#define STM32MP2_USB3DRCR_USB2ONLYH				BIT(3)
++#define STM32MP2_USB3DRCR_USB2ONLYD				BIT(4)
++
+ struct dwc3_generic {
+ 	struct device		*dev;
+ 	struct dwc3		dwc;
+@@ -85,6 +91,38 @@ static int dwc3_spacemit_k1_init(struct dwc3_generic *dwc3g)
+ 	return 0;
+ }
+ 
++static int dwc3_stm32mp25_init(struct dwc3_generic *dwc3g)
++{
++	struct device *dev = dwc3g->dev;
++	bool ovrcur_polarity_low = device_property_read_bool(dev, "st,ovrcur-active-low");
++	bool prt_pwr_ctrl = device_property_read_bool(dev, "st,enable-port-power-control");
++	bool usb2only_conf = device_property_match_string(dev, "phy-names", "usb3-phy") < 0;
++	bool vbusen_polarity_low = device_property_read_bool(dev, "st,vbusen-active-low");
++	struct regmap *regmap;
++	u32 drcr;
++
++	regmap = syscon_regmap_lookup_by_phandle_args(dev->of_node, "st,syscfg", 1, &drcr);
++	if (IS_ERR(regmap))
++		return dev_err_probe(dev, PTR_ERR(regmap), "No st,syscfg phandle specified\n");
++
++	return regmap_update_bits(regmap, drcr,
++				  STM32MP2_USB3DRCR_HOST_PORT_POWER_CONTROL_PRESENT |
++				  STM32MP2_USB3DRCR_OVRCUR_POLARITY |
++				  STM32MP2_USB3DRCR_VBUSEN_POLARITY |
++				  STM32MP2_USB3DRCR_USB2ONLYD |
++				  STM32MP2_USB3DRCR_USB2ONLYH,
++				  FIELD_PREP(STM32MP2_USB3DRCR_HOST_PORT_POWER_CONTROL_PRESENT,
++					     prt_pwr_ctrl) |
++				  FIELD_PREP(STM32MP2_USB3DRCR_OVRCUR_POLARITY,
++					     ovrcur_polarity_low) |
++				  FIELD_PREP(STM32MP2_USB3DRCR_VBUSEN_POLARITY,
++					     vbusen_polarity_low) |
++				  FIELD_PREP(STM32MP2_USB3DRCR_USB2ONLYD,
++					     !!usb2only_conf) |
++				  FIELD_PREP(STM32MP2_USB3DRCR_USB2ONLYH,
++					     !!usb2only_conf));
++}
++
+ static int dwc3_generic_probe(struct platform_device *pdev)
+ {
+ 	const struct dwc3_generic_config *plat_config;
+@@ -231,12 +269,18 @@ static const struct dwc3_generic_config eic7700_dwc3 =  {
+ 	.properties = DWC3_DEFAULT_PROPERTIES,
+ };
+ 
++static const struct dwc3_generic_config stm32mp25_dwc3 =  {
++	.init = dwc3_stm32mp25_init,
++	.properties = DWC3_DEFAULT_PROPERTIES,
++};
++
+ static const struct of_device_id dwc3_generic_of_match[] = {
+ 	{ .compatible = "spacemit,k1-dwc3", &spacemit_k1_dwc3},
+ 	{ .compatible = "spacemit,k3-dwc3", },
+ 	{ .compatible = "fsl,ls1028a-dwc3", &fsl_ls1028_dwc3},
+ 	{ .compatible = "eswin,eic7700-dwc3", &eic7700_dwc3},
+ 	{ .compatible = "starfive,jhb100-dwc3", },
++	{ .compatible = "st,stm32mp25-dwc3", &stm32mp25_dwc3 },
+ 	{ /* sentinel */ }
+ };
+ MODULE_DEVICE_TABLE(of, dwc3_generic_of_match);
+-- 
+2.53.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
