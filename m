@@ -4,83 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16B03C5CFC1
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Aug 2026 04:25:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BAE5C5B572
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Aug 2026 05:20:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=70hTA6F6eYAuAj6hFAx/ntewRjuQPtCRhuWvQNj8B5M=; b=Lcru4vuAsmk7yf
-	5aO8E/sdKAV0txZrEo0A2dtTmMksQLuCbKYG50k8kGCYoUHGPf2M85Nkj66R56VHuJ/k5kGtHAD32
-	M+JQkT9EHEOjNhzZQRRxkkwN08Xlo8D3LTdb5CGrTyqKEU/3PJ3LlPn2Uxs1C0jJan7WL03UaRd1r
-	hzRcQTJj0P6mFWhR+8MYokou0S+SKUDTuUA4XrTdU0Oh3EZm7HiZLKdHDw+U7xK1V5SAsECElChk4
-	B5xD9dlbBAETsA6cfCHRxoUSu/kWJItmnSzQGC4ZbaC4nX+/ZZ2dqChH6bMcGxzZpFuHOlDc9CQPH
-	NGGS82FI3nYg5J6SfUiA==;
+	List-Owner; bh=w2oqBBDMFCEZTRAD5W5tN1y2YQ0a3hrSiR303P1+YxQ=; b=wpX6ve0hrjUNTe
+	Yp94E7TMOnV7H0nrGfIEFWQiBrjB1QkVIb0IcAMvMHr+4wi1IFWaHTJIH+hErow+kGmD5ccaXRMsx
+	OqVEJBiEdCYNMhNvl15JZoowCMQ6idHottjF/Ky4SB8jgqqD3YVYwXytxQCY2I2zQXsK9N/r8WVyZ
+	0eNvcNlKyMBJF0zl6CSVTxO579P/g/RdR8YOIvGn+XE2+mKzgvZW+/eGxYwxHtwO1hhphPWgk5/cu
+	XAz9HKVQfVq6Q+WK22Tn3H7tIBDpGGr4aTOyF8SCJXgrXxgmL2ZFoV5pihiVC6RK+jiI1wdqand+0
+	XjeTl9VNIlgEWrjMtQFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wvouH-00000005P4o-2Gae;
-	Mon, 17 Aug 2026 04:25:05 +0000
-Received: from sender4-op-o15.zoho.com ([136.143.188.15])
+	id 1wvplP-00000005QzZ-1cUT;
+	Mon, 17 Aug 2026 05:19:59 +0000
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wvouE-00000005P4I-3IQq;
-	Mon, 17 Aug 2026 04:25:04 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1786940677; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=KzI1Y4GT+H6j9FEFK0hC47a08RldjqCxo5u3mTr9qqfKlDZVmoOyUfrXICQG2NwgpZ8FE+Ubh+4UDRciq9CJeHPkxgDzNKgqBl/Yc7CnKd5BKlAw4d8eyYUrBtYaF88x0PBTj8ufzJawkNoFIx2YqR47wv0jdVR13M5opHN3mhk=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1786940677; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=ZSlZwiisO+mhc+1mZ7YoDuogysbfOwIRDw36DrAX+ww=; 
-	b=Aj1FAqPjgK//aBsflzglzkpsIq1CFmmkhwPTMRpw8QY3komjD3d3hIFDz+1EsBOYfH43VRJlBf9SdcMhp3oZJbu88LJtuRVSJKCyJH4uxcb9TCDkt82Exeu41HlBHQTR8YovOzeK73oE61S/5rHI8AKlD9pRVkfAOu1DIjGsbW8=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=icenowy.me;
-	spf=pass  smtp.mailfrom=uwu@icenowy.me;
-	dmarc=pass header.from=<uwu@icenowy.me>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1786940677;
-	s=zmail2; d=icenowy.me; i=uwu@icenowy.me;
-	h=Message-ID:Subject:Subject:From:From:To:To:Cc:Cc:Date:Date:In-Reply-To:Content-Type:Content-Transfer-Encoding:MIME-Version:Message-Id:Reply-To;
-	bh=ZSlZwiisO+mhc+1mZ7YoDuogysbfOwIRDw36DrAX+ww=;
-	b=HT7ksXPEC2RKhnKUehEHLxm7khUfsKuBuVPRjd073C8/12ktpJHyDz4j/gGZbo+E
-	xPufyVRRYjkXwSygr+EjDBIKq7Cneonu+it5XdiRURMqzCd00KOV1RUnr0Q+8Rr9hAq
-	SDqkRDksgLZ0Au33T6acXvJzZnKPLb64VCWYYOk8XPr4MFvfBrrbD1bj4ZyxrFrYsIb
-	JhW/c+XIqKuZdn0SOuq4cjJYIPxfaLpY055c118UZ/XMuDkgTyVeQBYwoqlY3dyPNhE
-	FM0owtXUDG+0pC1nV9lQrAKteqTvnCOwyctLIoky65KZgPjh8kJvDOP9Tmep2u/Szpn
-	HErGxyxb/g==
-Received: by mx.zohomail.com with SMTPS id 1786940674891707.3346436865633;
-	Sun, 16 Aug 2026 21:24:34 -0700 (PDT)
-Message-ID: <3f0268a19aab46d602dffc9e14fc6683af7a20cd.camel@icenowy.me>
-Subject: Re: [PATCH 02/12] clk: thead: th1520-ap: add support for MISC
- subsys clocks
-From: Icenowy Zheng <uwu@icenowy.me>
-To: Drew Fustini <fustini@kernel.org>
-Cc: Guo Ren <guoren@kernel.org>, Fu Wei <wefu@redhat.com>, Michael Turquette
-	 <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, Rob Herring	
- <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley	
- <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, Neil Armstrong	
- <neil.armstrong@linaro.org>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>,  Paul Walmsley	 <pjw@kernel.org>, Palmer
- Dabbelt <palmer@dabbelt.com>, Albert Ou	 <aou@eecs.berkeley.edu>, Alexandre
- Ghiti <alex@ghiti.fr>, Jisheng Zhang	 <jszhang@kernel.org>, Philipp Zabel
- <p.zabel@pengutronix.de>, 	linux-riscv@lists.infradead.org,
- linux-clk@vger.kernel.org, 	devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, 	linux-gpio@vger.kernel.org,
- linux-phy@lists.infradead.org, 	linux-usb@vger.kernel.org, Han Gao
- <rabenda.cn@gmail.com>, Yao Zi	 <ziyao@disroot.org>
-Date: Mon, 17 Aug 2026 12:24:26 +0800
-In-Reply-To: <aoH9cvTC8vD4NYpB@x1>
-References: <20260507081710.4090814-1-zhengxingda@iscas.ac.cn>
-	 <20260507081710.4090814-3-zhengxingda@iscas.ac.cn>
-	 <aier9XppLeCkJydw@thelio>
-	 <93b867c1b7f5526cc25cb04f838432cd752f5981.camel@icenowy.me>
-	 <aievi0s-3SO8hV6a@thelio> <aijpEqzJ7fM7rGMH@thelio> <aoH9cvTC8vD4NYpB@x1>
-Organization: Anthon Open-Source Community
-User-Agent: Evolution 3.58.3 
+	id 1wvplM-00000005QzH-1ICZ
+	for linux-phy@lists.infradead.org;
+	Mon, 17 Aug 2026 05:19:57 +0000
+Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-4998e0916faso12776675e9.2
+        for <linux-phy@lists.infradead.org>; Sun, 16 Aug 2026 22:19:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=sigma-star.at; s=google; t=1786943993; x=1787548793; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=sOAzM3F+gJS+8ekXWLBSmACUEeC2z+0rXqaknxPGi6s=;
+        b=Hd96LnSbUYSmAx5mgJ1trXrTL/BoEIrCuhGR/kNDNVRBU30gApwpos+zwfnuruETk9
+         jDjV8Nt8CMMT+gAO0Nd9zcbY0nWHJv/0rtQyVmXv3C59VlHq4RnUOzKKaFUF9wFUKy4l
+         H5/fNQV1cx3huM+NbfROnlMBnfS5C1llzdL3JKXRkGi2VsQBgiPW9a2ylDS4qIvHJ1jc
+         Pk9P9YMu7t3UPlkwcvcxWD7iDsWoDFnGOYPf34rqfICZv3u+DsXRjU6mBVCmxTiY7j+6
+         adrGvK8MRWSBuxLzvtZvphj4pW0CCvfwoEMeYLUxkuA5obKlGGXVe7e/yLqXvaJaEeXi
+         LuFg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1786943993; x=1787548793;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=sOAzM3F+gJS+8ekXWLBSmACUEeC2z+0rXqaknxPGi6s=;
+        b=E6G6qlluEovwnylq3NDxcN1XlL5/iZahIMBtMUmgvByddjU0IIsO3FMATvIVRNtjUW
+         nLb93+vKyJmrJAAkDYMAeYsHb1/zMW+vC8Uuxm3dkDxUe8Q3ldDZWy96zOdpdzaZO/kW
+         ucyq1kebmLjNbQklLagVxJ2stP3kBoQtQKrLcqbsG01z743cQeShgHNuLmf0dEGWnIo2
+         rJcelLXb2MU02gaoapl8LLfsZid61GJEN6OFPUb5cAvrZAMxG7rR5JoC6MVhdVQJhQ//
+         WN8kYfZWd38dlUn16XBDqvRRSedHK5Uac1+ioX02PDeE2biM0cL+9r1i1EV54DQuQfae
+         x4Gw==
+X-Gm-Message-State: AOJu0YwT5E1q+kRA+QyCOtgrCFx8VRPcSfrn28Ifo/9nnm2Y6geaInTM
+	F8fxZN2JjXmYGrj11wRK1Wuc9mEBr9t4g6oAKyiyGNVBOMk8KQWQxIw5VabglxvKyAk=
+X-Gm-Gg: AR+sD10I7HSI0DDsiLL1UO9jwLPW8nPJIzi0KK0WE8j4G//kU9BiWiP//scuHlr/BxG
+	N8NvSX4Wts+f42kKngDHEb+F97tqyPlD3WiWL5kyMSXJ1/ZlEdA0ecjGm7wRgP+6bnwiXJnayn7
+	SGh3SDalcfmhlqGxMfxl8iSfMv5otS320AXorKdqL71iMa3qAIk661ls9jKERV0g+TSicofRk1J
+	MDvgptxPLYnTXWMp3gX7bPUfpcpRoXqM1kixDxzIXD7EX94LkKBLoaNduoq5YwBfgGT0T7vDGXa
+	0TlOMrOjOLTQIuMhCjkfIU+g6bfmR/Brwgf+XbktKgPsvHBj/9lPyUVeG/zKov7FKG0ZZ1n43Pa
+	NTRiMq0fCHEm2n5Ph+j+IPSLE1rttdG15FoXALucX+sMDD/NXBweFyRBSvMK3HhBWtTEVuXUVP1
+	vv16MYJkuHdqvWmMXe+L6vaav3oR0R50LEl1YF1njc6WtfHb4Pf1vwUxWmU4F5RtJPiWjc3yFAI
+	D6p/MVOQUo=
+X-Received: by 2002:a05:600c:4924:b0:495:503f:cf9a with SMTP id 5b1f17b1804b1-49987971a6amr210142505e9.9.1786943993346;
+        Sun, 16 Aug 2026 22:19:53 -0700 (PDT)
+Received: from [10.115.255.165] ([82.150.214.1])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-482a5a3b51asm836378f8f.11.2026.08.16.22.19.52
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 16 Aug 2026 22:19:53 -0700 (PDT)
+Message-ID: <3c11637c-8e81-44b2-8692-a5c7940ab7c2@sigma-star.at>
+Date: Mon, 17 Aug 2026 07:19:51 +0200
 MIME-Version: 1.0
-X-ZohoMailClient: External
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: ti,phy-usb3: Add aspcie
+ reference clock setting
+To: Rob Herring <robh@kernel.org>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org,
+ krzk+dt@kernel.org, conor+dt@kernel.org, johan@kernel.org, rogerq@ti.com,
+ Julian.FRIEDRICH@frequentis.com, upstream+omap@sigma-star.at
+References: <20260806091112.164695-1-david.oberhollenzer@sigma-star.at>
+ <20260806091112.164695-2-david.oberhollenzer@sigma-star.at>
+ <20260812022031.GA554483-robh@kernel.org>
+Content-Language: en-US
+From: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+In-Reply-To: <20260812022031.GA554483-robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260816_212503_214295_933D950A 
-X-CRM114-Status: GOOD (  24.73  )
+X-CRM114-CacheID: sfid-20260816_221956_652155_35EEFBCC 
+X-CRM114-Status: UNSURE (   9.74  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,50 +103,48 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-5ZyoIDIwMjYtMDgtMTbml6XnmoQgMTE6MTIgLTA3MDDvvIxEcmV3IEZ1c3RpbmnlhpnpgZPvvJoK
-PiBPbiBUdWUsIEp1biAwOSwgMjAyNiBhdCAwOTozMzoyMlBNIC0wNzAwLCBEcmV3IEZ1c3Rpbmkg
-d3JvdGU6Cj4gPiBPbiBNb24sIEp1biAwOCwgMjAyNiBhdCAxMToxNTozOVBNIC0wNzAwLCBEcmV3
-IEZ1c3Rpbmkgd3JvdGU6Cj4gPiA+IE9uIFR1ZSwgSnVuIDA5LCAyMDI2IGF0IDAyOjAxOjQzUE0g
-KzA4MDAsIEljZW5vd3kgWmhlbmcgd3JvdGU6Cj4gPiA+ID4g5ZyoIDIwMjYtMDYtMDjkuIDnmoQg
-MjM6MDAgLTA3MDDvvIxEcmV3IEZ1c3RpbmnlhpnpgZPvvJoKPiA+ID4gPiA+IE9uIFRodSwgTWF5
-IDA3LCAyMDI2IGF0IDA0OjE3OjAwUE0gKzA4MDAsIEljZW5vd3kgWmhlbmcKPiA+ID4gPiA+IHdy
-b3RlOgo+ID4gPiA+ID4gPiBUaGUgVEgxNTIwIFNvQyBjb250YWlucyBhIE1JU0NfU1VCU1lTIGNs
-b2NrIGNvbnRyb2xsZXIsCj4gPiA+ID4gPiA+IHdoaWNoCj4gPiA+ID4gPiA+IGFsbG93cwo+ID4g
-PiA+ID4gPiBjb250cm9sbGluZyBvZiBVU0IgcmVsYXRlZCBjbG9ja3MgYW5kIE1NQy9TRCBjb250
-cm9sbGVyIEFIQgo+ID4gPiA+ID4gPiBidXMKPiA+ID4gPiA+ID4gY2xvY2tzLgo+ID4gPiA+ID4g
-PiAKPiA+ID4gPiA+ID4gQWRkIHN1cHBvcnQgZm9yIHRoaXMgY2xvY2sgY29udHJvbGxlciwgaW4g
-b3JkZXIgdG8gZW5hYmxlCj4gPiA+ID4gPiA+IFVTQgo+ID4gPiA+ID4gPiBzdXBwb3J0Lgo+ID4g
-PiA+ID4gPiAKPiA+ID4gPiA+ID4gU2lnbmVkLW9mZi1ieTogSWNlbm93eSBaaGVuZyA8emhlbmd4
-aW5nZGFAaXNjYXMuYWMuY24+Cj4gPiA+ID4gPiA+IC0tLQo+ID4gPiA+ID4gPiDCoGRyaXZlcnMv
-Y2xrL3RoZWFkL2Nsay10aDE1MjAtYXAuYyB8IDY0Cj4gPiA+ID4gPiA+ICsrKysrKysrKysrKysr
-KysrKysrKysrKysrKysrKysKPiA+ID4gPiA+ID4gwqAxIGZpbGUgY2hhbmdlZCwgNjQgaW5zZXJ0
-aW9ucygrKQo+ID4gPiA+ID4gPiAKPiA+ID4gPiA+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvY2xr
-L3RoZWFkL2Nsay10aDE1MjAtYXAuYwo+ID4gPiA+ID4gPiBiL2RyaXZlcnMvY2xrL3RoZWFkL2Ns
-ay10aDE1MjAtYXAuYwo+ID4gPiA+ID4gPiBpbmRleCAzYTY4NDdmMWM5NTBmLi4yNGY3ODVmMGIz
-MjlhIDEwMDY0NAo+ID4gPiA+ID4gPiAtLS0gYS9kcml2ZXJzL2Nsay90aGVhZC9jbGstdGgxNTIw
-LWFwLmMKPiA+ID4gPiA+ID4gKysrIGIvZHJpdmVycy9jbGsvdGhlYWQvY2xrLXRoMTUyMC1hcC5j
-Cj4gPiA+ID4gPiBbLi4uXQo+ID4gPiA+ID4gPiBAQCAtMTYwOSw2ICsxNjYzLDEyIEBAIHN0YXRp
-YyBpbnQgdGgxNTIwX2Nsa19wcm9iZShzdHJ1Y3QKPiA+ID4gPiA+ID4gcGxhdGZvcm1fZGV2aWNl
-ICpwZGV2KQo+ID4gPiA+ID4gPiDCoAkJCXJldHVybiByZXQ7Cj4gPiA+ID4gPiA+IMKgCX0KPiA+
-ID4gPiA+ID4gwqAKPiA+ID4gPiA+ID4gKwlpZiAocGxhdF9kYXRhID09ICZ0aDE1MjBfYXBfcGxh
-dGRhdGEpIHsKPiA+ID4gPiA+ID4gKwkJcmV0ID0gZGV2bV9jbGtfaHdfcmVnaXN0ZXIoZGV2LAo+
-ID4gPiA+ID4gPiAmdXNiX3N1c3BlbmRfZGl2X2Nsay5odyk7Cj4gPiA+ID4gPiA+ICsJCWlmIChy
-ZXQpCj4gPiA+ID4gPiA+ICsJCQlyZXR1cm4gcmV0Owo+ID4gPiA+ID4gPiArCX0KPiA+ID4gPiA+
-IAo+ID4gPiA+ID4gU2hvdWxkIHVzYl9zdXNwZW5kX2Rpdl9jbGsuaHcgaW5zdGVhZCBiZSByZWdp
-c3RlcmVkIHVuZGVyCj4gPiA+ID4gPiAnaWYgKHBsYXRfZGF0YSA9PSAmdGgxNTIwX2FwX3BsYXRk
-YXRhKSc/Cj4gPiA+ID4gCj4gPiA+ID4gRG8geW91IG1lYW4gbWlzY19wbGF0ZGF0YT8KPiA+ID4g
-PiAKPiA+ID4gPiBZZXMsIHRoaXMgaXMgYW4gY29weS1uLXBhc3RlIGVycm9yIHRoYXQgZGVzZXJ2
-ZXMgYSBmaXguCj4gPiA+IAo+ID4gPiBIYWgsIHllcywgSSBhbHNvIGhhZCBhIHR5cG8gOikKPiA+
-IAo+ID4gQXNzdW1pbmcgdGhhdCBnZXRzIGZpeGVkIGluIHRoZSBuZXh0IHJldjoKPiA+IAo+ID4g
-UmV2aWV3ZWQtYnk6IERyZXcgRnVzaW5pIDxmdXN0aW5pQGtlcm5lbC5vcmc+Cj4gCj4gSSB3aWxs
-IGZpeHVwIHRoZSB0eXBvIGFuZCBhcHBseSB0byB0aGVhZC1jbGstZm9yLW5leHQgb25jZSA3LjMt
-cmMxIGlzCj4gcmVsZWFzZWQuCgpCVFcgSSB0aGluayB0aGUgYmluZGluZyBwYXRjaCBzaG91bGQg
-Z28gdGhyb3VnaCB5b3VyIHRyZWUgdG9vLgoKVGhhbmtzLApJY2Vub3d5Cgo+IAo+IFRoYW5rcywK
-PiBEcmV3CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFk
-ZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
-eC1waHkK
+Hi,
+
+On 8/12/26 4:20 AM, Rob Herring wrote:
+>> +  - if:
+>> +      properties:
+>> +        compatible:
+>> +          contains:
+>> +            const: ti,phy-pipe3-pcie
+>> +    then:
+>> +      properties:
+>> +        ti,syscon-acspcie-tx-rx: true
+> 
+> This has no effect. Invert the if and move the else here.
+> 
+
+Before I send another version of this patch set, are you really
+sure about this?
+
+Not only did I copy that entire block from the one directly above,
+(the one that is supposed to only allow syscon-pllreset compatible
+is set to ti,phy-pipe3-sata), I actually tested this by running
+make dt_binding_check.
+
+If I intentionally break the example by setting a wrong compatible
+string, I get a "False schema does not allow" type message, same
+as when I use the syscon-pllreset property with the wrong compat
+string.
+
+Is the existing check broken too? Is there something different
+supposed to happen?
+
+Greetings,
+
+David
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
