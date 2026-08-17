@@ -4,122 +4,121 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63FA9C5B572
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Aug 2026 16:22:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08413C5B572
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Aug 2026 16:23:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:CC:To:Subject:
 	From:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mW/ylXaj/ghu5WO7GcO67vvX2DBsLXVrNg186POrGZ8=; b=4HZ2JaqaHvkbxt
-	peCALbNrmkdM11TCSXF9bCfrEfO+Kn1WleP6UyohL3PjWrNfjJsMevPsnyj08y5gwOCDbufMHg+kd
-	Lij197K8qY2XmkakeIBfG0IByfhth11ncSI3gHoxd5DTpAgh6Astpawa/Y+L+wTbj0tuKod3y98x5
-	NNtTckKPzR0eS3sqP54EKdhh2p53DbLMmmv4vcEShGznM8wuBVtw9mbow3mKsxhBflEMMywpuCoAN
-	UIX7sLq2wKQ23j7nX9e2sLoaMw89GnTFHcAke/FOIBtQvktJSexgL0KyHoiRF+JaLzwBchkV4D+y4
-	i1qiiYWTeeWt0P1P+EKA==;
+	List-Owner; bh=Sj/EJFnqId8m/1c4XVcWD/T5d5eraa1inuSvtJHsu9I=; b=J0XXHukC/inTeG
+	iwuMfKY13WSmQWJ2RhLCerWad9rvv7U5iUIxBlpdN0h3ijgiQPt9CgFVQemRckchL/0Hc9BLZdPOF
+	M66nAFMUd7/gVonlv+2Y1NhuxKF/5aZ8ptm8WG7+NMdx3hn89DZaSiXnMQxsIWari0Ze6hIYzJQjV
+	GR4QQkRXnE6tq6bqrMfTCGbJ/bIsHh+mFt4hCc8AGG8XwMUEcvjUxX7kqaJGSg28UYujzsxhPnmvV
+	N57b/y1u6Sj4t/SAn0zAniIajfWIkxMHx3JJDgakEsUYb9kgU8KlzRxwN+PsCGe5RXEBjRNz1nW/e
+	N1bcF0Jd8eai1tyIkGPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1ww06X-00000006VKc-0QIA;
-	Mon, 17 Aug 2026 16:22:29 +0000
-Received: from mail-northeuropeazlp170120005.outbound.protection.outlook.com ([2a01:111:f403:c200::5] helo=DUZPR83CU001.outbound.protection.outlook.com)
+	id 1ww07H-00000006VYk-2re4;
+	Mon, 17 Aug 2026 16:23:15 +0000
+Received: from mail-francesouthazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c207::3] helo=MRWPR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1ww06T-00000006VI7-3hv9;
-	Mon, 17 Aug 2026 16:22:28 +0000
+	id 1ww07E-00000006VWY-2O8I;
+	Mon, 17 Aug 2026 16:23:13 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=dKx4/z0k9n4qRTNr9KtiUhxcHWkd1ifDnzDkVLnWUyS8L2aGK3zxgz1tEJkEvNBP05Pzxh0zJ4P16VHqGehncqrT4Du0sBTjzRWDu8N/58o5XKggGksQcx2UbMGwY/pWuh/nWJ7MJklf6aXQ7+vNuy5hr226UwvPtmpPwXRtCkZkleMM437AvIVI2sI9wF/Bh9Hgv9nQ0lqx5D7TrGDNChmTqT4yB0Vfq9alwdjUxAiYBi6Nl2uWvWzfuY8RFwAc/SysxLhtsaGxNNrWwUP7xzdRkB3BuZYj4Pnknoe3U46zLxbSoV3DlhvijRuy5WLn5vjJYpiO7ASnEj0nBQe2JQ==
+ b=xOf4StfNuXhu1Ebp/MMabuwCd53ubc2F4FY9oi3F6BIozKxxjNG/3xf5nnmpmBdum3kr6BKlBLfxb/8Za9MrbBV7DbCHrNxZ28hhzIsjkfMvSS5lh0GBl8GfW7jOoS/sdPvz7jlTtvnp08t3p+kfkEX6j9iNjxJNV99p/AygomzzazPvBQ/Tc5c1DPf9u3Nj4MCpF9Q9J/N/ux3yLZxR1VpZaWF4+QD5K8TaTu8/ENpULMlr7CBZWNC156hfEaAQxdX7dvcqH8AqkaW8nHoPOKLd5ZznwARPVDg8sQ6tqUlMgc8MgET6uyzUeNyD8/zg7HDu68a/j2HNwAI+tAbOIg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=2mhQKs28iG7Wea4Q25d3O6iKfaqp3+LRiG7HKKMI6O8=;
- b=uS8l2Qr0G29I9QS8S3N28KyeY1LaZH3qp7EPfQzZfjMtgg471wr4XDd3zgImL5XplmWmNL9DrIErMPECMaH2xLsyo0nfo0olGzvLnxrP8Ubr34uS+M8Rnd+I2Kd7MvrzxCxMzFoF1I+9LzWRvPVHQVIyk7QWYxPVXJXNfKdDhmbg1cJY2zxDO4h5oCi/dOSGOiI4nliv1u/WCSzW2dkGymh4abcsoe6N4B198kB3JbUm5PDsm4uWR9TUpvuntbxrN5mzjF0y5pMnXG43XIogZ5DqVdKRR5psFQHSmzojmYuTBPnU3VjXpmeqcpNr0BotgS+G0JsvBMllITOPG9cXiA==
+ bh=Dfb+1RpEnYXxk5EIdc81lJgyVCLGAMINE08Euo5b4H0=;
+ b=vYUMkkgPe+uuNTaNFjdBH9m8w+pHYybm+TTThX5axmTMWcbLXWyl8EqZIY89rF5ZdgsDVy9UEblnueq7PMx3Jo8Bu3OsySw4IZTA3Ud2bvQMk8+ZS0mixw23o9mzQGp3AoOZvWvHPknKPynHDC3le/uiNXCbWXsthmV1m6ODEjhcGlB7/0lIkOuCdvumvt7AEv5l4+jF0/s1fSPE3BbzmhdbpEAOeRkdfriwCAx7b9hxdBTDc/XabeJFLZBepVpULkQZEvjTfePvjcnRP2XrH5dSuQYfypaufep7h9zMmR/ggiXOoZtWfaRu46dbGvbCVGbtRM7R4Sg24qEuyjNhjg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=fail (sender ip is
- 164.130.1.60) smtp.rcpttodomain=nabladev.com smtp.mailfrom=foss.st.com;
+ 164.130.1.59) smtp.rcpttodomain=nabladev.com smtp.mailfrom=foss.st.com;
  dmarc=fail (p=none sp=none pct=100) action=none header.from=foss.st.com;
  dkim=none (message not signed); arc=none (0)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2mhQKs28iG7Wea4Q25d3O6iKfaqp3+LRiG7HKKMI6O8=;
- b=BuzDXSeBVHFjA+MBXnQx9bRB0hs8NDMGKgmP7H8C8SNJOflgp2AmwXGuhDjjFB7GcTig7qwPAy6QTjL7Zm8rkvGLXY39XLlij0W1cIQLpqOc+0clNrJAzwH6KhylrwqYgCMsUGPOy/rmCLgbHhOjlLZynWTK/lm1+yCHYvbYGY7o9TDWUeIG1khEVxJzwO3OKMF/N3CObpOxwFwWhkXSbCn0pt9ClXyv4sUD58STtQN2xq1YbMc8CmTz1nUai4QuyPeMRha6mgpx/2CGPSE8FowPmRpLnTto2TUuJilG8u0UvmD2wx7SIrrBJRtId5xTOTV9AN3JJJ+MgVUpNsx+6w==
-Received: from AS9PR06CA0064.eurprd06.prod.outlook.com (2603:10a6:20b:464::34)
- by DB8PR10MB3959.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:10:149::22) with
+ bh=Dfb+1RpEnYXxk5EIdc81lJgyVCLGAMINE08Euo5b4H0=;
+ b=N9vV1+Gnrw6H8qsayB6hUa/lF3vMw5ouB6W2QlQGeCCU7LR3gxF/9vn7DBHXu/1a/SDIgLoBsYXlLP47qhxC8NPYy4hLQaJafNvkiGah6fG3dUTIa0ZEhbHSjTz5+C1ohy/kHskRZjy2F3uQ+71Z57YQlMukXaisuGNQimgJIGsnZz4foYCh3HruoEsU0L8rBvhNwMcuyfpjJoCQsjDBh2eMxKPQlhAK2Ny0eodXy1JdVsKtlzEhhciBL8L+A1X2fwG8kdSeS91dfKgTCzztk7ut5QC7u9boPsHis0RwYOpDoC4MeBTKjcNk84zHuOYQxaqS1qtY3v9q9Jw0ImEQFQ==
+Received: from AS9PR06CA0743.eurprd06.prod.outlook.com (2603:10a6:20b:487::17)
+ by AM0PR10MB3281.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:208:17d::8) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.315.17; Mon, 17 Aug
- 2026 16:22:17 +0000
-Received: from AM1PEPF000252E1.eurprd07.prod.outlook.com
- (2603:10a6:20b:464:cafe::16) by AS9PR06CA0064.outlook.office365.com
- (2603:10a6:20b:464::34) with Microsoft SMTP Server (version=TLS1_3,
+ 2026 16:23:04 +0000
+Received: from AMS0EPF00000196.eurprd05.prod.outlook.com
+ (2603:10a6:20b:487:cafe::1b) by AS9PR06CA0743.outlook.office365.com
+ (2603:10a6:20b:487::17) with Microsoft SMTP Server (version=TLS1_3,
  cipher=TLS_AES_256_GCM_SHA384) id 15.21.315.17 via Frontend Transport; Mon,
- 17 Aug 2026 16:22:16 +0000
-X-MS-Exchange-Authentication-Results: spf=fail (sender IP is 164.130.1.60)
+ 17 Aug 2026 16:23:04 +0000
+X-MS-Exchange-Authentication-Results: spf=fail (sender IP is 164.130.1.59)
  smtp.mailfrom=foss.st.com; dkim=none (message not signed)
  header.d=none;dmarc=fail action=none header.from=foss.st.com;
 Received-SPF: Fail (protection.outlook.com: domain of foss.st.com does not
- designate 164.130.1.60 as permitted sender) receiver=protection.outlook.com;
- client-ip=164.130.1.60; helo=smtpO365.st.com;
-Received: from smtpO365.st.com (164.130.1.60) by
- AM1PEPF000252E1.mail.protection.outlook.com (10.167.16.59) with Microsoft
+ designate 164.130.1.59 as permitted sender) receiver=protection.outlook.com;
+ client-ip=164.130.1.59; helo=smtpO365.st.com;
+Received: from smtpO365.st.com (164.130.1.59) by
+ AMS0EPF00000196.mail.protection.outlook.com (10.167.16.217) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.339.3 via Frontend Transport; Mon, 17 Aug 2026 16:22:16 +0000
-Received: from STKDAG1NODE2.st.com (10.75.128.133) by smtpO365.st.com
- (10.250.44.72) with Microsoft SMTP Server (version=TLS1_2,
+ 15.21.339.3 via Frontend Transport; Mon, 17 Aug 2026 16:23:03 +0000
+Received: from STKDAG1NODE2.st.com (10.75.128.133) by smtpo365.st.com
+ (10.250.44.71) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.43; Mon, 17 Aug
- 2026 18:27:14 +0200
+ 2026 18:28:37 +0200
 Received: from [10.48.86.251] (10.48.86.251) by STKDAG1NODE2.st.com
  (10.75.128.133) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.43; Mon, 17 Aug
- 2026 18:22:15 +0200
-Message-ID: <e415f8de-f8dc-460d-80a9-5e1b2b34f8a8@foss.st.com>
-Date: Mon, 17 Aug 2026 18:22:14 +0200
+ 2026 18:23:02 +0200
+Message-ID: <8161b556-7ea5-4d5f-a8cc-12a71c850aa1@foss.st.com>
+Date: Mon, 17 Aug 2026 18:23:01 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
-Subject: Re: [PATCH v2 2/9] phy: stm32: Add support for ST STM32MP25
- USB2-FEMTO PHY
+Subject: Re: [PATCH 7/8] arm64: dts: st: Add USB nodes on stm32mp231
 To: Marek Vasut <marex@nabladev.com>, <linux-usb@vger.kernel.org>
-CC: Pankaj Dev <pankaj.dev@st.com>, Rahul Kumar <rahul.kumar05@st.com>,
-	Christian Bruel <christian.bruel@foss.st.com>, Alexandre Torgue
-	<alexandre.torgue@foss.st.com>, Conor Dooley <conor+dt@kernel.org>, "Greg
+CC: Pankaj Dev <pankaj.dev@st.com>, Alexandre Torgue
+	<alexandre.torgue@foss.st.com>, Christian Bruel
+	<christian.bruel@foss.st.com>, Conor Dooley <conor+dt@kernel.org>, "Greg
  Kroah-Hartman" <gregkh@linuxfoundation.org>, Krzysztof Kozlowski
 	<krzk+dt@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>, "Neil
- Armstrong" <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, "Rosen
- Penev" <rosenp@gmail.com>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>, "Vinod
- Koul" <vkoul@kernel.org>, <devicetree@vger.kernel.org>,
-	<kernel@dh-electronics.com>, <linux-arm-kernel@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-	<linux-stm32@st-md-mailman.stormreply.com>
-References: <20260816213849.1044073-1-marex@nabladev.com>
- <20260816213849.1044073-3-marex@nabladev.com>
+ Armstrong" <neil.armstrong@linaro.org>, Rahul Kumar <rahul.kumar05@st.com>,
+	Rob Herring <robh@kernel.org>, Rosen Penev <rosenp@gmail.com>, Thinh Nguyen
+	<Thinh.Nguyen@synopsys.com>, Vinod Koul <vkoul@kernel.org>,
+	<devicetree@vger.kernel.org>, <kernel@dh-electronics.com>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+	<linux-phy@lists.infradead.org>, <linux-stm32@st-md-mailman.stormreply.com>
+References: <20260812010157.1772849-1-marex@nabladev.com>
+ <20260812010157.1772849-8-marex@nabladev.com>
 Content-Language: en-US
-In-Reply-To: <20260816213849.1044073-3-marex@nabladev.com>
+In-Reply-To: <20260812010157.1772849-8-marex@nabladev.com>
 X-Originating-IP: [10.48.86.251]
 X-ClientProxiedBy: STKCAS1NODE1.st.com (10.75.128.134) To STKDAG1NODE2.st.com
  (10.75.128.133)
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM1PEPF000252E1:EE_|DB8PR10MB3959:EE_
-X-MS-Office365-Filtering-Correlation-Id: 7980be34-a6bd-4580-511f-08defc7bb44e
+X-MS-TrafficTypeDiagnostic: AMS0EPF00000196:EE_|AM0PR10MB3281:EE_
+X-MS-Office365-Filtering-Correlation-Id: 866349ca-e729-4339-7991-08defc7bd04f
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|7416014|376014|1800799024|82310400026|36860700016|18002099003|22082099003|56012099006|6133799003|11063799006|4143699003|10067099003;
-X-Microsoft-Antispam-Message-Info: iR+uLEwzSYbwyjPxKeH0smRaIU/IYY6l0glwWz5wdROB1Sf2aLcdXwWZZx+dkre/Mav9yGgpxQd+E4TY500Hu+NmLgMekZVqXsbJ7SH5OmQEy+vFy4ZX2TviBCbTzfVG1x5/XBQ0lcznkhTphLt2+JM3Ya4pE3JFlj3Dwl3jqlJxzC5XNOiYeEDbuZ6f8HGQ6VVG4+zRfD8v1Q6WevufZS7t1AdEwFoF0DsS/8b2uQF9duHK5OMpYCoavtanKfZc4zvv45xaaLmgRKjMRBWJC77DXteZa5TKfHVJMu+FKwKPsg6QDJdhsKuZiLrZeBoDpKmkTOBPQKRaxZKbAYuiai4ds+67+/CEYHzp72ZDOdp2ft6Wi9A0mv3swRrupeeOOWGxIGB8mLxfsuqwzuSxzcYrjkUYenxlGxLi7DtvNnHmKHbM3OiOqQC7pGPPCMc5ctIvydTkpcSeNbimsYdZpdpllz1SwDMN6qeG8TECNR+87U4sQQssPZtLmtF4TGrPJevTjyGDbIbyHJx32A08Aikg2VmMJ04WdzYSSpoCBpqEZjY9Fza16xTccF2YGjhHSzrlwbIYDYxAS3CfBQ7jo76GjjrvvUeGw1eL0D5DyQMIyP/7+xImsJ2b23W5gdw0f82M1bk2GSxF4MsXc5VgrEkQetGAxxxML8kYb7qIjbHAnVIrqhnECS3RXnRCx8FLKaX8eRylMHeL1f3nekmeIw==
-X-Forefront-Antispam-Report: CIP:164.130.1.60;CTRY:IT;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:smtpO365.st.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(23010399003)(7416014)(376014)(1800799024)(82310400026)(36860700016)(18002099003)(22082099003)(56012099006)(6133799003)(11063799006)(4143699003)(10067099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700016|1800799024|7416014|23010399003|376014|82310400026|10067099003|4143699003|11063799006|56012099006|22082099003|18002099003;
+X-Microsoft-Antispam-Message-Info: 14fDJO1Zbwz41VLfBCvfeUTVb57GakYm3WUYJSLvHMwWocPLECBVLRWpPicwbJYpqhyfwHIYn1pZZS2wmUkFqAhfHXkftVNi15kSFaFNZeOHBteiXHMDW16548colcie9zECTNHucIqOtJN1NfKU64nHn6OmKIVAx2sKqgQNfRCcjuz5RykARKeXcoWN4sa8WULnu26klE4fCGx/lmGjcDYPTVbvVCMCzWC5ATtig7hJxwOLTzBdlSVGQbsb3hwVEux22C5RResB17WtK2Pt7SUKECpnswGnfT95GsuK5l+ady/zazdwvpmRC9ztlhYmBE5iux3aX3sejdMQs1VkAZhIxW9wURut0qIAOVh78Y7jt9GH/I+vj7b7uRjbHdG50PYtd4kJjWH/MddjvPc+1RnUhl68TpWdGodEKA/6tu5G5cJDEV1RnYXvuAnoMfyncLA72GKet4JQ4gmVM0P8Z1sAWV5CrSnzswf37iFv5R7vceRFbl5PA1jTaicm1dkqxEjeywKlZBLPCTWX7RkDvRXhh300IvvgR9PVxaoQgNWycID4X6eEuVYqzivQe06WgWU0DEZQ3rJmxUb5cVHI4l7ZP8lHFGK1a4wfaiV9hEC/73nxevFdGfTK9mJJXF+739XJZz4Z2t0VqCXEeZzPDaNV4KyruFdN2FTL1ZZjZOd7dh4+i5/3CH2sbNSlgrSuZkefDXmJO3A1U7vM82hQlQ==
+X-Forefront-Antispam-Report: CIP:164.130.1.59;CTRY:IT;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:smtpO365.st.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(36860700016)(1800799024)(7416014)(23010399003)(376014)(82310400026)(10067099003)(4143699003)(11063799006)(56012099006)(22082099003)(18002099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: mcKMa02ZQ2t5TfxRGlFbILcwC3xJ62+SRVCMTaFLZfQduxI6Pm9Eo7UKYev2BBGSYQe96YcfrqsFhZwpI/C4lNjTn3iryaQPOHsH8qCG2v/PfyqdrFGfusNJX2+nlCN8i7f9lxPaw2IdQDN0SXqAUI3/CPL3ovVsKeijNHn2oz5c+t3WX2N82RDbBTt+E+FLX5ObGueg2mcvXT7VtDg6d9MmwxWYrClpcXn5zkGQMrz2qoVkOtRaJqDVIO3ODm4I5H329uj8B2eFLWcMORiazRBuB2eB3u6PvvFet0woeYfoTc8cTjdS/gf3Ml61HU+4GDXd73VC5pchGu71xE9txq98UVM9ZdiSgEfa8oshCuyIm+Zx8CwUPzMSHOxvB42VGvDuKZeTJlUcpU8wPwa3b+rV8tr1WymrWx7W4+WHRsnL+bskN90yU5Q8wUcOVD+L
+X-MS-Exchange-AntiSpam-MessageData-0: 1sSkiSwpmCcJTvzrAeJ5PT1PoPUHBBj2QIUIwO4886UEz+Bwe880kga3r0ZHEVwpN9PdC16BGeBldaqxXimBy53iS0gVG427YCcO1ZZH4TQBpYYdJIGdO1686Fb6C5J/UuL4ec7VwkXnJG94hDKtMlbgNNsFiSaUDhZZaKg5AE7Ja3iYKWdYHxQrbVtR2jJK19NSzym0NJLNcdVoVvLmsRiNcakTrIQ7Ay/BbEeJeBUlXoZmhBO8+NhkSDojLzrlTNlru0ON7lEkJNq7r1MljXyinw/tQ4/95uSWxQ6udqvoqhURuBZb8q8CqXAK9lQNAMjWENWq6Bk1PEIginLIjR1jGdIUv//iLFGFx2EfO9nBgr22/fX/E/KwyzpknDlsq1MmRFBkEl5If2nSDwO7gWd2SRy/oRkeGnabzk9eAMqan1I3zS3Ct7X2wfthvrBG
 X-OriginatorOrg: foss.st.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Aug 2026 16:22:16.8621
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Aug 2026 16:23:03.8385
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7980be34-a6bd-4580-511f-08defc7bb44e
+X-MS-Exchange-CrossTenant-Network-Message-Id: 866349ca-e729-4339-7991-08defc7bd04f
 X-MS-Exchange-CrossTenant-Id: 75e027c9-20d5-47d5-b82f-77d7cd041e8f
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=75e027c9-20d5-47d5-b82f-77d7cd041e8f;Ip=[164.130.1.60];Helo=[smtpO365.st.com]
-X-MS-Exchange-CrossTenant-AuthSource: AM1PEPF000252E1.eurprd07.prod.outlook.com
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=75e027c9-20d5-47d5-b82f-77d7cd041e8f;Ip=[164.130.1.59];Helo=[smtpO365.st.com]
+X-MS-Exchange-CrossTenant-AuthSource: AMS0EPF00000196.eurprd05.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR10MB3959
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR10MB3281
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260817_092226_477778_BFE903BB 
-X-CRM114-Status: GOOD (  30.40  )
+X-CRM114-CacheID: sfid-20260817_092312_692695_99640DD2 
+X-CRM114-Status: GOOD (  13.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,24 +135,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 8/16/26 23:37, Marek Vasut wrote:
-> From: Pankaj Dev <pankaj.dev@st.com>
+
+On 8/12/26 02:55, Marek Vasut wrote:
+> Add USB controller and PHY nodes to stm32mp231 DT.
+> This includes two USB 2.0 FEMTO PHYs, USB 2.0 host
+> controller and DWC3 DRD controller nodes. Include
+> missing COMBOPHY for the USB 3.0 controller.
+
+Hi Marek,
+
+There's no support for the combophy on STM32MP23.
+It means USB3DR can be used in High Speed maximum.
+Please check the datasheet.
+
 > 
-> Add USB2 PHY driver for STM32MP25 USB2 controllers, which includes the
-> USB2.0 host-only controller and USB 2.0 part of the DWC3 controller.
-> Two such PHYs in total are present in STM32MP25 SoC, they both are
-> slightly different, therefore they use different compatible string
-> to discern them.
-> 
-> Co-developed-by: Pankaj Dev <pankaj.dev@st.com>
-> Signed-off-by: Pankaj Dev <pankaj.dev@st.com>
-> Co-developed-by: Rahul Kumar <rahul.kumar05@st.com>
-> Signed-off-by: Rahul Kumar <rahul.kumar05@st.com>
-> Co-developed-by: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
-> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
-> Co-developed-by: Christian Bruel <christian.bruel@foss.st.com>
-> Signed-off-by: Christian Bruel <christian.bruel@foss.st.com>
 > Signed-off-by: Marek Vasut <marex@nabladev.com>
+> Signed-off-by: Pankaj Dev <pankaj.dev@st.com>
 > ---
 > Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>
 > Cc: Christian Bruel <christian.bruel@foss.st.com>
@@ -177,465 +174,128 @@ On 8/16/26 23:37, Marek Vasut wrote:
 > Cc: linux-stm32@st-md-mailman.stormreply.com
 > Cc: linux-usb@vger.kernel.org
 > ---
-> V2: - Fix up Sob/Cdb lines
->     - Operate PHY as a syscon subnode
-> ---
->  drivers/phy/st/Kconfig             |  10 +
->  drivers/phy/st/Makefile            |   1 +
->  drivers/phy/st/phy-stm32-usb2phy.c | 361 +++++++++++++++++++++++++++++
->  3 files changed, 372 insertions(+)
->  create mode 100644 drivers/phy/st/phy-stm32-usb2phy.c
+>  arch/arm64/boot/dts/st/stm32mp231.dtsi | 77 ++++++++++++++++++++++++++
+>  1 file changed, 77 insertions(+)
 > 
-> diff --git a/drivers/phy/st/Kconfig b/drivers/phy/st/Kconfig
-> index 49206185e5633..2835bb67bca9e 100644
-> --- a/drivers/phy/st/Kconfig
-> +++ b/drivers/phy/st/Kconfig
-> @@ -58,3 +58,13 @@ config PHY_STM32_USBPHYC
->  	  used by an HS USB Host controller, and the second one is shared
->  	  between an HS USB OTG controller and an HS USB Host controller,
->  	  selected by a USB switch.
+> diff --git a/arch/arm64/boot/dts/st/stm32mp231.dtsi b/arch/arm64/boot/dts/st/stm32mp231.dtsi
+> index 4505fc0e3b537..b8cef81eceeb1 100644
+> --- a/arch/arm64/boot/dts/st/stm32mp231.dtsi
+> +++ b/arch/arm64/boot/dts/st/stm32mp231.dtsi
+> @@ -7,6 +7,7 @@
+>  #include <dt-bindings/interrupt-controller/arm-gic.h>
+>  #include <dt-bindings/regulator/st,stm32mp25-regulator.h>
+>  #include <dt-bindings/reset/st,stm32mp25-rcc.h>
+> +#include <dt-bindings/phy/phy.h>
+>  
+>  / {
+>  	#address-cells = <2>;
+> @@ -146,6 +147,26 @@ timer {
+>  		always-on;
+>  	};
+>  
+> +	usb2_phy1: usb2-phy1 {
+> +		compatible = "st,stm32mp25-usb2phy1";
+> +		#phy-cells = <0>;
+> +		#clock-cells = <0>;
+> +		st,syscfg = <&syscfg 0x2400>;
+> +		clocks = <&rcc CK_KER_USB2PHY1>;
+> +		resets = <&rcc USB2PHY1_R>;
+> +		status = "disabled";
+> +	};
 > +
-> +config PHY_STM32_USB2PHY
-> +	tristate "STMicroelectronics STM32MP25 USB2.0 PHY Controller driver"
-> +	depends on ARCH_STM32 || COMPILE_TEST
-> +	depends on COMMON_CLK
-> +	select GENERIC_PHY
-> +	help
-> +	  Enable this to support the High-Speed USB 2.0 transceivers that are
-> +	  part of the STMicroelectronics STM32MP25 SoCs. The PHY itself is a
-> +	  Synopsys FEMTO-PHY.
-> diff --git a/drivers/phy/st/Makefile b/drivers/phy/st/Makefile
-> index cb80e954ea9f0..4945df5ed78a8 100644
-> --- a/drivers/phy/st/Makefile
-> +++ b/drivers/phy/st/Makefile
-> @@ -5,3 +5,4 @@ obj-$(CONFIG_PHY_ST_SPEAR1340_MIPHY)	+= phy-spear1340-miphy.o
->  obj-$(CONFIG_PHY_STIH407_USB)		+= phy-stih407-usb.o
->  obj-$(CONFIG_PHY_STM32_COMBOPHY)	+= phy-stm32-combophy.o
->  obj-$(CONFIG_PHY_STM32_USBPHYC) 	+= phy-stm32-usbphyc.o
-> +obj-$(CONFIG_PHY_STM32_USB2PHY) 	+= phy-stm32-usb2phy.o
-> diff --git a/drivers/phy/st/phy-stm32-usb2phy.c b/drivers/phy/st/phy-stm32-usb2phy.c
-> new file mode 100644
-> index 0000000000000..a5cc7b855c61f
-> --- /dev/null
-> +++ b/drivers/phy/st/phy-stm32-usb2phy.c
-> @@ -0,0 +1,361 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +/*
-> + * STMicroelectronics STM32 USB2 PHY Controller driver
-> + * Currently Only supported for STM32MP25
-> + *
-> + * Copyright (C) 2022 STMicroelectronics
-
-Hi Marek,
-
-Could update to 2026 ?
-
-> + * Author(s): Pankaj Dev <pankaj.dev@st.com>.
-> + */
-> +#include <linux/bitfield.h>
-> +#include <linux/clk.h>
-> +#include <linux/clk-provider.h>
-> +#include <linux/io.h>
-> +#include <linux/kernel.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/of_address.h>
-> +#include <linux/of_platform.h>
-> +#include <linux/phy/phy.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/regmap.h>
-> +#include <linux/reset.h>
-> +#include <linux/usb/role.h>
-> +#include <linux/mfd/syscon.h>
+> +	usb2_phy2: usb2-phy2 {
+> +		compatible = "st,stm32mp25-usb2phy2";
+> +		#phy-cells = <0>;
+> +		#clock-cells = <0>;
+> +		st,syscfg = <&syscfg 0x2800>;
+> +		clocks = <&rcc CK_KER_USB2PHY2EN>;
+> +		resets = <&rcc USB2PHY2_R>;
+> +		status = "disabled";
+> +	};
 > +
-> +#define SYSCFG_USB2PHY2CR_USB2PHY2CMN		BIT(2)
-> +#define SYSCFG_USB2PHY2CR_VBUSVALID		BIT(4)
-> +#define SYSCFG_USB2PHY2CR_VBUSVLDEXTSEL		BIT(5)
-> +#define SYSCFG_USB2PHY2CR_VBUSVLDEXT		BIT(6)
-> +
-> +struct stm32_usb2phy {
-> +	struct phy				*phy;
-> +	struct regmap				*regmap;
-> +	struct device				*dev;
-> +	struct reset_control			*rstc;
-> +	struct clk				*phyref;
-> +	struct regulator			*vdd33;
-> +	struct clk_hw				clk48_hw;
-> +	const struct stm32mp2_usb2phy_hw_data	*hw_data;
-> +	atomic_t				en_refcnt;
-> +	enum phy_mode				mode;
-> +	u32					cr_offset;
-> +	bool					is_init;
-> +};
-> +
-> +struct stm32mp2_usb2phy_hw_data {
-> +	u32			phyrefsel_mask;
-> +	bool			is_usb2_host_only;
-> +};
-> +
-> +static int stm32_usb2phy_enable(struct stm32_usb2phy *phy_dev)
-> +{
-> +	const struct stm32mp2_usb2phy_hw_data *phy_data = phy_dev->hw_data;
-> +	unsigned long rate;
-> +	int refsel, ret;
-> +
-> +	/* Check if a phy is already init or clk48 in use */
-> +	if (atomic_inc_return(&phy_dev->en_refcnt) > 1)
-> +		return 0;
-> +
-> +	rate = clk_get_rate(phy_dev->phyref);
-> +	if (rate == 19200000)
-> +		refsel = 0;
-> +	else if (rate == 20000000)
-> +		refsel = 1;
-> +	else if (rate == 24000000)
-> +		refsel = 2;
-> +	else
-> +		return -EINVAL;
-> +
-> +	ret = regmap_update_bits(phy_dev->regmap,
-> +				 phy_dev->cr_offset,
-> +				 phy_data->phyrefsel_mask,
-> +				 field_prep(phy_data->phyrefsel_mask, refsel));
-> +	if (ret)
-> +		return ret;
+>  	soc@0 {
+>  		compatible = "simple-bus";
+>  		ranges = <0x0 0x0 0x0 0x80000000>;
+> @@ -769,6 +790,21 @@ dcmipp: dcmipp@48030000 {
+>  				status = "disabled";
+>  			};
+>  
+> +			combophy: phy@480c0000 {
+> +				compatible = "st,stm32mp25-combophy";
+> +				reg = <0x480c0000 0x1000>;
+> +				#phy-cells = <1>;
+> +				clocks = <&rcc CK_BUS_USB3PCIEPHY>, <&rcc CK_KER_USB3PCIEPHY>;
+> +				clock-names = "apb", "ker";
+> +				resets = <&rcc USB3PCIEPHY_R>;
+> +				reset-names = "phy";
+> +				access-controllers = <&rifsc 67>;
+> +				power-domains = <&cluster_pd>;
+> +				wakeup-source;
+> +				interrupts-extended = <&exti1 45 IRQ_TYPE_EDGE_FALLING>;
+> +				status = "disabled";
+> +			};
 > +
 
-Hi Marek,
+Should get rid of combophy node.
 
-Below condition
+>  			sdmmc1: mmc@48220000 {
+>  				compatible = "st,stm32mp25-sdmmc2", "arm,pl18x", "arm,primecell";
+>  				reg = <0x48220000 0x400>, <0x44230400 0x8>;
+> @@ -862,6 +898,47 @@ stmmac_axi_config_1: stmmac-axi-config {
+>  					snps,wr_osr_lmt = <0x7>;
+>  				};
+>  			};
+> +
+> +			usbh_ohci: usb@482e0000 {
+> +				compatible = "generic-ohci";
+> +				reg = <0x482e0000 0x1000>;
+> +				access-controllers = <&rifsc 63>;
+> +				clocks = <&usb2_phy1>, <&rcc CK_BUS_USB2OHCI>;
+> +				interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>;
+> +				phys = <&usb2_phy1>;
+> +				phy-names = "usb";
+> +				resets = <&rcc USBH_R>;
+> +				status = "disabled";
+> +			};
+> +
+> +			usbh_ehci: usb@482f0000 {
+> +				compatible = "generic-ehci";
+> +				reg = <0x482f0000 0x1000>;
+> +				access-controllers = <&rifsc 63>;
+> +				clocks = <&usb2_phy1>, <&rcc CK_BUS_USB2EHCI>;
+> +				companion = <&usbh_ohci>;
+> +				interrupts = <GIC_SPI 139 IRQ_TYPE_LEVEL_HIGH>;
+> +				phys = <&usb2_phy1>;
+> +				phy-names = "usb";
+> +				resets = <&rcc USBH_R>;
+> +				status = "disabled";
+> +			};
+> +
+> +			usb3dr: usb@48300000 {
+> +				compatible = "st,stm32mp25-dwc3";
+> +				reg = <0x48300000 0x100000>;
+> +				access-controllers = <&rifsc 66>;
+> +				clocks = <&rcc CK_KER_USB2PHY2>,
+> +					 <&rcc CK_BUS_USB3DR>,
+> +					 <&rcc CK_KER_USB2PHY2>;
+> +				clock-names = "ref", "bus_early", "suspend";
+> +				interrupts = <GIC_SPI 228 IRQ_TYPE_LEVEL_HIGH>;
+> +				phys = <&usb2_phy2>, <&combophy PHY_TYPE_USB3>;
+> +				phy-names = "usb2-phy", "usb3-phy";
 
-> +	if (phy_data->is_usb2_host_only) {
-> +		/*
-> +		 * The clock should default to active after standby, as it is
-> +		 * needed when resuming OHCI to access its registers.
-> +		 * CMN is default reset to 1, so enforce it is cleared, when the
-> +		 * clock enable request from OHCI driver comes at resume time.
-> +		 */
-> +		ret = regmap_clear_bits(phy_dev->regmap, phy_dev->cr_offset,
-> +					SYSCFG_USB2PHY2CR_USB2PHY2CMN);
-> +		if (ret)
-> +			return ret;
-> +	}
-
-up to here, is a specific part to manage OHCI controller clock during
-suspend modes (either bus suspend, or system-wide platform low power PM).
-
-This should be moved to the clock provider api. E.g. to register a 2nd
-clock.
-
-Point here is the bit is always cleared, even if OHCI is
-unused/disabled, but EHCI is. EHCI can be enabled w/o OHCI when there's
-an on-board USB HUB (in such case only High Speed traffic is expected).
-
-EHCI don't require to clear CMN for suspend states.
-
-> +
-> +	ret = regulator_enable(phy_dev->vdd33);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = clk_prepare_enable(phy_dev->phyref);
-> +	if (ret)
-> +		goto error_regdis;
-> +
-> +	ret = reset_control_deassert(phy_dev->rstc);
-> +	if (ret)
-> +		goto error_clkdis;
-> +
-> +	return 0;
-> +
-> +error_clkdis:
-> +	clk_disable_unprepare(phy_dev->phyref);
-> +error_regdis:
-> +	regulator_disable(phy_dev->vdd33);
-> +
-> +	return ret;
-> +}
-> +
-> +static int stm32_usb2phy_disable(struct stm32_usb2phy *phy_dev)
-> +{
-> +	int ret;
-> +
-> +	/* Check if a phy is still init or clk48 in use */
-> +	if (atomic_dec_return(&phy_dev->en_refcnt) > 0)
-> +		return 0;
-> +
-> +	ret = reset_control_assert(phy_dev->rstc);
-> +	if (ret)
-> +		return ret;
-> +
-> +	clk_disable_unprepare(phy_dev->phyref);
-> +
-> +	return regulator_disable(phy_dev->vdd33);
-> +}
-> +
-> +static int stm32_usb2phy_set_mode(struct phy *phy, enum phy_mode mode, int submode)
-> +{
-> +	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
-> +	const struct stm32mp2_usb2phy_hw_data *phy_data = phy_dev->hw_data;
-> +	u32 val, mask = SYSCFG_USB2PHY2CR_USB2PHY2CMN;
-> +	int ret;
-
-Then could simplify here directly for host only PHY : there's no point
-in poking control register here.
-(As mentioned above, control SYSCFG_USB2PHY2CR_USB2PHY2CMN with clock
-provider API for host-only configuration.)
-
-	if (phy_data->is_usb2_host_only)
-		return 0;
-
-> +
-> +	if (mode == PHY_MODE_USB_HOST) {
-> +		val = 0;
-> +		if (!phy_data->is_usb2_host_only) {
-> +			mask |= SYSCFG_USB2PHY2CR_VBUSVLDEXT |
-> +				SYSCFG_USB2PHY2CR_VBUSVALID;
-> +			if (submode != USB_ROLE_NONE)
-> +				val |= SYSCFG_USB2PHY2CR_VBUSVALID;
-> +		}
-> +	} else if (mode == PHY_MODE_USB_DEVICE) {
-> +		val = SYSCFG_USB2PHY2CR_USB2PHY2CMN |
-> +		      SYSCFG_USB2PHY2CR_VBUSVLDEXTSEL;
-> +		mask |= SYSCFG_USB2PHY2CR_VBUSVALID |
-> +			SYSCFG_USB2PHY2CR_VBUSVLDEXTSEL |
-> +			SYSCFG_USB2PHY2CR_VBUSVLDEXT;
-> +		if (submode != USB_ROLE_NONE)
-> +			val |= SYSCFG_USB2PHY2CR_VBUSVLDEXT;
-> +	} else {
-> +		return -EINVAL;
-> +	}
-> +
-> +	ret = regmap_update_bits(phy_dev->regmap, phy_dev->cr_offset, mask, val);
-> +	if (ret)
-> +		return ret;
-> +
-> +	phy_dev->mode = mode;
-> +
-> +	return 0;
-> +}
-> +
-> +static int stm32_usb2phy_init(struct phy *phy)
-> +{
-> +	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
-> +	int ret;
-> +
-> +	ret = stm32_usb2phy_enable(phy_dev);
-> +	if (ret)
-> +		return ret;
-> +
-> +	if (phy_dev->mode != PHY_MODE_INVALID) {
-> +		ret = stm32_usb2phy_set_mode(phy, phy_dev->mode, USB_ROLE_NONE);
-> +		if (ret) {
-> +			stm32_usb2phy_disable(phy_dev);
-> +			return ret;
-> +		}
-> +	}
-> +
-> +	phy_dev->is_init = true;
-> +
-> +	return 0;
-> +}
-> +
-> +static int stm32_usb2phy_exit(struct phy *phy)
-> +{
-> +	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
-> +	int ret;
-> +
-> +	ret = stm32_usb2phy_disable(phy_dev);
-> +	if (ret)
-> +		return ret;
-> +
-> +	phy_dev->is_init = false;
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct phy_ops stm32_usb2phy_data = {
-> +	.init = stm32_usb2phy_init,
-> +	.exit = stm32_usb2phy_exit,
-> +	.set_mode = stm32_usb2phy_set_mode,
-> +	.owner = THIS_MODULE,
-> +};
-> +
-> +static int stm32_usb2phy_clk48_prepare(struct clk_hw *hw)
-> +{
-> +	struct stm32_usb2phy *phy_dev = container_of(hw, struct stm32_usb2phy,
-> +						     clk48_hw);
-> +
-> +	return stm32_usb2phy_enable(phy_dev);
-> +}
-> +
-> +static void stm32_usb2phy_clk48_unprepare(struct clk_hw *hw)
-> +{
-> +	struct stm32_usb2phy *phy_dev = container_of(hw, struct stm32_usb2phy,
-> +						     clk48_hw);
-> +
-> +	stm32_usb2phy_disable(phy_dev);
-> +}
-> +
-> +static unsigned long stm32_usb2phy_clk48_recalc_rate(struct clk_hw *hw,
-> +						     unsigned long parent_rate)
-> +{
-> +	return 48000000;
-> +}
-> +
-> +static const struct clk_ops stm32_usb2phy_clk48_ops = {
-> +	.prepare = stm32_usb2phy_clk48_prepare,
-> +	.unprepare = stm32_usb2phy_clk48_unprepare,
-> +	.recalc_rate = stm32_usb2phy_clk48_recalc_rate,
-> +};
-> +
-> +static int stm32_usb2phy_probe(struct platform_device *pdev)
-> +{
-> +	struct clk_init_data init = { .ops =  &stm32_usb2phy_clk48_ops };
-> +	struct phy_provider *phy_provider;
-> +	struct device *dev = &pdev->dev;
-> +	struct stm32_usb2phy *phy_dev;
-> +	const __be32 *offset;
-> +	struct phy *phy;
-> +	int ret;
-> +
-> +	phy_dev = devm_kzalloc(dev, sizeof(*phy_dev), GFP_KERNEL);
-> +	if (!phy_dev)
-> +		return -ENOMEM;
-> +
-> +	phy_dev->dev = dev;
-> +	dev_set_drvdata(dev, phy_dev);
-> +
-> +	phy_dev->rstc = devm_reset_control_get(dev, NULL);
-> +	if (IS_ERR(phy_dev->rstc))
-> +		return dev_err_probe(dev, PTR_ERR(phy_dev->rstc), "Failed to get USB2PHY reset\n");
-> +
-> +	phy_dev->phyref = devm_clk_get(dev, NULL);
-> +	if (IS_ERR(phy_dev->phyref))
-> +		return dev_err_probe(dev, PTR_ERR(phy_dev->phyref), "Failed to get phyref clk\n");
-> +
-> +	phy_dev->vdd33 = devm_regulator_get_optional(dev, "vdd33");
-> +	if (IS_ERR(phy_dev->vdd33))
-> +		return dev_err_probe(dev, PTR_ERR(phy_dev->vdd33), "Failed to get vdd3v3 supply\n");
-> +
-> +	phy_dev->regmap = syscon_node_to_regmap(dev->of_node->parent);
-> +	if (IS_ERR(phy_dev->regmap))
-> +		return dev_err_probe(dev, PTR_ERR(phy_dev->regmap), "Failed to get regmap\n");
-> +
-> +	offset = of_get_address(dev->of_node, 0, NULL, NULL);
-> +	if (!offset)
-> +		return dev_err_probe(dev, -EINVAL, "Failed to get regmap offset\n");
-> +
-> +	phy_dev->cr_offset = be32_to_cpu(*offset);
-> +
-> +	phy_dev->hw_data = device_get_match_data(dev);
-> +
-> +	phy = devm_phy_create(dev, NULL, &stm32_usb2phy_data);
-> +	if (IS_ERR(phy))
-> +		return dev_err_probe(dev, PTR_ERR(phy), "Failed to create PHY\n");
-> +
-> +	phy_dev->phy = phy;
-> +	phy_set_drvdata(phy, phy_dev);
-> +
-> +	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-> +	if (IS_ERR(phy_provider))
-> +		return PTR_ERR(phy_provider);
-> +
-> +	init.name = devm_kasprintf(dev, GFP_KERNEL, "clk_%s_48m",
-> +				   of_node_full_name(dev->of_node));
-> +	if (!init.name)
-> +		return -ENOMEM;
-> +
-> +	phy_dev->clk48_hw.init = &init;
-> +
-> +	ret = devm_clk_hw_register(phy_dev->dev, &phy_dev->clk48_hw);
-> +	if (ret)
-> +		return dev_err_probe(phy_dev->dev, ret, "Failed to register 48 MHz clock\n");
-
-In v2, the #clock-cells has been updated to 1. This allow to manage
-separately the OHCI clock bit ("...CMN") as a child clock of the 48MHz
-clock.
-
-Please register a 2nd clock, so the OHCI controller can take benefit of it.
-
-As you mention the downstream driver, please see there a specific
-comment regarding the 2nd clock for OHCI:
-/*
-* USB2PHY provides several clocks used either by either USHB
-(EHCI/OHCI), OTG or USB3DR.
-* In case of OHCI, CMN bit must be cleared (clkohci_hw). This clock is
-required to access
-* the registers, to resume the controller from suspended state.
-* So declare two clocks, the PLL used in all case, and the OHCI clocks
-used by OHCI
-* controller.
-*/
+Please update USB2.0 PHYs and speed:
+				phys = <&usb2_phy2>;
+				phy-names = "usb2-phy";
+				maximum-speed = "high-speed";
 
 
-Thanks & BR,
-Fabrice
-
-> +
-> +	ret = devm_of_clk_add_hw_provider(phy_dev->dev, of_clk_hw_simple_get, &phy_dev->clk48_hw);
-> +	if (ret)
-> +		return dev_err_probe(phy_dev->dev, ret, "Failed to add 48 MHz clock provider\n");
-> +
-> +	return 0;
-> +}
-> +
-> +static int stm32_usb2phy_suspend(struct device *dev)
-> +{
-> +	struct stm32_usb2phy *phy_dev = dev_get_drvdata(dev);
-> +
-> +	if (phy_dev->is_init)
-> +		return stm32_usb2phy_disable(phy_dev);
-> +
-> +	return 0;
-> +}
-> +
-> +static int stm32_usb2phy_resume(struct device *dev)
-> +{
-> +	struct stm32_usb2phy *phy_dev = dev_get_drvdata(dev);
-> +
-> +	if (phy_dev->is_init)
-> +		return stm32_usb2phy_enable(phy_dev);
-> +
-> +	return 0;
-> +}
-> +
-> +/* STM32MP25xx USB 2.0 PHY attached to USB 2.0 Host controller */
-> +static const struct stm32mp2_usb2phy_hw_data stm32mp25_usb2phy1_hwdata = {
-> +	.phyrefsel_mask = GENMASK(6, 4),
-> +	.is_usb2_host_only = true,
-> +};
-> +
-> +/* STM32MP25xx USB 2.0 PHY attached to USB 2.0 part of DWC3 controller */
-> +static const struct stm32mp2_usb2phy_hw_data stm32mp25_usb2phy2_hwdata = {
-> +	.phyrefsel_mask = GENMASK(14, 12),
-> +	.is_usb2_host_only = false,
-> +};
-> +
-> +static const struct of_device_id stm32_usb2phy_of_match[] = {
-> +	{ .compatible = "st,stm32mp25-usb2phy1", .data = &stm32mp25_usb2phy1_hwdata },
-> +	{ .compatible = "st,stm32mp25-usb2phy2", .data = &stm32mp25_usb2phy2_hwdata },
-> +	{ /* sentinel */ },
-> +};
-> +MODULE_DEVICE_TABLE(of, stm32_usb2phy_of_match);
-> +
-> +static DEFINE_SIMPLE_DEV_PM_OPS(stm32_usb2phy_pm_ops,
-> +				stm32_usb2phy_suspend, stm32_usb2phy_resume);
-> +
-> +static struct platform_driver stm32_usb2phy_driver = {
-> +	.probe = stm32_usb2phy_probe,
-> +	.driver = {
-> +		.name = "stm32-usb2phy",
-> +		.of_match_table = stm32_usb2phy_of_match,
-> +		.pm = pm_sleep_ptr(&stm32_usb2phy_pm_ops)
-> +	}
-> +};
-> +
-> +module_platform_driver(stm32_usb2phy_driver);
-> +
-> +MODULE_AUTHOR("Pankaj Dev <pankaj.dev@st.com>");
-> +MODULE_DESCRIPTION("STMicroelectronics Generic USB2PHY driver for stm32");
-> +MODULE_LICENSE("GPL");
+> +				resets = <&rcc USB3DR_R>;
+> +				st,syscfg = <&syscfg 0x4800>;
+> +				status = "disabled";
+> +			};
+>  		};
+>  
+>  		bsec: efuse@44000000 {
 
 
 -- 
