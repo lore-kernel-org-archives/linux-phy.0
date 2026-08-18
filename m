@@ -4,66 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E839FC5DF82
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Aug 2026 03:31:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D955C5DF6D
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Aug 2026 04:53:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z3Aa+hvynid/aXUCi0bmQgzXf9+plWRmKuWaJzaieMc=; b=ZtrYVZDTNewOk+
-	MuA5FKZ/UIPqdIcCW3xOn0e3bfmZ7Vvi4CK3cmWSJQj7cuihESAS+Q8nDo7stjbQaGqwdY/OgrKor
-	OtTbN5qEbhtayKvIQrqklH2rInzsolnIqYPZG2TVfzeQ9uUifwA4AAG7X3yZfR1YzDZblze39QEL/
-	m6xOgIsSExZadw8rB7xQgGSZFK5U4/HSXQaCbxkQbig1qp0hu83WNIoXS7mhb1/pL2ZyPD2dt4i7M
-	rS65MpCsIIRD/4BzSmhNc9t7PRd7zC1pdKLs5ZFPL+MI2JU/nxqL9TYUYiB/NxObnCiVfM107HZFj
-	TsTx9a2IZF1B1RODpBag==;
+	List-Owner; bh=3tPc8t9gvrOaS0N+5Ecp6DaP4ixMd1hBQKOF+iM+qRQ=; b=tXpWSpr3H9Gg8k
+	cc8S1xBceD9PEmJx786qmVtYBcTvMHfHOkLMJGJOnh6FWCGudf9QSiuFMZ3aw7wXrBpm8p3MQEaLY
+	jI0leJeyKzzXUSwSTqGmKhUQJfXoxzXGQQZKfNeqgVzkcvinjsRil64rrbWBNyuKtm+I3ykEGRGT1
+	lxS+Ijo7Ve4HRK2QfHBICCS2sdI1EaNqMq2ol3qPGc+Ym5ZsoCMngAeGStTp+i79ML84GOzIUyfFh
+	Clne8iAIDNzV6iKakz0NkcQ78+bc+PVo/N2aNrACb6UDtKHJpW6NObr++BkCjSHbWlEQiE+8R4iCK
+	sBaKsmaOSoccjUWTP1Zw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwX1u-00000008wLR-0z4G;
-	Wed, 19 Aug 2026 03:31:54 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wwYJC-00000008zdx-3XeL;
+	Wed, 19 Aug 2026 04:53:50 +0000
+Received: from mx.nabladev.com ([2a00:f820:417:0:178:251:229:89])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwX1r-00000008wKv-03Of;
-	Wed, 19 Aug 2026 03:31:51 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 8EF63601FB;
-	Wed, 19 Aug 2026 03:31:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 097D61F000E9;
-	Wed, 19 Aug 2026 03:31:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1787110309;
-	bh=UalBPFxKWe525mQfd39B3IwwYujzdCNWKW2ZUj1VaBQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=kE6DlpN6ORvE9hBR0WEqXrhVrgorQ880nzjV3Z3gYnB8XnlMLNXIFd/g7/GfeA1Sm
-	 gZy+pxK7cgTERy6qykXDEMC4l2+212vdWXco7uEK00f8IQPHWvN9qabtqA7HurZXnc
-	 aD5N4kF0fplnVCpbGnQ9oOHgXrRO5i7KuAhNPXRSvmShoEiktLEaOdkDMT/rKZ7+IZ
-	 9rRm7o0FdW8HbfzqOkzmj5RuqEkDIOWoAqcIBGWnFTyCV+IsCeZcyUnIcPrBk6zx11
-	 GfAh9n4QUNIK2SndUvjiX9RSJccWIZHZ9XJ6Qf5DwH2iXGfjp9pUGK3G2IKaLyp4lT
-	 ickEg6i7LUdbw==
-Date: Wed, 19 Aug 2026 05:31:37 +0200
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>, 
-	Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>, 
-	Heiko Stuebner <heiko@sntech.de>, Frank Wang <frank.wang@rock-chips.com>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
-	Conor Dooley <conor+dt@kernel.org>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
-	Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>, 
-	Yubing Zhang <yubing.zhang@rock-chips.com>, Alexey Charkov <alchark@flipper.net>, 
-	Igor Paunovic <royalnet026@gmail.com>, linux-phy@lists.infradead.org, 
-	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	kernel@collabora.com, devicetree@vger.kernel.org, linux-usb@vger.kernel.org, 
-	Sashiko <sashiko-bot@kernel.org>, William Wu <william.wu@rock-chips.com>
-Subject: Re: [PATCH v14 00/38] phy: rockchip: usbdp: Clean up the mess
-Message-ID: <kwncmhsrq6sr56rsgf2ng4pc5fvyyqfryp3s2qfskoxunxx7jp@pdq4kedpw4gq>
-References: <20260813-rockchip-usbdp-cleanup-v14-0-b5ad9c68fa11@collabora.com>
- <h54c2hrcsv3zjzzgojzf5sjmu3vtpobz6rwloam5kp7mwqqn3n@bqjnlellvnz6>
- <aoTMQtpYYw8O-3cj@venus>
+	id 1wwYJ9-00000008zd4-36lP;
+	Wed, 19 Aug 2026 04:53:49 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 85362107AE6;
+	Wed, 19 Aug 2026 06:53:27 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nabladev.com;
+	s=dkim; t=1787115213;
+	h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding:content-language:in-reply-to:references;
+	bh=c4xs5RT8u9h6JXPgD+W9cpvSw000rGM/Suoj6WVsp9I=;
+	b=jXLHRfRARDuSTChCOAmU2yG9xCI2B9rFHhA9zXkIa7RGh/vK1f3YZm/uvAIW2fhIV3VT81
+	OlJFZAGXEMkDVVzzXwUlo1GQ8iVEgtohyciKVEwpiBsUxYqORK1RxLfLjOmU9d3Nd/PB4h
+	XJsx97Hb+wBrLqZ6w2BSrRnUgBeUYZ4qX215ZM9bght/2DdOQF+pix4uwzX4K7VgM0+0Kv
+	qNE4NGC+4VP4wYT/0I3pvxo7qGwWfNXRLhpFOXCv4yEyc1Va4IVJ8QkNhGJ7SFQ9NdJODV
+	DivLj/nAEVL2NnYJ2i9RWy+dPFW/bo0ITym7lBZntOxW86lEZXkDc9nEFYlxaA==
+Message-ID: <272be90b-7127-457f-90e9-7160169e2200@nabladev.com>
+Date: Tue, 18 Aug 2026 17:11:48 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <aoTMQtpYYw8O-3cj@venus>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 1/9] dt-bindings: phy: Document ST STM32MP25 USB2-FEMTO
+ PHY
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: linux-usb@vger.kernel.org, Pankaj Dev <pankaj.dev@st.com>,
+ Rahul Kumar <rahul.kumar05@st.com>,
+ Fabrice Gasnier <fabrice.gasnier@foss.st.com>,
+ =?UTF-8?Q?Cl=C3=A9ment_Le_Goffic?= <clement.legoffic@foss.st.com>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Christian Bruel <christian.bruel@foss.st.com>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
+ Rosen Penev <rosenp@gmail.com>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+ Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
+ kernel@dh-electronics.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com
+References: <20260816213849.1044073-1-marex@nabladev.com>
+ <20260816213849.1044073-2-marex@nabladev.com>
+ <20260818-imperious-thankful-perch-dcaa44@quoll>
+Content-Language: en-US
+From: Marek Vasut <marex@nabladev.com>
+In-Reply-To: <20260818-imperious-thankful-perch-dcaa44@quoll>
+X-Last-TLS-Session-Version: TLSv1.3
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260818_215348_003884_011D68CF 
+X-CRM114-Status: GOOD (  10.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,52 +82,32 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCBBdWcgMTgsIDIwMjYgYXQgMTE6NDI6NTBQTSArMDIwMCwgU2ViYXN0aWFuIFJlaWNo
-ZWwgd3JvdGU6Cj4gSGVsbG8gTWFuaSwKPiAKPiBPbiBUdWUsIEF1ZyAxOCwgMjAyNiBhdCAxMToy
-NzowN0FNICswMjAwLCBNYW5pdmFubmFuIFNhZGhhc2l2YW0gd3JvdGU6Cj4gPiBPbiBUaHUsIEF1
-ZyAxMywgMjAyNiBhdCAxMDo1MTo0M1BNICswMjAwLCBTZWJhc3RpYW4gUmVpY2hlbCB3cm90ZToK
-PiA+ID4gVGhpcyBzZXJpZXMgZG9lcyBhIG1ham9yIG92ZXJoYXVsIG9mIHRoZSBSb2NrY2hpcCBV
-U0JEUCBkcml2ZXIuIFRoZQo+ID4gPiBpbml0aWFsIG1haW4gZ29hbCB3YXMgdG8gYWRkIFVTQi1D
-IERQIEFsdE1vZGUgc3VwcG9ydCB0byB0aGUgUkszNTc2Cj4gPiA+IGFuZCBSSzM1ODggYW5kIHRo
-aXMgc2VyaWVzIHN0aWxsIHByZXBhcmVzIHRoZSBQSFkgZHJpdmVyIGZvciBleGFjdGx5Cj4gPiA+
-IHRoYXQuIEJ1dCBpbiBhZGRpdGlvbiB0byB0aGF0IEkgdW5jb3ZlcmVkIGEgaHVnZSBhbW91bnQg
-b2YgaXNzdWVzLAo+ID4gPiB0aGF0IGFyZSBmaXhlZCBhbG9uZyB0aGUgd2F5LiBTb21lIG9mIHRo
-ZSBtb3JlIGludGVyZXN0aW5nIG9uZXMgYXJlOgo+ID4gPiAKPiA+ID4gICogQ3VycmVudGx5IHRo
-ZSBkcml2ZXIgbWlnaHQgdHJpZ2dlciBhIGZhdGFsIFNFcnJvciBvbiBVU0ItQyBob3RwbHVnLAo+
-ID4gPiAgICBzaW5jZSByZS1pbml0aWFsaXppbmcgdGhlIFBIWSBzdG9wcyB0aGUgY2xvY2tzIGdv
-aW5nIHRvIERXQzMuIElmCj4gPiA+ICAgIHRoZSBEV0MzIGRyaXZlciB0cmllcyB0byBhY2Nlc3Mg
-aXRzIHJlZ2lzdGVycyBhdCB0aGUgc2FtZSB0aW1lIHRoZQo+ID4gPiAgICBzeXN0ZW0gd2lsbCBj
-cmFzaC4KPiA+ID4gICogVGhlIERXQzMgaGFyZHdhcmUgY2FuIGdldCBpbnRvIGEgYnVnZ3kgc3Rh
-dGUgd2hlbiB0aGUgUEhZIGlzCj4gPiA+ICAgIGRpc2FibGVkLCB3aGljaCByZXN1bHRzIGluIHRo
-ZSBQSFkgbm90IGNvbWluZyB1cCBwcm9wZXJseSBhZ2Fpbi4KPiA+ID4gICogU3dpdGhjaW5nIHRo
-ZSBVU0ItQyBjb25uZWN0b3Igb3JpZW50YXRpb24gZHVyaW5nIGhvdHBsdWcgYnJlYWtzCj4gPiA+
-ICAgIFVTQjMgc3BlZWQsIGFzIHRoZSBQSFkgaXMgbm90IGJlaW5nIHJlLWluaXRpYWxpemVkLgo+
-ID4gPiAgKiBUaGUgY29kZSBhbHdheXMgZW5hYmxlcyBEUCBtb2RlIHdoZW4gVVNCLUMgaXMgaW52
-b2x2ZWQuCj4gPiA+ICAqIFRoZSBkcml2ZXIgaGFzIHNvbWUgbG9ja2luZyBpc3N1ZXMgdW5jb3Zl
-cmVkIGJ5IFNhc2hpa28uCj4gPiA+IAo+ID4gPiBJbiBhZGRpdGlvbiB0byB0aGVzZSBiaWdnZXIg
-b25lcywgU2FzaGlrbyBhbHNvIGZvdW5kIGEgYnVuY2ggb2YKPiA+ID4gbWlub3IgcHJvYmxlbXMs
-IHdoaWNoIGFyZSBtb3N0bHkgaGFybWxlc3MsIGJ1dCB3ZXJlIGZpeGVkIHdoaWxlCj4gPiA+IGdv
-aW5nIGF0IGl0Lgo+ID4gCj4gPiAzOCBwYXRjaGVzIGZvciBhIHNpbmdsZSBzZXJpZXMgaXMgdG9v
-IG11Y2ggdG8gcmV2aWV3LiBQbGVhc2UKPiA+IGNvbnNpZGVyIHNwbGl0dGluZyBpdCB1cCBpbnRv
-IG11bHRpcGxlIHNlcmllcyBub3QgZXhjZWVkaW5nIH4xMAo+ID4gcGF0Y2hlcyBwZXIgc2VyaWVz
-LiBUaGFua3MhCj4gCj4gU28gbGV0IG1lIHN1bW1hcml6ZToKPiAKPiAgLSBWaW5vZCB3YW50cyBT
-YXNoaWtvIGZlZWRiYWNrIHRvIGJlIGFjdGVkIHVwb24KClRoaXMgaXMgZmluZS4KCj4gIC0gbGlu
-dXgtcGh5IGRvZXMgbm90IHdhbnQgc2VyaWVzIHdpdGggZGVwZW5kZW5jaWVzICggWzBdICkKClRo
-aXMgaXMgbm90IHNvbWV0aGluZyBJIGV4cGVjdGVkLiBJIHJlYWQgdGhlIHJlcGx5IGZyb20gVmxh
-ZGltaXIgaW4gWzBdLCBhbmQKaGUgc2VlbXMgdG8gYmUgc2hhcmluZyB0aGUgbGltaXRhdGlvbiBv
-ZiB0aGUgYnVpbGQgdG9vbCBvZiBsaW51eC1waHkuIEJ1dCBJCmRvbid0IHRoaW5rIHRoYXQncyBh
-IGJpZyBkZWFsLiBFdmVyeSBzdWJzeXN0ZW0gYWxsb3dzIHNlbmRpbmcgZGVwZW5kZW50IHNlcmll
-cwphcyBsb25nIGFzIHRoZSBkZXBlbmRlbmN5IGlzIGNsZWFybHkgZGVzY3JpYmVkIGluIHRoZSBj
-b3ZlciBsZXR0ZXIgYW5kIG5vdyB3aXRoCmI0LiBTbyBJIGRvbid0IHNlZSB3aHkgbGludXgtcGh5
-IHNob3VsZCBiZSBkaWZmZXJlbnQuIElmIHlvdSBjb21iaW5lIGFsbCBwYXRjaGVzCmluIG9uZSBz
-ZXJpZXMsIGl0IG1ha2VzIGl0IGltcG9zc2libGUgZm9yIGEgaHVtYW4gcmV2aWV3ZXIgdG8gcmV2
-aWV3IGl0CnRob3JvdWdobHkuCgpAdmlub2Q6IENhbiB5b3Ugc2hhcmUgeW91ciB2aWV3IG9uIHNw
-bGl0dGluZyB0aGUgc2VyaWVzIHdpdGggZGVwZW5kZW5jeT8KCi0gTWFuaQoKLS0gCuCuruCuo+Cu
-v+CuteCuo+CvjeCuo+CuqeCvjSDgrprgrqTgrr7grprgrr/grrXgrq7gr40KCi0tIApsaW51eC1w
-aHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On 8/18/26 10:09 AM, Krzysztof Kozlowski wrote:
+> On Sun, Aug 16, 2026 at 11:37:03PM +0200, Marek Vasut wrote:
+>> From: Pankaj Dev <pankaj.dev@st.com>
+>>
+>> Document USB2 PHY for STM32MP25 USB2 controllers, which includes the
+>> USB2.0 host-only controller and USB 2.0 part of the DWC3 controller.
+>> Two such PHYs in total are present in STM32MP25 SoC, they both are
+>> slightly different, therefore they use different compatible string
+>> to discern them.
+>>
+>> Co-developed-by: Pankaj Dev <pankaj.dev@st.com>
+>> Signed-off-by: Pankaj Dev <pankaj.dev@st.com>
+> 
+> Please run scripts/checkpatch.pl on the patches and fix reported
+> warnings. After that, run also 'scripts/checkpatch.pl --strict' on the
+> patches and (probably) fix more warnings. Some warnings can be ignored,
+> especially from --strict run, but the code here looks like it needs a
+> fix. Feel free to get in touch if the warning is not clear.
+I think I managed to fix that up in V3, thanks.
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
