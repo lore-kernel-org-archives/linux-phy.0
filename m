@@ -4,63 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0ADC2C5DF81
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Aug 2026 20:04:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E8EEC5DF7D
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Aug 2026 21:43:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k6Yzyo0PiXgMUV41sq0vWh8z60lSI4bU8wfdhT45kVE=; b=PoyFDViI6K8yKV
-	1ywsHSC9yhd20BaBXaSdWKkurc4qRB7O6IQjZJcIWXkD9Z2pk7JcKp/aH11ep9BTzs85noR2EGeeR
-	hQD/iS7syEYuoPw6rLbhlf9B+qiDFUOlsW3wgizUa0qqIgjyNknR02YCqx/exoqf1rB9kcV1DqV9i
-	PE4dErGnGNtEiwia9ohpUDYYXuyIIZtyfOi7nWmzAbOXTD/jXELKVCNGaJCT5y65gM5LAeB1Tw0ph
-	da7GICRT+8Db+QK13bgzCB7Qr7+gnbcQv4of3F9HLUtuRFVGvcJvJ5oqRDP0FVjTA38AFhnQL57Pb
-	LLTFnxdCb9S/dguJgHOw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=+llLVV0RVMqkiwPTTWrOYukI7/qkXaqbNqFkKCNmGkc=; b=pDTk5B7Q/Ug7IZOv5UANV3oBbg
+	X5GQFv7C4i0HRaBUYiePBcF9g5XP/SqqSGwb/95VGdgaE4jfkt1jb9faf3effEjmRxYYkwA5+zfeC
+	tnZMMhWQlHWapVWKFvR/sRRJGNCPthZVbgT45z4gP1fS2EjSZt7vtivju0NjKUUYlkNRQOi9OeJQl
+	KRL2/EPYkfK3b2lJ6VAA9w88UtYomkKzBi0CX+PXO4kvdrLKk+gwzRU95eh7cGMv8W2K7BoIy+oCi
+	PBFU9L50D5OPs+GO/kRqHQJCKvTQFy4KcF7RkjUpr5KsCkwpq1E4iR+rszN08M9r392HB0aolBSvS
+	k61Mhylg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwQ2l-00000008cMB-4633;
-	Tue, 18 Aug 2026 20:04:19 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wwRaa-00000008gxz-3kb9;
+	Tue, 18 Aug 2026 21:43:20 +0000
+Received: from sender4-op-o11.zoho.com ([136.143.188.11])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwQ2k-00000008cM5-3Hwh
-	for linux-phy@lists.infradead.org;
-	Tue, 18 Aug 2026 20:04:18 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 6DD50601DE;
-	Tue, 18 Aug 2026 20:04:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E5F6C1F000E9;
-	Tue, 18 Aug 2026 20:04:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1787083457;
-	bh=vOaE2p4C56CWWbYQHaNxAJOhQcBgawoA3CrZB5lnwS0=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=cWmTOARW+eBAQ2o1Jd68lOcsLTmoZ4YFAnoWYLN18bccGnmoObzjSTzBkJOWjuXqb
-	 Qu3MYyPnTm3gfWmmIaFa+CjgryI1E/+O3+j0krSznvnY3FiP7VLqdxhSEmAMEJ1zQb
-	 YH2/qXTdomx2qHxq4mC4NpqTfHPsFvSxFbmTo3jQkBOgM/TxdxX/ougjGaOc99k1D6
-	 GKAjYtRvzySXSN2lnMHsvnVRx1EehewgyQ5sYutTgxvtqiYDaJ2UkEzS2dteZA6YPs
-	 dpKFtO4zYYk972kPykCwqB5O2E7COqt0tiWnn2Rmq7Vfyg5eRWoiKNaXidfSSsfZai
-	 wCqJFYLZy3gsA==
-Date: Tue, 18 Aug 2026 22:04:12 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Jingyi Wang <jingyi.wang@oss.qualcomm.com>
+	id 1wwRaX-00000008gxN-1BtQ;
+	Tue, 18 Aug 2026 21:43:18 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1787089379; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=R1G8loKEMmQgzBe9C8b6zMyzqfX1/4AwdWB/Sed7saPCbbb5AJ1w2bfRjaOxkT0k1TBvEcc2oEmyUyTsNMdI8Phm2NcIAh7ypJgfYcj82MG1VlDgfkS91sGe6+JPRbqnuWuVj8eJT3tUYgIhltGYMeCM9UvQFdlGGJCfMkqvhaA=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1787089379; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=DpmVj5c9FDXQSwuSsbxK1L8of1AmrLOJ/cZ+cQrHX54=; 
+	b=WmKuFoJbFK0zNMA+rIz0rvuCYT5grWtdUpzoLpsjOlcBjadqk9DuahFhWJU3JSJY7WisfrbNn8aDKtTSyB/C3qjU1M8Svhih2Rz43dO43PXbShJQGrdTOsbcYis/IBNfY2RUJgJ0JRNwki/oWUBgVLZBKmBW6DTMYSOjLFNImpY=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
+	dmarc=pass header.from=<sebastian.reichel@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1787089379;
+	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
+	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
+	bh=DpmVj5c9FDXQSwuSsbxK1L8of1AmrLOJ/cZ+cQrHX54=;
+	b=EATAvhGjB0BxlGsm+l29SdEaUqqx/UzPjLLQYionr+lI6JBS518mBhoqoQDUlDpH
+	uoijmrTaLxXjR0zjXhhAM7w8DcArp/97HlffwENaSaj5bTGeCddzxwAP8Rg0Ox22vnj
+	kdk3f7mNSWckQ2aigReGzhXzXeuUr2LYsg4Wjxr8=
+Received: by mx.zohomail.com with SMTPS id 178708937710788.45877915239339;
+	Tue, 18 Aug 2026 14:42:57 -0700 (PDT)
+Received: by venus (Postfix, from userid 1000)
+	id 030B6182034; Tue, 18 Aug 2026 23:42:51 +0200 (CEST)
+Date: Tue, 18 Aug 2026 23:42:50 +0200
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+To: Manivannan Sadhasivam <mani@kernel.org>
 Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
-	Conor Dooley <conor+dt@kernel.org>, Wesley Cheng <quic_wcheng@quicinc.com>, 
-	aiqun.yu@oss.qualcomm.com, tingwei.zhang@oss.qualcomm.com, trilok.soni@oss.qualcomm.com, 
-	yijie.yang@oss.qualcomm.com, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-Subject: Re: [PATCH v2 2/2] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy:
- Add Maili QMP Phy
-Message-ID: <20260818-solid-nocturnal-hamster-b46cec@quoll>
-References: <20260817-maili-usb-v2-0-97d7317f64b3@oss.qualcomm.com>
- <20260817-maili-usb-v2-2-97d7317f64b3@oss.qualcomm.com>
+	Neil Armstrong <neil.armstrong@linaro.org>, Heiko Stuebner <heiko@sntech.de>, 
+	Frank Wang <frank.wang@rock-chips.com>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Thinh Nguyen <Thinh.Nguyen@synopsys.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, Andy Yan <andy.yan@rock-chips.com>, 
+	Dmitry Baryshkov <lumag@kernel.org>, Yubing Zhang <yubing.zhang@rock-chips.com>, 
+	Alexey Charkov <alchark@flipper.net>, Igor Paunovic <royalnet026@gmail.com>, 
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, kernel@collabora.com, 
+	devicetree@vger.kernel.org, linux-usb@vger.kernel.org, Sashiko <sashiko-bot@kernel.org>, 
+	William Wu <william.wu@rock-chips.com>
+Subject: Re: [PATCH v14 00/38] phy: rockchip: usbdp: Clean up the mess
+Message-ID: <aoTMQtpYYw8O-3cj@venus>
+References: <20260813-rockchip-usbdp-cleanup-v14-0-b5ad9c68fa11@collabora.com>
+ <h54c2hrcsv3zjzzgojzf5sjmu3vtpobz6rwloam5kp7mwqqn3n@bqjnlellvnz6>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260817-maili-usb-v2-2-97d7317f64b3@oss.qualcomm.com>
+In-Reply-To: <h54c2hrcsv3zjzzgojzf5sjmu3vtpobz6rwloam5kp7mwqqn3n@bqjnlellvnz6>
+X-Zoho-Virus-Status: 1
+X-Zoho-AV-Stamp: zmail-av-0.2.10.1.5.2/287.68.66
+X-ZohoMailClient: External
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260818_144317_387659_C7A6D6B8 
+X-CRM114-Status: GOOD (  29.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,30 +86,107 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============0919212463010630918=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Aug 17, 2026 at 11:16:06PM -0700, Jingyi Wang wrote:
-> From: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-> 
-> Document the QMP PHY for Maili which handles the USB3 path. Use fallback
-> to indicate the compatibility of the QMP PHY on Maili with that on Hawi.
-> 
-> Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-> Signed-off-by: Jingyi Wang <jingyi.wang@oss.qualcomm.com>
-> ---
->  .../devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml        | 4 ++++
->  1 file changed, 4 insertions(+)
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+--===============0919212463010630918==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="lb64huk2f3isbo5n"
+Content-Disposition: inline
 
-Best regards,
-Krzysztof
 
+--lb64huk2f3isbo5n
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v14 00/38] phy: rockchip: usbdp: Clean up the mess
+MIME-Version: 1.0
+
+Hello Mani,
+
+On Tue, Aug 18, 2026 at 11:27:07AM +0200, Manivannan Sadhasivam wrote:
+> On Thu, Aug 13, 2026 at 10:51:43PM +0200, Sebastian Reichel wrote:
+> > This series does a major overhaul of the Rockchip USBDP driver. The
+> > initial main goal was to add USB-C DP AltMode support to the RK3576
+> > and RK3588 and this series still prepares the PHY driver for exactly
+> > that. But in addition to that I uncovered a huge amount of issues,
+> > that are fixed along the way. Some of the more interesting ones are:
+> >=20
+> >  * Currently the driver might trigger a fatal SError on USB-C hotplug,
+> >    since re-initializing the PHY stops the clocks going to DWC3. If
+> >    the DWC3 driver tries to access its registers at the same time the
+> >    system will crash.
+> >  * The DWC3 hardware can get into a buggy state when the PHY is
+> >    disabled, which results in the PHY not coming up properly again.
+> >  * Swithcing the USB-C connector orientation during hotplug breaks
+> >    USB3 speed, as the PHY is not being re-initialized.
+> >  * The code always enables DP mode when USB-C is involved.
+> >  * The driver has some locking issues uncovered by Sashiko.
+> >=20
+> > In addition to these bigger ones, Sashiko also found a bunch of
+> > minor problems, which are mostly harmless, but were fixed while
+> > going at it.
+>=20
+> 38 patches for a single series is too much to review. Please
+> consider splitting it up into multiple series not exceeding ~10
+> patches per series. Thanks!
+
+So let me summarize:
+
+ - Vinod wants Sashiko feedback to be acted upon
+ - linux-phy does not want series with dependencies ( [0] )
+ - You don't want series with more than ~10 patches
+ - Generally fixes should be at the start of a series
+
+This tremendously slows down any real work. The first series would
+just be Sashiko fixes without *any* of the work I originally wanted
+to do (DP AltMode). I would have to wait for it to land before
+working on the next bits as there are massive code conflicts with
+the same file being heavily modified. This simply does not scale,
+especially when considering that there are more dependencies on this
+series.
+
+[0] https://lore.kernel.org/linux-phy/20260330233532.ulnqiqrogezswht2@skbuf/
+
+Greetings,
+
+-- Sebastian
+
+--lb64huk2f3isbo5n
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmqE0dMACgkQ2O7X88g7
++pp1WA/9Ehn7r1EMjla99QJRa2MMoOYd+t/cIFPVNbsUDA6t9qfCwIGxmOawRoog
+uUDXe/RqRp5xObb+2jSPMuvb3jelMPX+1357dxVoYaqsmrvPG6jSEjjBFtf4z++7
+62Ws1nWgH0YR1XO45vFBsrNCNv3ELThj/FALxPQmU0pZ/x/7bizhTQtx3PEHW104
+kT+171AqELAfbpfUMM7lYcHHIy8D4hSy0Ah66RFTNpWl1obZCUCFL1B0zuDANnMJ
+CAjqkPtwoJPpVaKRlY2h1YB5JREpQNfJCUl4XVPZ5Tuia+BOF5mvegHPXhU1F+ZT
+lasrChZQHYnkJNOl7EDgMaYpKnc3bJbxagtA1Q3IbqdRZA3jm8GrWH6dLhq9Pdr6
+kFsnhDJo5omh7AskYgm1uZ6ZL6ve/d+BUYS5Bkku8SJNbAb8eLqR20ntn45rDBIH
+29NMHJ9OQ8DKzJ7dxW3x19A6RuLTCHsVd6cQgTqMbgkVgrQehq4ivCMBuPwrpBZO
+fglWS7cNZGv+KYDnEJo9K2KrUOtyHfOYAjdbsOwQEyntf0QxDNtMoQ89LzIyJM7m
+nUsBRW1ZxNJ3NvHrC+580iDz5c+F0yTRwv7LeUNcwcp8SF9+hBEme+EQL4Vid9lH
+TrH9qhoHr/d7ZyZOOtQ4a3vRzVbBN4+cmrWofzpBfmyI7XtjNKU=
+=cryx
+-----END PGP SIGNATURE-----
+
+--lb64huk2f3isbo5n--
+
+
+--===============0919212463010630918==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============0919212463010630918==--
+
