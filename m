@@ -4,98 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D602BC5DF81
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Aug 2026 09:00:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D49EDC5DF70
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Aug 2026 09:01:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0/WRrvtotPysyrtb3v9g492+guYJgyNB/nQXhmhxAUA=; b=k24VJWeMP1UKF4
-	YYBE2MrRKKIHL7LWrjdow4dMX4/39otPZJiEtBnVPKmth8d1Ns4ihVmd78f3iFN0WLqrobZsy/Or1
-	fS7nh7BFhDmsd39a1mg1pdaeHnVeEplqF0Af5Nz0v5vi9g6HEC0H4vkzW5D00U5wN1yQcAkqx9kEO
-	piSAZRX8b17Z2pkf3+77gnJCxlsk7Uvk9BZn+54xtJxpnoCGI4PWE146sh91FDy2OJS6xZ9pWMXBl
-	7JT/WzCUgm/FWsUGo2o0UoVBq/8kdrHv9iLs3LP0G8KbF6PPpQG3YxvPdRmklh0AXIEGxchh29jjD
-	6hnsD80O2AWVKBBOEh3g==;
+	List-Owner; bh=O3K3sx5BR1oh96p9USC7DRMvG8Keolcmd7QA4mGNpS8=; b=HceP70N3CtMiFC
+	T4Rwanl+vhwFEyVP7YwscLtxaTLyLQOlCFndzDJ+qqJaKCrdKlgeqq+GaZMBPPgcOOpBYLnsZksEE
+	/XTncCqf33K7/W5wJg4KRyYOzxe3jeS7KynOQqw3CpRuoeV7F89h4k0b0PZltcZJ3fvG6sQW0oGFd
+	B02WPgZT83Pke6vbF+5tS1EV1qEOL9tYUkOThCTS9DI++G73JNMFIhD/HkZ6F8zNyHh5lXvcvlkoY
+	uAvAdFWki67tvVQGZEX8CfkPUiyySe7tg6TCasd3A9bVuz5azcurpeKaBaJbV8PNEF4Yw4GM/WP8X
+	bYvLXKMh5ZOiRwrawR0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwFgV-00000007YwE-1aQU;
-	Tue, 18 Aug 2026 09:00:39 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wwFhc-00000007YzL-23fT;
+	Tue, 18 Aug 2026 09:01:48 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwFgS-00000007Yvj-32Eb
+	id 1wwFhZ-00000007Yz0-2Z92
 	for linux-phy@lists.infradead.org;
-	Tue, 18 Aug 2026 09:00:37 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 67I8BQ5H722914
-	for <linux-phy@lists.infradead.org>; Tue, 18 Aug 2026 09:00:36 GMT
+	Tue, 18 Aug 2026 09:01:46 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 67I8BWnR325733
+	for <linux-phy@lists.infradead.org>; Tue, 18 Aug 2026 09:01:44 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	/ylqoGSHr6OZc2aQ4hnQQ8ZcxAh6qCEnKowInjzZGPg=; b=ECxShCjkR2GtPzyI
-	32OZlQAIhQKIt3ynmLWUJFBAJBLcQl77htHF5n6IH4xY8YYxyBDbrDCrPjZOvDyA
-	EP6V2KBbPpcy7zkQU6gqVgwNR3Kd3bu6QzIZebsPdjeZb6fq5joaGlWDS43iyKjC
-	hFdoD4eNJXNy4hsB+BL50s0xMDzOmrjsXLA+9YVgl3bV4VkP4cqTJ794zj0UUDmS
-	oje+pBALDhIwGEH6/SA6EsRDALuJ8Z3Gcp8gkdrMGOshNHtJvkFO61N50gjhVMZZ
-	+ZdAaGIDTk6MjoiMmNi6AdXU+T3wLltydHSwjXQtmmEpmQ0HBYQ+0k4/riKMAVP1
-	0/58xA==
-Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4g4615kkpk-1
+	gXMj4xvl/6fCMpk0KIcN9SXI5nmvjMbOnCTA1HJw5ek=; b=PKqlEk2FgcfVN0Xd
+	a4fAFtQj0UG6gEJr2z2FrYgd4p9ZqnyMA1sAtotnsyCi5DxyAInm114J+T2bOaiH
+	D58ck3WadCjeZba8B7+XC9lMybX0W2OePItQ9Ui+Vjvf7DbzSgMsns6PvIpjBEL4
+	ocYAyrGn9kwqshsdocA/SHWI5JCCNztG+xOdRxTXqokmin62crPssTU/8Br9KC3c
+	votDhPP4ytYX3dPTRUAOZqJA+S2HF0oCs4KZeetKmn/9NnBmYBWHOFt1Wyf6TtuQ
+	caa8CsCXgnNuOgflS7FV5rbwXmZPFs+muLMY30iSLqIXKfxmg8qjgrPWABDNorgR
+	Bnp0lg==
+Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com [209.85.222.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4g4eqtsgsy-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 18 Aug 2026 09:00:36 +0000 (GMT)
-Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-92eebb130dcso42475685a.1
-        for <linux-phy@lists.infradead.org>; Tue, 18 Aug 2026 02:00:35 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Tue, 18 Aug 2026 09:01:44 +0000 (GMT)
+Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-934a8cd3a8bso44490185a.3
+        for <linux-phy@lists.infradead.org>; Tue, 18 Aug 2026 02:01:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1787043635; x=1787648435; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1787043704; x=1787648504; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:in-reply-to:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=/ylqoGSHr6OZc2aQ4hnQQ8ZcxAh6qCEnKowInjzZGPg=;
-        b=d/YcVJXrbIILDmat8D1VI2FeGVBz/PzeK7FWyY8mtpF8MBJdsoTzX5Evd7Tyh8NTmc
-         F3J52pE5mFNkG5yRrcOJR/J0hqtiHeKBV6rRUQae6YODewsz6Rui9ZFCNx0H69cgOlEt
-         qloN4dosT5m8YTaAxfyevTyYHzxNhQKk6YjgDRmizxJO0+v8BptsoQkB4QaAFbM+eW/d
-         aisteyN/k1dGAxm1WkuwzCppp4LNA0ISwUdeVU/1L8zccoYdASeNcdWrAmsIJ/2ZTjmN
-         3qw5Ji4yIxgxNI4kKXF15yx1OUDfELwcIIH+HwLfal4UpQkwRUbe1d4jLtQ7KJtyRUTk
-         CrnA==
+        bh=gXMj4xvl/6fCMpk0KIcN9SXI5nmvjMbOnCTA1HJw5ek=;
+        b=QmQF4S0Y8vPUgiastztotYEnxZFWAqWj7oZEp9FUSnXLJbN4UUCLX1tkE1TUrPNrLh
+         p7ELWwtP8kThg1ybjjqpFFluSo1Rvibbc//Me6KMGA/RT4YaAUcpGYmeXUdCLf1ydF6A
+         cvuvUKL+1aj8xeRe6j4KLY4zBJ1ZfS2oaCcl8HOuacOGtja2/55r+tCiXY9Yi/CoGZT0
+         Lwg80yEA8LE2VC2Tnh5G/IGjg2GSg/NVk2sDjgFdUCfY+BbpeVk2QM/41dVR/VA/LdzU
+         IXUI/I5qE+ZA+pysPMN26+/j6FeFj3n2r/C59+AaCluvysrIaXSbrvCRvUMIn7rdC3kz
+         DIsg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1787043635; x=1787648435;
+        d=1e100.net; s=20251104; t=1787043704; x=1787648504;
         h=content-transfer-encoding:content-type:in-reply-to:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=/ylqoGSHr6OZc2aQ4hnQQ8ZcxAh6qCEnKowInjzZGPg=;
-        b=Sn0C1wdCW30xQiVv9VfbQCdxrFQNJnEAQyYuIj9m6fVsjcqWcZA3ZE8jqKMgZVhQHi
-         ExS6ksj8HFO8sTY4yrpP3v+VuNLc9siRRCNwJ67sQZ3ca7Bd5H2X/QVUkQGqec1/zGds
-         SsWxlHYpyUlInczWGHY4m3lOa8aLveEcJGeiz5Hten1XIFLT/XpwbYdBEzqQaYc2LVPi
-         F3+OXzkTYQbaufk9i903DHqWxcsJPXdJQxX6xy2xRO52/scz3QE6IjYHxgpaxRkc4yiU
-         LEo7vYNuXGEhxOj+/qOEk1dUveTu7FUOVZP8PLJzusHEj5Ti6fIzTqZl0lWouHPF2Rsn
-         Oi3g==
-X-Forwarded-Encrypted: i=1; AHgh+RpxeLuiipXPRuO8mwXEoIc2gb1xcaDdg2TzbmZX+9FxRBF4MMjTZJmwngvzk4EOixwfenYX/rokjwI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwjTHaEWSI4JYMmIR15Yd7+i41gQakUe71W9nHC/y9bXpzmUypH
-	8eFfkH7z6kDDDCRfFxXdi2ZStXg+dE1srg1FiwwdJ/X4K8T+sIIlOm39OxfCpcHQfCOEvXP/Gta
-	f+rR8AfyklW7vLZERFcxIy/UwYukKrlO6PmZjRu5mPMQBy903jU7yl1dYQrFECpDiDztn
-X-Gm-Gg: AR+sD13jRWowmbNUCTgqNTm9Ybh5YNBsWic/BEH5KmXJzo4LM44SJHFyAC4luopY76G
-	mIFCKTTWo+UzO+XpvXkFrJQDNhun2SJXX60vKsiNW1frALC1dPpXnljdf4r6VywxCd7YfGb47ez
-	cSZUHvgigKXIkpsSz3UB+NY5bgSi1nwO3CyyWvE2CIvETC50LBm8IOGUJUEEOOhlxkwQaVI73vG
-	aqr4NBauYSHT77pEbPVTixoPg21iV3Hqc0almv40cniiTrgzHleT5CmCLY9JPBtFKFwANxMTo8g
-	YN+fvcMUbKJK7pTt/qjar61J1wfWIuiSU1dBPLZbXnuzuVJFwfcDJUILEE1D3foYf4oj3ZSE/wL
-	9jWoAd6YOIY/lS3a+2b3UXNkq
-X-Received: by 2002:a05:620a:4049:b0:936:5a34:7a6a with SMTP id af79cd13be357-937071938a9mr358147485a.3.1787043635128;
-        Tue, 18 Aug 2026 02:00:35 -0700 (PDT)
-X-Received: by 2002:a05:620a:4049:b0:936:5a34:7a6a with SMTP id af79cd13be357-937071938a9mr358140885a.3.1787043634620;
-        Tue, 18 Aug 2026 02:00:34 -0700 (PDT)
+        bh=gXMj4xvl/6fCMpk0KIcN9SXI5nmvjMbOnCTA1HJw5ek=;
+        b=nnLQC12/ZbzYBfy57LS/KYFU4jMP4kqwMiQhuAEgp6J+Z+InTbJ/JM1AZABf5B5VvR
+         sKgw2n9iF9WQANDUuNmFBLMOs5Ua7uwi7D0IYgNyKJet8EUbO4I8gmIZjJNTZsS5Yn76
+         P1sfn+RtHXH9lvKve/WWCzU1ePYM4VGaZ482UzNRj/PFDkCgI4tRBcgl4GFGlPzBnIzv
+         TBShGZqKC+ePx1DlBHyA1fj3TyoUc8kv3guACxbQEV/8J7msmyFWAcaxQa0mrFCzAQHu
+         SOOUeGNHYvbJv5645lvh2zoP1t2fzGuer9Qim7MpCZ47c/T8hvYtTf/K6x+jQYiP/vSR
+         fP2w==
+X-Forwarded-Encrypted: i=1; AHgh+RphTAetoSnMIZSQHe9THnRpZitglnlWm8QTqfp7GrWRPDW2wVu8rJ69FQz2reQA804bHI0Jwnm8hL0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxBeRsJxocL49h/BDARd00P/Ij8VKffj4u8PM0wLkHM4Bi2EJn4
+	T4cv57HKwWu3DHmifyoLDv034nKGnC88vWPzOlzxoE4KB33B3YxHehzZnGqKGOQcKQz3LaPhx6v
+	YVVv2j9s8SeBauCnj0ZtmSDOm7+oFCFPUsl7laNxlcXA9fYHGGNPhvVqFa8qFqy7y72RK
+X-Gm-Gg: AR+sD111qbxB+Y3DfqmPfofxz7HKhgkLIFdNv9T0afHUtsjh6Nidjuvz42fGUY1e38a
+	dX91FS7tM+wcgq1wh/5oKXKSoWo+qhrk3OTxJfHC+gmv4mYyaHvl6mSKXaOTlOMkz7H6PgpwpJR
+	NgU2JfHBv6ZmYLTquZ0CV+oakYyk6kKBxJQE6HIRvttVoiEJxkzTG6WbaVzXMg7mCKL8ai5TuBF
+	r6jedQdwZI6ttSmYXVXGZMJudcVPTSbqSCwSpr/MgiKklQW2j4Ax6GlbY5lcURPTiLwlWzSUGMP
+	9cYVUH2ZR8zcEXLO5YeSZuGbJurF7K5hLk5tERRctAbz8+3GHKR+G5v+zSlNOfDIE0b0tKXeHOQ
+	I2VV6GSYmIRGIna6K6vAZP2pp
+X-Received: by 2002:a05:620a:6910:b0:936:2f59:dfe4 with SMTP id af79cd13be357-936d1edd4fdmr2347611985a.0.1787043703582;
+        Tue, 18 Aug 2026 02:01:43 -0700 (PDT)
+X-Received: by 2002:a05:620a:6910:b0:936:2f59:dfe4 with SMTP id af79cd13be357-936d1edd4fdmr2347606585a.0.1787043703156;
+        Tue, 18 Aug 2026 02:01:43 -0700 (PDT)
 Received: from [192.168.120.193] ([178.235.128.140])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5b46d00b60asm1026805e87.61.2026.08.18.02.00.30
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-6a3d8596d4csm1471059a12.22.2026.08.18.02.01.38
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 18 Aug 2026 02:00:33 -0700 (PDT)
-Message-ID: <161415a0-58b8-4370-81ca-dd26424d726b@oss.qualcomm.com>
-Date: Tue, 18 Aug 2026 11:00:29 +0200
+        Tue, 18 Aug 2026 02:01:40 -0700 (PDT)
+Message-ID: <ad484af6-9f38-44a5-9f01-8c8bcdb6fa0b@oss.qualcomm.com>
+Date: Tue, 18 Aug 2026 11:01:38 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 07/10] phy: qcom-ipq806x-usb: parse the tx-deamp-3_5db
- property as documented
+Subject: Re: [PATCH 08/10] phy: qcom-ipq806x-usb: support the MSM8974 SS PHY
+ parameters
 To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
         Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
         Rob Herring <robh@kernel.org>,
@@ -112,41 +112,40 @@ Cc: linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org,
         devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
         linux-phy@lists.infradead.org
 References: <20260810-msm8974-usb3-v1-0-1a47e1185524@oss.qualcomm.com>
- <20260810-msm8974-usb3-v1-7-1a47e1185524@oss.qualcomm.com>
+ <20260810-msm8974-usb3-v1-8-1a47e1185524@oss.qualcomm.com>
 Content-Language: en-US
 From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20260810-msm8974-usb3-v1-7-1a47e1185524@oss.qualcomm.com>
-X-Proofpoint-GUID: tsae07QUD9Xkp9tO2EGLASDtqVRL_ows
-X-Proofpoint-ORIG-GUID: tsae07QUD9Xkp9tO2EGLASDtqVRL_ows
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODE4MDA2NSBTYWx0ZWRfX7TEAkaNqXPNL
- GFvWE7h2JyQQN02KEcusLhXeya/fE7HTg2DNvJ7wc+x/CbpvVBqQBmtkUSefMS1ncfGhQRfvtMO
- LEOI8tBYh+dvap93oGbSkRVe5AIzcQ4WgSUDoV0stRBdStd/avV55DsVQnqyhiS6qSDxrT+5KBf
- ife1VbvwjbL4dORmT1BLvx0XFTN2K25S1Q3Q7s4n/F1jV8L5AathNFxfIRlK9pxNtU1kU1XPYaS
- 74doLTCSzdm7zMGbiBDo/EG9G9djszFpweoEV3+boyfhh7YbnYqlJQLI0q8CnTWPCHsTHCa6Q8l
- qTy8iaUsOzKESyK9eU+1Kg1/RmAtNgNeoN2Wmgi82UE3WFooMJB6s6BkFPK36jr/HupzVCIPiYN
- 8dgcfD1dnl9g8r7QsEqYBzrd6iXyHgZTHAQqdR6HdH13vecZEtldvG/Boe/3IGGc/sbXCgFj6DH
- KitYfHdwydXkM2VJvoQ==
-X-Authority-Analysis: v=2.4 cv=Ruf16imK c=1 sm=1 tr=0 ts=6a841f34 cx=c_pps
- a=50t2pK5VMbmlHzFWWp8p/g==:117 a=PRfkaYvzSr8QmIIGAkY2Sg==:17
+In-Reply-To: <20260810-msm8974-usb3-v1-8-1a47e1185524@oss.qualcomm.com>
+X-Proofpoint-Spam-Info: AW1haW4tMjYwODE4MDA2NiBTYWx0ZWRfX6jPag5K682D5
+ LlubgFxx/OyDYwaX32lr1IhGgSmChamE/B8WuEGvk8+ODnmLzn8j9NLnY15A9CHkUjgF7eMzmdL
+ WoMa4hDAcMMGE68nHZmXaqP4Kqc6y+g=
+X-Proofpoint-ORIG-GUID: dVaBgIdVE8LDR4VaxvB7kfE3sPI8RwPf
+X-Authority-Analysis: v=2.4 cv=UfFhjqSN c=1 sm=1 tr=0 ts=6a841f78 cx=c_pps
+ a=qKBjSQ1v91RyAK45QCPf5w==:117 a=PRfkaYvzSr8QmIIGAkY2Sg==:17
  a=IkcTkHD0fZMA:10 a=Sv0fKeRqtYgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
- a=EUspDBNiAAAA:8 a=MF3fq9KJeJn4W8AoZ4UA:9 a=QEXdDO2ut3YA:10
- a=IoWCM6iH3mJn3m4BftBB:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYwODE4MDA2NSBTYWx0ZWRfX8RHMeKPr9WLN
- WZt1x70Esv+34beJGJp4ssVCMr9frIvxPlPwPxqlK+e9KrL2PgK4+JxHvr4wIRV2Kpk2gnLg2eS
- RR9MUpOLCJJs1kDQSochTYEGpJla7Ak=
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22
+ a=EUspDBNiAAAA:8 a=ZJdRkJQ8ho7aap0qdPwA:9 a=QEXdDO2ut3YA:10
+ a=NFOGd7dJGGMPyQGDc5-O:22
+X-Proofpoint-GUID: dVaBgIdVE8LDR4VaxvB7kfE3sPI8RwPf
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODE4MDA2NiBTYWx0ZWRfX1+wGBfZjkW+x
+ WbeXJQOtfh93x0YNeiv1CcOW7kI1skFgU7too8QIrELARyQNk7ydOFpOkqUc4b5XfjlCss5kKID
+ H3JuQ+P7xcKZBMMJyLj8lalnaD6BTav1SbP+2sqBZCNZCT1HjvvEGuI0dxyRpjMyhl92722wyWv
+ rsbjaIdeQG5O4gesW4UQGNuMkYCEBR2aqndac13ocRcbd4kffNDTHwWvRUCzXcQvSlAS3KQHcYW
+ l5MbnHYRZ6k8hY0oU7JtKOC8bfAtuxs4ecQ/ozNGP3Ht3UJW9h0odfhDfWsmufxMwy6V76Xur4X
+ /w/lCd9aUnY9lvo+Qwm5mgL8mASVZBnJQgZEWeKDMa21J6sJSBDJVJ0wcL5gz0CmMYJtmMIqQdL
+ Wi3rDTklfE4VIVoldUcTfnE5UV7O40tnXESBKEqrjQF0RGAUrmPx7NcPKOs3ygmjXtuyGIB+TbX
+ jTcc2g1If5ViQJZCxlw==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-08-17_04,2026-08-12_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 spamscore=0 bulkscore=0 impostorscore=0 malwarescore=0
- priorityscore=1501 lowpriorityscore=0 adultscore=0 phishscore=0
- suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
- definitions=main-2608180065
+ bulkscore=0 malwarescore=0 impostorscore=0 suspectscore=0 adultscore=0
+ spamscore=0 priorityscore=1501 clxscore=1015 phishscore=0 lowpriorityscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2608180066
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260818_020036_780341_BE75EC8A 
-X-CRM114-Status: UNSURE (   9.22  )
+X-CRM114-CacheID: sfid-20260818_020145_794940_6B40B477 
+X-CRM114-Status: UNSURE (   9.97  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -165,10 +164,16 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 8/10/26 1:42 PM, Dmitry Baryshkov wrote:
-> The driver reads the transmit de-emphasis override from
-> qcom,tx-deamp_3_5db while the binding documents qcom,tx-deamp-3_5db,
-> so a device tree following the binding is silently ignored and the
-> default is used instead. No in-tree device tree uses either spelling.
+> For the MSM8974 SS PHY instance the vendor kernels program analog
+> parameters different from those used for IPQ806x.  With the IPQ806x
+> values the masked write-readback of PHY_PARAM_CTRL1 fails and the lane
+> runs with wrong launch amplitudes.
+> 
+> Add platform data for the MSM8974 compatible.
+> 
+> Assisted-by: Claude:claude-fable-5
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+> ---
 
 Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 
