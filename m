@@ -4,67 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5FD6AC5DF70
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Aug 2026 09:26:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1CAEFC5DF80
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Aug 2026 09:27:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=OiICi8O9oVOQhs8mGQbNdF4iKIQ82ulnW5wYrCQU0ms=; b=GJmvEbGVc7zWA+ZINSxqeeeIrq
-	qCGr2zlWJvYXXKiD9K68cvwLoTPboFNekwaJLr+drNYA1NAaFg/QGUKMSE/0X6F5C/1ES5EROd/JS
-	oIN7bh/z1oRSjd+3u6eO/2fI6d/cX0g/Qm6TBfApN0hEJi8fMYFBwTDYuBvU0PbW1+hMb+4yUCz7N
-	S8smYZ8W4WXaZsr6XJsQb3Twj1OoAkG3vuEkZ72cL+fnNZZGANkbzyLSogtDAt6r/vrcXDYMhn+s0
-	HX3xEKl4/ZfoWsGstnmMtsvqTRZswfPQ/1N1BK+Xb7EplMFRhz+e6RBrB2y1ITHHSipM9r/w/Qavn
-	mdya9kDA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=woZi11S4qosgd2GJZQ0zUqBXtm39g8QpYorja9UwHnQ=; b=eC1pWllTADjhsH
+	C4l29kWTeDfFDkvSmUgcCYVv6gGPqTzlXT3afqRvD+PrJP+jlSSI+a+7Ap/DzOfByn6vbAz9KhbEe
+	IbgfzLF+kJhbLfaJ0CPQZ+sBs6MCkPRzkEVPo/ArJkE20qxUnGhujkK3HRfLjP+W4BzHuqEGyiJt8
+	hT7zQnMNVE8l7v556ILVh1TqS83njcnqfBqKPQh1NAYrCxjYZZGmfjPHXNz9pQuLQYiQCq9dap9SE
+	0TQP+7nKy54jWEeXKXfcn6IXXNFqbB6fmhzq0zn+4TQEw8ixh573edE7CZGdcHKPyunbUu9xBoV79
+	PJLtm5DTh3SBanQU4lcQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwG5Y-00000007cEP-01gb;
-	Tue, 18 Aug 2026 09:26:32 +0000
-Received: from mx1.white.stw.pengutronix.de ([2a0a:edc0:0:b01:1d::107])
+	id 1wwG6M-00000007cPq-2dxM;
+	Tue, 18 Aug 2026 09:27:22 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwG5T-00000007cDJ-19NH;
-	Tue, 18 Aug 2026 09:26:29 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de (drehscheibe.grey.stw.pengutronix.de [IPv6:2a0a:edc0:0:c01:1d::a2])
-	(Authenticated sender: relay-from-drehscheibe.grey.stw.pengutronix.de)
-	by mx1.white.stw.pengutronix.de (Postfix) with ESMTPSA id 8B3B72010D6;
-	Tue, 18 Aug 2026 11:26:24 +0200 (CEST)
-Received: from moin.white.stw.pengutronix.de ([2a0a:edc0:0:b01:1d::7b] helo=bjornoya.blackshift.org)
-	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <mkl@pengutronix.de>)
-	id 1wwG5Q-0026Gf-1O;
-	Tue, 18 Aug 2026 11:26:24 +0200
-Received: from pengutronix.de (p4ffb23c7.dip0.t-ipconnect.de [79.251.35.199])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(Client did not present a certificate)
-	(Authenticated sender: mkl-all@blackshift.org)
-	by smtp.blackshift.org (Postfix) with ESMTPSA id 1345F5856A3;
-	Tue, 18 Aug 2026 09:26:24 +0000 (UTC)
-Date: Tue, 18 Aug 2026 11:26:23 +0200
-From: Marc Kleine-Budde <mkl@pengutronix.de>
-To: Stefan Wahren <wahrenst@gmx.net>
-Cc: Rob Herring <robh@kernel.org>, 
+	id 1wwG6L-00000007cP0-0kpI;
+	Tue, 18 Aug 2026 09:27:21 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id EA5194365B;
+	Tue, 18 Aug 2026 09:27:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 807891F00A3D;
+	Tue, 18 Aug 2026 09:27:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1787045240;
+	bh=pCAeP45dNHcS3g9M4gwt3hWaJQOzRtTIoJ9n13+qIfo=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=FXKhSwse5JpUIXXbguePgh5Q4+Wjri1Bk6ZOg8YeaYZemFTg1obCHqVZG2uPbI1Ea
+	 zi6eiRfzz5dqkwzZpjf4gRxD5f5DD4tKT/8aBvA4zmkDWwV/BbCO6tOlMONcexyKou
+	 g0AfU95Db6jL5E0+9H2sBm2hLkTjUPYtCpN2td0tzyqpLwNaB1ECxjqkGFQ5mWelvw
+	 Xn4jH5f6IvgGaQt51GRfoklu1XNSBevKtjELBHLNMiK0+s0c8cIBJ83EHhbHk6IPpk
+	 RVz8GwpdEeLJfzDAaR/JqoUfwUQwZRHwbqldpRS7P93yPKEivpwLdNxzy9R/QKCC+L
+	 oll2GRe8z2ltQ==
+Date: Tue, 18 Aug 2026 11:27:07 +0200
+From: Manivannan Sadhasivam <mani@kernel.org>
+To: Sebastian Reichel <sebastian.reichel@collabora.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Heiko Stuebner <heiko@sntech.de>, 
+	Frank Wang <frank.wang@rock-chips.com>, Rob Herring <robh@kernel.org>, 
 	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Vincent Mailhol <mailhol@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Frank Li <Frank.Li@nxp.com>, 
-	Pengutronix Kernel Team <kernel@pengutronix.de>, Fabio Estevam <festevam@gmail.com>, 
-	Aswath Govindraju <a-govindraju@ti.com>, devicetree@vger.kernel.org, imx@lists.linux.dev, 
-	linux-kernel@vger.kernel.org, linux-can@vger.kernel.org, linux-phy@lists.infradead.org, 
-	Christoph Stoidner <c.stoidner@phytec.de>, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH RFC 2/4] dt-bindings: phy: ti, tcan104x-can: Document
- Microchip MCP2542
-Message-ID: <20260818-vivacious-dodo-of-piety-b0a59b-mkl@pengutronix.de>
-References: <20260818091701.6441-1-wahrenst@gmx.net>
- <20260818091701.6441-3-wahrenst@gmx.net>
+	Thinh Nguyen <Thinh.Nguyen@synopsys.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, Andy Yan <andy.yan@rock-chips.com>, 
+	Dmitry Baryshkov <lumag@kernel.org>, Yubing Zhang <yubing.zhang@rock-chips.com>, 
+	Alexey Charkov <alchark@flipper.net>, Igor Paunovic <royalnet026@gmail.com>, 
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, kernel@collabora.com, 
+	devicetree@vger.kernel.org, linux-usb@vger.kernel.org, Sashiko <sashiko-bot@kernel.org>, 
+	William Wu <william.wu@rock-chips.com>
+Subject: Re: [PATCH v14 00/38] phy: rockchip: usbdp: Clean up the mess
+Message-ID: <h54c2hrcsv3zjzzgojzf5sjmu3vtpobz6rwloam5kp7mwqqn3n@bqjnlellvnz6>
+References: <20260813-rockchip-usbdp-cleanup-v14-0-b5ad9c68fa11@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <20260818091701.6441-3-wahrenst@gmx.net>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260818_022627_485536_C24AFB3C 
-X-CRM114-Status: UNSURE (   9.95  )
-X-CRM114-Notice: Please train this message.
+Content-Disposition: inline
+In-Reply-To: <20260813-rockchip-usbdp-cleanup-v14-0-b5ad9c68fa11@collabora.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,64 +73,35 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3788603434223446184=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============3788603434223446184==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="6i7fq3cui44vk3ry"
-Content-Disposition: inline
-
-
---6i7fq3cui44vk3ry
-Content-Type: text/plain; protected-headers=v1; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH RFC 2/4] dt-bindings: phy: ti, tcan104x-can: Document
- Microchip MCP2542
-MIME-Version: 1.0
-
-On 18.08.2026 11:16:59, Stefan Wahren wrote:
-> The Microchip MCP2542 High-speed CAN transceiver with Sleep mode is a
-> pin-compatible alternative for the TI TCAN1042.
-
-If it's compatible with the TCAN1042, why don't you add it with the
-ti,tcan1042 as required fallback?
-
-Marc
-
---=20
-Pengutronix e.K.                 | Marc Kleine-Budde          |
-Embedded Linux                   | https://www.pengutronix.de |
-Vertretung N=C3=BCrnberg              | Phone: +49-5121-206917-129 |
-Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-9   |
-
---6i7fq3cui44vk3ry
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQSl+MghEFFAdY3pYJLMOmT6rpmt0gUCaoQlMQAKCRDMOmT6rpmt
-0slMAP9l7TVeexZCcKdt+RpN+BZvAFifxtKNWE3G0YvngbwCpwD5ATMKyiyaGA6X
-nIUiXcCBKPn+JgKvp8D/hjUI2hlOEQ4=
-=emA7
------END PGP SIGNATURE-----
-
---6i7fq3cui44vk3ry--
-
-
---===============3788603434223446184==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============3788603434223446184==--
-
+T24gVGh1LCBBdWcgMTMsIDIwMjYgYXQgMTA6NTE6NDNQTSArMDIwMCwgU2ViYXN0aWFuIFJlaWNo
+ZWwgd3JvdGU6Cj4gVGhpcyBzZXJpZXMgZG9lcyBhIG1ham9yIG92ZXJoYXVsIG9mIHRoZSBSb2Nr
+Y2hpcCBVU0JEUCBkcml2ZXIuIFRoZQo+IGluaXRpYWwgbWFpbiBnb2FsIHdhcyB0byBhZGQgVVNC
+LUMgRFAgQWx0TW9kZSBzdXBwb3J0IHRvIHRoZSBSSzM1NzYKPiBhbmQgUkszNTg4IGFuZCB0aGlz
+IHNlcmllcyBzdGlsbCBwcmVwYXJlcyB0aGUgUEhZIGRyaXZlciBmb3IgZXhhY3RseQo+IHRoYXQu
+IEJ1dCBpbiBhZGRpdGlvbiB0byB0aGF0IEkgdW5jb3ZlcmVkIGEgaHVnZSBhbW91bnQgb2YgaXNz
+dWVzLAo+IHRoYXQgYXJlIGZpeGVkIGFsb25nIHRoZSB3YXkuIFNvbWUgb2YgdGhlIG1vcmUgaW50
+ZXJlc3Rpbmcgb25lcyBhcmU6Cj4gCj4gICogQ3VycmVudGx5IHRoZSBkcml2ZXIgbWlnaHQgdHJp
+Z2dlciBhIGZhdGFsIFNFcnJvciBvbiBVU0ItQyBob3RwbHVnLAo+ICAgIHNpbmNlIHJlLWluaXRp
+YWxpemluZyB0aGUgUEhZIHN0b3BzIHRoZSBjbG9ja3MgZ29pbmcgdG8gRFdDMy4gSWYKPiAgICB0
+aGUgRFdDMyBkcml2ZXIgdHJpZXMgdG8gYWNjZXNzIGl0cyByZWdpc3RlcnMgYXQgdGhlIHNhbWUg
+dGltZSB0aGUKPiAgICBzeXN0ZW0gd2lsbCBjcmFzaC4KPiAgKiBUaGUgRFdDMyBoYXJkd2FyZSBj
+YW4gZ2V0IGludG8gYSBidWdneSBzdGF0ZSB3aGVuIHRoZSBQSFkgaXMKPiAgICBkaXNhYmxlZCwg
+d2hpY2ggcmVzdWx0cyBpbiB0aGUgUEhZIG5vdCBjb21pbmcgdXAgcHJvcGVybHkgYWdhaW4uCj4g
+ICogU3dpdGhjaW5nIHRoZSBVU0ItQyBjb25uZWN0b3Igb3JpZW50YXRpb24gZHVyaW5nIGhvdHBs
+dWcgYnJlYWtzCj4gICAgVVNCMyBzcGVlZCwgYXMgdGhlIFBIWSBpcyBub3QgYmVpbmcgcmUtaW5p
+dGlhbGl6ZWQuCj4gICogVGhlIGNvZGUgYWx3YXlzIGVuYWJsZXMgRFAgbW9kZSB3aGVuIFVTQi1D
+IGlzIGludm9sdmVkLgo+ICAqIFRoZSBkcml2ZXIgaGFzIHNvbWUgbG9ja2luZyBpc3N1ZXMgdW5j
+b3ZlcmVkIGJ5IFNhc2hpa28uCj4gCj4gSW4gYWRkaXRpb24gdG8gdGhlc2UgYmlnZ2VyIG9uZXMs
+IFNhc2hpa28gYWxzbyBmb3VuZCBhIGJ1bmNoIG9mCj4gbWlub3IgcHJvYmxlbXMsIHdoaWNoIGFy
+ZSBtb3N0bHkgaGFybWxlc3MsIGJ1dCB3ZXJlIGZpeGVkIHdoaWxlCj4gZ29pbmcgYXQgaXQuCj4g
+CgozOCBwYXRjaGVzIGZvciBhIHNpbmdsZSBzZXJpZXMgaXMgdG9vIG11Y2ggdG8gcmV2aWV3LiBQ
+bGVhc2UgY29uc2lkZXIgc3BsaXR0aW5nCml0IHVwIGludG8gbXVsdGlwbGUgc2VyaWVzIG5vdCBl
+eGNlZWRpbmcgfjEwIHBhdGNoZXMgcGVyIHNlcmllcy4gVGhhbmtzIQoKLSBNYW5pCgotLSAK4K6u
+4K6j4K6/4K614K6j4K+N4K6j4K6p4K+NIOCumuCupOCuvuCumuCuv+CuteCuruCvjQoKLS0gCmxp
+bnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6
+Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
