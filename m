@@ -4,148 +4,122 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5BBC0C5DF81
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Aug 2026 15:56:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EDED4C5DF81
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Aug 2026 16:07:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eRrX1Ozm0ztiCCsz3AiHRDO3kW6hQW8i0aA7Qv0Zitc=; b=lW6vxBI5qfucO8
-	gHBYb3ba/EncvFRDOefeoHVuPJtGrEMf3vShAW2x1DAfa+RfHecUx6lQKUwqLWJUUopaPUWQV8+NE
-	SGWjJwLTUChV2TzCZKllkalzdOchsSa6lfJg+7/4Jc760VjnJNdUmRFG4zri9AYDET73oF3O7rce7
-	4ugNdiXuniepwKDxEyTJVp4mIBaf+5xnAMLXDnjlof3IXaE6ryBFGQpHnvFHc2oce8AVZkwAXRSku
-	RWgSK6Gmzh15fMY0cZQYgxrcbh61yee1YEYH1cHF60kILWKPwgmhEfcFSzOueBGE9tfWaF5Qdaofe
-	CD3UbNcXlV03/y2fXe5w==;
+	List-Owner; bh=u98zGoq3U7MROnZS8bzqUiFXmI9zLvoI6tCKIfmdji0=; b=LCe0CJ3Akehfun
+	crdy0rwyphH/0I54KJXQEFRdl5jwsl8EcS9gcD882nttxq0qbjRHjGqUBYbVP4k0Yc1dMC0yfmRLK
+	gEtjeAhVxhhDFVUOUDprunWJ+4ezVPAX81M4YtaoLblv0SBDj5VeBbFcZjbkz7m0wrBjzftVFZvYJ
+	9GKi4zjuzZ2pYTyJvp5IL6CPCS1gU++Mr1YqoeWJW5EI2sfmnmnL9qkr3MnOuG1f0ZUrtGb69z7qG
+	Rhs1raYlYwYPGHJpVdUNcZb9ivbIP3tf5c2/W8gXTuMUB0QB0rEGXj+z/KyLUmKWVZxXUgNWG+Sfw
+	DVuyUW0XRe38LYdrEYCQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwMAa-00000008JGW-3T3g;
-	Tue, 18 Aug 2026 15:56:08 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wwMLW-00000008JpW-1sU3;
+	Tue, 18 Aug 2026 16:07:26 +0000
+Received: from mail-northeuropeazon11010057.outbound.protection.outlook.com ([52.101.84.57] helo=DB3PR0202CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwMAX-00000008JFz-3FTs
-	for linux-phy@lists.infradead.org;
-	Tue, 18 Aug 2026 15:56:06 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 67IE1KWB1086029
-	for <linux-phy@lists.infradead.org>; Tue, 18 Aug 2026 15:56:05 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	gSXU498YLwU49LDjGaRtSbr3kZR9SBDeN5sP7C1mZwM=; b=IpRB4FyNF9N0P/nu
-	AB3j3hAslFX/7+fh0nljUNnhiz3yX/bz87zt2+dA+m9QC30+R2HScOiVbWv1Aeut
-	T6W6EAOAX4OPb5WnbFc3hoBjjvnw5KwBkvcEfrFaU8iKVdqtT1qyxinruGZrLUXz
-	BAt8/e9UMsFtHxTxH5YKe3AFmtgBqtYoazoTFx9KHhW4khANH/mxtgGOW68/unl4
-	nPzu26k6QtrKjjJJafcSNvJIDpWT9A7xqyWoCPD0uJOGT0OFHWeAEiBNaJWsJA5r
-	hMvAv4lyxBC0z8WUW2IBrDRJfvQfl8mcyrM7sJ58sxLUebOQomKMZNKomnW6CnPF
-	GHuhQg==
-Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com [209.85.160.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4g4fbab6gy-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 18 Aug 2026 15:56:04 +0000 (GMT)
-Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-52d35a38fafso3395271cf.3
-        for <linux-phy@lists.infradead.org>; Tue, 18 Aug 2026 08:56:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1787068564; x=1787673364; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=gSXU498YLwU49LDjGaRtSbr3kZR9SBDeN5sP7C1mZwM=;
-        b=KcSR6SOYotPfODuQnfTkEcMsfJMBBoAeIOmSlGqmHo96zeQscI+lCKd+A4fK95nRVo
-         WRzOrZ1NGMrhs6fLQjZDkATZfRHZZQ36y4TaJbaqyKW81aIzfYoHKyz3nQ79mfx7YfZr
-         lGMBfElc0dqW1j7tFqk9AmuDkt2qTUuZRKjQEWCW8puY3ucKN+w/iAI3oWzshhoxhXhq
-         sl40nZH1qdstFJ3MH8qtceHElqejxZ1Ydeo4cIF+QabYu14oVSoRk9K6mTAP0E+H60Hm
-         AaRqm753euS8F1q6mkuWu/F8lSgTI4p8XbdIfSMZ99U+5sElgt0fXA0wiCW20dryKdXL
-         7iRA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1787068564; x=1787673364;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=gSXU498YLwU49LDjGaRtSbr3kZR9SBDeN5sP7C1mZwM=;
-        b=bVuF3AdbEKwLlboljMgiFPYIuI1hBL9x5/LgR1rwJVDCZMyju9scKjl7KMYN5fsyk+
-         N1bZF/eSdzeBEUHl7Ls+Tgy7Zuq9Z5HQkrroHhp46xMIuL7TYCqu6xSw3iWKm3sXQh7W
-         n6bJKDZdEAOmfpavLTG1bJjUJFS21Dl8EPKEB5d9nqKAcPqwfUUb1lSuh/HGGN+HYgD9
-         6Zer3s8v8BCnepqdJWNPzPZcZslJgsgaUM5PXhPGqdAwWDzJLrsmCAWKd+QIJzX4sAMU
-         dS+zbxtBxX0k4c5TFVYcvDMNh0Kz/Fr32D2ICNVLHU3P2TnPfyI6tKrJUWydnYHLNhJ7
-         C/Yw==
-X-Forwarded-Encrypted: i=1; AHgh+RrmYBBjPtuUyGD5dBAWL9FaYpP4lkeOH7Juv8n0liueyQf7PWuuAYAktOXi6GDfHyuVV/FL7Nw3ox4=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yyr21G1Wl5l8bNK2/GsCq8pHpUXVXi1ZJ0c8DTnCx3JlM5XPldJ
-	J120CwkmCpHsU57NmLr1tQ/k+GI1MdFS/e0+GLtAkcJlmojWAgU4GH5kDNGKnKfM/hDKUUUSmlM
-	yKVzgFAe7AP1PP615aGsiVOP7FkSBgSImhkYKLd17Dg1yCqKHZeJT4loSmT4fESzuko6u
-X-Gm-Gg: AR+sD10BQli/UZsbpg8/gbOnoF5A7eZTryapDQ7RrKzP+OXhA3IrdCfd4wrup3MxJgI
-	58LVAis3sVYr7BGyJNEA0NvQ8POU/0+64/OXCpjuf4jcrw2bfI8pT+Q1VB483wVY4e3G79f1qbU
-	MQeGDCc+iNmiRc8GksXIapA3/aubnzI/2ag/N39WDrC42e6Ahh8mehXpvxe73DPoQFc97+rM3V2
-	0P6aUM+ewQGBwHJA6S3E42bl23B2GNGSxQqSrTWG73Kf5FPWunqoNny+eOO4+YrcN6gGunGTS66
-	NFD2znnqs6b1y6JvzjcCLiqjYTaHuvRrdBvk7JHQOM0riAefRsv/kPaU6Qs9MAmFAsGRFZv9pqP
-	bLjNawLAK3q3TeD9alfB2w3nK
-X-Received: by 2002:a05:622a:1310:b0:528:3722:a372 with SMTP id d75a77b69052e-52d854d54f9mr237812951cf.4.1787068564033;
-        Tue, 18 Aug 2026 08:56:04 -0700 (PDT)
-X-Received: by 2002:a05:622a:1310:b0:528:3722:a372 with SMTP id d75a77b69052e-52d854d54f9mr237812341cf.4.1787068563403;
-        Tue, 18 Aug 2026 08:56:03 -0700 (PDT)
-Received: from [192.168.120.193] ([178.235.128.140])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c2187d269dbsm161593066b.7.2026.08.18.08.56.00
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 18 Aug 2026 08:56:02 -0700 (PDT)
-Message-ID: <8b837959-0a9c-4980-8a56-2c3150383598@oss.qualcomm.com>
-Date: Tue, 18 Aug 2026 17:56:00 +0200
+	id 1wwMLT-00000008JoX-0k6s;
+	Tue, 18 Aug 2026 16:07:24 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=SlUdeDbLNT0V+EthhK9lnFXmiJBWE5dFc7ZhkGko6kVRED9YxhmvYeVepEceFJ5IZVvTIFTmo6CsaufRxtxWrjUbb1wMn9zOOp2LTXz7AagSyepkgsxVuHao08tv/S0a8K8cvOt8blUsHV8sG6civmjxtF/ZqdPOKWIvawUsLaIc3zxQwDOcz7XKKoEKQxlrUuRObYU+MVfZtnw+KB622y+ayCxeUDkX/UrfXKkTOfxrPM1mHaBgntf4TmXWlrR/7pHQGm6hf86Z+rA2YASzbpnO1Q8+h37nnPwwEGhoRK767wVJ8NQAsQTqfLhu73l8SX+lcJMLJhuprZa+Oct2cg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=kMK+Ku+hA5dZbnfHvQk2PddKmww15URToYfyCeNLC0o=;
+ b=NoAPgQNn2VPctX+0SYOURAtIcJgbyGjtNgu/bHu22gRP7Aqb/LaytX9RtLUYna9enCuuQqZzInWk1JWaJElfOrfafUKfz7Awo+M4YVK4r/9W6eam1kTkT2qNQXNzAs81Fz8v1vUSSvusWxTypRV0syg2Po0sKivh9tLZgdXeZWRedNE/RUU8ucmm50IquCsLyxkqRfGMFoTtovTOobxs9Yu4xbnQt37NuMSqjPRdMX1I/nzvA8l7kwje5x5AxOyygqYoPyA0jOBIltC0CEtEXDNOAsqPZjW8Nn9d7/fXHpJFXuao9TdcX6Ly8J2PSg5v5ug4e7x2BXunF/zSR8mflA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=fail (sender ip is
+ 164.130.1.59) smtp.rcpttodomain=nabladev.com smtp.mailfrom=foss.st.com;
+ dmarc=fail (p=none sp=none pct=100) action=none header.from=foss.st.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=kMK+Ku+hA5dZbnfHvQk2PddKmww15URToYfyCeNLC0o=;
+ b=gSvkZ8ZYjhIUGFWyOg0sL0d6x0UkCm8A3xqHpWZCwoznHsN/KVvl0hw+rQdwpqPqC2WWr0ekBe6wA7jwn0GzlusxbU5dIsuqo2iewxsDf7r+W6rQ70AQWdEg6KvuwZsh/spjGr27Qpu1SPfxQhOzgggJvrLp0HwSjNfkZXhUZs3uWOLqVjNa0oozcghd+DHRuqmViYPVsW/HKvB3qyGejjPF8aNekt4jZ72wyxWepfj1zVeez0d3Ird4+aMmO6aTfB8tfPhoboTvOAMGvN1d5FKvNzG9f9PPUq0sedHIoRnDIBYRi756YAq3ZD89v9SaWpcpkMCXysmp5Q8YHeXDeQ==
+Received: from DUZPR01CA0335.eurprd01.prod.exchangelabs.com
+ (2603:10a6:10:4b8::19) by PAWPR10MB8185.EURPRD10.PROD.OUTLOOK.COM
+ (2603:10a6:102:37f::9) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.315.17; Tue, 18 Aug
+ 2026 16:07:13 +0000
+Received: from DB1PEPF000509E2.eurprd03.prod.outlook.com
+ (2603:10a6:10:4b8:cafe::37) by DUZPR01CA0335.outlook.office365.com
+ (2603:10a6:10:4b8::19) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.339.8 via Frontend Transport; Tue, 18
+ Aug 2026 16:07:12 +0000
+X-MS-Exchange-Authentication-Results: spf=fail (sender IP is 164.130.1.59)
+ smtp.mailfrom=foss.st.com; dkim=none (message not signed)
+ header.d=none;dmarc=fail action=none header.from=foss.st.com;
+Received-SPF: Fail (protection.outlook.com: domain of foss.st.com does not
+ designate 164.130.1.59 as permitted sender) receiver=protection.outlook.com;
+ client-ip=164.130.1.59; helo=smtpO365.st.com;
+Received: from smtpO365.st.com (164.130.1.59) by
+ DB1PEPF000509E2.mail.protection.outlook.com (10.167.242.52) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.315.6 via Frontend Transport; Tue, 18 Aug 2026 16:07:12 +0000
+Received: from STKDAG1NODE2.st.com (10.75.128.133) by smtpo365.st.com
+ (10.250.44.71) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.43; Tue, 18 Aug
+ 2026 18:12:46 +0200
+Received: from [10.48.86.251] (10.48.86.251) by STKDAG1NODE2.st.com
+ (10.75.128.133) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.43; Tue, 18 Aug
+ 2026 18:07:11 +0200
+Message-ID: <6c900e6b-2f50-4ec2-aca4-3093479bba53@foss.st.com>
+Date: Tue, 18 Aug 2026 18:07:10 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 3/5] phy: qualcomm: qmp-combo: Add preliminary USB4
- support
-To: Manivannan Sadhasivam <mani@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
- <neil.armstrong@linaro.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
- <conor+dt@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>, linux-kernel@vger.kernel.org,
-        linux-phy@lists.infradead.org, linux-arm-msm@vger.kernel.org,
-        devicetree@vger.kernel.org, usb4-upstream@oss.qualcomm.com,
-        Raghavendra Thoorpu <rthoorpu@qti.qualcomm.com>,
-        Mika Westerberg <westeri@kernel.org>, Sven Peter <sven@kernel.org>
-References: <20260730-topic-usb4phy-v3-0-ccf0f7ea98b5@oss.qualcomm.com>
- <20260730-topic-usb4phy-v3-3-ccf0f7ea98b5@oss.qualcomm.com>
- <dgvdvug7zeoommfh6iszybwzpcm6f5vz3pwkpamtezjxenx4ua@ew5xgoc5reqd>
+Subject: Re: [PATCH v2 0/9] arm64: dts: phy: st: usb: Add STM32MP2 USB support
+To: Marek Vasut <marex@nabladev.com>, <linux-usb@vger.kernel.org>
+CC: Alexandre Torgue <alexandre.torgue@foss.st.com>, Christian Bruel
+	<christian.bruel@foss.st.com>, Conor Dooley <conor+dt@kernel.org>, "Greg
+ Kroah-Hartman" <gregkh@linuxfoundation.org>, Krzysztof Kozlowski
+	<krzk+dt@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>, "Neil
+ Armstrong" <neil.armstrong@linaro.org>, Pankaj Dev <pankaj.dev@st.com>, Rahul
+ Kumar <rahul.kumar05@st.com>, Rob Herring <robh@kernel.org>, "Rosen Penev"
+	<rosenp@gmail.com>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>, "Vinod Koul"
+	<vkoul@kernel.org>, <devicetree@vger.kernel.org>,
+	<kernel@dh-electronics.com>, <linux-arm-kernel@lists.infradead.org>,
+	<linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+	<linux-stm32@st-md-mailman.stormreply.com>
+References: <20260816213849.1044073-1-marex@nabladev.com>
+ <61dc785c-bea1-4674-918d-0f38ea253a29@foss.st.com>
+ <41e7978b-933d-4813-9158-00474f531476@nabladev.com>
 Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <dgvdvug7zeoommfh6iszybwzpcm6f5vz3pwkpamtezjxenx4ua@ew5xgoc5reqd>
-X-Proofpoint-Spam-Info: AW1haW4tMjYwODE4MDExNyBTYWx0ZWRfX7LV7pPzDygHN
- 3+snm5Y2Nph1AT0LoD6uI0RMjXtD2WCRHAHaXD/QjuP9sBBKNwC0HiZo8hOZajR/TGufUuQTv10
- BVHV9x+UtEyoBUfoa5TGqbLA/yEv+58=
-X-Authority-Analysis: v=2.4 cv=VsITxe2n c=1 sm=1 tr=0 ts=6a848094 cx=c_pps
- a=WeENfcodrlLV9YRTxbY/uA==:117 a=PRfkaYvzSr8QmIIGAkY2Sg==:17
- a=IkcTkHD0fZMA:10 a=Sv0fKeRqtYgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
- a=EUspDBNiAAAA:8 a=645x-19ulo7_aJH2oRwA:9 a=QEXdDO2ut3YA:10
- a=kacYvNCVWA4VmyqE58fU:22
-X-Proofpoint-ORIG-GUID: Amty5eeAjuLZczXGd37OGibHjQtPmk6m
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODE4MDExNyBTYWx0ZWRfX+w4Jbet63owv
- GelUKVJuOce7IhfOvbkEVJFKXaPJvkJKNhDjDar6sK+Tv+VFv8BFW7Y6bNB12Bw4SlCxvYb5MNX
- vprT9E5Hic9mbmDjom/z1cwjU6PbNOE1sncrU4dnnozMNXGZnlQq1zhwwfjdUGwcJfZD+iaCnXO
- M6B0upMhsMqjAbGJ9TiYlQUUxfVxWSCZ+oHbsdVDvSUGAYfAvuQCsZEZ9nVIyhjPrzQdLrFXa/g
- KvGwwdFYodeQbI0Ub0CpqfUdvUrR5Cc7Xe9FOYC+vflwXR4Mv1NB8DGpL5E37PvXVfwplZp9F65
- YAVf+9H2UnoS8o2vedKmTk+/PuFYHjLuVxqglQAdz86cdnIBFriRMqfriwvFFUvOQJ7QCdAW9eU
- jGkeVmAZ4YNcEcpuXJPSPIZPZOjkLGMeKxQPP17J0Q7x3+v+LDqiAI6/UpJUWOY5yIe4ylwQZLY
- aJdVlAGWJNW17+YNpVQ==
-X-Proofpoint-GUID: Amty5eeAjuLZczXGd37OGibHjQtPmk6m
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-08-18_02,2026-08-18_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 suspectscore=0 lowpriorityscore=0 malwarescore=0
- clxscore=1015 bulkscore=0 priorityscore=1501 phishscore=0 adultscore=0
- spamscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
- definitions=main-2608180117
+From: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
+In-Reply-To: <41e7978b-933d-4813-9158-00474f531476@nabladev.com>
+X-Originating-IP: [10.48.86.251]
+X-ClientProxiedBy: STKCAS1NODE1.st.com (10.75.128.134) To STKDAG1NODE2.st.com
+ (10.75.128.133)
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DB1PEPF000509E2:EE_|PAWPR10MB8185:EE_
+X-MS-Office365-Filtering-Correlation-Id: e7953a30-0510-4086-6eab-08defd42c3d6
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700016|23010399003|1800799024|30052699003|82310400026|7416014|376014|10067099003|56012099006|6133799003|11063799006|4143699003|5023799004|18002099003|22082099003|13003099007;
+X-Microsoft-Antispam-Message-Info: NQ6OB4axsvDaqiQjBDeFiYzeH3KDeptZwH1vzDlLtsiWTikaD4IX5t7j03tbJkVEXO7gPFJob2tY3F1B1Yvpp3cUZPCGVVDpH4/mO5RdFveNuVAJwv2M3+pIG5OROezUUERTM5jIqUGsUIXoEg2GksqvsAN4/LkTGmaI4X7zTDKmks9tS2r2+XvwJKxlOZ5S17YE47HVdGExn+ksIAZeCvV26zup98mMWP5Ko2kHJrfsE1gnqEatDXUOE+YQwMZO4jw9LakzLRjJYr8YaFCzW8jBErH8GmEzDlBX3D5IZiFUb7uJrjF32jovflCEuHaavRP3nMTzbV+uanzagFahxw1C3ao5ydVHTxnjton+agfHNIeKt1RJYORGJgTe1afcjOA4e7UnV8GCE/1qMLbu/DJeLJFBRmF6hzSzfkLC71jQzlNig7HlyAIEX5AfH0MyuaAOZIhkJArsFHez7olowG1hu0ladNEW7QZ9plnzF+hA/jQBDFkJOiqFbcQTSabJd2aeSofUxjE03gYnUaMxp2699eC2/D8U95zpqeKKXeRMPOgbhDjgbumlHHOpiLRfejakdSTMID/ancF7uqbFRKz2yd7LlZX2BruPPO4cHEVT3cD4bIRqMp82CwPDt7dfy2C44gBvm6ciQS4j0AnYzAqM6L1z4bc2KiNZGsr0YNuORa/Yifphu92qPfn+ifKaP3EkWcNj8Ondgig/GAW2lw==
+X-Forefront-Antispam-Report: CIP:164.130.1.59;CTRY:IT;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:smtpO365.st.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(36860700016)(23010399003)(1800799024)(30052699003)(82310400026)(7416014)(376014)(10067099003)(56012099006)(6133799003)(11063799006)(4143699003)(5023799004)(18002099003)(22082099003)(13003099007);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: awHW5W/QuD2Y3N0JBDEyghnDDSSoXSW0dUtHw2y2a7UlxmWomuJBt7vWS7yBbwiAvE0Yl/MNOEoPueaE8KgHbvgkyiF1LmsJKI1Wn68ssXIdHx1OhKDQv0aWLsT8+g/+x42HfMMIYW1dQv66cTQ5Gw33qSeBT26dFvfH5ih+mzDeUZGygOggmtrJxm658hb1InlNzhZhktBaZ2IEnArjpK+FEoz9yjAiaQOpe2VrbpLJ+CgkKtGKTwF0hBHnLc0hZvaMCjCtvxoVhzzyCiM9QjYlEGt1fIKAwD/8XFQiCvGupzXELLKPGF1JQtfo/YLPvGDaF8nI0p4oVSuZzipUHGtUAomI81OEdIzV8iu54rd7bmg03Of0R4T5glLMs9kPtgehDHP7XOwmuFzz2nUYfoMAFEhyQG+QQzKvEmNv26WppJExtSOGf79Dn35fc9V0
+X-OriginatorOrg: foss.st.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Aug 2026 16:07:12.7189
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: e7953a30-0510-4086-6eab-08defd42c3d6
+X-MS-Exchange-CrossTenant-Id: 75e027c9-20d5-47d5-b82f-77d7cd041e8f
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=75e027c9-20d5-47d5-b82f-77d7cd041e8f;Ip=[164.130.1.59];Helo=[smtpO365.st.com]
+X-MS-Exchange-CrossTenant-AuthSource: DB1PEPF000509E2.eurprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAWPR10MB8185
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260818_085605_826974_B9E8B29C 
-X-CRM114-Status: GOOD (  12.61  )
+X-CRM114-CacheID: sfid-20260818_090723_539775_884C3573 
+X-CRM114-Status: GOOD (  25.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -162,46 +136,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 8/7/26 2:48 PM, Manivannan Sadhasivam wrote:
-> On Thu, Jul 30, 2026 at 04:19:15PM +0200, Konrad Dybcio wrote:
->> From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+On 8/17/26 21:48, Marek Vasut wrote:
+> On 8/17/26 6:35 PM, Fabrice Gasnier wrote:
 >>
->> Some Combo PHYs (so far only on SC8280XP, X1E80100 and Glymur), come in
->> a flavor called USB43DP, which as the name implies, features USB4, USB3
->> and DP signal processing capabilities. In that architecture, USB3 and
->> USB4 PHYs share the same USB_PLL while featuring separate logic spaces.
->> The DP part is roughly the same as on the instances without USB4.
-
-[...]
-
->> +static int qmp_combo_reconfigure_phy(struct qmp_combo *qmp, enum qmpphy_mode new_mode)
->> +{
->> +	dev_dbg(qmp->dev, "qmp_combo_reconfigure_phy: switching from qmpphy mode %d to %d\n",
->> +		qmp->qmpphy_mode, new_mode);
->> +
+>> On 8/16/26 23:37, Marek Vasut wrote:
+>>> Add USB support for STM32MP23xx/STM32MP25xx SoCs. This includes USB 2.0
+>>> FEMTO-PHY driver, DWC3 glue code and DT adjustments. Parts of this are
+>>> taken from ST downstream kernel fork, reduced, or rewritten, since not
+>>> all of the content there was useful and bits which might be missing and
+>>> are useful can be added later.
+>>>
+>>> Unlike the downstream implementation, the DWC3 glue code is using plain
+>>> dwc3-generic-plat, the EHCI and OHCI controllers are instantiated as
+>>> plain generic controllers without any wrapper glue driver, and the USB2
+>>> PHY driver is simplified.
+>>>
+>>> Both USB 2.0 Host controller and DWC3 super-speed controller are tested.
+>>
+>> Hi Marek,
 > 
-> Looks like a downstream debug leftover.
-
-No, that's an upstream debug non-leftover.. the downstream one was
-definitely not _dbg-suffixed
-
-This is present in the code before this patch, just in a different
-place
+> Hello Fabrice,
 > 
->> +	if (qmp->usb_init_count || qmp->usb4phy_init_count)
->> +		qmp_combo_usb_power_off(qmp->usb_phy);
->> +
->> +	if (qmp->dp_init_count)
->> +		writel(DP_PHY_PD_CTL_PSR_PWRDN, qmp->dp_dp_phy + QSERDES_DP_PHY_PD_CTL);
->> +
->> +	qmp_combo_com_exit(qmp, true);
->> +
+>> Regarding dwc3, I've started to test and needed another patch from our
+>> downstream. I've posted it here:
+>> https://lore.kernel.org/linux-usb/20260817163101.6203-1-
+>> fabrice.gasnier@foss.st.com/
 > 
-> No delay required between power off/on?
+> Understood.
+> 
+>> Regarding USBH, there's a dedicated glue on STM32MP2x SoCs for the
+>> EHCI/OHCI controllers, similar to the dwc3. On dwc3, I see it can be
+>> managed.
+>>
+>> There are:
+>> - AFMUX signals out of EHCI/OHCI controllers, to manage a Vbus power
+>> switch (with polarity) control.
+>> - AFMUX need pinctrl to be added, and managed during system PM
+> 
+> This can be managed by the PHY instead, can it not ?
 
-Correct
+Hello Marek,
 
-Konrad
+Please see later comment.
+
+> 
+>> - On coming MP21 (not supported here), there's address translation
+>> control
+> 
+> What kind of address translation ? IOMMU ?
+
+This is much more "basic". The controller can address 4G of memory, e.g.
+it's 32bits. That feature is only for STM32MP21 that can address 4G of
+DDR which starts at 2G offset. So basically there's a SYSCFG bit
+(SYSCFG_USBHARCR AREN), that adds a 2G offset so the controller 'DMA'
+addresses directly the 4G of the DDR (instead of 2G lower memory map,
+that's not necessarily useful, and 2G of the 4G DDR, requiring swiotlb
+with perf penalty).
+
+Current downstream glue driver checks the 'dma_range_map', (e.g. DT prop
+dma-ranges = <0x0 0x0 0x80000000 0x1 0x0>;) that represent this, to
+enable the syscon bit that adds offset in hardware (so 4G of DDR can be
+accessed by the controller, without swiotlb).
+For USBH, there's nothing mode: set it at probe time, based on
+dma_range_map, restore it after resume from low power.
+
+> 
+>> - Common dedicated interrupt to manage wakeup
+> 
+> This is EXTI configuration, is it not ?
+> 
+>> Using generic controller drivers, I don't see how to manage it, without
+>> describing it in the DT.
+>>
+>> For sure, generic ehci/ochi drivers and bindings can/must be used. What
+>> would be the proper place for this glue to leave ? Why not adding the
+>> glue driver from the downstream ? That's supposed to address this.
+>>
+>> Do you wish I send it upstream, so it can be properly reviewed, amended ?
+> 
+> I would very much prefer to avoid the glue if that is at all possible.
+> Thus far, it seems this could be done (interrupts are generic interrupts
+> managed by EXTI, Vbus detection polarity is likely a PHY thing since
+> this is managed by SYSCFG anyway) ?
+
+I better see your point, thanks for your explanation.
+This makes sense! For this part, the approach can be the same on all
+STM32MP2 SoCs (21/23/25).
+
+Still for STM32MP21 address remapping feature (out of scope here) I
+think there will be not much choice to keep a minimal glue DT & driver
+(and parent to generic ehci/ohci). It seems totally out of the PHY
+driver purpose.
+Maybe you have some thoughts about this ?
+
+Please advise,
+Best Regards,
+Fabrice
+
+> 
+>> I'd like to sort this glue management out before the DT for the USBH can
+>> land.
+> ACK
+> 
+> [...]
+
 
 -- 
 linux-phy mailing list
