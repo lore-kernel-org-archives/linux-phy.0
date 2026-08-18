@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83CCDC5DF81
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Aug 2026 20:03:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0ADC2C5DF81
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Aug 2026 20:04:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M5tCURWpcvYTpTVZQxMoW/S0rlRXeM64a0Q4W0BfQ9M=; b=PRVki3GS3LqfDF
-	adV4O6x0invrzwGFxu5zgen9iR1M+Fm2Xb+d9O2/noE+yF/H+XV+38lfCJqMrHMwZX6vT7KROUrod
-	AHANv/+I5EEsedIxGF7f6KGT2eqhkdVbWYrtlDsvv47Fll4nxqZQZqF4viHUoEA23KShhVbLjBDM6
-	fFnadXzTAxN/nqOmNshuhXRjgZJWAMjfjh+en2MCZbHRr7G0YWkHRTc4aYroJWjyvFkHPSlyNXdFD
-	AXIhUKDW8tjdFzJ8jS3UIGIzxAOqVtN9oRTbCh748kdkT9RyjFmaALo8SC8MBxehr4eSFAYCIEcVM
-	UlNphEYVR6Bbx9PP0hCQ==;
+	List-Owner; bh=k6Yzyo0PiXgMUV41sq0vWh8z60lSI4bU8wfdhT45kVE=; b=PoyFDViI6K8yKV
+	1ywsHSC9yhd20BaBXaSdWKkurc4qRB7O6IQjZJcIWXkD9Z2pk7JcKp/aH11ep9BTzs85noR2EGeeR
+	hQD/iS7syEYuoPw6rLbhlf9B+qiDFUOlsW3wgizUa0qqIgjyNknR02YCqx/exoqf1rB9kcV1DqV9i
+	PE4dErGnGNtEiwia9ohpUDYYXuyIIZtyfOi7nWmzAbOXTD/jXELKVCNGaJCT5y65gM5LAeB1Tw0ph
+	da7GICRT+8Db+QK13bgzCB7Qr7+gnbcQv4of3F9HLUtuRFVGvcJvJ5oqRDP0FVjTA38AFhnQL57Pb
+	LLTFnxdCb9S/dguJgHOw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwQ1m-00000008cKW-3bVW;
-	Tue, 18 Aug 2026 20:03:18 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wwQ2l-00000008cMB-4633;
+	Tue, 18 Aug 2026 20:04:19 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwQ1l-00000008cKP-1Rlj
+	id 1wwQ2k-00000008cM5-3Hwh
 	for linux-phy@lists.infradead.org;
-	Tue, 18 Aug 2026 20:03:17 +0000
+	Tue, 18 Aug 2026 20:04:18 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 95D9643358;
-	Tue, 18 Aug 2026 20:03:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B3EB41F000E9;
-	Tue, 18 Aug 2026 20:03:15 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 6DD50601DE;
+	Tue, 18 Aug 2026 20:04:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E5F6C1F000E9;
+	Tue, 18 Aug 2026 20:04:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1787083396;
-	bh=GsX9hemoRjSB2DVfO8nTfSW0kYKsPEsBErkrqEuSehg=;
+	s=k20260515; t=1787083457;
+	bh=vOaE2p4C56CWWbYQHaNxAJOhQcBgawoA3CrZB5lnwS0=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=OKY9G3wSBXFEhNGbVI7Oun7C/Vzo6Ja5lJw9khZlPQ9Rx/nW28CcI1Mx1VdhDpflM
-	 3HkM2ApQEhUZrfeMVvKkcPebmNC2PmexmZb5jFYJsDjRLk7kK9nBgBwrMgZg8Esz94
-	 UQmBXATvNobIGK4So9Svj4aW0zgRlqoSXV5OBgjjTjrjkXuqUms/xvEQYUJ+BJdXI/
-	 x4DKmi3WMFGpjrmB50t1ZIV+vhJSAYwfXROEpWeHjp4mOnuSrhKbSELsJT9pU3e841
-	 Z5Ew4s2N6Pw/7Jg7xw3tUV9guK40atSNOi9eLkelP1vduE5CCI1x0av3jHMlVhfFaj
-	 8AOYM30Pl5RJg==
-Date: Tue, 18 Aug 2026 22:03:12 +0200
+	b=cWmTOARW+eBAQ2o1Jd68lOcsLTmoZ4YFAnoWYLN18bccGnmoObzjSTzBkJOWjuXqb
+	 Qu3MYyPnTm3gfWmmIaFa+CjgryI1E/+O3+j0krSznvnY3FiP7VLqdxhSEmAMEJ1zQb
+	 YH2/qXTdomx2qHxq4mC4NpqTfHPsFvSxFbmTo3jQkBOgM/TxdxX/ougjGaOc99k1D6
+	 GKAjYtRvzySXSN2lnMHsvnVRx1EehewgyQ5sYutTgxvtqiYDaJ2UkEzS2dteZA6YPs
+	 dpKFtO4zYYk972kPykCwqB5O2E7COqt0tiWnn2Rmq7Vfyg5eRWoiKNaXidfSSsfZai
+	 wCqJFYLZy3gsA==
+Date: Tue, 18 Aug 2026 22:04:12 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Jingyi Wang <jingyi.wang@oss.qualcomm.com>
 Cc: Vinod Koul <vkoul@kernel.org>, 
@@ -53,14 +53,14 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	yijie.yang@oss.qualcomm.com, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
 	Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: qcom,m31-eusb2-phy: Document
- M31 eUSB2 PHY for Maili
-Message-ID: <20260818-elfish-girlish-panther-4a28af@quoll>
+Subject: Re: [PATCH v2 2/2] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy:
+ Add Maili QMP Phy
+Message-ID: <20260818-solid-nocturnal-hamster-b46cec@quoll>
 References: <20260817-maili-usb-v2-0-97d7317f64b3@oss.qualcomm.com>
- <20260817-maili-usb-v2-1-97d7317f64b3@oss.qualcomm.com>
+ <20260817-maili-usb-v2-2-97d7317f64b3@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260817-maili-usb-v2-1-97d7317f64b3@oss.qualcomm.com>
+In-Reply-To: <20260817-maili-usb-v2-2-97d7317f64b3@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,20 +77,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Aug 17, 2026 at 11:16:05PM -0700, Jingyi Wang wrote:
+On Mon, Aug 17, 2026 at 11:16:06PM -0700, Jingyi Wang wrote:
 > From: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
 > 
-> Document the M31 eUSB2 PHY for Maili which handles the USB2 path. Use
-> fallback to indicate the compatibility of the M31 eUSB2 PHY on Maili
-> with that on the SM8750.
+> Document the QMP PHY for Maili which handles the USB3 path. Use fallback
+> to indicate the compatibility of the QMP PHY on Maili with that on Hawi.
 > 
 > Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
 > Signed-off-by: Jingyi Wang <jingyi.wang@oss.qualcomm.com>
 > ---
->  Documentation/devicetree/bindings/phy/qcom,m31-eusb2-phy.yaml | 1 +
->  1 file changed, 1 insertion(+)
+>  .../devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml        | 4 ++++
+>  1 file changed, 4 insertions(+)
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 
 Best regards,
 Krzysztof
