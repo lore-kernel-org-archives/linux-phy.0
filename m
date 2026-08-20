@@ -4,150 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D622C5DF82
-	for <linux-phy@archiver.kernel.org>; Thu, 20 Aug 2026 08:25:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53F12C5DF81
+	for <linux-phy@archiver.kernel.org>; Thu, 20 Aug 2026 09:54:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aaikcvI4NwF176z2j/X7Gm8Glz+pdzYki5bNPSHo4oA=; b=kDB3BbOZ5Fgl1g
-	2q+Va6IBd/iCZ4SIwK151HWrF+7I62mQhVVCj8dbqT0qOjsMg4ZlgMVvoD7f4wa8HOjuXmkjatoP9
-	KsidYn21ipvwtkMT4DWGDRdyQeNZvNb8Or0k9BORvtvbf1EVae7Ps+8SVZlepexHunNlTEpVsNaDC
-	7INZvzprwd+zvlq7Rn4ZCOxoXVMtsSTW5S+lyBSzAhLl8msGe5Y+iBswoUkX7uF6aDgxbKRB0StVw
-	YtOCWwFg/40IMeXJeIhcBckhTcHI91PGdxCniON+oqiY2m9UGiKf65qmTTlI2qHakkaYPbv2QXweE
-	Zgq+3bPfvFMINltKKt3g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=eeDffNRJ+HkgtgtIKy1ZNBurHcEEN6YllJHNNtwaXd4=; b=JnemmTaOHhReZu
+	qiA6+PI/syfbJs8I7+CwhAMkV2zFg355pkVMepI7/FB4+AyXVLir6nxKhd5fnSAEG5k64kcBlmDga
+	b/RKlSA15Ud7KaJYNpmM9ZlwHfl7tnzI41VigV3VDXMQOWcApYSPNIxISUqHeF0HUWUpm7fDqbwhn
+	6G6ppUtXkMmTWFg6J2HFOVzhXbPWUPKD1dGtpE378UlllI1ZV8nebA8a6U72Qa1hiYu1Q7Y6wNMRH
+	UIx6yG2+ynM4tMU9UAJzr4c09d+trFRnWKDhIBYwSYiyD/urZhQ14NORKQuTvUoccUt2lhWL2Rpyt
+	4DaJxcix+sIW58zFYIlg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwy5e-0000000B9MX-0CgC;
-	Thu, 20 Aug 2026 08:25:34 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wwzU8-0000000BIsS-0Bcd;
+	Thu, 20 Aug 2026 09:54:56 +0000
+Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwy5b-0000000B9Lt-1isY
+	id 1wwzU5-0000000BIs0-3UWb
 	for linux-phy@lists.infradead.org;
-	Thu, 20 Aug 2026 08:25:32 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 67K7LC0I2753042
-	for <linux-phy@lists.infradead.org>; Thu, 20 Aug 2026 08:25:31 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=223qQlWuY3f+8iK33zdbyvUr
-	oKwN1OIa3V2war/hhpk=; b=ZiWaisKmLP4/ZEJAJktEotllGzVr3U9erUWQesZl
-	K9FWNzrFitsgOv6Tqy2u/RoBU0vmvgBAAWV0qUVjj4fbb5mNS22zZ6Ltq59ujyvq
-	skSRP4q5QmNngi4tpckc/lplVOF/Ars/V3+mmJ5KbPPTZMQU89j2nKl26o4dRT2v
-	QnzLii5ZsTZ4SVlcXiCZQursU0D2osCO42AkdU0YAE9GTpnKreQZxOX2zDDhLHiY
-	/55OidG8lVxkQgmV17BO7GIFO1TibLDYVKvBh7/qcbwFuP8jS0KL/36JGU9rNw/E
-	vA0Okrpm0kegm5P3LzfUtSWFVHUGcNdlRPn4u0EZFoBwHQ==
-Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4g5w4987hk-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 20 Aug 2026 08:25:30 +0000 (GMT)
-Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-93494cce712so254439185a.3
-        for <linux-phy@lists.infradead.org>; Thu, 20 Aug 2026 01:25:30 -0700 (PDT)
+	Thu, 20 Aug 2026 09:54:55 +0000
+Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-49954b88fffso20576055e9.0
+        for <linux-phy@lists.infradead.org>; Thu, 20 Aug 2026 02:54:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1787214330; x=1787819130; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=223qQlWuY3f+8iK33zdbyvUroKwN1OIa3V2war/hhpk=;
-        b=GuhfZ/0zeqTOf71OuYvyEt6cdae6Erdujv8sPaaSjEfIWWWVFn2kuup+JMffoKHSbq
-         YmvvmyXo4L9wDBnI4I9RAUsJUc98x3xuuxwObDg0c4CBbA7XcdR443FckhjE5hLwGySB
-         mOmeNOVdNNS3p4YVpke8WaYv0HkFvoeDup6jsmG6HMYYH6eaX2TzznlI/0WeJ66cZF2z
-         uzq7QVlLdP1Dz+AkhbuNhoxD2+VmyC2/wVoq3AXJvT9mtd6R74O3gfqq0dMRZB+Qm+D5
-         HejRlYAw5zunaOR2qu8hcZXHjVGTt7AScwFT4hQOKJHnpp3J0Gi8BmtnL2VjUJT11SJC
-         rb/Q==
+        d=gmail.com; s=20251104; t=1787219691; x=1787824491; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=IgbKi+IjJPrk4GtW2Ufu1ND7MPHdT58xQ0Q0aiwlQFo=;
+        b=LKLAVzXpqD2Srm91kDbDBB/mox6rBaMMZLiU9JRQx/XmQldjIGJTf6nW9/uyHZkABP
+         kHbSrCuYFETSPFXCOxw5rP7SwxGFz8GdAWICIdEw2jEWBgb4WJFYncUmYMeSNNOpoqhu
+         Y3p5tvoH6h2JIx4zf+SlDAFKSLAS+F9kzsQOc+4l9Ko+Upa7+RZxRi2NQLknl/hMZ2eA
+         ZO4jX0NKIPdyyOYn/G4WzlHxmbtmSTk4Lw6M51fJsVuXEnKHp717DltjE7fmBq6PXKqE
+         GbNzEj2rqhakCyRbtIPsAChAuVvRhDBASX5S9rxiYeaijf/BOnTZy/nS7UB519/Ap2Eq
+         shIw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1787214330; x=1787819130;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=223qQlWuY3f+8iK33zdbyvUroKwN1OIa3V2war/hhpk=;
-        b=PRxXFYrHq5FuGKjb5630yC3AoGaghk3bNKaoFNDPyt8h4PTYza8mtt5OialhQGA0Zf
-         4B6GjK+qhR7bmux8qWhC0lz11zAERY8Xb/uT2FQ2Fr8mIbnLtGVapjjpOMMwydw/+F6X
-         U5+Om7kzIiXcETA6hIGNRUM5pw44vA4KCA58imBoBWGlyyXKDQbHtqkGT8xzQKYwe1lC
-         DEDqpm4Gz6BJGPeaw0qbIIl3W+OZH9oi8vMqB6lCC5/HTSf144gsPL1rdEFkx9b8/koM
-         ctgn/Tm7yI0s9DCSiOwE/cNrROP9bitHdp7o6FTjiZpdKzGk37yVuvC0e4PA+CbBzJCt
-         H9bA==
-X-Forwarded-Encrypted: i=1; AHgh+RrxvVsUiGKBlmAhiRSBfYkFTKqPusmZIuYbQZP2WeI2xYHqOMGwrI+GGGQ3+QEf7+d1uBlKU361uc0=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz+iglz+7VzR6ZD+zoWh5D6AzuVRQb7ZEp0WNpTHJSF1YFZ01kw
-	vO6fNhFnk9gO1Djt0LlqlWPKJeHsbjvrq7IfAIIod+Cj5rPWQ6IdcdJOlOc3OGSIRgoYF4SW258
-	eFMz98UiPZmpRwpiyV/xYl+8zVlZNzt0B91g0moETiBSZCaXzR369A8aUConVh0HvEeEM
-X-Gm-Gg: AR+sD11L+uSfjswQm/fJMc4wSPEnUb0Eq4XWS6c82FO4KgmmykBdB0k1S2im3O5quyO
-	ETUfIuZ/ngRxUDKZL1W9OF5jJTleyf0w6e8bpQ2RzrxDJAmB9Ls+DLc6RybCJFi96bCke8XEVzW
-	oL8FRv1WxcBPSd/4++ZaXlL4Qx7cK5GbPg8E0Yd9QiTDaGdenEFl04BLqj6X1wvAG1w5llLuWue
-	lruqUFOzjXmhiOo5OWA+P26h5KEGaT+4jtNUIWMwy2RqVUU7Xd6iOTnGYr2+Mqf5ZLsNObvWe5h
-	K70ES25O6B/Gq90JIQkKdrODNSDXFeJ0eQZIfsS6tQ7zktCl+swXlSxfFHhHhRaztjMCbM61u/o
-	rrLuAxEH/k1+zRV4=
-X-Received: by 2002:a05:620a:171f:b0:92e:46e5:8f12 with SMTP id af79cd13be357-9371e2ffd67mr946977585a.30.1787214329890;
-        Thu, 20 Aug 2026 01:25:29 -0700 (PDT)
-X-Received: by 2002:a05:620a:171f:b0:92e:46e5:8f12 with SMTP id af79cd13be357-9371e2ffd67mr946974785a.30.1787214329361;
-        Thu, 20 Aug 2026 01:25:29 -0700 (PDT)
-Received: from oss.qualcomm.com ([188.27.161.240])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-482b14514d5sm11809010f8f.10.2026.08.20.01.25.26
+        d=1e100.net; s=20251104; t=1787219691; x=1787824491;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=IgbKi+IjJPrk4GtW2Ufu1ND7MPHdT58xQ0Q0aiwlQFo=;
+        b=ha6MTpocywEdL3zuxQKRgQEl4ja4EwSbHAPudQhQpAYloe4bFl+t4Ufv2Fiz/UQx4P
+         JCGVrie1twKo3it4XgNhBOHJzVsxTvqX+fRZfQJEfNkJRvenoUcq8yILAKO5xONb+p3m
+         prDmQtovOScHv0Ullj7AH6s5KK7sNzoQl43obODf4qtIaqP+fzQxQZjStCC5xXD5H1m6
+         jRJtjCxr24Zv2rVDibo0BFnyC8+QltPy2NtGK/qPJdNc9Vs2HZQq3eHRQU8qLD37xiLB
+         SLdp/w9JrBW29HKk7YwemmEoxkpM470SbCg4oGQ878HmI9/PKnqShjxfMg2CRRm1mm+h
+         53zQ==
+X-Forwarded-Encrypted: i=1; AHgh+RpSLet3ylDBeMW8zyLYPJB8R7o/wgbBya+QX3up9bXCQ/wZBW+0IubOaDSqIHvZe50mcHH3I3JnXJY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwTu9djJ8se6kOKnhpJN5DCgF3qt34XtuZGlo9F0aFT572Cucg2
+	OZk+xdLgF/FPdsfGscvAliONQ5fIAtwJTH01I/7YfhAIQnfp1iZ71dKo
+X-Gm-Gg: AR+sD13vdgSnPyBRvRidv1wJHf3se3fd0a2XGhLbUasIl8mW12J1XcPDPUe7ZPiDOn3
+	tIWhcC/gb/6opal40tpR0YnFB0V99Deg6OuO0TV64z7NFUB0cyVlKZHX5cs64dUSN4bEmBvTEgp
+	N35UK9yWYQ2bVqOCtLt2KrtUWdRF+K12Y2g9LVONvS/VydS8pOOZ2C5RwyxSZeBW0PIO54UwVma
+	GOeH0buzn4PUrgoK7ALc5X3Mo5xiLlGqoTHyd63b3zRQQQ8UlwMdIxVG0uUCDe7R+Twz3u6cxIM
+	74W67YV73H4oaniKzYgqvb5EJ7YQBegSFGbyMzZdQyhZv8iH9y1WeRzk9PexHYeJptT06M/nq3d
+	jqeX9pM2NoGvy6Dh8lRODu4VXHbpN74VCfRiVrrcib0vAcatfLaKYLPOH5f//lwoOjCKLI27xCg
+	w6rmrHNfFeL+PEh6FP9hfMjXItmpJVFvo+Y1/1ROxxG0YN2mDoWfVxJkzzelRTn2BSYJpV
+X-Received: by 2002:a05:600c:34d1:b0:499:49f3:77b1 with SMTP id 5b1f17b1804b1-499aa14a6a6mr197783335e9.3.1787219691320;
+        Thu, 20 Aug 2026 02:54:51 -0700 (PDT)
+Received: from biju.lan ([2a00:23c4:a702:d301:eda0:8ef1:e1ab:c2b1])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-499aa0d6721sm172069675e9.11.2026.08.20.02.54.50
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 20 Aug 2026 01:25:28 -0700 (PDT)
-Date: Thu, 20 Aug 2026 11:25:26 +0300
-From: Abel Vesa <abel.vesa@oss.qualcomm.com>
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Bartosz Golaszewski <brgl@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Linus Walleij <linusw@kernel.org>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-        Xu Yang <xu.yang_2@nxp.com>, Peng Fan <peng.fan@nxp.com>,
-        Vinod Koul <vkoul@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Peter Chen <peter.chen@kernel.org>,
-        Pavankumar Kondeti <quic_pkondeti@quicinc.com>,
-        Stephen Boyd <stephen.boyd@linaro.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        Krzysztof Kozlowski <krzk@kernel.org>, linux-arm-msm@vger.kernel.org,
-        linux-gpio@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
-        linux-phy@lists.infradead.org, Greg Kroah-Hartman <gregkh@suse.de>,
-        Peter Chen <peter.chen@nxp.com>
-Subject: Re: [PATCH 09/10] ARM: dts: qcom: msm8974: add the HSIC USB
- controller
-Message-ID: <oocip6a35iv7wsxtiudapckeklgv34d3cigftdc76jinixxy37@qdd7xsjxvkjf>
-References: <20260810-msm8974-usb-hsic-v1-0-e5f93ea76ffa@oss.qualcomm.com>
- <20260810-msm8974-usb-hsic-v1-9-e5f93ea76ffa@oss.qualcomm.com>
+        Thu, 20 Aug 2026 02:54:51 -0700 (PDT)
+From: Biju <biju.das.au@gmail.com>
+X-Google-Original-From: Biju <biju.das.jz@bp.renesas.com>
+To: Philipp Zabel <p.zabel@pengutronix.de>,
+	Vinod Koul <vkoul@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Bartosz Golaszewski <brgl@kernel.org>,
+	Mark Brown <broonie@kernel.org>,
+	Magnus Damm <magnus.damm@gmail.com>
+Cc: Biju Das <biju.das.jz@bp.renesas.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-clk@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org,
+	Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+	Biju Das <biju.das.au@gmail.com>
+Subject: [PATCH v8 0/5] Add RZ/G3L USB2.0 host support
+Date: Thu, 20 Aug 2026 10:54:38 +0100
+Message-ID: <20260820095448.20930-1-biju.das.jz@bp.renesas.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260810-msm8974-usb-hsic-v1-9-e5f93ea76ffa@oss.qualcomm.com>
-X-Proofpoint-Spam-Info: AW1haW4tMjYwODIwMDA1OSBTYWx0ZWRfX8chueO+T9lpA
- P5w9j1Cjqnxbjb8Xa68kzeZNpDZDEMiDUFu1CA0oiGXljMtDHR4hM6aRguo0y1wOAldq5f23pW3
- 7ubbVHHdaOAWWSrJJyWMjc1J9kRXfIs=
-X-Authority-Analysis: v=2.4 cv=YP+vDxGx c=1 sm=1 tr=0 ts=6a86b9fa cx=c_pps
- a=50t2pK5VMbmlHzFWWp8p/g==:117 a=wUpz7uCjLrEXi01cjX+DLw==:17
- a=kj9zAlcOel0A:10 a=Sv0fKeRqtYgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
- a=EUspDBNiAAAA:8 a=GX6hXX8UDECmu-q5ZscA:9 a=CjuIK1q_8ugA:10
- a=IoWCM6iH3mJn3m4BftBB:22
-X-Proofpoint-ORIG-GUID: We1Sctes5tSmKU2IKV4NRBvGYaRN1i_I
-X-Proofpoint-GUID: We1Sctes5tSmKU2IKV4NRBvGYaRN1i_I
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODIwMDA1OSBTYWx0ZWRfX5i7+WvKoj+2O
- pEfxoGDN/bERgEIohzfQDumwXGRw9ElFHpQrbcTnPecacgHm4tk/mGu750Q7RyUXMf8S/iRs1kU
- s9uxHAq5dOcxw86fTkaunRmxiPMfLNIvtrf+2O6dVJKc0pA810IOaHHxrgN5XWQsU/K/08cJIvx
- 1FyyBst95Civhxa2hzuhAI22n8eHY1k4YPoVo79x+3iNg2KQGJCqbZWcOMNGCeonuuJA8AO46Rl
- itnNoCW+26KmwbKKBJV16o3olGXPmBhrFWiVf9L3ySMSlN0KqrjWuLq78pmXOOiWLBcCSf+elfo
- 6pWRLNa/BSulH08KqG18OsUvFAonpCQofCb9IqPAhUlDivTnlZhlNEIeRmbe9nxu67pmeAQF7tT
- jfWGGIRw2OuXtOQJhmEno86bOjzV9F+yDiRRCwoGvaXvyvqfEjt7hJmFwH5cCLJw9kooW7e/th9
- dN7F923engPijIj+q7A==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-08-19_06,2026-08-19_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 suspectscore=0 bulkscore=0 adultscore=0 impostorscore=0
- lowpriorityscore=0 priorityscore=1501 phishscore=0 clxscore=1015
- malwarescore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
- definitions=main-2608200059
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260820_012531_451482_846A6636 
-X-CRM114-Status: GOOD (  12.78  )
+X-CRM114-CacheID: sfid-20260820_025453_898916_476C7617 
+X-CRM114-Status: GOOD (  16.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -164,19 +116,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26-08-10 18:42:13, Dmitry Baryshkov wrote:
-> The MSM8974 HSIC USB host - a third Chipidea controller with a
-> dedicated HSIC PHY on the special hsic_strobe/hsic_data pads - is not
-> described, leaving boards with HSIC-attached hubs or modems without
-> upstream support.
-> 
-> Add the controller and PHY nodes. The PHY is a ULPI bus driver present
-> inside the ulpi subnode.
-> 
-> Assisted-by: Claude:claude-fable-5
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+From: Biju Das <biju.das.jz@bp.renesas.com>
 
-Reviewed-by: Abel Vesa <abel.vesa@oss.qualcomm.com>
+Hi All,
+
+This patch series aims to add USB2.0 host support for the RZ/G3L SMARC
+EVK. The RZ/G3L USB PHY block is similar to RZ/G3S, but each port
+has an OTG controller, unlike RZ/G3S, which has an OTG controller only on
+port 1. This series migrates regulator driver to use id-table so there
+is hard dependency between reset driver and regulator driver.
+
+Merge strategy:
+  An Ack/Rb tag from Regulator Maintainer for patch#1 and #5.
+  Patch #1,#2,#3,#4,#5 - Reset subsystem
+
+This patch series has functional dependency on [1]
+[1] https://lore.kernel.org/all/20260819191325.217809-1-biju.das.jz@bp.renesas.com/
+
+v7->v8:
+ * Dropped SoC dtsi patches and will post later.
+ * Collected tags for regulator driver and binding.
+ * Avoided code duplication by moving devm_add_action_or_reset() to
+   rzg2l_usbphy_ctrl_pwrrdy_init().
+v6->v7:
+ * Dropped PHY subsystem patches as it is accepted.
+ * Merged patch series [2] to here
+ * Collected the tags.
+ * Added additionalProperties: false in regulators node.
+ * Updated commit header of patch#6
+ * Moved the host enable patch.
+ * dr_mode changed to 'host' as function is not enabled yet.
+ * Updated commit description for patch#9
+ * Updated dr_mode = "host" to "otg" in {e,o}hci0 device nodes.
+ [2] https://lore.kernel.org/all/20260707145135.247565-1-biju.das.jz@bp.renesas.com/#t
+v5->v6:
+ * To avoid breaking bisectability, prepared a single patch that
+   does the "rzg2l-usb-vbus-regulator" -> "rzg2l-vbus-regulator"
+   rename in both regulator and reset drivers and that could be
+   merged into both trees.
+ * Replaced dev_err->dev_err_probe() in error path of
+   rzg3l_usb_vbus_regulator_probe().
+ * Retained the tag as the change is trivial.
+v4->v5:
+ * Collected Ack tag for regulator driver changes.
+ * Dropped renesas,sysc-pwrrdy for RZ/G3L as pwrrdy signal is modelled as
+   power sequence.
+ * Dropped the tag from Conor due to above change .
+ * Replaced the variable regulator_driver_name->regulator_name in struct
+   rzg2l_usbphy_ctrl_info
+ * Switched to power sequence consumer for controlling pwrrdy signal.
+ * Updated commit description for patch#3.
+v3->v4:
+ * Updated cover letter with merge strategy
+ * Reorder the phy binding patch for easy merging.
+ * Updated the commit description for patch #2,#3, #4.
+ * Moved the handling of regulator_driver_name to patch #3
+   in preparation for id_table match.
+ * Migrated to id_table match using driver_name and reduced the length
+   < 24.
+ * Dropped rzg3l specific platform driver.
+ * Dropped the tag for regulator driver,
+ * Added id_table handling by introducing a common probe().
+ * Dropped renesas,sysc-pwrrdy property for usbphy-ctrl node.
+v2->v3:
+ * Replaced items->enum in reset controller bindings.
+ * Collected the tag for reset binding patch.
+ * Dropped clock patch as it is accepted.
+v1->v2:
+ * Dropped patch#6(Introduce helper for regulator registration)
+ * Passing pointer to an array of regulators to make it scalable.
+ * Dropped regulator1-vbus and added a regulators group node.
+ * Updated commit description for patch#1,#4,#6,#7,#8,#9 and #10.
+ * Added enum instead of const in the compatible section.
+ * Updated schema check.
+ * Collected tag for PHY binding patch.
+   in the regulator driver.
+ * Added regulators group node and its children in SoC dtsi.
+
+Biju Das (5):
+  regulator: renesas-usb-vbus-regulator: Rename platform device to
+    rzg2l-vbus-regulator
+  dt-bindings: reset: renesas,rzg2l-usbphy-ctrl: Document RZ/G3L support
+  reset: rzg2l-usbphy-ctrl: Introduce info struct for match data
+  reset: rzg2l-usbphy-ctrl: Add RZ/G3L support
+  regulator: renesas-usb-vbus-regulator: Add RZ/G3L VBUS regulator
+    support
+
+ .../reset/renesas,rzg2l-usbphy-ctrl.yaml      |  41 ++++++-
+ .../regulator/renesas-usb-vbus-regulator.c    |  75 ++++++++++++-
+ drivers/reset/reset-rzg2l-usbphy-ctrl.c       | 105 ++++++++++++++----
+ 3 files changed, 197 insertions(+), 24 deletions(-)
+
+-- 
+2.43.0
+
 
 -- 
 linux-phy mailing list
