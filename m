@@ -4,66 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4CD0DC5DF93
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Aug 2026 13:50:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3F9CC5DF95
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Aug 2026 13:50:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yVFh97W1Yok5tGjdfXOqolgS5d+nzlghVr2cnBGzuZM=; b=1rqMlxj2zeKU6u
-	/9PMave4vTWgk7CqbL9f2ouglDP5AfaJ6n0w3a6mTVCIfqg1PVz7EFJWhf/WoIc+0R+6k363tE5GR
-	N/KxhvuXyioKPnNfFrb04h8YxyKAnIQEH26iAhWS0bGx1kBLtfi10miElBBnXsZyghyvLEdeYCVXs
-	wxx7aCR2CEdAqlZidCPRlkk8BTS4ARir5xsXSYuWV9QMDuL5n1ofgaj46/KHroN4Z/YALyZuZTjfO
-	FzqV3Zex4uQQj758WutJ5mEb60/ZGarsRmVxuZ0cwk3JOx3jdwcmIZTKwQnrUZrXhVB83+3Bc3J8B
-	O3hgzXgPl1g5WGRzZsgQ==;
+	List-Owner; bh=d7fuK6+2sBfRiv9LTZsz1qKLLn+Cz9lazmSanGjuBjM=; b=2PVt1KuhQhDkAr
+	qhIlSeRRhi8UIt79ych1MHMXd72sONqddZ9Ils5WAeolQikBaRZ/C1OC4DZbXwIfGq5pg6HEwlTFw
+	/NNY0MVs0l7mA54pHriH9ktItITD7oVip2Qld4hr6IdQbDJ815KMmrP32JTKwcOoeQFaHgHRJOzaF
+	WzSrSMXGaksxyPvyfoKLq2S02FJFgs8k/GUdVxO3kE0muyW3bFWdWk2k5VXhXpt8gmAlYgksBA6Yf
+	fGtrbEA9zB12W8zczPA6c5DfMPqkHh1vmrMazRdN0yHV9t0JRWoeDG0NN9wI+sKMPek5v7xkHOlN5
+	3HdWSqGpM/fZ+YOzsC7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wxPdt-0000000DSka-3wWV;
-	Fri, 21 Aug 2026 13:50:45 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wxPdu-0000000DSlo-1TkX;
+	Fri, 21 Aug 2026 13:50:47 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wxPdi-0000000DSbL-2zet;
-	Fri, 21 Aug 2026 13:50:34 +0000
+	id 1wxPdj-0000000DSbS-0CRt;
+	Fri, 21 Aug 2026 13:50:35 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 29DCF43E11;
+	by tor.source.kernel.org (Postfix) with ESMTP id 3954860A78;
 	Fri, 21 Aug 2026 13:50:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id E7429C4AF09;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id D8104C2BCB3;
 	Fri, 21 Aug 2026 13:50:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1787320234;
-	bh=4jAaIiXyX7A+vKSBPBQthDtjH8uCrqGssc0AUrXmwpg=;
+	s=k20201202; t=1787320233;
+	bh=+OdNmU3kQtFUJCrPPsP1ZLOdt+4zemG/iTRVI9Yczzo=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=APjclCskI1ell56dVd4LDS6bx2lKrmZSmyWuEx132BWrfuduqr6Jw4agq7xwpN02Y
-	 LUzismyzUqTLLIZl2LJuvqIhmerpoiwX3vtEatRbFrSabSoG67dYvE/fH8tXWr22hl
-	 T6MFPxww7zZLXcfNoTEPdwDrozMzl9jkNDLmhxRh+VRe/11Of6bOixWUZ2T1r6bwBJ
-	 E/AkuCnFezLnyPnNKRKeVDnHzGdzBJY9RoR0K3gq7AqJrMWMXiz6uA620fZf5cjk6c
-	 WA6svMBdGF2R6qcXSd1wf3+H9aHYvgSEWwn26Et2Ob/FMWIiS/GrNEMyUqmZbQNyJn
-	 nJN3Y0AZAwxvA==
+	b=nSIKX+gRiO/5nYNaej3KWZHgi0X+dJDb9wS5J33mX39xXn03Ex7DQvgEjdEZp4z58
+	 RijZElCtvVTESWx92292ngDu6iqBQV/TLE6fl+rr3c3h0PZXZ4QQxna7cSLVaB+PQU
+	 c3ZnloBKWWHKfZfSss05uiDbc0L2iG7nWnabDDHYryaxA2k8cPK60XlkHb8aHWGjGx
+	 30OZQE1+c40p/WGFrpfrCqcH4Awy0safJQUVqX18mUyMH4IokFNyGjna2/Izyz5TdL
+	 DQCDnJn729YSyMeyRcI1dA8o+4BkSNPeeVdADzSMYb+4BZSzXnWVqyBJZF16qqx3Yo
+	 MohE1K/rTebEQ==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D46BAC5DF96;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id C16D5C5DF93;
 	Fri, 21 Aug 2026 13:50:33 +0000 (UTC)
 From: Sven Peter <sven@kernel.org>
-Date: Fri, 21 Aug 2026 15:50:28 +0200
-Subject: [PATCH 2/3] phy: apple: atc: Factor out the PIPE mux sequence
+Date: Fri, 21 Aug 2026 15:50:27 +0200
+Subject: [PATCH 1/3] phy: apple: atc: Support DUMMY PIPEHANDLER state in
+ configure_pipehandler
 MIME-Version: 1.0
-Message-Id: <20260821-b4-atcphy-usb4-v1-2-45c0b741e0c0@kernel.org>
+Message-Id: <20260821-b4-atcphy-usb4-v1-1-45c0b741e0c0@kernel.org>
 References: <20260821-b4-atcphy-usb4-v1-0-45c0b741e0c0@kernel.org>
 In-Reply-To: <20260821-b4-atcphy-usb4-v1-0-45c0b741e0c0@kernel.org>
 To: Janne Grunau <j@jannau.net>, Neal Gompa <neal@gompa.dev>, 
  Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>
 Cc: asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
  linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Sven Peter <sven@kernel.org>
+ Sven Peter <sven@kernel.org>, Paul Cristian <p4ulcristian@gmail.com>, 
+ stable@vger.kernel.org
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=4042; i=sven@kernel.org;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1735; i=sven@kernel.org;
  h=from:subject:message-id;
- bh=4jAaIiXyX7A+vKSBPBQthDtjH8uCrqGssc0AUrXmwpg=;
- b=owGbwMvMwCXmIlirolUq95LxtFoSQ1ZH+DKuB+oG2UUW35mElVkmWbqs+iXDM3fj9fDQ37uv+
- ly0b93TUcrCIMbFICumyLJ9v73pk4dvBJduuvQeZg4rE8gQBi5OAZhIwjlGhlXWluLskgLOt9Mt
- biV2lCx6q3jgvc8Mgc/LP/QrFTB92cTwT8nvyoNc4+rvdWte2zy6dsv7+q9tSgmmJm4cu+Z03FF
- z5QUA
+ bh=+OdNmU3kQtFUJCrPPsP1ZLOdt+4zemG/iTRVI9Yczzo=;
+ b=owGbwMvMwCXmIlirolUq95LxtFoSQ1ZH+NJX+Zztsv9Sudi8M7cUh0vmGn48crrmz45Vb74x1
+ 2s2LZ3YUcrCIMbFICumyLJ9v73pk4dvBJduuvQeZg4rE8gQBi5OAZhIlR4jQ6+hnNtj3jKviK/b
+ //jsTK7o5/oRb75/7nr+U3kp6utEvBgZrmluCP1l8O6V5tWoT/J/Zh7xTiipWt2SGP/9k//kgs6
+ 9bAA=
 X-Developer-Key: i=sven@kernel.org; a=openpgp;
  fpr=A1E3E34A2B3C820DBC4955E5993B08092F131F93
 X-Endpoint-Received: by B4 Relay for sven@kernel.org/default with
@@ -84,92 +86,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This sequence is already used in three places and we're about to add a
-fourth copy so let's factor it out to a helper. No functional change.
+For both Thunderbolt and DisplayPort atcphy_configure_pipehandler is
+reached with a request to switch to the DUMMY state (i.e. usb2 only).
+With the current code this breaks USB2 when all four SS lanes are used
+for DisplayPort AltMode because the -EINVAL is passed all the way back
+to the phy_set_mode() call which results in tearing down xhci and dwc3
+again.
+Let's actually handle that case correctly and also drop the default from
+the switch such that we get a compiler warning if another pipehandler
+state is ever added and forgotten here.
 
+Reported-by: Paul Cristian <p4ulcristian@gmail.com>
+Closes: https://github.com/AsahiLinux/linux/pull/515
+Fixes: 8e98ca1e74db ("phy: apple: Add Apple Type-C PHY")
+Cc: stable@vger.kernel.org
 Signed-off-by: Sven Peter <sven@kernel.org>
 ---
- drivers/phy/apple/atc.c | 46 +++++++++++++++++++---------------------------
- 1 file changed, 19 insertions(+), 27 deletions(-)
+ drivers/phy/apple/atc.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/phy/apple/atc.c b/drivers/phy/apple/atc.c
-index a3162f25e6cd..96158d348656 100644
+index 4156fabad742..a3162f25e6cd 100644
 --- a/drivers/phy/apple/atc.c
 +++ b/drivers/phy/apple/atc.c
-@@ -972,6 +972,19 @@ static int atcphy_pipehandler_check(struct apple_atcphy *atcphy)
- 	return 0;
- }
+@@ -1121,7 +1121,7 @@ static int atcphy_configure_pipehandler_dummy(struct apple_atcphy *atcphy)
  
-+static void atcphy_pipehandler_set_mux(struct apple_atcphy *atcphy, u32 data, u32 clk)
-+{
-+	mask32(atcphy->regs.pipehandler + PIPEHANDLER_MUX_CTRL, PIPEHANDLER_MUX_CTRL_CLK,
-+	       FIELD_PREP(PIPEHANDLER_MUX_CTRL_CLK, PIPEHANDLER_MUX_CTRL_CLK_OFF));
-+	udelay(10);
-+	mask32(atcphy->regs.pipehandler + PIPEHANDLER_MUX_CTRL, PIPEHANDLER_MUX_CTRL_DATA,
-+	       FIELD_PREP(PIPEHANDLER_MUX_CTRL_DATA, data));
-+	udelay(10);
-+	mask32(atcphy->regs.pipehandler + PIPEHANDLER_MUX_CTRL, PIPEHANDLER_MUX_CTRL_CLK,
-+	       FIELD_PREP(PIPEHANDLER_MUX_CTRL_CLK, clk));
-+	udelay(10);
-+}
-+
- static int atcphy_configure_pipehandler_usb3(struct apple_atcphy *atcphy, bool host)
+ static int atcphy_configure_pipehandler(struct apple_atcphy *atcphy, bool host)
  {
- 	int ret;
-@@ -1054,15 +1067,8 @@ static int atcphy_configure_pipehandler_usb3(struct apple_atcphy *atcphy, bool h
- 	}
+-	int ret;
++	int ret = -EINVAL;
  
- 	/* Configure PIPE mux to USB3 PHY */
--	mask32(atcphy->regs.pipehandler + PIPEHANDLER_MUX_CTRL, PIPEHANDLER_MUX_CTRL_CLK,
--	       FIELD_PREP(PIPEHANDLER_MUX_CTRL_CLK, PIPEHANDLER_MUX_CTRL_CLK_OFF));
--	udelay(10);
--	mask32(atcphy->regs.pipehandler + PIPEHANDLER_MUX_CTRL, PIPEHANDLER_MUX_CTRL_DATA,
--	       FIELD_PREP(PIPEHANDLER_MUX_CTRL_DATA, PIPEHANDLER_MUX_CTRL_DATA_USB3));
--	udelay(10);
--	mask32(atcphy->regs.pipehandler + PIPEHANDLER_MUX_CTRL, PIPEHANDLER_MUX_CTRL_CLK,
--	       FIELD_PREP(PIPEHANDLER_MUX_CTRL_CLK, PIPEHANDLER_MUX_CTRL_CLK_USB3));
--	udelay(10);
-+	atcphy_pipehandler_set_mux(atcphy, PIPEHANDLER_MUX_CTRL_DATA_USB3,
-+				   PIPEHANDLER_MUX_CTRL_CLK_USB3);
- 
- 	/* Remove link detection override */
- 	clear32(atcphy->regs.pipehandler + PIPEHANDLER_OVERRIDE, PIPEHANDLER_OVERRIDE_RXVALID);
-@@ -1097,15 +1103,8 @@ static int atcphy_configure_pipehandler_dummy(struct apple_atcphy *atcphy)
- 		dev_warn(atcphy->dev, "Failed to lock pipehandler");
- 
- 	/* Switch to dummy PHY */
--	mask32(atcphy->regs.pipehandler + PIPEHANDLER_MUX_CTRL, PIPEHANDLER_MUX_CTRL_CLK,
--	       FIELD_PREP(PIPEHANDLER_MUX_CTRL_CLK, PIPEHANDLER_MUX_CTRL_CLK_OFF));
--	udelay(10);
--	mask32(atcphy->regs.pipehandler + PIPEHANDLER_MUX_CTRL, PIPEHANDLER_MUX_CTRL_DATA,
--	       FIELD_PREP(PIPEHANDLER_MUX_CTRL_DATA, PIPEHANDLER_MUX_CTRL_DATA_DUMMY));
--	udelay(10);
--	mask32(atcphy->regs.pipehandler + PIPEHANDLER_MUX_CTRL, PIPEHANDLER_MUX_CTRL_CLK,
--	       FIELD_PREP(PIPEHANDLER_MUX_CTRL_CLK, PIPEHANDLER_MUX_CTRL_CLK_DUMMY));
--	udelay(10);
-+	atcphy_pipehandler_set_mux(atcphy, PIPEHANDLER_MUX_CTRL_DATA_DUMMY,
-+				   PIPEHANDLER_MUX_CTRL_CLK_DUMMY);
- 
- 	ret = atcphy_pipehandler_unlock(atcphy);
- 	if (ret)
-@@ -1149,15 +1148,8 @@ static void atcphy_setup_pipehandler(struct apple_atcphy *atcphy)
- {
  	lockdep_assert_held(&atcphy->lock);
  
--	mask32(atcphy->regs.pipehandler + PIPEHANDLER_MUX_CTRL, PIPEHANDLER_MUX_CTRL_CLK,
--	       FIELD_PREP(PIPEHANDLER_MUX_CTRL_CLK, PIPEHANDLER_MUX_CTRL_CLK_OFF));
--	udelay(10);
--	mask32(atcphy->regs.pipehandler + PIPEHANDLER_MUX_CTRL, PIPEHANDLER_MUX_CTRL_DATA,
--	       FIELD_PREP(PIPEHANDLER_MUX_CTRL_DATA, PIPEHANDLER_MUX_CTRL_DATA_DUMMY));
--	udelay(10);
--	mask32(atcphy->regs.pipehandler + PIPEHANDLER_MUX_CTRL, PIPEHANDLER_MUX_CTRL_CLK,
--	       FIELD_PREP(PIPEHANDLER_MUX_CTRL_CLK, PIPEHANDLER_MUX_CTRL_CLK_DUMMY));
--	udelay(10);
-+	atcphy_pipehandler_set_mux(atcphy, PIPEHANDLER_MUX_CTRL_DATA_DUMMY,
-+				   PIPEHANDLER_MUX_CTRL_CLK_DUMMY);
- }
+@@ -1136,8 +1136,10 @@ static int atcphy_configure_pipehandler(struct apple_atcphy *atcphy, bool host)
+ 		ret = atcphy_configure_pipehandler_dummy(atcphy);
+ 		atcphy->pipehandler_up = false;
+ 		break;
+-	default:
+-		ret = -EINVAL;
++	case ATCPHY_PIPEHANDLER_STATE_DUMMY:
++		ret = atcphy_configure_pipehandler_dummy(atcphy);
++		atcphy->pipehandler_up = false;
++		break;
+ 	}
  
- static void atcphy_configure_lanes(struct apple_atcphy *atcphy, enum atcphy_mode mode)
+ 	return ret;
 
 -- 
 2.55.0
