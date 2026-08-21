@@ -4,52 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32676C5DF7D
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Aug 2026 12:03:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C243DC5DF8E
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Aug 2026 12:03:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oNWdmgfdsEdyp0B5QBHytxA+c6oiq1D6aqfmGIAT/n0=; b=P8VO14iyCNI9WF
-	td39zSgKJOoNAmB2jvIkm87nr5j4sPR+euFkMQWmXr8Io0G46QlbFznvMp4BkI3SlsJ5rFzsgkITv
-	YGzDNqrKxFkJF5PRe3BTlKTMEKSgqOmfVCKFjJH07dxdHfLtpO2wXoz7smhQ+4ZcwkiKUwbVaDk3E
-	18+Nku/bqXQn8F/WEGzTsiI2p/+zwwyk9Tme7vhITh/tUpe4+hUjNc+8pvHmNhlx0+m4umtTmPktX
-	9+NtSy8Fo0P1VrNJMgcqXx7xjAXRvcui2fC3voYnBxGWG7r0u+AE3GuIvMFu2DsCmoeywnnMvrWsT
-	TYIpw7Mbo+rv5thaG0fA==;
+	List-Owner; bh=D9mNtPqrT8fPXgu23oJo5jB0u7FsgA7Z3JSAH6g/+fk=; b=DwssbaT2kPi2tn
+	25z6e584IgE7cgdp5cI3mDgofuYOUPiUhs2tv2vF0BHw8EM91vtCLKQMmagfwHtkx76q1Hz0dwJlf
+	HibPWPFmhHgFnV5HxY0uXj8zBoM8miyMVZPxNl3K87aGkf+agoL4sHXZKQss7hkbN8xlQfohv1Has
+	FfEsmLJEmvmEq4kD/eqiIEROpF+frVLTQsGBsqQaaaeB9G/IAArd4glrkzan90IEvqOX0wntgfZsA
+	5OwXvBEiWG6VnXnt1swbX+84SqoqSQUEctZpvRc/CTM7sPTORMU+SVTtXRVg4uU2upofZfHLDEVJ6
+	xA9XVSP/qVszVWBM/gJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wxNxf-0000000DGJh-3XEi;
-	Fri, 21 Aug 2026 12:03:03 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wxNxh-0000000DGLa-167m;
+	Fri, 21 Aug 2026 12:03:05 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wxNxE-0000000DFvv-1ohE;
+	id 1wxNxE-0000000DFwM-2HnC;
 	Fri, 21 Aug 2026 12:02:36 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id B138244042;
+	by sea.source.kernel.org (Postfix) with ESMTP id E414D440B8;
 	Fri, 21 Aug 2026 12:02:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 88BB8C2BD00;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id C746CC19425;
 	Fri, 21 Aug 2026 12:02:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1787313755;
-	bh=sj0ZvaEZhMU9545+yicP7xkr66CGRWMMJviaJQecDuY=;
+	bh=1YWU9CaZpCJLqtsjR0F+p6T2Me/cuaHMCTUFje7w4FY=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=htObtN4Dah7rhqLxSKBJrFdR9i4bMFdbG1vAxDy47P8JbmFgZwG5BkzgP4ONMwiHc
-	 CFxy3FBBfbiaSiH58ipyHvZxwnxQg5OH4+ntu1+Nvycxb5dvoDPVbDbVMVBmT4ggdE
-	 qPoUlLpUXb62SqK/WrWDyRIC5WKPrdSlzQ+g2dfWQvKK8He3AmR6Zu+r/VodhUJjre
-	 B24mgPc6NerukEQXIo3siIw1physZ+IINznaFYeVUQrUT87UsJZH1sM1dzzH5BtpKQ
-	 31GeCJKU2e7ZW3aF1eLDvVb0g9pokiOmy0IH9lRjnEQSSfI88Rl/CeJ1wJ/hm8eYPl
-	 qmJ5s7rQSw+yQ==
+	b=TUj7xkHhOpHb1lmJRcyBM75SlfrtGOsr5jpb6N9bov6ZMJV5zaqikJhAkeOYD0w5q
+	 Zysfc4GVcLFePBHBWK7F/blFUL1OG/ezEj9Lm1qD9Q0QwsnVIGN9jgH+YXjhQLsLZb
+	 7EbBrn8wAg/Br1IIW3AMF3C8tG/YapRJBs55KLPvgMHM8Swi425s7G9QnbaqTA84sZ
+	 ryOsqAdlwXjX5ZssN8l3nnFS0zeJTIf3zRwNtWtiHIsVWLaRZLOJ47C8912grFbUPt
+	 K92gCSts90RQ+33m2yacztYtVtYbPGmQ4pgT2K9vEbiJZF3iOj5QYy+p73Q1egG6R5
+	 IKzGZh3OHn2CQ==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 70973C5DF89;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B4CA6C5DF7D;
 	Fri, 21 Aug 2026 12:02:35 +0000 (UTC)
 From: Jason Yang via B4 Relay <devnull+jason98166.gmail.com@kernel.org>
-Date: Fri, 21 Aug 2026 20:02:31 +0800
-Subject: [PATCH v4 3/7] phy: rockchip-samsung-dcphy: Move block-level setup
- to runtime resume
+Date: Fri, 21 Aug 2026 20:02:34 +0800
+Subject: [PATCH v4 6/7] phy: rockchip-samsung-dcphy: Add a second PHY for
+ the receiver
 MIME-Version: 1.0
-Message-Id: <20260821-dcphy-rx-v1-v4-3-f1797634233d@gmail.com>
+Message-Id: <20260821-dcphy-rx-v1-v4-6-f1797634233d@gmail.com>
 References: <20260821-dcphy-rx-v1-v4-0-f1797634233d@gmail.com>
 In-Reply-To: <20260821-dcphy-rx-v1-v4-0-f1797634233d@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -65,11 +65,11 @@ Cc: Michael Riesch <michael.riesch@collabora.com>,
  linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
  linux-kernel@vger.kernel.org, Jason Yang <jason98166@gmail.com>
 X-Mailer: b4 0.13.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1787313753; l=3359;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1787313753; l=4769;
  i=jason98166@gmail.com; s=20260721; h=from:subject:message-id;
- bh=9cE+hPPqnU1uNwu7u1p4tFRsUnlEvTN31ifREdpQhEw=;
- b=pRJsM6dhNU4gu7l7zH2IQd0AoIZwurcXFWhoqiNKF4pLdt1ohsazT6fp0n15sPeWciqx+WLeX
- S7iw+OFEnZpAk8N51/As+Fu3mz5Pq3EeEqj/6i/9enPUMu4mxkH+sFY
+ bh=Tpo2aJZByzL9nN+hv+FBEOMzziNDSj5dFxgoQfw6WoE=;
+ b=DtlVLAqZAPRh42okYQIYhYZh/DDPpEAGH5EoRKvqs7GDAbe3CI85tDMs3bus5ETqQq9Z2KvHe
+ l1323U8UXUMDyMD7SCEwuN7iWKLYdcAOUHq8mGn2G3qcoXYOaRrB+8x
 X-Developer-Key: i=jason98166@gmail.com; a=ed25519;
  pk=xQmD001Q/ooHl39PxyQtusbUQmgbOsSfpFryRVWZ/k4=
 X-Endpoint-Received: by B4 Relay for jason98166@gmail.com/20260721 with
@@ -94,90 +94,141 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Jason Yang <jason98166@gmail.com>
 
-The APB reset and the BIAS references have to be treated as block-level
-[1]: both the transmitter and the receiver need them, and they only have
-to be programmed once. They are programmed from the transmitter's
-power-on path today. A later change registers one struct phy for each of
-them, and a second consumer coming up would then reset the block
-underneath a PHY that is already running.
+Give the receiver a struct phy of its own, with its own phy_ops and its
+own samsung_mipi_phy for the state the two do not share.
 
-Program them from runtime resume instead, where whichever of the two
-comes up first brings the block up and a second one no longer resets it.
-This puts the BIAS writes ahead of the per-PHY reset assert, where the
-TRM's worked example has them after [1]. That is safe: neither M_RESETN
-nor S_RESETN covers the BIAS registers, and the values written are those
-registers' reset defaults.
+of_xlate() takes the second cell, PHY_TYPE_DSI selecting the transmitter
+and PHY_TYPE_CSI the receiver, and falls back to the transmitter for a
+single-cell provider, so existing device trees keep working. It now
+rejects an unknown value in either cell, and a mix of D-PHY and C-PHY
+consumers, which the TRM does not support [1].
 
-The output level select in BIAS_CON4 stays on the power-on path: it
-selects 400mV for D-PHY and 530mV for C-PHY, and the driver core resumes
-a runtime-PM supplier before the consumer's probe runs, so runtime resume
-cannot yet know which of the two applies.
+The receiver's callbacks return -EOPNOTSUPP until its bring-up is added
+in the next change.
 
-[1] RK3588 TRM: sections 22.4.1 (address map), 22.4.2 (reset values),
-    22.6.1.2 (reset) and 22.6.4.1 (D-PHY transmitter start-up)
+[1] RK3588 TRM: section 22.1 (overview)
 
+Assisted-by: Claude:claude-fable-5
 Signed-off-by: Jason Yang <jason98166@gmail.com>
 ---
- drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c | 25 ++++++++++++-----------
- 1 file changed, 13 insertions(+), 12 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c | 69 +++++++++++++++++++++--
+ 1 file changed, 63 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
-index 11e872cc6611..459ce882b369 100644
+index 5d9d44a1d6a2..d27a5916bd40 100644
 --- a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
 +++ b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
-@@ -980,13 +980,6 @@ static void samsung_mipi_dcphy_bias_block_enable(struct samsung_mipi_dcphy *sams
- 						 I_LADDER_1_00V);
- 	regmap_write(samsung->regmap, BIAS_CON2, REG_325M_325MV | REG_LP_400M_400MV |
- 						 REG_400M_400MV | REG_645M_645MV);
--
--	/* default output voltage select:
--	 * dphy: 400mv
--	 * cphy: 530mv
--	 */
--	regmap_update_bits(samsung->regmap, BIAS_CON4,
--			   I_MUX_SEL_MASK, I_MUX_400MV);
- }
+@@ -296,6 +296,8 @@ struct samsung_mipi_dcphy {
+ 	struct reset_control *apb_rst;
+ 	struct reset_control *grf_apb_rst;
+ 	struct samsung_mipi_phy tx;
++	struct samsung_mipi_phy rx;
++	/* PHY mode, PHY_TYPE_DPHY or PHY_TYPE_CPHY. */
+ 	u8 type;
  
- static void samsung_mipi_dphy_lane_enable(struct samsung_mipi_dcphy *samsung)
-@@ -1338,7 +1331,13 @@ static int samsung_mipi_dphy_power_on(struct samsung_mipi_dcphy *samsung)
- 
- 	reset_control_assert(samsung->m_phy_rst);
- 
--	samsung_mipi_dcphy_bias_block_enable(samsung);
-+	/* default output voltage select:
-+	 * dphy: 400mv
-+	 * cphy: 530mv
-+	 */
-+	regmap_update_bits(samsung->regmap, BIAS_CON4,
-+			   I_MUX_SEL_MASK, I_MUX_400MV);
-+
- 	samsung_mipi_dcphy_pll_configure(samsung);
- 	samsung_mipi_dphy_clk_lane_timing_init(samsung);
- 	samsung_mipi_dphy_data_lane_timing_init(samsung);
-@@ -1362,10 +1361,6 @@ static int samsung_mipi_dcphy_power_on(struct phy *phy)
- {
- 	struct samsung_mipi_dcphy *samsung = phy_get_drvdata(phy);
- 
--	reset_control_assert(samsung->apb_rst);
--	udelay(1);
--	reset_control_deassert(samsung->apb_rst);
--
- 	switch (samsung->type) {
- 	case PHY_TYPE_DPHY:
- 		return samsung_mipi_dphy_power_on(samsung);
-@@ -1656,6 +1651,12 @@ static __maybe_unused int samsung_mipi_dcphy_runtime_resume(struct device *dev)
- 		return ret;
- 	}
- 
-+	reset_control_assert(samsung->apb_rst);
-+	udelay(1);
-+	reset_control_deassert(samsung->apb_rst);
-+
-+	samsung_mipi_dcphy_bias_block_enable(samsung);
-+
+ 	const struct samsung_mipi_dcphy_plat_data *pdata;
+@@ -1508,6 +1510,22 @@ static int samsung_mipi_dcphy_exit(struct phy *phy)
  	return 0;
  }
  
++static int samsung_mipi_dcphy_rx_configure(struct phy *phy,
++					   union phy_configure_opts *opts)
++{
++	return -EOPNOTSUPP;
++}
++
++static int samsung_mipi_dcphy_rx_power_on(struct phy *phy)
++{
++	return -EOPNOTSUPP;
++}
++
++static int samsung_mipi_dcphy_rx_power_off(struct phy *phy)
++{
++	return -EOPNOTSUPP;
++}
++
+ static const struct phy_ops samsung_mipi_dcphy_tx_ops = {
+ 	.configure = samsung_mipi_dcphy_tx_configure,
+ 	.power_on  = samsung_mipi_dcphy_tx_power_on,
+@@ -1517,6 +1535,15 @@ static const struct phy_ops samsung_mipi_dcphy_tx_ops = {
+ 	.owner	   = THIS_MODULE,
+ };
+ 
++static const struct phy_ops samsung_mipi_dcphy_rx_ops = {
++	.configure = samsung_mipi_dcphy_rx_configure,
++	.power_on  = samsung_mipi_dcphy_rx_power_on,
++	.power_off = samsung_mipi_dcphy_rx_power_off,
++	.init = samsung_mipi_dcphy_init,
++	.exit = samsung_mipi_dcphy_exit,
++	.owner	   = THIS_MODULE,
++};
++
+ static const struct regmap_config samsung_mipi_dcphy_regmap_config = {
+ 	.name = "dcphy",
+ 	.reg_bits = 32,
+@@ -1529,19 +1556,42 @@ static struct phy *samsung_mipi_dcphy_xlate(struct device *dev,
+ 					    const struct of_phandle_args *args)
+ {
+ 	struct samsung_mipi_dcphy *samsung = dev_get_drvdata(dev);
++	/* Device trees without the second cell describe the transmitter. */
++	u32 protocol = PHY_TYPE_DSI;
++	u32 type;
+ 
+-	if (args->args_count != 1) {
++	if (args->args_count < 1 || args->args_count > 2) {
+ 		dev_err(dev, "invalid number of arguments\n");
+ 		return ERR_PTR(-EINVAL);
+ 	}
+ 
+-	if (samsung->type != PHY_NONE && samsung->type != args->args[0])
+-		dev_warn(dev, "phy type select %d overwriting type %d\n",
+-			 args->args[0], samsung->type);
++	type = args->args[0];
++	if (type != PHY_TYPE_DPHY && type != PHY_TYPE_CPHY) {
++		dev_err(dev, "invalid phy type %u\n", type);
++		return ERR_PTR(-EINVAL);
++	}
+ 
+-	samsung->type = args->args[0];
++	if (args->args_count == 2)
++		protocol = args->args[1];
+ 
+-	return samsung->tx.phy;
++	if (protocol != PHY_TYPE_DSI && protocol != PHY_TYPE_CSI) {
++		dev_err(dev, "invalid protocol %u\n", protocol);
++		return ERR_PTR(-EINVAL);
++	}
++
++	/*
++	 * The TRM (section 22.1) does not support the transmitter and the
++	 * receiver running in different modes, so the mode belongs to the
++	 * block.
++	 */
++	if (samsung->type != PHY_NONE && samsung->type != type) {
++		dev_err(dev, "phy type %u conflicts with type %u already selected\n",
++			type, samsung->type);
++		return ERR_PTR(-EINVAL);
++	}
++	samsung->type = type;
++
++	return protocol == PHY_TYPE_CSI ? samsung->rx.phy : samsung->tx.phy;
+ }
+ 
+ static int samsung_mipi_dcphy_probe(struct platform_device *pdev)
+@@ -1617,6 +1667,13 @@ static int samsung_mipi_dcphy_probe(struct platform_device *pdev)
+ 
+ 	phy_set_drvdata(samsung->tx.phy, samsung);
+ 
++	samsung->rx.phy = devm_phy_create(dev, NULL, &samsung_mipi_dcphy_rx_ops);
++	if (IS_ERR(samsung->rx.phy))
++		return dev_err_probe(dev, PTR_ERR(samsung->rx.phy),
++				     "Failed to create MIPI DC-PHY receiver\n");
++
++	phy_set_drvdata(samsung->rx.phy, samsung);
++
+ 	phy_provider = devm_of_phy_provider_register(dev, samsung_mipi_dcphy_xlate);
+ 	if (IS_ERR(phy_provider))
+ 		return dev_err_probe(dev, PTR_ERR(phy_provider),
 
 -- 
 2.43.0
