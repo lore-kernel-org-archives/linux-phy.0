@@ -4,69 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A64B9C5DF89
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Aug 2026 13:30:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 18132C5DF7D
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Aug 2026 13:50:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=QYs6wGB/4GnLc7xrTnRwC5VjsI/6lIh0MEDvDnWw0hc=; b=R6xuph99KuDRHGTwWjhlLQ8KFX
-	YEGehmkpaS9Siww0ulsT4XBwxWXqxCJrUhZb8MUaLfpwVE7JDk1VJRAYcgGZJ7Ee1riwqNTAImqJj
-	zjvSWICHUOItvWxu/fSonZMtKJjH1k5lEXN+0VZVgX01W8a7sOZpJ9jaGA1gUYQ8XNJGC0pP+vL7A
-	+vBAREQ+gHn5YoN0hyQ607IRTtWXksRQJ1BihG77ILLyyw2zkTu0yBJwvtkAPhThWvprezVv90S2W
-	3kFI7zJsVdBn4tIIcEXKGvysfnxgClUoLq50YcW8Q9FO17h8V0psVSItxorgAPH2+gBOR76SSVOWA
-	MzlnwuFw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=40IkSePapT1M6Dghrt7dm+1l/m7JEj1MBS1SZ6GYhmw=; b=wxuGtVrSVc9Ytd
+	Fd4GFGswhu8mLFDff5Vjklm8hQPApoBFcAXx7k0pkxE57UkYPZDoOMuXFXXZvEIkRCVkHM7fuU9Qa
+	UCancIHa9FkP+Je8TVpGXSK9xK3WEvVtEMThWd27vNbz/v7Pr4m2P/rO/fzfIw1NQsZr3R1FRfdaK
+	Jg/rBO7ixpnqaoU0uRsNlgsWxhlvtIbDxTzySk6lnRmu8HO804BT3fr5MwbgPyzp9fd9Pg7m/warG
+	eQ67mnVTLF/sQgdcvELZmxMuVe+jP5X64OZjIFq/dSfBIb34VYUJ8Ma8qnlUv3msbBYMFsayQGXzu
+	/KC1/IhPTce5dvskpZYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wxPKb-0000000DQMf-18ER;
-	Fri, 21 Aug 2026 13:30:50 +0000
-Received: from sender4-op-o11.zoho.com ([136.143.188.11])
+	id 1wxPdt-0000000DSk5-3CSG;
+	Fri, 21 Aug 2026 13:50:45 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wxPKX-0000000DQLH-43ez;
-	Fri, 21 Aug 2026 13:30:47 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1787319037; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=SbiHDux/1a0o4TWLUlxCEUP5CcGUMTbeFqo6R6OiYZsAMaeloAWqy8cL9q95jT1P+jTW0VhE9bvXGN3fuyYomu5NHolpwCFN5PYyKb2fxK0gK7ETwYrb+gBg/h1smd4Iqb0AK0GeqWfvpdBsudOEmb+ixKoYYaO0Jq9dCjxOTKE=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1787319037; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=IqJBuuSzNwmUI87Z+ICCLwbC3flAfpdwDJG+TeLAUhE=; 
-	b=ZDOoLU6SPUKM15z4vD/do6UdPNbEDV8qpXsCX7ezcSX+k+EQ9a5BhsncI6TjFPxUw2I4oX67++tSMMgwNrvgp+e7aEhJr6lK8yJ5q2DEsW1dVlYqjrOyJ7OD1QO1nZ6itUXysMBE3oN0K8imP5sxGn2moyrg446HKW/l5WcbIPM=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
-	dmarc=pass header.from=<sebastian.reichel@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1787319037;
-	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
-	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
-	bh=IqJBuuSzNwmUI87Z+ICCLwbC3flAfpdwDJG+TeLAUhE=;
-	b=D8W1f3eDNrSzxxc9U2YJ17o2TmQ+BGexxvxIQxojoglk+Db3LxDFpwezzgWjISR+
-	Z8OhOmaCXfytLMPUrXaw1VN1S54ShR1oVr7mxDBy+FtwF1DbwMFEf8YSWKUtfzWt7Ml
-	mvEi7KS7G84NVgBjBUmQzEY/2Gqg7Ne8lJJccu0o=
-Received: by mx.zohomail.com with SMTPS id 1787319035059193.20813694866024;
-	Fri, 21 Aug 2026 06:30:35 -0700 (PDT)
-Received: by venus (Postfix, from userid 1000)
-	id 0F3C8181F47; Fri, 21 Aug 2026 15:30:31 +0200 (CEST)
-Date: Fri, 21 Aug 2026 15:30:31 +0200
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: jason98166@gmail.com
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Heiko Stuebner <heiko@sntech.de>, 
-	Heiko Stuebner <heiko.stuebner@cherry.de>, linux-phy@lists.infradead.org, 
-	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: rockchip-samsung-dcphy: Enable runtime PM at PHY
- core level
-Message-ID: <aohRxwakzVgAbYff@venus>
-References: <20260821-dcphy-rpm-v1-v1-1-a7db728b2539@gmail.com>
+	id 1wxPdi-0000000DSbN-1mRq;
+	Fri, 21 Aug 2026 13:50:34 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 30D8143E4E;
+	Fri, 21 Aug 2026 13:50:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 0833AC2BCFF;
+	Fri, 21 Aug 2026 13:50:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1787320234;
+	bh=WrxF+hzknbWy6eCuGGX+A/+N5AW7fUPL2sZ1KI+FggQ=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
+	b=kBPZLPAClNuT67QPNeVSObFL/hXnnOWSkbt4NjSDkLTi7ORrJtbV2omrpB2DEc27b
+	 gtVKNZyvDID1EKisQxSlgPra+yduwRXjIyXUqsW4SDQAznnGJC2QsKtN8odZZInv+3
+	 9qc8uoD4z8Bdsde8AeB/akBNKQ5cKPKfb9QN3jRTaVpn68KNJE3WMn1aNn6Q8SGXEV
+	 fhrY60PKBLsXd1QL1qnXiVm5MG/NFXpiazDbaDTw3IMbac+mj7NJcnCAd6hn/AhWMN
+	 0M6Ou6eeYRFOm6LvFxUGhr80jsrHISQZULUDo8vx3B0nyT6y9g7JAaYXATHR84YQ4c
+	 10Aub/HqXgPnw==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E9C76C5DF95;
+	Fri, 21 Aug 2026 13:50:33 +0000 (UTC)
+From: Sven Peter <sven@kernel.org>
+Date: Fri, 21 Aug 2026 15:50:29 +0200
+Subject: [PATCH 3/3] phy: apple: atc: Implement the USB4 pipehandler state
 MIME-Version: 1.0
-In-Reply-To: <20260821-dcphy-rpm-v1-v1-1-a7db728b2539@gmail.com>
-X-Zoho-Virus-Status: 1
-X-Zoho-AV-Stamp: zmail-av-0.2.10.1.5.2/287.291.86
-X-ZohoMailClient: External
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260821_063046_059795_6F024BED 
-X-CRM114-Status: GOOD (  21.35  )
+Message-Id: <20260821-b4-atcphy-usb4-v1-3-45c0b741e0c0@kernel.org>
+References: <20260821-b4-atcphy-usb4-v1-0-45c0b741e0c0@kernel.org>
+In-Reply-To: <20260821-b4-atcphy-usb4-v1-0-45c0b741e0c0@kernel.org>
+To: Janne Grunau <j@jannau.net>, Neal Gompa <neal@gompa.dev>, 
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>
+Cc: asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Sven Peter <sven@kernel.org>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2592; i=sven@kernel.org;
+ h=from:subject:message-id;
+ bh=WrxF+hzknbWy6eCuGGX+A/+N5AW7fUPL2sZ1KI+FggQ=;
+ b=owGbwMvMwCXmIlirolUq95LxtFoSQ1ZH+HLe+IxdyrffM3xjmi3YIcB+Nfa6d4LOU5O0Bp7CM
+ v6eOIuOUhYGMS4GWTFFlu377U2fPHwjuHTTpfcwc1iZQIYwcHEKwESu3WZkmDDt7KTCF9O+rfRm
+ U37kuvlyb4/eG4UzzhebXjltPf0tIIbhv6dIw76pT2LCiva8NL/+s7jsyjXr203+Vp5Obw4Yti2
+ 9xQAA
+X-Developer-Key: i=sven@kernel.org; a=openpgp;
+ fpr=A1E3E34A2B3C820DBC4955E5993B08092F131F93
+X-Endpoint-Received: by B4 Relay for sven@kernel.org/default with
+ auth_id=407
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,127 +79,87 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3594035043897817505=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+USB3 tunneled via USB4 requires dwc3's PIPE interface to be switched to
+the USB4 NHI which will take care of the tunneling. Add the required
+bringup sequence such that USB3 tunnels work once the USB4 NHI is
+upstream.
 
---===============3594035043897817505==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="pzeob2d4d26oeuzd"
-Content-Disposition: inline
+Signed-off-by: Sven Peter <sven@kernel.org>
+---
+ drivers/phy/apple/atc.c | 41 +++++++++++++++++++++++++++++++++++++----
+ 1 file changed, 37 insertions(+), 4 deletions(-)
 
+diff --git a/drivers/phy/apple/atc.c b/drivers/phy/apple/atc.c
+index 96158d348656..613bcd0ae886 100644
+--- a/drivers/phy/apple/atc.c
++++ b/drivers/phy/apple/atc.c
+@@ -1084,6 +1084,41 @@ static int atcphy_configure_pipehandler_usb3(struct apple_atcphy *atcphy, bool h
+ 	return 0;
+ }
+ 
++static int atcphy_configure_pipehandler_usb4(struct apple_atcphy *atcphy)
++{
++	int ret;
++
++	ret = atcphy_pipehandler_check(atcphy);
++	if (ret)
++		return ret;
++
++	/* Force disable link detection */
++	clear32(atcphy->regs.pipehandler + PIPEHANDLER_OVERRIDE_VALUES,
++		PIPEHANDLER_OVERRIDE_VAL_RXDETECT0 | PIPEHANDLER_OVERRIDE_VAL_RXDETECT1);
++	set32(atcphy->regs.pipehandler + PIPEHANDLER_OVERRIDE, PIPEHANDLER_OVERRIDE_RXVALID);
++	set32(atcphy->regs.pipehandler + PIPEHANDLER_OVERRIDE, PIPEHANDLER_OVERRIDE_RXDETECT);
++
++	ret = atcphy_pipehandler_lock(atcphy);
++	if (ret) {
++		dev_err(atcphy->dev, "Failed to lock pipehandler\n");
++		return ret;
++	}
++
++	/* Configure PIPE mux to the USB4/Thunderbolt controller */
++	atcphy_pipehandler_set_mux(atcphy, PIPEHANDLER_MUX_CTRL_DATA_USB4,
++				   PIPEHANDLER_MUX_CTRL_CLK_USB4);
++
++	/* Remove link detection override */
++	clear32(atcphy->regs.pipehandler + PIPEHANDLER_OVERRIDE, PIPEHANDLER_OVERRIDE_RXVALID);
++	clear32(atcphy->regs.pipehandler + PIPEHANDLER_OVERRIDE, PIPEHANDLER_OVERRIDE_RXDETECT);
++
++	ret = atcphy_pipehandler_unlock(atcphy);
++	if (ret)
++		dev_warn(atcphy->dev, "Failed to unlock pipehandler\n");
++
++	return 0;
++}
++
+ static int atcphy_configure_pipehandler_dummy(struct apple_atcphy *atcphy)
+ {
+ 	int ret;
+@@ -1130,10 +1165,8 @@ static int atcphy_configure_pipehandler(struct apple_atcphy *atcphy, bool host)
+ 		atcphy->pipehandler_up = true;
+ 		break;
+ 	case ATCPHY_PIPEHANDLER_STATE_USB4:
+-		dev_warn(atcphy->dev,
+-			 "ATCPHY_PIPEHANDLER_STATE_USB4 not implemented; falling back to USB2\n");
+-		ret = atcphy_configure_pipehandler_dummy(atcphy);
+-		atcphy->pipehandler_up = false;
++		ret = atcphy_configure_pipehandler_usb4(atcphy);
++		atcphy->pipehandler_up = true;
+ 		break;
+ 	case ATCPHY_PIPEHANDLER_STATE_DUMMY:
+ 		ret = atcphy_configure_pipehandler_dummy(atcphy);
 
---pzeob2d4d26oeuzd
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH] phy: rockchip-samsung-dcphy: Enable runtime PM at PHY
- core level
-MIME-Version: 1.0
-
-Hi,
-
-On Fri, Aug 21, 2026 at 07:44:19PM +0800, Jason Yang via B4 Relay wrote:
-> From: Jason Yang <jason98166@gmail.com>
->=20
-> phy_create() only enables runtime PM on the new PHY device if the parent
-> already has it enabled, and this driver enables it afterwards. The PHY
-> device therefore never gets runtime PM, and phy_pm_runtime_get_sync()
-> returns -ENOTSUPP for every phy_init() and phy_power_on(). The block is
-> still resumed today, but only through the supplier link fw_devlink builds
-> from the phys phandle, which fw_devlink=3Doff and =3Dpermissive do not.
->=20
-> Move devm_pm_runtime_enable() before devm_phy_create(), as done for the
-> sibling HDPTX PHY in commit 10ba8479f460 ("phy:
-> phy-rockchip-samsung-hdptx: Enable runtime PM at PHY core level").
->=20
-> Fixes: b2a1a2ae7818 ("phy: rockchip: Add Samsung MIPI D-/C-PHY driver")
-> Signed-off-by: Jason Yang <jason98166@gmail.com>
-> ---
-
-Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-
-Greetings,
-
--- Sebastian
-
->  drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c | 8 ++++----
->  1 file changed, 4 insertions(+), 4 deletions(-)
->=20
-> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c b/drivers/=
-phy/rockchip/phy-rockchip-samsung-dcphy.c
-> index cbd780556da8..11e872cc6611 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
-> @@ -1610,16 +1610,16 @@ static int samsung_mipi_dcphy_probe(struct platfo=
-rm_device *pdev)
->  		return dev_err_probe(dev, PTR_ERR(samsung->grf_apb_rst),
->  				     "Failed to get system grf_apb_rst control\n");
-> =20
-> +	ret =3D devm_pm_runtime_enable(dev);
-> +	if (ret)
-> +		return dev_err_probe(dev, ret, "Failed to enable runtime PM\n");
-> +
->  	samsung->phy =3D devm_phy_create(dev, NULL, &samsung_mipi_dcphy_ops);
->  	if (IS_ERR(samsung->phy))
->  		return dev_err_probe(dev, PTR_ERR(samsung->phy), "Failed to create MIP=
-I DC-PHY\n");
-> =20
->  	phy_set_drvdata(samsung->phy, samsung);
-> =20
-> -	ret =3D devm_pm_runtime_enable(dev);
-> -	if (ret)
-> -		return dev_err_probe(dev, ret, "Failed to enable runtime PM\n");
-> -
->  	phy_provider =3D devm_of_phy_provider_register(dev, samsung_mipi_dcphy_=
-xlate);
->  	if (IS_ERR(phy_provider))
->  		return dev_err_probe(dev, PTR_ERR(phy_provider),
->=20
-> ---
-> base-commit: 1590cf0329716306e948a8fc29f1d3ee87d3989f
-> change-id: 20260821-dcphy-rpm-v1-14c80daecbf7
->=20
-> Best regards,
-> --=20
-> Jason Yang <jason98166@gmail.com>
->=20
->=20
-
---pzeob2d4d26oeuzd
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmqIUvMACgkQ2O7X88g7
-+pp0lg/+K+Tvqs0Naq4IISlWGfBhxDa4pBVw+MqK2HM4jMEAvmnRExdRd78kFsfZ
-cnbmGXjzq4sWdmJIaWq0LAOGvRURn0oYrzLtVFTS74k92iF9NVX2jXrywjNZmhUu
-OQPsX79AJTRL3Fkf1Z6+Edgf/E5chHRnAoMQAZMFCmZrJKp+z5F1m3U9ma/NhDyz
-I394sl+fzLP024Qy0qB2jL414/67pxGALNqwyRZfkjDF9BLpJl3gd+nf3uMpWoiw
-u+9eMRgS7Kw1apuXOxU1dVjktgOYzqQ1Nd65QI5ciMZHSryNNurAImX8HpBwKwf0
-YGLxsktqxO1jcidpOTDr2XTJ+C1sy6wXal+GpKGiDtKwx7Ods0FKRPvs+4skeJyq
-euPGRoNeNmj0raVm6Z7HdmP6oU5EGEZqFu0T5hSsQdoLvH0cDqBUztgJ38JdWY7H
-/BLigQDPUcXcs+9O1UAHyLLWWdEw4bYneQnsEPnAEd9i2UpoD/sbG1zCXOp79OHg
-edsC7W77u+z/FshrTa6HZ5C4izM+C1FZSg9NB9CUCp0LeBpNJzGkfLLZaCNztdtQ
-bWzeDSvWYmQG+I7P3LquXt98v9v2PmevGhwxkyKBLHuPd8NpuhAdhEyaa5vpSSg1
-ri6JyUXyg2c9HduY31nxnamk/dh0BtRmjVCtFVv5wvJxHd3Gggs=
-=kKPH
------END PGP SIGNATURE-----
-
---pzeob2d4d26oeuzd--
+-- 
+2.55.0
 
 
---===============3594035043897817505==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============3594035043897817505==--
-
