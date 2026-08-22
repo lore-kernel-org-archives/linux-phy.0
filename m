@@ -4,73 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C2BBC5DF97
-	for <linux-phy@archiver.kernel.org>; Sat, 22 Aug 2026 07:49:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23490C5DF97
+	for <linux-phy@archiver.kernel.org>; Sat, 22 Aug 2026 07:55:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fyI3sDcB/pOV71usQE83bV6zCG2HdqoKIP2XM+4zwkE=; b=iDb51ytMo5XdBb
-	1M0sjMFA3ZHKmk+CVelsDp3qyHhrTUYWyUFHv2q8J0lXuGckMHcBg6m/iiPG5mCgoHBjdbmfXRhca
-	pC/DolT9QgrXXcd+7LocArnTtIxOwQ9lA+pB+mf7fuOuXZ7niFRWWq88q38juHEQbJAylWIUGMh0J
-	H/eMeT35kpfzpc5zLcpHDcVUUniHTdV5omUGTByg6Cgr2+8ziqd4cAB03nQgeEHK2cOCk16nQtEPa
-	8cRkobH3s8qSPVuLWNARZgKhwpBHrcMw6Om7PcJXfxZw2mGifCcJCkqJC7JiZI8aE8AND+hJg310r
-	SEq72cqMLnuDpFkgLkxg==;
+	List-Owner; bh=G4N45xqgDEbzDWyrk/h71GRq2/hMWmqtv/T90ME1lPk=; b=UNpwzjGk7gv9Ql
+	+8U8qyBpZbrB7dnzaoG7oU4yPN6QWzLzkAjfVvRL+Nemp4mi1TihmhdFU0ZFLkoHmlqq/8FHzkWwC
+	udCI6mzHtMO5a6usUdxk1aCBt5nUR2ZIcm3Kx0mQifZTICv4+eODb0VlE84oIn+f5xfGbQ3z191vf
+	PNit8sL/fG/N25KOfGvWKu7QqBdwaeWRFslcQ8nh+kxkPygjhD62hnQv2zMWzXOaLP6ZUZWWDyWoK
+	JIpuMq7vhFif6I85Vp7oHcJn95vXQrmIxlIg2iimEr/z0yiBpSkigBDz/cL+q7X9E1TaDukt4UFip
+	lS4Mw8ALJFDhJRJfffrQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wxgTx-0000000EMFW-0vIU;
-	Sat, 22 Aug 2026 07:49:37 +0000
-Received: from mx.nabladev.com ([2a00:f820:417:0:178:251:229:89])
+	id 1wxga5-0000000EMjw-3UR8;
+	Sat, 22 Aug 2026 07:55:57 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wxgTf-0000000EM3p-2TXa;
-	Sat, 22 Aug 2026 07:49:23 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id A91EB11C820;
-	Sat, 22 Aug 2026 09:49:12 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nabladev.com;
-	s=dkim; t=1787384953; h=from:subject:date:message-id:to:cc:mime-version:
-	 content-transfer-encoding:in-reply-to:references;
-	bh=wof+pJXbG+zlMHLSCaXku6i83ZCIZasPbrJqZbEELpI=;
-	b=i/SXzMS2497Cc0QdRlNDbeEU+Rjr90khaCqVDwmkNLiyuE4YbxeUlT36FVfeAn9tdD+kay
-	QEDR0EjhKXcMG9HMOeYwNWe2FuUrX+qUeNMmIBUINrgTvJm/kCrmCrDtqb1n6Y1E0SwdLU
-	QBkWiE8xiawG+heEtjif4+UF7C8Y1a9Epsvtl8CDLGrFkl3lp3hyeC+le5hwdhQqxRM1aT
-	P8H4xOv+AEgw1iCj2NazF0Zf7VB27tgjwNxTsXlXvI7nGDS+BuLZFSv8anvYjRF35IhVlg
-	l5qt2z9jH8fWY58WSCSm69gpA8cJGivp2zaGa0hGkPWP+FtbmikeuaYV5mcJiw==
-From: Marek Vasut <marex@nabladev.com>
-To: linux-usb@vger.kernel.org
-Cc: fabrice.gasnier@foss.st.com,
-	Pankaj Dev <pankaj.dev@st.com>,
-	Marek Vasut <marex@nabladev.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Christian Bruel <christian.bruel@foss.st.com>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Rahul Kumar <rahul.kumar05@st.com>,
-	Rob Herring <robh@kernel.org>,
-	Rosen Penev <rosenp@gmail.com>,
-	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	devicetree@vger.kernel.org,
-	kernel@dh-electronics.com,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-stm32@st-md-mailman.stormreply.com
-Subject: [PATCH v3 9/9] arm64: dts: st: Add USB nodes on stm32mp251
-Date: Sat, 22 Aug 2026 09:46:42 +0200
-Message-ID: <20260822074816.548662-10-marex@nabladev.com>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20260822074816.548662-1-marex@nabladev.com>
+	id 1wxga4-0000000EMjq-0gcI
+	for linux-phy@lists.infradead.org;
+	Sat, 22 Aug 2026 07:55:56 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 723B1436CA;
+	Sat, 22 Aug 2026 07:55:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D91B91F000E9;
+	Sat, 22 Aug 2026 07:55:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1787385355;
+	bh=6N9au3zguC45nbY50QHDxwLeCSu+/FgjEfEQK+IV4Oc=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=T8QxpZEdYWax8TgfMDzJKMN85LEGBc2y3O4oFJjc/cn9TKktAvcwTP+wExSfRcJpZ
+	 cgBwjuw/fKMA73g61ole0UORo9/g/f3JL2rAMqoXwX2z9vFurLk84f2wU42Ny2PRh6
+	 Mm3283ZO3ZPHcENChUmVEkSXFRtJCzX3r4GK7LSebs/O8cIMVVN1+mDbJ1Q5/bV0g+
+	 oKB9hBXHFOcxOCr2cWaA2539zt1mih8CH2siWljDO8O4bdekF6dzDO42pCzvVby3EY
+	 +UGAz/zA1zrkmA0gbepsdBTG/5k6l32WWOBOsAkgUv89RtY3Ya8AsftQIrNxZEB6O5
+	 xLjgvsupx54dQ==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v3 1/9] dt-bindings: phy: Document ST STM32MP25
+ USB2-FEMTO PHY
+To: "Marek Vasut" <marex@nabladev.com>
+Cc: vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com, robh@kernel.org, conor+dt@kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org
+In-Reply-To: <20260822074816.548662-2-marex@nabladev.com>
 References: <20260822074816.548662-1-marex@nabladev.com>
-MIME-Version: 1.0
-X-Last-TLS-Session-Version: TLSv1.3
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260822_004919_954219_E8FB1432 
-X-CRM114-Status: GOOD (  10.18  )
+ <20260822074816.548662-2-marex@nabladev.com>
+Date: Sat, 22 Aug 2026 07:55:54 +0000
+Message-Id: <20260822075554.D91B91F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,143 +63,66 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Pankaj Dev <pankaj.dev@st.com>
-
-Add USB controller and PHY nodes to stm32mp251 DT.
-This includes two USB 2.0 FEMTO PHYs, USB 2.0 host
-controller and DWC3 DRD controller nodes.
-
-Signed-off-by: Pankaj Dev <pankaj.dev@st.com>
-Co-developed-by: Marek Vasut <marex@nabladev.com>
-Signed-off-by: Marek Vasut <marex@nabladev.com>
----
-Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>
-Cc: Christian Bruel <christian.bruel@foss.st.com>
-Cc: Conor Dooley <conor+dt@kernel.org>
-Cc: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Pankaj Dev <pankaj.dev@st.com>
-Cc: Rahul Kumar <rahul.kumar05@st.com>
-Cc: Rob Herring <robh@kernel.org>
-Cc: Rosen Penev <rosenp@gmail.com>
-Cc: Thinh Nguyen <Thinh.Nguyen@synopsys.com>
-Cc: Vinod Koul <vkoul@kernel.org>
-Cc: devicetree@vger.kernel.org
-Cc: kernel@dh-electronics.com
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
-Cc: linux-phy@lists.infradead.org
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: linux-usb@vger.kernel.org
----
-V2: - Fix up Sob/Cdb lines
-    - Move PHY into syscfg subnode
-    - Turn st,stm32mp25-syscfg into simple-mfd
-    - Use clock-cells = <1> to discern OSC and future PLL clock from the PHY
-V3: - Describe OHCI clock as the CMN clock
-    - Fix up Sob/Cdb lines further
----
- arch/arm64/boot/dts/st/stm32mp251.dtsi | 65 +++++++++++++++++++++++++-
- 1 file changed, 64 insertions(+), 1 deletion(-)
-
-diff --git a/arch/arm64/boot/dts/st/stm32mp251.dtsi b/arch/arm64/boot/dts/st/stm32mp251.dtsi
-index 6e985f115b195..dd2f7ddd9b634 100644
---- a/arch/arm64/boot/dts/st/stm32mp251.dtsi
-+++ b/arch/arm64/boot/dts/st/stm32mp251.dtsi
-@@ -1746,6 +1746,47 @@ stmmac_axi_config_1: stmmac-axi-config {
- 				};
- 			};
- 
-+			usbh_ohci: usb@482e0000 {
-+				compatible = "generic-ohci";
-+				reg = <0x482e0000 0x1000>;
-+				access-controllers = <&rifsc 63>;
-+				clocks = <&usb2_phy1 1>, <&rcc CK_BUS_USB2OHCI>;
-+				interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>;
-+				phys = <&usb2_phy1>;
-+				phy-names = "usb";
-+				resets = <&rcc USBH_R>;
-+				status = "disabled";
-+			};
-+
-+			usbh_ehci: usb@482f0000 {
-+				compatible = "generic-ehci";
-+				reg = <0x482f0000 0x1000>;
-+				access-controllers = <&rifsc 63>;
-+				clocks = <&usb2_phy1 0>, <&rcc CK_BUS_USB2EHCI>;
-+				companion = <&usbh_ohci>;
-+				interrupts = <GIC_SPI 139 IRQ_TYPE_LEVEL_HIGH>;
-+				phys = <&usb2_phy1>;
-+				phy-names = "usb";
-+				resets = <&rcc USBH_R>;
-+				status = "disabled";
-+			};
-+
-+			usb3dr: usb@48300000 {
-+				compatible = "st,stm32mp25-dwc3";
-+				reg = <0x48300000 0x100000>;
-+				access-controllers = <&rifsc 66>;
-+				clocks = <&rcc CK_KER_USB2PHY2>,
-+					 <&rcc CK_BUS_USB3DR>,
-+					 <&rcc CK_KER_USB2PHY2>;
-+				clock-names = "ref", "bus_early", "suspend";
-+				interrupts = <GIC_SPI 228 IRQ_TYPE_LEVEL_HIGH>;
-+				phys = <&usb2_phy2>, <&combophy PHY_TYPE_USB3>;
-+				phy-names = "usb2-phy", "usb3-phy";
-+				resets = <&rcc USB3DR_R>;
-+				st,syscfg = <&syscfg 0x4800>;
-+				status = "disabled";
-+			};
-+
- 			pcie_ep: pcie-ep@48400000 {
- 				compatible = "st,stm32mp25-pcie-ep";
- 				reg = <0x48400000 0x100000>,
-@@ -2002,9 +2043,31 @@ exti1: interrupt-controller@44220000 {
- 		};
- 
- 		syscfg: syscon@44230000 {
--			compatible = "st,stm32mp25-syscfg", "syscon";
-+			compatible = "st,stm32mp25-syscfg", "syscon", "simple-mfd";
- 			reg = <0x44230000 0x10000>;
- 			#clock-cells = <0>;
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			usb2_phy1: phy@2400 {
-+				compatible = "st,stm32mp25-usb2phy1";
-+				reg = <0x2400 0x24>;
-+				#phy-cells = <0>;
-+				#clock-cells = <1>;
-+				clocks = <&rcc CK_KER_USB2PHY1>;
-+				resets = <&rcc USB2PHY1_R>;
-+				status = "disabled";
-+			};
-+
-+			usb2_phy2: phy@2800 {
-+				compatible = "st,stm32mp25-usb2phy2";
-+				reg = <0x2800 0xc>;
-+				#phy-cells = <0>;
-+				#clock-cells = <1>;
-+				clocks = <&rcc CK_KER_USB2PHY2EN>;
-+				resets = <&rcc USB2PHY2_R>;
-+				status = "disabled";
-+			};
- 		};
- 
- 		pinctrl: pinctrl@44240000 {
--- 
-2.53.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0xvd10gVGhlIGByZWdgIHByb3Bl
+cnR5IGlzIGRlZmluZWQgaW4gdGhlIHNjaGVtYSBhbmQgdXNlZCBpbiB0aGUgZXhhbXBsZSBidXQg
+aXMgbWlzc2luZyBmcm9tIHRoZSBgcmVxdWlyZWRgIGxpc3QuCi0gW0xvd10gVGhlIGV4YW1wbGUg
+bm9kZSBuYW1lICd1c2ItcGh5QDI0MDAnIHZpb2xhdGVzIHRoZSBnZW5lcmljIFBIWSBzY2hlbWEg
+cGF0dGVybi4KLSBbTG93XSBUaGUgJyNjbG9jay1jZWxscycgcHJvcGVydHkgbGFja3MgZG9jdW1l
+bnRhdGlvbiBmb3IgdGhlIGNsb2NrIGluZGljZXMuCi0tCgotLS0gUGF0Y2ggWzFdOiBbUEFUQ0gg
+djMgMS85XSBkdC1iaW5kaW5nczogcGh5OiBEb2N1bWVudCBTVCBTVE0zMk1QMjUgVVNCMi1GRU1U
+TyBQSFkgLS0tCmNvbW1pdCBmZWU4NDk0MzI3MTNhYWQ0MTVlNzNlZDg3MmU2ZGU2MjIyMDZiZWU4
+CkF1dGhvcjogUGFua2FqIERldiA8cGFua2FqLmRldkBzdC5jb20+CgpkdC1iaW5kaW5nczogcGh5
+OiBEb2N1bWVudCBTVCBTVE0zMk1QMjUgVVNCMi1GRU1UTyBQSFkKClRoaXMgY29tbWl0IGRvY3Vt
+ZW50cyB0aGUgVVNCMiBwaHkgZm9yIFNUTTMyTVAyNSBVU0IyIGNvbnRyb2xsZXJzLiBJdCBpbnRy
+b2R1Y2VzCmJpbmRpbmdzIGZvciB0d28gc2xpZ2h0bHkgZGlmZmVyZW50IHBoeXMgcHJlc2VudCBp
+biB0aGUgU1RNMzJNUDI1IFNvQyB1c2luZwpzZXBhcmF0ZSBjb21wYXRpYmxlIHN0cmluZ3MuCgo+
+IGRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L3N0LHN0
+bTMyLXVzYjJwaHkueWFtbCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkv
+c3Qsc3RtMzItdXNiMnBoeS55YW1sCj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiBpbmRleCAwMDAw
+MDAwMDAwMDAwLi5jYzUwNDQ3OTBiZWVhCj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBiL0RvY3VtZW50
+YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvc3Qsc3RtMzItdXNiMnBoeS55YW1sCj4gQEAg
+LTAsMCArMSw2NyBAQAo+ICsjIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiAoR1BMLTIuMC1vbmx5
+IE9SIEJTRC0yLUNsYXVzZSkKPiArJVlBTUwgMS4yCj4gKy0tLQoKWyAuLi4gXQoKPiArcHJvcGVy
+dGllczoKPiArICBjb21wYXRpYmxlOgo+ICsgICAgZW51bToKPiArICAgICAgLSBzdCxzdG0zMm1w
+MjUtdXNiMnBoeTEKPiArICAgICAgLSBzdCxzdG0zMm1wMjUtdXNiMnBoeTIKPiArCj4gKyAgIiNj
+bG9jay1jZWxscyI6Cj4gKyAgICBjb25zdDogMQo+ICsKCltTZXZlcml0eTogTG93XQpUaGlzIHNl
+dHMgI2Nsb2NrLWNlbGxzIHRvIDEsIG1lYW5pbmcgY29uc3VtZXJzIHdpbGwgbmVlZCB0byBwYXNz
+IGFuIGluZGV4LApidXQgdGhlcmUgZG9lc24ndCBhcHBlYXIgdG8gYmUgYW55IGRvY3VtZW50YXRp
+b24gb2YgdGhlIHZhbGlkIGluZGljZXMgKGUuZy4sIAowIGZvciBQTEwsIDEgZm9yIENNTikgaW4g
+dGhlIGJpbmRpbmcgb3IgYSBkdC1iaW5kaW5ncyBoZWFkZXIgZmlsZS4KCkNvdWxkIHRoaXMgYmUg
+dXBkYXRlZCB0byBkb2N1bWVudCB3aGF0IGluZGV4IGNvcnJlc3BvbmRzIHRvIHdoaWNoIGNsb2Nr
+IHNvCmRldmljZSB0cmVlIGF1dGhvcnMgYXJlbid0IGZvcmNlZCB0byByZWx5IG9uIHVuZG9jdW1l
+bnRlZCBtYWdpYyBudW1iZXJzPwoKPiArICAiI3BoeS1jZWxscyI6Cj4gKyAgICBjb25zdDogMAo+
+ICsKPiArICByZWc6Cj4gKyAgICBtYXhJdGVtczogMQoKWyAuLi4gXQoKPiArcmVxdWlyZWQ6Cj4g
+KyAgLSBjb21wYXRpYmxlCj4gKyAgLSAiI2Nsb2NrLWNlbGxzIgo+ICsgIC0gIiNwaHktY2VsbHMi
+Cj4gKyAgLSBjbG9ja3MKPiArICAtIHJlc2V0cwo+ICsgIC0gdmRkMzMtc3VwcGx5CgpbU2V2ZXJp
+dHk6IExvd10KVGhlIHJlZyBwcm9wZXJ0eSBpcyBkZWZpbmVkIGluIHRoZSBzY2hlbWEgYW5kIHVz
+ZWQgaW4gdGhlIGV4YW1wbGUgYmVsb3csCmJ1dCBpdCBpcyBtaXNzaW5nIGZyb20gdGhpcyBsaXN0
+LgoKSWYgaXQgaXMgb21pdHRlZCBoZXJlLCBkZXZpY2UgdHJlZSBub2RlcyB3aXRob3V0IGEgcmVn
+aXN0ZXIgb2Zmc2V0IGNhbgpzaWxlbnRseSBwYXNzIHNjaGVtYSB2YWxpZGF0aW9uLCBldmVuIHRo
+b3VnaCB0aGUgZHJpdmVyIHdpbGwgZmFpbCB0byBwcm9iZS4KClNob3VsZCB0aGUgcmVnIHByb3Bl
+cnR5IGJlIGluY2x1ZGVkIGluIHRoaXMgcmVxdWlyZWQgbGlzdD8KCj4gKwo+ICthZGRpdGlvbmFs
+UHJvcGVydGllczogZmFsc2UKPiArCj4gK2V4YW1wbGVzOgo+ICsgIC0gfAo+ICsgICAgI2luY2x1
+ZGUgPGR0LWJpbmRpbmdzL2Nsb2NrL3N0LHN0bTMybXAyNS1yY2MuaD4KPiArICAgICNpbmNsdWRl
+IDxkdC1iaW5kaW5ncy9yZXNldC9zdCxzdG0zMm1wMjUtcmNjLmg+Cj4gKwo+ICsgICAgdXNiLXBo
+eUAyNDAwIHsKCltTZXZlcml0eTogTG93XQpHZW5lcmljIHBoeSBzY2hlbWEgcGF0dGVybnMgaW4g
+ZHRzY2hlbWEgcmVzdHJpY3Qgbm9kZSBuYW1lcyBmb3IgcGh5CnByb3ZpZGVycyB0byBtYXRjaCB0
+aGUgcmVndWxhciBleHByZXNzaW9uIF5waHkoQC4qKT8kLgoKV2lsbCB0aGlzIG5vZGUgbmFtZSB0
+cmlnZ2VyIHdhcm5pbmdzIHdoZW4gdmFsaWRhdGluZyB0aGUgZXhhbXBsZSBkdXJpbmcgYSAKZHRf
+YmluZGluZ19jaGVjaz8KCj4gKyAgICAgICAgY29tcGF0aWJsZSA9ICJzdCxzdG0zMm1wMjUtdXNi
+MnBoeTEiOwo+ICsgICAgICAgIHJlZyA9IDwweDI0MDAgMHgyND47Cj4gKyAgICAgICAgI3BoeS1j
+ZWxscyA9IDwwPjsKPiArICAgICAgICAjY2xvY2stY2VsbHMgPSA8MT47Cj4gKyAgICAgICAgY2xv
+Y2tzID0gPCZyY2MgQ0tfS0VSX1VTQjJQSFkxPjsKPiArICAgICAgICByZXNldHMgPSA8JnJjYyBV
+U0IyUEhZMV9SPjsKPiArICAgICAgICB2ZGQzMy1zdXBwbHkgPSA8JnZkZDMzdXNiPjsKPiArICAg
+IH07CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNo
+c2V0LzIwMjYwODIyMDc0ODE2LjU0ODY2Mi0xLW1hcmV4QG5hYmxhZGV2LmNvbT9wYXJ0PTEKCi0t
+IApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
+dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
