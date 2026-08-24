@@ -4,153 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1A08EC5DF94
-	for <linux-phy@archiver.kernel.org>; Mon, 24 Aug 2026 14:40:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F8C5C5DF94
+	for <linux-phy@archiver.kernel.org>; Mon, 24 Aug 2026 15:23:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HhhCQQgnCi9mq5wIkkucr/MF74WN4dIUdyuFzNpjTs8=; b=gLGLA8i0NHZZAg
-	Uo02zbHKcsxRbbenYui+T5Wb2lCL61N6RfVr4R51I9BIKf8//29qpcwN9QQdfWGhkytT+QfPrhQs8
-	3dZAhaDZJQGp+r71BE1zKPFrbFMQ0cHECD2298BfVcoFK7UvKHQeCm+K30pHzUKAyUg8A+UVKczhu
-	B0CBZ4iSQT3nz4cuNZRDZKkjydeM2PR0I7lusHZES8ykfIrI1U5Js67Z6xwueBYMLTcA0/H87aeS/
-	VEmnkXCNVFgt+BH34CW7MeyhAe/oB10ffm+iCzcNIC8IpTNvpvet050FNpXYAcSVaIxJNpLXTiblg
-	c0hyClPVt6BIkS+RlFFA==;
+	List-Owner; bh=cOM+sb3+oY1cUPgqBqdtWYz9kSjLT/HzZEZNQR+0Xps=; b=M4+57kEYPvD1zs
+	JiUlILaHkR3Vf41fXgCILNyU6LI6mVjmv6cYD2KyX7H9LgvRNXpK2n64v9q3oR7G/sKQlduur5Ce/
+	sHAbT+2Ee8kJZDK2rSj1Oqv03CxeqzGJ1VdKaWSGwF27EEuZu1ZGtCxA8eHQANEpyP+H1v3FcKb96
+	27EG+AihLDrQ0BPlwWTDnUa6eooNTA4HnzFvytcYknky+WCtZU5CXadpS6adqrL1+fsDbcp1mqPxW
+	4ueegTj7NZ61Otbw1T4u2minwGc5XVthZvWsDw2QIom+CVMfBh1igf/zrXoMozPqw0/DPUO/FIbTE
+	03kaUnaYAU1Wi6Di3GCw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyVqL-0000000GoCW-01GT;
-	Mon, 24 Aug 2026 14:40:09 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wyWWi-0000000GuvF-0izG;
+	Mon, 24 Aug 2026 15:23:57 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyVqH-0000000GoBJ-40Mo
+	id 1wyWWf-0000000Gutl-04yS
 	for linux-phy@lists.infradead.org;
-	Mon, 24 Aug 2026 14:40:07 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 67OCv6ZQ2006761
-	for <linux-phy@lists.infradead.org>; Mon, 24 Aug 2026 14:40:05 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	lFSdKwtvN9qDI+3vqSCVFtNdEXjYZVeFXR3vtR6Cuak=; b=X8KOpiTJmaZ9DHMZ
-	MlulcRyUEU1yAHwhtOzbhKAzvVu36OW6TTCK6yyDdXZFKzgYdw8JDcgi5DxfP+bc
-	3/4U60s9lP/ExjpH0iNnCojKiI6ir6afL367E4Oex/f+iutnOZZIODhTy1CqFdLH
-	CHA3pAaXc5ROt26beNAnnxgzhF5gvce6WPHHjlHTySRgVX63BeUjYnmlls7xsz4F
-	5faaQhYhhRtjC+D2+kYsb7BT2XX7daK44ZEK2W8RYZYcn/jAPdeURc0dUcjbBBBL
-	tbp82Bou+Grf4sukt++hZ40i3loT6T0WDj0IdiKtniV6ATAKPpWAvtEa42qb+Cts
-	UIu6sw==
-Received: from mail-vs1-f69.google.com (mail-vs1-f69.google.com [209.85.217.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4g8kv793cc-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 24 Aug 2026 14:40:04 +0000 (GMT)
-Received: by mail-vs1-f69.google.com with SMTP id ada2fe7eead31-744e789f00fso91752137.2
-        for <linux-phy@lists.infradead.org>; Mon, 24 Aug 2026 07:40:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1787582404; x=1788187204; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=lFSdKwtvN9qDI+3vqSCVFtNdEXjYZVeFXR3vtR6Cuak=;
-        b=j5/z8fonoj0f6wlQjPq6qQY82mbtWCUxYYIBllr7j2YGNp2mQVwEfLbfgoCPZPNRGx
-         Y+yajmqxOr+aQz48z5fSiRaMgVeJruqAXX4cdNblNlS3V8bRFHdVbISgmMD6l3J1Yn25
-         0VTMDYOepbHSpMFYXeryJ1t1Jc//9SE4vq6Ut+Bu7ayDcm04/UPp+3cxrmnNkSby/xmc
-         Fd/N3VOttIsyK03PqVz3VgDuW+fKepHv1wYwbs/pGCpihU26y6KQ+ZV6obM3dIbJah7u
-         Z3aR4I7PPTIG2U93AwWgdK8O4ypqsWyRpVhlDwmcaw9WYq4KFwxd7oLHKSxwVhw1wQSH
-         DW1Q==
+	Mon, 24 Aug 2026 15:23:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1787585032;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=t3RhcvzE2LDgfcbnY3j5KII1AB4sSFJ69Dx82UdW9TY=;
+	b=iy+z0aozX5vWBjlAoHAHrmeDI4AofDhMbBhAIyGvnKKZPkwQvd88WGj3xbghEGNd8Lhn03
+	fEXNYfhAZgVWvETlXfs+6XxtX1m/0LT5otvbjsT7NayCnmFmJWbq1NJuDvINVH1I7sweAs
+	Nk+BL60oxCjkRMULgRV6O1GEcaRDNCE=
+Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com
+ [209.85.222.197]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
+ us-mta-645-mxRwiwRxOZqM_ArccLgpJg-1; Mon, 24 Aug 2026 11:23:49 -0400
+X-MC-Unique: mxRwiwRxOZqM_ArccLgpJg-1
+X-Mimecast-MFC-AGG-ID: mxRwiwRxOZqM_ArccLgpJg_1787585029
+Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-92e82060977so360881085a.1
+        for <linux-phy@lists.infradead.org>; Mon, 24 Aug 2026 08:23:49 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1787582404; x=1788187204;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=lFSdKwtvN9qDI+3vqSCVFtNdEXjYZVeFXR3vtR6Cuak=;
-        b=OGfw9URk4caFHUPYLJxadVR1z7hrAyTr0jU4+Xa9nOywcXXo4JGo3qMyxkoVA4Ooqv
-         X3qTghqfAMTBvQVJd7Y/dVj+afbBSDRE93jElIKgiyTRrqXE8ut3UZVwuOf+nKMfEhNV
-         r3dZNmPFroO0jUxpJFG6XpryQ7AP8bjmw/xiC570kO1Y6omSd9WAGQ6EKwWwDoGquXWE
-         YAFKnq8VB/fE5wsMSAm5/LbUiQjopePERspsK0tJ56+PzPIsC7uSgZq9/NLPN6yIKFuA
-         bqpANH2XfQoSkrFRIwMm5AWn2Bm2Et01cgeX715Fdi7VpTFiVnxI2vliCTT6vVD/MKfE
-         842w==
-X-Forwarded-Encrypted: i=1; AHgh+RrVdOeu3l/KnkXdXu24bN91O+isqjE9iVYlE86Gz5NN1iYxhKiiVlz9oGXweGRkz4uFB/gSX7TW7IM=@lists.infradead.org
-X-Gm-Message-State: AFuF++lqtm38N4rZTtlPX5sH/tigPogNAxOvTHL5HdPw2/A79VVEOVD7
-	CrMSMS83Ed99vKAu8fvi+QguILZiy0XQ2VKvXLTaOdgYKR6MD++4n3x8JH16VEBiK4DAwGWtkNS
-	cIkiS3S20Yivkfw2Iz2AVqzRgH18I1ug0BAVmDyVYdQXZ2eWmtUfHPUBLnwtKhZG05XV+
-X-Gm-Gg: AR+sD10Z9u4CsVh2i9LplUWaHqW7QqBHcr33OMnaAXQuw7QzSuiDAn7nBWnhMq5IcLV
-	mY9pzKP5BVQG171MOo3C3TEVS5XO9xIbv+KlDFZ21UahLgWxaYBRKDSM9lZLOggXrR+7hUY12p9
-	DsmhaAyWQ3sUEr+hONaKVF6UzQaSwi0xB7XiOn0KnTEmRmwJrTEdCvPPwEw0uKQ2NuIPi/NOv9w
-	ihf5Fn9yLN91sHdVixvqnzD2E3ywLAnUMyu1h2hpLb5YTqcLMJauQkjZO5KnIc6VkfW+n0Q4DCg
-	1rkGUXYsImE/vC39Xo/Ilsy0az69w8PZ72EQa6Np3G68IRaXF2S0nkWxUXEScYzJvazOFgH3b7b
-	ZA6aYEDTgElq/4M0OomkZUKoq
-X-Received: by 2002:a05:6102:1594:b0:778:30ee:f44a with SMTP id ada2fe7eead31-77a5f2e70b7mr3521966137.0.1787582403929;
-        Mon, 24 Aug 2026 07:40:03 -0700 (PDT)
-X-Received: by 2002:a05:6102:1594:b0:778:30ee:f44a with SMTP id ada2fe7eead31-77a5f2e70b7mr3521958137.0.1787582403532;
-        Mon, 24 Aug 2026 07:40:03 -0700 (PDT)
-Received: from [192.168.120.193] ([178.235.128.140])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-6a59e1c3003sm8992565a12.23.2026.08.24.07.40.01
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 24 Aug 2026 07:40:02 -0700 (PDT)
-Message-ID: <6d30f908-b127-4f30-a496-d625e811b8fe@oss.qualcomm.com>
-Date: Mon, 24 Aug 2026 16:40:00 +0200
+        d=1e100.net; s=20251104; t=1787585029; x=1788189829;
+        h=user-agent:in-reply-to:content-disposition:content-type
+         :mime-version:references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=t3RhcvzE2LDgfcbnY3j5KII1AB4sSFJ69Dx82UdW9TY=;
+        b=YgUZt6985cO8tjXq110oQ1JlFNXxmGxfSS0GnVlN58egI0ahjCROQcSNp4+3OvMPM7
+         gXdeBwAxAFp7ayAgtco1xgoUkQ6ZxTn5tkyYoEh+v6o5Q5DY55wOlTVibCWBNk4dMWYb
+         IzV73M6NLuEQGq4AA+sPlRc8mx3GMwguGxSzpe3GcCCE4qqWj9UR99nugobZgGL/Dkv2
+         p4xuWdzmyZQp34U+KW3AhWh8pyLQ9OZBdWcVUYkkS+cYI9sHN7BjsN+hzQb2sqC07pU/
+         BMUya+P1HwqFweYaHwUvJQcbRsyiMjlYEPMcSuDmO5KjmGcVhVRdElTPkVECYd98Ki3M
+         6G3A==
+X-Forwarded-Encrypted: i=1; AHgh+RruYU8akwTCsLEy9bo7F8NrMvsRxrGcxsqQBZXGbMjgltn2ETgzhE5CA7aQl08FAl8xqnBprMAxfsI=@lists.infradead.org
+X-Gm-Message-State: AFuF++mcQ4BFLSWb4+PzahasaFD+qUmA7VHOm+8XBZhl4k5dgNLcl/mE
+	KIMTVHrr+rrUGiMs1/atnlFpd6VIaLbZbi9ppQHUP1wEqfTfMKW5Cqz86nW7eg5D30CaM7v/BH2
+	ZujJztIXPrkYxSfe6zEwV0PS4xQQOgDRsgAUQm+pTkTQ8WwjncU8YXpWpnWgLC9vHrxo=
+X-Gm-Gg: AR+sD13HD7j1WoAPWZGmymes/i8sgHAXxQcX/IGbumaIBlI2lh/ngB7zhgNfBgUagWD
+	4fhFUNdfOin+XMhIYCWZqfYONO5KusdZQkg19zZBjeJ44xlJva6E5HzQq/Tmn9ZcKucOz0Z7A6k
+	ENfiwusEdn+q8tDpEAFZzlNuyLPBDPZDyD6B0TrL4aqte9irKulXu8IPxJGn1YSCNrfm7xTjOIF
+	C12R4Yf8O4II8nK+D/yJhT3qJlRTLuvI0luQoLDM0WCSkn3w0ok8gNjJTJqsuJzv6Vjz35RRBPy
+	VUQHZlXvdHBmTNKV2qX5QLCEqYPDeV9aMLjm5cecmbb+vzTQP257941TeAkeUvQVCQKnAMj+fNH
+	wKIdki5URi+5aJqzT/iPZRrIfLI/dg0x8ouM=
+X-Received: by 2002:a05:620a:410b:b0:918:7e9e:de74 with SMTP id af79cd13be357-93728511a13mr3206787485a.17.1787585029353;
+        Mon, 24 Aug 2026 08:23:49 -0700 (PDT)
+X-Received: by 2002:a05:620a:410b:b0:918:7e9e:de74 with SMTP id af79cd13be357-93728511a13mr3206778885a.17.1787585028700;
+        Mon, 24 Aug 2026 08:23:48 -0700 (PDT)
+Received: from redhat.com (c-73-183-53-213.hsd1.pa.comcast.net. [73.183.53.213])
+        by smtp.gmail.com with ESMTPSA id af79cd13be357-93749ae390esm523684385a.16.2026.08.24.08.23.47
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 24 Aug 2026 08:23:48 -0700 (PDT)
+Date: Mon, 24 Aug 2026 11:23:47 -0400
+From: Brian Masney <bmasney@redhat.com>
+To: Geert Uytterhoeven <geert+renesas@glider.be>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>, linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-clk@vger.kernel.org
+Subject: Re: [PATCH 0/2] phy: Make sure clk_init_data is fully initialized
+Message-ID: <aoxiAyoETWEZ1bue@redhat.com>
+References: <cover.1787240165.git.geert+renesas@glider.be>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 05/14] arm64: dts: qcom: ipq5018: Flatten usb
- controller node
-To: George Moussalem <george.moussalem@outlook.com>,
-        Vinod Koul <vkoul@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Praveenkumar I
- <quic_ipkumar@quicinc.com>,
-        Varadarajan Narayanan <quic_varada@quicinc.com>,
-        Philipp Zabel <p.zabel@pengutronix.de>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-        Wesley Cheng <quic_wcheng@quicinc.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-usb@vger.kernel.org
-References: <20260812-ipq5018-usb3-v2-0-8f355d7ff0ef@outlook.com>
- <20260812-ipq5018-usb3-v2-5-8f355d7ff0ef@outlook.com>
- <8e175474-1275-4287-9101-1c54afdfcd09@oss.qualcomm.com>
- <SN7PR19MB6736BC1B0AF80D243B8C08E99DA02@SN7PR19MB6736.namprd19.prod.outlook.com>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <SN7PR19MB6736BC1B0AF80D243B8C08E99DA02@SN7PR19MB6736.namprd19.prod.outlook.com>
-X-Authority-Analysis: v=2.4 cv=Cfg4Irrl c=1 sm=1 tr=0 ts=6a8c57c4 cx=c_pps
- a=5HAIKLe1ejAbszaTRHs9Ug==:117 a=PRfkaYvzSr8QmIIGAkY2Sg==:17
- a=IkcTkHD0fZMA:10 a=Sv0fKeRqtYgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
- a=UqCG9HQmAAAA:8 a=EUspDBNiAAAA:8 a=f1ofXoCs9oobWTv4rbcA:9 a=QEXdDO2ut3YA:10
- a=gYDTvv6II1OnSo0itH1n:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYwODI0MDEyMyBTYWx0ZWRfX+OFZuIVgPkoC
- kVq21vIQlYo5FE3HML1scFYdwgun25NHD/Kaw0FK0P0bV9eot9wUsQUm0ut7TrROh2tilGrJawy
- W/+ROa+adVAn9mzf/bwWidsRHzARRoo=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODI0MDEyMyBTYWx0ZWRfXzyN0D3lWZUBr
- 9bWmgnPov1zLm208qLiE8/mZUar3QQPW/TZ1NWXj/zytK57NbhEbKd84ouCh2C3cfRJRaGFHpKs
- QJSg4uGVmLZMC/MG2ZU2d+5vC8fLTqylg8cjG3RqTnn259/0NDgvaFFWHG1bCEtW6Y29Mrl6C0C
- NR+6aETm4NKEv4Z0i+Y202J85q0XmA8Fbutj7H2wMlBcME83WBSBCe1g9zwS+tDZi/4yT8FRdWI
- 2U/Nbkp+rQx2Xfh0Q+nMp/eFcpmPmZ2awGVaP1eMwVgAKyXh8EfWqJmboknhOzbzR66BwQ/noWG
- awfdRa4VhjI+WFnHGEkUU/+5RytfmQ9ozOvCROdRfljMaLda09XJT+Z0dl0z2xpWmyAjTL9tQLL
- gCtKqc0YnKJtI/8LRVB0bIriRbLIWjJHS4cHn9VxlYHsw4Xkx6VVtTf9++wT8oVyBHbHYZER4Ui
- dBAe9PBOA0TcfZGXKxA==
-X-Proofpoint-ORIG-GUID: CUISZTK1KPP6yn1J-NED4uOw1F-82Pm-
-X-Proofpoint-GUID: CUISZTK1KPP6yn1J-NED4uOw1F-82Pm-
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-08-24_04,2026-08-24_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 phishscore=0 impostorscore=0 spamscore=0 suspectscore=0
- priorityscore=1501 malwarescore=0 clxscore=1015 lowpriorityscore=0
- bulkscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
- definitions=main-2608240123
+In-Reply-To: <cover.1787240165.git.geert+renesas@glider.be>
+User-Agent: Mutt/2.4.0 (2026-06-19)
+X-Mimecast-Spam-Score: 0
+X-Mimecast-MFC-PROC-ID: KsUdjkAKM-pLqyUdS6LXzevnCeItz7leudSDAQj5N8o_1787585029
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260824_074006_025843_57D24659 
-X-CRM114-Status: GOOD (  11.55  )
+X-CRM114-CacheID: sfid-20260824_082353_124983_5DF1A91B 
+X-CRM114-Status: GOOD (  16.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -167,26 +113,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 8/24/26 11:26 AM, George Moussalem wrote:
-> On 8/24/26 12:59, Konrad Dybcio wrote:
->> On 8/12/26 11:34 AM, George Moussalem via B4 Relay wrote:
->>> From: George Moussalem <george.moussalem@outlook.com>
->>>
->>> Flatten usb controller node and update to using latest bindings and
->>> flattened driver approach.
->>>
->>> Signed-off-by: George Moussalem <george.moussalem@outlook.com>
->>> ---
->>
->> Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+On Fri, Aug 21, 2026 at 12:08:38PM +0200, Geert Uytterhoeven wrote:
+> 	Hi all,
 > 
-> Thanks for the RB tag. There will be an update in v3 relative to the
-> size of the register space which should be 0xf1c00 to cover QSCRATCH
-> too. Do you want to review it again then or shall I keep the RB tag?
+> The clk_init_data structure contains several mutually-exclusive members
+> for different methods to specify the possible parents of a clock,
+> prompting drivers to initialize only the members they need.  However,
+> not initializing all members may cause subtle issues, which are only
+> exposed when CONFIG_INIT_STACK_ALL_PATTERN or CONFIG_INIT_STACK_NONE is
+> enabled.
+> 
+> Hence this series aims to make sure all members are fully initialized,
+> to avoid such bugs, and to prevent future breakage when converting
+> drivers to a different method for specifying the parents.
+> 
+> Part One[1] fixed all cases that I identified to be real bugs, in
+> response to a crash I saw on BeagleBone Black.
+> 
+> This series is the PHY subpart of Part Two, which fixes remaining cases
+> that are currently harmless.  These are still fragile, and may cause
+> future breakage when converting drivers to a different method for
+> specifying the parents.
+> 
+> Thanks for your comments!
+> 
+> [1] "[PATCH treewide 0/5] clk: Make sure clk_init_data is fully
+>      initialized (part 1)"
+>     https://lore.kernel.org/cover.1787165329.git.geert+renesas@glider.be
 
-Keep it
+For the series:
 
-Konrad
+Reviewed-by: Brian Masney <bmasney@redhat.com>
+
 
 -- 
 linux-phy mailing list
