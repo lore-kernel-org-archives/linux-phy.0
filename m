@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F19F5C61DB6
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EDBA1C61DB4
 	for <linux-phy@archiver.kernel.org>; Tue, 25 Aug 2026 09:47:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
@@ -12,46 +12,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nIxfdPLlrt95dph2IXXtVeFxdWCl4SipHUoJX6ydeSc=; b=H37vpgvlA0za7y
-	qFWKUqonwz608ekwKR/qtWywiK8EK3CumVdCe6Dt9srnuPBsVji3tjPu8Sj+Oleug/Bs32QrHDJUq
-	G6mlGYuwFtpTlU2B/R+1uS9oqlR9VOPP5WmOd2xzJsuvYL5fVfZjW1A3c3c5NBAUCwyZigzBJKU4t
-	zJcj+Dfwa1h/QIUwkuj7C1S+QS3d5ANsL2uB7ZF3LiIepnmsltc9Skalwh0sm04t2cg6dsNoJK3Be
-	RR5MH1ikDsg1ebG71Eq0hpXHxUOT0T+XouOhEX5EqgJOMlmxP23C+x/eLAqsAnwrmoWuOvJPQRY2M
-	v3S/7cHAUpDj3/GLpx+g==;
+	List-Owner; bh=CDDBo1kgqavZmkwCDyAossISNz8nWD72lO8KIf0ZS10=; b=VIQo7RuYD/uVsy
+	8GhEFeDOM30qtEzkVOL8NSLm/3XEYN4lXLo1vo3Bcm0rWjGEw3NB9X04ZrNM6b9v3LAlxfpatewmq
+	IIc52TFTEKBGpogL+y5HjeCZem0KVFubASwAx8iHI2nxLMTspg3yVHN59Lwf2WbhlVlrwJd8sOyYu
+	iKOhVogHZFeeY4lbdqB+p6FLRSKo/aNEbeE0woxyvge+LG0n/Sv+x1t9JK8OAh2ol/8Prl7bAZuzs
+	RmlmmEvNq4i2DKCXFYokOxqZeg/nyHQpotvmlS1/0goiFCBy3wX9E6V/PY0K0SJzLPNnR5FJc1h/n
+	oFIEnmONFhi6WIz0zm5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wynl5-00000000WUS-1rRT;
+	id 1wynl5-00000000WUW-21yR;
 	Tue, 25 Aug 2026 09:47:55 +0000
-Received: from mx.nabladev.com ([178.251.229.89])
+Received: from mx.nabladev.com ([2a00:f820:417:0:178:251:229:89])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wynl3-00000000WTM-00Ot;
+	id 1wynl2-00000000WTA-42MN;
 	Tue, 25 Aug 2026 09:47:54 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id D8CBE11CC55;
-	Tue, 25 Aug 2026 11:47:43 +0200 (CEST)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 879F911CBA7;
+	Tue, 25 Aug 2026 11:47:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nabladev.com;
-	s=dkim; t=1787651264;
+	s=dkim; t=1787651259;
 	h=from:subject:date:message-id:to:cc:mime-version:content-type:
 	 content-transfer-encoding:content-language:in-reply-to:references;
-	bh=GyJOErG3s8GlSEmj+9LyhK1ZcgZmzhmpH3gk6EXWH0U=;
-	b=KSLTrG1dU4maTkSkUQiq2JibZnDH/0QxNj8Uu69yr7yFNL4d5RS85XbpkaSOGORSrbB7rg
-	wOPKHZkS64J8shLg8G/ufZydU4//HEJp0Kt9vap6n9etisepHzTlFDblvKElq430UTzZqk
-	Vi7YAEuXvt1jVGUOQvzOoFWkW7kkYIbJuwqkmIedLc8e9VQUCddojhbbEB/t6EOUwYinTN
-	0yvZqM3k/S7cNt43oSs2g/khqoPq3hZ10EVTO2WuSbDNvotgPu8Pc7mPLg9D1d3EVegRR+
-	s5AaFfBhNxFuhpX301hvH8gOeWkmWbN41hzQoMrcsO16i7S+dZ7iDNtYamoJkA==
-Message-ID: <68145a72-d543-4e94-af27-cba6b620c13d@nabladev.com>
-Date: Mon, 24 Aug 2026 16:39:49 +0200
+	bh=qWzWWNS42exc7ZHN0500c9MV5vEAEMaWiWpVREU3tJ0=;
+	b=KA41FsLojocrPYcAPQ5ThUy7TmZo41kwn3HTeEpM3yq9L9aybF5GosZV+tHWUWNxBGFKzw
+	TpJ0BPMsvZ+3AO62YXUCEXwEZipbVfJXnFIvwuexTFpsNpU8VgyLRhSt8idP/V2ySY9FLG
+	xldTKRU2LSnYLrqKot9/CtG2GkQED4xj3mETtSFq920LoQztVtUA/tym0aWimuSS7UJeSh
+	MPK29nwryWqkv14eupeLr4h8ORuKk7v4lZ9kXGCrb3Ip/sgd7DF4OUY3tswdTLNVgffWmw
+	3d7qxqAVB++fBBBu8lrxpqjL19gYcl7irm1t8nuyMZpe/g7uio7CQlBO2HBozw==
+Message-ID: <ec43c68d-7f68-4ad0-9bfc-2b6dc0c5ec14@nabladev.com>
+Date: Mon, 24 Aug 2026 16:39:23 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 9/9] arm64: dts: st: Add USB nodes on stm32mp251
+Subject: Re: [PATCH v3 8/9] arm64: dts: st: Add USB nodes on stm32mp231
 To: Fabrice Gasnier <fabrice.gasnier@foss.st.com>, linux-usb@vger.kernel.org
-Cc: Pankaj Dev <pankaj.dev@st.com>,
- Alexandre Torgue <alexandre.torgue@foss.st.com>,
+Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Francois Choleau <francois.choleau@st.com>,
  Christian Bruel <christian.bruel@foss.st.com>,
  Conor Dooley <conor+dt@kernel.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>,
  Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Neil Armstrong <neil.armstrong@linaro.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Pankaj Dev <pankaj.dev@st.com>,
  Rahul Kumar <rahul.kumar05@st.com>, Rob Herring <robh@kernel.org>,
  Rosen Penev <rosenp@gmail.com>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
  Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
@@ -59,15 +59,15 @@ Cc: Pankaj Dev <pankaj.dev@st.com>,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-stm32@st-md-mailman.stormreply.com
 References: <20260822074816.548662-1-marex@nabladev.com>
- <20260822074816.548662-10-marex@nabladev.com>
- <a6c55491-7cbe-4856-bb45-b7f5872966fc@foss.st.com>
+ <20260822074816.548662-9-marex@nabladev.com>
+ <a77b459f-5b08-453a-a247-c320617beee6@foss.st.com>
 Content-Language: en-US
 From: Marek Vasut <marex@nabladev.com>
-In-Reply-To: <a6c55491-7cbe-4856-bb45-b7f5872966fc@foss.st.com>
+In-Reply-To: <a77b459f-5b08-453a-a247-c320617beee6@foss.st.com>
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260825_024753_221185_7A6A320B 
-X-CRM114-Status: UNSURE (   5.05  )
+X-CRM114-CacheID: sfid-20260825_024753_222925_C04C8DE2 
+X-CRM114-Status: UNSURE (   7.15  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -85,20 +85,45 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 8/24/26 3:19 PM, Fabrice Gasnier wrote:
+On 8/24/26 3:18 PM, Fabrice Gasnier wrote:
+
+[...]
+
+>>   		syscfg: syscon@44230000 {
+>> -			compatible = "st,stm32mp23-syscfg", "syscon";
+>> +			compatible = "st,stm32mp23-syscfg", "syscon", "simple-mfd";
+>>   			reg = <0x44230000 0x10000>;
+>>   			#clock-cells = <0>;
+>> +			#address-cells = <1>;
+>> +			#size-cells = <1>;
+>> +
+>> +			usb2_phy1: phy@2400 {
+>> +				compatible = "st,stm32mp25-usb2phy1";
+>> +				reg = <0x2400 0x24>;
+> 
+> Hello Marek,
 
 Hello Fabrice,
 
+> The size 0x24, covers the PHY control, trimming and vbus control logic
+> for PHY1 (USBH). So this allows to later extend the driver for that, right ?
+
+Correct.
+
+>> +				#phy-cells = <0>;
+>> +				#clock-cells = <1>;
+>> +				clocks = <&rcc CK_KER_USB2PHY1>;
+>> +				resets = <&rcc USB2PHY1_R>;
+>> +				status = "disabled";
+>> +			};
+>> +
 >> +			usb2_phy2: phy@2800 {
 >> +				compatible = "st,stm32mp25-usb2phy2";
 >> +				reg = <0x2800 0xc>;
 > 
-> Hello Marek,
-> 
-> Similar to stm32mp231: should update size ?
-> 
+> Then here, I guess the size should cover also trimming regs ? e.g. 0x10 ?
 > 				reg = <0x2800 0x10>;
-Fixed in V4, thanks !
+Uh, yes, fixed in V4, thanks !
 
 -- 
 linux-phy mailing list
