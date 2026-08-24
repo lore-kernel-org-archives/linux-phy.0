@@ -4,109 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A6A6C61DB6
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Aug 2026 09:04:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F19F5C61DB6
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Aug 2026 09:47:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uSlI87DjQXvy/8TfWr2l4aFY/j7Exx+lET8ib6fXp3E=; b=U3i5NJ0EgJI+2z
-	D8sEjcKWZmRfAQ5Dk3L/Olu6SCXjtoOUJgmtRTfQrUhObm3V5dB1TZrm5rXUs8gIdTYc6UsfHULmO
-	nx3w2Ua0KJ88ipp59iV5Rg3LyRpMwmfxiE+v5RqOD4hfcJUSvNrUOPu0yBoOsVNEsDP8RbMOOVzhB
-	97N+D1EWjR386hBXKsZ+/ZAIKdMg0+Ay1sS8v9GBYJicktyxNYKBJ9W0eGSGdEL59Fwxbur3nyBBI
-	lFWEdCgr1sHL6I2CWLgSPdF8WJzqc4QOfs9RcbdbF1X0KahrfxfvfAhMCVYegbzlhNfnQZ6KgzAUB
-	kVDP6mvU3hB/REUIZZjw==;
+	List-Owner; bh=nIxfdPLlrt95dph2IXXtVeFxdWCl4SipHUoJX6ydeSc=; b=H37vpgvlA0za7y
+	qFWKUqonwz608ekwKR/qtWywiK8EK3CumVdCe6Dt9srnuPBsVji3tjPu8Sj+Oleug/Bs32QrHDJUq
+	G6mlGYuwFtpTlU2B/R+1uS9oqlR9VOPP5WmOd2xzJsuvYL5fVfZjW1A3c3c5NBAUCwyZigzBJKU4t
+	zJcj+Dfwa1h/QIUwkuj7C1S+QS3d5ANsL2uB7ZF3LiIepnmsltc9Skalwh0sm04t2cg6dsNoJK3Be
+	RR5MH1ikDsg1ebG71Eq0hpXHxUOT0T+XouOhEX5EqgJOMlmxP23C+x/eLAqsAnwrmoWuOvJPQRY2M
+	v3S/7cHAUpDj3/GLpx+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyn57-00000000Rx1-2VT5;
-	Tue, 25 Aug 2026 09:04:33 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wynl5-00000000WUS-1rRT;
+	Tue, 25 Aug 2026 09:47:55 +0000
+Received: from mx.nabladev.com ([178.251.229.89])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyn55-00000000Rwl-2tMy
-	for linux-phy@lists.infradead.org;
-	Tue, 25 Aug 2026 09:04:31 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 88D29601DE;
-	Tue, 25 Aug 2026 09:04:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EB0C81F000E9;
-	Tue, 25 Aug 2026 09:04:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1787648670;
-	bh=uQICfGB8NxqflMD2W2T6ZXRRqp7Et7QYL8aeSOMCllQ=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=cqsmI9xk66m9DV6O4wbx4yyrvrxR/JZaYeg28c6Zr2/ArHDjIajex5NXoEpLWcuOa
-	 EcnUIEGlCPU5AckKWWCs4WfuKllivF8j7EvvEUBAldqWRmW08I/dEFT4jnFHvCCOlV
-	 mK5Mtz9CFybiJeeKLRDfcPFsfMssjWBHWuTQ09UzrH8ctweYYY++bPdm97OeiDDHPH
-	 Yas9QaKu771j7jmnIS0JyURIPNMPvulo/YZmxNvgzd37m80gSD4eWM3rKDBuDguZUS
-	 auUmSIUr+VI8Pze0X33iF17dDo//2aMSH4ooIp+l5w5vBO15tdl2Rt8AdEK3SDhB04
-	 livwcm3W15gqQ==
-Message-ID: <218dd957-691f-4769-9270-b709d92d9aa3@kernel.org>
-Date: Tue, 25 Aug 2026 11:04:21 +0200
+	id 1wynl3-00000000WTM-00Ot;
+	Tue, 25 Aug 2026 09:47:54 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id D8CBE11CC55;
+	Tue, 25 Aug 2026 11:47:43 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nabladev.com;
+	s=dkim; t=1787651264;
+	h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding:content-language:in-reply-to:references;
+	bh=GyJOErG3s8GlSEmj+9LyhK1ZcgZmzhmpH3gk6EXWH0U=;
+	b=KSLTrG1dU4maTkSkUQiq2JibZnDH/0QxNj8Uu69yr7yFNL4d5RS85XbpkaSOGORSrbB7rg
+	wOPKHZkS64J8shLg8G/ufZydU4//HEJp0Kt9vap6n9etisepHzTlFDblvKElq430UTzZqk
+	Vi7YAEuXvt1jVGUOQvzOoFWkW7kkYIbJuwqkmIedLc8e9VQUCddojhbbEB/t6EOUwYinTN
+	0yvZqM3k/S7cNt43oSs2g/khqoPq3hZ10EVTO2WuSbDNvotgPu8Pc7mPLg9D1d3EVegRR+
+	s5AaFfBhNxFuhpX301hvH8gOeWkmWbN41hzQoMrcsO16i7S+dZ7iDNtYamoJkA==
+Message-ID: <68145a72-d543-4e94-af27-cba6b620c13d@nabladev.com>
+Date: Mon, 24 Aug 2026 16:39:49 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/4] dt-bindings: phy: qcom: add Nord QMP PCIe PHY binding
-To: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
- Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Lorenzo Pieralisi
- <lpieralisi@kernel.org>, =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?=
- <kwilczynski@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>,
- Bjorn Helgaas <bhelgaas@google.com>, Bjorn Andersson <andersson@kernel.org>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Philipp Zabel <p.zabel@pengutronix.de>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-pci@vger.kernel.org
-References: <20260825-nord-v1-0-7c02f2b8765a@oss.qualcomm.com>
- <20260825-nord-v1-1-7c02f2b8765a@oss.qualcomm.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH v3 9/9] arm64: dts: st: Add USB nodes on stm32mp251
+To: Fabrice Gasnier <fabrice.gasnier@foss.st.com>, linux-usb@vger.kernel.org
+Cc: Pankaj Dev <pankaj.dev@st.com>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Christian Bruel <christian.bruel@foss.st.com>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Rahul Kumar <rahul.kumar05@st.com>, Rob Herring <robh@kernel.org>,
+ Rosen Penev <rosenp@gmail.com>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+ Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
+ kernel@dh-electronics.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com
+References: <20260822074816.548662-1-marex@nabladev.com>
+ <20260822074816.548662-10-marex@nabladev.com>
+ <a6c55491-7cbe-4856-bb45-b7f5872966fc@foss.st.com>
 Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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
-In-Reply-To: <20260825-nord-v1-1-7c02f2b8765a@oss.qualcomm.com>
+From: Marek Vasut <marex@nabladev.com>
+In-Reply-To: <a6c55491-7cbe-4856-bb45-b7f5872966fc@foss.st.com>
+X-Last-TLS-Session-Version: TLSv1.3
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260825_024753_221185_7A6A320B 
+X-CRM114-Status: UNSURE (   5.05  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,60 +80,25 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 25/08/2026 05:40, Krishna Chaitanya Chundru wrote:
-> Document the PCIe PHY found on the Qualcomm Nord platform.
+On 8/24/26 3:19 PM, Fabrice Gasnier wrote:
+
+Hello Fabrice,
+
+>> +			usb2_phy2: phy@2800 {
+>> +				compatible = "st,stm32mp25-usb2phy2";
+>> +				reg = <0x2800 0xc>;
 > 
-> Nord has a Gen5-capable QMP PCIe PHY that can operate in multiple
-> lane configurations using four PHY segments (A/B/C/D). The active
-> topology is selected by firmware through a TCSR configuration
-> register and may be configured as x16, x8+x8, x8+x4+x4, or
-> x8+x4+x2+x2.
+> Hello Marek,
 > 
-> The binding describes the register regions, clocks, resets, power
-> domains, regulators, PHY provider interface, clock provider interface,
-> and the qcom,link-mode property used by the driver to discover the
-> active lane configuration programmed by firmware.
+> Similar to stm32mp231: should update size ?
 > 
-> Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
-> ---
->  .../bindings/phy/qcom,nord-qmp-pcie-phy.yaml       | 276 +++++++++++++++++++++
->  1 file changed, 276 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,nord-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,nord-qmp-pcie-phy.yaml
-> new file mode 100644
-> index 000000000000..3575e99dadfd
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/qcom,nord-qmp-pcie-phy.yaml
-> @@ -0,0 +1,276 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/qcom,nord-qmp-pcie-phy.yaml#
-
-Filename should match compatible.
-
-...
-
-> +            #clock-cells = <1>;
-> +            clock-output-names = "pcie_a_pipe_clk",
-> +                                 "pcie_b_pipe_clk",
-> +                                 "pcie_c_pipe_clk",
-> +                                 "pcie_d_pipe_clk";
-> +
-> +            #phy-cells = <1>;
-> +            status = "disabled";
-
-So your code was never tested. Drop. Please read carefully writing
-bindings/schema, DTS101 or internal guideline.
-
-
-Best regards,
-Krzysztof
+> 				reg = <0x2800 0x10>;
+Fixed in V4, thanks !
 
 -- 
 linux-phy mailing list
