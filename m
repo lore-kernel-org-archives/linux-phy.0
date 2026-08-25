@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E47AC61DC4
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 727E8C61DC7
 	for <linux-phy@archiver.kernel.org>; Tue, 25 Aug 2026 12:37:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,45 +12,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x96XNpQysXB0HbMZwIFkKPPJWUUGORxYRl5IHCXL1io=; b=DTsrKrH5QUHkQK
-	Iy/WXcZT9ET5CnPn0JQJDAXT9BkGnC9WEBYIS/OoAvOrBJUeRQcAELgmRgIyXQ/VB/2I4ahSzIcYu
-	BT+rlO3WDC9tCaF1fxCXKEOboL+Wo+GRYsWBLTiHEYfZL22tJgNsNVqbZB1Hmyi9S9H8vNmoROBvX
-	flIRKdfSWN9c1nLaByhG2G3j6OLiJHaGCG5e5o8jAh2zUxfJvBfCN9tPZMg4NDFtQLNNdAhyKrRpV
-	Rx108YvbCQgaAjrT012d4yqW54Ep/b+YN5TNC8f3NJIpQBTgfRE2eGAMr+vRqKw4BxzmNBjmoJE/K
-	l8/rTxYYnFHOkjr7Wgag==;
+	List-Owner; bh=Wg2ttAkbYyb+3aYRvWJaxpSL6KLg5sB9NJp7YEwgttI=; b=YIQW1K3SsGZolg
+	q7ifgUWYRhbcDxdOfwh1+s8erIlkkP6B6XvYheRam0nAB0xIuOflVjfs6xxHPTuhp9gJnsM3ZgqB+
+	g2y6aze5i2MLG11XWgf8qEz3jvbQWpBcNVdVvHCOYV4rNzCqwAHMZTTN1dCKe+JBWQ1XXnUU1B4zH
+	7U6W4g1KRO0WTYBVKQ/+4NlvSmZUDOM1HHEJViZYWrtbcVjs48jSDZNrN0IBArWy43caM5I98aey1
+	optN5T4jfnEdywkAvZJqkXExvN1DWUxGR0AX0NtchBkHnUu6KSWwh3fDDLJsOGSjRH5OOIf52N6hO
+	B4HF9UAsMq9/zFR9iaQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyqPH-00000000n8K-3CDW;
+	id 1wyqPH-00000000n8q-47gh;
 	Tue, 25 Aug 2026 12:37:35 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyqPF-00000000n6k-3roX
+	id 1wyqPG-00000000n6o-16Ho
 	for linux-phy@lists.infradead.org;
 	Tue, 25 Aug 2026 12:37:34 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 798FB4403D;
+	by sea.source.kernel.org (Postfix) with ESMTP id 9A3B544F37;
 	Tue, 25 Aug 2026 12:37:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 1E3D7C4AF0E;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 3A951C4AF19;
 	Tue, 25 Aug 2026 12:37:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1787661453;
-	bh=dufAVmdzFuqWntoX3cRqx130NfOalyvJ1JRWWzFBgG0=;
+	bh=DXJ3FaUBZP/5e281lLY7Fr6FjXmIpllf4hkwp9n1ICY=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=C22P4iqxvGv+DRv0oRYrskllnfgn/X8ZGr296+k6MS5zp0/0G3e1wo/Cf17zjQA80
-	 tW0uqu05DD86JVHqJntzN1ZXxhp68amTUw9YSbhu4WTl+GXyJt1o+xe4VALtHoDms5
-	 DWYUi9tD26Pdw7WSpYBZPKYVQdbX1ADi+A6LonVmRkJfJymi8D/Ju14c80vy2ff6sE
-	 1YttUn0B7i+ahz7uilItBvIMQFSukjCDBoicnGyTmloij2eoD4YcKtpeM9X5u2tJ/n
-	 JfbLseSz4FDgoeWKBICAHz7UKFJ03Tnba4qrjl7F/HZt6tmBjGkhhov8oFNwaL9RJJ
-	 UTX6363oEmOGg==
+	b=GDiaVbM0guP4+2OqWViFDhpWgV4oBf+rIDY1g/68d6sDLPeJB0m9bbct/NcvstwkK
+	 wQOh2GZWUDU4cHNifB1Y3+Ta1uAE9tdz6mFvYvGQ4MIXhJzQ344hfyDu7jOyTVh26o
+	 epfOPhtbINdFxfE3bg8RHWfPwAVkxQKgUNeft7DX2hX69kVurZCZvLjJd9DYYsB2o6
+	 /x1v5t+nLHZ4hu9EIwUe1X3QvcmdplR3amJSbR3XmfL57tuW0+GutE7J9D7KaGY2Vd
+	 CfnQQRmHhq+LqxNTlP+3HC2CCRkfdRwJvje903gtFMMsIcIr3QWd3KLaevRX4UwcmR
+	 ccd0lJ9COTimA==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 04D62C61DC4;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 24FD0C61DC7;
 	Tue, 25 Aug 2026 12:37:33 +0000 (UTC)
 From: George Moussalem via B4 Relay <devnull+george.moussalem.outlook.com@kernel.org>
-Date: Tue, 25 Aug 2026 16:37:21 +0400
-Subject: [PATCH v3 04/12] phy: qualcomm: qcom-uniphy-pcie-usb3-28lp:
- Refactor init regs table definitions
+Date: Tue, 25 Aug 2026 16:37:23 +0400
+Subject: [PATCH v3 06/12] phy: qualcomm: qcom-uniphy-pcie-usb3-28lp:
+ Improve error handling in power_on
 MIME-Version: 1.0
-Message-Id: <20260825-ipq5018-usb3-v3-4-39be0955a6aa@outlook.com>
+Message-Id: <20260825-ipq5018-usb3-v3-6-39be0955a6aa@outlook.com>
 References: <20260825-ipq5018-usb3-v3-0-39be0955a6aa@outlook.com>
 In-Reply-To: <20260825-ipq5018-usb3-v3-0-39be0955a6aa@outlook.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -70,11 +70,11 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  linux-usb@vger.kernel.org, George Moussalem <george.moussalem@outlook.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1787661450; l=4215;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1787661450; l=2016;
  i=george.moussalem@outlook.com; s=20250321; h=from:subject:message-id;
- bh=KPA9nos1wOXZZh3JS71ONF0Nr0uo+3X8zKZyQLdCnWs=;
- b=7QikhM252gw6zGC4x2fdMyYaRgbnTtJNJTiJWD+EWysIZptZkghI1foJHk+nIJxkd3sPjIo7K
- FY5btJCbNN6CfIDnmPBkPn5h333+ZfFOWu4e/8tu7URbp5fGfvjuT61
+ bh=7wBK4ADEhWBDqDww6gxmOEnN2/BlTdDKW1nGKMr0m+o=;
+ b=C/MYQL7TG7DA7JcFLXibus27QkTlcnmxhzu7Vca3khVoAlzNRyJCTtlSZizM71/jTyiIZbUpo
+ j5fKhLDbh4cDHNCctklnY94gRgK3ukpF3JbMkogPcOlKt+EED1pT4yo
 X-Developer-Key: i=george.moussalem@outlook.com; a=ed25519;
  pk=/PuRTSI9iYiHwcc6Nrde8qF4ZDhJBlUgpHdhsIjnqIk=
 X-Endpoint-Received: by B4 Relay for george.moussalem@outlook.com/20250321
@@ -99,145 +99,61 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: George Moussalem <george.moussalem@outlook.com>
 
-Refactor the IPQ5018/IPQ5332 UNIPHY PCIe init data by introducing a
-helper macro for register/value entries and converting open-coded struct
-initializers to the compact form.
+When the PHY fails the enable clocks, it leaves the PHY out of reset.
+Fix this by asserting the reset before returning the error.
 
-Also remove an unused include, drop unused macro register definitions,
-and rename the IPQ5332-specific PHY CFG register macros to make their
-combo PCIe/USB3 scope explicit.
-
-No functional change intended.
+In addition, language correct the error messages.
 
 Signed-off-by: George Moussalem <george.moussalem@outlook.com>
 ---
- .../phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c  | 94 ++++++++--------------
- 1 file changed, 33 insertions(+), 61 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c | 13 +++++++++----
+ 1 file changed, 9 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c
-index aeb8f7ddbd7a..44ab8f440b8a 100644
+index 671bb805057f..d25ae9d8b9e7 100644
 --- a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c
 +++ b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c
-@@ -10,7 +10,6 @@
- #include <linux/io.h>
- #include <linux/mfd/syscon.h>
- #include <linux/module.h>
--#include <linux/of_device.h>
- #include <linux/of.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
-@@ -24,24 +23,21 @@
- #define PIPE_CLK_DELAY_MAX_US		5100
- #define CLK_EN_DELAY_MIN_US		30
- #define CLK_EN_DELAY_MAX_US		50
--#define CDR_CTRL_REG_1		0x80
--#define CDR_CTRL_REG_2		0x84
--#define CDR_CTRL_REG_3		0x88
--#define CDR_CTRL_REG_4		0x8c
--#define CDR_CTRL_REG_5		0x90
--#define CDR_CTRL_REG_6		0x94
--#define CDR_CTRL_REG_7		0x98
--#define SSCG_CTRL_REG_1		0x9c
--#define SSCG_CTRL_REG_2		0xa0
--#define SSCG_CTRL_REG_3		0xa4
--#define SSCG_CTRL_REG_4		0xa8
--#define SSCG_CTRL_REG_5		0xac
--#define SSCG_CTRL_REG_6		0xb0
--#define PCS_INTERNAL_CONTROL_2	0x2d8
--
--#define PHY_CFG_PLLCFG				0x220
--#define PHY_CFG_EIOS_DTCT_REG			0x3e4
--#define PHY_CFG_GEN3_ALIGN_HOLDOFF_TIME		0x3e8
+@@ -144,7 +144,7 @@ static int qcom_uniphy_pcie_usb3_power_on(struct phy *x)
+ 
+ 	ret = reset_control_bulk_assert(phy->num_resets, phy->resets);
+ 	if (ret) {
+-		dev_err(phy->dev, "reset assert failed (%d)\n", ret);
++		dev_err(phy->dev, "failed to assert reset: %d\n", ret);
+ 		return ret;
+ 	}
+ 
+@@ -152,7 +152,7 @@ static int qcom_uniphy_pcie_usb3_power_on(struct phy *x)
+ 
+ 	ret = reset_control_bulk_deassert(phy->num_resets, phy->resets);
+ 	if (ret) {
+-		dev_err(phy->dev, "reset deassert failed (%d)\n", ret);
++		dev_err(phy->dev, "failed to deassert reset: %d\n", ret);
+ 		return ret;
+ 	}
+ 
+@@ -160,8 +160,8 @@ static int qcom_uniphy_pcie_usb3_power_on(struct phy *x)
+ 
+ 	ret = clk_bulk_prepare_enable(phy->num_clks, phy->clks);
+ 	if (ret) {
+-		dev_err(phy->dev, "clk prepare and enable failed %d\n", ret);
+-		return ret;
++		dev_err(phy->dev, "failed to enable clocks: %d\n", ret);
++		goto err_assert_resets;
+ 	}
+ 
+ 	usleep_range(CLK_EN_DELAY_MIN_US, CLK_EN_DELAY_MAX_US);
+@@ -169,6 +169,11 @@ static int qcom_uniphy_pcie_usb3_power_on(struct phy *x)
+ 	qcom_uniphy_pcie_usb3_init(phy);
+ 
+ 	return 0;
 +
-+#define CDR_CTRL_REG_1			0x80
-+#define CDR_CTRL_REG_2			0x84
-+#define CDR_CTRL_REG_4			0x8c
-+#define CDR_CTRL_REG_5			0x90
-+#define SSCG_CTRL_REG_1			0x9c
-+#define SSCG_CTRL_REG_2			0xa0
-+#define SSCG_CTRL_REG_3			0xa4
-+#define SSCG_CTRL_REG_4			0xa8
-+#define SSCG_CTRL_REG_5			0xac
++err_assert_resets:
++	reset_control_bulk_assert(phy->num_resets, phy->resets);
 +
-+#define PCIE_USB_COMBO_PHY_CFG_PLLCFG			0x220
-+#define PCIE_USB_COMBO_PHY_CFG_PCS_INTERNAL_CONTROL_2	0x2d8
-+#define PCIE_USB_COMBO_PHY_CFG_EIOS_DTCT_REG		0x3e4
-+#define PCIE_USB_COMBO_PHY_CFG_GEN3_ALIGN_HOLDOFF_TIME	0x3e8
++	return ret;
+ }
  
- enum qcom_uniphy_type {
- 	PHY_TYPE_PCIE = 1,
-@@ -73,53 +69,29 @@ struct qcom_uniphy {
- 	int lanes;
- };
- 
--#define phy_to_dw_phy(x)	container_of((x), struct qcom_uniphy, phy)
-+#define PHY_INIT_CFG(o, v)		\
-+	{				\
-+		.offset = o,		\
-+		.val = v,		\
-+	}
- 
- static const struct qcom_uniphy_regs ipq5018_pcie_regs[] = {
--	{
--		.offset = SSCG_CTRL_REG_4,
--		.val = 0x1cb9,
--	}, {
--		.offset = SSCG_CTRL_REG_5,
--		.val = 0x023a,
--	}, {
--		.offset = SSCG_CTRL_REG_3,
--		.val = 0xd360,
--	}, {
--		.offset = SSCG_CTRL_REG_1,
--		.val = 0x1,
--	}, {
--		.offset = SSCG_CTRL_REG_2,
--		.val = 0xeb,
--	}, {
--		.offset = CDR_CTRL_REG_4,
--		.val = 0x3f9,
--	}, {
--		.offset = CDR_CTRL_REG_5,
--		.val = 0x1c9,
--	}, {
--		.offset = CDR_CTRL_REG_2,
--		.val = 0x419,
--	}, {
--		.offset = CDR_CTRL_REG_1,
--		.val = 0x200,
--	}, {
--		.offset = PCS_INTERNAL_CONTROL_2,
--		.val = 0xf101,
--	},
-+	PHY_INIT_CFG(SSCG_CTRL_REG_4, 0x1cb9),
-+	PHY_INIT_CFG(SSCG_CTRL_REG_5, 0x023a),
-+	PHY_INIT_CFG(SSCG_CTRL_REG_3, 0xd360),
-+	PHY_INIT_CFG(SSCG_CTRL_REG_1, 0x1),
-+	PHY_INIT_CFG(SSCG_CTRL_REG_2, 0xeb),
-+	PHY_INIT_CFG(CDR_CTRL_REG_4, 0x3f9),
-+	PHY_INIT_CFG(CDR_CTRL_REG_5, 0x1c9),
-+	PHY_INIT_CFG(CDR_CTRL_REG_2, 0x419),
-+	PHY_INIT_CFG(CDR_CTRL_REG_1, 0x200),
-+	PHY_INIT_CFG(PCIE_USB_COMBO_PHY_CFG_PCS_INTERNAL_CONTROL_2, 0xf101),
- };
- 
- static const struct qcom_uniphy_regs ipq5332_pcie_regs[] = {
--	{
--		.offset = PHY_CFG_PLLCFG,
--		.val = 0x30,
--	}, {
--		.offset = PHY_CFG_EIOS_DTCT_REG,
--		.val = 0x53ef,
--	}, {
--		.offset = PHY_CFG_GEN3_ALIGN_HOLDOFF_TIME,
--		.val = 0xcf,
--	},
-+	PHY_INIT_CFG(PCIE_USB_COMBO_PHY_CFG_PLLCFG, 0x30),
-+	PHY_INIT_CFG(PCIE_USB_COMBO_PHY_CFG_EIOS_DTCT_REG, 0x53ef),
-+	PHY_INIT_CFG(PCIE_USB_COMBO_PHY_CFG_GEN3_ALIGN_HOLDOFF_TIME, 0xcf),
- };
- 
- static const struct qcom_uniphy_data ipq5018_data = {
+ static inline int qcom_uniphy_pcie_usb3_get_resources(struct platform_device *pdev,
 
 -- 
 2.53.0
