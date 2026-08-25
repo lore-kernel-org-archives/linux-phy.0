@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 727E8C61DC7
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B3D2C61DCD
 	for <linux-phy@archiver.kernel.org>; Tue, 25 Aug 2026 12:37:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,45 +12,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wg2ttAkbYyb+3aYRvWJaxpSL6KLg5sB9NJp7YEwgttI=; b=YIQW1K3SsGZolg
-	q7ifgUWYRhbcDxdOfwh1+s8erIlkkP6B6XvYheRam0nAB0xIuOflVjfs6xxHPTuhp9gJnsM3ZgqB+
-	g2y6aze5i2MLG11XWgf8qEz3jvbQWpBcNVdVvHCOYV4rNzCqwAHMZTTN1dCKe+JBWQ1XXnUU1B4zH
-	7U6W4g1KRO0WTYBVKQ/+4NlvSmZUDOM1HHEJViZYWrtbcVjs48jSDZNrN0IBArWy43caM5I98aey1
-	optN5T4jfnEdywkAvZJqkXExvN1DWUxGR0AX0NtchBkHnUu6KSWwh3fDDLJsOGSjRH5OOIf52N6hO
-	B4HF9UAsMq9/zFR9iaQQ==;
+	List-Owner; bh=9tk2uGqKWzUfVSlnwo9MwD6juInijC3pS2SFu6K/Yj8=; b=sYOY6/kGTcj/DS
+	PBm3D0tLqWPkB9pBO4R0MPRRWZVrDmJSG1+moEvocwbkWsuqb6Y5dH5SsGZ1Rn3+eaGq2TNFqdfvS
+	ifMzL5uWi+pYljS5wSCuJuXG/sUA37cACsJOxZJF50dyM0MsvA2CBRCBGGEX5j0RJrc2IICp6PAUC
+	zi+kUWR2KiI9tQ6wRrc+sAuV14DMNHo4e5TyaeVoQjys21qk6ohrQVbV9kPS0gIwpyA6VTC9x9Bpn
+	O7vJ1aEJEFgx4T6hKJreCyqVqcqyZbWzihrQIBMautQtGaD+BRW6RowPMnlBZGX3XAwafgxx7cCJD
+	6C6DpBS26Wm/VcFKzQPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyqPH-00000000n8q-47gh;
-	Tue, 25 Aug 2026 12:37:35 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wyqPI-00000000n9D-0SHS;
+	Tue, 25 Aug 2026 12:37:36 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyqPG-00000000n6o-16Ho
+	id 1wyqPG-00000000n6n-1ej2
 	for linux-phy@lists.infradead.org;
 	Tue, 25 Aug 2026 12:37:34 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9A3B544F37;
+	by tor.source.kernel.org (Postfix) with ESMTP id C2F2560A73;
 	Tue, 25 Aug 2026 12:37:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 3A951C4AF19;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 677E3C2BCFB;
 	Tue, 25 Aug 2026 12:37:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1787661453;
-	bh=DXJ3FaUBZP/5e281lLY7Fr6FjXmIpllf4hkwp9n1ICY=;
+	bh=3InrEzqBoL04PndarbQa9vfc8Y03H+tVOBZBHp4kxfk=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=GDiaVbM0guP4+2OqWViFDhpWgV4oBf+rIDY1g/68d6sDLPeJB0m9bbct/NcvstwkK
-	 wQOh2GZWUDU4cHNifB1Y3+Ta1uAE9tdz6mFvYvGQ4MIXhJzQ344hfyDu7jOyTVh26o
-	 epfOPhtbINdFxfE3bg8RHWfPwAVkxQKgUNeft7DX2hX69kVurZCZvLjJd9DYYsB2o6
-	 /x1v5t+nLHZ4hu9EIwUe1X3QvcmdplR3amJSbR3XmfL57tuW0+GutE7J9D7KaGY2Vd
-	 CfnQQRmHhq+LqxNTlP+3HC2CCRkfdRwJvje903gtFMMsIcIr3QWd3KLaevRX4UwcmR
-	 ccd0lJ9COTimA==
+	b=dwgh2aSnJOkT0WZEP6/0yf80ICfw+5qbWp7vcxXmQ7e0tPRLmtZs2oQijr2jE3pq9
+	 jS4fkDIsYrYeLRMaEDkFDuZKwpVFydqkk6SwZdcojzMNJLPvdSQf32oAfRLHAw89js
+	 v4ZZGFoAaMvHjtRvQN+j+3WM9lyHPEAsEyAJRSGvSslZaHp5Ql8t6+198sA5SKvXKY
+	 JEo6zWOcbL9pnK2g85XTfqXjQ4dtwv6y3JnLuTJuqWunVfCuAUF1Udv+AL7P1vc5r0
+	 P/a387sVAgOgtdTti7VdsFxyZwMyBmFZvaBUNjIss6zmmzEN81f4GnY8geUqiTOSv2
+	 ZA3bkit2q/vww==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 24FD0C61DC7;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 5375EC61DC4;
 	Tue, 25 Aug 2026 12:37:33 +0000 (UTC)
 From: George Moussalem via B4 Relay <devnull+george.moussalem.outlook.com@kernel.org>
-Date: Tue, 25 Aug 2026 16:37:23 +0400
-Subject: [PATCH v3 06/12] phy: qualcomm: qcom-uniphy-pcie-usb3-28lp:
- Improve error handling in power_on
+Date: Tue, 25 Aug 2026 16:37:26 +0400
+Subject: [PATCH v3 09/12] dt-bindings: usb: qcom,snps-dwc3: Add clocks for
+ USB3 on Qualcomm IPQ5018
 MIME-Version: 1.0
-Message-Id: <20260825-ipq5018-usb3-v3-6-39be0955a6aa@outlook.com>
+Message-Id: <20260825-ipq5018-usb3-v3-9-39be0955a6aa@outlook.com>
 References: <20260825-ipq5018-usb3-v3-0-39be0955a6aa@outlook.com>
 In-Reply-To: <20260825-ipq5018-usb3-v3-0-39be0955a6aa@outlook.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -68,13 +68,15 @@ To: Vinod Koul <vkoul@kernel.org>,
  Manivannan Sadhasivam <mani@kernel.org>
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-usb@vger.kernel.org, George Moussalem <george.moussalem@outlook.com>
+ linux-usb@vger.kernel.org, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
+ George Moussalem <george.moussalem@outlook.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1787661450; l=2016;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1787661450; l=1506;
  i=george.moussalem@outlook.com; s=20250321; h=from:subject:message-id;
- bh=7wBK4ADEhWBDqDww6gxmOEnN2/BlTdDKW1nGKMr0m+o=;
- b=C/MYQL7TG7DA7JcFLXibus27QkTlcnmxhzu7Vca3khVoAlzNRyJCTtlSZizM71/jTyiIZbUpo
- j5fKhLDbh4cDHNCctklnY94gRgK3ukpF3JbMkogPcOlKt+EED1pT4yo
+ bh=BrVJTl3Tb6P7JuTScfV3IA2WcKzF+sHcd0AfrYGATWA=;
+ b=e7gfZhyd/OCSOtqtMZiVVCph9z+d7pnrX3IBRHUK6oxcqPBmFaPIS+31US8RRgPhyLW8FUaEo
+ e+XE+GM8iGbBLl1TyEA5G5+LPz0d4Ap8FcjkM+DRpZb6VS/E1SadlOK
 X-Developer-Key: i=george.moussalem@outlook.com; a=ed25519;
  pk=/PuRTSI9iYiHwcc6Nrde8qF4ZDhJBlUgpHdhsIjnqIk=
 X-Endpoint-Received: by B4 Relay for george.moussalem@outlook.com/20250321
@@ -99,61 +101,54 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: George Moussalem <george.moussalem@outlook.com>
 
-When the PHY fails the enable clocks, it leaves the PHY out of reset.
-Fix this by asserting the reset before returning the error.
+Add aux and lfps clocks in Qualcomm IPQ5018. These clocks are required
+only for USB Super-Speed support.
 
-In addition, language correct the error messages.
-
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 Signed-off-by: George Moussalem <george.moussalem@outlook.com>
 ---
- drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c | 13 +++++++++----
- 1 file changed, 9 insertions(+), 4 deletions(-)
+ .../devicetree/bindings/usb/qcom,snps-dwc3.yaml     | 21 ++++++++++++++++++++-
+ 1 file changed, 20 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c
-index 671bb805057f..d25ae9d8b9e7 100644
---- a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c
-+++ b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c
-@@ -144,7 +144,7 @@ static int qcom_uniphy_pcie_usb3_power_on(struct phy *x)
+diff --git a/Documentation/devicetree/bindings/usb/qcom,snps-dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,snps-dwc3.yaml
+index aa263dfd42a1..97dd0cefd732 100644
+--- a/Documentation/devicetree/bindings/usb/qcom,snps-dwc3.yaml
++++ b/Documentation/devicetree/bindings/usb/qcom,snps-dwc3.yaml
+@@ -194,6 +194,26 @@ allOf:
+             - const: sleep
+             - const: mock_utmi
  
- 	ret = reset_control_bulk_assert(phy->num_resets, phy->resets);
- 	if (ret) {
--		dev_err(phy->dev, "reset assert failed (%d)\n", ret);
-+		dev_err(phy->dev, "failed to assert reset: %d\n", ret);
- 		return ret;
- 	}
- 
-@@ -152,7 +152,7 @@ static int qcom_uniphy_pcie_usb3_power_on(struct phy *x)
- 
- 	ret = reset_control_bulk_deassert(phy->num_resets, phy->resets);
- 	if (ret) {
--		dev_err(phy->dev, "reset deassert failed (%d)\n", ret);
-+		dev_err(phy->dev, "failed to deassert reset: %d\n", ret);
- 		return ret;
- 	}
- 
-@@ -160,8 +160,8 @@ static int qcom_uniphy_pcie_usb3_power_on(struct phy *x)
- 
- 	ret = clk_bulk_prepare_enable(phy->num_clks, phy->clks);
- 	if (ret) {
--		dev_err(phy->dev, "clk prepare and enable failed %d\n", ret);
--		return ret;
-+		dev_err(phy->dev, "failed to enable clocks: %d\n", ret);
-+		goto err_assert_resets;
- 	}
- 
- 	usleep_range(CLK_EN_DELAY_MIN_US, CLK_EN_DELAY_MAX_US);
-@@ -169,6 +169,11 @@ static int qcom_uniphy_pcie_usb3_power_on(struct phy *x)
- 	qcom_uniphy_pcie_usb3_init(phy);
- 
- 	return 0;
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - qcom,ipq5018-dwc3
++    then:
++      properties:
++        clocks:
++          minItems: 6
++          maxItems: 6
++        clock-names:
++          items:
++            - const: core
++            - const: iface
++            - const: sleep
++            - const: mock_utmi
++            - const: aux
++            - const: lfps
 +
-+err_assert_resets:
-+	reset_control_bulk_assert(phy->num_resets, phy->resets);
-+
-+	return ret;
- }
- 
- static inline int qcom_uniphy_pcie_usb3_get_resources(struct platform_device *pdev,
+   - if:
+       properties:
+         compatible:
+@@ -295,7 +315,6 @@ allOf:
+         compatible:
+           contains:
+             enum:
+-              - qcom,ipq5018-dwc3
+               - qcom,msm8994-dwc3
+               - qcom,qcs404-dwc3
+     then:
 
 -- 
 2.53.0
