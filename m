@@ -4,71 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12C9BC61CE2
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Aug 2026 09:48:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC763C61DBE
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Aug 2026 12:37:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QWLCLyJuh5hjzstf6rfRhVfHVJZlWyL5WBVxF8aIrZA=; b=QdhcTgMiZqOAfE
-	rFGwpuNpN98ZKNvm5Tzm4g+tA6arx2u3/fNXx+pyFIs2nuabd3oDSmmjRUGG6CX42Pw5y48311vog
-	o5H+UM1WiFgla3465C3ICuWoVLIQFyuvBlCdd8iqNqVkiherEglNCRLydtyXH+zVvEWmSKLSYI4MU
-	BkIIHTv/OPzOPBcIn61eYSkLejFGh+ED9ikaR3yHbPyJUTfTjn2SsgRvvpXBDAmqZMs0Z5wwm8cO2
-	5NDLgxQoWIs2o2w7bPuCc2xvwU5Ssj96Q3bDTZzw4hXQ4/KEyMuaQve5SI7N1wA7hN3kyK/CiT55e
-	ut7wTXS8q0t9dCOHyyAA==;
+	List-Owner; bh=UH/kw6tu3MLY7Yorci7gkYegTIfII9aXfsV8CC95OWI=; b=ZXVr7Bz8e3ZGcN
+	JHyct+Ug9ltLoDYmPHyIzkU1epT/Y7NyUt16MpiTv3Z2PpPDabHvN7O7xFpxsxKhsB9xmHGf3PI4m
+	/UbRTsBqIzgcA7iLmaUVWbS/niSed7qctEZAytsm3Pq3z2F/qzEjZqDAREqAETDKZvatWvIl49qpF
+	9hFRQPLoLhJkRCxG1DPEwYy8G/byOruLytGXueyuer8Q6AGzecXdSEKOUA3g4C+jFOhaZwd48wXss
+	dssT/POLLE1pwmpPHyeb8sP5YmUdVcgOEo8i4XZXNE6BGxuGpcd9/yaO5VxRoZ9Z43fGS+zDTBBu0
+	8yEtWmrSgWIjG2OrSVgA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wynlI-00000000Wa6-36DH;
-	Tue, 25 Aug 2026 09:48:08 +0000
-Received: from mx.nabladev.com ([178.251.229.89])
+	id 1wyqPH-00000000n82-2hhd;
+	Tue, 25 Aug 2026 12:37:35 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wynl6-00000000WUF-0aq6;
-	Tue, 25 Aug 2026 09:47:57 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 441FE11C187;
-	Tue, 25 Aug 2026 11:47:49 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nabladev.com;
-	s=dkim; t=1787651270;
-	h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:content-language:in-reply-to:references;
-	bh=5JNIKTk99mqX00p9EnKMWbWpSfVVLgeAoJqGdZVoMMw=;
-	b=FJ86VyC1TPOUb77sWpRnoea6tlZBvYmblAYhnllz8Flz1PEpParjwdM16bQAIXKkT7GAkE
-	XXDix7PGuR/qBJhFMIhY6COUahTYhjlA/q9ZvV8S+c/RmKCynKgaRqn1S3gics8Bk1o2nP
-	vcD6YyZxSLj7lQM3AIK7kxQF5UkGtCo/I3tiT/uye7RMic5eWiGzwFjPAmbsPP0G3CvwJg
-	WivJduJcOmrUVPQS9ErUNzPJzedQmhf4RQIgVsD/PI8R0I3+pAXYwosQ1IFYksCVc7RN01
-	J83hjGHVA3k+nX6YqbtmsCFB7qhuuEczTZTg+3E7yaA1Fivmi8/BqJOQoWr9qw==
-Message-ID: <ad353c4d-c6c8-4ff1-993f-e50b156a4401@nabladev.com>
-Date: Mon, 24 Aug 2026 16:53:23 +0200
+	id 1wyqPF-00000000n6j-3rsa
+	for linux-phy@lists.infradead.org;
+	Tue, 25 Aug 2026 12:37:34 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 775A04401B;
+	Tue, 25 Aug 2026 12:37:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 0B9A3C4AF09;
+	Tue, 25 Aug 2026 12:37:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1787661453;
+	bh=tRYW4jdFf4FVjtP/xrG0RKuqoRzNxBH9MyVDZQmNXqI=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=OefE+pqU1/0Dx42MhT9fMWu4rKjJGzSXWE0y41uMVok+J6tUIGwOlI8IGOUELqTaW
+	 sSdkzvbW7RxCIpAg3258o13dDg5Mc90Iz0s32bCIxqsL7RO42asdzzit+3WOCeh1xU
+	 iVupKXPnyxGZ/yLQWqVTJhUXmV/XR+vj6jym6hgScsS4WSjKYqsHOAT2Nf8No/l7m3
+	 DbbARUneyr8FnGdiOcPPIxuclCB9/yJG+GsM4FBjqp8trYbb3ZQcXV5kcooqqKzSzG
+	 8riV6N2J230MW2kdE2jO2hTQSg5ejHtNoCbBfAGVgywG2fprYrSSDRV3NUmXUQrMby
+	 OmK/ZPlxVuFdQ==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id D8615C61DBD;
+	Tue, 25 Aug 2026 12:37:32 +0000 (UTC)
+From: George Moussalem via B4 Relay <devnull+george.moussalem.outlook.com@kernel.org>
+Date: Tue, 25 Aug 2026 16:37:19 +0400
+Subject: [PATCH v3 02/12] dt-bindings: phy: qcom,ipq5332-uniphy-pcie-usb3:
+ Document the IPQ5018 USB3 PHY
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 2/9] phy: stm32: Add support for ST STM32MP25
- USB2-FEMTO PHY
-To: Fabrice Gasnier <fabrice.gasnier@foss.st.com>, linux-usb@vger.kernel.org
-Cc: Pankaj Dev <pankaj.dev@st.com>, Rahul Kumar <rahul.kumar05@st.com>,
- Christian Bruel <christian.bruel@foss.st.com>,
- Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Conor Dooley <conor+dt@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
- Rosen Penev <rosenp@gmail.com>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
- Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
- kernel@dh-electronics.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-stm32@st-md-mailman.stormreply.com
-References: <20260822074816.548662-1-marex@nabladev.com>
- <20260822074816.548662-3-marex@nabladev.com>
- <b470667d-6a15-4eb1-9332-07f25f069b3f@foss.st.com>
-Content-Language: en-US
-From: Marek Vasut <marex@nabladev.com>
-In-Reply-To: <b470667d-6a15-4eb1-9332-07f25f069b3f@foss.st.com>
-X-Last-TLS-Session-Version: TLSv1.3
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260825_024756_359142_7F733A55 
-X-CRM114-Status: UNSURE (   9.99  )
-X-CRM114-Notice: Please train this message.
+Message-Id: <20260825-ipq5018-usb3-v3-2-39be0955a6aa@outlook.com>
+References: <20260825-ipq5018-usb3-v3-0-39be0955a6aa@outlook.com>
+In-Reply-To: <20260825-ipq5018-usb3-v3-0-39be0955a6aa@outlook.com>
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Praveenkumar I <praveenkumar.i@oss.qualcomm.com>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konradybcio@kernel.org>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Varadarajan Narayanan <varadarajan.narayanan@oss.qualcomm.com>, 
+ Nitheesh Sekar <quic_nsekar@quicinc.com>, 
+ Wesley Cheng <quic_wcheng@quicinc.com>, 
+ Manivannan Sadhasivam <mani@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-usb@vger.kernel.org, George Moussalem <george.moussalem@outlook.com>
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1787661450; l=1847;
+ i=george.moussalem@outlook.com; s=20250321; h=from:subject:message-id;
+ bh=X92ejnhwDPtga79pHvMyqYjnXONSziO0EJioVCS0ABA=;
+ b=m2T5qx7FPQMNTLk6lhedEpBLyrSqTSMrw5CpPDaxTCtZaJUi54zkvLB+c4zokXIz766afBBvE
+ 7EenPiSHMiUCWe/aRlPY1IDzvQQ59R5jdMNVESIXmlesBZs0nsu2Y2F
+X-Developer-Key: i=george.moussalem@outlook.com; a=ed25519;
+ pk=/PuRTSI9iYiHwcc6Nrde8qF4ZDhJBlUgpHdhsIjnqIk=
+X-Endpoint-Received: by B4 Relay for george.moussalem@outlook.com/20250321
+ with auth_id=364
+X-Original-From: George Moussalem <george.moussalem@outlook.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,67 +91,75 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Reply-To: george.moussalem@outlook.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 8/24/26 3:17 PM, Fabrice Gasnier wrote:
+From: George Moussalem <george.moussalem@outlook.com>
 
-[...]
+Describe the USB3 PHY found in the IPQ5018 SoC so add the compatible
+string for it as well as the required resources (clocks and resets).
 
-Hello Fabrice,
+The PCIe and USB physical pads are muxed and selection is done via a
+control register in TCSR. By default, PCIe mode is selected, hence make
+the property for USB mux selection required.
 
->> +static int stm32_usb2phy1_init(struct phy *phy)
-> 
-> Hello Marek,
-> 
-> Could same init routine may be used for both PHYs ?
-> See below comment.
-> 
->> +{
->> +	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
->> +	int ret;
->> +
->> +	ret = stm32_usb2phy_enable(phy_dev);
->> +	if (ret)
->> +		return ret;
->> +
->> +	phy_dev->is_init = true;
->> +
->> +	return 0;
->> +}
->> +
->> +static int stm32_usb2phy2_init(struct phy *phy)
->> +{
->> +	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
->> +	int ret;
->> +
->> +	ret = stm32_usb2phy_enable(phy_dev);
->> +	if (ret)
->> +		return ret;
->> +
->> +	if (phy_dev->mode != PHY_MODE_INVALID) {
-> 
-> The only difference is here. On the PHY#1 the mode should never change
-> e.g. mode == PHY_MODE_INVALID. So same routine may be used for both PHYs ?
+In addition, the PHY requires a 5V supply for USB3 mode operation.
 
-Since there are separate ops for each PHY, I opted for avoiding this 
-conditional on a PHY where the conditional makes no sense, hence the two 
-separate init functions.
+Signed-off-by: George Moussalem <george.moussalem@outlook.com>
+---
+ .../phy/qcom,ipq5332-uniphy-pcie-usb3-phy.yaml     | 24 ++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
 
->> +		ret = stm32_usb2phy_set_mode(phy, phy_dev->mode, USB_ROLE_NONE);
->> +		if (ret) {
->> +			stm32_usb2phy_disable(phy_dev);
->> +			return ret;
->> +		}
->> +	}
->> +
->> +	phy_dev->is_init = true;
->> +
->> +	return 0;
->> +}
-[...]
+diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-usb3-phy.yaml
+index 0d9d0fb405b6..1cd5392a1a0f 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-usb3-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-usb3-phy.yaml
+@@ -18,6 +18,7 @@ properties:
+   compatible:
+     enum:
+       - qcom,ipq5018-uniphy-pcie-phy
++      - qcom,ipq5018-uniphy-usb3-phy
+       - qcom,ipq5332-uniphy-pcie-phy
+ 
+   reg:
+@@ -93,6 +94,29 @@ allOf:
+       required:
+         - num-lanes
+ 
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - qcom,ipq5018-uniphy-usb3-phy
++    then:
++      properties:
++        clocks:
++          items:
++            - description: usb3 pipe clock
++            - description: usb3 cfg ahb clock
++        resets:
++          items:
++            - description: usb3 phy reset
++        "#clock-cells":
++          const: 0
++        "#phy-cells":
++          const: 0
++      required:
++        - vdd-supply
++        - qcom,phy-usb-mux-sel
++
+   - if:
+       properties:
+         compatible:
+
+-- 
+2.53.0
+
+
 
 -- 
 linux-phy mailing list
