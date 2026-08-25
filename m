@@ -4,94 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6861EC5DF94
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Aug 2026 05:22:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8149C5DF9C
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Aug 2026 05:33:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rXmzMvJd24bEZO3Pcu/gr2MQgvHdEDdIosgtt9I1sAg=; b=e/Y+Ax9cUmRD1r
-	rSYD2GePg9qfcjHg/vW6pFj2oHiRvnnDmmh1BbOMXDhBbP3dK9EGXwkagayMN3M7Ej6sU5N52DISr
-	P8ohcaRHO2I03mubq5Ebqwv577H63Bg7CMDh0CiWkceYHdQoBqZ7vwpu/iRGWbzXGg77UwRupEnCh
-	yUnJDF6qzjln3Ot9m91j5mtjPZJcV9IRqRAKuxvMW6P2jJWaGTRMyZ8p1vQscsYiWuN8Np2AoQdbZ
-	jD7Wh/7q0e0HJwpsqCBv6VdY2e4Bt2NwmZJZa0jewHJsmnDvuNEPmie/dIvEehL2sug1IEWR7kwF7
-	vkr3DsB/chFXlSlHup9w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kH1b5lZmqaanR2XETi2Bds5+48KT9288/uJzOgzjeuk=; b=cEdmWpEVwbTbOu
+	/y27DccsdYQix7B6dSRgsgEYVxFMpc5+/2WSqQu3Rokli8t/S8khPCPSbnSBM4+0Q1TYQwrv5ArRv
+	hOuXJXnJY7a2X2YF4pR7Tf+HkxcvVR/VPbtBbcvJzKaO72h6ITPm9p2BxjukWf/4QZD4KGSC+3Js3
+	b4A6GYSDEl3Q+9PHxYPHaP7LE5NufiX4dvPOsFF4lgt44cmTLsud4fQUx72rgtgzXjMPmS6h8sqtt
+	PCAmhqOjYyYK32g+WstqueF4Y1Z57Q0HWEnelPg0V7ag5g5iT6Er2XUWJm3jKgAjXkrL5ySV++pGO
+	IHDPhRUoKRAAMdXlo0cA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyjbs-00000000B8R-0QoO;
-	Tue, 25 Aug 2026 05:22:08 +0000
-Received: from mail-ej1-x62d.google.com ([2a00:1450:4864:20::62d])
+	id 1wyjmT-00000000C5V-0iQW;
+	Tue, 25 Aug 2026 05:33:05 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyjbp-00000000B7c-1bqj
+	id 1wyjmR-00000000C4w-16Nr
 	for linux-phy@lists.infradead.org;
-	Tue, 25 Aug 2026 05:22:07 +0000
-Received: by mail-ej1-x62d.google.com with SMTP id a640c23a62f3a-c2022323c37so677553266b.0
-        for <linux-phy@lists.infradead.org>; Mon, 24 Aug 2026 22:22:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1787635323; x=1788240123; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=0ryfq8ZlJaF8dkUkfOTfrmP2SiE+/6PCtICjVZMb1cA=;
-        b=IZtAFzMNg9zsZ/wCMGbO3bneqlhIamnLKzf/Oupf8OCVZeqTsPXul6H+1JXqT9RNOK
-         way/zCY7EpXc5lkR2s63fYbjI7eVdXlu5vd6X4IDpYO3TpOqgaa6vLiUFCZ3y/+nUBSA
-         aF4Y4ZM57SNUIptI9wQJJREMbfUaluVK7ab+RflHTu/wziNwAIzO6+dwpUxAhphha0Co
-         biRj0wWROvTwfJ4xVN7QeP+KeuLVBe5u50fviKVvGfRZRKteigz+8QlbEyEgMkgE0tpO
-         ak90h+MqTKxf3sljmqDr4gfK23fMg4iUvRE3avOLWPG+M2/+wCCgo4OsFGfoZWf0NaZR
-         SBcw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1787635323; x=1788240123;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=0ryfq8ZlJaF8dkUkfOTfrmP2SiE+/6PCtICjVZMb1cA=;
-        b=Yy1kqdpadAi3aKD4wJZs+IBQfu0spB+jvFfa8xCAwxHT27mx1VOK+US3qqFaYszgkv
-         LvN/1mYvhnFhDqILJ03xmtC2f4DtwoULL/Hrg0+G0O7/H3/dCsyad7BRTCYHZQEIXYzO
-         nhgo43vq7pluSl3/lEZel/87gw9jfn82XJ0/qa2Zj/h/OnrEyT9hwp8Mh+QIoN5WXIfI
-         PZ4QgajWDm4JbB2HV4IVD3OyI/wVJRnd2ti+jDkPrytwQ8DwVeB26MUWS8ZuDv1xy2Nv
-         1lsqvZinZLQ7UwTxGusMEC6+AcrzrokfsIqzdNKae5bZwNSPVWHo/X6+Y2rRUcnNpZFr
-         VO9A==
-X-Forwarded-Encrypted: i=1; AHgh+Rq3k3lTxQDrixXXrjinWRq8C+AKTH8S//MwdRMMBWTB40oKbpA4QGh/HIKfIt4RnCVzkrgY8lvGzf4=@lists.infradead.org
-X-Gm-Message-State: AFuF++mrjRDRHnuZXPSa+XeCKq/l5Xmo+nYC+dWQJdU/gBBG9exCb87O
-	31XZk5mEdznzQOuIcn5ADT45DB8Fo5LVxYNHBfnI25iKdKfeXa/1Y8xB
-X-Gm-Gg: AR+sD10qRIysqMAO7HZmM//+nQz6b5jYsCABJfuMeLSpMetHiXe0zfcZ3EQCcnkRTy8
-	EZLMjn7RWZ7cQUo9b5RgIxK/voawzOFwZEyc2gyTI5GkYUA8MYSPZp+itaETA5r4iDZN2r6Rwta
-	diZkj+hCG+YLQG1IagBZp2vEBhR9DH1p/rRbfZD0hufJQg3q06GvSsmN6fw/wUkwBy4rHdcP5bu
-	ROxCjpbpIi7CvkIZAu7zecfPpE0dGbQNVpuhDUxFLfowkNdruxcIdKVeOhVX276XQPoRaO72OA6
-	AkszTdEGvb9trRa8LA9OnFl2QAC6ytTAVl9tcT7akgffyu1F8zxPcx8U88jCte1QmnIhnqPXCpG
-	0yK23C7l/CXoWKGgxJoubT30fqF6tvbbOwaeN9dmDfu1xafseJBYVUdZSAKxRsodAL9JpW6OAIU
-	ub0RgREkYip1TeUl30UB+7q1pqAe5PthOqIfnQetH1ojtthSLJdDWgVmL/pv2XKS+ZASloEbZCZ
-	LhO/o0lSxqpIOw0ErcQthuWzVLolnM0VSjIcPILyZ5PW4ehx2HGhhr62A==
-X-Received: by 2002:a17:907:8995:b0:c24:4128:c19d with SMTP id a640c23a62f3a-c24e584dc37mr325956566b.4.1787635322840;
-        Mon, 24 Aug 2026 22:22:02 -0700 (PDT)
-Received: from GOLDENAXE.office-radnicka.localarea.network (c82-214-103-66.loc.akton.net. [82.214.103.66])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c249606a8fasm1733198866b.8.2026.08.24.22.22.01
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 24 Aug 2026 22:22:02 -0700 (PDT)
-From: Bruno Banelli <bbanelli@gmail.com>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Yixun Lan <dlan@kernel.org>,
-	Ze Huang <huang.ze@linux.dev>,
-	Alex Elder <elder@riscstar.com>,
-	Paul Walmsley <pjw@kernel.org>,
-	Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>,
-	Alexandre Ghiti <alex@ghiti.fr>,
-	linux-phy@lists.infradead.org,
-	linux-riscv@lists.infradead.org,
-	spacemit@lists.linux.dev,
-	linux-kernel@vger.kernel.org,
-	Bruno Banelli <bbanelli@gmail.com>
-Subject: [PATCH] phy: spacemit: enable K1 USB 2.0 PHY by default on ARCH_SPACEMIT
-Date: Tue, 25 Aug 2026 07:21:58 +0200
-Message-ID: <20260825052158.66367-1-bbanelli@gmail.com>
-X-Mailer: git-send-email 2.43.0
-MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260824_222205_430579_5585AC21 
-X-CRM114-Status: GOOD (  11.28  )
+	Tue, 25 Aug 2026 05:33:03 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 94D3640DE0;
+	Tue, 25 Aug 2026 05:33:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2C0421F000E9;
+	Tue, 25 Aug 2026 05:33:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1787635982;
+	bh=UtcbBKTOxpEJ97NW9Y+lJPN9wafcWJxNExQ4InsxmoQ=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=hStar+3PDgRiAVYCviBaiRYGRUQvnAl8CkDfsffQm6csHasxOn0Oy1TlKLghiMTfj
+	 WCNBxqvDbWNBXque3PP3E8pNV/WFOg1czKL/ZZ+/7kiC2cWQznyl8eKuzCCE+UN3wi
+	 okP5sap6MOcQU3NiKC+HYaQrZtfpx+BU+aeM4n00mHF89zlNcNxpCOpJt3jXY+kIyY
+	 mrT9u9eU0uv5TnSpZS7XHfJEEiPAGBFxjliKCJF+AAzbo6pCSFkFjx3zMIuVshpncc
+	 zWuSiihraC86IR5L/nHqNhic8D9rp33GmOIYflM9Vg8xLwK28Rocwe1DMuS2D+DI7W
+	 a9FIXfLLtH3kw==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH] phy: spacemit: enable K1 USB 2.0 PHY by default on
+ ARCH_SPACEMIT
+To: "Bruno Banelli" <bbanelli@gmail.com>
+Cc: vkoul@kernel.org, neil.armstrong@linaro.org, linux-phy@lists.infradead.org, olteanv@gmail.com
+In-Reply-To: <20260825052158.66367-1-bbanelli@gmail.com>
+References: <20260825052158.66367-1-bbanelli@gmail.com>
+Date: Tue, 25 Aug 2026 05:33:01 +0000
+Message-Id: <20260825053302.2C0421F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,47 +62,51 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-PHY_SPACEMIT_K1_PCIE has "default ARCH_SPACEMIT", but
-PHY_SPACEMIT_K1_USB2, twelve lines below it in the same file, does not.
-Since the symbol is also absent from arch/riscv/configs/defconfig, a
-plain "make defconfig" build for a SpacemiT K1 board ends up with the
-USB 2.0 PHY driver disabled.
-
-dwc3-generic-plat needs that PHY, so the result is a kernel with no
-working USB at all on boards such as the Milk-V Jupiter, where all four
-USB 3.0 type-A ports hang off the single dwc3 controller.
-
-Give it the same default as its sibling.
-
-Signed-off-by: Bruno Banelli <bbanelli@gmail.com>
----
- drivers/phy/spacemit/Kconfig | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/drivers/phy/spacemit/Kconfig b/drivers/phy/spacemit/Kconfig
-index 5fdf18fce..dd74a3faf 100644
---- a/drivers/phy/spacemit/Kconfig
-+++ b/drivers/phy/spacemit/Kconfig
-@@ -20,6 +20,7 @@ config PHY_SPACEMIT_K1_USB2
- 	depends on COMMON_CLK
- 	depends on USB_COMMON
- 	select GENERIC_PHY
-+	default ARCH_SPACEMIT
- 	help
- 	  Enable this to support K1 USB 2.0 PHY driver. This driver takes care of
- 	  enabling and clock setup and will be used by K1 udc/ehci/otg/xhci driver.
-
-base-commit: 66498c75b4f8017f62d720d9b59675bdf3abce91
--- 
-2.43.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
+IFtIaWdoXSBNaXNzaW5nIGBzZWxlY3QgUkVHTUFQX01NSU9gIGluIGBQSFlfU1BBQ0VNSVRfSzFf
+VVNCMmAgS2NvbmZpZyBlbnRyeS4KLSBbTWVkaXVtXSBNaXNzaW5nIGBkZXBlbmRzIG9uIEhBU19J
+T01FTWAgaW4gYFBIWV9TUEFDRU1JVF9LMV9VU0IyYCBLY29uZmlnIGVudHJ5LgotLQoKLS0tIFBh
+dGNoIFsxXTogW1BBVENIXSBwaHk6IHNwYWNlbWl0OiBlbmFibGUgSzEgVVNCIDIuMCBQSFkgYnkg
+ZGVmYXVsdCBvbiBBUkNIX1NQQUNFTUlUIC0tLQpjb21taXQgZjc1NmMzY2Y1YjhmZjEzNmU4ZDI4
+NmUxNmYxZTI1Mjg5YWE5ZTA5NQpBdXRob3I6IEJydW5vIEJhbmVsbGkgPGJiYW5lbGxpQGdtYWls
+LmNvbT4KCnBoeTogc3BhY2VtaXQ6IGVuYWJsZSBLMSBVU0IgMi4wIFBIWSBieSBkZWZhdWx0IG9u
+IEFSQ0hfU1BBQ0VNSVQKClRoaXMgcGF0Y2ggYWRkcyBhIGRlZmF1bHQgQVJDSF9TUEFDRU1JVCBj
+b25maWd1cmF0aW9uIGZvciB0aGUgSzEgVVNCIDIuMCBQSFkKZHJpdmVyLiBUaGlzIG1hdGNoZXMg
+dGhlIFBDSWUgUEhZIGNvbmZpZ3VyYXRpb24gYW5kIGVuc3VyZXMgdGhlIFVTQiBkcml2ZXIgaXMK
+ZW5hYmxlZCBieSBkZWZhdWx0IG9uIFNwYWNlbWlUIEsxIGJvYXJkcy4KCj4gZGlmZiAtLWdpdCBh
+L2RyaXZlcnMvcGh5L3NwYWNlbWl0L0tjb25maWcgYi9kcml2ZXJzL3BoeS9zcGFjZW1pdC9LY29u
+ZmlnCj4gaW5kZXggNWZkZjE4ZmNlNDk5NS4uZGQ3NGEzZmFmMDFmZCAxMDA2NDQKPiAtLS0gYS9k
+cml2ZXJzL3BoeS9zcGFjZW1pdC9LY29uZmlnCj4gKysrIGIvZHJpdmVycy9waHkvc3BhY2VtaXQv
+S2NvbmZpZwo+IEBAIC0yMCw2ICsyMCw3IEBAIGNvbmZpZyBQSFlfU1BBQ0VNSVRfSzFfVVNCMgo+
+ICAJZGVwZW5kcyBvbiBDT01NT05fQ0xLCj4gIAlkZXBlbmRzIG9uIFVTQl9DT01NT04KPiAgCXNl
+bGVjdCBHRU5FUklDX1BIWQoKW1NldmVyaXR5OiBIaWdoXQpUaGlzIGlzIGEgcHJlLWV4aXN0aW5n
+IGlzc3VlLCBidXQgZG9lcyB0aGlzIGNvbmZpZyBlbnRyeSBuZWVkIHRvIHNlbGVjdApSRUdNQVBf
+TU1JTz8KCklmIGEgcmFuZGNvbmZpZyBidWlsZCBoYXMgUEhZX1NQQUNFTUlUX0sxX1VTQjIgZW5h
+YmxlZCBhbmQgQ09ORklHX1JFR01BUAplbmFibGVkLCBidXQgQ09ORklHX1JFR01BUF9NTUlPIGlz
+IGRpc2FibGVkLCB3b3VsZCB0aGlzIHJlc3VsdCBpbiBhIGxpbmthZ2UKZXJyb3I/IFRoZSBkcml2
+ZXIgdXNlcyBkZXZtX3JlZ21hcF9pbml0X21taW8oKSBkdXJpbmcgcHJvYmU6Cgpkcml2ZXJzL3Bo
+eS9zcGFjZW1pdC9waHktazEtdXNiMi5jOnNwYWNlbWl0X3VzYjJwaHlfcHJvYmUoKSB7CiAgICAu
+Li4KICAgIHNwaHktPnJlZ21hcF9iYXNlID0gZGV2bV9yZWdtYXBfaW5pdF9tbWlvKGRldiwgYmFz
+ZSwgJnBoeV9yZWdtYXBfY29uZmlnKTsKICAgIC4uLgp9CgpbU2V2ZXJpdHk6IE1lZGl1bV0KVGhp
+cyBpcyBhbHNvIGEgcHJlLWV4aXN0aW5nIGlzc3VlLCBidXQgc2hvdWxkIHRoaXMgY29uZmlnIGRl
+cGVuZCBvbiBIQVNfSU9NRU0/CgpUaGUgZHJpdmVyIG1hcHMgSS9PIG1lbW9yeSBkdXJpbmcgcHJv
+YmU6Cgpkcml2ZXJzL3BoeS9zcGFjZW1pdC9waHktazEtdXNiMi5jOnNwYWNlbWl0X3VzYjJwaHlf
+cHJvYmUoKSB7CiAgICAuLi4KICAgIGJhc2UgPSBkZXZtX3BsYXRmb3JtX2lvcmVtYXBfcmVzb3Vy
+Y2UocGRldiwgMCk7CiAgICAuLi4KfQoKQ291bGQgdGhpcyBjYXVzZSBidWlsZCBvciBydW50aW1l
+IGZhaWx1cmVzIG9uIGFyY2hpdGVjdHVyZXMgbGFja2luZyBJL08gbWVtb3J5CnN1cHBvcnQgKHN1
+Y2ggYXMgVU1MKSB3aGVuIENPTVBJTEVfVEVTVCBpcyBlbmFibGVkPwoKPiArCWRlZmF1bHQgQVJD
+SF9TUEFDRU1JVAo+ICAJaGVscAo+ICAJICBFbmFibGUgdGhpcyB0byBzdXBwb3J0IEsxIFVTQiAy
+LjAgUEhZIGRyaXZlci4gVGhpcyBkcml2ZXIgdGFrZXMgY2FyZSBvZgo+ICAJICBlbmFibGluZyBh
+bmQgY2xvY2sgc2V0dXAgYW5kIHdpbGwgYmUgdXNlZCBieSBLMSB1ZGMvZWhjaS9vdGcveGhjaSBk
+cml2ZXIuCgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3Bh
+dGNoc2V0LzIwMjYwODI1MDUyMTU4LjY2MzY3LTEtYmJhbmVsbGlAZ21haWwuY29tP3BhcnQ9MQoK
+LS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcK
+aHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
