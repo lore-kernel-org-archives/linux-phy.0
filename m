@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC763C61DBE
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Aug 2026 12:37:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 091F7C61DC2
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Aug 2026 12:37:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UH/kw6tu3MLY7Yorci7gkYegTIfII9aXfsV8CC95OWI=; b=ZXVr7Bz8e3ZGcN
-	JHyct+Ug9ltLoDYmPHyIzkU1epT/Y7NyUt16MpiTv3Z2PpPDabHvN7O7xFpxsxKhsB9xmHGf3PI4m
-	/UbRTsBqIzgcA7iLmaUVWbS/niSed7qctEZAytsm3Pq3z2F/qzEjZqDAREqAETDKZvatWvIl49qpF
-	9hFRQPLoLhJkRCxG1DPEwYy8G/byOruLytGXueyuer8Q6AGzecXdSEKOUA3g4C+jFOhaZwd48wXss
-	dssT/POLLE1pwmpPHyeb8sP5YmUdVcgOEo8i4XZXNE6BGxuGpcd9/yaO5VxRoZ9Z43fGS+zDTBBu0
-	8yEtWmrSgWIjG2OrSVgA==;
+	List-Owner; bh=gQVWaqFY8RqM3yweK2l5zpk9blDwnWVIjJt5fxiX/04=; b=De97K2GDQJAOYr
+	uv74QdVOO+wyrAd2mawlHuSJgdqivj/4RI5aU4oIbqkXfi1OzyQ47Nn2d+8IhA/HjgGoyeMbiDRUf
+	HkUasMZbR27+q3fio1vGiy2SfobC9940m/S7XBBjYv4a1WAU9dx8wDC4x7WgwyaRM+DHgJnihk/b7
+	YMnBJvjZ9cS0Nje6eKFVabrT5E8IsHnnCUx3jsVuvCIBe8psNx/XhDeLhG5REGYgcythwulN79lAU
+	L7EePss+UANU6r7/ciBkanSbcP0IoJyrin4ah+L9h7wWWEdxKLu2CZblK5KyxKvZnDd/7b+3nRf8Y
+	1val3pysLmHSttWGAFlg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyqPH-00000000n82-2hhd;
+	id 1wyqPH-00000000n88-2xUT;
 	Tue, 25 Aug 2026 12:37:35 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyqPF-00000000n6j-3rsa
+	id 1wyqPF-00000000n6l-3roH
 	for linux-phy@lists.infradead.org;
 	Tue, 25 Aug 2026 12:37:34 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 775A04401B;
+	by sea.source.kernel.org (Postfix) with ESMTP id 85C88440BA;
 	Tue, 25 Aug 2026 12:37:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 0B9A3C4AF09;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 1A531C32786;
 	Tue, 25 Aug 2026 12:37:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1787661453;
-	bh=tRYW4jdFf4FVjtP/xrG0RKuqoRzNxBH9MyVDZQmNXqI=;
+	bh=j5WGDZq4JFhhRkNnOtlgnMroG1FmpIpiWmK2eo2bQ9Y=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=OefE+pqU1/0Dx42MhT9fMWu4rKjJGzSXWE0y41uMVok+J6tUIGwOlI8IGOUELqTaW
-	 sSdkzvbW7RxCIpAg3258o13dDg5Mc90Iz0s32bCIxqsL7RO42asdzzit+3WOCeh1xU
-	 iVupKXPnyxGZ/yLQWqVTJhUXmV/XR+vj6jym6hgScsS4WSjKYqsHOAT2Nf8No/l7m3
-	 DbbARUneyr8FnGdiOcPPIxuclCB9/yJG+GsM4FBjqp8trYbb3ZQcXV5kcooqqKzSzG
-	 8riV6N2J230MW2kdE2jO2hTQSg5ejHtNoCbBfAGVgywG2fprYrSSDRV3NUmXUQrMby
-	 OmK/ZPlxVuFdQ==
+	b=WSgOEFaSpM/OMAjeXY1/ebR/c20kAD/M996R04ZPZ/+5Y8IbROI4wMZzcVA7XJotk
+	 k9DVTBfVxouhe3Dl4rz/ScZ6PBx+Pgdvlj75t2Hd+5BTRSuKJRu1YO0zESoO1jLEtH
+	 Km/uNDHiZnUwy1fTPEGDajf8uiwDA9KSkTJIgMinhw3br8+tcBqEAv366SHT29Dy/r
+	 sBn+BEe5ZGD2yNx1QS9m8/1uPb7+cf26Bq4jVd2qXVkGd1rU5ZewJa8NwcuRF+ATcr
+	 XhKM4A8b/wptMB0Tx+VSYZADqQAXcpa83YzTvqYQm76k1LE/FLnrVgxGUUEjK2mttf
+	 bHvGWVFf4W1Gg==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D8615C61DBD;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E94DCC61DC6;
 	Tue, 25 Aug 2026 12:37:32 +0000 (UTC)
 From: George Moussalem via B4 Relay <devnull+george.moussalem.outlook.com@kernel.org>
-Date: Tue, 25 Aug 2026 16:37:19 +0400
-Subject: [PATCH v3 02/12] dt-bindings: phy: qcom,ipq5332-uniphy-pcie-usb3:
- Document the IPQ5018 USB3 PHY
+Date: Tue, 25 Aug 2026 16:37:20 +0400
+Subject: [PATCH v3 03/12] phy: qualcomm: qcom-uniphy-pcie-28lp: Convert to
+ PCIe/USB3 combo PHY driver
 MIME-Version: 1.0
-Message-Id: <20260825-ipq5018-usb3-v3-2-39be0955a6aa@outlook.com>
+Message-Id: <20260825-ipq5018-usb3-v3-3-39be0955a6aa@outlook.com>
 References: <20260825-ipq5018-usb3-v3-0-39be0955a6aa@outlook.com>
 In-Reply-To: <20260825-ipq5018-usb3-v3-0-39be0955a6aa@outlook.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -70,11 +70,11 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  linux-usb@vger.kernel.org, George Moussalem <george.moussalem@outlook.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1787661450; l=1847;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1787661450; l=10621;
  i=george.moussalem@outlook.com; s=20250321; h=from:subject:message-id;
- bh=X92ejnhwDPtga79pHvMyqYjnXONSziO0EJioVCS0ABA=;
- b=m2T5qx7FPQMNTLk6lhedEpBLyrSqTSMrw5CpPDaxTCtZaJUi54zkvLB+c4zokXIz766afBBvE
- 7EenPiSHMiUCWe/aRlPY1IDzvQQ59R5jdMNVESIXmlesBZs0nsu2Y2F
+ bh=0yuZk82tzQfyVclB/GgiAcNvs78YUKjs9vvJMW3iyVM=;
+ b=/pmvVrLJ6Un6MrwUYxtGn6H/WfZktRg6pUnH0HzlKDelB0n7Do30f5r+ZJRdrLKEBeGwIUm6r
+ JWShDzGzv7WApInEnTaKFCHgKE38Y1i7fc5vKgvvSIT9Lfq0oG9vbnU
 X-Developer-Key: i=george.moussalem@outlook.com; a=ed25519;
  pk=/PuRTSI9iYiHwcc6Nrde8qF4ZDhJBlUgpHdhsIjnqIk=
 X-Endpoint-Received: by B4 Relay for george.moussalem@outlook.com/20250321
@@ -99,62 +99,302 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: George Moussalem <george.moussalem@outlook.com>
 
-Describe the USB3 PHY found in the IPQ5018 SoC so add the compatible
-string for it as well as the required resources (clocks and resets).
-
-The PCIe and USB physical pads are muxed and selection is done via a
-control register in TCSR. By default, PCIe mode is selected, hence make
-the property for USB mux selection required.
-
-In addition, the PHY requires a 5V supply for USB3 mode operation.
+This PHY found in IPQ5332 and IPQ5018 SoCs is actually a multi-purpose
+PCIe/USB3 combo PHY. The driver was initially created for PCIe PHY
+support only. As such, rename the driver and generalize function and
+struct names to reflect that it is a PCIe and USB3 combo PHY driver so
+that USB3 support can be added in subsequent patches.
 
 Signed-off-by: George Moussalem <george.moussalem@outlook.com>
 ---
- .../phy/qcom,ipq5332-uniphy-pcie-usb3-phy.yaml     | 24 ++++++++++++++++++++++
- 1 file changed, 24 insertions(+)
+ drivers/phy/qualcomm/Kconfig                       | 24 +++---
+ drivers/phy/qualcomm/Makefile                      |  2 +-
+ ...cie-28lp.c => phy-qcom-uniphy-pcie-usb3-28lp.c} | 87 +++++++++++-----------
+ 3 files changed, 55 insertions(+), 58 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-usb3-phy.yaml
-index 0d9d0fb405b6..1cd5392a1a0f 100644
---- a/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-usb3-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-usb3-phy.yaml
-@@ -18,6 +18,7 @@ properties:
-   compatible:
-     enum:
-       - qcom,ipq5018-uniphy-pcie-phy
-+      - qcom,ipq5018-uniphy-usb3-phy
-       - qcom,ipq5332-uniphy-pcie-phy
+diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
+index d910a5d1a1ac..6872aa919cf2 100644
+--- a/drivers/phy/qualcomm/Kconfig
++++ b/drivers/phy/qualcomm/Kconfig
+@@ -155,19 +155,6 @@ config PHY_QCOM_M31_USB
+ 	  management. This driver is required even for peripheral only or
+ 	  host only mode configurations.
  
-   reg:
-@@ -93,6 +94,29 @@ allOf:
-       required:
-         - num-lanes
+-config PHY_QCOM_UNIPHY_PCIE_28LP
+-	bool "PCIE UNIPHY 28LP PHY driver"
+-	depends on ARCH_QCOM
+-	depends on COMMON_CLK
+-	depends on HAS_IOMEM
+-	depends on OF
+-	select GENERIC_PHY
+-	help
+-	  Enable this to support the PCIe UNIPHY 28LP phy transceiver that
+-	  is used with PCIe controllers on Qualcomm IPQ5332 chips. It
+-	  handles PHY initialization, clock management required after
+-	  resetting the hardware and power management.
+-
+ config PHY_QCOM_M31_EUSB
+ 	tristate "Qualcomm M31 eUSB2 PHY driver support"
+ 	depends on USB && (ARCH_QCOM || COMPILE_TEST)
+@@ -178,6 +165,17 @@ config PHY_QCOM_M31_EUSB
+ 	  up of the associated USB repeater that is paired with the eUSB2
+ 	  PHY.
  
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - qcom,ipq5018-uniphy-usb3-phy
-+    then:
-+      properties:
-+        clocks:
-+          items:
-+            - description: usb3 pipe clock
-+            - description: usb3 cfg ahb clock
-+        resets:
-+          items:
-+            - description: usb3 phy reset
-+        "#clock-cells":
-+          const: 0
-+        "#phy-cells":
-+          const: 0
-+      required:
-+        - vdd-supply
-+        - qcom,phy-usb-mux-sel
++config PHY_QCOM_UNIPHY_PCIE_USB3_28LP
++	bool "Qualcomm IPQ5332 UNIPHY PCIe USB3 28LP PHY driver"
++	depends on OF && (ARCH_QCOM || COMPILE_TEST)
++	select GENERIC_PHY
++	select MFD_SYSCON
++	help
++	  Enable this to support the Qualcomm USB Super-Speed UNIPHY transceiver
++	  that is used on Qualcomm IPQ5018 and IPQ5332 SoCs with DWC3 USB core.
++	  It handles PHY initialization, clock management required after
++	  resetting the hardware and power management.
 +
-   - if:
-       properties:
-         compatible:
+ config PHY_QCOM_USB_HS
+ 	tristate "Qualcomm USB HS PHY module"
+ 	depends on USB_ULPI_BUS
+diff --git a/drivers/phy/qualcomm/Makefile b/drivers/phy/qualcomm/Makefile
+index 8bf887d58ee4..6e2e9737e387 100644
+--- a/drivers/phy/qualcomm/Makefile
++++ b/drivers/phy/qualcomm/Makefile
+@@ -18,7 +18,7 @@ obj-$(CONFIG_PHY_QCOM_QMP_USB_LEGACY)	+= phy-qcom-qmp-usb-legacy.o
+ 
+ obj-$(CONFIG_PHY_QCOM_QUSB2)		+= phy-qcom-qusb2.o
+ obj-$(CONFIG_PHY_QCOM_EUSB2_REPEATER)	+= phy-qcom-eusb2-repeater.o
+-obj-$(CONFIG_PHY_QCOM_UNIPHY_PCIE_28LP)	+= phy-qcom-uniphy-pcie-28lp.o
++obj-$(CONFIG_PHY_QCOM_UNIPHY_PCIE_USB3_28LP)	+= phy-qcom-uniphy-pcie-usb3-28lp.o
+ obj-$(CONFIG_PHY_QCOM_USB_HS) 		+= phy-qcom-usb-hs.o
+ obj-$(CONFIG_PHY_QCOM_USB_HSIC) 	+= phy-qcom-usb-hsic.o
+ obj-$(CONFIG_PHY_QCOM_USB_HS_28NM)	+= phy-qcom-usb-hs-28nm.o
+diff --git a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c
+similarity index 75%
+rename from drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
+rename to drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c
+index 324c0a5d658e..aeb8f7ddbd7a 100644
+--- a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
++++ b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c
+@@ -43,29 +43,29 @@
+ #define PHY_CFG_EIOS_DTCT_REG			0x3e4
+ #define PHY_CFG_GEN3_ALIGN_HOLDOFF_TIME		0x3e8
+ 
+-enum qcom_uniphy_pcie_type {
++enum qcom_uniphy_type {
+ 	PHY_TYPE_PCIE = 1,
+ 	PHY_TYPE_PCIE_GEN2,
+ 	PHY_TYPE_PCIE_GEN3,
+ };
+ 
+-struct qcom_uniphy_pcie_regs {
++struct qcom_uniphy_regs {
+ 	u32 offset;
+ 	u32 val;
+ };
+ 
+-struct qcom_uniphy_pcie_data {
++struct qcom_uniphy_data {
+ 	int lane_offset; /* offset between the lane register bases */
+ 	u32 phy_type;
+-	const struct qcom_uniphy_pcie_regs *init_seq;
++	const struct qcom_uniphy_regs *init_seq;
+ 	u32 init_seq_num;
+ 	u32 pipe_clk_rate;
+ };
+ 
+-struct qcom_uniphy_pcie {
++struct qcom_uniphy {
+ 	struct phy phy;
+ 	struct device *dev;
+-	const struct qcom_uniphy_pcie_data *data;
++	const struct qcom_uniphy_data *data;
+ 	struct clk_bulk_data *clks;
+ 	int num_clks;
+ 	struct reset_control *resets;
+@@ -73,9 +73,9 @@ struct qcom_uniphy_pcie {
+ 	int lanes;
+ };
+ 
+-#define phy_to_dw_phy(x)	container_of((x), struct qca_uni_pcie_phy, phy)
++#define phy_to_dw_phy(x)	container_of((x), struct qcom_uniphy, phy)
+ 
+-static const struct qcom_uniphy_pcie_regs ipq5018_regs[] = {
++static const struct qcom_uniphy_regs ipq5018_pcie_regs[] = {
+ 	{
+ 		.offset = SSCG_CTRL_REG_4,
+ 		.val = 0x1cb9,
+@@ -109,7 +109,7 @@ static const struct qcom_uniphy_pcie_regs ipq5018_regs[] = {
+ 	},
+ };
+ 
+-static const struct qcom_uniphy_pcie_regs ipq5332_regs[] = {
++static const struct qcom_uniphy_regs ipq5332_pcie_regs[] = {
+ 	{
+ 		.offset = PHY_CFG_PLLCFG,
+ 		.val = 0x30,
+@@ -122,26 +122,26 @@ static const struct qcom_uniphy_pcie_regs ipq5332_regs[] = {
+ 	},
+ };
+ 
+-static const struct qcom_uniphy_pcie_data ipq5018_data = {
++static const struct qcom_uniphy_data ipq5018_data = {
+ 	.lane_offset	= 0x800,
+ 	.phy_type	= PHY_TYPE_PCIE_GEN2,
+-	.init_seq	= ipq5018_regs,
+-	.init_seq_num	= ARRAY_SIZE(ipq5018_regs),
++	.init_seq	= ipq5018_pcie_regs,
++	.init_seq_num	= ARRAY_SIZE(ipq5018_pcie_regs),
+ 	.pipe_clk_rate	= 125 * MEGA,
+ };
+ 
+-static const struct qcom_uniphy_pcie_data ipq5332_data = {
++static const struct qcom_uniphy_data ipq5332_data = {
+ 	.lane_offset	= 0x800,
+ 	.phy_type	= PHY_TYPE_PCIE_GEN3,
+-	.init_seq	= ipq5332_regs,
+-	.init_seq_num	= ARRAY_SIZE(ipq5332_regs),
++	.init_seq	= ipq5332_pcie_regs,
++	.init_seq_num	= ARRAY_SIZE(ipq5332_pcie_regs),
+ 	.pipe_clk_rate	= 250 * MEGA,
+ };
+ 
+-static void qcom_uniphy_pcie_init(struct qcom_uniphy_pcie *phy)
++static void qcom_uniphy_pcie_usb3_init(struct qcom_uniphy *phy)
+ {
+-	const struct qcom_uniphy_pcie_data *data = phy->data;
+-	const struct qcom_uniphy_pcie_regs *init_seq;
++	const struct qcom_uniphy_data *data = phy->data;
++	const struct qcom_uniphy_regs *init_seq;
+ 	void __iomem *base = phy->base;
+ 	int lane, i;
+ 
+@@ -155,18 +155,18 @@ static void qcom_uniphy_pcie_init(struct qcom_uniphy_pcie *phy)
+ 	}
+ }
+ 
+-static int qcom_uniphy_pcie_power_off(struct phy *x)
++static int qcom_uniphy_pcie_usb3_power_off(struct phy *x)
+ {
+-	struct qcom_uniphy_pcie *phy = phy_get_drvdata(x);
++	struct qcom_uniphy *phy = phy_get_drvdata(x);
+ 
+ 	clk_bulk_disable_unprepare(phy->num_clks, phy->clks);
+ 
+ 	return reset_control_assert(phy->resets);
+ }
+ 
+-static int qcom_uniphy_pcie_power_on(struct phy *x)
++static int qcom_uniphy_pcie_usb3_power_on(struct phy *x)
+ {
+-	struct qcom_uniphy_pcie *phy = phy_get_drvdata(x);
++	struct qcom_uniphy *phy = phy_get_drvdata(x);
+ 	int ret;
+ 
+ 	ret = reset_control_assert(phy->resets);
+@@ -193,13 +193,13 @@ static int qcom_uniphy_pcie_power_on(struct phy *x)
+ 
+ 	usleep_range(CLK_EN_DELAY_MIN_US, CLK_EN_DELAY_MAX_US);
+ 
+-	qcom_uniphy_pcie_init(phy);
++	qcom_uniphy_pcie_usb3_init(phy);
+ 
+ 	return 0;
+ }
+ 
+-static inline int qcom_uniphy_pcie_get_resources(struct platform_device *pdev,
+-						 struct qcom_uniphy_pcie *phy)
++static inline int qcom_uniphy_pcie_usb3_get_resources(struct platform_device *pdev,
++						      struct qcom_uniphy *phy)
+ {
+ 	struct resource *res;
+ 
+@@ -236,9 +236,9 @@ static inline int qcom_uniphy_pcie_get_resources(struct platform_device *pdev,
+  *    clk  |   +-------+   |                   +-----+
+  *         +---------------+
+  */
+-static inline int phy_pipe_clk_register(struct qcom_uniphy_pcie *phy, int id)
++static inline int phy_pipe_clk_register(struct qcom_uniphy *phy, int id)
+ {
+-	const struct qcom_uniphy_pcie_data *data = phy->data;
++	const struct qcom_uniphy_data *data = phy->data;
+ 	struct clk_hw *hw;
+ 	char name[64];
+ 
+@@ -252,30 +252,29 @@ static inline int phy_pipe_clk_register(struct qcom_uniphy_pcie *phy, int id)
+ 	return devm_of_clk_add_hw_provider(phy->dev, of_clk_hw_simple_get, hw);
+ }
+ 
+-static const struct of_device_id qcom_uniphy_pcie_id_table[] = {
++static const struct of_device_id qcom_uniphy_pcie_usb3_id_table[] = {
+ 	{
+ 		.compatible = "qcom,ipq5018-uniphy-pcie-phy",
+ 		.data = &ipq5018_data,
+ 	}, {
+ 		.compatible = "qcom,ipq5332-uniphy-pcie-phy",
+ 		.data = &ipq5332_data,
+-	}, {
+-		/* Sentinel */
+ 	},
++	{ },
+ };
+-MODULE_DEVICE_TABLE(of, qcom_uniphy_pcie_id_table);
++MODULE_DEVICE_TABLE(of, qcom_uniphy_pcie_usb3_id_table);
+ 
+-static const struct phy_ops pcie_ops = {
+-	.power_on	= qcom_uniphy_pcie_power_on,
+-	.power_off	= qcom_uniphy_pcie_power_off,
++static const struct phy_ops qcom_uniphy_ops = {
++	.power_on	= qcom_uniphy_pcie_usb3_power_on,
++	.power_off	= qcom_uniphy_pcie_usb3_power_off,
+ 	.owner          = THIS_MODULE,
+ };
+ 
+-static int qcom_uniphy_pcie_probe(struct platform_device *pdev)
++static int qcom_uniphy_pcie_usb3_probe(struct platform_device *pdev)
+ {
+ 	struct phy_provider *phy_provider;
+ 	struct device *dev = &pdev->dev;
+-	struct qcom_uniphy_pcie *phy;
++	struct qcom_uniphy *phy;
+ 	struct phy *generic_phy;
+ 	int ret;
+ 
+@@ -294,12 +293,12 @@ static int qcom_uniphy_pcie_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		return dev_err_probe(dev, ret, "Couldn't read num-lanes\n");
+ 
+-	ret = qcom_uniphy_pcie_get_resources(pdev, phy);
++	ret = qcom_uniphy_pcie_usb3_get_resources(pdev, phy);
+ 	if (ret < 0)
+ 		return dev_err_probe(&pdev->dev, ret,
+ 				     "failed to get resources: %d\n", ret);
+ 
+-	generic_phy = devm_phy_create(phy->dev, NULL, &pcie_ops);
++	generic_phy = devm_phy_create(phy->dev, NULL, &qcom_uniphy_ops);
+ 	if (IS_ERR(generic_phy))
+ 		return PTR_ERR(generic_phy);
+ 
+@@ -317,15 +316,15 @@ static int qcom_uniphy_pcie_probe(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
+-static struct platform_driver qcom_uniphy_pcie_driver = {
+-	.probe		= qcom_uniphy_pcie_probe,
++static struct platform_driver qcom_uniphy_pcie_usb3_driver = {
++	.probe		= qcom_uniphy_pcie_usb3_probe,
+ 	.driver		= {
+-		.name	= "qcom-uniphy-pcie",
+-		.of_match_table = qcom_uniphy_pcie_id_table,
++		.name	= "qcom-uniphy-pcie-usb3-28lp",
++		.of_match_table = qcom_uniphy_pcie_usb3_id_table,
+ 	},
+ };
+ 
+-module_platform_driver(qcom_uniphy_pcie_driver);
++module_platform_driver(qcom_uniphy_pcie_usb3_driver);
+ 
+-MODULE_DESCRIPTION("PCIE QCOM UNIPHY driver");
++MODULE_DESCRIPTION("Qualcomm IPQ5332 UNIPHY PCIe USB3 28LP PHY driver");
+ MODULE_LICENSE("GPL");
 
 -- 
 2.53.0
