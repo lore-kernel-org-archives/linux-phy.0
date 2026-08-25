@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91F77C61DD2
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0C0CC61DD5
 	for <linux-phy@archiver.kernel.org>; Tue, 25 Aug 2026 12:37:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,45 +12,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+Qu4LwECJg8CwpVyCuFvRs9Sxfk2p/798OuRgQC18pw=; b=fc8a/KJk8Zyr/U
-	zumuGnWr2L68U6Xa9Gek8oH8jG6svSWgebHdKelljMAvMQG2q3JY1YYnKSjX6C9HKypHgxEtOLt0p
-	f2Js2fvLeoI1lFlS1rprOGFFmOZfgxwxz4ztHXgSCLErfoXfNAChlfMVMBcw3s9NIPzz+/ZBAsYxo
-	Vj0qI+MEl3Kyj2pzS8zyYwrIoLVD9ZNnLBJLYbi+Aju6IueG7lW8oVNxf066RBStbPVI35pNGnDqo
-	dmTkhsHe4G17CQnTlTxiqUHEWSus6T1JlAQQjwAiv8Mb+WniWjx1rC2DRun6sQUtTpLZsOnI2jj1i
-	UyLm9ANNrHiHJ8iCTihA==;
+	List-Owner; bh=/Ty+27gG3dtucbe7YYAHOMse1IsPZEQC5W/GnSMn/h0=; b=X5zhgNNXdA1PR6
+	9UBGl30U0Miu2i5uNolquoYOMW16y9eH2wusnoxA4b0iZE0cF/euUqn6lhc/zDltRe9V+jAIOQ47Z
+	gE06sHm2b4CYvxpTdgW9K0ZoZKqRpg6G3AO6WeLqeqcxiUFaYx/Ve4krAh1+KGtomrEtVG5IcDm7h
+	dPxBJQtlMbYLpAZ49WVwHu4n0XIarS5Z5AptJZNVylG9faMJDWE8UT14MOcp1ZZslwR39sBNhx3QJ
+	i0fa+FbtmDoTHPssB+kIbW6M80O+cIw/4uLggiX2pD+cbLlK8KVrqUtTYCU7YxgnTY4hxH/ODphmA
+	WlHqP6hjhWTMyXKXZ/jQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyqPI-00000000n9S-0j9h;
+	id 1wyqPI-00000000nA7-1ZsK;
 	Tue, 25 Aug 2026 12:37:36 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyqPG-00000000n72-24GH
+	id 1wyqPG-00000000n7Z-3DEf
 	for linux-phy@lists.infradead.org;
 	Tue, 25 Aug 2026 12:37:34 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id A131B44F71;
+	by sea.source.kernel.org (Postfix) with ESMTP id C341944FEB;
 	Tue, 25 Aug 2026 12:37:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 4E6EEC4AF64;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 97A99C4AF18;
 	Tue, 25 Aug 2026 12:37:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1787661453;
-	bh=avzmWwQpX0JSkmRzAWMW0/YG33J6q0FexnlR/eMZTQY=;
+	bh=7Zgspg2cpl6a219QZ8lKlBpC1rJx9A4XKCi4EwWakz4=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=TGSHgOJXlRia8CsEkiTGLJuif2wqmmFGpq97SzMK6Ki/T/3OY7dJZAah0+pEnHSe9
-	 grcy6/GSMUxG7Fg9fkU5pYgpQNYITV/EwY24p+prLUXaubYLjJgj14KL8E0vGfp92B
-	 6GLncB2eRRt2Yv0oDQWvt/LH7xMeeLRzWKGAQ2Y+7Az1gX7ifWM4cJFfiHA04wnff+
-	 iC8wvET1djwW1+3HotdaFjthjrLzyXeiEj6WOsLDLKluhOK6oZnnIJrESprt/ISWyW
-	 WDtkeVv738e62yyLRINy0p6ksTAvP+ZpFqoGB4RVwcRrXdddJEt5GcihGnKGoB1T3B
-	 3nR8l406/vscg==
+	b=bZs2GgiJnxbXABZ7Dm/P+b9Iw3Fh549cvtzTQur8tWjK4WHzTrCyJHPNNIALjCDHy
+	 KwWnhZAtJnNKo6liFOJ6d8jaSgw4odZ1ATv5ie52AUlX+qchqeHUNvw0bZtOIdfDq4
+	 ixJjLdDavzcTDABdkl6k8paUNIkIce/XhdlgWch5yoVmF7XiavqQlxHFladFv0VvkE
+	 HsjINhUTOgUGfGsLmsVi/uX5rhK9cTcxfA66EbkihhpqHLO131mth2RhMpK6LURtm1
+	 GK0bx4LcNYc79Es2nQO80JAtEAm25u7Q0S1LywEPi3+LFy3XiyUGEJ0Lz20/C2vXRf
+	 zqCbjxCep+qOA==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 354D8C61DC2;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 82E91C61DC4;
 	Tue, 25 Aug 2026 12:37:33 +0000 (UTC)
 From: George Moussalem via B4 Relay <devnull+george.moussalem.outlook.com@kernel.org>
-Date: Tue, 25 Aug 2026 16:37:24 +0400
-Subject: [PATCH v3 07/12] phy: qualcomm: qcom-uniphy-pcie-usb3-28lp: Add
- support for USB3 PHY on IPQ5018
+Date: Tue, 25 Aug 2026 16:37:29 +0400
+Subject: [PATCH v3 12/12] arm64: dts: qcom: ipq5018: Enable USB Super-Speed
+ PHY
 MIME-Version: 1.0
-Message-Id: <20260825-ipq5018-usb3-v3-7-39be0955a6aa@outlook.com>
+Message-Id: <20260825-ipq5018-usb3-v3-12-39be0955a6aa@outlook.com>
 References: <20260825-ipq5018-usb3-v3-0-39be0955a6aa@outlook.com>
 In-Reply-To: <20260825-ipq5018-usb3-v3-0-39be0955a6aa@outlook.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -70,11 +70,11 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  linux-usb@vger.kernel.org, George Moussalem <george.moussalem@outlook.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1787661450; l=10092;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1787661450; l=1078;
  i=george.moussalem@outlook.com; s=20250321; h=from:subject:message-id;
- bh=+boAC526ClvI2owwAskgOQvw3WQqb1ch8EZ15tcbsa0=;
- b=wb4Zy3IYXRKG7jetKeaIyXYC3CAq5Eyk9bsdmorAhskRYGNvC5CoviJeby7BMS1mZkBU7WUur
- 1m630mR+2N+B5/q//kdCzSokaJZOFelk1eKA6pVfVgPBglcaI9hpMBE
+ bh=mqT4fUHiS6tNRhSdjnTI3aemIVcVL9vUJPPDNDpgcvM=;
+ b=Zbh5XdZj5kfib84EvhnO+1xUv69j2kvgZlvOlgYPrI6hfVGPf812sBi6fbEFwZkzDzuN8g92X
+ zu3GBxeoPA+BP2pHmBTWaCK2dYjZLRiSjy+BermATV6GSCSAqPfpC8b
 X-Developer-Key: i=george.moussalem@outlook.com; a=ed25519;
  pk=/PuRTSI9iYiHwcc6Nrde8qF4ZDhJBlUgpHdhsIjnqIk=
 X-Endpoint-Received: by B4 Relay for george.moussalem@outlook.com/20250321
@@ -99,321 +99,45 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: George Moussalem <george.moussalem@outlook.com>
 
-Add support for the USB3 PHY on IPQ5018 chipsets.
-
-The PHY outputs a 250MHz PIPE clock routed to and gated by the GCC, so
-register a fixed rate clock. In addition, add the register/value pairs
-for the PHY initialization sequence.
-
-The PHY requires a 5V supply, so acquire the regulator from the
-devicetree and enable it on power on and disable it on power off.
-
-The code to acquire clocks and resets is the same as for PCIe so no
-changes are needed.
-
-Power on/off sequences for PCIE and USB3 are similar except for the
-delay timings and USB3 requirement for the PHY supply.
-
-Lastly, the PCIe and USB3 pads are muxed so select USB3 mode in TCSR
-which needs to occur before the DWC3 USB3 controller resets.
-Otherwise, the SS link doesn't train and remains stuck in RX.Detect.
+Add the 5V supply regulator and enable USB Super-Speed PHY support.
 
 Signed-off-by: George Moussalem <george.moussalem@outlook.com>
 ---
- .../phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c  | 154 +++++++++++++++++----
- 1 file changed, 127 insertions(+), 27 deletions(-)
+ arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c
-index d25ae9d8b9e7..84df331fce74 100644
---- a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c
-+++ b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c
-@@ -14,15 +14,21 @@
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
- #include <linux/regmap.h>
-+#include <linux/regulator/consumer.h>
- #include <linux/reset.h>
- #include <linux/units.h>
- 
--#define RST_ASSERT_DELAY_MIN_US		100
--#define RST_ASSERT_DELAY_MAX_US		150
--#define PIPE_CLK_DELAY_MIN_US		5000
--#define PIPE_CLK_DELAY_MAX_US		5100
--#define CLK_EN_DELAY_MIN_US		30
--#define CLK_EN_DELAY_MAX_US		50
-+#define PCIE_RST_ASSERT_DELAY_MIN_US	100
-+#define PCIE_RST_ASSERT_DELAY_MAX_US	150
-+#define PCIE_PIPE_CLK_DELAY_MIN_US	5000
-+#define PCIE_PIPE_CLK_DELAY_MAX_US	5100
-+#define PCIE_CLK_EN_DELAY_MIN_US	30
-+#define PCIE_CLK_EN_DELAY_MAX_US	50
+diff --git a/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts b/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
+index 8efb2b21ed9e..ca29f271e673 100644
+--- a/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
++++ b/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
+@@ -22,6 +22,14 @@ aliases {
+ 	chosen {
+ 		stdout-path = "serial0:115200n8";
+ 	};
 +
-+#define USB3_RST_ASSERT_DELAY_MIN_US	1
-+#define USB3_RST_ASSERT_DELAY_MAX_US	5
-+#define USB3_CLK_EN_DELAY_MIN_US	35
-+#define USB3_CLK_EN_DELAY_MAX_US	40
- 
- #define CDR_CTRL_REG_1			0x80
- #define CDR_CTRL_REG_2			0x84
-@@ -39,10 +45,13 @@
- #define PCIE_USB_COMBO_PHY_CFG_EIOS_DTCT_REG		0x3e4
- #define PCIE_USB_COMBO_PHY_CFG_GEN3_ALIGN_HOLDOFF_TIME	0x3e8
- 
-+#define TCSR_USB_MUX_SEL		BIT(0)
-+
-+#define PHY_IS_USB3(phy)	((phy)->data->phy_type == PHY_TYPE_USB3)
-+
- enum qcom_uniphy_type {
- 	PHY_TYPE_PCIE = 1,
--	PHY_TYPE_PCIE_GEN2,
--	PHY_TYPE_PCIE_GEN3,
-+	PHY_TYPE_USB3,
++	regulator_fixed_5p0: regulator-s0500 {
++		compatible = "regulator-fixed";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		regulator-name = "fixed_5p0";
++		gpios = <&tlmm 24 GPIO_ACTIVE_LOW>;
++	};
  };
  
- struct qcom_uniphy_regs {
-@@ -68,6 +77,9 @@ struct qcom_uniphy {
- 	int num_resets;
- 	void __iomem *base;
- 	int lanes;
-+	struct regulator *vreg;
-+	struct regmap *tcsr;
-+	unsigned int mux_offset;
+ &blsp1_uart1 {
+@@ -119,6 +127,12 @@ &usbphy0 {
+ 	status = "okay";
  };
  
- #define PHY_INIT_CFG(o, v)		\
-@@ -89,23 +101,39 @@ static const struct qcom_uniphy_regs ipq5018_pcie_regs[] = {
- 	PHY_INIT_CFG(PCIE_USB_COMBO_PHY_CFG_PCS_INTERNAL_CONTROL_2, 0xf101),
- };
- 
-+static const struct qcom_uniphy_regs ipq5018_usb_regs[] = {
-+	PHY_INIT_CFG(SSCG_CTRL_REG_4, 0x1cb9),
-+	PHY_INIT_CFG(SSCG_CTRL_REG_5, 0x023a),
-+	PHY_INIT_CFG(SSCG_CTRL_REG_3, 0xd360),
-+	PHY_INIT_CFG(SSCG_CTRL_REG_1, 0x1),
-+	PHY_INIT_CFG(SSCG_CTRL_REG_2, 0xeb),
++&usbphy1 {
++	vdd-supply = <&regulator_fixed_5p0>;
++
++	status = "okay";
 +};
 +
- static const struct qcom_uniphy_regs ipq5332_pcie_regs[] = {
- 	PHY_INIT_CFG(PCIE_USB_COMBO_PHY_CFG_PLLCFG, 0x30),
- 	PHY_INIT_CFG(PCIE_USB_COMBO_PHY_CFG_EIOS_DTCT_REG, 0x53ef),
- 	PHY_INIT_CFG(PCIE_USB_COMBO_PHY_CFG_GEN3_ALIGN_HOLDOFF_TIME, 0xcf),
- };
- 
--static const struct qcom_uniphy_data ipq5018_data = {
-+static const struct qcom_uniphy_data ipq5018_pcie_data = {
- 	.lane_offset	= 0x800,
--	.phy_type	= PHY_TYPE_PCIE_GEN2,
-+	.phy_type	= PHY_TYPE_PCIE,
- 	.init_seq	= ipq5018_pcie_regs,
- 	.init_seq_num	= ARRAY_SIZE(ipq5018_pcie_regs),
- 	.pipe_clk_rate	= 125 * MEGA,
- };
- 
--static const struct qcom_uniphy_data ipq5332_data = {
-+static const struct qcom_uniphy_data ipq5018_usb_data = {
- 	.lane_offset	= 0x800,
--	.phy_type	= PHY_TYPE_PCIE_GEN3,
-+	.phy_type	= PHY_TYPE_USB3,
-+	.init_seq	= ipq5018_usb_regs,
-+	.init_seq_num	= ARRAY_SIZE(ipq5018_usb_regs),
-+	.pipe_clk_rate	= 250 * MEGA,
-+};
-+
-+static const struct qcom_uniphy_data ipq5332_pcie_data = {
-+	.lane_offset	= 0x800,
-+	.phy_type	= PHY_TYPE_PCIE,
- 	.init_seq	= ipq5332_pcie_regs,
- 	.init_seq_num	= ARRAY_SIZE(ipq5332_pcie_regs),
- 	.pipe_clk_rate	= 250 * MEGA,
-@@ -134,29 +162,49 @@ static int qcom_uniphy_pcie_usb3_power_off(struct phy *x)
- 
- 	clk_bulk_disable_unprepare(phy->num_clks, phy->clks);
- 
--	return reset_control_bulk_assert(phy->num_resets, phy->resets);
-+	reset_control_bulk_assert(phy->num_resets, phy->resets);
-+
-+	if (PHY_IS_USB3(phy))
-+		regulator_disable(phy->vreg);
-+
-+	return 0;
- }
- 
- static int qcom_uniphy_pcie_usb3_power_on(struct phy *x)
- {
- 	struct qcom_uniphy *phy = phy_get_drvdata(x);
-+	bool is_usb3 = PHY_IS_USB3(phy);
- 	int ret;
- 
-+	if (is_usb3) {
-+		ret = regulator_enable(phy->vreg);
-+		if (ret) {
-+			dev_err(phy->dev, "failed to enable regulator: %d\n", ret);
-+			return ret;
-+		}
-+	}
-+
- 	ret = reset_control_bulk_assert(phy->num_resets, phy->resets);
- 	if (ret) {
- 		dev_err(phy->dev, "failed to assert reset: %d\n", ret);
--		return ret;
-+		goto err_disable_regulator;
- 	}
- 
--	usleep_range(RST_ASSERT_DELAY_MIN_US, RST_ASSERT_DELAY_MAX_US);
-+	if (is_usb3)
-+		usleep_range(USB3_RST_ASSERT_DELAY_MIN_US,
-+			     USB3_RST_ASSERT_DELAY_MAX_US);
-+	else
-+		usleep_range(PCIE_RST_ASSERT_DELAY_MIN_US,
-+			     PCIE_RST_ASSERT_DELAY_MAX_US);
- 
- 	ret = reset_control_bulk_deassert(phy->num_resets, phy->resets);
- 	if (ret) {
- 		dev_err(phy->dev, "failed to deassert reset: %d\n", ret);
--		return ret;
-+		goto err_disable_regulator;
- 	}
- 
--	usleep_range(PIPE_CLK_DELAY_MIN_US, PIPE_CLK_DELAY_MAX_US);
-+	if (!is_usb3)
-+		usleep_range(PCIE_PIPE_CLK_DELAY_MIN_US, PCIE_PIPE_CLK_DELAY_MAX_US);
- 
- 	ret = clk_bulk_prepare_enable(phy->num_clks, phy->clks);
- 	if (ret) {
-@@ -164,7 +212,10 @@ static int qcom_uniphy_pcie_usb3_power_on(struct phy *x)
- 		goto err_assert_resets;
- 	}
- 
--	usleep_range(CLK_EN_DELAY_MIN_US, CLK_EN_DELAY_MAX_US);
-+	if (is_usb3)
-+		usleep_range(USB3_CLK_EN_DELAY_MIN_US, USB3_CLK_EN_DELAY_MAX_US);
-+	else
-+		usleep_range(PCIE_CLK_EN_DELAY_MIN_US, PCIE_CLK_EN_DELAY_MAX_US);
- 
- 	qcom_uniphy_pcie_usb3_init(phy);
- 
-@@ -172,6 +223,9 @@ static int qcom_uniphy_pcie_usb3_power_on(struct phy *x)
- 
- err_assert_resets:
- 	reset_control_bulk_assert(phy->num_resets, phy->resets);
-+err_disable_regulator:
-+	if (is_usb3)
-+		regulator_disable(phy->vreg);
- 
- 	return ret;
- }
-@@ -181,7 +235,7 @@ static inline int qcom_uniphy_pcie_usb3_get_resources(struct platform_device *pd
- {
- 	struct device *dev = phy->dev;
- 	struct resource *res;
--	int i, count;
-+	int i, count, ret;
- 
- 	phy->base = devm_platform_get_and_ioremap_resource(pdev, 0, &res);
- 	if (IS_ERR(phy->base))
-@@ -207,6 +261,33 @@ static inline int qcom_uniphy_pcie_usb3_get_resources(struct platform_device *pd
- 
- 	phy->num_resets = count;
- 
-+	if (PHY_IS_USB3(phy)) {
-+		phy->vreg = devm_regulator_get(dev, "vdd");
-+		if (IS_ERR(phy->vreg)) {
-+			dev_err(dev, "failed to get regulator: %ld\n",
-+				PTR_ERR(phy->vreg));
-+			return PTR_ERR(phy->vreg);
-+		}
-+
-+		phy->tcsr = syscon_regmap_lookup_by_phandle_args(dev->of_node,
-+								 "qcom,phy-usb-mux-sel",
-+								 1, &phy->mux_offset);
-+		if (IS_ERR(phy->tcsr)) {
-+			ret = PTR_ERR(phy->tcsr);
-+			dev_err(dev, "failed to get regmap: %d\n", ret);
-+			return ret;
-+		}
-+
-+		phy->lanes = 1;
-+	} else {
-+		ret = of_property_read_u32(dev_of_node(dev), "num-lanes",
-+					   &phy->lanes);
-+		if (ret) {
-+			dev_err(dev, "Couldn't read num-lanes: %d\n", ret);
-+			return ret;
-+		}
-+	}
-+
- 	return 0;
- }
- 
-@@ -234,7 +315,8 @@ static inline int phy_pipe_clk_register(struct qcom_uniphy *phy, int id)
- 	struct clk_hw *hw;
- 	char name[64];
- 
--	snprintf(name, sizeof(name), "phy%d_pipe_clk_src", id);
-+	snprintf(name, sizeof(name), "%sphy%d_pipe_clk_src",
-+		 (PHY_IS_USB3(phy)) ? "usb" : "", id);
- 	hw = devm_clk_hw_register_fixed_rate(phy->dev, name, NULL, 0,
- 					     data->pipe_clk_rate);
- 	if (IS_ERR(hw))
-@@ -244,15 +326,25 @@ static inline int phy_pipe_clk_register(struct qcom_uniphy *phy, int id)
- 	return devm_of_clk_add_hw_provider(phy->dev, of_clk_hw_simple_get, hw);
- }
- 
-+static int qcom_uniphy_usb_mux_select(struct qcom_uniphy *phy, bool enable)
-+{
-+	return regmap_update_bits(phy->tcsr, phy->mux_offset,
-+				  TCSR_USB_MUX_SEL,
-+				  enable ? TCSR_USB_MUX_SEL : 0);
-+}
-+
- static const struct of_device_id qcom_uniphy_pcie_usb3_id_table[] = {
- 	{
- 		.compatible = "qcom,ipq5018-uniphy-pcie-phy",
--		.data = &ipq5018_data,
-+		.data = &ipq5018_pcie_data,
-+	}, {
-+		.compatible = "qcom,ipq5018-uniphy-usb3-phy",
-+		.data = &ipq5018_usb_data,
- 	}, {
- 		.compatible = "qcom,ipq5332-uniphy-pcie-phy",
--		.data = &ipq5332_data,
-+		.data = &ipq5332_pcie_data,
- 	},
--	{ },
-+	{ }
- };
- MODULE_DEVICE_TABLE(of, qcom_uniphy_pcie_usb3_id_table);
- 
-@@ -281,10 +373,6 @@ static int qcom_uniphy_pcie_usb3_probe(struct platform_device *pdev)
- 	if (!phy->data)
- 		return -EINVAL;
- 
--	ret = of_property_read_u32(dev_of_node(dev), "num-lanes", &phy->lanes);
--	if (ret)
--		return dev_err_probe(dev, ret, "Couldn't read num-lanes\n");
--
- 	ret = qcom_uniphy_pcie_usb3_get_resources(pdev, phy);
- 	if (ret < 0)
- 		return dev_err_probe(&pdev->dev, ret,
-@@ -305,6 +393,18 @@ static int qcom_uniphy_pcie_usb3_probe(struct platform_device *pdev)
- 	if (IS_ERR(phy_provider))
- 		return PTR_ERR(phy_provider);
- 
-+	/*
-+	 * Select USB mux before the controller comes out of reset. Selecting it
-+	 * later in .power_on leaves the SuperSpeed pads muxed away while the
-+	 * controller resets, and the SS link training remains in Rx.Detect
-+	 */
-+	if (PHY_IS_USB3(phy)) {
-+		ret = qcom_uniphy_usb_mux_select(phy, true);
-+		if (ret)
-+			return dev_err_probe(&pdev->dev, ret,
-+					     "failed to select usb mux\n");
-+	}
-+
- 	return 0;
- }
- 
+ &xo_board_clk {
+ 	clock-div = <4>;
+ 	clock-mult = <1>;
 
 -- 
 2.53.0
