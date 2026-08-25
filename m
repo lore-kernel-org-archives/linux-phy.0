@@ -4,90 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A69DC61DB9
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Aug 2026 22:57:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DAF95C61DB9
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Aug 2026 23:07:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=iLYytFdb0UwurvMm/pcGkpigpeEoX7FFxIhHruo3RHc=; b=UHWW8SmuMUv1Yz
-	J7BtnJgnDF2NnHjSxLnuxxObzESaPd6k8p6A3jmU3QSLdUE9nLz2fdfJFgRxatHsyOjXgViGHPE6w
-	/3Na0tbLvzn7etKesA970GyFZXTnv9th4IWE1f5DAN58f3a/2cTHgp5au7Lbu4bQ2R+x8/mSnzWwh
-	xtFK89opN/MOcNkzDYQo8afhcvhMrjY96oQlAuN3vZ+H6YF/cnMN6hV0Hafqtozvqy6WKMqww+ITE
-	2I2oMeSu4kKzUHEr9tNMtv7tCtzPc3n93L0gZVTHy2vfW2wyt3CEqO2wmjR647HWvaWRndLd6hw88
-	cMwthOFVD8CuM3D52RZw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QnQ7afD0+5Nz1nlwZgok0cCYAjrw9y58ajZhf0IYDWU=; b=16lq5PSVKv05re
+	UXC3R1Hnx0GazEapLv8EpM0L9gxL/qpSWKMLhK38jQrz3Gas8fD0FVgjUzLqBJyzZmrDEswXF81gp
+	tvLVuogtQv4Ql3slDF5QYar8VI1M29ul11zXAEZRgJR02/y9DUI8kAQniirY8kh+5cKzmiymGf8mu
+	CGX2U4wtBQ3jONz1rZvi6LB/WA9j4Q5hsq6Onl+TvPeGhrY4uMbzo5/WlJyTfi7VReQvk2g/LZIdz
+	opR2a5xHjTqqMLo0IVgVu1PttVRgCXI0HJosymw+wyy7qsuobPYR8ErYmp3ie4H1Ru/ndvOimgC8i
+	83tR3y40lQ7AH/IlzCnw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wz05L-00000001eFP-3MWA;
-	Tue, 25 Aug 2026 22:57:39 +0000
-Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
+	id 1wz0Er-00000001ekS-2Rnk;
+	Tue, 25 Aug 2026 23:07:29 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wz05I-00000001eEe-3aaX
-	for linux-phy@lists.infradead.org;
-	Tue, 25 Aug 2026 22:57:38 +0000
-Received: by mail-wr1-x429.google.com with SMTP id ffacd0b85a97d-482e067e908so202738f8f.2
-        for <linux-phy@lists.infradead.org>; Tue, 25 Aug 2026 15:57:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1787698654; x=1788303454; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=c1/cZi9z2hTKPa6J4VLugbiN9YQFIA/hLn4SQSIb6CQ=;
-        b=UTcmx2zpb4SIk/rurM5oyTD2gXvCl1Rh2RX96lJIDpQZbKQ84oI0vyVCBG88ZOCUHj
-         SJ10DH4UYnG/+W3sX3G5GhusQTYEIYoeWKozbClBQL6GbvMpGfjyLsWqDHfG6anvZ1aa
-         yMCvRRu26athV96ehTR+dtEbm+HdMztDetc+ODKPXkpBaIaZQ/IFdQZpF+58SLHptXo+
-         8Q3XFhPZ/oSxroW26yAD7IqqZt0y6JTPQ89ScVy+kYCfOmrr/rq4jS2GfLUew2GbV5jK
-         6m3yTdN+D8ej+sxHvSdIBFpGt1XGPBH+XUDFDUVXDFZ3nZXJuPclHjF7Sl7ppNZzkAY9
-         7Bqw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1787698654; x=1788303454;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=c1/cZi9z2hTKPa6J4VLugbiN9YQFIA/hLn4SQSIb6CQ=;
-        b=VUCu0phG84g5tdg92ixOjClVXn9HVZjkIHhuMfLjMsnjb29kvgoFu9gNqltLSQqlq9
-         HE8A/fZnpCoPd178NIWNHTuyn5jcxOROc+sndOzqx9WqkJvEs4iPEdgyID8XQmILPXOr
-         8F2D5WJl1D5iONk2iv31r9gxtuVQiOGDweyIaBiZGBM+MnbxeL7VW4cV9kcTYO09kIjk
-         srEDZd85ETMpVQKwucuAfpm/8SEsU4owEGlGe22n6TnqNA/vQXUJ6X1zUq1t4smLtk4a
-         kZ1kPGxCNL0QDevA8LVxHXRsIZzyS72+dkxLghMTJYU43hCGISFRokLCqOqkm/Qkhy9r
-         Wfxw==
-X-Forwarded-Encrypted: i=1; AHgh+RpjXoh1LDObakmu8SEpumhJDOHiOB+5c25Bp8T778m9lvIZDEgeay5HkEzCzKUGyfiY4ByZarASkQQ=@lists.infradead.org
-X-Gm-Message-State: AFuF++n8B1/AvoOs+xe27ljv804vVWdgVZZaVTQ3rEd9C7a6GEqLP//F
-	9Iv+rMeJoNEm71rNS/waCUqQgHD5H3C2AUREcCpq1Uo81m6oAPgDYEvo
-X-Gm-Gg: AR+sD12ocxAcVu3eFrZQ1UnuVba8R3GQw7p7giEzUby5xegEptf8odTpTkOKuYwgXmB
-	OvCAxIvD+8M/JfSDTtKMjLMIsZtAwMFDkvXy5RTYQxktsdjdeg+cYeDRBmm+XY/PU5LVzYkGRl/
-	fXmT7awkiRrb7dexcX7aWLTnGsXE03cHWyyk2BZKLYryGIl/fko9OltKWQ9VeZqPG0SdpAn1Omp
-	uEcUxFI2pGb6owGbPjKgVHxP1JlPKJblhR1WF725HDkGlspwTzKJ+xiPyf7l9Ir6vZakHgNRs+2
-	GSh3CzuUqYJTKxy4DjnXwySZGuOLbgCU8iTiS06O2Zk8kb4nds74/lvAcM28O8yxJ8jtsRYPCWI
-	VlN7W5w0nWsVuMJOx54p2OzV2xASQjAdLrHVkPIjihJDSCG0eYVfG6HjkMZozggMJU29LQzCoaQ
-	4e7G7ZY80G4RnxibTa4+qvfYY/zCPq2n/25dLY6sLBJM97ciVSOLKZLZYnuOgUmeo6TmcPM2wE0
-	gVZpjoN9YliFPLnl3q12Uiq5WY55HnQohkGHQHHCrFv7VRL
-X-Received: by 2002:a05:6000:40dd:b0:482:e2f2:19ca with SMTP id ffacd0b85a97d-482e2f21c8fmr1424121f8f.6.1787698654143;
-        Tue, 25 Aug 2026 15:57:34 -0700 (PDT)
-Received: from dohko.chello.ie (188-141-5-72.dynamic.upc.ie. [188.141.5.72])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-482e28f6917sm782658f8f.35.2026.08.25.15.57.31
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 25 Aug 2026 15:57:32 -0700 (PDT)
-From: David Carlier <devnexen@gmail.com>
-To: vkoul@kernel.org
-Cc: neil.armstrong@linaro.org,
-	qiang.yu@oss.qualcomm.com,
-	mani@kernel.org,
-	konrad.dybcio@oss.qualcomm.com,
-	krishna.chundru@oss.qualcomm.com,
-	linux-phy@lists.infradead.org,
-	linux-arm-msm@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	David Carlier <devnexen@gmail.com>
-Subject: [PATCH 1/2] phy: qcom: qmp-pcie: Select MFD_SYSCON for the multi-PHY driver
-Date: Tue, 25 Aug 2026 23:57:28 +0100
-Message-ID: <20260825225729.230493-1-devnexen@gmail.com>
-X-Mailer: git-send-email 2.55.0
+	id 1wz0Eq-00000001ekH-1qU8;
+	Tue, 25 Aug 2026 23:07:28 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 707D460053;
+	Tue, 25 Aug 2026 23:07:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 94AB91F000E9;
+	Tue, 25 Aug 2026 23:07:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1787699247;
+	bh=1T+yqlLfjZvb7tE/yxSJSdtLanULbQSxCY7Q0MzmI+g=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=b8+ZVnOCbBQxI1XWH6g96OTUS3SSgIkNzk2zPh+wdtROmGeIW2WEEpV2usbXzthg1
+	 JMXrAEU/9jUyQ/0DImtguD17Sxr1w9elFP+WAkG6Ja5/XSri5B+xUwbbpYSGoW/X87
+	 ERmbCq0z+XrDNwf7RHtsT4ifBthtQm1cltWMcRRSc7Kg66wmFtsv2bwsIQHf5RqYmt
+	 VnX9OXTPpdsecFpXNig9/A53poNBjZT/sMaFF7QxoZXGbbZgvrL9/tKtk6PN3HJ3Xb
+	 NUP+4ZdF7NC7yQb4CedTcaX4rUk3dW77KK0A5J9hDWuOTbj2ICoZpp/uOJi4kli2Sy
+	 KDeVEPJBGPumw==
+Date: Tue, 25 Aug 2026 23:07:24 +0000
+From: Yixun Lan <dlan@kernel.org>
+To: Bruno Banelli <bbanelli@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Ze Huang <huang.ze@linux.dev>, Alex Elder <elder@riscstar.com>,
+	linux-phy@lists.infradead.org, linux-riscv@lists.infradead.org,
+	spacemit@lists.linux.dev, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 0/2] phy: spacemit: fix and enable the K1 USB 2.0 PHY
+Message-ID: <20260825230724-GKF631715@kernel.org>
+References: <20260825065007.69353-1-bbanelli@gmail.com>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260825_155736_901802_FF2CE4C4 
-X-CRM114-Status: GOOD (  10.11  )
+Content-Disposition: inline
+In-Reply-To: <20260825065007.69353-1-bbanelli@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,35 +71,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The driver reads the active link mode through
-syscon_regmap_lookup_by_phandle_args(). Without CONFIG_MFD_SYSCON the
-stub returning -ENOTSUPP is compiled in instead, so probe fails for
-every device and no PHY is ever registered.
+Hi Bruno,
 
-Nothing in the build catches this: the driver still compiles, and arm64
-defconfig happens to enable MFD_SYSCON through an unrelated select.
+On 08:50 Tue 25 Aug     , Bruno Banelli wrote:
+> v1 was a single patch adding "default ARCH_SPACEMIT" to
+> PHY_SPACEMIT_K1_USB2.  Automated review pointed out two pre-existing
+> Kconfig problems in the same entry, and that change makes them easier
+> to hit: enabling the symbol by default means configurations that would
+> previously have left it off will now build the driver.
+> 
+> So fix the dependencies first, then enable it by default.
+> 
+> Both were verified against the driver source: phy-k1-usb2.c calls
+> devm_platform_ioremap_resource() and devm_regmap_init_mmio(), while the
+> Kconfig entry has neither "depends on HAS_IOMEM" nor
+> "select REGMAP_MMIO".  PHY_SPACEMIT_K1_PCIE, directly above it in the
+> same file, already has the HAS_IOMEM dependency.
+> 
+> Tested on a Milk-V Jupiter (SpacemiT M1) running mainline 7.2: without
+> patch 2/2 a "make defconfig" kernel has no USB at all, because
+> dwc3-generic-plat cannot get its PHY.
+> 
+> v1: https://lore.kernel.org/linux-riscv/20260825052158.66367-1-bbanelli@gmail.com/
+> 
+> Changes in v2:
+>  - new patch 1/2 adding "depends on HAS_IOMEM" and "select REGMAP_MMIO",
+>    with a Fixes: tag
+>  - no change to the patch now numbered 2/2
+> 
+Thanks for this v2
+Reviewed-by: Yixun Lan <dlan@kernel.org>
 
-Fixes: 1781be3c8a5d ("phy: qcom: qmp-pcie: Add QMP PCIe Multi-PHY driver")
-Signed-off-by: David Carlier <devnexen@gmail.com>
----
- drivers/phy/qualcomm/Kconfig | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
-index d910a5d1a1ac..9113e1099245 100644
---- a/drivers/phy/qualcomm/Kconfig
-+++ b/drivers/phy/qualcomm/Kconfig
-@@ -81,6 +81,7 @@ config PHY_QCOM_QMP_PCIE_MULTIPHY
- 	tristate "Qualcomm QMP PCIe Multi PHY Driver"
- 	depends on PCI || COMPILE_TEST
- 	select GENERIC_PHY
-+	select MFD_SYSCON
- 	help
- 	  Enable this to support the QMP PCIe PHY transceiver that is used
- 	  with PCIe controllers on Qualcomm chips. This PHY is a single
 -- 
-2.55.0
-
+Yixun Lan (dlan)
 
 -- 
 linux-phy mailing list
