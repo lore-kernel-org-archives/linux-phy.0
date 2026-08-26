@@ -4,71 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27FC6C61DBD
-	for <linux-phy@archiver.kernel.org>; Wed, 26 Aug 2026 12:39:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75ED1C61DBD
+	for <linux-phy@archiver.kernel.org>; Wed, 26 Aug 2026 12:49:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=htukPZqed4pSD4KHmu6x6r07AeTJIe4UEc8OMcGp47c=; b=ouZO+iDt9Vm6Jf
-	bUWjDTtdCmVyBChPvEB7i6gV9I8t0yRuFIkxfnDU5tA9l6tEwdKWMb2+EjFOCZ/ySRi0LzkuMANCy
-	CBQEBvsFU1R9HsngBpul1f4SX0pVf1GDZaD1bh8TqKC+3zOb37mLtPDczOT+NGG12VvCIXx+sorA1
-	h7Jcs1gUZag04Ca3HuOoRNOvqv+gCOWZTKt6BHMW3JPIyEs4ORL4Kp57RqMfXz33hWsDBpS8F7COW
-	ea2WkZq8TxgKlln9mE95PImk5wjT7RLBbHb9F6pjWUBDu3efLmJ/Scvd8+JZqLjzpZhtgLzbmztUR
-	juqcq7VMGneFT6cN0jkA==;
+	List-Owner; bh=jRyqSH4K8XfOjCFkrEq7YHR5AV0ZfqC9VwMCNpnRsnQ=; b=l29iKFwnt48hcQ
+	GG+a1X59KTd04HUNEpVYC+AVtqZW4l2oa3qsxTbZwRsvjwsAmdkVzdL6Ke4X9NgeP6QiDhGmS/YHu
+	Q14IyYeAgeWCm7VIa9OfOaL3pflKbjKrBaFGNRT6kzNYh4PR34wIu5xd9E6XU2FqeWoHOXQccgn33
+	G6AR7ixgC6RSXsR6VvEa9YnLCPho4Uz/8CrC5UuTndibNsE+aSffH1J/3mEcS+wCVYexB8jAjPd5Z
+	lmDIct0pvIpCzP32y0XRMshnaZukRObNKFPmKCK4gXLqOWNYFpKbGEFmxStb6niCQCSrxokUalMkb
+	fRw/JEfIgrIuxVIOn8gA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzCuO-00000002S5I-3XJg;
-	Wed, 26 Aug 2026 12:39:12 +0000
-Received: from sender4-op-o11.zoho.com ([136.143.188.11])
+	id 1wzD4k-00000002TBO-0IYw;
+	Wed, 26 Aug 2026 12:49:54 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzCuC-00000002Rxi-2sE3;
-	Wed, 26 Aug 2026 12:39:02 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1787747932; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=ByEOzvJz0+cY+J20QOmb+TXXI3p1JDkHAuyk6U63St+/IL0L4JmfEZ4ziNwY3bBxfaSQ3uY2KrGI1DwQuDAGf1Ou/pU6Sshh95+rT8RJl/3nlRZk/8yRh2RYtH0hQjroVa2d+WpIbEn+aRhmieZxxUxEYZ/RYCOEufhqnb8QwvU=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1787747932; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=gQkt+AxOVU6u5IygNkiSEdsCB3ba9YtCG7UYdDpFwmo=; 
-	b=mu1RdgmmWcl5SdrjkPkpLApKyZpv4FPZV+mpfgN9tsg036tVLfy+frZfYo179wpdUWGk9qWgONTfiPzsE50Fb0fpSbHAAA8YHvljA2JYCWddK6syyE5KtXLb8Bsur3MmFijuTxr1WBvZFj0Nvc00xMS6+NFq+5+bhDFHFl5BE88=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=julien.massot@collabora.com;
-	dmarc=pass header.from=<julien.massot@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1787747932;
-	s=zohomail; d=collabora.com; i=julien.massot@collabora.com;
-	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:In-Reply-To:To:To:Cc:Cc:Reply-To;
-	bh=gQkt+AxOVU6u5IygNkiSEdsCB3ba9YtCG7UYdDpFwmo=;
-	b=AIQJqf4QPRH0VCACXg9NC/nXpzAmws5B/UVx65Z6w2Hq4E6/+hEAkgIJgilYMh90
-	F1/o+3vvXlWAGz8JMbYS7yZo3BQHBwmnR2//+efZfxWDfABiZCcL3GKTZTs3VhkHdVp
-	YEE2cKDcAXrrBnp2RqFqwFu+7VU8uGsvADBnDBOU=
-Received: by mx.zohomail.com with SMTPS id 1787747930692813.6414076114834;
-	Wed, 26 Aug 2026 05:38:50 -0700 (PDT)
-From: Julien Massot <julien.massot@collabora.com>
-Date: Wed, 26 Aug 2026 14:38:36 +0200
-Subject: [PATCH 2/2] phy: mediatek: xsphy: add optional repeater support
+	id 1wzD4i-00000002TBD-0ahi
+	for linux-phy@lists.infradead.org;
+	Wed, 26 Aug 2026 12:49:52 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 2286A600C4;
+	Wed, 26 Aug 2026 12:49:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5D9041F00A3A;
+	Wed, 26 Aug 2026 12:49:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1787748590;
+	bh=MJABSHQXgtG8wL6xDsCQLCdU8nGFmXe71QzCWKIPexk=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=hRV4ZLoHnj1vHXJ6vBpa+B/MwV/kleczJ2IjS2SXz1t4HAJQA9Wie/KVCiO//IMIP
+	 yQetZBmTD7ZHDA+GsdI4yNwcRqG6RTMV1Zod0F2DmYTwUalU/TKkyceCS/3dE6UBnP
+	 EkG99EdQmFPkx+X2lbm0lxDgN1FOzylmnwStZXzKLV9MHCLRcQy/pZzkbOzfNEOC5M
+	 pEp5A2NoAfs85dPnyqE3GwWHkw0RxGEoo0sH7tmxY9FWD8i4N8ALAy5sM5aTxtJlYW
+	 jEKixSXdGnkv5Y5MH+vQdcos2lNirWFjWR59j6hbCxUqZM5jv8LN/up2YuezQ0nO0k
+	 i/+kpCspaJ7/g==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH 2/2] phy: mediatek: xsphy: add optional repeater support
  for USB2 ports
-MIME-Version: 1.0
-Message-Id: <20260826-mtk-usb2-repeater-usb2-v1-2-e8e48e2fd6d8@collabora.com>
+To: "Julien Massot" <julien.massot@collabora.com>
+Cc: conor+dt@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com, robh@kernel.org, devicetree@vger.kernel.org, linux-phy@lists.infradead.org, vkoul@kernel.org
+In-Reply-To: <20260826-mtk-usb2-repeater-usb2-v1-2-e8e48e2fd6d8@collabora.com>
 References: <20260826-mtk-usb2-repeater-usb2-v1-0-e8e48e2fd6d8@collabora.com>
-In-Reply-To: <20260826-mtk-usb2-repeater-usb2-v1-0-e8e48e2fd6d8@collabora.com>
-To: kernel@collabora.com, Chunfeng Yun <chunfeng.yun@mediatek.com>, 
- Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Matthias Brugger <matthias.bgg@gmail.com>, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: linux-arm-kernel@lists.infradead.org, 
- linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Julien Massot <julien.massot@collabora.com>
-X-Mailer: b4 0.14.3
-X-ZohoMailClient: External
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260826_053901_004211_53D03E31 
-X-CRM114-Status: GOOD (  14.89  )
+ <20260826-mtk-usb2-repeater-usb2-v1-2-e8e48e2fd6d8@collabora.com>
+Date: Wed, 26 Aug 2026 12:49:49 +0000
+Message-Id: <20260826124950.5D9041F00A3A@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,98 +63,50 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-USB2 PHY port sub-nodes may carry an optional phys property referencing
-an external eUSB2 repeater.
-
-Fetch the repeater during probe using devm_of_phy_optional_get(),
-initialize and exit it alongside the USB2 PHY, and propagate USB mode
-changes to it.
-
-This follows the same pattern used by the Synopsys eUSB2 PHY driver.
-
-Signed-off-by: Julien Massot <julien.massot@collabora.com>
----
- drivers/phy/mediatek/phy-mtk-xsphy.c | 26 ++++++++++++++++++++++++--
- 1 file changed, 24 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/phy/mediatek/phy-mtk-xsphy.c b/drivers/phy/mediatek/phy-mtk-xsphy.c
-index cc1d66954212..7bc3d6794d7b 100644
---- a/drivers/phy/mediatek/phy-mtk-xsphy.c
-+++ b/drivers/phy/mediatek/phy-mtk-xsphy.c
-@@ -94,6 +94,7 @@ struct xsphy_instance {
- 	struct phy *phy;
- 	void __iomem *port_base;
- 	struct clk *ref_clk;	/* reference clock of anolog phy */
-+	struct phy *repeater;
- 	u32 index;
- 	u32 type;
- 	struct regmap *type_sw;
-@@ -391,6 +392,11 @@ static int mtk_phy_init(struct phy *phy)
- 
- 	switch (inst->type) {
- 	case PHY_TYPE_USB2:
-+		ret = phy_init(inst->repeater);
-+		if (ret) {
-+			clk_disable_unprepare(inst->ref_clk);
-+			return ret;
-+		}
- 		u2_phy_instance_init(xsphy, inst);
- 		u2_phy_props_set(xsphy, inst);
- 		break;
-@@ -438,7 +444,11 @@ static int mtk_phy_exit(struct phy *phy)
- {
- 	struct xsphy_instance *inst = phy_get_drvdata(phy);
- 
-+	if (inst->type == PHY_TYPE_USB2)
-+		phy_exit(inst->repeater);
-+
- 	clk_disable_unprepare(inst->ref_clk);
-+
- 	return 0;
- }
- 
-@@ -446,9 +456,16 @@ static int mtk_phy_set_mode(struct phy *phy, enum phy_mode mode, int submode)
- {
- 	struct xsphy_instance *inst = phy_get_drvdata(phy);
- 	struct mtk_xsphy *xsphy = dev_get_drvdata(phy->dev.parent);
-+	int ret;
- 
--	if (inst->type == PHY_TYPE_USB2)
--		u2_phy_instance_set_mode(xsphy, inst, mode);
-+	if (inst->type != PHY_TYPE_USB2)
-+		return 0;
-+
-+	ret = phy_set_mode_ext(inst->repeater, mode, submode);
-+	if (ret)
-+		return ret;
-+
-+	u2_phy_instance_set_mode(xsphy, inst, mode);
- 
- 	return 0;
- }
-@@ -590,6 +607,11 @@ static int mtk_xsphy_probe(struct platform_device *pdev)
- 		retval = phy_type_syscon_get(inst, child_np);
- 		if (retval)
- 			return retval;
-+
-+		inst->repeater = devm_of_phy_optional_get(dev, child_np, NULL);
-+		if (IS_ERR(inst->repeater))
-+			return dev_err_probe(dev, PTR_ERR(inst->repeater),
-+					 "failed to get repeater\n");
- 	}
- 
- 	provider = devm_of_phy_provider_register(dev, mtk_phy_xlate);
-
--- 
-2.55.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gTWlzc2luZyBQSFkg
+b3BlcmF0aW9uIGRlbGVnYXRpb24gZm9yIGAucG93ZXJfb25gIGFuZCBgLnBvd2VyX29mZmAuCi0t
+Cgpjb21taXQgOGRiZWVhOTAxZGJkYjFmOWIzM2IyMWJkNGE1ZjE2YjlhZDdhNWE3OApBdXRob3I6
+IEp1bGllbiBNYXNzb3QgPGp1bGllbi5tYXNzb3RAY29sbGFib3JhLmNvbT4KCiAgICBwaHk6IG1l
+ZGlhdGVrOiB4c3BoeTogYWRkIG9wdGlvbmFsIHJlcGVhdGVyIHN1cHBvcnQgZm9yIFVTQjIgcG9y
+dHMKICAgIAogICAgVVNCMiBQSFkgcG9ydCBzdWItbm9kZXMgbWF5IGNhcnJ5IGFuIG9wdGlvbmFs
+IHBoeXMgcHJvcGVydHkgcmVmZXJlbmNpbmcKICAgIGFuIGV4dGVybmFsIGVVU0IyIHJlcGVhdGVy
+LgogICAgCiAgICBGZXRjaCB0aGUgcmVwZWF0ZXIgZHVyaW5nIHByb2JlIHVzaW5nIGRldm1fb2Zf
+cGh5X29wdGlvbmFsX2dldCgpLAogICAgaW5pdGlhbGl6ZSBhbmQgZXhpdCBpdCBhbG9uZ3NpZGUg
+dGhlIFVTQjIgUEhZLCBhbmQgcHJvcGFnYXRlIFVTQiBtb2RlCiAgICBjaGFuZ2VzIHRvIGl0LgoK
+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvbWVkaWF0ZWsvcGh5LW10ay14c3BoeS5jIGIvZHJp
+dmVycy9waHkvbWVkaWF0ZWsvcGh5LW10ay14c3BoeS5jCj4gaW5kZXggY2MxZDY2OTU0MjEyYS4u
+N2JjM2Q2Nzk0ZDdiOSAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS9tZWRpYXRlay9waHktbXRr
+LXhzcGh5LmMKPiArKysgYi9kcml2ZXJzL3BoeS9tZWRpYXRlay9waHktbXRrLXhzcGh5LmMKClsg
+Li4uIF0KCj4gQEAgLTQzOCw3ICs0NDQsMTEgQEAgc3RhdGljIGludCBtdGtfcGh5X2V4aXQoc3Ry
+dWN0IHBoeSAqcGh5KQo+ICB7Cj4gIAlzdHJ1Y3QgeHNwaHlfaW5zdGFuY2UgKmluc3QgPSBwaHlf
+Z2V0X2RydmRhdGEocGh5KTsKPiAgCj4gKwlpZiAoaW5zdC0+dHlwZSA9PSBQSFlfVFlQRV9VU0Iy
+KQo+ICsJCXBoeV9leGl0KGluc3QtPnJlcGVhdGVyKTsKPiArCj4gIAljbGtfZGlzYWJsZV91bnBy
+ZXBhcmUoaW5zdC0+cmVmX2Nsayk7Cj4gKwo+ICAJcmV0dXJuIDA7Cj4gIH0KCltTZXZlcml0eTog
+TWVkaXVtXQpJZiBhbiBleHRlcm5hbCByZXBlYXRlciBQSFkgcmVsaWVzIG9uIHRoZSBQSFkgZnJh
+bWV3b3JrJ3MgcGh5X3Bvd2VyX29uKCkKKGUuZy4sIHRvIGVuYWJsZSBjb3JlLW1hbmFnZWQgcmVn
+dWxhdG9ycywgcmVzdW1lIHJ1bnRpbWUgUE0sIG9yIGludm9rZSBpdHMKb3duIC5wb3dlcl9vbiBj
+YWxsYmFjayksIHdpbGwgaXQgc2lsZW50bHkgcmVtYWluIHVucG93ZXJlZCBhbmQgaW5hY3RpdmUK
+YmVjYXVzZSBtdGtfcGh5X3Bvd2VyX29uKCkgZG9lcyBub3QgY2FsbCBwaHlfcG93ZXJfb24oaW5z
+dC0+cmVwZWF0ZXIpPwoKRm9yIGV4YW1wbGUsIG10a19waHlfcG93ZXJfb24oKSBjdXJyZW50bHkg
+b25seSBwb3dlcnMgdGhlIGludGVybmFsIGluc3RhbmNlOgoKc3RhdGljIGludCBtdGtfcGh5X3Bv
+d2VyX29uKHN0cnVjdCBwaHkgKnBoeSkKewoJLi4uCglpZiAoaW5zdC0+dHlwZSA9PSBQSFlfVFlQ
+RV9VU0IyKSB7CgkJdTJfcGh5X2luc3RhbmNlX3Bvd2VyX29uKHhzcGh5LCBpbnN0KTsKCQl1Ml9w
+aHlfc2xld19yYXRlX2NhbGlicmF0ZSh4c3BoeSwgaW5zdCk7Cgl9CgkuLi4KfQoKU2ltaWxhcmx5
+LCBjb3VsZCB0aGUgbWlzc2luZyBjYWxsIHRvIHBoeV9wb3dlcl9vZmYoaW5zdC0+cmVwZWF0ZXIp
+IGluCm10a19waHlfcG93ZXJfb2ZmKCkgY2F1c2UgaW1iYWxhbmNlZCBwb3dlciB0cmFja2luZyBv
+ciByZXNvdXJjZSBsZWFrcyBpbgp0aGUgcmVwZWF0ZXIgUEhZPwoKc3RhdGljIGludCBtdGtfcGh5
+X3Bvd2VyX29mZihzdHJ1Y3QgcGh5ICpwaHkpCnsKCS4uLgoJaWYgKGluc3QtPnR5cGUgPT0gUEhZ
+X1RZUEVfVVNCMikKCQl1Ml9waHlfaW5zdGFuY2VfcG93ZXJfb2ZmKHhzcGh5LCBpbnN0KTsKCS4u
+Lgp9CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNo
+c2V0LzIwMjYwODI2LW10ay11c2IyLXJlcGVhdGVyLXVzYjItdjEtMC1lOGU0OGUyZmQ2ZDhAY29s
+bGFib3JhLmNvbT9wYXJ0PTIKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LXBoeQo=
