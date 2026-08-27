@@ -4,72 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3FB48C61DC4
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Aug 2026 16:16:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15EF6C61DC4
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Aug 2026 17:00:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oJmyafS11iNFx8Z8svwQL6OKMBoxu9rnsQLj6nSMoo0=; b=g7tSfP+0zIEbI+
-	qsDVqHNX0Ksk7R9sukafm/HvsU9BLYz9dcYZg2C7aM4MuaxG/ib5x14AON9FtH26FNRa+0pQGc943
-	jNoZMBVWCVNcTrIvBlEG0dDVzK4v8D69/37cOkyKtYTlruQFLN/1viUgWTIsePYPgQxJTtnadHXus
-	jAneOaS+PIZ3GyoybCGSpthAJ3jbLXHpd8jKFyarbwLjQ1DKA5KLSq3UXQRIyIGdNSwO6riMitfp0
-	AEEEvVbnGMR+oAiw+qePkJnhmN4lbNPAU6oe7hseMAoCRv78lQwJ9ah/t3EqF17ppUhKd/XDIqp1p
-	1vRO0ic9j8LGfN1PEyPA==;
+	List-Owner; bh=YrRsAyFnkOBeCATYSLQwdIHnHbuY8Dw2kKOHtWb5Eao=; b=VzD38jmobG/1B3
+	51s3GtAueuIGBLtYDAqH2M3s6HUPUYQHMGt1f3hbYGxeAj7GEx2ivVENbbzIXCkFWslImz3AOzRyr
+	U7RfH9ah/rBPs5bblNYsHZ/gW4AKtlYFFsi5rQQQTSP5OJhegMd6XKj1QCQvfSQPJR2zmNuSuY1Nv
+	HjGmAVmK2j1iftT+QhtZvwSu2vT+dB6iCcpUjbKSdYYvTs2PPDIyXHYIK7cCI0KrieWVHK8+fKn9h
+	FasOpq94SmEMHDvENMQsvv3IeITyTG6dmkXr0pWS3DtmI0a40aUvdos3QApn8euAGLeZ+K0Qszc5u
+	djJ9l7KJCjUN7NiTp6rw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzcmS-00000004IxE-3jBT;
-	Thu, 27 Aug 2026 16:16:44 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wzdTF-00000004PtO-2egT;
+	Thu, 27 Aug 2026 17:00:57 +0000
+Received: from mx.nabladev.com ([178.251.229.89])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzcmQ-00000004Iwb-3xhP;
-	Thu, 27 Aug 2026 16:16:42 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 4922E407EC;
-	Thu, 27 Aug 2026 16:16:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 588A41F000E9;
-	Thu, 27 Aug 2026 16:16:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1787847402;
-	bh=ICFnTYRS7s0OrNF+UlxpgEZVwggu1x23aonWDAOIy30=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=oZLTvTKVh0ryslM2uHLc5UUJ+i+wFQHdBHG3enmsirsX00mIRPMPcG1HcmmJDPfh6
-	 324w7+u0jLRPTBsZO7OApM+CRZKOGJjZPRQsCKh3O/tC18cc0FNnL/az59Kd2DjebX
-	 pXriDpMt885numb9rjthDKIamxtaooUxAKhMqYqNKmtuB8ZblUcPiQIi6baG0USE+L
-	 QfCk/FnayvhDokIe3Nfj1z67okVoY5xfnoy1fSfDAmTcgmBIK2mOaThNEPZkjUvV5j
-	 JoOQQTfGzQu/+JHIr1ji8pGyesamRN5K1Ny2F5l1tsWTpDJZBkL6oImlDF90iIgKAm
-	 J2G+KVt1xgzpQ==
-Date: Thu, 27 Aug 2026 21:46:38 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: Manivannan Sadhasivam <mani@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Frank Wang <frank.wang@rock-chips.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Dmitry Baryshkov <lumag@kernel.org>,
-	Yubing Zhang <yubing.zhang@rock-chips.com>,
-	Alexey Charkov <alchark@flipper.net>,
-	Igor Paunovic <royalnet026@gmail.com>,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
-	kernel@collabora.com, devicetree@vger.kernel.org,
-	linux-usb@vger.kernel.org
-Subject: Re: [PATCH v14 28/38] phy: core: add notifier infrastructure
-Message-ID: <apBi5sGBpPfwTW4G@vaman>
-References: <20260813-rockchip-usbdp-cleanup-v14-0-b5ad9c68fa11@collabora.com>
- <20260813-rockchip-usbdp-cleanup-v14-28-b5ad9c68fa11@collabora.com>
+	id 1wzdTC-00000004Ps6-0Oso;
+	Thu, 27 Aug 2026 17:00:55 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 2403511D047;
+	Thu, 27 Aug 2026 19:00:44 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nabladev.com;
+	s=dkim; t=1787850045;
+	h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding:content-language:in-reply-to:references;
+	bh=YdpMoBjRF6weCelhUSwlEX7zawYj+14G2BcZrtn36gQ=;
+	b=ZNZ0NoRDZPqbddDE4Fs1g1QVk8MReIB1oF3ZAdqRlUyEuhztpYGBtzllCOK6jBeMOQcmo5
+	Ssq96Z5WHI0ps0JKcmesn1Hgr+nh9xHB7gjQG8vCL7R3DJbmMu4Pz2mGG9vO1jbMeDoRe0
+	0WYBLLobUVYT0UQFgKF/QhuWlD538/1AMzXCs3joOW3BzTtNC/vslc0Q5x1pBQxHB9+fVJ
+	f8oFrMl3blKW05q7jUwHF7LjlJXG0dQxurEjjJiJrYGfcAfCr4Fb1V/7UXEqmY9wftIy80
+	YyMRSMVNfXJ7fYvTWqhBHzBqQar3hVMPZNaPjlVQvmabZKbNYrQXsX4gFf1Amg==
+Message-ID: <6caa0c4a-3e94-4bac-8661-5f2501b5d9dd@nabladev.com>
+Date: Thu, 27 Aug 2026 16:56:42 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260813-rockchip-usbdp-cleanup-v14-28-b5ad9c68fa11@collabora.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 5/9] dt-bindings: usb: dwc3: Document ST STM32MP2 DWC3
+ xHCI USB controller
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: linux-usb@vger.kernel.org, fabrice.gasnier@foss.st.com,
+ Pankaj Dev <pankaj.dev@st.com>,
+ =?UTF-8?Q?Cl=C3=A9ment_Le_Goffic?= <clement.legoffic@foss.st.com>,
+ Gatien Chevallier <gatien.chevallier@foss.st.com>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Christian Bruel <christian.bruel@foss.st.com>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Rahul Kumar <rahul.kumar05@st.com>, Rob Herring <robh@kernel.org>,
+ Rosen Penev <rosenp@gmail.com>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+ Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
+ kernel@dh-electronics.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com
+References: <20260822074816.548662-1-marex@nabladev.com>
+ <20260822074816.548662-6-marex@nabladev.com>
+ <20260827-strategic-hallowed-lynx-ca3bcc@quoll>
+Content-Language: en-US
+From: Marek Vasut <marex@nabladev.com>
+In-Reply-To: <20260827-strategic-hallowed-lynx-ca3bcc@quoll>
+X-Last-TLS-Session-Version: TLSv1.3
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260827_100054_340870_896BD591 
+X-CRM114-Status: UNSURE (   9.30  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,28 +84,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13-08-26, 22:52, Sebastian Reichel wrote:
-> Some PHY devices with multiple ports (e.g. USB3 and DP) require a reset
-> if the configuration changes or cable orientation changes. This is a
-> problem, as the consumer device will run into undefined behavior.
+On 8/27/26 2:59 PM, Krzysztof Kozlowski wrote:
+
+[...]
+
+>> +++ b/Documentation/devicetree/bindings/usb/st,stm32mp25-dwc3.yaml
+>> @@ -0,0 +1,97 @@
+>> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/usb/st,stm32mp25-dwc3.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: STMicroelectronics STM32 MPU DWC3 USB SoC controller
+>> +
+>> +description:
+>> +  The STM32 MPU DWC3 USB SoC controller block supports both
+>> +  Host(SS/HS/FS/LS) and Device(SS/HS/FS) mode operation
+>> +
+>> +maintainers:
+>> +  - Fabrice Gasnier <fabrice.gasnier@foss.st.com>
+>> +  - Marek Vasut <marex@nabladev.com>
+>> +
+>> +allOf:
+>> +  - $ref: snps,dwc3-common.yaml#
 > 
-> With the new PHY notifier API introduced in this patch, the consumer
-> driver can hook into reset events coming from a PHY device to handle the
-> PHY going down gracefully.
+> Honestly, I am lost. It seems this resolves my comment at v2, but now I
+> went through patchset from Fabrice Gasnier which was ON TOP of this
+> patch adding this line.
 
-Hmmm how will phy get notified for these events. Typically there is a
-separate hotplug mechanism to take care of cable changes.
+I think the stuff Fabrice sent was on top of V2.
 
-Looking at implementation of this, It seems to me there is checked on
-power-on, so maybe notifier maynot be right one... ?
-
--- 
-~Vinod
+> It is not your fault, although if there are pending comments expressed
+> not via review but via patchses on top of things being reviewed, then
+> can you check for them?
+I did, while briefly reviewing that series.
 
 -- 
 linux-phy mailing list
