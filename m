@@ -4,103 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0AAAAC61DC4
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Aug 2026 19:07:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F24CC61DB9
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Aug 2026 21:33:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+iKePJUHFD72KCIEPPHRVsJx9li6WcqaOUBN2elY7eA=; b=onaibfIkik3jQm
-	Vd7e2BgFQjkdDpDjG/67Q6OSNr45gaWu+/0dF2rS3mlxY/Qf32lVm6zjCuKgoc5gtObxl5YI+7adG
-	RZ/5DHIZKvAe8p7zK08bZ9cvKjVpzPbpGEaaliGB5iNQSVJTyFeUz3beyuj27BvfW1eZWHpGCF1LH
-	v0G3amObioXqBWnsR/E7bCiS6oe/DqNG7REcd/i2mhTNXeqAwk3VAE7/QBbPNNfms4tP0fVbGala5
-	aMnqfj6bp4qk55P9krQLzVBrKtETxJ/0RGNnlBzm7vwx0heKpvgl85zpCUYLgRLiXJSrATiQnMJ70
-	Br2uEkEmIMkQM+4LYiyA==;
+	List-Owner; bh=XOQZhZ2/gsdNDn8H5kiXjVwRMdffRvqlnCFhSY+SiMk=; b=2uD7XNVDUNSWTR
+	2k+1YxADinfM/DcWMcIgeRBFUvPQKRXjIxQeDVZIYCrz0Xx+pm0+OuPLUkeixFfVf2yiKYmoid0iC
+	/NVXWGKbvafFicyxMvv/9JkSh1TVfRF9EK2jqzTwCOGCFPtFP3OFRY0gIqPp02tbQWnQZlyX0oiq+
+	dMhAjJGquG/qj9BjAY3JUVpaerpwxxx/73tid36ZmDuzse8JJ5eTDwenuQycnSgfBPFkkYDsULUGu
+	U1YCJhx8llKo9tXmlRmEOx3H2d7xLZbb56g2IQjohjqayvndSwVTRYa4al6vS6vsJJoczY+E8RgTk
+	zxKLIFkXU/0ZrugNpM+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzfRG-00000004g0d-1vf1;
-	Thu, 27 Aug 2026 19:07:02 +0000
-Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
+	id 1wzhjD-00000004p2m-2ujk;
+	Thu, 27 Aug 2026 21:33:43 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzfRE-00000004g0C-0cVU
-	for linux-phy@lists.infradead.org;
-	Thu, 27 Aug 2026 19:07:01 +0000
-Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-482e2fdf6ebso167164f8f.1
-        for <linux-phy@lists.infradead.org>; Thu, 27 Aug 2026 12:06:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1787857616; x=1788462416; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=ye/9ulKBaC7alnS77GSpaMa7bLzaEniiM9r+DAjS4/o=;
-        b=i7oYcUHnYeiMoF2isz456CjW+E/npKrSGDgJAkf8bGLg+NUFe87KcfSpJKx3krCqOc
-         wjU58BgdbONYLs8nbLmycpZkREsCNBTGFqdB3N8RPjZbLJ9GpniCh2WscM5qzzhyrDB9
-         36WN4amGXpQF3wN/HfPJfnBL0IRZtHd703bdS1LLy36Bm5dHLv9rdCG1MuG6ziAzpweE
-         sJxDSgB7/zkKKAUl+pWq2b26znAD8XStC5oO1rQ9oneilKaEjjeCQDDB2ImpJdja6DIn
-         WW7y/DdUhFxVib9XEmh/cUfzX03nRmgbhZEK3oC7MCS3yNoSmQKRY4zKI9RX5ttyF2Xs
-         lZXA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1787857616; x=1788462416;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=ye/9ulKBaC7alnS77GSpaMa7bLzaEniiM9r+DAjS4/o=;
-        b=DULSvQ2r7v/4GwjQCTKay5kyW2EYCyTs6NjK+H8W7fa/wP1y2F7hnAOZ6mAb2Zd9My
-         eRd9uunmqMsiquOo1si7PWu8AxNy+AyKlrHo4OKexBF69lCxBMq5LEheDP9JTGyiECdJ
-         zdEYSmyEYOQ7Cna4qrwyQyox2Hm18gVEp5LAPAZxykJtW0w4VKWmXNQg01o6WBmRa4V1
-         HokQCOqNLGg/pd9cf7N6hzAWLhfOCYLSrAZ2/tOY1W9nqz2GCcr4H9us9G/TnYVsxr+X
-         GL4Act8DTBwjHcimJ/LckMcDSeHwV0mZ6Qu+1EyC0JXzQL44X5dLZyMkI1R44wwWhfuE
-         akyg==
-X-Forwarded-Encrypted: i=1; AHgh+Rp+5OTOiv23bH2G+tP6uV1mYBrURkqSsprqWymNgOxzLQI+Fg2NFbRJP4tNLr3/AEtb6WCFPg8/LI0=@lists.infradead.org
-X-Gm-Message-State: AFuF++nevtpPaSOtuspHY2RnK3gHBoNle7R/qNapPJ4iEgiqgqlIlW3i
-	/y7NgaH6wtWPXz+tMRv1j8/2YhEQq1BfpuUFxTKDfYIhJVvGabfTpJ2k
-X-Gm-Gg: AR+sD12IaIeFxe+2kt8v2QQHXzklZtnQnHizQ7moRRGd6GDZTPortlrkz6rOQUJ9ked
-	iBgH4r7EZao/sV/LSL0F2NhcgRBluE8cusVfp2HCldrHFphc2a3xRqRQR4c/KCp5z7e26uQkycP
-	KFe49s3xAiUHS+RqH9HBC2EkxJThPiMstuKsVJkAhz7ILZTn5iA82RzDnC4oRWfXQQPTn/fE57E
-	bCnqTkqlwdv4CkERo9LpbrcPdswcLcuHhI5SrbFrpmsBKm27Rp+lFyYmg7YXr2/0nZkrVcuRwu7
-	+OZY2QD82AEaO+tdukf3EDHIquU4KVxmLuT0C9e64yKCa1uH0vyWnpYVhqr3dsAd1umVZCXr7yA
-	pwYuFSOiVYqUcgobKtxUbcsW2ATm9iptH198MRbOuuNtBU+AP6kTOuJ/AjqmAuC4MaIwOV/Zm9+
-	hpeAB4O7FwiAGnULvWjUH6+eWGfa9dOl+iNOMnXxHO94/ZnGycgYtZqLmxjATgu1H+0LTv9eQxP
-	nQqmMfv4w==
-X-Received: by 2002:adf:e00f:0:10b0:482:a9d7:7ced with SMTP id ffacd0b85a97d-482f79b2420mr1034763f8f.14.1787857616265;
-        Thu, 27 Aug 2026 12:06:56 -0700 (PDT)
-Received: from VivoBook-ASUS-X712UA-M712UA.lan ([2a00:f44:c90:ce5e:8e8e:8023:a4fb:572e])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-482e2756112sm11992439f8f.0.2026.08.27.12.06.53
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 27 Aug 2026 12:06:55 -0700 (PDT)
-From: Stanislaw Pal <kuncy7@gmail.com>
-To: George Moussalem <george.moussalem@outlook.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Praveenkumar I <praveenkumar.i@oss.qualcomm.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konradybcio@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Varadarajan Narayanan <varadarajan.narayanan@oss.qualcomm.com>,
-	Nitheesh Sekar <quic_nsekar@quicinc.com>,
-	Wesley Cheng <quic_wcheng@quicinc.com>,
-	Manivannan Sadhasivam <mani@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-usb@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 00/12] Enable USB3 for Qualcomm IPQ5018
-Date: Thu, 27 Aug 2026 21:06:47 +0200
-Message-ID: <20260827190647.807193-1-kuncy7@gmail.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20260825-ipq5018-usb3-v3-0-39be0955a6aa@outlook.com>
-References: <20260825-ipq5018-usb3-v3-0-39be0955a6aa@outlook.com>
+	id 1wzhjB-00000004p2A-2xcn;
+	Thu, 27 Aug 2026 21:33:41 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 2BBB8601F0;
+	Thu, 27 Aug 2026 21:33:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4DD031F000E9;
+	Thu, 27 Aug 2026 21:33:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1787866420;
+	bh=Zwa9OildEt0/MBeKDzpiohQ2SGijo2Fqu8IR99Uz1bc=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=Fw1+9sqrLMgXn3ctkUbjhc4YaXPZA1bFizV1DDiocqaZcwOSj61O5UvptVU+MXrw3
+	 cHGuihh2s2WoNOH9f3D0QpemTdvRptaPyCKtIZMFbkXD9d/VMxFXfayWNN9FfRYI+L
+	 /S0vXfrJBDpVaovIu3iLv/4ZkcuNbg9CQUPwPHAK0QoPAOAZJTDdYcE1sps1QFi4K9
+	 cuz8oC5sptjv4ph7YeH38O0eI/GK9/KhbXsQY5pz0pC38yvEn3f8nZ6Vx55+uE5YU1
+	 1netFCyUhW11Rs/X3hU2T3XdxwORVGU2xfVSfh3PQHcy4+A+h6kKSeJCCwEiPPSpFu
+	 2/2SZU3rzGGVA==
+Message-ID: <25e10cfe-40dc-45f4-8a92-cd81263420ea@kernel.org>
+Date: Thu, 27 Aug 2026 23:33:31 +0200
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260827_120700_231693_8E941BED 
-X-CRM114-Status: GOOD (  10.23  )
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 1/9] dt-bindings: phy: Document ST STM32MP25 USB2-FEMTO
+ PHY
+To: Marek Vasut <marex@nabladev.com>, linux-usb@vger.kernel.org
+Cc: fabrice.gasnier@foss.st.com, Pankaj Dev <pankaj.dev@st.com>,
+ Rahul Kumar <rahul.kumar05@st.com>,
+ =?UTF-8?Q?Cl=C3=A9ment_Le_Goffic?= <clement.legoffic@foss.st.com>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Christian Bruel <christian.bruel@foss.st.com>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
+ Rosen Penev <rosenp@gmail.com>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+ Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
+ kernel@dh-electronics.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com
+References: <20260822074816.548662-1-marex@nabladev.com>
+ <20260822074816.548662-2-marex@nabladev.com>
+ <7a16614a-bd1b-462a-be13-4a9c22aa588e@kernel.org>
+ <34c48ff1-524f-4d24-b53f-99e7171d08db@nabladev.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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
+In-Reply-To: <34c48ff1-524f-4d24-b53f-99e7171d08db@nabladev.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,33 +129,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Tested this revision on IPQ5018 hardware - a TP-Link Archer AX55 v1,
-backported onto 6.18.44. Both radios on this board are on AHB and PCIe
-is unused, so nothing else contends for the SS PHY; the combo driver is
-exercised purely on its USB3 side here.
+On 27/08/2026 16:53, Marek Vasut wrote:
+> On 8/27/26 2:54 PM, Krzysztof Kozlowski wrote:
+>> On 22/08/2026 09:46, Marek Vasut wrote:
+>>> +description:
+>>> +  USB2 PHY block in STM32 is attached to USB 2.0 Host controller and
+>>> +  USB 2.0 side of DWC3 DRD controller, and provides the USB LS/FS/HS
+>>> +  connectivity. Both PHYs are the FEMTO-PHY, but their configuration
+>>> +  bits in the system control register are different for each variant.
+>>> +
+>>> +maintainers:
+>>> +  - Fabrice Gasnier <fabrice.gasnier@foss.st.com>
+>>> +  - Marek Vasut <marex@nabladev.com>
+>>> +  - Pankaj Dev <pankaj.dev@st.com>
+>>> +
+>>> +properties:
+>>> +  compatible:
+>>> +    enum:
+>>> +      - st,stm32mp25-usb2phy1
+>>> +      - st,stm32mp25-usb2phy2
+>>> +
+>>> +  "#clock-cells":
+>>> +    const: 1
+>>> +
+>>
+>> As pointed out by different patchset built on top of it, this is wrong.
+> 
+> What is wrong in this (V3) of the patchset ? I think the ST patches were 
+> fixing up V2 and what they were fixing up is already fixed here in V3.
 
-Two USB 3.2 gen 1 sticks, all enumerating SuperSpeed (speed=5000,
-version=3.20, 5000M in lsusb -t):
+Probably I got confused... but I had impression the ST patches were
+adding here "reg" property, no?
 
-  - hot-plug, both sticks;
-  - warm reboot with the stick inserted - SuperSpeed 0.8 s after xHCI
-    registers;
-  - cold power-on with the stick inserted - same, no fall back to
-    480M;
-  - 130 MB/s sustained over a 3 GB raw read, unchanged from the
-    previous revision on the same stick;
-  - no USB or xHCI error in dmesg across the whole run.
-
-I also exercised the vdd-supply path that patch 12 adds to the RDP432-C2,
-since enable/disable sits in phy_init/phy_shutdown and that is the code
-this revision rewrites: unbinding dwc3-qcom drops the port's 5 V rail and
-the device disappears, re-binding brings it back at SuperSpeed 1.8 s
-later. Works on this board too.
-
-I do not have an IPQ5332, so the combo PHY's PCIe side and the 5332
-instance are untested by me.
-
-Tested-by: Stanislaw Pal <kuncy7@gmail.com>
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
