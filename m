@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15EF6C61DC4
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED09BC61DB9
 	for <linux-phy@archiver.kernel.org>; Thu, 27 Aug 2026 17:00:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
@@ -12,66 +12,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YrRsAyFnkOBeCATYSLQwdIHnHbuY8Dw2kKOHtWb5Eao=; b=VzD38jmobG/1B3
-	51s3GtAueuIGBLtYDAqH2M3s6HUPUYQHMGt1f3hbYGxeAj7GEx2ivVENbbzIXCkFWslImz3AOzRyr
-	U7RfH9ah/rBPs5bblNYsHZ/gW4AKtlYFFsi5rQQQTSP5OJhegMd6XKj1QCQvfSQPJR2zmNuSuY1Nv
-	HjGmAVmK2j1iftT+QhtZvwSu2vT+dB6iCcpUjbKSdYYvTs2PPDIyXHYIK7cCI0KrieWVHK8+fKn9h
-	FasOpq94SmEMHDvENMQsvv3IeITyTG6dmkXr0pWS3DtmI0a40aUvdos3QApn8euAGLeZ+K0Qszc5u
-	djJ9l7KJCjUN7NiTp6rw==;
+	List-Owner; bh=itu2/7HMR9EwnGLM69UNXj7GBhIGg90vv/45JLepk8I=; b=nWryPU+AM0wW0H
+	FYAnGOErTk1nu7vyijp5o/ij9cWO9H9qLeKXOxLN4j37KfN+OmZe2r7ieAzZ7JeuNimiWVCK451K+
+	1HA5L2M2adtiWoqZYfSsypsitZVVyc5gmVOsqgdniRujj9uO8P77d6dglvNj0Q8pz5d9V4dCPwSE8
+	Im3vlRuo28F5UsBSL6vF2AqtxnKvqwzVPm1FQR34/N+ki5kgSspeh3AvIOMw74Re9aX/wsVyFrGQw
+	4W1EqKLP895BE1S8Jtn8RIPqf1lMoQRl0lZ4XFTswiUFn5B7nc1cdjAnM1zRnOT0mvVs9tsbn9vp3
+	7O8Iy+Kkyr6zEoHN47TQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzdTF-00000004PtO-2egT;
+	id 1wzdTF-00000004PtC-20LP;
 	Thu, 27 Aug 2026 17:00:57 +0000
 Received: from mx.nabladev.com ([178.251.229.89])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzdTC-00000004Ps6-0Oso;
+	id 1wzdTC-00000004PrW-0Iyc;
 	Thu, 27 Aug 2026 17:00:55 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 2403511D047;
-	Thu, 27 Aug 2026 19:00:44 +0200 (CEST)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 9FE9511D051;
+	Thu, 27 Aug 2026 19:00:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nabladev.com;
-	s=dkim; t=1787850045;
+	s=dkim; t=1787850039;
 	h=from:subject:date:message-id:to:cc:mime-version:content-type:
 	 content-transfer-encoding:content-language:in-reply-to:references;
-	bh=YdpMoBjRF6weCelhUSwlEX7zawYj+14G2BcZrtn36gQ=;
-	b=ZNZ0NoRDZPqbddDE4Fs1g1QVk8MReIB1oF3ZAdqRlUyEuhztpYGBtzllCOK6jBeMOQcmo5
-	Ssq96Z5WHI0ps0JKcmesn1Hgr+nh9xHB7gjQG8vCL7R3DJbmMu4Pz2mGG9vO1jbMeDoRe0
-	0WYBLLobUVYT0UQFgKF/QhuWlD538/1AMzXCs3joOW3BzTtNC/vslc0Q5x1pBQxHB9+fVJ
-	f8oFrMl3blKW05q7jUwHF7LjlJXG0dQxurEjjJiJrYGfcAfCr4Fb1V/7UXEqmY9wftIy80
-	YyMRSMVNfXJ7fYvTWqhBHzBqQar3hVMPZNaPjlVQvmabZKbNYrQXsX4gFf1Amg==
-Message-ID: <6caa0c4a-3e94-4bac-8661-5f2501b5d9dd@nabladev.com>
-Date: Thu, 27 Aug 2026 16:56:42 +0200
+	bh=OD3WDKVPKy4gFKDQyvFk0U8Q8vSh1Hf0rGi/7d2Ce6I=;
+	b=GPQLHb1iRWr07a51QmhBSJYtn/FKuxaKOgOQIUO2Un5lYyCRvSZJ9MKrvoSUN9nETTGrQh
+	QoE4gpk2xigPEGZFO3Id4JPgU1IOHNIKsbj1dj4njz+hIK5jZsx6IToaA7jmRocIsq/oWK
+	RgVh4dLbArZL7B6KD7zRjrRTj3TW4TGdQzGmvU3ylGVzXxAm5IHU3x2eyDa8r0VUt+wCda
+	A39LgKSS566fU7hIydInXNYlArHQnJaZyj+QKaYrUlFUhhA7YimXEuRRdkYKC1XQNLkShh
+	fQO4l3ipFHSygK9CxVQV/xOzbbXQNVfieZ+IXrvQ4zdA1v0KfbNpuV8XuSn0mw==
+Message-ID: <34c48ff1-524f-4d24-b53f-99e7171d08db@nabladev.com>
+Date: Thu, 27 Aug 2026 16:53:36 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 5/9] dt-bindings: usb: dwc3: Document ST STM32MP2 DWC3
- xHCI USB controller
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: linux-usb@vger.kernel.org, fabrice.gasnier@foss.st.com,
- Pankaj Dev <pankaj.dev@st.com>,
+Subject: Re: [PATCH v3 1/9] dt-bindings: phy: Document ST STM32MP25 USB2-FEMTO
+ PHY
+To: Krzysztof Kozlowski <krzk@kernel.org>, linux-usb@vger.kernel.org
+Cc: fabrice.gasnier@foss.st.com, Pankaj Dev <pankaj.dev@st.com>,
+ Rahul Kumar <rahul.kumar05@st.com>,
  =?UTF-8?Q?Cl=C3=A9ment_Le_Goffic?= <clement.legoffic@foss.st.com>,
- Gatien Chevallier <gatien.chevallier@foss.st.com>,
  Alexandre Torgue <alexandre.torgue@foss.st.com>,
  Christian Bruel <christian.bruel@foss.st.com>,
  Conor Dooley <conor+dt@kernel.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>,
  Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Rahul Kumar <rahul.kumar05@st.com>, Rob Herring <robh@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
  Rosen Penev <rosenp@gmail.com>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
  Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
  kernel@dh-electronics.com, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-stm32@st-md-mailman.stormreply.com
 References: <20260822074816.548662-1-marex@nabladev.com>
- <20260822074816.548662-6-marex@nabladev.com>
- <20260827-strategic-hallowed-lynx-ca3bcc@quoll>
+ <20260822074816.548662-2-marex@nabladev.com>
+ <7a16614a-bd1b-462a-be13-4a9c22aa588e@kernel.org>
 Content-Language: en-US
 From: Marek Vasut <marex@nabladev.com>
-In-Reply-To: <20260827-strategic-hallowed-lynx-ca3bcc@quoll>
+In-Reply-To: <7a16614a-bd1b-462a-be13-4a9c22aa588e@kernel.org>
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260827_100054_340870_896BD591 
-X-CRM114-Status: UNSURE (   9.30  )
+X-CRM114-CacheID: sfid-20260827_100054_340740_7DF5F8B8 
+X-CRM114-Status: UNSURE (   9.31  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -89,41 +87,38 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 8/27/26 2:59 PM, Krzysztof Kozlowski wrote:
-
-[...]
-
->> +++ b/Documentation/devicetree/bindings/usb/st,stm32mp25-dwc3.yaml
->> @@ -0,0 +1,97 @@
->> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/usb/st,stm32mp25-dwc3.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->> +
->> +title: STMicroelectronics STM32 MPU DWC3 USB SoC controller
->> +
+On 8/27/26 2:54 PM, Krzysztof Kozlowski wrote:
+> On 22/08/2026 09:46, Marek Vasut wrote:
 >> +description:
->> +  The STM32 MPU DWC3 USB SoC controller block supports both
->> +  Host(SS/HS/FS/LS) and Device(SS/HS/FS) mode operation
+>> +  USB2 PHY block in STM32 is attached to USB 2.0 Host controller and
+>> +  USB 2.0 side of DWC3 DRD controller, and provides the USB LS/FS/HS
+>> +  connectivity. Both PHYs are the FEMTO-PHY, but their configuration
+>> +  bits in the system control register are different for each variant.
 >> +
 >> +maintainers:
 >> +  - Fabrice Gasnier <fabrice.gasnier@foss.st.com>
 >> +  - Marek Vasut <marex@nabladev.com>
+>> +  - Pankaj Dev <pankaj.dev@st.com>
 >> +
->> +allOf:
->> +  - $ref: snps,dwc3-common.yaml#
+>> +properties:
+>> +  compatible:
+>> +    enum:
+>> +      - st,stm32mp25-usb2phy1
+>> +      - st,stm32mp25-usb2phy2
+>> +
+>> +  "#clock-cells":
+>> +    const: 1
+>> +
 > 
-> Honestly, I am lost. It seems this resolves my comment at v2, but now I
-> went through patchset from Fabrice Gasnier which was ON TOP of this
-> patch adding this line.
+> As pointed out by different patchset built on top of it, this is wrong.
 
-I think the stuff Fabrice sent was on top of V2.
+What is wrong in this (V3) of the patchset ? I think the ST patches were 
+fixing up V2 and what they were fixing up is already fixed here in V3.
 
-> It is not your fault, although if there are pending comments expressed
-> not via review but via patchses on top of things being reviewed, then
-> can you check for them?
-I did, while briefly reviewing that series.
+> I do not understand why Fabrice Gasnier cannot reply HERE that this is
+> wrong and instead another patch is sent for in-flight code. That's not
+> your Marek problem, but lack of responsible review from ST...
+ACK
 
 -- 
 linux-phy mailing list
