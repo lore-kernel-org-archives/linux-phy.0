@@ -4,69 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B550C61DC4
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Aug 2026 16:00:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A81CFC61DB9
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Aug 2026 16:13:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/12E6gOj+UbxVaU0wxx8LTVimavE58t8UME2uZ4K5V8=; b=I9O5pEc1IdHsl7
-	Ztia7U8kffhxL58Hmzhr49/wODGKVf4pxBTRo0GDOOqEn2v4bsXt03LU26O9HiGiR9zvZTphTAhtt
-	kNUZ7cnPxbNrvm9OnQRR4UeCb90y5HFHceocPZcgnClMKigQ6verKlL2tBjJ+bqAU7/wpx7rtss0u
-	77IkOPHEIQsBqKyS+eVY4j5ljUYGhxQfycqRr+fLuL6ePQ1KBHb4/f3SdTkAg4JOIaQZD0FclkdgB
-	iKjFlQl0//nY7xJKRojwJtbl7WGhslX3KGVgyU3uaInPMAxc8s6EGisU1DVzrbilv0PA+gdx2pjxJ
-	tsV0a4PkbtmTtyuvTZ2w==;
+	List-Owner; bh=WYSRWvsgz+dORTDSCoFSnjCcwMLLtBxVUaVutBwWfzE=; b=VefYGYwQlkE2nN
+	lOfV+FV6w2ltKud1nEtRWp/mc4WARyNGO58QV2f2rsvXDsW2v5RNIpmhsfWk2whlL1QpfC0LQ+42R
+	feKx8+9SKMMbDq/2obisiQi+BGhxtdo9RJSnqKQf79vWu+3j6vzULTbz4jFH7CVCwpu3feyRrHWxp
+	MLSdpsUIuf7+QVKmKkhdLWwdO3Daj3sm85AAIpDmezTohtrq/td+cFxP3zqcEmtcWivTFYPaLFjuv
+	D5rCH2fmf/xUdRSCzPs2LtnxdMX8lrscrGL4fMgEXnnsRIp9iyLZWhZxixtNkLsNF+h6kpmppXDA6
+	4e0X7/n+cALDB6ROnzkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzcWs-00000004HjI-02ZY;
-	Thu, 27 Aug 2026 16:00:38 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wzcis-00000004IX1-16VD;
+	Thu, 27 Aug 2026 16:13:02 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzcWq-00000004Hio-0kN4;
-	Thu, 27 Aug 2026 16:00:36 +0000
+	id 1wzcio-00000004IWi-3TvQ;
+	Thu, 27 Aug 2026 16:12:59 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id D5F8A40BE8;
-	Thu, 27 Aug 2026 16:00:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E0E831F000E9;
-	Thu, 27 Aug 2026 16:00:34 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id F0195600D3;
+	Thu, 27 Aug 2026 16:12:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D3BBD1F000E9;
+	Thu, 27 Aug 2026 16:12:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1787846435;
-	bh=mc9UqifGDes7aqOfgsJlG3V88rf8KQlsEq8wthV3IEk=;
+	s=k20260515; t=1787847177;
+	bh=bW5p7sg37lG2e7fiC+a/D7ld9RprkWkK8hWMZ55d2KQ=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=QtrYgCCZ+k2VUTD2+vb3c3oCDpu0y0MrozeRvCXQQxFL4CH9XjueJ7EcjvDSvuJDN
-	 /1lWbHKCTRoU/QyUFkbf3bszPZHHMAadCQ3wgyrc+XaEDy0XdJXT0BteBZWXS6LqcO
-	 /g1hHlAvdJh2FjxgpKbb8mse83Lo+hNWLB7sYt141MJ+bEr/MQ0HnYu/WJr3hQ2usM
-	 5WBXy173K3VJiJCvoeONgKfSFY7mC0kq/CIPE8Fc1I7d3giBaCl69vTGfXp6YhO7DC
-	 mBwNeP6hobSvVdVVsRjv30VyGRFouWWvBRHrsNzQnzVN2XB4w9fmEwU1/xRIXtfQne
-	 o7J5UGgmCzFlA==
-Date: Thu, 27 Aug 2026 21:30:31 +0530
+	b=WaHaCd9Nu9G4ArFwXjQgTuCAqV3k/KIa6ykHqQucoty/1nkrunZyB0pBKCdvzyJ/A
+	 Ls2T/PweYhD5O5dc0IvmDhpc//CpGRjKLtQwXvnZNApHJ4+San/oHDey2lgt8tYYIQ
+	 Wl/fwE5FKLGY6pU3hYawPK45QoE5PUIg3rk3/jnNZMhHyJV9ywEJ5AV1LRaCeZRnLS
+	 JvoBdUyNriec390XSIhLPFBHvHh2vJDRF5on5TaUqE9NlaPNDlyiO3ESQku7P8DKS4
+	 WL3MMZH6HwQ5IIyFw5XW4oKVAs8A0ItiLN3J3PrRrwL93PdmPUTbsJcgt3xEOX6yot
+	 ycpe+kcOu0hag==
+Date: Thu, 27 Aug 2026 21:42:53 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Marek Vasut <marex@nabladev.com>
-Cc: linux-usb@vger.kernel.org, fabrice.gasnier@foss.st.com,
-	Pankaj Dev <pankaj.dev@st.com>, Rahul Kumar <rahul.kumar05@st.com>,
-	Christian Bruel <christian.bruel@foss.st.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+To: Manivannan Sadhasivam <mani@kernel.org>
+Cc: Sebastian Reichel <sebastian.reichel@collabora.com>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>, Rosen Penev <rosenp@gmail.com>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
 	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
-	devicetree@vger.kernel.org, kernel@dh-electronics.com,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-stm32@st-md-mailman.stormreply.com
-Subject: Re: [PATCH v3 2/9] phy: stm32: Add support for ST STM32MP25
- USB2-FEMTO PHY
-Message-ID: <apBfHzD5TfryaEW0@vaman>
-References: <20260822074816.548662-1-marex@nabladev.com>
- <20260822074816.548662-3-marex@nabladev.com>
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Dmitry Baryshkov <lumag@kernel.org>,
+	Yubing Zhang <yubing.zhang@rock-chips.com>,
+	Alexey Charkov <alchark@flipper.net>,
+	Igor Paunovic <royalnet026@gmail.com>,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+	kernel@collabora.com, devicetree@vger.kernel.org,
+	linux-usb@vger.kernel.org, Sashiko <sashiko-bot@kernel.org>,
+	William Wu <william.wu@rock-chips.com>
+Subject: Re: [PATCH v14 00/38] phy: rockchip: usbdp: Clean up the mess
+Message-ID: <apBiBTE-xxmsCdY1@vaman>
+References: <20260813-rockchip-usbdp-cleanup-v14-0-b5ad9c68fa11@collabora.com>
+ <h54c2hrcsv3zjzzgojzf5sjmu3vtpobz6rwloam5kp7mwqqn3n@bqjnlellvnz6>
+ <aoTMQtpYYw8O-3cj@venus>
+ <kwncmhsrq6sr56rsgf2ng4pc5fvyyqfryp3s2qfskoxunxx7jp@pdq4kedpw4gq>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260822074816.548662-3-marex@nabladev.com>
+In-Reply-To: <kwncmhsrq6sr56rsgf2ng4pc5fvyyqfryp3s2qfskoxunxx7jp@pdq4kedpw4gq>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,281 +89,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22-08-26, 09:46, Marek Vasut wrote:
-> From: Pankaj Dev <pankaj.dev@st.com>
+On 19-08-26, 05:31, Manivannan Sadhasivam wrote:
+> On Tue, Aug 18, 2026 at 11:42:50PM +0200, Sebastian Reichel wrote:
+> > Hello Mani,
+> > 
+> > On Tue, Aug 18, 2026 at 11:27:07AM +0200, Manivannan Sadhasivam wrote:
+> > > On Thu, Aug 13, 2026 at 10:51:43PM +0200, Sebastian Reichel wrote:
+> > > > This series does a major overhaul of the Rockchip USBDP driver. The
+> > > > initial main goal was to add USB-C DP AltMode support to the RK3576
+> > > > and RK3588 and this series still prepares the PHY driver for exactly
+> > > > that. But in addition to that I uncovered a huge amount of issues,
+> > > > that are fixed along the way. Some of the more interesting ones are:
+> > > > 
+> > > >  * Currently the driver might trigger a fatal SError on USB-C hotplug,
+> > > >    since re-initializing the PHY stops the clocks going to DWC3. If
+> > > >    the DWC3 driver tries to access its registers at the same time the
+> > > >    system will crash.
+> > > >  * The DWC3 hardware can get into a buggy state when the PHY is
+> > > >    disabled, which results in the PHY not coming up properly again.
+> > > >  * Swithcing the USB-C connector orientation during hotplug breaks
+> > > >    USB3 speed, as the PHY is not being re-initialized.
+> > > >  * The code always enables DP mode when USB-C is involved.
+> > > >  * The driver has some locking issues uncovered by Sashiko.
+> > > > 
+> > > > In addition to these bigger ones, Sashiko also found a bunch of
+> > > > minor problems, which are mostly harmless, but were fixed while
+> > > > going at it.
+> > > 
+> > > 38 patches for a single series is too much to review. Please
+> > > consider splitting it up into multiple series not exceeding ~10
+> > > patches per series. Thanks!
+> > 
+> > So let me summarize:
+> > 
+> >  - Vinod wants Sashiko feedback to be acted upon
 > 
-> Add USB2 PHY driver for STM32MP25 USB2 controllers, which includes the
-> USB2.0 host-only controller and USB 2.0 part of the DWC3 controller.
-> Two such PHYs in total are present in STM32MP25 SoC, they both are
-> slightly different, therefore they use different compatible string
-> to discern them.
+> This is fine.
 > 
-> Signed-off-by: Pankaj Dev <pankaj.dev@st.com>
-> Co-developed-by: Rahul Kumar <rahul.kumar05@st.com>
-> Signed-off-by: Rahul Kumar <rahul.kumar05@st.com>
-> Co-developed-by: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
-> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
-> Co-developed-by: Christian Bruel <christian.bruel@foss.st.com>
-> Signed-off-by: Christian Bruel <christian.bruel@foss.st.com>
-> Co-developed-by: Marek Vasut <marex@nabladev.com>
-> Signed-off-by: Marek Vasut <marex@nabladev.com>
-> ---
-> Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>
-> Cc: Christian Bruel <christian.bruel@foss.st.com>
-> Cc: Conor Dooley <conor+dt@kernel.org>
-> Cc: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
-> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
-> Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-> Cc: Neil Armstrong <neil.armstrong@linaro.org>
-> Cc: Pankaj Dev <pankaj.dev@st.com>
-> Cc: Rahul Kumar <rahul.kumar05@st.com>
-> Cc: Rob Herring <robh@kernel.org>
-> Cc: Rosen Penev <rosenp@gmail.com>
-> Cc: Thinh Nguyen <Thinh.Nguyen@synopsys.com>
-> Cc: Vinod Koul <vkoul@kernel.org>
-> Cc: devicetree@vger.kernel.org
-> Cc: kernel@dh-electronics.com
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-kernel@vger.kernel.org
-> Cc: linux-phy@lists.infradead.org
-> Cc: linux-stm32@st-md-mailman.stormreply.com
-> Cc: linux-usb@vger.kernel.org
-> ---
-> V2: - Fix up Sob/Cdb lines
->     - Operate PHY as a syscon subnode
-> V3: - Update copyright years
->     - Register two sets of clock, one 480 MHz PLL and one CMN
->     - Split PHY ops per PHY, since the PHY2 does not have set mode ops
->     - Fix up Sob/Cdb lines further
-> ---
->  drivers/phy/st/Kconfig             |  10 +
->  drivers/phy/st/Makefile            |   1 +
->  drivers/phy/st/phy-stm32-usb2phy.c | 406 +++++++++++++++++++++++++++++
->  3 files changed, 417 insertions(+)
->  create mode 100644 drivers/phy/st/phy-stm32-usb2phy.c
+> >  - linux-phy does not want series with dependencies ( [0] )
 > 
-> diff --git a/drivers/phy/st/Kconfig b/drivers/phy/st/Kconfig
-> index 49206185e5633..2835bb67bca9e 100644
-> --- a/drivers/phy/st/Kconfig
-> +++ b/drivers/phy/st/Kconfig
-> @@ -58,3 +58,13 @@ config PHY_STM32_USBPHYC
->  	  used by an HS USB Host controller, and the second one is shared
->  	  between an HS USB OTG controller and an HS USB Host controller,
->  	  selected by a USB switch.
-> +
-> +config PHY_STM32_USB2PHY
-> +	tristate "STMicroelectronics STM32MP25 USB2.0 PHY Controller driver"
-> +	depends on ARCH_STM32 || COMPILE_TEST
-> +	depends on COMMON_CLK
-> +	select GENERIC_PHY
-> +	help
-> +	  Enable this to support the High-Speed USB 2.0 transceivers that are
-> +	  part of the STMicroelectronics STM32MP25 SoCs. The PHY itself is a
-> +	  Synopsys FEMTO-PHY.
-> diff --git a/drivers/phy/st/Makefile b/drivers/phy/st/Makefile
-> index cb80e954ea9f0..4945df5ed78a8 100644
-> --- a/drivers/phy/st/Makefile
-> +++ b/drivers/phy/st/Makefile
-> @@ -5,3 +5,4 @@ obj-$(CONFIG_PHY_ST_SPEAR1340_MIPHY)	+= phy-spear1340-miphy.o
->  obj-$(CONFIG_PHY_STIH407_USB)		+= phy-stih407-usb.o
->  obj-$(CONFIG_PHY_STM32_COMBOPHY)	+= phy-stm32-combophy.o
->  obj-$(CONFIG_PHY_STM32_USBPHYC) 	+= phy-stm32-usbphyc.o
-> +obj-$(CONFIG_PHY_STM32_USB2PHY) 	+= phy-stm32-usb2phy.o
-> diff --git a/drivers/phy/st/phy-stm32-usb2phy.c b/drivers/phy/st/phy-stm32-usb2phy.c
-> new file mode 100644
-> index 0000000000000..8c68b2d208d73
-> --- /dev/null
-> +++ b/drivers/phy/st/phy-stm32-usb2phy.c
-> @@ -0,0 +1,406 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +/*
-> + * STMicroelectronics STM32 USB2 PHY Controller driver
-> + * Currently Only supported for STM32MP25
-> + *
-> + * Copyright (C) 2022-2026 STMicroelectronics
-> + * Author(s): Pankaj Dev <pankaj.dev@st.com>.
-> + */
-> +#include <linux/bitfield.h>
-> +#include <linux/clk.h>
-> +#include <linux/clk-provider.h>
-> +#include <linux/io.h>
-> +#include <linux/kernel.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/of_address.h>
-> +#include <linux/of_platform.h>
-> +#include <linux/phy/phy.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/regmap.h>
-> +#include <linux/reset.h>
-> +#include <linux/usb/role.h>
-> +#include <linux/mfd/syscon.h>
-> +
-> +#define SYSCFG_USB2PHY2CR_USB2PHY2CMN		BIT(2)
-> +#define SYSCFG_USB2PHY2CR_VBUSVALID		BIT(4)
-> +#define SYSCFG_USB2PHY2CR_VBUSVLDEXTSEL		BIT(5)
-> +#define SYSCFG_USB2PHY2CR_VBUSVLDEXT		BIT(6)
-> +
-> +#define USBH_NUM_CLK				2
-> +
-> +struct stm32_usb2phy {
-> +	struct phy				*phy;
-> +	struct regmap				*regmap;
-> +	struct device				*dev;
-> +	struct reset_control			*rstc;
-> +	struct clk				*phyref;
-> +	struct regulator			*vdd33;
-> +	const struct stm32mp2_usb2phy_hw_data	*hw_data;
-> +	atomic_t				en_refcnt;
-> +	enum phy_mode				mode;
-> +	u32					cr_offset;
-> +	bool					is_init;
-> +	struct clk_hw				clkpll_hw;
-> +	struct clk_hw				clkcmn_hw;
-> +	/* Must be last */
-> +	struct clk_hw_onecell_data		onecell;
-> +};
-> +
-> +struct stm32mp2_usb2phy_hw_data {
-> +	u32			phyrefsel_mask;
-> +	const struct phy_ops	*phy_ops;
-> +};
-> +
-> +static int stm32_usb2phy_enable(struct stm32_usb2phy *phy_dev)
-> +{
-> +	const struct stm32mp2_usb2phy_hw_data *phy_data = phy_dev->hw_data;
-> +	unsigned int refsel;
-> +	unsigned long rate;
-> +	int ret;
-> +
-> +	/* Check if a phy is already init or clkpll in use */
-> +	if (atomic_inc_return(&phy_dev->en_refcnt) > 1)
-> +		return 0;
-> +
-> +	rate = clk_get_rate(phy_dev->phyref);
-> +	if (rate == 19200000)
-> +		refsel = 0;
-> +	else if (rate == 20000000)
-> +		refsel = 1;
-> +	else if (rate == 24000000)
-> +		refsel = 2;
-> +	else
-> +		return -EINVAL;
+> This is not something I expected. I read the reply from Vladimir in [0], and
+> he seems to be sharing the limitation of the build tool of linux-phy. But I
+> don't think that's a big deal. Every subsystem allows sending dependent series
+> as long as the dependency is clearly described in the cover letter and now with
+> b4. So I don't see why linux-phy should be different. If you combine all patches
+> in one series, it makes it impossible for a human reviewer to review it
+> thoroughly.
+> 
+> @vinod: Can you share your view on splitting the series with dependency?
 
-Would a switch not be better here?
+I build locally when I apply and if there is a dependency on fixes,
+cover letter mentioning, I do merge fixes.
+So not sure from a process pov where the gap might be.
 
-> +
-> +	ret = regmap_update_bits(phy_dev->regmap,
-> +				 phy_dev->cr_offset,
-> +				 phy_data->phyrefsel_mask,
-> +				 field_prep(phy_data->phyrefsel_mask, refsel));
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = regulator_enable(phy_dev->vdd33);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = clk_prepare_enable(phy_dev->phyref);
-> +	if (ret)
-> +		goto error_regdis;
-> +
-> +	ret = reset_control_deassert(phy_dev->rstc);
-> +	if (ret)
-> +		goto error_clkdis;
-> +
-> +	return 0;
-> +
-> +error_clkdis:
-> +	clk_disable_unprepare(phy_dev->phyref);
-> +error_regdis:
-> +	regulator_disable(phy_dev->vdd33);
-> +
-> +	return ret;
-> +}
-> +
-> +static int stm32_usb2phy_disable(struct stm32_usb2phy *phy_dev)
-> +{
-> +	int ret;
-> +
-> +	/* Check if a phy is still init or clkpll in use */
-> +	if (atomic_dec_return(&phy_dev->en_refcnt) > 0)
-> +		return 0;
-> +
-> +	ret = reset_control_assert(phy_dev->rstc);
-> +	if (ret)
-> +		return ret;
-> +
-> +	clk_disable_unprepare(phy_dev->phyref);
-> +
-> +	return regulator_disable(phy_dev->vdd33);
-> +}
-> +
-> +static int stm32_usb2phy_set_mode(struct phy *phy, enum phy_mode mode, int submode)
-> +{
-> +	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
-> +	u32 mask = SYSCFG_USB2PHY2CR_USB2PHY2CMN |
-> +		   SYSCFG_USB2PHY2CR_VBUSVALID |
-> +		   SYSCFG_USB2PHY2CR_VBUSVLDEXT;
-> +	u32 val = 0;
-> +	int ret;
-> +
-> +	if (mode == PHY_MODE_USB_HOST) {
-> +		if (submode != USB_ROLE_NONE)
-> +			val = SYSCFG_USB2PHY2CR_VBUSVALID;
-> +	} else if (mode == PHY_MODE_USB_DEVICE) {
-> +		val = SYSCFG_USB2PHY2CR_USB2PHY2CMN |
-> +		      SYSCFG_USB2PHY2CR_VBUSVLDEXTSEL;
-> +		if (submode != USB_ROLE_NONE)
-> +			val |= SYSCFG_USB2PHY2CR_VBUSVLDEXT;
-> +		mask |= SYSCFG_USB2PHY2CR_VBUSVLDEXTSEL;
-> +	} else {
-> +		return -EINVAL;
-> +	}
-> +
-> +	ret = regmap_update_bits(phy_dev->regmap, phy_dev->cr_offset, mask, val);
-> +	if (ret)
-> +		return ret;
-> +
-> +	phy_dev->mode = mode;
-> +
-> +	return 0;
-> +}
-> +
-> +static int stm32_usb2phy1_init(struct phy *phy)
-> +{
-> +	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
-> +	int ret;
-> +
-> +	ret = stm32_usb2phy_enable(phy_dev);
-> +	if (ret)
-> +		return ret;
-> +
-> +	phy_dev->is_init = true;
-> +
-> +	return 0;
-> +}
-> +
-> +static int stm32_usb2phy2_init(struct phy *phy)
-> +{
-> +	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
-> +	int ret;
-> +
-> +	ret = stm32_usb2phy_enable(phy_dev);
-> +	if (ret)
-> +		return ret;
-> +
-> +	if (phy_dev->mode != PHY_MODE_INVALID) {
-> +		ret = stm32_usb2phy_set_mode(phy, phy_dev->mode, USB_ROLE_NONE);
-> +		if (ret) {
-> +			stm32_usb2phy_disable(phy_dev);
-> +			return ret;
-> +		}
-> +	}
+Builders are helpful for review and checking sanity :-)
 
-so what is the diff b/w these two phys that we need to check invalid
-only here?
+I would say it would be helpful, if it was split. I can pick fixes now
+and get that in for rc. While the rest can go into next
 
 -- 
 ~Vinod
