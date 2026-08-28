@@ -4,87 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 478AEC61DD6
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Aug 2026 16:50:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54575C61DBD
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Aug 2026 19:22:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=hiout/sYaql6LXi/4SizQyxExfpa57D2fK1bttTbQbQ=; b=IdKUtRw6TAF6uTJw7GkjZOcsQX
-	0iOwUMwhmgiYV7rvttr+4GNidFPEsM/0MlvymcuhjwNTlOesCg+VNHOJ2xlDLWdpr8WJGqWswiKaj
-	MtjqzwLk+ZVrG55OTeNElSUqn0hH13cVbFqXmv/ll+yR/2XFtCLQ/BqPJrViPhw2vmbm4drfbFm2C
-	g2a6mxLcLt7Lt0z153+7ZEBLaK04Aiu4u7QGd0VxkULgQm9IyGed2uWDz9y4YrZjqbw9O2gQXs/Ts
-	Fyz0u0+ZfV1dPCWTe0zAHPOPQIRurzWy78/I20DjxZQFZZZ0N5Q4CfT8ldBHFzDJ/7Sug0ScJnmcn
-	G291DrIg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tI3Rhbbcj+pWE6NopFjyNcEdwk7PBuS1gYoHlTABGKs=; b=vAFJVlEf9PZqNE
+	WQYfmRMp1qaJnOA44JgRGHUU6L+m0n0pNYa2x1hRSju299kEtUj7rh2hUCXPcKQZYWtVKyORaZVvq
+	6wSu6B+JsxrKeodCTF67qltmO4pLeJiigNCWAeebJ4eNdc7VwqeiS9c6cZub4INDwrKSedbHnvWbF
+	HbfBQmeu+RnRJb6HGm3Gfgj6lRrxedADOKkD88AHHQFUGxlFktmmAzfKXwjnf1cNADLE7ZLJe9xYq
+	mwBzZRwCzzWpJp/h1OBDU8oYtNX+sZuYb+O6WKVO4NjczfU/ppUxI0wuTz0bLafWRuo7PoWkQLBDk
+	ywj3Y+wxp3dIF2iC41ug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzzmO-00000006EVt-42WK;
-	Fri, 28 Aug 2026 16:50:12 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1x02A3-00000006Lze-1uR9;
+	Fri, 28 Aug 2026 19:22:47 +0000
+Received: from mout-p-101.mailbox.org ([80.241.56.151])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzzmN-00000006EVB-02YY;
-	Fri, 28 Aug 2026 16:50:11 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 32D3F60200;
-	Fri, 28 Aug 2026 16:50:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0F8101F000E9;
-	Fri, 28 Aug 2026 16:50:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1787935809;
-	bh=Hw/jCmn/KOE2LoDFpFWah+rvYGMtWOdmte3fTa9ScuY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=XxoRvS/pWD7EfKWlPLkqW8pWjkuekfNHrSvJvmaAdzI5X8auF7Qn5/jEDekj4ncxI
-	 2jEmHqbY3k4YyvyXFuSacz8f8GpOr7bqT67VdFZfNvMpbBr1Ekt7XVD73tEKN2eUKb
-	 mrJyA7yxMSBDWNzDtpoXYtfBlsXgO8CLsP3kkvES3ibm8QHxvHfkJ9foYSiyUY5swe
-	 lxSlvUTKJINxWvdGnb28E0bCU3fKxWhlYhaehUcNWzno23zxRoF5GIpX36pmaU6UDe
-	 2Z7/6zpZ9xXAYLv2qcsQ3bADDJhCoO/spbT0lR0/z/+3Qt/+wvjx6mJiJ+/AKg1mbk
-	 pnYtXn7scph8A==
-Date: Fri, 28 Aug 2026 17:50:00 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Michal Wilczynski <m.wilczynski@samsung.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	id 1x02A0-00000006Lyg-3JNF
+	for linux-phy@lists.infradead.org;
+	Fri, 28 Aug 2026 19:22:46 +0000
+Received: from smtp102.mailbox.org (smtp102.mailbox.org [10.196.197.102])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mout-p-101.mailbox.org (Postfix) with ESMTPS id 4hWpDw2zRdz8v4R;
+	Fri, 28 Aug 2026 21:22:40 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailbox.org; s=mail20150812;
+	t=1787944960;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=i6Zcfk6OiBd21jW5PNVvOmFKcd6Av7RN7HuO+LFyu+o=;
+	b=nPnVVapXGL78Y5ASqvnUuLKDUVFQeK/AZYwO9zp6gaOTwHvD+vzCuA4bo6PO3xBrVoRMyy
+	QRTEEsMROdL3/CtuWMnRXZMFNDWNpxYOvCWmcAF+6i6Tf4zdHaN/vd2EShfADugnBhKD+8
+	I+N4kxZCJUzPC4xaaEArORvcBeo5d/N3ocxIbbgk1DVvH4sRmkFieFLR1UndBsEW7+rW/f
+	VTc8GZo+5M8IX7OIacOjdbfgBaZK0y0s5msNXOH0FpcfGtwcpXICWRj1kUALHpFIh8HB6v
+	SQOGWma/nFQUkEL3MjYP6K8HHZXwhvYqR4nGBqZlDy7kyMr0infnv1zVhPJEOA==
+From: Marek Vasut <marek.vasut+renesas@mailbox.org>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailbox.org; s=mail20150812;
+	t=1787944957;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=i6Zcfk6OiBd21jW5PNVvOmFKcd6Av7RN7HuO+LFyu+o=;
+	b=DQWWgDIgGpAmlFnR4FL5NaWK86aTGrJYonu1OYpAoyAlmy3p+U7l2m5x4m38hDBOG/PBAI
+	Fdjfs7LQfdy+mStxzkaMar9tZFg/x27IaRI8oXH/hq5p/kBVOtkPF9nTs5X4OTCnazKM3S
+	IvzEJtRT7Fa7ZyNRCiqTQA7FkaU8SwqiCp1da+JWE9OxGZ2QYjkX/k3kcDCLqMLaKSikbj
+	b6cba8KgA6NwlEM0eYEbKJeA80Zew8SfkxPiELIMLLfCFVQxoBVQkFGixJ0lC26pKUJsgU
+	Osl3uUP+/YZbuUYGl5qf/RJOb07UACj5OVmDx9N+PHOpyVQNuf3ullrB91IQiA==
+To: linux-phy@lists.infradead.org
+Cc: Marek Vasut <marek.vasut+renesas@mailbox.org>,
+	Arnd Bergmann <arnd@arndb.de>,
+	Biju Das <biju.das.jz@bp.renesas.com>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Robert Foss <rfoss@kernel.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>, Lee Jones <lee@kernel.org>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Emil Renner Berthing <kernel@esmil.dk>,
-	Hal Feng <hal.feng@starfivetech.com>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>,
-	Heiko Stuebner <heiko@sntech.de>, Paul Walmsley <pjw@kernel.org>,
-	Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
-	Dominique Belhachemi <db@domibel.de>, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	dri-devel@lists.freedesktop.org, mfd@lists.linux.dev,
-	linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-riscv@lists.infradead.org,
-	Icenowy Zheng <uwu@icenowy.me>, Andy Yan <andyshrk@163.com>,
-	Marek Szyprowski <m.szyprowski@samsung.com>,
-	Maud Spierings <maudspierings@gocontroll.com>,
-	Graham Markall <hello@big-grey.co.uk>
-Subject: Re: [PATCH v2 03/15] dt-bindings: mfd: Add
- starfive,jh7110-hdmi-subsystem
-Message-ID: <20260828-tribune-unguided-672ae7ade441@spud>
-References: <20260828-jh7110-clean-send-v2-0-331680c8b9d1@samsung.com>
- <CGME20260828134819eucas1p2c8e2bb95dd957981ec5e60e1da03223c@eucas1p2.samsung.com>
- <20260828-jh7110-clean-send-v2-3-331680c8b9d1@samsung.com>
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Hai Pham <hai.pham.ud@renesas.com>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Magnus Damm <magnus.damm@gmail.com>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Phong Hoang <phong.hoang.wz@renesas.com>,
+	Rob Herring <robh@kernel.org>,
+	Tam Nguyen <tam.nguyen.xa@renesas.com>,
+	Thanh Quan <thanh.quan.xn@renesas.com>,
+	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
+	Vinh Nguyen <vinh.nguyen.xz@renesas.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org
+Subject: [PATCH 1/2] dt-bindings: phy: Document Renesas Multi-Protocol PHY driver for R-Car X5H
+Date: Fri, 28 Aug 2026 21:21:39 +0200
+Message-ID: <20260828192223.402422-1-marek.vasut+renesas@mailbox.org>
 MIME-Version: 1.0
-In-Reply-To: <20260828-jh7110-clean-send-v2-3-331680c8b9d1@samsung.com>
+X-MBO-RS-META: 3k3rhshq4777g3ma5iagqk8czrwsyy4x
+X-MBO-RS-ID: ea153f9a525213584ef
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260828_122245_121581_DE1E8424 
+X-CRM114-Status: GOOD (  10.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,204 +98,181 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2508989612135069307=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============2508989612135069307==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="Cg0ACwIa4U5WfwqO"
-Content-Disposition: inline
+Document Renesas Multi-Protocol PHY present in R-Car X5H (R8A78000) SoC.
+This is a multiplexing PHY block with inputs from five IPs, and outputs
+to four separate IO blocks. The five inputs are two PCIe4, two USB 3.2,
+and ethernet PCS, each connected into the PHY with up to 4 times 2 lanes.
+The inputs can be multiplexed to the four IO blocks as needed.
 
---Cg0ACwIa4U5WfwqO
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Signed-off-by: Marek Vasut <marek.vasut+renesas@mailbox.org>
+---
+Cc: Arnd Bergmann <arnd@arndb.de>
+Cc: Biju Das <biju.das.jz@bp.renesas.com>
+Cc: Conor Dooley <conor+dt@kernel.org>
+Cc: Geert Uytterhoeven <geert+renesas@glider.be>
+Cc: Hai Pham <hai.pham.ud@renesas.com>
+Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
+Cc: Magnus Damm <magnus.damm@gmail.com>
+Cc: Manivannan Sadhasivam <mani@kernel.org>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Phong Hoang <phong.hoang.wz@renesas.com>
+Cc: Rob Herring <robh@kernel.org>
+Cc: Tam Nguyen <tam.nguyen.xa@renesas.com>
+Cc: Thanh Quan <thanh.quan.xn@renesas.com>
+Cc: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+Cc: Vinh Nguyen <vinh.nguyen.xz@renesas.com>
+Cc: Vinod Koul <vkoul@kernel.org>
+Cc: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+Cc: devicetree@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org
+Cc: linux-phy@lists.infradead.org
+Cc: linux-renesas-soc@vger.kernel.org
+---
+ .../bindings/phy/renesas,rcar-gen5-mpphy.yaml | 125 ++++++++++++++++++
+ 1 file changed, 125 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/renesas,rcar-gen5-mpphy.yaml
 
-On Fri, Aug 28, 2026 at 03:47:27PM +0200, Michal Wilczynski wrote:
-> Add the dt-binding for the StarFive JH7110 HDMI subsystem.
->=20
-> The JH7110 HDMI IP is a monolithic block containing both the digital
-> controller and analog PHY in a single register space. This binding
-> defines the parent device, which holds the shared register map and
-> populates its two children: the PHY and the controller. This is
-> necessary to resolve a circular clock dependency between the HDMI block
-> and the VOUT clock generator.
->=20
-> Signed-off-by: Michal Wilczynski <m.wilczynski@samsung.com>
-> ---
->  .../mfd/starfive,jh7110-hdmi-subsystem.yaml        | 116 +++++++++++++++=
-++++++
->  1 file changed, 116 insertions(+)
->=20
-> diff --git a/Documentation/devicetree/bindings/mfd/starfive,jh7110-hdmi-s=
-ubsystem.yaml b/Documentation/devicetree/bindings/mfd/starfive,jh7110-hdmi-=
-subsystem.yaml
-> new file mode 100644
-> index 0000000000000000000000000000000000000000..01f079160ab8c13c6fa4ce3ab=
-aac6607021b3792
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/mfd/starfive,jh7110-hdmi-subsyste=
-m.yaml
-> @@ -0,0 +1,116 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/mfd/starfive,jh7110-hdmi-subsystem.ya=
-ml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: StarFive JH7110 HDMI subsystem
-> +
-> +maintainers:
-> +  - Michal Wilczynski <m.wilczynski@samsung.com>
-> +
-> +description:
-> +  The StarFive JH7110 HDMI block is a monolithic IP containing both
-> +  the digital controller logic and the analog PHY logic in a single
-> +  register space.
-> +
-> +properties:
-> +  compatible:
-> +    const: starfive,jh7110-hdmi-subsystem
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 1
-> +    description:
-> +      NoC display bus clock, which gates access to the whole vout
-> +      register region.
-> +
-> +  resets:
-> +    maxItems: 1
-> +    description:
-> +      NoC display bus reset, which gates access to the whole vout
-> +      register region.
-> +
-> +  power-domains:
-> +    maxItems: 1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - resets
-> +  - power-domains
+diff --git a/Documentation/devicetree/bindings/phy/renesas,rcar-gen5-mpphy.yaml b/Documentation/devicetree/bindings/phy/renesas,rcar-gen5-mpphy.yaml
+new file mode 100644
+index 0000000000000..2da8be2d3de82
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/renesas,rcar-gen5-mpphy.yaml
+@@ -0,0 +1,125 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/renesas,rcar-gen5-mpphy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Renesas R-Car Generation 5 Multi-Protocol PHY
++
++maintainers:
++  - Marek Vasut <marek.vasut+renesas@mailbox.org>
++  - Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
++
++properties:
++  compatible:
++    items:
++      - const: renesas,r8a78000-mpphy   # R-Car X5H MPPHY
++      - const: renesas,rcar-gen5-mpphy  # R-Car Gen5 MPPHY
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    minItems: 5
++    maxItems: 5
++
++  clock-names:
++    items:
++      - const: mpphy01
++      - const: mpphy11
++      - const: mpphy21
++      - const: mpphy31
++      - const: mpphy02
++
++  power-domains:
++    minItems: 4
++    maxItems: 4
++
++  power-domain-names:
++    items:
++      - const: mpp0
++      - const: mpp1
++      - const: mpp2
++      - const: mpp3
++
++  resets:
++    minItems: 5
++    maxItems: 5
++
++  reset-names:
++    items:
++      - const: mpphy01
++      - const: mpphy11
++      - const: mpphy21
++      - const: mpphy31
++      - const: mpphy02
++
++  '#phy-cells':
++    const: 1
++
++  renesas,num-lanes:
++    description: PCIe lane count for each PHY input.
++    $ref: /schemas/types.yaml#/definitions/uint32-array
++    minItems: 4
++    maxItems: 4
++
++  renesas,phy-type:
++    description: PHY multiplexing configuration for each output.
++    $ref: /schemas/types.yaml#/definitions/uint32-array
++    minItems: 8
++    maxItems: 8
++
++  renesas,external-ref-clock:
++    description: PHY external reference clock select for each output.
++    $ref: /schemas/types.yaml#/definitions/uint32-array
++    minItems: 4
++    maxItems: 4
++
++  renesas,output-repeat-ref-clock:
++    description: PHY repeat reference clock select for each output.
++    $ref: /schemas/types.yaml#/definitions/uint32-array
++    minItems: 4
++    maxItems: 4
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - power-domains
++  - power-domain-names
++  - resets
++  - reset-names
++  - '#phy-cells'
++  - renesas,num-lanes
++  - renesas,phy-type
++  - renesas,external-ref-clock
++  - renesas,output-repeat-ref-clock
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/phy/phy.h>
++
++    phy@c9a00000 {
++      compatible = "renesas,r8a78000-mpphy", "renesas,rcar-gen5-mpphy";
++      reg = <0xc9a00000 0x100000>;
++      #phy-cells = <1>;
++
++      clocks = <&scmi_clk 340>, <&scmi_clk 341>, <&scmi_clk 342>,
++               <&scmi_clk 343>, <&scmi_clk 344>;
++      clock-names = "mpphy01", "mpphy11", "mpphy21", "mpphy31", "mpphy02";
++      power-domains = <&scmi_devpd 17>, <&scmi_devpd 18>,
++                      <&scmi_devpd 19>, <&scmi_devpd 20>;
++      power-domain-names = "mpp0", "mpp1", "mpp2", "mpp3";
++      resets = <&scmi_reset 340>, <&scmi_reset 341>, <&scmi_reset 342>,
++               <&scmi_reset 343>, <&scmi_reset 344>;
++      reset-names = "mpphy01", "mpphy11", "mpphy21", "mpphy31", "mpphy02";
++
++      renesas,num-lanes = <4 4 0 0>;
++      renesas,phy-type = <PHY_TYPE_PCIE 0>, <PHY_TYPE_PCIE 0>,
++                         <PHY_TYPE_XPCS 2>, <PHY_TYPE_USB3 1>;
++      renesas,external-ref-clock = <1 1 1 1>;
++      renesas,output-repeat-ref-clock = <0 0 0 0>;
++    };
+-- 
+2.53.0
 
-Here you're willing not to have -names properties?
-
-> +
-> +patternProperties:
-> +  "^phy(@[0-9a-f]+)?$":
-
-These are not pattern properties at all, given they have no variance
-because there's no unit addresses involved!
-pw-bot: changes-requested
-
-Cheers,
-Conor.
-
-> +    $ref: /schemas/phy/starfive,jh7110-inno-hdmi-phy.yaml#
-> +  "^controller(@[0-9a-f]+)?$":
-> +    $ref: /schemas/display/bridge/starfive,jh7110-inno-hdmi-controller.y=
-aml#
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/starfive,jh7110-crg.h>
-> +    #include <dt-bindings/power/starfive,jh7110-pmu.h>
-> +    #include <dt-bindings/reset/starfive,jh7110-crg.h>
-> +
-> +    soc {
-> +        #address-cells =3D <1>;
-> +        #size-cells =3D <1>;
-> +
-> +        hdmi@29590000 {
-> +            compatible =3D "starfive,jh7110-hdmi-subsystem";
-> +            reg =3D <0x29590000 0x4000>;
-> +            clocks =3D <&syscrg JH7110_SYSCLK_NOC_BUS_DISP_AXI>;
-> +            power-domains =3D <&pwrc JH7110_PD_VOUT>;
-> +            resets =3D <&syscrg JH7110_SYSRST_NOC_BUS_DISP_AXI>;
-> +
-> +            controller {
-> +                compatible =3D "starfive,jh7110-inno-hdmi-controller";
-> +                clocks =3D <&voutcrg JH7110_VOUTCLK_HDMI_TX_SYS>,
-> +                         <&voutcrg JH7110_VOUTCLK_HDMI_TX_MCLK>,
-> +                         <&voutcrg JH7110_VOUTCLK_HDMI_TX_BCLK>,
-> +                         <&hdmi_phy>;
-> +                clock-names =3D "sys", "mclk", "bclk", "pclk";
-> +                interrupts =3D <99>;
-> +                phys =3D <&hdmi_phy>;
-> +                phy-names =3D "hdmi-phy";
-> +                resets =3D <&voutcrg JH7110_VOUTRST_HDMI_TX_HDMI>;
-> +                reset-names =3D "hdmi_tx";
-> +
-> +                ports {
-> +                    #address-cells =3D <1>;
-> +                    #size-cells =3D <0>;
-> +
-> +                    port@0 {
-> +                        reg =3D <0>;
-> +
-> +                        endpoint {
-> +                            remote-endpoint =3D <&dpu_out_dpi0>;
-> +                        };
-> +                    };
-> +
-> +                    port@1 {
-> +                        reg =3D <1>;
-> +
-> +                        endpoint {
-> +                            remote-endpoint =3D <&hdmi_con_in>;
-> +                        };
-> +                    };
-> +                };
-> +            };
-> +
-> +            hdmi_phy: phy {
-> +                compatible =3D "starfive,jh7110-inno-hdmi-phy";
-> +                #clock-cells =3D <0>;
-> +                clock-output-names =3D "hdmi_pclk";
-> +                clocks =3D <&xin24m>;
-> +                clock-names =3D "refoclk";
-> +                #phy-cells =3D <0>;
-> +            };
-> +        };
-> +    };
-> +...
->=20
-> --=20
-> 2.34.1
->=20
-
---Cg0ACwIa4U5WfwqO
-Content-Type: application/pgp-signature; name=signature.asc
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCapG8NwAKCRB4tDGHoIJi
-0hpkAP9IEPsKXNupV8il/GXzWDWNOrSDzHB2OymOU4fR89rhBAD+LI4SNgwfyjrP
-7lvK3nlFJ0fQqo4ZtM5vpnIawQnoNwE=
-=PKQG
------END PGP SIGNATURE-----
-
---Cg0ACwIa4U5WfwqO--
-
-
---===============2508989612135069307==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============2508989612135069307==--
-
