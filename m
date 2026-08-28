@@ -4,54 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D7D7C61DBD
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Aug 2026 10:05:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 067F6C61DBD
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Aug 2026 10:09:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T8tWrQtnLYrMjRZkTaQ5GUPgVb+qHlujCHTIWIi8oVo=; b=fgZkYQjeL5HDXd
-	Ly+TGkYDwqJP1mt5WHkQYda46F0lWsNvCVjlmYOyUohrCOKBrTWMpJle/xklI/93U8r0O3khx4kyu
-	6GjuxF7a8AAe0QJn2QaVcC2DJ5mNIi46/QvYoVk+bnMsTcWgsPbPIy2BVXOeYuaOFw0VYsmfZWY+Y
-	ufyi3DQux8D1N1U5qWLxnU6ykufWh9Fp0lFiJTVlyov9SxNGAzoTgiFoWLp6g5IVGoVJpDXxBMinI
-	ioS6gAtj7nHKqhg45S3Lslaq/xqO7VmIoMhWlKqmc2+Ux4jEElFqGwHOiPhZaBBs7/qO3o8YS8tq4
-	nnvWMNoAZXYfKgBuZ1yg==;
+	List-Owner; bh=iKLAYoSPF3dJuibYr+8bv5ysvnI/4/gnaXVXHQxQmEA=; b=F3De8nDtRPMo5p
+	Hngs6QghFkPfE1ThFUSdKW0twuXokzqOylmuQjD3mwlQZrtOkFg0eCy/dHuSpbrvtrhMcjW6Nd/zW
+	8RB9eHPtu5wMmtHWhsL8QQzZxCqW85OH4uGwHAbI5tAF32SqKHnci0CijvzXcphwESgScZ9U4KEbe
+	KsnDsbcF/b/2z4CekVT4FwPRp3EC5c/6rftNaboi0tpY5mVzPyZ4zFEd0bjJXwtbLqcHJ5OcE4GDJ
+	6VruFBcsScn1KBeB0BtCvSUExaXlwkrUSUHj9hA5odrJE4N+5Ijq6DzDLnxhZgXmyqdi5rgmLS81f
+	kkJE4D2KUOg9cdPPW4gQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wztSG-00000005XVl-0kYO;
-	Fri, 28 Aug 2026 10:05:00 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wztWK-00000005Xlt-2GC0;
+	Fri, 28 Aug 2026 10:09:12 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wztSE-00000005XVK-2SVx
+	id 1wztWJ-00000005Xln-0EHR
 	for linux-phy@lists.infradead.org;
-	Fri, 28 Aug 2026 10:04:58 +0000
+	Fri, 28 Aug 2026 10:09:11 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id EED25601F5;
-	Fri, 28 Aug 2026 10:04:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 57A201F000E9;
-	Fri, 28 Aug 2026 10:04:57 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 91B804049D;
+	Fri, 28 Aug 2026 10:09:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 73BD41F000E9;
+	Fri, 28 Aug 2026 10:09:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1787911497;
-	bh=VdjsVUhbkv+LFC3Ze98frl8sFLdHJ5hN/CLAOj65QuA=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=bMvkfttXVsDZOZK9MYxW6PfaZTMCB2OpQhCZdg4BNiwczeIdTTkdS0607SfZXDZZ1
-	 Dz51fVaRDQAs+dRNIL5t+MmxiTV00OZbyRME0FKZDASl2DxOofSCNiYhFhTzLp+HNI
-	 ShY4+8k2iUl2UD3SuY6eFIgU0w8hvVwxPbsyFEKVUwMyHg+toYCbAN0H87ykDRXhPU
-	 BBDw8JZFisjjTo5U4dEY1NwAfUUdI1bV0gy62SlPbDvlrn8FT68kJODwjfmc/79FI/
-	 ucpqU/xG6vo7ei2TNCV/+Y5FbNZebYbZywNLAN9aGwlsEI257uBgIyGEq8Ay8PS1MH
-	 urbPupSLGb/CA==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v3 1/4] phy: qualcomm: qmp-combo: Add DP COM v8 header
- and fix register layout
-To: "Nabige Aala" <nabige.aala@oss.qualcomm.com>
-Cc: neil.armstrong@linaro.org, olteanv@gmail.com, linux-phy@lists.infradead.org, vkoul@kernel.org
-In-Reply-To: <20260828-glymur-phy-v3-v3-1-8e73ce7c4636@oss.qualcomm.com>
-References: <20260828-glymur-phy-v3-v3-0-8e73ce7c4636@oss.qualcomm.com>
- <20260828-glymur-phy-v3-v3-1-8e73ce7c4636@oss.qualcomm.com>
-Date: Fri, 28 Aug 2026 10:04:56 +0000
-Message-Id: <20260828100457.57A201F000E9@smtp.kernel.org>
+	s=k20260515; t=1787911750;
+	bh=y+wirH+XRJLmQuXzFec1vwsdVhSbWNoZgC5yT7+QDH0=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=LY3nabWwaHHnAtNbqAQaLgLhKaZlmQs3rBv2v6i7BCKi5DwMCHe7qgax+32qVIf8S
+	 x/3hnlidcexJPihSCpiEsZLj02Xuo374D10Bm5PiJa2/i/gEChbAcEwK2+Q/S38weW
+	 63Mq+Tkyc7sl4F9zjNTjwn3v/XvVCrjYCEtOxw3V0T4oNdv/DcZUPubWxj5Zxquds9
+	 0gFyN8ztDmHsqFdN7DihCkpwZmSTBVzM9+qdcfTDiE8y9uPEkF+04dds6nzDQ9+EBM
+	 IEPPAmBJD4evBNyZ/g2Lki02w71l6zsN4av3HgsalWhaNefr8eyP+cF8E+43oVwgDV
+	 l7c0uh3ZDpHEQ==
+Date: Fri, 28 Aug 2026 12:09:06 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: George Moussalem <george.moussalem@outlook.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Praveenkumar I <praveenkumar.i@oss.qualcomm.com>, Philipp Zabel <p.zabel@pengutronix.de>, 
+	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Varadarajan Narayanan <varadarajan.narayanan@oss.qualcomm.com>, 
+	Nitheesh Sekar <quic_nsekar@quicinc.com>, Wesley Cheng <quic_wcheng@quicinc.com>, 
+	Manivannan Sadhasivam <mani@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
+Subject: Re: [PATCH v3 01/12] dt-bindings: phy: qcom,ipq5332-uniphy-pcie:
+ Change to PCIe/USB3 combo PHY
+Message-ID: <20260828-wisteria-fennec-from-arcadia-a44ebe@quoll>
+References: <20260825-ipq5018-usb3-v3-0-39be0955a6aa@outlook.com>
+ <20260825-ipq5018-usb3-v3-1-39be0955a6aa@outlook.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260825-ipq5018-usb3-v3-1-39be0955a6aa@outlook.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,66 +73,41 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpOZXcgaXNzdWVzOgotIFtMb3ddIElu
-Y29tcGxldGUgSW1wbGVtZW50YXRpb246IFRoZSBwYXRjaCBpbnRyb2R1Y2VzIERQIFY4IENPTSBz
-cGVjaWZpYyBtYWNyb3MgYnV0IGZhaWxzIHRvIHVzZSB0aGVtIGZvciBhbGwgYXBwbGljYWJsZSBD
-T00gcmVnaXN0ZXJzIGluIGBxbXBfdjhfbjNfdXNiNDNkcHBoeV9yZWdzX2xheW91dGAuCgpQcmUt
-ZXhpc3RpbmcgaXNzdWVzOgotIFtIaWdoXSBJbmNvbXBsZXRlIFJlZ2lzdGVyIExheW91dCBGaXg6
-IGBxbXBfdjhfdXNiM3BoeV9yZWdzX2xheW91dGAgaW5jb3JyZWN0bHkgdXNlcyBVU0IgQ09NIG9m
-ZnNldHMgZm9yIERQIHBvbGxpbmcgcmVnaXN0ZXJzLgotLQoKY29tbWl0IGRjMThiMjM1ZWFjNWM0
-YmU3YWRmY2VhZGQ5ZjVjYjNhMTQ2YTYyYzAKQXV0aG9yOiBSaXRlc2ggS3VtYXIgPHJpdGVzaC5r
-dW1hckBvc3MucXVhbGNvbW0uY29tPgoKcGh5OiBxdWFsY29tbTogcW1wLWNvbWJvOiBBZGQgRFAg
-Q09NIHY4IGhlYWRlciBhbmQgZml4IHJlZ2lzdGVyIGxheW91dAoKQWRkIHRoZSBuZXcgRFAtc3Bl
-Y2lmaWMgUVNFUkRFUyBDT00gdjggaGVhZGVyIGZpbGUgYW5kIHVwZGF0ZSB0aGUKcmVnaXN0ZXIg
-bGF5b3V0IHRvIHVzZSBEUC1zcGVjaWZpYyBzdGF0dXMgcmVnaXN0ZXIgb2Zmc2V0cyBmb3IKQ19S
-RUFEWV9TVEFUVVMgYW5kIENNTl9TVEFUVVMgcmVnaXN0ZXJzLgoKPiBkaWZmIC0tZ2l0IGEvZHJp
-dmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLWNvbWJvLmMgYi9kcml2ZXJzL3BoeS9xdWFs
-Y29tbS9waHktcWNvbS1xbXAtY29tYm8uYwo+IGluZGV4IGMzOWNlZDE2OGQwMzUuLjRkMzE2Mzdm
-MWRjZTYgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLWNv
-bWJvLmMKPiArKysgYi9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtY29tYm8uYwoK
-WyAuLi4gXQoKPiBAQCAtMzE4LDggKzMxOSw4IEBAIHN0YXRpYyBjb25zdCB1bnNpZ25lZCBpbnQg
-cW1wX3Y4X24zX3VzYjQzZHBwaHlfcmVnc19sYXlvdXRbUVBIWV9MQVlPVVRfU0laRV0gPSB7Cj4g
-IAlbUVBIWV9EUF9BT05fVE9HR0xFX0VOQUJMRV0JCT0gUVBIWV9WOF9QQ1NfQU9OX0RQX0FPTl9U
-T0dHTEVfRU5BQkxFLAo+ICAKPiAgCVtRUEhZX0NPTV9SRVNFVFNNX0NOVFJMXQkJPSBRU0VSREVT
-X1Y4X0NPTV9SRVNFVFNNX0NOVFJMLAo+IC0JW1FQSFlfQ09NX0NfUkVBRFlfU1RBVFVTXQkJPSBR
-U0VSREVTX1Y4X0NPTV9DX1JFQURZX1NUQVRVUywKPiAtCVtRUEhZX0NPTV9DTU5fU1RBVFVTXQkJ
-CT0gUVNFUkRFU19WOF9DT01fQ01OX1NUQVRVUywKPiArCVtRUEhZX0NPTV9DX1JFQURZX1NUQVRV
-U10JCT0gRFBfUVNFUkRFU19WOF9DT01fQ19SRUFEWV9TVEFUVVMsCj4gKwlbUVBIWV9DT01fQ01O
-X1NUQVRVU10JCQk9IERQX1FTRVJERVNfVjhfQ09NX0NNTl9TVEFUVVMsCj4gIAlbUVBIWV9DT01f
-QklBU19FTl9DTEtCVUZMUl9FTl0JPSBRU0VSREVTX1Y4X0NPTV9CSUFTX0VOX0NMS0JVRkxSX0VO
-LAoKW1NldmVyaXR5OiBMb3ddClNob3VsZCBRUEhZX0NPTV9SRVNFVFNNX0NOVFJMIGFuZCBRUEhZ
-X0NPTV9CSUFTX0VOX0NMS0JVRkxSX0VOIGFsc28gYmUKdXBkYXRlZCB0byB1c2UgdGhlIG5ldyBE
-UF9RU0VSREVTX1Y4X0NPTV8qIG1hY3Jvcz8KClNpbmNlIHRoZSBwYXRjaCBhaW1zIHRvIGRlY291
-cGxlIERQIFY4IENPTSBtYWNyb3MgZnJvbSBVU0IgVjggQ09NIG1hY3JvcywKbGVhdmluZyB0aGVz
-ZSBrZXlzIG1hcHBlZCB0byBRU0VSREVTX1Y4X0NPTV8qIGluc3RlYWQgb2YgdGhlIG5ldwpEUF9R
-U0VSREVTX1Y4X0NPTV8qIHZhcmlhbnRzIHNlZW1zIHRvIHNraXAgcGFydCBvZiB0aGUgc2VtYW50
-aWMgc2VwYXJhdGlvbi4KCltTZXZlcml0eTogSGlnaF0KVGhpcyBpcyBhIHByZS1leGlzdGluZyBp
-c3N1ZSwgYnV0IEkgbm90aWNlZCBhbm90aGVyIGxheW91dCB0aGF0IG1pZ2h0IGhhdmUKYSBzaW1p
-bGFyIHByb2JsZW0gd2l0aCBEUCBwb2xsaW5nIHJlZ2lzdGVycy4KCkxvb2tpbmcgYXQgcW1wX3Y4
-X3VzYjNwaHlfcmVnc19sYXlvdXRbXSBlYXJsaWVyIGluIHRoaXMgZmlsZToKCmRyaXZlcnMvcGh5
-L3F1YWxjb21tL3BoeS1xY29tLXFtcC1jb21iby5jOnFtcF92OF91c2IzcGh5X3JlZ3NfbGF5b3V0
-W10gewogICAgLi4uCiAgICBbUVBIWV9DT01fQ19SRUFEWV9TVEFUVVNdICAgICAgID0gUVNFUkRF
-U19WOF9DT01fQ19SRUFEWV9TVEFUVVMsCiAgICBbUVBIWV9DT01fQ01OX1NUQVRVU10gICAgICAg
-ICAgID0gUVNFUkRFU19WOF9DT01fQ01OX1NUQVRVUywKICAgIC4uLgp9CgpUaGlzIGxheW91dCBp
-cyB1c2VkIGJ5IHRoZSBzbTg3NTBfdXNiM2RwcGh5X2NmZyBjb21ibyBQSFkgY29uZmlndXJhdGlv
-bi4KCkR1cmluZyBEUCBpbml0aWFsaXphdGlvbiwgcW1wX2NvbWJvX2NvbmZpZ3VyZV9kcF9waHlf
-Y29tbW9uKCkgcG9sbHMKUVBIWV9DT01fQ19SRUFEWV9TVEFUVVMgYW5kIFFQSFlfQ09NX0NNTl9T
-VEFUVVMgb24gdGhlIGRwX3NlcmRlcyBibG9jazoKCiAgICByZWFkbF9wb2xsX3RpbWVvdXQocW1w
-LT5kcF9zZXJkZXMgKyBjZmctPnJlZ3NbUVBIWV9DT01fQ19SRUFEWV9TVEFUVVNdLCAuLi4pOwoK
-U2luY2UgdGhpcyBsYXlvdXQgbWFwcyB0aGVzZSB0byB0aGUgVVNCIFY4IG9mZnNldHMgKDB4MmYw
-IGFuZCAweDJjOCkgcmF0aGVyCnRoYW4gdGhlIERQIFY4IG9mZnNldHMgKDB4MzNjIGFuZCAweDMx
-NCkgb3IgRFAgVjYgb2Zmc2V0cyAoMHgxZjggYW5kIDB4MWQwKSwKd2lsbCB0aGlzIGNhdXNlIERQ
-IGluaXRpYWxpemF0aW9uIHRvIHJlYWQgaW5jb3JyZWN0IG1lbW9yeSBhbmQgdGltZSBvdXQgb24K
-c204NzUwIGRldmljZXM/CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtv
-LmRldi8jL3BhdGNoc2V0LzIwMjYwODI4LWdseW11ci1waHktdjMtdjMtMC04ZTczY2U3YzQ2MzZA
-b3NzLnF1YWxjb21tLmNvbT9wYXJ0PTEKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4
-LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
-bWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On Tue, Aug 25, 2026 at 04:37:18PM +0400, George Moussalem wrote:
+> This PHY is a PCIE/USB3 multi-purpose PHY. Initial support was added for
+> PCIe only, so rename the binding and add support for USB3 PHY mode.
+> 
+> The PCIe and USB physical pads are muxed and selection is done via a
+> control register in TCSR. Add a new property to the binding to enable
+> switching the default PCIe mux selection to USB3 mode.
+> 
+> In addition, USB3 mode requires a 5V supply, so add a vdd-supply
+> property for it.
+> 
+> Signed-off-by: George Moussalem <george.moussalem@outlook.com>
+> ---
+>  .../bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml | 109 ----------------
+>  .../phy/qcom,ipq5332-uniphy-pcie-usb3-phy.yaml     | 141 +++++++++++++++++++++
+>  include/dt-bindings/phy/phy-qcom-qmp.h             |   4 +
+>  3 files changed, 145 insertions(+), 109 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml
+> deleted file mode 100644
+> index 6e9df81441e9..000000000000
+
+Please do not rename the binding. Old name was correct. New one is not,
+otherwise please point me to the compatible like that.
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
