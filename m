@@ -4,99 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D611C61DB9
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Aug 2026 08:50:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1D19C61DC6
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Aug 2026 08:50:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dHkKu1J0w38u0iR9/zkX/GvcJh5k0nPRcBRATz2Nzk0=; b=RbwfNYg/0cV1/D
-	tVISQUg7WTlvp87pzshckIl+948S7KZpSWIzmjupjgGMg8hLXrT3Ii8Vo+3vdADT1hXTcaJ/Y6x43
-	r5f4OpLMbNGOjAQgnANc/W+z6DScDryEq9niqrXiVT9ZbnVJtOBkngjXVp2Z/9Zfx57X00Kov2ey4
-	k49Voii6VWTaYuNqzApqDWPtsPYSmLz/LYT7/1WbTom/mrb5qjNBEtDrHc2La20hOVFy3A8ojJZKe
-	bIzYnvBJfXkT/fKdppNgTu2rJjWlbNa0QBrodb/YwGte4xMvUb93sfDW8jGdMnq3X3CKIq+4zRelf
-	ukw1YKPGh61Pxd4ApLpw==;
+	List-Owner; bh=H2Ajbci1c2iewgDwAygl64XuWkAn9yYPVD+DkCviGSo=; b=KrJew+J8O9fdRe
+	BsYvCN8Yu83QxPqPJAnjDaX74kDxLy7nl33iLA1naQkFYg5yUgXsykxHrhv3bmhh7+13Z0mz7f/3R
+	xLh1+pxq7581h4qjVEqSN9+WIpGoI9o4megOntlIxBJ5fE7jRfo9KVbascRsuZCC1R3oN6gwIS8C4
+	3VMPNBgG/6u3qBi9An2LQb1k+ML6ZgijmeliEK0HKd9hblldGY69fKNnLCmo9jMxJ3DsSW+zzXviL
+	w3K4wAqMvKvdZuNDd84Nz4+KbE7cuSC71lnakY8HU2zGuwakTfSr9gP28OgETqgJi4SDw6I3altNt
+	Y22XBMumT9Ft+8L7L/SQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzsI1-00000005MU0-0muQ;
-	Fri, 28 Aug 2026 08:50:21 +0000
-Received: from smtpbgau1.qq.com ([54.206.16.166])
+	id 1wzsIC-00000005MZX-23m8;
+	Fri, 28 Aug 2026 08:50:32 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzsHu-00000005MKI-0bXX;
-	Fri, 28 Aug 2026 08:50:19 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=airkyi.com;
-	s=altu2504; t=1787906886;
-	bh=RJlSQp8r350iMwIMlHz6kJOY3IIHWCaiqptCoWQnTWs=;
-	h=From:To:Subject:Date:Message-Id;
-	b=tg7cmklPEYOt+mqx25lhJ6o2jvzGdCRUvXl+huHhoR8aTpA0R5qa3bMAaP2TeyWnJ
-	 5XB/mlSj7fh0WijA/4Tv1ocvXJeMow3ZfecyiObm8aeWV6z/3J8jgsWGvEfwOynvpo
-	 wUUC18FESG22PyZXAA2VacQXTbN7+a+r2QZDJHKk=
-X-QQ-mid: zesmtpgz6t1787906884t06858467
-X-QQ-Originating-IP: CQgLeaWy6Yzh+F2VVlpNXaKxG2UNi9frWcgW6uV9yfw=
-Received: from DESKTOP-8BT1A2O.localdomain ( [61.154.14.86])
-	by bizesmtp.qq.com (ESMTP) with 
-	id ; Fri, 28 Aug 2026 16:47:57 +0800 (CST)
-X-QQ-SSF: 0000000000000000000000000000000
-X-QQ-GoodBg: 0
-X-BIZMAIL-ID: 17473043343536338628
-From: Chaoyi Chen <kernel@airkyi.com>
-To: Andrzej Hajda <andrzej.hajda@intel.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Robert Foss <rfoss@kernel.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>,
-	Simona Vetter <simona@ffwll.ch>,
-	Sandy Huang <hjc@rock-chips.com>,
-	=?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Chaoyi Chen <chaoyi.chen@rock-chips.com>,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
-	Heikki Krogerus <heikki.krogerus@linux.intel.com>
-Cc: linux-kernel@vger.kernel.org,
-	dri-devel@lists.freedesktop.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-phy@lists.infradead.org
-Subject: [PATCH v7 3/7] drm/display: Add soft depend for aux-hpd-typec-dp-bridge module
-Date: Fri, 28 Aug 2026 16:47:33 +0800
-Message-Id: <20260828084737.565-4-kernel@airkyi.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20260828084737.565-1-kernel@airkyi.com>
-References: <20260828084737.565-1-kernel@airkyi.com>
-X-QQ-SENDSIZE: 520
-Feedback-ID: zesmtpgz:airkyi.com:qybglogicsvrgz:qybglogicsvrgz6b-0
-X-QQ-XMAILINFO: MsL7hwqo9bYsqtOmy7L4wpqq4xMtXJOga7qDApU/Hu6EnmSH5HTiBc4l
-	xABnqDS4Q6Mv/H+0OxQXq+Ns3cZjLJ5W0Ao3nOUOjeB+QR6+hFvMBgbgSEHn4Gz8FVttnof
-	WQQSb4m1TuXYbA0VIopu2oOqBzVTT3+pz4TUpI3icUEFVrTwfxp6T4vPiY1wWAaJybnooFr
-	e/UxV5amN7mHuwPMQxt58uD5okqSOT9zNWe7vSCC/YDdgsXCtyYq2VRkZ/3sXp6bLf5t56D
-	Quy0hT/+RqcIzs01FFlFLJSOJLPjrmdh4x3sKQc+HyLebWt5wcOzkv6PN78geHBh4+jgmIL
-	r/eNqGeWKHjRPE0C/WqobLe1IxSg4mhuytP1+o8Ecc19QEb0ibEVE0nPARn/tXL+PYjFH3O
-	J1gh26XRLBlbVq3XbR1YMM19QHR/vZe2tORtjf+Nv7BhBQ3gcdfbusbc/jyXFEA1bvwfwU1
-	fC6AH82+d2igOPRDGQJljWyU78lQyVAuAWOnYfFZ13dtnve1Q6LPpw79wi/dx6GGly9kJAR
-	qPVWFQ+GomO6tnEZXKb+LrM3ig4p9TlJQGB/nKft/I0X1u+D2HM2oJ6sWPCi5PJQxyVLZDS
-	E3nTVVzvmiNu19EGgs05wzx9o4oWEj+nPDVYbRJy6/jnMYY4CQvYtdpWnLkZM9GQhWoh0xb
-	AB8H9Ieu6e2UiNDP8v6OVskTe+WbDRlxJcV3186QRB30Nw6AkadYh7tuBgv4dCO6/wu7txV
-	b9XPuHMl1n7SOpDoBoDpFTgVRoUdEl8D/iHm1HZOQRCAnIv2Z9D/0nwbYYwCAjqP5799sII
-	Nsu4htAIoUC3n/moSkCqRGxNZIMsmwJWAM2I24b56EvLQsD+3EN1QyZiQ4HIMbaDLkOdXLc
-	Bv7G3ljBeNfv2O/V1bBI2VPqY+BXKNwqWCVaKll+h7Wjton4AtwNJpiCBASDWvyobDd1VGx
-	77xwcUIcqJr7+HoaRp1pMZtFrgF1zFhyEY1JksEA63743E+uE0dE4Xz8npHp3hErVra0IaJ
-	jENHgl8Nu289gt72z6
-X-QQ-XMRINFO: M/715EihBoGS47X28/vv4NpnfpeBLnr4Qg==
-X-QQ-RECHKSPAM: 0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260828_015014_604180_5BA46996 
-X-CRM114-Status: UNSURE (   7.96  )
-X-CRM114-Notice: Please train this message.
+	id 1wzsIB-00000005MZ6-38g4
+	for linux-phy@lists.infradead.org;
+	Fri, 28 Aug 2026 08:50:31 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 35E6E60200;
+	Fri, 28 Aug 2026 08:50:31 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6BB6B1F00A3A;
+	Fri, 28 Aug 2026 08:50:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1787907030;
+	bh=Z8NPY5TsPIUZ4hedWFn6I6PtZBu3J+dX54llsvMm/C4=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=fpfxo177nft00Mr7Ynjopxp53UE+xLucz1RYzt3PeMq2zXQmNRizslVzXpSQ3FbsF
+	 7canGezYbSTBwB7Hj8PseJUOb3Vd3bAhcYjRQEHuNBOiaj90eCb7jLopkAf8h6/xNu
+	 J13VyTghRCiHtyNb4mRw3ZbU3qvTYhE5gJWP/aLjUBpRthCruP5Wja1HJH0XyMe1uh
+	 LotnKW7ceVH4DfSE+87OUc8RuSGlSiihIcCn13iQ3TB1D4vkc8fItFhYE0vR65NSPe
+	 SFGAFU+gDDX7F4Yf7W4I3qn5r4XoM8CnRKsoPhhvRf8QxGMzQ02KL8Ik3wFR2uptqI
+	 +Xd4GGROdS+UA==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v2 3/4] PCI: qcom: Add CGC disable workaround for Nord
+ PCIe
+To: "Krishna Chaitanya Chundru" <krishna.chundru@oss.qualcomm.com>
+Cc: conor+dt@kernel.org, linux-pci@vger.kernel.org, devicetree@vger.kernel.org, linux-phy@lists.infradead.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com, robh@kernel.org
+In-Reply-To: <20260828-nord-v2-3-18bf59d19d6f@oss.qualcomm.com>
+References: <20260828-nord-v2-0-18bf59d19d6f@oss.qualcomm.com>
+ <20260828-nord-v2-3-18bf59d19d6f@oss.qualcomm.com>
+Date: Fri, 28 Aug 2026 08:50:29 +0000
+Message-Id: <20260828085030.6BB6B1F00A3A@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,48 +63,24 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Reply-To: sashiko-reviews@lists.linux.dev
 MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-
-The aux-hpd-typec-dp-bridge module serves as a generic TypeC
-DisplayPort HPD bridge and is not required by any other
-module. Therefore, it will not be auto-loaded.
-
-Given that the drm_display_helper module houses DisplayPort-related
-helper code, add a MODULE_SOFTDEP() within it to suggest loading the
-aux-hpd-typec-dp-bridge module beforehand.
-
-Suggested-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-Tested-by: Sebastian Reichel <sebastian.reichel@collabora.com>
----
-(no changes since v6)
----
- drivers/gpu/drm/display/drm_display_helper_mod.c | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/drivers/gpu/drm/display/drm_display_helper_mod.c b/drivers/gpu/drm/display/drm_display_helper_mod.c
-index d8a6e6228773..f0152d6b0b2d 100644
---- a/drivers/gpu/drm/display/drm_display_helper_mod.c
-+++ b/drivers/gpu/drm/display/drm_display_helper_mod.c
-@@ -18,5 +18,6 @@ static void __exit drm_display_helper_module_exit(void)
- 	drm_dp_aux_dev_exit();
- }
- 
-+MODULE_SOFTDEP("pre: aux-hpd-typec-dp-bridge");
- module_init(drm_display_helper_module_init);
- module_exit(drm_display_helper_module_exit);
--- 
-2.53.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+PiBOb3JkIHJlcXVpcmVzIGEgd29ya2Fyb3VuZCB0byBhZGRyZXNzIGEgdGltaW5nIGNvbnZlcmdl
+bmNlIGlzc3VlIGluIHRoZQo+IFBDSWUgcG93ZXIgZG9tYWluLiBUbyBhdm9pZCB0aGUgaXNzdWUs
+IHNldCB0aGUgQ09SRV9DTEtfQ0dDX0RJUyBhbmQKPiBBVVhfUFdSX0RFVCBiaXRzIGluIFBBUkZf
+U1lTX0NUUkwgYWZ0ZXIgY29udHJvbGxlciBpbml0aWFsaXphdGlvbi4KPiAKPiBUaGUgU0xWX0FD
+TEtfQ0dDX0RJUyBiaXQgaXMgYWxyZWFkeSBjb25maWd1cmVkIGJ5IGhhcmR3YXJlIHJlc2V0LiBU
+aGlzCj4gY2hhbmdlIGFkZHMgdGhlIHJlbWFpbmluZyByZXF1aXJlZCBzZXR0aW5ncyBhcyBkb2N1
+bWVudGVkIGluCj4gUUNUREQxMTk3MjQ0Ni4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBLcmlzaG5hIENo
+YWl0YW55YSBDaHVuZHJ1IDxrcmlzaG5hLmNodW5kcnVAb3NzLnF1YWxjb21tLmNvbT4KClNhc2hp
+a28gaGFzIHJldmlld2VkIHRoaXMgcGF0Y2ggYW5kIGZvdW5kIG5vIGlzc3Vlcy4gSXQgbG9va3Mg
+Z3JlYXQhCgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3Bh
+dGNoc2V0LzIwMjYwODI4LW5vcmQtdjItMC0xOGJmNTlkMTlkNmZAb3NzLnF1YWxjb21tLmNvbT9w
+YXJ0PTMKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1waHkK
