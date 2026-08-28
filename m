@@ -4,98 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E5B4C61DD6
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Aug 2026 08:49:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10640C61DB9
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Aug 2026 08:49:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ozc8iSvRyWyOe/hnou1ve3qMVgpSVSfwWQfkhb50ZAM=; b=jUhbDuNmtS0nt8
-	mBJwyUyUovzxP0lwtscTHXBhPh0HIVxbr5MWd6HN9vsqWEXx6BhqoQ17g5YDa4gDvlnqQJGefGFye
-	hj02Dk7+O/P7/evKbHUYbN8LCOzbd338OgS+1vdnN/0CLdxUs6EOpgJTZFT+saAk+mDxJtHMLBmoB
-	shbqEn+AQuzprZMdrd03H5rGOA3huyckwRpycvg/QxMydwpBgoH/a2Zz5If7MbKJKDSTm0HoyvSsj
-	kLP9rpYCdH4NKgp903jnxWru3x/+oyhqzrDAsFjYr+ewplZ03pTEbLFipC9j3JwCBq4vejo9SL+mD
-	mkBCFnUBdM+hN1DN4biA==;
+	List-Owner; bh=at+pLhncb8qBI1C/CbNrw5vf8NildTYK5bDjydxR20E=; b=oLkwjjhDnsVLjU
+	nUZqMctQquJ8XzMNMpTc2V6l0yxOqfrh335BV5FqXWrtGYDnAWQJ997N0bs3ByXovPiYkypey5Xab
+	oVFQDmUQWAARVpVAbWI/5raJv5eKzMFTVrpgDpMgBf9RoCXHgQdM9ji/G6ciTK5a65L2AB2EgMH3r
+	QWUj4FoNcr8Bw9NqD5FqKIkqjvN2ax05ReqRgZMpQyQQL4ivqxCXUfAsVjXJCykqH9bzeo8woExEE
+	hD1uxyL9q0uXftf/FGWju8qKrLRyQ/7T31TQA6mAid/rmSHntOlrit//S64wAjg7qapZD9uccTtnb
+	gLpivVaR7Kgfsy4tpCig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzsH9-00000005Lfj-0wXM;
-	Fri, 28 Aug 2026 08:49:27 +0000
-Received: from smtpbgbr2.qq.com ([54.207.22.56])
+	id 1wzsHE-00000005Lll-2XUB;
+	Fri, 28 Aug 2026 08:49:32 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzsH1-00000005LJq-39nx;
-	Fri, 28 Aug 2026 08:49:21 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=airkyi.com;
-	s=altu2504; t=1787906898;
-	bh=ps+5/GB0NshBez8oJzJPOCqkIqmjQyVJoJgHnSj4//Y=;
-	h=From:To:Subject:Date:Message-Id;
-	b=aUl26nl3wQUZ4hn1CUwgBwkgnEsMmlFcFw/Aj9gO5+I84IsMaXGFLkEVT5DiEdB/t
-	 EyFEKRMMWFOE/mvxjTFEIovflYg95Ep6GlvmmF33XD1Vy1fNTTdQdZ9yPrvVPvKppq
-	 sE/1azftroo0lkbfD+x7SJz9IRkVzg0X3EBLU/VI=
-X-QQ-mid: zesmtpgz6t1787906896t199af65e
-X-QQ-Originating-IP: 5flTHLV541QvG+d71g7cmkxNrt7XoJywJCQVlxi+9yA=
-Received: from DESKTOP-8BT1A2O.localdomain ( [61.154.14.86])
-	by bizesmtp.qq.com (ESMTP) with 
-	id ; Fri, 28 Aug 2026 16:48:12 +0800 (CST)
-X-QQ-SSF: 0000000000000000000000000000000
-X-QQ-GoodBg: 0
-X-BIZMAIL-ID: 316822618748361336
-From: Chaoyi Chen <kernel@airkyi.com>
-To: Andrzej Hajda <andrzej.hajda@intel.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Robert Foss <rfoss@kernel.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>,
-	Simona Vetter <simona@ffwll.ch>,
-	Sandy Huang <hjc@rock-chips.com>,
-	=?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Chaoyi Chen <chaoyi.chen@rock-chips.com>,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
-	Heikki Krogerus <heikki.krogerus@linux.intel.com>
-Cc: linux-kernel@vger.kernel.org,
-	dri-devel@lists.freedesktop.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-phy@lists.infradead.org
-Subject: [PATCH v7 5/7] phy: rockchip: phy-rockchip-typec: Add DRM AUX bridge
-Date: Fri, 28 Aug 2026 16:47:35 +0800
-Message-Id: <20260828084737.565-6-kernel@airkyi.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20260828084737.565-1-kernel@airkyi.com>
-References: <20260828084737.565-1-kernel@airkyi.com>
-X-QQ-SENDSIZE: 520
-Feedback-ID: zesmtpgz:airkyi.com:qybglogicsvrgz:qybglogicsvrgz6b-0
-X-QQ-XMAILINFO: NBUSIVIw0bNzXOl4W4KwoT7/kemWkc2d89cfamrIoo6cBhy+GgRIJWcW
-	SDMMuASo6ASpJoMzH6cZSmRdk9ycX+MgvZCKdMFDuqBA5T0h9cUPxp2mW3ybl6ZakmmFore
-	/Ksv1P2BuMtr1NxlSZ7VVXCG0EIBwq2cXXc5M5J13CZkF3/AJmuAdYk1d3RHrCtgC6TWwRB
-	N9iNL/gWs9aOHLrg1KNPTffjNFLXLhutyM4ptjoE1AKpcAQBPdbLqzD7SFqPJxwEAYVmKvy
-	jHPnihyAuyGOpuwiofbiLbd11sZLA2MiMWj++5Q9Pj8+noYLOldK1g8t+vxDHFwRPt5KD9M
-	pNrSN5DzkHpc9hfFwFwJn8wbKO0UdULKgIcXJDcchYFducAIVxAJPItV1Eh/6czEPR5VWWJ
-	F7BUUAFVIlkzxNLMM3aI9EiWe+jNlbM1/D4t0chzaobFHoIYyvwygG+6s38JseDpO1utnLC
-	rOvuD+P2/P5iuR4PPwNtnrhhf4r3dDhAnSC4tdQsm6rQ/a+OtUP1XxBUfnE2qqzSv1Yh0X6
-	oiffBGpfXLzSjybS10/oCYBz6ni+Ssy45xbdjTsUP2fTgTHQcjrSg7AojD4dku6IuEBe2wd
-	Beoy2Bxn+Qurr+J66sprwKhURk4vUDnbIJYSkSWgpiMXr1avjgKiBOsMXUryRPzNRHFbgs/
-	PaMXXWBOvOyemndYoXQmAGHfx7rzs2CtfIgsRmtbRzjQggcoeqajc0KelRBcz5E8g9wioCM
-	a46fF0H8DdzM44rGRCQTZsNMCe9hxsB5qqWg8+B0vMtZxlQPKT6/GegeMVFtpUBrVk8k67+
-	Jl8GWHeFk5P8Wi3wW70SjEXR5qK0EsnbZsXdDzGo92HoZ9KhMp7UTgIe2ECE0u1W9pKkgtN
-	KKCiuozVqXZTBkrIxKT5pafyb+EbtMmefolonbZrGkAD/Yc6JuR80bkrgdXcSQ4lqy6OYSH
-	o/6LA2+PQlq4UFmIHmCdLmEKnPzYShUiyvKCRElsk0XotP9Ey3f8ZUKoEnZ5Xy3XsXtDcYC
-	hSRhU48OaUfRnajZB8cLhQCusTsN1925Xcg2E1zQ==
-X-QQ-XMRINFO: NS+P29fieYNwqS3WCnRCOn9D1NpZuCnCRA==
-X-QQ-RECHKSPAM: 0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260828_014920_584299_4892207C 
-X-CRM114-Status: GOOD (  12.98  )
+	id 1wzsHC-00000005LhV-2vsg
+	for linux-phy@lists.infradead.org;
+	Fri, 28 Aug 2026 08:49:30 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id F3BA960209;
+	Fri, 28 Aug 2026 08:49:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2FB061F000E9;
+	Fri, 28 Aug 2026 08:49:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1787906969;
+	bh=N/WZfwxHlf3MqIuYmN1yGO9l65CagoSx2/iPktSBTMQ=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=LGQDdA6zQQpaOJp+m+67hD6PBJ5iFewCqGt41Zcvvgl1amdunLON+7/pg2Y8uea31
+	 lr36kx0J273C/H4a2RO9mLeEyK79nJ1huvivASEWgua5qOeFYkM7yyX3zU6zLWrEza
+	 4Ib18HW13QStzvs7dxGydII5wt/oDDuWdUKqtxGF8De4R1/dH5Qeu9jWR5lGmIassT
+	 oE89nSni7U9dTgqY8kZiqPEvkdmhYI7nS2EzQoR614EVEKvxddQvQZio45Ia/wj0H+
+	 RcOCd2tBd4d5teglTTM32CxIrYUa6LTYml311s7QFHVsidEl/5m1DuITtzNndwX1RM
+	 BMjSyAd+9el+A==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v2 2/4] dt-bindings: pci: qcom: add Nord PCIe controller
+ compatible
+To: "Krishna Chaitanya Chundru" <krishna.chundru@oss.qualcomm.com>
+Cc: devicetree@vger.kernel.org, conor+dt@kernel.org, olteanv@gmail.com, linux-pci@vger.kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, linux-phy@lists.infradead.org, robh@kernel.org
+In-Reply-To: <20260828-nord-v2-2-18bf59d19d6f@oss.qualcomm.com>
+References: <20260828-nord-v2-0-18bf59d19d6f@oss.qualcomm.com>
+ <20260828-nord-v2-2-18bf59d19d6f@oss.qualcomm.com>
+Date: Fri, 28 Aug 2026 08:49:28 +0000
+Message-Id: <20260828084929.2FB061F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,85 +63,21 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Reply-To: sashiko-reviews@lists.linux.dev
 MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-
-Using the DRM_AUX_BRIDGE helper to create the transparent DRM bridge
-device.
-
-Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
-Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-Acked-by: Vinod Koul <vkoul@kernel.org>
----
-(no changes since v1)
----
- drivers/phy/rockchip/Kconfig              |  2 ++
- drivers/phy/rockchip/phy-rockchip-typec.c | 13 +++++++++++--
- 2 files changed, 13 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
-index 14698571b607..9173d3b4fef4 100644
---- a/drivers/phy/rockchip/Kconfig
-+++ b/drivers/phy/rockchip/Kconfig
-@@ -119,6 +119,8 @@ config PHY_ROCKCHIP_SNPS_PCIE3
- config PHY_ROCKCHIP_TYPEC
- 	tristate "Rockchip TYPEC PHY Driver"
- 	depends on OF && (ARCH_ROCKCHIP || COMPILE_TEST)
-+	depends on DRM || DRM=n
-+	select DRM_AUX_BRIDGE if DRM_BRIDGE
- 	select EXTCON
- 	select GENERIC_PHY
- 	select RESET_CONTROLLER
-diff --git a/drivers/phy/rockchip/phy-rockchip-typec.c b/drivers/phy/rockchip/phy-rockchip-typec.c
-index d9701b6106d5..48070b50416e 100644
---- a/drivers/phy/rockchip/phy-rockchip-typec.c
-+++ b/drivers/phy/rockchip/phy-rockchip-typec.c
-@@ -54,6 +54,7 @@
- 
- #include <linux/mfd/syscon.h>
- #include <linux/phy/phy.h>
-+#include <drm/bridge/aux-bridge.h>
- 
- #define CMN_SSM_BANDGAP			(0x21 << 2)
- #define CMN_SSM_BIAS			(0x22 << 2)
-@@ -1162,16 +1163,24 @@ static int rockchip_typec_phy_probe(struct platform_device *pdev)
- 
- 	for_each_available_child_of_node(np, child_np) {
- 		struct phy *phy;
-+		ret = 0;
- 
--		if (of_node_name_eq(child_np, "dp-port"))
-+		if (of_node_name_eq(child_np, "dp-port")) {
- 			phy = devm_phy_create(dev, child_np,
- 					      &rockchip_dp_phy_ops);
--		else if (of_node_name_eq(child_np, "usb3-port"))
-+			ret = drm_aux_bridge_register_from_node(dev, child_np);
-+		} else if (of_node_name_eq(child_np, "usb3-port"))
- 			phy = devm_phy_create(dev, child_np,
- 					      &rockchip_usb3_phy_ops);
- 		else
- 			continue;
- 
-+		if (ret) {
-+			pm_runtime_disable(dev);
-+			of_node_put(child_np);
-+			return ret;
-+		}
-+
- 		if (IS_ERR(phy)) {
- 			dev_err(dev, "failed to create phy: %pOFn\n",
- 				child_np);
--- 
-2.53.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+PiBBZGQgdGhlIHFjb20sbm9yZC1wY2llIGNvbXBhdGlibGUgc3RyaW5nIHRvIHRoZSBRdWFsY29t
+bSBQQ0llCj4gY29udHJvbGxlciBiaW5kaW5nLgo+IAo+IFRoZSBOb3JkIFBDSWUgY29udHJvbGxl
+ciBpcyBjb21wYXRpYmxlIHdpdGggdGhlIFNBODc3NVAgUENJZQo+IGNvbnRyb2xsZXIgaW1wbGVt
+ZW50YXRpb24gYW5kIHJldXNlcyB0aGUgc2FtZSBiaW5kaW5nIGRlZmluaXRpb24uCj4gCj4gU2ln
+bmVkLW9mZi1ieTogS3Jpc2huYSBDaGFpdGFueWEgQ2h1bmRydSA8a3Jpc2huYS5jaHVuZHJ1QG9z
+cy5xdWFsY29tbS5jb20+CgpTYXNoaWtvIGhhcyByZXZpZXdlZCB0aGlzIHBhdGNoIGFuZCBmb3Vu
+ZCBubyBpc3N1ZXMuIEl0IGxvb2tzIGdyZWF0IQoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0
+dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDgyOC1ub3JkLXYyLTAtMThiZjU5ZDE5
+ZDZmQG9zcy5xdWFsY29tbS5jb20/cGFydD0yCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QK
+bGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
