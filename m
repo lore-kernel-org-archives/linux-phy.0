@@ -4,91 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01996C61DBD
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Aug 2026 13:50:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C609AC61DBD
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Aug 2026 13:52:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:Cc:To:In-Reply-To:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zylmBVpO0iHHrP+9kAZ/pxKfEEHC00iQR+M9nKzt4vA=; b=EQM6M83gvAnav2
-	QsUh0tFBobSpTBv/aoqhW/var8gsEdv3c4zuGrU2jMvbS6vzIE0emH/8ENzI3UPS/BvsMepMF4vCU
-	joHQJjXfgIACOgvhjj0syyx75LPDcgauo2UGZH+Kr4Z/fEmxLoQm6NhPwbzmbCBlp6aPYlyad+smS
-	NFlGnz3zssaldKCxEQOF3RDSTefMAWvL9vkCfX2xVuI3L9ItZVEetF//KWzS/nckBqLuCsoTAd2Qk
-	nOWUg0DXZHz0pxLhGU+qHarAbuSZut8BJR2xuw6fy6xX+7y1KRxv4h+3V5nK2AqgmNiG0epvOORYC
-	8yAmXOXRuzohHDHdWoCQ==;
+	List-Owner; bh=SP5cruH83FC2XRAma7hGGp3DCvHW9m6x/LLW09uqh1c=; b=Q077ErJS0jGNWN
+	EJdfVcr+8DCjPfVmWycIr7MptBz1ldHFzPdWs85MXbOWICHl57WdbeIX6zweLNa4gnp3xnWCwBml1
+	/Chbc+W41kn8KSzLCHOwR7syPy4JV1yy+hcmy/je13g1cscri4uV0oxvyaXqFRvVA8sq42f7tMToc
+	Vh2C2oB3XoNWFQ3AGi1PEahtZjlkZwwlCU/57nUUhnf5HH40sYZVsGKPw+9VlnRO4EVj5viPBD9co
+	x1tFwFmheEkCMF9kVTIvqCAMazfGqhL8tXui8QMWnscdvOLrJb8I6vbqFQQCw70lGtvFAZejSfsBY
+	zQgbbw8nSzuTqDTrlnhg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzwyF-00000005tiW-2h8x;
-	Fri, 28 Aug 2026 13:50:15 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1wzx0U-00000005ugx-2AiH;
+	Fri, 28 Aug 2026 13:52:34 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzwwm-00000005rKT-06rR;
-	Fri, 28 Aug 2026 13:48:47 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
-	by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id 20260828134842euoutp018a910c5c5759aeebfe77cafe5a038ade~P-D5ppcmX3071330713euoutp01H;
-	Fri, 28 Aug 2026 13:48:42 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com 20260828134842euoutp018a910c5c5759aeebfe77cafe5a038ade~P-D5ppcmX3071330713euoutp01H
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1787924922;
-	bh=iV6Xa1fxoC/OMSyXdhXIR6VxHfrcQ97alBvh+bV7JIA=;
-	h=From:Date:Subject:In-Reply-To:To:Cc:References:From;
-	b=SKjQECG1pmOp9W6W+GXK7UHEbDXcoio5shiwuGjEQKULqGn8tMCHmGfgr7FAZrZwc
-	 G/1343/Pq7zzgCRca8YHpd59fN0iEDnotiBy3Im3EwBvX6QzQA022cZc9fK0HKPUEC
-	 kbaycBtoAhqh4F88CebAoZ+neGj89sO7M5WDvgHQ=
-Received: from eusmtip1.samsung.com (unknown [203.254.199.221]) by
-	eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
-	20260828134841eucas1p100590973cc6808103c41d0b0fc82573a~P-D5Wxv3f0280802808eucas1p1Z;
-	Fri, 28 Aug 2026 13:48:41 +0000 (GMT)
-Received: from AMDC4942.eu.corp.samsungelectronics.net (unknown
-	[106.210.136.40]) by eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
-	20260828134839eusmtip190fc7410941048a10a1933088912b478~P-D3BV4p42825028250eusmtip1d;
-	Fri, 28 Aug 2026 13:48:39 +0000 (GMT)
-From: Michal Wilczynski <m.wilczynski@samsung.com>
-Date: Fri, 28 Aug 2026 15:47:39 +0200
-Subject: [PATCH v2 15/15] MAINTAINERS: Add StarFive JH7110 display subsystem
- entry
-MIME-Version: 1.0
-Message-Id: <20260828-jh7110-clean-send-v2-15-331680c8b9d1@samsung.com>
-In-Reply-To: <20260828-jh7110-clean-send-v2-0-331680c8b9d1@samsung.com>
-To: Vinod Koul <vkoul@kernel.org>,  Neil Armstrong
-	<neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,  Krzysztof
-	Kozlowski <krzk+dt@kernel.org>,  Conor Dooley <conor+dt@kernel.org>, Andrzej
-	Hajda <andrzej.hajda@intel.com>,  Robert Foss <rfoss@kernel.org>,  Laurent
-	Pinchart <Laurent.pinchart@ideasonboard.com>,  Jonas Karlman
-	<jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,  Luca Ceresoli
-	<luca.ceresoli@bootlin.com>, David Airlie <airlied@gmail.com>,  Simona
-	Vetter <simona@ffwll.ch>,  Maarten Lankhorst
-	<maarten.lankhorst@linux.intel.com>,  Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,  Lee Jones <lee@kernel.org>, Andy
-	Yan <andy.yan@rock-chips.com>,  Philipp Zabel <p.zabel@pengutronix.de>, 
-	Emil Renner Berthing <kernel@esmil.dk>,  Hal Feng
-	<hal.feng@starfivetech.com>,  Michael Turquette <mturquette@baylibre.com>, 
-	Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>,  Heiko
-	Stuebner <heiko@sntech.de>, Conor Dooley <conor@kernel.org>,  Paul Walmsley
-	<pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,  Albert Ou
-	<aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,  Dominique
-	Belhachemi <db@domibel.de>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
-	mfd@lists.linux.dev, linux-clk@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
-	linux-riscv@lists.infradead.org, Icenowy Zheng <uwu@icenowy.me>,  Andy Yan
-	<andyshrk@163.com>, Marek Szyprowski <m.szyprowski@samsung.com>,  Maud
-	Spierings <maudspierings@gocontroll.com>,  Graham Markall
-	<hello@big-grey.co.uk>,  Michal Wilczynski <m.wilczynski@samsung.com>
-X-Mailer: b4 0.15-dev
-X-CMS-MailID: 20260828134841eucas1p100590973cc6808103c41d0b0fc82573a
-X-Msg-Generator: CA
-X-RootMTR: 20260828134841eucas1p100590973cc6808103c41d0b0fc82573a
-X-EPHeader: CA
-X-CMS-RootMailID: 20260828134841eucas1p100590973cc6808103c41d0b0fc82573a
+	id 1wzx0U-00000005ugr-10Jk
+	for linux-phy@lists.infradead.org;
+	Fri, 28 Aug 2026 13:52:34 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 90E35601FD;
+	Fri, 28 Aug 2026 13:52:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A50281F000E9;
+	Fri, 28 Aug 2026 13:52:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1787925153;
+	bh=v5B/fiOqedgCBxcCieptb7KGyc9EvkPc2fTNjN6aglI=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=DpkrMTykW2r8Pzk9IvIE3hcAJtoRhIwOvD96MRnYZI1pTXm4WfTbyGmvO4D74VcVt
+	 58gtXRg5zdJoh4b/oiUT3kaVb3W93Pn4lg9HLCkiXFgUIA7TRdSHta4nUXE6SeeU23
+	 ZM6xkOa64XUL3Zrn39v1QkfuTqvOF6gzWQHpZE64XcEv0nZLOHCY+E/z/0xBq8ydOj
+	 QnabfkHLd5h7nVmKpB3zcC/E7tPVjXxokrQjtUXBhD5T2/CQUK5pGCpJZ640qubwoE
+	 3wDQV141E9M+D3gjvWKlXOtv3Ga1SEral+cn9hw4CSpKKsNv2qRN950Ya6sz6uiRMp
+	 d/wBlFPEmxpcw==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v2 07/15] drm/bridge: inno-hdmi: Add .mode_valid
+ platform operation
+To: "Michal Wilczynski" <m.wilczynski@samsung.com>
+Cc: robh@kernel.org, conor+dt@kernel.org, lee@kernel.org, mfd@lists.linux.dev, devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org, olteanv@gmail.com, vkoul@kernel.org, linux-phy@lists.infradead.org, neil.armstrong@linaro.org
+In-Reply-To: <20260828-jh7110-clean-send-v2-7-331680c8b9d1@samsung.com>
 References: <20260828-jh7110-clean-send-v2-0-331680c8b9d1@samsung.com>
-	<CGME20260828134841eucas1p100590973cc6808103c41d0b0fc82573a@eucas1p1.samsung.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260828_064845_441879_5D6D2660 
-X-CRM114-Status: GOOD (  10.32  )
+ <CGME20260828134826eucas1p1ed3a0c4a3207dc01d1ccb33e45ae462e@eucas1p1.samsung.com>
+ <20260828-jh7110-clean-send-v2-7-331680c8b9d1@samsung.com>
+Date: Fri, 28 Aug 2026 13:52:32 +0000
+Message-Id: <20260828135232.A50281F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,48 +64,30 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The JH7110 display subsystem spans a PHY driver, a DRM bridge driver,
-a parent device and their bindings, and has no existing maintainer entry.
-
-Add an entry covering them so patches reach someone who can review them.
-
-Signed-off-by: Michal Wilczynski <m.wilczynski@samsung.com>
----
- MAINTAINERS | 10 ++++++++++
- 1 file changed, 10 insertions(+)
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 8014b9f8253edf15231df215d1b14063a54a55ec..84ac5cfe61cdf775167cf9033862724c37946a5f 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -25778,6 +25778,16 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/net/starfive,jh7110-dwmac.yaml
- F:	drivers/net/ethernet/stmicro/stmmac/dwmac-starfive.c
- 
-+STARFIVE JH7110 DISPLAY SUBSYSTEM
-+M:	Michal Wilczynski <m.wilczynski@samsung.com>
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/display/bridge/starfive,jh7110-inno-hdmi-controller.yaml
-+F:	Documentation/devicetree/bindings/mfd/starfive,jh7110-hdmi-subsystem.yaml
-+F:	Documentation/devicetree/bindings/phy/starfive,jh7110-inno-hdmi-phy.yaml
-+F:	drivers/gpu/drm/bridge/jh7110-inno-hdmi.c
-+F:	drivers/phy/starfive/phy-jh7110-inno-hdmi.c
-+F:	drivers/soc/starfive/jh7110-hdmi-subsystem.c
-+
- STARFIVE JH7110 DPHY RX DRIVER
- M:	Jack Zhu <jack.zhu@starfivetech.com>
- M:	Changhuang Liang <changhuang.liang@starfivetech.com>
-
--- 
-2.34.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+PiBpbm5vX2hkbWlfYnJpZGdlX21vZGVfdmFsaWQoKSB2YWxpZGF0ZXMgdGhlIHBpeGVsIGNsb2Nr
+IGFnYWluc3QKPiBoZG1pLT5yZWZjbGssIGJ1dCB0aGF0IGNsb2NrIGlzIG9wdGlvbmFsIGFuZCBp
+cyBvbmx5IHByZXNlbnQgb24KPiBwbGF0Zm9ybXMgdGhhdCBkZXNjcmliZSBhICJyZWYiIGNsb2Nr
+LiBQbGF0Zm9ybXMgd2hlcmUgdGhlIHBpeGVsIGNsb2NrCj4gaXMgcHJvZHVjZWQgYnkgYSBzZXBh
+cmF0ZSBkZXZpY2UgLSBzdWNoIGFzIHRoZSBTdGFyRml2ZSBKSDcxMTAsIHdob3NlCj4gUEhZIGlz
+IGJvdGggdGhlIGNsb2NrIGFuZCB0aGUgUEhZIHByb3ZpZGVyIC0gaGF2ZSBubyAicmVmIiBjbG9j
+aywgc28KPiB0aGUgY2hlY2sgaXMgc2tpcHBlZCBlbnRpcmVseSBhbmQgZXZlcnkgbW9kZSBpcyBy
+ZXBvcnRlZCBhcyB2YWxpZC4KPiAKPiBBIG1vZGUgdGhlIHBsYXRmb3JtIGNhbm5vdCBnZW5lcmF0
+ZSBpcyB0aGVuIGFkdmVydGlzZWQgdG8gdXNlcnNwYWNlLgo+IFRoZSBzdWJzZXF1ZW50IG1vZGVz
+ZXQgYXBwZWFycyB0byBzdWNjZWVkLCBzaW5jZSB0aGUgYXRvbWljIGVuYWJsZSBwYXRoCj4gY2Fu
+bm90IGZhaWwsIGFuZCB0aGUgZGlzcGxheSBzaWxlbnRseSBzdGF5cyBibGFuay4KPiAKPiBBZGQg
+YSAubW9kZV92YWxpZCBwbGF0Zm9ybSBvcGVyYXRpb24gc28gcGxhdGZvcm1zIGNhbiByZWplY3Qg
+bW9kZXMgdGhleQo+IGFyZSB1bmFibGUgdG8gZHJpdmUuIFBsYXRmb3JtcyB0aGF0IGRvIG5vdCBp
+bXBsZW1lbnQgaXQgYXJlIHVuYWZmZWN0ZWQuCj4gCj4gU2lnbmVkLW9mZi1ieTogTWljaGFsIFdp
+bGN6eW5za2kgPG0ud2lsY3p5bnNraUBzYW1zdW5nLmNvbT4KClNhc2hpa28gaGFzIHJldmlld2Vk
+IHRoaXMgcGF0Y2ggYW5kIGZvdW5kIG5vIGlzc3Vlcy4gSXQgbG9va3MgZ3JlYXQhCgotLSAKU2Fz
+aGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYwODI4
+LWpoNzExMC1jbGVhbi1zZW5kLXYyLTAtMzMxNjgwYzhiOWQxQHNhbXN1bmcuY29tP3BhcnQ9NwoK
+Ci0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3Jn
+Cmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
