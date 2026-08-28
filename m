@@ -4,98 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6945C61DCB
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Aug 2026 14:05:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E6421C61DD3
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Aug 2026 14:05:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gdkWqV1snW8UruC2tBs+3vq+tvRsUgWyGMiHwvArOY8=; b=XFiAqseDxQNNyg
-	ctYshWtoYJJTlqN9LvNNKVZU4S9XLcEEt/6vobSZnAEUBO0g4wgmTfnTJyb14REjcp0gOI6YyLQnz
-	Ggf5/WooRfzokJmDHYerhmzcJWlVE5Gr9T+oJdI7UNMMrMK8erBzX4stdzFngaL7fBVI5OHDhYWd+
-	ot5PWpgk6MKhK1TwER/6YxSMd8svZhvqMTtxc66Ji1q59AEDXvkRcKAB+mzXAG4m3N7y3oqX/6ltm
-	ioE17BDs/kyBek+2vSqp2ikfqd6NUv4J7ndEp4hWiw66aCfEqAuWUEMdqhPRkdIaN+ONTkfEjkHuP
-	43uTGfZ7nbNJMAvRT+BQ==;
+	List-Owner; bh=Rypf4sMNZ5b6kCWUWbq5m+NzJYmBFQlXfF+RbA5nOZ8=; b=re+xszlX+j6SQG
+	FGCzTSDonZYC2t/wSY70+MqXtaqZDNHhIhKrRhfAO9wbn+C6riLvOPXhtRezO97v3Py42OZAkFy8L
+	UpJXik2ybMuV8InL89oSSz5EKvILFh2wRewU5cF7KpnKFTnWnMJoXlW40b7YFi7tt6bSJtieECseY
+	GpszviO+Gk3hO+n56m+faycZJH+EHoVZ/n+LIWBnuZEHjbImEtinoQ9UxHC9CyIBaen8mq6amFWUO
+	0NaEtOlGaeEOXqZ89VS23/AfftxR5FJHDHouhAnC+Db3p2k5VYCHtw1Juzt4NIGWyPdx2TUhTldX0
+	yrE+Ft3ST7HpjJZsGZVA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzxDD-00000005wTP-2NkY;
-	Fri, 28 Aug 2026 14:05:43 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1wzxDJ-00000005wVT-2bKb;
+	Fri, 28 Aug 2026 14:05:49 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzxDB-00000005wRW-0xOn
+	id 1wzxDF-00000005wU7-0S9X
 	for linux-phy@lists.infradead.org;
-	Fri, 28 Aug 2026 14:05:42 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 67SDkc3c3075313
-	for <linux-phy@lists.infradead.org>; Fri, 28 Aug 2026 14:05:40 GMT
+	Fri, 28 Aug 2026 14:05:47 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 67SDke2G2647039
+	for <linux-phy@lists.infradead.org>; Fri, 28 Aug 2026 14:05:44 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	5Zxd143ASUomJNNgHPeOAeQIGghuC3wI/sji5Dtl2sM=; b=gi03dk5S8dPzpK6H
-	5Jr3NrN5ftZNDTgS+nXu6GOYO8qbA2SxYUJnNMT1MgnexuKo3ydjNxqQXVfaUuxq
-	Fnwg57Kh/o46B72HXjMahgg6W71oRhRgEy0lZXZisbfTAIWeYu5ICmXhh54h1k9M
-	krGFCXdW5hmYO3PJnIuUsMrea/2XV7oJ+KZ2DiOtaEc4vMaOufBJMvMF5TjYL/7i
-	umKLWatKGBvePJPPCnBYKbayOi7RTVJ2Q6VUYKjfRVLutjp75gXvVjkZIKtCdj3E
-	90t85bH9oa9zsIkDN+hx/gm/rKBbgZ1ClWRcyVo1OCCorRhHRyE+zI+aVRWzuM/E
-	bgXZQA==
-Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com [209.85.160.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gb1v3ahfx-1
+	hMggueJrEfi9Ea0CXs0IW5lUopvMP6HZ3I3Pa5LDYY4=; b=Y8nkxqiZpP6cd/Zr
+	D9evTg+nu14ILTepQu3MQa4ruXrjJUDhPeHJCg0zkK1FOgFv0Qgp1zr5nzvDt+iU
+	3/9/JjcEZmq75vtQ2wuzVWhZ1AqS62b6p7t3Slql0K0pHBSnG6PruHDuw+ypmBuO
+	I22wGZvElXpzB2wtKdlAWKwTP2xOY/L8fkkVtGbWmaRNTEIx3VizOam/cbIy9glj
+	dM4OFkqzd5TlR5i8BE1G1Wp25jCE9CMRtWA+eo6IklF6LSLbulEtRrfkCO5/JNx+
+	U48FB3As1OwhJ7roJzuSMGfMVuqzNiTyRoYjnFhSWm5z+HvJZBJMLov8ExTYtp6I
+	Rf2Skw==
+Received: from mail-vs1-f71.google.com (mail-vs1-f71.google.com [209.85.217.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gb6h01abs-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 28 Aug 2026 14:05:40 +0000 (GMT)
-Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-51c1d30035dso6993491cf.2
-        for <linux-phy@lists.infradead.org>; Fri, 28 Aug 2026 07:05:40 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Fri, 28 Aug 2026 14:05:44 +0000 (GMT)
+Received: by mail-vs1-f71.google.com with SMTP id ada2fe7eead31-785b66a7017so207165137.2
+        for <linux-phy@lists.infradead.org>; Fri, 28 Aug 2026 07:05:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1787925940; x=1788530740; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1787925943; x=1788530743; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=5Zxd143ASUomJNNgHPeOAeQIGghuC3wI/sji5Dtl2sM=;
-        b=YoXG3G3mEBOeYstvqePUNbGbkZRERvhXBtwBqU9ppHv2bCgwYk2OP21Bc1pXNAprBL
-         sOMHUEkeUWf5MiU0rEbA+33+8cFfQaPQ78MOtdUgpvOrjpM6pD3sxK2jVAIoYAh0jyjr
-         9hlIOB0FHd+zRoxSSA9dW+T45ul6MkHi+zthqBMM5NzEsSRa5MKKlMXVgwiftOE3dWgj
-         +as+PWQfm2RW4VfoC+CWH1brpQMpDUASFTHfDzhFzXGxJSDB5UQW5LzLprkUKhJ8E5Bb
-         HTI4MPGGDW0iMMzaj6Q3ucccnjd7O7RkvuCJhQMb6z+X++5qUPABRDe/0AXpO21XFo5Z
-         RSpg==
+        bh=hMggueJrEfi9Ea0CXs0IW5lUopvMP6HZ3I3Pa5LDYY4=;
+        b=ZGvTWm39bqJqyiH/jYTWiW1dpZ4VzAS2AtcLSztAdbm6uRMIaNJ+V1nvdw7bA3Slrc
+         DO2S3zynsHFNjVHglxDFUr+T5xof48ilTREVvkW5OAhKFPqoNfGcDhqI76YROL1CWqUA
+         V8u7EDOk0AaXFbxbqM7hvnDDuFh7tzruw1AaF3PANP0a3MqK4zC+JBcBVw0UL4ZcMDhw
+         +XAao2LIsOAWeV/D7ipp0huWC7RC3GoDtV1b4x34RL4HaAqM4CyfkY0Kd3TtSJJukeo8
+         /kGeylE8jnC4s+Vyt//JVRyEfpgrbwAhXnFiEsXp/IyyDefkOcYgIZgl6KOZm2o8XsRm
+         DYbQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1787925940; x=1788530740;
+        d=1e100.net; s=20251104; t=1787925943; x=1788530743;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=5Zxd143ASUomJNNgHPeOAeQIGghuC3wI/sji5Dtl2sM=;
-        b=Rug9Pd8ItrMZrhyDiM14bVTW4KaYeYnxF6ddB+SJu8VHaaoMUb/vIYZziMNchM+jj5
-         +KeJDxl5x9RS+Z87AzK94la9e+R3Dv4+7brZcR07Sos+tRTyuoXNbhG0U8BtRrU5bnhb
-         FILMnCAzUGUj5Rmjy7t1MJMlSmEHF+nMFtFI4tba6B9H+ly/0GwfilxQJThGalNI6ya5
-         fveIhpKT1rWUF/BZJsHqt7CHcdBKrivZsLuHlIfvXk79gEhGQmUx5/PhVSItlbs/UhQa
-         9mRBR8M6fBttseXbjRnaLVn42wQwuvwqMF2rBbOLRsL2PZ/b54X1DNmivdTMg4MwXqza
-         JAoA==
-X-Forwarded-Encrypted: i=1; AHgh+RozN7zIIbIwm+fR6YL0NE7McqQpS/NjgpJEICbkWYPrgVZPXvIlE+BexQjjEsOUtVelu4q0LRWybgs=@lists.infradead.org
-X-Gm-Message-State: AFuF++kprk+2Q4fzK8khP3h+pLLmGyge2bYDWSZ3KZO46qsFK9Stub/P
-	cn8NVaDaXe2R31E6cSCN2rcyRG4mZ7KwwY24RgP2kg2oNfTN8amjUXKnDYQe8CjP4ZcT88ALHuA
-	sW6299bS377WxxAQUYrfZvg9ZxAR3TFvPKUajQAM6bGMMCTDzSxrPwSDeD3p87ftoO3naoFuVIv
-	X7
-X-Gm-Gg: AR+sD10aMahb/rTiZjOhJOKbt0sYMKaPsR0+9ySTEiCC55I67pYbl6XvA1gmSSDFlB8
-	Nnbkseg3Z6IaKUcoVSv521O/WBss3+fiPpxahrn4OBr5LXU590GqRagix0tanOE36RuDv+s9XS5
-	4E7kKZAundFDiAeQBgnp2HHsl/TW9GPMLRVKPi8Y8d1UuHD4bCiJ5NPfIrm5YYyuESYyLe+KleD
-	DqT2pgeVNvuNHPngHylPVd34Oh9jFibFuvELm3kw9eesw6N7Z98zH+wxgOEM1VPU1Kb30saKlK2
-	ThgUn5XAWZsLy8Nsyv7fIsvxxH4BasY8HTR2y9Xo5W8ChgyuQbKjkDgj+nTnln/zU+mGQ4pLDaW
-	pLbhhWdiAyGLgycTrnr3YE1E=
-X-Received: by 2002:a05:622a:14e:b0:51b:f40b:2fb3 with SMTP id d75a77b69052e-52fb940f94emr74674671cf.9.1787925937944;
-        Fri, 28 Aug 2026 07:05:37 -0700 (PDT)
-X-Received: by 2002:a05:622a:14e:b0:51b:f40b:2fb3 with SMTP id d75a77b69052e-52fb940f94emr74672371cf.9.1787925937232;
-        Fri, 28 Aug 2026 07:05:37 -0700 (PDT)
+        bh=hMggueJrEfi9Ea0CXs0IW5lUopvMP6HZ3I3Pa5LDYY4=;
+        b=nlfmKh1MLWiGH+pXdf11AOLa8vh9Hp94XbFBgVKNjJpoeueJ+x7FjTY3Yvk2Piuldo
+         T1HMnhs/VzzhJ9eYy1ZiVYTwfFyFBh1/OGozf1bScpFJ4NAE+XqT5jn6MSQV3ddPNyvd
+         L6ZtA7+h2XV6/kRAGMuFUTKAzK+cfuyJ0XXDVOd/vJ0XEBwGpWsNbr3WxBjE8DRby+vp
+         ZS2rYyKNMe5+0HHdTXdgQ2CObfOpCDrQUKO3QgCiDe3Mgd2WiCq8O/M1PxdPDWGG1pqc
+         eSiIelYvxfppe5iAu3u/qZAAWt2B2CuG2JpF+BG+ZlaHCNF5+We980mhTT7dQ32pBnyu
+         lgLA==
+X-Forwarded-Encrypted: i=1; AHgh+RqiqNLA4qol/fdibnPadmwO+oN4UkgXv4lGrM91w1eNtX56T3ySMNijVVByHk7eGwhpxiOT+siCzsU=@lists.infradead.org
+X-Gm-Message-State: AFuF++mmRNvQBBhOLnRYVUnFKfBuMRtu5gC79/fNdC7+ScWkQhPQ5zyQ
+	YGkNvcPYLxd6C3d7s3KK4S5FZm4ZD8rFHTJVHX6JWoXFH52I97z1PsYgn7rbbfO6M++MXEb9Lpw
+	7fjsyklpnaoNQUnW+7NfAbAk7LCADSLacmSvMMQw33Bt8pVVVJuQ5K7BJgvVLsLqsbhjU5n0HnY
+	LZ
+X-Gm-Gg: AR+sD10f730NGc1U5XjDHvvdcq1Q8/fl6EyZR1s3JCbD/H7o5IDMQ2pWVYlflmOQyYe
+	fybEnhHId1ZI1MXjU0RXsvw9A7/oaya4AAHVOyRSvLh+5FC9hDXw1fzais2bVFa6/6J/4nnZ43W
+	/EBPr1n8AWPBU4IJgtvOR9bLq6EP3I4z8ZYAAzgr5BfD+AQFVf5kGupUKIW5jUXABJIi/W0BdaY
+	CIaatTrWa3POX7YvUA65fXSXNQ579sBg+Q3dL5NS/UeBxnaMeTiXkxBhmHm8CFGgLV8Ih2dm4fi
+	peWm0gaz0ID2uxyjiFh4k7SxM1gyfrfoXt/sbfqJjLqCSUz9M2NIQe+28l8jNkqMg5yE0+hgOP+
+	f+gqfHJ99OfJ7a7uB31l5XIs=
+X-Received: by 2002:a05:6102:441b:b0:785:3211:f5e4 with SMTP id ada2fe7eead31-78596acadafmr1836565137.4.1787925943418;
+        Fri, 28 Aug 2026 07:05:43 -0700 (PDT)
+X-Received: by 2002:a05:6102:441b:b0:785:3211:f5e4 with SMTP id ada2fe7eead31-78596acadafmr1836517137.4.1787925942860;
+        Fri, 28 Aug 2026 07:05:42 -0700 (PDT)
 Received: from [127.0.1.1] ([178.197.219.214])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-482fbb20122sm3908633f8f.20.2026.08.28.07.05.34
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-482fbb20122sm3908633f8f.20.2026.08.28.07.05.40
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 28 Aug 2026 07:05:36 -0700 (PDT)
+        Fri, 28 Aug 2026 07:05:41 -0700 (PDT)
 From: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-Date: Fri, 28 Aug 2026 16:05:02 +0200
-Subject: [PATCH RFC/DO NOT MERGE 04/12] dt-bindings: display/msm: hdmi:
- Correct name of disallowed supplies
+Date: Fri, 28 Aug 2026 16:05:04 +0200
+Subject: [PATCH RFC/DO NOT MERGE 06/12] dt-bindings: display/msm:
+ eliza-hdmi-phy: Add Eliza HDMI PHY
 MIME-Version: 1.0
-Message-Id: <20260828-drm-msm-hdmi-eliza-v1-4-67843277de17@oss.qualcomm.com>
+Message-Id: <20260828-drm-msm-hdmi-eliza-v1-6-67843277de17@oss.qualcomm.com>
 References: <20260828-drm-msm-hdmi-eliza-v1-0-67843277de17@oss.qualcomm.com>
 In-Reply-To: <20260828-drm-msm-hdmi-eliza-v1-0-67843277de17@oss.qualcomm.com>
 To: Rob Clark <robin.clark@oss.qualcomm.com>,
@@ -119,53 +119,54 @@ Cc: linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org,
         Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
         linux-phy@lists.infradead.org
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1120;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2303;
  i=krzysztof.kozlowski@oss.qualcomm.com; h=from:subject:message-id;
- bh=dxt0nRLMlCSOHXCt5GgWA+SbZAKlsIeSxAesz/KABiI=;
- b=owEBbQKS/ZANAwAKAcE3ZuaGi4PXAcsmYgBqkZWbJu9iixJwm9XNddPSZcVmCxWgF0WLJqc2x
- esPt9B+9uWJAjMEAAEKAB0WIQTd0mIoPREbIztuuKjBN2bmhouD1wUCapGVmwAKCRDBN2bmhouD
- 19VjD/4v1r5Juz7BMmixRhI1GYLMqcc3Wnor8vlc0z4pT+CFHeP9LTVl0BDJqVlC0jFUzbtFRNR
- JbL7AEEgjUy6LnwG4HmNYOplyQR8aUDIbCyFw4lwud14ssL/67IQzlID3OnW305TgvYYe/myfcK
- 4lgXwmAr/5OM42lY/tCkbvG63YwRSPx3SnzFyrLVExL4+02BvNK60ahBF5TmZU1uNUf4i+/6AzJ
- 1jUlscemAPuFpOdM5jI77M6mkvL9eOcKIEqW+Uvk/0+BgNw6d0L8N0cJySUpT15iyVb7V3jJfge
- o9PuvzxTcoT/xaAAAwVsPfZ0Y01pI7yJ87DNHeu8W6vF/nJk9o0pBHsFqHSN12AdkLsTiTnpmF9
- HaQIiTX/LGfW5V6vhZjAwpfb84vxs3p5jB6VdYpc0H+y+Q3T8DX5z58LBrJWtyw50zyCgWwTsll
- +np7qWem/Zt+cmRDtB6fH0eZQHq+PbT37zduRfnvS5GVFGQxZ7SgXwqUg/OATHtHjU+Ng8ADkaP
- 9FBGkPnrPWucubtx3c9U9LGfgcCSX6KwJAGpARyfuSeZd5BG5cHXYo7kFRn3lpkH08T5yqKtaOM
- st688zOzCrg9xdtvZrXgZsb7wS5FTmd7MD62+3alvLvG1oQ/bdPw7iLZJj22Wj6FY4FFTuvaLoV
- Ua1sGS095TT4eAw==
+ bh=2ZoWKXh14IFtzY+jQ6vF0Zhx1BAkHO8mYs9EuOJq9ck=;
+ b=owEBbQKS/ZANAwAKAcE3ZuaGi4PXAcsmYgBqkZWdh7HfytneGYVObjElDzO1HVTUQvEj7tn3D
+ XQg6/WJeMmJAjMEAAEKAB0WIQTd0mIoPREbIztuuKjBN2bmhouD1wUCapGVnQAKCRDBN2bmhouD
+ 1wt+D/9VrlG2+yThOGo4fnvqiAFSf7vxedxD15XsiCrnglQiiclrvXuBJ3VNN8TrQJtLNGagih5
+ dlXwCMTqnHie8c+pydAR5ohQsNXDyardZTgaAjUirpa+wZxFF76rfVBGKcu0/e2IjdltiQVr6yj
+ i0XvsNaS4q0w50TEkK3dOJP5fDmBVBk6DDwMA8NiHU6jsxTuK+LQTnKCsR15L2BsGrosX/BrRd5
+ zlzVIxnvLOZaqWeuL+Ky+gDjlHyidxGbz6JCzs5e/Z3g95iBRFC3B7UVcJCK9sR1TCjLdxHefnq
+ kVqh+FgzvcbKHsZeSha0B4TwlDbbTZPmdbmGCnZuLNfCHlF/wpYauRTJ5uHTEHIATHixlEXerA5
+ MWx3Br9x3dvPUIuFzKpKXmkaQlPH0zGkRQ/FdHxjk4NeSLjX4DGWCzbP+eKmzfA8e5WflT1sph+
+ 8+51rU4aTvygnPrSOZ9PwIrtNNmojcZZlHvAhGftM+81G9umoXMirbdZeXvorC3n+5UbADeFamF
+ vft7Mdm584q+tmdVV8rc0qNKI1RGdgvB6swbSbCZByK8n74Vzo10dbCcZGE7e+JlZJdoSlZF7fQ
+ CxtCIGKfM/IxK93srEX8Hn6ENL5br4AbNBG1dWR71NCSsjO3jMECbDGN6NscLiszcsQgElAMMNM
+ R3/NufZ/7h4Pn+g==
 X-Developer-Key: i=krzysztof.kozlowski@oss.qualcomm.com; a=openpgp;
  fpr=9BD07E0E0C51F8D59677B7541B93437D3B41629B
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODI4MDEyMiBTYWx0ZWRfX1q+m25L4gboZ
- QEaMgHly8hzfLCJzuBwbX4c4rhEKdu6ipmYgBLIyDdtlVWAudAxorfyLtSMBcdxMOmyNeJRWV6l
- 3sXJ0pXFrgYqeIRqwdF9xkOZqRgmOZ8PHP9NETD9yI9gZC6Q5owssdS+ah1Aq7yQSBCSP2M9dgt
- rX7/PPA8Mc/WoxM9BHfBV1IEmphJATv7H2htKPVpSCGSnBfpSWGaVttq1vuHg7SLyOUnL6FJeYV
- KFgN+Jz0O28yWggK1I8UwDepUz3T827TmPX3T4SGXUnHk7odVxWeH8sZ3k7xDGwdtnD3orbs4MX
- SGf6haCxHI4hRHknNPGHcpRHRmAbUOUzutbq73r5OOA++8KFzqqYfATSKMSKhUdLH4SNT21wI1N
- AS/LNCifig7gwoED2ulH2n3XSEKGyOXgHaCaDGxL/yV16OHTEtukO9bIq6+biPDuP+UcbtiaXht
- 5ZIC5EZQJV1oJviI/GQ==
-X-Proofpoint-ORIG-GUID: oyO6MFpNaJxMAo8TnRP2EEpFP5zdl0rD
-X-Proofpoint-Spam-Info: AW1haW4tMjYwODI4MDEyMiBTYWx0ZWRfX+6f21ZxG7g2J
- qUDTinfTEth9gWusCcwNX5RwRtzrQloAzdOnrNcnwyOgSWkytFS6kBVptAFYJ4yFA/cFGnS/+iF
- TJZQGLQ0N1LcCdaN/07pypYUO8ZfTSo=
-X-Authority-Analysis: v=2.4 cv=faedDUQF c=1 sm=1 tr=0 ts=6a9195b4 cx=c_pps
- a=WeENfcodrlLV9YRTxbY/uA==:117 a=+bKQE0WJfmhK2875HamI0Q==:17
+X-Proofpoint-GUID: FwvyG5b50HIke8uZaLPKrAbW9zWFPdIf
+X-Proofpoint-Spam-Info: AW1haW4tMjYwODI4MDEyMiBTYWx0ZWRfXze7jAC06YbB9
+ +vswNYCFiz+u2e8frIJ7acDG/gvGbfOV/Cqi56lL1SIO6lqma+yU5vZgD60GMVXd1Gvwuot+mSC
+ I87kaqvIndXBI8AipluK6z5VwKBL10A=
+X-Authority-Analysis: v=2.4 cv=KPpqylFo c=1 sm=1 tr=0 ts=6a9195b8 cx=c_pps
+ a=P2rfLEam3zuxRRdjJWA2cw==:117 a=+bKQE0WJfmhK2875HamI0Q==:17
  a=IkcTkHD0fZMA:10 a=Sv0fKeRqtYgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
- a=EUspDBNiAAAA:8 a=LSMMCDwwRte7x3nqQVUA:9 a=QEXdDO2ut3YA:10
- a=kacYvNCVWA4VmyqE58fU:22
-X-Proofpoint-GUID: oyO6MFpNaJxMAo8TnRP2EEpFP5zdl0rD
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
+ a=gEfo2CItAAAA:8 a=EUspDBNiAAAA:8 a=pGLkceISAAAA:8 a=m4uPUOG36isBoBWOdqQA:9
+ a=QEXdDO2ut3YA:10 a=ODZdjJIeia2B_SHc_B0f:22 a=sptkURWiP4Gy88Gu7hUp:22
+X-Proofpoint-ORIG-GUID: FwvyG5b50HIke8uZaLPKrAbW9zWFPdIf
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODI4MDEyMiBTYWx0ZWRfXxeKaBUmmRJRL
+ BtFyC0bS/4p8bV72R1FON9oayaJRyWkcegfzSUWtseBq6vEUJ21PcAt/z3mWMjz+xbLmb+wVKZw
+ JKrPpQmaY38cO8flVobVKyoaudm5537cKtEWURPJgt+Ra9FLOCbrYeiBWlq/52XU9aVDEfz+mtL
+ vc8G94DQ2+9yPXACtld174yRt5pCRDRSu+ETUdzpHg+0CvsPuFbEYNc9m+RR15I5wTU1UazLKh9
+ o0qAN6puKjar3wP759Sk1Z39U/yVTrlv+TT6dok9jj7XQw02Hsdychif3qMMCzhDdzvWIGJ5qfB
+ rJAL9tmYVYmwFsydgwpovFCD4t7gNXXR50+C+9D1oEkeh+VfSoWQbefMrzmMmWHMfkSR7bwwn5+
+ puQCvYWVReaWdsoQh/goylWj4lk2C1M/erBbRmjoH9xguE+n5oQ7Bcs1IlEOctteeoua8sHx3jP
+ CBOYopMmb0U8tVsWMLw==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-08-28_04,2026-08-27_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 priorityscore=1501 phishscore=0 spamscore=0 impostorscore=0
- lowpriorityscore=0 suspectscore=0 adultscore=0 malwarescore=0 clxscore=1015
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2608280122
+ malwarescore=0 priorityscore=1501 suspectscore=0 clxscore=1011
+ impostorscore=0 lowpriorityscore=0 spamscore=0 adultscore=0 bulkscore=0
+ phishscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
+ definitions=main-2608280122
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260828_070541_417747_4BC244A8 
-X-CRM114-Status: GOOD (  12.29  )
+X-CRM114-CacheID: sfid-20260828_070545_156213_5E71EA5C 
+X-CRM114-Status: GOOD (  12.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -182,37 +183,93 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-There are no properties in DTS or Linux drivers called
-"core-vcc-supplies" or "hdmi-mux-supplies", so the binding probably
-wanted "-supply" properties instead.
+Qualcomm Eliza SoC comes with an Synopsys HDMI phy, unlike previous
+variants with HDMI support, thus no compatibility is expressed.  There
+is no documentation, except register list and register programming
+sequence, and downstream sources do not point to any supplies.
 
 Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 ---
- Documentation/devicetree/bindings/display/msm/hdmi.yaml | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ .../bindings/phy/qcom,eliza-hdmi-phy.yaml          | 71 ++++++++++++++++++++++
+ 1 file changed, 71 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/display/msm/hdmi.yaml b/Documentation/devicetree/bindings/display/msm/hdmi.yaml
-index dfec6c3480f3..02d27ccad024 100644
---- a/Documentation/devicetree/bindings/display/msm/hdmi.yaml
-+++ b/Documentation/devicetree/bindings/display/msm/hdmi.yaml
-@@ -113,7 +113,7 @@ allOf:
-             - const: core
-             - const: master_iface
-             - const: slave_iface
--        core-vcc-supplies: false
-+        core-vcc-supply: false
- 
-   - if:
-       properties:
-@@ -136,7 +136,7 @@ allOf:
-             - const: core
-             - const: alt_iface
-             - const: extp
--        hdmi-mux-supplies: false
-+        hdmi-mux-supply: false
- 
-   - if:
-       properties:
+diff --git a/Documentation/devicetree/bindings/phy/qcom,eliza-hdmi-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,eliza-hdmi-phy.yaml
+new file mode 100644
+index 000000000000..764fec0ef29b
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/qcom,eliza-hdmi-phy.yaml
+@@ -0,0 +1,71 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++
++$id: http://devicetree.org/schemas/phy/qcom,eliza-hdmi-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Qualcomm Eliza SoC HDMI phy (Synopsys)
++
++maintainers:
++  - Rob Clark <robdclark@gmail.com>
++  - Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
++
++properties:
++  compatible:
++    enum:
++      - qcom,eliza-hdmi-phy
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 3
++
++  clock-names:
++    items:
++      - const: iface
++      - const: ref
++      - const: xo
++
++  power-domains:
++    maxItems: 1
++
++  '#clock-cells':
++    const: 0
++
++  '#phy-cells':
++    const: 0
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - '#clock-cells'
++  - '#phy-cells'
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/qcom,eliza-dispcc.h>
++    #include <dt-bindings/clock/qcom,eliza-tcsr.h>
++    #include <dt-bindings/power/qcom,rpmhpd.h>
++
++    hdmi-phy@9a0600 {
++        compatible = "qcom,eliza-hdmi-phy";
++        reg = <0x0aea1000 0x1000>;
++
++        clocks = <&dispcc DISP_CC_MDSS_AHB_CLK>,
++                 <&tcsr TCSR_HDMI_CLKREF_EN>,
++                 <&bi_tcxo_div2>;
++        clock-names = "iface",
++                      "ref",
++                      "xo";
++
++        #clock-cells = <0>;
++        #phy-cells = <0>;
++
++        power-domains = <&rpmhpd RPMHPD_CX>;
++    };
 
 -- 
 2.53.0
