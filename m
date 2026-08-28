@@ -4,86 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 206CAC61DCB
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Aug 2026 15:08:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E825EC61DBD
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Aug 2026 15:20:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=admPox849QzIzvl3SoKMlhkJc6fyrytRe2antXmkH+Y=; b=sYyYUbWZmfC5L8
-	cgQapQ7glrF0LI3UeXBriYjFonjl4e/y4OFfnNnj+soc53nBWTOuNYwDZIVdyA52C+th3n/Qxm4BH
-	uq7YzXChe343lOd6VrQF0BrDz24IN8fiUBBY7VjSUeQJF2NiFV5+7rHphhdcO0OQy9ny8d6pqehly
-	hoPshTasNuCd+TbbBdaDp80lKrtVsQRnnBd6sI61HeQS9erA4Vyr6TweGBfa5O8qG9H6QVB0SZQVa
-	SSxpd/mJGvr17gRNEAFT1z6c+g4zCPnzzrCgWfsMoPxj+OKeadxjn7jMW4XgEjC1efZ2U/ExbKdQT
-	ehURpvGA6laoICbtx1mQ==;
+	List-Owner; bh=0mS8NjXmfgsvqfOTtVihG5H0TnNZQ1Xyphwjj5vG3t4=; b=gpR67IaRXxILl0
+	n4hoWG0O/XGSr49FOgXEjca2oGpKFalV3k5izZqFyQNtPp9+/K0xRPOGO7NEYjSH7f8eGcywGs8kU
+	Qvm60rE5ESMWzT3x9yVAJnV+n9yQxcLt8oxjee92nNZN2lkXonBACFgnjbGNqHI1NqXfyNV/xtyFl
+	Pfvbp3KsF3TIRdsJzhtnlgFLP6mxolVl4ETPsq2lDEKXgZUQwGkZJuI9VraK/8ux+QQYycrU663d3
+	0ADANAI46qa02+W7dlRyZW9SCby5hoYlvk0q/gGvcGYIGXxz60Mbdnwi32Bfg9sRR6YqPvN2lEEfd
+	GFm+U6AsTAXTbm/NYtQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzyBg-000000063XG-3Bsi;
-	Fri, 28 Aug 2026 15:08:12 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1wzyNT-00000006584-1uyS;
+	Fri, 28 Aug 2026 15:20:23 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzyBf-000000063Wb-0Rg1;
-	Fri, 28 Aug 2026 15:08:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=GNZHlfu6UdzNKO0+8Q56ktHvv/VBnO/DXQ93lde3I+s=; b=q/dyyboqY/UmFNUABXblQzRene
-	TK/DVA93hukWLf9bosAHsUnd574X/fnC4bGooH2vk4fRZLEI9KNk2nFWMNJHYcjdYRkIhTONUmnwp
-	quRctJg56aHIIo7BY1aBC8JCnfFSrKvJXbiMbNkN7iHouwaN0io+S4krSQnw/vzHT1Klx1rGI3rHE
-	aq6cN+si+oOdC1dgJOV1rkkmwD5rMsLJMEn3uQRjq1mHhlV+n+MflUGCIxGevO/WC6lOnq3BsR3xZ
-	ePtEmuDoBXZQpkfgru/zTrRb+RU0bt/X6vEqiPAShudZO57H39JlJfry/OSaqdr0bRoD5uQfB3SPr
-	B3Qjdz/w==;
-Received: from [2a00:f820:417:0:178:251:229:89] (helo=mx.nabladev.com)
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1wzyBb-00000008LYj-1iOA;
-	Fri, 28 Aug 2026 15:08:10 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id E964011D0F6;
-	Fri, 28 Aug 2026 17:07:51 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nabladev.com;
-	s=dkim; t=1787929673; h=from:subject:date:message-id:to:cc:mime-version:
-	 content-transfer-encoding:in-reply-to:references;
-	bh=GNZHlfu6UdzNKO0+8Q56ktHvv/VBnO/DXQ93lde3I+s=;
-	b=b4fRGr4W9rKlID6TvUMhron9/HbgsTDywTVgNhqOrAL391exHc4iMAeyR2kkse94ajeCrL
-	BqotSoJqXdIGT7TTu74HSbSlIXrZQ1X0zjEfYwGxVqzIzr0d0ZjQtZOvz02szB3NKEItDf
-	QY8hvzf6QF2/ad4G6VkSS8YqwH6wm158WXHzEUuHCZN5fEigxWwNszVAvixFh52XU3Cg+P
-	T+2nmtdsj6D8ZaDp4nyRLcdRJIAC5MRkzWzTUcwmv9PD+xFf2nSs0NSG2mZB9c0Hydk3J+
-	6mexZdMX+XtdqMxAvPgRk2DiARaJ2/SU4mxxQ5Ammh8hVxDoErsZ9V1uMNiBlA==
-From: Marek Vasut <marex@nabladev.com>
-To: linux-phy@lists.infradead.org
-Cc: Pankaj Dev <pankaj.dev@st.com>,
-	Rahul Kumar <rahul.kumar05@st.com>,
-	Fabrice Gasnier <fabrice.gasnier@foss.st.com>,
-	Christian Bruel <christian.bruel@foss.st.com>,
-	Marek Vasut <marex@nabladev.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Patrice Chotard <patrice.chotard@foss.st.com>,
-	Rob Herring <robh@kernel.org>,
-	Rosen Penev <rosenp@gmail.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	devicetree@vger.kernel.org,
-	kernel@dh-electronics.com,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-stm32@st-md-mailman.stormreply.com
-Subject: [PATCH v4 2/2] phy: stm32: Add support for ST STM32MP25 USB2-FEMTO PHY
-Date: Fri, 28 Aug 2026 17:06:57 +0200
-Message-ID: <20260828150739.174460-2-marex@nabladev.com>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20260828150739.174460-1-marex@nabladev.com>
+	id 1wzyNS-0000000657q-03TO
+	for linux-phy@lists.infradead.org;
+	Fri, 28 Aug 2026 15:20:22 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 6BA6960200;
+	Fri, 28 Aug 2026 15:20:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A851A1F000E9;
+	Fri, 28 Aug 2026 15:20:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1787930420;
+	bh=RhtuiZawvEMOVSZQH7OGbAHCiJt4pDI7yoZcJ5uggs8=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=AueBkt6asdz9vCrzNUorkSxdcLrO0yvLgRDanVU31DI6LMlFEvXbyde9tYYVANNRl
+	 T4Ye0t9ll3M8QZ4vpHkhkjZ6B3N5sA23VSdVsC7aFxcxmuC7rIS0biWUv08eqCdsKq
+	 liidh+nl6/eOCRihGPzK7iFEcpAktKB8qocKoWtOfOIPil1itrwPhwd0HZ8+umfGBy
+	 WtNZJwjiTiGVHBaxZxB9wmwBI2pkq51uG/3AlXHu9pwUC5Ci+OiBdxzCMjyrvviZ8H
+	 qUJIqtlS8iCUXz/Fv6DTYumhv1qQZjOj/9cDNrccCVF7s8+VT5vShKZYAkamX+pg6G
+	 9spaK09Z89hHQ==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v4 2/2] phy: stm32: Add support for ST STM32MP25
+ USB2-FEMTO PHY
+To: "Marek Vasut" <marex@nabladev.com>
+Cc: robh@kernel.org, linux-phy@lists.infradead.org, conor+dt@kernel.org, devicetree@vger.kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20260828150739.174460-2-marex@nabladev.com>
 References: <20260828150739.174460-1-marex@nabladev.com>
-MIME-Version: 1.0
-X-Last-TLS-Session-Version: TLSv1.3
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260828_160807_701986_1A063548 
-X-CRM114-Status: GOOD (  24.70  )
+ <20260828150739.174460-2-marex@nabladev.com>
+Date: Fri, 28 Aug 2026 15:20:19 +0000
+Message-Id: <20260828152019.A851A1F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,509 +63,152 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Pankaj Dev <pankaj.dev@st.com>
-
-Add USB2 PHY driver for STM32MP25 USB2 controllers, which includes the
-USB2.0 host-only controller and USB 2.0 part of the DWC3 controller.
-Two such PHYs in total are present in STM32MP25 SoC, they both are
-slightly different, therefore they use different compatible string
-to discern them.
-
-Signed-off-by: Pankaj Dev <pankaj.dev@st.com>
-Co-developed-by: Rahul Kumar <rahul.kumar05@st.com>
-Signed-off-by: Rahul Kumar <rahul.kumar05@st.com>
-Co-developed-by: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
-Signed-off-by: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
-Co-developed-by: Christian Bruel <christian.bruel@foss.st.com>
-Signed-off-by: Christian Bruel <christian.bruel@foss.st.com>
-Co-developed-by: Marek Vasut <marex@nabladev.com>
-Signed-off-by: Marek Vasut <marex@nabladev.com>
----
-Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>
-Cc: Christian Bruel <christian.bruel@foss.st.com>
-Cc: Conor Dooley <conor+dt@kernel.org>
-Cc: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
-Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
-Cc: Manivannan Sadhasivam <mani@kernel.org>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Pankaj Dev <pankaj.dev@st.com>
-Cc: Patrice Chotard <patrice.chotard@foss.st.com>
-Cc: Rahul Kumar <rahul.kumar05@st.com>
-Cc: Rob Herring <robh@kernel.org>
-Cc: Rosen Penev <rosenp@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>
-Cc: devicetree@vger.kernel.org
-Cc: kernel@dh-electronics.com
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
-Cc: linux-phy@lists.infradead.org
-Cc: linux-stm32@st-md-mailman.stormreply.com
----
-V2: - Fix up Sob/Cdb lines
-    - Operate PHY as a syscon subnode
-V3: - Update copyright years
-    - Register two sets of clock, one 480 MHz PLL and one CMN
-    - Split PHY ops per PHY, since the PHY2 does not have set mode ops
-    - Fix up Sob/Cdb lines further
-V4: - Split this from series arm64: dts: phy: st: usb: Add STM32MP2 USB support
-      https://lore.kernel.org/all/20260822074816.548662-1-marex@nabladev.com/
----
- drivers/phy/st/Kconfig             |  10 +
- drivers/phy/st/Makefile            |   1 +
- drivers/phy/st/phy-stm32-usb2phy.c | 406 +++++++++++++++++++++++++++++
- 3 files changed, 417 insertions(+)
- create mode 100644 drivers/phy/st/phy-stm32-usb2phy.c
-
-diff --git a/drivers/phy/st/Kconfig b/drivers/phy/st/Kconfig
-index 49206185e5633..2835bb67bca9e 100644
---- a/drivers/phy/st/Kconfig
-+++ b/drivers/phy/st/Kconfig
-@@ -58,3 +58,13 @@ config PHY_STM32_USBPHYC
- 	  used by an HS USB Host controller, and the second one is shared
- 	  between an HS USB OTG controller and an HS USB Host controller,
- 	  selected by a USB switch.
-+
-+config PHY_STM32_USB2PHY
-+	tristate "STMicroelectronics STM32MP25 USB2.0 PHY Controller driver"
-+	depends on ARCH_STM32 || COMPILE_TEST
-+	depends on COMMON_CLK
-+	select GENERIC_PHY
-+	help
-+	  Enable this to support the High-Speed USB 2.0 transceivers that are
-+	  part of the STMicroelectronics STM32MP25 SoCs. The PHY itself is a
-+	  Synopsys FEMTO-PHY.
-diff --git a/drivers/phy/st/Makefile b/drivers/phy/st/Makefile
-index cb80e954ea9f0..4945df5ed78a8 100644
---- a/drivers/phy/st/Makefile
-+++ b/drivers/phy/st/Makefile
-@@ -5,3 +5,4 @@ obj-$(CONFIG_PHY_ST_SPEAR1340_MIPHY)	+= phy-spear1340-miphy.o
- obj-$(CONFIG_PHY_STIH407_USB)		+= phy-stih407-usb.o
- obj-$(CONFIG_PHY_STM32_COMBOPHY)	+= phy-stm32-combophy.o
- obj-$(CONFIG_PHY_STM32_USBPHYC) 	+= phy-stm32-usbphyc.o
-+obj-$(CONFIG_PHY_STM32_USB2PHY) 	+= phy-stm32-usb2phy.o
-diff --git a/drivers/phy/st/phy-stm32-usb2phy.c b/drivers/phy/st/phy-stm32-usb2phy.c
-new file mode 100644
-index 0000000000000..8c68b2d208d73
---- /dev/null
-+++ b/drivers/phy/st/phy-stm32-usb2phy.c
-@@ -0,0 +1,406 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+/*
-+ * STMicroelectronics STM32 USB2 PHY Controller driver
-+ * Currently Only supported for STM32MP25
-+ *
-+ * Copyright (C) 2022-2026 STMicroelectronics
-+ * Author(s): Pankaj Dev <pankaj.dev@st.com>.
-+ */
-+#include <linux/bitfield.h>
-+#include <linux/clk.h>
-+#include <linux/clk-provider.h>
-+#include <linux/io.h>
-+#include <linux/kernel.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/of_address.h>
-+#include <linux/of_platform.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+#include <linux/reset.h>
-+#include <linux/usb/role.h>
-+#include <linux/mfd/syscon.h>
-+
-+#define SYSCFG_USB2PHY2CR_USB2PHY2CMN		BIT(2)
-+#define SYSCFG_USB2PHY2CR_VBUSVALID		BIT(4)
-+#define SYSCFG_USB2PHY2CR_VBUSVLDEXTSEL		BIT(5)
-+#define SYSCFG_USB2PHY2CR_VBUSVLDEXT		BIT(6)
-+
-+#define USBH_NUM_CLK				2
-+
-+struct stm32_usb2phy {
-+	struct phy				*phy;
-+	struct regmap				*regmap;
-+	struct device				*dev;
-+	struct reset_control			*rstc;
-+	struct clk				*phyref;
-+	struct regulator			*vdd33;
-+	const struct stm32mp2_usb2phy_hw_data	*hw_data;
-+	atomic_t				en_refcnt;
-+	enum phy_mode				mode;
-+	u32					cr_offset;
-+	bool					is_init;
-+	struct clk_hw				clkpll_hw;
-+	struct clk_hw				clkcmn_hw;
-+	/* Must be last */
-+	struct clk_hw_onecell_data		onecell;
-+};
-+
-+struct stm32mp2_usb2phy_hw_data {
-+	u32			phyrefsel_mask;
-+	const struct phy_ops	*phy_ops;
-+};
-+
-+static int stm32_usb2phy_enable(struct stm32_usb2phy *phy_dev)
-+{
-+	const struct stm32mp2_usb2phy_hw_data *phy_data = phy_dev->hw_data;
-+	unsigned int refsel;
-+	unsigned long rate;
-+	int ret;
-+
-+	/* Check if a phy is already init or clkpll in use */
-+	if (atomic_inc_return(&phy_dev->en_refcnt) > 1)
-+		return 0;
-+
-+	rate = clk_get_rate(phy_dev->phyref);
-+	if (rate == 19200000)
-+		refsel = 0;
-+	else if (rate == 20000000)
-+		refsel = 1;
-+	else if (rate == 24000000)
-+		refsel = 2;
-+	else
-+		return -EINVAL;
-+
-+	ret = regmap_update_bits(phy_dev->regmap,
-+				 phy_dev->cr_offset,
-+				 phy_data->phyrefsel_mask,
-+				 field_prep(phy_data->phyrefsel_mask, refsel));
-+	if (ret)
-+		return ret;
-+
-+	ret = regulator_enable(phy_dev->vdd33);
-+	if (ret)
-+		return ret;
-+
-+	ret = clk_prepare_enable(phy_dev->phyref);
-+	if (ret)
-+		goto error_regdis;
-+
-+	ret = reset_control_deassert(phy_dev->rstc);
-+	if (ret)
-+		goto error_clkdis;
-+
-+	return 0;
-+
-+error_clkdis:
-+	clk_disable_unprepare(phy_dev->phyref);
-+error_regdis:
-+	regulator_disable(phy_dev->vdd33);
-+
-+	return ret;
-+}
-+
-+static int stm32_usb2phy_disable(struct stm32_usb2phy *phy_dev)
-+{
-+	int ret;
-+
-+	/* Check if a phy is still init or clkpll in use */
-+	if (atomic_dec_return(&phy_dev->en_refcnt) > 0)
-+		return 0;
-+
-+	ret = reset_control_assert(phy_dev->rstc);
-+	if (ret)
-+		return ret;
-+
-+	clk_disable_unprepare(phy_dev->phyref);
-+
-+	return regulator_disable(phy_dev->vdd33);
-+}
-+
-+static int stm32_usb2phy_set_mode(struct phy *phy, enum phy_mode mode, int submode)
-+{
-+	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
-+	u32 mask = SYSCFG_USB2PHY2CR_USB2PHY2CMN |
-+		   SYSCFG_USB2PHY2CR_VBUSVALID |
-+		   SYSCFG_USB2PHY2CR_VBUSVLDEXT;
-+	u32 val = 0;
-+	int ret;
-+
-+	if (mode == PHY_MODE_USB_HOST) {
-+		if (submode != USB_ROLE_NONE)
-+			val = SYSCFG_USB2PHY2CR_VBUSVALID;
-+	} else if (mode == PHY_MODE_USB_DEVICE) {
-+		val = SYSCFG_USB2PHY2CR_USB2PHY2CMN |
-+		      SYSCFG_USB2PHY2CR_VBUSVLDEXTSEL;
-+		if (submode != USB_ROLE_NONE)
-+			val |= SYSCFG_USB2PHY2CR_VBUSVLDEXT;
-+		mask |= SYSCFG_USB2PHY2CR_VBUSVLDEXTSEL;
-+	} else {
-+		return -EINVAL;
-+	}
-+
-+	ret = regmap_update_bits(phy_dev->regmap, phy_dev->cr_offset, mask, val);
-+	if (ret)
-+		return ret;
-+
-+	phy_dev->mode = mode;
-+
-+	return 0;
-+}
-+
-+static int stm32_usb2phy1_init(struct phy *phy)
-+{
-+	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
-+	int ret;
-+
-+	ret = stm32_usb2phy_enable(phy_dev);
-+	if (ret)
-+		return ret;
-+
-+	phy_dev->is_init = true;
-+
-+	return 0;
-+}
-+
-+static int stm32_usb2phy2_init(struct phy *phy)
-+{
-+	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
-+	int ret;
-+
-+	ret = stm32_usb2phy_enable(phy_dev);
-+	if (ret)
-+		return ret;
-+
-+	if (phy_dev->mode != PHY_MODE_INVALID) {
-+		ret = stm32_usb2phy_set_mode(phy, phy_dev->mode, USB_ROLE_NONE);
-+		if (ret) {
-+			stm32_usb2phy_disable(phy_dev);
-+			return ret;
-+		}
-+	}
-+
-+	phy_dev->is_init = true;
-+
-+	return 0;
-+}
-+
-+static int stm32_usb2phy_exit(struct phy *phy)
-+{
-+	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
-+	int ret;
-+
-+	ret = stm32_usb2phy_disable(phy_dev);
-+	if (ret)
-+		return ret;
-+
-+	phy_dev->is_init = false;
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops stm32_usb2phy1_data = {
-+	.init = stm32_usb2phy1_init,
-+	.exit = stm32_usb2phy_exit,
-+	.owner = THIS_MODULE,
-+};
-+
-+static const struct phy_ops stm32_usb2phy2_data = {
-+	.init = stm32_usb2phy2_init,
-+	.exit = stm32_usb2phy_exit,
-+	.set_mode = stm32_usb2phy_set_mode,
-+	.owner = THIS_MODULE,
-+};
-+
-+static int stm32_usb2phy_clkpll_prepare(struct clk_hw *hw)
-+{
-+	struct stm32_usb2phy *phy_dev = container_of(hw, struct stm32_usb2phy,
-+						     clkpll_hw);
-+
-+	return stm32_usb2phy_enable(phy_dev);
-+}
-+
-+static void stm32_usb2phy_clkpll_unprepare(struct clk_hw *hw)
-+{
-+	struct stm32_usb2phy *phy_dev = container_of(hw, struct stm32_usb2phy,
-+						     clkpll_hw);
-+
-+	stm32_usb2phy_disable(phy_dev);
-+}
-+
-+static unsigned long stm32_usb2phy_clkpll_recalc_rate(struct clk_hw *hw,
-+						      unsigned long parent_rate)
-+{
-+	return 480000000;
-+}
-+
-+static const struct clk_ops stm32_usb2phy_clkpll_ops = {
-+	.prepare = stm32_usb2phy_clkpll_prepare,
-+	.unprepare = stm32_usb2phy_clkpll_unprepare,
-+	.recalc_rate = stm32_usb2phy_clkpll_recalc_rate,
-+};
-+
-+static int stm32_usb2phy_clkcmn_prepare(struct clk_hw *hw)
-+{
-+	struct stm32_usb2phy *phy_dev = container_of(hw, struct stm32_usb2phy,
-+						     clkcmn_hw);
-+
-+	return regmap_clear_bits(phy_dev->regmap, phy_dev->cr_offset,
-+				 SYSCFG_USB2PHY2CR_USB2PHY2CMN);
-+}
-+
-+static void stm32_usb2phy_clkcmn_unprepare(struct clk_hw *hw)
-+{
-+	struct stm32_usb2phy *phy_dev = container_of(hw, struct stm32_usb2phy,
-+						     clkcmn_hw);
-+
-+	regmap_set_bits(phy_dev->regmap, phy_dev->cr_offset,
-+			SYSCFG_USB2PHY2CR_USB2PHY2CMN);
-+}
-+
-+static const struct clk_ops stm32_usb2phy_clkcmn_ops = {
-+	.prepare = stm32_usb2phy_clkcmn_prepare,
-+	.unprepare = stm32_usb2phy_clkcmn_unprepare,
-+};
-+
-+static int stm32_usb2phy_probe(struct platform_device *pdev)
-+{
-+	struct phy_provider *phy_provider;
-+	struct device *dev = &pdev->dev;
-+	struct stm32_usb2phy *phy_dev;
-+	char *pllname, *cmnname;
-+	const __be32 *offset;
-+	struct phy *phy;
-+	int ret;
-+
-+	phy_dev = devm_kzalloc(dev, struct_size(phy_dev, onecell.hws, USBH_NUM_CLK), GFP_KERNEL);
-+	if (!phy_dev)
-+		return -ENOMEM;
-+
-+	phy_dev->dev = dev;
-+	dev_set_drvdata(dev, phy_dev);
-+
-+	phy_dev->rstc = devm_reset_control_get(dev, NULL);
-+	if (IS_ERR(phy_dev->rstc))
-+		return dev_err_probe(dev, PTR_ERR(phy_dev->rstc), "Failed to get USB2PHY reset\n");
-+
-+	phy_dev->phyref = devm_clk_get(dev, NULL);
-+	if (IS_ERR(phy_dev->phyref))
-+		return dev_err_probe(dev, PTR_ERR(phy_dev->phyref), "Failed to get phyref clk\n");
-+
-+	phy_dev->vdd33 = devm_regulator_get_optional(dev, "vdd33");
-+	if (IS_ERR(phy_dev->vdd33))
-+		return dev_err_probe(dev, PTR_ERR(phy_dev->vdd33), "Failed to get vdd3v3 supply\n");
-+
-+	phy_dev->regmap = syscon_node_to_regmap(dev->of_node->parent);
-+	if (IS_ERR(phy_dev->regmap))
-+		return dev_err_probe(dev, PTR_ERR(phy_dev->regmap), "Failed to get regmap\n");
-+
-+	offset = of_get_address(dev->of_node, 0, NULL, NULL);
-+	if (!offset)
-+		return dev_err_probe(dev, -EINVAL, "Failed to get regmap offset\n");
-+
-+	phy_dev->cr_offset = be32_to_cpu(*offset);
-+
-+	phy_dev->hw_data = device_get_match_data(dev);
-+
-+	phy = devm_phy_create(dev, NULL, phy_dev->hw_data->phy_ops);
-+	if (IS_ERR(phy))
-+		return dev_err_probe(dev, PTR_ERR(phy), "Failed to create PHY\n");
-+
-+	phy_dev->phy = phy;
-+	phy_set_drvdata(phy, phy_dev);
-+
-+	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+	if (IS_ERR(phy_provider))
-+		return PTR_ERR(phy_provider);
-+
-+	pllname = devm_kasprintf(dev, GFP_KERNEL, "clk_%s_48m",
-+				 of_node_full_name(dev->of_node));
-+	if (!pllname)
-+		return -ENOMEM;
-+
-+	cmnname = devm_kasprintf(dev, GFP_KERNEL, "clk_%s_cmn",
-+				 of_node_full_name(dev->of_node));
-+	if (!cmnname)
-+		return -ENOMEM;
-+
-+	phy_dev->onecell.num = USBH_NUM_CLK;
-+	phy_dev->onecell.hws[0] = &phy_dev->clkpll_hw;
-+	phy_dev->onecell.hws[1] = &phy_dev->clkcmn_hw;
-+
-+	phy_dev->clkpll_hw.init = CLK_HW_INIT_NO_PARENT(pllname, &stm32_usb2phy_clkpll_ops, 0);
-+	ret = devm_clk_hw_register(phy_dev->dev, &phy_dev->clkpll_hw);
-+	if (ret)
-+		return dev_err_probe(phy_dev->dev, ret, "Failed to register PLL clock\n");
-+
-+	phy_dev->clkcmn_hw.init = CLK_HW_INIT_HW(cmnname, &phy_dev->clkpll_hw,
-+						 &stm32_usb2phy_clkcmn_ops, 0);
-+	ret = devm_clk_hw_register(phy_dev->dev, &phy_dev->clkcmn_hw);
-+	if (ret)
-+		return dev_err_probe(phy_dev->dev, ret, "Failed to register CMN clock\n");
-+
-+	ret = devm_of_clk_add_hw_provider(phy_dev->dev, of_clk_hw_onecell_get, &phy_dev->onecell);
-+	if (ret)
-+		return dev_err_probe(phy_dev->dev, ret, "Failed to add clock provider\n");
-+
-+	return 0;
-+}
-+
-+static int stm32_usb2phy_suspend(struct device *dev)
-+{
-+	struct stm32_usb2phy *phy_dev = dev_get_drvdata(dev);
-+
-+	if (phy_dev->is_init)
-+		return stm32_usb2phy_disable(phy_dev);
-+
-+	return 0;
-+}
-+
-+static int stm32_usb2phy_resume(struct device *dev)
-+{
-+	struct stm32_usb2phy *phy_dev = dev_get_drvdata(dev);
-+
-+	if (phy_dev->is_init)
-+		return stm32_usb2phy_enable(phy_dev);
-+
-+	return 0;
-+}
-+
-+/* STM32MP25xx USB 2.0 PHY attached to USB 2.0 Host controller */
-+static const struct stm32mp2_usb2phy_hw_data stm32mp25_usb2phy1_hwdata = {
-+	.phyrefsel_mask = GENMASK(6, 4),
-+	.phy_ops = &stm32_usb2phy1_data,
-+};
-+
-+/* STM32MP25xx USB 2.0 PHY attached to USB 2.0 part of DWC3 controller */
-+static const struct stm32mp2_usb2phy_hw_data stm32mp25_usb2phy2_hwdata = {
-+	.phyrefsel_mask = GENMASK(14, 12),
-+	.phy_ops = &stm32_usb2phy2_data,
-+};
-+
-+static const struct of_device_id stm32_usb2phy_of_match[] = {
-+	{ .compatible = "st,stm32mp25-usb2phy1", .data = &stm32mp25_usb2phy1_hwdata },
-+	{ .compatible = "st,stm32mp25-usb2phy2", .data = &stm32mp25_usb2phy2_hwdata },
-+	{ /* sentinel */ },
-+};
-+MODULE_DEVICE_TABLE(of, stm32_usb2phy_of_match);
-+
-+static DEFINE_SIMPLE_DEV_PM_OPS(stm32_usb2phy_pm_ops,
-+				stm32_usb2phy_suspend, stm32_usb2phy_resume);
-+
-+static struct platform_driver stm32_usb2phy_driver = {
-+	.probe = stm32_usb2phy_probe,
-+	.driver = {
-+		.name = "stm32-usb2phy",
-+		.of_match_table = stm32_usb2phy_of_match,
-+		.pm = pm_sleep_ptr(&stm32_usb2phy_pm_ops)
-+	}
-+};
-+
-+module_platform_driver(stm32_usb2phy_driver);
-+
-+MODULE_AUTHOR("Pankaj Dev <pankaj.dev@st.com>");
-+MODULE_DESCRIPTION("STMicroelectronics Generic USB2PHY driver for stm32");
-+MODULE_LICENSE("GPL");
--- 
-2.53.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+OCBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIE1pc3NpbmcgZGVjcmVt
+ZW50IG9mIGVuX3JlZmNudCBvbiBlcnJvciBwYXRocyBpbiBzdG0zMl91c2IycGh5X2VuYWJsZS4K
+LSBbSGlnaF0gQ29uY3VycmVudCBlbmFibGVtZW50IGZyb20gUEhZIGFuZCBDbG9jayBzdWJzeXN0
+ZW1zIGxhY2tzIG11dHVhbCBleGNsdXNpb24uCi0gW0hpZ2hdIFByb2JlIGZhaWxzIGlmIHRoZSBv
+cHRpb25hbCB2ZGQzMyByZWd1bGF0b3IgaXMgbGVnaXRpbWF0ZWx5IGFic2VudCBpbiB0aGUgZGV2
+aWNlIHRyZWUuCi0gW0hpZ2hdIENvbmZsaWN0aW5nIGxvZ2ljYWwgbWFuYWdlbWVudCBvZiB0aGUg
+U1lTQ0ZHX1VTQjJQSFkyQ1JfVVNCMlBIWTJDTU4gYml0IGJldHdlZW4gdGhlIFBIWSBtb2RlIGFu
+ZCBDbG9jayBwcm92aWRlciBjYWxsYmFja3MuCi0gW0hpZ2hdIEJyb2tlbiBzeXN0ZW0gc3VzcGVu
+ZC9yZXN1bWUgc3RhdGUgbWFjaGluZSBkdWUgdG8gbG9ja2xlc3MgZW5fcmVmY250IGJlaGF2aW9y
+LgotIFtNZWRpdW1dIEFib3J0IG9uIHJlc2V0X2NvbnRyb2xfYXNzZXJ0IGZhaWx1cmUgaW4gc3Rt
+MzJfdXNiMnBoeV9kaXNhYmxlIGxlYXZlcyBjbG9ja3MgYW5kIHJlZ3VsYXRvcnMgZW5hYmxlZC4K
+LSBbTWVkaXVtXSBJbmNvbXBsZXRlIGJhc2UgbWFzayBpbiBzdG0zMl91c2IycGh5X3NldF9tb2Rl
+KCkgbGVhZHMgdG8gYSBzdGlja3kgYml0IHN0YXRlIGFjcm9zcyBtb2RlIHRyYW5zaXRpb25zLgot
+IFtNZWRpdW1dIFRoZSBjb21taXQgbWVzc2FnZSBpbmNvcnJlY3RseSBkZXNjcmliZXMgd2hpY2gg
+UEhZIGxhY2tzIHNldF9tb2RlIG9wcy4KLS0KCmNvbW1pdCAzODNkNDQ3M2Y2NWVmZjcxZDcyZDc4
+YzNmZGVlMTMzMmIxZmVhNDkwCkF1dGhvcjogUGFua2FqIERldiA8cGFua2FqLmRldkBzdC5jb20+
+CgogICAgcGh5OiBzdG0zMjogQWRkIHN1cHBvcnQgZm9yIFNUIFNUTTMyTVAyNSBVU0IyLUZFTVRP
+IFBIWQogICAgCiAgICBBZGQgVVNCMiBQSFkgZHJpdmVyIGZvciBTVE0zMk1QMjUgVVNCMiBjb250
+cm9sbGVycywgd2hpY2ggaW5jbHVkZXMgdGhlCiAgICBVU0IyLjAgaG9zdC1vbmx5IGNvbnRyb2xs
+ZXIgYW5kIFVTQiAyLjAgcGFydCBvZiB0aGUgRFdDMyBjb250cm9sbGVyLgogICAgVHdvIHN1Y2gg
+UEhZcyBpbiB0b3RhbCBhcmUgcHJlc2VudCBpbiBTVE0zMk1QMjUgU29DLCB0aGV5IGJvdGggYXJl
+CiAgICBzbGlnaHRseSBkaWZmZXJlbnQsIHRoZXJlZm9yZSB0aGV5IHVzZSBkaWZmZXJlbnQgY29t
+cGF0aWJsZSBzdHJpbmcKICAgIHRvIGRpc2Nlcm4gdGhlbS4KCj4gLS0tCj4gVjI6IC0gRml4IHVw
+IFNvYi9DZGIgbGluZXMKPiAgICAgLSBPcGVyYXRlIFBIWSBhcyBhIHN5c2NvbiBzdWJub2RlCj4g
+VjM6IC0gVXBkYXRlIGNvcHlyaWdodCB5ZWFycwo+ICAgICAtIFJlZ2lzdGVyIHR3byBzZXRzIG9m
+IGNsb2NrLCBvbmUgNDgwIE1IeiBQTEwgYW5kIG9uZSBDTU4KPiAgICAgLSBTcGxpdCBQSFkgb3Bz
+IHBlciBQSFksIHNpbmNlIHRoZSBQSFkyIGRvZXMgbm90IGhhdmUgc2V0IG1vZGUgb3BzCgpbU2V2
+ZXJpdHk6IE1lZGl1bV0KSXMgdGhpcyBkZXNjcmlwdGlvbiBhY2N1cmF0ZT8gTG9va2luZyBhdCB0
+aGUgY29kZSwgaXQgc2VlbXMgYHN0bTMyX3VzYjJwaHkyX2RhdGFgCihQSFkyKSBhY3R1YWxseSBk
+ZWZpbmVzIGAuc2V0X21vZGUgPSBzdG0zMl91c2IycGh5X3NldF9tb2RlYCwgd2hpbGUKYHN0bTMy
+X3VzYjJwaHkxX2RhdGFgIChQSFkxKSBvbWl0cyBpdC4KCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMv
+cGh5L3N0L3BoeS1zdG0zMi11c2IycGh5LmMgYi9kcml2ZXJzL3BoeS9zdC9waHktc3RtMzItdXNi
+MnBoeS5jCj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiBpbmRleCAwMDAwMDAwMDAwMDAwLi44YzY4
+YjJkMjA4ZDczCj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBiL2RyaXZlcnMvcGh5L3N0L3BoeS1zdG0z
+Mi11c2IycGh5LmMKClsgLi4uIF0KCj4gK3N0YXRpYyBpbnQgc3RtMzJfdXNiMnBoeV9lbmFibGUo
+c3RydWN0IHN0bTMyX3VzYjJwaHkgKnBoeV9kZXYpCj4gK3sKPiArCWNvbnN0IHN0cnVjdCBzdG0z
+Mm1wMl91c2IycGh5X2h3X2RhdGEgKnBoeV9kYXRhID0gcGh5X2Rldi0+aHdfZGF0YTsKPiArCXVu
+c2lnbmVkIGludCByZWZzZWw7Cj4gKwl1bnNpZ25lZCBsb25nIHJhdGU7Cj4gKwlpbnQgcmV0Owo+
+ICsKPiArCS8qIENoZWNrIGlmIGEgcGh5IGlzIGFscmVhZHkgaW5pdCBvciBjbGtwbGwgaW4gdXNl
+ICovCj4gKwlpZiAoYXRvbWljX2luY19yZXR1cm4oJnBoeV9kZXYtPmVuX3JlZmNudCkgPiAxKQo+
+ICsJCXJldHVybiAwOwoKW1NldmVyaXR5OiBIaWdoXQpEb2VzIHRoaXMgYXRvbWljIGNoZWNrIGxh
+Y2sgbXV0dWFsIGV4Y2x1c2lvbiBmb3IgY29uY3VycmVudCBjYWxsZXJzPwoKSWYgdGhlIFBIWSBm
+cmFtZXdvcmsgYW5kIHRoZSBDbG9jayBmcmFtZXdvcmsgY29uY3VycmVudGx5IGNhbGwgdGhpcyBm
+dW5jdGlvbiwKb25lIHRocmVhZCBjb3VsZCBpbmNyZW1lbnQgdGhlIGNvdW50ZXIsIHNlZSBpdCA+
+IDEsIGFuZCByZXR1cm4gMCBiZWZvcmUgdGhlCmZpcnN0IHRocmVhZCBoYXMgZmluaXNoZWQgZGVh
+c3NlcnRpbmcgcmVzZXQgb3IgZW5hYmxpbmcgY2xvY2tzLCBsZWFkaW5nIHRvCnVuaW5pdGlhbGl6
+ZWQgaGFyZHdhcmUgdXNhZ2UuCgo+ICsKPiArCXJhdGUgPSBjbGtfZ2V0X3JhdGUocGh5X2Rldi0+
+cGh5cmVmKTsKPiArCWlmIChyYXRlID09IDE5MjAwMDAwKQo+ICsJCXJlZnNlbCA9IDA7Cj4gKwll
+bHNlIGlmIChyYXRlID09IDIwMDAwMDAwKQo+ICsJCXJlZnNlbCA9IDE7Cj4gKwllbHNlIGlmIChy
+YXRlID09IDI0MDAwMDAwKQo+ICsJCXJlZnNlbCA9IDI7Cj4gKwllbHNlCj4gKwkJcmV0dXJuIC1F
+SU5WQUw7Cj4gKwo+ICsJcmV0ID0gcmVnbWFwX3VwZGF0ZV9iaXRzKHBoeV9kZXYtPnJlZ21hcCwK
+PiArCQkJCSBwaHlfZGV2LT5jcl9vZmZzZXQsCj4gKwkJCQkgcGh5X2RhdGEtPnBoeXJlZnNlbF9t
+YXNrLAo+ICsJCQkJIGZpZWxkX3ByZXAocGh5X2RhdGEtPnBoeXJlZnNlbF9tYXNrLCByZWZzZWwp
+KTsKPiArCWlmIChyZXQpCj4gKwkJcmV0dXJuIHJldDsKPiArCj4gKwlyZXQgPSByZWd1bGF0b3Jf
+ZW5hYmxlKHBoeV9kZXYtPnZkZDMzKTsKPiArCWlmIChyZXQpCj4gKwkJcmV0dXJuIHJldDsKPiAr
+Cj4gKwlyZXQgPSBjbGtfcHJlcGFyZV9lbmFibGUocGh5X2Rldi0+cGh5cmVmKTsKPiArCWlmIChy
+ZXQpCj4gKwkJZ290byBlcnJvcl9yZWdkaXM7Cj4gKwo+ICsJcmV0ID0gcmVzZXRfY29udHJvbF9k
+ZWFzc2VydChwaHlfZGV2LT5yc3RjKTsKPiArCWlmIChyZXQpCj4gKwkJZ290byBlcnJvcl9jbGtk
+aXM7Cj4gKwo+ICsJcmV0dXJuIDA7Cj4gKwo+ICtlcnJvcl9jbGtkaXM6Cj4gKwljbGtfZGlzYWJs
+ZV91bnByZXBhcmUocGh5X2Rldi0+cGh5cmVmKTsKPiArZXJyb3JfcmVnZGlzOgo+ICsJcmVndWxh
+dG9yX2Rpc2FibGUocGh5X2Rldi0+dmRkMzMpOwo+ICsKPiArCXJldHVybiByZXQ7Cj4gK30KCltT
+ZXZlcml0eTogSGlnaF0KRG8gdGhlIGVycm9yIHBhdGhzIGluIHRoaXMgZnVuY3Rpb24gbWlzcyBk
+ZWNyZW1lbnRpbmcgYGVuX3JlZmNudGA/CgpJZiBhbnkgb2YgdGhlc2Ugc3RlcHMgKGBjbGtfZ2V0
+X3JhdGVgLCBgcmVnbWFwX3VwZGF0ZV9iaXRzYCwKYHJlZ3VsYXRvcl9lbmFibGVgLCBgY2xrX3By
+ZXBhcmVfZW5hYmxlYCwgb3IgYHJlc2V0X2NvbnRyb2xfZGVhc3NlcnRgKSBmYWlsLApgZW5fcmVm
+Y250YCByZW1haW5zIHBlcm1hbmVudGx5IGluZmxhdGVkLiBTdWJzZXF1ZW50IGNhbGxzIHRvCmBz
+dG0zMl91c2IycGh5X2VuYWJsZWAgd2lsbCBvYnNlcnZlIGBlbl9yZWZjbnQgPiAxYCBhbmQgaW1t
+ZWRpYXRlbHkgcmV0dXJuCnN1Y2Nlc3MgKDApLiBUaGUgZHJpdmVyIHdpbGwgZmFsc2VseSByZXBv
+cnQgdGhhdCB0aGUgaGFyZHdhcmUgaXMgaW5pdGlhbGl6ZWQuCgo+ICtzdGF0aWMgaW50IHN0bTMy
+X3VzYjJwaHlfZGlzYWJsZShzdHJ1Y3Qgc3RtMzJfdXNiMnBoeSAqcGh5X2RldikKPiArewo+ICsJ
+aW50IHJldDsKPiArCj4gKwkvKiBDaGVjayBpZiBhIHBoeSBpcyBzdGlsbCBpbml0IG9yIGNsa3Bs
+bCBpbiB1c2UgKi8KPiArCWlmIChhdG9taWNfZGVjX3JldHVybigmcGh5X2Rldi0+ZW5fcmVmY250
+KSA+IDApCj4gKwkJcmV0dXJuIDA7Cj4gKwo+ICsJcmV0ID0gcmVzZXRfY29udHJvbF9hc3NlcnQo
+cGh5X2Rldi0+cnN0Yyk7Cj4gKwlpZiAocmV0KQo+ICsJCXJldHVybiByZXQ7CgpbU2V2ZXJpdHk6
+IE1lZGl1bV0KRG9lcyBhYm9ydGluZyBvbiBgcmVzZXRfY29udHJvbF9hc3NlcnRgIGZhaWx1cmUg
+aGVyZSBwZXJtYW5lbnRseSBsZWFrIHRoZQplbmFibGUgY291bnRzIGZvciB0aGUgY2xvY2tzIGFu
+ZCByZWd1bGF0b3JzPwoKU2luY2UgYGVuX3JlZmNudGAgd2FzIGFscmVhZHkgZGVjcmVtZW50ZWQg
+dG8gMCBhdCB0aGUgdG9wIG9mIHRoZSBmdW5jdGlvbiwKcmV0dXJuaW5nIGhlcmUgc2tpcHMgYGNs
+a19kaXNhYmxlX3VucHJlcGFyZWAgYW5kIGByZWd1bGF0b3JfZGlzYWJsZWAuIApSZS1lbmFibGlu
+ZyB0aGUgUEhZIGxhdGVyIHdpbGwgaW5jcmVtZW50IHRoZSBmcmFtZXdvcmsgdXNhZ2UgY291bnRz
+IGZvciB0aGVzZSAKcmVzb3VyY2VzIGFnYWluLCBsZWFraW5nIHRoZWlyIHJlZmVyZW5jZSBjb3Vu
+dHMuCgo+ICsKPiArCWNsa19kaXNhYmxlX3VucHJlcGFyZShwaHlfZGV2LT5waHlyZWYpOwo+ICsK
+PiArCXJldHVybiByZWd1bGF0b3JfZGlzYWJsZShwaHlfZGV2LT52ZGQzMyk7Cj4gK30KPiArCj4g
+K3N0YXRpYyBpbnQgc3RtMzJfdXNiMnBoeV9zZXRfbW9kZShzdHJ1Y3QgcGh5ICpwaHksIGVudW0g
+cGh5X21vZGUgbW9kZSwgaW50IHN1Ym1vZGUpCj4gK3sKPiArCXN0cnVjdCBzdG0zMl91c2IycGh5
+ICpwaHlfZGV2ID0gcGh5X2dldF9kcnZkYXRhKHBoeSk7Cj4gKwl1MzIgbWFzayA9IFNZU0NGR19V
+U0IyUEhZMkNSX1VTQjJQSFkyQ01OIHwKPiArCQkgICBTWVNDRkdfVVNCMlBIWTJDUl9WQlVTVkFM
+SUQgfAo+ICsJCSAgIFNZU0NGR19VU0IyUEhZMkNSX1ZCVVNWTERFWFQ7Cj4gKwl1MzIgdmFsID0g
+MDsKPiArCWludCByZXQ7Cj4gKwo+ICsJaWYgKG1vZGUgPT0gUEhZX01PREVfVVNCX0hPU1QpIHsK
+PiArCQlpZiAoc3VibW9kZSAhPSBVU0JfUk9MRV9OT05FKQo+ICsJCQl2YWwgPSBTWVNDRkdfVVNC
+MlBIWTJDUl9WQlVTVkFMSUQ7Cj4gKwl9IGVsc2UgaWYgKG1vZGUgPT0gUEhZX01PREVfVVNCX0RF
+VklDRSkgewo+ICsJCXZhbCA9IFNZU0NGR19VU0IyUEhZMkNSX1VTQjJQSFkyQ01OIHwKPiArCQkg
+ICAgICBTWVNDRkdfVVNCMlBIWTJDUl9WQlVTVkxERVhUU0VMOwo+ICsJCWlmIChzdWJtb2RlICE9
+IFVTQl9ST0xFX05PTkUpCj4gKwkJCXZhbCB8PSBTWVNDRkdfVVNCMlBIWTJDUl9WQlVTVkxERVhU
+Owo+ICsJCW1hc2sgfD0gU1lTQ0ZHX1VTQjJQSFkyQ1JfVkJVU1ZMREVYVFNFTDsKCltTZXZlcml0
+eTogTWVkaXVtXQpEb2VzIGV4cGFuZGluZyB0aGUgYmFzZSBtYXNrIG9ubHkgZm9yIERFVklDRSBt
+b2RlIGxlYWQgdG8gYSBzdGlja3kgYml0IHN0YXRlCmFjcm9zcyBtb2RlIHRyYW5zaXRpb25zPwoK
+V2hlbiBzd2l0Y2hpbmcgZnJvbSBERVZJQ0UgbW9kZSB0byBIT1NUIG1vZGUsIGBWQlVTVkxERVhU
+U0VMYCBpcyBleGNsdWRlZApmcm9tIHRoZSBtYXNrLiBBcyBhIHJlc3VsdCwgYHJlZ21hcF91cGRh
+dGVfYml0c2Agd2lsbCBpZ25vcmUgdGhpcyBiaXQsCmxlYXZpbmcgaXQgcGVyc2lzdGVudGx5IHNl
+dCB0byAxIGZyb20gdGhlIHByZXZpb3VzIG1vZGUuCgo+ICsJfSBlbHNlIHsKPiArCQlyZXR1cm4g
+LUVJTlZBTDsKPiArCX0KPiArCj4gKwlyZXQgPSByZWdtYXBfdXBkYXRlX2JpdHMocGh5X2Rldi0+
+cmVnbWFwLCBwaHlfZGV2LT5jcl9vZmZzZXQsIG1hc2ssIHZhbCk7CgpbU2V2ZXJpdHk6IEhpZ2hd
+CkNhbiB0aGlzIGZvcmNpYmx5IHNldCBgU1lTQ0ZHX1VTQjJQSFkyQ1JfVVNCMlBIWTJDTU5gLCBj
+b25mbGljdGluZyB3aXRoIHRoZQpjbG9jayBwcm92aWRlcidzIG1hbmFnZW1lbnQgb2YgdGhlIHNh
+bWUgYml0PwoKSW4gYHN0bTMyX3VzYjJwaHlfY2xrY21uX3ByZXBhcmUoKWAgYmVsb3csIHRoZSBD
+bG9jayBBUEkgZXhwbGljaXRseSBjbGVhcnMKdGhpcyBiaXQuIFNpbmNlIHRoZXNlIG9wZXJhdGlv
+bnMgcnVuIGFjcm9zcyBpbmRlcGVuZGVudCBzdWJzeXN0ZW1zIHdpdGggbm8Kc29mdHdhcmUgY29v
+cmRpbmF0aW9uLCBvbmUgQVBJIGNhbiBzaWxlbnRseSBvdmVyd3JpdGUgdGhlIGxvZ2ljYWwgc3Rh
+dGUKc2V0IGJ5IHRoZSBvdGhlciwgY2F1c2luZyB1bnByZWRpY3RhYmxlIGNsb2NrIG9yIFBIWSBi
+ZWhhdmlvci4KClsgLi4uIF0KCj4gK3N0YXRpYyBpbnQgc3RtMzJfdXNiMnBoeV9wcm9iZShzdHJ1
+Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ICt7CgpbIC4uLiBdCgo+ICsJcGh5X2Rldi0+dmRk
+MzMgPSBkZXZtX3JlZ3VsYXRvcl9nZXRfb3B0aW9uYWwoZGV2LCAidmRkMzMiKTsKPiArCWlmIChJ
+U19FUlIocGh5X2Rldi0+dmRkMzMpKQo+ICsJCXJldHVybiBkZXZfZXJyX3Byb2JlKGRldiwgUFRS
+X0VSUihwaHlfZGV2LT52ZGQzMyksICJGYWlsZWQgdG8gZ2V0IHZkZDN2MyBzdXBwbHlcbiIpOwoK
+W1NldmVyaXR5OiBIaWdoXQpEb2VzIHRoaXMgY2F1c2UgdGhlIHByb2JlIHRvIGZhaWwgaWYgdGhl
+IG9wdGlvbmFsIGB2ZGQzM2AgcmVndWxhdG9yIGlzCmxlZ2l0aW1hdGVseSBhYnNlbnQgaW4gdGhl
+IGRldmljZSB0cmVlPwoKSWYgb21pdHRlZCBmcm9tIHRoZSBEVCwgYGRldm1fcmVndWxhdG9yX2dl
+dF9vcHRpb25hbGAgY29ycmVjdGx5IHJldHVybnMgCmAtRU5PREVWYC4gSG93ZXZlciwgdGhpcyBj
+aGVjayB1bmNvbmRpdGlvbmFsbHkgcGFzc2VzIGl0IHRvIApgZGV2X2Vycl9wcm9iZWAsIGZhaWxp
+bmcgdGhlIHByb2JlLiBTaG91bGQgYC1FTk9ERVZgIGJlIGlnbm9yZWQgYW5kIHRoZSAKcG9pbnRl
+ciBzZXQgdG8gTlVMTCBpbnN0ZWFkPwoKWyAuLi4gXQoKPiArc3RhdGljIGludCBzdG0zMl91c2Iy
+cGh5X3N1c3BlbmQoc3RydWN0IGRldmljZSAqZGV2KQo+ICt7Cj4gKwlzdHJ1Y3Qgc3RtMzJfdXNi
+MnBoeSAqcGh5X2RldiA9IGRldl9nZXRfZHJ2ZGF0YShkZXYpOwo+ICsKPiArCWlmIChwaHlfZGV2
+LT5pc19pbml0KQo+ICsJCXJldHVybiBzdG0zMl91c2IycGh5X2Rpc2FibGUocGh5X2Rldik7Cj4g
+Kwo+ICsJcmV0dXJuIDA7Cj4gK30KPiArCj4gK3N0YXRpYyBpbnQgc3RtMzJfdXNiMnBoeV9yZXN1
+bWUoc3RydWN0IGRldmljZSAqZGV2KQo+ICt7Cj4gKwlzdHJ1Y3Qgc3RtMzJfdXNiMnBoeSAqcGh5
+X2RldiA9IGRldl9nZXRfZHJ2ZGF0YShkZXYpOwo+ICsKPiArCWlmIChwaHlfZGV2LT5pc19pbml0
+KQo+ICsJCXJldHVybiBzdG0zMl91c2IycGh5X2VuYWJsZShwaHlfZGV2KTsKPiArCj4gKwlyZXR1
+cm4gMDsKPiArfQoKW1NldmVyaXR5OiBIaWdoXQpDYW4gdGhlIHN5c3RlbSBzdXNwZW5kL3Jlc3Vt
+ZSBzdGF0ZSBtYWNoaW5lIGJyZWFrIGR1ZSB0byB0aGUgbG9ja2xlc3MKYGVuX3JlZmNudGAgYmVo
+YXZpb3I/CgpJZiBib3RoIHRoZSBjbG9jayBhbmQgUEhZIGFyZSBlbmFibGVkIChgZW5fcmVmY250
+YCA9PSAyKSwgYW5kIHRoZSBzeXN0ZW0Kc3VzcGVuZHMsIGBzdG0zMl91c2IycGh5X2Rpc2FibGVg
+IHdpbGwgZGVjcmVtZW50IGBlbl9yZWZjbnRgIGZyb20gMiB0byAxCmFuZCByZXR1cm4gMCB3aXRo
+b3V0IHRvdWNoaW5nIHRoZSBoYXJkd2FyZS4gVXBvbiByZXN1bWUsCmBzdG0zMl91c2IycGh5X2Vu
+YWJsZWAgd2lsbCBidW1wIGl0IGJhY2sgdG8gMiBhbmQgcmV0dXJuIDAsIGNvbXBsZXRlbHkKYnlw
+YXNzaW5nIGFjdHVhbCBoYXJkd2FyZSByZS1pbml0aWFsaXphdGlvbi4KCi0tIApTYXNoaWtvIEFJ
+IHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA4MjgxNTA3Mzku
+MTc0NDYwLTEtbWFyZXhAbmFibGFkZXYuY29tP3BhcnQ9MgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5n
+IGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRl
+YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
