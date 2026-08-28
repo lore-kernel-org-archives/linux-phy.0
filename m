@@ -4,73 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2E0CC61DBD
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Aug 2026 15:57:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DDA51C61DCB
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Aug 2026 16:43:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PNkPBwG66YQmlpsEl+Ko1RG/uNAzbd9kjdACNGEZl/k=; b=BKFE3RA494tkkl
-	J50aUHt3lWhCeO2l9A1toDfa4jgu2TW2syOU1eceJjPh/O9pJIRdgwui5t2fCohlWK2cKJG8IIwuf
-	hpgmERrqULOf7LKH0IEPwb4QmekLEYTvKhU18csQ/NFNK9I/Vpd9h36sjRdqpGygwewAMbiOxqqTx
-	xcsCx6LAYD6syK8Pv7qwTXbSebEyo2itJVSJaMoVN+lf9QvRp7b1K2q8xBNnoYQQuYMJH8/o38Y9c
-	JYquf5YUFrIeDoRhw8S0qccFGuvVRQUdlx7iHyGcRn6vcY7igiSFgBvCBUv0OdqoMf2RlnP/7/TEd
-	ETrGQJBTod4lKSvR8yOw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=JZ34GOh4XtFkxfX/EIAollgOBQJ6p/mQM3iPYiSw2zk=; b=VN/XJ8w5URrZRPwMHw/K2TZ6ul
+	iS8SpS/U3jMnbdDfvfwT6hlbl5HQzAKfB0f7sYQUMUYOiMDjxaPxQ0l/Q9kT0LbQdLH3xRr0RKbDM
+	00GKVHbHvf/djOqOU/768O/uy29lFiLlNHw9nQimJWnTl+hpHFg6btSIUEgpwOmEb4HsEHfeXq7Dc
+	ojRyknUBiMxqXEOalw0lv05i8PHxMwRFQumJlDO53YpX60DEa95brhChkPFSZjWYLbVWNLYUyX4qs
+	fKxsW6Baz2KnDBhiHVbvU/C4XhTEVIqlfle75Xicv2UkaU6RAmwzwcgLZ7enRrKuK3WdU09LWofzR
+	fg/T7BWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzyxO-000000069UB-0wTI;
-	Fri, 28 Aug 2026 15:57:30 +0000
-Received: from mx.nabladev.com ([178.251.229.89])
+	id 1wzzfe-00000006DhF-1aFI;
+	Fri, 28 Aug 2026 16:43:14 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzyxI-000000069PA-3U96;
-	Fri, 28 Aug 2026 15:57:27 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id CD87611D13A;
-	Fri, 28 Aug 2026 17:57:17 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nabladev.com;
-	s=dkim; t=1787932638; h=from:subject:date:message-id:to:cc:mime-version:
-	 content-transfer-encoding:in-reply-to:references;
-	bh=qEufsN0hdtIhJlCHiUqTZAy2vI/phpQRMuCMN1PnZ7U=;
-	b=V3Ij12UA2oe0PBtf/AijFguSHJZwH0/c2qctR31ioABPj59kIpCcEKLbdHKi1LQjGMwogE
-	DKCwJk88g/R3G+RibxPtomyQyStPjCVolFiz1yWBhkyaHHSUuncQ2IWyGJ5Y5oPoSnST6x
-	Iho9cGCHXo+SpjxnKUJtDaGg/vTNLEqQgF8jiwg07C3cYe6fpePQXvjHZfsJ/PR5l18jVX
-	paVG01lc0i4U0QGbwZ1Gr4ZhB4JfsgeEcFEH6HnIyUiyqLxeRLe4XRATLTiU84AQcYp2Ve
-	KSBmrygm1mF9ZldWtibZFZDA/SMlaLN35aG1sIyxvDuq0dYYjRGkFSmqLYsS/Q==
-From: Marek Vasut <marex@nabladev.com>
-To: linux-usb@vger.kernel.org
-Cc: fabrice.gasnier@foss.st.com,
-	Pankaj Dev <pankaj.dev@st.com>,
-	Marek Vasut <marex@nabladev.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Christian Bruel <christian.bruel@foss.st.com>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+	id 1wzzfc-00000006Dgp-1fRJ;
+	Fri, 28 Aug 2026 16:43:12 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id CE0994190D;
+	Fri, 28 Aug 2026 16:43:11 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 019661F000E9;
+	Fri, 28 Aug 2026 16:43:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1787935391;
+	bh=sZhi+PUsJgvLChAVERL3VabJ3ZhgAoRELKqEbZMxnag=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=YlMEhQmZgmm8ZzYGm9XHtqqhGRckC4bAQ+2tUg5K9WWnx3i8IFHQErCPNXbQ/m8LA
+	 rDmNM+DRmpFH5oxKu9wxdRgNTMCysYsHE8CZlvITZVAVvbu1/FxU4lN3p5hXZNabiH
+	 WzVIXVrPJ5nDda2avE3yQSR+GTcyzdNQdWvus/iPvtteE2HxIvfQ+oto3Dg81f4RwV
+	 kVDOlthv20IolO1phhNMzZKAI5xu5nu4QTcG7WmTVMm07VOMe9fEU+lbFDCNEcqSzB
+	 B3TpR4V6b0Q3LaSucLQmMQe+YDRBVjzRrx/JchTfrRWuTFNC7Y5tuV2vn1dHe39oXJ
+	 KMMTS2owO02nQ==
+Date: Fri, 28 Aug 2026 17:43:02 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Michal Wilczynski <m.wilczynski@samsung.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	Rahul Kumar <rahul.kumar05@st.com>,
 	Rob Herring <robh@kernel.org>,
-	Rosen Penev <rosenp@gmail.com>,
-	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	devicetree@vger.kernel.org,
-	kernel@dh-electronics.com,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-stm32@st-md-mailman.stormreply.com
-Subject: [PATCH v4 4/4] arm64: dts: st: Add USB nodes on stm32mp251
-Date: Fri, 28 Aug 2026 17:55:48 +0200
-Message-ID: <20260828155647.353877-5-marex@nabladev.com>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20260828155647.353877-1-marex@nabladev.com>
-References: <20260828155647.353877-1-marex@nabladev.com>
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Robert Foss <rfoss@kernel.org>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>, Lee Jones <lee@kernel.org>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Emil Renner Berthing <kernel@esmil.dk>,
+	Hal Feng <hal.feng@starfivetech.com>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>,
+	Heiko Stuebner <heiko@sntech.de>, Paul Walmsley <pjw@kernel.org>,
+	Palmer Dabbelt <palmer@dabbelt.com>,
+	Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
+	Dominique Belhachemi <db@domibel.de>, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	dri-devel@lists.freedesktop.org, mfd@lists.linux.dev,
+	linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-riscv@lists.infradead.org,
+	Icenowy Zheng <uwu@icenowy.me>, Andy Yan <andyshrk@163.com>,
+	Marek Szyprowski <m.szyprowski@samsung.com>,
+	Maud Spierings <maudspierings@gocontroll.com>,
+	Graham Markall <hello@big-grey.co.uk>
+Subject: Re: [PATCH v2 01/15] dt-bindings: phy: Add
+ starfive,jh7110-inno-hdmi-phy
+Message-ID: <20260828-unnoticed-reputable-37156d7953a6@spud>
+References: <20260828-jh7110-clean-send-v2-0-331680c8b9d1@samsung.com>
+ <CGME20260828134815eucas1p2b2aabc17e9cc6346e5a93bde5c650958@eucas1p2.samsung.com>
+ <20260828-jh7110-clean-send-v2-1-331680c8b9d1@samsung.com>
 MIME-Version: 1.0
-X-Last-TLS-Session-Version: TLSv1.3
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260828_085726_043474_BFD914A7 
-X-CRM114-Status: GOOD (  10.47  )
+In-Reply-To: <20260828-jh7110-clean-send-v2-1-331680c8b9d1@samsung.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,143 +96,59 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2564073001128692479=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Pankaj Dev <pankaj.dev@st.com>
+--===============2564073001128692479==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="IjnpyshY8lzNsBCD"
+Content-Disposition: inline
 
-Add USB controller and PHY nodes to stm32mp251 DT. This includes two
-USB 2.0 FEMTO PHYs, USB 2.0 host controller and DWC3 DRD controller
-nodes.
+--IjnpyshY8lzNsBCD
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Signed-off-by: Pankaj Dev <pankaj.dev@st.com>
-Co-developed-by: Marek Vasut <marex@nabladev.com>
-Signed-off-by: Marek Vasut <marex@nabladev.com>
----
-Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>
-Cc: Christian Bruel <christian.bruel@foss.st.com>
-Cc: Conor Dooley <conor+dt@kernel.org>
-Cc: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Pankaj Dev <pankaj.dev@st.com>
-Cc: Rahul Kumar <rahul.kumar05@st.com>
-Cc: Rob Herring <robh@kernel.org>
-Cc: Rosen Penev <rosenp@gmail.com>
-Cc: Thinh Nguyen <Thinh.Nguyen@synopsys.com>
-Cc: Vinod Koul <vkoul@kernel.org>
-Cc: devicetree@vger.kernel.org
-Cc: kernel@dh-electronics.com
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
-Cc: linux-phy@lists.infradead.org
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: linux-usb@vger.kernel.org
----
-V2: - Fix up Sob/Cdb lines
-    - Move PHY into syscfg subnode
-    - Turn st,stm32mp25-syscfg into simple-mfd
-    - Use clock-cells = <1> to discern OSC and future PLL clock from the PHY
-V3: - Describe OHCI clock as the CMN clock
-    - Fix up Sob/Cdb lines further
-V4: - Cover USB2PHY2 SYSCFG_USB2PHY2TRIM2CR in reg property
-    - Undo simple-mfd conversion of syscfg node
-    - Split this from series arm64: dts: phy: st: usb: Add STM32MP2 USB support
-      https://lore.kernel.org/all/20260822074816.548662-1-marex@nabladev.com/
----
- arch/arm64/boot/dts/st/stm32mp251.dtsi | 63 ++++++++++++++++++++++++++
- 1 file changed, 63 insertions(+)
+On Fri, Aug 28, 2026 at 03:47:25PM +0200, Michal Wilczynski wrote:
 
-diff --git a/arch/arm64/boot/dts/st/stm32mp251.dtsi b/arch/arm64/boot/dts/st/stm32mp251.dtsi
-index 6e985f115b195..2a42f58dcb751 100644
---- a/arch/arm64/boot/dts/st/stm32mp251.dtsi
-+++ b/arch/arm64/boot/dts/st/stm32mp251.dtsi
-@@ -1746,6 +1746,47 @@ stmmac_axi_config_1: stmmac-axi-config {
- 				};
- 			};
- 
-+			usbh_ohci: usb@482e0000 {
-+				compatible = "st,stm32mp25-ohci", "generic-ohci";
-+				reg = <0x482e0000 0x1000>;
-+				access-controllers = <&rifsc 63>;
-+				clocks = <&usb2_phy1 1>, <&rcc CK_BUS_USB2OHCI>;
-+				interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>;
-+				phys = <&usb2_phy1>;
-+				phy-names = "usb";
-+				resets = <&rcc USBH_R>;
-+				status = "disabled";
-+			};
-+
-+			usbh_ehci: usb@482f0000 {
-+				compatible = "st,stm32mp25-ehci", "generic-ehci";
-+				reg = <0x482f0000 0x1000>;
-+				access-controllers = <&rifsc 63>;
-+				clocks = <&usb2_phy1 0>, <&rcc CK_BUS_USB2EHCI>;
-+				companion = <&usbh_ohci>;
-+				interrupts = <GIC_SPI 139 IRQ_TYPE_LEVEL_HIGH>;
-+				phys = <&usb2_phy1>;
-+				phy-names = "usb";
-+				resets = <&rcc USBH_R>;
-+				status = "disabled";
-+			};
-+
-+			usb3dr: usb@48300000 {
-+				compatible = "st,stm32mp25-dwc3";
-+				reg = <0x48300000 0x100000>;
-+				access-controllers = <&rifsc 66>;
-+				clocks = <&rcc CK_KER_USB2PHY2>,
-+					 <&rcc CK_BUS_USB3DR>,
-+					 <&rcc CK_KER_USB2PHY2>;
-+				clock-names = "ref", "bus_early", "suspend";
-+				interrupts = <GIC_SPI 228 IRQ_TYPE_LEVEL_HIGH>;
-+				phys = <&usb2_phy2>, <&combophy PHY_TYPE_USB3>;
-+				phy-names = "usb2-phy", "usb3-phy";
-+				resets = <&rcc USB3DR_R>;
-+				st,syscfg = <&syscfg 0x4800>;
-+				status = "disabled";
-+			};
-+
- 			pcie_ep: pcie-ep@48400000 {
- 				compatible = "st,stm32mp25-pcie-ep";
- 				reg = <0x48400000 0x100000>,
-@@ -2005,6 +2046,28 @@ syscfg: syscon@44230000 {
- 			compatible = "st,stm32mp25-syscfg", "syscon";
- 			reg = <0x44230000 0x10000>;
- 			#clock-cells = <0>;
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			usb2_phy1: phy@2400 {
-+				compatible = "st,stm32mp25-usb2phy1";
-+				reg = <0x2400 0x24>;
-+				#phy-cells = <0>;
-+				#clock-cells = <1>;
-+				clocks = <&rcc CK_KER_USB2PHY1>;
-+				resets = <&rcc USB2PHY1_R>;
-+				status = "disabled";
-+			};
-+
-+			usb2_phy2: phy@2800 {
-+				compatible = "st,stm32mp25-usb2phy2";
-+				reg = <0x2800 0x10>;
-+				#phy-cells = <0>;
-+				#clock-cells = <1>;
-+				clocks = <&rcc CK_KER_USB2PHY2EN>;
-+				resets = <&rcc USB2PHY2_R>;
-+				status = "disabled";
-+			};
- 		};
- 
- 		pinctrl: pinctrl@44240000 {
--- 
-2.53.0
+> +  clock-names:
+> +    const: refoclk
 
+> +  clock-output-names:
+> +    const: hdmi_pclk
+
+Can you drop the obvious "clk" suffixes from these please? Although,
+with one input and one output clock, what's the point of the -names
+proeprties anyway?
+
+Cheers,
+Conor.
+
+
+--IjnpyshY8lzNsBCD
+Content-Type: application/pgp-signature; name=signature.asc
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCapG6lQAKCRB4tDGHoIJi
+0sm8AP4oliWIKMzgp8Ut3A394llDZYxdfr4HRcVVe7khXDrtiQEAnHjEzjNSnHhx
+0TyqrToY++PvSu1CTCWyTFL6ZUf3FAU=
+=a1Yl
+-----END PGP SIGNATURE-----
+
+--IjnpyshY8lzNsBCD--
+
+
+--===============2564073001128692479==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============2564073001128692479==--
+
