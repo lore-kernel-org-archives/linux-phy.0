@@ -4,70 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 122B2C61DD6
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Aug 2026 09:19:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F13CC61DB9
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Aug 2026 09:30:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=HpGXQuBeDY9kfTO2mrKnx1uxgNw9H85F4/RqhzHHRFY=; b=eNWX3W/9d00mfa
-	CTpbrjG3mW+Zj1uyIj1gGi11Dc63Magc92Tj+jKiSAFzOarwwhA+VoP3d17DmUWIUJG/f9Fssa53Y
-	c5Al9qd4Meg7AMRWP2oX+PY8aUACt+s4JoMXW7+wpS/Hv8DhC84DKzDMErcL5gNXQAkPEHXJxurox
-	ILQK9L4ATOqanZ9Pqfeq1lEb6TcyXaCT8qT3hCHh67SN7LZWfQb9vfV6uarPYKggYZfxblogkrKY+
-	AD4lAkaOazO2Ae4EswDDxYqGm9zcKll4ramnE+5upW+mmgyZ6MeTU1nrPJsvk0Dejx1omrfPGl4DS
-	jwBtd+OnfllKI0OPldgQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Xgfcz062Strp1FQdYtbAU4lHKTKriWTmNtD6CqeS5U8=; b=2jx9wz9t9q+1YL
+	2oCQ9IndRXFrJjGQHjMlWEt3+W0QvUt+YG9jRpulPmJQEcq+i8eVGAkw1mlmDuDoUaK68JS4fcJFi
+	qdIj10rcw96/RCT/3OBOb9FDNmq7FGV4XkeFSAHGJMhkllepfw4P2YAqphEk6PGdUTydugiKeBVT/
+	h3Vc79+u6d3k1Z5wWuQdi5H1H6el/L/HJp3tJAHfRFtyzZxwU34ljvcfa4WuqruNsVSjUQ4EpJOrq
+	5IHs9fZvV/wWv8pAAlDsvyjtq6ov6mAxbFGmKUK+CAxtqVN5kfrAfxIJyR7OSR+DKSKzimcz3OIJ2
+	A7POEasPnGccQ/tHupuw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzsju-00000005SOa-38Zi;
-	Fri, 28 Aug 2026 09:19:10 +0000
-Received: from smtp81.cstnet.cn ([159.226.251.81] helo=cstnet.cn)
+	id 1wzsum-00000005Tlh-3uXp;
+	Fri, 28 Aug 2026 09:30:24 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzsjl-00000005SJN-1aNH
+	id 1wzsum-00000005TlY-03xp
 	for linux-phy@lists.infradead.org;
-	Fri, 28 Aug 2026 09:19:09 +0000
-Received: from localhost.localdomain (unknown [111.196.241.250])
-	by APP-03 (Coremail) with SMTP id rQCowAAXGzmCUpFqrkh1Bg--.64313S2;
-	Fri, 28 Aug 2026 17:18:58 +0800 (CST)
-From: Pengpeng Hou <pengpeng@iscas.ac.cn>
-To: Robert Marko <robert.marko@sartura.hr>,
-	Luka Perkov <luka.perkov@sartura.hr>
-Cc: Pengpeng Hou <pengpeng@iscas.ac.cn>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [RFC PATCH] phy: qcom: ipq4019-usb: Propagate reset operation failures
-Date: Fri, 28 Aug 2026 17:18:56 +0800
-Message-ID: <20260828091857.8581-1-pengpeng@iscas.ac.cn>
-X-Mailer: git-send-email 2.50.1
-MIME-Version: 1.0
-X-CM-TRANSID: rQCowAAXGzmCUpFqrkh1Bg--.64313S2
-X-Coremail-Antispam: 1UD129KBjvJXoWxXF4rCw17XrWkGFykXw45trb_yoW5WFyDpr
-	W8GFWft3ZYyw4fWa17tw45AF1rWFW3tr97t3yS9ayrCFnrXw4jk3WxtF90gF95GrykGFW5
-	GFs5JFWruF13urDanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDU0xBIdaVrnRJUUU9F14x267AKxVW8JVW5JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
-	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
-	1l84ACjcxK6xIIjxv20xvE14v26F1j6w1UM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4U
-	JVWxJr1l84ACjcxK6I8E87Iv67AKxVW0oVCq3wA2z4x0Y4vEx4A2jsIEc7CjxVAFwI0_Gc
-	CE3s1le2I262IYc4CY6c8Ij28IcVAaY2xG8wAqx4xG64xvF2IEw4CE5I8CrVC2j2WlYx0E
-	2Ix0cI8IcVAFwI0_JF0_Jw1lYx0Ex4A2jsIE14v26r1j6r4UMcvjeVCFs4IE7xkEbVWUJV
-	W8JwACjcxG0xvY0x0EwIxGrwACjI8F5VA0II8E6IAqYI8I648v4I1lFIxGxcIEc7CjxVA2
-	Y2ka0xkIwI1lc7CjxVAaw2AFwI0_Jw0_GFyl42xK82IYc2Ij64vIr41l4I8I3I0E4IkC6x
-	0Yz7v_Jr0_Gr1lx2IqxVAqx4xG67AKxVWUJVWUGwC20s026x8GjcxK67AKxVWUGVWUWwC2
-	zVAF1VAY17CE14v26r1q6r43MIIYrxkI7VAKI48JMIIF0xvE2Ix0cI8IcVAFwI0_JFI_Gr
-	1lIxAIcVC0I7IYx2IY6xkF7I0E14v26F4j6r4UJwCI42IY6xAIw20EY4v20xvaj40_Jr0_
-	JF4lIxAIcVC2z280aVAFwI0_Jr0_Gr1lIxAIcVC2z280aVCY1x0267AKxVW8JVW8JrUvcS
-	sGvfC2KfnxnUUI43ZEXa7VUbtxhJUUUUU==
-X-Originating-IP: [111.196.241.250]
-X-CM-SenderInfo: pshqw1xhqjqxpvfd2hldfou0/
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260828_021901_842746_C4A0492F 
-X-CRM114-Status: GOOD (  10.91  )
+	Fri, 28 Aug 2026 09:30:24 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id AEF4540B4A;
+	Fri, 28 Aug 2026 09:30:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 44AE81F00A3A;
+	Fri, 28 Aug 2026 09:30:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1787909423;
+	bh=ZQBSYhyQKFNF5YVnTy17JYPKmVsYvRWwjcxs8UxPMeM=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=c51TWQ6AXwyMKufDhX0Y0m9RzUpeGj7Cod0WTbT4tX/HodooGiC3d2Ny7N/XUb1QX
+	 5U1OIH4hjXefmSr305mbJ9jaezIZ8S4NekFNVNmPtwwgNuJAM2bYJnabNTs0nh4L6r
+	 3Su/xBGKCTLPTQitEo8oT9LX12job5exz0DvBhTD+vX1kwE9AYKI0pbryDhjUNXtGX
+	 /r4w7FAET3nklx26pps4/NzKJxl++BywF1P+vvgzxkU8B8YOMPDqIQD2KNaUK+/FR5
+	 Sp6ySdMcTXU+xLpo2PWDwT3juVGq6GxS7ca8gAQNjcbFjQ0I/d5+Q7JB84SJ5yECbx
+	 7IwjDNncLZfDg==
+From: sashiko-bot@kernel.org
+Subject: Re: [RFC PATCH] phy: qcom: ipq4019-usb: Propagate reset operation
+ failures
+To: "Pengpeng Hou" <pengpeng@iscas.ac.cn>
+Cc: neil.armstrong@linaro.org, vkoul@kernel.org, olteanv@gmail.com, linux-phy@lists.infradead.org
+In-Reply-To: <20260828091857.8581-1-pengpeng@iscas.ac.cn>
+References: <20260828091857.8581-1-pengpeng@iscas.ac.cn>
+Date: Fri, 28 Aug 2026 09:30:22 +0000
+Message-Id: <20260828093023.44AE81F00A3A@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,120 +62,52 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The IPQ4019 USB PHY power operations ignore reset assertion and
-deassertion failures.  Their callers can therefore publish a PHY power
-transition after the reset controller rejected part of it.
-
-Propagate each reset error and restore the reset that was changed
-earlier in the same HS transition where possible.  This is an RFC
-because a failed reset operation can leave hardware state uncertain;
-feedback is requested on whether the proposed best-effort rollback
-matches these PHYs.
-
-The issue was identified via static analysis and manually reviewed.
-
-Assisted-by: LLM
-Signed-off-by: Pengpeng Hou <pengpeng@iscas.ac.cn>
----
- drivers/phy/qualcomm/phy-qcom-ipq4019-usb.c | 46 ++++++++++++++++-----
- 1 file changed, 36 insertions(+), 10 deletions(-)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-ipq4019-usb.c b/drivers/phy/qualcomm/phy-qcom-ipq4019-usb.c
-index da6f290af722..8c1834cd6a8e 100644
---- a/drivers/phy/qualcomm/phy-qcom-ipq4019-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-ipq4019-usb.c
-@@ -30,7 +30,12 @@ static int ipq4019_ss_phy_power_off(struct phy *_phy)
- {
- 	struct ipq4019_usb_phy *phy = phy_get_drvdata(_phy);
- 
--	reset_control_assert(phy->por_rst);
-+	int ret;
-+
-+	ret = reset_control_assert(phy->por_rst);
-+	if (ret)
-+		return ret;
-+
- 	msleep(10);
- 
- 	return 0;
-@@ -40,11 +45,13 @@ static int ipq4019_ss_phy_power_on(struct phy *_phy)
- {
- 	struct ipq4019_usb_phy *phy = phy_get_drvdata(_phy);
- 
--	ipq4019_ss_phy_power_off(_phy);
-+	int ret;
- 
--	reset_control_deassert(phy->por_rst);
-+	ret = ipq4019_ss_phy_power_off(_phy);
-+	if (ret)
-+		return ret;
- 
--	return 0;
-+	return reset_control_deassert(phy->por_rst);
- }
- 
- static const struct phy_ops ipq4019_usb_ss_phy_ops = {
-@@ -56,10 +63,20 @@ static int ipq4019_hs_phy_power_off(struct phy *_phy)
- {
- 	struct ipq4019_usb_phy *phy = phy_get_drvdata(_phy);
- 
--	reset_control_assert(phy->por_rst);
-+	int ret;
-+
-+	ret = reset_control_assert(phy->por_rst);
-+	if (ret)
-+		return ret;
-+
- 	msleep(10);
- 
--	reset_control_assert(phy->srif_rst);
-+	ret = reset_control_assert(phy->srif_rst);
-+	if (ret) {
-+		reset_control_deassert(phy->por_rst);
-+		return ret;
-+	}
-+
- 	msleep(10);
- 
- 	return 0;
-@@ -69,14 +86,23 @@ static int ipq4019_hs_phy_power_on(struct phy *_phy)
- {
- 	struct ipq4019_usb_phy *phy = phy_get_drvdata(_phy);
- 
--	ipq4019_hs_phy_power_off(_phy);
-+	int ret;
-+
-+	ret = ipq4019_hs_phy_power_off(_phy);
-+	if (ret)
-+		return ret;
-+
-+	ret = reset_control_deassert(phy->srif_rst);
-+	if (ret)
-+		return ret;
- 
--	reset_control_deassert(phy->srif_rst);
- 	msleep(10);
- 
--	reset_control_deassert(phy->por_rst);
-+	ret = reset_control_deassert(phy->por_rst);
-+	if (ret)
-+		reset_control_assert(phy->srif_rst);
- 
--	return 0;
-+	return ret;
- }
- 
- static const struct phy_ops ipq4019_usb_hs_phy_ops = {
--- 
-2.43.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gVGhlIG5ld2x5IGlu
+dHJvZHVjZWQgZXJyb3Igcm9sbGJhY2sgaW4gYGlwcTQwMTlfaHNfcGh5X3Bvd2VyX29mZigpYCBp
+bmNvcnJlY3RseSBkZWFzc2VydHMgYHBvcl9yc3RgIHdoZW4gY2FsbGVkIGZyb20gYGlwcTQwMTlf
+aHNfcGh5X3Bvd2VyX29uKClgLCBjb3JydXB0aW5nIHRoZSBQSFkgc3RhdGUuCi0tCgpjb21taXQg
+Y2Y2Y2ZlYjBhNjBhNDMxZmM3MWFjOTNkZTY3MWEyZmNmOTRkMDVkYwpBdXRob3I6IFBlbmdwZW5n
+IEhvdSA8cGVuZ3BlbmdAaXNjYXMuYWMuY24+CgpwaHk6IHFjb206IGlwcTQwMTktdXNiOiBQcm9w
+YWdhdGUgcmVzZXQgb3BlcmF0aW9uIGZhaWx1cmVzCiAgICAKVGhpcyBjb21taXQgcHJvcGFnYXRl
+cyByZXNldCBvcGVyYXRpb24gZmFpbHVyZXMgaW4gdGhlIElQUTQwMTkgVVNCIFBIWSBkcml2ZXIK
+YW5kIGF0dGVtcHRzIGEgYmVzdC1lZmZvcnQgcm9sbGJhY2sgaWYgYW4gb3BlcmF0aW9uIGZhaWxz
+LgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20taXBxNDAxOS11
+c2IuYyBiL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLWlwcTQwMTktdXNiLmMKPiBpbmRl
+eCBkYTZmMjkwYWY3MjIxLi44YzE4MzRjZDZhOGU5IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5
+L3F1YWxjb21tL3BoeS1xY29tLWlwcTQwMTktdXNiLmMKPiArKysgYi9kcml2ZXJzL3BoeS9xdWFs
+Y29tbS9waHktcWNvbS1pcHE0MDE5LXVzYi5jCgpbIC4uLiBdCgo+IEBAIC01NiwxMCArNjMsMjAg
+QEAgc3RhdGljIGludCBpcHE0MDE5X2hzX3BoeV9wb3dlcl9vZmYoc3RydWN0IHBoeSAqX3BoeSkK
+PiAgewo+ICAJc3RydWN0IGlwcTQwMTlfdXNiX3BoeSAqcGh5ID0gcGh5X2dldF9kcnZkYXRhKF9w
+aHkpOwo+ICAKPiAtCXJlc2V0X2NvbnRyb2xfYXNzZXJ0KHBoeS0+cG9yX3JzdCk7Cj4gKwlpbnQg
+cmV0Owo+ICsKPiArCXJldCA9IHJlc2V0X2NvbnRyb2xfYXNzZXJ0KHBoeS0+cG9yX3JzdCk7Cj4g
+KwlpZiAocmV0KQo+ICsJCXJldHVybiByZXQ7Cj4gKwo+ICAJbXNsZWVwKDEwKTsKPiAgCj4gLQly
+ZXNldF9jb250cm9sX2Fzc2VydChwaHktPnNyaWZfcnN0KTsKPiArCXJldCA9IHJlc2V0X2NvbnRy
+b2xfYXNzZXJ0KHBoeS0+c3JpZl9yc3QpOwo+ICsJaWYgKHJldCkgewo+ICsJCXJlc2V0X2NvbnRy
+b2xfZGVhc3NlcnQocGh5LT5wb3JfcnN0KTsKPiArCQlyZXR1cm4gcmV0Owo+ICsJfQo+ICsKPiAg
+CW1zbGVlcCgxMCk7Cj4gIAo+ICAJcmV0dXJuIDA7Cj4gQEAgLTY5LDE0ICs4NiwyMyBAQCBzdGF0
+aWMgaW50IGlwcTQwMTlfaHNfcGh5X3Bvd2VyX29uKHN0cnVjdCBwaHkgKl9waHkpCj4gIHsKPiAg
+CXN0cnVjdCBpcHE0MDE5X3VzYl9waHkgKnBoeSA9IHBoeV9nZXRfZHJ2ZGF0YShfcGh5KTsKPiAg
+Cj4gLQlpcHE0MDE5X2hzX3BoeV9wb3dlcl9vZmYoX3BoeSk7Cj4gKwlpbnQgcmV0Owo+ICsKPiAr
+CXJldCA9IGlwcTQwMTlfaHNfcGh5X3Bvd2VyX29mZihfcGh5KTsKPiArCWlmIChyZXQpCj4gKwkJ
+cmV0dXJuIHJldDsKCltTZXZlcml0eTogTWVkaXVtXQpXaGVuIGlwcTQwMTlfaHNfcGh5X3Bvd2Vy
+X29uKCkgY2FsbHMgaXBxNDAxOV9oc19waHlfcG93ZXJfb2ZmKCkgdG8gcHVsc2UgdGhlCnJlc2V0
+IGxpbmVzLCBpdCBzdGFydHMgZnJvbSBhbiBhbHJlYWR5LW9mZiBzdGF0ZSAod2hlcmUgcG9yX3Jz
+dCBpcyBhc3NlcnRlZCkuCgpJZiByZXNldF9jb250cm9sX2Fzc2VydChwaHktPnNyaWZfcnN0KSBm
+YWlscyBpbnNpZGUgaXBxNDAxOV9oc19waHlfcG93ZXJfb2ZmKCksCnRoZSByb2xsYmFjayB3aWxs
+IHVuY29uZGl0aW9uYWxseSBjYWxsIHJlc2V0X2NvbnRyb2xfZGVhc3NlcnQocGh5LT5wb3JfcnN0
+KS4KCkRvZXMgdGhpcyBpbmNvcnJlY3RseSBhc3N1bWUgdGhlIGluaXRpYWwgc3RhdGUgd2FzIG9u
+LCBsZWF2aW5nIHRoZSBoYXJkd2FyZSBpbgphbiBpbmNvbnNpc3RlbnQgc3RhdGUgKHBvcl9yc3Qg
+ZGVhc3NlcnRlZCwgc3JpZl9yc3QgYXNzZXJ0ZWQpIGluc3RlYWQgb2Ygc2FmZWx5CnJlbWFpbmlu
+ZyBpbiBhIGNsZWFuIG9mZiBzdGF0ZT8KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczov
+L3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA4MjgwOTE4NTcuODU4MS0xLXBlbmdwZW5nQGlz
+Y2FzLmFjLmNuP3BhcnQ9MQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtcGh5Cg==
