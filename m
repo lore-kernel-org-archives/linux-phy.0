@@ -4,89 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9E85C61DCB
-	for <linux-phy@archiver.kernel.org>; Sat, 29 Aug 2026 18:54:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E039C61DD9
+	for <linux-phy@archiver.kernel.org>; Sun, 30 Aug 2026 13:14:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:Subject:References:Cc:To:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BoXuMbFdafgD6ReTTRwuCpfEpbVjAXbKqhhK8ZN8o5Y=; b=PFxNqrDm2Rc5jv
-	/62f/VnSU1rjBzosJYb2a5egGYlsHP/ApMNabUp627e08O4YiIcM5EXh1e4lPoHEzi60EJGG9eVK3
-	QZTZ15Q6wkRYLJo9IuIQ1Ogq++wFauqC/J6A1iIEOwK0gO6vEJ/NXDqgY50AWFD1topjONkarIFMA
-	jr8fC+Hxii47CLsfH6GcATM364NqEiQCGMmUKwshM3t5VSyui82NcZXARaTnvdCsHNSS4u9L0+SqE
-	JkuugXI/WMjYr1RYten4ppKq4BzHJvbjlMXFemhlHSk92HS4jGnKsyT3QvxLXoZyw2+dbaWLdvtBS
-	zQLPhqxAsbeyrqPHgJsQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kP3hxXOuwB+u9tQdPvYDe8rlkMduwhkMvP1VBxQBbxw=; b=0c3d/jMHfg1FIf
+	iGa/GY464T7iQjhXiiFSupBYDcoudHyCFhBfGjw7VHEChHfN2CwU9WdHo//RkDsz9zgd41z3CM4bP
+	RRR1//aNeSl0IBSor9J+ogrkP6iflrK8udLZoPfFLNPvLw9N6bT0Hu5N0ScbBe+QADnmOgWwYE4er
+	LaxPF/ULpJBE8Hdh7EK5VGM5b3xa4iezTHwMgV8yoaeMkDVfBgIgP1QPokm5fyfZmH7Wznexehs/y
+	+s3hsBiM20A4mVYZbwJ+4ZBqN1/5u+M2WznlF00RNHNNyHReNGP6patZP0Xhnbd3R0Dce56s0bDr5
+	cZFWdQWPHg8KLUbaJH4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x0OBz-00000007Dnh-2dbc;
-	Sat, 29 Aug 2026 18:54:15 +0000
-Received: from email3.ecloud.global ([2a01:4f9:3a:1386::2] helo=mail3.ecloud.global)
+	id 1x0fN3-00000007kFt-3qUt;
+	Sun, 30 Aug 2026 13:14:49 +0000
+Received: from smtp81.cstnet.cn ([159.226.251.81] helo=cstnet.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x0OBw-00000007Dn6-1igS;
-	Sat, 29 Aug 2026 18:54:14 +0000
-Received: from authenticated-user (mail3.ecloud.global [127.0.0.1])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
-	(No client certificate requested)
-	by mail3.ecloud.global (Postfix) with ESMTPSA id 9E0E9883DCA;
-	Sat, 29 Aug 2026 18:54:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=murena.io; s=mail3;
-	t=1788029646;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=ehcjoluw1ltFHOACxESvJjxgUUGWa+g0poTQdMIRy1U=;
-	b=nkuOAMzBmGj+QW/LFVmCluA3XLtxasCrezDA5Gp8iboVAS5YbdiSaS4tPc2rRzEKDjCYkc
-	OSR5IyCbOTx5S9CuiWjcb9S2khgdusyJZQcyxiaFh2LVNDVnRNcG4AowmJimuO9OCmGUhM
-	E8ltcGFsoumAKU8e9XDn5NFnMzowtmM=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=murena.io;
-	s=mail3; t=1788029646;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=ehcjoluw1ltFHOACxESvJjxgUUGWa+g0poTQdMIRy1U=;
-	b=SUQju1a5AyeEzsWtU11p1zJQg4cmekzyHbQn978fM7Z94OJlpQkUWJ1Kf5ziFCMASSAE+q
-	g/465/MYThLZ7f2m9lYFLAPJJodxWKBQD4qtbleprFGCuTMdrW6whmVQqu6bSatvl+Om8B
-	XOOSzbyrTeaRUnxvI88HOy9celngZRo=
-ARC-Seal: i=1; s=mail3; d=murena.io; t=1788029646; a=rsa-sha256; cv=none;
-	b=4u//Z/BtuPsOYlapubZ5m21WKQAJm/nJb66dH3KaNyha5i+ennk/ENAKtj8HINSK53tyn4
-	5JPH3HWfg734eML0ysqPRxleYyjhd60c8M3yyDQ2xXlkyHVdWJdM/relDgP30qvuYkmy/5
-	E+ouPdROr+TNqlt/XVODzbVbfkCftOc=
-ARC-Authentication-Results: i=1;
-	mail3.ecloud.global;
-	auth=pass smtp.mailfrom=maud_spierings@murena.io
-Message-ID: <0ccb4168-ff88-459c-972d-3c091c155db2@murena.io>
-Date: Sat, 29 Aug 2026 20:54:03 +0200
+	id 1x0fN1-00000007kFG-2lEd
+	for linux-phy@lists.infradead.org;
+	Sun, 30 Aug 2026 13:14:49 +0000
+Received: from localhost.localdomain (unknown [111.196.241.250])
+	by APP-03 (Coremail) with SMTP id rQCowADHzz3FLJRqpuyaBg--.25859S2;
+	Sun, 30 Aug 2026 21:14:45 +0800 (CST)
+From: Pengpeng Hou <pengpeng@iscas.ac.cn>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Pengpeng Hou <pengpeng@iscas.ac.cn>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH] phy: qcom: m31: propagate reset errors
+Date: Sun, 30 Aug 2026 21:14:42 +0800
+Message-ID: <20260830131442.3025-1-pengpeng@iscas.ac.cn>
+X-Mailer: git-send-email 2.50.1
 MIME-Version: 1.0
-To: m.wilczynski@samsung.com
-Cc: Laurent.pinchart@ideasonboard.com, airlied@gmail.com, alex@ghiti.fr,
- andrzej.hajda@intel.com, andy.yan@rock-chips.com, andyshrk@163.com,
- aou@eecs.berkeley.edu, bmasney@redhat.com, conor+dt@kernel.org,
- conor@kernel.org, db@domibel.de, devicetree@vger.kernel.org,
- dri-devel@lists.freedesktop.org, hal.feng@starfivetech.com, heiko@sntech.de,
- hello@big-grey.co.uk, jernej.skrabec@gmail.com, jonas@kwiboo.se,
- kernel@esmil.dk, krzk+dt@kernel.org, lee@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-riscv@lists.infradead.org, linux-rockchip@lists.infradead.org,
- luca.ceresoli@bootlin.com, m.szyprowski@samsung.com,
- maarten.lankhorst@linux.intel.com, maudspierings@gocontroll.com,
- mfd@lists.linux.dev, mripard@kernel.org, mturquette@baylibre.com,
- neil.armstrong@linaro.org, p.zabel@pengutronix.de, palmer@dabbelt.com,
- pjw@kernel.org, rfoss@kernel.org, robh@kernel.org, sboyd@kernel.org,
- simona@ffwll.ch, tzimmermann@suse.de, uwu@icenowy.me, vkoul@kernel.org
-References: <20260828-jh7110-clean-send-v2-13-331680c8b9d1@samsung.com>
-Subject: Re: [PATCH v2 13/15] phy: starfive: Add jh7110-inno-hdmi-phy driver
-Content-Language: en-US
-From: Maud Spierings <maud_spierings@murena.io>
-In-Reply-To: <20260828-jh7110-clean-send-v2-13-331680c8b9d1@samsung.com>
+X-CM-TRANSID: rQCowADHzz3FLJRqpuyaBg--.25859S2
+X-Coremail-Antispam: 1UD129KBjvJXoW7CFW7tw1DJry7tryfCF4rXwb_yoW8Xr4kpr
+	WDWr9FyFW8Zayfta1xAw4aqF13Wan3tr9rKr47C3yrZ3W3Jr47uFyavFy5XF4rtrs7C3ya
+	gr4jyFyFkF1Fkw7anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUUvj14x267AKxVW8JVW5JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
+	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
+	1l84ACjcxK6xIIjxv20xvE14v26r4j6ryUM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26F4j
+	6r4UJwA2z4x0Y4vEx4A2jsIE14v26F4UJVW0owA2z4x0Y4vEx4A2jsIEc7CjxVAFwI0_Cr
+	1j6rxdM2AIxVAIcxkEcVAq07x20xvEncxIr21l5I8CrVACY4xI64kE6c02F40Ex7xfMcIj
+	6xIIjxv20xvE14v26r126r1DMcIj6I8E87Iv67AKxVW8JVWxJwAm72CE4IkC6x0Yz7v_Jr
+	0_Gr1lF7xvr2IYc2Ij64vIr41lF7I21c0EjII2zVCS5cI20VAGYxC7MxkF7I0En4kS14v2
+	6r126r1DMxAIw28IcxkI7VAKI48JMxC20s026xCaFVCjc4AY6r1j6r4UMI8I3I0E5I8CrV
+	AFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAFwI0_JrI_JrWlx4CE17CEb7AF67AKxVWUtVW8ZwCI
+	c40Y0x0EwIxGrwCI42IY6xIIjxv20xvE14v26r1I6r4UMIIF0xvE2Ix0cI8IcVCY1x0267
+	AKxVWxJVW8Jr1lIxAIcVCF04k26cxKx2IYs7xG6r1j6r1xMIIF0xvEx4A2jsIE14v26r4j
+	6F4UMIIF0xvEx4A2jsIEc7CjxVAFwI0_Gr1j6F4UJbIYCTnIWIevJa73UjIFyTuYvjfUeT
+	mhDUUUU
+X-Originating-IP: [111.196.241.250]
+X-CM-SenderInfo: pshqw1xhqjqxpvfd2hldfou0/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260829_115412_665575_BFE0BBA3 
-X-CRM114-Status: GOOD (  15.19  )
+X-CRM114-CacheID: sfid-20260830_061448_073268_89B4C04A 
+X-CRM114-Status: UNSURE (   8.27  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,223 +78,64 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Michal,
+m31usb_phy_init() enables the regulator and clock, then performs an
+unchecked
+reset pulse before reporting that the PHY powered on.
 
-Small request for an eventual v3
+Return reset-controller errors and release the clock and regulator that
+were
+enabled for the failed power-on attempt.
 
-> Add the HDMI PHY driver for the StarFive JH7110.
-> 
-> This driver binds to the starfive,jh7110-inno-hdmi-phy node and
-> gets its regmap from the parent. It has no dependencies on voutcrg, only
-> on its refoclk (xin24m), which breaks the probe-time circular
-> dependency.
-> 
-> This driver provides two main functions:
->  - Clock Provider: It registers clk_ops to provide the variable pixel
->    clock (hdmi_pclk). The .set_rate operation configures the Pre-PLL
->    registers (0x1a0+) based on the requested rate.
-> 
->  - PHY Provider: It registers phy_ops for the controller. The .power_on
->    op configures and enables the Post-PLL and other analog blocks (BIAS,
->    LDO, Serializer, etc.).
-> 
-> The JH7110 instantiates the same Innosilicon IP as the Rockchip RK3328,
-> with the PHY register block shifted by 0x100 because it sits behind the
-> HDMI controller in the shared register space. The pre-PLL programming
-> therefore comes from the common Innosilicon helpers; this driver adds
-> the JH7110 pixel clock table, the post-PLL and the analog configuration.
-> 
-> Co-developed-by: Dominique Belhachemi <db@domibel.de>
-> Signed-off-by: Dominique Belhachemi <db@domibel.de>
-> Signed-off-by: Michal Wilczynski <m.wilczynski@samsung.com>
-> ---
->  drivers/phy/starfive/Kconfig                |  20 +
->  drivers/phy/starfive/Makefile               |   1 +
->  drivers/phy/starfive/phy-jh7110-inno-hdmi.c | 567 ++++++++++++++++++++++++++++
->  3 files changed, 588 insertions(+)
-> 
+Fixes: 08e49af50701 ("phy: qcom: Introduce M31 USB PHY driver")
+Signed-off-by: Pengpeng Hou <pengpeng@iscas.ac.cn>
+---
+ drivers/phy/qualcomm/phy-qcom-m31.c | 15 +++++++++++++--
+ 1 file changed, 13 insertions(+), 2 deletions(-)
 
-[snip]
+diff --git a/drivers/phy/qualcomm/phy-qcom-m31.c b/drivers/phy/qualcomm/phy-qcom-m31.c
+index 168ea980fda03..f46c7ec87496a 100644
+--- a/drivers/phy/qualcomm/phy-qcom-m31.c
++++ b/drivers/phy/qualcomm/phy-qcom-m31.c
+@@ -228,9 +228,14 @@ static int m31usb_phy_init(struct phy *phy)
+ 	}
+ 
+ 	/* Perform phy reset */
+-	reset_control_assert(qphy->reset);
++	ret = reset_control_assert(qphy->reset);
++	if (ret)
++		goto disable_clk;
++
+ 	udelay(5);
+-	reset_control_deassert(qphy->reset);
++	ret = reset_control_deassert(qphy->reset);
++	if (ret)
++		goto disable_clk;
+ 
+ 	/* configure for ULPI mode if requested */
+ 	if (qphy->ulpi_mode)
+@@ -247,6 +252,12 @@ static int m31usb_phy_init(struct phy *phy)
+ 	}
+ 
+ 	return 0;
++
++disable_clk:
++	clk_disable_unprepare(qphy->clk);
++	regulator_disable(qphy->vreg);
++
++	return ret;
+ }
+ 
+ static int m31usb_phy_shutdown(struct phy *phy)
 
-> +
-> +static const struct inno_hdmi_phy_pre_pll_config pre_pll_cfg_table[] = {
-> +	{ 25175000, 25175000, 1, 100, 2, 3, 3, 12, 3, 3, 4, 0, 0xF55555 },
-> +	{ 25200000, 25200000, 1, 100, 2, 3, 3, 12, 3, 3, 4, 0, 0 },
-> +	{ 27000000, 27000000, 1, 90, 3, 2, 2, 10, 3, 3, 4, 0, 0 },
-> +	{ 27027000, 27027000, 1, 90, 3, 2, 2, 10, 3, 3, 4, 0, 0x170A3D },
-> +	{ 28320000, 28320000, 1, 28, 2, 1, 1, 3, 0, 3, 4, 0, 0x51EB85 },
-> +	{ 30240000, 30240000, 1, 30, 2, 1, 1, 3, 0, 3, 4, 0, 0x3D70A3 },
-> +	{ 31500000, 31500000, 1, 31, 2, 1, 1, 3, 0, 3, 4, 0, 0x7FFFFF },
-> +	{ 33750000, 33750000, 1, 33, 2, 1, 1, 3, 0, 3, 4, 0, 0xCFFFFF },
-> +	{ 36000000, 36000000, 1, 36, 2, 1, 1, 3, 0, 3, 4, 0, 0 },
-> +	{ 40000000, 40000000, 1, 80, 2, 2, 2, 12, 2, 2, 2, 0, 0 },
-> +	{ 46970000, 46970000, 1, 46, 2, 1, 1, 3, 0, 3, 4, 0, 0xF851EB },
-> +	{ 49500000, 49500000, 1, 49, 2, 1, 1, 3, 0, 3, 4, 0, 0x7FFFFF },
-> +	{ 49000000, 49000000, 1, 49, 2, 1, 1, 3, 0, 3, 4, 0, 0 },
-> +	{ 50000000, 50000000, 1, 50, 2, 1, 1, 3, 0, 3, 4, 0, 0 },
-> +	{ 54000000, 54000000, 1, 54, 2, 1, 1, 3, 0, 3, 4, 0, 0 },
-> +	{ 54054000, 54054000, 1, 54, 2, 1, 1, 3, 0, 3, 4, 0, 0x0DD2F1 },
-> +	{ 57284000, 57284000, 1, 57, 2, 1, 1, 3, 0, 3, 4, 0, 0x48B439 },
-> +	{ 58230000, 58230000, 1, 58, 2, 1, 1, 3, 0, 3, 4, 0, 0x3AE147 },
-> +	{ 59341000, 59341000, 1, 59, 2, 1, 1, 3, 0, 3, 4, 0, 0x574BC6 },
-> +	{ 59400000, 59400000, 1, 99, 3, 1, 1, 1, 3, 3, 4, 0, 0 },
-> +	{ 65000000, 65000000, 1, 130, 2, 2, 2, 12, 0, 2, 2, 0, 0 },
-> +	{ 68250000, 68250000, 1, 68, 2, 1, 1, 3, 0, 3, 4, 0, 0x3FFFFF },
-> +	{ 71000000, 71000000, 1, 71, 2, 1, 1, 3, 0, 3, 4, 0, 0 },
-> +	{ 74176000, 74176000, 1, 98, 1, 2, 2, 1, 2, 3, 4, 0, 0xE6AE6B },
-> +	{ 74250000, 74250000, 1, 99, 1, 2, 2, 1, 2, 3, 4, 0, 0 },
-> +	{ 75000000, 75000000, 1, 75, 2, 1, 1, 3, 0, 3, 4, 0, 0 },
-> +	{ 78750000, 78750000, 1, 78, 2, 1, 1, 3, 0, 3, 4, 0, 0xCFFFFF },
-> +	{ 79500000, 79500000, 1, 79, 2, 1, 1, 3, 0, 3, 4, 0, 0x7FFFFF },
-> +	{ 83500000, 83500000, 2, 167, 2, 1, 1, 1, 0, 0, 6, 0, 0 },
-> +	{ 83500000, 104375000, 1, 104, 2, 1, 1, 1, 1, 0, 5, 0, 0x600000 },
-> +	{ 85500000, 85500000, 1, 85, 2, 1, 1, 3, 0, 3, 4, 0, 0x7FFFFF },
-> +	{ 85750000, 85750000, 1, 85, 2, 1, 1, 3, 0, 3, 4, 0, 0xCFFFFF },
-> +	{ 85800000, 85800000, 1, 85, 2, 1, 1, 3, 0, 3, 4, 0, 0xCCCCCC },
-> +	{ 88750000, 88750000, 1, 88, 2, 1, 1, 3, 0, 3, 4, 0, 0xCFFFFF },
-> +	{ 89910000, 89910000, 1, 89, 2, 1, 1, 3, 0, 3, 4, 0, 0xE8F5C1 },
-> +	{ 90000000, 90000000, 1, 90, 2, 1, 1, 3, 0, 3, 4, 0, 0 },
-> +	{ 101000000, 101000000, 1, 101, 2, 1, 1, 3, 0, 3, 4, 0, 0 },
-> +	{ 102250000, 102250000, 1, 102, 2, 1, 1, 3, 0, 3, 4, 0, 0x3FFFFF },
-> +	{ 106500000, 106500000, 1, 106, 2, 1, 1, 3, 0, 3, 4, 0, 0x7FFFFF },
-> +	{ 108000000, 108000000, 1, 90, 3, 0, 0, 5, 0, 2, 2, 0, 0 },
-> +	{ 119000000, 119000000, 1, 119, 2, 1, 1, 3, 0, 3, 4, 0, 0 },
-> +	{ 131481000, 131481000, 1, 131, 2, 1, 1, 3, 0, 3, 4, 0, 0x7B22D1 },
-> +	{ 135000000, 135000000, 1, 135, 2, 1, 1, 3, 0, 3, 4, 0, 0 },
-> +	{ 136750000, 136750000, 1, 136, 2, 1, 1, 3, 0, 3, 4, 0, 0xCFFFFF },
-> +	{ 147180000, 147180000, 1, 147, 2, 1, 1, 3, 0, 3, 4, 0, 0x2E147A },
-> +	{ 148352000, 148352000, 1, 98, 1, 1, 1, 1, 2, 2, 2, 0, 0xE6AE6B },
-> +	{ 148500000, 148500000, 1, 99, 1, 1, 1, 1, 2, 2, 2, 0, 0 },
-> +	{ 154000000, 154000000, 1, 154, 2, 1, 1, 3, 0, 3, 4, 0, 0 },
-> +	{ 156000000, 156000000, 1, 156, 2, 1, 1, 3, 0, 3, 4, 0, 0 },
-> +	{ 157000000, 157000000, 1, 157, 2, 1, 1, 3, 0, 3, 4, 0, 0 },
-> +	{ 162000000, 162000000, 1, 162, 2, 1, 1, 3, 0, 3, 4, 0, 0 },
-> +	{ 174250000, 174250000, 1, 145, 3, 0, 0, 5, 0, 2, 2, 0, 0x355555 },
-> +	{ 174500000, 174500000, 1, 174, 2, 1, 1, 3, 0, 3, 4, 0, 0x7FFFFF },
-> +	{ 174570000, 174570000, 1, 174, 2, 1, 1, 3, 0, 3, 4, 0, 0x91EB84 },
-> +	{ 175500000, 175500000, 1, 175, 2, 1, 1, 3, 0, 3, 4, 0, 0x7FFFFF },
-> +	{ 185590000, 185590000, 1, 185, 2, 1, 1, 3, 0, 3, 4, 0, 0x970A3C },
-> +	{ 187000000, 187000000, 1, 187, 2, 1, 1, 3, 0, 3, 4, 0, 0 },
+base-commit: 08dbfad3f5040f5bdb6c529da20d6d4e81fefd72
+-- 
+2.50.1
 
-add:
-{ 235690000, 235690000, 1, 235, 2, 1, 1, 3, 0, 3, 4, 0, 0xB0A3D6},
-
-This matches one of the framework 13 displays (fml13v01 board)
-
-source: [1]
-
-edid:
-
-edid-decode (hex):
-
-00 ff ff ff ff ff ff 00 09 e5 5f 09 00 00 00 00
-17 1d 01 03 80 1c 13 78 02 de 50 a3 54 4c 99 26
-0f 50 54 00 00 00 01 01 01 01 01 01 01 01 01 01
-01 01 01 01 01 01 11 5c d0 18 81 e0 2d 50 30 20
-36 00 1d be 10 00 00 1a a7 49 d0 18 81 e0 2d 50
-30 20 36 00 1d be 10 00 00 1a 00 00 00 fe 00 42
-4f 45 20 43 51 0a 20 20 20 20 20 20 00 00 00 fe
-00 4e 45 31 33 35 46 42 4d 2d 4e 34 31 0a 01 21
-
-02 03 19 c1 44 83 10 02 01 23 09 07 07 83 01 00
-00 67 03 0c 00 10 00 00 44 11 5c d0 18 81 e0 2d
-50 30 20 36 00 1d be 10 00 00 1a 00 00 00 00 00
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01
-
-----------------
-
-Block 0, Base EDID:
-   EDID Structure Version & Revision: 1.3
-   Vendor & Product Identification:
-     Manufacturer: BOE
-     Model: 2399
-     Made in: week 23 of 2019
-   Basic Display Parameters & Features:
-     Digital display
-     Maximum image size: 28 cm x 19 cm
-     Gamma: 2.20
-     Monochrome or grayscale display
-     First detailed timing is the preferred timing
-   Color Characteristics:
-     Red  : 0.6396, 0.3291
-     Green: 0.2998, 0.5996
-     Blue : 0.1494, 0.0595
-     White: 0.3125, 0.3281
-   Established Timings I & II: none
-   Standard Timings: none
-   Detailed Timing Descriptors:
-     DTD 1:  2256x1504   59.998513 Hz   3:2     92.938 kHz    235.690000 
-MHz (285 mm x 190 mm)
-                  Hfront   48 Hsync  32 Hback  200 Hpol P
-                  Vfront    3 Vsync   6 Vback   36 Vpol N
-     DTD 2:  2256x1504   47.998302 Hz   3:2     74.349 kHz    188.550000 
-MHz (285 mm x 190 mm)
-                  Hfront   48 Hsync  32 Hback  200 Hpol P
-                  Vfront    3 Vsync   6 Vback   36 Vpol N
-     Alphanumeric Data String: 'BOE CQ'
-     Alphanumeric Data String: 'NE135FBM-N41'
-   Extension blocks: 1
-Checksum: 0x21
-
-----------------
-
-Block 1, CTA-861 Extension Block:
-   Revision: 3
-   Underscans IT Video Formats by default
-   Basic audio support
-   Native detailed modes: 1
-   Video Data Block:
-     VIC   3:   720x480    59.940060 Hz  16:9     31.469 kHz 
-27.000000 MHz (native)
-     VIC  16:  1920x1080   60.000000 Hz  16:9     67.500 kHz 
-148.500000 MHz
-     VIC   2:   720x480    59.940060 Hz   4:3     31.469 kHz 
-27.000000 MHz
-     VIC   1:   640x480    59.940476 Hz   4:3     31.469 kHz 
-25.175000 MHz
-   Audio Data Block:
-     Linear PCM:
-       Max channels: 2
-       Supported sample rates (kHz): 48 44.1 32
-       Supported sample sizes (bits): 24 20 16
-   Speaker Allocation Data Block:
-     FL/FR - Front Left/Right
-   Vendor-Specific Data Block (HDMI), OUI 00-0C-03:
-     Source physical address: 1.0.0.0
-     Maximum TMDS clock: 340 MHz
-   Detailed Timing Descriptors:
-     DTD 3:  2256x1504   59.998513 Hz   3:2     92.938 kHz    235.690000 
-MHz (285 mm x 190 mm)
-                  Hfront   48 Hsync  32 Hback  200 Hpol P
-                  Vfront    3 Vsync   6 Vback   36 Vpol N
-Checksum: 0x01  Unused space in Extension Block: 84 bytes
-
-
-> +	{ 241500000, 241500000, 1, 161, 1, 1, 1, 4, 0, 2, 2, 0, 0 },
-> +	{ 241700000, 241700000, 1, 241, 2, 1, 1, 3, 0, 3, 4, 0, 0xB33332 },
-> +	{ 262750000, 262750000, 1, 262, 2, 1, 1, 3, 0, 3, 4, 0, 0xCFFFFF },
-> +	{ 296500000, 296500000, 1, 296, 2, 1, 1, 3, 0, 3, 4, 0, 0x7FFFFF },
-> +	{ 296703000, 296703000, 1, 98, 0, 1, 1, 1, 0, 2, 2, 0, 0xE6AE6B },
-> +	{ 297000000, 297000000, 1, 99, 0, 1, 1, 1, 0, 2, 2, 0, 0 },
-> +	{ 594000000, 594000000, 1, 99, 0, 2, 0, 1, 0, 1, 1, 0, 0 },
-> +	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-> +};
-> +
-
-kind regards,
-Maud
-
-[1]: 
-https://github.com/DC-DeepComputing/fml13v01-linux/blob/97c64fe2832b6826914b6da7aa4febcdd4d3d444/drivers/gpu/drm/verisilicon/inno_hdmi.c#L112
 
 -- 
 linux-phy mailing list
