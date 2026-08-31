@@ -4,77 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8B81DC61DD3
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Aug 2026 09:29:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BDACC61DD3
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Aug 2026 09:31:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MJAvTreh4v0ODUsnp3DjU4c1osk6pcSfLqDat/cZZNg=; b=L5yGA4o69rqTTM
-	k/IBqCg9esdJyWtSX8GSmUzTOcZymx0GXp+46QqiSQpFQ2TKWlbItLsV+QXLLXhI5EejB98SxYiQM
-	kYf7jH3oYb0qcSZKf9msIRZ75IU6YcSLZfIeNZG5oRuFKZhHqqO519zi5MDf8wJ6/FBoS4Dg4IQMa
-	irdrk6O1mUXM35h8SEsF+xrZJ0lLTKgQjqS5GoJCy70AkoQ38+AHrRHYRdK9tQ1l+bXu8q044iLLc
-	DhjeZD+4Ub04JjYjEm881aB1Gownykx2hFL3MQOAinHSpiKehxjhuSruaDX65nbqgRa76Kcxmwnd+
-	Gz0jIGFASIhE12FBheFQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Gd+jB9FGTk9n+lw01ORD9HOSctTcEDGQyrIJ7D3MvIc=; b=Rlomlxjlq8Ovgj
+	rlmY6nSEFGPLXGFNMFoXDqSwcobElpEt6IxdCN0Ng5Ou46m1nwrT5QC80qMZMYKFt2Ko4L0oImmfI
+	E7vMLJfWruW9CxVrh/0/XqQRuLtG1ea8xynIPmwLkupomPjWcdh4rtFa/CFGlzFJ9XFvySRCn05Fc
+	tr2e4PnBabhXUjyGfIRgwGcSn9R/UhzQTzkyQmeN/W+yxNWRhCCjeLY+3l3B5qnF9sYaAIlmLpjUT
+	5A3B89fExpqMcIj9tpEDTLqQ9WGdsGjlGBFaVeRGpNHq6r2OgclASTI341T9/n2MJUY0AiyFS6bQF
+	BLK0uHHGO4mZ5c9BQ6KQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x0yKF-000000091Be-0LkQ;
-	Mon, 31 Aug 2026 09:29:11 +0000
-Received: from mgamail.intel.com ([198.175.65.14])
+	id 1x0yMT-000000091RB-2zLO;
+	Mon, 31 Aug 2026 09:31:29 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x0yKA-000000091B0-2zFB
+	id 1x0yMS-000000091R1-2D7C
 	for linux-phy@lists.infradead.org;
-	Mon, 31 Aug 2026 09:29:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1788168547; x=1819704547;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=FdOsuuMQ08/G9pXB8nkYFXb7pPmT73+2R7WY6hsx0Zc=;
-  b=jKn/YmYGnbvw43X6MZoUfSzq+sLtuKDktWLrwEjB/F4qhhfevVMRQ78r
-   /0SNV77VN5t/tcUqE+erNRgcJ8zoR/Nfr9XcC8j5pWnArjjAFgGQ+0CPw
-   K+OlRhKov8DNryw5xdLZqoDk2n5l6SpJJt4Roh2lTch1vHQfP3SxVkkUF
-   3sT41R/mU5llRritOSwmu4Yx0nosGsu5vPLIj0JQGcbDJxKcPNgl4ypii
-   Fs6xqPipiyZ3w2t7wvqz0Q1n7ppldZoQWZyfmc+d3tVMMYfruPYjcx1b9
-   UEYWH+wLGv0dpikxbDE7JlrQutSx72RUB2HtyqOZFNQdgI9/JAy3X1oQu
-   A==;
-X-CSE-ConnectionGUID: Rh/CHHFRRVeyzE2NpstWcA==
-X-CSE-MsgGUID: Zewlde9KQYqvZ3nWkIzZlA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11891"; a="92436207"
-X-IronPort-AV: E=Sophos;i="6.25,252,1779174000"; 
-   d="scan'208";a="92436207"
-Received: from fmviesa004.fm.intel.com ([10.60.135.144])
-  by orvoesa106.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 31 Aug 2026 02:29:04 -0700
-X-CSE-ConnectionGUID: OQWO11sZQJOifualVqBTfw==
-X-CSE-MsgGUID: f7NVot26Tq6z4+1jIoLmWw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.25,252,1779174000"; 
-   d="scan'208";a="270673686"
-Received: from fpallare-mobl4.ger.corp.intel.com (HELO localhost) ([10.245.244.21])
-  by fmviesa004-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 31 Aug 2026 02:29:02 -0700
-Date: Mon, 31 Aug 2026 12:28:59 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Inochi Amaoto <inochiama@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Yixun Lan <dlan@gentoo.org>, Longbin Li <looong.bin@gmail.com>
-Subject: Re: [PATCH 3/3] phy: core: Add phy bulk data helper functions
-Message-ID: <apVJW6H8_y0uiVtj@ashevche-desk.local>
-References: <20260831025319.94886-1-inochiama@gmail.com>
- <20260831025506.95548-1-inochiama@gmail.com>
- <20260831025506.95548-3-inochiama@gmail.com>
+	Mon, 31 Aug 2026 09:31:28 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id EF5DE41756;
+	Mon, 31 Aug 2026 09:31:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 555A91F000E9;
+	Mon, 31 Aug 2026 09:31:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1788168687;
+	bh=hZ7mYk7ae7HT/7ig4J6jEj8rAJ1B+22kUDWnxyCfm28=;
+	h=From:Subject:Date:To:Cc;
+	b=Dw1AapgiYTN/ov7W/xSInmssj8i3JhHkYxkmSmu9HggGWUOYsBG/4g7LMayCzCyES
+	 J74YpCfzBimLYrahyFy2LjDijgGfKosj7W9lAopD2NOxOI3G2qrozrjnYO9VW4qHIs
+	 vWqCSAVHouGPnQ33sxH3hcbNbwZGSaz+g3ZpyB+G2IiyFdJHseYwnUWfzTzmUU4LmH
+	 5WggCQbU+n8wm+tZKhP7K+nbBF68wNv0x0YpGjW6X5conaRVWoagxOz3jxq65HesTz
+	 d2UGg7mXXDtjTYUcm0/AEhNRELPzmCT8xsus5lGYfYKfbH6ZBPwI/HXrwm0krmM0Q2
+	 Nz8H8kTB4WLOQ==
+From: Mattijs Korpershoek <mkorpershoek@kernel.org>
+Subject: [PATCH v2 0/2] Add support for SA8255P in the
+ phy-qcom-snps-femto-v2 phy driver
+Date: Mon, 31 Aug 2026 11:31:20 +0200
+Message-Id: <20260831-phy-qcom-snps-femto-v2-8255-v2-0-dc6197ffde1b@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260831025506.95548-3-inochiama@gmail.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
- krs, Bertel Jungin Aukio 5, 02600 Espoo
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260831_022906_801632_BF0C644C 
-X-CRM114-Status: GOOD (  23.72  )
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/32NQQ6CMBAAv0J6ds22Wiie/IfhALiFqrTYYiMh/
+ F1Azx4nmcxMLJA3FNgpmZinaIJxdgGxS1jdlrYhMNeFmUCRYiZy6NsRnrXrINg+gKZucBAFKCE
+ l5Kg1ZWl2RORsKfSetHlv9Uvx5fCqblQPa3I1WhMG58dtH/nq/U4H/HuKHBBUpSotOcoyVec7e
+ UuPvfMNK+Z5/gCHmzKb2QAAAA==
+X-Change-ID: 20260729-phy-qcom-snps-femto-v2-8255-90ffe7674001
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Mattijs Korpershoek <mkorpershoek@kernel.org>, 
+ Sriram Dash <quic_sriramd@quicinc.com>
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2375;
+ i=mkorpershoek@kernel.org; h=from:subject:message-id;
+ bh=qWiP9khaW7DmVO8gpuo66A5XUr4asSD96P2qgysc1fE=;
+ b=owEBbQGS/pANAwAKARkNHbRmThk1AcsmYgBqlUnsJBMVx0MNc5aFZOCbUn7/LKUDdxcBBbo5m
+ usAi+qfKauJATMEAAEKAB0WIQQu6UKnth9qvlMTrQAZDR20Zk4ZNQUCapVJ7AAKCRAZDR20Zk4Z
+ NQWdB/9IGRPVQK+cpansPIqdm8Nu05pqBY9GFhAUQLJzHelQI+zsBBwGadX3xEOrYbqxWAsTnln
+ U1aYrG4hH8F9/Jwgxp7jK2YO+LTaUL0NnIwHBNzjMYYJjcmWzZXQV6jKDf9SGjypKuvtHZST+m8
+ ShdHzDt/y8vAsdZAswxD8jeymEst2uyPqhNbQvlsra69z2ipjQADMr7Q1xUl90VkMuzcWMu/2xm
+ UqRQeLaRUrg4q0BiNv3cMmC/H9xb7Tqrw84qf9//70CXity4n1ZmlEC6BIskOjmrSN587YK3K+L
+ l6FHHecdbw8pFPQOB2rJdXimw7oSaAkd4cmnLv1KZDD9+n81
+X-Developer-Key: i=mkorpershoek@kernel.org; a=openpgp;
+ fpr=8234A35B45C0D26B31C1A2DA570338B018144F28
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,222 +90,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Aug 31, 2026 at 10:55:05AM +0800, Inochi Amaoto wrote:
-> Add several helper functions that allow drivers to get several phy
-> consumers in one operation. If any of the phy cannot be acquired then
-> any phys that were got will be put before returning to the caller.
-> 
-> This can relieve the driver owners' life who needs to handle many phys,
-> as well as each phy error reporting.
+The Qualcomm automotive SA8255p SoC relies on firmware to configure
+platform resources, including clocks, interconnects and TLMM.
+The driver requests resources operations over SCMI using power protocols.
 
-...
+The SCMI power protocol enables or disables resources like clocks,
+interconnect paths, and TLMM (GPIOs) using runtime PM framework APIs,
+such as resume/suspend, to control power on/off.
 
-> +/**
-> + * of_phy_get_parent_count() - Get the number of phys of a device node
-> + * @np: device_node for which to get the phy
-> + *
-> + * Return: the phy count if successful, 0 if no phy handle is found,
-> + * negative error value if error occurs.
+Power domain "core" controls the GDSC, resets, and TLMM (GPIOs)
+whereas power domain "transfer" controls clocks and interconnects.
 
-Just for the reference, here is the correct format of the kernel-doc!
+Patch 1 adds the binding for sa8255p. Similarly to what has been done
+for I2C [1], this is a separate binding.
 
-> + */
-> +static int of_phy_get_parent_count(const struct device_node *np)
-> +{
-> +	int count;
-> +
-> +	count = of_count_phandle_with_args(np, "phys", "#phy-cells");
+Patch 2 adds the driver change, which is based on a public vendor
+patch from qualcomm [2].
+I did the following changes on top of that:
+* Use devm_add_action_or_reset() for dev_pm_domain_detach_list() instead
+  of implementing a driver .remove()
+* Changed power domain names to drop 'usb_' prefix
+* Fixed various error handling paths
+* Added suspend/resume support
 
-> +	if (count == -ENOENT)
-> +		return 0;
+This has been tested on next-20260728 with a Ride4 SA8775P board that
+has SCMI firmware (which is compatible).
 
-Why? And if so, the function perhaps needs to return unsigned type. Also
-kernel-doc says about negative error codes.
+[1] https://lore.kernel.org/all/20260617-enable-i2c-on-sa8255p-v7-1-ad736dbeab57@oss.qualcomm.com/
+[2] https://git.codelinaro.org/clo/le/meta-qti-auto-kernel/-/blob/LY.AU.0.1.0.r1-16800-gen4meta.0/recipes-kernel/linux/files/usb/0014-PENDING-phy-qcom-snps-femto-v2-Add-support-for-SA825.patch
 
-> +	return count;
-> +}
+Signed-off-by: Mattijs Korpershoek <mkorpershoek@kernel.org>
+---
+Changes in v2:
+- Move 'core' as first domain, before 'transfer' (Krzysztof)
+- Reworded binding commit message to be more precise about the various
+  domains ('core', 'transfer' and 'perf') (Krzysztof)
+- Link to v1: https://patch.msgid.link/20260730-phy-qcom-snps-femto-v2-8255-v1-0-8b8bf5105a68@kernel.org
 
-...
+---
+Mattijs Korpershoek (1):
+      dt-bindings: phy: Add sa8255p high-speed USB PHY
 
-> +void phy_bulk_put(struct device *dev, int num_phys, struct phy_bulk_data *phys)
-> +{
-> +	if (!phys)
-> +		return;
+Sriram Dash (1):
+      phy: qcom-snps-femto-v2: Add support for SA8255P
 
-> +	while (--num_phys >= 0) {
+ .../bindings/phy/qcom,sa8255p-usb-hs-phy.yaml      |  52 +++++++++
+ drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c      | 127 +++++++++++++++++++--
+ 2 files changed, 170 insertions(+), 9 deletions(-)
+---
+base-commit: e30626823a406725ce29bc75cb8ec467d3e1e326
+change-id: 20260729-phy-qcom-snps-femto-v2-8255-90ffe7674001
 
-It's hard to follow.
-
-	while (num_phys--) {
-
-will do the job. Ditto for other similar cases.
-
-> +		if (phys[num_phys].phy)
-> +			phy_put(dev, phys[num_phys].phy);
-> +		phys[num_phys].phy = NULL;
-> +	}
-> +}
-
-...
-
-> +static int __phy_bulk_get(struct device *dev, int num_phys,
-> +			  struct phy_bulk_data *phys, bool optional)
-> +{
-> +	int ret;
-
-> +	int i;
-
-Do you expect num_phys to be negative?
-
-static int __phy_bulk_get(struct device *dev, unsigned int num_phys,
-...
-	unsigned int i;
-
-Same comment to the rest of the similar changes.
-
-> +
-> +	for (i = 0; i < num_phys; i++)
-> +		phys[i].phy = NULL;
-> +
-> +	for (i = 0; i < num_phys; i++) {
-> +		phys[i].phy = phy_get(dev, phys[i].id);
-
-		ret = PTR_ERR_OR_ZERO(...);
-
-> +		if (IS_ERR(phys[i].phy)) {
-
-		if (ret) {
-
-> +			ret = PTR_ERR(phys[i].phy);
-> +			phys[i].phy = NULL;
-> +
-> +			if (ret == -ENODEV && optional)
-> +				continue;
-> +
-> +			dev_err_probe(dev, ret,
-> +				      "Failed to get phy: (%s)\n",
-
-There is room on the previous line.
-
-> +				      phys[i].id);
-> +			goto err;
-> +		}
-> +	}
-> +
-> +	return 0;
-> +
-> +err:
-> +	phy_bulk_put(dev, i, phys);
-> +
-> +	return ret;
-> +}
-
-...
-
-> + * Return: %0 if successful, a negative error code otherwise
-
-Note, the reference to 0 is inconsistent with the previous changes.
-Make it there [of_phy_get_parent_count()] to follow.
-
-...
-
-> +static int of_phy_bulk_get_by_index(struct device_node *np, int num_phys,
-> +				    struct phy_bulk_data *phys)
-> +{
-> +	int ret, i;
-> +
-> +	for (i = 0; i < num_phys; i++) {
-> +		phys[i].id = NULL;
-> +		phys[i].phy = NULL;
-> +	}
-> +
-> +	for (i = 0; i < num_phys; i++) {
-> +		of_property_read_string_index(np, "phy-names", i,
-> +					      &phys[i].id);
-
-The line limit is exactly 80, please fix your editor and double check that you
-use as much room as available (with the correction on the logical splits where
-it makes sense).
-
-> +
-> +		phys[i].phy = of_phy_get_by_index(np, i);
-
-		ret = PTR_ERR_OR_ZERO(...);
-
-?
-
-> +		if (IS_ERR(phys[i].phy)) {
-> +			ret = PTR_ERR(phys[i].phy);
-> +			phys[i].phy = NULL;
-> +			goto err;
-> +		}
-> +	}
-> +
-> +	return 0;
-> +
-> +err:
-> +	of_phy_bulk_put(i, phys);
-> +
-> +	return ret;
-> +}
-
-...
-
-> +int of_phy_bulk_get_all(struct device_node *np, struct phy_bulk_data **phys)
-> +{
-> +	struct phy_bulk_data *phy_bulk;
-> +	int num_phys;
-> +	int ret;
-> +
-> +	*phys = NULL;
-
-> +	if (!np)
-> +		return 0;
-
-Dup check? The OF APIs are usually NULL-aware.
-Same Q to the ress of the code.
-
-> +	num_phys = of_phy_get_parent_count(np);
-> +	if (num_phys <= 0)
-> +		return num_phys;
-> +
-> +	phy_bulk = kmalloc_objs(*phy_bulk, num_phys);
-> +	if (!phy_bulk)
-> +		return -ENOMEM;
-> +
-> +	ret = of_phy_bulk_get_by_index(np, num_phys, phy_bulk);
-> +	if (ret) {
-> +		kfree(phy_bulk);
-> +		return ret;
-> +	}
-> +
-> +	*phys = phy_bulk;
-> +
-> +	return num_phys;
-> +}
-
-...
-
-> +struct phy_bulk_devres {
-> +	struct phy_bulk_data *phys;
-> +	int num_phys;
-
-Why signed?
-
-> +	bool free_phys;
-> +};
-
-...
-
-I stopped here. It's too many stuff in a single patch. Please, split to two for
-a starter:
-- non-devm additions
-- devm coverage
-
--- 
-With Best Regards,
-Andy Shevchenko
-
+Best regards,
+--  
+Mattijs Korpershoek <mkorpershoek@kernel.org>
 
 
 -- 
