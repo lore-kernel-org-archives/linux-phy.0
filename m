@@ -4,76 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F84CC61DFD
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Aug 2026 18:59:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5FCAAC61DFD
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Aug 2026 18:59:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7hdO5CngewKcWaX4qr3ElORG27NoufLrVpRX8rq72Cc=; b=sTkQxJQIRs7eyD
-	qC7XUo+ea4Arqy4PJF3KmrCjQlyN6JAM+ER2DIXzdApeR0MuuAu/OXUd2A+2H2erhW8CMVaLV6uzb
-	YeuJX/d4eBR20xcYDp/8HRD0+t91XY5BLFFJwRUq58HstzMB4c4GHZgd0S3i5517ckUzKVzznZsZC
-	3JnzC/EBaoDKzwl3lnXlF1T/Is9E0n4x2g1JK2TeAwk/s5Tnc7LT6QfSOr/yxHrnHmibXi2G5o+1Q
-	aUKyj68K6576Si9893hcwS98D8lm8ozlix3fD5nop8DFK2skkHciJc8j4V9hsrWYyzcVO6Hm6E2XY
-	kcbQrMPqghbH41lI2x6A==;
+	List-Owner; bh=9MIqsS9eosEQ9ZF94W84OTcIPDHMBTAfjCNmHRYZxLk=; b=Vo68j/TJhE+U9A
+	WjeEym7CxpBzscGrVNfz6ssoyAmQjSDcdgnmfCfokK523ldo+xFIvpkJ6Aa3O7ix1gJSsprxSqLIU
+	A3KyNW5cUQWGVwYWHKZy+CIRa3YbNTorajgtBLMkz9/1CYu6sQqQsHKlXZJcynC5i61nULI/enVTq
+	Yl5PHvKmzUAUoSVAjqE9p1gHKZo3sju09ztVQdZGzrOFq3sCis2UN1HQAwiatXTSCTCyLg8HBpno7
+	foazSBw3yJS1EzF9L+1fK6bfYudmbZgka/4JNFVqRi0Rfg9L93KDTvY13Cyyyig0tLJc06Q5MK5Yc
+	fQuDv7XCyOpv0Xok7P7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x17EL-0000000AKgL-04jF;
-	Mon, 31 Aug 2026 18:59:41 +0000
-Received: from mail-westusazlp170120002.outbound.protection.outlook.com ([2a01:111:f403:c001::2] helo=SJ2PR03CU001.outbound.protection.outlook.com)
+	id 1x17EO-0000000AKhg-0HoA;
+	Mon, 31 Aug 2026 18:59:44 +0000
+Received: from mail-southcentralusazlp170120001.outbound.protection.outlook.com ([2a01:111:f403:c10d::1] helo=SN4PR2101CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x17EH-0000000AKfb-41c1
+	id 1x17EL-0000000AKgK-1ySi
 	for linux-phy@lists.infradead.org;
-	Mon, 31 Aug 2026 18:59:39 +0000
+	Mon, 31 Aug 2026 18:59:42 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=lj0QGTO4ogxUh4DuTG0DywWpDBgTLqV5npaOJl5RNH5OuLnZ1Yeo3QiDx46u3atAqOI9w0+CjEj7WqOmpvmwDUQ+aNu95glRfVTYBpAoj+wN15FnMSE931KvOL7r35MKto4OjFWbTpFOJySJ9WJrohk3IqX0MDQ17qBWoJ8OTGURHcrKL9zqo023+f7r0KywelGmpJZxR3QwGAHVm1sis0AO/irTOD7Bn6Ei+5whIorlzc9Gd13j6tlSD3VFhUWaxEEc6BMcEuGvjvSNYFP976hOLAPWyiO0CxNeWQ2xt64sCuRquzcQ3wKJzKDAPgpPSIuan8tEPPhUOO5/N5ntcg==
+ b=s46iS81SqnyELNDoobbNms6cLigkX77enzVZjy5fU485yXWhfm6M2znQ7ERm7OYVxp45TOnepwonYXhtGUqTHopP+UgXDmLZbSYeSOUENwc+5/t6ppf7ToiQ0XsybCO6h92LL1VPzqc74Oi9RxuLlTLSW7eQFUumcHb0UBaJomWQWRE//jYrH6M+WRUtnt5EUQuv4kfad9UxHrB30DCvuEJDSdEMKS7NLPQuCWzmq+VDcayacKiR81Z9Kfmcg2a01aFCbGKX5n30j1HWf4oKQVbDaxwSJk5eIOA6cesdn/rBaOmfqvzD55A178y2TxN9Pofq+J0fkYY8XbQ9HS/YsA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=hkWz2FhvhAV0VHF6Yo5SMLSewUq6fAWDCzYlvu6ZChs=;
- b=T/cL8PscIXUkdkODLGi3dPhZo8lrerBsUyIQGEZ15pgXvY1Uj/mK9O4NkT0tMVcw8OhGsVpRB3THTu2GolIIylJDqy0cbGXoYa2OrgsXKIriNUAG89Wsv5EwoxWgDrwQJeg7o/P3u8qEHF52A+8k+676lKCGBYjedGftI6TuxnncdlgHvfiX4BUYI3zCQZRYc9pAG5AiJl9FdJFtizK1xIePED8K/XP6O0gqtByiJpXWPZWMdbRj09yGfdyP6xvlZkYz1A9t/1xuVxZoaqjwVJ0zvBjYhL+qADbFK8nLtrhl5oe+d0cYOTXcUXApmR+p0XJOWmTcYfV6HH53LlIwRw==
+ bh=Drcxe4pg9XGvU3goWV6nXHYjiN2lWPSdudW96UqUKl0=;
+ b=a/0IOlEqkxjo+GmUqW6f2FJnDKOrYZ+BPwbwAmsLjxoRitu+a3+izIAaQAQpXYQeR88w2qIjG/SZ/H8KXWIy1wGfEa5xK4RqYH4IhhkaafKmx9Wl6yFyKglRwuIz6gMxX/Z7Ai7gWYmj+06g0SvAN/JMJ+Dg5tNkwu/tzhpSVv/tlb9CRRu5CQ6lfMkw69tc1BOPLsL2H9m6bRJdg5uuzEUXvlg9rGhsDOqvH2fcvGhRnWosIu/0YoyIVBdVWUBaVtQV/mFVJdmZyJCYdwEyCN/9eIcYhKlQ4Q0A6+k7j6FNAgG6NNSRZ+FtcNjtHpCR5d3jY69lRV8zVQv84RlYIw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.117.160) smtp.rcpttodomain=intel.com smtp.mailfrom=nvidia.com;
+ 216.228.117.161) smtp.rcpttodomain=intel.com smtp.mailfrom=nvidia.com;
  dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
  dkim=none (message not signed); arc=none (0)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=hkWz2FhvhAV0VHF6Yo5SMLSewUq6fAWDCzYlvu6ZChs=;
- b=n/4BJxJAyeWdjp5VNQyqosGdE9YizZYWZdWZgQRkuHLAHv7tJFmwSZ1Cofh2Xzl9d+Mfcg5J5yIZ2jWMoAyJxntx+9NiSF1ErIuFoZ/DeCuYuJr7x4jdFItiw2Q5GkKWG4SLNL5PQH3WtY+JLN/fCTNpCb8sKYvDpKQh4Lx2GE+DTGYRZYMEEFMn1708kteFNgiHgBJ0l5qZ6gz40eq7hUfegtfj70UPk0qbiiCU8ZagsmDuEo6z9fKaLAxqWdr612OeTa6GL9SVDhbP3h1Od0YtCGMQ0bQgslHfcD0J3PJZOIXiwCIX+PODWqTMnLAYAPe2nxwTbr32WadFINuuQw==
-Received: from BN9PR03CA0478.namprd03.prod.outlook.com (2603:10b6:408:139::33)
- by PH0PR12MB7096.namprd12.prod.outlook.com (2603:10b6:510:21d::16) with
+ bh=Drcxe4pg9XGvU3goWV6nXHYjiN2lWPSdudW96UqUKl0=;
+ b=PC/f/1eTLaj/WDEIO8wBu5rMik/OCFyupFWdo89GKTNJKvqKp21Ywr9o682XiRRO5+8wWxB9WhYNCy5KIn8EBIJXCyzX0cSeQol2zA+gDfgqNaKDkg5viqfabNSpiY0JY03CN8POxUnpXcCRPGizsNMjb3MREwwpuLsmPuJ9lQGff1z6bbWPtbewrU0gpJ4AkxNtMHtoGQoGH4f+LXarx7uyi+BHDditUJ6qaNJM8Uh7EUKvqQlOHgG7LQQFNRYZM5EzwWpqAaxUts5BvVZArsHlTMp5UCpurpZD4uFZquvKENcRBGckudFQcRVQryjCTmT2DBmzjtX6BxGhXdI95g==
+Received: from PH7P220CA0027.NAMP220.PROD.OUTLOOK.COM (2603:10b6:510:326::33)
+ by SA3PR12MB9179.namprd12.prod.outlook.com (2603:10b6:806:3a1::12) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.360.13; Mon, 31 Aug
- 2026 18:59:28 +0000
-Received: from BN6PEPF0000006F.namprd03.prod.outlook.com
- (2603:10b6:408:139:cafe::a5) by BN9PR03CA0478.outlook.office365.com
- (2603:10b6:408:139::33) with Microsoft SMTP Server (version=TLS1_3,
+ 2026 18:59:34 +0000
+Received: from SA2PEPF00003AE9.namprd02.prod.outlook.com
+ (2603:10b6:510:326:cafe::4) by PH7P220CA0027.outlook.office365.com
+ (2603:10b6:510:326::33) with Microsoft SMTP Server (version=TLS1_3,
  cipher=TLS_AES_256_GCM_SHA384) id 15.21.360.13 via Frontend Transport; Mon,
- 31 Aug 2026 18:59:28 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
+ 31 Aug 2026 18:59:34 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.161)
  smtp.mailfrom=nvidia.com; dkim=none (message not signed)
  header.d=none;dmarc=pass action=none header.from=nvidia.com;
 Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.117.160) by
- BN6PEPF0000006F.mail.protection.outlook.com (10.167.248.196) with Microsoft
+ 216.228.117.161 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.161; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.161) by
+ SA2PEPF00003AE9.mail.protection.outlook.com (10.167.248.9) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.382.8 via Frontend Transport; Mon, 31 Aug 2026 18:59:28 +0000
-Received: from rnnvmail205.nvidia.com (10.129.68.10) by mail.nvidia.com
- (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
+ 15.21.382.8 via Frontend Transport; Mon, 31 Aug 2026 18:59:34 +0000
+Received: from rnnvmail204.nvidia.com (10.129.68.6) by mail.nvidia.com
+ (10.129.200.67) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.46; Mon, 31 Aug
- 2026 11:58:58 -0700
-Received: from rnnvmail201.nvidia.com (10.129.68.8) by rnnvmail205.nvidia.com
- (10.129.68.10) with Microsoft SMTP Server (version=TLS1_2,
+ 2026 11:59:03 -0700
+Received: from rnnvmail201.nvidia.com (10.129.68.8) by rnnvmail204.nvidia.com
+ (10.129.68.6) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.46; Mon, 31 Aug
- 2026 11:58:58 -0700
+ 2026 11:59:02 -0700
 Received: from waynec-Precision-5760.nvidia.com (10.127.8.13) by
  mail.nvidia.com (10.129.68.8) with Microsoft SMTP Server id 15.2.2562.46 via
- Frontend Transport; Mon, 31 Aug 2026 11:58:55 -0700
+ Frontend Transport; Mon, 31 Aug 2026 11:58:59 -0700
 From: Wayne Chang <waynec@nvidia.com>
 To: <mathias.nyman@intel.com>, <vkoul@kernel.org>,
 	<neil.armstrong@linaro.org>, <robh@kernel.org>, <krzk+dt@kernel.org>,
@@ -81,11 +81,10 @@ To: <mathias.nyman@intel.com>, <vkoul@kernel.org>,
 	<thierry.reding@gmail.com>, <jonathanh@nvidia.com>
 CC: <waynec@nvidia.com>, <linux-usb@vger.kernel.org>,
 	<linux-tegra@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>, Sing-Han Chen
-	<singhanc@nvidia.com>
-Subject: [PATCH V2 4/8] phy: tegra: xusb: Use devm_clk_get_optional to fetch USB2 tracking clock
-Date: Tue, 1 Sep 2026 02:58:31 +0800
-Message-ID: <20260831185835.3732707-5-waynec@nvidia.com>
+	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>
+Subject: [PATCH V2 5/8] phy: tegra: xusb: Increase timeout for USB2_TRK_COMPLETED polling
+Date: Tue, 1 Sep 2026 02:58:32 +0800
+Message-ID: <20260831185835.3732707-6-waynec@nvidia.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20260831185835.3732707-1-waynec@nvidia.com>
 References: <20260831185835.3732707-1-waynec@nvidia.com>
@@ -94,29 +93,28 @@ X-NVConfidentiality: public
 X-NV-OnPremToCloud: ExternallySecured
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: BN6PEPF0000006F:EE_|PH0PR12MB7096:EE_
-X-MS-Office365-Filtering-Correlation-Id: c3afc5cb-cadb-4ce0-f31d-08df0791fbca
+X-MS-TrafficTypeDiagnostic: SA2PEPF00003AE9:EE_|SA3PR12MB9179:EE_
+X-MS-Office365-Filtering-Correlation-Id: f1c4ba78-671e-4ff1-f518-08df0791ff45
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|36860700016|82310400026|7416014|376014|1800799024|56012099006|10067099003|11063799006|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: QtT9F8Gj3u2raRJdsEjtZ3VE8aRkHDxuPqdDjEK9c0d/qbQjmaXZQelejUmBRGMZ9d2LJgP9sz8SjT3s9agOCe4GYRhOGF6rf9lfAAAa80H4n+d572vfm34hcG32XEAhZv417OfI9O8ZpYJjKBXRHTgBtjFk1owX9BIy1gMVCxZ/RXUPVNU/KFE9D5COZOvyP+41bPxORE/q84U3pKRfn40RpRMCwBEPqYpqsln/10gsIQOEeoE0m0sVjcUxovSOx6MwUfGkcygajwlDVs6Cyor1kRmAyMQUAT7OKCLSOOb8tZNUWIepve+FQQrTO6QHDt8GbMz10j547kzX2RuEplyZl/zUbmXyLu5lq4ng5/xh5gNZv+gs0Ug9HIDMmTPUD4eA6j1x7nALGqPohJkLxa97hGtPBYTuQHr5YIvH/cj8RMFnL+VE5JuADZPnKXfZORe3D6YS3PRnAknHstX95gjcjrF9pTNhvMgz0UX2UMB/NCUX588pGMNdYza/77kLv6AtWrLYl0envlyEEXJnYN7ljE3LDQ573w3wXrOTGdnVknpuqpK8yHkDBsxptbt/cBooPk7WoaI1AKXG2IMUC3/cYXGhd+bMYPABqkJ1p9PclWYVVzMu4XyzwQn4u0VHbwL6XCqYlM1UoGddYDky/ZVNuaVuRSctmZ5rtZpF0zHehZpppwaDHywY8ceLdiEb5rjCKZ9qDT6lHK1p/CUSKQ==
-X-Forefront-Antispam-Report: CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230040)(23010399003)(36860700016)(82310400026)(7416014)(376014)(1800799024)(56012099006)(10067099003)(11063799006)(18002099003)(22082099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: 1fk2D91nIwMIDjlFvd/LfrywMvUO7so7EvkcjWjyjlxruhbfObIzCdbOT7/8Oxm20PyjvkyQHW5D1J0v/gdYM91juu6bKlFIxMwHkrwjfkwEo4+Z45p7mqnC8SZNdsXH0DP5A7M4Dmb8uUicqqp17VyTsl6Xdef1LrwADehwwvuuQW1WUdque3ow+mSs80Rxk5SrKY79VE5+stodFn9XItjc2lvrbT9J/4cUzmco0gxUzG1LYHigHfjhqJxMv3CXl82TdstM9WTUBYGY5oQxjiUxly0eIDKLAydOcJSL7TRfn9Re/Cnrpl+pIs2N3ZDeIFBl9EDio8C1WaUDvYmWt/GLuP6QENq9sYFIs0wmh+jbMOqTT3AtDI9Fk5MZC/9xtmS0yFyRqCoZOv+AWG8WrvTq3C0L4neqHMrIWpGKJPY/IIoILK+vnws/bRyUN0KAERa3lGgnm2ubsXv3aMQA8Yrn47DSllPAJf7b15jQ4VicMnP9UMWKc+nTyqc7eXnSRQxZtHpBnQssi6ZdQC2EyvwOtvURQGXrIrGW3V0yCXv6d8QMSm0w14SVezO2TUeU1ThemEPYcNH/9MWxo1ubxNLtb2jVN+GO121sqKT3g4g8dZNaL1H8VYDMJG+0AxbeaPJ2qi2HrJueGO1x6lLJNzhwcPXbn+Mlff2/6FUs9/eyX0BC06iyvdWTofTFgATaeKcVGNiif6ErTm2JqEPg/A==
+X-Forefront-Antispam-Report: CIP:216.228.117.161;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge2.nvidia.com;CAT:NONE;SFS:(13230040)(23010399003)(36860700016)(82310400026)(7416014)(376014)(1800799024)(56012099006)(10067099003)(11063799006)(18002099003)(22082099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: nybagPHKBOMncBiWje1LKzWvIkiV272KwdJTCITuW0jN2MGRFQmAjw5OWi00I04RHNTLGHc8Ie0OpIGLDYuGSANaF011vKsNdkeHX9/zVemrQ8yyNOMPBJ5/xZgwih14x1RqHixfyCmUUgRvmKjFT7VFsc/raHUxxyvCS2QqkOApoVorEkPIZDeeo/BMcYqZsrs2IuR3bT8ZpsxvqBja8VajxY3Jh/BdsRC1KJEkfcVcjSqJC3ZF0ekd1HH10rkhrJueBJhdyX1Jx3sAkmFjIFmr5PLaJTMhyEK5qSsBQ/Yyre0WvmTq6YoGJy14VUQpv7ZjQnK+vZPL+6WBZQkM/e8KTPxieLTQkEe/AMh/rjc5brOeA6v59elvUZ9amQiDaJe7247v9xaNlABBxVf3lD/MLu3i+ndC53rkkYBQ9vactzVveTXU4qIA6xTXzKOB
+X-MS-Exchange-AntiSpam-MessageData-0: d08jL+A+3e7OqIA1lsICzAHFjChLEFXQeWAYPIbpQPH9+7RXG8YGUOP/nsHvwdHRyg8Z/T1F5TPxeaDw/6+t9aJ4SQnRZ6Z1U0qHsaMA8+TWlIUPiccYOul5JqGavGFKSnz4S8/IsKWamJ7YRQqri0D7WWN3y+jISxbw0rGjQ+dGxxBFfFEqeJ4AvC9VtBq4KpWmpibmnQ67YXdVzkQuk9+wjscdpeG443ZMDNP767/DhzzGiXUYxC6WR9B1bwqr1l9Hb+nBYyae6wU8zfyiLHuT6D4FNJedkkLTssC6EMlfacs7mRahDlecfEBmAr/qFeQBzEx4tYG207zMJSmkNX5e7aiTLan7LFp+UE1Kkm71nhPdHWXMRB0bbSPZV8dchBZV6kxhIL/7ShHZAflBMthQudywP/x/gwBOKTF0AglJOGyZPJgMOYB7Mtsaqemx
 X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 31 Aug 2026 18:59:28.4089
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 31 Aug 2026 18:59:34.2864
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: c3afc5cb-cadb-4ce0-f31d-08df0791fbca
+X-MS-Exchange-CrossTenant-Network-Message-Id: f1c4ba78-671e-4ff1-f518-08df0791ff45
 X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: BN6PEPF0000006F.namprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.161];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: SA2PEPF00003AE9.namprd02.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH0PR12MB7096
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA3PR12MB9179
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260831_115938_030262_7FF100F9 
-X-CRM114-Status: UNSURE (   9.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260831_115941_539873_BF595307 
+X-CRM114-Status: GOOD (  10.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,14 +131,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Sing-Han Chen <singhanc@nvidia.com>
+On Tegra264, the UTMI bias tracking circuit runs at 1 MHz and needs
+more cycles for the biases to settle than on earlier SoCs such as
+Tegra234. The existing timeout is therefore not long enough and can
+cause spurious polling failures during bias pad power-on. Therefore,
+increase the timeout to 200 cycles to support Tegra264 devices
 
-The USB2 PAD tracking clock is an optional clock so use
-devm_clk_get_optional() so a missing clock in devicetree is
-represented as NULL and probe can continue. clk_prepare_enable()
-and clk_disable_unprepare() already treat a NULL clock as a no-op.
-
-Signed-off-by: Sing-Han Chen <singhanc@nvidia.com>
 Signed-off-by: Wayne Chang <waynec@nvidia.com>
 ---
 V1 -> V2: No change
@@ -148,18 +144,18 @@ V1 -> V2: No change
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
-index 60156aea2707..800be0cbb3f9 100644
+index 800be0cbb3f9..9c1bcd4a72ac 100644
 --- a/drivers/phy/tegra/xusb-tegra186.c
 +++ b/drivers/phy/tegra/xusb-tegra186.c
-@@ -1045,7 +1045,7 @@ tegra186_usb2_pad_probe(struct tegra_xusb_padctl *padctl,
- 		goto out;
- 	}
+@@ -636,7 +636,7 @@ static void tegra186_utmi_bias_pad_power_on(struct tegra_xusb_padctl *padctl)
  
--	priv->usb2_trk_clk = devm_clk_get(&pad->dev, "trk");
-+	priv->usb2_trk_clk = devm_clk_get_optional(&pad->dev, "trk");
- 	if (IS_ERR(priv->usb2_trk_clk)) {
- 		err = PTR_ERR(priv->usb2_trk_clk);
- 		dev_dbg(&pad->dev, "failed to get usb2 trk clock: %d\n", err);
+ 	if (padctl->soc->poll_trk_completed) {
+ 		err = padctl_readl_poll(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL1,
+-					USB2_TRK_COMPLETED, USB2_TRK_COMPLETED, 100);
++					USB2_TRK_COMPLETED, USB2_TRK_COMPLETED, 200);
+ 		if (err) {
+ 			/* The failure with polling on trk complete will not
+ 			 * cause the failure of powering on the bias pad.
 -- 
 2.25.1
 
