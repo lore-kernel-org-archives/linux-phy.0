@@ -4,76 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5988DC61DE2
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Aug 2026 11:33:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 474A1C61DD3
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Aug 2026 12:30:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6qJ3KK3qU8SCNtHfxByb43+oyT5lo119kriorqATo3g=; b=V2lxQDl0WJWIhm
-	LEpgV+qlJIKTpi1Afv1+M4bkmy3K5Tz396hYKeqrgXRVL86bjSc0QKb7GgR+HPjZF14gNyZ3cJ9fk
-	mA8nIUCSwdOA2u9QIQPWZPvWxrTWC0fyz9OxBKw37RgD1qRi/V1q7hvgBsa2jRMsMAkfXDBV3Kii6
-	CRgUJDbZZFmYI2YV5eE3tWLMBw+xo7H/aYPOugGxJgZgrOdP3iE0pOb1R50QE5rQ9zjpGbCbq1NLh
-	sd7WO0jOdcEJIhcHVxPCyBJMiG1BYB+gSh7GRfGj2g5Bl203rcItztLp9zNS6whlz2O/uRJnItShT
-	cRabTMlh9dILm3nRoeVA==;
+	List-Owner; bh=WcbBIMLORegraf4qyhV2WC3ywDk+j1WomGPm2icnEEo=; b=melm5vUtl4V1je
+	/R7/bJ6stpf+cNRPk2aVNYGZRqkQXveb9Q5XJT5L53vwpAVfFkyvt1WrGua+K+Js2c2XLxxqiB66N
+	8TnVx9mSNnyU+QbICjtDBE0xnVuB4VkJ49pdDrUM2PPD42aJhYZ8ToOtDiDhC74jprDXArUmkjDPb
+	6EfLU9G/7HbMozW0QaeeT7ojEejhdklFA+V/qPM3SaqhaMpU8E6e1lo3S/zgpv2O9aUQwg03RYQUd
+	K91GmAWa5fRdJtTmzejgRHKpISajoSRbuEt6nBpGEGDv2P9/fwgZdbwHAOAM65FG758xedMH5U/Y2
+	y8zUZaG1hRvFEUlZRKVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x10G8-00000009B5X-3LYU;
-	Mon, 31 Aug 2026 11:33:04 +0000
-Received: from sender5-pp-f112.zoho.com ([165.173.182.112])
+	id 1x119m-00000009IgP-2tvY;
+	Mon, 31 Aug 2026 12:30:34 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x10G6-00000009B3q-1e8r;
-	Mon, 31 Aug 2026 11:33:03 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1788175966; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=EleetKclAEvQ9L8pxV+F2QaLovXSAX6nfqp7L2Nqd9U8FpNH2/2TX8NZRUHw2KGe/lUdhE0DDlqn3y7qBKG7HfyC9P9FDqBV252NRxoGUUjU/5fQtbkW5W8RosfmAXhHo770nlMqGJpzFLY2Ox8M3syVApjt4Xqzs1Wq3pV1u44=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1788175966; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=1bmoP76gMT2BwTB0k454lDwNfisMmqxZAOhXk7e+A3o=; 
-	b=QUEYz6uRfersySI4lzmZxIKqpG6P0kFTyuKqHiKcGzuzOEmyuY48CuG7VRKnkoAczXTTr1De1qBuK/lyaKiMH9rqjZ8p0shfQVDFJRYikUIX71Gwec89ifnmjmykg5ww8DvHsA11EuxUL7SBM58WWHfecoK3i0iO0FX9QUqEo7s=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=michael.riesch@collabora.com;
-	dmarc=pass header.from=<michael.riesch@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1788175966;
-	s=zohomail; d=collabora.com; i=michael.riesch@collabora.com;
-	h=Message-ID:Date:Date:MIME-Version:Subject:Subject:To:To:Cc:Cc:From:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:Message-Id:Reply-To;
-	bh=1bmoP76gMT2BwTB0k454lDwNfisMmqxZAOhXk7e+A3o=;
-	b=P0k80emAkoE/Zslcoz8ZEZZ/6Y62orx0DOwYdj4TWC9BSjP7pP/X7dKauvmGalyZ
-	fFM7I8rAkBr5T96AjZlb7Is26uO8PthOcrfvQWed1wBJ3cVHZU9zazr//2XgQOhZcms
-	WdUVwqVFOlZcVMozsgbEPIYT55Y9FMczq9B0flWM=
-Received: by mx.zohomail.com with SMTPS id 1788175962298302.1922470156459;
-	Mon, 31 Aug 2026 04:32:42 -0700 (PDT)
-Message-ID: <7425ac83-f6d8-4443-a26e-a47f9306aa24@collabora.com>
-Date: Mon, 31 Aug 2026 13:32:37 +0200
+	id 1x119l-00000009IgC-0WAy
+	for linux-phy@lists.infradead.org;
+	Mon, 31 Aug 2026 12:30:33 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 78A94409AF;
+	Mon, 31 Aug 2026 12:30:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 70FA81F000E9;
+	Mon, 31 Aug 2026 12:30:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1788179432;
+	bh=o0j9vXuew8PzdgEF/ZP3ym0lz6xPW5nlKTzSfWn7rN0=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=G+KSjRfRvJBfjsqM2aTWTeCVZQEMsuPITbqdm7+NO/bGl5UDQzJoqteEUbVi70uYH
+	 2xwLIuX9+NUotx2n1s6Rd0MF/hlF4pkUoRdpSv1W5QVZPOGEbkQsxtZH2Ve5uhgN/b
+	 AYmHSQfXDYsy+d9eZskq/ZYtWb86TuT3qFboG71HaO/b3pPhHqaCvH0HDEwqfdAc/K
+	 EzgjSQI6akWXpMqfXGIZOCrox3k//voklpB2cZuaRJxqyQ6uzTaGrDqNa7ecGGLhkO
+	 VtKPezGZ7XqAErXAU7MAnAS1uCkDqspI6aX4cFyZg6txeFJGz6IBaoBM6ko/SaIh9x
+	 k2QdOnINQWScw==
+Message-ID: <d69efb1c-4ab3-4148-8b98-035377852da6@kernel.org>
+Date: Mon, 31 Aug 2026 14:30:23 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 1/7] dt-bindings: phy: Add PHY_TYPE_DSI and
- PHY_TYPE_CSI definitions
-To: Krzysztof Kozlowski <krzk@kernel.org>, Jason Yang <jason98166@gmail.com>
+Subject: Re: [PATCH v3 01/12] dt-bindings: phy: qcom,ipq5332-uniphy-pcie:
+ Change to PCIe/USB3 combo PHY
+To: George Moussalem <george.moussalem@outlook.com>
 Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
  <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Guochun Huang <hero.huang@rock-chips.com>,
+ <conor+dt@kernel.org>, Praveenkumar I <praveenkumar.i@oss.qualcomm.com>,
  Philipp Zabel <p.zabel@pengutronix.de>,
- Sebastian Reichel <sebastian.reichel@collabora.com>,
- Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konradybcio@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Varadarajan Narayanan <varadarajan.narayanan@oss.qualcomm.com>,
+ Nitheesh Sekar <quic_nsekar@quicinc.com>,
+ Wesley Cheng <quic_wcheng@quicinc.com>,
+ Manivannan Sadhasivam <mani@kernel.org>, linux-arm-msm@vger.kernel.org,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20260821-dcphy-rx-v1-v4-0-f1797634233d@gmail.com>
- <20260821-dcphy-rx-v1-v4-1-f1797634233d@gmail.com>
- <20260827-thundering-cream-saluki-dd05df@quoll>
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
+References: <20260825-ipq5018-usb3-v3-0-39be0955a6aa@outlook.com>
+ <20260825-ipq5018-usb3-v3-1-39be0955a6aa@outlook.com>
+ <20260828-wisteria-fennec-from-arcadia-a44ebe@quoll>
+ <SN7PR19MB6736B881B203BF5746F0DEE39DAC2@SN7PR19MB6736.namprd19.prod.outlook.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
-From: Michael Riesch <michael.riesch@collabora.com>
-In-Reply-To: <20260827-thundering-cream-saluki-dd05df@quoll>
-X-ZohoMailClient: External
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260831_043302_500582_61C76C8F 
-X-CRM114-Status: GOOD (  19.23  )
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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
+In-Reply-To: <SN7PR19MB6736B881B203BF5746F0DEE39DAC2@SN7PR19MB6736.namprd19.prod.outlook.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,79 +129,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krzysztof,
-
-On 8/27/26 13:45, Krzysztof Kozlowski wrote:
-> On Fri, Aug 21, 2026 at 08:02:29PM +0800, Jason Yang wrote:
->> A MIPI D-PHY or C-PHY can be a transmitter (DSI) or a receiver (CSI),
->> and in some PHY blocks both work at the same time. The existing
->> PHY_TYPE_DPHY and PHY_TYPE_CPHY cannot tell whether a consumer wants
->> the transmitter or the receiver.
-> 
-> The consumer knows this already, no? Imagine consumer of the phy is some
-> ISP receiving data over CSI for given port, thus consumer cannot
-> transmit over that link.
-> 
-> All this seems redundant.
-
-Indeed the consumer should know what to request. For example, the MIPI
-CSI receivers should request the PHY_TYPE_CSI PHY. But I am not sure why
-this should be redundant?! Can you elaborate? TBH I don't really
-understand your remark.
-
->> Add PHY_TYPE_DSI and PHY_TYPE_CSI, so that a binding can select both
->> D-PHY or C-PHY and transmitter or receiver. They do not replace
->> PHY_TYPE_DPHY/PHY_TYPE_CPHY, which remain the right choice where a cell
->> selects the mode. The first user is the Rockchip RK3588 MIPI DC-PHY
->> binding.
+On 28/08/2026 12:51, George Moussalem wrote:
+> On 8/28/26 14:09, Krzysztof Kozlowski wrote:
+>> On Tue, Aug 25, 2026 at 04:37:18PM +0400, George Moussalem wrote:
+>>> This PHY is a PCIE/USB3 multi-purpose PHY. Initial support was added for
+>>> PCIe only, so rename the binding and add support for USB3 PHY mode.
+>>>
+>>> The PCIe and USB physical pads are muxed and selection is done via a
+>>> control register in TCSR. Add a new property to the binding to enable
+>>> switching the default PCIe mux selection to USB3 mode.
+>>>
+>>> In addition, USB3 mode requires a 5V supply, so add a vdd-supply
+>>> property for it.
+>>>
+>>> Signed-off-by: George Moussalem <george.moussalem@outlook.com>
+>>> ---
+>>>  .../bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml | 109 ----------------
+>>>  .../phy/qcom,ipq5332-uniphy-pcie-usb3-phy.yaml     | 141 +++++++++++++++++++++
+>>>  include/dt-bindings/phy/phy-qcom-qmp.h             |   4 +
+>>>  3 files changed, 145 insertions(+), 109 deletions(-)
+>>>
+>>> diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml
+>>> deleted file mode 100644
+>>> index 6e9df81441e9..000000000000
 >>
->> Suggested-by: Michael Riesch <michael.riesch@collabora.com>
->> Link: https://lore.kernel.org/r/82da3622-9c3a-454c-87bc-fb4ec7adb68d@collabora.com
->> Signed-off-by: Jason Yang <jason98166@gmail.com>
+>> Please do not rename the binding. Old name was correct. New one is not,
+>> otherwise please point me to the compatible like that.
 > 
-> Where is any DTS using it? I did a search and no results of upstream
-> posting.
+> I thought we had come to the conclusion it's the same device in the
+> discussion in v2:
+> https://lore.kernel.org/all/gn43qixdtbq5iyfqvzibdtx4lmwpkt2ieahr7oqsxxjfpldb6d@xbxhbdrq4e6b/
 > 
->> ---
->>  include/dt-bindings/phy/phy.h | 2 ++
->>  1 file changed, 2 insertions(+)
->>
->> diff --git a/include/dt-bindings/phy/phy.h b/include/dt-bindings/phy/phy.h
->> index 979b5dfd8353..8ee3f88e6d80 100644
->> --- a/include/dt-bindings/phy/phy.h
->> +++ b/include/dt-bindings/phy/phy.h
->> @@ -24,6 +24,8 @@
->>  #define PHY_TYPE_CPHY		11
->>  #define PHY_TYPE_USXGMII	12
->>  #define PHY_TYPE_XAUI		13
->> +#define PHY_TYPE_DSI		14
->> +#define PHY_TYPE_CSI		15
-> 
-> DSI and CSI does not look like types of PHY...
 
-Fair point. AFAIK both CSI and DSI are protocols on top of the physical
-CPHY and DPHY communication. Maybe we should stick to
-transmitter/receiver/RX/TX direction/.../something. Would work for me
-too, my simple request is to *NOT* introduce the same magic for each
-combo PHY block over and over again, but create something generic.
+How is it relevant to renaming of the file?
 
-What about
+> I've split up this series into 3 as in the cover letter:
+> 1. Flatten USB Controller Nodes on IPQ SoCs
+>    link:
+> https://lore.kernel.org/r/20260825-ipq-flatten-usb-v1-0-5c1f3170bbe9@outlook.com
+> 2. Enable USB3 for Qualcomm IPQ5018 (this patch series)
+> 3. Enable USB3 for Qualcomm IPQ5332 (to be submitted)
 
-    #define PHY_DIRECTION_RX	0
-    #define PHY_DIRECTION_TX	1
-
-or so?
-
-This is pretty much what Jason had in v1, but 1) generic instead of
-Rockchip-specific (if anything, it probably should be Samsung-specific)
-and 2) switched the constants to match the state of the art in the
-kernel better.
+How is this relevant?
 
 Best regards,
-Michael
-
-
-
+Krzysztof
 
 -- 
 linux-phy mailing list
