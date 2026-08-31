@@ -4,115 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 474A1C61DD3
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Aug 2026 12:30:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9695C624C6
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Aug 2026 13:41:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WcbBIMLORegraf4qyhV2WC3ywDk+j1WomGPm2icnEEo=; b=melm5vUtl4V1je
-	/R7/bJ6stpf+cNRPk2aVNYGZRqkQXveb9Q5XJT5L53vwpAVfFkyvt1WrGua+K+Js2c2XLxxqiB66N
-	8TnVx9mSNnyU+QbICjtDBE0xnVuB4VkJ49pdDrUM2PPD42aJhYZ8ToOtDiDhC74jprDXArUmkjDPb
-	6EfLU9G/7HbMozW0QaeeT7ojEejhdklFA+V/qPM3SaqhaMpU8E6e1lo3S/zgpv2O9aUQwg03RYQUd
-	K91GmAWa5fRdJtTmzejgRHKpISajoSRbuEt6nBpGEGDv2P9/fwgZdbwHAOAM65FG758xedMH5U/Y2
-	y8zUZaG1hRvFEUlZRKVQ==;
+	List-Owner; bh=bgC0iGp4GneIe+ABNLC3Hes9bS7REgY0EvEmJsl1fK4=; b=Tz4f7R4jfMJrme
+	1q49dJZlxNdzEp8+R9U2S0UYyoCn0CzRKDOdIeg7CwVVl05kfwOJWzWeaCQxEeKaEJuPYImk5mBJy
+	aZItqDN6mYiO3Of5EMTtXOVG1/z/v5lhmzrJ4+ZRYP5YXe0QvGcO7eTQtzOpm9evsvOi/qmI/w6H7
+	H4cWnPM/bWDylwp66LqVgkH5Oyandkj1rEGkLBh7I2XG2mdWJeITfUR2K/BI6wMBfStSTQfrFCcac
+	eKQ9neQUD8HKbiz0wgrlW7j1qhGNK94ep0MEICbSZ6d02K+QC5qOcssLkz6XesXbCVdV1gnLjNW3i
+	zsBt8nldISLnxSy3JW/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x119m-00000009IgP-2tvY;
-	Mon, 31 Aug 2026 12:30:34 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1x12G7-00000009Tdc-21r8;
+	Mon, 31 Aug 2026 13:41:11 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x119l-00000009IgC-0WAy
+	id 1x12Ft-00000009TSp-2UBL
 	for linux-phy@lists.infradead.org;
-	Mon, 31 Aug 2026 12:30:33 +0000
+	Mon, 31 Aug 2026 13:40:57 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 78A94409AF;
-	Mon, 31 Aug 2026 12:30:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 70FA81F000E9;
-	Mon, 31 Aug 2026 12:30:26 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 0887D601FD;
+	Mon, 31 Aug 2026 13:40:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 966541F00ACA;
+	Mon, 31 Aug 2026 13:40:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788179432;
-	bh=o0j9vXuew8PzdgEF/ZP3ym0lz6xPW5nlKTzSfWn7rN0=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=G+KSjRfRvJBfjsqM2aTWTeCVZQEMsuPITbqdm7+NO/bGl5UDQzJoqteEUbVi70uYH
-	 2xwLIuX9+NUotx2n1s6Rd0MF/hlF4pkUoRdpSv1W5QVZPOGEbkQsxtZH2Ve5uhgN/b
-	 AYmHSQfXDYsy+d9eZskq/ZYtWb86TuT3qFboG71HaO/b3pPhHqaCvH0HDEwqfdAc/K
-	 EzgjSQI6akWXpMqfXGIZOCrox3k//voklpB2cZuaRJxqyQ6uzTaGrDqNa7ecGGLhkO
-	 VtKPezGZ7XqAErXAU7MAnAS1uCkDqspI6aX4cFyZg6txeFJGz6IBaoBM6ko/SaIh9x
-	 k2QdOnINQWScw==
-Message-ID: <d69efb1c-4ab3-4148-8b98-035377852da6@kernel.org>
-Date: Mon, 31 Aug 2026 14:30:23 +0200
+	s=k20260515; t=1788183656;
+	bh=a3xAqzva9iX6AIHQHMEXxnpG84kympdAWLmYKSlr+xE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=nLYn4XocDGJ1j1+1kyeg9YASiCwGxZO0YIHtAhQpl8Q1TAnHBXKZcqb9T2vPRWpOi
+	 FY/S1Jv0qCGT85GrAWDdU7Z2ma++tztcHNa89yrkLxxHZtSBrJGkhv20kDuQNhv/ji
+	 kmZX6OUEn4+55sql03lwPaZIyjGDTp+awBrgDcCCFlNOQAG7nN9ksDHAoUjI3wk5Xr
+	 SKE+moxbut4b6SSFtGTjvAAT2LSJY6odKWuYqs05LmgRwq0JmtGW++tBXMknBQBJoj
+	 5fmdjWVKmw4KMVYeiD4MUZKzkMIErWm0/DlbUxq96V+gDGYoDjbpwepfuNfNrJb+qE
+	 hLpD68SyOvJTQ==
+Date: Mon, 31 Aug 2026 08:40:56 -0500
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Bhargav Joshi <j.bhargav.u@gmail.com>
+Cc: Roger Quadros <rogerq@kernel.org>, Aaro Koskinen <aaro.koskinen@iki.fi>,
+	Frank Li <Frank.Li@kernel.org>, dmaengine@vger.kernel.org,
+	linux-kernel@vger.kernel.org, daniel.baluta@gmail.com,
+	m-chawdhry@ti.com, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Vignesh Raghavendra <vigneshr@ti.com>,
+	Andreas Kemnade <andreas@kemnade.info>,
+	Tony Lindgren <tony@atomide.com>, linux-usb@vger.kernel.org,
+	linux-omap@vger.kernel.org, Kevin Hilman <khilman@baylibre.com>,
+	Andrzej Siewior <bigeasy@linutronix.de>,
+	linux-phy@lists.infradead.org,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Kumar Gupta <ajay.gupta@ti.com>,
+	Sergei Shtylyov <sshtylyov@ru.mvista.com>, goledhruva@gmail.com,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	devicetree@vger.kernel.org, simona.toaca@nxp.com,
+	Ravi B <ravibabu@ti.com>
+Subject: Re: [PATCH v2 1/7] dt-bindings: dma: ti,cppi41: Convert to DT schema
+Message-ID: <178818365533.732788.12823920440612665617.robh@kernel.org>
+References: <20260818-ti-am33-usb-v2-0-66fd44d66824@gmail.com>
+ <20260818-ti-am33-usb-v2-1-66fd44d66824@gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 01/12] dt-bindings: phy: qcom,ipq5332-uniphy-pcie:
- Change to PCIe/USB3 combo PHY
-To: George Moussalem <george.moussalem@outlook.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
- <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Praveenkumar I <praveenkumar.i@oss.qualcomm.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Varadarajan Narayanan <varadarajan.narayanan@oss.qualcomm.com>,
- Nitheesh Sekar <quic_nsekar@quicinc.com>,
- Wesley Cheng <quic_wcheng@quicinc.com>,
- Manivannan Sadhasivam <mani@kernel.org>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
-References: <20260825-ipq5018-usb3-v3-0-39be0955a6aa@outlook.com>
- <20260825-ipq5018-usb3-v3-1-39be0955a6aa@outlook.com>
- <20260828-wisteria-fennec-from-arcadia-a44ebe@quoll>
- <SN7PR19MB6736B881B203BF5746F0DEE39DAC2@SN7PR19MB6736.namprd19.prod.outlook.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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
-In-Reply-To: <SN7PR19MB6736B881B203BF5746F0DEE39DAC2@SN7PR19MB6736.namprd19.prod.outlook.com>
+Content-Disposition: inline
+In-Reply-To: <20260818-ti-am33-usb-v2-1-66fd44d66824@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,51 +86,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 28/08/2026 12:51, George Moussalem wrote:
-> On 8/28/26 14:09, Krzysztof Kozlowski wrote:
->> On Tue, Aug 25, 2026 at 04:37:18PM +0400, George Moussalem wrote:
->>> This PHY is a PCIE/USB3 multi-purpose PHY. Initial support was added for
->>> PCIe only, so rename the binding and add support for USB3 PHY mode.
->>>
->>> The PCIe and USB physical pads are muxed and selection is done via a
->>> control register in TCSR. Add a new property to the binding to enable
->>> switching the default PCIe mux selection to USB3 mode.
->>>
->>> In addition, USB3 mode requires a 5V supply, so add a vdd-supply
->>> property for it.
->>>
->>> Signed-off-by: George Moussalem <george.moussalem@outlook.com>
->>> ---
->>>  .../bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml | 109 ----------------
->>>  .../phy/qcom,ipq5332-uniphy-pcie-usb3-phy.yaml     | 141 +++++++++++++++++++++
->>>  include/dt-bindings/phy/phy-qcom-qmp.h             |   4 +
->>>  3 files changed, 145 insertions(+), 109 deletions(-)
->>>
->>> diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml
->>> deleted file mode 100644
->>> index 6e9df81441e9..000000000000
->>
->> Please do not rename the binding. Old name was correct. New one is not,
->> otherwise please point me to the compatible like that.
+
+On Tue, 18 Aug 2026 19:58:43 +0530, Bhargav Joshi wrote:
+> Convert TI CPPI 4.1 DMA controller text bindings to DT schema. Add
+> ti,am3359-cppi41 and ti,da830-cppi41 into single schema since they share
+> the same hardware IP block and driver. Add undocumented #dma-requests
+> and power-domains properties to match existing DTS usage.
 > 
-> I thought we had come to the conclusion it's the same device in the
-> discussion in v2:
-> https://lore.kernel.org/all/gn43qixdtbq5iyfqvzibdtx4lmwpkt2ieahr7oqsxxjfpldb6d@xbxhbdrq4e6b/
+> Signed-off-by: Bhargav Joshi <j.bhargav.u@gmail.com>
+> ---
+>  .../devicetree/bindings/dma/ti/ti,cppi41.yaml      | 109 +++++++++++++++++++++
+>  .../devicetree/bindings/usb/am33xx-usb.txt         |  14 ---
+>  .../devicetree/bindings/usb/da8xx-usb.txt          |  12 ---
+>  3 files changed, 109 insertions(+), 26 deletions(-)
 > 
 
-How is it relevant to renaming of the file?
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 
-> I've split up this series into 3 as in the cover letter:
-> 1. Flatten USB Controller Nodes on IPQ SoCs
->    link:
-> https://lore.kernel.org/r/20260825-ipq-flatten-usb-v1-0-5c1f3170bbe9@outlook.com
-> 2. Enable USB3 for Qualcomm IPQ5018 (this patch series)
-> 3. Enable USB3 for Qualcomm IPQ5332 (to be submitted)
-
-How is this relevant?
-
-Best regards,
-Krzysztof
 
 -- 
 linux-phy mailing list
