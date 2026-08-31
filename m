@@ -4,55 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2ADAC61DE2
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Aug 2026 06:42:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4CB48C61DE2
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Aug 2026 06:46:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=UVnHBgZMUaKts+51ysrrfvpMzSWSKQ/pzKp5CDYNEKw=; b=KYfOfa0HBY01aG
-	KAwc/GmFsaQTZSucu+i1FYR2r6I2gYHea+fniD3FWokMuK3TcT1BfycrnkzyjXeO+EHHabecewg1F
-	OICNqfNjsBKhdOMqMoJQlB0WJOktYqwBlcBWBWMNMrslhuTdEnIN+f/a1xBYu3Zw4wbtZul2UiUSa
-	KceX9B24MNzHYVWei5rQJYnkI0JkFZcQAU8EVzOIdOS7VuGITTkxDzUbawhEiC5DMBYIYFXnl9W17
-	1Dumx2co5rsbpdX7eakyMFJmRJKRVb9U1FBNsPDDUX2yHPtHfNzFCnkn6lAVMu9wxNpuvc8IkDM4X
-	tZ3dmoWhscLNKkjfPQ1Q==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mp/vNg4DcK3D3Y+jUd9nOE/rBsxerEBRDahkrn9pwzA=; b=HC+k6AZNSNqRrE
+	nvD7DQ6Xzjr/I7cRrcKTF/SyYrBrKIjIhLes0XcY3osDel8w/ED2vSQ7Pt/qs6jfxELfdhz052mC0
+	2ICfIRdvCQDCUTydExSQgIgTzLPrth0z5ZZ/lAk/n2WTf4d8gycMRzeUXQw5sDRInV1Y+AMxUfpE5
+	qcsIpbWxTu/ka64l/m2bFfGgV7kpdNbZTuMPM6MEdYjHb4Ahgh+H5h92rytV680N1O2dhGNSP9CCK
+	nu0yDtkufYTjIvK7C3Vny8DEDNb9XgizeDtAg/mITTQAkYkUDbQnY/kzOYuRr2c+YXS7QF4BKgoA5
+	/j4/ZMU6UGeMbN6SaJOA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x0vil-00000008d33-24b6;
-	Mon, 31 Aug 2026 06:42:19 +0000
-Received: from mail-m15586.qiye.163.com ([101.71.155.86])
+	id 1x0vms-00000008dKX-3a14;
+	Mon, 31 Aug 2026 06:46:34 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x0vij-00000008d2V-1FHa;
-	Mon, 31 Aug 2026 06:42:18 +0000
-Received: from localhost.localdomain (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 4be9c29ca;
-	Mon, 31 Aug 2026 14:36:56 +0800 (GMT+08:00)
-From: Shawn Lin <shawn.lin@rock-chips.com>
-To: Neil Armstrong <neil.armstrong@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>
-Cc: linux-rockchip@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Shawn Lin <shawn.lin@rock-chips.com>
-Subject: [PATCH] phy: rockchip: naneng-combphy: Fix TX detect RX termination errata
-Date: Mon, 31 Aug 2026 14:36:44 +0800
-Message-Id: <1788158204-161347-1-git-send-email-shawn.lin@rock-chips.com>
-X-Mailer: git-send-email 2.7.4
-X-HM-Tid: 0aa0568907fa03a4kunmda4bace446a0ab
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1kYFggdWUFKV1ktWUFJV1kPCRoVCBIfWUFZGk9CSVZNTx5IHkMeGU
-	1DSUlWFRQJFhoXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0
-	tIVUpLSU9PT0hVSktLVUpCS0tZBg++
-DKIM-Signature: a=rsa-sha256;
-	b=f6G5P3sjOCx1T9mcIIBZGVZcZPtlosS34n6wryvcpRH1kVxgrKkUT9XimYCecbeM2KpTjfzTWd3NuxG2JwEDNhoa0dxECebzNnwgwfsLksupuDT5g0HRyOPVHLkk6C3eAW7PYFrpmKjqTxbd0+4n+MgJ3huX/ysbU1PEJECtx1A=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=Qoc1zbK+pfmGG4t1HLPMA0l2I29GPvBOn6lUEXanbS8=;
-	h=date:mime-version:subject:message-id:from;
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260830_234217_555396_A87079E8 
-X-CRM114-Status: GOOD (  12.37  )
+	id 1x0vmr-00000008dJf-3ZNG
+	for linux-phy@lists.infradead.org;
+	Mon, 31 Aug 2026 06:46:33 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 599C5435EA;
+	Mon, 31 Aug 2026 06:46:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3EC501F000E9;
+	Mon, 31 Aug 2026 06:46:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1788158793;
+	bh=yiCZQi/KsfPhos3m9UPBMLZ/6VRkatgenlxPmXeCU1s=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=dFWKOF5JBsWRW0Ut0BH3FOS33DP30hPeVz+jynqpgAwHvHvEdyprLdM30wiiUPo/y
+	 Wxr6BIyBzbL3bO31f86ZFFPq6rwAUN1Fx5gaGE84JwtpTtRbIztEm8r33Jgx1V7Ixa
+	 ifulcECamQVwaC62/36RIFF0Q2OCmmyZzGCnM5SuExtFaDITDipDtGnWITU7urPabU
+	 ip2IoqgjnAlnUmyoR1gPNKLWEkWCyLZbgSqNfp+Cpqr/zzwFdrbVSMBsQtZuoiuR8B
+	 uYXNr2TbOr5JvUPrs6SW+IBoYbH7aFIuD2MKEiu2V5M5qxmtP/Y0FImDIX5K8oyNHs
+	 aDiezMykhuueQ==
+Date: Mon, 31 Aug 2026 08:46:29 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+	Conor Dooley <conor+dt@kernel.org>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org
+Subject: Re: [PATCH v6 1/5] dt-bindings: phy: Add PHY_TYPE_EUSB2 definition
+Message-ID: <20260831-visionary-capable-termite-3dae2a@quoll>
+References: <20260826-eusb2-interrupt-v6-v6-0-ae2601cfa80c@oss.qualcomm.com>
+ <20260826-eusb2-interrupt-v6-v6-1-ae2601cfa80c@oss.qualcomm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260826-eusb2-interrupt-v6-v6-1-ae2601cfa80c@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -64,107 +69,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Some PHY revisions may fail to detect the peer RX's termination
-resistor (RTERM) under certain critical temperature conditions.
-This causes TX detection failures on PCIe links.
+On Wed, Aug 26, 2026 at 10:32:51PM +0530, Krishna Kurapati wrote:
+> eUSB2 (Embedded USB2) is a MIPI Alliance standard for chip-to-chip USB2
+> signaling. Unlike standard USB2, which uses 3.3V signaling, eUSB2 uses
+> low-voltage differential signaling (~0.4V) and requires a repeater to
+> interface with external USB2 ports. Because of these differences, eUSB2
+> PHY initialization sequences, voltage tuning, and register configuration
+> are distinct from USB2.
+> 
+> Additionally, eUSB2 targets handle wakeup interrupts differently
+> depending on device speed when operating in host mode. According to the
+> eUSB2 specification, remote wakeup signaling in host mode is detected
+> via different data-line assertions based on the connected device speed:
+> 
+> - Low-speed devices: the host repeater drives eD+ to logic '1' upon
+>   detecting a K-state on the USB lines during remote wakeup (eUSB2
+>   spec, Section 5.5.14).
+> - Full-speed/high-speed devices: the host repeater drives eD- to
+>   logic '1' upon detecting a K-state during remote wakeup (eUSB2 spec,
+>    Sections 5.5.15 and 5.5.18).
+> 
+> Since the eUSB2 PHY's DP and DM lines need to be configured differently
+> from USB2 PHYs, controllers should be able to query the PHY type and
+> configure wakeup interrupts accordingly.
+> 
+> Add PHY_TYPE_EUSB2 to distinguish eUSB2 PHYs from standard USB2 PHYs.
+> 
+> Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+> ---
+>  include/dt-bindings/phy/phy.h | 1 +
+>  1 file changed, 1 insertion(+)
 
-Add a workaround to force the RTERM detection ready signal for
-affected PHY revisions. This ensures reliable TX-to-RX termination
-detection across all operating temperature ranges.
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 
-The fix applies to RK3562, RK3568, RK3576 and RK3588 SoCs which share
-the same PHY IP with this hardware errata.
-
-Fixes: 7160820d742a ("phy: rockchip: add naneng combo phy for RK3568")
-Fixes: f13bff25161b ("phy: rockchip-naneng-combo: Support rk3562")
-Fixes: ba8ad7eece66 ("phy: rockchip-naneng-combo: add rk3576 support")
-Fixes: a03c44277253 ("phy: rockchip: Add naneng combo phy support for RK3588")
-Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
----
-
- drivers/phy/rockchip/phy-rockchip-naneng-combphy.c | 19 +++++++++++++++++++
- 1 file changed, 19 insertions(+)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-index 7843356..3102a99 100644
---- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-+++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-@@ -106,6 +106,9 @@
- #define RK3568_PHYREG18				0x44
- #define RK3568_PHYREG18_PLL_LOOP		0x32
- 
-+#define RK3568_PHYREG26				0x64
-+#define RK3568_PHYREG26_FORCE_RTERM_DET_RDY	BIT(5)
-+
- #define RK3568_PHYREG30				0x74
- #define RK3568_PHYREG30_GATE_TX_PCK_SEL         BIT(7)
- #define RK3568_PHYREG30_GATE_TX_PCK_DLY_PLL_OFF BIT(7)
-@@ -194,6 +197,7 @@ struct rockchip_combphy_cfg {
- 	unsigned int num_phys;
- 	unsigned int phy_ids[3];
- 	const struct rockchip_combphy_grfcfg *grfcfg;
-+	bool force_rxterm_det_rdy;
- 	int (*combphy_cfg)(struct rockchip_combphy_priv *priv);
- };
- 
-@@ -265,6 +269,17 @@ static int rockchip_combphy_init(struct phy *phy)
- 
- 	switch (priv->type) {
- 	case PHY_TYPE_PCIE:
-+		/*
-+		 * Hardware Errata: TX fails to detect peer RX termination.
-+		 * Some PHY revisions may fail to detect remote RX's RTERM
-+		 * (receiver termination resistor) under certain critical
-+		 * temperature conditions. Set force rterm detect ready to
-+		 * fix it.
-+		 */
-+		if (priv->cfg->force_rxterm_det_rdy)
-+			rockchip_combphy_updatel(priv, RK3568_PHYREG26_FORCE_RTERM_DET_RDY,
-+					RK3568_PHYREG26_FORCE_RTERM_DET_RDY, RK3568_PHYREG26);
-+		fallthrough;
- 	case PHY_TYPE_USB3:
- 	case PHY_TYPE_SATA:
- 	case PHY_TYPE_SGMII:
-@@ -801,6 +816,7 @@ static const struct rockchip_combphy_cfg rk3562_combphy_cfgs = {
- 	},
- 	.grfcfg		= &rk3562_combphy_grfcfgs,
- 	.combphy_cfg	= rk3562_combphy_cfg,
-+	.force_rxterm_det_rdy  = true,
- };
- 
- static int rk3568_combphy_cfg(struct rockchip_combphy_priv *priv)
-@@ -998,6 +1014,7 @@ static const struct rockchip_combphy_cfg rk3568_combphy_cfgs = {
- 	},
- 	.grfcfg		= &rk3568_combphy_grfcfgs,
- 	.combphy_cfg	= rk3568_combphy_cfg,
-+	.force_rxterm_det_rdy  = true,
- };
- 
- static int rk3576_combphy_cfg(struct rockchip_combphy_priv *priv)
-@@ -1219,6 +1236,7 @@ static const struct rockchip_combphy_cfg rk3576_combphy_cfgs = {
- 	},
- 	.grfcfg		= &rk3576_combphy_grfcfgs,
- 	.combphy_cfg	= rk3576_combphy_cfg,
-+	.force_rxterm_det_rdy  = true,
- };
- 
- static int rk3588_combphy_cfg(struct rockchip_combphy_priv *priv)
-@@ -1391,6 +1409,7 @@ static const struct rockchip_combphy_cfg rk3588_combphy_cfgs = {
- 	},
- 	.grfcfg		= &rk3588_combphy_grfcfgs,
- 	.combphy_cfg	= rk3588_combphy_cfg,
-+	.force_rxterm_det_rdy  = true,
- };
- 
- static const struct of_device_id rockchip_combphy_of_match[] = {
--- 
-2.7.4
+Best regards,
+Krzysztof
 
 
 -- 
