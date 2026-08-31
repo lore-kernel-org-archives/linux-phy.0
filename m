@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD2AEC61DE2
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Aug 2026 02:55:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB4E4C61DE2
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Aug 2026 02:55:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=STHDAwUwe1lPDJjBSsoBB+glKMKzpaGsdYzGbzZNSAQ=; b=DSZYrxQtObYbZ9
-	OHHxmO27HeJOM+LeU78kMOd/BwWY1LyzI4/2qQ3KcMN1eE92FJRZEwLvWWdM8qDDtYNQ2Db9bP0xk
-	6NWvJ0ACL9CdzjRysRuLOgLXQgvkUcWdulTBenUB3COfcggXcOwBHF92JqlkoleIH1a8AjdA28OZ1
-	hChwlwS2y6LMq1yR8f02O3iQNgOuB55/ly0RlXcS8AR5sKATgnLNJWZ+uowddW3+vXwVdobD/GFBc
-	oB7eCPkz4SJ+p5+iG6NKMDSlLX4DMbaLi4foXGQZa37VOo7hv4ANlBZHCIk628hI3CO6YiA+zvPJ+
-	LaO/Qtv6nenojr8wiGAQ==;
+	List-Owner; bh=30WOV/6lgTq61i/JXUsicnqnzaOv8A263SNw9wfKgrA=; b=uszRq3TFSmhVQn
+	k/GLduq5pSM33xfJUm/57RVZgDZbkmPeutpUJNNMZSCGEogfPuu96zzsw6ikzfK5Ch/1QgqXpNZLT
+	lTsUjAPjcXlNE6L/hxXaMKydF/JX7R+QgbRuK75Xbsx9lNHJsFFeMWUv9K+tXiIDoiU5neufD83da
+	vVQHJ44loltKe7dApaeH6yvf8U2JlGJRPIAnhX8sMObvyXVEMIFJa2o2MKWMmfUPOpqeUNzz2o1aj
+	E0yWBwUFI9cz7OKULESNAxgblPRx3/bSE7SRnQOQJpSudk8JJuXcCcaFJPPh8U32yx3OR7uPYOtgS
+	jJO3Gfm0O4rTbl4Nf0LQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x0sBL-00000008NbA-2GQq;
-	Mon, 31 Aug 2026 02:55:35 +0000
-Received: from mail-pg1-x52b.google.com ([2607:f8b0:4864:20::52b])
+	id 1x0sBO-00000008Nc5-2UIf;
+	Mon, 31 Aug 2026 02:55:38 +0000
+Received: from mail-pg1-x52a.google.com ([2607:f8b0:4864:20::52a])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x0sBJ-00000008NaW-1NfH
+	id 1x0sBM-00000008NbR-1IiC
 	for linux-phy@lists.infradead.org;
-	Mon, 31 Aug 2026 02:55:34 +0000
-Received: by mail-pg1-x52b.google.com with SMTP id 41be03b00d2f7-cbedd5aece4so3134119a12.0
-        for <linux-phy@lists.infradead.org>; Sun, 30 Aug 2026 19:55:33 -0700 (PDT)
+	Mon, 31 Aug 2026 02:55:37 +0000
+Received: by mail-pg1-x52a.google.com with SMTP id 41be03b00d2f7-ca97d139d5fso2543365a12.0
+        for <linux-phy@lists.infradead.org>; Sun, 30 Aug 2026 19:55:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1788144932; x=1788749732; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1788144935; x=1788749735; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=46LUM18tPrzkL84ohB1luZ0Ql7DRRpzHdIhMb60LycI=;
-        b=cQ1Mvbx/12GZdTzTVeY25NZoGUfKU6RC4ZA3UNvyr1XH5BTvKk7EALwIdeP8mh9DF0
-         2w37qk3OTxb6O6SqcKCbQo4qjXzp/BKEeDPYA/L+A9GsMFtdcbdFQofSDIFL1GHVtDD4
-         8GyLFxtBvvg9LbNeIbbba1FS7yVKdzIdIr7qzq6HiWmAMt3orpCmWpdSxGtqa8EBoj/d
-         HXpasq9mMUHFK0+e8CrwyGz87BZqf5JJng2ktaG2FZW8HIC1OBSjPkbiYr9cm6p+56Z8
-         Dpn9pZMbajYOVNlUAvukZMT0S3Sg/6va1ngRSEV8Gl2x+DGROJqI7W2M2jJ3w4VTZL6y
-         QxoQ==
+        bh=ZfZZukszPL2Fv53k+Guq0g5Yfm4pyEHDGAx2QK0xQYk=;
+        b=V9hjI7uNyKS2/4wb9RMXbgOLTGaLyb77FFwv943ZHpzEv9AMqvFhcIGnae5Ov4jxE9
+         2YQGrMZAcKGliQNZWh3NxUPNPBUzB9ef4/bCXjx58v7wuRQQQyjp3zUXzijPbVTxrlIL
+         qY917+OgoMSeDszG9S3z31QPJuxW2uxEYaKONiy5E82DdFx4qgQodzsMH6G0rYd+EZXn
+         PCDhltOlU2BOuz7KQtHBqyiRiSIXwCXS4JFdLJQxKRWsnpvbuCHLXopiuUYxTcKwvZpy
+         ug20e84/oFRK68TVc3Om2iX7OtHQD/2m56PZCiqiL3/f+4V1iM+qvwojYz4VRUS2oTE6
+         3uNg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788144932; x=1788749732;
+        d=1e100.net; s=20251104; t=1788144935; x=1788749735;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=46LUM18tPrzkL84ohB1luZ0Ql7DRRpzHdIhMb60LycI=;
-        b=QQA6mXV9vhskKcIfowfuDZNX0oySWqiL8MRSFQ6hU3yZDK5ifk7KlZU+z1E6caNDAG
-         ooy2pz5tFmRgJKckbWEReYc/qz7zS8ZjCJas4Vb7TNH8vBHhwqJeGOuDinfVa77xZxuD
-         8NOeiuQj1cLmPf2mMFYZ11D+FUfC/5QmBN3XfroMgyatl1lCKeEo44xIXqkYOnGOPYm5
-         dej9B9wbkvXmyxbUUgAQTSbqrlMH3KYmK8mSnhqBmzg43h0McBZnde/mzO53xioJWZca
-         nnGU4XZ2FxciEHjGUnrP1aw031kPvYjJ5KvYwdXhLQ2OT1xFBrUNECrGeIARzxLvk6b5
-         xvhw==
-X-Forwarded-Encrypted: i=1; AKwUvBys2/GbMU7AufuPadLjXcs+BGzO8Txp+FMcVhcGOnQuc4jKOm7hUft6K442zdFWQZzremEbC5vXQDw=@lists.infradead.org
-X-Gm-Message-State: AFuF++kgj4ydoCMrbHkvuQIvnYHKyylq7QFRKl9tFjF8IJRuelJOGLWv
-	vmDWHnzlMriQkc+htfbIl7bjOCMCuxZ/u0thXTyijqh6VWoHN7RJDHPX
-X-Gm-Gg: AYBFou3VlR35tHe3RuHf2WA5324RWMDIiAoz9uUfFDl72dALmQi8Lv9sibqb9JhTFPM
-	ibVlfGXlCmoOj/z/dz8eDW/wSD/AwBieWr4hXVF9+LNABvUsxl27WzuBZnIYoO3dxP/5du+Gaqa
-	PY9u4AZHVvR0//Q5UlzVpMCQOb70dB9iIb1Q/lt94jVFhRo9EYK+N1IRGVYBqVtPqAkpStWcY8Y
-	5bKSJMrM70ZMJLLp5lHU53yyVqVYYk2VtJO+7hk5zOLUYhqObqDQuBrZSCWjCVmgCY4B0bIjPaa
-	U33bkGsDymgn6zQBokBXwNEFafXcNN7aZBBD/wSTedbY4iLR4lrt6C2/IKBEg0nkZyH1Zsf2qoG
-	ivCbYUbNRsJeMxDc8wImtF/+ROEFDRjSYTP7JYiQa+RZhmSoPk1tA5ItBKTN87nK8HCYSZzQyEa
-	p4GEXd0qxhBapC3ghbq9swyTbcUaIXDLkBswJc/94vAB3c2YbvRs1Z53mrv42+UV4PY0yV9w==
-X-Received: by 2002:a17:90b:4fc7:b0:395:8124:ac53 with SMTP id 98e67ed59e1d1-398da618732mr4487959a91.6.1788144932288;
-        Sun, 30 Aug 2026 19:55:32 -0700 (PDT)
+        bh=ZfZZukszPL2Fv53k+Guq0g5Yfm4pyEHDGAx2QK0xQYk=;
+        b=L52pv0xuTC9NFVnEzUNgO24VXEKRE6eXRaCZJO9xvCXuqQw0n+cRdcYBeqtCG+EaHw
+         dxXsnY+YG6IIRD15uj0fRkMYz6kVcbuXEHl4o4x0BmV48GgnXAQ44MBWNPkPloRjmwYK
+         OUmsnVjO5eVw1f3itN/+q3eLqbHqIEBSYpieo0Fg3MZ3ycc/EMQMzITiSMB+4iTiROmV
+         BofHUy38wwrTM7cLNmy4IFMTYIBM3cYzAX7eCGz2ug5ORtDHRrZKFxsROUXTz6MlX726
+         wIwtlosbVySOtHLAEWY5BQdGfiCegYcm6tp/yK3iUtjcrbULd6boBykPID3XvhunSVYh
+         W6sw==
+X-Forwarded-Encrypted: i=1; AKwUvBwuhQuhXx22iMX4HxlGqd/k9xuwd8CPZfpbzQYJf6LyZrqdsCVG9sJRS1EjFnDTzA24pAP7TuU8G6g=@lists.infradead.org
+X-Gm-Message-State: AFuF++l1Keu4koGf88vZTpMfMnQf1R5U62cUYInKgUyeSsxHZhQ+A7+N
+	1fNaqH9z05BWY+tpKdCgAYFzWHifkAvltXL5g61018CVJPDiw7b7xaig
+X-Gm-Gg: AYBFou3Z5h67cCzfQGhdHRcQA9WpK58s5oJXbb/V1f+xUBjgA27QSLSz+6M02mRXIaH
+	XUHfcpdey8hvhzOtT0CmNY8oYvRJBC/Mf0wVdluisGuxMZRywfyZUduu5WkmF/tTpFRtHfS3yo9
+	r0S0UxpvbEjEtOVVDgJAUIDG0q/sv2XmcbKQRyERE3i8wqRCWhSrLCNbLrMqMhI/dBiBQi55v8N
+	w2qb472KtvBYY8e8BlBLr0SDPzrBG8Z/peZLQnmYBUNfTzydmpCbhcsRRWyCFhGHuw6FxlkqAAo
+	hBEjWPIDGEFeak6egalOOUOlWznAjNrBVfGNOpdKVFRnMynEKKhEQfyc81xh+Wov086a73rBiCH
+	OKWzvc0y0PMLnESSe7imgKzZy+tsMPMFkSMh3nhJZ7BLDb6VZCJG22x0wDmnlMDl1pfLQT6kOI9
+	P+N0fkDI8DWhdndTQPO4on2gEb2XlEOarPvJjS587kJfgfawlj2jO1UFNM5fM=
+X-Received: by 2002:a17:90b:17cd:b0:398:bc52:825b with SMTP id 98e67ed59e1d1-398bc52849emr14105453a91.21.1788144935383;
+        Sun, 30 Aug 2026 19:55:35 -0700 (PDT)
 Received: from localhost ([2001:19f0:8000:3e6e:5400:6ff:fe38:3d01])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-396dda7aaaasm13890514a91.6.2026.08.30.19.55.31
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-396b19927a1sm20278381a91.14.2026.08.30.19.55.34
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 30 Aug 2026 19:55:31 -0700 (PDT)
+        Sun, 30 Aug 2026 19:55:35 -0700 (PDT)
 From: Inochi Amaoto <inochiama@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
@@ -79,17 +79,17 @@ Cc: Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
 	linux-kernel@vger.kernel.org,
 	Yixun Lan <dlan@gentoo.org>,
 	Longbin Li <looong.bin@gmail.com>
-Subject: [PATCH 2/3] phy: core: Add common helper for get phy phandle by index
-Date: Mon, 31 Aug 2026 10:55:04 +0800
-Message-ID: <20260831025506.95548-2-inochiama@gmail.com>
+Subject: [PATCH 3/3] phy: core: Add phy bulk data helper functions
+Date: Mon, 31 Aug 2026 10:55:05 +0800
+Message-ID: <20260831025506.95548-3-inochiama@gmail.com>
 X-Mailer: git-send-email 2.55.0
 In-Reply-To: <20260831025506.95548-1-inochiama@gmail.com>
 References: <20260831025319.94886-1-inochiama@gmail.com>
  <20260831025506.95548-1-inochiama@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260830_195533_370088_03197E88 
-X-CRM114-Status: GOOD (  15.26  )
+X-CRM114-CacheID: sfid-20260830_195536_388551_3AEB8617 
+X-CRM114-Status: GOOD (  20.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,96 +106,869 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Several phy helper use index to get phy phandle of a device node,
-add a common function for the future reuse.
+Add several helper functions that allow drivers to get several phy
+consumers in one operation. If any of the phy cannot be acquired then
+any phys that were got will be put before returning to the caller.
+
+This can relieve the driver owners' life who needs to handle many phys,
+as well as each phy error reporting.
 
 Signed-off-by: Inochi Amaoto <inochiama@gmail.com>
 ---
- drivers/phy/phy-core.c | 47 +++++++++++++++++++++++++-----------------
- 1 file changed, 28 insertions(+), 19 deletions(-)
+ drivers/phy/phy-core.c  | 631 ++++++++++++++++++++++++++++++++++++++++
+ include/linux/phy/phy.h | 183 ++++++++++++
+ 2 files changed, 814 insertions(+)
 
 diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-index 451f8f0644c1..2259f0dff082 100644
+index 2259f0dff082..26b48cece312 100644
 --- a/drivers/phy/phy-core.c
 +++ b/drivers/phy/phy-core.c
-@@ -681,6 +681,32 @@ static struct phy *_of_phy_get(struct device_node *np, int index)
- 	return phy;
+@@ -1003,6 +1003,637 @@ struct phy *devm_of_phy_get_by_index(struct device *dev, struct device_node *np,
  }
+ EXPORT_SYMBOL_GPL(devm_of_phy_get_by_index);
  
 +/**
-+ * of_phy_get_by_index() - lookup and obtain a reference to a phy using a
-+ * device_node by index.
++ * of_phy_get_parent_count() - Get the number of phys of a device node
 + * @np: device_node for which to get the phy
-+ * @index: index of the phy from device's point of view
 + *
-+ * Returns the phy driver, after getting a refcount to it; or
-+ * -ENODEV if there is no such phy. The caller is responsible for
-+ * calling of_phy_put() to release that count.
++ * Return: the phy count if successful, 0 if no phy handle is found,
++ * negative error value if error occurs.
 + */
-+static struct phy *of_phy_get_by_index(struct device_node *np, int index)
++static int of_phy_get_parent_count(const struct device_node *np)
 +{
-+	struct phy *phy;
++	int count;
 +
-+	phy = _of_phy_get(np, index);
-+	if (IS_ERR(phy))
-+		return phy;
++	count = of_count_phandle_with_args(np, "phys", "#phy-cells");
 +
-+	if (!try_module_get(phy->ops->owner))
-+		return ERR_PTR(-EPROBE_DEFER);
++	if (count == -ENOENT)
++		return 0;
 +
-+	get_device(&phy->dev);
-+
-+	return phy;
++	return count;
 +}
 +
++/**
++ * phy_bulk_put() - release a set of PHYs obtained with phy_bulk_get()
++ * @dev: device that acquired the PHYs
++ * @num_phys: number of entries in the phys array
++ * @phys: array of struct phy_bulk_data with PHYs set
++ *
++ * Releases the PHY references in reverse order and clears the PHY pointer in
++ * each entry. The caller owns the phys array and is responsible for freeing it
++ * if necessary.
++ */
++void phy_bulk_put(struct device *dev, int num_phys, struct phy_bulk_data *phys)
++{
++	if (!phys)
++		return;
++
++	while (--num_phys >= 0) {
++		if (phys[num_phys].phy)
++			phy_put(dev, phys[num_phys].phy);
++		phys[num_phys].phy = NULL;
++	}
++}
++EXPORT_SYMBOL_GPL(phy_bulk_put);
++
++/**
++ * of_phy_bulk_put() - release a set of PHYs obtained with of_phy_bulk_get()
++ * @num_phys: number of entries in the phys array
++ * @phys: array of struct phy_bulk_data with PHYs set
++ *
++ * Releases the PHY references in reverse order and clears the PHY pointer in
++ * each entry. The caller owns the phys array and is responsible for freeing it
++ * if necessary.
++ */
++void of_phy_bulk_put(int num_phys, struct phy_bulk_data *phys)
++{
++	if (!phys)
++		return;
++
++	while (--num_phys >= 0) {
++		of_phy_put(phys[num_phys].phy);
++		phys[num_phys].phy = NULL;
++	}
++}
++EXPORT_SYMBOL_GPL(of_phy_bulk_put);
++
++static int __phy_bulk_get(struct device *dev, int num_phys,
++			  struct phy_bulk_data *phys, bool optional)
++{
++	int ret;
++	int i;
++
++	for (i = 0; i < num_phys; i++)
++		phys[i].phy = NULL;
++
++	for (i = 0; i < num_phys; i++) {
++		phys[i].phy = phy_get(dev, phys[i].id);
++		if (IS_ERR(phys[i].phy)) {
++			ret = PTR_ERR(phys[i].phy);
++			phys[i].phy = NULL;
++
++			if (ret == -ENODEV && optional)
++				continue;
++
++			dev_err_probe(dev, ret,
++				      "Failed to get phy: (%s)\n",
++				      phys[i].id);
++			goto err;
++		}
++	}
++
++	return 0;
++
++err:
++	phy_bulk_put(dev, i, phys);
++
++	return ret;
++}
++
++/**
++ * phy_bulk_get() - lookup and obtain references to multiple PHYs
++ * @dev: device that requests the PHYs
++ * @num_phys: number of entries in the phys array
++ * @phys: array of struct phy_bulk_data with PHY names set
++ *
++ * Gets each PHY using phy_get(). This supports both device tree lookups and
++ * non-device-tree lookups registered with phy_create_lookup(). The caller must
++ * call phy_bulk_put() to release the PHY references.
++ *
++ * Return: %0 if successful, a negative error code otherwise
++ */
++int phy_bulk_get(struct device *dev, int num_phys, struct phy_bulk_data *phys)
++{
++	return __phy_bulk_get(dev, num_phys, phys, false);
++}
++EXPORT_SYMBOL_GPL(phy_bulk_get);
++
++/**
++ * phy_bulk_get_optional() - obtain references to multiple optional PHYs
++ * @dev: device that requests the PHYs
++ * @num_phys: number of entries in the phys array
++ * @phys: array of struct phy_bulk_data with PHY names set
++ *
++ * Gets each PHY using phy_get(). A PHY that is not present is stored as NULL
++ * instead of causing the operation to fail. The caller must call
++ * phy_bulk_put() to release the PHY references.
++ *
++ * Return: %0 if successful, a negative error code otherwise
++ */
++int phy_bulk_get_optional(struct device *dev, int num_phys,
++			  struct phy_bulk_data *phys)
++{
++	return __phy_bulk_get(dev, num_phys, phys, true);
++}
++EXPORT_SYMBOL_GPL(phy_bulk_get_optional);
++
++/**
++ * of_phy_bulk_get() - obtain references to multiple PHYs from a device node
++ * @np: device node containing the PHY references
++ * @num_phys: number of entries in the phys array
++ * @phys: array of struct phy_bulk_data with PHY names set
++ *
++ * Gets each PHY using of_phy_get() and the specified device node. The caller
++ * must call of_phy_bulk_put() to release the PHY references.
++ *
++ * Return: %0 if successful, a negative error code otherwise
++ */
++int of_phy_bulk_get(struct device_node *np, int num_phys,
++		    struct phy_bulk_data *phys)
++{
++	int ret, i;
++
++	for (i = 0; i < num_phys; i++)
++		phys[i].phy = NULL;
++
++	for (i = 0; i < num_phys; i++) {
++		phys[i].phy = of_phy_get(np, phys[i].id);
++		if (IS_ERR(phys[i].phy)) {
++			ret = PTR_ERR(phys[i].phy);
++			phys[i].phy = NULL;
++			goto err;
++		}
++	}
++
++	return 0;
++
++err:
++	of_phy_bulk_put(i, phys);
++
++	return ret;
++}
++EXPORT_SYMBOL_GPL(of_phy_bulk_get);
++
++static int of_phy_bulk_get_by_index(struct device_node *np, int num_phys,
++				    struct phy_bulk_data *phys)
++{
++	int ret, i;
++
++	for (i = 0; i < num_phys; i++) {
++		phys[i].id = NULL;
++		phys[i].phy = NULL;
++	}
++
++	for (i = 0; i < num_phys; i++) {
++		of_property_read_string_index(np, "phy-names", i,
++					      &phys[i].id);
++
++		phys[i].phy = of_phy_get_by_index(np, i);
++		if (IS_ERR(phys[i].phy)) {
++			ret = PTR_ERR(phys[i].phy);
++			phys[i].phy = NULL;
++			goto err;
++		}
++	}
++
++	return 0;
++
++err:
++	of_phy_bulk_put(i, phys);
++
++	return ret;
++}
++
++/**
++ * of_phy_bulk_get_all() - obtain all PHYs from a device node
++ * @np: device node containing the PHY references
++ * @phys: pointer to store the allocated array of struct phy_bulk_data
++ *
++ * Gets every PHY referenced by the phys property in index order. PHY names are
++ * read from phy-names when present. The caller must call
++ * of_phy_bulk_put_all() to release the PHY references and free the array.
++ *
++ * Return: the number of PHYs on success, %0 if no PHYs are found, or a
++ * negative error code otherwise
++ */
++int of_phy_bulk_get_all(struct device_node *np, struct phy_bulk_data **phys)
++{
++	struct phy_bulk_data *phy_bulk;
++	int num_phys;
++	int ret;
++
++	*phys = NULL;
++
++	if (!np)
++		return 0;
++
++	num_phys = of_phy_get_parent_count(np);
++	if (num_phys <= 0)
++		return num_phys;
++
++	phy_bulk = kmalloc_objs(*phy_bulk, num_phys);
++	if (!phy_bulk)
++		return -ENOMEM;
++
++	ret = of_phy_bulk_get_by_index(np, num_phys, phy_bulk);
++	if (ret) {
++		kfree(phy_bulk);
++		return ret;
++	}
++
++	*phys = phy_bulk;
++
++	return num_phys;
++}
++EXPORT_SYMBOL_GPL(of_phy_bulk_get_all);
++
++/**
++ * of_phy_bulk_put_all() - release and free PHYs obtained by
++ * of_phy_bulk_get_all()
++ * @num_phys: number of entries in the phys array
++ * @phys: array of struct phy_bulk_data to release and free
++ */
++void of_phy_bulk_put_all(int num_phys, struct phy_bulk_data *phys)
++{
++	if (IS_ERR_OR_NULL(phys))
++		return;
++
++	of_phy_bulk_put(num_phys, phys);
++	kfree(phys);
++}
++EXPORT_SYMBOL_GPL(of_phy_bulk_put_all);
++
++/**
++ * phy_bulk_get_all() - obtain all PHYs requested by a device
++ * @dev: device that requests the PHYs
++ * @phys: pointer to store the allocated array of struct phy_bulk_data
++ *
++ * Gets every PHY referenced by the device's device tree node and creates a
++ * device link for each PHY. The caller must call phy_bulk_put_all() to release
++ * the PHY references and free the array.
++ *
++ * Return: the number of PHYs on success, %0 if no PHYs are found, or a
++ * negative error code otherwise
++ */
++int phy_bulk_get_all(struct device *dev, struct phy_bulk_data **phys)
++{
++	struct device_node *np = dev_of_node(dev);
++	int ret, i;
++
++	*phys = NULL;
++
++	if (!np)
++		return 0;
++
++	ret = of_phy_bulk_get_all(np, phys);
++	if (ret > 0)
++		for (i = 0; i < ret; i++)
++			phy_add_device_link(dev, (*phys)[i].phy);
++
++	return ret;
++}
++EXPORT_SYMBOL_GPL(phy_bulk_get_all);
++
++/**
++ * phy_bulk_put_all() - release and free PHYs obtained by phy_bulk_get_all()
++ * @dev: device that acquired the PHYs
++ * @num_phys: number of entries in the phys array
++ * @phys: array of struct phy_bulk_data to release and free
++ */
++void phy_bulk_put_all(struct device *dev, int num_phys,
++		      struct phy_bulk_data *phys)
++{
++	if (IS_ERR_OR_NULL(phys))
++		return;
++
++	phy_bulk_put(dev, num_phys, phys);
++	kfree(phys);
++}
++EXPORT_SYMBOL_GPL(phy_bulk_put_all);
++
++struct phy_bulk_devres {
++	struct phy_bulk_data *phys;
++	int num_phys;
++	bool free_phys;
++};
++
++static void devm_phy_bulk_release(struct device *dev, void *res)
++{
++	struct phy_bulk_devres *devres = res;
++
++	if (devres->free_phys)
++		phy_bulk_put_all(dev, devres->num_phys, devres->phys);
++	else
++		phy_bulk_put(dev, devres->num_phys, devres->phys);
++}
++
++static int __devm_phy_bulk_get(struct device *dev, int num_phys,
++			       struct phy_bulk_data *phys, bool optional)
++{
++	struct phy_bulk_devres *devres;
++	int ret;
++
++	devres = devres_alloc(devm_phy_bulk_release, sizeof(*devres),
++			      GFP_KERNEL);
++	if (!devres)
++		return -ENOMEM;
++
++	if (optional)
++		ret = phy_bulk_get_optional(dev, num_phys, phys);
++	else
++		ret = phy_bulk_get(dev, num_phys, phys);
++	if (ret) {
++		devres_free(devres);
++		return ret;
++	}
++
++	devres->phys = phys;
++	devres->num_phys = num_phys;
++	devres->free_phys = false;
++	devres_add(dev, devres);
++
++	return 0;
++}
++
++/**
++ * devm_phy_bulk_get() - managed lookup of multiple PHYs
++ * @dev: device that requests the PHYs
++ * @num_phys: number of entries in the phys array
++ * @phys: array of struct phy_bulk_data with PHY names set
++ *
++ * Gets the PHYs using phy_bulk_get() and associates the references with @dev.
++ * The references are automatically released on driver detach.
++ *
++ * Return: %0 if successful, a negative error code otherwise
++ */
++int devm_phy_bulk_get(struct device *dev, int num_phys,
++		      struct phy_bulk_data *phys)
++{
++	return __devm_phy_bulk_get(dev, num_phys, phys, false);
++}
++EXPORT_SYMBOL_GPL(devm_phy_bulk_get);
++
++/**
++ * devm_phy_bulk_get_optional() - managed lookup of multiple optional PHYs
++ * @dev: device that requests the PHYs
++ * @num_phys: number of entries in the phys array
++ * @phys: array of struct phy_bulk_data with PHY names set
++ *
++ * Gets the PHYs using phy_bulk_get_optional() and associates the references
++ * with @dev. Missing PHYs are stored as NULL. The references are automatically
++ * released on driver detach.
++ *
++ * Return: %0 if successful, a negative error code otherwise
++ */
++int devm_phy_bulk_get_optional(struct device *dev, int num_phys,
++			       struct phy_bulk_data *phys)
++{
++	return __devm_phy_bulk_get(dev, num_phys, phys, true);
++}
++EXPORT_SYMBOL_GPL(devm_phy_bulk_get_optional);
++
++/**
++ * devm_of_phy_bulk_get() - managed lookup of multiple PHYs from a device node
++ * @dev: device that requests the PHYs
++ * @np: device node containing the PHY references
++ * @num_phys: number of entries in the phys array
++ * @phys: array of struct phy_bulk_data with PHY names set
++ *
++ * Gets the PHYs using of_phy_bulk_get() from the specified device node,
++ * associates the references with @dev, and creates a device link for each PHY.
++ * The references are automatically released on driver detach.
++ *
++ * Return: %0 if successful, a negative error code otherwise
++ */
++int devm_of_phy_bulk_get(struct device *dev, struct device_node *np,
++			 int num_phys, struct phy_bulk_data *phys)
++{
++	struct phy_bulk_devres *devres;
++	int ret, i;
++
++	devres = devres_alloc(devm_phy_bulk_release, sizeof(*devres),
++			      GFP_KERNEL);
++	if (!devres)
++		return -ENOMEM;
++
++	ret = of_phy_bulk_get(np, num_phys, phys);
++	if (ret) {
++		devres_free(devres);
++		return ret;
++	}
++
++	for (i = 0; i < num_phys; i++)
++		phy_add_device_link(dev, phys[i].phy);
++
++	devres->phys = phys;
++	devres->num_phys = num_phys;
++	devres->free_phys = false;
++	devres_add(dev, devres);
++
++	return 0;
++}
++EXPORT_SYMBOL_GPL(devm_of_phy_bulk_get);
++
++/**
++ * devm_phy_bulk_get_all() - managed lookup of all PHYs requested by a device
++ * @dev: device that requests the PHYs
++ * @phys: pointer to store the allocated array of struct phy_bulk_data
++ *
++ * Gets all PHYs using phy_bulk_get_all() and associates the allocated array and
++ * PHY references with @dev. They are automatically released on driver detach.
++ *
++ * Return: the number of PHYs on success, %0 if no PHYs are found, or a
++ * negative error code otherwise
++ */
++int devm_phy_bulk_get_all(struct device *dev, struct phy_bulk_data **phys)
++{
++	struct phy_bulk_devres *devres;
++	int ret;
++
++	*phys = NULL;
++
++	devres = devres_alloc(devm_phy_bulk_release, sizeof(*devres),
++			      GFP_KERNEL);
++	if (!devres)
++		return -ENOMEM;
++
++	ret = phy_bulk_get_all(dev, &devres->phys);
++	if (ret > 0) {
++		*phys = devres->phys;
++		devres->num_phys = ret;
++		devres->free_phys = true;
++		devres_add(dev, devres);
++	} else {
++		devres_free(devres);
++	}
++
++	return ret;
++}
++EXPORT_SYMBOL_GPL(devm_phy_bulk_get_all);
++
++/**
++ * devm_of_phy_bulk_get_all() - managed lookup of all PHYs from a device node
++ * @dev: device that requests the PHYs
++ * @np: device node containing the PHY references
++ * @phys: pointer to store the allocated array of struct phy_bulk_data
++ *
++ * Gets all PHYs from the specified device node, associates the allocated array
++ * and PHY references with @dev, and creates a device link for each PHY. They
++ * are automatically released on driver detach.
++ *
++ * Return: the number of PHYs on success, %0 if no PHYs are found, or a
++ * negative error code otherwise
++ */
++int devm_of_phy_bulk_get_all(struct device *dev, struct device_node *np,
++			     struct phy_bulk_data **phys)
++{
++	struct phy_bulk_devres *devres;
++	int ret, i;
++
++	*phys = NULL;
++
++	devres = devres_alloc(devm_phy_bulk_release, sizeof(*devres),
++			      GFP_KERNEL);
++	if (!devres)
++		return -ENOMEM;
++
++	ret = of_phy_bulk_get_all(np, &devres->phys);
++	if (ret > 0) {
++		for (i = 0; i < ret; i++)
++			phy_add_device_link(dev, devres->phys[i].phy);
++		*phys = devres->phys;
++		devres->num_phys = ret;
++		devres->free_phys = true;
++		devres_add(dev, devres);
++	} else {
++		devres_free(devres);
++	}
++
++	return ret;
++}
++EXPORT_SYMBOL_GPL(devm_of_phy_bulk_get_all);
++
++/**
++ * phy_bulk_init() - initialize multiple PHYs
++ * @num_phys: number of entries in the phys array
++ * @phys: array of struct phy_bulk_data to initialize
++ *
++ * Initializes the PHYs in array order. If an initialization fails, all PHYs
++ * initialized by this call are exited in reverse order.
++ *
++ * Return: %0 if successful, a negative error code otherwise
++ */
++int phy_bulk_init(int num_phys, struct phy_bulk_data *phys)
++{
++	int ret, i;
++
++	if (!phys)
++		return 0;
++
++	for (i = 0; i < num_phys; i++) {
++		ret = phy_init(phys[i].phy);
++		if (ret)
++			goto err;
++	}
++
++	return 0;
++
++err:
++	while (i--)
++		phy_exit(phys[i].phy);
++
++	return ret;
++}
++EXPORT_SYMBOL_GPL(phy_bulk_init);
++
++/**
++ * phy_bulk_exit() - exit multiple PHYs
++ * @num_phys: number of entries in the phys array
++ * @phys: array of struct phy_bulk_data to exit
++ *
++ * Exits the PHYs in reverse array order. All PHYs are processed even if an
++ * error occurs.
++ *
++ * Return: %0 if successful, the first negative error code otherwise
++ */
++int phy_bulk_exit(int num_phys, struct phy_bulk_data *phys)
++{
++	int ret = 0;
++	int err;
++
++	if (!phys)
++		return 0;
++
++	while (--num_phys >= 0) {
++		err = phy_exit(phys[num_phys].phy);
++		if (err && !ret)
++			ret = err;
++	}
++
++	return ret;
++}
++EXPORT_SYMBOL_GPL(phy_bulk_exit);
++
++/**
++ * phy_bulk_power_on() - power on multiple PHYs
++ * @num_phys: number of entries in the phys array
++ * @phys: array of struct phy_bulk_data to power on
++ *
++ * Powers on the PHYs in array order. If a power-on operation fails, all PHYs
++ * powered on by this call are powered off in reverse order.
++ *
++ * Return: %0 if successful, a negative error code otherwise
++ */
++int phy_bulk_power_on(int num_phys, struct phy_bulk_data *phys)
++{
++	int ret, i;
++
++	if (!phys)
++		return 0;
++
++	for (i = 0; i < num_phys; i++) {
++		ret = phy_power_on(phys[i].phy);
++		if (ret)
++			goto err;
++	}
++
++	return 0;
++
++err:
++	while (i--)
++		phy_power_off(phys[i].phy);
++
++	return ret;
++}
++EXPORT_SYMBOL_GPL(phy_bulk_power_on);
++
++/**
++ * phy_bulk_power_off() - power off multiple PHYs
++ * @num_phys: number of entries in the phys array
++ * @phys: array of struct phy_bulk_data to power off
++ *
++ * Powers off the PHYs in reverse array order. All PHYs are processed even if
++ * an error occurs.
++ *
++ * Return: %0 if successful, the first negative error code otherwise
++ */
++int phy_bulk_power_off(int num_phys, struct phy_bulk_data *phys)
++{
++	int ret = 0;
++	int err;
++
++	if (!phys)
++		return 0;
++
++	while (--num_phys >= 0) {
++		err = phy_power_off(phys[num_phys].phy);
++		if (err && !ret)
++			ret = err;
++	}
++
++	return ret;
++}
++EXPORT_SYMBOL_GPL(phy_bulk_power_off);
++
  /**
-  * of_phy_get() - lookup and obtain a reference to a phy using a device_node.
-  * @np: device_node for which to get the phy
-@@ -692,22 +718,12 @@ static struct phy *_of_phy_get(struct device_node *np, int index)
-  */
- struct phy *of_phy_get(struct device_node *np, const char *con_id)
+  * phy_create() - create a new phy
+  * @dev: device that is creating the new phy
+diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+index ea47975e288a..97209f5d216a 100644
+--- a/include/linux/phy/phy.h
++++ b/include/linux/phy/phy.h
+@@ -81,6 +81,21 @@ union phy_configure_opts {
+ 	struct phy_configure_opts_hdmi		hdmi;
+ };
+ 
++/**
++ * struct phy_bulk_data - Data used for bulk phy operations.
++ *
++ * @id: phy consumer ID
++ * @phy: struct phy * to store the associated phy
++ *
++ * The PHY APIs provide a series of phy_bulk_() API calls as
++ * a convenience to consumers which require multiple phys.  This
++ * structure is used to manage data for these calls.
++ */
++struct phy_bulk_data {
++	const char	*id;
++	struct phy	*phy;
++};
++
+ /**
+  * struct phy_ops - set of function pointers for performing phy operations
+  * @init: operation to be performed for initializing phy
+@@ -309,6 +324,33 @@ void devm_of_phy_provider_unregister(struct device *dev,
+ 	struct phy_provider *phy_provider);
+ int phy_create_lookup(struct phy *phy, const char *con_id, const char *dev_id);
+ void phy_remove_lookup(struct phy *phy, const char *con_id, const char *dev_id);
++
++int phy_bulk_get(struct device *dev, int num_phys, struct phy_bulk_data *phys);
++int phy_bulk_get_optional(struct device *dev, int num_phys,
++			  struct phy_bulk_data *phys);
++int of_phy_bulk_get(struct device_node *np, int num_phys,
++		    struct phy_bulk_data *phys);
++int devm_phy_bulk_get(struct device *dev, int num_phys,
++		      struct phy_bulk_data *phys);
++int devm_phy_bulk_get_optional(struct device *dev, int num_phys,
++			       struct phy_bulk_data *phys);
++int devm_of_phy_bulk_get(struct device *dev, struct device_node *np,
++			 int num_phys, struct phy_bulk_data *phys);
++int phy_bulk_get_all(struct device *dev, struct phy_bulk_data **phys);
++int of_phy_bulk_get_all(struct device_node *np, struct phy_bulk_data **phys);
++int devm_phy_bulk_get_all(struct device *dev, struct phy_bulk_data **phys);
++int devm_of_phy_bulk_get_all(struct device *dev, struct device_node *np,
++			     struct phy_bulk_data **phys);
++void phy_bulk_put(struct device *dev, int num_phys, struct phy_bulk_data *phys);
++void of_phy_bulk_put(int num_phys, struct phy_bulk_data *phys);
++void phy_bulk_put_all(struct device *dev, int num_phys,
++		      struct phy_bulk_data *phys);
++void of_phy_bulk_put_all(int num_phys, struct phy_bulk_data *phys);
++int phy_bulk_init(int num_phys, struct phy_bulk_data *phys);
++int phy_bulk_exit(int num_phys, struct phy_bulk_data *phys);
++int phy_bulk_power_on(int num_phys, struct phy_bulk_data *phys);
++int phy_bulk_power_off(int num_phys, struct phy_bulk_data *phys);
++
+ #else
+ static inline int phy_pm_runtime_get(struct phy *phy)
  {
--	struct phy *phy = NULL;
- 	int index = 0;
- 
- 	if (con_id)
- 		index = of_property_match_string(np, "phy-names", con_id);
- 
--	phy = _of_phy_get(np, index);
--	if (IS_ERR(phy))
--		return phy;
--
--	if (!try_module_get(phy->ops->owner))
--		return ERR_PTR(-EPROBE_DEFER);
--
--	get_device(&phy->dev);
--
--	return phy;
-+	return of_phy_get_by_index(np, index);
+@@ -493,6 +535,147 @@ static inline struct phy *devm_of_phy_get_by_index(struct device *dev,
+ 	return ERR_PTR(-ENOSYS);
  }
- EXPORT_SYMBOL_GPL(of_phy_get);
  
-@@ -972,19 +988,12 @@ struct phy *devm_of_phy_get_by_index(struct device *dev, struct device_node *np,
- 	if (!ptr)
- 		return ERR_PTR(-ENOMEM);
- 
--	phy = _of_phy_get(np, index);
-+	phy = of_phy_get_by_index(np, index);
- 	if (IS_ERR(phy)) {
- 		devres_free(ptr);
- 		return phy;
- 	}
- 
--	if (!try_module_get(phy->ops->owner)) {
--		devres_free(ptr);
--		return ERR_PTR(-EPROBE_DEFER);
--	}
--
--	get_device(&phy->dev);
--
- 	*ptr = phy;
- 	devres_add(dev, ptr);
- 
++static inline int phy_bulk_get(struct device *dev, int num_phys,
++			       struct phy_bulk_data *phys)
++{
++	return -EOPNOTSUPP;
++}
++
++static inline int phy_bulk_get_optional(struct device *dev, int num_phys,
++					struct phy_bulk_data *phys)
++{
++	int i;
++
++	if (!phys)
++		return 0;
++
++	for (i = 0; i < num_phys; i++)
++		phys[i].phy = NULL;
++
++	return 0;
++}
++
++static inline int of_phy_bulk_get(struct device_node *np, int num_phys,
++				  struct phy_bulk_data *phys)
++{
++	return -EOPNOTSUPP;
++}
++
++static inline int devm_phy_bulk_get(struct device *dev, int num_phys,
++				    struct phy_bulk_data *phys)
++{
++	return -EOPNOTSUPP;
++}
++
++static inline int devm_phy_bulk_get_optional(struct device *dev, int num_phys,
++					     struct phy_bulk_data *phys)
++{
++	return phy_bulk_get_optional(dev, num_phys, phys);
++}
++
++static inline int devm_of_phy_bulk_get(struct device *dev,
++				       struct device_node *np, int num_phys,
++				       struct phy_bulk_data *phys)
++{
++	return -EOPNOTSUPP;
++}
++
++static inline int phy_bulk_get_all(struct device *dev,
++				   struct phy_bulk_data **phys)
++{
++	if (phys)
++		*phys = NULL;
++
++	return -EOPNOTSUPP;
++}
++
++static inline int of_phy_bulk_get_all(struct device_node *np,
++				      struct phy_bulk_data **phys)
++{
++	if (phys)
++		*phys = NULL;
++
++	return -EOPNOTSUPP;
++}
++
++static inline int devm_phy_bulk_get_all(struct device *dev,
++					struct phy_bulk_data **phys)
++{
++	return phy_bulk_get_all(dev, phys);
++}
++
++static inline int devm_of_phy_bulk_get_all(struct device *dev,
++					   struct device_node *np,
++					   struct phy_bulk_data **phys)
++{
++	return of_phy_bulk_get_all(np, phys);
++}
++
++static inline void phy_bulk_put(struct device *dev, int num_phys,
++				struct phy_bulk_data *phys)
++{
++	if (!phys)
++		return;
++
++	while (--num_phys >= 0)
++		phys[num_phys].phy = NULL;
++}
++
++static inline void of_phy_bulk_put(int num_phys, struct phy_bulk_data *phys)
++{
++	if (!phys)
++		return;
++
++	while (--num_phys >= 0)
++		phys[num_phys].phy = NULL;
++}
++
++static inline void phy_bulk_put_all(struct device *dev, int num_phys,
++				    struct phy_bulk_data *phys)
++{
++	phy_bulk_put(dev, num_phys, phys);
++}
++
++static inline void of_phy_bulk_put_all(int num_phys, struct phy_bulk_data *phys)
++{
++	of_phy_bulk_put(num_phys, phys);
++}
++
++static inline int phy_bulk_check_disabled(int num_phys,
++					  struct phy_bulk_data *phys)
++{
++	int i;
++
++	if (!phys)
++		return 0;
++
++	for (i = 0; i < num_phys; i++)
++		if (phys[i].phy)
++			return -EOPNOTSUPP;
++
++	return 0;
++}
++
++static inline int phy_bulk_init(int num_phys, struct phy_bulk_data *phys)
++{
++	return phy_bulk_check_disabled(num_phys, phys);
++}
++
++static inline int phy_bulk_exit(int num_phys, struct phy_bulk_data *phys)
++{
++	return phy_bulk_check_disabled(num_phys, phys);
++}
++
++static inline int phy_bulk_power_on(int num_phys, struct phy_bulk_data *phys)
++{
++	return phy_bulk_check_disabled(num_phys, phys);
++}
++
++static inline int phy_bulk_power_off(int num_phys, struct phy_bulk_data *phys)
++{
++	return phy_bulk_check_disabled(num_phys, phys);
++}
++
+ static inline void of_phy_put(struct phy *phy)
+ {
+ }
 -- 
 2.55.0
 
