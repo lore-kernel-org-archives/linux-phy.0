@@ -4,90 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6992FC624CC
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Aug 2026 08:20:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0140FC61DD3
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Aug 2026 08:23:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PwTmPUTifiEhK2SsBY3IOw8deRLcIwI4W8F1i/h8UQg=; b=tGjlBuNWHe2vEu
-	QSaJCSc35QyrfgUp78h1L+AYFFO/b38alH2zve6rszF/MvwgV4LmxPbq5dwJ5w3QIH9uQ7EX8mlnf
-	hU+IFvPAaKbsy3erpaVeS/dZYtnfh6WnSKATV4WaSiW+VFpF1EFMYcgJBwZX2sJWIZNV7t4Kc9pj7
-	z/aK8OQk43Zyj9pfj174K+W3tyB298IQV2YwQwrJr6yzb669aRQoLG9IQDuV1hMtTk0iBtEH+wAEp
-	RaOmvVUL4BAtyR3kmu4Vx+l8ZEAWNCKHry18e4+TtbOAHFk4tPKLH/RqKNZ18FWaQ2Xs64pC610Cx
-	GFq21t4TGwDA4w8kl+jA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KjLjduA+ZFMF7SU+lJ5bHAz+juGwb78K9nch4qX3w54=; b=jIa0N3mHmrkBKY
+	cUlBpR2UsHuiq3EAVRnEY8KNg1QKIcLcpG0nNuhy3LAUCSQCHebjWIY7kU1kSXOavt+7UM8C5H1Cq
+	f8nL6+e9HekC61rpLM1zpvzgGjcTIRAPLBCvDlaMWZjHZq2NUSsAEVMtU2OG8kDqOCphZ6+uuBhm0
+	nSluh7OrLLqK81M6j9WEkUlH6dR/MKjXvGxEumZ1YnLIeezS6Bbh9ai9+VmchWYhFaj8PAmabzCdy
+	WJnOS5jWwdSCthUGAV5GudlxFwDxkG0qNOLVpLbuVxcKrIBLGGur6Xrlou1zYIFcNACleqIIwoAJx
+	7ejwrIBftZ4TgCFOPfVA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x0xFa-00000008piK-0DhH;
-	Mon, 31 Aug 2026 08:20:18 +0000
-Received: from mail-qk1-f181.google.com ([209.85.222.181])
+	id 1x0xIb-00000008sFq-308e;
+	Mon, 31 Aug 2026 08:23:25 +0000
+Received: from mail-japaneastazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c405::7] helo=TYDPR03CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x0xFU-00000008pcd-1gkc
-	for linux-phy@lists.infradead.org;
-	Mon, 31 Aug 2026 08:20:14 +0000
-Received: by mail-qk1-f181.google.com with SMTP id af79cd13be357-936c02e58dfso228004585a.3
-        for <linux-phy@lists.infradead.org>; Mon, 31 Aug 2026 01:20:11 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788164411; x=1788769211;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=n+6mIWWcx/hgj72l0+IMwbJPq4HotcZmhxU6vYoZhGw=;
-        b=gXz6OfToBKoMPmETS0Fu4e4HmZ2peLTygqb6u1+44EAD6isMbPSKxkdZ8J3hVbrrhR
-         Jq9amE8AUqlqhl6umktZl7ld7dojlnA3KUgmdfilKXlKqV0jWPTduP25QSmBALGGalqV
-         nittrv7hj1MCBUO2tX5hG8L7FOSo1uO+P5/UQieBK2Lq+OxT5BqTKoMB8Ln9XDa63Ae3
-         59M36GMz4K6ke5lV+r4IB+dz2h6kvBEBBzfW3LpcofHdxHLCxYpjncle5G9iAozEl71G
-         gWi4fHRGI8fqPyh1hCq+jnaDv8mlOYUUDhHlzPCdGm8FLRlQTskM1AXo4TtzacVJpw4N
-         HZ1Q==
-X-Gm-Message-State: AFuF++mfrJcFijg0Z299FRhKdDbSgM2T5z7ogoXchGCyVwyX16HVxSCQ
-	btHkho5LcbpuOgv6LGHsYTG3CzatG2pHJlfRhyQ21CFkCK1twxMxYobKVaUGRiLE
-X-Gm-Gg: AR+sD10HDOgLiaH46PAxUhm+rHEhRQqbH7NzBrSIJnmgE4vyZ4icMwrMkI40cFOiK+T
-	M2F+sW9VEnlOea3LG184K/cBKc2U3vmwuJsltX+64x2gEXXFj37kC9KmeB4tyvQ+nqxJsxFBtx/
-	fTX3GoWmx933Bi7ZfQaBwVcoA4D1hGa9na6z9hEOYIQWA17Fw9yrkC64gAJiZLOmQ2JDRx467Kn
-	u30euYgKeJS4jIxrcHN7MxAsKYpOeWOHh1vjNM2Tn1obkF7YOMso+ZnwDgexIIBnF+vTsTudQFh
-	L+czKiXDkGmzy/BuK3r0Xeqr//CUsKPTpCW/GPXfkb8OC5l6F6+e1KFXkGGki1hgXA8gYhKpxcP
-	0k35+J1DNpi3gf4GxkWkWTMD42XntV2jSHsQ5opAEEsNIJhk/kjZDPn6se5rIV9KZ33i1nHVg3T
-	b+yENLhEEq3U1ESGZ5C4arRf4wKhlnNhQblmWktYDqgPXKsDvxIMGAgODjthV6xQ6p9OYh8xoYk
-	0fCHsoO6pzXvVcO9ZjatArnz37KZw==
-X-Received: by 2002:a05:620a:6301:10b0:936:31c9:6c57 with SMTP id af79cd13be357-939137b7e17mr2081369285a.7.1788164410592;
-        Mon, 31 Aug 2026 01:20:10 -0700 (PDT)
-Received: from mail-qt1-f173.google.com (mail-qt1-f173.google.com. [209.85.160.173])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-90ce44f4ef8sm78617106d6.31.2026.08.31.01.20.10
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 31 Aug 2026 01:20:10 -0700 (PDT)
-Received: by mail-qt1-f173.google.com with SMTP id d75a77b69052e-5300bdf61d9so8542681cf.3
-        for <linux-phy@lists.infradead.org>; Mon, 31 Aug 2026 01:20:10 -0700 (PDT)
-X-Received: by 2002:a05:6102:f9b:b0:77f:7df:ddd2 with SMTP id
- ada2fe7eead31-785972e710emr9471412137.1.1788163994928; Mon, 31 Aug 2026
- 01:13:14 -0700 (PDT)
+	id 1x0xIY-00000008sCa-1r9T;
+	Mon, 31 Aug 2026 08:23:24 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=jmC8puW/JfYBLPObnet/qZF+jags219p0VEOTP/I7JUInr3go0QIpsJnkrQ8ixCPEmfFnbbp579hTguwAPXPINUDmZYPBf8PYynfmywepe6JiKNKgLVM1UBqtCHhWYw13zD2hgnqfB6Tdi9Lf+7rXXJyZ5HyyYS91IMRAilR42HO1TJaCZF2Pwex+jl+XxjI7BazZqdGtleWJ8V+Q/fimamy1rIV4Gfo0ttBFfOZEawvUqXc1wgDVJX27NXpUGSmXG+Vji6YKiKJta106wFkvTB6kziDvHpQVUwBDsBFex3DJssZoqtIpTKjz+qkdnmvcKZeajLy+f8VmnLch2fCXw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=f15CQ+mxjdjEHSCbKIISZHUTpdx5KtqbUP9sBQrU00I=;
+ b=d0kPqDbN8yNYVbnx1N1GTgxca6KDsDSifDRCY+3n7eHkeDBcsKJAWCyGgofFgdmDoPeXMxESuImIL9IkIlPTRHP9Xjhtiy1Z2MDFI+c784LGABtj93q34w/pysj0D+wt4SD20h3qRROqXQrjZlN2y4sHyBquOXyQUMHmhcWOX8CrRCSg8n3u0EMBhlSQXONh4yq0QyOc6ogx1Evpe3ep4fmDBS988NHUh5E99g4hlpuskxSlmPy8RpviFFkcxYGgsNzTdaayybeq9Aw2Bydu+GxnAUrCc1PElW3vCoiad9SJW7ASyA6Mo+XMY7qHf0vmpe2iuxhvI6f3ohy7XTrXww==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 222.71.101.198) smtp.rcpttodomain=cadence.com smtp.mailfrom=cixtech.com;
+ dmarc=bestguesspass action=none header.from=cixtech.com; dkim=none (message
+ not signed); arc=none (0)
+Received: from SG2PR04CA0206.apcprd04.prod.outlook.com (2603:1096:4:187::21)
+ by SG2PR06MB5240.apcprd06.prod.outlook.com (2603:1096:4:1da::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.360.13; Mon, 31 Aug
+ 2026 08:23:12 +0000
+Received: from OSA0EPF000000C9.apcprd02.prod.outlook.com
+ (2603:1096:4:187:cafe::24) by SG2PR04CA0206.outlook.office365.com
+ (2603:1096:4:187::21) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.360.13 via Frontend Transport; Mon,
+ 31 Aug 2026 08:23:12 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 222.71.101.198)
+ smtp.mailfrom=cixtech.com; dkim=none (message not signed)
+ header.d=none;dmarc=bestguesspass action=none header.from=cixtech.com;
+Received-SPF: Pass (protection.outlook.com: domain of cixtech.com designates
+ 222.71.101.198 as permitted sender) receiver=protection.outlook.com;
+ client-ip=222.71.101.198; helo=smtprelay.cixcomputing.com; pr=C
+Received: from smtprelay.cixcomputing.com (222.71.101.198) by
+ OSA0EPF000000C9.mail.protection.outlook.com (10.167.240.55) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.382.8 via Frontend Transport; Mon, 31 Aug 2026 08:23:10 +0000
+Received: from hongliang-System-Product-Name (unknown [172.20.64.180])
+	by smtprelay.cixcomputing.com (Postfix) with ESMTPSA id 91EB84092108;
+	Mon, 31 Aug 2026 16:23:09 +0800 (CST)
+From: Hongliang Yang <hongliang.yang@cixtech.com>
+To: peter.chen@kernel.org,
+	pawell@cadence.com,
+	vkoul@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org
+Cc: gregkh@linuxfoundation.org,
+	rogerq@kernel.org,
+	neil.armstrong@linaro.org,
+	p.zabel@pengutronix.de,
+	fugang.duan@cixtech.com,
+	cix-kernel-upstream@cixtech.com,
+	linux-usb@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Hongliang Yang <hongliang.yang@cixtech.com>
+Subject: [PATCH v1 0/4] Add CIX Sky1 USB3/USBSSP support
+Date: Mon, 31 Aug 2026 16:23:04 +0800
+Message-ID: <20260831082309.3854507-1-hongliang.yang@cixtech.com>
+X-Mailer: git-send-email 2.54.0
 MIME-Version: 1.0
-References: <20260828192223.402422-1-marek.vasut+renesas@mailbox.org>
-In-Reply-To: <20260828192223.402422-1-marek.vasut+renesas@mailbox.org>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Mon, 31 Aug 2026 10:13:03 +0200
-X-Gmail-Original-Message-ID: <CAMuHMdWEz=NoDkvvSjZqNwDQE7+F-JqEeduD0-E-NXTj4Ykbuw@mail.gmail.com>
-X-Gm-Features: AcwNN1W_pE0AEcDpr5Qk2q9RcyT_OX0D891rRk8joGtPW1leA8taoV55ukV4EjA
-Message-ID: <CAMuHMdWEz=NoDkvvSjZqNwDQE7+F-JqEeduD0-E-NXTj4Ykbuw@mail.gmail.com>
-Subject: Re: [PATCH 1/2] dt-bindings: phy: Document Renesas Multi-Protocol PHY
- driver for R-Car X5H
-To: Marek Vasut <marek.vasut+renesas@mailbox.org>
-Cc: linux-phy@lists.infradead.org, Arnd Bergmann <arnd@arndb.de>, 
-	Biju Das <biju.das.jz@bp.renesas.com>, Conor Dooley <conor+dt@kernel.org>, 
-	Hai Pham <hai.pham.ud@renesas.com>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
-	Magnus Damm <magnus.damm@gmail.com>, Manivannan Sadhasivam <mani@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Phong Hoang <phong.hoang.wz@renesas.com>, 
-	Rob Herring <robh@kernel.org>, Tam Nguyen <tam.nguyen.xa@renesas.com>, 
-	Thanh Quan <thanh.quan.xn@renesas.com>, 
-	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>, 
-	Vinh Nguyen <vinh.nguyen.xz@renesas.com>, Vinod Koul <vkoul@kernel.org>, 
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: OSA0EPF000000C9:EE_|SG2PR06MB5240:EE_
+X-MS-Office365-Filtering-Correlation-Id: fc47fbed-bbcf-4079-0bac-08df07391849
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700016|376014|1800799024|23010399003|7416014|82310400026|10067099003|18002099003|56012099006;
+X-Microsoft-Antispam-Message-Info: hctm7wrzbAGQ0h/iNJJpJ0oC3FCpkeSvR4WQX/ImcyLtavpfzP+p5H6eW9QYoSzFQBbV4SksLnEBxw6l4kIn5mFYnNKslTFpRFaJReQEk7AEwkaQtD/+/k7+HZJaRnfTv7l9klCjpK2pDc+PQiwhYMtn3Yu6G92Oyx3xK/dDyblEc32WCi456lJu27Tq5AvJBw1v/e9GymzsWTI+Dujyv5TTl3qhz66i/73LrTJB3JVjwmoamqNx+i2pSMMCmtm0Qj2OyEoR5YtSVl+mRn7T6YLrvwR7d4UFtoVJz8cwT2gSYIU6gAOZnXSd3mFr7rca5wxEjI311PxS7oOaBs2lDjlMDyoYU5fYHZ4ff638mOBetLZXpoXnfmQhIVRHV9m70ekKCv9LJi9vT9agZE3CHnrjj+dYeZYuvcZ8mpQ5LrRHCF4zA5e2SBR5fKSmOI7G1jdti5zcGi+oOQHJnHQiGnqRoRIzAL6dnalz0pYQBt/2XrXumKOe3k6UBMIz955bTK1BMLH5umyJkRqT1mjXL/QqCOxGre9Tc+49ZJMa3iqlEnDKW+jJ+WK0NzvK3KSIY/BDdf+EfBKAl4lMM+xFG3rz2eueYViYbJthdutGKNUpCYL4Uymi5x9Ls3XGWhXnQn0HvGey0dW53l1npXR5e64VwYiQ5komQ5oDXvU4cd+U9ysSUlbbOKAGSNsvYb95G6GiiwfWgcldWBEF0Zfgbw==
+X-Forefront-Antispam-Report: CIP:222.71.101.198;CTRY:CN;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:smtprelay.cixcomputing.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(36860700016)(376014)(1800799024)(23010399003)(7416014)(82310400026)(10067099003)(18002099003)(56012099006);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: jkqjEbYZPxZmVJ0QW8Uarp+zI+QYVbsemqF6V5EsbzC7+rhqr9zLF0R+vfM3gFXxn7cI3jbU+52KWbsBLEaRLLUxRVQuI34pte73Roqr2RokW1WqrxJDUvvppIZe0Y/hFgbdjjCFkX3Gz2iSYIuLmmABRKCtPMD6NZWToe3ZmxWk0HFmRQ4DGI+sDt4WPJKFC97HwPRB1yEySwOVlK3aeMvPv1gXQ7Z93mw0RamrlHZ1I2O2EySIxDfhTvJEbIZNosLVEuzj64aN6h5Ub4pB8UoWcw0/CKaVOrK4biuXqFlje0MV1AlouSHVshlYEJbHNdBnLse7s8Y2d5Gahnm0endNp/PaYNXFtTH1A7QC5ci9E+i+KJsAUCd7P2hjZEQWCxl3WQ+kWN+PvwOEs/kzNwcOrs6+AFuxDGqFQQTv8fzq9zfIyR91EO4nKqIX8Tgx
+X-OriginatorOrg: cixtech.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 31 Aug 2026 08:23:10.9476
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: fc47fbed-bbcf-4079-0bac-08df07391849
+X-MS-Exchange-CrossTenant-Id: 0409f77a-e53d-4d23-943e-ccade7cb4811
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=0409f77a-e53d-4d23-943e-ccade7cb4811;Ip=[222.71.101.198];Helo=[smtprelay.cixcomputing.com]
+X-MS-Exchange-CrossTenant-AuthSource: OSA0EPF000000C9.apcprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SG2PR06MB5240
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260831_012012_464588_D2FAA7D8 
-X-CRM114-Status: GOOD (  21.74  )
+X-CRM114-CacheID: sfid-20260831_012322_479461_F82A5239 
+X-CRM114-Status: UNSURE (   9.41  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,102 +125,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Marek,
+Add USB3 PHY driver, Cadence USBSSP glue driver, and USB4/USB5
+device tree nodes for the CIX Sky1 SoC.
 
-On Fri, 28 Aug 2026 at 21:22, Marek Vasut
-<marek.vasut+renesas@mailbox.org> wrote:
-> Document Renesas Multi-Protocol PHY present in R-Car X5H (R8A78000) SoC.
-> This is a multiplexing PHY block with inputs from five IPs, and outputs
-> to four separate IO blocks. The five inputs are two PCIe4, two USB 3.2,
-> and ethernet PCS, each connected into the PHY with up to 4 times 2 lanes.
-> The inputs can be multiplexed to the four IO blocks as needed.
->
-> Signed-off-by: Marek Vasut <marek.vasut+renesas@mailbox.org>
+This series adds support for the USB4 and USB5 controllers (based on
+Cadence USBSSP DRD) found on the CIX Sky1 SoC, along with their
+associated multi-port USB3 PHY.
 
-Thanks for your patch!
+Hongliang Yang (4):
+  dt-bindings: Add CIX Sky1 USB bindings
+  phy: cix: Add CIX Sky1 USB3 PHY driver
+  usb: cdns3: Add CIX Sky1 glue driver
+  arm64: dts: cix: Add USB4/USB5 nodes for Sky1
 
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/renesas,rcar-gen5-mpphy.yaml
-> @@ -0,0 +1,125 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/renesas,rcar-gen5-mpphy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Renesas R-Car Generation 5 Multi-Protocol PHY
-> +
-> +maintainers:
-> +  - Marek Vasut <marek.vasut+renesas@mailbox.org>
-> +  - Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-> +
-> +properties:
-> +  compatible:
-> +    items:
-> +      - const: renesas,r8a78000-mpphy   # R-Car X5H MPPHY
-> +      - const: renesas,rcar-gen5-mpphy  # R-Car Gen5 MPPHY
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    minItems: 5
-> +    maxItems: 5
-> +
-> +  clock-names:
-> +    items:
-> +      - const: mpphy01
-> +      - const: mpphy11
-> +      - const: mpphy21
-> +      - const: mpphy31
-> +      - const: mpphy02
+ .../bindings/phy/cix,sky1-usb3-phy.yaml       | 109 +++
+ .../bindings/usb/cix,sky1-usbssp.yaml         | 153 ++++
+ MAINTAINERS                                   |   3 +
+ arch/arm64/boot/dts/cix/sky1-orion-o6.dts     |  36 +
+ arch/arm64/boot/dts/cix/sky1.dtsi             | 133 ++++
+ drivers/phy/Kconfig                           |   1 +
+ drivers/phy/Makefile                          |   1 +
+ drivers/phy/cix/Kconfig                       |  20 +
+ drivers/phy/cix/Makefile                      |   6 +
+ drivers/phy/cix/phy-cix-usb3.c                | 410 +++++++++++
+ drivers/phy/cix/phy-cix-usbdp.h               | 310 ++++++++
+ drivers/usb/cdns3/Kconfig                     |  13 +
+ drivers/usb/cdns3/Makefile                    |   1 +
+ drivers/usb/cdns3/cdnsp-sky1.c                | 682 ++++++++++++++++++
+ drivers/usb/cdns3/cdnsp-sky1.h                | 127 ++++
+ 15 files changed, 2005 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/cix,sky1-usb3-phy.yaml
+ create mode 100644 Documentation/devicetree/bindings/usb/cix,sky1-usbssp.yaml
+ create mode 100644 drivers/phy/cix/Kconfig
+ create mode 100644 drivers/phy/cix/Makefile
+ create mode 100644 drivers/phy/cix/phy-cix-usb3.c
+ create mode 100644 drivers/phy/cix/phy-cix-usbdp.h
+ create mode 100644 drivers/usb/cdns3/cdnsp-sky1.c
+ create mode 100644 drivers/usb/cdns3/cdnsp-sky1.h
 
-These look like provider-centric instead of consumer-centric names.
-Please add descriptions, so it is more clear what they are, especially
-for the last entry (which should perhaps be the second entry?).
 
-> +
-> +  power-domains:
-> +    minItems: 4
-> +    maxItems: 4
-
-Why four? (yeah, SCMI...)
-
-> +
-> +  power-domain-names:
-> +    items:
-> +      - const: mpp0
-> +      - const: mpp1
-> +      - const: mpp2
-> +      - const: mpp3
-
-Likewise.
-
-> +
-> +  resets:
-> +    minItems: 5
-> +    maxItems: 5
-> +
-> +  reset-names:
-> +    items:
-> +      - const: mpphy01
-> +      - const: mpphy11
-> +      - const: mpphy21
-> +      - const: mpphy31
-> +      - const: mpphy02
-
-These look like provider-centric instead of consumer-centric names.
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
+base-commit: dc59e4fea9d83f03bad6bddf3fa2e52491777482
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+2.54.0
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
