@@ -4,53 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0ECDAC61DD3
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Aug 2026 07:29:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E440C624A5
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Aug 2026 07:29:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZwLmj6ty0+t1mPb2epz2DHjz3rGNW6YClUkerk0Bh7w=; b=dtNEEjyBrXTxRA
-	fZHvKQxa+ufSZ6UWAgSGoKaTLemad+6X8ENuGdU86dH+tum6eyTy5xT6YnRRnoA8t+xXIyZ3CKS8I
-	lQJsWBRP8fySK5kAmkpJUxkHWUrLtCKnyr9QNOP9fSrEIPpJsDAV25D50C2PBcM5ImP1TF3+EQkQe
-	LUL4HIltmUWUFXCS4UM2p1xqrppV/vUAt2nxdWUZeGbazgFbQHpJs0ApzjL+6/ZG8+1mcBWZ1P7Um
-	wF+hTCIT7EmKDWLEWAuyW23pJVomrfclzSrxSJ+w3GlH3Y2+6umR0OSZCiJG5kiZZ4GeQ7V9S7kdz
-	Z8trivqzymYj6HxolcRw==;
+	List-Owner; bh=2lNdLPyFiOqVZfeMQ/a+zJB7X/hMz9PIkgiYfklg6cI=; b=JKKANhs4QvmDuZ
+	ymAeGJ3dv4hd+QUDPmDYcHorakjzb++siCYK2MBomPPJor13wUNjDbIJEYLvbiEwdDIXoFBzRIaz7
+	4oXL+pC9IjsLvUz40JhuklrAtet+pVT8ZyjyFFa6zkBRVPhqphjabvnEadYZBfbbzNKlOAIJERsSb
+	4iIq4Hwnv1aXhc88VOgZgYM7MSGn9sMvGouM9qHFI+6euIlFfImBqz33oT7vTDGXuIBXy/9rADEeH
+	O3aJDX3FIIG3SWucW63whY1s0jSxL71wmSHnsJk2CQWov0JJHx8MuooDgjEoLamdD0b28AlgmupxU
+	nrYwHRKmL8twZXbhmhQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x0wSP-00000008jFx-38O2;
-	Mon, 31 Aug 2026 07:29:29 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1x0wSa-00000008jH7-3KJG;
+	Mon, 31 Aug 2026 07:29:40 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x0wSO-00000008jFb-1PUC
+	id 1x0wSZ-00000008jGz-1c9d
 	for linux-phy@lists.infradead.org;
-	Mon, 31 Aug 2026 07:29:28 +0000
+	Mon, 31 Aug 2026 07:29:39 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 098EA405DE;
-	Mon, 31 Aug 2026 07:29:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 815791F00A3D;
-	Mon, 31 Aug 2026 07:29:27 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 16B9E4029F;
+	Mon, 31 Aug 2026 07:29:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6E7261F000E9;
+	Mon, 31 Aug 2026 07:29:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788161367;
-	bh=pGqwywBqlZf7Zwd5zCQtqG1uwRqmnN3TwFbLRAPhidA=;
+	s=k20260515; t=1788161379;
+	bh=Kktc031UzCEMI6JagxmPA+1IooGPvoNesv/14HrP77c=;
 	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=j9suHZ7nnOrg9E6RaZKgl+uxxR8F/mPgGsNn+PEd/BhCERgXwUFIqixV9pzfw8MvY
-	 WHFvH3UoiC3xSmLOPCp9MFQJYRFaqaX6NEPM6HgqAed/+kzjXDjfm1paCd1+UjJvLn
-	 aPjbMOgLEZcFEvsjzy1j8k2BqovVOtDwl3He9K1oOq3uoKPame1SWgQrnkCZ47r/My
-	 PBAOj5WEXtHjbFpgjNcbaou9NQLxx8abIuM/Yau87K3xTUXsXPzyPoQ92BKKchZMpC
-	 PbFta06OURvY1NWjMox4uHSswIDS/ozhD9PgLr6I5q2qXXmAIxkfMjYjQQpD7+oKEN
-	 08nUkmfUJI3yQ==
+	b=GKkrJKRx7lUuVIckCGWqPOA8+LurVWECrQpnRQg3zwBVYIkijbCYRAoqy5kyXfNtM
+	 K2I1sv6fV9erv2OvIkGbR6WxxCIT6mA4NgbGUukgFDhjXTzgLV6Vt8In0L6uVC8nky
+	 L4w+jz3cCSnr6IE4RbsjBSCr2kxoo4S/VFDMegRjgFsaEiJOP0pT7/7E91+rAxB+gw
+	 NnWaH9M5hXgjbQbaL7rFnQ+zBdwLSNi5UVGNjf9tbjY2uzx9zWDhH6863kyYJOJibc
+	 JyOM1WvfXYMgG2iRl4X+GqUm/028e36o3efgjk/+nmJFvM+5lMine2aNnM6aAO6AvZ
+	 hX2PYXP3d1WjQ==
 From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v2 3/5] PCI: qcom: Add support for Shikra
+Subject: Re: [PATCH v2 1/5] dt-bindings: phy: sc8280xp-qmp-pcie: Document
+ Shikra PCIe phy
 To: "Sushrut Shree Trivedi" <sushrut.trivedi@oss.qualcomm.com>
-Cc: vkoul@kernel.org, linux-phy@lists.infradead.org, conor+dt@kernel.org, robh@kernel.org, linux-pci@vger.kernel.org, olteanv@gmail.com, neil.armstrong@linaro.org, devicetree@vger.kernel.org
-In-Reply-To: <20260831-shikra-upstream-v2-3-406661d75afa@oss.qualcomm.com>
+Cc: conor+dt@kernel.org, robh@kernel.org, neil.armstrong@linaro.org, vkoul@kernel.org, linux-pci@vger.kernel.org, linux-phy@lists.infradead.org, olteanv@gmail.com, devicetree@vger.kernel.org
+In-Reply-To: <20260831-shikra-upstream-v2-1-406661d75afa@oss.qualcomm.com>
 References: <20260831-shikra-upstream-v2-0-406661d75afa@oss.qualcomm.com>
- <20260831-shikra-upstream-v2-3-406661d75afa@oss.qualcomm.com>
-Date: Mon, 31 Aug 2026 07:29:27 +0000
-Message-Id: <20260831072927.815791F00A3D@smtp.kernel.org>
+ <20260831-shikra-upstream-v2-1-406661d75afa@oss.qualcomm.com>
+Date: Mon, 31 Aug 2026 07:29:38 +0000
+Message-Id: <20260831072938.6E7261F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,12 +70,12 @@ Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-PiBBZGQgc3VwcG9ydCBmb3IgdGhlIHNpbmdsZSBQQ0llIGNvbnRyb2xsZXIgb24gU2hpa3JhIHBs
-YXRmb3JtCj4gd2hpY2ggaXMgY2FwYWJsZSBvZiBHZW4yeDEgb3BlcmF0aW9uLgo+IAo+IFNpZ25l
-ZC1vZmYtYnk6IFN1c2hydXQgU2hyZWUgVHJpdmVkaSA8c3VzaHJ1dC50cml2ZWRpQG9zcy5xdWFs
-Y29tbS5jb20+CgpTYXNoaWtvIGhhcyByZXZpZXdlZCB0aGlzIHBhdGNoIGFuZCBmb3VuZCBubyBp
-c3N1ZXMuIEl0IGxvb2tzIGdyZWF0IQoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8v
-c2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDgzMS1zaGlrcmEtdXBzdHJlYW0tdjItMC00MDY2
-NjFkNzVhZmFAb3NzLnF1YWxjb21tLmNvbT9wYXJ0PTMKCgotLSAKbGludXgtcGh5IG1haWxpbmcg
-bGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+PiBEb2N1bWVudCB0aGUgY29tcGF0aWJsZSBvZiB0aGUgU2hpa3JhIFBDSWUgcGh5IHdoaWNoIHN1
+cHBvcnRzCj4gR2VuMngxLgo+IAo+IFNpZ25lZC1vZmYtYnk6IFN1c2hydXQgU2hyZWUgVHJpdmVk
+aSA8c3VzaHJ1dC50cml2ZWRpQG9zcy5xdWFsY29tbS5jb20+CgpTYXNoaWtvIGhhcyByZXZpZXdl
+ZCB0aGlzIHBhdGNoIGFuZCBmb3VuZCBubyBpc3N1ZXMuIEl0IGxvb2tzIGdyZWF0IQoKLS0gClNh
+c2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDgz
+MS1zaGlrcmEtdXBzdHJlYW0tdjItMC00MDY2NjFkNzVhZmFAb3NzLnF1YWxjb21tLmNvbT9wYXJ0
+PTEKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1w
+aHkK
