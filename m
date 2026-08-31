@@ -4,141 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E29FBC61DE2
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Aug 2026 10:05:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86087C61DD3
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Aug 2026 11:05:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hw1fUkVV6wx6ruFrRNPE40Vsa9T0aN5FEs6FtzcpmwY=; b=218tWPwx3wjpQe
-	axaD1pMfiwysYczaEkygOVMde71h17EJQw6V9b6lXoqR0OFUyb3yOawNlEBgeZTN20N5+pLJDj0X/
-	KNQEYgXzkbSf+9eQoEQTVXgYEHLdHRfF6o/pnXMR6vTYe8K52PCtkeqwvEAfjg0tY6olX2+F8sc9m
-	g4aNwB5i56Q7914j4ms6gnAR1vcS6cP4zRL3O7xWLf0VA1DtT8pTCSHdDPPBMp6dDnznSDViQh+4U
-	5/CK8JavMsnBMQNHzHtwXnJKgQaZNIrgdl08J3Yr8l+Af5OwA1RDyvEN/PG0FYU1SY1zSIIqmtl29
-	n5iHYG5ChR5qWJzCvTvg==;
+	List-Owner; bh=I57alqWg6oVIIWjjk3IDyLVvwOvjySkuWBZXf9Zfk0Y=; b=pxfQPBFYTyi4We
+	ZtyFTyBl8MpLgzPcrDhLUQBObvHZhHvRIfF1u+ktGBywdapBWlA9xiL7I17BFBHa+nS0hpy0gqIMU
+	lX8db241yMd1/RhY9wBDz5bPZKnOuNJORUeg1n1kIPeGViWm+yJHE1DCqwLkiO15TZ12owX/7t2nU
+	QQshQXQ3zV7jakk7PvcSCUNMGc6h6QDCEr47YUckZlDpXJsMkjFqfC7xC1wYyol3iDi0bO5TqJNQG
+	Y909Dxzzbd5smDFf1O6NV6xHw5CBdmQw4zloQJfapInw567THBV6siyN22nnzveD5TW8R8yc8FKm4
+	9grjsLXw/9EoDolsCn6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x0ytk-000000095Jy-2Vcz;
-	Mon, 31 Aug 2026 10:05:52 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1x0zp6-000000099Og-083y;
+	Mon, 31 Aug 2026 11:05:08 +0000
+Received: from mgamail.intel.com ([198.175.65.21])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x0yth-000000095JH-0yE0
-	for linux-phy@lists.infradead.org;
-	Mon, 31 Aug 2026 10:05:50 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 67V7xMsr2460317
-	for <linux-phy@lists.infradead.org>; Mon, 31 Aug 2026 10:05:48 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	o+ZCPBk8xNaTdT/fPNIiH2AYV8M935CIdskx7gdi4fM=; b=lA+BHz7xafasOZM+
-	OeRtipnaY/XyUvBm3wO+CoqzMcFzXqrxNw7TYMLNqQ0/Mo7xTjSWWRdVNfDukGb7
-	GSyLEB4X4DRFyn1TzCoWI6Kp9AiPou5DQAsjwoYVT42eCOktgd3nMoVxRVcr+Bag
-	+G2JOdl5kFCFR/tINGFyHtXqW1KncdIQYcN+3V7u80VUQ0EPkV2eJGH9tJqVTDWn
-	ivjK16vqK8erYRAHWd+F6HMpqopwrvKwDDiQrOA5q9mQuJGybXiIpY+t6JPmVQ3i
-	sPBWHGRiviLKu2SAbDf1bYfMB5gTu79MJFP5DuYvxBdqQ7dEe+gi6LBNW2MQ4A0d
-	AiI1CQ==
-Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gd556rp4j-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 31 Aug 2026 10:05:48 +0000 (GMT)
-Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-38f5ac7416eso4531314a91.3
-        for <linux-phy@lists.infradead.org>; Mon, 31 Aug 2026 03:05:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1788170748; x=1788775548; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=o+ZCPBk8xNaTdT/fPNIiH2AYV8M935CIdskx7gdi4fM=;
-        b=UfCpl3mj1SUuDeg58x6achVhM6uGPvg1+H/+lKVmmbzbBm/R7UJKqjHlBfxpwCzxK4
-         ZJ6miEpZW6Cv7GGtvwjxMklNg8f9lXBnlQ9E9lq12ojHuFKhXbtJdVmO1lNiJdnDsPsc
-         LbR6ldmTx8004Z+wpC9f3rth1kGxDP89glKslmN1e3eFE4rdTrAco38yWgfoDEjJHmoG
-         vhVViqHAr9aCjQOkJe+b182j+vGzGu3Vp8ctb6aNnxmcScZMTSbZeTU1TkdABa2O/Ci4
-         EnXNmaygK1kk6+xxgq2WfKab0aHDwB0hYg+CbnKnF4/cCpLOwypZKkte+l89D6tF3K21
-         txhA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788170748; x=1788775548;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=o+ZCPBk8xNaTdT/fPNIiH2AYV8M935CIdskx7gdi4fM=;
-        b=VJsLBWj9mSr1g7r3Bdera8F9vk2TIB649fpRxFogV5cFiXLPWIwmEc8ZK56HibTwLN
-         fmDvjW7ImuRSXnxl6bNEfJtZbvfduB8DeJm+DqdvKpFXEGNdXWYL+0xT8StT+bn1WwrT
-         umkrSTCXUcFA9dYOkpfNOpObZML+Mx/9l5guj/XNJsxk3aKS7nQJwEytZ2GHa0+RRI6Q
-         qmLujFPqXk7XXJMozs2lOh7sATpT8Bb2dOVRDzQinwz4qVPQyl8EZdDQQPisciErDep2
-         IxN/d/l64CKsR74rjWTizLXi+IhisqRitQvmS5GLee7HRSGjSHwS9uKBFbNcq+uHykTH
-         z5bg==
-X-Forwarded-Encrypted: i=1; AKwUvBz2Y0Pnwjg2U3F2d0SdQFwaEjxy8+tiEw6sLGCZVFmZH9PnUJuV2byHaOVczK5aNfp5T1y/hmxiNZE=@lists.infradead.org
-X-Gm-Message-State: AFuF++nvgnU6M3iE7lBYYv+5xVNgZvCSbzycVZx1IpmKBjZ3TBLIAKW6
-	0/6gVTB9Z2tFgymwHbDh+5t4hBTSqPWOrGtf4hWKm6R82i90o2SxNHpeYp36+vFqGPWdN33ToWb
-	WvwyZOwzaUWHqJPsTFMm+teb19A7TX5qV+YHDR0a+2eRL2wE1C1N+SyZM42hjMCzlO5ymryqJTY
-	Lt
-X-Gm-Gg: AYBFou0awi3Lon8u9ZFu+KSaJ8P4GKwo4GgK+HSruAtrzlUDEm8mOzHZYmtCO5AF62n
-	D0fAQGA8d0YltCdyzfzq9y3B0hlzAp+gJp9HCavvxeGjaBEigqLJc5os8Xq3Z4oTe2klyt49EpJ
-	FJfcTFeRs3tCBPLvlHje9FTcWZCAmk+OB04pnJy808PTbu4CyRY+3me30MjLd3mOKwEQjcyHU5D
-	FYW1h6rYKi3iBrKfyHSXK0s+kTMh8RgRnBJr0OyxucteTULOujFuPrQQQ/kZV4hh8oc3hWeZgEq
-	vcn9B4OclSySnZNBZnpvyfX5tSakLP1NbNpmFwI6a11Ey1vVxRnxWiyevm+qmcqLxTOKXQjSaEE
-	eikBh4AZKpqUcwkTuEVHvY+O7ExYX5zqmFCSFya6Ul0250NmlQOEOsGcME/JjvnwGCSJ630E=
-X-Received: by 2002:a17:90a:d2c7:b0:398:9bd1:3210 with SMTP id 98e67ed59e1d1-3989bd135c0mr25646080a91.17.1788170747889;
-        Mon, 31 Aug 2026 03:05:47 -0700 (PDT)
-X-Received: by 2002:a17:90a:d2c7:b0:398:9bd1:3210 with SMTP id 98e67ed59e1d1-3989bd135c0mr25645956a91.17.1788170747310;
-        Mon, 31 Aug 2026 03:05:47 -0700 (PDT)
-Received: from [10.133.33.190] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-396ddc0c703sm16294336a91.9.2026.08.31.03.05.44
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 31 Aug 2026 03:05:46 -0700 (PDT)
-Message-ID: <89805886-ba34-47d7-845f-904db15c7b17@oss.qualcomm.com>
-Date: Mon, 31 Aug 2026 18:05:43 +0800
+	id 1x0zp3-000000099Nt-1i6K;
+	Mon, 31 Aug 2026 11:05:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1788174306; x=1819710306;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=YPMj4lSvftoy2mPSE2BoRYZKbnYiULh2Q6DhbTrJd2Y=;
+  b=R/ZXyGK1Zdch0boXaQyMzwCdxJuMYDJ6fXPsnVbAUmBmwt/Edy7L4oTI
+   snieILtod4eM30UuI2vSXIz4e/HlpNyHjlS93VKX0P//LdkmCayArf3x3
+   RA6Vc0DQlMB3wyuRNLWQYp6yA7dQuhn5Q29Fb2k/XJqMcNkZjUY0xEb/w
+   R16St3Huw4QjLi8VHuW7x/QMMc+gtqMYvVLSaJlmY/pLgBLihHLELetpH
+   o3mgs31x0zY2dXcOadC4ZG1BLOtG8wur80L6kz/fPkJfvNKzWvE7GC39J
+   nJdL2Gckv+mIj6dcxrk0rzw6Fe2pz26JhLJZzyMwQQw78E6W1Pla2c0ur
+   A==;
+X-CSE-ConnectionGUID: kv8PxsyXQwOvXZzn9YIivQ==
+X-CSE-MsgGUID: wc41faTXROuXIXg3h4oOOQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11891"; a="88431701"
+X-IronPort-AV: E=Sophos;i="6.25,252,1779174000"; 
+   d="scan'208";a="88431701"
+Received: from fmviesa002.fm.intel.com ([10.60.135.142])
+  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 31 Aug 2026 04:05:03 -0700
+X-CSE-ConnectionGUID: 7zOKNvibTQCwcwcmNeMpVA==
+X-CSE-MsgGUID: v38GUscTSeeAtaGg45E8sQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.25,252,1779174000"; 
+   d="scan'208";a="292272041"
+Received: from black.igk.intel.com ([10.91.253.5])
+  by fmviesa002.fm.intel.com with ESMTP; 31 Aug 2026 04:04:58 -0700
+Received: by black.igk.intel.com (Postfix, from userid 1008)
+	id F058E99; Mon, 31 Aug 2026 13:04:56 +0200 (CEST)
+Date: Mon, 31 Aug 2026 13:04:56 +0200
+From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+To: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Christian Bruel <christian.bruel@foss.st.com>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Mark Brown <broonie@kernel.org>,
+	Srinivas Kandagatla <srini@kernel.org>,
+	Marek Vasut <marex@nabladev.com>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Pankaj Dev <pankaj.dev@st.com>, linux-usb@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH 06/16] usb: typec: add FUSB340 SuperSpeed switch driver
+Message-ID: <apVf2GL-r0Cm8Q53@black.igk.intel.com>
+References: <20260821-ucpd-host-fusb340-v7-2-rfc-v1-0-c5e27cbc0795@foss.st.com>
+ <20260821-ucpd-host-fusb340-v7-2-rfc-v1-6-c5e27cbc0795@foss.st.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add
- Maili PCIe PHY compatibles
-To: Vivek Pernamitta <vivek.pernamitta@oss.qualcomm.com>,
-        Vinod Koul <vkoul@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20260831-vdev_phy_next-20260828-v2-1-08fe5dcd4b86@oss.qualcomm.com>
-Content-Language: en-US
-From: Jingyi Wang <jingyi.wang@oss.qualcomm.com>
-In-Reply-To: <20260831-vdev_phy_next-20260828-v2-1-08fe5dcd4b86@oss.qualcomm.com>
-X-Proofpoint-Spam-Info: AW1haW4tMjYwODMxMDA4NiBTYWx0ZWRfX5q1jxNq6rO6a
- 3pXOtSPe8xNHlBJ6t38PW4phChhKjxGjZGQQCiijqbE0T4UsALQkNK6b8qgzXSF9mGy6UjNlJGB
- t8g5TELkQWBDuHptOuqcifaX755xg18=
-X-Authority-Analysis: v=2.4 cv=O7sJeh9W c=1 sm=1 tr=0 ts=6a9551fc cx=c_pps
- a=vVfyC5vLCtgYJKYeQD43oA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=IkcTkHD0fZMA:10 a=Sv0fKeRqtYgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
- a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=6mMdS-TofruHI7CEqrkA:9 a=QEXdDO2ut3YA:10
- a=rl5im9kqc5Lf4LNbBjHf:22
-X-Proofpoint-ORIG-GUID: YjKutgyu4YUbTDiqOGG-PoXdrize3UNd
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODMxMDA4NiBTYWx0ZWRfXzYFnogJbLECn
- jggHwYr8HcjCyt8ysW45jYzLSIVxgTd8O8R209iYgX2nFIKgrRasVjN1DooQ+RveROUb8U1DooQ
- 2hPl9rEg+0kTysOdJWirTw8K55sfdPa4AgpDBrFlm39rDjEifJ+Da7C5EKqgigIzWjeM6v+35B9
- 01z/Hz7IaIGum/btwQaBObomMLdLG064GDj75ZC/6arQmRg/DWH+9DZhHXyLOQ2VAwcIAvNHgJg
- 03NYpQooLXfDI9B2JpvF8eX3zR1R38YcsHxlfGqHMTBNl8TKe7HXlpi6urYlqEj4+JnnkERWV1O
- /SY10EMoFFqBACdHgPfpjI6fJLftpkSRE5pzPHl3MkZarchaSyuNaFGcNeNmIU8pGJ2WCUGWdtF
- 9nReJ9/TRdqMtyQPz+/OubmAia719RbgXqqU7uMhNrtzA95SK5oaKw8yIQLm0MWEtWJvsLLnuiq
- H3iYEyAeQ1WSDQXmqDA==
-X-Proofpoint-GUID: YjKutgyu4YUbTDiqOGG-PoXdrize3UNd
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-08-31_03,2026-08-27_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 priorityscore=1501 malwarescore=0 adultscore=0 suspectscore=0
- bulkscore=0 spamscore=0 lowpriorityscore=0 impostorscore=0 clxscore=1015
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2608310086
+Content-Disposition: inline
+In-Reply-To: <20260821-ucpd-host-fusb340-v7-2-rfc-v1-6-c5e27cbc0795@foss.st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260831_030549_311598_9269434F 
-X-CRM114-Status: GOOD (  17.45  )
+X-CRM114-CacheID: sfid-20260831_040505_522694_1F800C61 
+X-CRM114-Status: GOOD (  31.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,78 +95,242 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 8/31/2026 2:25 PM, Vivek Pernamitta wrote:
-> Add qcom,maili-qmp-gen3x2-pcie-phy and qcom,maili-qmp-gen4x1-pcie-phy
-> compatible strings for the Maili SoC PCIe QMP PHY.
+On Fri, Aug 21, 2026 at 06:23:17PM +0200, Fabrice Gasnier wrote:
+> Add a platform driver for the ON Semiconductor FUSB340 SuperSpeed switch.
+> The driver uses enable-gpios and select-gpios to control the switch and
+> registers Type-C switch and mux providers for Type-C applications where a
+> reversible cable requires a switch.
 > 
-> The Maili SoC is a derivative of Hawi and shares the same PCIe QMP PHY
-> architecture, allowing reuse of the existing Hawi PCIe PHY DT bindings.
-> 
-> Signed-off-by: Vivek Pernamitta <vivek.pernamitta@oss.qualcomm.com>
+> Assisted-by: GitHub-Copilot:GPT-5.4-mini
+> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
 > ---
-> Changes in V2:
-> - Rebases to the latest code.
-> - PCIe controller dt-bindings: pci: qcom,hawi-pcie: Add Maili PCIe compatible
->    change is already merged, so dropping change
-> V1 patch link: https://lore.kernel.org/all/e5516c61-44ea-4224-9da2-1694eac10fec@oss.qualcomm.com/
-> ---
-> 
-> ---
->   .../devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml         | 6 ++++++
->   1 file changed, 6 insertions(+)
-> 
+>  drivers/usb/typec/mux/Kconfig   |   8 ++
+>  drivers/usb/typec/mux/Makefile  |   1 +
+>  drivers/usb/typec/mux/fusb340.c | 169 ++++++++++++++++++++++++++++++++++++++++
+>  3 files changed, 178 insertions(+)
 
-This patch did not show the falling back relationship between Maili
-and Hawi, please check and update.
+> diff --git a/drivers/usb/typec/mux/Kconfig b/drivers/usb/typec/mux/Kconfig
+> index 6dd8f961b593..6a1da48a2a8f 100644
+> --- a/drivers/usb/typec/mux/Kconfig
+> +++ b/drivers/usb/typec/mux/Kconfig
+> @@ -12,6 +12,14 @@ config TYPEC_MUX_FSA4480
+>  	  common USB Type-C connector.
+>  	  If compiled as a module, the module will be named fsa4480.
+>  
+> +config TYPEC_MUX_FUSB340
+> +	tristate "ON Semi FUSB340 SuperSpeed switch driver"
+> +	help
+> +	  Driver for the ON Semiconductor FUSB340 SuperSpeed switch, which
+> +	  provides support for routing SuperSpeed pairs in Type-C applications
+> +	  where a reversible cable requires a switch.
+> +	  If compiled as a module, the module will be named fusb340.
+> +
+>  config TYPEC_MUX_GPIO_SBU
+>  	tristate "Generic GPIO based SBU mux for USB Type-C applications"
+>  	help
+
+Why can't you just use MUX_GPIO_SBU (sorry if I've missed something)?
 
 Thanks,
-Jingyi
 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> index b353b7bfb839ce9cc43ecd9ef96d174a7750b35b..701f0fc178220da5e3d2748330179c2193ff7418 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> @@ -23,6 +23,8 @@ properties:
->         - qcom,hawi-qmp-gen3x2-pcie-phy
->         - qcom,hawi-qmp-gen4x1-pcie-phy
->         - qcom,kaanapali-qmp-gen3x2-pcie-phy
-> +      - qcom,maili-qmp-gen3x2-pcie-phy
-> +      - qcom,maili-qmp-gen4x1-pcie-phy
->         - qcom,qcs615-qmp-gen3x1-pcie-phy
->         - qcom,qcs8300-qmp-gen4x2-pcie-phy
->         - qcom,sa8775p-qmp-gen4x2-pcie-phy
-> @@ -202,6 +204,8 @@ allOf:
->                 - qcom,glymur-qmp-gen5x4-pcie-phy
->                 - qcom,hawi-qmp-gen3x2-pcie-phy
->                 - qcom,hawi-qmp-gen4x1-pcie-phy
-> +              - qcom,maili-qmp-gen3x2-pcie-phy
-> +              - qcom,maili-qmp-gen4x1-pcie-phy
->                 - qcom,qcs8300-qmp-gen4x2-pcie-phy
->                 - qcom,sa8775p-qmp-gen4x2-pcie-phy
->                 - qcom,sa8775p-qmp-gen4x4-pcie-phy
-> @@ -232,6 +236,8 @@ allOf:
->                 - qcom,hawi-qmp-gen3x2-pcie-phy
->                 - qcom,hawi-qmp-gen4x1-pcie-phy
->                 - qcom,kaanapali-qmp-gen3x2-pcie-phy
-> +              - qcom,maili-qmp-gen3x2-pcie-phy
-> +              - qcom,maili-qmp-gen4x1-pcie-phy
->                 - qcom,sm8550-qmp-gen4x2-pcie-phy
->                 - qcom,sm8650-qmp-gen4x2-pcie-phy
->                 - qcom,x1e80100-qmp-gen3x2-pcie-phy
+> diff --git a/drivers/usb/typec/mux/Makefile b/drivers/usb/typec/mux/Makefile
+> index b4f599eb5053..ef8d2b05ff7f 100644
+> --- a/drivers/usb/typec/mux/Makefile
+> +++ b/drivers/usb/typec/mux/Makefile
+> @@ -1,6 +1,7 @@
+>  # SPDX-License-Identifier: GPL-2.0
+>  
+>  obj-$(CONFIG_TYPEC_MUX_FSA4480)		+= fsa4480.o
+> +obj-$(CONFIG_TYPEC_MUX_FUSB340)		+= fusb340.o
+>  obj-$(CONFIG_TYPEC_MUX_GPIO_SBU)	+= gpio-sbu-mux.o
+>  obj-$(CONFIG_TYPEC_MUX_PI3USB30532)	+= pi3usb30532.o
+>  obj-$(CONFIG_TYPEC_MUX_INTEL_PMC)	+= intel_pmc_mux.o
+> diff --git a/drivers/usb/typec/mux/fusb340.c b/drivers/usb/typec/mux/fusb340.c
+> new file mode 100644
+> index 000000000000..0f0e45743784
+> --- /dev/null
+> +++ b/drivers/usb/typec/mux/fusb340.c
+> @@ -0,0 +1,169 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * ON Semiconductor FUSB340 SuperSpeed switch driver
+> + *
+> + * Copyright (C) 2026 STMicroelectronics
+> + */
+> +
+> +#include <linux/device.h>
+> +#include <linux/gpio/consumer.h>
+> +#include <linux/kernel.h>
+> +#include <linux/module.h>
+> +#include <linux/mutex.h>
+> +#include <linux/of_device.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/usb/typec_altmode.h>
+> +#include <linux/usb/typec_mux.h>
+> +
+> +struct fusb340 {
+> +	struct gpio_desc *enable_gpio;
+> +	struct gpio_desc *select_gpio;
+> +	struct mutex lock; /* serialize orientation and mode updates */
+> +	struct typec_switch_dev *sw;
+> +	struct typec_mux_dev *mux;
+> +	enum typec_orientation orientation;
+> +	unsigned long mode;
+> +};
+> +
+> +static void fusb340_update_locked(struct fusb340 *fusb)
+> +{
+> +	bool enable = fusb->mode == TYPEC_STATE_USB &&
+> +		      fusb->orientation != TYPEC_ORIENTATION_NONE;
+> +	bool select = fusb->orientation == TYPEC_ORIENTATION_REVERSE;
+> +
+> +	gpiod_set_value_cansleep(fusb->enable_gpio, enable);
+> +	gpiod_set_value_cansleep(fusb->select_gpio, select);
+> +}
+> +
+> +static int fusb340_switch_set(struct typec_switch_dev *sw,
+> +			      enum typec_orientation orientation)
+> +{
+> +	struct fusb340 *fusb = typec_switch_get_drvdata(sw);
+> +
+> +	mutex_lock(&fusb->lock);
+> +
+> +	if (fusb->orientation != orientation) {
+> +		fusb->orientation = orientation;
+> +		fusb340_update_locked(fusb);
+> +	}
+> +
+> +	mutex_unlock(&fusb->lock);
+> +
+> +	return 0;
+> +}
+> +
+> +static int fusb340_mux_set(struct typec_mux_dev *mux,
+> +			   struct typec_mux_state *state)
+> +{
+> +	struct fusb340 *fusb = typec_mux_get_drvdata(mux);
+> +	int ret = 0;
+> +
+> +	mutex_lock(&fusb->lock);
+> +
+> +	if (state->mode != TYPEC_STATE_SAFE && state->mode != TYPEC_STATE_USB) {
+> +		ret = -EOPNOTSUPP;
+> +		goto out_unlock;
+> +	}
+> +
+> +	if (fusb->mode != state->mode) {
+> +		fusb->mode = state->mode;
+> +		fusb340_update_locked(fusb);
+> +	}
+> +
+> +out_unlock:
+> +	mutex_unlock(&fusb->lock);
+> +
+> +	return ret;
+> +}
+> +
+> +static int fusb340_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct typec_switch_desc sw_desc = { };
+> +	struct typec_mux_desc mux_desc = { };
+> +	struct fusb340 *fusb;
+> +	int ret;
+> +
+> +	fusb = devm_kzalloc(dev, sizeof(*fusb), GFP_KERNEL);
+> +	if (!fusb)
+> +		return -ENOMEM;
+> +
+> +	fusb->orientation = TYPEC_ORIENTATION_NONE;
+> +	fusb->mode = TYPEC_STATE_SAFE;
+> +
+> +	fusb->enable_gpio = devm_gpiod_get(dev, "enable", GPIOD_OUT_LOW);
+> +	if (IS_ERR(fusb->enable_gpio))
+> +		return dev_err_probe(dev, PTR_ERR(fusb->enable_gpio),
+> +				     "failed to get enable gpio\n");
+> +
+> +	fusb->select_gpio = devm_gpiod_get(dev, "select", GPIOD_OUT_LOW);
+> +	if (IS_ERR(fusb->select_gpio))
+> +		return dev_err_probe(dev, PTR_ERR(fusb->select_gpio),
+> +				     "failed to get select gpio\n");
+> +
+> +	mutex_init(&fusb->lock);
+> +
+> +	sw_desc.drvdata = fusb;
+> +	sw_desc.fwnode = dev_fwnode(dev);
+> +	sw_desc.set = fusb340_switch_set;
+> +
+> +	fusb->sw = typec_switch_register(dev, &sw_desc);
+> +	if (IS_ERR(fusb->sw)) {
+> +		ret = dev_err_probe(dev, PTR_ERR(fusb->sw),
+> +				    "failed to register typec switch\n");
+> +		goto err_mutex_destroy;
+> +	}
+> +
+> +	mux_desc.drvdata = fusb;
+> +	mux_desc.fwnode = dev_fwnode(dev);
+> +	mux_desc.set = fusb340_mux_set;
+> +
+> +	fusb->mux = typec_mux_register(dev, &mux_desc);
+> +	if (IS_ERR(fusb->mux)) {
+> +		ret = dev_err_probe(dev, PTR_ERR(fusb->mux),
+> +				    "failed to register typec mux\n");
+> +		goto err_unregister_switch;
+> +	}
+> +
+> +	platform_set_drvdata(pdev, fusb);
+> +
+> +	return 0;
+> +
+> +err_unregister_switch:
+> +	typec_switch_unregister(fusb->sw);
+> +err_mutex_destroy:
+> +	mutex_destroy(&fusb->lock);
+> +	return ret;
+> +}
+> +
+> +static void fusb340_remove(struct platform_device *pdev)
+> +{
+> +	struct fusb340 *fusb = platform_get_drvdata(pdev);
+> +
+> +	gpiod_set_value_cansleep(fusb->enable_gpio, 0);
+> +	gpiod_set_value_cansleep(fusb->select_gpio, 0);
+> +
+> +	typec_mux_unregister(fusb->mux);
+> +	typec_switch_unregister(fusb->sw);
+> +	mutex_destroy(&fusb->lock);
+> +}
+> +
+> +static const struct of_device_id fusb340_of_match[] = {
+> +	{ .compatible = "onnn,fusb340" },
+> +	{ }
+> +};
+> +MODULE_DEVICE_TABLE(of, fusb340_of_match);
+> +
+> +static struct platform_driver fusb340_driver = {
+> +	.probe = fusb340_probe,
+> +	.remove = fusb340_remove,
+> +	.driver = {
+> +		.name = "fusb340",
+> +		.of_match_table = fusb340_of_match,
+> +	},
+> +};
+> +module_platform_driver(fusb340_driver);
+> +
+> +MODULE_DESCRIPTION("ON Semiconductor FUSB340 SuperSpeed switch driver");
+> +MODULE_AUTHOR("Fabrice Gasnier <fabrice.gasnier@foss.st.com>");
+> +MODULE_LICENSE("GPL");
 > 
-> ---
-> base-commit: e30626823a406725ce29bc75cb8ec467d3e1e326
-> change-id: 20260831-vdev_phy_next-20260828-afecafb5ecb4
-> 
-> Best regards,
+> -- 
+> 2.43.0
 
+-- 
+heikki
 
 -- 
 linux-phy mailing list
