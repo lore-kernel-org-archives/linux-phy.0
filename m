@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2AD54C61DD6
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Sep 2026 05:57:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22D57C61DD6
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Sep 2026 05:58:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YQHnU07kHB8NwKYnLfZoXHwocoWK8uipW3ZVq7yB0QI=; b=bntriElmdXO+UQ
-	g1HsNQD3lRa0oFLodCyDToX9I+nZ8n8sEuKh8BMIgY3End7/EGOCHYbzI4u+7N8cJA33Q5pc/QL6B
-	xk61yGtcAJbNcPk84bf+TdJ+azSfluH+/vi6gFF3zxyjUxU9Ly1QSEc31tiaj4H2OuYP5bVYx964r
-	oLgJKjrCrbtG98mNrEUVgE2+zMz/ABUizItgUR08dtV07PJ+xsEPcX55RWxOldGTP+361g+bw16Ma
-	/0kDbcjFeEfyv0AOPtwcxkVlSRpefRLnwPXAJWTxwQRZCTZAOq6JH1021c+g7ZlCQmGpYhficX/un
-	xPCgTpu+UAjt9m+vekcw==;
+	List-Owner; bh=261+xiV1wDJNGAtdn76aWSbPjy+77dm3djEcJXeHTtg=; b=XZQZ6qXj8PRVP+
+	oFWs+X28jvv/23N0Xyq5s2lBZl6hGrMBtiDiAwCQHuRL8IlHJioKvz10BbLFM1ISDNe5BWLomDy0r
+	5LqhMaC1qiGTHUkHthS7AOhw1FHWebLTxDtvKe6rYR+4D9+QNQVX9Tlkl2xysC1Iicu8bi16DdshW
+	nC7J96ld65UBoQFF3T72idv/lAiRGSQU2qsnQyZsu+QRSkaRrdZU/ybvegxFwsGPQj6Azl+fyZnYj
+	t96JFyg1G5is9avpB+kgyb4AMV4PoOMuqtnsh+Uw293JBn3oAgoYtGnILybfIdAIRmbVEnhn9zJDj
+	dccPNZ6TrG558MBW1S8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1HVL-0000000B2RK-2WR0;
-	Tue, 01 Sep 2026 05:57:55 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1x1HWK-0000000B2Ts-3OYt;
+	Tue, 01 Sep 2026 05:58:56 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1HVK-0000000B2RB-1Qke
+	id 1x1HWJ-0000000B2Tl-1ZFd
 	for linux-phy@lists.infradead.org;
-	Tue, 01 Sep 2026 05:57:54 +0000
+	Tue, 01 Sep 2026 05:58:55 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 5D153602C8;
-	Tue,  1 Sep 2026 05:57:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 508DD1F000E9;
-	Tue,  1 Sep 2026 05:57:41 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 70C00601DE;
+	Tue,  1 Sep 2026 05:58:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 15BCA1F000E9;
+	Tue,  1 Sep 2026 05:58:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788242273;
-	bh=+gTQIK3yQi4UakvY0r+nGegwgzdx4YC4LvElYe31vtM=;
+	s=k20260515; t=1788242334;
+	bh=92pwlUR5nxiHx1bKa/2Cr5ZRlcqeLT3X+qIkjt03esM=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=BhBQE9904+QsR6IhIjvHix9VJbI2sIHdw0+FsrcdzSmT1AYYcLWaLNNQN2ejK9dfS
-	 ZWYEAF5ZpXhREGwdfMhQLas7O9NCqp956fDpmZvr+c472kDgAk/s8XVzh4DoiKUocM
-	 aki2O5YkguUT/giWJ4lVL6uvMOuCLXC7Dn1Y1bpL0wIXrIv8xWGD/mt++yiHb78tIP
-	 IS76ALUpmww8jhQKlSEtj7n92TQW/3uABcbXX6g362f2um1HnDLNWE1O8HZ0d0yLvg
-	 WGutVaskT/UxrcaNL7JyviPpD7ZXwJnCEcCoO5JBnWob3irq1Zm4pkqdDpMlXv10nP
-	 vmYSuFBk1nIQA==
-Message-ID: <ad7883c2-3b0d-43d0-b057-8a8eaf34a6c9@kernel.org>
-Date: Tue, 1 Sep 2026 07:57:38 +0200
+	b=Qno9MquK6iFUp/8b8wfCB+ULlp2/o38ZljfJp+n8CkUYScxNEDLpMmzDMr69fFZkO
+	 p4YwtE0Wnbuw8lskP3DxTSzTehySCGL66oiGmdgwPyY7405s0EgNMGP2nbR88b2tmV
+	 aemEjgO4lpzUusp7QW/wGYBlkEgn95IeDyZwa93WGvOlnPXDF9EFVKo+bmehHm4GnU
+	 UpkLR3HtRzXe6mmyC5+/tQIZV05MpjTP6ypD2C8R1EDhs7eLL8gwc6d2aQL4zCHlRo
+	 gvEb0tyKviH//TwA+xdDjahGDsG+3CkdyZ4jCHJrR6sE4x1CIGkiRdVMhX1OD4BWst
+	 x1vyQ9Z0jpEPw==
+Message-ID: <c1342965-be3a-4b13-9202-c9745e3443c3@kernel.org>
+Date: Tue, 1 Sep 2026 07:58:41 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH RFC/DO NOT MERGE 07/12] drm/msm/hdmi: Split PHY init from
- power up
+Subject: Re: [PATCH RFC/DO NOT MERGE 08/12] drm/msm/hdmi: Add support for PM
+ OPP table
 To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
  Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
  Rob Clark <robin.clark@oss.qualcomm.com>, Dmitry Baryshkov
@@ -67,8 +67,8 @@ Cc: linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org,
  freedreno@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  devicetree@vger.kernel.org, linux-phy@lists.infradead.org
 References: <20260828-drm-msm-hdmi-eliza-v1-0-67843277de17@oss.qualcomm.com>
- <20260828-drm-msm-hdmi-eliza-v1-7-67843277de17@oss.qualcomm.com>
- <c1d13f41-e29e-41ee-b02a-b38013e4e7f2@oss.qualcomm.com>
+ <20260828-drm-msm-hdmi-eliza-v1-8-67843277de17@oss.qualcomm.com>
+ <294b2d4c-31d7-42fa-a55a-b57fc7d0ef6f@oss.qualcomm.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -114,7 +114,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  K9bCVaboTA2T77QYkRcRJYSsO1alGX0ome/hMLD1daXlkrNUp1HWa3K4iytLRXjCSIorWiGs
  n+q3krnpXu3TFkA8qtOFZMdnIiFuiq1yLT8hptsV5xh1TA2nsVvSYiaCr3q4s4BKjS/KrLDb
  qoxzw8ISjdUp4pA85vb6YLCmb39NgidD+7PmAr65lBNveIFynTgsja1rRQ4=
-In-Reply-To: <c1d13f41-e29e-41ee-b02a-b38013e4e7f2@oss.qualcomm.com>
+In-Reply-To: <294b2d4c-31d7-42fa-a55a-b57fc7d0ef6f@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,28 +131,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 31/08/2026 18:40, Konrad Dybcio wrote:
+On 31/08/2026 18:43, Konrad Dybcio wrote:
 > On 8/28/26 4:05 PM, Krzysztof Kozlowski wrote:
->> Future Eliza SoC HDMI PHY and HDMI block require certain clock
->> operations, like reparenting pixclok to HDMI PHY PLL, once PHY is
->> initialized.  Similarly to what is happening on Qualcomm MSM DSI blocks
->> since SM8750.
+>> Allow scaling the domain rails with PM OPP, which uses the pixclock
+>> ("extp").  This allows proper votes depending on requested HDMI pixel
+>> rate.
+>>
+>> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+>> ---
 > 
 > [...]
 > 
->>  static void msm_hdmi_power_on(struct drm_bridge *bridge)
->> +{
->> +	struct hdmi_bridge *hdmi_bridge = to_hdmi_bridge(bridge);
->> +	struct hdmi *hdmi = hdmi_bridge->hdmi;
->> +
->> +	pm_runtime_resume_and_get(&hdmi->pdev->dev);
->> +}
+>> -	if (hdmi->extp_clk)
+>> +	if (hdmi->extp_clk) {
+>>  		clk_disable_unprepare(hdmi->extp_clk);
+>> +		dev_pm_opp_set_rate(&hdmi->pdev->dev, 0);
 > 
-> I know the caller is void and it's existing behavior, but we
-> should definitely not continue if this fails
+> FWIW rescinding the vote will happen automatically as the device runtime
+> suspends. If you think this is necessary, let's do
+> 
+> dev_pm_opp_set_opp(dev, NULL);
+> 
+> instead, since dev_pm_opp_set_rate(0) is a ""dark pattern"" that is
+> usually misused, see e.g.:
+> 
+> https://lore.kernel.org/linux-arm-msm/20260728-topic-dpu_power-v1-0-e7783b859a70@oss.qualcomm.com/
 
-Yeah, I can rework that.
-
+Ack
 
 Best regards,
 Krzysztof
