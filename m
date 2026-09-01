@@ -4,52 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C4E9C624D0
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Sep 2026 19:57:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 822D9C624D6
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Sep 2026 19:57:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LeMACc4OQCPgbb6Q+rh6I6fwI+Xf9Hvizc9hi6vWHtk=; b=zsq++dRZ5nOYCQ
-	bYkzLmU8OcKp2KOY7JPx0Va39+vXm5UEO1A56kDfGL6Fwi3PdMiqnBSuzKSSpCFlHyeICdbrd/FKn
-	shVq6ijYQYmIxbvUS0P6FzkwwQFY0149pyiEQUzD2aXp5tsmPtt3a54oIFUaJc92q9H2IE2BGQKfa
-	ndA1axfKpJDcxa3G71RUBLPpulCzOBD0puDB/xpP7kR9aavjHIUAP2uncQO8MCuXOTYcTSW8PlCCy
-	Yg3zwmqyVJp3MXvyOFZu5DxVrkwQLOfhF2hwg0dspyS6Vn6/KUJcKXw55pCFfSNl6uRHIdcI/nBBZ
-	EyH3jVXHI1BO+9CQBsaA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=f1Ier4K2iVQmFX/Ny2zyHa/To/cHszOpjcRC4Vg3FH8=; b=dszFi6dbjOUHh1
+	m2q/KN2lYhu5j0U98Gs8obl62bcxo+nVoJ7DB5eK0UYarv5AUiDfaI6Ottq3jyW+sCwMvDTD5qMfb
+	OWTzU1On7zayMpfgNcHIzjbKHUUPxM8qLTDOqdB0gY+KxEb8R+jseZnmd4Bgs9yattTFVwfCf8m8f
+	zMJTpoAxKuQSRCvFtlcCyOR0K4PftvML6C+LbI17ThX/I0UrVFh/838VMXWkzl8MeLKXQjVMRBk3y
+	LyALBuYiSvsZYv05Jc77GliOj1TF+yFgK8c8Snl7AVtQ+Y2ayWzcGJtsRB3giuIgkxTS2cQv/6+4j
+	Vtd86ElOj7W9koMYvsqA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1Ubq-0000000DGpB-38tR;
-	Tue, 01 Sep 2026 19:57:30 +0000
+	id 1x1Ubs-0000000DGrK-0TXU;
+	Tue, 01 Sep 2026 19:57:32 +0000
 Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1Ubo-0000000DGmh-0G3W;
-	Tue, 01 Sep 2026 19:57:29 +0000
+	id 1x1Ubp-0000000DGmo-0cyC;
+	Tue, 01 Sep 2026 19:57:30 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1788292644;
-	bh=rCvlPknLGM17Xc/ny1wY7xGWECwsix65LrYdnOlW7MI=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=AwQldk14HlTia8gWljufFe9X4XuwnSW57CSg9aaW+5JdeAR+5+ozFGd0heCPgzSo2
-	 RxZGkaf9GGbshx0tdL3CgIVLSgj30Olup4PdpJV+KgMlNZAyB35Rj8vZm/HI27nLDr
-	 OVA1rbLs0N9hU3Jdy/lyWlZe7RnMlGXdG2jL79pql5qhP81yXd0nYsUqIhx9AQ05qR
-	 JDftH1nkqLACGA1lPBz/zAKFPoyOHHS6HUcr1oa+UMgmIK0JBHN8QGLTpViIOcFlH3
-	 JERZWsJjC7jiuwLCehnbJSXM+B4VRWq7Emhk6dCeSo2IxV6mcSAeghJRpznwNHWTEI
-	 YRtvE3auxXyHA==
+	s=mail; t=1788292643;
+	bh=c2iPczLtPVzAMlawjRT1iQ+YfNBlqk2yLxQ0fD8HXv8=;
+	h=From:Subject:Date:To:Cc:From;
+	b=JVLkvuIiBYqlD8jXgnDZxYeLJZVp44FOH97rQwVJezq4g3p3cq3Vskm3vfhuU7YRn
+	 FpGKkdffe7inS1riASp3ckgbTOto2+saVAbB35sfF5ZdwE9NZebiPP0v5OzI+o/SBy
+	 hshlsCSg/XzhlTttyUU2DvWRvVSVgGSYE0qKBj2ph0Ok3NjNcT0yuvukAAT0EGDboM
+	 utu1QIlNiFZ7VUrA8WZjlzA4DbS92v6vHAb036VbrUuXQHn3yvkHCyTGdt5Q0sKsxv
+	 Ht088ufTchxzS6dkl9FKCgopWGlHtfI0G6s1zErOspyp8LpxKnXq/2IfN2HhCgRZGL
+	 rHEWCDaShwygg==
 Received: from localhost (unknown [100.64.0.241])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange secp256r1 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id D24E517E057E;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 0B23D17E0260;
 	Tue, 01 Sep 2026 21:57:23 +0200 (CEST)
 From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Date: Tue, 01 Sep 2026 22:55:13 +0300
-Subject: [PATCH v2 1/3] phy: hdmi: Add optional FRL TxFFE config options
+Subject: [PATCH v2 0/3] phy: hdmi: Add FRL TxFFE level control
+Date: Tue, 01 Sep 2026 22:55:12 +0300
+Message-Id: <20260901-hdptx-ffe-v2-0-3a5922c76fc5@collabora.com>
 MIME-Version: 1.0
-Message-Id: <20260901-hdptx-ffe-v2-1-3a5922c76fc5@collabora.com>
-References: <20260901-hdptx-ffe-v2-0-3a5922c76fc5@collabora.com>
-In-Reply-To: <20260901-hdptx-ffe-v2-0-3a5922c76fc5@collabora.com>
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/22NQQ7CIBQFr9L8tRhKhbSuvIfpgsKvkNRSAUlNw
+ 93FunDjciYv8zYI6C0GOFcbeEw2WDcXYIcKlJHzDYnVhYFRJmjDWmL0Elcyjkhk2yleoxAdPUH
+ ZLx5Hu+6ta/9lj49nScafNDZE51/7X6o/9l861YQS3uCguUbJqLwoN01ycF4elbtDn3N+Azwd5
+ yq7AAAA
+X-Change-ID: 20260328-hdptx-ffe-a89c51e66904
 To: Vinod Koul <vkoul@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>, 
  Manivannan Sadhasivam <mani@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
@@ -59,8 +62,9 @@ Cc: kernel@collabora.com, linux-phy@lists.infradead.org,
  linux-rockchip@lists.infradead.org
 X-Mailer: b4 0.15.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260901_125728_251477_A004CC16 
-X-CRM114-Status: GOOD (  13.42  )
+X-CRM114-CacheID: sfid-20260901_125729_343275_44B35CC4 
+X-CRM114-Status: UNSURE (   9.59  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,62 +81,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-During HDMI 2.1 FRL link training, the source and sink can negotiate a
-Transmitter Feed-Forward Equalization (TxFFE) level to improve the
-signal quality.  Starting from zero, the source may increment the TxFFE
-level up to a maximum agreed during the LTS3 stage if the sink keeps
-reporting FLT failures.  TxFFE adjustment is optional and only attempted
-when both the source and the connected sink support it.
+During HDMI 2.1 Fixed Rate Link training, the source and sink may
+negotiate a Transmitter Feed Forward Equalizer (TxFFE) level to
+compensate for signal quality degradation on the physical channel.  The
+source starts at level 0 and may increment it up to a maximum agreed
+upon during LTS3 in response to persistent link failures reported by the
+sink.  TxFFE adjustment is optional and entirely independent of the FRL
+rate and lane count selection.
 
-Since the existing HDMI PHY configuration API covers the FRL rate/lane
-selection only, provide the following fields to the frl sub-struct of
-phy_configure_opts_hdmi:
+Patch 1 extends the HDMI PHY configuration API with two new fields in
+the frl sub-struct: ffe_level to carry the requested level, and a
+set_ffe_level flag that switches the semantics of a phy_configure() call
+to a pure equalizer update, leaving all other fields ignored.
 
-* ffe_level: the TxFFE level to apply, only meaningful when
-  set_ffe_level is set.
+Patch 2 addresses an issue with the PHY/PLL configuration after
+reloading the samsung-hdptx kernel module.
 
-* set_ffe_level: a 1-bit flag that changes the semantics of the
-  phy_configure() call, i.e. when set, the PHY driver must apply the new
-  ffe_level and ignore the other frl related fields.
-
-The flag-based approach reflects an important invariant in the link
-training process: whenever the FRL rate or lane count changes, the TxFFE
-level must be reset to zero.  A separate phy_configure() call with
-set_ffe_level can only follow after the rate has been established,
-making the two operations deliberately distinct.
+Patch 3 implements the new interface in the Rockchip Samsung HDPTX PHY
+driver.
 
 Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
 ---
- include/linux/phy/phy-hdmi.h | 6 ++++++
- 1 file changed, 6 insertions(+)
+Changes in v2:
+- Added a new patch to fix samsung-hdptx PHY config after module reload
+- Rebased series onto v7.3-rc1 and dropped the dependency on the "Clock
+  fixes and API transition cleanups" PHY series which already landed
+- Link to v1: https://lore.kernel.org/r/20260328-hdptx-ffe-v1-0-53ebd5dea20a@collabora.com
 
-diff --git a/include/linux/phy/phy-hdmi.h b/include/linux/phy/phy-hdmi.h
-index d4cf4430ee8f..1d4b62475079 100644
---- a/include/linux/phy/phy-hdmi.h
-+++ b/include/linux/phy/phy-hdmi.h
-@@ -19,6 +19,10 @@ enum phy_hdmi_mode {
-  * @tmds_char_rate: HDMI TMDS Character Rate in Hertz.
-  * @frl.rate_per_lane: HDMI FRL Rate per Lane in Gbps.
-  * @frl.lanes: HDMI FRL lanes count.
-+ * @frl.ffe_level: Transmitter Feed Forward Equalizer Level.
-+ *	Optional, only meaningful when set_ffe_level flag is on.
-+ * @frl.set_ffe_level: Flag indicating whether or not to reconfigure ffe_level.
-+ *	All the other struct fields must be ignored when this is used.
-  *
-  * This structure is used to represent the configuration state of a HDMI phy.
-  */
-@@ -29,6 +33,8 @@ struct phy_configure_opts_hdmi {
- 		struct {
- 			u8 rate_per_lane;
- 			u8 lanes;
-+			u8 ffe_level;
-+			u8 set_ffe_level : 1;
- 		} frl;
- 	};
- };
+---
+Cristian Ciocaltea (3):
+      phy: hdmi: Add optional FRL TxFFE config options
+      phy: rockchip: samsung-hdptx: Handle PHY config after module reload
+      phy: rockchip: samsung-hdptx: Add support for FRL TxFFE level control
 
--- 
-2.55.0
+ drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 80 +++++++++++++++++++++--
+ include/linux/phy/phy-hdmi.h                      |  6 ++
+ 2 files changed, 79 insertions(+), 7 deletions(-)
+---
+base-commit: cee9395acd8043be0644b25c34bfa86623f2b935
+change-id: 20260328-hdptx-ffe-a89c51e66904
 
 
 -- 
