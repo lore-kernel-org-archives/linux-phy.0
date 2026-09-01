@@ -4,91 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC194C624D5
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Sep 2026 13:24:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C67E1C624D4
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Sep 2026 14:15:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Subject:Cc:To:From:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:From:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bZw4hhdr2tatY15zn699rhuBY1co1qfkVnMomlIofec=; b=ePlTSfJGTh6yWW
-	5TNAwHKQYODnHeu6KR2kJy7PyLMbBrL8Vf7/ZN8GhHpsTvodWTM837NPpDDMRd9BKjQ9bAW8YtVN6
-	HKrL0gcRtMCI9CXE5lxl1ISvqflmV6yKICDGVV+S7qpt7hXZlw371c9KctWAPkL9bStqNxVoOK0A3
-	HW27SPy1i6Jd7p25XIIO7U+P0xs9d6SIGgAdFY1uAMz3kuSMDZl93xvHiM804T7laepzwe7nPUzeX
-	m9Sxh06Sk0qjxGjfPmt8p5BlHDsWtEgj1ZLQN/uNy6HDeY39KzBot1nVJYFuPMQnN+vbHBaet4+Pu
-	zk4x/NA9jqUsrpOWjILA==;
+	List-Owner; bh=S8zR3Sfk1iTJ5TiyvhNU+VVu9jbVV47Zim/jcSLEsFs=; b=nc5LwZDg7pA2D2
+	v/tw1XVWEhbA0BVzXJxj9WijaDgCENrCS1t8dzmZoZ8J1MG16mX/JD6A2ugN/o+wPtvNTNSuDOE60
+	1gz1sOv4dTaMdSvoCjscA9dusxyqxdunr9XqBR+QZ3Xxyq6ntTycqL9Zw0qEmec8jNIcZkLO+p+GC
+	oHumZVkyaNBRPDTTiFN+s5BpPQ8rFV6ee3StqjmC8jml8VCN7UDouXsZ2aAu6iJk5oOH45dc4/Ckn
+	jQiHKSB9NPt2svSfZ6ZSji7EfDIkDCr0qWnaZwUWngn9Lj7diTN/a61GqebF/vAA5Le8MfVj2Vc7K
+	NiPFD9uhPzQtiQ7JbKAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1OTt-0000000CDGL-2YgC;
-	Tue, 01 Sep 2026 13:24:53 +0000
-Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
+	id 1x1PGf-0000000CJZ1-1GLu;
+	Tue, 01 Sep 2026 14:15:17 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1OTq-0000000CDFq-2T9o
-	for linux-phy@lists.infradead.org;
-	Tue, 01 Sep 2026 13:24:51 +0000
-Received: by mail-wr1-x42f.google.com with SMTP id ffacd0b85a97d-48431648f33so805028f8f.0
-        for <linux-phy@lists.infradead.org>; Tue, 01 Sep 2026 06:24:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1788269089; x=1788873889; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:subject:cc:to:from:date:message-id:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=m9s+pEoGrG4HFANGtdOnl/hc5uhb6frTfUBLBjF9eG0=;
-        b=hNVGEZHiJ9VXFPDfjCHV5o9J+XNm4soRsoCeKLXt/f20aF8Ca+HiVYVuIvpwLCeucT
-         PnddDIodbSrbg31BqibhDQmsbiGbqFQBx1UWd7qmEDNALbUHh4py9Gk384svnwgjEzQ6
-         Cng1iOA3cfw0HuiLfMzMbdf+JY9h5KfxLfOjkHPF48InVB/jWChDQdWOw3/B6Pf45cZU
-         LhoCfc6mhNy5/hnzwXd+lnnf2tP0YXNLle77Ln7QQfgL8QVJeRgusF48S0G/MlHkeQOt
-         bdtGVj3F39huGmlbvpaoLnGgqRln+YAJzmXaJxQTOzYzkHOP2ob0VCtbIugChXK8MgRA
-         bJeg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788269089; x=1788873889;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:subject:cc:to:from:date:message-id:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=m9s+pEoGrG4HFANGtdOnl/hc5uhb6frTfUBLBjF9eG0=;
-        b=O4nRo0bLZMM9s0a5NcDhNH2f9O8RDBlq4pbrfoiL0bVmaK9rAySfXoG/R9+61eQO6l
-         TTwhHjm9Iq5oHrXhFgDpwjLy+m4CZg9ZqK+uJakx5zaTACN+ePK1jUyjvXtKin2v3p2s
-         Pb77r+Vjm8j2OgnwZ3zDJ1ejVQDlwdMUifHFxvMLuy4JZETgXPOSjrmj06roldq+d9Gj
-         iVDatACVFFob62SgqOo6J1E7PpUDpD0THiJK1LD1l5oFzdx22LsfIdk6Y33E2Kue6vtK
-         yYJ2xGs5guuJLx5+BXeLc+JnDb9Ext9eWr7IbgJoWkjDnV29qvg+hFqwO0vIJaz338lL
-         +CIQ==
-X-Forwarded-Encrypted: i=1; AKwUvBwBE3Uau2kBF5GksL/racXOnMXI+ee48TS46iwX9sTS31rpH9A5ui76lojirNQKGWJ7ggqaS5dsqWs=@lists.infradead.org
-X-Gm-Message-State: AFuF++mrYbCx/BpXYBec547nxL/5td4hkAEfZBpvEv16PRRo172MkIhq
-	/OIOw9JmtL+Ns0dfmjqdK8PFE8J8O9mVQh11AJX+A48rqlJ+5o9oTCVNusT5iu5L
-X-Gm-Gg: AYBFou2HwK6twt+NPhMWET4pNyPE96TIg63hlC2mJ65DmUsZ3zyFhXS3jLBNeRyXbr0
-	/MhFyTCt9H7QE0leC5yDiiQbNtnbIT9djP0nqspgJw2cmlvQAFMO1YUoctrAI6JtYrjJWqbOmd2
-	RS0L/Es7uGbTRCjnrLhFPXt0rkcv2Bs4rCulNYzGbIWtlQuOknBV6x4YuHEX8UbJJuV06QDWDqV
-	HqJKVMozRxozGqwU19CDkCrkjlh1JKsrai6pxfZm9245eKrVXaR36t/NwWRWBAye1ScMMpOzjsj
-	NAwkOOU0IQkOiKpMxyFKbxENMffvBWE5Mh3muw9pYbYcPCFgINleKT1O8GbvniAjNSdbHlYb85d
-	0a0z959oqp/bSAD5zdrj5X5GiTIz86rwvU1SVDEpiFsFii9wJg53p861YBUxzhqrO/vMXuxdgQ4
-	jrE3JJU3Ia1tMh31zxppCpePqorrEuJ2YKuE5n3+E91681lqBt3VkC8JhTEw72xj3V7aEZruLEX
-	t78GnTxAuH65kJ5CUfMFnzJXzHD20F/2H8=
-X-Received: by 2002:a05:6000:4549:b0:475:da0e:744d with SMTP id ffacd0b85a97d-48441fcbc51mr7324639f8f.8.1788269088492;
-        Tue, 01 Sep 2026 06:24:48 -0700 (PDT)
-Received: from Ansuel-XPS. (host-79-26-252-140.retail.telecomitalia.it. [79.26.252.140])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48442d7e452sm4638242f8f.35.2026.09.01.06.24.47
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 01 Sep 2026 06:24:48 -0700 (PDT)
-Message-ID: <6a96d220.5fb1dcdd.280708.47d5@mx.google.com>
-X-Google-Original-Message-ID: <apbSGVNOYn15F6Cr@Ansuel-XPS.>
-Date: Tue, 1 Sep 2026 15:24:41 +0200
-From: Christian Marangi <ansuelsmth@gmail.com>
-To: sashiko-reviews@lists.linux.dev
-Cc: robh@kernel.org, linux-phy@lists.infradead.org,
-	neil.armstrong@linaro.org, devicetree@vger.kernel.org,
-	conor+dt@kernel.org, vkoul@kernel.org, olteanv@gmail.com
-Subject: Re: [PATCH v4 3/3] phy: airoha: Add support for Airoha AN7583 USB PHY
-References: <20260901123933.15388-1-ansuelsmth@gmail.com>
- <20260901123933.15388-4-ansuelsmth@gmail.com>
- <20260901125344.46F841F000E9@smtp.kernel.org>
+	id 1x1PGZ-0000000CJXo-3Wol;
+	Tue, 01 Sep 2026 14:15:15 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+	by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id 20260901141504euoutp02f8cf59604fcc0bb3e97ba307ffda0a3a~ROAEy4Y3I1223512235euoutp02b;
+	Tue,  1 Sep 2026 14:15:04 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com 20260901141504euoutp02f8cf59604fcc0bb3e97ba307ffda0a3a~ROAEy4Y3I1223512235euoutp02b
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1788272104;
+	bh=2nW3DmaEwtQqmdcgqJ0ClmdaBE1cGoZ7pcvRuf3Yst4=;
+	h=Date:Subject:To:Cc:From:In-Reply-To:References:From;
+	b=FI9HGXNVyamhN2zlQXR4CDPmMvub+hQK2T7ZBv5DkCgQPnby1w+gTVZUh41hlg+KR
+	 5ny8AyyOmQlmxO76627Rk1f6+fa9NHdeszWgDcCUqsh3yBThzUR5IsBAQipbYRojBC
+	 INCm0GUIqJFBdpcJ/FMR+S//fjPKiXb3VraxvlOY=
+Received: from eusmtip2.samsung.com (unknown [203.254.199.222]) by
+	eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+	20260901141504eucas1p156346e8510ccf68f19fc29333c31cfe7~ROAEgxzXG3199331993eucas1p12;
+	Tue,  1 Sep 2026 14:15:04 +0000 (GMT)
+Received: from [192.168.1.44] (unknown [106.210.136.40]) by
+	eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+	20260901141502eusmtip277e141767fe1c923ccc834fdf6eb451f~ROACyv4-D1277812778eusmtip20;
+	Tue,  1 Sep 2026 14:15:02 +0000 (GMT)
+Message-ID: <b41f260d-2308-4853-8d3b-22cba534e4e2@samsung.com>
+Date: Tue, 1 Sep 2026 16:15:02 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260901125344.46F841F000E9@smtp.kernel.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 14/15] riscv: dts: starfive: jh7110: Update DT for
+ display subsystem
+To: Icenowy Zheng <uwu@icenowy.me>, Vinod Koul <vkoul@kernel.org>, Neil
+	Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+	<conor+dt@kernel.org>, Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss
+	<rfoss@kernel.org>, Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>, David Airlie <airlied@gmail.com>,
+	Simona Vetter <simona@ffwll.ch>, Maarten Lankhorst
+	<maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>, Lee Jones <lee@kernel.org>, Andy
+	Yan <andy.yan@rock-chips.com>, Philipp Zabel <p.zabel@pengutronix.de>, Emil
+	Renner Berthing <kernel@esmil.dk>, Hal Feng <hal.feng@starfivetech.com>,
+	Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+	<sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>, Heiko Stuebner
+	<heiko@sntech.de>, Conor Dooley <conor@kernel.org>, Paul Walmsley
+	<pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou
+	<aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>, Dominique
+	Belhachemi <db@domibel.de>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+	mfd@lists.linux.dev, linux-clk@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+	linux-riscv@lists.infradead.org, Andy Yan <andyshrk@163.com>, Marek
+	Szyprowski <m.szyprowski@samsung.com>, Maud Spierings
+	<maudspierings@gocontroll.com>, Graham Markall <hello@big-grey.co.uk>
+Content-Language: en-US
+From: Michal Wilczynski <m.wilczynski@samsung.com>
+In-Reply-To: <e0e0c41c4c6b0b674c4cfc3b6927d60c40fbf733.camel@icenowy.me>
+X-CMS-MailID: 20260901141504eucas1p156346e8510ccf68f19fc29333c31cfe7
+X-Msg-Generator: CA
+X-RootMTR: 20260828134839eucas1p2d19363d17d4dbf5a7ae5228444af16fa
+X-EPHeader: CA
+X-CMS-RootMailID: 20260828134839eucas1p2d19363d17d4dbf5a7ae5228444af16fa
+References: <20260828-jh7110-clean-send-v2-0-331680c8b9d1@samsung.com>
+	<CGME20260828134839eucas1p2d19363d17d4dbf5a7ae5228444af16fa@eucas1p2.samsung.com>
+	<20260828-jh7110-clean-send-v2-14-331680c8b9d1@samsung.com>
+	<e0e0c41c4c6b0b674c4cfc3b6927d60c40fbf733.camel@icenowy.me>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260901_062450_689662_1034B5C2 
-X-CRM114-Status: GOOD (  40.14  )
+X-CRM114-CacheID: sfid-20260901_071512_479710_316627F0 
+X-CRM114-Status: GOOD (  22.61  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,222 +102,73 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 01, 2026 at 12:53:43PM +0000, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 6 potential issue(s) to consider:
-> - [High] Failure to propagate PHY lifecycle calls to the underlying SerDes PHY
-> - [High] USB PHY instances are inaccessible due to incorrect PHY provider registration
-> - [Medium] Use of uninitialized stack variable due to missing regmap_read return check
-> - [Medium] Lockdep warning due to recursive locking of phy->mutex in set_mode callbacks
-> - [Low] Missing select REGMAP_MMIO in Kconfig leading to link-time errors
-> - [Low] Missing explicit inclusion of <linux/delay.h>
-> --
-> 
-> commit 78bb8c49d95aeffce30cf8303d7ac8de16f47e67
-> Author: Christian Marangi <ansuelsmth@gmail.com>
-> 
->     phy: airoha: Add support for Airoha AN7583 USB PHY
->     
->     Add support for USB PHY for Airoha AN7583 SoC, this share some U2 init
->     from AN7581 but use a totally different init phase for PLL and
->     calibration for U3. Also on AN7583 there is a single USB PHY that init 2
->     U2 port and one U3 port. (the USB controller expose 2 hub, one with 2
->     usb 2.0 port and one with one 3.0 port)
->     
->     A second USB PHY is used for PCIe Gen2 controller and follow the same
->     calibration and setup logic of USB.
-> 
-> > diff --git a/drivers/phy/airoha/Kconfig b/drivers/phy/airoha/Kconfig
-> > new file mode 100644
-> > index 0000000000000..13e49ff947e3e
-> > --- /dev/null
-> > +++ b/drivers/phy/airoha/Kconfig
-> > @@ -0,0 +1,11 @@
-> > +# SPDX-License-Identifier: GPL-2.0-only
-> > +
-> > +config PHY_AIROHA_AN7583_USB
-> > +	tristate "Airoha AN7583 USB PHY Driver"
-> > +	depends on ARCH_AIROHA || COMPILE_TEST
-> > +	depends on OF
-> > +	select GENERIC_PHY
-> 
-> [Severity: Low]
-> Is a select for REGMAP_MMIO missing here? If COMPILE_TEST is enabled and no
-> other driver implicitly selects REGMAP_MMIO, couldn't this cause a link-time
-> error due to an undefined reference to __devm_regmap_init_mmio_clk?
-> 
-> > +	help
-> > +	  Say 'Y' here to add support for Airoha AN7583 USB PHY driver.
-> 
-> > diff --git a/drivers/phy/airoha/phy-an7583-usb.c b/drivers/phy/airoha/phy-an7583-usb.c
-> > new file mode 100644
-> > index 0000000000000..46b5f09582cfd
-> > --- /dev/null
-> > +++ b/drivers/phy/airoha/phy-an7583-usb.c
-> > @@ -0,0 +1,2023 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Author: Christian Marangi <ansuelsmth@gmail.com>
-> > + */
-> > +
-> > +#include <dt-bindings/phy/phy.h>
-> > +#include <linux/bitfield.h>
-> > +#include <linux/math.h>
-> > +#include <linux/module.h>
-> > +#include <linux/phy.h>
-> > +#include <linux/phy/phy.h>
-> > +#include <linux/platform_device.h>
-> > +#include <linux/regmap.h>
-> > +#include <linux/mfd/syscon.h>
-> 
-> [Severity: Low]
-> Does this code rely on linux/delay.h for mdelay() and usleep_range() without
-> including it? This could lead to compilation failures on architectures or
-> configurations where it isn't implicitly included by other headers.
-> 
-> [ ... ]
-> 
-> > +static bool an7583_usb_phy_u3_kband_is_calibrated(struct an7583_usb_phy_priv *priv)
-> > +{
-> > +	u32 val, res;
-> 
-> [ ... ]
-> 
-> > +	regmap_read(priv->regs[AIROHA_USB_PHY_PMA],
-> > +		    AIROHA_USB_PMA_INTF_STS_9, &val);
-> > +	res = FIELD_GET(AIROHA_USB_PMA_ADDR_INTF_STS_PLL_VCOCAL, val) << 4;
-> 
-> [Severity: Medium]
-> If the regmap_read() fails, wouldn't the uninitialized stack variable val be
-> accessed here? Could this result in undefined behavior and potentially bypass
-> the KBand calibration loop?
-> 
-> [ ... ]
-> 
-> > +static int an7583_usb_phy_init(struct phy *phy)
-> > +{
-> > +	struct an7583_usb_phy_instance *instance = phy_get_drvdata(phy);
-> 
-> [Severity: High]
-> Does this initialization omit a call to phy_init(instance->serdes_phy)? Since
-> the wrapper PHY intercepts the init call, failing to forward it might leave
-> the physical SerDes lines uninitialized and the PCIe and USB 3.0 interfaces
-> non-functional.
-> 
-> > +
-> > +	switch (instance->type) {
-> > +	case PHY_TYPE_USB2:
-> 
-> [ ... ]
-> 
-> > +static int an7583_usb_phy_power_on(struct phy *phy)
-> > +{
-> > +	struct an7583_usb_phy_instance *instance = phy_get_drvdata(phy);
-> 
-> [Severity: High]
-> Similarly, does this fail to call phy_power_on(instance->serdes_phy)? This
-> seems to leave the physical SerDes disabled when a consumer attempts to power
-> on the PHY.
-> 
-> > +
-> > +	switch (instance->type) {
-> > +	case PHY_TYPE_USB2:
-> 
-> [ ... ]
-> 
-> > +static int an7583_usb_phy_u3_set_mode(struct phy *phy, enum phy_mode mode,
-> > +				      int submode)
-> > +{
-> > +	struct an7583_usb_phy_instance *instance = phy_get_drvdata(phy);
-> > +	int ret;
-> > +
-> > +	switch (mode) {
-> 
-> [ ... ]
-> 
-> > +	}
-> > +
-> > +	ret = phy_set_mode_ext(instance->serdes_phy, mode, submode);
-> 
-> [Severity: Medium]
-> Can this nested call to phy_set_mode_ext() on the child SerDes PHY cause a
-> lockdep warning?
-> 
-> Since the parent PHY's mutex is already held by the framework, and all PHY
-> mutexes are initialized with the same lockdep key, this might trigger a
-> possible recursive locking deadlock warning. This pattern also appears in
-> an7583_usb_phy_pcie_set_mode().
-> 
-> [ ... ]
-> 
-> > +static struct phy *an7583_usb_phy_xlate(struct device *dev,
-> > +					const struct of_phandle_args *args)
-> > +{
-> > +	struct an7583_usb_phy_priv *priv = dev_get_drvdata(dev);
-> > +	const struct an7583_usb_phy_match_data *data;
-> > +	struct device_node *phy_np = args->np;
-> > +	struct phy *phy = NULL;
-> > +	int type, index;
-> > +
-> > +	data = of_device_get_match_data(dev);
-> > +
-> > +	if (args->args_count != 1) {
-> > +		dev_err(dev, "invalid number of cells in 'phy' property\n");
-> > +		return ERR_PTR(-EINVAL);
-> > +	}
-> > +
-> > +	for (index = 0; index < data->max_instance; index++) {
-> > +		if (!priv->phys[index])
-> > +			continue;
-> > +
-> > +		if (phy_np == priv->phys[index]->dev.of_node) {
-> > +			phy = priv->phys[index];
-> > +			break;
-> > +		}
-> > +	}
-> 
-> [ ... ]
-> 
-> > +static int an7583_usb_phy_probe(struct platform_device *pdev)
-> > +{
-> 
-> [ ... ]
-> 
-> > +	phy_provider = devm_of_phy_provider_register(dev, an7583_usb_phy_xlate);
-> 
-> [Severity: High]
-> Does this incorrectly isolate the subnodes from the PHY core?
-> 
-> By registering the provider with devm_of_phy_provider_register(dev, ...)
-> instead of using a variant that checks the children tree, the PHY core might
-> fail to traverse to the child nodes when looking up the PHY.
-> 
-> Furthermore, in an7583_usb_phy_xlate(), comparing the parent node (args->np)
-> against the child node stored in priv->phys[index]->dev.of_node would
-> guarantee a mismatch. Would this make the USB PHY instances completely
-> inaccessible to any consumer?
-> 
-
-Is AI getting drunk? Aside from the mostly unreadable message, this is
-totally non-sense and out of complete speculation.
-
-The scenario pointed out by AI is in the case where a consumer reference
-the provider node in DT but this was never suggested and actually an
-implementation error of the user writing the device tree.
-
-The Documentation example instruct for USB nodes to put the phy cell in the
-child node, NEVER in the provider node. Any kind of phandle will fail as
-the correct cell property won't be found. So I'm not really understanding
-the error pointed out here.
-
--- 
-	Ansuel
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+CgpPbiA4LzI4LzI2IDE2OjA2LCBJY2Vub3d5IFpoZW5nIHdyb3RlOgo+IOWcqCAyMDI2LTA4LTI4
+5LqU55qEIDE1OjQ3ICswMjAw77yMTWljaGFsIFdpbGN6eW5za2nlhpnpgZPvvJoKPj4gQWN0aXZh
+dGUgdGhlIGRpc3BsYXkgc3Vic3lzdGVtIGJ5IGFkZGluZyB0aGUgZGM4MjAwLCBoZG1pIGFuZCB2
+b3V0Y3JnCj4+IG5vZGVzIGFzIGRpcmVjdCBzb2MgY2hpbGRyZW4uIEVhY2ggcmVmZXJlbmNlcyB0
+aGUgUERfVk9VVCBwb3dlcgo+PiBkb21haW4KPj4gdGhyb3VnaCBwb3dlci1kb21haW5zLCBzbyBn
+ZW5wZCBwb3dlcnMgdGhlIGRvbWFpbiBvbiBkZW1hbmQsIGFuZCB0aGUKPj4gSERNSS1QSFkgLT4g
+dm91dGNyZyAtPiBIRE1JLWNvbnRyb2xsZXIgcHJvYmUgb3JkZXIgaXMgcmVzb2x2ZWQgYnkKPj4g
+ZGVmZXJyZWQgcHJvYmUuCj4+Cj4+IFRoZSBtb25vbGl0aGljIGhkbWkgbm9kZSBpcyBtb2RlbGxl
+ZCBhcyBhIGNvbnRhaW5lciB3aXRoIGhkbWlfcGh5Cj4+IGFuZCBoZG1pX2NvbnRyb2xsZXIgY2hp
+bGRyZW4uIFRoaXMgbGV0cyB0aGUgUEhZIChjbG9jayBwcm92aWRlciwKPj4gZGVwZW5kaW5nIG9u
+bHkgb24geGluMjRtKSBhbmQgdGhlIGNvbnRyb2xsZXIgKGNsb2NrIGNvbnN1bWVyKSBwcm9iZQo+
+PiBpbmRlcGVuZGVudGx5LCBicmVha2luZyB0aGUgY2lyY3VsYXIgY2xvY2sgZGVwZW5kZW5jeSB3
+aXRoIHZvdXRjcmcuCj4+Cj4+IHZvdXRjcmcgY29uc3VtZXMgdGhlIHBpeGVsIGNsb2NrIGZyb20g
+dGhlICZoZG1pX3BoeSBub2RlIGluc3RlYWQgb2YKPj4gdGhlCj4+IG9sZCBmaXhlZC1jbG9jaywg
+YW5kIGRjODIwMCBnZXRzIGl0cyBwaXhlbCBjbG9ja3MgZnJvbSB2b3V0Y3JnJ3MKPj4gTVVYZXMK
+Pj4gYW5kIGlzIG1hcmtlZCBkbWEtbm9uY29oZXJlbnQgZm9yIGZyYW1lYnVmZmVyIERNQS4gVGhl
+IG9sZCwgaW5jb3JyZWN0Cj4+IGhkbWl0eDAtcGl4ZWwtY2xvY2sgZml4ZWQtY2xvY2sgbm9kZSBp
+cyByZW1vdmVkLgo+Pgo+PiBDby1kZXZlbG9wZWQtYnk6IERvbWluaXF1ZSBCZWxoYWNoZW1pIDxk
+YkBkb21pYmVsLmRlPgo+PiBTaWduZWQtb2ZmLWJ5OiBEb21pbmlxdWUgQmVsaGFjaGVtaSA8ZGJA
+ZG9taWJlbC5kZT4KPj4gU2lnbmVkLW9mZi1ieTogTWljaGFsIFdpbGN6eW5za2kgPG0ud2lsY3p5
+bnNraUBzYW1zdW5nLmNvbT4KPj4gKwkJY29tcGF0aWJsZSA9ICJmaXhlZC1jbG9jayI7Cj4+ICsJ
+CSNjbG9jay1jZWxscyA9IDwwPjsKPj4gKwkJY2xvY2stZnJlcXVlbmN5ID0gPDI0MDAwMDAwPjsK
+Pj4gKwkJY2xvY2stb3V0cHV0LW5hbWVzID0gInhpbjI0bSI7Cj4+ICsJfTsKPj4gKwo+PiAgCXNv
+YyB7Cj4+ICAJCWNvbXBhdGlibGUgPSAic2ltcGxlLWJ1cyI7Cj4+ICAJCWludGVycnVwdC1wYXJl
+bnQgPSA8JnBsaWM+Owo+PiBAQCAtMTE5OSwyMiArMTIwMCw5MiBAQCBjc2lfcGh5OiBwaHlAMTk4
+MjAwMDAgewo+PiAgCQkJI3BoeS1jZWxscyA9IDwwPjsKPj4gIAkJfTsKPj4gIAo+PiArCQlkYzgy
+MDA6IGRpc3BsYXlAMjk0MDAwMDAgewo+PiArCQkJY29tcGF0aWJsZSA9ICJ2ZXJpc2lsaWNvbixk
+YyI7Cj4+ICsJCQlyZWcgPSA8MHgwIDB4Mjk0MDAwMDAgMHgwIDB4MjgwMD47Cj4+ICsJCQlpbnRl
+cnJ1cHRzID0gPDk1PjsKPj4gKwkJCWRtYS1ub25jb2hlcmVudDsKPj4gKwo+PiArCQkJcG93ZXIt
+ZG9tYWlucyA9IDwmcHdyYyBKSDcxMTBfUERfVk9VVD47Cj4+ICsKPj4gKwkJCWNsb2NrcyA9IDwm
+dm91dGNyZwo+PiBKSDcxMTBfVk9VVENMS19EQzgyMDBfQ09SRT4sCj4+ICsJCQkJPCZ2b3V0Y3Jn
+Cj4+IEpINzExMF9WT1VUQ0xLX0RDODIwMF9BWEk+LAo+PiArCQkJCTwmdm91dGNyZwo+PiBKSDcx
+MTBfVk9VVENMS19EQzgyMDBfQUhCPiwKPj4gKwkJCQk8JnZvdXRjcmcKPj4gSkg3MTEwX1ZPVVRD
+TEtfREM4MjAwX1BJWDA+LAo+PiArCQkJCTwmdm91dGNyZwo+PiBKSDcxMTBfVk9VVENMS19EQzgy
+MDBfUElYMT47Cj4+ICsJCQljbG9jay1uYW1lcyA9ICJjb3JlIiwgImF4aSIsICJhaGIiLCAicGl4
+MCIsCj4+ICJwaXgxIjsKPj4gKwo+PiArCQkJcmVzZXRzID0gPCZ2b3V0Y3JnCj4+IEpINzExMF9W
+T1VUUlNUX0RDODIwMF9DT1JFPiwKPj4gKwkJCQkgPCZ2b3V0Y3JnCj4+IEpINzExMF9WT1VUUlNU
+X0RDODIwMF9BWEk+LAo+PiArCQkJCSA8JnZvdXRjcmcKPj4gSkg3MTEwX1ZPVVRSU1RfREM4MjAw
+X0FIQj47Cj4+ICsJCQlyZXNldC1uYW1lcyA9ICJjb3JlIiwgImF4aSIsICJhaGIiOwo+PiArCQl9
+Owo+PiArCj4+ICsJCWhkbWlfc3Vic3lzdGVtOiBoZG1pQDI5NTkwMDAwIHsKPj4gKwkJCWNvbXBh
+dGlibGUgPSAic3RhcmZpdmUsamg3MTEwLWhkbWktCj4+IHN1YnN5c3RlbSI7Cj4+ICsJCQlyZWcg
+PSA8MHgwIDB4Mjk1OTAwMDAgMHgwIDB4NDAwMD47Cj4+ICsKPj4gKwkJCS8qCj4+ICsJCQkgKiBU
+aGlzIE1GRCdzIFBIWSBjaGlsZCBpcyB0aGUgZmlyc3QgZGV2aWNlCj4+IGluIHRoZSB2b3V0Cj4+
+ICsJCQkgKiByZWdpb24gdG8gdG91Y2ggcmVnaXN0ZXJzLCBzbyBpdCBvd25zIHRoZQo+PiBOb0Mg
+ZGlzcGxheQo+PiArCQkJICogYnVzIGNsb2NrICsgcmVzZXQgdGhhdCBnYXRlIGFjY2VzcyB0byB0
+aGUKPj4gcmVnaW9uLgo+PiArCQkJICogUERfVk9VVCBpcyBwb3dlcmVkIG9uIGJ5IGdlbnBkIHZp
+YSBwb3dlci0KPj4gZG9tYWlucy4KPj4gKwkJCSAqLwo+PiArCQkJcG93ZXItZG9tYWlucyA9IDwm
+cHdyYyBKSDcxMTBfUERfVk9VVD47Cj4+ICsJCQljbG9ja3MgPSA8JnN5c2NyZwo+PiBKSDcxMTBf
+U1lTQ0xLX05PQ19CVVNfRElTUF9BWEk+Owo+PiArCQkJcmVzZXRzID0gPCZzeXNjcmcKPj4gSkg3
+MTEwX1NZU1JTVF9OT0NfQlVTX0RJU1BfQVhJPjsKPiAKPiBJIHRoaW5rIHRoZSBOT0MgY2xvY2tz
+L3Jlc2V0cyBzaG91bGQgYmUgYWxzbyBuZWVkZWQgYnkgdGhlIERDODIwMAo+IGVpdGhlcj8KPiAK
+PiBBbHRob3VnaCBwYXRjaGluZyB0aGUgREM4MjAwIGRyaXZlciB0byBhZGQgc3VwcG9ydCBmb3Ig
+dGhlc2UKPiBjbG9ja3MvcmVzZXRzIGxvb2tzIGEgbGl0dGxlIGRpcnR5Li4uCj4gCj4gTWF5YmUg
+aXQncyBzdGlsbCBnb29kIHRvIGhhdmUgYSB2b3V0IHN1YnN5cyBpbnN0ZWFkIG9mIGEgaGRtaSBz
+dWJzeXMuLi4KClllYWggdGhhdCB3YXMgdGhlIGlkZWEgYXMgaXQgd2FzIG1vZGVsaW5nIGhhcmR3
+YXJlIGNvcnJlY3RseSwgaG93ZXZlcgppbmRpcmVjdGx5IGl0IHdvcmtzIHRoYW5rcyB0byB0aGUg
+cHJvYmluZyBvcmRlci4gVGhlIHByb2JsZW0gd2l0aCB0aGUKZXh0cmEgdm91dCBzdWJzeXMgYXMg
+c2hvd24gaW4gdGhlIFJGQyB3YXMgdGhhdCBhbiBleHRyYSBkcml2ZXIgYW5kIGV4dHJhCmR0LWJp
+bmRpbmcgd2VyZSBuZWVkZWQgd2hpY2ggc2VlbWVkIHRvIGNvbXBsaWNhdGUgdGhpbmdzIGEgYml0
+LiBCdXQgaXQKZG9lcyBzZWVtIG1vcmUgY29ycmVjdCBpbiBhIHNlbnNlIHRoYXQgaXQncyBtb2Rl
+bGluZyB0aGUgcmVsYXRpb25zaGlwCmNvcnJlY3RseSBzbyBJJ2xsIGJyaW5nIGl0IGJhY2sgZm9y
+IHYzLgoKCkJlc3QgcmVnYXJkcywKLS0gCk1pY2hhbCBXaWxjenluc2tpIDxtLndpbGN6eW5za2lA
+c2Ftc3VuZy5jb20+Cgo+IAo+IFRoYW5rcywKPiBJY2Vub3d5Cj4gCgoKCi0tIApsaW51eC1waHkg
+bWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMu
+aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
