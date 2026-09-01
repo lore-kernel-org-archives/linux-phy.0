@@ -4,71 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD17AC624D4
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Sep 2026 12:58:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ABF67C61DD3
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Sep 2026 12:58:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=u2tNHVSsMmxQuy8UZ4b4e29uVXHcUVO5uzxX/Syzbm4=; b=kKaoFOIarGqjXL
-	Ohfx9rsbAhG38e3yaJjdrp85xA8X8joBbaGBihMxLGKxclaTB5jFpjrP1oTBpklla+n+8sJgpm9Ev
-	A3ng0ut1bGKtqZG7Zj2XF+Z+6oljZFZv7J7/n1Vg7R6cLRBuu1FTdEzhoit9ovAIMzAX77f8Gt5U3
-	ZU09Ztin1ht1uRkzEOJOKbpY5F0ECK95v6u3GaEEzcmwxAgA7f97J2QZEwif3j5hnN1S4WPfUJ+Kr
-	SdN4FNpNY2l+c3RpqKX5BQ/q5VQbeKk2Xmr/V7Ga/s6XjpVyMJPRlw0LuBijSe91vptes7jy3/U+0
-	ryT5kUbsr/MBan6J9Ldw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qpZsvfO1e78X7aNEkDo95f460lWj+zo7uvnHeEj6ris=; b=hKsjNJsYEMUbmj
+	4Q1pfg7IXJV6eCYHOoQveTTA6UNGVOF1X45uugboOO8/6dBl027n7Ms7N8im+NNY4uOs3JcdszJm7
+	FAeHrit+3pJr/iSSRg/Oo5oS0iPAglT5EzHUu6DtdLvjoVWCebF+polzSFxr4vjz6DZMcHKPwfSro
+	u5lccinNGZWukzCnyN04kO4w7xu9BCSI+8PSoy+h1JQC/kT54kB2kiVlHSOnlLrYutYz7gUxUU/gt
+	30EQlCk+xNZKoxQMxzuayQ3F5lzQSySfhJCsbU4YSvxjnBG3DwbF0VOGfzFyPGTs+rg46KehPaUGk
+	rI2tXG3QEX1to+qa2Xjw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1O4P-0000000C9BX-1PcK;
-	Tue, 01 Sep 2026 12:58:33 +0000
-Received: from mail-ed1-x530.google.com ([2a00:1450:4864:20::530])
+	id 1x1O4Q-0000000C9Cg-1rCR;
+	Tue, 01 Sep 2026 12:58:34 +0000
+Received: from mail-ed1-x52b.google.com ([2a00:1450:4864:20::52b])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1O4M-0000000C9A8-1bFG
+	id 1x1O4N-0000000C9AE-2fPo
 	for linux-phy@lists.infradead.org;
-	Tue, 01 Sep 2026 12:58:32 +0000
-Received: by mail-ed1-x530.google.com with SMTP id 4fb4d7f45d1cf-6a374bea882so700102a12.1
-        for <linux-phy@lists.infradead.org>; Tue, 01 Sep 2026 05:58:29 -0700 (PDT)
+	Tue, 01 Sep 2026 12:58:33 +0000
+Received: by mail-ed1-x52b.google.com with SMTP id 4fb4d7f45d1cf-6a668cacdadso2050013a12.2
+        for <linux-phy@lists.infradead.org>; Tue, 01 Sep 2026 05:58:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1788267508; x=1788872308; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:to
-         :from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=Ld2dHDdDQiF6ur3QIWVOyuCBe04N1lf3nFHFqeQJu60=;
-        b=ng7KKaWqT6/XV+FiKt91qszscZP7rzjhs9fJpFKCziWCEAMH1WAl4+e3rXES4L6A+I
-         qo3Zy8Yx+C1uTgFZT1comzOSe8fqFmKzzIf7SLO2fyMpaihRi0ByYdaDQkuFRQiWVvij
-         F84NjGGVIhDdRdzEh/RObWkg+L3h9yb2VZHPxuZ2CeRvVSL1pb3j+4Vl9k3CTauHNhHl
-         jNgFWh/rAG5iIDiua1MHnZDYlGXnUwDUyqg/amBZd8dQLYf0PeJl0gjVJE/JUcbuaYwV
-         IGLysUq3OyJkHxI8VfCfnsj7BGbsau4qpkuQ3l6bQ7QI0YgxdluU6FmUlv79awzLJde3
-         8/GA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788267508; x=1788872308;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:to
-         :from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+        d=gmail.com; s=20251104; t=1788267510; x=1788872310; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:to:from:from:to:cc:subject:date:message-id
          :reply-to:content-type;
-        bh=Ld2dHDdDQiF6ur3QIWVOyuCBe04N1lf3nFHFqeQJu60=;
-        b=bHKIjrpf6W+jJSscsbuxLb7z0wZl2rgQVyPQy+SVHONyffIHo1V6G7yzRQEKvtYk40
-         RTzJM9x8p0BPLQuzpKXb3BY2tG8ElRgSWdk9A8M3lTJEFsPKNFIJ+ZCUBy4OI6eF1wkv
-         9d8eThMpQnMQMRGed2ZpS3BJbOAe7raUUHY2dTt+pAHg7MASxKV11ZBPhqcH8+/1i0A0
-         vjdy9UGKwJz+UslbgbDcZbq2Zcujv+fMEg8Yh/XA1qUsXwUGaXjQ26eRdkLqyQ9Hdybl
-         CH2XJt6uB5brnTGOW55PacTsa7/Yf8Wj178IVUckv85NaRTv+RPtfB4XO6fTCh5hn+ya
-         tIkQ==
-X-Forwarded-Encrypted: i=1; AKwUvBxv3nQrnvGHKCFIWN7MsZNzE0yLHB3CD0UtJ/TeyrczKKPoGkbpiKbHSNuy3WbRZmjlVOnYGjjIapI=@lists.infradead.org
-X-Gm-Message-State: AFuF++lnv485TWMhSZaE8yZAOb+k1wPcaDLu2yBe0xT5hC/Gvl25OErA
-	5wklamNrjjY2uryoyKcU/miGpVFQUjyeT22ijfHWeLYt2lyhf5dQCEAf
-X-Gm-Gg: AYBFou2kiGtlRcf4rkN1KM4GlzRTvVnzjqQC+GMdnWiqEuf+K0Q/I1xg3HCgGsoSKQ/
-	FTWffVUINkYbwuAr5M6N4TpirkRiDSv95kFEkG67HKt6E5BShFmxR86Asf6XXlWb1uGIf8T/OvB
-	W7T9oQRkajcjHkKpUKrTvjkY1McZy9kpPZNWGiaLvs1a5r0UnHAvFAgahLSwDDbXxSPwaV+Gf5w
-	6HLbu5M6O3cCPApaONDl7OL1Zr0efbFo+Wgj6UUD8gwO/OJa7NrQZaR4yqvCNovXNFsHccrqKSg
-	0Z/ydnf5iJcMBGB6WesnLOaIKQqSnTlFehyB406GZ0+l/QxxZZTj/Dml97DTxoMutkgQqsKcSoh
-	FK8Jj8euCrgxSM50C9Vz/OXylm1Smw3H+swf/YzEqFGnOSRtiVxskupPXsBdzZFXC0WQ0SA2CU/
-	5kXPN9Uj+W7kWTbiMSWXDxV8bSIhXX8lnGcUjLxdza0K9sIBEVKsF/w2LjaHdnHvJktZ5n7Nvub
-	UgUnD8KYnBbDyGkarAqoW6hZ63Xv5L4iihhRS/DTQXvhq6Zti1XVAIeLNFHX7s=
-X-Received: by 2002:a05:6402:24a5:b0:6a3:95bd:143c with SMTP id 4fb4d7f45d1cf-6a663a26d14mr6639703a12.5.1788267507997;
-        Tue, 01 Sep 2026 05:58:27 -0700 (PDT)
+        bh=3SoUapY3IA8tD1+b3WHVHM5822Ty391/3XnWQKi5WWU=;
+        b=ePPYjQC6ZkumV82wFe5Zzjmo/OEROCwsFwGzanI5/KFWBWrz9FPXBcIpTsH1da3Aqg
+         8al0Y7hWBLRsOZQ/YDf2OaUdv3/DfoFmuSxkBczias4rMyNJV5rL6ipHfVuPyXyYYHvn
+         /gs74OGB55BfBytSvM6l9zHB8GuCtg47d9ysOneUV5lGycRiJvcFvxc4BtXoXMzfwk5t
+         J/qth+adWsCtNwuFu0Q/DK8/Yex1knWWYXn4/ueNPguMveyv/3ri8rF4mGf1jFUf4vs8
+         XbOy0QSAAPnDQo0vDCcz2qURKABIgDeg8GWzCLUZAem6zRwF2SCpm4ryZB16nsmkpPWa
+         oaoQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1788267510; x=1788872310;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:to:from:x-gm-gg:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to:content-type;
+        bh=3SoUapY3IA8tD1+b3WHVHM5822Ty391/3XnWQKi5WWU=;
+        b=jE+rvuCvPt3ZkrjE7y0TvS96m6NdNcFD5qlfdlEyKLRY8EkSAeThBqJOmzsDWfbrMy
+         1+VB1Y4HgooS4rkGQaaj/oZ9lmcGjaFGVzan/CBP6B6ctDZ4ciJt1JG07HUMbFtDQwht
+         K+qTs8ZIQr9DehCwTp/nAImlkKXKKu3BHGQC6hk/vHqU3kUjxMmZnoswDGzLFMse8LKz
+         I+CVehJGIxhCD9Vu0iGcTFsXigs/uUtmc07nymKjinXUQnkT01FiK8WKUr6xJL3tRHVM
+         8MyWSyznbNnpjyBt+FbGI84jKZqprgn7jRG6Zjy0/9yV82PB8R6BHE0CJqx1N+M7TswG
+         goMQ==
+X-Forwarded-Encrypted: i=1; AKwUvBx2OSxfNXTxJlfWgJ5jzG+EHn+htF9ITiAp3+CCACwgsClSU9SOOhdbGtMCkCFPvmwx1LwEZYa48WQ=@lists.infradead.org
+X-Gm-Message-State: AFuF++kk6olvnkdhH04jyeZ1B0GmHjMt3Fdcp3mpe3HFTQBaxo0Eoc48
+	iOe2DJpJ36eWVh38Hh7WyAtBG3t8Qew7dDVG+eHY5ALAs/7ppURfsD3Z
+X-Gm-Gg: AYBFou0NQ2itiCJUztDo87QUxf3e+xojfQazW7NMgz2efN5evYszvDhQuSVp4ivENTB
+	4RBIV95s+eQLKXiMtVoHhaZGqcUdVkgnC659KOeSvNS9yRXd7nQ8CbVF8Iflxx3DBfOvXv4lR0Y
+	ZHdqVprAidst9FlmVU6GwHJHP/q4t6svTSjf34zvj8SPK8QYm5VfOAHmy9MGuh5lMxu4K2GrbQ4
+	Bh8lss5uXAZtzTO6jGeCcWlXS8K9vYuRdFv1lgi26ONMmcxRqnpcQvdiPColRo6UPGP8ObVUuif
+	TqQ3jkzDOTFn7c0OQpFNFEvVkgfbaGj4lch0v9Q1PRxDGtlm7r6lAz0AiwbM1f2xwIR7Oo6CBob
+	4mHgAdCdrnM9RVrl9ObUYt4EguWM6TV4RG86G4Lr2GquPQvW6s0XAiRYiftP8CZMfTE98LMnxVJ
+	vF5FxWxGIcXXRSm+aQWpWTnxqYF7hX8IQFtVO9iakcYIxqvgvreWSTFCob2tuEpoGj1G29ama2L
+	/gcVsSUBTqkmYP1lBBlNrg0e4JqZrQ+Z1muIwHfqRFXM+UL+w64hABbfpzXX68=
+X-Received: by 2002:a05:6402:5048:b0:6a6:32f9:d7cd with SMTP id 4fb4d7f45d1cf-6a632f9d943mr12264712a12.18.1788267509677;
+        Tue, 01 Sep 2026 05:58:29 -0700 (PDT)
 Received: from Ansuel-XPS24.localdomain (host-79-26-252-140.retail.telecomitalia.it. [79.26.252.140])
-        by smtp.googlemail.com with ESMTPSA id 4fb4d7f45d1cf-6a66d15d10asm773959a12.28.2026.09.01.05.58.26
+        by smtp.googlemail.com with ESMTPSA id 4fb4d7f45d1cf-6a66d15d10asm773959a12.28.2026.09.01.05.58.28
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 01 Sep 2026 05:58:27 -0700 (PDT)
+        Tue, 01 Sep 2026 05:58:28 -0700 (PDT)
 From: Christian Marangi <ansuelsmth@gmail.com>
 To: Christian Marangi <ansuelsmth@gmail.com>,
 	Vinod Koul <vkoul@kernel.org>,
@@ -81,14 +82,16 @@ To: Christian Marangi <ansuelsmth@gmail.com>,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v3 0/2] phy: airoha: add support for AN7583 PCIe PHY driver
-Date: Tue,  1 Sep 2026 14:58:16 +0200
-Message-ID: <20260901125819.20378-1-ansuelsmth@gmail.com>
+Subject: [PATCH v3 1/2] dt-bindings: phy: airoha: Document support for AN7583 Gen3 PCIe PHY
+Date: Tue,  1 Sep 2026 14:58:17 +0200
+Message-ID: <20260901125819.20378-2-ansuelsmth@gmail.com>
 X-Mailer: git-send-email 2.53.0
+In-Reply-To: <20260901125819.20378-1-ansuelsmth@gmail.com>
+References: <20260901125819.20378-1-ansuelsmth@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260901_055830_440736_4A6EAFA0 
-X-CRM114-Status: GOOD (  13.36  )
+X-CRM114-CacheID: sfid-20260901_055831_723255_45E935BE 
+X-CRM114-Status: GOOD (  13.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,49 +108,87 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This small series introduce support for Airoha AN7583 Gen3 PCIe PHY.
+Document support for AN7583 PCIe PHY used to make the Gen3 PCIe port
+work. Add the required register to configure the PCIe PHY and provide an
+example for it.
 
-It's not possible to reuse the EN7581 code as the register changed between
-the 2 SoC and also the setup method changed (different calibration logic)
-
-Putting the PHY in a dedicated directory is also needed for other series
-current pending that will add USB PHY support.
-
-Also a dedicated schema is added as the register names is entirely
-different compared to EN7581.
-
-Changes v3:
-- Improve example for Documentation patch
-- Deinit G3 PHY on QPHY error
-
-Changes v2:
-- Drop move patch (handled in different series)
-- Rework to regmap implementation
-- Rename files to more specific name
-- Add .exit logic
-- Drop QPHY in favor of external PHY handling
-- Update schema with new requirement and improve example
-  Link: https://lore.kernel.org/all/20260827122127.18874-1-ansuelsmth@gmail.com/
-
-Christian Marangi (2):
-  dt-bindings: phy: airoha: Document support for AN7583 Gen3 PCIe PHY
-  phy: airoha: add support for AN7583 Gen3 PCIe PHY driver
-
- .../phy/airoha,an7583-pcie-gen3-phy.yaml      |  65 ++
- MAINTAINERS                                   |   8 +
- drivers/phy/Kconfig                           |   1 +
- drivers/phy/Makefile                          |   3 +-
- drivers/phy/airoha/Kconfig                    |  13 +
- drivers/phy/airoha/Makefile                   |   2 +
- drivers/phy/airoha/phy-an7583-pcie-regs.h     | 377 ++++++++
- drivers/phy/airoha/phy-an7583-pcie.c          | 826 ++++++++++++++++++
- 8 files changed, 1294 insertions(+), 1 deletion(-)
+Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
+---
+ .../phy/airoha,an7583-pcie-gen3-phy.yaml      | 65 +++++++++++++++++++
+ 1 file changed, 65 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7583-pcie-gen3-phy.yaml
- create mode 100644 drivers/phy/airoha/Kconfig
- create mode 100644 drivers/phy/airoha/Makefile
- create mode 100644 drivers/phy/airoha/phy-an7583-pcie-regs.h
- create mode 100644 drivers/phy/airoha/phy-an7583-pcie.c
 
+diff --git a/Documentation/devicetree/bindings/phy/airoha,an7583-pcie-gen3-phy.yaml b/Documentation/devicetree/bindings/phy/airoha,an7583-pcie-gen3-phy.yaml
+new file mode 100644
+index 000000000000..a8ec5ac781cc
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/airoha,an7583-pcie-gen3-phy.yaml
+@@ -0,0 +1,65 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/airoha,an7583-pcie-gen3-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Airoha AN7583 PCI-Express PHY
++
++maintainers:
++  - Christian Marangi <ansuelsmth@gmail.com>
++
++description:
++  The PCIe PHY supports physical layer functionality for PCIe Gen2/Gen3 port.
++
++properties:
++  compatible:
++    const: airoha,an7583-pcie-gen3-phy
++
++  reg:
++    items:
++      - description: PCIE G3 analog base address
++      - description: PCIE G3 PMA base address
++      - description: PCIE detection time base address
++      - description: PCIE Rx AEQ base address
++
++  reg-names:
++    items:
++      - const: g3-ana
++      - const: g3-pma
++      - const: xr-dtime
++      - const: rx-aeq
++
++  phys:
++    items:
++      - description: phandle to QPHY phy for Gen2 support
++
++  "#phy-cells":
++    const: 0
++
++required:
++  - compatible
++  - reg
++  - reg-names
++  - phys
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/phy/phy.h>
++
++    phy@1fc7f000 {
++        compatible = "airoha,an7583-pcie-gen3-phy";
++        reg = <0x1fc7f000 0x1000>,
++              <0x1fc7e000 0x1000>,
++              <0x1fc30044 0x4>,
++              <0x1fc35030 0x4>;
++        reg-names = "g3-ana", "g3-pma",
++                    "xr-dtime", "rx-aeq";
++
++        phys = <&pcie1_phy PHY_TYPE_PCIE>;
++
++        #phy-cells = <0>;
++    };
 -- 
 2.53.0
 
