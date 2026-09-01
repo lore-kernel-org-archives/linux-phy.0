@@ -4,50 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61645C61DD6
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Sep 2026 15:39:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D452C624D7
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Sep 2026 15:39:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D3h0+oQJOTj39p9p/DPCQemD0oK9Fblo49Sv/tIcU98=; b=aBMZa2wGxeieHF
-	tOw0hyUa0wFt0kuUxkMiwfQuKMerrP5n+DYeNF2o8C5jitvBvu/MVZ4+jSrdaeTFEPLcI1m0vcKad
-	ay+ezAwIPOwo5qdCFD8M9K4dPrpFYpVn9+IVc2XTrkkbrGbPb2CmyjmgvqMbpcfcJfzvbFn5Xb+xZ
-	jUPOtJJ5ocQl4IHAH32o6gi3m9wfJtKXhW6cczedV+TnuhpwkM3YSZ9Di8ozQ8Cp7Cca9/wRlL7a/
-	E0ssz9g1dNtXD3pXXiYSVdFzNxiasUXaqK2dYALePy996drXD0QNCPKi7Yn/B6dkl8elLYU0SbvAq
-	CKNXtYgbsHQyLGm8crag==;
+	List-Owner; bh=ZHg65vykeQahUyE6LY1nxr4cNufHNPWml6onQZuP6Uo=; b=15IW8WuEH/BHEL
+	mxuIVuf8O0/RZNwjrIZL5t1w1efSaRVwQCztBX/+trRZoukNygHxOcylpthELDsHRZGcU6Vywmlb/
+	2AMmYWbsYpBSX8E/1QMi9N0dWZbjqFzD+qBD/Y8Hl/k25shUbNBfgCkT6nLXaBIbHJcRdnXivKKut
+	hsvsbeTj/yFKZgknweNwGrckwCjYaMk6bjt7pHwXIauokkcRgVLan7ZSfF0zIYiJWDNPha5vj1mek
+	XY8mekUEbdfNVisq71Q+HGRn7AKCpslByj4p29QeHE6FnKVKPM6X4fO3hger48mPOHLGMUzezH/mb
+	YnWFiPOY2nyV2FuNoTrw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1QaN-0000000CXHw-3cMg;
-	Tue, 01 Sep 2026 15:39:43 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1x1QaP-0000000CXOP-47h7;
+	Tue, 01 Sep 2026 15:39:46 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1QaG-0000000CWut-3nsf;
-	Tue, 01 Sep 2026 15:39:38 +0000
+	id 1x1QaJ-0000000CX0L-0Wbi;
+	Tue, 01 Sep 2026 15:39:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1788277175;
-	bh=72GgqHc2XPiq4JBh6tlnagLn2wVqs81B5IrpPDC+VrY=;
+	s=mail; t=1788277177;
+	bh=bgEio5+zXaqy0iDoSD7PfRXIKiUuVMddvQUOAh7dUSQ=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=euLvG/oxdXvzf4Co4Rs1+20u3Nq8HNdVca0dSRoYYgDDGCLBimlVzpiBJ+VBr7CdR
-	 o0kmgCcagVcEFf3rTNNM57EMHAeHqBuAy2rwthm9dRUGCMObrPNvR7J7+D/vQ486H0
-	 zjcnmv4U1UXgvq0xyFOYdicKG2+JRNB11edGUxexwmgKbcIsP2g1UULhfblxxMFGMX
-	 qKKnEyoxfi0mPsDLbBTVKoZmPWZuHwzdX7D5ub6Gx9vL2xhIGI1ayj9/TTKPiJ+sD6
-	 DwxPrUcDfPuKqcRuEB2fdtcfmejE5u1DckFXMj6lpau1zxFJDFEG5Os8lV0Tl5SViq
-	 vsmVcHUmus9Jg==
+	b=NVkREtplLVE46sSE5QT1T4TOXGG5aRx8+1sbYDe5+5JUVEMFmjy5UxWfmNVX5EGFb
+	 VrbXHL4lnJj9/ssHc8uK38otm0au54y9cwqKdVGvgymdpEzOL7bfv8AgZWj+vnprnL
+	 Q4iSxXXjnV+YaGdg+VDzQtL6IMi9QjNrZZxg9g49gXp82gY0ZaEhSN0sCeEf0Z4XY6
+	 lvtzTBlbu5vjQ3mw8fEdcGlINBi3kCF/mfFWB0+Y3e6BF0MEA7MC8bJDcJWQXB0FM4
+	 ExraFsrbcduGSFSIoUeTDg/cg5g0wbBdStK2PRWwjqCu5r88/wtTj+FryYk4zWZ6o6
+	 /v28vIDBm5NEw==
 Received: from yukiji.home (unknown [100.64.0.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: laeyraud)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 0D24817E1298;
-	Tue, 01 Sep 2026 17:39:34 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 3142717E14D2;
+	Tue, 01 Sep 2026 17:39:36 +0200 (CEST)
 From: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-Date: Tue, 01 Sep 2026 17:38:57 +0200
-Subject: [PATCH v11 09/24] scsi: ufs: mediatek: Rework init function
+Date: Tue, 01 Sep 2026 17:38:59 +0200
+Subject: [PATCH v11 11/24] scsi: ufs: mediatek: Handle misc host voltage
+ regulators
 MIME-Version: 1.0
-Message-Id: <20260901-mt8196-ufs-v11-9-dbd007704490@collabora.com>
+Message-Id: <20260901-mt8196-ufs-v11-11-dbd007704490@collabora.com>
 References: <20260901-mt8196-ufs-v11-0-dbd007704490@collabora.com>
 In-Reply-To: <20260901-mt8196-ufs-v11-0-dbd007704490@collabora.com>
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
@@ -70,18 +71,19 @@ Cc: kernel@collabora.com, linux-arm-kernel@lists.infradead.org,
  linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, 
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  linux-scsi@vger.kernel.org, 
- Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+ Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, 
+ Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1788277163; l=3160;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1788277163; l=3045;
  i=louisalexis.eyraud@collabora.com; s=20250113; h=from:subject:message-id;
- bh=tsDK7V4/6PMxSz+OmfJwdGpCa0GssoKhONzvWFpyjYU=;
- b=dwXMcimxG4/NHyBLW5OA3Io6xJ6v2oWLeWuHKVNjXl7zpFTGKBFoTetHkEGxVEf13931UNUDR
- DTBlPpHKmjqDqbBUzDuKY/XFxOaf8ul/k5c4JoHbNYTiaJQc1JXkt7u
+ bh=cHcU+ny9NUcLJyJ5b8J+NWxcAsqR37xItQ9MVLKBm+s=;
+ b=CldqY492HQb9nw0NgFR3I/zZxQhlzGM0Gn+uriUe1a5wHeG4hVQqHBOY+J7g1sgYa0tnbO14g
+ TbiqLygV7BjCBHFFA+Evx3gJJN5Blvb3leoY4KSq1tKmpEN9ZoOaoHm
 X-Developer-Key: i=louisalexis.eyraud@collabora.com; a=ed25519;
  pk=CHFBDB2Kqh4EHc6JIqFn69GhxJJAzc0Zr4e8QxtumuM=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260901_083937_210601_BCB44BD3 
-X-CRM114-Status: GOOD (  17.36  )
+X-CRM114-CacheID: sfid-20260901_083939_381611_2318D647 
+X-CRM114-Status: GOOD (  15.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,112 +102,89 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 
-Printing an error message on ENOMEM is pointless. The print will not
-work because there is no memory.
+MediaTek SoCs handled by this driver contain a per-SoC specific set of
+miscellaneous supplies. These feed parts of the UFS controller silicon
+inside the SoC, as opposed to the UFS card.
 
-Adding an of_match_device to the init function is pointless. Why would a
-different device with a different probe function ever use the same init
-function? Get rid of it.
+Add the necessary driver code to acquire these supplies using the
+regulator bulk API. They should be kept on during suspend, so enable
+them when acquiring.
 
-zero-initialising an error variable just so you can then goto a bare
-return statement with that error variable to signal success is also
-pointless, just return directly, there's no unwind being done.
-
-Reviewed-by: Peter Wang <peter.wang@mediatek.com>
 Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Reviewed-by: Peter Wang <peter.wang@mediatek.com>
 Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Signed-off-by: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 ---
- drivers/ufs/host/ufs-mediatek.c | 43 +++++++++++++++--------------------------
- 1 file changed, 16 insertions(+), 27 deletions(-)
+ drivers/ufs/host/ufs-mediatek.c | 32 ++++++++++++++++++++++++++++++--
+ 1 file changed, 30 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/ufs/host/ufs-mediatek.c b/drivers/ufs/host/ufs-mediatek.c
-index f298ea6f6ecb..c5089815696f 100644
+index 6bbf53b658f2..f61727879c3c 100644
 --- a/drivers/ufs/host/ufs-mediatek.c
 +++ b/drivers/ufs/host/ufs-mediatek.c
-@@ -54,18 +54,6 @@ static const struct ufs_dev_quirk ufs_mtk_dev_fixups[] = {
- 	{}
+@@ -42,6 +42,8 @@ static void _ufs_mtk_clk_scale(struct ufs_hba *hba, bool scale_up);
+ struct ufs_mtk_soc_data {
+ 	bool has_avdd09;
+ 	bool has_avdd09_1;
++	u8 num_reg_names;
++	const char *const *reg_names;
  };
  
--static const struct ufs_mtk_soc_data mt8183_data = {
--	.has_avdd09 = true,
--};
--
--static const struct of_device_id ufs_mtk_of_match[] = {
--	{ .compatible = "mediatek,mt8183-ufshci", .data = &mt8183_data },
--	{ .compatible = "mediatek,mt8192-ufshci" },
--	{ .compatible = "mediatek,mt8195-ufshci" },
--	{},
--};
--MODULE_DEVICE_TABLE(of, ufs_mtk_of_match);
--
- /*
-  * Details of UIC Errors
-  */
-@@ -1301,29 +1289,19 @@ static int ufs_mtk_get_supplies(struct ufs_mtk_host *host)
-  */
- static int ufs_mtk_init(struct ufs_hba *hba)
+ static const struct ufs_dev_quirk ufs_mtk_dev_fixups[] = {
+@@ -1217,10 +1219,20 @@ static int ufs_mtk_get_supplies(struct ufs_mtk_host *host)
  {
--	const struct of_device_id *id;
- 	struct device *dev = hba->dev;
- 	struct ufs_mtk_host *host;
- 	struct Scsi_Host *shost = hba->host;
--	int err = 0;
-+	int err;
- 	struct arm_smccc_res res;
+ 	struct device *dev = host->hba->dev;
+ 	const struct ufs_mtk_soc_data *data = of_device_get_match_data(dev);
++	int ret;
  
- 	host = devm_kzalloc(dev, sizeof(*host), GFP_KERNEL);
--	if (!host) {
--		err = -ENOMEM;
--		dev_info(dev, "%s: no memory for mtk ufs host\n", __func__);
--		goto out;
--	}
-+	if (!host)
-+		return -ENOMEM;
+ 	if (!data)
+ 		return 0;
  
- 	host->hba = hba;
- 	ufshcd_set_variant(hba, host);
- 
--	id = of_match_device(ufs_mtk_of_match, dev);
--	if (!id) {
--		err = -EINVAL;
--		goto out;
--	}
--
- 	/* Initialize host capability */
- 	ufs_mtk_init_host_caps(hba);
- 
-@@ -1397,11 +1375,10 @@ static int ufs_mtk_init(struct ufs_hba *hba)
- 
- 	ufs_mtk_get_hw_ip_version(hba);
- 
--	goto out;
-+	return 0;
- 
- out_variant_clear:
- 	ufshcd_set_variant(hba, NULL);
--out:
- 	return err;
- }
- 
-@@ -2443,6 +2420,18 @@ static const struct ufs_hba_variant_ops ufs_hba_mtk_vops = {
++	if (data->num_reg_names) {
++		ret = devm_regulator_bulk_get_enable(dev, data->num_reg_names,
++						     data->reg_names);
++		if (ret) {
++			dev_err(dev, "Failed to get misc regulators: %pe\n", ERR_PTR(ret));
++			return ret;
++		}
++	}
++
+ 	if (data->has_avdd09) {
+ 		host->reg_avdd09 = devm_regulator_get_optional(dev, "avdd09");
+ 		if (IS_ERR(host->reg_avdd09)) {
+@@ -2393,14 +2405,30 @@ static const struct ufs_hba_variant_ops ufs_hba_mtk_vops = {
  	.config_scsi_dev     = ufs_mtk_config_scsi_dev,
  };
  
-+static const struct ufs_mtk_soc_data mt8183_data = {
-+	.has_avdd09 = true,
++static const char *const ufs_mtk_regs_avdd12_avdd18[] = {
++	"avdd12", "avdd18"
 +};
 +
-+static const struct of_device_id ufs_mtk_of_match[] = {
-+	{ .compatible = "mediatek,mt8183-ufshci", .data = &mt8183_data },
-+	{ .compatible = "mediatek,mt8192-ufshci" },
-+	{ .compatible = "mediatek,mt8195-ufshci" },
-+	{},
++static const char *const ufs_mtk_regs_avdd12_ckbuf_avdd18[] = {
++	"avdd12", "avdd12-ckbuf", "avdd18"
 +};
-+MODULE_DEVICE_TABLE(of, ufs_mtk_of_match);
 +
- /**
-  * ufs_mtk_probe - probe routine of the driver
-  * @pdev: pointer to Platform device handle
+ static const struct ufs_mtk_soc_data mt8183_data = {
+ 	.has_avdd09 = true,
++	.reg_names = ufs_mtk_regs_avdd12_avdd18,
++	.num_reg_names = ARRAY_SIZE(ufs_mtk_regs_avdd12_avdd18),
++};
++
++static const struct ufs_mtk_soc_data mt8192_8195_data = {
++	.has_avdd09 = false,
++	.reg_names = ufs_mtk_regs_avdd12_ckbuf_avdd18,
++	.num_reg_names = ARRAY_SIZE(ufs_mtk_regs_avdd12_ckbuf_avdd18),
+ };
+ 
+ static const struct of_device_id ufs_mtk_of_match[] = {
+ 	{ .compatible = "mediatek,mt8183-ufshci", .data = &mt8183_data },
+-	{ .compatible = "mediatek,mt8192-ufshci" },
+-	{ .compatible = "mediatek,mt8195-ufshci" },
++	{ .compatible = "mediatek,mt8192-ufshci", .data = &mt8192_8195_data },
++	{ .compatible = "mediatek,mt8195-ufshci", .data = &mt8192_8195_data },
+ 	{},
+ };
+ MODULE_DEVICE_TABLE(of, ufs_mtk_of_match);
 
 -- 
 2.55.0
