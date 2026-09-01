@@ -4,111 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7D35C61DD3
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Sep 2026 15:04:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64790C61DD6
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Sep 2026 15:39:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wf3y8oMlivFO+PbmhkTDMvBVZAtPqrJ81FViFUxSJoc=; b=WtP0Fcmcd2ks8P
-	WGWKrdvCtHkUaDjMK7uEkToYT1H8tX+EzGUSobUa3n6DECXMYt8prWYFYG0OwIEbkwTLT850hpV38
-	2MTRGzCRHwc7La2q3m0AOLLahQQkwwuJ2KkClue4J19tq0fDrACW0iA81JPbnshzswZra33E+gEKp
-	W55a1VZTuVxk8VUZYD2DXtOJBHuYijKC2LDEL/T9Q6ul/kTKFDwoj1Od0T86ozel3Z+nO240zVgrg
-	NVCWKfUKF2welO4n3lKbze9DN44GimQf13pFEBbfA1H4Oeo42e02LQXz7ziyPPWO9Y8bcrJEheECu
-	WVgLzpKDHMzGAbYfwCWA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Gon4qqkB8Derc649ZBWNsZ4GsFYWBMPHaATKnc6dtkM=; b=Tf4ToEbULrCAse
+	QsacO7dqChkrHOhO7VZpB1a/TIQdCUnSjQYzMaLDQo3cY5zA2JJ5B0syIxcthswB3qpqBdXVZhn9C
+	4vuBVObnGzI+2t0Sfy7S4myvJIgRMaGyvFe9AvRxgufbevBI3faF+xhtuaJIoSM5ufCPBe6yyO1F4
+	RJGI1nA4xUx5TOtS8xWI0ohmtm4uFi9f45N6Viau1p+NED6gjewcAd3ZzNn0NeRm7iyxKIeOyA7Lp
+	g5+Q1FA/o9t5S9n5S87BG0K6T+pz2JNhPurJL8XEoHL8q4WD4Bf82wAmrD5r/NWiofoh2vfHB01RU
+	CbTtT0xfvPeChEBVSQeQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1Q21-0000000CQaJ-2MAL;
-	Tue, 01 Sep 2026 15:04:13 +0000
-Received: from mail-pz2-x0b.google.com ([2607:f8b0:4864:3b::b])
+	id 1x1QaB-0000000CWq0-2ite;
+	Tue, 01 Sep 2026 15:39:31 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1Q1z-0000000CQYr-1Bcx
-	for linux-phy@lists.infradead.org;
-	Tue, 01 Sep 2026 15:04:12 +0000
-Received: by mail-pz2-x0b.google.com with SMTP id 41be03b00d2f7-cc1631a57d2so2431876a12.0
-        for <linux-phy@lists.infradead.org>; Tue, 01 Sep 2026 08:04:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1788275050; x=1788879850; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=jFOAryefyj3E8LprwQb6zM23kP14ZZpWJUCwFcY71vI=;
-        b=Y5NvBfyK3Pnmfc48bz/ehKJ9YNyK/5B6mXjkW2tSZbxy5fu2UmB3hSrvzd1qv83Vlt
-         XzWQndJpfqsxBYPJCwB/tVBXh3mlX+67/B++gYvRcWmsxKqcSyJttn+M4gHixULfuZXL
-         dA4xBgu1+ulXUvB9myV52u0lWuCe/srNgwmrnWA16syfplI4gXSK3XP+NQ+6BiCsWxKX
-         Z+95jP+wV7/sdsiLHpWl9QdziAxcGrLANDdBJylb6tx/9nmi38c1h3Xxb7ZZOrrLX0RW
-         rHRefUhqc4P4g0yFolqeE6X9vop3TlmMsTM+FXhsyOPg0wLUwO4Dv17c07WZt68v2yYP
-         orvA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788275050; x=1788879850;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=jFOAryefyj3E8LprwQb6zM23kP14ZZpWJUCwFcY71vI=;
-        b=XytjVMoTSgCNlb7i7KUC7Znvsnr2Rk+3W0LvItm8wS4Am+fVLIFEdIg4Oeur06OPK3
-         m5d9EdgRK/bk5afVN/pDtOumcuxV7k+s08SsJx2nUzf0xz5BIO8IwVGilJjgHokCrdxf
-         NV+1N5+hy6trmYOyW5iSH1VGRmRrvVWYl71DNGaBJqbLP3W/sBwW2f/bNyMU1BkmCtCg
-         sLlk//pqi7W2wa05Uef+DYvP8Z9dzfBekwrYQBh+dFJex9cgr1n/olkg1ez9dLGAfqHQ
-         5OxtC1qYJRTY9ZN9UdCMNYJq70kkCq28Jo4DguMaR1I75VDlJrjHTUagb7+Jq2ZGX2MB
-         Cbpw==
-X-Forwarded-Encrypted: i=1; AHgh+RrZyeHhk57Odj6MG0O2CPjvu+NTT9sMUztJX6m7Mh6DA8U9Uakt3IDzuBHIBklCnG5odAgIds2U31o=@lists.infradead.org
-X-Gm-Message-State: AFuF++khHlzfDq1Ba9wLsrc/rmgSWqMVWJKBz2tDVn4692UN1ZTNmFyh
-	G0ZoKbye0kwxK3GJWaWLet/ajSjXga9IC2GrIzaLxx8A8/1hu7i04X8G
-X-Gm-Gg: AR+sD1080CRmxNbX6v4XhTq1uwjCAJs0J/WYEcY6SbFenpzS4hREbhLgDXWvuvJYcto
-	4ZO5seJF9RKQ0kpoRhezPzO+mgHGlPxgCfke5XNwj6sNPUIZZ11pYYmCQE0ZlFX12P9ZHs+XH1h
-	0AfdfFK0V/p/+bQA7p3Dac7CZxWJLIumHjcORHm+i2e4x7jag8rViB3ifl7Kj8zVVl4Hsnpr7a5
-	yTxfpJLIR5OYrFSLUNYaCxNKLuhqjbbTHngXjxeLoEg/9ALZIIGtjxj1kTxynO2mp1AhQbJnWbU
-	W7JqDLlSW6IbsQ8uPBEi9+afxqdemSZfxne9PzVStsQP6+xyIvVnXs3HVonMoulknlyjxKyK+Xl
-	mvGukTgLF3y5RJWzw67pbxjzPjWiyHmSaurMiJD4PSK2uFXL39VeYacuRTvTFuvWUVhlZKl6tDg
-	6RWjvEVlJ6TiY9kp2tDacF0v1ujDtpkkKjwLHkfnjl9hOYsTW9k5t+352qvAw=
-X-Received: by 2002:a05:6a00:4501:b0:857:72f8:dc91 with SMTP id d2e1a72fcca58-85772f8de55mr39669660b3a.18.1788275020723;
-        Tue, 01 Sep 2026 08:03:40 -0700 (PDT)
-Received: from server.lan ([150.230.217.250])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-85dc0716846sm27914b3a.45.2026.09.01.08.03.29
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 01 Sep 2026 08:03:39 -0700 (PDT)
-From: Coia Prant <coiaprant@gmail.com>
-To: Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S . Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>,
-	Paolo Abeni <pabeni@redhat.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Vinod Koul <vkoul@kernel.org>,
-	Maxime Chevallier <maxime.chevallier@bootlin.com>,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
-	Romain Gantois <romain.gantois@bootlin.com>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Coia Prant <coiaprant@gmail.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Russell King <linux@armlinux.org.uk>,
-	Shawn Lin <shawn.lin@rock-chips.com>,
-	David Heidelberg <david@ixit.cz>,
-	netdev@vger.kernel.org,
-	linux-rockchip@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-renesas-soc@vger.kernel.org
-Subject: [PATCH net-next v3 10/10] MAINTAINERS: add entry for Rockchip XPCS driver
-Date: Tue,  1 Sep 2026 23:01:10 +0800
-Message-ID: <20260901150111.141037-11-coiaprant@gmail.com>
-X-Mailer: git-send-email 2.47.3
-In-Reply-To: <20260901150111.141037-1-coiaprant@gmail.com>
-References: <20260901150111.141037-1-coiaprant@gmail.com>
+	id 1x1Qa8-0000000CWny-0T4c;
+	Tue, 01 Sep 2026 15:39:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1788277165;
+	bh=ZGs/3T3SCOUjcYXEgUmZrthrutlR+UbCsXBFFE7xNQw=;
+	h=From:Subject:Date:To:Cc:From;
+	b=d0Bq5w8na3Ytnjsjf1M+UIukCJHA4rj9kPkDY+Q3whDWWwvxbwlycMWDfrIPtlkyO
+	 MVCi/C5BRVRt2gypV0Zca6H31uJvx3pykWi1Xfi31k8onhzVONlGnJOvGc5K+XsBmr
+	 H2rfN+GMrU9cUPmJxu59bA154YALXnrt/JBCi/bf0ZJV6CURRYyGBT+4jjLJkZMuww
+	 WabpkmiVddfPQB3Lr3vnbMhpuq3B5ZsgYsKtiNs2SYuI9h0zS6bI45tQXYwts2mpGD
+	 7q9B4VCIioUMjIRG1HYVPGI6NLDLvziEHFJ55+fnyu9WuQ2rMmGf5/BPOvEtzANTo1
+	 WY4C2vrtm4PfA==
+Received: from yukiji.home (unknown [100.64.0.131])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: laeyraud)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 1221517E07F6;
+	Tue, 01 Sep 2026 17:39:24 +0200 (CEST)
+From: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
+Subject: [PATCH v11 00/24] MediaTek UFS Cleanup and MT8196 Enablement
+Date: Tue, 01 Sep 2026 17:38:48 +0200
+Message-Id: <20260901-mt8196-ufs-v11-0-dbd007704490@collabora.com>
 MIME-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/23Sy2rDMBAF0F8JWldl9Jay6n+ULvQYNYYmbm3Hp
+ IT8exWHYitoqUHnjrjoSkYcOhzJfnclA87d2PWncmDsZUfiwZ8+kXapDAgHrhgwSY+TZU7Tcx5
+ pxCiD886gEqSA7wFzd1nS3j8e5wF/ziV0egxJ8CPS2B+P3bTfnfAy0ZKrwQpG7uDQjVM//C6vm
+ dkiWntnRoEyp1LEYEWI9i32X18+9IN/LeFL1My3XFecFx6FEVbIKNH4FhcbzkXFReGQQQbpjVM
+ 5t7hcOWe24rLwlDAaL7RLibe4+ucaGNRcFS4dZ4opU/pnLa43nNfV6cLRRAAVNABvVmdWzp+qM
+ 4UHlbkDE3XypsXtygXU223hKgD6yIVgslmd2/J6u7vz4o3IxlsBLc5g9UZA/W/g/vyoMGIuF1J
+ 8Drjdbn8TMTpWEwMAAA==
+X-Change-ID: 20251014-mt8196-ufs-cec4b9a97e53
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ Peter Wang <peter.wang@mediatek.com>, 
+ Chaotian Jing <chaotian.jing@mediatek.com>, 
+ Alim Akhtar <alim.akhtar@samsung.com>, 
+ Avri Altman <avri.altman@sandisk.com>, Bart Van Assche <bvanassche@acm.org>, 
+ Stanley Jhu <chu.stanley@gmail.com>, 
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, Liam Girdwood <lgirdwood@gmail.com>, 
+ Mark Brown <broonie@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+ "Martin K. Petersen" <mkp@kernel.org>, 
+ "Martin K. Petersen" <mkp@kernel.org>
+Cc: kernel@collabora.com, linux-arm-kernel@lists.infradead.org, 
+ linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-scsi@vger.kernel.org, 
+ Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, 
+ Conor Dooley <conor.dooley@microchip.com>, 
+ Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1788277163; l=11708;
+ i=louisalexis.eyraud@collabora.com; s=20250113; h=from:subject:message-id;
+ bh=ZGs/3T3SCOUjcYXEgUmZrthrutlR+UbCsXBFFE7xNQw=;
+ b=tytGdCsWFUXPREdBweL0B/8CGTblAa4pj3tF+DwD09qouppzS3zzSNE4Xm2UWVum9vQS3QLzq
+ IFOZ0WD6SnzCUvTJSqo+gOarV+BWy25Q39yb81YJNjr5AXSrNSeBcrk
+X-Developer-Key: i=louisalexis.eyraud@collabora.com; a=ed25519;
+ pk=CHFBDB2Kqh4EHc6JIqFn69GhxJJAzc0Zr4e8QxtumuM=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260901_080411_334987_5A647F26 
-X-CRM114-Status: GOOD (  10.55  )
+X-CRM114-CacheID: sfid-20260901_083928_458291_BD3E2AA5 
+X-CRM114-Status: GOOD (  34.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,39 +107,249 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a MAINTAINERS entry for the Rockchip RK3568 XPCS platform driver
-and its device tree binding.
+This series is a continuation of Nicolas Frattaroli's series, that does
+major cleanups in the Mediatek UFS driver code and dt-bindings and adds
+the support for the MT8196 SoC and its variants (MT8894 SoC).
+Theses new revisions of the series (v10 and later) take into account the
+remaining peer reviews and issues reports for v9.
 
-Include the relevant mailing lists (netdev and linux-rockchip) so that
-future patches are properly distributed.
+First, it fixes several build and check issues: kernel test report build
+report [1], patch per patch compilations.
 
-Signed-off-by: Coia Prant <coiaprant@gmail.com>
+Second, regarding the opened issues in v9 on the dt-bindings patches
+2 ("dt-bindings: ufs: mediatek,ufs: Complete the binding") and 3
+("dt-bindings: ufs: mediatek,ufs: Add mt8196 variant") [2],
+this revision has two major changes to address them:
+1) It renames all the clock names starting with ufs_ prefix and the one
+that was named "ufs". No driver changes is needed for those because
+they are not explicitely used by their names. The ufs_sel and ufs_fde
+clocks in the driver were not renamed because they are not present 
+in the dt-bindings (not anymore for the ufs_sel).
+The devicetree patches for MT8195 SoC dtsi and the Mediatek Genio
+1200-EVK and Radxa NIO-12L boards will be sent in a separate series to
+address the dtbs_check warnings caused by the changes.
+2) It drops the addition of all crypto and ufs_sel clocks, as it seems the
+most likely and best solution to [2] after investigating on them and
+what they are used for ([3]).
+
+The Reviewed-by and Acked-by trailers, got by the patches 2 and 3 in
+previous series revisions (v9 and earlier), were dropped so these
+changes can be reviewed again. 
+
+This new revision is based on linux-next kernel tree (tag:
+next-20260831) and has been tested on Mediatek Genio 5100 Pro board
+that integrates a MT8894 SoC (MT8196 variant).
+
+[1]: https://lore.kernel.org/linux-mediatek/202603081809.R9OrrITa-lkp@intel.com/
+[2]: https://lore.kernel.org/linux-mediatek/20260306163305.GA2680515-robh@kernel.org/
+[3]: https://lore.kernel.org/linux-mediatek/8b013876c591f80ec4af86d69bf2f38f9ac481ad.camel@collabora.com/
+
+Original Nicolas Frattaroli's cover letter:
+
+In this series, the existing MediaTek UFS binding is expanded and
+completed to correctly describe not just the existing compatibles, but
+also to introduce a new compatible in the from of the MT8196 SoC.
+
+The resets, which until now were completely absent from both the UFS
+host controller binding and the UFS PHY binding, are introduced to both.
+This also means the driver's undocumented and, in mainline, unused reset
+logic is reworked. In particular, the PHY reset is no longer a reset of
+the host controller node, but of the PHY node.
+
+This means the host controller can reset the PHY through the common PHY
+framework.
+
+The resets remain optional.
+
+Additionally, a massive number of driver cleanups are introduced. These
+were prompted by me inspecting the driver more closely as I was
+adjusting it to correspond to the binding.
+
+The driver still implements vendor properties that are undocumented in
+the binding. I did not touch most of those, as I neither want to
+convince the bindings maintainers that they are needed without knowing
+precisely what they're for, nor do I want to argue with the driver
+authors when removing them.
+
+Due to the "Marie Kondo with a chainsaw" nature of the driver cleanup
+patches, I humbly request that reviewers do not comment on displeasing
+code they see in the context portion of a patch before they've read the
+whole patch series, as that displeasing code may in fact be reworked in
+a subsequent patch of this series. Please keep comments focused on the
+changed lines of the diff; I know there's more that can be done, but it
+doesn't necessarily need to be part of this series.
+
+Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 ---
- MAINTAINERS | 9 +++++++++
- 1 file changed, 9 insertions(+)
+Changes in v11:
+- Rebased onto next-20260831 and fix conflicts
+- Fixed property typo in patch 2 ("clocks-names" -> "clock-names")
+  (Sashiko)
+- Patch 3:
+  - Added new avdd09-1-supply property to describe the second 0.9V
+    supply pin for MT8196 SoC (K. Kozlowski, Sashiko) and modify
+    bindings accordingly
+  - Reworded commit message to match patch modifications
+- Patch 6:
+  - Fixed ufs reset array order (Sashiko)
+  - Fixed missing sleep call for null mphy case in ufs_mtk_crypto_enable
+    (Sashiko)
+- Fixed error logging in patch 7 (Sashiko)
+- Added patch 8 to support a second 0.9V regulator in ufs_mediatek
+  driver
+- Patch 10:
+  - Fixed missing new line in error log (Sashiko)
+  - Fixed possible pointer type mismatch in ufs_mtk_boost_crypt
+    (Sashiko)
+- Replaced devm_phy_get use by devm_phy_optional_get in patch 14
+  (Sashiko)
+_ Removed additional dead code in patch 23 (Sashiko)
+- Patch 24:
+  - Fixed copyright date
+  - Added new has_avdd09_1 flag in mt8196 platform data
+- Added new Reviewed-by trailers
+- Dropped devicetree-related patches as requested (to be sent in
+  a separate series)
+- Updated cover letter
+- Link to v10: https://lore.kernel.org/r/20260730-mt8196-ufs-v10-0-bc5ecef202dc@collabora.com
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 3a19da74d00c9..c3b17752cc817 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -23744,6 +23744,15 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/sound/rockchip,rk3576-sai.yaml
- F:	sound/soc/rockchip/rockchip_sai.*
- 
-+ROCKCHIP XPCS DRIVER
-+M:	Coia Prant <coiaprant@gmail.com>
-+L:	netdev@vger.kernel.org
-+L:	linux-rockchip@lists.infradead.org
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/net/pcs/rockchip-dwxpcs.yaml
-+F:	drivers/net/pcs/pcs-xpcs-rk.c
-+F:	include/linux/pcs/pcs-xpcs-rk.h
-+
- ROCKER DRIVER
- M:	Jiri Pirko <jiri@resnulli.us>
- L:	netdev@vger.kernel.org
+Changes in v10:
+- Rebased onto next-20260729 and fix conflicts
+- Added Signed-off-by for all patches 
+- Patch 2: 
+  - Removed "ufs" prefix from clock names
+  - Renamed "ufs" clock to "main"
+  - Removed all crypto clock additions
+  - Aligned example to patch changes
+  - Reworded commit message to drop crypto clocks references
+    and add clock names renaming
+  - Dropped Reviewed-by/Acked-by trailers due to changes
+- Patch 3:
+  - Removed all ufs_sel clock additions
+  - Aligned example to patch changes
+  - Reworded commit message to drop ufs_sel clocks references
+  - Dropped Reviewed-by/Acked-by trailers due to changes
+- Fixed build failure on patch 9 due to ufs_mtk_of_match symbol being
+  declared in the ufs-mediatek.c file after use.
+- Moved ufs_mtk_of_match symbol at original place in patch 8
+- Fixed build failure reported by Kernel Test Robot on patch 19 by
+  fixing the incorrect FIELD_MODIFY val argument and using GENMASK
+  for MTK_UFS_VER_PREFIX_M definition
+- Added patch 24, 25, 26 devicetree patches for MT8195 SoC, Mediatek
+  Genio 1200-EVK and Radxa NIO-12L boards to match the dt-bindings
+  changes introduced by this series
+- Added reviewed-by tag for patch 21
+- Link to v9: https://lore.kernel.org/r/20260306-mt8196-ufs-v9-0-55b073f7a830@collabora.com
+
+Changes in v9:
+- Eliminate build failure in "Remove undocumented downstream reset
+  cruft", including the of_node_put of the reset node that wasn't caught
+- Pointlessly rename per-instance hibernate timer backup member to
+  "ahit"
+- Link to v8: https://lore.kernel.org/r/20260304-mt8196-ufs-v8-0-5b0eac23314f@collabora.com
+
+Changes in v8:
+- Split "Rework probe function" into two, turn the reset removal into
+  its own patch and squash the PHY changes into the common PHY framework
+  patch.
+- Leave "device reset done" logging print at INFO level
+- Remove redundant falsy check for reg_vcore in "Don't acquire
+  dvfsrc-vcore twice".
+- Change ufs_mtk_wait_idle_state to early-exit on all non-HIB states,
+  and poll for VS_HCE_BASE instead.
+- Link to v7: https://lore.kernel.org/r/20260216-mt8196-ufs-v7-0-b5f2907c6da7@collabora.com
+
+Changes in v7:
+- Rebase onto next-20260205, which drops "scsi: ufs: mediatek: Switch to
+  newer PM ops helpers" as Arnd sent an equivalent patch that also fixes
+  the PM-less build failure.
+- Link to v6: https://lore.kernel.org/r/20260124-mt8196-ufs-v6-0-e7c005b60028@collabora.com
+
+Changes in v6:
+- Reword "Rework probe function" commit to better justify the changes
+  being made.
+- Drop "Add vendor prefix to clk-scale-up-vcore-min"
+- Add patch to remove clk-scale-up-vcore-min entirely, describing the
+  process for bringing it back (in a different form) in the commit
+  message.
+- Link to v5: https://lore.kernel.org/r/20260108-mt8196-ufs-v5-0-49215157ec41@collabora.com
+
+Changes in v5:
+- Drop "scsi: ufs: mediatek: Make scale_us in setup_clk_gating const" as
+  someone else already got a patch in for this into next.
+- Make mtk_init_boost_crypt void
+- Don't disable/enable misc regulators during suspend/resume, but enable
+  them once when acquiring with a devm helper.
+- Link to v4: https://lore.kernel.org/r/20251218-mt8196-ufs-v4-0-ddec7a369dd2@collabora.com
+
+Changes in v4:
+- bindings: Redo the supply situation, as the avdd pins don't describe
+  the vcc(q2) card supplies.
+- bindings: format clock in mt8196 example more tersely.
+- phy: use devm_reset_control_get_optional_exclusive directly
+- driver: get and enable/disable the aforementioned avdd supplies.
+- Link to v3: https://lore.kernel.org/r/20251023-mt8196-ufs-v3-0-0f04b4a795ff@collabora.com
+
+Changes in v3:
+- Split mediatek,ufs bindings change into two patches, one for
+  completing the existing binding, one for the MT8196
+- Add over a dozen driver cleanup patches
+- Add explicit support for the MT8196 compatible to the driver
+- Note: next-20251023, on which I based this, currently has a broken
+  build due to an unrelated OPP core change that was merged with no
+  build testing. I can't use next-20251022 either, as that lacks the
+  recent mediatek UFS changes. It is what it is.
+- Link to v2: https://lore.kernel.org/r/20251016-mt8196-ufs-v2-0-c373834c4e7a@collabora.com
+
+Changes in v2:
+- Reorder define in mtk_sip_svc.h
+- Use bulk reset APIs in UFS host driver
+- Link to v1: https://lore.kernel.org/r/20251014-mt8196-ufs-v1-0-195dceb83bc8@collabora.com
+
+---
+Louis-Alexis Eyraud (1):
+      scsi: ufs: mediatek: Add dual 0.9V supply support
+
+Nicolas Frattaroli (23):
+      dt-bindings: phy: Add mediatek,mt8196-ufsphy variant
+      dt-bindings: ufs: mediatek,ufs: Complete the binding
+      dt-bindings: ufs: mediatek,ufs: Add mt8196 variant
+      scsi: ufs: mediatek: Move MTK_SIP_UFS_CONTROL to mtk_sip_svc.h
+      phy: mediatek: ufs: Add support for resets
+      scsi: ufs: mediatek: Rework resets
+      scsi: ufs: mediatek: Rework 0.9V regulator
+      scsi: ufs: mediatek: Rework init function
+      scsi: ufs: mediatek: Rework the crypt-boost stuff
+      scsi: ufs: mediatek: Handle misc host voltage regulators
+      scsi: ufs: mediatek: Remove undocumented downstream reset cruft
+      scsi: ufs: mediatek: Remove vendor kernel quirks cruft
+      scsi: ufs: mediatek: Use the common PHY framework
+      scsi: ufs: mediatek: Remove mediatek,ufs-broken-rtc property
+      scsi: ufs: mediatek: Rework _ufs_mtk_clk_scale error paths
+      scsi: ufs: mediatek: Clean up logging prints
+      scsi: ufs: mediatek: Rework ufs_mtk_wait_idle_state
+      scsi: ufs: mediatek: Don't acquire dvfsrc-vcore twice
+      scsi: ufs: mediatek: Rework hardware version reading
+      scsi: ufs: mediatek: Back up idle timer in per-instance struct
+      scsi: ufs: mediatek: Remove ret local from link_startup_notify
+      scsi: ufs: mediatek: Remove undocumented "clk-scale-up-vcore-min"
+      scsi: ufs: mediatek: Add MT8196 compatible, update copyright
+
+ .../devicetree/bindings/phy/mediatek,ufs-phy.yaml  |  16 +
+ .../devicetree/bindings/ufs/mediatek,ufs.yaml      | 136 ++-
+ drivers/phy/mediatek/phy-mtk-ufs.c                 |  71 ++
+ drivers/ufs/host/ufs-mediatek-sip.h                |   9 -
+ drivers/ufs/host/ufs-mediatek.c                    | 997 +++++++++------------
+ drivers/ufs/host/ufs-mediatek.h                    |  19 +-
+ include/linux/soc/mediatek/mtk_sip_svc.h           |   3 +
+ 7 files changed, 643 insertions(+), 608 deletions(-)
+---
+base-commit: c7507e07687010738e5f16926078f78ac0d6509d
+change-id: 20251014-mt8196-ufs-cec4b9a97e53
+
+Best regards,
 -- 
-2.47.3
+Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 
 
 -- 
