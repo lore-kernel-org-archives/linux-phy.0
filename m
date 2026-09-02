@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D068C624D3
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Sep 2026 03:22:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D05BC624D9
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Sep 2026 03:22:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tBHJA4RRvcxphR3vzN8OlTOWWc+nwAhyzMnbLzPNWdo=; b=AK99QqxBzQkY7a
-	5ZX4CBNfgB8KRe+DwWdQkIONI2v9pj9K0XnPPeOjK9eSLJyjHDJt8hX/Di41DBfATEdbjVIvTaoW7
-	vdafdBsaIQTESO/JgLBPQ/NbVSQhN3MQI39LgDe3l18RFtggxtEuYjDdoHY/wwq2k29w2GlRrWOFX
-	zP/KJBq1u6yUzMg43t+TXJQ6xYkhVYotYSASWmU1v28kiWBPfta9ZgVrSrCt4LTahH6wq5VCS+0vD
-	rSYAz1k/j5pBZ6bDq+JITq7/eRzyon5ykRvC5RXYoGsGafpprAovylwXx6eTYj8TLzukSSgTjtzHV
-	a7YPIMZObgHf7HHEg02g==;
+	List-Owner; bh=jOAnZpyiIAQo9+CpyyDHdL7GE6NkFNEzuzf4V3PWrrE=; b=pGrKxScv6ceOb6
+	MVg/C/OqjDLdZPApeN6nKgvdJTfHsLkF0WNUENNxMI78x7F35iZ2whd0kqKy2CBNbJ3EEpYNrjNTt
+	msSEFA/pYJGbQiPhdYghw7RLFcBHCuRVALApR5kOwAKAQlGH1eMXb/PedfbiDUnvDTH8ePINb9kNr
+	K6cgYB0/t3r1X/HvbrjHwS5UgC3ewDvLjJRcpejwZFbgDybNF1YS+1Xe6yu+yuMgIfzRhtW7e/T7W
+	LG7YCVHQ6tAaOss8TfC+XjU3K43V9m0+i7bx/kNOFggl4ffxMsmCTF95X1cmJSU45lyzvL7+aB7vS
+	0xJD26sWGxR0Qqq8H1OQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1bY0-0000000DhpT-3rND;
-	Wed, 02 Sep 2026 03:22:00 +0000
-Received: from mail-japaneastazon11022104.outbound.protection.outlook.com ([52.101.126.104] helo=TYPPR03CU001.outbound.protection.outlook.com)
+	id 1x1bY1-0000000DhqS-1ySL;
+	Wed, 02 Sep 2026 03:22:01 +0000
+Received: from mail-japaneastazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c405::7] helo=TYDPR03CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1bXw-0000000DhmF-0Hmj;
-	Wed, 02 Sep 2026 03:21:58 +0000
+	id 1x1bXy-0000000Dhn8-1xsA;
+	Wed, 02 Sep 2026 03:21:59 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=uPzc/0rnUvtpBXC5R4TaW3dvltJ5SNeMs5Hmn6zUd/ZUZQRAfSOK5ro78vzlpAuimzLDc8MgO/Ye2r3O5Y9HIB6le+nc5LhhM312FK5E4lEEY+/QRJdIC5gYb0kJObg2gGbXbJyj1nwOdK3/iCb7vjL/34UOMUBaI+Ne7tLhJRr/B4sTY12GdgFKDDvqS7ad/bKXQUQ34kzgS4eYqk6gHTeeBobCtIjnjg5ofafSUfMLLjysagxQXwZp1g/AKeFeN4P1veOM4ArDdl3Pk8+dSbKtBXKViHHnEbGbUC2TWxYOCXTuigLA13ENMP9aGaHv4SafuYaHFrgsPUIUFBapaA==
+ b=wyc0XBrQBrchcMNAZSt+eutHOM4vp9/XqeN5YNvkwXOar/waNTvd4KCrg6zzLWHtSPtxGHqZtWBIhbr+uLdzcUrXl8DN9R2enXmahL7LxNU7p/hg5BqHpl48/taqZPX+ljIDPdE2h5KP74wfB79IhLzLTi4bR0qBIZ8W8Tumu2Eq7ArZc192whL5U4MyFHUC/cDYJ6or+wqbx3poC7jAyQCTv71rfZ9fa3rdOVcU7GFUkxRYYwxnaFwtVlSD7j/yc0HL5kHvQ0V5KPZ80Sfq8dpBkefRLI41mSEH5ZDuP0XwU82Yt4HhL8+RImnvFor+hr3rMPB2WGQqklJ13w3BOg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Tnib1AXW9ZIDsEM2nFmOqjwYQkawDxBoIKzNV75KWws=;
- b=ygAkY6DOysOIbmiR2WL5h5kKuJwKUHBRfBPrCHx8a045cAiLvM35cWywkxoi5xbbtfZl79usPWIbt1Xhi4uT2Q8v9viE8ibv0aVRKj2seQfpQYn7fXzxD1sfClpcvqDhES6l4qhMhGgvrhbwfsBlsWQP945e3Mg+zhbwwsvT99tESuSHKKXdysuA+kl0mT/XZvSiNJT0srBweOwMMpAmZYtbWzbwqv1aUaLhVusi2HuKkO01vz+jWQ81YrnO2T1Yx9K+ZuxNfQ/OcggrFLu45E6x0S1ms4UbsDdTsRk0TISNyluriEtoIPQGtsMh8kYslzccqPPFXIQAEkKNTQ0Klw==
+ bh=i8WtX0k4EqwDh/TgPkcMz1aEkAtxppzLjZYw7yZxlbs=;
+ b=IUSRcPN2PG9K0EEDfnyT5o0uQd9o7tsMGxhzeRKO2MSpbpBm74ufgY1875KY6qiM9VpsUyeL5BYb9xxfDIj10aefeH5k0W9edkknI0Ku+jB2hIwkLQ7le6RByXnf0y+JAvMGEHi6MPEceHvMNt7uQizqE8u6AslxLdlPD40oeFxRwJFYOOZXNWFXd2fXMUn4loszpsw9YdwsnSJRqNyOdMgYXoD3Er6RDJps2Xv08U6uiqMFUYuGDTaZSy1xgcoUW5DwAMISPHcFh3Vo21AVpBlwo/HdjN2+LD8Dz7stEPvUKqphZwR1Kxa3jiTt86GuZcYG9/gc62/arMwIu5devw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  222.71.101.198) smtp.rcpttodomain=cadence.com smtp.mailfrom=cixtech.com;
  dmarc=bestguesspass action=none header.from=cixtech.com; dkim=none (message
  not signed); arc=none (0)
-Received: from SG2P153CA0030.APCP153.PROD.OUTLOOK.COM (2603:1096:4:c7::17) by
- SE3PR06MB9116.apcprd06.prod.outlook.com (2603:1096:101:321::21) with
+Received: from PS2PR03CA0006.apcprd03.prod.outlook.com (2603:1096:300:5b::18)
+ by JH0PR06MB6740.apcprd06.prod.outlook.com (2603:1096:990:37::11) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.360.13; Wed, 2 Sep
- 2026 03:21:42 +0000
-Received: from OSA0EPF000000CC.apcprd02.prod.outlook.com
- (2603:1096:4:c7:cafe::a1) by SG2P153CA0030.outlook.office365.com
- (2603:1096:4:c7::17) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.21.406.3 via Frontend Transport; Wed, 2
- Sep 2026 03:21:41 +0000
+ 2026 03:21:38 +0000
+Received: from TY2PEPF0000AB87.apcprd03.prod.outlook.com
+ (2603:1096:300:5b:cafe::95) by PS2PR03CA0006.outlook.office365.com
+ (2603:1096:300:5b::18) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.382.10 via Frontend Transport; Wed, 2
+ Sep 2026 03:21:38 +0000
 X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 222.71.101.198)
  smtp.mailfrom=cixtech.com; dkim=none (message not signed)
  header.d=none;dmarc=bestguesspass action=none header.from=cixtech.com;
@@ -54,12 +54,12 @@ Received-SPF: Pass (protection.outlook.com: domain of cixtech.com designates
  222.71.101.198 as permitted sender) receiver=protection.outlook.com;
  client-ip=222.71.101.198; helo=smtprelay.cixcomputing.com; pr=C
 Received: from smtprelay.cixcomputing.com (222.71.101.198) by
- OSA0EPF000000CC.mail.protection.outlook.com (10.167.240.58) with Microsoft
+ TY2PEPF0000AB87.mail.protection.outlook.com (10.167.253.6) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.382.8 via Frontend Transport; Wed, 2 Sep 2026 03:21:39 +0000
+ 15.21.382.8 via Frontend Transport; Wed, 2 Sep 2026 03:21:37 +0000
 Received: from hongliang-System-Product-Name (unknown [172.20.64.180])
-	by smtprelay.cixcomputing.com (Postfix) with ESMTPSA id F0E234092113;
-	Wed,  2 Sep 2026 11:21:37 +0800 (CST)
+	by smtprelay.cixcomputing.com (Postfix) with ESMTPSA id 8C47E4092106;
+	Wed,  2 Sep 2026 11:21:35 +0800 (CST)
 From: Hongliang Yang <hongliang.yang@cixtech.com>
 To: peter.chen@kernel.org,
 	pawell@cadence.com,
@@ -79,37 +79,37 @@ Cc: gregkh@linuxfoundation.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Hongliang Yang <hongliang.yang@cixtech.com>
-Subject: [PATCH v2 5/5] arm64: dts: cix: Add USB4/USB5 nodes for Sky1
-Date: Wed,  2 Sep 2026 11:21:34 +0800
-Message-ID: <20260902032134.1182634-6-hongliang.yang@cixtech.com>
+Subject: [PATCH v2 1/5] dt-bindings: phy: Add CIX Sky1 USB3 PHY
+Date: Wed,  2 Sep 2026 11:21:30 +0800
+Message-ID: <20260902032134.1182634-2-hongliang.yang@cixtech.com>
 X-Mailer: git-send-email 2.54.0
 In-Reply-To: <20260831082309.3854507-1-hongliang.yang@cixtech.com>
 References: <20260831082309.3854507-1-hongliang.yang@cixtech.com>
 MIME-Version: 1.0
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: OSA0EPF000000CC:EE_|SE3PR06MB9116:EE_
-X-MS-Office365-Filtering-Correlation-Id: 26ad01ed-1c6a-4354-76fe-08df08a14dec
+X-MS-TrafficTypeDiagnostic: TY2PEPF0000AB87:EE_|JH0PR06MB6740:EE_
+X-MS-Office365-Filtering-Correlation-Id: ac051b3f-0dc2-40db-a7df-08df08a14c54
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|23010399003|36860700016|82310400026|1800799024|10067099003|18002099003|22082099003|56012099006;
-X-Microsoft-Antispam-Message-Info: LC7IjzUrd7gMfjHLPvFnUC+oXT5CIl4mb7Si8l6Z6dlW4oZ7ogTznruh2YtrH9yCpkgf7lhMLQX4xSDEsclVsnz3G7NseZvLDRF7pij3nO378smf/RdZbLnIQzcjicXoegBUjVOi2NITVsxBclFhfooXXnhWYONXQkIEJwCO1hfkvWsQLIWQzQqKblgxDUeZfEEBTTvbzo+G2okVbcQqC9QAXoXeFt360zsvkb3WcXxIWCXW5nBFAO1f6HgNKHP24USqJ4CgdVQLS5f+3yb+6n6nNahrJf7MmUSUWxuoNB8hVWjVmCGNpLXcdSD2+f1lrI+4Wx1pu2qRzFGx4+8kODrSyORo8UZZuCEouzdvdFEYCpK2b13hXan6TMMazH0Svy9e9f9QjpEHfpcoOBRNRYXRZ4zCK4Sr7uc8HMG38U+v5gM2JuTpN4SBrptX2/62h+5BnP5nQYv/YMb9enG8SOH6Ysm1TD3aWG27y23UwsYAvmP9bkHpZadPWOIjvVqF1Cw9xU+kyCOSmV9X3+FFs8hIrAScfLWWn1JvXNGBtYx5pjE8rLj0QYP+LYfwD7n9ykT8ZrHirhIPqhxjIaa+9H0T2XDsw7MP5MWBFewDnULt4goCjLEkkPj6vlwo1kXl67bHwtCiOJWuz62Cn4XMzmgB49z/S0KjcDrrywjrVZCoEBvG+b5ro/TmlS6RQcjeQji70mHi7jczt5yaGvJJVQ==
-X-Forefront-Antispam-Report: CIP:222.71.101.198;CTRY:CN;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:smtprelay.cixcomputing.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(376014)(7416014)(23010399003)(36860700016)(82310400026)(1800799024)(10067099003)(18002099003)(22082099003)(56012099006);DIR:OUT;SFP:1102;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|7416014|376014|36860700016|23010399003|82310400026|56012099006|10067099003|3023799007|18002099003|22082099003;
+X-Microsoft-Antispam-Message-Info: Fe09M9LcpZEQUHsd1489xfEB0TndOQAeUSWJn9BQyU1RBFYnnPwR0UYCyu2sq28Cl8ymKrIXe9ZJzCso0Asd3T/60f0IpztNkA2wh7QNMSNTQyCgUEwmxlnvRaELxNI4LIBiKiO3ow01ID0VoLZB84BgUSV6GzYbMuNYgciT++E/qmX6npZKZ5zvOWw7+ZdVFP4bp6Z2AP28ctpwyl+1Ay8cQI7Ix4UZtp2ITx1UD2CGKmiPzcFMEniHPbTALB1ZYxpqS8XKGgxWqNnNYhKRWRChQbS1BSWCVfSEILUZ2Rq9qt+W12w1edeW/4gVkc+/8elrfRyBG+f+07YqANKOC4LMTOBEJ44tGdHhn+SxgyHXlw/twOk0W3xj5c1ws5LvXCRYWc3oldhGuTW/g/jYJHm7y+B31zRvPHmsan1nn/2cfxli/Fcv7SGdvyHLoq6cnWpTxU/Dj4JHEkfDNogds4FuwWJEULWM94Qi6exBCwEhQS+4fd5dBDeueck226Vdx5ATgyImXXubR88wVHNEJTxUe2/wz0rvWXl/dsnY6PTQ37a6U9UeLQ+i2cbWJRNWyjni6aVGU1ieggbbY25DkSW3p63UaXnTG+0lypvDqKmHhQy9R8bzfqIMP6LDFG1RouwXSNMGKaAjFpjp+bJajQ==
+X-Forefront-Antispam-Report: CIP:222.71.101.198;CTRY:CN;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:smtprelay.cixcomputing.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(1800799024)(7416014)(376014)(36860700016)(23010399003)(82310400026)(56012099006)(10067099003)(3023799007)(18002099003)(22082099003);DIR:OUT;SFP:1102;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: Lj4oheoDoRmks+7VS8yJLfGFuejwOP+ySLwS8CraQbtezZKQkDRpnbcXclgo/OA+9GNthN41SgMlvWGzmiwNup7WjNguGL9KVsHerwzWBY+HKOD23Fvh261QwzmDAt6LrCbyakBp1dfcSp6wEH9eafxKXBHyGjzVBtyf+arUdYu50sjWzk/y8KWwThsK1l3RnKvK/3rXjqr/eB1tWoLJmlx3AuLUSxl2AOqBcXn+lwtKxIj/ZLT345rDCILg+uM9mdDAWkSqTcIfnlerHLSorXGswFaK9am6332WbThzoc6DahybVhddeyMu1aKmjzQX2VsajclLYNeURItsNUx/3anSoApFj6eqKNRJB0rR9K7pYOzJo7dLZS16XJ89dD8GeLI/Z6NjGVtgsl+TeoPSVYjBrvaiNLspEOtehRX0GmlAxRvNqZ6ojF57GTwW24b/
+X-MS-Exchange-AntiSpam-MessageData-0: fkvGPCXzH2wZ6lMAeyi/0/GJYjDHHlvD46SoAfcWJHIWlOnvzeaOxdL3QsXDBiwCSgg0pUJLUtXnZo8biI8Xnq6SQflYzL7qzB4kteBlipq+s+1OJ6jch80pM8qJaTwE7jvfMmK2regw2X0KkNuPItHrxZQYAvmcjIyeH3+rgfMSURZu6kNEFnUaJN7M77pY+eUUbjHjKyo03ynJNf9nQRXjr7UMMfu2f9EsS9wxfIQ05Vwr0gVOBqJLI+UM4iMWpjVTbUCwL3+2qUSlUruCnk8JTKbCQLmBYisWESVXdeVho7cOfhdE5OKb83b0/yXItTBVXswiNb39IxGgILxLp/GzvGUsyiVf3irA5D629zdzj5P2Swi/POtNl8SCyO0g2oyB4I+Q6bUTr9z0/ZWWYToM1hIgx9RpKx9/TMSzLp3/xDHX/HLCjfvPOcbNCb+F
 X-OriginatorOrg: cixtech.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Sep 2026 03:21:39.6060
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Sep 2026 03:21:37.1229
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 26ad01ed-1c6a-4354-76fe-08df08a14dec
+X-MS-Exchange-CrossTenant-Network-Message-Id: ac051b3f-0dc2-40db-a7df-08df08a14c54
 X-MS-Exchange-CrossTenant-Id: 0409f77a-e53d-4d23-943e-ccade7cb4811
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=0409f77a-e53d-4d23-943e-ccade7cb4811;Ip=[222.71.101.198];Helo=[smtprelay.cixcomputing.com]
-X-MS-Exchange-CrossTenant-AuthSource: OSA0EPF000000CC.apcprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthSource: TY2PEPF0000AB87.apcprd03.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SE3PR06MB9116
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: JH0PR06MB6740
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260901_202156_116863_A26A36FA 
-X-CRM114-Status: GOOD (  11.23  )
+X-CRM114-CacheID: sfid-20260901_202158_507927_108204CD 
+X-CRM114-Status: GOOD (  13.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,228 +126,128 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add USB4 and USB5 controller nodes and their associated USB3 PHY nodes
-for the CIX Sky1 SoC. Enable USB4 and USB5 in host mode on the Radxa
-Orion O6 board.
+Add device tree binding for the CIX Sky1 USB3 PHY, a multi-port
+SuperSpeedPlus PHY supporting up to two USB3 lanes.
 
 Signed-off-by: Hongliang Yang <hongliang.yang@cixtech.com>
 ---
- arch/arm64/boot/dts/cix/sky1-orion-o6.dts |  54 ++++++++++
- arch/arm64/boot/dts/cix/sky1.dtsi         | 118 ++++++++++++++++++++++
- 2 files changed, 172 insertions(+)
+ .../bindings/phy/cix,sky1-usb3-phy.yaml       | 107 ++++++++++++++++++
+ 1 file changed, 107 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/cix,sky1-usb3-phy.yaml
 
-diff --git a/arch/arm64/boot/dts/cix/sky1-orion-o6.dts b/arch/arm64/boot/dts/cix/sky1-orion-o6.dts
-index e39c87774c12..4f47e8cd70fc 100644
---- a/arch/arm64/boot/dts/cix/sky1-orion-o6.dts
-+++ b/arch/arm64/boot/dts/cix/sky1-orion-o6.dts
-@@ -80,6 +80,22 @@ pins {
- 
- 		};
- 	};
+diff --git a/Documentation/devicetree/bindings/phy/cix,sky1-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/cix,sky1-usb3-phy.yaml
+new file mode 100644
+index 000000000000..5b025a48c844
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/cix,sky1-usb3-phy.yaml
+@@ -0,0 +1,107 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/cix,sky1-usb3-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+	pinctrl_usb4: usb4-power-on-cfg {
-+		pins {
-+			bias-pull-down;
-+			drive-strength = <8>;
-+			pinmux = <CIX_PAD_GPIO041_FUNC_USB_DRIVE_VBUS4>;
-+		};
-+	};
++title: CIX Sky1 USB3 PHY
 +
-+	pinctrl_usb5: usb5-power-on-cfg {
-+		pins {
-+			bias-pull-down;
-+			drive-strength = <8>;
-+			pinmux = <CIX_PAD_GPIO042_FUNC_USB_DRIVE_VBUS5>;
-+		};
-+	};
- };
- 
- &pcie_x8_rc {
-@@ -117,3 +133,41 @@ &s5_gpio2 {
- &uart2 {
- 	status = "okay";
- };
++maintainers:
++  - Hongliang Yang <hongliang.yang@cixtech.com>
 +
-+&usb4 {
-+	pinctrl-0 = <&pinctrl_usb4>;
-+	pinctrl-names = "default";
++description:
++  The CIX Sky1 USB3 PHY is a multi-port SuperSpeedPlus PHY that
++  supports up to two USB3 lanes. Each port is represented as a
++  child node of the PHY controller.
 +
-+	status = "okay";
-+};
++properties:
++  compatible:
++    const: cix,sky1-usb3-phy
 +
-+&usbss_4 {
-+	dr_mode = "host";
++  reg:
++    maxItems: 1
 +
-+	status = "okay";
-+};
++  clocks:
++    items:
++      - description: APB register interface clock
++      - description: PHY reference clock
 +
-+&usb5 {
-+	pinctrl-0 = <&pinctrl_usb5>;
-+	pinctrl-names = "default";
++  clock-names:
++    items:
++      - const: apb
++      - const: ref
 +
-+	status = "okay";
-+};
++  resets:
++    items:
++      - description: PHY reset
++      - description: PHY APB preset
 +
-+&usbss_5 {
-+	dr_mode = "host";
++  reset-names:
++    items:
++      - const: core
++      - const: apb
 +
-+	status = "okay";
-+};
++  "#address-cells":
++    const: 1
 +
-+&usb3_phy4 {
-+	status = "okay";
++  "#size-cells":
++    const: 0
 +
-+	usb-port@0 {
-+		status = "okay";
-+	};
++patternProperties:
++  "^usb-port@[0-9a-f]+$":
++    type: object
++    description:
++      A single USB3 PHY port/lane.
 +
-+	usb-port@1 {
-+		status = "okay";
-+	};
-+};
-diff --git a/arch/arm64/boot/dts/cix/sky1.dtsi b/arch/arm64/boot/dts/cix/sky1.dtsi
-index a77c52296ebd..661251765d22 100644
---- a/arch/arm64/boot/dts/cix/sky1.dtsi
-+++ b/arch/arm64/boot/dts/cix/sky1.dtsi
-@@ -6,6 +6,8 @@
- 
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/clock/cix,sky1.h>
-+#include <dt-bindings/phy/phy.h>
-+#include <dt-bindings/reset/cix,sky1-s5-system-control.h>
- #include "sky1-power.h"
- 
- / {
-@@ -13,6 +15,11 @@ / {
- 	#address-cells = <2>;
- 	#size-cells = <2>;
- 
-+	aliases {
-+		usb4 = &usb4;
-+		usb5 = &usb5;
-+	};
++    properties:
++      reg:
++        maxItems: 1
 +
- 	cpus {
- 		#address-cells = <2>;
- 		#size-cells = <0>;
-@@ -574,6 +581,117 @@ mbox_ap2sfh: mailbox@80a0000 {
- 			cix,mbox-dir = "tx";
- 		};
- 
-+		usb4: usb@91c0314 {
-+			compatible = "cix,sky1-usbssp";
-+			reg = <0x00 0x091c0314 0x00 0x4>,
-+			      <0x00 0x091c0400 0x00 0x4>;
-+			reg-names = "axi", "controller";
-+			ranges;
-+			#address-cells = <2>;
-+			clocks = <&scmi_clk CLK_TREE_USB3A_H0_CLK_SOF>,
-+			         <&scmi_clk CLK_TREE_USB3A_0_AXI_GATE>,
-+			         <&scmi_clk CLK_TREE_USB3A_H0_CLK_LPM>,
-+			         <&scmi_clk CLK_TREE_USB3A_0_APB_GATE>;
-+			clock-names = "sof", "axi", "lpm", "apb";
-+			resets = <&s5_syscon SKY1_USBC_SS2_PRST_N>,
-+			         <&s5_syscon SKY1_USBC_SS2_RST_N>;
-+			reset-names = "apb", "core";
-+			#size-cells = <2>;
-+			cix,usb-syscon = <&s5_syscon>;
++      "#phy-cells":
++        const: 0
 +
-+			status = "disabled";
++    required:
++      - reg
++      - "#phy-cells"
 +
-+			usbss_4: usb@91d0000 {
-+				compatible = "cdns,usb3";
-+				reg = <0x00 0x91d0000 0x00 0x4000>,
-+				      <0x00 0x91d8000 0x00 0x8000>,
-+				      <0x00 0x91d4000 0x00 0x4000>;
-+				reg-names = "otg", "xhci", "dev";
-+				dr_mode = "otg";
-+				interrupts = <GIC_SPI 252 IRQ_TYPE_LEVEL_HIGH>,
-+				             <GIC_SPI 252 IRQ_TYPE_LEVEL_HIGH>,
-+				             <GIC_SPI 253 IRQ_TYPE_LEVEL_HIGH>,
-+				             <GIC_SPI 252 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-names = "host", "peripheral",
-+				                  "otg", "wakeup";
-+				maximum-speed = "super-speed-plus";
-+				phys = <&usb3_phy4_0>;
-+				phy-names = "cdns3,usb3-phy";
++    additionalProperties: false
 +
-+				status = "disabled";
-+			};
-+		};
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - resets
++  - reset-names
++  - "#address-cells"
++  - "#size-cells"
 +
-+		usb5: usb@91c0324 {
-+			compatible = "cix,sky1-usbssp";
-+			reg = <0x00 0x091c0324 0x00 0x4>,
-+			      <0x00 0x091c0410 0x00 0x4>;
-+			reg-names = "axi", "controller";
-+			ranges;
-+			#address-cells = <2>;
-+			clocks = <&scmi_clk CLK_TREE_USB3A_H1_CLK_SOF>,
-+			         <&scmi_clk CLK_TREE_USB3A_1_AXI_GATE>,
-+			         <&scmi_clk CLK_TREE_USB3A_H1_CLK_LPM>,
-+			         <&scmi_clk CLK_TREE_USB3A_1_APB_GATE>;
-+			clock-names = "sof", "axi", "lpm", "apb";
-+			resets = <&s5_syscon SKY1_USBC_SS3_PRST_N>,
-+			         <&s5_syscon SKY1_USBC_SS3_RST_N>;
-+			reset-names = "apb", "core";
-+			#size-cells = <2>;
-+			cix,usb-syscon = <&s5_syscon>;
++additionalProperties: false
 +
-+			status = "disabled";
++examples:
++  - |
++    #include <dt-bindings/clock/cix,sky1.h>
++    #include <dt-bindings/reset/cix,sky1-s5-system-control.h>
 +
-+			usbss_5: usb@91e0000 {
-+				compatible = "cdns,usb3";
-+				reg = <0x00 0x91e0000 0x00 0x4000>,
-+				      <0x00 0x91e8000 0x00 0x8000>,
-+				      <0x00 0x91e4000 0x00 0x4000>;
-+				reg-names = "otg", "xhci", "dev";
-+				dr_mode = "otg";
-+				interrupts = <GIC_SPI 257 IRQ_TYPE_LEVEL_HIGH>,
-+				             <GIC_SPI 257 IRQ_TYPE_LEVEL_HIGH>,
-+				             <GIC_SPI 258 IRQ_TYPE_LEVEL_HIGH>,
-+				             <GIC_SPI 257 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-names = "host", "peripheral",
-+				                  "otg", "wakeup";
-+				maximum-speed = "super-speed-plus";
-+				phys = <&usb3_phy4_1>;
-+				phy-names = "cdns3,usb3-phy";
++    usb-phy@9210000 {
++        compatible = "cix,sky1-usb3-phy";
++        reg = <0x9210000 0x40000>;
++        #address-cells = <1>;
++        clocks = <&scmi_clk CLK_TREE_USB3A_PHY3_GATE>,
++                 <&scmi_clk CLK_TREE_USB3A_PHY_x2_REF>;
++        clock-names = "apb", "ref";
++        resets = <&s5_syscon SKY1_USBPHY_SS_RST_N>,
++                 <&s5_syscon SKY1_USBPHY_SS_PST_N>;
++        reset-names = "core", "apb";
++        #size-cells = <0>;
 +
-+				status = "disabled";
-+			};
-+		};
++        usb-port@0 {
++            reg = <0>;
++            #phy-cells = <0>;
++        };
 +
-+		usb3_phy4: usb-phy@9210000 {
-+			compatible = "cix,sky1-usb3-phy";
-+			reg = <0x00 0x09210000 0x00 0x40000>;
-+			#address-cells = <1>;
-+			clocks = <&scmi_clk CLK_TREE_USB3A_PHY3_GATE>,
-+			         <&scmi_clk CLK_TREE_USB3A_PHY_x2_REF>;
-+			clock-names = "apb", "ref";
-+			resets = <&s5_syscon SKY1_USBPHY_SS_RST_N>,
-+			         <&s5_syscon SKY1_USBPHY_SS_PST_N>;
-+			reset-names = "core", "apb";
-+			#size-cells = <0>;
-+
-+			status = "disabled";
-+
-+			usb3_phy4_0: usb-port@0 {
-+				reg = <0>;
-+				#phy-cells = <0>;
-+
-+				status = "disabled";
-+			};
-+
-+			usb3_phy4_1: usb-port@1 {
-+				reg = <1>;
-+				#phy-cells = <0>;
-+
-+				status = "disabled";
-+			};
-+		};
-+
- 		pcie_x8_rc: pcie@a010000 {
- 			compatible = "cix,sky1-pcie-host";
- 			reg = <0x00 0x0a010000 0x00 0x10000>,
++        usb-port@1 {
++            reg = <1>;
++            #phy-cells = <0>;
++        };
++    };
 -- 
 2.54.0
 
