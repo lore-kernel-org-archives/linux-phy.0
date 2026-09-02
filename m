@@ -4,70 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69A74C624D6
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Sep 2026 14:01:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A9C0C624D3
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Sep 2026 14:13:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RhAXtkH+IucqYF4KZV14KRKgMLKrzSkrKGp2Yuk7vZk=; b=hJMZ1jN6zC43uU
-	u6RJY96FAbB+6UL9W3TFBpZOCSZV3QpuWNq1f73ezOcDIah/K+P2sM9jiflL3yfYG0ZoTfMxZ49mu
-	6HB5sH47r4iE86sv7AkgRFrZ8lKtLdTgw9yHnqKVIplhwN/iMAVF0h5eCt9o3F2QnmXyrExjvY30l
-	acgJbsTI+zqINxcjOJi+o/0VmOJ80+3coEwrfNBsTh3jAuBB+iohGeRenPZzAwps86/ldl4bXgRXc
-	tH6HSe4UYoKNVjs/S1JzbJ6o4OMTrd0p0z+Njap1Rfc3iiuiP/bsfND7h1RO5w8FEbVlvNZnGHC4u
-	x/HaOKwyW3PTtmh/9bgA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0wx6FFXWLZ38L3pGwR+ES5sNq9SEtuGeDanEa7AgipU=; b=npHnbjrTRTgmLM
+	SaTmF9IFsjCoKvRu2FaiinTw7r6En4QqgUnwpI3Gqbkq5zbxWYfWmHBuGwbdC+mpXT952HbAVKRw1
+	G6lX4aziPT80d01wZ0a9nSzCsEowqk73kdLoqbtSN8xxgQlj8WWRJtN5U2jaQproDOBrBdoH8ZJ1k
+	ZT4JwQE480euWqeQoZT8xXv0sDhpwocm2HH/aSzgdyO1aC16N+CNbzY4BnI5tJeP2kpLZLw9CvCup
+	Afh6KPC4x6eIGyzD9E70EByd4YxLpoHr/Vp9f39E7N8pKIjO19fv2T5/vk2lfR0KbQNe1rTCzb/MI
+	IXl+Y/bTY5dI4L3APWfQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1lWe-0000000EsUR-16Gn;
-	Wed, 02 Sep 2026 14:01:16 +0000
-Received: from mx.nabladev.com ([2a00:f820:417:0:178:251:229:89])
+	id 1x1liW-0000000EuPG-0UIU;
+	Wed, 02 Sep 2026 14:13:32 +0000
+Received: from mx.nabladev.com ([178.251.229.89])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1lWb-0000000EsTl-2tam;
-	Wed, 02 Sep 2026 14:01:15 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id CB580116285;
-	Wed, 02 Sep 2026 16:00:59 +0200 (CEST)
+	id 1x1liS-0000000EuON-3TBa;
+	Wed, 02 Sep 2026 14:13:30 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 26D1511BB09;
+	Wed, 02 Sep 2026 16:13:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nabladev.com;
-	s=dkim; t=1788357666;
+	s=dkim; t=1788358401;
 	h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:content-language:in-reply-to:references;
-	bh=UBvLVixT6RLkfZb5JmChiUQYBB/FY97zNKMHPqvta4I=;
-	b=c0vhFCUm60JhACOaILD6cYJwpBpRswO/i3lqu56CVr/czbBMgUfZFhRhbswuSBOvFcrnt5
-	umsfz3gNoE3y+FnfJ725bec1sYgvHj2t1SqJVD/kdEkf1hGQBn/uqXfm5NDB0KPZbgL/4L
-	CTSBib66XoXyCKoCsMikTAIk9LokJgaqTN/1d44C2d1aHp2PQ5eHeXdoNYSoWFifK7bXyk
-	bzuIEEq++2YUKG7ID8qeLFFn2yZ9jC3/VeID1XIl++kMZdccFMXY12U0+Q8saPOwPsPkA1
-	qcldKnPecGK9avgb+c4COn2TAIRkF/ucNtNpYd2RtxyB3CZnCnlfkasnOhLK5w==
-Message-ID: <6ffc69b6-4f93-4799-a369-f71ce9d97530@nabladev.com>
-Date: Wed, 2 Sep 2026 15:45:05 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 2/2] phy: stm32: Add support for ST STM32MP25
- USB2-FEMTO PHY
-To: Fabrice Gasnier <fabrice.gasnier@foss.st.com>,
- linux-phy@lists.infradead.org
-Cc: Pankaj Dev <pankaj.dev@st.com>, Rahul Kumar <rahul.kumar05@st.com>,
- Christian Bruel <christian.bruel@foss.st.com>,
- Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Conor Dooley <conor+dt@kernel.org>, Krzysztof Kozlowski
- <krzk+dt@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Patrice Chotard <patrice.chotard@foss.st.com>, Rob Herring
- <robh@kernel.org>, Rosen Penev <rosenp@gmail.com>,
- Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
- kernel@dh-electronics.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com
-References: <20260828150739.174460-1-marex@nabladev.com>
- <20260828150739.174460-2-marex@nabladev.com>
- <4a33230b-3e5a-4132-8467-79b864a91b99@foss.st.com>
-Content-Language: en-US
+	 content-transfer-encoding; bh=5YogQB6SySQ6aAk/WCOW5RxdsBzeZ+b+tzLvpdAkOkQ=;
+	b=cqIENlVqirvUqfu3sa9gEzGPy9IuHNLsFOxB1X0ScF+P9r/15lI6WkBtCpbeJ4W+dSyN6J
+	HvoC8ggeu/IDJITA2mErtPkk7ZdtSBh4GoooilITGh6X/RHm9767RplejnJIBOrF4r2wB4
+	ymL0Cc8bq7Bkpat3WfpbiZR1jq4s0+ZcxVrhWbyc24AyaBL5E5aHjRl1saq1a35NUD1c6p
+	dy5ezy71X34MbkKA/D56GWjZ7FUumCI4ksw6X7iJPs7ANsLWAzq6Q1l8zkq7rzFDfGH0+R
+	IUn5wNx7RXqsP8/UoiBkEAuqFQk5yPNlCpL5+51vElPUPBVjJSdkiIZbvD21cw==
 From: Marek Vasut <marex@nabladev.com>
-In-Reply-To: <4a33230b-3e5a-4132-8467-79b864a91b99@foss.st.com>
+To: linux-phy@lists.infradead.org
+Cc: Pankaj Dev <pankaj.dev@st.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
+	Rahul Kumar <rahul.kumar05@st.com>,
+	Fabrice Gasnier <fabrice.gasnier@foss.st.com>,
+	=?UTF-8?q?Cl=C3=A9ment=20Le=20Goffic?= <clement.legoffic@foss.st.com>,
+	Marek Vasut <marex@nabladev.com>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Christian Bruel <christian.bruel@foss.st.com>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Patrice Chotard <patrice.chotard@foss.st.com>,
+	Rob Herring <robh@kernel.org>,
+	Rosen Penev <rosenp@gmail.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	devicetree@vger.kernel.org,
+	kernel@dh-electronics.com,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-stm32@st-md-mailman.stormreply.com
+Subject: [PATCH v5 1/2] dt-bindings: phy: Document ST STM32MP25 USB2-FEMTO PHY
+Date: Wed,  2 Sep 2026 16:13:02 +0200
+Message-ID: <20260902141312.649406-1-marex@nabladev.com>
+X-Mailer: git-send-email 2.53.0
+MIME-Version: 1.0
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260902_070113_948587_47718242 
-X-CRM114-Status: GOOD (  12.37  )
+X-CRM114-CacheID: sfid-20260902_071329_165406_D42588FD 
+X-CRM114-Status: GOOD (  15.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,84 +81,88 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 9/2/26 9:52 AM, Fabrice Gasnier wrote:
-
-[...]
-
->> +static int stm32_usb2phy_set_mode(struct phy *phy, enum phy_mode mode, int submode)
->> +{
->> +	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
->> +	u32 mask = SYSCFG_USB2PHY2CR_USB2PHY2CMN |
->> +		   SYSCFG_USB2PHY2CR_VBUSVALID |
->> +		   SYSCFG_USB2PHY2CR_VBUSVLDEXT;
->> +	u32 val = 0;
->> +	int ret;
->> +
->> +	if (mode == PHY_MODE_USB_HOST) {
->> +		if (submode != USB_ROLE_NONE)
->> +			val = SYSCFG_USB2PHY2CR_VBUSVALID;
->> +	} else if (mode == PHY_MODE_USB_DEVICE) {
->> +		val = SYSCFG_USB2PHY2CR_USB2PHY2CMN |
->> +		      SYSCFG_USB2PHY2CR_VBUSVLDEXTSEL;
->> +		if (submode != USB_ROLE_NONE)
->> +			val |= SYSCFG_USB2PHY2CR_VBUSVLDEXT;
->> +		mask |= SYSCFG_USB2PHY2CR_VBUSVLDEXTSEL;
->> +	} else {
->> +		return -EINVAL;
->> +	}
->> +
->> +	ret = regmap_update_bits(phy_dev->regmap, phy_dev->cr_offset, mask, val);
->> +	if (ret)
->> +		return ret;
->> +
->> +	phy_dev->mode = mode;
-> 
-> Hello Marek,
-> 
-> The 'mode' is used typically when exiting low power mode. Should keep
-> track of the submode too here. See next comment.
-> 
->> +
->> +	return 0;
->> +}
->> +
->> +static int stm32_usb2phy1_init(struct phy *phy)
->> +{
->> +	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
->> +	int ret;
->> +
->> +	ret = stm32_usb2phy_enable(phy_dev);
->> +	if (ret)
->> +		return ret;
->> +
->> +	phy_dev->is_init = true;
->> +
->> +	return 0;
->> +}
->> +
->> +static int stm32_usb2phy2_init(struct phy *phy)
->> +{
->> +	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
->> +	int ret;
->> +
->> +	ret = stm32_usb2phy_enable(phy_dev);
->> +	if (ret)
->> +		return ret;
->> +
->> +	if (phy_dev->mode != PHY_MODE_INVALID) {
->> +		ret = stm32_usb2phy_set_mode(phy, phy_dev->mode, USB_ROLE_NONE);
-> 
-> This part restores the mode, when existing from low power: Controller
-> driver (dwc3) calls phy_init/power_on. The submode should be restored
-> too here, instead of USB_ROLE_NONE.
-Will do in V5, thanks !
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+RnJvbTogUGFua2FqIERldiA8cGFua2FqLmRldkBzdC5jb20+CgpEb2N1bWVudCBVU0IyIFBIWSBm
+b3IgU1RNMzJNUDI1IFVTQjIgY29udHJvbGxlcnMsIHdoaWNoIGluY2x1ZGVzIHRoZQpVU0IyLjAg
+aG9zdC1vbmx5IGNvbnRyb2xsZXIgYW5kIFVTQiAyLjAgcGFydCBvZiB0aGUgRFdDMyBjb250cm9s
+bGVyLgpUd28gc3VjaCBQSFlzIGluIHRvdGFsIGFyZSBwcmVzZW50IGluIFNUTTMyTVAyNSBTb0Ms
+IHRoZXkgYm90aCBhcmUKc2xpZ2h0bHkgZGlmZmVyZW50LCB0aGVyZWZvcmUgdGhleSB1c2UgZGlm
+ZmVyZW50IGNvbXBhdGlibGUgc3RyaW5nCnRvIGRpc2Nlcm4gdGhlbS4KClJldmlld2VkLWJ5OiBL
+cnp5c3p0b2YgS296bG93c2tpIDxrcnp5c3p0b2Yua296bG93c2tpQG9zcy5xdWFsY29tbS5jb20+
+ClNpZ25lZC1vZmYtYnk6IFBhbmthaiBEZXYgPHBhbmthai5kZXZAc3QuY29tPgpDby1kZXZlbG9w
+ZWQtYnk6IFJhaHVsIEt1bWFyIDxyYWh1bC5rdW1hcjA1QHN0LmNvbT4KU2lnbmVkLW9mZi1ieTog
+UmFodWwgS3VtYXIgPHJhaHVsLmt1bWFyMDVAc3QuY29tPgpDby1kZXZlbG9wZWQtYnk6IEZhYnJp
+Y2UgR2FzbmllciA8ZmFicmljZS5nYXNuaWVyQGZvc3Muc3QuY29tPgpTaWduZWQtb2ZmLWJ5OiBG
+YWJyaWNlIEdhc25pZXIgPGZhYnJpY2UuZ2FzbmllckBmb3NzLnN0LmNvbT4KQ28tZGV2ZWxvcGVk
+LWJ5OiBDbMOpbWVudCBMZSBHb2ZmaWMgPGNsZW1lbnQubGVnb2ZmaWNAZm9zcy5zdC5jb20+ClNp
+Z25lZC1vZmYtYnk6IENsw6ltZW50IExlIEdvZmZpYyA8Y2xlbWVudC5sZWdvZmZpY0Bmb3NzLnN0
+LmNvbT4KQ28tZGV2ZWxvcGVkLWJ5OiBNYXJlayBWYXN1dCA8bWFyZXhAbmFibGFkZXYuY29tPgpT
+aWduZWQtb2ZmLWJ5OiBNYXJlayBWYXN1dCA8bWFyZXhAbmFibGFkZXYuY29tPgotLS0KQ2M6IEFs
+ZXhhbmRyZSBUb3JndWUgPGFsZXhhbmRyZS50b3JndWVAZm9zcy5zdC5jb20+CkNjOiBDaHJpc3Rp
+YW4gQnJ1ZWwgPGNocmlzdGlhbi5icnVlbEBmb3NzLnN0LmNvbT4KQ2M6IENvbm9yIERvb2xleSA8
+Y29ub3IrZHRAa2VybmVsLm9yZz4KQ2M6IEZhYnJpY2UgR2FzbmllciA8ZmFicmljZS5nYXNuaWVy
+QGZvc3Muc3QuY29tPgpDYzogS3J6eXN6dG9mIEtvemxvd3NraSA8a3J6aytkdEBrZXJuZWwub3Jn
+PgpDYzogTWFuaXZhbm5hbiBTYWRoYXNpdmFtIDxtYW5pQGtlcm5lbC5vcmc+CkNjOiBNYXhpbWUg
+Q29xdWVsaW4gPG1jb3F1ZWxpbi5zdG0zMkBnbWFpbC5jb20+CkNjOiBOZWlsIEFybXN0cm9uZyA8
+bmVpbC5hcm1zdHJvbmdAbGluYXJvLm9yZz4KQ2M6IFBhbmthaiBEZXYgPHBhbmthai5kZXZAc3Qu
+Y29tPgpDYzogUGF0cmljZSBDaG90YXJkIDxwYXRyaWNlLmNob3RhcmRAZm9zcy5zdC5jb20+CkNj
+OiBSYWh1bCBLdW1hciA8cmFodWwua3VtYXIwNUBzdC5jb20+CkNjOiBSb2IgSGVycmluZyA8cm9i
+aEBrZXJuZWwub3JnPgpDYzogUm9zZW4gUGVuZXYgPHJvc2VucEBnbWFpbC5jb20+CkNjOiBWaW5v
+ZCBLb3VsIDx2a291bEBrZXJuZWwub3JnPgpDYzogZGV2aWNldHJlZUB2Z2VyLmtlcm5lbC5vcmcK
+Q2M6IGtlcm5lbEBkaC1lbGVjdHJvbmljcy5jb20KQ2M6IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpDYzogbGludXgta2VybmVsQHZnZXIua2VybmVsLm9yZwpDYzogbGludXgt
+cGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKQ2M6IGxpbnV4LXN0bTMyQHN0LW1kLW1haWxtYW4uc3Rv
+cm1yZXBseS5jb20KLS0tClYyOiAtIEZpeCB1cCBTb2IvQ2RiIGxpbmVzCiAgICAtIEZpeCB1cCBj
+b21wYXRpYmxlIHN0cmluZyBpbiBleGFtcGxlCiAgICAtIFVzZSBhZGRpdGlvbmFsUHJvcGVydGll
+czogZmFsc2UKICAgIC0gRXhwYW5kIGRlc2NyaXB0aW9uOgogICAgLSBVc2UgY2xvY2stY2VsbHMg
+PSA8MT4gdG8gZGlzY2VybiBPU0MgYW5kIGZ1dHVyZSBQTEwgY2xvY2sgZnJvbSB0aGUgUEhZClYz
+OiAtIE1vdmUgY2xvY2stY2VsbHMgbmV4dCB0byBQSFkgY2VsbHMKICAgIC0gRml4IHRoZSBiaW5k
+aW5ncwogICAgLSBGaXggdXAgU29iL0NkYiBsaW5lcyBmdXJ0aGVyClY0OiAtIFJlb3JkZXIgdGhl
+IHByb3BlcnRpZXM6IGxpc3QsIHB1dCAjLi4uY2VsbHMgYXQgdGhlIGVuZCwgcmVnIGFmdGVyIGNv
+bXBhdGlibGUKICAgIC0gU3BsaXQgdGhpcyBmcm9tIHNlcmllcyBhcm02NDogZHRzOiBwaHk6IHN0
+OiB1c2I6IEFkZCBTVE0zMk1QMiBVU0Igc3VwcG9ydAogICAgICBodHRwczovL2xvcmUua2VybmVs
+Lm9yZy9hbGwvMjAyNjA4MjIwNzQ4MTYuNTQ4NjYyLTEtbWFyZXhAbmFibGFkZXYuY29tLwpWNTog
+QWRkIFJCIGZyb20gS3J6eXN6dG9mCi0tLQogLi4uL2JpbmRpbmdzL3BoeS9zdCxzdG0zMi11c2Iy
+cGh5LnlhbWwgICAgICAgIHwgNjggKysrKysrKysrKysrKysrKysrKwogMSBmaWxlIGNoYW5nZWQs
+IDY4IGluc2VydGlvbnMoKykKIGNyZWF0ZSBtb2RlIDEwMDY0NCBEb2N1bWVudGF0aW9uL2Rldmlj
+ZXRyZWUvYmluZGluZ3MvcGh5L3N0LHN0bTMyLXVzYjJwaHkueWFtbAoKZGlmZiAtLWdpdCBhL0Rv
+Y3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvc3Qsc3RtMzItdXNiMnBoeS55YW1s
+IGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9zdCxzdG0zMi11c2IycGh5
+LnlhbWwKbmV3IGZpbGUgbW9kZSAxMDA2NDQKaW5kZXggMDAwMDAwMDAwMDAwMC4uYzc2ZTk0YzA0
+NGU2NwotLS0gL2Rldi9udWxsCisrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5n
+cy9waHkvc3Qsc3RtMzItdXNiMnBoeS55YW1sCkBAIC0wLDAgKzEsNjggQEAKKyMgU1BEWC1MaWNl
+bnNlLUlkZW50aWZpZXI6IChHUEwtMi4wLW9ubHkgT1IgQlNELTItQ2xhdXNlKQorJVlBTUwgMS4y
+CistLS0KKyRpZDogaHR0cDovL2RldmljZXRyZWUub3JnL3NjaGVtYXMvcGh5L3N0LHN0bTMyLXVz
+YjJwaHkueWFtbCMKKyRzY2hlbWE6IGh0dHA6Ly9kZXZpY2V0cmVlLm9yZy9tZXRhLXNjaGVtYXMv
+Y29yZS55YW1sIworCit0aXRsZTogU1RNaWNyb2VsZWN0cm9uaWNzIFNUTTMyIE1QVSBIaWdoLVNw
+ZWVkIFVTQiBQSFkKKworZGVzY3JpcHRpb246CisgIFVTQjIgUEhZIGJsb2NrIGluIFNUTTMyIGlz
+IGF0dGFjaGVkIHRvIFVTQiAyLjAgSG9zdCBjb250cm9sbGVyIGFuZAorICBVU0IgMi4wIHNpZGUg
+b2YgRFdDMyBEUkQgY29udHJvbGxlciwgYW5kIHByb3ZpZGVzIHRoZSBVU0IgTFMvRlMvSFMKKyAg
+Y29ubmVjdGl2aXR5LiBCb3RoIFBIWXMgYXJlIHRoZSBGRU1UTy1QSFksIGJ1dCB0aGVpciBjb25m
+aWd1cmF0aW9uCisgIGJpdHMgaW4gdGhlIHN5c3RlbSBjb250cm9sIHJlZ2lzdGVyIGFyZSBkaWZm
+ZXJlbnQgZm9yIGVhY2ggdmFyaWFudC4KKworbWFpbnRhaW5lcnM6CisgIC0gRmFicmljZSBHYXNu
+aWVyIDxmYWJyaWNlLmdhc25pZXJAZm9zcy5zdC5jb20+CisgIC0gTWFyZWsgVmFzdXQgPG1hcmV4
+QG5hYmxhZGV2LmNvbT4KKyAgLSBQYW5rYWogRGV2IDxwYW5rYWouZGV2QHN0LmNvbT4KKworcHJv
+cGVydGllczoKKyAgY29tcGF0aWJsZToKKyAgICBlbnVtOgorICAgICAgLSBzdCxzdG0zMm1wMjUt
+dXNiMnBoeTEKKyAgICAgIC0gc3Qsc3RtMzJtcDI1LXVzYjJwaHkyCisKKyAgcmVnOgorICAgIG1h
+eEl0ZW1zOiAxCisKKyAgY2xvY2tzOgorICAgIG1heEl0ZW1zOiAxCisKKyAgcmVzZXRzOgorICAg
+IG1heEl0ZW1zOiAxCisKKyAgdmRkMzMtc3VwcGx5OgorICAgIGRlc2NyaXB0aW9uOiBQaGFuZGxl
+IHRvIHJlZ3VsYXRvciBwcm92aWRpbmcgM1YzIHBvd2VyIHN1cHBseSB0byB0aGUgVVNCMiBIUyBQ
+SFkKKworICAiI2Nsb2NrLWNlbGxzIjoKKyAgICBjb25zdDogMQorCisgICIjcGh5LWNlbGxzIjoK
+KyAgICBjb25zdDogMAorCityZXF1aXJlZDoKKyAgLSBjb21wYXRpYmxlCisgIC0gcmVnCisgIC0g
+Y2xvY2tzCisgIC0gcmVzZXRzCisgIC0gdmRkMzMtc3VwcGx5CisgIC0gIiNjbG9jay1jZWxscyIK
+KyAgLSAiI3BoeS1jZWxscyIKKworYWRkaXRpb25hbFByb3BlcnRpZXM6IGZhbHNlCisKK2V4YW1w
+bGVzOgorICAtIHwKKyAgICAjaW5jbHVkZSA8ZHQtYmluZGluZ3MvY2xvY2svc3Qsc3RtMzJtcDI1
+LXJjYy5oPgorICAgICNpbmNsdWRlIDxkdC1iaW5kaW5ncy9yZXNldC9zdCxzdG0zMm1wMjUtcmNj
+Lmg+CisKKyAgICB1c2ItcGh5QDI0MDAgeworICAgICAgICBjb21wYXRpYmxlID0gInN0LHN0bTMy
+bXAyNS11c2IycGh5MSI7CisgICAgICAgIHJlZyA9IDwweDI0MDAgMHgyND47CisgICAgICAgICNw
+aHktY2VsbHMgPSA8MD47CisgICAgICAgICNjbG9jay1jZWxscyA9IDwxPjsKKyAgICAgICAgY2xv
+Y2tzID0gPCZyY2MgQ0tfS0VSX1VTQjJQSFkxPjsKKyAgICAgICAgcmVzZXRzID0gPCZyY2MgVVNC
+MlBIWTFfUj47CisgICAgICAgIHZkZDMzLXN1cHBseSA9IDwmdmRkMzN1c2I+OworICAgIH07Ci0t
+IAoyLjUzLjAKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5m
+cmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1waHkK
