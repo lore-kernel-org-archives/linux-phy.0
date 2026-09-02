@@ -4,144 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70947C624D0
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Sep 2026 10:29:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CB51C624D9
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Sep 2026 10:29:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k5zkR6obUtPHhqkRRmMUU84UyBZYV42NMFC+cUMCyMk=; b=nIeRywN6JpnxOm
-	r1OvDArLC3l1uotBf3US8zhBMu8DkzKSs+j3OT34XxRFSJ/CcFQwvCJ4CdhmKoFp4c9kjvQV9Ikrw
-	ZDQdtSbYoPz93NCdqfQ1m2DgACK3wWPZysVdsN2TtWrGn8oR/ZtdmyaMLfe2GmpxBh04hp0r+zM9e
-	ho44RbpF3H4SbZhCb80cSnEu/tLAvAP/pKTMZNj9h3h3flz3grqnmSniKxlpFQNrckgO25aid0YRc
-	gzPTTIIfpghoVXPpfdjZgEosdbml1+Kpe71EY1GJ+2BZFfWncQxy3a5vygwRxuNC7XXr126Uxn4JH
-	1M0+v3aHN7Wv7X67Ur3w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=A2JmJnrPHfd5k6ajMjcI4Z5fe7ETWr7lev6QkyFYFmQ=; b=n4TmsrxeUrRR5P9rSPi9EdP8yx
+	0xsl/DsCdK0vcZEQvdvi94dH+1yZq/EL0Pc3HsTJIlux8q/2aToxNLkgMMge/gSHN4ri5oF+ipHJk
+	U7x97KqFFrj9qcWoGXRyNHNM2SfYH34G/+wziRk1GQagATQ6AbNo1KHnSUhUwKtRdV1dGelVsbvZq
+	aixnHWj5KW7nYxXG+76FxO4mBiBX6ne4Y7OJyKVyRswFIEVymJJWbLhWS5MLyiMO0m3/bHcv+Zed5
+	sccepwSlCQXefrt2bOc5vidl5NQoWCMB6QBrwd9/E/Q3bMmx6Y5kRdxK0h9M7B33aZHKvEIf/rSul
+	Sc0oAJ0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1iDJ-0000000ELmY-48EO;
-	Wed, 02 Sep 2026 10:29:06 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1x1iDi-0000000ELrD-0y1i;
+	Wed, 02 Sep 2026 10:29:30 +0000
+Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1iDH-0000000ELm7-2zkw
+	id 1x1iDf-0000000ELpO-1qFo
 	for linux-phy@lists.infradead.org;
-	Wed, 02 Sep 2026 10:29:05 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6829MtRT4141323
-	for <linux-phy@lists.infradead.org>; Wed, 2 Sep 2026 10:29:03 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	TdOfQSqLmWJ7y3AMgqR+vy4CjQvTB1wFH1GkCyGK4vc=; b=TuWlE+PEE0fHl+Q+
-	Z7tHB0FNlZLyis+6uv07INbF2nYVZdRoJ+svY5ACNrl0dQ7DqE00o7BlnrLI/Asu
-	s38/IVguMpGDQid9B7Whs1FHbi2SlIWEkyQbHU2UWz6lj15k02oN/3xh0zZepY0/
-	7I3rpZBQRUd5tn7LiQOGnkG4HPE2ea4EjhtRpjt3Wbiim26QShD+YcjVTQTtKdGm
-	dKb96JQS2tZeuufTmb200IGGDYSSHbR3aYRdC2jKt5zQjkuRl+3Lw+BNQmdEU7aR
-	uwsfJmrM7P+viUve9DEi+tnQYkN/Vs8gS3oi3soF7vXC4XfaH5WCAD5WqCtyRjwN
-	DcDtsw==
-Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com [209.85.222.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ge39ckcsa-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 02 Sep 2026 10:29:03 +0000 (GMT)
-Received: by mail-qk1-f200.google.com with SMTP id af79cd13be357-9375d92d0caso19103885a.0
-        for <linux-phy@lists.infradead.org>; Wed, 02 Sep 2026 03:29:03 -0700 (PDT)
+	Wed, 02 Sep 2026 10:29:29 +0000
+Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-49b8ce9b733so6365565e9.1
+        for <linux-phy@lists.infradead.org>; Wed, 02 Sep 2026 03:29:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1788344942; x=1788949742; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+        d=gmail.com; s=20251104; t=1788344965; x=1788949765; darn=lists.infradead.org;
+        h=content-type:mime-version:references:in-reply-to:message-id:date
+         :subject:cc:to:from:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=TdOfQSqLmWJ7y3AMgqR+vy4CjQvTB1wFH1GkCyGK4vc=;
-        b=PdE0p98wb3wF7Dy60hngTBUJkOjw5Id0Q6wHNBoHzoKGuiHQFdO7Q0ATJVEs2BVb6y
-         GGRCYuZrdmzzeUu0cD448bx4ULM+dV0dt8XsJIRNbIXf2SHnUu1OnOLYBG0MCiewb7TI
-         rKTiuDdggZxH9klQ0TmbrJsad5Lh8IIzSzAMAHNCQDVo790UM50+/oJR2YAnDqB6bCr3
-         sYa57D0KWyGGYcSKSDd/xB15crfLXr69QukzGa4Vnk+b6XyGWLB3HpN2yfTbl0a0QWYE
-         EgVoSyv+NCgKFNhtMp26V9+ySrpndjsRJYoolwxjiSy7ldTt9L9nlGLlTrxyb+kNO4uY
-         4O9w==
+        bh=bZtvmbyOC+TIXQAgxX6du8Vv3LHAYS2xf4YGM8J09kA=;
+        b=oAK/voj5gBanEpnnNxZSnPMdkJnf48Y2ZdbSe0siooQx6ki7JomB9nFWwR0g8fHoS1
+         16U571wfKVOqyfhCGKf4kjw78iYOn4yf1G8aeDqzymAf/VKqxUEuSQA7RnwnHDWCW40O
+         PyzxLOBCAO5pSaXQZltGP71bajddgrZpvvggF1bvwisfEqrT31a+Sc1/zvyWcNRSDX0N
+         zPR2sAlEoHY1pAaTlt0Pq1pU49vD0GuCqF01tK3+cjb6P0D0jgNyfW4NYH4Kegyrr64U
+         C5i39KKb1bTb/cAV7Zxi/2OkO6EB+SjHcfm4QC1Kum9Z34T9qyH6bNTDMFhNlYrUV8UY
+         bqDg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788344942; x=1788949742;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=TdOfQSqLmWJ7y3AMgqR+vy4CjQvTB1wFH1GkCyGK4vc=;
-        b=YPbvDVezt0WBgOux0xGA9V3hAwwO1BkJbDHGX+ciyQYXjtmzE3Fz8ml5hiv8oRHauD
-         vQx2IjtzKMEaNkhDgJwEszzEFvHfpw0ybKEvhplvKGBbBffeWphX4VZFe9FnCGzmsn0r
-         X4AWVcQbUQVtq0In2U1B510aA+QS2VOIc8FNYvHx+WRkV8O08xpQ/kZ02t7EnyTsAMRK
-         deT2Rbsgo/6lyG+Ct8zba/RBQA+bqVL+ex0uYXospFj9ZPZp8GGIbmKdzCtEFToqpZyd
-         sptBxzFpQTdRQ8ZGO8+8r6Xgy2T0VWCuHGQJgPnJEBROrH6I6P4/XB5ytRn5ryhHVe8z
-         Y/ng==
-X-Gm-Message-State: AFuF++nXr7LLP0mvXHr9ImB5pYHH1PnLlBK0By1+cTw7M7uleiaaYIU+
-	x+wVvk7CMNiZr1F5ymJvZ7Y3jARs0IXDQKVyWqTQBTCmqM4ER37OnlZkl0KvnCpb3YkYnWh2wyf
-	My9MFOjwEyjUMQYI/XszJOtPWmARhmOLQFBLptM1PI3ZuHmrgznCgZBuK4hThs/3uIn7O
-X-Gm-Gg: AR+sD11TyaKhe6qii8V/2KI+kulssFoJkxsRAmbQW373398hUz68835ak4FMIwH8gmg
-	UMnWuZgmaunchfuuE9oeAz6hAvK8uMoYoy2DfYiFeYtGMRSbcL3FoQvbsxjVt4mSC07oNW8rYAO
-	HTqf+69O0tLdBfKwnJjJj+dpJWPDpzZ2Wt3JstOto+OWW7IBa9J3nNAGS+nmL2AGntx67nBji/H
-	Q5GYvdD/EqHfj+YTPUGkCsci7mXI04MoRLXlVp9vCPyF49jY8OC50EXtyuX2fG+RgYLeiHWpe0T
-	9sWhUaYBP0WF1UxMqUSAh/1hgb1Atqc5njtNCN4+zKvmkinTvtyRYbhBEtEu17w59chlanj+Laj
-	Dcwb2LCS1besuH7Z8HMlzkA==
-X-Received: by 2002:a05:620a:4623:b0:939:48e9:51a1 with SMTP id af79cd13be357-93960e1e27bmr241295085a.2.1788344942232;
-        Wed, 02 Sep 2026 03:29:02 -0700 (PDT)
-X-Received: by 2002:a05:620a:4623:b0:939:48e9:51a1 with SMTP id af79cd13be357-93960e1e27bmr241292085a.2.1788344941785;
-        Wed, 02 Sep 2026 03:29:01 -0700 (PDT)
-Received: from [192.168.202.12] ([178.235.128.140])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c25d002dcbesm109123366b.16.2026.09.02.03.28.58
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 02 Sep 2026 03:29:01 -0700 (PDT)
-Message-ID: <3d31f750-750b-4561-96a3-d265b632da6d@oss.qualcomm.com>
-Date: Wed, 2 Sep 2026 12:28:58 +0200
+        d=1e100.net; s=20251104; t=1788344965; x=1788949765;
+        h=content-type:mime-version:references:in-reply-to:message-id:date
+         :subject:cc:to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=bZtvmbyOC+TIXQAgxX6du8Vv3LHAYS2xf4YGM8J09kA=;
+        b=KbJpJw77yNW1dzP+GcVdFDGc+Lm5chMMuHwvxnrdpRdHHynt72SPq8iG1oVHLHFWaK
+         Dn80F7eF1D+fqDU4YJOZqNSHuhuD6xxjkWFiCjv1JRVdh5lknNLUFvplglz+iTJHk/9+
+         Y/LrI6RjKpYoQBVgXgyNUNuUWLEhIUrTjJU498/k+mFpxA2vf1/MiFkHARZ4tASlQ6kI
+         DpnZLWoLzS0jVNolA9VBWnZLyX5mipjVjpV+Ep9CMp+LZepEEYksNOZaj2ETL40j5xMx
+         b2NDTSh+/R+NZ5VOk5KPwDkkwmzVESsmCbb399xBV7WnFFLmo72qjcUB137nWRzRsRZA
+         tTWg==
+X-Forwarded-Encrypted: i=1; AHgh+RpDsxIh8aA00ZLteXiBeVU8MrQ3gqvPgFNo3bpwcfCkp+BnPTInsXFPK5723hneOMbemtZMIYls9JQ=@lists.infradead.org
+X-Gm-Message-State: AFuF++nhkDNUPWIHKVs0D3rp8iz9YxR7zDUJaNIvNQCYmCd1FEHMPo4k
+	3tinD8I8E0DHL74+/s+soHfzblCrq8l81Y249ePn1SJE2ChmvEJ7o3IW
+X-Gm-Gg: AR+sD11AmQxfz/Z08NFDKCoXrvuhM1evbaoVdXWbXaBrlaQ4s1NECMHDNhPggvwCuFH
+	yCs/TA/Rnp0S3xO8k5ftNVaNGjBphNG6MUVOfsUsLI5igShj9egNyTxJPJrXzV/QxH7HJaGqP4v
+	5xqcQSBYEc6wK/7VELiFxl63FdMefREPbzz5LvrhmhlnMVntfDXjA1fspJKm64+sbhkSqvlGUkl
+	sdW2vfn5RxaS3bnDiK7uYNLJVrYbF/8zlKnVfES+6rRVDrc8XOJSepiuoY7s22mnoUOBPPL0AX3
+	1M6yOnMMHAwjiZ6geTj4B55GFlSLPqvb11dOPbtu0sbpCa8u1PSbeMPaMs8QCXI8TwDyONUjRZM
+	7i1P/GmoaNuFV1O08lbVv+HcHTxtmsXTrzXYH9XuZ2QCB/QuU4kDeSL38ddH6F4o6feIC/m8J7p
+	7zMcz7WQSzO0Tx8jpvy1kASHHtPCxMY6/l59+OADg66W7mCyDPb2JpqnnUQhdyeQctvWpvhnA=
+X-Received: by 2002:a05:600c:4795:b0:49c:ed88:a782 with SMTP id 5b1f17b1804b1-49ced88a78cmr2713745e9.6.1788344964779;
+        Wed, 02 Sep 2026 03:29:24 -0700 (PDT)
+Received: from strix.localnet ([197.250.227.34])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-49cdce10148sm138145595e9.5.2026.09.02.03.29.19
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 02 Sep 2026 03:29:23 -0700 (PDT)
+From: Stefan =?UTF-8?B?RMO2c2luZ2Vy?= <stefandoesinger@gmail.com>
+To: Krzysztof Kozlowski <krzk+dt@kernel.org>, Lee Jones <lee@kernel.org>,
+ Linus Walleij <linusw@kernel.org>
+Cc: Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Brian Masney <bmasney@redhat.com>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Russell King <linux@armlinux.org.uk>, Brian Masney <bmasney+clk@redhat.com>,
+ Jerome Brunet <jbrunet+clk@baylibre.com>,
+ Manivannan Sadhasivam <mani@kernel.org>, linux-clk@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ mfd@lists.linux.dev
+Subject: Re: [PATCH v11 04/12] ARM: dts: zte: Declare zx297520v3 CRM device nodes
+Date: Wed, 02 Sep 2026 13:29:12 +0300
+Message-ID: <rJbfdbXrS62xFUkr8Ld5TQ@gmail.com>
+In-Reply-To: <20260826-zx29clk-v11-4-f8ad59c6426c@gmail.com>
+References: <20260826-zx29clk-v11-0-f8ad59c6426c@gmail.com>
+ <20260826-zx29clk-v11-4-f8ad59c6426c@gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 5/5] usb: dwc3: qcom: Modify interrupt handling for
- eUSB2 Phy targets
-To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>,
-        Vinod Koul <vkoul@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
- <conor+dt@kernel.org>,
-        Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
-        Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
-        linux-usb@vger.kernel.org
-References: <20260826-eusb2-interrupt-v6-v6-0-ae2601cfa80c@oss.qualcomm.com>
- <20260826-eusb2-interrupt-v6-v6-5-ae2601cfa80c@oss.qualcomm.com>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20260826-eusb2-interrupt-v6-v6-5-ae2601cfa80c@oss.qualcomm.com>
-X-Authority-Analysis: v=2.4 cv=T968ifKQ c=1 sm=1 tr=0 ts=6a97fa6f cx=c_pps
- a=hnmNkyzTK/kJ09Xio7VxxA==:117 a=PRfkaYvzSr8QmIIGAkY2Sg==:17
- a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
- a=EUspDBNiAAAA:8 a=FycFWezSpWEMHrBiXq0A:9 a=QEXdDO2ut3YA:10
- a=PEH46H7Ffwr30OY-TuGO:22
-X-Proofpoint-ORIG-GUID: TCtcoxFqqzb1dleoFd89YRPnorrvuQT2
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTAyMDA5MiBTYWx0ZWRfX/AiVZOCPzeJL
- aR4RxjN+ZTCDWdbOvV9FnL0kpj1CP8m4jEQAvSwuWbidBLIvyq7mjx9JYOz4dVQ8UG3fwStS3kK
- L1np4hUdmnpFWJ+LIRTBVoEvrZLbcHM=
-X-Proofpoint-GUID: TCtcoxFqqzb1dleoFd89YRPnorrvuQT2
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTAyMDA5MiBTYWx0ZWRfX9QMBZ5y6u1wS
- YJTmHhg3jTKIC6sDUeNrz27DvsTXS95KCw4K85X5GxE0g8X9W9hGJTBkO5tb/NVbFe+kQNzSnd9
- xKh1TL7CwMej2ger3SnNzptqjbsBhbcZWwhgcHM8BBoP9EGOMgSRSd99U3Vr6L7R7V3BmyC/oHp
- 6XEuyeF9gmgNXBN5OxMEiRtXtD9IzXQDgsENTTvsyhNUAejiRIGdDoJcgkeg4hOcDa6GDt13VUD
- vEEclwqCwyfHz19s/ctdkyu1bOsQoLCy4wpWdvIOwxh+mc7xD6bkm3V9FbAuCPl0LvzilTq4+OC
- 6i3xpfABbYjO63erzolZiT2Sh9wLUqI1KcIsTmPonxU3EuLIVZO5v++4TB7F8zI8Rp98fEeo8TB
- VEoQZq7iYc6baQX3h2OdU/6fXQWAjGvS04yXwQEmVh4NoYH7ftrX/6m8gtW8W1DlcZqJpDB++QL
- ibKmNSvg7k0jcuG+X9A==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-09-02_02,2026-09-01_03,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 adultscore=0 clxscore=1015 phishscore=0 priorityscore=1501
- impostorscore=0 bulkscore=0 spamscore=0 malwarescore=0 lowpriorityscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2609020092
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260902_032903_811042_E9EE7820 
-X-CRM114-Status: GOOD (  17.13  )
+X-CRM114-CacheID: sfid-20260902_032927_526327_7C6A74CA 
+X-CRM114-Status: GOOD (  26.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -153,56 +104,292 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4466431570041453227=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 8/26/26 7:02 PM, Krishna Kurapati wrote:
-> eUSB2 targets handle wakeup interrupts differently depending on device
-> speed when operating in host mode.
-> 
-> According to the eUSB2 specification, remote wakeup signaling in host
-> mode is detected via different data-line assertions based on the
-> connected device speed.
-> 
-> When a low-speed device is connected, the host repeater drives eD+ to
-> logic '1' upon detecting a K-state on the USB lines during remote wakeup
-> (eUSB2 specification, Section 5.5.14).
-> 
-> When a full-speed or high-speed device is connected, the host repeater
-> drives eD- to logic '1' upon detecting a K-state on the USB line during
-> remote wakeup (eUSB2 specification, Sections 5.5.15 and 5.5.18).
-> 
-> Since the eUSB2 PHY's "DP" and "DM" interrupt lines monitor the eD+ and
-> eD- line states, query the phy type and configure the wakeup interrupts
-> accordingly.
-> 
-> Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+--===============4466431570041453227==
+Content-Type: multipart/signed; boundary="nextPartatLajs3yRkirKyBuoKqPXQ";
+ micalg="pgp-sha256"; protocol="application/pgp-signature"
+
+--nextPartatLajs3yRkirKyBuoKqPXQ
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"; protected-headers="v1"
+From: Stefan =?UTF-8?B?RMO2c2luZ2Vy?= <stefandoesinger@gmail.com>
+Date: Wed, 02 Sep 2026 13:29:12 +0300
+Message-ID: <rJbfdbXrS62xFUkr8Ld5TQ@gmail.com>
+In-Reply-To: <20260826-zx29clk-v11-4-f8ad59c6426c@gmail.com>
+MIME-Version: 1.0
+
+Hi List, and in particular Krzysztof,
+
+
+Am Mittwoch, 26. August 2026, 00:24:03 Ostafrikanische Zeit schrieb Stefan=
+=20
+D=C3=B6singer:
+> This patch adds DT nodes for the main clock and reset controllers on the
+> zx297520v3 board. It replaces the temporary placeholder UART clocks with
+> the proper clocks exported by topcrm and lspcrm.
+>=20
+> Signed-off-by: Stefan D=C3=B6singer <stefandoesinger@gmail.com>
+>=20
+
+This patch is the only one of my Z29 Clock and Reset series that has not se=
+en=20
+review comments Did it slip through the cracks?
+
+Linus Walleij added his R-B on the patch that added the mostly stub DSTI fi=
+le,=20
+so I added him to the mail too.
+
+Cheers,
+Stefan
+
 > ---
+>=20
+> Version 11: Improved the above the line commit description, removing
+> references to "previous patches" that won't make sense when reading it
+> in the kernel commit log.
+>=20
+> Version 10: Fix issues with dt-check-style --mode=3Dstrict in newly added
+> code, but left issues in existing nodes alone.
+>=20
+> Version 9:
+> Sort new nodes by mmio address
+> rename syscon-reboot to "reboot"
+> adjust to changes in bindings
+>=20
+> Version 7:
+> Add phy nodes to topcrm
+> Remove syscon from matrixclk again
+> Adapt remove now-removed extra clk inputs from matrix
+> Add reset to LSP
+> osc26m -> clock-26m for the fixed rate clocks, likewise for 32k
+>=20
+> Version 6:
+> Add syscon to matrixclk
+>=20
+> Version 5:
+> Re-name from *clk to *crm
+> Add the syscon-reboot node here because the binding requires it
+> Re-add accidentally dropped uart2 IRQ
+> ---
+>  arch/arm/boot/dts/zte/zx297520v3.dtsi | 101
+> ++++++++++++++++++++++++++++++---- 1 file changed, 89 insertions(+), 12
+> deletions(-)
+>=20
+> diff --git a/arch/arm/boot/dts/zte/zx297520v3.dtsi
+> b/arch/arm/boot/dts/zte/zx297520v3.dtsi index a16c30a164bb..ebac3cd137df
+> 100644
+> --- a/arch/arm/boot/dts/zte/zx297520v3.dtsi
+> +++ b/arch/arm/boot/dts/zte/zx297520v3.dtsi
+> @@ -3,12 +3,26 @@
+>   * Copyright (c) 2026 Stefan D=C3=B6singer <stefandoesinger@gmail.com>
+>   */
+>=20
+> +#include <dt-bindings/clock/zte,zx297520v3-clk.h>
+>  #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +#include <dt-bindings/reset/zte,zx297520v3-reset.h>
+>=20
+>  / {
+>  	#address-cells =3D <1>;
+>  	#size-cells =3D <1>;
+>=20
+> +	osc26m: clock-26m {
+> +		compatible =3D "fixed-clock";
+> +		#clock-cells =3D <0>;
+> +		clock-frequency =3D <26000000>;
+> +	};
+> +
+> +	osc32k: clock-32k {
+> +		compatible =3D "fixed-clock";
+> +		#clock-cells =3D <0>;
+> +		clock-frequency =3D <32768>;
+> +	};
+> +
+>  	cpus {
+>  		#address-cells =3D <1>;
+>  		#size-cells =3D <0>;
+> @@ -20,15 +34,6 @@ cpu@0 {
+>  		};
+>  	};
+>=20
+> -	/* Base bus clock and default for the UART. It will be replaced once=20
+a
+> clock driver has -	 * been added.
+> -	 */
+> -	uartclk: uartclk-26000000 {
+> -		#clock-cells =3D <0>;
+> -		compatible =3D "fixed-clock";
+> -		clock-frequency =3D <26000000>;
+> -	};
+> -
+>  	timer {
+>  		compatible =3D "arm,armv7-timer";
+>  		interrupts =3D <GIC_PPI 13 IRQ_TYPE_LEVEL_LOW>,
+> @@ -75,18 +80,87 @@ uart0: serial@131000 {
+>  			arm,primecell-periphid =3D <0x0018c011>;
+>  			reg =3D <0x00131000 0x1000>;
+>  			interrupts =3D <GIC_SPI 0 IRQ_TYPE_LEVEL_HIGH>;
+> -			clocks =3D <&uartclk>, <&uartclk>;
+> +			clocks =3D <&topcrm ZX297520V3_UART0_WCLK>,
+> +				 <&topcrm ZX297520V3_UART0_PCLK>;
+>  			clock-names =3D "uartclk", "apb_pclk";
+> +			resets =3D <&topcrm ZX297520V3_UART0_RESET>;
+> +
+>  			status =3D "disabled";
+>  		};
+>=20
+> +		topcrm: clock-controller@13b000 {
+> +			compatible =3D "zte,zx297520v3-topcrm", "syscon";
+> +			reg =3D <0x0013b000 0x400>;
+> +			#clock-cells =3D <1>;
+> +			clocks =3D <&osc26m>, <&osc32k>;
+> +			clock-names =3D "osc26m", "osc32k";
+> +			interrupts =3D <GIC_SPI 42 IRQ_TYPE_EDGE_RISING>,
+> +				     <GIC_SPI 43=20
+IRQ_TYPE_EDGE_RISING>,
+> +				     <GIC_SPI 45=20
+IRQ_TYPE_EDGE_RISING>,
+> +				     <GIC_SPI 46=20
+IRQ_TYPE_EDGE_RISING>;
+> +			interrupt-names =3D "usb-up", "usb-down",
+> +					  "hsic-up", "hsic-down";
+> +			#phy-cells =3D <1>;
+> +			#reset-cells =3D <1>;
+> +
+> +			reboot {
+> +				compatible =3D "syscon-reboot";
+> +				mask =3D <0x1>;
+> +				offset =3D <0x0>;
+> +				value =3D <0x1>;
+> +			};
+> +		};
+> +
+> +		matrixcrm: clock-controller@1306000 {
+> +			compatible =3D "zte,zx297520v3-matrixcrm";
+> +			reg =3D <0x01306000 0x400>;
+> +			#clock-cells =3D <1>;
+> +			clocks =3D <&osc26m>, <&osc32k>,
+> +				 <&topcrm ZX297520V3_AHB_PCLK>,
+> +				 <&topcrm ZX297520V3_MPLL>,
+> +				 <&topcrm ZX297520V3_MPLL_D5>,
+> +				 <&topcrm ZX297520V3_DPLL>,
+> +				 <&topcrm ZX297520V3_GPLL>,
+> +				 <&topcrm ZX297520V3_GPLL_D2>,
+> +				 <&topcrm ZX297520V3_GATED_OSC26M>;
+> +			clock-names =3D "osc26m", "osc32k", "ahb", "mpll",
+> +				      "mpll-d5", "dpll", "gpll",=20
+"gpll-d2",
+> +				      "wclk-osc26m";
+> +			#hwlock-cells =3D <1>;
+> +			#reset-cells =3D <1>;
+> +		};
+> +
+> +		lspcrm: clock-controller@1400000 {
+> +			compatible =3D "zte,zx297520v3-lspcrm";
+> +			reg =3D <0x01400000 0x100>;
+> +			#clock-cells =3D <1>;
+> +			clocks =3D <&matrixcrm=20
+ZX297520V3_LSP_MPLL_D5_WCLK>,
+> +				 <&matrixcrm=20
+ZX297520V3_LSP_MPLL_D4_WCLK>,
+> +				 <&matrixcrm=20
+ZX297520V3_LSP_MPLL_D6_WCLK>,
+> +				 <&matrixcrm=20
+ZX297520V3_LSP_MPLL_D8_WCLK>,
+> +				 <&matrixcrm=20
+ZX297520V3_LSP_MPLL_D12_WCLK>,
+> +				 <&matrixcrm=20
+ZX297520V3_LSP_OSC26M_WCLK>,
+> +				 <&matrixcrm=20
+ZX297520V3_LSP_OSC32K_WCLK>,
+> +				 <&matrixcrm ZX297520V3_LSP_PCLK>,
+> +				 <&matrixcrm ZX297520V3_LSP_TDM_WCLK>,
+> +				 <&matrixcrm=20
+ZX297520V3_LSP_DPLL_D4_WCLK>;
+> +			clock-names =3D "mpll-d5", "mpll-d4", "mpll-d6",
+> +				      "mpll-d8", "mpll-d12", "osc26m",=20
+"osc32k",
+> +				      "pclk", "tdm-wclk", "dpll-d4";
+> +			#reset-cells =3D <1>;
+> +			resets =3D <&matrixcrm ZX297520V3_LSP_RESET>;
+> +		};
+> +
+>  		uart1: serial@1408000 {
+>  			compatible =3D "arm,pl011", "arm,primecell";
+>  			arm,primecell-periphid =3D <0x0018c011>;
+>  			reg =3D <0x01408000 0x1000>;
+>  			interrupts =3D <GIC_SPI 1 IRQ_TYPE_LEVEL_HIGH>;
+> -			clocks =3D <&uartclk>, <&uartclk>;
+> +			clocks =3D <&lspcrm ZX297520V3_UART1_WCLK>,
+> +				 <&lspcrm ZX297520V3_UART1_PCLK>;
+>  			clock-names =3D "uartclk", "apb_pclk";
+> +			resets =3D <&lspcrm ZX297520V3_UART1_RESET>;
+> +
+>  			status =3D "disabled";
+>  		};
+>=20
+> @@ -95,8 +169,11 @@ uart2: serial@140d000 {
+>  			arm,primecell-periphid =3D <0x0018c011>;
+>  			reg =3D <0x0140d000 0x1000>;
+>  			interrupts =3D <GIC_SPI 2 IRQ_TYPE_LEVEL_HIGH>;
+> -			clocks =3D <&uartclk>, <&uartclk>;
+> +			clocks =3D <&lspcrm ZX297520V3_UART2_WCLK>,
+> +				 <&lspcrm ZX297520V3_UART2_PCLK>;
+>  			clock-names =3D "uartclk", "apb_pclk";
+> +			resets =3D <&lspcrm ZX297520V3_UART2_RESET>;
+> +
+>  			status =3D "disabled";
+>  		};
+>  	};
+>=20
+> --
+> 2.54.0
 
-[...]
 
-> +	phy = devm_of_phy_get_by_index(dev, dev->of_node, 0);
-> +	if (IS_ERR(phy)) {
-> +		if (PTR_ERR(phy) != -ENODEV) {
-> +			ret = dev_err_probe(dev, PTR_ERR(phy),
-> +					    "failed to get usb2 phy\n");
-> +			goto clk_disable;
-> +		}
-> +		phy = NULL;
-> +	}
+--nextPartatLajs3yRkirKyBuoKqPXQ
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part.
+Content-Transfer-Encoding: 7Bit
 
-Looks like we don't have a devm_of_phy_optional_get_by_index()..
+-----BEGIN PGP SIGNATURE-----
 
-> +	qcom->has_eusb2_phy = phy && (phy_get_type(phy) == PHY_TYPE_EUSB2);
+iQJPBAABCAA5FiEEQxb0tqoFWyeVMl1sPRO8yFRPGiIFAmqX+ngbFIAAAAAABAAO
+bWFudTIsMi41KzEuMTIsMiwyAAoJED0TvMhUTxoiXQ4QAIgh4cHS40dzpXGGXT06
+nMhiX21hOye6pUgSIUkl7edEIS9jiyMtrziDQ6y08OJGZQuMkBvX7rv70aYYpcNZ
+N2ssTTrip9PyBdNxLdsz2KP3bhnlUK6Xksuk6OuvupuUcFeLojqMEXDCToTGBWmn
+GZTiROWut21Q6RF+XyRKaztTrVJO3IfGyQZGsKt7lWHRLK8NXAJKBlnTUgPHWxht
+UsHVUXebz+0qObRB+mSOVkFFAe4t0FpKyfrSMiZw7UKduO/F35gRovOHs2sIw4WR
+VhjJRneHiRl1CNw7F+wyzdzl4Uq8bMsIiwDKSB6qj920+3oV2vS2nu9WYtT2MEPK
+AzT4b8SAsDQbcExV2j0jpyHqArQlumqYpueE2rsqzS6oa+DHu352RWng7cPyA+sI
+SVs7Dx+DGNp6Fxmhm/SSItKDMX8u/6D6fjbBW0N8PUZ3NyCbyWQ/zt971VsC6bVb
+U/nALB5LYCR3sBilrIC2JGJef+1cFanxITSCYLdOoStI9oI6aLumRRQayVXp94NW
+BJk1m4SJUa+J8ff+WeexXpVYYfnWp9nCYkG+q0es0kgR1Z+0YQKRYDeaviqxcQLq
+26krvpcuMP8cgWx920NVjKh7DXPVW++x8F52hqPYZyYqM5ONWgdIWTfmTCa8Temz
+JE70f1rWWHE+Spu4bDjfQkPB
+=CjRJ
+-----END PGP SIGNATURE-----
 
-phy_get_type() and generally all PHY APIs accept nullptrs just fine,
-no need for the first check
+--nextPartatLajs3yRkirKyBuoKqPXQ--
 
-Konrad
+
+
+
+
+--===============4466431570041453227==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============4466431570041453227==--
+
+
+
+
