@@ -4,58 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F3F2C624D6
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Sep 2026 13:58:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69A74C624D6
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Sep 2026 14:01:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WtuwX6mL6zwicrPVFSJP260A4LhGgmXAB1jprGtzeVI=; b=vu/7qXlqrdbjk2
-	qgcy1ZWI+JkxwxBeqPR6kHQgUiRtdn+Jp23nHv751LTQ0LkPffomEJibXuh84xjLxOvIBDTeSiWWl
-	i6qqrht/zfjFaOeq62a+OglOpCskR7PfXFagRQUTu1JLA1MQOjxnCIjHGbsQ0wHaEDaFsHahrs/tM
-	wwDDMvQ0wRZZeFN/d+zF+xcYginsFn/eCTCg0hGdZoTx6uvE3e6S90E5ekvKBPO6A8EViJZ8Rsmsz
-	o/fyPDM3wsOStOUu1AfRLRG33B7d7WSnzbgA2AQOK9pWQS7P9HAf19yp5HxnjabcHk9ESphEZV0VS
-	Ge+s1h4116lRRojPBS6w==;
+	List-Owner; bh=RhAXtkH+IucqYF4KZV14KRKgMLKrzSkrKGp2Yuk7vZk=; b=hJMZ1jN6zC43uU
+	u6RJY96FAbB+6UL9W3TFBpZOCSZV3QpuWNq1f73ezOcDIah/K+P2sM9jiflL3yfYG0ZoTfMxZ49mu
+	6HB5sH47r4iE86sv7AkgRFrZ8lKtLdTgw9yHnqKVIplhwN/iMAVF0h5eCt9o3F2QnmXyrExjvY30l
+	acgJbsTI+zqINxcjOJi+o/0VmOJ80+3coEwrfNBsTh3jAuBB+iohGeRenPZzAwps86/ldl4bXgRXc
+	tH6HSe4UYoKNVjs/S1JzbJ6o4OMTrd0p0z+Njap1Rfc3iiuiP/bsfND7h1RO5w8FEbVlvNZnGHC4u
+	x/HaOKwyW3PTtmh/9bgA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1lU3-0000000Es5w-3dnb;
-	Wed, 02 Sep 2026 13:58:35 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1x1lWe-0000000EsUR-16Gn;
+	Wed, 02 Sep 2026 14:01:16 +0000
+Received: from mx.nabladev.com ([2a00:f820:417:0:178:251:229:89])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1lU3-0000000Es59-0XoW
-	for linux-phy@lists.infradead.org;
-	Wed, 02 Sep 2026 13:58:35 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 62591600D0;
-	Wed,  2 Sep 2026 13:58:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 571AB1F000E9;
-	Wed,  2 Sep 2026 13:58:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788357514;
-	bh=zebfgfEx2sWxKDAAqeM35LzzkO/Mo1voZLLWtrewGgg=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=JbzmOCOgJIPXB6ApRQoZR68XDtdGIvzELgBdZnZPpCafDkQuZuXEVsEaGbLfgNARd
-	 MDXVdvUTn22Fo4ubAeekiKq+9cguwThSyEl2ierhzHDp5+FtuinBqmK2yYWP4GHahZ
-	 DQcakTTW53kbCCmyg7H9DNPxJvJaolX8nwtu1qt2rjgJWH2ftKPwKOEPtO9IWUdtLY
-	 emA90v3ZB9wdTH4zvQ1yiAVJ1NM7hzJRZ9aZwQtwZiXDs3blehl+/Lj08n65rgRJI2
-	 Zb4fd3NtE6nOEXwiyfsFNd1sKI26COBkMtRbHE8FQl/hbKxVvuIr59IgFN1kxneAVU
-	 sfwGemp/LqDaQ==
-Date: Wed, 2 Sep 2026 15:58:17 +0200
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: David Carlier <devnexen@gmail.com>
-Cc: vkoul@kernel.org, neil.armstrong@linaro.org, qiang.yu@oss.qualcomm.com, 
-	konrad.dybcio@oss.qualcomm.com, krishna.chundru@oss.qualcomm.com, linux-phy@lists.infradead.org, 
-	linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 2/2] phy: qcom: qmp-pcie: Check clock-output-names count
- in the multi-PHY driver
-Message-ID: <g25bkftt7l22pr4glysnt4ce75lubvbqjcgsnqzsabuurt5kkj@q2fjdyhnlext>
-References: <20260825225729.230493-1-devnexen@gmail.com>
- <20260825225729.230493-2-devnexen@gmail.com>
+	id 1x1lWb-0000000EsTl-2tam;
+	Wed, 02 Sep 2026 14:01:15 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id CB580116285;
+	Wed, 02 Sep 2026 16:00:59 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nabladev.com;
+	s=dkim; t=1788357666;
+	h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding:content-language:in-reply-to:references;
+	bh=UBvLVixT6RLkfZb5JmChiUQYBB/FY97zNKMHPqvta4I=;
+	b=c0vhFCUm60JhACOaILD6cYJwpBpRswO/i3lqu56CVr/czbBMgUfZFhRhbswuSBOvFcrnt5
+	umsfz3gNoE3y+FnfJ725bec1sYgvHj2t1SqJVD/kdEkf1hGQBn/uqXfm5NDB0KPZbgL/4L
+	CTSBib66XoXyCKoCsMikTAIk9LokJgaqTN/1d44C2d1aHp2PQ5eHeXdoNYSoWFifK7bXyk
+	bzuIEEq++2YUKG7ID8qeLFFn2yZ9jC3/VeID1XIl++kMZdccFMXY12U0+Q8saPOwPsPkA1
+	qcldKnPecGK9avgb+c4COn2TAIRkF/ucNtNpYd2RtxyB3CZnCnlfkasnOhLK5w==
+Message-ID: <6ffc69b6-4f93-4799-a369-f71ce9d97530@nabladev.com>
+Date: Wed, 2 Sep 2026 15:45:05 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260825225729.230493-2-devnexen@gmail.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 2/2] phy: stm32: Add support for ST STM32MP25
+ USB2-FEMTO PHY
+To: Fabrice Gasnier <fabrice.gasnier@foss.st.com>,
+ linux-phy@lists.infradead.org
+Cc: Pankaj Dev <pankaj.dev@st.com>, Rahul Kumar <rahul.kumar05@st.com>,
+ Christian Bruel <christian.bruel@foss.st.com>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Conor Dooley <conor+dt@kernel.org>, Krzysztof Kozlowski
+ <krzk+dt@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Patrice Chotard <patrice.chotard@foss.st.com>, Rob Herring
+ <robh@kernel.org>, Rosen Penev <rosenp@gmail.com>,
+ Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
+ kernel@dh-electronics.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com
+References: <20260828150739.174460-1-marex@nabladev.com>
+ <20260828150739.174460-2-marex@nabladev.com>
+ <4a33230b-3e5a-4132-8467-79b864a91b99@foss.st.com>
+Content-Language: en-US
+From: Marek Vasut <marex@nabladev.com>
+In-Reply-To: <4a33230b-3e5a-4132-8467-79b864a91b99@foss.st.com>
+X-Last-TLS-Session-Version: TLSv1.3
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260902_070113_948587_47718242 
+X-CRM114-Status: GOOD (  12.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,21 +79,84 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCBBdWcgMjUsIDIwMjYgYXQgMTE6NTc6MjlQTSArMDEwMCwgRGF2aWQgQ2FybGllciB3
-cm90ZToKPiBvZl9wcm9wZXJ0eV9jb3VudF9zdHJpbmdzKCkgcmV0dXJucyBhIG5lZ2F0aXZlIGVy
-cm5vIHdoZW4gdGhlIHByb3BlcnR5Cj4gaXMgbWlzc2luZyBvciBtYWxmb3JtZWQuIFRoZSB2YWx1
-ZSB3YXMgcGFzc2VkIHN0cmFpZ2h0IHRvCj4gZGV2bV9rY2FsbG9jKCksIHdob3NlIG92ZXJmbG93
-IGNoZWNrIHJlamVjdGVkIGl0LCB0dXJuaW5nIGEgZGV2aWNlIHRyZWUKPiBwcm9ibGVtIGludG8g
-YSBib2d1cyAtRU5PTUVNIHdpdGggbm8gZGlhZ25vc3RpYy4KPiAKPiBGaXhlczogMTc4MWJlM2M4
-YTVkICgicGh5OiBxY29tOiBxbXAtcGNpZTogQWRkIFFNUCBQQ0llIE11bHRpLVBIWSBkcml2ZXIi
-KQo+IFNpZ25lZC1vZmYtYnk6IERhdmlkIENhcmxpZXIgPGRldm5leGVuQGdtYWlsLmNvbT4KClJl
-dmlld2VkLWJ5OiBNYW5pdmFubmFuIFNhZGhhc2l2YW0gPG1hbml2YW5uYW4uc2FkaGFzaXZhbUBv
-c3MucXVhbGNvbW0uY29tPgoKLSBNYW5pCgotLSAK4K6u4K6j4K6/4K614K6j4K+N4K6j4K6p4K+N
-IOCumuCupOCuvuCumuCuv+CuteCuruCvjQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGlu
-dXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
-aWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 9/2/26 9:52 AM, Fabrice Gasnier wrote:
+
+[...]
+
+>> +static int stm32_usb2phy_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+>> +{
+>> +	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
+>> +	u32 mask = SYSCFG_USB2PHY2CR_USB2PHY2CMN |
+>> +		   SYSCFG_USB2PHY2CR_VBUSVALID |
+>> +		   SYSCFG_USB2PHY2CR_VBUSVLDEXT;
+>> +	u32 val = 0;
+>> +	int ret;
+>> +
+>> +	if (mode == PHY_MODE_USB_HOST) {
+>> +		if (submode != USB_ROLE_NONE)
+>> +			val = SYSCFG_USB2PHY2CR_VBUSVALID;
+>> +	} else if (mode == PHY_MODE_USB_DEVICE) {
+>> +		val = SYSCFG_USB2PHY2CR_USB2PHY2CMN |
+>> +		      SYSCFG_USB2PHY2CR_VBUSVLDEXTSEL;
+>> +		if (submode != USB_ROLE_NONE)
+>> +			val |= SYSCFG_USB2PHY2CR_VBUSVLDEXT;
+>> +		mask |= SYSCFG_USB2PHY2CR_VBUSVLDEXTSEL;
+>> +	} else {
+>> +		return -EINVAL;
+>> +	}
+>> +
+>> +	ret = regmap_update_bits(phy_dev->regmap, phy_dev->cr_offset, mask, val);
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	phy_dev->mode = mode;
+> 
+> Hello Marek,
+> 
+> The 'mode' is used typically when exiting low power mode. Should keep
+> track of the submode too here. See next comment.
+> 
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static int stm32_usb2phy1_init(struct phy *phy)
+>> +{
+>> +	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
+>> +	int ret;
+>> +
+>> +	ret = stm32_usb2phy_enable(phy_dev);
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	phy_dev->is_init = true;
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static int stm32_usb2phy2_init(struct phy *phy)
+>> +{
+>> +	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
+>> +	int ret;
+>> +
+>> +	ret = stm32_usb2phy_enable(phy_dev);
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	if (phy_dev->mode != PHY_MODE_INVALID) {
+>> +		ret = stm32_usb2phy_set_mode(phy, phy_dev->mode, USB_ROLE_NONE);
+> 
+> This part restores the mode, when existing from low power: Controller
+> driver (dwc3) calls phy_init/power_on. The submode should be restored
+> too here, instead of USB_ROLE_NONE.
+Will do in V5, thanks !
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
