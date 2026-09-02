@@ -4,112 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9BE62C624D0
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Sep 2026 03:23:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2DC14C624D0
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Sep 2026 03:32:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wgv06Ucla1YNSjJgIUVXUPLYh8nFQsQM2JuBBBAuCuA=; b=oTHQMgdKckJrg3
-	tGFOSEDGqnCgd+q6EAiYN+yfz46HujgtoEWoHfopMOGc/Omp6VHms1+D84KZjwA1gcy5H/uwcAo3G
-	9dDTBcluwH4/resgBZO4kVAHW9E42S3j+T9XNeNo/dmgni8PfchLA6bajo6G9sqG3ICcqvJUt3qY4
-	6XsfFywlBVKN9OVViVg9fn+859qgoGcsBfN1GQEFw2ZWd5RqnNl8ysMgtWh1UWyi3lsCw2xUTEuck
-	iID0mYbZbJhdVzJGaCbZqjNkEb0BlB9FB0B+wqqUnH/sg+UOdKjQw9V8JgRHv1JAj0H2TQ0ksNu8S
-	qqrEkCIkuHFDDnv9ijmA==;
+	List-Owner; bh=G4VjPJBb9srgFVPa716HBYTM/9ewApG+vpM5EtwKjLw=; b=OyrWqjQhWnbZV6
+	uPLsfU4Ha7IlrlkKpXSz2Ibq5WNZTmLakmIHCK83bXHW2D0jBbVJwqEa3pXxuHPyLb+kHIaUegmQW
+	bntrYh6gN8bBuqI19zhgiY1yhAkByjPkOs0JMsazB3MjZf6uDMVdpTUunlbVhZtXvqI5Pw7Db1bFs
+	/fRkc8N8lFKhluDdgULBJ/hZwYu0WvBVtaqK1lS3LUVjLwtU23UZ7VF56ZPIah5FlqsORWmHiwNu1
+	A+A7cVobUyMSsNaTZuPnmeBfnwpiOouSiuxHOsxe3KnxAd2NHrvtmW/L5L9SiDVshL9yEccI4x/PJ
+	7T2Txc0bl0p+oZwPK+Ug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1bZI-0000000DiKK-1Blj;
-	Wed, 02 Sep 2026 03:23:20 +0000
-Received: from mail-japaneastazon11023095.outbound.protection.outlook.com ([52.101.127.95] helo=TYDPR03CU002.outbound.protection.outlook.com)
+	id 1x1bhu-0000000Dj3X-30TN;
+	Wed, 02 Sep 2026 03:32:14 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1bZE-0000000DiIT-2dKS;
-	Wed, 02 Sep 2026 03:23:18 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=rdYoGqUqhKqLirVGb1v86WTG+kAu5SSQMDiNley+Us1nufg7xNpJQ8DayR4WOzPibsHTfbWkeiaZXb0Ue5mGWuVGrDHJ0JG12juu7hIt52RS3X7TlG0KG8PW/N4u19b5Gtl+e6B6kUxE0lC8Fl2w00N1lw98gPT7Fj+kjuXQJHGeFZa+QB4LHDtFp50p2N0GmZVygzrdpDVvPtHiPkG1lAlPeRYG03g3xW+JLK6TllHD3F73G3wuhBrkIcyHNMcsF2cmRNOSBHBEtfVWZj/sMRU8DFCguROPghwzlcrBjXxTbxMg+F/l8owx24uGyzOaKg+Hb7LwR9hR3pmo/IIMdg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=BJyWZC/L2aqfp4YvKRifzxYVv57fndsYGyGDc2rpXNw=;
- b=R2gcdYyxpB9ih+X39nLxibN93ZzpPE7SOJKBgwEeFunXjyT0Lcoei2dQYaYPHaJctSBsxm4Rg+uxTrPu+0KJJh0r6ASe+UP39zXkBWDsbpqoTAR9Volj1LkqiEpttwgXfMjGnN2btKUjK1RGvmwc5ZBwIORIi2Rz5OIWG8RXW2JRODq+eWSebBzTbx9XPO9lj3HBFxPxNSm+WZQSH12BBnceztcekP3Xmm4gxADx4rI3g88nUuGquvEXmlSqTM3TLmr6BXGGWKLxjq8LZiddJb2teBINtG2zx8+X0amddLbOgJMQtPAjTPlGkJqvhbCjWC/jnjLGowAq2iaSYnzfig==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 222.71.101.198) smtp.rcpttodomain=cadence.com smtp.mailfrom=cixtech.com;
- dmarc=bestguesspass action=none header.from=cixtech.com; dkim=none (message
- not signed); arc=none (0)
-Received: from SI1PR02CA0056.apcprd02.prod.outlook.com (2603:1096:4:1f5::7) by
- SEZPR06MB6197.apcprd06.prod.outlook.com (2603:1096:101:f3::15) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.360.13; Wed, 2 Sep 2026 03:23:11 +0000
-Received: from OSA0EPF000000C7.apcprd02.prod.outlook.com
- (2603:1096:4:1f5:cafe::4) by SI1PR02CA0056.outlook.office365.com
- (2603:1096:4:1f5::7) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.21.382.11 via Frontend Transport; Wed, 2
- Sep 2026 03:23:10 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 222.71.101.198)
- smtp.mailfrom=cixtech.com; dkim=none (message not signed)
- header.d=none;dmarc=bestguesspass action=none header.from=cixtech.com;
-Received-SPF: Pass (protection.outlook.com: domain of cixtech.com designates
- 222.71.101.198 as permitted sender) receiver=protection.outlook.com;
- client-ip=222.71.101.198; helo=smtprelay.cixcomputing.com; pr=C
-Received: from smtprelay.cixcomputing.com (222.71.101.198) by
- OSA0EPF000000C7.mail.protection.outlook.com (10.167.240.53) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.382.8 via Frontend Transport; Wed, 2 Sep 2026 03:23:09 +0000
-Received: from hongliang-System-Product-Name (unknown [172.20.64.180])
-	by smtprelay.cixcomputing.com (Postfix) with ESMTPSA id EAC8240920E1;
-	Wed,  2 Sep 2026 11:23:06 +0800 (CST)
-From: Hongliang Yang <hongliang.yang@cixtech.com>
-To: krzk@kernel.org
-Cc: cix-kernel-upstream@cixtech.com,
-	conor+dt@kernel.org,
-	devicetree@vger.kernel.org,
-	fugang.duan@cixtech.com,
-	gregkh@linuxfoundation.org,
-	hongliang.yang@cixtech.com,
-	krzk+dt@kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-usb@vger.kernel.org,
-	neil.armstrong@linaro.org,
-	p.zabel@pengutronix.de,
-	pawell@cadence.com,
-	peter.chen@kernel.org,
-	robh@kernel.org,
-	rogerq@kernel.org,
-	vkoul@kernel.org
-Subject: Re: [PATCH v1 1/4] dt-bindings: Add CIX Sky1 USB bindings
-Date: Wed,  2 Sep 2026 11:23:06 +0800
-Message-ID: <20260902032306.1182941-1-hongliang.yang@cixtech.com>
-X-Mailer: git-send-email 2.54.0
-In-Reply-To: <503e87d9-3311-413a-98c0-e02a02c4a354@kernel.org>
-References: <503e87d9-3311-413a-98c0-e02a02c4a354@kernel.org>
-MIME-Version: 1.0
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: OSA0EPF000000C7:EE_|SEZPR06MB6197:EE_
-X-MS-Office365-Filtering-Correlation-Id: d21fa2d8-0b2c-4a1c-e0fb-08df08a18350
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|82310400026|36860700016|23010399003|376014|7416014|10067099003|6133799003|3023799007|18002099003|22082099003|56012099006;
-X-Microsoft-Antispam-Message-Info: ePfPXo8cb4KRXRq7UL5GFJkvJgSGCiv9pIod2tB3Kw88//EWQ0LKT6XOnYKIeo+bw7muAAdyMFpvF5+Iuc0ymhw/sIzSPboX2FoVjsljwXV/+LiVsd9tD1NJmaQxCBbGbO6ZIDsq5NFQHGONJnHYuyX10RN1QWMH6r/an9DbZ2OiZqhI2ARz+cdFZzsbM1nJ4QUVu1qCO2GuSF5AcyAs8gEpIpKUVsE+Ewe2R34qrfc5TAuMvUv2J9MvIEpxbHvD1uq+udrBbOOWQviCfc8hOWtdrAanvoLZYDvFQX/JWXdhBCoHhQLc3gEm0NbsOJ3rPV7lfQb9sG7gNJ1VdLGeWZU2FHBa/O0f1tKEWt1X7ORr3x8PMQu7m6Jh+XKGr6rext17eABfw7chYjycwxeEJWl/BVj4iG/q2aEGY1wTzqQFq71s2TXEHVj+CTzhEt8cjOXr6fbHZKu/EMEw5gxmukm2ccj70CPdGznaOId9aGW6ilfgc67o2GqibIlZr6k1Fd3fjYO5sfV0lTj4vhpJtTqeJs/qDdKiqJMjnC6kXhoujFufQKUJn4qB3f6kymH1VUAIPrJSGcAUjFBSq9O/dEiS/vwvs1ui9SYabbt4s1ZRpccjMaqrV8HDg5Mr4bcx6yV8zGFs8C9KX8RqFSLZdg==
-X-Forefront-Antispam-Report: CIP:222.71.101.198;CTRY:CN;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:smtprelay.cixcomputing.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(1800799024)(82310400026)(36860700016)(23010399003)(376014)(7416014)(10067099003)(6133799003)(3023799007)(18002099003)(22082099003)(56012099006);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: yO4ZuF/7bb8tZ3E6q5rd1qaSbV0vaJ30MkC/+E7zDBbQNxpZVZh6eUiRzS4CJ4aB6A5WEuT00jHtznkVj0o8V3pFecIAzgdhmxBwEVU3YE8WKEpermSqtEuYhM46Ab0SkcE3iaRSUYf05QugL7Mpd8Nc76Jm48zFqtE4DmpA8ymCvmxdSze2YUXsJNO4H2e7jiMw/28kmV9QbpQJHo+ZBzQ965IBy38UqctSYPR+QMph+r1ot19l4SsJK2JfHU8+sBqb9CY1S2NJbOiwB3x5IC//rnGhGOR+TSgJIKdBWdJip0I2IykS7vEcHItOU+wC2pvB69HsacB001KC/aGErEdFygV7M3P/vMb9Xe+t1TLt63Ixlk0RV0XUYIpNVC/7zK2ehkqYWy5rsXxMwanTecOXNMuUubpYYUVuJidLFNoO2gnV5666fdXIcvhUyAn4
-X-OriginatorOrg: cixtech.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Sep 2026 03:23:09.3473
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: d21fa2d8-0b2c-4a1c-e0fb-08df08a18350
-X-MS-Exchange-CrossTenant-Id: 0409f77a-e53d-4d23-943e-ccade7cb4811
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=0409f77a-e53d-4d23-943e-ccade7cb4811;Ip=[222.71.101.198];Helo=[smtprelay.cixcomputing.com]
-X-MS-Exchange-CrossTenant-AuthSource: OSA0EPF000000C7.apcprd02.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SEZPR06MB6197
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260901_202316_677721_EFE70C95 
-X-CRM114-Status: GOOD (  25.73  )
+	id 1x1bht-0000000Dj3C-34R8
+	for linux-phy@lists.infradead.org;
+	Wed, 02 Sep 2026 03:32:13 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 917BB600C8;
+	Wed,  2 Sep 2026 03:32:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ED6EA1F000E9;
+	Wed,  2 Sep 2026 03:32:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1788319932;
+	bh=auS/g3DXuzMvxumUHoHI3AcvLKzS4Mi6CyO60EpltJ0=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=jTwqGXxyo7Fm2+wDYtulYKOwphhy1GsK+PKVWbsYgM3ivM/VDGJTRkW7QnSJrjl1c
+	 XM8OKNrG9j/hTRGnX2s7O2+ZGVzgxzNML2wcAeOzHIEUgVF5TZTOIH3i9U2yn8akSX
+	 jWDe3mO7D46WQ8JCoSJ3QfAgRyqVLtr0nawiwHToCI95ezuhrjhM6l9IUi45Lg5VQo
+	 kmLLJqk8NCwxwrELCa35NE9gTNBJFFHBFMSEtpb3x+vIrOCR4kM7PNTTiChNPSDyY0
+	 0sFz+8S5fr3TkBwp+zXBK3HHaexxZ9sfnNH0GeWuVy+dGiKGYLOm/LOUISLj3iUUbH
+	 fP6wjuhMhotJw==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v2 3/5] phy: cix: Add CIX Sky1 USB3 PHY driver
+To: "Hongliang Yang" <hongliang.yang@cixtech.com>
+Cc: robh@kernel.org, vkoul@kernel.org, devicetree@vger.kernel.org, olteanv@gmail.com, conor+dt@kernel.org, linux-phy@lists.infradead.org, neil.armstrong@linaro.org
+In-Reply-To: <20260902032134.1182634-4-hongliang.yang@cixtech.com>
+References: <20260831082309.3854507-1-hongliang.yang@cixtech.com>
+ <20260902032134.1182634-4-hongliang.yang@cixtech.com>
+Date: Wed, 02 Sep 2026 03:32:11 +0000
+Message-Id: <20260902033211.ED6EA1F000E9@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,146 +62,74 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krzysztof,
-
-Thank you for the review. Most of the comments are already addressed in
-v2 [1]; the remaining points are answered inline below.
-
-[1] https://lore.kernel.org/all/20260902032134.1182634-1-hongliang.yang@cixtech.com/
-
-On 01/09/2026 07:47, Krzysztof Kozlowski wrote:
-> Please use subject prefixes matching the subsystem. You can get them for
-> example with `git log --oneline -- DIRECTORY_OR_FILE` on the directory
-> your patch is touching. For bindings, the preferred subjects are
-> explained here:
-> https://www.kernel.org/doc/html/latest/devicetree/bindings/submitting-patches.html#i-for-patch-submitters
->
-> A nit, subject: drop second/last, redundant "bindings". The
-> "dt-bindings" prefix is already stating that these are bindings.
-> See also:
-> https://elixir.bootlin.com/linux/v7.1-rc7/source/Documentation/devicetree/bindings/submitting-patches.rst#L23
->
-> And do not combine USB patches with other subsystems.
-
-Done in v2: the combined bindings patch is split into separate patches
-with "dt-bindings: phy:" and "dt-bindings: usb:" subject prefixes, one
-schema per patch, e.g.
-
-  dt-bindings: phy: Add CIX Sky1 USB3 PHY
-  dt-bindings: usb: Add CIX Sky1 USBSSP controller
-
-> Please read and follow DTS coding style.
-
-Done in v2: the schemas and the new DTS regions now pass
-dt-check-style in strict mode.
-
-> > +unevaluatedProperties: false
->
-> Which other schema do you want to reference?
-
-None. Changed to additionalProperties: false in v2.
-
-> > +  reg:
-> > +    items:
-> > +      - description: AXI property configuration register
-> > +      - description: Controller status register
->
-> Registers are not address spaces. Devices do not have address spaces of
-> one register, so this is not a real device.
-
-I understand the concern, and we looked at this again against the SoC
-documentation. These two registers are RCSU (system configuration
-unit) registers, but each of them is dedicated to one USB controller
-and not shared with any other device:
-
- - The first register is the controller's Control Register for the AXI
-   cache attributes. Its bit fields are awcache[3:0] (bits 3:0) and
-   arcache[3:0] (bits 7:4), i.e. the AXI cache attributes of the
-   controller's own AXI master interface. The glue driver programs it
-   once during initialization.
-
- - The second register is a status register providing the AXI clock
-   valid status the driver polls while enabling the controller.
-
-The two instances submitted in this series illustrate the per-device
-offsets: the USB4 controller uses 0x091c0314 (AXI cache attributes)
-and 0x091c0400 (status), while USB5 uses 0x091c0324 and 0x091c0410.
-
-The reason they end up in a separate node from the Cadence USBSSP core
-is purely physical: on Sky1 the controller's control registers and the
-Cadence USBSSP core registers are two disjoint regions in the address
-map (e.g. 0x091c0314 vs 0x091d0000 for the USB4 controller). The glue
-node therefore describes the Sky1-specific control registers, clocks
-and resets, while the core node is the Cadence USBSSP core itself,
-describing the actual register windows the cdns3 driver maps
-("otg", "xhci", "dev").
-
-That said, the register windows are admittedly tiny, so if you prefer
-this modelled differently we are open to suggestions. One alternative
-we considered was folding the control register file into the core node
-and referencing the Sky1 glue properties from there, but that would
-mix the Cadence core registers with Sky1-specific ones and lose the
-1:1 mapping to the hardware topology.
-
-> > +      - const: axi_property
->
-> axi
->
-> > +      - const: controller_status
->
-> controller
-
-Renamed in v2 (reg-names = "axi", "controller").
-
-> > +  cix,usb_syscon:
-> > +    $ref: /schemas/types.yaml#/definitions/phandle
-> > +    description:
-> > +      Phandle to the Sky1 S5 system controller used to program USB mode
-> > +      strap controls.
->
-> So this is part of that device most likely.
-
-The OTG mode strap bits live in the S5 power-management controller,
-which is a separate hardware block shared by several subsystems, so
-they are not part of the USB controller's register file. That is why
-the strap is accessed through the syscon phandle instead of a reg
-entry, while the per-controller registers discussed above stay in the
-USB node's own reg.
-
-> > +  axi_bmax_value:
-> > +    $ref: /schemas/types.yaml#/definitions/uint32
-> > +    default: 0x7
-> > +    description:
-> > +      AXI bus maximum burst length configuration value.
-
-Dropped in v2: the value is fixed for the SoC, so the driver now uses a
-compile-time constant and the property is gone.
-
-> > +patternProperties:
-> > +  "^usb-controller@[0-9a-f]+$":
->
-> Why using completely different names than entire Linux kernel?
-
-Renamed to "usb@..." in v2, matching the cdns,usb3 nodes elsewhere.
-
-> > +    $ref: cdns,usb3.yaml#
-> > +    description:
-> > +      The Cadence USBSSP core controller node. See cdns,usb3.yaml
-> > +      for properties such as dr_mode, maximum-speed, phys, and interrupts.
->
-> Redundant description.
-
-Shortened in v2.
-
-Best regards,
-Hongliang Yang
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIEhhcmR3YXJlIHJlc2V0
+cyBhc3NlcnRlZCBhZnRlciBleHBvc2luZyB0aGUgUEhZIHByb3ZpZGVyLCByaXNraW5nIGEgcmFj
+ZSBjb25kaXRpb24gd2l0aCBjb25zdW1lcnMuCi0gW01lZGl1bV0gVGVhcmRvd24gYXN5bW1ldHJ5
+IGFuZCBpbnZlcnRlZCB1bnJvbGwgb3JkZXIgZm9yIGhhcmR3YXJlIGNsb2NrcyBhbmQgcmVzZXRz
+LgotIFtNZWRpdW1dIFVuc2FmZSBzdHJpbmcgY29tcGFyaXNvbiB1c2luZyBgZndub2RlX2dldF9u
+YW1lKClgIHdpdGhvdXQgTlVMTCBjaGVjay4KLS0KCmNvbW1pdCBkZDBlYTViZDMwMWNmNGMyOTQ2
+ZjRiYjgwODQzYjM1YzdhZDFhYjY0CkF1dGhvcjogSG9uZ2xpYW5nIFlhbmcgPGhvbmdsaWFuZy55
+YW5nQGNpeHRlY2guY29tPgoKcGh5OiBjaXg6IEFkZCBDSVggU2t5MSBVU0IzIFBIWSBkcml2ZXIK
+ClRoaXMgY29tbWl0IGFkZHMgYSBQSFkgZHJpdmVyIGZvciB0aGUgVVNCMyBQSFkgb24gQ0lYIFNr
+eTEgU29DcywgaGFuZGxpbmcKaW5pdGlhbGl6YXRpb24sIHJlc2V0LCBhbmQgY2xvY2sgbWFuYWdl
+bWVudCBmb3IgdGhlIG11bHRpLXBvcnQgVVNCMyBQSFkuCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJz
+L3BoeS9jaXgvcGh5LWNpeC11c2IzLmMgYi9kcml2ZXJzL3BoeS9jaXgvcGh5LWNpeC11c2IzLmMK
+PiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+IC0tLSAvZGV2L251bGwKPiArKysgYi9kcml2ZXJzL3Bo
+eS9jaXgvcGh5LWNpeC11c2IzLmMKWyAuLi4gXQo+ICtzdGF0aWMgaW50IHNreTFfdTNwaHlfZXhp
+dChzdHJ1Y3QgY2l4X3UzcGh5ICp1M3BoeSkKPiArewo+ICsJdTNwaHktPmluaXRfY291bnQtLTsK
+PiArCWlmICh1M3BoeS0+aW5pdCAmJiB1M3BoeS0+aW5pdF9jb3VudCA9PSAwKSB7Cj4gKwkJcmVz
+ZXRfY29udHJvbF9hc3NlcnQodTNwaHktPnJlc2V0KTsKPiArCQlyZXNldF9jb250cm9sX2Fzc2Vy
+dCh1M3BoeS0+cHJlc2V0KTsKPiArCQljbGtfZGlzYWJsZV91bnByZXBhcmUodTNwaHktPmFwYl9j
+bGspOwo+ICsJCWNsa19kaXNhYmxlX3VucHJlcGFyZSh1M3BoeS0+cmVmX2Nsayk7CgpbU2V2ZXJp
+dHk6IE1lZGl1bV0KRG9lcyB0aGlzIGRpc2FibGUgdGhlIGNsb2NrcyBpbiB0aGUgY29ycmVjdCBv
+cmRlcj8gVGhlIGluaXRpYWxpemF0aW9uIHBhdGgKZW5hYmxlcyBhcGJfY2xrIGJlZm9yZSByZWZf
+Y2xrLiBUbyBlbnN1cmUgYSBwcm9wZXIgTElGTyB0ZWFyZG93biBzZXF1ZW5jZSwKc2hvdWxkIHJl
+Zl9jbGsgYmUgZGlzYWJsZWQgYmVmb3JlIGFwYl9jbGsgaGVyZT8KClsgLi4uIF0KPiArc3RhdGlj
+IGludCBza3kxX3UzcGh5X2luaXQoc3RydWN0IGNpeF91M3BoeSAqdTNwaHkpCj4gK3sKWyAuLi4g
+XQo+ICtkaXNhYmxlX3JlZl9jbGs6Cj4gKwljbGtfZGlzYWJsZV91bnByZXBhcmUodTNwaHktPnJl
+Zl9jbGspOwo+ICtkaXNhYmxlX2FwYl9jbGs6Cj4gKwljbGtfZGlzYWJsZV91bnByZXBhcmUodTNw
+aHktPmFwYl9jbGspOwo+ICthc3NlcnRfcmVzZXRfcHJlc2V0Ogo+ICsJcmVzZXRfY29udHJvbF9h
+c3NlcnQodTNwaHktPnByZXNldCk7Cj4gKwlyZXNldF9jb250cm9sX2Fzc2VydCh1M3BoeS0+cmVz
+ZXQpOwoKW1NldmVyaXR5OiBNZWRpdW1dCldpbGwgdGhpcyBlcnJvciB1bnJvbGwgc2VxdWVuY2Ug
+bGVhdmUgdGhlIGhhcmR3YXJlIGluIGFuIHVucmVjb3ZlcmFibGUgc3RhdGU/CgpUaGlzIHBhdGgg
+ZGlzYWJsZXMgdGhlIGNsb2NrcyBiZWZvcmUgYXNzZXJ0aW5nIHRoZSBoYXJkd2FyZSByZXNldHMu
+IFRoaXMKY29udHJhZGljdHMgdGhlIG5vcm1hbCB0ZWFyZG93biBzZXF1ZW5jZSBpbiBza3kxX3Uz
+cGh5X2V4aXQoKSwgd2hpY2ggYXNzZXJ0cwp0aGUgcmVzZXRzIGJlZm9yZSBkaXNhYmxpbmcgdGhl
+IGNsb2Nrcy4KClsgLi4uIF0KPiArc3RhdGljIGludCBjaXhfdTNwaHlfcHJvYmUoc3RydWN0IHBs
+YXRmb3JtX2RldmljZSAqcGRldikKPiArewpbIC4uLiBdCj4gKwlkZXZpY2VfZm9yX2VhY2hfY2hp
+bGRfbm9kZV9zY29wZWQoZGV2LCBjaGlsZF9mbikgewo+ICsJCWNoaWxkX25wID0gdG9fb2Zfbm9k
+ZShjaGlsZF9mbik7Cj4gKwkJaWYgKCFzdHJuY21wKGZ3bm9kZV9nZXRfbmFtZShjaGlsZF9mbiks
+ICJ1c2ItcG9ydCIsIDgpIHx8Cj4gKwkJICAgICFzdHJuY21wKGZ3bm9kZV9nZXRfbmFtZShjaGls
+ZF9mbiksICJVU0IiLCAzKSkKCltTZXZlcml0eTogTWVkaXVtXQpDYW4gdGhpcyB0cmlnZ2VyIGEg
+TlVMTCBwb2ludGVyIGRlcmVmZXJlbmNlPyBmd25vZGVfZ2V0X25hbWUoKSBjYW4gcmV0dXJuCk5V
+TEwgZm9yIGNlcnRhaW4gc29mdHdhcmUgbm9kZXMuCgpBZGRpdGlvbmFsbHksIGRvZXMgdXNpbmcg
+c3RybmNtcCgpIHdpdGggYSBmaXhlZCBsZW5ndGggaW5jb3JyZWN0bHkgbWF0Y2gKYXJiaXRyYXJ5
+IHN1ZmZpeGVzIGxpa2UgInVzYi1wb3J0LWZvbyIgd2hpbGUgZmFpbGluZyB0byBwcm9wZXJseSBo
+YW5kbGUKdW5pdCBhZGRyZXNzZXMgbGlrZSAidXNiLXBvcnRAMCI/IENvdWxkIGZ3bm9kZV9uYW1l
+X2VxKCkgYmUgdXNlZCBoZXJlCmluc3RlYWQ/CgpbIC4uLiBdCj4gKwlwaHlfcHJvdmlkZXIgPSBk
+ZXZtX29mX3BoeV9wcm92aWRlcl9yZWdpc3RlcihkZXYsIG9mX3BoeV9zaW1wbGVfeGxhdGUpOwo+
+ICsJaWYgKElTX0VSUihwaHlfcHJvdmlkZXIpKSB7Cj4gKwkJcmV0ID0gUFRSX0VSUihwaHlfcHJv
+dmlkZXIpOwo+ICsJCWRldl9lcnIoZGV2LCAiZmFpbGVkIHRvIHJlZ2lzdGVyIHBoeSBwcm92aWRl
+clxuIik7Cj4gKwkJcmV0dXJuIHJldDsKPiArCX0KPiArCXJlc2V0X2NvbnRyb2xfYXNzZXJ0KHUz
+cGh5LT5yZXNldCk7Cj4gKwlyZXNldF9jb250cm9sX2Fzc2VydCh1M3BoeS0+cHJlc2V0KTsKCltT
+ZXZlcml0eTogSGlnaF0KRG9lcyBhc3NlcnRpbmcgdGhlc2UgcmVzZXRzIGFmdGVyIGV4cG9zaW5n
+IHRoZSBQSFkgcHJvdmlkZXIgY3JlYXRlIGEgcmFjZQpjb25kaXRpb24gd2l0aCBjb25zdW1lcnM/
+CgpPbmNlIGRldm1fb2ZfcGh5X3Byb3ZpZGVyX3JlZ2lzdGVyKCkgY29tcGxldGVzLCBhIGNvbnN1
+bWVyIGRyaXZlciBjb3VsZApjb25jdXJyZW50bHkgcHJvYmUgYW5kIGNhbGwgcGh5X2luaXQoKS4g
+SWYgdGhlIGNvbnN1bWVyIGluaXRpYWxpemVzIHRoZQpQSFkgYW5kIGRlYXNzZXJ0cyB0aGUgcmVz
+ZXRzLCB0aGlzIHByb2JlIHRocmVhZCB3aWxsIHRoZW4gY29udGludWUgYW5kCnVuY29uZGl0aW9u
+YWxseSBhc3NlcnQgdGhlIHJlc2V0cyB3aXRob3V0IGhvbGRpbmcgdTNwaHktPm11dGV4LiBUaGlz
+IHdvdWxkCmRlc3Ryb3kgdGhlIGluaXRpYWxpemVkIHN0YXRlIHdoaWxlIHRoZSBjb25zdW1lciBp
+cyBhY3RpdmVseSB1c2luZyB0aGUgUEhZLgoKPiArCXJldHVybiAwOwo+ICt9CgotLSAKU2FzaGlr
+byBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYwODMxMDgy
+MzA5LjM4NTQ1MDctMS1ob25nbGlhbmcueWFuZ0BjaXh0ZWNoLmNvbT9wYXJ0PTMKCi0tIApsaW51
+eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8v
+bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
