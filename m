@@ -4,151 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8EB15C61DD3
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Sep 2026 07:54:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85D71C61DD3
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Sep 2026 08:04:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZzQvQjjY3eGp1Cn5IslLavL5gRRN7rZHbx7aFYaOTVg=; b=Tabah/bELekBoh
-	VGUozcViBLL5UhrRZFhAdQWac5FzLrAs01UedJVRAHZ478wPyCaTjcLvkVmaf9GD1eR5EykanIW6N
-	/q5uogXTNhzu2SPuzqzZSq9W1gGeAHotYnkmBFHuwu13yl+3uxwuBXYs2GMKOScumT+0bVKKzjeuP
-	jtbqAU88+/bL8LOBG6ENNWGcbCQcHbAoZNZWHMsbO1LUiosDGSyRV59OFUl5Y5zFEnB73i+NwTKkQ
-	HA5VpmOv9m5clfXlKSs0oYGEokum7c7kXOyTxdbke44b8Ynk2kNmOkxRJC9jt318fnVGEMLBJjy+Q
-	44VJacFFce9Zw0ojrjzQ==;
+	List-Owner; bh=ZzFBHZJ4yc3e58Qr7rmQESKwSSBlCKpmNk7wDStBInE=; b=sgTsnRNzsyYmuz
+	cc+0ub6hROYYvuzSrEu1u1dSbuPJbrFixeuhEUdVpClncodSgWGGAZMk0n0j80n/N/lWviWGJzGtQ
+	Se/2mwtQlh8R5PZPA/GqvA/OsxlR3qEyV6ibFZD/CB1/4AVuZNoRHKQtuCEuch+H0UZUXao5JEZLE
+	GDYwwdMphKoJ1t5urCN7jVgYdS8BJT8e8a5p2ET1ysyQORjznAWYnaA+fX7AIhheTqFlhTxQQEM06
+	EducWcQEhhBCjKQTrnrqonLFo8a/KfYi7j/cL0c9RBNFq1IbN9geUu4oKnWfrAsncemZDkP5CEqeF
+	Wy9A0g9TE3pEVnmt/T4Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x22HW-0000000GhuB-1AG0;
-	Thu, 03 Sep 2026 07:54:46 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1x22R9-0000000GjSZ-0NAj;
+	Thu, 03 Sep 2026 08:04:43 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x22HU-0000000GhtR-1lzt
-	for linux-phy@lists.infradead.org;
-	Thu, 03 Sep 2026 07:54:45 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6835ldZQ3176900
-	for <linux-phy@lists.infradead.org>; Thu, 3 Sep 2026 07:54:43 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	c2fcDfowcmb0Fy77GnQQJjE8UHWSmrNgm2oaE6E2N+Y=; b=RAskscrQsCQcVvY4
-	dm9EQJRTocP2QJ1QuFuAVLvf35m2BJoNnRJJ4ntBNCxWxMMrfbJ2pLxeZnKO1pk3
-	v8BIH8PoUh6QyAnHlusBCCSRxQhNoSoSkdtxcRSv+Q+uQf2ZmRRhqms15LYn19eO
-	B8lH+jpaAnXSEjsy1EO2aSI1MJ1x0YdzMC/n70OFjiEj+Yi+PVNZilQU+PhA/9UZ
-	EkKxXIfsqtVZTLTbrpMa+FgzgElM05Q7S17GBKMapUPm79fZ3uMhh6QQ+eT3B3Sr
-	H9b3LHmj1nZT37fADALhLB2Gx6QgfNIDtGkZaIVIXYUtsYLdg3xlQW5Y9V0BlUfX
-	0O3zlQ==
-Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gemj4v5n8-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 03 Sep 2026 07:54:43 +0000 (GMT)
-Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-92e5e21552dso27783185a.0
-        for <linux-phy@lists.infradead.org>; Thu, 03 Sep 2026 00:54:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1788422083; x=1789026883; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=c2fcDfowcmb0Fy77GnQQJjE8UHWSmrNgm2oaE6E2N+Y=;
-        b=flkKpFO/PhUFMA4g0hVKTD+gYCXwb2SvuZDzlzgs9qBKbNh5eelfwE8dW7tKFowZn7
-         xVsiAuNKSMlUAzWuCPdhepwdMnrNU+DhrCLtmE+A7xbqX5o9dW6+sxGHwiWqR3hJ4kLN
-         3pErgWxk8tdiAgLOhny0zFZS6BIzZA7UXIs/z7/1eKLzT0ZUWJa0WZnE/GicGRIlG0nn
-         Yq1pPRWkjjFvucXeI/0bzw027gHV50vZEqsZLxta5meoe/TuTbumZ7ocQt7WGw+5weA2
-         dPnEH3MBySkTwoNggZrlIzxVIjiXU1ffUsUUOLCEERmSjnqXI9Hze7WEkKh8xWfhpaXf
-         Wz5g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788422083; x=1789026883;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=c2fcDfowcmb0Fy77GnQQJjE8UHWSmrNgm2oaE6E2N+Y=;
-        b=p6nCvtoWWXNpBZrEriwkzsqlo7wcTl1owP6hg4Z3EgXP/QBl6h6HFPQ04Do+K9P9YZ
-         reArunHw2h/YKzNEuFAXXKmtVLo2XKvHkm2Yzh7JIzrDCJ4ZJ9J6JrMnIHymz2IViJiV
-         LWeqSPXYvm2D1mGvAN4QdcdTFFkbY8KTyvMOujcCZ3npDDFzUzpMR/vrhY0tnhR+MJMD
-         5lJxK4oo1NN/z1+YNQQeeCyo7ZvlX5hTqWU6z1HrMgWBsyzCHdg5far5oGxL8LPrsZnW
-         8EhzqMxS9EQyoG5OMGRGUSFWzp8tPrKTWr3r0cY7BXj/M5y3dFFk+ppmfQ0xgk7axn8Y
-         7VxQ==
-X-Forwarded-Encrypted: i=1; AKwUvByIEyzEkYx7spf3HCmzuOw24uleCA6XVB5b8lVHiCeaPoPUHd5J+96rw8IBNdLc4DqWY8s/smrzW74=@lists.infradead.org
-X-Gm-Message-State: AFuF++kiyR8ff4k4qT5FFe80ASOguC+/BefFMT3caxe0JB60OOxn7uw4
-	+U9Ld5x7bGyiua6YoinAICqq675+Fm5/HJf//HlTvP0XDTkKPgskFo7z4E2T00BZYWkyd/Uv304
-	v8OT4+oz5NnfCYotLf3D1Q9i6HKPrKIYtc+DUl0u66UsgqVpSElRDPqSE+j4ETpdSVWnL
-X-Gm-Gg: AYBFou3EjyllU+smjgn5s7CcrGmq0b+y3bDAzrcf0G9I+VkoSwrcfNU0EQDfXICXkv9
-	EzvASSBwiDu2mMNkEX98VLrarqYX+4wge3fypC70QEV2z47OPsxyViueekm2wr6S9yDEFsyTlj/
-	8M/e6O1BH18+AqtqhnvkJPleuIfpLiHPqXT+GsHX3j2mFrOU0cBH4v4lsjAXZ1H2bk+V0OkxUJI
-	XTvAwdJhg0q2Y1fHuDBCtP9kZNsFzjqp4vYaa/G8EQnIWgEmXH3iKK3xrGis07PrOR3tuu/Xd1d
-	7XNEXd7c5ZbAabcgZBow39qfNORMTfyQ3as4k+QHHfYpJJvBgmCB3Sz0qK3xAvdmZ/Oy+zKpDHZ
-	WNIXBv1e0Ar5lHGzJJeIL8g==
-X-Received: by 2002:a05:620a:2704:b0:939:288a:8a0c with SMTP id af79cd13be357-939610b5598mr723268485a.6.1788422082765;
-        Thu, 03 Sep 2026 00:54:42 -0700 (PDT)
-X-Received: by 2002:a05:620a:2704:b0:939:288a:8a0c with SMTP id af79cd13be357-939610b5598mr723257285a.6.1788422080144;
-        Thu, 03 Sep 2026 00:54:40 -0700 (PDT)
-Received: from [192.168.202.12] ([178.235.128.140])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c25f41733b2sm60942866b.17.2026.09.03.00.54.36
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 03 Sep 2026 00:54:39 -0700 (PDT)
-Message-ID: <fe6dfaf1-521b-4818-890c-1bb1c413ee44@oss.qualcomm.com>
-Date: Thu, 3 Sep 2026 09:54:36 +0200
+	id 1x22R7-0000000GjS5-0oy3;
+	Thu, 03 Sep 2026 08:04:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Type:Content-ID:Content-Description;
+	bh=BwSH+VPrwM/QWvKXvZ91GqgHP+dRw3S9kaAQ9v7NKL0=; b=BZPMurDkq4bvfE+or18XBn1OFU
+	5UOemL25TynNtcVso8290Yn67Au6S1xaNYl/LEOXA8Dw3rwGXeJE+mGEICn7qKBs6sN3sRmXekk+p
+	AtDTzEeC/ZJJkTxVGJTEOs4fklYOKL09Y4af+4momjxUD9iiLBRiYTpqJ3HF6D8RTzkONmPnhHnYG
+	7s4oLpA1sD4WIH42KkxvjcbH9VNrbX8TQOFCgYrEXry5JEMSa+j/lgwP/6nCc82Xi4GlzUN+jn2zT
+	jQnNmN7IxInCj5mw2sTYC5xdZCjxGZLboh0A1H8bh6liIZGsHHOID+h67AAMumVfA4zwCdOfikc6T
+	4yNAEdzA==;
+Received: from mout.gmx.net ([212.227.15.15])
+	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
+	id 1x22R3-0000000CpnC-30zl;
+	Thu, 03 Sep 2026 08:04:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmx.net;
+	s=s31663417; t=1788422672; x=1789027472; i=wahrenst@gmx.net;
+	bh=BwSH+VPrwM/QWvKXvZ91GqgHP+dRw3S9kaAQ9v7NKL0=;
+	h=X-UI-Sender-Class:From:To:Cc:Subject:Date:Message-ID:In-Reply-To:
+	 References:MIME-Version:Content-Transfer-Encoding:cc:
+	 content-transfer-encoding:content-type:date:from:message-id:
+	 mime-version:reply-to:subject:to;
+	b=Jm7aMawmeO2OgIpeGt9wHzRR5tHL7RqLwryvGk4/j4KVBnxrzADBFPe/AP4x0C1e
+	 flvuLOJlqcBwxTpg5u3Pp5X9bAX0+UK4LW64lWIx91XtLW83gDxlIKUBBYRG6b9hn
+	 1XoEixkHYI9qYMJDkOANSlCWv1XRVlnHE3xBMaKDuEmz3ddB/ygJJfuO+JCbXzl/x
+	 cxaHqOTsl9pq+0jcaHpJzawsV/+2oVXEb2sUcHBkplqF+05kc/gYiBa04jY4EXIrK
+	 41fJOhNicCR2VFQfTWOLTsT76UEdAnQKbjIvkmXEDxE+YB6WzysI95Ciq5GBKb7Ky
+	 N95NVJ1Wy+gTGq6Bew==
+X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
+Received: from client.hidden.invalid by mail.gmx.net (mrgmx004
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 1N5mKP-1wn5vH1X23-0186sS; Thu, 03
+ Sep 2026 10:04:32 +0200
+From: Stefan Wahren <wahrenst@gmx.net>
+To: Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Marc Kleine-Budde <mkl@pengutronix.de>,
+	Vincent Mailhol <mailhol@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Frank Li <Frank.Li@nxp.com>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>,
+	Aswath Govindraju <a-govindraju@ti.com>
+Cc: Christoph Stoidner <c.stoidner@phytec.de>,
+	linux-kernel@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-can@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org,
+	Stefan Wahren <wahrenst@gmx.net>,
+	Conor Dooley <conor.dooley@microchip.com>
+Subject: [PATCH V4 2/4] dt-bindings: arm: fsl: Add chargebyte Charge Control Y
+Date: Thu,  3 Sep 2026 10:04:25 +0200
+Message-ID: <20260903080427.6103-3-wahrenst@gmx.net>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20260903080427.6103-1-wahrenst@gmx.net>
+References: <20260903080427.6103-1-wahrenst@gmx.net>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 00/12] Enable USB3 for Qualcomm IPQ5018
-To: george.moussalem@outlook.com, Vinod Koul <vkoul@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
- <conor+dt@kernel.org>,
-        Praveenkumar I <praveenkumar.i@oss.qualcomm.com>,
-        Philipp Zabel <p.zabel@pengutronix.de>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-        Varadarajan Narayanan <varadarajan.narayanan@oss.qualcomm.com>,
-        Nitheesh Sekar <quic_nsekar@quicinc.com>,
-        Wesley Cheng <quic_wcheng@quicinc.com>,
-        Manivannan Sadhasivam <mani@kernel.org>,
-        Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-usb@vger.kernel.org,
-        Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
-        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-References: <20260825-ipq5018-usb3-v3-0-39be0955a6aa@outlook.com>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20260825-ipq5018-usb3-v3-0-39be0955a6aa@outlook.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTAzMDA2OSBTYWx0ZWRfXzv+NTrIMYtCd
- WXGqozo1mQ35nPxVusdpfB2yw4Bn0wtYBJVs0cc6k1IV+yK2w2KZQLKtoBfyrICtldWdGzp1rMd
- BER2ejRU21JkzyMXv4Y/xUB2X6PxQErhc7KCJOdIqIimuAINUNhD/vzUVMaEcVJMHuFyg9GCw2Y
- UZBx6jYhiiKeeQmfd/TwfFeZMJ5X64p4lfnYcIv6BxhIOLlfFdm/Cz35PU68KUu9FV//f0C2vD1
- L9GEvBGI1PIbiI90zFUhyQ71il4VxlKUo2TcC3DdW/yBs4baaR/mgulVGLMMKmnT5387AVMr9Ys
- Lcyp8kQ2PvDzsAoqYix6RSBMxQDGiR1sazCAPnqLCPNSVAHzGrkuv3IDXmeRFUN2wufWKZSndgk
- 5RLj5vgSz7huicU4eyAMYU3RJLQtirSNDKnE+JHqtUpGsSalLvyYTWVMUCcAyOqMNPpmIUU66tA
- kiH6wh86o53ICxhzanA==
-X-Proofpoint-ORIG-GUID: BCAnBgdG5EcziGKAGkBo8nOWwO0Fpt6a
-X-Authority-Analysis: v=2.4 cv=MdhcfZ/f c=1 sm=1 tr=0 ts=6a9927c3 cx=c_pps
- a=50t2pK5VMbmlHzFWWp8p/g==:117 a=PRfkaYvzSr8QmIIGAkY2Sg==:17
- a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22
- a=cwIZyh-EchK-Zb-g6cYA:9 a=QEXdDO2ut3YA:10 a=IoWCM6iH3mJn3m4BftBB:22
-X-Proofpoint-GUID: BCAnBgdG5EcziGKAGkBo8nOWwO0Fpt6a
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTAzMDA2OSBTYWx0ZWRfX2PSxyxbznHdS
- pQv+BPv3Y7o1m0oTcUlP/e0PgowTIbL/mPFF5Npl/mpXxuVeg0G4SP/F+n8Wlj4jja3eIER2phq
- GIlX4pPCAmMs/DtaaSM8Qq+ZUN77sdk=
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-09-03_02,2026-09-02_04,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 bulkscore=0 adultscore=0 suspectscore=0 malwarescore=0
- phishscore=0 clxscore=1015 spamscore=0 lowpriorityscore=0 impostorscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2609030069
+X-Provags-ID: V03:K1:QMRrc5lczuwPxTsD5SAmDTB5vKHk1CX/HB42laktnB+C3PCTGvx
+ rE343SPCH9+QXq3t4lBMYLBsG5akq2GB8bgA76HKn4TjAGYE9aAjzNbZLcohhT6vaStOfmM
+ EdNhfOmqCvjLk3UzVi9zSSRLlEWPvwBCX3//HiyKi/ZxH+N7JdiY67L7xCl4Mdqt4uV4jAC
+ BsIl4Rrf7Ofvpwlj3wsnw==
+UI-OutboundReport: notjunk:1;M01:P0:jW336/P0E7w=;DQSWa0XGc4meX5A+xfT97zEBYYq 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
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260903_005444_580593_5F2E22BE 
-X-CRM114-Status: GOOD (  12.69  )
+X-CRM114-CacheID: sfid-20260903_090437_938681_CAA4BD50 
+X-CRM114-Status: UNSURE (   7.24  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -165,26 +111,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 8/25/26 2:37 PM, George Moussalem via B4 Relay wrote:
-> Patch series adds Qualcomm 22ull Super-Speed USB UNIPHY driver support
-> present in Qualcomm IPQ5018 and IPQ5332 SoC which is required to enable
-> USB3. This PHY is interfaced with SNPS DWC3 USB and SNPS DWC PCIe.
-> Either one of the interface can use it via the mux selection present in
-> the TCSR register. Current patch series adds the support for UNIPHY with
-> DWC3 USB.
+Add device-tree bindings for chargebyte Charge Control Y board based on
+the PHYTEC phyCORE-i.MX93 SoM (System-on-Module).
 
-I tried to get to the bottom of it:
+Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
+---
+ Documentation/devicetree/bindings/arm/fsl.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-0x5d_000 -> usb3+pcie (muxable?)
-0x7e_000 -> usb3+pcie (not muxable?) / for PCIe1
-0x86_000 -> pciex2 / for PCIe0
+diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
+index 656f2596e1d5..6d20703c25b4 100644
+--- a/Documentation/devicetree/bindings/arm/fsl.yaml
++++ b/Documentation/devicetree/bindings/arm/fsl.yaml
+@@ -1665,6 +1665,7 @@ properties:
+       - description: PHYTEC phyCORE-i.MX93 SoM based boards
+         items:
+           - enum:
++              - chargebyte,imx93-charge-control-y # chargebyte Charge Control Y
+               - phytec,imx93-phyboard-nash  # phyBOARD-Nash-i.MX93
+               - phytec,imx93-phyboard-segin # phyBOARD-Segin with i.MX93
+           - const: phytec,imx93-phycore-som # phyCORE-i.MX93 SoM
+-- 
+2.43.0
 
-_however_ there are only 2 PCIe hosts and 1 USB host.. 
-
-Unfortunately the router SoC docs are very limited for me.. maybe
-+Kathiravan can help.. 
-
-Konrad
 
 -- 
 linux-phy mailing list
