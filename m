@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E56AC624A4
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Sep 2026 14:26:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB2A8C624A4
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Sep 2026 14:26:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6AMBhAjRl/7xEkHGC01OknhTIf+ZRRMAkcH9bS3Qc+A=; b=QMu9+5gcWmSOxE
-	K4i3zKsoEsOxDDjM3JUQAqAupMQZJ7Gav7o1ERWxGYSEk0NKXIUKZ+J3LTF5tCzys0GYe7gv9og0a
-	YK7opQyaVrOrqCVfSuATG1KdTQwHqnn7DEKPM1G02n8V71eg34uYVHKKaUH+BVPKlXtbORmLPZKSa
-	viPoUja6vzWxIqBquNWlvj5U1ZM2dcYUkHhyl+2/0LcDIvJcZCfTte6HitlGQ6ZGHf6W/ulBNeEYC
-	VxTaVUauntoC5I8Ie6BynYSIekpbM6PDfb6bB/egfFcWrZoiulDtGKbQVK10uE8ZWaNczk8bh4QPh
-	ZBChCPHRUE0tIluIBV2w==;
+	List-Owner; bh=9l6U9z6OGYJgdUc/Taxa2BiyvWb7W1seJpMnNYLiIzg=; b=joOGlMOpcQh1TQ
+	9he1s11IH5vQMUHOtFkTNN2zUoGQNEVYJpa8A5d4iblWBx9Cw2MZlPfViZOsUzBsvsP71buXf+2/N
+	ruQpYlPf7V8cCJrKNLuEUAK8Xd17jIdx6FIFLamlL8f3Ia/59FhlKDX/CpF9y/B14lLRLRHNaLfWU
+	1Y1GN1ed32CK1A6RrWwnnFwMMfEGGTmio1M49T9AGu8VIAvFByJSrcAh2CLxrpT9jRbJnzY2Dcj7m
+	hL0a2wMQMK8Gh6MskltJKdYjjR+c8fSZQD46IVWpohVgKG5lqg/HwJKu+ME+lhFxPkOKLh4HBs4MN
+	Ur/9TPKmBEH+wXSeAP8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x28OD-0000000HVm5-1UJ7;
-	Thu, 03 Sep 2026 14:26:05 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1x28OI-0000000HVnG-1e3H;
+	Thu, 03 Sep 2026 14:26:10 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x28OC-0000000HVlY-1AvF
+	id 1x28OG-0000000HVmm-1Fhc
 	for linux-phy@lists.infradead.org;
-	Thu, 03 Sep 2026 14:26:04 +0000
+	Thu, 03 Sep 2026 14:26:08 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id E05ED4055F;
-	Thu,  3 Sep 2026 14:26:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 51FE31F00A3E;
-	Thu,  3 Sep 2026 14:25:59 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 1495D417FC;
+	Thu,  3 Sep 2026 14:26:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5678F1F00ADB;
+	Thu,  3 Sep 2026 14:26:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788445563;
-	bh=szTE7oxjGO1q0rDmbrRjqpRbvKMsDFT7DQcrAnd6QNQ=;
+	s=k20260515; t=1788445568;
+	bh=SKbhH/yJev4U5qDLNZLWqB0aqWQtOQabQFXAP6Qz4ZM=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc;
-	b=KuJtjeEEOlzYTgPSKVUD9cITXoLC/kHOzgDmFXLtvgFC9kqXJTgUnRozc/P6q3GrC
-	 cMVosR6V4RiqibwbpJKw1Xyogh24VDSFb8UlWPb6G1L6tkKCF/JaBEuxSwD69WKxsV
-	 L0W369drdGWfsd82xBlJXvDYgRLTZy72bR8nE/YQ22ulCDNLky5z1KMSjRX6ZFFGcy
-	 xvkw7u3JZU1bJOUKRnQz89JTC0eR5eBt6pxH7JMDQQ5rANoo4/rvgBiGQerHE0524N
-	 pVT1Fm8Lcv5sU2lM5CV1M8ulrbsIB15XdgLXVnDEP/sMQy0BPK4MX6fHmcK/VtkVMb
-	 wOlv71hY5r1ow==
+	b=VLfuWzI6M1UuqhSFzrwxPTwogZdJepASYShqF9suC2kJCMxqIMmaNd4qOy3QODtA0
+	 N7Evhsuo5dteNxEOvh/1REpp4l6wGpiuswNIWM065A9Q/WkUlOzHs7ucS7jU36gJvp
+	 40aq3AXt2BHM681EPP9j7bdwfb0W+nC0CfT3bvainCK8v0IjOqW0UKA3Xq04EZ37bZ
+	 zYW4ceYsUS+TtnqrnQ3kojcaXqm8bU/VzMXP5mB/Q7VBp2cJY+lr6bfwcoqhjilOs8
+	 VAhGAfEOnKoj/lmb6cjzMuNudQ2ipTx9yXarJuebADtlPjftWirFDx7Q6og4HNf9x2
+	 ckcLgl6d7arGQ==
 From: Konrad Dybcio <konradybcio@kernel.org>
-Date: Thu, 03 Sep 2026 16:25:29 +0200
-Subject: [PATCH v2 2/5] phy: qcom-qusb2: Fix SM6115 init sequence
+Date: Thu, 03 Sep 2026 16:25:30 +0200
+Subject: [PATCH v2 3/5] phy: qcom-qusb2: Remove _SHIFT defines
 MIME-Version: 1.0
-Message-Id: <20260903-topic-8996_61x5_qusb2phy-v2-2-4c3f980a4560@oss.qualcomm.com>
+Message-Id: <20260903-topic-8996_61x5_qusb2phy-v2-3-4c3f980a4560@oss.qualcomm.com>
 References: <20260903-topic-8996_61x5_qusb2phy-v2-0-4c3f980a4560@oss.qualcomm.com>
 In-Reply-To: <20260903-topic-8996_61x5_qusb2phy-v2-0-4c3f980a4560@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -60,15 +60,13 @@ To: Vinod Koul <vkoul@kernel.org>,
  Manivannan Sadhasivam <mani@kernel.org>
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
- Abel Vesa <abel.vesa@oss.qualcomm.com>
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1788445548; l=1555;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1788445548; l=4069;
  i=konrad.dybcio@oss.qualcomm.com; s=20230215; h=from:subject:message-id;
- bh=oMc/6LTLND3zy+WxNttgbZvp9ei0vRh1b3QcNq5NL/c=;
- b=4ZFXEsoiNSU0xzEQW8oLZXSeyApctJcdq0Crakry0Yte6twMCFztCYYtIGfyD497Aj8lJylrb
- VBQGvqJBhKXAkSD0WjT05dJCIcJ00kGpF1gwGJMuGpeGq2U3HOQ8yKd
+ bh=4DL9fcjNJk7MXfdTRYqW0Ax5xXaUgoYEFk4XUmKw5UU=;
+ b=g89we8bc/8i+YUYaw4/Sk3483pnzT5w6gOwN4vI6135tJvnm4rvE6ejUvo4/zfwraCo173kyS
+ 736OzQNDRJnAO1J/Pl7HTu170TPorpJdcjnqmoFB2d8FJMDBKN2/7Rh
 X-Developer-Key: i=konrad.dybcio@oss.qualcomm.com; a=ed25519;
  pk=iclgkYvtl2w05SSXO5EjjSYlhFKsJ+5OSZBjOkQuEms=
 X-BeenThere: linux-phy@lists.infradead.org
@@ -89,38 +87,114 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 
-I don't know where the existing one came from, but it's apparently
-wrong, according to both docs and a downstream DT [1]. Fix it up.
+These are unnecessary as they may be inferred from the mask. Drop them.
 
-The updated values also happen to match SM6125, which will allow us
-to fix that platform too.
-
-[1] https://android.googlesource.com/kernel/msm-extra/devicetree/+/refs/heads/android-msm-bramble-4.19-android11-qpr1/qcom/bengal-usb.dtsi#145
-
-Fixes: 7756f1d6369e ("phy: qcom-qusb2: Add configuration for SM4250 and SM6115")
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Reviewed-by: Abel Vesa <abel.vesa@oss.qualcomm.com>
 Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 ---
- drivers/phy/qualcomm/phy-qcom-qusb2.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qusb2.c | 33 +++++++++++++++------------------
+ 1 file changed, 15 insertions(+), 18 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-index 2e5fdb620cb2..aac36ed994b1 100644
+index aac36ed994b1..50c60d56d447 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-@@ -233,9 +233,9 @@ static const struct qusb2_phy_init_tbl msm8998_init_tbl[] = {
+@@ -3,6 +3,7 @@
+  * Copyright (c) 2017, 2019, The Linux Foundation. All rights reserved.
+  */
  
- static const struct qusb2_phy_init_tbl sm6115_init_tbl[] = {
- 	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TUNE1, 0xf8),
--	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TUNE2, 0x53),
-+	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TUNE2, 0xb3),
- 	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TUNE3, 0x81),
--	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TUNE4, 0x17),
-+	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TUNE4, 0xc0),
++#include <linux/bitfield.h>
+ #include <linux/clk.h>
+ #include <linux/delay.h>
+ #include <linux/err.h>
+@@ -64,26 +65,20 @@
  
- 	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_TUNE, 0x30),
- 	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_USER_CTL1, 0x79),
+ /* QUSB2PHY_IMP_CTRL1 register bits */
+ #define IMP_RES_OFFSET_MASK			GENMASK(5, 0)
+-#define IMP_RES_OFFSET_SHIFT			0x0
+ 
+ /* QUSB2PHY_PLL_BIAS_CONTROL_2 register bits */
+ #define BIAS_CTRL2_RES_OFFSET_MASK		GENMASK(5, 0)
+-#define BIAS_CTRL2_RES_OFFSET_SHIFT		0x0
+ 
+ /* QUSB2PHY_CHG_CONTROL_2 register bits */
+ #define CHG_CTRL2_OFFSET_MASK			GENMASK(5, 4)
+-#define CHG_CTRL2_OFFSET_SHIFT			0x4
+ 
+ /* QUSB2PHY_PORT_TUNE1 register bits */
+ #define HSTX_TRIM_MASK				GENMASK(7, 4)
+-#define HSTX_TRIM_SHIFT				0x4
+ #define PREEMPH_WIDTH_HALF_BIT			BIT(2)
+ #define PREEMPHASIS_EN_MASK			GENMASK(1, 0)
+-#define PREEMPHASIS_EN_SHIFT			0x0
+ 
+ /* QUSB2PHY_PORT_TUNE2 register bits */
+ #define HSDISC_TRIM_MASK			GENMASK(1, 0)
+-#define HSDISC_TRIM_SHIFT			0x0
+ 
+ #define QUSB2PHY_PLL_ANALOG_CONTROLS_TWO	0x04
+ #define QUSB2PHY_PLL_CLOCK_INVERTERS		0x18c
+@@ -545,28 +540,28 @@ static void qusb2_phy_override_phy_params(struct qusb2_phy *qphy)
+ 
+ 	if (or->imp_res_offset.override)
+ 		qusb2_write_mask(qphy->base, QUSB2PHY_IMP_CTRL1,
+-		or->imp_res_offset.value << IMP_RES_OFFSET_SHIFT,
+-			     IMP_RES_OFFSET_MASK);
++				 FIELD_PREP(IMP_RES_OFFSET_MASK, or->imp_res_offset.value),
++				 IMP_RES_OFFSET_MASK);
+ 
+ 	if (or->bias_ctrl.override)
+ 		qusb2_write_mask(qphy->base, QUSB2PHY_PLL_BIAS_CONTROL_2,
+-		or->bias_ctrl.value << BIAS_CTRL2_RES_OFFSET_SHIFT,
+-			   BIAS_CTRL2_RES_OFFSET_MASK);
++				 FIELD_PREP(BIAS_CTRL2_RES_OFFSET_MASK, or->bias_ctrl.value),
++				 BIAS_CTRL2_RES_OFFSET_MASK);
+ 
+ 	if (or->charge_ctrl.override)
+ 		qusb2_write_mask(qphy->base, QUSB2PHY_CHG_CTRL2,
+-		or->charge_ctrl.value << CHG_CTRL2_OFFSET_SHIFT,
+-			     CHG_CTRL2_OFFSET_MASK);
++				 FIELD_PREP(CHG_CTRL2_OFFSET_MASK, or->charge_ctrl.value),
++				 CHG_CTRL2_OFFSET_MASK);
+ 
+ 	if (or->hstx_trim.override)
+ 		qusb2_write_mask(qphy->base, cfg->regs[QUSB2PHY_PORT_TUNE1],
+-		or->hstx_trim.value << HSTX_TRIM_SHIFT,
++				 FIELD_PREP(HSTX_TRIM_MASK, or->hstx_trim.value),
+ 				 HSTX_TRIM_MASK);
+ 
+ 	if (or->preemphasis.override)
+ 		qusb2_write_mask(qphy->base, cfg->regs[QUSB2PHY_PORT_TUNE1],
+-		or->preemphasis.value << PREEMPHASIS_EN_SHIFT,
+-				PREEMPHASIS_EN_MASK);
++				 FIELD_PREP(PREEMPHASIS_EN_MASK, or->preemphasis.value),
++				 PREEMPHASIS_EN_MASK);
+ 
+ 	if (or->preemphasis_width.override) {
+ 		if (or->preemphasis_width.value ==
+@@ -582,7 +577,7 @@ static void qusb2_phy_override_phy_params(struct qusb2_phy *qphy)
+ 
+ 	if (or->hsdisc_trim.override)
+ 		qusb2_write_mask(qphy->base, cfg->regs[QUSB2PHY_PORT_TUNE2],
+-		or->hsdisc_trim.value << HSDISC_TRIM_SHIFT,
++				 FIELD_PREP(HSDISC_TRIM_MASK, or->hsdisc_trim.value),
+ 				 HSDISC_TRIM_MASK);
+ }
+ 
+@@ -623,10 +618,12 @@ static void qusb2_phy_set_tune2_param(struct qusb2_phy *qphy)
+ 	/* Fused TUNE1/2 value is the higher nibble only */
+ 	if (cfg->update_tune1_with_efuse)
+ 		qusb2_write_mask(qphy->base, cfg->regs[QUSB2PHY_PORT_TUNE1],
+-				 hstx_trim << HSTX_TRIM_SHIFT, HSTX_TRIM_MASK);
++				 FIELD_PREP(HSTX_TRIM_MASK, hstx_trim),
++				 HSTX_TRIM_MASK);
+ 	else
+ 		qusb2_write_mask(qphy->base, cfg->regs[QUSB2PHY_PORT_TUNE2],
+-				 hstx_trim << HSTX_TRIM_SHIFT, HSTX_TRIM_MASK);
++				 FIELD_PREP(HSTX_TRIM_MASK, hstx_trim),
++				 HSTX_TRIM_MASK);
+ }
+ 
+ static int qusb2_phy_set_mode(struct phy *phy,
 
 -- 
 2.55.0
