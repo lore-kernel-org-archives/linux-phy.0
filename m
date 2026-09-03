@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97E1FC624D4
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Sep 2026 06:29:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01959C61DD3
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Sep 2026 06:30:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j/FWslIOLnKBD613+IsnteeGWCNWmfcS6cCvy5iCOO4=; b=M4lcajcvpViCl/
-	iaMPUW6eVkQNI6lc4sXF2/4pK5+r3n/tfHkEAd8C+0Gum1SJ1gY8U7aqQ1LQhE4+lPJWzyTzUm3//
-	bsJB6/EVoRG2Nlko9uwNyQBSwBKQrG25Ow3+9ceJ8grrhvTOcDwQ/H1k8g+wT9TlkXuArKdQU4H5D
-	g4dHC8rmexhVw1d9A7OWgaflOknl8nRe25rqO1Z0sVXLtWiXY2dEmm57V72XipVW9F37kaqlvZAj0
-	9B/aEpdyJGUedYR/R5yC1SiSPmat98Vletb7+F2fqYeUTADHuGE+HaPM8oQz4gw8n2+npaEmNI1W1
-	bvTsFAYuG74XMwKTxjvQ==;
+	List-Owner; bh=3ang94PXJ4wV9WQ4bgYC0MVsxe9YoFRRDvHRm6L0qts=; b=tR6PoGqXRdBh96
+	73JomXF7L/xskCwpkpSCqzg0P7sh3UYY+iRHT8ls43ulMtjzVnzNW5oo42CZF8nI0V15SzOHziMVo
+	zJsxmfYGCxKAGgtAOrNUbKq7IGxdDwhWR0/cNJ8C91bZfLGSL0FTaj/+Mn3sVn0qAFniHHA1CvoAT
+	nMN4Ped+m0AZQ1eBcC9Hv9XsWN/xEStZcpOx6uSo1p10Ky9ohjoGNm958WzuV9ypu86szS9jbRVqq
+	oSee+L3mdr7/+aTu/BIDGsluTn7W3CyoVXlhX8bKA9EjratmzdMkG522f2P86KSRjVM0YZAfK1gW/
+	ub2LDvSwZOJiY3UDlNdw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x20x7-0000000GURX-1Jn1;
-	Thu, 03 Sep 2026 06:29:37 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1x20xs-0000000GUbs-38PJ;
+	Thu, 03 Sep 2026 06:30:24 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x20x6-0000000GUR0-1hPg;
-	Thu, 03 Sep 2026 06:29:36 +0000
+	id 1x20xr-0000000GUb6-0DHH;
+	Thu, 03 Sep 2026 06:30:23 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 7D02C600C8;
-	Thu,  3 Sep 2026 06:29:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1506B1F00A3A;
-	Thu,  3 Sep 2026 06:29:29 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id CC5FE436F1;
+	Thu,  3 Sep 2026 06:30:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 909D11F000E9;
+	Thu,  3 Sep 2026 06:30:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788416975;
-	bh=trNxy11GG+I/hsdwaQKCklMdFtdLO3bJs5SOczMJ06M=;
+	s=k20260515; t=1788417022;
+	bh=rIPeNlXft5qwGDCPcStsc5nZyiqlws4Zz6uCNrYyQyw=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=ZyL1vtSMPKjnjxPY82Vd6sSMqDlJJfsNNEC45Z3mOly022ih8hy2AglQcxEfGmLz/
-	 0o6C9sh8mT4LCOR9PJvKyeLgHUACje2fU/h5f2w9CGzubPNSzthapudR9QSsWOt38X
-	 A7OoSx2N5n5SVG6icE02Dxhd6j0pAYBkZO4PSv7z3u2bAl9Dpsf8zoabFVCPtgmgUR
-	 0YIuqsTdL0tFqtWqp2x7MVQbn7dUds8ZNyc4rlMxELSR4htviBpMyamgvvaQdHXRd7
-	 3vyIBQhZ3rLts4HWnbo01Pd+1EBi4RhDABrnoOswZlouWqfrqpXXgIv+YIKic4oja2
-	 XrOwjtmDheIYw==
-Message-ID: <6ca4ba08-2313-4890-9a88-259799189d52@kernel.org>
-Date: Thu, 3 Sep 2026 08:29:28 +0200
+	b=MVfxUnqTqzgIOA7Stjk2sqCaMIwJHJR6btTQ4cX8mfQ2icxuWipuP0pX9C4OMlJWa
+	 FPOTO0sd+enJCX7IUzVrVcJaLWn7m03XIlLRDdyJBueIjhX0ewV4d2yO+dXLJYaFO2
+	 qcWMXM1xhKnJwyX6aYAp87iHjfV/qaVkc4FCWBbDkUXYMIwFishNeg4hLghHi4u31s
+	 KKx3nF8OnJyc/Zkr640S+C1jgfrt/leuDDxiAvm3xKbUSHiDWRm+soC6Gcajyhmf/w
+	 qaotj/umUpBgoIVjJ2SlKheRgPxgIWW59tpNwerALUo7ewpDK1LTIYRRoDtWJUU33A
+	 kmWr9YXcCopLw==
+Message-ID: <791fe5ba-5110-47d8-b0a8-9ab447762671@kernel.org>
+Date: Thu, 3 Sep 2026 08:30:13 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 0/5] Add CIX Sky1 USB3/USBSSP support
+Subject: Re: [PATCH v3 2/5] dt-bindings: usb: Add CIX Sky1 USBSSP controller
 To: Hongliang Yang <hongliang.yang@cixtech.com>
 Cc: cix-kernel-upstream@cixtech.com, conor+dt@kernel.org,
  devicetree@vger.kernel.org, fugang.duan@cixtech.com,
@@ -56,6 +56,7 @@ Cc: cix-kernel-upstream@cixtech.com, conor+dt@kernel.org,
  peter.chen@kernel.org, robh@kernel.org, rogerq@kernel.org, vkoul@kernel.org
 References: <503e87d9-3311-413a-98c0-e02a02c4a354@kernel.org>
  <20260903023521.2064986-1-hongliang.yang@cixtech.com>
+ <20260903023521.2064986-3-hongliang.yang@cixtech.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -101,7 +102,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  K9bCVaboTA2T77QYkRcRJYSsO1alGX0ome/hMLD1daXlkrNUp1HWa3K4iytLRXjCSIorWiGs
  n+q3krnpXu3TFkA8qtOFZMdnIiFuiq1yLT8hptsV5xh1TA2nsVvSYiaCr3q4s4BKjS/KrLDb
  qoxzw8ISjdUp4pA85vb6YLCmb39NgidD+7PmAr65lBNveIFynTgsja1rRQ4=
-In-Reply-To: <20260903023521.2064986-1-hongliang.yang@cixtech.com>
+In-Reply-To: <20260903023521.2064986-3-hongliang.yang@cixtech.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,26 +120,60 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 03/09/2026 04:35, Hongliang Yang wrote:
-> Add USB3 PHY binding and driver, Cadence USBSSP glue binding and
-> driver, and USB4/USB5 device tree nodes for the CIX Sky1 SoC.
-> 
-> This series adds support for the USB4 and USB5 controllers (based on
-> Cadence USBSSP DRD) found on the CIX Sky1 SoC, along with their
-> associated multi-port USB3 PHY.
-> 
-> The two wrapper nodes each carry two 4-byte register windows: these
-> are per-controller RCSU control/status registers (AXI cache attribute
-> and clock-status) that live inside the shared RCSU aperture, so they
-> cannot be expressed as a syscon; the OTG mode straps live in the S5
-> system control block and are referenced through the cix,usb-syscon
-> phandle.  This was discussed during review of v1 [1].
-> 
-> Changes in v3:
-> 
+> Add device tree binding for the CIX Sky1 Cadence USBSSP controller
+> glue layer. The integration adds glue registers and mode strap
+> controls in the Sky1 S5 system controller. The CIX glue node wraps
+> a Cadence USBSSP core as a child node.
 
-I do not see how you addressed my feedback from v1. I asked, not to
-combine USB patches with other subsystems, within one patchset. These
-are separate patchsets.
+
+Do not attach (thread) your patchsets to some other threads (unrelated
+or older versions). This buries them deep in the mailbox and might
+interfere with applying entire sets. See also:
+https://elixir.bootlin.com/linux/v6.16-rc2/source/Documentation/process/submitting-patches.rst#L830
+
+> 
+> Signed-off-by: Hongliang Yang <hongliang.yang@cixtech.com>
+> ---
+>  .../bindings/usb/cix,sky1-usbssp.yaml         | 137 ++++++++++++++++++
+>  MAINTAINERS                                   |   3 +
+>  2 files changed, 140 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/usb/cix,sky1-usbssp.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/usb/cix,sky1-usbssp.yaml b/Documentation/devicetree/bindings/usb/cix,sky1-usbssp.yaml
+> new file mode 100644
+> index 000000000000..73231a2741bc
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/usb/cix,sky1-usbssp.yaml
+> @@ -0,0 +1,137 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/usb/cix,sky1-usbssp.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: CIX Sky1 Cadence USBSSP Controller
+> +
+> +maintainers:
+> +  - Hongliang Yang <hongliang.yang@cixtech.com>
+> +
+> +description:
+> +  The CIX Sky1 USBSSP controller is based on the Cadence USBSSP DRD
+> +  controller. The integration adds glue registers and mode strap controls
+> +  in the Sky1 S5 system controller. The CIX glue node wraps a Cadence
+> +  USBSSP core as a child node.
+> +
+> +properties:
+> +  compatible:
+> +    const: cix,sky1-usbssp
+> +
+> +  reg:
+> +    items:
+> +      - description: AXI property configuration register
+> +      - description: Controller status register
+
+Same comments. Individual registers are not a device.
+
+What is the actual memory map there?
 
 Best regards,
 Krzysztof
