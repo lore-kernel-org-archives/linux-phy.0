@@ -4,122 +4,121 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7ED27C61DD3
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Sep 2026 10:19:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE0D2C61DD3
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Sep 2026 10:20:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=515x8joJvN7tfpjshljUyHLLf++N3fKp+FtkmfCStTw=; b=se2u2upDTXkdBJ
-	3/VZQMiwFeILHl7jGfW9O4Dy1/VyHrJSA5gY+gKOH1L8/ws9VakrTfqw2UqCoGhXo6TJB+0fyAAIZ
-	tCwFMmWleS5L8QkdJ6p2ftfFGM3c5TxATnY68VRSFZgHgZH20oX0tGGSqI9NMYAWH2n7S2jKImK6o
-	hI0eYO3HQim0Fp5ssZHuaQUxqmBzKRt/pf/n8eIIGkgxdpQ6tIfxM491k/civaBHuyOyWNyily3m7
-	yWvp2rB5ApxXAB7isydoPyuhsVhQPy8zUuaxyzJ7MMV1N90iWoTMoIhaKNeoKPjgLEWD8bxocMWTg
-	RqX6dXuA/fE7MqoB6SsA==;
+	List-Owner; bh=gagniHPD/4tPOAru8aWf9lXwzAsjcC4+/qyIS/B1Lvc=; b=oT1wmgBSjsfG91
+	QvSbY3Sz0LZjRvOQQbLP7NEKgs1x3aKUBPSwL+xtEWUJz7T5ya8+49Jk56WvljOZe4EiMI/TA9gP8
+	fdYw1+URsZyVh97p4P93AgGNMyO7EMUps/cpEuRK0ckBljVU1hIsfmUQATq2yiWPA8AgWHPcWj7/p
+	BbRApQQSAcivw934JazoxonqaJ94FAvrnaJnAiznkIIzEEELY8v0ctVtaQv2m1zabjl6kRVI+jvIW
+	yxFI3P17B9nPxYZz5PHD0aASdd6Xgt6Yr9IUIJOPRdzmUWsvNxWfZyL+XLaM50L7Sutb/ZUj8FLOs
+	PfPDgDhRlPBocI+KyOaw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x24Xp-0000000H4IL-0xf2;
-	Thu, 03 Sep 2026 10:19:45 +0000
-Received: from mail-northeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
+	id 1x24Y8-0000000H4On-2YC7;
+	Thu, 03 Sep 2026 10:20:04 +0000
+Received: from mail-westeuropeazlp170130006.outbound.protection.outlook.com ([2a01:111:f403:c201::6] helo=AM0PR02CU008.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x24Xn-0000000H4HG-03PT;
-	Thu, 03 Sep 2026 10:19:44 +0000
+	id 1x24Y4-0000000H4Lx-0NwJ;
+	Thu, 03 Sep 2026 10:20:03 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=uyj1l1RIAPwFDURSdrmMQhj1HO18L28jpJhP2QgTWYjIrzZR6bTk7Hwn+Ijjal6M/RAFLTjLuB2MN5TFYPOuKOsbzEFOYqe+aNE0+88uAqIcyvxzuosV/9CE+hZm+EVF/qSfR4YAVc43UwEBHHegfHp8W6G9xuAhXZt/FuEIQJBpa+ewTSO3A1y5wpMGVCQbdFaFDE1SCO6DK874/DW3KAkQy+cpcUX+2k7IKlUXd26kj345gme31zNV1GBtlRu0F4s8pZmjjrIb1GGRXvVYDURSXuuH9Zqc7Fhm9/B76NFY2krVqs+f3obiJNeuuY5RRWV25LPpiahvMQ5uoWwbbg==
+ b=IxQQoxmCYjJmNHzPeOsO3yiGaT/rTW/nigNgwmrfZG1E2P9LOSy2zJiaYwDD5XpHmOAknopxTMMuNz0+xOt6fkzaedkwESRSdKR5QvaGkdtAoikdk9or0dusTUwijkZERUSllC9k06eTWj+p4pX6zGXnUSlnRP20TW1tF/gEYcpnuqoq5OYojzxMbULCoAHNe6CXs0fyGi7DO6027HSg7uJ7tJ4YswAYD7DlcAYr9UzB8iZtRfyjZUcJDmV2cHhdzffvMVqVo3ewY89p7JrQI9CgKMVUZ+wo1LrpmpS0lcQCbRKspNUkZJiQQ3y/21iArDZ6GDJrr4IZxp3bsWzJmw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=DWwrRCUaQMd13jrkgTL7dC4SUzFnWzdzuMg8vGXTBg4=;
- b=OuHLTwwk+EJhVm+GeSvALgcPzAI3z16vVzhzrwiSUu89s1pMDqc7XQS58ETcALvgIKjb4JUoK0MeEtnSPmzA+lDGd3jFWsl7JNCrNvqmGDN4WXg8O6m09koXBwaFQ9ozM/f7rNm7QxAfDZQxR7VzDEiUJyjFrk6MciXnbxpvwsv3cviSjqtyl4282SQXEBndgbVy0jxHv+OFqglW+GIrgPzzV7IxFRiw1R3ra6OYHFz7r8EkIkQ/b8eMn3YJp8v24NBJM/yDE039DGW0LDncUAajYRVpKQdSKrigMv8gyIYsloBgMeuziKCqd7JJc+XJArZ6oDWjyOHQRYgzgxP9Tg==
+ bh=OsR+igVlEki5ECiwuUBJXanZp1JdrJPkSkEalx7CJIA=;
+ b=hhx6h+kdX/Prc/R3mkJfHPTeKzAl3AOHRea2zeSaKYt9PuuDHx2QzbQiKnlZ/e/MTF9dJSYgaSQgltAIigeiEOn+XS8axwLTBGyRuXuiG/DUA3CJJUBLr3c1YHo4Oiid2/Cbv7fayjN684NZYzUzxP/1096ugg5ohifC+3aTHWBEQYTw+1KrN0Lv6mS4nDeKbHlIDemThrlZNS67LWos+jvdWQc7mYiZ7Ju8uD5PkOUHpn9p0trGhYPgFRld/RZmbfIYljec2P5AdDvNQ1AD4fK+MH3EGT+qerr4hoaIg1P4IlubbqmNjD5bbZ3e/xUxcn1dmCcwxE17lDLMhBT1Jw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=fail (sender ip is
- 164.130.1.88) smtp.rcpttodomain=nabladev.com smtp.mailfrom=foss.st.com;
+ 164.130.1.87) smtp.rcpttodomain=nabladev.com smtp.mailfrom=foss.st.com;
  dmarc=fail (p=none sp=none pct=100) action=none header.from=foss.st.com;
  dkim=none (message not signed); arc=none (0)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DWwrRCUaQMd13jrkgTL7dC4SUzFnWzdzuMg8vGXTBg4=;
- b=Iq06QDItacyE0sAXS2zSnqbjKNNxed7Zrvm+q1efHQhjzKUAtrL3MzDI02lL0Ns7UaPsB19rPbbvEuYG9oHoiYyRXRx8SzD/F85H+Q6ZLB8hWIsh0Da2X2In6h1+qvB5o/pED1skocqPBFTdxKBJzDnbpFLnc62tKNXjhQdkUOR4rPGwr5/2dfFAqO5QFwjBhZGX6Vm3SC/vKmDF5UQ9WBbY13idCsyzyYt+XRQK2C9WKYcdSrEIG8r3HByeES/gwQx+y7BtnYh5HIxLqJoejHPjUAU59BgbAaSqVWouaWSVxsgLaJ8FfX9ON5RxXihkKidsEXo/jemZRSX9MEifSA==
-Received: from AS8PR04CA0210.eurprd04.prod.outlook.com (2603:10a6:20b:2f3::35)
- by GV4PR10MB9596.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:150:2eb::13) with
+ bh=OsR+igVlEki5ECiwuUBJXanZp1JdrJPkSkEalx7CJIA=;
+ b=mGD0Kq8ke3FdmGTcY5M5rq4PnlIFwnZvy1mTsxnHu60j5USw2cG15Yc+oOqd2OW2UiUILW5r4TSkNcQIhn5oYZm5SjTtC7OXMatROYjrtsNbwhPUzWvjTh3BmzFG49i0oyBHoGpLyYS8/B97P5iK4xxikInO+33z/y4crjg4aPAelwJYsVN1lAU28doKCNW+ifNwhF1LTxYU0KiknDJAOJcMt71cQUoTmis9eTWsF9EmsHjivuFguyyn+DtecfbYfvCDfduknquAFrdrQKHIkA48HT5RUGPNk6YkCuD1gqfnILGFJOGqGkKhTo2Ind5QC3Jjub3zmfhaCxRU5JJ/AQ==
+Received: from PA7P264CA0525.FRAP264.PROD.OUTLOOK.COM (2603:10a6:102:3db::8)
+ by AS5PR10MB8124.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:20b:677::18) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.360.13; Thu, 3 Sep
- 2026 10:19:32 +0000
-Received: from AMS0EPF00000192.eurprd05.prod.outlook.com
- (2603:10a6:20b:2f3:cafe::98) by AS8PR04CA0210.outlook.office365.com
- (2603:10a6:20b:2f3::35) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.21.382.11 via Frontend Transport; Thu, 3
- Sep 2026 10:19:32 +0000
-X-MS-Exchange-Authentication-Results: spf=fail (sender IP is 164.130.1.88)
+ 2026 10:19:48 +0000
+Received: from MAD0EPF000008AF.eurprd04.prod.outlook.com
+ (2603:10a6:102:3db:cafe::9d) by PA7P264CA0525.outlook.office365.com
+ (2603:10a6:102:3db::8) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.382.12 via Frontend Transport; Thu, 3
+ Sep 2026 10:19:47 +0000
+X-MS-Exchange-Authentication-Results: spf=fail (sender IP is 164.130.1.87)
  smtp.mailfrom=foss.st.com; dkim=none (message not signed)
  header.d=none;dmarc=fail action=none header.from=foss.st.com;
 Received-SPF: Fail (protection.outlook.com: domain of foss.st.com does not
- designate 164.130.1.88 as permitted sender) receiver=protection.outlook.com;
- client-ip=164.130.1.88; helo=smtpO365.st.com;
-Received: from smtpO365.st.com (164.130.1.88) by
- AMS0EPF00000192.mail.protection.outlook.com (10.167.16.218) with Microsoft
+ designate 164.130.1.87 as permitted sender) receiver=protection.outlook.com;
+ client-ip=164.130.1.87; helo=smtpO365.st.com;
+Received: from smtpO365.st.com (164.130.1.87) by
+ MAD0EPF000008AF.mail.protection.outlook.com (10.167.241.184) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.382.8 via Frontend Transport; Thu, 3 Sep 2026 10:19:31 +0000
+ 15.21.382.8 via Frontend Transport; Thu, 3 Sep 2026 10:19:47 +0000
 Received: from ENXDAG1NODE4.st.com (10.75.129.197) by smtpo365.st.com
- (10.250.44.75) with Microsoft SMTP Server (version=TLS1_2,
+ (10.250.44.74) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.43; Thu, 3 Sep
- 2026 12:16:49 +0200
+ 2026 12:21:43 +0200
 Received: from [10.48.86.251] (10.48.86.251) by ENXDAG1NODE4.st.com
  (10.75.129.197) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.43; Thu, 3 Sep
- 2026 12:19:29 +0200
-Message-ID: <34e63564-0191-406a-973a-eb601292b255@foss.st.com>
-Date: Thu, 3 Sep 2026 12:19:28 +0200
+ 2026 12:19:45 +0200
+Message-ID: <bf8e7888-1917-4ddc-9a6d-20490835c742@foss.st.com>
+Date: Thu, 3 Sep 2026 12:19:44 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5 1/2] dt-bindings: phy: Document ST STM32MP25 USB2-FEMTO
- PHY
+Subject: Re: [PATCH v5 2/2] phy: stm32: Add support for ST STM32MP25
+ USB2-FEMTO PHY
 To: Marek Vasut <marex@nabladev.com>, <linux-phy@lists.infradead.org>
-CC: Pankaj Dev <pankaj.dev@st.com>, Krzysztof Kozlowski
-	<krzysztof.kozlowski@oss.qualcomm.com>, Rahul Kumar <rahul.kumar05@st.com>,
-	=?UTF-8?Q?Cl=C3=A9ment_Le_Goffic?= <clement.legoffic@foss.st.com>, "Alexandre
- Torgue" <alexandre.torgue@foss.st.com>, Christian Bruel
-	<christian.bruel@foss.st.com>, Conor Dooley <conor+dt@kernel.org>, "Krzysztof
- Kozlowski" <krzk+dt@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>, Neil Armstrong
+CC: Pankaj Dev <pankaj.dev@st.com>, Rahul Kumar <rahul.kumar05@st.com>,
+	Christian Bruel <christian.bruel@foss.st.com>, Alexandre Torgue
+	<alexandre.torgue@foss.st.com>, Conor Dooley <conor+dt@kernel.org>, Krzysztof
+ Kozlowski <krzk+dt@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>, "Neil Armstrong"
 	<neil.armstrong@linaro.org>, Patrice Chotard <patrice.chotard@foss.st.com>,
 	Rob Herring <robh@kernel.org>, Rosen Penev <rosenp@gmail.com>, Vinod Koul
 	<vkoul@kernel.org>, <devicetree@vger.kernel.org>,
 	<kernel@dh-electronics.com>, <linux-arm-kernel@lists.infradead.org>,
 	<linux-kernel@vger.kernel.org>, <linux-stm32@st-md-mailman.stormreply.com>
 References: <20260902141312.649406-1-marex@nabladev.com>
+ <20260902141312.649406-2-marex@nabladev.com>
 Content-Language: en-US
 From: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
-In-Reply-To: <20260902141312.649406-1-marex@nabladev.com>
+In-Reply-To: <20260902141312.649406-2-marex@nabladev.com>
 X-Originating-IP: [10.48.86.251]
 X-ClientProxiedBy: ENXCAS1NODE2.st.com (10.75.128.138) To ENXDAG1NODE4.st.com
  (10.75.129.197)
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AMS0EPF00000192:EE_|GV4PR10MB9596:EE_
-X-MS-Office365-Filtering-Correlation-Id: 83109a49-9883-4d54-d962-08df09a4d856
+X-MS-TrafficTypeDiagnostic: MAD0EPF000008AF:EE_|AS5PR10MB8124:EE_
+X-MS-Office365-Filtering-Correlation-Id: dfca4c9f-54bf-4386-fbb4-08df09a4e1b9
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|36860700016|82310400026|23010399003|376014|7416014|10067099003|3023799007|6133799003|56012099006|22082099003|18002099003|11063799006;
-X-Microsoft-Antispam-Message-Info: T5P8j8MN2qKgrfPD4zjR1+GerB0BUGMPn9VKK2aqDT9wu3J48dJ7fb0YmUt1baEA/6pLpCCYC22XJYevnyQceHiNjbtLezo5uFDG7CxStfWaU0WyEj0JsPThkeLvU9xKm2OhBhsyqwYW6zdpkupVtNc+scSepoAlRvJTXrDxNnT0wUDYEKtg+WFPLu3MlZQLkRLC27NOqSqC2j2JbasgvdeLwg74j1SyYIqFb3zDCUOHBPE/AaC6QcPLGU6wmMVzHoJaPc4gvQIHCZUBz9uzmXCyPGm5MGAsDONsX4HgtyQlZm8HdDS7gVlkQw8yKVK1wSRx8fZisuIYykterwW84euTfiPsi2W1FKspOFipiq9UN/JEldNtn3RL8a5FaxLGP2ZEeQ33O9VpZfhcuLZ2saB/263iUZ/L3ETHotJtWrOtgBP4aqrhMSbPyYj60YX/chgoudQNDg5yEUVaV3zS+u2MjOfdZ4SiM2BelL7Da0et8dcO9GahYtBWo7qvTHq9NRirvKU27dqU3rNRY+yFyuJ4Gu/ObLIDn+sJrSIAxWHwGlmyhrpbD+e/Nukvqf1GqYTSs4zi/+/HO9mJIy3647xQRWuvENW925QXDjv4e2TwunE2ALK/8TkciXywdeSndwSm5g3Qk/CIiO1wYVJiIA==
-X-Forefront-Antispam-Report: CIP:164.130.1.88;CTRY:IT;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:smtpO365.st.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(1800799024)(36860700016)(82310400026)(23010399003)(376014)(7416014)(10067099003)(3023799007)(6133799003)(56012099006)(22082099003)(18002099003)(11063799006);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|36860700016|82310400026|7416014|376014|1800799024|13003099007|56012099006|10067099003|22082099003|4143699003|11063799006|18002099003|18092099006;
+X-Microsoft-Antispam-Message-Info: adfew+WHyFp8Id6Yi1xG3NTCANTZVr6SDo6BV6mBwGL91uqaJHhnrHA63RWoUWYq7LMU6wfxjO2TVTFE+46IHbmtxy3clLZoonJHo4yU89pE507S7qhOIeiw6Bt00PRLcNY3ACFhQF4wvYyZ8x5gb7eaNBM04LxAVPpatCM2E7jAHBBM9jAKbkBpIj1o/6cqT+AnObs9YaPAlyiBDoTLgsnT9o704JuoKekWRt8rTNLFUB12SvCNR9yAMB/ePzs4xtR2NCKmnpAsoW79g0b429EyXAAeQdCgdOvBm4ICscuMh9+cQ1VDShrjJ1GyASq5NwhVnYqLzZddp4SU2n+OmfCvdbio4lmNjOhwsAWvd6idXxSfWq2ZOYNe+Mtk8TBlYKnGHT7LPM44nf4cWGYiK1z8p69jgh8Pk5rT5C4dku1zp4mAPijbXG+bh/CCTTlkce1nJqgF3HHQ1qQrkbycyuQe6UIraNAPJqV3kdB+NoLFazs+MQKXWwK008zPZFHXhlotnJx5PoWPnDaH7+A/tlpEHZzpbSfseQLIwHbmIHpS1ycGg2Yy540Zo7gnAupRTUNFgll49dFb+UMpLGciHXuG1DxaiL/PLKHCPz/NUYe08p/dWjvSXjIzfpz/kvJbPRqjHUER51VqhrZAMgBOLHFF+LD9dYZfmx8jBQsOgKySA+cxbZ7R/QSQDiYBquKkg6KVNEJt6Kl1dA1NO3OcLA==
+X-Forefront-Antispam-Report: CIP:164.130.1.87;CTRY:IT;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:smtpO365.st.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(23010399003)(36860700016)(82310400026)(7416014)(376014)(1800799024)(13003099007)(56012099006)(10067099003)(22082099003)(4143699003)(11063799006)(18002099003)(18092099006);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 6fUT0CwICTzxUpjQQehgXElTps+XOEYNZUyo2bVPU3cUrddn7q1cywnpvb8zN+C6hRLzcKtEkzfYjxql+MrXbxQSStyxp09qXKF0zzNvBXT6PDVqrG6f6r7RjQ1V3I7pX/Gc+D/VKbD1zl5oyQFxBX0bPKYhlts4R9JQmLAx4XUWx7I7DZ3kutXYqpFFLwPr1mcM5JYUzVJitk/Nkxk19anCLmQOBQD+HcualahiFIP67nDeSiBRLLEtekvWZQD8ZNi9dNOA2fiXldjCA5nUheQVOcsd1+3b339kbHBWtdDD4SR3viGoeSmcCX+G8NBHqmWe28Zv5w3SOfvV8vCdSvc7VvuPijnBh8FP0ddJLL7+9aimNfKPaEiXyGiMzXcbBR5vp9iJeKvEy4RLIR7HcGefJziJC+NTZcDTnwSACkm//X+KN8oGE3YqqnrLI6kT
+X-MS-Exchange-AntiSpam-MessageData-0: qH1t8aaxGCjfZLEFveWoeFKXiVzOlrLSnWtpKHJzdJXMkPh9o7der3bdMe55TTlrlHD3WHekuW2eP9hqRvePe7tpHJteqXnIvLcbtzSL83/b8TMQaVMAMgxE62+juxmOPi9G8eE2V1p/A9tOhAI2+QHRXzbyGnSABdaDRvLuzZEPgS2GXaZU3rfYpBufHDxp/6+UtY5NNQspBtvEJ27aT25GDpjKnvrsb09wKKLU7LE4CChpZBUrUTcTPfqC3iAU/oWqiT+ar8RDZJ/AdbMv+uHz6Ia5W4xC2kqlVPEX86JOkezsEjq+l41xm4GF47O1pyVDxjN/Ib6x1QNLR7owbzKZKDogTusaqpdEi12/McB5/qMmO2OzY6m+ytClC1kE08FxDLApEmJ1M32NBd7zhFJ5ipY5giOV11IDaK47X3LJ5Rkrj5GpcctTPGlBsZWo
 X-OriginatorOrg: foss.st.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Sep 2026 10:19:31.7927
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Sep 2026 10:19:47.5098
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 83109a49-9883-4d54-d962-08df09a4d856
+X-MS-Exchange-CrossTenant-Network-Message-Id: dfca4c9f-54bf-4386-fbb4-08df09a4e1b9
 X-MS-Exchange-CrossTenant-Id: 75e027c9-20d5-47d5-b82f-77d7cd041e8f
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=75e027c9-20d5-47d5-b82f-77d7cd041e8f;Ip=[164.130.1.88];Helo=[smtpO365.st.com]
-X-MS-Exchange-CrossTenant-AuthSource: AMS0EPF00000192.eurprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=75e027c9-20d5-47d5-b82f-77d7cd041e8f;Ip=[164.130.1.87];Helo=[smtpO365.st.com]
+X-MS-Exchange-CrossTenant-AuthSource: MAD0EPF000008AF.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV4PR10MB9596
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS5PR10MB8124
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260903_031943_214671_0C67E329 
-X-CRM114-Status: GOOD (  19.76  )
+X-CRM114-CacheID: sfid-20260903_032000_298682_8362F90A 
+X-CRM114-Status: GOOD (  29.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,97 +130,522 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gOS8yLzI2IDE2OjEzLCBNYXJlayBWYXN1dCB3cm90ZToKPiBGcm9tOiBQYW5rYWogRGV2IDxw
-YW5rYWouZGV2QHN0LmNvbT4KPiAKPiBEb2N1bWVudCBVU0IyIFBIWSBmb3IgU1RNMzJNUDI1IFVT
-QjIgY29udHJvbGxlcnMsIHdoaWNoIGluY2x1ZGVzIHRoZQo+IFVTQjIuMCBob3N0LW9ubHkgY29u
-dHJvbGxlciBhbmQgVVNCIDIuMCBwYXJ0IG9mIHRoZSBEV0MzIGNvbnRyb2xsZXIuCj4gVHdvIHN1
-Y2ggUEhZcyBpbiB0b3RhbCBhcmUgcHJlc2VudCBpbiBTVE0zMk1QMjUgU29DLCB0aGV5IGJvdGgg
-YXJlCj4gc2xpZ2h0bHkgZGlmZmVyZW50LCB0aGVyZWZvcmUgdGhleSB1c2UgZGlmZmVyZW50IGNv
-bXBhdGlibGUgc3RyaW5nCj4gdG8gZGlzY2VybiB0aGVtLgoKSGVsbG8gTWFyZWssCgpJJ20gbm90
-IHN1cmUgaWYvaG93IHRoaXMgZml0IHdpdGggYWxsIGJlbG93IHRhZ3MuIEZvciBhbGwgdGhlCmNv
-bnRyaWJ1dGlvbnMgeW91J3ZlIG1hZGUsIHlvdSBjYW4gYWRkIG15OgpSZXZpZXdlZC1ieTogRmFi
-cmljZSBHYXNuaWVyIDxmYWJyaWNlLmdhc25pZXJAZm9zcy5zdC5jb20+ClRlc3RlZC1ieTogRmFi
-cmljZSBHYXNuaWVyIDxmYWJyaWNlLmdhc25pZXJAZm9zcy5zdC5jb20+CgpCUiwKRmFicmljZQoK
-PiAKPiBSZXZpZXdlZC1ieTogS3J6eXN6dG9mIEtvemxvd3NraSA8a3J6eXN6dG9mLmtvemxvd3Nr
-aUBvc3MucXVhbGNvbW0uY29tPgo+IFNpZ25lZC1vZmYtYnk6IFBhbmthaiBEZXYgPHBhbmthai5k
-ZXZAc3QuY29tPgo+IENvLWRldmVsb3BlZC1ieTogUmFodWwgS3VtYXIgPHJhaHVsLmt1bWFyMDVA
-c3QuY29tPgo+IFNpZ25lZC1vZmYtYnk6IFJhaHVsIEt1bWFyIDxyYWh1bC5rdW1hcjA1QHN0LmNv
-bT4KPiBDby1kZXZlbG9wZWQtYnk6IEZhYnJpY2UgR2FzbmllciA8ZmFicmljZS5nYXNuaWVyQGZv
-c3Muc3QuY29tPgo+IFNpZ25lZC1vZmYtYnk6IEZhYnJpY2UgR2FzbmllciA8ZmFicmljZS5nYXNu
-aWVyQGZvc3Muc3QuY29tPgo+IENvLWRldmVsb3BlZC1ieTogQ2zDqW1lbnQgTGUgR29mZmljIDxj
-bGVtZW50LmxlZ29mZmljQGZvc3Muc3QuY29tPgo+IFNpZ25lZC1vZmYtYnk6IENsw6ltZW50IExl
-IEdvZmZpYyA8Y2xlbWVudC5sZWdvZmZpY0Bmb3NzLnN0LmNvbT4KPiBDby1kZXZlbG9wZWQtYnk6
-IE1hcmVrIFZhc3V0IDxtYXJleEBuYWJsYWRldi5jb20+Cj4gU2lnbmVkLW9mZi1ieTogTWFyZWsg
-VmFzdXQgPG1hcmV4QG5hYmxhZGV2LmNvbT4KPiAtLS0KPiBDYzogQWxleGFuZHJlIFRvcmd1ZSA8
-YWxleGFuZHJlLnRvcmd1ZUBmb3NzLnN0LmNvbT4KPiBDYzogQ2hyaXN0aWFuIEJydWVsIDxjaHJp
-c3RpYW4uYnJ1ZWxAZm9zcy5zdC5jb20+Cj4gQ2M6IENvbm9yIERvb2xleSA8Y29ub3IrZHRAa2Vy
-bmVsLm9yZz4KPiBDYzogRmFicmljZSBHYXNuaWVyIDxmYWJyaWNlLmdhc25pZXJAZm9zcy5zdC5j
-b20+Cj4gQ2M6IEtyenlzenRvZiBLb3psb3dza2kgPGtyemsrZHRAa2VybmVsLm9yZz4KPiBDYzog
-TWFuaXZhbm5hbiBTYWRoYXNpdmFtIDxtYW5pQGtlcm5lbC5vcmc+Cj4gQ2M6IE1heGltZSBDb3F1
-ZWxpbiA8bWNvcXVlbGluLnN0bTMyQGdtYWlsLmNvbT4KPiBDYzogTmVpbCBBcm1zdHJvbmcgPG5l
-aWwuYXJtc3Ryb25nQGxpbmFyby5vcmc+Cj4gQ2M6IFBhbmthaiBEZXYgPHBhbmthai5kZXZAc3Qu
-Y29tPgo+IENjOiBQYXRyaWNlIENob3RhcmQgPHBhdHJpY2UuY2hvdGFyZEBmb3NzLnN0LmNvbT4K
-PiBDYzogUmFodWwgS3VtYXIgPHJhaHVsLmt1bWFyMDVAc3QuY29tPgo+IENjOiBSb2IgSGVycmlu
-ZyA8cm9iaEBrZXJuZWwub3JnPgo+IENjOiBSb3NlbiBQZW5ldiA8cm9zZW5wQGdtYWlsLmNvbT4K
-PiBDYzogVmlub2QgS291bCA8dmtvdWxAa2VybmVsLm9yZz4KPiBDYzogZGV2aWNldHJlZUB2Z2Vy
-Lmtlcm5lbC5vcmcKPiBDYzoga2VybmVsQGRoLWVsZWN0cm9uaWNzLmNvbQo+IENjOiBsaW51eC1h
-cm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKPiBDYzogbGludXgta2VybmVsQHZnZXIua2Vy
-bmVsLm9yZwo+IENjOiBsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwo+IENjOiBsaW51eC1z
-dG0zMkBzdC1tZC1tYWlsbWFuLnN0b3JtcmVwbHkuY29tCj4gLS0tCj4gVjI6IC0gRml4IHVwIFNv
-Yi9DZGIgbGluZXMKPiAgICAgLSBGaXggdXAgY29tcGF0aWJsZSBzdHJpbmcgaW4gZXhhbXBsZQo+
-ICAgICAtIFVzZSBhZGRpdGlvbmFsUHJvcGVydGllczogZmFsc2UKPiAgICAgLSBFeHBhbmQgZGVz
-Y3JpcHRpb246Cj4gICAgIC0gVXNlIGNsb2NrLWNlbGxzID0gPDE+IHRvIGRpc2Nlcm4gT1NDIGFu
-ZCBmdXR1cmUgUExMIGNsb2NrIGZyb20gdGhlIFBIWQo+IFYzOiAtIE1vdmUgY2xvY2stY2VsbHMg
-bmV4dCB0byBQSFkgY2VsbHMKPiAgICAgLSBGaXggdGhlIGJpbmRpbmdzCj4gICAgIC0gRml4IHVw
-IFNvYi9DZGIgbGluZXMgZnVydGhlcgo+IFY0OiAtIFJlb3JkZXIgdGhlIHByb3BlcnRpZXM6IGxp
-c3QsIHB1dCAjLi4uY2VsbHMgYXQgdGhlIGVuZCwgcmVnIGFmdGVyIGNvbXBhdGlibGUKPiAgICAg
-LSBTcGxpdCB0aGlzIGZyb20gc2VyaWVzIGFybTY0OiBkdHM6IHBoeTogc3Q6IHVzYjogQWRkIFNU
-TTMyTVAyIFVTQiBzdXBwb3J0Cj4gICAgICAgaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvYWxsLzIw
-MjYwODIyMDc0ODE2LjU0ODY2Mi0xLW1hcmV4QG5hYmxhZGV2LmNvbS8KPiBWNTogQWRkIFJCIGZy
-b20gS3J6eXN6dG9mCj4gLS0tCj4gIC4uLi9iaW5kaW5ncy9waHkvc3Qsc3RtMzItdXNiMnBoeS55
-YW1sICAgICAgICB8IDY4ICsrKysrKysrKysrKysrKysrKysKPiAgMSBmaWxlIGNoYW5nZWQsIDY4
-IGluc2VydGlvbnMoKykKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IERvY3VtZW50YXRpb24vZGV2aWNl
-dHJlZS9iaW5kaW5ncy9waHkvc3Qsc3RtMzItdXNiMnBoeS55YW1sCj4gCj4gZGlmZiAtLWdpdCBh
-L0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvc3Qsc3RtMzItdXNiMnBoeS55
-YW1sIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9zdCxzdG0zMi11c2Iy
-cGh5LnlhbWwKPiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+IGluZGV4IDAwMDAwMDAwMDAwMDAuLmM3
-NmU5NGMwNDRlNjcKPiAtLS0gL2Rldi9udWxsCj4gKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0
-cmVlL2JpbmRpbmdzL3BoeS9zdCxzdG0zMi11c2IycGh5LnlhbWwKPiBAQCAtMCwwICsxLDY4IEBA
-Cj4gKyMgU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IChHUEwtMi4wLW9ubHkgT1IgQlNELTItQ2xh
-dXNlKQo+ICslWUFNTCAxLjIKPiArLS0tCj4gKyRpZDogaHR0cDovL2RldmljZXRyZWUub3JnL3Nj
-aGVtYXMvcGh5L3N0LHN0bTMyLXVzYjJwaHkueWFtbCMKPiArJHNjaGVtYTogaHR0cDovL2Rldmlj
-ZXRyZWUub3JnL21ldGEtc2NoZW1hcy9jb3JlLnlhbWwjCj4gKwo+ICt0aXRsZTogU1RNaWNyb2Vs
-ZWN0cm9uaWNzIFNUTTMyIE1QVSBIaWdoLVNwZWVkIFVTQiBQSFkKPiArCj4gK2Rlc2NyaXB0aW9u
-Ogo+ICsgIFVTQjIgUEhZIGJsb2NrIGluIFNUTTMyIGlzIGF0dGFjaGVkIHRvIFVTQiAyLjAgSG9z
-dCBjb250cm9sbGVyIGFuZAo+ICsgIFVTQiAyLjAgc2lkZSBvZiBEV0MzIERSRCBjb250cm9sbGVy
-LCBhbmQgcHJvdmlkZXMgdGhlIFVTQiBMUy9GUy9IUwo+ICsgIGNvbm5lY3Rpdml0eS4gQm90aCBQ
-SFlzIGFyZSB0aGUgRkVNVE8tUEhZLCBidXQgdGhlaXIgY29uZmlndXJhdGlvbgo+ICsgIGJpdHMg
-aW4gdGhlIHN5c3RlbSBjb250cm9sIHJlZ2lzdGVyIGFyZSBkaWZmZXJlbnQgZm9yIGVhY2ggdmFy
-aWFudC4KPiArCj4gK21haW50YWluZXJzOgo+ICsgIC0gRmFicmljZSBHYXNuaWVyIDxmYWJyaWNl
-Lmdhc25pZXJAZm9zcy5zdC5jb20+Cj4gKyAgLSBNYXJlayBWYXN1dCA8bWFyZXhAbmFibGFkZXYu
-Y29tPgo+ICsgIC0gUGFua2FqIERldiA8cGFua2FqLmRldkBzdC5jb20+Cj4gKwo+ICtwcm9wZXJ0
-aWVzOgo+ICsgIGNvbXBhdGlibGU6Cj4gKyAgICBlbnVtOgo+ICsgICAgICAtIHN0LHN0bTMybXAy
-NS11c2IycGh5MQo+ICsgICAgICAtIHN0LHN0bTMybXAyNS11c2IycGh5Mgo+ICsKPiArICByZWc6
-Cj4gKyAgICBtYXhJdGVtczogMQo+ICsKPiArICBjbG9ja3M6Cj4gKyAgICBtYXhJdGVtczogMQo+
-ICsKPiArICByZXNldHM6Cj4gKyAgICBtYXhJdGVtczogMQo+ICsKPiArICB2ZGQzMy1zdXBwbHk6
-Cj4gKyAgICBkZXNjcmlwdGlvbjogUGhhbmRsZSB0byByZWd1bGF0b3IgcHJvdmlkaW5nIDNWMyBw
-b3dlciBzdXBwbHkgdG8gdGhlIFVTQjIgSFMgUEhZCj4gKwo+ICsgICIjY2xvY2stY2VsbHMiOgo+
-ICsgICAgY29uc3Q6IDEKPiArCj4gKyAgIiNwaHktY2VsbHMiOgo+ICsgICAgY29uc3Q6IDAKPiAr
-Cj4gK3JlcXVpcmVkOgo+ICsgIC0gY29tcGF0aWJsZQo+ICsgIC0gcmVnCj4gKyAgLSBjbG9ja3MK
-PiArICAtIHJlc2V0cwo+ICsgIC0gdmRkMzMtc3VwcGx5Cj4gKyAgLSAiI2Nsb2NrLWNlbGxzIgo+
-ICsgIC0gIiNwaHktY2VsbHMiCj4gKwo+ICthZGRpdGlvbmFsUHJvcGVydGllczogZmFsc2UKPiAr
-Cj4gK2V4YW1wbGVzOgo+ICsgIC0gfAo+ICsgICAgI2luY2x1ZGUgPGR0LWJpbmRpbmdzL2Nsb2Nr
-L3N0LHN0bTMybXAyNS1yY2MuaD4KPiArICAgICNpbmNsdWRlIDxkdC1iaW5kaW5ncy9yZXNldC9z
-dCxzdG0zMm1wMjUtcmNjLmg+Cj4gKwo+ICsgICAgdXNiLXBoeUAyNDAwIHsKPiArICAgICAgICBj
-b21wYXRpYmxlID0gInN0LHN0bTMybXAyNS11c2IycGh5MSI7Cj4gKyAgICAgICAgcmVnID0gPDB4
-MjQwMCAweDI0PjsKPiArICAgICAgICAjcGh5LWNlbGxzID0gPDA+Owo+ICsgICAgICAgICNjbG9j
-ay1jZWxscyA9IDwxPjsKPiArICAgICAgICBjbG9ja3MgPSA8JnJjYyBDS19LRVJfVVNCMlBIWTE+
-Owo+ICsgICAgICAgIHJlc2V0cyA9IDwmcmNjIFVTQjJQSFkxX1I+Owo+ICsgICAgICAgIHZkZDMz
-LXN1cHBseSA9IDwmdmRkMzN1c2I+Owo+ICsgICAgfTsKCgotLSAKbGludXgtcGh5IG1haWxpbmcg
-bGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On 9/2/26 16:13, Marek Vasut wrote:
+> From: Pankaj Dev <pankaj.dev@st.com>
+> 
+> Add USB2 PHY driver for STM32MP25 USB2 controllers, which includes the
+> USB2.0 host-only controller and USB 2.0 part of the DWC3 controller.
+> Two such PHYs in total are present in STM32MP25 SoC, they both are
+> slightly different, therefore they use different compatible string
+> to discern them.
+
+Hello Marek,
+
+I'm not sure if/how this fit with all below tags. For all the
+contributions you've made, you can add my:
+Reviewed-by: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
+Tested-by: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
+
+BR,
+Fabrice
+> 
+> Signed-off-by: Pankaj Dev <pankaj.dev@st.com>
+> Co-developed-by: Rahul Kumar <rahul.kumar05@st.com>
+> Signed-off-by: Rahul Kumar <rahul.kumar05@st.com>
+> Co-developed-by: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
+> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
+> Co-developed-by: Christian Bruel <christian.bruel@foss.st.com>
+> Signed-off-by: Christian Bruel <christian.bruel@foss.st.com>
+> Co-developed-by: Marek Vasut <marex@nabladev.com>
+> Signed-off-by: Marek Vasut <marex@nabladev.com>
+> ---
+> Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>
+> Cc: Christian Bruel <christian.bruel@foss.st.com>
+> Cc: Conor Dooley <conor+dt@kernel.org>
+> Cc: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
+> Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
+> Cc: Manivannan Sadhasivam <mani@kernel.org>
+> Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+> Cc: Neil Armstrong <neil.armstrong@linaro.org>
+> Cc: Pankaj Dev <pankaj.dev@st.com>
+> Cc: Patrice Chotard <patrice.chotard@foss.st.com>
+> Cc: Rahul Kumar <rahul.kumar05@st.com>
+> Cc: Rob Herring <robh@kernel.org>
+> Cc: Rosen Penev <rosenp@gmail.com>
+> Cc: Vinod Koul <vkoul@kernel.org>
+> Cc: devicetree@vger.kernel.org
+> Cc: kernel@dh-electronics.com
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
+> Cc: linux-phy@lists.infradead.org
+> Cc: linux-stm32@st-md-mailman.stormreply.com
+> ---
+> V2: - Fix up Sob/Cdb lines
+>     - Operate PHY as a syscon subnode
+> V3: - Update copyright years
+>     - Register two sets of clock, one 480 MHz PLL and one CMN
+>     - Split PHY ops per PHY, since the PHY2 does not have set mode ops
+>     - Fix up Sob/Cdb lines further
+> V4: - Split this from series arm64: dts: phy: st: usb: Add STM32MP2 USB support
+>       https://lore.kernel.org/all/20260822074816.548662-1-marex@nabladev.com/
+> V5: Cache both PHY mode and submode
+> ---
+>  drivers/phy/st/Kconfig             |  10 +
+>  drivers/phy/st/Makefile            |   1 +
+>  drivers/phy/st/phy-stm32-usb2phy.c | 409 +++++++++++++++++++++++++++++
+>  3 files changed, 420 insertions(+)
+>  create mode 100644 drivers/phy/st/phy-stm32-usb2phy.c
+> 
+> diff --git a/drivers/phy/st/Kconfig b/drivers/phy/st/Kconfig
+> index 49206185e5633..2835bb67bca9e 100644
+> --- a/drivers/phy/st/Kconfig
+> +++ b/drivers/phy/st/Kconfig
+> @@ -58,3 +58,13 @@ config PHY_STM32_USBPHYC
+>  	  used by an HS USB Host controller, and the second one is shared
+>  	  between an HS USB OTG controller and an HS USB Host controller,
+>  	  selected by a USB switch.
+> +
+> +config PHY_STM32_USB2PHY
+> +	tristate "STMicroelectronics STM32MP25 USB2.0 PHY Controller driver"
+> +	depends on ARCH_STM32 || COMPILE_TEST
+> +	depends on COMMON_CLK
+> +	select GENERIC_PHY
+> +	help
+> +	  Enable this to support the High-Speed USB 2.0 transceivers that are
+> +	  part of the STMicroelectronics STM32MP25 SoCs. The PHY itself is a
+> +	  Synopsys FEMTO-PHY.
+> diff --git a/drivers/phy/st/Makefile b/drivers/phy/st/Makefile
+> index cb80e954ea9f0..4945df5ed78a8 100644
+> --- a/drivers/phy/st/Makefile
+> +++ b/drivers/phy/st/Makefile
+> @@ -5,3 +5,4 @@ obj-$(CONFIG_PHY_ST_SPEAR1340_MIPHY)	+= phy-spear1340-miphy.o
+>  obj-$(CONFIG_PHY_STIH407_USB)		+= phy-stih407-usb.o
+>  obj-$(CONFIG_PHY_STM32_COMBOPHY)	+= phy-stm32-combophy.o
+>  obj-$(CONFIG_PHY_STM32_USBPHYC) 	+= phy-stm32-usbphyc.o
+> +obj-$(CONFIG_PHY_STM32_USB2PHY) 	+= phy-stm32-usb2phy.o
+> diff --git a/drivers/phy/st/phy-stm32-usb2phy.c b/drivers/phy/st/phy-stm32-usb2phy.c
+> new file mode 100644
+> index 0000000000000..e173557a3cb59
+> --- /dev/null
+> +++ b/drivers/phy/st/phy-stm32-usb2phy.c
+> @@ -0,0 +1,409 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * STMicroelectronics STM32 USB2 PHY Controller driver
+> + * Currently Only supported for STM32MP25
+> + *
+> + * Copyright (C) 2022-2026 STMicroelectronics
+> + * Author(s): Pankaj Dev <pankaj.dev@st.com>.
+> + */
+> +#include <linux/bitfield.h>
+> +#include <linux/clk.h>
+> +#include <linux/clk-provider.h>
+> +#include <linux/io.h>
+> +#include <linux/kernel.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/of_address.h>
+> +#include <linux/of_platform.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/regmap.h>
+> +#include <linux/reset.h>
+> +#include <linux/usb/role.h>
+> +#include <linux/mfd/syscon.h>
+> +
+> +#define SYSCFG_USB2PHY2CR_USB2PHY2CMN		BIT(2)
+> +#define SYSCFG_USB2PHY2CR_VBUSVALID		BIT(4)
+> +#define SYSCFG_USB2PHY2CR_VBUSVLDEXTSEL		BIT(5)
+> +#define SYSCFG_USB2PHY2CR_VBUSVLDEXT		BIT(6)
+> +
+> +#define USBH_NUM_CLK				2
+> +
+> +struct stm32_usb2phy {
+> +	struct phy				*phy;
+> +	struct regmap				*regmap;
+> +	struct device				*dev;
+> +	struct reset_control			*rstc;
+> +	struct clk				*phyref;
+> +	struct regulator			*vdd33;
+> +	const struct stm32mp2_usb2phy_hw_data	*hw_data;
+> +	atomic_t				en_refcnt;
+> +	enum phy_mode				mode;
+> +	int					submode;
+> +	u32					cr_offset;
+> +	bool					is_init;
+> +	struct clk_hw				clkpll_hw;
+> +	struct clk_hw				clkcmn_hw;
+> +	/* Must be last */
+> +	struct clk_hw_onecell_data		onecell;
+> +};
+> +
+> +struct stm32mp2_usb2phy_hw_data {
+> +	u32			phyrefsel_mask;
+> +	const struct phy_ops	*phy_ops;
+> +};
+> +
+> +static int stm32_usb2phy_enable(struct stm32_usb2phy *phy_dev)
+> +{
+> +	const struct stm32mp2_usb2phy_hw_data *phy_data = phy_dev->hw_data;
+> +	unsigned int refsel;
+> +	unsigned long rate;
+> +	int ret;
+> +
+> +	/* Check if a phy is already init or clkpll in use */
+> +	if (atomic_inc_return(&phy_dev->en_refcnt) > 1)
+> +		return 0;
+> +
+> +	rate = clk_get_rate(phy_dev->phyref);
+> +	if (rate == 19200000)
+> +		refsel = 0;
+> +	else if (rate == 20000000)
+> +		refsel = 1;
+> +	else if (rate == 24000000)
+> +		refsel = 2;
+> +	else
+> +		return -EINVAL;
+> +
+> +	ret = regmap_update_bits(phy_dev->regmap,
+> +				 phy_dev->cr_offset,
+> +				 phy_data->phyrefsel_mask,
+> +				 field_prep(phy_data->phyrefsel_mask, refsel));
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = regulator_enable(phy_dev->vdd33);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = clk_prepare_enable(phy_dev->phyref);
+> +	if (ret)
+> +		goto error_regdis;
+> +
+> +	ret = reset_control_deassert(phy_dev->rstc);
+> +	if (ret)
+> +		goto error_clkdis;
+> +
+> +	return 0;
+> +
+> +error_clkdis:
+> +	clk_disable_unprepare(phy_dev->phyref);
+> +error_regdis:
+> +	regulator_disable(phy_dev->vdd33);
+> +
+> +	return ret;
+> +}
+> +
+> +static int stm32_usb2phy_disable(struct stm32_usb2phy *phy_dev)
+> +{
+> +	int ret;
+> +
+> +	/* Check if a phy is still init or clkpll in use */
+> +	if (atomic_dec_return(&phy_dev->en_refcnt) > 0)
+> +		return 0;
+> +
+> +	ret = reset_control_assert(phy_dev->rstc);
+> +	if (ret)
+> +		return ret;
+> +
+> +	clk_disable_unprepare(phy_dev->phyref);
+> +
+> +	return regulator_disable(phy_dev->vdd33);
+> +}
+> +
+> +static int stm32_usb2phy_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+> +{
+> +	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
+> +	u32 mask = SYSCFG_USB2PHY2CR_USB2PHY2CMN |
+> +		   SYSCFG_USB2PHY2CR_VBUSVALID |
+> +		   SYSCFG_USB2PHY2CR_VBUSVLDEXT;
+> +	u32 val = 0;
+> +	int ret;
+> +
+> +	if (mode == PHY_MODE_USB_HOST) {
+> +		if (submode != USB_ROLE_NONE)
+> +			val = SYSCFG_USB2PHY2CR_VBUSVALID;
+> +	} else if (mode == PHY_MODE_USB_DEVICE) {
+> +		val = SYSCFG_USB2PHY2CR_USB2PHY2CMN |
+> +		      SYSCFG_USB2PHY2CR_VBUSVLDEXTSEL;
+> +		if (submode != USB_ROLE_NONE)
+> +			val |= SYSCFG_USB2PHY2CR_VBUSVLDEXT;
+> +		mask |= SYSCFG_USB2PHY2CR_VBUSVLDEXTSEL;
+> +	} else {
+> +		return -EINVAL;
+> +	}
+> +
+> +	ret = regmap_update_bits(phy_dev->regmap, phy_dev->cr_offset, mask, val);
+> +	if (ret)
+> +		return ret;
+> +
+> +	phy_dev->mode = mode;
+> +	phy_dev->submode = submode;
+> +
+> +	return 0;
+> +}
+> +
+> +static int stm32_usb2phy1_init(struct phy *phy)
+> +{
+> +	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
+> +	int ret;
+> +
+> +	ret = stm32_usb2phy_enable(phy_dev);
+> +	if (ret)
+> +		return ret;
+> +
+> +	phy_dev->is_init = true;
+> +
+> +	return 0;
+> +}
+> +
+> +static int stm32_usb2phy2_init(struct phy *phy)
+> +{
+> +	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
+> +	int ret;
+> +
+> +	ret = stm32_usb2phy_enable(phy_dev);
+> +	if (ret)
+> +		return ret;
+> +
+> +	if (phy_dev->mode != PHY_MODE_INVALID) {
+> +		ret = stm32_usb2phy_set_mode(phy, phy_dev->mode, phy_dev->submode);
+> +		if (ret) {
+> +			stm32_usb2phy_disable(phy_dev);
+> +			return ret;
+> +		}
+> +	}
+> +
+> +	phy_dev->is_init = true;
+> +
+> +	return 0;
+> +}
+> +
+> +static int stm32_usb2phy_exit(struct phy *phy)
+> +{
+> +	struct stm32_usb2phy *phy_dev = phy_get_drvdata(phy);
+> +	int ret;
+> +
+> +	ret = stm32_usb2phy_disable(phy_dev);
+> +	if (ret)
+> +		return ret;
+> +
+> +	phy_dev->is_init = false;
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct phy_ops stm32_usb2phy1_data = {
+> +	.init = stm32_usb2phy1_init,
+> +	.exit = stm32_usb2phy_exit,
+> +	.owner = THIS_MODULE,
+> +};
+> +
+> +static const struct phy_ops stm32_usb2phy2_data = {
+> +	.init = stm32_usb2phy2_init,
+> +	.exit = stm32_usb2phy_exit,
+> +	.set_mode = stm32_usb2phy_set_mode,
+> +	.owner = THIS_MODULE,
+> +};
+> +
+> +static int stm32_usb2phy_clkpll_prepare(struct clk_hw *hw)
+> +{
+> +	struct stm32_usb2phy *phy_dev = container_of(hw, struct stm32_usb2phy,
+> +						     clkpll_hw);
+> +
+> +	return stm32_usb2phy_enable(phy_dev);
+> +}
+> +
+> +static void stm32_usb2phy_clkpll_unprepare(struct clk_hw *hw)
+> +{
+> +	struct stm32_usb2phy *phy_dev = container_of(hw, struct stm32_usb2phy,
+> +						     clkpll_hw);
+> +
+> +	stm32_usb2phy_disable(phy_dev);
+> +}
+> +
+> +static unsigned long stm32_usb2phy_clkpll_recalc_rate(struct clk_hw *hw,
+> +						      unsigned long parent_rate)
+> +{
+> +	return 480000000;
+> +}
+> +
+> +static const struct clk_ops stm32_usb2phy_clkpll_ops = {
+> +	.prepare = stm32_usb2phy_clkpll_prepare,
+> +	.unprepare = stm32_usb2phy_clkpll_unprepare,
+> +	.recalc_rate = stm32_usb2phy_clkpll_recalc_rate,
+> +};
+> +
+> +static int stm32_usb2phy_clkcmn_prepare(struct clk_hw *hw)
+> +{
+> +	struct stm32_usb2phy *phy_dev = container_of(hw, struct stm32_usb2phy,
+> +						     clkcmn_hw);
+> +
+> +	return regmap_clear_bits(phy_dev->regmap, phy_dev->cr_offset,
+> +				 SYSCFG_USB2PHY2CR_USB2PHY2CMN);
+> +}
+> +
+> +static void stm32_usb2phy_clkcmn_unprepare(struct clk_hw *hw)
+> +{
+> +	struct stm32_usb2phy *phy_dev = container_of(hw, struct stm32_usb2phy,
+> +						     clkcmn_hw);
+> +
+> +	regmap_set_bits(phy_dev->regmap, phy_dev->cr_offset,
+> +			SYSCFG_USB2PHY2CR_USB2PHY2CMN);
+> +}
+> +
+> +static const struct clk_ops stm32_usb2phy_clkcmn_ops = {
+> +	.prepare = stm32_usb2phy_clkcmn_prepare,
+> +	.unprepare = stm32_usb2phy_clkcmn_unprepare,
+> +};
+> +
+> +static int stm32_usb2phy_probe(struct platform_device *pdev)
+> +{
+> +	struct phy_provider *phy_provider;
+> +	struct device *dev = &pdev->dev;
+> +	struct stm32_usb2phy *phy_dev;
+> +	char *pllname, *cmnname;
+> +	const __be32 *offset;
+> +	struct phy *phy;
+> +	int ret;
+> +
+> +	phy_dev = devm_kzalloc(dev, struct_size(phy_dev, onecell.hws, USBH_NUM_CLK), GFP_KERNEL);
+> +	if (!phy_dev)
+> +		return -ENOMEM;
+> +
+> +	phy_dev->dev = dev;
+> +	phy_dev->submode = USB_ROLE_NONE;
+> +	dev_set_drvdata(dev, phy_dev);
+> +
+> +	phy_dev->rstc = devm_reset_control_get(dev, NULL);
+> +	if (IS_ERR(phy_dev->rstc))
+> +		return dev_err_probe(dev, PTR_ERR(phy_dev->rstc), "Failed to get USB2PHY reset\n");
+> +
+> +	phy_dev->phyref = devm_clk_get(dev, NULL);
+> +	if (IS_ERR(phy_dev->phyref))
+> +		return dev_err_probe(dev, PTR_ERR(phy_dev->phyref), "Failed to get phyref clk\n");
+> +
+> +	phy_dev->vdd33 = devm_regulator_get_optional(dev, "vdd33");
+> +	if (IS_ERR(phy_dev->vdd33))
+> +		return dev_err_probe(dev, PTR_ERR(phy_dev->vdd33), "Failed to get vdd3v3 supply\n");
+> +
+> +	phy_dev->regmap = syscon_node_to_regmap(dev->of_node->parent);
+> +	if (IS_ERR(phy_dev->regmap))
+> +		return dev_err_probe(dev, PTR_ERR(phy_dev->regmap), "Failed to get regmap\n");
+> +
+> +	offset = of_get_address(dev->of_node, 0, NULL, NULL);
+> +	if (!offset)
+> +		return dev_err_probe(dev, -EINVAL, "Failed to get regmap offset\n");
+> +
+> +	phy_dev->cr_offset = be32_to_cpu(*offset);
+> +
+> +	phy_dev->hw_data = device_get_match_data(dev);
+> +
+> +	phy = devm_phy_create(dev, NULL, phy_dev->hw_data->phy_ops);
+> +	if (IS_ERR(phy))
+> +		return dev_err_probe(dev, PTR_ERR(phy), "Failed to create PHY\n");
+> +
+> +	phy_dev->phy = phy;
+> +	phy_set_drvdata(phy, phy_dev);
+> +
+> +	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+> +	if (IS_ERR(phy_provider))
+> +		return PTR_ERR(phy_provider);
+> +
+> +	pllname = devm_kasprintf(dev, GFP_KERNEL, "clk_%s_48m",
+> +				 of_node_full_name(dev->of_node));
+> +	if (!pllname)
+> +		return -ENOMEM;
+> +
+> +	cmnname = devm_kasprintf(dev, GFP_KERNEL, "clk_%s_cmn",
+> +				 of_node_full_name(dev->of_node));
+> +	if (!cmnname)
+> +		return -ENOMEM;
+> +
+> +	phy_dev->onecell.num = USBH_NUM_CLK;
+> +	phy_dev->onecell.hws[0] = &phy_dev->clkpll_hw;
+> +	phy_dev->onecell.hws[1] = &phy_dev->clkcmn_hw;
+> +
+> +	phy_dev->clkpll_hw.init = CLK_HW_INIT_NO_PARENT(pllname, &stm32_usb2phy_clkpll_ops, 0);
+> +	ret = devm_clk_hw_register(phy_dev->dev, &phy_dev->clkpll_hw);
+> +	if (ret)
+> +		return dev_err_probe(phy_dev->dev, ret, "Failed to register PLL clock\n");
+> +
+> +	phy_dev->clkcmn_hw.init = CLK_HW_INIT_HW(cmnname, &phy_dev->clkpll_hw,
+> +						 &stm32_usb2phy_clkcmn_ops, 0);
+> +	ret = devm_clk_hw_register(phy_dev->dev, &phy_dev->clkcmn_hw);
+> +	if (ret)
+> +		return dev_err_probe(phy_dev->dev, ret, "Failed to register CMN clock\n");
+> +
+> +	ret = devm_of_clk_add_hw_provider(phy_dev->dev, of_clk_hw_onecell_get, &phy_dev->onecell);
+> +	if (ret)
+> +		return dev_err_probe(phy_dev->dev, ret, "Failed to add clock provider\n");
+> +
+> +	return 0;
+> +}
+> +
+> +static int stm32_usb2phy_suspend(struct device *dev)
+> +{
+> +	struct stm32_usb2phy *phy_dev = dev_get_drvdata(dev);
+> +
+> +	if (phy_dev->is_init)
+> +		return stm32_usb2phy_disable(phy_dev);
+> +
+> +	return 0;
+> +}
+> +
+> +static int stm32_usb2phy_resume(struct device *dev)
+> +{
+> +	struct stm32_usb2phy *phy_dev = dev_get_drvdata(dev);
+> +
+> +	if (phy_dev->is_init)
+> +		return stm32_usb2phy_enable(phy_dev);
+> +
+> +	return 0;
+> +}
+> +
+> +/* STM32MP25xx USB 2.0 PHY attached to USB 2.0 Host controller */
+> +static const struct stm32mp2_usb2phy_hw_data stm32mp25_usb2phy1_hwdata = {
+> +	.phyrefsel_mask = GENMASK(6, 4),
+> +	.phy_ops = &stm32_usb2phy1_data,
+> +};
+> +
+> +/* STM32MP25xx USB 2.0 PHY attached to USB 2.0 part of DWC3 controller */
+> +static const struct stm32mp2_usb2phy_hw_data stm32mp25_usb2phy2_hwdata = {
+> +	.phyrefsel_mask = GENMASK(14, 12),
+> +	.phy_ops = &stm32_usb2phy2_data,
+> +};
+> +
+> +static const struct of_device_id stm32_usb2phy_of_match[] = {
+> +	{ .compatible = "st,stm32mp25-usb2phy1", .data = &stm32mp25_usb2phy1_hwdata },
+> +	{ .compatible = "st,stm32mp25-usb2phy2", .data = &stm32mp25_usb2phy2_hwdata },
+> +	{ /* sentinel */ },
+> +};
+> +MODULE_DEVICE_TABLE(of, stm32_usb2phy_of_match);
+> +
+> +static DEFINE_SIMPLE_DEV_PM_OPS(stm32_usb2phy_pm_ops,
+> +				stm32_usb2phy_suspend, stm32_usb2phy_resume);
+> +
+> +static struct platform_driver stm32_usb2phy_driver = {
+> +	.probe = stm32_usb2phy_probe,
+> +	.driver = {
+> +		.name = "stm32-usb2phy",
+> +		.of_match_table = stm32_usb2phy_of_match,
+> +		.pm = pm_sleep_ptr(&stm32_usb2phy_pm_ops)
+> +	}
+> +};
+> +
+> +module_platform_driver(stm32_usb2phy_driver);
+> +
+> +MODULE_AUTHOR("Pankaj Dev <pankaj.dev@st.com>");
+> +MODULE_DESCRIPTION("STMicroelectronics Generic USB2PHY driver for stm32");
+> +MODULE_LICENSE("GPL");
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
