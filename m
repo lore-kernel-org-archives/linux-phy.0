@@ -4,80 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1192EC61DD6
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Sep 2026 22:24:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A69D3C61DD6
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Sep 2026 02:35:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e27EyUWhBAFk+GP0KY3KzyL32IC5s2Ce7FNGbB0j5mY=; b=uaAg/O8fuLMYeh
-	RXK8jAs6ssRVtns86eR95tSYmAgOuA94Q0qjqlaiNpenbLUdXrGhDJ1906BTDyXTpmVv3Z6jY7zkT
-	NtHX1WHMRK+Jy09+i6nAmUBkf8NZPhraR0N7xenN0Y+IsY8dis/oz/fZMNUZqYdTIWWXNipUNa6/B
-	zhMPRXAOtk9vlhAymba672AuxpJ+wJxYdPdnM6Fs6K5PDAdwg41KQX315i9Xssr7xVbjM8JmbsNnN
-	5gfA2SyDfjm7oBpGYsJEnNgyhsZ7xUCRtRFvEDFu8K7Hjr5PE9nIbAY6+/YzY+SamuRTNcS1m4e4V
-	NeAhqOnJDZ4kGLCOkZZA==;
+	List-Owner; bh=am/JEJs00u3mztM+KTM9vIh1ATMD2jt4/8hGfg0Tc6E=; b=xochM1lKbY/lql
+	b8wYCp+BGTeTpOXyo0dra1SL4dENimK5NqVguE/6r9+1uyxvNCiI/0wFVN03MTRB/F534aVt6qFMo
+	ghDWqBDz94ab3IXcQOlQkvYkwewodQNp5DlF5LenH4SSQZfkDUP0OTieP47QH9hJRH0IOPo+6LmC5
+	DxuDd50WFk5s7nKuMk3wcoVe08CmPNltPXRPWEXssLJM173CRK0iJYzePJPQljj0OAEdhoEnf6eyK
+	Eiaf6lhyORSGpHezCN43afmAwv6nyVXek/TTdDgQtRwM58YYBgdKUDRB5r+31e8Ym0UKU+Hqv9zph
+	wk+bA2RkL5cEwImOtKkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1tNA-0000000Fzpg-1h2Y;
-	Wed, 02 Sep 2026 22:24:00 +0000
-Received: from smtpout-03.galae.net ([185.246.85.4])
+	id 1x1xIn-0000000GDdb-0YIJ;
+	Thu, 03 Sep 2026 02:35:45 +0000
+Received: from mail-japaneastazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c405::7] helo=TYDPR03CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1tN5-0000000FzoX-2DS1
-	for linux-phy@lists.infradead.org;
-	Wed, 02 Sep 2026 22:23:59 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-03.galae.net (Postfix) with ESMTPS id AD5414E414B9;
-	Wed,  2 Sep 2026 22:23:53 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 682F45FF79;
-	Wed,  2 Sep 2026 22:23:53 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id C898611C795A7;
-	Thu,  3 Sep 2026 00:23:40 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1788387828; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:content-language:in-reply-to:references;
-	bh=WYk4FNP1vreOpbsIcYyMXKlgV124hwvOajDLIuuzHrM=;
-	b=Hsl907RxhvM5OKbp5zT4sP1a5g1yLrMhcO+HShZown8lOdBH+BnT0SyRlBMlk8hUOY1krb
-	JIqR4LmjtpWkXVSS1VqEP5Gp0ZCx8h/jn3O9ntVTZ8pPUTQahIY1/MZRNht9hm74AA/gSk
-	Bi6Vchv25i8u2PZqgqny+GrTEzPf+XkuMTuLRx1xWl/meYF+lhgG3ETQoJRh5r0Ci15Gjq
-	AueIB5XXKGt0H4MoWuOyCH3FPDvM8XpSPa4m30H5b1DWFRV65ZVHYy587IJobAMW0yjkae
-	oDKR0TFuC8yYm26+U/DJwCRXXS3pT7mst8eLn2+qQLzABqCqO3ULLB+Lhu8LIw==
-Message-ID: <50fdfff1-1597-48bb-b164-116d5ca4e865@bootlin.com>
-Date: Thu, 3 Sep 2026 00:23:39 +0200
+	id 1x1xIh-0000000GDYo-1YaD;
+	Thu, 03 Sep 2026 02:35:42 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=DBnzxpmhLJKUgQWoq6+3sfaCbzQDqLd7PtQ0dd0jflCmOuxk034g+A5ldeX+REdpd2GsVja51NRW2KNA8YPFJPezTXS486bzz3itCyHFLTEqW/hHlE/qcCUAExBzUcBoT/LsVUyX1BYXph3QcsVy4lQenOXGafJgW/AeZMmPL0TyWyd1C7Ge1flrphRKYQZ2cpgI+vw+QH7/404XwcPQzk3wwJ5EeLmM9ma9sFy3WsI7qyAtZdHatIMTeX7e2ndL5EBW1GBscXpibXHfel1YJ/jNpH7NEGc9WdgDkpvh2FQHajvQ1odvoh55uYMcLRumZyvXSM9hl5yCiHaxqHWzqg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=N91JwVNEQV4gdLCyEaKofpyelvUaY0smONssn1gvwfw=;
+ b=pFqRIBRcS71hQuYMtWkhClCvbupupO7sZ7PHMDNwo8TtqKRGh2Da17dVteJNe4NDqvEncSOM8d0AKd+uf5SBU7mU7kzItO1ZYsvnzNXdaOn4tFJqMF643VKh5/CbUFwrkZwRnaKEN80Gs0SwbGpkr+Nayl2AmvzdZ8rJaT5qexda8LWW37mODCDM+xzhjohYsNkh6rCYqTMTwlCRHDYi/6KGn7U2seceCytTRIAyDM1yHhK/uTNaB+xyBn5g8YoGXKmpVmcmdzoyJTQqg7px7TLqHf9HM2h4Tg1fjvO2QFQjlM92qaSndRQRxtu2NmPNxTZ0Nd+5akZ5ijR83JwlwQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 222.71.101.198) smtp.rcpttodomain=cadence.com smtp.mailfrom=cixtech.com;
+ dmarc=bestguesspass action=none header.from=cixtech.com; dkim=none (message
+ not signed); arc=none (0)
+Received: from OS7PR01CA0033.jpnprd01.prod.outlook.com (2603:1096:604:257::18)
+ by TYZPR06MB6214.apcprd06.prod.outlook.com (2603:1096:400:333::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.360.13; Thu, 3 Sep
+ 2026 02:35:23 +0000
+Received: from OSA0EPF000000CB.apcprd02.prod.outlook.com
+ (2603:1096:604:257:cafe::66) by OS7PR01CA0033.outlook.office365.com
+ (2603:1096:604:257::18) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.382.11 via Frontend Transport; Thu, 3
+ Sep 2026 02:35:23 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 222.71.101.198)
+ smtp.mailfrom=cixtech.com; dkim=none (message not signed)
+ header.d=none;dmarc=bestguesspass action=none header.from=cixtech.com;
+Received-SPF: Pass (protection.outlook.com: domain of cixtech.com designates
+ 222.71.101.198 as permitted sender) receiver=protection.outlook.com;
+ client-ip=222.71.101.198; helo=smtprelay.cixcomputing.com; pr=C
+Received: from smtprelay.cixcomputing.com (222.71.101.198) by
+ OSA0EPF000000CB.mail.protection.outlook.com (10.167.240.57) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.382.8 via Frontend Transport; Thu, 3 Sep 2026 02:35:22 +0000
+Received: from hongliang-System-Product-Name (unknown [172.20.64.180])
+	by smtprelay.cixcomputing.com (Postfix) with ESMTPSA id B3BF14092108;
+	Thu,  3 Sep 2026 10:35:21 +0800 (CST)
+From: Hongliang Yang <hongliang.yang@cixtech.com>
+To: krzk@kernel.org
+Cc: cix-kernel-upstream@cixtech.com,
+	conor+dt@kernel.org,
+	devicetree@vger.kernel.org,
+	fugang.duan@cixtech.com,
+	gregkh@linuxfoundation.org,
+	hongliang.yang@cixtech.com,
+	krzk+dt@kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-usb@vger.kernel.org,
+	neil.armstrong@linaro.org,
+	p.zabel@pengutronix.de,
+	pawell@cadence.com,
+	peter.chen@kernel.org,
+	robh@kernel.org,
+	rogerq@kernel.org,
+	vkoul@kernel.org
+Subject: [PATCH v3 0/5] Add CIX Sky1 USB3/USBSSP support
+Date: Thu,  3 Sep 2026 10:35:16 +0800
+Message-ID: <20260903023521.2064986-1-hongliang.yang@cixtech.com>
+X-Mailer: git-send-email 2.54.0
+In-Reply-To: <503e87d9-3311-413a-98c0-e02a02c4a354@kernel.org>
+References: <503e87d9-3311-413a-98c0-e02a02c4a354@kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH net-next v3 01/10] net: stmmac: move XPCS lifetime
- management to platform drivers
-To: Coia Prant <coiaprant@gmail.com>, Andrew Lunn <andrew+netdev@lunn.ch>,
- "David S . Miller" <davem@davemloft.net>, Eric Dumazet
- <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
- Paolo Abeni <pabeni@redhat.com>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Vinod Koul <vkoul@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Romain Gantois <romain.gantois@bootlin.com>,
- Heiner Kallweit <hkallweit1@gmail.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
- Russell King <linux@armlinux.org.uk>, Shawn Lin <shawn.lin@rock-chips.com>,
- David Heidelberg <david@ixit.cz>, netdev@vger.kernel.org,
- linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-renesas-soc@vger.kernel.org
-References: <20260901150111.141037-1-coiaprant@gmail.com>
- <20260901150111.141037-2-coiaprant@gmail.com>
-Content-Language: en-US
-From: Maxime Chevallier <maxime.chevallier@bootlin.com>
-In-Reply-To: <20260901150111.141037-2-coiaprant@gmail.com>
-X-Last-TLS-Session-Version: TLSv1.3
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: OSA0EPF000000CB:EE_|TYZPR06MB6214:EE_
+X-MS-Office365-Filtering-Correlation-Id: edab8750-f036-4883-059e-08df0964013e
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700016|23010399003|82310400026|376014|7416014|1800799024|18002099003|22082099003|56012099006|10067099003;
+X-Microsoft-Antispam-Message-Info: THlmZFIectaFPenHSlzbqZrloJPUeJl2W++qjuVzcf4o+pkEih2PMejnJrh/YeVUbmFTV2QW5MeR80+Pe2CK0Y9tO8Fl8Kc7bIWTgzqQe/3sXbXaIHFy+CkvWUaaaachj0HFvDx14XpiyjUPxIFzKwUuOsZIAf5sg1+TDXreGqrHrRSBQiLTLvp+nzo5nB3p/bu+gOJRPD+zlTk225cJlRIzpgx2lYkA71oNpSbW4kbz2mEZicVpEMsqW6No0kVfsvBpImCj2SY5mnXyzO2lg2u878maTPRl6/nyOszIMDSc9O2a2pwb7wj+0hD3IT2eUSqFbKIWoGsqYwfXCA87fAMcA8VEh1UIYowMwUHJYN4p/d5mFEP+4/Jk0oyTXv/nv08sBYIW/kIKF33Ndx9UkHaQErKYAP/cF+OsrSrR9LuV5F7uYhjzaF+BNL601DC/nU94thD7jGTgJpsyrKNPGnmluffpBZSaAnKWbIsVd03zO7EtQQvag2PExsLUcDns/nN4lG9YfKqTt/4MTyjC83sXwgL3skUvZn/1F/81KWB3JGpDczJbRobFo3/BmBMnV9UUivA78vJtTeZM2/+oG8vX6FYg5+121FwIYkFRBhwXtSCaETGsXtd1dxx0Pjx49MRcvJpVr9jd3nxER2EcJazVPIWpZaunaoYC9iPvDHQv7JgjzcdbANWut5jXWhW0zcs05K5haiDmjeddGtPcYw==
+X-Forefront-Antispam-Report: CIP:222.71.101.198;CTRY:CN;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:smtprelay.cixcomputing.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(36860700016)(23010399003)(82310400026)(376014)(7416014)(1800799024)(18002099003)(22082099003)(56012099006)(10067099003);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: RtWe+GAno4Q8owC1hqWpuMhO2L3IHjYurePv7hP5B1MTQrHplN0Sn3ksjwM2sG+tC+RpTItxrtvb6fdZr2H3oGkNaYsjK5GRRBl/2N9rB410ef+TI8pPJ67kKYrRQoWMt3dY/TWZNqZURUandz9cswmXVhvnWJY0g9KMGOPf7HNR4pJA7UYqFamOmiagec9LDP1i00Juop6R8FCgxa7AMe613c5ZMkDXGJjBOmJYQAEUCiaPONwhLyD38Mr9bua/9jkIJnA6Hsudj6T5S1u8iJn6jlKRzHI1ppJCGXBc72dnbMs0SjuMR3Gqyoz5E09VvbWVFnjBYmEn90EA6RRlsaJ9qPpsnnsNXbKIYXuuErBkTmxyRQtGN8kEyNqOVzjkFU6BXrkYyJqSnwmNE+Ep9OrWlUOeLIidyJccCS1uesEd0ctZPp+8SmX8PCLyXFYm
+X-OriginatorOrg: cixtech.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Sep 2026 02:35:22.9841
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: edab8750-f036-4883-059e-08df0964013e
+X-MS-Exchange-CrossTenant-Id: 0409f77a-e53d-4d23-943e-ccade7cb4811
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=0409f77a-e53d-4d23-943e-ccade7cb4811;Ip=[222.71.101.198];Helo=[smtprelay.cixcomputing.com]
+X-MS-Exchange-CrossTenant-AuthSource: OSA0EPF000000CB.apcprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYZPR06MB6214
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260902_152355_718652_51ABA2C4 
-X-CRM114-Status: UNSURE (   8.22  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260902_193539_428053_4BEF45C8 
+X-CRM114-Status: GOOD (  18.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,30 +127,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+Add USB3 PHY binding and driver, Cadence USBSSP glue binding and
+driver, and USB4/USB5 device tree nodes for the CIX Sky1 SoC.
 
-On 9/1/26 17:01, Coia Prant wrote:
-> The current XPCS creation logic in stmmac_pcs_setup() is problematic
-> for several reasons.
+This series adds support for the USB4 and USB5 controllers (based on
+Cadence USBSSP DRD) found on the CIX Sky1 SoC, along with their
+associated multi-port USB3 PHY.
 
-[...]
+The two wrapper nodes each carry two 4-byte register windows: these
+are per-controller RCSU control/status registers (AXI cache attribute
+and clock-status) that live inside the shared RCSU aperture, so they
+cannot be expressed as a syscon; the OTG mode straps live in the S5
+system control block and are referenced through the cix,usb-syscon
+phandle.  This was discussed during review of v1 [1].
 
-> 
-> Existing platform drivers (intel, rzn1, socfpga) are updated to use
-> the new callbacks by moving their XPCS creation and cleanup logic into
-> pcs_init() and pcs_exit(). In their pcs_exit() implementations, the
-> pointer to the destroyed PCS is explicitly set to NULL to avoid
-> dangling pointer references.
+Changes in v3:
 
-Hopefully this covers all the glues out there, fingers crossed for
-the qualcomm one. On Socfpga at least, no breakage reported :)
+Device tree:
+- Fix the interrupt specifiers of the usb4/usb5 child nodes: the Sky1
+  GICv3 interrupt controller uses 4 cells, so add the missing fourth
+  (empty) cell to every entry.  Without it the controller IRQs cannot
+  be resolved (platform_get_irq_byname() returns -ENXIO).
 
-Romain may be able to run some tests on rzn1 at some point, but I
-suspect this is fine as well.
+USB3 PHY driver:
+- Assert the hardware resets before registering the PHY provider, so a
+  consumer cannot race with the probe-time assertion.
+- Disable the clocks in LIFO order (ref before apb) in phy_exit().
+- Reorder the error unroll path of phy_init() to assert the resets
+  before disabling the clocks, matching the teardown sequence, and fix
+  the goto targets so clocks that were never enabled are not disabled.
+- Check fwnode_get_name() for NULL and only match "usb-port@" child
+  nodes exactly, instead of any name with a "usb-port" or "USB" prefix.
 
-Reviewed-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
+USBSSP glue driver:
+- Add error cleanup to the probe paths: unmap the xhci/dev registers,
+  assert the resets and disable the clocks.
+- Replace the static of_dev_auxdata array with a probe-local one and
+  allocate the platform data with devm_kzalloc(), so repeated probes
+  cannot corrupt shared state or leak the allocation.
+- Quiesce the hardware on remove: assert (not deassert) the resets
+  before disabling the clocks, and balance the runtime PM usage count
+  with pm_runtime_disable()/pm_runtime_set_suspended()/
+  pm_runtime_put_noidle().
+- Check cdns->host_dev for NULL before dereferencing it in the
+  platform suspend callback.
+- Drop the reference of the OF node returned by of_get_next_child().
+- Stop clearing the clock pointers in the enable error paths, which
+  left NULL pointers in the driver state on later resume attempts.
+- Take device references in the shutdown child-iteration callbacks and
+  drop them after use to avoid a use-after-free.
+- Use BIT(31) instead of a signed 1 << 31 shift.
+- Assign the system sleep callbacks with SYSTEM_SLEEP_PM_OPS() and
+  pm_sleep_ptr() instead of a plain dev_pm_ops behind #ifdef.
 
-Maxime
+[1] https://lore.kernel.org/linux-phy/20260902032306.1182941-1-hongliang.yang@cixtech.com/
+
+Hongliang Yang (5):
+  dt-bindings: phy: Add CIX Sky1 USB3 PHY
+  dt-bindings: usb: Add CIX Sky1 USBSSP controller
+  phy: cix: Add CIX Sky1 USB3 PHY driver
+  usb: cdns3: Add CIX Sky1 glue driver
+  arm64: dts: cix: Add USB4/USB5 nodes for Sky1
+
+ .../bindings/phy/cix,sky1-usb3-phy.yaml       | 107 +++
+ .../bindings/usb/cix,sky1-usbssp.yaml         | 137 ++++
+ MAINTAINERS                                   |   3 +
+ arch/arm64/boot/dts/cix/sky1-orion-o6.dts     |  54 ++
+ arch/arm64/boot/dts/cix/sky1.dtsi             | 118 +++
+ drivers/phy/Kconfig                           |   1 +
+ drivers/phy/Makefile                          |   1 +
+ drivers/phy/cix/Kconfig                       |  20 +
+ drivers/phy/cix/Makefile                      |   6 +
+ drivers/phy/cix/phy-cix-usb3.c                | 410 +++++++++++
+ drivers/phy/cix/phy-cix-usbdp.h               | 310 ++++++++
+ drivers/usb/cdns3/Kconfig                     |  13 +
+ drivers/usb/cdns3/Makefile                    |   1 +
+ drivers/usb/cdns3/cdnsp-sky1.c                | 696 ++++++++++++++++++
+ drivers/usb/cdns3/cdnsp-sky1.h                | 127 ++++
+ 15 files changed, 2004 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/cix,sky1-usb3-phy.yaml
+ create mode 100644 Documentation/devicetree/bindings/usb/cix,sky1-usbssp.yaml
+ create mode 100644 drivers/phy/cix/Kconfig
+ create mode 100644 drivers/phy/cix/Makefile
+ create mode 100644 drivers/phy/cix/phy-cix-usb3.c
+ create mode 100644 drivers/phy/cix/phy-cix-usbdp.h
+ create mode 100644 drivers/usb/cdns3/cdnsp-sky1.c
+ create mode 100644 drivers/usb/cdns3/cdnsp-sky1.h
+
+-- 
+2.54.0
 
 
 -- 
