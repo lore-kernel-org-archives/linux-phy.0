@@ -4,94 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E850AC624A4
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Sep 2026 08:59:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F259EC624A4
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Sep 2026 09:40:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y35HQRXLdjYkNlSP1iqiPWLL2+2KUFjgSA8c0e1rkSU=; b=jGsDVYAB80EvG4
-	kMoN8lHvyYEP43MK9JjXZ5RPTwMjREViQ9P86LqfRJ5Q/3b8Kp4X8KK1XK5ZSwrEZzROanPA5ddzf
-	Dtxa32QpCPcCeftvfpLszCDJrdosaC8a81WCCGwwDyuUsSCbZrMFxS3i6JmVzW0QaVzyCUIeQK3UH
-	yVYJmbgtrFkaSFQVZwY/gv7BEZkn7ODVnl4lbA7H2wiDciL5L+DjjT5+5XlafLNSUm6Yzlg70HCWf
-	y6lWqylTAnrtJ5lM3GBPcxlqgQnXXFYiCbe74tPum2/CeapBtSt17Lu0eLnQvRz+JSw0VgR9VnBJV
-	Y9B+qFUdmOg/velYyRfg==;
+	List-Owner; bh=6xW7Xj7VzESdEKVX8iwcqLZpZfxnfhrNEUAuMCYg/gw=; b=H6zH+AZ2MNBl7x
+	etMgp42n0RQfvA5bt/TFtZqaQwcUhmjnu13DYbzw7HNCKWBQudWJRi6Tmj4/0hKqvJAmtQyA7S2+4
+	JCCmLUZ6iOTn/obx11fj6kFeOKG/JMlz7TWsLMKXJ9oHGiCqH3wakIPA8Z2xHH6s6MocVIRnT4JLb
+	uQIPqaCzd5xJ34zjEZMLVh3oZgRWMRIQ2/rThPCGdNj67+TI/a7/Sx+bhO345dPievdDxJtUusbSX
+	H1pQh7+uqmfU7WdrdjSjDzFQclllT2Hn6BGhO3rf8bq2iZa9lwZQzVqqNDzNTR0OZpl7F1hgb1IIQ
+	25POvy3+0I4wcWITzbEg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x23IQ-0000000GrzX-2iAo;
-	Thu, 03 Sep 2026 08:59:46 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1x23w4-0000000Gyqe-2JO3;
+	Thu, 03 Sep 2026 09:40:44 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x23IP-0000000Grz5-3t6f
-	for linux-phy@bombadil.infradead.org;
-	Thu, 03 Sep 2026 08:59:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=PiL0n2uXooBtcEc368JZodVn4EdHp6AGVsRm0KQPqdM=; b=UR6dSeub/T17rVT75t0G/apCDL
-	vM8ar16XCtZ5/sHBM7cHKtZEIH6YWPoQv0ktZDMyhzZpT4uukqszXLHJfmw/mGLEW4qNJC1UxaZiw
-	kOLFSyc9BMy3X0/e2I/AOiEAT6G4z1ILpUVN4NTDg+h0M0DDbnvN57majnXM2JGVKpZ01k55t8FKs
-	iBbxmcEQqJdjGWI+U3ubtU4SHHheJxf6OarEMtwDpwqr4WY3T8hkVnTL0HGDIGvHEOT43WLoEpHyE
-	D3lUqLm4haoQ+cUQY5KHD8Ly7OToosdHPtEIMNPTpzKn9QQRKlDlXQn+bk7wbzLlIOZyzN5ko5dHr
-	vyWSoIDQ==;
-Received: from smtpout-02.galae.net ([185.246.84.56])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1x23IM-0000000CtTB-3gyS
-	for linux-phy@lists.infradead.org;
-	Thu, 03 Sep 2026 08:59:44 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-02.galae.net (Postfix) with ESMTPS id DFD221A1977;
-	Thu,  3 Sep 2026 08:59:40 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id B3073602B8;
-	Thu,  3 Sep 2026 08:59:40 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 9D55D11C79B6F;
-	Thu,  3 Sep 2026 10:59:30 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1788425975; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:content-language:in-reply-to:references;
-	bh=PiL0n2uXooBtcEc368JZodVn4EdHp6AGVsRm0KQPqdM=;
-	b=NSAfZPyFa9kKtVaFiAwBkbsvfBe6WXTmXNm2f7foXwBePTVa3H+um9g9CFDz2W8fd/X5xc
-	E8nIZDWfVUXYxXhzu0UxH8/n+TJc2bvmjpDPFp0h2uWAimVXBXZFXIJfDnlpbC/BICsVHO
-	7OgGrMYElME/1bbRs1vfRILU5p97XBKrDBpkYQHx0vntvAqBPNmT/95Rfcn6qO2umjS/dz
-	6bNKILtLX1sD6vMvjgaFXhbdCNFXR3o05SWWTOZ3FmVvXWWFNSL6JpLYpfHaj/zqjTK7JA
-	1+EbewU6Kz/XhoqxrQ9mynIRFw4QwXYbxT9kLtPnVi4X1WF8Vvs2BzeoooPLaQ==
-Message-ID: <54544759-8668-41af-ba05-68b8b3f00416@bootlin.com>
-Date: Thu, 3 Sep 2026 10:59:30 +0200
+	id 1x23w3-0000000GyqB-2x3a;
+	Thu, 03 Sep 2026 09:40:43 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id BD104600D1;
+	Thu,  3 Sep 2026 09:40:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 937581F000E9;
+	Thu,  3 Sep 2026 09:40:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1788428442;
+	bh=pTYfmYEwT0KA9fc4+fPHisf+4KclABADdQHaSCS0zDI=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=e6pWuoazL41rcTT1UePOwc1t6Ew83DCs0FoGLb8/a2tIWqc7Pv8frl+f85fNus4BN
+	 cb83dknR+yW5qsaF2UHiMgxJvCeWUd9NJtsi8BAUypZUNex9s2NkNzkIs1kFCczUxk
+	 N16YRWSxl4Pxf1qkITPc991qXX5QC8EXTS7/RWbenYSGKi/sTiXdB90dd30XiR3OOB
+	 9pgu2ydXirfdzOuxNy6MacXacqX7qiBf8bhsUa4GBXhDcH07k+v7nUtBxUq6WdF4aH
+	 /86yrQoNCnka6sSXP1ZV19jz4QsERRMRVJY++1DwFyQSZzd1RoLnAnIIpM+0SNI+5n
+	 K+la+0YO/JXDg==
+Message-ID: <05b84fc9-e71f-412f-bdf2-c0847c2441ff@kernel.org>
+Date: Thu, 3 Sep 2026 11:40:36 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH net-next v3 08/10] net: stmmac: dwmac-rk: add SGMII
- support for RK3568
-To: Coia Prant <coiaprant@gmail.com>, Andrew Lunn <andrew+netdev@lunn.ch>,
- "David S . Miller" <davem@davemloft.net>, Eric Dumazet
- <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
- Paolo Abeni <pabeni@redhat.com>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Vinod Koul <vkoul@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Romain Gantois <romain.gantois@bootlin.com>,
- Heiner Kallweit <hkallweit1@gmail.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
- Russell King <linux@armlinux.org.uk>, Shawn Lin <shawn.lin@rock-chips.com>,
- David Heidelberg <david@ixit.cz>, netdev@vger.kernel.org,
- linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-renesas-soc@vger.kernel.org
-References: <20260901150111.141037-1-coiaprant@gmail.com>
- <20260901150111.141037-9-coiaprant@gmail.com>
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: airoha: Document support for
+ AN7583 Gen3 PCIe PHY
+To: Christian Marangi <ansuelsmth@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20260827122127.18874-1-ansuelsmth@gmail.com>
+ <20260827122127.18874-2-ansuelsmth@gmail.com>
+ <20260831-elastic-turquoise-puma-f032fc@quoll>
+ <6a96cef9.1f1211b9.23c693.9e1e@mx.google.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
-From: Maxime Chevallier <maxime.chevallier@bootlin.com>
-In-Reply-To: <20260901150111.141037-9-coiaprant@gmail.com>
-X-Last-TLS-Session-Version: TLSv1.3
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260903_095943_066782_078AE6E5 
-X-CRM114-Status: GOOD (  17.60  )
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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
+In-Reply-To: <6a96cef9.1f1211b9.23c693.9e1e@mx.google.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,58 +120,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi
+On 01/09/2026 15:11, Christian Marangi wrote:
+> On Mon, Aug 31, 2026 at 08:51:46AM +0200, Krzysztof Kozlowski wrote:
+>> On Thu, Aug 27, 2026 at 02:21:20PM +0200, Christian Marangi wrote:
+>>> +
+>>> +examples:
+>>> +  - |
+>>> +    #include <dt-bindings/phy/phy.h>
+>>> +
+>>> +    phy@1fc7f000 {
+>>> +        compatible = "airoha,an7583-pcie-gen3-phy";
+>>> +        reg = <0x1fc7f000 0xfff>,
+>>> +              <0x1fc7e000 0xfff>,
+>>
+>> Sashiko has a valid point here.
+>>
+>> This should reflect real hardware, not current driver. It is very, very
+>> unlikely that hardware designers designed a block of 0xfff size or 0x4
+>>
+> 
+> Hi for 0xfff yes the block is 0x1000 but I was reporting how it was defined
+> in the original DTS. For the 0x4 is for real a single register for that
 
-On 9/1/26 17:01, Coia Prant wrote:
-> The RK3568 SoC integrates a Synopsys DesignWare XPCS that can be
-> connected to GMAC0 or GMAC1 in SGMII mode.  Add the necessary glue
-> logic to support this configuration.
-> 
-> The current dwmac-rk driver does not support SGMII mode.  SGMII
-> requires a PCS to handle auto-negotiation and link state reporting,
-> but the existing driver only supports RGMII and RMII.
-> 
-> Add a set_to_sgmii() callback to configure the GMAC GRF register for
-> SGMII mode (bit 7 set, interface selection bits 4:6 cleared).  Also
-> add a supports_sgmii flag to indicate SGMII capability.
-> 
-> Provide pcs_init/pcs_exit callbacks to create/destroy the XPCS via
-> xpcs_rk_create() from the Rockchip XPCS platform driver, and a
-> select_pcs callback to return the XPCS to phylink.
-> 
-> While at it, fix the clock enable ordering in rk_gmac_powerup():
-> gmac_clk_enable() is now called before any register access, including
-> the SGMII mode setup path.  Previously SGMII mode would bypass the
-> clock enable via a goto, which could cause synchronous external abort
-> when accessing MAC registers with the clock domain disabled.
-> 
-> Also clean up the error handling in rk_gmac_powerup() by using a
-> unified clk_disable label, and add error handling for the default
-> (unhandled interface) case.
-> 
-> SGMII In-band vs Out-of-band
-> ============================
-> On RK3568, the MAC clock is fixed at 125 MHz and cannot be dynamically
-> changed by the stmmac core's set_clk_tx_rate callback.  In-band mode
-> works because the PCS handles rate adaptation internally.  Out-of-band
-> mode does not work because the MAC would need to change the clock rate
-> to 125/12.5/1.25 MHz for 1000/100/10 Mbps respectively, and the clock
-> is fixed.
-> 
-> Enable default_an_inband for SGMII and disable the generic stmmac
-> set_clk_tx_rate callback.  This forces phylink to use in-band mode,
-> where the PCS is responsible for speed/duplex negotiation.  Without
-> this, the stmmac core would attempt to change the clock rate on speed
-> changes, causing TX to work but RX to fail.
-> 
-> Link: https://dl.radxa.com/rock3/docs/hw/datasheet/Rockchip%20RK3568%20TRM%20Part1%20V1.1-20210301.pdf (Page 386)
-> Signed-off-by: Coia Prant <coiaprant@gmail.com>
+And the original DTS was likely wrong...
 
-Reviewed-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
+> usage. Documentation is scarce for that single block but this also reflect
+> the same implementation used on EN7581. I updated the example to address
+> the strange block of 0xfff.
 
-Maxime
-
-
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
