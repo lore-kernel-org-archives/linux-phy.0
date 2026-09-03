@@ -4,54 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3767DC624D4
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Sep 2026 07:32:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4BCCC61DD3
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Sep 2026 07:44:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JN3eB9O3rkvSvt/m/UV2JXZkenLTPpN+cciUFyyUbe8=; b=1H23T8zDSKXk2n
-	yZElCWkvUO/FkRM4zhTCdYq9q9fUAosrM8yct426HbJXLv/7/NkcmRAPChmpPFt4NCG//VOP5o7Ou
-	/xEk0olrKtlEzw4tLcsoU2zp9l8aAB73ERwrvTD2t9rn1ow6I5F1GGUIdBD7S3875rUGH+nTPGPrL
-	N4fqagdYFKFeFa/5/GCeHkFG8RQIQrxXbC5/q7gesQtjj+adEKnxaf6536YFwWQyLgVgpKxYpknle
-	JHidOKKsuTcCDkNCzPNFsxH8ROSwC0Fltjf/GSTUcebkNjiyFs7JNgUay8J3jiEGYFFVx8CjqwNow
-	9tXhpdUklBrlYv+ZLZoA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=FpxGDB4QqFaZkrApCt37Nuu5HALor0Fz8AqpnS+pLs4=; b=haS7KDElb4cGe9
+	rHFpabYuQ6s62CwyjnU5jVgGkQlTdM3Cy46yVCaYWJ0/eTmctgs6tgkSbBo1LRwyx2PEy6oxsDVOZ
+	28wi7ysjBNAq5npCxRXjN9af9kLBCdj2pmXoU1UXpMNN/ocWkX3SHTeFunZHnKbCfRYP5T26iHORd
+	V56GtyVgz78INrq76VWiTLW3uJskWjSNYoO8D+yRsq56LQM6h8UOedQy+TdjCTQcOovU6ex0e1Wdn
+	IQC16dZGfugHpSvr1Z0ZNhshlDM/z2Bfeu+p9yy24zkYzf7Z2nqhDQ/kb3IfZGuu/kIcLqJpuxABD
+	O8kzIrqMhEaZ11/Pzgbg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x21va-0000000Ga4C-3ERK;
-	Thu, 03 Sep 2026 07:32:06 +0000
+	id 1x2283-0000000Gfh0-2tKH;
+	Thu, 03 Sep 2026 07:44:59 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x21va-0000000Ga2b-0cyj
+	id 1x2282-0000000Gfgc-23AQ
 	for linux-phy@lists.infradead.org;
-	Thu, 03 Sep 2026 07:32:06 +0000
+	Thu, 03 Sep 2026 07:44:58 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 7367D600D4;
-	Thu,  3 Sep 2026 07:32:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D2FF51F000E9;
-	Thu,  3 Sep 2026 07:32:04 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id A6AC9601FB;
+	Thu,  3 Sep 2026 07:44:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C5FC21F000E9;
+	Thu,  3 Sep 2026 07:44:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788420725;
-	bh=unjdYpdNbIjkmO2l1kSqrflzUfV/ZXZX7I9YEQBi3g8=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=Fefl/jn48uateB0OyTUFqwvmNgdYAysbhW6JhhkJnKHKfLZtk3+WwTfHBT2vgox8T
-	 GeM6jtlrsgLKhB/HvjphqALyEVfXTLXI8GX20BXU3z7sUOstpE5ZY1f4sED9rMR6Lw
-	 LzeuqGWl3znkBKrEGYSq48Ppx7BrgOmZA3ExvFEocbtOpQUx8yeoEy4HnEctgIgWkk
-	 be4d/2oMc+Q+QrVs7c+QYy9QWco064vGTbOEYttFEAFID9+wuhM5U8xR0x/C6r/JYW
-	 XBAeNwIzBUPD1nlLJgIOdSQhHU53iQqTCnvkzONTaiIZRm8uMXuMYsgjb92+AZ3FjE
-	 SFXIQvDP+fJfQ==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH V3 2/4] phy: tegra: xusb: Use devm_clk_get_optional to
- fetch USB2 tracking clock
-To: "Wayne Chang" <waynec@nvidia.com>
-Cc: conor+dt@kernel.org, devicetree@vger.kernel.org, vkoul@kernel.org, robh@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com, linux-phy@lists.infradead.org
-In-Reply-To: <20260903071937.533646-3-waynec@nvidia.com>
-References: <20260903071937.533646-1-waynec@nvidia.com>
- <20260903071937.533646-3-waynec@nvidia.com>
-Date: Thu, 03 Sep 2026 07:32:04 +0000
-Message-Id: <20260903073204.D2FF51F000E9@smtp.kernel.org>
+	s=k20260515; t=1788421497;
+	bh=6/S6h4qNNabMqwruC/NSRazKWiKs9Qmq7V4nktpHTNM=;
+	h=From:Subject:Date:To:Cc;
+	b=Ku02frQs4O47y8cy33NkOD63hgWBYprxM6CGhZ+8hIo6jBViK3X4Wn0pDpwWgL7iF
+	 AHYyuBvJHki3KxMMQpEzd7QNkIiVUZk9TaTluqd5dyBbv0hGpX4u+atIYAepO5CiFg
+	 DDP7SZErDXlAdNHwvbLaNThtALfAnPboRrTdYGn3FnmyqrRl4f15gt3ICi6CmAYw06
+	 maNWOBGTEiKz+1pGmUCT7gfnO2D7hEWf8xCIOWSiWOv3ML1/oARosCs+RCxXtpcA4C
+	 XBpt99YqXN0cReRu9iBZ+Z+FEU9PaH55TDTSFBRxThnCCcNlPCziZz++lhfTN9RmRs
+	 xNU/3VWyThqbw==
+From: Mattijs Korpershoek <mkorpershoek@kernel.org>
+Subject: [PATCH v5 0/2] Add support for SA8255P in the qcom-qmp-usb phy
+ driver
+Date: Thu, 03 Sep 2026 09:44:46 +0200
+Message-Id: <20260903-phy-qcom-qmp-usb-8255-v5-0-e251e22b341e@kernel.org>
+MIME-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/4XPTW6DMBAF4KtEXteVGfwz7qr3qLqwzRDcNkDsB
+ CWKuHtMuqGKUJdPevM9zY1lSpEye9vdWKIp5jj0JaiXHQud6/fEY1MyAwFaGIF87K78GIYDPx5
+ Gfs6eIyjFrUVthQmND5aV2zFRGy8P9+PzN+ez/6JwWrCl0cV8GtL1MTxVS++/janigmODCpxVt
+ Wr8+zelnn5eh7Rny8gEa8ZuMVCY2usA2kllEJ+YesUAbDF1Ychg+Vp4ia15YuSakVuMLIyzQlS
+ ydV4a/YeZ5/kOzYSccqIBAAA=
+X-Change-ID: 20260708-phy-qcom-qmp-usb-8255-9986907cdbc9
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>
+Cc: Maxime Ripard <mripard@kernel.org>, linux-arm-msm@vger.kernel.org, 
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, Mattijs Korpershoek <mkorpershoek@kernel.org>, 
+ Sriram Dash <quic_sriramd@quicinc.com>, 
+ Shazad Hussain <quic_shazhuss@quicinc.com>
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3776;
+ i=mkorpershoek@kernel.org; h=from:subject:message-id;
+ bh=y/o5OuTrKWqV1YTkiUVwt0WfAyCcMx1X3jb67Ioq8Hg=;
+ b=owGbwMvMwMUoySu7Jc1P0pTxtFoSQ9ZM1bL9RbmHlzLJ6eV1Vs8VqGMRML/ktTLtZrRbfo7Q6
+ +aA1UKdjMYsDIxcDLJiiix6L52Wb5PP2hcsvJYBZhArE8gUBi5OAZiI+GsOhu1HGB79y9GVPyTf
+ t9ym69cHlg+Ou/pq1FJsDztJM0jdnra5ag5Db/v8ptAOVynxwkoJsT/FPgIf1p2bNfecklK+w4q
+ UaelB0RzTFINn3dn3PPS84acksx8/T2+QPczwrM5uRrD3qYeHL2vMu7Q/mvcnC592xYJw6XRb69
+ 2TTl8qcJ23Q5dp2WcV1uSo5J6zjCvYNVcrNS39FC5ULZV0TVzpkDpb5QJ2IxFZ3xXW/Fo5W6++i
+ yrcdkrh1x121t/TeII5tq2J/vhDRUTYnZ95rYi0XF3umeeHTjErp3Caf59VWWdfdijryTcpZd5l
+ LRouPwKrlP+t5vZis5QtvfizZL3DcsYezm2cU5h3CfgAAA==
+X-Developer-Key: i=mkorpershoek@kernel.org; a=openpgp;
+ fpr=8234A35B45C0D26B31C1A2DA570338B018144F28
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,77 +87,98 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
-IFtIaWdoXSBEb3VibGUtZnJlZSBvZiB0aGUgYHVzYjJgIHBhZCBzdHJ1Y3R1cmUgd2hlbiBgdGVn
-cmFfeHVzYl9wYWRfaW5pdCgpYCBmYWlscy4KLSBbSGlnaF0gSW52YWxpZCBgZGV2aWNlX3VucmVn
-aXN0ZXIoKWAgY2FsbCBvbiBgZGV2aWNlX2FkZCgpYCBmYWlsdXJlIHBhdGguCi0gW0hpZ2hdIE5V
-TEwgcG9pbnRlciBkZXJlZmVyZW5jZSBhbmQgbWVtb3J5IGxlYWsgaW4gYHRlZ3JhX3h1c2JfcG9y
-dF9pbml0KClgIGVycm9yIHBhdGguCi0tCgpjb21taXQgY2JjOTY1ZGRhYmFhM2U4M2NlYThlNmIy
-NjhkYmYzNDEyMmRhYTNjZApBdXRob3I6IFNpbmctSGFuIENoZW4gPHNpbmdoYW5jQG52aWRpYS5j
-b20+CgpwaHk6IHRlZ3JhOiB4dXNiOiBVc2UgZGV2bV9jbGtfZ2V0X29wdGlvbmFsIHRvIGZldGNo
-IFVTQjIgdHJhY2tpbmcgY2xvY2sKICAgIApUaGUgVVNCMiBQQUQgdHJhY2tpbmcgY2xvY2sgaXMg
-YW4gb3B0aW9uYWwgY2xvY2sgc28gdXNlCmRldm1fY2xrX2dldF9vcHRpb25hbCgpIHNvIGEgbWlz
-c2luZyBjbG9jayBpbiBkZXZpY2V0cmVlIGlzCnJlcHJlc2VudGVkIGFzIE5VTEwgYW5kIHByb2Jl
-IGNhbiBjb250aW51ZS4gY2xrX3ByZXBhcmVfZW5hYmxlKCkKYW5kIGNsa19kaXNhYmxlX3VucHJl
-cGFyZSgpIGFscmVhZHkgdHJlYXQgYSBOVUxMIGNsb2NrIGFzIGEgbm8tb3AuCgo+IGRpZmYgLS1n
-aXQgYS9kcml2ZXJzL3BoeS90ZWdyYS94dXNiLXRlZ3JhMTg2LmMgYi9kcml2ZXJzL3BoeS90ZWdy
-YS94dXNiLXRlZ3JhMTg2LmMKPiBpbmRleCA2MDE1NmFlYTI3MDcxLi44MDBiZTBjYmIzZjlmIDEw
-MDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L3RlZ3JhL3h1c2ItdGVncmExODYuYwo+ICsrKyBiL2Ry
-aXZlcnMvcGh5L3RlZ3JhL3h1c2ItdGVncmExODYuYwo+IEBAIC0xMDQ1LDcgKzEwNDUsNyBAQCB0
-ZWdyYTE4Nl91c2IyX3BhZF9wcm9iZShzdHJ1Y3QgdGVncmFfeHVzYl9wYWRjdGwgKnBhZGN0bCwK
-PiAgCQlnb3RvIG91dDsKPiAgCX0KPiAgCj4gLQlwcml2LT51c2IyX3Rya19jbGsgPSBkZXZtX2Ns
-a19nZXQoJnBhZC0+ZGV2LCAidHJrIik7Cj4gKwlwcml2LT51c2IyX3Rya19jbGsgPSBkZXZtX2Ns
-a19nZXRfb3B0aW9uYWwoJnBhZC0+ZGV2LCAidHJrIik7Cj4gIAlpZiAoSVNfRVJSKHByaXYtPnVz
-YjJfdHJrX2NsaykpIHsKCltTZXZlcml0eTogSGlnaF0KVGhpcyBpc24ndCBhIGJ1ZyBpbnRyb2R1
-Y2VkIGJ5IHRoaXMgcGF0Y2gsIGJ1dCBpcyB0aGVyZSBhIGRvdWJsZS1mcmVlIG9mIHRoZQp1c2Iy
-IHBhZCBzdHJ1Y3R1cmUgaWYgdGVncmFfeHVzYl9wYWRfaW5pdCgpIGZhaWxzPwoKTG9va2luZyBh
-dCB0ZWdyYTE4Nl91c2IyX3BhZF9wcm9iZSgpIGp1c3QgYWJvdmUgdGhpcyBjaGFuZ2U6Cgpkcml2
-ZXJzL3BoeS90ZWdyYS94dXNiLXRlZ3JhMTg2LmM6dGVncmExODZfdXNiMl9wYWRfcHJvYmUoKSB7
-CgkuLi4KCWVyciA9IHRlZ3JhX3h1c2JfcGFkX2luaXQocGFkLCBwYWRjdGwsIG5wKTsKCWlmIChl
-cnIgPCAwKSB7CgkJa2ZyZWUodXNiMik7CgkJZ290byBvdXQ7Cgl9CgkuLi4KfQoKSWYgZGV2aWNl
-X2FkZCgpIGZhaWxzIGluc2lkZSB0ZWdyYV94dXNiX3BhZF9pbml0KCksIGl0IGNhbGxzCmRldmlj
-ZV91bnJlZ2lzdGVyKCksIGRyb3BwaW5nIHRoZSBkZXZpY2UgcmVmZXJlbmNlIGNvdW50IHRvIHpl
-cm8gYW5kCnRyaWdnZXJpbmcgdGhlIHJlbGVhc2UgY2FsbGJhY2ssIHdoaWNoIGV2ZW50dWFsbHkg
-Y2FsbHMKdGVncmExODZfdXNiMl9wYWRfcmVtb3ZlKCkgYW5kIGZyZWVzIHVzYjIuIERvZXMgdGhl
-IGV4cGxpY2l0IGtmcmVlKHVzYjIpCmhlcmUgcmVzdWx0IGluIGZyZWVpbmcgdGhlIHNhbWUgcG9p
-bnRlciB0d2ljZT8KCltTZXZlcml0eTogSGlnaF0KVGhpcyBpcyBhIHByZS1leGlzdGluZyBpc3N1
-ZSwgYnV0IGRvZXMgdGVncmFfeHVzYl9wYWRfaW5pdCgpIGNhbGwKZGV2aWNlX3VucmVnaXN0ZXIo
-KSBpbmNvcnJlY3RseSBvbiBpdHMgZmFpbHVyZSBwYXRoPwoKZHJpdmVycy9waHkvdGVncmEveHVz
-Yi5jOnRlZ3JhX3h1c2JfcGFkX2luaXQoKSB7CgkuLi4KCWVyciA9IGRldmljZV9hZGQoJnBhZC0+
-ZGV2KTsKCWlmIChlcnIgPCAwKQoJCWdvdG8gdW5yZWdpc3RlcjsKCglyZXR1cm4gMDsKCnVucmVn
-aXN0ZXI6CglkZXZpY2VfdW5yZWdpc3RlcigmcGFkLT5kZXYpOwoJcmV0dXJuIGVycjsKfQoKSWYg
-ZGV2aWNlX2FkZCgpIGZhaWxzLCB0aGUgZGV2aWNlIHdhcyBuZXZlciBhZGRlZCB0byB0aGUgc3lz
-dGVtLiBEb2VzCmNhbGxpbmcgZGV2aWNlX3VucmVnaXN0ZXIoKSAod2hpY2ggZXhlY3V0ZXMgZGV2
-aWNlX2RlbCgpIGJlZm9yZQpwdXRfZGV2aWNlKCkpIGF0dGVtcHQgdG8gdGVhciBkb3duIHN5c2Zz
-IGVudHJpZXMgdGhhdCB3ZXJlIG5ldmVyIGNyZWF0ZWQsCnBvdGVudGlhbGx5IGxlYWRpbmcgdG8g
-a2VybmVsIHdhcm5pbmdzIG9yIGNyYXNoZXM/IFNob3VsZCBpdCBjYWxsCnB1dF9kZXZpY2UoKSBp
-bnN0ZWFkPwoKW1NldmVyaXR5OiBIaWdoXQpUaGlzIGlzIGEgcHJlLWV4aXN0aW5nIGlzc3VlLCBi
-dXQgaXMgdGhlcmUgYSBOVUxMIHBvaW50ZXIgZGVyZWZlcmVuY2UgaW4gdGhlCmVycm9yIHBhdGgg
-Zm9yIHBvcnQgaW5pdGlhbGl6YXRpb24/Cgpkcml2ZXJzL3BoeS90ZWdyYS94dXNiLmM6dGVncmFf
-eHVzYl9hZGRfdXNiMl9wb3J0KCkgewoJLi4uCgllcnIgPSB0ZWdyYV94dXNiX3BvcnRfaW5pdCgm
-dXNiMi0+YmFzZSwgcGFkY3RsLCBucCwgInVzYjIiLCBpbmRleCk7CglpZiAoZXJyIDwgMCkKCQln
-b3RvIG91dDsKCgl1c2IyLT5iYXNlLm9wcyA9IHBhZGN0bC0+c29jLT5wb3J0cy51c2IyLm9wczsK
-CS4uLgp9CgpJZiB0ZWdyYV94dXNiX3BvcnRfaW5pdCgpIGZhaWxzIChlLmcuLCBkdWUgdG8gZGV2
-aWNlX2FkZCgpIGZhaWxpbmcpLCBpdCByb2xscwpiYWNrIGJ5IGRyb3BwaW5nIHRoZSBkZXZpY2Ug
-cmVmZXJlbmNlLCB0cmlnZ2VyaW5nIHRoZSBwb3J0IHJlbGVhc2UgY2FsbGJhY2s6Cgpkcml2ZXJz
-L3BoeS90ZWdyYS94dXNiLmM6dGVncmFfeHVzYl9wb3J0X3JlbGVhc2UoKSB7CglzdHJ1Y3QgdGVn
-cmFfeHVzYl9wb3J0ICpwb3J0ID0gdG9fdGVncmFfeHVzYl9wb3J0KGRldik7CgoJaWYgKHBvcnQt
-Pm9wcy0+cmVsZWFzZSkKCQlwb3J0LT5vcHMtPnJlbGVhc2UocG9ydCk7Cn0KClNpbmNlIHBvcnQt
-Pm9wcyBpcyBvbmx5IGFzc2lnbmVkIGFmdGVyIHRlZ3JhX3h1c2JfcG9ydF9pbml0KCkgcmV0dXJu
-cwpzdWNjZXNzZnVsbHksIGl0IHdpbGwgYmUgTlVMTCBkdXJpbmcgdGhlIGZhaWx1cmUgcm9sbGJh
-Y2suIERvZXMgdGhlCnVuY29uZGl0aW9uYWwgZGVyZWZlcmVuY2Ugb2YgcG9ydC0+b3BzIGluIHRl
-Z3JhX3h1c2JfcG9ydF9yZWxlYXNlKCkgbGVhZCB0bwphIGtlcm5lbCBwYW5pYz8KCj4gIAkJZXJy
-ID0gUFRSX0VSUihwcml2LT51c2IyX3Rya19jbGspOwo+ICAJCWRldl9kYmcoJnBhZC0+ZGV2LCAi
-ZmFpbGVkIHRvIGdldCB1c2IyIHRyayBjbG9jazogJWRcbiIsIGVycik7CgotLSAKU2FzaGlrbyBB
-SSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYwOTAzMDcxOTM3
-LjUzMzY0Ni0xLXdheW5lY0BudmlkaWEuY29tP3BhcnQ9MgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5n
-IGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+The Qualcomm automotive SA8255p SoC relies on firmware to configure
+platform resources, including clocks, interconnects and TLMM.
+The driver requests resources operations over SCMI using power protocols.
+
+The SCMI power protocol enables or disables resources like clocks,
+interconnect paths, and TLMM (GPIOs) using runtime PM framework APIs,
+such as resume/suspend, to control power on/off.
+
+Power domain "core" controls the GDSC, resets, and TLMM (GPIOs)
+whereas power domain "transfer" controls clocks and interconnects.
+
+Patch 1 adds the binding for sa8255p. Similarly to what has been done
+for I2C [1], this is a separate binding.
+
+Patch 2 adds the driver change, which is based on a public vendor
+patch from qualcomm [2].
+I did the following changes on top of that:
+* Use devm_add_action_or_reset() for dev_pm_domain_detach_list() instead
+  of implementing a driver .remove()
+* Drop the .lanes struct member since it no longer exists.
+* Re-order some functions
+
+This has been tested on next-20260706 with a Ride4 SA8775P board that
+has SCMI firmware (which is compatible).
+
+[1] https://lore.kernel.org/all/20260617-enable-i2c-on-sa8255p-v7-1-ad736dbeab57@oss.qualcomm.com/
+[2] https://git.codelinaro.org/clo/le/meta-qti-auto-kernel/-/blob/LY.AU.0.1.0.r1-16800-gen4meta.0/recipes-kernel/linux/files/usb/0011-PENDING-phy-qcom-qmp-usb-Add-support-for-SA8255P.patch
+
+Signed-off-by: Mattijs Korpershoek <mkorpershoek@kernel.org>
+---
+Changes in v5:
+- Move 'core' as first domain, before 'transfer' (Krzysztof)
+- Reworded binding commit message to be more precise about the various
+  domains ('core', 'transfer' and 'perf') (Krzysztof)
+- Dropped Krzysztof review due to the above binding changes
+- Set .num_vregs=0 since regulators are managed by firmware
+- Link to v4: https://patch.msgid.link/20260724-phy-qcom-qmp-usb-8255-v4-0-a90014fab476@kernel.org
+
+Changes in v4:
+* bindings: Use additionalProperties: instead of unevaluatedProperties:
+  (Krzysztof)
+- Link to v3: https://patch.msgid.link/20260722-phy-qcom-qmp-usb-8255-v3-0-e789070b48f7@kernel.org
+
+Changes in v3:
+* Binding changes:
+  * Use a separate binding file (Krzysztof)
+  * Remove 'usb_' prefix from power-domain-names (Krzysztof)
+* Driver changes:
+  * Remove 'usb_' prefix from power-domain-names
+  * Moved sa8255p_usb3_uniphy_cfg before sa8775p_usb3_uniphy_cfg
+* Link to v2: https://patch.msgid.link/20260709-phy-qcom-qmp-usb-8255-v2-0-3b6c26a45788@kernel.org
+
+Changes in v2:
+* Driver changes:
+  * Fix comment typo tranfer -> transfer
+  * Fix print statement to add a missing '(' in the string
+  * Use dev_err_probe() in qmp_usb_domain_attach() to reduce log noise
+  * Fix pm_runtime_put_sync() order in qmp_usb_d0_to_d3 (Sashiko)
+  * Fix runtime PM reference leak on usb_transfer (Sashiko)
+  * Fix runtime PM reference leak on error in qmp_usb_init (Sashiko)
+  * Reorder qmp_usb_d0_to_d3() to mirror init ordering in qmp_usb_exit()
+    (Sashiko)
+  * Reorder qmp_usb_d0_to_d3() to mirror resume ordering in
+    qmp_usb_runtime_suspend() (Sashiko)
+  * Fix error handling in qmp_usb_runtime_resume() (Sashiko)
+* Link to v1: https://patch.msgid.link/20260708-phy-qcom-qmp-usb-8255-v1-0-8d852a9535db@kernel.org
+
+---
+Mattijs Korpershoek (1):
+      dt-bindings: phy: Add sa8255p USB PHY
+
+Sriram Dash (1):
+      phy: qcom: qmp-usb: Add support for SA8255P
+
+ .../phy/qcom,sa8255p-qmp-usb3-uni-phy.yaml         |  52 ++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c            | 182 ++++++++++++++++++---
+ 2 files changed, 212 insertions(+), 22 deletions(-)
+---
+base-commit: 32b6ef9a5d0eca44f9cd91f52f4faa89f145a0de
+change-id: 20260708-phy-qcom-qmp-usb-8255-9986907cdbc9
+
+Best regards,
+--  
+Mattijs Korpershoek <mkorpershoek@kernel.org>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
