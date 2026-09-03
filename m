@@ -4,109 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0143EC624A4
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Sep 2026 12:32:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1764C624A4
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Sep 2026 12:49:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:From:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lquptE4eqPHMd+/1RTUe5whZ+AsgYNZ0s3q7nw1uyLs=; b=EFOoF0EEauT++B
-	Zm1SJrLs085HVf3nnyr/TPupOVz8yjjEFOteFMTmuvVt2oi6iw939+Ja1drT89WZGyrf6ZElN0S2b
-	5V01ofYZeCFZOIxDgFvJbr5K7+3jxyo04yGDlEB7GuatKI2pe7fAd8MTfkyuxXXiFSPy9KRVyi4lw
-	2NSmT6IMDOCnZBVqdDSnAocgGVQeP52FBhN63j8FIdIzBF1KDGq35F+lWea01Q5Xw35xGYQpw/ajD
-	ZQaeTrfij85ZymCPTU6C7EcmkgQ2xn+9SggD6mqELEedrPzKY+Cg4yoAw5a0JrOrgxcb5nuWSabyn
-	RHWChiT2wVCKzpl+yZOA==;
+	List-Owner; bh=pe3+JZ+zLQzlb4UP4ydejyEZ2+ctL2Sk2jRjz8wN4s0=; b=NHFE0nryTNicrf
+	l04iHJpgTT5R0xp/AZ9q6F4k6qjEaHJGY8E+I5tZ2bAIrAF8xQTZN57RRMPdVyRFVcW1Q4s4DBNrh
+	qAUo6Xi0RWK/5kKQQfNtV1p5lY1JBYZJSK98fe32nAruw8uwejgPPFwif/ar9Jcgwv3otA9LnpQ06
+	WjbytdoW544A91vR+7erNAJkAaJk/o0rVwQAlKDNdwGKVJ1CCjTvxE7sgq3fwQI0bblz9PHJBQM5M
+	3WZYf/c+GVvZtkQMhSvBV318OSYhgPTqS4lNcNByfD6IJ9XzrGljVOJj6bkE79NPd8Uyb17Vcgjrx
+	FsW6wwTV/0z8ikd5kv4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x26cR-0000000HJ2K-1MS2;
-	Thu, 03 Sep 2026 12:32:39 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1x26sf-0000000HLaC-169D;
+	Thu, 03 Sep 2026 12:49:25 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x26cP-0000000HJ1v-0gDq
-	for linux-phy@lists.infradead.org;
-	Thu, 03 Sep 2026 12:32:37 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 35F236022C;
-	Thu,  3 Sep 2026 12:32:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 110CF1F000E9;
-	Thu,  3 Sep 2026 12:32:32 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788438755;
-	bh=lllQr/xve8D8s1etqR2PNBzAHCa4S3iEuLx4vR5u4GY=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=MChZjXhSfHOGtGbnPgLL0WodQbGS2vBkbxWW8V56E3aozS0skD4LQgaKOFb4/UFJL
-	 vwswaEdWng01KLHder3JBwjTwG8uQDcGRH3bZ9t6UsIJEEf+APGJFFHRBG2eIXPr93
-	 3znCcVe3QiW0Auljx0WNu8TVk4dg6tmpolvZaofRHDndv1tYwLaOpBiUL0q306ygOa
-	 CG11rywRt1oxRJlFA0TQUhKSyf3nsNRCrQIrp0olLZ570ExS1sX07VPHpQqreb/6SA
-	 sIQSC7Ct62Uo2tFt7sIv5NVB7URZgKm9AoE6SmZ6W8Ez5C00o8rV3r8K42y6ZLzlgc
-	 UDpRs5n5s7S0g==
-Message-ID: <faa755f7-e5cc-46c0-b838-8d015a481edb@kernel.org>
-Date: Thu, 3 Sep 2026 13:32:21 +0100
+	id 1x26sb-0000000HLZ1-2IqF;
+	Thu, 03 Sep 2026 12:49:23 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+	by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id 20260903124916euoutp01c70c3377e9531d0b4effba39237e9f0d~R0Humhg0D2837828378euoutp01a;
+	Thu,  3 Sep 2026 12:49:16 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com 20260903124916euoutp01c70c3377e9531d0b4effba39237e9f0d~R0Humhg0D2837828378euoutp01a
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1788439756;
+	bh=21XK8ouXwSbTKoSgpNp9PTnpZIppeDeeNUFwSv6ef0I=;
+	h=Date:Subject:To:Cc:From:In-Reply-To:References:From;
+	b=A84uFu5vC7oRa7UYvp4kb1qaFuO04d7y8EFyNaPGxT8vRYtNhTEAf1v8qbCTK1g9c
+	 ErZ7MNjb63emnIqANJbVFtycOFms2nxzltkpKWI+k2FVQDNvhQLzokz+RsiTTZD/sZ
+	 tbFgIVRs1iU0Hx2ZDAjgQWZBvVwu/E+5h3lOiTJE=
+Received: from eusmtip1.samsung.com (unknown [203.254.199.221]) by
+	eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+	20260903124916eucas1p2046caac892ee377927f97ac1ed022764~R0HuWwHQ41235012350eucas1p2O;
+	Thu,  3 Sep 2026 12:49:16 +0000 (GMT)
+Received: from [192.168.1.44] (unknown [106.210.136.40]) by
+	eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+	20260903124914eusmtip1c88b35a3579efd350fc5d28e52aac15c~R0HsrL5_S2573525735eusmtip1u;
+	Thu,  3 Sep 2026 12:49:14 +0000 (GMT)
+Message-ID: <113c3906-56c1-4940-9857-d611edc64361@samsung.com>
+Date: Thu, 3 Sep 2026 14:49:14 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v16 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY
- schema
-To: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
- Bryan O'Donoghue <bryan.odonoghue@linaro.org>, Vinod Koul
- <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20260901-x1e-csi2-phy-v16-0-dd863b929080@linaro.org>
- <20260901-x1e-csi2-phy-v16-1-dd863b929080@linaro.org>
- <RXmjC1LUSR46nHPlGyexr-0HTUa9z8BZY8CabY4J7P4YM9_ntzOucrOnanQBTZlD1jH69cHJEmPb_Xw7dRuqKA==@protonmail.internalid>
- <9b0ac659-999a-4caa-8578-f34a39a67e4f@linaro.org>
-From: Bryan O'Donoghue <bod@kernel.org>
-Content-Language: en-GB
-Autocrypt: addr=bod@kernel.org; keydata=
- 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
-In-Reply-To: <9b0ac659-999a-4caa-8578-f34a39a67e4f@linaro.org>
+Subject: Re: [PATCH v2 02/15] dt-bindings: display: bridge: Add
+ starfive,jh7110-inno-hdmi-controller
+To: Conor Dooley <conor@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+	<neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, Krzysztof
+	Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Andrzej
+	Hajda <andrzej.hajda@intel.com>, Robert Foss <rfoss@kernel.org>, Laurent
+	Pinchart <Laurent.pinchart@ideasonboard.com>, Jonas Karlman
+	<jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>, Luca Ceresoli
+	<luca.ceresoli@bootlin.com>, David Airlie <airlied@gmail.com>, Simona Vetter
+	<simona@ffwll.ch>, Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+	Lee Jones <lee@kernel.org>, Andy Yan <andy.yan@rock-chips.com>, Philipp
+	Zabel <p.zabel@pengutronix.de>, Emil Renner Berthing <kernel@esmil.dk>, Hal
+	Feng <hal.feng@starfivetech.com>, Michael Turquette
+	<mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, Brian Masney
+	<bmasney@redhat.com>, Heiko Stuebner <heiko@sntech.de>, Paul Walmsley
+	<pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou
+	<aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>, Dominique
+	Belhachemi <db@domibel.de>, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	dri-devel@lists.freedesktop.org, mfd@lists.linux.dev,
+	linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-riscv@lists.infradead.org, Icenowy
+	Zheng <uwu@icenowy.me>, Andy Yan <andyshrk@163.com>, Marek Szyprowski
+	<m.szyprowski@samsung.com>, Maud Spierings <maudspierings@gocontroll.com>,
+	Graham Markall <hello@big-grey.co.uk>
+Content-Language: en-US
+From: Michal Wilczynski <m.wilczynski@samsung.com>
+In-Reply-To: <20260828-stylus-bonfire-b71cbfe8b983@spud>
+X-CMS-MailID: 20260903124916eucas1p2046caac892ee377927f97ac1ed022764
+X-Msg-Generator: CA
+X-RootMTR: 20260828134817eucas1p2e2756deff8871be4ea8bb5c65f9c179d
+X-EPHeader: CA
+X-CMS-RootMailID: 20260828134817eucas1p2e2756deff8871be4ea8bb5c65f9c179d
+References: <20260828-jh7110-clean-send-v2-0-331680c8b9d1@samsung.com>
+	<CGME20260828134817eucas1p2e2756deff8871be4ea8bb5c65f9c179d@eucas1p2.samsung.com>
+	<20260828-jh7110-clean-send-v2-2-331680c8b9d1@samsung.com>
+	<20260828-stylus-bonfire-b71cbfe8b983@spud>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260903_054922_189181_CA7B9A66 
+X-CRM114-Status: GOOD (  26.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,257 +102,169 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 03/09/2026 12:53, Vladimir Zapolskiy wrote:
-> On 9/1/26 23:15, Bryan O'Donoghue wrote:
->> Add a base schema for the MIPI CSI2 PHYs on Qualcomm SoCs. This PHY
->> supports both DPHY and CPHY operation. A special mode of DPHY operation -
->> called variously split-mode or combo-mode also allows for two sensors to be
->> connected to one PHY.
+
+
+On 8/28/26 18:47, Conor Dooley wrote:
+> On Fri, Aug 28, 2026 at 03:47:26PM +0200, Michal Wilczynski wrote:
+>> Add the dt-binding for the StarFive JH7110 Innosilicon HDMI controller
+>> (DRM bridge).
 >>
->> The submitted binding here describes the DPHY modes of operation only. CPHY
->> is left to future work.
-> 
-> Like I've said in v14 review, the statement above is incorrect, and it has
-> to be changed, for whatever reason it hasn't happened so far.
-> 
->   From https://lore.kernel.org/all/1e1bc17a-4c7a-4c08-b0c8-2a2ff31fe870@linaro.org/
-Well, I'm not trying to describe CPHY here so I'm not claiming it is 
-adequately described.
-
-I'll reword this.
-
->>>> C-PHY bus type is also well described by this version of the bindings.
-> 
->> Suggested-by: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
->> Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+>> This device is the second child of the starfive,jh7110-hdmi-subsystem node.
+>> It consumes register access clocks (sys, mclk, bclk) from the voutcrg and
+>> both the pixel clock (pclk) and the PHY from its hdmi_phy sibling.
+>>
+>> Signed-off-by: Michal Wilczynski <m.wilczynski@samsung.com>
 >> ---
->>    .../bindings/phy/qcom,x1e80100-csi2-phy.yaml       | 222 +++++++++++++++++++++
->>    1 file changed, 222 insertions(+)
+>>  .../starfive,jh7110-inno-hdmi-controller.yaml      | 109 +++++++++++++++++++++
+>>  1 file changed, 109 insertions(+)
 >>
->> diff --git a/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
+>> diff --git a/Documentation/devicetree/bindings/display/bridge/starfive,jh7110-inno-hdmi-controller.yaml b/Documentation/devicetree/bindings/display/bridge/starfive,jh7110-inno-hdmi-controller.yaml
 >> new file mode 100644
->> index 0000000000000..17de0701eb103
+>> index 0000000000000000000000000000000000000000..0e584e7b756e24e2f99a62daab3117bbf4b472b6
 >> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
->> @@ -0,0 +1,222 @@
->> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+>> +++ b/Documentation/devicetree/bindings/display/bridge/starfive,jh7110-inno-hdmi-controller.yaml
+>> @@ -0,0 +1,109 @@
+>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 >> +%YAML 1.2
 >> +---
->> +$id: http://devicetree.org/schemas/phy/qcom,x1e80100-csi2-phy.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +$id: https://protect2.fireeye.com/v1/url?k=af8ec5c4-ce05d0f2-af8f4e8b-74fe485cbff1-93a4f693847d5818&q=1&e=48120ebb-9eda-4ddc-b580-e20f8c69d005&u=http%3A%2F%2Fdevicetree.org%2Fschemas%2Fdisplay%2Fbridge%2Fstarfive%2Cjh7110-inno-hdmi-controller.yaml%23
+>> +$schema: https://protect2.fireeye.com/v1/url?k=4b8c4737-2a075201-4b8dcc78-74fe485cbff1-8caced678494fd92&q=1&e=48120ebb-9eda-4ddc-b580-e20f8c69d005&u=http%3A%2F%2Fdevicetree.org%2Fmeta-schemas%2Fcore.yaml%23
 >> +
->> +title: Qualcomm X1E80100 SoC CSI2 PHY
+>> +title: StarFive JH7110 Innosilicon HDMI Controller
 >> +
 >> +maintainers:
->> +  - Bryan O'Donoghue <bod@kernel.org>
+>> +  - Michal Wilczynski <m.wilczynski@samsung.com>
 >> +
 >> +description:
->> +  Qualcomm MIPI CSI2 C-PHY/D-PHY combination PHY. Connects MIPI CSI2 sensors
->> +  to Qualcomm's Camera CSI Decoder. The PHY supports both C-PHY and D-PHY
->> +  modes.
+>> +  The controller portion of the StarFive JH7110 INNO HDMI IP.
 >> +
 >> +properties:
 >> +  compatible:
->> +    const: qcom,x1e80100-csi2-phy
->> +
->> +  reg:
->> +    maxItems: 1
->> +
->> +  clocks:
->> +    maxItems: 3
->> +
->> +  clock-names:
->> +    items:
->> +      - const: core
->> +      - const: timer
->> +      - const: ahb
+>> +    const: starfive,jh7110-inno-hdmi-controller
 >> +
 >> +  interrupts:
 >> +    maxItems: 1
 >> +
->> +  operating-points-v2: true
->> +
->> +  opp-table:
->> +    type: object
->> +
->> +  power-domains:
+>> +  clocks:
 >> +    items:
->> +      - description: Titan Top GDSC - Titan ISP Block, Global Distributed Switch Controller.
->> +      - description: MMCX voltage rail
->> +      - description: MXC or MXA voltage rail
+>> +      - description: System clock for register access
+>> +      - description: Module clock
+>> +      - description: Bus clock
+>> +      - description: Pixel clock from PHY
 >> +
->> +  power-domain-names:
+>> +  clock-names:
 >> +    items:
->> +      - const: top
->> +      - const: mmcx
->> +      - const: mx
+>> +      - const: sys
+>> +      - const: mclk
+>> +      - const: bclk
+>> +      - const: pclk
+> 
+> "module" "bus" "pixel" would be more informative than spending most of
+> your characters regurgitating what these are by definition?
+
+So I've reread the TRM and mclk and bclk are named as such there and they
+are audio clocks: section 5.3 lists a "four channel I2S transmitter bit
+clock" among the display subsystem's clock sources, and that is this bclk.
+The already merged starfive,jh7110-voutcrg.yaml names the same input
+"i2stx0_bclk". So I've kept the names and put the information in the
+descriptions instead:
+
+ - description: The HDMI controller main clock
+ - description: Audio master clock
+ - description: Audio bit clock, from the I2S transmitter
+ - description: The pixel clock, generated by the PHY
+
+pclk was wrong. In this binding pclk is the register clock, as in
+rockchip,inno-hdmi.yaml, and the generic inno-hdmi driver looks it up by
+that name, holds it enabled for its lifetime and derives the DDC divider
+from its rate. We had it bound to the pixel clock so the pre-PLL stayed
+powered from probe and the divider was sized from 297 MHz instead of
+49.5 MHz, putting the DDC bus at 17 kHz. Slow but not broken which
+is why it went unnoticed.
+
+So in v3 the register clock takes "pclk" and the PHY clock is named
+"pixel".
+
+> 
 >> +
->> +  vdda-0p9-supply:
->> +    description: Phandle to a 0.9V regulator supply to a PHY.
+>> +  resets:
+>> +    maxItems: 1
 >> +
->> +  vdda-1p2-supply:
->> +    description: Phandle to 1.2V regulator supply to a PHY.
+>> +  reset-names:
+>> +    const: hdmi_tx
+>> +
+>> +  phys:
+>> +    maxItems: 1
+>> +
+>> +  phy-names:
+>> +    const: hdmi-phy
+> 
+> With the trend of ?pointless? -names properties, I'm surprised you don't
+> have interrupt-names? I'd ditch 'em all where there's only a single
+> clock. The _ rather than - in the reset name triggers my OCD.
+> pw-bot: changes-requested
+
+Will do. reset-names and phy-names will be gone which takes the
+underscore in hdmi_tx with them.
+
+Note that in v3 the vout subsystem parent node will be back on Icenowy's
+review, so there will be three new DT patches: bindings for
+starfive,jh7110-vout-subsystem and starfive,jh7110-vout-syscon, and
+starfive,jh7110-dc8200 added to verisilicon,dc.yaml
+
+> 
 >> +
 >> +  ports:
 >> +    $ref: /schemas/graph.yaml#/properties/ports
->> +
->> +    properties:
->> +      port@0:
->> +        $ref: /schemas/graph.yaml#/$defs/port-base
->> +        description:
->> +          Sensor input. Always present. A single sensor is described by a
->> +          single endpoint with the clock lane at position 0 and one to four
->> +          data lanes.
->> +
->> +          DPHY split mode, where two independent sensors share the same PHY,
->> +          is described by two endpoints, each with its own clock lane position;
->> +          endpoint@0 with clock-lanes = <0> and one or two data-lanes and
->> +          endpoint@1 with clock-lanes = <3> and one data lane.
->> +
->> +        unevaluatedProperties: false
->> +
->> +        patternProperties:
->> +          "^endpoint(@[01])?$":
->> +            $ref: /schemas/media/video-interfaces.yaml#
->> +            unevaluatedProperties: false
->> +            properties:
->> +              bus-type:
->> +                enum:
->> +                  - 1 # MEDIA_BUS_TYPE_CSI2_CPHY
->> +                  - 4 # MEDIA_BUS_TYPE_CSI2_DPHY
->> +
->> +              clock-lanes:
->> +                maxItems: 1
->> +
->> +              data-lanes:
->> +                minItems: 1
->> +                maxItems: 4
->> +                items:
->> +                  minimum: 1
->> +                  maximum: 4
->> +                description:
->> +                  Data lane positions following this endpoint's clock
->> +                  lane. Positions are a per-port logical numbering, not
->> +                  package pad or ball positions.
->> +
->> +            required:
->> +              - bus-type
-> 
-> A review comment given to v14 is still applicable, 'bus-type' property
-> should be set as optional with D-PHY mode fallback.
-
-I believe you said "could" be optional in v14 but, if you actually 
-_want_ it optional, I'll update this to reflect, np.
-
-> 
->> +              - data-lanes
->> +              - clock-lanes
-> 
-> Here 'clock-lanes' is a truly optional proiperty since its value is
-> immutable in each endpoint, it should be removed from the list of
-> required properties.
-
-Hmm.
-
-I want to make sure clock-lanes is defined and set to the correct value.
-
-For example clock-lanes = <2> for split mode is wrong.
-> 
-> Also 'clock-lanes' are not expected to be found in C-PHY bus type case.
-
-Right so to both verify the property and not require it from CPHY I will 
-make it required only for DPHY.
-
->> +              - remote-endpoint
->> +
->> +        allOf:
->> +          - if:
->> +              required:
->> +                - endpoint@1
->> +            then:
->> +              properties:
->> +                endpoint@0:
->> +                  properties:
->> +                    clock-lanes:
->> +                      const: 0
->> +                    data-lanes:
->> +                      maxItems: 2
->> +                endpoint@1:
->> +                  properties:
->> +                    clock-lanes:
->> +                      const: 3
->> +                    data-lanes:
->> +                      items:
->> +                        - const: 4
->> +              required:
->> +                - endpoint@0
->> +            else:
->> +              patternProperties:
->> +                "^endpoint(@0)?$":
->> +                  properties:
->> +                    clock-lanes:
->> +                      const: 0
->> +
->> +      port@1:
->> +        $ref: /schemas/graph.yaml#/properties/port
->> +        description: Output to the CAMSS CSID controller.
->> +
->> +    required:
->> +      - port@0
->> +      - port@1
+>> +    description:
+>> +      A graph node with one input port and one output port.
 >> +
 >> +required:
 >> +  - compatible
->> +  - reg
+>> +  - interrupts
 >> +  - clocks
 >> +  - clock-names
->> +  - interrupts
->> +  - operating-points-v2
->> +  - power-domains
->> +  - power-domain-names
->> +  - vdda-0p9-supply
->> +  - vdda-1p2-supply
+>> +  - resets
+>> +  - reset-names
+>> +  - phys
+>> +  - phy-names
 >> +  - ports
 >> +
 >> +additionalProperties: false
 >> +
 >> +examples:
+>> +  # Shown as a child of the HDMI subsystem node; see
+>> +  # Documentation/devicetree/bindings/mfd/starfive,jh7110-hdmi-subsystem.yaml
+>> +  # for the full node.
 >> +  - |
->> +    #include <dt-bindings/clock/qcom,x1e80100-camcc.h>
->> +    #include <dt-bindings/clock/qcom,x1e80100-gcc.h>
->> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
->> +    #include <dt-bindings/media/video-interfaces.h>
->> +    #include <dt-bindings/power/qcom,rpmhpd.h>
+>> +    #include <dt-bindings/clock/starfive,jh7110-crg.h>
+>> +    #include <dt-bindings/reset/starfive,jh7110-crg.h>
 >> +
->> +    phy@ace4000 {
->> +        compatible = "qcom,x1e80100-csi2-phy";
->> +        reg = <0x0ace4000 0x2000>;
->> +
->> +        clocks = <&camcc CAM_CC_CSIPHY0_CLK>,
->> +                 <&camcc CAM_CC_CSI0PHYTIMER_CLK>,
->> +                 <&camcc CAM_CC_CORE_AHB_CLK>;
->> +        clock-names = "core",
->> +                      "timer",
->> +                      "ahb";
->> +
->> +        interrupts = <GIC_SPI 477 IRQ_TYPE_EDGE_RISING>;
->> +
->> +        operating-points-v2 = <&csiphy_opp_table>;
->> +
->> +        power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>,
->> +                        <&rpmhpd RPMHPD_MMCX>,
->> +                        <&rpmhpd RPMHPD_MX>;
->> +        power-domain-names = "top",
->> +                             "mmcx",
->> +                             "mx";
->> +
->> +        vdda-0p9-supply = <&vreg_l2c_0p9>;
->> +        vdda-1p2-supply = <&vreg_l1c_1p2>;
+>> +    controller {
+> 
+> "controller" seems over generic for a node, but I guess if the parent is
+> "hdmi-subsystem" or something it makes sense in that context.
+> 
+> Cheers,
+> Conor.
+> 
+> 
+>> +        compatible = "starfive,jh7110-inno-hdmi-controller";
+>> +        clocks = <&voutcrg JH7110_VOUTCLK_HDMI_TX_SYS>,
+>> +                 <&voutcrg JH7110_VOUTCLK_HDMI_TX_MCLK>,
+>> +                 <&voutcrg JH7110_VOUTCLK_HDMI_TX_BCLK>,
+>> +                 <&hdmi_phy>;
+>> +        clock-names = "sys", "mclk", "bclk", "pclk";
+>> +        interrupts = <99>;
+>> +        phys = <&hdmi_phy>;
+>> +        phy-names = "hdmi-phy";
+>> +        resets = <&voutcrg JH7110_VOUTRST_HDMI_TX_HDMI>;
+>> +        reset-names = "hdmi_tx";
 >> +
 >> +        ports {
 >> +            #address-cells = <1>;
@@ -376,40 +272,31 @@ make it required only for DPHY.
 >> +
 >> +            port@0 {
 >> +                reg = <0>;
->> +                csiphy0_in: endpoint {
->> +                    bus-type = <MEDIA_BUS_TYPE_CSI2_DPHY>;
->> +                    clock-lanes = <0>;
->> +                    data-lanes = <1 2 3 4>;
->> +                    remote-endpoint = <&sensor_out>;
+>> +
+>> +                endpoint {
+>> +                    remote-endpoint = <&dpu_out_dpi0>;
 >> +                };
 >> +            };
 >> +
 >> +            port@1 {
 >> +                reg = <1>;
->> +                csiphy0_out: endpoint {
->> +                    remote-endpoint = <&csid_in>;
+>> +
+>> +                endpoint {
+>> +                    remote-endpoint = <&hdmi_con_in>;
 >> +                };
 >> +            };
 >> +        };
->> +
->> +        csiphy_opp_table: opp-table {
->> +            compatible = "operating-points-v2";
->> +
->> +            opp-300000000 {
->> +                opp-hz = /bits/ 64 <300000000>;
->> +                required-opps = <&rpmhpd_opp_low_svs_d1>,
->> +                                <&rpmhpd_opp_low_svs_d1>;
->> +            };
->> +        };
 >> +    };
+>> +
+>> +...
 >>
-> 
-> Apart of a few minor comments above, everything else looks good to me.
-> 
-> --
-> Best wishes,
-> Vladimir
+>> -- 
+>> 2.34.1
+>>
 
+Best regards,
+-- 
+Michal Wilczynski <m.wilczynski@samsung.com>
 
 -- 
 linux-phy mailing list
