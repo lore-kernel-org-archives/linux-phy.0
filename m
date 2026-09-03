@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E92FC61DD3
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Sep 2026 06:28:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97E1FC624D4
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Sep 2026 06:29:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IjrtUmn3pzoK+pL587sHgTboCITCivGpdACTw51YkYQ=; b=riskDfSxi50DKs
-	IlIY6FgV8fG0/B0o6oq1IlXx9AfroEeoslpR8JzUdYgcWLI3FUPpBptyIoyWTS9CGjlNvTTiTYzNR
-	wWr8NW5xohNS0+DhDpv1kGgtA+J2o0bj+0Ca5d5+hk4Qd5vvijwK80p7TLTeqAMhQGajN5pCtg4rK
-	BGLNPViDiEOTmLCdl83T1Tsci/Gx7I+nJgzQbWYTEU6fLSYDidUd0qURIxCg2tQoLefIop1drvDcG
-	LIBIrmzp1NMBiB6VSd67hXeCdIwyQigNBqQHbmNC95wb7ryA8VjrZhko9UJGT+SLIci0WfpbMuSej
-	FGKoQcYemdan8U07oUxg==;
+	List-Owner; bh=j/FWslIOLnKBD613+IsnteeGWCNWmfcS6cCvy5iCOO4=; b=M4lcajcvpViCl/
+	iaMPUW6eVkQNI6lc4sXF2/4pK5+r3n/tfHkEAd8C+0Gum1SJ1gY8U7aqQ1LQhE4+lPJWzyTzUm3//
+	bsJB6/EVoRG2Nlko9uwNyQBSwBKQrG25Ow3+9ceJ8grrhvTOcDwQ/H1k8g+wT9TlkXuArKdQU4H5D
+	g4dHC8rmexhVw1d9A7OWgaflOknl8nRe25rqO1Z0sVXLtWiXY2dEmm57V72XipVW9F37kaqlvZAj0
+	9B/aEpdyJGUedYR/R5yC1SiSPmat98Vletb7+F2fqYeUTADHuGE+HaPM8oQz4gw8n2+npaEmNI1W1
+	bvTsFAYuG74XMwKTxjvQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x20vx-0000000GUJZ-0UZ2;
-	Thu, 03 Sep 2026 06:28:25 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1x20x7-0000000GURX-1Jn1;
+	Thu, 03 Sep 2026 06:29:37 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x20vv-0000000GUJL-0JTY;
-	Thu, 03 Sep 2026 06:28:23 +0000
+	id 1x20x6-0000000GUR0-1hPg;
+	Thu, 03 Sep 2026 06:29:36 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 8301A4392B;
-	Thu,  3 Sep 2026 06:28:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C1A6B1F000E9;
-	Thu,  3 Sep 2026 06:28:16 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 7D02C600C8;
+	Thu,  3 Sep 2026 06:29:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1506B1F00A3A;
+	Thu,  3 Sep 2026 06:29:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788416902;
-	bh=stq7+QzXoD8kr/94hoLNr8kQGZuEy2Tp2weJvEGB128=;
+	s=k20260515; t=1788416975;
+	bh=trNxy11GG+I/hsdwaQKCklMdFtdLO3bJs5SOczMJ06M=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=aKyaT7KxGHK2l/m+R3J7u4e2mPxqcx1QWNiHL/J/v4OKRTa8L7rPQdFgN45Ozzxj6
-	 T6t6nBEEFTV/hxZPot11E+c3bEdk5RXCFG83HWa+XkJHQ3Tz+k06u4BX9kN5/7l23a
-	 fKdKQnp4FvFMr/HSaDuT+FblX0Lt19AKo7WI/y39Wj27x3OlwVoC6Ebbyd1MR5D6eM
-	 xbZEoAV6kOCO7H61ED1VybYNQFbeKhsLDDKEqBt3rz8ozKvyU1M9MCejD88HUgAf3c
-	 rniEa4prf9r0JpN/ZArO60MlnoZWsuwcyegOkgLc4pSgrq4oJ41sUrMTie5GKKDO8g
-	 MqfRM1OsuXxxw==
-Message-ID: <291fc3be-9f06-4515-b33e-1f34c9448b6d@kernel.org>
-Date: Thu, 3 Sep 2026 08:28:13 +0200
+	b=ZyL1vtSMPKjnjxPY82Vd6sSMqDlJJfsNNEC45Z3mOly022ih8hy2AglQcxEfGmLz/
+	 0o6C9sh8mT4LCOR9PJvKyeLgHUACje2fU/h5f2w9CGzubPNSzthapudR9QSsWOt38X
+	 A7OoSx2N5n5SVG6icE02Dxhd6j0pAYBkZO4PSv7z3u2bAl9Dpsf8zoabFVCPtgmgUR
+	 0YIuqsTdL0tFqtWqp2x7MVQbn7dUds8ZNyc4rlMxELSR4htviBpMyamgvvaQdHXRd7
+	 3vyIBQhZ3rLts4HWnbo01Pd+1EBi4RhDABrnoOswZlouWqfrqpXXgIv+YIKic4oja2
+	 XrOwjtmDheIYw==
+Message-ID: <6ca4ba08-2313-4890-9a88-259799189d52@kernel.org>
+Date: Thu, 3 Sep 2026 08:29:28 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v1 1/4] dt-bindings: Add CIX Sky1 USB bindings
+Subject: Re: [PATCH v3 0/5] Add CIX Sky1 USB3/USBSSP support
 To: Hongliang Yang <hongliang.yang@cixtech.com>
 Cc: cix-kernel-upstream@cixtech.com, conor+dt@kernel.org,
  devicetree@vger.kernel.org, fugang.duan@cixtech.com,
@@ -55,7 +55,7 @@ Cc: cix-kernel-upstream@cixtech.com, conor+dt@kernel.org,
  neil.armstrong@linaro.org, p.zabel@pengutronix.de, pawell@cadence.com,
  peter.chen@kernel.org, robh@kernel.org, rogerq@kernel.org, vkoul@kernel.org
 References: <503e87d9-3311-413a-98c0-e02a02c4a354@kernel.org>
- <20260902032306.1182941-1-hongliang.yang@cixtech.com>
+ <20260903023521.2064986-1-hongliang.yang@cixtech.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -101,7 +101,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  K9bCVaboTA2T77QYkRcRJYSsO1alGX0ome/hMLD1daXlkrNUp1HWa3K4iytLRXjCSIorWiGs
  n+q3krnpXu3TFkA8qtOFZMdnIiFuiq1yLT8hptsV5xh1TA2nsVvSYiaCr3q4s4BKjS/KrLDb
  qoxzw8ISjdUp4pA85vb6YLCmb39NgidD+7PmAr65lBNveIFynTgsja1rRQ4=
-In-Reply-To: <20260902032306.1182941-1-hongliang.yang@cixtech.com>
+In-Reply-To: <20260903023521.2064986-1-hongliang.yang@cixtech.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,36 +118,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 02/09/2026 05:23, Hongliang Yang wrote:
+On 03/09/2026 04:35, Hongliang Yang wrote:
+> Add USB3 PHY binding and driver, Cadence USBSSP glue binding and
+> driver, and USB4/USB5 device tree nodes for the CIX Sky1 SoC.
 > 
->>> +  reg:
->>> +    items:
->>> +      - description: AXI property configuration register
->>> +      - description: Controller status register
->>
->> Registers are not address spaces. Devices do not have address spaces of
->> one register, so this is not a real device.
+> This series adds support for the USB4 and USB5 controllers (based on
+> Cadence USBSSP DRD) found on the CIX Sky1 SoC, along with their
+> associated multi-port USB3 PHY.
 > 
-> I understand the concern, and we looked at this again against the SoC
-> documentation. These two registers are RCSU (system configuration
-> unit) registers, but each of them is dedicated to one USB controller
-> and not shared with any other device:
+> The two wrapper nodes each carry two 4-byte register windows: these
+> are per-controller RCSU control/status registers (AXI cache attribute
+> and clock-status) that live inside the shared RCSU aperture, so they
+> cannot be expressed as a syscon; the OTG mode straps live in the S5
+> system control block and are referenced through the cix,usb-syscon
+> phandle.  This was discussed during review of v1 [1].
 > 
->  - The first register is the controller's Control Register for the AXI
->    cache attributes. Its bit fields are awcache[3:0] (bits 3:0) and
->    arcache[3:0] (bits 7:4), i.e. the AXI cache attributes of the
->    controller's own AXI master interface. The glue driver programs it
->    once during initialization.
+> Changes in v3:
 > 
->  - The second register is a status register providing the AXI clock
->    valid status the driver polls while enabling the controller.
-> 
-> The two instances submitted in this series illustrate the per-device
-> offsets: the USB4 controller uses 0x091c0314 (AXI cache attributes)
-> and 0x091c0400 (status), while USB5 uses 0x091c0324 and 0x091c0410.
 
-You need to describe the address ranges, hierarchy, not the registers.
-
+I do not see how you addressed my feedback from v1. I asked, not to
+combine USB patches with other subsystems, within one patchset. These
+are separate patchsets.
 
 Best regards,
 Krzysztof
