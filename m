@@ -4,73 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19270C624A4
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Sep 2026 07:45:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3A91C61DD3
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Sep 2026 07:50:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kH+gQjF2nEMxnGISCr32LP2iG9aIwJcRZKB+EAXMTAs=; b=qBUPFUEuwrADTv
-	SZz8XoU0DSPaRjKSfrO4xcGp7E1e6hPEDbV5Wl79gAOXjyjcrFKfyRsguTKGchq+UGMKy5rnL+xB0
-	Rht2oZm+Gj9l6tdsyMwhpizFmfuEavo84K5GUYywZOv51tDUtE4t5cO6DnsEnQrQgBW8b4lkNT2MS
-	SBMWArjbqHPSfNxZG4tOxW0K5AYQhWZqioBG36XJnbvnThtwT39FDpckFx/PVfHwyWNZP+boJKnf5
-	PNGEsn3yrpuiIj0y1IMXYvzn/9rVQmAAHTIHRJHkTUL52rZxjFXVpQ/4FRV1Y+oOJ/sqd3J+5NUYP
-	gwtCsiNbMu6Cxt0BTRHw==;
+	List-Owner; bh=YgM+dtxJVKjnhSLVcLTm1kMM2Jlj0kLqa2O2gK6DRo0=; b=H2xXa3CH3tuqx9
+	O+bNURq1CQACvMPb+Vvh++NyuNjTdgzV7EY4db9p6Z+S9wYcfIG+kXq1AnaT6oTCxq9bCfGZrNAiz
+	bH6MMorKvmFlkBV2lFVq3uW5iFPBiXCQ5Et9zqdxaBp3V7pZlHBSaUUyRQNsQD0bDBY+PTXeDvyyi
+	PTU/o4OdgCWIfvy+WnZRN8KyCtuqeXj+EcJiueuGxBXn19o5SctIK3Gh+pHjZ5IhbdZReEbkETMuc
+	pvAz99vyjQH6vj8EB5T2uUcx0DB3zUth4aDhxUxTFhGQTizD0NGRZ4bGEgls3+IUcDjc+0H/wkUHG
+	vVn77yqNNudB09tZ///w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x2288-0000000Gfjo-3GYc;
-	Thu, 03 Sep 2026 07:45:04 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1x22Da-0000000Ggbe-2wgh;
+	Thu, 03 Sep 2026 07:50:42 +0000
+Received: from mx1.white.stw.pengutronix.de ([2a0a:edc0:0:b01:1d::107])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x2287-0000000Gfj5-3Lzk
-	for linux-phy@lists.infradead.org;
-	Thu, 03 Sep 2026 07:45:03 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 353206022D;
-	Thu,  3 Sep 2026 07:45:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2FA501F00A3A;
-	Thu,  3 Sep 2026 07:45:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788421502;
-	bh=jTVsXyCyd/ITERAQodc/uN9iLucTh/CC3iRqkUE9r4Y=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc;
-	b=oiV5P7RFriDM4AK6IcTIyNfxj42vzYdqfWSpq5SWf91E5KpDJBPZ9o5uVA2EziyTs
-	 4kiyVbvWCjERhwEGo1PHSNopyCt/80anI17liGQyP93Pad4mNdupvsONX1Vf0y8b8R
-	 MAO1jyLYZKY8578v8xoT1Z5PwX9xvesrbniEiSG2iTi1lCLl/XfYbIA545TjK8VrUq
-	 WqZqUuaVwgAezQTStQxIaIKxKzfmkznUULs0h61Sph/sxlHf8W52kJp1t4SEkVpgX0
-	 bID2V5EgFX2/a/dp6tYvD7JwuLeIBxc2I+kEbEHf008+dnY2y3sykCVzm6RVN9bYxN
-	 c2ZlnpqQjnNCg==
-From: Mattijs Korpershoek <mkorpershoek@kernel.org>
-Date: Thu, 03 Sep 2026 09:44:48 +0200
-Subject: [PATCH v5 2/2] phy: qcom: qmp-usb: Add support for SA8255P
+	id 1x22DX-0000000GgaB-3jxX;
+	Thu, 03 Sep 2026 07:50:41 +0000
+Received: from [IPv6:2a0a:edc0:0:900:1d::4e] (lupine.office.stw.pengutronix.de [IPv6:2a0a:edc0:0:900:1d::4e])
+	(Authenticated sender: pza@pengutronix.de)
+	by mx1.white.stw.pengutronix.de (Postfix) with ESMTPSA id 45462200571;
+	Thu, 03 Sep 2026 09:50:35 +0200 (CEST)
+Message-ID: <0ffb792adfafd06a0d7fc65153707e3c728fe0ac.camel@pengutronix.de>
+Subject: Re: [PATCH v2 08/15] soc: starfive: Add jh7110-hdmi-subsystem driver
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Michal Wilczynski <m.wilczynski@samsung.com>, Vinod Koul
+ <vkoul@kernel.org>,  Neil Armstrong <neil.armstrong@linaro.org>, Rob
+ Herring <robh@kernel.org>, Krzysztof Kozlowski	 <krzk+dt@kernel.org>, Conor
+ Dooley <conor+dt@kernel.org>, Andrzej Hajda	 <andrzej.hajda@intel.com>,
+ Robert Foss <rfoss@kernel.org>, Laurent Pinchart	
+ <Laurent.pinchart@ideasonboard.com>, Jonas Karlman <jonas@kwiboo.se>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>, Luca Ceresoli
+ <luca.ceresoli@bootlin.com>, David Airlie	 <airlied@gmail.com>, Simona
+ Vetter <simona@ffwll.ch>, Maarten Lankhorst	
+ <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
+ Thomas Zimmermann <tzimmermann@suse.de>, Lee Jones <lee@kernel.org>, Andy
+ Yan <andy.yan@rock-chips.com>, Emil Renner Berthing <kernel@esmil.dk>, Hal
+ Feng <hal.feng@starfivetech.com>, Michael Turquette	
+ <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, Brian Masney	
+ <bmasney@redhat.com>, Heiko Stuebner <heiko@sntech.de>, Conor Dooley	
+ <conor@kernel.org>, Paul Walmsley <pjw@kernel.org>, Palmer Dabbelt	
+ <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti	
+ <alex@ghiti.fr>, Dominique Belhachemi <db@domibel.de>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+	mfd@lists.linux.dev, linux-clk@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+	linux-riscv@lists.infradead.org, Icenowy Zheng <uwu@icenowy.me>, Andy Yan	
+ <andyshrk@163.com>, Marek Szyprowski <m.szyprowski@samsung.com>, Maud
+ Spierings	 <maudspierings@gocontroll.com>, Graham Markall
+ <hello@big-grey.co.uk>
+Date: Thu, 03 Sep 2026 09:50:35 +0200
+In-Reply-To: <20260828-jh7110-clean-send-v2-8-331680c8b9d1@samsung.com>
+References: <20260828-jh7110-clean-send-v2-0-331680c8b9d1@samsung.com>
+		<CGME20260828134828eucas1p1b4061de1538ef0d3322dc32f3db6140e@eucas1p1.samsung.com>
+	 <20260828-jh7110-clean-send-v2-8-331680c8b9d1@samsung.com>
+User-Agent: Evolution 3.56.2-0+deb13u1 
 MIME-Version: 1.0
-Message-Id: <20260903-phy-qcom-qmp-usb-8255-v5-2-e251e22b341e@kernel.org>
-References: <20260903-phy-qcom-qmp-usb-8255-v5-0-e251e22b341e@kernel.org>
-In-Reply-To: <20260903-phy-qcom-qmp-usb-8255-v5-0-e251e22b341e@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>
-Cc: Maxime Ripard <mripard@kernel.org>, linux-arm-msm@vger.kernel.org, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, Mattijs Korpershoek <mkorpershoek@kernel.org>, 
- Sriram Dash <quic_sriramd@quicinc.com>, 
- Shazad Hussain <quic_shazhuss@quicinc.com>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=9977;
- i=mkorpershoek@kernel.org; h=from:subject:message-id;
- bh=TF5/Okug9K3vpQ6CRVYqAgk/thHNSNOiZPwXOyJ1KZw=;
- b=owEBbQGS/pANAwAKARkNHbRmThk1AcsmYgBqmSV2FxdSes3DqLAWwWw5adZX6WR86WeQRJOZU
- ALA6ZpX17SJATMEAAEKAB0WIQQu6UKnth9qvlMTrQAZDR20Zk4ZNQUCapkldgAKCRAZDR20Zk4Z
- NQ9eB/9Mq/NmU9RnXUf8ZWPn1S8w471AFeZ7jtsL2W+9w3sbRhFjj+yJifnVPIfHgPeg5v4KKPQ
- lQJY6Ny1QHmMFPpr3LphodLytQ8PKhwqec/+vD8A6d4VSjw3CKqfpwsAtq7k+YFeFzHFbs8JNtm
- UIkyRNd6SX0NYSoph4QZrBfUpqjUArPf+yB11vCSAn5PQfvWAFHaCegWXr6s8Q6AHtxhplePQir
- EoiYSQASywicKXFpdPFI0I2Rz1pWFkb5FZgWv3YLWoKagROcs0wh/Ntp791eAPHK9z7dFIJ+dcT
- cmRSKMYO9ds73vkYUaSqe6+8U7WbWSWdmVUMiNjGsy14ROyd
-X-Developer-Key: i=mkorpershoek@kernel.org; a=openpgp;
- fpr=8234A35B45C0D26B31C1A2DA570338B018144F28
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260903_005040_084989_7F3B5B0F 
+X-CRM114-Status: GOOD (  21.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,347 +85,87 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Sriram Dash <quic_sriramd@quicinc.com>
+On Fr, 2026-08-28 at 15:47 +0200, Michal Wilczynski wrote:
+> Add the parent driver for the monolithic JH7110 HDMI IP block.
+> 
+> This driver binds to the starfive,jh7110-hdmi-subsystem node. It maps the
+> shared register block, creates a regmap, and calls
+> devm_of_platform_populate() to create its hdmi_phy and hdmi_controller
+> child devices, which retrieve the shared regmap from this parent.
+> 
+> The NoC display-bus clock and reset gate access to the whole vout register
+> region, and this subsystem's PHY child is the first device there to touch
+> registers. Enable the bus before populating the children; PD_VOUT is
+> handled by genpd through the power-domains property.
+> 
+> Co-developed-by: Dominique Belhachemi <db@domibel.de>
+> Signed-off-by: Dominique Belhachemi <db@domibel.de>
+> Signed-off-by: Michal Wilczynski <m.wilczynski@samsung.com>
+> ---
+>  drivers/soc/Kconfig                          |   1 +
+>  drivers/soc/Makefile                         |   1 +
+>  drivers/soc/starfive/Kconfig                 |  27 +++++++
+>  drivers/soc/starfive/Makefile                |   2 +
+>  drivers/soc/starfive/jh7110-hdmi-subsystem.c | 114 +++++++++++++++++++++++++++
+>  5 files changed, 145 insertions(+)
+> 
+[...]
+> diff --git a/drivers/soc/starfive/jh7110-hdmi-subsystem.c b/drivers/soc/starfive/jh7110-hdmi-subsystem.c
+> new file mode 100644
+> index 0000000000000000000000000000000000000000..d893c1c29f98b072b09d261343d3317dbf4c75fe
+> --- /dev/null
+> +++ b/drivers/soc/starfive/jh7110-hdmi-subsystem.c
+> @@ -0,0 +1,114 @@
+[...]
+> +static int starfive_hdmi_subsys_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct reset_control *bus_rst;
+> +	void __iomem *regs;
+> +	struct regmap *regmap;
+> +	struct clk *bus_clk;
+> +	int ret;
+> +
+> +	/*
+> +	 * The NoC display-bus clock and reset gate access to the whole vout
+> +	 * register region, and this subsystem's PHY child is the first device in
+> +	 * that region to touch registers. Bring the bus up here before
+> +	 * populating the children; PD_VOUT is powered on by genpd through the
+> +	 * power-domains property.
+> +	 */
+> +	bus_clk = devm_clk_get(dev, NULL);
+> +	if (IS_ERR(bus_clk))
+> +		return dev_err_probe(dev, PTR_ERR(bus_clk),
+> +				     "Failed to get NoC bus clock\n");
+> +
+> +	ret = clk_prepare_enable(bus_clk);
+> +	if (ret)
+> +		return dev_err_probe(dev, ret, "Failed to enable NoC bus clock\n");
+> +
+> +	ret = devm_add_action_or_reset(dev, starfive_hdmi_subsys_clk_disable, bus_clk);
+> +	if (ret)
+> +		return ret;
 
-The Qualcomm automotive SA8255p SoC relies on firmware to configure
-platform resources, including clocks, interconnects and TLMM.
-The driver requests resources operations over SCMI using power protocols.
+You can simplify this with devm_clk_get_enabled().
 
-The SCMI power protocol enables or disables resources like clocks,
-interconnect paths, and TLMM (GPIOs) using runtime PM framework APIs,
-such as resume/suspend, to control power on/off.
+> +	bus_rst = devm_reset_control_get_exclusive(dev, NULL);
+> +	if (IS_ERR(bus_rst))
+> +		return dev_err_probe(dev, PTR_ERR(bus_rst),
+> +				     "Failed to get NoC bus reset\n");
+> +
+> +	ret = reset_control_deassert(bus_rst);
+> +	if (ret)
+> +		return dev_err_probe(dev, ret, "Failed to deassert NoC bus reset\n");
+> +
+> +	ret = devm_add_action_or_reset(dev, starfive_hdmi_subsys_rst_assert, bus_rst);
+> +	if (ret)
+> +		return ret;
 
-Power domain "core" controls the GDSC, resets, and TLMM (GPIOs)
-whereas power domain "transfer" controls clocks and interconnects.
+You can simplify this with
+devm_reset_control_get_exclusive_deasserted().
 
-In this variant, two disjoint sets of resources are modeled against
-the power domain suppliers which can be turned on/off to achieve modeled
-device states. Two modeled low power states d1 and d3 are supported.
-
-transition: d0 <--> d3  :: both core and transfer suppliers
-transition: d0 <--> d1  :: only transfer supplier
-
-Signed-off-by: Sriram Dash <quic_sriramd@quicinc.com>
-Signed-off-by: Shazad Hussain <quic_shazhuss@quicinc.com>
-Signed-off-by: Mattijs Korpershoek <mkorpershoek@kernel.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 182 ++++++++++++++++++++++++++++----
- 1 file changed, 160 insertions(+), 22 deletions(-)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index b0790bcf0bc8..c18680b60803 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -15,6 +15,7 @@
- #include <linux/of_address.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
-+#include <linux/pm_domain.h>
- #include <linux/regulator/consumer.h>
- #include <linux/reset.h>
- #include <linux/slab.h>
-@@ -1411,6 +1412,9 @@ struct qmp_phy_cfg {
- 
- 	/* Offset from PCS to PCS_USB region */
- 	unsigned int pcs_usb_offset;
-+
-+	/* true, if the device resources are fw managed */
-+	bool fw_managed;
- };
- 
- struct qmp_usb {
-@@ -1439,6 +1443,8 @@ struct qmp_usb {
- 	struct phy *phy;
- 
- 	struct clk_fixed_rate pipe_clk_fixed;
-+
-+	struct dev_pm_domain_list *pd_list;
- };
- 
- static inline void qphy_setbits(void __iomem *base, u32 offset, u32 val)
-@@ -1633,6 +1639,25 @@ static const struct qmp_phy_cfg qdu1000_usb3_uniphy_cfg = {
- 	.has_pwrdn_delay	= true,
- };
- 
-+static const struct qmp_phy_cfg sa8255p_usb3_uniphy_cfg = {
-+	.offsets		= &qmp_usb_offsets_v5,
-+
-+	.serdes_tbl		= sc8280xp_usb3_uniphy_serdes_tbl,
-+	.serdes_tbl_num		= ARRAY_SIZE(sc8280xp_usb3_uniphy_serdes_tbl),
-+	.tx_tbl			= sc8280xp_usb3_uniphy_tx_tbl,
-+	.tx_tbl_num		= ARRAY_SIZE(sc8280xp_usb3_uniphy_tx_tbl),
-+	.rx_tbl			= sc8280xp_usb3_uniphy_rx_tbl,
-+	.rx_tbl_num		= ARRAY_SIZE(sc8280xp_usb3_uniphy_rx_tbl),
-+	.pcs_tbl		= sa8775p_usb3_uniphy_pcs_tbl,
-+	.pcs_tbl_num		= ARRAY_SIZE(sa8775p_usb3_uniphy_pcs_tbl),
-+	.pcs_usb_tbl		= sa8775p_usb3_uniphy_pcs_usb_tbl,
-+	.pcs_usb_tbl_num	= ARRAY_SIZE(sa8775p_usb3_uniphy_pcs_usb_tbl),
-+	.vreg_list		= NULL,
-+	.num_vregs		= 0, /* Regulators are handled by the firmware */
-+	.regs			= qmp_v5_usb3phy_regs_layout,
-+	.fw_managed		= true,
-+};
-+
- static const struct qmp_phy_cfg sa8775p_usb3_uniphy_cfg = {
- 	.offsets		= &qmp_usb_offsets_v5,
- 
-@@ -1867,6 +1892,77 @@ static const struct qmp_phy_cfg glymur_usb3_uniphy_cfg = {
- 	.regs			= qmp_v7_usb3phy_regs_layout,
- };
- 
-+static int qmp_usb_domain_attach(struct qmp_usb *qmp)
-+{
-+	struct dev_pm_domain_attach_data pd_data = {
-+		.pd_flags       = PD_FLAG_NO_DEV_LINK,
-+		.pd_names       = (const char *[]) { "core", "transfer" },
-+		.num_pd_names   = 2,
-+	};
-+	struct device *dev = qmp->dev;
-+	int ret;
-+
-+	ret = dev_pm_domain_attach_list(dev, &pd_data, &qmp->pd_list);
-+	if (ret < 0)
-+		return dev_err_probe(dev, ret, "domain attach failed\n");
-+
-+	return 0;
-+}
-+
-+static void qmp_usb_domain_detach(void *data)
-+{
-+	struct qmp_usb *qmp = data;
-+
-+	dev_pm_domain_detach_list(qmp->pd_list);
-+}
-+
-+/* d3_to_d0 transition by turning on all the suppliers */
-+static int qmp_usb_d3_to_d0(struct qmp_usb *qmp)
-+{
-+	int ret;
-+
-+	if (!qmp->pd_list)
-+		return 0;
-+
-+	ret = pm_runtime_resume_and_get(qmp->pd_list->pd_devs[0]);
-+	if (ret)
-+		return ret;
-+
-+	ret = pm_runtime_resume_and_get(qmp->pd_list->pd_devs[1]);
-+	if (ret)
-+		pm_runtime_put_sync(qmp->pd_list->pd_devs[0]);
-+
-+	return ret;
-+}
-+
-+/* d0_to_d3 transition by turning off all the suppliers */
-+static void qmp_usb_d0_to_d3(struct qmp_usb *qmp)
-+{
-+	if (!qmp->pd_list)
-+		return;
-+
-+	pm_runtime_put_sync(qmp->pd_list->pd_devs[1]);
-+	pm_runtime_put_sync(qmp->pd_list->pd_devs[0]);
-+}
-+
-+/* d1_to_d0 transition by turning on the 'transfer' supplier */
-+static int qmp_usb_d1_to_d0(struct qmp_usb *qmp)
-+{
-+	if (!qmp->pd_list)
-+		return 0;
-+
-+	return pm_runtime_resume_and_get(qmp->pd_list->pd_devs[1]);
-+}
-+
-+/* d0_to_d1 transition by turning off the 'transfer' supplier */
-+static void qmp_usb_d0_to_d1(struct qmp_usb *qmp)
-+{
-+	if (!qmp->pd_list)
-+		return;
-+
-+	pm_runtime_put_sync(qmp->pd_list->pd_devs[1]);
-+}
-+
- static int qmp_usb_serdes_init(struct qmp_usb *qmp)
- {
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
-@@ -1886,10 +1982,16 @@ static int qmp_usb_init(struct phy *phy)
- 	void __iomem *pcs = qmp->pcs;
- 	int ret;
- 
-+	ret = qmp_usb_d3_to_d0(qmp);
-+	if (ret < 0) {
-+		dev_err(qmp->dev, "Failed to transition to d0 state\n");
-+		return ret;
-+	}
-+
- 	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
- 	if (ret) {
- 		dev_err(qmp->dev, "failed to enable regulators, err=%d\n", ret);
--		return ret;
-+		goto err_transition_to_d3;
- 	}
- 
- 	ret = reset_control_bulk_assert(qmp->num_resets, qmp->resets);
-@@ -1916,6 +2018,8 @@ static int qmp_usb_init(struct phy *phy)
- 	reset_control_bulk_assert(qmp->num_resets, qmp->resets);
- err_disable_regulators:
- 	regulator_bulk_disable(cfg->num_vregs, qmp->vregs);
-+err_transition_to_d3:
-+	qmp_usb_d0_to_d3(qmp);
- 
- 	return ret;
- }
-@@ -1931,6 +2035,8 @@ static int qmp_usb_exit(struct phy *phy)
- 
- 	regulator_bulk_disable(cfg->num_vregs, qmp->vregs);
- 
-+	qmp_usb_d0_to_d3(qmp);
-+
- 	return 0;
- }
- 
-@@ -2119,6 +2225,8 @@ static int __maybe_unused qmp_usb_runtime_suspend(struct device *dev)
- 	clk_disable_unprepare(qmp->pipe_clk);
- 	clk_bulk_disable_unprepare(qmp->num_clks, qmp->clks);
- 
-+	qmp_usb_d0_to_d1(qmp);
-+
- 	return 0;
- }
- 
-@@ -2134,14 +2242,23 @@ static int __maybe_unused qmp_usb_runtime_resume(struct device *dev)
- 		return 0;
- 	}
- 
-+	ret = qmp_usb_d1_to_d0(qmp);
-+	if (ret < 0) {
-+		dev_err(qmp->dev, "Failed to transition to d0 state\n");
-+		return ret;
-+	}
-+
- 	ret = clk_bulk_prepare_enable(qmp->num_clks, qmp->clks);
--	if (ret)
-+	if (ret) {
-+		qmp_usb_d0_to_d1(qmp);
- 		return ret;
-+	}
- 
- 	ret = clk_prepare_enable(qmp->pipe_clk);
- 	if (ret) {
- 		dev_err(dev, "pipe_clk enable failed, err=%d\n", ret);
- 		clk_bulk_disable_unprepare(qmp->num_clks, qmp->clks);
-+		qmp_usb_d0_to_d1(qmp);
- 		return ret;
- 	}
- 
-@@ -2321,10 +2438,12 @@ static int qmp_usb_parse_dt_legacy(struct qmp_usb *qmp, struct device_node *np)
- 		qmp->pcs_misc = NULL;
- 	}
- 
--	qmp->pipe_clk = devm_get_clk_from_child(dev, np, NULL);
--	if (IS_ERR(qmp->pipe_clk)) {
--		return dev_err_probe(dev, PTR_ERR(qmp->pipe_clk),
--				     "failed to get pipe clock\n");
-+	if (!qmp->cfg->fw_managed) {
-+		qmp->pipe_clk = devm_get_clk_from_child(dev, np, NULL);
-+		if (IS_ERR(qmp->pipe_clk)) {
-+			return dev_err_probe(dev, PTR_ERR(qmp->pipe_clk),
-+					     "failed to get pipe clock\n");
-+		}
- 	}
- 
- 	ret = devm_clk_bulk_get_all(qmp->dev, &qmp->clks);
-@@ -2333,10 +2452,12 @@ static int qmp_usb_parse_dt_legacy(struct qmp_usb *qmp, struct device_node *np)
- 
- 	qmp->num_clks = ret;
- 
--	ret = qmp_usb_reset_init(qmp, usb3phy_legacy_reset_l,
--				 ARRAY_SIZE(usb3phy_legacy_reset_l));
--	if (ret)
--		return ret;
-+	if (!qmp->cfg->fw_managed) {
-+		ret = qmp_usb_reset_init(qmp, usb3phy_legacy_reset_l,
-+					 ARRAY_SIZE(usb3phy_legacy_reset_l));
-+		if (ret)
-+			return ret;
-+	}
- 
- 	return 0;
- }
-@@ -2370,17 +2491,19 @@ static int qmp_usb_parse_dt(struct qmp_usb *qmp)
- 	if (ret)
- 		return ret;
- 
--	qmp->pipe_clk = devm_clk_get(dev, "pipe");
--	if (IS_ERR(qmp->pipe_clk)) {
--		return dev_err_probe(dev, PTR_ERR(qmp->pipe_clk),
--				     "failed to get pipe clock\n");
-+	if (!qmp->cfg->fw_managed) {
-+		qmp->pipe_clk = devm_clk_get(dev, "pipe");
-+		if (IS_ERR(qmp->pipe_clk)) {
-+			return dev_err_probe(dev, PTR_ERR(qmp->pipe_clk),
-+					     "failed to get pipe clock\n");
-+		}
-+
-+		ret = qmp_usb_reset_init(qmp, usb3phy_reset_l,
-+					 ARRAY_SIZE(usb3phy_reset_l));
-+		if (ret)
-+			return ret;
- 	}
- 
--	ret = qmp_usb_reset_init(qmp, usb3phy_reset_l,
--				 ARRAY_SIZE(usb3phy_reset_l));
--	if (ret)
--		return ret;
--
- 	return 0;
- }
- 
-@@ -2403,6 +2526,16 @@ static int qmp_usb_probe(struct platform_device *pdev)
- 	if (!qmp->cfg)
- 		return -EINVAL;
- 
-+	if (qmp->cfg->fw_managed) {
-+		ret = qmp_usb_domain_attach(qmp);
-+		if (ret)
-+			return ret;
-+
-+		ret = devm_add_action_or_reset(dev, qmp_usb_domain_detach, qmp);
-+		if (ret)
-+			return ret;
-+	}
-+
- 	ret = devm_regulator_bulk_get_const(dev, qmp->cfg->num_vregs,
- 					qmp->cfg->vreg_list, &qmp->vregs);
- 	if (ret)
-@@ -2435,9 +2568,11 @@ static int qmp_usb_probe(struct platform_device *pdev)
- 	 */
- 	pm_runtime_forbid(dev);
- 
--	ret = phy_pipe_clk_register(qmp, np);
--	if (ret)
--		goto err_pm_put;
-+	if (!qmp->cfg->fw_managed) {
-+		ret = phy_pipe_clk_register(qmp, np);
-+		if (ret)
-+			goto err_pm_put;
-+	}
- 
- 	qmp->phy = devm_phy_create(dev, np, &qmp_usb_phy_ops);
- 	if (IS_ERR(qmp->phy)) {
-@@ -2492,6 +2627,9 @@ static const struct of_device_id qmp_usb_of_match_table[] = {
- 	}, {
- 		.compatible = "qcom,qdu1000-qmp-usb3-uni-phy",
- 		.data = &qdu1000_usb3_uniphy_cfg,
-+	}, {
-+		.compatible = "qcom,sa8255p-qmp-usb3-uni-phy",
-+		.data = &sa8255p_usb3_uniphy_cfg,
- 	}, {
- 		.compatible = "qcom,sa8775p-qmp-usb3-uni-phy",
- 		.data = &sa8775p_usb3_uniphy_cfg,
-
--- 
-2.55.0
-
+regards
+Philipp
 
 -- 
 linux-phy mailing list
