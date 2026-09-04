@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3FEB3C61DD6
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Sep 2026 13:45:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8947C624D3
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Sep 2026 13:47:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=67y9J4vh674PZwoAnhz5nrYjAquqb580JZBF5f0fidQ=; b=0QRucmJ6Ik0G07
-	/jjQs0mpq/o1ilt1ggfwAekV4OHHp9tGHCI0NMbKRFyy83rZprQEfJNvGYdRlD7nX/VcJtUwuizV0
-	6+NuDg618gJoSyQ7IBJmMGIrPleYimcbBpQhGNL8FOPSVUxTIYFrM94rY+CqgHIx0KpWE2ZmngW4l
-	eSNG6MZtzc0D0kQYJc6pjds7Cm719K66v8HPPn9QsZik7Vos7hpoxZ6gGXVlvdK06DbBbnvYzY60M
-	aG7dbMdSFq0oBJSfT84EWOmfP4/Ru1uuWX/xSFSG84ZTdjJ6AGulx/nUW7YvCreHYuLhF3WEoR7JW
-	G6Hg/N7sA5teb0BJLihg==;
+	List-Owner; bh=oUnFnG97sPCaZHt0ovenX8ZFPKfAuMZ31wHTuJeKTBM=; b=IvcRAlrNrCaG36
+	jaLwlzTHyonOP0nNz/GRUS7/fE23AY1ikXNWqMXGEWAMCdAab6HU5f/5vHXNokvSS25ClHD1PM2gi
+	e48xUiuruVggs5ebxC1HZ/E8ThyeVoDxrMe6pNlwqOtGko3mjaoI4GD4DEPOIxC9h1XU24LRxCn4c
+	hpM/5xl18VjxL9r5eFHfl/4FwDId7sx5owoXBvn71t2YLKSUD2IQ7FhdwfxERgv6FFBQy1VA9Uf1b
+	ZxfllRYiRDmSm+tZ32LmyuSsCK4qIpBTucV+CDrjqP6TDPSdXNnfUdVoebEFK9eBt+iJEGKyK0ntz
+	eHumIAjBwbmPmZsZYryw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x2UE2-00000002GpB-3wne;
-	Fri, 04 Sep 2026 13:45:02 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1x2UG2-00000002H65-1dPg;
+	Fri, 04 Sep 2026 13:47:06 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x2UE0-00000002Gos-3muj
+	id 1x2UG0-00000002H5G-487p
 	for linux-phy@lists.infradead.org;
-	Fri, 04 Sep 2026 13:45:00 +0000
+	Fri, 04 Sep 2026 13:47:05 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id A69CC42EA5;
-	Fri,  4 Sep 2026 13:45:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C09531F00A3D;
-	Fri,  4 Sep 2026 13:44:59 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 7CFC7404D8;
+	Fri,  4 Sep 2026 13:47:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BC9221F00A3D;
+	Fri,  4 Sep 2026 13:47:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788529500;
-	bh=xbUpGSCx0twqvK2uYMhh0Z5HEmXOnKyfgNEX/KAG5Rg=;
+	s=k20260515; t=1788529624;
+	bh=jrOd4Hrk+SVGKObt8qkwvbAXHOaE3Px7VkO0WQZppE8=;
 	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=n2sohWUVbJtultNnzRI8n3i7cqBG7Ys9UHIezllEqyWvBgu8tyIJzrNChxgmGznaZ
-	 pJMFmO05zDTxWy9L+MOqlZtfqyPllls3HQigZAzzZN740D+BcmMTjmNMvZd9toQjvf
-	 /z86e+M91jObN7SLeNIZ8OjarFc59XAIhHn5AOqzF2XO8FDHwuiqSg57u7RXq2hhO+
-	 bStO+h6dZxKNVodvxtxUwQiyOQgbF5A2y5DljJxGDSyDEgdcI/6MZH5pcFs/kHZXOh
-	 dNkZWH0U+lqWea0DEUlsuHAu4ed7ftzGk5fZwcxQwfHXG8P2iuHAotdDjpO+cmeuIp
-	 hB1Sd+j3G79bQ==
+	b=Dyu6nehjd2JvJaJbiBkjcbMQogvSASDoqkHljYhLXcxKxX/9LLcV3Mkxtf2D+IkFI
+	 eGw4QLrGbEONJF49g1QW6dbGk23boud0dm/Vhv0oPNMHOoqyR5OiXW+t9uiDfZXQgx
+	 +uPeP3ui6daZZOmvkLxZRXjuLTR+24sOZb6Xt6pmxwSiHEbF40/TVTF/81n4CcOQeb
+	 I4GGjdbIbt9vsFnctyaWdJpa1nUoxXnUxKNDk1L2QE+HONC3FyrBAw+Z3nRYqmPcw4
+	 CtnEMMMoNp5Q9cXGs3SOK0I/6n5PFKPDCntLvti1OxoKCptzTkLiYj2kMOuzb/kXy9
+	 09GjtdzesRRBg==
 From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v3 13/19] clk: starfive: jh7110-vout: Allow pixel clock
- rate propagation
+Subject: Re: [PATCH v3 12/19] soc: starfive: Add jh7110-vout-subsystem
+ driver
 To: "Michal Wilczynski" <m.wilczynski@samsung.com>
-Cc: conor+dt@kernel.org, neil.armstrong@linaro.org, vkoul@kernel.org, olteanv@gmail.com, devicetree@vger.kernel.org, lee@kernel.org, dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org, robh@kernel.org, linux-phy@lists.infradead.org, mfd@lists.linux.dev
-In-Reply-To: <20260904-jh7110-clean-send-v3-13-484f9ae72715@samsung.com>
+Cc: vkoul@kernel.org, neil.armstrong@linaro.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, robh@kernel.org, conor+dt@kernel.org, olteanv@gmail.com, lee@kernel.org, mfd@lists.linux.dev, dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org
+In-Reply-To: <20260904-jh7110-clean-send-v3-12-484f9ae72715@samsung.com>
 References: <20260904-jh7110-clean-send-v3-0-484f9ae72715@samsung.com>
- <CGME20260904132733eucas1p1a6529cb2ea97bc75c9cd190d1ba901c0@eucas1p1.samsung.com>
- <20260904-jh7110-clean-send-v3-13-484f9ae72715@samsung.com>
-Date: Fri, 04 Sep 2026 13:44:59 +0000
-Message-Id: <20260904134459.C09531F00A3D@smtp.kernel.org>
+ <CGME20260904132731eucas1p182c607567520f7c6f482a9c85ab64ece@eucas1p1.samsung.com>
+ <20260904-jh7110-clean-send-v3-12-484f9ae72715@samsung.com>
+Date: Fri, 04 Sep 2026 13:47:03 +0000
+Message-Id: <20260904134703.BC9221F00A3D@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,18 +71,20 @@ Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-PiBUaGUgZGM4MjAwX3BpeDAgYW5kIGRjODIwMF9waXgxIE1VWGVzIGZlZWQgdGhlIGRpc3BsYXkg
-Y29udHJvbGxlciwgYW5kCj4gdGhlIHJhdGUgdGhleSBjYXJyeSBpcyB1bHRpbWF0ZWx5IHByb2R1
-Y2VkIGJ5IHRoZSBIRE1JIFBIWSwgd2hpY2gKPiByZWdpc3RlcnMgaGRtaXR4MF9waXhlbGNsayBh
-cyBhIGNsb2NrIHByb3ZpZGVyLgo+IAo+IEFkZCBDTEtfU0VUX1JBVEVfUEFSRU5UIHRvIGJvdGgg
-TVVYZXMgc28gYSByYXRlIHJlcXVlc3RlZCBvbiB0aGVtCj4gcmVhY2hlcyB0aGF0IHBhcmVudCwg
-aW5zdGVhZCBvZiBiZWluZyBjbGFtcGVkIHRvIHdoYXRldmVyIHJhdGUgdGhlCj4gcGFyZW50IGFs
-cmVhZHkgaGFwcGVucyB0byBydW4gYXQuCj4gCj4gQ28tZGV2ZWxvcGVkLWJ5OiBEb21pbmlxdWUg
-QmVsaGFjaGVtaSA8ZGJAZG9taWJlbC5kZT4KPiBTaWduZWQtb2ZmLWJ5OiBEb21pbmlxdWUgQmVs
-aGFjaGVtaSA8ZGJAZG9taWJlbC5kZT4KPiBTaWduZWQtb2ZmLWJ5OiBNaWNoYWwgV2lsY3p5bnNr
-aSA8bS53aWxjenluc2tpQHNhbXN1bmcuY29tPgoKU2FzaGlrbyBoYXMgcmV2aWV3ZWQgdGhpcyBw
-YXRjaCBhbmQgZm91bmQgbm8gaXNzdWVzLiBJdCBsb29rcyBncmVhdCEKCi0tIApTYXNoaWtvIEFJ
-IHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA5MDQtamg3MTEw
-LWNsZWFuLXNlbmQtdjMtMC00ODRmOWFlNzI3MTVAc2Ftc3VuZy5jb20/cGFydD0xMwoKCi0tIAps
-aW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBz
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+PiBOb3RoaW5nIGluIHRoZSB2aWRlbyBvdXRwdXQgc3Vic3lzdGVtIGNhbiByZWFjaCBpdHMgb3du
+IHJlZ2lzdGVycyB1bnRpbAo+IHRoZSBOb0MgZGlzcGxheSBidXMgY2xvY2sgYW5kIHJlc2V0IGFy
+ZSB1cCBhbmQgUERfVk9VVCBpcyBwb3dlcmVkLCBhbmQKPiB0aG9zZSBhcmUgc2hhcmVkIGJ5IGV2
+ZXJ5IGRldmljZSBpbiB0aGUgcmVnaW9uLiBMZWF2aW5nIHRoZW0gdG8gd2hpY2hldmVyCj4gY29u
+c3VtZXIgcHJvYmVzIGZpcnN0IHdvcmtzIGJ5IGFjY2lkZW50IGFuZCBzdG9wcyB3b3JraW5nIGFz
+IHNvb24gYXMgdGhlCj4gcHJvYmUgb3JkZXIgY2hhbmdlcy4KPiAKPiBBZGQgYSBkcml2ZXIgZm9y
+IHRoZSBzdWJzeXN0ZW0gbm9kZSB0aGF0IHRha2VzIHRoZSBidXMgY2xvY2sgYW5kIHJlc2V0LAo+
+IGhvbGRzIGEgcnVudGltZSBQTSByZWZlcmVuY2Ugc28gZ2VucGQga2VlcHMgUERfVk9VVCBwb3dl
+cmVkLCBhbmQgdGhlbgo+IHBvcHVsYXRlcyBpdHMgY2hpbGRyZW4uIEFsbCB0aHJlZSBhcmUgcmVs
+ZWFzZWQgb25seSBvbmNlIHRoZSBsYXN0IGNoaWxkCj4gaXMgZ29uZS4KPiAKPiBTaWduZWQtb2Zm
+LWJ5OiBNaWNoYWwgV2lsY3p5bnNraSA8bS53aWxjenluc2tpQHNhbXN1bmcuY29tPgoKU2FzaGlr
+byBoYXMgcmV2aWV3ZWQgdGhpcyBwYXRjaCBhbmQgZm91bmQgbm8gaXNzdWVzLiBJdCBsb29rcyBn
+cmVhdCEKCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0
+Y2hzZXQvMjAyNjA5MDQtamg3MTEwLWNsZWFuLXNlbmQtdjMtMC00ODRmOWFlNzI3MTVAc2Ftc3Vu
+Zy5jb20/cGFydD0xMgoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0
+cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LXBoeQo=
