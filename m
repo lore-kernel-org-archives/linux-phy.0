@@ -4,100 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 787A5C79F80
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Sep 2026 07:56:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A6B1C624DE
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Sep 2026 08:05:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eg/SqrvEjl5eWLGo8ZPIplzHJU8KNcuomraJrz6lm2w=; b=eTuVVBHbYfTiqv
-	G3O5D4IwVnsVkIYkQTYMqTvN0vOBRL3jtfZbp3ifzraBnpr/XunKpv0xcHbtBEWyDxXnY3ICcW/Qo
-	dghc8kD1abLDMFTnpuN3q1kQVvTJxpDgO1AVa4Kk+fglxeMfaCFIl8u18WPwrv/rCMmU89siBISC8
-	ujkVQa+Ca0EzkEbApSxtXN5hP5A8VXBx4wus2W6taDvhXf/+CgNUj11uZL/poPZXw3WNp7ft3XlIo
-	qrpnuxEzDnQpqFvTsj5x3VuZQCmpXnNYaAOJ83bjxdHXkWbML9e3+SXutz7eKaFJKhz7A4c1dD4e3
-	e2WOQRdvIUy8DFU8jCOQ==;
+	List-Owner; bh=H9asbnKJhQ7XlXCEzULZjAhw6kqbCvDqg887HP9AxFw=; b=UHFl6TZfdqccDk
+	SIFKXA1hPDDu4md0uZ1GDttO4kaGzYn/VBcCp/XOJF2hcHwH4vDgqHNwHGilazi89iYcJJyYmcyfs
+	Bo2pFq8GbQgXGDTyCiBYzV+kNGN/0/JLRxYoQzuqIeatT03CA3WEqVNGFwFUlxoAJgSUaPXFT5XgK
+	YM9jve77gEwpVZ1eMaDMs14iYouqhy6jqijUWoi3U7JJclol8PLSNZtpKtDvwoKG4JY7NR5WWgXrQ
+	/pWC1IoTO1ducDH0wwGSSQ8uzsUHn+FJuduRjhGzNqqsJe+yxP2A+nYztf4IbxQkxHgxKcTu9IMlY
+	n4xncjoiMuxqjC0EqqJQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x2Omw-00000001J5n-0B1e;
-	Fri, 04 Sep 2026 07:56:42 +0000
-Received: from mail-pz2-x10.google.com ([2607:f8b0:4864:3b::10])
+	id 1x2Ov9-00000001Kl4-3Zhr;
+	Fri, 04 Sep 2026 08:05:11 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x2Omt-00000001J2J-0P1T
+	id 1x2Ov8-00000001Kkh-2cyy
 	for linux-phy@lists.infradead.org;
-	Fri, 04 Sep 2026 07:56:41 +0000
-Received: by mail-pz2-x10.google.com with SMTP id 41be03b00d2f7-cc1ab16a9b0so29290a12.1
-        for <linux-phy@lists.infradead.org>; Fri, 04 Sep 2026 00:56:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1788508598; x=1789113398; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=GLyFekJ0N8Lq/xlKUVCeo3LPrbIlgpH48f7aKuVq5pE=;
-        b=OwgJegL1U4BEuDHIGpRyO4VFl8vcZXzEaJ9sBWkHKq0pMBmYM3iShyP6LKvBTW/cCZ
-         s5KqkC70vHWlQiahKHaaOfsZ7woHL8lK9gCOsW2F2pgKloCppgqTlzT/qK8RDCikZ+Lq
-         o4E2GwqadEhxpM1R8Ey3bp8ZKCyutnj1g2B7rEAvnyHUyqWpvDg+I65ckynG2R48TgyL
-         T8ImTzKYHuuFmwc00whg+PVOMDy9Gk5rxzamDv9uyi7if2u9UpnyQ3Ixnt8YuM5Pqb0X
-         yF5y0WFiKr1NEYKHMbSJPmSlN5N3yTAcQwR6TQVukRIjEAD0As9NcNmtYc5boktxVAoO
-         x92Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788508598; x=1789113398;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=GLyFekJ0N8Lq/xlKUVCeo3LPrbIlgpH48f7aKuVq5pE=;
-        b=nNGxvtZj2jLKRatIgKnhbbRwWgljunpXlBt/EzW+PAjrFiA6ha9btkwll063DskQ49
-         7mjKIUviWUKtcxGSBXfKraa+5oAZ3N4DvsmS5zfCJpk1Bni/EXAm4/z7wvFkRueflVP2
-         +pvnP4+FQoerHQh4CgUVwJsJMZQ7kZAr1XbIuBdecYU/u1se0KOQo5O92BSwPrM5JHhU
-         RO9MAJEEnHyrJxJKKZvGxXFK85DnodEkLFJZoYbIGG0x1bBHxnFvccPHHBF+nxJhOO1z
-         C9PhJC/aQ0O7abWRyfTnCuweCBltq9GjKi+w8jMcmT4R9V3mw9bfG0uixekx2yns5Z3N
-         C2PQ==
-X-Forwarded-Encrypted: i=1; AKwUvBzGLiLAZ1YQeYtVSTV2R7eNnJEK3mbDiLNDuvoPQTXtHMZ+iM9K2XYsT5p4pQnWoU/xPWN7RuxDuuk=@lists.infradead.org
-X-Gm-Message-State: AFuF++lT3FqkTDjiZPGmokgq5pu8pOFFPt5ax5sgTiV2y53ZKXxhwHQE
-	U3qlkXKqEZjG+Opsf2EGxund5bWEjGzwjN1gJCGt9kA3K7V3KxTy13KQ
-X-Gm-Gg: AYBFou3bS/MYfI+hSWN5I03+QouFQm3wEvl6quQ2NvqEL3gKCabtGdq8AfKsOVZGluR
-	1kzT1bN0IbHuU4Bfv/iVmGQnNT6uyroPiuh4UuzdLrW/XshmyvVUJ2XtzEVUb8p4UjBK7k4xBO/
-	WZ+IcgspWLdtAMdXP1YYkRUiZG9MYQd12qFmQzuxsrCBGz7RdDL9rc7laR8GKcb8PTYKCrn16uq
-	2Xamr8JQT9SuHjQbWvBbx8812QioIk3ET5XUr9RA8JtI0wMm+p0QdUetdoxEVJ7BglIw/RZFQcM
-	zggh/IuX8pXAF4dFKuvVHNJrF8tZmdv+wRqUduPQ3fJuMuVPoaWsnncEgE5a9DADs+LcurugXMi
-	fPvWPclWp8tHPYTlDrqWROO2tiwdX0F8Vj44IhgKixGGEh52IQF3egA1bsPWFPdHGnyicECIjCB
-	Qq+8ioxjFxTS1ueGyG1pmq5aY3v2HmelHRxQqsogM92SZksHvPIYxH2YXSz7+eSR5bwCqE5Irjz
-	XIv5eIJl4RIGQ==
-X-Received: by 2002:a17:90b:3882:b0:396:a47f:d38f with SMTP id 98e67ed59e1d1-39b268ce386mr3923722a91.3.1788508597140;
-        Fri, 04 Sep 2026 00:56:37 -0700 (PDT)
-Received: from jason.. (211-23-39-77.hinet-ip.hinet.net. [211.23.39.77])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-39b08c397b1sm9356695a91.8.2026.09.04.00.56.33
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 04 Sep 2026 00:56:36 -0700 (PDT)
-From: Jason Yang <jason98166@gmail.com>
-To: Vinod Koul <vkoul@kernel.org>,
+	Fri, 04 Sep 2026 08:05:10 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 1609060211;
+	Fri,  4 Sep 2026 08:05:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B88C81F00A3D;
+	Fri,  4 Sep 2026 08:05:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1788509109;
+	bh=TqNLCesX2SNrm7Jswp+E1v9760B2VFDRX1NjrjFhDbA=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=L+wJVPa01ltnhm6yS8sGMmIdlggoMUkPoGV2isQtt9tvcl8J6ZiNou1NCbED3W601
+	 /SNBM0RgYXMNQ0BldNLlX1oZb51HBrlFbSyDsQ67bB2xnFysO8saIZ3cGyuVEPPj6X
+	 Jgg/704ElwA675dE66f5Gl7Jhglkk5VA72jhZXjLjsHlzWvzXOfNUTmGlSxX0vGsGa
+	 C/QqIQDWhpp3FzHk7r++EU4BYM4rXIyFL4Kx1DVh4GmBGFuIa1up6fkZs3Yw+S/b4o
+	 6LlG7ST1AnUFhD1YTgZMltJY6g82y+5yqxj22KKe97tTes2MiUwRWEviVk8QI+96ib
+	 Uu39LctKoYFtg==
+Received: from johan by xi.lan with local (Exim 4.99.4)
+	(envelope-from <johan@kernel.org>)
+	id 1x2Ov5-00000006jvW-0Kia;
+	Fri, 04 Sep 2026 10:05:07 +0200
+Date: Fri, 4 Sep 2026 10:05:07 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Cc: Manivannan Sadhasivam <mani@kernel.org>,
+	Konrad Dybcio <konradybcio@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Guochun Huang <hero.huang@rock-chips.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>
-Cc: Michael Riesch <michael.riesch@collabora.com>,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Jason Yang <jason98166@gmail.com>
-Subject: [RFC PATCH] arm64: dts: rockchip: add mipi csi-2 receiver nodes for the dcphys on rk3588
-Date: Fri,  4 Sep 2026 15:55:34 +0800
-Message-ID: <20260904075534.574037-1-jason98166@gmail.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <8e10a8c0-3648-47b5-9131-a1abdd7eb8c5@kernel.org>
-References: <8e10a8c0-3648-47b5-9131-a1abdd7eb8c5@kernel.org>
+	Bjorn Andersson <andersson@kernel.org>,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+	usb4-upstream@oss.qualcomm.com,
+	Raghavendra Thoorpu <rthoorpu@qti.qualcomm.com>,
+	Mika Westerberg <westeri@kernel.org>, Sven Peter <sven@kernel.org>,
+	Abel Vesa <abel.vesa@oss.qualcomm.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Subject: Re: [PATCH v4 3/5] phy: qualcomm: qmp-combo: Add preliminary USB4
+ support
+Message-ID: <app7s9GZySBj7Mzs@hovoldconsulting.com>
+References: <20260820-topic-usb4phy-v4-0-aec9d2cb31f6@oss.qualcomm.com>
+ <20260820-topic-usb4phy-v4-3-aec9d2cb31f6@oss.qualcomm.com>
+ <iynrogny3didip7cui3ce3yq3woaqzrr7f4aqdzvls4j4mslfn@aww5qjpy3gdx>
+ <b326edbf-fe34-426b-af19-912edc18ba84@oss.qualcomm.com>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260904_005639_139200_6EDE5C55 
-X-CRM114-Status: GOOD (  11.65  )
+Content-Disposition: inline
+In-Reply-To: <b326edbf-fe34-426b-af19-912edc18ba84@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,161 +90,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This is test patch, contains the following 3 changes:
-  - raise #phy-cells to 2
-  - add PHY_TYPE_DSI to the dsi nodes
-  - add mipi csi0 and csi1
+On Fri, Sep 04, 2026 at 09:36:04AM +0200, Konrad Dybcio wrote:
+> On 9/1/26 2:44 PM, Manivannan Sadhasivam wrote:
+> > On Thu, Aug 20, 2026 at 04:24:12PM +0200, Konrad Dybcio wrote:
+> >> From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+> >>
+> >> Some Combo PHYs (so far only on SC8280XP, X1E80100 and Glymur), come in
+> >> a flavor called USB43DP, which as the name implies, features USB4, USB3
+> >> and DP signal processing capabilities. In that architecture, USB3 and
+> >> USB4 PHYs share the same USB_PLL while featuring separate logic spaces.
+> >> The DP part is roughly the same as on the instances without USB4.
+> 
+> [...]
+> 
+> >> +	case QMPPHY_MODE_USB4:
+> >> +		writel(USB4_MODE, com + QPHY_V3_DP_COM_PHY_MODE_CTRL);
+> >> +
+> >> +		/* bring both QMP USB and QMP DP PHYs PCS block out of reset */
+> >> +		/* TODO: disable DP PLL if there are no active tunnels after router setup */
+> > 
+> > 100 column width generally applies to code, not comments. Comments should still
+> > be wrapped to 80 columns.
+> 
+> I believe this isn't a real concern.. checkpatch certainly doesn't care:
+> 
+> # LONG_LINE_COMMENT     a comment starts before but extends beyond $max_line_length
+> # LONG_LINE_STRING      a string starts before but extends beyond $max_line_length
+> # LONG_LINE             all other lines longer than $max_line_length
+> 
+> (all take the same value, preset to 100 at the top of the file)
 
-Signed-off-by: Jason Yang <jason98166@gmail.com>
----
-Hi Michael, Krzysztof,
+Checkpatch is just a dumb tool. The coding style says the preferred
+limit is 80 chars unless breaking it improves readability. And that
+exception generally does not apply to comments (e.g. unless it contains
+a URL or similar).
 
-Here is the test patch for
-https://lore.kernel.org/r/20260821-dcphy-rx-v1-v4-0-f1797634233d@gmail.com
-
-I have tested imx219/ov5640 stream with csi0 and meanwhile stream on
-rpi panel with dsi0, both using mipidcphy0.
-
-Related commits:
-  2e177b85541d ("arm64: dts: rockchip: add mipi dcphy nodes to rk3588")
-  0d0947766d87 ("arm64: dts: rockchip: add dsi controller nodes on rk3588")
-  5052c99cf052 ("arm64: dts: rockchip: add mipi csi-2 receiver nodes to rk3588")
-
-Best regards,
-Jason
-
- arch/arm64/boot/dts/rockchip/rk3588-base.dtsi | 76 ++++++++++++++++++-
- 1 file changed, 72 insertions(+), 4 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588-base.dtsi b/arch/arm64/boot/dts/rockchip/rk3588-base.dtsi
-index fc1fdbfd3162..dd2bbc02f8d8 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588-base.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3588-base.dtsi
-@@ -1516,10 +1516,18 @@ vicap_dvp: port@0 {
- 
- 			vicap_mipi0: port@1 {
- 				reg = <0x1>;
-+
-+				vicap_mipi0_input: endpoint {
-+					remote-endpoint = <&csi0_output>;
-+				};
- 			};
- 
- 			vicap_mipi1: port@2 {
- 				reg = <0x2>;
-+
-+				vicap_mipi1_input: endpoint {
-+					remote-endpoint = <&csi1_output>;
-+				};
- 			};
- 
- 			vicap_mipi2: port@3 {
-@@ -1568,6 +1576,66 @@ vicap_mmu: iommu@fdce0800 {
- 		status = "disabled";
- 	};
- 
-+	csi0: csi@fdd10000 {
-+		compatible = "rockchip,rk3588-mipi-csi2", "rockchip,rk3568-mipi-csi2";
-+		reg = <0x0 0xfdd10000 0x0 0x10000>;
-+		interrupts = <GIC_SPI 143 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 144 IRQ_TYPE_LEVEL_HIGH 0>;
-+		interrupt-names = "err1", "err2";
-+		clocks = <&cru PCLK_CSI_HOST_0>;
-+		phys = <&mipidcphy0 PHY_TYPE_DPHY PHY_TYPE_CSI>;
-+		power-domains = <&power RK3588_PD_VI>;
-+		resets = <&cru SRST_P_CSI_HOST_0>;
-+		status = "disabled";
-+
-+		ports {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			csi0_in: port@0 {
-+				reg = <0>;
-+			};
-+
-+			csi0_out: port@1 {
-+				reg = <1>;
-+
-+				csi0_output: endpoint {
-+					remote-endpoint = <&vicap_mipi0_input>;
-+				};
-+			};
-+		};
-+	};
-+
-+	csi1: csi@fdd20000 {
-+		compatible = "rockchip,rk3588-mipi-csi2", "rockchip,rk3568-mipi-csi2";
-+		reg = <0x0 0xfdd20000 0x0 0x10000>;
-+		interrupts = <GIC_SPI 145 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 146 IRQ_TYPE_LEVEL_HIGH 0>;
-+		interrupt-names = "err1", "err2";
-+		clocks = <&cru PCLK_CSI_HOST_1>;
-+		phys = <&mipidcphy1 PHY_TYPE_DPHY PHY_TYPE_CSI>;
-+		power-domains = <&power RK3588_PD_VI>;
-+		resets = <&cru SRST_P_CSI_HOST_1>;
-+		status = "disabled";
-+
-+		ports {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			csi1_in: port@0 {
-+				reg = <0>;
-+			};
-+
-+			csi1_out: port@1 {
-+				reg = <1>;
-+
-+				csi1_output: endpoint {
-+					remote-endpoint = <&vicap_mipi1_input>;
-+				};
-+			};
-+		};
-+	};
-+
- 	csi2: csi@fdd30000 {
- 		compatible = "rockchip,rk3588-mipi-csi2", "rockchip,rk3568-mipi-csi2";
- 		reg = <0x0 0xfdd30000 0x0 0x10000>;
-@@ -1788,7 +1856,7 @@ dsi0: dsi@fde20000 {
- 		resets = <&cru SRST_P_DSIHOST0>;
- 		reset-names = "apb";
- 		power-domains = <&power RK3588_PD_VOP>;
--		phys = <&mipidcphy0 PHY_TYPE_DPHY>;
-+		phys = <&mipidcphy0 PHY_TYPE_DPHY PHY_TYPE_DSI>;
- 		phy-names = "dcphy";
- 		rockchip,grf = <&vop_grf>;
- 		status = "disabled";
-@@ -1816,7 +1884,7 @@ dsi1: dsi@fde30000 {
- 		resets = <&cru SRST_P_DSIHOST1>;
- 		reset-names = "apb";
- 		power-domains = <&power RK3588_PD_VOP>;
--		phys = <&mipidcphy1 PHY_TYPE_DPHY>;
-+		phys = <&mipidcphy1 PHY_TYPE_DPHY PHY_TYPE_DSI>;
- 		phy-names = "dcphy";
- 		rockchip,grf = <&vop_grf>;
- 		status = "disabled";
-@@ -3429,7 +3497,7 @@ mipidcphy0: phy@feda0000 {
- 			 <&cru SRST_P_MIPI_DCPHY0_GRF>,
- 			 <&cru SRST_S_MIPI_DCPHY0>;
- 		reset-names = "m_phy", "apb", "grf", "s_phy";
--		#phy-cells = <1>;
-+		#phy-cells = <2>;
- 		status = "disabled";
- 	};
- 
-@@ -3445,7 +3513,7 @@ mipidcphy1: phy@fedb0000 {
- 			 <&cru SRST_P_MIPI_DCPHY1_GRF>,
- 			 <&cru SRST_S_MIPI_DCPHY1>;
- 		reset-names = "m_phy", "apb", "grf", "s_phy";
--		#phy-cells = <1>;
-+		#phy-cells = <2>;
- 		status = "disabled";
- 	};
- 
--- 
-2.43.0
-
+Johan
 
 -- 
 linux-phy mailing list
