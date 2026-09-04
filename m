@@ -4,76 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A6B1C624DE
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Sep 2026 08:05:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8045EC79F80
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Sep 2026 08:06:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H9asbnKJhQ7XlXCEzULZjAhw6kqbCvDqg887HP9AxFw=; b=UHFl6TZfdqccDk
-	SIFKXA1hPDDu4md0uZ1GDttO4kaGzYn/VBcCp/XOJF2hcHwH4vDgqHNwHGilazi89iYcJJyYmcyfs
-	Bo2pFq8GbQgXGDTyCiBYzV+kNGN/0/JLRxYoQzuqIeatT03CA3WEqVNGFwFUlxoAJgSUaPXFT5XgK
-	YM9jve77gEwpVZ1eMaDMs14iYouqhy6jqijUWoi3U7JJclol8PLSNZtpKtDvwoKG4JY7NR5WWgXrQ
-	/pWC1IoTO1ducDH0wwGSSQ8uzsUHn+FJuduRjhGzNqqsJe+yxP2A+nYztf4IbxQkxHgxKcTu9IMlY
-	n4xncjoiMuxqjC0EqqJQ==;
+	List-Owner; bh=UL5LxHzRfao4GsYTL/CKstYHnVSEdwXCSheRey/y7bM=; b=W16MgMhjwZYO3N
+	mSetLYsMRMilx8HxzcH0bFmSawmT27ZhlQqjSofehI+yRVDpOn91xb43h0SdXTpB5ZgwBDokpKTCB
+	Ny2Ef++NXDB5KZzC3BNRyulzLbBXtHZYlvciv80lPHGCeMOPi8JOH2zRViPMHoaKB5f3gTLhWh8+z
+	uH6s8RKQHG49Ch8Jk7ku57zQDtX2V1q+Q13K86OvWz0i5diWxTIib4TTsmKuJ7hX1e3mgImyAePEW
+	RZ5ywXfFGfrtV7+YqAvfLK7mlVLkQVQDkWWAchFc0NgeJSszIMzYJCsozBvhiHBK8ZGfe+mpuYGvs
+	/AaOPy2PufHAQOxKA67g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x2Ov9-00000001Kl4-3Zhr;
-	Fri, 04 Sep 2026 08:05:11 +0000
+	id 1x2Own-00000001KsG-03nw;
+	Fri, 04 Sep 2026 08:06:53 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x2Ov8-00000001Kkh-2cyy
+	id 1x2Owl-00000001Ks2-2ErC
 	for linux-phy@lists.infradead.org;
-	Fri, 04 Sep 2026 08:05:10 +0000
+	Fri, 04 Sep 2026 08:06:51 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 1609060211;
-	Fri,  4 Sep 2026 08:05:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B88C81F00A3D;
-	Fri,  4 Sep 2026 08:05:09 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id DE0D660211;
+	Fri,  4 Sep 2026 08:06:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2B2541F00A3D;
+	Fri,  4 Sep 2026 08:06:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788509109;
-	bh=TqNLCesX2SNrm7Jswp+E1v9760B2VFDRX1NjrjFhDbA=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=L+wJVPa01ltnhm6yS8sGMmIdlggoMUkPoGV2isQtt9tvcl8J6ZiNou1NCbED3W601
-	 /SNBM0RgYXMNQ0BldNLlX1oZb51HBrlFbSyDsQ67bB2xnFysO8saIZ3cGyuVEPPj6X
-	 Jgg/704ElwA675dE66f5Gl7Jhglkk5VA72jhZXjLjsHlzWvzXOfNUTmGlSxX0vGsGa
-	 C/QqIQDWhpp3FzHk7r++EU4BYM4rXIyFL4Kx1DVh4GmBGFuIa1up6fkZs3Yw+S/b4o
-	 6LlG7ST1AnUFhD1YTgZMltJY6g82y+5yqxj22KKe97tTes2MiUwRWEviVk8QI+96ib
-	 Uu39LctKoYFtg==
-Received: from johan by xi.lan with local (Exim 4.99.4)
-	(envelope-from <johan@kernel.org>)
-	id 1x2Ov5-00000006jvW-0Kia;
-	Fri, 04 Sep 2026 10:05:07 +0200
-Date: Fri, 4 Sep 2026 10:05:07 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Cc: Manivannan Sadhasivam <mani@kernel.org>,
-	Konrad Dybcio <konradybcio@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-	usb4-upstream@oss.qualcomm.com,
-	Raghavendra Thoorpu <rthoorpu@qti.qualcomm.com>,
-	Mika Westerberg <westeri@kernel.org>, Sven Peter <sven@kernel.org>,
-	Abel Vesa <abel.vesa@oss.qualcomm.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Subject: Re: [PATCH v4 3/5] phy: qualcomm: qmp-combo: Add preliminary USB4
- support
-Message-ID: <app7s9GZySBj7Mzs@hovoldconsulting.com>
-References: <20260820-topic-usb4phy-v4-0-aec9d2cb31f6@oss.qualcomm.com>
- <20260820-topic-usb4phy-v4-3-aec9d2cb31f6@oss.qualcomm.com>
- <iynrogny3didip7cui3ce3yq3woaqzrr7f4aqdzvls4j4mslfn@aww5qjpy3gdx>
- <b326edbf-fe34-426b-af19-912edc18ba84@oss.qualcomm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <b326edbf-fe34-426b-af19-912edc18ba84@oss.qualcomm.com>
+	s=k20260515; t=1788509210;
+	bh=rqJB+RFVMX7Y3T+dKP0VQD3Lc4cC6K594Jivb5WgAfE=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=OIR8hbNXQvQMLnp4nN5kts5UPDLhDPVlpu8r3mERGLW1jCjrl5AyydacCCRvC0NkS
+	 rV/+i2Vf8AzrDYDNsmXqyBIc4ReJkSD6sJ7G2+uUM1EbdZFSYCwDx71nGVZ7kQXPpD
+	 2b/rdcKBv6YV4rL1DAcv0SZWRbzVB3B2t4F/YdGcYB8/vuPuqteyxqErqT+LzVSiJU
+	 HHvBCVoDqbv826fbXBaRcBLIUQJGCunCa25uBrFon0jbjorkl9e0MYv/1QabfK/O2v
+	 yV7lHImgzOIZmWocaKqMp5h37kIc7QlvP87Isxpxr9qW0M107LF+E77wPOH93bpIuX
+	 Sk5HZrClHPj3A==
+From: sashiko-bot@kernel.org
+Subject: Re: [RFC PATCH] arm64: dts: rockchip: add mipi csi-2 receiver nodes
+ for the dcphys on rk3588
+To: "Jason Yang" <jason98166@gmail.com>
+Cc: vkoul@kernel.org, neil.armstrong@linaro.org, linux-phy@lists.infradead.org, robh@kernel.org, conor+dt@kernel.org, devicetree@vger.kernel.org, olteanv@gmail.com
+In-Reply-To: <20260904075534.574037-1-jason98166@gmail.com>
+References: <8e10a8c0-3648-47b5-9131-a1abdd7eb8c5@kernel.org>
+ <20260904075534.574037-1-jason98166@gmail.com>
+Date: Fri, 04 Sep 2026 08:06:49 +0000
+Message-Id: <20260904080650.2B2541F00A3D@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,49 +63,77 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Sep 04, 2026 at 09:36:04AM +0200, Konrad Dybcio wrote:
-> On 9/1/26 2:44 PM, Manivannan Sadhasivam wrote:
-> > On Thu, Aug 20, 2026 at 04:24:12PM +0200, Konrad Dybcio wrote:
-> >> From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-> >>
-> >> Some Combo PHYs (so far only on SC8280XP, X1E80100 and Glymur), come in
-> >> a flavor called USB43DP, which as the name implies, features USB4, USB3
-> >> and DP signal processing capabilities. In that architecture, USB3 and
-> >> USB4 PHYs share the same USB_PLL while featuring separate logic spaces.
-> >> The DP part is roughly the same as on the instances without USB4.
-> 
-> [...]
-> 
-> >> +	case QMPPHY_MODE_USB4:
-> >> +		writel(USB4_MODE, com + QPHY_V3_DP_COM_PHY_MODE_CTRL);
-> >> +
-> >> +		/* bring both QMP USB and QMP DP PHYs PCS block out of reset */
-> >> +		/* TODO: disable DP PLL if there are no active tunnels after router setup */
-> > 
-> > 100 column width generally applies to code, not comments. Comments should still
-> > be wrapped to 80 columns.
-> 
-> I believe this isn't a real concern.. checkpatch certainly doesn't care:
-> 
-> # LONG_LINE_COMMENT     a comment starts before but extends beyond $max_line_length
-> # LONG_LINE_STRING      a string starts before but extends beyond $max_line_length
-> # LONG_LINE             all other lines longer than $max_line_length
-> 
-> (all take the same value, preset to 100 at the top of the file)
-
-Checkpatch is just a dumb tool. The coding style says the preferred
-limit is 80 chars unless breaking it improves readability. And that
-exception generally does not apply to comments (e.g. unless it contains
-a URL or similar).
-
-Johan
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIEluY3JlYXNpbmcgYCNw
+aHktY2VsbHNgIHRvIDIgYnJlYWtzIHRoZSBleGlzdGluZyBQSFkgZHJpdmVyIGFuZCB2aW9sYXRl
+cyB0aGUgZGV2aWNlIHRyZWUgYmluZGluZyBzY2hlbWEuCi0gW0xvd10gVW5kZWNsYXJlZCBtYWNy
+b3MgYFBIWV9UWVBFX0NTSWAgYW5kIGBQSFlfVFlQRV9EU0lgIGNhdXNlIERldmljZSBUcmVlIENv
+bXBpbGVyIChEVEMpIHN5bnRheCBlcnJvcnMgYW5kIGJ1aWxkIGZhaWx1cmVzLgotLQoKY29tbWl0
+IDc0M2QwOTdkZTM0MTA3MGFkNDE4MTFhYmIwODQwZDQzMTkzMmNiNjMKQXV0aG9yOiBKYXNvbiBZ
+YW5nIDxqYXNvbjk4MTY2QGdtYWlsLmNvbT4KCmFybTY0OiBkdHM6IHJvY2tjaGlwOiBhZGQgbWlw
+aSBjc2ktMiByZWNlaXZlciBub2RlcyBmb3IgdGhlIGRjcGh5cyBvbiByazM1ODgKICAgIApUaGlz
+IGlzIHRlc3QgcGF0Y2gsIGNvbnRhaW5zIHRoZSBmb2xsb3dpbmcgMyBjaGFuZ2VzOgogIC0gcmFp
+c2UgI3BoeS1jZWxscyB0byAyCiAgLSBhZGQgUEhZX1RZUEVfRFNJIHRvIHRoZSBkc2kgbm9kZXMK
+ICAtIGFkZCBtaXBpIGNzaTAgYW5kIGNzaTEKCj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9v
+dC9kdHMvcm9ja2NoaXAvcmszNTg4LWJhc2UuZHRzaSBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9j
+a2NoaXAvcmszNTg4LWJhc2UuZHRzaQo+IGluZGV4IDM3NmFkMDRlMDc4NjkuLmJjYjI3MDQwMzdj
+ODYgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazM1ODgtYmFz
+ZS5kdHNpCj4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazM1ODgtYmFzZS5k
+dHNpCgpbIC4uLiBdCgo+IEBAIC0xNTY4LDYgKzE1NzYsNjYgQEAgdmljYXBfbW11OiBpb21tdUBm
+ZGNlMDgwMCB7Cj4gIAkJc3RhdHVzID0gImRpc2FibGVkIjsKPiAgCX07Cj4gIAo+ICsJY3NpMDog
+Y3NpQGZkZDEwMDAwIHsKPiArCQljb21wYXRpYmxlID0gInJvY2tjaGlwLHJrMzU4OC1taXBpLWNz
+aTIiLCAicm9ja2NoaXAscmszNTY4LW1pcGktY3NpMiI7Cj4gKwkJcmVnID0gPDB4MCAweGZkZDEw
+MDAwIDB4MCAweDEwMDAwPjsKPiArCQlpbnRlcnJ1cHRzID0gPEdJQ19TUEkgMTQzIElSUV9UWVBF
+X0xFVkVMX0hJR0ggMD4sCj4gKwkJCSAgICAgPEdJQ19TUEkgMTQ0IElSUV9UWVBFX0xFVkVMX0hJ
+R0ggMD47Cj4gKwkJaW50ZXJydXB0LW5hbWVzID0gImVycjEiLCAiZXJyMiI7Cj4gKwkJY2xvY2tz
+ID0gPCZjcnUgUENMS19DU0lfSE9TVF8wPjsKPiArCQlwaHlzID0gPCZtaXBpZGNwaHkwIFBIWV9U
+WVBFX0RQSFkgUEhZX1RZUEVfQ1NJPjsKCltTZXZlcml0eTogTG93XQpXaWxsIHRoaXMgY29tcGls
+ZSBjb3JyZWN0bHk/IFBIWV9UWVBFX0NTSSBkb2VzIG5vdCBhcHBlYXIgdG8gYmUgZGVmaW5lZApp
+biBpbmNsdWRlL2R0LWJpbmRpbmdzL3BoeS9waHkuaCBvciBhbnkgaW5jbHVkZWQgaGVhZGVyLCB3
+aGljaCBjb3VsZApjYXVzZSBkZXZpY2UgdHJlZSBjb21waWxlciBzeW50YXggZXJyb3JzIGFuZCBi
+dWlsZCBmYWlsdXJlcyBkdWUgdG8KcmF3IHN0cmluZyB0b2tlbnMgbGVmdCBieSB0aGUgQyBwcmVw
+cm9jZXNzb3IuCgo+ICsJCXBvd2VyLWRvbWFpbnMgPSA8JnBvd2VyIFJLMzU4OF9QRF9WST47Cj4g
+KwkJcmVzZXRzID0gPCZjcnUgU1JTVF9QX0NTSV9IT1NUXzA+Owo+ICsJCXN0YXR1cyA9ICJkaXNh
+YmxlZCI7CgpbIC4uLiBdCgo+IEBAIC0xNzg4LDcgKzE4NTYsNyBAQCBkc2kwOiBkc2lAZmRlMjAw
+MDAgewo+ICAJCXJlc2V0cyA9IDwmY3J1IFNSU1RfUF9EU0lIT1NUMD47Cj4gIAkJcmVzZXQtbmFt
+ZXMgPSAiYXBiIjsKPiAgCQlwb3dlci1kb21haW5zID0gPCZwb3dlciBSSzM1ODhfUERfVk9QPjsK
+PiAtCQlwaHlzID0gPCZtaXBpZGNwaHkwIFBIWV9UWVBFX0RQSFk+Owo+ICsJCXBoeXMgPSA8Jm1p
+cGlkY3BoeTAgUEhZX1RZUEVfRFBIWSBQSFlfVFlQRV9EU0k+OwoKW1NldmVyaXR5OiBMb3ddCklz
+IFBIWV9UWVBFX0RTSSBkZWZpbmVkPyBTaW1pbGFyIHRvIFBIWV9UWVBFX0NTSSwgdGhpcyB1bmRl
+Y2xhcmVkIG1hY3JvCmNhbiBsZWFkIHRvIHN5bnRheCBlcnJvcnMgd2hlbiBjb21waWxpbmcgdGhl
+IGFybTY0IGR0YnMuCgo+ICAJCXBoeS1uYW1lcyA9ICJkY3BoeSI7Cj4gIAkJcm9ja2NoaXAsZ3Jm
+ID0gPCZ2b3BfZ3JmPjsKPiAgCQlzdGF0dXMgPSAiZGlzYWJsZWQiOwoKWyAuLi4gXQoKPiBAQCAt
+MzQyOSw3ICszNDk3LDcgQEAgbWlwaWRjcGh5MDogcGh5QGZlZGEwMDAwIHsKPiAgCQkJIDwmY3J1
+IFNSU1RfUF9NSVBJX0RDUEhZMF9HUkY+LAo+ICAJCQkgPCZjcnUgU1JTVF9TX01JUElfRENQSFkw
+PjsKPiAgCQlyZXNldC1uYW1lcyA9ICJtX3BoeSIsICJhcGIiLCAiZ3JmIiwgInNfcGh5IjsKPiAt
+CQkjcGh5LWNlbGxzID0gPDE+Owo+ICsJCSNwaHktY2VsbHMgPSA8Mj47CgpbU2V2ZXJpdHk6IEhp
+Z2hdCkRvZXMgdGhpcyBjaGFuZ2UgYnJlYWsgdGhlIGV4aXN0aW5nIFBIWSBkcml2ZXI/CgpUaGUg
+cm9ja2NoaXAgc2Ftc3VuZyBkY3BoeSBiaW5kaW5nIHNjaGVtYSBjdXJyZW50bHkgcmVzdHJpY3Rz
+ICNwaHktY2VsbHMKdG8gMSAoRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9y
+b2NrY2hpcCxyazM1ODgtbWlwaS1kY3BoeS55YW1sKS4KCkFkZGl0aW9uYWxseSwgdGhlIGRyaXZl
+ciBleHBsaWNpdGx5IHJlamVjdHMgYW55IHJlcXVlc3Qgd2l0aCBtb3JlIHRoYW4gMQphcmd1bWVu
+dDoKCmRyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1zYW1zdW5nLWRjcGh5LmM6c2Ft
+c3VuZ19taXBpX2RjcGh5X3hsYXRlKCkgewoJaWYgKGFyZ3MtPmFyZ3NfY291bnQgIT0gMSkgewoJ
+CWRldl9lcnIoZGV2LCAiaW52YWxpZCBudW1iZXIgb2YgYXJndW1lbnRzXG4iKTsKCQlyZXR1cm4g
+RVJSX1BUUigtRUlOVkFMKTsKCX0KfQoKV2lsbCBpbmNyZWFzaW5nIHRoaXMgdG8gMiBjYXVzZSB0
+aGUgZHJpdmVyIHRvIHJldHVybiAtRUlOVkFMIGR1cmluZyBwcm9iZSwKYnJlYWtpbmcgZGlzcGxh
+eSBhbmQgY2FtZXJhIGluaXRpYWxpemF0aW9uIG9uIHRoaXMgcGxhdGZvcm0/Cgo+ICAJCXN0YXR1
+cyA9ICJkaXNhYmxlZCI7Cj4gIAl9Owo+ICAKPiBAQCAtMzQ0NSw3ICszNTEzLDcgQEAgbWlwaWRj
+cGh5MTogcGh5QGZlZGIwMDAwIHsKPiAgCQkJIDwmY3J1IFNSU1RfUF9NSVBJX0RDUEhZMV9HUkY+
+LAo+ICAJCQkgPCZjcnUgU1JTVF9TX01JUElfRENQSFkxPjsKPiAgCQlyZXNldC1uYW1lcyA9ICJt
+X3BoeSIsICJhcGIiLCAiZ3JmIiwgInNfcGh5IjsKPiAtCQkjcGh5LWNlbGxzID0gPDE+Owo+ICsJ
+CSNwaHktY2VsbHMgPSA8Mj47CgpbU2V2ZXJpdHk6IEhpZ2hdCkNhbiB0aGlzIGFsc28gY2F1c2Ug
+dGhlIHNhbWUgcHJvYmUgZmFpbHVyZSBmb3IgdGhlIHNlY29uZCBQSFkgaW5zdGFuY2UKZHVlIHRv
+IHRoZSBkcml2ZXIncyBzdHJpY3QgYXJnc19jb3VudCBjaGVjaz8KCj4gIAkJc3RhdHVzID0gImRp
+c2FibGVkIjsKPiAgCX07CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtv
+LmRldi8jL3BhdGNoc2V0LzIwMjYwOTA0MDc1NTM0LjU3NDAzNy0xLWphc29uOTgxNjZAZ21haWwu
+Y29tP3BhcnQ9MQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtcGh5Cg==
