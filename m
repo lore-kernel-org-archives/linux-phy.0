@@ -4,93 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92290C79F88
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Sep 2026 13:28:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0746C79F88
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Sep 2026 13:30:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:Cc:To:In-Reply-To:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ETn5EDlzl0E3+d8dk0gmx14z250+gW+YZZDSI89F+m4=; b=Jy1TUMGI/vPYe2
-	oMSswEJqyoQ07IyjZruJrNxzH6FBSzTKgQGKmLAtvYcaHvDkc2zZPL0x3S+6HGcd+31qSFNCR+OZT
-	VhAfiXVauPHcqIreFUsIp9XCrlhg2LUhWK9Tnh1UIN3Tv7VYbD2auLvYiUfJl2gFZW8H2nEP3hVvE
-	2npwwqA1QW7byw4XAzxyQeZLiOtby6SZorbdTppenhWH9FKVJ3A5QLH3AOLasT9wKWI6or7W89uW+
-	fSOjac0y6AJjkDE7liXm73LL337WIANlEEiZ699XDC1S3mSXYa/IyYUm/QK8Y2i6bgtHEVA4S8zag
-	v8DXas+ooviieknozoIQ==;
+	List-Owner; bh=+Xzkn97rlk2SEMtwBzaStIzxHO1T3nlJ9VRiTuCIN5I=; b=jdyaQuCzjqF2kf
+	5KWb490QxhBCtJmInrYWYOYplZMjQpjxwYBPZR8ZTgNTccAF/zUjXgFU6wYvRASePHb33KZqawNUe
+	kgf2hrEYiXDVY06UfZuJJyzxrOLGU1j2jlF9GdiRfULuaWAwHgxWr5LdHcYRGTamdXZITaOnExJZp
+	Z+vfMlRHp0AOMSfIxUgIbISXFpkZwZqPXB9KnrjvbT8rMNFFmWD/LNXVXVMC0VB9svooBaVqxE+79
+	n3/Z4mkN2SbpIgCCAYc3JlaCV+7Qzv3xH7B3kGGXhYBw2j9lODKiJ03eLF3IJFntEorpSZYccjaso
+	c2A2rp2ygjOjMf1vf9nw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x2TyM-00000002CM1-0QyM;
-	Fri, 04 Sep 2026 13:28:50 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1x2U0K-00000002Dz3-2bUl;
+	Fri, 04 Sep 2026 13:30:52 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x2TxK-00000002AQr-01WO;
-	Fri, 04 Sep 2026 13:27:55 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
-	by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id 20260904132743euoutp012b4616ffd017ae0aa9b319a14bb63717~SISlvLNbK0653306533euoutp01W;
-	Fri,  4 Sep 2026 13:27:43 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com 20260904132743euoutp012b4616ffd017ae0aa9b319a14bb63717~SISlvLNbK0653306533euoutp01W
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1788528463;
-	bh=Jr2wEe6l73xUNZ6aiejF5cyEoIwvzekHVHO47+7fd+k=;
-	h=From:Date:Subject:In-Reply-To:To:Cc:References:From;
-	b=noWUt+NSZx6jtj7QRgfqZr4wmkNoQ3plnPvXwsiAj5XJtIl9pDlfzrXGtNl+BZ0ii
-	 BG2MxNOKnWYRbjogAATKpxlboo/1a6yITzPnkqJaxTpQgdHpUFvvRgWjLxuuIV5Ys3
-	 ZN3aydc/eRO8AfSRRk3o+i4W9g4gTIOCvC6h0/wA=
-Received: from eusmtip1.samsung.com (unknown [203.254.199.221]) by
-	eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
-	20260904132743eucas1p1e02218d3fb38af95c3dd4bfa24904cab~SISlefGA11560415604eucas1p10;
-	Fri,  4 Sep 2026 13:27:43 +0000 (GMT)
-Received: from AMDC4942.eu.corp.samsungelectronics.net (unknown
-	[106.210.136.40]) by eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
-	20260904132741eusmtip111132fc36bcf11ef733fed16ce659593~SISjt8GYW1303913039eusmtip1a;
-	Fri,  4 Sep 2026 13:27:41 +0000 (GMT)
-From: Michal Wilczynski <m.wilczynski@samsung.com>
-Date: Fri, 04 Sep 2026 15:27:19 +0200
-Subject: [PATCH v3 18/19] riscv: dts: starfive: jh7110: Update DT for
- display subsystem
-MIME-Version: 1.0
-Message-Id: <20260904-jh7110-clean-send-v3-18-484f9ae72715@samsung.com>
-In-Reply-To: <20260904-jh7110-clean-send-v3-0-484f9ae72715@samsung.com>
-To: Vinod Koul <vkoul@kernel.org>,  Neil Armstrong
-	<neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,  Krzysztof
-	Kozlowski <krzk+dt@kernel.org>,  Conor Dooley <conor+dt@kernel.org>, Andrzej
-	Hajda <andrzej.hajda@intel.com>,  Robert Foss <rfoss@kernel.org>,  Laurent
-	Pinchart <Laurent.pinchart@ideasonboard.com>,  Jonas Karlman
-	<jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,  Luca Ceresoli
-	<luca.ceresoli@bootlin.com>, David Airlie <airlied@gmail.com>,  Simona
-	Vetter <simona@ffwll.ch>,  Maarten Lankhorst
-	<maarten.lankhorst@linux.intel.com>,  Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,  Lee Jones <lee@kernel.org>, Andy
-	Yan <andy.yan@rock-chips.com>,  Philipp Zabel <p.zabel@pengutronix.de>, 
-	Emil Renner Berthing <kernel@esmil.dk>,  Hal Feng
-	<hal.feng@starfivetech.com>,  Michael Turquette <mturquette@baylibre.com>, 
-	Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>,  Heiko
-	Stuebner <heiko@sntech.de>, Conor Dooley <conor@kernel.org>,  Paul Walmsley
-	<pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,  Albert Ou
-	<aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,  Dominique
-	Belhachemi <db@domibel.de>, Brian Masney <bmasney+clk@redhat.com>,  Jerome
-	Brunet <jbrunet+clk@baylibre.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
-	mfd@lists.linux.dev, linux-clk@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
-	linux-riscv@lists.infradead.org, Andy Yan <andyshrk@163.com>,  Marek
-	Szyprowski <m.szyprowski@samsung.com>,  Maud Spierings
-	<maud_spierings@murena.io>,  Graham Markall <hello@big-grey.co.uk>,  Icenowy
-	Zheng <zhengxingda@iscas.ac.cn>,  Michal Wilczynski
-	<m.wilczynski@samsung.com>
-X-Mailer: b4 0.15-dev
-X-CMS-MailID: 20260904132743eucas1p1e02218d3fb38af95c3dd4bfa24904cab
-X-Msg-Generator: CA
-X-RootMTR: 20260904132743eucas1p1e02218d3fb38af95c3dd4bfa24904cab
-X-EPHeader: CA
-X-CMS-RootMailID: 20260904132743eucas1p1e02218d3fb38af95c3dd4bfa24904cab
+	id 1x2U0I-00000002DwT-0PT0
+	for linux-phy@lists.infradead.org;
+	Fri, 04 Sep 2026 13:30:51 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 7AD5940851;
+	Fri,  4 Sep 2026 13:30:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B6D7F1F00A3D;
+	Fri,  4 Sep 2026 13:30:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1788528649;
+	bh=IQ26GNFlKcl9SbfyYjBUWsK0WzvCiHztfchbZ3Xz8N8=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=Imto6OsLTI+gjfxw4DNmfbbwAhoooMnzWjRjQNIxXYSjS6WXX5xg4QSxinYrAu61z
+	 w8ErfeOCFFrKmk9zBSHKNYgKU7uV9RONFSZPuQysWk8P64GR4vTKafSE28kRG5P6QW
+	 7yHAJ6ZIiF/1PrcOSEIhtnk9k70Fyc6F1UgliOhsOccuLUKCLNgAz6LqAqkMOPXKID
+	 EnHqj6KCfz3UOfMvZMLr3Xf9qDndKamYZeZsxcBn4Umxp6rr3XMItXfYpnDvP9PyF4
+	 hxo4o+mt/lWx2WScxJhaLTcHr+X6LHKxVLwYkgUcC5IOCGQbuk2FiyV4Wp8WSOLxO7
+	 106FtoP/fbgKQ==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v3 04/19] dt-bindings: soc: starfive: Add
+ starfive,jh7110-vout-syscon
+To: "Michal Wilczynski" <m.wilczynski@samsung.com>
+Cc: neil.armstrong@linaro.org, linux-phy@lists.infradead.org, mfd@lists.linux.dev, devicetree@vger.kernel.org, olteanv@gmail.com, lee@kernel.org, conor+dt@kernel.org, linux-clk@vger.kernel.org, dri-devel@lists.freedesktop.org, vkoul@kernel.org, robh@kernel.org
+In-Reply-To: <20260904-jh7110-clean-send-v3-4-484f9ae72715@samsung.com>
 References: <20260904-jh7110-clean-send-v3-0-484f9ae72715@samsung.com>
-	<CGME20260904132743eucas1p1e02218d3fb38af95c3dd4bfa24904cab@eucas1p1.samsung.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260904_062746_393956_563026E4 
-X-CRM114-Status: GOOD (  17.57  )
+ <CGME20260904132716eucas1p2d093509db255e62e6bd546e734f04e63@eucas1p2.samsung.com>
+ <20260904-jh7110-clean-send-v3-4-484f9ae72715@samsung.com>
+Date: Fri, 04 Sep 2026 13:30:48 +0000
+Message-Id: <20260904133048.B6D7F1F00A3D@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,344 +64,21 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Activate the display subsystem by describing the video output subsystem,
-which the documentation calls dom_vout_top, as a bus node covering the
-whole 0x29400000 region, with dc8200, the HDMI block, the video output
-system controller and voutcrg as its children.
-
-The subsystem node owns the resources its children share: the NoC display
-bus clock and reset that gate access to every register in the region, and
-the PD_VOUT power domain. Modelling it this way keeps a shared gate owned
-by the block that shares it rather than by whichever consumer happens to
-probe first, and lets dc8200 inherit dma-noncoherent for framebuffer DMA
-from the bus it sits on.
-
-The monolithic hdmi node is in turn modelled as a container with hdmi_phy
-and hdmi_controller children. This lets the PHY (clock provider,
-depending only on xin24m) and the controller (clock consumer) probe
-independently, breaking the circular clock dependency with voutcrg.
-
-voutcrg consumes the pixel clock from the &hdmi_phy node instead of the
-old fixed-clock, and dc8200 gets its pixel clocks from voutcrg's MUXes.
-The old, incorrect hdmitx0-pixel-clock fixed-clock node is removed.
-
-The HDMI controller gets a phandle to the video output system controller,
-which holds the mux selecting the DC8200 output that drives the HDMI
-transmitter.
-
-CMA is enlarged and constrained to memory the display controller can
-address, because the default pool is too small for its framebuffers.
-
-Co-developed-by: Dominique Belhachemi <db@domibel.de>
-Signed-off-by: Dominique Belhachemi <db@domibel.de>
-Signed-off-by: Michal Wilczynski <m.wilczynski@samsung.com>
----
- arch/riscv/boot/dts/starfive/jh7110-common.dtsi | 121 +++++++++++++++++++++++-
- arch/riscv/boot/dts/starfive/jh7110.dtsi        | 102 ++++++++++++++++----
- 2 files changed, 200 insertions(+), 23 deletions(-)
-
-diff --git a/arch/riscv/boot/dts/starfive/jh7110-common.dtsi b/arch/riscv/boot/dts/starfive/jh7110-common.dtsi
-index a7a1c09a2c9075711f3a214a49618911fdc7b421..5105a7c29120ddec4770b6a712563b6ee421768e 100644
---- a/arch/riscv/boot/dts/starfive/jh7110-common.dtsi
-+++ b/arch/riscv/boot/dts/starfive/jh7110-common.dtsi
-@@ -33,6 +33,27 @@ memory@40000000 {
- 		bootph-pre-ram;
- 	};
- 
-+	reserved-memory {
-+		#address-cells = <2>;
-+		#size-cells = <2>;
-+		ranges;
-+
-+		/*
-+		 * The display controller allocates its framebuffers from CMA,
-+		 * and the default pool is too small for them. Keep the pool
-+		 * inside the range the controller can address; it fits in the
-+		 * memory every VisionFive 2 variant has.
-+		 */
-+		linux,cma {
-+			compatible = "shared-dma-pool";
-+			reusable;
-+			size = <0x0 0x20000000>;
-+			alignment = <0x0 0x1000>;
-+			alloc-ranges = <0x0 0x70000000 0x0 0x20000000>;
-+			linux,cma-default;
-+		};
-+	};
-+
- 	gpio-restart {
- 		compatible = "gpio-restart";
- 		gpios = <&sysgpio 35 GPIO_ACTIVE_HIGH>;
-@@ -73,12 +94,47 @@ codec {
- 			};
- 		};
- 	};
-+
-+	hdmi-connector {
-+		compatible = "hdmi-connector";
-+		type = "a";
-+
-+		port {
-+			hdmi_con_in: endpoint {
-+				remote-endpoint = <&hdmi_out_con>;
-+			};
-+		};
-+	};
- };
- 
- &cpus {
- 	timebase-frequency = <4000000>;
- };
- 
-+&dc8200 {
-+	status = "okay";
-+
-+	ports {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		dpu_port0: port@0 {
-+			reg = <0>;
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			dpu_out_dpi0: endpoint@0 {
-+				reg = <0>;
-+				remote-endpoint = <&hdmi_in>;
-+			};
-+		};
-+
-+		dpu_port1: port@1 {
-+			reg = <1>;
-+		};
-+	};
-+};
-+
- &dvp_clk {
- 	clock-frequency = <74250000>;
- };
-@@ -99,8 +155,31 @@ &gmac1_rmii_refin {
- 	clock-frequency = <50000000>;
- };
- 
--&hdmitx0_pixelclk {
--	clock-frequency = <297000000>;
-+&hdmi_controller {
-+	status = "okay";
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&hdmi_pins>;
-+
-+	ports {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		port@0 {
-+			reg = <0>;
-+
-+			hdmi_in: endpoint {
-+				remote-endpoint = <&dpu_out_dpi0>;
-+			};
-+		};
-+
-+		hdmi_out_port: port@1 {
-+			reg = <1>;
-+
-+			hdmi_out_con: endpoint {
-+				remote-endpoint = <&hdmi_con_in>;
-+			};
-+		};
-+	};
- };
- 
- &i2srx_bclk_ext {
-@@ -351,6 +430,40 @@ &syscrg {
- };
- 
- &sysgpio {
-+	hdmi_pins: hdmi-0 {
-+		hdmi-cec-pins {
-+			pinmux = <GPIOMUX(14, GPOUT_SYS_HDMI_CEC_SDA,
-+					      GPOEN_SYS_HDMI_CEC_SDA,
-+					      GPI_SYS_HDMI_CEC_SDA)>;
-+			input-enable;
-+			bias-pull-up;
-+		};
-+
-+		hdmi-hpd-pins {
-+			pinmux = <GPIOMUX(15, GPOUT_HIGH,
-+					      GPOEN_ENABLE,
-+					      GPI_SYS_HDMI_HPD)>;
-+			input-enable;
-+			bias-disable; /* external pull-up */
-+		};
-+
-+		hdmi-scl-pins {
-+			pinmux = <GPIOMUX(0, GPOUT_SYS_HDMI_DDC_SCL,
-+					     GPOEN_SYS_HDMI_DDC_SCL,
-+					     GPI_SYS_HDMI_DDC_SCL)>;
-+			input-enable;
-+			bias-pull-up;
-+		};
-+
-+		hdmi-sda-pins {
-+			pinmux = <GPIOMUX(1, GPOUT_SYS_HDMI_DDC_SDA,
-+					     GPOEN_SYS_HDMI_DDC_SDA,
-+					     GPI_SYS_HDMI_DDC_SDA)>;
-+			input-enable;
-+			bias-pull-up;
-+		};
-+	};
-+
- 	i2c0_pins: i2c0-0 {
- 		i2c-pins {
- 			pinmux = <GPIOMUX(57, GPOUT_LOW,
-@@ -629,3 +742,7 @@ &U74_3 {
- &U74_4 {
- 	cpu-supply = <&vdd_cpu>;
- };
-+
-+&voutcrg {
-+	status = "okay";
-+};
-diff --git a/arch/riscv/boot/dts/starfive/jh7110.dtsi b/arch/riscv/boot/dts/starfive/jh7110.dtsi
-index 9c3e4598747eb5541effe697044484715569a285..0f981f4c89586269b987be8591037c9461e04703 100644
---- a/arch/riscv/boot/dts/starfive/jh7110.dtsi
-+++ b/arch/riscv/boot/dts/starfive/jh7110.dtsi
-@@ -290,12 +290,6 @@ gmac1_rmii_refin: gmac1-rmii-refin-clock {
- 		#clock-cells = <0>;
- 	};
- 
--	hdmitx0_pixelclk: hdmitx0-pixel-clock {
--		compatible = "fixed-clock";
--		clock-output-names = "hdmitx0_pixelclk";
--		#clock-cells = <0>;
--	};
--
- 	i2srx_bclk_ext: i2srx-bclk-ext-clock {
- 		compatible = "fixed-clock";
- 		clock-output-names = "i2srx_bclk_ext";
-@@ -352,6 +346,13 @@ tdm_ext: tdm-ext-clock {
- 		#clock-cells = <0>;
- 	};
- 
-+	xin24m: xin24m {
-+		compatible = "fixed-clock";
-+		#clock-cells = <0>;
-+		clock-frequency = <24000000>;
-+		clock-output-names = "xin24m";
-+	};
-+
- 	soc {
- 		compatible = "simple-bus";
- 		interrupt-parent = <&plic>;
-@@ -1199,22 +1200,81 @@ csi_phy: phy@19820000 {
- 			#phy-cells = <0>;
- 		};
- 
--		voutcrg: clock-controller@295c0000 {
--			compatible = "starfive,jh7110-voutcrg";
--			reg = <0x0 0x295c0000 0x0 0x10000>;
--			clocks = <&syscrg JH7110_SYSCLK_VOUT_SRC>,
--				 <&syscrg JH7110_SYSCLK_VOUT_TOP_AHB>,
--				 <&syscrg JH7110_SYSCLK_VOUT_TOP_AXI>,
--				 <&syscrg JH7110_SYSCLK_VOUT_TOP_HDMITX0_MCLK>,
--				 <&syscrg JH7110_SYSCLK_I2STX0_BCLK>,
--				 <&hdmitx0_pixelclk>;
--			clock-names = "vout_src", "vout_top_ahb",
--				      "vout_top_axi", "vout_top_hdmitx0_mclk",
--				      "i2stx0_bclk", "hdmitx0_pixelclk";
--			resets = <&syscrg JH7110_SYSRST_VOUT_TOP_SRC>;
--			#clock-cells = <1>;
--			#reset-cells = <1>;
-+		vout_subsystem: display-subsystem@29400000 {
-+			compatible = "starfive,jh7110-vout-subsystem";
-+			reg = <0x0 0x29400000 0x0 0x200000>;
-+			ranges;
-+			#address-cells = <2>;
-+			#size-cells = <2>;
-+			clocks = <&syscrg JH7110_SYSCLK_NOC_BUS_DISP_AXI>;
-+			dma-noncoherent;
- 			power-domains = <&pwrc JH7110_PD_VOUT>;
-+			resets = <&syscrg JH7110_SYSRST_NOC_BUS_DISP_AXI>;
-+
-+			dc8200: display@29400000 {
-+				compatible = "starfive,jh7110-dc8200", "verisilicon,dc";
-+				reg = <0x0 0x29400000 0x0 0x2800>;
-+				clocks = <&voutcrg JH7110_VOUTCLK_DC8200_CORE>,
-+					 <&voutcrg JH7110_VOUTCLK_DC8200_AXI>,
-+					 <&voutcrg JH7110_VOUTCLK_DC8200_AHB>,
-+					 <&voutcrg JH7110_VOUTCLK_DC8200_PIX0>,
-+					 <&voutcrg JH7110_VOUTCLK_DC8200_PIX1>;
-+				clock-names = "core", "axi", "ahb", "pix0", "pix1";
-+				interrupts = <95>;
-+				resets = <&voutcrg JH7110_VOUTRST_DC8200_CORE>,
-+					 <&voutcrg JH7110_VOUTRST_DC8200_AXI>,
-+					 <&voutcrg JH7110_VOUTRST_DC8200_AHB>;
-+				reset-names = "core", "axi", "ahb";
-+			};
-+
-+			hdmi_subsystem: hdmi@29590000 {
-+				compatible = "starfive,jh7110-hdmi-subsystem";
-+				reg = <0x0 0x29590000 0x0 0x4000>;
-+
-+				hdmi_controller: controller {
-+					compatible =
-+						"starfive,jh7110-inno-hdmi-controller";
-+					clocks = <&voutcrg JH7110_VOUTCLK_HDMI_TX_SYS>,
-+						 <&voutcrg JH7110_VOUTCLK_HDMI_TX_MCLK>,
-+						 <&voutcrg JH7110_VOUTCLK_HDMI_TX_BCLK>,
-+						 <&hdmi_phy>;
-+					clock-names = "pclk", "mclk", "bclk", "pixel";
-+					interrupts = <99>;
-+					phys = <&hdmi_phy>;
-+					resets = <&voutcrg JH7110_VOUTRST_HDMI_TX_HDMI>;
-+					starfive,vout-syscon = <&vout_syscon>;
-+				};
-+
-+				hdmi_phy: phy {
-+					compatible = "starfive,jh7110-inno-hdmi-phy";
-+					clocks = <&xin24m>;
-+					#clock-cells = <0>;
-+					#phy-cells = <0>;
-+				};
-+			};
-+
-+			vout_syscon: syscon@295b0000 {
-+				compatible = "starfive,jh7110-vout-syscon", "syscon";
-+				reg = <0x0 0x295b0000 0x0 0x10000>;
-+			};
-+
-+			voutcrg: clock-controller@295c0000 {
-+				compatible = "starfive,jh7110-voutcrg";
-+				reg = <0x0 0x295c0000 0x0 0x10000>;
-+				clocks = <&syscrg JH7110_SYSCLK_VOUT_SRC>,
-+					 <&syscrg JH7110_SYSCLK_VOUT_TOP_AHB>,
-+					 <&syscrg JH7110_SYSCLK_VOUT_TOP_AXI>,
-+					 <&syscrg JH7110_SYSCLK_VOUT_TOP_HDMITX0_MCLK>,
-+					 <&syscrg JH7110_SYSCLK_I2STX0_BCLK>,
-+					 <&hdmi_phy>;
-+				clock-names = "vout_src", "vout_top_ahb",
-+					      "vout_top_axi", "vout_top_hdmitx0_mclk",
-+					      "i2stx0_bclk", "hdmitx0_pixelclk";
-+				power-domains = <&pwrc JH7110_PD_VOUT>;
-+				resets = <&syscrg JH7110_SYSRST_VOUT_TOP_SRC>;
-+				#clock-cells = <1>;
-+				#reset-cells = <1>;
-+			};
- 		};
- 
- 		pcie0: pcie@940000000 {
-
--- 
-2.34.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+PiBUaGUgdmlkZW8gb3V0cHV0IHN1YnN5c3RlbSBoYXMgaXRzIG93biBzeXN0ZW0gY29udHJvbGxl
+ciwgZG9jdW1lbnRlZCBhcwo+IGRvbV92b3V0X3N5c2Nvbi4gQW1vbmcgb3RoZXIgdGhpbmdzIGl0
+IGhvbGRzIHRoZSBtdXggdGhhdCBzZWxlY3RzIHdoaWNoCj4gREM4MjAwIG91dHB1dCBkcml2ZXMg
+dGhlIEhETUkgdHJhbnNtaXR0ZXIsIHNvIHRoZSBIRE1JIGNvbnRyb2xsZXIgbmVlZHMKPiB0byBy
+ZWFjaCBpdC4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBNaWNoYWwgV2lsY3p5bnNraSA8bS53aWxjenlu
+c2tpQHNhbXN1bmcuY29tPgoKU2FzaGlrbyBoYXMgcmV2aWV3ZWQgdGhpcyBwYXRjaCBhbmQgZm91
+bmQgbm8gaXNzdWVzLiBJdCBsb29rcyBncmVhdCEKCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBo
+dHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA5MDQtamg3MTEwLWNsZWFuLXNlbmQt
+djMtMC00ODRmOWFlNzI3MTVAc2Ftc3VuZy5jb20/cGFydD00CgoKLS0gCmxpbnV4LXBoeSBtYWls
+aW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZy
+YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
