@@ -4,100 +4,120 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24726C79F85
-	for <linux-phy@archiver.kernel.org>; Sun,  6 Sep 2026 13:31:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D146EC79FA0
+	for <linux-phy@archiver.kernel.org>; Sun,  6 Sep 2026 14:17:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GCCVVfkqlE6IuXwYILkkCv1bd+eaalf6lM8ZQCjnXd4=; b=CTIaz9NkakUP6U
-	gEwYsHgPmMfN2R77fz15pkU8860fcVK2w00nYzlH9AV5ATe62mvPxXpPCfQUznyFrIkjtQSjwsLRE
-	PHt4kdFAC31AJZjjN4IvPSUKvP8o74uLPclIvBFhTJUPMbQZGrjmGJ2uPyyGuA4fpphYJYU+nVV3c
-	vsmjqjY0A7NRrwr6gZz9KfhcqFCgxeThi1COKhjhb/8UxSpa8iW2DeSVZE5Uy9+CKkSrPUqEir8tZ
-	uQtz68bjBvvBwRu10gBZOMKCEaI8Or5ZxcEFS1QUhhmYb2qrD9fmAk1hMDCvVlmOskGXDtGvjjk7G
-	5VKFDIuzqEIX9ZQJ7lqw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7oGvzBa40M6dXDsLnht+eZMinWUdqeBdhFHM8DVhdcI=; b=YvCbPFvPCpDjDB
+	FVMwxT1g9gOhQDgvqUi9+my0JBeLaVqG6QSQO1pu4wXacjnNYOWl429R1nY0KcUT/DzqO+lhiId8a
+	K4cjjJtDHAanFvzNt0AWM6vld4Jtz3JPSls5686gMhxGct1Dio73GAisFoRyHSW8JhigIpTVe5cDR
+	thXsNZi360+toJLm0lVJSChHFujszqhXNNVdwTPuwe+GH71SNV+PxESJqICdaKQRfsTfW7/1KaHnP
+	3d4h8XqKbiZOqE7RLrA5Rtg9doxdtFNZT27ScSoYY0ghkQtm3kovOFzFFZ7CYwXlrxHZL26N3AhiJ
+	JlkwoX4Hanll6PIg9AhA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3CyH-0000000535k-3qNC;
-	Sun, 06 Sep 2026 13:31:45 +0000
-Received: from mail-pj1-x102a.google.com ([2607:f8b0:4864:20::102a])
+	id 1x3DgP-000000054t2-1A7n;
+	Sun, 06 Sep 2026 14:17:21 +0000
+Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3CyE-0000000535P-3oJ3
+	id 1x3DgM-000000054s7-1JwA
 	for linux-phy@lists.infradead.org;
-	Sun, 06 Sep 2026 13:31:44 +0000
-Received: by mail-pj1-x102a.google.com with SMTP id 98e67ed59e1d1-39675172593so2098873a91.2
-        for <linux-phy@lists.infradead.org>; Sun, 06 Sep 2026 06:31:42 -0700 (PDT)
+	Sun, 06 Sep 2026 14:17:19 +0000
+Received: by mail-wr1-x42a.google.com with SMTP id ffacd0b85a97d-482e4998d28so1969728f8f.2
+        for <linux-phy@lists.infradead.org>; Sun, 06 Sep 2026 07:17:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1788701501; x=1789306301; darn=lists.infradead.org;
-        h=cc:to:message-id:content-transfer-encoding:content-type
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
-         :reply-to:content-type;
-        bh=9tYnhpE7QdeEZNd+tgaIJOLzvVhdJ+mADYDf3k6L6f8=;
-        b=oZ1UCI9RNFpdWlayz7nBBIar1enn4i2SKtt1uXb9877ad3qBXx/lf0ViPEH5sIRrnV
-         OrmOTJtm+j+nZCqrsXrKZhPX+XKnvvdjDpqVVWhUryOPoedebC3ZfW8mnIaXxO0ALk7D
-         iHx+2NfBw3U67XPFmV1cIxiyHKyfzBBwVOCRJmsoN9uzoRtMWCehXkpwWL2d/BVlRMyE
-         TmJin9xOTM7ARiO3tFnQw6wUTSnSfViYDQdGmpJZE4RZ7tcN/MKDfHb/wBiQfZTPpI3p
-         8kk60fCC7PYeDDrRBWmd2ykNeUjN9Qw/J9rWiA4/zxHeA6qJOWve+zlROI6oSdKuugpl
-         4PmA==
+        d=linaro.org; s=google; t=1788704236; x=1789309036; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :content-type:mime-version:subject:date:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=OZO6dxofZbAitz209jLurPVDhx0uGUtYXwmfwELJ9t4=;
+        b=pWNcfjeu3HQ+MU0EnS5G4SKmoMJSvqIGHg2aCyJTxQWB+sYtGbdaoB+O/Bi7E2UTzh
+         CvURd+5hwhNM0lskx509mkOeHFSEkeMJRRTT7qHaQWpTkP3qPfNqbX99CmUsU4pvjZWn
+         t8ioegNLRCAF4Z/IbLZ4JsUsRE0njGweptlHWojdlxV7Iez0pgD4E3wRTO5Y7ltWYpdu
+         6TmGPZNPTgLsMzZQz7eXkunhTcPgI+sw2w2CkoLvDxNfFZH6n4fksttG1sGm6xAsXPVh
+         P/5IvFRGPSJN32+WfIYBZl6Ibx9vlL0Op227ed11vmOP7bgg6kZzu7xsk/B98Fx7pvG5
+         g+Ew==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788701501; x=1789306301;
-        h=cc:to:message-id:content-transfer-encoding:content-type
-         :mime-version:subject:date:from:x-gm-gg:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to:content-type;
-        bh=9tYnhpE7QdeEZNd+tgaIJOLzvVhdJ+mADYDf3k6L6f8=;
-        b=XdQhie8cwh/q3hONDAuP25G8PsFdOQdgw4WYerbl5KNtmT3zYZnokHDq/xMybtFVxN
-         R2+KN5nyJmBvRVc4j+N3gg8JKd6meTFQYEobLNO1ee5vUpedxDlFH0+8hzg0GYKk6fYc
-         LahZmFqgDy1IJeheN6mlRqp2ohVoyAuljhlbKoLS0VBJ47xA/tbNVlahDaK4ogCEEsmp
-         kdx4bKf5GQbzsSbPaUyLK97HLkuuAnmf8P2fQxcVqeBRALwrkj8nIDrQLp1+a/cXvgqo
-         l3dPLP16N3+bgsSGrVNiy41uOSdPOrIDaXpkZ9D2LIc9z+vePAr55kd1RTani6lQ5iqF
-         EE2A==
-X-Gm-Message-State: AFuF++lvBkTDvETDpHkWT5GFUEhcCvyjdebN+QWGYTlcOcStW7xqRM5Q
-	FL/RCMl0Dxacrt3/FFm4YEgHCty9reMQYOVjiUMsnNjhs2lKyJXYgWXM++P0nGbp
-X-Gm-Gg: AYBFou0mupKtTQ8lumHLUOnpqNwKHriUK/3EfGHIMU+NGVNBgSxucZ+c14y9rjg7gGQ
-	4DggdCMUxYrEGEDkr1dDjfTNf/h5pZLQw/t4o0c7wBlRWXOJouMIuJW2HxXkHV0j3dWHj8hulfn
-	bowKrQlJmwQZzPf7CfOcogB8swrAxkqVRnz4d6EcmKmoDSoi9HJAupVajb2rkW5A++fd2wSXjLQ
-	w75VAmYIp8tPsdzShtl5mxQzwxVfQ2YdRPX0W8X+y+OxKfoWq+IORgKBdmRTdszxk63Ojj9POGp
-	YXAJBkeXamS6itkvS3O2cMOvFM6XVIUG/C3Li6GEgt0Y7iFx553m/cKkaO+J/mydu/8JRRmcJ4I
-	xELLrYg3qfTmydm9LKeAXSRjWkPcMrW4+3eJmKNJzqn1BLm303USxgfgfzjlpAiC2m91CxZYGDr
-	5iFUilw9MmX1Fqf0sh5ss1c9qk7xinhWkKALzXW6ZQj6VZ3z6WGMCENY5V1nH5GdlVqZ8+yXppr
-	OKt1ca0kwL1vxsVX9JhiixLrUXy5R7x+BEObwiBt6WPGW1gp9iIGMtk
-X-Received: by 2002:a17:90b:1d52:b0:398:dcef:c040 with SMTP id 98e67ed59e1d1-39b26242a20mr27559871a91.19.1788701501355;
-        Sun, 06 Sep 2026 06:31:41 -0700 (PDT)
-Received: from junjungu-PC.localdomain ([223.166.246.74])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-39b25f88475sm15084306a91.1.2026.09.06.06.31.38
+        d=1e100.net; s=20251104; t=1788704236; x=1789309036;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :content-type:mime-version:subject:date:from:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=OZO6dxofZbAitz209jLurPVDhx0uGUtYXwmfwELJ9t4=;
+        b=lLXE3pJh6tG6htXS53zM96M5JVtaR26bwu6n2VuY/OKQom/xrpYhH1/EeyPOb47lBM
+         KHZRbVzZAUOqV5dHoFBw/F3hholK8sWUAMJjpXqYSjkGPgRFe7hP1kW8Cz4uslB163Mi
+         qYX7vNST2wmg+VZmkHixednYveuhtlIKLAmXsSFzNvN1unCX4vZtxKsLzl0xfNxBXFv7
+         4bv8+OgaefTC35f+egGWI2QxtVOOLJ+ltL2Bai8G1zwO79vPv+MsR187VvGgRmi63d19
+         rGbEeqBNfEkguVepmAJF8jFuzZJghWlviA2RaKxxOzxGIX+/HmTqgvOju5+bnonX19iF
+         B23g==
+X-Forwarded-Encrypted: i=1; AKwUvBxVmrC6AYGOWXPCRaiQvu8zNr8o5iyOK0CUsyYkA5hJ7hPegZ+AyEkbS37eGX+7uP8+TowWwA/+GEo=@lists.infradead.org
+X-Gm-Message-State: AFuF++n7CDRWBPosYRDLPoX6J4shfiqMduHSNaGTirm4bN5fpf3giVOL
+	H9db6eDJfd8hgvQ78DM+AQzyTShOMMQ7845b8HEhyE2WYpGxIH5aSXAMOF/k9E0lCaU=
+X-Gm-Gg: AYBFou0b89qYPD+c46vzVW+ZSFrJFy5UMNdekg+3vk95D/n+g6y4HUMZu0AyHXB5ovE
+	4nxSrSCCs8eurfQ6EZSr1/g1ktmDQ+ZiMMGD+ylHMmwuFKdMu1xp+Gl3TRjEuigyqnYQJ/IdUQh
+	ygjZX23lUOUzOREFmCkv+zcZrPk5G1okPmm//NNaICHZLr0yeQMcjXi3gKw10nd6yaXABFQBZly
+	z0jTzXiwrvUbXuitd8Kdqd5Y3/n5auftc2iBhXEq9/NXhJPxqoJpT3NUSpbZpFeRquOD9uEzP2W
+	Nd3SRiObBwpx+iRYooGVyevrTtajChG5wwOe+H9jQxKRiTjA6E59iK8PPnGlOyggNHFXxhdT/9U
+	sChdwtQCt1CPkbtShKCzYC8qdEuzpT58NECTXQ9yI9OII38gMH/vXI+EWmO04n7QuTa9CLejlSo
+	/RFTKMAmd+vgpiTklNr33T4zZYg3Xa5snjIUy8l5wu8LH3CAwW9f15HcZJla0AAQ6odWHp2zCOG
+	FneN6FDWu0=
+X-Received: by 2002:a05:6000:4694:b0:482:ee81:f0ca with SMTP id ffacd0b85a97d-485872a56e6mr16211183f8f.12.1788704236345;
+        Sun, 06 Sep 2026 07:17:16 -0700 (PDT)
+Received: from [192.168.0.35] ([109.76.250.151])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48588390e30sm21669763f8f.7.2026.09.06.07.17.14
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 06 Sep 2026 06:31:41 -0700 (PDT)
-From: Felix Gu <ustc.gu@gmail.com>
-Date: Sun, 06 Sep 2026 21:30:31 +0800
-Subject: [PATCH] phy: ingenic: fix unbalanced regulator disable in exit
+        Sun, 06 Sep 2026 07:17:15 -0700 (PDT)
+From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+Date: Sun, 06 Sep 2026 15:17:05 +0100
+Subject: [PATCH v17 1/5] phy: core: Fix use-after-free in phy_get paths
 MIME-Version: 1.0
-Message-Id: <20260906-ingenic-v1-1-2311f3df8ddc@gmail.com>
-X-B4-Tracking: v=1; b=H4sIAAAAAAAC/yXMwQ5AMBAE0F+RPWtSGo36FXHQWqxDSReRNP5dc
- XyTmYnAGAgZmixCwJOYVp9Q5Bm4ufcTChqSoZSllkZqQSnz5ARWVa20MkbZEVJ7CzjS9T213W8
- +7IJuf+dw3w8IF5PcawAAAA==
-X-Change-ID: 20260906-ingenic-e558363993bf
-To: Vinod Koul <vkoul@kernel.org>, 
+Message-Id: <20260906-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v17-1-e2197a3e2551@linaro.org>
+References: <20260906-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v17-0-e2197a3e2551@linaro.org>
+In-Reply-To: <20260906-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v17-0-e2197a3e2551@linaro.org>
+To: Bjorn Andersson <andersson@kernel.org>, 
+ Michael Turquette <mturquette@baylibre.com>, 
+ Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Robert Foss <rfoss@kernel.org>, 
+ Todor Tomov <todor.too@gmail.com>, 
+ Mauro Carvalho Chehab <mchehab@kernel.org>, 
+ Konrad Dybcio <konradybcio@kernel.org>, 
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>, 
+ Bryan O'Donoghue <bod@kernel.org>, 
+ Loic Poulain <loic.poulain@oss.qualcomm.com>, Vinod Koul <vkoul@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- =?utf-8?q?=E5=91=A8=E7=90=B0=E6=9D=B0_=28Zhou_Yanjie=29?= <zhouyanjie@wanyeetech.com>, 
- Paul Cercueil <paul@crapouillou.net>, 
- =?utf-8?q?=E6=BC=86=E9=B9=8F=E6=8C=AF_=28Qi_Pengzhen=29?= <aric.pzqi@ingenic.com>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Felix Gu <ustc.gu@gmail.com>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1788701499; l=1089;
- i=ustc.gu@gmail.com; h=from:subject:message-id;
- bh=XV9/Gau1ScfFSIySp4WW7NMKBztrqxSBrSAXGTOY170=;
- b=fKwMjYR6GxaoT1Tx9EEILzy4qERnxsMXe/8MWE+hh4JcIIFIYXcLmhhtn7WV3LRmWw4913Hro
- jBaj1e6Z1WKCsbOxmt66L8I8/QBFQ4hxv19AxFx/C19EO43UR3YN3Ip
-X-Developer-Key: i=ustc.gu@gmail.com; a=ed25519;
- pk=fjUXwmjchVN7Ja6KGP55IXOzFeCl9edaHoQIEUA+/hw=
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Felipe Balbi <balbi@ti.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-media@vger.kernel.org, linux-phy@lists.infradead.org, 
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>, 
+ Krzysztof Kozlowski <krzk@kernel.org>, stable@vger.kernel.org
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=5297;
+ i=bryan.odonoghue@linaro.org; h=from:subject:message-id;
+ bh=MtIxUv1HUhphqto5paraCNIhe7tNRBGeSF/voPqNm34=;
+ b=owEBbQKS/ZANAwAKASJxO7Ohjcg6AcsmYgBqnXXnNTbjHP1icmE8CNbsM2qqgpcwLeDli3+4S
+ jx/nJgd6m6JAjMEAAEKAB0WIQTmk/sqq6Nt4Rerb7QicTuzoY3IOgUCap115wAKCRAicTuzoY3I
+ OsvCD/9XaIr+mf2+5wtcbGX1M8ZayA8JGUaFMtEP5bzX9qb6j99iLte9gvMMF+ng+mVpDDlMXlq
+ F4viiBVP7DRZ6PFDURdFYdvVjixU5+cqqS6IL0PYo5MVwAYaofA3xmhVrWGtSfZbi7crF4ak9x/
+ OMDSglf2fIxnav+lOrXGatz0SwtavCSwLe/JnySXNq3foHMiiIUXFrtqYSyNk8nR9L/sv9onkaG
+ aEQB5Oq1mTbptQjHngGnbB0aWpH76u0KRxZbEiD99it5nmT1JJVx1rDt9ht5NhgtJ/BHfj0cs+a
+ ksTGZzSYe7theqmfYeBr5gkSYezPBTksdCd1Hc1Tp32F5BZ2SmQRyHhYRLOPb17m/u6zZ4g/ff8
+ 0bObPz+KXCW8z1PNZG6DNuzcmzpaQB20P97OSpFzNs/6KGqrXqq/4W2PS6WFT0P9J6pKWiDqW2C
+ 9llL0FlhKe2AYv3xY7mBvxhNOt1J2Vx+auz0sWJyzTA/P0cbVFiwyzHN643hGh3rC5QuQDCMl5S
+ Z4ADJmtDiNi3G+E9t01e51ROIAOSuFD8kKemoPUaFnJW5G1wjSG16lvFf/PdH8R8ESa24UOloMo
+ hl3hNZ30QIYsFPZ723dX78PvOZnY7GNnENHKxqKo0lNzGgbkxv3001jqrFWFXS46T7QJcviNrKd
+ k5PA22ShQ8STAGQ==
+X-Developer-Key: i=bryan.odonoghue@linaro.org; a=openpgp;
+ fpr=E693FB2AABA36DE117AB6FB422713BB3A18DC83A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260906_063142_981117_B7962516 
-X-CRM114-Status: UNSURE (   8.72  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260906_071718_385784_7843968F 
+X-CRM114-Status: GOOD (  17.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,39 +134,181 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-exit() and power_off() both disable vcc_supply, so the regulator
-gets disabled twice for every power cycle, causing an unbalanced
-disable WARN.
+Sashiko asked during a patch review if the existing usage pattern had a
+race condition; specifically in of_phy_get() if it was possible between
+returning from _of_phy_get() and running try_module_get() that a module
+might be unbound leading to use-after-free.
 
-Drop the regulator_disable() call from the exit callback and leave
-the regulator to the power_on/power_off pair.
+Looking at the code this appears to be so, there is no linkage between the
+phy and module under a synchronisation primitive.
 
-Fixes: 31de313dfdcf ("PHY: Ingenic: Add USB PHY driver using generic PHY framework.")
-Signed-off-by: Felix Gu <ustc.gu@gmail.com>
+Using the phy_provider_mutex in phy_get() will ensure there is a link between
+the returned phy pointer and the module_get() bumping the module reference
+count.
+
+Amend phy_get(), of_phy_get() and devm_of_phy_get_by_index() to fix the
+same usage pattern.
+
+phy_provider_unregister() must take the phy_provider_mutex so amending
+phy_get()/of_phy_get() to take that same mutex guarantees there is no
+use-after-free.
+
+Fixes: ff764963479a1 ("drivers: phy: add generic PHY framework")
+Cc: stable@vger.kernel.org
+Reviewed-by: Loic Poulain <loic.poulain@oss.qualcomm.com>
+Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
 ---
- drivers/phy/ingenic/phy-ingenic-usb.c | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/phy/phy-core.c | 45 ++++++++++++++++++++++++++++++---------------
+ 1 file changed, 30 insertions(+), 15 deletions(-)
 
-diff --git a/drivers/phy/ingenic/phy-ingenic-usb.c b/drivers/phy/ingenic/phy-ingenic-usb.c
-index 7e62d46850fd..d8e5ef302b74 100644
---- a/drivers/phy/ingenic/phy-ingenic-usb.c
-+++ b/drivers/phy/ingenic/phy-ingenic-usb.c
-@@ -124,7 +124,6 @@ static int ingenic_usb_phy_exit(struct phy *phy)
- 	struct ingenic_usb_phy *priv = phy_get_drvdata(phy);
+diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+index 21aaf2f76e53e..89addd732bff3 100644
+--- a/drivers/phy/phy-core.c
++++ b/drivers/phy/phy-core.c
+@@ -124,13 +124,13 @@ static struct phy *phy_find(struct device *dev, const char *con_id)
+ 	const char *dev_id = dev_name(dev);
+ 	struct phy_lookup *p, *pl = NULL;
  
- 	clk_disable_unprepare(priv->clk);
--	regulator_disable(priv->vcc_supply);
+-	mutex_lock(&phy_provider_mutex);
++	lockdep_assert_held(&phy_provider_mutex);
++
+ 	list_for_each_entry(p, &phys, node)
+ 		if (!strcmp(p->dev_id, dev_id) && !strcmp(p->con_id, con_id)) {
+ 			pl = p;
+ 			break;
+ 		}
+-	mutex_unlock(&phy_provider_mutex);
  
- 	return 0;
+ 	return pl ? pl->phy : ERR_PTR(-ENODEV);
  }
+@@ -624,6 +624,8 @@ static struct phy *_of_phy_get(struct device_node *np, int index)
+ 	struct phy *phy = NULL;
+ 	struct of_phandle_args args;
+ 
++	lockdep_assert_held(&phy_provider_mutex);
++
+ 	ret = of_parse_phandle_with_args(np, "phys", "#phy-cells",
+ 		index, &args);
+ 	if (ret)
+@@ -635,11 +637,10 @@ static struct phy *_of_phy_get(struct device_node *np, int index)
+ 		goto out_put_node;
+ 	}
+ 
+-	mutex_lock(&phy_provider_mutex);
+ 	phy_provider = of_phy_provider_lookup(args.np);
+ 	if (IS_ERR(phy_provider) || !try_module_get(phy_provider->owner)) {
+ 		phy = ERR_PTR(-EPROBE_DEFER);
+-		goto out_unlock;
++		goto out_put_node;
+ 	}
+ 
+ 	if (!of_device_is_available(args.np)) {
+@@ -653,8 +654,6 @@ static struct phy *_of_phy_get(struct device_node *np, int index)
+ out_put_module:
+ 	module_put(phy_provider->owner);
+ 
+-out_unlock:
+-	mutex_unlock(&phy_provider_mutex);
+ out_put_node:
+ 	of_node_put(args.np);
+ 
+@@ -678,15 +677,21 @@ struct phy *of_phy_get(struct device_node *np, const char *con_id)
+ 	if (con_id)
+ 		index = of_property_match_string(np, "phy-names", con_id);
+ 
++	mutex_lock(&phy_provider_mutex);
++
+ 	phy = _of_phy_get(np, index);
+ 	if (IS_ERR(phy))
+-		return phy;
++		goto out_unlock;
+ 
+-	if (!try_module_get(phy->ops->owner))
+-		return ERR_PTR(-EPROBE_DEFER);
++	if (!try_module_get(phy->ops->owner)) {
++		phy = ERR_PTR(-EPROBE_DEFER);
++		goto out_unlock;
++	}
+ 
+ 	get_device(&phy->dev);
+ 
++out_unlock:
++	mutex_unlock(&phy_provider_mutex);
+ 	return phy;
+ }
+ EXPORT_SYMBOL_GPL(of_phy_get);
+@@ -786,6 +791,7 @@ struct phy *phy_get(struct device *dev, const char *string)
+ 	struct phy *phy;
+ 	struct device_link *link;
+ 
++	mutex_lock(&phy_provider_mutex);
+ 	if (dev->of_node) {
+ 		if (string)
+ 			index = of_property_match_string(dev->of_node, "phy-names",
+@@ -796,15 +802,18 @@ struct phy *phy_get(struct device *dev, const char *string)
+ 	} else {
+ 		if (string == NULL) {
+ 			dev_WARN(dev, "missing string\n");
+-			return ERR_PTR(-EINVAL);
++			phy = ERR_PTR(-EINVAL);
++			goto out_unlock;
+ 		}
+ 		phy = phy_find(dev, string);
+ 	}
+ 	if (IS_ERR(phy))
+-		return phy;
++		goto out_unlock;
+ 
+-	if (!try_module_get(phy->ops->owner))
+-		return ERR_PTR(-EPROBE_DEFER);
++	if (!try_module_get(phy->ops->owner)) {
++		phy = ERR_PTR(-EPROBE_DEFER);
++		goto out_unlock;
++	}
+ 
+ 	get_device(&phy->dev);
+ 
+@@ -813,6 +822,8 @@ struct phy *phy_get(struct device *dev, const char *string)
+ 		dev_dbg(dev, "failed to create device link to %s\n",
+ 			dev_name(phy->dev.parent));
+ 
++out_unlock:
++	mutex_unlock(&phy_provider_mutex);
+ 	return phy;
+ }
+ EXPORT_SYMBOL_GPL(phy_get);
+@@ -961,15 +972,17 @@ struct phy *devm_of_phy_get_by_index(struct device *dev, struct device_node *np,
+ 	if (!ptr)
+ 		return ERR_PTR(-ENOMEM);
+ 
++	mutex_lock(&phy_provider_mutex);
+ 	phy = _of_phy_get(np, index);
+ 	if (IS_ERR(phy)) {
+ 		devres_free(ptr);
+-		return phy;
++		goto out_unlock;
+ 	}
+ 
+ 	if (!try_module_get(phy->ops->owner)) {
+ 		devres_free(ptr);
+-		return ERR_PTR(-EPROBE_DEFER);
++		phy = ERR_PTR(-EPROBE_DEFER);
++		goto out_unlock;
+ 	}
+ 
+ 	get_device(&phy->dev);
+@@ -982,6 +995,8 @@ struct phy *devm_of_phy_get_by_index(struct device *dev, struct device_node *np,
+ 		dev_dbg(dev, "failed to create device link to %s\n",
+ 			dev_name(phy->dev.parent));
+ 
++out_unlock:
++	mutex_unlock(&phy_provider_mutex);
+ 	return phy;
+ }
+ EXPORT_SYMBOL_GPL(devm_of_phy_get_by_index);
 
----
-base-commit: 9d80aa4617b32f5054c5aa471d06b66704854935
-change-id: 20260906-ingenic-e558363993bf
-
-Best regards,
---  
-Felix Gu <ustc.gu@gmail.com>
+-- 
+2.55.0
 
 
 -- 
