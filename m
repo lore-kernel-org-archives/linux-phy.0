@@ -4,65 +4,159 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EAC2DC79F85
-	for <linux-phy@archiver.kernel.org>; Sun,  6 Sep 2026 15:29:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D85CAC79F85
+	for <linux-phy@archiver.kernel.org>; Sun,  6 Sep 2026 15:47:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WZm5pZS6Lb/7AsH7d/9f7qvb5WcHIFILIjB0gYgTSg8=; b=ve3pdRkJMFYT9D
-	jk42m00rixKNAIC0f1mSOdDVDuIzP+130Xmc7Pa9nf8B1LI+XUaArxB5REuVpVGa2sPST0beXIpao
-	amf0lM/wQeIhv6ErtHuu9Y3DuVwdKVmzfSLfKXFIq7x0Z5OT/zVwI6ATGMasEUd1I3HK7mkh1XRNB
-	k0fJIhxdGx2T6Eya/O/DWqi5iqTUO6v4I4LkFyXbwTKmc/F1KW06z4UVszN3TB8ZOS+4Q1Ro4LpAB
-	KY9r388wos8x+eGXWqt/0dCzbChqlnjT5muJ2ZkxHyDg9/HuxASceVnC+FpCtRJsUR3mh+zIWx15O
-	2KKo6aCq0yDRA194YEIw==;
+	List-Owner; bh=R/0RU3ou3Uvx9+QGjocjAuyzhhm2mocXU0oLwD+Smmg=; b=nT0CP1CY3+dj4y
+	EfW0j5oD/hiXxSEuQxw1nP8x1lmC0yOtCYmypGi0sGJ5m0mJAc6XwwlKI8x5FyAZr/GcBHrjcsfMs
+	FbO2dlfT+LofMPIwHsC49iXjquL2G1WuYRx5rHHZM/w6gvl4SFb6WR1GXOTx5ShuADIXYVpqc8op9
+	Lv2TWkIcfuc1WwhUpKFMIYauyPX7/t+2fCWwAUT3YkT9q4Yrd9Hm+ZDD7Zv53pbqnyKV61r9WpKWl
+	6Izk8rPhdnmDbD6TAP9UoOOrRDvpugrwlIN0SjQoE56sEe4rYLnwdXdBn+vSGnPVATQ81peP4M4jt
+	k7qm79Z3fQYfIZvepL1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3Ent-000000058Ku-2iTg;
-	Sun, 06 Sep 2026 15:29:09 +0000
-Received: from aposti.net ([185.119.170.32])
+	id 1x3F66-000000059dK-3LOq;
+	Sun, 06 Sep 2026 15:47:59 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3Enr-000000058JL-03Iu
+	id 1x3F64-000000059cx-0EMv
 	for linux-phy@lists.infradead.org;
-	Sun, 06 Sep 2026 15:29:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=crapouillou.net;
-	s=mail; t=1788708538;
-	bh=6a9PVxeFa4X7+g2+7hm8XIBPO0HMmiR+2HcmRobBeu4=;
-	h=Subject:From:To:Cc:Date:In-Reply-To:References:From;
-	b=AfwWAa/+Ahtj7VNsXIcqLyVfVvjM0+cFp0SZDHDuctAGkqxKEIa1QsdMA3IlRPLbV
-	 1q4ntPsvpWyweR9K1NLcMcBXXlzhwelAuIS8nzNWldLPidcJ/TUYIR2D6M+nFBv+32
-	 gnUh5s2r9oSLEcR6F/FKWPs7SXC2WOjKkBEIHLYQ=
-Message-ID: <9985dcd7b614e0876b7052ed703d4c186632f877.camel@crapouillou.net>
-Subject: Re: [PATCH] phy: ingenic: fix unbalanced regulator disable in exit
-From: Paul Cercueil <paul@crapouillou.net>
-To: Felix Gu <ustc.gu@gmail.com>, Vinod Koul <vkoul@kernel.org>, Neil
- Armstrong	 <neil.armstrong@linaro.org>, Manivannan Sadhasivam
- <mani@kernel.org>,  =?UTF-8?Q?=E5=91=A8=E7=90=B0=E6=9D=B0?= "(Zhou Yanjie)"
-	 <zhouyanjie@wanyeetech.com>, =?UTF-8?Q?=E6=BC=86=E9=B9=8F=E6=8C=AF?= "(Qi
- Pengzhen)" <aric.pzqi@ingenic.com>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Date: Sun, 06 Sep 2026 17:28:54 +0200
-In-Reply-To: <20260906-ingenic-v1-1-2311f3df8ddc@gmail.com>
-References: <20260906-ingenic-v1-1-2311f3df8ddc@gmail.com>
-Autocrypt: addr=paul@crapouillou.net; prefer-encrypt=mutual;
- keydata=mQENBF0KhcEBCADkfmrzdTOp/gFOMQX0QwKE2WgeCJiHPWkpEuPH81/HB2dpjPZNW03ZM
- LQfECbbaEkdbN4YnPfXgcc1uBe5mwOAPV1MBlaZcEt4M67iYQwSNrP7maPS3IaQJ18ES8JJ5Uf5Uz
- FZaUawgH+oipYGW+v31cX6L3k+dGsPRM0Pyo0sQt52fsopNPZ9iag0iY7dGNuKenaEqkYNjwEgTtN
- z8dt6s3hMpHIKZFL3OhAGi88wF/21isv0zkF4J0wlf9gYUTEEY3Eulx80PTVqGIcHZzfavlWIdzhe
- +rxHTDGVwseR2Y1WjgFGQ2F+vXetAB8NEeygXee+i9nY5qt9c07m8mzjABEBAAG0JFBhdWwgQ2VyY
- 3VlaWwgPHBhdWxAY3JhcG91aWxsb3UubmV0PokBTgQTAQoAOBYhBNdHYd8OeCBwpMuVxnPua9InSr
- 1BBQJdCoXBAhsDBQsJCAcCBhUKCQgLAgQWAgMBAh4BAheAAAoJEHPua9InSr1BgvIH/0kLyrI3V0f
- 33a6D3BJwc1grbygPVYGuC5l5eMnAI+rDmLR19E2yvibRpgUc87NmPEQPpbbtAZt8On/2WZoE5OIP
- dlId/AHNpdgAtGXo0ZX4LGeVPjxjdkbrKVHxbcdcnY+zzaFglpbVSvp76pxqgVg8PgxkAAeeJV+ET
- 4t0823Gz2HzCL/6JZhvKAEtHVulOWoBh368SYdolp1TSfORWmHzvQiCCCA+j0cMkYVGzIQzEQhX7U
- rf9N/nhU5/SGLFEi9DcBfXoGzhyQyLXflhJtKm3XGB1K/pPulbKaPcKAl6rIDWPuFpHkSbmZ9r4KF
- lBwgAhlGy6nqP7O3u7q23hRU=
+	Sun, 06 Sep 2026 15:47:57 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 686EWYQT2096545
+	for <linux-phy@lists.infradead.org>; Sun, 6 Sep 2026 15:47:55 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	iJuqbRAfLeuaHG3fQFZPvjkD3eLgn2ZlqMYozAYdRbo=; b=RiUod8Q+hPKtNg6q
+	lOXnR+TICE5yki5olBYNDrHWNCOtU3q/IZRU3XGjns/3X9fkyzBofWf31R74XR6U
+	7QMBQQwzUHhPY7MHjhAz3qaN+xo/T8A2zKHop0jI2DZNmu/shOcxnZfWWqwOUM9i
+	d/kc8sJ4vnTNrnOzjAZEEY1mfgKIztlmGi5jc4jjYyLFrL0NhHbieSDUKVe7eUor
+	qLjEKRl7OJ1B4+nur1BLBCarGbTTb0qKFUde1V6T6F1RDkDFQA8K3agv6v1uS4jb
+	dx2DKBHCStVhzqRtK0s2Lgly1iVNlOBKRE/vbXNjL12mVJAPt2dtHxzgzocQpRWo
+	BguGGw==
+Received: from mail-pf1-f197.google.com (mail-pf1-f197.google.com [209.85.210.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gga1s3vaf-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Sun, 06 Sep 2026 15:47:55 +0000 (GMT)
+Received: by mail-pf1-f197.google.com with SMTP id d2e1a72fcca58-84a251c2e3eso4363038b3a.1
+        for <linux-phy@lists.infradead.org>; Sun, 06 Sep 2026 08:47:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1788709674; x=1789314474; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=iJuqbRAfLeuaHG3fQFZPvjkD3eLgn2ZlqMYozAYdRbo=;
+        b=O5cSJyEsshDxzeuFu7C0TFDtBobUdCWdKxhPkrebm4FWs9L4tyusxHRMANs4mbZelJ
+         goE5c6WpKRD7SSrIvLncTRZDClt7pWMrdTdAm8vkXbalOPYbQwAt/6C/f0ldb9EbFr+M
+         B+RypSJkZ0b6gNuPwEdU1ph+jSq1R8ENa3ES1S78L5rfEoaB08fz7dI3O5yPI8g8troF
+         aYvmg6OpjRF45cZCJfxwqUn1K2UHL/29hUuxjxUppWnnMTxCRj6HsAyPmSf4uWlBYorG
+         eFNIcAXZY08fwOIQIjjQKhnIwLwDBNA/HJ/wKLGwCa9ySr9fJtsUtxl5xBDTwJqiLkrC
+         pMMw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1788709674; x=1789314474;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=iJuqbRAfLeuaHG3fQFZPvjkD3eLgn2ZlqMYozAYdRbo=;
+        b=LCXAuYEJ/QAZnV6ggaETdMY3YMuN2njVLC+Lbyi64Bwgby0nXciicy8vW9lgnf1jOj
+         3vE+95mnS2fCNl0Fbv9pWL9/7wnSyZrOPPYBkTFRDgj3FuZhB3XGTfAa5YOyXaE2e/pf
+         pWuf172g2Lv/Qa6L020ajyIuhbk/f5UhRPg72OXIxYoucUh2Q8DUu/IXOZiyqzMENpoJ
+         FwUgy+QtCJ3R6SPpn78V+wPBDbSgx96obDxIhll7T7wGPvVjYMwnC7N+TEM/Hozilm2p
+         qv/Ap7cZL/BdGBSPmNk2BdIp2uOvT+7tr7WqKGzZcrvu9xU7vEm5a8/y7wZGZaug3ioH
+         upEw==
+X-Forwarded-Encrypted: i=1; AKwUvByqAZ57QO1Ids671/tfdQvvWs+iNO7Ah3kWZpldpP512ugtS4Fh3S9yuy5PXY7CUiN5f4/GrSr9YY8=@lists.infradead.org
+X-Gm-Message-State: AFuF++lvyLsQvDruJhsJkpduW0/GK3LeSeYy3ZBK6s95j8FY2Y7OGEiv
+	Me1/aOuLkYXnYwcw1FYIqGYOyvaI+rwJ+TmmEy1OTs9fSzo97TfCj78kfIsUMS5ARn5slD7k9SD
+	Qd7yv4rdWCqp50zTwpsvj6K9/93Z0cuP79X9E9BhO/YYBakJSRR0D7VHuN6REs30dySnD
+X-Gm-Gg: AYBFou1xbaBmDn65wlbXDT8+4gYJXntBlfpJ5GJv5d6ejA+wa0i8iKwFt9DifTL/kw7
+	S1PU33uU/yiB+qED058B/BdLckR7v6w53KoMhj/hicCAj3e+gVoiTvp1v5xvlzhfsXCakxP6MvU
+	GS6vDuIXpexeYUqLKeMM9+G0Ohn/1ytQaB1cw/fPUH8BeWOQXBQRfFoVJFSlsTvi/ioUiWm8fW0
+	P2A3ma2l12X1HoOy92exhcsnWJyWjfwz2/LG+MELD6m4GW4UWR7IkP79BrHiaelDaZO3Iwhg8Pn
+	mDZDTPJn81gRJcCthzHDYFkzZEpuWBe4cTpT3FVdLA8EX4xno+rdoS26m60+Xrtpf2SaJnUiFDS
+	4WEcYf2s4jhk26cTUHU4xHuX6wBEL
+X-Received: by 2002:a05:6a21:8887:b0:3d3:3dca:f0a3 with SMTP id adf61e73a8af0-3da21418721mr21362743637.8.1788709674507;
+        Sun, 06 Sep 2026 08:47:54 -0700 (PDT)
+X-Received: by 2002:a05:6a21:8887:b0:3d3:3dca:f0a3 with SMTP id adf61e73a8af0-3da21418721mr21362685637.8.1788709674052;
+        Sun, 06 Sep 2026 08:47:54 -0700 (PDT)
+Received: from [192.168.1.11] ([103.211.19.41])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3339aa33e96sm20951125eec.12.2026.09.06.08.47.45
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 06 Sep 2026 08:47:53 -0700 (PDT)
+Message-ID: <b0089142-45eb-4cf7-be6f-45c9889b3756@oss.qualcomm.com>
+Date: Sun, 6 Sep 2026 21:17:43 +0530
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v17 5/5] media: qcom: camss: Use data-lanes starting at 1
+ for new CSIPHY mode
+To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Michael Turquette <mturquette@baylibre.com>,
+        Stephen Boyd
+ <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley
+ <conor+dt@kernel.org>, Robert Foss <rfoss@kernel.org>,
+        Todor Tomov <todor.too@gmail.com>,
+        Mauro Carvalho Chehab
+ <mchehab@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+        Bryan O'Donoghue <bod@kernel.org>,
+        Loic Poulain <loic.poulain@oss.qualcomm.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Felipe Balbi <balbi@ti.com>,
+        Vikram Sharma <vikram.sharma@oss.qualcomm.com>,
+        Suresh Vankadara <svankada@qti.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-media@vger.kernel.org, linux-phy@lists.infradead.org,
+        Krzysztof Kozlowski <krzk@kernel.org>
+References: <20260906-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v17-0-e2197a3e2551@linaro.org>
+ <20260906-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v17-5-e2197a3e2551@linaro.org>
+Content-Language: en-US
+From: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
+In-Reply-To: <20260906-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v17-5-e2197a3e2551@linaro.org>
+X-Authority-Analysis: v=2.4 cv=WMBPmHsR c=1 sm=1 tr=0 ts=6a9d8b2b cx=c_pps
+ a=rEQLjTOiSrHUhVqRoksmgQ==:117 a=HcLy/BXbbKFjgnJyaMb84Q==:17
+ a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
+ a=KKAkSRfTAAAA:8 a=EUspDBNiAAAA:8 a=zWu_p7zOJ7ruh_JjBGAA:9 a=QEXdDO2ut3YA:10
+ a=2VI0MkxyNR6bbpdq8BZq:22 a=cvBusfyB2V15izCimMoJ:22
+X-Proofpoint-Spam-Info: AW1haW4tMjYwOTA2MDE3NiBTYWx0ZWRfX9jR2qmWWazpV
+ +9dMKbzxBXo4ibB8UlbAb0VjGMOPB5PeK/HH+QJx2f9uPpUDoatOy7R5xqR/d+0OdrhIQ0GXFRp
+ ISKrB31UGXyUdR4uLbV3w7KbM+z2cts=
+X-Proofpoint-GUID: 5p2CcEQS7SzhA4ImSVl-ygOlZSpSxSb4
+X-Proofpoint-ORIG-GUID: 5p2CcEQS7SzhA4ImSVl-ygOlZSpSxSb4
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTA2MDE3NiBTYWx0ZWRfX6ZELD9MLy00j
+ tcWs6Uk4o0QGcGsceXozBfO8FbAAx8L6C4ZePInJyjfKq+oOtXz80L+TIifPmzigXTDwCVxosNR
+ K01oCuCiJ895BFgkA+z6AkoYrfn640iJdV1D9cc+YaHtDgBaMJGgPPmgf/6sMuRsvQ+xv9dF6kH
+ B0ekZ8c4x8JdzuzttPlARQO8MnAkV+clteDQbSB1+BfnCYfeFBAiOxryCWdT7B1RnHbZZOqt47Q
+ SQeHVyMXFuPGcx20UXQPrVcOFmHQfKDuU3HqFtNy5gZHS2TsfWoGSR8QbM8x3YuVlKsLo7rXLii
+ sztg1aZlJ/Zq/H/VjSAoNoRKvBKWAxNFzSorVhhWf+Nqb7PbeGjZqgWxZ7e2/SAHRtg8vtl6JMc
+ HsF198G3hBHxyzcC2FWdCKVjS+yJA0jHIxirE4E0NCaRsZUaPeG80NLsLBoHOi4w940kark2N9J
+ nEdqQ5JpYFOad693HUg==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-09-06_01,2026-09-03_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 phishscore=0 lowpriorityscore=0 adultscore=0 clxscore=1015
+ spamscore=0 impostorscore=0 bulkscore=0 suspectscore=0 malwarescore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2609060176
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260906_082907_241359_E023B90D 
-X-CRM114-Status: GOOD (  13.35  )
+X-CRM114-CacheID: sfid-20260906_084756_138609_3A2D4C22 
+X-CRM114-Status: GOOD (  25.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,35 +168,89 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgRmVsaXgsCgpMZSBkaW1hbmNoZSAwNiBzZXB0ZW1icmUgMjAyNiDDoCAyMTozMCArMDgwMCwg
-RmVsaXggR3UgYSDDqWNyaXTCoDoKPiBleGl0KCkgYW5kIHBvd2VyX29mZigpIGJvdGggZGlzYWJs
-ZSB2Y2Nfc3VwcGx5LCBzbyB0aGUgcmVndWxhdG9yCj4gZ2V0cyBkaXNhYmxlZCB0d2ljZSBmb3Ig
-ZXZlcnkgcG93ZXIgY3ljbGUsIGNhdXNpbmcgYW4gdW5iYWxhbmNlZAo+IGRpc2FibGUgV0FSTi4K
-PiAKPiBEcm9wIHRoZSByZWd1bGF0b3JfZGlzYWJsZSgpIGNhbGwgZnJvbSB0aGUgZXhpdCBjYWxs
-YmFjayBhbmQgbGVhdmUKPiB0aGUgcmVndWxhdG9yIHRvIHRoZSBwb3dlcl9vbi9wb3dlcl9vZmYg
-cGFpci4KPiAKPiBGaXhlczogMzFkZTMxM2RmZGNmICgiUEhZOiBJbmdlbmljOiBBZGQgVVNCIFBI
-WSBkcml2ZXIgdXNpbmcgZ2VuZXJpYwo+IFBIWSBmcmFtZXdvcmsuIikKPiBTaWduZWQtb2ZmLWJ5
-OiBGZWxpeCBHdSA8dXN0Yy5ndUBnbWFpbC5jb20+CgpZZXMsIHRoZSBkb2Mgb2YgcGh5X2V4aXQo
-KSBkb2VzIHNheSB0aGF0IGl0IG11c3QgYmUgY2FsbGVkIGFmdGVyCnBoeV9wb3dlcl9vZmYoKSBz
-byB0aGUgZml4IG1ha2VzIHNlbnNlLgoKUmV2aWV3ZWQtYnk6IFBhdWwgQ2VyY3VlaWwgPHBhdWxA
-Y3JhcG91aWxsb3UubmV0PgoKQ2hlZXJzLAotUGF1bAoKPiAtLS0KPiDCoGRyaXZlcnMvcGh5L2lu
-Z2VuaWMvcGh5LWluZ2VuaWMtdXNiLmMgfCAxIC0KPiDCoDEgZmlsZSBjaGFuZ2VkLCAxIGRlbGV0
-aW9uKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L2luZ2VuaWMvcGh5LWluZ2VuaWMt
-dXNiLmMKPiBiL2RyaXZlcnMvcGh5L2luZ2VuaWMvcGh5LWluZ2VuaWMtdXNiLmMKPiBpbmRleCA3
-ZTYyZDQ2ODUwZmQuLmQ4ZTVlZjMwMmI3NCAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS9pbmdl
-bmljL3BoeS1pbmdlbmljLXVzYi5jCj4gKysrIGIvZHJpdmVycy9waHkvaW5nZW5pYy9waHktaW5n
-ZW5pYy11c2IuYwo+IEBAIC0xMjQsNyArMTI0LDYgQEAgc3RhdGljIGludCBpbmdlbmljX3VzYl9w
-aHlfZXhpdChzdHJ1Y3QgcGh5ICpwaHkpCj4gwqAJc3RydWN0IGluZ2VuaWNfdXNiX3BoeSAqcHJp
-diA9IHBoeV9nZXRfZHJ2ZGF0YShwaHkpOwo+IMKgCj4gwqAJY2xrX2Rpc2FibGVfdW5wcmVwYXJl
-KHByaXYtPmNsayk7Cj4gLQlyZWd1bGF0b3JfZGlzYWJsZShwcml2LT52Y2Nfc3VwcGx5KTsKPiDC
-oAo+IMKgCXJldHVybiAwOwo+IMKgfQo+IAo+IC0tLQo+IGJhc2UtY29tbWl0OiA5ZDgwYWE0NjE3
-YjMyZjUwNTRjNWFhNDcxZDA2YjY2NzA0ODU0OTM1Cj4gY2hhbmdlLWlkOiAyMDI2MDkwNi1pbmdl
-bmljLWU1NTgzNjM5OTNiZgo+IAo+IEJlc3QgcmVnYXJkcywKPiAtLcKgIAo+IEZlbGl4IEd1IDx1
-c3RjLmd1QGdtYWlsLmNvbT4KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LXBoeQo=
+
+
+On 06-09-2026 19:47, Bryan O'Donoghue wrote:
+> Introducing a dedicated CSIPHY driver community feedback was both to move
+> to data-lanes starting at index 1 on the PHY side and also to match that
+> indexing scheme in the CSI decoder - CSID.
+> 
+> CSID consumes the data-lanes property to determine which CSID lanes to
+> switch on. For indexes starting at 1 we need to amend the logic somewhere.
+> The PHY side code normalises the input data to register level meanings so,
+> replicate that logic on the CSID side.
+> 
+> Introduce a simple flag to differentiate between legacy indexing @ 0 and
+> new indexing @ 1.
+> 
+> Existing bindings are not affected.
+> 
+> Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+> ---
+>  drivers/media/platform/qcom/camss/camss.c | 15 ++++++++++++---
+>  1 file changed, 12 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/media/platform/qcom/camss/camss.c b/drivers/media/platform/qcom/camss/camss.c
+> index 84097d82d99c9..07b3cddca5840 100644
+> --- a/drivers/media/platform/qcom/camss/camss.c
+> +++ b/drivers/media/platform/qcom/camss/camss.c
+> @@ -4742,7 +4742,8 @@ static const struct parent_dev_ops vfe_parent_dev_ops = {
+>   */
+>  static int camss_parse_endpoint_node(struct device *dev,
+>  				     struct fwnode_handle *ep,
+> -				     struct camss_async_subdev *csd)
+> +				     struct camss_async_subdev *csd,
+> +				     u8 lane_base)
+>  {
+>  	struct csiphy_lanes_cfg *lncfg = &csd->interface.csi2.lane_cfg;
+>  	struct v4l2_mbus_config_mipi_csi2 *mipi_csi2;
+> @@ -4777,7 +4778,14 @@ static int camss_parse_endpoint_node(struct device *dev,
+>  		return -ENOMEM;
+>  
+>  	for (i = 0; i < lncfg->num_data; i++) {
+> -		lncfg->data[i].pos = mipi_csi2->data_lanes[i];
+> +		u8 lane = mipi_csi2->data_lanes[i];
+> +
+> +		if (lane < lane_base || lane - lane_base >= lncfg->num_data) {
+> +			dev_err(dev, "invalid data-lane %u\n", lane);
+> +			return -EINVAL;
+> +		}
+> +
+> +		lncfg->data[i].pos = mipi_csi2->data_lanes[i] - lane_base;
+>  		lncfg->data[i].pol = mipi_csi2->lane_polarities[i + 1];
+>  	}
+>  
+> @@ -4794,6 +4802,7 @@ static int camss_parse_ports(struct camss *camss)
+>  {
+>  	struct device *dev = camss->dev;
+>  	struct fwnode_handle *fwnode = dev_fwnode(dev), *ep;
+> +	u8 lane_base = camss->legacy_phy ? 0 : 1;
+>  	int ret;
+>  
+>  	fwnode_graph_for_each_endpoint(fwnode, ep) {
+> @@ -4841,7 +4850,7 @@ static int camss_parse_ports(struct camss *camss)
+>  			goto err_cleanup;
+>  		}
+>  
+> -		ret = camss_parse_endpoint_node(dev, ep, csd);
+> +		ret = camss_parse_endpoint_node(dev, ep, csd, lane_base);
+>  		if (ret < 0)
+>  			goto err_cleanup;
+>  	}
+> 
+Reviewed-by: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
+Tested-by: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com> # Glymur CRD
+
+---
+Regards,
+Nihal Kumar Gupta
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
