@@ -4,95 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1A3CDC79F89
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 11:01:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 548DAC79F89
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 11:02:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U86L58OITN7ebfoAAe+m49xbZyDEfZgDLw3R7Y/DgHA=; b=YQyURfDSRjxRoa
-	knw6RxlhWUVzRR22QFQvRvMHFL+3SlvVPBI9thR5bP07QNcOsojNgVtztH903J2W+9e7oiBB1x0GS
-	9+JqCVVtQz8v3nrcumfjRWrxOisIS7lwzK/hXDMfNULiAYJSOMDtcLpayycIUywFHNwSjUX9qSqaZ
-	li+5Cgn7svQoyhCzJKMf/yEelZCw3XLGwvP4tj2trzC+u9HUuav7YSEMFTCuBkIIZjJWNq5v0qFP2
-	eCrdeKEFMzzTv/Lm+hzPVY3Ynq9n7UnWuoi0yEXqdtN309N7QwevJNmeajI6GdOcLCW4eihPnj/xk
-	VSMDgApwgQgPJh2Fd7Og==;
+	List-Owner; bh=7m6bgLjaMTQWwwaZP1DPWBAHGNl4C0wvQpLIsU7GbAA=; b=FU8fEJM1RrUayK
+	H1aJrI3B/2pvrfTDnFWG1H3LRhqTch8XoRzEj/XLp5Djul0l0o/gkGOrkYTe+1fqiL7QbnqxKmb46
+	ouOzWNblytWqLlvHwZbiZToqDRRpcyZ/1NtZKZQzAnKsUHi2rMgCgS/K027gIfRoYAg/yZ9ZuNm1l
+	HaP8DJsZoWPB2dnMUxv5JfaClk/XO8v/0CnY0jd5fhnZJixSkuz74GpDChWa+QEi5lxa8ZIkRmFYV
+	CHGmb1NlJ3zm13JnPo3qtec3DDmIghKBBJjq9Jk8rluHTfpVEsWOPAIseTlhIg7G2RrW31+Rw1ihs
+	fFCBH18jQAinjpK+k+0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3X6S-00000006b7v-38fA;
-	Mon, 07 Sep 2026 11:01:32 +0000
-Received: from mail-wr2-x10.google.com ([2a00:1450:4864:30::10])
+	id 1x3X7J-00000006bDh-08Cw;
+	Mon, 07 Sep 2026 11:02:25 +0000
+Received: from sender6-pp-f112.zoho.com ([165.173.180.112])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3X6N-00000006b6r-1u3s
-	for linux-phy@lists.infradead.org;
-	Mon, 07 Sep 2026 11:01:29 +0000
-Received: by mail-wr2-x10.google.com with SMTP id ffacd0b85a97d-4858a186d5bso228578f8f.2
-        for <linux-phy@lists.infradead.org>; Mon, 07 Sep 2026 04:01:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1788778885; x=1789383685; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=hmQkGxTXpbepXYDRQ84g3dgJxZsX5xz0ouxxoFxBPoQ=;
-        b=O0pf9Ld+4Ei6M/Z5cGP1ZNm3+65DzGJa+/fYNJX1hc8cfH6dGHbOhINQME2n/mlSlK
-         yyeION3lobX/xRNBLIo4OC3EW0d8d3tpcSjHcyETcktalCYVp/g0M13DAysP5K4jBvDo
-         S7viwmfE8HGvR+RufUdI40sTZezeFNps5oD9yZy6c377+fTtjca/O4rDd7UHM6E1GwSn
-         AnfCqPvewwwiSfn0QB2mdCvGbIl8UUQ/b5GWQ3fnet30byQZhuYAaLSGAQsFJNYmb0NQ
-         NvlMJiAhM3FW0su2U4DsqWKl2HJZF5bKBvQXrZBb+W0/JxM7/eq/kjZcipCSnhQkiMq4
-         RGRA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788778885; x=1789383685;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=hmQkGxTXpbepXYDRQ84g3dgJxZsX5xz0ouxxoFxBPoQ=;
-        b=LAAyZlLyB6JlhyeQy8E0KMB8qmdIHLjJbIQrJjz5RQBOobK8s3tq9ypcHrrN+W28uZ
-         Kkko6sUfybRZvmonc6j7GgxQXtyIOw/BtF1f7n+0qggDs1b6pSZemNxOSqVxgsYVPJj9
-         lzwgf/MuB/Dad2aKnSJ2qLvIIISkwMPYzk2yjNJS6Scr1auFjqc/Q7CYG8Ya9v/6ByuU
-         LOYQN3JsoHl5NnG/o/gpT2wL5fgUz+aUw/RZtt/4+oRzhMvl5WgRwA1ro8WhyFcHdaPJ
-         4KY4qRZgcTnLm5vp1FhB09UuSfiDBqiEsqmLLplBujJC3DujxCmICoxRfzA6VJazRJQo
-         O8Aw==
-X-Forwarded-Encrypted: i=1; AKwUvBwNO0Zi1wSUvwESOeKEG+IJuOhjiSz8RsIFhCwnYzxj28bBPZTv+jjl3hBdONdoX5m9gmoBlSG8LwA=@lists.infradead.org
-X-Gm-Message-State: AFuF++lNBy2XvdA4cKWP9hhpDAWyYcWADCN0edfEq28vnTi2Ikj+sw5m
-	Q1FfjSiOf0iHwy93mXMZP7BmNl0COLdlVo9chO+Ws9F+w4o6q5NR+I3c
-X-Gm-Gg: AYBFou0V2qLvGgS3Ftx3I1mCN+N7CtXu9LXpe43I2/rF3NNsMpV1KqHYyJlH32mgxSt
-	TIMQWUlyiDVcS0jz54xbsILFwY6biRi5Qm4+1t1hZ77MPdbEJuTg88pW8FGsF4Mht13pafQ5id2
-	uVs9vBe7SdSz/3IZ3TuurNES6TQIE+8pNCIt0404ZiVWig5aruB1ZYII3i4WK7u3WP+xo4XhFt/
-	LO2yHDdmALTYIbNzCun2/SphBF+YfcCIPabYq3VGlkTHCOGFUB4jAbFJMOYbtZbqJ7P8a9lhnnZ
-	y+PoYOg5ntaV/ekPdVhYBXL6qMtz/io0mPDKh+toXSxLUVIvOmFkYq++Wq6SxcFaX8qBm6KtJ6D
-	HcAnQw0/8ycza21aQPlmpUhnMV5JbOy8LOfi6QSVfPRjFaQCXVmsVad2lX2eidVUQV1tOtt3TvD
-	M1/J0wzt2saYe2ogWoqxIAntWgfILQPbgtUeh/4/2Cr3X6y1IjFw==
-X-Received: by 2002:a05:600c:a012:b0:49c:eac2:ddad with SMTP id 5b1f17b1804b1-49d01dc0137mr124980435e9.1.1788778885385;
-        Mon, 07 Sep 2026 04:01:25 -0700 (PDT)
-Received: from skbuf ([2a02:2f04:d006:ef01:8e86:58dc:206e:83a0])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-485885be1c1sm27074419f8f.32.2026.09.07.04.01.22
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 07 Sep 2026 04:01:23 -0700 (PDT)
-Date: Mon, 7 Sep 2026 14:01:21 +0300
-From: Vladimir Oltean <olteanv@gmail.com>
-To: Inochi Amaoto <inochiama@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Yixun Lan <dlan@gentoo.org>, Longbin Li <looong.bin@gmail.com>
-Subject: Re: [PATCH v2 1/4] phy: core: Add common helper to add phy phandle
- device link
-Message-ID: <20260907110121.hfrblphv5vhzobj7@skbuf>
-References: <20260904083709.425893-1-inochiama@gmail.com>
- <20260904083709.425893-1-inochiama@gmail.com>
- <20260904083709.425893-2-inochiama@gmail.com>
- <20260904083709.425893-2-inochiama@gmail.com>
+	id 1x3X7G-00000006bCx-1UbP;
+	Mon, 07 Sep 2026 11:02:23 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1788778937; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=cEkx9n2gZuP37kraYeyo8ckYdvOQw3Bks6OBB3ybxuaeCa9v2srFeNcZe3RspQphrarocYxCysSzUQTmaWLTO8qJyH8CHJdIAIN9mDB334Zi7RAqvL9QtWpullrdkw/FRLGnQK1iku1WExCBmy/PDM99t8s2yB+MJqlhJGjcr3Y=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1788778937; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=cC9s+xjh/N6rSZarsENmP07faEM7u9hQPQhDsNCtyb0=; 
+	b=nokuVz3EzgMlIDAQQD0EyZ/sgynSKqUBe1CtThToD87q8rWS1oqPeTjTeos41lM5gE58dvkaWBn2gUQUMBYHVYncglSkyxBw0j2VOFFhT2WWTlN9LPIiYToFbq2SH7uZPfWx8CdhTubspYR5Y5hoaA4/IpQXPQ2YSQU4/Yy3tCw=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=michael.riesch@collabora.com;
+	dmarc=pass header.from=<michael.riesch@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1788778937;
+	s=zohomail; d=collabora.com; i=michael.riesch@collabora.com;
+	h=Message-ID:Date:Date:MIME-Version:Subject:Subject:To:To:Cc:Cc:From:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:Message-Id:Reply-To;
+	bh=cC9s+xjh/N6rSZarsENmP07faEM7u9hQPQhDsNCtyb0=;
+	b=OfTx4OYBkz+3DmyYt2yyy3sr1yA5iGgH6LnzNJFIqlMOPD+1y9nrk0MGJ8Dvvy8E
+	2ntbXswE9cxAu1B1JMFu9iBBekfkhKsqXoQ7NlixIR89DMKl4/IqqxJDKIy8ZKzDZTN
+	UmUfVJW8XldqdvY1VzKB6OWAC5JWccpXdWCVPl48=
+Received: by mx.zohomail.com with SMTPS id 1788778934224927.534650195504;
+	Mon, 7 Sep 2026 04:02:14 -0700 (PDT)
+Message-ID: <0ab0b4f4-ab5d-413b-9446-5d747c59a32a@collabora.com>
+Date: Mon, 7 Sep 2026 13:02:09 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260904083709.425893-2-inochiama@gmail.com>
- <20260904083709.425893-2-inochiama@gmail.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 3/4] phy: rockchip: phy-rockchip-inno-csidphy: add support
+ for rk3576 variant
+To: Amin Gattout <amin.gattout@gmail.com>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
+References: <20260820-rk3576-dphy-v1-0-70e25e8d5e78@gmail.com>
+ <20260820-rk3576-dphy-v1-3-70e25e8d5e78@gmail.com>
+Content-Language: en-US
+From: Michael Riesch <michael.riesch@collabora.com>
+In-Reply-To: <20260820-rk3576-dphy-v1-3-70e25e8d5e78@gmail.com>
+X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260907_040128_358056_6FE2245B 
-X-CRM114-Status: GOOD (  19.54  )
+X-CRM114-CacheID: sfid-20260907_040222_430438_66C475A4 
+X-CRM114-Status: GOOD (  16.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,51 +84,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Sep 04, 2026 at 04:37:05PM +0800, Inochi Amaoto wrote:
-> It is very common for adding a device link for phy phandle
-> for device managed phy helper functions. So add a common
-> helper for future reuse.
+Hi Amin,
+
+Thanks for your patches!
+
+On 8/20/26 16:01, Amin Gattout wrote:
+> The two RK3576 MIPI CSI-2 DPHYs can be supported using the existing
+> phy-rockchip-inno-csidphy driver, the notable difference with the
+> RK3588 variant being that each PHY instance only has an APB reset
+> line.
 > 
-> Signed-off-by: Inochi Amaoto <inochiama@gmail.com>
+> Signed-off-by: Amin Gattout <amin.gattout@gmail.com>
 > ---
->  drivers/phy/phy-core.c | 38 +++++++++++++++++++++++---------------
->  1 file changed, 23 insertions(+), 15 deletions(-)
+>  drivers/phy/rockchip/phy-rockchip-inno-csidphy.c | 22 ++++++++++++++++++++++
+>  1 file changed, 22 insertions(+)
 > 
-> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-> index 21aaf2f76e53..ea79913fbb87 100644
-> --- a/drivers/phy/phy-core.c
-> +++ b/drivers/phy/phy-core.c
-> @@ -606,6 +606,26 @@ int phy_validate(struct phy *phy, enum phy_mode mode, int submode,
->  }
->  EXPORT_SYMBOL_GPL(phy_validate);
+> diff --git a/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c b/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c
+> index c79fb53d8ee5..24aefdcd6361 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c
+> @@ -30,6 +30,7 @@
+>  #define RK3568_GRF_VI_CON0		0x0340
+>  #define RK3568_GRF_VI_CON1		0x0344
 >  
-> +/**
-> + * phy_add_device_link() - Associate the phy with the device
-> + * @dev: the device to link the phy
-> + * @phy: the phy to associate
-> + *
-> + * Associate the phy with the device by using device link.
+> +#define RK3576_CSIDPHY_GRF_CON0		0x0000
 
-I guess it would be good to specify somewhere "consumer" device, because
-there are multiple devices involved.
+This, ...
 
-> + */
-> +static void phy_add_device_link(struct device *dev, struct phy *phy)
-> +{
-> +	struct device_link *link;
+>  #define RK3588_CSIDPHY_GRF_CON0		0x0000
+>  
+>  /* PHY */
+> @@ -119,6 +120,12 @@ static const struct dphy_reg rk3568_grf_dphy_regs[] = {
+>  	[GRF_DPHY_CSIPHY_CLKLANE_EN] = PHY_REG(RK3568_GRF_VI_CON0, 1, 8),
+>  };
+>  
+> +static const struct dphy_reg rk3576_grf_dphy_regs[] = {
+> +	[GRF_DPHY_CSIPHY_FORCERXMODE] = PHY_REG(RK3576_CSIDPHY_GRF_CON0, 4, 0),
+> +	[GRF_DPHY_CSIPHY_DATALANE_EN] = PHY_REG(RK3576_CSIDPHY_GRF_CON0, 4, 4),
+> +	[GRF_DPHY_CSIPHY_CLKLANE_EN] = PHY_REG(RK3576_CSIDPHY_GRF_CON0, 1, 8),
+> +};
 > +
-> +	if (!phy)
-> +		return;
+
+and this look pretty identical to RK3588, can't we just drop these two
+and ...
+
+>  static const struct dphy_reg rk3588_grf_dphy_regs[] = {
+>  	[GRF_DPHY_CSIPHY_FORCERXMODE] = PHY_REG(RK3588_CSIDPHY_GRF_CON0, 4, 0),
+>  	[GRF_DPHY_CSIPHY_DATALANE_EN] = PHY_REG(RK3588_CSIDPHY_GRF_CON0, 4, 4),
+> @@ -403,6 +410,17 @@ static const struct dphy_drv_data rk3568_mipidphy_drv_data = {
+>  	.resets_num = ARRAY_SIZE(rk3368_reset_names),
+>  };
+>  
+> +static const struct dphy_drv_data rk3576_mipidphy_drv_data = {
+> +	.pwrctl_offset = -1,
+> +	.ths_settle_offset = RK3568_CSIDPHY_CLK_WR_THS_SETTLE,
+> +	.calib_offset = RK3568_CSIDPHY_CLK_CALIB_EN,
+> +	.hsfreq_ranges = rk1808_mipidphy_hsfreq_ranges,
+> +	.num_hsfreq_ranges = ARRAY_SIZE(rk1808_mipidphy_hsfreq_ranges),
+> +	.grf_regs = rk3576_grf_dphy_regs,
+
+... use rk3588_grf_dphy_regs here?
+
+> +	.resets = rk3368_reset_names,
+
+So that the reset names are the only difference to RK3588 (which seems
+to be the case as per commit message)?
+
+> +	.resets_num = ARRAY_SIZE(rk3368_reset_names),
+> +};
 > +
-> +	link = device_link_add(dev, &phy->dev, DL_FLAG_STATELESS);
-> +	if (!link)
-> +		dev_dbg(dev, "failed to create device link to %s\n",
-> +			dev_name(phy->dev.parent));
-> +}
-> +
->  /**
->   * _of_phy_get() - lookup and obtain a reference to a phy by phandle
->   * @np: device_node for which to get the phy
+>  static const struct dphy_drv_data rk3588_mipidphy_drv_data = {
+>  	.pwrctl_offset = -1,
+>  	.ths_settle_offset = RK3568_CSIDPHY_CLK_WR_THS_SETTLE,
+> @@ -435,6 +453,10 @@ static const struct of_device_id rockchip_inno_csidphy_match_id[] = {
+>  		.compatible = "rockchip,rk3568-csi-dphy",
+>  		.data = &rk3568_mipidphy_drv_data,
+>  	},
+> +	{
+> +		.compatible = "rockchip,rk3576-csi-dphy",
+> +		.data = &rk3576_mipidphy_drv_data,
+> +	},
+>  	{
+>  		.compatible = "rockchip,rk3588-csi-dphy",
+>  		.data = &rk3588_mipidphy_drv_data,
+> 
+
+Apart from that LGTM!
+
+Best regards,
+Michael
+
 
 -- 
 linux-phy mailing list
