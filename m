@@ -4,98 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A44B8C79F9E
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 09:36:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96D1CC79F9E
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 09:44:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XtD99LMHT1n9r/UFacgWgFZ5Ax6hj4rQSPU1ljuufvw=; b=DRl1s5dq254OLV
-	xM/t+/qLJGuOvS7W5XTDRpu1ajWjmyx+W7MONJ+HU+l3cdqv1Ci2n0eW26xTw33TpHlELCYT+vc0j
-	4px+L77P/GRerMs96kDst1277GEqA9b8vWJ2hTGeXyKePjXMACooEM8jUHj6mppNnHAoGleEcZllC
-	ovMkhx+zn9drv2tVB63E3bnBtI3RyK7GpVNDn5/thTZStRwyzNxn1yd7UTyUS75fkLsvAsTeQGnMD
-	Ny31v89Ve8yCCUCK8KZoSESp6RIWINjYAJ+sTN30gIxZ1vcPDXY332X8E9s6vtnS6xYPOWUEkQprG
-	uacSvXqw4cDRLaKJxPkg==;
+	List-Owner; bh=8jIAVYb/g2qK1lHymPPAXn9k0xgaEO8aHkUn3Otgopc=; b=GpiC2s1EaGBZsW
+	9og6egHAs2s84biMjakhgYZe8w5Di8JZUjWGNlvka43CVche+QoUaa0cZb9f5lMithE8cpF5GmSn/
+	JEEOYfI7hgaM8VPRSfQi3DUcHGY/yyPtxmWcAWxKJr5dKB4sa4b+K7RS8W1sXhvjzfb/rqUodmQI1
+	F+0cG5O3qSGON3qxQCe8ZdAHjXmPBBIO0Wi7fhfpxu0NjIQA+GixqH53kxSTgx2UPmFnuf2WMzr+K
+	wZja5oDcEIzjwG+70Aojk/88nwU0YswwHR/EmawUk6Ex0w2LrIVTPze3gHNKggtZ7XFKWdN+4bsr2
+	39ASM3pcKsKWeZuABrDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3Vlg-00000006N5Q-3ptv;
-	Mon, 07 Sep 2026 09:36:00 +0000
+	id 1x3VuA-00000006NlX-3ZSi;
+	Mon, 07 Sep 2026 09:44:49 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3Vlc-00000006N4X-448g
+	id 1x3Vu7-00000006NjU-3WHc
 	for linux-phy@lists.infradead.org;
-	Mon, 07 Sep 2026 09:36:00 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68777OOq3363569
-	for <linux-phy@lists.infradead.org>; Mon, 7 Sep 2026 09:35:53 GMT
+	Mon, 07 Sep 2026 09:44:45 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6879bV3n3189567
+	for <linux-phy@lists.infradead.org>; Mon, 7 Sep 2026 09:44:43 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	2pZyG6eb3zzujfssjYHEawTXK0BmQECZw2QbjnCLMKU=; b=TiRieHp+jPF1S6xj
-	CDMgOXvXZPDeKtwQlipQYwn/fEOv9Bn/BJnNYwwxUVVnGl73a5OryTSAWtbkKWi0
-	0890Y02gV0+o5hVvTafjSO8IGASKpkKwdzE5DDAgFWtJAE/Go3N1NOjUHN21yWi4
-	z/P0vghXqYaS2oX1fGZFkhuFyhCgDdIF0NYlWXussx7Srt35/V85V+W80EayA+GP
-	0uQzk3TgD3dGEWqFWfqM6PK5idOdTOU0tmAdB7O2IhbNjoZ97Erx22RRUmaw/86A
-	xCj86KYq8zI82jrDmc/63YxV+GcXMbD/w+WuY7oB+QRZnVXxJrbOBiyerASPiKHh
-	i94gyw==
-Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ghnmj1bq0-1
+	tsB9Vj+XTt64+OVf4kxojZVD84CZESJvrBN7JqUuMIA=; b=ADqQI+Rc9/PByyKr
+	oqA3W2qgI8GFRt5Vm/sZ/IfoqfXK5NyZUeaVmbLWnYDF0LbkofGkAJAy2HFl5c4E
+	a/YMUUQQpCbvrn30v6BfTEnBxlQxcMmy/tS2+Pz7KRLyDTjYES0nnr/4nlMDeEk/
+	W/mhyL/12dR6dJX1LIfnVwfEoZ9P6+v2dlb7kSMzN/FIQp4mfIZy7X+ohGKGLK0r
+	wJTfAeoeraGL/kO4nACcCgWG6yQynq7TcQCouNf7XZIeLwqNydxbEUEtfDhsJyuO
+	lyPCDkc3ZL28acIZr8JvRrHqis61gtzNgOpe+bEjhZWks+AnL2EDPtLqiPgOqwWl
+	ifdUnA==
+Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ghtfx04n9-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 07 Sep 2026 09:35:53 +0000 (GMT)
-Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-39512608fb1so7604052a91.1
-        for <linux-phy@lists.infradead.org>; Mon, 07 Sep 2026 02:35:53 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Mon, 07 Sep 2026 09:44:43 +0000 (GMT)
+Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-cc21bc2923fso4183383a12.2
+        for <linux-phy@lists.infradead.org>; Mon, 07 Sep 2026 02:44:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1788773753; x=1789378553; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1788774283; x=1789379083; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:in-reply-to:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=2pZyG6eb3zzujfssjYHEawTXK0BmQECZw2QbjnCLMKU=;
-        b=XofMD6eSLW50OO8tvO1EZG8ErgNyfwpvKZKNHGgTnLVccZEZHK9K4A8m3rWuST6VJb
-         U2+OeSkx7MK2WcB5QFGTUY6XR0MqX5f1ETvXyUVwUGnTCMNLes79TExnhUobqwZUlvzm
-         Q9cPMbJFqSujqT4adZQNjrjTI+SDgN+5TTDm0eOEu0YFjmtX61T7eaNwqa6CGBwdTboo
-         F3SpwBkIp0OgmNBJRkJtp+jQqqsbN+st9XWPBKkWoXdR+my8I+Xxx95xAe+LFioaPhek
-         sdFVSLNnpNQmVwDpoIkibMycqp4p194Jnz7RtNk97oQFlr3hiGIKMvIYBnBvvlZcDOYm
-         3gxQ==
+        bh=tsB9Vj+XTt64+OVf4kxojZVD84CZESJvrBN7JqUuMIA=;
+        b=JgoHEA4XgUYKwuxQ46JjAMBNaCob23so+/rdEZULMWGgMFuswnWu2G8xLlWZlvHnr1
+         keXYAfZ623b0ICuiHut2mMKWMb7Szvwmt0HpTjJhU6XUBm3eY6MBiBKkL9GFdi/OaH0q
+         IsWlmCuD25B7x607psd1GIEdKRiJ9OHibZ1F1Vvqg1/xfpe9P6lof3liEI0x/GsPqjWU
+         jS/1Iy6nhbyTHxOA/1EPtlGve8YJqrtHoHAUNV2invy0LFmaodLPrVyVCHPREfvLJYU5
+         xG/q82jJ+bZShgntIKdsZvM++aS1KoAxu0pFgtNrFwIdxfI1AnSHtDc/G3qAxvuZvwlT
+         6BvQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788773753; x=1789378553;
+        d=1e100.net; s=20251104; t=1788774283; x=1789379083;
         h=content-transfer-encoding:content-type:in-reply-to:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=2pZyG6eb3zzujfssjYHEawTXK0BmQECZw2QbjnCLMKU=;
-        b=OTLznOXAS67Y+iH5N5xJeaYmz4jaXMFQjyddSCwwjiif0ny32nkKDjksMOovamcrda
-         MzTbEd7Qc7tvGsFlTWuo0Bdw8HGxAPjRbaQQG6F4v0p8gQEeLykJw7NU+g63hx35wC4l
-         kwqIPsqysTx5SfgfWH36Y+w8SjblunDyUs89IYA05ueSGDLPCqoTusDooI4zexdg605V
-         pwophPCN4qq1ActqmZJLanRE5wYPaW8hOqXfk4z6rjmtJ6hMUDS+txbzTcHN5uhiQmlH
-         ZtY2p1Xvmt80DYbouVSG0CPWWDDdpDQcttg/NBW2WXeGFFDFEAVfKODiyeh9bBbWb1x2
-         2PAw==
-X-Forwarded-Encrypted: i=1; AKwUvByDMS4IS6bMhXEX7ymB60Mgj9JJ6th/YJCh0hVz3BmJ9DKhICfH71wMBZu4t1EkWNRBFZ2lXclBsKk=@lists.infradead.org
-X-Gm-Message-State: AFuF++nNVb5kfhUb+F+XKGlADmHeS24fcIxpEepcYtSZ9pj4zxsNWfSK
-	9kuL61cTuv49DV+EcYLwXyHEDObQ6yhmHNgUk8Pg8ovgeQe5R4mKPqfmuvJgQ2UOzJt/wmKLjhJ
-	8W8eB/GroUKDwKnREWpolvobFSehGQ2vHx7Dlkcsemmh7wMDFq/Fl5FQrZAshG2PfvGeH
-X-Gm-Gg: AYBFou2F7J9r7nWTjMm+/8cCPT80KDlYwck75D5l2IirxsB/qt01asQckLgkz7592MW
-	bQ2blKkZEJ1osIOlOcLaxmhTIpzJQ8o5NyDGEHt4Iu5jcDOOLvNG43+25VXQZ/SV9q3+mp9rq9/
-	bRZQr2cjibLmpmGy4FcKusPNWlKR4lShUZr0zWbSrTKzA4GbyrhHjbzDJ4oZhUnrD+elLZ4Q/Ij
-	DK7VCdGRT8nPNNF4nBpnYjQWAUNEHxQ4bx2Dik5TW1GalaoDSP2JNWUEZ/nlLK/lphfhtoz8lF3
-	buylys9kCXTqfkqxvTHaMOT4m8b9S4LGUKuWljB6NVwtRuoXHTHGU3XZEJIsf6ulGh/Zf6+adgq
-	3ZHQgKdcyNNhgANeX6cHYwTtxr9wnWEY=
-X-Received: by 2002:a17:90a:d647:b0:38e:70d5:b12d with SMTP id 98e67ed59e1d1-39b261074camr32015996a91.6.1788773753055;
-        Mon, 07 Sep 2026 02:35:53 -0700 (PDT)
-X-Received: by 2002:a17:90a:d647:b0:38e:70d5:b12d with SMTP id 98e67ed59e1d1-39b261074camr32015923a91.6.1788773752605;
-        Mon, 07 Sep 2026 02:35:52 -0700 (PDT)
+        bh=tsB9Vj+XTt64+OVf4kxojZVD84CZESJvrBN7JqUuMIA=;
+        b=T+o/4NrA2GX8CimXZZJbqnYNx+cAPG2QYBlLGkKpRuoTmqNBaolR2GCdmvkgTHy+Il
+         yUKEGm8lDWK14WOE7goTIk7egWZ+RORq/I/XZxitFNEPiCJ6wKDnyUZD0L0a4rQIDiiN
+         h8rR0XOodm7CQFPuIDAbaafGNacUZao07DpUTHYQ2o6WprE+vN5/nVge+0IgGLLBGdEQ
+         n7X9oQgBZfDnqCgWj8DpcBO0cKVtgqEHElOUA0IpmfmpAlkri0eNsIcFYRCnNTTddWEh
+         yPoSgPD1pMNU7641tBephl74eHGMPB4RBFPVkm44om4gYIMmrf8Cfqm8+3a9D9gt2Iea
+         AbXA==
+X-Forwarded-Encrypted: i=1; AKwUvBzL5Aw/NNKbDzY68xry8siVCgGk8TwToUUbUUS5MXa0+i6dqiF+eukOkPb8WeFcYf3wHJM0vfp/YZM=@lists.infradead.org
+X-Gm-Message-State: AFuF++n/z2ETjej3ykKmeuv50WinPpmcXU/UAeG+AZ54Ex8Ge2L9BTDC
+	yPgEl9bUQgCvd5K89eaAL23XzDSdcSgorA/9CRKYH0AlX/doHvzcltsSLGqOxT1tUf0+cOidK0l
+	1leeyFNAutePsXS/zU/Bv7ixINVk5mW/I8lgAl7dAwqCkIjFKEUdj/lwnvJo8XC17HAFO
+X-Gm-Gg: AYBFou0VoYDsFQk+kzh0wlLvZN16f+sDis4tQN8zh5bxrMvEVqNSSDuKMaFYH+AYYiv
+	ZoYZ0odyLg/gUqZqEYyljjKfSIHS23CMAfjnkReRi0vhspQtVoMU/9MWXDoR0P1z5ye+WMS3j1I
+	FQx3kOhFPRvo+Dd0eT14B+OBElk9JrV37AZH/wJVmOC/62xykpIoFXHYzf8l43mTzBNIGOuslTw
+	PBDzAKd1s/TjJ+x50CxK0gBjsNUQUTVM4z+7aHIz472xPX7n5/flACHraV+wQr93dePYbl/zOVt
+	Icn9qOc67n1OQZUPztgY7DiFU2WnTJssNQ8rD+2GPJxq4Ltzaznkkw2eubaHnLT844Vrf6F3dah
+	p2Y3Q6bBakqeH6HRm+Kw09v+Jdg0C/wE=
+X-Received: by 2002:a05:6a20:7290:b0:3cd:9f99:3381 with SMTP id adf61e73a8af0-3da39878551mr32148265637.0.1788774282508;
+        Mon, 07 Sep 2026 02:44:42 -0700 (PDT)
+X-Received: by 2002:a05:6a20:7290:b0:3cd:9f99:3381 with SMTP id adf61e73a8af0-3da39878551mr32148214637.0.1788774282034;
+        Mon, 07 Sep 2026 02:44:42 -0700 (PDT)
 Received: from [10.206.103.40] ([202.46.23.25])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3339ac24d7esm41656313eec.15.2026.09.07.02.35.45
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3339ac24d7esm41820620eec.15.2026.09.07.02.44.35
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 07 Sep 2026 02:35:51 -0700 (PDT)
-Message-ID: <8b45dfc1-5350-4a63-9213-a1160478683d@oss.qualcomm.com>
-Date: Mon, 7 Sep 2026 15:05:43 +0530
+        Mon, 07 Sep 2026 02:44:41 -0700 (PDT)
+Message-ID: <fa897e53-2ebe-4322-bf73-98788854083d@oss.qualcomm.com>
+Date: Mon, 7 Sep 2026 15:14:33 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/4] drm/msm/dp: clear force_link_train flag when link
- training succeeds
+Subject: Re: [PATCH 3/4] drm/msm/dp: skip LTTPR init when no LTTPRs are
+ present
 To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
         Vinod Koul <vkoul@kernel.org>,
         Neil Armstrong <neil.armstrong@linaro.org>,
@@ -115,41 +115,40 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         Mani Chandana Kuntumalla <quic_mkuntuma@quicinc.com>,
         Mahadevan P <mahadevan.p@oss.qualcomm.com>
 References: <20260824-qcom-dp-typec-reconnect-fixes-v1-0-2825e5bf8a96@oss.qualcomm.com>
- <20260824-qcom-dp-typec-reconnect-fixes-v1-2-2825e5bf8a96@oss.qualcomm.com>
- <2b1e73f4-a476-4dc8-83f2-42be1008c1fc@oss.qualcomm.com>
+ <20260824-qcom-dp-typec-reconnect-fixes-v1-3-2825e5bf8a96@oss.qualcomm.com>
+ <315db50d-6553-412d-8fca-a4b4441f881b@oss.qualcomm.com>
 Content-Language: en-US
 From: Saurabh Anand <saurabh.anand@oss.qualcomm.com>
-In-Reply-To: <2b1e73f4-a476-4dc8-83f2-42be1008c1fc@oss.qualcomm.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTA3MDEwNCBTYWx0ZWRfXxJ+0mcm6SVNq
- RKLDCUPlUEvxtX8pM0uLnhupShKK2tB9XklX25DcihsYQRco1W8S9Wm7z+zs8B2YeORRisXEOQ1
- FlDNK92C7RpvgAq8CpK8zSK1eWe6WYoGGdYls0H9OC/Mg0jcnN2FaZcn1StefQg6Q+hpZwskzun
- IIwbu1ksSVB6Jvrw1lqeMYm/hgWKEmJcnU0Kh3DNtdYNqwAs38/hVTdmg3d/S6A1qNgDgF/GRwB
- IkyhcNY0TIan2G4UQrdzb6tIXzug/KOJEheXuM9acMr4VwtGJ89bq9UyDVPe7bbmsD9kKOPh/hX
- O/OIheQomrPI6HdadklAw+7Tab8nJbRQ3whNfEK3dqduhIcJZTJhaOYt8qt8OJzIuL2Hsr5eTm2
- lUdFgpDLJWwS3uSxtZtBrTPsRS6EaT7lM+M+ESNtlDg6EPLZe5b9K2PyBNCAIgD4J9Wnio4UDfM
- ac+gNwwLBGw2Ftd1S7Q==
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTA3MDEwNCBTYWx0ZWRfX36N2ebM4PdVO
- XMuNuaiOPVKgUJrFCkis9OzrfETy3+2cY8Pfopt6PxhOyAsxg4lO+LX1Uj3VDA+4teAVyz6TpLW
- 1A/yze35Iin4z1+jAxfwjLWODw6WnaU=
-X-Proofpoint-ORIG-GUID: bUzlp6VR-bvrtLcF4t_2MWGWeMsPzhEi
-X-Proofpoint-GUID: bUzlp6VR-bvrtLcF4t_2MWGWeMsPzhEi
-X-Authority-Analysis: v=2.4 cv=LZYMLDfi c=1 sm=1 tr=0 ts=6a9e8579 cx=c_pps
- a=RP+M6JBNLl+fLTcSJhASfg==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+In-Reply-To: <315db50d-6553-412d-8fca-a4b4441f881b@oss.qualcomm.com>
+X-Authority-Analysis: v=2.4 cv=Weg8rUhX c=1 sm=1 tr=0 ts=6a9e878b cx=c_pps
+ a=rz3CxIlbcmazkYymdCej/Q==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
  a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
- a=EUspDBNiAAAA:8 a=gUzaiutwswMiDYJum_AA:9 a=QEXdDO2ut3YA:10
- a=iS9zxrgQBfv6-_F4QbHw:22
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
+ a=RZhGKP1uXM2L-Qacb6AA:9 a=QEXdDO2ut3YA:10 a=bFCP_H2QrGi7Okbo017w:22
+X-Proofpoint-GUID: _cm4xze88pg_x-oFaIMSrOpY-mGH7CWc
+X-Proofpoint-ORIG-GUID: _cm4xze88pg_x-oFaIMSrOpY-mGH7CWc
+X-Proofpoint-Spam-Info: AW1haW4tMjYwOTA3MDEwNiBTYWx0ZWRfX+1iRp4SczteI
+ Nf52hPd9JZWq7m1EeXTpp0BzkUwzf1gpSJdcInjhQulE2v3czDTbQ5VwEqZA8/ysP7c3BakBuXz
+ bWGW89ZLH1a6IXh4vgLcqQPsjyAEwso=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTA3MDEwNiBTYWx0ZWRfX1y2me+7j3U+i
+ UNLZICExTB506mdsBkoIrk4KeZieJ6Km54ilNO9egXqVEvGGWZZ46x7d9k64C/EsM14xj6TW+JJ
+ YvWkpXm/DqxipkGp6/SFOpQI6LCkpZUDXuGqQ4V3vkaQCvmQ/kVupM59OuRem53YZZ+7LXh4Kv5
+ pg2SPyfy/v3Y6vaJYUpmO0VmlJxXRa3+kiX24+SMAdANy/KzWpwspnrNxxAbXcf/NwGzoq9L467
+ 31b7N2DaoPMb6fPA1PgNJFAQnKtq1G1lv9p6HxMnxZnsDR41vovVS4u7jPaNk/cHtSiq91cbfAZ
+ XTnUZXPcZj4OzKBSpO/xWN7qjDN5ZTlcu8HHs9MW6qiskc6Ftfr42RwbtE29HE9oPlmGJ8tknU9
+ VHC9zFkRTZ92AJvicLyNZ8HQgRaPn9ay+eM5oSMMPdl2kKN0gry2ekhYasYqOgG29TwE03mk0E0
+ OWBd4LwH6FP5AymqKQA==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-09-07_02,2026-09-03_01,2025-10-01_01
+ definitions=2026-09-07_02,2026-09-07_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 priorityscore=1501 malwarescore=0 suspectscore=0 impostorscore=0
- lowpriorityscore=0 phishscore=0 bulkscore=0 clxscore=1015 adultscore=0
+ lowpriorityscore=0 malwarescore=0 clxscore=1015 suspectscore=0 phishscore=0
+ bulkscore=0 spamscore=0 adultscore=0 priorityscore=1501 impostorscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2609070104
+ reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2609070106
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260907_023559_175173_1AAC4B50 
-X-CRM114-Status: GOOD (  13.42  )
+X-CRM114-CacheID: sfid-20260907_024444_081808_3D4E2F45 
+X-CRM114-Status: GOOD (  12.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -167,36 +166,27 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On 24-08-2026 18:47, Konrad Dybcio wrote:
+On 24-08-2026 18:45, Konrad Dybcio wrote:
 > On 8/24/26 1:28 PM, Saurabh Anand wrote:
->> msm_dp_display_prepare_link() sets force_link_train = true before calling
->> msm_dp_ctrl_on_link(). On success the flag was never cleared, so
->> msm_dp_ctrl_prepare_stream_on() would unconditionally trigger a second
->> link retrain even though the link was already trained.
+>> drm_dp_lttpr_count() returns 0 when no LTTPRs are detected and a
+>> negative value on error. The previous code passed the result directly
+>> to drm_dp_lttpr_init() without checking, which would call into the
+>> LTTPR transparency-mode setup with a zero or negative repeater count.
 >>
->> Clear force_link_train on the success path so that
->> msm_dp_ctrl_prepare_stream_on() only retrains when the channel EQ check
->> fails, as intended.
->>
->> Signed-off-by: Saurabh Anand <saurabh.anand@oss.qualcomm.com>
->> ---
->>   drivers/gpu/drm/msm/dp/dp_display.c | 2 ++
->>   1 file changed, 2 insertions(+)
->>
->> diff --git a/drivers/gpu/drm/msm/dp/dp_display.c b/drivers/gpu/drm/msm/dp/dp_display.c
->> index bc646d172abe..40e19d506a45 100644
->> --- a/drivers/gpu/drm/msm/dp/dp_display.c
->> +++ b/drivers/gpu/drm/msm/dp/dp_display.c
->> @@ -649,6 +649,8 @@ static int msm_dp_display_prepare_link(struct msm_dp_display_private *dp)
->>   		return rc;
->>   	}
->>   
->> +	force_link_train = false;
->> +
->>   	return msm_dp_ctrl_prepare_stream_on(dp->ctrl, dp->panel, force_link_train);
-> This makes the argument of this function useless
+>> Add an early return for lttpr_count <= 0 to skip the init entirely
+>> when there are no repeaters in the link, matching the expected usage
+>> of drm_dp_lttpr_init().
+> Reading the body of that function, I'm not sure your statement is true
 
-Yes, agreed. I will update it in the next version.
+drm_dp_lttpr_count() returns 0 when no LTTPRs are detected and a
+negative error code when the LTTPR common capabilities report an invalid
+or unsupported repeater count.
+
+drm_dp_lttpr_init() already handles the zero-count case by returning
+early. However, when passed a negative count, it still writes transparent
+mode before returning -ENODEV.
+
+I will update the commit message giving more details.
 
 >
 > Konrad
