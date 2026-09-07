@@ -4,84 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B593CC79F9E
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 06:25:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9BC7FC79F9E
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 06:36:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=iZrYn5p0OIv/eKHZAM7rc+OTB58L8CWqoNk4Vy84JhQ=; b=kLbQLyF/hkc3oM
-	ezYsRxEWbTkDpOuLCa2PCJTE0kbZugidoc41PxwcKKYG4zaNjjcHI4wxmw8us4hMYfOFn3YgRJseT
-	v4lRUFYakKIFYVh5WbsnhQGkoKSy5EdZ/9jw29uAN+tMxU3wRrXVfxx3yWZTcgAJYyL5il6wqh/v6
-	dQfNPSUzIjLgkh43EX9lGCLPpElWBU/wLnY1IstPoi2QSlHfd57SIfXMisLMI9YDXKkSewpCxvjO8
-	H8K22Mdt4FtgHsjE7q98OggBA6gbks10ScyRCr+Hd83fOHTpeDRCin1PTaQTUhACzFCohVFxZKZqB
-	YaZb6RNxIalMf1hs9rfg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JQWJsE/hhZ2mXOlPc6XGtFnDgTJJAiMCFUs+PFse5Ec=; b=ZkGsqMjuNpHakG
+	k9E6Ma1BoEUwPYQ1n4Dvj9tKx+W6V7Vv8vMovgtx48WLAZE4uTbJqfndk1xRUDL0a7aW3ZE0bpoBm
+	GoWfKsq52PJQT/Pjic4rdgSiRmRgmmH6c9RVeP4o32z9bHxymXHDDogczbq2Eei6qJMtKAbtvSCl3
+	NQ/TyxmBBKW2kMTwQXt6izyl09dR0kVn05xd7bRP1JIQ46FFxHqB0dm0SS06RxmyKdel6Gal2DYsG
+	5z7KRHMCUHtnq6Amrkv+SGtO/Xou7Fbu/0Z/K3ekvwYW2hJducLlqbDMgQTO0CqPQ1I+BYRkeebzq
+	cADRjXyYsiDzgHIRncJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3SnJ-000000060pm-19XR;
-	Mon, 07 Sep 2026 06:25:29 +0000
-Received: from mail-pl1-x62b.google.com ([2607:f8b0:4864:20::62b])
+	id 1x3SxY-000000062HG-0F9u;
+	Mon, 07 Sep 2026 06:36:04 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3SnE-000000060pK-06an
+	id 1x3SxV-000000062H5-3ujz
 	for linux-phy@lists.infradead.org;
-	Mon, 07 Sep 2026 06:25:25 +0000
-Received: by mail-pl1-x62b.google.com with SMTP id d9443c01a7336-2cc891373e0so33420005ad.2
-        for <linux-phy@lists.infradead.org>; Sun, 06 Sep 2026 23:25:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1788762323; x=1789367123; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=wI0uSnUHEptNkyfibbrbcQ+UzBygohHJaJzYhS8sUvE=;
-        b=ST1lafBaGp+MvRV3vzs/1P8KNQQ97tEFNVytg7zlzW09GzN0F+OhHhrQucBiv+ntY4
-         3Wpy7wmtxIIwlWeN06m882xd/8MILuttRj9d8LLQ+NhZZ+sjHud/+8ID7KclSQieRPkv
-         56quoxntiqFvg1lyGRAgsdlwYRSdFqmDs4AQmjduzCBEHh2DvYZ+H4ievuUAyMxQSsaf
-         S81mBiQeoXjEpjlYkjwpRz8zqLr4yWSlpLvTs9xZK03PPJH3c8WnKZv5BXP81yryR6qZ
-         UX1ZTPPcPHrQSqHqYDfZyoEp4A2nKFEt+gV5EAOfi0nmGNGQqL1+i8Zlmo5+O0Z0ev//
-         Wv1A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788762323; x=1789367123;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=wI0uSnUHEptNkyfibbrbcQ+UzBygohHJaJzYhS8sUvE=;
-        b=NjVtK5bqzFAMUMxxDNSMComNNxaj7EQOInMzlGQzKVjhce3eIqddczZ8v+U8IjPkur
-         HlY70RxwzncCFCoWp0sO/uD3ljFwdoDgBFmJnBsPcozqlASouJfAuGVv3poe9lBGm8Jx
-         sBV82RQESiLDPXghPxk0qVsMcQer3R7bkvp367rH4gfDRt+a5gZ3t7M0+tyOE244bt+b
-         azDP8hZqVRtMSntE4dtGp1tm5h/yYTfheY1Lad3UIWlA4R0tpxW1FXMkoon+XD1B4Co0
-         WQzyhxmH0zWMsMc2UX9WKkBAR3Rk8GbC1wRN0kpxVEpc57MVJkOeZDWNB0syshTT+4a9
-         +HOQ==
-X-Gm-Message-State: AFuF++nWokNuSQ7OKKMRAEqHVvrci55HxjP8R0t1CsC7s8Gz1aUih9Cf
-	79ky9ZJ5EaLiDDfdNlNLHZ5CxnRxWJLK/LgAZg+mASc0CR2JYNVLWdc4
-X-Gm-Gg: AYBFou1sOCyRcpq3r1A+va0xiSecNLwrmmNkwQC3uQz5H6TnfQV1/mgTWDxmXF9rFU1
-	mlw4Utk30u3wNVduQ7/B68svvssrsfUpGbMBS7r8wOT9ZkZ2jI/p/fAf6Hs2LqA16qH8NIuFRfN
-	DOT15ps14uBEDO+tWaLy6I3jYKXggqqZ6ZuSd9KqCOaYroCK6mfl3EZ2z9b+UHSjdsjWiRtw0sd
-	K3IQP2ojlQxpzu1BVcblx5qQId15NP7NUWTHedc2U+5J/BqVdABUiP11bF3N2t+10kLFn5IYbUR
-	aet22rmCE6WM0QAz1rhIZ46KIHXalER0urYqc5IPaEPyfBCADov3cTY9ZXK7+tw/SLBDZl7WZRl
-	fACKuYpVsQaLehuBCARqFlPYHX7TUrLfMHB4ADUFmAVBioCNbXVkHkj/XVcqUE3Mk4P7hbneZd2
-	cw8xJ51++st+aUS0SmvVOtbic2RVdi0Hr1FA4TdepgbXTERTOukJrtZJCZivBwIAkEBN444FDvi
-	nv7EalMfyWYK3iOOOsz15fR
-X-Received: by 2002:a17:90b:4d87:b0:380:540:d499 with SMTP id 98e67ed59e1d1-39b26100bfdmr28827492a91.6.1788762323074;
-        Sun, 06 Sep 2026 23:25:23 -0700 (PDT)
-Received: from volcano9f6e-hostos.amd.com ([165.204.217.251])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3339ac24d7esm39007594eec.15.2026.09.06.23.25.20
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 06 Sep 2026 23:25:22 -0700 (PDT)
-From: Hemanth Selam <hemanth.selam@gmail.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>
-Cc: linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH] phy: fix typos in comments
-Date: Mon,  7 Sep 2026 11:55:18 +0530
-Message-ID: <20260907062518.12810-1-hemanth.selam@gmail.com>
-X-Mailer: git-send-email 2.48.1
+	Mon, 07 Sep 2026 06:36:02 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 51D4641285;
+	Mon,  7 Sep 2026 06:36:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 079421F00A3A;
+	Mon,  7 Sep 2026 06:35:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1788762961;
+	bh=fvYKRdXxIGC3gy/lhw4VnS34/hd+ivtyb/2EWm1V8Cs=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=kSHN7SMHPq7Wpbhq6EU5r5WynaR3/sBBwSlL6DZ9U85zSoDb3zIwiO0Mmsa888Z4N
+	 fZQF1IUdtIHE7YKI7CpTSwOR5Q8R3/TmZOiOFo9ZOGzJul74TkqVla8sD0ws6E0xCE
+	 Re94OsrUP7YeD0qCb0Owo6DyQw7SAaq64K7gQ4ZY2cGu7QkBoDo0ct+uOIJeu/ACBk
+	 uBepBNND6vZlTtGxYDqQEajdcXx/U3D0wWUgw/e3lZ+QAe9i4jA21ohLc+NrUTnBgE
+	 o2v71tkKF4Frvekl/0A8eeUof//byOUIjIRQCP89w45Zhzuui2VmsaoYk4eUGGjiiz
+	 bPh/vkPH37g7g==
+Date: Mon, 7 Sep 2026 08:35:56 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Christian Marangi <ansuelsmth@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v4 1/3] dt-bindings: phy: airoha: Document support for
+ AN7583 USB PHY
+Message-ID: <20260907-auspicious-liberal-raccoon-bd7a81@quoll>
+References: <20260901123933.15388-1-ansuelsmth@gmail.com>
+ <20260901123933.15388-2-ansuelsmth@gmail.com>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260906_232524_068638_A1AA141B 
-X-CRM114-Status: GOOD (  11.80  )
+Content-Disposition: inline
+In-Reply-To: <20260901123933.15388-2-ansuelsmth@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,59 +73,121 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Fix typos in comments, reported by scripts/checkpatch.pl using the
-misspelling list in scripts/spelling.txt.  Only touches comments, no code
-changes.
+On Tue, Sep 01, 2026 at 02:39:31PM +0200, Christian Marangi wrote:
+> Add documentation for Airoha AN7583 USB PHY that describe the USB PHY
+> for the USB controller.
+> 
+> Airoha AN7583 SoC support a maximum of 2 USB port. The USB 2.0 mode is
+> always supported. The USB 3.0 mode is optional and depends on the Serdes
+> mode currently configured on the system for the relevant USB port.
+> 
+> To correctly calibrate, the USB 2.0 port require correct value in
+> "airoha,usb2-monitor-clk-sel" property. Both the 2 USB 2.0 port permit
+> selecting one of the 4 monitor clock for calibration (internal clock not
+> exposed to the system) but each port have only one of the 4 actually
+> connected in HW hence the correct value needs to be specified in DT
+> based on board and the physical port. Normally it's monitor clock 1 for
+> USB1 and monitor clock 2 for USB2.
+> 
+> To correctly setup the Serdes mode attached to the USB 3.0 mode, a phys
+> property is required with the phandle pointing to the correct Serdes port
+> provided by the SCU node. Providing the phys property is optional if USB
+> 3.0 is not used.
+> 
+> Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
+> ---
+>  .../bindings/phy/airoha,an7583-usb-phy.yaml   | 133 ++++++++++++++++++
+>  1 file changed, 133 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7583-usb-phy.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/airoha,an7583-usb-phy.yaml b/Documentation/devicetree/bindings/phy/airoha,an7583-usb-phy.yaml
+> new file mode 100644
+> index 000000000000..f1a5d83e8968
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/airoha,an7583-usb-phy.yaml
+> @@ -0,0 +1,133 @@
+> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/airoha,an7583-usb-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Airoha AN7583 SoC USB PHY
+> +
+> +maintainers:
+> +  - Christian Marangi <ansuelsmth@gmail.com>
+> +
+> +description: >
+> +  The Airoha AN7583 SoC USB PHY describes the USB PHY for the USB controller..
+> +
+> +  Airoha AN7583 SoC support a maximum of 2 USB port. The USB 2.0 mode is
+> +  always supported. The USB 3.0 mode is optional and depends on the Serdes
+> +  mode currently configured on the system for the relevant USB port.
+> +
+> +  On Airoha AN7583 there is an unified PHY implementation where a single
+> +  PHY provide support for both the 2 USB 2.0 port and
+> +  optionally one 3.0 USB.
+> +
+> +properties:
+> +  compatible:
+> +    const: airoha,an7583-usb-phy
+> +
+> +  reg:
+> +    items:
+> +      - description: phy register
+> +      - description: ana register
+> +      - description: pma register
+> +      - description: dig register
 
-Assisted-by: Cursor:claude-opus-5
-Signed-off-by: Hemanth Selam <hemanth.selam@gmail.com>
----
- drivers/phy/broadcom/phy-brcm-sata.c | 2 +-
- drivers/phy/phy-xgene.c              | 2 +-
- include/linux/phy/omap_control_phy.h | 2 +-
- 3 files changed, 3 insertions(+), 3 deletions(-)
+"registers"
 
-diff --git a/drivers/phy/broadcom/phy-brcm-sata.c b/drivers/phy/broadcom/phy-brcm-sata.c
-index fb69e21a0292..43b287a25e7a 100644
---- a/drivers/phy/broadcom/phy-brcm-sata.c
-+++ b/drivers/phy/broadcom/phy-brcm-sata.c
-@@ -334,7 +334,7 @@ static int brcm_stb_sata_16nm_ssc_init(struct brcm_sata_port *port)
- 	brcm_sata_phy_wr(port, RXPMD_REG_BANK, RXPMD_RX_CDR_CONTROL1,
- 			 ~RXPMD_RX_PPM_VAL_MASK, value);
- 
--	/* Set proportional loop bandwith Gen1/2/3 */
-+	/* Set proportional loop bandwidth Gen1/2/3 */
- 	tmp = RXPMD_G_CDR_PROP_BW_MASK << RXPMD_G1_CDR_PROP_BW_SHIFT |
- 	      RXPMD_G_CDR_PROP_BW_MASK << RXPMD_G2_CDR_PROP_BW_SHIFT |
- 	      RXPMD_G_CDR_PROP_BW_MASK << RXPMD_G3_CDR_PROB_BW_SHIFT;
-diff --git a/drivers/phy/phy-xgene.c b/drivers/phy/phy-xgene.c
-index 5007dc7a357c..59f18e16bbbb 100644
---- a/drivers/phy/phy-xgene.c
-+++ b/drivers/phy/phy-xgene.c
-@@ -1669,7 +1669,7 @@ static int xgene_phy_probe(struct platform_device *pdev)
- 	/* Retrieve optional clock */
- 	ctx->clk = clk_get(&pdev->dev, NULL);
- 
--	/* Load override paramaters */
-+	/* Load override parameters */
- 	xgene_phy_get_param(pdev, "apm,tx-eye-tuning",
- 		ctx->sata_param.txeyetuning, 6, default_txeye_tuning, 1);
- 	xgene_phy_get_param(pdev, "apm,tx-eye-direction",
-diff --git a/include/linux/phy/omap_control_phy.h b/include/linux/phy/omap_control_phy.h
-index aec57dd784f7..5652aa2f4915 100644
---- a/include/linux/phy/omap_control_phy.h
-+++ b/include/linux/phy/omap_control_phy.h
-@@ -12,7 +12,7 @@
- enum omap_control_phy_type {
- 	OMAP_CTRL_TYPE_OTGHS = 1,	/* Mailbox OTGHS_CONTROL */
- 	OMAP_CTRL_TYPE_USB2,	/* USB2_PHY, power down in CONTROL_DEV_CONF */
--	OMAP_CTRL_TYPE_PIPE3,	/* PIPE3 PHY, DPLL & seperate Rx/Tx power */
-+	OMAP_CTRL_TYPE_PIPE3,	/* PIPE3 PHY, DPLL & separate Rx/Tx power */
- 	OMAP_CTRL_TYPE_PCIE,	/* RX TX control of ACSPCIE */
- 	OMAP_CTRL_TYPE_DRA7USB2, /* USB2 PHY, power and power_aux e.g. DRA7 */
- 	OMAP_CTRL_TYPE_AM437USB2, /* USB2 PHY, power e.g. AM437x */
--- 
-2.48.1
+> +
+> +  reg-names:
+> +    items:
+> +      - const: phy
+> +      - const: ana
+> +      - const: pma
+> +      - const: dig
+> +
+> +  '#address-cells':
+> +    const: 1
+> +
+> +  '#size-cells':
+> +    const: 0
+> +
+> +  usb3-phy:
+> +    type: object
+> +
+> +    properties:
+> +      phys:
+> +        items:
+> +          - description: phandle to Serdes PHY
+> +
+> +      '#phy-cells':
+> +        description: The cell contains the mode, PHY_TYPE_USB2 or PHY_TYPE_USB3,
+> +          as defined in dt-bindings/phy/phy.h.
+> +        const: 1
+> +
+> +    required:
+> +      - phys
+> +      - '#phy-cells'
+> +
+> +    additionalProperties: false
+> +
+> +patternProperties:
+> +  '^usb2-phy@[0-9a-f]+$':
+
+You should not mix MMIO and non-MMIO children. Either children have
+distinctive addressing, or not. Not both.
+
+The other problem is that your children have no resources, so are not
+really distinctive children and should be folded in to the parent.
+
+I already asked that at v2, so let's finish with asking: drop the
+children.
+
+Best regards,
+Krzysztof
 
 
 -- 
