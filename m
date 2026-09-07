@@ -4,73 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 069BBC79F89
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 11:31:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 636D5C79F99
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 11:34:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0lP1YoIyP814ygYjre1zdNCSalnnWIYDKt4oCDw3QrE=; b=LzR5frkOvx3al5
-	usOg6YRr+r+eDM9M7/5xKToXPf+a0wPB+EaicjTpU+P0QMTF9bNIOSG200QM4sF2CuhKjrQGiQUlQ
-	NWgqf4vCiTRVvm0M0wXxWzVpcfC9U4e5dKFTMQGH2nQVxr0g3zZnL4mD5A+UDsHgBEhGhbt39LCpa
-	AFalK4fcvyxBsrrWXmYZfo4++1kmC5uXlPu11+IsM41gFOtyihL6JtOSuhqFcoklTt0x0ezH/tl12
-	fUPSv0IkRzx8Q+FtZy02bENodZXv+av5FKNw4XxswwSbSoGKBckkfF+uQ7xgwKRxqNuAIrJNdyq/f
-	im//dHU1cjpWfqIVeZ/g==;
+	List-Owner; bh=6LsqiGweUDEkWfhuzsT0OxoaUEjsWB9H3LhX4Dl/h68=; b=ILTwCaQhuQf8gE
+	3lDKdf/Tm8RL7l19bVnejPfvbOF14jec2kjU5yODDANnEonB1NwZ81tMJbKCNtR/jt3LXpRgZNu6R
+	wQ9qnqnpNL21GfJK9Zk71qPzswoXlZaxSSoATNoM0lSPYkjrebsb/9xtzMcQwY89c28LcpuXGzCqn
+	Ignq2HfE/oP99Z35Mf4ggaoaS7aUjddCos1YlPyQJyXNMigET0/AUtfqyajmYhZmj8T7rMRyCz5JV
+	GuH7s3+tM2KLJfNTw2HW9z8ocaUhLQ4BYXpHplbH3yeSkLsXGV8ThK7bJoXWY7mtE5lzVg1dNdTzH
+	r6xpdW2JidWa5BSdU1Iw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3XZG-00000006fCy-2zw1;
-	Mon, 07 Sep 2026 11:31:18 +0000
+	id 1x3Xc6-00000006fX8-0eYO;
+	Mon, 07 Sep 2026 11:34:14 +0000
 Received: from mail-pl1-x62d.google.com ([2607:f8b0:4864:20::62d])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3XZE-00000006fCH-1jNm
+	id 1x3Xc4-00000006fWX-0OIR
 	for linux-phy@lists.infradead.org;
-	Mon, 07 Sep 2026 11:31:17 +0000
-Received: by mail-pl1-x62d.google.com with SMTP id d9443c01a7336-2d91ded8174so26287355ad.1
-        for <linux-phy@lists.infradead.org>; Mon, 07 Sep 2026 04:31:16 -0700 (PDT)
+	Mon, 07 Sep 2026 11:34:13 +0000
+Received: by mail-pl1-x62d.google.com with SMTP id d9443c01a7336-2d58efc7356so42772895ad.1
+        for <linux-phy@lists.infradead.org>; Mon, 07 Sep 2026 04:34:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1788780675; x=1789385475; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1788780851; x=1789385651; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:content-type:mime-version
          :references:message-id:subject:cc:to:from:date:from:to:cc:subject
          :date:message-id:reply-to:content-type;
-        bh=EGym5Igy1VmQiAX5TVELJlk0ohvxnDxKp7lmlY7ezN8=;
-        b=CnLczK/+eQLsdEgOt/6NkVeKjDlibq0QoszqrB//0ZKO4z3AcEOXMNx25G5SGbxYeD
-         pa6GYkc3U5WiRTQAT7MS4geTnT/qrbAqVwg4ThbUciHDIn4MLsgB9cwBwsIFXu2+Gge+
-         BXoyGIAGmMRl5oLPVqcsxQX2PQW/GIkMYfsIS8HaOmYW3ZTso87eLphQtySj6JJhrvpC
-         gWhda7gneAyvUcI7fOfYzqzCaLCxpxBsaKwKu8x0cUQyW1NcV4a5pl7uNg8ZlQnXn/nT
-         OrVrkONkJasiGKSvpJZubjHGJMe0Gj1aZKUkdAW/GvpiCTgWZLDE3WrK3HR4XE5pEErJ
-         FgbA==
+        bh=b0HO00FFYat2iO5z4XYKUwvadSW1KbkDr8EJUWfNwQM=;
+        b=iaAeQsJKyHqryC/usWIsFPC5Vgh/8gQrCnPuRS9rXyrpdfDDhmOkY1w0ZgDWr8gkTn
+         q8mUxWAwF0kmOnQKNF3LepIk6WcEjp86dlHiHblUe1bg7u785hu7lVseSKAOMMFuio/f
+         6NexwdXkToOA91+Uryej0Zl789VQxIv1uln27ynTBY3SndfsQaDboTwBdezntYDPStrZ
+         jrUSC2JTwqu7ILGF+JBYiIbey87I+9NdN7PU00zmFDpNWTse9caIAkFwjg9/Kcw7NVLF
+         W0zwMRcStW1RS4UPJ3DgsNl7e8FUGMmmnSnBkaGoT7ktT1zN9pZIzY+OuiLmgIiGV2p/
+         Y3PQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788780675; x=1789385475;
+        d=1e100.net; s=20251104; t=1788780851; x=1789385651;
         h=in-reply-to:content-disposition:content-type:mime-version
          :references:message-id:subject:cc:to:from:date:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=EGym5Igy1VmQiAX5TVELJlk0ohvxnDxKp7lmlY7ezN8=;
-        b=XMZKj7CQi61vmT2zqT7VO7u4+eNudgFjeWPUw2gX72OQf3RKl467/rOzjF4sPLM6kd
-         OirXdZyfFnGpVeuxrURQkbolS31Ic8Oao5aI13zByNqggptSSS1WayJiBqVbSybS5Fm4
-         aeaEPInpWOyAtqQyTWzZo09bFNBiESVn0yRU4Wr8L5AHEyXCjuezpVVHGEeyD72XGhHd
-         f419efszmo8/9FBatyCOn0VOMv+Gu+JdnK6usImFmOSjGd4ggoXXxK5Da5mNCGwVgDf8
-         uDASLVZgE6riRbKu0Jhj1tKnWFzK9GA5KpDkSc77Nr2PEo6YZDZFfcfqR2vOMZEQ0y1Q
-         L+zg==
-X-Forwarded-Encrypted: i=1; AKwUvBxmeiQpOuzwLQzK8lm9Mrl3r187dRbKIWQC5cS3KWjlpTjrRMLo9YVWtr/vYztwW9Y5pa1dbuby1xc=@lists.infradead.org
-X-Gm-Message-State: AFuF++m8JmO7cP/JzXujB1X2JrMlb9yi57llSvU8VPHxAATL3R4fhK3l
-	d3uVLU9YPfl82uESm9W7iJPQQXv2vPNsawRJZHyyqPBbttI4/lgpeXpm
-X-Gm-Gg: AYBFou1a17jDOsCVmk39WK49TCErkIv80o/YLnFXkrwmm3WJ0kpUKZeC4ghSOXrdZop
-	a2orDSEZLFcfCTTzj298MmQFAFx+V6HZY5iJKJZ0QpPl/kPbOySYFV/Nstk1m+EYVe5Lvm1wMxV
-	I0pgIvRTmGGks2FxZHG+Adnm6Fa3KxetFkgNPQDgLlinUmirqqQn+FjWPzzMFyMA4Q6kNVLKNTH
-	WK/W/elphH65uYZ9Tcdcm4/+j8sHJI71I/YJnjgRh4yhkRjuhTmS3Pjh20AnkoQMoSFF7/9e3MX
-	oyOyu4ScxoK2qF/esKshe7k4QisFMQSjl1U2l1hjjc6vus8kV+QhEuTl3GbUTPQZsBjrOQjzgtn
-	zcHwjuEsXtkdS/cDCDQlF9VwSiACNJFva7hrI31xdSSCbIGBAK/LJcjr4lzFouhtF8Nz7vARKtZ
-	I1dnllEX9Vsf771KpRuGFoJszubIOC7hELEKl8VT1PEysX8Z//G52UY+Nk7UjiJL6kEzJMIQ==
-X-Received: by 2002:a17:903:11c8:b0:2d8:d4de:fa80 with SMTP id d9443c01a7336-2db1235721dmr306706525ad.4.1788780675312;
-        Mon, 07 Sep 2026 04:31:15 -0700 (PDT)
+        bh=b0HO00FFYat2iO5z4XYKUwvadSW1KbkDr8EJUWfNwQM=;
+        b=OZcZW2lYJx0I6wt8uZSU9TfpbYseAfEWQfVHN5QjDfixyysQrWTyQh6MXAwKl1oh2g
+         dyayN0dZKtpyKOT4zkATFZTMeddotMh1GNtRHifnmaqe40IWWfnjMumZNz4eYHyopl+n
+         n1pYcXG7TUeoV9eFxeGWHxQIE5dIIyJoHw/DSIi0YBw6qpRYDjkHTx+iVap2O4whzW6k
+         6Nq6CztmOxY5yQplfh+zCX5rMTLo0mVxWllTLHxnqIu3JLaVjn3pIbdD5pSVHHgyaJnp
+         aI4Rs28CA1NmYaiXlphDucbsGgkb5w2sugQbGwxWJ+cf2tXf85Ef0LUaeEoCpJbeIBXg
+         ss8g==
+X-Forwarded-Encrypted: i=1; AKwUvBykjZ8PRg/3yNopeslABtAwKiDVX3jNCMRpSIFYz8k9amkS3OIKdq1ppVcIttTA4NvhAhH5629lO7U=@lists.infradead.org
+X-Gm-Message-State: AFuF++kweOuyVxxcPL8ATv9n2X6bh2mzuPzYHAm8nYvi16ZxDJLz2Zr4
+	Ii5XDHwiUj2RFJKeyVfBcNSfZPKs1IQYniYHXvd9W1J/gSUJs0kSOuC5
+X-Gm-Gg: AYBFou1XRSIAOmLsjY2dH1aaLrBJtjUKqmaoSmKrxhrCH//iwKkoye4xSyNJzx80C+h
+	AAwEN2RFvZ3Vvtt8vBOTjAUi3fHdWa9xj7L1erzWFHP7Se69MJ61nesc5ZHaHzJoIaOy5Uhmc7j
+	8AL0dfJjK2YLSVIwjst8s0jsVak2WpcWhfs2hTirrW6vjfT+K40JaALIC19Hp6bulNdWbKvOd6W
+	kcSE0x43sRAH3/s0gBifL6v+wXiZFEPV/myNufyBwI0kmUC84Lby48JvTbKox1ejfnUDKgiVStu
+	9fR40tnriaOdBJYOH0/++OD1/glawky2ZJNc4W6lyvIsC+x4Y7eMKxzaP2cku8MhuE+U3Qe1BSX
+	OmG/vufPkogkXXZtuBtxllI1AJerax9WZGfQnTUQhsLZig8vBlwmhF8A57/sg5qcue0r8HOI7fk
+	Z/JWRjR9sPHJZ2t4bax6awSLRsjm6FvHOsTUYwaBvxgA1UKDZFK9Eq8PQ/wDs=
+X-Received: by 2002:a17:903:2ca:b0:2d9:3850:2741 with SMTP id d9443c01a7336-2db12255f7bmr330259655ad.0.1788780850921;
+        Mon, 07 Sep 2026 04:34:10 -0700 (PDT)
 Received: from localhost ([2001:19f0:8000:3e6e:5400:6ff:fe38:3d01])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2db1cdb4acesm40477485ad.4.2026.09.07.04.31.14
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2db1497d9ddsm43944095ad.31.2026.09.07.04.34.10
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 07 Sep 2026 04:31:15 -0700 (PDT)
-Date: Mon, 7 Sep 2026 19:30:46 +0800
+        Mon, 07 Sep 2026 04:34:10 -0700 (PDT)
+Date: Mon, 7 Sep 2026 19:33:41 +0800
 From: Inochi Amaoto <inochiama@gmail.com>
 To: Vladimir Oltean <olteanv@gmail.com>, 
 	Inochi Amaoto <inochiama@gmail.com>
@@ -78,18 +78,20 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
 	Andy Shevchenko <andriy.shevchenko@linux.intel.com>, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
 	Yixun Lan <dlan@gentoo.org>, Longbin Li <looong.bin@gmail.com>
-Subject: Re: [PATCH v2 2/4] phy: core: Add common helper for get phy phandle
- by index
-Message-ID: <ap6gVPncPzdcNWAa@inochi.infowork>
+Subject: Re: [PATCH v2 1/4] phy: core: Add common helper to add phy phandle
+ device link
+Message-ID: <ap6g-SwI6vvmdnB6@inochi.infowork>
 References: <20260904083709.425893-1-inochiama@gmail.com>
- <20260904083709.425893-3-inochiama@gmail.com>
- <20260907110308.nc3jwwoyv7j2mlxp@skbuf>
+ <20260904083709.425893-1-inochiama@gmail.com>
+ <20260904083709.425893-2-inochiama@gmail.com>
+ <20260904083709.425893-2-inochiama@gmail.com>
+ <20260907110121.hfrblphv5vhzobj7@skbuf>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260907110308.nc3jwwoyv7j2mlxp@skbuf>
+In-Reply-To: <20260907110121.hfrblphv5vhzobj7@skbuf>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260907_043116_475239_832A556F 
-X-CRM114-Status: GOOD (  29.99  )
+X-CRM114-CacheID: sfid-20260907_043412_157632_A8CE65F5 
+X-CRM114-Status: GOOD (  23.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,132 +108,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Sep 07, 2026 at 02:03:08PM +0300, Vladimir Oltean wrote:
-> On Fri, Sep 04, 2026 at 04:37:06PM +0800, Inochi Amaoto wrote:
-> > Several phy helper use index to get phy phandle of a device node,
-> > add a common function for the future reuse.
+On Mon, Sep 07, 2026 at 02:01:21PM +0300, Vladimir Oltean wrote:
+> On Fri, Sep 04, 2026 at 04:37:05PM +0800, Inochi Amaoto wrote:
+> > It is very common for adding a device link for phy phandle
+> > for device managed phy helper functions. So add a common
+> > helper for future reuse.
 > > 
 > > Signed-off-by: Inochi Amaoto <inochiama@gmail.com>
 > > ---
-> >  drivers/phy/phy-core.c | 51 +++++++++++++++++++++++++-----------------
-> >  1 file changed, 30 insertions(+), 21 deletions(-)
+> >  drivers/phy/phy-core.c | 38 +++++++++++++++++++++++---------------
+> >  1 file changed, 23 insertions(+), 15 deletions(-)
 > > 
 > > diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-> > index ea79913fbb87..a7d7acb5d3c2 100644
+> > index 21aaf2f76e53..ea79913fbb87 100644
 > > --- a/drivers/phy/phy-core.c
 > > +++ b/drivers/phy/phy-core.c
-> > @@ -681,33 +681,49 @@ static struct phy *_of_phy_get(struct device_node *np, int index)
-> >  	return phy;
+> > @@ -606,6 +606,26 @@ int phy_validate(struct phy *phy, enum phy_mode mode, int submode,
 > >  }
+> >  EXPORT_SYMBOL_GPL(phy_validate);
 > >  
 > > +/**
-> > + * of_phy_get_by_index() - lookup and obtain a reference to a phy using a
-> > + * device_node by index.
-> > + * @np: device_node for which to get the phy
-> > + * @index: index of the phy from device's point of view
+> > + * phy_add_device_link() - Associate the phy with the device
+> > + * @dev: the device to link the phy
+> > + * @phy: the phy to associate
 > > + *
-> > + * Returns: the phy driver, after getting a refcount to it; or
+> > + * Associate the phy with the device by using device link.
 > 
-> Not driver, but device.
+> I guess it would be good to specify somewhere "consumer" device, because
+> there are multiple devices involved.
 > 
-> > + * -ENODEV if there is no such phy. The caller is responsible for
-> > + * calling of_phy_put() to release that count.
-> > + */
-> > +static struct phy *of_phy_get_by_index(struct device_node *np, int index)
-> > +{
-> > +	struct phy *phy;
-> > +
-> > +	phy = _of_phy_get(np, index);
-> > +	if (IS_ERR(phy))
-> > +		return phy;
-> > +
-> > +	if (!try_module_get(phy->ops->owner))
-> > +		return ERR_PTR(-EPROBE_DEFER);
-> > +
-> > +	get_device(&phy->dev);
-> > +
-> > +	return phy;
-> > +}
-> > +
-> >  /**
-> >   * of_phy_get() - lookup and obtain a reference to a phy using a device_node.
-> >   * @np: device_node for which to get the phy
-> >   * @con_id: name of the phy from device's point of view
-> >   *
-> > - * Returns the phy driver, after getting a refcount to it; or
-> > + * Returns: the phy driver, after getting a refcount to it; or
-> 
-> Same comment here. You are changing this line anyway.
-> 
-> >   * -ENODEV if there is no such phy. The caller is responsible for
-> >   * calling of_phy_put() to release that count.
-> >   */
-> >  struct phy *of_phy_get(struct device_node *np, const char *con_id)
-> >  {
-> > -	struct phy *phy = NULL;
-> >  	int index = 0;
-> >  
-> >  	if (con_id)
-> >  		index = of_property_match_string(np, "phy-names", con_id);
-> >  
-> > -	phy = _of_phy_get(np, index);
-> > -	if (IS_ERR(phy))
-> > -		return phy;
-> > -
-> > -	if (!try_module_get(phy->ops->owner))
-> > -		return ERR_PTR(-EPROBE_DEFER);
-> > -
-> > -	get_device(&phy->dev);
-> > -
-> > -	return phy;
-> > +	return of_phy_get_by_index(np, index);
-> >  }
-> >  EXPORT_SYMBOL_GPL(of_phy_get);
-> >  
-> > @@ -957,7 +973,7 @@ EXPORT_SYMBOL_GPL(devm_of_phy_optional_get);
-> >   * @np: node containing the phy
-> >   * @index: index of the phy
-> >   *
-> > - * Gets the phy using _of_phy_get(), then gets a refcount to it,
-> > + * Gets the phy using of_phy_get_by_index(), then gets a refcount to it,
-> >   * and associates a device with it using devres. On driver detach,
-> >   * release function is invoked on the devres data,
-> >   * then, devres data is freed.
-> > @@ -972,19 +988,12 @@ struct phy *devm_of_phy_get_by_index(struct device *dev, struct device_node *np,
-> >  	if (!ptr)
-> >  		return ERR_PTR(-ENOMEM);
-> >  
-> > -	phy = _of_phy_get(np, index);
-> > +	phy = of_phy_get_by_index(np, index);
-> >  	if (IS_ERR(phy)) {
-> >  		devres_free(ptr);
-> >  		return phy;
-> >  	}
-> >  
-> > -	if (!try_module_get(phy->ops->owner)) {
-> > -		devres_free(ptr);
-> > -		return ERR_PTR(-EPROBE_DEFER);
-> > -	}
-> > -
-> > -	get_device(&phy->dev);
-> > -
-> >  	*ptr = phy;
-> >  	devres_add(dev, ptr);
-> >  
-> > -- 
-> > 2.55.0
-> > 
-> > 
-> 
-> -- 
-> linux-phy mailing list
-> linux-phy@lists.infradead.org
-> https://lists.infradead.org/mailman/listinfo/linux-phy
 
-Ok, I will fix them, thanks.
+Reasonable. I will update this comment. Thanks.
 
 Regards,
 Inochi
+
+> > + */
+> > +static void phy_add_device_link(struct device *dev, struct phy *phy)
+> > +{
+> > +	struct device_link *link;
+> > +
+> > +	if (!phy)
+> > +		return;
+> > +
+> > +	link = device_link_add(dev, &phy->dev, DL_FLAG_STATELESS);
+> > +	if (!link)
+> > +		dev_dbg(dev, "failed to create device link to %s\n",
+> > +			dev_name(phy->dev.parent));
+> > +}
+> > +
+> >  /**
+> >   * _of_phy_get() - lookup and obtain a reference to a phy by phandle
+> >   * @np: device_node for which to get the phy
 
 -- 
 linux-phy mailing list
