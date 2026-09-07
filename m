@@ -4,57 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 316D6C79FA0
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 17:31:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73FFCC79FA0
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 17:34:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=vw2gAqNR9ilGpgRTcQwiGZZXCqq4X1/dnRh7aJT2oks=; b=PMUTo3p2yrtM/V0devQgGLv6dV
-	DIN042TKFdnxUpOwsl09ihkZckzEIBthQ8pO9bERM4Cz/+/7uSqx5YV6mPZvWFqc7eoN+6rXVPacB
-	XrXFFhmS0eYFpm1T1lMl37bDEjE+kT7adPrd1bG3JmCP5yqJMmeH4nP8yJUIWxraOCEf9TlgwllWO
-	mjB5C4AiH5/9jY3NZuyQd8jmaFuxO6eioC8M/V2sDnUkrtUlPHu2L1SepzW6FDrzuQJQoPyUFbSOw
-	HDuhGyq/qMV/mOQ0eIeqNCj+88PqgMtxFuCtwlPyPuCteEL6CZRnnLuOAtLPXPXsA9Luh8T+rxmkO
-	wRQ56VrQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=i4CJLVdF+p7m68fCjef05n4gl5fC7c2j6g9GnMJNJuc=; b=d9OV4yfHfNvjjw
+	RjKtKqdj0Adtn/uYl82+CWcZcAK6O1RYNcMTP8RabuS6IMCfjvRDzdcVeJJFwArtI1jAWXBkpgYpd
+	Z0Nym9FPWD2qCOJFWRq5OxeTmS6U2LBcEfoK3UVnYmJwnhUnkY8K/MbH7SiskIMbL9zElmRp0duB/
+	elQcJd2SZidBJoTphameKM71jh4LsCCrBGZ0/Kco6tnlPwjLRZKV53tCqqjZUTL8jvZyYwojuDe8Q
+	rVq0OPeLWVDe0AIRU7hFkxYVAUUcrIuvLWDb9uqJXDGJKzDi7mTEZMY2/lj0KCeLipzINCNtzoXxK
+	kEn0qBGJmaZXMVxtqBjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3dC9-00000007Ukm-2nFN;
-	Mon, 07 Sep 2026 17:31:49 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1x3dEb-00000007Uwu-0feC;
+	Mon, 07 Sep 2026 17:34:21 +0000
+Received: from mail-wm2-x10.google.com ([2a00:1450:4864:31::10])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3dC8-00000007UkI-1528;
-	Mon, 07 Sep 2026 17:31:48 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 87A9A601DB;
-	Mon,  7 Sep 2026 17:31:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8DD031F00A3A;
-	Mon,  7 Sep 2026 17:31:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788802307;
-	bh=ApNmqOPKAmvywk6QCgE58hkxGIDGVsi2dDUaD5lB3+w=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=l+jXklYNmg0wDcCYIEY+6nO83b2frlpb6P7pg6jBe27xHaqDhgwamiVboo5hC2tC+
-	 S5vdDg3uIhVVBUKBnVfwbLxtqUuU+TcQ9ZVhdMELiC+4BnY1R3dP1RTuUezxdR3+80
-	 1b/xvY/wz9ANHqBPJ5QbgRnBaZaVvD+5GX111T6bx8qYVqb+6G7ufp9pStuDu3EU7u
-	 GjIdpnOPqYD8fSfKUehdhi4xIrrODsVEvCDy2y7lBAxt/S8VqwjcDjE1cUlubOXJND
-	 YYqjaH4rv6p47VfSNVQUZvZIelfOlUmU4SH8AG9qUvHZiqsCffnelv5z53qwXnzmLg
-	 ymswdYzMDgvSg==
-Date: Mon, 7 Sep 2026 18:31:42 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Hongliang Yang <hongliang.yang@cixtech.com>
-Cc: peter.chen@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org,
-	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	p.zabel@pengutronix.de, gregkh@linuxfoundation.org, krzk@kernel.org
-Subject: Re: [PATCH v4 1/3] dt-bindings: phy: Add CIX Sky1 USB3 PHY
-Message-ID: <20260907-bullhorn-charred-125d3920e51b@spud>
-References: <20260906032431.470744-1-hongliang.yang@cixtech.com>
- <20260906032431.470744-2-hongliang.yang@cixtech.com>
+	id 1x3dER-00000007Uv3-3EUa
+	for linux-phy@lists.infradead.org;
+	Mon, 07 Sep 2026 17:34:20 +0000
+Received: by mail-wm2-x10.google.com with SMTP id 5b1f17b1804b1-49cd82be878so1242065e9.1
+        for <linux-phy@lists.infradead.org>; Mon, 07 Sep 2026 10:34:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1788802450; x=1789407250; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=yXIYeviFW2An3MiG2FIAz4Avl4P0N7d8PiSZ5BjNGB0=;
+        b=osXH1v1zx4LxnpFsN8yqKW16LhUMW3MpuS6IWdQ3Y2aMzDHdkw9k9+ziTnL4KXAMf+
+         PrtYgB5Ojr6tsk5oNa4aci0vX8gLni/a3eVy/4JpKNJRknB+kVgO0Usw7pQRM8lXEHrS
+         r1MqIPAPLlhAYtVr87CwJTa9g6JYYgCMbV8l0cQXzAKl8LLKoF9Si/5awTKw/CANhw3H
+         Q7r7d2TYlMUZa6nve+GSrRP+m3+2t/wg/Kw6uovLkW0ac34yEoj9/Y+LF0oypTykJu6H
+         DmbHlj2og9lfsuEDgA9jufKStayB3yib+S8COpvb3zl7MgHgNTB9kxj/4sSVGTZVxJe7
+         WyjQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1788802450; x=1789407250;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=yXIYeviFW2An3MiG2FIAz4Avl4P0N7d8PiSZ5BjNGB0=;
+        b=WH00ypTmvPJ9JWOv+a+tHFV5iZfR2U47CrH6WgLhq/oW5sV4dTxD2j3Muh24BkxIQV
+         Uf+VfkAOrGLNy9cQqVlh4Bg3BpYoFpOfjff5jeTbxObFDadyfcLUse+cg5vAtzHVcs/c
+         vglHvdlH6FJZEr/54LKUPRN1AmbcKeq4vaPClCL0QDTSRYYQLfOMxj5XHv8k5qV8T6Sp
+         lYY21Dbqg4W5/0DEINYJXhFJeMMJOcymwKb+bYkUJ8iyH+Zn6pnJdh9vyysxKlSEAfCR
+         M6jeVMIdNnFDytYFkPhaAP/IUp7GECDJe6WYMzxnLz91xjMt8nAxxzRiSWmgM3qjDMZD
+         tDEw==
+X-Forwarded-Encrypted: i=1; AKwUvBxBMVLy/pxH4OCBSd23ukmEV7j4D7dAUSx9VEEnuaAfX5o8RtSggo6DnzDqD0jAaGLbOhnuySXJpJE=@lists.infradead.org
+X-Gm-Message-State: AFuF++lcZ4Ec2ZRGPqW6y25iQo4arZ3UjgSEmjY5CPGVhAWQq5hKdLBq
+	hL3fTra+hJ+HD1OFSTKpHI0AYf7JEF9lkQ9GqjDydD0yFVBdMdMer4s1
+X-Gm-Gg: AYBFou2jTf5aDqf3EW8j8ayQZx6DesE//euA/orxdfMKGQuSO7N8gUvwNrJcCqjTAoB
+	4HeO620W+kw+idKUbw0H1uz3DVYP+qeQaq17qF81fbIiac5caS0EaZV7yX6saDxFDsiDLXw65xA
+	CpPhbo8L0tF1ctVGaWQ5ioLFE5W3bwMhPCFRwhNMHSybYhYVFR19otnDvUVdHW6dGj0axidQuc0
+	PW490UpQgl82bifSHkvbEie08VrITPed5M+VUoh3TNYp/0e2KRJtaIEVlsLi6rsYMRpemWg3Sko
+	6lLnBbsVXHFnwSykv7b6e6wNvUtRf6aIkr7L78Qyt0iie+d8fNFn8r0S6KLM2I8Yxaiz5Lbcy4c
+	LdcVAZ+uPU+DiKAGpCC42ylEHOqHCX5EhNR4d2HtEMp2PSwq0litdVKmVyvHVcrTQOJi1Y5I2Mc
+	y8X2v3DWAx4yCSxhQX3a9WZSciSboa4L913gQoppprjQ5EWVVzBoSTizxv2j9QKeKc1TrDrhVIX
+	jdd7uC4VoEyxQk7aLcXzUDL8OgvNl7m1AsPbiTtRvvX6X4lajElRaqb9jCfDv1XTdyx
+X-Received: by 2002:a05:6000:460f:b0:485:8e7f:ec0b with SMTP id ffacd0b85a97d-485907fd697mr14697954f8f.5.1788802449653;
+        Mon, 07 Sep 2026 10:34:09 -0700 (PDT)
+Received: from OrangePi5-Plus.BB-HOME (20014C4E1B8822007B3AD9A87B9E27CB.dsl.pool.telekom.hu. [2001:4c4e:1b88:2200:7b3a:d9a8:7b9e:27cb])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48588392b3esm34477370f8f.12.2026.09.07.10.34.08
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 07 Sep 2026 10:34:09 -0700 (PDT)
+From: Igor Paunovic <royalnet026@gmail.com>
+To: Alan Stern <stern@rowland.harvard.edu>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Igor Paunovic <royalnet026@gmail.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Sebastian Reichel <sebastian.reichel@collabora.com>,
+	linux-usb@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: s2idle resume hangs in ohci/ehci on RK3588: HC registers touched before the USB2 PHY is powered back on
+Date: Mon,  7 Sep 2026 19:33:47 +0200
+Message-ID: <20260907190000.s2idle-usb2-resume-royalnet026@gmail.com>
+X-Mailer: git-send-email 2.53.0
 MIME-Version: 1.0
-In-Reply-To: <20260906032431.470744-2-hongliang.yang@cixtech.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260907_103411_849177_E6773DED 
+X-CRM114-Status: GOOD (  23.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -66,46 +102,113 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3152753309261902959=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============3152753309261902959==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="KgkeIoGAnZ4PK4Ao"
-Content-Disposition: inline
+Hi,
 
---KgkeIoGAnZ4PK4Ao
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+on an Orange Pi 5 Plus (RK3588, mainline 7.3-rc1 based tree, generic-ohci/generic-ehci with
+phy-rockchip-inno-usb2) resume from suspend-to-idle reliably hangs in the USB 2.0 host
+controller resume path. The CPU that runs ohci_platform_resume() never returns (RCU stall,
+"CPUs still haven't responded to the NMI"), everything that waits on it in dpm_resume()
+stalls behind it, and the board needs a cold reset. With the four USB 2.0 host controllers
+unbound before suspend the same s2idle cycle completes every time (RTC alarm wake, full
+resume, 3 s), so the rest of the platform is fine.
 
-Acked-by: Conor Dooley <conor.dooley@microchip.com>
-pw-bot: not-applicable
+Wake-up itself works: the board is woken by the hym8563 RTC alarm (PM: Triggering wakeup
+from IRQ 52) - that needed a separate dts fix which I sent yesterday [1].
 
---KgkeIoGAnZ4PK4Ao
-Content-Type: application/pgp-signature; name=signature.asc
+To find where it stops I put kprobes (with tp_printk) on the resume path. For the two
+OHCI controllers, same kernel, same cycle:
 
------BEGIN PGP SIGNATURE-----
+  fc8c0000.usb (host1, survives):
+    ohci_platform_resume -> ohci_platform_power_on (clocks only) -> 0
+    ohci_resume  entered        @142.838
+    usb_hcd_resume_root_hub     @142.859   (the "powerup ports" + msleep(20) branch)
+    ohci_resume  returned 0
+    ... later, root hub resume: usb_phy_roothub_resume -> rockchip_usb2phy_init/power_on
+        -> ohci_rh_resume
+  fc840000.usb (host0, hangs):
+    ohci_platform_resume -> ohci_platform_power_on (clocks only) -> 0
+    ohci_resume  entered        @142.994
+    (nothing else, ever)
 
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCap70/gAKCRB4tDGHoIJi
-0tcpAPsFjtkQsLkO0xQoaMnH9KnvF5DZqy2ksAPdjmNcv8D8hAEA1Tok2QAAimrH
-dmO9g5jvHqsDBlo/TUjtf9/4XM54DAI=
-=pknf
------END PGP SIGNATURE-----
+So the hang is at the first HC register access in ohci_resume() (the ohci_readl() of
+HcControl / the port power / intrenable writes), which happens before the USB2 PHY is
+powered on again: since the PHY handling moved into the HCD core (usb_phy_roothub), the
+PHYs are powered off in hcd_bus_suspend() and powered on in hcd_bus_resume() (both only for
+system sleep, !PMSG_IS_AUTO), i.e. at root hub level, and the root hub resumes after its
+parent controller. At probe time the order is the opposite: usb_add_hcd() does
+usb_phy_roothub_power_on() before hcd->driver->reset(). That matches what I see: after a
+"hosts unbound" s2idle cycle, binding the drivers again (probe path) reliably works, while
+the resume path hangs.
 
---KgkeIoGAnZ4PK4Ao--
+On RK3588 the inno-usb2 PHY powers down its PLL/refclk/bias blocks while suspended
+(phy-rockchip-inno-usb2.c, comment in rockchip_usb2phy_power_on() about common_on_n and the
+reset done on power-on), and the OHCI/EHCI controllers take one of their clocks from that
+PHY (clocks = <&cru HCLK_HOST0>, ..., <&u2phy2>). So an AHB access to the controller while
+its PHY is still suspended has no clock to complete on, and the access never returns - which
+would explain the "no reaction to NMI" symptom (this is my best explanation so far, not
+confirmed with a bus or clock trace). The Rockchip vendor tree avoids this by giving the PHY
+driver system PM ops that reset and re-tune the PHY on resume, before the consumers run
+(rockchip-linux/kernel, develop-6.1, phy-rockchip-inno-usb2.c, rockchip_usb2phy_pm_resume():
+"PHY lost power in suspend, it needs to reset PHY to recovery clock to usb controller").
 
+Data points (all dvfs test kernel, 7.3.0-rc1 based; every "hang" needed a cold reset):
+  - all 4 USB2 hosts bound, s2idle:            hang (ehci x2 + ohci calling, none returned)
+  - EHCI unbound, OHCI bound:                  hang in ohci_resume of fc840000 (2/2)
+  - all 4 unbound:                             OK (4/4)
+  - all bound, cpuidle limited to WFI:         OK (1/1)   <- timing dependent, see below
+  - the surviving controller (fc8c0000) took the "HC state retained" branch of
+    ohci_resume(); the hanging one (fc840000) did not get past the first register access.
 
---===============3152753309261902959==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+(The OHCI platform devices resume synchronously from the main dpm_resume() thread - power/async
+is disabled for them - which is why nothing else in the resume sequence is printed after the
+hang; the EHCI ones are async, so in the all-bound case two ehci and one ohci resume were in
+flight when everything stopped.)
+
+Why host1 survives and host0 does not (identical PHY port configs) - reading the PHY GRF
+status and the clk enable counts right before suspend, in the test configuration (EHCI
+unbound, OHCI bound): the u2phy2 port (host0, nothing plugged in) is already in PHY suspend
+(GRF status phy_sus set, no line state) and its usb480m clock has the OHCI as its only user;
+the u2phy3 port (host1, a HID dongle plugged in) is not suspended and its clock has more than
+one user.
+
+So the port without a device is already put into suspend by the PHY driver's host-port state
+machine, and its 480 MHz clock has a single user (the OHCI): ohci_platform_suspend() drops it
+to zero and the clock output is gated; ohci_platform_resume() re-enables the clock, but the PHY
+itself stays suspended (PLL down) until the root hub resume powers it on, so the first HC
+register access would have no clock to complete on. The port with a device connected keeps its
+PHY awake and its clock never reaches zero, so the same code path survives there. With the EHCI
+siblings bound the outcome depends on timing (the async EHCI root hub may power the shared PHY
+on before the synchronous OHCI resume touches its registers), which would match the mixed
+results. Also: after suspend the OHCI ends up in the RCU-stall/no-NMI-response state, i.e. the
+CPU is stuck in the bus access, not in a software wait.
+
+Questions:
+  1. Is the intended fix to power the roothub PHYs on before the controller's own resume
+     touches the hardware (e.g. in ohci_resume()/ehci_resume(), or a usb_phy_roothub_resume()
+     call from the platform glue before ohci_resume()), or should this be handled in the
+     Rockchip PHY driver with system PM ops as the vendor tree does?
+  2. Has anyone got s2idle + USB2 host working on RK3588 mainline? I could not find a report
+     on lore.
+
+I can test patches on this board (UART console logging is in place), or try one myself
+for whichever layer you think is right - I have not attempted a fix yet because that choice
+is the question. Per Documentation/process/coding-assistants.rst: the kprobe placement and
+the log triage above were done with the help of an LLM assistant; all measurements are from
+the board and the reproducer is the unbind/bind matrix above.
+
+[1] https://lore.kernel.org/all/20260906181622.11991-1-royalnet026@gmail.com/
+
+Kernel: 7.3.0-rc1 based (drm-misc-next + accel/rocket DVFS series), BL31 v2.12.0-10-g70d814213
+(v2.12.0 plus one local cherry-pick unrelated to USB), Orange Pi 5 Plus.
+
+Igor
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============3152753309261902959==--
-
