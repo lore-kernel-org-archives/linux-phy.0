@@ -4,89 +4,148 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C664AC79F9E
-	for <linux-phy@archiver.kernel.org>; Sun,  6 Sep 2026 22:52:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D979C79F9E
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 02:26:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XW/ngL21D1NdzrrjgQa3uAdAtx4On08MC7ScfbKwF1k=; b=wmXsyQhGZyNeZA
-	wFwpJCvNnDZK0hEfRgn4JGV2rNrxdbyOqmrUvEtB/F47Lfdj2hu1boiq59DkXvHJVBwYDagLYNkn0
-	Sk/mirDsYrgyAJT37cBtaWPfDkXSHnnvOiMM6HE/rHoK6x7dMgU+gZ3iBHMdMFM2vFpfRfLQ0xzn4
-	i9hua6YxNwBBi/zv8cvPZRXuZJuMnuAOD3gyy9LuBQGg2GIOdiuxp6fQmdCu2eXzvOH19aNKk0Xzs
-	F2XCAce322rQMSPbmEDe+mCTAeKIoeeLc504Ktw++GVpWkXcnskKS05PRRm9pfz99Nu7eQR4SrMIW
-	KKCxJ+tzXlaYclCgBjhA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EXs0LGiuVw/AMEHPKs3MAgEfV4B5vKi5/C6AeFtz1/I=; b=fJHRYrvsN39N6d
+	4dGeyVCbZWAsJ8vZMIZCO6P5TCF+N0v8nsDRfW/yRzWZUtZJg8FsICSCCm1SBFNOvTSUqvpRBchTt
+	nFWlmwdCKdTXBEsTDk319hNO9JKzPM8Zdm/UWY5Qrff0sGFFyIj6HqSQsUasFgDMZEkjkvxornL/b
+	M2el0tOSPDGOIcd4fObC8N0J8i/x2sVhMYGJvr0F9an0F55ZG2A35LSA1WW7k/zDD+JvHnJ/llL8F
+	s4T7k9f1o/O44tlzJNvbR/Fb9tQPBBIUOLgMGRfAIAD8ufbIoyzQPNghUUxHHGcd3I36SQ2p2jLJH
+	SUdcLeasXYxEAnt9On+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3Lij-00000005cWg-0Gb4;
-	Sun, 06 Sep 2026 22:52:17 +0000
-Received: from mail-qk1-x72f.google.com ([2607:f8b0:4864:20::72f])
+	id 1x3P3q-00000005i7L-11rn;
+	Mon, 07 Sep 2026 02:26:18 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3Lig-00000005cWL-242k
+	id 1x3P3n-00000005i6r-2KU6
 	for linux-phy@lists.infradead.org;
-	Sun, 06 Sep 2026 22:52:15 +0000
-Received: by mail-qk1-x72f.google.com with SMTP id af79cd13be357-930f618435cso338464485a.3
-        for <linux-phy@lists.infradead.org>; Sun, 06 Sep 2026 15:52:13 -0700 (PDT)
+	Mon, 07 Sep 2026 02:26:16 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6872NuC52211762
+	for <linux-phy@lists.infradead.org>; Mon, 7 Sep 2026 02:26:12 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=n0jUTNNzExuLuTq0dCzLcka2
+	2DJ7rjiceOe/URuM9WY=; b=YcdFf4wHGK9LHBWgjYX3BMyydcOUxhu32MqWOv22
+	iOKFSgTSTQCWH3YTlOduJREptzNaFQAO6+x7KF16tVBEFORC7+qU9X5DLtbTqjW3
+	bJ3XeqHrYqBOSs+qj2tQr3/n5BwhRAPZCYMgXpYw/2MPPgxVoIAxdjWwpeq5aOls
+	+Dym7x9+W1ndeo7PN41gqnjR8QESG5pgrO7CBuFHbwvriTdbJdfZ5skC62F3yfuq
+	1tjJHPXnqN/zUCGFLmTpPUnujJCUSkqn88ZLzgJRgD07AnJLhtsXUvDXYj+qVVBJ
+	097VYMPrgBX2aMBCkOi6QGhX8CWc2nOcdZ+aLQeZT9Ovsw==
+Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ggbuemq1y-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 07 Sep 2026 02:26:12 +0000 (GMT)
+Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-cc1c18c775eso4289748a12.0
+        for <linux-phy@lists.infradead.org>; Sun, 06 Sep 2026 19:26:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1788735132; x=1789339932; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=mIJN/sAwYOGsx4KiLS2BjZwfic1XFdCFhhrLHJS/Pvk=;
-        b=lrN3w+iucaGTVfs+FrH2WF38360aKkxnmP9XoOwDd4bHalz/3QifwyKS3P2gLyCCvU
-         90Xy7H05ARZNG40CURzX8UAx/7pOIT5jwyTFiIYOSrTsEGMsHV3Q/1I5Ky+tFxhSv/c1
-         ZLHuteYm5gUDZPWF18Osucea04J9Qh7vjRVhC7+cvjMKaMiV2lXZN2os2uSMkYXViFQI
-         5gKYl44WzCWqZepK0WpqYlNIDvjxSqflfMz3/USypcKvNyPjBvi08BRrUUe16R+MW1oN
-         eblQ2JFiCff/y/YwZCv5m6SaVC2hwda042Xn3Sh6MY6NjKr5JjwRtzHtRRfzFOXWIJVB
-         sbvQ==
+        d=oss.qualcomm.com; s=google; t=1788747971; x=1789352771; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=n0jUTNNzExuLuTq0dCzLcka22DJ7rjiceOe/URuM9WY=;
+        b=FWsur05FVvB/3yyYM9kiUiB9qNEca8yRnF7iISRWtKj4ZFwAcFmU+XVcof7JaWck/M
+         U9V2jY5NnePCSwpApVKIOs4Y7o9yQtaQieKiNFY923OX8Hv9xw1zPuZRkIWN4ROVEuMi
+         INKAHtEWkFQP4lxY0Utg2uJRRm6Z8p1x1Zeo+E+/3vZ3gv2uMlxGKttmUojHcuAjYIDk
+         vgdXpRf7zEMsl0o6W8rVLdPcBs6WFWGT7n7bzCQxxyJxcfxL0+3CzkOnzA/pYFqJIqwX
+         D4Q7967BTfYEhfC4CFGtv348rtX4xLjxZ1Rh2x1cwXrrJIbY4G1T3f2yj5XUY++Y9P5G
+         /tcw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788735132; x=1789339932;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=mIJN/sAwYOGsx4KiLS2BjZwfic1XFdCFhhrLHJS/Pvk=;
-        b=f8Dd+tKmHAC6Wz7VvTVZdPoPtlUTHucO3GzPfTRjmFw809eUkIArtpONAbc2wUQ31K
-         tMDyMrbCqJEuqDYh1QcVPtChOjfB3/PbIvG6ZpFNbOhKfT5pqcHxB69gR573dP763SvY
-         72HmYy8aVRrswhqF4i99VPxs2rlJ35e9yVbfLTjHolXhIFeKeaeDnFqk69IK+W2fhZzH
-         TwS6+ttfyJVItS24V5zg+699Rzn+CcAt6Jktfwvb6He1mPue5qKz66J7hLc0gIp/gp4G
-         4XFh10ZfRX2EZeNvgBUL6kTYanPHwYPQNSv0ixNTO2SYyuFWLstgu8+7/K+pbHRQaU89
-         u+Kg==
-X-Forwarded-Encrypted: i=1; AKwUvBwcKo8lqedLxxx7lLVJzULchhPN2RKQqAN5Co7GcH0YB/MYCvd3tpSQ7wtIbDdK1mteC7mNMmwUmQQ=@lists.infradead.org
-X-Gm-Message-State: AFuF++mmRC/b0cKuLkGrsmbG/Mt/opFwdvM9PiXgHeWEdwf9/r61bpsu
-	usdS/NtBHVKEpytlW7qu+j8MgnXOGfyqb0cRT4F2eLHAsFHZYA0g6Sad
-X-Gm-Gg: AYBFou1MHndfXqFIE4ZmseJi8L9Q8WO4sfhqWisKDX39ofOydzvH8N329IJUi0B6zC4
-	dVvb3P+coJv3MCXiK1he++HxEj9TPkYYJFB1KQ3l1A5s40wNRonD4EodF0CC3LNpd2JXN4/CSTf
-	gN2yl8D1iMxptFG2VtDZClIgauIgc3IEijl0BIyOJ4E7RnLZ0apADbbkz7BARqUZd1GoO9nQK3n
-	I2W2lO9Ok1vqcn7xb5tw+YppX9+gvT4uMKrCFUtDvv5Y5rd94KP9vBXtQhzA9JdIEayTNaaBUzl
-	jPs8wF2rISkHmVpW0BCE1MqJEDNqb61NOO3WNp5wKH9a32RZ8RqIbk9q614U/m549FP69OXBAs9
-	ckJq/UH08p6MB73qjG3TjOOpo+yN9J85jcIxWyGy6drKEmFvzVB/FRGnqhXb9ecrdxvJcIqJIUY
-	1e4TMsvekoaQdXgFtIxBye+DlqanBYULsajxgAeBvVGdXNK5Upj62s7cuY3d9zL97GSl17pcZM1
-	yY/+Q==
-X-Received: by 2002:a05:620a:d48:b0:939:6dea:3749 with SMTP id af79cd13be357-939804a747amr1501625985a.45.1788735127989;
-        Sun, 06 Sep 2026 15:52:07 -0700 (PDT)
-Received: from localhost ([35.11.35.209])
-        by smtp.gmail.com with ESMTPSA id af79cd13be357-9399429b97esm444434285a.29.2026.09.06.15.52.07
+        d=1e100.net; s=20251104; t=1788747971; x=1789352771;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=n0jUTNNzExuLuTq0dCzLcka22DJ7rjiceOe/URuM9WY=;
+        b=hrEeL8vZ4KvPK3Rf7kXeSnzV7CJB5v+hLdWGdmxFRTWNLaimfbrl4hLcdtIC6GGs3a
+         agjac99yf1CJ5FxCKXV5rEgpHPt2RSV6djkoUWy7fe0EWahQynnM3n/dEBM6Ar2NzWTT
+         HzpwPcdyVFk5K7PQiOQIjo8MQmnkN4uFvDBB4SQPZBlpht24ZCUgETXPLW0qEKkvgsu8
+         LAiFY7sZwSZiC624cH3A1+cdZjX/6WBPbiE+TOSk0vkPS1HuU2VDVzIWlNVvGx7D/ghG
+         46kSDqQyDtuDfmE+LtYFvnqMIt/plMeH44ATzxst/AmK4TVfqdqDEl0XcfDijAowgGgd
+         nVew==
+X-Forwarded-Encrypted: i=1; AKwUvBzniGxncbqK+xxd7L39ISbO4gQA3OOhcpYwXl+hYgW6RHdpgN2aWcdLNjwlE+ge0mlBEViN6s71nk4=@lists.infradead.org
+X-Gm-Message-State: AFuF++mghzzHUD7JUJHRQzROptKS71plRuoZKdsnB7C2W0h9YwU5FCtu
+	lwyId0UhpxYIYvmjUe5E2tFFvfB/vKr4xE48l2u0nlUXVsqc0kVWf2iDIztyPD9MSGfP/PMHbF3
+	W1JmbkHCbVDByRFoO+I/MUOoJkSi/mSCKAKGzf9bMNFEJhUF+5j1VzuDo3wZYuAu0mtjY
+X-Gm-Gg: AYBFou3iAcy0MPNXfjhHVPMJmBqQW60SvWlJN3+J0iko9BueeXpjT1Hfgx5r7xPXIhy
+	2Ko3qsEltJDeQEiGGXTyvqAJDwnXC5yx4hwc0fxHkL5IS4jQFp9HfFiXyJaWOdSg6J6JOowUCm5
+	PRu4JTUPFf2ZxQMUSfZkbNeebuQ3peto6zBV5pZYUw3IvBP/O8q/xhMgJNDUnU+vNrSXJ0p07BL
+	xxT1UE1sXrhFl3S43KuxnnL1fAJ0HILLW1+AueHIHICTfoLX1vMiEvYZW8GthgjjeM1dfmXNyVE
+	OPL8W87IW1MV5VnTeCo/kdV5+QRRVv2TQjZ/sBLTx1wD1Qi4C31fieB/y1YnJBK8DhsnRnGf/sy
+	pLoivDSMMs7TXCBn7sro2G7OCtI4rzI+u32cOzgRFQDAOHsQ=
+X-Received: by 2002:a17:90b:5745:b0:396:669c:b5f6 with SMTP id 98e67ed59e1d1-39b0803accdmr28515779a91.12.1788747971440;
+        Sun, 06 Sep 2026 19:26:11 -0700 (PDT)
+X-Received: by 2002:a17:90b:5745:b0:396:669c:b5f6 with SMTP id 98e67ed59e1d1-39b0803accdmr28515586a91.12.1788747969120;
+        Sun, 06 Sep 2026 19:26:09 -0700 (PDT)
+Received: from hu-qianyu-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-14324356931sm33810559c88.4.2026.09.06.19.26.07
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 06 Sep 2026 15:52:07 -0700 (PDT)
-From: BurningHoryd <sjunhyuk1@gmail.com>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	dri-devel@lists.freedesktop.org,
-	freedreno@lists.freedesktop.org,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Abhinav Kumar <quic_abhinavk@quicinc.com>,
-	Heikki Krogerus <heikki.krogerus@linux.intel.com>
-Subject: SM8250 USB-C DP alt mode: DP AUX times out in reversed (CC2) cable orientation
-Date: Sun,  6 Sep 2026 18:52:06 -0400
-Message-ID: <20260906225206.2994952-1-sjunhyuk1@gmail.com>
-X-Mailer: git-send-email 2.55.0
+        Sun, 06 Sep 2026 19:26:08 -0700 (PDT)
+Date: Sun, 6 Sep 2026 19:26:06 -0700
+From: Qiang Yu <qiang.yu@oss.qualcomm.com>
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Cc: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Lorenzo Pieralisi <lpieralisi@kernel.org>,
+        Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+        Manivannan Sadhasivam <mani@kernel.org>,
+        Bjorn Helgaas <bhelgaas@google.com>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Maxime Chevallier <maxime.chevallier@bootlin.com>,
+        Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org
+Subject: Re: [PATCH v2 1/4] dt-bindings: phy: qcom: add Nord QMP PCIe PHY
+ binding
+Message-ID: <ap4gvmokukHV1RHT@hu-qianyu-lv.qualcomm.com>
+References: <20260828-nord-v2-0-18bf59d19d6f@oss.qualcomm.com>
+ <20260828-nord-v2-1-18bf59d19d6f@oss.qualcomm.com>
+ <aabdae7c-5294-4789-b123-4fcff8a733e0@oss.qualcomm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <aabdae7c-5294-4789-b123-4fcff8a733e0@oss.qualcomm.com>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTA3MDAyMSBTYWx0ZWRfXyl1bFMqxjEp/
+ Gh9xtDfPo+gB+mXcGNoQYRJskQg4q9uelhfwm932c/6GzI+tN++w9c4UilIiPu1iG0pMm0dRPex
+ siMvT473obySCn1NoA++wlSda2f9H8KGcmMbgNzDyDIL8gV4xDbQx2dpzzhKsSnMQAxX7/ca2Op
+ UZcZaqgtdGqToIaoi3VU6Z0Drfbx92fj0ADTQpK2ZYot5PTj7HBbUCV69n43pyOjT9vA6uZX8Qh
+ Uul9unLOg0bD6tOYDnCYah8pDinEAzAolFACXwfcLp2bYwhPyOuIYAWA6nvPuie5ta+tzWO+Pxl
+ 6TBScip66FEOPTFsa4j3dmSLAUVjLLdVBoRd7qDZRJwjdtEoKoyiAWeAvwfEf5SWTajI2IQeLK/
+ VdZ+c6PDeCG25wKKdidbjizDNxaqfxOl2zopqlmkvGWYWYZxR6lXIcNg7LVbQE+GzECjA19BAin
+ PtncD24lRXurAxgyMYw==
+X-Authority-Analysis: v=2.4 cv=P8AKQCAu c=1 sm=1 tr=0 ts=6a9e20c4 cx=c_pps
+ a=rz3CxIlbcmazkYymdCej/Q==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=kj9zAlcOel0A:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
+ a=gEfo2CItAAAA:8 a=EUspDBNiAAAA:8 a=MuNgaGKqo7zVGC3JrMAA:9 a=CjuIK1q_8ugA:10
+ a=bFCP_H2QrGi7Okbo017w:22 a=sptkURWiP4Gy88Gu7hUp:22
+X-Proofpoint-GUID: zlO-wrT8Dq0gstlH8n5biyiyuXwkVGkk
+X-Proofpoint-ORIG-GUID: zlO-wrT8Dq0gstlH8n5biyiyuXwkVGkk
+X-Proofpoint-Spam-Info: AW1haW4tMjYwOTA3MDAyMSBTYWx0ZWRfXz0RUZizFcfVB
+ uGS7XWg5ix4TAHAEywyw6LedTg5Ayal4mbB57KOYshdZbNToPQ1zfEorwOxCwekD6PIgAmdw+Dh
+ 62QxqGcfVuCmXY8hcDxjb071EEK6g6Y=
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-09-06_04,2026-09-03_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ phishscore=0 impostorscore=0 bulkscore=0 clxscore=1015 adultscore=0
+ spamscore=0 lowpriorityscore=0 suspectscore=0 priorityscore=1501
+ malwarescore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
+ definitions=main-2609070021
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260906_155214_552040_423BFE08 
-X-CRM114-Status: GOOD (  17.36  )
+X-CRM114-CacheID: sfid-20260906_192615_628731_E146A72D 
+X-CRM114-Status: GOOD (  24.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,118 +162,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+On Mon, Aug 31, 2026 at 09:54:40AM +0200, Konrad Dybcio wrote:
+> On 8/28/26 10:43 AM, Krishna Chaitanya Chundru wrote:
+> > Document the PCIe PHY found on the Qualcomm Nord platform.
+> > 
+> > Nord has a Gen5-capable QMP PCIe PHY that can operate in multiple
+> > lane configurations using four PHY segments (A/B/C/D). The active
+> > topology is selected by firmware through a TCSR configuration
+> > register and may be configured as x16, x8+x8, x8+x4+x4, or
+> > x8+x4+x2+x2.
+> > 
+> > The binding describes the register regions, clocks, resets, power
+> > domains, regulators, PHY provider interface, clock provider interface,
+> > and the qcom,link-mode property used by the driver to discover the
+> > active lane configuration programmed by firmware.
+> > 
+> > Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+> > ---
+> >  .../phy/qcom,nord-qmp-gen5x16-pcie-phy.yaml        | 276 +++++++++++++++++++++
+> >  1 file changed, 276 insertions(+)
+> > 
+> > diff --git a/Documentation/devicetree/bindings/phy/qcom,nord-qmp-gen5x16-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,nord-qmp-gen5x16-pcie-phy.yaml
+> > new file mode 100644
+> > index 000000000000..37198f82c611
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/phy/qcom,nord-qmp-gen5x16-pcie-phy.yaml
+> > @@ -0,0 +1,276 @@
+> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/phy/qcom,nord-qmp-gen5x16-pcie-phy.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: Qualcomm Nord QMP Bifurcated PCIe PHY
+> 
+> Quadfurcated, perhaps? Is there a word in the spec that doesn't get too
+> detailed about the number of effective slots that the PHY is divided into?
+>
 
-I'm chasing a DisplayPort-over-USB-C alt mode bug on an SM8250 (Retroid
-Pocket 5) board and would appreciate a pointer, as it looks like it may
-be in the nb7vpq904m redriver or the qmp-combo DP AUX path.
+What about multiple link-mode PHY?
 
-Hardware / software
--------------------
-- SoC: SM8250, qcom,sm8250-qmp-usb3-dp-phy combo PHY (88e8000.phy)
-- USB-C redriver: onnn,nb7vpq904m (i2c, typec mux/switch)
-- External sink: VITURE Beast XR glasses, 4-lane DP-only (pin assignment
-  C, TYPEC_DP_STATE_C), HBR2, 1920x1200@120
-- Kernel: v7.2 base, plus three local qmp-combo patches that are the
-  subject of a separate downstream review (keep usb_init_count across the
-  DP-only mux switch / skip USB3 power on/off while already in DP-only /
-  the residual pipe_clk-in-common timeout hunk). The AUX failure below
-  reproduces with those applied; I have not been able to bisect against
-  pristine v7.2 because plain v7.2 has an unrelated regression on this
-  board (qcom_pmic_typec now requires connector/vbus-supply, which the
-  board DT lacks, so DP alt mode never powers up at all without a
-  separate DT fix).
+- Qiang Yu
 
-Symptom
--------
-Normal cable orientation: DP alt mode works perfectly - link trains,
-1920x1200@120, stable.
-
-Reversed cable orientation (Type-C orientation = reverse / CC2): DP never
-comes up. The DP alt mode HPD notification reaches msm_dp
-(msm_dp_bridge_hpd_notify status=1), msm_dp starts bring-up
-(msm_dp_display_host_phy_init, phy_init OK), but the very first DPCD read
-- SINK_COUNT at 0x200 in msm_dp_hpd_plug_handle - polls for ~4 seconds
-and never gets a reply:
-
-  [drm:msm_dp_hpd_plug_handle] Before, sink_count=0
-  [drm:msm_dp_display_host_phy_init] core_init=1 phy_init=1
-  ... ~4 s ...
-  [drm:msm_dp_hpd_plug_handle] After, sink_count=0
-  [drm:msm_dp_bridge_detect] aux link status: 0
-  [drm:msm_dp_bridge_detect] failed to read caps
-
-msm_dp then gives up and the connector stays disconnected. Link training
-is never reached. Stock Android on the exact same hardware works in both
-orientations, so this is a driver-side issue, not a board/silicon limit.
-
-What I've verified (instrumented kernel, dev_info in the phy + nb7 set
-paths)
-------------------------------------------------------------------------
-- It is NOT a state / refcount / mux ordering artifact: a clean
-  reverse-first plug (fresh boot, reversed cable plugged before any
-  normal plug) fails identically.
-- On the reversed plug, in order:
-  * qmp_combo_typec_switch_set(REVERSE) runs, qmp_combo_com_init(force)
-    writes QPHY_V3_DP_COM_TYPEC_CTRL = SW_PORTSELECT_MUX|SW_PORTSELECT_VAL
-    (0x3).
-  * nb7vpq904m_set() runs for TYPEC_DP_STATE_C with reverse=1, writes
-    AUX_CC_REG (0x09) = 0x1.
-  * qmp_combo_typec_mux_set() does the DP-only transition, com_init(force)
-    again (mode=DP_ONLY, TYPEC_CTRL=0x3) - this happens AFTER the nb7 DP
-    config.
-  * qmp_combo_dp_init() -> qmp_v4_dp_aux_init() runs.
-  So the PHY and the redriver are both configured for reverse, in a sane
-  order, before msm_dp attempts AUX. And AUX still times out.
-- qmp-combo has no DP-AUX orientation register that I can find - AUX
-  orientation on this design is entirely nb7vpq904m AUX_CC_REG.
-- Inverting SW_PORTSELECT_VAL and/or nb7 AUX_CC (making the registers
-  bit-identical to the working normal-orientation case) does not help -
-  reverse still fails.
-- Forcing repeated full qmp_combo_com_exit/com_init cycles during the
-  DPCD poll window does not help.
-
-The one thing that changes anything
------------------------------------
-I added a knob to override GEN_DEV_SETTINGS OP_MODE in the nb7
-TYPEC_DP_STATE_C branch (it normally hard-codes
-GEN_DEV_SET_OP_MODE_DP_4LANE):
-
-  OP_MODE = DP_4LANE (2)      -> DPCD read: 0 successes (many tries)
-  OP_MODE = DP_CC1   (1)      -> DPCD read: 0 successes
-  OP_MODE = DP_CC2   (0)      -> DPCD read succeeds intermittently
-                                 (~1 in 4 plugs, sink_count 0->1,
-                                 connector goes connected briefly).
-                                 Link training then fails, which is
-                                 expected since DP_CC2 is a 2-lane
-                                 op-mode and the source is driving 4.
-  OP_MODE = 3, 4             -> 0 successes
-
-DP_CC2 is the "flipped orientation" op-mode. It is the only setting that
-ever gets an AUX transaction through in reversed orientation. That
-strongly suggests the nb7vpq904m SBU/AUX switch is not being put into the
-flipped routing for a 4-lane DP session - AUX_CC_REG alone does not seem
-to do it in DP_4LANE op-mode - but I don't have the full NB7VPQ904M
-register map to confirm (the public datasheets are image-only).
-
-Questions
----------
-1. Is nb7vpq904m's DP_4LANE path missing SBU/AUX orientation handling
-   that the DP_CC1/DP_CC2 paths get implicitly from the op-mode? Should
-   AUX_CC_REG be sufficient in DP_4LANE mode, or is another
-   GEN_DEV_SETTINGS / AUX register bit needed for CC2?
-2. Is there an SM8250 qmp-combo DP-AUX orientation step that mainline is
-   missing (something the downstream PHY driver does for a reversed
-   4-lane DP session)?
-3. Any known-good reference for reversed-orientation 4-lane DP on an
-   SM8250 + nb7vpq904m board?
-
-I can share the full instrumented traces (normal vs reverse) and test the
-register map if someone can point at the right bits. Happy to turn a fix
-into a proper patch.
-
-Thanks,
-BurningHoryd
+> [...]
+> 
+> > +  vdda-phy-a-supply: true
+> > +
+> > +  vdda-phy-b-supply: true
+> > +
+> > +  vdda-phy-c-supply: true
+> > +
+> > +  vdda-phy-d-supply: true
+> > +
+> > +  vdda-pll-a-supply: true
+> > +
+> > +  vdda-pll-b-supply: true
+> > +
+> > +  vdda-pll-c-supply: true
+> > +
+> > +  vdda-pll-d-supply: true
+> 
+> I'm really surprised they aren't all connected to the same pair but oh well
+> 
+> Konrad
+> 
 
 -- 
 linux-phy mailing list
