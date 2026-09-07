@@ -4,96 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C062BC79F89
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 06:02:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5A44C79F9E
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 06:11:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9nTpqodQF4Vxfs/8zKlekxU2/s0Q7BP0ueJp9OHj/60=; b=wiJjonkyr6JZSd
-	KxRrRDTz0/owLD53HLr4pq1y2T4bzfC+uc58RM+u1BpzfaAY+FlsfPaGw0kygVaWXiC4K7EFVphnI
-	Z8UGuoGTDFFysrNn4E61HrUKqUqEFgEgJXrxd05A5Q893SJVOIwuZEfkG57EqwDWZwEBvh6CLUH5W
-	kRAkQpCqMOQaoTTjAnFv9xEHztkTCSNlE1K4WWoURNi/6t8KemiCMglKFY9ht0R6cBIxlQK3Txy8V
-	yNDRppzauIdakI5QymKBwLjDcCLB6mSiJeSN0o7VNl9FsmfPSowVl+iVm8ladx9NmGsXE/CQ0AWWd
-	wjclxQY0O59AniWA5nCg==;
+	List-Owner; bh=zLIvfd7IJ8v4qcCvwwikL769GpLKkViW8TNc+6ftm5o=; b=JOr5lAJk54NC9Q
+	JX7+IPONXkyln6Rm45LFDI6NlmEjxSPrbUIsmohtYAj/PH0yc4DqRN8BtRW5mmeTx6r0cYDk2Ih5I
+	uDKJsomixsgpJ4L2Se7Hnj8h83fnAGpzQ8Qu1e6IWBAobdHMqqkkm1qFi/S5xyo0SyPVVB7/5Ay2y
+	2+A+wFZLTQSu1xCwCEcVc94IJwoaEvDlZN18XbBJnFuWvoBhDSF5IPmWg4XDy8KDJO8IiBU4XpQ4J
+	725XFb+sG3OIi25TRS1X0PVkD82YzmVSlLU1vSqgs7/gnKrqLyeR941BtLXuB3lINWFf43S7lOM/s
+	YyngfzTvUWQW8rPc93Jw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3SRI-00000005yvk-31Tn;
-	Mon, 07 Sep 2026 06:02:44 +0000
-Received: from email2.ecloud.global ([2a01:4f9:4b:5387::2] helo=mail2.ecloud.global)
+	id 1x3SZs-00000005zhU-0wjB;
+	Mon, 07 Sep 2026 06:11:36 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3SRG-00000005yv6-30DE;
-	Mon, 07 Sep 2026 06:02:44 +0000
-Received: from authenticated-user (mail2.ecloud.global [127.0.0.1])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
-	(No client certificate requested)
-	by mail2.ecloud.global (Postfix) with ESMTPSA id B5691721160;
-	Mon,  7 Sep 2026 06:02:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=murena.io; s=mail2;
-	t=1788760956;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=BAVC7+HWaVQEnnbRSHCcKz7r6ECmUII3NjKcSqgDdqE=;
-	b=PmA/HmG6YkWmDztp42L5zdma4jFThIPnKvAqNfbKAdesgHuHViEz/9/BsbLyLPrFlMVsMR
-	90PURNCV5f0ejRhPmxHXdYpHnShCWVdp5iL/i21PpFNl/H2uZYZ9c3+WkelnaTWFUrGk5B
-	iBSfUKxKxkV64Fa5Y7MRVyL/qoQhpp4=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=murena.io;
-	s=mail2; t=1788760956;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=BAVC7+HWaVQEnnbRSHCcKz7r6ECmUII3NjKcSqgDdqE=;
-	b=B7cL82PImBfFxeoSczoECpP9wW/1E0dBlifMotXVGSAoewtJC7WP6rAasDziB5y+nt8d9t
-	ka/7gR0eTSE8njdmzxtOje2HHaTjLKe6OFXRMXhKUbs66npTNSBI20Odzcy8a+XGIHu3B9
-	u6sSUVyaFcRVrbYVNphd1SZ9uMItg/o=
-ARC-Authentication-Results: i=1;
-	mail2.ecloud.global;
-	auth=pass smtp.mailfrom=maud_spierings@murena.io
-ARC-Seal: i=1; s=mail2; d=murena.io; t=1788760956; a=rsa-sha256; cv=none;
-	b=rwRBNY+YtZMISw0XZ4wJRHpzo5Yp5mjZm9wz7veARrU2FXHtXfGXC60RqIcwXWYC5dud+W
-	L7dEyuwGnjdl0A8avafm5S5qS1okQ4f9cuM7HuL2m1jEy3RMF9b7rhW97RRaFAfovoOiBa
-	OvyG566rnyc+P4JwysSkJgarI/RAlcQ=
-Message-ID: <f68d95d0-f918-4dee-9443-38c64247b71a@murena.io>
-Date: Mon, 7 Sep 2026 08:02:33 +0200
+	id 1x3SZr-00000005zhO-1Wzg
+	for linux-phy@lists.infradead.org;
+	Mon, 07 Sep 2026 06:11:35 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id DD1ED4332A;
+	Mon,  7 Sep 2026 06:11:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CDB0E1F00A3A;
+	Mon,  7 Sep 2026 06:11:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1788761494;
+	bh=Wsa0JvYiMJouozjokH7geLU1KfAK+7PDaBgcVar9DPc=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=HmUpl+lNjFYTm+p0EQ0CEekie38a2gVfgDe/BSEQF3Frn1Nu9NjheKIUfTrf5kb8n
+	 ivCeG/KbcxDFiRIGBwKKGSDDIyotNUCgVuXKReLP/nzEoNtaZvmoYoq9AHOuJjosXg
+	 EDXYxk3lkSbZpOjfYFGeub5X4K+Dk1EZMg5I3GFQ2Au+ZkC+yC7D6JX94E+UcnH5qU
+	 t7GJJoJyLkAlyjmAllFlDITC8kv3Udt6M+txPWKH754MX+2kT2gE6Jr8U7Fi98e9/q
+	 bA8FNDKeYQf2ONshunRlj0RrIcxHfq+iUiK8bHa+FxMu1RWFsqEGaBfH4oli3ocPNf
+	 nbmEvqHFKiJKQ==
+Date: Mon, 7 Sep 2026 08:11:30 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Shawn Guo <shengchao.guo@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+	Conor Dooley <conor+dt@kernel.org>, Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
+	Abel Vesa <abelvesa@kernel.org>, Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
+	Bartosz Golaszewski <brgl@kernel.org>, Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+Subject: Re: [PATCH 1/4] dt-bindings: phy: qcom,snps-eusb2-phy: Make resets
+ optional
+Message-ID: <20260907-busy-sensible-mink-c6b35e@quoll>
+References: <20260901095055.42229-1-shengchao.guo@oss.qualcomm.com>
+ <20260901095055.42229-2-shengchao.guo@oss.qualcomm.com>
 MIME-Version: 1.0
-Subject: Re: [PATCH v2 13/15] phy: starfive: Add jh7110-inno-hdmi-phy driver
-To: Icenowy Zheng <uwu@icenowy.me>, Dominique Belhachemi <domibel@debian.org>
-Cc: m.wilczynski@samsung.com, Laurent.pinchart@ideasonboard.com,
- airlied@gmail.com, alex@ghiti.fr, andrzej.hajda@intel.com,
- andy.yan@rock-chips.com, andyshrk@163.com, aou@eecs.berkeley.edu,
- bmasney@redhat.com, conor+dt@kernel.org, conor@kernel.org,
- devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
- hal.feng@starfivetech.com, heiko@sntech.de, hello@big-grey.co.uk,
- jernej.skrabec@gmail.com, jonas@kwiboo.se, kernel@esmil.dk,
- krzk+dt@kernel.org, lee@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-riscv@lists.infradead.org,
- linux-rockchip@lists.infradead.org, luca.ceresoli@bootlin.com,
- m.szyprowski@samsung.com, maarten.lankhorst@linux.intel.com,
- maudspierings@gocontroll.com, mfd@lists.linux.dev, mripard@kernel.org,
- mturquette@baylibre.com, neil.armstrong@linaro.org, p.zabel@pengutronix.de,
- palmer@dabbelt.com, pjw@kernel.org, rfoss@kernel.org, robh@kernel.org,
- sboyd@kernel.org, simona@ffwll.ch, tzimmermann@suse.de, vkoul@kernel.org
-References: <20260828-jh7110-clean-send-v2-13-331680c8b9d1@samsung.com>
- <0ccb4168-ff88-459c-972d-3c091c155db2@murena.io>
- <e780ecb8-918f-4816-99c8-b69b10b25a18@murena.io>
- <CAAvaLCwvVUddS14MPx0FHdnp+QeZ99+ox17pXt2hSWPTCFcHtw@mail.gmail.com>
- <cb0884b3-c9be-4cfd-ba43-27add3821ddd@murena.io>
- <6a5f8c11a092cef83bae8d9ea0100c2fc133a514.camel@icenowy.me>
- <CAAvaLCxMntrTbTQ9VNu4H_6LA30TRAqi7mCpn+x3hbTG9WqERA@mail.gmail.com>
- <057d97bd4b63fa4445dd86548f2ecdcbe9c3b1b6.camel@icenowy.me>
-Content-Language: en-US
-From: Maud Spierings <maud_spierings@murena.io>
-In-Reply-To: <057d97bd4b63fa4445dd86548f2ecdcbe9c3b1b6.camel@icenowy.me>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260906_230242_971217_181C4BD1 
-X-CRM114-Status: GOOD (  21.61  )
+Content-Disposition: inline
+In-Reply-To: <20260901095055.42229-2-shengchao.guo@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,71 +72,35 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgRG9taW5pcXVlIGFuZCBJY2Vub3d5LAoKT24gOS83LzI2IDA2OjAxLCBJY2Vub3d5IFpoZW5n
-IHdyb3RlOgo+IOWcqCAyMDI2LTA5LTA25pel55qEIDE3OjE2IC0wNDAw77yMRG9taW5pcXVlIEJl
-bGhhY2hlbWnlhpnpgZPvvJoKPj4gT24gU3VuLCBTZXAgNiwgMjAyNiBhdCAxMToxOeKAr0FNIElj
-ZW5vd3kgWmhlbmcgPHV3dUBpY2Vub3d5Lm1lPiB3cm90ZToKPj4+Cj4+PiDlnKggMjAyNi0wOS0w
-NuaXpeeahCAxNjo1OSArMDIwMO+8jE1hdWQgU3BpZXJpbmdz5YaZ6YGT77yaCj4+Pj4gT24gOS82
-LzI2IDA3OjM5LCBEb21pbmlxdWUgQmVsaGFjaGVtaSB3cm90ZToKPj4+Pj4gT24gU3VuLCBBdWcg
-MzAsIDIwMjYgYXQgMTA6MTfigK9BTSBNYXVkIFNwaWVyaW5ncwo+Pj4+PiA8bWF1ZF9zcGllcmlu
-Z3NAbXVyZW5hLmlvwqA8bWFpbHRvOm1hdWRfc3BpZXJpbmdzQG11cmVuYS5pbz4+Cj4+Pj4+IHdy
-b3RlOgo+Pj4+Pgo+Pj4+PiAgwqDCoMKgIEkgd2FzIHN0aWxsIGhhdmluZyBzb21lIGdsaXRjaGlu
-ZyBoYXBwZW5pbmcgb24gdGhlIGRpc3BsYXksCj4+Pj4+IGJ1dAo+Pj4+PiBJJ3ZlCj4+Pj4+ICDC
-oMKgwqAgZm91bmQgdGhlIHdheSB0byBmaXggdGhhdCwgdGhlIHF1ZXN0aW9uIGlzIHdoYXQgaXMg
-YWN0dWFsbHkKPj4+Pj4gIMKgwqDCoCBoYXBwZW5pbmcgaGVyZS4KPj4+Pj4KPj4+Pj4gIMKgwqDC
-oMKgwqDCoMKgIDB4Mjk1OTAwMjAgPC0gMHgwMDAwMDAwNQo+Pj4+PiAgwqDCoMKgIFRoaXMgb25l
-IEkgaGF2ZSBubyBpZGVhLCBpdCBpcyAweDAwMDAwMDA5IHdpdGggdGhpcyBwYXRjaAo+Pj4+PiBz
-ZXJpZXMgYnV0Cj4+Pj4+ICDCoMKgwqAgd2l0aCB0aGUgdmVuZG9yIGtlcm5lbCBJIGdldCB0aGUg
-dmFsdWUgYWJvdmUuIFdoZW4gSSBob29rCj4+Pj4+IHVwIG15Cj4+Pj4+ICDCoMKgwqAgZXh0ZXJu
-YWwKPj4+Pj4gIMKgwqDCoCBkaXNwbGF5IChyZWd1bGFyIDE0NDBwKSB0aGlzIGJlY29tZXMgMHgw
-MDAwMDAwRCBvbiB0aGUKPj4+Pj4gdmVuZG9yCj4+Pj4+IGtlcm5lbC4KPj4+Pj4KPj4+Pj4gIMKg
-wqDCoCBCdXQgSSBjYW4ndCBmaW5kIHRoaXMgcmVnaXN0ZXIgYmVpbmcgd3JpdHRlbiB0byBhbnl3
-aGVyZQo+Pj4+PiB0aGVyZT8KPj4+Pj4KPj4+Pj4KPj4+Pj4gTWF5YmUgdGhpcyBuZWVkcyB0byBi
-ZSBzd2FwcGVkPwo+Pj4+Pgo+Pj4+PiBkcml2ZXJzL2dwdS9kcm0vYnJpZGdlL2lubm8taGRtaS5j
-Cj4+Pj4+ICDCoMKgIC0jZGVmaW5lIHZfSFNZTkNfUE9MQVJJVFkobinCoMKgwqDCoMKgwqDCoMKg
-wqAgKChuKSA8PCAzKQo+Pj4+PiAgwqDCoCAtI2RlZmluZSB2X1ZTWU5DX1BPTEFSSVRZKG4pwqDC
-oMKgwqDCoMKgwqDCoMKgICgobikgPDwgMikKPj4+Pj4gIMKgwqAgKyNkZWZpbmUgdl9IU1lOQ19Q
-T0xBUklUWShuKcKgwqDCoMKgwqDCoMKgwqDCoCAoKG4pIDw8IDIpCj4+Pj4+ICDCoMKgICsjZGVm
-aW5lIHZfVlNZTkNfUE9MQVJJVFkobinCoMKgwqDCoMKgwqDCoMKgwqAgKChuKSA8PCAzKQo+Pj4K
-Pj4+IFZlcnkgd2VpcmRseSwgdGhlIG9yaWdpbmFsIGRlZmluaXRpb24gaGVyZSBtYXRjaGVzIGN1
-cnJlbnQgbWFpbmxpbmUKPj4+IGlubm8taGRtaS5jLCBidXQgdGhlIGNoYW5nZWQgZGVmaW5pdGlv
-biBtYXRjaGVzIEpINzExMCB2ZW5kb3IKPj4+IGlubm9faGRtaS5oIFsxXS4KPj4+Cj4+Cj4+IFRo
-ZSB2ZW5kb3IgY29kZSBpcyBjb3JyZWN0IGFuZCBtYXRjaGVzIHRoZSBSSzMxMjggVFJNLgo+IAo+
-IFRoYW5rcyBmb3IgdGhlIHRpcHMgb24gZG9jdW1lbnRhdGlvbiwgYW5kIEkgdmVyaWZpZWQgdGhp
-cy4KPiAKPiBJdCBzZWVtcyB0aGF0IFJvY2tjaGlwIHBlb3BsZSBtYWRlIHRoaXMgYWx3YXlzIHdy
-b25nLCBldmVuIHdpdGggdGhlaXIKPiBwcmUtRFJNIGRpc3BsYXkgZHJpdmVyLi4uIFsxXQo+IAo+
-IEJUVyBJIGNoZWNrZWQgdGhlIElubm9zaWxpY29uIGRHUFUgZHJpdmVyIGNvZGUsIGFuZCBpdHMg
-ZzNfbmVfaGRtaS5oCj4gc291cmNlIGZpbGUgYWxzbyBjb250YWlucyB0aGUgZGVmaW5pdGlvbiBv
-ZiBCSVQoMykgYXMgVlNZTkMuIChJdCdzCj4gcXVpdGUgd2VpcmQgdGhhdCBtb3N0IGxvZ2ljIG9m
-IHRoYXQgZHJpdmVyIGlzIGluIHNvbWUgLm9fc2hpcHBlZCBibG9iLAo+IGJ1dCBmb3J0dW5hdGVs
-eSB0aGUgZzMgbG9naWMgbWlnaHQgYmUgdG9vIG5ldyB0byBiZSBjbG9zZWQgZG93bikKPiAKPiBU
-aGFua3MsCj4gSWNlbm93eQo+IAo+IFsxXQo+IGh0dHBzOi8vZ2l0aHViLmNvbS9yb2NrY2hpcC1s
-aW51eC9rZXJuZWwvYmxvYi9yZWxlYXNlLTQuNC9kcml2ZXJzL3ZpZGVvL3JvY2tjaGlwL2hkbWkv
-cm9ja2NoaXAtaGRtaXYxL3JvY2tjaGlwX2hkbWl2MV9ody5oI0wxNjEKPiAKPj4KPj4gSERNSV9y
-ZWcwOAo+PiAgwqDCoMKgIEJpdMKgIEF0dHLCoCBSZXNldMKgIERlc2NyaXB0aW9uCj4+ICDCoMKg
-wqAgM8KgwqDCoCBSV8KgwqDCoCAweDDCoMKgwqAgdnNfcG9sYXJpdHnCoMKgIFZTWU5DIHBvbGFy
-aXR5wqDCoCAxJ2IwOiBOZWdhdGl2ZQo+PiAxJ2IxOiBQb3NpdGl2ZQo+PiAgwqDCoMKgIDLCoMKg
-wqAgUlfCoMKgwqAgMHgwwqDCoMKgIGhzX3BvbGFyaXR5wqDCoCBIU1lOQyBwb2xhcml0ecKgwqAg
-MSdiMDogTmVnYXRpdmUKPj4gMSdiMTogUG9zaXRpdmUKPj4KPj4gTm9ib2R5IG5vdGljZWQgdGhp
-cyBzbyBmYXIgYmVjYXVzZSBpbiA3MjBwLzEwODBwIGJvdGggcG9sYXJpdGllcyBhcmUKPj4gcG9z
-aXRpdmUsIGJ1dCBNYXVkJ3MgMzoyIHBhbmVsIGhhcyBkaWZmZXJpbmcgSC9WIHBvbGFyaXR5Lgo+
-Pgo+PiBCZXN0Cj4+IC1Eb21pbmlxdWUKClRoaXMgYWxzbyBzb2x2ZXMgdGhlIGRldm1lbSBiZWhh
-dmlvdXIgSSBzYXcsIG9yIHdlbGwsIGRvZXNuJ3QgcmVhbHkgCmV4cGxhaW4gaXQgYnV0IGRvZXMg
-c2hvdyB3aGF0IGlzIGFjdHVhbGx5IGhhcHBlbmluZy4gQXMgSWNlbm93eSBub3RlZCAKKG1heWJl
-IHRoYXQgd2FzIG9uIHRlbGVncmFtIG9ubHk/KSB0aGUgaW5uby1oZG1pIHJlZ3MgYXJlIDhiaXQg
-aW5zdGVhZCAKb2YgMzIgYml0LgoKV2hhdCBpcyBhY3R1YWxseSBoYXBwZW5pbmcgaXM6CgpkZXZt
-ZW0gMHgyOTU5MDAwMCBiIHJlYWRzIDB4Mjk1OTAwMDAgYXMgZXhwZWN0ZWQKYnV0CmRldm1lbSAw
-eDI5NTkwMDA0IGIgcmVhZHMgMHgyOTU5MDAwMQpkZXZtZW0gMHgyOTU5MDAwOCBiIHJlYWRzIDB4
-Mjk1OTAwMDIKLi4uLgpkZXZtZW0gMHgyOTU5MDAyMCBiIHJlYWRzIDB4Mjk1OTAwMDgKCkZvciBz
-b21lIHJlYXNvbiB0aGUgYWRkcmVzc2luZyBpcyB3ZWlyZD8KCldpdGggdGhpcyBjaGFuZ2UsIHRo
-ZSBhc3NpZ25lZCBjbG9jayBjaGFuZ2UgYW5kIHJlbW92aW5nIHRoZSAKdl9SRUdfQ0xLX0lOViB8
-IHZfUkVHX0NMS19TT1VSQ0VfU1lTIHdyaXRlIHRvIEhETUlfU1lTX0NUUkwsIHRoZSBkaXNwbGF5
-IApjb21lcyB1cCBmcm9tIHRoZSBzdGFydCBhcyBpdCBzaG91bGQhCgpLaW5kIHJlZ2FyZHMsCk1h
-dWQKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBo
-eQo=
+On Tue, Sep 01, 2026 at 05:50:52PM +0800, Shawn Guo wrote:
+> From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+> 
+> Not every instance of this PHY has a block reset of its own. On Nord
+> SoC there are three eUSB2 PHYs but only two QUSB2PHY block resets:
+> the HS-only USB20 tile has no dedicated PHY reset and is instead reset as
+> a whole through the controller's own USB20_PRIM_BCR. Requiring 'resets'
+> makes that instance impossible to describe, since the controller and the
+> PHY cannot both claim the single block reset exclusively.
+
+Reset framework supports non-exclusive claims, so that is your fix.
+Sorrry, but driver reasons are not proper for DT.
+
+IOW, what you are saying here - device has a shared reset, but because I
+wrote drivers like that, I don't care and expect other driver to handle
+the reset.
+
+Well, no.
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
