@@ -4,118 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 579B9C79F89
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 06:40:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE1DAC79F9E
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 06:57:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=cj+zfPmDiTk29ITgokMaQiG/k7W9FNXy3jhGivMHET8=; b=GLvVZz4UHgphPfuHpmg5kLbC9Q
-	xlPw/B6fPF+qUHa4ocoCTsBEMvHbcG9xCsPKTJw2jHU/R+Uwhoe9aRDwTXWyEXB7X3tAr0af/ZUVq
-	uZqkuauQ6FadPyKEK5rX2JY365nHSsF7+kafs+R0BD0yWNV/Fb0xBgSY9eQbquxcGtSvJMFcA2phx
-	y7QZGsJThU1YgHCp2/AuxHryGi/Suq7l/VEip0/Bv5nFqQWg2YViD8ynMRPJLtMjMactg7lUJcyPd
-	wpEbF/vbrwWNGjvNqHPVa7k5phmQEDlsySgRDeQIZlHXOMkQt1cSp++BwkX0EKxkUUlgD14rC88+w
-	8dtPsqMQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=c/8s/cmN8IPeefeilsI5U7VM0W0qEeFiWau4HiF7tQk=; b=eTOJVtaJiv3DBg
+	ZGD9pISzFqESLCBh0iKeKfjRSFbv7EKYojmR3mXZgXbBza2vZn9HRG9nIpNdMhr0Po/AZuUtLHd8I
+	GzzCKBTM8NwqwXB3Kcf8bbZ3PT98ypUlEno38Q/PpFmi9Fi5O6zc0/BcqWt5HfcQL1rdf3AHEQsSN
+	kJ0zEt0niFk53TvHuN1vhs+woPQK3/EJBfSebc8CygeRKWUJcJf3b7PR6z3UM8rIJ+C2ZmzR8XAhW
+	sOAWlWpUiusDVVplbxt3ZEWAkp2t1ka5cvvhbFLN4GlOzCrU5HO3pzRowK9hkyiMJR5GaAOykhJlj
+	sLA+0zo1nzALSFwWR6ag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3T1u-000000062jM-3loJ;
-	Mon, 07 Sep 2026 06:40:34 +0000
-Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
+	id 1x3TI8-0000000651o-3Ocs;
+	Mon, 07 Sep 2026 06:57:20 +0000
+Received: from sender4-op-o12.zoho.com ([136.143.188.12])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3T1s-000000062ij-1MTE
-	for linux-phy@lists.infradead.org;
-	Mon, 07 Sep 2026 06:40:33 +0000
-Received: by mail-wr1-x42c.google.com with SMTP id ffacd0b85a97d-482dd6ee390so3572183f8f.3
-        for <linux-phy@lists.infradead.org>; Sun, 06 Sep 2026 23:40:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1788763227; x=1789368027; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:organization
-         :autocrypt:content-language:references:cc:to:subject:reply-to:from
-         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=SU9/kaGiibd6mGhjdwN2A8ofGPaPGTIVHRIR2UuuB8I=;
-        b=SZE0lTTn20ehC+aQzGzBwtPAjmI+yR9QDy41JkYsOoj8Nw/wLgzOK7v95doaIzVp/P
-         2FvemDP8p2v1YqSe7n/Oe6wt0o8G9EF9pO/HAT73QU7SbHUvhVlZswd1esH37dab9n5d
-         Gmu3X7ITBXc0O79Sghaprz17uJ4uavBOHfTx+4/dbF4BQE38Mn/8TMv7DlT1XcmUDVYZ
-         XuUocO3normymngDsczSwjd+5nlp2N4u4AKf+6ERnFt/t/+rsYwHl1tjPk6urAKGfsYW
-         1y7qjyKcCcAt73GvpJEmgJ5bKi5ZxKH3xJGy/FtyBVGQRkxqeFz/wMMa7wM3v1bLGpJX
-         m16Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788763227; x=1789368027;
-        h=content-transfer-encoding:content-type:in-reply-to:organization
-         :autocrypt:content-language:references:cc:to:subject:reply-to:from
-         :user-agent:mime-version:date:message-id:x-gm-gg:x-gm-message-state
-         :from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=SU9/kaGiibd6mGhjdwN2A8ofGPaPGTIVHRIR2UuuB8I=;
-        b=OH4RFRu/Tg/kJhjorMDOz76KbvxSGFaQpE/79MXxFT84H1hzDk+sZnqvu1zvLulyE5
-         y60vFw4TtiN0614/5Vgb8WfGDQHjP0laPc1uW/8RR642aBg3PebVRnkJdwdbpcF2NmZH
-         5fx5+zT7+ERkBf/TmlVJRKeVzfr/EG59ItCVni6V0e8sK3BxrQtLPglkllfN/qskBlq9
-         usge8DrdBSejzhKpwd+i0AuDtL8vp8HG6ZFepZe7Yk2f228wFGyYsFnHlzTOmyVEVDLD
-         S3tUB70lQp78IIen7Q/LiLp5T3uhnIxE4WGxvA66y2W3YtIWOfkNHg23fZv1wIRK8HXy
-         maOQ==
-X-Forwarded-Encrypted: i=1; AKwUvBzqzjmMTVOFuQgRkCwhzlXynjs0TI3a/w1137CKv20kniBJuCRN2ggl0fvtp/EEa3x641hvMZ1uBkQ=@lists.infradead.org
-X-Gm-Message-State: AFuF++nulidMds7DQq+ZVLug3LJkYOtgtFz49+S/dif1R9cNNq/Pm1Ug
-	2z+LdT+uUqtNW19lKoHxgVjf/st3v1d8BAP6Wxr05y2jdqO6jMEG4kEGRNi3M48bLrw=
-X-Gm-Gg: AYBFou1hScgqbm0qIDrNF3lL5k1TRqcZYOQeCjUEaKWezZVdlTuxak+TFvVeDiSSkAs
-	R75ZdTuiHlSfHYly0Djjkx786ch1+DOPd3r+Go8usXBn9evHOqV6G/26SWvlLD9TvuCxknuaAFu
-	I3lYp9ncfc2OHiRPApE8VGDjTiQBV62Yj9AlTsOT9oO2dLIiCLX90gcW+vc9tDJR2HBwnALDA9t
-	T1NZar9azneTSffOiviLTAi371U7Yjrg14q1QxWv+pwrVoIoob1DALxmkzJpxwR76CM/oQmfmD4
-	XvCtoT94AlsIaSYoAK4cXJBkuq1GuP57WFca763A27+VxGbP98aEiuaZlPL3lfsUSTGMcuOFFZ7
-	A9JWxZRsL2wJCYddA339B92aXQz9MrI14ow9HzA19sgwC+pGLvuU7nzrVwVafbN8cRPnZLe5guF
-	Hja9gHg99KjXgZgJ7+gVrVpqs5AFDztyKwZal2QRu519kMvqGiGDenyEAaC8mg9WhjUBSDO2A7i
-	hUtQd9bWSEyVfBwjtgHrjKbWphYEnMyC05y63o8KKY=
-X-Received: by 2002:a05:6000:1a8d:b0:485:8c16:a32f with SMTP id ffacd0b85a97d-4858c16a6cemr17808883f8f.36.1788763227160;
-        Sun, 06 Sep 2026 23:40:27 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:106d:1080:74d7:9035:e283:b480? ([2a01:e0a:106d:1080:74d7:9035:e283:b480])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-485883be709sm26981837f8f.21.2026.09.06.23.40.26
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 06 Sep 2026 23:40:26 -0700 (PDT)
-Message-ID: <f0fc4211-2040-4115-9847-6e5cc3fe8161@linaro.org>
-Date: Mon, 7 Sep 2026 08:40:25 +0200
+	id 1x3TI6-0000000650F-1SVx;
+	Mon, 07 Sep 2026 06:57:19 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1788764158; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=ZV1f7mIa5Ivl4k9y4SDseO7sHW+HXOhGOnNA3H1xRbt1/D/ksjOmLYeU+FS4cmX+Hts6lkL1r8M+mCPrf6tfIzMjJB0b2sVzMmjqPU/3RUMi+047Y294fhETDs6iReJrrgYolwkXDS2m+zCVwGlte7A50w8KcoeS+6v+/RwWTr0=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1788764158; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=1tMnWdSZi+sjkC4f5IyBKW6FS6ZeNXijReG8GKO87DM=; 
+	b=dS9L/KG15nTBt2++e5uDJMfTNVAaWzLOQuZasm1GbtlC0sCA0bB1YA6nKDHauAHHIGDtz4Q7ivxhvg0CLUMOobpIBo+BNKxHD/ubsyigThw9IO3SwiDnd0li8ZdtFILkmNvA3GExDWArpzFXprIV1qzIu4e5vjtHSjKY2gyVYVQ=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=icenowy.me;
+	spf=pass  smtp.mailfrom=uwu@icenowy.me;
+	dmarc=pass header.from=<uwu@icenowy.me>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1788764158;
+	s=zmail2; d=icenowy.me; i=uwu@icenowy.me;
+	h=Message-ID:Subject:Subject:From:From:To:To:Cc:Cc:Date:Date:In-Reply-To:Content-Type:Content-Transfer-Encoding:MIME-Version:Message-Id:Reply-To;
+	bh=1tMnWdSZi+sjkC4f5IyBKW6FS6ZeNXijReG8GKO87DM=;
+	b=BMTjuTZBsLIrLLQbFYEi8z0UaWGJZJjxeSYYxBVe6/DSS+g6eYH8Pw9Pt2zTuGh1
+	TbGJxgPa/cjnW41iWvSPZTs1m7utVbmLnfyAbfxAueT2zyPpCg3RW0zQ94/VavjbTLa
+	BT486D9MNAmUPgxRieTGSu/8tMi27JGUaSFQv9cSqgbQSXgbbbRo5g0CUZ7AzmQiGIv
+	lVFA+M7C37fn+a8D09cfSBJESxToQqJg0tFdJybljjyoXRxlc8kR2Nj8pfOZ7xd/k6f
+	nuh5zp+4ma19vHlgD2e4mxkAw5n7TkeKvhRfuYzEaatVRNX9eGykxhWw4vjZjD/0S8c
+	upQLI3pL0g==
+Received: by mx.zohomail.com with SMTPS id 1788764154825847.2528940921899;
+	Sun, 6 Sep 2026 23:55:54 -0700 (PDT)
+Message-ID: <72f82ae67eca7b5a594d86852c8b0dafb7d02c4c.camel@icenowy.me>
+Subject: Re: [PATCH v2 13/15] phy: starfive: Add jh7110-inno-hdmi-phy driver
+From: Icenowy Zheng <uwu@icenowy.me>
+To: Maud Spierings <maud_spierings@murena.io>, Dominique Belhachemi
+	 <domibel@debian.org>
+Cc: m.wilczynski@samsung.com, Laurent.pinchart@ideasonboard.com, 
+	airlied@gmail.com, alex@ghiti.fr, andrzej.hajda@intel.com,
+ andy.yan@rock-chips.com, 	andyshrk@163.com, aou@eecs.berkeley.edu,
+ bmasney@redhat.com, conor+dt@kernel.org, 	conor@kernel.org,
+ devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+	hal.feng@starfivetech.com, heiko@sntech.de, hello@big-grey.co.uk, 
+	jernej.skrabec@gmail.com, jonas@kwiboo.se, kernel@esmil.dk,
+ krzk+dt@kernel.org, 	lee@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-clk@vger.kernel.org, 	linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, 	linux-riscv@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, 	luca.ceresoli@bootlin.com,
+ m.szyprowski@samsung.com, 	maarten.lankhorst@linux.intel.com,
+ maudspierings@gocontroll.com, 	mfd@lists.linux.dev, mripard@kernel.org,
+ mturquette@baylibre.com, 	neil.armstrong@linaro.org,
+ p.zabel@pengutronix.de, palmer@dabbelt.com, 	pjw@kernel.org,
+ rfoss@kernel.org, robh@kernel.org, sboyd@kernel.org, simona@ffwll.ch, 
+	tzimmermann@suse.de, vkoul@kernel.org
+Date: Mon, 07 Sep 2026 14:55:42 +0800
+In-Reply-To: <f68d95d0-f918-4dee-9443-38c64247b71a@murena.io>
+References: <20260828-jh7110-clean-send-v2-13-331680c8b9d1@samsung.com>
+	 <0ccb4168-ff88-459c-972d-3c091c155db2@murena.io>
+	 <e780ecb8-918f-4816-99c8-b69b10b25a18@murena.io>
+	 <CAAvaLCwvVUddS14MPx0FHdnp+QeZ99+ox17pXt2hSWPTCFcHtw@mail.gmail.com>
+	 <cb0884b3-c9be-4cfd-ba43-27add3821ddd@murena.io>
+	 <6a5f8c11a092cef83bae8d9ea0100c2fc133a514.camel@icenowy.me>
+	 <CAAvaLCxMntrTbTQ9VNu4H_6LA30TRAqi7mCpn+x3hbTG9WqERA@mail.gmail.com>
+	 <057d97bd4b63fa4445dd86548f2ecdcbe9c3b1b6.camel@icenowy.me>
+	 <f68d95d0-f918-4dee-9443-38c64247b71a@murena.io>
+Organization: Anthon Open-Source Community
+User-Agent: Evolution 3.58.3 
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: SM8250 USB-C DP alt mode: DP AUX times out in reversed (CC2)
- cable orientation
-To: BurningHoryd <sjunhyuk1@gmail.com>,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
- Vinod Koul <vkoul@kernel.org>, Abhinav Kumar <quic_abhinavk@quicinc.com>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>
-References: <20260906225206.2994952-1-sjunhyuk1@gmail.com>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <20260906225206.2994952-1-sjunhyuk1@gmail.com>
+X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260906_234032_430274_A134B48B 
-X-CRM114-Status: GOOD (  32.75  )
+X-CRM114-CacheID: sfid-20260906_235718_417359_CA22A7EB 
+X-CRM114-Status: GOOD (  31.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,137 +100,83 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 9/7/26 00:52, BurningHoryd wrote:
-> Hi,
-> 
-> I'm chasing a DisplayPort-over-USB-C alt mode bug on an SM8250 (Retroid
-> Pocket 5) board and would appreciate a pointer, as it looks like it may
-> be in the nb7vpq904m redriver or the qmp-combo DP AUX path.
-> 
-> Hardware / software
-> -------------------
-> - SoC: SM8250, qcom,sm8250-qmp-usb3-dp-phy combo PHY (88e8000.phy)
-> - USB-C redriver: onnn,nb7vpq904m (i2c, typec mux/switch)
-> - External sink: VITURE Beast XR glasses, 4-lane DP-only (pin assignment
->    C, TYPEC_DP_STATE_C), HBR2, 1920x1200@120
-> - Kernel: v7.2 base, plus three local qmp-combo patches that are the
->    subject of a separate downstream review (keep usb_init_count across the
->    DP-only mux switch / skip USB3 power on/off while already in DP-only /
->    the residual pipe_clk-in-common timeout hunk). The AUX failure below
->    reproduces with those applied; I have not been able to bisect against
->    pristine v7.2 because plain v7.2 has an unrelated regression on this
->    board (qcom_pmic_typec now requires connector/vbus-supply, which the
->    board DT lacks, so DP alt mode never powers up at all without a
->    separate DT fix).
-> 
-> Symptom
-> -------
-> Normal cable orientation: DP alt mode works perfectly - link trains,
-> 1920x1200@120, stable.
-> 
-> Reversed cable orientation (Type-C orientation = reverse / CC2): DP never
-> comes up. The DP alt mode HPD notification reaches msm_dp
-> (msm_dp_bridge_hpd_notify status=1), msm_dp starts bring-up
-> (msm_dp_display_host_phy_init, phy_init OK), but the very first DPCD read
-> - SINK_COUNT at 0x200 in msm_dp_hpd_plug_handle - polls for ~4 seconds
-> and never gets a reply:
-> 
->    [drm:msm_dp_hpd_plug_handle] Before, sink_count=0
->    [drm:msm_dp_display_host_phy_init] core_init=1 phy_init=1
->    ... ~4 s ...
->    [drm:msm_dp_hpd_plug_handle] After, sink_count=0
->    [drm:msm_dp_bridge_detect] aux link status: 0
->    [drm:msm_dp_bridge_detect] failed to read caps
-> 
-> msm_dp then gives up and the connector stays disconnected. Link training
-> is never reached. Stock Android on the exact same hardware works in both
-> orientations, so this is a driver-side issue, not a board/silicon limit.
-> 
-> What I've verified (instrumented kernel, dev_info in the phy + nb7 set
-> paths)
-> ------------------------------------------------------------------------
-> - It is NOT a state / refcount / mux ordering artifact: a clean
->    reverse-first plug (fresh boot, reversed cable plugged before any
->    normal plug) fails identically.
-> - On the reversed plug, in order:
->    * qmp_combo_typec_switch_set(REVERSE) runs, qmp_combo_com_init(force)
->      writes QPHY_V3_DP_COM_TYPEC_CTRL = SW_PORTSELECT_MUX|SW_PORTSELECT_VAL
->      (0x3).
->    * nb7vpq904m_set() runs for TYPEC_DP_STATE_C with reverse=1, writes
->      AUX_CC_REG (0x09) = 0x1.
->    * qmp_combo_typec_mux_set() does the DP-only transition, com_init(force)
->      again (mode=DP_ONLY, TYPEC_CTRL=0x3) - this happens AFTER the nb7 DP
->      config.
->    * qmp_combo_dp_init() -> qmp_v4_dp_aux_init() runs.
->    So the PHY and the redriver are both configured for reverse, in a sane
->    order, before msm_dp attempts AUX. And AUX still times out.
-> - qmp-combo has no DP-AUX orientation register that I can find - AUX
->    orientation on this design is entirely nb7vpq904m AUX_CC_REG.
-> - Inverting SW_PORTSELECT_VAL and/or nb7 AUX_CC (making the registers
->    bit-identical to the working normal-orientation case) does not help -
->    reverse still fails.
-> - Forcing repeated full qmp_combo_com_exit/com_init cycles during the
->    DPCD poll window does not help.
-> 
-> The one thing that changes anything
-> -----------------------------------
-> I added a knob to override GEN_DEV_SETTINGS OP_MODE in the nb7
-> TYPEC_DP_STATE_C branch (it normally hard-codes
-> GEN_DEV_SET_OP_MODE_DP_4LANE):
-> 
->    OP_MODE = DP_4LANE (2)      -> DPCD read: 0 successes (many tries)
->    OP_MODE = DP_CC1   (1)      -> DPCD read: 0 successes
->    OP_MODE = DP_CC2   (0)      -> DPCD read succeeds intermittently
->                                   (~1 in 4 plugs, sink_count 0->1,
->                                   connector goes connected briefly).
->                                   Link training then fails, which is
->                                   expected since DP_CC2 is a 2-lane
->                                   op-mode and the source is driving 4.
->    OP_MODE = 3, 4             -> 0 successes
-> 
-> DP_CC2 is the "flipped orientation" op-mode. It is the only setting that
-> ever gets an AUX transaction through in reversed orientation. That
-> strongly suggests the nb7vpq904m SBU/AUX switch is not being put into the
-> flipped routing for a 4-lane DP session - AUX_CC_REG alone does not seem
-> to do it in DP_4LANE op-mode - but I don't have the full NB7VPQ904M
-> register map to confirm (the public datasheets are image-only).
-> 
-> Questions
-> ---------
-> 1. Is nb7vpq904m's DP_4LANE path missing SBU/AUX orientation handling
->     that the DP_CC1/DP_CC2 paths get implicitly from the op-mode? Should
->     AUX_CC_REG be sufficient in DP_4LANE mode, or is another
->     GEN_DEV_SETTINGS / AUX register bit needed for CC2?
-> 2. Is there an SM8250 qmp-combo DP-AUX orientation step that mainline is
->     missing (something the downstream PHY driver does for a reversed
->     4-lane DP session)?
-> 3. Any known-good reference for reversed-orientation 4-lane DP on an
->     SM8250 + nb7vpq904m board?
-
-This means the nb7vpq904m is _not_ responsible for the AUX swapping, other
-boards have the wcd9395 or the fsa4480 in the middle to use the AUX line
-for the USB-C Alternate Audio support, and does the swap.
-
-Could you check in the vendor tree if there's any reference to those ?
-
-Neil
-
-> 
-> I can share the full instrumented traces (normal vs reverse) and test the
-> register map if someone can point at the right bits. Happy to turn a fix
-> into a proper patch.
-> 
-> Thanks,
-> BurningHoryd
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+5ZyoIDIwMjYtMDktMDfkuIDnmoQgMDg6MDIgKzAyMDDvvIxNYXVkIFNwaWVyaW5nc+WGmemBk++8
+mgo+IEhpIERvbWluaXF1ZSBhbmQgSWNlbm93eSwKPiAKPiBPbiA5LzcvMjYgMDY6MDEsIEljZW5v
+d3kgWmhlbmcgd3JvdGU6Cj4gPiDlnKggMjAyNi0wOS0wNuaXpeeahCAxNzoxNiAtMDQwMO+8jERv
+bWluaXF1ZSBCZWxoYWNoZW1p5YaZ6YGT77yaCj4gPiA+IE9uIFN1biwgU2VwIDYsIDIwMjYgYXQg
+MTE6MTnigK9BTSBJY2Vub3d5IFpoZW5nIDx1d3VAaWNlbm93eS5tZT4KPiA+ID4gd3JvdGU6Cj4g
+PiA+ID4gCj4gPiA+ID4g5ZyoIDIwMjYtMDktMDbml6XnmoQgMTY6NTkgKzAyMDDvvIxNYXVkIFNw
+aWVyaW5nc+WGmemBk++8mgo+ID4gPiA+ID4gT24gOS82LzI2IDA3OjM5LCBEb21pbmlxdWUgQmVs
+aGFjaGVtaSB3cm90ZToKPiA+ID4gPiA+ID4gT24gU3VuLCBBdWcgMzAsIDIwMjYgYXQgMTA6MTfi
+gK9BTSBNYXVkIFNwaWVyaW5ncwo+ID4gPiA+ID4gPiA8Cj4gPiA+ID4gPiA+IG1hdWRfc3BpZXJp
+bmdzQG11cmVuYS5pb8KgPG1haWx0bzptYXVkX3NwaWVyaW5nc0BtdXJlbmEuaW8+Pgo+ID4gPiA+
+ID4gPiB3cm90ZToKPiA+ID4gPiA+ID4gCj4gPiA+ID4gPiA+IMKgwqDCoMKgIEkgd2FzIHN0aWxs
+IGhhdmluZyBzb21lIGdsaXRjaGluZyBoYXBwZW5pbmcgb24gdGhlCj4gPiA+ID4gPiA+IGRpc3Bs
+YXksCj4gPiA+ID4gPiA+IGJ1dAo+ID4gPiA+ID4gPiBJJ3ZlCj4gPiA+ID4gPiA+IMKgwqDCoMKg
+IGZvdW5kIHRoZSB3YXkgdG8gZml4IHRoYXQsIHRoZSBxdWVzdGlvbiBpcyB3aGF0IGlzCj4gPiA+
+ID4gPiA+IGFjdHVhbGx5Cj4gPiA+ID4gPiA+IMKgwqDCoMKgIGhhcHBlbmluZyBoZXJlLgo+ID4g
+PiA+ID4gPiAKPiA+ID4gPiA+ID4gwqDCoMKgwqDCoMKgwqDCoCAweDI5NTkwMDIwIDwtIDB4MDAw
+MDAwMDUKPiA+ID4gPiA+ID4gwqDCoMKgwqAgVGhpcyBvbmUgSSBoYXZlIG5vIGlkZWEsIGl0IGlz
+IDB4MDAwMDAwMDkgd2l0aCB0aGlzCj4gPiA+ID4gPiA+IHBhdGNoCj4gPiA+ID4gPiA+IHNlcmll
+cyBidXQKPiA+ID4gPiA+ID4gwqDCoMKgwqAgd2l0aCB0aGUgdmVuZG9yIGtlcm5lbCBJIGdldCB0
+aGUgdmFsdWUgYWJvdmUuIFdoZW4gSQo+ID4gPiA+ID4gPiBob29rCj4gPiA+ID4gPiA+IHVwIG15
+Cj4gPiA+ID4gPiA+IMKgwqDCoMKgIGV4dGVybmFsCj4gPiA+ID4gPiA+IMKgwqDCoMKgIGRpc3Bs
+YXkgKHJlZ3VsYXIgMTQ0MHApIHRoaXMgYmVjb21lcyAweDAwMDAwMDBEIG9uIHRoZQo+ID4gPiA+
+ID4gPiB2ZW5kb3IKPiA+ID4gPiA+ID4ga2VybmVsLgo+ID4gPiA+ID4gPiAKPiA+ID4gPiA+ID4g
+wqDCoMKgwqAgQnV0IEkgY2FuJ3QgZmluZCB0aGlzIHJlZ2lzdGVyIGJlaW5nIHdyaXR0ZW4gdG8K
+PiA+ID4gPiA+ID4gYW55d2hlcmUKPiA+ID4gPiA+ID4gdGhlcmU/Cj4gPiA+ID4gPiA+IAo+ID4g
+PiA+ID4gPiAKPiA+ID4gPiA+ID4gTWF5YmUgdGhpcyBuZWVkcyB0byBiZSBzd2FwcGVkPwo+ID4g
+PiA+ID4gPiAKPiA+ID4gPiA+ID4gZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9pbm5vLWhkbWkuYwo+
+ID4gPiA+ID4gPiDCoMKgwqAgLSNkZWZpbmUgdl9IU1lOQ19QT0xBUklUWShuKcKgwqDCoMKgwqDC
+oMKgwqDCoCAoKG4pIDw8IDMpCj4gPiA+ID4gPiA+IMKgwqDCoCAtI2RlZmluZSB2X1ZTWU5DX1BP
+TEFSSVRZKG4pwqDCoMKgwqDCoMKgwqDCoMKgICgobikgPDwgMikKPiA+ID4gPiA+ID4gwqDCoMKg
+ICsjZGVmaW5lIHZfSFNZTkNfUE9MQVJJVFkobinCoMKgwqDCoMKgwqDCoMKgwqAgKChuKSA8PCAy
+KQo+ID4gPiA+ID4gPiDCoMKgwqAgKyNkZWZpbmUgdl9WU1lOQ19QT0xBUklUWShuKcKgwqDCoMKg
+wqDCoMKgwqDCoCAoKG4pIDw8IDMpCj4gPiA+ID4gCj4gPiA+ID4gVmVyeSB3ZWlyZGx5LCB0aGUg
+b3JpZ2luYWwgZGVmaW5pdGlvbiBoZXJlIG1hdGNoZXMgY3VycmVudAo+ID4gPiA+IG1haW5saW5l
+Cj4gPiA+ID4gaW5uby1oZG1pLmMsIGJ1dCB0aGUgY2hhbmdlZCBkZWZpbml0aW9uIG1hdGNoZXMg
+Skg3MTEwIHZlbmRvcgo+ID4gPiA+IGlubm9faGRtaS5oIFsxXS4KPiA+ID4gPiAKPiA+ID4gCj4g
+PiA+IFRoZSB2ZW5kb3IgY29kZSBpcyBjb3JyZWN0IGFuZCBtYXRjaGVzIHRoZSBSSzMxMjggVFJN
+Lgo+ID4gCj4gPiBUaGFua3MgZm9yIHRoZSB0aXBzIG9uIGRvY3VtZW50YXRpb24sIGFuZCBJIHZl
+cmlmaWVkIHRoaXMuCj4gPiAKPiA+IEl0IHNlZW1zIHRoYXQgUm9ja2NoaXAgcGVvcGxlIG1hZGUg
+dGhpcyBhbHdheXMgd3JvbmcsIGV2ZW4gd2l0aAo+ID4gdGhlaXIKPiA+IHByZS1EUk0gZGlzcGxh
+eSBkcml2ZXIuLi4gWzFdCj4gPiAKPiA+IEJUVyBJIGNoZWNrZWQgdGhlIElubm9zaWxpY29uIGRH
+UFUgZHJpdmVyIGNvZGUsIGFuZCBpdHMKPiA+IGczX25lX2hkbWkuaAo+ID4gc291cmNlIGZpbGUg
+YWxzbyBjb250YWlucyB0aGUgZGVmaW5pdGlvbiBvZiBCSVQoMykgYXMgVlNZTkMuIChJdCdzCj4g
+PiBxdWl0ZSB3ZWlyZCB0aGF0IG1vc3QgbG9naWMgb2YgdGhhdCBkcml2ZXIgaXMgaW4gc29tZSAu
+b19zaGlwcGVkCj4gPiBibG9iLAo+ID4gYnV0IGZvcnR1bmF0ZWx5IHRoZSBnMyBsb2dpYyBtaWdo
+dCBiZSB0b28gbmV3IHRvIGJlIGNsb3NlZCBkb3duKQo+ID4gCj4gPiBUaGFua3MsCj4gPiBJY2Vu
+b3d5Cj4gPiAKPiA+IFsxXQo+ID4gaHR0cHM6Ly9naXRodWIuY29tL3JvY2tjaGlwLWxpbnV4L2tl
+cm5lbC9ibG9iL3JlbGVhc2UtNC40L2RyaXZlcnMvdmlkZW8vcm9ja2NoaXAvaGRtaS9yb2NrY2hp
+cC1oZG1pdjEvcm9ja2NoaXBfaGRtaXYxX2h3LmgjTDE2MQo+ID4gCj4gPiA+IAo+ID4gPiBIRE1J
+X3JlZzA4Cj4gPiA+IMKgwqDCoMKgIEJpdMKgIEF0dHLCoCBSZXNldMKgIERlc2NyaXB0aW9uCj4g
+PiA+IMKgwqDCoMKgIDPCoMKgwqAgUlfCoMKgwqAgMHgwwqDCoMKgIHZzX3BvbGFyaXR5wqDCoCBW
+U1lOQyBwb2xhcml0ecKgwqAgMSdiMDoKPiA+ID4gTmVnYXRpdmUKPiA+ID4gMSdiMTogUG9zaXRp
+dmUKPiA+ID4gwqDCoMKgwqAgMsKgwqDCoCBSV8KgwqDCoCAweDDCoMKgwqAgaHNfcG9sYXJpdHnC
+oMKgIEhTWU5DIHBvbGFyaXR5wqDCoCAxJ2IwOgo+ID4gPiBOZWdhdGl2ZQo+ID4gPiAxJ2IxOiBQ
+b3NpdGl2ZQo+ID4gPiAKPiA+ID4gTm9ib2R5IG5vdGljZWQgdGhpcyBzbyBmYXIgYmVjYXVzZSBp
+biA3MjBwLzEwODBwIGJvdGggcG9sYXJpdGllcwo+ID4gPiBhcmUKPiA+ID4gcG9zaXRpdmUsIGJ1
+dCBNYXVkJ3MgMzoyIHBhbmVsIGhhcyBkaWZmZXJpbmcgSC9WIHBvbGFyaXR5Lgo+ID4gPiAKPiA+
+ID4gQmVzdAo+ID4gPiAtRG9taW5pcXVlCj4gCj4gVGhpcyBhbHNvIHNvbHZlcyB0aGUgZGV2bWVt
+IGJlaGF2aW91ciBJIHNhdywgb3Igd2VsbCwgZG9lc24ndCByZWFseSAKPiBleHBsYWluIGl0IGJ1
+dCBkb2VzIHNob3cgd2hhdCBpcyBhY3R1YWxseSBoYXBwZW5pbmcuIEFzIEljZW5vd3kgbm90ZWQK
+PiAobWF5YmUgdGhhdCB3YXMgb24gdGVsZWdyYW0gb25seT8pIHRoZSBpbm5vLWhkbWkgcmVncyBh
+cmUgOGJpdAo+IGluc3RlYWQgCj4gb2YgMzIgYml0Lgo+IAo+IFdoYXQgaXMgYWN0dWFsbHkgaGFw
+cGVuaW5nIGlzOgo+IAo+IGRldm1lbSAweDI5NTkwMDAwIGIgcmVhZHMgMHgyOTU5MDAwMCBhcyBl
+eHBlY3RlZAo+IGJ1dAo+IGRldm1lbSAweDI5NTkwMDA0IGIgcmVhZHMgMHgyOTU5MDAwMQo+IGRl
+dm1lbSAweDI5NTkwMDA4IGIgcmVhZHMgMHgyOTU5MDAwMgo+IC4uLi4KPiBkZXZtZW0gMHgyOTU5
+MDAyMCBiIHJlYWRzIDB4Mjk1OTAwMDgKPiAKPiBGb3Igc29tZSByZWFzb24gdGhlIGFkZHJlc3Np
+bmcgaXMgd2VpcmQ/Cj4gCj4gV2l0aCB0aGlzIGNoYW5nZSwgdGhlIGFzc2lnbmVkIGNsb2NrIGNo
+YW5nZSBhbmQgcmVtb3ZpbmcgdGhlIAo+IHZfUkVHX0NMS19JTlYgfCB2X1JFR19DTEtfU09VUkNF
+X1NZUyB3cml0ZSB0byBIRE1JX1NZU19DVFJMLCB0aGUKPiBkaXNwbGF5IAo+IGNvbWVzIHVwIGZy
+b20gdGhlIHN0YXJ0IGFzIGl0IHNob3VsZCEKCldlbGwgSSBjaGVja2VkIHRoZSBSSzMxMjggVFJN
+IGZvciB0aGVzZSB0d28gYml0cywgYW5kIHRoZWlyIGZpZWxkCmRlc2NyaXB0aW9ucyBhcmUgLS0g
+InJlc2VydmVkIi4KCldoYXQgY2FuIEkgcmVhY3QuLi4KClRoYW5rcywKSWNlbm93eQoKPiAKPiBL
+aW5kIHJlZ2FyZHMsCj4gTWF1ZAoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
+bGlzdGluZm8vbGludXgtcGh5Cg==
