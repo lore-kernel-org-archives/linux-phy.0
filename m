@@ -4,91 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43C14C79F9E
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 12:15:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D51AC79F9E
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 12:17:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7NHPR01W+3jSeRuyv/jaoed+A1g8FedWWWAX0WKChYo=; b=W4UufNaRgVWzVK
-	q4BkSu+4pgsqO5lmRY25D0vzMFjVC9y7AhJNTJstBaREh89TUvoV2TIhAOohLWlO2CI1jzF2lUwmH
-	zvncg8Zb2UfrUXaTmprjt4voEbKIeYpaGrCXP8KmA8e00/ntxC/zhtIkhiJG1op4XU3Hglzpsf/d3
-	Jp6QQlcivJ4htzEhsJdP78wTFsWz6zsD7Qk4Ef+eu/bzlJiCPKm0O9I8NmM24HIdhekLW/jwk8QpT
-	BsCRPGc7iPECyIEDQWqq5AURn/WUaT+NkLuv59fULt0eJhrlDVO1GpX/cKcxWO9VXdcX2lXqp2zhn
-	ttEWzR9OH5Ae6sHvGY8g==;
+	List-Owner; bh=GEZilv9qDJe9mTMAntdmb9sGxhnemScT3OjsYM0pLQ0=; b=0vHMEJcseaC3gx
+	SOEqHw87nCgQN0Yh1a0jFAls14b5eliDFdwYWVpG45FSupB+tVzAV7zaIdWXpYFX3h7ZYFATd79Qm
+	A7Tfehr5zd9Yc4IAxCalLXmmk/rddKykQXRYlqvO5wY/Qpz3/X3Kll1w+r7q2xpXVCND39jIUejp1
+	Rxh9e9H27P+9uZD6asx1LyGG7Uz1Tq20OXMx6hRQhbjKWNaFBA1odI1zx1/3osZtPVEH1dBObJ5UY
+	2xU9khO92gEofGFJZd4Cx8kWKVLO8PxsH+28AtlMmNH8LTq4RPHVk2a2h0KG9Zv37VHK4QetGsY6t
+	84ohvbziyJTCmChvTumw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3YGB-00000006m68-3YeV;
-	Mon, 07 Sep 2026 12:15:39 +0000
-Received: from mail-pj1-x102a.google.com ([2607:f8b0:4864:20::102a])
+	id 1x3YHV-00000006mDe-0Apc;
+	Mon, 07 Sep 2026 12:17:01 +0000
+Received: from mail-wr2-x10.google.com ([2a00:1450:4864:30::10])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3YG9-00000006m5k-1Qyc
+	id 1x3YHS-00000006mCu-0eiG
 	for linux-phy@lists.infradead.org;
-	Mon, 07 Sep 2026 12:15:38 +0000
-Received: by mail-pj1-x102a.google.com with SMTP id 98e67ed59e1d1-39b2ad862bdso3735759a91.2
-        for <linux-phy@lists.infradead.org>; Mon, 07 Sep 2026 05:15:37 -0700 (PDT)
+	Mon, 07 Sep 2026 12:16:59 +0000
+Received: by mail-wr2-x10.google.com with SMTP id ffacd0b85a97d-4838dbf1bbeso254696f8f.0
+        for <linux-phy@lists.infradead.org>; Mon, 07 Sep 2026 05:16:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1788783336; x=1789388136; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1788783416; x=1789388216; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:content-type:mime-version
          :references:message-id:subject:cc:to:from:date:from:to:cc:subject
          :date:message-id:reply-to:content-type;
-        bh=uXPQPcM6Co9Pv6uvVSmI8m5rkwob2bI+bnvsiN0S4hk=;
-        b=O2O15Zi5/b8W5ulF/ohX5DeJMhEoG0CcZrfj6XjWsoPdaKYcj3qoCIdMKSOyQSXTF8
-         KQS8jM11cpN8L5c97vpUVLfYHhofha4c1kJHVmYGPeSkvaRMVu2bfeYshIKEGr4LlYb4
-         6ez5BH+KT+YDANNG/P7t4+c7Fs31zfB+GAOx5teDox4/x8DEu4Wb295V4+KyYFKQz2OX
-         IIDzhDRTH/U7OQA3blKJKcVptknhNaH0vH2xUyQu5vg9w9E7KT5r9YnMfgqMSb2guxmR
-         Z28WnTNF/Ip/wRUxosRNVRturuuqoRzvX7hCg2jAvOPURL/IouWbEoY5KJL5AUnUWZfi
-         EqxA==
+        bh=3wWAlUzVTWK+l/c0CBIcXBp0GcykYm1XFSVWNetoGyg=;
+        b=PD+ApW9HB9tqVhhwEpD9ak4FGe/ROVAUzhMNoVYsUCeyLF9o77+Jm1SsfBTCf3ARlg
+         bFcmsud3Zj/8MhlOPbEYZ+ockrhdFxusY0+MZQY29HTPm7avNr1vnIayU1kydzhU/x11
+         AiT82B+fxwidyqjIDjvloUqSyUpM8ZjyHCcMYsc4JzM50lMuoD+r4FZy3jDU/Q2baysX
+         pzOg5IgQrcnY4Ti6WmTSQVcirBxQyEtY5hhZ7tZlm/D+Mez0vDGnNd5fJMMjpeP5QhTe
+         inqcGu6FyAXom6UDPG8mY+hKzsiZorjW8737dmc9SyRSQL8cvrofZp79D6XT0nhDomfQ
+         EV/w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788783336; x=1789388136;
+        d=1e100.net; s=20251104; t=1788783416; x=1789388216;
         h=in-reply-to:content-disposition:content-type:mime-version
          :references:message-id:subject:cc:to:from:date:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=uXPQPcM6Co9Pv6uvVSmI8m5rkwob2bI+bnvsiN0S4hk=;
-        b=maeQKO5AFHtS/5wniVAsZ5oXX0bZaf8Zm1AxRFGVpqUWOvH5VkSLI9KtHPfz2Gw/kM
-         3IeXAx5rWhTQt8KHPJDqkUuT/J2GUPH05x9nn5LcnJHY9GIx5TOWWJafzylAq6WEzwfE
-         GRoECJE2Xhn1I9PszKMBpXthE82/D5em1CxryXE5Zrpi5YtJcDYGF5xRfMqsfzqsGNcf
-         OcxN6DVGlf+PnO+3QFxnRYLGj40JZjZJqxsMfnt8fMiTRWrl5D9tFUdwJyDsQ1eZ/2oG
-         ogjYH0fiA8O7v5JLIpDz7uTf4dbvwp0wNismKbn0O02U+Gz2CM1THEIxC4KHcYZQ6b5h
-         coZw==
-X-Forwarded-Encrypted: i=1; AKwUvBwpWgT/rDaZC/y8SxXvMoYJdIclEy/zFYTkpegKf0gGejHLTuOZ8hzIio2jtEdS0/QTgcM2yqmdyRc=@lists.infradead.org
-X-Gm-Message-State: AFuF++lNCdiQ79Qh6XAyG66U4+YDd3P0DYXQLqlvIrM+QgALqJT2lCak
-	/4uVvJoPEJAAX36RA2RaFqs3ZKhVEqGZ8WXXNtLtS5UHi8AADqSY7bnh
-X-Gm-Gg: AYBFou125x1uvKyBKOz1AjJKDSQSM6igxKoIwRa5LB90xNH5SSP0BDgilsyqwTFU8yb
-	t+EsZDsthHDaZwVo6jj59eiu4sirQvK83mMoMBEgJ2jICOGSR+xcrW5a5OTG356D1on7Km0dXRl
-	ECh15olKUWBb4g/4Izei+f+d1s8UsQLs80PKINhpUPG3MU6ZVr3oXxNIGTslCvOUjAi40aTtGRx
-	aq8blhUE7h5E5MnT9aE8mpHBgDXO6VqoEIcR1eBPxnrnwKRkfF/Z53xCYeznywucAlAkZPEsUk4
-	ucVEnsLO3a+hyRvuRM3nioKDjvqFXC8CvYVs6wWEraELBBeRIGWBLALsdlTW65YDwQ1tltl9gQ4
-	kIOn8oY6xd8GNaTJKAN/LfrvMIXDYCZw0Hl9ln3owLjnUAEj/nkmyxst8izEL+H0mH7yFG5Tow1
-	C8TZiZ+k2pOJFF1cOxDmrMbo5xR85QgjagGEjDlB7kbl8DwBQ+8CWCereJrItMnI8koebzJQ==
-X-Received: by 2002:a17:90b:3c05:b0:393:288:29e3 with SMTP id 98e67ed59e1d1-39b26106c44mr34397361a91.10.1788783333930;
-        Mon, 07 Sep 2026 05:15:33 -0700 (PDT)
-Received: from localhost ([2001:19f0:8000:3e6e:5400:6ff:fe38:3d01])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-39b26155324sm19914915a91.17.2026.09.07.05.15.33
+        bh=3wWAlUzVTWK+l/c0CBIcXBp0GcykYm1XFSVWNetoGyg=;
+        b=YGqWcQ9x83mFJT0wNYhuJ1chFDG8b+3yEWGM59TZ+bJf22RAV0ycfgid5LGGEXNX1e
+         GGseXMmd55t1S4VdfSJOi0QkgKoSJwUxJunMt5sjmxoDz3/1QT03LyBdlr2y4B9StQun
+         VUzxOhdh3BK0eHVAuUUBworu/OyKX26XlvjwPhUSS4iM9DDlGQ7O342fjXo1Rs95S0YD
+         K7RTywQnsz+TwsFFgL9j3VRsAhYbX7kF3QYxDel7Vmm/y5KNlZaQQXooBLn6oAix23/x
+         npjDgCE3SUPhtgEu3V+oZTGLQvQB/duuLoGIJdhIV6hhid/6mTgTYqXf6ChiBERMS/L1
+         Z/nA==
+X-Forwarded-Encrypted: i=1; AKwUvByRtn8m2R2Di+wFlB40cJ8biPeVOcjicb7t/yvWbGr7VGa5+i4EmTWS73C7PMjRbwDhASjRal4P9DQ=@lists.infradead.org
+X-Gm-Message-State: AFuF++nr++Xxt/hJuSOcyDq7VaVJEWulsxziYr0eNzz5o9DIO/xKZWaI
+	/rxLVMQGapP6eTKgC1kdsThN9q+u05AiU5JcL9mXNAJJk/yWC54djOxv
+X-Gm-Gg: AYBFou0PHvm6FGY5nt4ALnGP7Y6ovp9ErNJtNYwQ4c0PB7I5IDn2Z5awGIA9JAQgoHf
+	ojfhtjkHKZnB3PjMq3A2YqwbwiDDLMCzJcHuYtRGJp5Yg3Uj+7IMp0d40HT9z8o+EoyawxX6jTa
+	+CdEidrU1qvyJE8dL9G2k+2/rbRyg6OZNnigEuEd8hm02uKZfvG+XbT1PqRel2E+59Mwwo8Zv8s
+	bY0eQ6oE4QPbRh6y/nLDXqXWx3z3EpvHxWaJtdjwFAuPHYV7nVg30RDYr+VamDnK43Sn/ae3oyL
+	z/kXExpHlCpdxjrwahlofDUksBDFIVIg8JJero5e59sn8KyaScWlXb3IJpaGMAB4hRBkS5w1J+K
+	SDn9R2PfVkRp85K3LRkR1fQ5LSGlmpujG3iPSS0hxje9upblBt8p3kmkpll2ikqhfaLrsN+zbB0
+	Z4/9RivxKI6TYPRtjZ4kace740jg9zN0QoJig9E0fwlhgrPJRRxA==
+X-Received: by 2002:a05:6000:144e:b0:485:8d31:ccf9 with SMTP id ffacd0b85a97d-485907ef7a6mr12996882f8f.4.1788783416126;
+        Mon, 07 Sep 2026 05:16:56 -0700 (PDT)
+Received: from skbuf ([2a02:2f04:d006:ef01:8e86:58dc:206e:83a0])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48588135600sm24401218f8f.2.2026.09.07.05.16.54
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 07 Sep 2026 05:15:33 -0700 (PDT)
-Date: Mon, 7 Sep 2026 20:15:04 +0800
-From: Inochi Amaoto <inochiama@gmail.com>
-To: Vladimir Oltean <olteanv@gmail.com>, 
-	Inochi Amaoto <inochiama@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
-	Andy Shevchenko <andriy.shevchenko@linux.intel.com>, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+        Mon, 07 Sep 2026 05:16:55 -0700 (PDT)
+Date: Mon, 7 Sep 2026 15:16:53 +0300
+From: Vladimir Oltean <olteanv@gmail.com>
+To: Inochi Amaoto <inochiama@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
 	Yixun Lan <dlan@gentoo.org>, Longbin Li <looong.bin@gmail.com>
-Subject: Re: [PATCH v2 3/4] phy: core: Add phy bulk data helper functions
-Message-ID: <ap6or7kpWUj1wBI4@inochi.infowork>
+Subject: Re: [PATCH v2 0/4] phy: core: Add phy bulk helpers support
+Message-ID: <20260907121653.4ajpkjt2i5opmwzc@skbuf>
 References: <20260904083709.425893-1-inochiama@gmail.com>
- <20260904083709.425893-4-inochiama@gmail.com>
- <20260907114837.2y55l7dfqqrgcka2@skbuf>
+ <20260907102849.w7yn43x6m3f2rnuj@skbuf>
+ <ap6fcP7Oct109dkY@inochi.infowork>
+ <20260907115712.dg5pw4ajvrtdipey@skbuf>
+ <ap6ngAxlztCAFSH0@inochi.infowork>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260907114837.2y55l7dfqqrgcka2@skbuf>
+In-Reply-To: <ap6ngAxlztCAFSH0@inochi.infowork>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260907_051537_387943_A381A0EF 
-X-CRM114-Status: GOOD (  26.19  )
+X-CRM114-CacheID: sfid-20260907_051658_211430_F2C218CE 
+X-CRM114-Status: GOOD (  24.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,115 +108,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Sep 07, 2026 at 02:48:37PM +0300, Vladimir Oltean wrote:
-> On Fri, Sep 04, 2026 at 04:37:07PM +0800, Inochi Amaoto wrote:
-> > +static inline int phy_bulk_get_all(struct device *dev,
-> > +				   struct phy_bulk_data **phys)
-> > +{
-> > +	if (phys)
-> > +		*phys = NULL;
-> > +
-> > +	return -EOPNOTSUPP;
-> > +}
-> > +
-> > +static inline int of_phy_bulk_get_all(struct device_node *np,
-> > +				      struct phy_bulk_data **phys)
-> > +{
-> > +	if (phys)
-> > +		*phys = NULL;
-> > +
-> > +	return -EOPNOTSUPP;
-> > +}
+On Mon, Sep 07, 2026 at 08:05:57PM +0800, Inochi Amaoto wrote:
+> On Mon, Sep 07, 2026 at 02:57:12PM +0300, Vladimir Oltean wrote:
+> > On Mon, Sep 07, 2026 at 07:29:49PM +0800, Inochi Amaoto wrote:
+> > > Yes, I have one for it. This is the spacemit pcie driver.
+> > > https://lore.kernel.org/linux-pci/20260907112606.465778-1-inochiama@gmail.com/
+> > > 
+> > > But it only uses a few of these helpers. So should I remove all the
+> > > things that are not directly used, and let others add these if they
+> > > need?
+> > 
+> > How many functions would go away, and how difficult would they be to
+> > reconstruct, if we only were to add them on an "as-needed" basis?
+> > 
+> > If the answer is "many", I suppose you could also leave a note in
+> > phy.rst that links to v2 and mentions unimplemented functions because
+> > they lack a user.
+> > 
 > 
-> Why do the stub definitions of *_get_all() return an error?
-> I would expect these to have optional semantics, i.e. 0 PHYs are not an
-> error to the consumer.
+> In fact I think it is happy. This PCIe driver only use three APIs:
+> - devm_of_phy_bulk_get_all
+> - phy_bulk_init
+> - phy_bulk_exit
 > 
-> For reference, I am comparing with clk_bulk_get_all() which returns 0.
+> So most of them will be removed as only a few are on the path.
+> I will follow you suggestion. Thanks.
 > 
+> Regards,
+> Inochi
 
-This is the thing I am not very clear to. I found the clk_bulk_get_all()
-return 0. But something in the reset return -EOPNOTSUPP for non optional
-get (I reference __reset_control_bulk_get, as reset does not have an
-API that is the same as this). I am not very sure whether it is best. 
+I think you should call phy_bulk_power_on()/phy_bulk_power_off() as
+well from the PCI controller driver, even if the PHY provider driver
+doesn't (currently) implement them. The Generic PHY API is about
+offering some degree of mutual consumer<->provider intercompatibility,
+not just a pretentious indirect function call k1_pcie_init() ->
+k1_pcie_phy_init().
 
-Since you think we should follow this optional semantics, I think it is
-fine for me to change this to 0.
+So those 2 functions should also make it to your v3 patch set.
 
-> > +
-> > +static inline void phy_bulk_put(struct device *dev, unsigned int num_phys,
-> > +				struct phy_bulk_data *phys)
-> > +{
-> > +	if (!phys)
-> > +		return;
-> > +
-> > +	while (num_phys--)
-> > +		phys[num_phys].phy = NULL;
-> > +}
-> > +
-> > +static inline void of_phy_bulk_put(unsigned int num_phys,
-> > +				   struct phy_bulk_data *phys)
-> > +{
-> > +	if (!phys)
-> > +		return;
-> > +
-> > +	while (num_phys--)
-> > +		phys[num_phys].phy = NULL;
-> > +}
-> > +
-> > +static inline void phy_bulk_put_all(struct device *dev, unsigned int num_phys,
-> > +				    struct phy_bulk_data *phys)
-> > +{
-> > +	phy_bulk_put(dev, num_phys, phys);
-> > +}
-> > +
-> > +static inline void of_phy_bulk_put_all(unsigned int num_phys,
-> > +				       struct phy_bulk_data *phys)
-> > +{
-> > +	of_phy_bulk_put(num_phys, phys);
-> > +}
-> > +
-> > +static inline int phy_bulk_check_disabled(unsigned int num_phys,
-> > +					  struct phy_bulk_data *phys)
-> > +{
-> > +	if (!phys)
-> > +		return 0;
-> > +
-> > +	for (unsigned int i = 0; i < num_phys; i++)
-> > +		if (phys[i].phy)
-> > +			return -EOPNOTSUPP;
-> 
-> For consistency with the individual API, I believe this should be
-> -ENOSYS (not that I know why we would be using this error code).
-> 
-
-In fact I think -ENOSYS is more suitable, but I found almost every
-subsystem use -EOPNOTSUPP for such a blob. So I think it will be
-good to follow a generic -EOPNOTSUPP. In fact I found nothing about
-why the phy subsystem use -ENOSYS for this, maybe someone can
-answer it.
-
-Instead of switching to -ENOSYS, I think it could be more proper to
-change the existing blobs to -EOPNOTSUPP?
-
-> > +
-> > +	return 0;
-> > +}
-> 
-> Can you update Documentation/driver-api/phy/phy.rst with some terse
-> references to the bulk API and its intended use? Not much, just say
-> what it's for (like multi-lane protocols, and why some operations are
-> missing: phy_validate(), phy_set_mode_ext() etc). I guess they are
-> missing because currently they have no user, which is OK, but the rest
-> of the world should be on the same page w.r.t. the future of this API.
-> 
-> Thanks!
-> 
-
-Yes, I will, this is something I missed. Thanks.
-
-Regards,
-Inochi
+BTW, do you need a stable tag to be provided by linux-phy, to continue
+your work on PCI in this development cycle? You should mention this in
+your cover letter, because it does require a bit of maintainer
+preparation beforehand.
 
 -- 
 linux-phy mailing list
