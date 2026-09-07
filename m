@@ -4,69 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78861C79FA1
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 15:36:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5378C79FA0
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 15:38:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=cKCcNYkaZjDiohl090R5VHc/svuq+q9Fh8r6JrWL67U=; b=XZzboKyt5RthloiQr54TEUX2Ta
-	xAfVIEkHGAo6DPrAU6OT0SEshMVO8YhgJQxOY3Yb5lgBrTnb3nnU9YxOXYcaI0ii09wRrtMdd06Xp
-	+de94IWu/rKszzVhPlZOIsVIODoV1v1W84b3N3ROG4e9WzucLgcZE+DL/EBTkkr3bynUJwlruyf0B
-	g0nOVGDWgQjXYrshvihFHqh7Ila6qQ4ePPCB1C5iqfBrrZDe0MvhV4EskAh87z9y8m7Q3EfpFysL/
-	YG2QNIKTeoG26Q3C+l8LCaDocP4QCmxP0LCXc2AZ/KBUy3kIWa2Is/kVzZ+chUkaKZ2w8IIHvPc4I
-	z5U3bJxQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qjow1TB2xW1YHXP+punMtXdSRcRDpm1Y7qHx2CJ3+qc=; b=RDJ9DUL0oU3Q0Z
+	rLz8RtpY4cKqZfGP0nB1LqsoBAXp1XviYbTbfTQEzPBa7gsqhF5O0l8wRGTFzcHhT6W/I//pOCjm6
+	KVStt2oR+3eomye+XodLKcF7SMv7sKYDX75ni8ubN8Vpldd2G+P+iDMiXzrn1QthWyw8bFdPIOYfK
+	DYCHUyfU7IifeYM0bJB3l/i6teSDBsbLHubyuhLLBizUPDfHYt2l5eo+kbXzE6A3BDkOzbZJssnrz
+	EuGWruZBCotSE/itN4Hneyi1Y983khVNuGnArwXLjgMW4rhJXMT4Reqe0SGNQRn9Vp9PO+rCd4xGD
+	SV99U84wjMEHYXV2sO6A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3bOw-00000007BcQ-0KVQ;
-	Mon, 07 Sep 2026 15:36:54 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1x3bQf-00000007BtQ-25Gr;
+	Mon, 07 Sep 2026 15:38:41 +0000
+Received: from mail-pj2-x07.google.com ([2607:f8b0:4864:39::7])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3bOu-00000007Bc6-3Jve;
-	Mon, 07 Sep 2026 15:36:52 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 2384660D89;
-	Mon,  7 Sep 2026 15:36:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 498E41F00A3A;
-	Mon,  7 Sep 2026 15:36:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788795411;
-	bh=otIPJu+TzkOj3mNvPJg4bU2oZNf1j9J+ix1n6UG32WI=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=NeSlAWVsyypsF4hIil2ed2Y5sOHsUJrCS5HlU19as33dem4Pdr0UdPoHoFUbwTgKA
-	 OQdN2pZRQmlRgXnQyDdPlyXEhJk+QYiYKoX9lXeSNFl9OjhP6UCiaWZnbXSkZImlBt
-	 JmaQAktGIkLi+hKjDotKvTyfNLcsiU10gjkcszuPvXzTksdsm8nXze25H5nGg3xdxV
-	 VFLamu1kpet4ovM6g9fJhgzVrW7ma8RceLuoqDOtQ949WC8+Kjnkh5N3IJkjK9KYnm
-	 kYc87Gw+us1qpnW4rpDKRAEbsiGVkcxQmJYP9U28s5Ng+7RcYdLsSVazIJoLH3Nysr
-	 zM6jGpm6Y5g2A==
-Date: Mon, 7 Sep 2026 17:36:47 +0200
-From: Maxime Ripard <mripard@kernel.org>
-To: Liu Ying <victor.liu@nxp.com>
-Cc: Francesco Dolcini <francesco@dolcini.it>, 
-	dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, imx@lists.linux.dev, 
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	p.zabel@pengutronix.de, airlied@gmail.com, simona@ffwll.ch, 
-	maarten.lankhorst@linux.intel.com, tzimmermann@suse.de, robh@kernel.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de, 
-	kernel@pengutronix.de, festevam@gmail.com, tglx@linutronix.de, vkoul@kernel.org, 
-	kishon@kernel.org, Frank.Li@nxp.com, lumag@kernel.org, aisheng.dong@nxp.com, 
-	agx@sigxcpu.org, u.kleine-koenig@baylibre.com, marek.vasut@mailbox.org
-Subject: Re: [PATCH v9 00/19] Add Freescale i.MX8qxp Display Controller
- support
-Message-ID: <ap7Z3xQSavJa0toF@houat>
-References: <20250414035028.1561475-1-victor.liu@nxp.com>
- <20260714193627.GA9616@francesco-nb>
- <alh4a66fEro05ShA@raspi>
- <20260716062612.GC9973@francesco-nb>
- <alh-6sI4J7vq2drz@raspi>
- <apl4rkHIs9QFuUTE@houat>
- <app836E0_y8lG9T5@raspi>
- <apqDKdcQrizwAv6U@houat>
- <apqGD7wxP0ZiLzfF@raspi>
+	id 1x3bQb-00000007Bra-1DjR
+	for linux-phy@lists.infradead.org;
+	Mon, 07 Sep 2026 15:38:40 +0000
+Received: by mail-pj2-x07.google.com with SMTP id d9443c01a7336-2d9181b7e1bso4325795ad.1
+        for <linux-phy@lists.infradead.org>; Mon, 07 Sep 2026 08:38:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1788795516; x=1789400316; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:mime-version:message-id:date
+         :subject:cc:to:from:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=Hq1rNKVGmliGTWsiFEwtrdEOPueQghmo9INX52ut/jY=;
+        b=HJ+8fflLaC1x+ciQh8aqqY45GdL3iwbnmW0iwWuRKruC9/Pkl+u+DGGBd2qPLbwpZ9
+         U7+2mKjlwCte0GrUopsyVrRZoYMc7Bq9+qaMVK4J7HgISzNob+/sbsFLzGSMj8B0s9UJ
+         ZMuwjqD/d3hOE3fQHURFz88rddPBceiqC2b3mp5JjK/Tvvyju7mrbCJssQk9JuCclM8K
+         qqE4AT2lSSrRXNSd5L3V+ZF3WZy8COsOJdRJuSboP+QraATt0hcUMouBLMtuO2Jc0iX6
+         qDlKWbYz6CREqL+xWjNizHPeDiPy6OaY2Mr1zQzMqmCyy0w3z1PTw3J8Gn7mYs1/gvWK
+         qYkQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1788795516; x=1789400316;
+        h=content-transfer-encoding:content-type:mime-version:message-id:date
+         :subject:cc:to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=Hq1rNKVGmliGTWsiFEwtrdEOPueQghmo9INX52ut/jY=;
+        b=HY6CJdA1ZbT+ulMFe9ZM8wxucN4QZICqv/m+aYLK1NlLCuAeeWOCtcSAy4bS12stTE
+         o03lXt/unvx7tRqWwai0gu35eM5jDq2yLTLmlzQiLZV9XhC1/g1I84Y6umKmQfGJRyUA
+         ukmY4E6RkFaMM4uLJyxdRgF2WshDQhkIaB0jCl3Cx0vRlZdr3m9ozbdVB0dItlLaEZkJ
+         SGP1ej3aolPq6WaaYHsSsDMv8ZgE1vkrzexagMxHwphEa+ttbx5ki+y5eYMTllxPnHja
+         Vb5vl8igeqzIc9jtyAkZxPxpKncVfLc2xEAMxuXSY9amJjNgSUSdeCcnC3C5us372yh+
+         VISQ==
+X-Forwarded-Encrypted: i=1; AKwUvBw1Oc5PHlLWB7CAH8oDOHJA/mDCCud1aZAkOg5fRuNw9vPIb+EEmtWPxos6dg8r3p2AdGESAs61rVg=@lists.infradead.org
+X-Gm-Message-State: AFuF++lcIDBU84bfVzozcs2MjAfdL/p8L7aaqNlWoojGA+fsYg/F4xC+
+	oOgQCcsFQ8msuQygNbpPQPdFs3R2kPCdM9e4pqj4K9mCCDyWceudNf9u
+X-Gm-Gg: AYBFou2cx8O5/IHtVBYZqiKADruDy0GprazdzBBPZfSXIovdKpEkr+VfRFc4Ku7rPrS
+	pKAqqO4c5z+EbT4F2b9kRdrg3Qf1XkwyaftMhjbJ+QzHBDwBrWYmIn8Oaw4n5t1zD++xdz5pV6c
+	XqhyR0iCJQ42ZcIWQmuDjlr432peAM37Rc88h74g2q2DQm3atcmz6RTl6w0JAk+x0b6HfE00fWX
+	DGL2v8xk96mH4g/Z4DeHPGCiJr6P/+xCkEWQ49K9sdHbvwjAvhleqMCm59Vaxeg/TZLhOOKicN2
+	bjkBCMB7JORRw+FDQ1RQqzOTxE1G+/ujAA4e3WqcVfiSjAvXnu+xwdXr0N06M45IkMKqLdZ8iQl
+	X1yCzEqdZlxCYTCwHofWIjj+6SmokdWnw36BLRPfcRbOLnfljCUWS2rxfkpDaD1CmB1tAWfhN4k
+	TS63HpQOZrEtEoc+LSUKCLbQ0jGBJBPw5QhkthW4WlaCOLohvShWLaIfynxWU=
+X-Received: by 2002:a17:90b:5110:b0:390:84db:888e with SMTP id 98e67ed59e1d1-39b8bd4aef3mr1404027a91.7.1788795516238;
+        Mon, 07 Sep 2026 08:38:36 -0700 (PDT)
+Received: from server.lan ([150.230.217.250])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-39b260fdf9asm21690121a91.9.2026.09.07.08.38.29
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 07 Sep 2026 08:38:35 -0700 (PDT)
+From: Coia Prant <coiaprant@gmail.com>
+To: Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S . Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Paolo Abeni <pabeni@redhat.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Vinod Koul <vkoul@kernel.org>,
+	Maxime Chevallier <maxime.chevallier@bootlin.com>,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+	Romain Gantois <romain.gantois@bootlin.com>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Coia Prant <coiaprant@gmail.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+	Russell King <linux@armlinux.org.uk>,
+	Shawn Lin <shawn.lin@rock-chips.com>,
+	David Heidelberg <david@ixit.cz>,
+	netdev@vger.kernel.org,
+	linux-rockchip@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	linux-renesas-soc@vger.kernel.org
+Subject: [PATCH net-next v4 00/10] net: pcs: add basic support for RK3568 XPCS
+Date: Mon,  7 Sep 2026 23:37:03 +0800
+Message-ID: <20260907153713.2572547-2-coiaprant@gmail.com>
+X-Mailer: git-send-email 2.47.3
 MIME-Version: 1.0
-In-Reply-To: <apqGD7wxP0ZiLzfF@raspi>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260907_083839_587794_A406593B 
+X-CRM114-Status: GOOD (  18.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,160 +118,110 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1557353379821013956=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============1557353379821013956==
-Content-Type: multipart/signed; micalg=pgp-sha384;
-	protocol="application/pgp-signature"; boundary="nzpfrxwi4i53nnqx"
-Content-Disposition: inline
-
-
---nzpfrxwi4i53nnqx
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH v9 00/19] Add Freescale i.MX8qxp Display Controller
- support
-MIME-Version: 1.0
-
-On Fri, Sep 04, 2026 at 04:49:19PM +0800, Liu Ying wrote:
-> On Fri, Sep 04, 2026 at 10:38:08AM +0200, Maxime Ripard wrote:
-> > On Fri, Sep 04, 2026 at 04:10:07PM +0800, Liu Ying wrote:
-> > > Hi Maxime,
-> > >=20
-> > > On Thu, Sep 03, 2026 at 03:41:15PM +0200, Maxime Ripard wrote:
-> > > > On Thu, Jul 16, 2026 at 02:49:14PM +0800, Liu Ying wrote:
-> > > > > On Thu, Jul 16, 2026 at 08:26:12AM +0200, Francesco Dolcini wrote:
-> > > > > > On Thu, Jul 16, 2026 at 02:21:31PM +0800, Liu Ying wrote:
-> > > > > > > On Tue, Jul 14, 2026 at 09:36:27PM +0200, Francesco Dolcini w=
-rote:
-> > > > > > > > On Mon, Apr 14, 2025 at 11:50:09AM +0800, Liu Ying wrote:
-> > > > > > > > > Hi,
-> > > > > > > > >=20
-> > > > > > > > > This patch series aims to add Freescale i.MX8qxp Display =
-Controller support.
-> > > > > > > > >=20
-> > > > > > > > > The controller is comprised of three main components that=
- include a blit
-> > > > > > > > > engine for 2D graphics accelerations, display controller =
-for display output
-> > > > > > > > > processing, as well as a command sequencer.
-> > > > > > > >=20
-> > > > > > > > ...
-> > > > > > > >=20
-> > > > > > > > >=20
-> > > > > > > > > To follow up i.MX8qxp TRM, I changed the controller name =
-to "Display Controller"
-> > > > > > > > > instead of the previous "DPU".  "DPU" is only mentioned i=
-n the SoC block
-> > > > > > > > > diagram and represents the whole display subsystem which =
-includes the display
-> > > > > > > > > controller and prefech engines, etc.
-> > > > > > > > >=20
-> > > > > > > > > With an additional patch[1] for simple-pm-bus.c, this ser=
-ies facilitates
-> > > > > > > > > testing a LVDS panel on i.MX8qxp MEK.
-> > > > > > > > >=20
-> > > > > > > > > Please do NOT merge patch 14-19.  They are only used to f=
-acilitate testing
-> > > > > > > > > the LVDS panel.
-> > > > > > > >=20
-> > > > > > > > What's the plan to conclude this work? What's the latest st=
-atus?
-> > > > > > > > I am looking forward to have a way to use the i.MX8QXP disp=
-lay with
-> > > > > > > > mainline, but to my understanding some required changes on =
-the SOC dtsi
-> > > > > > > > are not merged.
-> > > > > > > >=20
-> > > > > > > > Can you help?
-> > > > > > >=20
-> > > > > > > I planned to add display controller DT node after prefetch en=
-gine support [1]
-> > > > > > > is picked up so that the prefetch engine could be enabled tog=
-ether with the
-> > > > > > > display controller.  Just want to avoid a DT that only enable=
-s the display
-> > > > > > > controller or bypasses the prefetch engine.  It makes the dis=
-play controller
-> > > > > > > driver simpler.
-> > > > > > >=20
-> > > > > > > [1] https://lore.kernel.org/all/20251027-imx8-dc-prefetch-v5-=
-0-4ecb6c6d4941@nxp.com/
-> > > > > >=20
-> > > > > > That series is from October 2025, is there anything blocking to=
- move it
-> > > > > > forward?
-> > > > >=20
-> > > > > It lacks a Reviewed-by tag(at least a Acked-by tag) from a drm-mi=
-sc committer
-> > > > > for every driver patch in that series.  Also, it seems that Marek=
-(Cc'ed) is
-> > > > > not a big fan of [1](See i.MX95 display support discussion[2]).
-> > > >=20
-> > > > I was just pointed at this series, and I'm not sure why it's blocke=
-d. It
-> > > > looks like you were waiting for a Reviewed-by by a drm-misc maintai=
-ner,
-> > > > but I gave mine already and I'm a drm-misc maintainer, sooo... :)
-> > >=20
-> > > Your Reviewed-by tags were on the initial i.MX8qxp Display Controller=
- driver
-> > > patches.  And, those patches have already landed.
-> > >=20
-> > > Now, I'm waiting for Acked-by or Reviewed-by tags on those driver pat=
-ches
-> > > which add i.MX8qxp Display Controller *prefetch engines* support.
-> > > 'b4 trailers -u' doesn't include any Reviewed-by from you on those pa=
-tches...
-> > > I sent v6 prefetch engine patch series[1] just now.
-> > > It would be great to have your Acked-by or Reviewed-by tags on those =
-driver
-> > > patches :)
-> >=20
-> > It looks like you had a reviewed-by by someone on all these patches
-> > already, so you could have merged them.
->=20
-> Oh, okay.  I *thought* one merge criteria is at least one Acked-by from a
-> drm-misc committer on each driver patch by reading the guildlines[1].
-> But now I've got the idea.  Thanks.
->=20
-> [1] https://drm.pages.freedesktop.org/maintainer-tools/committer/committe=
-r-drm-misc.html
-
-For a driver, it's totally enough to have a reviewed-by by someone with
-experience with the driver too.
-
-Maxime
-
---nzpfrxwi4i53nnqx
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iJUEABMJAB0WIQTkHFbLp4ejekA/qfgnX84Zoj2+dgUCap7aDwAKCRAnX84Zoj2+
-doeCAX9T+LgYMTWQNSla28ip6yR0qM88eain+6vQBAG1kI/IdbDa9glAvdQEOOTv
-fXTYoEIBf3QACWC1uGpzItuPa9Zyaak4mtnpldIns/xtAj3bAcQXgRWbVExWIL8G
-v4gPxoV7fw==
-=8ZHA
------END PGP SIGNATURE-----
-
---nzpfrxwi4i53nnqx--
-
-
---===============1557353379821013956==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============1557353379821013956==--
-
+VGhpcyBzZXJpZXMgYWRkcyBwcm9wZXIgU0dNSUkgc3VwcG9ydCBmb3IgdGhlIFJvY2tjaGlwIFJL
+MzU2OCBTb0MKdXNpbmcgdGhlIGludGVncmF0ZWQgU3lub3BzeXMgRGVzaWduV2FyZSBYUENTLCBh
+bG9uZyB3aXRoIG5lY2Vzc2FyeQpmaXhlcyBhbmQgcmVmYWN0b3JpbmcgaW4gdGhlIHN0bW1hYyBj
+b3JlIGFuZCBYUENTIGRyaXZlci4KCk1vdGl2YXRpb24KPT09PT09PT09PQpUaGUgUkszNTY4IGlu
+dGVncmF0ZXMgYSBEVyBYUENTIGFjY2Vzc2VkIHZpYSBBUEIzIGFuZCBjb25uZWN0ZWQgdG8KYSBO
+YW5lbmcgQ29tYm8gU2VyRGVzIFBIWS4gIFNldmVyYWwgYm9hcmRzIChlLmcuLCBBcmlhYm9hcmQK
+UGhvdG9uaWNhdCkgdXNlIHRoaXMgaW50ZXJmYWNlIGZvciBHaWdhYml0IEV0aGVybmV0LiAgSG93
+ZXZlciwgdGhlCmN1cnJlbnQgdXBzdHJlYW0gc3RtbWFjIGRyaXZlciBkb2VzIG5vdCBzdXBwb3J0
+IHRoaXMgY29uZmlndXJhdGlvbiwKYW5kIHRoZSBYUENTIGRyaXZlciBoYXMgaXNzdWVzIGluIFNH
+TUlJIHBvbGwgbW9kZSB0aGF0IGNhdXNlIHRoZQpsaW5rIHRvIGJlIHJlcG9ydGVkIGluY29ycmVj
+dGx5LgoKVGhpcyBzZXJpZXMgYWRkcmVzc2VzIHRoZXNlIGlzc3VlcyBieToKLSBSZWZhY3Rvcmlu
+ZyBzdG1tYWMgUENTIGxpZmV0aW1lIG1hbmFnZW1lbnQgdG8gYWxsb3cgcGxhdGZvcm0gZHJpdmVy
+cwogIGZ1bGwgY29udHJvbCBvdmVyIFBDUyBjcmVhdGlvbi9kZXN0cnVjdGlvbgotIEZpeGluZyB0
+aGUgWFBDUyBkcml2ZXIncyBTR01JSSBsaW5rIHJlY292ZXJ5Ci0gQWRkaW5nIGEgUm9ja2NoaXAg
+WFBDUyBwbGF0Zm9ybSBnbHVlIGRyaXZlciBhbmQgd2lyaW5nIGl0IHVwIGluCiAgZHdtYWMtcmsK
+ClNlcmllcyBvdmVydmlldwo9PT09PT09PT09PT09PT0KCkdlbmVyaWM6CiAgUGF0Y2ggMTogbW92
+ZSBYUENTIGxpZmV0aW1lIG1hbmFnZW1lbnQgdG8gcGxhdGZvcm0gZHJpdmVycwoKUEhZOgogIFBh
+dGNoIDI6IERUIGJpbmRpbmcgZm9yIE5hbmVuZyBDb21ibyBQSFkgU0dNSUkgTUFDIHNlbGVjdGlv
+bgogIFBhdGNoIDM6IGltcGxlbWVudCB0aGUgUEhZIFNHTUlJIE1BQyBzZWxlY3Rpb24gaW4gZHJp
+dmVyCgpSSzM1NjggWFBDUy9TR01JSToKICBQYXRjaCA0OiBEVCBiaW5kaW5nIGZvciBSb2NrY2hp
+cCBSSzM1NjggWFBDUwogIFBhdGNoIDU6IGFkZCBYUENTIGFuZCBmaXhlZC1jbG9jayBub2RlcyB0
+byByazM1NjguZHRzaQogIFBhdGNoIDY6IGFkZCBBTlJFU1RBUlQgc3VwcG9ydCBmb3IgU0dNSUkg
+bGluayByZWNvdmVyeQogIFBhdGNoIDc6IGltcGxlbWVudCB0aGUgUm9ja2NoaXAgWFBDUyBwbGF0
+Zm9ybSBnbHVlIGRyaXZlcgogIFBhdGNoIDg6IHdpcmUgdXAgU0dNSUkgc3VwcG9ydCBpbiBkd21h
+Yy1yawogIFBhdGNoIDEwOiB1cGRhdGUgTUFJTlRBSU5FUlMKCkJvYXJkIGVuYWJsZW1lbnQ6CiAg
+UGF0Y2ggOTogZW5hYmxlIFNHTUlJIExBTiBwb3J0IG9uIFBob3RvbmljYXQgYm9hcmQKCkNoYW5n
+ZWxvZwo9PT09PT09PT0KCkNoYW5nZXMgc2luY2UgdjM6CgpQYXRjaCA3IChuZXQ6IHBjczogeHBj
+czogYWRkIFJvY2tjaGlwIFJLMzU2OCBwbGF0Zm9ybSBnbHVlIGRyaXZlcikKLSBSZXZlcnRlZCBN
+YWtlZmlsZSBjaGFuZ2UgdG8ga2VlcCBwY3NfeHBjcyBhcyBhIGNvbXBvc2l0ZSBtb2R1bGUKLSBT
+d2l0Y2hlZCBmcm9tIG1hbnVhbCBgZGV2bV9wbV9ydW50aW1lX2VuYWJsZSgpYCB0byBgcG1fcnVu
+dGltZV9lbmFibGUoKWAKICBhbmQgdXNlIGBwbV9ydW50aW1lX2ZvcmNlX3N1c3BlbmQoKWAgaW4g
+YHhwY3NfcmtfZXhpdF9jbGsoKWAKLSBSZW1vdmVkIGB4cGNzX3JrX3JlbW92ZSgpYCBjYWxsYmFj
+ayBlbnRpcmVseTsgY2xlYW51cCBpcyBub3cgZnVsbHkKICBtYW5hZ2VkIGJ5IGRldnJlcyB2aWEg
+YHhwY3NfcmtfZXhpdF9jbGsoKWAuCgpLZXkgZGVzaWduIGRlY2lzaW9ucwo9PT09PT09PT09PT09
+PT09PT09PQotIFRoZSBzdG1tYWMgY29yZSBub3cgZGVsZWdhdGVzIFhQQ1MgY3JlYXRpb24gZW50
+aXJlbHkgdG8gcGxhdGZvcm0KICBkcml2ZXJzIHZpYSBwY3NfaW5pdC9wY3NfZXhpdC4gIFRoaXMg
+aXMgbmVjZXNzYXJ5IGJlY2F1c2UgdGhlCiAgZ2VuZXJpYyBYUENTIGNyZWF0aW9uIGxvZ2ljIHdv
+dWxkIG92ZXJyaWRlIGFueSBYUENTIHNldCB1cCBieSB0aGUKICBwbGF0Zm9ybSBkcml2ZXIuCgot
+IFRoZSBSb2NrY2hpcCBYUENTIGRyaXZlciBjcmVhdGVzIGEgdmlydHVhbCBNRElPIGJ1cyBvdmVy
+IHRoZSBBUEIzCiAgcmVnaXN0ZXJzIGFuZCBpbXBsZW1lbnRzIGFkZHJlc3MgcmVtYXBwaW5nLiAg
+VGhlIGdlbmVyaWMgWFBDUyBjb3JlCiAgaGFuZGxlcyBhbGwgUENTIGNvbmZpZ3VyYXRpb24gdmlh
+IHBoeWxpbmtfcGNzX29wcy4KCi0gT24gUkszNTY4IGluIFNHTUlJIG1vZGUsIHRoZSBNQUMgY2xv
+Y2sgaXMgZml4ZWQgYXQgMTI1IE1IeiBhbmQKICBjYW5ub3QgYmUgZHluYW1pY2FsbHkgY2hhbmdl
+ZC4gIEluLWJhbmQgbW9kZSBpcyB1c2VkLCBhbmQgdGhlCiAgZ2VuZXJpYyBzdG1tYWMgc2V0X2Ns
+a190eF9yYXRlIGNhbGxiYWNrIGlzIGRpc2FibGVkIHRvIHByZXZlbnQKICBpbmNvcnJlY3QgY2xv
+Y2sgdXBkYXRlcyB0aGF0IHdvdWxkIGJyZWFrIFJYLgoKLSBUaGUgU2VyRGVzIGFuZCBwb3dlciBk
+b21haW4gYXJlIGF0dGFjaGVkIHRvIHRoZSBYUENTIGRldmljZSB0cmVlCiAgbm9kZSByYXRoZXIg
+dGhhbiB0aGUgTUFDIG5vZGUuIFRoaXMgcmVmbGVjdHMgdGhlIGFjdHVhbCBoYXJkd2FyZQogIHRv
+cG9sb2d5IGFuZCBzaW1wbGlmaWVzIHRoZSBkd21hYy1yayBkcml2ZXIgYnkga2VlcGluZyBhbGwg
+UENTLXJlbGF0ZWQKICByZXNvdXJjZXMgc2VsZi1jb250YWluZWQuIEl0IGFsc28gcHJlcGFyZXMg
+Zm9yIHBvc3NpYmxlIGZ1dHVyZSBRU0dNSUkKICBzdXBwb3J0LCB3aGVyZSBhIHNpbmdsZSBTZXJE
+ZXMgc2VydmVzIG11bHRpcGxlIE1BQ3MgYW5kIHdvdWxkIGJlCiAgbW9yZSBuYXR1cmFsbHkgbWFu
+YWdlZCB1bmRlciB0aGUgWFBDUyBub2RlLgoKVGVzdGluZwo9PT09PT09CkJvYXJkOiBBcmlhYm9h
+cmQgUGhvdG9uaWNhdCAoUkszNTY4KQpPUzogQXJtYmlhbiAodHJpeGllKQpLZXJuZWw6IDYuMTgg
+KGJhY2twb3J0cykKUmVzdWx0OiBUaGUgU0dNSUkgaW50ZXJmYWNlIG9idGFpbnMgYW4gSVAgYWRk
+cmVzcywgU1NIIHdvcmtzLCBhbmQKICAgICAgICBwaW5nIHRyYWZmaWMgcGFzc2VzIHdpdGhvdXQg
+bG9zcy4KCk5vdGVzCj09PT09Ci0gV2hlbiB0ZXN0aW5nIG91dC1iYW5kIG1vZGUgd2l0aCBzZXRf
+Y2xrX3R4X3JhdGUsIG9ubHkgMTAwME1icHMKICB3b3JrcyBvbiBib3RoIFRYL1JYOyAxMC8xMDBN
+YnBzIG9ubHkgd29ya3Mgb24gVFggc2lkZS4KCkRlcGVuZGVuY2llcwo9PT09PT09PT09PT0KTm9u
+ZS4gQWxsIHBhdGNoZXMgYXBwbHkgY2xlYW5seSBvbiB0b3Agb2YgdG9ydmFsZHMgbWFzdGVyIHRy
+ZWUgKHY3LjMpLgoKQWNrbm93bGVkZ21lbnRzCj09PT09PT09PT09PT09PQpUaGlzIHdvcmsgd2Fz
+IGluc3BpcmVkIGJ5IGFuZCBidWlsZHMgdXBvbiB0aGUgZXhjZWxsZW50IHdvcmsgb2Ygb3RoZXJz
+OgotIFNlcmdlIFNlbWluJ3MgU3lub3BzeXMgRGVzaWduV2FyZSBYUENTIHBsYXRmb3JtIGRyaXZl
+ciAocGNzLXhwY3MtcGxhdC5jKQotIENsw6ltZW50IEzDqWdlcidzIFJlbmVzYXMgTUlJQyBkcml2
+ZXIgKHBjcy1yem4xLW1paWMuYykKLSBUaGUgUm9ja2NoaXAgVFJNIGFuZCBkb3duc3RyZWFtIE9F
+TSBkcml2ZXJzCgpUaGFua3MgaW4gYWR2YW5jZSwKQ29pYSBQcmFudAotLS0KQ29pYSBQcmFudCAo
+MTApOgogIG5ldDogc3RtbWFjOiBtb3ZlIFhQQ1MgbGlmZXRpbWUgbWFuYWdlbWVudCB0byBwbGF0
+Zm9ybSBkcml2ZXJzCiAgZHQtYmluZGluZ3M6IHBoeTogcm9ja2NoaXA6IG5hbmVuZy1jb21icGh5
+OiBhZGQgcm9ja2NoaXAsc2dtaWktbWFjLXNlbAogICAgcHJvcGVydHkKICBwaHk6IHJvY2tjaGlw
+OiBuYW5lbmctY29tYnBoeTogYWRkIFNHTUlJIE1BQyBzZWxlY3Rpb24gZm9yIFJLMzU2OAogIGR0
+LWJpbmRpbmdzOiBuZXQ6IHBjczogYWRkIHJvY2tjaGlwLHJrMzU2OC14cGNzIHN1cHBvcnQKICBh
+cm02NDogZHRzOiByb2NrY2hpcDogcmszNTY4OiBhZGQgWFBDUyBhbmQgZml4ZWQtY2xvY2sgbm9k
+ZXMKICBuZXQ6IHBjczogeHBjczogYWRkIEFOUkVTVEFSVCBzdXBwb3J0IGZvciBTR01JSSBsaW5r
+IHJlY292ZXJ5CiAgbmV0OiBwY3M6IHhwY3M6IGFkZCBSb2NrY2hpcCBSSzM1NjggcGxhdGZvcm0g
+Z2x1ZSBkcml2ZXIKICBuZXQ6IHN0bW1hYzogZHdtYWMtcms6IGFkZCBTR01JSSBzdXBwb3J0IGZv
+ciBSSzM1NjgKICBhcm02NDogZHRzOiByb2NrY2hpcDogcmszNTY4LXBob3RvbmljYXQ6IGVuYWJs
+ZSBTR01JSSBMQU4gcG9ydAogIE1BSU5UQUlORVJTOiBhZGQgZW50cnkgZm9yIFJvY2tjaGlwIFhQ
+Q1MgZHJpdmVyCgogLi4uL2JpbmRpbmdzL25ldC9wY3Mvcm9ja2NoaXAtZHd4cGNzLnlhbWwgICAg
+IHwgMTEwICsrKysKIC4uLi9waHkvcGh5LXJvY2tjaGlwLW5hbmVuZy1jb21icGh5LnlhbWwgICAg
+ICB8ICAxMyArCiBNQUlOVEFJTkVSUyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+fCAgIDkgKwogLi4uL2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzU2OC1waG90b25pY2F0LmR0cyAgIHwg
+IDc0ICsrLQogYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazM1NjguZHRzaSAgICAgIHwg
+IDQ1ICsrCiBkcml2ZXJzL25ldC9ldGhlcm5ldC9zdG1pY3JvL3N0bW1hYy9LY29uZmlnICAgfCAg
+IDEgKwogLi4uL25ldC9ldGhlcm5ldC9zdG1pY3JvL3N0bW1hYy9kd21hYy1pbnRlbC5jIHwgIDQ0
+ICstCiAuLi4vc3RtaWNyby9zdG1tYWMvZHdtYWMtcmVuZXNhcy1nYmV0aC5jICAgICAgfCAgIDcg
+Ky0KIC4uLi9uZXQvZXRoZXJuZXQvc3RtaWNyby9zdG1tYWMvZHdtYWMtcmsuYyAgICB8IDEyMSAr
+KystCiAuLi4vbmV0L2V0aGVybmV0L3N0bWljcm8vc3RtbWFjL2R3bWFjLXJ6bjEuYyAgfCAgIDcg
+Ky0KIC4uLi9ldGhlcm5ldC9zdG1pY3JvL3N0bW1hYy9kd21hYy1zb2NmcGdhLmMgICB8ICAgNyAr
+LQogLi4uL25ldC9ldGhlcm5ldC9zdG1pY3JvL3N0bW1hYy9zdG1tYWNfbWRpby5jIHwgIDM3ICst
+CiBkcml2ZXJzL25ldC9wY3MvS2NvbmZpZyAgICAgICAgICAgICAgICAgICAgICAgfCAgMjMgKwog
+ZHJpdmVycy9uZXQvcGNzL01ha2VmaWxlICAgICAgICAgICAgICAgICAgICAgIHwgICA1ICstCiBk
+cml2ZXJzL25ldC9wY3MvcGNzLXhwY3MtcmsuYyAgICAgICAgICAgICAgICAgfCA1NDMgKysrKysr
+KysrKysrKysrKysrCiBkcml2ZXJzL25ldC9wY3MvcGNzLXhwY3MuYyAgICAgICAgICAgICAgICAg
+ICAgfCAgMTYgKy0KIC4uLi9yb2NrY2hpcC9waHktcm9ja2NoaXAtbmFuZW5nLWNvbWJwaHkuYyAg
+ICB8ICAgOCArCiBpbmNsdWRlL2xpbnV4L3Bjcy9wY3MteHBjcy1yay5oICAgICAgICAgICAgICAg
+fCAgMTEgKwogMTggZmlsZXMgY2hhbmdlZCwgMTAxNSBpbnNlcnRpb25zKCspLCA2NiBkZWxldGlv
+bnMoLSkKIGNyZWF0ZSBtb2RlIDEwMDY0NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGlu
+Z3MvbmV0L3Bjcy9yb2NrY2hpcC1kd3hwY3MueWFtbAogY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZl
+cnMvbmV0L3Bjcy9wY3MteHBjcy1yay5jCiBjcmVhdGUgbW9kZSAxMDA2NDQgaW5jbHVkZS9saW51
+eC9wY3MvcGNzLXhwY3MtcmsuaAoKLS0gCjIuNDcuMwoKCi0tIApsaW51eC1waHkgbWFpbGluZyBs
+aXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
