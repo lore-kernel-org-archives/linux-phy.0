@@ -4,158 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3088DC79F89
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 08:14:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2CA7C79F9E
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Sep 2026 08:21:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uROqmkYsOgTZYdgwOInC/bqa+T9d/kSZQ9E7j18CE5A=; b=sk9gfVtZ0xrES1
-	6DwbC7Wh8HNy4Q7vVDChmmpTbgFn3L1dPyI/A6IVg5lV3xB8+5b3jf2Hl4g/MR34eUTOOFsyZPhSa
-	cC0gD1x4xWVf74aoq4WNAYsh8XaFRVFAgsLr3i4UMmYmvCnP7ECR99D1GCxmolEALv0g6ueGxPs62
-	+RkWskr90wTis48R0yizi00p9O4aYGlTMgozA6SRgvoJKFvIXtwb4NxTgcGfu+nik3c3mjbuFIs0B
-	YD2ACQvEoUawfGB8d3+CJLXnWlYp19OBCZ1Ulk7mQNG2e6n+JZjmdewVF3FiRHhiUS1+PorHgig1H
-	+uFtfzL77KKqxnNp5Xiw==;
+	List-Owner; bh=aio6dV/SkcUUTb/nugNT+gjFvQrqMSGTcfcbD5XJB/w=; b=3rh2ZeSmf0suct
+	g7ePanxo002rn2VbyFJsFnb3nTB6eMDoA7H2cCHwVxqwjWgWh/vKTMyIImydBZY3fn3FzsHbsWrXa
+	ZQ2qPSH6GNd4/3mOyXHRjpIOl+DaBd9lFHMVyvJCtucq8KVf693kD4XYX5xKlX/VsI/J0ZECefEHj
+	x0ykMtLZX6HT4eM7CUxyj+pc1raXrdak0Zyw//MrldGtC7sEtytTuAS2kUWKcjqIcCazCmHI+aNLC
+	3+OFtqfiExTWPMOYp0rwrx9n8gsDCAqK6viQA3wRbQcZWqcNw+LSlpN5W4+qDs4IzZPiOyKN9OycK
+	TpJ7NzI+PL425spU3/QQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3UV8-00000006Ex4-3rHo;
-	Mon, 07 Sep 2026 08:14:50 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1x3UbQ-00000006FmS-0wza;
+	Mon, 07 Sep 2026 08:21:20 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3UV1-00000006Ev2-0apQ
+	id 1x3UbO-00000006FmJ-3Gys
 	for linux-phy@lists.infradead.org;
-	Mon, 07 Sep 2026 08:14:48 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68777exU3903347
-	for <linux-phy@lists.infradead.org>; Mon, 7 Sep 2026 08:14:42 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	6n4aVS99yYRnFm88ofoKkQ5lAy+OyD29BpZxJOtYUs0=; b=S2gUVCD8btN9U+Tc
-	h3EXNpuzRHINosHnW62tGU2xaXMO5MW92qqAnkrEXwGI6iU8fE8ykbI3WNrnyI/g
-	w975sFt/13Kxy0bifDNb+2qrB+nrnCMUP9joEIXA0GPwKYLdit+IdWrMB5WdJ+AS
-	i6/lBfReGg9ARXxaZ+ZWH0fhpFKXKmWDQzSwVkNxgSU9Zh70dvwvtcmQkJ57TfOR
-	39XGrEHoMVApOQtCGmMDk9+KhrIX7F1nrZZLy7V8DFeK8M+4OIZMWKDBx07QHRw2
-	m7Ta0xResrQlIWw1X1PIZde+fBG4jKbY7ObKl3jfQgyZHT2ikpq4eespgWyA2Flq
-	pGX0UA==
-Received: from mail-oi1-f200.google.com (mail-oi1-f200.google.com [209.85.167.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ggany5ubh-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 07 Sep 2026 08:14:41 +0000 (GMT)
-Received: by mail-oi1-f200.google.com with SMTP id 5614622812f47-4b3319233c2so4029149b6e.0
-        for <linux-phy@lists.infradead.org>; Mon, 07 Sep 2026 01:14:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1788768881; x=1789373681; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :content-type:mime-version:subject:date:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=6n4aVS99yYRnFm88ofoKkQ5lAy+OyD29BpZxJOtYUs0=;
-        b=B9KoJdCkA4uzbyAUfPhzSfs7AmaUa7khvbMRit+AE91cK5ANwCIsjZp9MH4yKfrSDM
-         WIXVldbxcN/Vnosp3FGJXBZaU43jhUpuuSvgLROZy/i5VUpFFz2qdQpuJ1q5Hl1/s8ym
-         AH6oQ0219c3U0F1e1WdbZwf1nz6A8+MHkdLbZlkgv+Bi0FiwM5OUVJREiFx8q0E/D+V9
-         i7jjsvJkEFdmoY8x+UXP2x2JOd2qih35ryrEPIyiSQ8G/mjhaSVzinWMuuWTR61Jse+m
-         c2OdUcnsyc5pYxaShHUew+vhiWSP1s72B06+CPXB2zNc8TV2RU0D05JvEhKWH94Tb323
-         DG4g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788768881; x=1789373681;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :content-type:mime-version:subject:date:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=6n4aVS99yYRnFm88ofoKkQ5lAy+OyD29BpZxJOtYUs0=;
-        b=rdlaBSduAtblm196fIT/IThYMwq4p4ZbqEJzIJHy4fbJQD6VnMN+AzyUqeGRD/0TQE
-         +QmrRf5+2xWTqvCM95FLUkek1exelu1CEnFngjDWjkFqjbzsBe45cKErDKQDcCQmYjDT
-         OFpCFR31gAaR6S4MAMLXmju3lXDaSmaoi/2OvHFyhm/1gKBA7Td4/qzYbyV31MHtjDNl
-         nlTpJUxlcvuSXkL/yGli4b1nED1TLzsfAlulmzFe+LUvk1e5YcCNSS7Qk9Uaz3njqdCS
-         MK/lf8C/uBQ3ce9WRFpV4QsKdTWx6blwlP9oIk2S64nOZAzTT/nPIf4tGayabD4La9i+
-         /f6Q==
-X-Forwarded-Encrypted: i=1; AKwUvBzj7S3Y6ek/+CIk5Twk98twXhDNjHfxbDs2w87w1QSaQRdNTkuc+xaIdpSVPqbMSJB9KTlihQakNfI=@lists.infradead.org
-X-Gm-Message-State: AFuF++mUa+XWmdykPMcThHaJfbS4YRr4/B0/SgPskrwhs8sMjD1v/jq5
-	G5weAhhZDEv4PgwpM25VJeBWOyUveJBKqxefOiZR2PNp9KY9N6ba6uBzkptW3NIiPBeJVXnz2OQ
-	pW0JqplxpU3p3zeO1fe2pmuw1mZ8xziiPezBmBSatbJs2b1Xy0D8ARCJyT9oE/a97VMB2xV1hs8
-	lb
-X-Gm-Gg: AYBFou11JzYjgZw28wz1motRmEvumlYwO6ZCkIhGTZJoudCiBSmRxA1ooEryEd64iDD
-	FZrp/wLL29txb8+rbhKIQoWFoZxXVSV1OYCb8lnwOUwfkmXIvjXcA70MRpgMY8w+lv23oIBT8Xx
-	jNZ7gF3QYKOknuWc4DmWYfNlund/OcJSi6JD91RfmxDvl/lluG/htWi8vXNKJxRHRhfFOBVlgbQ
-	ZZyOcJKHgZZs3dGbyODowyaPMJZ6IMvsWKfFG059PtDCekHT9rMuoo3DlUnjJo2sp9RRKVuv6g6
-	pJ3bPLdTuzg4uOwuq5/igeIPt3qjsD4A3TrkLl7whxXeWyT2eHVyAaic/l45aULh/rRLqSspei4
-	XW27zNez5OFVl7TScRL618eLnEmImdW8=
-X-Received: by 2002:a05:6820:4c16:b0:6b7:83d6:2933 with SMTP id 006d021491bc7-6b783d62fb5mr9684804eaf.54.1788768880884;
-        Mon, 07 Sep 2026 01:14:40 -0700 (PDT)
-X-Received: by 2002:a05:6820:4c16:b0:6b7:83d6:2933 with SMTP id 006d021491bc7-6b783d62fb5mr9684786eaf.54.1788768880464;
-        Mon, 07 Sep 2026 01:14:40 -0700 (PDT)
-Received: from hu-nihalkum-hyd.qualcomm.com ([202.46.23.25])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-143243767e1sm21724220c88.6.2026.09.07.01.14.32
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 07 Sep 2026 01:14:40 -0700 (PDT)
-From: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
-Date: Mon, 07 Sep 2026 13:43:42 +0530
-Subject: [PATCH v2 6/6] regulator: qcom-pm8008-regulator: Add support for
- PM8010 PMIC
+	Mon, 07 Sep 2026 08:21:18 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 3F7DD40232;
+	Mon,  7 Sep 2026 08:21:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5323B1F00A3A;
+	Mon,  7 Sep 2026 08:21:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1788769278;
+	bh=XhQ8q1GW1JD9svGl3jm3Smsd4n0YqkISROWUF60PrpE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=WGo9lLmyEdKB+YoCMh3HeOOzS8e4hcAJ32ahG3kvfFpYg2G+tEsJDQEz2d/a7ygwx
+	 rnyO7L0aLKEyEEL4pUWOa5ZSy7Igo1smC9oeLTOL/jWt0qc0Nj8pK974PcpilzTn1q
+	 DYMt77UKMB69SdgBKrCXNPSiDAljPpXbONW325GXIjhJxTYI/bX6rx8sDgM/HEUlAo
+	 hstULHAzuWRJ0yn4bwuYONBDq4wrRHLQDMb2dTyS96KIMUMW5XFn+HosfV7WKYzloo
+	 QfLkEfsRmm9Toh5IrHI4uRbCpz5Qtk3KE/Bm7Kv8NgiLKHq97w3rZd81VotLpZUW1s
+	 lF8xVFggR7KTg==
+Date: Mon, 7 Sep 2026 10:21:14 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Vivek Pernamitta <vivek.pernamitta@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+	Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v3] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add
+ Maili PCIe PHY compatibles
+Message-ID: <20260907-uppish-aggressive-moose-a096d5@quoll>
+References: <20260903-vdev_next-20260902_new_post-v3-1-108223cbcc10@oss.qualcomm.com>
 MIME-Version: 1.0
-Message-Id: <20260907-glymur_camss-v2-6-75f7982dc983@oss.qualcomm.com>
-References: <20260907-glymur_camss-v2-0-75f7982dc983@oss.qualcomm.com>
-In-Reply-To: <20260907-glymur_camss-v2-0-75f7982dc983@oss.qualcomm.com>
-To: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
-        Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
-        Loic Poulain <loic.poulain@oss.qualcomm.com>,
-        Mauro Carvalho Chehab <mchehab@kernel.org>, Lee Jones <lee@kernel.org>,
-        Guru Das Srinagesh <linux@gurudas.dev>,
-        Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-media@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, mfd@lists.linux.dev,
-        Suresh Vankadara <svankada@qti.qualcomm.com>,
-        Vikram Sharma <vikram.sharma@oss.qualcomm.com>,
-        Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>,
-        Jishnu Prakash <jishnu.prakash@oss.qualcomm.com>,
-        Dhruvin Rajpura <drajpura@qti.qualcomm.com>,
-        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1788768826; l=10721;
- i=nihal.gupta@oss.qualcomm.com; s=20260608; h=from:subject:message-id;
- bh=yixS+paItpbPG3dnBLS1VUcjAcCmN8R25JH8onqgK0M=;
- b=AshxnNJuhZqt/olXhrP/gDHUkv4390f/hueQU2nS0RTBb+OYBxulCEwtpLNI/q7lr/RKkziFm
- vQDe1xFl4/lBXtix2UFTzuaMZtkbCKguXrjMj36aKBp4GG65X++6dtG
-X-Developer-Key: i=nihal.gupta@oss.qualcomm.com; a=ed25519;
- pk=DIbyFMNwqU/iMvU/0pCQp2wmRVgtHFBT3PcSu+A+Ncw=
-X-Authority-Analysis: v=2.4 cv=X45i7mTe c=1 sm=1 tr=0 ts=6a9e7272 cx=c_pps
- a=AKZTfHrQPB8q3CcvmcIuDA==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
- a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22
- a=EUspDBNiAAAA:8 a=AkqyrZD3AtcrQouKZzQA:9 a=QEXdDO2ut3YA:10
- a=pF_qn-MSjDawc0seGVz6:22
-X-Proofpoint-ORIG-GUID: RXVcvB_KkTeZGjQbb9golmKzl1Ev_5EE
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTA3MDA4OCBTYWx0ZWRfX0g/aiWyVdjw6
- koZWu+JE98/42GEL+N2askeRKA6gGDMeQZCmruW6/TD3SmN6FKczdR4t7hPHNx7ACIIJdMRP5nR
- BiPT6d1aFxfn7tTMoTkYoF7zb3sGj8e9ajftsvc5bg3Yg353RYht92HnJyibNhEdOfFtIYQ9L99
- U/ajKeVDpRymZRwaybShCIFp88klyQGEQvSjuWYgCn3dchqziQGzwAS9nvgiU4D6NQErk/OcUHG
- qTUZWhoRMD/Qjnbn5S4eDHl0A+LUq5J02N35qCy0hc69M98TGXy7SnReD4zi0WzC0viK0fYr3Po
- eMzH6N4vLcZfJJiHx2PJ4w5h5k5e6s31RzdOTx4OKDgdn8Fagi18ccq8AXqUKCGpvEIv/lCUQOL
- ZnQZEB+TKMwbw14xfaitirRJIMQEq9V83zVRBIRzKvWOrkDjiI3LL+El3wie63jc7ZmhGZ2Myn0
- hB8fSjSjXJarFu/WaVg==
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTA3MDA4OCBTYWx0ZWRfX7kN8SB5vILAN
- sW37GGbpJYHp5MfRiMadSQxBJ2WwApN9uhlqxSEh4pDaVGf/G3Vx1yk/1n+ekfPO5xw5mySdG6f
- BSGex4XYoHdLVG4R5HDL0iyLhHIlbrA=
-X-Proofpoint-GUID: RXVcvB_KkTeZGjQbb9golmKzl1Ev_5EE
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-09-07_02,2026-09-03_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 bulkscore=0 suspectscore=0 clxscore=1015 adultscore=0
- impostorscore=0 malwarescore=0 lowpriorityscore=0 spamscore=0 phishscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2609070088
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260907_011445_664580_A4FBA0FD 
-X-CRM114-Status: GOOD (  21.23  )
+Content-Disposition: inline
+In-Reply-To: <20260903-vdev_next-20260902_new_post-v3-1-108223cbcc10@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -172,299 +73,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Jishnu Prakash <jishnu.prakash@oss.qualcomm.com>
+On Thu, Sep 03, 2026 at 10:56:00AM +0530, Vivek Pernamitta wrote:
+> Add qcom,maili-qmp-gen3x2-pcie-phy and qcom,maili-qmp-gen4x1-pcie-phy
+> compatible strings for the Maili SoC PCIe QMP PHY.
+> 
+> Maili reuses the Hawi QMP PCIe PHY hardware, so the compatibles use
+> the two-item fallback format with Hawi as the fallback:
+> 
+>   qcom,maili-qmp-gen3x2-pcie-phy -> qcom,hawi-qmp-gen3x2-pcie-phy
+>   qcom,maili-qmp-gen4x1-pcie-phy -> qcom,hawi-qmp-gen4x1-pcie-phy
+> 
+> Since the allOf conditions use 'contains:' to match against the
+> compatible array, and Maili nodes always carry the Hawi fallback
+> string as the second compatible.
+> 
+> Signed-off-by: Vivek Pernamitta <vivek.pernamitta@oss.qualcomm.com>
 
-The PM8010 is a variant of the PM8008 PMIC with additional LDO
-regulators, a wider voltage range on some LDOs, and LPM/NPM mode
-support. Add PM8010 regulator data tables and voltage ranges, and
-implement set_mode()/get_mode() for switching between LPM and NPM.
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 
-Detect PM8010 via the parent I2C client's compatible string and
-select the matching regulator_ops and register data accordingly.
-
-Signed-off-by: Jishnu Prakash <jishnu.prakash@oss.qualcomm.com>
-Signed-off-by: Dhruvin Rajpura <drajpura@qti.qualcomm.com>
-Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Signed-off-by: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
----
- drivers/regulator/qcom-pm8008-regulator.c | 184 ++++++++++++++++++++++++++----
- 1 file changed, 159 insertions(+), 25 deletions(-)
-
-diff --git a/drivers/regulator/qcom-pm8008-regulator.c b/drivers/regulator/qcom-pm8008-regulator.c
-index 9c9b8be2e15a499fa61a05cc9650338d0bbcd122..87807d5d9e8fdbbe422202156bcbf1d0e3fbc155 100644
---- a/drivers/regulator/qcom-pm8008-regulator.c
-+++ b/drivers/regulator/qcom-pm8008-regulator.c
-@@ -8,6 +8,7 @@
- #include <linux/array_size.h>
- #include <linux/bits.h>
- #include <linux/device.h>
-+#include <linux/i2c.h>
- #include <linux/math.h>
- #include <linux/module.h>
- #include <linux/of.h>
-@@ -24,9 +25,19 @@
- 
- #define LDO_VSET_LB_REG			0x40
- 
-+#define LDO_MODE_CTL1_REG		0x45
-+#define MODE_PRIMARY_MASK		GENMASK(2, 0)
-+#define LDO_MODE_NPM			7
-+#define LDO_MODE_LPM			4
-+
- #define LDO_ENABLE_REG			0x46
- #define ENABLE_BIT			BIT(7)
- 
-+#define LDO_STATUS1_REG		0x08
-+#define MODE_STATE_MASK		GENMASK(1, 0)
-+#define MODE_STATE_NPM			3
-+#define MODE_STATE_LPM			2
-+
- struct pm8008_regulator {
- 	struct regmap		*regmap;
- 	struct regulator_desc	desc;
-@@ -39,24 +50,59 @@ struct pm8008_regulator_data {
- 	unsigned int			base;
- 	int				min_dropout_uV;
- 	const struct linear_range	*voltage_range;
-+	int				n_linear_ranges;
-+};
-+
-+struct pm8008_match_data {
-+	const bool has_stepper_ctl_reg;
-+	const struct pm8008_regulator_data *regulator_data;
-+	const int num_regulators;
- };
- 
--static const struct linear_range nldo_ranges[] = {
-+static const struct linear_range pm8008_nldo_ranges[] = {
- 	REGULATOR_LINEAR_RANGE(528000, 0, 122, 8000),
- };
- 
--static const struct linear_range pldo_ranges[] = {
-+static const struct linear_range pm8008_pldo_ranges[] = {
- 	REGULATOR_LINEAR_RANGE(1504000, 0, 237, 8000),
- };
- 
-+static const struct linear_range pm8010_nldo_ranges[] = {
-+	REGULATOR_LINEAR_RANGE(528000, 0, 127, 8000),
-+};
-+
-+static const struct linear_range pm8010_pldo_ranges[] = {
-+	REGULATOR_LINEAR_RANGE(1504000, 0, 255, 8000),
-+};
-+
-+static const struct linear_range pm8010_pldo_lv_ranges[] = {
-+	REGULATOR_LINEAR_RANGE(1800000, 0,  2,  200000),
-+	REGULATOR_LINEAR_RANGE(2608000, 3,  28, 16000),
-+	REGULATOR_LINEAR_RANGE(3104000, 29, 30, 96000),
-+	REGULATOR_LINEAR_RANGE(3312000, 31, 31, 0),
-+};
-+
-+#define PM8008_REGULATOR(_name, _supply, _base, _dropout, _range)	\
-+	{ _name, _supply, _base, _dropout, _range, ARRAY_SIZE(_range) }
-+
- static const struct pm8008_regulator_data pm8008_reg_data[] = {
--	{ "ldo1", "vdd-l1-l2", 0x4000, 225000, nldo_ranges, },
--	{ "ldo2", "vdd-l1-l2", 0x4100, 225000, nldo_ranges, },
--	{ "ldo3", "vdd-l3-l4", 0x4200, 300000, pldo_ranges, },
--	{ "ldo4", "vdd-l3-l4", 0x4300, 300000, pldo_ranges, },
--	{ "ldo5", "vdd-l5",    0x4400, 200000, pldo_ranges, },
--	{ "ldo6", "vdd-l6",    0x4500, 200000, pldo_ranges, },
--	{ "ldo7", "vdd-l7",    0x4600, 200000, pldo_ranges, },
-+	PM8008_REGULATOR("ldo1", "vdd-l1-l2", 0x4000, 225000, pm8008_nldo_ranges),
-+	PM8008_REGULATOR("ldo2", "vdd-l1-l2", 0x4100, 225000, pm8008_nldo_ranges),
-+	PM8008_REGULATOR("ldo3", "vdd-l3-l4", 0x4200, 300000, pm8008_pldo_ranges),
-+	PM8008_REGULATOR("ldo4", "vdd-l3-l4", 0x4300, 300000, pm8008_pldo_ranges),
-+	PM8008_REGULATOR("ldo5", "vdd-l5",    0x4400, 200000, pm8008_pldo_ranges),
-+	PM8008_REGULATOR("ldo6", "vdd-l6",    0x4500, 200000, pm8008_pldo_ranges),
-+	PM8008_REGULATOR("ldo7", "vdd-l7",    0x4600, 200000, pm8008_pldo_ranges),
-+};
-+
-+static const struct pm8008_regulator_data pm8010_reg_data[] = {
-+	PM8008_REGULATOR("ldo1", "vdd-l1-l2", 0x4000, 172000, pm8010_nldo_ranges),
-+	PM8008_REGULATOR("ldo2", "vdd-l1-l2", 0x4100, 172000, pm8010_nldo_ranges),
-+	PM8008_REGULATOR("ldo3", "vdd-l3-l4", 0x4200, 80000, pm8010_pldo_lv_ranges),
-+	PM8008_REGULATOR("ldo4", "vdd-l3-l4", 0x4300, 80000, pm8010_pldo_lv_ranges),
-+	PM8008_REGULATOR("ldo5", "vdd-l5",    0x4400, 296000, pm8010_pldo_ranges),
-+	PM8008_REGULATOR("ldo6", "vdd-l6",    0x4500, 80000, pm8010_pldo_lv_ranges),
-+	PM8008_REGULATOR("ldo7", "vdd-l7",    0x4600, 296000, pm8010_pldo_ranges),
- };
- 
- static int pm8008_regulator_set_voltage_sel(struct regulator_dev *rdev, unsigned int sel)
-@@ -99,8 +145,53 @@ static int pm8008_regulator_get_voltage_sel(struct regulator_dev *rdev)
- 	return regulator_map_voltage_linear_range(rdev, uV, INT_MAX);
- }
- 
-+static int pm8010_regulator_set_mode(struct regulator_dev *rdev, unsigned int mode)
-+{
-+	struct pm8008_regulator *preg = rdev_get_drvdata(rdev);
-+	unsigned int val;
-+
-+	switch (mode) {
-+	case REGULATOR_MODE_NORMAL:
-+		val = LDO_MODE_NPM;
-+		break;
-+	case REGULATOR_MODE_IDLE:
-+		val = LDO_MODE_LPM;
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	return regmap_update_bits(preg->regmap, preg->base + LDO_MODE_CTL1_REG,
-+				   MODE_PRIMARY_MASK, val);
-+}
-+
-+static unsigned int pm8010_regulator_get_mode(struct regulator_dev *rdev)
-+{
-+	struct pm8008_regulator *preg = rdev_get_drvdata(rdev);
-+	unsigned int val;
-+	int ret;
-+
-+	ret = regmap_read(preg->regmap, preg->base + LDO_STATUS1_REG, &val);
-+	if (ret < 0)
-+		return REGULATOR_MODE_INVALID;
-+
-+	return (val & MODE_STATE_MASK) == MODE_STATE_NPM ?
-+		REGULATOR_MODE_NORMAL : REGULATOR_MODE_IDLE;
-+}
-+
-+static unsigned int pm8010_regulator_of_map_mode(unsigned int mode)
-+{
-+	switch (mode) {
-+	case REGULATOR_MODE_NORMAL:
-+	case REGULATOR_MODE_IDLE:
-+		return mode;
-+	default:
-+		return REGULATOR_MODE_INVALID;
-+	}
-+}
-+
- static const struct regulator_ops pm8008_regulator_ops = {
--	.list_voltage		= regulator_list_voltage_linear,
-+	.list_voltage		= regulator_list_voltage_linear_range,
- 	.set_voltage_sel	= pm8008_regulator_set_voltage_sel,
- 	.get_voltage_sel	= pm8008_regulator_get_voltage_sel,
- 	.enable			= regulator_enable_regmap,
-@@ -108,8 +199,20 @@ static const struct regulator_ops pm8008_regulator_ops = {
- 	.is_enabled		= regulator_is_enabled_regmap,
- };
- 
-+static const struct regulator_ops pm8010_regulator_ops = {
-+	.list_voltage		= regulator_list_voltage_linear_range,
-+	.set_voltage_sel	= pm8008_regulator_set_voltage_sel,
-+	.get_voltage_sel	= pm8008_regulator_get_voltage_sel,
-+	.enable			= regulator_enable_regmap,
-+	.disable		= regulator_disable_regmap,
-+	.is_enabled		= regulator_is_enabled_regmap,
-+	.set_mode		= pm8010_regulator_set_mode,
-+	.get_mode		= pm8010_regulator_get_mode,
-+};
-+
- static int pm8008_regulator_probe(struct platform_device *pdev)
- {
-+	const struct pm8008_match_data *match_data;
- 	const struct pm8008_regulator_data *data;
- 	struct regulator_config config = {};
- 	struct device *dev = &pdev->dev;
-@@ -117,15 +220,28 @@ static int pm8008_regulator_probe(struct platform_device *pdev)
- 	struct regulator_desc *desc;
- 	struct regulator_dev *rdev;
- 	struct regmap *regmap;
-+	const struct platform_device_id *id;
- 	unsigned int val;
-+	bool is_pm8010;
- 	int ret, i;
- 
-+	id = platform_get_device_id(pdev);
-+	if (!id)
-+		return dev_err_probe(dev, -ENODEV, "Missing platform device id\n");
-+
-+	match_data = (const struct pm8008_match_data *)id->driver_data;
-+	if (!match_data)
-+		return dev_err_probe(dev, -ENODATA, "Missing driver match data\n");
-+
- 	regmap = dev_get_regmap(dev->parent, "secondary");
- 	if (!regmap)
- 		return -EINVAL;
- 
--	for (i = 0; i < ARRAY_SIZE(pm8008_reg_data); i++) {
--		data = &pm8008_reg_data[i];
-+	is_pm8010 = of_device_is_compatible(to_i2c_client(dev->parent)->dev.of_node,
-+					    "qcom,pm8010-i2c");
-+
-+	for (i = 0; i < match_data->num_regulators; i++) {
-+		data = &match_data->regulator_data[i];
- 
- 		preg = devm_kzalloc(dev, sizeof(*preg), GFP_KERNEL);
- 		if (!preg)
-@@ -140,23 +256,28 @@ static int pm8008_regulator_probe(struct platform_device *pdev)
- 		desc->supply_name = data->supply_name;
- 		desc->of_match = data->name;
- 		desc->regulators_node = of_match_ptr("regulators");
--		desc->ops = &pm8008_regulator_ops;
-+		desc->ops = is_pm8010 ? &pm8010_regulator_ops : &pm8008_regulator_ops;
-+		if (is_pm8010)
-+			desc->of_map_mode = pm8010_regulator_of_map_mode;
- 		desc->type = REGULATOR_VOLTAGE;
- 		desc->owner = THIS_MODULE;
- 
- 		desc->linear_ranges = data->voltage_range;
--		desc->n_linear_ranges = 1;
--		desc->uV_step = desc->linear_ranges[0].step;
--		desc->min_uV = desc->linear_ranges[0].min;
--		desc->n_voltages = linear_range_values_in_range(&desc->linear_ranges[0]);
--
--		ret = regmap_read(regmap, preg->base + LDO_STEPPER_CTL_REG, &val);
--		if (ret < 0) {
--			dev_err(dev, "failed to read step rate: %d\n", ret);
--			return ret;
-+		desc->n_linear_ranges = data->n_linear_ranges;
-+		desc->n_voltages = linear_range_values_in_range_array(desc->linear_ranges,
-+						      desc->n_linear_ranges);
-+
-+		if (match_data->has_stepper_ctl_reg) {
-+			ret = regmap_read(regmap, preg->base + LDO_STEPPER_CTL_REG, &val);
-+			if (ret < 0) {
-+				dev_err(dev, "failed to read step rate: %d\n", ret);
-+				return ret;
-+			}
-+			val &= STEP_RATE_MASK;
-+			desc->ramp_delay = DEFAULT_VOLTAGE_STEPPER_RATE >> val;
-+		} else {
-+			desc->ramp_delay = DEFAULT_VOLTAGE_STEPPER_RATE;
- 		}
--		val &= STEP_RATE_MASK;
--		desc->ramp_delay = DEFAULT_VOLTAGE_STEPPER_RATE >> val;
- 
- 		desc->min_dropout_uV = data->min_dropout_uV;
- 
-@@ -179,8 +300,21 @@ static int pm8008_regulator_probe(struct platform_device *pdev)
- 	return 0;
- }
- 
-+static const struct pm8008_match_data pm8008_data = {
-+	.has_stepper_ctl_reg = true,
-+	.regulator_data = pm8008_reg_data,
-+	.num_regulators = ARRAY_SIZE(pm8008_reg_data),
-+};
-+
-+static const struct pm8008_match_data pm8010_data = {
-+	.has_stepper_ctl_reg = false,
-+	.regulator_data = pm8010_reg_data,
-+	.num_regulators = ARRAY_SIZE(pm8010_reg_data),
-+};
-+
- static const struct platform_device_id pm8008_regulator_id_table[] = {
--	{ .name = "pm8008-regulator" },
-+	{ .name = "pm8008-regulator", .driver_data = (kernel_ulong_t)&pm8008_data },
-+	{ .name = "pm8010-regulator", .driver_data = (kernel_ulong_t)&pm8010_data },
- 	{ }
- };
- MODULE_DEVICE_TABLE(platform, pm8008_regulator_id_table);
-
--- 
-2.34.1
+Best regards,
+Krzysztof
 
 
 -- 
