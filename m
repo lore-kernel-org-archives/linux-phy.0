@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4EB3CC79FB4
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 414DCC79FB2
 	for <linux-phy@archiver.kernel.org>; Tue,  8 Sep 2026 09:41:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,45 +12,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=44CkLLTvbGj9hPzdri6E0WrMP2Y2zPS2Iu41ITR8PEg=; b=tAkR6VkMUKh/bH
-	LxiOTGVM6lwaw6ewjN3+UEpO/rWqSE8lGVzDU4RG4ERku41C0NqA1ToK2qpdDS5U9HvUi5lsXY7KV
-	OFnihQ4JNyJY7VkfI19b/h08Vy0IU7Hor96nSlNKnWQHg3W8ceKQZ4qwyibg0EjhdxCKWG3S8f3bU
-	2E6tdqW4K/nO1dj6PQEbYseWqfldhuzw/PoJOrmjy7OYPLv4+JmMwuOOiPAa4LZe9Hp7tuK2D+CKd
-	bVNTRLDVbkbG78jqHiFpT53v+imulQM1Tn9VOJ/PTGX81cSFDqa6dOsR6HU+nuizBR+KHS6zEFD+a
-	Jyg+rMMj7ZavlGVg8bLw==;
+	List-Owner; bh=Zzo1UxeCSAs1K/d4aiAa61TqHGWUd8VUeyQ9Uxvgv3g=; b=lyTzm+zE75zfki
+	ulA+JNSwGRBvLhIzgKQGj1spG342bqIcciEiBCGmXpdUqbeZUR+6/ZBM0Jrx/YnShYTukuBgkVUew
+	VNC9kM3z1/kUjRIBgL/wXMDQVvjZMpd8GHG0wfoP+BCIgt08Yk1hHWJGDXg51MD+7A4fzj+QBaDoF
+	gRfLR7zhVW/OziGzKsYi9UBuTu4BOSSCqJIp+pIPIa4kns8k1e55vs3C+YT/Tx4fJNF52dib5QCIW
+	ThNTsWFNHZcpqTGjaDzlmakcivyRztYf2U+w/TbzyzwPbz+pcGicKnIA0w/w1/fNCynN20kQC0Dzv
+	BTbFAbBwiBNxH/XfqKQw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3sKz-00000008dtR-3mQF;
+	id 1x3sKz-00000008dtJ-3YEW;
 	Tue, 08 Sep 2026 09:41:57 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3sKy-00000008drJ-2mmB
+	id 1x3sKy-00000008drG-2d7S
 	for linux-phy@lists.infradead.org;
 	Tue, 08 Sep 2026 09:41:56 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5B4D0447DB;
+	by sea.source.kernel.org (Postfix) with ESMTP id 49F3743A16;
 	Tue,  8 Sep 2026 09:41:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 3CCC6C2BD00;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 274FFC2BCB8;
 	Tue,  8 Sep 2026 09:41:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1788860516;
-	bh=uWZIHL2RMVsnz8x+iZFwErDd550WZ2Cci9TFAmY6WQk=;
+	bh=p5YHlkuIPNYbVBUZsZU/5N8TqxxBbe/5VAHVVT4DypY=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=JAL2JtmpRRNA13Kt3DTbQkNYbJHVZcl6FKbOGltm24A7BA0i/g5Izl30h8F/A61JD
-	 3jfzlyD+WsWbh0t/cPjFwKmmX8iq39cWLMOwNLIXRluAq6Sg8kzkSMfurc3JlxAK4H
-	 D9dp7gU3EesnFl6D8xvgxG8/XYPVfSu2ccQ5G05wDpatXuXoGizX3GSPPYSyNesWPY
-	 TgatRavAUHQZmM9CWE6vz+U6A/aB3XQZ5KnhBm3kvQBykddMAKLBeZcC0vjZuWJOCG
-	 MNkzpUDArFVHNV5cbZRgD5OFwBWchAQgq5gw9LFWObSBODS92qY5Gxrvlq28akJK8e
-	 v626PbWCDSKEQ==
+	b=ceP0H/5ZseVQ9i1DbhlTaqkNT7XcFboHICIpULEle+Ut3oRL9ZzAlYEtQzSo2cZRV
+	 xdZNcY89CGw/jWkHsL1DmECx6thI1O7Igh8rD/C+h3Iyxy4a9WcWxyHOHk2WQvNpEd
+	 I70tequqozLzT8FpBtQJa0GiskLBqlTTLb1xLGk+pqakayaB/isgq7vDMBBdrwO/rc
+	 LMCF/0Vbs3ze6gKAL5SquwFEH5keD+zB6jgeiPStJEQK/hxNirfuwczP72f8FrYEy6
+	 vvFKDJmYK6LBJx0A3yh6FCTqBLkbasr1NCXBL23uxK8qoVAVmOcyN0IdTSYJLXecLR
+	 1gpIO/1IqI/6w==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 29FB1C79FAE;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 14F21C79FA1;
 	Tue,  8 Sep 2026 09:41:56 +0000 (UTC)
 From: George Moussalem via B4 Relay <devnull+george.moussalem.outlook.com@kernel.org>
-Date: Tue, 08 Sep 2026 13:41:00 +0400
-Subject: [PATCH v4 07/13] phy: qualcomm: qcom-uniphy-pcie-usb3-28lp: Assert
- reset on clock enable failure
+Date: Tue, 08 Sep 2026 13:40:59 +0400
+Subject: [PATCH v4 06/13] phy: qualcomm: qcom-uniphy-pcie-usb3-28lp: Use
+ bulk reset_control API
 MIME-Version: 1.0
-Message-Id: <20260908-ipq5018-usb3-v4-7-b789702f0695@outlook.com>
+Message-Id: <20260908-ipq5018-usb3-v4-6-b789702f0695@outlook.com>
 References: <20260908-ipq5018-usb3-v4-0-b789702f0695@outlook.com>
 In-Reply-To: <20260908-ipq5018-usb3-v4-0-b789702f0695@outlook.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -70,13 +70,14 @@ To: Vinod Koul <vkoul@kernel.org>,
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  linux-usb@vger.kernel.org, Stanislaw Pal <kuncy7@gmail.com>, 
+ Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>, 
  George Moussalem <george.moussalem@outlook.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1788860513; l=945;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1788860513; l=3371;
  i=george.moussalem@outlook.com; s=20250321; h=from:subject:message-id;
- bh=Xt9077phHCqVPqMVNZVzBLq0pYjZ3VnSS927ST8gSWc=;
- b=AIvUePJfwwQReYU60ZhpE5aFQZ4csdMBGKGnxFwBKh1Lt4PYR1ueo4LZpPFkx4/d3/w64mEWA
- Oza4apZiP0TA+sqkwp7OeyVBpJW+NfuQMyYtbemzANyG+LTdKMQ9qR3
+ bh=h4fXL1CdGlHbqoFCN4A+EVtPpqzGGhM/+y8nDodBIX8=;
+ b=0gViUe/rFCZsihT03kxd49W+sZAmyHentB4B+G0DYoO0fScTNT1Ue63HKWRrtxY2DzxJ/M0wm
+ qzmjA7TtuJpCljjApss3yfTytaITqfvT6oXYNX1U8T9mxdCcsP/9jUr
 X-Developer-Key: i=george.moussalem@outlook.com; a=ed25519;
  pk=/PuRTSI9iYiHwcc6Nrde8qF4ZDhJBlUgpHdhsIjnqIk=
 X-Endpoint-Received: by B4 Relay for george.moussalem@outlook.com/20250321
@@ -101,27 +102,97 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: George Moussalem <george.moussalem@outlook.com>
 
-When the PHY fails the enable clocks, it leaves the PHY out of reset.
-Fix this by asserting the reset before returning the error.
+Switch to using bulk reset_control functions to prepare the driver for
+managing multiple resets, acquiring reset controls by name, and
+uniformly storing resets in the private data structure to enable support
+for future combo PHY functionality requiring multiple resets.
 
 Tested-by: Stanislaw Pal <kuncy7@gmail.com>
+Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 Signed-off-by: George Moussalem <george.moussalem@outlook.com>
 ---
- drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c | 1 +
- 1 file changed, 1 insertion(+)
+ .../phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c  | 31 ++++++++++++++++------
+ 1 file changed, 23 insertions(+), 8 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c
-index 0a50eb44c0ce..15b17044fde3 100644
+index c12de5549652..0a50eb44c0ce 100644
 --- a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c
 +++ b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c
-@@ -164,6 +164,7 @@ static int qcom_uniphy_pcie_power_on(struct phy *x)
- 	ret = clk_bulk_prepare_enable(phy->num_clks, phy->clks);
- 	if (ret) {
- 		dev_err(phy->dev, "clk prepare and enable failed %d\n", ret);
-+		reset_control_bulk_assert(phy->num_resets, phy->resets);
- 		return ret;
- 	}
+@@ -67,7 +67,8 @@ struct qcom_uniphy {
+ 	const struct qcom_uniphy_data *data;
+ 	struct clk_bulk_data *clks;
+ 	int num_clks;
+-	struct reset_control *resets;
++	struct reset_control_bulk_data *resets;
++	int num_resets;
+ 	void __iomem *base;
+ 	int lanes;
+ };
+@@ -136,7 +137,7 @@ static int qcom_uniphy_pcie_power_off(struct phy *x)
  
+ 	clk_bulk_disable_unprepare(phy->num_clks, phy->clks);
+ 
+-	return reset_control_assert(phy->resets);
++	return reset_control_bulk_assert(phy->num_resets, phy->resets);
+ }
+ 
+ static int qcom_uniphy_pcie_power_on(struct phy *x)
+@@ -144,7 +145,7 @@ static int qcom_uniphy_pcie_power_on(struct phy *x)
+ 	struct qcom_uniphy *phy = phy_get_drvdata(x);
+ 	int ret;
+ 
+-	ret = reset_control_assert(phy->resets);
++	ret = reset_control_bulk_assert(phy->num_resets, phy->resets);
+ 	if (ret) {
+ 		dev_err(phy->dev, "reset assert failed (%d)\n", ret);
+ 		return ret;
+@@ -152,7 +153,7 @@ static int qcom_uniphy_pcie_power_on(struct phy *x)
+ 
+ 	usleep_range(RST_ASSERT_DELAY_MIN_US, RST_ASSERT_DELAY_MAX_US);
+ 
+-	ret = reset_control_deassert(phy->resets);
++	ret = reset_control_bulk_deassert(phy->num_resets, phy->resets);
+ 	if (ret) {
+ 		dev_err(phy->dev, "reset deassert failed (%d)\n", ret);
+ 		return ret;
+@@ -176,19 +177,33 @@ static int qcom_uniphy_pcie_power_on(struct phy *x)
+ static inline int qcom_uniphy_pcie_usb3_get_resources(struct platform_device *pdev,
+ 						      struct qcom_uniphy *phy)
+ {
++	struct device *dev = phy->dev;
+ 	struct resource *res;
++	int i, count, ret;
+ 
+ 	phy->base = devm_platform_get_and_ioremap_resource(pdev, 0, &res);
+ 	if (IS_ERR(phy->base))
+ 		return PTR_ERR(phy->base);
+ 
+-	phy->num_clks = devm_clk_bulk_get_all(phy->dev, &phy->clks);
++	phy->num_clks = devm_clk_bulk_get_all(dev, &phy->clks);
+ 	if (phy->num_clks < 0)
+ 		return phy->num_clks;
+ 
+-	phy->resets = devm_reset_control_array_get_exclusive(phy->dev);
+-	if (IS_ERR(phy->resets))
+-		return PTR_ERR(phy->resets);
++	count = of_count_phandle_with_args(dev->of_node, "resets", "#reset-cells");
++	if (count < 0)
++		return count;
++
++	phy->resets = devm_kcalloc(dev, count, sizeof(*phy->resets), GFP_KERNEL);
++	if (!phy->resets)
++		return -ENOMEM;
++
++	for (i = 0; i < count; i++) {
++		phy->resets[i].rstc = devm_reset_control_get_exclusive_by_index(dev, i);
++		if (IS_ERR(phy->resets[i].rstc))
++			return PTR_ERR(phy->resets[i].rstc);
++	}
++
++	phy->num_resets = count;
+ 
+ 	return 0;
+ }
 
 -- 
 2.53.0
