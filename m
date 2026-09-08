@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80882C79FB7
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DF34C79FB6
 	for <linux-phy@archiver.kernel.org>; Tue,  8 Sep 2026 09:41:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,45 +12,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zvFfttA/440GHUivHuYxIiUmPbwqyAz00IfJo/u1nxA=; b=lYgrmY1hQeZ1rP
-	1tWZXjLdo0ppdjHSlHvR0vPJZ9xJU8BM05cTBXViAeKcsYR+2vE8e6iYXS7QBfPrQyKou3S8e32Uc
-	1+NNLxRY9xXCWLtaZT37ACn0PlpMp0lCd5ueMKM7jVLv8vCp4TmIImkgp6q8x0rMEIJ/KS6Mgp5pm
-	lbWd7fRFfLvXkg15nmIQjcw8DsvZgK9nSU9f4gN6tTBA5+RMrt2mKtjZuJ/4fTvK+vvH1Z7E5eYB7
-	zVY41ZSdxABWNztuXnvbTRGHnPci3s5obN6gJTsF00RR+or+tjH32qCCCWq8YuZfmHuuRvUMyRSrg
-	ld2ijicS92mMLYvF7QqQ==;
+	List-Owner; bh=hSUg2oov5KXa8ff5ygKDMBQfacu5/fVzNHNnpGX+kUE=; b=wi+kcz923EEV6D
+	20vXFTUZymnlHATPmY5Bv7ixuRmqVNmiY/OgYafOYreUNLCBw/0WfFsc2FOnorLxSPRHJSZN0EqYd
+	aDBWSnbZHdCvXlHr6kcecNTii0UjPUiWurgqXGJnGt6nYI0lLOTM6jkMbNZo0skBGzp+5exFEr5j3
+	yrgT6X3UWCIav22ONuY9uY+DI/yC8gTr4+nnp2QnHHjIuNiPoIcSTxjnFUrngIxuwTq3RGUazkimP
+	huXl8LVGK8j6bhovr92v8yBFX5qSdGWtodx+imvpjoeLkPta8UA9PlOUEmIgX++tHh/5oxhjQOynx
+	Dhrv5hX9H7sll9iZAtZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3sL0-00000008duZ-0pu0;
+	id 1x3sL0-00000008dvP-1LcD;
 	Tue, 08 Sep 2026 09:41:58 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3sKy-00000008drW-3cBk
+	id 1x3sKy-00000008drJ-3ike
 	for linux-phy@lists.infradead.org;
 	Tue, 08 Sep 2026 09:41:56 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 97A1D447EB;
+	by sea.source.kernel.org (Postfix) with ESMTP id CC12E444FE;
 	Tue,  8 Sep 2026 09:41:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 79C55C2BCFF;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id ADC02C2BCFB;
 	Tue,  8 Sep 2026 09:41:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1788860516;
-	bh=GNhJnwzA4v6qB0oiDDOZHkZ5dU+PRCSRVX9DyexTG9Y=;
+	bh=L6/tHcGjjx80t8rzbIBaij+88GgQawCNtisJ0JSOs4g=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=u1Sp2ZM0ciUvNOvDfqXh+GQDy8u7LlHRCydPv1xKtc2zSeGK0ntCScOllg4Ko8CZ5
-	 lAefc4jRnJlkKnv+3m/0AAuUMqCic8OcsP/uj4QU1D6bPGeT40steRiqvSAZruAX1j
-	 s/yW7/pmj9zgFKhTcPoe63VYvKkk6b1R4RyxXa7WabpOS9iDVSTzh4XjlOMfFKZKx8
-	 d9KHArg62iXaHl2GbWEvi1BdMbsUaO8mbFNyHStGR9Pr1mQK3qMQLpVEBjpcJq8vcU
-	 290+Oq32yYdr6SS7iIdsEwOJ3hSEEi7ifHotQiIagJ/5zXPU6CBlaMfd8pv+uN1KU2
-	 YjJMBBylbrbXA==
+	b=hQVSYbS+lpKq2pz6y/Y7umrKVPHXoVKr2Fbv/2IqR3/KZRhzfZjj5j+OPYkVIfIHE
+	 QnRivaZYoLF1JxnYTRaQPWYDHX/id41t7p6HBRrnY+qBWoSdVu31zi2rlRFPfvZ6Ui
+	 81gyTiZrY7GRiVCa0Fo7x07ZfjF1xAF2AP25AJ07/po+vfXJu6NZsxMcjXV9Tdy26e
+	 E63YRHjFVZcbGn3u6RNq3rfCOL1oJXU6r4+SfIn5t1daQR3QlYWHgBWu+XbXxmX6TX
+	 jGjn251OoG2aW/umOjba1pErhQx7e3Iy+hslBOCIr7c0Mpk9uiPedRJAcFE3hxfFxY
+	 F8ZR5Ot+D7hvw==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 66CCDC79FAD;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 9D5CAC79F82;
 	Tue,  8 Sep 2026 09:41:56 +0000 (UTC)
 From: George Moussalem via B4 Relay <devnull+george.moussalem.outlook.com@kernel.org>
-Date: Tue, 08 Sep 2026 13:41:03 +0400
-Subject: [PATCH v4 10/13] dt-bindings: usb: qcom,snps-dwc3: Add clocks for
- USB3 on Qualcomm IPQ5018
+Date: Tue, 08 Sep 2026 13:41:06 +0400
+Subject: [PATCH v4 13/13] arm64: dts: qcom: ipq5018-rdp432-c2: Enable USB
+ Super-Speed PHY
 MIME-Version: 1.0
-Message-Id: <20260908-ipq5018-usb3-v4-10-b789702f0695@outlook.com>
+Message-Id: <20260908-ipq5018-usb3-v4-13-b789702f0695@outlook.com>
 References: <20260908-ipq5018-usb3-v4-0-b789702f0695@outlook.com>
 In-Reply-To: <20260908-ipq5018-usb3-v4-0-b789702f0695@outlook.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -69,16 +69,15 @@ To: Vinod Koul <vkoul@kernel.org>,
  Varadarajan Narayanan <quic_varada@quicinc.com>
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-usb@vger.kernel.org, 
- Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
- Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>, 
+ linux-usb@vger.kernel.org, Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
+ Stanislaw Pal <kuncy7@gmail.com>, 
  George Moussalem <george.moussalem@outlook.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1788860513; l=1580;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1788860513; l=1184;
  i=george.moussalem@outlook.com; s=20250321; h=from:subject:message-id;
- bh=nnok2h0uSuHM9sQQxP02Bt+VA9DyMyTiEgmYSTTwQlI=;
- b=pQK1BA+a2+WltBcL9gThdqUA4BSWpFD3YbmUWOaH4HOw+J7UJeH7FUlOlcRPF6zAmxSjaDUTL
- Yex9sjhg4FmBoAtIyKl1u3RYF3BW/0BRAC6yVt75XvHTYNdyQskM1ON
+ bh=55+OVTWKoDEF3wFthbSUFmewrmNa0eMnoTEShtYSUqE=;
+ b=7ZYFYqUEweAtZ4nB5oD6JUvuE6pzxgG0QSFyde93gD0Xb4pnc7NncPC4g/lv/YdjfWRAuQQ+T
+ 6LUVZWGdY9xCIkpncL1xBsS/Ja2ivIPl4+oWlRWEdXa+yynBBhj4Ss5
 X-Developer-Key: i=george.moussalem@outlook.com; a=ed25519;
  pk=/PuRTSI9iYiHwcc6Nrde8qF4ZDhJBlUgpHdhsIjnqIk=
 X-Endpoint-Received: by B4 Relay for george.moussalem@outlook.com/20250321
@@ -103,55 +102,47 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: George Moussalem <george.moussalem@outlook.com>
 
-Add aux and lfps clocks in Qualcomm IPQ5018. These clocks are required
-only for USB Super-Speed support.
+Add the 5V supply regulator and enable USB Super-Speed PHY support.
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-Acked-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Tested-by: Stanislaw Pal <kuncy7@gmail.com>
 Signed-off-by: George Moussalem <george.moussalem@outlook.com>
 ---
- .../devicetree/bindings/usb/qcom,snps-dwc3.yaml     | 21 ++++++++++++++++++++-
- 1 file changed, 20 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/usb/qcom,snps-dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,snps-dwc3.yaml
-index ea60f7220afe..5cf10863aca2 100644
---- a/Documentation/devicetree/bindings/usb/qcom,snps-dwc3.yaml
-+++ b/Documentation/devicetree/bindings/usb/qcom,snps-dwc3.yaml
-@@ -185,6 +185,26 @@ allOf:
-             - const: sleep
-             - const: mock_utmi
- 
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - qcom,ipq5018-dwc3
-+    then:
-+      properties:
-+        clocks:
-+          minItems: 6
-+          maxItems: 6
-+        clock-names:
-+          items:
-+            - const: core
-+            - const: iface
-+            - const: sleep
-+            - const: mock_utmi
-+            - const: aux
-+            - const: lfps
+diff --git a/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts b/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
+index 8efb2b21ed9e..ca29f271e673 100644
+--- a/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
++++ b/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
+@@ -22,6 +22,14 @@ aliases {
+ 	chosen {
+ 		stdout-path = "serial0:115200n8";
+ 	};
 +
-   - if:
-       properties:
-         compatible:
-@@ -286,7 +306,6 @@ allOf:
-         compatible:
-           contains:
-             enum:
--              - qcom,ipq5018-dwc3
-               - qcom,msm8994-dwc3
-               - qcom,qcs404-dwc3
-     then:
++	regulator_fixed_5p0: regulator-s0500 {
++		compatible = "regulator-fixed";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		regulator-name = "fixed_5p0";
++		gpios = <&tlmm 24 GPIO_ACTIVE_LOW>;
++	};
+ };
+ 
+ &blsp1_uart1 {
+@@ -119,6 +127,12 @@ &usbphy0 {
+ 	status = "okay";
+ };
+ 
++&usbphy1 {
++	vdd-supply = <&regulator_fixed_5p0>;
++
++	status = "okay";
++};
++
+ &xo_board_clk {
+ 	clock-div = <4>;
+ 	clock-mult = <1>;
 
 -- 
 2.53.0
