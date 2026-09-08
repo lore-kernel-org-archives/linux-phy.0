@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 414DCC79FB2
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62334C79FB3
 	for <linux-phy@archiver.kernel.org>; Tue,  8 Sep 2026 09:41:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,45 +12,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zzo1UxeCSAs1K/d4aiAa61TqHGWUd8VUeyQ9Uxvgv3g=; b=lyTzm+zE75zfki
-	ulA+JNSwGRBvLhIzgKQGj1spG342bqIcciEiBCGmXpdUqbeZUR+6/ZBM0Jrx/YnShYTukuBgkVUew
-	VNC9kM3z1/kUjRIBgL/wXMDQVvjZMpd8GHG0wfoP+BCIgt08Yk1hHWJGDXg51MD+7A4fzj+QBaDoF
-	gRfLR7zhVW/OziGzKsYi9UBuTu4BOSSCqJIp+pIPIa4kns8k1e55vs3C+YT/Tx4fJNF52dib5QCIW
-	ThNTsWFNHZcpqTGjaDzlmakcivyRztYf2U+w/TbzyzwPbz+pcGicKnIA0w/w1/fNCynN20kQC0Dzv
-	BTbFAbBwiBNxH/XfqKQw==;
+	List-Owner; bh=5fMtCWFa0qRyuowPhsqJzpv4MHITKRTUhLF7CWLI9mQ=; b=VIxMOHIDj5bMXV
+	3LgvadFSoHfyuDzjC0t8ZfPqG95+gQTa9Hcq3So7vcAY+dRDa/qfGjGa4LxCVezjkkRVOqVlNfhtN
+	x2Kq2J9VyN0ilhWUfytPp5e+xLlyTFUEG6yELMZkY2U1QB0sCSq0hCvWkZ9msy72IsUVcEYWA4uHa
+	HlFBeJHZhF8674Ir59k4hbseDjyTbTPEcuwVA4z0+hxU2sRp5CUfMYBjVXakFxVNV6e+ehTmxy8uV
+	hnSWHslFPbUf2fOPb+yO+PuYk/d4xIG1Bgc0GR/JJa/PN31ihlxlM8mEXxODPQR3E9p6e3vYf2zuD
+	iBtRTZ0RI9t4elQi0T9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3sKz-00000008dtJ-3YEW;
-	Tue, 08 Sep 2026 09:41:57 +0000
+	id 1x3sL0-00000008dto-03WR;
+	Tue, 08 Sep 2026 09:41:58 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3sKy-00000008drG-2d7S
+	id 1x3sKy-00000008drT-3GAW
 	for linux-phy@lists.infradead.org;
 	Tue, 08 Sep 2026 09:41:56 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 49F3743A16;
+	by sea.source.kernel.org (Postfix) with ESMTP id 85A9543CBC;
 	Tue,  8 Sep 2026 09:41:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 274FFC2BCB8;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 672C1C2BCFC;
 	Tue,  8 Sep 2026 09:41:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1788860516;
-	bh=p5YHlkuIPNYbVBUZsZU/5N8TqxxBbe/5VAHVVT4DypY=;
+	bh=6rrENnExuPWnVu3LsSNeNwwki1fRkiuqcMOe8pK5ajM=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=ceP0H/5ZseVQ9i1DbhlTaqkNT7XcFboHICIpULEle+Ut3oRL9ZzAlYEtQzSo2cZRV
-	 xdZNcY89CGw/jWkHsL1DmECx6thI1O7Igh8rD/C+h3Iyxy4a9WcWxyHOHk2WQvNpEd
-	 I70tequqozLzT8FpBtQJa0GiskLBqlTTLb1xLGk+pqakayaB/isgq7vDMBBdrwO/rc
-	 LMCF/0Vbs3ze6gKAL5SquwFEH5keD+zB6jgeiPStJEQK/hxNirfuwczP72f8FrYEy6
-	 vvFKDJmYK6LBJx0A3yh6FCTqBLkbasr1NCXBL23uxK8qoVAVmOcyN0IdTSYJLXecLR
-	 1gpIO/1IqI/6w==
+	b=EEYLq/pAsCRYIZ2m/rJt+W8yr6hv+hJJZ1mjoZcd9REztimE6rJkspMDSbzkZ1i1I
+	 rAgGUzX9YQO+aOqq9LAjEFuKzgND/3ZGMctoRjor/NJYYJuzyRsoZGsb6T0QZ/2g/y
+	 UBl2hIv1rBKMJrkv4KALYDWLBqhCWq2GZ5rAjnfT/cjBftYjm6aZcnYQ/43ylunNxa
+	 8wiQVEqlgkbP7apQ/kb+U200l1L38p4ubecV2DaWJJX7REsO4bKff/6+0d4rMlrCnL
+	 LSqSmGeHs2rRNHYEVIAnHNaHVP600uWCLR5kb9fvMb+52hP+bRRjKgfpMQi4iaZPo4
+	 e9v+z/QXG42Jw==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 14F21C79FA1;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 54663C79F82;
 	Tue,  8 Sep 2026 09:41:56 +0000 (UTC)
 From: George Moussalem via B4 Relay <devnull+george.moussalem.outlook.com@kernel.org>
-Date: Tue, 08 Sep 2026 13:40:59 +0400
-Subject: [PATCH v4 06/13] phy: qualcomm: qcom-uniphy-pcie-usb3-28lp: Use
- bulk reset_control API
+Date: Tue, 08 Sep 2026 13:41:02 +0400
+Subject: [PATCH v4 09/13] arm64: dts: qcom: ipq5018: Add USB Super-Speed
+ PHY node
 MIME-Version: 1.0
-Message-Id: <20260908-ipq5018-usb3-v4-6-b789702f0695@outlook.com>
+Message-Id: <20260908-ipq5018-usb3-v4-9-b789702f0695@outlook.com>
 References: <20260908-ipq5018-usb3-v4-0-b789702f0695@outlook.com>
 In-Reply-To: <20260908-ipq5018-usb3-v4-0-b789702f0695@outlook.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -70,14 +70,13 @@ To: Vinod Koul <vkoul@kernel.org>,
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  linux-usb@vger.kernel.org, Stanislaw Pal <kuncy7@gmail.com>, 
- Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>, 
  George Moussalem <george.moussalem@outlook.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1788860513; l=3371;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1788860513; l=1365;
  i=george.moussalem@outlook.com; s=20250321; h=from:subject:message-id;
- bh=h4fXL1CdGlHbqoFCN4A+EVtPpqzGGhM/+y8nDodBIX8=;
- b=0gViUe/rFCZsihT03kxd49W+sZAmyHentB4B+G0DYoO0fScTNT1Ue63HKWRrtxY2DzxJ/M0wm
- qzmjA7TtuJpCljjApss3yfTytaITqfvT6oXYNX1U8T9mxdCcsP/9jUr
+ bh=E1RXspduA/qm4y+OQopUpGy17R6HIoV4JDWYYWUJv1I=;
+ b=+5aKJQzhNectQFle6jqBMtjnlnyl8ime8/xt5oo529EKwQPuifI4WiJ27M4tgvsYaKC0/Z6HH
+ mV8Wz+WafQ9CP11d89JRMolziqhBmVd3p27IDez4eZy3GIli0yJob1P
 X-Developer-Key: i=george.moussalem@outlook.com; a=ed25519;
  pk=/PuRTSI9iYiHwcc6Nrde8qF4ZDhJBlUgpHdhsIjnqIk=
 X-Endpoint-Received: by B4 Relay for george.moussalem@outlook.com/20250321
@@ -102,97 +101,52 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: George Moussalem <george.moussalem@outlook.com>
 
-Switch to using bulk reset_control functions to prepare the driver for
-managing multiple resets, acquiring reset controls by name, and
-uniformly storing resets in the private data structure to enable support
-for future combo PHY functionality requiring multiple resets.
+Add the USB3 PHY node and populate the USB DT clock on the GCC node for
+the GCC to gate the PIPE clock supplied by the USB3 PHY.
 
 Tested-by: Stanislaw Pal <kuncy7@gmail.com>
-Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 Signed-off-by: George Moussalem <george.moussalem@outlook.com>
 ---
- .../phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c  | 31 ++++++++++++++++------
- 1 file changed, 23 insertions(+), 8 deletions(-)
+ arch/arm64/boot/dts/qcom/ipq5018.dtsi | 19 ++++++++++++++++++-
+ 1 file changed, 18 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c
-index c12de5549652..0a50eb44c0ce 100644
---- a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c
-+++ b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-usb3-28lp.c
-@@ -67,7 +67,8 @@ struct qcom_uniphy {
- 	const struct qcom_uniphy_data *data;
- 	struct clk_bulk_data *clks;
- 	int num_clks;
--	struct reset_control *resets;
-+	struct reset_control_bulk_data *resets;
-+	int num_resets;
- 	void __iomem *base;
- 	int lanes;
- };
-@@ -136,7 +137,7 @@ static int qcom_uniphy_pcie_power_off(struct phy *x)
+diff --git a/arch/arm64/boot/dts/qcom/ipq5018.dtsi b/arch/arm64/boot/dts/qcom/ipq5018.dtsi
+index 956d3217ec52..34d882b047bc 100644
+--- a/arch/arm64/boot/dts/qcom/ipq5018.dtsi
++++ b/arch/arm64/boot/dts/qcom/ipq5018.dtsi
+@@ -179,6 +179,23 @@ usbphy0: phy@5b000 {
+ 			status = "disabled";
+ 		};
  
- 	clk_bulk_disable_unprepare(phy->num_clks, phy->clks);
- 
--	return reset_control_assert(phy->resets);
-+	return reset_control_bulk_assert(phy->num_resets, phy->resets);
- }
- 
- static int qcom_uniphy_pcie_power_on(struct phy *x)
-@@ -144,7 +145,7 @@ static int qcom_uniphy_pcie_power_on(struct phy *x)
- 	struct qcom_uniphy *phy = phy_get_drvdata(x);
- 	int ret;
- 
--	ret = reset_control_assert(phy->resets);
-+	ret = reset_control_bulk_assert(phy->num_resets, phy->resets);
- 	if (ret) {
- 		dev_err(phy->dev, "reset assert failed (%d)\n", ret);
- 		return ret;
-@@ -152,7 +153,7 @@ static int qcom_uniphy_pcie_power_on(struct phy *x)
- 
- 	usleep_range(RST_ASSERT_DELAY_MIN_US, RST_ASSERT_DELAY_MAX_US);
- 
--	ret = reset_control_deassert(phy->resets);
-+	ret = reset_control_bulk_deassert(phy->num_resets, phy->resets);
- 	if (ret) {
- 		dev_err(phy->dev, "reset deassert failed (%d)\n", ret);
- 		return ret;
-@@ -176,19 +177,33 @@ static int qcom_uniphy_pcie_power_on(struct phy *x)
- static inline int qcom_uniphy_pcie_usb3_get_resources(struct platform_device *pdev,
- 						      struct qcom_uniphy *phy)
- {
-+	struct device *dev = phy->dev;
- 	struct resource *res;
-+	int i, count, ret;
- 
- 	phy->base = devm_platform_get_and_ioremap_resource(pdev, 0, &res);
- 	if (IS_ERR(phy->base))
- 		return PTR_ERR(phy->base);
- 
--	phy->num_clks = devm_clk_bulk_get_all(phy->dev, &phy->clks);
-+	phy->num_clks = devm_clk_bulk_get_all(dev, &phy->clks);
- 	if (phy->num_clks < 0)
- 		return phy->num_clks;
- 
--	phy->resets = devm_reset_control_array_get_exclusive(phy->dev);
--	if (IS_ERR(phy->resets))
--		return PTR_ERR(phy->resets);
-+	count = of_count_phandle_with_args(dev->of_node, "resets", "#reset-cells");
-+	if (count < 0)
-+		return count;
++		usbphy1: phy@5d000 {
++			compatible = "qcom,ipq5018-uniphy-usb3-phy";
++			reg = <0x0005d000 0x800>;
 +
-+	phy->resets = devm_kcalloc(dev, count, sizeof(*phy->resets), GFP_KERNEL);
-+	if (!phy->resets)
-+		return -ENOMEM;
++			clocks = <&gcc GCC_USB0_PIPE_CLK>,
++				 <&gcc GCC_USB0_PHY_CFG_AHB_CLK>;
 +
-+	for (i = 0; i < count; i++) {
-+		phy->resets[i].rstc = devm_reset_control_get_exclusive_by_index(dev, i);
-+		if (IS_ERR(phy->resets[i].rstc))
-+			return PTR_ERR(phy->resets[i].rstc);
-+	}
++			resets = <&gcc GCC_USB0_PHY_BCR>;
 +
-+	phy->num_resets = count;
- 
- 	return 0;
- }
++			#clock-cells = <0>;
++			#phy-cells = <0>;
++
++			qcom,phy-usb-mux-sel = <&tcsr 0x10540>;
++
++			status = "disabled";
++		};
++
+ 		pcie1_phy: phy@7e000 {
+ 			compatible = "qcom,ipq5018-uniphy-pcie-phy";
+ 			reg = <0x0007e000 0x800>;
+@@ -436,7 +453,7 @@ gcc: clock-controller@1800000 {
+ 				 <&sleep_clk>,
+ 				 <&pcie0_phy>,
+ 				 <&pcie1_phy>,
+-				 <0>,
++				 <&usbphy1>,
+ 				 <&gephy_rx_clk>,
+ 				 <&gephy_tx_clk>,
+ 				 <0>,
 
 -- 
 2.53.0
