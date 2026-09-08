@@ -4,93 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68ADDC79F82
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Sep 2026 18:22:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4578DC79F82
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Sep 2026 18:22:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:References:In-Reply-To:
-	Message-Id:Cc:To:From:Date:MIME-Version:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=jCxWntwFugoSv/fcUIb6LNnYNTpAS55iZoOcyiH92og=; b=QAzBu46xn8USzAXtCyZURHtu8n
-	zRFZnL4/v4Dd72ABUZAwb3Mw6sxFC7nAWlLYcuJL0EiS/6HjP8ooCriN+zlFV007TD1T0awLo1Wrc
-	hoKaeaDQbrCDOcTbZVtqOapzGgZ6MwW5HPlVBxinQ35014++923RdwxLOhlfaCKMPWkWrLerhn5zD
-	G6c7aCkCpjOyFi93ZDn58r8vKoGyd4hjvOqQAtWsGRzTZPVLf/UsVKr8qvjXWdbsJewQGu5MiEm9e
-	HgX6FAybONe0UZlksEBrK47k7HmjbcB+1K3wVbRzbypcr3zUTaqUkhj1mrHfUvnrVqzwxNNk2Ft9x
-	2P3mXaVw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sePpVe7uOoPGLLtFhfqXhor5mAp6N7vHFnPcwAqnWN4=; b=KDEsK3NfuZge9P
+	A8TJV0QPMwE5IJCIntuXf3R+48xjFeWehsKD5OJA6Y2/ukDQpbT0cL3Y7GaPy2wdtlHWjdxX/HWEf
+	Xd3kPwEy+0fWcY2kbPGuQOBZuOHEtioi6ovH0GVUSVnqKkeSOfZB3sJN3LoFYpFRMutf0o5IikE26
+	h5mRpwtxOhR89JafncXAvtTMv0LXVvjL592QEIX14L0TO8IkNjZLsir9PmwnJW7Fu5JkOQabktq/g
+	fd9VqD4gLT0Ff9Yr2FjMqJomSdRlgFvXqoy+v3ElxwIE+xQyLE48YKkYUX2UDNI05VpIy3sNpu+1i
+	5keVSTroMa9Ospjyz2Bw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x40SM-00000009xpX-3x2X;
-	Tue, 08 Sep 2026 18:22:06 +0000
+	id 1x40T0-00000009xuD-3KXR;
+	Tue, 08 Sep 2026 18:22:46 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x40SL-00000009xp9-3C89
-	for linux-phy@lists.infradead.org;
-	Tue, 08 Sep 2026 18:22:05 +0000
+	id 1x40Sz-00000009xtg-1MSd;
+	Tue, 08 Sep 2026 18:22:45 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 13B1243C63;
-	Tue,  8 Sep 2026 18:22:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E4F761F00A3A;
-	Tue,  8 Sep 2026 18:22:03 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 1914B413ED;
+	Tue,  8 Sep 2026 18:22:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D511A1F00A3A;
+	Tue,  8 Sep 2026 18:22:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788891725;
-	bh=KOkqH9+KsQ/pfEOXoQXs/QBpMjFn4xAHhMmlbJfXtIs=;
-	h=Date:From:To:Cc:In-Reply-To:References:Subject;
-	b=TiT4BGm938ZXzhfpCXXPU+WVWM5OoeDt3/bK+ZLWDhhs1eF+y1t+MrjCirtWxjCPV
-	 ZHP4C4FEGNTUf8kWLhlej6CO2Qx1qbgXw4xIjE7QUe9bCLx1nUVQI2rW/JUoxquQ7s
-	 obT6lVwnBhVjEUczZ6TqcKkztvD8bpofHYkv7K9t1HnaGWzgSdYAKrCuN4TENKgGfV
-	 d9avD5WoNmq9IrbBkHbWi1UkwqZqnl/tdmc5/MMAfq6LXh+FpWaDM72bj1zWFHRZIx
-	 dzAZ2PFKU8Z4apXP1uNN/BQdakhpCGb887ZATF8v/HYvAj1EdK9FGG7ExGmqRj6aLU
-	 cLy+eplHy6ggA==
-Received: from ams-compute-02.internal (ams-compute-02.internal [10.64.2.62])
-	by mailfauth.ams.internal (Postfix) with ESMTP id 62F16198003A;
-	Tue,  8 Sep 2026 14:22:02 -0400 (EDT)
-Received: from ams-imap-03 ([10.64.2.23])
-  by ams-compute-02.internal (MEProxy); Tue, 08 Sep 2026 14:22:02 -0400
-X-ME-Sender: <xms:R1KganhWojexTaEkcE9JNG2cPj7XgDgOFoXrGK4XmayHCNKPiO9VaQ>
-    <xme:R1Kgau10_SvGPB3yfP4vC7fFqFw7CFxNWNHyAOuKkR1D3WdEFe3_l1bs_81OVeuT-
-    TvpIP0I9YyFC9FtFqLdEAVy259vPupVkwojcM3tDj-Ur1n7W8HVZA>
-X-ME-Proxy-Cause: dmFkZTF3Xbdz07cy4boaCVQHFkenJCqc2sn4pb294JKVq2iAU/ryEnJrbS5rHRz/45kLdP
-    XWVPpmR29IIAjw31EDFDOoChR5dpk7oDeztrPOMK6Ck6rUZyoBVx+gU/Dj+v2ezibRn/3Z
-    6copKQyaHQTnzkXFaRPpL+YsGtqzZF8KdZn0FKgRlMOihu7MmoU83A9qIw5BuKzEDvlTFC
-    hkYrh2QdS2qnv5wk8D0+zIgWAi+fdBqzJoR6DSey3OStD8Far5kE1hHrAv5MW+cSE92604
-    C0JRxb+rlMAsR5nZZHdab1pbHPOU2NsD1PcNS9z4aUCnOnSHzZzNZWET46rcpd7ZG3n6Zp
-    23NB5BYR9Bd2vlT99ZOgkZynr7E8I3RD8qiC3VJf7Vwao2PfWxTnJpoGsqCAkB7VUl2RiA
-    iFQniTW0DmVYGD4YR/R1+UC0pImIplV9uP1J5d8ZROiVKPwGAQyS2/iK42Fmxof1ON/y7c
-    8HYLyRpBRPmYiSuAw8UZ7v+MaAJjjPcBzs4AGz7ScKQdHquEMdlRoBfggT0viLHZSI7dey
-    6sGEL6e5OCUhAEgk0wFO/27J+MEfYUkM3vdmBLb5bFJgJ2CA3jtJ7Yeo5xke8uESS3zrAl
-    /pg3sPxHGz8QeYtfQ6nR+fsf9bPOlUF4X3Z7E/Zv5bzYrIY2S3/tLiBS4wOw
-X-ME-Proxy: <xmx:SlKgakKMyflVPzT2IaiVNPoit3F_v_SjIGgTR7F9CFExNsQVJHhdWg>
-    <xmx:SlKgasG6ovtp0PxJslZBsEexayDxOMD1Ftz_o4s2LvqKcOfBVP1pMA>
-    <xmx:SlKgar7zpPWvSZN0h6Z3E1JiiiuQfAWt1u4bCGJuv8NIIDx0iClvNw>
-    <xmx:SlKgan3ZQ1aVDog9cCn7AS2QRAKeDXuh--6GdSSWbM_NUMzrG7ow7A>
-    <xmx:SlKgang6dUc9NvIN_N5Ch2nIpi01dqxYKTTh1R4UYO_yWH9JD0MboRxU>
-Feedback-ID: i36794607:Fastmail
-Received: by mailuser.ams.internal (Postfix, from userid 501)
-	id 8F55A32A0078; Tue,  8 Sep 2026 14:21:59 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
+	s=k20260515; t=1788891765;
+	bh=K7Bs54Fb9tsWkTHN/P3RBADOeSXyvgotpZR1N7Q0vuI=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=LdxpPPlXFFT8qEGth+K5OY/ROS7EOJh+HDYSun9QWrozOZcmVAB49Ge2wL9ngN8EV
+	 /CIm6irJSg5w79vQOBUr1HBbepIyvxFkQl51kjpx6YDhpMr2c85SvE0Dp5rih7J4WR
+	 l0e4MvRhe8MyQ1gmz1mgtWbotecNTfUzSqDOWLt/W94o3tMDacF1hxsNZd3KAJ+D2T
+	 +hRfcAZHSyhYZeQwa0xAKwqP0KEsHfNsFeH92aqeVPGjd0hEp1XSOd0GMNHnicxGLJ
+	 z8f5V90hsSKdQTP+/V8BeNt+nZQFMGjm4xiYjp6Gp3qackxOvxGZfbkrcZHguByRb/
+	 u8eznZGM+xVfg==
+Message-ID: <b138e545-6d97-4cd4-bd61-9b1260e32f79@kernel.org>
+Date: Tue, 8 Sep 2026 20:22:35 +0200
 MIME-Version: 1.0
-X-ThreadId: ANqE0jO8KCPJ
-Date: Tue, 08 Sep 2026 20:21:39 +0200
-From: "Arnd Bergmann" <arnd@kernel.org>
-To: sashiko-reviews@lists.linux.dev
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- "Damien Le Moal" <dlemoal@kernel.org>, linux-rtc@vger.kernel.org,
- "Neil Armstrong" <neil.armstrong@linaro.org>,
- "Vinod Koul" <vkoul@kernel.org>,
- "Alexandre Belloni" <alexandre.belloni@bootlin.com>,
- "Vladimir Oltean" <olteanv@gmail.com>, "Frank Li" <Frank.Li@kernel.org>,
- linux-pci@vger.kernel.org, "Rob Herring" <robh@kernel.org>,
- "Conor Dooley" <conor+dt@kernel.org>, imx@lists.linux.dev,
- "Niklas Cassel" <cassel@kernel.org>, linux-ide@vger.kernel.org,
- linux-watchdog@vger.kernel.org
-Message-Id: <71266564-7be5-4621-ab03-29cf9ec49287@app.fastmail.com>
-In-Reply-To: <20260908161125.E4A331F00A3A@smtp.kernel.org>
-References: <20260908152808.3928630-1-arnd@kernel.org>
- <20260908152808.3928630-6-arnd@kernel.org>
- <20260908161125.E4A331F00A3A@smtp.kernel.org>
-Subject: Re: [PATCH 05/13] ARM: orion/dove/mv78xx0: remove all board files
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v11 04/12] ARM: dts: zte: Declare zx297520v3 CRM device
+ nodes
+To: =?UTF-8?Q?Stefan_D=C3=B6singer?= <stefandoesinger@gmail.com>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Brian Masney <bmasney@redhat.com>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Russell King <linux@armlinux.org.uk>, Lee Jones <lee@kernel.org>,
+ Brian Masney <bmasney+clk@redhat.com>,
+ Jerome Brunet <jbrunet+clk@baylibre.com>,
+ Manivannan Sadhasivam <mani@kernel.org>
+Cc: linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org, mfd@lists.linux.dev
+References: <20260826-zx29clk-v11-0-f8ad59c6426c@gmail.com>
+ <20260826-zx29clk-v11-4-f8ad59c6426c@gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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
+In-Reply-To: <20260826-zx29clk-v11-4-f8ad59c6426c@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,74 +120,18 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 8, 2026, at 18:11, sashiko-bot@kernel.org wrote:
-> [Severity: Low]
-> Since all the board files like arch/arm/mach-orion5x/ts78xx-setup.c are
-> removed in this patch, should the MAINTAINERS entry for the TS-78xx platform
-> further down in this file also be removed?
->
-> The pattern F: arch/arm/mach-orion5x/ts78xx-* now points to deleted files,
-> which leaves an orphaned entry for Alexander Clouter.
-
-I fixed this instance now. I tried to automate this with a script
-but could not figure out how to deal with wildcard matches and
-only did the ones that have an exact file match.
-
-If anyone has suggestions for doing this better, please let me know,
-or run your script on 
-https://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git/log/?h=board-remove-7.3
-and send me the results.
-
-> [ ... ]
->
->> diff --git a/arch/arm/mach-orion5x/Makefile b/arch/arm/mach-orion5x/Makefile
->> index 6f54d7fef27a7..7e9634e043185 100644
->> --- a/arch/arm/mach-orion5x/Makefile
->> +++ b/arch/arm/mach-orion5x/Makefile
->> @@ -2,15 +2,6 @@
->>  ccflags-y := -I$(srctree)/arch/arm/plat-orion/include
->>  
->>  obj-y				+= common.o pci.o irq.o mpp.o
->> -obj-$(CONFIG_MACH_KUROBOX_PRO)	+= kurobox_pro-setup.o
->> -obj-$(CONFIG_MACH_TERASTATION_PRO2)	+= terastation_pro2-setup.o
->
-> [Severity: Low]
-> Are irq.o and mpp.o now completely unreachable code?
->
-> Since all the board files that called into these APIs have been removed,
-> it appears these objects are now unnecessarily compiled into the kernel
-> image. Should they be removed from obj-y here?
-
-Added this to the patch, removing the two files and recursively
-seven more that become orphaned afterwards:
-
- arch/arm/mach-orion5x/Makefile                |   2 +-
- arch/arm/mach-orion5x/irq.c                   |  51 ---
- arch/arm/mach-orion5x/irqs.h                  |   9 -
- arch/arm/mach-orion5x/mpp.c                   |  41 --
- arch/arm/mach-orion5x/mpp.h                   | 130 ------
- arch/arm/plat-orion/Makefile                  |   4 +-
- arch/arm/plat-orion/gpio.c                    | 616 --------------------------
- arch/arm/plat-orion/include/plat/irq.h        |  15 -
- arch/arm/plat-orion/include/plat/mpp.h        |  34 --
- arch/arm/plat-orion/include/plat/orion-gpio.h |  38 --
- arch/arm/plat-orion/irq.c                     |  39 --
- arch/arm/plat-orion/mpp.c                     |  82 ----
- 13 files changed, 2 insertions(+), 1066 deletions(-)
-
-This leaves only pcie.{c,h} in arch/arm/plat-orion/, which
-should be folded into arch/arm/mach-orion5x/pci.c, along
-with parts of arch/arm/kernel/bios32.c that nothing else
-uses any more. I don't have a patch for that yet.
-
-      Arnd
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMjUvMDgvMjAyNiAyMzoyNCwgU3RlZmFuIETDtnNpbmdlciB3cm90ZToKPiBUaGlzIHBhdGNo
+IGFkZHMgRFQgbm9kZXMgZm9yIHRoZSBtYWluIGNsb2NrIGFuZCByZXNldCBjb250cm9sbGVycyBv
+biB0aGUKPiB6eDI5NzUyMHYzIGJvYXJkLiBJdCByZXBsYWNlcyB0aGUgdGVtcG9yYXJ5IHBsYWNl
+aG9sZGVyIFVBUlQgY2xvY2tzIHdpdGgKPiB0aGUgcHJvcGVyIGNsb2NrcyBleHBvcnRlZCBieSB0
+b3Bjcm0gYW5kIGxzcGNybS4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBTdGVmYW4gRMO2c2luZ2VyIDxz
+dGVmYW5kb2VzaW5nZXJAZ21haWwuY29tPgo+IAoKUmV2aWV3ZWQtYnk6IEtyenlzenRvZiBLb3ps
+b3dza2kgPGtyenlzenRvZi5rb3psb3dza2lAb3NzLnF1YWxjb21tLmNvbT4KCkJlc3QgcmVnYXJk
+cywKS3J6eXN6dG9mCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
+by9saW51eC1waHkK
