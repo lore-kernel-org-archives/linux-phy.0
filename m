@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DF34C79FB6
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DF85C79FB9
 	for <linux-phy@archiver.kernel.org>; Tue,  8 Sep 2026 09:41:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,45 +12,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hSUg2oov5KXa8ff5ygKDMBQfacu5/fVzNHNnpGX+kUE=; b=wi+kcz923EEV6D
-	20vXFTUZymnlHATPmY5Bv7ixuRmqVNmiY/OgYafOYreUNLCBw/0WfFsc2FOnorLxSPRHJSZN0EqYd
-	aDBWSnbZHdCvXlHr6kcecNTii0UjPUiWurgqXGJnGt6nYI0lLOTM6jkMbNZo0skBGzp+5exFEr5j3
-	yrgT6X3UWCIav22ONuY9uY+DI/yC8gTr4+nnp2QnHHjIuNiPoIcSTxjnFUrngIxuwTq3RGUazkimP
-	huXl8LVGK8j6bhovr92v8yBFX5qSdGWtodx+imvpjoeLkPta8UA9PlOUEmIgX++tHh/5oxhjQOynx
-	Dhrv5hX9H7sll9iZAtZw==;
+	List-Owner; bh=BWYP7Glk3G4bBgqbpWgg71ztZbKDPl3l9QMqgEzWuKY=; b=nPiugP2xAy7pq4
+	BkQZlMZ2m5VzROmFa+/pMVB8Eo0QeDoklwiQhD8vfYHNqfQRctctcGRE52CUOSfBYG7o9kNNkxV8h
+	Lqa3B9vsFQfKMrZ0wHNlJ374ihyIUwbQQ010eHAgP8R2niR1lc1H7Miwfn5lhGKTMjrWuRihruhSy
+	kzRzz+BzVGeIOZ71p199/59cZYz4ihxiCoghvav8pijgjDU/yVCIY3GM7tGZ5cnpv6pf9ZXob6GTf
+	An8qFSWhZNdmLTHo69eAxoL8Cqxg5H4Oii6wZ23NFZDWVNSHclcdNZSdoJnHCsxVPMC4T0Nl8nQBH
+	oXmQjpjW72jjAeGN4qqA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3sL0-00000008dvP-1LcD;
+	id 1x3sL0-00000008dv4-12Bh;
 	Tue, 08 Sep 2026 09:41:58 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3sKy-00000008drJ-3ike
+	id 1x3sKy-00000008drE-3VDx
 	for linux-phy@lists.infradead.org;
 	Tue, 08 Sep 2026 09:41:56 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id CC12E444FE;
+	by sea.source.kernel.org (Postfix) with ESMTP id ABBEC43C85;
 	Tue,  8 Sep 2026 09:41:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id ADC02C2BCFB;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 8C734C2BCB8;
 	Tue,  8 Sep 2026 09:41:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1788860516;
-	bh=L6/tHcGjjx80t8rzbIBaij+88GgQawCNtisJ0JSOs4g=;
+	bh=wjWHYMGGPiiY5KFppAP+tjkV0njxtlntuGZteZN1CqU=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=hQVSYbS+lpKq2pz6y/Y7umrKVPHXoVKr2Fbv/2IqR3/KZRhzfZjj5j+OPYkVIfIHE
-	 QnRivaZYoLF1JxnYTRaQPWYDHX/id41t7p6HBRrnY+qBWoSdVu31zi2rlRFPfvZ6Ui
-	 81gyTiZrY7GRiVCa0Fo7x07ZfjF1xAF2AP25AJ07/po+vfXJu6NZsxMcjXV9Tdy26e
-	 E63YRHjFVZcbGn3u6RNq3rfCOL1oJXU6r4+SfIn5t1daQR3QlYWHgBWu+XbXxmX6TX
-	 jGjn251OoG2aW/umOjba1pErhQx7e3Iy+hslBOCIr7c0Mpk9uiPedRJAcFE3hxfFxY
-	 F8ZR5Ot+D7hvw==
+	b=MWU8I6if7WrGOfNj0KWzg75xB3JadxVhOZJ8IO9ybxsqlJdw/QRqf5UR9FErLWjie
+	 iy6yt1aozd45Z645UEB7mcLFS32aH4N/8JlZvC4/7trf4xvL1BG++xE0lgq3DLXAhg
+	 PI8OjV29PIENrdWbbAooXZ8Y2QgNENeTKgwk06pnIxqA6GuBWXJmlqR+Fg+9cKHkoF
+	 qqpQIMV47HOrnZDY0/JDQLQbjXu8+VAC/Z68K7xxY7en1jSQi34kN7dYRwYrVpdNnZ
+	 XXrE6IUrUlYp7ekrh9BU3LsDoVpGoLdJyXpubVboW7yOmBlb+alDo+2/X9LXVfRQrX
+	 Sdk1E+w0dO0lA==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 9D5CAC79F82;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 7B093C79FA1;
 	Tue,  8 Sep 2026 09:41:56 +0000 (UTC)
 From: George Moussalem via B4 Relay <devnull+george.moussalem.outlook.com@kernel.org>
-Date: Tue, 08 Sep 2026 13:41:06 +0400
-Subject: [PATCH v4 13/13] arm64: dts: qcom: ipq5018-rdp432-c2: Enable USB
- Super-Speed PHY
+Date: Tue, 08 Sep 2026 13:41:04 +0400
+Subject: [PATCH v4 11/13] arm64: dts: qcom: ipq5018: Add clocks required
+ for USB3 support
 MIME-Version: 1.0
-Message-Id: <20260908-ipq5018-usb3-v4-13-b789702f0695@outlook.com>
+Message-Id: <20260908-ipq5018-usb3-v4-11-b789702f0695@outlook.com>
 References: <20260908-ipq5018-usb3-v4-0-b789702f0695@outlook.com>
 In-Reply-To: <20260908-ipq5018-usb3-v4-0-b789702f0695@outlook.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -69,15 +69,17 @@ To: Vinod Koul <vkoul@kernel.org>,
  Varadarajan Narayanan <quic_varada@quicinc.com>
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-usb@vger.kernel.org, Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
+ linux-usb@vger.kernel.org, 
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
  Stanislaw Pal <kuncy7@gmail.com>, 
  George Moussalem <george.moussalem@outlook.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1788860513; l=1184;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1788860513; l=1434;
  i=george.moussalem@outlook.com; s=20250321; h=from:subject:message-id;
- bh=55+OVTWKoDEF3wFthbSUFmewrmNa0eMnoTEShtYSUqE=;
- b=7ZYFYqUEweAtZ4nB5oD6JUvuE6pzxgG0QSFyde93gD0Xb4pnc7NncPC4g/lv/YdjfWRAuQQ+T
- 6LUVZWGdY9xCIkpncL1xBsS/Ja2ivIPl4+oWlRWEdXa+yynBBhj4Ss5
+ bh=I4jm4NWYfCMkGfNzx/usV/Xj+0IxIcI5RxXPlEHXCyw=;
+ b=92bG5hFNoqxnQJvD9S7r7KVqQKonFMOwhrB8+3T0BhQ6xGpaEM1ImTkG3Xunqsd4ep6jd5DWY
+ voG1iyJ4eFZCaMGP3b5ZbXyU7ohU3al1rSWF2dBZmvpjcnreN5YW3mx
 X-Developer-Key: i=george.moussalem@outlook.com; a=ed25519;
  pk=/PuRTSI9iYiHwcc6Nrde8qF4ZDhJBlUgpHdhsIjnqIk=
 X-Endpoint-Received: by B4 Relay for george.moussalem@outlook.com/20250321
@@ -102,47 +104,43 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: George Moussalem <george.moussalem@outlook.com>
 
-Add the 5V supply regulator and enable USB Super-Speed PHY support.
+Add aux and lfps clocks to USB controller node for Super-Speed support.
+These clocks are required for USB3 mode only and are not needed for USB2
+mode.
 
+In addition, set UTMI clock frequency to ensure it's parented correctly
+and override the clock rate potentially set by the bootloader.
+
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 Tested-by: Stanislaw Pal <kuncy7@gmail.com>
 Signed-off-by: George Moussalem <george.moussalem@outlook.com>
 ---
- arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+ arch/arm64/boot/dts/qcom/ipq5018.dtsi | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts b/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
-index 8efb2b21ed9e..ca29f271e673 100644
---- a/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
-+++ b/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
-@@ -22,6 +22,14 @@ aliases {
- 	chosen {
- 		stdout-path = "serial0:115200n8";
- 	};
-+
-+	regulator_fixed_5p0: regulator-s0500 {
-+		compatible = "regulator-fixed";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		regulator-name = "fixed_5p0";
-+		gpios = <&tlmm 24 GPIO_ACTIVE_LOW>;
-+	};
- };
+diff --git a/arch/arm64/boot/dts/qcom/ipq5018.dtsi b/arch/arm64/boot/dts/qcom/ipq5018.dtsi
+index 34d882b047bc..a6e337e137c8 100644
+--- a/arch/arm64/boot/dts/qcom/ipq5018.dtsi
++++ b/arch/arm64/boot/dts/qcom/ipq5018.dtsi
+@@ -604,11 +604,15 @@ usb: usb@8a00000 {
+ 			clocks = <&gcc GCC_USB0_MASTER_CLK>,
+ 				 <&gcc GCC_SYS_NOC_USB0_AXI_CLK>,
+ 				 <&gcc GCC_USB0_SLEEP_CLK>,
+-				 <&gcc GCC_USB0_MOCK_UTMI_CLK>;
++				 <&gcc GCC_USB0_MOCK_UTMI_CLK>,
++				 <&gcc GCC_USB0_AUX_CLK>,
++				 <&gcc GCC_USB0_LFPS_CLK>;
+ 			clock-names = "core",
+ 				      "iface",
+ 				      "sleep",
+-				      "mock_utmi";
++				      "mock_utmi",
++				      "aux",
++				      "lfps";
+ 			assigned-clocks = <&gcc GCC_USB0_MOCK_UTMI_CLK>;
+ 			assigned-clock-rates = <60000000>;
  
- &blsp1_uart1 {
-@@ -119,6 +127,12 @@ &usbphy0 {
- 	status = "okay";
- };
- 
-+&usbphy1 {
-+	vdd-supply = <&regulator_fixed_5p0>;
-+
-+	status = "okay";
-+};
-+
- &xo_board_clk {
- 	clock-div = <4>;
- 	clock-mult = <1>;
 
 -- 
 2.53.0
