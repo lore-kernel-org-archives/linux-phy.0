@@ -4,44 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2FBAEC79F82
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Sep 2026 15:41:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC5F1C79FAA
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Sep 2026 15:43:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wlqYMxpmV881uDYpUWh8y1v+1t26Esf6qtbP2PiUh38=; b=AfL8z5RGN+P3TE
-	ux/NKa+kTAEVSuuhF/TM+Z0f98KhySwhEhqiX9daMuSqqRaXoVQ02g/B2Tx0qxm0oQey/Ou08CzoA
-	BOZd4pflCE+UlCPjaPXUqAI3XL0KhPbgvHPR7oVZdah5PHl214msMz/MxGFf0opIZN9SH77t8bN2o
-	tcPgBnIL8HStF4HP8nmpk7cMWErXcIw7E1GjaYTAz8hx1a9hKIAxq92khi4ATZ1o19glB6ELK+4S+
-	CVCZprlB3XmLI+mUJtCppyvC+fKlcIRVQ8H56xkH8AaxyGlev2mcnEBlewCBMBEnCOuGTXQA/PZZr
-	49d5RIUA1/Z2wQ6vrsqQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=jgG0tS8/lJTvzikX7gS82jNFmmvo36MU9PcwezAcPEk=; b=QHxPbunAu+1k4eH8XtK5vS9GrL
+	LAGVHyfNEWlkxdUjtWpcSbYAC2tHO25oBbTI3qZQwxM/tUwrWbsOf25Pqi/ke+nBEWRBclVmsEaXn
+	ivDE2W53/mKJgyIGF0i0P+a6YW9oumHdsuyUB1UeoKjA34bjEbg7VZc7f5iADmNCftItZ6F3y/3vw
+	b3G9vloL12C7E0IcuxWHM5GX1rr0CDcSFzv904f7xwHkoOmGW+WwyhPlYIK7xgZ1EYtSFp6frv5yb
+	Vt+cAjSx+iJtUfpKKYYwRhaQaM1mmesRRMg9qB3jZs68gEV/iFkyERJcUao65ht2b9KPiYQW1z74w
+	SSVI+pnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3xwd-00000009WPL-3gW3;
-	Tue, 08 Sep 2026 15:41:11 +0000
+	id 1x3xyx-00000009Wyp-0wYD;
+	Tue, 08 Sep 2026 15:43:35 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3xwb-00000009WOu-1drs
+	id 1x3xyv-00000009Wy3-1bCc
 	for linux-phy@lists.infradead.org;
-	Tue, 08 Sep 2026 15:41:09 +0000
+	Tue, 08 Sep 2026 15:43:33 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id E958A4118B;
-	Tue,  8 Sep 2026 15:41:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6864E1F00A3A;
-	Tue,  8 Sep 2026 15:41:08 +0000 (UTC)
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH net-next v4 07/10] net: pcs: xpcs: add Rockchip RK3568
- platform glue driver
-To: "Coia Prant" <coiaprant@gmail.com>
-Cc: olteanv@gmail.com, linux-phy@lists.infradead.org, neil.armstrong@linaro.org, devicetree@vger.kernel.org, robh@kernel.org, vkoul@kernel.org, conor+dt@kernel.org, wsa+renesas@sang-engineering.com
-In-Reply-To: <20260907153713.2572547-9-coiaprant@gmail.com>
-References: <20260907153713.2572547-2-coiaprant@gmail.com>
- <20260907153713.2572547-9-coiaprant@gmail.com>
-Date: Tue, 08 Sep 2026 15:40:50 +0000
-Message-Id: <20260908154108.6864E1F00A3A@smtp.kernel.org>
+	by sea.source.kernel.org (Postfix) with ESMTP id 278CC43506;
+	Tue,  8 Sep 2026 15:43:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 733DD1F00A3D;
+	Tue,  8 Sep 2026 15:43:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1788882213;
+	bh=ODv2oVQ+zj8LzCCwIIMj4+ozkkVjMeRgl5H0fCblGLM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=jJTAzR1xLe2+tbJ9A7apNobRbYhUzmETYEpovrhxNgPp+VwM/urv5SsSEij/GPo8X
+	 hYhcyYJ5ROxyn/GqkyRygWjc1d4NxKbY69fxN9GcF3EPiL1Uu0cIZRYxJdsTaKD//A
+	 Ypl0uKD3xFFpYr5e3PIliXszCvPgyTdrFw7/BDlDjnws5K3/J5A6RYcMT3SvqyY9j7
+	 C0qlrVBnQPbeU016NyiBKn5bP8Fa++AskBwjoRSJ5LIRmvfcMW9aq9x4esrYT+SR5G
+	 qHxNOmulL0F6+3BE/AyWcE6A5B7iCT9vuaBfKrkcm0a2hYDE/+/bg4Oa378kjOffIS
+	 RXgdTpr2cjzeg==
+Date: Tue, 8 Sep 2026 16:43:25 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>,
+	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>
+Cc: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
+	Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+	Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+	Loic Poulain <loic.poulain@oss.qualcomm.com>,
+	Mauro Carvalho Chehab <mchehab@kernel.org>,
+	Lee Jones <lee@kernel.org>, Guru Das Srinagesh <linux@gurudas.dev>,
+	Liam Girdwood <lgirdwood@gmail.com>, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	mfd@lists.linux.dev, Suresh Vankadara <svankada@qti.qualcomm.com>,
+	Vikram Sharma <vikram.sharma@oss.qualcomm.com>,
+	Dhruvin Rajpura <drajpura@qti.qualcomm.com>,
+	Jishnu Prakash <jishnu.prakash@oss.qualcomm.com>
+Subject: Re: [PATCH v2 0/6] Add CAMSS support for Qualcomm Glymur
+Message-ID: <8103069c-d774-4303-8366-11059e462d84@sirena.org.uk>
+References: <20260907-glymur_camss-v2-0-75f7982dc983@oss.qualcomm.com>
+MIME-Version: 1.0
+In-Reply-To: <20260907-glymur_camss-v2-0-75f7982dc983@oss.qualcomm.com>
+X-Cookie: The world is not octal despite DEC.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -53,74 +80,65 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============6352792025660523345=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIEEgVGltZS1vZi1DaGVj
-ayB0byBUaW1lLW9mLVVzZSAoVE9DVE9VKSByYWNlIGNvbmRpdGlvbiBpbiB4cGNzX3JrX2NyZWF0
-ZSBhbGxvd3MgYSBjb25jdXJyZW50IHVuYmluZCBvZiB0aGUgc3VwcGxpZXIgdG8gZnJlZSB0aGUg
-TURJTyBidXMsIGxlYWRpbmcgdG8gYSBVc2UtQWZ0ZXItRnJlZS4KLSBbTWVkaXVtXSBJbmNvcnJl
-Y3QgTElGTyB0ZWFyZG93biBvcmRlcmluZyBpbiBkZXZyZXMgY2xvY2sgY2xlYW51cCBhY3Rpb24g
-dmlvbGF0ZXMgcHJvcGVyIGRldmljZSBpbml0aWFsaXphdGlvbiBhbmQgUE0gaGllcmFyY2h5IHJ1
-bGVzLgotLQoKY29tbWl0IDcxNDJkYmY2YjI4YjVlZTk0ZDBlZGM5NjliY2YxNmQxMTgzYTVmNDEK
-QXV0aG9yOiBDb2lhIFByYW50IDxjb2lhcHJhbnRAZ21haWwuY29tPgoKbmV0OiBwY3M6IHhwY3M6
-IGFkZCBSb2NrY2hpcCBSSzM1NjggcGxhdGZvcm0gZ2x1ZSBkcml2ZXIKClRoaXMgY29tbWl0IGFk
-ZHMgYSBwbGF0Zm9ybSBnbHVlIGRyaXZlciBmb3IgdGhlIFN5bm9wc3lzIERlc2lnbldhcmUgeHBj
-cwppbnRlZ3JhdGVkIGluIHRoZSBSb2NrY2hpcCBSSzM1NjggU29DLiBJdCBjcmVhdGVzIGEgdmly
-dHVhbCBtZGlvIGJ1cyB0bwp0cmFuc2xhdGUgbWRpbyBvcGVyYXRpb25zIHRvIGFwYjMgbWVtb3J5
-LW1hcHBlZCByZWdpc3RlciBhY2Nlc3Nlcy4KCkxpbms6IGh0dHBzOi8vZGwucmFkeGEuY29tL3Jv
-Y2szL2RvY3MvaHcvZGF0YXNoZWV0L1JvY2tjaGlwJTIwUkszNTY4JTIwVFJNJTIwUGFydDIlMjBW
-MS4xLTIwMjEwMzAxLnBkZiAoUGFnZSAyMDc4KQoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9uZXQv
-cGNzL3Bjcy14cGNzLXJrLmMgYi9kcml2ZXJzL25ldC9wY3MvcGNzLXhwY3MtcmsuYwo+IG5ldyBm
-aWxlIG1vZGUgMTAwNjQ0Cj4gaW5kZXggMDAwMDAwMDAwMDAwMC4uNjhiY2FhMWE1Y2JiZgo+IC0t
-LSAvZGV2L251bGwKPiArKysgYi9kcml2ZXJzL25ldC9wY3MvcGNzLXhwY3MtcmsuYwpbIC4uLiBd
-Cj4gK3N0YXRpYyB2b2lkIHhwY3NfcmtfZXhpdF9jbGsodm9pZCAqZGF0YSkKPiArewo+ICsJc3Ry
-dWN0IGR3X3hwY3NfcmsgKnB4cGNzID0gZGF0YTsKPiArCXN0cnVjdCBkZXZpY2UgKmRldiA9ICZw
-eHBjcy0+cGRldi0+ZGV2Owo+ICsKPiArCWNsa19kaXNhYmxlX3VucHJlcGFyZShweHBjcy0+ZWVl
-X2Nsayk7Cj4gKwo+ICsJcG1fcnVudGltZV9mb3JjZV9zdXNwZW5kKGRldik7CgpbU2V2ZXJpdHk6
-IE1lZGl1bV0KRG9lcyB0aGlzIHNlcXVlbmNlIHJlc3VsdCBpbiB0aGUgY2xvY2sgYmVpbmcgZGlz
-YWJsZWQgYmVmb3JlIHRoZSBkZXZpY2UgaXMKc3VzcGVuZGVkPwoKSW4geHBjc19ya19pbml0X2Ns
-aygpLCBlZWVfY2xrIGlzIGVuYWJsZWQgZmlyc3QsIGZvbGxvd2VkIGJ5IGEgY2FsbCB0bwpwbV9y
-dW50aW1lX2VuYWJsZSgpLCBhbGxvd2luZyB0aGUgZGV2aWNlIHRvIGJlY29tZSBydW50aW1lIGFj
-dGl2ZS4gRHVyaW5nIAp0ZWFyZG93biwgcG1fcnVudGltZV9mb3JjZV9zdXNwZW5kKCkgaW52b2tl
-cyB4cGNzX3JrX3BtX3J1bnRpbWVfc3VzcGVuZCgpCnRvIGRpc2FibGUgY3NyX2Nsay4KCkNhbGxp
-bmcgY2xrX2Rpc2FibGVfdW5wcmVwYXJlKCkgZm9yIGVlZV9jbGsgYmVmb3JlIHBtX3J1bnRpbWVf
-Zm9yY2Vfc3VzcGVuZCgpIAp2aW9sYXRlcyBsYXN0LWluLCBmaXJzdC1vdXQgb3JkZXJpbmcsIGRp
-c2FibGluZyB0aGUgcHJlcmVxdWlzaXRlIGNsb2NrIHdoaWxlCnRoZSBkZXZpY2UgaXMgc3RpbGwg
-Y29uc2lkZXJlZCBhY3RpdmUuIFNob3VsZCBwbV9ydW50aW1lX2ZvcmNlX3N1c3BlbmQoKSBiZQpj
-YWxsZWQgcHJpb3IgdG8gZGlzYWJsaW5nIHRoZSBlZWVfY2xrPwoKPiArfQpbIC4uLiBdCj4gK3N0
-cnVjdCBkd194cGNzICp4cGNzX3JrX2NyZWF0ZShzdHJ1Y3QgZGV2aWNlICpkZXYsIHN0cnVjdCBk
-ZXZpY2Vfbm9kZSAqbnApCj4gK3sKWyAuLi4gXQo+ICsJZGV2aWNlX2xvY2soJnBkZXYtPmRldik7
-Cj4gKwlweHBjcyA9IHBsYXRmb3JtX2dldF9kcnZkYXRhKHBkZXYpOwo+ICsJaWYgKCFweHBjcyB8
-fCAhcHhwY3MtPmJ1cykgewo+ICsJCWRldmljZV91bmxvY2soJnBkZXYtPmRldik7Cj4gKwkJcHV0
-X2RldmljZSgmcGRldi0+ZGV2KTsKPiArCQlyZXR1cm4gRVJSX1BUUigtRVBST0JFX0RFRkVSKTsK
-PiArCX0KPiArCj4gKwl4cGNzID0geHBjc19jcmVhdGVfbWRpb2RldihweHBjcy0+YnVzLCAoaW50
-KXBvcnQpOwo+ICsJZGV2aWNlX3VubG9jaygmcGRldi0+ZGV2KTsKCltTZXZlcml0eTogSGlnaF0K
-RG9lcyBkcm9wcGluZyB0aGUgZGV2aWNlIGxvY2sgaGVyZSBpbnRyb2R1Y2UgYSB0aW1lLW9mLWNo
-ZWNrIHRvIHRpbWUtb2YtdXNlCnJhY2UgY29uZGl0aW9uPwoKSWYgYSBjb25jdXJyZW50IHVuYmlu
-ZCBvZiB0aGUgcmtfeHBjcy1kd3hwY3Mgc3VwcGxpZXIgZHJpdmVyIG9jY3VycyAKaW1tZWRpYXRl
-bHkgYWZ0ZXIgZGV2aWNlX3VubG9jaygpIGJ1dCBiZWZvcmUgZGV2aWNlX2xpbmtfYWRkKCksIHRo
-ZSB1bmJpbmQgCndvdWxkIHRyaWdnZXIgZGV2cmVzIGNsZWFudXAsIGZyZWVpbmcgdGhlIG1kaW8g
-YnVzLgoKPiArCWlmIChJU19FUlIoeHBjcykpIHsKPiArCQlwdXRfZGV2aWNlKCZwZGV2LT5kZXYp
-Owo+ICsJCXJldHVybiB4cGNzOwo+ICsJfQo+ICsKPiArCWlmICghZGV2aWNlX2xpbmtfYWRkKGRl
-diwgJnBkZXYtPmRldiwgRExfRkxBR19BVVRPUkVNT1ZFX0NPTlNVTUVSKSkgewoKU2luY2UgZGV2
-aWNlX2xpbmtfYWRkKCkgcGVybWl0cyBsaW5raW5nIHRvIGRldmljZXMgd2l0aG91dCBkcml2ZXJz
-LCBpdCBjb3VsZApzdWNjZWVkIGV2ZW4gaWYgdGhlIHN1cHBsaWVyIHdhcyBqdXN0IHVuYm91bmQu
-IFRoZSBjb25zdW1lciBkcml2ZXIgd291bGQgdGhlbgpyZXN1bWUgcHJvYmluZyB3aXRoIHRoZSBy
-ZXR1cm5lZCB4cGNzIHBvaW50ZXIgcmVmZXJlbmNpbmcgYSBmcmVlZCBtZGlvIGJ1cywKbGVhZGlu
-ZyB0byBhIHVzZS1hZnRlci1mcmVlIHdoZW4gdGhlIG1hYyBkcml2ZXIgYXR0ZW1wdHMgdG8gcmVh
-ZCBvciB3cml0ZQpwY3MgcmVnaXN0ZXJzLgoKQ291bGQgdGhlIGRldmljZV9saW5rX2FkZCgpIGNh
-bGwgYmUgbW92ZWQgaW5zaWRlIHRoZSBsb2NrIGJsb2NrIHByb3RlY3RlZApieSBkZXZpY2VfbG9j
-aygpIHRvIHNhZmVseSBlc3RhYmxpc2ggdGhlIGRlcGVuZGVuY3kgYmVmb3JlIHRoZSBsb2NrIGlz
-CnJlbGVhc2VkPwoKPiArCQl4cGNzX2Rlc3Ryb3koeHBjcyk7Cj4gKwkJcHV0X2RldmljZSgmcGRl
-di0+ZGV2KTsKPiArCQlyZXR1cm4gRVJSX1BUUigtRU5PTUVNKTsKPiArCX0KPiArCj4gKwlwdXRf
-ZGV2aWNlKCZwZGV2LT5kZXYpOwo+ICsJcmV0dXJuIHhwY3M7Cj4gK30KCi0tIApTYXNoaWtvIEFJ
-IHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA5MDcxNTM3MTMu
-MjU3MjU0Ny0yLWNvaWFwcmFudEBnbWFpbC5jb20/cGFydD03CgotLSAKbGludXgtcGh5IG1haWxp
-bmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+
+--===============6352792025660523345==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="yPw+0TGEn0HbTJ9A"
+Content-Disposition: inline
+
+
+--yPw+0TGEn0HbTJ9A
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Mon, Sep 07, 2026 at 01:43:36PM +0530, Nihal Kumar Gupta wrote:
+
+> Patch 1 depends on the following dt-bindings series:
+> [1] https://lore.kernel.org/all/20260903-x1e-csi2-phy-v17-0-26606fa9a039@linaro.org
+
+Qualcomm people, could you *please* stop sending me serieses that can't
+be applied.  As previously indicated I am getting far too much of this,
+it makes everything unmanagable.  Nihal, this isn't you or this series
+specifically, it's been a general problem with how Qualcomm is working
+that I've raised before.
+
+Resend this once enough of the dependencies are in that it can at least
+be applied.  Reworking the series so that it can be applied without
+other in flight serieses would be fine, even if it needs everything to
+land in order to actually fully work.
+
+--yPw+0TGEn0HbTJ9A
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAmqgLR0ACgkQJNaLcl1U
+h9AZAgf+LfTfUWipFC+MxrZIf/omzw5XlxIpLtxDgJRAtx16M+Z1GI7gwQJfJOM7
+il61Fwq5Kk1MhBLaaK643iz0rUo/780ML2AxG/kUCElqYqkefzQc73hNPz+aNwyE
+ch4qnMU75bdlVFykQ2ZW7zltNG597wHo4PJTQv/2iYQWgwx3BUYKquDn/tEhnTF/
++HCJvCov4TwITSLj0u34BxghM6Tjrp2uFdAVFKpsDboT3s1CGhIGS8l37NTiBvR+
+8WP9W/NZ8ngjwl4ctH4V5YjVtplJiOP2nZcDsnrnItZqq0Xs+MxFMBTZBNHr6MT3
+DOPZSwbyrcfF5hKDPdvHRIW/Rftk3w==
+=Y05L
+-----END PGP SIGNATURE-----
+
+--yPw+0TGEn0HbTJ9A--
+
+
+--===============6352792025660523345==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============6352792025660523345==--
+
