@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19A48C79FBD
-	for <linux-phy@archiver.kernel.org>; Wed,  9 Sep 2026 16:52:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6831C79FB7
+	for <linux-phy@archiver.kernel.org>; Wed,  9 Sep 2026 17:03:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/4G9fr7axAzSifm8jKkOzhs6/3gSlQ0BRhRJZ4XKpwM=; b=SCzWWJKRtWi2ok
-	koLrKcCuUQanM/h7y29kDKN9GbfkpdisrlW5UUjmaOV2wr5dZBRCuiV6ZokjlUM+hXlmrajM61a61
-	KwyrMuGMF81fcGucGhevR9Z/1DXFwBGmPVOLqWyDi1BTnSbjIzux+1NAGYTVGGvsB3w5z06hSdRC+
-	LT4M6UlSRW+vayWarIMvpNOIBDfABuaIzRzewIpSVFYN2+TqQGy4nHrEQ29oCiDRZziAAytUdmO5V
-	9dgxFvDXZ+WOCVwcNfZGilEdylZVsRNqINT7t9nnDbqETZhy3eTMSQk4/Agvp6trmC4UwWdi8K81E
-	CvX09GMewU6khS8CTjgw==;
+	List-Owner; bh=A53khHMUaSOQGB0AStpF7LBXFro6HVB3224fQxKvrE4=; b=r7qgpzXPghEpL0
+	0NR9TISO+YIdEj0NDHU+gnUfa99p8ETbYWy6mrjD7XUh18DmVmrDg/XSsYy1ctp+EGvlJAy3TZ9lo
+	6ItGLZcu3Jey086NQ28Jf09RpIXAeFg6L5UChLRt56ZcND2lNwL88q7I9rSN/wJgu2Mpm+/XMF5rs
+	5NmCII5InbJb+P64qB2Uv2qiwQxHcr2DXcsSNDonW/L+3X+ZwMIvsn4Jf/SLpTVaM7h7VMeTK5mOE
+	vObHS6DcRF7ucDt4zj/nS7v2dFdKqE8eep9QXEyOxDLTLoP4MZdk4WRE9dq7rzxrlpgiHy2g0W0U2
+	YyX5ZXMbcNPar7jrftdw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4LXd-0000000COeJ-3JBo;
-	Wed, 09 Sep 2026 16:52:57 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1x4Lhg-0000000CQ8T-2bHA;
+	Wed, 09 Sep 2026 17:03:20 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4LXc-0000000COde-0Rv6;
-	Wed, 09 Sep 2026 16:52:56 +0000
+	id 1x4Lhf-0000000CQ7Z-17Qf;
+	Wed, 09 Sep 2026 17:03:19 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 86590600CB;
-	Wed,  9 Sep 2026 16:52:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B32791F000FF;
-	Wed,  9 Sep 2026 16:52:49 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id E6FCB405F7;
+	Wed,  9 Sep 2026 17:03:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C0C281F000FF;
+	Wed,  9 Sep 2026 17:03:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788972775;
-	bh=GmlMljZT/6fO26V/fEoR8ernMpnUFy1iAPY7wr0dQNs=;
+	s=k20260515; t=1788973397;
+	bh=p2s8uYoBSnPRtzrtxy84WXDVLveffRjaRrPrEHzO3Eg=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=KkhMoR6Gs7IooOaJd6DKs7tUqWc1jCblWwWBcebrdQphPcJfx9IHywVG0VVdPQcZr
-	 Ujc+1ZiZDZsZBo0BrfVxc7W0Z7wbJxsVToSLW6b854TSdi/sJPu6STLcXEmkiKy4TS
-	 3nkPhpQ1Bl7Z4P9RYdUWzulpKKMbSG40E8yaol2K0HHfVSpDN1gMbN6cbgpBTs9QIy
-	 VDePMdyerGmnffIQvv6WecoqTTaLEzerfhfu6+Vu58/WBqIxA/6IEgxAWNKrGKLnDG
-	 JgHQbPwgWlMwEFPoMtfE1bMTTELWNN7XggB/FHAP+91OztVhKa6hS689YxKChFNb7r
-	 SkgQHw+GkfxQA==
-Date: Wed, 9 Sep 2026 18:52:45 +0200
+	b=XkVQ0vIuB6RQIRTUzSey3nGs+UX/fU73qGe5rLJyVH74queEPlJAnPabs0WWtPtc2
+	 AxwFcbtRNCukAPEqEW7rAq4WamRm6e5w76DIxmlGofvrUfKd0d4x75v7u9tRtkcbDC
+	 JOTgcuqnOx117t79O/6qN0+IE/2TJ9rK8MLBBsHqfRu8ueC01Gs12akCoHc+tPQTpu
+	 R85FtifAhbIUhJFuE5Xt77KmJDvQv+HKr6+Q5nDAcNzmAfny9H3TMDj7eeyFonpnuq
+	 tDHH4fZvp9tjRevl4BB7ecdS22L6GBeX2minc5iWSMTNe7DbPL8JP52sSmaZFVZSqc
+	 7XoXLn9sP/kQA==
+Date: Wed, 9 Sep 2026 19:03:08 +0200
 From: Manivannan Sadhasivam <mani@kernel.org>
 To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Cc: chunfeng.yun@mediatek.com, vkoul@kernel.org, neil.armstrong@linaro.org, 
@@ -50,14 +50,14 @@ Cc: chunfeng.yun@mediatek.com, vkoul@kernel.org, neil.armstrong@linaro.org,
 	linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
 	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
 	dri-devel@lists.freedesktop.org, kernel@collabora.com
-Subject: Re: [PATCH v3 02/12] phy: phy-mtk-dp: Rename regs to regmap in
- struct mtk_dp_phy
-Message-ID: <wvjid3xethoskbttbgy3oy3j7fxnonrnzqg7pqndn32skzp4bt@2q7svyz6ojr7>
+Subject: Re: [PATCH v3 03/12] phy: phy-mtk-dp: Allow probing with devicetree
+ match
+Message-ID: <bkx46kvsmovy2rbjnqwov65whmwnbkoig27iihk7w4qcosqoqf@jymp7vcu3ezi>
 References: <20260707154245.198361-1-angelogioacchino.delregno@collabora.com>
- <20260707154245.198361-3-angelogioacchino.delregno@collabora.com>
+ <20260707154245.198361-4-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260707154245.198361-3-angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20260707154245.198361-4-angelogioacchino.delregno@collabora.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,15 +74,21 @@ Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCBKdWwgMDcsIDIwMjYgYXQgMDU6NDI6MzVQTSArMDIwMCwgQW5nZWxvR2lvYWNjaGlu
-byBEZWwgUmVnbm8gd3JvdGU6Cj4gSW4gcHJlcGFyYXRpb24gdG8gcGVyZm9ybSBmdXJ0aGVyIGNs
-ZWFudXBzIGFuZCB0byBleHRlbmQgdGhlCj4gZHJpdmVyIHRvIHN1cHBvcnQgbW9yZSBTb0NzLCBy
-ZW5hbWUgdGhlIGByZWdzYCBtZW1iZXIgdG8gYHJlZ21hcGAKPiB0byBpbXByb3ZlIHJlYWRhYmls
-aXR5LCBhcyB0aGlzIGlzIGEgY29tbW9uIG5hbWUgYWNyb3NzIG1hbnkKPiBrZXJuZWwgZHJpdmVy
-cyBmb3IgYSBzdHJ1Y3QgcmVnbWFwLgo+IAo+IFNpZ25lZC1vZmYtYnk6IEFuZ2Vsb0dpb2FjY2hp
-bm8gRGVsIFJlZ25vIDxhbmdlbG9naW9hY2NoaW5vLmRlbHJlZ25vQGNvbGxhYm9yYS5jb20+CgpS
-ZXZpZXdlZC1ieTogTWFuaXZhbm5hbiBTYWRoYXNpdmFtIDxtYW5pdmFubmFuLnNhZGhhc2l2YW1A
-b3NzLnF1YWxjb21tLmNvbT4KCi0gTWFuaQoKLS0gCuCuruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCv
-jSDgrprgrqTgrr7grprgrr/grrXgrq7gr40KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0Cmxp
-bnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+T24gVHVlLCBKdWwgMDcsIDIwMjYgYXQgMDU6NDI6MzZQTSArMDIwMCwgQW5nZWxvR2lvYWNjaGlu
+byBEZWwgUmVnbm8gd3JvdGU6Cj4gTWFrZSBpdCBwb3NzaWJsZSB0byBkZWNvdXBsZSB0aGUgcmVn
+aXN0cmF0aW9uIG9mIHRoZSBEaXNwbGF5UG9ydAo+IFBIWSBkcml2ZXIgZnJvbSB0aGUgRGlzcGxh
+eVBvcnQgSVAgZHJpdmVyIGJ5IGFkZGluZyBhIGRldmljZXRyZWUKPiBtYXRjaCB0byBwcm9iZSB0
+aGUgUEhZLCByZWdpc3RlcmluZyBhbiBPRiBQSFkgcHJvdmlkZXIgYW5kIHRoaXMKPiBkZXZpY2Un
+cyBvd24gTU1JTyByZWdtYXAgLSBpZiwgYW5kIG9ubHkgaWYsIHRoaXMgUEhZIGRyaXZlciB3YXMK
+PiByZWdpc3RlcmVkIHdpdGggYW4gT0YgbWF0Y2guCj4gCj4gSW4gb3JkZXIgdG8gcmV0YWluIGNv
+bXBhdGliaWxpdHkgd2l0aCBvbGRlciBkZXZpY2V0cmVlcyB0aGF0IGFyZQo+IG5vdCBkZWNsYXJp
+bmcgdGhlIERpc3BsYXlQb3J0IFBIWSBhcyBhIHNlcGFyYXRlIG5vZGUsIHRoZSBsZWdhY3kKPiBj
+b2RlIHdhcyBtb3ZlZCBpbiBhIGBtdGtfZHBfcGh5X2xlZ2FjeV9wcm9iZSgpYCBmdW5jdGlvbiwg
+d2hpY2gKPiBnZXRzIGNhbGxlZCBpZiB0aGUgZHJpdmVyIHdhcyByZWdpc3RlcmVkIGJ5IHRoZSBE
+aXNwbGF5UG9ydCBvbmUuCj4gCj4gU2lnbmVkLW9mZi1ieTogQW5nZWxvR2lvYWNjaGlubyBEZWwg
+UmVnbm8gPGFuZ2Vsb2dpb2FjY2hpbm8uZGVscmVnbm9AY29sbGFib3JhLmNvbT4KClJldmlld2Vk
+LWJ5OiBNYW5pdmFubmFuIFNhZGhhc2l2YW0gPG1hbml2YW5uYW4uc2FkaGFzaXZhbUBvc3MucXVh
+bGNvbW0uY29tPgoKLSBNYW5pCgotLSAK4K6u4K6j4K6/4K614K6j4K+N4K6j4K6p4K+NIOCumuCu
+pOCuvuCumuCuv+CuteCuruCvjQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
+bGlzdGluZm8vbGludXgtcGh5Cg==
