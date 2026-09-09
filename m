@@ -4,54 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35205C79FAD
-	for <linux-phy@archiver.kernel.org>; Wed,  9 Sep 2026 12:07:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48A52C79FB6
+	for <linux-phy@archiver.kernel.org>; Wed,  9 Sep 2026 12:07:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5HbXjHLLY8Km+ukgm1cxRhgjBwtKdRKTpx5QyKFZbFk=; b=Zcl/0TA/XpJrmf
-	tYj/WTR/N+bvVkoA7giuSH7Ynh+Feo+Sak7KFBocNYoXDv6Yne2ep0rtek8Eh9ZRwqibT6WRg4ste
-	BwW+JPT7rXPvuzSNC0B6IKUBtOWKrpzBWcIMuKkgV5dild8Snc/Ul/jv0/uU7kgKQlPipL3oWPyxl
-	OAavn6g193Ls8XLt3TbbRYkdpgq+yzhFFIrxEtru21h+aluZpYI770mqOXV0QljSoKEE6z+mybSn9
-	hCNTVBsqnyrfWIblyRb/j7GJow+JRMC9Nwj4beXLGJmRTMZ98F8fDN1T++w2MkaUqkLMi+tID6ahY
-	WDDSTs6WoCBDlYuuA+5w==;
+	List-Owner; bh=Bv4r6e9mbS5jibpSM8DLblOctU2XkEWF2lwkBfoZKxU=; b=4BVr4Ddbg5/1Ec
+	MWsV95zvYTtgHDigjnxOO7cHlDxwwOG+dAcPc7DvmCTEE45SafdnSEml8EFL8mzcTv4NABxz8/LOG
+	IuRdMq1jLUQjP6cyL/fuz8Jddr8yu4MYUsZGh8rPSnMTrLcwZYej8iUM0BWWBAkRUaX9Ww6Aq3hoI
+	wOzs65eHMoPv0t7GqJD76FBtehqTYT2lHB8pMyyYN+mIFPsMBM2a9MSyD7LA6f+4Jfu0PUbRnieGG
+	fEcptSKYDx2x1Tk2Yt91QnkaaEn8AHZDLDQx6yo9/FqSga5NoQt+taj6tnZtNBq958/3/Ec00Fmsq
+	g6pnOnL/Zf+uPuR3hf1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4H5O-0000000BdkI-3ERm;
-	Wed, 09 Sep 2026 12:07:30 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1x4H5n-0000000Bdmg-49TW;
+	Wed, 09 Sep 2026 12:07:55 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4H5N-0000000BdkA-3yFs
-	for linux-phy@lists.infradead.org;
-	Wed, 09 Sep 2026 12:07:30 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 0328160207;
-	Wed,  9 Sep 2026 12:07:29 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3D2FC1F00A3D;
-	Wed,  9 Sep 2026 12:07:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788955648;
-	bh=eWdprPw1IAwyZg2T0oKk+X/h6rbzr2IN/8PYX7S7qQU=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=hrQSlYjsg7LIQ485IzaZ/UX4LsV1qN6Q8wEFsitUnwfek7GRn6yQNByh5hNkBoC0i
-	 i2e0ezG7Z0oo9IcV6OvGcqIHGdqbmWdXSEDO+za6P/jPcav4mBE/AlOEo6xMET4ij3
-	 uLSSVGyYZwP8Endj9LlTRN7WcAB4n1CY0lnwHMtQrjkfPcft52E/k5/9K99Mopztg4
-	 rXdGg6DD+fYoQzPYkR+G+JCjYt/39/RmAdCbhEEg4SNKKbJKo0AhByzvyk/zn7AmfP
-	 tulSgVpJvFgNeAXwBtW+qrnTPUqes+7hLiV3bBOSPKWLivkvtL3fbFhuA4FD/bc/DJ
-	 baodBaYGJimjA==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v3 5/5] phy: qcom: qmp-pcie: Add Nord Gen5x16 PCIe
- multi-PHY support
-To: "Krishna Chaitanya Chundru" <krishna.chundru@oss.qualcomm.com>
-Cc: devicetree@vger.kernel.org, vkoul@kernel.org, olteanv@gmail.com, conor+dt@kernel.org, robh@kernel.org, neil.armstrong@linaro.org, linux-phy@lists.infradead.org, linux-pci@vger.kernel.org
-In-Reply-To: <20260909-nord-v3-5-b0a82721c547@oss.qualcomm.com>
-References: <20260909-nord-v3-0-b0a82721c547@oss.qualcomm.com>
- <20260909-nord-v3-5-b0a82721c547@oss.qualcomm.com>
-Date: Wed, 09 Sep 2026 12:07:27 +0000
-Message-Id: <20260909120728.3D2FC1F00A3D@smtp.kernel.org>
+	id 1x4H5l-0000000Bdlm-0LOd;
+	Wed, 09 Sep 2026 12:07:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1788955670;
+	bh=9BQBuj38BgdWrXH6eq4U/hcUK1ngD19b+0vvYWTFybM=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=qWtKsL0FUA45YboMn0D+j7Up82RtUceDTesYdNppRsOMTe4csgne7JNe3fzIcRJ5l
+	 kIJhI0s0J3tr3oPhI+Lcl97CN7tSxf9TIAOeKVE0XLyLlYnm+b5CEZDyugzqw77x/b
+	 IpcABsa4Ynn5BhtNZiYpyblNP0JZ9or1O6cWO31+srQ0lLRSjadlk9ghr7zuTnXa2U
+	 z4d3a3iQL97yag4sLyVqrFLEelidYnczgOnYHB/0SnbCJJbYbOsGfQpYb85MFvmWUf
+	 rqVaY0UX3zxdXlGi9CrT1N+GGXFaSXaZE5JcV6oKWpVEHO11gScYHQRkJhbempS0u+
+	 Xkn6jlGNJnU/w==
+Received: from [100.64.1.21] (unknown [100.64.1.21])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange x25519)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 6E3AD17E092F;
+	Wed, 09 Sep 2026 14:07:49 +0200 (CEST)
+Message-ID: <a343f3ed-deb8-4105-82da-d652966a0c6b@collabora.com>
+Date: Wed, 9 Sep 2026 14:07:49 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 0/2] MediaTek MT8195 HDMI PHY Fixes
+To: chunfeng.yun@mediatek.com
+Cc: p.zabel@pengutronix.de, chunkuang.hu@kernel.org, vkoul@kernel.org,
+ neil.armstrong@linaro.org, matthias.bgg@gmail.com, granquet@baylibre.com,
+ justin.yeh@mediatek.com, dri-devel@lists.freedesktop.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ kernel@collabora.com
+References: <20260701121936.19407-1-angelogioacchino.delregno@collabora.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+In-Reply-To: <20260701121936.19407-1-angelogioacchino.delregno@collabora.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260909_050753_375674_7356D737 
+X-CRM114-Status: GOOD (  10.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,93 +73,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0NyaXRpY2FsXSBUaGUgYHNraXBf
-aW5pdGAgbG9naWMgaXMgZmxhd2VkIGZvciB0aGUgZXhpc3RpbmcgR2x5bXVyIFBIWSBwbGF0Zm9y
-bSwgbGVhZGluZyB0byBhIGd1YXJhbnRlZWQgTlVMTCBwb2ludGVyIGRlcmVmZXJlbmNlIGFuZCB1
-bmludGVuZGVkIHJlZ2lzdGVyIGNvcnJ1cHRpb24gZHVyaW5nIGluaXRpYWxpemF0aW9uLgotIFtI
-aWdoXSBBY2Nlc3NpbmcgUEhZIFBDUyByZWdpc3RlcnMgaW4gYHFtcF9wY2llX2luaXQoKWAgYmVm
-b3JlIGV4cGxpY2l0bHkgZW5hYmxpbmcgdGhlIHJlcXVpcmVkIEFIQiBjbG9ja3MgbGVhZHMgdG8g
-YSBzeW5jaHJvbm91cyBleHRlcm5hbCBhYm9ydC4KLS0KCmNvbW1pdCBlNThjN2ZlZGQ4NzJkN2Mw
-MzY0NmY1NzdjOGIzODMyZTM5NzQ3M2I2CkF1dGhvcjogS3Jpc2huYSBDaGFpdGFueWEgQ2h1bmRy
-dSA8a3Jpc2huYS5jaHVuZHJ1QG9zcy5xdWFsY29tbS5jb20+CgpwaHk6IHFjb206IHFtcC1wY2ll
-OiBBZGQgTm9yZCBHZW41eDE2IFBDSWUgbXVsdGktUEhZIHN1cHBvcnQKClRoaXMgY29tbWl0IGFk
-ZHMgc3VwcG9ydCBmb3IgdGhlIE5vcmQgR2VuNXgxNiBiaWZ1cmNhdGVkIFFNUCBQQ0llIFBIWS4K
-SXQgaW1wbGVtZW50cyB0aGUgUEhZIGluaXRpYWxpemF0aW9uIHNlcXVlbmNpbmcgaW5jbHVkaW5n
-IFBMTCwgVFhSWFosCmFuZCBQQ1MgdGFibGVzLCBoYW5kbGluZyBQSFkgcG93ZXIgZG9tYWlucyBh
-Z2FpbnN0IHRoZWlyIG93biBkZXZpY2UuCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9xdWFs
-Y29tbS9waHktcWNvbS1xbXAtcGNpZS1tdWx0aXBoeS5jIGIvZHJpdmVycy9waHkvcXVhbGNvbW0v
-cGh5LXFjb20tcW1wLXBjaWUtbXVsdGlwaHkuYwo+IC0tLSBhL2RyaXZlcnMvcGh5L3F1YWxjb21t
-L3BoeS1xY29tLXFtcC1wY2llLW11bHRpcGh5LmMKPiArKysgYi9kcml2ZXJzL3BoeS9xdWFsY29t
-bS9waHktcWNvbS1xbXAtcGNpZS1tdWx0aXBoeS5jClsgLi4uIF0KPiArc3RhdGljIHZvaWQgcW1w
-X3BjaWVfaW5pdF9wb3J0X3JlZ2lzdGVycyhzdHJ1Y3QgcW1wX3BjaWUgKnFtcCkKPiArewo+ICsJ
-Y29uc3Qgc3RydWN0IHFtcF9waHlfY2ZnICpjZmcgPSBxbXAtPmNmZzsKPiArCWNvbnN0IHN0cnVj
-dCBxbXBfcGNpZV9vZmZzZXRzICpvZmZzID0gY2ZnLT5vZmZzZXRzOwo+ICsJY29uc3Qgc3RydWN0
-IHFtcF9waHlfY2ZnX3RibHMgKnRibHMgPSAmY2ZnLT50YmxzOwo+ICsJaW50IGk7Cj4gKwo+ICsJ
-Zm9yIChpID0gMDsgaSA8IGNmZy0+bnVtX3JlZ3M7IGkrKykgewo+ICsJCXZvaWQgX19pb21lbSAq
-cG9ydCA9IHFtcC0+YmFzZVtpXTsKWyAuLi4gXQo+ICsJCXFtcF9jb25maWd1cmUocW1wLT5kZXYs
-IHBvcnQgKyBvZmZzLT5wbGwsCj4gKwkJCSAgICAgIHRibHMtPnBsbF9jb21tb24sIHRibHMtPnBs
-bF9jb21tb25fbnVtKTsKPiArCQlxbXBfY29uZmlndXJlKHFtcC0+ZGV2LCBwb3J0ICsgb2Zmcy0+
-cGxsLAo+ICsJCQkgICAgICBjZmctPnBsbF90YmxzW2ldLCBjZmctPnBsbF9udW1zW2ldKTsKCltT
-ZXZlcml0eTogQ3JpdGljYWxdCklmIHRoZSBleGlzdGluZyBHbHltdXIgcGxhdGZvcm0gY2FsbHMg
-cW1wX3BjaWVfaW5pdF9wb3J0X3JlZ2lzdGVycygpLCBjb3VsZAp0aGlzIGRlcmVmZXJlbmNlIGEg
-bnVsbCBwb2ludGVyPyBMb29raW5nIGF0IGdseW11cl9xbXBfZ2VuNXg4X3BjaWVwaHlfY2ZnLApj
-ZmctPnBsbF90YmxzIGlzIG5vdCBpbml0aWFsaXplZCBhbmQgcmVtYWlucyBudWxsLgoKWyAuLi4g
-XQo+IEBAIC05NTMsNiArOTUzLDMwIEBAIHN0YXRpYyBpbnQgcW1wX3BjaWVfaW5pdChzdHJ1Y3Qg
-cGh5ICpwaHkpCj4gIHsKPiAgCXN0cnVjdCBxbXBfcGNpZSAqcW1wID0gcGh5X2dldF9kcnZkYXRh
-KHBoeSk7Cj4gIAljb25zdCBzdHJ1Y3QgcW1wX3BoeV9jZmcgKmNmZyA9IHFtcC0+Y2ZnOwo+ICsJ
-Y29uc3Qgc3RydWN0IHFtcF9wY2llX29mZnNldHMgKm9mZnMgPSBjZmctPm9mZnNldHM7Cj4gKwlp
-bnQgaSwgcmV0Owo+ICAKPiAgCXJldCA9IHFtcF9wY2llX3BkX3Bvd2VyX29uKHFtcCk7Cj4gIAlp
-ZiAocmV0KQo+ICAJCXJldHVybiByZXQ7Cj4gIAo+ICsJLyoKPiArCSAqIFdlIGNhbiBza2lwIFBI
-WSBpbml0aWFsaXphdGlvbiBpZiBhbGwgb2YgdGhlIGZvbGxvd2luZyBjb25kaXRpb25zCj4gKwkg
-KiBhcmUgbWV0Ogo+ICsJICogIDEuIFRoZSBQSFkgc3VwcG9ydHMgdGhlIG5vY3NyX3Jlc2V0IHRo
-YXQgcHJlc2VydmVzIHRoZSBQSFkgY29uZmlnLgo+ICsJICogIDIuIFRoZSBQSFkgd2FzIHN0YXJ0
-ZWQgKGFuZCBub3QgcG93ZXJlZCBkb3duIGFnYWluKSBieSB0aGUKPiArCSAqICAgICBib290bG9h
-ZGVyLCB3aXRoIGFsbCBvZiB0aGUgZXhwZWN0ZWQgYml0cyBzZXQgY29ycmVjdGx5Lgo+ICsJICog
-SW4gdGhpcyBjYXNlLCB3ZSBjYW4gY29udGludWUgd2l0aG91dCBoYXZpbmcgdGhlIGluaXQgc2Vx
-dWVuY2UKPiArCSAqIGRlZmluZWQgaW4gdGhlIGRyaXZlci4KPiArCSAqLwo+ICsJcW1wLT5za2lw
-X2luaXQgPSBjZmctPnBsbF90YmxzICYmIHFtcC0+bm9jc3JfcmVzZXRzOwoKW1NldmVyaXR5OiBD
-cml0aWNhbF0KQmVjYXVzZSBjZmctPnBsbF90YmxzIGlzIG51bGwgZm9yIHRoZSBHbHltdXIgcGxh
-dGZvcm0sIHFtcC0+c2tpcF9pbml0IHdpbGwKYWx3YXlzIGV2YWx1YXRlIHRvIGZhbHNlLiBEb2Vz
-IHRoaXMgdW5pbnRlbnRpb25hbGx5IGZvcmNlIHRoZSBHbHltdXIKcGxhdGZvcm0gdG8gYXR0ZW1w
-dCB0aGUgcG9ydCByZWdpc3RlciBpbml0aWFsaXphdGlvbiBpbiBxbXBfcGNpZV9wb3dlcl9vbigp
-PwoKPiArCWZvciAoaSA9IDA7IHFtcC0+c2tpcF9pbml0ICYmIGkgPCBjZmctPm51bV9yZWdzOyBp
-KyspIHsKPiArCQl2b2lkIF9faW9tZW0gKnBvcnQgPSBxbXAtPmJhc2VbaV07Cj4gKwo+ICsJCWlm
-ICghcXBoeV9jaGVja2JpdHMocG9ydCArIG9mZnMtPnBjcywgY2ZnLT5yZWdzW1FQSFlfUENTX1NU
-QVJUX0NPTlRST0xdLAo+ICsJCQkJICAgICBTRVJERVNfU1RBUlQgfCBQQ1NfU1RBUlQpIHx8Cj4g
-KwkJICAgICFxcGh5X2NoZWNrYml0cyhwb3J0ICsgb2Zmcy0+cGNzLCBjZmctPnJlZ3NbUVBIWV9Q
-Q1NfUE9XRVJfRE9XTl9DT05UUk9MXSwKPiArCQkJCSAgICAgU1dfUFdSRE4gfCBSRUZDTEtfRFJW
-X0RTQkwpKQo+ICsJCQlxbXAtPnNraXBfaW5pdCA9IGZhbHNlOwo+ICsJfQoKW1NldmVyaXR5OiBI
-aWdoXQpEb2VzIHJlYWRpbmcgUVBIWV9QQ1NfU1RBUlRfQ09OVFJPTCBoZXJlIGhhcHBlbiBiZWZv
-cmUgdGhlIHJlcXVpcmVkIEFIQi9BUEIKY2xvY2tzIGFyZSBlbmFibGVkPyBUaGUgY2FsbCB0byBj
-bGtfYnVsa19wcmVwYXJlX2VuYWJsZSgpIG9jY3VycyBmdXJ0aGVyCmRvd24gaW4gcW1wX3BjaWVf
-aW5pdCgpLgoKSWYgdGhlIGNsb2NrcyBhcmUgY3VycmVudGx5IGRpc2FibGVkLCBzdWNoIGFzIGR1
-cmluZyBib290IG9yIGFmdGVyIGEgc3VzcGVuZCAKY3ljbGUsIHdpbGwgYWNjZXNzaW5nIHRoZXNl
-IG1lbW9yeS1tYXBwZWQgcmVnaXN0ZXJzIHRyaWdnZXIgYSBzeW5jaHJvbm91cyAKZXh0ZXJuYWwg
-YWJvcnQ/CgpbIC4uLiBdCj4gQEAgLTEwNjcsNiArMTA2NywyMCBAQCBzdGF0aWMgaW50IHFtcF9w
-Y2llX3Bvd2VyX29uKHN0cnVjdCBwaHkgKnBoeSkKPiAgCQlnb3RvIGVycl9kaXNhYmxlX3BpcGVf
-Y2xrOwo+ICAJfQo+ICAKPiArCWlmICghcW1wLT5za2lwX2luaXQpIHsKPiArCQlxbXBfcGNpZV9p
-bml0X3BvcnRfcmVnaXN0ZXJzKHFtcCk7Cj4gKwo+ICsJCWZvciAoaSA9IDA7IGkgPCBjZmctPm51
-bV9yZWdzOyBpKyspIHsKPiArCQkJcXBoeV9jbHJiaXRzKHFtcC0+YmFzZVtpXSArIG9mZnMtPnBj
-cywKPiArCQkJCSAgICAgY2ZnLT5yZWdzW1FQSFlfUENTX1NXX1JFU0VUXSwgU1dfUkVTRVQpOwoK
-W1NldmVyaXR5OiBDcml0aWNhbF0KSWYgR2x5bXVyIGZhbGxzIGludG8gdGhpcyBibG9jayBkdWUg
-dG8gc2tpcF9pbml0IGJlaW5nIGZhbHNlLCBpdCByZWFkcwpmcm9tIGNmZy0+cmVnc1tRUEhZX1BD
-U19TV19SRVNFVF0uIFRoZSBHbHltdXIgcmVnaXN0ZXIgbGF5b3V0CihwY2llcGh5X3Y4XzUwX3Jl
-Z3NfbGF5b3V0KSBkb2VzIG5vdCBkZWZpbmUgUVBIWV9QQ1NfU1dfUkVTRVQuCgpDYW4gdGhpcyBy
-ZXN1bHQgaW4gcmVhZGluZyBpbmRleCAwICh3aGljaCBtYXBzIHRvIFFQSFlfUENTX1NUQVRVUykg
-YW5kCndyaXRpbmcgdG8gYW4gdW5kZWZpbmVkIG9mZnNldCwgdGhlcmVieSBjb3JydXB0aW5nIHRo
-ZSBQSFkgcmVnaXN0ZXIgYXQKb2Zmc2V0IDB4MD8KCj4gKwkJCXFwaHlfc2V0Yml0cyhxbXAtPmJh
-c2VbaV0gKyBvZmZzLT5wY3MsCj4gKwkJCQkgICAgIGNmZy0+cmVnc1tRUEhZX1BDU19TVEFSVF9D
-T05UUk9MXSwKPiArCQkJCSAgICAgU0VSREVTX1NUQVJUIHwgUENTX1NUQVJUKTsKPiArCQl9Cj4g
-Kwo+ICsJCXVzbGVlcF9yYW5nZSgyMDAwLCAyNTAwKTsKPiArCX0KCi0tIApTYXNoaWtvIEFJIHJl
-dmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA5MDktbm9yZC12My0w
-LWIwYTgyNzIxYzU0N0Bvc3MucXVhbGNvbW0uY29tP3BhcnQ9NQoKLS0gCmxpbnV4LXBoeSBtYWls
-aW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 7/1/26 14:19, AngeloGioacchino Del Regno wrote:
+> This series adds two fixes for the MT8195-class HDMI PHY, found in
+> MT8195, MT8188 and Genio variants.
+> 
+> This is fixing PLL calculation, and TMDS clock dividers, to achieve
+> all of the modes requiring data rates higher than 3.4Gbps, with the
+> successfully tested target being 3840x2160@60Hz.
+> 
+> This was tested on MT8395 MediaTek Genio 1200, Radxa NIO-12L and on
+> MT8390 MediaTek Genio 700, with 3 different HDMI displays (two TVs
+> and a 4k LG workstation display).
+> 
+> AngeloGioacchino Del Regno (2):
+>    phy: mediatek: phy-mtk-hdmi-mt8195: Fix PLL calc divisor overflow
+>    phy: mediatek: phy-mtk-hdmi-mt8195: Fix TMDS clk bit ratio setting
+> 
+>   drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c | 4 ++--
+>   drivers/phy/mediatek/phy-mtk-hdmi-mt8195.h | 3 +++
+>   2 files changed, 5 insertions(+), 2 deletions(-)
+> 
+
+This series * performing fixes * got completely ignored.
+
+PHY maintainers, ping.
+
+Cheers,
+Angelo
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
