@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39E70C79FAA
-	for <linux-phy@archiver.kernel.org>; Wed,  9 Sep 2026 08:06:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E61DDC79FAA
+	for <linux-phy@archiver.kernel.org>; Wed,  9 Sep 2026 08:09:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wOPvrZeLc2it90mvxMM4Wy7kxcM+Sj0BaQAo49I8FqM=; b=eBE3byAMDA11di
-	gOJV8/5CmPYdQ2E9PVvq5Ofe0fWIf7FyJ+qtOQ+0/FrR9ptOZxZKx6y+bVOrCqX7mWf53n+62P9ck
-	aUIIIhryEEp+Hqh9E+LtptJpaB8ZJbP7143wRHY1C9qLTi47olsx2b5jFWpXDvNqXDR0xaAtB5NuW
-	6fYC5WoHTfuspF+RBDvUrbPlcqTUCjKaKCQQ9D0xhVD9bH+goBHhJbFCTx1G6fZWow4sfLxrwx2L6
-	OUzF2d0Hp6ic5pX/IsxHjcCptXCIWYu1EdZlFI8IdgBZ9JbmBRFJvxh6TKkoFKZq5Deva5kO3iiY6
-	Pa5aYpca5wjiX26EENLQ==;
+	List-Owner; bh=wOPvrZeLc2it90mvxMM4Wy7kxcM+Sj0BaQAo49I8FqM=; b=V9tFIvCLtyZhVk
+	jXpd+SfIhPAm1DRSddEhUHbgRMSo1ODMdok61VeUSHAJB+RDoIYA6ru/E7HfwY7gYGYltLwBB/VXl
+	sGaHG3eEPs0hnXoeAbycGy/PouV/VysZol1BFIeAP6PeU05dS5N5T7DFrmodhcn/SiIZJ9TtbJpwA
+	Y7WNByjiirMvO8gOt+OYOUhDojWuburY0sJI+OxBLWqbaxBTor+iYXqK+FKxXCCw1T90Rn+pHbIUl
+	Q6cDp/mmlG+x+Xu6r1tbNg7IRWgcZExG2+xj/TgSM0M2p6nardARSxRmt+CSqiuwtnL16JDTs5hVI
+	8ioHjzIbf4UyhVELWv1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4DKT-0000000B3hY-3Lss;
-	Wed, 09 Sep 2026 08:06:49 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1x4DNA-0000000B4Dz-2L1n;
+	Wed, 09 Sep 2026 08:09:36 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4DKS-0000000B3gn-3elV;
-	Wed, 09 Sep 2026 08:06:48 +0000
+	id 1x4DN9-0000000B4DK-0ykG;
+	Wed, 09 Sep 2026 08:09:35 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 4C592416FC;
-	Wed,  9 Sep 2026 08:06:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C13751F00A3A;
-	Wed,  9 Sep 2026 08:06:43 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 7AD9D601FD;
+	Wed,  9 Sep 2026 08:09:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 950721F00A3A;
+	Wed,  9 Sep 2026 08:09:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788941208;
+	s=k20260515; t=1788941374;
 	bh=Sm+VRBme+F4AuNb+2Kn1vUGzPGQfC4nUbsqtHhdSZ/E=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=aQtPW4G32f4EnPI9Vax3cgfcFE+MuZgnZC4DiQ4fx16mqMnDsJUFzr0acgxVCZ9Tg
-	 kDYW/dh5hFmWpcwX49VXFahtF/7ob+nthDqJM2KzhswsVSROq2cJ9gJqhEySyobGgu
-	 nEJNz+vrr0su31LpGOPw+jfrGj2m0jp+fVYbEteNWZpDxSYsU+XrskFhslBZ2G4TjL
-	 TyChczVlZXeVT4V+kW+H/ZoC5NNjc+G5MyWwJnJXikluq6S03k59k/eZbh9VYfLK1x
-	 wLt0aZ2cUsaKrM1YgH6uDyJse13E7ROAdyhc7G656AspLEJoojTEcp1fS/jewgOU1b
-	 sLHfLq2ijPjdA==
-Date: Wed, 9 Sep 2026 10:06:39 +0200
+	b=QhsnwWMJCrZct8Q2pdFFjenhpYM7e6e9TH976YqW3/MOEg74s0ZVEsG5yHxNY5Uqr
+	 fgnU3An42MDdrqfIpp20LvljYyzaX92a81GuHhY32pMCR9j+2Cc3/EZwWElpXDBZXC
+	 LHW7//sFoGziJMYR/tfrnRZHtYczuOG+c4qAHVD/aWdaFlHf50DaVTKdth3dNYHZsH
+	 1nRlagNSRHCxRGK3pja+9McUw4n+p3NccxfYHcVoUmOciAw9zvi70ohaVZ849jn5XB
+	 muM/kMDc7d9B7nFYzHZa9Mx/fPoDr3DgBqoyn5cY5rtCJBpW2afGhiScstwAht4yzN
+	 n+dI15ddVTlrA==
+Date: Wed, 9 Sep 2026 10:09:25 +0200
 From: Manivannan Sadhasivam <mani@kernel.org>
 To: Pengpeng Hou <pengpeng@iscas.ac.cn>
 Cc: Vinod Koul <vkoul@kernel.org>, 
@@ -52,7 +52,7 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
 	linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org
 Subject: Re: [PATCH] phy: samsung: usbdrd: propagate GS101 PIPE3 lock failures
-Message-ID: <nfz2nsasfgf5ob4zqrs7aywwct2lbcnri4ltel42iebwu27piw@zyb3u3rhaph2>
+Message-ID: <jgkyhjlex746xmqgr6vwxihfkzjmtvhsvrzk5ovud7zrc2bqo5@xwdlrrmdrkx6>
 References: <20260623135349.42739-1-pengpeng@iscas.ac.cn>
 MIME-Version: 1.0
 Content-Disposition: inline
