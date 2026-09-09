@@ -4,92 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1A7C9C79FB6
-	for <linux-phy@archiver.kernel.org>; Wed,  9 Sep 2026 15:38:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3023DC79FB7
+	for <linux-phy@archiver.kernel.org>; Wed,  9 Sep 2026 16:08:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=crSBL9AfMDpQYufIa5L6J6cOyTvrGqTBaD+EFTttAk8=; b=qUscD3u5RaasIo
-	BUUpsWPlv43UF59w6Eq3c99fPGKCVGBd4axPpManKBjDcVS3w4NBlDT/PPZxIMvDazHjOmE3ARvyK
-	eL1IaYzDovA1dYWMJjHQJqw4fyggfrvdkYr7qU2vO01VcnHg461UEPhkVip/mP1Ps0Sjt+PYpU9WU
-	cua43psCriA/jMNpUghNIHUt9Vwr6Bxjik93vRMwiEW6VEtibZGpAOsAxDvIfURsxqJVjtu4HYIM/
-	eSEJZLUN8G2QuBPIL5CrF785Ih9GE3c7U35thuarzCyyBs3Ye6aWV0Pwz6fvOY8I5JohL+Zo/iida
-	bWr9RAiEO6ev5H7daQLA==;
+	List-Owner; bh=dyO7y3BR0VbKtAd2JRuPxSlR+aIPGPKceqo9QDvw/SE=; b=M6pbIz7X61DkBB
+	TVvqMfTyTxdYDMk0AAUiNnUQ5954ZeKa1U+N4ukfNxZ7A3vVrjJ33ZtD+9B4VkWpQBAOYDGPZXEMw
+	A083cdwZ4FQvY2vYqp4LWqZ+Gpr5xIsDeoRcqyPg1TDw32JkPomvbGVMXkrYMWcJ89mKAW+YcAe2T
+	wWZGBvj5TsKaI4xulBl1JLtj3rUV9mg/J6jBBFXIpI8pkCLU7aSoyGpt57bSAoMA/huXw8oP7ZgeK
+	3nr43SYmVXg/CdpsfZQ2LQE8cNH2MBbGkUsjaaqMDfrqmr1F+6evy8IRTIo3ec//sAFJKw1GxBmWR
+	ZlcdwgkHlm1VsLqppMTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4KNk-0000000CCB4-2fDM;
-	Wed, 09 Sep 2026 15:38:40 +0000
-Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
+	id 1x4KqJ-0000000CGtr-1Sch;
+	Wed, 09 Sep 2026 16:08:11 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4KNi-0000000CCAR-0JSY
+	id 1x4KqH-0000000CGtS-2vUU
 	for linux-phy@lists.infradead.org;
-	Wed, 09 Sep 2026 15:38:39 +0000
-Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-49d036e0e99so25348055e9.1
-        for <linux-phy@lists.infradead.org>; Wed, 09 Sep 2026 08:38:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1788968316; x=1789573116; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:mime-version:references
-         :in-reply-to:message-id:date:subject:cc:to:from:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=8S3fBhkCPJSV3cRNUQtxcR+vjeMJsdADNC9uYmwfZuQ=;
-        b=VKIOb7hShK1mcJVrWl3PZrQjBc4cBKUyVhjvS0pvF3BbCX7eS/aY7r0OYtLg+BeeQ9
-         kP0uCCOHCc9a+fQesiLRmLX/Z1CYGhJdngNIGOUgzB26CZWQtDXVMsufPIws+6hb7PbE
-         MhlTJcWfEg/0e5WNetTd0sg2ZrFbELEb1PPknMyjU3SDGMp9OgXM97q6Fqj7gsiGjJBz
-         9LbSrDnKG1IDrWmRsgp8naHwOq/0n+0HhFdoFe/D758D/l8hcIXDZBdxCTbLxLEdf8rS
-         BXNkcD9XQiSNB+Ra1FU2WigKZ5Bqrn3HcBm8DwWYv+1z9Cnru+5Cz+Rk/IcesAAOuZT7
-         QJ7g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788968316; x=1789573116;
-        h=content-transfer-encoding:content-type:mime-version:references
-         :in-reply-to:message-id:date:subject:cc:to:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=8S3fBhkCPJSV3cRNUQtxcR+vjeMJsdADNC9uYmwfZuQ=;
-        b=SNKWnngOBZuE0KlH+lBeOcP2W6P3Fru5QO/dXf+FiiFnP7bNSkPmy2n4buSTEppVY4
-         MQnUj5oXEvHE6xa+L6WnCISzh2YkDfYg1CdLv66WVrejJK7nvJSqhOaPsZ34bu+zCUNn
-         pkPNtTyTyUsyME3i3E/I2seatF1HxpGtyAgJ/zPijZT4mD/EkSdugGXf7wJJ4Dw9dwu2
-         BeUX0B8FUYH2ylA1LXdniShYkhYVE+H30k5SaWb3GYppDmu0uq/n2EKUBNcR3FIqlRHc
-         UUOf6DSCdwRmeA5YxaeiQ4g0uG5CqzjkGC9dnQxs0a5616r5pWHWBS7G8WAT3TP4wg37
-         qViw==
-X-Gm-Message-State: AFuF++mNtgowZcVZLwowRu1KoA0ZhSFVl34r/ZwH93G5pHQ4eubAQfP1
-	nRrKYanq/GURwZB6MMfoJsFmgKL/hI849hPue6XX3oYFfFxuqPnh094z
-X-Gm-Gg: AYBFou3Ag693VoUy/D5qDHN3B3uGAX3dVruBHVijMz6JVc2XaQZMYLjnGd84RNkJ561
-	fck+UeB38I9lEg4JVbKbTPZekd7lf96/ZYUKDH66i6SRKyMhVhyG4T1QdmWr4q8r675JjXNmfvH
-	apyMudLosUfreERbQbGMXi1D6RRu4rKpPiSBV8LbmVTsXp27FyzeASvalU58hbCibiBaGDlkf9o
-	3us6kfkA3oyTFTyCjrGi5Dl+C+Un9pM7BJgUFU0JoetsCkWwDc4O2pm6iiIcHNZ4A0K9ma+KlWH
-	ZGLIWI3DSGD3RSxX2fRsNsHpsrU+ILGB6nLhZ+3Dmrtnk3NksO9oAcK/lmhjgBYyJMpXIbY6PZF
-	TtzQ2jO+ADYx3e4jxZHQpWdyiWbLYxABtN9TxPg1bhoJLJKjsTgnvQ7195xIcVjH2ph4x/eiBTv
-	9QNajbZ2AWt1+WlIJ8MC/x4+ev2KtBoRF/4drgaYBCqM1lBfQKUYgV5PD+24n1Mq19hUfxd8mnw
-	VibALe+XBMp5Or9rxgon07iuiDHouI7fwNGJEhA2EJSRyJ21ViCoA==
-X-Received: by 2002:a05:600c:4505:b0:49c:dca2:ac47 with SMTP id 5b1f17b1804b1-49cf7fe607cmr338568715e9.2.1788968315686;
-        Wed, 09 Sep 2026 08:38:35 -0700 (PDT)
-Received: from localhost.localdomain (mob-31-26-103-238.net.vodafone.it. [31.26.103.238])
-        by smtp.googlemail.com with ESMTPSA id ffacd0b85a97d-485883c81c3sm45437055f8f.26.2026.09.09.08.38.33
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 09 Sep 2026 08:38:34 -0700 (PDT)
-From: Oleg Keri <okerixx@gmail.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Johan Hovold <johan+linaro@kernel.org>,
-	Bjorn Andersson <quic_bjorande@quicinc.com>
-Cc: linux-phy@lists.infradead.org,
-	linux-arm-msm@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Michael Scott <mike.scott@oss.qualcomm.com>
-Subject: Re: [PATCH 1/2] phy: qcom: qmp-combo: do not decrement init_count on a forced init failure
-Date: Wed,  9 Sep 2026 17:38:25 +0200
-Message-ID: <178896830509.10915.10301668870227152275@gmail.com>
-X-Mailer: git-send-email 2.55.0
-In-Reply-To: <20260909152846.3C3931F00A3A@smtp.kernel.org>
-References: <20260909152846.3C3931F00A3A@smtp.kernel.org>
+	Wed, 09 Sep 2026 16:08:09 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id C60586020A;
+	Wed,  9 Sep 2026 16:08:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 353001F00A3E;
+	Wed,  9 Sep 2026 16:08:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1788970088;
+	bh=xfh6dQwvhJNBpZKgTnhO+xK92GSq+lmModl5wWIGjuQ=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=D7WmWBtiXCIe5SG3D8cRAEjOqty4zUOe9OTItrGucs+Q9qiZSKr2RPvFHQ2nwo61q
+	 hEjkiKme6f5fJwjIK9l/BFSjmkbIZ+/sq2Uw+vMrBIi5DnavUW8iiU8yOp+LHa1r6k
+	 mi9AP82ugFByN5NxAB5K42b+4n7uDj9OIwtakBbrIcnV0XxN5ISJT1BjB3MRNkrxk8
+	 pUalZcDKp9O8ae8CUQop9SdH+sflmHAp7lAT/rgkSV1J7JuIP0IQO4s3WXO6lOZxr4
+	 3vJAlQsrkh+M3/6MQE22gS4wSszn+aU5EQDEZWvXEZ2ocFEw4Hg4cc/RpdB9FrTJ6P
+	 d3qUIx1zwC0rA==
+Date: Wed, 9 Sep 2026 18:07:59 +0200
+From: Manivannan Sadhasivam <mani@kernel.org>
+To: Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Aaro Koskinen <aaro.koskinen@iki.fi>, Andreas Kemnade <andreas@kemnade.info>, 
+	Kevin Hilman <khilman@baylibre.com>, Roger Quadros <rogerq@kernel.org>, 
+	Tony Lindgren <tony@atomide.com>, Linus Walleij <linusw@kernel.org>, 
+	Bartosz Golaszewski <brgl@kernel.org>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-omap@vger.kernel.org, linux-gpio@vger.kernel.org
+Subject: Re: [PATCH v5 4/7] phy: cpcap-usb: add DCP detection and make UART
+ idle mode optional
+Message-ID: <oheoylzdj3arrnfdm6747cuubllkdmg4gx7vm3zhs3owuooj4v@zdbytrztbdp4>
+References: <20260711204210.197144-1-ivo.g.dimitrov.75@gmail.com>
+ <20260711204210.197144-5-ivo.g.dimitrov.75@gmail.com>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260909_083838_126862_7ABE4156 
-X-CRM114-Status: GOOD (  14.65  )
+Content-Disposition: inline
+In-Reply-To: <20260711204210.197144-5-ivo.g.dimitrov.75@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,55 +72,101 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-You are right, and this patch should be dropped.  Please do not apply it.
-
-The diagnosis in the commit message holds - a forced qmp_combo_com_init()
-never takes the reference, because && short-circuits on !force, so the
-unconditional decrement in the error path drops one that was never taken.
-The remedy does not.
-
-Tracing a consumer that holds phy_init(), so init_count is 1 and the block
-is up, through a typec callback that does com_exit(force) then a com_init(force)
-which fails:
-
-  before this patch   init_count 0, hardware down.
-                      a later com_exit(false) does --init_count -> -1, which
-                      is non-zero, so it returns early: no double disable,
-                      but the reference is lost and the count stays negative.
-
-  with this patch     init_count 1, hardware down.
-                      a later com_exit(false) does --init_count -> 0 and
-                      proceeds to the full teardown, so
-                      clk_disable_unprepare(), clk_bulk_disable_unprepare()
-                      and regulator_bulk_disable() all run against resources
-                      the error path already released.
-
-So it swaps a silently negative counter for a real unbalanced disable, which
-is worse than what it replaces.  Exactly what you asked.
-
-The underlying problem is that init_count is being used for two different
-things - how many consumers hold a reference, and whether the common block
-is currently powered - and after a failed forced re-init those two diverge.
-No adjustment to the single counter can express that, so I would rather send
-nothing here than send another half fix.  I will come back to it with the
-hardware state tracked separately, once I can convince myself the teardown
-paths are balanced in every case.
-
-Patch 2/2 does not touch the counter at all - it only stops both callbacks
-carrying on to write PHY registers after the bringup has already failed and
-left the clocks disabled - so it stands on its own and can still be applied.
-
-The runtime PM patch it was a follow-up to is likewise independent:
-https://lore.kernel.org/all/20260909140345.4239-1-okerixx@gmail.com/
-
-pw-bot: changes-requested
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gU2F0LCBKdWwgMTEsIDIwMjYgYXQgMTE6NDI6MDdQTSArMDMwMCwgSXZheWxvIERpbWl0cm92
+IHdyb3RlOgo+IEhhbmRsZSBEQ1Agc2VwYXJhdGVseSBmcm9tIFVTQiBob3N0IGNvbm5lY3Rpb25z
+IHVzaW5nIENQQ0FQIGNoYXJnZXIKPiBkZXRlY3Rpb24gc3RhdHVzLgo+IAo+IE1ha2UgdGhlIGV4
+aXN0aW5nIGlkbGUgVUFSVCBtb2RlIG9wdGlvbmFsIHZpYSB0aGUgImVuYWJsZV91YXJ0IiBtb2R1
+bGUKPiBwYXJhbWV0ZXIuIFdoZW4gZGlzYWJsZWQgKGRlZmF1bHQpLCB0aGUgUEhZIHJlbWFpbnMg
+aW4gaXRzIFVTQi9jaGFyZ2VyCj4gZGV0ZWN0aW9uIGNvbmZpZ3VyYXRpb24gd2hpbGUgaWRsZS4K
+PiAKPiBBbHNvIGluaXRpYWxpemUgdGhlIFBIWSBpbnRvIHRoZSBiYXNlbGluZSBjb25maWd1cmF0
+aW9uIHJlcXVpcmVkIGZvcgo+IHJlbGlhYmxlIGNoYXJnZXIgZGV0ZWN0aW9uIGR1cmluZyBwcm9i
+ZS4KPiAKPiBVc2UgdGhlIG9wdGlvbmFsICJzYWZlIiBwaW5jdHJsIHN0YXRlIGJlZm9yZSBzd2l0
+Y2hpbmcgYmV0d2VlbiBtb2RlcyB0bwo+IGF2b2lkIGdsaXRjaGVzIG9uIFVTQiBvciBVQVJUIGxp
+bmVzLgo+IAoKTG9va3MgbGlrZSB0aGlzIGNoYW5nZSBpcyBkb2luZyBtdWx0aXBsZSB0aGluZ3Mg
+YXQgb25jZS4gUGxlYXNlIHNwbGl0IHRoZQpjaGFuZ2VzIGxvZ2ljYWxseSB0byBzZXBhcmF0ZSBw
+YXRjaGVzLgoKPiBOb3RlOiBFbmFibGluZyBVQVJUIGlkbGUgbW9kZSBpbmNyZWFzZXMgaWRsZSBw
+b3dlciBjb25zdW1wdGlvbiAoYnkgMjVtVwo+IG9uIGRyb2lkNCkuCj4gCj4gU2lnbmVkLW9mZi1i
+eTogSXZheWxvIERpbWl0cm92IDxpdm8uZy5kaW1pdHJvdi43NUBnbWFpbC5jb20+Cj4gCj4gIyBD
+b25mbGljdHM6Cj4gIwlkcml2ZXJzL3BoeS9tb3Rvcm9sYS9waHktY3BjYXAtdXNiLmMKCldoYXQg
+aXMgdGhpcyBjb25mbGljdD8KCj4gLS0tCj4gIGRyaXZlcnMvcGh5L21vdG9yb2xhL3BoeS1jcGNh
+cC11c2IuYyB8IDMwMSArKysrKysrKysrKysrKysrKysrKystLS0tLS0KPiAgMSBmaWxlIGNoYW5n
+ZWQsIDIzOCBpbnNlcnRpb25zKCspLCA2MyBkZWxldGlvbnMoLSkKPiAKPiBkaWZmIC0tZ2l0IGEv
+ZHJpdmVycy9waHkvbW90b3JvbGEvcGh5LWNwY2FwLXVzYi5jIGIvZHJpdmVycy9waHkvbW90b3Jv
+bGEvcGh5LWNwY2FwLXVzYi5jCj4gaW5kZXggNzQxMTQ1Yzg5ZTViLi4yZDc3MGZmMTllOTMgMTAw
+NjQ0Cj4gLS0tIGEvZHJpdmVycy9waHkvbW90b3JvbGEvcGh5LWNwY2FwLXVzYi5jCj4gKysrIGIv
+ZHJpdmVycy9waHkvbW90b3JvbGEvcGh5LWNwY2FwLXVzYi5jCj4gQEAgLTExMCw2ICsxMTAsMTUg
+QEAgZW51bSBjcGNhcF9ncGlvX21vZGUgewo+ICAJQ1BDQVBfT1RHX0RNX0RQLAo+ICB9Owo+ICAK
+PiArZW51bSBjcGNhcF9tb2RlIHsKPiArCUNQQ0FQX1VOS05PV04sCj4gKwlDUENBUF9JRExFLAo+
+ICsJQ1BDQVBfQ0hBUkdFUiwKPiArCUNQQ0FQX1VTQiwKPiArCUNQQ0FQX1VTQl9IT1NULAo+ICsJ
+Q1BDQVBfRE9DSywKPiArfTsKPiArCj4gIHN0cnVjdCBjcGNhcF9waHlfZGRhdGEgewo+ICAJc3Ry
+dWN0IHJlZ21hcCAqcmVnOwo+ICAJc3RydWN0IGRldmljZSAqZGV2Owo+IEBAIC0xMTksMTUgKzEy
+OCwxOSBAQCBzdHJ1Y3QgY3BjYXBfcGh5X2RkYXRhIHsKPiAgCXN0cnVjdCBwaW5jdHJsX3N0YXRl
+ICpwaW5zX3VscGk7Cj4gIAlzdHJ1Y3QgcGluY3RybF9zdGF0ZSAqcGluc191dG1pOwo+ICAJc3Ry
+dWN0IHBpbmN0cmxfc3RhdGUgKnBpbnNfdWFydDsKPiArCXN0cnVjdCBwaW5jdHJsX3N0YXRlICpw
+aW5zX3NhZmU7Cj4gIAlzdHJ1Y3QgZ3Bpb19kZXNjICpncGlvWzJdOwo+ICAJc3RydWN0IGlpb19j
+aGFubmVsICp2YnVzOwo+ICAJc3RydWN0IGlpb19jaGFubmVsICppZDsKPiAgCXN0cnVjdCByZWd1
+bGF0b3IgKnZ1c2I7Cj4gIAlhdG9taWNfdCBhY3RpdmU7Cj4gLQl1bnNpZ25lZCBpbnQgdmJ1c19w
+cm92aWRlcjoxOwo+IC0JdW5zaWduZWQgaW50IGRvY2tlZDoxOwo+ICsJZW51bSBjcGNhcF9tb2Rl
+IG1vZGU7Cj4gIH07Cj4gIAo+ICtzdGF0aWMgYm9vbCBjcGNhcF9lbmFibGVfdWFydDsKPiArbW9k
+dWxlX3BhcmFtX25hbWVkKGVuYWJsZV91YXJ0LCBjcGNhcF9lbmFibGVfdWFydCwgYm9vbCwgMDY0
+NCk7Cj4gK01PRFVMRV9QQVJNX0RFU0MoZW5hYmxlX3VhcnQsCj4gKwkJICJFbmFibGUgVUFSVCBv
+biB0aGUgVVNCIGNvbm5lY3RvciB3aGlsZSBpZGxlIChpbmNyZWFzZXMgcG93ZXIgY29uc3VtcHRp
+b24pIik7CgpVc2Ugb2YgbW9kdWxlIHBhcmFtcyBpcyBkaXNjb3VyYWdlZCB0aGVzZSBkYXlzLiBB
+bHNvLCB5b3UgYXJlIGRpc2FibGluZyBpdCBieQpkZWZhdWx0LCB3aGljaCBjb3VsZCBjYXVzZSBz
+dXJwcmlzZXMgdG8gdXNlcnMgd2hvIGhhdmUgYm9hcmRzIHdpcmVkIHVwIGZvciBkZWJ1Zwpjb25z
+b2xlLiBCdXQgY29uc2lkZXJpbmcgdGhhdCBpdCBjb25zdW1lcyBhIGxvdCBvZiBwb3dlciwgSSB0
+aGluayBpdCBpcyBPSyB0bwpkaXNhYmxlIGl0IHRoaXMgd2F5LiBJIGNhbid0IHRoaW5rIG9mIGFu
+b3RoZXIgd2F5IHRvIGFkZCB0aGlzIGtub2IuCgo+ICBzdGF0aWMgYm9vbCBjcGNhcF91c2JfdmJ1
+c192YWxpZChzdHJ1Y3QgY3BjYXBfcGh5X2RkYXRhICpkZGF0YSkKPiAgewo+ICAJaW50IGVycm9y
+LCB2YWx1ZSA9IDA7Cj4gQEAgLTE5Niw4ICsyMDksOSBAQCBzdGF0aWMgaW50IGNwY2FwX3BoeV9n
+ZXRfaW50c19zdGF0ZShzdHJ1Y3QgY3BjYXBfcGh5X2RkYXRhICpkZGF0YSwKPiAgCXJldHVybiAw
+Owo+ICB9Cj4gIAoKWy4uLl0KCj4gQEAgLTQ3MywyMSArNTU5LDEwIEBAIHN0YXRpYyBpbnQgY3Bj
+YXBfdXNiX3NldF91c2JfbW9kZShzdHJ1Y3QgY3BjYXBfcGh5X2RkYXRhICpkZGF0YSkKPiAgewo+
+ICAJaW50IGVycm9yOwo+ICAKPiAtCS8qIERpc2FibGUgbGluZXMgdG8gcHJldmVudCBnbGl0Y2hl
+cyBmcm9tIHdha2luZyB1cCBtZG02NjAwICovCj4gLQllcnJvciA9IGNwY2FwX3VzYl9ncGlvX3Nl
+dF9tb2RlKGRkYXRhLCBDUENBUF9VTktOT1dOX0RJU0FCTEVEKTsKPiArCWVycm9yID0gY3BjYXBf
+dXNiX3NldF9zYWZlX21vZGUoZGRhdGEpOwo+ICAJaWYgKGVycm9yKQo+ICAJCXJldHVybiBlcnJv
+cjsKPiAgCj4gLQlpZiAoZGRhdGEtPnBpbnNfdXRtaSkgewo+IC0JCWVycm9yID0gcGluY3RybF9z
+ZWxlY3Rfc3RhdGUoZGRhdGEtPnBpbnMsIGRkYXRhLT5waW5zX3V0bWkpOwo+IC0JCWlmIChlcnJv
+cikgewo+IC0JCQlkZXZfZXJyKGRkYXRhLT5kZXYsICJjb3VsZCBub3Qgc2V0IHVzYiBtb2RlOiAl
+aVxuIiwKPiAtCQkJCWVycm9yKTsKPiAtCj4gLQkJCXJldHVybiBlcnJvcjsKPiAtCQl9Cj4gLQl9
+Cj4gLQo+ICAJZXJyb3IgPSByZWdtYXBfdXBkYXRlX2JpdHMoZGRhdGEtPnJlZywgQ1BDQVBfUkVH
+X1VTQkMxLAo+ICAJCQkJICAgQ1BDQVBfQklUX1ZCVVNQRCwgMCk7Cj4gIAlpZiAoZXJyb3IpCj4g
+QEAgLTUwMywxMSArNTc4LDIzIEBAIHN0YXRpYyBpbnQgY3BjYXBfdXNiX3NldF91c2JfbW9kZShz
+dHJ1Y3QgY3BjYXBfcGh5X2RkYXRhICpkZGF0YSkKPiAgCQlnb3RvIG91dF9lcnI7Cj4gIAo+ICAJ
+ZXJyb3IgPSByZWdtYXBfdXBkYXRlX2JpdHMoZGRhdGEtPnJlZywgQ1BDQVBfUkVHX1VTQkMyLAo+
+IC0JCQkJICAgQ1BDQVBfQklUX1VTQlhDVlJFTiwKPiArCQkJCSAgIENQQ0FQX0JJVF9VU0JYQ1ZS
+RU4gfAo+ICsJCQkJICAgQ1BDQVBfQklUX1VBUlRNVVgwIHwKPiArCQkJCSAgIENQQ0FQX0JJVF9F
+TVVNT0RFMCwKCkFzIFNhc2hpa28gbm90ZWQsIHlvdSBhcmUgbm90IGNsZWFyaW5nIENQQ0FQX0JJ
+VF9VU0JTVVNQRU5EIGJpdCBzZXQgaW4KY3BjYXBfdXNiX3NldF9pZGxlX21vZGUoKS4KCj4gIAkJ
+CQkgICBDUENBUF9CSVRfVVNCWENWUkVOKTsKPiAgCWlmIChlcnJvcikKPiAgCQlnb3RvIG91dF9l
+cnI7Cj4gIAo+ICsJaWYgKGRkYXRhLT5waW5zX3V0bWkpIHsKPiArCQllcnJvciA9IHBpbmN0cmxf
+c2VsZWN0X3N0YXRlKGRkYXRhLT5waW5zLCBkZGF0YS0+cGluc191dG1pKTsKPiArCQlpZiAoZXJy
+b3IpIHsKPiArCQkJZGV2X2VycihkZGF0YS0+ZGV2LCAiY291bGQgbm90IHNldCB1c2IgbW9kZTog
+JWlcbiIsCj4gKwkJCQllcnJvcik7Cj4gKwo+ICsJCQlyZXR1cm4gZXJyb3I7Cj4gKwkJfQo+ICsJ
+fQo+ICsKPiAgCS8qIEVuYWJsZSBVU0IgbW9kZSAqLwo+ICAJZXJyb3IgPSBjcGNhcF91c2JfZ3Bp
+b19zZXRfbW9kZShkZGF0YSwgQ1BDQVBfT1RHX0RNX0RQKTsKPiAgCWlmIChlcnJvcikKPiBAQCAt
+NTIxLDYgKzYwOCwzOCBAQCBzdGF0aWMgaW50IGNwY2FwX3VzYl9zZXRfdXNiX21vZGUoc3RydWN0
+IGNwY2FwX3BoeV9kZGF0YSAqZGRhdGEpCj4gIAlyZXR1cm4gZXJyb3I7Cj4gIH0KPiAgCj4gK3N0
+YXRpYyBpbnQgY3BjYXBfdXNiX3NldF9kY3BfbW9kZShzdHJ1Y3QgY3BjYXBfcGh5X2RkYXRhICpk
+ZGF0YSkKPiArewo+ICsJaW50IGVycm9yOwo+ICsKPiArCWVycm9yID0gY3BjYXBfdXNiX3NldF9z
+YWZlX21vZGUoZGRhdGEpOwo+ICsJaWYgKGVycm9yKQo+ICsJCXJldHVybiBlcnJvcjsKPiArCj4g
+KwllcnJvciA9IHJlZ21hcF91cGRhdGVfYml0cyhkZGF0YS0+cmVnLCBDUENBUF9SRUdfVVNCQzIs
+Cj4gKwkJCQkgICBDUENBUF9CSVRfVVNCWENWUkVOIHwKPiArCQkJCSAgIENQQ0FQX0JJVF9VQVJU
+TVVYMCB8Cj4gKwkJCQkgICBDUENBUF9CSVRfRU1VTU9ERTAsIDApOwo+ICsJaWYgKGVycm9yKQo+
+ICsJCWdvdG8gb3V0X2VycjsKPiArCj4gKwllcnJvciA9IHJlZ21hcF91cGRhdGVfYml0cyhkZGF0
+YS0+cmVnLCBDUENBUF9SRUdfVVNCQzMsCj4gKwkJCQkgICBDUENBUF9CSVRfU1VTUEVORF9TUEks
+IDApOwo+ICsJaWYgKGVycm9yKQo+ICsJCWdvdG8gb3V0X2VycjsKPiArCj4gKwllcnJvciA9IGNw
+Y2FwX3VzYl9ncGlvX3NldF9tb2RlKGRkYXRhLCBDUENBUF9ETV9EUCk7Cj4gKwlpZiAoZXJyb3Ip
+Cj4gKwkJZ290byBvdXRfZXJyOwo+ICsKPiArCXJldHVybiAwOwo+ICsKPiArb3V0X2VycjoKPiAr
+CWRldl9lcnIoZGRhdGEtPmRldiwgIiVzIGZhaWxlZCB3aXRoICVpXG4iLCBfX2Z1bmNfXywgZXJy
+b3IpOwoKRG9uJ3QgcHJpbnQgZnVuY3Rpb24gbmFtZXMgaW4gdGhlIGVycm9yIGxvZy4KCi0gTWFu
+aQoKLS0gCuCuruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDgrprgrqTgrr7grprgrr/grrXgrq7g
+r40KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBo
+eQo=
