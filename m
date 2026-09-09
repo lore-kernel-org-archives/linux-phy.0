@@ -4,86 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5BD6C79FB6
-	for <linux-phy@archiver.kernel.org>; Wed,  9 Sep 2026 11:35:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 713B6C79FAD
+	for <linux-phy@archiver.kernel.org>; Wed,  9 Sep 2026 11:42:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wrkVqynUh79JTntFrubIqqnrvQHotvTjYJ7BOZvMKqs=; b=TEbuEIcVog0PIt
-	xHxGUsGle4CtOfVJ3bC++Ucp5byp09JPV8oTO87A2UFLOTPBf8mVTrhXgPbz6wPGYX+CJIKdBzv6x
-	ulm5PBa2iYTJ0u9ChWEeXcB2BMTdwlX+nJN2wR6vBJfrGLRbEpOVEux119sp4qdHosIutCgy6v75O
-	hJA7WsXCOYfL7JJIE5P1/9KeD2qhz+vz4vg6Yq6jz8pHTqEVhF/rhC9kHPuutTt8Em9cmFo5oRsJ6
-	pIhcm2IWrXcgYgn2uRomuFL2yOfqmqMGnmiz862umyYL6XPExltYJLuLmyHb8hcqqkEN+IOmmw28A
-	5V9SSpj0tVUOqs4yEALw==;
+	List-Owner; bh=xyccA3MhnPehMQcDLocSwwbxElYmvw1IrOaltwdPGXU=; b=NyGahfpEHzE4sL
+	DwKfxBQAz1FY64JQZenUsW0VFMbEDdGJbPP5Jl4xGkEcprg6CBbntITdnmqv3MozglySTvyrKG6HJ
+	+jOCFeafilz3tSZ6FjW8axEXs0dgYEK8ryerNL+XY4v8qxeqxkeOxCeKS6rNM5feO8NWF3Q4PSEI0
+	TQZqodCJBJWHTEd6B4IKlEBUqBAoq6KesrqKP+sTcchVT+njtQNO0GJVwkcbWZlNSPHvkZoqmV+Pp
+	IXL46j938JDpPrtEnadQWx/cfuRNdI9T2kBee6RS2RG8qPHyuoaTr6IUKmu84UBxFGgz9DyVgX8PC
+	ewHmJ0tEonHnr+JOwEWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4Ga8-0000000Baua-1bLO;
-	Wed, 09 Sep 2026 11:35:12 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1x4GhE-0000000Bbq3-0du8;
+	Wed, 09 Sep 2026 11:42:32 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4Ga7-0000000Bats-0vX5
-	for linux-phy@bombadil.infradead.org;
-	Wed, 09 Sep 2026 11:35:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=h4l7NnEao8qWyNDC3HJ94JvIzavf89zNMK1+yZiWcoI=; b=OOVftm4JGwxwpGjpmAxUVYDFw/
-	Sg8TRHyK3Op1RsRb+mXz84iOcQV8RhYO4hq5B77cIpeEuWUwk1f0OMpC/4iYV+A+i0yVCrERb7rdN
-	ly5mlpe6uV+TJSMul8alj0gXlUc/Rn0/bLZA8vJlZec4nxVr8SitBKEKjVHINiESL23Y+8jCuO3B3
-	iCjykcdgf+YtyDFchzwc8daAeCeuNmwnk1R2O4KZHPCm/WTa86Al23MycPIeQNLkUCiXD39NCQQBa
-	G4WR8VYVkqfvPESWVNX/OkNjdAWh1jAU8w/yQbBiKJNoBqonSodMXjDxQo9JOG+Cn4ghIbt4HJqo9
-	l5GlsrTg==;
-Received: from mailgw.kylinos.cn ([124.126.103.232])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1x4Ga3-0000000181Q-1HHV
+	id 1x4GhD-0000000Bbpo-0bMR
 	for linux-phy@lists.infradead.org;
-	Wed, 09 Sep 2026 11:35:10 +0000
-X-UUID: 71f60984ac4211f19a56ed5b684f684d-20260909
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.3.19,REQID:4e9c3541-075b-4229-a75c-24090aca1d47,IP:0,U
-	RL:0,TC:0,Content:-25,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTIO
-	N:release,TS:-25
-X-CID-META: VersionHash:7db8b62,CLOUDID:79fa69263b627d5718ec32f951583d2e,BulkI
-	D:nil,BulkQuantity:0,SF:81|82|102|136|850|865|898,TC:nil,Content:0|15|50|9
-	9,EDM:-3|-100,IP:nil,URL:99|1,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:
-	0,OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 2,SSN|SDN
-X-CID-BAS: 2,SSN|SDN,0,_
-X-CID-FACTOR: TF_CID_SPAM_ULS,TF_CID_SPAM_SNR
-X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
-X-UUID: 71f60984ac4211f19a56ed5b684f684d-20260909
-X-User: zenghongling@kylinos.cn
-Received: from localhost.localdomain [(10.44.16.150)] by mailgw.kylinos.cn
-	(envelope-from <zenghongling@kylinos.cn>)
-	(Generic MTA with TLSv1.3 TLS_AES_256_GCM_SHA384 256/256)
-	with ESMTP id 658264266; Wed, 09 Sep 2026 19:34:40 +0800
-From: Hongling Zeng <zenghongling@kylinos.cn>
-To: vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	johan@kernel.org,
-	kishon@kernel.org,
-	rogerq@ti.com
-Cc: linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	zhongling0719@126.com,
-	Hongling Zeng <zenghongling@kylinos.cn>,
-	stable@vger.kernel.org,
-	Sashiko AI <sashiko@kernel.org>
-Subject: [PATCH v7 4/4] phy: ti-pipe3: Fix clock leak in init error path
-Date: Wed,  9 Sep 2026 19:34:33 +0800
-Message-Id: <20260909113433.1287454-5-zenghongling@kylinos.cn>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20260909113433.1287454-1-zenghongling@kylinos.cn>
+	Wed, 09 Sep 2026 11:42:31 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 485E76020A;
+	Wed,  9 Sep 2026 11:42:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A46341F00A3A;
+	Wed,  9 Sep 2026 11:42:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1788954148;
+	bh=pzRFhLD+IRSmHG6Ut/GykpgjFKmTcUSGep6zsiv54C8=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=WZMWdTZlk6VVSgN0eynfTJCI9XoSn3P64bpW6uBWNWIDJHH5pSc5kWxjQiqq3EQjL
+	 5iRbSOduZYigMMBNct0Lzb/LJKEKTwy8+MI+oeoRj2ZnkuvZNH25AlILODTLznXRpu
+	 WJ5q2jBAJggddmmnd6L8LIpC08vH3Pp1ujbGabLn4z/5lcSN5TY5IaAcMxfbaT6lAC
+	 iDtqebnpGqSP93loThjItITEnwICEsFDxCQ2QqRo19DF8e2GQR6Djqh4PBE75qVdW3
+	 vvaYAaZ8WINOc8xfoSuHZBYwD3e3G9TCXmjWI6x/EFQgsDcIt2+lJRXhL94Wvz0Hvw
+	 D4b0WSMcM0gGw==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v7 3/4] phy: ti-pipe3: Fix EPROBE_DEFER handling for
+ clock  resources
+To: "Hongling Zeng" <zenghongling@kylinos.cn>
+Cc: linux-phy@lists.infradead.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20260909113433.1287454-4-zenghongling@kylinos.cn>
 References: <20260909113433.1287454-1-zenghongling@kylinos.cn>
-MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260909_123507_973032_981F17A2 
-X-CRM114-Status: UNSURE (   9.48  )
-X-CRM114-Notice: Please train this message.
+ <20260909113433.1287454-4-zenghongling@kylinos.cn>
+Date: Wed, 09 Sep 2026 11:42:27 +0000
+Message-Id: <20260909114227.A46341F00A3A@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,61 +63,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-When regmap_update_bits() fails in ti_pipe3_init() for PCIe mode,
-the function returns the error without calling ti_pipe3_disable_clocks().
-This leaves the clocks permanently enabled since the PHY framework won't
-invoke the .exit callback on init failure.
-
-Fix this by adding proper clock cleanup in the PCIe error path, consistent
-with how the DPLL program error path handles cleanup.
-
-Fixes: 234738ea3390 ("phy: ti-pipe3: move clk initialization to a separate function")
-Cc: stable@vger.kernel.org
-Reported-by: Sashiko AI <sashiko@kernel.org>
-Closes: https://lore.kernel.org/all/20260518023657.41852C2BCB0@smtp.kernel.org/
-Signed-off-by: Hongling Zeng <zenghongling@kylinos.cn>
----
-Change in v7:
- -Restore the original `return ret` in the SATA PLL-locked init path.
----
- drivers/phy/ti/phy-ti-pipe3.c | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/phy/ti/phy-ti-pipe3.c b/drivers/phy/ti/phy-ti-pipe3.c
-index a67f5da43c83..fea64db93da5 100644
---- a/drivers/phy/ti/phy-ti-pipe3.c
-+++ b/drivers/phy/ti/phy-ti-pipe3.c
-@@ -518,6 +518,8 @@ static int ti_pipe3_init(struct phy *x)
- 		val = 0x96 << OMAP_CTRL_PCIE_PCS_DELAY_COUNT_SHIFT;
- 		ret = regmap_update_bits(phy->pcs_syscon, phy->pcie_pcs_reg,
- 					 PCIE_PCS_MASK, val);
-+		if (ret)
-+			ti_pipe3_disable_clocks(phy);
- 		return ret;
- 	}
- 
-@@ -555,8 +557,10 @@ static int ti_pipe3_exit(struct phy *x)
- 	/* If dpll_reset_syscon is not present we wont power down SATA DPLL
- 	 * due to Errata i783
- 	 */
--	if (phy->mode == PIPE3_MODE_SATA && !phy->dpll_reset_syscon)
-+	if (phy->mode == PIPE3_MODE_SATA && !phy->dpll_reset_syscon) {
-+		ti_pipe3_disable_clocks(phy);
- 		return 0;
-+	}
- 
- 	/* PCIe doesn't have internal DPLL */
- 	if (phy->mode != PIPE3_MODE_PCIE) {
--- 
-2.25.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0xvd10gQSByZWR1bmRhbnQgZGV2
+X2VycigpIGNhbGwgaW1tZWRpYXRlbHkgYmVmb3JlIGRldl9lcnJfcHJvYmUoKSBkZWZlYXRzIHRo
+ZSBwcm9iZSBkZWZlcnJhbCBzdXBwcmVzc2lvbiBtZWNoYW5pc20gYW5kIGNhdXNlcyBkb3VibGUg
+bG9nZ2luZy4KLS0KCmNvbW1pdCAwOWVkYWJlODNlOTVjYzk2NzY5OGVjMGE1NmI4OTAxNDE2OTA3
+ZTBlCkF1dGhvcjogSG9uZ2xpbmcgWmVuZyA8emVuZ2hvbmdsaW5nQGt5bGlub3MuY24+CgpwaHk6
+IHRpLXBpcGUzOiBGaXggRVBST0JFX0RFRkVSIGhhbmRsaW5nIGZvciBjbG9jayByZXNvdXJjZXMK
+ClRoaXMgY29tbWl0IGZpeGVzIEVQUk9CRV9ERUZFUiBoYW5kbGluZyBpbiB0aV9waXBlM19nZXRf
+Y2xrKCkgYnkgcHJvcGFnYXRpbmcKdGhlIGFjdHVhbCBlcnJvciBjb2RlIGZvciB0aGUgc3lzdGVt
+IGNsb2NrIGluc3RlYWQgb2YgcmV0dXJuaW5nIC1FSU5WQUwuIEl0CmFsc28gdXNlcyBkZXZtX2Ns
+a19nZXRfb3B0aW9uYWwoKSBmb3IgdGhlIFNBVEEgcmVmY2xrIHRvIGNvcnJlY3RseSBoYW5kbGUK
+bWlzc2luZyBvcHRpb25hbCBjbG9ja3Mgd2hpbGUgcHJvcGVybHkgcHJvcGFnYXRpbmcgcHJvYmUg
+ZGVmZXJyYWxzLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvdGkvcGh5LXRpLXBpcGUzLmMg
+Yi9kcml2ZXJzL3BoeS90aS9waHktdGktcGlwZTMuYwo+IGluZGV4IDAyMTY1N2NiY2U0ODEuLmE2
+N2Y1ZGE0M2M4M2IgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9waHkvdGkvcGh5LXRpLXBpcGUzLmMK
+PiArKysgYi9kcml2ZXJzL3BoeS90aS9waHktdGktcGlwZTMuYwoKWyAuLi4gXQoKPiBAQCAtNjA4
+LDE0ICs2MDgsMjEgQEAgc3RhdGljIGludCB0aV9waXBlM19nZXRfY2xrKHN0cnVjdCB0aV9waXBl
+MyAqcGh5KQo+ICAJc3RydWN0IGNsayAqY2xrOwo+ICAJc3RydWN0IGRldmljZSAqZGV2ID0gcGh5
+LT5kZXY7Cj4gIAo+IC0JcGh5LT5yZWZjbGsgPSBkZXZtX2Nsa19nZXQoZGV2LCAicmVmY2xrIik7
+Cj4gKwkvKgo+ICsJICogcmVmY2xrIGlzIG9wdGlvbmFsIGZvciBTQVRBIFBIWSB0byBzdXBwb3J0
+IG9sZGVyIERUQnMsIGJ1dAo+ICsJICogcmVxdWlyZWQgZm9yIG90aGVyIG1vZGVzLiBVc2UgZGV2
+bV9jbGtfZ2V0X29wdGlvbmFsKCkgZm9yIFNBVEEKPiArCSAqIHdoaWNoIHJldHVybnMgTlVMTCBm
+b3IgLUVOT0VOVCwgYWxsb3dpbmcgdXMgdG8gcHJvcGFnYXRlIGFsbAo+ICsJICogb3RoZXIgZXJy
+b3JzIGluY2x1ZGluZyAtRVBST0JFX0RFRkVSLgo+ICsJICovCj4gKwlpZiAocGh5LT5tb2RlID09
+IFBJUEUzX01PREVfU0FUQSkKPiArCQlwaHktPnJlZmNsayA9IGRldm1fY2xrX2dldF9vcHRpb25h
+bChkZXYsICJyZWZjbGsiKTsKPiArCWVsc2UKPiArCQlwaHktPnJlZmNsayA9IGRldm1fY2xrX2dl
+dChkZXYsICJyZWZjbGsiKTsKPiArCj4gIAlpZiAoSVNfRVJSKHBoeS0+cmVmY2xrKSkgewo+ICAJ
+CWRldl9lcnIoZGV2LCAidW5hYmxlIHRvIGdldCByZWZjbGtcbiIpOwo+IC0JCS8qIG9sZGVyIERU
+QnMgaGF2ZSBtaXNzaW5nIHJlZmNsayBpbiBTQVRBIFBIWQo+IC0JCSAqIHNvIGRvbid0IGJhaWwg
+b3V0IGluIGNhc2Ugb2YgU0FUQSBQSFkuCj4gLQkJICovCj4gLQkJaWYgKHBoeS0+bW9kZSAhPSBQ
+SVBFM19NT0RFX1NBVEEpCj4gLQkJCXJldHVybiBQVFJfRVJSKHBoeS0+cmVmY2xrKTsKPiArCQly
+ZXR1cm4gZGV2X2Vycl9wcm9iZShkZXYsIFBUUl9FUlIocGh5LT5yZWZjbGspLAo+ICsJCQkJInVu
+YWJsZSB0byBnZXQgcmVmY2xrXG4iKTsKCltTZXZlcml0eTogTG93XQpEb2VzIGtlZXBpbmcgdGhp
+cyBkZXZfZXJyKCkgY2FsbCBkZWZlYXQgdGhlIHB1cnBvc2Ugb2YgdXNpbmcgZGV2X2Vycl9wcm9i
+ZSgpCmJlbG93IGl0PwoKU2luY2UgZGV2X2Vycl9wcm9iZSgpIHN1cHByZXNzZXMgbG9nZ2luZyBk
+dXJpbmcgLUVQUk9CRV9ERUZFUiwgbGVhdmluZyB0aGUKdW5jb25kaXRpb25hbCBkZXZfZXJyKCkg
+aGVyZSB3aWxsIHN0aWxsIG91dHB1dCAidW5hYmxlIHRvIGdldCByZWZjbGsiIHRvCnRoZSBrZXJu
+ZWwgbG9nIGR1cmluZyBub3JtYWwgcHJvYmUgZGVmZXJyYWxzLiBJdCB3aWxsIGFsc28gY2F1c2Ug
+dGhlIHNhbWUKZXJyb3IgbWVzc2FnZSB0byBiZSBsb2dnZWQgdHdpY2Ugb24gYWN0dWFsIGZhaWx1
+cmVzLgoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRj
+aHNldC8yMDI2MDkwOTExMzQzMy4xMjg3NDU0LTEtemVuZ2hvbmdsaW5nQGt5bGlub3MuY24/cGFy
+dD0zCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1w
+aHkK
