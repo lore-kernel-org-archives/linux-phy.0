@@ -4,59 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91BBBC88E50
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Sep 2026 09:21:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A75BC88E51
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Sep 2026 09:21:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B3feWVDQHtySlNiWSvMIvM7O/vpTpTTllZWjPTLbCSY=; b=bS8hNguPwWkKiy
-	6kYq9s9QvVn3/61uTVcjqX8HnNTCez/9z9iFiyipRNQj8v7QRNMxceJrgyk+QbaaJl4g9voquQVJm
-	1HtzyOM1T/70bqTRf2QpXyHJuNBHi9TxPI/XxQDr7NYm/TBCCWHxeljk197V9310nzDn/iqEfHDSd
-	Srb4cC6MM0wjuKEnxxwOsEk5kKsTvk6BzUpECu7GLEUHhETChOGhgylDlt/+phFz5Plyg87kY0/+V
-	ekqiQxl++GUm7J3f5gSzrY2SoLNUEdhZV07UhEQAMC0q+n9UMM9p3NsyEvtECh00cT405S+4/gbol
-	7bgADHLK5Zk8miVnpLsg==;
+	List-Owner; bh=TS2xHZh94McUHrLuutQmBcuoNQu2uihxpl//XD3zCXM=; b=gAp1nobTKzprbn
+	cJO76GgsDqDH90x7vsIUgnBIoVPIRkPKs1bK7BD0Y8Fh7L3TTXk9SzGzNJEJHNzE4YsNplgAIHsnr
+	oPOvlpW/Io+ikAr4YGPBksKILkzX8rABDlpYxWhuox5vcJ/8Bwl84tRSAKhXdAmQExUs7yhmOFhnc
+	UsHCRM6TfCmcatM+Wxx8KB4NQiLMymTlux3u3vh2balMq+gDnrCE04/1vdhuAykOpGNGYST6dVsZS
+	wSEVBSIBRHdNSRoRAgTA0cdlqiSzKtWfpFq630GsweMhuTYVyiJk7gVdZDT9zk18prldTacg0ckNK
+	iW39XRRVXkoV+iNeU7QA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4axz-0000000DrCX-0Xni;
+	id 1x4axz-0000000DrDT-2caO;
 	Thu, 10 Sep 2026 09:21:11 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
-	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4axk-0000000Dqj4-0QAe;
-	Thu, 10 Sep 2026 09:20:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=9eLSW+j9Yf++JlaBQVYjkhDq7PpPT/cCVuMobGqygZE=; b=OGqABoo3S5OaR/0Szti4fwzCJE
-	jgzjNbptvCYs+DadKVqqV/nx5E6aIiendAit+CsQ6kEoVhm+T9vJrMDLgLlCGeVdNNTFeTpKYK35i
-	LOXMR9aHOF8mPCSsUeBwwnux+mWovFhjuah7yOkHDanppOmCPbSzG4JkKgAb2EpGK/v+HUWqcvaam
-	mm6ondTMoVDp30d6XYJhO66HbkZDyMWIXqH3pXvKOElj9rr9Rd0XkLbcbaS1iAK7aODqNFxt3SHnL
-	6UDRffUcBJaCy8IaOoASB2WSLcIyyfPH/kDCLmXg88PE850nz0+Ii5uUeMIJlNscweQwIs0z+GuDi
-	8VuZfxsg==;
 Received: from bali.collaboradmins.com ([148.251.105.195])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1x4axg-00000002Fi3-3d0c;
-	Thu, 10 Sep 2026 09:20:55 +0000
+	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
+	id 1x4axj-0000000Dqgx-1O0N;
+	Thu, 10 Sep 2026 09:20:56 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1789032047;
-	bh=fb+DanSgbv8qny1q3mk0CIt+Vgif5xemCM6o0zZJLEw=;
+	s=mail; t=1789032053;
+	bh=sqJwfG+YalrOjRoK+Gfc7gM7SkpGIZzCbiNm29+2HH0=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=BuLSpnhjBo5K/Opk2TBySrsY5TbTmZ8j8F8FOVFACMG8+QxUR/HDC2Os6REBGqaXe
-	 IaSNNKW9BH3BMWp0wlyrcEly+2zg8FeZ+VyVGMtL/HSDxA2O2QCcZmj3eXDuKqPAlH
-	 36RtmEvDFsIz/iED2v8FnYJNVuqArjUzLcU4qLqcXxdotQQUkIjWe7xuJLzF+wXVQz
-	 Ysi2McT940UduhccjOKAFO0+mSjC09miki06ze0Ld5EHvBekuDtEbPqARMbrjcrITS
-	 zsaCZxmpVHUf5suYd9hxoXbzXeemAoSfyQ0M7fKQQRZZV0fOv7Udc2h4yPKTCm1BDu
-	 GcuJsXaQzw/6Q==
+	b=Ph7MS1xKK0uE2uNMDWcK95bH/+gvhOa/gZI1WpxlXit+ZAVon+fkSnikIvw9ohlZo
+	 KrsWb+R5OT/lQ2pRiONfcqHUIBPwruCihOfVKCIzW44NcaxNttAlDRBXiEtkMxlqdA
+	 ubf0M6aMkhxLAzab/Hn8F2BLMSXAqI1XalKqvk8O31bNVh/EmeJCkHxJzsgun9Q0tQ
+	 S/fuW+cLV7IrQby3vL9mtyTDA2e++9lVBlw2JoI7FYK84RjlvOKKSvJDse/vIjQ+Hr
+	 WpWG9hIYD3pmiwJrIqyadmU2n+IJWJ8YFidR0TqMOgkZa6l61nqek7AnGDy/2yY1XC
+	 0EB3ycNh/bBKg==
 Received: from IcarusMOD.eternityproject.eu (unknown [100.64.1.21])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 4F25217E0DA4;
-	Thu, 10 Sep 2026 11:20:46 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 792F417E125C;
+	Thu, 10 Sep 2026 11:20:52 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: mani@kernel.org
 Cc: chunfeng.yun@mediatek.com,
@@ -76,17 +62,18 @@ Cc: chunfeng.yun@mediatek.com,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	dri-devel@lists.freedesktop.org,
-	kernel@collabora.com
-Subject: [PATCH v4 05/12] phy: phy-mtk-dp: Implement power_on and power_off PHY callbacks
-Date: Thu, 10 Sep 2026 11:20:31 +0200
-Message-ID: <20260910092038.48291-6-angelogioacchino.delregno@collabora.com>
+	kernel@collabora.com,
+	Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+Subject: [PATCH v4 12/12] phy: phy-mtk-dp: Add support for MT8196 eDP PHY
+Date: Thu, 10 Sep 2026 11:20:38 +0200
+Message-ID: <20260910092038.48291-13-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.55.0
 In-Reply-To: <20260910092038.48291-1-angelogioacchino.delregno@collabora.com>
 References: <20260910092038.48291-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260910_102053_124211_5E843F70 
-X-CRM114-Status: GOOD (  13.97  )
+X-CRM114-CacheID: sfid-20260910_022055_537139_94B12826 
+X-CRM114-Status: GOOD (  13.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,164 +90,146 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add .power_on() and .power_off() callbacks to mtk_dp_phy_dev_ops
-to be able to call those with phy_power_on() and phy_power_off()
-API in the DisplayPort driver to be able to stop using all of
-those hardcoded register writes in that external driver.
+The MT8196 SoC features an updated PHY IP compared to the older
+ones, and there is one that is specific to Embedded DisplayPort.
 
+Add support for the eDP PHY found in the MediaTek MT8196 SoC and
+all of its variants.
+
+Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 ---
- drivers/phy/mediatek/phy-mtk-dp.c | 68 +++++++++++++++++++++++++++++++
- 1 file changed, 68 insertions(+)
+ drivers/phy/mediatek/phy-mtk-dp.c | 66 ++++++++++++++++++++++++++++++-
+ 1 file changed, 65 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/phy/mediatek/phy-mtk-dp.c b/drivers/phy/mediatek/phy-mtk-dp.c
-index 20974650d940..4247506ceb99 100644
+index 30f9fa6e6b9b..6d06e1c39e3b 100644
 --- a/drivers/phy/mediatek/phy-mtk-dp.c
 +++ b/drivers/phy/mediatek/phy-mtk-dp.c
-@@ -21,6 +21,9 @@
- 
- #define MTK_DP_PHY_MAX_LANES		4
- 
-+/* DP_PHYA_GLB_FORCE_CTRL_1 */
-+#define CKM_CKTX0_EN_FORCE_MODE		BIT(10)
-+
- /* DP_PHYD_PLL_CTL_1 */
+@@ -5,7 +5,7 @@
+  * Copyright (c) 2022, BayLibre Inc.
+  * Copyright (c) 2022, MediaTek Inc.
+  *
+- * Major refactoring
++ * Major refactoring and new SoCs support
+  * Copyright (c) 2026, Collabora Ltd.
+  *                     AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+  */
+@@ -43,6 +43,7 @@
  #define TPLL_SSC_EN			BIT(3)
  
-@@ -38,6 +41,11 @@
- #  define DP_GLB_SW_RST_XTAL_CLK	BIT(2)
- #  define DP_GLB_SW_RST_MAIN_LINK	BIT(3)
+ /* DP_PHYD_BIT_RATE */
++#define PHYD_DIG_RG_BIT_RATE_V2		GENMASK(3, 0)
+ #define PHYD_DIG_RG_BIT_RATE		GENMASK(1, 0)
  
-+/* DP_PHYD_AUX_RX_CTL */
-+#define PHYD_DIG_DPAUX_RX_EN		BIT(0)
-+#define PHYD_DIG_XTP_GLB_CKDET_EN	BIT(1)
-+#define PHYD_DIG_DPAUX_RX_DEGLITCH_EN	BIT(2)
-+
- #define DRIVING_PARAM_0_DEFAULT	0x0
- #define DRIVING_PARAM_1_DEFAULT	0x0
- #define DRIVING_PARAM_2_DEFAULT	0x0
-@@ -88,6 +96,12 @@
- #define DRIVING_PARAM_8_DEFAULT	(XTP_LN_TX_LCTXCP1_SW2_PRE1_DEFAULT | \
- 				 XTP_LN_TX_LCTXCP1_SW3_PRE0_DEFAULT)
+ /* DP_PHYD_SW_RST */
+@@ -63,6 +64,7 @@
  
-+enum mtk_dp_phya_ana_glb_regidx {
-+	DP_PHYA_GLB_FORCE_CTRL_0,
-+	DP_PHYA_GLB_FORCE_CTRL_1,
-+	DP_PHYA_GLOBAL_MAX
-+};
-+
- enum mtk_dp_phyd_dig_lane_regidx {
- 	DP_PHYD_LAN_DRIVING_PARAM_0,
- 	DP_PHYD_LAN_MAX
-@@ -98,9 +112,15 @@ enum mtk_dp_phyd_dig_glb_regidx {
- 	DP_PHYD_PLL_CTL_1,
- 	DP_PHYD_SW_RST,
- 	DP_PHYD_BIT_RATE,
-+	DP_PHYD_AUX_RX_CTL,
- 	DP_PHYD_GLOBAL_MAX
- };
+ /* DP_PHYD_TX_CTL_0 */
+ #define PHYD_TX_LN_EN			GENMASK(7, 4)
++#define PHYD_TX_LN_EN_V2		GENMASK(3, 0)
  
-+static const u8 mt8195_phy_ana_glb_regs[DP_PHYA_GLOBAL_MAX] = {
-+	[DP_PHYA_GLB_FORCE_CTRL_0] = 0x30,
-+	[DP_PHYA_GLB_FORCE_CTRL_1] = 0x34,
-+};
+ /* DP_PHYD_DRIVING_FORCE */
+ #define PHYD_DP_TX_FORCE_VOLT_SWING_EN	BIT(0)
+@@ -129,6 +131,16 @@
+ #define MT8195_DRIVING_PARAM_7_DEFAULT	BUILD_DRIVING_PARAM_12(0, 6, 12, 0)
+ #define MT8195_DRIVING_PARAM_8_DEFAULT	BUILD_DRIVING_PARAM_23(8, 0)
+ 
++/* MT8196/MT6991: Logic State Change Point (LC TX C) */
++#define MT8196_DRIVING_PARAM_3_DEFAULT	BUILD_DRIVING_PARAM_0( 10, 12, 14, 17)
++#define MT8196_DRIVING_PARAM_4_DEFAULT	BUILD_DRIVING_PARAM_12(14, 17, 18, 18)
++#define MT8196_DRIVING_PARAM_5_DEFAULT	BUILD_DRIVING_PARAM_23(21, 24)
 +
- static const u8 mt8195_phy_dig_lane_regs[DP_PHYD_LAN_MAX] = {
++/* MT8196/MT6991: Positive Edge (LC TX CP) */
++#define MT8196_DRIVING_PARAM_6_DEFAULT	BUILD_DRIVING_PARAM_0( 0, 2, 4, 7)
++#define MT8196_DRIVING_PARAM_7_DEFAULT	BUILD_DRIVING_PARAM_12(0, 3, 6, 0)
++#define MT8196_DRIVING_PARAM_8_DEFAULT	BUILD_DRIVING_PARAM_23(3, 0)
++
+ enum mtk_dp_phya_ana_glb_regidx {
+ 	DP_PHYA_GLB_BIAS_GEN_0,
+ 	DP_PHYA_GLB_BIAS_GEN_1,
+@@ -184,6 +196,11 @@ static const u8 mt8195_phy_dig_lane_regs[DP_PHYD_LAN_MAX] = {
  	[DP_PHYD_LAN_DRIVING_PARAM_0] = 0x2c,
  };
-@@ -110,21 +130,26 @@ static const u8 mt8195_phy_dig_glb_regs[DP_PHYD_GLOBAL_MAX] = {
+ 
++static const u8 mt8196_phy_dig_lane_regs[DP_PHYD_LAN_MAX] = {
++	[DP_PHYD_LAN_DRIVING_FORCE] = 0x30,
++	[DP_PHYD_LAN_DRIVING_PARAM_0] = 0x34,
++};
++
+ static const u8 mt8195_phy_dig_glb_regs[DP_PHYD_GLOBAL_MAX] = {
+ 	[DP_PHYD_PLL_CTL_0] = 0x10,
  	[DP_PHYD_PLL_CTL_1] = 0x14,
- 	[DP_PHYD_SW_RST] = 0x38,
- 	[DP_PHYD_BIT_RATE] = 0x3c,
+@@ -193,6 +210,15 @@ static const u8 mt8195_phy_dig_glb_regs[DP_PHYD_GLOBAL_MAX] = {
+ 	[DP_PHYD_TX_CTL_0] = 0x44,
+ };
+ 
++static const u8 mt8196_phy_dig_glb_regs[DP_PHYD_GLOBAL_MAX] = {
++	[DP_PHYD_PLL_CTL_0] = 0x10,
++	[DP_PHYD_PLL_CTL_1] = 0x14,
++	[DP_PHYD_SW_RST] = 0x38,
++	[DP_PHYD_BIT_RATE] = 0x3c,
 +	[DP_PHYD_AUX_RX_CTL] = 0x40,
++	[DP_PHYD_TX_CTL_0] = 0x74,
++};
++
+ static const u8 mt8195_phy_dig_bitrate_val[DP_PHYD_BIT_RATE_MAX] = {
+ 	[DP_PHYD_BIT_RATE_RBR] = 0,
+ 	[DP_PHYD_BIT_RATE_HBR] = 1,
+@@ -200,6 +226,13 @@ static const u8 mt8195_phy_dig_bitrate_val[DP_PHYD_BIT_RATE_MAX] = {
+ 	[DP_PHYD_BIT_RATE_HBR3] = 3
  };
  
++static const u8 mt8196_edp_phy_dig_bitrate_val[DP_PHYD_BIT_RATE_MAX] = {
++	[DP_PHYD_BIT_RATE_RBR] = 1,
++	[DP_PHYD_BIT_RATE_HBR] = 4,
++	[DP_PHYD_BIT_RATE_HBR2] = 7,
++	[DP_PHYD_BIT_RATE_HBR3] = 9
++};
++
  /**
-  * struct mtk_dp_phy_pdata - Platform data and defaults for MediaTek DP/eDP PHY
-+ * @off_ana_glb:    Base offset for dptx_phyd_sifslv_ana_glb
-  * @off_dig_glb:    Base offset for dptx_phyd_sifslv_dig_glb
-  * @off_dig_lane:   Base offsets for dptx_phyd_sifslv_dig_lan (for each lane)
-+ * @regs_ana_glb:   Register (layout) offsets for ana_glb
-  * @regs_dig_glb:   Register (layout) offsets for dig_glb
-  * @regs_dig_lane:  Register (layout) offsets for dig_lan
-  */
- struct mtk_dp_phy_pdata {
- 	/* Register offsets */
-+	u16 off_ana_glb;
- 	u16 off_dig_glb;
- 	u16 off_dig_lane[MTK_DP_PHY_MAX_LANES];
- 
- 	/* Register maps */
-+	const u8 *regs_ana_glb;
- 	const u8 *regs_dig_glb;
- 	const u8 *regs_dig_lane;
+  * struct mtk_dp_phya_imp_sel - Per-Lane Impedance Selection
+  * @pmos: Impedance selection for P-Channel MOSFET
+@@ -755,8 +788,39 @@ static const struct mtk_dp_phy_pdata mt8195_dp_phy_data = {
+ 	},
  };
-@@ -208,6 +233,45 @@ static int mtk_dp_phy_configure(struct phy *phy, union phy_configure_opts *opts)
- 	return 0;
- }
  
-+static int mtk_dp_phy_power_on(struct phy *phy)
-+{
-+	struct mtk_dp_phy *dp_phy = phy_get_drvdata(phy);
-+	const struct mtk_dp_phy_pdata *pdata = dp_phy->pdata;
-+	const u8 *regs_dig = pdata->regs_dig_glb;
-+	const u8 *regs_ana = pdata->regs_ana_glb;
-+
-+	/* Enable AUX Channel with RX De-Glitch and input clock detection */
-+	regmap_write(dp_phy->regmap,
-+		     pdata->off_dig_glb + regs_dig[DP_PHYD_AUX_RX_CTL],
-+		     PHYD_DIG_DPAUX_RX_EN |
-+		     PHYD_DIG_XTP_GLB_CKDET_EN |
-+		     PHYD_DIG_DPAUX_RX_DEGLITCH_EN);
-+
-+	regmap_clear_bits(dp_phy->regmap,
-+			  pdata->off_ana_glb + regs_ana[DP_PHYA_GLB_FORCE_CTRL_1],
-+			  CKM_CKTX0_EN_FORCE_MODE);
-+
-+	return 0;
-+}
-+
-+static int mtk_dp_phy_power_off(struct phy *phy)
-+{
-+	struct mtk_dp_phy *dp_phy = phy_get_drvdata(phy);
-+	const struct mtk_dp_phy_pdata *pdata = dp_phy->pdata;
-+	const u8 *regs_dig = pdata->regs_dig_glb;
-+	const u8 *regs_ana = pdata->regs_ana_glb;
-+
-+	regmap_set_bits(dp_phy->regmap,
-+			pdata->off_ana_glb + regs_ana[DP_PHYA_GLB_FORCE_CTRL_1],
-+			CKM_CKTX0_EN_FORCE_MODE);
-+
-+	/* Disable RX unconditionally */
-+	regmap_write(dp_phy->regmap,
-+		     pdata->off_dig_glb + regs_dig[DP_PHYD_AUX_RX_CTL], 0);
-+
-+	return 0;
-+}
-+
- static int mtk_dp_phy_reset(struct phy *phy)
- {
- 	struct mtk_dp_phy *dp_phy = phy_get_drvdata(phy);
-@@ -228,6 +292,8 @@ static int mtk_dp_phy_reset(struct phy *phy)
- 
- static const struct phy_ops mtk_dp_phy_dev_ops = {
- 	.init = mtk_dp_phy_init,
-+	.power_on = mtk_dp_phy_power_on,
-+	.power_off = mtk_dp_phy_power_off,
- 	.configure = mtk_dp_phy_configure,
- 	.reset = mtk_dp_phy_reset,
- 	.owner = THIS_MODULE,
-@@ -330,8 +396,10 @@ static int mtk_dp_phy_probe(struct platform_device *pdev)
- }
- 
- static const struct mtk_dp_phy_pdata mt8195_dp_phy_data = {
-+	.off_ana_glb = 0x0,
- 	.off_dig_glb = 0x1000,
- 	.off_dig_lane = (const u16[]) { 0x1100, 0x1200, 0x1300, 0x1400 },
++static const struct mtk_dp_phy_pdata mt8196_edp_phy_data = {
++	.off_ana_glb = 0x400,
++	.off_ana_lane = (const u16[]) { 0x0, 0x100, 0x200, 0x300 },
++	.off_dig_glb = 0x1400,
++	.off_dig_lane = (const u16[]) { 0x1000, 0x1100, 0x1200, 0x1300 },
 +	.regs_ana_glb = mt8195_phy_ana_glb_regs,
- 	.regs_dig_glb = mt8195_phy_dig_glb_regs,
- 	.regs_dig_lane = mt8195_phy_dig_lane_regs,
++	.regs_ana_lane = mt8195_phy_ana_lane_regs,
++	.regs_dig_glb = mt8196_phy_dig_glb_regs,
++	.regs_dig_lane = mt8196_phy_dig_lane_regs,
++	.mask_dig_tx_ln = PHYD_TX_LN_EN_V2,
++	.val_dig_bitrate = mt8196_edp_phy_dig_bitrate_val,
++	.ana_bias_r = 15,
++	.ana_cktx_imp = 8,
++	.ana_lanes_imp = {
++		.pmos = 8,
++		.nmos = 8,
++	},
++	.driving_params = (const u32[]) {
++		[0] = 0,
++		[1] = 0,
++		[2] = 0,
++		[3] = MT8196_DRIVING_PARAM_3_DEFAULT,
++		[4] = MT8196_DRIVING_PARAM_4_DEFAULT,
++		[5] = MT8196_DRIVING_PARAM_5_DEFAULT,
++		[6] = MT8196_DRIVING_PARAM_6_DEFAULT,
++		[7] = MT8196_DRIVING_PARAM_7_DEFAULT,
++		[8] = MT8196_DRIVING_PARAM_8_DEFAULT
++	},
++};
++
+ static const struct of_device_id mtk_dp_phy_of_match[] = {
+ 	{ .compatible = "mediatek,mt8195-dp-phy", .data = &mt8195_dp_phy_data },
++	{ .compatible = "mediatek,mt8196-edp-phy", .data = &mt8196_edp_phy_data },
+ 	{ /* sentinel */ }
  };
+ MODULE_DEVICE_TABLE(of, mtk_dp_phy_of_match);
 -- 
 2.55.0
 
