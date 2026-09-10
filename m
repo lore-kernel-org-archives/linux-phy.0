@@ -4,60 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 05A81C79F9F
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Sep 2026 15:56:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66353C79F9F
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Sep 2026 16:17:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sN4VTyT8DukiNNhwoSvCy3iaudZed/1xdfVzMjzqh2U=; b=BoSub9dCEiE29j
-	wn6mgLpqNWOC5kwRh8LGlV/SMk5VLUwITW9nDjXJW22HB7tvOgueEr7udyb1Go0OEBnSbwat46lKm
-	vOVSeRRthDHJRD6QL8tL9jOq+zJdJM1BzJxde6kgauKCacfUMTyIpINv6uZ6IpFzdHwWmc3It9MUm
-	B3zDXk6+pcUPIqUNwh7N25t9P1vnH+DyuEsYj68uKzqNa4oK2GSHPKAjqqdhYhz89DNf2QTvUMFSx
-	NQGWQwnunfBIUQ9mGQBnpjDLuXbSUKtZX0vh07u67z33+rcpHVG9FkzZLj4+BlLCpZabX9nxTbNrU
-	nuSUT+t7o4f6ngo9kTZg==;
+	List-Owner; bh=TYlf0b6cpr9Vz5ensvUAhidvHkvTcRXc14CRWD5Ko50=; b=KYH4uSJgGgqTbj
+	+tWs1vG7r6uXCAhhH2ySDpg74SEydhZW1dwn8zr4jvpXCIWoygdHlJLjsFAlMn/1fPIF3RWx29Evt
+	y+iEdTrjJopoWy9B79bzr96sLLREaS5nT/G13K3RdFFovfeSmHYBE6Ae6S91IDcZ3skfkwt++JI/m
+	0h9KGX/mRPiX+Di1TPwText87BUZPMZhsFiBzJ/gmS0DflmPDDXdz5TrQAa4o2l+v8PWQRyX9RQ6X
+	OWCYiwUWfHlmqCjvkejGGwoZ5qTohiRKq3fpgk/r56Ze/ZaVKIA8E4WyFGJml6OirYPPHG6a+G0np
+	t1RWlAmEqd1X4x3TVjdw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4h8W-0000000Esqx-32lW;
-	Thu, 10 Sep 2026 15:56:28 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1x4hSi-0000000EvAM-45Iv;
+	Thu, 10 Sep 2026 16:17:20 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4h8V-0000000EsqZ-3hFs
-	for linux-phy@lists.infradead.org;
-	Thu, 10 Sep 2026 15:56:27 +0000
+	id 1x4hSh-0000000Ev9q-4B2f;
+	Thu, 10 Sep 2026 16:17:20 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 49CCD400E4;
-	Thu, 10 Sep 2026 15:56:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9A0C61F000FF;
-	Thu, 10 Sep 2026 15:56:22 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 797EF406B1;
+	Thu, 10 Sep 2026 16:17:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BE8161F000FF;
+	Thu, 10 Sep 2026 16:17:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789055787;
-	bh=T0xOV2XeqOE1Qmp8JpFgC8m+9TTqK0Rb0vPMhfpsMmI=;
+	s=k20260515; t=1789057039;
+	bh=abN892M86SWlDHDkn1guF+xG2c2z24Du1nGa9KhofNc=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=WN2nasbJLrjKzbp+V4Q2gFjZkZhqtUqNA7JzY923WT4+pC5Rhy+8o2AuHb+IsLVl7
-	 lDYnNgSi6F3XJmcFQzAYmkrZb2Q7YRDuUnnX78xhExdNPPbtwpXlAWwD0Sr/jVAyCp
-	 Alzfpxd6rG/5Ds7PKIBzASRgs9055rLevso2px4hdX5C2nFbgm1/8HnnxwmFjh0AeJ
-	 AKmnBfMuSd3eEBbznDUOAerlRsSixpnU8uT68PE2fYauSuxL6VTRDiq2nkYTnwno2Q
-	 h+4ilMZfvJlFaFCem+gD5IolN+DELILMltgM8Xl/xAAqtL1/0k4Fry6jEFCXJ0dV0M
-	 PBqtxn9dttPrA==
-Date: Thu, 10 Sep 2026 17:56:18 +0200
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Thinh Nguyen <Thinh.Nguyen@synopsys.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org
-Subject: Re: [PATCH v7 4/5] phy: qcom: m31-eusb2: Set phy type to EUSB2
-Message-ID: <zog5ubweep57jr6dokjuzr6eupd5uj3yb6pjyextx72bls2dbo@v2j4nwuigixt>
-References: <20260905-eusb2-interrupt-v7-v7-0-820cf5377a70@oss.qualcomm.com>
- <20260905-eusb2-interrupt-v7-v7-4-820cf5377a70@oss.qualcomm.com>
+	b=LBfDH8lquxDvIIKt4ERMRSWgHONZ44EYryKs83s2LrSoVgO4ZZV7AA0rxYNqDhBZE
+	 4CdhaXYUaOLJs4scG43ilsudG06LfMgizl4wszJz3OSfZUMpmOdy+baDHh9SByPVC3
+	 SEgPnVjGbAJhhkDX9DFrMDNzQQt6OKQk19LbFS9XY/MJAksHn9Tp0l2ttWw75W8DjH
+	 KN5wb+WF96fbJd7ZMZOmRXJEzIdgIkV/pz1qbRWl5pj2pOiFY9rsvDlNohef4tAnXo
+	 sAGeS+oIM0A0q7CQQflFi/BMruDSuozXaUay5MLYEdxSiR+LZY4S37HQTm/iivuKf0
+	 0SuWr/9xnp8EA==
+Date: Thu, 10 Sep 2026 17:17:11 +0100
+From: Lee Jones <lee@kernel.org>
+To: Stefan =?iso-8859-1?Q?D=F6singer?= <stefandoesinger@gmail.com>
+Cc: Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Brian Masney <bmasney@redhat.com>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Russell King <linux@armlinux.org.uk>,
+	Brian Masney <bmasney+clk@redhat.com>,
+	Jerome Brunet <jbrunet+clk@baylibre.com>,
+	Manivannan Sadhasivam <mani@kernel.org>, linux-clk@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	mfd@lists.linux.dev
+Subject: Re: [PATCH v11 05/12] mfd: zx297520v3: Add a clock and reset MFD
+ driver
+Message-ID: <20260910161711.GK1051768@google.com>
+References: <20260826-zx29clk-v11-0-f8ad59c6426c@gmail.com>
+ <20260826-zx29clk-v11-5-f8ad59c6426c@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260905-eusb2-interrupt-v7-v7-4-820cf5377a70@oss.qualcomm.com>
+In-Reply-To: <20260826-zx29clk-v11-5-f8ad59c6426c@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,20 +77,310 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gU2F0LCBTZXAgMDUsIDIwMjYgYXQgMDg6NTk6MDhQTSArMDUzMCwgS3Jpc2huYSBLdXJhcGF0
-aSB3cm90ZToKPiBVU0IgY29udHJvbGxlcnMgbGlrZSBEV0MzIGFyZSBhZ25vc3RpYyBvZiB0aGUg
-a2luZCBvZiBwaHkgKFVTQjIvZVVTQjIpCj4gY29ubmVjdGVkIHRvIGl0LiBTZXQgdGhlIHBoeSB0
-eXBlIHRvIEVVU0IyIHRvIGxldCB0aGUgY29udHJvbGxlciBrbm93Cj4gdGhlIHBoeSB0eXBlIHdo
-ZW4gcXVlcmllZCBkdXJpbmcgaXRzIHByb2JlLgo+IAo+IFJldmlld2VkLWJ5OiBUaGluaCBOZ3V5
-ZW4gPFRoaW5oLk5ndXllbkBzeW5vcHN5cy5jb20+Cj4gU2lnbmVkLW9mZi1ieTogS3Jpc2huYSBL
-dXJhcGF0aSA8a3Jpc2huYS5rdXJhcGF0aUBvc3MucXVhbGNvbW0uY29tPgoKUmV2aWV3ZWQtYnk6
-IE1hbml2YW5uYW4gU2FkaGFzaXZhbSA8bWFuaXZhbm5hbi5zYWRoYXNpdmFtQG9zcy5xdWFsY29t
-bS5jb20+CgotIE1hbmkKCi0tIArgrq7grqPgrr/grrXgrqPgr43grqPgrqngr40g4K6a4K6k4K6+
-4K6a4K6/4K614K6u4K+NCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1waHkK
+On Wed, 26 Aug 2026, Stefan D=F6singer wrote:
+
+> This driver registers child devices for the zx297520v3 clock and reset
+> controllers. The clk-zx297520v3 and reset-zte-zx297520v3 submitted in
+> the next patches will drive the respective functionalities.
+> =
+
+> Signed-off-by: Stefan D=F6singer <stefandoesinger@gmail.com>
+> =
+
+> ---
+> =
+
+> Changes v10 (All Lee Jones):
+> *) drop "select REGMAP_MMIO"
+> *) Drop comment about unimplemented hwlocks
+> *) Use MFD_CELL_[NAME|OF]
+> *) Renamed the device type enum and its values
+> *) Use device_get_match_data instead of the of_ variant
+> *) Improved debug messages
+> =
+
+> Changes v9:
+> Deassert the LSP reset and enable the LSP pclk here. In practice the
+> boot rom needs to do that because it prints to an LSP-connected UART and
+> reads the boot policy from the LSP connected flash chip.
+> =
+
+> In doing so, I migrated the match data to an enum as mfd.md suggests.
+> =
+
+> Changes v8:
+> *) Remove .of_compatible from PHY mfd child
+> =
+
+> *) Move to drivers/mfd (Sashiko)
+> =
+
+> For me either soc/zte or mfd/ is fine. Note though that this MFD parent
+> is very specific to the zx297520v3 SoC. I don't expect this to be reused
+> anywhere else. There are two more MFD-ish devices in there: soc_sys at
+> 0x140000, which I plan to handle in the same driver, and an i2c PMIC,
+> which would get its own host driver.
+
+If you use of_platform_populate() there is no issue with this living in soc=
+/.
+
+You cannot use the MFD API outside of drivers/mfd though.
+
+> *) Use PLATFORM_DEVID_AUTO (Sashiko). NONE was intentional as I only
+> ever expect one instance, but I don't see any harm in doing the standard
+> thing and use AUTO
+> =
+
+> *) On the suggestion not to put the link to mfd_cells[] into match data:
+> I see that it is spelled out in Sashiko's mfd.md, written by Lee Jones,
+> the MFD maintainer. I would appreciate some education on the rationale
+> behind it: Putting a pointer into the void *data is a common pattern in
+> the kernel. I don't understand in which situation this can possibly
+> break?
+
+It's not about things breaking.  This is related to the hackery that
+follows.  It was easier to make a rule that says "no interrelationships
+between initialisation APIs; ACPI, DT, MFD, etc" than to deal with the
+fallout.  Keep DT and MFD out of each other's structures please.
+
+> Both structs are static const in the same compilation unit. data is a
+> const void *, not a uintptr_t or kernel_ulong_t, so it seems passing a
+> pointer is the intended use. What am I missing?
+> =
+
+> Changes v7:
+> Add phy MFD child
+> =
+
+> Changes v6: Make the ZTE SoC driver section depend on HAS_IOMEM
+> (Sashiko). The entire MFD section, which contains MFD_CORE, depends on
+> HAS_IOMEM even with COMPILE_TEST.
+> =
+
+> Add a NULL ptr check for of_device_get_match_data (Sashiko). While not
+> uniform, rave-sp, rohm-bd9576, atc260x, da9052-i2c protect against
+> incorrect manual attachment that way.
+> =
+
+> Add lspclk here as well in an attempt to satisfy both Conor Dooley, who
+> asks for MFD for top and matrix, and Philipp Zabel, who prefers aux but
+> at least wants the reset driver limited to one driver type.
+> =
+
+> Changes v5: Use MFD instead of Aux bus for top and matrix crm because of
+> extra functionality: Reboot in top, hwlock in Matrix.
+> =
+
+> LSP clocks stay with the aux bus and are thus not handled in this
+> driver. The clk driver will bind directly to the lspcrm node.
+> ---
+>  MAINTAINERS                      |   1 +
+>  drivers/mfd/Kconfig              |  12 +++++
+>  drivers/mfd/Makefile             |   2 +
+>  drivers/mfd/zte-zx297520v3-crm.c | 101 +++++++++++++++++++++++++++++++++=
+++++++
+>  4 files changed, 116 insertions(+)
+> =
+
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index acec8c1e0fc9..717ed9439d91 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -3906,6 +3906,7 @@ F:	Documentation/devicetree/bindings/clock/zte,zx29=
+7520v3-matrixcrm.yaml
+>  F:	Documentation/devicetree/bindings/clock/zte,zx297520v3-topcrm.yaml
+>  F:	arch/arm/boot/dts/zte/
+>  F:	arch/arm/mach-zte/
+> +F:	drivers/mfd/zte-zx297520v3-crm.c
+>  F:	include/dt-bindings/clock/zte,zx297520v3-clk.h
+>  F:	include/dt-bindings/phy/zte,zx297520v3-topcrm.h
+>  F:	include/dt-bindings/reset/zte,zx297520v3-reset.h
+> diff --git a/drivers/mfd/Kconfig b/drivers/mfd/Kconfig
+> index e4fd4572472f..ef9d96484bc5 100644
+> --- a/drivers/mfd/Kconfig
+> +++ b/drivers/mfd/Kconfig
+> @@ -2578,5 +2578,17 @@ config MFD_MAX7360
+>  	  additional drivers must be enabled in order to use the functionality
+>  	  of the device.
+>  =
+
+> +config MFD_ZTE_ZX297520V3_CRM
+> +	tristate "ZTE zx297520v3 Clock and Reset Manager"
+> +	depends on ARCH_ZTE || COMPILE_TEST
+> +	select MFD_CORE
+> +	default SOC_ZX297520V3
+> +	help
+> +	  Say yes here to enable the driver for the ZTE zx297520v3 clock and
+> +	  reset manager MFD driver. This driver provides the host device for
+> +	  the clock and reset drivers and is required to boot the SoC. You
+> +	  will also need to enable CLK_ZTE_ZX297520V3 and RESET_ZTE_ZX297520V3
+> +	  to build the actual clock and reset child drivers.
+> +
+>  endmenu
+>  endif
+> diff --git a/drivers/mfd/Makefile b/drivers/mfd/Makefile
+> index 72d3944b0ad8..ab0cba2042a2 100644
+> --- a/drivers/mfd/Makefile
+> +++ b/drivers/mfd/Makefile
+> @@ -304,3 +304,5 @@ obj-$(CONFIG_MFD_RSMU_SPI)	+=3D rsmu_spi.o rsmu_core.o
+>  obj-$(CONFIG_MFD_UPBOARD_FPGA)	+=3D upboard-fpga.o
+>  =
+
+>  obj-$(CONFIG_MFD_LOONGSON_SE)	+=3D loongson-se.o
+> +
+> +obj-$(CONFIG_MFD_ZTE_ZX297520V3_CRM)	+=3D zte-zx297520v3-crm.o
+> diff --git a/drivers/mfd/zte-zx297520v3-crm.c b/drivers/mfd/zte-zx297520v=
+3-crm.c
+> new file mode 100644
+> index 000000000000..b098def47e7b
+> --- /dev/null
+> +++ b/drivers/mfd/zte-zx297520v3-crm.c
+> @@ -0,0 +1,101 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+
+What is this thing?  Description please.
+
+> + * Copyright (C) 2026 Stefan D=F6singer
+
+Are you sure ZTE are okay with you Copywriting a driver for their IP?
+
+> + */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/err.h>
+> +#include <linux/errno.h>
+> +#include <linux/mfd/core.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/property.h>
+> +#include <linux/reset.h>
+> +
+> +enum zx_device_type {
+> +	TYPE_INVALID =3D 0,
+> +	TYPE_TOPCRM,
+> +	TYPE_MATRIXCRM,
+> +	TYPE_LSPCRM,
+> +};
+
+What do each of these mean?
+
+Is the nomenclature taken from the datasheet?
+
+If not, can we improve it to make them easier to read for humans?
+
+Failing that, more comments would be helpful.
+
+> +
+> +static const struct mfd_cell zx297520v3_topcrm_cells[] =3D {
+> +	MFD_CELL_NAME("zx297520v3-topclk"),
+> +	MFD_CELL_NAME("zx297520v3-topreset"),
+
+Why are these works concatenated together like this?
+
+Same with zx_device_type above?
+
+> +	MFD_CELL_OF("reboot", NULL, NULL, 0, 0, "syscon-reboot"),
+> +	MFD_CELL_NAME("zx297520v3-usb-phy"),
+> +};
+> +
+> +static const struct mfd_cell zx297520v3_matrixcrm_cells[] =3D {
+> +	MFD_CELL_NAME("zx297520v3-matrixclk"),
+> +	MFD_CELL_NAME("zx297520v3-matrixreset"),
+> +};
+> +
+> +static const struct mfd_cell zx297520v3_lspcrm_cells[] =3D {
+> +	MFD_CELL_NAME("zx297520v3-lspclk"),
+> +	MFD_CELL_NAME("zx297520v3-lspreset"),
+> +};
+> +
+> +static int zx297520v3_crm_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev =3D &pdev->dev;
+> +	const struct mfd_cell *cells;
+> +	struct reset_control *reset;
+> +	enum zx_device_type type;
+> +	unsigned int num_cells;
+> +	struct clk *pclk;
+> +
+> +	type =3D (enum zx_device_type)(kernel_ulong_t)device_get_match_data(dev=
+);
+> +	switch (type) {
+> +	case TYPE_TOPCRM:
+> +		cells =3D zx297520v3_topcrm_cells;
+> +		num_cells =3D ARRAY_SIZE(zx297520v3_topcrm_cells);
+> +		break;
+> +
+> +	case TYPE_MATRIXCRM:
+> +		cells =3D zx297520v3_matrixcrm_cells;
+> +		num_cells =3D ARRAY_SIZE(zx297520v3_matrixcrm_cells);
+> +		break;
+> +
+> +	case TYPE_LSPCRM:
+> +		cells =3D zx297520v3_lspcrm_cells;
+> +		num_cells =3D ARRAY_SIZE(zx297520v3_lspcrm_cells);
+> +
+> +		pclk =3D devm_clk_get_enabled(dev, "pclk");
+> +		if (IS_ERR(pclk))
+> +			return dev_err_probe(dev, PTR_ERR(pclk), "Could not get 'pclk'\n");
+> +
+> +		reset =3D devm_reset_control_get_exclusive_deasserted(dev, NULL);
+> +		if (IS_ERR(reset))
+> +			return dev_err_probe(dev, PTR_ERR(reset),
+> +					     "Failed to deassert reset control\n");
+> +		break;
+> +
+> +	default:
+> +		return -ENODEV;
+> +	}
+> +
+> +	return devm_mfd_add_devices(dev, PLATFORM_DEVID_AUTO, cells, num_cells,=
+ NULL, 0, NULL);
+> +}
+> +
+> +static const struct of_device_id of_match_zx297520v3_crm[] =3D {
+> +	{ .compatible =3D "zte,zx297520v3-topcrm", .data =3D (void *)TYPE_TOPCR=
+M },
+> +	{ .compatible =3D "zte,zx297520v3-matrixcrm", .data =3D (void *)TYPE_MA=
+TRIXCRM },
+> +	{ .compatible =3D "zte,zx297520v3-lspcrm", .data =3D (void *)TYPE_LSPCR=
+M },
+> +	{ }
+> +};
+> +MODULE_DEVICE_TABLE(of, of_match_zx297520v3_crm);
+> +
+> +static struct platform_driver zx297520v3_crm =3D {
+> +	.probe =3D zx297520v3_crm_probe,
+> +	.driver =3D {
+> +		.name =3D "zx297520v3-crm",
+> +		.of_match_table =3D of_match_zx297520v3_crm,
+> +	},
+> +};
+> +module_platform_driver(zx297520v3_crm);
+> +
+> +MODULE_AUTHOR("Stefan D=F6singer <stefandoesinger@gmail.com>");
+> +MODULE_DESCRIPTION("ZTE zx297520v3 CRM host driver");
+> +MODULE_LICENSE("GPL");
+> =
+
+> -- =
+
+> 2.54.0
+> =
+
+
+-- =
+
+Lee Jones
+
+-- =
+
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
