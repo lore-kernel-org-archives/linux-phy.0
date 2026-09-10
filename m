@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 965D6C88E45
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Sep 2026 09:20:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5E34C79F9F
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Sep 2026 09:20:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rITCR7HbEspYA6gzM3MscgWwW3Fgu1BPfRkKP3mY4qk=; b=3+HjXjGO1Kj1gJ
-	c0X5PUtd6tN6jS2BLoRQORxBDc5Z24XE2ny2H6J4ngCYD+e0+9IIxL7aT//CLeN83IHdh7uhSImae
-	EsEIa7jNJehJzzQ3x1i8kC4MOlYMLG8MjDq6PVRQH1aphqMjU562Q6vq5diodyt5CP10Kw/OVkYA7
-	X+faAfHjx3ARRpObXqT0oivYuJkUK91mznY3dHtehIkvMu8FG0wGJTb/TqHO0mnZUlQ+c/RAeANS6
-	Dhb+c7a1nRVtYdKAcg9Dez/MaD2UMXS5Mk5BROmQTN1yier/Ed68Q5/TzbnBkaPWvcW/EPBPekA/u
-	Kwoc2Vav8dnGvwyB60vg==;
+	List-Owner; bh=khn8RQKQpJEPoZJdjLgrXNi8pZJKzVEu/Uhvh4tiFE0=; b=ttmCQsYvXbTZTk
+	Dqid2T7/4I66e7P5wRL3MB+jq8J/cXoLvRgAMX0Aa9ke8mL1uqM4y62OeIE033zzoeDE03JzuzkHw
+	FSx6MPmDOes1x1r3vjrvU/zpuZPC3Uz7CfTdbOyXZeBQ7/WXtnv2TcHVbmrKGySmP6ig+MbYGqmWM
+	6T3mND9IUISGnbG8DBKKuptUCmnuFWVDpsz1cc/HWO7j+nzDUiGfbU0JBpFo4+vm21v3wiyujXtQw
+	xqtFSVz3zGMUiqW4bUVNSKSA2+BKprqu0mJFX44HC6+x8IFakKpFjKTbDFtgJ2LsdtONgOsrl7wTI
+	HjMaIUso/WR5wz9Z760A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4axl-0000000Dqmk-0RGF;
-	Thu, 10 Sep 2026 09:20:57 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1x4axm-0000000Dqpm-184S;
+	Thu, 10 Sep 2026 09:20:58 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4axb-0000000DqZ8-1nOB;
-	Thu, 10 Sep 2026 09:20:49 +0000
+	id 1x4axe-0000000DqcQ-49id;
+	Thu, 10 Sep 2026 09:20:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1789032045;
-	bh=HAFCIlvbN2dc3YOTNS3f1xU94js5Nu7PxNVA7m6vO/4=;
+	s=mail; t=1789032048;
+	bh=WTVMQxnGADESJuhn7zz/Hiaj/YXUMi4pSU91iU+djqM=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=EhwJKaD3Rg79euKBLroowzkjFZJzVpn+qftHHTJX4VDRc87gY6vZnGmqLEO9LPkN6
-	 /NrEYTGL/9TI3YfrZCgJzPkWP1j8fpkuSej9QcmMUrRLurwlELYj2XobEa3YKTUTC2
-	 TvK+F0yanH2bcD6n56zfhjFFbtCT8u9DrReuWcMRpoUEm6gQdRbQQ/jpxDVMIXB/FQ
-	 wbrvcK4DKwXc7kIsH9IMiLFZ6fGzrOiZBuZwnzOfF07WJtdS09CYACsXuH0XOzpMgI
-	 7ak6EWpegTnxWscT9Dx38a7cmYe/UcqNiTfkPnt9NSqFY0bqK8lwKPmf/r9Erud/k0
-	 cqH2EiJpyCzdA==
+	b=Ca8DBvRtV5wXcgzxRYPqpbUIYFRrzQyL9gkw+mu+feBFiW+VwC6OzzykVpUxiJVmU
+	 0MTHmH6sohdxtH6C1J+QPl9v56kCMQgfki4MDJBFxCy04ByCxOfTLPACtouet0QXm8
+	 vxUQkjWpei+nt8cR+Xa4POxfAmmNVZL4XuLR7bdRmD6I83V8LZ44w3hwS/AepKLQkY
+	 /R411VgA3vO0VG+b4WVRbf3aRBBK5Zrmn8mViVTwhujZsIsAzV2ch4d6EGphVYjgjK
+	 jmkFmRcjRzxoKHolBe46AHfMSJpE3qfHokSXdaAhaFomzvISKOn5SeCe8GSh67stGx
+	 nK+33VNovo+/g==
 Received: from IcarusMOD.eternityproject.eu (unknown [100.64.1.21])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 7F6F817E0D7F;
-	Thu, 10 Sep 2026 11:20:44 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 0F55617E124A;
+	Thu, 10 Sep 2026 11:20:48 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: mani@kernel.org
 Cc: chunfeng.yun@mediatek.com,
@@ -64,16 +64,16 @@ Cc: chunfeng.yun@mediatek.com,
 	dri-devel@lists.freedesktop.org,
 	kernel@collabora.com,
 	Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-Subject: [PATCH v4 03/12] phy: phy-mtk-dp: Allow probing with devicetree match
-Date: Thu, 10 Sep 2026 11:20:29 +0200
-Message-ID: <20260910092038.48291-4-angelogioacchino.delregno@collabora.com>
+Subject: [PATCH v4 07/12] phy: phy-mtk-dp: Support setting volt swing and preemphasis values
+Date: Thu, 10 Sep 2026 11:20:33 +0200
+Message-ID: <20260910092038.48291-8-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.55.0
 In-Reply-To: <20260910092038.48291-1-angelogioacchino.delregno@collabora.com>
 References: <20260910092038.48291-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260910_022047_621438_07C6DF9B 
-X-CRM114-Status: GOOD (  18.21  )
+X-CRM114-CacheID: sfid-20260910_022051_226871_858BD85C 
+X-CRM114-Status: GOOD (  14.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,163 +90,107 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Make it possible to decouple the registration of the DisplayPort
-PHY driver from the DisplayPort IP driver by adding a devicetree
-match to probe the PHY, registering an OF PHY provider and this
-device's own MMIO regmap - if, and only if, this PHY driver was
-registered with an OF match.
+Add support for honoring the set_voltages request to set the
+voltage swing and preemphasis values in the .configure() callback.
 
-In order to retain compatibility with older devicetrees that are
-not declaring the DisplayPort PHY as a separate node, the legacy
-code was moved in a `mtk_dp_phy_legacy_probe()` function, which
-gets called if the driver was registered by the DisplayPort one.
+For proper hardware cleanup, reset both in the .reset() callback.
 
 Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 ---
- drivers/phy/mediatek/phy-mtk-dp.c | 88 +++++++++++++++++++++++++++----
- 1 file changed, 78 insertions(+), 10 deletions(-)
+ drivers/phy/mediatek/phy-mtk-dp.c | 44 ++++++++++++++++++++++++++++++-
+ 1 file changed, 43 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/phy/mediatek/phy-mtk-dp.c b/drivers/phy/mediatek/phy-mtk-dp.c
-index bf7b3a95e72d..d241004e2828 100644
+index 276391d991aa..692049f78833 100644
 --- a/drivers/phy/mediatek/phy-mtk-dp.c
 +++ b/drivers/phy/mediatek/phy-mtk-dp.c
-@@ -12,6 +12,7 @@
- #include <linux/of.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
-+#include <linux/pm_runtime.h>
- #include <linux/regmap.h>
+@@ -54,6 +54,11 @@
+ /* DP_PHYD_TX_CTL_0 */
+ #define PHYD_TX_LN_EN			GENMASK(7, 4)
  
- #define PHY_OFFSET			0x1000
-@@ -79,6 +80,7 @@
- 				 XTP_LN_TX_LCTXCP1_SW3_PRE0_DEFAULT)
- 
- struct mtk_dp_phy {
-+	struct device *dev;
- 	struct regmap *regmap;
++/* DP_PHYD_DRIVING_FORCE */
++#define PHYD_DP_TX_FORCE_VOLT_SWING_EN	BIT(0)
++#define PHYD_DP_TX_FORCE_VOLT_SWING_VAL	GENMASK(2, 1)
++#define PHYD_DP_TX_FORCE_PRE_EMPH_VAL	GENMASK(4, 3)
++
+ #define XTP_LN_TX_LCTXC0_SW0_PRE0_DEFAULT	BIT(4)
+ #define XTP_LN_TX_LCTXC0_SW0_PRE1_DEFAULT	(BIT(10) | BIT(12))
+ #define XTP_LN_TX_LCTXC0_SW0_PRE2_DEFAULT	GENMASK(20, 19)
+@@ -107,6 +112,7 @@ enum mtk_dp_phya_ana_glb_regidx {
  };
  
-@@ -160,43 +162,109 @@ static const struct phy_ops mtk_dp_phy_dev_ops = {
- 	.owner = THIS_MODULE,
+ enum mtk_dp_phyd_dig_lane_regidx {
++	DP_PHYD_LAN_DRIVING_FORCE,
+ 	DP_PHYD_LAN_DRIVING_PARAM_0,
+ 	DP_PHYD_LAN_MAX
+ };
+@@ -127,6 +133,7 @@ static const u8 mt8195_phy_ana_glb_regs[DP_PHYA_GLOBAL_MAX] = {
  };
  
-+static void mtk_dp_phy_legacy_remove_lookup(void *data)
-+{
-+	struct phy *phy = data;
-+	struct mtk_dp_phy *dp_phy = phy_get_drvdata(phy);
-+
-+	phy_remove_lookup(phy, "dp", dev_name(dp_phy->dev));
-+}
-+
-+static int mtk_dp_phy_legacy_probe(struct platform_device *pdev, struct mtk_dp_phy *dp_phy)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct phy *phy;
-+	int ret;
-+
-+	dp_phy->regmap = *(struct regmap **)dev->platform_data;
-+	if (!dp_phy->regmap)
-+		return dev_err_probe(dev, -EINVAL, "No platform data available\n");
-+
-+	phy = devm_phy_create(dev, NULL, &mtk_dp_phy_dev_ops);
-+	if (IS_ERR(phy))
-+		return dev_err_probe(dev, PTR_ERR(phy),
-+				     "Failed to create DP PHY\n");
-+
-+	phy_set_drvdata(phy, dp_phy);
-+	ret = phy_create_lookup(phy, "dp", dev_name(dev));
-+	if (ret)
-+		return ret;
-+
-+	ret = devm_add_action_or_reset(dev, mtk_dp_phy_legacy_remove_lookup, phy);
-+	if (ret)
-+		return ret;
-+
-+	return 0;
-+}
-+
-+static const struct regmap_config mtk_dp_phy_regmap_cfg = {
-+	.reg_bits = 32,
-+	.val_bits = 32,
-+	.reg_stride = 4,
-+	.disable_locking = true,
-+};
-+
- static int mtk_dp_phy_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
-+	struct phy_provider *provider;
- 	struct mtk_dp_phy *dp_phy;
-+	void __iomem *base;
- 	struct phy *phy;
--	struct regmap *regs;
--
--	regs = *(struct regmap **)dev->platform_data;
--	if (!regs)
--		return dev_err_probe(dev, -EINVAL,
--				     "No data passed, requires struct regmap**\n");
-+	int ret;
+ static const u8 mt8195_phy_dig_lane_regs[DP_PHYD_LAN_MAX] = {
++	[DP_PHYD_LAN_DRIVING_FORCE] = 0x18,
+ 	[DP_PHYD_LAN_DRIVING_PARAM_0] = 0x2c,
+ };
  
- 	dp_phy = devm_kzalloc(dev, sizeof(*dp_phy), GFP_KERNEL);
- 	if (!dp_phy)
- 		return -ENOMEM;
+@@ -244,6 +251,30 @@ static int mtk_dp_phy_configure(struct phy *phy, union phy_configure_opts *opts)
+ 				   PHYD_TX_LN_EN, val);
+ 	}
  
--	dp_phy->regmap = regs;
-+	dp_phy->dev = dev;
++	if (opts->dp.set_voltages) {
++		const u32 reg_drv_force = pdata->regs_dig_lane[DP_PHYD_LAN_DRIVING_FORCE];
 +
-+	/* If there's no devicetree, go for legacy pdev probe */
-+	if (!dev->of_node)
-+		return mtk_dp_phy_legacy_probe(pdev, dp_phy);
++		if (opts->dp.lanes > 4) {
++			dev_err(&phy->dev, "Wrong lanes config %u\n", opts->dp.lanes);
++			return -EINVAL;
++		}
 +
-+	base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(base))
-+		return PTR_ERR(base);
++		for (i = 0; i < opts->dp.lanes; i++) {
++			const u32 off_dig_lane = pdata->off_dig_lane[i];
++			u32 val;
 +
-+	dp_phy->regmap = devm_regmap_init_mmio(dev, base, &mtk_dp_phy_regmap_cfg);
-+	if (IS_ERR(dp_phy->regmap))
-+		return PTR_ERR(dp_phy->regmap);
++			val = FIELD_PREP(PHYD_DP_TX_FORCE_VOLT_SWING_VAL, opts->dp.voltage[i]);
++			val |= FIELD_PREP(PHYD_DP_TX_FORCE_PRE_EMPH_VAL, opts->dp.pre[i]);
++			val |= PHYD_DP_TX_FORCE_VOLT_SWING_EN;
 +
-+	ret = devm_pm_runtime_enable(dev);
-+	if (ret)
-+		return ret;
++			regmap_update_bits(dp_phy->regmap, off_dig_lane + reg_drv_force,
++					   PHYD_DP_TX_FORCE_VOLT_SWING_EN |
++					   PHYD_DP_TX_FORCE_VOLT_SWING_VAL |
++					   PHYD_DP_TX_FORCE_PRE_EMPH_VAL,
++					   val);
++		}
++	}
 +
- 	phy = devm_phy_create(dev, NULL, &mtk_dp_phy_dev_ops);
- 	if (IS_ERR(phy))
- 		return dev_err_probe(dev, PTR_ERR(phy),
- 				     "Failed to create DP PHY\n");
+ 	regmap_update_bits(dp_phy->regmap,
+ 			   pdata->off_dig_glb + pdata->regs_dig_glb[DP_PHYD_PLL_CTL_1],
+ 			   TPLL_SSC_EN, opts->dp.ssc ? TPLL_SSC_EN : 0);
+@@ -328,7 +359,8 @@ static int mtk_dp_phy_reset(struct phy *phy)
+ 	struct mtk_dp_phy *dp_phy = phy_get_drvdata(phy);
+ 	const struct mtk_dp_phy_pdata *pdata = dp_phy->pdata;
+ 	const u32 reg_rst = pdata->regs_dig_glb[DP_PHYD_SW_RST];
+-	int ret;
++	const u32 reg_drv_force = pdata->regs_dig_lane[DP_PHYD_LAN_DRIVING_FORCE];
++	int i, ret;
  
- 	phy_set_drvdata(phy, dp_phy);
--	if (!dev->of_node)
--		phy_create_lookup(phy, "dp", dev_name(dev));
-+
-+	provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+	if (IS_ERR(provider))
-+		return PTR_ERR(provider);
+ 	/* Clearing bits sets reset state */
+ 	regmap_clear_bits(dp_phy->regmap, pdata->off_dig_glb + reg_rst, DP_GLB_SW_RST_PHYD);
+@@ -344,6 +376,16 @@ static int mtk_dp_phy_reset(struct phy *phy)
+ 	if (ret)
+ 		dev_err(dp_phy->dev, "Could not disable lanes during reset!\n");
  
++	/* Reset Voltage Swing and Preemphasis values */
++	for (i = 0; i < MTK_DP_PHY_MAX_LANES; i++) {
++		const u32 off_dig_lane = pdata->off_dig_lane[i];
++
++		regmap_clear_bits(dp_phy->regmap, off_dig_lane + reg_drv_force,
++				   PHYD_DP_TX_FORCE_VOLT_SWING_EN |
++				   PHYD_DP_TX_FORCE_VOLT_SWING_VAL |
++				   PHYD_DP_TX_FORCE_PRE_EMPH_VAL);
++	}
++
  	return 0;
  }
  
-+static const struct of_device_id mtk_dp_phy_of_match[] = {
-+	{ .compatible = "mediatek,mt8195-dp-phy" },
-+	{ /* sentinel */ }
-+};
-+MODULE_DEVICE_TABLE(of, mtk_dp_phy_of_match);
-+
- static struct platform_driver mtk_dp_phy_driver = {
- 	.probe = mtk_dp_phy_probe,
- 	.driver = {
- 		.name = "mediatek-dp-phy",
-+		.of_match_table = mtk_dp_phy_of_match,
- 	},
- };
- module_platform_driver(mtk_dp_phy_driver);
- 
-+MODULE_AUTHOR("AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>");
- MODULE_AUTHOR("Markus Schneider-Pargmann <msp@baylibre.com>");
--MODULE_DESCRIPTION("MediaTek DP PHY Driver");
-+MODULE_DESCRIPTION("MediaTek DisplayPort PHY Driver");
- MODULE_LICENSE("GPL");
 -- 
 2.55.0
 
