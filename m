@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E435FC79FBF
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Sep 2026 09:20:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36E9CC88E48
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Sep 2026 09:20:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=PAQABQhWSPdAIPhBejLXFLfEVau28PMuLEuCRLLRjW4=; b=BujFGojpltMaOH
-	ycPk8Ho4nxjH4IbFbYFL5cEj8vhGexC8YRdcn6CX/MAhcXd6wOhv1N+ZBBaNnKnYahKDgiEU3p1YU
-	Lcxt1IK9jfvtwvPc88khwLuoi9/NAXqB7m6zkpBAmXiLMYXiAgkybOstRbTJMcYFVE+ZUbbdQDxLA
-	fxGr8+67paDOtVG+aF7qDlXpFsk5hZ+KUo0QYK7ZMzO5GhvSR57OzRdiOsH92ZsbI2DWlklzIz4Wd
-	hn1MT0Ygl7FlE6D7lXyu7rGuR1I+closkPPV/5EkzYXT15VNEoXJcbajY/mciydEF0aw8NOWWcTJa
-	Rh0PcztN0lK89LBrCALg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WSLEwSGvF3B8UcOI+P7UJ6+8JXjqTBNApVyjlhHfJgI=; b=D2gE1sMDl68vb8
+	BnhjhY8ZiSWeG0KOahzCsRIE27+pECcbBqwofSnIuEuyZoeQC7IS1R98gvqjuieqMNxVlyeKQRP9A
+	VlsCqtpF8Mn3hIDZwqOVzhT2Ba021Ge0ahZ+yF/xExrFCVjHoDxBRys/6ltJJjrmAM1ZNZYPYEUC8
+	UBF337XH+X3+tYTExYW/+wybLi8Z0DKE3oZJpNKdEbmPNPxtsCj3X3ODg+I155JKGBaEcSwVjy8df
+	oliTkbjDuYYKHohgTfgdN9x8LhD0pw0ztqNApOJuPbsFlzfSIxQj4BDKjriDWMdJloJ6xfsHQx2zy
+	vJjYEmMlVQckG2gZxLXQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4axk-0000000DqlG-24v9;
-	Thu, 10 Sep 2026 09:20:56 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1x4axl-0000000DqoI-2sFt;
+	Thu, 10 Sep 2026 09:20:57 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4axZ-0000000DqYb-3fzW;
-	Thu, 10 Sep 2026 09:20:48 +0000
+	id 1x4axe-0000000Dqbm-1XPd;
+	Thu, 10 Sep 2026 09:20:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1789032042;
-	bh=kOX7qxdoIaNGQlJqEVTvsO2lJxLSfimYQdTf/38st6Y=;
-	h=From:To:Cc:Subject:Date:From;
-	b=U3LPU7FqStDtB5+V9vaGVzVRaJJnMV+/gztlnhvBraOeJ5ARio0gSxVaS8fvoKFUx
-	 Ib26O6Y6fOcJWuL6ex/ERGRqSX/iKmGy9mMf52YJPm6Cnd09WkVpDJXk/76UPnThTS
-	 AQi69cyYEwjx72nD7iXDDJnzH80GJk6onXFMmTrgEvnvubTCF2x+hhn1G0mMHhLMax
-	 a0f41u1W3zvt8YGYGE9eU0cjCQ6RwjhepjaaEPkA921oUF06rFqSp44GhldlotjPyU
-	 P0NO8e1D7SblJQbPC5ctg0ZW156gmzc8zcHRWIlssJXYF+Uml2OcXPrWeW300w6GbG
-	 F8h6Rxf12Kl6g==
+	s=mail; t=1789032047;
+	bh=kbWNFq1oRF1nFAazrEptlrlglPwPZ7zaOn5uHB4r+tE=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=RvFtmZmPkGuOr0rvxeSYncIAwghTYvjy3SnkJ8qqz1kayfpO8NeQryyr2SGzVBgeR
+	 PplIIpnpanQFt1JYZfNcNSg47d/5qTkRLIx586TJ0F23QPBgwKtqUNfDY9plm8IZT0
+	 pS0MWd65KBbExRdHKXpucleHZzwH+0s6kIlSUsHfxbxJql7J8DjUVwUVNJpXGWB2pA
+	 xhkiesG2cvnWXCxjQA4gWbju4S68rM5X1SNLMevVTF0WwNoCslcCLRTYGgtsF6/XPd
+	 RiIom7ndAEfq7IJj41A7ft60N+k602Mw8LhxFXyMvBCtlOVk1o++PdJ9jsI5S4NyGi
+	 sT6rBaGf1Qaqg==
 Received: from IcarusMOD.eternityproject.eu (unknown [100.64.1.21])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id C168D17E0917;
-	Thu, 10 Sep 2026 11:20:41 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 2FD6617E0FE2;
+	Thu, 10 Sep 2026 11:20:47 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: mani@kernel.org
 Cc: chunfeng.yun@mediatek.com,
@@ -63,14 +63,16 @@ Cc: chunfeng.yun@mediatek.com,
 	linux-kernel@vger.kernel.org,
 	dri-devel@lists.freedesktop.org,
 	kernel@collabora.com
-Subject: [PATCH v4 00/12] PHY: MediaTek DP PHY refactor and MT8196 eDP
-Date: Thu, 10 Sep 2026 11:20:26 +0200
-Message-ID: <20260910092038.48291-1-angelogioacchino.delregno@collabora.com>
+Subject: [PATCH v4 06/12] phy: phy-mtk-dp: Support set_lanes in configure and properly cleanup
+Date: Thu, 10 Sep 2026 11:20:32 +0200
+Message-ID: <20260910092038.48291-7-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.55.0
+In-Reply-To: <20260910092038.48291-1-angelogioacchino.delregno@collabora.com>
+References: <20260910092038.48291-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260910_022046_350548_D672564B 
-X-CRM114-Status: GOOD (  18.04  )
+X-CRM114-CacheID: sfid-20260910_022050_585288_16379BDD 
+X-CRM114-Status: GOOD (  16.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,94 +89,152 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Changes in v4:
- - Removed error checking from all regmap_(bulk_){read,write} calls
-   as those are on MMIO and can't fail (Mani)
- - Changed some of the error prints in mtk_dp_phy_get_one_cal_para()
-   to dev_err_probe() (Mani, Sashiko)
+Add support for enabling a specifically requested number of lanes
+in the .configure() callback and disable all lanes in power off
+and reset callbacks for proper hardware cleanup.
 
-Changes in v3:
- - Added missing bitfield.h, pm_runtime.h includes (Sashiko)
- - Set calibration data before registering PHY (Sashiko)
- - Enable PM Runtime before creating PHY device (Sashiko)
- - Continue poweroff if some write fails, but still return failure
-   as that would be a partial poweroff anyway (Sashiko)
- - Added zero driving params to fix default calibration data setting (Sashiko)
- - Added NULL check on device_Get_match_data (Sashiko)
+Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+---
+ drivers/phy/mediatek/phy-mtk-dp.c | 57 +++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
 
-Changes in v2:
- - Fixed register offsets for ANA phy in MT8196
- - Set/clear FORCE_VOLT_SWING_EN bit when configuring and resetting
-   the voltage swing registers
- - Fixed endianness issue in call to nvmem_read_u16 (Sashiko)
- - Added early exit during lanes disablement if none are enabled to
-   avoid out-of-bounds bitwise shift (Sashiko)
- - Removed useless call to pm_runtime_get_sync() in probe(), which
-   also fixes issues pointed out by Sashiko
- - Fixed wrong dig vs ana register array usage in power_on/off (Sashiko)
-
-
-This series performs major refactoring on the MediaTek DisplayPort PHY
-driver, makes it probe with devicetree instead of getting registered
-by the mtk_dp DRM driver, adds power_on/off() callbacks, and honors
-the phy configure opts' set_lanes and set_voltages for, respectively,
-varying the number of lanes and setting the voltage pre-emphasis and
-swing on the PHY, for each lane.
-
-This driver now also properly gets the PHY (EYE) Calibration Data from
-NVMEM (eFuse array) if provided, instead of getting it (improperly)
-injected by the mtk_dp driver.
-
-Additionally, all of the driving parameters calculations and most of
-the other register definitions were refactored to greatly enhance the
-human readability of this code.
-
-As a last step, this also transfers the register offsets for both the
-digital and analog phy registers in arrays assigned to soc specific
-data, in an effort to both introduce support for new minor revisions
-of the MediaTek DisplayPort PHY and to have a clearer view of the
-register related differences between those (for example, it is easily
-understandable that the analog part remained exactly the same between
-MT8195 and MT8196, but the digital part gets a slight update).
-
-Speaking of which, as a last step, this also adds support for the
-MT8196 SoC (and its derivatives), which uses this PHY only for its
-Embedded DisplayPort (eDP) IP (spoiler: the DP one seems to be way
-too different and requiring an entirely new PHY driver).
-
-In this state, this driver can also easily support the MT8189 SoC
-with a few lines of code: even though I do have clean code to add
-support for this one, I was not (*yet*) able to test it on upstream
-based kernels, and for this reason I decided to leave that one out
-for now (but it's coming later for sure).
-
-NOTE!
-Despite all the apparently breaking changes in the refactoring, full
-compatibility with older MTK_DP driver and with old devicetrees was
-retained and carefully tested on multiple platforms!
-
-P.S.: I am aware of the BUILD_DRIVING_PARAM_0( 0, 2, 4, 7) checkpatch
-warning and I didn't fix it in bigger favor of human readability.
-
-AngeloGioacchino Del Regno (12):
-  dt-bindings: phy: Document MT8195 and MT8196 DisplayPort PHYs
-  phy: phy-mtk-dp: Rename regs to regmap in struct mtk_dp_phy
-  phy: phy-mtk-dp: Allow probing with devicetree match
-  phy: phy-mtk-dp: Migrate register offsets to SoC specific pdata
-  phy: phy-mtk-dp: Implement power_on and power_off PHY callbacks
-  phy: phy-mtk-dp: Support set_lanes in configure and properly cleanup
-  phy: phy-mtk-dp: Support setting volt swing and preemphasis values
-  phy: phy-mtk-dp: Add support for digital and analog calibration
-  phy: phy-mtk-dp: Rewrite and document default driving param macros
-  phy: phy-mtk-dp: Add bitrate register val definitions to SoC data
-  phy: phy-mtk-dp: Add PHYD Lane EN register mask to SoC data
-  phy: phy-mtk-dp: Add support for MT8196 eDP PHY
-
- .../bindings/phy/mediatek,mt8195-dp-phy.yaml  |  77 ++
- drivers/phy/mediatek/phy-mtk-dp.c             | 832 ++++++++++++++++--
- 2 files changed, 812 insertions(+), 97 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/phy/mediatek,mt8195-dp-phy.yaml
-
+diff --git a/drivers/phy/mediatek/phy-mtk-dp.c b/drivers/phy/mediatek/phy-mtk-dp.c
+index 4247506ceb99..276391d991aa 100644
+--- a/drivers/phy/mediatek/phy-mtk-dp.c
++++ b/drivers/phy/mediatek/phy-mtk-dp.c
+@@ -10,6 +10,7 @@
+  *                     AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+  */
+ 
++#include <linux/bitfield.h>
+ #include <linux/delay.h>
+ #include <linux/io.h>
+ #include <linux/mfd/syscon.h>
+@@ -50,6 +51,9 @@
+ #define DRIVING_PARAM_1_DEFAULT	0x0
+ #define DRIVING_PARAM_2_DEFAULT	0x0
+ 
++/* DP_PHYD_TX_CTL_0 */
++#define PHYD_TX_LN_EN			GENMASK(7, 4)
++
+ #define XTP_LN_TX_LCTXC0_SW0_PRE0_DEFAULT	BIT(4)
+ #define XTP_LN_TX_LCTXC0_SW0_PRE1_DEFAULT	(BIT(10) | BIT(12))
+ #define XTP_LN_TX_LCTXC0_SW0_PRE2_DEFAULT	GENMASK(20, 19)
+@@ -113,6 +117,7 @@ enum mtk_dp_phyd_dig_glb_regidx {
+ 	DP_PHYD_SW_RST,
+ 	DP_PHYD_BIT_RATE,
+ 	DP_PHYD_AUX_RX_CTL,
++	DP_PHYD_TX_CTL_0,
+ 	DP_PHYD_GLOBAL_MAX
+ };
+ 
+@@ -131,6 +136,7 @@ static const u8 mt8195_phy_dig_glb_regs[DP_PHYD_GLOBAL_MAX] = {
+ 	[DP_PHYD_SW_RST] = 0x38,
+ 	[DP_PHYD_BIT_RATE] = 0x3c,
+ 	[DP_PHYD_AUX_RX_CTL] = 0x40,
++	[DP_PHYD_TX_CTL_0] = 0x44,
+ };
+ 
+ /**
+@@ -200,6 +206,7 @@ static int mtk_dp_phy_configure(struct phy *phy, union phy_configure_opts *opts)
+ 	struct mtk_dp_phy *dp_phy = phy_get_drvdata(phy);
+ 	const struct mtk_dp_phy_pdata *pdata = dp_phy->pdata;
+ 	u32 val;
++	int i;
+ 
+ 	if (opts->dp.set_rate) {
+ 		const u32 reg_bit_rate = pdata->regs_dig_glb[DP_PHYD_BIT_RATE];
+@@ -226,6 +233,17 @@ static int mtk_dp_phy_configure(struct phy *phy, union phy_configure_opts *opts)
+ 		regmap_write(dp_phy->regmap, pdata->off_dig_glb + reg_bit_rate, val);
+ 	}
+ 
++	if (opts->dp.set_lanes) {
++		const u32 reg_dig_tx_ctl = pdata->regs_dig_glb[DP_PHYD_TX_CTL_0];
++
++		val = 0;
++		for (i = 0; i < opts->dp.lanes; i++)
++			val |= FIELD_PREP(PHYD_TX_LN_EN, BIT(i));
++
++		regmap_update_bits(dp_phy->regmap, pdata->off_dig_glb + reg_dig_tx_ctl,
++				   PHYD_TX_LN_EN, val);
++	}
++
+ 	regmap_update_bits(dp_phy->regmap,
+ 			   pdata->off_dig_glb + pdata->regs_dig_glb[DP_PHYD_PLL_CTL_1],
+ 			   TPLL_SSC_EN, opts->dp.ssc ? TPLL_SSC_EN : 0);
+@@ -254,12 +272,39 @@ static int mtk_dp_phy_power_on(struct phy *phy)
+ 	return 0;
+ }
+ 
++static int mtk_dp_phy_disable_all_lanes(struct mtk_dp_phy *dp_phy)
++{
++	const struct mtk_dp_phy_pdata *pdata = dp_phy->pdata;
++	const u8 *regs = pdata->regs_dig_glb;
++	int ret;
++	u32 val;
++
++	/* Get mask of currently enabled lane */
++	regmap_read(dp_phy->regmap, pdata->off_dig_glb + regs[DP_PHYD_TX_CTL_0], &val);
++	val = FIELD_GET(PHYD_TX_LN_EN, val);
++	if (val == 0)
++		return 0;
++
++	/* Disable all lanes (needs to be done one by one, from last to first) */
++	do {
++		u32 lane_num = fls(val) - 1;
++		val &= ~BIT(lane_num);
++
++		regmap_clear_bits(dp_phy->regmap,
++				  pdata->off_dig_glb + regs[DP_PHYD_TX_CTL_0],
++				  FIELD_PREP(PHYD_TX_LN_EN, BIT(lane_num)));
++	} while (val);
++
++	return 0;
++}
++
+ static int mtk_dp_phy_power_off(struct phy *phy)
+ {
+ 	struct mtk_dp_phy *dp_phy = phy_get_drvdata(phy);
+ 	const struct mtk_dp_phy_pdata *pdata = dp_phy->pdata;
+ 	const u8 *regs_dig = pdata->regs_dig_glb;
+ 	const u8 *regs_ana = pdata->regs_ana_glb;
++	int ret;
+ 
+ 	regmap_set_bits(dp_phy->regmap,
+ 			pdata->off_ana_glb + regs_ana[DP_PHYA_GLB_FORCE_CTRL_1],
+@@ -269,6 +314,12 @@ static int mtk_dp_phy_power_off(struct phy *phy)
+ 	regmap_write(dp_phy->regmap,
+ 		     pdata->off_dig_glb + regs_dig[DP_PHYD_AUX_RX_CTL], 0);
+ 
++	ret = mtk_dp_phy_disable_all_lanes(dp_phy);
++	if (ret) {
++		dev_err(dp_phy->dev, "Could not disable lanes for poweroff!\n");
++		return ret;
++	}
++
+ 	return 0;
+ }
+ 
+@@ -277,6 +328,7 @@ static int mtk_dp_phy_reset(struct phy *phy)
+ 	struct mtk_dp_phy *dp_phy = phy_get_drvdata(phy);
+ 	const struct mtk_dp_phy_pdata *pdata = dp_phy->pdata;
+ 	const u32 reg_rst = pdata->regs_dig_glb[DP_PHYD_SW_RST];
++	int ret;
+ 
+ 	/* Clearing bits sets reset state */
+ 	regmap_clear_bits(dp_phy->regmap, pdata->off_dig_glb + reg_rst, DP_GLB_SW_RST_PHYD);
+@@ -287,6 +339,11 @@ static int mtk_dp_phy_reset(struct phy *phy)
+ 	/* Setting bits means go out of reset */
+ 	regmap_set_bits(dp_phy->regmap, pdata->off_dig_glb + reg_rst, DP_GLB_SW_RST_PHYD);
+ 
++	/* Disable all lanes and continue reset even if this fails, but notify */
++	ret = mtk_dp_phy_disable_all_lanes(dp_phy);
++	if (ret)
++		dev_err(dp_phy->dev, "Could not disable lanes during reset!\n");
++
+ 	return 0;
+ }
+ 
 -- 
 2.55.0
 
