@@ -4,73 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2A38C88E53
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Sep 2026 07:41:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 188A6C88E4C
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Sep 2026 07:48:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yt2z6wMfaltWagcQPNt0QMDa3OqmIXD7pwUTZhOIGDo=; b=RV1Th6GQUV9Je9
-	qb3i6c4Elo4HsOGTxaSSa3wzH9Hgqj93kmFDweStwkKSFBx46pAbtGWz0xbKYfbpdXmNYViW0POjD
-	d16zlbjq1ASrbutXfQyWO4S5kfqnYpLk+quC9D+DlNnI+gCNDAIXyBT1R6P4Eb09bu7ZQaR+MoeOa
-	5ielIj8pH7mqsN503J7A6DBWigP7UWECQfedT9DVdlDGcZsT0E5hUU2hlqSb/ECDcGXQnHunifLqH
-	LIx9317Kg4LojzjsBnOAJvbVkvnsvE71wa8o5Hf/hQfmP5wVhoug+PTRxLaiOVQEhGZItn6MlwjZZ
-	5xdpAaZSnecB7M3Ii4bw==;
+	List-Owner; bh=d0rdK3X+dp+3/fqz742cxXQOyiPdCZn59mrBS8c8Jks=; b=As+XxFK+xx8CZd
+	4ztMU2Qzz2bmo2F13ygOPF9B3a+33cfflQafVbbV5wF1ZXojMUxdRImI5i8Bwe2O9Fu1A9fyUqjMn
+	ipx2aXPP2dtxDP5VSob2wWWsK8HCxrWestlPRWLIVxiKnHUqAtMLdgpDRyeOL4WIMYmDG+3ciJshJ
+	qB+Dd/0WNn3UcCVQgSHoRM5IYucRXkFab5fgAiQn6F57H7qS3gBMU8f6yBmxSNLMcak85jBJ8L1ch
+	qrlsFRkQH5/6HHUyviZxzt6zSEGufrTYQD4Zbam8Whhhq0koEXAUiC/GbnV7Eh4Nnu8171EShh1Ts
+	ijmh9DzcReQJre+bOCxg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4vsa-0000000G2xv-15Mf;
-	Fri, 11 Sep 2026 07:41:00 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1x4vzN-0000000G42z-2eLh;
+	Fri, 11 Sep 2026 07:48:01 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4vsU-0000000G2uH-1qQi;
-	Fri, 11 Sep 2026 07:40:55 +0000
+	id 1x4vzK-0000000G42L-1uE7;
+	Fri, 11 Sep 2026 07:47:59 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1789112451;
-	bh=RctPS754DU/t+qBmFIbvj4yy7arbALAwJti9yGAZYSM=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=oCl1nCDhRSX+SvulyjiOudPqry3mT5cNq311NaiAP80DEwhr/NWalUuNrBv7N7YQ4
-	 l5iGq6tCUtO9T+PeKZVBvENp1xuC6TAPz5rVUOYRHQUQbS5kcUUQE6o0KwLnV871t7
-	 yoBRn69cI/oN7xZ1ox0e93NfyNgH7KVKdiKPBIGbqcU0nBl1Yrntug86fmtv8upbxL
-	 3ekLpbZOpSFHVviVGRGN/4F0tUL+8jNozGdA5nzECZtyTiTHNFkR4DQ+6OWdA+Z1ZP
-	 UiBMqxEP4v/trHTGLwF5tdD3UFHMCku1NnU0w12tEdOm7LdlMXYZ+JmVmEDZGoOVLs
-	 eYztcOz0N7bsA==
-Received: from IcarusMOD.eternityproject.eu (unknown [100.64.1.21])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	s=mail; t=1789112876;
+	bh=ruI4u/j0531/L6p3OmQduRDVD6eAPgK4O4B88AoufBA=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=fKTBOdIU38tZS6iAx4RsuMRR2ViORWzbPsH7zJy86cIpgB4cIE44WdjoNAB7ftLGg
+	 yCzwD6mJnjfFT+WTcPyUvTIGEWFZdZ+nBiWg0gfNeCmmtCzqBgAfItQf/JjNXFJPJn
+	 Fo8kOgX3+W3tkS4r6kahQdKQBnagoxFo1mrT2q6+0e0pSnPyn+eoIi4VZMDMXFZN2p
+	 E1YNUMCmSiBe+xtyuSLIK2XTt/iI+1PhbvYwQnS0kdaSGR0oVsddaGabEvS/vkySdW
+	 3MHOtl0slIOUkVT0VUw/HDSpvtlkc2tg6FilUKX+tAc3E08DZlcuIuXWqGwwy0J1bQ
+	 YX5GHHosJw7xA==
+Received: from [100.64.1.21] (unknown [100.64.1.21])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange x25519)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id DFB4417E0C7E;
-	Fri, 11 Sep 2026 09:40:50 +0200 (CEST)
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-To: vkoul@kernel.org
-Cc: chunfeng.yun@mediatek.com,
-	p.zabel@pengutronix.de,
-	chunkuang.hu@kernel.org,
-	neil.armstrong@linaro.org,
-	matthias.bgg@gmail.com,
-	angelogioacchino.delregno@collabora.com,
-	granquet@baylibre.com,
-	justin.yeh@mediatek.com,
-	dri-devel@lists.freedesktop.org,
-	linux-mediatek@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	kernel@collabora.com,
-	Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-Subject: [PATCH v2 1/2] phy: mediatek: phy-mtk-hdmi-mt8195: Fix PLL calc divisor overflow
-Date: Fri, 11 Sep 2026 09:40:14 +0200
-Message-ID: <20260911074015.9994-2-angelogioacchino.delregno@collabora.com>
-X-Mailer: git-send-email 2.55.0
-In-Reply-To: <20260911074015.9994-1-angelogioacchino.delregno@collabora.com>
-References: <20260911074015.9994-1-angelogioacchino.delregno@collabora.com>
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 6886417E0CA6;
+	Fri, 11 Sep 2026 09:47:55 +0200 (CEST)
+Message-ID: <87408499-de7e-4359-a2ea-d997abd1d0c4@collabora.com>
+Date: Fri, 11 Sep 2026 09:47:54 +0200
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 11/12] phy: phy-mtk-dp: Add PHYD Lane EN register mask
+ to SoC data
+To: Manivannan Sadhasivam <mani@kernel.org>
+Cc: chunfeng.yun@mediatek.com, vkoul@kernel.org, neil.armstrong@linaro.org,
+ robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ matthias.bgg@gmail.com, chunkuang.hu@kernel.org, p.zabel@pengutronix.de,
+ justin.yeh@mediatek.com, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, kernel@collabora.com
+References: <20260707154245.198361-1-angelogioacchino.delregno@collabora.com>
+ <20260707154245.198361-12-angelogioacchino.delregno@collabora.com>
+ <cydeh263kd5o2un27oeplqx2phe7vzhxvk53kr7dbvtplazafv@rs37qtkhguhj>
+ <4e658914-7a17-444b-b20b-8d8b647238b5@collabora.com>
+ <m3fpa2igwmsnsxhhxtg5hubsmxbn2vmzcpo4hwacs66z52x5ll@xrl5kac2qmtk>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+In-Reply-To: <m3fpa2igwmsnsxhhxtg5hubsmxbn2vmzcpo4hwacs66z52x5ll@xrl5kac2qmtk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260911_004054_624224_91F3F8E9 
-X-CRM114-Status: UNSURE (   9.95  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260911_004758_656214_376BE284 
+X-CRM114-Status: GOOD (  15.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,42 +79,77 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-When trying to calculate a PLL rate for target display resolutions
-above 2560x1440, 24bpp, 30Hz, the pixel clock value will be more
-than 32-bits long but the division to finally calculate the digital
-clock divider is being done with div_u64(), which expects a 32bit
-unsigned divisor.
+On 9/11/26 07:15, Manivannan Sadhasivam wrote:
+> On Thu, Sep 10, 2026 at 11:05:39AM +0200, AngeloGioacchino Del Regno wrote:
+>> On 9/9/26 19:25, Manivannan Sadhasivam wrote:
+>>> On Tue, Jul 07, 2026 at 05:42:44PM +0200, AngeloGioacchino Del Regno wrote:
+>>>> In preparation for adding support for the eDP PHY found in newer
+>>>> SoCs, transfer the register mask for PHYD_TX_LN_EN to SoC specific
+>>>> data.
+>>>>
+>>>> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+>>>> ---
+>>>>    drivers/phy/mediatek/phy-mtk-dp.c | 13 +++++++++----
+>>>>    1 file changed, 9 insertions(+), 4 deletions(-)
+>>>>
+>>>> diff --git a/drivers/phy/mediatek/phy-mtk-dp.c b/drivers/phy/mediatek/phy-mtk-dp.c
+>>>> index 4603f28d1466..f5aadc5fdc42 100644
+>>>> --- a/drivers/phy/mediatek/phy-mtk-dp.c
+>>>> +++ b/drivers/phy/mediatek/phy-mtk-dp.c
+>>>> @@ -220,6 +220,7 @@ struct mtk_dp_phya_imp_sel {
+>>>>     * @regs_ana_lane:  Register (layout) offsets for ana_lan
+>>>>     * @regs_dig_glb:   Register (layout) offsets for dig_glb
+>>>>     * @regs_dig_lane:  Register (layout) offsets for dig_lan
+>>>> + * @mask_dig_tx_ln: Register mask for PHYD_TX_LN_EN field
+>>>>     * @val_dig_bitrate:IP Version specific register values for Bit Rate setting
+>>>>     * @ana_bias_r:     Internal resistance "R" Selection Settings (global)
+>>>>     * @ana_cktx_imp:   TX Clock Impedance Selection Settings (global)
+>>>> @@ -239,6 +240,9 @@ struct mtk_dp_phy_pdata {
+>>>>    	const u8 *regs_dig_glb;
+>>>>    	const u8 *regs_dig_lane;
+>>>> +	/* Register masks */
+>>>
+>>> Duplicate comment. With this removed,
+>>>
+>>
+>> Sorry but I think you didn't understand what the comments are there: the kerneldoc
+>> is used to describe the structure, of course, but the comments in between are used
+>> as a way to describe (and kind of enforce) the order of members.
+>>
+>> /* Register offsets */
+>> u16 member1;
+>> u16 member2;
+>> ....
+>>
+>> /* Register maps */
+>> const u8 *regs1;
+>> const u8 *regs2;
+>> ...
+>>
+>> /* Register masks */
+>> u32 mask1;
+>> u32 mask2;
+>> ....
+>>
+>> etc.
+>>
+>> Does that make sense now? :-)
+>>
+> 
+> Yes it does. Sorry for the oversight
+> 
+> - Mani
+> 
 
-Fix the overflow by using div64_u64() instead.
+No worries, it just happens to everyone from time to time :-)
 
-Fixes: 9d9ff3d2a4a5 ("phy: mediatek: hdmi: mt8195: fix wrong pll calculus")
-Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
----
- drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
-index 1426a2db984d..e6ee8e080022 100644
---- a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
-+++ b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
-@@ -290,7 +290,7 @@ static int mtk_hdmi_pll_calc(struct mtk_hdmi_phy *hdmi_phy, struct clk_hw *hw,
- 	posdiv2 = 1;
- 
- 	/* Digital clk divider, max /32 */
--	digital_div = div_u64(ns_hdmipll_ck, posdiv1 * posdiv2 * pixel_clk);
-+	digital_div = div64_u64(ns_hdmipll_ck, posdiv1 * posdiv2 * pixel_clk);
- 	if (!(digital_div <= 32 && digital_div >= 1))
- 		return -EINVAL;
- 
--- 
-2.55.0
-
+Cheers,
+Angelo
 
 -- 
 linux-phy mailing list
