@@ -4,54 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 695D4C88E4C
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Sep 2026 07:51:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99243C79FA1
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Sep 2026 07:52:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Utzhj+ttMYOojVz7tQU5Ky71Xjo2K06jn1K48YaPiUk=; b=jL/waQ8UMzQOMH
-	BaEibRDRqbQ7jc3NMyONvJNoyR6D1lv5YBJpOzTJarHbeLTagb99T1bm9dC5yZCE8qVllv7+n3zyl
-	CV3FS+rlSHlAdq70sZFq2BZVcmLthCbEWEWFuJd/utySACeJdFfLPzNqY5nmTgp5YqHT2EWUS3n+q
-	e72e58/ZQ+j/1FDphvfDHtgfMz1Rv4g8NcUn0PaCEptCEKwh9bu9PALbdEfQw5qLImNa+4EZxWI+w
-	tWVenTpPcxImLcm81ONK7hBfhY24b9pMCACqmVkVK7ihb2OCP/gKJ9/IGH4vaWQkTw2dszC3Vkjvf
-	VeAuNy6nUjgok2ruizjg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:
+	References:MIME-Version:In-Reply-To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=xw1qa1tRN3TanVt0kCehOEvFQfnpJW6suz4d0q0fkkE=; b=10uA6qFuD6pYtDlWEBJBk/nAet
+	EF+/HPhX2DLI1ND7z5oV0N84Bt60JnaLLR6C7zbOKiXQFVnbPEwm/AhdjZexIW8QbWxapCH7QeweW
+	zYDkMnbEdss3RujzvSlfetVljkQ9D8n3iPPjqguTbJxcDyqjnkhEF3zDYmAI/uL+/65wbeetugfWy
+	Psko3wDSJAAikl78XTPwLlV6RrFlgEmbnjwww2lA6FndAANEyRxRrj1VKRDoEpoNBtc2ZAOPSX/KR
+	vJj0zMEdCXxXW6oOojsmb/BYoNjFKVDAsKauRrdhPKnjt4yz4RR4/dmdAOQH47ddL1iupMUnOIk73
+	CYZ3tUsg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4w2n-0000000G4SE-0Udv;
-	Fri, 11 Sep 2026 07:51:33 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1x4w3h-0000000G4VB-1BjH;
+	Fri, 11 Sep 2026 07:52:29 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4w2m-0000000G4S6-1FyQ
+	id 1x4w3f-0000000G4V3-3SQa
 	for linux-phy@lists.infradead.org;
-	Fri, 11 Sep 2026 07:51:32 +0000
+	Fri, 11 Sep 2026 07:52:27 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id BF61140AE5;
-	Fri, 11 Sep 2026 07:51:31 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 48BC61F000FF;
-	Fri, 11 Sep 2026 07:51:31 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 119BE60216
+	for <linux-phy@lists.infradead.org>; Fri, 11 Sep 2026 07:52:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BBDAB1F008A4
+	for <linux-phy@lists.infradead.org>; Fri, 11 Sep 2026 07:52:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789113091;
-	bh=okg3TokBT9+oTqBqWFBGuSEM8HNU1T7RP163axqjBP8=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=F8OFhlcJozoo+sRBWmvgVJ+/q9AUIVezeemz0skMOqou2EUIg7CfPO60m1cxqQvy+
-	 8VaQXDW4TmUgtz0V78X80VFMObGaFUTCSVGPO4TmcJhdweUDTWfPiKC8V41VuT7E9G
-	 Kg7JTxE39RrRE+ITs6i63eCEK6ZcI89IkLhIXT+eqAGHQ6ICXbhOuKsprstCiVhj6L
-	 gscntUiP7psql3+fJnbocVJANX0bWgwDEhaWpYcxjoskDHaRd+7oZ8nDKbLjepw0Sr
-	 14cSNGhh6jSgwCdk3lHJ/AWIQrb3n/sz6AVmZwiHXohGurOfi9LYBllTWK4i4peCp1
-	 MF2OyRmAikQKg==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v2 1/2] phy: mediatek: phy-mtk-hdmi-mt8195: Fix PLL calc
- divisor overflow
-To: "AngeloGioacchino Del Regno" <angelogioacchino.delregno@collabora.com>
-Cc: olteanv@gmail.com, linux-phy@lists.infradead.org, neil.armstrong@linaro.org, dri-devel@lists.freedesktop.org, vkoul@kernel.org
-In-Reply-To: <20260911074015.9994-2-angelogioacchino.delregno@collabora.com>
-References: <20260911074015.9994-1-angelogioacchino.delregno@collabora.com>
- <20260911074015.9994-2-angelogioacchino.delregno@collabora.com>
-Date: Fri, 11 Sep 2026 07:51:30 +0000
-Message-Id: <20260911075131.48BC61F000FF@smtp.kernel.org>
+	s=k20260515; t=1789113146;
+	bh=4OecTWo/Y8Np5+0axosfwjg63A8XkkZPfbCZcvmBsZs=;
+	h=From:In-Reply-To:References:Date:Subject:To:Cc;
+	b=RdWbZKo5vzMG2G8ITBAMmjuSAOEtRGQ+Oe7Cz8j9SuE2hj0mV5WcJXbnJQb0t7CwM
+	 Xa/+/ZmsCgIrxT9VhtNXlOkJ14XMVBPNiAUDSfV1QTjC+a97SBov+l800uXzIFbaz7
+	 NgrVAgFEJuq41awaugDPFsNDgLI7JH6EWdsmLlkLzSv9Xq6e0kvG5/pwtZjb3wv+62
+	 BWa43n4HM4+iZmdquC9zHlxGUz7L1MbnWYh7oqrEgSEIvXzcuoAwFTUBuPATIUMhVF
+	 sM+cobtTGPtxSLias/stMmGQL2UWE6e3LNNJ/0o/hRCNlVJwa6jUG6snfd1fD1Sz8Z
+	 fO7tAbcc3DlKw==
+Received: by mail-lf1-f51.google.com with SMTP id 2adb3069b0e04-5b76679c0f2so639585e87.1
+        for <linux-phy@lists.infradead.org>; Fri, 11 Sep 2026 00:52:26 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AKwUvBxeIgSoFA54J1Qtyuv87Y/7dtLc/+o0rqQgxMAmdJ7nsMdHwadc8RY9W3vSENiz6jZp98rl8T1Ys9g=@lists.infradead.org
+X-Gm-Message-State: AFuF++mQhFtwvkYWLX7QWGp+k3N0izawnjBvApO4Nun7MeFeprgs8Rhz
+	S5CDvqDmkzBXVYUG9Hqdc3EHSCzlbNMLUtJScFIaAQZ4kBqNTJ1F99wsvyQ46uDAckNJJlsNyMx
+	ANsZc/Gj5/Pw5zZulXozXArAu1BSo+ybKhjixmpOB1g==
+X-Received: by 2002:a05:6512:3985:b0:5b6:184c:7da8 with SMTP id
+ 2adb3069b0e04-5b8a0319cbemr545468e87.49.1789113145366; Fri, 11 Sep 2026
+ 00:52:25 -0700 (PDT)
+Received: from 969154062570 named unknown by gmailapi.google.com with
+ HTTPREST; Fri, 11 Sep 2026 00:52:24 -0700
+Received: from 969154062570 named unknown by gmailapi.google.com with
+ HTTPREST; Fri, 11 Sep 2026 00:52:24 -0700
+From: Bartosz Golaszewski <brgl@kernel.org>
+In-Reply-To: <20260831-shikra-upstream-v2-1-406661d75afa@oss.qualcomm.com>
+MIME-Version: 1.0
+References: <20260831-shikra-upstream-v2-0-406661d75afa@oss.qualcomm.com> <20260831-shikra-upstream-v2-1-406661d75afa@oss.qualcomm.com>
+Date: Fri, 11 Sep 2026 00:52:24 -0700
+X-Gmail-Original-Message-ID: <CAMRc=Mcn-N57xLjvSMDpCvMi2j0XfwWYnxS9F5n+_byhU2-GDQ@mail.gmail.com>
+X-Gm-Features: AcwNN1XSGbuzsnev8U3uj75mzaFR2wp_Z_cABLAQ8sbelqvtbOt3aXcPWZLiJTw
+Message-ID: <CAMRc=Mcn-N57xLjvSMDpCvMi2j0XfwWYnxS9F5n+_byhU2-GDQ@mail.gmail.com>
+Subject: Re: [PATCH v2 1/5] dt-bindings: phy: sc8280xp-qmp-pcie: Document
+ Shikra PCIe phy
+To: Sushrut Shree Trivedi <sushrut.trivedi@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-pci@vger.kernel.org, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Bjorn Helgaas <bhelgaas@google.com>, Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+	=?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+	Manivannan Sadhasivam <mani@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>, Bartosz Golaszewski <brgl@kernel.org>, 
+	Konrad Dybcio <konradybcio@kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,57 +88,50 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
-IFtIaWdoXSBNdWx0aXBsaWNhdGlvbnMgaW52b2x2aW5nIGBNRUdBYCBhbmQgYEdJR0FgIG1hY3Jv
-cyBvdmVyZmxvdyBvbiAzMi1iaXQgYXJjaGl0ZWN0dXJlcywgYnJlYWtpbmcgY2xvY2sgY2FsY3Vs
-YXRpb25zLgotLQoKY29tbWl0IDgzYzcwYmNjZTAwMjg3ZDdlODgwYzYwYzUzZjMyMjU4MTU2ODEx
-N2QKQXV0aG9yOiBBbmdlbG9HaW9hY2NoaW5vIERlbCBSZWdubyA8YW5nZWxvZ2lvYWNjaGluby5k
-ZWxyZWdub0Bjb2xsYWJvcmEuY29tPgoKcGh5OiBtZWRpYXRlazogcGh5LW10ay1oZG1pLW10ODE5
-NTogRml4IFBMTCBjYWxjIGRpdmlzb3Igb3ZlcmZsb3cKCldoZW4gdHJ5aW5nIHRvIGNhbGN1bGF0
-ZSBhIFBMTCByYXRlIGZvciB0YXJnZXQgZGlzcGxheSByZXNvbHV0aW9ucwphYm92ZSAyNTYweDE0
-NDAsIDI0YnBwLCAzMEh6LCB0aGUgcGl4ZWwgY2xvY2sgdmFsdWUgd2lsbCBiZSBtb3JlCnRoYW4g
-MzItYml0cyBsb25nIGJ1dCB0aGUgZGl2aXNpb24gdG8gZmluYWxseSBjYWxjdWxhdGUgdGhlIGRp
-Z2l0YWwKY2xvY2sgZGl2aWRlciBpcyBiZWluZyBkb25lIHdpdGggZGl2X3U2NCgpLCB3aGljaCBl
-eHBlY3RzIGEgMzJiaXQKdW5zaWduZWQgZGl2aXNvci4KCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMv
-cGh5L21lZGlhdGVrL3BoeS1tdGstaGRtaS1tdDgxOTUuYyBiL2RyaXZlcnMvcGh5L21lZGlhdGVr
-L3BoeS1tdGstaGRtaS1tdDgxOTUuYwo+IGluZGV4IDE0MjZhMmRiOTg0ZDUuLmU2ZWU4ZTA4MDAy
-MjIgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9waHkvbWVkaWF0ZWsvcGh5LW10ay1oZG1pLW10ODE5
-NS5jCj4gKysrIGIvZHJpdmVycy9waHkvbWVkaWF0ZWsvcGh5LW10ay1oZG1pLW10ODE5NS5jCj4g
-QEAgLTI5MCw3ICsyOTAsNyBAQCBzdGF0aWMgaW50IG10a19oZG1pX3BsbF9jYWxjKHN0cnVjdCBt
-dGtfaGRtaV9waHkgKmhkbWlfcGh5LCBzdHJ1Y3QgY2xrX2h3ICpodywKPiAgCXBvc2RpdjIgPSAx
-Owo+ICAKPiAgCS8qIERpZ2l0YWwgY2xrIGRpdmlkZXIsIG1heCAvMzIgKi8KPiAtCWRpZ2l0YWxf
-ZGl2ID0gZGl2X3U2NChuc19oZG1pcGxsX2NrLCBwb3NkaXYxICogcG9zZGl2MiAqIHBpeGVsX2Ns
-ayk7Cj4gKwlkaWdpdGFsX2RpdiA9IGRpdjY0X3U2NChuc19oZG1pcGxsX2NrLCBwb3NkaXYxICog
-cG9zZGl2MiAqIHBpeGVsX2Nsayk7CgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgaXNuJ3QgYSBidWcg
-aW50cm9kdWNlZCBieSB0aGlzIHBhdGNoLCBidXQgc2luY2UgdGhpcyBwYXRjaCBmaXhlcwozMi1i
-aXQgb3ZlcmZsb3dzLCBjb3VsZCB0aGUgbXVsdGlwbGljYXRpb25zIGludm9sdmluZyBNRUdBIGFu
-ZCBHSUdBIGluCm10a19oZG1pX3BsbF9jYWxjKCkgYW5kIG10a19oZG1pX3BsbF9kcnZfc2V0dGlu
-ZygpIGFsc28gb3ZlcmZsb3cgb24gMzItYml0CmFyY2hpdGVjdHVyZXM/CgpJbiBkcml2ZXJzL3Bo
-eS9tZWRpYXRlay9waHktbXRrLWhkbWktbXQ4MTk1LmM6bXRrX2hkbWlfcGxsX2NhbGMoKSwgdGhl
-CmJvdW5kcyBjaGVja3MgdXNlIE1FR0EgYW5kIEdJR0E6CgogICAgZWxzZSBpZiAodG1kc19jbGsg
-Pj0gNTQgKiBNRUdBICYmICh0bWRzX2NsayAqIDEwMCkgPCAxNDgzNSAqIE1FR0EpCgphbmQ6Cgog
-ICAgaWYgKG5zX2hkbWlwbGxfY2sgPj0gNSAqIEdJR0EgJiYKICAgICAgICBuc19oZG1pcGxsX2Nr
-IDw9IDEyICogR0lHQSkKClNpbmNlIE1FR0EgYW5kIEdJR0EgYXJlIGRlZmluZWQgd2l0aCB0aGUg
-VUwgc3VmZml4IGluIDxsaW51eC91bml0cy5oPiwgZG8KdmFsdWVzIGxpa2UgMTQ4MzUgKiBNRUdB
-IGFuZCA1ICogR0lHQSBzaWxlbnRseSB3cmFwIGFyb3VuZCB3aGVuIGV2YWx1YXRlZCBhcwozMi1i
-aXQgdW5zaWduZWQgbG9uZyB2YWx1ZXMgKGUuZy4sIDE0ODM1ICogTUVHQSBiZWNvbWluZyB+MS45
-NSBiaWxsaW9uKT8KClNpbWlsYXJseSwgaW4gbXRrX2hkbWlfcGxsX2Rydl9zZXR0aW5nKCk6Cgog
-ICAgfSBlbHNlIGlmICgoKHU2NClwaXhlbF9jbGsgKiAxMDAwKSA+PSA3NDE3NSAqIE1FR0EgJiYg
-cGl4ZWxfY2xrIDw9IDMwMCAqIE1FR0EpIHsKCldvdWxkIDc0MTc1ICogTUVHQSB3cmFwIHRvIH4x
-LjEzIGJpbGxpb24gb24gMzItYml0IGJ1aWxkcyBpbnN0ZWFkIG9mIDc0LjEKYmlsbGlvbiwgcG90
-ZW50aWFsbHkgaW50ZXJjZXB0aW5nIGNvbmRpdGlvbnMgdGhhdCBzaG91bGQgZmFsbCB0byBhIGRp
-ZmZlcmVudAppbXBlZGFuY2UgY29uZmlndXJhdGlvbiBibG9jaz8KCj4gIAlpZiAoIShkaWdpdGFs
-X2RpdiA8PSAzMiAmJiBkaWdpdGFsX2RpdiA+PSAxKSkKPiAgCQlyZXR1cm4gLUVJTlZBTDsKPgoK
-LS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8y
-MDI2MDkxMTA3NDAxNS45OTk0LTEtYW5nZWxvZ2lvYWNjaGluby5kZWxyZWdub0Bjb2xsYWJvcmEu
-Y29tP3BhcnQ9MQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtcGh5Cg==
+On Mon, 31 Aug 2026 09:26:01 +0200, Sushrut Shree Trivedi
+<sushrut.trivedi@oss.qualcomm.com> said:
+> Document the compatible of the Shikra PCIe phy which supports
+> Gen2x1.
+>
+> Signed-off-by: Sushrut Shree Trivedi <sushrut.trivedi@oss.qualcomm.com>
+> ---
+>  Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml | 2 ++
+>  1 file changed, 2 insertions(+)
+>
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> index 108cf9dc86ea..b9b0fa26347b 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> @@ -34,6 +34,7 @@ properties:
+>        - qcom,sdm845-qmp-pcie-phy
+>        - qcom,sdx55-qmp-pcie-phy
+>        - qcom,sdx65-qmp-gen4x2-pcie-phy
+> +      - qcom,shikra-qmp-gen2x1-pcie-phy
+>        - qcom,sm8150-qmp-gen3x1-pcie-phy
+>        - qcom,sm8150-qmp-gen3x2-pcie-phy
+>        - qcom,sm8250-qmp-gen3x1-pcie-phy
+> @@ -166,6 +167,7 @@ allOf:
+>                - qcom,sdm845-qhp-pcie-phy
+>                - qcom,sdm845-qmp-pcie-phy
+>                - qcom,sdx55-qmp-pcie-phy
+> +              - qcom,shikra-qmp-gen2x1-pcie-phy
+>                - qcom,sm8150-qmp-gen3x1-pcie-phy
+>                - qcom,sm8150-qmp-gen3x2-pcie-phy
+>                - qcom,sm8250-qmp-gen3x1-pcie-phy
+>
+> --
+> 2.43.0
+>
+>
+
+Reviewed-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
