@@ -4,69 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A3FEC88E50
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Sep 2026 07:36:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC7A4C79FA1
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Sep 2026 07:40:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RlhsWXAzlrs3aylZHYTNx3togEEsojKrF1tg/eMzntM=; b=yBtlrAipzfj87p
-	AFIdgaNU1Q92vCdO8tNba9BzcrQRho3FvCBPFcz3vHk/HB+RUwcfXq3wqvxQwncDLkODrPpgohC2P
-	pbtlh9tchQYeGrK8OyKqCvONvDuv2Lql7ETG3b6o+V00Rj36aYe5tQpApnRNTw5Z7uYEgE6VAQ6AM
-	0AfbbMy/sIlYcqzqR2ev9+I68jHwPNv1VIvKBsHQtnpJIggUwY4d9aX1hn7x2rv44B6kTdG3YiS3A
-	RtIIpJooOXdFtBpHvQyZX74Gtqg2a9STORVCcJ7/XRBHC8DlzolCKyj36vJotUUh4HrS3/lw05YFu
-	m+D+5tKO+k9oIaeCvoxA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=uca7dpcJYvOoacSSRPUlEiXmWGlixRB2TPMzEQ2nYWE=; b=hLHxsP9GsXuh+M
+	8YgMI7nrwx2mwZ3wkbxfkk6AXz9J6Oo2hHjV5EQ0s88PWgnz8O1W9fT45rTo3PIkJkZoP7PmOrBUs
+	ODjJKufkp6ZRQRcqhOaVuI+Yy5UDyeA5bu7BJDLQdWBk3Gl149703KO8iLNOaahJyGQtVKp/zK7k6
+	KSjThI4c/TrSypHgPgZ5Bgfx1xaaO/yTi7tVliKQVgRUvspKxvomjV3SLHj7WQHIeVFjR4z0KHqf+
+	6CAIwDbEvrtymfW+bbV1DxCI9Jwhyq2oVx3bhyA9rwg9BwhRFMkqyPorJSc2kubke2mQZ0KBUC2x5
+	fcZrdwxk8fT0S2zxfkAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4voF-0000000G2Yh-1kG7;
-	Fri, 11 Sep 2026 07:36:31 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1x4vsZ-0000000G2w4-2Br0;
+	Fri, 11 Sep 2026 07:40:59 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4voC-0000000G2Xj-3XWA;
-	Fri, 11 Sep 2026 07:36:30 +0000
+	id 1x4vsT-0000000G2uG-2ubT;
+	Fri, 11 Sep 2026 07:40:54 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1789112186;
-	bh=fsWO5RfUtrwYBghqZbddt7joHj5CDeK4xYY0+hFA124=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=Qkaji6DEBChYB6Y1WQhTLVJgKyo3Ywqi8KCx2nY3VQm2QuhK6l0yLy/DVuZeBbHf7
-	 Qkg9/u23+zPY1aMuhsNdEnkZ/84v/EInCLzKV/hnd9Ga1Og8FQ9WLKpR86/Dbghy1v
-	 OKo+pptyBeZ7pFKyQYQydwrnBZlKxoM8U6Kk1wx33TeXEIo9K8XLNIIWyGgOn951Q5
-	 HB1s6+cEDdbFopVBRAxAEeJo61OYb3IUwWtM+gqVapJkHRCFfx6h+M3UwP4B9o965U
-	 AwOaXyKI/9gJOD0VBpfQiGL0H8BLP1L5VGAXqJ4k2K44w5jxUunabAzBmcaJieRDLE
-	 iBfpIEDY2850w==
-Received: from [100.64.1.21] (unknown [100.64.1.21])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	s=mail; t=1789112450;
+	bh=gE/jHP8gTYltHtoq9vjJf5UmZ3FyBmWyEI0DU0Oipdg=;
+	h=From:To:Cc:Subject:Date:From;
+	b=IPvibgt5syh3io60FRSLggF3IfOY+RTY1kaEhmIJ2kFJYD1XTxnRzUw70IKMIOIvE
+	 HN6GXoRnzB+M5ksMQgeg0bPaC+yRyIFWvm8JjCJCRgQF4xFrAZpcagbSYp5s2RxbwW
+	 6J9WP6WArQyX7EWu/YGDijCy5eR1wa6DigP+4+pH3nnzwz330gQesNCmDc+2LEqM7c
+	 VN2ksnKCRZuIQfwdw0K0kzHmDSEyA90NYZzj7LULnSUnSbBgICRfZVfEOj2crc3uRz
+	 FoPzPJO/VCnIyRGvZimLW2FjpEi27gX9uFDZ+GvJvEr5AR6KUIgQnlWxTnyEQMWlxS
+	 Q0cPu1PWP7XIQ==
+Received: from IcarusMOD.eternityproject.eu (unknown [100.64.1.21])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 77FA917E0260;
-	Fri, 11 Sep 2026 09:36:25 +0200 (CEST)
-Message-ID: <8fc8791a-911b-4c17-b291-5bdd468335ce@collabora.com>
-Date: Fri, 11 Sep 2026 09:36:24 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/2] phy: mediatek: phy-mtk-hdmi-mt8195: Fix TMDS clk bit
- ratio setting
-To: Manivannan Sadhasivam <mani@kernel.org>
-Cc: chunfeng.yun@mediatek.com, p.zabel@pengutronix.de,
- chunkuang.hu@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org,
- matthias.bgg@gmail.com, granquet@baylibre.com, justin.yeh@mediatek.com,
- dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, kernel@collabora.com
-References: <20260701121936.19407-1-angelogioacchino.delregno@collabora.com>
- <20260701121936.19407-3-angelogioacchino.delregno@collabora.com>
- <5bmxa4pcwkiemubwfjun3dti4szu66gnxe6yw2pudq3wplpc23@inyswc2bdlhw>
- <cb72ff50-b62f-47fe-af40-d38558bdff6e@collabora.com>
- <pptwnkay4jvyom2ihwtice7usgndsw2fnffkbenkg7gyjejure@4y2znrvtmbtg>
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 27C0317E080A;
+	Fri, 11 Sep 2026 09:40:50 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Content-Language: en-US
-In-Reply-To: <pptwnkay4jvyom2ihwtice7usgndsw2fnffkbenkg7gyjejure@4y2znrvtmbtg>
+To: vkoul@kernel.org
+Cc: chunfeng.yun@mediatek.com,
+	p.zabel@pengutronix.de,
+	chunkuang.hu@kernel.org,
+	neil.armstrong@linaro.org,
+	matthias.bgg@gmail.com,
+	angelogioacchino.delregno@collabora.com,
+	granquet@baylibre.com,
+	justin.yeh@mediatek.com,
+	dri-devel@lists.freedesktop.org,
+	linux-mediatek@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	kernel@collabora.com
+Subject: [PATCH v2 0/2] MediaTek MT8195 HDMI PHY Fixes
+Date: Fri, 11 Sep 2026 09:40:13 +0200
+Message-ID: <20260911074015.9994-1-angelogioacchino.delregno@collabora.com>
+X-Mailer: git-send-email 2.55.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260911_003629_046619_752B24A6 
-X-CRM114-Status: GOOD (  11.83  )
+X-CRM114-CacheID: sfid-20260911_004053_882544_6161A1AA 
+X-CRM114-Status: UNSURE (   8.90  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,44 +79,36 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 9/11/26 07:11, Manivannan Sadhasivam wrote:
-> On Thu, Sep 10, 2026 at 10:39:06AM +0200, AngeloGioacchino Del Regno wrote:
->> On 9/9/26 17:06, Manivannan Sadhasivam wrote:
->>> On Wed, Jul 01, 2026 at 02:19:36PM +0200, AngeloGioacchino Del Regno wrote:
->>>> The comment in the mtk_phy_tmds_clk_ratio() function clearly and
->>>> correctly explains that the TMDS ratio has to be 1/10 for data
->>>> rates under 3.4Gbps, and 1/40 over that.
->>>>
->>>> Unfortunately though, the TXC_DIV register setting was wrong, as
->>>> in value 3 means to divide by 8 and, in order to achieve the in
->>>> spec 1/40 (tmds) data rate, this has to divide by 4 instead!
->>>> In order to achieve the correct 1/40 (tmds) data rate, this has
->>>
->>> This statement is cut-off!
->>>
->>
->> Oh oops. It's just a forgotten line that has to be removed....
->>
->> Should I resend or can you simply remove the line
->> "In order to achieve the correct 1/40 (tmds) data rate, this has"
->> while applying?
->>
-> 
-> I do not apply the patches, only Vinod does. It would help if you can just
-> send a next version with this change and tags.
-> 
-> - Mani
-> 
+Changes in v2:
+ - Fixed commit description of patch [2/2] (Mani)
 
-Sure, will send v2 in a jiffy.
+This series adds two fixes for the MT8195-class HDMI PHY, found in
+MT8195, MT8188 and Genio variants.
 
-Cheers,
-Angelo
+This is fixing PLL calculation, and TMDS clock dividers, to achieve
+all of the modes requiring data rates higher than 3.4Gbps, with the
+successfully tested target being 3840x2160@60Hz.
+
+This was tested on MT8395 MediaTek Genio 1200, Radxa NIO-12L and on
+MT8390 MediaTek Genio 700, with 3 different HDMI displays (two TVs
+and a 4k LG workstation display).
+
+AngeloGioacchino Del Regno (2):
+  phy: mediatek: phy-mtk-hdmi-mt8195: Fix PLL calc divisor overflow
+  phy: mediatek: phy-mtk-hdmi-mt8195: Fix TMDS clk bit ratio setting
+
+ drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c | 4 ++--
+ drivers/phy/mediatek/phy-mtk-hdmi-mt8195.h | 3 +++
+ 2 files changed, 5 insertions(+), 2 deletions(-)
+
+-- 
+2.55.0
+
 
 -- 
 linux-phy mailing list
