@@ -4,8 +4,8 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99243C79FA1
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Sep 2026 07:52:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F64AC88E4C
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Sep 2026 07:52:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -13,59 +13,58 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:MIME-Version:In-Reply-To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=xw1qa1tRN3TanVt0kCehOEvFQfnpJW6suz4d0q0fkkE=; b=10uA6qFuD6pYtDlWEBJBk/nAet
-	EF+/HPhX2DLI1ND7z5oV0N84Bt60JnaLLR6C7zbOKiXQFVnbPEwm/AhdjZexIW8QbWxapCH7QeweW
-	zYDkMnbEdss3RujzvSlfetVljkQ9D8n3iPPjqguTbJxcDyqjnkhEF3zDYmAI/uL+/65wbeetugfWy
-	Psko3wDSJAAikl78XTPwLlV6RrFlgEmbnjwww2lA6FndAANEyRxRrj1VKRDoEpoNBtc2ZAOPSX/KR
-	vJj0zMEdCXxXW6oOojsmb/BYoNjFKVDAsKauRrdhPKnjt4yz4RR4/dmdAOQH47ddL1iupMUnOIk73
-	CYZ3tUsg==;
+	bh=2khJq1UuG4iVz8jVC1/VUxl7FqWPRYXMNFItuI42HwM=; b=TL8TouEev5B9PT43tgqc8OrMSR
+	x7JgP960RRVXJX3UdDGDFnDdkKiRNlQt1UTpZyzG/JIUJFvV3oUc4eHqUov6tQ+IDsUKoh3o89w5W
+	HyD/l29E/8Q7deWm3d+BFq5Y7Lf7ilhKDM4D96okFw6OFxna1GoBpwpo5Boarwb/c0/+trQqY7Ej3
+	4MomSRl5ySZBIIN9d3PCzXTTJ5zeSP8gpLtR+dTH7UX/ZUO0OicjDrnAqPLLcYKl8HhvjWUzWSxDK
+	966rBeCXJ5pyNqsaYCyJo/rj5niIHJ/ePoBCbyAxOlivkfl4bwf+X2xGGSX/Hk8BNIWxowAdmBW7P
+	DlvgeHqw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4w3h-0000000G4VB-1BjH;
-	Fri, 11 Sep 2026 07:52:29 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1x4w3x-0000000G4Wc-1UoL;
+	Fri, 11 Sep 2026 07:52:45 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4w3f-0000000G4V3-3SQa
+	id 1x4w3w-0000000G4WW-1wDN
 	for linux-phy@lists.infradead.org;
-	Fri, 11 Sep 2026 07:52:27 +0000
+	Fri, 11 Sep 2026 07:52:44 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 119BE60216
-	for <linux-phy@lists.infradead.org>; Fri, 11 Sep 2026 07:52:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BBDAB1F008A4
-	for <linux-phy@lists.infradead.org>; Fri, 11 Sep 2026 07:52:26 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 9FD5C6022F
+	for <linux-phy@lists.infradead.org>; Fri, 11 Sep 2026 07:52:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 156591F008AB
+	for <linux-phy@lists.infradead.org>; Fri, 11 Sep 2026 07:52:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789113146;
-	bh=4OecTWo/Y8Np5+0axosfwjg63A8XkkZPfbCZcvmBsZs=;
+	s=k20260515; t=1789113163;
+	bh=mAy/mjo9ky8p0zKdUD9C54wYiJlR2G9xib1258FjWlg=;
 	h=From:In-Reply-To:References:Date:Subject:To:Cc;
-	b=RdWbZKo5vzMG2G8ITBAMmjuSAOEtRGQ+Oe7Cz8j9SuE2hj0mV5WcJXbnJQb0t7CwM
-	 Xa/+/ZmsCgIrxT9VhtNXlOkJ14XMVBPNiAUDSfV1QTjC+a97SBov+l800uXzIFbaz7
-	 NgrVAgFEJuq41awaugDPFsNDgLI7JH6EWdsmLlkLzSv9Xq6e0kvG5/pwtZjb3wv+62
-	 BWa43n4HM4+iZmdquC9zHlxGUz7L1MbnWYh7oqrEgSEIvXzcuoAwFTUBuPATIUMhVF
-	 sM+cobtTGPtxSLias/stMmGQL2UWE6e3LNNJ/0o/hRCNlVJwa6jUG6snfd1fD1Sz8Z
-	 fO7tAbcc3DlKw==
-Received: by mail-lf1-f51.google.com with SMTP id 2adb3069b0e04-5b76679c0f2so639585e87.1
-        for <linux-phy@lists.infradead.org>; Fri, 11 Sep 2026 00:52:26 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AKwUvBxeIgSoFA54J1Qtyuv87Y/7dtLc/+o0rqQgxMAmdJ7nsMdHwadc8RY9W3vSENiz6jZp98rl8T1Ys9g=@lists.infradead.org
-X-Gm-Message-State: AFuF++mQhFtwvkYWLX7QWGp+k3N0izawnjBvApO4Nun7MeFeprgs8Rhz
-	S5CDvqDmkzBXVYUG9Hqdc3EHSCzlbNMLUtJScFIaAQZ4kBqNTJ1F99wsvyQ46uDAckNJJlsNyMx
-	ANsZc/Gj5/Pw5zZulXozXArAu1BSo+ybKhjixmpOB1g==
-X-Received: by 2002:a05:6512:3985:b0:5b6:184c:7da8 with SMTP id
- 2adb3069b0e04-5b8a0319cbemr545468e87.49.1789113145366; Fri, 11 Sep 2026
- 00:52:25 -0700 (PDT)
+	b=nBCejXNQsWQR/kbP8ofYrcVfv2aqnR/3tYIIQUNpPeUU/OvtlVDSgmWDJN8kto6zT
+	 WjZ7krJVZ75zGCFIpW1Sn03CQhjNWofZQyPD7gvktU7uNfWxymEyLEu4lrwtm5fclM
+	 pCpsZM+7a4Hw7C2c4JhTqEDh4s50/Z1V99+0m1tVOFgytvKNW6uLLAinunCFH7QxWt
+	 qZINxZfKBI4bD84Qm6jzD8TkEDuXYWMOY2rcSsKIJMS+bRGvsxVIUhPjN8M2CEZxV2
+	 DNyJwOF4FWXsAfAX8YuBfhkvM7s3UXYq7qpmOwJ001w5/HVHv7wEp64Zt7VCFhiZ6m
+	 6B69oVXtJzFDQ==
+Received: by mail-lj1-f182.google.com with SMTP id 38308e7fff4ca-3a2b4743936so4672091fa.0
+        for <linux-phy@lists.infradead.org>; Fri, 11 Sep 2026 00:52:43 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AKwUvBwCwZmBdl1849XvDvhytiUYmdVjIJh6IL2M7IiVxemrJPs4byZeSOvqYHojr1qUkvtsITx+YvXYKCA=@lists.infradead.org
+X-Gm-Message-State: AFuF++kWSu/j61zh852BitptZI1Qi81LpdqWAgwtaU+VgrW7VYq0iO9q
+	y0P4XR29dpSL+v/NjdwXhgYG5DNq1pqbeVPOXBYXNi9KBOt6i2ewAH2BsOum4z6E2vbTJot6BJS
+	rqcd1R2SGS2cEXc4TOTFeiuyW0s/wr682XWEDS7L2tQ==
+X-Received: by 2002:a05:651c:43c4:20b0:3a3:7682:49a7 with SMTP id
+ 38308e7fff4ca-3a5a5291cf0mr2127591fa.28.1789113161739; Fri, 11 Sep 2026
+ 00:52:41 -0700 (PDT)
 Received: from 969154062570 named unknown by gmailapi.google.com with
- HTTPREST; Fri, 11 Sep 2026 00:52:24 -0700
+ HTTPREST; Fri, 11 Sep 2026 00:52:40 -0700
 Received: from 969154062570 named unknown by gmailapi.google.com with
- HTTPREST; Fri, 11 Sep 2026 00:52:24 -0700
+ HTTPREST; Fri, 11 Sep 2026 00:52:40 -0700
 From: Bartosz Golaszewski <brgl@kernel.org>
-In-Reply-To: <20260831-shikra-upstream-v2-1-406661d75afa@oss.qualcomm.com>
+In-Reply-To: <20260831-shikra-upstream-v2-4-406661d75afa@oss.qualcomm.com>
 MIME-Version: 1.0
-References: <20260831-shikra-upstream-v2-0-406661d75afa@oss.qualcomm.com> <20260831-shikra-upstream-v2-1-406661d75afa@oss.qualcomm.com>
-Date: Fri, 11 Sep 2026 00:52:24 -0700
-X-Gmail-Original-Message-ID: <CAMRc=Mcn-N57xLjvSMDpCvMi2j0XfwWYnxS9F5n+_byhU2-GDQ@mail.gmail.com>
-X-Gm-Features: AcwNN1XSGbuzsnev8U3uj75mzaFR2wp_Z_cABLAQ8sbelqvtbOt3aXcPWZLiJTw
-Message-ID: <CAMRc=Mcn-N57xLjvSMDpCvMi2j0XfwWYnxS9F5n+_byhU2-GDQ@mail.gmail.com>
-Subject: Re: [PATCH v2 1/5] dt-bindings: phy: sc8280xp-qmp-pcie: Document
- Shikra PCIe phy
+References: <20260831-shikra-upstream-v2-0-406661d75afa@oss.qualcomm.com> <20260831-shikra-upstream-v2-4-406661d75afa@oss.qualcomm.com>
+Date: Fri, 11 Sep 2026 00:52:40 -0700
+X-Gmail-Original-Message-ID: <CAMRc=Mf=s2Q8z165ufJjj70TZPv7TFFF3b8QaTh1Uiz4r-64Og@mail.gmail.com>
+X-Gm-Features: AcwNN1WYfbMG0innksiJiNzSA1WdoA4NxNphoNZxr1Iyd160wvFBkOcClMlPLKs
+Message-ID: <CAMRc=Mf=s2Q8z165ufJjj70TZPv7TFFF3b8QaTh1Uiz4r-64Og@mail.gmail.com>
+Subject: Re: [PATCH v2 4/5] phy: qcom: qmp-pcie: Add QMP PCIe PHY support for Shikra
 To: Sushrut Shree Trivedi <sushrut.trivedi@oss.qualcomm.com>
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
@@ -93,41 +92,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 31 Aug 2026 09:26:01 +0200, Sushrut Shree Trivedi
+On Mon, 31 Aug 2026 09:26:04 +0200, Sushrut Shree Trivedi
 <sushrut.trivedi@oss.qualcomm.com> said:
-> Document the compatible of the Shikra PCIe phy which supports
-> Gen2x1.
+> Add QMP PCIe PHY Gen2x1 support.
 >
 > Signed-off-by: Sushrut Shree Trivedi <sushrut.trivedi@oss.qualcomm.com>
 > ---
->  Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml | 2 ++
->  1 file changed, 2 insertions(+)
->
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> index 108cf9dc86ea..b9b0fa26347b 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> @@ -34,6 +34,7 @@ properties:
->        - qcom,sdm845-qmp-pcie-phy
->        - qcom,sdx55-qmp-pcie-phy
->        - qcom,sdx65-qmp-gen4x2-pcie-phy
-> +      - qcom,shikra-qmp-gen2x1-pcie-phy
->        - qcom,sm8150-qmp-gen3x1-pcie-phy
->        - qcom,sm8150-qmp-gen3x2-pcie-phy
->        - qcom,sm8250-qmp-gen3x1-pcie-phy
-> @@ -166,6 +167,7 @@ allOf:
->                - qcom,sdm845-qhp-pcie-phy
->                - qcom,sdm845-qmp-pcie-phy
->                - qcom,sdx55-qmp-pcie-phy
-> +              - qcom,shikra-qmp-gen2x1-pcie-phy
->                - qcom,sm8150-qmp-gen3x1-pcie-phy
->                - qcom,sm8150-qmp-gen3x2-pcie-phy
->                - qcom,sm8250-qmp-gen3x1-pcie-phy
->
-> --
-> 2.43.0
->
->
 
 Reviewed-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 
