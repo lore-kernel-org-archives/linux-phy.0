@@ -4,59 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38C06C79FA1
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Sep 2026 05:39:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A3FEC88E50
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Sep 2026 07:36:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hZ/pb2QKvmILwdyt7RkWg0mJLiA+MkX54Ec5FCOiEog=; b=Caw8IgIj0vAqtJ
-	tIJVmYkbRs/joFQtsT/Ex/5bj1SO9/aeEK4V2uf5dh3yhusnTq1QhIslcWqA9oeE4mowwHzQ04pm1
-	VJCsP6SzeuQe7YITS/z5PlT/+I9N5YrNogwSRYl4RK4lvHPvrxf7UAVw0lbI8d1jL/pJn4miuoYiF
-	M9ethVwCVemexyTA36TMvE5RaICQxmkqTkUiGmhmKfx+/H6gSPJl4eXjJUQolI4Yv5dFHiyyKZeEB
-	l8xja2zfPBYfkoKTG5pWZzLVORxNeI8iFlOA/A4KOs/YNYCcf50ztghI8mO6kydnVByDCGpA4+/qi
-	hYlze2srHMSKEaL3CAHQ==;
+	List-Owner; bh=RlhsWXAzlrs3aylZHYTNx3togEEsojKrF1tg/eMzntM=; b=yBtlrAipzfj87p
+	AFIdgaNU1Q92vCdO8tNba9BzcrQRho3FvCBPFcz3vHk/HB+RUwcfXq3wqvxQwncDLkODrPpgohC2P
+	pbtlh9tchQYeGrK8OyKqCvONvDuv2Lql7ETG3b6o+V00Rj36aYe5tQpApnRNTw5Z7uYEgE6VAQ6AM
+	0AfbbMy/sIlYcqzqR2ev9+I68jHwPNv1VIvKBsHQtnpJIggUwY4d9aX1hn7x2rv44B6kTdG3YiS3A
+	RtIIpJooOXdFtBpHvQyZX74Gtqg2a9STORVCcJ7/XRBHC8DlzolCKyj36vJotUUh4HrS3/lw05YFu
+	m+D+5tKO+k9oIaeCvoxA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4tyq-0000000FtLu-3n3A;
-	Fri, 11 Sep 2026 05:39:20 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1x4voF-0000000G2Yh-1kG7;
+	Fri, 11 Sep 2026 07:36:31 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4typ-0000000FtLn-1vHB
-	for linux-phy@lists.infradead.org;
-	Fri, 11 Sep 2026 05:39:19 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id DE1CA601EF;
-	Fri, 11 Sep 2026 05:39:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E56B11F000FF;
-	Fri, 11 Sep 2026 05:39:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789105158;
-	bh=O8ONJipxGHTu0R8c/Grz0xo9ahF6qMivmSfFqfS4fUY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=DusSIJc064NNLBF+WWfg2lr3ztsalS0ns16iCsnVV5pWEw72ch0zfnswhElCMLcIU
-	 Sr/hG5w1oaxR5b2pJKECg8BMR/4kpv6xLx5eq3/WHA6tMGpKJ9e4Bipu8wPWn7T9dV
-	 bJ3/LVxr4rqfg3LldpC71b/zk3FtCfw52IGtCB62taOZ4/BJOPU46+EaZRGVs4keWG
-	 w1El4lS2ipSzZ5Y5F8VfmiFFHeix50IoNXD0ylzJoVjb/zD7mxH6+hSwpUV8p5IFK/
-	 0i/OhO1FPpwT7eOLCYUzT7zwPR4Ff04glReK0oMeiY1YR6ZBgoQmW63wMpW87mNZPj
-	 K2w8s0/J2NTCw==
-Date: Fri, 11 Sep 2026 07:39:12 +0200
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Nabige Aala <nabige.aala@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, Ritesh Kumar <ritesh.kumar@oss.qualcomm.com>, 
-	Mahadevan P <mahadevan.p@oss.qualcomm.com>
-Subject: Re: [PATCH v4 9/9] phy: qualcomm: qmp-combo: Fix error propagation
- in qmp_combo_dp_power_on()
-Message-ID: <z5ufkalh5jlornxfjhosnb5he37trrliyfyl4qs6hug5ju23rp@g3o5h4bqrtj7>
-References: <20260908-glymur-phy-v3-v4-0-ff22e5150538@oss.qualcomm.com>
- <20260908-glymur-phy-v3-v4-9-ff22e5150538@oss.qualcomm.com>
+	id 1x4voC-0000000G2Xj-3XWA;
+	Fri, 11 Sep 2026 07:36:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1789112186;
+	bh=fsWO5RfUtrwYBghqZbddt7joHj5CDeK4xYY0+hFA124=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=Qkaji6DEBChYB6Y1WQhTLVJgKyo3Ywqi8KCx2nY3VQm2QuhK6l0yLy/DVuZeBbHf7
+	 Qkg9/u23+zPY1aMuhsNdEnkZ/84v/EInCLzKV/hnd9Ga1Og8FQ9WLKpR86/Dbghy1v
+	 OKo+pptyBeZ7pFKyQYQydwrnBZlKxoM8U6Kk1wx33TeXEIo9K8XLNIIWyGgOn951Q5
+	 HB1s6+cEDdbFopVBRAxAEeJo61OYb3IUwWtM+gqVapJkHRCFfx6h+M3UwP4B9o965U
+	 AwOaXyKI/9gJOD0VBpfQiGL0H8BLP1L5VGAXqJ4k2K44w5jxUunabAzBmcaJieRDLE
+	 iBfpIEDY2850w==
+Received: from [100.64.1.21] (unknown [100.64.1.21])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 77FA917E0260;
+	Fri, 11 Sep 2026 09:36:25 +0200 (CEST)
+Message-ID: <8fc8791a-911b-4c17-b291-5bdd468335ce@collabora.com>
+Date: Fri, 11 Sep 2026 09:36:24 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260908-glymur-phy-v3-v4-9-ff22e5150538@oss.qualcomm.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 2/2] phy: mediatek: phy-mtk-hdmi-mt8195: Fix TMDS clk bit
+ ratio setting
+To: Manivannan Sadhasivam <mani@kernel.org>
+Cc: chunfeng.yun@mediatek.com, p.zabel@pengutronix.de,
+ chunkuang.hu@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org,
+ matthias.bgg@gmail.com, granquet@baylibre.com, justin.yeh@mediatek.com,
+ dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, kernel@collabora.com
+References: <20260701121936.19407-1-angelogioacchino.delregno@collabora.com>
+ <20260701121936.19407-3-angelogioacchino.delregno@collabora.com>
+ <5bmxa4pcwkiemubwfjun3dti4szu66gnxe6yw2pudq3wplpc23@inyswc2bdlhw>
+ <cb72ff50-b62f-47fe-af40-d38558bdff6e@collabora.com>
+ <pptwnkay4jvyom2ihwtice7usgndsw2fnffkbenkg7gyjejure@4y2znrvtmbtg>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+In-Reply-To: <pptwnkay4jvyom2ihwtice7usgndsw2fnffkbenkg7gyjejure@4y2znrvtmbtg>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260911_003629_046619_752B24A6 
+X-CRM114-Status: GOOD (  11.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,18 +78,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCBTZXAgMDgsIDIwMjYgYXQgMDc6MzE6MDJQTSArMDUzMCwgTmFiaWdlIEFhbGEgd3Jv
-dGU6Cj4gVGhlIGNvbmZpZ3VyZV9kcF9waHkoKSBjYWxsYmFjayBjYW4gcmV0dXJuIGFuIGVycm9y
-IChlLmcuIC1FVElNRURPVVQgb24KPiBQTEwgbG9jayBmYWlsdXJlKSwgYnV0IHFtcF9jb21ib19k
-cF9wb3dlcl9vbigpIHdhcyBpZ25vcmluZyB0aGUgcmV0dXJuCj4gdmFsdWUgYW5kIGFsd2F5cyBy
-ZXR1cm5pbmcgMC4KPiAKPiBDYXB0dXJlIHRoZSByZXR1cm4gdmFsdWUsIHNraXAgc2V0dGluZyBk
-cF9wb3dlcmVkX29uIG9uIGZhaWx1cmUsIGFuZAo+IHByb3BhZ2F0ZSB0aGUgZXJyb3IgdG8gdGhl
-IGNhbGxlci4KPiAKCk1pc3NpbmcgRml4ZXMgdGFnLgoKLSBNYW5pCgotLSAK4K6u4K6j4K6/4K61
-4K6j4K+N4K6j4K6p4K+NIOCumuCupOCuvuCumuCuv+CuteCuruCvjQoKLS0gCmxpbnV4LXBoeSBt
-YWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 9/11/26 07:11, Manivannan Sadhasivam wrote:
+> On Thu, Sep 10, 2026 at 10:39:06AM +0200, AngeloGioacchino Del Regno wrote:
+>> On 9/9/26 17:06, Manivannan Sadhasivam wrote:
+>>> On Wed, Jul 01, 2026 at 02:19:36PM +0200, AngeloGioacchino Del Regno wrote:
+>>>> The comment in the mtk_phy_tmds_clk_ratio() function clearly and
+>>>> correctly explains that the TMDS ratio has to be 1/10 for data
+>>>> rates under 3.4Gbps, and 1/40 over that.
+>>>>
+>>>> Unfortunately though, the TXC_DIV register setting was wrong, as
+>>>> in value 3 means to divide by 8 and, in order to achieve the in
+>>>> spec 1/40 (tmds) data rate, this has to divide by 4 instead!
+>>>> In order to achieve the correct 1/40 (tmds) data rate, this has
+>>>
+>>> This statement is cut-off!
+>>>
+>>
+>> Oh oops. It's just a forgotten line that has to be removed....
+>>
+>> Should I resend or can you simply remove the line
+>> "In order to achieve the correct 1/40 (tmds) data rate, this has"
+>> while applying?
+>>
+> 
+> I do not apply the patches, only Vinod does. It would help if you can just
+> send a next version with this change and tags.
+> 
+> - Mani
+> 
+
+Sure, will send v2 in a jiffy.
+
+Cheers,
+Angelo
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
