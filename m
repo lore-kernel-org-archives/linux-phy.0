@@ -4,96 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23965C88E59
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Sep 2026 15:38:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F84CC88E58
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Sep 2026 15:38:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gxRrUL4SQ8h+1Zd9JF2i/pxiqZW6AoVMimgjYlkRWmE=; b=rCLdBz1TQDJ4yT
-	FUZLY4F/N01IvLVRSOj/ygUqi0+wMtKgQAbkH8D2RKMM1meDgEGHtbvAgfhGQ6/o1rD1JdbWDnQT7
-	qdExIxTKOR1WcOHqKAis6P5yieGFEq4YQUVe+nQzmu4Tqxo7RHLrcJNrUerc8T4ZUncSYWYsWxEvo
-	OFkdvUb+79KE9BbwM0QrEn1KhInawy+RFbSvAcTDtvVm/6fukmgAlHCbS+US4Bt+QrfrlQy6WWaU6
-	AffN4kgD3RbOEjCdyI8DE31CMpFrAOFoB1s4s2qnaGD/O6kRrm1HHgbyqTbr9nz60i2bd1+I6I6R5
-	nQSQZNVHyxvJ8eqOMvug==;
+	List-Owner; bh=g5zjN1cH2AUrBQ1Y2fLm8qWpLzfgogdWWKwcOnQYCNs=; b=NGK1srqzsnKOpu
+	+AOoJhh1M2wZPnw1CzUABTM6UtyusjiG+T1d5lRGwF4EwD4lIeU9BTbR7X7knQQhTxURILZ6Wxkbt
+	Mlpwq3TmlUYcIolJrAkQvpj2ajpNm1O0xG8WRFYJQ7VHMJVSE6ynfhzZMf1Mmg0+wFaUBj7+VYoej
+	TkrDi08x+nFfSo3BQoku3F2dSXCQds+KlwnWO+h7HfPejeEWS1gEiNgILKIlSGPC4pNJk3DjnFv4d
+	PnPBgRbYPcc7o5WHEtGSN3xeROPqtO7o8BHmQHhgXZYURCDZ7uUyAyJ477X9gwfSs6HGxqZ3jo9NC
+	sXmmzJv8FkDkkPsIUkIg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x53KO-0000000H55e-3L7w;
-	Fri, 11 Sep 2026 15:38:12 +0000
+	id 1x53Ka-0000000H58Z-00oB;
+	Fri, 11 Sep 2026 15:38:24 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x53KM-0000000H54S-10Zf
+	id 1x53KV-0000000H57L-3HWs
 	for linux-phy@lists.infradead.org;
-	Fri, 11 Sep 2026 15:38:11 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68BEmEX13780626
-	for <linux-phy@lists.infradead.org>; Fri, 11 Sep 2026 15:38:09 GMT
+	Fri, 11 Sep 2026 15:38:22 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68BFA6rj658277
+	for <linux-phy@lists.infradead.org>; Fri, 11 Sep 2026 15:38:19 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	upzPaWlpYkfrSddQ1mDr+WdQI/uJnfLhDS5vPD3iHGc=; b=UKUKSI2FeVhBuaSg
-	Z96a8HxOO5o7Oc/dI9rps0wxMrAiwn6q/lcUP30hZ14ieCMOzpOk7Rfw62afLj4h
-	KdFSoP15O9lVKcLTq58hVMw8zRRKjaHbrfsAQCGKtsMdbrfEmH4johQn1akNabJn
-	HSDkKyvQrTFi75zt5m46MB7qeLYXcOSVVUi73YnOTWzyyStfCqE7yoZkpwwdl6Vm
-	B67WLsJsksIfOz47hgqK6+zsLhOT3o2bspipslegJsAT6W5HzXMk4fiFzNDCYBrA
-	EiatcG+4NMD0ZtW1U4puNKTEcrLhdff3ZIpKePW2mUX8BH8ebqrc3kVI3/tv6vRm
-	wKvKbQ==
-Received: from mail-oa1-f70.google.com (mail-oa1-f70.google.com [209.85.160.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gmcgfj7rs-1
+	DROZeLrjFsEoOpdq3MSx8VXdFphleILDmRHCwOjsEHw=; b=FN7b2rgOGLRdbXwq
+	yelWNls1Gb0ILWw0J2KIPsxiglGGu52Xfln9X+oiDJ1HHRe36QAoR59emDKLFXJA
+	FpZzaSXUGzVDfAleSASezVAVIOx3HYDc7ENWV1hVmnJ93rclu1wMY5GG0sGOupbm
+	JZX0tKWvY2YsRRK9n0LbjIsgwbA+43dgv4oJGVgWJ3gf8wWj+DIdQLO1lFvkLyEx
+	xlH2HGJKnshX9PlmBx7UDDLiEb1V4KHzmwd7NH3A5sSWrgGO/nUzLiPEaRzKAvRj
+	wQtA68+iGNeFY1UtnoqWqas5kXXS+pkwBEVeWR7sl8elLUQnIKPvcH8/NGv0oOIW
+	1zSezA==
+Received: from mail-oa1-f71.google.com (mail-oa1-f71.google.com [209.85.160.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gmm22r41s-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 11 Sep 2026 15:38:09 +0000 (GMT)
-Received: by mail-oa1-f70.google.com with SMTP id 586e51a60fabf-45e83fd0663so1252318fac.1
-        for <linux-phy@lists.infradead.org>; Fri, 11 Sep 2026 08:38:09 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Fri, 11 Sep 2026 15:38:18 +0000 (GMT)
+Received: by mail-oa1-f71.google.com with SMTP id 586e51a60fabf-467c2c754f8so602780fac.3
+        for <linux-phy@lists.infradead.org>; Fri, 11 Sep 2026 08:38:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1789141089; x=1789745889; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1789141098; x=1789745898; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=upzPaWlpYkfrSddQ1mDr+WdQI/uJnfLhDS5vPD3iHGc=;
-        b=TFqPNGYNJZNctZoJAPvUvd9/L7CrV6W9TOhD557JOyWyvSRZKlEl3MZs8UVONbHzAE
-         6qwKttcnCtulACCfjTCKJ43M8D7TdLLQXJhXMAP7klcydu48I8Zv/ULff9pWRYGXcn1G
-         W8Dioyw+caStr3dS5X7Q42y1s2rrSSOeARdBEIgyb2Sp9QCtEIbKiBt8wVtG+UakkoJx
-         YCPQdThLQpRXg85fhLMHxgriB+OAx7aL2S0WJ5hW+Dqe8hMKlwsJJo/75DxYC+V/579d
-         2Y0OwWjn6q+3pdte7v+EAz2gST4/GjC91GSg4PLwgdrIzg0kngK/RYMTTtVU8QKaFYP5
-         X2AQ==
+        bh=DROZeLrjFsEoOpdq3MSx8VXdFphleILDmRHCwOjsEHw=;
+        b=Lcn5fRY1FWnjGTrv0fyqCArcsi01yKkF+u4maiQz6a6lbRyH6KWg6AExtzgEOW+LBe
+         4oIp65LHh9BYZkGeNmGp2bhzinCmU+OEW0thAf+DaAdZnF/gGFw/KKPaw19RQTr3DFYS
+         yIrv4PlWaBxuh6NAdXkTzFhOUHQ4MEtjrFJYc7qEEUO1SvD6LaaCjqF9qV5kvLih8PbB
+         YBY/41I76IDBiXiNwNav1SsMzfFp86Frz21wsWnkBRPPHOjD+O2hV62pIwGUUxg6VTdt
+         Yc/Yl2cELq9aQOveZ6GEMQVx6pjab5naXAJRtJkOj0aCd/f8x30HFptV9EqpMKmoHcia
+         SJdw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1789141089; x=1789745889;
+        d=1e100.net; s=20251104; t=1789141098; x=1789745898;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=upzPaWlpYkfrSddQ1mDr+WdQI/uJnfLhDS5vPD3iHGc=;
-        b=iIgp444pz8KWBARYjlle5w738r7qzXB0khC+mGiBtMkOPzMiLL/mL7lmeis2DSHlPc
-         58ZYHWdJ4klapKLJSP4+JLGq5qGRYZIm1mCF96KEKDjWkKAYJ/Yxhzk0rv+SoRk3iNeP
-         Z6vJS4Aurg5F0CyzPIrDYpm6kS9ip1kO2pLrXaUp1yME8ai/6/cFnxtlyptF9+f1Udrr
-         9iRo/E0CDmfTTAC2Z05GlZuAwr1247kc0sb1zZWq2ho60cQMxbgKET79vcMA81cvkOBA
-         oc2e7TfKOsjWMnyC1VgzQ543zJbjGISYVUIFJG+5YwpCBl5x8gyxn1mLQKHwSX3/OeF3
-         LHkg==
-X-Forwarded-Encrypted: i=1; AKwUvBwthG6D6LDooUkpKFJysHy52GHm63K6vngDuQUPcK8rPHoBg2hnXAgp91x9kv2/0LapK3+wRIudgYU=@lists.infradead.org
-X-Gm-Message-State: AFuF++m4uTCmaJlYeyumuH0oRJ747TDEnAl58tt92+3Rk6I0Q+uilANz
-	HW9M9x3lObzXO2sKAvNaS/BMRPtdi72Yh6kBTnHWmzibp6YHDte2hRiLQMXYArujU16xbBF/1by
-	vZhcAn+fd+RO/9iGljui1GxAzG63cxZ3TVGjL9H/mKy2UUWe98jNQKWVDp/rIvTvZdP8M
-X-Gm-Gg: AYBFou3Cuo574ajjbnSG/tbsGnr7lnaLCrBCR5uuF092rHuIUwPqmWc+GpM1fv9VcWn
-	BDpyUdhgfttP+MLtatD+7gCUK0BdLEiwLL8WLxx5EhdcKoKIMyFOu1E5soSVnJ2Vyj1Nz2Je6fU
-	lYYptMX6pv+bErlD/GsIJ5ImuBrOrk9cMGRy/Cxy/4MTUigOe97r0HOXnyaYK+HQ+MyqSUnxXhV
-	GLzjrpzqsi/3/emDo7ScJp4Nw+L2BfpfchtEe2tZIroZaC+d6evv7ZocWamSp5ugceXDsyU+XEg
-	+4h5pzYzDCpZDq5gJ/2zyYuOo7igQO68rdmqLV2Ywv/zc7AcAvuRmmEmWHdAj+XZ0d0EQ4gtZX7
-	JjI7I94MTnSVvQM/62jpu5HFJY04=
-X-Received: by 2002:a05:6870:e18e:b0:462:f377:8e0e with SMTP id 586e51a60fabf-47de7e627a9mr3865924fac.13.1789141088630;
-        Fri, 11 Sep 2026 08:38:08 -0700 (PDT)
-X-Received: by 2002:a05:6870:e18e:b0:462:f377:8e0e with SMTP id 586e51a60fabf-47de7e627a9mr3865901fac.13.1789141088231;
-        Fri, 11 Sep 2026 08:38:08 -0700 (PDT)
+        bh=DROZeLrjFsEoOpdq3MSx8VXdFphleILDmRHCwOjsEHw=;
+        b=qvTt0qSEALHjrJtfoQJi9bftpLuKbF8peSwcQQ6WgTm3Uvm1hia2eyc9Nwb7+NKNin
+         WWorI8OSo1SlZuWU2h8yWeshNbRSSu9OCTb0lzLg1+mF+IFVI7tIPey5dtZoFithgawf
+         49id6d9W/IYFhO80OuKgK6Vu5TFSVoWvql/hHyifzWKAEAFvs5EAEL9lwxrn+JFtM/TR
+         3oQKfUHOcFu5ggQ8H7VWRWkeZo+30H8d2eSQFqGETxIb5eX+9vZ3mu4WPiatbOUhwrqK
+         rcR7y5HCydF0VyLMWkGcBSgkBrLof4S02OeJznm1jmujsQRWT+JiAsW5cb7zWisW9gHO
+         2ncg==
+X-Forwarded-Encrypted: i=1; AKwUvBw3m3Xo0+OwBmsGQV0gn2bdoHtcFH6zUuTceCTSweQNiAutpDvit3LCzZi2lL8jXUg8y1DmHJPkzdY=@lists.infradead.org
+X-Gm-Message-State: AFuF++lVmPJhA6Jjmcte1TxKvk9t27mV5MpMjkU9fElCZiXtvCnWQcVO
+	GvrMqrbOseENzkFzPL6D8aX+v76mOYgsi8/gOtPSUtuwzkEqEvTtytrVNalAzJDv7NnAqJMf0e5
+	WCr8/54yOT/fHKt21wb6FkKaKBLXpDaSOUoe8CT9lqbGIZinU9sspovgOJomOupElgdw0
+X-Gm-Gg: AYBFou13VnclArf3sos9SrDe9aeOV24U2dcbEMLqANENEgEpv46kaP/5MUhv+idgiMj
+	AXja9oa4/9JRBMJE7eab7mnE03DFQRN22n6zjig9Y5aN9puex8gc8A4UobCgj7yNP/VmNieWRHE
+	lJ5Riud/7fZnOCJWL3zNc7sTROUaZnW8w7+gIieIuk890DNQMFRhi57paGJe7C9uaHn69K/XfvW
+	aupE+rkWK98mqts7VaaBJaLveAOsx0k3uVTl30XLO9ZTb61162gIFOOPjclS5oqk+iuVVTN2sQ3
+	rRDPmszL6lk6Qkc/itRzbX+46A3VfR/6J4s2n+kofsOSXACrwos8tgHcvWIqn7rmo5fkwufXDCt
+	mxwVlZBUYxAViI0R61OqkdZBPBY8=
+X-Received: by 2002:a05:6871:340e:b0:448:7667:2e96 with SMTP id 586e51a60fabf-47de7836203mr3346179fac.9.1789141097925;
+        Fri, 11 Sep 2026 08:38:17 -0700 (PDT)
+X-Received: by 2002:a05:6871:340e:b0:448:7667:2e96 with SMTP id 586e51a60fabf-47de7836203mr3346126fac.9.1789141097479;
+        Fri, 11 Sep 2026 08:38:17 -0700 (PDT)
 Received: from hu-naala-hyd.qualcomm.com ([202.46.22.19])
-        by smtp.gmail.com with ESMTPSA id 586e51a60fabf-47df90ff148sm1882160fac.14.2026.09.11.08.37.59
+        by smtp.gmail.com with ESMTPSA id 586e51a60fabf-47df90ff148sm1882160fac.14.2026.09.11.08.38.08
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 11 Sep 2026 08:38:07 -0700 (PDT)
+        Fri, 11 Sep 2026 08:38:16 -0700 (PDT)
 From: Nabige Aala <nabige.aala@oss.qualcomm.com>
-Date: Fri, 11 Sep 2026 21:06:38 +0530
-Subject: [PATCH 07/17] phy: qcom: edp: Add Nord-specific register offsets
+Date: Fri, 11 Sep 2026 21:06:39 +0530
+Subject: [PATCH 08/17] phy: qcom: edp: Generalize power-on path to support
+ per-SoC overrides
 MIME-Version: 1.0
-Message-Id: <20260911-nord-drv-dt-v1-7-e25c073cf1b6@oss.qualcomm.com>
+Message-Id: <20260911-nord-drv-dt-v1-8-e25c073cf1b6@oss.qualcomm.com>
 References: <20260911-nord-drv-dt-v1-0-e25c073cf1b6@oss.qualcomm.com>
 In-Reply-To: <20260911-nord-drv-dt-v1-0-e25c073cf1b6@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
@@ -118,43 +119,43 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         Mahadevan P <mahadevan.p@oss.qualcomm.com>,
         Nabige Aala <nabige.aala@oss.qualcomm.com>
 X-Mailer: b4 0.16-dev-d5d98
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1789141012; l=2289;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1789141012; l=4227;
  i=nabige.aala@oss.qualcomm.com; s=20260520; h=from:subject:message-id;
- bh=c2odpdO2vfgQoFUA7tiaM/+kgmxU4W7SmF+t2ifOrto=;
- b=RLHZeOgOT8EhVUQ/NgLwZ4eZ8AhVJ5fw2UNVqvVwvwmfzYZoHde7GpNOePPGDJPTY9xHBIAOK
- qEFA66ELQiKBLzd/dnrBKOZxtVvWpCtdR3pt4Xus9W/Sqs3Ot9anwiK
+ bh=FpM14k9zoSvyybc0wXfwBuVOIjzNap9teV8zKiWlGF8=;
+ b=OkS2dOi9eVbTtaegQB8+t+tTY6ndETEabUOuASZ8N3o8BfzK9ic4LBhA3pKKmOE/ajPo8An6m
+ OFfAMW/PCzQCVB2CItOWlNTb9ivgJYLkJXRucx0rmEQl1trjPbQxkGV
 X-Developer-Key: i=nabige.aala@oss.qualcomm.com; a=ed25519;
  pk=PYHJom8sPos1IGkrbCCsWiE7XTBQrQZd9jzAo051tgw=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTExMDIxOCBTYWx0ZWRfX6XqGPKsBwgpe
- kk1BW4nNAmy5YpSmNGsdO/rRQG6J6qgcpC+fKbNHnOJohhhUr4ERBw+5fHHWft/wRJvjWTICk7U
- 1t2A/S2mc37OFVZcoxSwxEhuN3S8BLEUsoXFOH5UnjZlRoSoQMciabm6s3ryY+ISZztNMm872zr
- PDhNr2lPXkLRwWwa2AIhZ0uxshcnxmJQg2PqYrKcyUeTqhGtkrNCjVAv3NaU6vuy+2zDQdPToxs
- 8u6xMPV+tGNy/8QM1U003+Ab9b4y/hcpGodNIAYqhh/Ik2KS88XYHdGVj+JjB5rSiaIFfiyoBZw
- cvkewsHxnCTRdZk7LFZxGa2CV0AkP9fd6++B/nJDiijSIS1kD9APS3BJthGLzmkRcNQVNDk7yMX
- jiLzV8352weHNtCK17mELkyauu+kVpqbzHCCCnz4HvtYZ+/Q7Y2Uz5esxzSBczVzm4tE2KL+KfV
- 380a0/Pbju7euMQeiaw==
-X-Proofpoint-GUID: lge3zgEkVrUJjEomcDRYEaAKHnGhycFW
-X-Proofpoint-ORIG-GUID: lge3zgEkVrUJjEomcDRYEaAKHnGhycFW
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTExMDIxOCBTYWx0ZWRfX7aVH2SmePL81
- m9XqPP0yHLTza6Wl40vr3A7J0FigsBZQ+O8/WL6dHZqDlNBX+KP19dH2KtQBNX0IgYDkgI5RUqx
- NT1fYtr8BOgBfrCL0eOsAh1ANDh4kDY=
-X-Authority-Analysis: v=2.4 cv=ULtIjyfy c=1 sm=1 tr=0 ts=6aa42061 cx=c_pps
- a=nSjmGuzVYOmhOUYzIAhsAg==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTExMDIxOCBTYWx0ZWRfX1t+VXKo/BUUj
+ vDzKHYtJMMikEL+LalhpHRx0F6Y5le7l7reivc/+pFsNQUG9QnRtQAZW1EYjRKdczl7k+Q4GN98
+ +Ipxk6dsiPMddEZEtIyAA+r3QQpimM3tLsKWnAFjDZwg//uraHB5vbUKYzI2ANeAk8JwJLERYtZ
+ LxnlznIqkoeKPOmsVSoYIIecF5v5eORTu841sJl/QMjVLpc/kSJiiYvk+o5ieWRPw0COdQGfJA8
+ QBfLTOqz4oWZcLgBPJlBS4pU+uJFi3gbNyEy7zDRKvhST4pSjdAz/ViLLFB++ZePW7UaUSmJaLW
+ NqyItozsi4bRjeu/f83na3GUZlAW3kkV5dmNg5+/BWfasC02MftZaPYJ2N2JH9q7lD6h6Da3A6Y
+ c2WI13t71jyOnY2te3UF9S8tji3SLHBIHBALuKJkMWP/O+HIPMkr8BLXMgCeiyfFtcmRo6J8Jic
+ yBA0Wek8tykMGZr1jLQ==
+X-Authority-Analysis: v=2.4 cv=LPDz05W9 c=1 sm=1 tr=0 ts=6aa4206a cx=c_pps
+ a=CWtnpBpaoqyeOyNyJ5EW7Q==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
  a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22
- a=EUspDBNiAAAA:8 a=hULVr2eflTS6rL-ZrBcA:9 a=QEXdDO2ut3YA:10
- a=1zu1i0D7hVQfj8NKfPKu:22
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
+ a=EUspDBNiAAAA:8 a=v4S7s_oVI5aw80GBEmEA:9 a=QEXdDO2ut3YA:10
+ a=vh23qwtRXIYOdz9xvnmn:22
+X-Proofpoint-ORIG-GUID: 8PMghnKvSgmQTWYZHnip6ttuezlKkqPA
+X-Proofpoint-Spam-Info: AW1haW4tMjYwOTExMDIxOCBTYWx0ZWRfX0sOG6kZVgYMv
+ r1vbgFqnXbLDnZ4wZPiLu2f8TXVh/516+gtdm6V7uUmxrilEfqhQVruwWzm9/H5PBCxl73DQ8gs
+ roJY5aetns6hsb2GeTh+uiDueoPGOn0=
+X-Proofpoint-GUID: 8PMghnKvSgmQTWYZHnip6ttuezlKkqPA
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-09-11_05,2026-09-11_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 adultscore=0 phishscore=0 bulkscore=0 clxscore=1015
- malwarescore=0 suspectscore=0 spamscore=0 lowpriorityscore=0 impostorscore=0
+ lowpriorityscore=0 adultscore=0 clxscore=1015 bulkscore=0 impostorscore=0
+ malwarescore=0 spamscore=0 suspectscore=0 priorityscore=1501 phishscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2609110218
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260911_083810_443819_E59BB110 
-X-CRM114-Status: GOOD (  12.25  )
+X-CRM114-CacheID: sfid-20260911_083820_950991_D92F3EA1 
+X-CRM114-Status: GOOD (  16.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -173,55 +174,115 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Ritesh Kumar <ritesh.kumar@oss.qualcomm.com>
 
-Nord relocates several DP PHY and QSERDES v8 COM registers relative
-to existing SoCs.  Add Nord-specific defines for the relocated and
-new-only registers in phy-qcom-qmp-qserdes-dp-com-v8.h and
-phy-qcom-edp.c so Nord sequences can reference them by name.
+Nord has a different register layout and power-on sequence that the
+existing hard-coded paths cannot accommodate.  Make com_clk_fwd_cfg
+optional, add phy_tx_lane_cfg and phy_tx_res_cfg callbacks to
+phy_ver_ops, and add phy_status_reg and bias1_en_2lane fields to
+qcom_edp_phy_cfg so each SoC can override the defaults.  No
+functional change for existing SoCs; new fields default to zero/NULL.
 
 Signed-off-by: Ritesh Kumar <ritesh.kumar@oss.qualcomm.com>
 Signed-off-by: Nabige Aala <nabige.aala@oss.qualcomm.com>
 ---
- drivers/phy/qualcomm/phy-qcom-edp.c                   | 10 ++++++++++
- drivers/phy/qualcomm/phy-qcom-qmp-qserdes-dp-com-v8.h |  3 +++
- 2 files changed, 13 insertions(+)
+ drivers/phy/qualcomm/phy-qcom-edp.c | 43 ++++++++++++++++++++++++++-----------
+ 1 file changed, 30 insertions(+), 13 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
-index a3c893f72908..bf8a17336c7e 100644
+index bf8a17336c7e..373f13b3d6d5 100644
 --- a/drivers/phy/qualcomm/phy-qcom-edp.c
 +++ b/drivers/phy/qualcomm/phy-qcom-edp.c
-@@ -41,9 +41,19 @@
+@@ -92,6 +92,8 @@ struct phy_ver_ops {
+ 	int (*com_configure_pll)(const struct qcom_edp *edp);
+ 	int (*com_configure_ssc)(const struct qcom_edp *edp);
+ 	int (*com_ldo_config)(const struct qcom_edp *edp);
++	int (*phy_tx_lane_cfg)(const struct qcom_edp *edp);
++	int (*phy_tx_res_cfg)(const struct qcom_edp *edp);
+ };
  
- #define DP_PHY_VCO_DIV                          0x0074
- #define DP_PHY_TX0_TX1_LANE_CTL                 0x007c
-+/* Nord uses a different register layout; non-Nord value is 0x00a0 */
- #define DP_PHY_TX2_TX3_LANE_CTL                 0x00a0
-+#define DP_PHY_TX2_TX3_LANE_CTL_NORD            0x00c0
+ struct qcom_edp_phy_cfg {
+@@ -101,6 +103,8 @@ struct qcom_edp_phy_cfg {
+ 	const struct qcom_edp_swing_pre_emph_cfg *dp_swing_pre_emph_cfg;
+ 	const struct qcom_edp_swing_pre_emph_cfg *edp_swing_pre_emph_cfg;
+ 	const struct phy_ver_ops *ver_ops;
++	u32 phy_status_reg;
++	u8 bias1_en_2lane;
+ };
  
-+/* Nord uses a different register layout; non-Nord value is 0x00e0 */
- #define DP_PHY_STATUS                           0x00e0
-+#define DP_PHY_STATUS_NORD                      0x0110
-+#define DP_PHY_LDO_CFG                          0x00f0
-+
-+/* Nord-specific TX lane registers */
-+#define DP_PHY_TX_LN0_DRV_LVL_NORD             0x00e4
-+#define DP_PHY_TX_LN1_DRV_LVL_NORD             0x00e8
-+#define TXn_TX_BAND_NORD                        0x0024
+ struct qcom_edp {
+@@ -316,9 +320,11 @@ static int qcom_edp_phy_init(struct phy *phy)
  
- /* LANE_TXn registers */
- #define TXn_CLKBUF_ENABLE                       0x0000
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-dp-com-v8.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-dp-com-v8.h
-index 93edabb830af..008b17222a8d 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-dp-com-v8.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-dp-com-v8.h
-@@ -48,5 +48,8 @@
- #define DP_QSERDES_V8_COM_CLK_FWD_CONFIG_1		0x2f4
- #define DP_QSERDES_V8_COM_CMN_STATUS			0x314
- #define DP_QSERDES_V8_COM_C_READY_STATUS		0x33c
-+#define DP_QSERDES_V8_COM_SVS_MODE_CLK_SEL_NORD		0x17c
-+#define DP_QSERDES_V8_COM_CMN_STATUS_NORD		0x1d0
-+#define DP_QSERDES_V8_COM_C_READY_STATUS_NORD		0x1f8
+ 	memcpy(aux_cfg, edp->cfg->aux_cfg, sizeof(aux_cfg));
  
- #endif
+-	ret = edp->cfg->ver_ops->com_clk_fwd_cfg(edp);
+-	if (ret)
+-		return ret;
++	if (edp->cfg->ver_ops->com_clk_fwd_cfg) {
++		ret = edp->cfg->ver_ops->com_clk_fwd_cfg(edp);
++		if (ret)
++			return ret;
++	}
+ 
+ 	writel(DP_PHY_PD_CTL_PWRDN | DP_PHY_PD_CTL_AUX_PWRDN |
+ 	       DP_PHY_PD_CTL_PLL_PWRDN | DP_PHY_PD_CTL_DP_CLAMP_EN,
+@@ -1131,7 +1137,13 @@ static int qcom_edp_phy_power_on(struct phy *phy)
+ 
+ 	/* TX Lane configuration */
+ 	writel(0x05, edp->edp + DP_PHY_TX0_TX1_LANE_CTL);
+-	writel(0x05, edp->edp + DP_PHY_TX2_TX3_LANE_CTL);
++	if (edp->cfg->ver_ops->phy_tx_lane_cfg) {
++		ret = edp->cfg->ver_ops->phy_tx_lane_cfg(edp);
++		if (ret)
++			return ret;
++	} else {
++		writel(0x05, edp->edp + DP_PHY_TX2_TX3_LANE_CTL);
++	}
+ 
+ 	/* TX-0 register configuration */
+ 	writel(0x03, edp->tx0 + TXn_TRANSCEIVER_BIAS_EN);
+@@ -1169,13 +1181,18 @@ static int qcom_edp_phy_power_on(struct phy *phy)
+ 	writel(0x00, edp->tx1 + TXn_TX_POL_INV);
+ 	writel(0x10, edp->tx0 + TXn_TX_DRV_LVL_OFFSET);
+ 	writel(0x10, edp->tx1 + TXn_TX_DRV_LVL_OFFSET);
+-	writel(0x11, edp->tx0 + TXn_RES_CODE_LANE_OFFSET_TX0);
+-	writel(0x11, edp->tx0 + TXn_RES_CODE_LANE_OFFSET_TX1);
+-	writel(0x11, edp->tx1 + TXn_RES_CODE_LANE_OFFSET_TX0);
+-	writel(0x11, edp->tx1 + TXn_RES_CODE_LANE_OFFSET_TX1);
+-
+-	writel(0x10, edp->tx0 + TXn_TX_EMP_POST1_LVL);
+-	writel(0x10, edp->tx1 + TXn_TX_EMP_POST1_LVL);
++	if (edp->cfg->ver_ops->phy_tx_res_cfg) {
++		ret = edp->cfg->ver_ops->phy_tx_res_cfg(edp);
++		if (ret)
++			return ret;
++	} else {
++		writel(0x11, edp->tx0 + TXn_RES_CODE_LANE_OFFSET_TX0);
++		writel(0x11, edp->tx0 + TXn_RES_CODE_LANE_OFFSET_TX1);
++		writel(0x11, edp->tx1 + TXn_RES_CODE_LANE_OFFSET_TX0);
++		writel(0x11, edp->tx1 + TXn_RES_CODE_LANE_OFFSET_TX1);
++		writel(0x10, edp->tx0 + TXn_TX_EMP_POST1_LVL);
++		writel(0x10, edp->tx1 + TXn_TX_EMP_POST1_LVL);
++	}
+ 	writel(0x1f, edp->tx0 + TXn_TX_DRV_LVL);
+ 	writel(0x1f, edp->tx1 + TXn_TX_DRV_LVL);
+ 
+@@ -1187,7 +1204,7 @@ static int qcom_edp_phy_power_on(struct phy *phy)
+ 		cfg1 = 0x1;
+ 	} else if (edp->dp_opts.lanes == 2) {
+ 		bias0_en = 0x03;
+-		bias1_en = 0x00;
++		bias1_en = edp->cfg->bias1_en_2lane;
+ 		drvr0_en = 0x04;
+ 		drvr1_en = 0x07;
+ 		cfg1 = 0x3;
+@@ -1210,7 +1227,7 @@ static int qcom_edp_phy_power_on(struct phy *phy)
+ 
+ 	writel(0x19, edp->edp + DP_PHY_CFG);
+ 
+-	ret = readl_poll_timeout(edp->edp + DP_PHY_STATUS,
++	ret = readl_poll_timeout(edp->edp + (edp->cfg->phy_status_reg ?: DP_PHY_STATUS),
+ 				 val, val & BIT(1), 500, 10000);
+ 	if (ret)
+ 		return ret;
 
 -- 
 2.34.1
