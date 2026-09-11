@@ -4,60 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81427C88E41
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Sep 2026 05:20:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C7A9C88E41
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Sep 2026 05:25:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BDsdhLZ5ZF7FDXQjYFaVOcGF8A6+CwntnW4UKDe06E8=; b=aXvYGPigi2o+SU
-	LAwtDlIC9rqRsj1YNXCaZ/tSObc012CRp6nTTKiCdPFQygW+rQFCO7xo4T3yfPJsUYCTNsbWQSyzL
-	7Ad0689vjdWHjOSGlmQPDLUVEBWKk1pg5v4T6EHlSTQK2ZtSnhsoXTPVjba78Tdg8AGR+5eGPyiZY
-	8b3XP4Z/quqh9xR+2ZKtNejN0TAoC6fhR9u8ziev9x87nqAj84fU8GDiLwQoLbQiJVjrtFCxkldr9
-	ub4Soy4162kRSnkYoiwHzoP2BiyNKriLufpT6rIgJepxwAJ1iYyOsRODO7RqYj43L2qfnj0FGsLRu
-	XOIiCk3bmKRu5BDwYyYg==;
+	List-Owner; bh=TjJ+OaMArtg2yrrAFEcbjI9E/RKCK37sivi/o2PfLtk=; b=b2GbFzoTMF46Xw
+	4Hno7HvaVPjdCm1yiq7KLUmz5Toq0m6F4qM/lC45HeCe8K2yTI6tYIVly6zcpkSSuw/drOkFZRyNQ
+	YgMr85SwyCcmP9Eeuzz4hLUJ0LQcXUcjFjIFhlQVpOuTdKzM5AuTjM5mOVaE55SMGH1dz//XFLVnT
+	dXPNLk8NHHvUEh0BPBQkh7pLU9xal1syQTpBufepIptB3Bs++Ydw9NDmB2B8A9+nbpb+jrRMAP7W1
+	4+sVN6bBrk7PLVnVN6ymFYr9dBn8Fh9K9alfrXnuIB4A4JzG/YFcig/ZTE4SVlbRMSFjbq9ADwNPv
+	bbC3rz6XgYQSJxsVgtEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4tgP-0000000FrVP-3xmu;
-	Fri, 11 Sep 2026 05:20:17 +0000
+	id 1x4tl7-0000000Fs3v-2ckZ;
+	Fri, 11 Sep 2026 05:25:09 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4tgO-0000000FrUh-29Sa;
-	Fri, 11 Sep 2026 05:20:16 +0000
+	id 1x4tl5-0000000Fs3K-2gRs
+	for linux-phy@lists.infradead.org;
+	Fri, 11 Sep 2026 05:25:07 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 2F528431E1;
-	Fri, 11 Sep 2026 05:20:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A7DED1F000FF;
-	Fri, 11 Sep 2026 05:20:10 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 652A14092A;
+	Fri, 11 Sep 2026 05:25:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 818381F000FF;
+	Fri, 11 Sep 2026 05:25:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789104016;
-	bh=zQkaItX0xqo5kFCTOPQvErm+zlth+OHMFg4BhhYP06c=;
+	s=k20260515; t=1789104307;
+	bh=SBjJkWUnyP5rvZt8DFV/tYXDDBlvGlmDya2PBqMAKV4=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=m4bAq3t6xGNaDJIAUQZb5j72asbrzo3kHL9Z95osZGv0FSm+lI+GiTji1/5h9z5Na
-	 SdjWZapU5O7ZCqDBU0DO09eDrxABIvz97cYjMC5Sdlvhjd4X65ZXLa4WMgQxwLAfnw
-	 p9jylw7kLyiJSZgPD1NI/ALAdP0vRi3xXBZRcwL5Hn+liVDz3xBDuD7GQCAElU31VC
-	 Jf0bkgZ6zZAIaQATdwkyLAjemkhynonHl+/zp5qmoYsh5h7rdN9VHgJv7mr/2eJp+2
-	 s2LQia0fpY/ORQRx0byN3JPmVrc3YfSs2jFAg80Z/4xUVfwd49977V0nZhvvgkZL11
-	 oY7j5hhsHvZlg==
-Date: Fri, 11 Sep 2026 07:20:06 +0200
+	b=BYbY9SCSOuqF/R1MWxssoJyxk9Lx8GpgiAnMaz/pvCsLiKM7Maf/zlUbbwWcz/zfx
+	 oU9+2717R/rj0wY3JT+EtaXhGeQrtVx8aWB9jRRblHntGsfxyPbwpNEF6meVHQemvw
+	 3JX1W+b/8Jlht/kKO7oGwPF28CbkRASqNOkhBHHtImVSVHmSIw6sd2iOsz+2xULH3M
+	 7QyTM211hQv6rm853yzSklI22eGsTGCZSwrPP1Z7qXcfm49L0SqGhcP0xdgz0R0/B6
+	 YbySSiyyrn8MEUJcKnTpGNPy3nnw4dhmMWvEWlbs+6JuK7IgeNNOuRgofbYfXm95te
+	 YQ/kZoDeMaSXw==
+Date: Fri, 11 Sep 2026 07:25:00 +0200
 From: Manivannan Sadhasivam <mani@kernel.org>
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: chunfeng.yun@mediatek.com, vkoul@kernel.org, neil.armstrong@linaro.org, 
-	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, matthias.bgg@gmail.com, 
-	chunkuang.hu@kernel.org, p.zabel@pengutronix.de, justin.yeh@mediatek.com, 
-	linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	dri-devel@lists.freedesktop.org, kernel@collabora.com
-Subject: Re: [PATCH v4 11/12] phy: phy-mtk-dp: Add PHYD Lane EN register mask
- to SoC data
-Message-ID: <dcywgc2ccerd6h7rsib5dak2tmanhy6tnbl3fuzvl4ni2ua2lw@jiqbmfni7uou>
-References: <20260910092038.48291-1-angelogioacchino.delregno@collabora.com>
- <20260910092038.48291-12-angelogioacchino.delregno@collabora.com>
+To: Nabige Aala <nabige.aala@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, Ritesh Kumar <ritesh.kumar@oss.qualcomm.com>, 
+	Mahadevan P <mahadevan.p@oss.qualcomm.com>
+Subject: Re: [PATCH v4 4/9] phy: qualcomm: qmp-combo: Add hardware-specific
+ DP PHY config fields
+Message-ID: <7g6jz5lxcvwhq6xhbhovvszblil4z7whco2gnz62npv2kojq7e@5fahqmtsqn6h>
+References: <20260908-glymur-phy-v3-v4-0-ff22e5150538@oss.qualcomm.com>
+ <20260908-glymur-phy-v3-v4-4-ff22e5150538@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260910092038.48291-12-angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20260908-glymur-phy-v3-v4-4-ff22e5150538@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,13 +73,24 @@ Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBTZXAgMTAsIDIwMjYgYXQgMTE6MjA6MzdBTSArMDIwMCwgQW5nZWxvR2lvYWNjaGlu
-byBEZWwgUmVnbm8gd3JvdGU6Cj4gSW4gcHJlcGFyYXRpb24gZm9yIGFkZGluZyBzdXBwb3J0IGZv
-ciB0aGUgZURQIFBIWSBmb3VuZCBpbiBuZXdlcgo+IFNvQ3MsIHRyYW5zZmVyIHRoZSByZWdpc3Rl
-ciBtYXNrIGZvciBQSFlEX1RYX0xOX0VOIHRvIFNvQyBzcGVjaWZpYwo+IGRhdGEuCj4gCj4gU2ln
-bmVkLW9mZi1ieTogQW5nZWxvR2lvYWNjaGlubyBEZWwgUmVnbm8gPGFuZ2Vsb2dpb2FjY2hpbm8u
-ZGVscmVnbm9AY29sbGFib3JhLmNvbT4KClJldmlld2VkLWJ5OiBNYW5pdmFubmFuIFNhZGhhc2l2
-YW0gPG1hbml2YW5uYW4uc2FkaGFzaXZhbUBvc3MucXVhbGNvbW0uY29tPgoKLSBNYW5pCgotLSAK
-4K6u4K6j4K6/4K614K6j4K+N4K6j4K6p4K+NIOCumuCupOCuvuCumuCuv+CuteCuruCvjQoKLS0g
-CmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+T24gVHVlLCBTZXAgMDgsIDIwMjYgYXQgMDc6MzA6NTdQTSArMDUzMCwgTmFiaWdlIEFhbGEgd3Jv
+dGU6Cj4gRnJvbTogUml0ZXNoIEt1bWFyIDxyaXRlc2gua3VtYXJAb3NzLnF1YWxjb21tLmNvbT4K
+PiAKPiBBZGQgZHBfYXV4X2NmZzIsIGRwX3BoeV9jZmcxLCBhbmQgZHBfbW9kZV9pZ25vcmVfcmV2
+ZXJzZSBmaWVsZHMgdG8KPiBxbXBfcGh5X2NmZyB0byBhbGxvdyBoYXJkd2FyZS1zcGVjaWZpYyBE
+UCBQSFkgcmVnaXN0ZXIgdmFsdWVzIHRvIGJlCj4gc3BlY2lmaWVkIHBlci1wbGF0Zm9ybSByYXRo
+ZXIgdGhhbiBoYXJkY29kZWQgaW4gdGhlIGNvbmZpZ3VyZSBmdW5jdGlvbnMuCj4gCj4gRGVmaW5l
+IG5hbWVkIGNvbnN0YW50cyBRU0VSREVTX0RQX1BIWV9BVVhfQ0ZHMl9WNDU2L1Y4IGFuZAo+IFFT
+RVJERVNfRFBfUEhZX0NGRzFfVjQ1Ni9WOCBmb3IgYmV0dGVyIHJlYWRhYmlsaXR5IGFuZCBtYWlu
+dGFpbmFiaWxpdHkuCj4gCj4gUG9wdWxhdGUgdGhlIG5ldyBmaWVsZHMgaW4gYWxsIGV4aXN0aW5n
+IERQIFBIWSBjZmcgc3RydWN0dXJlczoKPiAtIFY0NTYtYmFzZWQgcGxhdGZvcm1zIChzYXIyMTMw
+cCwgc2M4MTgweCwgc2M4MjgweHAsIHgxZTgwMTAwLCBzbTgyNTAsCj4gICBzbTgzNTAsIHNtODQ3
+NSwgc204NTUwLCBzbTg2NTAsIHNtODc1MCkgdXNlIFY0NTYgY29uc3RhbnRzCj4gLSBHbHltdXIg
+KFY4KSB1c2VzIFY4IGNvbnN0YW50cyBhbmQgc2V0cyBkcF9tb2RlX2lnbm9yZV9yZXZlcnNlID0g
+dHJ1ZQo+IAo+IFVwZGF0ZSBxbXBfY29tYm9fY29uZmlndXJlX2RwX21vZGUoKSB0byBob25vciBk
+cF9tb2RlX2lnbm9yZV9yZXZlcnNlLAo+IHNvIEdseW11ciBjYW4gYnlwYXNzIFR5cGVDIG9yaWVu
+dGF0aW9uLWJhc2VkIGxhbmUgcmV2ZXJzYWwuCj4gCgpJIGJlbGlldmUgdGhpcyBkcF9tb2RlX2ln
+bm9yZV9yZXZlcnNlIHNob3VsZCBiZSBpbiBhIHNlcGFyYXRlIHBhdGNoIHdpdGgKcmVsZXZhbnQg
+Zml4ZXMgdGFnLgoKLSBNYW5pCgotLSAK4K6u4K6j4K6/4K614K6j4K+N4K6j4K6p4K+NIOCumuCu
+pOCuvuCumuCuv+CuteCuruCvjQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
+bGlzdGluZm8vbGludXgtcGh5Cg==
