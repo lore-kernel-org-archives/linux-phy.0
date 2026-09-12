@@ -4,141 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1AF5DC88E4D
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Sep 2026 21:09:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 640BEC88E53
+	for <linux-phy@archiver.kernel.org>; Sat, 12 Sep 2026 20:13:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YvNCPwGrp+usS+EJcqlA9AeS9Zme3MG4+nuA0Jg0VpI=; b=AMRUp3poYZIulR
-	tUfmA36pUhtBO8Kqc4/T2FUMMetV70b76KK1/VzfSDw040cC1W7qh4CVoe1K5fhjLSIZjySuw1M+H
-	XVzClm437F37Km6LvTJV3b9n1P+xFnTlv7PTRKhQVs0nL17zLDpp1DhSuFTdyz+rN4DvNcRPIueuW
-	aJJXKL0px9PF7FpCAFIFqO/U0cCrKhGVDEZSvRsMiakKS97hYuiKkl+XPoGm0ertF5wExy5NmGpWA
-	UF8Pr+ETTX3YYVPe/WOx6yOouoBMBKT3Mcw2QRD/WoWuaq3XwXG8ZEw0n5c+1nR1Z4QC1TlL7kQZ1
-	J6Cu9Cq7yQZ/AvWuW4ug==;
+	List-Owner; bh=tAt2tPPir6/IGaXiigS8DRW65HgP6WJsBs9tzvd1DS0=; b=ZyWo+it+z6YLw8
+	v4zl1fKFNcydGA+EUDxp00vG0zJdQKStn6jUW/CnQGzVTJaH1Z/gI4ClCEWf9iSNaGiRW/X6fHnA1
+	6N4qSWYadLQQN7Q4tgz7y5eIM9kuY2Pxfqf5r+OhxVob4y2QFIMSp7tPFPkTghdNb94xXzpAxoeon
+	4IQ+ohNuP0M4wzRINH15MgDkCKKKDroC+CMIDaIouhf2jQUOfw7nZhsAxeTTds9dxkXCez2dJPnXe
+	+9Y7w+20SiGjOQzdt20HznxDtMsbrJ2NPk04BVNKSO5cFsBNV+gnoGllac3QMdvAkurx04JK3dssZ
+	mzT933iM0msjZjRyi/Wg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x58VJ-0000000096h-2iKg;
-	Fri, 11 Sep 2026 21:09:49 +0000
-Received: from mail-francesouthazon11011060.outbound.protection.outlook.com ([40.107.130.60] helo=MRWPR03CU001.outbound.protection.outlook.com)
+	id 1x5U6G-000000018db-2YDq;
+	Sat, 12 Sep 2026 20:13:24 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x58VH-0000000096B-1oOn
-	for linux-phy@lists.infradead.org;
-	Fri, 11 Sep 2026 21:09:48 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=YgFriERYVLvc05lNvNBgqzut/xOy37iBeqgCEuQ5JpjnAFCiv3Uk0qAJffBFqUevYi4CqifZB6UDJYXcik2mGjJ5AVJeiEFacjeq7UEkzOXcQumu3jZdRNhDwSQyFw14iKOgAYQzq1Mi/gdr7qPYQHyO7rKTQEQ0CZg4wXL5vMK2pDuZ5085fyBGAaT5YWa9BjesjGoDvRDr8ymRSrlztPEts6sM3jOWxLDQqGhsRfWPhCb+BcUxKN7eGWaDYqaNpbPnK+KecSFaTmh9NBnSx0wEcIEyV/H3++YJfI+P4LkMcYqsNOJ8R1ernJpvfo6UucI3Sq2ODbLDY3/Ypg3Cjg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=VfLkcYfM7u5aEuWbCbfkAYsUun/5v0qdzreRhQJ17W4=;
- b=nRHayyRjbk9kEVQ6tgreB9o8YlqPaHOyWPy3q7kxCLwPhIU2zlFurN/qwarwGt2J603OWD5wkHS9PXgZXBpgZaOE6OwlNz6f7rwHyx/WtM1mSoPAeYmP/qF7ARWQ52aRldPKhIo7ezyLNGIhSW69qYmvyAZMMFvH9/dRnSi6eudh92zAq/zAPM2LIBOo9Pea+LhjNGOlAWXlgTBvmTPoCN5wZfyDsdOwXgU/ut5fQUmr2hS9ZNP2d8d7jsE7dELI6KXel8Mvi21QgPPPIkoOcfxeKLle6mgWZVx9+aFnms920KKxE9KiClIeXLoHGYzPBs5gfQTVG3fNnoqeFp0ehw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=VfLkcYfM7u5aEuWbCbfkAYsUun/5v0qdzreRhQJ17W4=;
- b=XEKyvV2bX0GlCGh2/3TsNVVrMEr2JFtw+wOU2nPjo16R0z6Gge2rg3V0Ft0hagG9HfQ4XPlmiO4jgB1hPYLh4vdmD914RgziOnFSi6YSH54bBuYXEurU1rbT3d7eYz92W2wNTmObL+dUYMiyUd1auFJRrcMi1a9jsfHHVqbPr+TbMBs2xQ6/8QFZhpQu8HnqPVkXAUuCxvALGn1N3vTQHKa6l66o8+8i15jqIJuLqOZcCMauWNx1mrDuGKNC9yYj2b82Lk7aE3vLli9A3oeE0ZN/9qxATTtrmmU0vMipZZnkxIrcXLxhl/lM42SMGR/Uc3pOsFPuQLFxuk5o8fNXzg==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by AM9PR04MB7617.eurprd04.prod.outlook.com (2603:10a6:20b:286::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.406.10; Fri, 11 Sep
- 2026 21:09:41 +0000
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c%7]) with mapi id 15.21.0406.007; Fri, 11 Sep 2026
- 21:09:41 +0000
-Date: Fri, 11 Sep 2026 17:09:29 -0400
-From: Frank Li <Frank.li@oss.nxp.com>
-To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-Cc: Bjorn Andersson <andersson@kernel.org>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Robert Foss <rfoss@kernel.org>,
-	Todor Tomov <todor.too@gmail.com>,
-	Mauro Carvalho Chehab <mchehab@kernel.org>,
-	Konrad Dybcio <konradybcio@kernel.org>,
-	Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
-	Bryan O'Donoghue <bod@kernel.org>,
-	Loic Poulain <loic.poulain@oss.qualcomm.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Felipe Balbi <balbi@ti.com>, linux-arm-msm@vger.kernel.org,
-	linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-media@vger.kernel.org,
+	id 1x5U6E-000000018dC-3pRh;
+	Sat, 12 Sep 2026 20:13:22 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 1E7E140D52;
+	Sat, 12 Sep 2026 20:13:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2A3E21F000FF;
+	Sat, 12 Sep 2026 20:13:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1789244002;
+	bh=JtoUpb6McNb8j9Z4qP+rOvN+AYV7xXHpuSQDz0IbEJo=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References;
+	b=EFk7I55vjqe2AiKGLYvCZHQw7wNr/JCb+JgkqtAe19BCOXtj+ON+hCWj8q+x/nqIc
+	 AY41oLO8iFVcwf1khYooVFFjvoieVNx6amrTRHlh6/Zqe9OPhbKiOdUzjURzA7Y+VZ
+	 bDNRGkqGAavN2q96TX79ZybNdMSvUSu7h4Hp/X8SjhFkODokmuILfhgL8Ri8VR5xB/
+	 Ky4jBUkDTLQgWYHlQXmXEehGMyKM9nYMpLKn1ASZRls2eYvG0wO1MU31pkkyfposGj
+	 yXHAgrK4vO4z7Xp5XFzz9YtMYLKkEuqmeD8KWoUm1Z3WdYht8cOXheIZJXlJUjQV/9
+	 CfMuGev1upN9w==
+From: Jakub Kicinski <kuba@kernel.org>
+To: coiaprant@gmail.com
+Cc: Jakub Kicinski <kuba@kernel.org>,
+	andrew+netdev@lunn.ch,
+	davem@davemloft.net,
+	edumazet@google.com,
+	pabeni@redhat.com,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	heiko@sntech.de,
+	vkoul@kernel.org,
+	maxime.chevallier@bootlin.com,
+	mcoquelin.stm32@gmail.com,
+	alexandre.torgue@foss.st.com,
+	prabhakar.mahadev-lad.rj@bp.renesas.com,
+	romain.gantois@bootlin.com,
+	hkallweit1@gmail.com,
+	neil.armstrong@linaro.org,
+	linux@armlinux.org.uk,
+	shawn.lin@rock-chips.com,
+	david@ixit.cz,
+	netdev@vger.kernel.org,
+	linux-rockchip@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org,
-	Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH v16 3/5] phy: core: Add devm_phy_get_by_of_node()
-Message-ID: <aqRuCfmgPqa5h0y4@lizhi-Precision-Tower-5810>
-References: <20260906-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v16-0-f7bd68b5369f@linaro.org>
- <20260906-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v16-3-f7bd68b5369f@linaro.org>
-Content-Disposition: inline
-In-Reply-To: <20260906-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v16-3-f7bd68b5369f@linaro.org>
-X-ClientProxiedBy: PH7P220CA0157.NAMP220.PROD.OUTLOOK.COM
- (2603:10b6:510:33b::23) To GV2PR04MB11799.eurprd04.prod.outlook.com
- (2603:10a6:150:2cf::9)
+	linux-stm32@st-md-mailman.stormreply.com,
+	linux-renesas-soc@vger.kernel.org
+Subject: Re: [PATCH net-next v4 01/10] net: stmmac: move XPCS lifetime management to platform drivers
+Date: Sat, 12 Sep 2026 13:13:13 -0700
+Message-ID: <20260912201313.126882-1-kuba@kernel.org>
+X-Mailer: git-send-email 2.55.0
+In-Reply-To: <20260907153713.2572547-3-coiaprant@gmail.com>
+References: <20260907153713.2572547-3-coiaprant@gmail.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|AM9PR04MB7617:EE_
-X-MS-Office365-Filtering-Correlation-Id: 984bdb43-be3e-4649-1827-08df1048fee9
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|7416014|376014|1800799024|366016|23010399003|4143699003|11063799006|56012099006|10067099003|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: eiSVYMYoKl6jAJ36gHfnbCHShzahgUA7XfiQhvyRnil339Mf0m/ld6CLE1PqUdH0WM/hqF8vZ33si4AqDe5Dn5iQ/EnPONPN4OXKRGB8Qo5xJR4lwQfPRPubF0uZst1X/6d51uoHHi7VFDebhHhPkGkPJbtTFbdKYvHsj0M2RqwPHYJUsH8b1JbzTd7fUMpCLGNksffenvJwgn3/AmctBQuWxdwjMFEQ3elpbmbxGn10JwNi5qlLzpHyL0dE7FWvA2fpMsrBXOMKHHU6AqxOlDvLK9vK3lPti82iM25huatxbtdaqvRwgzkCqSlFgsMsLO8nw3UzOrllZV7bOm+J5CMd0bZ+d+vARr706VHas3vSd1yFR55UnhsM71M/BpuGq9Iokv6b1HroUzOkkeE9B9QuAc+vkL0NJyJPzmMNH/JqU9/d5agFvKwBcefpC0ogP3dLwFW1/WRhKvdww/UCWRjveEy47YBEREgAJ2SPo1q4mHIhnqJW32Tl98RTQL7sPgA3c0pPThQNWgTDq2K4fFFLwOELLh+EkdL6oYJeVn7KXqA8o/HqiDDmU/cC7zGL2AZlRRfN9GzAz7m3gX6JE5wcwL9+EtltUhb3EViiouKGnH7sxafzraMBmWb9/HpjF1G7/+Ghf7mc2GG8UnwO2W9/NClxak9b76aGhNXbIGM=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(7416014)(376014)(1800799024)(366016)(23010399003)(4143699003)(11063799006)(56012099006)(10067099003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?B4Z01PYrcR5Q99tuSy7lQnim8RFg7MVnLMbcjQXb4UT52fXXwBjiRWBLrQbq?=
- =?us-ascii?Q?+4qOoLQhSIuUfBV6uz6pNI890zymA1SsNLelMR3PLkGYwD45NZUl4w9SF6Rb?=
- =?us-ascii?Q?cBgBYL1OwTVXbul1y5ZAVT/1HQH/F9h8urf6neHCBRRmgK0UyEG22qDXzCEI?=
- =?us-ascii?Q?6VgxpO8grbbvxt8LFreZGSZii0fO/O/d1nmjEX0/cz3qNBNKUF4urdYvqTEO?=
- =?us-ascii?Q?IAD2pWQkVVZzE3XkD6zMqAeWfHXsCkwhgnwPswOJhB2luCtuM858to51Lb5J?=
- =?us-ascii?Q?5iiQVHt1shH7Sh/ebU+xDs439iqY/Vqz5QwPIr6cn3CT9nqJJAtaSdwfndix?=
- =?us-ascii?Q?2OrZI6tl2buivwDud6FYGzrfC6CplbmzI+PY1w++yJammhAPOU4O0Ui2Ah5A?=
- =?us-ascii?Q?riarQJSQG2w9fLb/WdYzRk06Pihni/YDmz/7Z5HXI0KRuFNhGK6kKx2n1j/i?=
- =?us-ascii?Q?wM4SM1NiW6a39JkbVWxuSC40ZgGcR05Q2TIdNA/w7UGoyiaJvetVY7yIKKMk?=
- =?us-ascii?Q?6644CFT4mz1O19GZ+4UaB2cTOmizz1jTzfQWsAvacVdQv2MM45az/ENghZl+?=
- =?us-ascii?Q?K6EzyyQmRWPb/r6VQAUNbRmT3WQra3/G0iKaVprr28LlTu/S0Q6oRNY3oNIo?=
- =?us-ascii?Q?c7WsSX9eIUFAu+9Mii6+aA6NLlHi0dBLMeFPfHLMZiDn/foR8sJ6rUm6ETSm?=
- =?us-ascii?Q?bALvrFoppGdD+En6UGIJGefV1+da4LS1H4LWgTgecQQSclJt6gH3j/YIYeQR?=
- =?us-ascii?Q?5DVEPeelz36nbRvlPpSmle6s9MmJcex5qy7sb906CqE47agT7JX50LfLVagx?=
- =?us-ascii?Q?x81KkeH3ZznBNGWIEXOtzkwpOTDmI7qk9x3+aTWlDt6IrHOEJPCaoUYqjEzE?=
- =?us-ascii?Q?gRrKIfsnT241jUaSZr1UvReaLL0FSAhkyxHJYzLFjLU1VoVf8mXjkzpnukhY?=
- =?us-ascii?Q?VyTwkxAYQIEfDshDglViNRhozChpyZvNkN9DyR4yAaPMfz1RedCrZoYpgdrE?=
- =?us-ascii?Q?h/swjUxnw1rK8WIYZNtbVidBSDyXBY7MhG/L6UiLVr/EUAasH3cIw8smc/Zw?=
- =?us-ascii?Q?8viFS2xEsuyVZ+uNvjdVRj6nZr29I/Mbscy+aYMIAvUOrzfNbIhvr+eAkwXR?=
- =?us-ascii?Q?Qv2I0tMU081twcaCMgEzJ+Tz4NvIxOCyc7uZGX7RL29J8c8ihwqe5RhaZlB0?=
- =?us-ascii?Q?ZofIdZR8KdqRvRwh86bqIRY9FX1+rYPiC5T4HjvpfCM3/ds6VNWAN3ZdL9s5?=
- =?us-ascii?Q?dQABJEEPwNl2yMlGYuRBgRsr95t4zPOOKQUvuWYU9fAyMkWQNkNOWJRw+ipc?=
- =?us-ascii?Q?zJPUDHgcNwionc3diKxUU7i8ArwdV2x3PqthGUUdyQ2ylecTgOAZrYauUCfH?=
- =?us-ascii?Q?98vpYQqL/NikXbaBLMlwhP79MQTNkeX6917RnxTALIW6Tmq+qiwx5AOFVMrZ?=
- =?us-ascii?Q?V3Y1BhxQ/0HuDkeLYwlCphmhzBCOLb1uDGF0jn1AYajHU8MoaLXxUTirLlq6?=
- =?us-ascii?Q?khxEhiDsKC9gyuYtP7l9k4T5bMrJ4wL295y0fCrreM7cZa15Jq0yU0uqWTDY?=
- =?us-ascii?Q?aZex/30DPyQxgk8F41Fdf6uw6FyBc913IdcRaIZy3u+GMllfELjWoxrWQLHV?=
- =?us-ascii?Q?xrX7rVRITAjvFU4ZpM3yt4iXhuoDAnTeFIumtvzP8xH1ORKmV+A6nw3VaqhU?=
- =?us-ascii?Q?trjPqHoF3DxMtL9uhn0RjMMOfQkgGGEy+AJsr0idvSnOhaaVcXJjgrkLRUsj?=
- =?us-ascii?Q?kXTwtp1ndVgEf3XdNLfzbdsDbIZRyIzc1fXyQwcXJzTELomrQ8OM?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 984bdb43-be3e-4649-1827-08df1048fee9
-X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Sep 2026 21:09:41.2335
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: gVO2nVGwhqMUqZlndwF5QUt5Tuou9Rv2neVOIRtdKVcTn9M3HslCVNSOnqEyZ2RoBTFQLcGL//W2w8wf6MdNL+6avG4iRnqIE4e+nXK2I+1y43iyTdoFSp3Oet8ukpd5
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB7617
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260911_140947_479641_361C3A09 
-X-CRM114-Status: GOOD (  20.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -155,100 +94,306 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, Sep 06, 2026 at 12:52:04PM +0100, Bryan O'Donoghue wrote:
-> Add a devm variant of phy_get_by_of_node() to allow for the familiar
-> pattern of having devres automatically release resources on the driver's
-> exit path.
->
-> Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-> ---
->  drivers/phy/phy-core.c  | 34 ++++++++++++++++++++++++++++++++++
->  include/linux/phy/phy.h |  7 +++++++
->  2 files changed, 41 insertions(+)
->
-> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-> index 490a7cde6d40a..2e3581ecb42ee 100644
-> --- a/drivers/phy/phy-core.c
-> +++ b/drivers/phy/phy-core.c
-> @@ -1050,6 +1050,40 @@ struct phy *phy_get_by_of_node(struct device_node *np)
+This is an AI-generated review of your patch. The human sending this
+email has considered the AI review valid, or at least plausible.
+---
+net: stmmac: move XPCS lifetime management to platform drivers
+
+This removes the generic XPCS creation and destruction code from
+stmmac_pcs_setup() and stmmac_pcs_clean(), leaving those functions as
+plain dispatchers to plat->pcs_init() and plat->pcs_exit().  The Intel
+mGbE glue gains its own pcs_init()/pcs_exit() implementations, and the
+renesas-gbeth, rzn1 and socfpga pcs_exit() callbacks now clear
+priv->hw->phylink_pcs after destroying the PCS.
+
+A few questions on the changelog and on the removed common code below.
+
+[Severity: Medium]
+Three statements in the commit message do not seem to match the tree
+this patch applies to.
+
+First:
+
+    Address all of these issues by introducing pcs_init() and pcs_exit()
+    callbacks in plat_stmmacenet_data.
+
+Are these callbacks actually introduced here?  Both function pointers
+already exist in struct plat_stmmacenet_data at the baseline:
+
+	int (*pcs_init)(struct stmmac_priv *priv);
+	void (*pcs_exit)(struct stmmac_priv *priv);
+
+and this patch does not touch include/linux/stmmac.h at all.  The
+baseline stmmac_pcs_setup() and stmmac_pcs_clean() already call them.
+
+Second:
+
+    Second, and more critically, when stmmac_pcs_setup() fails to create
+    an XPCS (either because no pcs-handle is present and no pcs_mask is
+    configured), it falls through to the else branch and leaves
+    priv->hw->xpcs as NULL. This will silently override any XPCS that a
+    platform driver may have already set up
+
+Is that the branch that causes the override?  In the baseline that arm
+returns immediately:
+
+drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c:stmmac_pcs_setup() {
+	if (priv->plat->pcs_init) {
+		ret = priv->plat->pcs_init(priv);
+	} else if (fwnode_property_present(devnode, "pcs-handle")) {
+	...
+	} else {
+		return 0;
+	}
+	...
+	priv->hw->xpcs = xpcs;
+}
+
+so no XPCS pointer can be clobbered there.  The clobber only happens on
+the plat->pcs_init branch, where the local xpcs stays NULL and the
+unconditional priv->hw->xpcs = xpcs; afterwards overwrites whatever
+pcs_init() stored.  Could the changelog describe that path instead?
+
+Third:
+
+    Existing platform drivers (intel, rzn1, socfpga) are updated to use
+    the new callbacks by moving their XPCS creation and cleanup logic into
+    pcs_init() and pcs_exit().
+
+rzn1 and socfpga already used pcs_init()/pcs_exit() before this patch,
+and neither creates an XPCS: rzn1_dwmac_pcs_init() calls miic_create()
+and socfpga_dwmac_pcs_init() calls lynx_pcs_create_mdiodev().  The only
+change for them is the added NULL assignment.  The patch also modifies
+dwmac-renesas-gbeth.c, which the changelog does not mention.  Should
+that list be corrected to intel only, plus a note about the pointer
+clearing in renesas-gbeth, rzn1 and socfpga?
+
+> diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-intel.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-intel.c
+> index f5f9fa67ecd77..fd5f01c8941c1 100644
+> --- a/drivers/net/ethernet/stmicro/stmmac/dwmac-intel.c
+> +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-intel.c
+> @@ -603,13 +603,47 @@ static void common_default_data(struct plat_stmmacenet_data *plat)
+>  	plat->mdio_bus_data->needs_reset = true;
 >  }
->  EXPORT_SYMBOL_GPL(phy_get_by_of_node);
->
-> +/**
-> + * devm_phy_get_by_of_node() - devm managed lookup and obtain phy reference by device node
-> + * @dev: device requesting the PHY
-> + * @np: device_node of the PHY provider
-> + *
-> + * Returns phy associated with the device_node or ERR_PTR. devres manages
-> + * releasing resources.
-> + */
-> +struct phy *devm_phy_get_by_of_node(struct device *dev, struct device_node *np)
+>  
+> +static int intel_mgbe_pcs_init(struct stmmac_priv *priv)
 > +{
-> +	struct phy **ptr, *phy;
-> +	struct device_link *link;
-> +
-> +	ptr = devres_alloc(devm_phy_release, sizeof(*ptr), GFP_KERNEL);
-> +	if (!ptr)
-> +		return ERR_PTR(-ENOMEM);
+> +	struct fwnode_handle *devnode, *pcsnode;
+> +	struct dw_xpcs *xpcs = NULL;
 
-Relate patches use devm_add_action_or_reset() instead manaully alloc
-devres_alloc().
+[Severity: Low]
+This isn't a bug, but is the NULL initializer still reachable here?
+Both arms of the if/else below assign xpcs unconditionally, from
+xpcs_create_fwnode() or xpcs_create_mdiodev(), and neither returns NULL.
+In the common code this was moved from, the initializer mattered because
+a fall-through left xpcs NULL and the call was guarded by
+if (xpcs) xpcs_config_eee_mult_fact(...); that guard is now gone.
 
+> +	int addr;
 > +
-> +	phy = phy_get_by_of_node(np);
-> +	if (IS_ERR(phy)) {
-> +		devres_free(ptr);
-> +		return phy;
+> +	devnode = dev_fwnode(priv->device);
+> +
+> +	if (fwnode_property_present(devnode, "pcs-handle")) {
+> +		pcsnode = fwnode_find_reference(devnode, "pcs-handle", 0);
+> +		xpcs = xpcs_create_fwnode(pcsnode);
+> +		fwnode_handle_put(pcsnode);
+> +	} else {
+> +		addr = ffs(priv->plat->mdio_bus_data->pcs_mask) - 1;
+> +		xpcs = xpcs_create_mdiodev(priv->mii, addr);
 > +	}
 > +
-> +	*ptr = phy;
-> +	devres_add(dev, ptr);
-> +	link = device_link_add(dev, &phy->dev, DL_FLAG_STATELESS);
-> +	if (!link)
-> +		dev_dbg(dev, "failed to create device link to %s\n",
-> +			dev_name(phy->dev.parent));
-
-Is it okay to print dbg message()? suppose return NULL or some error?
-
-Frank
-
+> +	if (IS_ERR(xpcs))
+> +		return PTR_ERR(xpcs);
 > +
-> +	return phy;
+> +	xpcs_config_eee_mult_fact(xpcs, priv->plat->mult_fact_100ns);
+> +
+> +	priv->hw->xpcs = xpcs;
+> +	return 0;
 > +}
-> +EXPORT_SYMBOL_GPL(devm_phy_get_by_of_node);
 > +
->  /**
->   * phy_create() - create a new phy
->   * @dev: device that is creating the new phy
-> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-> index 71c2e16397130..14b924a88411f 100644
-> --- a/include/linux/phy/phy.h
-> +++ b/include/linux/phy/phy.h
-> @@ -285,6 +285,7 @@ struct phy *devm_of_phy_optional_get(struct device *dev, struct device_node *np,
->  struct phy *devm_of_phy_get_by_index(struct device *dev, struct device_node *np,
->  				     int index);
->  struct phy *phy_get_by_of_node(struct device_node *np);
-> +struct phy *devm_phy_get_by_of_node(struct device *dev, struct device_node *np);
->  void of_phy_put(struct phy *phy);
->  void phy_put(struct device *dev, struct phy *phy);
->  void devm_phy_put(struct device *dev, struct phy *phy);
-> @@ -499,6 +500,12 @@ static inline struct phy *phy_get_by_of_node(struct device_node *np)
->  	return ERR_PTR(-ENOSYS);
->  }
->
-> +static inline struct phy *devm_phy_get_by_of_node(struct device *dev,
-> +						  struct device_node *np)
+> +static void intel_mgbe_pcs_exit(struct stmmac_priv *priv)
 > +{
-> +	return ERR_PTR(-ENOSYS);
+> +	if (!priv->hw->xpcs)
+> +		return;
+> +
+> +	xpcs_destroy(priv->hw->xpcs);
+> +	priv->hw->xpcs = NULL;
 > +}
 > +
->  static inline void of_phy_put(struct phy *phy)
+
+[ ... ]
+
+> @@ -733,6 +767,8 @@ static int intel_mgbe_common_data(struct pci_dev *pdev,
+>  	    plat->phy_interface == PHY_INTERFACE_MODE_1000BASEX) {
+>  		plat->mdio_bus_data->pcs_mask = BIT_U32(INTEL_MGBE_XPCS_ADDR);
+>  		plat->default_an_inband = true;
+> +		plat->pcs_init = intel_mgbe_pcs_init;
+> +		plat->pcs_exit = intel_mgbe_pcs_exit;
+>  		plat->select_pcs = intel_mgbe_select_pcs;
+>  	}
+>  
+> diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-renesas-gbeth.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-renesas-gbeth.c
+> index 19f34e18bfef2..9af32c26f9c14 100644
+> --- a/drivers/net/ethernet/stmicro/stmmac/dwmac-renesas-gbeth.c
+> +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-renesas-gbeth.c
+> @@ -81,8 +81,11 @@ static int renesas_gmac_pcs_init(struct stmmac_priv *priv)
+>  
+>  static void renesas_gmac_pcs_exit(struct stmmac_priv *priv)
 >  {
+> -	if (priv->hw->phylink_pcs)
+> -		miic_destroy(priv->hw->phylink_pcs);
+> +	if (!priv->hw->phylink_pcs)
+> +		return;
+> +
+> +	miic_destroy(priv->hw->phylink_pcs);
+> +	priv->hw->phylink_pcs = NULL;
 >  }
->
-> --
-> 2.55.0
->
+>  
+>  static struct phylink_pcs *renesas_gmac_select_pcs(struct stmmac_priv *priv,
+> diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-rzn1.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-rzn1.c
+> index 13634965bc19a..01df4776edb3f 100644
+> --- a/drivers/net/ethernet/stmicro/stmmac/dwmac-rzn1.c
+> +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-rzn1.c
+> @@ -35,8 +35,11 @@ static int rzn1_dwmac_pcs_init(struct stmmac_priv *priv)
+>  
+>  static void rzn1_dwmac_pcs_exit(struct stmmac_priv *priv)
+>  {
+> -	if (priv->hw->phylink_pcs)
+> -		miic_destroy(priv->hw->phylink_pcs);
+> +	if (!priv->hw->phylink_pcs)
+> +		return;
+> +
+> +	miic_destroy(priv->hw->phylink_pcs);
+> +	priv->hw->phylink_pcs = NULL;
+>  }
+>  
+>  static struct phylink_pcs *rzn1_dwmac_select_pcs(struct stmmac_priv *priv,
+> diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c
+> index 1d7f0a57d2889..6d4bc1fe8f751 100644
+> --- a/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c
+> +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c
+> @@ -539,8 +539,11 @@ static int socfpga_dwmac_pcs_init(struct stmmac_priv *priv)
+>  
+>  static void socfpga_dwmac_pcs_exit(struct stmmac_priv *priv)
+>  {
+> -	if (priv->hw->phylink_pcs)
+> -		lynx_pcs_destroy(priv->hw->phylink_pcs);
+> +	if (!priv->hw->phylink_pcs)
+> +		return;
+> +
+> +	lynx_pcs_destroy(priv->hw->phylink_pcs);
+> +	priv->hw->phylink_pcs = NULL;
+>  }
+>  
+>  static struct phylink_pcs *socfpga_dwmac_select_pcs(struct stmmac_priv *priv,
+> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
+> index afe98ff5bdcb0..d2f77f0c223a7 100644
+> --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
+> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
+> @@ -426,36 +426,15 @@ int stmmac_mdio_reset(struct mii_bus *bus)
+>  int stmmac_pcs_setup(struct net_device *ndev)
+>  {
+>  	struct stmmac_priv *priv = netdev_priv(ndev);
+> -	struct fwnode_handle *devnode, *pcsnode;
+> -	struct dw_xpcs *xpcs = NULL;
+> -	int addr, ret;
+> -
+> -	devnode = dev_fwnode(priv->device);
+> -
+> -	if (priv->plat->pcs_init) {
+> -		ret = priv->plat->pcs_init(priv);
+> -	} else if (fwnode_property_present(devnode, "pcs-handle")) {
+> -		pcsnode = fwnode_find_reference(devnode, "pcs-handle", 0);
+> -		xpcs = xpcs_create_fwnode(pcsnode);
+> -		fwnode_handle_put(pcsnode);
+> -		ret = PTR_ERR_OR_ZERO(xpcs);
+> -	} else if (priv->plat->mdio_bus_data &&
+> -		   priv->plat->mdio_bus_data->pcs_mask) {
+> -		addr = ffs(priv->plat->mdio_bus_data->pcs_mask) - 1;
+> -		xpcs = xpcs_create_mdiodev(priv->mii, addr);
+> -		ret = PTR_ERR_OR_ZERO(xpcs);
+> -	} else {
+> +	int ret;
+> +
+> +	if (!priv->plat->pcs_init)
+>  		return 0;
+> -	}
+
+[Severity: Medium]
+Does this drop the generic handling of the "pcs-handle" property?  After
+this change, any snps,dwmac node whose firmware points "pcs-handle" at a
+Synopsys XPCS, but whose glue driver does not set plat->pcs_init, gets
+priv->hw->xpcs == NULL and no message at all, since the function just
+returns 0.  "pcs-handle" is still a documented generic property in
+Documentation/devicetree/bindings/net/ethernet-controller.yaml.
+
+The changelog explains this is harmless because:
+
+    First, if a device tree specifies a "pcs-handle" but no select_pcs()
+    callback is provided by the platform driver, the created XPCS is never
+    used.
+
+Is that accurate?  The core consumes priv->hw->xpcs in two places that
+do not go through plat->select_pcs():
+
+drivers/net/ethernet/stmicro/stmmac/stmmac_main.c:stmmac_phy_setup() {
+	/* If we have an xpcs, it defines which PHY interfaces are supported. */
+	if (priv->hw->xpcs)
+		pcs = xpcs_to_phylink_pcs(priv->hw->xpcs);
+	else
+		pcs = priv->hw->phylink_pcs;
+
+	if (pcs)
+		phy_interface_or(config->supported_interfaces, ...);
+}
+
+drivers/net/ethernet/stmicro/stmmac/stmmac_main.c:stmmac_init_phy() {
+	if (priv->hw->xpcs &&
+	    xpcs_get_an_mode(priv->hw->xpcs, mode) == DW_AN_C73)
+		return 0;
+}
+
+Without the XPCS, supported_interfaces stays limited to
+plat->phy_interface and the DW_AN_C73 "no PHY" path is lost, so
+stmmac_init_phy() can now fail where it previously succeeded.
+
+Related, for Intel mGbE the callbacks are only installed inside the
+SGMII/1000BASEX branch of intel_mgbe_common_data(), while the removed
+common code created an XPCS from "pcs-handle" regardless of interface
+mode.  Should a warning be emitted when "pcs-handle" is present but no
+pcs_init() claims it, or should the changelog state the behaviour change
+explicitly?
+
+>  
+> +	ret = priv->plat->pcs_init(priv);
+>  	if (ret)
+>  		return dev_err_probe(priv->device, ret, "No xPCS found\n");
+
+[Severity: Low]
+This is a pre-existing wording problem and not introduced by this patch,
+but with the generic XPCS code gone this is now the only diagnostic in
+stmmac_pcs_setup(), and three of the four pcs_init() implementers do not
+create an XPCS:
+
+  socfpga_dwmac_pcs_init()  -> lynx_pcs_create_mdiodev()
+  rzn1_dwmac_pcs_init()     -> miic_create()
+  renesas_gmac_pcs_init()   -> miic_create()
+
+So a miic_create() or lynx_pcs_create_mdiodev() failure, including
+-EPROBE_DEFER, is reported as "No xPCS found".  Would something like
+"failed to initialise PCS" be more accurate here?
+
+>  
+> -	if (xpcs)
+> -		xpcs_config_eee_mult_fact(xpcs, priv->plat->mult_fact_100ns);
+> -
+> -	priv->hw->xpcs = xpcs;
+> -
+>  	return 0;
+>  }
+>  
+
+[ ... ]
 
 -- 
 linux-phy mailing list
