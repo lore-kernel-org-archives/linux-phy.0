@@ -4,93 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ECE92C88E64
-	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 23:45:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9CF9C88E5C
+	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 23:47:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jVBOktaaFd20RvTmwU27XRFSZ8U4/yFZkat4c+EOlAw=; b=hXOJtjxOZvVCkK
-	8MmORvA3TdNA9S0ulsU7qbAxv5ithEnNb8RJEjIVZoff6lzV1P8632KccY0VCEtr//zt/YJlO9qrO
-	KuQQfvPzchf4i/lGlue9ARu0pWCeDfXvJJUhTJKCTQFbcnc/WfrbxsdTjQk8wyRbwTBCapO9lmQ8j
-	hpP2xg7S2bVoM4LhF3KjWlqk78zsx5Gef1VnZ0vh2lDnhWnIkkZpxbOB9hBtWRz6F3sJgNTIpYPqJ
-	JE6YzmBAKePcWHLdBkvZgLoHbOkbQu2Id8CoSKFO9LdE5xM7pXyoJibOFphFr/sVYY3Tv9F+Pqqm2
-	4cJPrbL3QCkKjX+F2PGA==;
+	List-Owner; bh=U2enYMAmNOVvmCvOsh5UnPosu5/81ogzsbsSA3TdlRs=; b=nB4XvtYq1oeC5w
+	D8BA6rLJMrwR8NlSQRhwAbomUm8zz19fL4UDeknYqj5jp2d/2j1BtNNcwVcCr07WLY8zFhIYxTRLY
+	GcslT2+wQ+Eqc0aWe/bj+DEczD570+n2YVNGxRSg3DllFJ7qnLYAKqNefo5ARYcDrIXL5CQSHzBGz
+	jPZJ44higdQ7NQwJSYETtobsDZcQbb2PPoALM828pmBny5oudegd5AMIRI8R3iLhAARpJLZMHyJH2
+	VY+zogxsahCXFtaBUcGJbwRaG5AqWY3cd2mWGZ8d289gFjlQRalNhxVRZm7rLslaZ+7/h06lredaR
+	koePGou2+Df3XH6GCh8A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5ttI-000000026ko-1XfD;
-	Sun, 13 Sep 2026 23:45:44 +0000
+	id 1x5tuy-000000026nI-2Iyp;
+	Sun, 13 Sep 2026 23:47:28 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5ttG-000000026kS-0hX5
+	id 1x5tuw-000000026mx-2aTV
 	for linux-phy@lists.infradead.org;
-	Sun, 13 Sep 2026 23:45:43 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68DNZ7UC3476693
-	for <linux-phy@lists.infradead.org>; Sun, 13 Sep 2026 23:45:40 GMT
+	Sun, 13 Sep 2026 23:47:27 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68DNYVIM3066746
+	for <linux-phy@lists.infradead.org>; Sun, 13 Sep 2026 23:47:25 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	uIppl4N+WY/n0iZ5p2U3JRnXKjA+shABwFxLcxaGkwU=; b=KjAgGAPgJi7FdI5q
-	zV6N+B45qD/7OXwGt9z25VG2mJnd/R7JOWIPMyXqWy3jy6M5OWpRVcpuGgxfSR4X
-	rEw2WLHVFtXS038NM+dfDYFZnnpXiHQNNwXz0cLO1zFKt1jyGR5ExR8vWI4ETZV7
-	d5t759RW1ZTGzPuPfFsox9LZHopxsXV/BnWrAGliICLDSbmtmv026YA8meEFoHhu
-	mebAjiS5d6L0mqJyk2tRAUgjzIji2XnIPyYWX0PhmlOVNpQy97YO06rOTwCiU7dK
-	a7nBFuRbte/LkpwLgdxU8qCgJh+Tl8sBsHz2wAu3OgkvHB1sRny0mOg7Ku+/zRR9
-	Q7p72A==
-Received: from mail-vs1-f70.google.com (mail-vs1-f70.google.com [209.85.217.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gmy9dmdfq-1
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=cmOd/wtJBwDY+aB9upH1uIT8
+	B7lNgLS/AKryTS4QZfQ=; b=hx+8GYib+ZSJR2XplPITMr2FMSVazDbcRgI1G5C0
+	MZrAOyPg3Ub5sE3XWE/7QYp8XUCb65kofTRdd6UyY7xmGpOQNq+mtAXV406YoN8t
+	sRAEub4enFRNX5Eqo0WoHPOUw7QAzSEJMoy6wJgvsmPjOVlq1GH0FsheffvcZO+y
+	iMIFhMq/lahMqvzqGo/fdcgtsCxWOb3SAXMXxiHlsOjxJFH5IlMQX4bi79k6ERdu
+	LGdxL0N4r3p8g3aUZzl5EWgg0Pv1y9z6UD/9Ta5dJ7HMEd23WlxWPOzcN4s42R5Y
+	fc3RuWZIK1QdPn21WPFCWnPKGwipDY0JsOpSq1j6qSQaAw==
+Received: from mail-vs1-f71.google.com (mail-vs1-f71.google.com [209.85.217.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gmy9c4cq6-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Sun, 13 Sep 2026 23:45:40 +0000 (GMT)
-Received: by mail-vs1-f70.google.com with SMTP id ada2fe7eead31-78d25a8ff32so760728137.2
-        for <linux-phy@lists.infradead.org>; Sun, 13 Sep 2026 16:45:40 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Sun, 13 Sep 2026 23:47:25 +0000 (GMT)
+Received: by mail-vs1-f71.google.com with SMTP id ada2fe7eead31-78a5a291af3so2320405137.0
+        for <linux-phy@lists.infradead.org>; Sun, 13 Sep 2026 16:47:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1789343140; x=1789947940; darn=lists.infradead.org;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :content-type:mime-version:references:message-id:subject:cc:to:from
-         :date:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=uIppl4N+WY/n0iZ5p2U3JRnXKjA+shABwFxLcxaGkwU=;
-        b=QMWVv4EMzFqr+UJHihBonO4g0GYMhkxK8K1TLP47VmWhAzl/61mITlhjM0zriKItUR
-         qVBgiOBMjRMy3MRjv43gJRso/chaa76FgqEqZ7huyLl62Sxsv9ojt68ZeRLprUw7xIOO
-         gOxZQJIQzz3TKAPdWE9kJLNLN2g1VOz1dLeF44y31U3vMNAzlYIdePtDaC8DJ7YEgi/u
-         YrzdTCkTEAjPdvxHRr99fvYpwcPToyo/ybvSHmBsPUw6yUoSIT2QJEY6jySvnaPCw/qS
-         53Oox0YmJeCbgrmXnCRJc1VvMfgQ9SgyYgv0St00b76ocGT+68GIFdvAwxXhODmAC8ci
-         k48A==
+        d=oss.qualcomm.com; s=google; t=1789343245; x=1789948045; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=cmOd/wtJBwDY+aB9upH1uIT8B7lNgLS/AKryTS4QZfQ=;
+        b=aemS59WS/s/AS/nB8UJt301uLSDcLducFjqLp7sdYGIrxsdtXkktz6X4xqJG1hlw/A
+         bBsjOFkfhn2+sUsmULxEbv7VV3njaIiMU7BhBEXn2RT0BYZeQpb1CDVex/h1LSUs997m
+         6ESQp6c+TtiEFOlknJES17XweaJcb7j8cgHfJ4afuJSz1UDpAHhLj5QfQAruF2DUsCf0
+         vKoPhaOFI/Zufp1wIg5wgz26U3mhDAQL94ZJwWhGmhEfLqkEpRYxpa+OcTcSHAMailD/
+         ZA5iUtWAPUkXa3a6e+PWS0llp1dKNtQo55M9R14HkYwmXAarjBcWVtye+huLdG8ZJbtb
+         uBCQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1789343140; x=1789947940;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :content-type:mime-version:references:message-id:subject:cc:to:from
-         :date:x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to:content-type;
-        bh=uIppl4N+WY/n0iZ5p2U3JRnXKjA+shABwFxLcxaGkwU=;
-        b=W1xcK7wVoifPOFt9mdWRCnAqVV/2bsIvr5Uv/kpKLAnvPXZye6HA4RxN4VHQssqWvX
-         E6+CkzclJSv5ExjbGEVKzuZOh92SMGb3htpRcBCMLSQanBHLrVB6XkRjxFOAmd8oQmAs
-         4ae/SHnYXsq7Puyl674eR7W6yG6ljEYgW9VrSYP8NfzAq8Ew1b0QIJ8+laEp8R6srEqI
-         CwnsvIUcOxuCetwd0gb5n7Dsuhhxni7DEoDH2axjdilVYcWKSXksDu/BIje9SAPT6Wrs
-         dviRr1lmNXcKESRcO14zQCtUIIbfCqtBwa+LsFxSaHGS1pIvfr5mF96L3k4B8v7+ivCf
-         fxyQ==
-X-Forwarded-Encrypted: i=1; AKwUvBy1b6YXr1k71G1X6/cQs/6biN1bm/kurly19oPsbsnFApFrfObnkB40XsQWMCbuHOsXGBPyCzNEDoQ=@lists.infradead.org
-X-Gm-Message-State: AFuF++mayvKDaihoc5fBq0PgrobF3tt5gova+bnjVhFHhAQsfYlwpMGa
-	GsP0IqnVfpoA6up9z7jg7oxuMlnwnBdMka06TFYHz3yFfPPzm5ugjU8yMtt93bIxohHdNinxTg0
-	hYdRXYF62Ypw48PAY05HwRMYdDdHHongFwy2hvqcYnXcuOgDTiSB731qbJ4VF5yPR0fyT
-X-Gm-Gg: AYBFou2LtAgfHeJNlzrQ9tDaDBmHjdgQqcN+lJeqEBVupJ6TEUkpAOTTzh43c/lBWdM
-	5VWnPCrA5aHdF9vFtX/0UhjUQwQukRJan8FE4nADIohF2HrbyYVMzJCY4dVNrPrIdYGAksbrpGx
-	cvf9gueIXsQJvwjcx4kflZ/uCHNXev7dU+QGI17p5ub1BsBVGYemjouAtv+Z77fx+NAGsM/mILe
-	4SAsrqNqkc1aiXx85E7Dmo2KB0CmB4xn7Di22TRI/+80WdKoxC6ipu5v5kkFOgUe4aFV/pyNH6q
-	2sdsqKVhbyL/Kd0rQMLumsLiqpRIhPsJwN8dgAeKcVsU+WrAXE3qn6IKbQaimg9OI+VkveTNlBa
-	YqL/sw0iH/6psgDuLUBl9Mb/JQb0OOjLAMG+H1ghvL27uQCDDVfa73cZC66QLgwJtelavmt00WG
-	98yje0ICbq9vr7
-X-Received: by 2002:a05:6102:5607:b0:790:c7bb:43fd with SMTP id ada2fe7eead31-79b5bf316f7mr8987137.8.1789343139669;
-        Sun, 13 Sep 2026 16:45:39 -0700 (PDT)
-X-Received: by 2002:a05:6102:5607:b0:790:c7bb:43fd with SMTP id ada2fe7eead31-79b5bf316f7mr8976137.8.1789343139111;
-        Sun, 13 Sep 2026 16:45:39 -0700 (PDT)
+        d=1e100.net; s=20251104; t=1789343245; x=1789948045;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=cmOd/wtJBwDY+aB9upH1uIT8B7lNgLS/AKryTS4QZfQ=;
+        b=LClaciaJxx4d5iC6mhD4BoUEOzkz7d58pVOAsmX00svPbcTFxQDcfjQoZ8bQklLD1p
+         mJKB/7pDwkbBx0DJnGCTNogv9EIVUe/Wp1lkBOsTAJoxN4t0GRrg9PCAqJF81eRRAIS6
+         3mq7Tu9kdy32lyf0z3IdKDNW5QaunfilPRJMcYZha+dJYOibSn/L5VQyDXfEZPSqLwsF
+         EadLJy/ce4UuXEv1VZE2ONUYLJXY8jTs+fsYFyWWzmxxV225aEZnaZ0ia2OMMZldK0C3
+         JMqah1epPfg4o79n4DKGuVTQ4gUBz93aO8WwgQGq9T3DluWsyw1IzM4L+qxLsLlhsjd4
+         uAxw==
+X-Forwarded-Encrypted: i=1; AKwUvBwPI59cxvl1CptNeOjRCbt3kWLO/L2pR47/paqmbskknGPOo2LODG57NuM+u37+aAYTJM0amBTG4g0=@lists.infradead.org
+X-Gm-Message-State: AFuF++ng2DWUWOwdvjSPCBkzPhi7YTf5WW3DfhH8UWM5Rvkpo9eU1Vym
+	R8A/Sr0xeX9O/ri/tFYg8x/qMRjQB8I1FyLVDfMYt9TZjYGjSCLYhixwSVEI8x3qS5OpylGlmRZ
+	jHPTRDsAMeXiRSRSoKNUSb8i4b59CnrlKl8v220hLv1swp0yogTZB6l8ubo0DQ38uB+Yz
+X-Gm-Gg: AYBFou00NpGEGxla0xIa0JMLSKxRoIo7hbzbj/tpbtZtybzIn42Bz0PyL0+VQKwR9SG
+	wM/Fat60v/gDja2mDbz8VwgzBxYRJEgEenNvOWaho6k6X5+ErJa9DoDN9Lza8wE6H7d09rTKo+k
+	OsO0OFZ75CkkjkRvUCrg0lxulGddDUG/v8QaVMCNseCvpPH7ho9+Z9sUteDQw+/pPN4r87n8yEg
+	PZ5QsRtG6sVwyjLGma2vTJb2a4zp1DTCrnUv+g9b9oTgFF76xC0Lgiv1YUUSnjY8y6/AjfAVbJJ
+	3OKAfuEZ/2fs+WNcJb5zd2xt6xkdDFkfdDPD8XNHm4Dg2b+uIkxcPNqtYE7O7wv9hLN4YVXhc8T
+	/Ugb5oSsDHOZzXEjO858zlVV95NqMy9PVqm6i8gH2tpkq0Aybi+Y1h1uqg0FyqOwUG2YrUkqMtX
+	V6m4oZhm01eCEy
+X-Received: by 2002:a05:6102:918:b0:786:dfa:c5ea with SMTP id ada2fe7eead31-79b57cb42f6mr40900137.5.1789343244862;
+        Sun, 13 Sep 2026 16:47:24 -0700 (PDT)
+X-Received: by 2002:a05:6102:918:b0:786:dfa:c5ea with SMTP id ada2fe7eead31-79b57cb42f6mr40887137.5.1789343244498;
+        Sun, 13 Sep 2026 16:47:24 -0700 (PDT)
 Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5b8a04568f2sm2075707e87.19.2026.09.13.16.45.35
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-3a5a33263e0sm21888431fa.15.2026.09.13.16.47.20
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 13 Sep 2026 16:45:37 -0700 (PDT)
-Date: Mon, 14 Sep 2026 02:45:34 +0300
+        Sun, 13 Sep 2026 16:47:21 -0700 (PDT)
+Date: Mon, 14 Sep 2026 02:47:18 +0300
 From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 To: Nabige Aala <nabige.aala@oss.qualcomm.com>
 Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
@@ -113,43 +112,42 @@ Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
         freedreno@lists.freedesktop.org,
         Ritesh Kumar <ritesh.kumar@oss.qualcomm.com>,
         Mahadevan P <mahadevan.p@oss.qualcomm.com>
-Subject: Re: [PATCH 04/17] drm/msm/dpu: Add support for DPU 12.1 on Nord
-Message-ID: <bqoezyuyrjiawudbwxybvjpdun5f3fmhhzukdeg2holuc2mykq@oa5mhoylopz7>
+Subject: Re: [PATCH 05/17] drm/msm: mdss: Add support for MDSS on Nord
+Message-ID: <xmrrgh62hk4kdhfxt4xa5ngn7kc4f3p44dpvf2yfqdhkoxlis6@iftzpwpcc3qk>
 References: <20260911-nord-drv-dt-v1-0-e25c073cf1b6@oss.qualcomm.com>
- <20260911-nord-drv-dt-v1-4-e25c073cf1b6@oss.qualcomm.com>
+ <20260911-nord-drv-dt-v1-5-e25c073cf1b6@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260911-nord-drv-dt-v1-4-e25c073cf1b6@oss.qualcomm.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTEzMDM0MSBTYWx0ZWRfX4Ot6zRuwQqS4
- eWf9ktRDytVj/TClCirSkYUFy1fC7qa+3XC5zt0NcjS7lEnB4RU82fAF2cZ4I0/MR7U+msWFdSL
- 9SjnIKkDGwU6coGAEGGqxewCSqK3IONltT1lk6a88Lv5auaAvWLqEFCVwIj+52smHLVASY0Z+sy
- o8RGMSy/94/s5B63R7OHnL78aAdM2oLzlBoEGS/h7l7ddjX0i7UoU8BtbS0IY9KERoL0cJixh8S
- LtiS63KE4xQAWESGTf1Gmdx21QrmJmLJ2ybRSJhJhfbfUVZ/G2HDP5PcTcgTDqkR4gcNFihrcy2
- sLmqfCbUmgb3k06TiLxix43Zsmj9lnU3upaZsoEbl1fYSPtJkAKkn6RTbLgnZqhfLsZAgjuz02R
- wFEguQNBLKiUxwPufxT39dThhc2qnIt39TF4FAjR2lOh05Z3KlSvgj4idCXHNFDbBAG/jpHB/06
- b+AehvRbSREZMt7v8Uw==
-X-Proofpoint-ORIG-GUID: QgFgIpQ2hwrYhBGR5TRgHOnlpNnp3xGq
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTEzMDM0MSBTYWx0ZWRfX9c1pfD8Mw+dS
- tDg4RZJSJaYqr5qj5TVrUETz8hNnoSC3/WIINdIEE38SrYQ0B06o6yJaEbCfH8Xgrc6ESbAH6Iv
- zJZpG+rg09SYKBeXNdgDZ2RgBYV7dEQ=
-X-Authority-Analysis: v=2.4 cv=Y6htIReN c=1 sm=1 tr=0 ts=6aa735a4 cx=c_pps
- a=N1BjEkVkxJi3uNfLdpvX3g==:117 a=xqWC_Br6kY4A:10 a=8nJEP1OIZ-IA:10
+In-Reply-To: <20260911-nord-drv-dt-v1-5-e25c073cf1b6@oss.qualcomm.com>
+X-Proofpoint-ORIG-GUID: bDKJiBZ8X6vl7OFMtXYfWXeWz8gsrcTF
+X-Proofpoint-GUID: bDKJiBZ8X6vl7OFMtXYfWXeWz8gsrcTF
+X-Authority-Analysis: v=2.4 cv=c5Y+0h9l c=1 sm=1 tr=0 ts=6aa7360d cx=c_pps
+ a=P2rfLEam3zuxRRdjJWA2cw==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
  a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22 a=EUspDBNiAAAA:8
- a=99Y8_FLkFjoiQTscg30A:9 a=3ZKOabzyN94A:10 a=wPNLvfGTeEIA:10
- a=crWF4MFLhNY0qMRaF8an:22
-X-Proofpoint-GUID: QgFgIpQ2hwrYhBGR5TRgHOnlpNnp3xGq
+ a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22 a=EUspDBNiAAAA:8
+ a=ReDZFTIDzEE4zWO0opkA:9 a=CjuIK1q_8ugA:10 a=ODZdjJIeia2B_SHc_B0f:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTEzMDM0MSBTYWx0ZWRfX+eDmfWtAaD7s
+ K++Y5rn49NMBJx3cz0VpITtQyc8xgdteu1ciuukHJqS5oldVXcTxxFT3BrWbr7X6k7Q19R+zEHm
+ QjuuEoilbYALAOsuOGfohaH5LkUb4mx7+y0y2t/xH4vT+zgwIMrBbALD6N+I9troc+T2mzY7//0
+ r0YGK4XMKehps2fG5jNKCr+6VREMzF+xRflDUAyf+L76SR7VXvanAit/S768bFS4AkYhWfjsUky
+ r5Omk4fOnGlgAwy9BHkECjGXEVxKqWnYI1WjSMy8HaezTLi0mP8WZFx3UPZySJUz2/+bQ5goVmP
+ MokZltw78Nw2X7fHA7OwMIRO85H9PGjDjWvRc1mM6WiB8mTszwI4qdrK+PQ8IwFYMtUpmdEkRTt
+ E8cKGJLfWVJcEI2lQczlS4EZQcxVSzRQZFSsnwCbbUoL+Q9zffxGpcDZDyWtzPr7NBPXxG9aiOG
+ oo1S7RCLjOFkZ7pX3Yg==
+X-Proofpoint-Spam-Info: AW1haW4tMjYwOTEzMDM0MSBTYWx0ZWRfXwb9CHwhsmfbI
+ bFW0/2bcyR5K9ih5liMti8bioztwWCfBKNSmA8chhMksaanJsN1ZIoyHC35G7PMWZbAaKGEJTBy
+ nMNmgmXGzzLELJ/cGtXYG29GHeBqhRE=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-09-13_07,2026-09-13_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 lowpriorityscore=0 adultscore=0 spamscore=0 impostorscore=0
- bulkscore=0 clxscore=1015 suspectscore=0 priorityscore=1501 phishscore=0
+ adultscore=0 clxscore=1015 priorityscore=1501 lowpriorityscore=0 bulkscore=0
+ impostorscore=0 suspectscore=0 malwarescore=0 phishscore=0 spamscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2609130341
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260913_164542_384675_A770515B 
-X-CRM114-Status: GOOD (  30.67  )
+X-CRM114-CacheID: sfid-20260913_164726_782780_DD3BE8D4 
+X-CRM114-Status: GOOD (  17.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -161,345 +159,48 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Sep 11, 2026 at 09:06:35PM +0530, Nabige Aala wrote:
+On Fri, Sep 11, 2026 at 09:06:36PM +0530, Nabige Aala wrote:
 > From: Mahadevan P <mahadevan.p@oss.qualcomm.com>
-> =
+> 
+> Add the MDSS compatible for the Qualcomm Nord SoC, reusing the 57 MBps
+> register bus bandwidth setting shared with the other recent platforms.
 
-> Add the DPU catalog entry for the Qualcomm Nord SoC (MDSS 12.1, DPU
-> 1499A). Nord is DP-only with no DSI, and provides 8 DSPP blocks, 2
-> writeback blocks, 8 interfaces and 2 DP controllers.
-> =
+Why?
 
-> Extend enum dpu_intf with INTF_9 and INTF_10, which Nord is the first
-> platform to use.
-> =
-
-> Note: register addresses and xin_id values in the catalog are borrowed
-> from sm8750 and precedent platforms and are marked with FIXME(REG_ADDR)
-> and FIXME(XIU_MAP); they need verification against a real Nord register
-> map before production use.
-> =
-
+> 
 > Signed-off-by: Mahadevan P <mahadevan.p@oss.qualcomm.com>
 > Signed-off-by: Nabige Aala <nabige.aala@oss.qualcomm.com>
 > ---
->  .../gpu/drm/msm/disp/dpu1/catalog/dpu_12_1_nord.h  | 588 +++++++++++++++=
-++++++
->  drivers/gpu/drm/msm/disp/dpu1/dpu_hw_catalog.c     |   1 +
->  drivers/gpu/drm/msm/disp/dpu1/dpu_hw_catalog.h     |   1 +
->  drivers/gpu/drm/msm/disp/dpu1/dpu_hw_mdss.h        |   2 +
->  drivers/gpu/drm/msm/disp/dpu1/dpu_kms.c            |   1 +
->  5 files changed, 593 insertions(+)
-> =
+>  drivers/gpu/drm/msm/msm_mdss.c | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/drivers/gpu/drm/msm/msm_mdss.c b/drivers/gpu/drm/msm/msm_mdss.c
+> index 9087c4b290db..90bcc8c28dc2 100644
+> --- a/drivers/gpu/drm/msm/msm_mdss.c
+> +++ b/drivers/gpu/drm/msm/msm_mdss.c
+> @@ -531,6 +531,7 @@ static const struct of_device_id mdss_dt_match[] = {
+>  	{ .compatible = "qcom,kaanapali-mdss", .data = &data_57k },
+>  	{ .compatible = "qcom,milos-mdss", .data = &data_14k },
+>  	{ .compatible = "qcom,msm8998-mdss", .data = &data_76k8 },
+> +	{ .compatible = "qcom,nord-mdss", .data = &data_57k },
+>  	{ .compatible = "qcom,qcm2290-mdss", .data = &data_76k8 },
+>  	{ .compatible = "qcom,qcs8300-mdss", .data = &data_74k },
+>  	{ .compatible = "qcom,sa8775p-mdss", .data = &data_74k },
+> 
+> -- 
+> 2.34.1
+> 
 
-> diff --git a/drivers/gpu/drm/msm/disp/dpu1/catalog/dpu_12_1_nord.h b/driv=
-ers/gpu/drm/msm/disp/dpu1/catalog/dpu_12_1_nord.h
-> new file mode 100644
-> index 000000000000..8eb18752f3c4
-> --- /dev/null
-> +++ b/drivers/gpu/drm/msm/disp/dpu1/catalog/dpu_12_1_nord.h
-> @@ -0,0 +1,588 @@
-> +/* SPDX-License-Identifier: GPL-2.0-only */
-> +/*
-> + * Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserv=
-ed.
-
-Follow the guidelines please.
-
-> + * Copyright (c) 2015-2018, 2020 The Linux Foundation. All rights reserv=
-ed.
-
-Oh, really?
-
-> + */
-> +
-> +#ifndef _DPU_12_1_NORD_H
-> +#define _DPU_12_1_NORD_H
-> +
-> +/*
-> + * NORD DPU 12.1 catalog header. Generated from hardware summary YAML for
-> + * MDSS 12.1 - DPU 1499A (Nordschleife). This is a DP-only chip with no =
-DSI.
-
-You already said that in the commit message.
-
-> + *
-> + * All register addresses and xin_id values below are borrowed from the
-> + * reference chip (sm8750, MDSS 12.0) and precedent chips (Lemans, Glymu=
-r).
-> + * Nord's YAML provides only block counts and feature statements, not ad=
-dresses.
-> + * See FIXME(REG_ADDR) markers throughout for borrowed values requiring
-> + * verification against a real Nord register map before production use.
-
-What? You work at Qualcomm and you can't verify this against the memory
-map? Please cross-check it and also the number of blocks, hardware
-capabilities, etc.
-
-> + *
-> + * Key differences vs sm8750:
-> + * - 8 DSPP blocks (4 full + 4 lite) vs sm8750's 4
-> + * - 2 writeback blocks (WB1, WB2) vs sm8750's 1 (WB2)
-> + * - 8 interfaces (INTF_0,3,4,6,7,8,9,10) vs sm8750's 4 (INTF_0,1,2,3)
-> + * - 2 DP controllers (DP0, DP1) vs sm8750's 1 (DP0 only)
-> + * - No DSI (removed entirely)
-
-No need to. If you want, put it into the commit message.
-
-> + */
-> +
-> +
-> +static const struct dpu_lm_cfg nord_lm[] =3D {
-> +	{
-> +		.name =3D "lm_0", .id =3D LM_0,
-> +		.base =3D 0x44000, .len =3D 0x400,
-> +		.features =3D MIXER_MSM8998_MASK,
-> +		.sblk =3D &sm8750_lm_sblk,
-> +		.lm_pair =3D LM_1,
-> +		.pingpong =3D PINGPONG_0,
-> +		.dspp =3D DSPP_0,
-> +	}, {
-> +		.name =3D "lm_1", .id =3D LM_1,
-> +		.base =3D 0x45000, .len =3D 0x400,
-> +		.features =3D MIXER_MSM8998_MASK,
-> +		.sblk =3D &sm8750_lm_sblk,
-> +		.lm_pair =3D LM_0,
-> +		.pingpong =3D PINGPONG_1,
-> +		.dspp =3D DSPP_1,
-> +	}, {
-> +		.name =3D "lm_2", .id =3D LM_2,
-> +		.base =3D 0x46000, .len =3D 0x400,
-> +		.features =3D MIXER_MSM8998_MASK,
-> +		.sblk =3D &sm8750_lm_sblk,
-> +		.lm_pair =3D LM_3,
-> +		.pingpong =3D PINGPONG_2,
-> +		.dspp =3D DSPP_2,
-> +	}, {
-> +		.name =3D "lm_3", .id =3D LM_3,
-> +		.base =3D 0x47000, .len =3D 0x400,
-> +		.features =3D MIXER_MSM8998_MASK,
-> +		.sblk =3D &sm8750_lm_sblk,
-> +		.lm_pair =3D LM_2,
-> +		.pingpong =3D PINGPONG_3,
-> +		.dspp =3D DSPP_3,
-> +	}, {
-> +		.name =3D "lm_4", .id =3D LM_4,
-> +		.base =3D 0x48000, .len =3D 0x400,
-> +		.features =3D MIXER_MSM8998_MASK,
-> +		.sblk =3D &sm8750_lm_sblk,
-> +		.lm_pair =3D LM_5,
-> +		.pingpong =3D PINGPONG_4,
-
-No DSPP's?
-
-> +	}, {
-> +		.name =3D "lm_5", .id =3D LM_5,
-> +		.base =3D 0x49000, .len =3D 0x400,
-> +		.features =3D MIXER_MSM8998_MASK,
-> +		.sblk =3D &sm8750_lm_sblk,
-> +		.lm_pair =3D LM_4,
-> +		.pingpong =3D PINGPONG_5,
-> +	}, {
-> +		.name =3D "lm_6", .id =3D LM_6,
-> +		.base =3D 0x4a000, .len =3D 0x400,
-> +		.features =3D MIXER_MSM8998_MASK,
-> +		.sblk =3D &sm8750_lm_sblk,
-> +		.lm_pair =3D LM_7,
-> +		.pingpong =3D PINGPONG_6,
-> +	}, {
-> +		.name =3D "lm_7", .id =3D LM_7,
-> +		.base =3D 0x4b000, .len =3D 0x400,
-> +		.features =3D MIXER_MSM8998_MASK,
-> +		.sblk =3D &sm8750_lm_sblk,
-> +		.lm_pair =3D LM_6,
-> +		.pingpong =3D PINGPONG_7,
-> +	},
-> +};
-> +
-> +/*
-> + * Nord has 8 DSPP blocks: 4 full-featured (DSPP0-3) and 4 lite variants
-> + * (DSPP4-7). The driver has no separate lite-DSPP struct, so all 8 are
-> + * modeled with the same dpu_dspp_cfg/dpu_dspp_sblk structure. Lite vari=
-ants
-> + * have reduced features, but this is handled at runtime via feature fla=
-gs,
-> + * not via separate catalog entries.
-
-Is it really handled? I don't see it.
-
-> + * FIXME(REG_ADDR): DSPP4-7 base addresses extended via 0x2000 stride fr=
-om
-> + * sm8750's DSPP3 base (0x5a000). Verify against real Nord register map.
-
-ROFL. Who is going to verify those?
-
-> + */
-> +static const struct dpu_dspp_cfg nord_dspp[] =3D {
-> +	{
-> +		.name =3D "dspp_0", .id =3D DSPP_0,
-> +		.base =3D 0x54000, .len =3D 0x1800,
-> +		.sblk =3D &sm8750_dspp_sblk,
-> +	}, {
-> +		.name =3D "dspp_1", .id =3D DSPP_1,
-> +		.base =3D 0x56000, .len =3D 0x1800,
-> +		.sblk =3D &sm8750_dspp_sblk,
-> +	}, {
-> +		.name =3D "dspp_2", .id =3D DSPP_2,
-> +		.base =3D 0x58000, .len =3D 0x1800,
-> +		.sblk =3D &sm8750_dspp_sblk,
-> +	}, {
-> +		.name =3D "dspp_3", .id =3D DSPP_3,
-> +		.base =3D 0x5a000, .len =3D 0x1800,
-> +		.sblk =3D &sm8750_dspp_sblk,
-> +	}, {
-> +		.name =3D "dspp_4", .id =3D DSPP_4,
-> +		.base =3D 0x5c000, .len =3D 0x1800, /* FIXME(REG_ADDR): lite variant */
-> +		.sblk =3D &sm8750_dspp_sblk,
-> +	}, {
-> +		.name =3D "dspp_5", .id =3D DSPP_5,
-> +		.base =3D 0x5e000, .len =3D 0x1800, /* FIXME(REG_ADDR): lite variant */
-> +		.sblk =3D &sm8750_dspp_sblk,
-> +	}, {
-> +		.name =3D "dspp_6", .id =3D DSPP_6,
-> +		.base =3D 0x60000, .len =3D 0x1800, /* FIXME(REG_ADDR): lite variant */
-> +		.sblk =3D &sm8750_dspp_sblk,
-> +	}, {
-> +		.name =3D "dspp_7", .id =3D DSPP_7,
-> +		.base =3D 0x62000, .len =3D 0x1800, /* FIXME(REG_ADDR): lite variant */
-> +		.sblk =3D &sm8750_dspp_sblk,
-> +	},
-> +};
-> +
-
-[...]
-
-> +
-> +/*
-> + * NOTE: Each display compression engine (DCE) contains dual hard
-> + * slice DSC encoders so both share same base address but with
-> + * its own different sub block address. Nord retains sm8750's
-> + * topology of 8 DSC instances (2 per DCE =D7 4).
-
-Tell your AI to stop adding useless comments.
-
-> + */
-> +static const struct dpu_dsc_cfg nord_dsc[] =3D {
-> +	{
-> +		.name =3D "dce_0_0", .id =3D DSC_0,
-> +		.base =3D 0x80000, .len =3D 0x8,
-> +		.features =3D BIT(DPU_DSC_NATIVE_42x_EN),
-> +		.sblk =3D &sm8750_dsc_sblk_0,
-> +	}, {
-> +		.name =3D "dce_0_1", .id =3D DSC_1,
-> +		.base =3D 0x80000, .len =3D 0x8,
-> +		.features =3D BIT(DPU_DSC_NATIVE_42x_EN),
-> +		.sblk =3D &sm8750_dsc_sblk_1,
-> +	}, {
-> +		.name =3D "dce_1_0", .id =3D DSC_2,
-> +		.base =3D 0x81000, .len =3D 0x8,
-> +		.features =3D BIT(DPU_DSC_NATIVE_42x_EN),
-> +		.sblk =3D &sm8750_dsc_sblk_0,
-> +	}, {
-> +		.name =3D "dce_1_1", .id =3D DSC_3,
-> +		.base =3D 0x81000, .len =3D 0x8,
-> +		.features =3D BIT(DPU_DSC_NATIVE_42x_EN),
-> +		.sblk =3D &sm8750_dsc_sblk_1,
-> +	}, {
-> +		.name =3D "dce_2_0", .id =3D DSC_4,
-> +		.base =3D 0x82000, .len =3D 0x8,
-> +		.features =3D BIT(DPU_DSC_NATIVE_42x_EN),
-> +		.sblk =3D &sm8750_dsc_sblk_0,
-> +	}, {
-> +		.name =3D "dce_2_1", .id =3D DSC_5,
-> +		.base =3D 0x82000, .len =3D 0x8,
-> +		.features =3D BIT(DPU_DSC_NATIVE_42x_EN),
-> +		.sblk =3D &sm8750_dsc_sblk_1,
-> +	}, {
-> +		.name =3D "dce_3_0", .id =3D DSC_6,
-> +		.base =3D 0x83000, .len =3D 0x8,
-> +		.features =3D BIT(DPU_DSC_NATIVE_42x_EN),
-> +		.sblk =3D &sm8750_dsc_sblk_0,
-> +	}, {
-> +		.name =3D "dce_3_1", .id =3D DSC_7,
-> +		.base =3D 0x83000, .len =3D 0x8,
-> +		.features =3D BIT(DPU_DSC_NATIVE_42x_EN),
-> +		.sblk =3D &sm8750_dsc_sblk_1,
-> +	},
-> +};
-> +
-> +/*
-> + * Nord has 2 writeback blocks: WB2 (matches sm8750) and WB1 (new).
-> + * WB1 base and xin_id are inferred via stride from existing WB pattern.
-> + * FIXME(REG_ADDR): WB1 base address inferred as 0x65000 - 0x2c8 stride.
-> + * FIXME(XIU_MAP): WB1 xin_id set to 7; verify against real hardware map.
-
-ROFL
-
-> + */
-> +static const struct dpu_wb_cfg nord_wb[] =3D {
-> +	{
-> +		.name =3D "wb_1", .id =3D WB_1,
-> +		.base =3D 0x64800, .len =3D 0x2c8, /* FIXME(REG_ADDR): inferred */
-> +		.features =3D WB_SDM845_MASK,
-> +		.format_list =3D wb2_formats_rgb_yuv,
-> +		.num_formats =3D ARRAY_SIZE(wb2_formats_rgb_yuv),
-> +		.xin_id =3D 7, /* FIXME(XIU_MAP): inferred */
-> +		.maxlinewidth =3D 4096,
-> +		.intr_wb_done =3D DPU_IRQ_IDX(MDP_SSPP_TOP0_INTR, 3),
-> +	}, {
-> +		.name =3D "wb_2", .id =3D WB_2,
-> +		.base =3D 0x65000, .len =3D 0x2c8,
-> +		.features =3D WB_SDM845_MASK,
-> +		.format_list =3D wb2_formats_rgb_yuv,
-> +		.num_formats =3D ARRAY_SIZE(wb2_formats_rgb_yuv),
-> +		.xin_id =3D 6,
-> +		.maxlinewidth =3D 4096,
-> +		.intr_wb_done =3D DPU_IRQ_IDX(MDP_SSPP_TOP0_INTR, 4),
-> +	},
-> +};
-> +
-> +/*
-> + * Nord has 8 active interfaces (INTF_0,3,4,6,7,8,9,10) with no DSI.
-> + * DP0 connects to INTF_0, INTF_3, INTF_6, INTF_7 (4 ports for MST).
-> + * DP1 connects to INTF_4, INTF_8, INTF_9, INTF_10 (4 ports for MST).
-> + * Interfaces 1, 2, 5 are skipped (removed from sm8750).
-> + * All interface base addresses extend the stride from sm8750.
-> + * FIXME(REG_ADDR): INTF_4,6,7,8,9,10 addresses inferred via 0x1000 stri=
-de.
-
-Same ROFL. No. Do your job, please.
-
-> diff --git a/drivers/gpu/drm/msm/disp/dpu1/dpu_hw_mdss.h b/drivers/gpu/dr=
-m/msm/disp/dpu1/dpu_hw_mdss.h
-> index 0e65bf5ddc4a..7eccb4d2c65e 100644
-> --- a/drivers/gpu/drm/msm/disp/dpu1/dpu_hw_mdss.h
-> +++ b/drivers/gpu/drm/msm/disp/dpu1/dpu_hw_mdss.h
-> @@ -226,6 +226,8 @@ enum dpu_intf {
->  	INTF_6,
->  	INTF_7,
->  	INTF_8,
-> +	INTF_9,
-> +	INTF_10,
-
-This just broke DSI tearing support. See enum dpu_hw_intr_reg
-
->  	INTF_MAX
->  };
->  =
-
-
--- =
-
+-- 
 With best wishes
 Dmitry
 
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
