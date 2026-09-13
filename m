@@ -4,58 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2040C88E56
-	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 10:56:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1A24BC88E56
+	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 10:56:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=37osQZ/1cfzvFn07ojr+4ZzUt7JVUHjRduE/B4wptzg=; b=Atg8BEcPxPfEru
-	KHPkqTSY6sDxX1YVQM3UdIcNMxYsOLpp/Jijg4497QKf3KbdHqRBOEuEQjC1ifGCewEHicBO3NfXO
-	NnypTe6aOXdHP+tFEBk8BVeQFiOFuIkMVQj75EZngQLgxqD57KZKCffn/HgU3nw25R8zQe51aq1CD
-	PPD1kU0MSKkLXObUhFNJdCIVsS0QlPzpWDbuFhcv3M9wecqLb9c9CgDrLSB9z2zUvgKG4v+paJ8Oo
-	WkZ62l6iaiS4FzBGYKEY0WDmytEfXzqbi47Tot04kr7hiZzIXTRi8Mot/1G/KsgiQKIWdJW4RGMH9
-	pGeCEj6e6kbhvvo6UYvA==;
+	List-Owner; bh=iIJJIfOvcz9uw7qC426GRku5XR1hFhqgVr9paUb5FG0=; b=d0IAUCStDrrk7J
+	/8HzMKnMyJB5YqDvmcIkGEIfjnoWw4HHEGFlw9lJZ825klmcDuc0lxJ6eZU4sFuXaAYvDIfU/BPD1
+	3qh8CpxMKS88hjApTGYPaft1EcUc6IhXBjXalh7faOUBP5kwf1NxF3dBRVcI/eQwtSIvrSFzbBC/+
+	iB4/1+3MYFACdwM98k+G2YSfeTRgypLAgEszbRNOjurmvzIBOFXKtAdPLUXIL1Y+Mji+6de1tOc8C
+	MPoFY1kpPMCLi/xrVp1nZhWZUiBs7ii9xOYCchkUR3pKmEMy3sRjXw9/N8HUafRPvx32n9t24DrIx
+	kf/HIuzGZFtp7PG3pHig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5hsm-00000001bRj-2Slo;
-	Sun, 13 Sep 2026 10:56:24 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1x5hsq-00000001bTW-2gRP;
+	Sun, 13 Sep 2026 10:56:28 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5hsk-00000001bQq-2uSa;
-	Sun, 13 Sep 2026 10:56:22 +0000
+	id 1x5hsp-00000001bT2-38X6
+	for linux-phy@lists.infradead.org;
+	Sun, 13 Sep 2026 10:56:27 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id D6CFE44838;
-	Sun, 13 Sep 2026 10:56:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 75E5A1F00893;
-	Sun, 13 Sep 2026 10:56:15 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 35F0760DF2;
+	Sun, 13 Sep 2026 10:56:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6A7D61F000FF;
+	Sun, 13 Sep 2026 10:56:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789296980;
-	bh=4lfyUI7+Tc/Mb2QBy6WdYhNYHUjaxuxidXp/ImzOKso=;
+	s=k20260515; t=1789296986;
+	bh=LR2A0Swu9+UzeDAUKc/L2DdjU8RKz9nn4+AWjlmEqkA=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=MDNgxXDs/qfL2+bBSwRLh8Zolqio39Jl2Ern1bn9MCzxsW+oSFKQJS1Ag/E2NNYQE
-	 e14DpFo1W8eZ5U1lB4f2VodT805452hsUQFEYWg/ztg/5nBtb9d2p9tSV2MhiQSCRq
-	 lJrxb90/D/9pRDWI+iP4dCVJYt9YLZPEN9MiNi/J8KpSUxaHXyE1rceDeQNQH5MqCM
-	 RCc+I7/Nesk9xls0DYV1SvAMFRNDqtzZCV96Pkm/LWh/u/r9jwoRCHJddcTowkOxmw
-	 xL+S75lju5jxzAbWA+mThhmgjgLiYj8Dx0KSilRz/qK9rZiW76Y/4PlmpOpqbl22tq
-	 pyk0j8dMTnUSw==
+	b=fjMB8AUdSITAF7nA00nrqb7Ty6ZtwllLb6boF66Hj5HGG/ChDxWlFrf+KNz04LBVS
+	 r3BKs+CUTY8kO4ZwSPTARfJghGQ/zGwI3jaPLlc+RachUlBF7YxirxP47uEBElTJMN
+	 cvMJR5uIFfZmOFDv7a8rN1Av/GaD/KHYO32q7KrVA2sZC7rFBpYGAjnzCqmCSzhbnJ
+	 Q3CGLYaa+F4vBrYVK6mMEaUk2wXap6yWeBnP4tqreF1JkmOemj5q2AwtenePglyCyE
+	 tWQwVbvGeEYPlJ4fMBob8vmnYnmqK6fNfxa/4eq67P4Io43xE0QxAxUjuGNNetLASE
+	 nXnJBU8JAepyQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: mani@kernel.org, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: chunfeng.yun@mediatek.com, neil.armstrong@linaro.org, robh@kernel.org, 
- krzk+dt@kernel.org, conor+dt@kernel.org, matthias.bgg@gmail.com, 
- chunkuang.hu@kernel.org, p.zabel@pengutronix.de, justin.yeh@mediatek.com, 
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
- kernel@collabora.com
-In-Reply-To: <20260910092038.48291-1-angelogioacchino.delregno@collabora.com>
-References: <20260910092038.48291-1-angelogioacchino.delregno@collabora.com>
-Subject: Re: [PATCH v4 00/12] PHY: MediaTek DP PHY refactor and MT8196 eDP
-Message-Id: <178929697500.215437.15947728409079441751.b4-ty@kernel.org>
-Date: Sun, 13 Sep 2026 16:26:15 +0530
+To: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, 
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+ =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>, 
+ Bartosz Golaszewski <brgl@kernel.org>, 
+ Konrad Dybcio <konradybcio@kernel.org>, 
+ Sushrut Shree Trivedi <sushrut.trivedi@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-pci@vger.kernel.org
+In-Reply-To: <20260831-shikra-upstream-v2-0-406661d75afa@oss.qualcomm.com>
+References: <20260831-shikra-upstream-v2-0-406661d75afa@oss.qualcomm.com>
+Subject: Re: (subset) [PATCH v2 0/5] PCI: qcom: Add PCIe support for Shikra
+ SoC
+Message-Id: <178929698100.215437.3521119233132524977.b4-ty@kernel.org>
+Date: Sun, 13 Sep 2026 16:26:21 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
 X-BeenThere: linux-phy@lists.infradead.org
@@ -75,50 +82,23 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 10 Sep 2026 11:20:26 +0200, AngeloGioacchino Del Regno wrote:
-> Changes in v4:
->  - Removed error checking from all regmap_(bulk_){read,write} calls
->    as those are on MMIO and can't fail (Mani)
->  - Changed some of the error prints in mtk_dp_phy_get_one_cal_para()
->    to dev_err_probe() (Mani, Sashiko)
+On Mon, 31 Aug 2026 12:56:00 +0530, Sushrut Shree Trivedi wrote:
+> Add PCIe support for Shikra target, by adding dt-bindings for phy,
+> controller and corresponding phy & controller drivers/device-tree
+> changes.
 > 
-> Changes in v3:
->  - Added missing bitfield.h, pm_runtime.h includes (Sashiko)
->  - Set calibration data before registering PHY (Sashiko)
->  - Enable PM Runtime before creating PHY device (Sashiko)
->  - Continue poweroff if some write fails, but still return failure
->    as that would be a partial poweroff anyway (Sashiko)
->  - Added zero driving params to fix default calibration data setting (Sashiko)
->  - Added NULL check on device_Get_match_data (Sashiko)
+> Shikra RC is connected to TC9563 PCIe switch on all three
+> EVK variants: CQS, CQM and IQS. The individual downstream ports
+> of TC9563 connect like below:
 > 
 > [...]
 
 Applied, thanks!
 
-[01/12] dt-bindings: phy: Document MT8195 and MT8196 DisplayPort PHYs
-        commit: 1e432224ed9b31607802ff4e370b73468ca9a452
-[02/12] phy: phy-mtk-dp: Rename regs to regmap in struct mtk_dp_phy
-        commit: da3c07602f6761403a2ee1b155e7645465c0d36f
-[03/12] phy: phy-mtk-dp: Allow probing with devicetree match
-        commit: e78be6a5410cf74534be19b3be1090c325132f56
-[04/12] phy: phy-mtk-dp: Migrate register offsets to SoC specific pdata
-        commit: ae859204b519a384ad0136c21599bab9321090ce
-[05/12] phy: phy-mtk-dp: Implement power_on and power_off PHY callbacks
-        commit: 10e7b846fc5ed8d3420fc8eb1c0b4524e952b4ac
-[06/12] phy: phy-mtk-dp: Support set_lanes in configure and properly cleanup
-        commit: 0382b9948627e091aeffcb8be311ea2b26dc1665
-[07/12] phy: phy-mtk-dp: Support setting volt swing and preemphasis values
-        commit: 283aa3fbbc80e1c1b23264f0bd00a96f5cebbbec
-[08/12] phy: phy-mtk-dp: Add support for digital and analog calibration
-        commit: 7cf38eb0ab595fc312bef06faedf8a0f0dcb8fcd
-[09/12] phy: phy-mtk-dp: Rewrite and document default driving param macros
-        commit: 5d907e1bac8a4bf3209fca42ac93c9d2c7f723f8
-[10/12] phy: phy-mtk-dp: Add bitrate register val definitions to SoC data
-        commit: 53e25169561a500dbcc4992dad17795a11e3e6bf
-[11/12] phy: phy-mtk-dp: Add PHYD Lane EN register mask to SoC data
-        commit: 09782cc51273ba594905633e1e59ee3c3b82fe6a
-[12/12] phy: phy-mtk-dp: Add support for MT8196 eDP PHY
-        commit: 6fe4d5beac728b447e77dab158985550ae58718c
+[1/5] dt-bindings: phy: sc8280xp-qmp-pcie: Document Shikra PCIe phy
+      commit: 0f654af456b5e347dd69d58c2fc6d7e17c36a6d1
+[4/5] phy: qcom: qmp-pcie: Add QMP PCIe PHY support for Shikra
+      commit: 3518d967d8b64485f9dbf90bfeba1f341ef4c131
 
 Best regards,
 -- 
