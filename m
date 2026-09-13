@@ -4,62 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC833C88E40
-	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 06:22:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2FE47C88E40
+	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 07:50:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i+y6EyvhJZ+5UXCtxTi8eBCjk+E6G1UZMcXcjm2mOmk=; b=MocyCFGEdtYeSv
-	usMGeb4EEJRMXivkhyoWwCLq2cfLqKc+u4+rnTepnWORLNk9upuZv72H6GSIwY05YBD7iDZAGanSH
-	KQQ6yHIoWm6I5s2orBYBE7IXHFEWen93ZGTXxr3gk1t7OWv4EH/uw41hBjIqAuTTEB0QTA5OtJOzm
-	Rrcym5V/9Faxf+V+wDEz5UpQj7WByLPHPrPZHQUSfp43s7y+SUqzJ/49sbQuT47spzB/b4JDZqPnb
-	Pxl2/T5rSaErrcPduvznLTenrBiZbf+yO1Rb2gPOZYdUehKQEBS3VCvrjRkKMM5a4DeHbCAgN+Ywk
-	fMHJcawJY1KRXuE9tk0w==;
+	List-Owner; bh=dyMh8aCXIrRGChKJ/vUiHuPsbKhdtUrkE15vlQSxvpM=; b=QIowdVPVrPiXNm
+	LM+bvzVAV7rWOlL3ziUaq0GD//281ec517O45gmPm3nmp4pmRqGUcEgIEbjv8qNrvpL22pLM3APVt
+	Eh3QA9BzIwFLDvXzLnTX9glnZYeR0mO8nL0kmgZKJcK7dT/Kry9VaqY6OoIKkvt8TC0NPbScSpWeh
+	YajJed+JXGnt8y9Ll0R8JfE8ddMQOGCoNK/iG4aXYhWKtCRDeXjgOxxRw746DJUzT6ubmTke03twp
+	vhfIfL7lN3d/noLHaInrnA6xlhqZjqnzT0XYHIrkQx18pWD+FqfQ/MBG8GUQW6fkU3PKSaG3XsHY+
+	W+RSoh1WhogNYhEkEWSA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5dba-00000001SNh-1tDo;
-	Sun, 13 Sep 2026 06:22:22 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1x5eyX-00000001VOJ-34aJ;
+	Sun, 13 Sep 2026 07:50:10 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5dbZ-00000001SNY-0xYk
+	id 1x5eyW-00000001VOB-3SCo
 	for linux-phy@lists.infradead.org;
-	Sun, 13 Sep 2026 06:22:21 +0000
+	Sun, 13 Sep 2026 07:50:08 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id C769E60AAF;
-	Sun, 13 Sep 2026 06:22:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 966501F000FF;
-	Sun, 13 Sep 2026 06:22:18 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 3E2A360D8D;
+	Sun, 13 Sep 2026 07:50:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F129E1F000FF;
+	Sun, 13 Sep 2026 07:50:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789280539;
-	bh=7O0ijmU/63M3r27RIHOfPvuoO9Nzvs8zYyUzoD6v4J8=;
+	s=k20260515; t=1789285807;
+	bh=/vfBaplv3ynsUjvQf48JdtOudWdNUPLDX6cz9N40dxs=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=Sy+aDC9JoaxxV0w0LSHTaYGkr5Sp7dyL5FC3zlcdJX62ZYbUjU3JLD31BP6TkO/f4
-	 fUkrlG8gPnHUKLzKyug7JboVFMkUlJTY+xCfnlvu/DPp0Z/gCCeZO5kQg35wU/Czbf
-	 sPwuQQ6Xf/VG67+lrmJPbqmvxAcD6VgBGoWvtPdOUZlorJQo3ZSEKlPqTCZGY1wz8N
-	 FXpkLJhzlGSu1zoHCXd+zfhcF3UmupNg5QbhVRIppoMwuzu84+jrIiwN2rx8nKYyha
-	 oKbIYdx9M6OzwbJkJrZPT9tebELeaKhcW5eDIVNdfLoN+JlT5SVm2E4IrIN8IU/ACz
-	 FqcYQfHX6SRMg==
-Date: Sun, 13 Sep 2026 11:52:14 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Kathiravan T <quic_kathirav@quicinc.com>,
-	Baruch Siach <baruch@tkos.co.il>,
-	Dmitry Baryshkov <lumag@kernel.org>,
-	Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>,
-	Manu Gautam <mgautam@codeaurora.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, stable@vger.kernel.org
-Subject: Re: [PATCH v2 0/3] phy: qcom-qusb2: sort out register layouts
-Message-ID: <aqZBFvKu24Ed_IKj@parshuram>
-References: <20260706-fix-qusb2-v2-0-8d9cd73b1db7@oss.qualcomm.com>
+	b=NQyqepqacY2wTnbV1Q1tXFbycIEo8cp7lLc2CC7si3ixm6N1Dv/EndBL8RCGwikkI
+	 qpaGBStF/j16Ocsg4vJJdhhCeunXTxzYlz1aCiFiQrXMHNt96kcLeYTkYJQ+sJTypH
+	 n9+808sCaHxi+gSZqpTThxINukKrandZ5LSGN7RyVAG8r469ZpF02XL5wD+wQ5ArWj
+	 pa7WaTV8X5klYPMRaGZsY0VL1ijvBRLRchS/w/HnT+CG33hBjbJsWdwCr7Cb1zV7fF
+	 RP+UM1NckVZ7HxiOgU10H5BU4bwilWr+LmQiE+hwf7oPM2aU9/G5iULaihLH2F3j6r
+	 xADm43avrVrpw==
+Date: Sun, 13 Sep 2026 09:50:03 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Nabige Aala <nabige.aala@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+	Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Rob Clark <robin.clark@oss.qualcomm.com>, Dmitry Baryshkov <lumag@kernel.org>, 
+	Abhinav Kumar <abhinav.kumar@linux.dev>, Jessica Zhang <jesszhan0024@gmail.com>, 
+	Sean Paul <sean@poorly.run>, Marijn Suijten <marijn.suijten@somainline.org>, 
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
+	Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, 
+	Simona Vetter <simona@ffwll.ch>, Kuogee Hsieh <quic_khsieh@quicinc.com>, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org, 
+	Ritesh Kumar <ritesh.kumar@oss.qualcomm.com>, Mahadevan P <mahadevan.p@oss.qualcomm.com>
+Subject: Re: [PATCH 03/17] dt-bindings: display/msm: Document Nord MDSS
+Message-ID: <20260913-festive-shrimp-of-strength-10b9df@quoll>
+References: <20260911-nord-drv-dt-v1-0-e25c073cf1b6@oss.qualcomm.com>
+ <20260911-nord-drv-dt-v1-3-e25c073cf1b6@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260706-fix-qusb2-v2-0-8d9cd73b1db7@oss.qualcomm.com>
+In-Reply-To: <20260911-nord-drv-dt-v1-3-e25c073cf1b6@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,18 +81,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 06-07-26, 16:53, Dmitry Baryshkov wrote:
-> IPQ6018 and MSM8996 use the same register layout, however for historical
-> reasons ipq6018_regs_layout ended up correctly definig TEST1 register at
-> 0x98 (because platforms using that layout didn't use autoresume), while
-> msm8996_regs_layout used TEST_CTRL offset (0xb8) for the TEST1 layout
-> entry. Fix handling of the autoresume register and definitions of those
-> regs layouts.
+On Fri, Sep 11, 2026 at 09:06:34PM +0530, Nabige Aala wrote:
+> +    display-subsystem@ae00000 {
+> +        compatible = "qcom,nord-mdss";
+> +        reg = <0x0ae00000 0x1000>;
+> +        reg-names = "mdss";
+> +        power-domains = <&dispcc_gdsc>;
+> +        clocks = <&dispcc DISPCC_MDSS_AHB_CLK>,
+> +                 <&gcc GCC_DISP_HF_AXI_CLK>,
+> +                 <&dispcc DISPCC_MDSS_MDP_CLK>;
+> +        clock-names = "iface", "bus", "core";
+> +        resets = <&dispcc DISP_CC_MDSS_CORE_BCR>;
+> +        interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
+> +        interrupt-controller;
+> +        #interrupt-cells = <1>;
+> +        iommus = <&apps_smmu 0x800 0x420>;
+> +        #address-cells = <1>;
+> +        #size-cells = <1>;
+> +        ranges;
 
-This fails to apply on the current code, can you please rebase
+Make the example complete here.
 
--- 
-~Vinod
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
