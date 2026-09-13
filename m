@@ -4,111 +4,146 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6714AC88E63
-	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 19:01:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1CF57C88E5C
+	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 21:36:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0mfZ/Bk+Ac5Cy4CHwgxXXI1eykx4FYajLBdvl/zMM8M=; b=JBhyNrgxGjNWQy
-	vPev9GTVRUmLMnnle6cSQfhJvkNhlaTq6FtCNwJMdkugh1UFX4HTmnSE2oCqEwkYkN9Ykzj5H7Peq
-	ae+loKPX3RA138P3HzuT3mHwB1FRfLnbPIWiRvguTHeRaY+YwGN5V6MV432GWqJ+1EoTC8uhQTTAg
-	IxlkbGDjoKxzXEDZx2VGhQE7JdXmqv7f7J88Asvb7tZCk7af+l+Oek6mBwo7+XiaqAjm9PHRXs9ff
-	wJspVwXnsdMTF99iZSZU4l+ruIORTEMEUpNKag9ZuTg3pax3qPRehc5y3qanye5nUBQD3LKP6KET4
-	rJgIIuFvRtzb5pqIwAVg==;
+	List-Owner; bh=h8qcMJDws7W8bdkdZ769XDexvKEccS5R/Xvumzpu8r8=; b=OGmDlyL4GdiFTu
+	Zb19OgFZGLw2UQEL5xLOafaIm50IXC8gD7GAR515PQZwJ2r+u5fTnusC2HrJaRgm55dulHUKyMbYz
+	Hb/mKWaI2GLm6Krh5gQe3y4+C9MOlNqdVyDDoxn1TyyK3D3ajw5wrXsnpVF74Vr3SaZOR59OWk+7d
+	ATMrq9OKSDTqLYWdSCAJJ/zgid/ADX4paS0NKQ+wQTOWneieE84M2yb95LnuUr4Eeaqw6fS4w1ZUX
+	QyN7F/VcdFKdGosf3J5Rinc4DgBmZKbfq1Xhf91INLsHgpzv8T90E9OFCQAoeYo6dmaSNEDbPGTTj
+	UjhD2D0qAbT0MSApOlTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5pSE-00000001yES-01Q9;
-	Sun, 13 Sep 2026 19:01:30 +0000
-Received: from mail-pj2-x01.google.com ([2607:f8b0:4864:39::1])
+	id 1x5rs6-000000023OU-1d2l;
+	Sun, 13 Sep 2026 21:36:22 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5pS5-00000001y7I-0jZt
+	id 1x5rs3-000000023O7-0YKR
 	for linux-phy@lists.infradead.org;
-	Sun, 13 Sep 2026 19:01:28 +0000
-Received: by mail-pj2-x01.google.com with SMTP id d9443c01a7336-2dae660f31bso18548525ad.1
-        for <linux-phy@lists.infradead.org>; Sun, 13 Sep 2026 12:01:21 -0700 (PDT)
+	Sun, 13 Sep 2026 21:36:20 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68DLF7QX3672710
+	for <linux-phy@lists.infradead.org>; Sun, 13 Sep 2026 21:36:17 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=9NG7m+b/WWrUHSwlQRSzFSoC
+	lkdz/Noo7KR5PJVocI4=; b=QSUM0FhHkfoqqdMnY5xBavLUZPk3Qo9KSi7TSrkr
+	Xta+weX9GGY2ETDqc/xbTVhwC99LoLS1f5UJsuj/WO3/q1C24LACOSV+uC/OPZ55
+	p849UZPa85VwwQw1zvrFCzq8dgAGHFbyfJd3NMEPQm7kEe/yhqlieYcdKc8pihtz
+	yALsgRouBTSWUsATaEqySYFRtnGvjzNavsVHsEUhwPKe90AJzSs6L1ElnZoThTle
+	KacV0ja7EKeRcf2bS6gdYGwSM3p5wg1LyNxuaVxinBYO6Zd6Ujb/vkHDv/LTh7AV
+	zaQyWNF5OQAG/AM2JHCdizdBGIQVO24mo3G6lbiXlF46Dw==
+Received: from mail-ua1-f69.google.com (mail-ua1-f69.google.com [209.85.222.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gp3k0816h-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Sun, 13 Sep 2026 21:36:17 +0000 (GMT)
+Received: by mail-ua1-f69.google.com with SMTP id a1e0cc1a2514c-980989f5030so2256387241.0
+        for <linux-phy@lists.infradead.org>; Sun, 13 Sep 2026 14:36:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1789326080; x=1789930880; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=zQ2IdKH/7qjrKGR31C/pLtiJWP+p6fNr1pFwJZ+2Nhc=;
-        b=ZTAOGCvNt9/iGz6m8gJBjNQkV2YcAgOJzw0lBbbm01fTlwVC2chNBjcHYwFzW+7CwX
-         t3YgiOMf/a2D+o9ycdlfuQEMi5e9N08st6ycqr4xB+56qOikgbR96qCw+sN6YegJrUau
-         tdLdpuCPy5uSJybO3398bnxmQyuSNpe8O+8rWghgpeDsP39DceVkyZMV2KiIvhl4S8Ez
-         dpQBthclrXOUN5+zYqQ0WvYU6g3rA1SoXwsk71+LK6Xjf0h7gDyqNXd0NjGUV8C9npKE
-         KrTrGXGcY/PiwnNmXuGliVR6shJJju4yV74f6jKowjtuNTQOLtXCyvMHTjfPMxyB9y+u
-         SszA==
+        d=oss.qualcomm.com; s=google; t=1789335376; x=1789940176; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=9NG7m+b/WWrUHSwlQRSzFSoClkdz/Noo7KR5PJVocI4=;
+        b=kcCjmufa7mpGeFdxLk6ruaXqF/m+Zt4LKojcrHbiJVjLxQYcLWXqcbNnNDQbN1X/Mi
+         ay3KmEA31rb8RPt8dALka6hWQ+QHuuz+XLwGytCR8WfjykTaD0VEyBw84aUa2GsVWiTe
+         P14N7shcmsQoXv9uIQTUSoMyxssdoc52trr/QvGgycJmF7l9WBslh1sa7q7QeiwXmXo1
+         iO7TIKrLEq0+FjTSIIk2BMRwJB7Pjkm97Sj74RrYq8a2BJXkwBD0k/VrA7T2RzufIl+e
+         z8JOiQuKH2yBsfM24PL+ntzWroyMJXdxxOWUz72vkP9ZDaFSeu80cmKF4VDCpcCNb8zj
+         glzg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1789326080; x=1789930880;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=zQ2IdKH/7qjrKGR31C/pLtiJWP+p6fNr1pFwJZ+2Nhc=;
-        b=plfKz48A1vcznhrZoyQm8yue7jz66cZLxkVhQN1VzWOq6KrmPQIUnUeE/Kw4ycJxhE
-         GXLx1Q9xFB7/hwZSmaWsSFTT4bsWu0Vfo08hDp17g0uYsWRWNEi8P1E/eKLlwTyZWfFj
-         IVj+IXJsKlGqBeENhAzWPhtxtkG4/MrrYi9lJfd/d1oa9HU7uJz0m8uyqEPVcfHD90mD
-         F3MvE4figqUWLgxmmgiheduvW+oBBozxw7fd5LQ8vtbhlbcYtDyJjbs65eMDNDNlTaTW
-         ugMWs3cyn636Nw2uZirK4++Tj+XiowfIoE9l9LuYTTdY9Pik1vAki67eT09Ipzlu4FGg
-         A67Q==
-X-Forwarded-Encrypted: i=1; AKwUvBwD8sOK33uSQIA9dtVCSPO9kpS5e8vEJzjpQcmT4SAkJn+w2gNcOAR5ugPZ3U9MeyQCNMPAeTuCFh4=@lists.infradead.org
-X-Gm-Message-State: AFuF++mEY5V/lmnrSltNdgtR2/JJxrT3f6/sCDGpGzRf7+4KIb1RXLNN
-	y9gPkT8nAwBoPz+eAkbDYgpuLrdFxtVayWPHcypVyX780ZipSNzZdoqv
-X-Gm-Gg: AYBFou1qyTyVRZYL9Yv0qGPOPd1kG4TqyKjeXC/SNsUZ4tUDRXfCp2IDGKg7h3/65bs
-	a8WcCpZupjwv+LwpzIbs6PtvFMuNa9GukLdbOCPf+gcW/vIlrYm2TwziiGmToupiPB9xjjnHonx
-	Dij0TjtLeOaT7qzAOlRE0LK+e4biBgpw8zvmvhBpxkqUJ5fgMUb7JICC4lKrWGo/YQfvDvqR1Gy
-	rIBmBu4+8UtYfcRmYWveRD/NvS4iEOVQCSolR4qaCzZqIaSXHEuWznCU5PaOyOO6fo+JHyxGvri
-	GolERJ4K45ni4JipB9azqvBnNVdPqKC/UNtrgjnxDzsV6R/hPtJ8q1GuzLQVTvCIs7wVTvCFg+6
-	KHyzekU+Xfw/3n0eSAyyXUwIO9UaZ0d8QsK2nP5FgpzALfE9Z+CTqHjl99fFYksIx9HwvAkc/hx
-	VXTvRdX1oZHzvEwj5Y0fKpy/0Nm/Yho5WfCnQtU1pdbSGFCe3iQ6dUb9Se4Vfw3CDMa/yI/g==
-X-Received: by 2002:a17:903:1a2e:b0:2d8:d4cc:be63 with SMTP id d9443c01a7336-2dd2a35aa1cmr275548375ad.16.1789326080540;
-        Sun, 13 Sep 2026 12:01:20 -0700 (PDT)
-Received: from server.lan ([168.138.199.194])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2dd2cca6b7bsm36808655ad.3.2026.09.13.12.01.12
+        d=1e100.net; s=20251104; t=1789335376; x=1789940176;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=9NG7m+b/WWrUHSwlQRSzFSoClkdz/Noo7KR5PJVocI4=;
+        b=ZFORAV80w/s5D2Oq1EuBEEiCPzBvHgtJReVjv+wIzUgKj35hnbzkXAsAbhk8O3BYjE
+         te3baihdkNIo3hP0HTNvDuejJOY4EQmfmc3HU0Aoupo2pYOQgFS41JBeOcOek/Aaax5L
+         BuylgfnOIcsVXPtsPf+VvDv4HBTEeHh+lNuWWeOqes+IOaowZU9GMmXhknTrHRsLzsud
+         hfrvWDccrrQaHEquayQvOfAEVFGIfnVh/ypdXJqQDTWmSjI4Mv8hUjEGFZxabM0tfeJp
+         TlVMUWskFuSnxApl7BFZEpqspMRv3ak7kSbKXiVOTNb+10PmDLdkuz16PBUoe9PWEehV
+         g+xQ==
+X-Forwarded-Encrypted: i=1; AKwUvBwccxIrvje/S8bEMI4MX62hOYEEWFJHzbMT5hwe03bZxbakuZ+gWpZ5Ox3JTfiAwY4VzVrMABa0dGE=@lists.infradead.org
+X-Gm-Message-State: AFuF++m2R94NgxUgMx7fRf30SGWjIZdTQh/qQQVjoKouLX0sJqKZYeF3
+	IlXWqrsXVlU8lMN5GBshIoPSkHZYIiucg8hK9bGIKxW7G/yZsul3P4+J5NWzmfgY5V89oGYuBtH
+	0CX81ZkbygKJCVK2fPPX40uSUFZqoIqy0UU7EQMEG3CHhkaS31IZ4oj4c1BVX9dI3N5K3
+X-Gm-Gg: AYBFou3Vd9YLTfm81pif9sq4I0K6ptDM+QpPyrUcy3vJkUz4e+Th1Qz4cwnFXXmR89g
+	rNVgaIehLCsgYF/oqWsMeDp6nuoN9Hd1nc60j8J59mNf6XVJeQSMJ9U8ZjP0t8zc//DlMA0Dhvz
+	KaihDPs5IB+4lZwOBEVrMuIfngi64AcHtaAe2UnaurHdMNnC/qSbVGCbd5+iYt7ehRsVJ4ZLzSK
+	vyHDCt8T+vNTxZ7wF+uUndu7yTB23fSIQoRWJnrepAXc5OTrC9P/qXWGYPvyjAijQFT4xQ6jte4
+	ro0tEhnh2soEx71BZYNnOBH1hdKpvIO8peNQmZ0iGg+7MmNJAydeD7MpyDknU8Uhq0Uh8w7g1o7
+	YCR297127Q5U1P/Dck95odG6tzFXL7cfzURA2CacoWZUL55WQ63MLilxtVfQ2o+qTpvPE5/f6Vt
+	F4kPE0ks7FgDCb
+X-Received: by 2002:a05:6102:8309:b0:785:c960:ff85 with SMTP id ada2fe7eead31-792a96ab51cmr10976042137.7.1789335376493;
+        Sun, 13 Sep 2026 14:36:16 -0700 (PDT)
+X-Received: by 2002:a05:6102:8309:b0:785:c960:ff85 with SMTP id ada2fe7eead31-792a96ab51cmr10976019137.7.1789335376094;
+        Sun, 13 Sep 2026 14:36:16 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5b8a03a88a5sm1937493e87.8.2026.09.13.14.36.13
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 13 Sep 2026 12:01:19 -0700 (PDT)
-From: Coia Prant <coiaprant@gmail.com>
-To: Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S . Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>,
-	Paolo Abeni <pabeni@redhat.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Vinod Koul <vkoul@kernel.org>,
-	Maxime Chevallier <maxime.chevallier@bootlin.com>,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
-	Romain Gantois <romain.gantois@bootlin.com>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Coia Prant <coiaprant@gmail.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Russell King <linux@armlinux.org.uk>,
-	Shawn Lin <shawn.lin@rock-chips.com>,
-	David Heidelberg <david@ixit.cz>,
-	netdev@vger.kernel.org,
-	linux-rockchip@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-renesas-soc@vger.kernel.org
-Subject: [PATCH net-next v5 11/11] MAINTAINERS: add entry for Rockchip XPCS driver
-Date: Mon, 14 Sep 2026 02:58:46 +0800
-Message-ID: <20260913185849.907479-12-coiaprant@gmail.com>
-X-Mailer: git-send-email 2.47.3
-In-Reply-To: <20260913185849.907479-1-coiaprant@gmail.com>
-References: <20260913185849.907479-1-coiaprant@gmail.com>
+        Sun, 13 Sep 2026 14:36:13 -0700 (PDT)
+Date: Mon, 14 Sep 2026 00:36:11 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Saurabh Anand <saurabh.anand@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+        Manivannan Sadhasivam <mani@kernel.org>,
+        Rob Clark <robin.clark@oss.qualcomm.com>,
+        Dmitry Baryshkov <lumag@kernel.org>,
+        Abhinav Kumar <abhinav.kumar@linux.dev>,
+        Jessica Zhang <jesszhan0024@gmail.com>, Sean Paul <sean@poorly.run>,
+        Marijn Suijten <marijn.suijten@somainline.org>,
+        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+        freedreno@lists.freedesktop.org,
+        Ritesh Kumar <quic_riteshk@quicinc.com>,
+        Vishnuvardhan Prodduturi <quic_vproddut@quicinc.com>,
+        Mani Chandana Kuntumalla <quic_mkuntuma@quicinc.com>,
+        Mahadevan P <mahadevan.p@oss.qualcomm.com>
+Subject: Re: [PATCH 1/4] phy: qcom: qmp-combo: delay Type-C mux switch while
+ DP PHY is initializing
+Message-ID: <glm3mcwzq3uawbexxaggbqwkatudk3jrunnz5rwbp6gg5kcvm5@xbpqetiznnk5>
+References: <20260824-qcom-dp-typec-reconnect-fixes-v1-0-2825e5bf8a96@oss.qualcomm.com>
+ <20260824-qcom-dp-typec-reconnect-fixes-v1-1-2825e5bf8a96@oss.qualcomm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260824-qcom-dp-typec-reconnect-fixes-v1-1-2825e5bf8a96@oss.qualcomm.com>
+X-Proofpoint-Spam-Info: AW1haW4tMjYwOTEzMDMwOCBTYWx0ZWRfX4Kg0+5nVZKcl
+ TQ5fsZlEs6MMJBpk09mjWWsJvL05paTbT1eiTP2uect1Vtdv6KfsDBIFJzU7NE6SnL4X7+fuT+p
+ 61tk714+h/ZuLdDsWZ4r8uWU0uRFLis=
+X-Proofpoint-GUID: oFaC5JU7pYD1yOsNt3vy8csPSrloAsU3
+X-Proofpoint-ORIG-GUID: oFaC5JU7pYD1yOsNt3vy8csPSrloAsU3
+X-Authority-Analysis: v=2.4 cv=BtAIUoX5 c=1 sm=1 tr=0 ts=6aa71751 cx=c_pps
+ a=UbhLPJ621ZpgOD2l3yZY1w==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22 a=EUspDBNiAAAA:8
+ a=nEuW5l_y3reV5ifXg-kA:9 a=CjuIK1q_8ugA:10 a=TOPH6uDL9cOC6tEoww4z:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTEzMDMwOCBTYWx0ZWRfX56YOsVVkAKMP
+ uWkehXEzFX5ANvXYYxBSNu++kbR5+U5xE0d0cU69VA0WqPxg7bc4kzS4m2rRJA8SChfvQxVjfTk
+ mKVpeoZ1MJoDTZ601vqsTWTXlyMtdCHL/5Qcl8bI9H+6KC45ZRNL7QHyETbO3VIcxu6ImgNX2uJ
+ 7S0wsXWzJfgvDTNbSDArrAm/haZOZXb6GIoR0GqwSoXZ1wh+4o50Cix+Dh9HaPZAr/f/lgd0hkL
+ mtGN3Nr9mePMeH9nMaQrKaj4bOaIlPL9YJXkzWzPqNgPnk1mERO7A90k0u3scX23/qm0mCPWo2b
+ X1f3e3zHvqgIWbIv95rwIyUXOicFDKDKqBwCfEZYhJR4PvKubgAdnqb8JVRjlQdnKUy4XUfHBAQ
+ 4ojZsDbKQXXvNRouzE+UMQ4DQWWeUZnJvLCYys0dm4rlumG7RyR2TrZlyPTQtM2k1J+PiXhf1So
+ oeWi8QYfMzi/NlA2QNw==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-09-13_07,2026-09-11_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 spamscore=0 phishscore=0 impostorscore=0 suspectscore=0
+ bulkscore=0 malwarescore=0 adultscore=0 lowpriorityscore=0 priorityscore=1501
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2609130308
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260913_120123_417789_9E15D3B4 
-X-CRM114-Status: GOOD (  10.23  )
+X-CRM114-CacheID: sfid-20260913_143619_189022_6A042B7C 
+X-CRM114-Status: GOOD (  16.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,40 +160,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a MAINTAINERS entry for the Rockchip RK3568 XPCS platform driver
-and its device tree binding.
+On Mon, Aug 24, 2026 at 04:58:04PM +0530, Saurabh Anand wrote:
+> The Type-C mux switch guard only checked dp_powered_on, which is set in
+> qmp_combo_dp_power_on(). However there is a race window between
+> qmp_combo_dp_init() and qmp_combo_dp_power_on() during which dp_init_count
+> is non-zero but dp_powered_on is still false. A Type-C orientation change
+> arriving in this window would proceed with the mux switch while the DP PHY
+> is mid-initialization, corrupting the PHY state.
+> 
+> Extend the guard to also block the mux switch when dp_init_count is
+> non-zero, covering the full period from dp_init through dp_power_on.
+> 
+> Signed-off-by: Saurabh Anand <saurabh.anand@oss.qualcomm.com>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
 
-Include the relevant mailing lists (netdev and linux-rockchip) so that
-future patches are properly distributed.
+If it's a race, it usually means you need a lock. Otherwise you can
+still read the incorrect value of the variable.
 
-Signed-off-by: Coia Prant <coiaprant@gmail.com>
----
- MAINTAINERS | 9 +++++++++
- 1 file changed, 9 insertions(+)
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index c2414447892c2..960a53afa8357 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -23739,6 +23739,15 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/sound/rockchip,rk3576-sai.yaml
- F:	sound/soc/rockchip/rockchip_sai.*
- 
-+ROCKCHIP XPCS DRIVER
-+M:	Coia Prant <coiaprant@gmail.com>
-+L:	netdev@vger.kernel.org
-+L:	linux-rockchip@lists.infradead.org
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/net/pcs/rockchip,rk3568-xpcs.yaml
-+F:	drivers/net/pcs/pcs-xpcs-rk.c
-+F:	include/linux/pcs/pcs-xpcs-rk.h
-+
- ROCKER DRIVER
- M:	Jiri Pirko <jiri@resnulli.us>
- L:	netdev@vger.kernel.org
 -- 
-2.47.3
-
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
