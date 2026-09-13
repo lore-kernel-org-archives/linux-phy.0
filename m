@@ -4,55 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A402CC88E5A
-	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 10:56:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ABD3DC88E56
+	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 10:56:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	References:In-Reply-To:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J5nBzVXdxzNoBrklBa8M0xfn5ng0MLsRdOl06Yyz1OU=; b=dY5YtDNo4JYsMN
-	J8pD3Yu2VpWVleeNeeN1GptKL7cdnO9UtG93/FtZtl2AMB1NbUCfVz8nDcbbvXxaP/fto52/1dMSG
-	Eda6K3ySfXUWBUhAZKwF6L4CKE/dOTgHp+tuBJ18rnVRc86+jCM2qBmLHLMiftr0rGJUE1SqAari8
-	uFlD9fXrdcXKhPin71bxgcFie3CNtKvjGsU92N0QR9Glydn/dQgOufveQVSOkIro3ZDgUPMrg2vpH
-	r0Jcn+hzylxrvRSpMtvAk0GEfViuAzY89wYMcXpBAIU5ibI7UPShjKuVtj6rC9MMBm6Pw30+d9Blu
-	YFxQgUvv/LJveZVitqmw==;
+	List-Owner; bh=6LuVTvMDrG+Zb6QYMCU/y59J4g2FOYrSaQz72lQ2HjY=; b=kgNYbrPtUy/+4O
+	qzmiKNXesaTNFfokTGh3q1MHJNuJAdyX+Rnp1J+mCsw+D2uGoEQx5Eqy4aeExycX1bdwK8L2uwahe
+	Gbe1ylbOiWoSjDlq7AHflOMYRHR6zWKahtKKmrbTfoz5hoJCTit9grfliEYeAkB2E5ihBVtGD2dkL
+	9axtjetPRGK65juHbd4Yto6fI++8JHRTMK7s+GYkcikYaWl+VRv3XHynxf9J/hrTftCqPzIQFla3b
+	9ezBJGyL0TKJG7sCDnuzdqhpX6WPk7cnPDuxOEgaSGqCo6ZWkGPNjtVrSRY4JCCoz001y+9bw4xdb
+	/yL6IfStUagSRHeVXa7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5htD-00000001bcF-1OlI;
-	Sun, 13 Sep 2026 10:56:51 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1x5htG-00000001bdy-1YOS;
+	Sun, 13 Sep 2026 10:56:54 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5htC-00000001bbO-1JTa;
-	Sun, 13 Sep 2026 10:56:50 +0000
+	id 1x5htF-00000001bdJ-3Ia5
+	for linux-phy@lists.infradead.org;
+	Sun, 13 Sep 2026 10:56:53 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 14FAF404DC;
+	by tor.source.kernel.org (Postfix) with ESMTP id 375A660E00;
+	Sun, 13 Sep 2026 10:56:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A5B101F00893;
 	Sun, 13 Sep 2026 10:56:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A8AA81F000FF;
-	Sun, 13 Sep 2026 10:56:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789297010;
-	bh=VXU0FpJrrfRxjV/9XuJ2ILsuuq4iDXIkX/VBK1uBhLU=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=CbwG19Dr90iyMGAdA2iqv+xEBM5hdQaSqY1VBIEMQPUHoihasv8p6VcXDuOhHrI+r
-	 Snc3eyxofnfD1/cPR7gqDRJlIDNI/arGd7yq0VR/zm+do0ylZ0LkcjR/btIzome9Vg
-	 13vADLnO1b1tj3Vz0Q9rkEgA4CYFgli+wSZn+9XXEE7mIwkequTsMOdISaQ3UwaeB8
-	 Uj53cty5/gx7TT/yUvZ+u+mhg55UG83glAzJUkRMXkz4eOL56L0DpetjNn4Aqd9QYt
-	 s0cG1Q5yJ73Nf3517+24w1F1ddbQM9YcGVLlLS2xiMTDDD0V+cqKRAO5fM51ExInig
-	 it0vWP8u0oHWA==
+	s=k20260515; t=1789297012;
+	bh=2XT2LnixGn91Xc3D4NtPTJkbbuH+9TERLl4v5tZDuRs=;
+	h=From:To:In-Reply-To:References:Subject:Date;
+	b=DoQKW3rAxl3ptgln3nNYHwqpIlQtrFhu+gLrbOo4mMnzktLwakAYrMT52bjhKD5wj
+	 L2HJMuQUr6MSc2ppPPCCvINyInmKUs8VWviMV2A1kgwN0WFO1c7Hy5Tk8pJ1mLMaZr
+	 9XsDNBTQOO6GWpZtbTD+L7A4A9WVpIGDmA/7Z+aPp2kaA0+0PW4oxC8hjOa3rUcFGp
+	 YBb4RJbmL8WM46xr3Y4qF3EulBlqRJXvVSSKbEJddZ0ZsvwWNhsJAxsMLg3NXiGTHy
+	 jfFr3aptjLIPufN/Qhlxouwj3DDxHhHXBmuXTrlzPt7DGToKHaobGo6sCf+pDbKLCM
+	 7fL5rRW3HSWlw==
 From: Vinod Koul <vkoul@kernel.org>
-To: linux-phy@lists.infradead.org, Rosen Penev <rosenp@gmail.com>
-Cc: Sven Peter <sven@kernel.org>, Janne Grunau <j@jannau.net>, 
- Neal Gompa <neal@gompa.dev>, Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, asahi@lists.linux.dev, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-In-Reply-To: <20260909220810.52310-1-rosenp@gmail.com>
-References: <20260909220810.52310-1-rosenp@gmail.com>
-Subject: Re: [PATCHv2] phy: apple: atc: remove stale kernel-doc for removed
- struct members
-Message-Id: <178929700630.215437.14303908364654670254.b4-ty@kernel.org>
-Date: Sun, 13 Sep 2026 16:26:46 +0530
+To: Justin Chen <justin.chen@broadcom.com>, Al Cooper <alcooperx@gmail.com>, 
+ Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, linux-kernel@vger.kernel.org, 
+ linux-phy@lists.infradead.org, Pengpeng Hou <pengpeng@iscas.ac.cn>
+In-Reply-To: <20260615070123.51155-1-pengpeng@iscas.ac.cn>
+References: <20260615070123.51155-1-pengpeng@iscas.ac.cn>
+Subject: Re: [PATCH] phy: broadcom: brcm-usb: unwind late probe failures
+Message-Id: <178929701019.215437.9872353420312468460.b4-ty@kernel.org>
+Date: Sun, 13 Sep 2026 16:26:50 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
 X-BeenThere: linux-phy@lists.infradead.org
@@ -72,16 +71,21 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Wed, 09 Sep 2026 15:08:10 -0700, Rosen Penev wrote:
-> The @sw and @mux members were never present in struct apple_atcphy,
-> causing kernel-doc warnings.
+On Mon, 15 Jun 2026 15:01:23 +0800, Pengpeng Hou wrote:
+> brcm_usb_phy_probe() registers a PM notifier and may create a sysfs group
+> before registering the OF PHY provider. If provider registration fails,
+> probe returns the error with those resources still active.
 > 
+> Track which optional resources were installed and remove them on the late
+> provider-registration failure path. Use the same state in remove() so
+> cleanup matches probe progress.
 > 
+> [...]
 
 Applied, thanks!
 
-[1/1] phy: apple: atc: remove stale kernel-doc for removed struct members
-      commit: 44e2000fe44bce2397b5be89cdafc28ee1bb0e66
+[1/1] phy: broadcom: brcm-usb: unwind late probe failures
+      commit: 402266bacb70263d4ba2a1f0a615210c9c4cbdd8
 
 Best regards,
 -- 
