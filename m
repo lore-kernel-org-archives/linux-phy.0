@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 04F84C88E40
-	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 08:38:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C4C5C88E56
+	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 10:44:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NqipCbrdO6KCnJpWIPbVO1jHvXBYB/0YZZw+vo13PFY=; b=ZTb/cfZTP7ASrT
-	V3ZR10u8NKIqKGWkkXK6tynPcah5UUCkd2ew0DMrPOXQGHZF3VDxEgmHuSYoe5p8ec4kq0Bjn8B2x
-	A0HJVxE3b1io+ZGjyT7CpzSHTREGMr83kNTDLEFZp0rk6dAy3KD6Q53ZIa4f+8COZHgUzvkRn21hn
-	L821yic0W3qjReV2zqYo6k9ZsmSxQPXyicRmDJfX7liYUBA225vY6wXBURTFoxW2CTT0oy+aW9R4B
-	xs4lJS7YxXl1ORb1/qwbkebU8NAqIBP3qdWbtEs10R164JbZZK3a5xgLu0i1o6Ecf9FZXuaLFMktM
-	fisEPUIoZwPX6wAc84uQ==;
+	List-Owner; bh=x7s4QSlFCbueNO3rmvH4/8cFbTye2ch10n+ETBh3m7I=; b=GhxA30OkYSf3B2
+	JRXLuAp3e4lN8l68tAegw2xJhUgvxMa2Dlm67toAeSeunb4Ut/njELJBjteqgO9oss5tPxBaSBypd
+	Ja4+PuS3GwwHI4G8ZALg7V9R4MTI8upwrsC2e8BUaO0QOEHf2S7grV0be4kq/vxaI0nN/ph2o+asE
+	mQfU1BvBQ1BSeFhXmw0Y/AWuiwDcqrNLGcQIehiuy6mY+fQVVN6gm+MrHeINDvN1x91eVUTf/3t1k
+	IEDJF2v4LU9kHKFa4Tjn6lk4FetCWDUR/ld1yACOSjWX3UWaSbOi1mckA/OF0E8sysUhaFSpQ2INo
+	5/31bfeeB9B0Tx2QBv/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5fj0-00000001Why-1IdQ;
-	Sun, 13 Sep 2026 08:38:10 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1x5hh6-00000001b7l-0xfg;
+	Sun, 13 Sep 2026 10:44:20 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5fiy-00000001Whp-36r8
+	id 1x5hh4-00000001b7d-1D9D
 	for linux-phy@lists.infradead.org;
-	Sun, 13 Sep 2026 08:38:08 +0000
+	Sun, 13 Sep 2026 10:44:18 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id D0B7560210;
-	Sun, 13 Sep 2026 08:38:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4A85D1F000FF;
-	Sun, 13 Sep 2026 08:38:06 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 6A9B860DD4;
+	Sun, 13 Sep 2026 10:44:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 76EFF1F000FF;
+	Sun, 13 Sep 2026 10:44:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789288687;
-	bh=zYaObIl9eJLvHocuOdg7xLi92zre2V2kD4I8U81J+hg=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=oIaCJah6w5rhCJBugBBYhg/r/NVGgyOnQAYoB6rHwBxQ6G5I2wN1HYepVZKKjs0y/
-	 WqHUMHc8bRb7VjN15mZd3NMCpuuXYuTmVSwg352EDoeB4loa3LHBkhSYTBeNeqLjmV
-	 2dhxeJzDYLfJOR+L0bfOapugakqXI/kOqA7pjPXpGhXMR4GaXRizmO4tTYr1lP0Y1Y
-	 OKu5w7QM6ZZ9X82GJz67n5sTSIMeg7ZARewHhvMMyCvqnxJ1IoWRHQA+BYmkfudPjh
-	 01+zXnwxfT7hZeasAyLzT7cQg6ThsLIg7MyF47XhM0WW4+Is706TLaF4EHFSKTpVbu
-	 WPT/pRi4p38mw==
-Date: Sun, 13 Sep 2026 10:38:03 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Kartik Rajput <kkartik@nvidia.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
-	Conor Dooley <conor+dt@kernel.org>, Thierry Reding <thierry.reding@kernel.org>, 
-	Jonathan Hunter <jonathanh@nvidia.com>, Philipp Zabel <p.zabel@pengutronix.de>, 
-	Thierry Reding <treding@nvidia.com>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/2] dt-bindings: phy: Add nvidia,tegra264-mphy
-Message-ID: <20260913-elegant-banana-rooster-1b28ee@quoll>
-References: <20260909-tegra264-mphy-v1-0-ce61a80dc065@nvidia.com>
- <20260909-tegra264-mphy-v1-1-ce61a80dc065@nvidia.com>
+	s=k20260515; t=1789296257;
+	bh=cS1Ju2GfKqEA/FP9zJHnQJwF6JmphHpLlloN1nGWOQo=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date;
+	b=djcJx+TlSn6dwlhznxWXYMpg0j3ZzKupXcM4XcdsbX954BAsSfnM7DO6mf+ug5sbE
+	 3pk9f3ZGOCsDG/tBpL2eqrSq0iAisZnZidiB3WIMYvz6d6q4rnetQd2wjIYBnlkp4P
+	 Rjwt+KFcl0wrv/VtEgBYuz1yDLTWj2KVre2rO7wVU8VFzSl+cLLaZ4rNfqcsEdrFNa
+	 vNt9x7a0ROJK4rdc/hHg2eKENGsFtdf02yeWmRRbmsNhmgTjvnJYTQGsQlkSlTmpcA
+	 hx8oQsSyVpLbRyA4TTDQWnHeIghwSXZMGgrQR3H/oIvYeobJ30ikpMQmzCMr5oDocw
+	 wRXutpvjPQrug==
+From: Vinod Koul <vkoul@kernel.org>
+To: yoshihiro.shimoda.uh@renesas.com, neil.armstrong@linaro.org, 
+ geert+renesas@glider.be, magnus.damm@gmail.com, 
+ prabhakar.mahadev-lad.rj@bp.renesas.com, 
+ Claudiu Beznea <claudiu.beznea+renesas@tuxon.dev>
+Cc: claudiu.beznea@tuxon.dev, linux-renesas-soc@vger.kernel.org, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>, stable@vger.kernel.org, 
+ Pavel Machek <pavel@nabladev.com>, Nobuhiro Iwamatsu <iwamatsu@nigauri.org>
+In-Reply-To: <20260716183246.3183877-1-claudiu.beznea+renesas@tuxon.dev>
+References: <20260716183246.3183877-1-claudiu.beznea+renesas@tuxon.dev>
+Subject: Re: [PATCH v5] phy: renesas: rcar-gen3-usb2: Avoid long delay in
+ atomic context
+Message-Id: <178929625199.194170.14605036307704113858.b4-ty@kernel.org>
+Date: Sun, 13 Sep 2026 16:14:11 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260909-tegra264-mphy-v1-1-ce61a80dc065@nvidia.com>
+X-Mailer: b4 0.14.3
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,21 +75,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Sep 09, 2026 at 03:13:58PM +0530, Kartik Rajput wrote:
-> Add binding for the MIPI M-PHY on NVIDIA Tegra264 SoCs. The M-PHY is
-> a hardware block with two lanes, l0 and l1, used by the Tegra264 UFS
-> host controller.
-> 
-> Signed-off-by: Kartik Rajput <kkartik@nvidia.com>
-> ---
->  .../bindings/phy/nvidia,tegra264-mphy.yaml         | 108 +++++++++++++++++++++
->  include/dt-bindings/phy/nvidia,tegra264-mphy.h     |  12 +++
->  2 files changed, 120 insertions(+)
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+On Thu, 16 Jul 2026 21:32:46 +0300, Claudiu Beznea wrote:
+> The OTG PHY initialization sequence needs to wait for 20 ms at a specific
+> step, as described in commit 72c0339c115b ("phy: renesas:
+> rcar-gen3-usb2: follow the hardware manual procedure").
+> 
+> Commit 55a387ebb921 ("phy: renesas: rcar-gen3-usb2: Lock around hardware
+> registers and driver data") tried to address various problems in the
+> rcar-gen3-usb2 driver and converted the mutex protecting HW register
+> accesses to a spin lock, leaving, however, a long delay in the critical
+> section protected by the spin lock. This may become a problem,
+> especially on RT kernels.
+> 
+> [...]
+
+Applied, thanks!
+
+[1/1] phy: renesas: rcar-gen3-usb2: Avoid long delay in atomic context
+      commit: 48e97c59a49c9e90270f5e3d221db253b76de5da
 
 Best regards,
-Krzysztof
+-- 
+~Vinod
+
 
 
 -- 
