@@ -4,59 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C4C5C88E56
-	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 10:44:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F18BC88E65
+	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 10:44:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x7s4QSlFCbueNO3rmvH4/8cFbTye2ch10n+ETBh3m7I=; b=GhxA30OkYSf3B2
-	JRXLuAp3e4lN8l68tAegw2xJhUgvxMa2Dlm67toAeSeunb4Ut/njELJBjteqgO9oss5tPxBaSBypd
-	Ja4+PuS3GwwHI4G8ZALg7V9R4MTI8upwrsC2e8BUaO0QOEHf2S7grV0be4kq/vxaI0nN/ph2o+asE
-	mQfU1BvBQ1BSeFhXmw0Y/AWuiwDcqrNLGcQIehiuy6mY+fQVVN6gm+MrHeINDvN1x91eVUTf/3t1k
-	IEDJF2v4LU9kHKFa4Tjn6lk4FetCWDUR/ld1yACOSjWX3UWaSbOi1mckA/OF0E8sysUhaFSpQ2INo
-	5/31bfeeB9B0Tx2QBv/Q==;
+	List-Owner; bh=tIy9Xxbd0HAZ95IzWR/BKNMu7vxMJRejTm50sd0yiV4=; b=Kcwpbusb7lkJh3
+	dVd+s+nkpg/RMyCNNkHlNjl7szit7547piBlvQf0p67S8IrAJPOhzmq1qp8thHbHS/Zcgw9ZBw4yr
+	CI5SLgid5cO7XnKpd55dw+AhLYR0lq1eoRPhFGxJZvnAZFr+EHFzqYxVIHfdsDglhOvOCxCyLFykV
+	0Hd686aFHCVW/Z3kgaHbsj8LvkwFw1Liek2sQ4JxzIup5btNRzgQ0+L0w8St4inQIZNOVXgtY48oZ
+	G8UfTafU+ceFpvAbmY3Wgv4VQAYLyf6Yh5iy2G6N8BYgaYSQVR4aPOrnh5gXmulXHwwM9uFKquso+
+	pTCdZI0JCBTtDc1xhPQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5hh6-00000001b7l-0xfg;
-	Sun, 13 Sep 2026 10:44:20 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1x5hhA-00000001b8w-1ygE;
+	Sun, 13 Sep 2026 10:44:24 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5hh4-00000001b7d-1D9D
-	for linux-phy@lists.infradead.org;
-	Sun, 13 Sep 2026 10:44:18 +0000
+	id 1x5hh8-00000001b83-2x0c;
+	Sun, 13 Sep 2026 10:44:23 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 6A9B860DD4;
+	by sea.source.kernel.org (Postfix) with ESMTP id 0DFC24483B;
+	Sun, 13 Sep 2026 10:44:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C4DA51F00893;
 	Sun, 13 Sep 2026 10:44:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 76EFF1F000FF;
-	Sun, 13 Sep 2026 10:44:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789296257;
-	bh=cS1Ju2GfKqEA/FP9zJHnQJwF6JmphHpLlloN1nGWOQo=;
+	s=k20260515; t=1789296261;
+	bh=+nditHmexPW/lqQ+6UzeYP/gHiOGs4Gndjs9rnADJZE=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=djcJx+TlSn6dwlhznxWXYMpg0j3ZzKupXcM4XcdsbX954BAsSfnM7DO6mf+ug5sbE
-	 3pk9f3ZGOCsDG/tBpL2eqrSq0iAisZnZidiB3WIMYvz6d6q4rnetQd2wjIYBnlkp4P
-	 Rjwt+KFcl0wrv/VtEgBYuz1yDLTWj2KVre2rO7wVU8VFzSl+cLLaZ4rNfqcsEdrFNa
-	 vNt9x7a0ROJK4rdc/hHg2eKENGsFtdf02yeWmRRbmsNhmgTjvnJYTQGsQlkSlTmpcA
-	 hx8oQsSyVpLbRyA4TTDQWnHeIghwSXZMGgrQR3H/oIvYeobJ30ikpMQmzCMr5oDocw
-	 wRXutpvjPQrug==
+	b=OLgZxZ2O8sGhl/Of1OwzeV77kksP/bNeBpBJc6Zpugxgem7Q59jWQMn4UBZq0MaoW
+	 sOLAjgeT48gkLiHYp2A4mmUhuLtMhskGe12Nbf19nEhg6z2pgmUTh2Nztw4gL8Eq1/
+	 M77JPDzqYZHSmF7zYeGQ88l/vBO71MN/zTPuBkqWOsH2QjxvI+SjnJfWJuZR9RMACN
+	 KTP5IUHmirvUQzywEhhN3RkY2J+LF+cNiVHcCx89CWWBpV43Igiznsa629PU87eayl
+	 qrDZ2OQ1+oV4VLmzlysLsBCD00gM/bQiJYzuoVfSnsDlVMLBVNUQ1JOFLlpMLNBUOQ
+	 FMpjtNyJiIHfg==
 From: Vinod Koul <vkoul@kernel.org>
-To: yoshihiro.shimoda.uh@renesas.com, neil.armstrong@linaro.org, 
- geert+renesas@glider.be, magnus.damm@gmail.com, 
- prabhakar.mahadev-lad.rj@bp.renesas.com, 
- Claudiu Beznea <claudiu.beznea+renesas@tuxon.dev>
-Cc: claudiu.beznea@tuxon.dev, linux-renesas-soc@vger.kernel.org, 
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>, stable@vger.kernel.org, 
- Pavel Machek <pavel@nabladev.com>, Nobuhiro Iwamatsu <iwamatsu@nigauri.org>
-In-Reply-To: <20260716183246.3183877-1-claudiu.beznea+renesas@tuxon.dev>
-References: <20260716183246.3183877-1-claudiu.beznea+renesas@tuxon.dev>
-Subject: Re: [PATCH v5] phy: renesas: rcar-gen3-usb2: Avoid long delay in
- atomic context
-Message-Id: <178929625199.194170.14605036307704113858.b4-ty@kernel.org>
-Date: Sun, 13 Sep 2026 16:14:11 +0530
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: chunfeng.yun@mediatek.com, p.zabel@pengutronix.de, 
+ chunkuang.hu@kernel.org, neil.armstrong@linaro.org, matthias.bgg@gmail.com, 
+ granquet@baylibre.com, justin.yeh@mediatek.com, 
+ dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, kernel@collabora.com
+In-Reply-To: <20260911074015.9994-1-angelogioacchino.delregno@collabora.com>
+References: <20260911074015.9994-1-angelogioacchino.delregno@collabora.com>
+Subject: Re: [PATCH v2 0/2] MediaTek MT8195 HDMI PHY Fixes
+Message-Id: <178929625740.194170.3391606721825248662.b4-ty@kernel.org>
+Date: Sun, 13 Sep 2026 16:14:17 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
 X-BeenThere: linux-phy@lists.infradead.org
@@ -76,24 +73,25 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 16 Jul 2026 21:32:46 +0300, Claudiu Beznea wrote:
-> The OTG PHY initialization sequence needs to wait for 20 ms at a specific
-> step, as described in commit 72c0339c115b ("phy: renesas:
-> rcar-gen3-usb2: follow the hardware manual procedure").
+On Fri, 11 Sep 2026 09:40:13 +0200, AngeloGioacchino Del Regno wrote:
+> Changes in v2:
+>  - Fixed commit description of patch [2/2] (Mani)
 > 
-> Commit 55a387ebb921 ("phy: renesas: rcar-gen3-usb2: Lock around hardware
-> registers and driver data") tried to address various problems in the
-> rcar-gen3-usb2 driver and converted the mutex protecting HW register
-> accesses to a spin lock, leaving, however, a long delay in the critical
-> section protected by the spin lock. This may become a problem,
-> especially on RT kernels.
+> This series adds two fixes for the MT8195-class HDMI PHY, found in
+> MT8195, MT8188 and Genio variants.
+> 
+> This is fixing PLL calculation, and TMDS clock dividers, to achieve
+> all of the modes requiring data rates higher than 3.4Gbps, with the
+> successfully tested target being 3840x2160@60Hz.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] phy: renesas: rcar-gen3-usb2: Avoid long delay in atomic context
-      commit: 48e97c59a49c9e90270f5e3d221db253b76de5da
+[1/2] phy: mediatek: phy-mtk-hdmi-mt8195: Fix PLL calc divisor overflow
+      commit: de7f29a1fe1dc2864d8a47f8c39d508442cae167
+[2/2] phy: mediatek: phy-mtk-hdmi-mt8195: Fix TMDS clk bit ratio setting
+      commit: 486a70ef848264dcf9a57f0bb0452848db9537de
 
 Best regards,
 -- 
