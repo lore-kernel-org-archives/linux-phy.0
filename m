@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC9DFC88E5C
-	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 18:59:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 518C5C88E65
+	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 18:59:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=R7nCK7LKnYUl9B71+u4UDmYvH0Zkv6yC5w6UVzopmrc=; b=vs5CgkGeoGPdBD
-	slz9Mh9vPeuhxGTwGSOJx3sBSU6ZIsXjC+zjYiRjI5MIDwJewbQKfc84eQpvJSejak4u8x2cLiRaL
-	AeBzHN6vKs5thiNYocn80NeiybitpwJ0VnYQ5v2EDcGMEBLy+5D/G9SHH8OolsTehNmR6zSMUeq4f
-	kABg+pt+bEe0xDg3o3K5S5VPhQ1K2NPSxWmgHSRGKJqs+9Kii6HwI0VPTIq0WaXVqb8wa9OraMikb
-	Na5dJ26bbSK6aVsYYiBCjQUv2RfUsBX61NZUBm8cCIzVKu2qEKA4Lim+0u8Z0m6WcGnUeSwLS62TD
-	rlCu0OlPVA8Zp/yka1Pg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tnwFdNXGT+m/cqUXYCYJFU+SuwTo0oH//EvKFbSYWtA=; b=AufuNeSgAP15Xu
+	LQ6boQbztvnZS69yMhMIMwJ0eLScUgD72K/mrQFZSq+kOucg2w/zhdee3qWcZGQDKBrIIC9QZCI+W
+	VsQbvIOa3xqXECOnMpHwp4yjU+JcBleYiMbzPf+t6o69nuG49ef39Jslm/WTVrjlS3hx7O1SREfC6
+	7ffum88gmvdK3vAR5XfIn+AvVj06mmgNs3hJKT4i9s60g5GwsSOKeYFrUHXuJEWunTe5aN7qIa2+V
+	vZwpOp/1kLsG1A1YkV1MPHP7aK3dgC0i+L40L5to45idM4pBNEcGV+FcFfmED34r1oUPA/jedaxNp
+	nc7L6+CmV9cuZmeG4kTw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5pQ7-00000001wUM-0vx2;
-	Sun, 13 Sep 2026 18:59:19 +0000
-Received: from mail-pj2-x07.google.com ([2607:f8b0:4864:39::7])
+	id 1x5pQI-00000001wZG-035i;
+	Sun, 13 Sep 2026 18:59:30 +0000
+Received: from mail-pj2-x05.google.com ([2607:f8b0:4864:39::5])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5pQ4-00000001wTP-2nOa
+	id 1x5pQE-00000001wWK-2dT5
 	for linux-phy@lists.infradead.org;
-	Sun, 13 Sep 2026 18:59:17 +0000
-Received: by mail-pj2-x07.google.com with SMTP id d9443c01a7336-2d9080b18b6so24498685ad.1
-        for <linux-phy@lists.infradead.org>; Sun, 13 Sep 2026 11:59:16 -0700 (PDT)
+	Sun, 13 Sep 2026 18:59:28 +0000
+Received: by mail-pj2-x05.google.com with SMTP id d9443c01a7336-2d6fbdc8772so11697425ad.0
+        for <linux-phy@lists.infradead.org>; Sun, 13 Sep 2026 11:59:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1789325955; x=1789930755; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:mime-version:message-id:date
-         :subject:cc:to:from:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=Aq4zy6PfsqGNGjFtyNQAEe67ibyvhyM2nHkT21RqtJM=;
-        b=DtpzyPs6gbPD+EQ5QBLC0ZNr7mOqey3V51hsrbNBVsYm8vg3E0ol6QAF7S/UmlF30y
-         pRjlFQ/RgudmlZuuRlrADjkVweQo3GDs9zERIrQEMDq61PR6Kmy9MozUQreQh/XfIg9A
-         ClO8Y6A1CqUKQ49haw7tGcnuOKKb5+QNmfTeb8uYBvFEbhEAghygXWf4X0pQqvlQyZ2y
-         Z+iBVr6wSlHGurUgcyV3+CnlShgH132jVMIhH0ziIr+UiMl3nZxmuLzpar172GbVXq9F
-         PSREtI9SwyM++VVLjn9cG5WCz1qmAyyHHaRN3pOVBI49LOSmgtjMuJey0qIBOanHJEFr
-         OcgQ==
+        d=gmail.com; s=20251104; t=1789325966; x=1789930766; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=qN2MkU81Lz1KMvwh0OIvKliZyK5cNgEHJk5t3+uaHA8=;
+        b=I62/YUVcK/1951fnRsY3rvS+2LO2A4WyEY+cEELiBwLmFAifGvY7aiHXXdQ6bwTmIA
+         IlLCY6am+FfZRyz9MgRbhDDdbhcVzrsh/iWdjFvt/LKOwwqE/wPqHQ6HrjOiYpJeoesS
+         +aJ/mjZjvOm0mzYlIOK+5no1DZczCg8u4USLNTBJmzAM49gXZHV87DUsfzxXm6eqIGrJ
+         Z3jJzfiaYejbdNplrsXFHy1ViQaLJMCXsLVGhRrKhIie8hre1YBWd+ERDOCR6coIV9+M
+         4Ixj2LnwzMil183D9hCqWbYG+wjX3ecWyoRflBK6VeZcJLHZ7zf/aw3qYuNRqZ/aPnOY
+         fh7Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1789325955; x=1789930755;
-        h=content-transfer-encoding:content-type:mime-version:message-id:date
-         :subject:cc:to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=Aq4zy6PfsqGNGjFtyNQAEe67ibyvhyM2nHkT21RqtJM=;
-        b=F36verrf1FJ9CU9ywDy2ss3jVFGz7M/uGumiQAauSp5CVHPpKQjm+jRsgFhaj90HX4
-         Wvshl/WGeojJn1hQgy3ZjmI5PBmrSgdsfq4p5gvRORa3dx1LbNtu/5C4xyTgTiWiD+rH
-         wvc2Dzku51aoIzKBd/YQtvbxweix+dTTXUfUo3XpTYxaeFp403vB7cZrUipzoqNWJN7E
-         neUv9cc9Ta1WnLC4FPn/WzQn0e19+f3prBjgjdONcwYeJmW9mMOWtO9rnQ7CfFVMyrHy
-         +0JvYhRVK4LgX6+vpFhq67HGGCSPINxpMzsuF4/1wVDmAX4V9rDadHLCB+UcRnGOuhR9
-         ME1A==
-X-Forwarded-Encrypted: i=1; AKwUvBxdyZGKm/H/X4MEEYxlx6aa1bjaUpf+qnorSSc0uQ9Aawp2egb9P24AuHMOp2F70xjH/B82iPIt36E=@lists.infradead.org
-X-Gm-Message-State: AFuF++lzvxwVqSYEJDojxTf2lNQ1tqkdGXeTYwtPnDv4KV54/nbBLLnv
-	Ku2Pj08scyw2D2ZPchWXbpNOZAFsW9tOuwMsfgbqWxRImbaA+vld3jLM
-X-Gm-Gg: AYBFou3ydAn8mVo8qGBlElfnc07InG6acUt2LrtbWA0XRrbsxtohb3AdzpxR1zJ54a/
-	GuprZpDnXTPY9n5EjN+6/09HkstQDEQguSdBmNqEq8QGzmprcpXOZRB3DahGc+RUuhRYOZSu07r
-	kePKtH/KeqzdkpuzhKrA2LwEaGV2PbicpTwtfIEUnQEYgHcZpYAHuCeC+rJqCKc3t5Hxt6GisWi
-	Y+pnRn83fGcPF3OMXSEj4F7DbeF1KMAT/uRTPgvtokxJMaKnBzxgAj7/th4PNFZjLfoNhcDj2PK
-	xsSi3Sd6YpknSB9zDOG4JYB8Cj7GLMXWxw/grRlPnrCmCAWEhj0Mb/mFflpETdqQNnKTfQd1mP4
-	yySTgKEbAWkYgfz+IIWxpd9u+q9bDY0ergwgsNxhap1uq0YPIsveKtJMzIL233VqIPI0T0u0Asn
-	wkiO5iRGX8GRlI/lMZMJgRZLztMClUfM7NF64MVwKg7iYHAERYtKg1Kcn8hDZYmhDtaHF2lA==
-X-Received: by 2002:a17:902:f68e:b0:2d9:2fc9:570f with SMTP id d9443c01a7336-2dd2a3502e9mr246863745ad.16.1789325955422;
-        Sun, 13 Sep 2026 11:59:15 -0700 (PDT)
+        d=1e100.net; s=20251104; t=1789325966; x=1789930766;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=qN2MkU81Lz1KMvwh0OIvKliZyK5cNgEHJk5t3+uaHA8=;
+        b=VD/qp75xS/1yCU2W91G6ojLIOGaloOmefa6CMwjEJMEv1qfgZTjGJ98UAiB6lRdlIk
+         CsR0LhnKcntsAqh+MiiLeky6MYwHmLCSm0Z+aG4jNKX1E1uAQvHQot7ODg9n8Jz1Pn0j
+         1MSca9LkY7m3erkABSs2aPOz10CoPW9cE0Z12YM1R+ePUit2nOJKCYxqxZQQy8D8Ls+7
+         CZ7r5Yi7ZXfml921TurFrga2h5N6gWm6NYsujAxXAns956+CNpB4imipjHK2RpFXpwoS
+         nuZqLt2Nc4W90UUE00/FpXuHBOI/6A6SUTy/liA8nD/Wx1VohmoIycq7zSFBG5WhbHPF
+         7/UQ==
+X-Forwarded-Encrypted: i=1; AKwUvBzr2PhNDSQ7qXR54XtJhFe2SQWxA6Tp4DOTNZC8DutDaV+SDDkyuvTXWjCexCOL29h1h+0Nkqcuhs0=@lists.infradead.org
+X-Gm-Message-State: AFuF++nG76lUgAiFMoPD1ALTvdFuuFuoX002Wq8avuIbevnG88nELRdQ
+	uwhFlLyjli0BxAjVOy7U/nqhzdkbWBLLJfh1a83prWDxpsgMp/c6IEWK
+X-Gm-Gg: AYBFou23a++Xugg1a0pjcolqom/650IdD5G3Nptjnf+qzEyDD1BkiNCvLT2nxjpOhZb
+	UbEZkByJ3qObpBVvWJZne84nqhZIHlAt0+doUDQZYfpFtqLow21+5HGxZumO3EJtq7gSfoB4Sxk
+	CFjQRpL8HL/hO24TwXk08oznIkBwrNpTBAcYNTq2ZJ+UzlM8CpYW4Tf+jXJgz7b6LPT+ApS+73W
+	Wtd5GrIuT/mg0wYotZCUkIYZAqtpVcIsgidPZgOOEouuAb87/igflEGqpqZ3K+CyTItRZCTJlq7
+	eYK/QrSuhW8CaxwL4+GY3SnOsvKVj9uvk7fRTCcb2jDvS90glPymlVv4aptQFtZ67V42y2C4EKR
+	HllfBDhAtKz3e2tB3JbdH7y7+KAnYDhXwLx4Y5sZLoq24W7H73xNV8wkvqAxKdTq4WeHbUym90A
+	wF7UCQOBKdIYmftxVgsObgKs8iqeZdBUppIj5nmL+yCjXNo+ZPVV6uWqRxN63a03d4EqXZnVM=
+X-Received: by 2002:a17:903:8c5:b0:2da:eb8f:b4e4 with SMTP id d9443c01a7336-2dd2a1dd9e4mr233613235ad.7.1789325965545;
+        Sun, 13 Sep 2026 11:59:25 -0700 (PDT)
 Received: from server.lan ([168.138.199.194])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2dd2cca6b7bsm36808655ad.3.2026.09.13.11.59.06
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2dd2cca6b7bsm36808655ad.3.2026.09.13.11.59.16
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 13 Sep 2026 11:59:14 -0700 (PDT)
+        Sun, 13 Sep 2026 11:59:24 -0700 (PDT)
 From: Coia Prant <coiaprant@gmail.com>
 To: Andrew Lunn <andrew+netdev@lunn.ch>,
 	"David S . Miller" <davem@davemloft.net>,
@@ -99,14 +99,16 @@ Cc: Neil Armstrong <neil.armstrong@linaro.org>,
 	linux-phy@lists.infradead.org,
 	linux-stm32@st-md-mailman.stormreply.com,
 	linux-renesas-soc@vger.kernel.org
-Subject: [PATCH net-next v5 00/11] net: pcs: add basic support for RK3568 XPCS
-Date: Mon, 14 Sep 2026 02:58:35 +0800
-Message-ID: <20260913185849.907479-1-coiaprant@gmail.com>
+Subject: [PATCH net-next v5 01/11] net: stmmac: move XPCS lifetime management to platform drivers
+Date: Mon, 14 Sep 2026 02:58:36 +0800
+Message-ID: <20260913185849.907479-2-coiaprant@gmail.com>
 X-Mailer: git-send-email 2.47.3
+In-Reply-To: <20260913185849.907479-1-coiaprant@gmail.com>
+References: <20260913185849.907479-1-coiaprant@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260913_115916_754396_6AF2122A 
-X-CRM114-Status: GOOD (  23.17  )
+X-CRM114-CacheID: sfid-20260913_115926_687160_86E12217 
+X-CRM114-Status: GOOD (  22.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,157 +120,249 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhpcyBzZXJpZXMgYWRkcyBwcm9wZXIgU0dNSUkgc3VwcG9ydCBmb3IgdGhlIFJvY2tjaGlwIFJL
-MzU2OCBTb0MKdXNpbmcgdGhlIGludGVncmF0ZWQgU3lub3BzeXMgRGVzaWduV2FyZSBYUENTLCBh
-bG9uZyB3aXRoIG5lY2Vzc2FyeQpmaXhlcyBhbmQgcmVmYWN0b3JpbmcgaW4gdGhlIHN0bW1hYyBj
-b3JlIGFuZCBYUENTIGRyaXZlci4KCk1vdGl2YXRpb24KPT09PT09PT09PQpUaGUgUkszNTY4IGlu
-dGVncmF0ZXMgYSBEVyBYUENTIGFjY2Vzc2VkIHZpYSBBUEIzIGFuZCBjb25uZWN0ZWQgdG8KYSBO
-YW5lbmcgQ29tYm8gU2VyRGVzIFBIWS4gIFNldmVyYWwgYm9hcmRzIChlLmcuLCBBcmlhYm9hcmQK
-UGhvdG9uaWNhdCkgdXNlIHRoaXMgaW50ZXJmYWNlIGZvciBHaWdhYml0IEV0aGVybmV0LiAgSG93
-ZXZlciwgdGhlCmN1cnJlbnQgdXBzdHJlYW0gc3RtbWFjIGRyaXZlciBkb2VzIG5vdCBzdXBwb3J0
-IHRoaXMgY29uZmlndXJhdGlvbiwKYW5kIHRoZSBYUENTIGRyaXZlciBoYXMgaXNzdWVzIGluIFNH
-TUlJIHBvbGwgbW9kZSB0aGF0IGNhdXNlIHRoZQpsaW5rIHRvIGJlIHJlcG9ydGVkIGluY29ycmVj
-dGx5LgoKVGhpcyBzZXJpZXMgYWRkcmVzc2VzIHRoZXNlIGlzc3VlcyBieToKLSBSZWZhY3Rvcmlu
-ZyBzdG1tYWMgUENTIGxpZmV0aW1lIG1hbmFnZW1lbnQgdG8gYWxsb3cgcGxhdGZvcm0gZHJpdmVy
-cwogIGZ1bGwgY29udHJvbCBvdmVyIFBDUyBjcmVhdGlvbi9kZXN0cnVjdGlvbgotIEZpeGluZyB0
-aGUgWFBDUyBkcml2ZXIncyBTR01JSSBsaW5rIHJlY292ZXJ5Ci0gQWRkaW5nIGEgUm9ja2NoaXAg
-WFBDUyBwbGF0Zm9ybSBnbHVlIGRyaXZlciBhbmQgd2lyaW5nIGl0IHVwIGluCiAgZHdtYWMtcmsK
-ClNlcmllcyBvdmVydmlldwo9PT09PT09PT09PT09PT0KCkdlbmVyaWM6CiAgUGF0Y2ggMTogbW92
-ZSBYUENTIGxpZmV0aW1lIG1hbmFnZW1lbnQgdG8gcGxhdGZvcm0gZHJpdmVycwoKUEhZOgogIFBh
-dGNoIDI6IERUIGJpbmRpbmcgZm9yIE5hbmVuZyBDb21ibyBQSFkgU0dNSUkgTUFDIHNlbGVjdGlv
-bgogIFBhdGNoIDM6IGltcGxlbWVudCB0aGUgUEhZIFNHTUlJIE1BQyBzZWxlY3Rpb24gaW4gZHJp
-dmVyCgpSSzM1NjggWFBDUy9TR01JSToKICBQYXRjaCA0OiBEVCBiaW5kaW5nIGZvciBSb2NrY2hp
-cCBSSzM1NjggWFBDUwogIFBhdGNoIDU6IGFkZCBYUENTIGFuZCBmaXhlZC1jbG9jayBub2RlcyB0
-byByazM1NjguZHRzaQogIFBhdGNoIDY6IGFkZCBBTlJFU1RBUlQgc3VwcG9ydCBmb3IgU0dNSUkg
-bGluayByZWNvdmVyeQogIFBhdGNoIDc6IGltcGxlbWVudCB0aGUgUm9ja2NoaXAgWFBDUyBwbGF0
-Zm9ybSBnbHVlIGRyaXZlcgogIFBhdGNoIDg6IERUIGJpbmRpbmcgZm9yIFJvY2tjaGlwIERXTUFD
-IFBDUwogIFBhdGNoIDk6IHdpcmUgdXAgU0dNSUkgc3VwcG9ydCBpbiBkd21hYy1yawogIFBhdGNo
-IDExOiB1cGRhdGUgTUFJTlRBSU5FUlMKCkJvYXJkIGVuYWJsZW1lbnQ6CiAgUGF0Y2ggMTA6IGVu
-YWJsZSBTR01JSSBMQU4gcG9ydCBvbiBQaG90b25pY2F0IGJvYXJkCgpDaGFuZ2Vsb2cKPT09PT09
-PT09CgpDaGFuZ2VzIHNpbmNlIHY0OgoKUGF0Y2ggMSAobmV0OiBzdG1tYWM6IG1vdmUgWFBDUyBs
-aWZldGltZSBtYW5hZ2VtZW50IHRvIHBsYXRmb3JtIGRyaXZlcnMpCi0gQ29ycmVjdGVkIGNvbW1p
-dCBtZXNzYWdlOiBwY3NfaW5pdC9wY3NfZXhpdCBjYWxsYmFja3MgYWxyZWFkeSBleGlzdCBpbgog
-IHRoZSBiYXNlbGluZTsgdGhpcyBwYXRjaCBzaW1wbGlmaWVzIHRoZSBkaXNwYXRjaCwgbm90IGlu
-dHJvZHVjZXMgdGhlbQotIEZpeGVkIGRlc2NyaXB0aW9uIG9mIHRoZSBwcml2LT5ody0+eHBjcyBj
-bG9iYmVyOiBpdCBoYXBwZW5zIG9uIHRoZQogIHBsYXQtPnBjc19pbml0IGJyYW5jaCwgbm90IHRo
-ZSBlbHNlIGJyYW5jaAotIENvcnJlY3RlZCB0aGUgbGlzdCBvZiBhZmZlY3RlZCBwbGF0Zm9ybSBk
-cml2ZXJzOiBvbmx5IEludGVsIG1HYkUgbW92ZXMKICBpdHMgWFBDUyBjcmVhdGlvbjsgcmVuZXNh
-cy1nYmV0aCwgcnpuMSBhbmQgc29jZnBnYSBvbmx5IGdldCB0aGUKICBleHBsaWNpdCBOVUxMIGFz
-c2lnbm1lbnQgaW4gcGNzX2V4aXQoKQotIENoYW5nZWQgdGhlICJObyB4UENTIGZvdW5kIiBtZXNz
-YWdlIHRvIGEgbW9yZSBnZW5lcmljICJGYWlsZWQgdG8KICBpbml0aWFsaXplIFBDUyIsIHNpbmNl
-IHRocmVlIG9mIHRoZSBmb3VyIHBjc19pbml0KCkgaW1wbGVtZW50ZXJzIGRvCiAgbm90IGNyZWF0
-ZSBhbiBYUENTCi0gRHJvcHBlZCB0aGUgcmVkdW5kYW50IE5VTEwgaW5pdGlhbGl6ZXIgaW4gaW50
-ZWxfbWdiZV9wY3NfaW5pdCgpCgpQYXRjaCAzIChwaHk6IHJvY2tjaGlwOiBuYW5lbmctY29tYnBo
-eSkKLSBBZGRlZCB0aGUgVFJNIGJpdCBwb2xhcml0eSAoMCA9IEdNQUMwLCAxID0gR01BQzEpIGFu
-ZCB0aGUgaGFyZHdhcmUKICByZXNldCB2YWx1ZSAoMSkgdG8gdGhlIGNvbW1pdCBtZXNzYWdlCgpQ
-YXRjaCA0IChkdC1iaW5kaW5nczogbmV0OiBwY3M6IHJvY2tjaGlwLXJrMzU2OCkKLSBSZW5hbWVk
-IGZyb20gcm9ja2NoaXAtZHd4cGNzLnlhbWwgdG8gcm9ja2NoaXAscmszNTY4LXhwY3MueWFtbAot
-IFJlbmFtZWQgcGNzQCAvIHBjcy1taWlATiB0byBldGhlcm5ldC1wY3NAIC8gZXRoZXJuZXQtcGNz
-LW1paUBOIHRvIG1hdGNoCiAgdGhlIHNpYmxpbmcgc25wcyxkdy14cGNzLnlhbWwgYmluZGluZwoK
-UGF0Y2ggNSAoYXJtNjQ6IGR0czogcm9ja2NoaXA6IHJrMzU2OCkKLSBSZW5hbWVkIGNsb2NrIG5v
-ZGVzIHRvIGNsb2NrLXhwY3MtZ21hYzAgLyBjbG9jay14cGNzLWdtYWMxIHRvIG1hdGNoCiAgdGhl
-IHByZWZlcnJlZCBjbG9jay08bmFtZT4gcGF0dGVybiBpbiBmaXhlZC1jbG9jay55YW1sCi0gQWxp
-Z25lZCB0aGUgbGFiZWxzIChjbGtfZ21hYzBfeHBjc19taWkgLyBjbGtfZ21hYzFfeHBjc19taWkp
-IHdpdGgKICBjbG9jay1vdXRwdXQtbmFtZXMKClBhdGNoIDYgKG5ldDogcGNzOiB4cGNzOiBhZGQg
-QU5SRVNUQVJUIHN1cHBvcnQpCi0gVXBkYXRlZCB0aGUgY29tbWVudCBpbiB4cGNzX2NvbmZpZ19h
-bmVnX2MzN19zZ21paSgpIHRvIGV4cGxhaW4gdGhhdAogIGFsdGhvdWdoIHRoZSBEZXNpZ25XYXJl
-IGRhdGFib29rIHNheXMgQU4gcmVzdGFydCBpcyBub3QgbmVlZGVkIGZvcgogIE1BQyBzaWRlIFNH
-TUlJLCBzb21lIGltcGxlbWVudGF0aW9ucyAoUkszNTY4KSByZXF1aXJlIGl0Ci0gUHJvcGFnYXRl
-ZCB0aGUgcmV0dXJuIHZhbHVlIG9mIHhwY3NfbW9kaWZ5KCkgc28gZXJyb3JzIG9uIHRoZSByZXN0
-YXJ0CiAgcGF0aCBhcmUgdmlzaWJsZQoKUGF0Y2ggNyAobmV0OiBwY3M6IHhwY3M6IGFkZCBSb2Nr
-Y2hpcCBSSzM1NjggcGxhdGZvcm0gZ2x1ZSBkcml2ZXIpCi0gQWRkZWQgR0VORVJJQ19QSFkgYW5k
-IFBNX0dFTkVSSUNfRE9NQUlOUyBkZXBlbmRlbmNpZXMgdG8gS2NvbmZpZwotIERlcml2ZWQgdGhl
-IEVFRSBtdWx0aXBsaWVyIGF0IHJ1bnRpbWUgZnJvbSBjbGtfZ2V0X3JhdGUoKSwgYW5kIGNhbGwK
-ICB4cGNzX2NvbmZpZ19lZWVfbXVsdF9mYWN0KCkgaW4geHBjc19ya19jcmVhdGUoKQotIE1vdmVk
-IGRldmljZV9saW5rX2FkZCgpIGluc2lkZSB0aGUgZGV2aWNlX2xvY2soKSBjcml0aWNhbCBzZWN0
-aW9uIHRvCiAgY2xvc2UgdGhlIHJhY2Ugd2luZG93IHdoZXJlIHRoZSBzdXBwbGllciBjb3VsZCBi
-ZSB1bmJvdW5kCgpQYXRjaCA4IChORVcpCi0gZHQtYmluZGluZ3M6IG5ldDogcm9ja2NoaXAtZHdt
-YWM6IGRvY3VtZW50IHBjcy1oYW5kbGUKClBhdGNoIDkgKG5ldDogc3RtbWFjOiBkd21hYy1yaykK
-LSBBZGRlZCBhIHJrMzU2OF9zZXRfdG9fcm1paSgpIGNhbGxiYWNrIHRoYXQgZXhwbGljaXRseSBj
-bGVhcnMgQ09OMSBiaXQgNwotIFVwZGF0ZWQgdGhlIGNvbW1pdCBtZXNzYWdlOiB0aGUgY2xvY2sg
-ZW5hYmxlIHJlb3JkZXIgcHJlcGFyZXMgZm9yIHRoZQogIFNHTUlJIHBhdGggdGhhdCBza2lwcyBy
-a19nZXRfcGh5X2ludGZfc2VsKCksIGl0IGRvZXMgbm90IGZpeCBhCiAgcHJlLWV4aXN0aW5nIFNF
-cnJvcgotIERvY3VtZW50ZWQgdGhlIGluLWJhbmQtb25seSBsaW1pdGF0aW9uIG9mIHRoZSBTR01J
-SSBzdXBwb3J0Ci0gS2VwdCBzdXBwb3J0c19zZ21paSB1bmNvbmRpdGlvbmFsIHRvIG1hdGNoIHRo
-ZSBleGlzdGluZyBSR01JSS9STUlJCiAgaGFuZGxpbmc7IHBoeS1tb2RlIGlzIGZpeGVkIGJ5IERU
-IGFuZCBkb2VzIG5vdCBjaGFuZ2UgYXQgcnVudGltZQoKUGF0Y2ggMTAgKGFybTY0OiBkdHM6IHJv
-Y2tjaGlwOiByazM1NjgtcGhvdG9uaWNhdCkKLSBSZW9yZGVyZWQgcHJvcGVydGllcyBpbiAmY29t
-YnBoeTIsICZnbWFjMCBhbmQgJnhwY3MgdG8gZm9sbG93IHRoZQogIGZpbGUncyBjb252ZW50aW9u
-IChhbHBoYWJldGljYWwsIHN0YXR1cyBsYXN0KQotIENvcnJlY3RlZCB0aGUgY2hhbmdlbG9nIHRv
-IHNheSB0aGUgcHJvcGVydHkgaXMgYWRkZWQgdG8gYW4gYWxyZWFkeQogIGVuYWJsZWQgY29tYnBo
-eTIKCktleSBkZXNpZ24gZGVjaXNpb25zCj09PT09PT09PT09PT09PT09PT09Ci0gVGhlIHN0bW1h
-YyBjb3JlIG5vdyBkZWxlZ2F0ZXMgWFBDUyBjcmVhdGlvbiBlbnRpcmVseSB0byBwbGF0Zm9ybQog
-IGRyaXZlcnMgdmlhIHBjc19pbml0L3Bjc19leGl0LiAgVGhpcyBpcyBuZWNlc3NhcnkgYmVjYXVz
-ZSB0aGUKICBnZW5lcmljIFhQQ1MgY3JlYXRpb24gbG9naWMgd291bGQgb3ZlcnJpZGUgYW55IFhQ
-Q1Mgc2V0IHVwIGJ5IHRoZQogIHBsYXRmb3JtIGRyaXZlci4KCi0gVGhlIFJvY2tjaGlwIFhQQ1Mg
-ZHJpdmVyIGNyZWF0ZXMgYSB2aXJ0dWFsIE1ESU8gYnVzIG92ZXIgdGhlIEFQQjMKICByZWdpc3Rl
-cnMgYW5kIGltcGxlbWVudHMgYWRkcmVzcyByZW1hcHBpbmcuICBUaGUgZ2VuZXJpYyBYUENTIGNv
-cmUKICBoYW5kbGVzIGFsbCBQQ1MgY29uZmlndXJhdGlvbiB2aWEgcGh5bGlua19wY3Nfb3BzLgoK
-LSBPbiBSSzM1NjggaW4gU0dNSUkgbW9kZSwgdGhlIE1BQyBjbG9jayBpcyBmaXhlZCBhdCAxMjUg
-TUh6IGFuZAogIGNhbm5vdCBiZSBkeW5hbWljYWxseSBjaGFuZ2VkLiAgSW4tYmFuZCBtb2RlIGlz
-IHVzZWQsIGFuZCB0aGUKICBnZW5lcmljIHN0bW1hYyBzZXRfY2xrX3R4X3JhdGUgY2FsbGJhY2sg
-aXMgZGlzYWJsZWQgdG8gcHJldmVudAogIGluY29ycmVjdCBjbG9jayB1cGRhdGVzIHRoYXQgd291
-bGQgYnJlYWsgUlguCgotIFRoZSBTZXJEZXMgYW5kIHBvd2VyIGRvbWFpbiBhcmUgYXR0YWNoZWQg
-dG8gdGhlIFhQQ1MgZGV2aWNlIHRyZWUKICBub2RlIHJhdGhlciB0aGFuIHRoZSBNQUMgbm9kZS4g
-VGhpcyByZWZsZWN0cyB0aGUgYWN0dWFsIGhhcmR3YXJlCiAgdG9wb2xvZ3kgYW5kIHNpbXBsaWZp
-ZXMgdGhlIGR3bWFjLXJrIGRyaXZlciBieSBrZWVwaW5nIGFsbCBQQ1MtcmVsYXRlZAogIHJlc291
-cmNlcyBzZWxmLWNvbnRhaW5lZC4gSXQgYWxzbyBwcmVwYXJlcyBmb3IgcG9zc2libGUgZnV0dXJl
-IFFTR01JSQogIHN1cHBvcnQsIHdoZXJlIGEgc2luZ2xlIFNlckRlcyBzZXJ2ZXMgbXVsdGlwbGUg
-TUFDcyBhbmQgd291bGQgYmUKICBtb3JlIG5hdHVyYWxseSBtYW5hZ2VkIHVuZGVyIHRoZSBYUENT
-IG5vZGUuCgpUZXN0aW5nCj09PT09PT0KQm9hcmQ6IEFyaWFib2FyZCBQaG90b25pY2F0IChSSzM1
-NjgpCk9TOiBBcm1iaWFuICh0cml4aWUpCktlcm5lbDogNi4xOCAoYmFja3BvcnRzKQpSZXN1bHQ6
-IFRoZSBTR01JSSBpbnRlcmZhY2Ugb2J0YWlucyBhbiBJUCBhZGRyZXNzLCBTU0ggd29ya3MsIGFu
-ZAogICAgICAgIHBpbmcgdHJhZmZpYyBwYXNzZXMgd2l0aG91dCBsb3NzLgoKTm90ZXMKPT09PT0K
-LSBXaGVuIHRlc3Rpbmcgb3V0LWJhbmQgbW9kZSB3aXRoIHNldF9jbGtfdHhfcmF0ZSwgb25seSAx
-MDAwTWJwcwogIHdvcmtzIG9uIGJvdGggVFgvUlg7IDEwLzEwME1icHMgb25seSB3b3JrcyBvbiBU
-WCBzaWRlLgoKRGVwZW5kZW5jaWVzCj09PT09PT09PT09PQpOb25lLiBBbGwgcGF0Y2hlcyBhcHBs
-eSBjbGVhbmx5IG9uIHRvcCBvZiB0b3J2YWxkcyBtYXN0ZXIgdHJlZSAodjcuMykuCgpBY2tub3ds
-ZWRnbWVudHMKPT09PT09PT09PT09PT09ClRoaXMgd29yayB3YXMgaW5zcGlyZWQgYnkgYW5kIGJ1
-aWxkcyB1cG9uIHRoZSBleGNlbGxlbnQgd29yayBvZiBvdGhlcnM6Ci0gU2VyZ2UgU2VtaW4ncyBT
-eW5vcHN5cyBEZXNpZ25XYXJlIFhQQ1MgcGxhdGZvcm0gZHJpdmVyIChwY3MteHBjcy1wbGF0LmMp
-Ci0gQ2zDqW1lbnQgTMOpZ2VyJ3MgUmVuZXNhcyBNSUlDIGRyaXZlciAocGNzLXJ6bjEtbWlpYy5j
-KQotIFRoZSBSb2NrY2hpcCBUUk0gYW5kIGRvd25zdHJlYW0gT0VNIGRyaXZlcnMKClRoYW5rcyBp
-biBhZHZhbmNlLApDb2lhIFByYW50Ci0tLQpDb2lhIFByYW50ICgxMSk6CiAgbmV0OiBzdG1tYWM6
-IG1vdmUgWFBDUyBsaWZldGltZSBtYW5hZ2VtZW50IHRvIHBsYXRmb3JtIGRyaXZlcnMKICBkdC1i
-aW5kaW5nczogcGh5OiByb2NrY2hpcDogbmFuZW5nLWNvbWJwaHk6IGFkZCByb2NrY2hpcCxzZ21p
-aS1tYWMtc2VsCiAgICBwcm9wZXJ0eQogIHBoeTogcm9ja2NoaXA6IG5hbmVuZy1jb21icGh5OiBh
-ZGQgU0dNSUkgTUFDIHNlbGVjdGlvbiBmb3IgUkszNTY4CiAgZHQtYmluZGluZ3M6IG5ldDogcGNz
-OiBhZGQgcm9ja2NoaXAscmszNTY4LXhwY3Mgc3VwcG9ydAogIGFybTY0OiBkdHM6IHJvY2tjaGlw
-OiByazM1Njg6IGFkZCBYUENTIGFuZCBmaXhlZC1jbG9jayBub2RlcwogIG5ldDogcGNzOiB4cGNz
-OiBhZGQgQU5SRVNUQVJUIHN1cHBvcnQgZm9yIFNHTUlJIGxpbmsgcmVjb3ZlcnkKICBuZXQ6IHBj
-czogeHBjczogYWRkIFJvY2tjaGlwIFJLMzU2OCBwbGF0Zm9ybSBnbHVlIGRyaXZlcgogIGR0LWJp
-bmRpbmdzOiBuZXQ6IHJvY2tjaGlwLWR3bWFjOiBkb2N1bWVudCBwY3MtaGFuZGxlCiAgbmV0OiBz
-dG1tYWM6IGR3bWFjLXJrOiBhZGQgU0dNSUkgc3VwcG9ydCBmb3IgUkszNTY4CiAgYXJtNjQ6IGR0
-czogcm9ja2NoaXA6IHJrMzU2OC1waG90b25pY2F0OiBlbmFibGUgU0dNSUkgTEFOIHBvcnQKICBN
-QUlOVEFJTkVSUzogYWRkIGVudHJ5IGZvciBSb2NrY2hpcCBYUENTIGRyaXZlcgoKIC4uLi9uZXQv
-cGNzL3JvY2tjaGlwLHJrMzU2OC14cGNzLnlhbWwgICAgICAgICB8IDExMCArKysrCiAuLi4vYmlu
-ZGluZ3MvbmV0L3JvY2tjaGlwLWR3bWFjLnlhbWwgICAgICAgICAgfCAgMTUgKwogLi4uL3BoeS9w
-aHktcm9ja2NoaXAtbmFuZW5nLWNvbWJwaHkueWFtbCAgICAgIHwgIDEzICsKIE1BSU5UQUlORVJT
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAgOSArCiAuLi4vYm9vdC9kdHMv
-cm9ja2NoaXAvcmszNTY4LXBob3RvbmljYXQuZHRzICAgfCAgNzQgKystCiBhcmNoL2FybTY0L2Jv
-b3QvZHRzL3JvY2tjaGlwL3JrMzU2OC5kdHNpICAgICAgfCAgNDUgKysKIGRyaXZlcnMvbmV0L2V0
-aGVybmV0L3N0bWljcm8vc3RtbWFjL0tjb25maWcgICB8ICAgMSArCiAuLi4vbmV0L2V0aGVybmV0
-L3N0bWljcm8vc3RtbWFjL2R3bWFjLWludGVsLmMgfCAgNDQgKy0KIC4uLi9zdG1pY3JvL3N0bW1h
-Yy9kd21hYy1yZW5lc2FzLWdiZXRoLmMgICAgICB8ICAgNyArLQogLi4uL25ldC9ldGhlcm5ldC9z
-dG1pY3JvL3N0bW1hYy9kd21hYy1yay5jICAgIHwgMTM0ICsrKystCiAuLi4vbmV0L2V0aGVybmV0
-L3N0bWljcm8vc3RtbWFjL2R3bWFjLXJ6bjEuYyAgfCAgIDcgKy0KIC4uLi9ldGhlcm5ldC9zdG1p
-Y3JvL3N0bW1hYy9kd21hYy1zb2NmcGdhLmMgICB8ICAgNyArLQogLi4uL25ldC9ldGhlcm5ldC9z
-dG1pY3JvL3N0bW1hYy9zdG1tYWNfbWRpby5jIHwgIDM5ICstCiBkcml2ZXJzL25ldC9wY3MvS2Nv
-bmZpZyAgICAgICAgICAgICAgICAgICAgICAgfCAgMjUgKwogZHJpdmVycy9uZXQvcGNzL01ha2Vm
-aWxlICAgICAgICAgICAgICAgICAgICAgIHwgICA1ICstCiBkcml2ZXJzL25ldC9wY3MvcGNzLXhw
-Y3MtcmsuYyAgICAgICAgICAgICAgICAgfCA1NTkgKysrKysrKysrKysrKysrKysrCiBkcml2ZXJz
-L25ldC9wY3MvcGNzLXhwY3MuYyAgICAgICAgICAgICAgICAgICAgfCAgMzUgKy0KIC4uLi9yb2Nr
-Y2hpcC9waHktcm9ja2NoaXAtbmFuZW5nLWNvbWJwaHkuYyAgICB8ICAgOCArCiBpbmNsdWRlL2xp
-bnV4L3Bjcy9wY3MteHBjcy1yay5oICAgICAgICAgICAgICAgfCAgMTEgKwogMTkgZmlsZXMgY2hh
-bmdlZCwgMTA3NiBpbnNlcnRpb25zKCspLCA3MiBkZWxldGlvbnMoLSkKIGNyZWF0ZSBtb2RlIDEw
-MDY0NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvbmV0L3Bjcy9yb2NrY2hpcCxy
-azM1NjgteHBjcy55YW1sCiBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9uZXQvcGNzL3Bjcy14
-cGNzLXJrLmMKIGNyZWF0ZSBtb2RlIDEwMDY0NCBpbmNsdWRlL2xpbnV4L3Bjcy9wY3MteHBjcy1y
-ay5oCgotLSAKMi40Ny4zCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxp
-c3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
-dGluZm8vbGludXgtcGh5Cg==
+The current XPCS creation logic in stmmac_pcs_setup() is problematic
+for several reasons.
+
+First, if a device tree specifies a "pcs-handle" but no select_pcs()
+callback is provided by the platform driver, the created XPCS is never
+used. The phylink framework requires select_pcs() to actually return
+the PCS to the core, so the pcs-handle property becomes effectively
+useless without the matching callback. This is confusing for developers
+who expect that specifying a pcs-handle in their device tree should be
+sufficient to enable the PCS.
+
+Second, and more critically, when a platform driver sets pcs_init()
+and creates an XPCS inside that callback, the common code afterwards
+still runs unconditionally and overwrites priv->hw->xpcs with the
+local xpcs variable, which stays NULL. The platform driver has no way
+to prevent this override because the common code runs after the
+platform-specific initialization.
+
+After commit 93f84152e4ae ("net: stmmac: clean up
+stmmac_mac_select_pcs()"), the common code no longer falls back to
+priv->hw->phylink_pcs if select_pcs() is not set. This change
+reinforces that each platform must manage its own PCS life cycle
+explicitly, but the XPCS creation code in stmmac_pcs_setup() was not
+updated to match this new expectation, leaving a gap where platform
+drivers have no clean way to take control of XPCS creation.
+
+Address all of these issues by simplifying the existing pcs_init() and
+pcs_exit() dispatch in stmmac_pcs_setup() and stmmac_pcs_clean(). The
+common stmmac_pcs_setup() now calls plat->pcs_init() if present, and
+stmmac_pcs_clean() calls plat->pcs_exit() if present, removing the
+confusing and error-prone XPCS creation logic from the common code.
+
+Platforms that do not need an XPCS simply leave the callbacks as NULL
+and no change in behavior occurs. Platforms that do need an XPCS can
+now create it with the exact configuration they require, including
+wrapping it with custom phylink_pcs_ops when necessary.
+
+The Intel mGbE glue is updated to create its XPCS inside its own
+pcs_init() implementation, and the renesas-gbeth, rzn1 and socfpga
+pcs_exit() callbacks now explicitly clear priv->hw->phylink_pcs after
+destroying the PCS to avoid dangling pointer references.
+
+Reviewed-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
+Signed-off-by: Coia Prant <coiaprant@gmail.com>
+---
+ .../net/ethernet/stmicro/stmmac/dwmac-intel.c | 44 +++++++++++++++++--
+ .../stmicro/stmmac/dwmac-renesas-gbeth.c      |  7 ++-
+ .../net/ethernet/stmicro/stmmac/dwmac-rzn1.c  |  7 ++-
+ .../ethernet/stmicro/stmmac/dwmac-socfpga.c   |  7 ++-
+ .../net/ethernet/stmicro/stmmac/stmmac_mdio.c | 39 +++-------------
+ 5 files changed, 62 insertions(+), 42 deletions(-)
+
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-intel.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-intel.c
+index f5f9fa67ecd77..4308dccbf2570 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac-intel.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-intel.c
+@@ -603,13 +603,47 @@ static void common_default_data(struct plat_stmmacenet_data *plat)
+ 	plat->mdio_bus_data->needs_reset = true;
+ }
+ 
++static int intel_mgbe_pcs_init(struct stmmac_priv *priv)
++{
++	struct fwnode_handle *devnode, *pcsnode;
++	struct dw_xpcs *xpcs;
++	int addr;
++
++	devnode = dev_fwnode(priv->device);
++
++	if (fwnode_property_present(devnode, "pcs-handle")) {
++		pcsnode = fwnode_find_reference(devnode, "pcs-handle", 0);
++		xpcs = xpcs_create_fwnode(pcsnode);
++		fwnode_handle_put(pcsnode);
++	} else {
++		addr = ffs(priv->plat->mdio_bus_data->pcs_mask) - 1;
++		xpcs = xpcs_create_mdiodev(priv->mii, addr);
++	}
++
++	if (IS_ERR(xpcs))
++		return PTR_ERR(xpcs);
++
++	xpcs_config_eee_mult_fact(xpcs, priv->plat->mult_fact_100ns);
++
++	priv->hw->xpcs = xpcs;
++	return 0;
++}
++
++static void intel_mgbe_pcs_exit(struct stmmac_priv *priv)
++{
++	if (!priv->hw->xpcs)
++		return;
++
++	xpcs_destroy(priv->hw->xpcs);
++	priv->hw->xpcs = NULL;
++}
++
+ static struct phylink_pcs *intel_mgbe_select_pcs(struct stmmac_priv *priv,
+ 						 phy_interface_t interface)
+ {
+-	/* plat->mdio_bus_data->has_xpcs has been set true, so there
+-	 * should always be an XPCS. The original code would always
+-	 * return this if present.
+-	 */
++	if (!priv->hw->xpcs)
++		return NULL;
++
+ 	return xpcs_to_phylink_pcs(priv->hw->xpcs);
+ }
+ 
+@@ -733,6 +767,8 @@ static int intel_mgbe_common_data(struct pci_dev *pdev,
+ 	    plat->phy_interface == PHY_INTERFACE_MODE_1000BASEX) {
+ 		plat->mdio_bus_data->pcs_mask = BIT_U32(INTEL_MGBE_XPCS_ADDR);
+ 		plat->default_an_inband = true;
++		plat->pcs_init = intel_mgbe_pcs_init;
++		plat->pcs_exit = intel_mgbe_pcs_exit;
+ 		plat->select_pcs = intel_mgbe_select_pcs;
+ 	}
+ 
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-renesas-gbeth.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-renesas-gbeth.c
+index 19f34e18bfef2..9af32c26f9c14 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac-renesas-gbeth.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-renesas-gbeth.c
+@@ -81,8 +81,11 @@ static int renesas_gmac_pcs_init(struct stmmac_priv *priv)
+ 
+ static void renesas_gmac_pcs_exit(struct stmmac_priv *priv)
+ {
+-	if (priv->hw->phylink_pcs)
+-		miic_destroy(priv->hw->phylink_pcs);
++	if (!priv->hw->phylink_pcs)
++		return;
++
++	miic_destroy(priv->hw->phylink_pcs);
++	priv->hw->phylink_pcs = NULL;
+ }
+ 
+ static struct phylink_pcs *renesas_gmac_select_pcs(struct stmmac_priv *priv,
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-rzn1.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-rzn1.c
+index 13634965bc19a..01df4776edb3f 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac-rzn1.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-rzn1.c
+@@ -35,8 +35,11 @@ static int rzn1_dwmac_pcs_init(struct stmmac_priv *priv)
+ 
+ static void rzn1_dwmac_pcs_exit(struct stmmac_priv *priv)
+ {
+-	if (priv->hw->phylink_pcs)
+-		miic_destroy(priv->hw->phylink_pcs);
++	if (!priv->hw->phylink_pcs)
++		return;
++
++	miic_destroy(priv->hw->phylink_pcs);
++	priv->hw->phylink_pcs = NULL;
+ }
+ 
+ static struct phylink_pcs *rzn1_dwmac_select_pcs(struct stmmac_priv *priv,
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c
+index 1d7f0a57d2889..6d4bc1fe8f751 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c
+@@ -539,8 +539,11 @@ static int socfpga_dwmac_pcs_init(struct stmmac_priv *priv)
+ 
+ static void socfpga_dwmac_pcs_exit(struct stmmac_priv *priv)
+ {
+-	if (priv->hw->phylink_pcs)
+-		lynx_pcs_destroy(priv->hw->phylink_pcs);
++	if (!priv->hw->phylink_pcs)
++		return;
++
++	lynx_pcs_destroy(priv->hw->phylink_pcs);
++	priv->hw->phylink_pcs = NULL;
+ }
+ 
+ static struct phylink_pcs *socfpga_dwmac_select_pcs(struct stmmac_priv *priv,
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
+index afe98ff5bdcb0..7396b68899c66 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
+@@ -426,35 +426,14 @@ int stmmac_mdio_reset(struct mii_bus *bus)
+ int stmmac_pcs_setup(struct net_device *ndev)
+ {
+ 	struct stmmac_priv *priv = netdev_priv(ndev);
+-	struct fwnode_handle *devnode, *pcsnode;
+-	struct dw_xpcs *xpcs = NULL;
+-	int addr, ret;
+-
+-	devnode = dev_fwnode(priv->device);
+-
+-	if (priv->plat->pcs_init) {
+-		ret = priv->plat->pcs_init(priv);
+-	} else if (fwnode_property_present(devnode, "pcs-handle")) {
+-		pcsnode = fwnode_find_reference(devnode, "pcs-handle", 0);
+-		xpcs = xpcs_create_fwnode(pcsnode);
+-		fwnode_handle_put(pcsnode);
+-		ret = PTR_ERR_OR_ZERO(xpcs);
+-	} else if (priv->plat->mdio_bus_data &&
+-		   priv->plat->mdio_bus_data->pcs_mask) {
+-		addr = ffs(priv->plat->mdio_bus_data->pcs_mask) - 1;
+-		xpcs = xpcs_create_mdiodev(priv->mii, addr);
+-		ret = PTR_ERR_OR_ZERO(xpcs);
+-	} else {
++	int ret;
++
++	if (!priv->plat->pcs_init)
+ 		return 0;
+-	}
+ 
++	ret = priv->plat->pcs_init(priv);
+ 	if (ret)
+-		return dev_err_probe(priv->device, ret, "No xPCS found\n");
+-
+-	if (xpcs)
+-		xpcs_config_eee_mult_fact(xpcs, priv->plat->mult_fact_100ns);
+-
+-	priv->hw->xpcs = xpcs;
++		return dev_err_probe(priv->device, ret, "Failed to initialize PCS\n");
+ 
+ 	return 0;
+ }
+@@ -463,14 +442,10 @@ void stmmac_pcs_clean(struct net_device *ndev)
+ {
+ 	struct stmmac_priv *priv = netdev_priv(ndev);
+ 
+-	if (priv->plat->pcs_exit)
+-		priv->plat->pcs_exit(priv);
+-
+-	if (!priv->hw->xpcs)
++	if (!priv->plat->pcs_exit)
+ 		return;
+ 
+-	xpcs_destroy(priv->hw->xpcs);
+-	priv->hw->xpcs = NULL;
++	priv->plat->pcs_exit(priv);
+ }
+ 
+ struct stmmac_clk_rate {
+-- 
+2.47.3
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
