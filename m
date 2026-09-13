@@ -4,54 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54386C88E5A
-	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 10:56:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 789AEC88E5A
+	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 10:56:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qG3y89SikJNktKvrMnj51NtHQWNjqlo9OAF2qGdKDPY=; b=wSBYn2QCUoIHqW
-	DpuGgpROY0AcLep8tYQkr/LtsaFtJugbf9gt00kKMG6hi2hHcolM/bZjNyRCgGCAI+F029mpkT3CP
-	vF4knTKoMoBk3nNTGfurA0HwtUfQ2gUzUsdBeeEJqh5MDk/KzJVfU/eroEjw0KByMoGGw7G5p5ccC
-	mvA1dsf1TbuktHyJ7gPNQ2KBDbE057oqrCfACyBeCXs7Wt1c1L2dEnYGgByjkg2bIIxLLJ2m0wJAv
-	a+AEh4iz8jvXertT+W6V5hxjlkDihtmgXlzNyJIrm/ER5OKWNMo4lNCDphym+v2n0NUEwAPWZpcP/
-	Ow7hKHhXxXxNndrkEuRw==;
+	List-Owner; bh=3t1xYKraIqQ7bCs9sNud61na4edvg9WAZ32O/l4Dg+g=; b=n1CMfj+HOUP/Yo
+	kMDLYrUUspHIKnTUjws3VY2JZvu0XlFwU90vi7lGizbBa3Ms9DkJfLIPxOdkfv49slm2JxILbM10m
+	upI0vLsNu+V2buRNpTGuLvT2vtgx5xoQwNb3NE/2oCAC7GHN+nLU45l4Qp4UTeq25B/wOGaL1fLDl
+	u7QVMK6zJlPzDkxlHELH1YIDSTMT6MJ1W03Z7a2xb3sdz/fUgZ6ZFEoQfaN8A5J6F+AwuZS67eZyy
+	9LADQm3DZU2sCsIYVouGRekQq+xZiqCoS/BBXg6P249VANdaJ7GwCVWI9ibcyEHW/JNfeqR7RhOod
+	XQ5B2437E0SKps9rxOsA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5ht7-00000001bZR-0618;
-	Sun, 13 Sep 2026 10:56:45 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1x5htB-00000001bb5-0dS6;
+	Sun, 13 Sep 2026 10:56:49 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5ht5-00000001bYW-0okY;
-	Sun, 13 Sep 2026 10:56:43 +0000
+	id 1x5ht8-00000001ba8-3GBD
+	for linux-phy@lists.infradead.org;
+	Sun, 13 Sep 2026 10:56:47 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id A579160DEA;
+	by sea.source.kernel.org (Postfix) with ESMTP id 301F344857;
+	Sun, 13 Sep 2026 10:56:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0CE231F00899;
 	Sun, 13 Sep 2026 10:56:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E22FA1F00898;
-	Sun, 13 Sep 2026 10:56:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789297002;
-	bh=3swnm2ads6waESiNi1EorXP+dQ0y/SxGczDUkiwUru8=;
+	s=k20260515; t=1789297006;
+	bh=MbCQ6U6GuK/b/cm8UVieb8vDK6L7jfo8D2f5/kdeNxE=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=RSlaG9NvRsJEivnVKrbQT0ZibS/3tBev0grAaK1uMlK0Oyhzz2QLu83NhUau+oE4a
-	 +WtVNV2lMM7scAOi8ARfS7mm+489GHD2nb3m0OwwxPDq5cERuqi0vKWLXXCBZbt2ui
-	 P0wPUM1GFplE3v+bIylhSQk2W8GQZi6Lzt4PdjSRseW7e4Mism6Ynni1Q6n3u2TlCE
-	 0sZaURx6AEygSaP9t27sCcou2AP1sbEZKO2/rfOypqitKsbOxTSRrYOhRdVuMOFXxu
-	 tANmjRbIalLcCEwPgJvK+3/L4UtauiGaLKhWQOqyJQCjQiClG2D1p0LArNNy67uJ7l
-	 TCqr3rCXjlQsg==
+	b=enurv+pWoGByAYbjyNdx6lX3RraD9eJG44p3s414wjaeda6HqKuoTgK6e4mapalBu
+	 69rjNYvXZBacVH3U9A4HZlDzgvBxcrhysFbgLbmfPoOERmPS0x6ZNval+hi3vQnkq3
+	 +DdE8XWLxcUZ9vS0tDv7L9RntlSUFER5qDTcpyE0gegkeJuw/LSV/9PZpVqnJHjaSh
+	 w0CzE3w/L6XOn8nxYSMInMgg8WbjM6OuIpWiWQyzJF9zhJDDRnDobJWJGsvegXO/AF
+	 hMJyiPxvRG4qef0hw+QRpl4Ex5+8FQl9dnvLGm5pO5cC2njv6J643St5RFrpbufHkZ
+	 t2GJXydrB73rQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: linux-phy@lists.infradead.org, Rosen Penev <rosenp@gmail.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>, 
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>, 
- Masami Hiramatsu <mhiramat@kernel.org>, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-In-Reply-To: <20260304041602.7539-1-rosenp@gmail.com>
-References: <20260304041602.7539-1-rosenp@gmail.com>
-Subject: Re: [PATCH] phy: uniphier-usb3: no devm for nvmem_cell_get
-Message-Id: <178929699949.215437.8291797123848780958.b4-ty@kernel.org>
-Date: Sun, 13 Sep 2026 16:26:39 +0530
+To: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Aswath Govindraju <a-govindraju@ti.com>, 
+ Swapnil Jakhade <sjakhade@cadence.com>, 
+ Gregory CLEMENT <gregory.clement@bootlin.com>
+Cc: =?utf-8?q?Th=C3=A9o_Lebrun?= <theo.lebrun@bootlin.com>, 
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>, 
+ Vladimir Kondratiev <vladimir.kondratiev@mobileye.com>, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20260306-fix_sierra_get_parent-v2-1-cafe89ee5382@bootlin.com>
+References: <20260306-fix_sierra_get_parent-v2-1-cafe89ee5382@bootlin.com>
+Subject: Re: [PATCH v2] phy: cadence: Sierra: Do not modify register when
+ getting parent clock
+Message-Id: <178929700263.215437.1287296789549951145.b4-ty@kernel.org>
+Date: Sun, 13 Sep 2026 16:26:42 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
 X-BeenThere: linux-phy@lists.infradead.org
@@ -71,16 +76,22 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 03 Mar 2026 20:16:02 -0800, Rosen Penev wrote:
-> There is absolutely no reason to extend the lifetime of nvmem_cell_get
-> to after removal of the driver. Use and free right after use.
+On Fri, 06 Mar 2026 11:23:58 +0100, Gregory CLEMENT wrote:
+> The get_parent() callback for the PLL_CMNLC1 clock was incorrectly
+> writing to the register while determining the parent clock index. This
+> unintended register access forces the PHY back into training mode. If
+> the PHY is already configured, this unexpected change prevents it from
+> exiting training mode.
 > 
+> Remove the register write operation to ensure the PHY remains stable
+> during the get_parent() callback.
 > 
+> [...]
 
 Applied, thanks!
 
-[1/1] phy: uniphier-usb3: no devm for nvmem_cell_get
-      commit: b2d5ad12d78a1070553f4cb6bf3315105a3b3da3
+[1/1] phy: cadence: Sierra: Do not modify register when getting parent clock
+      commit: 02613aa974ccc84a5448573d253275baace95124
 
 Best regards,
 -- 
