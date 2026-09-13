@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2FE47C88E40
-	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 07:50:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CEF3CC88E40
+	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 07:52:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dyMh8aCXIrRGChKJ/vUiHuPsbKhdtUrkE15vlQSxvpM=; b=QIowdVPVrPiXNm
-	LM+bvzVAV7rWOlL3ziUaq0GD//281ec517O45gmPm3nmp4pmRqGUcEgIEbjv8qNrvpL22pLM3APVt
-	Eh3QA9BzIwFLDvXzLnTX9glnZYeR0mO8nL0kmgZKJcK7dT/Kry9VaqY6OoIKkvt8TC0NPbScSpWeh
-	YajJed+JXGnt8y9Ll0R8JfE8ddMQOGCoNK/iG4aXYhWKtCRDeXjgOxxRw746DJUzT6ubmTke03twp
-	vhfIfL7lN3d/noLHaInrnA6xlhqZjqnzT0XYHIrkQx18pWD+FqfQ/MBG8GUQW6fkU3PKSaG3XsHY+
-	W+RSoh1WhogNYhEkEWSA==;
+	List-Owner; bh=ne3ilWOTZmIvuJRVw7lsL5Fe/ZH0LoJZJ4SNV/O332M=; b=yozEPkThoYddYz
+	Sy57RS9ezKuCDE7UYTKwgMnLUTnBcwIbcY0gzdGsYbEE/V3DHyd4/B/TDV6LEGzBERuc+BMURmXpt
+	sx4vwkgPft7PSVNKypoJDozZ3d1W3Z6oARkKkoxlTeHuOsR0S89xe4TTGJ1ALjBkqkTEJNvVMZV6o
+	9EjNNviunGqfIOCyYc79GGCu4ctjitS7GIRH05hXzMvQ9Czg6Dd37+Szmwpbz4XjmMFEW9kBFZiH6
+	aZFtf6jV1Ub8xsXeVTGY8ts27Nn+28sg1/16oELzsXWFW/3K1oy6Hi+K/X6Wnt9MOZXQgmLxKTcP1
+	ZISzwffKjcChnm0jZg6A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5eyX-00000001VOJ-34aJ;
-	Sun, 13 Sep 2026 07:50:10 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1x5f0M-00000001VVq-1zcH;
+	Sun, 13 Sep 2026 07:52:02 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5eyW-00000001VOB-3SCo
+	id 1x5f0L-00000001VVk-3Ig8
 	for linux-phy@lists.infradead.org;
-	Sun, 13 Sep 2026 07:50:08 +0000
+	Sun, 13 Sep 2026 07:52:01 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 3E2A360D8D;
-	Sun, 13 Sep 2026 07:50:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F129E1F000FF;
-	Sun, 13 Sep 2026 07:50:05 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 274B3410B5;
+	Sun, 13 Sep 2026 07:52:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D14BD1F000FF;
+	Sun, 13 Sep 2026 07:51:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789285807;
-	bh=/vfBaplv3ynsUjvQf48JdtOudWdNUPLDX6cz9N40dxs=;
+	s=k20260515; t=1789285921;
+	bh=W7ulLVjk7cOY33gnZun4ugyjMQD5mY2Ry3w5xH7Coxw=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=NQyqepqacY2wTnbV1Q1tXFbycIEo8cp7lLc2CC7si3ixm6N1Dv/EndBL8RCGwikkI
-	 qpaGBStF/j16Ocsg4vJJdhhCeunXTxzYlz1aCiFiQrXMHNt96kcLeYTkYJQ+sJTypH
-	 n9+808sCaHxi+gSZqpTThxINukKrandZ5LSGN7RyVAG8r469ZpF02XL5wD+wQ5ArWj
-	 pa7WaTV8X5klYPMRaGZsY0VL1ijvBRLRchS/w/HnT+CG33hBjbJsWdwCr7Cb1zV7fF
-	 RP+UM1NckVZ7HxiOgU10H5BU4bwilWr+LmQiE+hwf7oPM2aU9/G5iULaihLH2F3j6r
-	 xADm43avrVrpw==
-Date: Sun, 13 Sep 2026 09:50:03 +0200
+	b=j6dxjmQc3YMBeHrLbUkwTd3ofR1hF/doqzXmsBffsIi0yR0LkyQXkS1KkuSJEeSPz
+	 wxaLhmK+KHdWyDJ7E5IN6QPoAJ2f5+VHr3l+edjMQuRLIqztJ+Ez57Yz238l/5qD4M
+	 9JBCDAYpI6BY5QMvmGDKyQYky8H8QVrqBnGXzJ3GcTi0JPi6Rtz8pNOGXS+GccV2Fr
+	 vBt/Q0ioAKJzCNySLTnrqeVgCCUjz9dScdaxa/QpNTukN1PuPES6JT7pyxqjj26niW
+	 WrVNjqIh7ji6a/rJxZFlMMBjjGaP2jhOdDScGgCSsH/rY1S2LD6aM4xvvQu7L+BGvC
+	 yj4Zg+kpKH7gQ==
+Date: Sun, 13 Sep 2026 09:51:57 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Nabige Aala <nabige.aala@oss.qualcomm.com>
 Cc: Vinod Koul <vkoul@kernel.org>, 
@@ -58,13 +58,14 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
 	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org, 
 	Ritesh Kumar <ritesh.kumar@oss.qualcomm.com>, Mahadevan P <mahadevan.p@oss.qualcomm.com>
-Subject: Re: [PATCH 03/17] dt-bindings: display/msm: Document Nord MDSS
-Message-ID: <20260913-festive-shrimp-of-strength-10b9df@quoll>
+Subject: Re: [PATCH 02/17] dt-bindings: display/msm: dp-controller: Document
+ Nord DP
+Message-ID: <20260913-idealistic-perky-mule-f4e3bb@quoll>
 References: <20260911-nord-drv-dt-v1-0-e25c073cf1b6@oss.qualcomm.com>
- <20260911-nord-drv-dt-v1-3-e25c073cf1b6@oss.qualcomm.com>
+ <20260911-nord-drv-dt-v1-2-e25c073cf1b6@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260911-nord-drv-dt-v1-3-e25c073cf1b6@oss.qualcomm.com>
+In-Reply-To: <20260911-nord-drv-dt-v1-2-e25c073cf1b6@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,26 +82,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Sep 11, 2026 at 09:06:34PM +0530, Nabige Aala wrote:
-> +    display-subsystem@ae00000 {
-> +        compatible = "qcom,nord-mdss";
-> +        reg = <0x0ae00000 0x1000>;
-> +        reg-names = "mdss";
-> +        power-domains = <&dispcc_gdsc>;
-> +        clocks = <&dispcc DISPCC_MDSS_AHB_CLK>,
-> +                 <&gcc GCC_DISP_HF_AXI_CLK>,
-> +                 <&dispcc DISPCC_MDSS_MDP_CLK>;
-> +        clock-names = "iface", "bus", "core";
-> +        resets = <&dispcc DISP_CC_MDSS_CORE_BCR>;
-> +        interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
-> +        interrupt-controller;
-> +        #interrupt-cells = <1>;
-> +        iommus = <&apps_smmu 0x800 0x420>;
-> +        #address-cells = <1>;
-> +        #size-cells = <1>;
-> +        ranges;
+On Fri, Sep 11, 2026 at 09:06:33PM +0530, Nabige Aala wrote:
+> From: Mahadevan P <mahadevan.p@oss.qualcomm.com>
+> 
+> Add the compatible for the DisplayPort controller found on the
+> Qualcomm Nord SoC.
 
-Make the example complete here.
+Same comment to other Qualcomm patches... say something useful instead.
+See also writing bindings.
+
+
+> 
+> Signed-off-by: Mahadevan P <mahadevan.p@oss.qualcomm.com>
+> Signed-off-by: Nabige Aala <nabige.aala@oss.qualcomm.com>
+> ---
+>  Documentation/devicetree/bindings/display/msm/dp-controller.yaml | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/display/msm/dp-controller.yaml b/Documentation/devicetree/bindings/display/msm/dp-controller.yaml
+> index 094a6383bb77..8d980acb1a16 100644
+> --- a/Documentation/devicetree/bindings/display/msm/dp-controller.yaml
+> +++ b/Documentation/devicetree/bindings/display/msm/dp-controller.yaml
+> @@ -19,6 +19,7 @@ properties:
+>      oneOf:
+>        - enum:
+>            - qcom,glymur-dp
+> +          - qcom,nord-dp
+>            - qcom,sa8775p-dp
+>            - qcom,sc7180-dp
+>            - qcom,sc7280-dp
+
+Not complete.
 
 Best regards,
 Krzysztof
