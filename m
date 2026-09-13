@@ -4,52 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5623BC88E53
-	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 01:40:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 139E0C88E56
+	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 06:12:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GiPuy+ZSTD+cQLT/fCSTzE/y+mYAubB+pnOxh7ftP0g=; b=zfoHgqtautCgch
-	k6v3Mo5HutMppviryHcjS1Zn/v1yf6sAudxZJ99kIJd6kWkqLeJsbaszqjfcgGnuNZ8g8pqYpqbav
-	uPROAQbZsrcyXZbCQUYI7h2s75bEUAztGbe0bqsn3WbYmSzSOFE631A+CaFC5QKgconYbW28c55b4
-	3VZLdvPRfxcjj2btUCNzpXip0oUxzqyu8NoixP/dTtmMbf9ESWzbX/ZpHboodRRKdhhP5XDnrQbSz
-	nxSaduRlWy4mZqeTOEkwyzzb0iDg6p1D61zpLxwIz11UrTijQxiRIYUg8JQgz7dh8CivzUR0wqS1H
-	4SxU5l8JwJdkqyFPZ0tQ==;
+	List-Owner; bh=7yNLsrDnoFhqDc1t5G92TdeUyvkj3ogtdIpRe9a8rkU=; b=woHGgnd2L0WoPn
+	4GfDpPvX5L5l6td0oVAHPeM4ubHiUEFDUBp1vx5N3usNznrjNFF24x9Y2qdlvF/3CLSFwoneJKTUx
+	/zRuS9VweLrKY6iZAVkFXc+amav98Md5PjeOetHMVKqWCNcIGbv299hrAosnZQuADpj3rzYzVkpXv
+	5+L0QGTOjJ4hAK3l4cUbcfiB+XmIxl8Swoh9j4UT4QkFlpMgcH+By+7wPRUoIan5jcsfjBxMxr+dg
+	j/z0mFjd5+C/9m6I0M8Cev9FZamHGez+ehdswLvRtfSb4P6uqOQx0lyqa7NALgQk7THpckC93o9Y5
+	+xgU+bYbWwUaaoEtLoYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5ZD6-00000001JFU-1uce;
-	Sun, 13 Sep 2026 01:40:48 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1x5dSR-00000001S5y-1re7;
+	Sun, 13 Sep 2026 06:12:55 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5ZD4-00000001JFM-1eFV
+	id 1x5dSP-00000001S5s-3ICZ
 	for linux-phy@lists.infradead.org;
-	Sun, 13 Sep 2026 01:40:46 +0000
+	Sun, 13 Sep 2026 06:12:53 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0794B43B14;
-	Sun, 13 Sep 2026 01:40:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8F5B71F000FF;
-	Sun, 13 Sep 2026 01:40:43 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 2F2C541953;
+	Sun, 13 Sep 2026 06:12:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2F5801F000FF;
+	Sun, 13 Sep 2026 06:12:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789263643;
-	bh=qB6XDyFAGD52QhHiWOCKynYNUePyar4QEjI6nmNh9u4=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=Kn5XuxFdhpkmIz12nSpS75kUztWCrZdE2ZfgecI8kMphX5pU9zmhTpseef9KOCR2Y
-	 fvGzJFHw4HevJOnT5xW7js+sjyVdAkf97FhKaJrsDnCX/x4ZZaPGW7Mv5XAW9OdCHH
-	 NMX8509mvxQ6CylIzwspujEXwR4k9unUb0lGays6wEOfEBzoK7U5wMPAwgu6bhvXRy
-	 yQm/z0qqmptvHLMScGD2po26zrwdz672daUBUgfCN/c11E2UOSxUpgkN/2f7bwObNi
-	 QmkWjKlI1aiGr4RUnDmOmIMi89ks8iX5tubgD1EF4xUdKm/ShM0mB0kAguq5goqqUK
-	 nPJVIC3G+e5uw==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH] phy: broadcom: brcm-usb: unwind clocks on probe failure
-To: "Myeonghun Pak" <mhun512@gmail.com>
-Cc: neil.armstrong@linaro.org, vkoul@kernel.org, olteanv@gmail.com, linux-phy@lists.infradead.org
-In-Reply-To: <20260913012956.16443-1-mhun512@gmail.com>
-References: <20260913012956.16443-1-mhun512@gmail.com>
-Date: Sun, 13 Sep 2026 01:40:43 +0000
-Message-Id: <20260913014043.8F5B71F000FF@smtp.kernel.org>
+	s=k20260515; t=1789279973;
+	bh=QSyp8ho+krENqcCqtD8mgyjv4BFYhN5HZH/k2CfA1Ng=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=e6vlzCgQxDcz90hMbxxtPxhE5h6HGH8zwsWBdGGRaKLvrFT+nIe8nz3ZvQRB+j7F2
+	 x6SOK8+qlefol7r0HAOcQWmBJEC6aIMfI8WXFk7+3Z3etJo5jO2wcsJgM1npW0I9AH
+	 lcpJCt5Gl+64CUja4L+jhQ9M/6vwlJafenyvM5Y8Ske2LFD8eCPZca6k+EGpMt5E+6
+	 P5r9ba03wrq81uEUp4+x2E3YEuNJOJsDcsWfov8CaNctjBKq0Cr+4V6LN+5xsvdfN4
+	 7Mm2vwZwLAPOEGMAnGhnzyb6xav268b2VIhPzWTkflt5UNbdOgPPyB5fWev6MdgSCF
+	 i0/nqVEdriAJQ==
+Date: Sun, 13 Sep 2026 11:42:48 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Herman van Hazendonk <github.com@herrie.org>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Nathan Chancellor <nathan@kernel.org>,
+	Nick Desaulniers <nick.desaulniers+lkml@gmail.com>,
+	Bill Wendling <morbo@google.com>,
+	Justin Stitt <justinstitt@google.com>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	llvm@lists.linux.dev, konrad.dybcio@oss.qualcomm.com,
+	dmitry.baryshkov@oss.qualcomm.com
+Subject: Re: [PATCH v3 0/2] phy: qcom: usb-hs: MSM8x60 vendor ULPI init
+Message-ID: <aqY-4ExEFebqU0ZP@parshuram>
+References: <20260616-submit-phy-usb-hs-vendor-init-seq-v3-0-7d21fb1d1484@herrie.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260616-submit-phy-usb-hs-vendor-init-seq-v3-0-7d21fb1d1484@herrie.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -61,88 +76,74 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
-IFtIaWdoXSBNaXNzaW5nIGNsZWFudXAgZm9yIFBNIG5vdGlmaWVyIGFuZCBzeXNmcyBncm91cCBv
-biBwcm9iZSBmYWlsdXJlLCBsZWFkaW5nIHRvIGEgdXNlLWFmdGVyLWZyZWUgYW5kIHpvbWJpZSBz
-eXNmcyBhdHRyaWJ1dGVzLgotIFtIaWdoXSBDbG9jayBvYmplY3QgcmVmZXJlbmNlcyBhY3F1aXJl
-ZCB2aWEgb2ZfY2xrX2dldF9ieV9uYW1lKCkgYW5kIGNsa19nZXQoKSBhcmUgbmV2ZXIgcmVsZWFz
-ZWQgd2l0aCBjbGtfcHV0KCkuCi0gW0hpZ2hdIFVuY2hlY2tlZCBjbGtfcHJlcGFyZV9lbmFibGUo
-KSByZXN1bHRzIGluIHVuc2FmZSByZWdpc3RlciBhY2Nlc3Nlcy4KLS0KCmNvbW1pdCA0ODYwZmVh
-ZjA5YmNmMmQxOWU2YmRiMjc1OTAwNmRlNThmYjA4MTFlCkF1dGhvcjogTXllb25naHVuIFBhayA8
-bWh1bjUxMkBnbWFpbC5jb20+CgogICAgcGh5OiBicm9hZGNvbTogYnJjbS11c2I6IHVud2luZCBj
-bG9ja3Mgb24gcHJvYmUgZmFpbHVyZQogICAgCiAgICBicmNtX3VzYl9waHlfZHZyX2luaXQoKSBl
-bmFibGVzIHRoZSBvcHRpb25hbCBVU0IyIGFuZCBVU0IzIGNsb2NrcyBiZWZvcmUKICAgIGNyZWF0
-aW5nIGFsbCBQSFlzIGFuZCBhY3F1aXJpbmcgdGhlIHJlbWFpbmluZyBwcm9iZSByZXNvdXJjZXMu
-IFNldmVyYWwKICAgIGxhdGVyIGZhaWx1cmVzIHJldHVybiB3aXRob3V0IGRpc2FibGluZyBjbG9j
-a3MgdGhhdCB3ZXJlIGFscmVhZHkgZW5hYmxlZCwKICAgIGFuZCBkZWZlcnJlZCBwcm9iZSByZXRy
-aWVzIGNhbiBrZWVwIGluY3JlYXNpbmcgdGhlaXIgZW5hYmxlIGNvdW50cy4KCj4gZGlmZiAtLWdp
-dCBhL2RyaXZlcnMvcGh5L2Jyb2FkY29tL3BoeS1icmNtLXVzYi5jIGIvZHJpdmVycy9waHkvYnJv
-YWRjb20vcGh5LWJyY20tdXNiLmMKPiBpbmRleCA1OWQ3NTZhMTBkNmNiLi4yNzNmN2I1ODYzMDE4
-IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L2Jyb2FkY29tL3BoeS1icmNtLXVzYi5jCj4gKysr
-IGIvZHJpdmVycy9waHkvYnJvYWRjb20vcGh5LWJyY20tdXNiLmMKPiBAQCAtNDA0LDYgKzQwNCw4
-IEBAIHN0YXRpYyBpbnQgYnJjbV91c2JfcGh5X2R2cl9pbml0KHN0cnVjdCBwbGF0Zm9ybV9kZXZp
-Y2UgKnBkZXYsCj4gIHsKPiAgCXN0cnVjdCBkZXZpY2UgKmRldiA9ICZwZGV2LT5kZXY7Cj4gIAlz
-dHJ1Y3QgcGh5ICpncGh5ID0gTlVMTDsKPiArCWJvb2wgdXNiXzIwX2Nsa19lbmFibGVkID0gZmFs
-c2U7Cj4gKwlib29sIHVzYl8zMF9jbGtfZW5hYmxlZCA9IGZhbHNlOwo+ICAJaW50IGVycjsKPiAg
-Cj4gIAlwcml2LT51c2JfMjBfY2xrID0gb2ZfY2xrX2dldF9ieV9uYW1lKGRuLCAic3dfdXNiIik7
-CgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgaXMgYSBwcmUtZXhpc3RpbmcgaXNzdWUsIGJ1dCBjbG9j
-ayBvYmplY3QgcmVmZXJlbmNlcyBhY3F1aXJlZCB2aWEKb2ZfY2xrX2dldF9ieV9uYW1lKCkgYW5k
-IGNsa19nZXQoKSBhcmUgbmV2ZXIgcmVsZWFzZWQgd2l0aCBjbGtfcHV0KCkuCgpTaW5jZSB0aGVz
-ZSBBUElzIHRha2UgYSByZWZlcmVuY2UgdG8gdGhlIGNsb2NrLCBkb2Vzbid0IHRoZSBsYWNrIG9m
-IGNsa19wdXQoKQpsZWFrIHRoZSBjbG9jayBvYmplY3RzIGFuZCBwcm92aWRlciBtb2R1bGUgcmVm
-ZXJlbmNlIGNvdW50cyBvbiBwcm9iZSBkZWZlcnJhbAphbmQgd2hlbiB0aGUgZHJpdmVyIGlzIHVu
-Ym91bmQ/CgpbIC4uLiBdCgo+IEBAIC00NzUsNiArNDg5LDE0IEBAIHN0YXRpYyBpbnQgYnJjbV91
-c2JfcGh5X2R2cl9pbml0KHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYsCj4gIAl9Cj4gIAo+
-ICAJcmV0dXJuIDA7Cj4gKwo+ICtlcnJfZGlzYWJsZV9jbGtzOgo+ICsJaWYgKHVzYl8zMF9jbGtf
-ZW5hYmxlZCkKPiArCQljbGtfZGlzYWJsZV91bnByZXBhcmUocHJpdi0+dXNiXzMwX2Nsayk7Cj4g
-KwlpZiAodXNiXzIwX2Nsa19lbmFibGVkKQo+ICsJCWNsa19kaXNhYmxlX3VucHJlcGFyZShwcml2
-LT51c2JfMjBfY2xrKTsKPiArCj4gKwlyZXR1cm4gZXJyOwo+ICB9CgpbU2V2ZXJpdHk6IEhpZ2hd
-ClRoaXMgaXNuJ3QgYSBidWcgaW50cm9kdWNlZCBieSB0aGlzIHBhdGNoLCBidXQgd2hpbGUgZml4
-aW5nIHRoZSBjbG9jawp1bndpbmRpbmcsIHNob3VsZCBjbGtfcHV0KCkgYWxzbyBiZSBjYWxsZWQg
-aGVyZSBvbiB0aGUgYWNxdWlyZWQgY2xvY2sKcmVmZXJlbmNlcz8KClNpbWlsYXJseSwgaW4gYnJj
-bV91c2JfcGh5X3JlbW92ZSgpLCB0aGUgZHJpdmVyIGZhaWxzIHRvIGNhbGwgY2xrX3B1dCgpOgoK
-c3RhdGljIHZvaWQgYnJjbV91c2JfcGh5X3JlbW92ZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpw
-ZGV2KQp7CglzdHJ1Y3QgYnJjbV91c2JfcGh5X2RhdGEgKnByaXYgPSBkZXZfZ2V0X2RydmRhdGEo
-JnBkZXYtPmRldik7CgoJc3lzZnNfcmVtb3ZlX2dyb3VwKCZwZGV2LT5kZXYua29iaiwgJmJyY21f
-dXNiX3BoeV9ncm91cCk7Cgl1bnJlZ2lzdGVyX3BtX25vdGlmaWVyKCZwcml2LT5wbV9ub3RpZmll
-cik7Cn0KClNob3VsZCBjbGtfcHV0KCkgYmUgYWRkZWQgdG8gdGhlIHJlbW92ZSBwYXRoIGFzIHdl
-bGw/CgoKW1NldmVyaXR5OiBIaWdoXQpUaGlzIGlzIGEgcHJlLWV4aXN0aW5nIGlzc3VlLCBidXQg
-aW4gYnJjbV91c2JfcGh5X3Byb2JlKCksIHRoZSBzeXNmcyBncm91cAphbmQgUE0gbm90aWZpZXIg
-YXJlIHJlZ2lzdGVyZWQgbWFudWFsbHkgYnV0IGxhY2sgcmVtb3ZhbCBsb2dpYyBvbiBwcm9iZSBl
-cnJvcjoKCnN0YXRpYyBpbnQgYnJjbV91c2JfcGh5X3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZp
-Y2UgKnBkZXYpCnsKLi4uCglwcml2LT5wbV9ub3RpZmllci5ub3RpZmllcl9jYWxsID0gYnJjbV9w
-bV9ub3RpZmllcjsKCXJlZ2lzdGVyX3BtX25vdGlmaWVyKCZwcml2LT5wbV9ub3RpZmllcik7Ci4u
-LgoJZXJyID0gc3lzZnNfY3JlYXRlX2dyb3VwKCZkZXYtPmtvYmosICZicmNtX3VzYl9waHlfZ3Jv
-dXApOwouLi4KCXBoeV9wcm92aWRlciA9IGRldm1fb2ZfcGh5X3Byb3ZpZGVyX3JlZ2lzdGVyKGRl
-diwgYnJjbV91c2JfcGh5X3hsYXRlKTsKCglyZXR1cm4gUFRSX0VSUl9PUl9aRVJPKHBoeV9wcm92
-aWRlcik7Cn0KCklmIGRldm1fb2ZfcGh5X3Byb3ZpZGVyX3JlZ2lzdGVyKCkgZmFpbHMsIHRoZSBw
-cm9iZSBmdW5jdGlvbiByZXR1cm5zIGFuIGVycm9yLAp3aGljaCBjYXVzZXMgdGhlIGRldnJlcyBm
-cmFtZXdvcmsgdG8gZnJlZSB0aGUgcHJpdiBzdHJ1Y3R1cmUuCgpEb2VzIHRoaXMgbGVhdmUgYSBk
-YW5nbGluZyBwb2ludGVyIGluIHRoZSBnbG9iYWwgUE0gbm90aWZpZXIgY2hhaW4gYW5kIHpvbWJp
-ZQpzeXNmcyBhdHRyaWJ1dGVzLCBwb3RlbnRpYWxseSBsZWFkaW5nIHRvIGEgdXNlLWFmdGVyLWZy
-ZWUgZHVyaW5nIHRoZSBuZXh0IFBNCmV2ZW50PwoKCltTZXZlcml0eTogSGlnaF0KVGhpcyBpcyBh
-IHByZS1leGlzdGluZyBpc3N1ZSwgYnV0IEkgbm90aWNlZCB1bmNoZWNrZWQgY2xrX3ByZXBhcmVf
-ZW5hYmxlKCkKY2FsbHMgaW4gYnJjbV91c2JfcGh5X2luaXQoKToKCnN0YXRpYyB2b2lkIGJyY21f
-dXNiX3BoeV9pbml0KC4uLikKewouLi4KCWNsa19wcmVwYXJlX2VuYWJsZShwcml2LT51c2JfMjBf
-Y2xrKTsKCWNsa19wcmVwYXJlX2VuYWJsZShwcml2LT51c2JfMzBfY2xrKTsKCWNsa19wcmVwYXJl
-X2VuYWJsZShwcml2LT5zdXNwZW5kX2Nsayk7CglicmNtX3VzYl9pbml0X2NvbW1vbigmcHJpdi0+
-aW5pKTsKLi4uCn0KCkFuZCBhIHNpbWlsYXIgcGF0dGVybiBpbiBicmNtX3VzYl9waHlfcmVzdW1l
-KCk6CgpzdGF0aWMgaW50IGJyY21fdXNiX3BoeV9yZXN1bWUoLi4uKQp7Ci4uLgoJY2xrX3ByZXBh
-cmVfZW5hYmxlKHByaXYtPnVzYl8yMF9jbGspOwoJY2xrX3ByZXBhcmVfZW5hYmxlKHByaXYtPnVz
-Yl8zMF9jbGspOwoJYnJjbV91c2JfaW5pdF9pcHAoJnByaXYtPmluaSk7Ci4uLgp9CgpJZiBjbGtf
-cHJlcGFyZV9lbmFibGUoKSBmYWlscywgdGhlIGZ1bmN0aW9ucyBwcm9jZWVkIHRvIGFjY2VzcyBt
-ZW1vcnktbWFwcGVkCmhhcmR3YXJlIHJlZ2lzdGVycy4KCkNhbiBhY2Nlc3NpbmcgdGhlc2UgdW5j
-bG9ja2VkIHBlcmlwaGVyYWwgcmVnaXN0ZXJzIGNhdXNlIGFuIHVucmVjb3ZlcmFibGUKc3lzdGVt
-IHBhbmljIG9yIGJ1cyBlcnJvcj8KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nh
-c2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA5MTMwMTI5NTYuMTY0NDMtMS1taHVuNTEyQGdtYWls
-LmNvbT9wYXJ0PTEKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LXBoeQo=
+On 16-06-26, 15:26, Herman van Hazendonk wrote:
+> v3 (this round):
+>  - Re-introduce a much smaller DT binding patch following Konrad's
+>    "do we have values for MTP/QRD" question and Dmitry's
+>    "qcom,hsdrvslope (or similarly named) property in DT" suggestion.
+>  - Survey of every MSM8x60-class downstream tree I could reach --
+>    Qualcomm reference (SURF/FFA/Fluid/Dragon/Fusion via
+>    board-msm8x60.c on android.googlesource.com), Samsung Galaxy S2
+>    family (Q1 / Celox / Dali / generic 8x60 MTP), Sony MSM8660
+>    (sony-kernel-msm8660), HTC MSM8660 ports
+>    (shooter / holiday / pyramid / doubleshot / shooter_u / ruby) and
+>    HP TouchPad -- shows that pre-emphasis, CDR auto-reset and SE1
+>    gating values are *identical* across every reference board.
+>    Only the 4-bit HS driver slope in reg 0x32 [3:0] varies.
+>  - Patch 1/2 adds a single qcom,hs-drv-slope DT property (u32,
+>    range 0..15) gated to the qcom,usb-hs-phy-msm8660 compatible.
+>  - Patch 2/2 hardcodes the three platform-wide writes in the driver
+>    behind the same compatible match, consumes qcom,hs-drv-slope for
+>    the board-specific bits, and leaves the silicon default in place
+>    when the property is absent -- which matches Qualcomm's own MTP,
+>    Samsung and Sony reference behaviour.
+>  - The bit-level meaning we *do* have comes from Code Aurora's
+>    downstream arch/arm/mach-msm/include/mach/msm_hsusb_hw.h, which
+>    Samsung and HP both shipped byte-for-byte identical.
+>  - Per Dmitry's request, both commit messages call out explicitly
+>    that there is no public Qualcomm documentation describing how the
+>    4-bit slope value maps to an actual slew rate / V/ns / %.  The
+>    field is an opaque hardware control; boards must copy the value
+>    from their vendor / downstream kernel as a measured-per-layout
+>    knob, not a derived one.
+> 
+> v2:
+>  - Dropped the original qcom,vendor-init-seq DT property entirely
+>    and folded all the vendor-register programming into the driver
+>    behind the qcom,usb-hs-phy-msm8660 compatible.
+>  - HS driver slope was hardcoded in v2.  v3 promotes that one
+>    varying value to a DT property as Dmitry requested.
+> 
+> Companion TouchPad DTS work (flipping the PHY compatible from
+> "qcom,usb-hs-phy-apq8064" to "qcom,usb-hs-phy-msm8660" and adding
+> qcom,hs-drv-slope = <5>) will be sent separately with the rest of
+> the apq8060-tenderloin DT series.
+> 
+> On-device validation (HP TouchPad / APQ8060):
+>  - Booted with v3 + the upcoming DTS hookup.  PHY driver bound,
+>    msm_hsusb HS link came up at high-speed.  No regression vs the v2
+>    hardcoded build.
+> 
+> Build / schema verification:
+>  - dt_binding_check DT_SCHEMA_FILES=.../qcom,usb-hs-phy.yaml: clean.
+>  - dtbs_check on qcom-apq8060-dragonboard.dtb and
+>    qcom-msm8960-cdp.dtb (the two existing in-tree usb-hs-phy
+>    consumers): clean.
+>  - drivers/phy/qualcomm/phy-qcom-usb-hs.o builds clean.
+>  - checkpatch.pl --strict: no warnings on either patch.
+
+Hey, this fails to apply for me, can you please rebase on phy/next and
+send
+
+-- 
+~Vinod
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
