@@ -4,59 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 789AEC88E5A
-	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 10:56:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A402CC88E5A
+	for <linux-phy@archiver.kernel.org>; Sun, 13 Sep 2026 10:56:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3t1xYKraIqQ7bCs9sNud61na4edvg9WAZ32O/l4Dg+g=; b=n1CMfj+HOUP/Yo
-	kMDLYrUUspHIKnTUjws3VY2JZvu0XlFwU90vi7lGizbBa3Ms9DkJfLIPxOdkfv49slm2JxILbM10m
-	upI0vLsNu+V2buRNpTGuLvT2vtgx5xoQwNb3NE/2oCAC7GHN+nLU45l4Qp4UTeq25B/wOGaL1fLDl
-	u7QVMK6zJlPzDkxlHELH1YIDSTMT6MJ1W03Z7a2xb3sdz/fUgZ6ZFEoQfaN8A5J6F+AwuZS67eZyy
-	9LADQm3DZU2sCsIYVouGRekQq+xZiqCoS/BBXg6P249VANdaJ7GwCVWI9ibcyEHW/JNfeqR7RhOod
-	XQ5B2437E0SKps9rxOsA==;
+	List-Owner; bh=J5nBzVXdxzNoBrklBa8M0xfn5ng0MLsRdOl06Yyz1OU=; b=dY5YtDNo4JYsMN
+	J8pD3Yu2VpWVleeNeeN1GptKL7cdnO9UtG93/FtZtl2AMB1NbUCfVz8nDcbbvXxaP/fto52/1dMSG
+	Eda6K3ySfXUWBUhAZKwF6L4CKE/dOTgHp+tuBJ18rnVRc86+jCM2qBmLHLMiftr0rGJUE1SqAari8
+	uFlD9fXrdcXKhPin71bxgcFie3CNtKvjGsU92N0QR9Glydn/dQgOufveQVSOkIro3ZDgUPMrg2vpH
+	r0Jcn+hzylxrvRSpMtvAk0GEfViuAzY89wYMcXpBAIU5ibI7UPShjKuVtj6rC9MMBm6Pw30+d9Blu
+	YFxQgUvv/LJveZVitqmw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5htB-00000001bb5-0dS6;
-	Sun, 13 Sep 2026 10:56:49 +0000
+	id 1x5htD-00000001bcF-1OlI;
+	Sun, 13 Sep 2026 10:56:51 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5ht8-00000001ba8-3GBD
-	for linux-phy@lists.infradead.org;
-	Sun, 13 Sep 2026 10:56:47 +0000
+	id 1x5htC-00000001bbO-1JTa;
+	Sun, 13 Sep 2026 10:56:50 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 301F344857;
+	by sea.source.kernel.org (Postfix) with ESMTP id 14FAF404DC;
+	Sun, 13 Sep 2026 10:56:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A8AA81F000FF;
 	Sun, 13 Sep 2026 10:56:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0CE231F00899;
-	Sun, 13 Sep 2026 10:56:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789297006;
-	bh=MbCQ6U6GuK/b/cm8UVieb8vDK6L7jfo8D2f5/kdeNxE=;
+	s=k20260515; t=1789297010;
+	bh=VXU0FpJrrfRxjV/9XuJ2ILsuuq4iDXIkX/VBK1uBhLU=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=enurv+pWoGByAYbjyNdx6lX3RraD9eJG44p3s414wjaeda6HqKuoTgK6e4mapalBu
-	 69rjNYvXZBacVH3U9A4HZlDzgvBxcrhysFbgLbmfPoOERmPS0x6ZNval+hi3vQnkq3
-	 +DdE8XWLxcUZ9vS0tDv7L9RntlSUFER5qDTcpyE0gegkeJuw/LSV/9PZpVqnJHjaSh
-	 w0CzE3w/L6XOn8nxYSMInMgg8WbjM6OuIpWiWQyzJF9zhJDDRnDobJWJGsvegXO/AF
-	 hMJyiPxvRG4qef0hw+QRpl4Ex5+8FQl9dnvLGm5pO5cC2njv6J643St5RFrpbufHkZ
-	 t2GJXydrB73rQ==
+	b=CbwG19Dr90iyMGAdA2iqv+xEBM5hdQaSqY1VBIEMQPUHoihasv8p6VcXDuOhHrI+r
+	 Snc3eyxofnfD1/cPR7gqDRJlIDNI/arGd7yq0VR/zm+do0ylZ0LkcjR/btIzome9Vg
+	 13vADLnO1b1tj3Vz0Q9rkEgA4CYFgli+wSZn+9XXEE7mIwkequTsMOdISaQ3UwaeB8
+	 Uj53cty5/gx7TT/yUvZ+u+mhg55UG83glAzJUkRMXkz4eOL56L0DpetjNn4Aqd9QYt
+	 s0cG1Q5yJ73Nf3517+24w1F1ddbQM9YcGVLlLS2xiMTDDD0V+cqKRAO5fM51ExInig
+	 it0vWP8u0oHWA==
 From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>, 
- Aswath Govindraju <a-govindraju@ti.com>, 
- Swapnil Jakhade <sjakhade@cadence.com>, 
- Gregory CLEMENT <gregory.clement@bootlin.com>
-Cc: =?utf-8?q?Th=C3=A9o_Lebrun?= <theo.lebrun@bootlin.com>, 
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, 
- Vladimir Kondratiev <vladimir.kondratiev@mobileye.com>, 
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-In-Reply-To: <20260306-fix_sierra_get_parent-v2-1-cafe89ee5382@bootlin.com>
-References: <20260306-fix_sierra_get_parent-v2-1-cafe89ee5382@bootlin.com>
-Subject: Re: [PATCH v2] phy: cadence: Sierra: Do not modify register when
- getting parent clock
-Message-Id: <178929700263.215437.1287296789549951145.b4-ty@kernel.org>
-Date: Sun, 13 Sep 2026 16:26:42 +0530
+To: linux-phy@lists.infradead.org, Rosen Penev <rosenp@gmail.com>
+Cc: Sven Peter <sven@kernel.org>, Janne Grunau <j@jannau.net>, 
+ Neal Gompa <neal@gompa.dev>, Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, asahi@lists.linux.dev, 
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20260909220810.52310-1-rosenp@gmail.com>
+References: <20260909220810.52310-1-rosenp@gmail.com>
+Subject: Re: [PATCHv2] phy: apple: atc: remove stale kernel-doc for removed
+ struct members
+Message-Id: <178929700630.215437.14303908364654670254.b4-ty@kernel.org>
+Date: Sun, 13 Sep 2026 16:26:46 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
 X-BeenThere: linux-phy@lists.infradead.org
@@ -76,22 +72,16 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 06 Mar 2026 11:23:58 +0100, Gregory CLEMENT wrote:
-> The get_parent() callback for the PLL_CMNLC1 clock was incorrectly
-> writing to the register while determining the parent clock index. This
-> unintended register access forces the PHY back into training mode. If
-> the PHY is already configured, this unexpected change prevents it from
-> exiting training mode.
+On Wed, 09 Sep 2026 15:08:10 -0700, Rosen Penev wrote:
+> The @sw and @mux members were never present in struct apple_atcphy,
+> causing kernel-doc warnings.
 > 
-> Remove the register write operation to ensure the PHY remains stable
-> during the get_parent() callback.
 > 
-> [...]
 
 Applied, thanks!
 
-[1/1] phy: cadence: Sierra: Do not modify register when getting parent clock
-      commit: 02613aa974ccc84a5448573d253275baace95124
+[1/1] phy: apple: atc: remove stale kernel-doc for removed struct members
+      commit: 44e2000fe44bce2397b5be89cdafc28ee1bb0e66
 
 Best regards,
 -- 
