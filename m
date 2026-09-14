@@ -4,54 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3CAD9C88E50
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Sep 2026 03:27:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4611BC88E64
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Sep 2026 03:33:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SYrgqXgAK6nfyndAd35ssmt+Q1KLVaZGGogNsE4+FcI=; b=pw4PHzQY5o1dlR
-	3zUkgVT3rvSjpYpD64jkFVbC04c2+mOaWLqHZxqjXm9ZFHnMXDusJXogmjQ+mm6RcJAXDXkRhxBdW
-	q5ZrZkb25WC3dt4us/fQzfuqGCWl9N7N7IpOVudFpJRjxLJgF/F+rJxt26Z9cinN23EfKwGueGTOB
-	WbE8NYA0kiGh6FS2fDUMLG0+vIAezYEFSFhNSdTM6l4oSSzsjKgO2zHfmINdm/kCT/6VpJYd0O9fY
-	kbyM2dp9p+hxzle5qKV2Bjz1vJmAiHzvEowxLA1WOSOsWaDpfIkd8Q1ekAy9m9kwf5gJyiWcOslO9
-	V0WTsj1hUQexkEi/KhbA==;
+	List-Owner; bh=lsAeOEbvKKkQ3bIgo7x4ZTKjUJ5wyAOId+8i+HLp7Yk=; b=BfjcymBA5eJO/7
+	hwkId36E5VCKT3mijHTVMrlUfU9LoGvL5zb3lupW5c1PWMiOKxAzwUbMP/xPiHQ7Eny/Pn6IDZpq8
+	DLUCnlIwvxVaNo64lDTOfkidBLOvOCfaB4znqqC9Y7FgC5un5KD9exvza+pdCJuFcMoN3Qaz6yNQN
+	osiCYcWve9opY/JwiOalCju6N7V6bvihsouKafhwdRZ3B07rn8IZokE5la7uIgCqm3pMM7ujwdmEU
+	ZxUpChiec3H8ks4zXKN76xYfa5Nw5qhWg47WtL66WII0JQgb6umWLE6YYriEOVDvVivAi0y0/a+7q
+	+1AFvEEKcndkE8VIZFXA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5xLi-00000002Gft-3htI;
-	Mon, 14 Sep 2026 03:27:18 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1x5xRy-00000002H7V-3JSP;
+	Mon, 14 Sep 2026 03:33:46 +0000
+Received: from mout-p-101.mailbox.org ([2001:67c:2050:0:465::101])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5xLg-00000002Gfm-3yAa
+	id 1x5xRv-00000002H6w-3dFG
 	for linux-phy@lists.infradead.org;
-	Mon, 14 Sep 2026 03:27:17 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 4FCEA60AA6;
-	Mon, 14 Sep 2026 03:27:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9434D1F000FF;
-	Mon, 14 Sep 2026 03:27:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789356434;
-	bh=CIDbXVM2jeGQjO4zxD5leriOt7cLbGdO3SlDMTR1Ssg=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=LV7b/PzUJaEst7qWyVaYoRKcR3BRX+AOcDz5SqSfx7NDkF1D7nqB8DPL1aXWKQizN
-	 jaQEkisfNN122Xfajpz4UIghBmRJOiin3oVxYH4YmOw17aNIjbkXUJ0iJ5zkt3xmUg
-	 QY/BS2GQu5gqwTmZ3WCo6LKS7TCAD2vnq//0Gyx0gxhxfTGn6P5TUMYJrcVSA1Pu+u
-	 Yq2TCZEvr6iOqyXFUxUNOcCVt4FOFo1Z/U3a+8RsmF9IytIpCqYKx17TrvTZkXPzel
-	 gIrdD4N9qCMxIVKFE+A4HqP6Tc3XgY/pfTk5bUyIacWSReYYxSnZRZb6YCCNPfIerW
-	 SfeX8NfLjQn2w==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v5 3/3] phy: nuvoton: phy-ma35d1-usb2: extend to
- dual-port with OTG support
-To: "Joey Lu" <a0987203069@gmail.com>
-Cc: devicetree@vger.kernel.org, neil.armstrong@linaro.org, conor+dt@kernel.org, olteanv@gmail.com, vkoul@kernel.org, linux-phy@lists.infradead.org, robh@kernel.org
-In-Reply-To: <20260914031859.385224-4-a0987203069@gmail.com>
-References: <20260914031859.385224-1-a0987203069@gmail.com>
- <20260914031859.385224-4-a0987203069@gmail.com>
-Date: Mon, 14 Sep 2026 03:27:13 +0000
-Message-Id: <20260914032713.9434D1F000FF@smtp.kernel.org>
+	Mon, 14 Sep 2026 03:33:45 +0000
+Received: from smtp202.mailbox.org (smtp202.mailbox.org [10.196.197.202])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mout-p-101.mailbox.org (Postfix) with ESMTPS id 4hjrN11n10z8sqP;
+	Mon, 14 Sep 2026 05:33:37 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailbox.org; s=mail20150812;
+	t=1789356817;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=zi/HNH51DYMqF6FrKwXWRt/DS3wGH248vhAG+zCzkeg=;
+	b=xirn+Venw00wFe+IUQ/RNMvSnxo+YxdBpuOkeFNaf8GxFGck+yfpKHTWTVWaE8ewbq5Erd
+	6W6Xsheui0UA/3iOKYpuHARwG2zg1EOslox7KPmeX9JTLVs+grgYayBb+4xe4CATN0votw
+	KJDukKN8RQ+Sft9qJYtx6F6uaHRYPNODsOHITu9soAP6a7WUt8dxmUtT8RfoomqR1e3Fgk
+	jSpzWcS6sHnSCXnjnVykK14cm+gGRmxRxK5/IHF63/JesQgPg+g+G2MV/xKjC7IVfHL7Pt
+	WIgqHQzrEn/0kQthFqruGUszK/GfHLqZG6IwDsIKIBDHb05UHMRZLrf5pyqIyg==
+Message-ID: <c88cad21-dc3c-4791-837c-49a6a41a811c@mailbox.org>
+Date: Mon, 14 Sep 2026 05:33:31 +0200
+MIME-Version: 1.0
+Subject: Re: [PATCH 2/2] phy: renesas: Add Renesas Multi-Protocol PHY driver
+ for R-Car X5H
+To: Manivannan Sadhasivam <mani@kernel.org>
+Cc: linux-phy@lists.infradead.org, Thanh Quan <thanh.quan.xn@renesas.com>,
+ Phong Hoang <phong.hoang.wz@renesas.com>, Hai Pham
+ <hai.pham.ud@renesas.com>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ Arnd Bergmann <arnd@arndb.de>, Biju Das <biju.das.jz@bp.renesas.com>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Magnus Damm
+ <magnus.damm@gmail.com>, Neil Armstrong <neil.armstrong@linaro.org>,
+ Rob Herring <robh@kernel.org>, Tam Nguyen <tam.nguyen.xa@renesas.com>,
+ Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
+ Vinh Nguyen <vinh.nguyen.xz@renesas.com>, Vinod Koul <vkoul@kernel.org>,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-renesas-soc@vger.kernel.org
+References: <20260828192223.402422-1-marek.vasut+renesas@mailbox.org>
+ <20260828192223.402422-2-marek.vasut+renesas@mailbox.org>
+ <c2rlwdyn2xm3tti7skniz3uldwh4lly4jlqdmggqjm2a2xpyxq@nczmbl7tyqa7>
+Content-Language: en-US
+From: Marek Vasut <marek.vasut@mailbox.org>
+In-Reply-To: <c2rlwdyn2xm3tti7skniz3uldwh4lly4jlqdmggqjm2a2xpyxq@nczmbl7tyqa7>
+X-MBO-RS-META: 8bfkjky1pt3whjxf1p558bchj4awyzb1
+X-MBO-RS-ID: 2deee22f53a4f685405
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260913_203344_055699_8A1F0540 
+X-CRM114-Status: GOOD (  11.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,45 +87,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gVW5jaGVja2VkIHJl
-Z21hcF9yZWFkIHJldHVybiB2YWx1ZSBpbiBtYTM1X3JvbGVfc3dfZ2V0IGxlYWRzIHRvIHRoZSB1
-c2Ugb2YgdW5pbml0aWFsaXplZCBzdGFjayBtZW1vcnksIHBvdGVudGlhbGx5IGxlYWtpbmcgMSBi
-aXQgb2Yga2VybmVsIHN0YWNrIGRhdGEgdG8gdXNlcnNwYWNlLgotLQoKY29tbWl0IDkzYjFhZDhl
-NjY0ODg5MTBkN2MyOTY0MjdjYjNhY2JlYzgxM2UwYTIKQXV0aG9yOiBKb2V5IEx1IDxhMDk4NzIw
-MzA2OUBnbWFpbC5jb20+CgpwaHk6IG51dm90b246IHBoeS1tYTM1ZDEtdXNiMjogZXh0ZW5kIHRv
-IGR1YWwtcG9ydCB3aXRoIE9URyBzdXBwb3J0CgpUaGlzIHBhdGNoIGV4dGVuZHMgdGhlIE51dm90
-b24gTUEzNUQxIFVTQiAyLjAgUEhZIGRyaXZlciB0byBtYW5hZ2UgYm90aCBQSFkwCmFuZCBQSFkx
-IHBvcnRzIHVzaW5nIGEgdW5pZmllZCBpbml0IGNhbGxiYWNrLiBJdCB1cGRhdGVzIHRoZSByZXNl
-dCBhbmQgY2xvY2sKcG9sbGluZyBzZXF1ZW5jZXMgYW5kIGFkZHMgYSByZWFkLW9ubHkgVVNCIHJv
-bGUgc3dpdGNoIGZvciBQSFkwIHRvIGV4cG9zZQp0aGUgYWN0aXZlIHJvbGUgdG8gdXNlcnNwYWNl
-LgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvbnV2b3Rvbi9waHktbWEzNWQxLXVzYjIuYyBi
-L2RyaXZlcnMvcGh5L251dm90b24vcGh5LW1hMzVkMS11c2IyLmMKPiBpbmRleCA5YTQ1OWI3MDBl
-ZDQ4Li4yYzYwYmUwZWU1MGY3IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L251dm90b24vcGh5
-LW1hMzVkMS11c2IyLmMKPiArKysgYi9kcml2ZXJzL3BoeS9udXZvdG9uL3BoeS1tYTM1ZDEtdXNi
-Mi5jCgpbIC4uLiBdCgo+ICtzdGF0aWMgZW51bSB1c2Jfcm9sZSBtYTM1X3JvbGVfc3dfZ2V0KHN0
-cnVjdCB1c2Jfcm9sZV9zd2l0Y2ggKnN3KQo+ICt7Cj4gKwlzdHJ1Y3QgbWEzNV91c2JfcGh5ICpw
-ID0gdXNiX3JvbGVfc3dpdGNoX2dldF9kcnZkYXRhKHN3KTsKPiArCXUzMiB2YWw7Cj4gKwo+ICsJ
-cmVnbWFwX3JlYWQocC0+c3lzcmVnLCBNQTM1X1NZU19QV1JPTk9UUCwgJnZhbCk7Cj4gKwo+ICsJ
-cmV0dXJuICh2YWwgJiBQV1JPTk9UUF9VU0JQMElEKSA/IFVTQl9ST0xFX0hPU1QgOiBVU0JfUk9M
-RV9ERVZJQ0U7Cj4gK30KCltTZXZlcml0eTogTWVkaXVtXQpDb3VsZCB0aGlzIGxlYWQgdG8gdGhl
-IHVzZSBvZiB1bmluaXRpYWxpemVkIHN0YWNrIG1lbW9yeT8gSWYgdGhlIGNhbGwgdG8KcmVnbWFw
-X3JlYWQoKSBmYWlscywgdGhlIHZhcmlhYmxlIHZhbCB3aWxsIHJlbWFpbiB1bmluaXRpYWxpemVk
-LiBXaGVuCmV2YWx1YXRlZCBpbiB0aGUgcmV0dXJuIHN0YXRlbWVudCwgaXQgd291bGQgcmV0dXJu
-IGEgVVNCIHJvbGUgYmFzZWQgb24gc3RhY2sKZ2FyYmFnZS4KClNpbmNlIHRoaXMgcm9sZSBpcyBl
-eHBvc2VkIHRvIHVzZXJzcGFjZSB2aWEgdGhlIHN5c2ZzIHJvbGUgc3dpdGNoIGludGVyZmFjZSwK
-Y291bGQgdGhpcyBwb3RlbnRpYWxseSBsZWFrIG9uZSBiaXQgb2Yga2VybmVsIHN0YWNrIGluZm9y
-bWF0aW9uIHRvIHVzZXJzcGFjZQppZiB0aGUgTU1JTyByZWFkIGhhcHBlbnMgdG8gZmFpbD8gU2hv
-dWxkIHRoZSByZXR1cm4gdmFsdWUgb2YgcmVnbWFwX3JlYWQoKQpiZSBjaGVja2VkIGJlZm9yZSBl
-dmFsdWF0aW5nIHZhbD8KClsgLi4uIF0KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczov
-L3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA5MTQwMzE4NTkuMzg1MjI0LTEtYTA5ODcyMDMw
-NjlAZ21haWwuY29tP3BhcnQ9MwoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtcGh5Cg==
+On 9/3/26 12:15 PM, Manivannan Sadhasivam wrote:
+
+Hello Manivannan,
+
+>> +/* Firmware update */
+>> +#define MPPHY_FW_BASE			0x10000
+>> +#define MPPHY_FW_CH_OFFSET		0x20000
+>> +#define MPPHY_FW_NAME			"rcar_gen5_mp_phy.bin"
+> 
+> Is this firmware redistributable? I would assume not as like other Renesas IP
+> firmware. If so, you should add a documentation about how an user can get the
+> firmware, and package it. Like,
+> Documentation/PCI/controller/rcar-pcie-firmware.rst
+
+I will do so in V2 .
+
+The Gen4 firmware is now part of linux-firmware, so I updated that piece 
+of documentation and sent a patch.
+
+[...]
+
+>> +static int mp_phy_probe(struct platform_device *pdev)
+>> +{
+
+[...]
+
+>> +	return pm_runtime_resume_and_get(dev);
+> 
+> Since the runtime usage count is incremented and not dropped anywhere else, the
+> driver will never runtime suspend.
+> 
+>> +}
+
+I do not think we can actually runtime suspend the PHY itself, so this 
+is expected.
+
+The rest of the feedback is handled in V2, thank you !
+
+-- 
+Best regards,
+Marek Vasut
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
