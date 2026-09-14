@@ -4,108 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B93BBC88E72
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Sep 2026 19:33:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10210C88E6F
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Sep 2026 19:38:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:From:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fHruXk9lT5rp9yZvrnC7y95l4pKlPOVOU7IYcxCYCfE=; b=Q45PPtmCidebDc
-	Y53lgGvyguTCxAb81eXwTOB6uLHWnEu+gBR2HDxA+oThPW8jDGUmgIMMukzh4rzQzYn6fkN4jFkyc
-	fWL6pVtDz+D4XuslG/0dmOAcItOaS+YdSeABtIw//13vQIgJrqe3vqlPZxiOXCjbDWTdvzO1+XlPe
-	uYjBE0k/Fho1mO1finXtyazIrrkSBsA+B5rkyItJHM4TZ+FnXkVaeVkWN1FvhM/TgARKJ9ILhMe/g
-	0PMYSIrsVsObiThGfEaS6nl0nEqL7TzbKHtnhLbYR0h+VkGjxvfs4QjMDAin/VLyBXgEvOkfuAPat
-	cbmDGJQlTbsE+4Ma0s0w==;
+	List-Owner; bh=BB0f1aKv7ySMUq7/qVAULgIWseAAoK9KHndtg7+VxO4=; b=QMzO3OF0L+wOHV
+	HxG4flwvi9KWw1XGX8sYRnrM67PQZ6dXUULNqflZKVYbrFGEB0AtK5DAvkzZFMuFRg0evr/RQegQV
+	AbUyIupXaWFwe8Mi3jiNMSQVeDjrgtFaexA8DZrPtMp/24eBsIOXRL4zsY+g3WQasccE5S7nBqf9g
+	2OHADNbeZ8ri4tM3Zz/zrc7TpzEZyXreJtk963Z9DUrQCm1txTATVmd0sYBQx7S9hfrvd/rlFSiNI
+	YzW/PgDaj8/Pm2n3C7wSFjcbYvIOaBDxQmu8J0FTMY4RrSHrKbEHpImWMZUDEXBUzhexh5UaJsDvz
+	r+jqV7toMXWrODXbljww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6CQn-00000004XBP-0WT9;
-	Mon, 14 Sep 2026 19:33:33 +0000
-Received: from mail-pf1-x461.google.com ([2607:f8b0:4864:20::461])
+	id 1x6CVB-00000004XYx-38u9;
+	Mon, 14 Sep 2026 19:38:05 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6CQk-00000004XAu-3R9K
-	for linux-phy@lists.infradead.org;
-	Mon, 14 Sep 2026 19:33:32 +0000
-Received: by mail-pf1-x461.google.com with SMTP id d2e1a72fcca58-84f3ab8750cso328119b3a.0
-        for <linux-phy@lists.infradead.org>; Mon, 14 Sep 2026 12:33:30 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1789414409; x=1790019209;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:dkim-signature:x-gm-gg:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to:content-type;
-        bh=PCqYKrJhwcMBqMVGNNFrBZCCNQBh47WyyEB7W5B1uPA=;
-        b=kmucqH74mYU0TbzQjXrUsXCCheSIsXAGV37VVmIZTp9I1VsldEvxwdSE8pLE79KYrk
-         dHvHZU2pX6venD1IomRb7+ax5kkVjK7S66QdVDmgVx87BIJ0t15uQOy6JgtKaWgZWMqg
-         oXp3sx7XKotp1kM5NIqz5RJWbfHot79eiDHkotFQPC79tYz2XbWwxfrAwQHlBoOrSyDz
-         tmZG20rebSZ98xrXZSIwZsqTLoKPBK0LN+qQ3hkKTvM4LwElkT2AlHZsiRRH6d+Siw04
-         +CIG2dhXEHk+D6bS98YAGP7Xwnan3I+JR/0BtWi11bdD98M5IW0lcOTnOT0rw4I4qv1T
-         7+3w==
-X-Forwarded-Encrypted: i=1; AKwUvBx2tGMZCei2KQRnP2F6l7IqR3gn+2eoyeG/9wKDn2Z6HODxFlOrpsaASs45aE8oPD4PtXxXA4gqB8Q=@lists.infradead.org
-X-Gm-Message-State: AFuF++mfuLrJ0gTXcubUjzCyc8mfd3Udx9PtEQ3UWgtRWufjuL9KUJae
-	d+TqJ0AaL1yutRDeD4egpw8eGx1glqvkKVdVvKXocmTh6bpbA3wTHreDaf4tcYf+mth/Dy0saTl
-	2eV6dbDop9D+reIU6wwwzbo/OqOt1dUrsHWaLv+3YPd8gNkmhJVt9lZjzUNL0Hp3vli7K1tdNwU
-	RFXDokP6a5Y2ONcms+0/xRLLs5PNGlMNiTxX+C6j0r0aMLetpc0yMWMO0rogiE3tFbny4KJv/iP
-	rfb+V0BT55b9Hc2lfw=
-X-Gm-Gg: AYBFou0w5xDOElm1q17ifVfQ2AwWmhqeQ2fFgYd6Ne+Us9G9H+CaQRThT8zoECjVYVB
-	4cHA62HZX0blCYHBo31yKh/5XfuhRiRJ4joq1FEDJofYxb5bEzFBabTRTV/mvykrk4tiLFau+cL
-	VQ3y6vozn+kbKeUaJveZiVApmgknrwernEWtgFmth+KMB1ioBMpiqvKpPVzhR2634qvdCOBRVtb
-	xI1wF3oMcJ02a5dtWWEYiu0xtehKv9OnLRa+FjPs5J8a4+PuFtz8Kl6TwTsb4eI1QzKFeUXluVX
-	CDB/6iajJHAZRP9MKta10mUOOFXgdenwryv5vlw0vc8x3PWN+DfU+RrihNMefRo66M/RuQIEyiK
-	QiFcRxY0gss3tVchSPZMfOVG614PNDd0mjpPr1RfgpsaAgu1Ok5IiJ3/1QBZyBLcWTAzYYOto48
-	TvmVUmgSqTf5gvrlu7Ufo2C6D+8IdWoixlmA==
-X-Received: by 2002:a05:6a00:4185:b0:848:3fe2:c88b with SMTP id d2e1a72fcca58-86f83940113mr9051647b3a.6.1789414409531;
-        Mon, 14 Sep 2026 12:33:29 -0700 (PDT)
-Received: from smtp-us-east1-p01-i01-si01.dlp.protect.broadcom.com (address-144-49-247-25.dlp.protect.broadcom.com. [144.49.247.25])
-        by smtp-relay.gmail.com with ESMTPS id 41be03b00d2f7-cc4c65a557csm4171626a12.5.2026.09.14.12.33.29
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Mon, 14 Sep 2026 12:33:29 -0700 (PDT)
-X-Relaying-Domain: broadcom.com
-X-CFilter-Loop: Reflected
-Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-530ef845909so48026871cf.1
-        for <linux-phy@lists.infradead.org>; Mon, 14 Sep 2026 12:33:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=broadcom.com; s=google; t=1789414408; x=1790019208; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=PCqYKrJhwcMBqMVGNNFrBZCCNQBh47WyyEB7W5B1uPA=;
-        b=c0KI2OoKHeut50nATtd1GZDsPdSIk00VkWvKm4Zct7QChWYyO5vNohHvtSAEobVr/8
-         nijwkKK8Fgfpr8kjkCB0S4comdA8WVf/vEZttZOQAXfogig3qpBbb5LNLjq+E9q/ocNj
-         YSgIrhAw0ySGNht/oJMbGBKEiGrBpMBCzoPfI=
-X-Forwarded-Encrypted: i=1; AKwUvBxcUrrws+GS86cs+TWO1fnqwhMp9tCJO+urNY2WmQqil/ajcIfg63VVSjmD53fr2eGvNUK4iCk/82Q=@lists.infradead.org
-X-Received: by 2002:a05:622a:2b47:b0:530:fd73:6c22 with SMTP id d75a77b69052e-5310cd28075mr78646581cf.0.1789414408428;
-        Mon, 14 Sep 2026 12:33:28 -0700 (PDT)
-X-Received: by 2002:a05:622a:2b47:b0:530:fd73:6c22 with SMTP id d75a77b69052e-5310cd28075mr78646031cf.0.1789414407982;
-        Mon, 14 Sep 2026 12:33:27 -0700 (PDT)
-Received: from [10.14.5.171] ([192.19.161.248])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-9120f45adb3sm101173966d6.9.2026.09.14.12.33.26
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 14 Sep 2026 12:33:27 -0700 (PDT)
-Message-ID: <d43cfb62-f048-42c8-909b-79a0300790df@broadcom.com>
-Date: Mon, 14 Sep 2026 12:33:25 -0700
+	id 1x6CV7-00000004XYD-2ju1;
+	Mon, 14 Sep 2026 19:38:04 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+	by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id 20260914193754euoutp02981281706c8e3139fb5b93cfbd25526a~VRyqJA0Bb0156301563euoutp02C;
+	Mon, 14 Sep 2026 19:37:54 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com 20260914193754euoutp02981281706c8e3139fb5b93cfbd25526a~VRyqJA0Bb0156301563euoutp02C
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1789414675;
+	bh=5quPaYobLEbeMOu5MqGjHlx1gGO6GYM4Ci77INCJQLA=;
+	h=Date:Subject:To:Cc:From:In-Reply-To:References:From;
+	b=TZKarI6Fzswot9c4aVXuInO0XRxf9GfzbOMlt7onjkVzeL1ZbqAInBvs4atJ/oDi0
+	 AUtj/OANEEt5ewm+9Sk6Wb7zy4Ml9/IM+VLkFU4eqSkZba+0uuGUKYDcVqnkJKj0Lt
+	 oxPYASnd7d7htQ9OwYLZimxgp4UXzR/izU9JOwv4=
+Received: from eusmtip2.samsung.com (unknown [203.254.199.222]) by
+	eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+	20260914193754eucas1p1c5e933b8753ce6d75f7c5f34e3bb72d6~VRypvtokG2298422984eucas1p1x;
+	Mon, 14 Sep 2026 19:37:54 +0000 (GMT)
+Received: from [192.168.1.44] (unknown [106.210.136.40]) by
+	eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+	20260914193752eusmtip20be6a60002305f9f5bc9e993970a2799~VRynuwkCl0478104781eusmtip2P;
+	Mon, 14 Sep 2026 19:37:52 +0000 (GMT)
+Message-ID: <782506ab-70b8-40a0-98f6-239e74351c1e@samsung.com>
+Date: Mon, 14 Sep 2026 21:37:52 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: broadcom: brcm-usb: unwind clocks on probe failure
-To: Myeonghun Pak <mhun512@gmail.com>, Al Cooper <alcooperx@gmail.com>,
- Vinod Koul <vkoul@kernel.org>
-Cc: Broadcom internal kernel review list
- <bcm-kernel-feedback-list@broadcom.com>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Manivannan Sadhasivam <mani@kernel.org>, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, Ijae Kim <ae878000@gmail.com>
-References: <20260913012956.16443-1-mhun512@gmail.com>
+Subject: Re: [PATCH v3 06/19] dt-bindings: display: verisilicon: Add
+ starfive,jh7110-dc8200
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+	<neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, Krzysztof
+	Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Andrzej
+	Hajda <andrzej.hajda@intel.com>, Robert Foss <rfoss@kernel.org>, Laurent
+	Pinchart <Laurent.pinchart@ideasonboard.com>, Jonas Karlman
+	<jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>, Luca Ceresoli
+	<luca.ceresoli@bootlin.com>, David Airlie <airlied@gmail.com>, Simona Vetter
+	<simona@ffwll.ch>, Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+	Lee Jones <lee@kernel.org>, Andy Yan <andy.yan@rock-chips.com>, Philipp
+	Zabel <p.zabel@pengutronix.de>, Emil Renner Berthing <kernel@esmil.dk>, Hal
+	Feng <hal.feng@starfivetech.com>, Michael Turquette
+	<mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, Brian Masney
+	<bmasney@redhat.com>, Heiko Stuebner <heiko@sntech.de>, Conor Dooley
+	<conor@kernel.org>, Paul Walmsley <pjw@kernel.org>, Palmer Dabbelt
+	<palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti
+	<alex@ghiti.fr>, Dominique Belhachemi <db@domibel.de>, Brian Masney
+	<bmasney+clk@redhat.com>, Jerome Brunet <jbrunet+clk@baylibre.com>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+	mfd@lists.linux.dev, linux-clk@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+	linux-riscv@lists.infradead.org, Andy Yan <andyshrk@163.com>, Marek
+	Szyprowski <m.szyprowski@samsung.com>, Maud Spierings
+	<maud_spierings@murena.io>, Graham Markall <hello@big-grey.co.uk>, Icenowy
+	Zheng <zhengxingda@iscas.ac.cn>
 Content-Language: en-US
-From: Justin Chen <justin.chen@broadcom.com>
-In-Reply-To: <20260913012956.16443-1-mhun512@gmail.com>
-X-DetectorID-Processed: b00c1d49-9d2e-4205-b15f-d015386d3d5e
+From: Michal Wilczynski <m.wilczynski@samsung.com>
+In-Reply-To: <20260910-amorphous-vigilant-jaybird-d65c4f@quoll>
+X-CMS-MailID: 20260914193754eucas1p1c5e933b8753ce6d75f7c5f34e3bb72d6
+X-Msg-Generator: CA
+X-RootMTR: 20260904132719eucas1p1c900149ffa1b8771aca238e6441482ee
+X-EPHeader: CA
+X-CMS-RootMailID: 20260904132719eucas1p1c900149ffa1b8771aca238e6441482ee
+References: <20260904-jh7110-clean-send-v3-0-484f9ae72715@samsung.com>
+	<CGME20260904132719eucas1p1c900149ffa1b8771aca238e6441482ee@eucas1p1.samsung.com>
+	<20260904-jh7110-clean-send-v3-6-484f9ae72715@samsung.com>
+	<20260910-amorphous-vigilant-jaybird-d65c4f@quoll>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260914_123330_864092_EA2A3BAC 
-X-CRM114-Status: UNSURE (   8.15  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260914_123801_961307_C73FDBF9 
+X-CRM114-Status: GOOD (  14.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,32 +104,38 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 
-On 9/12/26 6:29 PM, Myeonghun Pak wrote:
-> brcm_usb_phy_dvr_init() enables the optional USB2 and USB3 clocks before
-> creating all PHYs and acquiring the remaining probe resources.  Several
-> later failures return without disabling clocks that were already enabled,
-> and deferred probe retries can keep increasing their enable counts.
+On 9/10/26 10:34, Krzysztof Kozlowski wrote:
+> On Fri, Sep 04, 2026 at 03:27:07PM +0200, Michal Wilczynski wrote:
+>> The JH7110 embeds a DC8200. The binding requires an SoC specific
+>> compatible ahead of the generic one, so add the JH7110 to the enum.
+>>
+>> Signed-off-by: Michal Wilczynski <m.wilczynski@samsung.com>
+>> ---
+>>  Documentation/devicetree/bindings/display/verisilicon,dc.yaml | 1 +
+>>  1 file changed, 1 insertion(+)
 > 
-> Track each successful clock enable and unwind only those clocks, in reverse
-> order, when initialization fails.  Keep the existing successful probe path
-> unchanged.  This is limited to the BCM4908 and Broadcom STB USB PHY driver.
+> And this one must be before patch #5 or switch in your patch #5 to
+> compatibles-style for children, instead of $ref (see some recent
+> display/msm/*mdss* bindings like sm8750).
 > 
-> This issue was identified during our ongoing static-analysis research while
-> reviewing kernel code.
+> Best regards,
+> Krzysztof
+
+Thanks, I think I can do both for the v4.
+
 > 
-> Fixes: 49859e55e364 ("phy: usb: phy-brcm-usb: Add Broadcom STB USB phy driver")
-> Assisted-by: OpenAI:GPT-5.6
-> Co-developed-by: Ijae Kim <ae878000@gmail.com>
-> Signed-off-by: Ijae Kim <ae878000@gmail.com>
-> Signed-off-by: Myeonghun Pak <mhun512@gmail.com>
-Reviewed-by: Justin Chen <justin.chen@broadcom.com>
+> 
+
+Best regards,
+-- 
+Michal Wilczynski <m.wilczynski@samsung.com>
 
 -- 
 linux-phy mailing list
