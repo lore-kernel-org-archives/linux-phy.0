@@ -4,85 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 698C4C88E77
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Sep 2026 11:41:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49738C88E50
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Sep 2026 12:02:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PFaDc3bdSdY6JbGeDokCurvY8UycBwWygRjjFpqtFAc=; b=h8GouxE/KHISCt
-	iQ2ENaMoZVQVizTmvOyzBBMmVI/vhMYj/nas1TqO2lJ07O25XpKgCVFkmEe1P1bfblkR6p6GQCsRN
-	5Z1IO7rRbE3Nai10hdoIheCkoiyP36/pn8MVEvWTudePMXAUuubCM4uX/dDyAazxv9txv+sq+zWMw
-	n8bhwN95Mh2sw2AlQ3fjp/AXu25crJCtLDpRDle0LPcy/cSHEArlpBBv7Sczv9IeGueDHm3wkxhCS
-	6mNBkPSxivAvjsU0e+626iznmCTUQ06PZtcrHwdL30/Nn4Fs1rNORfMDPh7+i+9AWEDUfZYz93Iwd
-	CmcZXZT6tkjtpsmMxCtQ==;
+	List-Owner; bh=QtIxvKTxUtewXwV6fwpNjnPIMBcnIHx4B8LTw7TNzTc=; b=2XqLszscUHjn58
+	ZvgMXuFjYw75Lb87f2oNPqR7pMuJMDSk3IiWiP/byzbWOICuh2CKpMk5nxX1QgI1ngL8qn3isptVM
+	dFl+ZkyDSzKRdr/bSNFVJPQiYnMUHRvU/NsiH3jy/yAORQ9uuTvHKOhxDXD3fj/I6DuJP5+3+8z5m
+	KteXOpXFGvDJFThaYzvqcipq3l1TGy+o0erq8LWHZnMc5WZY/bt+bU1RCqFTaeGYvIcNvfNlYveTd
+	G40DsBBvITRyG7BEBW4C1ocCSdMfO+jPXYBFA3d9QFtFFljSEwqndgp9V5SF/kjxSJ+3fBjUK+iK2
+	rOIeZL5pHJvQqrkCtYCw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6540-00000003KJJ-2mq7;
-	Mon, 14 Sep 2026 11:41:32 +0000
+	id 1x65OU-00000003SbB-2vxF;
+	Mon, 14 Sep 2026 12:02:42 +0000
 Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x652R-00000003J1P-3qc5;
-	Mon, 14 Sep 2026 11:39:57 +0000
+	id 1x65O8-00000003ST9-0KJ7;
+	Mon, 14 Sep 2026 12:02:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1789385993;
-	bh=Rk+y0O0ztk10nHrAfu6DVPjZqIhRtbfOCG9WXu/Vfrk=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=oDr5cx+x8MoFMeFr9Ih3ZVzT4cDBxqSFADj7ASDGTCrTjpxCPOZg4qOXENN8bGnFB
-	 JjRHv4EbJgIYSWucAWqtbw3hm/0MTXc1zgIeXDS3DeZbmEu9l4UoEPN9AmGjYjwBen
-	 gm2lomRg3UY2U4vQ2Pa+L7YjfOiHfZMkhApGG7EKIB8ut8q34qvwjX5Zrvy4gH/cFp
-	 VP5av91MuRBCRxWWS2WrkD8geAnlflNLQRrDmqDIbf/nc1dv0mU5YJvvuAnvSrw6zU
-	 1AuvS1T0tut4ToepehArRKsR5zcEBnn8Z9axhA0Xx6zs5TuHLHbVVMIEbXUMCgZKy1
-	 Y/AAd/rEcMp7A==
-Received: from yukiji.home (unknown [100.64.0.131])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	s=mail; t=1789387338;
+	bh=nrwqPCZkQIimnka60MFra6BC5Jik31pbN2PY4QrlaYo=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=h5KI1TJ/E/gcDBfB4bNFcKVP9n8rcAPff+fNsd457fjS+8MhM3chYQW3ynEEhuBva
+	 bsZS0djpQLU/cus5BHLBN8hYMyewO77dkBWzGHQtSqdP2iumHZLK0w/dQgtR+35mC6
+	 D0+Y1QJJ1HKxDDyFN84rqiIb47XJUCisltvqUGvvNsDiD0rhOnietbTSig7ULNzmRn
+	 yKMI8o5YbKuG1GDq8sEfasXOgSAgHrV/qQshWPRiFTQjbuD9YNIp9f/de8rTVdQW6K
+	 9cLXKzLNSSmMXUaY1S3pEd7Lh0mUMxT83tC/u7JaOywePC3gRDj0MK3Sa//PHL4Jls
+	 YlFva8qS8akZw==
+Received: from [100.64.1.21] (unknown [100.64.1.21])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
-	(Authenticated sender: laeyraud)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 22FB917E0C7E;
-	Mon, 14 Sep 2026 13:39:52 +0200 (CEST)
-From: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-Date: Mon, 14 Sep 2026 13:39:10 +0200
-Subject: [PATCH v12 24/24] scsi: ufs: mediatek: Add MT8196 compatible,
- update copyright
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id E959E17E0074;
+	Mon, 14 Sep 2026 14:02:16 +0200 (CEST)
+Message-ID: <ca3ec44c-710b-4812-9d22-c70003a136d3@collabora.com>
+Date: Mon, 14 Sep 2026 14:02:16 +0200
 MIME-Version: 1.0
-Message-Id: <20260914-mt8196-ufs-v12-24-9279d7ef814d@collabora.com>
-References: <20260914-mt8196-ufs-v12-0-9279d7ef814d@collabora.com>
-In-Reply-To: <20260914-mt8196-ufs-v12-0-9279d7ef814d@collabora.com>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Matthias Brugger <matthias.bgg@gmail.com>, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
- Peter Wang <peter.wang@mediatek.com>, 
- Chaotian Jing <chaotian.jing@mediatek.com>, 
- Alim Akhtar <alim.akhtar@samsung.com>, 
- Avri Altman <avri.altman@sandisk.com>, Bart Van Assche <bvanassche@acm.org>, 
- Stanley Jhu <chu.stanley@gmail.com>, 
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>, 
- Philipp Zabel <p.zabel@pengutronix.de>, Liam Girdwood <lgirdwood@gmail.com>, 
- Mark Brown <broonie@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v12 08/24] scsi: ufs: mediatek: Add dual 0.9V supply
+ support
+To: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Peter Wang <peter.wang@mediatek.com>,
+ Chaotian Jing <chaotian.jing@mediatek.com>,
+ Alim Akhtar <alim.akhtar@samsung.com>, Avri Altman
+ <avri.altman@sandisk.com>, Bart Van Assche <bvanassche@acm.org>,
+ Stanley Jhu <chu.stanley@gmail.com>,
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Liam Girdwood <lgirdwood@gmail.com>,
+ Mark Brown <broonie@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>,
  "Martin K. Petersen" <mkp@kernel.org>
-Cc: kernel@collabora.com, linux-arm-kernel@lists.infradead.org, 
- linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-scsi@vger.kernel.org, 
- Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, 
- Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1789385943; l=2479;
- i=louisalexis.eyraud@collabora.com; s=20250113; h=from:subject:message-id;
- bh=3kB+rZO2gAajRWpXhYF+u/1sOlmTFkMxKH7qtYej5DE=;
- b=xgcy9S5vLD0IJ2FqTQSUJTUdevhMq9VwtCLGC5u9SsFgIwrjvt+IA7rGNq5/MBnsxNq9DtmPr
- ImMNBTi/mQiDuHkrhHH2OmPptTcQjLUdWmIydcvjKVziFSPz/nB5WA2
-X-Developer-Key: i=louisalexis.eyraud@collabora.com; a=ed25519;
- pk=CHFBDB2Kqh4EHc6JIqFn69GhxJJAzc0Zr4e8QxtumuM=
+Cc: kernel@collabora.com, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-scsi@vger.kernel.org,
+ Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+References: <20260914-mt8196-ufs-v12-0-9279d7ef814d@collabora.com>
+ <20260914-mt8196-ufs-v12-8-9279d7ef814d@collabora.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+In-Reply-To: <20260914-mt8196-ufs-v12-8-9279d7ef814d@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260914_043956_131543_9F21115C 
-X-CRM114-Status: GOOD (  11.71  )
+X-CRM114-CacheID: sfid-20260914_050220_284622_D9705324 
+X-CRM114-Status: UNSURE (   8.27  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,79 +88,23 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+On 9/14/26 13:38, Louis-Alexis Eyraud wrote:
+> The MT8196 SoC has an additional pin in comparison of the MT8183 SoC,
+> that is used to feed the host controller with a 0.9V supply.
+> 
+> In preparation of this SoC support, add in platform data and
+> driver the management a second optional 0.9V regulator named
+> "avdd09-1".
+> 
+> Signed-off-by: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 
-THe MT8196's UFS controller has a new compatible. Add the necessary
-struct definitions to support it.
-
-Also update the copyrights and authors, without tabs following spaces to
-avoid checkpatch errors, to list myself as having contributed to this
-driver after the preceding rework patches.
 
 Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Reviewed-by: Peter Wang <peter.wang@mediatek.com>
-Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Signed-off-by: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
----
- drivers/ufs/host/ufs-mediatek.c | 18 ++++++++++++++++--
- 1 file changed, 16 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/ufs/host/ufs-mediatek.c b/drivers/ufs/host/ufs-mediatek.c
-index ef8924704c90..ceb52c40d266 100644
---- a/drivers/ufs/host/ufs-mediatek.c
-+++ b/drivers/ufs/host/ufs-mediatek.c
-@@ -1,9 +1,11 @@
- // SPDX-License-Identifier: GPL-2.0
- /*
-  * Copyright (C) 2019 MediaTek Inc.
-+ * Copyright (C) 2026 Collabora Ltd.
-  * Authors:
-- *	Stanley Chu <stanley.chu@mediatek.com>
-- *	Peter Wang <peter.wang@mediatek.com>
-+ *      Stanley Chu <stanley.chu@mediatek.com>
-+ *      Peter Wang <peter.wang@mediatek.com>
-+ *      Nicolas Frattaroli <nicolas.frattaroli@collabora.com> (Major cleanups)
-  */
- 
- #include <linux/arm-smccc.h>
-@@ -2252,6 +2254,10 @@ static const char *const ufs_mtk_regs_avdd12_ckbuf_avdd18[] = {
- 	"avdd12", "avdd12-ckbuf", "avdd18"
- };
- 
-+static const char *const ufs_mtk_regs_avdd12_ckbuf[] = {
-+	"avdd12", "avdd12-ckbuf"
-+};
-+
- static const struct ufs_mtk_soc_data mt8183_data = {
- 	.has_avdd09 = true,
- 	.reg_names = ufs_mtk_regs_avdd12_avdd18,
-@@ -2264,10 +2270,18 @@ static const struct ufs_mtk_soc_data mt8192_8195_data = {
- 	.num_reg_names = ARRAY_SIZE(ufs_mtk_regs_avdd12_ckbuf_avdd18),
- };
- 
-+static const struct ufs_mtk_soc_data mt8196_data = {
-+	.has_avdd09 = true,
-+	.has_avdd09_1 = true,
-+	.reg_names = ufs_mtk_regs_avdd12_ckbuf,
-+	.num_reg_names = ARRAY_SIZE(ufs_mtk_regs_avdd12_ckbuf),
-+};
-+
- static const struct of_device_id ufs_mtk_of_match[] = {
- 	{ .compatible = "mediatek,mt8183-ufshci", .data = &mt8183_data },
- 	{ .compatible = "mediatek,mt8192-ufshci", .data = &mt8192_8195_data },
- 	{ .compatible = "mediatek,mt8195-ufshci", .data = &mt8192_8195_data },
-+	{ .compatible = "mediatek,mt8196-ufshci", .data = &mt8196_data },
- 	{},
- };
- MODULE_DEVICE_TABLE(of, ufs_mtk_of_match);
-
--- 
-2.55.0
 
 
 -- 
