@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 162BDC88E72
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Sep 2026 11:41:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F18B5C88E71
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Sep 2026 11:41:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o/JFGlqyNqcHofp88NbxyVTbCHRWuwbNT93EtxkrKb0=; b=TBhp2NCOvIzJYJ
-	+nBaVOrc2ssLaKkcZSjZrBUl4kl9yJalV0lU7GZmJSiVeCOGHDPpo9J2nhL7+P6exa6Ok1fZ/wGkA
-	R+3meb8k1j+1NeyENBSI+h3GQ3YK7qL24Y/rRXUV73OZ6tMD3RowkdEKoYz+BkRQHsxPt5vWlRlTw
-	PZy5C8ZBuCsyM2W0LLRDBXRrUPGaEQ/eT+UEXjCz1GvbQRB1/wwQaG2zUckBXIPND4o6XeYNXWPn5
-	i0Ho3aSzUVYKyzW1GyQbbSdTRA5eM1NnaX1nivPkm4j+0y2y8R2m+JNHgWnG0q1yo5a5m/oftUnRm
-	/chn+Mkfbvd+GlinGNPw==;
+	List-Owner; bh=kMg9WVA4UTeCbK/kqOL6PcnSv2rmg20Nyyp88//4HdU=; b=SI13/myyCiJt5T
+	8KzBrx0zuOua0+a+SkNnK825UdzQ1f/xtJcdYilI3fyaCD1Id0U+qbfwoslm0WYiTLjNm2fwhKtme
+	TcEFZDi6nAS0YeP261Dms0dV0oglJOCvEvDBrmO9vu/eFp+0KW85zD8ZCRd9hTSrqx0sPjmvtD/Uv
+	jle2H4U92nIqPrCcLwJJ8xn49ZHcd/q4vZ75TFNbEVy3MC8TtguwyzcRhXnR51OAtIWbGYbImRMji
+	WlAMNgWrG3iFWH/G1/wcyFrQoKi89VkJTOf/df5qB03bX7R1AodR/MK5t6rl/saT5Uyl/aEPlXNce
+	OF/Fo1aPx8c50yuG3/SQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x653z-00000003KG0-2r5U;
-	Mon, 14 Sep 2026 11:41:31 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1x653y-00000003KBy-1VE1;
+	Mon, 14 Sep 2026 11:41:30 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x652O-00000003IxA-0K1Y;
-	Mon, 14 Sep 2026 11:39:54 +0000
+	id 1x652L-00000003Iul-418x;
+	Mon, 14 Sep 2026 11:39:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1789385990;
-	bh=oyDACN4F0IHYK0RFHSGVNT3KdvFnraKnx4i5QptMDQg=;
+	s=mail; t=1789385987;
+	bh=jzk/Hw+RMwYFWiQX14D3JvGuRlF3I6Kcci6JFjZ+Rhw=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=UIigl5c8z+HlMZpJIYQ5VWlUrLur/v+rScdLmfMc4aDubYFZE/mV1ErFEN0rPMqaQ
-	 HmbwZoZt3KnExhJQX1FiPOiDJ95qAuJJrMkoXmK+NBGM9bdxQrJlWiFlxjaz2xqlNA
-	 acE1m4dhGZZneinZhaUZ27OC6P9P3B2J6zVNTxB/X8/ZqbOZb9uC8pMIq/+EyM26U/
-	 RYuVZsIOVaa1YHmG1/SHhJHSgpRmdEGij51WbedRP+vsTW1pwZaCDrg7sVO1np8gGV
-	 TA13BwAqkiTQjIvo05k8+ZmqNSGMrlwONTAYSEpmf4fjpRgiuu2D5qvgesxRV3QjFB
-	 Dp+6ZMy5CM6hQ==
+	b=kglZ+1pCLAaMd32Ck52SsCESzA3bzkzVVVCjtzgbhVyZ4M6EZgNT64GJIAqf2Wekm
+	 hDVbe+mXuBB63TE3SeoxXlc/alqqof//rNNQxkXEdKSfHgsQlJHVpSoBS55DysPkvH
+	 wwTzbFjhi5Cs0OFszpUgzIfDx7iElQdSCbUJX60yRrCSGDCBf0pvsfd8CYKaau30tv
+	 EaHjjec1K2FU/f1UuQNmcBntzX4+IajLK3cdA5JtFO/tljVcULZarIvFx8dRIba7t0
+	 ynbwj/LCyDERd1RtQl9DzgKJ7RITuoPksPxAJc02qxzm6Ea4ja3JLIhKT127trOZmG
+	 VCKcnG6lm5cAw==
 Received: from yukiji.home (unknown [100.64.0.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: laeyraud)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 2C82517E08A1;
-	Mon, 14 Sep 2026 13:39:48 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 22FAB17E07DC;
+	Mon, 14 Sep 2026 13:39:46 +0200 (CEST)
 From: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-Date: Mon, 14 Sep 2026 13:39:08 +0200
-Subject: [PATCH v12 22/24] scsi: ufs: mediatek: Remove ret local from
- link_startup_notify
+Date: Mon, 14 Sep 2026 13:39:07 +0200
+Subject: [PATCH v12 21/24] scsi: ufs: mediatek: Back up idle timer in
+ per-instance struct
 MIME-Version: 1.0
-Message-Id: <20260914-mt8196-ufs-v12-22-9279d7ef814d@collabora.com>
+Message-Id: <20260914-mt8196-ufs-v12-21-9279d7ef814d@collabora.com>
 References: <20260914-mt8196-ufs-v12-0-9279d7ef814d@collabora.com>
 In-Reply-To: <20260914-mt8196-ufs-v12-0-9279d7ef814d@collabora.com>
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
@@ -73,16 +73,16 @@ Cc: kernel@collabora.com, linux-arm-kernel@lists.infradead.org,
  Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, 
  Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1789385943; l=1411;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1789385943; l=2715;
  i=louisalexis.eyraud@collabora.com; s=20250113; h=from:subject:message-id;
- bh=nvl2pTrzoEcoOiuYgn0QzQJDrspxIU1eSeChpwbZxnE=;
- b=1emF6kyB+Qj1bLrfbvlT4Vd+lZbfAPUyrIdQmcDSA73fZO6i3ltdylto93oswfyAW1/dsyw+p
- 9WOG3Id/ipDAuBhQV16UtCdqF+CllQJFI3bRBaMtI+cv0U0Mkn5qw4Y
+ bh=eDREcKfoNXLAMviPu/dYRbgFH1U4oQmTK8LePrPi/OU=;
+ b=+V2pAzKnvTPRbSFBLcbv/V9Qw+vmZYTrBCuLglcudtJ9HCrbCGJGG+/p5zFhS02J2ozHJEbAZ
+ Nzg1Jwboy+9DKdRxHWDs5rM9pEJtSzMs0HuW+NSIFHMV3xva/+X083x
 X-Developer-Key: i=louisalexis.eyraud@collabora.com; a=ed25519;
  pk=CHFBDB2Kqh4EHc6JIqFn69GhxJJAzc0Zr4e8QxtumuM=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260914_043953_121770_38EB8583 
-X-CRM114-Status: GOOD (  12.14  )
+X-CRM114-CacheID: sfid-20260914_043950_229998_EF8CF94D 
+X-CRM114-Status: GOOD (  15.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,42 +101,59 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 
-Remove the "ret" local variable from ufs_mtk_link_startup_notify, as
-it's pointless; in all cases it is assigned, it is returned right after
-without being read first.
+The MediaTek UFS driver uses a function-scope static variable to back up
+a hardware register across a power change in the
+ufs_mtk_pwr_change_notify function. This is dangerous, as it's only
+correct if only ever one instance of the driver is loaded, which isn't
+true if there's more than one device on a SoC that needs it, or it
+otherwise gets loaded a second time.
 
-Rework the code to just return directly, and get rid of the default
-branch while at it.
+Back it up into a member of the host struct instead, as this struct is
+per-instance. Rework the function to not use a pointless "ret" local as
+well.
 
+Fixes: f5ca8d0c7a63 ("scsi: ufs: host: mediatek: Disable auto-hibern8 during power mode changes")
 Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Reviewed-by: Peter Wang <peter.wang@mediatek.com>
 Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Reviewed-by: Chaotian Jing <chaotian.jing@mediatek.com>
 Signed-off-by: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 ---
- drivers/ufs/host/ufs-mediatek.c | 12 +++---------
- 1 file changed, 3 insertions(+), 9 deletions(-)
+ drivers/ufs/host/ufs-mediatek.c | 19 ++++++++-----------
+ drivers/ufs/host/ufs-mediatek.h |  1 +
+ 2 files changed, 9 insertions(+), 11 deletions(-)
 
 diff --git a/drivers/ufs/host/ufs-mediatek.c b/drivers/ufs/host/ufs-mediatek.c
-index 9cd852cadab5..2ebf7a3118da 100644
+index fc42e6baa47d..9cd852cadab5 100644
 --- a/drivers/ufs/host/ufs-mediatek.c
 +++ b/drivers/ufs/host/ufs-mediatek.c
-@@ -1553,21 +1553,15 @@ static void ufs_mtk_post_link(struct ufs_hba *hba)
- static int ufs_mtk_link_startup_notify(struct ufs_hba *hba,
- 				       enum ufs_notify_change_status stage)
+@@ -1451,27 +1451,24 @@ static int ufs_mtk_pwr_change_notify(struct ufs_hba *hba,
+ 				enum ufs_notify_change_status stage,
+ 				struct ufs_pa_layer_attr *dev_req_params)
  {
 -	int ret = 0;
--
+-	static u32 reg;
++	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
+ 
  	switch (stage) {
  	case PRE_CHANGE:
--		ret = ufs_mtk_pre_link(hba);
+ 		if (ufshcd_is_auto_hibern8_supported(hba)) {
+-			reg = ufshcd_readl(hba, REG_AUTO_HIBERNATE_IDLE_TIMER);
++			host->ahit = ufshcd_readl(
++				hba, REG_AUTO_HIBERNATE_IDLE_TIMER);
+ 			ufs_mtk_auto_hibern8_disable(hba);
+ 		}
+-		ret = ufs_mtk_pre_pwr_change(hba, dev_req_params);
 -		break;
-+		return ufs_mtk_pre_link(hba);
++		return ufs_mtk_pre_pwr_change(hba, dev_req_params);
  	case POST_CHANGE:
- 		ufs_mtk_post_link(hba);
+ 		if (ufshcd_is_auto_hibern8_supported(hba))
+-			ufshcd_writel(hba, reg, REG_AUTO_HIBERNATE_IDLE_TIMER);
 -		break;
 -	default:
 -		ret = -EINVAL;
 -		break;
++			ufshcd_writel(hba, host->ahit,
++				      REG_AUTO_HIBERNATE_IDLE_TIMER);
 +		return 0;
  	}
  
@@ -144,7 +161,19 @@ index 9cd852cadab5..2ebf7a3118da 100644
 +	return -EINVAL;
  }
  
- static int ufs_mtk_device_reset(struct ufs_hba *hba)
+ static int ufs_mtk_unipro_set_lpm(struct ufs_hba *hba, bool lpm)
+diff --git a/drivers/ufs/host/ufs-mediatek.h b/drivers/ufs/host/ufs-mediatek.h
+index 6b81c8f76201..1fa14a83e8cd 100644
+--- a/drivers/ufs/host/ufs-mediatek.h
++++ b/drivers/ufs/host/ufs-mediatek.h
+@@ -188,6 +188,7 @@ struct ufs_mtk_host {
+ 	u16 ref_clk_gating_wait_us;
+ 	u32 ip_ver;
+ 	bool legacy_ip_ver;
++	u32 ahit;
+ 
+ 	bool mcq_set_intr;
+ 	bool is_mcq_intr_enabled;
 
 -- 
 2.55.0
