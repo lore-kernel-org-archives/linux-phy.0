@@ -4,78 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02E05C88E64
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Sep 2026 11:03:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A973C88E64
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Sep 2026 11:37:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T/dk3Y9DlrgMiPOrEX0DmLB8gJPrW3sC/5g3B6S+NC8=; b=v2qVHhumZeYmHY
-	GdpVMNNf2Rueya94cF8FmkzNiFX+vuEs4Q6TSdTFii3A1tEEvTiTNsPxRl9mTn3e2cHEVbOkm7IHU
-	5cQ9vjYCX1mBPpFLgtIthcaPkYU6FWChLRX+kyTF51cYG3Qs4POH7NZ4Cx23KxXZMa9/mlyvgA/Az
-	QWopdnna1JwHuxzfWrjCgLpXlElxBAJPg1emWwSM3jdDAnuJraYO+KoMJtyLSoNyislZZ6xTf8hlK
-	chOYVYLRVLner56Ysy/ImoR1M2KUwPKyAPBt22kpfCctgnwXRVE0945qmvJj5fzBMr914zU0apSuS
-	b+wLO9tiyuhm5B1MbuJQ==;
+	List-Owner; bh=tUW4oXTCWnFlu/ic7fVSk8eUQCAGPdOgjfOycssrcqw=; b=wyfRA85npx9QJL
+	iVt7bvNOs9/z9DFsqboMhERSfSHr69zBOmV5ET8w6DOE4QWeyafnk7HbJTyjHzepY2ka0+l53JLuy
+	UQmUZ1ntck+B7fvqalwLait6iJ/pTImv93pishLghj33H0TldUqrvAK5CGfc/aikQ8RYKRMhdUZAy
+	i+CYHLVj+DXvLxpcg07cO+oiHLrpMThN/Ytfopum772hEe/c5TJF5sf90G1qDGJSFwVfGf78SzW6r
+	kr0VhnBIwTgb0EHxoJkVIQzUJBfkXGkfgvyGn9i9vy8mF5vHsNV97oWGUU8DUx5x69cMVgz5ZOTq2
+	sAklf4asyoi2n+t3A8Lw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x64T9-00000003CaY-21AZ;
-	Mon, 14 Sep 2026 11:03:27 +0000
-Received: from mail-ej1-x630.google.com ([2a00:1450:4864:20::630])
+	id 1x64zq-00000003I0R-43Zx;
+	Mon, 14 Sep 2026 11:37:14 +0000
+Received: from mail-ej2-x10.google.com ([2a00:1450:4864:34::10])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x64T7-00000003Ca8-2VGR
+	id 1x64zn-00000003HyS-459b
 	for linux-phy@lists.infradead.org;
-	Mon, 14 Sep 2026 11:03:26 +0000
-Received: by mail-ej1-x630.google.com with SMTP id a640c23a62f3a-c2946aa0d5aso425568366b.0
-        for <linux-phy@lists.infradead.org>; Mon, 14 Sep 2026 04:03:24 -0700 (PDT)
+	Mon, 14 Sep 2026 11:37:13 +0000
+Received: by mail-ej2-x10.google.com with SMTP id a640c23a62f3a-c264788fd58so281799466b.1
+        for <linux-phy@lists.infradead.org>; Mon, 14 Sep 2026 04:37:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1789383803; x=1789988603; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1789385830; x=1789990630; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:in-reply-to:content-language
          :from:references:cc:to:subject:user-agent:mime-version:date
          :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=Xbly740beuemqSo1bscqb84tM6a/tiFHYniiF7SfuVo=;
-        b=sQiBxEZ4itgVtt8+FH2qk5XcWlgMrsvtMZdNKSYuPA40GJkhUFkpCJrcdGr9clDPlH
-         yYRShbs60NwLObucA9QqOlVgDE9336qAVk75PiVrC3keNKPnKJwFObnyUAec0qVEF9+n
-         xNBhQUOR+IegONHXKcjoMjedZlzkOwDlsabQy5kJnUPYk8/Gzfk+NUwSuZQ84DUTx7wv
-         xOoyLgisVTeqeAd/CVo88m0EAfHTpsedgL7fwqv0/sABb5lSPwCjmv2oaGqbbjQPytBb
-         77hNSp1K2Gp0CFwoV7wmEDSqCDz0Z06wL31K+pIscAF8T0BgzHcJhfBpOVSv1NWwIxbI
-         yVeQ==
+        bh=BrFobApx96GbKEm837whkFKjtf7GL+qiMSoZ+3ZGcro=;
+        b=UIzlNvBcN/lIkf/yVvg8LKay8aJL6GIftqfvzbWaeBsDcv2pI3BiBv6qiUKiPjzHOQ
+         DMTZgHnUJkBLf2ugbL5vJmtBrcT9FAV93swUpik2drhltFbbXFhxSAJ+3OOi5+Hc0YI6
+         oDiCXOJ28b1FoHNMmWXA/d0Ldthdvv4hT+kO0wSbIbqUq6CvY88q9BFGRGwWz+PhNhzE
+         1iI2ihhUMKcT/dCGpZmp2JrdOuin0oV3H0Tqw0YiDiCwPUkAJOE0NFpGk+GaZjEsMgqn
+         1Ff4g7kAYPZwL+OObgc3qyGLX+fKEKlH44wlUMi5yJ11d1vaCfbFfv9MTyOYAJHYvV77
+         wnRA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1789383803; x=1789988603;
+        d=1e100.net; s=20251104; t=1789385830; x=1789990630;
         h=content-transfer-encoding:content-type:in-reply-to:content-language
          :from:references:cc:to:subject:user-agent:mime-version:date
          :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=Xbly740beuemqSo1bscqb84tM6a/tiFHYniiF7SfuVo=;
-        b=m8+1MuIYWVW0ilt0s1ZmrzllqdYcaz6VPxGStppkdTxCjHr4dSc2HhKLICOeygHu7h
-         GyD7+ORHzNxiJ2B1SJuOJpxbpy4nTQKzfqa6fXxICr5W3GD+esEztnQqXXwlXbldMipc
-         bEhuhYS8WFJz5bFIHTd5Gxga8ey2mRjHlhQbGYFmFnJuvt+9+eI2y6fCq6R+J71Rurvr
-         KM0bxjAPsmFM82TFTDQhMPtQryJYhszyXf4nO18HXnTnK0ZOnSCLJALpSe921lrw3lYh
-         EhMOwI8xx4dkSdI+xUtCSsmPj2SXfuJFhEkyTwwjrTUvhJrWy1RcBsaOFTMKn2yzVAHo
-         Yqsw==
-X-Forwarded-Encrypted: i=1; AKwUvBw2MNUq1olgL6zGbpEf/LTAJKd7D7+Kyj0GXqiT2mR2dvCd/MAY807cRYLIAdEh0IkdXIwNxdiCPmY=@lists.infradead.org
-X-Gm-Message-State: AFuF++mWVRX+L1bcp83TFtTK6ZyHMwR/HiD+Ng3FKCjliTDElbp6oBX5
-	0Ffp5ghDiDFvjmiy+db0iHxa+6ckbtPlOxpnRwxIeJsTIt4ChJKYw+9m/KQjmSVB1Qo=
-X-Gm-Gg: AYBFou0KXUesFeYzOqO3M/SzlHOssrMSNQV78ktoBL6YZQl15s+sxV+gYpyh4FJkDKF
-	Ro9MSqZuCaVnsemV75xVoXbjk348z0zxUGoCU3Kjqku833K59tRoi30uPTA3ppwV8GgbMjM9Fkf
-	if2CuBNVn7r+qPagFnMkQYZH4ZMsQdXi/SXa8mzpk6cDoH/4ZwRwZuKvrTCZCHEr4J0hrUJamCp
-	L7rRdASDgyN8eenXsZBDPhVdxJvsRaWl9Sy0samzAXS7WMWslDgZAtkddyiHt+MVw+K1ae0L3Sr
-	v7lmMx/1LSA/HIyXd9eBIalVEOXYKUosxDeYEy4KnnArpd9dnAsw28YPRJAWEfaKtCpid/5aroE
-	STOoD7D3VSUMLTTOVOFz/bcxNB0Jvs86bJDEY2Nr7QdSHpxxqcdvagia6tjvSFAH3cpKAiqIEQS
-	NQv4SLGpNBdMqrCkRUUCYEOuQe6EWPCqtBigiQfhi9/uFdfZyOhOmxkB4U7lv5m72aa+vmZ8eUy
-	LEkRty7zKI1gauZk0Cg
-X-Received: by 2002:a17:906:c156:b0:c25:833d:3839 with SMTP id a640c23a62f3a-c29a437c67amr329463066b.15.1789383803122;
-        Mon, 14 Sep 2026 04:03:23 -0700 (PDT)
+        bh=BrFobApx96GbKEm837whkFKjtf7GL+qiMSoZ+3ZGcro=;
+        b=VDvblzxtiJJCNXURvzvbR+eF1X/LnHkUxdAdGczO57v93qfyRabD3snjVAVM76ER1b
+         QRnOzy3c5yR/u0bJbpE7+EwWbVaktj1TP+eTofbqQqYsFurcS3VUKdeuRDTkCgqMic5u
+         aVDhCYwYyB2Dt2Z4T12xupOBm8Q5rx3KvD5p8hcMdtimvPVF2QBnwwG6Oo8qJMP+sUUl
+         hwHeDpfMZiQL6XptIhBH75vowlMtfG598giE/gka+P9VdE57urltEkHrd1w4dIyFdFCG
+         tSZSF4RBWkyOR5HRGHyqyfjC9J3V9xuB3uOPTZaQE5cSJMauOHoUYn1IxT0+L24sHpok
+         Sm2g==
+X-Forwarded-Encrypted: i=1; AKwUvBzf0H8EruPMsj6OkUo1ymPGlQ8fz7B7T5x7eCS0crDAYbAxDrAvyOj3xhEPN33iQpnLYxyRc4PZI+c=@lists.infradead.org
+X-Gm-Message-State: AFuF++kz0iH47np8WAUVEtpg2j6fo9QlmbDFpyfMq2sNhzxOynYUboow
+	Z8qkSOTtZ3PZkY8GnvhsYPTAqMuL6Fq6pJkpe+KVlFKsAChpETlwTVfyFOXO9X6pqaw=
+X-Gm-Gg: AYBFou0HT8sS4bafIwbyP5Wwr8JYDICYLcaU8Jb7Xy7I/TB+0UqP50vCZJitRZgL0s4
+	6JR7nxmCdatPw9HOVYDqOUITUwj57nXabg0mnEheaWoeujyOQxS4ZGgceBqMjUws0u7VIk2N8D2
+	PdhuKhja/WNSu0/hC1tsPmRyP2K1qVTAc9Qq6xwxsrfSRf/2SHz+FtgQsLkSO6A1Jp4YBirozMl
+	SbDHsjB7DaMHYSGOrn3YunVqyxCp+xx0v0ZvMs4J+j5Fq9tXRv1bnBCqmq298YZtTVwUGXQriYu
+	B7G4BW7uEprZ+S1wAaK+b4IxXtHgA3TDy1Gs7/TKFnYyHP5Fqr1o9wtoVNIRAIuQGLBjeCFahe4
+	204MgzTVfLgwPa8LLtugLmHd60Ezur2OLNDdVmi5tTe5hlPKNZL6ZGlvJ2n6CN6SmqIqe3DGv67
+	iLpSYVwJ7+m1rMhR0ps5CH6VYvwdmCLPNgTx5ssi2xxD94eb7Duc3ZyVn/seRVOtmkqKVg9PC1n
+	eCyUiKXwg==
+X-Received: by 2002:a17:907:806:b0:c29:53b5:c69d with SMTP id a640c23a62f3a-c29b86f99a5mr151242966b.28.1789385830007;
+        Mon, 14 Sep 2026 04:37:10 -0700 (PDT)
 Received: from [192.168.0.35] ([109.76.248.34])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c29852497b0sm286364666b.38.2026.09.14.04.03.11
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c29660219ecsm412455366b.16.2026.09.14.04.37.08
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 14 Sep 2026 04:03:22 -0700 (PDT)
-Message-ID: <ceca8547-ff15-4f5a-8844-8ec9061a5e6c@linaro.org>
-Date: Mon, 14 Sep 2026 12:03:11 +0100
+        Mon, 14 Sep 2026 04:37:09 -0700 (PDT)
+Message-ID: <44634913-fd6c-454d-a3a2-6a8d541b2c1e@linaro.org>
+Date: Mon, 14 Sep 2026 12:37:06 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v16 3/5] phy: core: Add devm_phy_get_by_of_node()
+Subject: Re: [PATCH v16 1/5] phy: core: Fix use-after-free in phy_get paths
 To: Frank Li <Frank.li@oss.nxp.com>
 Cc: Bjorn Andersson <andersson@kernel.org>,
  Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
@@ -93,17 +93,16 @@ Cc: Bjorn Andersson <andersson@kernel.org>,
  linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-media@vger.kernel.org, linux-phy@lists.infradead.org,
- Krzysztof Kozlowski <krzk@kernel.org>
+ Krzysztof Kozlowski <krzk@kernel.org>, stable@vger.kernel.org
 References: <20260906-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v16-0-f7bd68b5369f@linaro.org>
- <20260906-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v16-3-f7bd68b5369f@linaro.org>
- <aqRuCfmgPqa5h0y4@lizhi-Precision-Tower-5810>
+ <20260906-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v16-1-f7bd68b5369f@linaro.org>
+ <aqRq-xZRIDL1apdI@lizhi-Precision-Tower-5810>
 From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
 Content-Language: en-US
-In-Reply-To: <aqRuCfmgPqa5h0y4@lizhi-Precision-Tower-5810>
+In-Reply-To: <aqRq-xZRIDL1apdI@lizhi-Precision-Tower-5810>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260914_040325_666568_8CF0FCC7 
-X-CRM114-Status: UNSURE (   7.09  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260914_043712_053728_0D52E717 
+X-CRM114-Status: GOOD (  18.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,13 +119,70 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/09/2026 22:09, Frank Li wrote:
->> +	if (!link)
->> +		dev_dbg(dev, "failed to create device link to %s\n",
->> +			dev_name(phy->dev.parent));
-> Is it okay to print dbg message()? suppose return NULL or some error?
+On 11/09/2026 21:56, Frank Li wrote:
+> suggested subject:
+> 
+> phy: core: use phy_provider_mutex protect between _of_phy_get and try_module_get()
 
-This should be dev_err() for sure thx
+A pattern I try to encourage and role-model is making fixes very 
+explicit and obvious - frequently I'll ask people to prefix their 
+patches fixing things with Fix.
+
+I'll split the difference with you since now that I read this submitted 
+patch title you're right, it could read better.
+
+"Fix race-condition between _of_phy_get and try_module_get()"
+>> Sashiko asked during a patch review if the existing usage pattern had a
+>> race condition; specifically in of_phy_get() if it was possible between
+>> returning from _of_phy_get() and running try_module_get() that a module
+>> might be unbound leading to use-after-free.
+>>
+>> Looking at the code this appears to be so, there is no linkage between the
+>> phy and module under a synchronisation primitive.
+>>
+>> Using the phy_provider_mutex in phy_get() will ensure there is a link between
+>> the returned phy pointer and the module_get() bumping the module reference
+>> count.
+>>
+>> Amend phy_get(), of_phy_get() and devm_of_phy_get_by_index() to fix the
+>> same usage pattern.
+>>
+>> phy_provider_unregister() must take the phy_provider_mutex so amending
+>> phy_get()/of_phy_get() to take that same mutex guarantees there is no
+>> use-after-free.
+>>
+>> Fixes: ff764963479a1 ("drivers: phy: add generic PHY framework")
+>> Cc:stable@vger.kernel.org
+>> Reviewed-by: Loic Poulain<loic.poulain@oss.qualcomm.com>
+>> Signed-off-by: Bryan O'Donoghue<bryan.odonoghue@linaro.org>
+>> ---
+> ...
+>> @@ -678,15 +677,21 @@ struct phy *of_phy_get(struct device_node *np, const char *con_id)
+>>   	if (con_id)
+>>   		index = of_property_match_string(np, "phy-names", con_id);
+>>
+>> +	mutex_lock(&phy_provider_mutex);
+>> +
+>>   	phy = _of_phy_get(np, index);
+>>   	if (IS_ERR(phy))
+>> -		return phy;
+>> +		goto out_unlock;
+>>
+>> -	if (!try_module_get(phy->ops->owner))
+>> -		return ERR_PTR(-EPROBE_DEFER);
+>> +	if (!try_module_get(phy->ops->owner)) {
+>> +		phy = ERR_PTR(-EPROBE_DEFER);
+>> +		goto out_unlock;
+>> +	}
+> why no use auto cleanup guard() for mutex lock?
+
+Technically this fix would apply to kernels predating scoped_guard() - 
+kernel 6.5 v Fixes: @ ~ 3.13.
+
+Not really sure how far back the cherry-pick will work but I'd like to 
+give the possibility.
+
+We can always sweep this file to use scoped_guard() on tip-of-tree later.
 
 ---
 bod
