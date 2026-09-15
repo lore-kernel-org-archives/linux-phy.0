@@ -4,52 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3218C982C1
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Sep 2026 15:07:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62E69C88E75
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Sep 2026 15:07:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iihPjlLTOoEglXZYlLOa6G4gvAxBsw+vEZ4pDv6iuNQ=; b=Z7UANEVtO1keC0
-	We9wb6W0yvKyHv6vhz0PsPXyeneM6QvmXhtmMQy312ALmacki7Or5wb8uIz1aJnHB0AMJdjNUOn/l
-	OyAcx4q2ynsVK4vPA9Mxulq6eXTmV05kFJmcQQ9OjHwx/IKEfP4+8e0QOk28OkuGjKDv9BjMvd7Aw
-	5m9sQO1TVVmhD7GLkjzBug4PfYTHRyK+2F5OtlZ9HUgOpJFoCaebw/1epQYHU8wvFcYGhmgb4Erol
-	+ck6vEhwMBlLBfU1TzsUaDPBfwNEWwskQSTWaI8F9IGLxrb2oE2IlntdtQcl5uLKfJ/MsoydXee3N
-	GHo4MgFLJW7zpXap8KKg==;
+	List-Owner; bh=iO9w/UkVw1Q6gioipouzfkaZjaBLYId1WnbtAMueIu8=; b=iSA2dcU++m720C
+	mC/9MFTN7LzX/qkWOibk+ZM+N8SK4DWs1IMcmHeWFFpqCdHJCREIVKaat/TevGHHdMDZwCwnF30xw
+	xw66oeRMa5sFcZkII3OqJZq1zf3ROAB5VW5YP5j0fkP1zPfpsZfV3Qgkfh7yGExZv/py0QHvghAy3
+	NTBGoxuiCUdwxvVCpX6ch0od4VX1b3b5s3ZaWsuTH/+k0oyX/55O6aF2vbvIxuEgmO1ilMg9G8N4b
+	Mp+1zX/FIpcoWf9eCdCq4ryEu0mltJ+wD/jRfXsZDHvTg8PEoyN+IvJuGTKm1GLrps1tCkHz+E5En
+	fjia/jCE/UcLbwpevMlg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6Uke-000000075WL-2az4;
-	Tue, 15 Sep 2026 15:07:16 +0000
+	id 1x6Uki-000000075dS-03RF;
+	Tue, 15 Sep 2026 15:07:20 +0000
 Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6Ujs-000000074tc-0mSK;
-	Tue, 15 Sep 2026 15:06:30 +0000
+	id 1x6Ujt-000000074v6-1LfM;
+	Tue, 15 Sep 2026 15:06:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1789484779;
-	bh=PX3bW1sBE7HEbhsLaU0fKDW6DOA5Axs3TotiYYFI6k4=;
+	bh=V6k4hsOr+z+jN8GLnIWddKeAE3UAbZEYwhtva3zTSYE=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=W/pmP1laxa9RN9kKhCDAeJCDoOp2/SM4H/Otop1uexGqCzo4mnOtRlLZRrXK8krAM
-	 wyjan8pFu3i3iSmK+ActDRmkmzA0CSuUhtq+NDzGckBJXdaxUyjYKCmyMP6EFgyTYz
-	 jdRelqkwUTYB9rw7dVH7McG13XwtOCJxF//R8cigiSBwcTJPSrKnGnHspBGA+grWHR
-	 g4Beky0ZO9OndAKY+TEEIIDlbEMa0VMr3GPtM7ebLV98+7DMJW6vxhM6WIJaXvBFUw
-	 gHr1MhVHdOMYDmrWRLlNlazR06+GcZMBxOvIKvuXeknk7eGnUXVLWIyQ+uXVyhvKt7
-	 crd3CNhVf8eKg==
+	b=aTDBlHE0vhK6o5IreGPTwxZ2ddAl0Pd+NuJJfKsooKWGuuf3/TmpQzIdUg5jjhszt
+	 AftKR3pp7S6Arv6pOzhalwFYvkAkOWuL3LSJSSQN2h9exmF4kqIqnGtwfO++uuoTfc
+	 LMVtWTsLgpQAosgFIqcO1rA25KOxFxAKERjfJq8tKimRErgzfbk/a3pylN4XBL/spQ
+	 2wbLpLxGUN/l3UrXj0uK2qU6XHY0nyeJ1113JW//bLReaILHtIj35dvEAGBNNfkn1M
+	 JBU03c2XhZDi3yDHfN1CX87U+E/CHXtOAv7HB12DqQ3umSI+mOup86kSw0OSB0oDAV
+	 utEynti/HvTjg==
 Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519)
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 01C8E17E0D7F;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 0832217E0E2F;
 	Tue, 15 Sep 2026 17:06:19 +0200 (CEST)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id 6CF3C480047; Tue, 15 Sep 2026 17:06:18 +0200 (CEST)
+	id 6E998480048; Tue, 15 Sep 2026 17:06:18 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Tue, 15 Sep 2026 17:06:12 +0200
-Subject: [PATCH v15 09/11] phy: rockchip: usbdp: Avoid xHCI SErrors
+Date: Tue, 15 Sep 2026 17:06:13 +0200
+Subject: [PATCH v15 10/11] phy: rockchip: usbdp: Handle
+ rk_udphy_reset_deassert errors
 MIME-Version: 1.0
-Message-Id: <20260915-rockchip-usbdp-cleanup-part2-v15-9-8d507cb1174f@collabora.com>
+Message-Id: <20260915-rockchip-usbdp-cleanup-part2-v15-10-8d507cb1174f@collabora.com>
 References: <20260915-rockchip-usbdp-cleanup-part2-v15-0-8d507cb1174f@collabora.com>
 In-Reply-To: <20260915-rockchip-usbdp-cleanup-part2-v15-0-8d507cb1174f@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -60,28 +61,28 @@ To: Vinod Koul <vkoul@kernel.org>,
 Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
  linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
  kernel@collabora.com, Sebastian Reichel <sebastian.reichel@collabora.com>, 
- Igor Paunovic <royalnet026@gmail.com>
+ Sashiko <sashiko-bot@kernel.org>, Igor Paunovic <royalnet026@gmail.com>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2044;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2434;
  i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=PX3bW1sBE7HEbhsLaU0fKDW6DOA5Axs3TotiYYFI6k4=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGqpXup5pTCfJZPMKPAyDkFAvXceTFPoun30E
- qk56mvc29fbJYkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqqV7qAAoJENju1/PI
- O/qaeDoP/0wEZruFvau6rYIJJsEyN++PLXP+AP/4yT+KMIa7zZ/bMdyIg2O/CSLq8zbXtZpHt3C
- TdklKDfR8VSXdZ6UwyvgeRog7Uf6wcSMrykpkbYjZ7q1nnwNT9cFC2YWOnbgqMU70cJUmxEk2Z3
- qf8RbO7Fp9bIPnaPThieKMuBqMuo/OSybIaak5OJMh/BldmWRH5VfY2SmBJ/eiby2e3C5tNteBp
- Cuf3tAkyU0zqJfeulI494J2IUWXpiLRH1LKV+1db+TvKi1gIbScEL4pE9Kpcuo9cIsKzQbmHIA0
- 0GBJCQZkV5JtPvOKYJo1zG9WxadIGICo0PeTJqSmIKaC1VKnZQdSoF5WvVkpGFP8wZY2BWsXWjy
- dcNNPJHUr5hlRFrdSuhGaX8gduilHkYuFdym3orBPcnkVatEj1GmLVpmUJXG/lNnOkAq3f0y/JO
- mNKXTovT3081PGu0bUpK0IlhrcmicgkURilLS2LMYkoj3qRvfU2FO0NMzokZbDWYi8kWdvH04Zk
- nrG137r8QWIBGkq3hkaovE+fGbcXBAcrav+acRiw3x3t2Qv23QYsi3fRyI3pFjoC/BK02p5tv1j
- BOCGZDm30Pil/A2BRXTwlSkiXTFfecKm55fM8E70jIGhEpJ9WvUCXYc2XGvLlw4Sf/Q3FAS3JD+
- g3rFSlhx6uxoHSfzp4q0uqQ==
+ bh=V6k4hsOr+z+jN8GLnIWddKeAE3UAbZEYwhtva3zTSYE=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGqpXuoGTMq1a1IgjMev+B4vmaKlPqSTbqjY9
+ ISlG177GwLs7YkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqqV7qAAoJENju1/PI
+ O/qaBFgP/AvNACnspG5ISXaT4SH90dZDQNt6l3Vxk84UKl8fqLFODBTXzQ36N98cfYx8lOeHNcy
+ E3S2n6nM2whwXTqlJAzU197yJenf3CPpS8rTYFypOZorMbqq/8vYhsrH0CaUdSujFBpJQgGjFgW
+ CesV9WrcJ7cIMidQIXcljtmenNwJKK4uPr/Lm0faXOsM7N7Hd4hiamRPl9scvtLQg8yvUHMbtDR
+ RpunMVkgj9H0w2yddKD+GtgqpWM5wsrbdLf697QStdcmeQ/rDUMiGu9CeX5rXVZfKKWzgaGP2ZG
+ ovJq9czZWbpy6nR8x8WzImYOcfEa6s1e6WA5jHCOEthgcvEe+++8YxJbV+yASssjjYdYSuihSpp
+ xbJJYRU1vN2e0lNmHIyjw+1IbOVaWtA2pYtKkK4zB2zcd6fmAakJRI2Lf+irNjBgEFHrK5D+YoF
+ 7DJ+UFR41ZbddpW/WRAC5k5pbbHm+BrNgAJNIc+TEkjRX0NFjd+e8mNSl1ILb4O15yQEwp7dQDy
+ /rKqGOeZc8NRruflUvj8eha4NYRQb1KU5Nm8E4pAMwIGnLabqov1oUeIQOj2GSFEgZ2Rge7o24q
+ Itg9mt1bhNs/P1hZjrqqZXl9Rj55HcfSJGZpyws4z6cZ8US8JQN9gCDW4o7AEQMo1z/2O22POFS
+ ladZJOnHN8nc4veMZ9HkyAg==
 X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
  fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260915_080628_394773_CCC0FB1F 
-X-CRM114-Status: GOOD (  15.41  )
+X-CRM114-CacheID: sfid-20260915_080629_546866_1C2E1C2E 
+X-CRM114-Status: GOOD (  11.82  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,56 +99,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The USBDP PHY provides the PIPE clock to the USB3 controller, which
-means the PHY must be fully running when anything tries to access
-the xHCI registers.
-
-When switching between USB3-only, USB3 + DP and DP-only mode, the
-PHY must be re-initialized resulting in a short period of the PHY
-being disabled. If the DWC3 driver decides to access the xHCI at
-this point the system will fail with an SError.
-
-This patch avoids the problems by disabling the USB3 port before
-re-initializing it. This does a couple of things:
-
-- forces phystatus to 0 from GRF (not from PHY)
-- switches PIPE clock source from PHY to UTMI (safe fallback clock)
-- num_u3_port=0
-
-The last part will be ignored, as DWC3 already probed, but the
-clock re-routing will avoid the SError. There is a small delay
-afterwards to make sure the mux happened. The datasheet gives
-no hints how long it takes, so delay time is a guess.
+Handle rk_udphy_reset_deassert returning errors to avoid theoretical
+(Rockchip reset controller driver does not return errors) SError.
 
 Fixes: 2f70bbddeb45 ("phy: rockchip: add usbdp combo phy driver")
+Reported-by: Sashiko <sashiko-bot@kernel.org>
+Closes: https://sashiko.dev/#/message/20260626211151.2332F1F000E9%40smtp.kernel.org
 Tested-by: Igor Paunovic <royalnet026@gmail.com> # Orange Pi 5 Plus
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 25 +++++++++++++++++++------
+ 1 file changed, 19 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index 23cfb9bbd334..4116b4b18882 100644
+index 4116b4b18882..9eb8e40f6afb 100644
 --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -999,12 +999,15 @@ static int rk_udphy_power_on(struct rk_udphy *udphy, u8 mode)
- 			rk_udphy_u3_port_disable(udphy, false);
- 		udphy->phy_needs_reinit = false;
- 	} else if (udphy->phy_needs_reinit) {
--		if (udphy->mode == UDPHY_MODE_DP)
--			rk_udphy_u3_port_disable(udphy, true);
-+		rk_udphy_u3_port_disable(udphy, true);
-+		udelay(10);
+@@ -802,8 +802,12 @@ static int rk_udphy_init(struct rk_udphy *udphy)
+ 	/* Step 1: power on pma and deassert apb rstn */
+ 	rk_udphy_grfreg_write(udphy->udphygrf, &cfg->grfcfg.low_pwrn, true);
  
- 		ret = rk_udphy_init(udphy);
- 		if (ret)
- 			return ret;
+-	rk_udphy_reset_deassert(udphy, "pma_apb");
+-	rk_udphy_reset_deassert(udphy, "pcs_apb");
++	ret = rk_udphy_reset_deassert(udphy, "pma_apb");
++	if (ret)
++		goto assert_resets;
++	ret = rk_udphy_reset_deassert(udphy, "pcs_apb");
++	if (ret)
++		goto assert_resets;
+ 
+ 	/* Step 2: set init sequence and phy refclk */
+ 	ret = regmap_multi_reg_write(udphy->pma_regmap, rk_udphy_init_sequence,
+@@ -829,8 +833,11 @@ static int rk_udphy_init(struct rk_udphy *udphy)
+ 			   FIELD_PREP(CMN_DP_LANE_EN_ALL, 0));
+ 
+ 	/* Step 4: deassert init rstn and wait for 200ns from datasheet */
+-	if (udphy->mode & UDPHY_MODE_USB)
+-		rk_udphy_reset_deassert(udphy, "init");
++	if (udphy->mode & UDPHY_MODE_USB) {
++		ret = rk_udphy_reset_deassert(udphy, "init");
++		if (ret)
++			goto assert_resets;
++	}
+ 
+ 	if (udphy->mode & UDPHY_MODE_DP) {
+ 		regmap_update_bits(udphy->pma_regmap, CMN_DP_RSTN_OFFSET,
+@@ -842,8 +849,14 @@ static int rk_udphy_init(struct rk_udphy *udphy)
+ 
+ 	/*  Step 5: deassert cmn/lane rstn */
+ 	if (udphy->mode & UDPHY_MODE_USB) {
+-		rk_udphy_reset_deassert(udphy, "cmn");
+-		rk_udphy_reset_deassert(udphy, "lane");
++		ret = rk_udphy_reset_deassert(udphy, "cmn");
++		if (ret)
++			goto assert_resets;
 +
-+		if (!udphy->hs && udphy->mode & UDPHY_MODE_USB)
-+			rk_udphy_u3_port_disable(udphy, false);
- 		udphy->phy_needs_reinit = false;
++		ret = rk_udphy_reset_deassert(udphy, "lane");
++		if (ret)
++			goto assert_resets;
++
  	}
  
+ 	/*  Step 6: wait for lock done of pll */
 
 -- 
 2.53.0
