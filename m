@@ -4,99 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6CC0C982C5
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Sep 2026 15:18:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 50994C88E7F
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Sep 2026 15:29:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zokPBJ/hSLWclZLmETEeY97qbjvGJWz5ySazF+3OUsY=; b=T56FTAzgCqHNUD
-	pG8WMhbX1kTX4pIancrmwtwCinOw9wC7IedCkqwbNEoGvc85u7+v9leadbLoT0dP+IDwmyeYRQ/eG
-	hHm0EAYPytDDEg+X10negKA+m+yPqkynQL/dypVY6H0Hm71n7j7uBGqbu1N5Gh7aRoI62LL0Hpbk+
-	kgflYsAniYYcyGkpz4jcSpqrYSjuyz+eFyayQo3phA4gvii1hgTtudUt5e3wvCoFlyPG8YzG03MMP
-	YxIW6lTPwChJ4EiO7Si6xXLtNYP/eJ/rb4GBp+ur63AVY+jOolwhjeHmVslmGnLZAks8nXWq+MgVi
-	2gUjMzSbCkkz4ud7d/EA==;
+	List-Owner; bh=lOVZbIfADaeCzVR0VU4JrMq/4HI1psG9QwJkFsgX2IQ=; b=iP7RTWvRZnCxHk
+	rQY12bRDkXhmRKXcH5C7iYc0FZU+/fVX5imeFkmIVVK+60M/tia/9Qf+bMgdUU2Gcj/66PeprMqmU
+	AeKf5ZxSK7nDdN6ERnNfM8tM3c8PwwiC5W5Xzd9YqRuGXRbZ444Sd7chiGYGTX6um46UTjFcycsaz
+	rAW41FEZ5vqxcumsg5Dxa6RWoQqIuaXHEeVhK335m8esZb6Kbg9nITnHIFFUYhPL6WV6suhmLkL8f
+	A/fZQodfb5QXRa0S2ERKCt0bsRd1k0AEYmyIHqhyeohM4CyuQl4000vs0Ds123okr/yTrUcCFq+qI
+	hwcT7s92G4GZlqnXzFEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6Uvd-000000078aG-1erA;
-	Tue, 15 Sep 2026 15:18:37 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1x6V6W-00000007ADP-3bVO;
+	Tue, 15 Sep 2026 15:29:52 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6UvH-000000078S8-0DN8;
-	Tue, 15 Sep 2026 15:18:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
-	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=QoasnkezEykTqO8qJHhE+RBCZidxkdRa0oUFjkPSas0=; b=krzGQmw/V7lqfh/dMA8O95gSF+
-	WVpA7pQKas5cto+B+0Yy83o60q+De9dREV/jcldk/asddHwU7EfC/uHHtVDyKDnaUdX+MEuCqErOm
-	bcPoSGU6wZ8oCz9NRCAWoLnIO5xEYo5sCcvTnjscp1Tp22wE7SU5LOeXBMUERwMUnX3Nb1s5+eX0Y
-	t2z2yn3mYFgmg4EKPqqO8NwyqWwxHhqAOIX1VTZdk2gyIhMPBtWAUHvIx+U5CK3dVN28m1wmEkQiT
-	NyXElA6oOHq/1w48tNH7E7FLJvaDgIAwLHwkbQtSWxFgy6aI2kJ6jAxzMKj66TWMJMj5pqtn8nU4g
-	5gpeq/Ig==;
-Received: from bali.collaboradmins.com ([148.251.105.195])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1x6UvC-00000006vkE-10gB;
-	Tue, 15 Sep 2026 15:18:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1789485488;
-	bh=1qqONXOemSn7He65qwULu6DrX02TyhWC24CD6FQO7Ak=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=WXTKfdBlHKIhqHu3UrIxxwyNHKFC6LJmk0XMml5G7mRwVc2Fl2feSI5TIg27SqBEH
-	 6gwZ6Xw8mdEGnn2qo3K86PdHcPZEJ5DWUTM/Zsdh1jsWeis3GjIYh0Gqd7vWNVxGvh
-	 hl38rNBGmyPpfs5k9jMl0aKt+279yVhvm77vR0Hz4c5wyKWYffI6wpETZ6VrFsh+o/
-	 MP/fzinMrnaD2qTF2cKEFLGlFwjG2oq4M7qGdnKHPWo56NqPsKBjs39ofNc3qk+gaQ
-	 PTe8EFtvhvI0PC7A2mjs6onntliv05V3cSgtrCveatgLAO7cqkbIVTy/wamb1b0LEY
-	 +lJmPVhiyXJOw==
-Received: from jupiter.universe (unknown [100.64.1.62])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange x25519)
-	(No client certificate requested)
-	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 0C85A17E09B5;
-	Tue, 15 Sep 2026 17:18:08 +0200 (CEST)
-Received: by jupiter.universe (Postfix, from userid 1000)
-	id BE93248002F; Tue, 15 Sep 2026 17:18:07 +0200 (CEST)
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Tue, 15 Sep 2026 17:17:42 +0200
-Subject: [PATCH 2/5] usb: dwc3: rockchip: introduce glue driver
-MIME-Version: 1.0
-Message-Id: <20260915-b4-rockchip-dwc3-rockchip-glue-v1-2-763bb546824e@collabora.com>
+	id 1x6V6U-00000007ADE-3LKe
+	for linux-phy@lists.infradead.org;
+	Tue, 15 Sep 2026 15:29:50 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 095B5600C8;
+	Tue, 15 Sep 2026 15:29:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 638B71F000FF;
+	Tue, 15 Sep 2026 15:29:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1789486189;
+	bh=g7E3IRdSmE6bbSpE4F3SLx8H1rPl9b5lusNYTmhNErk=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=IKrDROPZq/R5n9mUlPuE9F8TuN7AEpO/Y4eUOSGXNsoZYISPsMjvz2ZAQ8d3Zbzwd
+	 C9JZFddjEp5GzsmivTtOY/Oqx4JSEhuRVhmbvM7/ZHVIqwS9LCKkAkoQMHZTusvO/V
+	 fEeooEin7PhmrrPV82TZ1ymK99kCa2Htl41MbJb65NNJUI/yluAVlkTDb38ZPKW8GU
+	 1CH4+0LxcrOK7nIdlzuZ6DE8Y4Eeb6lUgBEUke5uzI5Ir69u0mSKf4wRUvsr6m4XiB
+	 ArJN5xlPM5+ToSwBPsVONMY9Ew1g828xPBKL6qUb1QFnZFRmBfs/Wya8UUh7kf1HCh
+	 QkNjhRbUvusBQ==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH 5/5] usb: dwc3: rockchip: fix USB-C reconnect in gadget
+ mode
+To: "Sebastian Reichel" <sebastian.reichel@collabora.com>
+Cc: neil.armstrong@linaro.org, olteanv@gmail.com, linux-phy@lists.infradead.org, vkoul@kernel.org
+In-Reply-To: <20260915-b4-rockchip-dwc3-rockchip-glue-v1-5-763bb546824e@collabora.com>
 References: <20260915-b4-rockchip-dwc3-rockchip-glue-v1-0-763bb546824e@collabora.com>
-In-Reply-To: <20260915-b4-rockchip-dwc3-rockchip-glue-v1-0-763bb546824e@collabora.com>
-To: Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>
-Cc: linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- linux-phy@lists.infradead.org, kernel@collabora.com, 
- Sebastian Reichel <sebastian.reichel@collabora.com>, 
- Igor Paunovic <royalnet026@gmail.com>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=6083;
- i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=1qqONXOemSn7He65qwULu6DrX02TyhWC24CD6FQO7Ak=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGqpYa/JJ9w9aQnhgmVTQAuHXkZ8esQSCTokU
- 3ORYYK9bnWPBIkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqqWGvAAoJENju1/PI
- O/qar3UP/3EynYkLoRhGdNTU+rlVMJU/f495eMF5+uDehXkzZbBYVDtuZdV/njy7hkrSfEje4fZ
- eKAkdQp3XanoGcKsHIY26MJOETNXhiCXagEv8j6hnmTYTFfL3c21J0tOsJJq23+5g3EM+WZX80w
- XsqYxRx5rLSiOeiWt5ou/m5eWnXDfFDKMqsBItdNg1Q3ECGhyfySZ9obE+oHSd1D/c3OvYadcvB
- s4BNist5n3EPwMrE+IxDaH7742rlC5ytVEoXEToToDuWQR9t9zkYRC4R9XB9mOu2E1cwjlKHe4L
- qiVSi7q1Paf2y9ywz2zxlIUjfGVUQ9Vkx0Nrqr//YdCYG1svNrFexnAv6xsqE9cuahGN5pYKU77
- S5PbUCw1uxW4aWgd5IZajlg0GmEItAobZYPl9cM9ySWm/OZ+8s1X1eRpokH+Xl5MwL8mr0ZfwrV
- DyWf+/0o5DmtogqkXzcq1ARCnpTRzK2xYcgPPAT0B3BGVBvXpQANx55uXKFuw08jrHFUCZmfmud
- XEqGRTSoAEN1+ptBYj5I2+AS29F749bfTk+Tqgte4LuI42rdimWPle+kojtNbByBUJo9WAdyM7r
- aAEg/f72jwR3Sryjmr8bwDi4ksW4LSclesuoenIv3gf1PlLCClbnmozr0RIkF2ScipH5VccBe0f
- guE9dwSTKtY0zMSbHOi4sNQ==
-X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
- fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260915_161810_613606_1A8E5B65 
-X-CRM114-Status: GOOD (  20.49  )
+ <20260915-b4-rockchip-dwc3-rockchip-glue-v1-5-763bb546824e@collabora.com>
+Date: Tue, 15 Sep 2026 15:29:48 +0000
+Message-Id: <20260915152949.638B71F000FF@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,206 +63,59 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Introduce Rockchip specific glue code for the Synopsys DWC3 USB driver.
-For now this handles things identical to the default glue.
-
-Tested-by: Igor Paunovic <royalnet026@gmail.com> # Orange Pi 5 Plus
-Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
----
- drivers/usb/dwc3/Kconfig         |  11 ++++
- drivers/usb/dwc3/Makefile        |   1 +
- drivers/usb/dwc3/core.c          |  15 ++++++
- drivers/usb/dwc3/dwc3-rockchip.c | 106 +++++++++++++++++++++++++++++++++++++++
- 4 files changed, 133 insertions(+)
-
-diff --git a/drivers/usb/dwc3/Kconfig b/drivers/usb/dwc3/Kconfig
-index 18169727a413..3c120ea9746d 100644
---- a/drivers/usb/dwc3/Kconfig
-+++ b/drivers/usb/dwc3/Kconfig
-@@ -190,6 +190,17 @@ config USB_DWC3_OCTEON
- 	  Only the host mode is currently supported.
- 	  Say 'Y' or 'M' here if you have one such device.
- 
-+config USB_DWC3_ROCKCHIP
-+	tristate "Rockchip DWC3 Platform Driver"
-+	depends on ARCH_ROCKCHIP || COMPILE_TEST
-+	depends on OF
-+	default USB_DWC3
-+	help
-+	  Rockchip SoCs with DesignWare Core USB3 IP inside,
-+	  and IP Core configured for USB 2.0 and USB 3.0 in host
-+	  or dual-role mode.
-+	  Say 'Y' or 'M' if you have such device.
-+
- config USB_DWC3_RTK
- 	tristate "Realtek DWC3 Platform Driver"
- 	depends on OF && ARCH_REALTEK
-diff --git a/drivers/usb/dwc3/Makefile b/drivers/usb/dwc3/Makefile
-index f37971197203..444e7e7f34b2 100644
---- a/drivers/usb/dwc3/Makefile
-+++ b/drivers/usb/dwc3/Makefile
-@@ -58,6 +58,7 @@ obj-$(CONFIG_USB_DWC3_IMX8MP)		+= dwc3-imx8mp.o
- obj-$(CONFIG_USB_DWC3_IMX)		+= dwc3-imx.o
- obj-$(CONFIG_USB_DWC3_XILINX)		+= dwc3-xilinx.o
- obj-$(CONFIG_USB_DWC3_OCTEON)		+= dwc3-octeon.o
-+obj-$(CONFIG_USB_DWC3_ROCKCHIP)		+= dwc3-rockchip.o
- obj-$(CONFIG_USB_DWC3_RTK)		+= dwc3-rtk.o
- obj-$(CONFIG_USB_DWC3_GENERIC_PLAT)	+= dwc3-generic-plat.o
- obj-$(CONFIG_USB_DWC3_GOOGLE)		+= dwc3-google.o
-diff --git a/drivers/usb/dwc3/core.c b/drivers/usb/dwc3/core.c
-index fd5c2cd36c59..4b7132887a03 100644
---- a/drivers/usb/dwc3/core.c
-+++ b/drivers/usb/dwc3/core.c
-@@ -2448,11 +2448,26 @@ int dwc3_core_probe(const struct dwc3_probe_data *data)
- }
- EXPORT_SYMBOL_GPL(dwc3_core_probe);
- 
-+/*
-+ * List of compatibles, which have "synopsys,dwc3" as a fallback
-+ * compatible, but have a vendor specific glue driver that should
-+ * be used instead of this one.
-+ */
-+static const char *const dwc3_compatible_blocklist[] = {
-+	"rockchip,rk3588-dwc3",
-+	"rockchip,rk3576-dwc3",
-+};
-+
- static int dwc3_probe(struct platform_device *pdev)
- {
- 	struct dwc3_probe_data probe_data = {};
- 	struct resource *res;
- 	struct dwc3 *dwc;
-+	int i;
-+
-+	for (i = 0; i < ARRAY_SIZE(dwc3_compatible_blocklist); i++)
-+		if (device_is_compatible(&pdev->dev, dwc3_compatible_blocklist[i]))
-+			return -ENODEV;
- 
- 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
- 	if (!res) {
-diff --git a/drivers/usb/dwc3/dwc3-rockchip.c b/drivers/usb/dwc3/dwc3-rockchip.c
-new file mode 100644
-index 000000000000..62f2a03b08a2
---- /dev/null
-+++ b/drivers/usb/dwc3/dwc3-rockchip.c
-@@ -0,0 +1,106 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/* Copyright (c) 2026, Collabora Ltd. */
-+#include <linux/module.h>
-+#include <linux/platform_device.h>
-+#include <linux/pm_runtime.h>
-+#include "glue.h"
-+
-+struct dwc3_rockchip {
-+	struct dwc3		dwc;
-+};
-+
-+static int dwc3_rockchip_probe(struct platform_device *pdev)
-+{
-+	struct dwc3_probe_data probe_data = {};
-+	struct resource *res;
-+	struct dwc3_rockchip *dwc_rk;
-+
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	if (!res) {
-+		dev_err(&pdev->dev, "missing memory resource\n");
-+		return -ENODEV;
-+	}
-+
-+	dwc_rk = devm_kzalloc(&pdev->dev, sizeof(*dwc_rk), GFP_KERNEL);
-+	if (!dwc_rk)
-+		return -ENOMEM;
-+
-+	dwc_rk->dwc.dev = &pdev->dev;
-+	dwc_rk->dwc.glue_ops = NULL;
-+
-+	probe_data.dwc = &dwc_rk->dwc;
-+	probe_data.res = res;
-+	probe_data.properties = DWC3_DEFAULT_PROPERTIES;
-+
-+	return dwc3_core_probe(&probe_data);
-+}
-+
-+static void dwc3_rockchip_remove(struct platform_device *pdev)
-+{
-+	dwc3_core_remove(platform_get_drvdata(pdev));
-+}
-+
-+static int __maybe_unused dwc3_rockchip_runtime_suspend(struct device *dev)
-+{
-+	return dwc3_runtime_suspend(dev_get_drvdata(dev));
-+}
-+
-+static int __maybe_unused dwc3_rockchip_runtime_resume(struct device *dev)
-+{
-+	return dwc3_runtime_resume(dev_get_drvdata(dev));
-+}
-+
-+static int __maybe_unused dwc3_rockchip_runtime_idle(struct device *dev)
-+{
-+	return dwc3_runtime_idle(dev_get_drvdata(dev));
-+}
-+
-+static int __maybe_unused dwc3_rockchip_suspend(struct device *dev)
-+{
-+	return dwc3_pm_suspend(dev_get_drvdata(dev));
-+}
-+
-+static int __maybe_unused dwc3_rockchip_resume(struct device *dev)
-+{
-+	return dwc3_pm_resume(dev_get_drvdata(dev));
-+}
-+
-+static void __maybe_unused dwc3_rockchip_complete(struct device *dev)
-+{
-+	dwc3_pm_complete(dev_get_drvdata(dev));
-+}
-+
-+static int __maybe_unused dwc3_rockchip_prepare(struct device *dev)
-+{
-+	return dwc3_pm_prepare(dev_get_drvdata(dev));
-+}
-+
-+static const struct dev_pm_ops dwc3_rockchip_dev_pm_ops = {
-+	SET_SYSTEM_SLEEP_PM_OPS(dwc3_rockchip_suspend, dwc3_rockchip_resume)
-+	SET_RUNTIME_PM_OPS(dwc3_rockchip_runtime_suspend, dwc3_rockchip_runtime_resume,
-+			   dwc3_rockchip_runtime_idle)
-+	.complete = pm_sleep_ptr(dwc3_rockchip_complete),
-+	.prepare = pm_sleep_ptr(dwc3_rockchip_prepare),
-+};
-+
-+static const struct of_device_id dwc3_rockchip_of_match[] = {
-+	{ .compatible = "rockchip,rk3588-dwc3" },
-+	{ .compatible = "rockchip,rk3576-dwc3" },
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(of, dwc3_rockchip_of_match);
-+
-+static struct platform_driver dwc3_rockchip_driver = {
-+	.probe		= dwc3_rockchip_probe,
-+	.remove		= dwc3_rockchip_remove,
-+	.driver		= {
-+		.name	= "dwc3-rockchip",
-+		.pm	= pm_ptr(&dwc3_rockchip_dev_pm_ops),
-+		.of_match_table	= dwc3_rockchip_of_match,
-+	},
-+};
-+
-+module_platform_driver(dwc3_rockchip_driver);
-+
-+MODULE_LICENSE("GPL");
-+MODULE_DESCRIPTION("DesignWare DWC3 Rockchip Glue Driver");
-
--- 
-2.53.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIHVzYjogZHdjMzogbWlz
+c2luZyBydW50aW1lIFBNIHJlc3VtZSBpbiByb2xlIGNoYW5nZSBjYWxsYmFjawotIFtIaWdoXSB1
+c2I6IGR3YzM6IHVzZS1hZnRlci1mcmVlIGluIGR3YzNfcm9ja2NoaXBfdmJ1c19oYW5kbGVyIGR1
+ZSB0byBsb2NrbGVzcyBhY2Nlc3MKLS0KCmNvbW1pdCA1OGI3YzNkNGVjOWIwNDFiMGI0MGJlODY5
+MjlmODcyYzhmMDU1MmE3CkF1dGhvcjogU2ViYXN0aWFuIFJlaWNoZWwgPHNlYmFzdGlhbi5yZWlj
+aGVsQGNvbGxhYm9yYS5jb20+Cgp1c2I6IGR3YzM6IHJvY2tjaGlwOiBmaXggVVNCLUMgcmVjb25u
+ZWN0IGluIGdhZGdldCBtb2RlCgpUaGlzIGNvbW1pdCBmaXhlcyBhIGdhZGdldCBtb2RlIHJlY29u
+bmVjdGlvbiBpc3N1ZSBieSB1cGRhdGluZyB0aGUgY29ubmVjdGlvbgpzdGF0dXMgYW5kIHRyaWdn
+ZXJpbmcgYSBydW50aW1lIFBNIHJlc3VtZSB3aGVuIHRoZSBVU0Igcm9sZSBjaGFuZ2VzLiBUaGUK
+cnVudGltZSBQTSByZWZlcmVuY2UgY291bnRlciBpcyB0aGVuIGltbWVkaWF0ZWx5IGRyb3BwZWQg
+c28gdGhhdCBhdXRvLXN1c3BlbmQKY2FuIGhhbmRsZSBrZWVwaW5nIHRoZSBkZXZpY2UgYXdha2Uu
+Cgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3VzYi9kd2MzL2R3YzMtcm9ja2NoaXAuYyBiL2RyaXZl
+cnMvdXNiL2R3YzMvZHdjMy1yb2NrY2hpcC5jCj4gaW5kZXggN2JkZDZlMmViMjJkMS4uYmVkZWMz
+Mjk1YmIxNiAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3VzYi9kd2MzL2R3YzMtcm9ja2NoaXAuYwo+
+ICsrKyBiL2RyaXZlcnMvdXNiL2R3YzMvZHdjMy1yb2NrY2hpcC5jCj4gQEAgLTI1LDggKzI1LDE3
+IEBAIHN0cnVjdCBkd2MzX3JvY2tjaGlwIHsKPiAgCXN0cnVjdCBkd2MzCQlkd2M7Cj4gIAlzdHJ1
+Y3QgZHdjM19ya19waHlfbmIJdXNiM19waHlfbmJbRFdDM19VU0IzX01BWF9QT1JUU107Cj4gIAl1
+OAkJCXBoeV9yZXNldF9hY3RpdmU7Cj4gKwllbnVtIHVzYl9yb2xlCQlyb2xlOwo+ICB9Owo+ICAK
+PiArc3RhdGljIHZvaWQgZHdjM19yb2NrY2hpcF92YnVzX2hhbmRsZXIoc3RydWN0IGR3YzMgKmR3
+YywgYm9vbCBwcmVzZW50KQo+ICt7Cj4gKwlpZiAoIWR3Yy0+Z2FkZ2V0IHx8ICFkd2MtPmdhZGdl
+dF9kcml2ZXIpCj4gKwkJcmV0dXJuOwo+ICsKPiArCXVzYl91ZGNfdmJ1c19oYW5kbGVyKGR3Yy0+
+Z2FkZ2V0LCBwcmVzZW50KTsKCltTZXZlcml0eTogSGlnaF0KQ291bGQgdGhpcyBsZWFkIHRvIGEg
+dXNlLWFmdGVyLWZyZWUgaWYgaXQgcmFjZXMgd2l0aCBhIGdhZGdldCB1bmJpbmQ/CgpCZWNhdXNl
+IHRoaXMgbG9ja2xlc3NseSBjaGVja3MgYW5kIGRlcmVmZXJlbmNlcyBkd2MtPmdhZGdldCwgYW5k
+IGNhbiBiZQpjYWxsZWQgYXN5bmNocm9ub3VzbHkgZnJvbSB0aGUgUEhZIG5vdGlmaWVyIChkd2Mz
+X3VzYjNfcGh5X25vdGlmeSksIGl0IHNlZW1zCnBvc3NpYmxlIHRoYXQgZHdjLT5nYWRnZXQgY291
+bGQgYmUgZnJlZWQgYnkgZHdjM19nYWRnZXRfZXhpdCgpIHJpZ2h0IGFmdGVyCnRoZSBpZi1jaGVj
+ayBwYXNzZXMgYnV0IGJlZm9yZSB1c2JfdWRjX3ZidXNfaGFuZGxlcigpIGV4ZWN1dGVzLgoKWyAu
+Li4gXQo+IEBAIC0xMzAsNyArMTQ0LDE2IEBAIHN0YXRpYyBpbnQgZHdjM19ya19waHlfcmVnaXN0
+ZXJfbm90aWZpZXJzKHN0cnVjdCBkd2MzICpkd2MpCj4gIAlyZXR1cm4gZGV2bV9hZGRfYWN0aW9u
+X29yX3Jlc2V0KGR3Yy0+ZGV2LCBkd2MzX3JrX3BoeV91bnJlZ2lzdGVyX25vdGlmaWVycywgZHdj
+X3JrKTsKPiAgfQo+ICAKPiArc3RhdGljIHZvaWQgZHdjM19yb2NrY2hpcF9zZXRfcm9sZShzdHJ1
+Y3QgZHdjMyAqZHdjLCBlbnVtIHVzYl9yb2xlIHJvbGUpCj4gK3sKPiArCXN0cnVjdCBkd2MzX3Jv
+Y2tjaGlwICpkd2NfcmsgPSBjb250YWluZXJfb2YoZHdjLCBzdHJ1Y3QgZHdjM19yb2NrY2hpcCwg
+ZHdjKTsKPiArCj4gKwlkd2NfcmstPnJvbGUgPSByb2xlOwo+ICsJZHdjM19yb2NrY2hpcF92YnVz
+X2hhbmRsZXIoZHdjLCByb2xlID09IFVTQl9ST0xFX0RFVklDRSk7Cj4gK30KCltTZXZlcml0eTog
+SGlnaF0KV2VyZSB0aGUgcnVudGltZSBQTSBjYWxscyBhY2NpZGVudGFsbHkgb21pdHRlZCBoZXJl
+PwoKVGhlIGNvbW1pdCBtZXNzYWdlIHN0YXRlcyB0aGUgZml4IGludm9sdmVzIHRyaWdnZXJpbmcg
+YSBydW50aW1lIFBNIHJlc3VtZQp3aGVuIHRoZSByb2xlIGNoYW5nZXMsIGFuZCBpbW1lZGlhdGVs
+eSBkZWNyZWFzaW5nIHRoZSByZWZlcmVuY2UgY291bnRlcgphZnRlcndhcmQuIEhvd2V2ZXIsIHRo
+ZXJlIGFyZSBubyBjYWxscyB0byBwbV9ydW50aW1lX2dldF9zeW5jKCkgb3IKcG1fcnVudGltZV9w
+dXRfYXV0b3N1c3BlbmQoKSBpbiB0aGlzIGNhbGxiYWNrLiBXaXRob3V0IHRoZW0sIGl0IHNlZW1z
+IHRoZQpVU0IgY29udHJvbGxlciB3b3VsZCBpbmNvcnJlY3RseSByZW1haW4gc3VzcGVuZGVkIGFu
+ZCB0aGUgb3JpZ2luYWwgaXNzdWUKbWlnaHQgcGVyc2lzdC4KCi0tIApTYXNoaWtvIEFJIHJldmll
+dyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA5MTUtYjQtcm9ja2NoaXAt
+ZHdjMy1yb2NrY2hpcC1nbHVlLXYxLTAtNzYzYmI1NDY4MjRlQGNvbGxhYm9yYS5jb20/cGFydD01
+CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9y
+ZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
