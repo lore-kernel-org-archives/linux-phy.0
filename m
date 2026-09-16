@@ -4,55 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6CC2CC88E75
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Sep 2026 15:49:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8092AC88E75
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Sep 2026 00:38:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+kdrkRc4/xulWch0WCBoTqEl+VacCVRyq1iEuDATxeI=; b=Z/Fwj9BzrcXzoz
-	nahHwwhfNfsWpebrQ5ymniaLVJxt9HFBBdG8pF6kCS4AOalDXi0yWhn7r9l2cMb1iTjyoZa+jEolH
-	ZUPGON73OHXFcSQ6WsZ1WGYG4EpMA6kq1/9J/x0dOH+BrwdOiq59hVdFjWrpKu1G9FBj3je/SullU
-	7MtFwUqSOywjxJYIYjvFi+qVZLZCPE2jocrqXybkGsFK1EmsCTUN12IunjJaU73ofFPMb4nmfy4a+
-	kHeNSYuslzwHx1GZhlvo9cY4GcZ1hq8uW8EjLvBbNzfTaXlxQzhS+vnvCNuCzdp8MHBfplxmjlpPy
-	m24IqRzKWl4h/p3Y4RdA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:CC:To:MIME-Version:Message-ID:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8FyNXblP6Sqpeqp1sWthlmhDy9ZLUQmisbnXuo8Xops=; b=2m3uSI+dCA1Bu/
+	6fbm1UFhk1lbxNpn9Xrks9Hl8Cp+W5Ln1lK/TAAJEXNOD7DF1vug+AshIIeO3i/pCMU7+vHhYe5dk
+	8djU0vjIcAJTo7L6MOTkw72b9RHMWukRJz9RqsNH1vH8PktvQ3h7ll7w/GtnbZst+nEJ2jR5gcfZA
+	iCx/9EqhlXYwTpo1A7THzvw6ljn/eqQwka3LfAzfXdN0betaP100JR1DPj9eLHeraiYWIzDk/F3m1
+	crMZLOzXG4ADeDPbiyyp4GC7k5xst1pMGjDg7A0B/OSXsU+cwe9rPgyvdKzMSF35ffbD3fMewuTKe
+	OElOiejYkS1Z+k3HmfVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6VPi-00000007HuP-0YLv;
-	Tue, 15 Sep 2026 15:49:42 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1x6dfJ-000000087Xu-04vb;
+	Wed, 16 Sep 2026 00:38:21 +0000
+Received: from mail.aspeedtech.com ([211.20.114.72] helo=twmbx01.aspeedtech.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6VPR-00000007HjG-2fve
-	for linux-phy@lists.infradead.org;
-	Tue, 15 Sep 2026 15:49:25 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id DAE5B600C8;
-	Tue, 15 Sep 2026 15:49:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E31541F0089A;
-	Tue, 15 Sep 2026 15:49:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789487364;
-	bh=SA+7bRI595a3ViWr6Td9MxNP+tY0TlfoBqentn1PFLo=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=LSJyUtuHSoxWojvjuDPhhAOVBumL63hzKaIuYHDqHQu9ARLjMg8LgCCoWc9C9f3ly
-	 /YsbAhlNJBUYr8grHPsChDWn6cEnnkqNhcqGvRfTfD1+/q6yPTCVbaqp2YWJVbhMC8
-	 U/qKZEUvswRkSFRH913oNg3IdX3DnMW2pfFSBYgzQ9clIk7R5jvtyXmXJqZ0wjVMbT
-	 iY7eM11eYv61YltZA1R+gg5NPhwr3KWqhOtGu1gdjSpYLnuKTHcajgJEgLEVr3AyQU
-	 QKhzd/tspADGk9b4dhX2onVzC4+/SMN92bZ7DSOSzWOCpUChEdet+T2ti1sfTCEQI8
-	 oYsazSlCi4MRA==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v4 19/20] riscv: dts: starfive: jh7110: Update DT for
- display subsystem
-To: "Michal Wilczynski" <m.wilczynski@samsung.com>
-Cc: linux-clk@vger.kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com, linux-phy@lists.infradead.org, dri-devel@lists.freedesktop.org, robh@kernel.org, devicetree@vger.kernel.org, conor+dt@kernel.org, mfd@lists.linux.dev, vkoul@kernel.org, lee@kernel.org
-In-Reply-To: <20260915-jh7110-clean-send-v4-19-f0e4fd6f2cc8@samsung.com>
-References: <20260915-jh7110-clean-send-v4-0-f0e4fd6f2cc8@samsung.com>
- <CGME20260915153248eucas1p27d8d2c9fa536bbd951e0102b04416dad@eucas1p2.samsung.com>
- <20260915-jh7110-clean-send-v4-19-f0e4fd6f2cc8@samsung.com>
-Date: Tue, 15 Sep 2026 15:49:23 +0000
-Message-Id: <20260915154923.E31541F0089A@smtp.kernel.org>
+	id 1x6dfF-000000087WT-2KG9;
+	Wed, 16 Sep 2026 00:38:19 +0000
+Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
+ (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Wed, 16 Sep
+ 2026 08:38:02 +0800
+Received: from [127.0.1.1] (192.168.10.13) by TWMBX01.aspeed.com
+ (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
+ Transport; Wed, 16 Sep 2026 08:38:02 +0800
+From: Ryan Chen <ryan_chen@aspeedtech.com>
+Subject: [PATCH v4 0/3] Add AST2700 USB3.2 PHY driver
+Date: Wed, 16 Sep 2026 08:38:00 +0800
+Message-ID: <20260916-upstream_usb3phy-v4-0-812e76037d01@aspeedtech.com>
+MIME-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIAOjkqWoC/23NTQqDMBCG4atI1k3JJGqarnqPUoqaSc3CHxINF
+ fHujUJpQZfvB/PMTDw6i55ck5k4DNbbro2RnhJS1UX7Qmp1bMIZzxkAp2PvB4dF8xx9Kfp6ohI
+ gNxdtUEpF4lnv0Nj3Rt4fsWvrh85N24cA6/rF0j0WgDLKMVOZYiVyLW+F7xH1gFV9rrqGrGLg/
+ 0p+oPCosJJVyggsc5MeKuKnSAYHilgVhsAFZFFRO2VZlg+SNrajQQEAAA==
+X-Change-ID: 20260112-upstream_usb3phy-7116f8dfe779
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>, "Andrew
+ Jeffery" <andrew@codeconstruct.com.au>, Philipp Zabel
+	<p.zabel@pengutronix.de>, Manivannan Sadhasivam <mani@kernel.org>, Billy Tsai
+	<billy_tsai@aspeedtech.com>
+CC: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-aspeed@lists.ozlabs.org>,
+	<linux-kernel@vger.kernel.org>, Ryan Chen <ryan_chen@aspeedtech.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, "Manivannan
+ Sadhasivam" <manivannan.sadhasivam@oss.qualcomm.com>
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1789519082; l=2215;
+ i=ryan_chen@aspeedtech.com; s=20251126; h=from:subject:message-id;
+ bh=oarP0zPWM7rU28jobfWNT27FoqPEuVIEmWhjt7NQyxA=;
+ b=EMxjupueFd3ly98mgyHjXZFSFYeEy5k3r9ojtvQp8xpLiU0BzwUoqM8AjVd4Nvf6dSJEliGbq
+ c7jvntvp256C7r8BFUfOvv4eGFuPLhH+1YLRaYDsABQoho8QbymxBnj
+X-Developer-Key: i=ryan_chen@aspeedtech.com; a=ed25519;
+ pk=Xe73xY6tcnkuRjjbVAB/oU30KdB3FvG4nuJuILj7ZVc=
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260915_173817_602970_ECA9F821 
+X-CRM114-Status: UNSURE (   8.84  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -64,103 +77,66 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIGR0czogQ01BIGFsbG9j
-YXRpb24gZmFpbHVyZSBvbiAxR0IgYm9hcmRzCi0gW01lZGl1bV0gZHRzOiBtaXNzaW5nICdzdGF0
-dXMgPSAiZGlzYWJsZWQiJyBpbiBTb0MgRFRTSSBmb3IgZGlzcGxheSBJUHMKLSBbTG93XSBkdHM6
-IHJlZHVuZGFudCByZWcgcHJvcGVydHkgb24gZGlzcGxheS1zdWJzeXN0ZW0gYnVzIG5vZGUKLS0K
-CmNvbW1pdCBkOWZiYjkzZDc5NjRkYTBlYzllNDgzNTYwMzBiYzQ1OTA1MGYzMjE4CkF1dGhvcjog
-TWljaGFsIFdpbGN6eW5za2kgPG0ud2lsY3p5bnNraUBzYW1zdW5nLmNvbT4KCnJpc2N2OiBkdHM6
-IHN0YXJmaXZlOiBqaDcxMTA6IFVwZGF0ZSBEVCBmb3IgZGlzcGxheSBzdWJzeXN0ZW0KClRoaXMg
-Y29tbWl0IGFjdGl2YXRlcyB0aGUgZGlzcGxheSBzdWJzeXN0ZW0gb24gdGhlIEpINzExMCBTb0Mg
-YnkgZGVzY3JpYmluZwp0aGUgdmlkZW8gb3V0cHV0IHN1YnN5c3RlbSwgSERNSSBibG9jaywgYW5k
-IHZvdXRjcmcgaW4gdGhlIGRldmljZSB0cmVlLiBJdApyZXN0cnVjdHVyZXMgdGhlIEhETUkgbm9k
-ZSBpbnRvIGEgY29udGFpbmVyIHdpdGggcGh5IGFuZCBjb250cm9sbGVyIGNoaWxkcmVuCnRvIGJy
-ZWFrIGEgY2lyY3VsYXIgY2xvY2sgZGVwZW5kZW5jeS4gQWRkaXRpb25hbGx5LCB0aGUgQ01BIHBv
-b2wgaXMgZXhwYW5kZWQKYW5kIGNvbnN0cmFpbmVkIHRvIG1lbW9yeSBhZGRyZXNzYWJsZSBieSB0
-aGUgZGlzcGxheSBjb250cm9sbGVyLgoKPiBkaWZmIC0tZ2l0IGEvYXJjaC9yaXNjdi9ib290L2R0
-cy9zdGFyZml2ZS9qaDcxMTAtY29tbW9uLmR0c2kgYi9hcmNoL3Jpc2N2L2Jvb3QvZHRzL3N0YXJm
-aXZlL2poNzExMC1jb21tb24uZHRzaQo+IGluZGV4IGE3YTFjMDlhMmM5MDcuLmE0YzNkYWY3MTJh
-NjMgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9yaXNjdi9ib290L2R0cy9zdGFyZml2ZS9qaDcxMTAtY29t
-bW9uLmR0c2kKPiArKysgYi9hcmNoL3Jpc2N2L2Jvb3QvZHRzL3N0YXJmaXZlL2poNzExMC1jb21t
-b24uZHRzaQo+IEBAIC0zMyw2ICszMywyNyBAQCBtZW1vcnlANDAwMDAwMDAgewo+ICAJCWJvb3Rw
-aC1wcmUtcmFtOwo+ICAJfTsKPiAgCj4gKwlyZXNlcnZlZC1tZW1vcnkgewo+ICsJCSNhZGRyZXNz
-LWNlbGxzID0gPDI+Owo+ICsJCSNzaXplLWNlbGxzID0gPDI+Owo+ICsJCXJhbmdlczsKPiArCj4g
-KwkJLyoKPiArCQkgKiBUaGUgZGlzcGxheSBjb250cm9sbGVyIGFsbG9jYXRlcyBpdHMgZnJhbWVi
-dWZmZXJzIGZyb20gQ01BLAo+ICsJCSAqIGFuZCB0aGUgZGVmYXVsdCBwb29sIGlzIHRvbyBzbWFs
-bCBmb3IgdGhlbS4gS2VlcCB0aGUgcG9vbAo+ICsJCSAqIGluc2lkZSB0aGUgcmFuZ2UgdGhlIGNv
-bnRyb2xsZXIgY2FuIGFkZHJlc3M7IGl0IGZpdHMgaW4gdGhlCj4gKwkJICogbWVtb3J5IGV2ZXJ5
-IFZpc2lvbkZpdmUgMiB2YXJpYW50IGhhcy4KPiArCQkgKi8KPiArCQlsaW51eCxjbWEgewo+ICsJ
-CQljb21wYXRpYmxlID0gInNoYXJlZC1kbWEtcG9vbCI7Cj4gKwkJCXJldXNhYmxlOwo+ICsJCQlz
-aXplID0gPDB4MCAweDIwMDAwMDAwPjsKPiArCQkJYWxpZ25tZW50ID0gPDB4MCAweDEwMDA+Owo+
-ICsJCQlhbGxvYy1yYW5nZXMgPSA8MHgwIDB4NzAwMDAwMDAgMHgwIDB4MjAwMDAwMDA+OwoKW1Nl
-dmVyaXR5OiBIaWdoXQpXaWxsIHRoaXMgdW5jb25kaXRpb25hbGx5IGZhaWwgdG8gYWxsb2NhdGUg
-dGhlIENNQSBwb29sIG9uIDFHQiBib2FyZHM/CgpPbiBib2FyZHMgbGlrZSB0aGUgMUdCIE1pbGst
-ViBNYXJzLCBwaHlzaWNhbCBSQU0gc3RhcnRzIGF0IDB4NDAwMDAwMDAgYW5kIAplbmRzIGF0IDB4
-ODAwMDAwMDAuIFdpdGggYWxsb2MtcmFuZ2VzIHN0YXJ0aW5nIGF0IDB4NzAwMDAwMDAsIHRoZXJl
-IGlzIG9ubHkKMjU2TUIgb2YgcGh5c2ljYWwgbWVtb3J5IGF2YWlsYWJsZSB3aXRoaW4gdGhlIHJl
-cXVlc3RlZCBib3VuZHMsIG1ha2luZyBhCjUxMk1CIGFsbG9jYXRpb24gbWF0aGVtYXRpY2FsbHkg
-aW1wb3NzaWJsZS4KCj4gKwkJCWxpbnV4LGNtYS1kZWZhdWx0Owo+ICsJCX07Cj4gKwl9Owo+ICsK
-ClsgLi4uIF0KCj4gZGlmZiAtLWdpdCBhL2FyY2gvcmlzY3YvYm9vdC9kdHMvc3RhcmZpdmUvamg3
-MTEwLmR0c2kgYi9hcmNoL3Jpc2N2L2Jvb3QvZHRzL3N0YXJmaXZlL2poNzExMC5kdHNpCj4gaW5k
-ZXggOWMzZTQ1OTg3NDdlYi4uYmMyNDcwOTYzNTIwZSAxMDA2NDQKPiAtLS0gYS9hcmNoL3Jpc2N2
-L2Jvb3QvZHRzL3N0YXJmaXZlL2poNzExMC5kdHNpCj4gKysrIGIvYXJjaC9yaXNjdi9ib290L2R0
-cy9zdGFyZml2ZS9qaDcxMTAuZHRzaQoKWyAuLi4gXQoKPiBAQCAtMTE5OSwyMiArMTIwMCw4NCBA
-QCBjc2lfcGh5OiBwaHlAMTk4MjAwMDAgewo+ICAJCQkjcGh5LWNlbGxzID0gPDA+Owo+ICAJCX07
-Cj4gIAo+IC0JCXZvdXRjcmc6IGNsb2NrLWNvbnRyb2xsZXJAMjk1YzAwMDAgewo+IC0JCQljb21w
-YXRpYmxlID0gInN0YXJmaXZlLGpoNzExMC12b3V0Y3JnIjsKPiAtCQkJcmVnID0gPDB4MCAweDI5
-NWMwMDAwIDB4MCAweDEwMDAwPjsKPiAtCQkJY2xvY2tzID0gPCZzeXNjcmcgSkg3MTEwX1NZU0NM
-S19WT1VUX1NSQz4sCj4gLQkJCQkgPCZzeXNjcmcgSkg3MTEwX1NZU0NMS19WT1VUX1RPUF9BSEI+
-LAo+IC0JCQkJIDwmc3lzY3JnIEpINzExMF9TWVNDTEtfVk9VVF9UT1BfQVhJPiwKPiAtCQkJCSA8
-JnN5c2NyZyBKSDcxMTBfU1lTQ0xLX1ZPVVRfVE9QX0hETUlUWDBfTUNMSz4sCj4gLQkJCQkgPCZz
-eXNjcmcgSkg3MTEwX1NZU0NMS19JMlNUWDBfQkNMSz4sCj4gLQkJCQkgPCZoZG1pdHgwX3BpeGVs
-Y2xrPjsKPiAtCQkJY2xvY2stbmFtZXMgPSAidm91dF9zcmMiLCAidm91dF90b3BfYWhiIiwKPiAt
-CQkJCSAgICAgICJ2b3V0X3RvcF9heGkiLCAidm91dF90b3BfaGRtaXR4MF9tY2xrIiwKPiAtCQkJ
-CSAgICAgICJpMnN0eDBfYmNsayIsICJoZG1pdHgwX3BpeGVsY2xrIjsKPiAtCQkJcmVzZXRzID0g
-PCZzeXNjcmcgSkg3MTEwX1NZU1JTVF9WT1VUX1RPUF9TUkM+Owo+IC0JCQkjY2xvY2stY2VsbHMg
-PSA8MT47Cj4gLQkJCSNyZXNldC1jZWxscyA9IDwxPjsKPiArCQl2b3V0X3N1YnN5c3RlbTogZGlz
-cGxheS1zdWJzeXN0ZW1AMjk0MDAwMDAgewo+ICsJCQljb21wYXRpYmxlID0gInN0YXJmaXZlLGpo
-NzExMC12b3V0LXN1YnN5c3RlbSI7Cj4gKwkJCXJlZyA9IDwweDAgMHgyOTQwMDAwMCAweDAgMHgy
-MDAwMDA+Owo+ICsJCQlyYW5nZXM7CgpbU2V2ZXJpdHk6IExvd10KSXMgdGhpcyByZWcgcHJvcGVy
-dHkgcmVkdW5kYW50IG9uIHRoZSBidXMgbm9kZT8KCkl0IGFzc2lnbnMgYSBtZW1vcnkgcmVnaW9u
-IHRvIGEgYnVzIG5vZGUgdGhhdCBkb2VzIG5vdCBvd24gY29uZmlndXJhdGlvbgpyZWdpc3RlcnMs
-IHNpbXBseSB0byByZXByZXNlbnQgdGhlIGFnZ3JlZ2F0ZWQgYm91bmRzIG9mIGl0cyBjaGlsZHJl
-bi4gVGhlCmRjODIwMCBjaGlsZCBjbGFpbXMgdGhlIGV4YWN0IHNhbWUgc3RhcnRpbmcgcGh5c2lj
-YWwgcmVnaXN0ZXJzLgoKPiArCQkJI2FkZHJlc3MtY2VsbHMgPSA8Mj47Cj4gKwkJCSNzaXplLWNl
-bGxzID0gPDI+Owo+ICsJCQljbG9ja3MgPSA8JnN5c2NyZyBKSDcxMTBfU1lTQ0xLX05PQ19CVVNf
-RElTUF9BWEk+Owo+ICsJCQlkbWEtbm9uY29oZXJlbnQ7Cj4gIAkJCXBvd2VyLWRvbWFpbnMgPSA8
-JnB3cmMgSkg3MTEwX1BEX1ZPVVQ+Owo+ICsJCQlyZXNldHMgPSA8JnN5c2NyZyBKSDcxMTBfU1lT
-UlNUX05PQ19CVVNfRElTUF9BWEk+Owo+ICsKPiArCQkJZGM4MjAwOiBkaXNwbGF5QDI5NDAwMDAw
-IHsKPiArCQkJCWNvbXBhdGlibGUgPSAic3RhcmZpdmUsamg3MTEwLWRjODIwMCIsICJ2ZXJpc2ls
-aWNvbixkYyI7CgpbU2V2ZXJpdHk6IE1lZGl1bV0KU2hvdWxkIHRoaXMgU29DLWxldmVsIElQIGRl
-ZmluaXRpb24gaW5jbHVkZSBzdGF0dXMgPSAiZGlzYWJsZWQiPwoKQ3VzdG9tIGJvYXJkcyB0aGF0
-IGluY2x1ZGUgamg3MTEwLmR0c2kgYnV0IGRvIG5vdCBpbmNsdWRlIGpoNzExMC1jb21tb24uZHRz
-aQp3aWxsIGF0dGVtcHQgdG8gcHJvYmUgdGhpcyBJUCBieSBkZWZhdWx0LiBIZWFkbGVzcyBib2Fy
-ZHMgbGFja2luZyBwaHlzaWNhbApIRE1JIGNvbm5lY3RvcnMgYW5kIG5lY2Vzc2FyeSBib2FyZC1s
-ZXZlbCBwaW5tdXhpbmcgbWF5IGV4cGVyaWVuY2UgcHJvYmUKZXJyb3JzIG9yIHVud2FudGVkIHJl
-c291cmNlIGNvbnN1bXB0aW9uLgoKPiArCQkJCXJlZyA9IDwweDAgMHgyOTQwMDAwMCAweDAgMHgy
-ODAwPjsKPiArCQkJCWNsb2NrcyA9IDwmdm91dGNyZyBKSDcxMTBfVk9VVENMS19EQzgyMDBfQ09S
-RT4sCj4gKwkJCQkJIDwmdm91dGNyZyBKSDcxMTBfVk9VVENMS19EQzgyMDBfQVhJPiwKClsgLi4u
-IF0KCj4gKwkJCQlyZXNldHMgPSA8JnZvdXRjcmcgSkg3MTEwX1ZPVVRSU1RfREM4MjAwX0NPUkU+
-LAo+ICsJCQkJCSA8JnZvdXRjcmcgSkg3MTEwX1ZPVVRSU1RfREM4MjAwX0FYST4sCj4gKwkJCQkJ
-IDwmdm91dGNyZyBKSDcxMTBfVk9VVFJTVF9EQzgyMDBfQUhCPjsKPiArCQkJCXJlc2V0LW5hbWVz
-ID0gImNvcmUiLCAiYXhpIiwgImFoYiI7Cj4gKwkJCX07Cj4gKwo+ICsJCQloZG1pX3N1YnN5c3Rl
-bTogaGRtaUAyOTU5MDAwMCB7Cj4gKwkJCQljb21wYXRpYmxlID0gInN0YXJmaXZlLGpoNzExMC1o
-ZG1pLXN1YnN5c3RlbSI7CgpbU2V2ZXJpdHk6IE1lZGl1bV0KU2hvdWxkIHRoZSBoZG1pX3N1YnN5
-c3RlbSBJUCBkZWZpbml0aW9uIGFsc28gYmUgZGlzYWJsZWQgYnkgZGVmYXVsdCBhdCB0aGUKU29D
-IGxldmVsPwoKTGlrZSB0aGUgZGM4MjAwIG5vZGUgYWJvdmUsIGVuYWJsaW5nIHRoaXMgYnkgZGVm
-YXVsdCBpbiB0aGUgU29DIGRldmljZXRyZWUKbWF5IGNhdXNlIHVuaW50ZW5kZWQgcHJvYmUgYXR0
-ZW1wdHMgb24gYm9hcmRzIHRoYXQgZG8gbm90IHV0aWxpemUgdGhlIGRpc3BsYXkKc3Vic3lzdGVt
-LgoKPiArCQkJCXJlZyA9IDwweDAgMHgyOTU5MDAwMCAweDAgMHg0MDAwPjsKPiArCj4gKwkJCQlo
-ZG1pX2NvbnRyb2xsZXI6IGNvbnRyb2xsZXIgewoKWyAuLi4gXQoKLS0gClNhc2hpa28gQUkgcmV2
-aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDkxNS1qaDcxMTAtY2xl
-YW4tc2VuZC12NC0wLWYwZTRmZDZmMmNjOEBzYW1zdW5nLmNvbT9wYXJ0PTE5CgotLSAKbGludXgt
-cGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+Add AST2700 USB3.2 PHY support.
+ - Supports Super Speed Plus Gen2x1 (10 Gbps), Super Speed (5 Gbps),
+   High Speed (480 Mbps), Full Speed (12Mbps), and Low Speed (1.5 Mbps).
+
+Signed-off-by: Ryan Chen <ryan_chen@aspeedtech.com>
+---
+Changes in v4:
+- Indent the register bitfield definitions so they are distinguishable
+  from the register offsets, and use lowercase hex.
+- Set PHY3S00_SRAM_EXT_LOAD rather than PHY3S00_SRAM_BYPASS. Bypassing
+  the SRAM leaves the PHY on the default RTL design configuration,
+  whereas the external load path applies the ROM patch so the PHY runs
+  the ROM configuration.
+- Describe the SRAM handshake in the driver's commit message.
+- Link to v3: https://lore.kernel.org/r/20260701-upstream_usb3phy-v3-0-00e12315b6f9@aspeedtech.com
+
+Changes in v3:
+- Wire drivers/phy/aspeed/ into drivers/phy/Kconfig and
+  drivers/phy/Makefile so the driver is actually built.
+- Fix the Makefile config symbol to CONFIG_PHY_ASPEED_USB3 to match
+  the Kconfig symbol.
+- Expand the Kconfig help text.
+- Link to v2: https://lore.kernel.org/r/20260116-upstream_usb3phy-v2-0-0b0c9f3eb6f4@aspeedtech.com
+
+Changes in v2:
+- aspeed,ast2700-usb3-phy.yaml
+ - Drop clocks, resets descripton.
+- Kconfig
+ - add COMPILE_TEST, remove default n
+- Link to v1: https://lore.kernel.org/r/20260114-upstream_usb3phy-v1-0-2e59590be2d7@aspeedtech.com
+
+---
+Ryan Chen (3):
+      dt-bindings: phy: aspeed: Document AST2700 USB3.2 PHY
+      phy: aspeed: Add AST2700 USB3.2 PHY driver
+      MAINTAINERS: Add ASPEED USB3 PHY driver
+
+ .../bindings/phy/aspeed,ast2700-usb3-phy.yaml      |  48 +++++
+ MAINTAINERS                                        |   8 +
+ drivers/phy/Kconfig                                |   1 +
+ drivers/phy/Makefile                               |   1 +
+ drivers/phy/aspeed/Kconfig                         |  15 ++
+ drivers/phy/aspeed/Makefile                        |   2 +
+ drivers/phy/aspeed/phy-aspeed-usb3.c               | 236 +++++++++++++++++++++
+ 7 files changed, 311 insertions(+)
+---
+base-commit: f82a5da2f04960df9fb57489992d03dd5e64ec6f
+change-id: 20260112-upstream_usb3phy-7116f8dfe779
+
+Best regards,
+-- 
+Ryan Chen <ryan_chen@aspeedtech.com>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
