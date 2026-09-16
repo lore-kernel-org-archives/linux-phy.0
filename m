@@ -4,88 +4,147 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D66CC88E77
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Sep 2026 00:45:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7CC93C88E5C
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Sep 2026 06:04:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:References:To:From:Subject:Cc:Message-Id
-	:Date:Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=5GWP0KGtu4x81qUP8+FzICBLnAHufbUt0p5S6INfStg=; b=Wm2D15hdXiI7xhOM1h90gAW5aS
-	h9tFviutMiNOYsPZGbaOrmvZYlkrbHZa2Y61wT3fYzWKKKnLsOs5pVpavLfc8rT3CHDvUP3ILS3Dv
-	ZU/u7Ymn8kvNqxwKCotv6Lg9mcDlJK5VxFVWxdm9SooCo21T45PMC6lUnA+KmGTSaU4YJNGzUWg9P
-	vlxisLG+W4tG7sx07DvSkDgE4QpsW3UkkdyqaqUMHCfmMH0pkmEsK1Kuovk3BJGAu7Q02q/0r192y
-	gHEjun6e4cR/JzW2lUWKkBRqMzHWu/eR4abrfkSyD6Rer7SJ6PLg97OwxnaY6J4h83bZvIX8J9EnJ
-	rx5DySOw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MhNoYQtXngMrA7Uw6Ze2mcVReOOqVVONLaiFpzdVnBU=; b=olNXv0lc4B2vnD
+	cI46tFH+v0HN7Ke/cWpnHWtR4fVTvnVg006mmysd1qV1M21CM9IGZutydDQBWTGf4ME2ezXdLmwhc
+	BbfxKEAXmnMBH7ceHRiS2dJCt7eXNbbW28bgcl+wq3xcQT+MXEh+1/unJoXAc++AnbHejODDVo4CY
+	o4kBCUUejxKYUOPQzu1qAe+vWvWLeilPVC9Gz2J127yST/HXBEqf8yThubdii+4mzEBJXFG+bY1Ww
+	soXvXsz/g7lSTeTr6vi5AFY/7f4uq7dWsZGodmxQgyjIqqYc2vTyJcLTItaHL/GaNYeD3ichsEkTz
+	VWYzqDwMlrIuncxWtnmw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6dmP-000000088Bb-3dtA;
-	Wed, 16 Sep 2026 00:45:41 +0000
-Received: from smtp.forwardemail.net ([149.28.215.223])
+	id 1x6ikz-00000008RkQ-2R91;
+	Wed, 16 Sep 2026 06:04:33 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6dmM-0000000889s-2UPN
+	id 1x6ikv-00000008RiM-2Q8p
 	for linux-phy@lists.infradead.org;
-	Wed, 16 Sep 2026 00:45:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ubuntu.com;
- h=In-Reply-To: References: To: From: Subject: Cc: Message-Id: Date:
- Content-Type: Content-Transfer-Encoding: Mime-Version; q=dns/txt;
- s=fe-953a8a3ca9; t=1789519536;
- bh=s2V8BnF8h+8Uq8u8VZxp/reb7V9zH1peGA2ahNF542Q=;
- b=XRW9PQnk7SBEuQDcaC3PMm0TRFUrm2H/Wgd+yUY/ufRi1WtsVoU4xICtlXlOjq+6vd5X27/Nl
- fQVJnViLukaeBzGf81Vrw4v9Le05qmrX7o6u9z44+huxEGLMeMNzTyr2lWG9y9e772GgCHwoWwY
- 1fbbcMGhmbxPCGIZdlckMJcbZSNbneb+eLxXnmY6ISyS6AjlEcOtbI/8+lT5D59D7LEX74RKYuO
- o4ArkORrAjdIoReonvjOcEooYsSsaIe59/RE8rLZeaPV7uXT+eYt61V3+JQesfLB3LYnbu4uoVi
- ZkPZ+wkUJtpGPLEzlNhuBOuwBRYw7/+HO8FA5aM/pC+Q==
-X-Forward-Email-ID: 6aa9e69076866d48a84e7189
-X-Forward-Email-Sender: rfc822; jpeisach@ubuntu.com, smtp.forwardemail.net,
- 149.28.215.223
-X-Forward-Email-Version: 2.14.2
-X-Forward-Email-Website: https://forwardemail.net
-X-Complaints-To: abuse@forwardemail.net
-X-Report-Abuse: abuse@forwardemail.net
-X-Report-Abuse-To: abuse@forwardemail.net
-Mime-Version: 1.0
-Date: Tue, 15 Sep 2026 20:45:01 -0400
-Message-Id: <DLGBPXP4F8E0.9X0QMZ9GFQVF@ubuntu.com>
-Cc: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
- <mfd@lists.linux.dev>, <linux-clk@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>,
- <linux-rockchip@lists.infradead.org>, <linux-riscv@lists.infradead.org>,
- "Marek Szyprowski" <m.szyprowski@samsung.com>, "Maud Spierings"
- <maud_spierings@murena.io>, "Graham Markall" <hello@big-grey.co.uk>,
- "Icenowy Zheng" <zhengxingda@iscas.ac.cn>, "Chaoyi Chen"
- <chaoyi.chen@rock-chips.com>, "Joshua Peisach" <jpeisach@ubuntu.com>,
- =?utf-8?q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
-Subject: Re: [PATCH v4 00/20] drm: starfive: jh7110: Enable display
- subsystem
-From: "Joshua Peisach" <jpeisach@ubuntu.com>
-To: "Michal Wilczynski" <m.wilczynski@samsung.com>, "Vinod Koul"
- <vkoul@kernel.org>, "Neil Armstrong" <neil.armstrong@linaro.org>, "Rob
- Herring" <robh@kernel.org>, "Krzysztof Kozlowski" <krzk+dt@kernel.org>,
- "Conor Dooley" <conor+dt@kernel.org>, "Andrzej Hajda"
- <andrzej.hajda@intel.com>, "Robert Foss" <rfoss@kernel.org>, "Laurent
- Pinchart" <Laurent.pinchart@ideasonboard.com>, "Jonas Karlman"
- <jonas@kwiboo.se>, "Jernej Skrabec" <jernej.skrabec@gmail.com>, "Luca
- Ceresoli" <luca.ceresoli@bootlin.com>, "Maarten Lankhorst"
- <maarten.lankhorst@linux.intel.com>, "Maxime Ripard" <mripard@kernel.org>,
- "Thomas Zimmermann" <tzimmermann@suse.de>, "Lee Jones" <lee@kernel.org>,
- "Andy Yan" <andy.yan@rock-chips.com>, "Philipp Zabel"
- <p.zabel@pengutronix.de>, "Emil Renner Berthing" <kernel@esmil.dk>, "Hal
- Feng" <hal.feng@starfivetech.com>, "Michael Turquette"
- <mturquette@baylibre.com>, "Stephen Boyd" <sboyd@kernel.org>, "Heiko
- Stuebner" <heiko@sntech.de>, "Paul Walmsley" <pjw@kernel.org>, "Palmer
- Dabbelt" <palmer@dabbelt.com>, "Albert Ou" <aou@eecs.berkeley.edu>,
- "Alexandre Ghiti" <alex@ghiti.fr>, "Dominique Belhachemi" <db@domibel.de>,
- "Brian Masney" <bmasney+clk@redhat.com>, "Jerome Brunet"
- <jbrunet+clk@baylibre.com>
-X-Mailer: aerc 0.21.0
-References: <CGME20260915153213eucas1p148f013af239a334fc78cdc249c0f8a61@eucas1p1.samsung.com> <20260915-jh7110-clean-send-v4-0-f0e4fd6f2cc8@samsung.com>
-In-Reply-To: <20260915-jh7110-clean-send-v4-0-f0e4fd6f2cc8@samsung.com>
+	Wed, 16 Sep 2026 06:04:32 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68G61wfu225030
+	for <linux-phy@lists.infradead.org>; Wed, 16 Sep 2026 06:04:29 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	n0r6Emu7FRLhYCASNs/iFipri1GH8rilRHLo7RAxtZ8=; b=DrPI/RNFoz8blFdr
+	n+qVvkqsS1VYEh86yIzRsJZN7puOVoylwY4abKOPUmLPKa9CU6MbVFp5ahT7yHZ0
+	lhQoGgixHkqImskYdGE/boQbKB55ptXnX/YOlAjl+LIaY+HvdVBm35M7Q1Lel3OS
+	GQweCfxlvt1JXobZKX21VO8bYceanAx4VuJVkwqtYiA3mtk5LqoMOfU6HRkSeO00
+	rhR659cNQ4hZHaFvjfnt0j1e3BcRApaECoGDlY9C/YS/9M9jaPZYW6SnhI5Unx9O
+	MCduoo3xrgpWs60zN7Hhfa2F3/ByPaSAm/neVHrXnn1KAmmKf2kBo4UShrWxrehq
+	GBRR3A==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gqbmnj8j2-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 16 Sep 2026 06:04:29 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2cfa4e4684bso119289725ad.2
+        for <linux-phy@lists.infradead.org>; Tue, 15 Sep 2026 23:04:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1789538668; x=1790143468; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :content-type:mime-version:subject:date:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=n0r6Emu7FRLhYCASNs/iFipri1GH8rilRHLo7RAxtZ8=;
+        b=EO919/iJxrJrY8keMFkwAhMgTdSHsgLxF8mEek9jRKaSWvsOrTttWKtCTPBvdKCfEi
+         xLbiAcS2nKzFeiXg9lSPKXGU7Vtjs4C9SkmO4QmyjUCEhClw2xR2CiFCbijvNAOxCIsz
+         PSCNEP/4jXEst3/kvty1phEbErK2MbmVTKSioGHQSUmtdQa81FPork13mZesLUOIEPFy
+         uK4fGjx7sOR13rCu/4RwtZvqpz0yQaO2D7k9zIx3ERf0z3BfnxUiMwhWgl80KTCJfK5A
+         ODRNSJKbebwfDulnMVxrL7/tecwZA20iVI83x9QcFSO+JBfRsNo1llnTOT1BQhLXwxtS
+         9b/g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1789538668; x=1790143468;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :content-type:mime-version:subject:date:from:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=n0r6Emu7FRLhYCASNs/iFipri1GH8rilRHLo7RAxtZ8=;
+        b=gx/jyxT628ulwiyKFMqr+lwpK9AJzfdoRYdYE1B9jT7z95yOoYz2M85B+aI4cO3U6N
+         Sgj/eU7NFQGoT5dC+ckBsKo/Ds5wTX04Wa34Uio4QLytLHyiBd2MxFgeNp9pwCKZOtfS
+         URKgKvmp2H6GUP5KJVpoLBtru9gn8+LaSJfZsMtQjA8x4GbfKX3CUtJ71isevgrqii70
+         O8NTc2YtYEAuJLojmRrxqvkGZAvTTmdMi9W+kJmRlk/bwb6z3yBWXa8tfVeYiuZ9ojVu
+         Lmlu0RIKhy/MByqKPJhidRRJGdL+01JGnsC5Dua2sVeyik/ee9Zdnlja5SxUBuq7mdNl
+         P3og==
+X-Forwarded-Encrypted: i=1; AKwUvBwAC+JvCkaq7pkwK5KGZHQ+ahhvd5wL5KPik0N+O5QtwHcw8yWjrwNWFkW9dkeS7GabLj4v08qi7bs=@lists.infradead.org
+X-Gm-Message-State: AFuF++mil44J/wNviAYtzuB2UkcqCGOJFHc7nCZCJKyAYTjydH9BbNO2
+	D+7T0B0iJ6lwnUIe+/VMu+iWtIj9w+gJ5p8OOg48wLQhewughb3omHfb1RCEPWP89q5BX3jSKRC
+	iED70oqLXBrCBnwdx2Be9kplMrGnUDSQabVBdM5oLDec7Oq8F/zeJPeQFXXs8KcwjZjbP
+X-Gm-Gg: AYBFou0CUhVTS30Iag+VZ3LTq5d/Pn9cmUPs2tjg6BqY1ad2JtP3VYWrWPpSPHQ+ZeB
+	DsdLrP00CuaHksVUnhUKb2N8KDYsnl9MTEMGHS8jjXIUkbTYe/+areWbB8ZZyGn3g1g+D/yxD4l
+	bevWUqclfsyffDANNtp2+i+xI8BMts9s8JoHcrt18OuXSFgTwxAqkMNAA5eHA109AnRdI7Lukx0
+	V+bKJUPY4WvbiGoO1q/ogjzR1dTLq+fwjL2e09lXb15ZMt1+XdZAZtXUNB6a3N8NenzzK5yq3gA
+	CcElY/w6qrzRmwQGr7JDzAq7C8014OFUE+J2PbX74omLC50+YnFt6fLxxKJW3LIIFRC5euGrfCa
+	5D0eTrxnXACLoZugz0T6jO0PYEle0+y8wuvLJqL1wlrV+3Ec=
+X-Received: by 2002:a17:903:2452:b0:2da:f7ad:cfea with SMTP id d9443c01a7336-2dd8df0a71emr27125025ad.8.1789538668395;
+        Tue, 15 Sep 2026 23:04:28 -0700 (PDT)
+X-Received: by 2002:a17:903:2452:b0:2da:f7ad:cfea with SMTP id d9443c01a7336-2dd8df0a71emr27124325ad.8.1789538667935;
+        Tue, 15 Sep 2026 23:04:27 -0700 (PDT)
+Received: from hu-qianyu-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-33bfb19f8cesm4740083eec.2.2026.09.15.23.04.27
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 15 Sep 2026 23:04:27 -0700 (PDT)
+From: Qiang Yu <qiang.yu@oss.qualcomm.com>
+Date: Tue, 15 Sep 2026 23:04:22 -0700
+Subject: [PATCH 2/4] PCI: qcom-ep: Move PHY init and drive PHY reset to
+ align with HPG
+MIME-Version: 1.0
+Message-Id: <20260915-align_pcie_init_sequence_0916-v1-2-0b2195836f30@oss.qualcomm.com>
+References: <20260915-align_pcie_init_sequence_0916-v1-0-0b2195836f30@oss.qualcomm.com>
+In-Reply-To: <20260915-align_pcie_init_sequence_0916-v1-0-0b2195836f30@oss.qualcomm.com>
+To: Manivannan Sadhasivam <mani@kernel.org>,
+        Lorenzo Pieralisi <lpieralisi@kernel.org>,
+        =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+        Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+        Qiang Yu <qiang.yu@oss.qualcomm.com>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1789538665; l=3449;
+ i=qiang.yu@oss.qualcomm.com; s=20250513; h=from:subject:message-id;
+ bh=h3fngNlkhZEZKpBHI/IT3xTrpcNvbLpoMF3Il2nEqag=;
+ b=eTZfXLMDSIpr2rD0kW+QmRWdp9HNs5rYFTSCCvbAdhqFxpkC15bmD+pT/64Xq3BBABZm7nE6r
+ kif1GcsJYCKBDLi+hJrEpTvhL5VVFDqdA8qCq0ZLA5sRh1Fa7EGYA62
+X-Developer-Key: i=qiang.yu@oss.qualcomm.com; a=ed25519;
+ pk=Rr94t+fykoieF1ngg/bXxEfr5KoQxeXPtYxM8fBQTAI=
+X-Authority-Analysis: v=2.4 cv=POyaavqC c=1 sm=1 tr=0 ts=6aaa316d cx=c_pps
+ a=IZJwPbhc+fLeJZngyXXI0A==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
+ a=EUspDBNiAAAA:8 a=PV8ZVrNDrE42_2bsUUYA:9 a=QEXdDO2ut3YA:10
+ a=uG9DUKGECoFWVXl0Dc02:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTE2MDA3NiBTYWx0ZWRfX5OgsFYmDLjPM
+ kOLduVXEAV2bdsflB8EsryBGFAaSvxrbtt5mD9NZTh1ZOW+8l1DqDqgfbd9Ol5c1LUOxgZJDLXY
+ DRkgJZsxvO2mtHL5s1Qu5ELP/x/KETTqHB9NpxqWD+ard3kBnO/R7r9laNs7LCPrc/4ZimPnkO/
+ GIFmAJn9enViLAAgBsnTWs+37Q/7tH5KlNigAUkSkvlVKDC1fVXSrOY+erxefypAZsZVzsVCWj2
+ H/6zlKFK8NpHJtLnkybtN3+ISTArPIe6wdVEMzLzhlh4NAFHpwUN4YJ7jjVVO3zxfIx4y9aHrSF
+ gOm5pqWmuDodSMOAyzBweQIHWZoVOxPaZ4oKiJsg2qNFmXGs2dZILEDPkHxdY/cOihHTzQMnLEr
+ 2FGYeMsImKIxvqbR248mApky7QlnjObO+0xJ3DI+RNQKWQQM4de9r6bf9EmIBtoOBWcdNr3b11z
+ ERjU/9SW1/730R5PVtQ==
+X-Proofpoint-GUID: bDmzBgcPXrh9WN8-PbVHDEk6bMGrf6Ea
+X-Proofpoint-Spam-Info: AW1haW4tMjYwOTE2MDA3NiBTYWx0ZWRfXxlCJJ4D9Ns6s
+ 5vCTTzRDk2ULWCS7hBL3aLzJ0tuVUG1k9RWux+x1Sb32KmHxdGNZ1XuLL5Tqh+tiu3fK2fvC++n
+ r+SLiOGTHCNNOmOODBtqk+loStN9HBc=
+X-Proofpoint-ORIG-GUID: bDmzBgcPXrh9WN8-PbVHDEk6bMGrf6Ea
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-09-15_05,2026-09-15_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 adultscore=0 bulkscore=0 clxscore=1015 phishscore=0
+ suspectscore=0 impostorscore=0 spamscore=0 lowpriorityscore=0 malwarescore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2609160076
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260915_174538_648348_633265E7 
-X-CRM114-Status: GOOD (  14.27  )
+X-CRM114-CacheID: sfid-20260915_230430_480866_B5B5D214 
+X-CRM114-Status: GOOD (  16.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,91 +156,116 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="Flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue Sep 15, 2026 at 11:32 AM EDT, Michal Wilczynski wrote:
->
-> Testing
-> =======
->
-> Tested on a VisionFive 2 v1.3B using modetest.
+HPG requires the GDSC to be powered up and all PHY/controller clocks
+enabled before the controller's core reset and the PHY's reset are toggled
+together as one atomic group, with PARF_DEVICE_TYPE set right after that
+reset group, same as the RC-mode change.
 
-I.. got nothing. I did have to manually modprobe the modules, but
-unless I am doing something wrong.. I didn't get anything and modetest
-just gave -2.
+Move phy_init() ahead of the controller's own clock enable, and fold
+phy_reset() into the core reset assert/deassert. phy_power_on() keeps
+running afterwards. Also move the PARF_DEVICE_TYPE write out of
+qcom_pcie_perst_deassert() to right after the reset group, in
+qcom_pcie_enable_resources().
 
-> ---
-> Michal Wilczynski (20):
->       dt-bindings: phy: Add starfive,jh7110-inno-hdmi-phy
->       dt-bindings: display: bridge: Add starfive,jh7110-inno-hdmi-controller
->       dt-bindings: mfd: Add starfive,jh7110-hdmi-subsystem
->       dt-bindings: soc: starfive: Add starfive,jh7110-vout-syscon
->       dt-bindings: display: verisilicon: Add starfive,jh7110-dc8200
->       dt-bindings: soc: starfive: Add starfive,jh7110-vout-subsystem
->       drm/bridge: inno-hdmi: Split probe out of bind
->       drm/bridge: inno-hdmi: Allow the register map to come from a parent
->       drm/bridge: inno-hdmi: Add .disable platform operation
->       drm/bridge: inno-hdmi: Add .mode_valid platform operation
->       drm/bridge: inno-hdmi: Make the PHY configuration table optional
->       soc: starfive: Add jh7110-hdmi-subsystem driver
->       soc: starfive: Add jh7110-vout-subsystem driver
->       clk: starfive: jh7110-vout: Allow pixel clock rate propagation
->       drm/bridge: starfive: Add JH7110 HDMI controller driver
->       phy: Add common Innosilicon HDMI PHY helpers
->       phy: rockchip: inno-hdmi: Use the common Innosilicon PHY helpers
->       phy: starfive: Add jh7110-inno-hdmi-phy driver
->       riscv: dts: starfive: jh7110: Update DT for display subsystem
->       MAINTAINERS: Add StarFive JH7110 display subsystem entry
->
->  .../starfive,jh7110-inno-hdmi-controller.yaml      | 121 +++++
->  .../bindings/display/verisilicon,dc.yaml           |   1 +
->  .../mfd/starfive,jh7110-hdmi-subsystem.yaml        |  95 ++++
->  .../phy/starfive,jh7110-inno-hdmi-phy.yaml         |  49 ++
->  .../soc/starfive/starfive,jh7110-syscon.yaml       |   1 +
->  .../starfive/starfive,jh7110-vout-subsystem.yaml   | 218 ++++++++
->  MAINTAINERS                                        |  13 +
->  arch/riscv/boot/dts/starfive/jh7110-common.dtsi    | 121 ++++-
->  arch/riscv/boot/dts/starfive/jh7110.dtsi           | 105 +++-
->  drivers/clk/starfive/clk-starfive-jh7110-vout.c    |   6 +-
->  drivers/gpu/drm/bridge/Kconfig                     |  11 +
->  drivers/gpu/drm/bridge/Makefile                    |   1 +
->  drivers/gpu/drm/bridge/inno-hdmi.c                 | 112 +++-
->  drivers/gpu/drm/bridge/jh7110-inno-hdmi.c          | 297 +++++++++++
->  drivers/phy/Kconfig                                |   8 +
->  drivers/phy/Makefile                               |   1 +
->  drivers/phy/phy-inno-hdmi.c                        | 298 +++++++++++
->  drivers/phy/rockchip/Kconfig                       |   1 +
->  drivers/phy/rockchip/phy-rockchip-inno-hdmi.c      | 168 +-----
->  drivers/phy/starfive/Kconfig                       |  20 +
->  drivers/phy/starfive/Makefile                      |   1 +
->  drivers/phy/starfive/phy-jh7110-inno-hdmi.c        | 579 +++++++++++++++++++++
->  drivers/soc/Kconfig                                |   1 +
->  drivers/soc/Makefile                               |   1 +
->  drivers/soc/starfive/Kconfig                       |  43 ++
->  drivers/soc/starfive/Makefile                      |   3 +
->  drivers/soc/starfive/jh7110-hdmi-subsystem.c       |  73 +++
->  drivers/soc/starfive/jh7110-vout-subsystem.c       |  82 +++
->  include/drm/bridge/inno_hdmi.h                     |  10 +-
->  include/linux/phy/inno-hdmi-phy.h                  |  85 +++
->  30 files changed, 2337 insertions(+), 188 deletions(-)
-> ---
-> base-commit: fd73f4a6659897191fa0d40695fe370925dd3780
-> change-id: 20251031-jh7110-clean-send-7d2242118026
->
-> Best regards,
+phy_reset() and phy_init are currently a no-op against the PHY this driver
+uses, so the init sequence doesn't change yet; it actually changes once
+the PHY driver later implements .reset.
 
-By the way, something weird happenined while I applied the patches
-using git am. Somehow, some were out of order. The 10th patch
-adding .mode_valid tried to be applied before .disable even though
-in the series, the order is correctly set? git would obviously
-fail because the .disable entry did not exist in the header, so I had
-to manually put those in.
+Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
+---
+ drivers/pci/controller/dwc/pcie-qcom-ep.c | 26 ++++++++++++++++----------
+ 1 file changed, 16 insertions(+), 10 deletions(-)
 
-I guess it's possible that something went wrong here? I personally
-pulled the mailbox from the lore.kernel.org mbox.gz file.
+diff --git a/drivers/pci/controller/dwc/pcie-qcom-ep.c b/drivers/pci/controller/dwc/pcie-qcom-ep.c
+index 8364696a1b98..cd7725d277c5 100644
+--- a/drivers/pci/controller/dwc/pcie-qcom-ep.c
++++ b/drivers/pci/controller/dwc/pcie-qcom-ep.c
+@@ -228,7 +228,7 @@ struct qcom_pcie_ep {
+ 	int perst_irq;
+ };
+ 
+-static int qcom_pcie_ep_core_reset(struct qcom_pcie_ep *pcie_ep)
++static int qcom_pcie_ep_phy_core_reset(struct qcom_pcie_ep *pcie_ep)
+ {
+ 	struct dw_pcie *pci = &pcie_ep->pci;
+ 	struct device *dev = pci->dev;
+@@ -242,6 +242,12 @@ static int qcom_pcie_ep_core_reset(struct qcom_pcie_ep *pcie_ep)
+ 
+ 	usleep_range(CORE_RESET_TIME_US_MIN, CORE_RESET_TIME_US_MAX);
+ 
++	ret = phy_reset(pcie_ep->phy);
++	if (ret) {
++		dev_err(dev, "Cannot reset phy\n");
++		return ret;
++	}
++
+ 	ret = reset_control_deassert(pcie_ep->core_reset);
+ 	if (ret) {
+ 		dev_err(dev, "Cannot de-assert core reset\n");
+@@ -332,25 +338,25 @@ static int qcom_pcie_enable_resources(struct qcom_pcie_ep *pcie_ep)
+ 	struct dw_pcie *pci = &pcie_ep->pci;
+ 	int ret;
+ 
+-	ret = clk_bulk_prepare_enable(pcie_ep->num_clks, pcie_ep->clks);
++	ret = phy_init(pcie_ep->phy);
+ 	if (ret)
+ 		return ret;
+ 
+-	ret = qcom_pcie_ep_core_reset(pcie_ep);
++	ret = clk_bulk_prepare_enable(pcie_ep->num_clks, pcie_ep->clks);
+ 	if (ret)
+-		goto err_disable_clk;
++		goto err_phy_exit;
+ 
+-	ret = phy_init(pcie_ep->phy);
++	ret = qcom_pcie_ep_phy_core_reset(pcie_ep);
+ 	if (ret)
+ 		goto err_disable_clk;
+ 
+ 	ret = phy_set_mode_ext(pcie_ep->phy, PHY_MODE_PCIE, PHY_MODE_PCIE_EP);
+ 	if (ret)
+-		goto err_phy_exit;
++		goto err_disable_clk;
+ 
+ 	ret = phy_power_on(pcie_ep->phy);
+ 	if (ret)
+-		goto err_phy_exit;
++		goto err_disable_clk;
+ 
+ 	/*
+ 	 * Some Qualcomm platforms require interconnect bandwidth constraints
+@@ -370,10 +376,10 @@ static int qcom_pcie_enable_resources(struct qcom_pcie_ep *pcie_ep)
+ 
+ err_phy_off:
+ 	phy_power_off(pcie_ep->phy);
+-err_phy_exit:
+-	phy_exit(pcie_ep->phy);
+ err_disable_clk:
+ 	clk_bulk_disable_unprepare(pcie_ep->num_clks, pcie_ep->clks);
++err_phy_exit:
++	phy_exit(pcie_ep->phy);
+ 
+ 	return ret;
+ }
+@@ -390,8 +396,8 @@ static void qcom_pcie_disable_resources(struct qcom_pcie_ep *pcie_ep)
+ 
+ 	icc_set_bw(pcie_ep->icc_mem, 0, 0);
+ 	phy_power_off(pcie_ep->phy);
+-	phy_exit(pcie_ep->phy);
+ 	clk_bulk_disable_unprepare(pcie_ep->num_clks, pcie_ep->clks);
++	phy_exit(pcie_ep->phy);
+ }
+ 
+ static int qcom_pcie_perst_deassert(struct dw_pcie *pci)
+
+-- 
+2.34.1
+
 
 -- 
 linux-phy mailing list
