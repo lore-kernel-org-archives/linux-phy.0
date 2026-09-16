@@ -4,63 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5F91C982C5
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Sep 2026 00:38:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D66CC88E77
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Sep 2026 00:45:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RAPa2qRyQuqk26zs4zILh7l2TzNApDABngdLUBCmbMw=; b=pLfer1lvlSxZev
-	79npGhh/DTYU/Jcw2UClZSmIUaWEUrIM14OdJt6jSEHc7GSwOze6y5YGa3EhtJi6XPUA4l/eSfOgB
-	ekJV6ZeMZihJq2Q5O+7dWaZvhcy40ZjU0X8WoKAFAmnJD44prL8jnxUB8iHeEoH6HbUAensG+mOJ5
-	E2KVWROW8/HP2PhQ1vC6A0a10q40LzQKSckDuZRdxsoWYOlQoiLY4U+y8kKCMWKmj9CIesLROQoVB
-	CleMsqtOde29DLTkt3XwZoPA1pJrw5rvf2yNNREBFAAAo39LMwPiWF85SJwZ+Qh+GYRIpQyK0h4Ku
-	Ht3AlwSnYKZcxHSHX0lA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:References:To:From:Subject:Cc:Message-Id
+	:Date:Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=5GWP0KGtu4x81qUP8+FzICBLnAHufbUt0p5S6INfStg=; b=Wm2D15hdXiI7xhOM1h90gAW5aS
+	h9tFviutMiNOYsPZGbaOrmvZYlkrbHZa2Y61wT3fYzWKKKnLsOs5pVpavLfc8rT3CHDvUP3ILS3Dv
+	ZU/u7Ymn8kvNqxwKCotv6Lg9mcDlJK5VxFVWxdm9SooCo21T45PMC6lUnA+KmGTSaU4YJNGzUWg9P
+	vlxisLG+W4tG7sx07DvSkDgE4QpsW3UkkdyqaqUMHCfmMH0pkmEsK1Kuovk3BJGAu7Q02q/0r192y
+	gHEjun6e4cR/JzW2lUWKkBRqMzHWu/eR4abrfkSyD6Rer7SJ6PLg97OwxnaY6J4h83bZvIX8J9EnJ
+	rx5DySOw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6dfS-000000087bd-1HPw;
-	Wed, 16 Sep 2026 00:38:30 +0000
-Received: from mail.aspeedtech.com ([211.20.114.72] helo=twmbx01.aspeedtech.com)
+	id 1x6dmP-000000088Bb-3dtA;
+	Wed, 16 Sep 2026 00:45:41 +0000
+Received: from smtp.forwardemail.net ([149.28.215.223])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6dfN-000000087WT-11tZ;
-	Wed, 16 Sep 2026 00:38:27 +0000
-Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
- (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Wed, 16 Sep
- 2026 08:38:02 +0800
-Received: from [127.0.1.1] (192.168.10.13) by TWMBX01.aspeed.com
- (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
- Transport; Wed, 16 Sep 2026 08:38:02 +0800
-From: Ryan Chen <ryan_chen@aspeedtech.com>
-Date: Wed, 16 Sep 2026 08:38:02 +0800
-Subject: [PATCH v4 2/3] phy: aspeed: Add AST2700 USB3.2 PHY driver
-MIME-Version: 1.0
-Message-ID: <20260916-upstream_usb3phy-v4-2-812e76037d01@aspeedtech.com>
-References: <20260916-upstream_usb3phy-v4-0-812e76037d01@aspeedtech.com>
-In-Reply-To: <20260916-upstream_usb3phy-v4-0-812e76037d01@aspeedtech.com>
-To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>, "Andrew
- Jeffery" <andrew@codeconstruct.com.au>, Philipp Zabel
-	<p.zabel@pengutronix.de>, Manivannan Sadhasivam <mani@kernel.org>, Billy Tsai
-	<billy_tsai@aspeedtech.com>
-CC: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-aspeed@lists.ozlabs.org>,
-	<linux-kernel@vger.kernel.org>, Ryan Chen <ryan_chen@aspeedtech.com>,
-	Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1789519082; l=11212;
- i=ryan_chen@aspeedtech.com; s=20251126; h=from:subject:message-id;
- bh=oCJAxByK5/0L3PDNVLGEo5PitCkaMXRWfGb2v4ns6J4=;
- b=QWp3sMwpU92WXAttQP0ufCkTkCI2TeJC2gqur4jeMogAgBKzxuLhcTNuCvac5hIP0SyjI/9jD
- 3M7AyCiOoABB+LAJEGOt54sGXKzjCxFMkXEWnzEfe6g+6wdzdoXd/TR
-X-Developer-Key: i=ryan_chen@aspeedtech.com; a=ed25519;
- pk=Xe73xY6tcnkuRjjbVAB/oU30KdB3FvG4nuJuILj7ZVc=
+	id 1x6dmM-0000000889s-2UPN
+	for linux-phy@lists.infradead.org;
+	Wed, 16 Sep 2026 00:45:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ubuntu.com;
+ h=In-Reply-To: References: To: From: Subject: Cc: Message-Id: Date:
+ Content-Type: Content-Transfer-Encoding: Mime-Version; q=dns/txt;
+ s=fe-953a8a3ca9; t=1789519536;
+ bh=s2V8BnF8h+8Uq8u8VZxp/reb7V9zH1peGA2ahNF542Q=;
+ b=XRW9PQnk7SBEuQDcaC3PMm0TRFUrm2H/Wgd+yUY/ufRi1WtsVoU4xICtlXlOjq+6vd5X27/Nl
+ fQVJnViLukaeBzGf81Vrw4v9Le05qmrX7o6u9z44+huxEGLMeMNzTyr2lWG9y9e772GgCHwoWwY
+ 1fbbcMGhmbxPCGIZdlckMJcbZSNbneb+eLxXnmY6ISyS6AjlEcOtbI/8+lT5D59D7LEX74RKYuO
+ o4ArkORrAjdIoReonvjOcEooYsSsaIe59/RE8rLZeaPV7uXT+eYt61V3+JQesfLB3LYnbu4uoVi
+ ZkPZ+wkUJtpGPLEzlNhuBOuwBRYw7/+HO8FA5aM/pC+Q==
+X-Forward-Email-ID: 6aa9e69076866d48a84e7189
+X-Forward-Email-Sender: rfc822; jpeisach@ubuntu.com, smtp.forwardemail.net,
+ 149.28.215.223
+X-Forward-Email-Version: 2.14.2
+X-Forward-Email-Website: https://forwardemail.net
+X-Complaints-To: abuse@forwardemail.net
+X-Report-Abuse: abuse@forwardemail.net
+X-Report-Abuse-To: abuse@forwardemail.net
+Mime-Version: 1.0
+Date: Tue, 15 Sep 2026 20:45:01 -0400
+Message-Id: <DLGBPXP4F8E0.9X0QMZ9GFQVF@ubuntu.com>
+Cc: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
+ <mfd@lists.linux.dev>, <linux-clk@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>,
+ <linux-rockchip@lists.infradead.org>, <linux-riscv@lists.infradead.org>,
+ "Marek Szyprowski" <m.szyprowski@samsung.com>, "Maud Spierings"
+ <maud_spierings@murena.io>, "Graham Markall" <hello@big-grey.co.uk>,
+ "Icenowy Zheng" <zhengxingda@iscas.ac.cn>, "Chaoyi Chen"
+ <chaoyi.chen@rock-chips.com>, "Joshua Peisach" <jpeisach@ubuntu.com>,
+ =?utf-8?q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
+Subject: Re: [PATCH v4 00/20] drm: starfive: jh7110: Enable display
+ subsystem
+From: "Joshua Peisach" <jpeisach@ubuntu.com>
+To: "Michal Wilczynski" <m.wilczynski@samsung.com>, "Vinod Koul"
+ <vkoul@kernel.org>, "Neil Armstrong" <neil.armstrong@linaro.org>, "Rob
+ Herring" <robh@kernel.org>, "Krzysztof Kozlowski" <krzk+dt@kernel.org>,
+ "Conor Dooley" <conor+dt@kernel.org>, "Andrzej Hajda"
+ <andrzej.hajda@intel.com>, "Robert Foss" <rfoss@kernel.org>, "Laurent
+ Pinchart" <Laurent.pinchart@ideasonboard.com>, "Jonas Karlman"
+ <jonas@kwiboo.se>, "Jernej Skrabec" <jernej.skrabec@gmail.com>, "Luca
+ Ceresoli" <luca.ceresoli@bootlin.com>, "Maarten Lankhorst"
+ <maarten.lankhorst@linux.intel.com>, "Maxime Ripard" <mripard@kernel.org>,
+ "Thomas Zimmermann" <tzimmermann@suse.de>, "Lee Jones" <lee@kernel.org>,
+ "Andy Yan" <andy.yan@rock-chips.com>, "Philipp Zabel"
+ <p.zabel@pengutronix.de>, "Emil Renner Berthing" <kernel@esmil.dk>, "Hal
+ Feng" <hal.feng@starfivetech.com>, "Michael Turquette"
+ <mturquette@baylibre.com>, "Stephen Boyd" <sboyd@kernel.org>, "Heiko
+ Stuebner" <heiko@sntech.de>, "Paul Walmsley" <pjw@kernel.org>, "Palmer
+ Dabbelt" <palmer@dabbelt.com>, "Albert Ou" <aou@eecs.berkeley.edu>,
+ "Alexandre Ghiti" <alex@ghiti.fr>, "Dominique Belhachemi" <db@domibel.de>,
+ "Brian Masney" <bmasney+clk@redhat.com>, "Jerome Brunet"
+ <jbrunet+clk@baylibre.com>
+X-Mailer: aerc 0.21.0
+References: <CGME20260915153213eucas1p148f013af239a334fc78cdc249c0f8a61@eucas1p1.samsung.com> <20260915-jh7110-clean-send-v4-0-f0e4fd6f2cc8@samsung.com>
+In-Reply-To: <20260915-jh7110-clean-send-v4-0-f0e4fd6f2cc8@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260915_173826_461596_6DE63D5C 
-X-CRM114-Status: GOOD (  23.20  )
+X-CRM114-CacheID: sfid-20260915_174538_648348_633265E7 
+X-CRM114-Status: GOOD (  14.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,340 +97,91 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="Flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a driver for the USB3.2 PHY on the Aspeed AST2700, which is paired
-with the DWC3 controller.
+On Tue Sep 15, 2026 at 11:32 AM EDT, Michal Wilczynski wrote:
+>
+> Testing
+> =======
+>
+> Tested on a VisionFive 2 v1.3B using modetest.
 
-The PHY draws its configuration from an internal SRAM in both of the
-available modes, so the driver must wait for PHY3S00_INIT_DONE before
-selecting one. PHY3S00_SRAM_BYPASS selects the default design
-configuration and PHY3S00_SRAM_EXT_LOAD the ROM code configuration; the
-driver uses the latter.
+I.. got nothing. I did have to manually modprobe the modules, but
+unless I am doing something wrong.. I didn't get anything and modetest
+just gave -2.
 
-Signed-off-by: Ryan Chen <ryan_chen@aspeedtech.com>
-Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+> ---
+> Michal Wilczynski (20):
+>       dt-bindings: phy: Add starfive,jh7110-inno-hdmi-phy
+>       dt-bindings: display: bridge: Add starfive,jh7110-inno-hdmi-controller
+>       dt-bindings: mfd: Add starfive,jh7110-hdmi-subsystem
+>       dt-bindings: soc: starfive: Add starfive,jh7110-vout-syscon
+>       dt-bindings: display: verisilicon: Add starfive,jh7110-dc8200
+>       dt-bindings: soc: starfive: Add starfive,jh7110-vout-subsystem
+>       drm/bridge: inno-hdmi: Split probe out of bind
+>       drm/bridge: inno-hdmi: Allow the register map to come from a parent
+>       drm/bridge: inno-hdmi: Add .disable platform operation
+>       drm/bridge: inno-hdmi: Add .mode_valid platform operation
+>       drm/bridge: inno-hdmi: Make the PHY configuration table optional
+>       soc: starfive: Add jh7110-hdmi-subsystem driver
+>       soc: starfive: Add jh7110-vout-subsystem driver
+>       clk: starfive: jh7110-vout: Allow pixel clock rate propagation
+>       drm/bridge: starfive: Add JH7110 HDMI controller driver
+>       phy: Add common Innosilicon HDMI PHY helpers
+>       phy: rockchip: inno-hdmi: Use the common Innosilicon PHY helpers
+>       phy: starfive: Add jh7110-inno-hdmi-phy driver
+>       riscv: dts: starfive: jh7110: Update DT for display subsystem
+>       MAINTAINERS: Add StarFive JH7110 display subsystem entry
+>
+>  .../starfive,jh7110-inno-hdmi-controller.yaml      | 121 +++++
+>  .../bindings/display/verisilicon,dc.yaml           |   1 +
+>  .../mfd/starfive,jh7110-hdmi-subsystem.yaml        |  95 ++++
+>  .../phy/starfive,jh7110-inno-hdmi-phy.yaml         |  49 ++
+>  .../soc/starfive/starfive,jh7110-syscon.yaml       |   1 +
+>  .../starfive/starfive,jh7110-vout-subsystem.yaml   | 218 ++++++++
+>  MAINTAINERS                                        |  13 +
+>  arch/riscv/boot/dts/starfive/jh7110-common.dtsi    | 121 ++++-
+>  arch/riscv/boot/dts/starfive/jh7110.dtsi           | 105 +++-
+>  drivers/clk/starfive/clk-starfive-jh7110-vout.c    |   6 +-
+>  drivers/gpu/drm/bridge/Kconfig                     |  11 +
+>  drivers/gpu/drm/bridge/Makefile                    |   1 +
+>  drivers/gpu/drm/bridge/inno-hdmi.c                 | 112 +++-
+>  drivers/gpu/drm/bridge/jh7110-inno-hdmi.c          | 297 +++++++++++
+>  drivers/phy/Kconfig                                |   8 +
+>  drivers/phy/Makefile                               |   1 +
+>  drivers/phy/phy-inno-hdmi.c                        | 298 +++++++++++
+>  drivers/phy/rockchip/Kconfig                       |   1 +
+>  drivers/phy/rockchip/phy-rockchip-inno-hdmi.c      | 168 +-----
+>  drivers/phy/starfive/Kconfig                       |  20 +
+>  drivers/phy/starfive/Makefile                      |   1 +
+>  drivers/phy/starfive/phy-jh7110-inno-hdmi.c        | 579 +++++++++++++++++++++
+>  drivers/soc/Kconfig                                |   1 +
+>  drivers/soc/Makefile                               |   1 +
+>  drivers/soc/starfive/Kconfig                       |  43 ++
+>  drivers/soc/starfive/Makefile                      |   3 +
+>  drivers/soc/starfive/jh7110-hdmi-subsystem.c       |  73 +++
+>  drivers/soc/starfive/jh7110-vout-subsystem.c       |  82 +++
+>  include/drm/bridge/inno_hdmi.h                     |  10 +-
+>  include/linux/phy/inno-hdmi-phy.h                  |  85 +++
+>  30 files changed, 2337 insertions(+), 188 deletions(-)
+> ---
+> base-commit: fd73f4a6659897191fa0d40695fe370925dd3780
+> change-id: 20251031-jh7110-clean-send-7d2242118026
+>
+> Best regards,
 
----
-Changes in v4:
-- Indent the register bitfield definitions so they are distinguishable
-  from the register offsets, and use lowercase hex.
-- Set PHY3S00_SRAM_EXT_LOAD rather than PHY3S00_SRAM_BYPASS. Bypassing
-  the SRAM leaves the PHY on the default RTL design configuration,
-  whereas the external load path applies the ROM patch so the PHY runs
-  the ROM configuration.
-- Describe the SRAM handshake in the commit message, answering Andrew's
-  question on v2 about why the driver waits for the SRAM to initialise.
----
- drivers/phy/Kconfig                  |   1 +
- drivers/phy/Makefile                 |   1 +
- drivers/phy/aspeed/Kconfig           |  15 +++
- drivers/phy/aspeed/Makefile          |   2 +
- drivers/phy/aspeed/phy-aspeed-usb3.c | 236 +++++++++++++++++++++++++++++++++++
- 5 files changed, 255 insertions(+)
+By the way, something weird happenined while I applied the patches
+using git am. Somehow, some were out of order. The 10th patch
+adding .mode_valid tried to be applied before .disable even though
+in the series, the order is correctly set? git would obviously
+fail because the .disable entry did not exist in the header, so I had
+to manually put those in.
 
-diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-index 19f3b7d12b7d..85fa381978f8 100644
---- a/drivers/phy/Kconfig
-+++ b/drivers/phy/Kconfig
-@@ -171,6 +171,7 @@ config PHY_XGENE
- source "drivers/phy/allwinner/Kconfig"
- source "drivers/phy/amlogic/Kconfig"
- source "drivers/phy/apple/Kconfig"
-+source "drivers/phy/aspeed/Kconfig"
- source "drivers/phy/axiado/Kconfig"
- source "drivers/phy/broadcom/Kconfig"
- source "drivers/phy/cadence/Kconfig"
-diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-index d7aa516bcc49..c6dd02003bbe 100644
---- a/drivers/phy/Makefile
-+++ b/drivers/phy/Makefile
-@@ -23,6 +23,7 @@ obj-$(CONFIG_PHY_XGENE)			+= phy-xgene.o
- obj-$(CONFIG_GENERIC_PHY)		+= allwinner/	\
- 					   amlogic/	\
- 					   apple/	\
-+					   aspeed/	\
- 					   axiado/	\
- 					   broadcom/	\
- 					   cadence/	\
-diff --git a/drivers/phy/aspeed/Kconfig b/drivers/phy/aspeed/Kconfig
-new file mode 100644
-index 000000000000..7b5f48db2be8
---- /dev/null
-+++ b/drivers/phy/aspeed/Kconfig
-@@ -0,0 +1,15 @@
-+# SPDX-License-Identifier: GPL-2.0-only
-+
-+#
-+# PHY drivers for ASPEED
-+#
-+
-+config PHY_ASPEED_USB3
-+	tristate "ASPEED USB3 PHY driver"
-+	select GENERIC_PHY
-+	depends on (ARCH_ASPEED || COMPILE_TEST)
-+	help
-+	  Enable this to support the USB 3.2 PHY on the Aspeed AST2700 SoC.
-+	  It supports SuperSpeedPlus Gen2x1 (10 Gbps), SuperSpeed (5 Gbps),
-+	  High Speed (480 Mbps), Full Speed (12 Mbps) and Low Speed
-+	  (1.5 Mbps), and is paired with the DWC3 USB controller.
-diff --git a/drivers/phy/aspeed/Makefile b/drivers/phy/aspeed/Makefile
-new file mode 100644
-index 000000000000..d96d9d73a009
---- /dev/null
-+++ b/drivers/phy/aspeed/Makefile
-@@ -0,0 +1,2 @@
-+# SPDX-License-Identifier: GPL-2.0
-+obj-$(CONFIG_PHY_ASPEED_USB3)		+= phy-aspeed-usb3.o
-diff --git a/drivers/phy/aspeed/phy-aspeed-usb3.c b/drivers/phy/aspeed/phy-aspeed-usb3.c
-new file mode 100644
-index 000000000000..6f371cae02f3
---- /dev/null
-+++ b/drivers/phy/aspeed/phy-aspeed-usb3.c
-@@ -0,0 +1,236 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright 2026 Aspeed Technology Inc.
-+ */
-+
-+#include <linux/bitfield.h>
-+#include <linux/clk.h>
-+#include <linux/io.h>
-+#include <linux/iopoll.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/reset.h>
-+
-+#define PHY3S00				0x00
-+#define  PHY3S00_INIT_DONE		BIT(15)
-+#define  PHY3S00_SRAM_BYPASS		BIT(7)
-+#define  PHY3S00_SRAM_EXT_LOAD		BIT(6)
-+#define PHY3S04				0x04
-+#define PHY3C00				0x08
-+#define PHY3C04				0x0c
-+#define PHY3P00				0x10
-+#define  PHY3P00_RX_ADAPT_AFE_EN_G1	BIT(0)
-+#define  PHY3P00_RX_ADAPT_AFE_EN_G2	BIT(1)
-+#define  PHY3P00_RX_ADAPT_DFE_EN_G1	BIT(2)
-+#define  PHY3P00_RX_ADAPT_DFE_EN_G2	BIT(3)
-+#define  PHY3P00_RX_CDR_VCO_LOWFREQ_G1	BIT(4)
-+#define  PHY3P00_RX_CDR_VCO_LOWFREQ_G2	BIT(5)
-+#define  PHY3P00_RX_EQ_AFE_GAIN_G1	GENMASK(9, 6)
-+#define  PHY3P00_RX_EQ_AFE_GAIN_G2	GENMASK(13, 10)
-+#define  PHY3P00_RX_EQ_ATT_LVL_G1	GENMASK(16, 14)
-+#define  PHY3P00_RX_EQ_ATT_LVL_G2	GENMASK(19, 17)
-+#define  PHY3P00_RX_EQ_CTLE_BOOST_G1	GENMASK(24, 20)
-+#define  PHY3P00_RX_EQ_CTLE_BOOST_G2	GENMASK(29, 25)
-+#define  PHY3P00_RX_EQ_DELTA_IQ_G1_LO	GENMASK(31, 30)
-+
-+#define PHY3P04				0x14
-+#define  PHY3P04_RX_EQ_DELTA_IQ_G1_HI	GENMASK(1, 0)
-+#define  PHY3P04_RX_EQ_DELTA_IQ_G2	GENMASK(5, 2)
-+#define  PHY3P04_RX_EQ_DFE_TAP1_G1	GENMASK(13, 6)
-+#define  PHY3P04_RX_EQ_DFE_TAP1_G2	GENMASK(21, 14)
-+#define  PHY3P04_RX_LOS_LFPS_EN		BIT(22)
-+#define  PHY3P04_RX_LOS_THRESHOLD	GENMASK(25, 23)
-+#define  PHY3P04_RX_TERM_CTRL		GENMASK(28, 26)
-+#define  PHY3P04_TX_EQ_MAIN_G1_LO	GENMASK(31, 29)
-+
-+#define PHY3P08				0x18
-+#define  PHY3P08_TX_EQ_MAIN_G1_HI	GENMASK(1, 0)
-+#define  PHY3P08_TX_EQ_MAIN_G2		GENMASK(6, 2)
-+#define  PHY3P08_TX_EQ_OVRD		BIT(7)
-+#define  PHY3P08_TX_EQ_POST_G1		GENMASK(12, 9)
-+#define  PHY3P08_TX_EQ_POST_G2		GENMASK(16, 13)
-+#define  PHY3P08_TX_EQ_PRE_G1		GENMASK(20, 17)
-+#define  PHY3P08_TX_EQ_PRE_G2		GENMASK(24, 21)
-+#define  PHY3P08_TX_IBOOST_LVL		GENMASK(28, 25)
-+#define  PHY3P08_TX_TERM_CTRL		GENMASK(31, 29)
-+
-+#define PHY3P0C				0x1c
-+#define  PHY3P0C_TX_VBOOST_EN		BIT(0)
-+
-+#define PHY3CMD				0x40
-+
-+#define PHY3P_RX_EQ_CTLE_BOOST_G1_DEFAULT	0x7
-+#define PHY3P_RX_EQ_CTLE_BOOST_G2_DEFAULT	0x7
-+#define PHY3P_RX_EQ_DELTA_IQ_G1_DEFAULT		0x3
-+#define PHY3P_RX_EQ_DELTA_IQ_G2_DEFAULT		0x5
-+#define PHY3P_RX_LOS_THRESHOLD_DEFAULT		0x3
-+#define PHY3P_RX_TERM_CTRL_DEFAULT		0x2
-+#define PHY3P_TX_EQ_MAIN_G1_DEFAULT		0xa
-+#define PHY3P_TX_EQ_MAIN_G2_DEFAULT		0x9
-+#define PHY3P_TX_EQ_POST_G1_DEFAULT		0x4
-+#define PHY3P_TX_EQ_POST_G2_DEFAULT		0x3
-+#define PHY3P_TX_EQ_PRE_G2_DEFAULT		0x2
-+#define PHY3P_TX_IBOOST_LVL_DEFAULT		0xf
-+#define PHY3P_TX_TERM_CTRL_DEFAULT		0x2
-+
-+#define PHY3P00_DEFAULT ( \
-+	PHY3P00_RX_ADAPT_AFE_EN_G1 | \
-+	PHY3P00_RX_ADAPT_AFE_EN_G2 | \
-+	PHY3P00_RX_ADAPT_DFE_EN_G1 | \
-+	PHY3P00_RX_ADAPT_DFE_EN_G2 | \
-+	FIELD_PREP(PHY3P00_RX_EQ_CTLE_BOOST_G1, PHY3P_RX_EQ_CTLE_BOOST_G1_DEFAULT) | \
-+	FIELD_PREP(PHY3P00_RX_EQ_CTLE_BOOST_G2, PHY3P_RX_EQ_CTLE_BOOST_G2_DEFAULT) | \
-+	FIELD_PREP(PHY3P00_RX_EQ_DELTA_IQ_G1_LO, \
-+		   PHY3P_RX_EQ_DELTA_IQ_G1_DEFAULT & 0x3) \
-+)
-+
-+#define PHY3P04_DEFAULT ( \
-+	FIELD_PREP(PHY3P04_RX_EQ_DELTA_IQ_G1_HI, \
-+		   PHY3P_RX_EQ_DELTA_IQ_G1_DEFAULT >> 2) | \
-+	FIELD_PREP(PHY3P04_RX_EQ_DELTA_IQ_G2, PHY3P_RX_EQ_DELTA_IQ_G2_DEFAULT) | \
-+	PHY3P04_RX_LOS_LFPS_EN | \
-+	FIELD_PREP(PHY3P04_RX_LOS_THRESHOLD, PHY3P_RX_LOS_THRESHOLD_DEFAULT) | \
-+	FIELD_PREP(PHY3P04_RX_TERM_CTRL, PHY3P_RX_TERM_CTRL_DEFAULT) | \
-+	FIELD_PREP(PHY3P04_TX_EQ_MAIN_G1_LO, \
-+		   PHY3P_TX_EQ_MAIN_G1_DEFAULT & 0x7) \
-+)
-+
-+#define PHY3P08_DEFAULT ( \
-+	FIELD_PREP(PHY3P08_TX_EQ_MAIN_G1_HI, PHY3P_TX_EQ_MAIN_G1_DEFAULT >> 3) | \
-+	FIELD_PREP(PHY3P08_TX_EQ_MAIN_G2, PHY3P_TX_EQ_MAIN_G2_DEFAULT) | \
-+	FIELD_PREP(PHY3P08_TX_EQ_POST_G1, PHY3P_TX_EQ_POST_G1_DEFAULT) | \
-+	FIELD_PREP(PHY3P08_TX_EQ_POST_G2, PHY3P_TX_EQ_POST_G2_DEFAULT) | \
-+	FIELD_PREP(PHY3P08_TX_EQ_PRE_G2, PHY3P_TX_EQ_PRE_G2_DEFAULT) | \
-+	FIELD_PREP(PHY3P08_TX_IBOOST_LVL, PHY3P_TX_IBOOST_LVL_DEFAULT) | \
-+	FIELD_PREP(PHY3P08_TX_TERM_CTRL, PHY3P_TX_TERM_CTRL_DEFAULT) \
-+)
-+
-+#define PHY3P0C_DEFAULT \
-+	PHY3P0C_TX_VBOOST_EN
-+
-+struct aspeed_usb3_phy {
-+	void __iomem *regs;
-+	struct reset_control *rst;
-+	struct device *dev;
-+	struct clk *clk;
-+};
-+
-+static int aspeed_usb3_phy_init(struct phy *phy)
-+{
-+	struct aspeed_usb3_phy *aspeed_phy = phy_get_drvdata(phy);
-+	u32 val;
-+	int ret;
-+
-+	ret = clk_prepare_enable(aspeed_phy->clk);
-+	if (ret) {
-+		dev_err(aspeed_phy->dev, "Failed to enable clock %d\n", ret);
-+		return ret;
-+	}
-+
-+	ret = reset_control_deassert(aspeed_phy->rst);
-+	if (ret)
-+		goto err_disable_clk;
-+
-+	/* Wait for USB3 PHY internal SRAM initialization done */
-+	ret = readl_poll_timeout(aspeed_phy->regs + PHY3S00, val,
-+				 val & PHY3S00_INIT_DONE,
-+				 USEC_PER_MSEC, 10 * USEC_PER_MSEC);
-+	if (ret) {
-+		dev_err(aspeed_phy->dev, "SRAM init timeout\n");
-+		goto err_assert_reset;
-+	}
-+
-+	val = readl(aspeed_phy->regs + PHY3S00);
-+	val |= PHY3S00_SRAM_EXT_LOAD;
-+	writel(val, aspeed_phy->regs + PHY3S00);
-+
-+	/* Set protocol1_ext signals as default PHY3 settings based on SNPS documents.
-+	 * Including PCFGI[54]: protocol1_ext_rx_los_lfps_en for better compatibility
-+	 */
-+	writel(PHY3P00_DEFAULT, aspeed_phy->regs + PHY3P00);
-+	writel(PHY3P04_DEFAULT, aspeed_phy->regs + PHY3P04);
-+	writel(PHY3P08_DEFAULT, aspeed_phy->regs + PHY3P08);
-+	writel(PHY3P0C_DEFAULT, aspeed_phy->regs + PHY3P0C);
-+
-+	return 0;
-+
-+err_assert_reset:
-+	reset_control_assert(aspeed_phy->rst);
-+err_disable_clk:
-+	clk_disable_unprepare(aspeed_phy->clk);
-+	return ret;
-+}
-+
-+static int aspeed_usb3_phy_exit(struct phy *phy)
-+{
-+	struct aspeed_usb3_phy *aspeed_phy = phy_get_drvdata(phy);
-+
-+	reset_control_assert(aspeed_phy->rst);
-+	clk_disable_unprepare(aspeed_phy->clk);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops aspeed_usb3_phy_ops = {
-+	.init		= aspeed_usb3_phy_init,
-+	.exit		= aspeed_usb3_phy_exit,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static int aspeed_usb3_phy_probe(struct platform_device *pdev)
-+{
-+	struct aspeed_usb3_phy *aspeed_phy;
-+	struct phy_provider *phy_provider;
-+	struct device *dev = &pdev->dev;
-+	struct phy *phy;
-+
-+	aspeed_phy = devm_kzalloc(dev, sizeof(*aspeed_phy), GFP_KERNEL);
-+	if (!aspeed_phy)
-+		return -ENOMEM;
-+
-+	aspeed_phy->dev = dev;
-+
-+	aspeed_phy->clk = devm_clk_get(dev, NULL);
-+	if (IS_ERR(aspeed_phy->clk))
-+		return PTR_ERR(aspeed_phy->clk);
-+
-+	aspeed_phy->rst = devm_reset_control_get_exclusive(dev, NULL);
-+	if (IS_ERR(aspeed_phy->rst))
-+		return PTR_ERR(aspeed_phy->rst);
-+
-+	aspeed_phy->regs = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(aspeed_phy->regs))
-+		return PTR_ERR(aspeed_phy->regs);
-+
-+	phy = devm_phy_create(dev, NULL, &aspeed_usb3_phy_ops);
-+	if (IS_ERR(phy))
-+		return PTR_ERR(phy);
-+
-+	phy_set_drvdata(phy, aspeed_phy);
-+
-+	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+	return PTR_ERR_OR_ZERO(phy_provider);
-+}
-+
-+static const struct of_device_id aspeed_usb3_phy_match_table[] = {
-+	{
-+		.compatible = "aspeed,ast2700-usb3-phy",
-+	},
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(of, aspeed_usb3_phy_match_table);
-+
-+static struct platform_driver aspeed_usb3_phy_driver = {
-+	.probe		= aspeed_usb3_phy_probe,
-+	.driver		= {
-+		.name	= KBUILD_MODNAME,
-+		.of_match_table	= aspeed_usb3_phy_match_table,
-+	},
-+};
-+module_platform_driver(aspeed_usb3_phy_driver);
-+
-+MODULE_LICENSE("GPL");
-+MODULE_DESCRIPTION("ASPEED USB3.2 PHY Driver");
-+MODULE_AUTHOR("Ryan Chen <ryan_chen@aspeedtech.com>");
-
--- 
-2.34.1
-
+I guess it's possible that something went wrong here? I personally
+pulled the mailbox from the lore.kernel.org mbox.gz file.
 
 -- 
 linux-phy mailing list
