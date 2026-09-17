@@ -4,153 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D976FC982CF
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Sep 2026 12:06:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD60FC88E72
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Sep 2026 12:29:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yNFXLNpNM3AdT2wVZJsUG9C/F7hQbWWAlO20xAWvjrM=; b=phVx2ujzkfzBGe
-	261yhr0n2qnFWabG6E2O7DpZsN1XCpvkcd+pNtHKqAWnglafllJ2DtN39x1jACeu/4HuMfPK1vhfo
-	wkklWUD2x64t27G2QBcZFkDQPqelfJr9jXDv5GXWU6wCfSd7UYMDbwBEkSIbEWhv83g3XczPDBVE/
-	ess6t0GsAbI07K5tmaWbgn/NBsQHw6Px+lIaHsw65+UsOCotAk1D6dqR1egsYMJViTL8nsPul+ypQ
-	UuMhtZVTjA2SEZE4O07dQ2R+sLXZaRpLYYqjlGwlpvh63C1iMqHP5wisYoid1RejcSlW8RxuXpuub
-	GFiQTLqSuoLjNy5HpmAA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=GP+EnTxumdQhuCXoKxpELYnBEcTZV9wEocoMo8rBUyw=; b=RD+fmtaHP2fiKnWErsFxP3e6wX
+	szuirDHcuH9CBAljVEO6IH7m968t8Tnl2jW9JafOX+rXz70cxc7CNolPA2NHqAizoVaqzhz5WHxzi
+	w92kUFau5tiX7qo3QkWhFiY+p+s2uiZSGtssZq80IKCa5hOMjDdo/Rhn3wnGDcp/tTJUjHEAaskP/
+	Phoi/gh4s6GabcMPHN0O6tMu1LjUzVMTVssbIFTP3d9JuG3aWzQfZLhNG5K4FDtbqTqxXXgPJi9Fq
+	076SAdU5phXFdQiYZg4YqaaWldC9OFz033vY6cx6mfMiWSjELZwprYLUyzylsFS5nGSemLNJMzMP5
+	D7ygV56A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7Asc-0000000BFf7-2GRn;
-	Thu, 17 Sep 2026 12:06:18 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1x7BFU-0000000BIHK-1woY;
+	Thu, 17 Sep 2026 12:29:56 +0000
+Received: from mail-wm2-x10.google.com ([2a00:1450:4864:31::10])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7Asa-0000000BFeZ-15Zr
+	id 1x7BFS-0000000BIGb-2gYW
 	for linux-phy@lists.infradead.org;
-	Thu, 17 Sep 2026 12:06:17 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68H9Zvjc1390241
-	for <linux-phy@lists.infradead.org>; Thu, 17 Sep 2026 12:06:16 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	nP3wcx2p80nx+Tohacyx3IYJwpEKwRThxmKFCg9vGIo=; b=U7Uwg5eFG/pmFsnM
-	xjn7dPDCxwjwcnMVZJ9pEha6boZUgOzeEhD0h0Jw+xbO+nHih2NI6K+0bwLOoREq
-	AoIzbhQHSD+uRSNkJga4b3wv71i5fHxey2c2sr1/nF4Wh0KSFK1omFIkTI3FurZn
-	oUsA2iw08xh80L1FV8YVvQ2azYF88oexBO6K9l/yZjBb90O0+7uLGGm5PJlswt5C
-	LXxD5ghUGbpYy7NvyK5KAXltBWQVND9V7GdPiWfH6O/aohR69wQKIjkXsYLtMcYq
-	iBkUKHrH5QXfU9M2+29tgnp2r5mAQsaVkAy+ozJr8NOxqI3sWsI72Vle4eTrOl6l
-	iqCjdg==
-Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gqy2d4978-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 17 Sep 2026 12:06:15 +0000 (GMT)
-Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-38ea32e57e2so1694068a91.1
-        for <linux-phy@lists.infradead.org>; Thu, 17 Sep 2026 05:06:15 -0700 (PDT)
+	Thu, 17 Sep 2026 12:29:55 +0000
+Received: by mail-wm2-x10.google.com with SMTP id 5b1f17b1804b1-49e6598dd44so4293275e9.1
+        for <linux-phy@lists.infradead.org>; Thu, 17 Sep 2026 05:29:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1789646775; x=1790251575; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :content-type:mime-version:subject:date:from:from:to:cc:subject:date
+        d=linaro.org; s=google; t=1789648192; x=1790252992; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:organization
+         :autocrypt:content-language:references:cc:to:subject:reply-to:from
+         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=nP3wcx2p80nx+Tohacyx3IYJwpEKwRThxmKFCg9vGIo=;
-        b=cHKy7eDemufnolJ89npoJENJj3VJLpszP3X69WOPGnDyDKWk7wdoqTL1b9QtTS9ITO
-         Xb/npqa5lGfmBIbtbErrn2pPD3qp+QWpM0QuZjAZLWKsNyEJQ/qu+8Z1FD81AV6+TR6f
-         haufqo0J2d0q+MpSh0Axw40pHTePmFsjZevHx6c/d2Uw7xK3P28scx8LynOFNNgv894y
-         O2XQXZKGqLPQPs8q1vpjSIV2+evE9QcvxoGxvT+8ls/vm4V+B/XOpm4nRKUgw6Y8paok
-         +nQjbu2Pg7FlwA50zKZcbj2jbW83hoW4zDHjd3TIyX6Y5ZhtfB1QROX5YSOkrVaoq9Ws
-         gQkA==
+        bh=gC/Ov+71qXFh+qBimBh+DCQrBkKyOWQ85VQeOxH4dWo=;
+        b=l6ohTXPn+w9agVvUNYWPlyC2yYc4MhyLU1rorIk08OgKHd6pBNdgyljYtNiAIi3qZg
+         76sX13kZ4wfspLkHLpZfiTd3qzJKejdZkcnNUk4aKCR+yguZNd8lwjl7ko0GxtcfJ2YQ
+         yri3f0E18WEC4rDAmgqETJInhPmV+sIebsTUCs0gSAY6O5iFe7ZBw9L6VTkz7v2Twwwl
+         EtXguMEYnvKWPFtnQLPl3P/d0fZKTK5m/eRzndeUMtHG0Wcb7xSG3sl3GC32lQE6waDP
+         DOMMNO2uLhCACCT56dcElvrJ5m7djpxm5oBuu1sdnw6h2nZCn3IGbSfzdqJyXkKy3jTx
+         Z+PA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1789646775; x=1790251575;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :content-type:mime-version:subject:date:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=nP3wcx2p80nx+Tohacyx3IYJwpEKwRThxmKFCg9vGIo=;
-        b=ZCCJRSFO51GCh6ybAAzpfTFthS/hAniPZOTQfH4RywsDZSjT/28K73ShTzpS5NuQxL
-         kjENFDs3pFmki8+OVyK5XYSldSZhWgW34AZK5uJEXkyWRhlC6Dai5m7EYPa231KIdpPG
-         yZL5am+Hs/VdhtoV0xE36F/WpwQ9h/5Ai7Vb/TJbSIpVg7Cas0yVYDmXZ1bOkzveJJDi
-         EvGqEERWEFLUCCb/Mim2OY3cFprW+kb1KgmT8i9i/OP2rOoL6GujWsBPSueXyS4whtkD
-         1ZBLB26e2xfUZ0i5Vcp2uMMrMoPccIsa2/5AZbuDAVmEashZ4GrbJzJqk3cs0aJ6UDbv
-         NeLw==
-X-Forwarded-Encrypted: i=1; AKwUvBweHQA+Rx2AqNyjsLOet3l0nm4L9a2vrT1Y5Dpi9euMoPROHo/y9bWvVeco6RCTB1kW3ZtZyvVD9Js=@lists.infradead.org
-X-Gm-Message-State: AFuF++k818YB25LBQeTUG3oczUIW8JHuCzRMvgaIRUnBoWJkxROxHoO8
-	ynkUDojLiRvyvdBanzZ102h/htMW3RnXHWDuevkRpUK52/tZ6ml+Qdo2Hd4uvTrCE3uTy8H0EgE
-	vz/porGUEYyP4aEmYdelolw2AyQbcgOw9ejcbboZYvwjz7vr4Mb+QozwiirvJdkPJlhPC1O4maM
-	BR
-X-Gm-Gg: AYBFou3VtzYqD1XsaiH7HsWM3MKyEWTXvS6FT0qnmUsCvNwsYboUl9Z5Q0G0x2386si
-	rAi5FkrH3B34XsoE7i504kXww/94xVnCz2Cv/OsGxIRnVDCqGulZS9aUhCLflfRQzj4JYxMt/7C
-	s2MZYZXnA7bKfe2EwKk0b7fhhpAcmw824FSEYOD9ZnL2p8j89mGw9y+sxXYcGSEuWY0Emc9wxym
-	ZyTqtNokK9BSDamMHOzPedE3HawSkGbT2hrd1TN83/4TeHwcsRM0+os2vJO5gCHSIeDutqczOMj
-	80fDBo3eL/Lw5O0c9Hv+wgAJsiwP5eIT1RI7vB9+W40U6OFmPt0huw0Wl7Rnqav8isQx+j4J6X8
-	KtEXkz1YEdcOIcgrFdn3OmxvOcjaKaQ==
-X-Received: by 2002:a17:90b:4e88:b0:398:cb56:e92 with SMTP id 98e67ed59e1d1-39e1e30ba45mr15795506a91.11.1789646774862;
-        Thu, 17 Sep 2026 05:06:14 -0700 (PDT)
-X-Received: by 2002:a17:90b:4e88:b0:398:cb56:e92 with SMTP id 98e67ed59e1d1-39e1e30ba45mr15795404a91.11.1789646774273;
-        Thu, 17 Sep 2026 05:06:14 -0700 (PDT)
-Received: from hu-nihalkum-hyd.qualcomm.com ([202.46.23.25])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-39e35d9869csm5007612a91.4.2026.09.17.05.06.08
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 17 Sep 2026 05:06:13 -0700 (PDT)
-From: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
-Date: Thu, 17 Sep 2026 17:35:43 +0530
-Subject: [PATCH v3 3/3] media: qcom: camss: Add Glymur compatible
+        d=1e100.net; s=20260707; t=1789648192; x=1790252992;
+        h=content-transfer-encoding:content-type:in-reply-to:organization
+         :autocrypt:content-language:references:cc:to:subject:reply-to:from
+         :user-agent:mime-version:date:message-id:x-gm-gg:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=gC/Ov+71qXFh+qBimBh+DCQrBkKyOWQ85VQeOxH4dWo=;
+        b=o1SKHa3z6hQ5IiBsoiieIhaTXXmDFwkfjRvJuWg+pkQTmf3fJQSnF91vHI4xjx/oMU
+         YWfigJZVYlxeKhsUrXl91SftsVI1dDFdNoEgYuAgzo1Muqg40btl7b4CT5zBy3YJfjuo
+         JBlEt+Kckd4iXwAlwieNWv3nUMPV9S3dUTHb1bc0xXzIlsxMZBVnDyuHFQssDpfBGcL6
+         OT7M1B3i5Dnmd3M1PIl1v/PZ3Yb1H9BHgh5DRA9SIsE4MJC/VyL07hTZh7s3SvtAEJ+T
+         03BNukgyQmJa1Eg/EXhqTt7ezn0sME2/pO40cDi9V4eOpYttq/4aoiJ0Ye3skKl7uEvT
+         7OvA==
+X-Forwarded-Encrypted: i=1; AKwUvByb8SRLMpyS5gTx9L/ZeEPGoQshh4sXnMPZGs+xkQ+mIQ/nYltzLDGA6QB6XhgAtbsB7ntPuugaSow=@lists.infradead.org
+X-Gm-Message-State: AFuF++lX2QuJLD4Qd4aZpvkccNOui+bgF5GeQkNYlC1UxFTDp59bkOiJ
+	9K/UJdnqZdLLR4SpjO0cw/+GyWW28qYlXy7krzP/p0w+3CxvpNs20lW2BAL4BjjhhbE=
+X-Gm-Gg: AYBFou1kK+hThRqQwanbomgTzQYoV9ZrmQ8f77XYZaYT1688a1+2kWMJTkslXqvtn4x
+	SBZaukeBPB4VbFozMcFfsHDBxZBgizmHAPlQOkVfoZkl0YlGw5ep7k/oEM1kCmfZ9Xdzg6sFdQ3
+	BfEjv0znV58JgAEIAo1aQN+Ocr+srpMU0fgOLhjgw37I3ZYLBXg62Tr43o2NmqU0QyuvuzM/8m0
+	MPsZgCSw1tooPWfZiw2FNIRCTSzVeWjsGFHQ2yb12morqgpPeUOk7ec0yHR4DDnSVhUTHer7h0Y
+	9ukip2bB9sH63IqXc7ee6y7mdGLk6y1IBvC3Is1uxGXh3ythmUJ/p9veUsETcyOEhF+ppc0oXr4
+	N7hd1Np11+TByyvYLcokszn8/VqV+G9yB9pGVZ3IetoW93grwPf9Cho76qyGPmvn1SqJB2VnoX0
+	0Xd9FXKVztBL3g8ZueAWSQCBw+neB+lF7teSuwC8uFqEkXlBo/98L96KBxshmRLtLIPY03qcZBF
+	oAzU8mgCw+Po9hm6hdRlPNC56M4GNkwsyHjvTOcEbXSAMzzTgJGkg==
+X-Received: by 2002:a05:600c:19c6:b0:49e:645e:2616 with SMTP id 5b1f17b1804b1-49eac463955mr74481465e9.5.1789648191941;
+        Thu, 17 Sep 2026 05:29:51 -0700 (PDT)
+Received: from ?IPV6:2a01:e0a:106d:1080:b5f0:971e:8fd2:f1c9? ([2a01:e0a:106d:1080:b5f0:971e:8fd2:f1c9])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-49fbd2563ccsm89340375e9.13.2026.09.17.05.29.50
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 17 Sep 2026 05:29:51 -0700 (PDT)
+Message-ID: <a06040ea-4af1-4083-9b69-7f62be7c9bce@linaro.org>
+Date: Thu, 17 Sep 2026 14:29:50 +0200
 MIME-Version: 1.0
-Message-Id: <20260917-glymur_camss-v3-3-1d0e2d47ad2e@oss.qualcomm.com>
-References: <20260917-glymur_camss-v3-0-1d0e2d47ad2e@oss.qualcomm.com>
-In-Reply-To: <20260917-glymur_camss-v3-0-1d0e2d47ad2e@oss.qualcomm.com>
-To: Bryan O'Donoghue <bod@kernel.org>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
-        Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
-        Loic Poulain <loic.poulain@oss.qualcomm.com>,
-        Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>,
-        Vinod Koul <vkoul@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Manivannan Sadhasivam <mani@kernel.org>,
-        Mauro Carvalho Chehab <mchehab@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-media@vger.kernel.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-phy@lists.infradead.org,
-        Suresh Vankadara <svankada@qti.qualcomm.com>,
-        Vikram Sharma <vikram.sharma@oss.qualcomm.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1789646750; l=1214;
- i=nihal.gupta@oss.qualcomm.com; s=20260608; h=from:subject:message-id;
- bh=dRIORkLtErUy8tQv0r5xQE2yHwcn16W9lhrS1ITHzeE=;
- b=nxyrFl9h4+kkxs5v1Hz/1ajWuTIr1Gc8gWV7jz5BGt7loaxka1cQ5RhKwkSGqRpfQ/S++FVgB
- BxTRaBQ3SFkAdZaZdLczev5MWeJ67nyhFZkOh7hCbvax5qVUeDTvpig
-X-Developer-Key: i=nihal.gupta@oss.qualcomm.com; a=ed25519;
- pk=DIbyFMNwqU/iMvU/0pCQp2wmRVgtHFBT3PcSu+A+Ncw=
-X-Proofpoint-ORIG-GUID: yTft8i2qadjZtllCGvuzXd5BqQvbW1Tz
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTE3MDE2OSBTYWx0ZWRfX/LqqkqhCF1Y5
- OPeebLXfbb5MWKoSCSx0tufttJ7Wt32AItq++GtZyZJoL9zHybuDsCYQSx8S3fSx3MhgwIvEJ9p
- 8KpUY+PWk85y4FHSoa0Ye+rwmBbgLb4=
-X-Authority-Analysis: v=2.4 cv=HbeB3SE8 c=1 sm=1 tr=0 ts=6aabd7b7 cx=c_pps
- a=RP+M6JBNLl+fLTcSJhASfg==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
- a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
- a=EUspDBNiAAAA:8 a=xYyVevvQUQiUFKtwU9sA:9 a=QEXdDO2ut3YA:10
- a=iS9zxrgQBfv6-_F4QbHw:22
-X-Proofpoint-GUID: yTft8i2qadjZtllCGvuzXd5BqQvbW1Tz
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTE3MDE2OSBTYWx0ZWRfXw31nxK6j+mQD
- 8HISx6RbmzlLTKglvGW5yCN+HfSP9Ra8XfJwaY5DBGVHnyroURo5GFK2GKJw/UgkyKMXYaIQ71l
- g2lBbwjLf9aZWWP+u0bNctapkGuNG/t/W7R2gZX/d4drbnPH0v8znfKHvCcK3hJMnr0yLFI6klf
- LfUahO0NkMA+1JcB/QbMRIUWj+f/rtygBiGPw+PIWmsJmP8CDYlukVLbG0+cgoyK4fDQ0OzbFlF
- KikWxo5K9R3WRjiRH6GjhN2aElMDiRrXTy6Q0SJY0gl2egdE0Zv8sYCY8pmiRCjzJs66hv8XG9G
- 53Z3Dukp5FW7Bs7lcdTYT4sC8e5CcaZWwMAfBVx3DuNvGqeGbvPObADd/kAzZYRsvgZrEfHfXQW
- Nb0KBYQd/LdvnAbq8c1fgN1kl0UyGFhrfAMzF9gG5081Nv6DAsQXkFTrycQ4BoVyN1BTcDzunxq
- mx4cj7GmMfbzgnaQIgQ==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-09-17_02,2026-09-16_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 priorityscore=1501 bulkscore=0 spamscore=0 adultscore=0
- suspectscore=0 malwarescore=0 phishscore=0 clxscore=1015 lowpriorityscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2609170169
+User-Agent: Mozilla Thunderbird
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH v18 2/5] phy: core: Add phy_get_by_of_node()
+To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Robert Foss <rfoss@kernel.org>,
+ Todor Tomov <todor.too@gmail.com>, Mauro Carvalho Chehab
+ <mchehab@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>,
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+ Bryan O'Donoghue <bod@kernel.org>,
+ Loic Poulain <loic.poulain@oss.qualcomm.com>, Vinod Koul <vkoul@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Felipe Balbi <balbi@ti.com>,
+ Manivannan Sadhasivam <mani@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-media@vger.kernel.org, linux-phy@lists.infradead.org,
+ Krzysztof Kozlowski <krzk@kernel.org>
+References: <20260917-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v18-0-f85c9103177e@linaro.org>
+ <20260917-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v18-2-f85c9103177e@linaro.org>
+Content-Language: en-US, fr
+Autocrypt: addr=neil.armstrong@linaro.org; keydata=
+ xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
+ OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
+ Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
+ YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
+ GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
+ UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
+ GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
+ yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
+ QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
+ SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
+ 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
+ Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
+ oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
+ M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
+ 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
+ KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
+ 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
+ QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
+Organization: Linaro
+In-Reply-To: <20260917-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v18-2-f85c9103177e@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260917_050616_307519_0B443603 
-X-CRM114-Status: GOOD (  13.73  )
+X-CRM114-CacheID: sfid-20260917_052954_751270_FB770DFB 
+X-CRM114-Status: GOOD (  27.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -162,40 +139,186 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Glymur's camera subsystem hardware is a functional subset of X1E80100.
-TPG, CSID, VFE, CSID wrapper and ICC resources are shared; Glymur has
-three CSIPHY instances versus X1E80100's four.
+On 9/17/26 13:07, Bryan O'Donoghue wrote:
+> Add new function phy_get_by_of_node() allowing lookup of a phy by
+> device_node. Separates existing logic in _of_phy_get() into an internal
+> helper method _of_phy_get_with_args() to allow for reuse in new method.
+> 
+> Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+> ---
+>   drivers/phy/phy-core.c  | 95 +++++++++++++++++++++++++++++++++++++------------
+>   include/linux/phy/phy.h |  6 ++++
+>   2 files changed, 78 insertions(+), 23 deletions(-)
+> 
+> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+> index 89addd732bff3..490a7cde6d40a 100644
+> --- a/drivers/phy/phy-core.c
+> +++ b/drivers/phy/phy-core.c
+> @@ -606,22 +606,51 @@ int phy_validate(struct phy *phy, enum phy_mode mode, int submode,
+>   }
+>   EXPORT_SYMBOL_GPL(phy_validate);
+>   
+> +/**
+> + * _of_phy_get_with_args() - lookup and obtain a reference to a phy by of_phandle_args
+> + * @args: of_phandle_args to the phy
+> + *
+> + * Returns the phy from the provider's of_xlate, -ENODEV if disabled,
+> + * -EPROBE_DEFER if the provider is not yet registered.
+> + */
+> +static struct phy *_of_phy_get_with_args(struct of_phandle_args *args)
+> +{
+> +	struct phy *phy;
+> +	struct phy_provider *phy_provider;
+> +
+> +	lockdep_assert_held(&phy_provider_mutex);
+> +
+> +	phy_provider = of_phy_provider_lookup(args->np);
+> +	if (IS_ERR(phy_provider) || !try_module_get(phy_provider->owner))
+> +		return ERR_PTR(-EPROBE_DEFER);
+> +
+> +	if (!of_device_is_available(args->np)) {
+> +		dev_warn(phy_provider->dev, "Requested PHY is disabled\n");
+> +		phy = ERR_PTR(-ENODEV);
+> +		goto out_put_module;
+> +	}
+> +
+> +	phy = phy_provider->of_xlate(phy_provider->dev, args);
+> +
+> +out_put_module:
+> +	module_put(phy_provider->owner);
+> +
+> +	return phy;
+> +}
+> +
+>   /**
+>    * _of_phy_get() - lookup and obtain a reference to a phy by phandle
+>    * @np: device_node for which to get the phy
+>    * @index: the index of the phy
+>    *
+> - * Returns the phy associated with the given phandle value,
+> - * after getting a refcount to it or -ENODEV if there is no such phy or
+> - * -EPROBE_DEFER if there is a phandle to the phy, but the device is
+> - * not yet loaded. This function uses of_xlate call back function provided
+> - * while registering the phy_provider to find the phy instance.
+> + * Returns the phy associated with the given phandle value after getting
+> + * a refcount to it; -ENODEV if there is no such phy or the phy is
+> + * disabled; -EPROBE_DEFER if the phy provider is not yet available.
+>    */
 
-qcom,x1e80100-camss is not used as a fallback compatible since it is
-already claimed by its own binding schema, causing a duplicate
-compatible warning in the DT schema checker.
+Why changing the comment here ? You're not supposed to changes the _of_phy_get() behaviour.
 
-Signed-off-by: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
----
- drivers/media/platform/qcom/camss/camss.c | 1 +
- 1 file changed, 1 insertion(+)
+>   static struct phy *_of_phy_get(struct device_node *np, int index)
+>   {
+>   	int ret;
+> -	struct phy_provider *phy_provider;
+> -	struct phy *phy = NULL;
+> +	struct phy *phy;
+>   	struct of_phandle_args args;
+>   
+>   	lockdep_assert_held(&phy_provider_mutex);
+> @@ -637,22 +666,7 @@ static struct phy *_of_phy_get(struct device_node *np, int index)
+>   		goto out_put_node;
+>   	}
+>   
+> -	phy_provider = of_phy_provider_lookup(args.np);
+> -	if (IS_ERR(phy_provider) || !try_module_get(phy_provider->owner)) {
+> -		phy = ERR_PTR(-EPROBE_DEFER);
+> -		goto out_put_node;
+> -	}
+> -
+> -	if (!of_device_is_available(args.np)) {
+> -		dev_warn(phy_provider->dev, "Requested PHY is disabled\n");
+> -		phy = ERR_PTR(-ENODEV);
+> -		goto out_put_module;
+> -	}
+> -
+> -	phy = phy_provider->of_xlate(phy_provider->dev, &args);
+> -
+> -out_put_module:
+> -	module_put(phy_provider->owner);
+> +	phy = _of_phy_get_with_args(&args);
+>   
+>   out_put_node:
+>   	of_node_put(args.np);
+> @@ -1001,6 +1015,41 @@ struct phy *devm_of_phy_get_by_index(struct device *dev, struct device_node *np,
+>   }
+>   EXPORT_SYMBOL_GPL(devm_of_phy_get_by_index);
+>   
+> +/**
+> + * phy_get_by_of_node() - lookup and obtain a reference to a phy by device_node
+> + * @np: node containing the phy
+> + *
+> + * Returns the phy associated with the device node or ERR_PTR.
+> + */
+> +struct phy *phy_get_by_of_node(struct device_node *np)
+> +{
+> +	struct of_phandle_args args = { .np = np, .args_count = 0 };
+> +	struct phy *phy;
+> +
+> +	if (!np)
+> +		return ERR_PTR(-EINVAL);
+> +
+> +	mutex_lock(&phy_provider_mutex);
+> +
+> +	phy = _of_phy_get_with_args(&args);
+> +
+> +	if (IS_ERR(phy))
+> +		goto out_unlock;
+> +
+> +	if (!try_module_get(phy->ops->owner)) {
+> +		phy = ERR_PTR(-EPROBE_DEFER);
+> +		goto out_unlock;
+> +	}
+> +
+> +	get_device(&phy->dev);
+> +
+> +out_unlock:
+> +	mutex_unlock(&phy_provider_mutex);
+> +
+> +	return phy;
+> +}
+> +EXPORT_SYMBOL_GPL(phy_get_by_of_node);
+> +
+>   /**
+>    * phy_create() - create a new phy
+>    * @dev: device that is creating the new phy
+> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+> index ea47975e288ae..71c2e16397130 100644
+> --- a/include/linux/phy/phy.h
+> +++ b/include/linux/phy/phy.h
+> @@ -284,6 +284,7 @@ struct phy *devm_of_phy_optional_get(struct device *dev, struct device_node *np,
+>   				     const char *con_id);
+>   struct phy *devm_of_phy_get_by_index(struct device *dev, struct device_node *np,
+>   				     int index);
+> +struct phy *phy_get_by_of_node(struct device_node *np);
+>   void of_phy_put(struct phy *phy);
+>   void phy_put(struct device *dev, struct phy *phy);
+>   void devm_phy_put(struct device *dev, struct phy *phy);
+> @@ -493,6 +494,11 @@ static inline struct phy *devm_of_phy_get_by_index(struct device *dev,
+>   	return ERR_PTR(-ENOSYS);
+>   }
+>   
+> +static inline struct phy *phy_get_by_of_node(struct device_node *np)
+> +{
+> +	return ERR_PTR(-ENOSYS);
+> +}
+> +
+>   static inline void of_phy_put(struct phy *phy)
+>   {
+>   }
+> 
 
-diff --git a/drivers/media/platform/qcom/camss/camss.c b/drivers/media/platform/qcom/camss/camss.c
-index 2123f6388e3d7eafe669efd6b033e22d8eb5cf79..3585c63c45848793696fbdc3004ddc867a5f115c 100644
---- a/drivers/media/platform/qcom/camss/camss.c
-+++ b/drivers/media/platform/qcom/camss/camss.c
-@@ -5758,6 +5758,7 @@ static const struct of_device_id camss_dt_match[] = {
- 	{ .compatible = "qcom,sm8550-camss", .data = &sm8550_resources },
- 	{ .compatible = "qcom,sm8650-camss", .data = &sm8650_resources },
- 	{ .compatible = "qcom,x1e80100-camss", .data = &x1e80100_resources },
-+	{ .compatible = "qcom,glymur-camss", .data = &x1e80100_resources },
- 	{ }
- };
- 
+Apart that, looks good:
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
--- 
-2.34.1
-
+Thanks,
+Neil
 
 -- 
 linux-phy mailing list
