@@ -4,134 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63C99C982D6
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Sep 2026 15:42:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61ABCC982D2
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Sep 2026 17:22:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:From:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F507ldw9kwZtpi9PxkhJygEennu5Td+TQABNEuKvFn8=; b=bbBoM+29kXFN8v
-	Fpm1zigh9DQHTiXWH+yvCIPZwoSWGvzUr//N7yWll1iMHkyNPHUnnohnG22WMn89LvLW014pgbN49
-	DroJCZS/5jO6g8LgU0XsbY6gUij5nk9CQz09cjbyRllGW4Ga/B72jeWjRNLpqPODa8S7voNnEdBT7
-	Hu9WjwTjz8/WN3NVjKx1amD2N4E7yYn0YUES66fSp8LQ/a2fLNGdEL8lgSeDKiYIhcBl8meaCg12S
-	Ufdv7gCsFNQ5/wORc8eSFxR6y9GA5f0KH35gc4dLxOPTgq//Qc7GxHdn4P6lYEUm0AhDl4nc+JiXD
-	bFmFmz8cBEvTNAKmxEbg==;
+	List-Owner; bh=wzYXzwBLmm14VdWN6r+lPwU5tA2kIRD0vwn1mMT36rs=; b=4ajzqwNCDvp8kn
+	XuOgiY8nNK21QgPPT4Q7V+rHYLREpQvVRxypA+zJYOpRfQbTX0LaCFWd8F7W8ncLptmT8kTdeBC3m
+	kHO9uzaWqZcW9Zf181EgDbKAHbAY9Xsohj35ifTdWoyuJbchrRECrYooZWrG9NzX1fzpkICmF3E8b
+	IDZJgaY+oWmsyaHus5vgYMGoqaEeuzgkF6NaOkvCQyhlOBqg0XJYpV6INynUqg/dg8VgPTlm+1y5k
+	KVGHszNajMwnTeSC5RXHkr4ySdVu9tL8webUBiZdoA8IToDJCx6PQO3snu4qiWyOXg2kz4xmrWkvA
+	EL+cWEKT42Doc6GJqqrA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7EFU-0000000BjK2-009x;
-	Thu, 17 Sep 2026 15:42:08 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1x7FoQ-0000000C4kj-3CWc;
+	Thu, 17 Sep 2026 17:22:18 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7EFQ-0000000BjIB-3pFW
-	for linux-phy@lists.infradead.org;
-	Thu, 17 Sep 2026 15:42:06 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68HDk5Lk1955208
-	for <linux-phy@lists.infradead.org>; Thu, 17 Sep 2026 15:42:04 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=ufweLYnTw4iMO7Tb62UAUdjv
-	/zgqwscOalR3tmAiN7Q=; b=pX3BBD2bOtop6r9tZsVPcYwOh7p5C5nPCFFAn287
-	W0/Vfg09Z6xlmNMqDqm9O40jGb/SjJCs5nQZJ5WQm3TQussHr3x9zRBqL9RYTdBN
-	wLyvqtDpc9E4WRyd4QPwPGrmwuuqUR+T6RT/O7Z409/hZIpAzDudBin3N1Lx6n+Q
-	dbXyGmxDnevZenM/nB/WOe9mT9dldsS1DprDx1Y9C8NZCIlERqUOU6wqnMxF0+B+
-	w5HnwGwhLR6p1eZ9VS+IVhVY1Ll+v2GxMCce64r4E3fJTxchjIY9DZ8ZwY0KuYzg
-	T5qLnCt8qgVEhS73lPdq0RtuUGhtBzu3FQARJtcEbhOPmw==
-Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com [209.85.222.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4grgu5gseg-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 17 Sep 2026 15:42:04 +0000 (GMT)
-Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-936e393061dso155302585a.2
-        for <linux-phy@lists.infradead.org>; Thu, 17 Sep 2026 08:42:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1789659723; x=1790264523; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=ufweLYnTw4iMO7Tb62UAUdjv/zgqwscOalR3tmAiN7Q=;
-        b=fnv6Zu+UmDR8VwbMv9eqj0Pb4O7wXCzmRfpvRz5VMTJ0QCZYszKEHLAGndBk/TyRN9
-         DBCqPLYcXUXjBCwcn3gL9BYG/mG9VFS9PomO80VUA/R+U2RPDmg9aq+VXAr+p4x+9izj
-         JF59dBH1sHuCwz8x+AWo0d/8Ooo8RaFoIEHtQ+Wx6qJFikBJ3CYZJDwcShVV7Qnu7qZz
-         johxuGh6GrIDTXgxXUcngPxiTMS5NxjNGXFgi0VgUINPdQo13A97QMMqt266JjWn8BzJ
-         rNG0B55sWMdSTh8GXLFo+PRButrC5Y5t2ryJSK9ZxxUWB8g59RxBjQrJnRYD8640n+XL
-         +q9A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1789659723; x=1790264523;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=ufweLYnTw4iMO7Tb62UAUdjv/zgqwscOalR3tmAiN7Q=;
-        b=YDtgbrVGpx1q6lpuvvlTlBbTYzMDLfHtr1K9/zzorXIu7YE5OJrLL9nwf2Q0quWN22
-         1UjcrS0KpA3IddMkOjhoJ1JI2JFfObRCKExSbpAa0PvA4ecCghIQaZkQefc4oWoz8tYX
-         kC2OGePzv5B7nLj3n/JslHQ4Aaea4tUdcPhlXQmLUKTsPYooM1Lm1gzXfBY0P+5mWfG+
-         cne8QhBh8Flb55Qd0Bx6NkxTONj5CNehL7yB0grL1rZOASKj7WHTrujPxofJ3s5WLy2T
-         FKZqE/OEBUgT3IhdHskQpIJYYQcok5BoGLeioalsL+5HGy5mItSj6ti1uMEkq+U5J+qi
-         nZ1g==
-X-Forwarded-Encrypted: i=1; AKwUvBxpiD7QneKZbEMjjUEKutIjHLM7mj1CO6BGx5k8qQny9VoUjvYa6Z+UHqMTlpGKeMufistuLnEYclE=@lists.infradead.org
-X-Gm-Message-State: AFuF++m5my8/s0QkcixayTUhHkSO7iI/aWld3sWchmiFOisaFz1reK2G
-	FDFQhUCs8Nb7JOwQAmidO83BRO1KRjENKD1HwQTB+UWS2jZIX9WPi24m1vWVduldRSGSjA7ZJn/
-	f9lbhxlYRhgYa2hXkL6lmgbZzsdP4u7uu56p9dcc7z5wIQBBwG92TcrwS5DOmE4qnkWVU
-X-Gm-Gg: AYBFou1CRCXtEiMr4CpsrY7s41MoELfbgGgahtC9+aBZWM/bPH0ILmgQ4i60uKac8Pw
-	vb3Ed2ZA0My/6+A+4/VXv5oYxLVTQav51gvTbMhZ2CO0b24nAA/5kNvqaPVXbuBxA2pjVerSVC6
-	Nse1bzxgj0R4WmVcdLKUS1zZyvq3n5kBfLIb+Stb4VHLXhqcTS94Zzq5g5pNj2MOmCW0Lq0n30P
-	rtHPagXzp+SCZsmWSw1aREE5XMRfM7ADY8RWxtYEev4XAjx84DMHhxcOoTjDwUTps6LoUbw/sk5
-	D6Zr1uL6ViLQlKueUGHYHEsFtILFtzfQFkwvQb1p/zz8kQHVRYDqFyMyObgvB61K2mcyTVHbgkY
-	KAp4dTbmc7XXNWQ==
-X-Received: by 2002:a05:620a:1a07:b0:93b:d7a0:d9e6 with SMTP id af79cd13be357-93bd7a0efd3mr127258685a.64.1789659723225;
-        Thu, 17 Sep 2026 08:42:03 -0700 (PDT)
-X-Received: by 2002:a05:620a:1a07:b0:93b:d7a0:d9e6 with SMTP id af79cd13be357-93bd7a0efd3mr127254585a.64.1789659722689;
-        Thu, 17 Sep 2026 08:42:02 -0700 (PDT)
-Received: from oss.qualcomm.com ([86.121.170.232])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4870bef7642sm14897857f8f.5.2026.09.17.08.42.00
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 17 Sep 2026 08:42:01 -0700 (PDT)
-Date: Thu, 17 Sep 2026 18:42:00 +0300
-From: Abel Vesa <abel.vesa@oss.qualcomm.com>
-To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-        Manivannan Sadhasivam <mani@kernel.org>, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Subject: Re: [PATCH] phy: qualcomm: phy-qcom-eusb2-repeater: Fix SMB Power
- leakage issue
-Message-ID: <p2ehge32cq7tsjx5yg5kpue7hwc4b22zv737wkxq6x6m6uesje@m3ltespnmzfd>
-References: <20260917-smb-repeater-power-leakage-v1-1-6d7311c3c03e@oss.qualcomm.com>
+	id 1x7FoM-0000000C4jQ-321R;
+	Thu, 17 Sep 2026 17:22:17 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+	by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id 20260917172208euoutp0150132b34809348820d8ba580cbf71ba6~WK399rJ9Y0164201642euoutp01M;
+	Thu, 17 Sep 2026 17:22:08 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com 20260917172208euoutp0150132b34809348820d8ba580cbf71ba6~WK399rJ9Y0164201642euoutp01M
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1789665728;
+	bh=0WtKtiSzYCp277IiLimE78OZqsRgc7cWGLsFATmTw1E=;
+	h=Date:Subject:To:Cc:From:In-Reply-To:References:From;
+	b=VOxLMdss8ZyVY8BfR85gXrDrglNJ8tt+tRyIRy34jspUqU6Tu6fH7k4IIRxxxXpHz
+	 tavqrMHAweRf1Js/R3ZW2sD9k5Czxee/0C9FYVHtvUe/S5KKtnbQdi/kswqFi00MoB
+	 ulGFKEi5ek5Q3N8AhJ1OxMwZsSONTxYMV+bMrihk=
+Received: from eusmtip2.samsung.com (unknown [203.254.199.222]) by
+	eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+	20260917172208eucas1p2a1f43f12fe05dd5a7cb640c4cec85744~WK39uT1rB0077700777eucas1p2z;
+	Thu, 17 Sep 2026 17:22:08 +0000 (GMT)
+Received: from [192.168.1.44] (unknown [106.210.136.40]) by
+	eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+	20260917172206eusmtip266a4da637fbe5ad68f6836811ac14898~WK38DTFaD3000830008eusmtip2I;
+	Thu, 17 Sep 2026 17:22:06 +0000 (GMT)
+Message-ID: <136d6789-2f0c-4a91-ab2d-de3a3f119d5d@samsung.com>
+Date: Thu, 17 Sep 2026 19:22:05 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260917-smb-repeater-power-leakage-v1-1-6d7311c3c03e@oss.qualcomm.com>
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTE3MDIyMiBTYWx0ZWRfX8v7jG75Iyl6V
- V7FYlSQlGU39CJW2G0BF3+1ocEcedRunGoHETOKurAzq8ysgm8rnAiSGNJzJt+74K6ryPp0kIux
- 7TF6xCoplqsedWUwZJxODKZ0SnncgnA=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTE3MDIyMiBTYWx0ZWRfXxBNTOCbPoA7Q
- sBlEmpxfK7qh+tCZPGcrrGCLtFheFMaFf3zQMonSc5gsUdXY12KkfrXrD/33xaf7LtfjGo2GewT
- 9Is1w28ba8dROrpjH7TG2aDPhxORoXoFmqQsLlbiTPInBqsKhC6FZA8FDaSbvxI5VScsqAaeRlV
- vKi26u+Ftct4yHc3D4PHi3O6JLnCEZiP/bF53nvy0bEm5hZu0RV6dPXxyPY0W9IqqDjkhExBdN5
- jzj4WGq+26vlzWHeb4AUdvIcmhQbMtmEs6mL9JdqJAJH05QGEGKpF7IF/mrzcME1VxIzZPGQYU5
- wUhJIbAj+8LyT4DOXr+vmKd8IFsFUVYgFy3a4lAYnJrJD4VgIZDKqLm/U8LRv9MQJK8gqduEq/L
- NUtBDHexvSYIwQPmaCHWX/XJROyw//fSl0rqmz8OHSruwcOw19jmgyecPUYB1JYmnOIsgNXLODq
- lKLOyTOO6B74WBpRUjQ==
-X-Proofpoint-GUID: VFghxMfIM3_dPCNzLyyVKab8SW8fe8-2
-X-Authority-Analysis: v=2.4 cv=GvbXaU1C c=1 sm=1 tr=0 ts=6aac0a4c cx=c_pps
- a=qKBjSQ1v91RyAK45QCPf5w==:117 a=po8fGBi+ks8MzcVQGuqtFQ==:17
- a=kj9zAlcOel0A:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
- a=EUspDBNiAAAA:8 a=-Z6o2aUFVE64cP8LY08A:9 a=CjuIK1q_8ugA:10
- a=NFOGd7dJGGMPyQGDc5-O:22
-X-Proofpoint-ORIG-GUID: VFghxMfIM3_dPCNzLyyVKab8SW8fe8-2
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-09-17_03,2026-09-16_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 phishscore=0 adultscore=0 spamscore=0 impostorscore=0
- bulkscore=0 clxscore=1015 suspectscore=0 lowpriorityscore=0 malwarescore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2609170222
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 00/20] drm: starfive: jh7110: Enable display
+ subsystem
+To: Joshua Peisach <jpeisach@ubuntu.com>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+	<conor+dt@kernel.org>, Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss
+	<rfoss@kernel.org>, Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>, Maarten Lankhorst
+	<maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>, Lee Jones <lee@kernel.org>, Andy
+	Yan <andy.yan@rock-chips.com>, Philipp Zabel <p.zabel@pengutronix.de>, Emil
+	Renner Berthing <kernel@esmil.dk>, Hal Feng <hal.feng@starfivetech.com>,
+	Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+	<sboyd@kernel.org>, Heiko Stuebner <heiko@sntech.de>, Paul Walmsley
+	<pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou
+	<aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>, Dominique
+	Belhachemi <db@domibel.de>, Brian Masney <bmasney+clk@redhat.com>, Jerome
+	Brunet <jbrunet+clk@baylibre.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+	mfd@lists.linux.dev, linux-clk@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+	linux-riscv@lists.infradead.org, Marek Szyprowski
+	<m.szyprowski@samsung.com>, Maud Spierings <maud_spierings@murena.io>,
+	Graham Markall <hello@big-grey.co.uk>, Icenowy Zheng
+	<zhengxingda@iscas.ac.cn>, Chaoyi Chen <chaoyi.chen@rock-chips.com>,
+	=?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
+Content-Language: en-US
+From: Michal Wilczynski <m.wilczynski@samsung.com>
+In-Reply-To: <DLGBPXP4F8E0.9X0QMZ9GFQVF@ubuntu.com>
+X-CMS-MailID: 20260917172208eucas1p2a1f43f12fe05dd5a7cb640c4cec85744
+X-Msg-Generator: CA
+X-RootMTR: 20260915153213eucas1p148f013af239a334fc78cdc249c0f8a61
+X-EPHeader: CA
+X-CMS-RootMailID: 20260915153213eucas1p148f013af239a334fc78cdc249c0f8a61
+References: <CGME20260915153213eucas1p148f013af239a334fc78cdc249c0f8a61@eucas1p1.samsung.com>
+	<20260915-jh7110-clean-send-v4-0-f0e4fd6f2cc8@samsung.com>
+	<DLGBPXP4F8E0.9X0QMZ9GFQVF@ubuntu.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260917_084204_961285_C9B36B51 
-X-CRM114-Status: GOOD (  10.09  )
+X-CRM114-CacheID: sfid-20260917_102215_362316_7E0EC3D9 
+X-CRM114-Status: GOOD (  21.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,16 +107,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26-09-17 15:10:09, Krishna Kurapati wrote:
-> On Glymur, it is observed that although the exit call is done, there is a
-> power leakage seen on SMB2370 charger (which embeds the eUSB2 module as
-> well). As per recommendation of HW team, disable the repeater during the
-> exit call to prevent this power leakage.
-> 
-> Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-> Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
 
-Reviewed-by: Abel Vesa <abel.vesa@oss.qualcomm.com>
+
+On 9/16/26 02:45, Joshua Peisach wrote:
+> On Tue Sep 15, 2026 at 11:32 AM EDT, Michal Wilczynski wrote:
+>>
+>> Testing
+>> =======
+>>
+>> Tested on a VisionFive 2 v1.3B using modetest.
+> 
+> I.. got nothing. I did have to manually modprobe the modules, but
+> unless I am doing something wrong.. I didn't get anything and modetest
+> just gave -2.
+
+Hmm have you also changed the DTB not just the kernel and the modules
+(you can also built in everything).
+
+Also note modetest needs -M verisilicon.
+
+If that is not it, could you send "dmesg | grep -iE
+'verisilicon|inno|hdmi|vout'" and "ls /sys/class/drm/"?
+
+> 
+>> ---
+>> Michal Wilczynski (20):
+>>       dt-bindings: phy: Add starfive,jh7110-inno-hdmi-phy
+>>       dt-bindings: display: bridge: Add starfive,jh7110-inno-hdmi-controller
+>>       dt-bindings: mfd: Add starfive,jh7110-hdmi-subsystem
+>>       dt-bindings: soc: starfive: Add starfive,jh7110-vout-syscon
+>>       dt-bindings: display: verisilicon: Add starfive,jh7110-dc8200
+>>       dt-bindings: soc: starfive: Add starfive,jh7110-vout-subsystem
+>>       drm/bridge: inno-hdmi: Split probe out of bind
+>>       drm/bridge: inno-hdmi: Allow the register map to come from a parent
+>>       drm/bridge: inno-hdmi: Add .disable platform operation
+>>       drm/bridge: inno-hdmi: Add .mode_valid platform operation
+>>       drm/bridge: inno-hdmi: Make the PHY configuration table optional
+>>       soc: starfive: Add jh7110-hdmi-subsystem driver
+>>       soc: starfive: Add jh7110-vout-subsystem driver
+>>       clk: starfive: jh7110-vout: Allow pixel clock rate propagation
+>>       drm/bridge: starfive: Add JH7110 HDMI controller driver
+>>       phy: Add common Innosilicon HDMI PHY helpers
+>>       phy: rockchip: inno-hdmi: Use the common Innosilicon PHY helpers
+>>       phy: starfive: Add jh7110-inno-hdmi-phy driver
+>>       riscv: dts: starfive: jh7110: Update DT for display subsystem
+>>       MAINTAINERS: Add StarFive JH7110 display subsystem entry
+>>
+>>  .../starfive,jh7110-inno-hdmi-controller.yaml      | 121 +++++
+>>  .../bindings/display/verisilicon,dc.yaml           |   1 +
+>>  .../mfd/starfive,jh7110-hdmi-subsystem.yaml        |  95 ++++
+>>  .../phy/starfive,jh7110-inno-hdmi-phy.yaml         |  49 ++
+>>  .../soc/starfive/starfive,jh7110-syscon.yaml       |   1 +
+>>  .../starfive/starfive,jh7110-vout-subsystem.yaml   | 218 ++++++++
+>>  MAINTAINERS                                        |  13 +
+>>  arch/riscv/boot/dts/starfive/jh7110-common.dtsi    | 121 ++++-
+>>  arch/riscv/boot/dts/starfive/jh7110.dtsi           | 105 +++-
+>>  drivers/clk/starfive/clk-starfive-jh7110-vout.c    |   6 +-
+>>  drivers/gpu/drm/bridge/Kconfig                     |  11 +
+>>  drivers/gpu/drm/bridge/Makefile                    |   1 +
+>>  drivers/gpu/drm/bridge/inno-hdmi.c                 | 112 +++-
+>>  drivers/gpu/drm/bridge/jh7110-inno-hdmi.c          | 297 +++++++++++
+>>  drivers/phy/Kconfig                                |   8 +
+>>  drivers/phy/Makefile                               |   1 +
+>>  drivers/phy/phy-inno-hdmi.c                        | 298 +++++++++++
+>>  drivers/phy/rockchip/Kconfig                       |   1 +
+>>  drivers/phy/rockchip/phy-rockchip-inno-hdmi.c      | 168 +-----
+>>  drivers/phy/starfive/Kconfig                       |  20 +
+>>  drivers/phy/starfive/Makefile                      |   1 +
+>>  drivers/phy/starfive/phy-jh7110-inno-hdmi.c        | 579 +++++++++++++++++++++
+>>  drivers/soc/Kconfig                                |   1 +
+>>  drivers/soc/Makefile                               |   1 +
+>>  drivers/soc/starfive/Kconfig                       |  43 ++
+>>  drivers/soc/starfive/Makefile                      |   3 +
+>>  drivers/soc/starfive/jh7110-hdmi-subsystem.c       |  73 +++
+>>  drivers/soc/starfive/jh7110-vout-subsystem.c       |  82 +++
+>>  include/drm/bridge/inno_hdmi.h                     |  10 +-
+>>  include/linux/phy/inno-hdmi-phy.h                  |  85 +++
+>>  30 files changed, 2337 insertions(+), 188 deletions(-)
+>> ---
+>> base-commit: fd73f4a6659897191fa0d40695fe370925dd3780
+>> change-id: 20251031-jh7110-clean-send-7d2242118026
+>>
+>> Best regards,
+> 
+> By the way, something weird happenined while I applied the patches
+> using git am. Somehow, some were out of order. The 10th patch
+> adding .mode_valid tried to be applied before .disable even though
+> in the series, the order is correctly set? git would obviously
+> fail because the .disable entry did not exist in the header, so I had
+> to manually put those in.
+> 
+> I guess it's possible that something went wrong here? I personally
+> pulled the mailbox from the lore.kernel.org mbox.gz file.
+
+I would recommend using b4 shazam instead
+
+> 
+
+Best regards,
+-- 
+Michal Wilczynski <m.wilczynski@samsung.com>
 
 -- 
 linux-phy mailing list
