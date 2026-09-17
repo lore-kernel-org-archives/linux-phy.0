@@ -4,126 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BFE4C982D6
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Sep 2026 14:41:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00A41C88E72
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Sep 2026 14:45:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lrnm1ca3HQevmB9/o4vkSeA7LK3o4ovIvsWYCKay2cE=; b=PHgCvU1v7/OHx3
-	4U+Hnlafdmwu9MQM+CyBwxlB7xoaCeb55WaguxKRfrQ86BXUvY/OEwjQkjw7Adcagg+aubfA1qCPQ
-	LCq0dFNIru1herjao37z31yxeDtxk66A7iDPOkodJcGJIp+biB7wqbku7UhX9ubk+qz0UIOe0BXBH
-	yGwZemnm25ruwyGM8XYqqcAJwcxOQSYK6UPuc8tgRhokabVw/0aCHQyQqYWcOrdRs9nOrIvOmLLm+
-	QQQiLmU+INfwpscv20ld+x0L8tgNb5ykLdamqlbqat5EUWnOm0tquNshzW/ONlMqD2UWul4MxqKWF
-	8SNkayDrMPOUCbS5MXxw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XYtTvZdMxk4yoenQA3MOdH97sX+L7zcSR4bAexTU0SY=; b=4gMJJwLTA52AwB
+	LvrUcEsWzfUWYmxfph/lf5rQqbu+Heoi8DsvWabyj4KG7wM+x2fnKTzVHy3j2HqITHS3+q0+Fr9um
+	7gPv2WJ5bPfLaHdreXIbi6xBNSqa9aMOVjgLe2wVB7rTTAL73Y87hpbGnLeop+TgLxwi0y6aQ60Qh
+	93f88USol2eW6WD2muIEGkB3YV4LtJBpOfW4PIyQC/eBg8JpvJLG+Wb1upB4Z2/Nan2TgjY1yK7Q3
+	aXOj/VS8kXI6Tajh6yTzL0B6bmKBPTEUIOMVCrzcXupmJMatBYgNwrTBdpZqbhnG+ZMmo8nsK92GW
+	sH05l25VnBjdjjkc92Pw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7DJ6-0000000BZFp-2uQH;
-	Thu, 17 Sep 2026 14:41:48 +0000
-Received: from mail-wm2-x06.google.com ([2a00:1450:4864:31::6])
+	id 1x7DMO-0000000BZya-2SRx;
+	Thu, 17 Sep 2026 14:45:12 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7DJ1-0000000BZCJ-40pX
+	id 1x7DML-0000000BZxl-4AGJ
 	for linux-phy@lists.infradead.org;
-	Thu, 17 Sep 2026 14:41:47 +0000
-Received: by mail-wm2-x06.google.com with SMTP id 5b1f17b1804b1-49b0dd21eb8so1716885e9.0
-        for <linux-phy@lists.infradead.org>; Thu, 17 Sep 2026 07:41:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1789656102; x=1790260902; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=uxdo04KgC3ZopuNd4o1TqXYNrHfISkm+8Ow6DwBarvc=;
-        b=c5QnPu/wBaOgFFe53VkdMjycaxNZNsAqBVcHKAn38krVWAbn+DesnGMeRZAek+TsbF
-         uNj9o/bkIwV8icVokK8/GHUCqx/wuDJUwW7/ITZUmLAbO49PlMvy6q0943a5r3Uy5uCD
-         cdcbAG3LIH1Qnd+orpt+jz9Q93mfUHTXTBHDgGrUEDEFhQL+51YawHp3G9bVKnGeTu5A
-         fbw+fTHC8TRB9996G6kL2fXl7drrOD/gG7IMzlbzmtLg1FTd0uqMfjPCY/G4WOC4909+
-         kObswBEd8p4X7kPQz0YuiXKgCYjjx2oj4ihcozCFexP5mYHVaLc9ZsuO6D/3invBO5cU
-         VSdA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1789656102; x=1790260902;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=uxdo04KgC3ZopuNd4o1TqXYNrHfISkm+8Ow6DwBarvc=;
-        b=H2oqV/KysPETkcM973mvBihy8oM/US+zuk/+0pXByDDeDH3pzrVSK3N/YWgJ5mW3sx
-         XEqaOIEB3wiBvVy31RL9ky18h0ZQ8hWc3b7yFQu3ApdmRlhHrZ2aCLk3nY22PNqtinT0
-         TZimJrtUT1EvVuuIsNnmfjX0WSuhEcP0W7WC2A1a+8kvIDXN4VpynqkV8E5d0G2qZwwZ
-         jMrnSm8VfhUJDkf3vMYV/VtopRAlJR4a8+ds77bLzia+adBx38VWNuFzqnGs5w26OjVG
-         rrzf331EYyY+gyq4efHoWO1MmRWqvQrGLLqOgOl2LbPM70MCIm34L3uhLfFWwX/6ZNTi
-         gXrw==
-X-Forwarded-Encrypted: i=1; AKwUvBzf1U7/9XDxLaLmZadU7zNhdcE702AyeND7TIRoUPJxAHAmvxgf5Wxm+HrcPD+IE+4lTCwJH7VmIxw=@lists.infradead.org
-X-Gm-Message-State: AFuF++ngTIQM9WSOLFwgMaQrMQKZ+Db3gFVueQVuqEZVatJQdrxOe6aE
-	sQo9aWw3FT333YImDWj3pRDQOkEcssT1FyJNt2z6D1R+WtON6TtyXiiC
-X-Gm-Gg: AYBFou2Jj6iufhfxyPq7ngncoxUozXPdiO47RX4XzlocNCrKTURzPsLCqUQjY+Exqga
-	Pc+UcS6CWlydKlj1YD8C2jthHyFr7t8ZmubJpD5WjV/GgpJTil9xJmQb51JVzWdkFILxmHkUMTa
-	VtcyhpsN2GwGlY0k8eqjl+wB+zcQyfgSriyGuYf1XquxIhxqvW1tDdyUNIRHXr3NLR618tuyNCt
-	92A9bvSPzRxcWABzQuq/QDi27fqlq4hNqJnilEubqbdmnUuIxSfe0jp7Dnr5oypQ8RJKNmjU6LU
-	rbiSRHmPgPj8Kr6cU0R2eaoDjqyghr18KWVSmWgsSe6cTDRarhNrAE/aNtSELDQT2l44FxIdjZd
-	pc5H0pySdj0usIrH/BJDYsv3BAJXx7Bv5ez4UK+Op5MjqD8MRzsLnb5wDuXuP+twjiqg3Y5PlWN
-	XSeHczb6TNJqzHFiDx1tsG76LulIAie7fr8LFMf1PEh3Ceq2YUKw8mUdVenLRZbu5R+ULMO4P/i
-	xn3gA==
-X-Received: by 2002:a05:600c:1546:b0:49e:67bf:7e97 with SMTP id 5b1f17b1804b1-49ead86eb48mr87880525e9.10.1789656101568;
-        Thu, 17 Sep 2026 07:41:41 -0700 (PDT)
-Received: from chicken.. ([2a02:2f02:5101:7300:44c:8311:3d26:e514])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-49fbd691d8esm33238755e9.0.2026.09.17.07.41.37
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 17 Sep 2026 07:41:41 -0700 (PDT)
-From: Daniel Matyas <matyasdaniel006@gmail.com>
-To: Shenghao Ding <shenghao-ding@ti.com>,
-	Kevin Lu <kevin-lu@ti.com>,
-	Baojun Xu <baojun.xu@ti.com>,
-	Sen Wang <sen@ti.com>,
-	Peter Huewe <peterhuewe@gmx.de>,
-	Jarkko Sakkinen <jarkko@kernel.org>,
-	Jason Gunthorpe <jgg@ziepe.ca>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Wim Van Sebroeck <wim@linux-watchdog.org>,
-	Dharma Balasubiramani <dharma.b@microchip.com>,
-	Jeff LaBundy <jeff@labundy.com>,
-	Simon Glass <sjg@chromium.org>,
-	Linus Walleij <linusw@kernel.org>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Giuseppe Cavallaro <peppe.cavallaro@st.com>,
-	Jose Abreu <joabreu@synopsys.com>,
-	Atish Patra <atishp@rivosinc.com>,
-	Shawn Guo <shawn.guo@linaro.org>,
-	Dmitry Osipenko <digetx@gmail.com>,
-	Ibrahim Tilki <Ibrahim.Tilki@analog.com>,
-	Okan Sahin <Okan.Sahin@analog.com>,
-	devicetree@vger.kernel.org,
-	linux-rtc@vger.kernel.org,
-	Ricard Wanderlof <ricardw@axis.com>,
-	patches@opensource.cirrus.com,
-	Lukas Wunner <lukas@wunner.de>,
-	Eugen Hristev <ehristev@kernel.org>
-Cc: mfd@lists.linux.dev,
-	linux-samsung-soc@vger.kernel.org,
-	linux-mmc@vger.kernel.org,
-	linux-mtd@lists.infradead.org,
-	linux-amlogic@lists.infradead.org,
-	netdev@vger.kernel.org,
-	linux-pci@vger.kernel.org,
-	linux-perf-users@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-tegra@vger.kernel.org,
-	linux-sound@vger.kernel.org,
-	linux-integrity@vger.kernel.org,
-	linux-usb@vger.kernel.org,
-	linux-mediatek@lists.infradead.org,
-	linux-watchdog@vger.kernel.org,
-	Daniel Matyas <matyasdaniel006@gmail.com>
-Subject: [PATCH] dt-bindings: Expand flow lists to block lists
-Date: Thu, 17 Sep 2026 17:41:34 +0300
-Message-ID: <20260917144134.459819-1-matyasdaniel006@gmail.com>
-X-Mailer: git-send-email 2.43.0
+	Thu, 17 Sep 2026 14:45:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1789656307;
+	bh=tNMI+unbbhAk3m2HZHleqT/GIgLAApbvWU8iG4tFJpI=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=gtzfmaWivaS2wKXOsIPaL2GU/aRv5pmTRdiBnPFRjuLWYAEa2xZkoeJoAzF/6nlgp
+	 LkmyHBeuIBdbxHF5tF2BC6ER4nkfsc0SfYj/wDhB4m66YkFxj+ekatZMbEDe4It/rn
+	 OW1DmKkrHOC53nUT2jDo+ViVoOHRdN50yDYOJxCza7c5LEcDtlXbrXIu0pZNxZ05rs
+	 QLuZen+V+R39g2Lu03qAuvLG2q7ZseQOhua1Vc5n1Fw44vlr/HUT4HdGwy+lxu2lup
+	 /ncmzFw7mytCIY5pLOKhzFh57sZYFy/ohKjlsWvPiH34DkdzxB/Uerjta8TYyDOzGF
+	 fWvHUus9JF4Cg==
+Received: from [100.64.1.21] (unknown [100.64.1.21])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id BE73417E01C5;
+	Thu, 17 Sep 2026 16:45:06 +0200 (CEST)
+Message-ID: <231214ab-9ae9-4e3f-a75b-d65a597e9956@collabora.com>
+Date: Thu, 17 Sep 2026 16:45:06 +0200
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v13 00/12] SPMI: Implement sub-devices and migrate drivers
+To: jic23@kernel.org, sboyd@kernel.org
+Cc: dlechner@baylibre.com, nuno.sa@analog.com, andy@kernel.org,
+ arnd@arndb.de, gregkh@linuxfoundation.org, srini@kernel.org,
+ vkoul@kernel.org, neil.armstrong@linaro.org, sre@kernel.org,
+ krzk@kernel.org, dmitry.baryshkov@oss.qualcomm.com, quic_wcheng@quicinc.com,
+ melody.olvera@oss.qualcomm.com, quic_nsekar@quicinc.com,
+ ivo.ivanov.ivanov1@gmail.com, abelvesa@kernel.org, luca.weiss@fairphone.com,
+ konrad.dybcio@oss.qualcomm.com, mitltlatltl@gmail.com,
+ krishna.kurapati@oss.qualcomm.com, linux-arm-msm@vger.kernel.org,
+ linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-pm@vger.kernel.org, kernel@collabora.com
+References: <20260721093626.96264-1-angelogioacchino.delregno@collabora.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+In-Reply-To: <20260721093626.96264-1-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260917_074144_206335_5F7E7663 
-X-CRM114-Status: GOOD (  11.16  )
+X-CRM114-CacheID: sfid-20260917_074510_199154_60E12352 
+X-CRM114-Status: GOOD (  41.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,795 +78,203 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Running dt_bindings_check returned:
-[error] string value is redundantly quoted with any quotes (quoted-strings)
+On 7/21/26 11:36, AngeloGioacchino Del Regno wrote:
+> Changes in v13:
+>   - Removed `if (IS_ENABLED(CONFIG_OF))` check in spmi_dev_release (Andy)
+>   - Rebased (though still applies cleanly) over next-20260720
+> 
 
-The files used quotation marks in flow lists because the strings had
-commas and these commas were interpreted as separators. Convert flow
-style lists to block style lists, so that there is no problems with the
-commas.
+Is there any further comment on this series?
 
-Signed-off-by: Daniel Matyas <matyasdaniel006@gmail.com>
----
- .../bindings/display/atmel,lcdc-display.yaml  |  9 ++++---
- .../devicetree/bindings/eeprom/at24.yaml      |  4 +++-
- .../devicetree/bindings/example-schema.yaml   |  6 +++--
- .../bindings/hwmon/pmbus/adi,max20830.yaml    |  6 +++--
- .../bindings/iio/adc/ti,ads112c14.yaml        |  6 +++--
- .../bindings/iio/frequency/adi,adf41513.yaml  |  3 ++-
- .../bindings/iio/frequency/adi,adrf6780.yaml  |  6 +++--
- .../bindings/iio/temperature/adi,ltc2983.yaml |  6 +++--
- .../bindings/input/azoteq,iqs7222.yaml        | 12 ++++++----
- .../bindings/input/google,cros-ec-keyb.yaml   |  6 +++--
- .../devicetree/bindings/input/input.yaml      |  3 ++-
- .../devicetree/bindings/input/iqs269a.yaml    | 12 ++++++----
- .../devicetree/bindings/input/iqs626a.yaml    | 15 ++++++++----
- .../input/touchscreen/azoteq,iqs7211.yaml     | 24 ++++++++++++-------
- .../interrupt-controller/riscv,aplic.yaml     |  3 ++-
- .../bindings/mfd/maxim,max8998.yaml           |  6 +++--
- .../bindings/mfd/samsung,s5m8767.yaml         | 21 +++++++++++-----
- .../devicetree/bindings/mmc/arm,pl18x.yaml    |  9 ++++---
- .../bindings/mtd/amlogic,meson-nand.yaml      |  8 +++++--
- .../devicetree/bindings/net/snps,dwmac.yaml   |  6 +++--
- .../bindings/pci/brcm,iproc-pcie.yaml         |  3 ++-
- .../devicetree/bindings/perf/riscv,pmu.yaml   |  3 ++-
- .../phy/hisilicon,hi3798cv200-combphy.yaml    |  6 +++--
- .../bindings/phy/nvidia,tegra20-usb-phy.yaml  |  6 +++--
- .../bindings/regulator/adi,max77857.yaml      |  6 +++--
- .../bindings/regulator/maxim,max8997.yaml     |  9 ++++---
- .../regulator/samsung,s2mpg10-regulator.yaml  |  3 ++-
- .../regulator/samsung,s2mpg11-regulator.yaml  |  3 ++-
- .../bindings/regulator/ti,tps65132.yaml       |  3 ++-
- .../devicetree/bindings/riscv/cpus.yaml       |  6 +++--
- .../bindings/rtc/abracon,abx80x.yaml          |  6 +++--
- .../soc/tegra/nvidia,tegra20-pmc.yaml         | 10 +++++---
- .../bindings/sound/ti,tlv320adc3xxx.yaml      |  6 +++--
- .../devicetree/bindings/sound/wlf,wm8904.yaml | 18 ++++++++++----
- .../devicetree/bindings/tpm/tpm-common.yaml   |  6 +++--
- .../bindings/usb/mediatek,mtk-xhci.yaml       |  3 ++-
- .../bindings/usb/mediatek,mtu3.yaml           | 12 ++++++----
- .../bindings/watchdog/atmel,at91sam9-wdt.yaml |  3 ++-
- 38 files changed, 192 insertions(+), 91 deletions(-)
+Cheers,
+Angelo
 
-diff --git a/Documentation/devicetree/bindings/display/atmel,lcdc-display.yaml b/Documentation/devicetree/bindings/display/atmel,lcdc-display.yaml
-index a5cf040ab4ea..51aa13f6a348 100644
---- a/Documentation/devicetree/bindings/display/atmel,lcdc-display.yaml
-+++ b/Documentation/devicetree/bindings/display/atmel,lcdc-display.yaml
-@@ -23,9 +23,12 @@ description:
- 
- select:
-   anyOf:
--    - required: [ 'atmel,dmacon' ]
--    - required: [ 'atmel,lcdcon2' ]
--    - required: [ 'atmel,guard-time' ]
-+    - required:
-+        - atmel,dmacon
-+    - required:
-+        - atmel,lcdcon2
-+    - required:
-+        - atmel,guard-time
- 
- properties:
-   atmel,dmacon:
-diff --git a/Documentation/devicetree/bindings/eeprom/at24.yaml b/Documentation/devicetree/bindings/eeprom/at24.yaml
-index ef88f46928a4..6d9167cfd12d 100644
---- a/Documentation/devicetree/bindings/eeprom/at24.yaml
-+++ b/Documentation/devicetree/bindings/eeprom/at24.yaml
-@@ -20,7 +20,9 @@ select:
-       contains:
-         anyOf:
-           - pattern: "^atmel,(24(c|cs|mac)[0-9]+|spd)$"
--          - enum: ["microchip,24aa025e48", "microchip,24aa025e64"]
-+          - enum:
-+              - microchip,24aa025e48
-+              - microchip,24aa025e64
-   required:
-     - compatible
- 
-diff --git a/Documentation/devicetree/bindings/example-schema.yaml b/Documentation/devicetree/bindings/example-schema.yaml
-index b04f3cc4312c..4ff46f1384b9 100644
---- a/Documentation/devicetree/bindings/example-schema.yaml
-+++ b/Documentation/devicetree/bindings/example-schema.yaml
-@@ -206,10 +206,12 @@ properties:
- dependencies:
-   # 'vendor,bool-property' is only allowed when 'vendor,string-array-property'
-   # is present
--  vendor,bool-property: [ 'vendor,string-array-property' ]
-+  vendor,bool-property:
-+    - vendor,string-array-property
-   # Expressing 2 properties in both orders means all of the set of properties
-   # must be present or none of them.
--  vendor,string-array-property: [ 'vendor,bool-property' ]
-+  vendor,string-array-property:
-+    - vendor,bool-property
- 
- required:
-   - compatible
-diff --git a/Documentation/devicetree/bindings/hwmon/pmbus/adi,max20830.yaml b/Documentation/devicetree/bindings/hwmon/pmbus/adi,max20830.yaml
-index cc50a4ee44a2..7904dacff789 100644
---- a/Documentation/devicetree/bindings/hwmon/pmbus/adi,max20830.yaml
-+++ b/Documentation/devicetree/bindings/hwmon/pmbus/adi,max20830.yaml
-@@ -67,8 +67,10 @@ required:
-   - vddh-supply
- 
- dependencies:
--  adi,vout-rfb1-ohms: ['adi,vout-rfb2-ohms']
--  adi,vout-rfb2-ohms: ['adi,vout-rfb1-ohms']
-+  adi,vout-rfb1-ohms:
-+    - adi,vout-rfb2-ohms
-+  adi,vout-rfb2-ohms:
-+    - adi,vout-rfb1-ohms
- 
- unevaluatedProperties: false
- 
-diff --git a/Documentation/devicetree/bindings/iio/adc/ti,ads112c14.yaml b/Documentation/devicetree/bindings/iio/adc/ti,ads112c14.yaml
-index facfeee61330..6dd59552a41f 100644
---- a/Documentation/devicetree/bindings/iio/adc/ti,ads112c14.yaml
-+++ b/Documentation/devicetree/bindings/iio/adc/ti,ads112c14.yaml
-@@ -132,8 +132,10 @@ dependencies:
-   refn-supply: [ refp-supply ]
- 
- oneOf:
--  - required: [ refp-supply ]
--  - required: [ "ti,refp-refn-resistor-ohms" ]
-+  - required:
-+      - refp-supply
-+  - required:
-+      - ti,refp-refn-resistor-ohms
-   - properties:
-       refp-supply: false
-       refn-supply: false
-diff --git a/Documentation/devicetree/bindings/iio/frequency/adi,adf41513.yaml b/Documentation/devicetree/bindings/iio/frequency/adi,adf41513.yaml
-index f4fae9210382..c71ebc039af2 100644
---- a/Documentation/devicetree/bindings/iio/frequency/adi,adf41513.yaml
-+++ b/Documentation/devicetree/bindings/iio/frequency/adi,adf41513.yaml
-@@ -166,7 +166,8 @@ properties:
-     type: boolean
- 
- dependencies:
--  adi,charge-pump-resistor-ohms: [ 'adi,charge-pump-current-microamp' ]
-+  adi,charge-pump-resistor-ohms:
-+    - adi,charge-pump-current-microamp
- 
- required:
-   - compatible
-diff --git a/Documentation/devicetree/bindings/iio/frequency/adi,adrf6780.yaml b/Documentation/devicetree/bindings/iio/frequency/adi,adrf6780.yaml
-index f11391ab4b62..2bb3ddd252c9 100644
---- a/Documentation/devicetree/bindings/iio/frequency/adi,adrf6780.yaml
-+++ b/Documentation/devicetree/bindings/iio/frequency/adi,adrf6780.yaml
-@@ -104,8 +104,10 @@ properties:
-     const: 0
- 
- dependencies:
--  adi,lo-x2-en: [ "adi,lo-en" ]
--  adi,lo-ppf-en: [ "adi,lo-en" ]
-+  adi,lo-x2-en:
-+    - adi,lo-en
-+  adi,lo-ppf-en:
-+    - adi,lo-en
- 
- required:
-   - compatible
-diff --git a/Documentation/devicetree/bindings/iio/temperature/adi,ltc2983.yaml b/Documentation/devicetree/bindings/iio/temperature/adi,ltc2983.yaml
-index 13e5f29f0588..19fc978deb76 100644
---- a/Documentation/devicetree/bindings/iio/temperature/adi,ltc2983.yaml
-+++ b/Documentation/devicetree/bindings/iio/temperature/adi,ltc2983.yaml
-@@ -284,7 +284,8 @@ patternProperties:
-               type: boolean
- 
-           dependencies:
--            adi,current-rotate: [ 'adi,rsense-share' ]
-+            adi,current-rotate:
-+              - adi,rsense-share
- 
-       - if:
-           properties:
-@@ -368,7 +369,8 @@ patternProperties:
-       - adi,rsense-handle
- 
-     dependencies:
--      adi,current-rotate: [ 'adi,rsense-share' ]
-+      adi,current-rotate:
-+        - adi,rsense-share
- 
-     allOf:
-       - if:
-diff --git a/Documentation/devicetree/bindings/input/azoteq,iqs7222.yaml b/Documentation/devicetree/bindings/input/azoteq,iqs7222.yaml
-index 418c168b223b..5043ed4cbd5c 100644
---- a/Documentation/devicetree/bindings/input/azoteq,iqs7222.yaml
-+++ b/Documentation/devicetree/bindings/input/azoteq,iqs7222.yaml
-@@ -396,8 +396,10 @@ patternProperties:
-         description: Specifies the cycle's current reference trim.
- 
-     dependencies:
--      azoteq,iref-level: ["azoteq,iref-enable"]
--      azoteq,iref-trim: ["azoteq,iref-enable"]
-+      azoteq,iref-level:
-+        - azoteq,iref-enable
-+      azoteq,iref-trim:
-+        - azoteq,iref-enable
- 
-     additionalProperties: false
- 
-@@ -627,8 +629,10 @@ patternProperties:
-         additionalProperties: false
- 
-     dependencies:
--      azoteq,ref-weight: ["azoteq,ref-select"]
--      azoteq,use-prox: ["azoteq,ref-select"]
-+      azoteq,ref-weight:
-+        - azoteq,ref-select
-+      azoteq,use-prox:
-+        - azoteq,ref-select
- 
-     additionalProperties: false
- 
-diff --git a/Documentation/devicetree/bindings/input/google,cros-ec-keyb.yaml b/Documentation/devicetree/bindings/input/google,cros-ec-keyb.yaml
-index fefaaf46a240..a8e61ad5b52a 100644
---- a/Documentation/devicetree/bindings/input/google,cros-ec-keyb.yaml
-+++ b/Documentation/devicetree/bindings/input/google,cros-ec-keyb.yaml
-@@ -45,8 +45,10 @@ properties:
-       when the keyboard has a custom design for the top row keys.
- 
- dependencies:
--  function-row-physmap: [ 'linux,keymap' ]
--  google,needs-ghost-filter: [ 'linux,keymap' ]
-+  function-row-physmap:
-+    - linux,keymap
-+  google,needs-ghost-filter:
-+    - linux,keymap
- 
- required:
-   - compatible
-diff --git a/Documentation/devicetree/bindings/input/input.yaml b/Documentation/devicetree/bindings/input/input.yaml
-index 64d1c46cb2f2..7181af1ac8c2 100644
---- a/Documentation/devicetree/bindings/input/input.yaml
-+++ b/Documentation/devicetree/bindings/input/input.yaml
-@@ -75,6 +75,7 @@ properties:
-     default: 0
- 
- dependencies:
--  linux,input-type: [ "linux,code" ]
-+  linux,input-type:
-+    - linux,code
- 
- additionalProperties: true
-diff --git a/Documentation/devicetree/bindings/input/iqs269a.yaml b/Documentation/devicetree/bindings/input/iqs269a.yaml
-index 2c3f693b8982..e77702feaeca 100644
---- a/Documentation/devicetree/bindings/input/iqs269a.yaml
-+++ b/Documentation/devicetree/bindings/input/iqs269a.yaml
-@@ -272,10 +272,14 @@ properties:
-       in order to be interpreted as a flick or swipe.
- 
- dependencies:
--  azoteq,gesture-swipe: ["linux,keycodes"]
--  azoteq,timeout-tap-ms: ["linux,keycodes"]
--  azoteq,timeout-swipe-ms: ["linux,keycodes"]
--  azoteq,thresh-swipe: ["linux,keycodes"]
-+  azoteq,gesture-swipe:
-+    - linux,keycodes
-+  azoteq,timeout-tap-ms:
-+    - linux,keycodes
-+  azoteq,timeout-swipe-ms:
-+    - linux,keycodes
-+  azoteq,thresh-swipe:
-+    - linux,keycodes
- 
- patternProperties:
-   "^channel@[0-7]$":
-diff --git a/Documentation/devicetree/bindings/input/iqs626a.yaml b/Documentation/devicetree/bindings/input/iqs626a.yaml
-index e424d67b0542..534ee0742fdb 100644
---- a/Documentation/devicetree/bindings/input/iqs626a.yaml
-+++ b/Documentation/devicetree/bindings/input/iqs626a.yaml
-@@ -500,7 +500,8 @@ patternProperties:
-         additionalProperties: false
- 
-     dependencies:
--      azoteq,assoc-weight: ["azoteq,assoc-select"]
-+      azoteq,assoc-weight:
-+        - azoteq,assoc-select
- 
-     additionalProperties: false
- 
-@@ -722,10 +723,14 @@ patternProperties:
-         additionalProperties: false
- 
-     dependencies:
--      azoteq,gesture-swipe: ["linux,keycodes"]
--      azoteq,timeout-tap-ms: ["linux,keycodes"]
--      azoteq,timeout-swipe-ms: ["linux,keycodes"]
--      azoteq,thresh-swipe: ["linux,keycodes"]
-+      azoteq,gesture-swipe:
-+        - linux,keycodes
-+      azoteq,timeout-tap-ms:
-+        - linux,keycodes
-+      azoteq,timeout-swipe-ms:
-+        - linux,keycodes
-+      azoteq,thresh-swipe:
-+        - linux,keycodes
- 
-     additionalProperties: false
- 
-diff --git a/Documentation/devicetree/bindings/input/touchscreen/azoteq,iqs7211.yaml b/Documentation/devicetree/bindings/input/touchscreen/azoteq,iqs7211.yaml
-index e4dbbafb3779..bb5407649717 100644
---- a/Documentation/devicetree/bindings/input/touchscreen/azoteq,iqs7211.yaml
-+++ b/Documentation/devicetree/bindings/input/touchscreen/azoteq,iqs7211.yaml
-@@ -347,9 +347,12 @@ properties:
-         additionalProperties: false
- 
-     dependencies:
--      azoteq,rx-enable: ["azoteq,tx-enable"]
--      azoteq,tx-enable: ["azoteq,rx-enable"]
--      azoteq,channel-select: ["azoteq,rx-enable"]
-+      azoteq,rx-enable:
-+        - azoteq,tx-enable
-+      azoteq,tx-enable:
-+        - azoteq,rx-enable
-+      azoteq,channel-select:
-+        - azoteq,rx-enable
- 
-     additionalProperties: false
- 
-@@ -592,11 +595,16 @@ properties:
-   touchscreen-swapped-x-y: true
- 
- dependencies:
--  touchscreen-size-x: ["azoteq,num-contacts"]
--  touchscreen-size-y: ["azoteq,num-contacts"]
--  touchscreen-inverted-x: ["azoteq,num-contacts"]
--  touchscreen-inverted-y: ["azoteq,num-contacts"]
--  touchscreen-swapped-x-y: ["azoteq,num-contacts"]
-+  touchscreen-size-x:
-+    - azoteq,num-contacts
-+  touchscreen-size-y:
-+    - azoteq,num-contacts
-+  touchscreen-inverted-x:
-+    - azoteq,num-contacts
-+  touchscreen-inverted-y:
-+    - azoteq,num-contacts
-+  touchscreen-swapped-x-y:
-+    - azoteq,num-contacts
- 
- required:
-   - compatible
-diff --git a/Documentation/devicetree/bindings/interrupt-controller/riscv,aplic.yaml b/Documentation/devicetree/bindings/interrupt-controller/riscv,aplic.yaml
-index 0718071444d2..20a52bd25bd8 100644
---- a/Documentation/devicetree/bindings/interrupt-controller/riscv,aplic.yaml
-+++ b/Documentation/devicetree/bindings/interrupt-controller/riscv,aplic.yaml
-@@ -101,7 +101,8 @@ properties:
-       that is mentioned in the "interrupts-extended"
- 
- dependencies:
--  riscv,delegation: [ "riscv,children" ]
-+  riscv,delegation:
-+    - riscv,children
- 
- required:
-   - compatible
-diff --git a/Documentation/devicetree/bindings/mfd/maxim,max8998.yaml b/Documentation/devicetree/bindings/mfd/maxim,max8998.yaml
-index f3c3f64fd012..a4fd1805b13f 100644
---- a/Documentation/devicetree/bindings/mfd/maxim,max8998.yaml
-+++ b/Documentation/devicetree/bindings/mfd/maxim,max8998.yaml
-@@ -130,8 +130,10 @@ properties:
-           - regulator-name
- 
- dependencies:
--  max8998,pmic-buck1-dvs-gpios: [ "max8998,pmic-buck1-dvs-voltage" ]
--  max8998,pmic-buck2-dvs-gpio: [ "max8998,pmic-buck2-dvs-voltage" ]
-+  max8998,pmic-buck1-dvs-gpios:
-+    - max8998,pmic-buck1-dvs-voltage
-+  max8998,pmic-buck2-dvs-gpio:
-+    - max8998,pmic-buck2-dvs-voltage
- 
- required:
-   - compatible
-diff --git a/Documentation/devicetree/bindings/mfd/samsung,s5m8767.yaml b/Documentation/devicetree/bindings/mfd/samsung,s5m8767.yaml
-index 249248078c59..df0640423757 100644
---- a/Documentation/devicetree/bindings/mfd/samsung,s5m8767.yaml
-+++ b/Documentation/devicetree/bindings/mfd/samsung,s5m8767.yaml
-@@ -143,12 +143,21 @@ required:
-   - s5m8767,pmic-buck-ds-gpios
- 
- dependencies:
--  s5m8767,pmic-buck2-dvs-voltage: [ 's5m8767,pmic-buck-dvs-gpios' ]
--  s5m8767,pmic-buck3-dvs-voltage: [ 's5m8767,pmic-buck-dvs-gpios' ]
--  s5m8767,pmic-buck4-dvs-voltage: [ 's5m8767,pmic-buck-dvs-gpios' ]
--  s5m8767,pmic-buck2-uses-gpio-dvs: [ 's5m8767,pmic-buck-dvs-gpios', 's5m8767,pmic-buck2-dvs-voltage' ]
--  s5m8767,pmic-buck3-uses-gpio-dvs: [ 's5m8767,pmic-buck-dvs-gpios', 's5m8767,pmic-buck3-dvs-voltage' ]
--  s5m8767,pmic-buck4-uses-gpio-dvs: [ 's5m8767,pmic-buck-dvs-gpios', 's5m8767,pmic-buck4-dvs-voltage' ]
-+  s5m8767,pmic-buck2-dvs-voltage:
-+    - s5m8767,pmic-buck-dvs-gpios
-+  s5m8767,pmic-buck3-dvs-voltage:
-+    - s5m8767,pmic-buck-dvs-gpios
-+  s5m8767,pmic-buck4-dvs-voltage:
-+    - s5m8767,pmic-buck-dvs-gpios
-+  s5m8767,pmic-buck2-uses-gpio-dvs:
-+    - s5m8767,pmic-buck-dvs-gpios
-+    - s5m8767,pmic-buck2-dvs-voltage
-+  s5m8767,pmic-buck3-uses-gpio-dvs:
-+    - s5m8767,pmic-buck-dvs-gpios
-+    - s5m8767,pmic-buck3-dvs-voltage
-+  s5m8767,pmic-buck4-uses-gpio-dvs:
-+    - s5m8767,pmic-buck-dvs-gpios
-+    - s5m8767,pmic-buck4-dvs-voltage
- 
- additionalProperties: false
- 
-diff --git a/Documentation/devicetree/bindings/mmc/arm,pl18x.yaml b/Documentation/devicetree/bindings/mmc/arm,pl18x.yaml
-index 8d62be4355a0..fec8ecbb56d5 100644
---- a/Documentation/devicetree/bindings/mmc/arm,pl18x.yaml
-+++ b/Documentation/devicetree/bindings/mmc/arm,pl18x.yaml
-@@ -168,9 +168,12 @@ properties:
-       The GPIO matching the CKIN pin.
- 
- dependencies:
--  st,cmd-gpios: [ "st,use-ckin" ]
--  st,ck-gpios: [ "st,use-ckin" ]
--  st,ckin-gpios: [ "st,use-ckin" ]
-+  st,cmd-gpios:
-+    - st,use-ckin
-+  st,ck-gpios:
-+    - st,use-ckin
-+  st,ckin-gpios:
-+    - st,use-ckin
- 
- unevaluatedProperties: false
- 
-diff --git a/Documentation/devicetree/bindings/mtd/amlogic,meson-nand.yaml b/Documentation/devicetree/bindings/mtd/amlogic,meson-nand.yaml
-index fa2aa29be794..00079edc7dd3 100644
---- a/Documentation/devicetree/bindings/mtd/amlogic,meson-nand.yaml
-+++ b/Documentation/devicetree/bindings/mtd/amlogic,meson-nand.yaml
-@@ -85,8 +85,12 @@ patternProperties:
-     dependencies:
-       nand-ecc-strength: [nand-ecc-step-size]
-       nand-ecc-step-size: [nand-ecc-strength]
--      amlogic,boot-pages: [nand-is-boot-medium, "amlogic,boot-page-step"]
--      amlogic,boot-page-step: [nand-is-boot-medium, "amlogic,boot-pages"]
-+      amlogic,boot-pages:
-+        - nand-is-boot-medium
-+        - amlogic,boot-page-step
-+      amlogic,boot-page-step:
-+        - nand-is-boot-medium
-+        - amlogic,boot-pages
- 
- required:
-   - compatible
-diff --git a/Documentation/devicetree/bindings/net/snps,dwmac.yaml b/Documentation/devicetree/bindings/net/snps,dwmac.yaml
-index 2449311c6d28..8eb84942ce3f 100644
---- a/Documentation/devicetree/bindings/net/snps,dwmac.yaml
-+++ b/Documentation/devicetree/bindings/net/snps,dwmac.yaml
-@@ -605,8 +605,10 @@ required:
-   - phy-mode
- 
- dependencies:
--  snps,reset-active-low: ["snps,reset-gpio"]
--  snps,reset-delays-us: ["snps,reset-gpio"]
-+  snps,reset-active-low:
-+    - snps,reset-gpio
-+  snps,reset-delays-us:
-+    - snps,reset-gpio
- 
- allOf:
-   - $ref: ethernet-controller.yaml#
-diff --git a/Documentation/devicetree/bindings/pci/brcm,iproc-pcie.yaml b/Documentation/devicetree/bindings/pci/brcm,iproc-pcie.yaml
-index 18e7981241b5..2f1be6420e23 100644
---- a/Documentation/devicetree/bindings/pci/brcm,iproc-pcie.yaml
-+++ b/Documentation/devicetree/bindings/pci/brcm,iproc-pcie.yaml
-@@ -82,7 +82,8 @@ properties:
-   msi-parent: true
- 
- dependencies:
--  brcm,pcie-ob-axi-offset: ["brcm,pcie-ob"]
-+  brcm,pcie-ob-axi-offset:
-+    - brcm,pcie-ob
-   brcm,pcie-msi-inten: [msi-controller]
- 
- required:
-diff --git a/Documentation/devicetree/bindings/perf/riscv,pmu.yaml b/Documentation/devicetree/bindings/perf/riscv,pmu.yaml
-index d01c677ad3c7..aa2ccf00d136 100644
---- a/Documentation/devicetree/bindings/perf/riscv,pmu.yaml
-+++ b/Documentation/devicetree/bindings/perf/riscv,pmu.yaml
-@@ -90,7 +90,8 @@ properties:
-             bitmap of all MHPMCOUNTERx that can monitor the range of events
- 
- dependencies:
--  riscv,event-to-mhpmevent: [ "riscv,event-to-mhpmcounters" ]
-+  riscv,event-to-mhpmevent:
-+    - riscv,event-to-mhpmcounters
- 
- required:
-   - compatible
-diff --git a/Documentation/devicetree/bindings/phy/hisilicon,hi3798cv200-combphy.yaml b/Documentation/devicetree/bindings/phy/hisilicon,hi3798cv200-combphy.yaml
-index 81001966f657..2040723f5297 100644
---- a/Documentation/devicetree/bindings/phy/hisilicon,hi3798cv200-combphy.yaml
-+++ b/Documentation/devicetree/bindings/phy/hisilicon,hi3798cv200-combphy.yaml
-@@ -48,8 +48,10 @@ required:
-   - resets
- 
- oneOf:
--  - required: ['hisilicon,fixed-mode']
--  - required: ['hisilicon,mode-select-bits']
-+  - required:
-+      - hisilicon,fixed-mode
-+  - required:
-+      - hisilicon,mode-select-bits
- 
- additionalProperties: false
- 
-diff --git a/Documentation/devicetree/bindings/phy/nvidia,tegra20-usb-phy.yaml b/Documentation/devicetree/bindings/phy/nvidia,tegra20-usb-phy.yaml
-index a37e8322dc50..90eba0e6ecdb 100644
---- a/Documentation/devicetree/bindings/phy/nvidia,tegra20-usb-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/nvidia,tegra20-usb-phy.yaml
-@@ -251,8 +251,10 @@ allOf:
-         - nvidia,xcvr-lsrslew
- 
-       anyOf:
--        - required: ["nvidia,xcvr-setup"]
--        - required: ["nvidia,xcvr-setup-use-fuses"]
-+        - required:
-+            - nvidia,xcvr-setup
-+        - required:
-+            - nvidia,xcvr-setup-use-fuses
- 
-       if:
-         properties:
-diff --git a/Documentation/devicetree/bindings/regulator/adi,max77857.yaml b/Documentation/devicetree/bindings/regulator/adi,max77857.yaml
-index d1fa74aca721..4191c5f3dcd0 100644
---- a/Documentation/devicetree/bindings/regulator/adi,max77857.yaml
-+++ b/Documentation/devicetree/bindings/regulator/adi,max77857.yaml
-@@ -43,8 +43,10 @@ properties:
-     description: Bottom feedback resistor value in ohms for external feedback.
- 
- dependencies:
--  adi,rtop-ohms: [ 'adi,rbot-ohms' ]
--  adi,rbot-ohms: [ 'adi,rtop-ohms' ]
-+  adi,rtop-ohms:
-+    - adi,rbot-ohms
-+  adi,rbot-ohms:
-+    - adi,rtop-ohms
- 
- required:
-   - compatible
-diff --git a/Documentation/devicetree/bindings/regulator/maxim,max8997.yaml b/Documentation/devicetree/bindings/regulator/maxim,max8997.yaml
-index 2b266ea43716..acc493840588 100644
---- a/Documentation/devicetree/bindings/regulator/maxim,max8997.yaml
-+++ b/Documentation/devicetree/bindings/regulator/maxim,max8997.yaml
-@@ -251,9 +251,12 @@ required:
-   - regulators
- 
- dependencies:
--  max8997,pmic-buck1-uses-gpio-dvs: [ 'max8997,pmic-buck125-dvs-gpios' ]
--  max8997,pmic-buck2-uses-gpio-dvs: [ 'max8997,pmic-buck125-dvs-gpios' ]
--  max8997,pmic-buck5-uses-gpio-dvs: [ 'max8997,pmic-buck125-dvs-gpios' ]
-+  max8997,pmic-buck1-uses-gpio-dvs:
-+    - max8997,pmic-buck125-dvs-gpios
-+  max8997,pmic-buck2-uses-gpio-dvs:
-+    - max8997,pmic-buck125-dvs-gpios
-+  max8997,pmic-buck5-uses-gpio-dvs:
-+    - max8997,pmic-buck125-dvs-gpios
- 
- additionalProperties: false
- 
-diff --git a/Documentation/devicetree/bindings/regulator/samsung,s2mpg10-regulator.yaml b/Documentation/devicetree/bindings/regulator/samsung,s2mpg10-regulator.yaml
-index 7252f94b3a8f..506b61175ae9 100644
---- a/Documentation/devicetree/bindings/regulator/samsung,s2mpg10-regulator.yaml
-+++ b/Documentation/devicetree/bindings/regulator/samsung,s2mpg10-regulator.yaml
-@@ -139,7 +139,8 @@ $defs:
-           property describes the GPIO line used.
- 
-     dependentRequired:
--      enable-gpios: [ "samsung,ext-control" ]
-+      enable-gpios:
-+        - samsung,ext-control
- 
- allOf:
-   # Bucks 8, 9, and LDO 1 can not be controlled externally - above definition
-diff --git a/Documentation/devicetree/bindings/regulator/samsung,s2mpg11-regulator.yaml b/Documentation/devicetree/bindings/regulator/samsung,s2mpg11-regulator.yaml
-index 119386325d1b..3a8a2945efd7 100644
---- a/Documentation/devicetree/bindings/regulator/samsung,s2mpg11-regulator.yaml
-+++ b/Documentation/devicetree/bindings/regulator/samsung,s2mpg11-regulator.yaml
-@@ -116,7 +116,8 @@ $defs:
-           property describes the GPIO line used.
- 
-     dependentRequired:
--      enable-gpios: [ "samsung,ext-control" ]
-+      enable-gpios:
-+        - samsung,ext-control
- 
- allOf:
-   # Bucks 4, 6, 7 and 10 can not be controlled externally - above definition
-diff --git a/Documentation/devicetree/bindings/regulator/ti,tps65132.yaml b/Documentation/devicetree/bindings/regulator/ti,tps65132.yaml
-index 873d92738eb0..f120f82398dc 100644
---- a/Documentation/devicetree/bindings/regulator/ti,tps65132.yaml
-+++ b/Documentation/devicetree/bindings/regulator/ti,tps65132.yaml
-@@ -48,7 +48,8 @@ patternProperties:
-         description: Regulator active discharge time in microseconds.
- 
-     dependencies:
--      active-discharge-gpios: [ 'ti,active-discharge-time-us' ]
-+      active-discharge-gpios:
-+        - ti,active-discharge-time-us
- 
- required:
-   - compatible
-diff --git a/Documentation/devicetree/bindings/riscv/cpus.yaml b/Documentation/devicetree/bindings/riscv/cpus.yaml
-index 5feeb2203050..26914597d049 100644
---- a/Documentation/devicetree/bindings/riscv/cpus.yaml
-+++ b/Documentation/devicetree/bindings/riscv/cpus.yaml
-@@ -151,8 +151,10 @@ anyOf:
-       - riscv,isa-base
- 
- dependencies:
--  riscv,isa-base: [ "riscv,isa-extensions" ]
--  riscv,isa-extensions: [ "riscv,isa-base" ]
-+  riscv,isa-base:
-+    - riscv,isa-extensions
-+  riscv,isa-extensions:
-+    - riscv,isa-base
- 
- required:
-   - interrupt-controller
-diff --git a/Documentation/devicetree/bindings/rtc/abracon,abx80x.yaml b/Documentation/devicetree/bindings/rtc/abracon,abx80x.yaml
-index 355b0598411a..9990de48bdd3 100644
---- a/Documentation/devicetree/bindings/rtc/abracon,abx80x.yaml
-+++ b/Documentation/devicetree/bindings/rtc/abracon,abx80x.yaml
-@@ -53,8 +53,10 @@ properties:
-     enum: [0, 3, 6, 11]
- 
- dependentRequired:
--  abracon,tc-diode: ["abracon,tc-resistor"]
--  abracon,tc-resistor: ["abracon,tc-diode"]
-+  abracon,tc-diode:
-+    - abracon,tc-resistor
-+  abracon,tc-resistor:
-+    - abracon,tc-diode
- 
- required:
-   - compatible
-diff --git a/Documentation/devicetree/bindings/soc/tegra/nvidia,tegra20-pmc.yaml b/Documentation/devicetree/bindings/soc/tegra/nvidia,tegra20-pmc.yaml
-index f516960dbbef..819adf7e005e 100644
---- a/Documentation/devicetree/bindings/soc/tegra/nvidia,tegra20-pmc.yaml
-+++ b/Documentation/devicetree/bindings/soc/tegra/nvidia,tegra20-pmc.yaml
-@@ -365,9 +365,13 @@ allOf:
- additionalProperties: false
- 
- dependencies:
--  nvidia,suspend-mode: ['nvidia,core-pwr-off-time', 'nvidia,cpu-pwr-off-time']
--  nvidia,core-pwr-off-time: ['nvidia,core-pwr-good-time']
--  nvidia,cpu-pwr-off-time: ['nvidia,cpu-pwr-good-time']
-+  nvidia,suspend-mode:
-+    - nvidia,core-pwr-off-time
-+    - nvidia,cpu-pwr-off-time
-+  nvidia,core-pwr-off-time:
-+    - nvidia,core-pwr-good-time
-+  nvidia,cpu-pwr-off-time:
-+    - nvidia,cpu-pwr-good-time
- 
- examples:
-   - |
-diff --git a/Documentation/devicetree/bindings/sound/ti,tlv320adc3xxx.yaml b/Documentation/devicetree/bindings/sound/ti,tlv320adc3xxx.yaml
-index 66b76656229f..4e02f2dc5aa8 100644
---- a/Documentation/devicetree/bindings/sound/ti,tlv320adc3xxx.yaml
-+++ b/Documentation/devicetree/bindings/sound/ti,tlv320adc3xxx.yaml
-@@ -125,8 +125,10 @@ properties:
-       Mic bias voltage output on MICBIAS2 pin
- 
- dependencies:
--  ti,micbias1-gpo: ['ti,micbias1-vg']
--  ti,micbias2-gpo: ['ti,micbias2-vg']
-+  ti,micbias1-gpo:
-+    - ti,micbias1-vg
-+  ti,micbias2-gpo:
-+    - ti,micbias2-vg
- 
- required:
-   - compatible
-diff --git a/Documentation/devicetree/bindings/sound/wlf,wm8904.yaml b/Documentation/devicetree/bindings/sound/wlf,wm8904.yaml
-index 3029a868e5e1..eb0cf2002865 100644
---- a/Documentation/devicetree/bindings/sound/wlf,wm8904.yaml
-+++ b/Documentation/devicetree/bindings/sound/wlf,wm8904.yaml
-@@ -107,12 +107,20 @@ properties:
-       maxItems: 24
- 
- dependencies:
--  wlf,drc-cfg-names: [ 'wlf,drc-cfg-regs' ]
--  wlf,drc-cfg-regs: [ 'wlf,drc-cfg-names' ]
-+  wlf,drc-cfg-names:
-+    - wlf,drc-cfg-regs
-+  wlf,drc-cfg-regs:
-+    - wlf,drc-cfg-names
- 
--  wlf,retune-mobile-cfg-names: [ 'wlf,retune-mobile-cfg-hz', 'wlf,retune-mobile-cfg-regs' ]
--  wlf,retune-mobile-cfg-regs: [ 'wlf,retune-mobile-cfg-names', 'wlf,retune-mobile-cfg-hz' ]
--  wlf,retune-mobile-cfg-hz: [ 'wlf,retune-mobile-cfg-names', 'wlf,retune-mobile-cfg-regs' ]
-+  wlf,retune-mobile-cfg-names:
-+    - wlf,retune-mobile-cfg-hz
-+    - wlf,retune-mobile-cfg-regs
-+  wlf,retune-mobile-cfg-regs:
-+    - wlf,retune-mobile-cfg-names
-+    - wlf,retune-mobile-cfg-hz
-+  wlf,retune-mobile-cfg-hz:
-+    - wlf,retune-mobile-cfg-names
-+    - wlf,retune-mobile-cfg-regs
- 
- required:
-   - compatible
-diff --git a/Documentation/devicetree/bindings/tpm/tpm-common.yaml b/Documentation/devicetree/bindings/tpm/tpm-common.yaml
-index 3c1241b2a43f..b8853c39ebbf 100644
---- a/Documentation/devicetree/bindings/tpm/tpm-common.yaml
-+++ b/Documentation/devicetree/bindings/tpm/tpm-common.yaml
-@@ -50,8 +50,10 @@ properties:
- 
- # must always have both linux,sml-base and linux,sml-size
- dependentRequired:
--  linux,sml-base: ['linux,sml-size']
--  linux,sml-size: ['linux,sml-base']
-+  linux,sml-base:
-+    - linux,sml-size
-+  linux,sml-size:
-+    - linux,sml-base
- 
- # must only have either memory-region or linux,sml-base
- # as well as either resets or reset-gpios
-diff --git a/Documentation/devicetree/bindings/usb/mediatek,mtk-xhci.yaml b/Documentation/devicetree/bindings/usb/mediatek,mtk-xhci.yaml
-index 231e6f35a986..af13035f94dc 100644
---- a/Documentation/devicetree/bindings/usb/mediatek,mtk-xhci.yaml
-+++ b/Documentation/devicetree/bindings/usb/mediatek,mtk-xhci.yaml
-@@ -194,7 +194,8 @@ patternProperties:
-     description: The hard wired USB devices.
- 
- dependencies:
--  wakeup-source: [ 'mediatek,syscon-wakeup' ]
-+  wakeup-source:
-+    - mediatek,syscon-wakeup
- 
- required:
-   - compatible
-diff --git a/Documentation/devicetree/bindings/usb/mediatek,mtu3.yaml b/Documentation/devicetree/bindings/usb/mediatek,mtu3.yaml
-index d148e938d647..27d512ada717 100644
---- a/Documentation/devicetree/bindings/usb/mediatek,mtu3.yaml
-+++ b/Documentation/devicetree/bindings/usb/mediatek,mtu3.yaml
-@@ -227,10 +227,14 @@ patternProperties:
-       example if the host mode is enabled.
- 
- dependencies:
--  connector: [ usb-role-switch ]
--  port: [ usb-role-switch ]
--  role-switch-default-mode: [ usb-role-switch ]
--  wakeup-source: [ 'mediatek,syscon-wakeup' ]
-+  connector:
-+    - usb-role-switch
-+  port:
-+    - usb-role-switch
-+  role-switch-default-mode:
-+    - usb-role-switch
-+  wakeup-source:
-+    - mediatek,syscon-wakeup
- 
- required:
-   - compatible
-diff --git a/Documentation/devicetree/bindings/watchdog/atmel,at91sam9-wdt.yaml b/Documentation/devicetree/bindings/watchdog/atmel,at91sam9-wdt.yaml
-index ad27bc518670..fea4f510aa6c 100644
---- a/Documentation/devicetree/bindings/watchdog/atmel,at91sam9-wdt.yaml
-+++ b/Documentation/devicetree/bindings/watchdog/atmel,at91sam9-wdt.yaml
-@@ -104,7 +104,8 @@ allOf:
-           const: hardware
- 
- dependencies:
--  atmel,reset-type: ['atmel,watchdog-type']
-+  atmel,reset-type:
-+    - atmel,watchdog-type
- 
- unevaluatedProperties: false
- 
--- 
-2.43.0
-
+> Changes in v12:
+>   - Removed call to of_node_put() for failure as it's being already
+>     done in spmi_dev_release(), as pointed out by Sashiko
+>   - Fixed usage of the new helper in all users (it's too hot today, sorry)
+> 
+> Changes in v11:
+>   - Use kzalloc_obj() in spmi_subdevice_alloc_and_add()
+>   - Introduced new helper to get a parent SPMI device which verifies
+>     both if the device has parent and if that parent is effectively
+>     a SPMI device type
+>   - Removed dev->parent NULL checks in all migration code, as that
+>     is now being checked in the new helper instead, reducing the
+>     amount of required lines of code to instantiate a SPMI subdevice
+>   - Moved of_node reference dropping to dev release callback (Sashiko)
+>   - Rebased over next-20260706
+> 
+> Changes in v10:
+>   - Add use-after-free fix rebased to before this series, as the v1 of
+>     that did not apply cleanly on a tree without this series applied
+>   - Replace unsafe to_spmi_device() with spmi_find_device_by_of_node() (Sashiko)
+>   - Fix -Wformat warning in dev_set_name call (Sashiko)
+> 
+> Changes in v9:
+>   - Added check for dev->parent where missing (Sashiko)
+>   - Changed %d to %u in dev_set_name() call as arg is unsigned (Sashiko)
+>   - Propagating error code from devm_regmap_init_spmi_ext() instead of
+>     returning -ENODEV in phy-qcom-eusb2-repeater.c (Sashiko)
+>   - Rebased over next-20260605 (no conflicts anyway)
+> 
+> Changes in v8:
+>   - Renamed *res to *sub_sdev in devm_spmi_subdevice_remove() (Andy)
+>   - Changed kerneldoc wording to "error pointer" for function
+>     spmi_subdevice_alloc_and_add() (Andy)
+>   - Shuffled around some assignments in spmi_subdevice_alloc_and_add() (Andy)
+>   - Used device_property_read_u32() instead of of_property_read_u32()
+>     in all of the migrated drivers (Andy)
+>   - Changed .max_register field in all of the migrated drivers from
+>     0x100 to 0xff (Andy)
+>   - Kept `sta1` declaration in reversed xmas tree order in function
+>     iadc_poll_wait_eoc() of qcom-spmi-iadc.c (Andy)
+> 
+> Changes in v7:
+>   - Added commit to cleanup redundant dev_name() in the pre-existing
+>     spmi_device_add() function
+>   - Added commit removing unneeded goto and improving spmi_device_add()
+>     readability by returning error in error path, and explicitly zero
+>     for success at the end.
+> 
+> Changes in v6:
+>   - Added commit to convert spmi.c to %pe error format and used
+>     %pe error format in spmi_subdevice code as wanted by Uwe Kleine-Konig
+> 
+> Changes in v5:
+>   - Changed dev_err to dev_err_probe in qcom-spmi-sdam (and done
+>     that even though I disagree - because I wanted this series to
+>     *exclusively* introduce the minimum required changes to
+>     migrate to the new API, but okay, whatever....!);
+>   - Added missing REGMAP dependency in Kconfig for qcom-spmi-sdam,
+>     phy-qcom-eusb2-repeater and qcom-coincell to resolve build
+>     issues when the already allowed COMPILE_TEST is enabled
+>     as pointed out by the test robot's randconfig builds.
+> 
+> Changes in v4:
+>   - Added selection of REGMAP_SPMI in Kconfig for qcom-coincell and
+>     for phy-qcom-eusb2-repeater to resolve undefined references when
+>     compiled with some randconfig
+> 
+> Changes in v3:
+>   - Fixed importing "SPMI" namespace in spmi-devres.c
+>   - Removed all instances of defensive programming, as pointed out by
+>     jic23 and Sebastian
+>   - Removed explicit casting as pointed out by jic23
+>   - Moved ida_free call to spmi_subdev_release() and simplified error
+>     handling in spmi_subdevice_alloc_and_add() as pointed out by jic23
+> 
+> Changes in v2:
+>   - Fixed missing `sparent` initialization in phy-qcom-eusb2-repeater
+>   - Changed val_bits to 8 in all Qualcomm drivers to ensure
+>     compatibility as suggested by Casey
+>   - Added struct device pointer in all conversion commits as suggested
+>     by Andy
+>   - Exported newly introduced functions with a new "SPMI" namespace
+>     and imported the same in all converted drivers as suggested by Andy
+>   - Added missing error checking for dev_set_name() call in spmi.c
+>     as suggested by Andy
+>   - Added comma to last entry of regmap_config as suggested by Andy
+> 
+> While adding support for newer MediaTek platforms, featuring complex
+> SPMI PMICs, I've seen that those SPMI-connected chips are internally
+> divided in various IP blocks, reachable in specific contiguous address
+> ranges... more or less like a MMIO, but over a slow SPMI bus instead.
+> 
+> I recalled that Qualcomm had something similar... and upon checking a
+> couple of devicetrees, yeah - indeed it's the same over there.
+> 
+> What I've seen then is a common pattern of reading the "reg" property
+> from devicetree in a struct member and then either
+>   A. Wrapping regmap_{read/write/etc}() calls in a function that adds
+>      the register base with "base + ..register", like it's done with
+>      writel()/readl() calls; or
+>   B. Doing the same as A. but without wrapper functions.
+> 
+> Even though that works just fine, in my opinion it's wrong.
+> 
+> The regmap API is way more complex than MMIO-only readl()/writel()
+> functions for multiple reasons (including supporting multiple busses
+> like SPMI, of course) - but everyone seemed to forget that regmap
+> can manage register base offsets transparently and automatically in
+> its API functions by simply adding a `reg_base` to the regmap_config
+> structure, which is used for initializing a `struct regmap`.
+> 
+> So, here we go: this series implements the software concept of an SPMI
+> Sub-Device (which, well, also reflects how Qualcomm and MediaTek's
+> actual hardware is laid out anyway).
+> 
+>                 SPMI Controller
+>                       |                ______
+>                       |               /       Sub-Device 1
+>                       V              /
+>                SPMI Device (PMIC) ----------- Sub-Device 2
+>                                      \
+>                                       \______ Sub-Device 3
+> 
+> As per this implementation, an SPMI Sub-Device can be allocated/created
+> and added in any driver that implements a... well.. subdevice (!) with
+> an SPMI "main" device as its parent: this allows to create and finally
+> to correctly configure a regmap that is specific to the sub-device,
+> operating on its specific address range and reading, and writing, to
+> its registers with the regmap API taking care of adding the base address
+> of a sub-device's registers as per regmap API design.
+> 
+> All of the SPMI Sub-Devices are therefore added as children of the SPMI
+> Device (usually a PMIC), as communication depends on the PMIC's SPMI bus
+> to be available (and the PMIC to be up and running, of course).
+> 
+> Summarizing the dependency chain (which is obvious to whoever knows what
+> is going on with Qualcomm and/or MediaTek SPMI PMICs):
+>      "SPMI Sub-Device x...N" are children "SPMI Device"
+>      "SPMI Device" is a child of "SPMI Controller"
+> 
+> (that was just another way to say the same thing as the graph above anyway).
+> 
+> Along with the new SPMI Sub-Device registration functions, I have also
+> performed a conversion of some Qualcomm SPMI drivers and only where the
+> actual conversion was trivial.
+> 
+> I haven't included any conversion of more complex Qualcomm SPMI drivers
+> because I don't have the required bandwidth to do so (and besides, I think,
+> but haven't exactly verified, that some of those require SoCs that I don't
+> have for testing anyway).
+> 
+> 
+> AngeloGioacchino Del Regno (12):
+>    spmi: Fix potential use-after-free by grabbing of_node reference
+>    spmi: Remove redundant dev_name() print in spmi_device_add()
+>    spmi: Print error status with %pe format
+>    spmi: Remove unneeded goto in spmi_device_add() error path
+>    spmi: Implement spmi_subdevice_alloc_and_add() and devm variant
+>    spmi: Add helper to get a parent SPMI device
+>    nvmem: qcom-spmi-sdam: Migrate to devm_spmi_subdevice_alloc_and_add()
+>    power: reset: qcom-pon: Migrate to devm_spmi_subdevice_alloc_and_add()
+>    phy: qualcomm: eusb2-repeater: Migrate to
+>      devm_spmi_subdevice_alloc_and_add()
+>    misc: qcom-coincell: Migrate to devm_spmi_subdevice_alloc_and_add()
+>    iio: adc: qcom-spmi-iadc: Migrate to
+>      devm_spmi_subdevice_alloc_and_add()
+>    iio: adc: qcom-spmi-iadc: Remove regmap R/W wrapper functions
+> 
+>   drivers/iio/adc/qcom-spmi-iadc.c              | 116 ++++++++---------
+>   drivers/misc/Kconfig                          |   2 +
+>   drivers/misc/qcom-coincell.c                  |  45 +++++--
+>   drivers/nvmem/Kconfig                         |   1 +
+>   drivers/nvmem/qcom-spmi-sdam.c                |  41 ++++--
+>   drivers/phy/qualcomm/Kconfig                  |   2 +
+>   .../phy/qualcomm/phy-qcom-eusb2-repeater.c    |  52 +++++---
+>   drivers/power/reset/qcom-pon.c                |  31 +++--
+>   drivers/spmi/spmi-devres.c                    |  24 ++++
+>   drivers/spmi/spmi.c                           | 121 ++++++++++++++++--
+>   include/linux/spmi.h                          |  17 +++
+>   11 files changed, 325 insertions(+), 127 deletions(-)
+> 
 
 -- 
 linux-phy mailing list
