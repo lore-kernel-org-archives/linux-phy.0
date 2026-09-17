@@ -4,93 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DCBDBC982D0
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Sep 2026 18:28:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB268C982D2
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Sep 2026 18:28:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ljwUMpHaZ49kHen3Sr1XIOzzlNMzVnQgaOgMuZGoH8c=; b=BCf79lS8V1iCjp
-	QcedKoPw5rgWOnkg3GvMyQkqCxho4mAgtkR2rImP/5GZK10uq/GKw2CFLtcfjA7PZ59D8nAyyWoZN
-	/TB671/cGBQJoScLiO9WQ6YCdA/7CfCQ766holcqD/omxnpuPZDQI9lt9wUHPzlO/XlehDPPsa8rW
-	D/14D4IQ5Zrl0YJSyPKkkWteVWIXAODRCia3zRevNSlljdRqSi48KqfM5hu3Gc44wXNBaFhYB0ynJ
-	KwEae4yHup1Ls607af/G4vMZgjV9VQOYyFiJO5p1HNSKuviCE3Jhmn+Z5t4B2jV/D2xSWyHCaWqoh
-	kRxz15tVFCAaagdc4K3w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=MFYeoeiDEUm0SdeJp3g8fQQWVUJy/878WXPRG10hRug=; b=BfiuSid2Q0+IzdgxdjV09I6ZIk
+	DVrNLKQNvMRUt6BbnRakcchfWTY/9KY4iZoMVdcSfbaXWrg6BN3F94hJqqU77XJZJ0qQTaJp45yVF
+	QozXeyf+/S7MnH41FF47mDAP+N7AElE1TyTsyVNRi2XgxTPCVfdE+AqucsMWKOD4qz8bjPEEWqbnp
+	XqDwTUFYY90l9SOZ8YSE0LHbXGAS9NbYw4FUJ724/zTj03e/zC1dYBmj2ueSWpUhlEorvuqNz88nN
+	puVxlSQAPrv7pTjAwjfk2lv87D/XSzoXBoiYe1lpsA7MNoR0i8Yu6ZpAgnMKeADnV9n/wxVosIODI
+	ij3UyJGA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7Gq9-0000000CE5l-0xZp;
-	Thu, 17 Sep 2026 18:28:09 +0000
-Received: from mail-wm2-x10.google.com ([2a00:1450:4864:31::10])
+	id 1x7Gqw-0000000CEEV-1oZC;
+	Thu, 17 Sep 2026 18:28:58 +0000
+Received: from mail-wr2-x10.google.com ([2a00:1450:4864:30::10])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7Gq6-0000000CE4v-1xKv
+	id 1x7Gqt-0000000CEDZ-2PZp
 	for linux-phy@lists.infradead.org;
-	Thu, 17 Sep 2026 18:28:07 +0000
-Received: by mail-wm2-x10.google.com with SMTP id 5b1f17b1804b1-49ccfd61ecaso11243515e9.3
-        for <linux-phy@lists.infradead.org>; Thu, 17 Sep 2026 11:28:05 -0700 (PDT)
+	Thu, 17 Sep 2026 18:28:56 +0000
+Received: by mail-wr2-x10.google.com with SMTP id ffacd0b85a97d-485b1d2874fso435340f8f.0
+        for <linux-phy@lists.infradead.org>; Thu, 17 Sep 2026 11:28:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1789669684; x=1790274484; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:mime-version:references
-         :in-reply-to:message-id:date:subject:cc:to:from:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=wXQrE0cSC2j1UcC86SeRkMHcu0uW3qI+LeREPCrSbF4=;
-        b=pHzAlCaXbrq4O3lhqICgdB9hjWxpLxArKlLYXpX9cKFncAn4Cl0+yK3NQhfljxxWd4
-         246JF2whtuVjogFGJdAl4nnty+OEumg2wBu4FWbaYdn0S5PINSJb8I3SwEQwTT8HGHKI
-         avQX69hVb/dSnPDzHf02Zo3qUuTsM1UQjS4d/aFYGOMsfX5zAynVM/ZWtIfbS3PEXkSA
-         ynJriKwvQQ2m3iHPq0IL7GXkqQM4ucrruTEpGL3Qbkv75zRVp/fbQOqoEQGmzQzpK2tE
-         qJx+XC8BBWBsm8ALH3RiinMyCgU7WWQfhqPMDRiuNI7J+AyDqVL07yb8c1GZ9HLf5j9k
-         6Zxg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1789669684; x=1790274484;
-        h=content-transfer-encoding:content-type:mime-version:references
-         :in-reply-to:message-id:date:subject:cc:to:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+        d=gmail.com; s=20251104; t=1789669733; x=1790274533; darn=lists.infradead.org;
+        h=content-type:mime-version:references:in-reply-to:message-id:date
+         :subject:cc:to:from:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=wXQrE0cSC2j1UcC86SeRkMHcu0uW3qI+LeREPCrSbF4=;
-        b=CqCAarwZ6kyLkXNbLaBf+macP79lwzdMT3RoB6QXKo3bPfgld3sQ480IwUGjWtpEIp
-         +zGIzmtIiS1Ns2qWzx/I24IPtCZcSN/wwejfx95C9cr5wGPQgdlXZw4t5lRAw7wlyH8U
-         WwyIf8H6p1UORiTBqMEj152Z7WSB/piprCkPiCi99d3urtiCdkxRDM3nw4Kb+qsh8De+
-         /clvoebe3H72YFLlsuvUMO7es7aiZCstR3LT2wc+vx0K3dcjeDOppYF9ZSo5GNP3dRc1
-         yA4fJIb/pZ9YKcaBhF5xDw6HhmLsz3iDZvHdUGFyzr8cZB6jKo+XvmY9dhHMxIlF8K0m
-         hbjA==
-X-Forwarded-Encrypted: i=1; AKwUvByY+2J5RgV4FgoBG4qX+xqER7eESf98eQV7hNjh+dblNTGxOSf3zfDDeqeMDqLthA/k1H6TAidrOv8=@lists.infradead.org
-X-Gm-Message-State: AFuF++lxQDznS3D6WeiTJU9tbaMtKTc3DEklB7tO7WzbetkeR5rFUhh2
-	jzKFptuCn0L4TiOy6pXX/zn5o0RQm9JtD6N/NPS41e9/szbrkdwShXGo
-X-Gm-Gg: AYBFou28DfQM0cxemU32UoWkgMRYwFADqcR0PdPpXK6iANQqy3POWip6VcUSlqLJUjk
-	eHjheKjoBFnqEm8qNwOmdOm0BD/Fo115c/gU9uOG+4Sm7olaReoVr+OHzvSdV7L6Pxs1bMu5VKC
-	nCwMjP8me3Q9Fo9OnH/hsJF4XBlRQH22kvzkILqrlqAxnwvbUwycrYCDw8bu0B/lY3qFJ/g3gbA
-	ToMb4p3V6z/kL1bnQd7IJK5jcNLg6ZyFGvFfF4+4IjOzhlkWCz0raPi+3nvKI07Lig26HqKZh8x
-	H4rl/hpGYOhDVtUzoWdRrymPgYm2cKsbBIKeAA904/JqPW4bmrnEkghXjGahMnj1nwH+1icjEqA
-	KebYad27tUPI+RHBsHpwTV3b4HDbVFYy9LH047d+NkPl0LgwOLy2u1oX81v++X1LOxhPIfNKCiR
-	ynKf83FQEL0Gd1zElGy+HIbL/mZDPhQ2xepFoP72Z2v+8eIfKoANx7j7+RAauR9Lur/jw/K4ycm
-	82QbWhp
-X-Received: by 2002:a05:600c:3492:b0:495:6e68:5df2 with SMTP id 5b1f17b1804b1-49eb72fb7f2mr83849295e9.12.1789669684372;
-        Thu, 17 Sep 2026 11:28:04 -0700 (PDT)
-Received: from localhost.localdomain ([94.252.75.113])
-        by smtp.googlemail.com with ESMTPSA id 5b1f17b1804b1-49fbbd83e39sm126935705e9.4.2026.09.17.11.28.02
+        bh=Z8WFLPr3Z4Vj59hqf3BiQcKfbTnQOlSm6y7UQuAGxu8=;
+        b=QMm0SaA6oTzYz/Z4MxnhUNuPtCoYwYfHfQSp5OVu6t3LHyBPAutnINopy4ZeBYXFVM
+         gh4Uky231IxC7aut3vyWRj8RGJMhHQSa7mlrB1pWe9D7zXMcRDlPV0uUVXT9uw19vHVf
+         DhPkX5o/TTqexJ9smqr749BgY5DHZkNi809UnIDYPXbL/f07W8hPTqGJFDv/vN2iBpEr
+         eOPDx/WIsMcMNXmFllws8MyRtbOjZ46XWZR7ewiu3lpPaF6kq5A9qgoNc9Cshi4b2xFa
+         R0hIbmFZt6WjxTIcNMNRycUG8XIqokIVWITlMGVfed+fOi/VG9w/moT0dFxVPxWaULVS
+         APNA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1789669733; x=1790274533;
+        h=content-type:mime-version:references:in-reply-to:message-id:date
+         :subject:cc:to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=Z8WFLPr3Z4Vj59hqf3BiQcKfbTnQOlSm6y7UQuAGxu8=;
+        b=ePim3fth8izXj+uhi21Q/JCTWwRHdGk/ykY3zVTVmc2pbFEG/uiLpKA/4cu1aVbLbU
+         fxTnbdvDjoUJChIvrYfa6fX0n7P+XWfpmHE17ZkOzkXHCPETQAXN/dgXDQsnahhQMKRP
+         8frqmcESR7HAhr3X5U9IhX/F4p9wfftpqbfpjjlBVBihihWFNiWagLFZ3uOLqLhxYOk2
+         ani+5zqKVVy8HpdUcQxOiRRH4uXPMA5kn+aNbD+fYQFCu311bXT9l6tt/V8797/MPgnF
+         NazoLytRFGBqgVCQHL+UimmvgwcVnJ93Gd0kf7P8pn2VOk35vfZgHZzgCq0zncS05OaZ
+         U+TA==
+X-Forwarded-Encrypted: i=1; AKwUvBy93nh8edYp3OMJg+4OBLY66NpuHjK4ZIB8WkJfeGDilNKMm88uBhc4y6gnzV/ip1UydO9dfqMtqWk=@lists.infradead.org
+X-Gm-Message-State: AFuF++mLLd593EK0d97hcovNDc06e52zDM6Nk1vuULfEbWmUZk9yc0p+
+	QVolLrWJp4xRYJYWxdI406uduu7g9GWoWamHfAVW+nP/BLRhV1eMP0hv
+X-Gm-Gg: AYBFou0VVh59mnYYaaFN/xvCg7/gGWDvJPmHkcafI6LzanUzgR0NbIwFWLoM/Qcokai
+	cHC0J0pdkcCKtJP19iKFvQa9ArO6m/HxVNa8w7A5/CgzaCUPtjrRNTWL70Jcypu6e++WnxgSjak
+	i95wfAP+lv0mRgcn8KQz+b+vdf0knfLBuvggqPhnYmJuTVFni5j28yoByZ8GxILp7FDEjRbipOd
+	s/icX782RAUNA5bIiodzBqF7Lom0WXORNiFdTuqHLLA63Kw6rT8AeyU6V0g19QzA+nJPxZ8RitE
+	dLBUGn3pGV37wra8eDhlpjQ7BUFmH1fXNbH+uvJw4CYVCHyv8XsrGtfSiEgGux2zNfAnQro3fE+
+	uc8sC4DUuiDESs4iRLBzPKlUyefx2qWklaVmdBt5NYugGDLMTV7oEFQZc779yVQ/1olmAPCxFqI
+	jj2HCCgr5tTPsSysb5uoQfiM9W1WP0UX4EgVTn7PsGk1BVRhhb+2Y2YG6N5I0zamcXA6kaTwWQ4
+	D/2+g==
+X-Received: by 2002:a05:6000:708:b0:487:11:d053 with SMTP id ffacd0b85a97d-4871d915c41mr24943f8f.0.1789669733272;
+        Thu, 17 Sep 2026 11:28:53 -0700 (PDT)
+Received: from strix.localnet ([197.250.51.38])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4870bf26c8dsm17422129f8f.14.2026.09.17.11.28.45
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 17 Sep 2026 11:28:03 -0700 (PDT)
-From: Oleg Keri <okerixx@gmail.com>
-To: Nabige Aala <nabige.aala@oss.qualcomm.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Ritesh Kumar <ritesh.kumar@oss.qualcomm.com>,
-	Mahadevan P <mahadevan.p@oss.qualcomm.com>
-Subject: Re: [PATCH v4 4/9] phy: qualcomm: qmp-combo: Add hardware-specific DP PHY config fields
-Date: Thu, 17 Sep 2026 20:27:54 +0200
-Message-ID: <178966967452.3333.16125740437772430030@gmail.com>
-X-Mailer: git-send-email 2.55.0
-In-Reply-To: <20260908-glymur-phy-v3-v4-4-ff22e5150538@oss.qualcomm.com>
-References: <20260908-glymur-phy-v3-v4-4-ff22e5150538@oss.qualcomm.com>
+        Thu, 17 Sep 2026 11:28:52 -0700 (PDT)
+From: Stefan =?UTF-8?B?RMO2c2luZ2Vy?= <stefandoesinger@gmail.com>
+To: Lee Jones <lee@kernel.org>
+Cc: Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Brian Masney <bmasney@redhat.com>,
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+ Russell King <linux@armlinux.org.uk>, Brian Masney <bmasney+clk@redhat.com>,
+ Jerome Brunet <jbrunet+clk@baylibre.com>,
+ Manivannan Sadhasivam <mani@kernel.org>, linux-clk@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ mfd@lists.linux.dev
+Subject: Re: [PATCH v11 05/12] mfd: zx297520v3: Add a clock and reset MFD driver
+Date: Thu, 17 Sep 2026 21:28:36 +0300
+Message-ID: <lIjduhk6Sb-yyUCQAY-CKQ@gmail.com>
+In-Reply-To: <x9tzyTnKRAOyrdtSGnka0g@gmail.com>
+References: <20260826-zx29clk-v11-0-f8ad59c6426c@gmail.com>
+ <20260910161711.GK1051768@google.com> <x9tzyTnKRAOyrdtSGnka0g@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260917_112806_529227_C66223E1 
-X-CRM114-Status: GOOD (  11.60  )
+X-CRM114-CacheID: sfid-20260917_112855_637794_2B5198F8 
+X-CRM114-Status: GOOD (  10.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,63 +104,82 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============3653903552366051789=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Nabige,
+--===============3653903552366051789==
+Content-Type: multipart/signed; boundary="nextPartElaGoEJaRnaci40IYCPnGA";
+ micalg="pgp-sha256"; protocol="application/pgp-signature"
 
-On Tue, Sep 08, 2026, Nabige Aala wrote:
-> Update qmp_combo_configure_dp_mode() to honor dp_mode_ignore_reverse,
-> so Glymur can bypass TypeC orientation-based lane reversal.
+--nextPartElaGoEJaRnaci40IYCPnGA
+Content-Transfer-Encoding: 7Bit
+Content-Type: text/plain; charset="utf-8"; protected-headers="v1"
+From: Stefan =?UTF-8?B?RMO2c2luZ2Vy?= <stefandoesinger@gmail.com>
+To: Lee Jones <lee@kernel.org>
+Date: Thu, 17 Sep 2026 21:28:36 +0300
+Message-ID: <lIjduhk6Sb-yyUCQAY-CKQ@gmail.com>
+In-Reply-To: <x9tzyTnKRAOyrdtSGnka0g@gmail.com>
+MIME-Version: 1.0
 
-This breaks 2-lane DP with a reversed plug on a Lenovo Yoga Slim 7x
-Gen 11 (Glymur), with the whole v4 series on next-20260916.
+Hi Lee,
 
-With dp_mode_ignore_reverse set, qmp_combo_configure_dp_mode() always
-programs the normal side (DP_PHY_MODE 0x5c, lane 2/3 power bits in
-DP_PHY_PD_CTL), while qmp_v8_configure_dp_phy() still follows the real
-orientation and enables TXA for a reversed plug. With fewer than four
-lanes the two no longer match.
+Am Donnerstag, 10. September 2026, 22:14:54 Ostafrikanische Zeit schrieben 
+Sie:
+> Hi Lee,
+> 
+> Thanks again for your review!
 
-On a 2-lane DP + USB3 dock (HBR2, one LTTPR) the reversed plug passes
-clock recovery and then never reaches channel EQ: the LTTPR reports
-CR_DONE on both lanes but never EQ_DONE or SYMBOL_LOCKED, walks its
-pre-emphasis request up to level 3 at swing level 0, and then clock
-recovery is lost. All four attempts end the same way:
-
-  [drm:msm_dp_ctrl_link_train_1_2] *ERROR* link training #2 on phy 1 failed. ret=-110
-  [drm:msm_dp_ctrl_setup_main_link] *ERROR* link training of LTTPR(s) failed. ret=-110
-  [drm:msm_dp_display_atomic_enable] *ERROR* Failed link training (rc=-104)
-
-The same dock trains at once with the plug the other way round. UCSI
-and pmic_glink_altmode report the same orientation in both cases, so
-the orientation itself is right.
-
-Ignoring the orientation only when all four lanes carry DP fixes it
-here, both orientations train:
-
--	bool reverse = (qmp->orientation == TYPEC_ORIENTATION_REVERSE) &&
--		       !cfg->dp_mode_ignore_reverse;
- 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
-+	bool reverse = (qmp->orientation == TYPEC_ORIENTATION_REVERSE) &&
-+		       !(cfg->dp_mode_ignore_reverse && dp_opts->lanes == 4);
-
-I have no 4-lane sink to check whether 0x5c is really needed for a
-reversed 4-lane link; could you say what the flag is for?
-
-Separately, on 7/9: LN0/LN1_DRV_LVL is now looked up from v/p levels,
-but only in qmp_v8_configure_dp_clocks(), i.e. at power-on when both
-are zero. Level changes during training go through configure_dp_tx(),
-which does not touch these registers, so they stay at the [0][0] entry
-(0x02 at HBR2) where the old code had 0x1f. I can test a v5 on this
-machine.
+This is a ping regarding my reply[0] to your review from last week. Do you 
+have any comments on my responses?
 
 Thanks,
-Oleg
+Stefan
+
+0: https://lore.kernel.org/linux-arm-kernel/x9tzyTnKRAOyrdtSGnka0g@gmail.com/
+
+--nextPartElaGoEJaRnaci40IYCPnGA
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part.
+Content-Transfer-Encoding: 7Bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQJPBAABCAA5FiEEQxb0tqoFWyeVMl1sPRO8yFRPGiIFAmqsMVQbFIAAAAAABAAO
+bWFudTIsMi41KzEuMTIsMiwyAAoJED0TvMhUTxoiw48P/3we1ILZFxaaGd9dUpM9
+EPNR5ZVYal8qGKGBQRRFG5L5iI9qCAETVZTl5UuYFjjcs3U9+f2t8HbH5pd6hZSt
+C2F3WDGrsGddEGAPArMF7962KRKHHPUDoEOokUhrdp0/J7XFAZRDjCPJJdZxTHZD
+cpnqNPNwoTUAWYs4kLINKy7fY7PW+sJqUmAqvnB47RLoFURA9/DYcNxa/1esTScd
+Vyzm0NEsRFuZVSYTSjbBffTn266IrxNRSBnCJOxRAEv4edO2dkkqy9OZBDQLkcYn
+LJDrdJY/bAPJFapkXGuowmd5kVtYjG60V8+0suU1m+2HLlSipyfl4XeYHAS8gT5x
+UbXlsxgwtxCnMHWed3RbtXUGsYuBCsuO2HRz0Rv6Cduc2qY4XeEtgFxShiQbtq4w
+bxxE8DTlxoYjflISxEYYp/fD79irBB3hsp7oeSzP8PUyHsuFfCKpb2kfwnUtwRIQ
+Ov2oPm29JViaAFvrF1h5FQEU2zLsdNBquOIlsqamK07yjEPcELwlAByNv9e65/Zn
+3HUXepbTgovCaAofjQsggxDdSLLb4O5FjNn26DgHxz9d6ONWOjyqOIalTG2SbujQ
+ZDmnp3aIX6ETZBue8mBr5Df9zQTmCwYmmAh4PtqvOfy8R72pr+i3SSUdTXIj8h4X
+3h6c3+ubcO2oiEqVFEPbus5o
+=NhYp
+-----END PGP SIGNATURE-----
+
+--nextPartElaGoEJaRnaci40IYCPnGA--
+
+
+
+
+
+--===============3653903552366051789==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============3653903552366051789==--
+
+
+
+
