@@ -4,98 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1DC3BC982DA
-	for <linux-phy@archiver.kernel.org>; Fri, 18 Sep 2026 09:11:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31EFCC982D9
+	for <linux-phy@archiver.kernel.org>; Fri, 18 Sep 2026 10:21:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:From:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M9lIWpH3MlljTLUyuWF1FZwo6TiRuSurDyYcna9KdPk=; b=EfIGFhmbEjwNHn
-	iHo2vrCYDTUlD5mNlWySpzgAhxbt+54ZH/zGvf7zhHKZs/soEh3irgLpD37/spzIsAdE9jPxdD28f
-	EbFGBZE0NoShWVid5WqXc4TetYNlkdWU8c5NY5uvtoHoUsbLVASBNIS6I+7QU0U8sZ24yuo67J75/
-	gt/aW9SIvbymU/phet/eWsNve5cBGDilsslJ4YbAFYfhvxyHhFnmcYGlE7BPDDYqXPo1I3wDJ4pGA
-	9ww1Y36OsvdxJlTBneHS3KoTvNc9RDByr7E3HYIcCMDyR619jvy1lZT6sdD1jqxunNZXBPqPcsjGk
-	jkRO+K4HynySRyc30S8Q==;
+	List-Owner; bh=D1LoRVJ15JCTd6uFxzm//dQWjUgFV/BptQ8RkRw5eek=; b=aAbUc2kUJUJXST
+	QReqiGy4FN15FFZP5Hjmno6ETRKPmMQnZbbDW2jbRzdB4+DIc4Bhp7BPJqK9Z6PMyEapvB9MXns3U
+	SQB09hNy+V0LpElTjRUzvkpLZ/7e/a7uxL43HQZv6akGNzF2Lt8Tg4aDmCyG3z5HRKM3N9pMZBV0M
+	cS12jWEyvEYSrVd19/ZydKgl16Lgg/neREv766reqp1doDuv4tDuvA/I4zPTJa7pClYdYrrsR4UAQ
+	l4kLxpek0jYuT0q5XCYf7owOX8fdojHxSmED4yVH7y3RZXYEvaCD681B8cT2WxUIAtsKmRtyAij05
+	lTEFXsGv8GS0tTJYv7Iw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7UdG-0000000DtsU-36EL;
-	Fri, 18 Sep 2026 09:11:46 +0000
-Received: from mail-wm2-x11.google.com ([2a00:1450:4864:31::11])
+	id 1x7Vik-0000000E5Qs-2HQr;
+	Fri, 18 Sep 2026 10:21:30 +0000
+Received: from mailout4.samsung.com ([203.254.224.34])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7UdA-0000000DtoL-2p33
+	id 1x7Vid-0000000E5Ot-2P5i
 	for linux-phy@lists.infradead.org;
-	Fri, 18 Sep 2026 09:11:42 +0000
-Received: by mail-wm2-x11.google.com with SMTP id 5b1f17b1804b1-49c5a927a1fso143695e9.2
-        for <linux-phy@lists.infradead.org>; Fri, 18 Sep 2026 02:11:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1789722697; x=1790327497; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=yZ/vqBSgFHqCJoAqatA3IE2jvlq836FlV9wvuCTBolI=;
-        b=eteVM4DkX2YdJStF8RN9lDBRWoKHT22ScfaP9vhGkY0UguBsFmgxKL0LFMpwUp6Bj1
-         ps3xCDy0HxFpHis08xgsyjutMryP2SuamgnHdIbVnPF+86tq8lYDK12wagzhY9GLAcdh
-         u3PuRN6MCEtGWIVic1R4ilpQMvjqlFz9Iyk+Kw9W9zb6tAXnospEX6dHh2kj3u6qqxba
-         OFIBJKmZB33aU0jHis0i7/bzdfcmAjJY6gR5CyDXTN42Y/hrpzBZyU3YgoJ4Twtphzms
-         vmY+gkraw63QHwzpROZmCIyzK1lxnbqBtDL1KJQoxJRfKkgQ7n1+XgboBCy8n7mkviPp
-         cjHQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1789722697; x=1790327497;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=yZ/vqBSgFHqCJoAqatA3IE2jvlq836FlV9wvuCTBolI=;
-        b=P2aEef6VWzdQnCC9qSRIC+dkn6f5td89+HFUKbKdEz+tzuDpjgEtwMAKzAD2lDvDvs
-         w8+ujlU3A+hxmt65NtyOLsUzHFYppyfFGY/94yJ4CrVzISGpWZ+uyAnfzMIuOE8HAtzb
-         Tr6SlVxp+NmkAUTIVfiUO6UBAo5Mjw2+pDHv3rd69VuPAJ3rZhnP1Q9e4zRkKwqb2cWz
-         Ev58BNL9kapwLe+zuyV4BZxxkN5ZFcgTRmBYwxG4LtAvUuok5oz2iXjjtT0wKKcxEOcN
-         xwM+ec8xIW8xtguXiBR2DEu/FZEMGQmgWHWoTPFqYaByMHHE/ZYdADd+JrRo3dajjc4P
-         BluQ==
-X-Forwarded-Encrypted: i=1; AKwUvByI9OZcf+UZfXSUNOvgtVrI4j3GtoM/Dq0vSQQas0c6MeQ1Ssc2pLHk0M18BxYym8FYzkylW7zGX3c=@lists.infradead.org
-X-Gm-Message-State: AFuF++lX6kNGW9KMg9ieKspZvlBIdIrN9JH75c56KiDaG5A59Oau5Ysv
-	VvXLxPW1hvVXJ01d0NDjkx0h003YxnZm1m2ua+g1MqKiCATfPecCAG1w
-X-Gm-Gg: AYBFou06U8lhlkmpmfqRpjc4jy3tUndFhDp8e+4zS5VQ8hu98ZissFs6MUndHY8KZBx
-	qnfWGcJz9LmYveXyga+a6gWzQQzx+Mpsg44zm1S6iFsoWfvFXf9pTlTtHFrZ84Zj4raNypy/1uE
-	zhZCPNDKURPoxJOzX3zm/uKxeVBVm32x0Bub70TJstG0nw4ru55vQVo/1YrtrKqiZK95YmFHdDd
-	XWT76G4rIA180p7N53PekCotcgyEYybxRlOwCxoZYdeG2U+cJYQGK4xgBbbSKMtE0qX3cDv60hF
-	XzPiyXBpGOsHdpFFv0LQKOvJy1yn9WYr04uvWzWXxk3WiCZ6uzJk94wBbMWm5+ZjpzykVShVIqC
-	u0+E4WlFZUEDroDGLfvAmITiBws0UX4swFI6uIMOwNbO8y+NBtKvXNTzASp/XwfTByFeI6sau6f
-	htXn3HrYjvtbLbHDteJA2g4fzSeTbkoNRnhgfpuRKNlf0HdH7GTJnI2NyZH+B2FUQj2dvx10a/z
-	yjTLZRx1/8H8KxtAJXQSPKiChiX86y7VFRz2sgGv4caagQlHDj7jdMxAFJHuf8V1uuHojdjraRI
-	kFX/
-X-Received: by 2002:a05:600c:609b:b0:49c:f9b8:bae0 with SMTP id 5b1f17b1804b1-49fc7f2bdc8mr18281725e9.2.1789722696430;
-        Fri, 18 Sep 2026 02:11:36 -0700 (PDT)
-Received: from OrangePi5-Plus.BB-HOME (20014C4E1B829B006E521A2A508563A3.dsl.pool.telekom.hu. [2001:4c4e:1b82:9b00:6e52:1a2a:5085:63a3])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-49fc7cfd1dasm37167425e9.9.2026.09.18.02.11.35
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 18 Sep 2026 02:11:35 -0700 (PDT)
-From: Igor Paunovic <royalnet026@gmail.com>
-To: Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: Igor Paunovic <royalnet026@gmail.com>,
-	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	linux-kernel@vger.kernel.org,
-	linux-usb@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	kernel@collabora.com
-Subject: Re: [PATCH 5/5] usb: dwc3: rockchip: fix USB-C reconnect in gadget mode
-Date: Fri, 18 Sep 2026 11:10:32 +0200
-Message-ID: <20260918091032.15593-1-royalnet026@gmail.com>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20260915-b4-rockchip-dwc3-rockchip-glue-v1-5-763bb546824e@collabora.com>
-References: <20260915-b4-rockchip-dwc3-rockchip-glue-v1-5-763bb546824e@collabora.com>
+	Fri, 18 Sep 2026 10:21:29 +0000
+Received: from epcas5p4.samsung.com (unknown [182.195.41.42])
+	by mailout4.samsung.com (KnoxPortal) with ESMTP id 20260918102113epoutp041022d6e7e02c2997cb8a8a064a02b031~WYxwJMjNZ1393613936epoutp04e
+	for <linux-phy@lists.infradead.org>; Fri, 18 Sep 2026 10:21:13 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com 20260918102113epoutp041022d6e7e02c2997cb8a8a064a02b031~WYxwJMjNZ1393613936epoutp04e
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1789726874;
+	bh=mboPEqvEACJTAtKfdZ1iQemoHuICqAXG3If2FFLFlMA=;
+	h=Date:Subject:To:Cc:From:In-Reply-To:References:From;
+	b=q5/rYOyzAIRpwubUTigeHz6catvyr++oiaU0INH8BrZP7KLLV9GmF/P5lT+WyNEqy
+	 UjLYF4YCdC/VH4C7Haw4t0HWT7x0kdeA4NnZG3++Eq4dMR/OGK38YtBcwoHISHcvKG
+	 4qkctIkTlEfF4mqOP/2EOkD1nnjrUbES0DxJmT9w=
+Received: from epsnrtp04.localdomain (unknown [182.195.42.156]) by
+	epcas5p2.samsung.com (KnoxPortal) with ESMTPS id
+	20260918102113epcas5p2a37090873c7e08a5b15b0fecf005810b~WYxvgUOtV0355903559epcas5p2C;
+	Fri, 18 Sep 2026 10:21:13 +0000 (GMT)
+Received: from epcas5p1.samsung.com (unknown [182.195.38.92]) by
+	epsnrtp04.localdomain (Postfix) with ESMTP id 4hmTDS15Ysz6B9m7; Fri, 18 Sep
+	2026 10:21:12 +0000 (GMT)
+Received: from epsmtip1.samsung.com (unknown [182.195.34.30]) by
+	epcas5p2.samsung.com (KnoxPortal) with ESMTPA id
+	20260918102111epcas5p202e3b90fcfd624683f76a2ee45f199d4~WYxt86RB51756317563epcas5p20;
+	Fri, 18 Sep 2026 10:21:11 +0000 (GMT)
+Received: from [107.122.5.126] (unknown [107.122.5.126]) by
+	epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
+	20260918102109epsmtip1577c944b77491d8b4992d17593276ce2~WYxrze7hA1639116391epsmtip1_;
+	Fri, 18 Sep 2026 10:21:09 +0000 (GMT)
+Message-ID: <32029c62-faad-42e3-b1bb-e66772ca8ac0@samsung.com>
+Date: Fri, 18 Sep 2026 15:51:08 +0530
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] phy: exynos5-usbdrd: Use dynamic phy_cfg size to
+ prevent OOB access
+To: =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>,
+	vkoul@kernel.org, neil.armstrong@linaro.org, krzk@kernel.org,
+	peter.griffin@linaro.org, alim.akhtar@samsung.com, pritam.sutar@samsung.com,
+	kernel@lvkasz.us, linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Cc: jh0801.jung@samsung.com, dh10.jung@samsung.com, akash.m5@samsung.com,
+	muhammed.ali@samsung.com, thiagu.r@samsung.com
+Content-Language: en-US
+From: Selvarasu Ganesan <selvarasu.g@samsung.com>
+In-Reply-To: <950335110f9d9c22a026fa5174e492c4194299a5.camel@linaro.org>
+X-CMS-MailID: 20260918102111epcas5p202e3b90fcfd624683f76a2ee45f199d4
+X-Msg-Generator: CA
+CMS-TYPE: 105P
+cpgsPolicy: CPGSC10-542,Y
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20260831070349epcas5p4c62a4e46592dffe95723ddd51a6068e0
+References: <CGME20260831070349epcas5p4c62a4e46592dffe95723ddd51a6068e0@epcas5p4.samsung.com>
+	<20260831070309.158069-1-selvarasu.g@samsung.com>
+	<950335110f9d9c22a026fa5174e492c4194299a5.camel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260918_021140_750259_E7DD7135 
-X-CRM114-Status: GOOD (  11.16  )
+X-CRM114-CacheID: sfid-20260918_032125_276616_A1B5FE7F 
+X-CRM114-Status: GOOD (  15.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,44 +93,38 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Sebastian,
-
-With this patch applied, the series fails to build when dwc3 is
-host-only and USB_GADGET is either disabled, or a module while the
-glue is built in. I built it on top of v7.3-rc1 for arm64 (allnoconfig
-plus a fragment, gcc 13.3) with USB=y, USB_DWC3=y, USB_DWC3_HOST=y,
-USB_DWC3_ROCKCHIP=y and USB_GADGET unset:
-
-  aarch64-linux-gnu-ld: drivers/usb/dwc3/dwc3-rockchip.o: in function `dwc3_rockchip_set_role':
-  dwc3-rockchip.c:(.text+0x270): undefined reference to `usb_udc_vbus_handler'
-
-With USB_DWC3=m and USB_DWC3_ROCKCHIP=m, modpost reports
-usb_udc_vbus_handler as undefined. With USB_GADGET=m and the glue
-built in, the link error is the same. With patches 1-4 only, all
-three configs build.
-
-dwc3_rockchip_vbus_handler() checks dwc->gadget only at runtime, so
-the call to usb_udc_vbus_handler() is always compiled in. That
-function is only built with USB_GADGET (drivers/usb/gadget/udc/core.c)
-and has no stub in include/linux/usb/gadget.h, and USB_DWC3_ROCKCHIP
-does not depend on the gadget side.
-
-The same test run also shows that the two EXPORT_TRACEPOINT_SYMBOL_GPL
-lines in 4/5 fix the modpost error I reported on v14. With them
-dropped, dwc3=y/glue=m (the v14 case) and dwc3=m/glue=m, both with
-tracing, fail with the same four undefined tracepoint symbols.
-
-This was a build test only; I did not run anything on a board. An LLM
-assistant wrote the build script and helped draft this mail.
-
-Igor
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+Ck9uIDkvMTgvMjAyNiAyOjA0IFBNLCBBbmRyw6kgRHJhc3ppayB3cm90ZToKPiBPbiBNb24sIDIw
+MjYtMDgtMzEgYXQgMTI6MzMgKzA1MzAsIFNlbHZhcmFzdSBHYW5lc2FuIHdyb3RlOgo+PiBUaGUg
+cHJvYmUgbG9vcCBjdXJyZW50bHkgaXRlcmF0ZXMgdXNpbmcgRVhZTk9TNV9EUkRQSFlTX05VTSAo
+MiksCj4+IGNyZWF0aW5nIGJvdGggVVRNSSBhbmQgUElQRTMgUEhZIGluc3RhbmNlcyByZWdhcmRs
+ZXNzIG9mIHRoZSBTb0MKPj4gY2FwYWJpbGl0eS4gU2V2ZXJhbCBTb0NzIChFeHlub3MyMjAwLCBF
+eHlub3M3ODcwLCBFeHlub3M4NTAsIEV4eW5vczk5MCwKPj4gYW5kIEV4eW5vc0F1dG9WOTIwKSBw
+cm92aWRlIHBoeV9jZmcgYXJyYXlzIGNvbnRhaW5pbmcgb25seSBhIHNpbmdsZQo+PiBlbGVtZW50
+Lgo+Pgo+PiBPbiB0aGVzZSBTb0NzLCB3aGVuIHRoZSBsb29wIHJlYWNoZXMgaW5kZXggMSwgdGhl
+IGRyaXZlciByZWFkcyBwYXN0IHRoZQo+PiBlbmQgb2YgdGhlIHJvZGF0YSBhcnJheSwgcG9wdWxh
+dGluZyB0aGUgc2Vjb25kIFBIWSBpbnN0YW5jZSB3aXRoIGdhcmJhZ2UKPj4gZGF0YS4gU2luY2Ug
+dGhlIGNvbmZpZ3VyYXRpb24gc3RydWN0dXJlIGNvbnRhaW5zIGNyaXRpY2FsIGZ1bmN0aW9uCj4+
+IHBvaW50ZXJzIChwaHlfaXNvbCwgcGh5X2luaXQsIHNldF9yZWZjbGspLCBhbnkgc3Vic2VxdWVu
+dCBhY2Nlc3MgdG8gdGhpcwo+PiBQSFkgaW5zdGFuY2UgdmlhIGV4eW5vczVfdXNiZHJkX3BoeV94
+bGF0ZSBjb3VsZCByZXN1bHQgaW4gYSBrZXJuZWwgb29wcy4KPj4KPj4gRml4IHRoaXMgYnkgYWRk
+aW5nICduX3BoeV9jZmcnIHRvIHN0cnVjdCBleHlub3M1X3VzYmRyZF9waHlfZHJ2ZGF0YSB0bwo+
+PiBzdG9yZSB0aGUgYWN0dWFsIHNpemUgb2YgdGhlIHBoeV9jZmcgYXJyYXkgZm9yIGVhY2ggU29D
+LiBVcGRhdGUgdGhlCj4+IHByb2JlIGxvb3AgYW5kIHRoZSB4bGF0ZSBmdW5jdGlvbiB0byBib3Vu
+ZCB0aGVpciBhY2Nlc3MgYWdhaW5zdCB0aGlzCj4+IHZhbHVlIGluc3RlYWQgb2YgdGhlIGhhcmRj
+b2RlZCBFWFlOT1M1X0RSRFBIWVNfTlVNLgo+Pgo+PiBBc3Npc3RlZC1ieTogQ2xhdWRlOmNsYXVk
+ZS1zb25uZXQtNQo+IFNob3VsZG4ndCB0aGlzIGJlICdBc3Npc3RlZC1ieTogTExNJz8KWW91IGFy
+ZSBjb3JyZWN0LiBJIHdpbGwgdXBkYXRlIHRoZSB0YWcgdG8gJ0Fzc2lzdGVkLWJ5OiBMTE0nIGFz
+IHBlciB0aGUgCmtlcm5lbCBkb2N1bWVudGF0aW9uIGluIHRoZSBuZXh0IHZlcnNpb24uCgpUaGFu
+ayB5b3UgZm9yIHBvaW50aW5nIHRoaXMgb3V0LgoKVGhhbmtzLApTZWx2YQo+Cj4+IFNpZ25lZC1v
+ZmYtYnk6IFNlbHZhcmFzdSBHYW5lc2FuIDxzZWx2YXJhc3UuZ0BzYW1zdW5nLmNvbT4KPj4gLS0t
+Cj4+ICDCoGRyaXZlcnMvcGh5L3NhbXN1bmcvcGh5LWV4eW5vczUtdXNiZHJkLmMgfCAxNyArKysr
+KysrKysrKysrKystLQo+PiAgwqAxIGZpbGUgY2hhbmdlZCwgMTUgaW5zZXJ0aW9ucygrKSwgMiBk
+ZWxldGlvbnMoLSkKPiBPdGhlciB0aGFuIHRoYXQ6Cj4KPiBSZXZpZXdlZC1ieTogQW5kcsOpIERy
+YXN6aWsgPGFuZHJlLmRyYXN6aWtAbGluYXJvLm9yZz4KCi0tIApsaW51eC1waHkgbWFpbGluZyBs
+aXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
