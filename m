@@ -4,72 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B62AC982D0
-	for <linux-phy@archiver.kernel.org>; Fri, 18 Sep 2026 01:50:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C2C3C982D2
+	for <linux-phy@archiver.kernel.org>; Fri, 18 Sep 2026 05:59:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XyVrXegv3r09S2To/mYFVXkiZNmwX59CNi9mlN52A3A=; b=1j5hwGfD1zy/Cx
-	g1uaWyBn2l6P8JhZ/9UrxT+uSmtjPxdSQYSFnJswK7yA+3/FKw42UTC52D2kxgtXbwELwXnZPoYBm
-	oJGUO7VtkZmuH4RJUaFzxF6rJuj2Le2PcS5l3Ymi80myLZukV1XIg4Rl4P198sfmazBUGyy5WsuJW
-	3Sc+LIQ5CrVhW3jFWhfblhO1qSDwetrrCGThXXj4hTKBH88PfzRWDE+5zIcljbVg29LbaP1h5peey
-	DDQNAqWzh4IPeYdKJzQaP0HQmBpONTzaE9otj4k0aGlGnmUW5dhnG+psWOdsged/vzbfF+dCkaQWQ
-	oSevjI7vcq+qLLEGMCQw==;
+	List-Owner; bh=BNwQ4mW/ZiHNH5BHEvfjfIbHEz0oU8Y5MeYc+iEeedQ=; b=n1FttKvN3GsMIO
+	UJXiUebf9fi7TBoX5BFv0uKcxVVVUhA5Pw+og6ONbLjgZvpw6XS4MAtvBO+n5ON7M1uWDzidzWQhu
+	RL4AY0jdgPJe5jLhtXIgDaDAhflvobwilQpUoKrPAy6uZylBtk0Gb63eZBG0jAbaCQNNMsH00rEqL
+	GFjfGKErldQZHzvWuHMkaWFd3MJTpeQinrv6UbO4uzg+/Q8NGL170TjpVYfZ/rDQTZ66o9EL5GD8z
+	zLL7+d8MWPcxyMi8HhNsAMwI8a7/DYebgse4ZY97AgtC2IqZUHipIBWf/bvHg4G4TCicQ0DbtdHM9
+	sCQ49tSp6ATOSS2ilrGA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7Njl-0000000DCwT-3ofL;
-	Fri, 18 Sep 2026 01:50:01 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1x7Rci-0000000DWZc-27xZ;
+	Fri, 18 Sep 2026 05:59:00 +0000
+Received: from smtp21.cstnet.cn ([159.226.251.21] helo=cstnet.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7Njk-0000000DCvt-0gKN
-	for linux-phy@lists.infradead.org;
-	Fri, 18 Sep 2026 01:50:00 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 86BDF42D52;
-	Fri, 18 Sep 2026 01:49:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 119EE1F0089C;
-	Fri, 18 Sep 2026 01:49:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789696199;
-	bh=IwTMpGPl6hX5qtbuIoB+Tp1nOI7fnUx8936+g94Tn40=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=KcBXDfFSLMXG2uKAY3a6rjWxYn5FQLYat9OiHfPulX5hgVojVh5fPKykfxWg9Uodr
-	 I+H27+D+RKc+1ArAXQo+ujPY3h5l1Bil8HtHcTCyBwPB7azjZAZQ0KWPCFV07Bn+Ux
-	 W2Sm2XcewVYQRem3Bl028k/1wIhI70bILjPssoxWiU78dUtoilYupe/NhhMOF4hU6J
-	 6C56paIjB38B8+nPINdIF6k0+uHGuB9AEOku4sJ84K0SYMFsYwH8lDkPz63W9ocprm
-	 9yl9Np0Cnk3kLsyKmhwHFRlGezEJdlHu4bYIOr0BzyfF99WbCCo7dGzELlyzwQ6qdO
-	 Da+8AtwDd9dKQ==
-From: Bjorn Andersson <andersson@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Konrad Dybcio <konradybcio@kernel.org>
-Cc: linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-arm-msm@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	usb4-upstream@oss.qualcomm.com,
-	Raghavendra Thoorpu <rthoorpu@qti.qualcomm.com>,
-	Mika Westerberg <westeri@kernel.org>,
-	Sven Peter <sven@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
-	Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-	Abel Vesa <abel.vesa@oss.qualcomm.com>
-Subject: Re: (subset) [PATCH v5 0/5] USB4 mode programming for QMMPHY on X1E
-Date: Thu, 17 Sep 2026 20:49:48 -0500
-Message-ID: <178969618813.1582337.148852121014416119.b4-ty@kernel.org>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20260908-topic-usb4phy-v5-0-73aac69578ef@oss.qualcomm.com>
-References: <20260908-topic-usb4phy-v5-0-73aac69578ef@oss.qualcomm.com>
+	id 1x7Rcf-0000000DWYx-3lau;
+	Fri, 18 Sep 2026 05:58:59 +0000
+Received: from edelgard.fodlan.icenowy.me (unknown [112.94.103.44])
+	by APP-01 (Coremail) with SMTP id qwCowAAn_O8C06xqtWNICA--.15380S2;
+	Fri, 18 Sep 2026 13:58:28 +0800 (CST)
+Message-ID: <1aa49a9bcf5c5a16ce38b57f8f508a31ca70c1ce.camel@iscas.ac.cn>
+Subject: Re: [PATCH v4 05/20] dt-bindings: display: verisilicon: Add
+ starfive,jh7110-dc8200
+From: Icenowy Zheng <zhengxingda@iscas.ac.cn>
+To: Michal Wilczynski <m.wilczynski@samsung.com>, Vinod Koul
+ <vkoul@kernel.org>,  Neil Armstrong <neil.armstrong@linaro.org>, Rob
+ Herring <robh@kernel.org>, Krzysztof Kozlowski	 <krzk+dt@kernel.org>, Conor
+ Dooley <conor+dt@kernel.org>, Andrzej Hajda	 <andrzej.hajda@intel.com>,
+ Robert Foss <rfoss@kernel.org>, Laurent Pinchart	
+ <Laurent.pinchart@ideasonboard.com>, Jonas Karlman <jonas@kwiboo.se>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>, Luca Ceresoli
+ <luca.ceresoli@bootlin.com>, Maarten Lankhorst	
+ <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
+ Thomas Zimmermann <tzimmermann@suse.de>, Lee Jones <lee@kernel.org>, Andy
+ Yan <andy.yan@rock-chips.com>, Philipp Zabel	 <p.zabel@pengutronix.de>,
+ Emil Renner Berthing <kernel@esmil.dk>, Hal Feng	
+ <hal.feng@starfivetech.com>, Michael Turquette <mturquette@baylibre.com>, 
+ Stephen Boyd <sboyd@kernel.org>, Heiko Stuebner <heiko@sntech.de>, Paul
+ Walmsley <pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou
+ <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,  Dominique
+ Belhachemi	 <db@domibel.de>, Brian Masney <bmasney+clk@redhat.com>, Jerome
+ Brunet	 <jbrunet+clk@baylibre.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+	mfd@lists.linux.dev, linux-clk@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+	linux-riscv@lists.infradead.org, Marek Szyprowski
+ <m.szyprowski@samsung.com>,  Maud Spierings <maud_spierings@murena.io>,
+ Graham Markall <hello@big-grey.co.uk>, Chaoyi Chen	
+ <chaoyi.chen@rock-chips.com>, Joshua Peisach <jpeisach@ubuntu.com>, Uwe
+ =?ISO-8859-1?Q?Kleine-K=F6nig?=	 <u.kleine-koenig@baylibre.com>
+Date: Fri, 18 Sep 2026 13:58:26 +0800
+In-Reply-To: <20260915-jh7110-clean-send-v4-5-f0e4fd6f2cc8@samsung.com>
+References: <20260915-jh7110-clean-send-v4-0-f0e4fd6f2cc8@samsung.com>
+		<CGME20260915153222eucas1p213b95b05ea7eb9a18700af8888ef5a44@eucas1p2.samsung.com>
+	 <20260915-jh7110-clean-send-v4-5-f0e4fd6f2cc8@samsung.com>
+User-Agent: Evolution 3.58.3 
 MIME-Version: 1.0
+X-CM-TRANSID: qwCowAAn_O8C06xqtWNICA--.15380S2
+X-Coremail-Antispam: 1UD129KBjvJXoW7ur4fJrW7tF1UKFykGFy5XFb_yoW8GF4xpF
+	sakFZrJFyIgrn3W3y8J3WUK3y7Wr1xA3W0gF1jq3W2grs8GFWFqr4Y9r1qgF4UJFW8CFW8
+	ZFsY9rWYvr1vyF7anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUUvGb7Iv0xC_Cr1lb4IE77IF4wAFF20E14v26rWj6s0DM7CY07I2
+	0VC2zVCF04k26cxKx2IYs7xG6rWj6s0DM7CIcVAFz4kK6r1j6r18M28lY4IEw2IIxxk0rw
+	A2F7IY1VAKz4vEj48ve4kI8wA2z4x0Y4vE2Ix0cI8IcVAFwI0_Xr0_Ar1l84ACjcxK6xII
+	jxv20xvEc7CjxVAFwI0_Gr1j6F4UJwA2z4x0Y4vEx4A2jsIE14v26rxl6s0DM28EF7xvwV
+	C2z280aVCY1x0267AKxVW0oVCq3wAS0I0E0xvYzxvE52x082IY62kv0487Mc02F40EFcxC
+	0VAKzVAqx4xG6I80ewAv7VC0I7IYx2IY67AKxVWUXVWUAwAv7VC2z280aVAFwI0_Jr0_Gr
+	1lOx8S6xCaFVCjc4AY6r1j6r4UM4x0Y48IcVAKI48JM4IIrI8v6xkF7I0E8cxan2IY04v7
+	MxkF7I0En4kS14v26rWY6Fy7MxAIw28IcxkI7VAKI48JMxC20s026xCaFVCjc4AY6r1j6r
+	4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAFwI0_JrI_JrWlx4CE17CEb7AF
+	67AKxVWrXVW8Jr1lIxkGc2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxVWUJVWUCwCI42IY6x
+	IIjxv20xvEc7CjxVAFwI0_Cr0_Gr1UMIIF0xvE42xK8VAvwI8IcIk0rVWUJVWUCwCI42IY
+	6I8E87Iv67AKxVWUJVW8JwCI42IY6I8E87Iv6xkF7I0E14v26r4j6r4UJbIYCTnIWIevJa
+	73UjIFyTuYvjxUaGYpUUUUU
+X-Originating-IP: [112.94.103.44]
+X-CM-SenderInfo: x2kh0wp0lqwv3d6l2u1dvotugofq/
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260917_225858_327995_B7EFED0F 
+X-CRM114-Status: UNSURE (   9.46  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,33 +101,33 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Tue, 08 Sep 2026 09:54:04 +0200, Konrad Dybcio wrote:
-> The USB43DP QMP PHY, as the name suggests, supports USB4 in addition to
-> DP/USB. This series provides the necessary plumbing to switch to that
-> mode of operation on hamoa/purwa.
-> 
-> This is achieved by exposing a third `struct phy *` for the USB4 sub-
-> PHY, which will be toggled by the USB4 router driver, living within the
-> Thunderbolt framework, which will be posted separately.
-> 
-> [...]
-
-Applied, thanks!
-
-[5/5] arm64: dts: qcom: hamoa: Extend QMPPHY description for USB4
-      commit: 1360126eeb38872b68f5b89d793bd28e328224fd
-
-Best regards,
--- 
-Bjorn Andersson <andersson@kernel.org>
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+5ZyoIDIwMjYtMDktMTXkuoznmoQgMTc6MzIgKzAyMDDvvIxNaWNoYWwgV2lsY3p5bnNraeWGmemB
+k++8mgo+IFRoZSBKSDcxMTAgZW1iZWRzIGEgREM4MjAwLiBUaGUgYmluZGluZyByZXF1aXJlcyBh
+biBTb0Mgc3BlY2lmaWMKPiBjb21wYXRpYmxlIGFoZWFkIG9mIHRoZSBnZW5lcmljIG9uZSwgc28g
+YWRkIHRoZSBKSDcxMTAgdG8gdGhlIGVudW0uCj4gCj4gUmV2aWV3ZWQtYnk6IEpvc2h1YSBQZWlz
+YWNoIDxqcGVpc2FjaEB1YnVudHUuY29tPgo+IFNpZ25lZC1vZmYtYnk6IE1pY2hhbCBXaWxjenlu
+c2tpIDxtLndpbGN6eW5za2lAc2Ftc3VuZy5jb20+Cj4gLS0tCj4gwqBEb2N1bWVudGF0aW9uL2Rl
+dmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS92ZXJpc2lsaWNvbixkYy55YW1sIHwgMSArCj4gwqAx
+IGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKykKPiAKPiBkaWZmIC0tZ2l0Cj4gYS9Eb2N1bWVu
+dGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS92ZXJpc2lsaWNvbixkYy55YW1sCj4g
+Yi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS92ZXJpc2lsaWNvbixk
+Yy55YW1sCj4gaW5kZXgKPiA5MTlhOTAwMTIyMDEyMDA1NGNiNjJkMWQwMWI3MjkzMzY3MjY2Zjk1
+Li4wNWEyMDI2MzNjZDI3M2ZlYzM1OGMwOTVjNjQKPiA1ODRkOTU5ZDk2ZDkwIDEwMDY0NAo+IC0t
+LSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L3ZlcmlzaWxpY29u
+LGRjLnlhbWwKPiArKysgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxh
+eS92ZXJpc2lsaWNvbixkYy55YW1sCj4gQEAgLTE2LDYgKzE2LDcgQEAgcHJvcGVydGllczoKPiDC
+oMKgIGNvbXBhdGlibGU6Cj4gwqDCoMKgwqAgaXRlbXM6Cj4gwqDCoMKgwqDCoMKgIC0gZW51bToK
+PiArwqDCoMKgwqDCoMKgwqDCoMKgIC0gc3RhcmZpdmUsamg3MTEwLWRjODIwMAoKTm90ZTogdGhp
+cyBiaW5kaW5nIGlzIGJlaW5nIHJlZmFjdG9yZWQgYXMgcGFydCBvZiBNQTM1RDEgc3VwcG9ydApp
+bnRyb2R1Y3Rpb24gKHRoaXMgU29DIGhhcyBhIHNpbmdsZS1wb3J0IERDIGxpa2UgYSBEQzgwMDAp
+LCBhZnRlciB0aGUKcmVmYWN0b3IgdGhlIGJpbmRpbmcgc3RyaW5nIG1pZ2h0IG5lZWQgdG8gYXBw
+ZWFyIHR3aWNlLgoKVGhhbmtzLApJY2Vub3d5Cgo+IMKgwqDCoMKgwqDCoMKgwqDCoMKgIC0gdGhl
+YWQsdGgxNTIwLWRjODIwMAo+IMKgwqDCoMKgwqDCoCAtIGNvbnN0OiB2ZXJpc2lsaWNvbixkYyAj
+IERDIElQcyBoYXZlIGRpc2NvdmVyYWJsZSBJRC9yZXZpc2lvbgo+IHJlZ2lzdGVycwo+IMKgCgoK
+LS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcK
+aHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
