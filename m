@@ -4,167 +4,124 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23A22C982D8
-	for <linux-phy@archiver.kernel.org>; Fri, 18 Sep 2026 13:02:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDB18C982D8
+	for <linux-phy@archiver.kernel.org>; Fri, 18 Sep 2026 13:56:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=slha4Grw7bbFhbIreY29caFCR69gMevtA9QOAXVEWzk=; b=p/twDWYokXTi4O
-	K79q5oMxcAU5yWZYdGu0oOdGXjnTBpcx6BG2QNccblG96yTJtMH2TuCR+sdiK4selx/8KslqyOifN
-	N+MH+QLOhSa78YY21e4Qk5p7nzJ2iRnYxCDARLtlXYWzqXtLwENgSMRaHoph17j5RbsGPPCVewUmN
-	sBT0fsXwM00s/FAI+y6Gjp9vwC70w6V/hmXuxFLIxpDVejtAN4fExbpDIcYDL/5y34IR2wzK1e/Qk
-	q1kNjj7dnv1k+t8Wb1lTy28/eX2L5e2Ci7eaK18/aASsF7z8g6EoYj42S6LApXc2m+tianaZGLtQF
-	JvDaqyB25a4ngXS53Bvw==;
+	List-Owner; bh=sNGSYX8fahn//38cwHCgtoX8UG0Xy3RRxpkmIfxJxQE=; b=GJhY/ucSe2bXgf
+	uRsFs7/K9vtCi9gO5UaNdyMNydBHJxpOZkFdw8Z3waciOuXy/aIt/pNALwlPOofrrzWR/GWyDXVyd
+	u6qgv9DuS7Zo1bWyBCE5PKYY4V8kuHuv7agm5M8uSQKXlYNNhWbSWilVbK0ybXEHh6tfXiGSBnjB9
+	g3oDhfh7m1+qugLP+OQFsJeYipiJj01CQ8fWrJL7P9WIo+CCGVhPXFk845/40hE7gIgyYoJdTC7BP
+	70HvmU1VPh8vCmFh7+KqADsUcjeXwNuQzMjigpLRkjY9giy6F0dNkYTsZWdbbm+Tx0+5jBNv8IhJ2
+	khcegR+fTRHm7bUtsJ0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7YEE-0000000EQwT-2udg;
-	Fri, 18 Sep 2026 13:02:10 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1x7Z5C-0000000Edu1-1bfR;
+	Fri, 18 Sep 2026 13:56:54 +0000
+Received: from mail-ed2-x10.google.com ([2a00:1450:4864:33::10])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7YED-0000000EQvg-2EIk
-	for linux-phy@bombadil.infradead.org;
-	Fri, 18 Sep 2026 13:02:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=CKF+BfwHstfALzVlcYgGwDp+dczQ45u3j4MVRIZQmGY=; b=FPHGCPa6e2wY4896FrDxtszw3u
-	4VPwlhFF5MKSZ89yvMe90KicEJm8kUcZlwUTlCx1t/usXzYIWYxZihLZnNOdGZJ/sxAblcNabdxZb
-	3+QS0WHLT7bz/VDp8GoJ/lQL8vvGm16sMLq23/Ck2zBixXHBIscFLyxcL9OJWD45chHzEof+ABOuy
-	7Oe+8EWL+SSO6eCv9hoRMw2fN+LsG2kr3LxlyT9UjM4xtL0+1Uh6Uld1e/I2VNkVvg0zEmjrBsUmU
-	BjPeBDV0QQ1qNNWDI+aJdHI1cRurUam2bXSkQ1Ne/D9u7dWbRu4gfWSfZDnCRE8WvX8kpstjiOyQI
-	tIkJz+Yg==;
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1x7YEA-0000000A5zH-2Hqf
+	id 1x7Z59-0000000Edt3-24zS
 	for linux-phy@lists.infradead.org;
-	Fri, 18 Sep 2026 13:02:08 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68ICuHsk038973
-	for <linux-phy@lists.infradead.org>; Fri, 18 Sep 2026 13:02:03 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	CKF+BfwHstfALzVlcYgGwDp+dczQ45u3j4MVRIZQmGY=; b=Gh5dBrNYIsC2hxXS
-	6O8pqGCerH9URA9GezaB2NtNLgDy7tT81mqkbu+ZxArfztMFmlACeacbi6lnSU8J
-	vJWjze88rAH9ZHt8vRcLhdH4kmbexlGUG2P5HIvCIWH5sr0F5hZYDAFUZ0Yqmony
-	uelO/RAu+aZthmFXFS1GYiNvsF0H1fie0tqOIY4YKOxXrQlLTBQHjg9cVxHpdYCV
-	JD3A5r8KSgZHxkCT/smqduSH5sKnXaDogP932RMBvEXymmdwwwwVgG0akofCdLS4
-	XikZljYonIzJvn2vbQgZMFozQO3FYuRnwTycd69dc/bE3ywZBKFAz5su7fBgYm9G
-	vvH0rg==
-Received: from mail-oa1-f71.google.com (mail-oa1-f71.google.com [209.85.160.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4grq2kumyy-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 18 Sep 2026 13:02:02 +0000 (GMT)
-Received: by mail-oa1-f71.google.com with SMTP id 586e51a60fabf-46ade2ed260so359568fac.0
-        for <linux-phy@lists.infradead.org>; Fri, 18 Sep 2026 06:02:02 -0700 (PDT)
+	Fri, 18 Sep 2026 13:56:52 +0000
+Received: by mail-ed2-x10.google.com with SMTP id 4fb4d7f45d1cf-6a99391ffb2so1243444a12.0
+        for <linux-phy@lists.infradead.org>; Fri, 18 Sep 2026 06:56:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1789736522; x=1790341322; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=CKF+BfwHstfALzVlcYgGwDp+dczQ45u3j4MVRIZQmGY=;
-        b=iMWmEXmrDKq7WA+DnbxNHUo8fJp2vuCU5AP42lN4KjbSDWp2ua1yVMOY/eyPkgNWZO
-         HzctGHX4qBAvYT6VlSqYPGU1YGNAwvhOb9KF8cGj+TOX4FoDBrO6DWMhWJSj8ZT4gGC+
-         /l297bQ/8+qiMNTwRMZyHqSbTy5sHc6K3+oa8QfKOBnWFqqiHT+BUVIyMNYu06VFmYqg
-         jOAWB/bD+cSLW+d4hMBarQ6c2N9y5o9KOb0V3RGreiak3s7YbL8j2WrldK2dKyoJI7G2
-         TtbVTcBBGNQwlKvzYI4uJKBNeBW64RDHyq5xlrE6gmqyORZv1VmCDEdNubN7299Ggbt5
-         QcPA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1789736522; x=1790341322;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=linaro.org; s=google; t=1789739809; x=1790344609; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=CKF+BfwHstfALzVlcYgGwDp+dczQ45u3j4MVRIZQmGY=;
-        b=01iPDCSIc7FQYwWSe57Jt+iPgXx98Vn0cw4pkWJEqGaJx5W/1xfssvfV1MOuObPO4L
-         0S27Ts4CGmufCm04fWhY4ctV40Vs0jDiJiFwulSgOKowVv9AnV4cKRd9l/HeOKAJizn3
-         b0Z352YUiVXasq59nxwwiQOIaO1SYsbSVrBA7cqVEhNh93Mp2/DiHFqeUCgnXnLtmkcs
-         WMkqHcw71VLzX9onMEbSAmNwGQjYYlibRbMyOmsdTtZNhyJsDclz5aFSCBqQQgQJMvYv
-         sJ2tiM+M68DFhIZya2fjimoa8vFR36kXNAYfwk1jCUXq1Pe2mT+JEGCBdlWQe68bpZX6
-         ErCg==
-X-Forwarded-Encrypted: i=1; AKwUvBxMTBzpH7ilg7k7qN8pdioaZUrrsk6uZCZRgZ9oFR8Cuz/dZ/JS5i0I7n58WkdPMAlZyQoEPbd1cW0=@lists.infradead.org
-X-Gm-Message-State: AFuF++mB88jNzRrsUooOj63UwusyIpFKIqvXIfi53al2/gjafKyQStLv
-	CgBm69zdF+VlFrsAuPfVHy3z2eHejRdJGOl/76VUbSI+aRuyMnozbu0IjScA5lBC1JuERSPGCmx
-	iXoXX+hLAUDGuK3/IorPsfnYV/W8O30HkXnXlxoQxRkwFPBu8B3ZopxxVzzzcasYxSg1u
-X-Gm-Gg: AYBFou2T457j75HqNeuvrcH5p1qJqJ006hl7B6al6u2TW5s2N9OoSZ6BE7z2ZDY/boe
-	dptNNPkDbcFTzoaxaNH4qRZwSiLpX/JmmxtzRS3/5ZMhFSfWYkCEdcw35HAiGBTGbazOUlB1Zpf
-	8tFx6+hB8El3SEJALukaqvaavLn+03Y2LfufPU/dsrSk67/n2OJpXDS334JGaqkhHxUa9HlGbNg
-	xIY/wEKcVb7ozszbMlR2AgLYjD3GKfhaj0p7rNVCUc6AnZu29h6C2ejN/31+Ho/JkaU25XfjYw5
-	sflnsWYKGoOWjFz8yylE4ODl87boZNl4YyRI+0sXMk+BcvWf02nvHomcc0lFHjL419YsredSEyU
-	6GylLF6cdkJkIydq3KnHEAQ==
-X-Received: by 2002:a4a:d857:0:b0:6bc:dd88:2782 with SMTP id 006d021491bc7-6cb1f3eb6camr1100936eaf.0.1789736521979;
-        Fri, 18 Sep 2026 06:02:01 -0700 (PDT)
-X-Received: by 2002:a4a:d857:0:b0:6bc:dd88:2782 with SMTP id 006d021491bc7-6cb1f3eb6camr1100874eaf.0.1789736521490;
-        Fri, 18 Sep 2026 06:02:01 -0700 (PDT)
-Received: from [192.168.202.12] ([178.235.128.140])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-6aa58f3236esm815027a12.9.2026.09.18.06.01.57
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 18 Sep 2026 06:02:00 -0700 (PDT)
-Message-ID: <1229ea97-9972-4cd3-9697-ab03c64c3fe1@oss.qualcomm.com>
-Date: Fri, 18 Sep 2026 15:01:56 +0200
+        bh=LsT9IFRHhiJUngj7BjrND4Gxc3zxhQTn9THAcGWlf5k=;
+        b=BkIlBpCDrxCwFHVRRXLIUKYvuvlrm1fWm8JkNGpI2BsQSEzJK9ZbB2JviWqvQ8WnHl
+         AZ7WGn0agCrzsLHdbxNzaTU2YdcpWMQjMsv4qZ6aU3NQjtPioguBnilhMFjjWNFfYxIr
+         0JLLNWbxsVs/Zj2kPaWTMAvrmRdXCB+MZfJMjdgoeeRAJNMB+3alNKv82Vm/Q9pyPkqf
+         A9eC55hThARiP5dXv1QYdOAH7iJ3HVnyb+e87kn6rCBszfN1L/anc2D4C9SFDAORAgnI
+         I9drAJTQfjGekjMpQrbPhyf9BeJ1pWNOxMaaTjZC23jf4ekC8912hgSqYgUXv1MR4I6F
+         RMbg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1789739809; x=1790344609;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :content-type:mime-version:subject:date:from:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=LsT9IFRHhiJUngj7BjrND4Gxc3zxhQTn9THAcGWlf5k=;
+        b=j7mcW1u+eLJqdXeVYkeSvO5fpYIA9co9fEvCetaUgaGDryOm/AL+dT1DOxWPeH0SVZ
+         2CxFrU36UWCHp5fvybSg6rQ9WHpp7wqvZjE9XIwM0drQtShxMUgXW0jRvy1eAKNtTo7/
+         +95pzEeBq6KwirMxSRFiIL5qqcb3EfT9XfXXL+gQ376ewnKJadiYSzQ71fwklTDbJmEz
+         i+maaYyArh4VJNw16lFzUgprmEgUk4ZksMDdLCZKm8K896yM8yuQ60PtA6aH0l52naTH
+         LGXtd13d9tBzfjEKtW/eI73wQY+yN03o8z9BVaEy44RA9D14y4CJcTjXVQDXI45yXejn
+         X1AA==
+X-Forwarded-Encrypted: i=1; AKwUvBzUvbP2Zov5k0lCBhw3U6y2p1T9tgskj3PvUuizUaEJZ76BsQgq5j/BbzJd2UPfe45unTrwXsvpCeU=@lists.infradead.org
+X-Gm-Message-State: AFuF++moC1fp/zYHwYsE2UnpaJJYbEsbEudzA6CuKAS8FRSuO0tNsqpm
+	D2ZJ4mdnrGikMGmeje+pN3idYwwwFrwHA+QsvbTUIKeW5qTq/ud/EH7WQPxNV9ivAQA=
+X-Gm-Gg: AYBFou2q77Y6Ow4/7oEGsvwUBfYEqqYeWsKbtme9yKtoEC6AZV3S+H0LGvfz5ijFzpf
+	t8tox3tjWazrDRIobu+ir7pQSTUZV0Ltm5PmfgAWZDlyWr/lSuDa1LCbAMVdRoFnOjKiCZKaSip
+	q3VV/R27nXWU+OxDt+Jyk2RncLkbCUI0D3rPwAG7zLRrT7PKCqXJ0HnV2NDH5ptVB94VeedzNmr
+	VrvSk8XYl/dhfHW/LtrZTLyeyUyDE/BvBjfV3Mg90+h+8lGgzc2r7gPukwZizVfNjppps+M0dpH
+	hHFzFZELjq546S0PlYhLRrpkAv2od3ThPK0GClcDis3DX5+9Rs5RAf+Hv5BR42YiLuBeDMfTYXx
+	26FmBesKNgI9+TZbibco0cpfu3KmUN1Xm68A2609VC3RmzRP1zN6qwVqmPnPdSNe9kKqLt4AHnS
+	Ri3f30jRyLZbh52A0nnXXsnC4JQzL0R/c58NnLmZiHEYCb2FBiBSxtwigZ7m92yBGzUbLcXgQCZ
+	eiG1k0idw==
+X-Received: by 2002:a05:6402:400a:b0:6a7:ee55:dcc9 with SMTP id 4fb4d7f45d1cf-6aa57861e81mr1539832a12.24.1789739808949;
+        Fri, 18 Sep 2026 06:56:48 -0700 (PDT)
+Received: from [192.168.0.35] ([109.76.4.225])
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-6aa59730866sm915455a12.18.2026.09.18.06.56.47
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 18 Sep 2026 06:56:48 -0700 (PDT)
+From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+Date: Fri, 18 Sep 2026 14:56:36 +0100
+Subject: [PATCH v20 1/6] phy: core: Fix race-condition between
+ _of_phy_get() and try_module_get()
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 4/5] arm64: dts: qcom: glymur-qcb: Enable UFS
-To: Pradeep P V K <pradeep.pragallapati@oss.qualcomm.com>,
-        Vinod Koul <vkoul@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
- <conor+dt@kernel.org>,
-        Alim Akhtar <alim.akhtar@samsung.com>,
-        Avri Altman <avri.altman@sandisk.com>,
-        Bart Van Assche <bvanassche@acm.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-        gopikrishna.garmidi@oss.qualcomm.com, jagadeesh.kona@oss.qualcomm.com,
-        Abel Vesa <abel.vesa@oss.qualcomm.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-scsi@vger.kernel.org, nitin.rawat@oss.qualcomm.com,
-        sibi.sankar@oss.qualcomm.com, Taniya Das <taniya.das@oss.qualcomm.com>
-References: <20260918-glymur_ufs_qcb_enablement-v2-0-16619f7e36a6@oss.qualcomm.com>
- <20260918-glymur_ufs_qcb_enablement-v2-4-16619f7e36a6@oss.qualcomm.com>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20260918-glymur_ufs_qcb_enablement-v2-4-16619f7e36a6@oss.qualcomm.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTE4MDE4NCBTYWx0ZWRfX6mIOCqkcZs6L
- TRGSQBylaB5P+49tVpVxDwMaGJ5gVXqRxh6kFj9TExEAXxZejVN3axDi7bJvJk/r28b+t4hyLC+
- 8aSGpwGElFQRBpkRv0pRZ4YXwGrBA5K+iNG+GzIchVB0Hosf01x89llKZHIBrF9K0CjbgJbLrND
- ec5BM6Hfia2rEpTUQngvc7xrdeHQAicB2lHrAvhyPEU96Bnd3P90xDnAPlagEFYm+uPcv0apT47
- TwW033FzCxOG5dhTIOz8draRiE5QE1iEa+/v7XuxLThHH7kOcouo5W8hQhpKr9+sFQPifOY0wCm
- /pftc10K1u0QU07670uPhAeNK65jSbykLz43lAiuP2JfJdD3hZN9HyT5lDE+I2nc7poCY0+yBfo
- XR6kmIxAx6wNzGMTi7n+Vv2OQ2QYA06O0Ce7gq6pRuxBNjXaMiw/+6A5IcQsiRbaJHX2IkrYVqa
- dYqGK/IXTAWSNFjehYQ==
-X-Proofpoint-GUID: Ty4Baay-iEqCWFKSSRQx_q8A7CAOA6s-
-X-Authority-Analysis: v=2.4 cv=bcD+w+PB c=1 sm=1 tr=0 ts=6aad364a cx=c_pps
- a=CWtnpBpaoqyeOyNyJ5EW7Q==:117 a=PRfkaYvzSr8QmIIGAkY2Sg==:17
- a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22
- a=EUspDBNiAAAA:8 a=BBNwevgwxSeHGHzN-EcA:9 a=QEXdDO2ut3YA:10
- a=vh23qwtRXIYOdz9xvnmn:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTE4MDE4NCBTYWx0ZWRfX0DNaOmrCgZgr
- 4JLgjOj0oqmuHdadkO4P8Pecyo2huSuRJEc4knRPzcmUeiWgAflqz1X9RbmEzIYl0FeacohYkjg
- HS1MdS3/Wrry+zpnfVb1JXvxMM4ZMh4=
-X-Proofpoint-ORIG-GUID: Ty4Baay-iEqCWFKSSRQx_q8A7CAOA6s-
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-09-18_03,2026-09-16_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 clxscore=1015 adultscore=0 suspectscore=0 priorityscore=1501
- bulkscore=0 phishscore=0 impostorscore=0 lowpriorityscore=0 malwarescore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2609180184
+Message-Id: <20260918-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v20-1-dc244e124e71@linaro.org>
+References: <20260918-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v20-0-dc244e124e71@linaro.org>
+In-Reply-To: <20260918-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v20-0-dc244e124e71@linaro.org>
+To: Bjorn Andersson <andersson@kernel.org>, 
+ Michael Turquette <mturquette@baylibre.com>, 
+ Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Robert Foss <rfoss@kernel.org>, 
+ Todor Tomov <todor.too@gmail.com>, 
+ Mauro Carvalho Chehab <mchehab@kernel.org>, 
+ Konrad Dybcio <konradybcio@kernel.org>, 
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>, 
+ Bryan O'Donoghue <bod@kernel.org>, 
+ Loic Poulain <loic.poulain@oss.qualcomm.com>, Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Felipe Balbi <balbi@ti.com>, 
+ Manivannan Sadhasivam <mani@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-media@vger.kernel.org, linux-phy@lists.infradead.org, 
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>, 
+ Krzysztof Kozlowski <krzk@kernel.org>, stable@vger.kernel.org, 
+ Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>, 
+ Oleg Keri <okerixx@gmail.com>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=5454;
+ i=bryan.odonoghue@linaro.org; h=from:subject:message-id;
+ bh=IoXZ1reQlvpqJte8Azuyv4AEJ1+ZnvZqFWxjllzwkAs=;
+ b=kA0DAAoBInE7s6GNyDoByyZiAGqtQxuhxTNWuBxqGuGf4V9voyix+7h2Kuf1dI47lzHHNmTBP
+ okCMwQAAQoAHRYhBOaT+yqro23hF6tvtCJxO7Ohjcg6BQJqrUMbAAoJECJxO7Ohjcg6384P/2Eh
+ 8FioUFRtKvwe+A5sax2BlOE4qxn9ftzFmOdVa4B2dygKtvtNV/+kvY5kVAtlP/JTiJFrDum9DD5
+ cK4rRdBM8uNLSTPE2NqXT64fJOsUoh6f7vNq7QFHV/VDbMQB1CTuVogQHt39lQC8N7uM+Cxl0NF
+ qvhdMQLt6OdscwOFltQA9MtQasI1P6oF3OP+NZ28dEiKIznl+2eMWwxVJivnyYNdqoipXzc7++M
+ B3S2pV3hM12q5Ue7u78V7mljnO8hpCIi3EtSE3qpL6Y/WS356g0vH5b1Sp3TOHLDOez9B+ClpGx
+ 6ifC2wmhq9u1oNmMFPAsR+bVCfJJ0ABv3Pu4ARjzTM49iNTB9vzWrMIPMBEtovb658J/VueYMCA
+ l8pr4Akln3NVS6hfymeXoUfDgoMuKb5eoR9gYW3/V12td55PlAs7VgKcBQdhuYj9VNcXEf/i2Ot
+ 8+OYZld8Qajo022Xrab/ZFu4W3gFpkLKiMXBhMAWgYNOYcIP2/Q2jjaZfn+wkidvrfAuUwjCMQs
+ R+XJ8bAKr8ypCM0iKtjmdFIqYN53SQYPZlLrGzlYxk37Mku2WSIyI1NRUtWCuqpxnOIh1jtz1A/
+ VtKAWUBCLe3pG0/atadTuCgu1KYwO1+B2nbsgc/gXo5UgeT590/Zbb5eDvkpFSEV9T8rD2kH0xJ
+ vJm09
+X-Developer-Key: i=bryan.odonoghue@linaro.org; a=openpgp;
+ fpr=E693FB2AABA36DE117AB6FB422713BB3A18DC83A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260918_140206_918860_EA1D5434 
-X-CRM114-Status: UNSURE (   7.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260918_065651_606386_12477EFA 
+X-CRM114-Status: GOOD (  17.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -181,16 +138,184 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 9/18/26 12:39 PM, Pradeep P V K wrote:
-> Enable UFS for glymur-qcb board.
-> 
-> Reviewed-by: Abel Vesa <abel.vesa@oss.qualcomm.com>
-> Signed-off-by: Pradeep P V K <pradeep.pragallapati@oss.qualcomm.com>
-> ---
+Sashiko asked during a patch review if the existing usage pattern had a
+race condition; specifically in of_phy_get() if it was possible between
+returning from _of_phy_get() and running try_module_get() that a module
+might be unbound leading to use-after-free.
 
-Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Looking at the code this appears to be so, there is no linkage between the
+phy and module under a synchronisation primitive.
 
-Konrad
+Using the phy_provider_mutex in phy_get() will ensure there is a link between
+the returned phy pointer and the module_get() bumping the module reference
+count.
+
+Amend phy_get(), of_phy_get() and devm_of_phy_get_by_index() to fix the
+same usage pattern.
+
+phy_provider_unregister() must take the phy_provider_mutex so amending
+phy_get()/of_phy_get() to take that same mutex guarantees there is no
+use-after-free.
+
+Fixes: ff764963479a1 ("drivers: phy: add generic PHY framework")
+Cc: stable@vger.kernel.org
+Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+Reviewed-by: Loic Poulain <loic.poulain@oss.qualcomm.com>
+Tested-by: Oleg Keri <okerixx@gmail.com> # Lenovo Yoga Slim 7x Gen 11 (Glymur)
+Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+---
+ drivers/phy/phy-core.c | 45 ++++++++++++++++++++++++++++++---------------
+ 1 file changed, 30 insertions(+), 15 deletions(-)
+
+diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+index 21aaf2f76e53e..89addd732bff3 100644
+--- a/drivers/phy/phy-core.c
++++ b/drivers/phy/phy-core.c
+@@ -124,13 +124,13 @@ static struct phy *phy_find(struct device *dev, const char *con_id)
+ 	const char *dev_id = dev_name(dev);
+ 	struct phy_lookup *p, *pl = NULL;
+ 
+-	mutex_lock(&phy_provider_mutex);
++	lockdep_assert_held(&phy_provider_mutex);
++
+ 	list_for_each_entry(p, &phys, node)
+ 		if (!strcmp(p->dev_id, dev_id) && !strcmp(p->con_id, con_id)) {
+ 			pl = p;
+ 			break;
+ 		}
+-	mutex_unlock(&phy_provider_mutex);
+ 
+ 	return pl ? pl->phy : ERR_PTR(-ENODEV);
+ }
+@@ -624,6 +624,8 @@ static struct phy *_of_phy_get(struct device_node *np, int index)
+ 	struct phy *phy = NULL;
+ 	struct of_phandle_args args;
+ 
++	lockdep_assert_held(&phy_provider_mutex);
++
+ 	ret = of_parse_phandle_with_args(np, "phys", "#phy-cells",
+ 		index, &args);
+ 	if (ret)
+@@ -635,11 +637,10 @@ static struct phy *_of_phy_get(struct device_node *np, int index)
+ 		goto out_put_node;
+ 	}
+ 
+-	mutex_lock(&phy_provider_mutex);
+ 	phy_provider = of_phy_provider_lookup(args.np);
+ 	if (IS_ERR(phy_provider) || !try_module_get(phy_provider->owner)) {
+ 		phy = ERR_PTR(-EPROBE_DEFER);
+-		goto out_unlock;
++		goto out_put_node;
+ 	}
+ 
+ 	if (!of_device_is_available(args.np)) {
+@@ -653,8 +654,6 @@ static struct phy *_of_phy_get(struct device_node *np, int index)
+ out_put_module:
+ 	module_put(phy_provider->owner);
+ 
+-out_unlock:
+-	mutex_unlock(&phy_provider_mutex);
+ out_put_node:
+ 	of_node_put(args.np);
+ 
+@@ -678,15 +677,21 @@ struct phy *of_phy_get(struct device_node *np, const char *con_id)
+ 	if (con_id)
+ 		index = of_property_match_string(np, "phy-names", con_id);
+ 
++	mutex_lock(&phy_provider_mutex);
++
+ 	phy = _of_phy_get(np, index);
+ 	if (IS_ERR(phy))
+-		return phy;
++		goto out_unlock;
+ 
+-	if (!try_module_get(phy->ops->owner))
+-		return ERR_PTR(-EPROBE_DEFER);
++	if (!try_module_get(phy->ops->owner)) {
++		phy = ERR_PTR(-EPROBE_DEFER);
++		goto out_unlock;
++	}
+ 
+ 	get_device(&phy->dev);
+ 
++out_unlock:
++	mutex_unlock(&phy_provider_mutex);
+ 	return phy;
+ }
+ EXPORT_SYMBOL_GPL(of_phy_get);
+@@ -786,6 +791,7 @@ struct phy *phy_get(struct device *dev, const char *string)
+ 	struct phy *phy;
+ 	struct device_link *link;
+ 
++	mutex_lock(&phy_provider_mutex);
+ 	if (dev->of_node) {
+ 		if (string)
+ 			index = of_property_match_string(dev->of_node, "phy-names",
+@@ -796,15 +802,18 @@ struct phy *phy_get(struct device *dev, const char *string)
+ 	} else {
+ 		if (string == NULL) {
+ 			dev_WARN(dev, "missing string\n");
+-			return ERR_PTR(-EINVAL);
++			phy = ERR_PTR(-EINVAL);
++			goto out_unlock;
+ 		}
+ 		phy = phy_find(dev, string);
+ 	}
+ 	if (IS_ERR(phy))
+-		return phy;
++		goto out_unlock;
+ 
+-	if (!try_module_get(phy->ops->owner))
+-		return ERR_PTR(-EPROBE_DEFER);
++	if (!try_module_get(phy->ops->owner)) {
++		phy = ERR_PTR(-EPROBE_DEFER);
++		goto out_unlock;
++	}
+ 
+ 	get_device(&phy->dev);
+ 
+@@ -813,6 +822,8 @@ struct phy *phy_get(struct device *dev, const char *string)
+ 		dev_dbg(dev, "failed to create device link to %s\n",
+ 			dev_name(phy->dev.parent));
+ 
++out_unlock:
++	mutex_unlock(&phy_provider_mutex);
+ 	return phy;
+ }
+ EXPORT_SYMBOL_GPL(phy_get);
+@@ -961,15 +972,17 @@ struct phy *devm_of_phy_get_by_index(struct device *dev, struct device_node *np,
+ 	if (!ptr)
+ 		return ERR_PTR(-ENOMEM);
+ 
++	mutex_lock(&phy_provider_mutex);
+ 	phy = _of_phy_get(np, index);
+ 	if (IS_ERR(phy)) {
+ 		devres_free(ptr);
+-		return phy;
++		goto out_unlock;
+ 	}
+ 
+ 	if (!try_module_get(phy->ops->owner)) {
+ 		devres_free(ptr);
+-		return ERR_PTR(-EPROBE_DEFER);
++		phy = ERR_PTR(-EPROBE_DEFER);
++		goto out_unlock;
+ 	}
+ 
+ 	get_device(&phy->dev);
+@@ -982,6 +995,8 @@ struct phy *devm_of_phy_get_by_index(struct device *dev, struct device_node *np,
+ 		dev_dbg(dev, "failed to create device link to %s\n",
+ 			dev_name(phy->dev.parent));
+ 
++out_unlock:
++	mutex_unlock(&phy_provider_mutex);
+ 	return phy;
+ }
+ EXPORT_SYMBOL_GPL(devm_of_phy_get_by_index);
+
+-- 
+2.55.0
+
 
 -- 
 linux-phy mailing list
