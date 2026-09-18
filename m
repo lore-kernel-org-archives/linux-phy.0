@@ -4,89 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56007C982D2
-	for <linux-phy@archiver.kernel.org>; Fri, 18 Sep 2026 00:35:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 05314C982D0
+	for <linux-phy@archiver.kernel.org>; Fri, 18 Sep 2026 01:36:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:Subject:Message-Id
-	:Date:Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=0wIMu6h2RAx6dcqXjEE/2fqIWu0NiWc9acT7XjMK1dY=; b=dRlj0e2TRU/O4JVejv7Py8NeNP
-	odv0nYFn+7GXIsWcGIb+gUin/BK03SlcZ36aoboILUG2QGA1RD5EgIiiXrTIrY48s+6cS4+v2VLbT
-	5s1VZJO3s2HfjBcD5/EuSvw3HQJ/kHKeSU4cs2iwmC4zVNPV3NAG93KuaSRZr2g5ikkcYH7MHot8G
-	j0vS1Z9I25+OK7/yxT1l/LcJnMZTyd/x0hXKqyzmNAfl4MqUQ6XOrjjeyszFomf2ldKlwdY06MQRd
-	KZq2wO9iZGVQFpLD7MQvoVh6emYPgyM/tjscdPxpGTp/456EbIAltwqwnSCFN1Jq/pE8yogDrp4oX
-	bxsWO4Kg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4PY/FPCThXvHshjfgYVPvCo/5IPaPkj7wAidRur0XOg=; b=Odv5kj5+iHNzja
+	wZWmSdJqAYmqM95GtKdeHBXZRj/lKAeQQV7nYteBBUXMqP/AUakuYSkzTJCexpO8dnoBuGsAoEmeI
+	MqDKVsYMyysoLeOuELBhyLxF0occKhi66H2Dh3hYV+yHh8ikFPL0WUNfwV1Fmy/BIwhoWV8Q71g+B
+	5B+U1/bQudwp0tgDOMhacRl+aikxgc87oEwbeGSGSNf0Vqf4Im0ryh4w+0wCN6nWFKtL4hYcrBRW6
+	USoJOk3pbIGyewAdbC7CPZa5qHTn/3VJkzl3YxaIIB/2JSt6Ex298UGwkuLkgSU9Bm3MK7YWeOMXV
+	pC9gbxcHE5cVvI/tqT0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7MZD-0000000D2e9-2lim;
-	Fri, 18 Sep 2026 00:35:03 +0000
-Received: from smtp.forwardemail.net ([149.28.215.223])
+	id 1x7NWh-0000000DAVS-1MZg;
+	Fri, 18 Sep 2026 01:36:31 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7MZA-0000000D2cz-3YES
+	id 1x7NWf-0000000DAUH-47ds
 	for linux-phy@lists.infradead.org;
-	Fri, 18 Sep 2026 00:35:02 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ubuntu.com;
- h=In-Reply-To: References: Cc: To: From: Subject: Message-Id: Date:
- Content-Type: Content-Transfer-Encoding: Mime-Version; q=dns/txt;
- s=fe-953a8a3ca9; t=1789691699;
- bh=8QgXkkNdHre4C26c9GV+NpL0QV5WDefYsihE2tDLo6E=;
- b=K0OUS4qKGVQXd6mb/W5l7TvwbxMTlN7FGPUAjSnHXZSxeVsWuPVns6p5MawvokZmTsnJfhszV
- YfiZVNPnesJ44MDa/vUo0JAhomfBuhEhsLKgTPQWttEbobq+Y1elaaF6uOp6J3ygA0j+NSDIL/S
- ngGinwhXrIrQ2hTCXQqzqcFfiAGAr9bIplZdOHSz5dHgU0K7nI1iq67gS0GNRhzS/Q3IrYUqEvd
- PbaKClwj99tvoSalQOVG6fMpeRe9WGW2hY+rBQgoGLD85ic5Z3Hy+NFX6I06K1tXXXncO9GmrzA
- PH3WvRENHfR6b1liAe2d1kXo6mj/nHyaFB8VOkE7sMqg==
-X-Forward-Email-ID: 6aac871042fb3e762f6d18f9
-X-Forward-Email-Sender: rfc822; jpeisach@ubuntu.com, smtp.forwardemail.net,
- 149.28.215.223
-X-Forward-Email-Version: 2.14.2
-X-Forward-Email-Website: https://forwardemail.net
-X-Complaints-To: abuse@forwardemail.net
-X-Report-Abuse: abuse@forwardemail.net
-X-Report-Abuse-To: abuse@forwardemail.net
-Mime-Version: 1.0
-Date: Thu, 17 Sep 2026 20:34:18 -0400
-Message-Id: <DLI0QTP0NUHS.DAFYGACKWKWO@ubuntu.com>
-Subject: Re: [PATCH v4 01/20] dt-bindings: phy: Add
- starfive,jh7110-inno-hdmi-phy
-From: "Joshua Peisach" <jpeisach@ubuntu.com>
-To: "Krzysztof Kozlowski" <krzk@kernel.org>, "Michal Wilczynski"
- <m.wilczynski@samsung.com>
-Cc: "Vinod Koul" <vkoul@kernel.org>, "Neil Armstrong"
- <neil.armstrong@linaro.org>, "Rob Herring" <robh@kernel.org>, "Krzysztof
- Kozlowski" <krzk+dt@kernel.org>, "Conor Dooley" <conor+dt@kernel.org>,
- "Andrzej Hajda" <andrzej.hajda@intel.com>, "Robert Foss"
- <rfoss@kernel.org>, "Laurent Pinchart" <Laurent.pinchart@ideasonboard.com>,
- "Jonas Karlman" <jonas@kwiboo.se>, "Jernej Skrabec"
- <jernej.skrabec@gmail.com>, "Luca Ceresoli" <luca.ceresoli@bootlin.com>,
- "Maarten Lankhorst" <maarten.lankhorst@linux.intel.com>, "Maxime Ripard"
- <mripard@kernel.org>, "Thomas Zimmermann" <tzimmermann@suse.de>, "Lee
- Jones" <lee@kernel.org>, "Andy Yan" <andy.yan@rock-chips.com>, "Philipp
- Zabel" <p.zabel@pengutronix.de>, "Emil Renner Berthing" <kernel@esmil.dk>,
- "Hal Feng" <hal.feng@starfivetech.com>, "Michael Turquette"
- <mturquette@baylibre.com>, "Stephen Boyd" <sboyd@kernel.org>, "Heiko
- Stuebner" <heiko@sntech.de>, "Paul Walmsley" <pjw@kernel.org>, "Palmer
- Dabbelt" <palmer@dabbelt.com>, "Albert Ou" <aou@eecs.berkeley.edu>,
- "Alexandre Ghiti" <alex@ghiti.fr>, "Dominique Belhachemi" <db@domibel.de>,
- "Brian Masney" <bmasney+clk@redhat.com>, "Jerome Brunet"
- <jbrunet+clk@baylibre.com>, <linux-phy@lists.infradead.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
- <dri-devel@lists.freedesktop.org>, <mfd@lists.linux.dev>,
- <linux-clk@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-rockchip@lists.infradead.org>, <linux-riscv@lists.infradead.org>,
- "Marek Szyprowski" <m.szyprowski@samsung.com>, "Maud Spierings"
- <maud_spierings@murena.io>, "Graham Markall" <hello@big-grey.co.uk>,
- "Icenowy Zheng" <zhengxingda@iscas.ac.cn>, "Chaoyi Chen"
- <chaoyi.chen@rock-chips.com>, "Joshua Peisach" <jpeisach@ubuntu.com>,
- =?utf-8?q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
-X-Mailer: aerc 0.21.0
-References: <20260915-jh7110-clean-send-v4-0-f0e4fd6f2cc8@samsung.com>
- <CGME20260915153214eucas1p2b548f3236ef98fb0cbf320e397420125@eucas1p2.samsung.com> <20260915-jh7110-clean-send-v4-1-f0e4fd6f2cc8@samsung.com> <20260917-mutant-chamois-of-competence-46ca77@quoll>
-In-Reply-To: <20260917-mutant-chamois-of-competence-46ca77@quoll>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260917_173501_153886_DBADB588 
-X-CRM114-Status: GOOD (  18.51  )
+	Fri, 18 Sep 2026 01:36:30 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 20943601EF;
+	Fri, 18 Sep 2026 01:36:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 094971F000FF;
+	Fri, 18 Sep 2026 01:36:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1789695388;
+	bh=6IaAWEaBiOKUnROTpq0L5Ofe2m/RZ5CV/7s5WMrgEQc=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=Zf+ry3KqTl5J/hsN3Wse1/Fla8guEupSU5Ey4/qM2FcS50i3QCmnovNNbKbomSfLj
+	 9wIrPW/1G7tPeB0S6zpvJcR277uqmDQd74JiPfarN4lg6BI+1SqwndJCCPI8swGM/4
+	 dLjUkL8qP0IYwfgXcN8eZyHvL3SpRVKvL3QX9SjoPoViH/eyhKi9keRGg15F9AScBh
+	 eepP9CCmxo2/bI5SmoTTLZYUZOBSxK9exgQA6yYkU4s5q+OVmdfNjDzms7IPYUR8ma
+	 0aV1Zf8cuOAz0nl35JoJb8fOQsuHJIxw/FJ9jZXRB8SZrypLhNDGi/Y1Y2/2cvqtP6
+	 byOeGpQZIRTRw==
+Date: Fri, 18 Sep 2026 03:36:09 +0200
+From: Manivannan Sadhasivam <mani@kernel.org>
+To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+Cc: Bjorn Andersson <andersson@kernel.org>, 
+	Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Robert Foss <rfoss@kernel.org>, Todor Tomov <todor.too@gmail.com>, 
+	Mauro Carvalho Chehab <mchehab@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, 
+	Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>, Bryan O'Donoghue <bod@kernel.org>, 
+	Loic Poulain <loic.poulain@oss.qualcomm.com>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Felipe Balbi <balbi@ti.com>, linux-arm-msm@vger.kernel.org, 
+	linux-clk@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-media@vger.kernel.org, linux-phy@lists.infradead.org, 
+	Krzysztof Kozlowski <krzk@kernel.org>, stable@vger.kernel.org
+Subject: Re: [PATCH v19 0/5] Add phy_get_by_of_node and devm helper
+Message-ID: <cqoquu7hzclx54km763745dupaxahv7y4xbzq7vxg23isptgqz@j6los24mhnnn>
+References: <20260917-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v19-0-21ad8a76e941@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260917-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v19-0-21ad8a76e941@linaro.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,59 +74,24 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="Flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu Sep 17, 2026 at 2:51 AM EDT, Krzysztof Kozlowski wrote:
-> On Tue, Sep 15, 2026 at 05:32:09PM +0200, Michal Wilczynski wrote:
->> Add the dt-binding for the StarFive JH7110 Innosilicon HDMI PHY.
->> 
->> This device is a child of the starfive,jh7110-hdmi-subsystem node. It
->> functions as both a PHY provider for the controller and as a clock
->> provider for the variable pixel clock (hdmi_pclk), which it generates
->> from its refoclk.
->> 
->> Reviewed-by: Joshua Peisach <jpeisach@ubuntu.com>
->
-> While I appreciate other people looking at this, I don't think review
-> here applies. It was a blanket tag, given to the entire series, with
-> exception that it is from newbie, thus I want to ask: was this binding
-> REALLY reviewed by Joshua?
->
-> Are the rest of the patches actually reviewed or just "looks good to
-> me"? I see no comments from Joshua on v3, v2 and v1, which is usual sign
-> of doing review.
->
->
-I commented on v3 saying that I would test if I could. I don't just
-throw "Reviewed-by" on everything I look at.
-
-If anything, I've been trying to be more honest in reviews, and only
-review ones that I actually care about[1].
-
-If reviewing patches isn't a good way for newbies to start getting
-familiar with the kernel code (especially a NEW driver), then I don't
-know what is.
-
-And to be clear, I'm not using a LLM to review. I am using actual
-intelligence. For the JH7110 PR specifically, I did actually go through
-and review each commit, because I wanted to learn what was happening
-and why. Actually, that's why I asked where the data sheet was[2].
-
-So if you really want to, drop the Reviewed-by tag. And if it makes
-you feel better, I'll leave the series alone.
-
--Josh
-
-[1] I won't be reviewing PRs around devicetree since I'm not confident
-(or frankly, interested) in it at this point. https://lore.kernel.org/all/DL94TU52KBMO.2HAKJMJXV2CPE@ubuntu.com/
-
-[2] Michal giving me the hardware info:
-https://lore.kernel.org/all/071901ef-57f3-456f-af5b-a8c99a0a7dd3@samsung.com/
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVGh1LCBTZXAgMTcsIDIwMjYgYXQgMDQ6MjU6MDVQTSArMDEwMCwgQnJ5YW4gTydEb25vZ2h1
+ZSB3cm90ZToKPiBUaGlzIHNlcmllcyBoYXMgZXZvbHZlZCBmcm9tIGEgQ0FNU1Mgc3RhbmRhbG9u
+ZSBzZXJpZXMgdG8gYSBzZXJpZXMgdGhhdCBpcwo+IG1vc3RseSBvbiB0aGUgUEhZIHNpZGUgbm93
+LCBzbyBJJ3ZlIHNwbGl0IHRoZSBzZXJpZXMgdXAgdG8gcmVmbGVjdCB0aGF0Cj4gZmFjdC4KPiAK
+PiBTdGFydGluZyBvZmYgYnkgZml4aW5nIGEgbG9uZy1zdGFuZGluZyB1c2UtYWZ0ZXItZnJlZSBy
+YWNlLWNvbmRpdGlvbiBpbiB0aGUKPiBwaHkgY29yZSBmbGFnZ2VkIGJ5IFNhc2hpa28gaW4gdjEz
+LiBXaGlsZSBteSBzZXJpZXMgZG9lc24ndCBpbnRyb2R1Y2UgdGhlCj4gYnVnIGl0IHNlZW1zIGFw
+cHJvcHJpYXRlIHRvIGFkZHJlc3MgaXQgYW55d2F5IG9uY2UgZmxhZ2dlZC4KPiAKPiBPbmNlIGFk
+ZHJlc3NlZCB0d28gbmV3IGhlbHBlciBmdW5jdGlvbnMgYXJlIGludHJvZHVjZWQgdG8gdGhlIFBI
+WSBjb3JlIHRvCj4gZW5hYmxlIGZpbmRpbmcgb2YgYSBQSFkgdXNpbmcgdGhlIG1lZGlhIGdyYXBo
+Lgo+IAo+IEZpbmFsbHkgdGhlIHVzYWdlIG9mIHRoYXQgbmV3IEFQSSBpcyBzaG93biB3aXRoIENB
+TVNTLgo+IAoKTG9va3MgbGlrZSB5b3UgY29tcGxldGVseSBtaXNzZWQgYWxsIG15IGNvbW1lbnRz
+IGdpdmVuIGluIHYxNyA6LwoKLSBNYW5pCgotLSAK4K6u4K6j4K6/4K614K6j4K+N4K6j4K6p4K+N
+IOCumuCupOCuvuCumuCuv+CuteCuruCvjQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGlu
+dXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
+aWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
