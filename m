@@ -4,61 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76F4CC982D2
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Sep 2026 21:51:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56007C982D2
+	for <linux-phy@archiver.kernel.org>; Fri, 18 Sep 2026 00:35:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=soiGEjrZlxO34ZW6S9yH/5oUhVvAa6ins2Di9E7KQxQ=; b=tlxsKp8Pzj+na5
-	8cDN1xxV2eXWiad3dj2DdlaAmzdhmn7dGuvKRXr9ON5s+KrftKrNxsnVYnPDHJhGKyG4eVkvMu0jz
-	UWdLBfLzqdTfxq44HPMPalSZ7eJQU41sPP9VpRlQkQIqLeL/rn37NgYAZXAb2zGy/oAUIFpe5a1fu
-	qkLi4GDNo+o1FzzJ24JU9DWo2sc0HH1iFYaTUeMC6yfUKL/s1RtCAu3+D0pnam0wfH5DKUK2QXIol
-	cpdTFngnXG+bw+jPSZQOaNqq7ZcQ1kfo/NeGJ07v+rUPeSlkl8pKT+y/zT7zt7njT5uBrBepvdmel
-	QEePWx/+GLi1szIL4hdQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:Subject:Message-Id
+	:Date:Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=0wIMu6h2RAx6dcqXjEE/2fqIWu0NiWc9acT7XjMK1dY=; b=dRlj0e2TRU/O4JVejv7Py8NeNP
+	odv0nYFn+7GXIsWcGIb+gUin/BK03SlcZ36aoboILUG2QGA1RD5EgIiiXrTIrY48s+6cS4+v2VLbT
+	5s1VZJO3s2HfjBcD5/EuSvw3HQJ/kHKeSU4cs2iwmC4zVNPV3NAG93KuaSRZr2g5ikkcYH7MHot8G
+	j0vS1Z9I25+OK7/yxT1l/LcJnMZTyd/x0hXKqyzmNAfl4MqUQ6XOrjjeyszFomf2ldKlwdY06MQRd
+	KZq2wO9iZGVQFpLD7MQvoVh6emYPgyM/tjscdPxpGTp/456EbIAltwqwnSCFN1Jq/pE8yogDrp4oX
+	bxsWO4Kg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7K0c-0000000Cavi-0ShB;
-	Thu, 17 Sep 2026 21:51:10 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1x7MZD-0000000D2e9-2lim;
+	Fri, 18 Sep 2026 00:35:03 +0000
+Received: from smtp.forwardemail.net ([149.28.215.223])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7K0b-0000000CavH-1ptu;
-	Thu, 17 Sep 2026 21:51:09 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 1419743AB4;
-	Thu, 17 Sep 2026 21:51:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AC7CB1F000FF;
-	Thu, 17 Sep 2026 21:51:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789681869;
-	bh=ADx1gBJd+i0kQFNsWeKzJizPoigYcAbyJ2J0mmsvfAo=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=l8ONJhXHxC+X/t24/AiGf5UNJe1DNBUoULGuS5RcwKM9CaNihbEHnweehLB5fAM3a
-	 4pBl12Jdjyg6Cb/ghE1h2ZmpiRB8SvoUiBSYp9RlN+d1CJ1Du7YkkbSVgHDQ9doUwH
-	 wB5BkDlkfq5IeCABocbIr7L4mpnGbaB9c/KatqkYsvLZ4RzVzq3BihUwVnvvWbTyze
-	 D23EfsHIdmp8SaxCz2HsP/9Fxkq4Nq9a/sBoMDMSN8U/GT3nIqvPS4THu454PvmuZG
-	 9XxOdec0CjDIeG8+CzZIO/N/yUseauC0t04877qKYjb8fCxvs8Jc5I/EcBR3xscijt
-	 U5sgNLPBAaUmA==
-Date: Thu, 17 Sep 2026 16:51:07 -0500
-From: Rob Herring <robh@kernel.org>
-To: Christian Marangi <ansuelsmth@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 1/2] dt-bindings: phy: airoha: Document support for
- AN7583 Gen3 PCIe PHY
-Message-ID: <20260917215107.GA3884839-robh@kernel.org>
-References: <20260901125819.20378-1-ansuelsmth@gmail.com>
- <20260901125819.20378-2-ansuelsmth@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260901125819.20378-2-ansuelsmth@gmail.com>
+	id 1x7MZA-0000000D2cz-3YES
+	for linux-phy@lists.infradead.org;
+	Fri, 18 Sep 2026 00:35:02 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ubuntu.com;
+ h=In-Reply-To: References: Cc: To: From: Subject: Message-Id: Date:
+ Content-Type: Content-Transfer-Encoding: Mime-Version; q=dns/txt;
+ s=fe-953a8a3ca9; t=1789691699;
+ bh=8QgXkkNdHre4C26c9GV+NpL0QV5WDefYsihE2tDLo6E=;
+ b=K0OUS4qKGVQXd6mb/W5l7TvwbxMTlN7FGPUAjSnHXZSxeVsWuPVns6p5MawvokZmTsnJfhszV
+ YfiZVNPnesJ44MDa/vUo0JAhomfBuhEhsLKgTPQWttEbobq+Y1elaaF6uOp6J3ygA0j+NSDIL/S
+ ngGinwhXrIrQ2hTCXQqzqcFfiAGAr9bIplZdOHSz5dHgU0K7nI1iq67gS0GNRhzS/Q3IrYUqEvd
+ PbaKClwj99tvoSalQOVG6fMpeRe9WGW2hY+rBQgoGLD85ic5Z3Hy+NFX6I06K1tXXXncO9GmrzA
+ PH3WvRENHfR6b1liAe2d1kXo6mj/nHyaFB8VOkE7sMqg==
+X-Forward-Email-ID: 6aac871042fb3e762f6d18f9
+X-Forward-Email-Sender: rfc822; jpeisach@ubuntu.com, smtp.forwardemail.net,
+ 149.28.215.223
+X-Forward-Email-Version: 2.14.2
+X-Forward-Email-Website: https://forwardemail.net
+X-Complaints-To: abuse@forwardemail.net
+X-Report-Abuse: abuse@forwardemail.net
+X-Report-Abuse-To: abuse@forwardemail.net
+Mime-Version: 1.0
+Date: Thu, 17 Sep 2026 20:34:18 -0400
+Message-Id: <DLI0QTP0NUHS.DAFYGACKWKWO@ubuntu.com>
+Subject: Re: [PATCH v4 01/20] dt-bindings: phy: Add
+ starfive,jh7110-inno-hdmi-phy
+From: "Joshua Peisach" <jpeisach@ubuntu.com>
+To: "Krzysztof Kozlowski" <krzk@kernel.org>, "Michal Wilczynski"
+ <m.wilczynski@samsung.com>
+Cc: "Vinod Koul" <vkoul@kernel.org>, "Neil Armstrong"
+ <neil.armstrong@linaro.org>, "Rob Herring" <robh@kernel.org>, "Krzysztof
+ Kozlowski" <krzk+dt@kernel.org>, "Conor Dooley" <conor+dt@kernel.org>,
+ "Andrzej Hajda" <andrzej.hajda@intel.com>, "Robert Foss"
+ <rfoss@kernel.org>, "Laurent Pinchart" <Laurent.pinchart@ideasonboard.com>,
+ "Jonas Karlman" <jonas@kwiboo.se>, "Jernej Skrabec"
+ <jernej.skrabec@gmail.com>, "Luca Ceresoli" <luca.ceresoli@bootlin.com>,
+ "Maarten Lankhorst" <maarten.lankhorst@linux.intel.com>, "Maxime Ripard"
+ <mripard@kernel.org>, "Thomas Zimmermann" <tzimmermann@suse.de>, "Lee
+ Jones" <lee@kernel.org>, "Andy Yan" <andy.yan@rock-chips.com>, "Philipp
+ Zabel" <p.zabel@pengutronix.de>, "Emil Renner Berthing" <kernel@esmil.dk>,
+ "Hal Feng" <hal.feng@starfivetech.com>, "Michael Turquette"
+ <mturquette@baylibre.com>, "Stephen Boyd" <sboyd@kernel.org>, "Heiko
+ Stuebner" <heiko@sntech.de>, "Paul Walmsley" <pjw@kernel.org>, "Palmer
+ Dabbelt" <palmer@dabbelt.com>, "Albert Ou" <aou@eecs.berkeley.edu>,
+ "Alexandre Ghiti" <alex@ghiti.fr>, "Dominique Belhachemi" <db@domibel.de>,
+ "Brian Masney" <bmasney+clk@redhat.com>, "Jerome Brunet"
+ <jbrunet+clk@baylibre.com>, <linux-phy@lists.infradead.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <dri-devel@lists.freedesktop.org>, <mfd@lists.linux.dev>,
+ <linux-clk@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-rockchip@lists.infradead.org>, <linux-riscv@lists.infradead.org>,
+ "Marek Szyprowski" <m.szyprowski@samsung.com>, "Maud Spierings"
+ <maud_spierings@murena.io>, "Graham Markall" <hello@big-grey.co.uk>,
+ "Icenowy Zheng" <zhengxingda@iscas.ac.cn>, "Chaoyi Chen"
+ <chaoyi.chen@rock-chips.com>, "Joshua Peisach" <jpeisach@ubuntu.com>,
+ =?utf-8?q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
+X-Mailer: aerc 0.21.0
+References: <20260915-jh7110-clean-send-v4-0-f0e4fd6f2cc8@samsung.com>
+ <CGME20260915153214eucas1p2b548f3236ef98fb0cbf320e397420125@eucas1p2.samsung.com> <20260915-jh7110-clean-send-v4-1-f0e4fd6f2cc8@samsung.com> <20260917-mutant-chamois-of-competence-46ca77@quoll>
+In-Reply-To: <20260917-mutant-chamois-of-competence-46ca77@quoll>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260917_173501_153886_DBADB588 
+X-CRM114-Status: GOOD (  18.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,70 +98,57 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="Flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 01, 2026 at 02:58:17PM +0200, Christian Marangi wrote:
-> Document support for AN7583 PCIe PHY used to make the Gen3 PCIe port
-> work. Add the required register to configure the PCIe PHY and provide an
-> example for it.
-> 
-> Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
-> ---
->  .../phy/airoha,an7583-pcie-gen3-phy.yaml      | 65 +++++++++++++++++++
->  1 file changed, 65 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7583-pcie-gen3-phy.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/airoha,an7583-pcie-gen3-phy.yaml b/Documentation/devicetree/bindings/phy/airoha,an7583-pcie-gen3-phy.yaml
-> new file mode 100644
-> index 000000000000..a8ec5ac781cc
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/airoha,an7583-pcie-gen3-phy.yaml
-> @@ -0,0 +1,65 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/airoha,an7583-pcie-gen3-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Airoha AN7583 PCI-Express PHY
-> +
-> +maintainers:
-> +  - Christian Marangi <ansuelsmth@gmail.com>
-> +
-> +description:
-> +  The PCIe PHY supports physical layer functionality for PCIe Gen2/Gen3 port.
-> +
-> +properties:
-> +  compatible:
-> +    const: airoha,an7583-pcie-gen3-phy
-> +
-> +  reg:
-> +    items:
-> +      - description: PCIE G3 analog base address
-> +      - description: PCIE G3 PMA base address
-> +      - description: PCIE detection time base address
-> +      - description: PCIE Rx AEQ base address
-> +
-> +  reg-names:
-> +    items:
-> +      - const: g3-ana
-> +      - const: g3-pma
-> +      - const: xr-dtime
-> +      - const: rx-aeq
-> +
-> +  phys:
-> +    items:
-> +      - description: phandle to QPHY phy for Gen2 support
+On Thu Sep 17, 2026 at 2:51 AM EDT, Krzysztof Kozlowski wrote:
+> On Tue, Sep 15, 2026 at 05:32:09PM +0200, Michal Wilczynski wrote:
+>> Add the dt-binding for the StarFive JH7110 Innosilicon HDMI PHY.
+>> 
+>> This device is a child of the starfive,jh7110-hdmi-subsystem node. It
+>> functions as both a PHY provider for the controller and as a clock
+>> provider for the variable pixel clock (hdmi_pclk), which it generates
+>> from its refoclk.
+>> 
+>> Reviewed-by: Joshua Peisach <jpeisach@ubuntu.com>
+>
+> While I appreciate other people looking at this, I don't think review
+> here applies. It was a blanket tag, given to the entire series, with
+> exception that it is from newbie, thus I want to ask: was this binding
+> REALLY reviewed by Joshua?
+>
+> Are the rest of the patches actually reviewed or just "looks good to
+> me"? I see no comments from Joshua on v3, v2 and v1, which is usual sign
+> of doing review.
+>
+>
+I commented on v3 saying that I would test if I could. I don't just
+throw "Reviewed-by" on everything I look at.
 
-A phy for the phy... That's kind of odd. It there some reason the gen3 
-and gen2 phys aren't both linked to the PCIe host and controlled from 
-there? Doesn't look like there is any interleaved or cross 
-initialization needed to handle these in one place.
+If anything, I've been trying to be more honest in reviews, and only
+review ones that I actually care about[1].
 
-Rob
+If reviewing patches isn't a good way for newbies to start getting
+familiar with the kernel code (especially a NEW driver), then I don't
+know what is.
+
+And to be clear, I'm not using a LLM to review. I am using actual
+intelligence. For the JH7110 PR specifically, I did actually go through
+and review each commit, because I wanted to learn what was happening
+and why. Actually, that's why I asked where the data sheet was[2].
+
+So if you really want to, drop the Reviewed-by tag. And if it makes
+you feel better, I'll leave the series alone.
+
+-Josh
+
+[1] I won't be reviewing PRs around devicetree since I'm not confident
+(or frankly, interested) in it at this point. https://lore.kernel.org/all/DL94TU52KBMO.2HAKJMJXV2CPE@ubuntu.com/
+
+[2] Michal giving me the hardware info:
+https://lore.kernel.org/all/071901ef-57f3-456f-af5b-a8c99a0a7dd3@samsung.com/
 
 -- 
 linux-phy mailing list
