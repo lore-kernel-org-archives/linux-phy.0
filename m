@@ -4,52 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43B0AC982E6
-	for <linux-phy@archiver.kernel.org>; Sat, 19 Sep 2026 06:54:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D435C982D7
+	for <linux-phy@archiver.kernel.org>; Sat, 19 Sep 2026 06:54:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/cGw03YstiQ/As/gZ/rTYKynr+0zHpHJJUxC8oXnefM=; b=t4ytPLO0kUVcIA
-	uF0l4LVOQz7ZFkMvGmtIs67dzJHpEGWLSjqN/1OQs1nAMSEkN3j2cu22RLnYFD2RyECE0kEtquzWN
-	oDMHwtIUNsi2BglyXwxi0d71Csn8kPnjPH0fuIjwQ6XgBtbExLjPOB+R7OozI6AvvwyliR0BsIPuL
-	qf9/WaMDl+/+KVq1qnJkCV7gJ33AaAGt6fQDLTdHu7O3Kri68lZbtYKjXMImlBMzXRsQQBGIxXYNW
-	PsgZcxytev3s6p7/WEZjJ80YgVaALeBrv30XDNAGn1ppKt4+2rxwXjp5K7YN6vXmIPyLPryRq8PZX
-	nveLWtG03lOBM6BqSBZw==;
+	List-Owner; bh=qC0sswErJPY/Hm+XiGub0cC0df3OsWR1FChDdFAxvMA=; b=s/NqYJJSZzyD1R
+	4tWbZNDS6MJPnlDG8dw6BnuVmYkoaRD0F812mcXFdoiZJJ0eFPIf+JYD04yFzCMC1a1L4q+whaeQK
+	qKA6WCq4MHnFDQ+CERjpS2eecoTxYwG4je6+U4d2rYPAKSIq7mRJWflsMMrrGlHuM0VUBL8EdGYQu
+	ZN4sJKaoBHAmKtes2QcaaCgJJyR5+Y1enzlU3a3OjxsIImfXqGP2VJf/fJV1bsfhMDgaW65koqDq4
+	AIjKJLaT1VuCLHeKo9sLOYkrkkVyUOfaLoYAaeJ4z43ZIihrl/+qvc+hskACGqXqDu/NbnDdTm3FK
+	+ZbK/nVYNgvuc5dQkrsA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7oyD-0000000G0WR-45hD;
-	Sat, 19 Sep 2026 06:54:45 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1x7oyC-0000000G0VZ-3Ml9;
+	Sat, 19 Sep 2026 06:54:44 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7oyB-0000000G0TK-2Ach;
+	id 1x7oyB-0000000G0TJ-0lH5;
 	Sat, 19 Sep 2026 06:54:43 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 9A3BE6053E;
+	by sea.source.kernel.org (Postfix) with ESMTP id 5629144000;
 	Sat, 19 Sep 2026 06:54:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 01062C2BCFA;
-	Sat, 19 Sep 2026 06:54:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id E54A7C2BCF7;
+	Sat, 19 Sep 2026 06:54:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1789800882;
-	bh=IYXx/zE+2n46PXRVXSdn5ENzV8RoPWwU25GLFYvhJZw=;
+	bh=xMu5pZDd1tnu775j6RDb6pn8Z7xoRB8WjMB9CLkP0cQ=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=JkWY/VW0Yjf56u5xK00OvqQhyLf7M6+JkITBURcFCTBXeR5iz1rQAceg8P7eVJLhK
-	 ZO1QbrLZoumu4ynlD1N7CQ21PVmTIoRKHXVhfRQoIzDpTXCKXLsg3tDfKd/JuoIKDr
-	 52UqcqEtpysq3VPBsKuceDs74jK4pxPC9Y8EPfDhjaKVxOMZ+5rCwU1DBO2W4kxWdI
-	 F2Zkp5Yyc0a/JDYE52slefltrMMH7GblzUOVkQTEdcc+7TAeJo85Oap9RrILyzsnjU
-	 8zzcLvLs9cW/Gbzc5NK+U1hUWtOYe69KaLT2cxLU8N3n1sVfmJIH52nKuzvYO0h4Fz
-	 Y0xufq3FRFDuQ==
+	b=gRK/yEMzRpy1Wi3hKZh1Nzcg+ctwfdiwnPzY6eO4ERstgxSFLY2VQoPxwbWmMUjJY
+	 ItT91sRxsWo5NL0H0gDw7gMLHjvNcRdU21vurRoybif5LwN0RKtMRqc2O/q7x4r14g
+	 XWoGSx64gokCLcDOjtcL2501tf1EjjtcHTMXfsLmlXrF74DxzClwv4IA+wn2Y7jRpD
+	 Xn+opZZ/TgiM/+wdzrZPNL3Cxt/nFeKgfohw1p7siaJSzqoWrXd47HUb/0AdY+bmn0
+	 5mE2djAZbNF7SfwV4kgYkP8ooXB12uZr9P4Kt+o6R2kFJaox/P5MG+YDuBaitqTNNN
+	 5fhhSY3dS0zeA==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D843CC982E0;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id C3CCBC982D8;
 	Sat, 19 Sep 2026 06:54:41 +0000 (UTC)
 From: Jan Petrous via B4 Relay <devnull+jan.petrous.oss.nxp.com@kernel.org>
-Date: Sat, 19 Sep 2026 08:54:31 +0200
-Subject: [PATCH RFC v3 03/12] dt-bindings: PCI: nxp,s32g-pcie: Fix SerDes
- PHY phandle in example
+Date: Sat, 19 Sep 2026 08:54:30 +0200
+Subject: [PATCH RFC v3 02/12] dt-bindings: net: nxp,s32-dwmac: Document
+ pcs-handle
 MIME-Version: 1.0
-Message-Id: <20260919-s32g_serdes-v3-3-9d68868c1e89@oss.nxp.com>
+Message-Id: <20260919-s32g_serdes-v3-2-9d68868c1e89@oss.nxp.com>
 References: <20260919-s32g_serdes-v3-0-9d68868c1e89@oss.nxp.com>
 In-Reply-To: <20260919-s32g_serdes-v3-0-9d68868c1e89@oss.nxp.com>
 To: Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>, 
@@ -89,11 +89,11 @@ Cc: linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
  Vincent Guittot <vincent.guittot@linaro.org>, 
  "Jan Petrous (OSS)" <jan.petrous@oss.nxp.com>
 X-Mailer: b4 0.14.1
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1789800879; l=1567;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1789800879; l=1921;
  i=jan.petrous@oss.nxp.com; s=20240922; h=from:subject:message-id;
- bh=Na+zOsB+scHEU/5Sa34th6CSnJzMvXvCSt2p2AdpCXQ=;
- b=/FnXnC/g0lwE3bBZfsHmeuSK3HZ8ktdkgjTKjNTxtKu0Q/fQ5SAhUZEF4Nb9zaMQU4VnaVGa6
- SLEjPNq1l4hASGuJYsX8216FYqHW50IOjDFp9fLyn7qYumfxSZVSywN
+ bh=Slo0j2nguHWzRpXyMDnZyPP6ZRovyd2ENG76AQ6nmBk=;
+ b=cHFaVf8g3n63N2VUjwi4/XAIkgWpQTh/zlBac/Vo5OQRZtlxgrBauA10q5LsBCCd4hxWrLn/J
+ SHJzaPdCFbyA/3QxIQSwaBfGk8ITzF34VbhDFNK7DJIpv5MJypFw4l9
 X-Developer-Key: i=jan.petrous@oss.nxp.com; a=ed25519;
  pk=Ke3wwK7rb2Me9UQRf6vR8AsfJZfhTyoDaxkUCqmSWYY=
 X-Endpoint-Received: by B4 Relay for jan.petrous@oss.nxp.com/20240922 with
@@ -118,48 +118,49 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: "Jan Petrous (OSS)" <jan.petrous@oss.nxp.com>
 
-The example references the SerDes PHY as
+When the MAC output is routed to the embedded SerDes for SGMII, the PCS
+is one of the SerDes XPCS instances. Document that it is referenced
+through the standard pcs-handle property defined by
+ethernet-controller.yaml, pointing at the SerDes XPCS lane child node.
 
-  phys = <&serdes0 PHY_TYPE_PCIE 0 0>;
-
-i.e. the SerDes node itself with three PHY cells. That does not match
-the SerDes binding: the per-lane child node is the generic PHY
-provider and carries '#phy-cells = <0>', while the SerDes node itself
-has no '#phy-cells' at all.
-
-Point the example at the PCIe lane child instead, which is also what
-the S32G3 board device trees use. The dt-bindings/phy/phy.h include is
-dropped along with the now-unused PHY_TYPE_PCIE constant.
-
-The schema itself is unchanged; 'phys: maxItems: 1' already describes
-the corrected form.
+The type already comes from the ethernet-controller.yaml reference in
+the schema chain; this only records the intent, the same way
+renesas,rzn1-gmac.yaml does.
 
 Signed-off-by: Jan Petrous (OSS) <jan.petrous@oss.nxp.com>
 ---
- Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ Documentation/devicetree/bindings/net/nxp,s32-dwmac.yaml | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml b/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml
-index 66a050028278..29323e50bd8b 100644
---- a/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml
-+++ b/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml
-@@ -82,7 +82,6 @@ unevaluatedProperties: false
- examples:
-   - |
-     #include <dt-bindings/interrupt-controller/arm-gic.h>
--    #include <dt-bindings/phy/phy.h>
+diff --git a/Documentation/devicetree/bindings/net/nxp,s32-dwmac.yaml b/Documentation/devicetree/bindings/net/nxp,s32-dwmac.yaml
+index 753a04941659..b168decb540c 100644
+--- a/Documentation/devicetree/bindings/net/nxp,s32-dwmac.yaml
++++ b/Documentation/devicetree/bindings/net/nxp,s32-dwmac.yaml
+@@ -15,7 +15,8 @@ description:
+   The SoC series S32G2xx and S32G3xx feature one DWMAC instance,
+   the SoC S32R45 has two instances. The devices can use RGMII/RMII/MII
+   interface over Pinctrl device or the output can be routed
+-  to the embedded SerDes for SGMII connectivity.
++  to the embedded SerDes for SGMII connectivity, in which case the
++  SerDes XPCS lane acting as the PCS is referenced via pcs-handle.
+   The DWMAC instances have connected all RX/TX queues interrupts,
+   enabling load balancing of data traffic across all CPU cores.
  
-     bus {
-         #address-cells = <2>;
-@@ -124,7 +123,7 @@ examples:
-                 ranges;
+@@ -81,6 +82,14 @@ properties:
+       - const: rx
+       - const: ptp_ref
  
-                 device_type = "pci";
--                phys = <&serdes0 PHY_TYPE_PCIE 0 0>;
-+                phys = <&serdes0_pcie0>;
-             };
-         };
-     };
++  pcs-handle:
++    $ref: /schemas/types.yaml#/definitions/phandle-array
++    maxItems: 1
++    description:
++      phandle pointing to the SerDes XPCS lane child node that provides
++      the SGMII PCS for this MAC. See
++      Documentation/devicetree/bindings/phy/nxp,s32g-serdes.yaml.
++
+ required:
+   - clocks
+   - clock-names
 
 -- 
 2.55.0
