@@ -4,52 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D435C982D7
-	for <linux-phy@archiver.kernel.org>; Sat, 19 Sep 2026 06:54:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E080BC982E9
+	for <linux-phy@archiver.kernel.org>; Sat, 19 Sep 2026 06:54:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qC0sswErJPY/Hm+XiGub0cC0df3OsWR1FChDdFAxvMA=; b=s/NqYJJSZzyD1R
-	4tWbZNDS6MJPnlDG8dw6BnuVmYkoaRD0F812mcXFdoiZJJ0eFPIf+JYD04yFzCMC1a1L4q+whaeQK
-	qKA6WCq4MHnFDQ+CERjpS2eecoTxYwG4je6+U4d2rYPAKSIq7mRJWflsMMrrGlHuM0VUBL8EdGYQu
-	ZN4sJKaoBHAmKtes2QcaaCgJJyR5+Y1enzlU3a3OjxsIImfXqGP2VJf/fJV1bsfhMDgaW65koqDq4
-	AIjKJLaT1VuCLHeKo9sLOYkrkkVyUOfaLoYAaeJ4z43ZIihrl/+qvc+hskACGqXqDu/NbnDdTm3FK
-	+ZbK/nVYNgvuc5dQkrsA==;
+	List-Owner; bh=i3QTWdisj8+YW8a5DdY+3S30F/yFrmvXea9VLoUSzMU=; b=WTvUy6dKPtRJve
+	SemVq8wfPG0RhYycpugWbzFyRojCGRGhXcEn6AkcArTlDBOQlDeFYy1sYquCKRSFrTjNapKKY1HVP
+	WRnoWwK0VoFAMXBXHQlh6jV46Wt7RWJegxLcmOudQFVMSeqwF4SzaVl0PSrbNpA75C3yux7v0WKTB
+	8O363J4PqU4f0ntJxZmpwwG0Z1pZij6ZIxbZgxGcFR0TpFCkhEaaZIB/y3xqbiNNmJytjwB0kT0Cu
+	9163L7Nv6ivK9Dr37iBaZ7Ly5I82CTNm4dbkJ3U/GPy7FhlLP85BiIFaXg28X/XKdKHx6SmThc0V3
+	iZBN49Dory3h3mwwdujw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7oyC-0000000G0VZ-3Ml9;
-	Sat, 19 Sep 2026 06:54:44 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1x7oyE-0000000G0XP-20aB;
+	Sat, 19 Sep 2026 06:54:46 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7oyB-0000000G0TJ-0lH5;
+	id 1x7oyB-0000000G0Tl-3MAA;
 	Sat, 19 Sep 2026 06:54:43 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5629144000;
+	by tor.source.kernel.org (Postfix) with ESMTP id C273260A66;
 	Sat, 19 Sep 2026 06:54:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id E54A7C2BCF7;
-	Sat, 19 Sep 2026 06:54:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 51932C4AF65;
+	Sat, 19 Sep 2026 06:54:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1789800882;
-	bh=xMu5pZDd1tnu775j6RDb6pn8Z7xoRB8WjMB9CLkP0cQ=;
+	bh=uSo8bZNbkIHsnVdQZGbJA8vvd3OR2BORJto4RXhDTmU=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=gRK/yEMzRpy1Wi3hKZh1Nzcg+ctwfdiwnPzY6eO4ERstgxSFLY2VQoPxwbWmMUjJY
-	 ItT91sRxsWo5NL0H0gDw7gMLHjvNcRdU21vurRoybif5LwN0RKtMRqc2O/q7x4r14g
-	 XWoGSx64gokCLcDOjtcL2501tf1EjjtcHTMXfsLmlXrF74DxzClwv4IA+wn2Y7jRpD
-	 Xn+opZZ/TgiM/+wdzrZPNL3Cxt/nFeKgfohw1p7siaJSzqoWrXd47HUb/0AdY+bmn0
-	 5mE2djAZbNF7SfwV4kgYkP8ooXB12uZr9P4Kt+o6R2kFJaox/P5MG+YDuBaitqTNNN
-	 5fhhSY3dS0zeA==
+	b=j7bctcZX8ZMKSw9pRuehWjrSOFoxdrNRW/T8D+EhdnS3c63XtyZ9vFzUT1pZdslGv
+	 ygXaEq/AN95ik8b4sJkl3d6qlOJNTXCbNOIjPCoWv2qZvQSRHk7+JZavzV9E9D8EZi
+	 ARa7HCwsvmIsOwNRB2JP0wyN6NDhrdLCHRBE3VTWZiVfJ5Ow4plBvS3cVQwI84q/Nu
+	 DnnulGm9JO291lUiKcdK/IPM5Ur5YwxCx9m1iqW5W3BDNYUktWWE75xrqPxXZwamUi
+	 YGPYtegAD/FCKliQ99PCc1iM35/OZuinSBkVb0BaP7PJvkroNetN8+nFHuxtgEtDHx
+	 NdJjMtAIJSKEw==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id C3CCBC982D8;
-	Sat, 19 Sep 2026 06:54:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3AA58C982E0;
+	Sat, 19 Sep 2026 06:54:42 +0000 (UTC)
 From: Jan Petrous via B4 Relay <devnull+jan.petrous.oss.nxp.com@kernel.org>
-Date: Sat, 19 Sep 2026 08:54:30 +0200
-Subject: [PATCH RFC v3 02/12] dt-bindings: net: nxp,s32-dwmac: Document
- pcs-handle
+Date: Sat, 19 Sep 2026 08:54:35 +0200
+Subject: [PATCH RFC v3 07/12] net: stmmac: dwmac-s32: Add SGMII support
 MIME-Version: 1.0
-Message-Id: <20260919-s32g_serdes-v3-2-9d68868c1e89@oss.nxp.com>
+Message-Id: <20260919-s32g_serdes-v3-7-9d68868c1e89@oss.nxp.com>
 References: <20260919-s32g_serdes-v3-0-9d68868c1e89@oss.nxp.com>
 In-Reply-To: <20260919-s32g_serdes-v3-0-9d68868c1e89@oss.nxp.com>
 To: Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>, 
@@ -89,11 +88,11 @@ Cc: linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
  Vincent Guittot <vincent.guittot@linaro.org>, 
  "Jan Petrous (OSS)" <jan.petrous@oss.nxp.com>
 X-Mailer: b4 0.14.1
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1789800879; l=1921;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1789800879; l=6849;
  i=jan.petrous@oss.nxp.com; s=20240922; h=from:subject:message-id;
- bh=Slo0j2nguHWzRpXyMDnZyPP6ZRovyd2ENG76AQ6nmBk=;
- b=cHFaVf8g3n63N2VUjwi4/XAIkgWpQTh/zlBac/Vo5OQRZtlxgrBauA10q5LsBCCd4hxWrLn/J
- SHJzaPdCFbyA/3QxIQSwaBfGk8ITzF34VbhDFNK7DJIpv5MJypFw4l9
+ bh=4xD+2UliT9if7xfxC4obvM/j/KDsycsnBr6+hB/0laM=;
+ b=5OIBAAJuZHkhcAGGtQ976p6z0oaLbUzT0mz/wqPWyV3kJCvbFOuBzbCc2cYTYTrUDNzienbYv
+ 59ARLxHrLvhBqBjrHdBziUL43EFZQ42qlxWYLQ4uvdnlXh7yuRwdaYp
 X-Developer-Key: i=jan.petrous@oss.nxp.com; a=ed25519;
  pk=Ke3wwK7rb2Me9UQRf6vR8AsfJZfhTyoDaxkUCqmSWYY=
 X-Endpoint-Received: by B4 Relay for jan.petrous@oss.nxp.com/20240922 with
@@ -118,49 +117,193 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: "Jan Petrous (OSS)" <jan.petrous@oss.nxp.com>
 
-When the MAC output is routed to the embedded SerDes for SGMII, the PCS
-is one of the SerDes XPCS instances. Document that it is referenced
-through the standard pcs-handle property defined by
-ethernet-controller.yaml, pointing at the SerDes XPCS lane child node.
+Wire the NXP S32G SerDes XPCS PCS into the dwmac-s32 glue layer so the
+MAC can run SGMII over a SerDes lane.
 
-The type already comes from the ethernet-controller.yaml reference in
-the schema chain; this only records the intent, the same way
-renesas,rzn1-gmac.yaml does.
+Changes:
+- s32_gmac_write_phy_intf_select: replace the hard-coded RGMII selector
+  with a switch on phy_interface so SGMII (0x01), RGMII, RMII and MII
+  all programme the SoC control register correctly.
+- Add s32_gmac_pcs_init: obtain the phylink_pcs handle from the SerDes
+  subsystem via s32g_serdes_pcs_create(), keyed by the standard
+  pcs-handle property on the GMAC node pointing at the SerDes XPCS lane
+  child. Propagates -EPROBE_DEFER if the SerDes driver has not probed
+  yet. There is no matching exit hook: the device link created by
+  s32g_serdes_pcs_create() covers the lifetime.
+- Add s32_gmac_select_pcs: return the stored PCS handle when the
+  negotiated interface is SGMII.
+- Hook pcs_init and select_pcs into plat_stmmacenet_data.
+
+Note that installing a select_pcs callback suppresses the core's
+integrated_pcs fallback, because stmmac treats a NULL return from
+select_pcs as "no PCS" rather than "fall through". This matches what
+dwmac-rzn1 and dwmac-intel already do.
+
+Both negotiation modes are supported by the PCS. The board device
+trees added later in this series describe the MAC-side link as fixed,
+so they exercise the out-of-band path.
+
+The XPCS header guards its s32g_serdes_pcs_create() declaration with
+IS_REACHABLE(CONFIG_PHY_S32G_SERDES) and provides a static-inline stub
+returning -ENODEV otherwise. IS_REACHABLE is false both when the SerDes
+driver is disabled and in the built-in-consumer / modular-provider case
+(DWMAC_S32=y with PHY_S32G_SERDES=m), so this driver links in all four
+combinations of the two symbols.
+
+Linking is not sufficient on its own, though. In the DWMAC_S32=y with
+PHY_S32G_SERDES=m case the stub makes s32_gmac_pcs_init() return
+-ENODEV, and stmmac treats a failing plat->pcs_init() as fatal, so a
+built-in MAC would refuse to probe on any device tree describing
+pcs-handle. Add a Kconfig dependency forbidding that combination
+rather than letting it build into a MAC that cannot probe.
+
+Tested on an S32G3-VNP-RDB3 board: GMAC0 links at 1G over SGMII and
+passes traffic, both in SerDes mode 1 (alongside two active PCIe root
+complexes) and in mode 3.
 
 Signed-off-by: Jan Petrous (OSS) <jan.petrous@oss.nxp.com>
 ---
- Documentation/devicetree/bindings/net/nxp,s32-dwmac.yaml | 11 ++++++++++-
- 1 file changed, 10 insertions(+), 1 deletion(-)
+ drivers/net/ethernet/stmicro/stmmac/Kconfig     |  6 ++
+ drivers/net/ethernet/stmicro/stmmac/dwmac-s32.c | 74 ++++++++++++++++++++++++-
+ 2 files changed, 78 insertions(+), 2 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/net/nxp,s32-dwmac.yaml b/Documentation/devicetree/bindings/net/nxp,s32-dwmac.yaml
-index 753a04941659..b168decb540c 100644
---- a/Documentation/devicetree/bindings/net/nxp,s32-dwmac.yaml
-+++ b/Documentation/devicetree/bindings/net/nxp,s32-dwmac.yaml
-@@ -15,7 +15,8 @@ description:
-   The SoC series S32G2xx and S32G3xx feature one DWMAC instance,
-   the SoC S32R45 has two instances. The devices can use RGMII/RMII/MII
-   interface over Pinctrl device or the output can be routed
--  to the embedded SerDes for SGMII connectivity.
-+  to the embedded SerDes for SGMII connectivity, in which case the
-+  SerDes XPCS lane acting as the PCS is referenced via pcs-handle.
-   The DWMAC instances have connected all RX/TX queues interrupts,
-   enabling load balancing of data traffic across all CPU cores.
+diff --git a/drivers/net/ethernet/stmicro/stmmac/Kconfig b/drivers/net/ethernet/stmicro/stmmac/Kconfig
+index e3dd5adda5ac..1443ff4149b4 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/Kconfig
++++ b/drivers/net/ethernet/stmicro/stmmac/Kconfig
+@@ -192,6 +192,12 @@ config DWMAC_S32
+ 	tristate "NXP S32G/S32R GMAC support"
+ 	default ARCH_S32
+ 	depends on OF && (ARCH_S32 || COMPILE_TEST)
++	# SGMII needs the PCS from the SerDes driver. The header falls back
++	# to a stub returning -ENODEV when that driver is not reachable, and
++	# stmmac makes a failing plat->pcs_init() fatal, so a built-in MAC
++	# with a modular SerDes would refuse to probe on any DT describing
++	# pcs-handle. Forbid that combination instead.
++	depends on PHY_S32G_SERDES || PHY_S32G_SERDES=n
+ 	help
+ 	  Support for ethernet controller on NXP S32CC SOCs.
  
-@@ -81,6 +82,14 @@ properties:
-       - const: rx
-       - const: ptp_ref
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-s32.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-s32.c
+index 024d8e10e918..a3a56b21181a 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac-s32.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-s32.c
+@@ -16,12 +16,14 @@
+ #include <linux/of_mdio.h>
+ #include <linux/of_address.h>
+ #include <linux/phy.h>
++#include <linux/phy/nxp-s32g-serdes.h>
+ #include <linux/phylink.h>
+ #include <linux/platform_device.h>
+ #include <linux/regmap.h>
+ #include <linux/stmmac.h>
  
-+  pcs-handle:
-+    $ref: /schemas/types.yaml#/definitions/phandle-array
-+    maxItems: 1
-+    description:
-+      phandle pointing to the SerDes XPCS lane child node that provides
-+      the SGMII PCS for this MAC. See
-+      Documentation/devicetree/bindings/phy/nxp,s32g-serdes.yaml.
+ #include "stmmac_platform.h"
++#include "stmmac.h"
+ 
+ #define GMAC_INTF_RATE_125M	125000000	/* 125MHz */
+ 
+@@ -40,23 +42,89 @@ struct s32_priv_data {
+ 	phy_interface_t *intf_mode;
+ 	struct clk *tx_clk;
+ 	struct clk *rx_clk;
++	/* SGMII PCS provided by the SerDes subsystem (NULL if not SGMII) */
++	struct phylink_pcs *pcs;
+ };
+ 
+ static int s32_gmac_write_phy_intf_select(struct s32_priv_data *gmac)
+ {
++	u32 intf_sel;
+ 	int ret = 0;
+ 
++	switch (*gmac->intf_mode) {
++	case PHY_INTERFACE_MODE_SGMII:
++		intf_sel = S32_PHY_INTF_SEL_SGMII;
++		break;
++	case PHY_INTERFACE_MODE_RGMII:
++	case PHY_INTERFACE_MODE_RGMII_ID:
++	case PHY_INTERFACE_MODE_RGMII_RXID:
++	case PHY_INTERFACE_MODE_RGMII_TXID:
++		intf_sel = S32_PHY_INTF_SEL_RGMII;
++		break;
++	case PHY_INTERFACE_MODE_RMII:
++		intf_sel = S32_PHY_INTF_SEL_RMII;
++		break;
++	case PHY_INTERFACE_MODE_MII:
++		intf_sel = S32_PHY_INTF_SEL_MII;
++		break;
++	default:
++		dev_err(gmac->dev, "Unsupported phy interface mode: %s\n",
++			phy_modes(*gmac->intf_mode));
++		return -EINVAL;
++	}
 +
- required:
-   - clocks
-   - clock-names
+ 	if (gmac->ctrl_sts)
+-		writel(S32_PHY_INTF_SEL_RGMII, gmac->ctrl_sts);
++		writel(intf_sel, gmac->ctrl_sts);
+ 	else
+ 		ret = regmap_write(gmac->sts_regmap, gmac->sts_offset,
+-				   S32_PHY_INTF_SEL_RGMII);
++				   intf_sel);
+ 
+ 	dev_dbg(gmac->dev, "PHY mode set to %s\n", phy_modes(*gmac->intf_mode));
+ 
+ 	return ret;
+ }
+ 
++static int s32_gmac_pcs_init(struct stmmac_priv *priv)
++{
++	struct s32_priv_data *gmac = priv->plat->bsp_priv;
++	struct device_node *pcs_node;
++
++	/*
++	 * pcs-handle points at the SerDes XPCS lane child node; its
++	 * nxp,xpcs-instance property is what identifies the XPCS instance.
++	 */
++	pcs_node = of_parse_phandle(gmac->dev->of_node, "pcs-handle", 0);
++	if (!pcs_node) {
++		dev_dbg(gmac->dev, "no 'pcs-handle' property, SGMII PCS unavailable\n");
++		return 0;
++	}
++
++	gmac->pcs = s32g_serdes_pcs_create(gmac->dev, pcs_node);
++	of_node_put(pcs_node);
++
++	if (IS_ERR(gmac->pcs)) {
++		int err = PTR_ERR(gmac->pcs);
++
++		gmac->pcs = NULL;
++		/* SerDes may not be probed yet - defer probe. */
++		return err;
++	}
++
++	dev_dbg(gmac->dev, "SGMII PCS created via SerDes XPCS\n");
++	return 0;
++}
++
++static struct phylink_pcs *s32_gmac_select_pcs(struct stmmac_priv *priv,
++					       phy_interface_t interface)
++{
++	struct s32_priv_data *gmac = priv->plat->bsp_priv;
++
++	if (interface == PHY_INTERFACE_MODE_SGMII && gmac->pcs)
++		return gmac->pcs;
++
++	return NULL;
++}
++
+ static int s32_gmac_init(struct device *dev, void *priv)
+ {
+ 	struct s32_priv_data *gmac = priv;
+@@ -204,6 +272,8 @@ static int s32_dwmac_probe(struct platform_device *pdev)
+ 
+ 	plat->init = s32_gmac_init;
+ 	plat->exit = s32_gmac_exit;
++	plat->pcs_init = s32_gmac_pcs_init;
++	plat->select_pcs = s32_gmac_select_pcs;
+ 
+ 	plat->clk_tx_i = gmac->tx_clk;
+ 	plat->set_clk_tx_rate = stmmac_set_clk_tx_rate;
 
 -- 
 2.55.0
