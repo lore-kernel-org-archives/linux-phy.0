@@ -4,52 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A91AC982E1
-	for <linux-phy@archiver.kernel.org>; Sat, 19 Sep 2026 06:54:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24AAEC982D8
+	for <linux-phy@archiver.kernel.org>; Sat, 19 Sep 2026 06:54:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=19PsHx+tuN7RCsNtyiZwTtJVrPVZ4W1/2BLKTj5y8sM=; b=1WG1gHCkAVvrYR
-	YZRh/OgVWcL5wMehQrVs9vY/RAhahaGsiWkb+vSg83NHrHjTVpXcSEzV+Q2ejI3VGsMfYLpkrlUAb
-	JyFlJ+05I/WwyL9NugnH31Kq3iT1iYDkUKWW8K74/5DXUy0fkm8YDfXYwl0Y/l639NQxDSHiN9uEv
-	9z6V0ied1Ppcwy/e+J2m9S8XUiUZYFENnllXWLO1kTcOoIiOSCiuiqAJYnfvV870XoM4WPW10fYTJ
-	uF8G1l9PCqSWyKT14C54xzi9IyRXcNDZwqjNOpBsrk1ZIDqaIGGkt61YTg9jOtJ6ci5onLluAENqj
-	QG+ZQYxetfePdn5bRJnQ==;
+	List-Owner; bh=QKMy0MFgvIxfx5Ly2DccDmi4ldUQHqARgUn0UAODFHU=; b=ZfYyLsA6KRvdq+
+	HhK9KjeXi9rPj1TBYwCXknJdmjqYGEjoJnEX+IXysSxGmh1QynfWA4EW91YqPpyxgwnoMT5Jbtw3S
+	t5OwjtDx7SuF+N3pqMtvFma7cATHdY0/62IWqljQhgWe/tby9z1BivbFD8DMkblXKMuMFtiXBElNL
+	ZN94awj/XErT6fCSusI2C/tTM+XvTgCnq+bA1dhSyp8TIWLXl4rsjZNzJScD7Xd5KYreITtogfYeo
+	0xX/jjJUl017V4dvpyMjJYcKm/IPdnAyzMKnNu4C0YYKwm1uuBn8LBxsIbY0/9Zs+KwvCIBbnPOvm
+	pSRcaN6yZzrlEvGqSf3Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7oyF-0000000G0Zp-14l6;
+	id 1x7oyF-0000000G0az-3NIE;
 	Sat, 19 Sep 2026 06:54:47 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7oyC-0000000G0Tm-08zJ;
+	id 1x7oyC-0000000G0Tm-222J;
 	Sat, 19 Sep 2026 06:54:44 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id B7E61447DD;
+	by sea.source.kernel.org (Postfix) with ESMTP id DDABA447F6;
 	Sat, 19 Sep 2026 06:54:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 64DD8C2BCB9;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id A6CFAC2BD00;
 	Sat, 19 Sep 2026 06:54:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1789800882;
-	bh=hEdrTD32oe2/I9cR/yjQrulOh/1vVMPBRlmgmhgVQjk=;
+	bh=6EejufrpwC/UtsiftUOzo0NzHkyCdWKMKJS4FmujPqE=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=QykD5yAA6HdWx3vtl89E+OH8jQTF723YOHsLH63U2uzCPlwkM9ZpimUc6F2Jqwmcf
-	 ZvXoVSbnhOi+GVN3a1wn6dxBrEtz7ZEvq4D02qj/D43A/Q+P3PF7oW+uZsC94OMJqz
-	 AsGgSYzJu5eOCBKoeDyUJfylXmpz4J6Xp5au+suHG5ykdvRYp0qxZ0amcaPCHUdOiD
-	 LBaoKWlVtgWUTyhgP1LNHZF1Deu8hWdfQYHn5M+GdodtKaPV/lM83r05b1Csnsdw4D
-	 SQEAzrliI1HH1KqZVyGXgzdUc7xEL8GH2QIDjD82bga7TLkpeHCFkutpGI9a/sKF2R
-	 0Ata62g6ZBzqQ==
+	b=Jx5vjY/CCRE7CRlYzRSaE83vJkwuKU0rLyy3049H2XqQY2lsVFUSiTMPhrkltdSka
+	 VAspCoCSGTl6EviRc7hkTZYWr2KjKdxvNzUT6H8NtJ6v+73Q84NkcpE2YANHQII0zF
+	 XhHnjNsKtud9ASdC9OhGS1S07nX38T2h8fPGXq1dogXzTF24MQfsCViUaMvZW8Mkzk
+	 xPbwoiQGWy6QIuHtUP6gadVBZriqpZ+FfOkHmywR6KwuhPoqypq5UN+tYuMjF2XGm8
+	 WlVZpfivX80AUkgyRj2hsv/MfWNjSUtKkz5SBUD58omWLLuojCRAH6HRXM/zg6Jq1P
+	 0gbzD+oLBgiwQ==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 4FE79C982D8;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 91612C982D8;
 	Sat, 19 Sep 2026 06:54:42 +0000 (UTC)
 From: Jan Petrous via B4 Relay <devnull+jan.petrous.oss.nxp.com@kernel.org>
-Date: Sat, 19 Sep 2026 08:54:36 +0200
-Subject: [PATCH RFC v3 08/12] MAINTAINERS: Add NXP S32G SerDes and SerDes
- xPCS core entries
+Date: Sat, 19 Sep 2026 08:54:38 +0200
+Subject: [PATCH RFC v3 10/12] arm64: dts: s32g: Add SerDes controller nodes
 MIME-Version: 1.0
-Message-Id: <20260919-s32g_serdes-v3-8-9d68868c1e89@oss.nxp.com>
+Message-Id: <20260919-s32g_serdes-v3-10-9d68868c1e89@oss.nxp.com>
 References: <20260919-s32g_serdes-v3-0-9d68868c1e89@oss.nxp.com>
 In-Reply-To: <20260919-s32g_serdes-v3-0-9d68868c1e89@oss.nxp.com>
 To: Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>, 
@@ -89,11 +88,11 @@ Cc: linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
  Vincent Guittot <vincent.guittot@linaro.org>, 
  "Jan Petrous (OSS)" <jan.petrous@oss.nxp.com>
 X-Mailer: b4 0.14.1
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1789800879; l=2660;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1789800879; l=3680;
  i=jan.petrous@oss.nxp.com; s=20240922; h=from:subject:message-id;
- bh=70ytBTY/vqqrPhxtoodwY/4VDh473gjOqn6LRPOWYM8=;
- b=Om0ZuI6pu07/DLvXn3Rx4guHCRPj5cyP1gtDDT6BJmeypaWsaiDdQ+A2iAzWrZF87xn/yHPgD
- s5z+W7wminCDp8NUncmsUDh2drgtwAwg0QNSWZ0Q6bRPryF4MUtMpw+
+ bh=+XdDZhOByuFg4ugqbcosSUu/1UqTDyBj7h2t2yZcItw=;
+ b=kZUh437M7THMDFoZdyk69tr7g1HHaMmr1ZlQyhm0sBeIJNMStvThEvrBZyUPuUKNJgHwFCwqz
+ YeZiqpPQy75C/lroDEnwnQIfWWGthgowbolg75PLA4GriZYTmxmDaPO
 X-Developer-Key: i=jan.petrous@oss.nxp.com; a=ed25519;
  pk=Ke3wwK7rb2Me9UQRf6vR8AsfJZfhTyoDaxkUCqmSWYY=
 X-Endpoint-Received: by B4 Relay for jan.petrous@oss.nxp.com/20240922 with
@@ -116,73 +115,107 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Vincent Guittot <vincent.guittot@linaro.org>
+From: "Jan Petrous (OSS)" <jan.petrous@oss.nxp.com>
 
-Add two entries.
+Add the SerDes/PCIe combo-PHY controller nodes for S32G2 and S32G3 in
+the disabled state. Each SoC integrates two SerDes instances (SerDes_0
+and SerDes_1) with identical register layout; every instance exposes
+the PCIe PHY and the two XPCS instances used for SGMII. Board device
+trees enable the required instance and add the lane PHY child nodes
+matching the wanted SerDes subsystem mode.
 
-ARM/NXP S32G SERDES DRIVER covers the S32G specific parts: the SerDes
-PHY driver, the S32G XPCS platform glue, their headers and the SerDes
-devicetree binding. The R: and name forms match the adjacent ARM/NXP
-S32G/S32R DWMAC ETHERNET DRIVER entry, and netdev is listed because the
-PCS glue lives under drivers/net/pcs/.
-
-NXP SERDES XPCS SHARED CORE covers the transport agnostic core on its
-own. The core is not S32G specific - it is shared with i.MX9, whose
-glue is a separate driver - so keeping it in the S32G entry would make
-the S32G maintainers the default contact for i.MX transport work and
-vice versa. This follows how drivers/net/pcs/ is already organised:
-SYNOPSYS DESIGNWARE ETHERNET XPCS DRIVER carries the shared pcs-xpcs
-core, while each vendor glue (pcs-xpcs-nxp.c, pcs-xpcs-wx.c,
-pcs-rzn1-miic.c) is listed under its own vendor entry. Only netdev is
-listed for the core, so i.MX changes to it do not reach the ARM lists.
-
-Signed-off-by: Vincent Guittot <vincent.guittot@linaro.org>
 Signed-off-by: Jan Petrous (OSS) <jan.petrous@oss.nxp.com>
 ---
- MAINTAINERS | 23 +++++++++++++++++++++++
- 1 file changed, 23 insertions(+)
+ arch/arm64/boot/dts/freescale/s32g2.dtsi | 32 ++++++++++++++++++++++++++++++++
+ arch/arm64/boot/dts/freescale/s32g3.dtsi | 32 ++++++++++++++++++++++++++++++++
+ 2 files changed, 64 insertions(+)
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 3b2eb2a7a89a..38c6b5e1af0d 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -3371,6 +3371,20 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml
- F:	drivers/pci/controller/dwc/pcie-nxp-s32g*
+diff --git a/arch/arm64/boot/dts/freescale/s32g2.dtsi b/arch/arm64/boot/dts/freescale/s32g2.dtsi
+index 6a2774d53747..404913b208fb 100644
+--- a/arch/arm64/boot/dts/freescale/s32g2.dtsi
++++ b/arch/arm64/boot/dts/freescale/s32g2.dtsi
+@@ -877,6 +877,38 @@ gmac0mdio: mdio {
+ 			};
+ 		};
  
-+ARM/NXP S32G SERDES DRIVER
-+M:	Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>
-+M:	Jan Petrous <jan.petrous@oss.nxp.com>
-+R:	NXP S32 Linux Team <s32@nxp.com>
-+L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
-+L:	linux-phy@lists.infradead.org
-+L:	netdev@vger.kernel.org
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/phy/nxp,s32g-serdes.yaml
-+F:	drivers/net/pcs/pcs-nxp-s32g-xpcs.c
-+F:	drivers/phy/freescale/phy-nxp-s32g-serdes.c
-+F:	include/linux/pcs/pcs-nxp-s32g-xpcs.h
-+F:	include/linux/phy/nxp-s32g-serdes.h
++		serdes0: serdes@40480000 {
++			compatible = "nxp,s32g2-serdes0", "nxp,s32g2-serdes";
++			reg = <0x40480000 0x108>,
++			      <0x40483008 0x10>,
++			      <0x40482000 0x800>,
++			      <0x40482800 0x800>;
++			reg-names = "ss-pcie", "pcie-phy", "xpcs0", "xpcs1";
++			clocks = <&clks 1>, <&clks 2>, <&clks 3>, <&clks 4>;
++			clock-names = "axi", "aux", "apb", "ref";
++			resets = <&scmi_reset 9>, <&scmi_reset 8>;
++			reset-names = "serdes", "pcie";
++			#address-cells = <1>;
++			#size-cells = <0>;
++			status = "disabled";
++		};
 +
- ARM/NXP S32G/S32R DWMAC ETHERNET DRIVER
- M:	Jan Petrous <jan.petrous@oss.nxp.com>
- R:	s32@nxp.com
-@@ -19788,6 +19802,15 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/extcon/extcon-ptn5150.yaml
- F:	drivers/extcon/extcon-ptn5150.c
++		serdes1: serdes@44180000 {
++			compatible = "nxp,s32g2-serdes1", "nxp,s32g2-serdes";
++			reg = <0x44180000 0x108>,
++			      <0x44183008 0x10>,
++			      <0x44182000 0x800>,
++			      <0x44182800 0x800>;
++			reg-names = "ss-pcie", "pcie-phy", "xpcs0", "xpcs1";
++			clocks = <&clks 1>, <&clks 2>, <&clks 3>, <&clks 4>;
++			clock-names = "axi", "aux", "apb", "ref";
++			resets = <&scmi_reset 11>, <&scmi_reset 10>;
++			reset-names = "serdes", "pcie";
++			#address-cells = <1>;
++			#size-cells = <0>;
++			status = "disabled";
++		};
++
+ 		gic: interrupt-controller@50800000 {
+ 			compatible = "arm,gic-v3";
+ 			reg = <0x50800000 0x10000>,
+diff --git a/arch/arm64/boot/dts/freescale/s32g3.dtsi b/arch/arm64/boot/dts/freescale/s32g3.dtsi
+index da3915b7e915..0d001b2895c6 100644
+--- a/arch/arm64/boot/dts/freescale/s32g3.dtsi
++++ b/arch/arm64/boot/dts/freescale/s32g3.dtsi
+@@ -956,6 +956,38 @@ gmac0mdio: mdio {
+ 			};
+ 		};
  
-+NXP SERDES XPCS SHARED CORE
-+M:	Jan Petrous <jan.petrous@oss.nxp.com>
-+M:	Clark Wang <xiaoning.wang@nxp.com>
-+R:	NXP S32 Linux Team <s32@nxp.com>
-+L:	netdev@vger.kernel.org
-+S:	Maintained
-+F:	drivers/net/pcs/pcs-nxp-serdes-xpcs.c
-+F:	include/linux/pcs/pcs-nxp-serdes-xpcs.h
++		serdes0: serdes@40480000 {
++			compatible = "nxp,s32g3-serdes0", "nxp,s32g3-serdes";
++			reg = <0x40480000 0x108>,
++			      <0x40483008 0x10>,
++			      <0x40482000 0x800>,
++			      <0x40482800 0x800>;
++			reg-names = "ss-pcie", "pcie-phy", "xpcs0", "xpcs1";
++			clocks = <&clks 1>, <&clks 2>, <&clks 3>, <&clks 4>;
++			clock-names = "axi", "aux", "apb", "ref";
++			resets = <&scmi_reset 9>, <&scmi_reset 8>;
++			reset-names = "serdes", "pcie";
++			#address-cells = <1>;
++			#size-cells = <0>;
++			status = "disabled";
++		};
 +
- NXP SGTL5000 DRIVER
- M:	Fabio Estevam <festevam@gmail.com>
- L:	linux-sound@vger.kernel.org
++		serdes1: serdes@44180000 {
++			compatible = "nxp,s32g3-serdes1", "nxp,s32g3-serdes";
++			reg = <0x44180000 0x108>,
++			      <0x44183008 0x10>,
++			      <0x44182000 0x800>,
++			      <0x44182800 0x800>;
++			reg-names = "ss-pcie", "pcie-phy", "xpcs0", "xpcs1";
++			clocks = <&clks 1>, <&clks 2>, <&clks 3>, <&clks 4>;
++			clock-names = "axi", "aux", "apb", "ref";
++			resets = <&scmi_reset 11>, <&scmi_reset 10>;
++			reset-names = "serdes", "pcie";
++			#address-cells = <1>;
++			#size-cells = <0>;
++			status = "disabled";
++		};
++
+ 		swt8: watchdog@40500000 {
+ 			compatible = "nxp,s32g3-swt", "nxp,s32g2-swt";
+ 			reg = <0x40500000 0x1000>;
 
 -- 
 2.55.0
