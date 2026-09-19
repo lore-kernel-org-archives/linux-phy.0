@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24AAEC982D8
-	for <linux-phy@archiver.kernel.org>; Sat, 19 Sep 2026 06:54:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1321C982EC
+	for <linux-phy@archiver.kernel.org>; Sat, 19 Sep 2026 06:54:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QKMy0MFgvIxfx5Ly2DccDmi4ldUQHqARgUn0UAODFHU=; b=ZfYyLsA6KRvdq+
-	HhK9KjeXi9rPj1TBYwCXknJdmjqYGEjoJnEX+IXysSxGmh1QynfWA4EW91YqPpyxgwnoMT5Jbtw3S
-	t5OwjtDx7SuF+N3pqMtvFma7cATHdY0/62IWqljQhgWe/tby9z1BivbFD8DMkblXKMuMFtiXBElNL
-	ZN94awj/XErT6fCSusI2C/tTM+XvTgCnq+bA1dhSyp8TIWLXl4rsjZNzJScD7Xd5KYreITtogfYeo
-	0xX/jjJUl017V4dvpyMjJYcKm/IPdnAyzMKnNu4C0YYKwm1uuBn8LBxsIbY0/9Zs+KwvCIBbnPOvm
-	pSRcaN6yZzrlEvGqSf3Q==;
+	List-Owner; bh=XF7HvBXnG0p5xSpwfT8iyWp5lRJlQi8b/n5Po/85J3c=; b=ogOQkRVsktvai+
+	kQSYK1A6vJfT55OVphoK3bwdIsap/jG9wFej/Iyt5bYeroCsPxof5GASFMxG6jHRYwheIPL21/470
+	giNddrIF5CWCaEaCaNylYJaVCJudUZGUOVb0G58t2+2pTovdFDRudeWfqN7/lkYOa/OlfHgpc6d+1
+	xvBhzmf/sK2YnoO5TefL9W3t7F8OvKgISqxxJnAPEQOL4rxnkyKU4K9mVQNYW6DAWk5wc2Clwiy4Y
+	5jdO06mH5VUvnIwHAHDauf9Xr4Zxn8lYuVu+yhrp7HcEr5lDYQsrryYqiwts5DobODM2OMmkvUUCb
+	GSPF3swtGbbnBbsY+K9g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7oyF-0000000G0az-3NIE;
+	id 1x7oyF-0000000G0Zy-1OOL;
 	Sat, 19 Sep 2026 06:54:47 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7oyC-0000000G0Tm-222J;
+	id 1x7oyC-0000000G0Tm-0bun;
 	Sat, 19 Sep 2026 06:54:44 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id DDABA447F6;
+	by sea.source.kernel.org (Postfix) with ESMTP id C2E32447E5;
 	Sat, 19 Sep 2026 06:54:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id A6CFAC2BD00;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 7848BC4AF0E;
 	Sat, 19 Sep 2026 06:54:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1789800882;
-	bh=6EejufrpwC/UtsiftUOzo0NzHkyCdWKMKJS4FmujPqE=;
+	bh=4TErQuEjK4dnoTXRokWBIC4tz/jwVFRAFjVLyycjBCc=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=Jx5vjY/CCRE7CRlYzRSaE83vJkwuKU0rLyy3049H2XqQY2lsVFUSiTMPhrkltdSka
-	 VAspCoCSGTl6EviRc7hkTZYWr2KjKdxvNzUT6H8NtJ6v+73Q84NkcpE2YANHQII0zF
-	 XhHnjNsKtud9ASdC9OhGS1S07nX38T2h8fPGXq1dogXzTF24MQfsCViUaMvZW8Mkzk
-	 xPbwoiQGWy6QIuHtUP6gadVBZriqpZ+FfOkHmywR6KwuhPoqypq5UN+tYuMjF2XGm8
-	 WlVZpfivX80AUkgyRj2hsv/MfWNjSUtKkz5SBUD58omWLLuojCRAH6HRXM/zg6Jq1P
-	 0gbzD+oLBgiwQ==
+	b=IpCLTOKw8AL4mRHEOeZTvtzpsDZP9rsod/xWvzi6oQ1+fnafC5o04R53ulda2SLq1
+	 uBjkP4gs+6FyDev2gvDIYCWdQgoOmN7paCGL6Ha5Z3YrrBZADBB3R46V1ZmraNO5Cz
+	 6XjLYxhGyF0FaTk4OLhCP29C1I177rK5NMApfwqIGerewqMuJVVjypiIuHPzFiOSIk
+	 xKDBgVcNl5fx7xAaDsBDJd4MD0CeBT45IQHu1EKJNQ7ZZVY4VNzKb4VcSJwn+Zky+F
+	 tGEYFUsDhC7eolMfXWf80yFEvtRavhNemVdJ41D+4bSOKW2IGaygSCkr9PU4z9Me+C
+	 RE2zj4ic3yBJw==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 91612C982D8;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 634FCC982E1;
 	Sat, 19 Sep 2026 06:54:42 +0000 (UTC)
 From: Jan Petrous via B4 Relay <devnull+jan.petrous.oss.nxp.com@kernel.org>
-Date: Sat, 19 Sep 2026 08:54:38 +0200
-Subject: [PATCH RFC v3 10/12] arm64: dts: s32g: Add SerDes controller nodes
+Date: Sat, 19 Sep 2026 08:54:37 +0200
+Subject: [PATCH RFC v3 09/12] arm64: dts: s32g: Add SCMI reset controller
 MIME-Version: 1.0
-Message-Id: <20260919-s32g_serdes-v3-10-9d68868c1e89@oss.nxp.com>
+Message-Id: <20260919-s32g_serdes-v3-9-9d68868c1e89@oss.nxp.com>
 References: <20260919-s32g_serdes-v3-0-9d68868c1e89@oss.nxp.com>
 In-Reply-To: <20260919-s32g_serdes-v3-0-9d68868c1e89@oss.nxp.com>
 To: Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>, 
@@ -88,11 +88,11 @@ Cc: linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
  Vincent Guittot <vincent.guittot@linaro.org>, 
  "Jan Petrous (OSS)" <jan.petrous@oss.nxp.com>
 X-Mailer: b4 0.14.1
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1789800879; l=3680;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1789800879; l=1526;
  i=jan.petrous@oss.nxp.com; s=20240922; h=from:subject:message-id;
- bh=+XdDZhOByuFg4ugqbcosSUu/1UqTDyBj7h2t2yZcItw=;
- b=kZUh437M7THMDFoZdyk69tr7g1HHaMmr1ZlQyhm0sBeIJNMStvThEvrBZyUPuUKNJgHwFCwqz
- YeZiqpPQy75C/lroDEnwnQIfWWGthgowbolg75PLA4GriZYTmxmDaPO
+ bh=s7buOZdDvodKw7Hq43O6GmpzZ0pqHm5HLVNx4kLjU1Q=;
+ b=UKoL7keU5f8uRgheEtd9Ox/5Gs7CzetGT2D3vJQ2AR2FYlGInxWjJh0Y/JoIJzY2VmneeHylO
+ /4trx+wVwMoCfCuRY6oJj2e7JzCffJCDPKfpcMr1ohHIKB8IHg8Xg4u
 X-Developer-Key: i=jan.petrous@oss.nxp.com; a=ed25519;
  pk=Ke3wwK7rb2Me9UQRf6vR8AsfJZfhTyoDaxkUCqmSWYY=
 X-Endpoint-Received: by B4 Relay for jan.petrous@oss.nxp.com/20240922 with
@@ -117,105 +117,53 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: "Jan Petrous (OSS)" <jan.petrous@oss.nxp.com>
 
-Add the SerDes/PCIe combo-PHY controller nodes for S32G2 and S32G3 in
-the disabled state. Each SoC integrates two SerDes instances (SerDes_0
-and SerDes_1) with identical register layout; every instance exposes
-the PCIe PHY and the two XPCS instances used for SGMII. Board device
-trees enable the required instance and add the lane PHY child nodes
-matching the wanted SerDes subsystem mode.
+Add the SCMI reset domain protocol (protocol@16) node under the SCMI
+firmware node for both S32G2 and S32G3, so that on-SoC controllers can
+request resets through the SCMI reset controller.
+
+The node is labelled scmi_reset rather than reset: a label that
+generic in a SoC .dtsi invites collisions and reads poorly at the use
+sites, and the sibling clock protocol node already uses the shortened
+clks form.
 
 Signed-off-by: Jan Petrous (OSS) <jan.petrous@oss.nxp.com>
 ---
- arch/arm64/boot/dts/freescale/s32g2.dtsi | 32 ++++++++++++++++++++++++++++++++
- arch/arm64/boot/dts/freescale/s32g3.dtsi | 32 ++++++++++++++++++++++++++++++++
- 2 files changed, 64 insertions(+)
+ arch/arm64/boot/dts/freescale/s32g2.dtsi | 5 +++++
+ arch/arm64/boot/dts/freescale/s32g3.dtsi | 5 +++++
+ 2 files changed, 10 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/freescale/s32g2.dtsi b/arch/arm64/boot/dts/freescale/s32g2.dtsi
-index 6a2774d53747..404913b208fb 100644
+index 996494e34593..6a2774d53747 100644
 --- a/arch/arm64/boot/dts/freescale/s32g2.dtsi
 +++ b/arch/arm64/boot/dts/freescale/s32g2.dtsi
-@@ -877,6 +877,38 @@ gmac0mdio: mdio {
+@@ -100,6 +100,11 @@ clks: protocol@14 {
+ 				reg = <0x14>;
+ 				#clock-cells = <1>;
  			};
++
++			scmi_reset: protocol@16 {
++				reg = <0x16>;
++				#reset-cells = <1>;
++			};
  		};
  
-+		serdes0: serdes@40480000 {
-+			compatible = "nxp,s32g2-serdes0", "nxp,s32g2-serdes";
-+			reg = <0x40480000 0x108>,
-+			      <0x40483008 0x10>,
-+			      <0x40482000 0x800>,
-+			      <0x40482800 0x800>;
-+			reg-names = "ss-pcie", "pcie-phy", "xpcs0", "xpcs1";
-+			clocks = <&clks 1>, <&clks 2>, <&clks 3>, <&clks 4>;
-+			clock-names = "axi", "aux", "apb", "ref";
-+			resets = <&scmi_reset 9>, <&scmi_reset 8>;
-+			reset-names = "serdes", "pcie";
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			status = "disabled";
-+		};
-+
-+		serdes1: serdes@44180000 {
-+			compatible = "nxp,s32g2-serdes1", "nxp,s32g2-serdes";
-+			reg = <0x44180000 0x108>,
-+			      <0x44183008 0x10>,
-+			      <0x44182000 0x800>,
-+			      <0x44182800 0x800>;
-+			reg-names = "ss-pcie", "pcie-phy", "xpcs0", "xpcs1";
-+			clocks = <&clks 1>, <&clks 2>, <&clks 3>, <&clks 4>;
-+			clock-names = "axi", "aux", "apb", "ref";
-+			resets = <&scmi_reset 11>, <&scmi_reset 10>;
-+			reset-names = "serdes", "pcie";
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			status = "disabled";
-+		};
-+
- 		gic: interrupt-controller@50800000 {
- 			compatible = "arm,gic-v3";
- 			reg = <0x50800000 0x10000>,
+ 		psci {
 diff --git a/arch/arm64/boot/dts/freescale/s32g3.dtsi b/arch/arm64/boot/dts/freescale/s32g3.dtsi
-index da3915b7e915..0d001b2895c6 100644
+index 31f7aad00b76..da3915b7e915 100644
 --- a/arch/arm64/boot/dts/freescale/s32g3.dtsi
 +++ b/arch/arm64/boot/dts/freescale/s32g3.dtsi
-@@ -956,6 +956,38 @@ gmac0mdio: mdio {
+@@ -139,6 +139,11 @@ clks: protocol@14 {
+ 				reg = <0x14>;
+ 				#clock-cells = <1>;
  			};
++
++			scmi_reset: protocol@16 {
++				reg = <0x16>;
++				#reset-cells = <1>;
++			};
  		};
  
-+		serdes0: serdes@40480000 {
-+			compatible = "nxp,s32g3-serdes0", "nxp,s32g3-serdes";
-+			reg = <0x40480000 0x108>,
-+			      <0x40483008 0x10>,
-+			      <0x40482000 0x800>,
-+			      <0x40482800 0x800>;
-+			reg-names = "ss-pcie", "pcie-phy", "xpcs0", "xpcs1";
-+			clocks = <&clks 1>, <&clks 2>, <&clks 3>, <&clks 4>;
-+			clock-names = "axi", "aux", "apb", "ref";
-+			resets = <&scmi_reset 9>, <&scmi_reset 8>;
-+			reset-names = "serdes", "pcie";
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			status = "disabled";
-+		};
-+
-+		serdes1: serdes@44180000 {
-+			compatible = "nxp,s32g3-serdes1", "nxp,s32g3-serdes";
-+			reg = <0x44180000 0x108>,
-+			      <0x44183008 0x10>,
-+			      <0x44182000 0x800>,
-+			      <0x44182800 0x800>;
-+			reg-names = "ss-pcie", "pcie-phy", "xpcs0", "xpcs1";
-+			clocks = <&clks 1>, <&clks 2>, <&clks 3>, <&clks 4>;
-+			clock-names = "axi", "aux", "apb", "ref";
-+			resets = <&scmi_reset 11>, <&scmi_reset 10>;
-+			reset-names = "serdes", "pcie";
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			status = "disabled";
-+		};
-+
- 		swt8: watchdog@40500000 {
- 			compatible = "nxp,s32g3-swt", "nxp,s32g2-swt";
- 			reg = <0x40500000 0x1000>;
+ 		psci: psci {
 
 -- 
 2.55.0
