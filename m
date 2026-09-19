@@ -4,101 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6AB8C982CC
-	for <linux-phy@archiver.kernel.org>; Sat, 19 Sep 2026 06:54:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 154DEC982DA
+	for <linux-phy@archiver.kernel.org>; Sat, 19 Sep 2026 07:45:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
-	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=02EljwgV7GeRbl00e7+n6ud1hq8RObQ2Ydwi322L8Ak=; b=ayzfL44Eg0zXHa
-	eKSpcCM7TOTgA+znzSKEem3S+R9PVN2nsyJbMmcFso4jQZuyMs++a113Jl6vyDUMsLfnKTM+TS88a
-	MLOuPayalcm7iEOGHWtpz+e7I3nad+Q5vcdkLQRRTonN35oKmP2ubybpFaQ52i3PZoONcaSd0zl9r
-	MuLXrbJUHS2IxCOto3bbrznhbXHcRFxHXqno4oK80FIRlI/pe9suOdXN3QewyDOrFWnavk5Hv1ovn
-	WbTyuWxDdw0Bkoq0khuz5jN03d/z3/nDFyZHUxbpWzH/HeMngIdmdIdXz8n0eM6piaWH9SOWv1SWE
-	Sul3d/RgmGFy1y4lq+ew==;
+	List-Owner; bh=e09hLFOtiy0wgI8ysYg5NAF4Sx27UCgKnfyxKYiHRlk=; b=uxZA6jfVQ2oYKI
+	jG6JDLya3PHtuBjg4JybfmWuCs7Qz0LJYy/WrbmMmhH6U6o93jICh7VTRnKhaFB1PlkLsE9RJw0Fw
+	Gb3QCLHEB9EYcyFXuyrfHuEQAdxhwtPxEFAu58Lv0U1+JIcErNLgftbNplsPTjkA9zBLFhJc7msjO
+	cyvYVZuM3HwKH41NkuRMoE1yxpb9J9eGCZIUK6vl9LQH++FBgaaUkjouejMFpqV09HtmFIluiTdts
+	kLJVHEMt8RgpZceQ7aex/vAO67fWWcv0KElyY1DtIFpKJc4hovliYkMv0eeNplD1Yw4w8zTNBYdvX
+	FLQCqKszVt8Rm4mNMzmA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7oyG-0000000G0c3-1J6e;
-	Sat, 19 Sep 2026 06:54:48 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1x7pl6-0000000G4Wj-2eBD;
+	Sat, 19 Sep 2026 07:45:16 +0000
+Received: from mail-pj2-x10.google.com ([2607:f8b0:4864:39::10])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7oyD-0000000G0Tm-1iZO;
-	Sat, 19 Sep 2026 06:54:45 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 2D7AA4481C;
-	Sat, 19 Sep 2026 06:54:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id E5205C4AF12;
-	Sat, 19 Sep 2026 06:54:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1789800883;
-	bh=3wqIoKnxzRv6NG1iYEc1jel8X2fnx1q1bi/NgWU7sHk=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=T+b3+jMI3itMaw1dhoghBrenS0EJPXlGzjSggjX32kNR6tB4BgYe5wZsTcVE+945E
-	 Enfo1lKQ9ADTGggqrK1i2po3QixpaOd8GL6P30QgQZdO5/Me3P3QfP1/4Q+mtJ2ue+
-	 hhgGmh7QeOCTGMP+Ux4P6tkDF91kTGEkhYUEqlBgBfElgM9cqZh0FG29/epBM1T7uy
-	 qh385QSWJsrp9NBDGk4+/mF6aJif4wGTJuXGiZ5P4kEu3+GTUtIz98ejPTMW4FPN24
-	 S/VGcq8/2jR1hQVRR8djuePEA2fn5kimHkW3ej5LZ7bTOdyRmxhXvBfzeLqT8cwwWq
-	 CtgM/Ynmmldug==
-Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id BD23DC982E1;
-	Sat, 19 Sep 2026 06:54:42 +0000 (UTC)
-From: Jan Petrous via B4 Relay <devnull+jan.petrous.oss.nxp.com@kernel.org>
-Date: Sat, 19 Sep 2026 08:54:40 +0200
-Subject: [PATCH RFC v3 12/12] arm64: dts: s32g: Add S32G3-RDB3 SerDes
- routing variants
+	id 1x7pl3-0000000G4V7-382p
+	for linux-phy@lists.infradead.org;
+	Sat, 19 Sep 2026 07:45:14 +0000
+Received: by mail-pj2-x10.google.com with SMTP id d9443c01a7336-2d747ec6185so9545275ad.0
+        for <linux-phy@lists.infradead.org>; Sat, 19 Sep 2026 00:45:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1789803913; x=1790408713; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=nzhIw8jPRNxoB8iVaoAn3LrVYY24GoK7KU38cNUcsNA=;
+        b=ANSwHEeA2r4Nap/0NMQRL8RWAUO6is6/7eGPKw876+yEO9Os99Juqcn5mVd+87AAHC
+         /19oDHukn0GXwk0lHPCKP/ejDGKCsLq/z7R9Uf++wkLig41/Ma8hsnaf5voTO9lo2HHe
+         xWRBK422yCMQpbI4ETcCfFDd1d/MKOirh6SL/sAgHn1PPgZc3NxwdweoRlaKHN9yi5vp
+         oBl55XGYlVy1gMGB/bTjYGAksIxX7JxvHn+0qrq+Brtnhx7z353Za1cmBOwb8JhZAGFk
+         pyP45oElZo2KGH5llU8ckFLTClI3WhHlwP1lcW0ifG8kojx1NsUJzS6Xp7JkS2IiDjuX
+         zhmg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1789803913; x=1790408713;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=nzhIw8jPRNxoB8iVaoAn3LrVYY24GoK7KU38cNUcsNA=;
+        b=KNPTjgiLYNlx6zT9MB+wmwc4jiZptw718on1H/STgNxgDmbf2lcm0Ef4Hbx9R6KMya
+         10rITq61F+0+Lus54bnxbx6Tq2gbtJ5SLg6agXOZrkYuU9yeXsudczEj2GHG9Pe53h5T
+         soG+8CtYnFkSxyAoJRVng8/oDl1IyK2Fn0qtcmB0mGdxoa3lYWAYGpx/eJ2GWv0EAybD
+         8f0izr/4p8P6D7bJqjkchagYN7vZQmT7OuQRVZr+1oKnKvUN8Ni90KXyLwYXeaEE3Lia
+         H1VHkcAocjMzAvSWLkZtfPrf1TxNxvCfHtzGNYhy0po3JouTvjftEjpWUR8XQFcLEoKR
+         f/EA==
+X-Forwarded-Encrypted: i=1; AKwUvBwrPlQ6oABvGQoo0JqviohJWLz/skLBVn1nlN3ljBsyvfujNGe2vsnIGO14KoMZAkGkztfDnLiSD6o=@lists.infradead.org
+X-Gm-Message-State: AFuF++lIirYHlEFZi+ix8S9wrALuDqd9I/CHRIs+20TL+f7QadkD2fov
+	ajw5xoRUeSKGi3hNsw08jruJIf2HuwXb9x20d4375Ywmu5CTGBK7nvR3
+X-Gm-Gg: AYBFou21fM0Zvu/3NlYo/Tgz5Wc+iFiMlxnqbn+6HG9DAas/Ub85FNiK92bwvpIz0Ds
+	JPDZZnSHRiFxzgEEZO5ZbsU5y0CEdLFHyhPnFEfxqXOuz/HUj7zQoUe1ybaBjTk7Ytc2240tANA
+	3AcX0v1DErdW8+HhZegoN9tj9rqp1OS2Y60cPTwlIbdFKjRrS0xuZzjZZzUzyPeLJXFyKZvRE12
+	rPvYTk2m4xTTVKTGgHtcbRVWmdX5cWH7JAkI/pMXpw8SBzwf+RslCEBcz/xfqeQziYGWU2iokA+
+	XvguXSyUkkWB/kBlR4A7EkMqL07e+3/7ls4m6UUqw3RIojIu6JMVM75XYHKGDSPjEA2nJZvkIoJ
+	6R5v7PQoRyA/Sk708MzijdpKy3lvyFOb4jyQ6Z0pHa4NFw8hTm3CvR2z1u2ShKnCgDH1TNZz9sJ
+	iVzqwh3ksZyBEWvCjD+v++F4bFrevqIuSdSr6s1JoyHOL3iEfHQj8FMJPfya5bgcfX9uNDIO4kw
+	g==
+X-Received: by 2002:a17:90a:c88d:b0:39e:4c80:f67f with SMTP id 98e67ed59e1d1-39e54f3aa58mr9006171a91.30.1789803912686;
+        Sat, 19 Sep 2026 00:45:12 -0700 (PDT)
+Received: from [192.168.101.188] ([207.90.239.231])
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-144d55f299fsm6860122c88.15.2026.09.19.00.45.01
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 19 Sep 2026 00:45:12 -0700 (PDT)
+Message-ID: <aeb5b8a8-e01e-404f-9788-b4770ecdd9ef@gmail.com>
+Date: Sat, 19 Sep 2026 15:44:54 +0800
 MIME-Version: 1.0
-Message-Id: <20260919-s32g_serdes-v3-12-9d68868c1e89@oss.nxp.com>
-References: <20260919-s32g_serdes-v3-0-9d68868c1e89@oss.nxp.com>
-In-Reply-To: <20260919-s32g_serdes-v3-0-9d68868c1e89@oss.nxp.com>
-To: Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>, 
- NXP S32 Linux Team <s32@nxp.com>, Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Ghennadi Procopciuc <ghennadi.procopciuc@nxp.com>, 
- Andrew Lunn <andrew+netdev@lunn.ch>, 
- "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
- Geert Uytterhoeven <geert+renesas@glider.be>, 
- Magnus Damm <magnus.damm@gmail.com>, 
- Lorenzo Pieralisi <lpieralisi@kernel.org>, 
- =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
- Bjorn Helgaas <bhelgaas@google.com>, 
- Bogdan Hamciuc <bogdan.hamciuc@nxp.com>, 
- Ionut Vicovan <ionut.vicovan@nxp.com>, Andrew Lunn <andrew@lunn.ch>, 
- Heiner Kallweit <hkallweit1@gmail.com>, 
- Russell King <linux@armlinux.org.uk>, Clark Wang <xiaoning.wang@nxp.com>, 
- Philipp Zabel <p.zabel@pengutronix.de>, 
- Maxime Chevallier <maxime.chevallier@bootlin.com>, 
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
- Alexandre Torgue <alexandre.torgue@foss.st.com>, 
- Chester Lin <chester62515@gmail.com>, Matthias Brugger <mbrugger@suse.com>, 
- Ghennadi Procopciuc <ghennadi.procopciuc@oss.nxp.com>, 
- Frank Li <Frank.Li@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>, 
- Pengutronix Kernel Team <kernel@pengutronix.de>, 
- Fabio Estevam <festevam@gmail.com>, 
- Richard Cochran <richardcochran@gmail.com>
-Cc: linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, 
- netdev@vger.kernel.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
- imx@lists.linux.dev, linux-pci@vger.kernel.org, 
- linux-stm32@st-md-mailman.stormreply.com, 
- Vincent Guittot <vincent.guittot@linaro.org>, 
- "Jan Petrous (OSS)" <jan.petrous@oss.nxp.com>
-X-Mailer: b4 0.14.1
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1789800879; l=8208;
- i=jan.petrous@oss.nxp.com; s=20240922; h=from:subject:message-id;
- bh=5z4a13gWRMykKe+seCCTumv26V+4peuuuGKtho0kPws=;
- b=uo7Rz77sFsHHFKZLKP/otnbvVqBAA1sIeo+ZnR8YMNnaZwcWyUEXjmlvCvdHtffRIullQ+XMA
- 0SQbpctcZToAc8EoLHdVwO9wAOcLd2M8Z+KmOlBJsVxfOl1saOMGMJg
-X-Developer-Key: i=jan.petrous@oss.nxp.com; a=ed25519;
- pk=Ke3wwK7rb2Me9UQRf6vR8AsfJZfhTyoDaxkUCqmSWYY=
-X-Endpoint-Received: by B4 Relay for jan.petrous@oss.nxp.com/20240922 with
- auth_id=217
-X-Original-From: "Jan Petrous (OSS)" <jan.petrous@oss.nxp.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 6/7] arm64: dts: allwinner: a523: add DWC3 USB3.0 node
+To: Per Larsson <per@palvencia.se>
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Samuel Holland <samuel@sholland.org>, Andre Przywara
+ <andre.przywara@arm.com>, Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-sunxi@lists.linux.dev
+References: <20250816084700.569524-1-iuncuim@gmail.com>
+ <20250816084700.569524-7-iuncuim@gmail.com> <20260915013336.68ee3611@rpi>
+Content-Language: en-US
+From: Mikhail Kalashnikov <iuncuim@gmail.com>
+In-Reply-To: <20260915013336.68ee3611@rpi>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260919_004513_788864_16ACAA3B 
+X-CRM114-Status: GOOD (  15.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,254 +108,34 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: jan.petrous@oss.nxp.com
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: "Jan Petrous (OSS)" <jan.petrous@oss.nxp.com>
-
-The S32G3-VNP-RDB3 board wires GMAC0 to an on-board KSZ9031 RGMII PHY by
-default. Add two device tree variants that reroute GMAC0 over the
-SerDes_0 XPCS lane for SGMII, matching the two SerDes lane layouts:
-
-  - Mode 1: PCIe x1 root complex on lane 0 plus 1G SGMII via GMAC0
-    (XPCS0) on lane 1.
-  - Mode 3: dual SGMII, GMAC0 (XPCS0) on lane 0 and PFE_EMAC_2 (XPCS1)
-    on lane 1.
-
-The SerDes SUBSYS_MODE is derived from the lane child nodes present, so
-each layout requires its own board device tree. The Mode 1 variant
-enables both PCIe root complexes and extends their root ports by label
-(pcie0_rp, pcie1_rp), matching the RDB3 wiring: PCIe_0 reaches the M.2
-slots when board switch SW17-2 is ON, PCIe_1 the PCIe card slot.
-
-The GMAC references its PCS with the standard pcs-handle property. On
-this board the SGMII lane runs back-to-back to the on-board SJA1110
-switch, so there is no PHY on the segment and nothing for phy-handle to
-point at - the link partner is a switch port. The MAC-side link is
-therefore described as a fixed 1G link and phylink uses out-of-band
-negotiation. The SJA1110 itself is not described by these overlays.
-
-Verified on the board:
-
-  - Mode 3: GMAC0 links at 1G and passes traffic.
-  - Mode 1: GMAC0 SGMII path up, and both PCIe root complexes come up -
-    PCIe_1 enumerates the card-slot NIC and passes traffic at full line
-    rate, PCIe_0 enumerates the M.2 slot with SW17-2 ON.
-
-Signed-off-by: Jan Petrous (OSS) <jan.petrous@oss.nxp.com>
----
- arch/arm64/boot/dts/freescale/Makefile             |   6 ++
- .../dts/freescale/s32g399a-rdb3-serdes-mode1.dtso  | 111 +++++++++++++++++++++
- .../dts/freescale/s32g399a-rdb3-serdes-mode3.dtso  |  60 +++++++++++
- 3 files changed, 177 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/freescale/Makefile b/arch/arm64/boot/dts/freescale/Makefile
-index 95ae85ab4adf..3f68f36ac2be 100644
---- a/arch/arm64/boot/dts/freescale/Makefile
-+++ b/arch/arm64/boot/dts/freescale/Makefile
-@@ -786,5 +786,11 @@ dtb-$(CONFIG_ARCH_MXC) += imx8mm-phygate-tauri-l-rs232-rs485.dtb
- dtb-$(CONFIG_ARCH_S32) += s32g274a-evb.dtb
- dtb-$(CONFIG_ARCH_S32) += s32g274a-rdb2.dtb
- dtb-$(CONFIG_ARCH_S32) += s32g399a-rdb3.dtb
-+dtb-$(CONFIG_ARCH_S32) += s32g399a-rdb3-serdes-mode1.dtb
-+dtb-$(CONFIG_ARCH_S32) += s32g399a-rdb3-serdes-mode3.dtb
-+s32g399a-rdb3-serdes-mode1-dtbs := s32g399a-rdb3.dtb s32g399a-rdb3-serdes-mode1.dtbo
-+s32g399a-rdb3-serdes-mode3-dtbs := s32g399a-rdb3.dtb s32g399a-rdb3-serdes-mode3.dtbo
-+dtb-$(CONFIG_ARCH_S32) += s32g399a-rdb3-serdes-mode1.dtbo
-+dtb-$(CONFIG_ARCH_S32) += s32g399a-rdb3-serdes-mode3.dtbo
- dtb-$(CONFIG_ARCH_S32) += s32n79-rdb.dtb
- dtb-$(CONFIG_ARCH_S32) += s32v234-evb.dtb
-diff --git a/arch/arm64/boot/dts/freescale/s32g399a-rdb3-serdes-mode1.dtso b/arch/arm64/boot/dts/freescale/s32g399a-rdb3-serdes-mode1.dtso
-new file mode 100644
-index 000000000000..43219d9bb6eb
---- /dev/null
-+++ b/arch/arm64/boot/dts/freescale/s32g399a-rdb3-serdes-mode1.dtso
-@@ -0,0 +1,111 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
-+/*
-+ * Copyright 2021-2026 NXP
-+ *
-+ * NXP S32G3 Reference Design Board 3 (S32G-VNP-RDB3),
-+ * SerDes_0 Mode 1: PCIe x1 (lane 0) + 1G SGMII via GMAC0 (XPCS0, lane 1).
-+ *
-+ * Overlay applied on top of s32g399a-rdb3.dtb. It reroutes GMAC0 from the
-+ * on-board RGMII PHY to the SerDes_0 XPCS0 lane and brings up the PCIe
-+ * controllers as root complexes. The lane layout present here selects
-+ * SerDes SUBSYS_MODE 1.
-+ */
-+
-+/dts-v1/;
-+/plugin/;
-+
-+&serdes0 {
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+	status = "okay";
-+
-+	/* Mode 1 lane layout: PCIe on lane 0, GMAC SGMII (XPCS0) on lane 1. */
-+	serdes0_pcie0: phy@0 {
-+		reg = <0>;
-+		compatible = "nxp,s32g-serdes-pcie-phy";
-+		#phy-cells = <0>;
-+	};
-+
-+	serdes0_xpcs0: phy@1 {
-+		reg = <1>;
-+		compatible = "nxp,s32g-serdes-xpcs";
-+		nxp,xpcs-instance = <0>;
-+	};
-+};
-+
-+&serdes1 {
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+	status = "okay";
-+
-+	/*
-+	 * SerDes_1 Mode 1 lane layout: PCIe on lane 0, SGMII (PFE_MAC0
-+	 * via XPCS0) on lane 1.
-+	 *
-+	 * Both lanes must be described: the SerDes driver derives the
-+	 * SUBSYS_MODE from the full lane mux, so lane 1 has to be present
-+	 * as XPCS instance 0 (PFE_MAC0) for the mode-1 match to succeed.
-+	 * PFE is not modeled as a MAC consumer in this upstreaming device
-+	 * tree, so the XPCS lane is only brought up by the SerDes driver
-+	 * and left without a pcs-handle user.
-+	 */
-+	serdes1_pcie0: phy@0 {
-+		reg = <0>;
-+		compatible = "nxp,s32g-serdes-pcie-phy";
-+		#phy-cells = <0>;
-+	};
-+
-+	serdes1_xpcs0: phy@1 {
-+		reg = <1>;
-+		compatible = "nxp,s32g-serdes-xpcs";
-+		nxp,xpcs-instance = <0>;
-+	};
-+};
-+
-+/*
-+ * Both PCIe root complexes are wired on the RDB3:
-+ *  - PCIe_0 reaches the M.2 slots (M-key or E-key) when board switch
-+ *    SW17-2 is set to ON. It consumes SerDes_0 lane-0 PCIe phy.
-+ *  - PCIe_1 reaches the PCIe card slot. It consumes SerDes_1 lane-0 PCIe phy.
-+ */
-+&pcie0 {
-+	status = "okay";
-+};
-+
-+&pcie0_rp {
-+	num-lanes = <1>;
-+	phys = <&serdes0_pcie0>;
-+};
-+
-+&pcie1 {
-+	status = "okay";
-+};
-+
-+&pcie1_rp {
-+	num-lanes = <1>;
-+	phys = <&serdes1_pcie0>;
-+};
-+
-+&gmac0 {
-+	/delete-property/ phy-handle;
-+	clocks = <&clks 24>, <&clks 17>, <&clks 16>, <&clks 15>;
-+	clock-names = "stmmaceth", "tx", "rx", "ptp_ref";
-+	phy-mode = "sgmii";
-+	pcs-handle = <&serdes0_xpcs0>;
-+	status = "okay";
-+
-+	/*
-+	 * GMAC0 is wired back-to-back to the on-board SJA1110 switch over
-+	 * this SGMII lane. There is no PHY on the segment, so there is
-+	 * nothing to reference with phy-handle: the link partner is a
-+	 * switch port. Describe it as a fixed 1G link; phylink then uses
-+	 * out-of-band negotiation. The switch itself is not described by
-+	 * this overlay. The PCS also supports in-band negotiation, for
-+	 * boards whose link partner is described.
-+	 */
-+	fixed-link {
-+		speed = <1000>;
-+		full-duplex;
-+		pause;
-+	};
-+};
-diff --git a/arch/arm64/boot/dts/freescale/s32g399a-rdb3-serdes-mode3.dtso b/arch/arm64/boot/dts/freescale/s32g399a-rdb3-serdes-mode3.dtso
-new file mode 100644
-index 000000000000..195c8043c18a
---- /dev/null
-+++ b/arch/arm64/boot/dts/freescale/s32g399a-rdb3-serdes-mode3.dtso
-@@ -0,0 +1,60 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
-+/*
-+ * Copyright 2021-2026 NXP
-+ *
-+ * NXP S32G3 Reference Design Board 3 (S32G-VNP-RDB3),
-+ * SerDes_0 Mode 3: dual SGMII, GMAC0 (XPCS0, lane 0) + PFE_EMAC_2
-+ * (XPCS1, lane 1), both 1G.
-+ *
-+ * Overlay applied on top of s32g399a-rdb3.dtb. It reroutes GMAC0 from the
-+ * on-board RGMII PHY to the SerDes_0 XPCS0 lane. The lane-1 XPCS1
-+ * (PFE_EMAC_2) is described so the mode is derivable and both XPCS
-+ * instances are initialised; it has no upstream MAC consumer in this
-+ * device tree. The lane layout present here selects SerDes SUBSYS_MODE 3.
-+ */
-+
-+/dts-v1/;
-+/plugin/;
-+
-+&serdes0 {
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+	status = "okay";
-+
-+	/* Mode 3 lane layout: GMAC SGMII (XPCS0) on lane 0, PFE2 (XPCS1) on lane 1. */
-+	serdes0_xpcs0: phy@0 {
-+		reg = <0>;
-+		compatible = "nxp,s32g-serdes-xpcs";
-+		nxp,xpcs-instance = <0>;
-+	};
-+
-+	serdes0_xpcs1: phy@1 {
-+		reg = <1>;
-+		compatible = "nxp,s32g-serdes-xpcs";
-+		nxp,xpcs-instance = <1>;
-+	};
-+};
-+
-+&gmac0 {
-+	/delete-property/ phy-handle;
-+	clocks = <&clks 24>, <&clks 17>, <&clks 16>, <&clks 15>;
-+	clock-names = "stmmaceth", "tx", "rx", "ptp_ref";
-+	phy-mode = "sgmii";
-+	pcs-handle = <&serdes0_xpcs0>;
-+	status = "okay";
-+
-+	/*
-+	 * GMAC0 is wired back-to-back to the on-board SJA1110 switch over
-+	 * this SGMII lane. There is no PHY on the segment, so there is
-+	 * nothing to reference with phy-handle: the link partner is a
-+	 * switch port. Describe it as a fixed 1G link; phylink then uses
-+	 * out-of-band negotiation. The switch itself is not described by
-+	 * this overlay. The PCS also supports in-band negotiation, for
-+	 * boards whose link partner is described.
-+	 */
-+	fixed-link {
-+		speed = <1000>;
-+		full-duplex;
-+		pause;
-+	};
-+};
-
--- 
-2.55.0
-
-
+On 9/15/26 07:33, Per Larsson wrote:
+> On Sat, 16 Aug 2025 16:46:59 +0800
+> iuncuim <iuncuim@gmail.com> wrote:
+> 
+>> +			interrupts = <GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH>;
+> 
+> (Sorry for the more-or-less necroposting)
+> 
+> This is the only mention of irq or interrupt in the entire series,
+> which at first led me to believe there was something missing given that
+> there's a "Nobody cared" message appearing when the port first detects
+> something connected to it followed by something about the irq
+> being disabled.
+> 
+> Now I read in the text of another patch (adding a TrimUi dts) that this
+> message comes when an interrupt storm is detected, and given that the
+> value in /proc/interrupts goes from zero to 100K in no time, that seems
+> likely to be the case here as well.
+> 
+Yes.> What is this interrupt supposed to be about, and can it be handled
+> better?
+This inerrupt should be disabled in host mode, I'll do it in v2.
+But except this message it doesn't affect functionality.
 
 -- 
 linux-phy mailing list
