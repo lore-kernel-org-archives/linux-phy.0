@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AC03C982DA
-	for <linux-phy@archiver.kernel.org>; Sun, 20 Sep 2026 17:03:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5908C982D8
+	for <linux-phy@archiver.kernel.org>; Sun, 20 Sep 2026 17:03:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=crDZPtOjG5RQokcVkAqQ+QtmLBHParowOXEJ3xYYPsw=; b=lH5GDZm1/ol3Ov
-	VK89DEKbjuBbG89qS3lRwJYkiuHukRARb3QQN8xG+yDC34CmbKKxUHrCwNG1t9i613QIXWU9Jtv6+
-	6WkJwSiN48y6subd6yXqDUpsGczAtwCDVgI/le7274DhB5EUbqE+BtOTCVCFQuYOX0nKSEREYHB6R
-	aRc71lMWkWMcxgdfFT0lmSHbcDr0yn4G7hCBEtSomCIF/ZojRNRO6qOuZF63yuo1gpLUGwWHkLdIK
-	si54mhWl9GCY1G7rKREUtnbfvt5GGP91g3U0LQrhUs0kAvRCw928Axt4eaytwhP973gs4j0dQefj5
-	nCh/uEnuU7/4p/41Ngsw==;
+	List-Owner; bh=rNIMlKjpaJr/CsB7m2ezL5sKbXMtqP/B6MTVfrbyZaI=; b=fA5uBhAkJmMLwK
+	gYK8RLu4W+ZX3LhddmhnCr6lqZfdl5iyE0P2wpqkTkENlPApCFyjHxbiJvoY3ObkR9v0Gh9ebtwIo
+	b6YugEUcq6pPjEg6nXL3z2pb+sGucKSleXQRbMjbYqrNCLl7CcrLSuomrGbHdI+O9EswsmANnUc5h
+	WKvgfOTPukE9bcxzft0O0v+ScaoMXnu88202mo+qxXRwJ7NL+3dy15egUJQE5ZZEejS/8YKe3+w6F
+	FLVolIIQRhSgb769XnzfHXo7JI4WQGmo11dt3iS2ZurO1v1EAeXgiE6Os9j0LkJuI32TQwRm32/uH
+	C+QWJymmw49sCmdvVbxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8Kx0-000000009q4-0GH2;
-	Sun, 20 Sep 2026 17:03:38 +0000
-Received: from mail-pz2-x06.google.com ([2607:f8b0:4864:3b::6])
+	id 1x8KxD-00000000A4y-1eEY;
+	Sun, 20 Sep 2026 17:03:51 +0000
+Received: from mail-pz2-x0b.google.com ([2607:f8b0:4864:3b::b])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8Kwv-000000009io-3aPH
+	id 1x8Kx3-000000009tH-0A1P
 	for linux-phy@lists.infradead.org;
-	Sun, 20 Sep 2026 17:03:36 +0000
-Received: by mail-pz2-x06.google.com with SMTP id 41be03b00d2f7-cc4b14f0364so950500a12.1
-        for <linux-phy@lists.infradead.org>; Sun, 20 Sep 2026 10:03:33 -0700 (PDT)
+	Sun, 20 Sep 2026 17:03:45 +0000
+Received: by mail-pz2-x0b.google.com with SMTP id 41be03b00d2f7-cc1631a57d2so1684804a12.0
+        for <linux-phy@lists.infradead.org>; Sun, 20 Sep 2026 10:03:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1789923813; x=1790528613; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1789923820; x=1790528620; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=IeBd/f+KYPaUD3mTxXbAK7RiokjVClr9ke91eN5DQPw=;
-        b=pcxO3pSkj/R8Aa4weJWH9KmDBbsgzOC5RDksZ9I3T1R2DC3bmNBP8SEbBEe1smYJzs
-         acJEE/M6m8jN4AQWnp/mLBPALi1XGY1q4ne5he5dEksF7rFMl31/6+iGqjdCi0CK1fUo
-         yo7s5/P+nj28XQy1WVhXP27O64HWTqkXOhwsC/kGusgrw4ogfytC8EoODyuCMf4CVzUh
-         zSvneETGPIIIHuzxH/DM7Ge1weAc43wTBCPlMMKSu3BQ6KoFe9CGpjsxzKrJeH+Wc/qp
-         fkpacSkpJoevdB94X++/ltGHazpeYp5nbK56YP1hg0TGRr1+o/lQd9VBQM2p3NBeel+l
-         b2Lg==
+        bh=bdJAnLwrz+/OjIyJtnetxy2JKy8P0MsUYxFs2QuKaus=;
+        b=XwKBcZLnXeDwcopeIYa/t0m9CS3MtAoIDuwJP+JCz55l0DSG1kmP5IfptskuyS5JYW
+         p0C0aPV1McrJO6iQ51DucroDyVaTclxRqX6mvFG5rlm6h6P2LUi5osZFHVi/rtcRBvQa
+         ESCZ0ax2KCsyyXfBb0OP3ArO0VPemh+KXOxrg7539s26fOfc62yXyIE4TdRCXcdmk50Y
+         R4+MU+pD7DUndPA/3YgIvk9mrWr46S913voVQqzQqG2zxSIH+rSIWc9TWDGRQjmA2kUB
+         WNwxJgNNesoYjPpDO5D/o+Yvbrd0XymbHJaKyy44X2TULP6xIMSD/brRcLdxPsxZJRsR
+         q0yA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1789923813; x=1790528613;
+        d=1e100.net; s=20260707; t=1789923820; x=1790528620;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=IeBd/f+KYPaUD3mTxXbAK7RiokjVClr9ke91eN5DQPw=;
-        b=Kn7HAOndl6ySUM55KuDseU0To0rkHi9W5KRpLfc5mcRtE8H5FbN6Oln5rMjw4yw3ve
-         QiilDiBQ2433zuArDpjv+aMU5tiJVm+m0DDQfrNtj9xW+3XSvxCDR9/w8tOgqLRzDY0+
-         HUAL7NyKkbuqAnO4YvjIuJOEy1/Bj3Q6ogJYcFJh+oePLtIo1n5L9zF6fbEVmU5dAUoL
-         0Z9jQb0cp5A8t8QN2uYdVnqNKiS5NX/mbeTFTBtf6iDBsw98CTz4sS5IAoct/Bt32tdi
-         MoFyzr0XJ4VE4/hvpABuYuc9+qc5ZlRYuow9l+OkVxHqtvT5dfqGifHO7iHv+IwWikl2
-         88mg==
-X-Forwarded-Encrypted: i=1; AKwUvBy1fa4babZNn/ZPdFxks4TtGQ1su0pcVDcJ10Xa6duymshH7hGJBS0ake1kMmJ/m+LF9qYjdbWpXOw=@lists.infradead.org
-X-Gm-Message-State: AFuF++mJ0mVQXtSxitRBAN7o+DfF6d7poi2lcyQbVAebNfO/7auGfVQ8
-	OkiAW1a3N+N8Oq4CGPYAVFIf0rgrtKuh0gef5mMnmwrLOGyz24EtUdS/
-X-Gm-Gg: AYBFou0t2jAkx1P2M2L/ZOR8NJUHIL5xuVmiK47nEnd1DL1o6ou3wzn2IXVz+a3Iod5
-	M6tNUHKXWoUxw7y9Jqk9gFmXRolcb58ZPOjJBCSZPdWd6ocsw85qExYzO2svapToKf9f3aBvvfT
-	xBwhj9heqtFHkQrQ5cPizksGVf3fwMO0jQnQWAzI0yV1upnCogGsUNYIjrWMvaC9u07VFz3eLEq
-	GNqYuX6TT3KiJZwYd3pr2lrQZPewsqnTlyCmmV7KVVR3dbjlaTRZvQqgrX0OPHtUNxnJMVdBO2Q
-	iwZdfTfkNYKUjf90AunlAG/vQH3jZl5Xw1MKaGnBfnMJOAjSWCshLN5OyGuHms1hwsmR4KVTTvF
-	T639DG8AHfeVwpadqXN76aftG23u/SpODaRbu0gleLa4KouL7+sc10F17SdZZ5CvrbMVyZHTQgG
-	QHpWorqYOZ6IxO+dYXMshwvALXAexhdqh0RP31Eyfb6moz4GcE0TLEQ7+kjx6mLKps0J5qjw==
-X-Received: by 2002:a05:6a00:1249:b0:878:3783:8a83 with SMTP id d2e1a72fcca58-87837839389mr5176719b3a.53.1789923812897;
-        Sun, 20 Sep 2026 10:03:32 -0700 (PDT)
+        bh=bdJAnLwrz+/OjIyJtnetxy2JKy8P0MsUYxFs2QuKaus=;
+        b=fhpTiUByb3iTNVoIxSHZvjmXWTZOV+NKsTH4jw1wkQqn2UkRF9STDpLjHweO8sy509
+         SyhDKRShFenxgcI9tUUXstfbkq5g+e4l6QkNXahMmkHBP9WZ9auGutVr/s8N5cBUV6Mh
+         sRgpixJDyjpPbPHXhF9CMrCW01PDQ0gpgg8jAoGHxU2qW/EaAa3VT3gBVVJ6grmoarLY
+         0uaElfaU+jtLg0JVNCvCYu4uD/2QGkho2FDf0We69jt8uMTJrkzcyc5rURN4T14DHp39
+         Wvn2CwWj8ZGm2E5t28xuFrZP30Ec1ZjxGLaJ6ZGtkYaJIMDFP7tLnIN6rDAHh2kwJb6l
+         0SZQ==
+X-Forwarded-Encrypted: i=1; AKwUvByrV0kJJKN2/prdDoOYrJYHTJCtN06+IDkRuHO7ZhvNhAHOGk6h2XfTUqJ8HV/22f8jy6NcB3ZBpFU=@lists.infradead.org
+X-Gm-Message-State: AFuF++koefEXqjQKOmZkGu7zuRkkMXuxNhwy3EFf98Fz4AAtGhtAeXpw
+	+fAZG8kdqqefljvBy7NLCP1h4EwAgsMTvcZoSU10jBJyRhB7y3xjoMbS
+X-Gm-Gg: AYBFou2tcDcriaJ3KcadZ3DZCPFa/CuHBQSQJfcSe/Dx+C5RbrFNRupytTJMoUTG7td
+	TnPgRPfck6RffxF5RXX2dX0kXCFFHY/9JelP4vQetRdSHxfM04y0HjaniYeoLeSDrc5q9WhTwz/
+	TWcoJL+obApga8U/w5/YlyPYsqqhKA/1Z6LddU/nw6pLbMiQgiBAzqHDgI0rLGlukiGN1B4Atyy
+	7IuHh2Qo05iL5ATNA6yH928cbFdjzs3QF2qbX/8F79xNfCQ56nQqXOrWdm3nKIqw0H9g7rH9C8Z
+	qFgMA/J4RbooQKZp3z4ee1pebRbijb31M1DttLHbK2XmV2UUvutbWUx1x0rTohePMxK08/N1p1E
+	d3c+MgcVhejsO74b5CVQatclRobuBPusy5EDXUP2DHiPAoY2Fd0H9vA7uhkuONmEcIUKgxH97Re
+	9Nc1GzkGxIrV/k4/GYPfA77JlPyU6Z8LpUx6DVdzqeIOkU5hEl6HmGA2/PcXj9szsZYca6UQ==
+X-Received: by 2002:aa7:88d0:0:b0:878:3538:8f80 with SMTP id d2e1a72fcca58-87835389b2bmr4633099b3a.46.1789923820049;
+        Sun, 20 Sep 2026 10:03:40 -0700 (PDT)
 Received: from server.lan ([168.138.199.194])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-877a9d07425sm2140646b3a.42.2026.09.20.10.03.26
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-877a9d07425sm2140646b3a.42.2026.09.20.10.03.33
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 20 Sep 2026 10:03:32 -0700 (PDT)
+        Sun, 20 Sep 2026 10:03:39 -0700 (PDT)
 From: Coia Prant <coiaprant@gmail.com>
 To: Andrew Lunn <andrew+netdev@lunn.ch>,
 	"David S . Miller" <davem@davemloft.net>,
@@ -98,16 +98,16 @@ Cc: Neil Armstrong <neil.armstrong@linaro.org>,
 	linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-renesas-soc@vger.kernel.org
-Subject: [PATCH net-next v9 10/11] arm64: dts: rockchip: rk3568-photonicat: enable SGMII LAN port
-Date: Mon, 21 Sep 2026 01:01:14 +0800
-Message-ID: <20260920170116.3624104-11-coiaprant@gmail.com>
+Subject: [PATCH net-next v9 11/11] MAINTAINERS: add entry for Rockchip XPCS driver
+Date: Mon, 21 Sep 2026 01:01:15 +0800
+Message-ID: <20260920170116.3624104-12-coiaprant@gmail.com>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20260920170116.3624104-1-coiaprant@gmail.com>
 References: <20260920170116.3624104-1-coiaprant@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260920_100333_919220_C0E65BFC 
-X-CRM114-Status: GOOD (  12.50  )
+X-CRM114-CacheID: sfid-20260920_100342_210242_9C416522 
+X-CRM114-Status: GOOD (  10.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,145 +124,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Ariaboard Photonicat has a Motorcomm YT8521SC Gigabit Ethernet PHY
-connected to GMAC0 via XPCS SGMII.  Enable the necessary nodes to make
-this port functional.
+Add a MAINTAINERS entry for the Rockchip RK3568 XPCS platform driver
+and its device tree binding.
 
-Add rockchip,sgmii-mac-sel = <0> to the already enabled combphy2,
-to route the SGMII interface to GMAC0.  RK3568 has three Combo PHYs
-that can carry SGMII; which one is wired to the XPCS is a board-level
-choice, and Photonicat uses combphy2.
-
-Enable the xpcs node and its port 0 sub-node, referencing combphy2
-as the SerDes PHY.
-
-Add the mdio0 node with the YT8521SC PHY at address 3, including its
-reset GPIO and LED configuration.  Also add LED configuration for the
-existing RGMII PHY on mdio1 for consistency.
+Include the relevant mailing lists (netdev and linux-rockchip) so that
+future patches are properly distributed.
 
 Signed-off-by: Coia Prant <coiaprant@gmail.com>
 ---
- .../boot/dts/rockchip/rk3568-photonicat.dts   | 74 ++++++++++++++++++-
- 1 file changed, 72 insertions(+), 2 deletions(-)
+ MAINTAINERS | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3568-photonicat.dts b/arch/arm64/boot/dts/rockchip/rk3568-photonicat.dts
-index 58c1052ba8ef3..fdaa4a2a4328b 100644
---- a/arch/arm64/boot/dts/rockchip/rk3568-photonicat.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3568-photonicat.dts
-@@ -3,6 +3,7 @@
- /dts-v1/;
+diff --git a/MAINTAINERS b/MAINTAINERS
+index cc3cae2e378b3..085589b8ba65e 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -23740,6 +23740,15 @@ S:	Maintained
+ F:	Documentation/devicetree/bindings/sound/rockchip,rk3576-sai.yaml
+ F:	sound/soc/rockchip/rockchip_sai.*
  
- #include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/leds/common.h>
- #include <dt-bindings/pinctrl/rockchip.h>
- #include <dt-bindings/soc/rockchip,vop2.h>
- #include "rk3568.dtsi"
-@@ -241,6 +242,7 @@ &combphy1 {
- };
- 
- &combphy2 {
-+	rockchip,sgmii-mac-sel = <0>;
- 	status = "okay";
- };
- 
-@@ -260,9 +262,18 @@ &cpu3 {
- 	cpu-supply = <&vdd_cpu>;
- };
- 
--/* Motorcomm YT8521SC LAN port (require SGMII) */
-+/* Motorcomm YT8521SC LAN port */
- &gmac0 {
--	status = "disabled";
-+	assigned-clocks = <&cru SCLK_GMAC0_RX_TX>;
-+	assigned-clock-parents = <&clk_gmac0_xpcs_mii>;
-+	managed = "in-band-status";
-+	pcs-handle = <&xpcs_mii0>;
-+	phy-handle = <&sgmii_phy>;
-+	phy-mode = "sgmii";
-+	phy-supply = <&vcc_3v3>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&gmac0_miim>;
-+	status = "okay";
- };
- 
- /* Motorcomm YT8521SC WAN port */
-@@ -341,6 +352,36 @@ &i2s0_8ch {
- 	status = "okay";
- };
- 
-+&mdio0 {
-+	sgmii_phy: ethernet-phy@3 {
-+		compatible = "ethernet-phy-ieee802.3-c22";
-+		reg = <0x3>;
-+		max-speed = <1000>;
-+		reset-assert-us = <20000>;
-+		reset-deassert-us = <100000>;
-+		reset-gpios = <&gpio3 RK_PC6 GPIO_ACTIVE_LOW>;
++ROCKCHIP XPCS DRIVER
++M:	Coia Prant <coiaprant@gmail.com>
++L:	netdev@vger.kernel.org
++L:	linux-rockchip@lists.infradead.org
++S:	Maintained
++F:	Documentation/devicetree/bindings/net/pcs/rockchip,rk3568-xpcs.yaml
++F:	drivers/net/pcs/pcs-xpcs-rk.c
++F:	include/linux/pcs/pcs-xpcs-rk.h
 +
-+		leds {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			led@1 {
-+				reg = <1>;
-+				color = <LED_COLOR_ID_AMBER>;
-+				function = LED_FUNCTION_LAN;
-+				default-state = "keep";
-+			};
-+
-+			led@2 {
-+				reg = <2>;
-+				color = <LED_COLOR_ID_GREEN>;
-+				function = LED_FUNCTION_LAN;
-+				default-state = "keep";
-+			};
-+		};
-+	};
-+};
-+
- &mdio1 {
- 	rgmii_phy: ethernet-phy@3 {
- 		compatible = "ethernet-phy-ieee802.3-c22";
-@@ -350,6 +391,25 @@ rgmii_phy: ethernet-phy@3 {
- 		reset-gpios = <&gpio4 RK_PC0 GPIO_ACTIVE_LOW>;
- 		rx-internal-delay-ps = <1500>;
- 		tx-internal-delay-ps = <1500>;
-+
-+		leds {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			led@1 {
-+				reg = <1>;
-+				color = <LED_COLOR_ID_AMBER>;
-+				function = LED_FUNCTION_WAN;
-+				default-state = "keep";
-+			};
-+
-+			led@2 {
-+				reg = <2>;
-+				color = <LED_COLOR_ID_GREEN>;
-+				function = LED_FUNCTION_WAN;
-+				default-state = "keep";
-+			};
-+		};
- 	};
- };
- 
-@@ -586,3 +646,13 @@ &xin32k {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&clk32k_out1>;
- };
-+
-+&xpcs {
-+	phys = <&combphy2 PHY_TYPE_SGMII>;
-+	phy-names = "serdes";
-+	status = "okay";
-+};
-+
-+&xpcs_mii0 {
-+	status = "okay";
-+};
+ ROCKER DRIVER
+ M:	Jiri Pirko <jiri@resnulli.us>
+ L:	netdev@vger.kernel.org
 -- 
 2.47.3
 
