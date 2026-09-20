@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D261C982E6
-	for <linux-phy@archiver.kernel.org>; Sun, 20 Sep 2026 06:55:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 517CDC982CC
+	for <linux-phy@archiver.kernel.org>; Sun, 20 Sep 2026 06:55:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i/0V1XKaJkxn6plScZtZsoNxEIB4cpcHjEfIQqChrbU=; b=S9ijQw19mooh/5
-	5llK/EqvaeXNLut1piATs9bKfHc1ZaopUlYR5UcoVafzDXfnyHO9H6BFFS4OeQ2bsh9cM1Lm/IccP
-	wS8CPpDvcS29rKMGPUJxJBern0Lmvop84TBGTdFDlDS3YGMobsFsOhY8eCJPCXJ4fnOeecmF3i5lw
-	jZ+xjrrBUzHWDZEd29N5WXz7zBlx2LLExbmdf5dzqZrknv6poEx5z25bL81ULntRuPrijCnf8CQVG
-	lSyyjkqG2XuETr6Sz4yKOG2DYkFyptcCGPAEF3lbhCjQMs+sb/4pvLky0ru0iXaU3s92Tfn9bGgUs
-	BvYrYWB+/SIHBW1k4P/A==;
+	List-Owner; bh=5tF7IndO0MD0ZPU23Y6itRsgWmCPx50xWSa03JIMm/A=; b=kYG2+Di5AOb1T9
+	7dzMqRl9KRyubWjWlyRZLY6o36IMsnFQWGJ+0OwK5ko5Gh6j7MMbRgseAq8pnmiH94Cp74511r43J
+	Hcof0qIu4NU9eZttNJ3Nbt6FnAd9+WD2kEtnDDhOb6bVp1p8rISgohhRZc8NJ2iEUAwprrPWbZEhE
+	1Do6V9bcDqrNEnsclyVs/60nYazv1g4rLAx2B/j8QZbXuuPpyD+9ryUmkTtbMgKuqaRATLKvPMBoH
+	/uLY8oVA969S7gXXy8VqK6ugylI5uuDkyHgyvFYJOYLSVVsKiGGxopnRyU8ycPEdZL118zVXsaYAb
+	hxr1fvitOFAqqiobM9bQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8BS3-0000000H0UR-3tZL;
-	Sun, 20 Sep 2026 06:55:03 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1x8BS7-0000000H0Vg-06c4;
+	Sun, 20 Sep 2026 06:55:07 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8BS2-0000000H0Tq-10xV
+	id 1x8BS5-0000000H0V2-06FW
 	for linux-phy@lists.infradead.org;
-	Sun, 20 Sep 2026 06:55:02 +0000
+	Sun, 20 Sep 2026 06:55:05 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 05AFE41223;
-	Sun, 20 Sep 2026 06:55:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 447851F0089A;
-	Sun, 20 Sep 2026 06:55:01 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 7821C601FD;
+	Sun, 20 Sep 2026 06:55:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 915DB1F00893;
+	Sun, 20 Sep 2026 06:55:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789887301;
-	bh=6JZYwxuSQcwk3MClJGMHPbrLkG1DrLiadFNbDUxdabQ=;
+	s=k20260515; t=1789887304;
+	bh=jphBmYPzMwPlIjB52qdb9Xjlf3297t06mdooQTvMhRs=;
 	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=kMga302FTM4GU/rTlncThiwbrrpj27bTCSFHR2edXyN780mUmv4S0r+Z3JbF9FkC7
-	 p+ETMeP5OuQWKbMA1qisKFRd96h4fInjzCRzXFfKDcya9BbgRU5JIXCBuTPDOPYkON
-	 JEhYUq5XOEqXWfJBNyu4SS8dGXixHK1h5bUzY6qoLbiea/gzV3kGS5i+Z6BASqpy91
-	 Y2QVh0IWPCKWeHN6HrNUH+4fEpwwua0aBrNEB0shx0BZO5uFCY5fj7+RopEUbsjnB3
-	 ohSVAxFfW147VMpHAtQzW88sug+buTKXlQEzsXr2oEhUfzhPTkmW/uC2tEwaS1lWF6
-	 yq1YY4W7xiy6g==
+	b=EAm3aAgOrBXh4oh7rsy8h/PBRLbbFow3HWgDVGZCPYwGPuCwEdDLN3CY2zgrA5TKm
+	 1zJoVELBtx+KDBpIkwvvuPFOwYHAPg0hWTLLsbbJFrU4MhmiIy0LV8CNlI9T0q4A4u
+	 BKcouMU9m6pJzc5JpXvF+NWW5VsNwEYNtTh0KyXhAfroYLQYtM+sJYa4zKsIFYr68f
+	 fmJVI5wKc6GqSAMznPMlCm+ax7B8GmO7Xi2Jn0yq/UR0GtM/oj8EO9h3izsEvKuuyX
+	 IC/87i05/gzwHbTL4+DVhz4N9+McMywdH23cF+AfxprmZY+nBjNk7N1T7OdY+0pIlb
+	 9ND0Y0/I42P/A==
 From: sashiko-bot@kernel.org
-Subject: Re: [PATCH RFC v3 10/12] arm64: dts: s32g: Add SerDes controller
- nodes
+Subject: Re: [PATCH RFC v3 12/12] arm64: dts: s32g: Add S32G3-RDB3 SerDes
+ routing variants
 To: =?utf-8?b?SmFuIFBldHJvdXMgKE9TUyk=?= <jan.petrous@oss.nxp.com>
-Cc: vkoul@kernel.org, wsa+renesas@sang-engineering.com, olteanv@gmail.com, neil.armstrong@linaro.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-pci@vger.kernel.org, Frank.Li@kernel.org, imx@lists.linux.dev, robh@kernel.org, conor+dt@kernel.org
-In-Reply-To: <20260919-s32g_serdes-v3-10-9d68868c1e89@oss.nxp.com>
+Cc: neil.armstrong@linaro.org, linux-pci@vger.kernel.org, conor+dt@kernel.org, devicetree@vger.kernel.org, Frank.Li@kernel.org, imx@lists.linux.dev, vkoul@kernel.org, wsa+renesas@sang-engineering.com, olteanv@gmail.com, linux-phy@lists.infradead.org, robh@kernel.org
+In-Reply-To: <20260919-s32g_serdes-v3-12-9d68868c1e89@oss.nxp.com>
 References: <20260919-s32g_serdes-v3-0-9d68868c1e89@oss.nxp.com>
- <20260919-s32g_serdes-v3-10-9d68868c1e89@oss.nxp.com>
-Date: Sun, 20 Sep 2026 06:55:00 +0000
-Message-Id: <20260920065501.447851F0089A@smtp.kernel.org>
+ <20260919-s32g_serdes-v3-12-9d68868c1e89@oss.nxp.com>
+Date: Sun, 20 Sep 2026 06:55:03 +0000
+Message-Id: <20260920065503.915DB1F00893@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,17 +71,26 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 PiBGcm9tOiAiSmFuIFBldHJvdXMgKE9TUykiIDxqYW4ucGV0cm91c0Bvc3MubnhwLmNvbT4KPiAK
-PiBBZGQgdGhlIFNlckRlcy9QQ0llIGNvbWJvLVBIWSBjb250cm9sbGVyIG5vZGVzIGZvciBTMzJH
-MiBhbmQgUzMyRzMgaW4KPiB0aGUgZGlzYWJsZWQgc3RhdGUuIEVhY2ggU29DIGludGVncmF0ZXMg
-dHdvIFNlckRlcyBpbnN0YW5jZXMgKFNlckRlc18wCj4gYW5kIFNlckRlc18xKSB3aXRoIGlkZW50
-aWNhbCByZWdpc3RlciBsYXlvdXQ7IGV2ZXJ5IGluc3RhbmNlIGV4cG9zZXMKPiB0aGUgUENJZSBQ
-SFkgYW5kIHRoZSB0d28gWFBDUyBpbnN0YW5jZXMgdXNlZCBmb3IgU0dNSUkuIEJvYXJkIGRldmlj
-ZQo+IHRyZWVzIGVuYWJsZSB0aGUgcmVxdWlyZWQgaW5zdGFuY2UgYW5kIGFkZCB0aGUgbGFuZSBQ
-SFkgY2hpbGQgbm9kZXMKPiBtYXRjaGluZyB0aGUgd2FudGVkIFNlckRlcyBzdWJzeXN0ZW0gbW9k
-ZS4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBKYW4gUGV0cm91cyAoT1NTKSA8amFuLnBldHJvdXNAb3Nz
-Lm54cC5jb20+CgpTYXNoaWtvIGhhcyByZXZpZXdlZCB0aGlzIHBhdGNoIGFuZCBmb3VuZCBubyBp
-c3N1ZXMuIEl0IGxvb2tzIGdyZWF0IQoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8v
-c2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDkxOS1zMzJnX3NlcmRlcy12My0wLTlkNjg4Njhj
-MWU4OUBvc3MubnhwLmNvbT9wYXJ0PTEwCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGlu
-dXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
-aWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+PiBUaGUgUzMyRzMtVk5QLVJEQjMgYm9hcmQgd2lyZXMgR01BQzAgdG8gYW4gb24tYm9hcmQgS1Na
+OTAzMSBSR01JSSBQSFkgYnkKPiBkZWZhdWx0LiBBZGQgdHdvIGRldmljZSB0cmVlIHZhcmlhbnRz
+IHRoYXQgcmVyb3V0ZSBHTUFDMCBvdmVyIHRoZQo+IFNlckRlc18wIFhQQ1MgbGFuZSBmb3IgU0dN
+SUksIG1hdGNoaW5nIHRoZSB0d28gU2VyRGVzIGxhbmUgbGF5b3V0czoKPiAKPiAgIC0gTW9kZSAx
+OiBQQ0llIHgxIHJvb3QgY29tcGxleCBvbiBsYW5lIDAgcGx1cyAxRyBTR01JSSB2aWEgR01BQzAK
+PiAgICAgKFhQQ1MwKSBvbiBsYW5lIDEuCj4gICAtIE1vZGUgMzogZHVhbCBTR01JSSwgR01BQzAg
+KFhQQ1MwKSBvbiBsYW5lIDAgYW5kIFBGRV9FTUFDXzIgKFhQQ1MxKQo+ICAgICBvbiBsYW5lIDEu
+Cj4gCj4gVGhlIFNlckRlcyBTVUJTWVNfTU9ERSBpcyBkZXJpdmVkIGZyb20gdGhlIGxhbmUgY2hp
+bGQgbm9kZXMgcHJlc2VudCwgc28KPiBlYWNoIGxheW91dCByZXF1aXJlcyBpdHMgb3duIGJvYXJk
+IGRldmljZSB0cmVlLiBUaGUgTW9kZSAxIHZhcmlhbnQKPiBlbmFibGVzIGJvdGggUENJZSByb290
+IGNvbXBsZXhlcyBhbmQgZXh0ZW5kcyB0aGVpciByb290IHBvcnRzIGJ5IGxhYmVsCj4gKHBjaWUw
+X3JwLCBwY2llMV9ycCksIG1hdGNoaW5nIHRoZSBSREIzIHdpcmluZzogUENJZV8wIHJlYWNoZXMg
+dGhlIE0uMgo+IFsgLi4uIF0KPiAgIC0gTW9kZSAxOiBHTUFDMCBTR01JSSBwYXRoIHVwLCBhbmQg
+Ym90aCBQQ0llIHJvb3QgY29tcGxleGVzIGNvbWUgdXAgLQo+ICAgICBQQ0llXzEgZW51bWVyYXRl
+cyB0aGUgY2FyZC1zbG90IE5JQyBhbmQgcGFzc2VzIHRyYWZmaWMgYXQgZnVsbCBsaW5lCj4gICAg
+IHJhdGUsIFBDSWVfMCBlbnVtZXJhdGVzIHRoZSBNLjIgc2xvdCB3aXRoIFNXMTctMiBPTi4KPiAK
+PiBTaWduZWQtb2ZmLWJ5OiBKYW4gUGV0cm91cyAoT1NTKSA8amFuLnBldHJvdXNAb3NzLm54cC5j
+b20+CgpTYXNoaWtvIGhhcyByZXZpZXdlZCB0aGlzIHBhdGNoIGFuZCBmb3VuZCBubyBpc3N1ZXMu
+IEl0IGxvb2tzIGdyZWF0IQoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlr
+by5kZXYvIy9wYXRjaHNldC8yMDI2MDkxOS1zMzJnX3NlcmRlcy12My0wLTlkNjg4NjhjMWU4OUBv
+c3MubnhwLmNvbT9wYXJ0PTEyCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
+bGlzdGluZm8vbGludXgtcGh5Cg==
