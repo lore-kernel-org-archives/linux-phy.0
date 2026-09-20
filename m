@@ -4,71 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9FEAC982D8
-	for <linux-phy@archiver.kernel.org>; Sun, 20 Sep 2026 17:02:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80355C982DA
+	for <linux-phy@archiver.kernel.org>; Sun, 20 Sep 2026 17:02:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yxLWIzlM8CitROfz+jFkYEcsZU4/zKrZIqsvEhI2O1k=; b=KGxuzddXCBLIK5
-	m0z94KmU00ISErGJrAUqWAyUuZ88meub1vmwgigsYku9JZ6rRMxxy1018QROc/mXFs+2swq4l1x+q
-	GlP4RmVTNhEUvd8Lu2Gzzae4/pxrhJ9L28jLgCm4sQCx9rx2SykRwbRCSnCFQudfSqMGrhZ0TcIag
-	fOKSDJ8mZAjQk3XD/2IUD0KIzMoxmuy0WA28mk85k9wqLpft6owoJGy4SQeK4QYH4gmeM+carJuQB
-	VX+qtVG0nqbW93D8xwvoKYQjq/7vsitOurXUzEeptj4zAh2wFszZZsIZQeW+AgrfuxJes13H8xUL9
-	kaypNikNY8J25GM00ilA==;
+	List-Owner; bh=qUsSdp1rhq27o714iSBBwOEd/bVCC4NgssWmO1UdwT4=; b=q7rgGUc785A1df
+	T1iW2MVIN480k4hB2p9Iocw0d6z76a60qwNSZr/AAY3xxw4lTt5ITRNbCN07Q+dCPRO4XTHQXwCGp
+	rcOX43KoDNirn1HIZfV9tBwXRb8wo8Vwj7Rr/HKedHkUTmo1U8XXBotHC/7mCL+KDl6mFG53i5SbQ
+	F5VIBECZr6VY1NdoKSl9HVMRvrF+u3CJaaS4hnX2e5Cw2kcrehPF6IIhfMrEcvNr6utYTn7PMvwMC
+	O+mDx6YcGhCwczi/JTChcSGRVmMxjnoETbkcEAvl/W9TRBIuOhyOn72jx5t6qjVaIThvwZAQTf7hP
+	LRGIk+RqMt3HjRkAZPBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8KwA-000000008za-20RH;
-	Sun, 20 Sep 2026 17:02:46 +0000
-Received: from mail-pz2-x09.google.com ([2607:f8b0:4864:3b::9])
+	id 1x8KwJ-0000000097x-0cnr;
+	Sun, 20 Sep 2026 17:02:55 +0000
+Received: from mail-pz2-x06.google.com ([2607:f8b0:4864:3b::6])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8Kw7-000000008wt-2pQM
+	id 1x8KwG-0000000094E-0TZU
 	for linux-phy@lists.infradead.org;
-	Sun, 20 Sep 2026 17:02:44 +0000
-Received: by mail-pz2-x09.google.com with SMTP id 41be03b00d2f7-cc53988d9f3so1289023a12.0
-        for <linux-phy@lists.infradead.org>; Sun, 20 Sep 2026 10:02:43 -0700 (PDT)
+	Sun, 20 Sep 2026 17:02:53 +0000
+Received: by mail-pz2-x06.google.com with SMTP id 41be03b00d2f7-cc4b14f0364so950348a12.1
+        for <linux-phy@lists.infradead.org>; Sun, 20 Sep 2026 10:02:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1789923763; x=1790528563; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1789923771; x=1790528571; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=WzUxf96lJcOF3iW8gS5QIxqqy13/2PJtTrFNEXc29ug=;
-        b=marh/kybHuSy/3e2CSP2r/HPza6FbeSEpVJhRxgckLB/SvsSh9+XO88ckz/ukySOWN
-         A0IQEJGi4SlAZn8rmFS53xluZoNWawDeeUg9XWm4XopUkJ4aQxM6YUy2gJhdv4Oft9dG
-         4C5j9p5b/sHqWqi2szATZ9q+SS9QCfdj3i63US98yopstnuZHDhr+9ezF58OxvRzwCkv
-         DJfzX7gBZmOHlZQtXuBLJkUkxTbjT1qi+xkdUpmBNWmdfDv7aL+epdLAfXyHn1/kUga3
-         hMcomCjtT4cPp6+2fU9mo33JI/bFEpvqJ4ZUiTV4k17R+9D8XJa4DcIJBce95oxHEmtV
-         gFBQ==
+        bh=Mg8/YZyIZ3CihMksQCv23yBYBJSGhmM45ppIsWYSP5M=;
+        b=KtlgqDn+ehoX0f9gtcg9ds8R34JRZtw/ohuGtzjHptUTlQjdAP+EB4eahntJkQBgZB
+         0d4Xrvf7vKZ/qu+Fvie0hsewc65zVFQYpymEYMY23HqIhyQxPWcVQOeVyXAaTW7hgkyp
+         RpLwF4h5do7wVgYjzOUNe4ilCJclli2I9a7DAF2/8UbGdXCgDr58Wi24uZLTs88vdmH5
+         VEJOJeT/3lZvR87Okk84JOE91aeMRr47XXUK70Vk9XihGSVxYXrH/ysNeRkWBY3VMGtz
+         LXFZ09OBJE/6L7/6XDJIDN4xibeQ9JURmkke5obZH/PUNDR4T9ebr87VQ5V7dhLWDtuR
+         88iA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1789923763; x=1790528563;
+        d=1e100.net; s=20260707; t=1789923771; x=1790528571;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=WzUxf96lJcOF3iW8gS5QIxqqy13/2PJtTrFNEXc29ug=;
-        b=nbnz9LUAUmi8vOOY2xMLHWfaMWOQL9psZkYCZ3LixbubWF2IPhrQVGz0dqhrA7IqIx
-         gDb3LA3xjBXj3OMP49+4OCtRpClh21zMUU5L5zQhv1rW43G3x+IuVgst2d4HKiIwORmX
-         X7Cohk6ZT+wRwXgoT0YQNKiQ6s2bxJgjvK+5H4nrD+ZcsmksI+hGqJ1AT/R1a42MOB8F
-         qoza9Jgb9s1gpA24kyDSSvEC3g4E67ljPtzau13PwHn/pD6L6J9oldCmUUlgqkE7Nr2R
-         I6S7XkrOZgoDrYCpbW2saaYYkpeRfZnKlEFgAwC71tdLKAdBpLg2tAQH65tK3J4xdATC
-         xBpg==
-X-Forwarded-Encrypted: i=1; AKwUvBya01TpsaIZKhGZsAQZD20+SaIdLHE5GQ4lJooR8IWbpnFdkfoLBIwlDZODYHVLvx7G0M4Yd47kBAg=@lists.infradead.org
-X-Gm-Message-State: AFuF++lZ9UXzSd3RE6xz+iJFxb1i1HxKqsc/VQ7uTiH5AwPI5G/a6juY
-	jheOccHkBDZrODxmh7U4pIQ7gtR+shugOY1QFAlH7wM24Hz0TPW5nXR1
-X-Gm-Gg: AYBFou2bGAOEykIDYRtMKsuKS7rImemAzECGMhvZcroWyh88ho7PeiQ+PafKtNp3s/B
-	0g4gu4Ye3HpnfY6RHgp55h/JKMHZu0g7nURbXoOuW+Mi6B3FRC4CkCxroStgpMCamiGEie930Pg
-	ytsjdpkGIYmlIjtj5ZS6lNa693r41oAYDi9gHjCl44lyogFOqGEXjNksSxD8wsfi4DLwbAw3WIG
-	EXwBQnaq9w96R5yyDCvaVxEQhPBk4Z3XD5M5qTAnnWNCnmtbF4qfADnD/+WhxNTiOyGs51JkZbZ
-	9zcLQYhjZfLAoGMqtb1gRkzW42fMAAPATMZQfxVdam2F1nHSoCNURrYhVO5GKmTTvRwNR0WiNGV
-	BIMFUy0ubbJVTLewkyT8RBkXenpxRHo2hkUfot+oMnpH3GpV3+6CCFL01toDKJ5+bo4KJ1e00+C
-	bPASw91kvodCCoszozh5+Vdq6FItjQFZzCAOCS78Pefx77ws8YEp1LNS8mDdCOKvXv+QQ8fQ==
-X-Received: by 2002:a05:6a00:8010:b0:874:706d:856a with SMTP id d2e1a72fcca58-874de307e79mr11865330b3a.27.1789923762894;
-        Sun, 20 Sep 2026 10:02:42 -0700 (PDT)
+        bh=Mg8/YZyIZ3CihMksQCv23yBYBJSGhmM45ppIsWYSP5M=;
+        b=pwjJ//mYm69tRPvKv9P6lDy70bT55Im3oRSC3d/DlhQ97U45/gyCgK2yQ6onokVOYg
+         iC5YBr+7yPebJZl+LK9YdXxU9aTQOeGquh0PXB2cRNlhUIikmhstHO/HgubLxazjITxs
+         5gQ26H8KZYEdJ6MebBB4o7IgGsSp3MoN/cr8FQwls8YwWo2R4jq0HQ6FJCCqBTqhfv/l
+         FKiKUQ4rFvvHK1CH9VQeMQv8SLh6r46D63ptrumwPukVrpjnyUXZzZ/VjD9vR384XvN4
+         oxS7zMvv/p/7h4KlHVafOyqW2FDCHKGOR25cSDJVTb4QPpF4HAvORrB5XOoTkZmMhG9D
+         lUZQ==
+X-Forwarded-Encrypted: i=1; AKwUvBzlr9MymmMFrVYSEevNRYvquJpR3ZVx8MvEQe9JVS/2zGep+n8S8EsPIpyVfQJi1XDz1HNhE+ITmxM=@lists.infradead.org
+X-Gm-Message-State: AFuF++mpegseDKngovz1FaBSU4HsNNfn4hw4KXwhKKsPiMoTT3zPjVbC
+	MDIlh43OMa/R5PspNrluV9pXlMG8sa9NZc6eCJeo0nHxwsK9e3VL3i27
+X-Gm-Gg: AYBFou3oDz5lQGbRwfx28h9Fu2tT+dF4TCe5oUvEVZJirRLNKz0gN7mtnoW6bEQ3dbi
+	DsdgDv/nG7xgz7ChNtyGKHILRZ+JLxWLlGwhHQPW8qrSZlJog0RY5putvroAhSHivKhUWZcnMqn
+	tYlOhgjszP2GLpdv3ma8fbj4dsW4GiDp1uDChSzz6VwCnX9wehDzlOhpLQdKRuyao7VLdBzZ4TL
+	gNvsKa2Wlthj5im8E94Mkts72LbLzghRn5fcaBQG2Iwt/Ly5xMgOh0JtAzJpeUBBnpjmfWaY0EE
+	1DxmvgOtHMi9qJha6q8XjMXtO80NqEFRLNEOeEekuI81MfR1gnLlMffNt8/8PYNvibVoGLh6Vdp
+	jBfYGC6L6guwVlqa69+1lSikSc2j+XG3Mi4rd9YYpHY5qHMSn09kADO8kKmaXz1+MckWjknc7V3
+	iZ0b2TkntMyJSy56eiXYHsQE/qliHI+Ug6cy+AB2wZhlxBhSUXAx1B5xsez2OTApTMUvXOjfAMp
+	GiWIJFl
+X-Received: by 2002:a05:6a00:1ca2:b0:851:8baf:5b26 with SMTP id d2e1a72fcca58-874dc5eb6b5mr12081998b3a.14.1789923771468;
+        Sun, 20 Sep 2026 10:02:51 -0700 (PDT)
 Received: from server.lan ([168.138.199.194])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-877a9d07425sm2140646b3a.42.2026.09.20.10.02.34
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-877a9d07425sm2140646b3a.42.2026.09.20.10.02.43
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 20 Sep 2026 10:02:40 -0700 (PDT)
+        Sun, 20 Sep 2026 10:02:50 -0700 (PDT)
 From: Coia Prant <coiaprant@gmail.com>
 To: Andrew Lunn <andrew+netdev@lunn.ch>,
 	"David S . Miller" <davem@davemloft.net>,
@@ -98,16 +99,16 @@ Cc: Neil Armstrong <neil.armstrong@linaro.org>,
 	linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-renesas-soc@vger.kernel.org
-Subject: [PATCH net-next v9 04/11] dt-bindings: net: pcs: add rockchip,rk3568-xpcs support
-Date: Mon, 21 Sep 2026 01:01:08 +0800
-Message-ID: <20260920170116.3624104-5-coiaprant@gmail.com>
+Subject: [PATCH net-next v9 05/11] arm64: dts: rockchip: rk3568: add XPCS and fixed-clock nodes
+Date: Mon, 21 Sep 2026 01:01:09 +0800
+Message-ID: <20260920170116.3624104-6-coiaprant@gmail.com>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20260920170116.3624104-1-coiaprant@gmail.com>
 References: <20260920170116.3624104-1-coiaprant@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260920_100243_711686_9E6B8DB1 
-X-CRM114-Status: GOOD (  14.55  )
+X-CRM114-CacheID: sfid-20260920_100252_158986_EABBAE76 
+X-CRM114-Status: GOOD (  12.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,148 +125,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add device tree binding documentation for the Synopsys DesignWare
-XPCS integrated on the Rockchip RK3568 SoC.
+The RK3568 SoC integrates a Synopsys DesignWare XPCS that provides
+the Physical Coding Sublayer for 1000BASE-X, SGMII, and QSGMII
+interfaces via its four MII ports.  Add the XPCS device node and
+its pcs-mii sub-nodes to the SoC device tree.
 
-The XPCS is accessed over the APB3 bus and internally connected to
-a Naneng Combo SerDes PHY.  It supports 1000BASE-X, SGMII, and
-QSGMII modes, with four MII ports.
+The XPCS device is accessed via the APB3 bus at 0xfda00000 and
+requires the CSR clock (PCLK_XPCS) for register access and the EEE
+clock (CLK_XPCS_EEE) for Energy Efficient Ethernet operation.  The
+PD_PIPE power domain must be enabled before any register access.
 
-The four MII ports are described as ethernet-pcs-mii@N child nodes,
-consumed by the Rockchip XPCS glue driver later in this series.
+Also add two fixed-clock nodes (clock-xpcs-gmac0 and clock-xpcs-gmac1,
+labelled clk_gmac0_xpcs_mii and clk_gmac1_xpcs_mii) providing the
+125 MHz reference clock for the GMACs when operating with XPCS.  Their
+clock-output-names match the CRU mux parent names in clk-rk3568.c, so
+boards can reparent SCLK_GMAC0_RX_TX / SCLK_GMAC1_RX_TX through
+assigned-clock-parents.
 
-phys and phy-names are required because dtbs_check only validates
-required properties for enabled nodes. The SerDes link is a board-level
-design choice (combphy1 on some boards, combphy2 on others), so these
-properties must be provided by the board device tree, not the SoC dtsi.
+The XPCS node and its mii sub-nodes are disabled by default and
+must be enabled at the board level when 1000BASE-X/SGMII/QSGMII is
+in use.  The fixed-clock nodes are always present and do not have a
+status property, as they are static clock sources.
 
-The CRU reset lines (SRST_XPCS*) are intentionally not described: no
-in-tree user requests them, and bring-up relies on the PD_PIPE power
-domain, the SerDes PHY and the in-IP soft reset. They can be added
-later as optional without breaking ABI.
+The XPCS node requires a reference to the appropriate Naneng Combo PHY
+via the phys property.  dtbs_check only validates required properties
+for enabled nodes, so the SoC dtsi does not provide phys/phy-names:
+boards that enable the XPCS must supply them, since the SerDes link is
+a board-level design choice (combphy1 on some boards, combphy2 on
+others).
 
 Signed-off-by: Coia Prant <coiaprant@gmail.com>
 ---
- .../net/pcs/rockchip,rk3568-xpcs.yaml         | 110 ++++++++++++++++++
- 1 file changed, 110 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/net/pcs/rockchip,rk3568-xpcs.yaml
+ arch/arm64/boot/dts/rockchip/rk3568.dtsi | 45 ++++++++++++++++++++++++
+ 1 file changed, 45 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/net/pcs/rockchip,rk3568-xpcs.yaml b/Documentation/devicetree/bindings/net/pcs/rockchip,rk3568-xpcs.yaml
-new file mode 100644
-index 0000000000000..703fcff0e3f70
---- /dev/null
-+++ b/Documentation/devicetree/bindings/net/pcs/rockchip,rk3568-xpcs.yaml
-@@ -0,0 +1,110 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/net/pcs/rockchip,rk3568-xpcs.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+diff --git a/arch/arm64/boot/dts/rockchip/rk3568.dtsi b/arch/arm64/boot/dts/rockchip/rk3568.dtsi
+index 3bc653f027f1f..227d03e336043 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3568.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3568.dtsi
+@@ -110,6 +110,51 @@ sata0: sata@fc000000 {
+ 		status = "disabled";
+ 	};
+ 
++	xpcs: ethernet-pcs@fda00000 {
++		compatible = "rockchip,rk3568-xpcs";
++		#address-cells = <1>;
++		#size-cells = <0>;
++		reg = <0x0 0xfda00000 0x0 0x200000>;
++		clocks = <&cru PCLK_XPCS>, <&cru CLK_XPCS_EEE>;
++		clock-names = "csr", "eee";
++		power-domains = <&power RK3568_PD_PIPE>;
++		status = "disabled";
 +
-+title: Rockchip RK3568 Synopsys DesignWare Ethernet PCS
++		xpcs_mii0: ethernet-pcs-mii@0 {
++			reg = <0>;
++			status = "disabled";
++		};
 +
-+maintainers:
-+  - Coia Prant <coiaprant@gmail.com>
++		xpcs_mii1: ethernet-pcs-mii@1 {
++			reg = <1>;
++			status = "disabled";
++		};
 +
-+description: |
-+  Rockchip RK3568 SoC integrates a Synopsys DesignWare Ethernet Physical
-+  Coding Sublayer (XPCS).
-+  The PCS provides an interface between the Media Access Control (MAC)
-+  and the Physical Medium Attachment (PMA) sublayer through a Media
-+  Independent Interface (GMII).
++		xpcs_mii2: ethernet-pcs-mii@2 {
++			reg = <2>;
++			status = "disabled";
++		};
 +
-+  The XPCS is accessed over the APB3 bus and internally connected to a
-+  Naneng Combo SerDes PHY.
-+  It supports 1000BASE-X, SGMII and QSGMII modes.
++		xpcs_mii3: ethernet-pcs-mii@3 {
++			reg = <3>;
++			status = "disabled";
++		};
++	};
 +
-+  The block contains four MII ports that can be individually enabled and
-+  routed to one of the Ethernet GMAC controllers via the pcs-handle
-+  property in the MAC device tree node.
++	clk_gmac0_xpcs_mii: clock-xpcs-gmac0 {
++		compatible = "fixed-clock";
++		clock-frequency = <125000000>;
++		clock-output-names = "clk_gmac0_xpcs_mii";
++		#clock-cells = <0>;
++	};
 +
-+properties:
-+  compatible:
-+    const: rockchip,rk3568-xpcs
++	clk_gmac1_xpcs_mii: clock-xpcs-gmac1 {
++		compatible = "fixed-clock";
++		clock-frequency = <125000000>;
++		clock-output-names = "clk_gmac1_xpcs_mii";
++		#clock-cells = <0>;
++	};
 +
-+  reg:
-+    maxItems: 1
-+
-+  "#address-cells":
-+    const: 1
-+
-+  "#size-cells":
-+    const: 0
-+
-+  clocks:
-+    items:
-+      - description: APB3 bus interface clock (clk_csr_i), required for register access
-+      - description: EEE clock (clk_eee_i), required for Energy Efficient Ethernet operation
-+
-+  clock-names:
-+    items:
-+      - const: csr
-+      - const: eee
-+
-+  phys:
-+    maxItems: 1
-+
-+  phy-names:
-+    const: serdes
-+
-+  power-domains:
-+    maxItems: 1
-+
-+patternProperties:
-+  "^ethernet-pcs-mii@[0-3]$":
-+    type: object
-+    description:
-+      One of the four MII ports of the XPCS. The port is linked to an
-+      Ethernet MAC controller via the pcs-handle property in the MAC's
-+      device tree node.
-+
-+    properties:
-+      reg:
-+        description: MII port number.
-+        enum: [0, 1, 2, 3]
-+
-+    required:
-+      - reg
-+
-+    additionalProperties: false
-+
-+required:
-+  - compatible
-+  - reg
-+  - "#address-cells"
-+  - "#size-cells"
-+  - clocks
-+  - clock-names
-+  - phys
-+  - phy-names
-+  - power-domains
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/rk3568-cru.h>
-+    #include <dt-bindings/power/rk3568-power.h>
-+    #include <dt-bindings/phy/phy.h>
-+
-+    ethernet-pcs@fda00000 {
-+      compatible = "rockchip,rk3568-xpcs";
-+      reg = <0xfda00000 0x200000>;
-+      #address-cells = <1>;
-+      #size-cells = <0>;
-+      clocks = <&cru PCLK_XPCS>, <&cru CLK_XPCS_EEE>;
-+      clock-names = "csr", "eee";
-+      phys = <&combphy2 PHY_TYPE_SGMII>;
-+      phy-names = "serdes";
-+      power-domains = <&power RK3568_PD_PIPE>;
-+
-+      ethernet-pcs-mii@0 {
-+        reg = <0>;
-+      };
-+    };
+ 	pipe_phy_grf0: syscon@fdc70000 {
+ 		compatible = "rockchip,rk3568-pipe-phy-grf", "syscon";
+ 		reg = <0x0 0xfdc70000 0x0 0x1000>;
 -- 
 2.47.3
 
