@@ -4,40 +4,40 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91F2EC982DA
-	for <linux-phy@archiver.kernel.org>; Sun, 20 Sep 2026 17:07:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D083CC982D8
+	for <linux-phy@archiver.kernel.org>; Sun, 20 Sep 2026 18:39:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Kz17DbeAkP2aR8+zI5z9wuX7wgl3QAj4H9qlPrFDkVg=; b=hue8daBpgb/S4C
-	0Hzjqkm0N3WO19rPo+ZS586NvPmTndFJPQCCEWAtb1cLmMpIZBg1ho8HyebR76srvXmuWCUJZjqcO
-	/h6EBSI23U5xln/x5tcDim2Z+zzMR7FDq1F7Qjdctb0H14a1+QCp9Rgu04B4HMCNkQ3K2fRbON3Od
-	czDMWlTtAn9p3NvCzd4H2deyHd0s6B459OfL7s1vJ9ZM9BOT8D3mxQzlb9X7oAxODBTlYhnyFkwya
-	rAxnlVNnY6cloyMi334hUM79qVSg/FoczS9ciZj775YQ4nfNhg2oAHbMQn+dCkm9XPoZ7nD7iHCHQ
-	pO3GX61RRgiU/YU8Ga1w==;
+	List-Owner; bh=jK+MXxevYAMhEVa6YMUO2D61yb2drn2U4IEWGkgcUew=; b=z/Xvgo8Lxzx4LB
+	gPRXDFZCftBkkoinPf6A+tmrOtUVzio/wfwNp48M2JC1ClmoERyixqj/Hv6SLSKuDrtX6mGP56k7y
+	9gNTKivSbsPU48OmNs7+GZYxZQlOSqU1SsAHY1vzg9J7umA4s4IHTOsFRx71jamrfb8Gyo0eDZ9o1
+	gxYGLF+zZYojsu8oZy6jQEQldDHISfMqE62XlWbpp744ozRdoBfCM7fNh5/ijCeftsH90M/ddqQKe
+	JOuQdv6bbr49d1FSo1aAYrqkoRtpBHWUnTP+ENxjL/qsevAJfCFSTHZyDxhLycrVq7/dk6YlFoYNq
+	3QiqB3LZGmQ1GAGILHIg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8L0w-00000000AkO-13RP;
-	Sun, 20 Sep 2026 17:07:42 +0000
+	id 1x8MS6-00000000FhP-1BsB;
+	Sun, 20 Sep 2026 18:39:50 +0000
 Received: from vps0.lunn.ch ([156.67.10.101])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8L0u-00000000Ajd-29Ph;
-	Sun, 20 Sep 2026 17:07:41 +0000
+	id 1x8MS3-00000000Fgm-36W2;
+	Sun, 20 Sep 2026 18:39:48 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
 	s=20171124; h=In-Reply-To:Content-Disposition:Content-Type:MIME-Version:
 	References:Message-ID:Subject:Cc:To:From:Date:From:Sender:Reply-To:Subject:
 	Date:Message-ID:To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Content-Disposition:In-Reply-To:References;
-	bh=SRR6GWm8VvaCpKgQykY2MiSoqyYUd1GFMV1rrWkJ4JI=; b=LswdCCLGZ/fMTQ3fP37RE0xKmP
-	tWLPS26CI1aHU7OSJLo4czeq1buGrq1SP4843QH/8q7GydxdJRJ5FarpIzBqSKJ98gU2TQc0oQwGy
-	FY+BYRxWt7Lee6y7s9AFMUxX5aVGPlNmmDATqZIjBxpHEmBB2Dit1Azv1/G9/Qn+g4cQ=;
+	bh=PGAGqvFCwHGZEk2NRMEY90gRI3koAV1XWGGTvnMRxnw=; b=nzvzsbySuWS+Cjkysz0gvo9x8A
+	eFoyFLn9Vu+yHmiXhkGUXAdnng8/b8TpZl6eDNE11GUy7ArHm2wCTXud+T/QqXAAMbxZRy747HVCX
+	tgMMMjg9k4X9uehfknX8sZcYVaQVhDX352A9jRHw2DL++Ylhn785LLuj8zgZBnuyhP9w=;
 Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
 	(envelope-from <andrew@lunn.ch>)
-	id 1x8L0d-006BGL-FN; Sun, 20 Sep 2026 19:07:23 +0200
-Date: Sun, 20 Sep 2026 19:07:23 +0200
+	id 1x8MRi-006BXd-VL; Sun, 20 Sep 2026 20:39:26 +0200
+Date: Sun, 20 Sep 2026 20:39:26 +0200
 From: Andrew Lunn <andrew@lunn.ch>
 To: jan.petrous@oss.nxp.com
 Cc: Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>,
@@ -78,19 +78,17 @@ Cc: Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>,
 	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
 	imx@lists.linux.dev, linux-pci@vger.kernel.org,
 	linux-stm32@st-md-mailman.stormreply.com,
-	Vincent Guittot <vincent.guittot@linaro.org>,
-	Alexandru-Catalin Ionita <alexandru-catalin.ionita@nxp.com>,
-	Bogdan Roman <bogdan-gabriel.roman@nxp.com>
-Subject: Re: [PATCH RFC v3 05/12] net: pcs: Add NXP S32G XPCS driver
-Message-ID: <c2c4dbc4-e6b4-47a0-9852-d116c6d21f89@lunn.ch>
+	Vincent Guittot <vincent.guittot@linaro.org>
+Subject: Re: [PATCH RFC v3 04/12] net: pcs: add NXP SerDes XPCS shared core
+Message-ID: <07c5ed86-755a-4094-b45a-6316d10f4515@lunn.ch>
 References: <20260919-s32g_serdes-v3-0-9d68868c1e89@oss.nxp.com>
- <20260919-s32g_serdes-v3-5-9d68868c1e89@oss.nxp.com>
+ <20260919-s32g_serdes-v3-4-9d68868c1e89@oss.nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260919-s32g_serdes-v3-5-9d68868c1e89@oss.nxp.com>
+In-Reply-To: <20260919-s32g_serdes-v3-4-9d68868c1e89@oss.nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260920_100740_554310_0B7D356B 
-X-CRM114-Status: UNSURE (   5.95  )
+X-CRM114-CacheID: sfid-20260920_113947_796840_1228CA40 
+X-CRM114-Status: UNSURE (   8.26  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -108,45 +106,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> +#define SR_MII_CTRL				0x1f0000
+On Sat, Sep 19, 2026 at 08:54:32AM +0200, Jan Petrous via B4 Relay wrote:
+> From: Clark Wang <xiaoning.wang@nxp.com>
+> 
+> The SerDes subsystems found on NXP S32G and i.MX SoCs integrate a
+> Synopsys DesignWare Ethernet XPCS and an Ethernet PHY (PMA) with an
+> identical register layout. Only the register transport differs: indirect
+> memory mapped access on S32G, Clause 45 MDIO on i.MX.
+> 
+> Add a transport agnostic phylink PCS core which operates on regmaps
+> provided by the platform glue.
 
-This is 0x1f0000 + MII_BMCR
+What is not transport agnostic with the current code.
 
-> +#define   SS13					BIT(13)
+Think carefully about that, before you answer.
 
-#define BMCR_SPEED100           0x2000  /* Select 100Mbps              */
-
-> +#define   AN_ENABLE				BIT(12)
-
-#define BMCR_ANENABLE           0x1000  /* Enable auto negotiation     */
-
-> +#define   RESTART_AN				BIT(9)
-
-#define BMCR_ANRESTART          0x0200  /* Auto negotiation restart    */
-
-> +#define   DUPLEX_MODE				BIT(8)
-
-#define BMCR_FULLDPLX           0x0100  /* Full duplex                 */
-
-> +#define   SS6					BIT(6)
-
-#define BMCR_SPEED1000          0x0040  /* MSB of Speed (1000)         */
-
-> +#define SR_MII_STS				0x1f0001
-
-This is 0x1f0000 + MII_BMSR
-
-> +#define   LINK_STS				BIT(2)
-
-#define BMSR_LSTATUS            0x0004  /* Link status                 */
-
-Please go through all these register definitions and throw out all the
-ones which follow 801.3 and use the values from include/uapi/linux/mii.h
-
-    Andrew
-
----
-pw-bot: cr
+	Andrew
 
 -- 
 linux-phy mailing list
