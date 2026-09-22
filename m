@@ -4,42 +4,42 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B56DC982F1
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Sep 2026 05:34:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 552B0C98305
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Sep 2026 05:35:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MDb2G+DZeFQLoD/AA/mP5z5r//u0H2fkRYgYmtCNCgk=; b=miSOTTWK4Amqb9
-	f6KF89Z4CA8OiWTlrk23syZw5+dIZCOpuXDwfnyxCw1c/kYwRzNdu3TrpAMNTMFdv8QsF7kAEFjWq
-	eATiuCffy2+LQFdgm2bmVRLCE+kZCxpn36uy2iZ7jmEW5muvstuWjhND/5g3ELSmwGfnyxlx9bS54
-	ZtZJnJ2D6ZjLomd4g9C3TVBuZY7DjneHjym1AhBmgZZ0w4pLmXtJrpMXA3kBZvu9SJywnJaJqQsr0
-	BqwHBBFLVyF4p0Vxtne574pNXc+Njszn6h/DJgpnQ3XEXHMlJcqRAjD9s6q8y82i2EgjQWsNsf1Pj
-	9ClUbF8gXFBqy+Dlhmvg==;
+	List-Owner; bh=UAGYA4v/+CQlQIxp4OaqBvpWlVtAFBKiVfAM4RHPiyQ=; b=32Z0jvHuQYPw3F
+	DaYWVftInXAfg1ftBWvqf9aeaz1bu3Fe79o5dmiotvI3xwhXgdB/ASos+HlD2dKrUdTA0FtKefLTM
+	XqN7yhHMT5SdaOxUh2CGtGH4reEH1UY6SpMVwG4fr1VreHl+i4OFM+jR9jRg/Y9Uu8zJ9Ab7nt0Of
+	lWsJ7B9qNI7CFkEsKbg/7qZ5eX7pUWdBs1GXI/6VaDAsceJXsDxV+FSdO6Vl9QOjU77gVx4q9TbFa
+	gCC9nOGFe92T08CvA2hzAzvIxYJKifNF4irfhhrBuSlMpp4WWZZVEmJnHURkQ74/vTh9QAKKNwfMI
+	daXzRAjdYvV13W4aEXiw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8t9J-00000004Fo4-3dj4;
-	Tue, 22 Sep 2026 05:34:37 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1x8tA4-00000004FuJ-05ao;
+	Tue, 22 Sep 2026 05:35:24 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8t9I-00000004Fno-1oux
+	id 1x8tA2-00000004Ftx-3oAl
 	for linux-phy@lists.infradead.org;
-	Tue, 22 Sep 2026 05:34:36 +0000
+	Tue, 22 Sep 2026 05:35:22 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 5378C6022A;
-	Tue, 22 Sep 2026 05:34:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 866421F0089E;
-	Tue, 22 Sep 2026 05:34:34 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 5114444A58;
+	Tue, 22 Sep 2026 05:35:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ACE741F00893;
+	Tue, 22 Sep 2026 05:35:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linuxfoundation.org;
-	s=korg; t=1790055275;
-	bh=yDg9zB+OcRSPGsH8sMFONNQJDzYQOBah6woULOymdfU=;
+	s=korg; t=1790055322;
+	bh=ZYB+hYGCWQEfwSVJqO8SUr9ROMxy5Ef20Zm5SUiNP9Y=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=1ozlkmqEZ5UoZqoZaKYxSNT7yfe/ybD/o1TG/HZHaD2MqlI6cQxlhIk0ozMIlLsBS
-	 r8a8UP3pGxNFCAbY5cLCgQhr3gLBo0nEqZ2qbvlVePPFSXOn+OWDG3rFI8BLx76OTv
-	 sB54JkYQk6I4b1ssxsK3Sc/J+VrgRTNfRIVT/oig=
-Date: Tue, 22 Sep 2026 07:34:31 +0200
+	b=wIsvkYIvlUY9UsSJ/aW+SnrQSjbGvHJ1ZN8sNav7y7N2VK528nQsLqMr+h10YEZrs
+	 NH36ZRYG/n9KpCvh4jXBG9N5lSf0tOC0JKcowQwkyDRU1L7+CzXCttCA5xeFDKPXAK
+	 VgF7FOX7Fi3Q7q37GHcSFqB1wMaHW3X1wlYUYZyg=
+Date: Tue, 22 Sep 2026 07:35:19 +0200
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: Inochi Amaoto <inochiama@gmail.com>
 Cc: Hans de Goede <hansg@kernel.org>, Damien Le Moal <dlemoal@kernel.org>,
@@ -65,14 +65,14 @@ Cc: Hans de Goede <hansg@kernel.org>, Damien Le Moal <dlemoal@kernel.org>,
 	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
 	linux-usb@vger.kernel.org, linux-phy@lists.infradead.org,
 	Yixun Lan <dlan@gentoo.org>, Longbin Li <looong.bin@gmail.com>
-Subject: Re: [RFC PATCH 4/5] usb: dwc3: core: Adapt the return value changed
- for disabled blob
-Message-ID: <2026092202-armband-avatar-0dd7@gregkh>
+Subject: Re: [RFC PATCH 1/5] phy: core: Use EOPNOTSUPP for disabled blob
+ return value
+Message-ID: <2026092256-shading-gratify-835a@gregkh>
 References: <20260922024724.191412-1-inochiama@gmail.com>
- <20260922024724.191412-5-inochiama@gmail.com>
+ <20260922024724.191412-2-inochiama@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260922024724.191412-5-inochiama@gmail.com>
+In-Reply-To: <20260922024724.191412-2-inochiama@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,11 +89,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 22, 2026 at 10:47:19AM +0800, Inochi Amaoto wrote:
-> Check EOPNOTSUPP for disabled helper function as the change in phy core.
+On Tue, Sep 22, 2026 at 10:47:16AM +0800, Inochi Amaoto wrote:
+> Currently, the phy subsystem uses ENOSYS for dummy blob functions,
+> it does not reflect the function state correctly. As kernel already
+> has EOPNOTSUPP for disabled blob function, replace ENOSYS with
+> EOPNOTSUPP for a clear return value.
+> 
+> Signed-off-by: Inochi Amaoto <inochiama@gmail.com>
+> ---
+>  include/linux/phy/phy.h | 52 ++++++++++++++++++++---------------------
+>  1 file changed, 26 insertions(+), 26 deletions(-)
 
-That says what, but not why.  And what "as the change" specifically?  Be
-verbose please.
+Based on the other patches in this series, this patch now breaks the
+users, right?  Shouldn't this all happen at once?
 
 thanks,
 
