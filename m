@@ -4,109 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BBC4AC982F1
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Sep 2026 09:32:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8457C982F1
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Sep 2026 09:33:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xe9cQFr6t2twZc99DWRKC3vHQtbwaGwsI/kGzWgyGjw=; b=zJ2K3CgvLwmfAS
-	oSznZe9/yYhL7Q4j7kt+d/YlBEDcc5KvgC7nPc4Wss0KtzJXByiQtaHUhVk77zRoZaooGcuHjU8N+
-	rKdkoy2WUPzDX1VLt+1D0Eg4m7OexiaPw3D/Hd+UvKUKcecGCaKc+xSXPfGfNnOAfJxYqD8PAB95W
-	gqhaZXC7p1pIB0ASnO73I8bs98YtYq7f+fO+MFreS1LPQpanXLBXFHv7e94C7Y1yvO4ZtO17bmB2l
-	zR0K6uvVM8jNECL4p2xkyRI8YcL4/9XZ4IqK9yQbFRk6PbeDl4iWCumxCXNk1Na8o6sRW0+d5i8fs
-	/8VRrh06Rvfw+55XIEpw==;
+	List-Owner; bh=yHsum5eY+CwZmQ0UyELPXdq2KsUeGzXlEDGU8lCn8js=; b=agDJHNawzbUKfL
+	KeCNi5Tz5jSfw5dLYo6yvZerJGibcYC7Rtv2kFN46caROUVelqkiPLDflxGRIsMuwE/5IGVoT/dnm
+	l+YIyYy6NugolW72ZxPvPdZ76dVegxHPXrF83hvpqW35Lasea1LGVy+3uZa8DXJEmJbhQG876lwbG
+	hsOOAcjCeqx1NOi6jofywFOOuy9W8emSD5Jf84XTL/w9sdmDgn4Dbb5ksUHy0T7U4UbZrM8nGRtCO
+	PqOPS+tGwBgtTNEPjK0pnXerLKBZNDNkL3ZaISOn/7vBJmHEWTBPRoA0CPveUSI1ya/z6e3SNmuRv
+	YQWC20XE2gcXSRuOLQzQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8wrv-00000004vkB-0tto;
-	Tue, 22 Sep 2026 09:32:55 +0000
-Received: from mail-ej2-x10.google.com ([2a00:1450:4864:34::10])
+	id 1x8wsa-00000004vt2-2VKb;
+	Tue, 22 Sep 2026 09:33:36 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8wrs-00000004vjX-0l8D
+	id 1x8wsZ-00000004vsq-1AoT
 	for linux-phy@lists.infradead.org;
-	Tue, 22 Sep 2026 09:32:53 +0000
-Received: by mail-ej2-x10.google.com with SMTP id a640c23a62f3a-c254f6c7a4aso476940966b.0
-        for <linux-phy@lists.infradead.org>; Tue, 22 Sep 2026 02:32:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1790069570; x=1790674370; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=3Ab95yjg47UXgu4IRFT2olDtzGqxsEpvIhJOJgfomKI=;
-        b=xxlLp600sNVP+pDrT5H2WSXdqslsTMzDZuP/63l3SG0RGuEIGyKerHNBOOe9tquCG9
-         Y7p+USMTZ/CR2QMbvtTcL/1aBw3GEGt8MIHoCYhydRa+NOC3rfuC03NxBLgiQZV+kSuZ
-         e7tEBkK/O9inPwE6C5CjJPZh9Sfe46Di9dmaglMEGUMzbHFjaQ2RbUW8eHWx0SGa3Qph
-         q6TyELitfDKs8USyG5e4ASYjpNJqaKEC35oYrT6u6j+MFJ4T8j5LZ5YHEAFJd3OemOFr
-         zcmAkXo42eEHJho27xb7GgWOCvLHPpJ+3KGwHTEJiq5XrrHWvehVLuMgjMb1j5RoX5zT
-         JM5w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1790069570; x=1790674370;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=3Ab95yjg47UXgu4IRFT2olDtzGqxsEpvIhJOJgfomKI=;
-        b=weu6RKdviKvQcLOUFUJ0HLhKwCtrRTUknMSjKxDt2b3mrzn5VWS9PA+i5MAWTY1cTG
-         rONtpzp0WZdp1B8ihYiRnYVwzH8GR5SJqmxhdMOeEsLVZrtwn233F7vtWLzLf/sf6GY6
-         PpFcxrhAOac3okGO7XL4TQ9vFQqJ8xN9a/2g2ngdhOA2tocRGtf491zcSvRSqXFf4fdA
-         +VcvyEnyaGYdv4xt40j8tAPbFoTm3lmgkjzqSF7LHsMkjVlPPcWwM/dAGqQyhpklT0kZ
-         ry/KPSxaDZYy5mBYhRZbbA/CEHX0kf5ljFrhHodBOGUepya8sYfROpFudSU8co0NkBd0
-         +XyA==
-X-Forwarded-Encrypted: i=1; AKwUvBzx63BsC24xA5pgPdMhhCLPL7v/ctdwItUBQEBAizbbB2k53SqQ+tOsKFaE9hGpigC0vyPCAI4zzBM=@lists.infradead.org
-X-Gm-Message-State: AFuF++kK18xYSYB35uhwwrJIz2s/n/g9GYbVEZ2Cm4as1NYnC9aaOw1I
-	7Ore+DpkoHJdQjlIIKdFDd0H8nDZ0sCvFH4ABYxn6a+CdG0S4vvubRpqoUYakMeeIHw=
-X-Gm-Gg: AYBFou3bxqrZXVTTUbmVQVh4z9e7PEyedMDa5K69i2DN80xDZgyOv0w36NPXqv2YHGD
-	JXto/qQMYbdv8/QVacJlhjCItknjzPi3RoM7uNnh0aUfF+JRwr0AZFqAiNqXIACcMzcphA1vK80
-	GMAQqkH19T6bWG6vVjvfFjlkuAdZggYNJ0VpUpzRT5wqJNslr3zk4zADZo0yv5RXaMqmlI04roB
-	FLsOS7ZZEQ2QBBmzAjgekmxP8IeUmoR8Kr29wdFtB2mzN7TSYyie7e6+w4lTDsxfXdp7Tx+zbt9
-	P5hGKXTsbt0+RFB/5O4JrPZooiRv1/xEoRzrLM/zljz4ARHCQfvRP+YgiRTXgezZEwId9B4F0Gc
-	YqF5nTpxObjW1T0ZK0T+2VHKkWc/R5547BnAh5ByxwKLNYCa8A2xBb1Nys6/hk67feun9T8Zhd4
-	w6JP7r+DNoJ6QbNgNyYYjIry1ixV5c6RtvGv6CUme8UZoE6Uwdll2gfz75oVJUYznUS51K6GusS
-	WKK78qcAAE=
-X-Received: by 2002:a17:907:d11:b0:c25:541:fd3a with SMTP id a640c23a62f3a-c2a1578a505mr1126569066b.7.1790069569625;
-        Tue, 22 Sep 2026 02:32:49 -0700 (PDT)
-Received: from [192.168.0.167] ([109.77.71.182])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c2a9c5ec614sm54010366b.45.2026.09.22.02.32.48
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 22 Sep 2026 02:32:49 -0700 (PDT)
-Message-ID: <61ab6356-874d-4a05-87dd-4900d826f02d@linaro.org>
-Date: Tue, 22 Sep 2026 10:32:47 +0100
+	Tue, 22 Sep 2026 09:33:35 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id C3363405FB;
+	Tue, 22 Sep 2026 09:33:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 443711F00893;
+	Tue, 22 Sep 2026 09:33:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1790069614;
+	bh=LJxkyRUAo60XpYXubHX6Uk1I701DlaHNZCXFAFOsI0c=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=Z8JaTs8Ensplmvuw+aJhTy3BidoennUhosQqf2KjWQMed8VV5Utp9JgWhCTOUZPR3
+	 qkEUqoVn5uRGIhvzCOvKA5o7ihAg923jwu0EFcc2PwodhHcPJ3rTsyK9JZtIObA2UI
+	 nEDd1JvfqB7uwQ3LHL29NRa5P99NZx+sx52S9eErGHKhxq2ii6/smayAfKlK53kXjh
+	 KVz0pYNoErF44cJd31fGG0cEs4/lZHuTa6yuM+537gPTHrQqzKbwDRFo5dBIjSdiYE
+	 duuvj29NN51Ej0lQ+kDJuafLvIYP2LIQIkeY9ZFGkX44GneAR8CQJWLLiSNQuZOn5T
+	 GnmkmZCkS2znA==
+Date: Tue, 22 Sep 2026 10:33:27 +0100
+From: Lee Jones <lee@kernel.org>
+To: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
+Cc: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+	Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+	Loic Poulain <loic.poulain@oss.qualcomm.com>,
+	Mauro Carvalho Chehab <mchehab@kernel.org>,
+	Guru Das Srinagesh <linux@gurudas.dev>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Mark Brown <broonie@kernel.org>, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	mfd@lists.linux.dev, Suresh Vankadara <svankada@qti.qualcomm.com>,
+	Vikram Sharma <vikram.sharma@oss.qualcomm.com>,
+	Jishnu Prakash <jishnu.prakash@oss.qualcomm.com>,
+	Dhruvin Rajpura <drajpura@qti.qualcomm.com>,
+	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Subject: Re: [PATCH v2 5/6] mfd: qcom-pm8008: Add support for PM8010 PMIC
+Message-ID: <20260922093327.GA2308615@google.com>
+References: <20260907-glymur_camss-v2-0-75f7982dc983@oss.qualcomm.com>
+ <20260907-glymur_camss-v2-5-75f7982dc983@oss.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v20 5/6] media: qcom: camss: Add support for PHY API
- devices
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
- Bjorn Andersson <andersson@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Robert Foss <rfoss@kernel.org>,
- Todor Tomov <todor.too@gmail.com>, Mauro Carvalho Chehab
- <mchehab@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>,
- Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
- Bryan O'Donoghue <bod@kernel.org>,
- Loic Poulain <loic.poulain@oss.qualcomm.com>, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Felipe Balbi <balbi@ti.com>,
- Manivannan Sadhasivam <mani@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-media@vger.kernel.org, linux-phy@lists.infradead.org,
- Krzysztof Kozlowski <krzk@kernel.org>,
- Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>,
- Oleg Keri <okerixx@gmail.com>
-References: <20260918-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v20-0-dc244e124e71@linaro.org>
- <20260918-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v20-5-dc244e124e71@linaro.org>
- <eefde985-c807-4905-a33f-616a1898ad72@oss.qualcomm.com>
-From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-Content-Language: en-GB
-In-Reply-To: <eefde985-c807-4905-a33f-616a1898ad72@oss.qualcomm.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260922_023252_255788_B9FD2E48 
-X-CRM114-Status: GOOD (  12.30  )
+Content-Disposition: inline
+In-Reply-To: <20260907-glymur_camss-v2-5-75f7982dc983@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,33 +83,268 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22/09/2026 10:15, Konrad Dybcio wrote:
-> On 9/18/26 3:56 PM, Bryan O'Donoghue wrote:
->> Add the ability to use a PHY pointer which interacts with the standard PHY
->> API.
->>
->> In the first instance the code will try to use the new PHY interface. If no
->> PHYs are present in the DT then the legacy method will be attempted.
->>
->> Acked-by: Manivannan Sadhasivam<manivannan.sadhasivam@oss.qualcomm.com>
->> Tested-by: Oleg Keri<okerixx@gmail.com> # Lenovo Yoga Slim 7x Gen 11 (Glymur)
->> Signed-off-by: Bryan O'Donoghue<bryan.odonoghue@linaro.org>
->> ---
-> This and the following patch conflict upon applying after:
-> 
-> aedd77ea8168 ("media: qcom: camss: use fwnode_graph_for_each_endpoint_scoped() to simplify code")
-> 
-> Konrad
+On Mon, 07 Sep 2026, Nihal Kumar Gupta wrote:
 
-Thanks for the heads up
+> From: Jishnu Prakash <jishnu.prakash@oss.qualcomm.com>
+> 
+> The PM8010 is a variant of the PM8008 PMIC with a slightly different
+> IRQ layout and MFD cells. Introduce per-variant match data (IRQ chip
+> descriptor and MFD cells) selected via the new "qcom,pm8010-i2c"
+> compatible string, and support probing without an interrupt line by
+> falling back to a reduced set of MFD cells when the client has no IRQ
+> assigned.
+> 
+> Signed-off-by: Jishnu Prakash <jishnu.prakash@oss.qualcomm.com>
+> Signed-off-by: Dhruvin Rajpura <drajpura@qti.qualcomm.com>
+> Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+> Signed-off-by: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
 
----
-bod
+Who are all of these people?
+
+Did they all work on this?  If so, where are their Co-developed-bys?
+
+> ---
+>  drivers/mfd/qcom-pm8008.c | 140 ++++++++++++++++++++++++++++++++++++----------
+>  1 file changed, 112 insertions(+), 28 deletions(-)
+> 
+> diff --git a/drivers/mfd/qcom-pm8008.c b/drivers/mfd/qcom-pm8008.c
+> index 60204cc9a2dc60cc1fe1b64030f5d803100e7874..28532cef7908ef3409a3dfc0779aae3b1a3885b9 100644
+> --- a/drivers/mfd/qcom-pm8008.c
+> +++ b/drivers/mfd/qcom-pm8008.c
+> @@ -34,6 +34,7 @@ enum {
+>  	PM8008_GPIO1,
+>  	PM8008_GPIO2,
+>  	PM8008_NUM_PERIPHS,
+> +	PM8010_NUM_PERIPHS = 2,
+>  };
+>  
+>  #define PM8008_PERIPH_0_BASE	0x900
+> @@ -55,6 +56,10 @@ enum {
+>  #define PM8008_IRQ_GPIO1	6
+>  #define PM8008_IRQ_GPIO2	7
+>  
+> +#define PM8010_IRQ_MISC_MBG_FAULT	0
+> +/* 1-3 are unused */
+
+This is not required.
+
+> +#define PM8010_IRQ_MISC_LDO_OCP	4
+> +
+>  enum {
+>  	SET_TYPE_INDEX,
+>  	POLARITY_HI_INDEX,
+> @@ -88,6 +93,12 @@ static const struct regmap_irq pm8008_irqs[] = {
+>  	_IRQ(PM8008_IRQ_GPIO2,	      PM8008_GPIO2,	BIT(0), IRQ_TYPE_SENSE_MASK),
+>  };
+>  
+> +static const struct regmap_irq pm8010_irqs[] = {
+> +	_IRQ(PM8010_IRQ_MISC_MBG_FAULT, PM8008_MISC, BIT(0), IRQ_TYPE_EDGE_RISING),
+> +	_IRQ(PM8010_IRQ_MISC_LDO_OCP, PM8008_MISC, BIT(4), IRQ_TYPE_EDGE_RISING),
+> +	_IRQ(PM8008_IRQ_TEMP_ALARM, PM8008_TEMP_ALARM, BIT(0), IRQ_TYPE_SENSE_MASK),
+> +};
+> +
+>  static const unsigned int pm8008_periph_base[] = {
+>  	PM8008_PERIPH_0_BASE,
+>  	PM8008_PERIPH_1_BASE,
+> @@ -158,6 +169,25 @@ static const struct regmap_irq_chip pm8008_irq_chip = {
+>  	.get_irq_reg		= pm8008_get_irq_reg,
+>  };
+>  
+> +static const struct regmap_irq_chip pm8010_irq_chip = {
+> +	.name			= "pm8010",
+> +	.main_status		= I2C_INTR_STATUS_BASE,
+> +	.num_main_regs		= 1,
+> +	.irqs			= pm8010_irqs,
+> +	.num_irqs		= ARRAY_SIZE(pm8010_irqs),
+> +	.num_regs		= PM8010_NUM_PERIPHS,
+> +	.status_base		= INT_LATCHED_STS_OFFSET,
+> +	.mask_base		= INT_EN_CLR_OFFSET,
+> +	.unmask_base		= INT_EN_SET_OFFSET,
+> +	.mask_unmask_non_inverted = true,
+> +	.ack_base		= INT_LATCHED_CLR_OFFSET,
+> +	.config_base		= pm8008_config_regs,
+> +	.num_config_bases	= ARRAY_SIZE(pm8008_config_regs),
+> +	.num_config_regs	= PM8010_NUM_PERIPHS,
+> +	.set_type_config	= pm8008_set_type_config,
+> +	.get_irq_reg		= pm8008_get_irq_reg,
+> +};
+> +
+>  static const struct regmap_config qcom_mfd_regmap_cfg = {
+>  	.name		= "primary",
+>  	.reg_bits	= 16,
+> @@ -179,10 +209,32 @@ static const struct resource pm8008_temp_res[] = {
+>  
+>  static const struct mfd_cell pm8008_cells[] = {
+>  	MFD_CELL_NAME("pm8008-regulator"),
+> -	MFD_CELL_RES("qpnp-temp-alarm", pm8008_temp_res),
+> +	MFD_CELL_RES("spmi-temp-alarm", pm8008_temp_res),
+
+Why is this cell being renamed from 'qpnp-temp-alarm' to 'spmi-temp-alarm'?
+There is no mention of this change in the commit log, and if intentional, it
+should be submitted in its own separate patch.
+
+>  	MFD_CELL_NAME("pm8008-gpio"),
+>  };
+>  
+> +static const struct mfd_cell pm8010_cells[] = {
+> +	MFD_CELL_NAME("pm8010-regulator"),
+> +	MFD_CELL_RES("spmi-temp-alarm", pm8008_temp_res),
+> +	MFD_CELL_NAME("pm8008-gpio"),
+> +};
+> +
+> +static const struct mfd_cell pm8008_no_irq_cells[] = {
+> +	MFD_CELL_NAME("pm8008-regulator"),
+> +};
+> +
+> +static const struct mfd_cell pm8010_no_irq_cells[] = {
+> +	MFD_CELL_NAME("pm8010-regulator"),
+> +};
+> +
+> +struct pm8008_match_data {
+> +	const struct regmap_irq_chip *irq_chip_desc;
+> +	const struct mfd_cell *mfd_cells;
+> +	const struct mfd_cell *no_irq_mfd_cells;
+> +	int num_mfd_cells;
+> +	int no_irq_num_mfd_cells;
+> +};
+> +
+>  static void devm_irq_domain_fwnode_release(void *data)
+>  {
+>  	struct fwnode_handle *fwnode = data;
+> @@ -192,15 +244,22 @@ static void devm_irq_domain_fwnode_release(void *data)
+>  
+>  static int pm8008_probe(struct i2c_client *client)
+>  {
+> -	struct regmap_irq_chip_data *irq_data;
+> +	struct regmap_irq_chip_data *irq_data = NULL;
+> +	const struct pm8008_match_data *data;
+>  	struct device *dev = &client->dev;
+>  	struct regmap *regmap, *regmap2;
+>  	struct fwnode_handle *fwnode;
+> +	const struct mfd_cell *cells;
+>  	struct i2c_client *dummy;
+>  	struct gpio_desc *reset;
+> +	int num_cells;
+>  	char *name;
+>  	int ret;
+>  
+> +	data = device_get_match_data(dev);
+> +	if (!data)
+> +		return dev_err_probe(dev, -ENODATA, "Missing driver match data\n");
+> +
+>  	dummy = devm_i2c_new_dummy_device(dev, client->adapter, client->addr + 1);
+>  	if (IS_ERR(dummy)) {
+>  		ret = PTR_ERR(dummy);
+> @@ -231,37 +290,62 @@ static int pm8008_probe(struct i2c_client *client)
+>  	 */
+>  	usleep_range(1000, 2000);
+>  
+> -	name = devm_kasprintf(dev, GFP_KERNEL, "%pOF-internal", dev->of_node);
+> -	if (!name)
+> -		return -ENOMEM;
+> -
+> -	name = strreplace(name, '/', ':');
+> -
+> -	fwnode = irq_domain_alloc_named_fwnode(name);
+> -	if (!fwnode)
+> -		return -ENOMEM;
+> -
+> -	ret = devm_add_action_or_reset(dev, devm_irq_domain_fwnode_release, fwnode);
+> -	if (ret)
+> -		return ret;
+> -
+> -	ret = devm_regmap_add_irq_chip_fwnode(dev, fwnode, regmap, client->irq,
+> -				IRQF_SHARED, 0, &pm8008_irq_chip, &irq_data);
+> -	if (ret) {
+> -		dev_err(dev, "failed to add IRQ chip: %d\n", ret);
+> -		return ret;
+> +	if (client->irq) {
+
+Turn this massive if clause into a function.
+
+> +		name = devm_kasprintf(dev, GFP_KERNEL, "%pOF-internal", dev->of_node);
+> +		if (!name)
+> +			return -ENOMEM;
+> +
+> +		name = strreplace(name, '/', ':');
+> +
+> +		fwnode = irq_domain_alloc_named_fwnode(name);
+> +		if (!fwnode)
+> +			return -ENOMEM;
+> +
+> +		ret = devm_add_action_or_reset(dev, devm_irq_domain_fwnode_release, fwnode);
+> +		if (ret)
+> +			return ret;
+> +
+> +		ret = devm_regmap_add_irq_chip_fwnode(dev, fwnode, regmap, client->irq,
+> +						       IRQF_SHARED, 0, data->irq_chip_desc,
+> +						       &irq_data);
+> +		if (ret) {
+> +			dev_err(dev, "failed to add IRQ chip: %d\n", ret);
+> +			return ret;
+> +		}
+> +
+> +		/* Needed by GPIO driver. */
+> +		dev_set_drvdata(dev, regmap_irq_get_domain(irq_data));
+> +		cells = data->mfd_cells;
+> +		num_cells = data->num_mfd_cells;
+> +	} else {
+> +		cells = data->no_irq_mfd_cells;
+> +		num_cells = data->no_irq_num_mfd_cells;
+>  	}
+>  
+> -	/* Needed by GPIO driver. */
+> -	dev_set_drvdata(dev, regmap_irq_get_domain(irq_data));
+> -
+> -	return devm_mfd_add_devices(dev, PLATFORM_DEVID_AUTO, pm8008_cells,
+> -				ARRAY_SIZE(pm8008_cells), NULL, 0,
+> -				regmap_irq_get_domain(irq_data));
+> +	return devm_mfd_add_devices(dev, PLATFORM_DEVID_AUTO, cells,
+> +				    num_cells, NULL, 0,
+> +				    regmap_irq_get_domain(irq_data));
+>  }
+>  
+> +static const struct pm8008_match_data pm8008_data = {
+> +	.irq_chip_desc = &pm8008_irq_chip,
+> +	.mfd_cells = pm8008_cells,
+> +	.no_irq_mfd_cells = pm8008_no_irq_cells,
+> +	.num_mfd_cells = ARRAY_SIZE(pm8008_cells),
+> +	.no_irq_num_mfd_cells = ARRAY_SIZE(pm8008_no_irq_cells),
+> +};
+> +
+> +static const struct pm8008_match_data pm8010_data = {
+> +	.irq_chip_desc = &pm8010_irq_chip,
+> +	.mfd_cells = pm8010_cells,
+> +	.no_irq_mfd_cells = pm8010_no_irq_cells,
+> +	.num_mfd_cells = ARRAY_SIZE(pm8010_cells),
+> +	.no_irq_num_mfd_cells = ARRAY_SIZE(pm8010_no_irq_cells),
+> +};
+> +
+>  static const struct of_device_id pm8008_match[] = {
+> -	{ .compatible = "qcom,pm8008", },
+> +	{ .compatible = "qcom,pm8008", .data = &pm8008_data },
+> +	{ .compatible = "qcom,pm8010-i2c", .data = &pm8010_data },
+
+We do not allow data from one registration mechanism (MFD) to be piped through
+another (OF).  Please pass through an enum identifier instead and select the
+cells and IRQ chip in a 'switch()' statement?  Also, why does this compatible
+carry an '-i2c' suffix when the existing device is just "qcom,pm8008"?
+
+>  	{ },
+>  };
+>  MODULE_DEVICE_TABLE(of, pm8008_match);
+> 
+> -- 
+> 2.34.1
+> 
+
+-- 
+Lee Jones
 
 -- 
 linux-phy mailing list
