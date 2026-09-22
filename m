@@ -4,74 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A7D0C982FF
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Sep 2026 10:16:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 319C1C98302
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Sep 2026 12:14:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LSvS+bMISZAT8U7GhsxpQ6QQMJBN8PjZTnsbZmWbYxU=; b=I1QubHzJurtOte
-	hpWt0VHFVahdUsZ4ZXRWsBLtFQnacwjLuXkKGGaqXmC21ArMP0khobrGM6YWdrAUZMVFujEZYbeVV
-	BJQS1dh7ZSHJgPGk77SIGr1KMyGvCjX5Ozy0zXo7TZlCf917ZqUeZ4GE5d4cvxw/zGW+1XFG2ct76
-	qP2Keb4jZbV0gknKluJZVxIDeTS3LpNCX84o8zqCkNBCNlKPl7hxsqxA9QClxWMv8sREaTyKeT+uC
-	Lrjzokd2Auz17EFMMWtKmKCcKB4rWjhlY2I7cEgz+vaOne/c8uiTZvBV0rFb2FGFM0LX0cppp40Vu
-	Iekma8lAnDl1fiyITqxQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=seCVj2DOs8COghoY0MKiT9CSJyt5pjIW2QZxJ5wB9BE=; b=awJzNOsAPq4wUMIZotIK6ay+yt
+	5WBUfh0mMgT7HKVBmycBt0tnTk6rydOw3fkqyp4lJGYGIU3BljHv5ain52hJ65ol2vaKT1PWPPj/4
+	exy8w9AHQv3JY7oTHgn41dS1Bl92UyW1GddROErQHaZKyAON0qpy0mMMAVqhisqOV7svt5iKaPMpi
+	Rs7M4IAd4u3o4Ndy/akuseuDp1+6CMszuMhUVrUKmxN/cJ5UBdcNMLFEQEE5iY+JRM4rT1plDxrw/
+	dMBvkPZ5drrHXoWi1TGTR3GhR8cSrUmm0Kw3yTc+XaOoejQa3K+N6hIzGXMfZ7kyoNCgf4RYybnDJ
+	Ogp2/0zQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8xXb-000000051qO-3apA;
-	Tue, 22 Sep 2026 10:15:59 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1x8zO0-00000005H90-2lwP;
+	Tue, 22 Sep 2026 12:14:12 +0000
+Received: from mail-wm2-x10.google.com ([2a00:1450:4864:31::10])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8xXa-000000051q3-18TQ
+	id 1x8zNy-00000005H8V-3lWE
 	for linux-phy@lists.infradead.org;
-	Tue, 22 Sep 2026 10:15:58 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 5B73C60200;
-	Tue, 22 Sep 2026 10:15:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7BCB41F000FF;
-	Tue, 22 Sep 2026 10:15:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790072156;
-	bh=RIYi2p8vmFv/xYihUANKk6S+FDUFfc3Ergx1l2zSeD0=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=TFoYP+4wQrKRDZYY5uBI3kCDkIz/i1BEQedpVpd+pR9otjdqKA9Nm9cXZ60jXoX5E
-	 aGUKDrfv5e06Hk2HvWl4i8/mvXCl0YCPeIm2M6crGk788EBpPzU5siu7ntHo3yKavu
-	 mYaj7RXVzuXU8OpwOeRyL5z1x5sybuXNgu1tCN29VkCyiekpLKcFPAXRI4kxA2g12q
-	 ZWkFztuW6mnuZURgL1DgRUa+w5TCnk1FETyip0S8vm9t7y/D2a8gu2vzDcs8fy/jRB
-	 4Bw7pa0Wgx7f67TmfWhb51hvMVUmPaeCNqsZKCIQWd4RgSBB9GZSR1olN5BkuwZ0/N
-	 apPSRDMeWA16w==
-Date: Tue, 22 Sep 2026 11:15:49 +0100
-From: Lee Jones <lee@kernel.org>
-To: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
-Cc: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
-	Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
-	Loic Poulain <loic.poulain@oss.qualcomm.com>,
-	Mauro Carvalho Chehab <mchehab@kernel.org>,
-	Guru Das Srinagesh <linux@gurudas.dev>,
-	Liam Girdwood <lgirdwood@gmail.com>,
-	Mark Brown <broonie@kernel.org>, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	mfd@lists.linux.dev, Suresh Vankadara <svankada@qti.qualcomm.com>,
-	Vikram Sharma <vikram.sharma@oss.qualcomm.com>,
-	Jishnu Prakash <jishnu.prakash@oss.qualcomm.com>,
-	Dhruvin Rajpura <drajpura@qti.qualcomm.com>,
-	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Subject: Re: [PATCH v2 5/6] mfd: qcom-pm8008: Add support for PM8010 PMIC
-Message-ID: <20260922101549.GC2730113@google.com>
-References: <20260907-glymur_camss-v2-0-75f7982dc983@oss.qualcomm.com>
- <20260907-glymur_camss-v2-5-75f7982dc983@oss.qualcomm.com>
+	Tue, 22 Sep 2026 12:14:12 +0000
+Received: by mail-wm2-x10.google.com with SMTP id 5b1f17b1804b1-49b912e4ad9so23838875e9.2
+        for <linux-phy@lists.infradead.org>; Tue, 22 Sep 2026 05:14:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1790079248; x=1790684048; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:organization
+         :autocrypt:content-language:references:cc:to:subject:reply-to:from
+         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=439w0jXQDSVQ/YyUnnVLCmsM8bZ02DVBQwb7bD5E5+c=;
+        b=thUpb3SmR5863yNnk8bknR+eXM3wUQZUSVM0lcZliG2B2Wx3MaX3nfNLBQQVDJQxEG
+         9zDRJSE2VEjPsPPu/V/PQijjhAZPivyUKPW5ZjzYuvy4R/ZpnrmREvzfa/6bP8MFZL11
+         k6M9LROxfQV/xevzFhUAFLen6IHxK7b2Ctu1LGh54o3HqamPslAHjOey7YcvhrXOJMXH
+         QN7SMTZl1PTgWQEEyNWpP3gXvOiP2ozG6EqUz0LBFrGBE+VaR2YDRsqd6KeT2SXcJsBQ
+         E/2BzbME3TbljSyjOMonYey8E0YVhTDmlQH8wLo/+QzmB4GyE0AAdN286tgPI859KGPZ
+         xFiA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1790079248; x=1790684048;
+        h=content-transfer-encoding:content-type:in-reply-to:organization
+         :autocrypt:content-language:references:cc:to:subject:reply-to:from
+         :user-agent:mime-version:date:message-id:x-gm-gg:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=439w0jXQDSVQ/YyUnnVLCmsM8bZ02DVBQwb7bD5E5+c=;
+        b=1rJJP4rxGVbLm077FJf8eT/iGJReLEKffdDeqp6GUWpFNi1Iy2UbQDL95aUgOAOnpy
+         Tgf/7/+WjC3mH9uqHUdpK+oi2WgiqoDyvQrzjcXfuNrf8HBLNOrVa8QTkH3gRvga5tXJ
+         MDIKH5q3Kg/raFM1xEhGb0twXJBQceHLIOaV9qaHxd9r7z9eLn9NuoCkqSWhgvh/a9Bm
+         MxJ8A4sqMDye8eqowJDfVHBuOHm1Zxb1X7aeIzq9RLd9oNfa9tYutbjiF3GVDm0ZDHLY
+         QpmGq47QZMwUJuynN+jT6TlB1GPIekDlUtLfOGNapP1hdjtorx9FHUC1HKamzcegHdKq
+         aRZQ==
+X-Forwarded-Encrypted: i=1; AKwUvBzEA9ypdUkeMOqi1p14W764wQFpHjlz4LCuZhVW9LmxZ/w5HyzMqRkTGM7Ixxy4ulQKjoZJFiWYfP4=@lists.infradead.org
+X-Gm-Message-State: AFuF++lnLBrwDku5d6eT8baDzY5nRz9kCDktHSBvz/wSdbm/KWBLluAd
+	gIYoLbGql3exH5DFrarjeVht+jI4my0dHxrydvoEGni1sNY+ArcmZHArA5c5PMytK5s=
+X-Gm-Gg: AYBFou0lLUpl74yxhROCQYuYzv+0wpSb7pQwC+WMITPbGQ+cWQj0v/h3m+0c6SPeEHC
+	0afkwzZwoRb33+j+2FlIZTczMe37Ns8hCchk084lOSjDNgu5oQmI1wYE4DStDbzWxslXY0CniXx
+	CLVEOX62fhPKaKNYA5GjiQ2ABVFXR7tdIiKjhociob2h25M+NB1j2UbHWf0POyo23B/vaFo3hlS
+	nxg/JOwpwUL41FHunAPKr/vXnOv22adf/S2nXOs9ClzS3uI8eUnuLryxHK2NdRd0h/WEUxdo79V
+	LU3dUCNuRPuK3/sglWJDBtCNxmKVSeGiI5XzD5Lt6qXyirFiHqVqaExRfhUAyHpVYgGTzH7eBC0
+	GdQ2WSbH2NJiUo6Gsy1HmA58gkXqMl3DNPwTb9oH9TN3HM2eOGpAJjWMIU/tHXgv45wAr8iJ2//
+	yOd7sDUQEJaxyomqhCOrQPPiWghY4U9J4MlCAFX4QyFNUJA+waXOvw1I8quUML6Ny6fJvEahfSr
+	EFvHifWcU5OppPQrxUkdU1Y+CX9t+vpOO12rew0ogdqWs4JrW43Y+pg6bS5VR6h
+X-Received: by 2002:a05:600c:354e:b0:49c:fc6e:a3d8 with SMTP id 5b1f17b1804b1-49fc584f854mr189068335e9.23.1790079247126;
+        Tue, 22 Sep 2026 05:14:07 -0700 (PDT)
+Received: from ?IPV6:2a01:e0a:106d:1080:ddd0:8cc7:9887:fa82? ([2a01:e0a:106d:1080:ddd0:8cc7:9887:fa82])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-49fd8cd5214sm80191765e9.9.2026.09.22.05.14.06
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 22 Sep 2026 05:14:06 -0700 (PDT)
+Message-ID: <0a9bfc33-057d-4ce0-9b00-b1fafcf0da03@linaro.org>
+Date: Tue, 22 Sep 2026 14:14:05 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260907-glymur_camss-v2-5-75f7982dc983@oss.qualcomm.com>
+User-Agent: Mozilla Thunderbird
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH v20 2/6] phy: core: Add phy_get_by_of_node()
+To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Robert Foss <rfoss@kernel.org>,
+ Todor Tomov <todor.too@gmail.com>, Mauro Carvalho Chehab
+ <mchehab@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>,
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+ Bryan O'Donoghue <bod@kernel.org>,
+ Loic Poulain <loic.poulain@oss.qualcomm.com>, Vinod Koul <vkoul@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Felipe Balbi <balbi@ti.com>,
+ Manivannan Sadhasivam <mani@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-media@vger.kernel.org, linux-phy@lists.infradead.org,
+ Krzysztof Kozlowski <krzk@kernel.org>
+References: <20260918-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v20-0-dc244e124e71@linaro.org>
+ <20260918-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v20-2-dc244e124e71@linaro.org>
+Content-Language: en-US, fr
+Autocrypt: addr=neil.armstrong@linaro.org; keydata=
+ xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
+ OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
+ Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
+ YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
+ GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
+ UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
+ GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
+ yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
+ QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
+ SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
+ 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
+ Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
+ oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
+ M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
+ 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
+ KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
+ 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
+ QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
+Organization: Linaro
+In-Reply-To: <20260918-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v20-2-dc244e124e71@linaro.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260922_051410_997403_CEA096E3 
+X-CRM114-Status: GOOD (  22.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,251 +139,168 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 07 Sep 2026, Nihal Kumar Gupta wrote:
-
-> From: Jishnu Prakash <jishnu.prakash@oss.qualcomm.com>
+On 9/18/26 15:56, Bryan O'Donoghue wrote:
+> Add new function phy_get_by_of_node() allowing lookup of a phy by
+> device_node. Separates existing logic in _of_phy_get() into an internal
+> helper method _of_phy_get_with_args() to allow for reuse in new method.
 > 
-> The PM8010 is a variant of the PM8008 PMIC with a slightly different
-> IRQ layout and MFD cells. Introduce per-variant match data (IRQ chip
-> descriptor and MFD cells) selected via the new "qcom,pm8010-i2c"
-> compatible string, and support probing without an interrupt line by
-> falling back to a reduced set of MFD cells when the client has no IRQ
-> assigned.
-> 
-> Signed-off-by: Jishnu Prakash <jishnu.prakash@oss.qualcomm.com>
-> Signed-off-by: Dhruvin Rajpura <drajpura@qti.qualcomm.com>
-> Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-> Signed-off-by: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
-
-I think you two need to chat:
-
-https://lore.kernel.org/r/20260908130745.2545-3-okerixx@gmail.com
-
+> Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
 > ---
->  drivers/mfd/qcom-pm8008.c | 140 ++++++++++++++++++++++++++++++++++++----------
->  1 file changed, 112 insertions(+), 28 deletions(-)
+>   drivers/phy/phy-core.c  | 83 ++++++++++++++++++++++++++++++++++++++-----------
+>   include/linux/phy/phy.h |  6 ++++
+>   2 files changed, 71 insertions(+), 18 deletions(-)
 > 
-> diff --git a/drivers/mfd/qcom-pm8008.c b/drivers/mfd/qcom-pm8008.c
-> index 60204cc9a2dc60cc1fe1b64030f5d803100e7874..28532cef7908ef3409a3dfc0779aae3b1a3885b9 100644
-> --- a/drivers/mfd/qcom-pm8008.c
-> +++ b/drivers/mfd/qcom-pm8008.c
-> @@ -34,6 +34,7 @@ enum {
->  	PM8008_GPIO1,
->  	PM8008_GPIO2,
->  	PM8008_NUM_PERIPHS,
-> +	PM8010_NUM_PERIPHS = 2,
->  };
->  
->  #define PM8008_PERIPH_0_BASE	0x900
-> @@ -55,6 +56,10 @@ enum {
->  #define PM8008_IRQ_GPIO1	6
->  #define PM8008_IRQ_GPIO2	7
->  
-> +#define PM8010_IRQ_MISC_MBG_FAULT	0
-> +/* 1-3 are unused */
-> +#define PM8010_IRQ_MISC_LDO_OCP	4
+> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+> index 89addd732bff3..42c27a2b45159 100644
+> --- a/drivers/phy/phy-core.c
+> +++ b/drivers/phy/phy-core.c
+> @@ -606,6 +606,38 @@ int phy_validate(struct phy *phy, enum phy_mode mode, int submode,
+>   }
+>   EXPORT_SYMBOL_GPL(phy_validate);
+>   
+> +/**
+> + * _of_phy_get_with_args() - lookup and obtain a reference to a phy by of_phandle_args
+> + * @args: of_phandle_args to the phy
+> + *
+> + * Returns: the phy from the provider's of_xlate, -ENODEV if disabled,
+> + * -EPROBE_DEFER if the provider is not yet registered.
+> + */
+> +static struct phy *_of_phy_get_with_args(struct of_phandle_args *args)
+> +{
+> +	struct phy *phy;
+> +	struct phy_provider *phy_provider;
 > +
->  enum {
->  	SET_TYPE_INDEX,
->  	POLARITY_HI_INDEX,
-> @@ -88,6 +93,12 @@ static const struct regmap_irq pm8008_irqs[] = {
->  	_IRQ(PM8008_IRQ_GPIO2,	      PM8008_GPIO2,	BIT(0), IRQ_TYPE_SENSE_MASK),
->  };
->  
-> +static const struct regmap_irq pm8010_irqs[] = {
-> +	_IRQ(PM8010_IRQ_MISC_MBG_FAULT, PM8008_MISC, BIT(0), IRQ_TYPE_EDGE_RISING),
-> +	_IRQ(PM8010_IRQ_MISC_LDO_OCP, PM8008_MISC, BIT(4), IRQ_TYPE_EDGE_RISING),
-> +	_IRQ(PM8008_IRQ_TEMP_ALARM, PM8008_TEMP_ALARM, BIT(0), IRQ_TYPE_SENSE_MASK),
-> +};
+> +	lockdep_assert_held(&phy_provider_mutex);
 > +
->  static const unsigned int pm8008_periph_base[] = {
->  	PM8008_PERIPH_0_BASE,
->  	PM8008_PERIPH_1_BASE,
-> @@ -158,6 +169,25 @@ static const struct regmap_irq_chip pm8008_irq_chip = {
->  	.get_irq_reg		= pm8008_get_irq_reg,
->  };
->  
-> +static const struct regmap_irq_chip pm8010_irq_chip = {
-> +	.name			= "pm8010",
-> +	.main_status		= I2C_INTR_STATUS_BASE,
-> +	.num_main_regs		= 1,
-> +	.irqs			= pm8010_irqs,
-> +	.num_irqs		= ARRAY_SIZE(pm8010_irqs),
-> +	.num_regs		= PM8010_NUM_PERIPHS,
-> +	.status_base		= INT_LATCHED_STS_OFFSET,
-> +	.mask_base		= INT_EN_CLR_OFFSET,
-> +	.unmask_base		= INT_EN_SET_OFFSET,
-> +	.mask_unmask_non_inverted = true,
-> +	.ack_base		= INT_LATCHED_CLR_OFFSET,
-> +	.config_base		= pm8008_config_regs,
-> +	.num_config_bases	= ARRAY_SIZE(pm8008_config_regs),
-> +	.num_config_regs	= PM8010_NUM_PERIPHS,
-> +	.set_type_config	= pm8008_set_type_config,
-> +	.get_irq_reg		= pm8008_get_irq_reg,
-> +};
+> +	phy_provider = of_phy_provider_lookup(args->np);
+> +	if (IS_ERR(phy_provider) || !try_module_get(phy_provider->owner))
+> +		return ERR_PTR(-EPROBE_DEFER);
 > +
->  static const struct regmap_config qcom_mfd_regmap_cfg = {
->  	.name		= "primary",
->  	.reg_bits	= 16,
-> @@ -179,10 +209,32 @@ static const struct resource pm8008_temp_res[] = {
->  
->  static const struct mfd_cell pm8008_cells[] = {
->  	MFD_CELL_NAME("pm8008-regulator"),
-> -	MFD_CELL_RES("qpnp-temp-alarm", pm8008_temp_res),
-> +	MFD_CELL_RES("spmi-temp-alarm", pm8008_temp_res),
->  	MFD_CELL_NAME("pm8008-gpio"),
->  };
->  
-> +static const struct mfd_cell pm8010_cells[] = {
-> +	MFD_CELL_NAME("pm8010-regulator"),
-> +	MFD_CELL_RES("spmi-temp-alarm", pm8008_temp_res),
-> +	MFD_CELL_NAME("pm8008-gpio"),
-> +};
+> +	if (!of_device_is_available(args->np)) {
+> +		dev_warn(phy_provider->dev, "Requested PHY is disabled\n");
+> +		phy = ERR_PTR(-ENODEV);
+> +		goto out_put_module;
+> +	}
 > +
-> +static const struct mfd_cell pm8008_no_irq_cells[] = {
-> +	MFD_CELL_NAME("pm8008-regulator"),
-> +};
+> +	phy = phy_provider->of_xlate(phy_provider->dev, args);
 > +
-> +static const struct mfd_cell pm8010_no_irq_cells[] = {
-> +	MFD_CELL_NAME("pm8010-regulator"),
-> +};
+> +out_put_module:
+> +	module_put(phy_provider->owner);
 > +
-> +struct pm8008_match_data {
-> +	const struct regmap_irq_chip *irq_chip_desc;
-> +	const struct mfd_cell *mfd_cells;
-> +	const struct mfd_cell *no_irq_mfd_cells;
-> +	int num_mfd_cells;
-> +	int no_irq_num_mfd_cells;
-> +};
+> +	return phy;
+> +}
 > +
->  static void devm_irq_domain_fwnode_release(void *data)
->  {
->  	struct fwnode_handle *fwnode = data;
-> @@ -192,15 +244,22 @@ static void devm_irq_domain_fwnode_release(void *data)
->  
->  static int pm8008_probe(struct i2c_client *client)
->  {
-> -	struct regmap_irq_chip_data *irq_data;
-> +	struct regmap_irq_chip_data *irq_data = NULL;
-> +	const struct pm8008_match_data *data;
->  	struct device *dev = &client->dev;
->  	struct regmap *regmap, *regmap2;
->  	struct fwnode_handle *fwnode;
-> +	const struct mfd_cell *cells;
->  	struct i2c_client *dummy;
->  	struct gpio_desc *reset;
-> +	int num_cells;
->  	char *name;
->  	int ret;
->  
-> +	data = device_get_match_data(dev);
-> +	if (!data)
-> +		return dev_err_probe(dev, -ENODATA, "Missing driver match data\n");
-> +
->  	dummy = devm_i2c_new_dummy_device(dev, client->adapter, client->addr + 1);
->  	if (IS_ERR(dummy)) {
->  		ret = PTR_ERR(dummy);
-> @@ -231,37 +290,62 @@ static int pm8008_probe(struct i2c_client *client)
->  	 */
->  	usleep_range(1000, 2000);
->  
-> -	name = devm_kasprintf(dev, GFP_KERNEL, "%pOF-internal", dev->of_node);
-> -	if (!name)
-> -		return -ENOMEM;
+>   /**
+>    * _of_phy_get() - lookup and obtain a reference to a phy by phandle
+>    * @np: device_node for which to get the phy
+> @@ -620,8 +652,7 @@ EXPORT_SYMBOL_GPL(phy_validate);
+>   static struct phy *_of_phy_get(struct device_node *np, int index)
+>   {
+>   	int ret;
+> -	struct phy_provider *phy_provider;
+> -	struct phy *phy = NULL;
+> +	struct phy *phy;
+>   	struct of_phandle_args args;
+>   
+>   	lockdep_assert_held(&phy_provider_mutex);
+> @@ -637,22 +668,7 @@ static struct phy *_of_phy_get(struct device_node *np, int index)
+>   		goto out_put_node;
+>   	}
+>   
+> -	phy_provider = of_phy_provider_lookup(args.np);
+> -	if (IS_ERR(phy_provider) || !try_module_get(phy_provider->owner)) {
+> -		phy = ERR_PTR(-EPROBE_DEFER);
+> -		goto out_put_node;
+> -	}
 > -
-> -	name = strreplace(name, '/', ':');
+> -	if (!of_device_is_available(args.np)) {
+> -		dev_warn(phy_provider->dev, "Requested PHY is disabled\n");
+> -		phy = ERR_PTR(-ENODEV);
+> -		goto out_put_module;
+> -	}
 > -
-> -	fwnode = irq_domain_alloc_named_fwnode(name);
-> -	if (!fwnode)
-> -		return -ENOMEM;
+> -	phy = phy_provider->of_xlate(phy_provider->dev, &args);
 > -
-> -	ret = devm_add_action_or_reset(dev, devm_irq_domain_fwnode_release, fwnode);
-> -	if (ret)
-> -		return ret;
-> -
-> -	ret = devm_regmap_add_irq_chip_fwnode(dev, fwnode, regmap, client->irq,
-> -				IRQF_SHARED, 0, &pm8008_irq_chip, &irq_data);
-> -	if (ret) {
-> -		dev_err(dev, "failed to add IRQ chip: %d\n", ret);
-> -		return ret;
-> +	if (client->irq) {
-> +		name = devm_kasprintf(dev, GFP_KERNEL, "%pOF-internal", dev->of_node);
-> +		if (!name)
-> +			return -ENOMEM;
+> -out_put_module:
+> -	module_put(phy_provider->owner);
+> +	phy = _of_phy_get_with_args(&args);
+>   
+>   out_put_node:
+>   	of_node_put(args.np);
+> @@ -1001,6 +1017,37 @@ struct phy *devm_of_phy_get_by_index(struct device *dev, struct device_node *np,
+>   }
+>   EXPORT_SYMBOL_GPL(devm_of_phy_get_by_index);
+>   
+> +/**
+> + * phy_get_by_of_node() - lookup and obtain a reference to a phy by device_node
+> + * @np: node containing the phy
+> + *
+> + * Returns: the phy associated with the device node or ERR_PTR.
+> + */
+> +struct phy *phy_get_by_of_node(struct device_node *np)
+> +{
+> +	struct of_phandle_args args = { .np = np, .args_count = 0 };
+> +	struct phy *phy;
 > +
-> +		name = strreplace(name, '/', ':');
+> +	mutex_lock(&phy_provider_mutex);
 > +
-> +		fwnode = irq_domain_alloc_named_fwnode(name);
-> +		if (!fwnode)
-> +			return -ENOMEM;
+> +	phy = _of_phy_get_with_args(&args);
+> +	if (IS_ERR(phy))
+> +		goto out_unlock;
 > +
-> +		ret = devm_add_action_or_reset(dev, devm_irq_domain_fwnode_release, fwnode);
-> +		if (ret)
-> +			return ret;
+> +	if (!try_module_get(phy->ops->owner)) {
+> +		phy = ERR_PTR(-EPROBE_DEFER);
+> +		goto out_unlock;
+> +	}
 > +
-> +		ret = devm_regmap_add_irq_chip_fwnode(dev, fwnode, regmap, client->irq,
-> +						       IRQF_SHARED, 0, data->irq_chip_desc,
-> +						       &irq_data);
-> +		if (ret) {
-> +			dev_err(dev, "failed to add IRQ chip: %d\n", ret);
-> +			return ret;
-> +		}
+> +	get_device(&phy->dev);
 > +
-> +		/* Needed by GPIO driver. */
-> +		dev_set_drvdata(dev, regmap_irq_get_domain(irq_data));
-> +		cells = data->mfd_cells;
-> +		num_cells = data->num_mfd_cells;
-> +	} else {
-> +		cells = data->no_irq_mfd_cells;
-> +		num_cells = data->no_irq_num_mfd_cells;
->  	}
->  
-> -	/* Needed by GPIO driver. */
-> -	dev_set_drvdata(dev, regmap_irq_get_domain(irq_data));
-> -
-> -	return devm_mfd_add_devices(dev, PLATFORM_DEVID_AUTO, pm8008_cells,
-> -				ARRAY_SIZE(pm8008_cells), NULL, 0,
-> -				regmap_irq_get_domain(irq_data));
-> +	return devm_mfd_add_devices(dev, PLATFORM_DEVID_AUTO, cells,
-> +				    num_cells, NULL, 0,
-> +				    regmap_irq_get_domain(irq_data));
->  }
->  
-> +static const struct pm8008_match_data pm8008_data = {
-> +	.irq_chip_desc = &pm8008_irq_chip,
-> +	.mfd_cells = pm8008_cells,
-> +	.no_irq_mfd_cells = pm8008_no_irq_cells,
-> +	.num_mfd_cells = ARRAY_SIZE(pm8008_cells),
-> +	.no_irq_num_mfd_cells = ARRAY_SIZE(pm8008_no_irq_cells),
-> +};
+> +out_unlock:
+> +	mutex_unlock(&phy_provider_mutex);
 > +
-> +static const struct pm8008_match_data pm8010_data = {
-> +	.irq_chip_desc = &pm8010_irq_chip,
-> +	.mfd_cells = pm8010_cells,
-> +	.no_irq_mfd_cells = pm8010_no_irq_cells,
-> +	.num_mfd_cells = ARRAY_SIZE(pm8010_cells),
-> +	.no_irq_num_mfd_cells = ARRAY_SIZE(pm8010_no_irq_cells),
-> +};
+> +	return phy;
+> +}
+> +EXPORT_SYMBOL_GPL(phy_get_by_of_node);
 > +
->  static const struct of_device_id pm8008_match[] = {
-> -	{ .compatible = "qcom,pm8008", },
-> +	{ .compatible = "qcom,pm8008", .data = &pm8008_data },
-> +	{ .compatible = "qcom,pm8010-i2c", .data = &pm8010_data },
->  	{ },
->  };
->  MODULE_DEVICE_TABLE(of, pm8008_match);
-> 
-> -- 
-> 2.34.1
+>   /**
+>    * phy_create() - create a new phy
+>    * @dev: device that is creating the new phy
+> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+> index ea47975e288ae..71c2e16397130 100644
+> --- a/include/linux/phy/phy.h
+> +++ b/include/linux/phy/phy.h
+> @@ -284,6 +284,7 @@ struct phy *devm_of_phy_optional_get(struct device *dev, struct device_node *np,
+>   				     const char *con_id);
+>   struct phy *devm_of_phy_get_by_index(struct device *dev, struct device_node *np,
+>   				     int index);
+> +struct phy *phy_get_by_of_node(struct device_node *np);
+>   void of_phy_put(struct phy *phy);
+>   void phy_put(struct device *dev, struct phy *phy);
+>   void devm_phy_put(struct device *dev, struct phy *phy);
+> @@ -493,6 +494,11 @@ static inline struct phy *devm_of_phy_get_by_index(struct device *dev,
+>   	return ERR_PTR(-ENOSYS);
+>   }
+>   
+> +static inline struct phy *phy_get_by_of_node(struct device_node *np)
+> +{
+> +	return ERR_PTR(-ENOSYS);
+> +}
+> +
+>   static inline void of_phy_put(struct phy *phy)
+>   {
+>   }
 > 
 
--- 
-Lee Jones
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
+
+Thanks,
+Neil
 
 -- 
 linux-phy mailing list
