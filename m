@@ -4,103 +4,159 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E7EEC982FE
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Sep 2026 06:37:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8B21FC982F1
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Sep 2026 08:12:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UuvrromPxM3FyWxccNLBGJjrfFxfvjho6yucGxJQRYs=; b=XdH7xX5scr7ZId
-	hhLkZ/uI9zdNz9Svna68qxYeeQoLC2+NiXwv6OnkuIYNkamomvf96DN3HG7Vpog7nVzyYAYBJIi0K
-	CJkrIXMfaFDIu0Xcs5EBE2HexhI8bORqkTGI3NSvM4yOL+W/X4F0nNf79VU+C7ZD1GQ+wQKvPBZDz
-	0lf6r/Px8Uj9BnMFlHQZVENvrnLlylMJbUdrDS3dpfHTcTWCxYKYtqb93okjhnuLBsayTFtfeytyn
-	3V9D9NS8LWoOH36kMRYBodIPlY2jnzEPDi2v7/geoi+Keon3Hyuhl7qXjcnj7ZQuS1ge0LZy2BUJG
-	Jqk0pz0701IAW3rb+ZNw==;
+	List-Owner; bh=1ZzA7WMATE8AeM1TwvB0EpLi7cBPTf6M6dj1H3A9BbE=; b=ugsGvqwb7I43TP
+	Ed0NZ3rQC0TEhl36NyolneAt158hI48tHzet4/C+4RZmrzPkSnFJJMz9IC6PBj59sDsuUz05V6YG7
+	2evY0TQtSJTEhyjH7Yq29LPt95zsZH1d9bfXMjUpyPnIxqxmRJ7hXxT46yrJIZRJeFXzv+WSCcOEW
+	nc8OVY0Q4qvDkEFXMY9R49OlDQkaLlYBAp9/A4kd4e4BpsUDvDPffkQrZfnxet+GDcEluEbdVJyK+
+	pSBnG1TaLSHbk0Cx+/3UMGWBdcdc0RkbIa8s4V0XFFqdnpMsgeNZy8/24+vM33EN0DarSQfUpB4iX
+	LQRg5I/UDhbEA4mj+PxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8u8E-00000004LtN-3DGj;
-	Tue, 22 Sep 2026 06:37:34 +0000
-Received: from mail-pj2-x11.google.com ([2607:f8b0:4864:39::11])
+	id 1x8vcI-00000004dFe-0Shv;
+	Tue, 22 Sep 2026 08:12:42 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8u8B-00000004Lsr-3LPK
+	id 1x8vcH-00000004dFN-1QGl
+	for linux-phy@bombadil.infradead.org;
+	Tue, 22 Sep 2026 08:12:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=czex32aQLz7Wor3ZwCAP8jwKGlUOBphDFuP6jLqE8W0=; b=McX0yGG0hEv6v1mbU+BJ6tiZf3
+	b/xDlJvGw1CuKd/9ZVOqK5izk343ejdhY5hnBePSFkZ5YkgmPHBOz7io8A8Pr4cSi8FN2jLjNTGLe
+	XKOPNCn6gSsRiev9SR3CmVc4bIfwY6r2VGb7V+jlVSz8Temt99WsbY+TWsZHbV5nEDFJzbwKuGg3c
+	1//jmvKm3L6iUF9reB1a7vpjONOCMQ0MorNCxq7PY3LFJP2DMNnxQhsmcoEGu+bqDJjyK4ae9XJbV
+	RLQWv4CWLaBFLsdnKJs1Ux/1U4zw756/NZlrmoGuZ4rlFCCoXtEFEOjPO3eqrmfMZgDYFspHn0qKr
+	fM8LNygg==;
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
+	id 1x8vcD-0000000DFTy-31NP
 	for linux-phy@lists.infradead.org;
-	Tue, 22 Sep 2026 06:37:33 +0000
-Received: by mail-pj2-x11.google.com with SMTP id d9443c01a7336-2db18fe459dso22319415ad.3
-        for <linux-phy@lists.infradead.org>; Mon, 21 Sep 2026 23:37:31 -0700 (PDT)
+	Tue, 22 Sep 2026 08:12:40 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68M76oqg2166201
+	for <linux-phy@lists.infradead.org>; Tue, 22 Sep 2026 08:12:33 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=czex32aQLz7Wor3ZwCAP8jwK
+	GlUOBphDFuP6jLqE8W0=; b=AOsZ5kLnNaEZC6jEnx5gtyQv8DV0FjojSlMnM/Qw
+	M3NFGOApHMPDWFq/DqkvSgDF7amG+8R9DwLCQ2f4nNIXDUFqq6dxXIdKViN4XidJ
+	dAhF36NcPaqZWaNziG5WsVqkfIuT2tFSTCI5OENkHW3HYuw5Ck8aOpGT3u9pREnl
+	yONur2P7z8NxIAEqKiZbDzw7/eRzXLrUBsrloN0OQBWG2IlrhfKyLP+ucb20FE6k
+	+i36puQkjTSFJm+a+c98k7R4Gu9R/dUDaT3AojxuqhfHTOq0Vq5WRApFP42clcJZ
+	wRCR+JUcpYa4maq1gYyHE70LjCbJaUUN5FZroW3S4dJ0ug==
+Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gu8xetykg-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 22 Sep 2026 08:12:33 +0000 (GMT)
+Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-39deda201bcso5266621a91.2
+        for <linux-phy@lists.infradead.org>; Tue, 22 Sep 2026 01:12:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1790059051; x=1790663851; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1790064753; x=1790669553; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:content-type:mime-version
          :references:message-id:subject:cc:to:from:date:from:to:cc:subject
          :date:message-id:reply-to:content-type;
-        bh=cEZ6qIPBqK0kKyvC4PAdXp1jfvwWUdlhUlYS77zPoh4=;
-        b=pfacZGqDX+csSll9d7L9VhYzTIWvC/nQaBAuEfMOWmYzz5Tcs3pCNcHnaDee8oflTK
-         yCGw8yjH1YiYsL86G3J+GXLxkOMk46zCqiW5bIu/24l0rofBDfZ4OaOGf/CTC5QeW4fT
-         6/dYrV2gJDnc+1OqwrhGWx1IxSU8cvxR0n6MpU9pn3lV9bmvLUdez3csnbLE2/w2umdE
-         nBtIU1OXttqAnhnW/uUYK0y0cyJyvorlGjQkm6WHXhcyQmjIH+4u40X7qEH6xwlVWdAH
-         o5k1Y5O1iikV65GVfMYyAdOqCN7vEpC+bTp2Hru+B2SdH8P628lOA7phMg6eOtHmwnHh
-         FNbQ==
+        bh=czex32aQLz7Wor3ZwCAP8jwKGlUOBphDFuP6jLqE8W0=;
+        b=dOU7JJXjnnMG+uJjna2YhrpZFdtbBrwcgCqTSw6tUOwB/EH0IvfAfwIzyWIA7yCi1e
+         ODiwkd0T+nSXaqsCYKjvsdNJSzUe8okjzEMxyTXruF6DCRQym0SlNec5zQZq5DaYxyrE
+         RSMXpZcbd0Z0R27y532mzOrsKWo5vHoygDx61oNO48beJA/8wnjiOk3Jdbr8hAD/SCzI
+         E41PEzNadt46EO5y4KMUD8WE5R5EXhdRT0R5qqU3ewRnBpMBSDh22En3iZePKZzJ34ub
+         vJoxpbRR6WNVJx8/jIoXHl+Ki+awLpiDjSLKBmc47fyFKPBaeR8539T0pISnKbScwzhm
+         jjow==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1790059051; x=1790663851;
+        d=1e100.net; s=20260707; t=1790064753; x=1790669553;
         h=in-reply-to:content-disposition:content-type:mime-version
          :references:message-id:subject:cc:to:from:date:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=cEZ6qIPBqK0kKyvC4PAdXp1jfvwWUdlhUlYS77zPoh4=;
-        b=J33oxr8R7rezNoEqMn0YpdjNL943+Xzl2s405hKieSaS9KsQmneUu60UXAEDBRq6WQ
-         WHLtk3nFWsB9wOsaW9eLVGSql6kWy7NTbyBq9QyS4uZQm7gbVqURTfR29i7mMohsrGIt
-         ZSM+pBRAJBIBbXBoqbGBRQ+jv0TCunMzYCHf0C1BFy+eqAnTyvAxdu0Vxc+Wvg6BrFGJ
-         J55ThBRIR7fFRnKvQh6LAOt6o6e2qPZ9FMK19zA2THsVdqocfd1bm6ufc8LMUv25AEmn
-         5MJfKIanEAABT0ocOQvnEflp7lt00jbnmRV5YKlFFaVuAId6moT+hvJeN+eAYg1boea0
-         Nsfw==
-X-Forwarded-Encrypted: i=1; AKwUvByTFIffgqaGHiBNA6Ensb0HNs7XnX0DiccaBo+jW1dMHLau33yho/bU2zAcSXHHP2Fjsm2XyKgV0/A=@lists.infradead.org
-X-Gm-Message-State: AFuF++n+PomdrcM+d2b6Iffa2VL8FQSTMRWdH33ZMlkq2m32W6d9cHB1
-	3L0TCqUfzIbXj9+Eu3gP1danJ1zUqRMivD0q6spkYQaUP5FlAj+3lJLm
-X-Gm-Gg: AYBFou3Rm/6U3GWTh9O7ym0jUCEISNaqoH77iTKOZPGRD6GfLZ6FjgHFYWfYWWwenJE
-	5fS+YC8srITkc81eKoNA3IDek+8ED9M9iH5mTc04Q1XjNbNcv6ZJ+ioq0Un73jHquGBGUGkm0Ij
-	vyc3B9T+7UdpKegFXaGAglt2BYUcw9qzfu4K8xZ4ua7P4bJ/G9q2njq5n3rpKATSZMLWkr2TLMU
-	yaGmvfAfMCEnXcowxxjCKe1ViKConZ18vz+2omGtIzcVPAHLFY9sJKLoqugOGjoq67lb5lKz26N
-	AZpJv5CHRHJYgejrFYystTU3cdv0zWPVD0OTZByqFgGpKi2PSybGf3k0LT9qPqx1XdGe8z9Cx8E
-	YdWBgghg/EwPX96A4nqX8WBBk1vQiPrUDgmqRzFZGhKOdZis7f+SkyJNaRQHr4EqtR0JCbW7ksy
-	8x1gjm6Vtw33Q/VbdlzHmrj+gEOMOTTqf624RhYJjWUs4PRwqJeDJufZF2IZeTflFUA9LB
-X-Received: by 2002:a17:903:ad0:b0:2d8:d4d3:3fbb with SMTP id d9443c01a7336-2df609d1990mr2155125ad.15.1790059050558;
-        Mon, 21 Sep 2026 23:37:30 -0700 (PDT)
-Received: from localhost ([2001:19f0:8000:3e6e:5400:6ff:fe38:3d01])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2df5d056911sm4297115ad.70.2026.09.21.23.37.29
+        bh=czex32aQLz7Wor3ZwCAP8jwKGlUOBphDFuP6jLqE8W0=;
+        b=SWwu2U9qDl74RndKijYd4yGdQXQDzwOu+bDSrU2PbjZWrZDrlYQUZtWrLmfY9A2Ui3
+         tPHi8UpCDDL+lwKa5DE0r42mvtpuaP2JZxhwhbBb/bCW/rGvR9y1nHVbKzGHx4oY/wLX
+         EqbAVGzYoN+md6Xrd0A1fkiOhkCMR0WH5gBlTJFmnwKEHcb/CNhXhZX7ZufDZA65cHe3
+         qXeKH8kOLuUfAeuLnujA1vdrW325gEueQvVEhh4C3TuGpqyeAbuE7lKzCC2joDQPvHn1
+         HNGiGQ4tTj8VRsfg7iD9z77D34Y7RQ27DVJRSeFBJkjtlFD2Ba1gS3lFuO0tpWl/33Xn
+         18sQ==
+X-Forwarded-Encrypted: i=1; AKwUvByIckOVbi78g53Fc02DTk8ZfZlaWZ5UkSQrwRoDq1aK0fF7G+AA2CDy3N4sJYK6BHhbM0jKmD4BfaE=@lists.infradead.org
+X-Gm-Message-State: AFuF++nDPlAiqQL/dKLbLRYsbTgx6WgEsmpDYqFfR9DOVF3o0Q4NKD08
+	8qdMoqwlDe3vvVI9uaZyLu+Jo1OXqdke6Mdyn8GKfY6UZxBuUq2gwjSWxazSG5EhPTNEIFh+6Th
+	ckZ0E7j7Teuzuc+qWYpXrK+6WDqpM7+kv5BZQ4TlLXMitx5w7duxw06WFTZmNE16amuHc
+X-Gm-Gg: AYBFou0fHSmKtbgL0B3z6zA3w9BoH1qstT7RFG8lmCPez8YqCXQNajtufdnCJcN6S0Z
+	p1r8MojG+HldI7IX3uWbyUYBxEMijRlnChsZ/Er6l5cmnb2PaRLe3EbZVWgRExyCcaZ68CgQCBM
+	EoLX664OfMeZrddo/NoXvkJ59ttFTQSlVPKa/TGYv75mb3YwG5QnAHnYSuFsKI86P4NWKpLD3jS
+	Y+3mVxzy+2VE5aazoFMVvhZL3dTYY/zYUgWZ5Z6+ijoRCeUcq9quQpmS6gGAokU8M2XArRvD5ti
+	aRGzHPZOAIUNhLBxNikxZZUlAFp0S9T4hdR1irZeFR5EyMjbZEY5FWDOF6nWNWxMLwtKwJojLGB
+	aE7v7BVSqj6kR8SLweBBfsOnGv8Iscu+WKhWDiqa9oQ==
+X-Received: by 2002:a17:90b:574e:b0:39e:1fb6:9659 with SMTP id 98e67ed59e1d1-3a073116705mr395963a91.22.1790064752844;
+        Tue, 22 Sep 2026 01:12:32 -0700 (PDT)
+X-Received: by 2002:a17:90b:574e:b0:39e:1fb6:9659 with SMTP id 98e67ed59e1d1-3a073116705mr395943a91.22.1790064752305;
+        Tue, 22 Sep 2026 01:12:32 -0700 (PDT)
+Received: from QCOM-aGQu4IUr3Y (i-global052.qualcomm.com. [199.106.103.52])
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-144f2a44cc8sm3084889c88.13.2026.09.22.01.12.27
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 21 Sep 2026 23:37:30 -0700 (PDT)
-Date: Tue, 22 Sep 2026 14:36:37 +0800
-From: Inochi Amaoto <inochiama@gmail.com>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
-	Inochi Amaoto <inochiama@gmail.com>
-Cc: Hans de Goede <hansg@kernel.org>, Damien Le Moal <dlemoal@kernel.org>, 
-	Niklas Cassel <cassel@kernel.org>, Andrzej Hajda <andrzej.hajda@intel.com>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>, 
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, Jonas Karlman <jonas@kwiboo.se>, 
-	Jernej Skrabec <jernej.skrabec@gmail.com>, Luca Ceresoli <luca.ceresoli@bootlin.com>, 
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
-	Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, 
-	Simona Vetter <simona@ffwll.ch>, Minas Harutyunyan <hminas@synopsys.com>, 
-	Thinh Nguyen <Thinh.Nguyen@synopsys.com>, Vinod Koul <vkoul@kernel.org>, 
-	Manivannan Sadhasivam <mani@kernel.org>, Damon Ding <damon.ding@rock-chips.com>, 
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, Heiko Stuebner <heiko@sntech.de>, linux-ide@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, linux-usb@vger.kernel.org, 
-	linux-phy@lists.infradead.org, Yixun Lan <dlan@gentoo.org>, Longbin Li <looong.bin@gmail.com>
-Subject: Re: [RFC PATCH 1/5] phy: core: Use EOPNOTSUPP for disabled blob
- return value
-Message-ID: <arIgfDh6ZSHNgbhB@inochi.infowork>
-References: <20260922024724.191412-1-inochiama@gmail.com>
- <20260922024724.191412-2-inochiama@gmail.com>
- <2026092256-shading-gratify-835a@gregkh>
- <arIZX-0aMQiabxJd@inochi.infowork>
- <2026092236-breeze-educator-0f6b@gregkh>
+        Tue, 22 Sep 2026 01:12:31 -0700 (PDT)
+Date: Tue, 22 Sep 2026 16:12:24 +0800
+From: Shawn Guo <shengchao.guo@oss.qualcomm.com>
+To: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Lorenzo Pieralisi <lpieralisi@kernel.org>,
+        Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+        Manivannan Sadhasivam <mani@kernel.org>,
+        Bjorn Helgaas <bhelgaas@google.com>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Maxime Chevallier <maxime.chevallier@bootlin.com>,
+        Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org
+Subject: Re: [PATCH v4 5/6] phy: qcom: qmp-pcie: Refactor common multiphy
+ handling
+Message-ID: <arI4aLn4GSnVQXO3@QCOM-aGQu4IUr3Y>
+References: <20260921-nord-v4-0-ed05c6e09240@oss.qualcomm.com>
+ <20260921-nord-v4-5-ed05c6e09240@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <2026092236-breeze-educator-0f6b@gregkh>
+In-Reply-To: <20260921-nord-v4-5-ed05c6e09240@oss.qualcomm.com>
+X-Proofpoint-ORIG-GUID: MMUnWH-kCjLoHp1ZS6akHxw5aX6CoaMJ
+X-Authority-Analysis: v=2.4 cv=PZhqFShd c=1 sm=1 tr=0 ts=6ab23871 cx=c_pps
+ a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=b9+bayejhc3NMeqCNyeLQQ==:17
+ a=kj9zAlcOel0A:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
+ a=EUspDBNiAAAA:8 a=Y4sVft1UDeOkrP7wHAgA:9 a=CjuIK1q_8ugA:10
+ a=uKXjsCUrEbL0IQVhDsJ9:22
+X-Proofpoint-GUID: MMUnWH-kCjLoHp1ZS6akHxw5aX6CoaMJ
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTIyMDExNiBTYWx0ZWRfX16uxbwNBBfAZ
+ UNqnCkUchykCgBO2BGs2FtbkHYlVcnVCZ29GuY0hrNl1miLpgSg8RvqMiCAYlGWNyTWCxmPJu+S
+ Vb1vkpPEHKsKKBknuXB2WRGK1XXCaxcCHayjNyZtA1ZoM8orw2bfqpRWJZG2a22nryKu1Spx6wB
+ 7C2F138x92ZRO3YcfLcNOa+koXLf7T5IdiX1dl9AIhGZ/z5I+rUFHs5njZ4MsocZc4OK+t3pSoR
+ dbUie6EIMwREDxGrETMTrUHHGV2n2ZVjN0/0x8F8xYr9PZsqEFlHP5zYx2ibod9ADoKb0GQ4QLC
+ mz/v0/O3QmmKUxtfyU+CZsM1RWKyL03bycZIwHa4Kn7tJVdVY8jeERPRV+pJasSSkHxwCOezG5V
+ n1ePBwf1fG8j9190iiyH1U4a5ZT6QM8i0wNfyUgMMuO06rY8IHpSdh+4xEz0mLQl0WAibsmLKTe
+ gQ4KC2G84v+zMDioI0w==
+X-Proofpoint-Spam-Info: AW1haW4tMjYwOTIyMDExNiBTYWx0ZWRfX/54VOTbRzeas
+ arNuFZqturAEE0BjvFjVKK5e0zpVY1hSHvqB7lxp3mHwhNSi5r57AU1X5IQT9UNd9kyqf39imAq
+ 8uJ57hDEUeUZ1RAnPZtU8TMbnQ6vNBc=
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-09-21_07,2026-09-21_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 malwarescore=0 spamscore=0 impostorscore=0 priorityscore=1501
+ lowpriorityscore=0 suspectscore=0 bulkscore=0 phishscore=0 adultscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2609220116
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260921_233731_862578_51C6C5AE 
-X-CRM114-Status: GOOD (  29.29  )
+X-CRM114-CacheID: sfid-20260922_091238_533713_ABAFD82F 
+X-CRM114-Status: GOOD (  14.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,58 +173,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 22, 2026 at 08:16:16AM +0200, Greg Kroah-Hartman wrote:
-> On Tue, Sep 22, 2026 at 02:10:01PM +0800, Inochi Amaoto wrote:
-> > On Tue, Sep 22, 2026 at 07:35:19AM +0200, Greg Kroah-Hartman wrote:
-> > > On Tue, Sep 22, 2026 at 10:47:16AM +0800, Inochi Amaoto wrote:
-> > > > Currently, the phy subsystem uses ENOSYS for dummy blob functions,
-> > > > it does not reflect the function state correctly. As kernel already
-> > > > has EOPNOTSUPP for disabled blob function, replace ENOSYS with
-> > > > EOPNOTSUPP for a clear return value.
-> > > > 
-> > > > Signed-off-by: Inochi Amaoto <inochiama@gmail.com>
-> > > > ---
-> > > >  include/linux/phy/phy.h | 52 ++++++++++++++++++++---------------------
-> > > >  1 file changed, 26 insertions(+), 26 deletions(-)
-> > > 
-> > > Based on the other patches in this series, this patch now breaks the
-> > > users, right?  Shouldn't this all happen at once?
-> > > 
-> > > thanks,
-> > > 
-> > > greg k-h
-> > 
-> > It will break, and the change should happen at one. But I think
-> > the affect should be limited as it only affect a special edge
-> > case: build kernel with CONFIG_GENERIC_PHY disabled. So the
-> > break should be limited.
-> > 
-> > IIRC I was told to seperate the patch into small part so each
-> > maintainer can take its own. Is it fine to squash these patches
-> > into one in this a case?
+On Mon, Sep 21, 2026 at 11:07:13AM +0530, Krishna Chaitanya Chundru wrote:
+> Reuse the existing port resource arrays for Glymur register regions,
+> power domains, and NOCSR resets instead of maintaining duplicate
+> Glymur-specific lists.
 > 
-> You can't break bisection of the tree, so if it all has to happen in one
-> commit, that's required.
+> Attach each PHY instance's power domains to the device created for that
+> PHY. This ensures that the associated GDSCs are managed with the
+> lifetime of the individual PHY device rather than the parent multiphy
+> platform device.
 > 
-
-Good to know, I will squash them.
-
-> But really, why is this needed at all?  Who will benefit from this
-> change?
+> Validate the clock-output-names property before using its count for
+> allocation, and use a generic module description.
 > 
+> Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
 
-This change make the phy subsystem aligned with other subsystem like 
-clk, reset... they both use -EOPNOTSUPP. After checking the comment 
-in errno.h. I think this is more clear to provide the information 
-about unsupported function.
-
-The related discussion is at 
-https://lore.kernel.org/linux-phy/20260907114837.2y55l7dfqqrgcka2@skbuf/
-After some discussion, Vladimir think it is possible to go, so I
-send this patch as an improvement.
-
-Regards,
-Inochi
+Reviewed-by: Shawn Guo <shengchao.guo@oss.qualcomm.com>
 
 -- 
 linux-phy mailing list
