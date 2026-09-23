@@ -4,95 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0B7AC98302
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Sep 2026 02:34:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29CB3C98306
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Sep 2026 02:44:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FU637HqW2slLZVhZqRA/wFxaRhF264XduN3VKxokYVk=; b=YDtBC2rnypi3Th
-	oOX35l956vpfYiOFG2FB++yLWVplM51hrxDMkEQHFhCt9ifRqXaJQOvL1+tuK6zVGgwpnKlldZ5bk
-	PRG4g8p7ayXLn1mkc4G4Dqk8EkdV+L+1pOGRV3VNk4uJe4eTbcKQx+2HmAdphRFm/uPbDcH0TpY+Q
-	Fe1V9yTE8k/nG7Z+JHF6WR9uQGEzd9dt+xnPLegPZDad+Eeyb9LaGTaZfAFYgCUx8sbjwPzSULhb+
-	8MPnXyzzhNNORo4c8m3yS4FPM9YLVunxcXufiNY6x8DDat27zgOYgcAjJGehhwZzS03JcCrRkEEeI
-	LqJsatSlBJZjJaWMXlwA==;
+	List-Owner; bh=jz9tSybvKbgAIXauzNfp8HeX2dKaibZj7u/ST4Cn1GU=; b=SDuO7H93OoVGqw
+	IqBkCE5eCXQc439Y8GzKJmIZyEZe7oC0Q925bWR8LRQJo17omArFeYyAwIG/TsrXuxR7uLWqIIL21
+	o8GiWYdnyGW2QyfHQdRPXFFr8LfP5BsRQ0Gkd+Uou0SgXMa055Fu7jeRVg5lmJ+OQZRlWzkuMafph
+	yoFafEP3gJhe388r74fxKtsEtgTc3SGVKiaovKpDeVMNY9z0DoxKFY3VEMKNhoCRzfdulBu0boLzG
+	URCwjed5hean89NTRarwpPS6mhV3Yw6COJ7nm+ILTURY5pZ14S91LtVm+B7NQjW08bWpVbxu6OgfH
+	kMqlMEuoHNQate5Wn1gg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9CoR-00000006wtE-2lBd;
-	Wed, 23 Sep 2026 02:34:23 +0000
-Received: from mail-pz2-x16.google.com ([2607:f8b0:4864:3b::16])
+	id 1x9CyG-00000006yEv-2mBb;
+	Wed, 23 Sep 2026 02:44:32 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9CoO-00000006wse-2Inz
+	id 1x9Cxk-00000006xs9-2xCZ
 	for linux-phy@lists.infradead.org;
-	Wed, 23 Sep 2026 02:34:21 +0000
-Received: by mail-pz2-x16.google.com with SMTP id 41be03b00d2f7-cc4bdf8abaaso416625a12.2
-        for <linux-phy@lists.infradead.org>; Tue, 22 Sep 2026 19:34:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1790130860; x=1790735660; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=xnrcjxk0kzIW2dBkRTKNaLCxSo8UzYbysB1rR/EfFJo=;
-        b=dyHdiU+dhyMJ6avlrEB7HcAabEYIGA4JuB2xC56YvVdCTPZtM6qXfMeD3izPlSo3GN
-         aPBhjSdN45V5dZ034AMAGk8A+IwjiaPLCaoX+jZmgmctLvefPS+9NfKNGUxNL95PBbwz
-         8i8Te9Q73w26cjuPzsu4TdWM7CkfDl/PUw7StaUDF+vd7Tcdeyaf9o0RcqqWakaD/g3M
-         3nV50/6QLu1qZYmfWO56tAsiKVI+j0sWEP2dDy56nIHr/HpzP8OkKYyeGy5KSEFh8NNO
-         VooCPLTWOfTt/EoO4M05IfuWDq6qiFa/PhJSIQWW07EMz0St4L7oML7cvlNKXDM9dbnc
-         IUAQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1790130860; x=1790735660;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=xnrcjxk0kzIW2dBkRTKNaLCxSo8UzYbysB1rR/EfFJo=;
-        b=E5yZ2G/5DprZP+bvIhEo1BKGTm7uTXHwuQwI4REQUBPNSVtzYyK+yVRFaM+rBXKx/n
-         rDWO5m+jMfr+5/yXVQGjnXpdtokkgO4SkNK9LpaCog/MvohC9DYtiltEUaThjDz90LoA
-         jebH8ybhwVkhfGw0aSSAFqT6rVNoFkwYZhW4bCMDpSMQZjFjwVBhE0BKDmZBmFmFmUtd
-         lkiYM2r8H8zdT0hFI+daYV55O/lEedjEfMGLOiVyu8rRdmNcpSfFgQnrsSqk/H/wRT9S
-         v8oPAnjquWtgpdO901d3OxOcZtHtROOeaynYJ+EmCDkDVJ11kBjXekkC/E8m4wr6+Vou
-         vqWQ==
-X-Forwarded-Encrypted: i=1; AKwUvBxWk1VhtsHT2JBttIg2/G8DI4OTLz9vFeqS53d1mJ40K2X7ZAjpRYlBp3PumqCppdlrBV9efolthMM=@lists.infradead.org
-X-Gm-Message-State: AFuF++kPcV9ZbliJDv26J6Et6BLZn27WsNW746+nX4Pxm1dpjHs6CIw6
-	FebD6q34lw+fEyJkix716LBN84sZTqClZK0KALPoG0aoK9qmVk955Vmr
-X-Gm-Gg: AYBFou3ND93EsS9D5m4MU/LP0W4PZw7/vihURbb5WEBhDdszEnEhMM8b82/0WAgVzSp
-	OJToU2CHdcWLlHn5DVyAgqjHI3QyPjIJU4804pfI+CM3GDbwHMAF3I5W1SO2ibMBrc4jSW5SzA6
-	cGUj/7Wi9BfMKYech7AaqjDt+2FOgbcRMSm3Toy4ql+T930j75bDANL5oXJ8uizgUbUxDLHBtw7
-	cuu+u9jOW1jiTlDlyu75w+7XhErE4xg+aA5C74DqsNDOz2ytDiVBdRAMJl2AQ/up/RhFgoqdstz
-	DTk8Av69E5PjrYECmEKXMg0MEvvH/0Z0V/GpDzVJKYe601ZvwMf9puqmJvbpIg9K4b2eQVrXYnt
-	zrgRLqaVPVtjfOTFUOfBYq76VJZMqbRceZzayeBag3ABh6ruSXwq3ELgK5Ne6XCYWJXkaNdp1B3
-	ZeP+N++05hsgVk29CuOGMzQux6GBNQ4c1Cfl2K6pgaunZvw1RZTCWZgRXYUOlGsk/fYcVI
-X-Received: by 2002:a05:6a20:3c9f:b0:3dd:a196:53a8 with SMTP id adf61e73a8af0-3ddf82fd72emr1311152637.74.1790130859652;
-        Tue, 22 Sep 2026 19:34:19 -0700 (PDT)
-Received: from localhost ([2001:19f0:8000:3e6e:5400:6ff:fe38:3d01])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-cc75f3d5ce8sm316506a12.17.2026.09.22.19.34.18
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 22 Sep 2026 19:34:19 -0700 (PDT)
-From: Inochi Amaoto <inochiama@gmail.com>
-To: Jonathan Corbet <corbet@lwn.net>,
-	Shuah Khan <skhan@linuxfoundation.org>,
-	Randy Dunlap <rdunlap@infradead.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rhys Tumelty <rhys@tumelty.co.uk>,
-	Inochi Amaoto <inochiama@gmail.com>
-Cc: linux-doc@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Yixun Lan <dlan@gentoo.org>,
-	Longbin Li <looong.bin@gmail.com>
-Subject: [PATCH v3 5/5] doc: phy: Document some bulk helper functions
-Date: Wed, 23 Sep 2026 10:33:03 +0800
-Message-ID: <20260923023304.78428-6-inochiama@gmail.com>
-X-Mailer: git-send-email 2.55.0
-In-Reply-To: <20260923023304.78428-1-inochiama@gmail.com>
+	Wed, 23 Sep 2026 02:44:00 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 1007B435D0;
+	Wed, 23 Sep 2026 02:44:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A18151F000FF;
+	Wed, 23 Sep 2026 02:43:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1790131439;
+	bh=xMwK80pq4x6ukfBDS7Ayyzhmv99QU5e6ISUuDffMBCY=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=SdZgpPgswma7b6q8PdPl+wKPsGLcYuh6qHCkeN+Vl51PMAlCRWahXvMVMTLUdozqn
+	 7Dxhca1PvPvfUvOJpFSw1dQW5enD6VZX43Gr5ei/TTuHZT3vrcy0YOCNvZRWnLYqzj
+	 YGmyfJqU2/03fyIlQxZFlckA2nV5DwiXZjazD1wn+MBRj/UAJMqpsFfAMmfihrMEu8
+	 2ThlUTcKvk7FBPWbpBeCgoNSKFRWDhOJNqtcaYGs1eAmHS4cQ777WPlgZ/fa/o618v
+	 rOKMZ54pbTl0cWH1b7K4pGKS5JUFpWkUzwV1VTpVXHzs2HakAegRc2MYiMIVfqxXFm
+	 AvV3QLbqCVR2A==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v3 3/5] phy: core: Add phy bulk data helper functions
+To: "Inochi Amaoto" <inochiama@gmail.com>
+Cc: olteanv@gmail.com, linux-phy@lists.infradead.org, neil.armstrong@linaro.org, vkoul@kernel.org
+In-Reply-To: <20260923023304.78428-4-inochiama@gmail.com>
 References: <20260923023304.78428-1-inochiama@gmail.com>
-MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260922_193420_595728_D844E229 
-X-CRM114-Status: GOOD (  16.55  )
+ <20260923023304.78428-4-inochiama@gmail.com>
+Date: Wed, 23 Sep 2026 02:43:59 +0000
+Message-Id: <20260923024359.A18151F000FF@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,83 +62,43 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document all newly added bulk helper function, it can be used to manage
-a set of PHYs automatically. This is useful when the driver want to
-simplify the management of multiple PHYs.
-
-Signed-off-by: Inochi Amaoto <inochiama@gmail.com>
----
- Documentation/driver-api/phy/phy.rst | 29 ++++++++++++++++++++++++++++
- 1 file changed, 29 insertions(+)
-
-diff --git a/Documentation/driver-api/phy/phy.rst b/Documentation/driver-api/phy/phy.rst
-index 0865c2e94eec..c5d3d7cc1a74 100644
---- a/Documentation/driver-api/phy/phy.rst
-+++ b/Documentation/driver-api/phy/phy.rst
-@@ -114,6 +114,10 @@ it. This framework provides the following APIs to get a reference to the PHY.
- 	struct phy *devm_of_phy_get_by_index(struct device *dev,
- 					     struct device_node *np,
- 					     int index);
-+	int devm_phy_bulk_get_all(struct device *dev,
-+				  struct phy_bulk_data **phys);
-+	int devm_of_phy_bulk_get_all(struct device *dev, struct device_node *np,
-+				     struct phy_bulk_data **phys);
- 
- phy_get, devm_phy_get and devm_phy_optional_get can be used to get the PHY.
- In the case of dt boot, the string arguments
-@@ -129,6 +133,13 @@ Some generic drivers, such as ehci, may use multiple phys. In this case,
- devm_of_phy_get or devm_of_phy_get_by_index can be used to get a phy
- reference based on name or index.
- 
-+When a controller needs every PHY listed in a device node's ``phys`` property,
-+devm_phy_bulk_get_all() obtains them from the controller's device node.
-+devm_of_phy_bulk_get_all() does the same for an explicitly supplied device
-+node. On success, these functions return the number of PHYs and store an array
-+of ``struct phy_bulk_data`` in ``*phys``. The PHY references and array are
-+managed by devres and are released when the device is detached.
-+
- It should be noted that NULL is a valid phy reference. All phy
- consumer calls on the NULL phy become NOPs. That is the release calls,
- the phy_init() and phy_exit() calls, and phy_power_on() and
-@@ -149,6 +160,19 @@ The general order of calls should be::
-     phy_exit()
-     [[of_]phy_put()]
- 
-+For a set of PHYs acquired with devm_phy_bulk_get_all() or
-+devm_of_phy_bulk_get_all(), the corresponding order is::
-+
-+    devm_[of_]phy_bulk_get_all()
-+    phy_bulk_init()
-+    phy_bulk_power_on()
-+    ...
-+    phy_bulk_power_off()
-+    phy_bulk_exit()
-+
-+The bulk get-all APIs release the PHY references and the array automatically
-+when the device is detached.
-+
- Some PHY drivers may not implement :c:func:`phy_init` or :c:func:`phy_power_on`,
- but controllers should always call these functions to be compatible with other
- PHYs. Some PHYs may require :c:func:`phy_set_mode <phy_set_mode_ext>`, while
-@@ -221,3 +245,8 @@ DeviceTree Binding
- 
- The documentation for PHY dt binding can be found @
- Documentation/devicetree/bindings/phy/phy-bindings.txt
-+
-+Missing Bulk Helpers
-+====================
-+Currently, Only a few bulk helper functions are added as they have users.
-+Function not upstreamed can be found at https://lore.kernel.org/linux-phy/20260904083709.425893-1-inochiama@gmail.com/
--- 
-2.55.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0xvd10gcGh5OiBkdW1teSBidWxr
+IGhlbHBlcnMgcmV0dXJuIC1FT1BOT1RTVVBQIGluc3RlYWQgb2YgLUVOT1NZUwotLQoKY29tbWl0
+IDEzZDc1ZjBkNzEzMGVkNzAzOGRkNDM2YmYyMmRlMzk2NWUxZmE1NjQKQXV0aG9yOiBJbm9jaGkg
+QW1hb3RvIDxpbm9jaGlhbWFAZ21haWwuY29tPgoKICAgIHBoeTogY29yZTogQWRkIHBoeSBidWxr
+IGRhdGEgaGVscGVyIGZ1bmN0aW9ucwogICAgCiAgICBBZGQgc2V2ZXJhbCBoZWxwZXIgZnVuY3Rp
+b25zIHRoYXQgYWxsb3cgZHJpdmVycyB0byBnZXQgc2V2ZXJhbCBwaHkKICAgIGNvbnN1bWVycyBp
+biBvbmUgb3BlcmF0aW9uLiBJZiBhbnkgb2YgdGhlIHBoeSBjYW5ub3QgYmUgYWNxdWlyZWQgdGhl
+bgogICAgYW55IHBoeXMgdGhhdCB3ZXJlIGdvdCB3aWxsIGJlIHB1dCBiZWZvcmUgcmV0dXJuaW5n
+IHRvIHRoZSBjYWxsZXIuCgo+IGRpZmYgLS1naXQgYS9pbmNsdWRlL2xpbnV4L3BoeS9waHkuaCBi
+L2luY2x1ZGUvbGludXgvcGh5L3BoeS5oCj4gaW5kZXggZWE0Nzk3NWUyODhhZS4uNzdkOWQ3NDY4
+MmI3NCAxMDA2NDQKPiAtLS0gYS9pbmNsdWRlL2xpbnV4L3BoeS9waHkuaAo+ICsrKyBiL2luY2x1
+ZGUvbGludXgvcGh5L3BoeS5oCgpbIC4uLiBdCgo+IEBAIC00OTMsNiArNTExLDQzIEBAIHN0YXRp
+YyBpbmxpbmUgc3RydWN0IHBoeSAqZGV2bV9vZl9waHlfZ2V0X2J5X2luZGV4KHN0cnVjdCBkZXZp
+Y2UgKmRldiwKPiAgCXJldHVybiBFUlJfUFRSKC1FTk9TWVMpOwo+ICB9Cj4gIAo+ICtzdGF0aWMg
+aW5saW5lIGludCBwaHlfYnVsa19jaGVja19kaXNhYmxlZCh1bnNpZ25lZCBpbnQgbnVtX3BoeXMs
+Cj4gKwkJCQkJICBzdHJ1Y3QgcGh5X2J1bGtfZGF0YSAqcGh5cykKPiArewo+ICsJaWYgKCFwaHlz
+KQo+ICsJCXJldHVybiAwOwo+ICsKPiArCWZvciAodW5zaWduZWQgaW50IGkgPSAwOyBpIDwgbnVt
+X3BoeXM7IGkrKykKPiArCQlpZiAocGh5c1tpXS5waHkpCj4gKwkJCXJldHVybiAtRU9QTk9UU1VQ
+UDsKCltTZXZlcml0eTogTG93XQpEb2VzIHRoaXMgY29kZSBicmVhayB0aGUgZHVtbXkgUEhZIHN1
+YnN5c3RlbSBjb252ZW50aW9ucyBieSByZXR1cm5pbmcKLUVPUE5PVFNVUFA/CgpUaGUgZmFsbGJh
+Y2sgZnVuY3Rpb25zIGZvciBpbmRpdmlkdWFsIG9wZXJhdGlvbnMgbGlrZSBwaHlfaW5pdCgpIGFu
+ZApwaHlfcG93ZXJfb24oKSB0eXBpY2FsbHkgcmV0dXJuIC1FTk9TWVMgd2hlbiBDT05GSUdfR0VO
+RVJJQ19QSFkgaXMgZGlzYWJsZWQuClVzaW5nIC1FT1BOT1RTVVBQIGhlcmUgbWlnaHQgY2F1c2Ug
+aW5jb25zaXN0ZW50IGVycm9yIGhhbmRsaW5nIGZvciBkcml2ZXJzCmZhbGxpbmcgYmFjayB0byB0
+aGVzZSBidWxrIGR1bW1pZXMuCgo+ICsKPiArCXJldHVybiAwOwo+ICt9Cj4gKwo+ICtzdGF0aWMg
+aW5saW5lIGludCBwaHlfYnVsa19pbml0KHVuc2lnbmVkIGludCBudW1fcGh5cywKPiArCQkJCXN0
+cnVjdCBwaHlfYnVsa19kYXRhICpwaHlzKQo+ICt7Cj4gKwlyZXR1cm4gcGh5X2J1bGtfY2hlY2tf
+ZGlzYWJsZWQobnVtX3BoeXMsIHBoeXMpOwo+ICt9CgpbIC4uLiBdCgotLSAKU2FzaGlrbyBBSSBy
+ZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYwOTIzMDIzMzA0Ljc4
+NDI4LTEtaW5vY2hpYW1hQGdtYWlsLmNvbT9wYXJ0PTMKCi0tIApsaW51eC1waHkgbWFpbGluZyBs
+aXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
