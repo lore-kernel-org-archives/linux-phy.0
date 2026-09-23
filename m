@@ -4,68 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5ACA4C982FA
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Sep 2026 02:50:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74E80C98306
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Sep 2026 02:55:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N10fAUEZNaWT4ALeyuKqvjR1NpzDyj5pqrG6FLBxfec=; b=EX4q1vY+1kDL5K
-	XL8rXWU4nEzkHBLrvolFJdcnIz+JNeRXlQYKlP4QXGbjOZml66UHxVyfhIrPCWiLkBUnTgHg19TLo
-	Ge9CM7t2HRHJQalf6S3VdAwZidj4muWhfwb/+2smdPh2Qo56KEpbskNut7r/oLR3mVzr5h0Jc2tP+
-	rt2tBOZPa7jyvTQtUlKo/sPN5VmR7BxIG78k1mD6NzUVCm6zNWsL6nJUm5wAFW2JCVC94i4UuCCB1
-	ugu+CfSMSNGXhDbhrY4u7eGnB98DqCxBi3xyNvfC2TMHdw65A0Kci8kmYl88BRkl9cV3ix6CMe+Yw
-	5gDth9UCLSTdE+lcmVYA==;
+	List-Owner; bh=IeNn4dVN2aYJSW9wtQoSbgMkmylFMlekKl99LkA8LSM=; b=HEqXU3zx+0qRvB
+	fzGnT5ahr724qQ5DDQPxoFW86PmWHNYvap9xUSvtvoQ2fqB35RvIXXftNSKr0Jcfv1ubVnFKfCuBt
+	GrhhcMwEppG8Bc1ZYBt43QjwPaQ/7z6/CyXFL9+7HVaovfLMuWAbMb6yWI12vAY9Cste7v4Be8zPM
+	q5/QLO2YSjS3AGnRTX/qZ3BgSs/FofQPQ0upRjJeFcLpv7DA/HqqQpBhXaGWKhWD59WsQSSAiz2Pe
+	6P3IN8h6RJcpn8nJkbZHtlTks+O6sdVD48V7JYhyNzJYkiohynq6Rs4GdiESUk2lE8AuU1c0dq2gs
+	roM5qbJiFIgQ57XdbFCQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9D3j-00000006zJK-0Q7m;
-	Wed, 23 Sep 2026 02:50:11 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
-	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9D3h-00000006zII-2MRn;
-	Wed, 23 Sep 2026 02:50:09 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id AA3E3601F0;
-	Wed, 23 Sep 2026 02:50:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 98D221F000FF;
-	Wed, 23 Sep 2026 02:50:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790131808;
-	bh=Eo5PNvzKKc4BFL3+MuJflE+BxX4YdcxoeglU+t5KwrY=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References;
-	b=JZQ5CORtA6ZeETmwbFwtxoC2CfxFDPqnS+RC7NQO9H6gNAWIrOqRx/Ufk0nd7fXBP
-	 iDsMlkWUtzAnjAvlhBCUMNzhaXQ/vkFLbfx2lrBgDBLqshGRoPTToU+UzQECX2lS7O
-	 3hOj1XpvCcXAc0DcB6YInNKaNEJ5699vb/l07V4BKzELxkLf2ZDEb+lTAyv47yBAPk
-	 ZhJnVtJSnQx768X8qVjVvdmubkx3JubAP3KHc5ZiF9vbvUNSKMN0r/kGszo4Y/4OhV
-	 aWR4snVHpOGntttMBDW8Y0zH6Od2jXwwQs9+77WD1uLLF6eFaDTxtom3jZjBRSsu18
-	 oaCSP+Zmih2Ow==
-Date: Tue, 22 Sep 2026 19:50:06 -0700
-From: Jakub Kicinski <kuba@kernel.org>
-To: Coia Prant <coiaprant@gmail.com>
-Cc: Andrew Lunn <andrew+netdev@lunn.ch>, "David S . Miller"
- <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, Paolo Abeni
- <pabeni@redhat.com>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
- <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner
- <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>, Maxime Chevallier
- <maxime.chevallier@bootlin.com>, Maxime Coquelin
- <mcoquelin.stm32@gmail.com>, Alexandre Torgue
- <alexandre.torgue@foss.st.com>, Lad Prabhakar
- <prabhakar.mahadev-lad.rj@bp.renesas.com>, Romain Gantois
- <romain.gantois@bootlin.com>, Heiner Kallweit <hkallweit1@gmail.com>, Neil
- Armstrong <neil.armstrong@linaro.org>, Russell King
- <linux@armlinux.org.uk>, Shawn Lin <shawn.lin@rock-chips.com>, David
- Heidelberg <david@ixit.cz>, netdev@vger.kernel.org,
- linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-renesas-soc@vger.kernel.org
-Subject: Re: [PATCH net-next v10 00/11] net: pcs: add basic support for
- RK3568 XPCS
-Message-ID: <20260922195006.79890f24@kernel.org>
-In-Reply-To: <20260922200336.2201212-1-coiaprant@gmail.com>
-References: <20260922200336.2201212-1-coiaprant@gmail.com>
+	id 1x9D8y-0000000705Z-49t3;
+	Wed, 23 Sep 2026 02:55:37 +0000
+Received: from [50.53.43.113] (helo=[192.168.254.34])
+	by bombadil.infradead.org with esmtpsa (Exim 4.99.1 #2 (Red Hat Linux))
+	id 1x9D8x-0000000705I-0ROC;
+	Wed, 23 Sep 2026 02:55:35 +0000
+Message-ID: <086e1b04-c437-40f0-b71a-4f7e62a52c75@infradead.org>
+Date: Tue, 22 Sep 2026 19:55:34 -0700
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 5/5] doc: phy: Document some bulk helper functions
+To: Inochi Amaoto <inochiama@gmail.com>, Jonathan Corbet <corbet@lwn.net>,
+ Shuah Khan <skhan@linuxfoundation.org>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>, Rhys Tumelty <rhys@tumelty.co.uk>
+Cc: linux-doc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, Yixun Lan <dlan@gentoo.org>,
+ Longbin Li <looong.bin@gmail.com>
+References: <20260923023304.78428-1-inochiama@gmail.com>
+ <20260923023304.78428-6-inochiama@gmail.com>
+Content-Language: en-US
+From: Randy Dunlap <rdunlap@infradead.org>
+In-Reply-To: <20260923023304.78428-6-inochiama@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,14 +59,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 23 Sep 2026 04:03:24 +0800 Coia Prant wrote:
-> This series adds proper SGMII support for the Rockchip RK3568 SoC
-> using the integrated Synopsys DesignWare XPCS, along with necessary
-> fixes and refactoring in the stmmac core and XPCS driver.
 
-Please slow down with the reposts.
-Not more than 2 a week, and please wait for the AI review to finish
-and be published before you repost.
+
+On 9/22/26 7:33 PM, Inochi Amaoto wrote:
+> +Missing Bulk Helpers
+> +====================
+> +Currently, Only a few bulk helper functions are added as they have users.
+
+              only
+
+> +Function not upstreamed can be found at https://lore.kernel.org/linux-phy/20260904083709.425893-1-inochiama@gmail.com/
+
+-- 
+~Randy
+
 
 -- 
 linux-phy mailing list
