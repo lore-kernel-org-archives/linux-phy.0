@@ -4,110 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D880C982FA
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Sep 2026 02:10:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1D9DC982FA
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Sep 2026 02:34:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EdOLLLDP6xzhEHkxinRep9h4rRW0pB1BIzDLb5+M7oY=; b=ywLwvDuIyJC5AZ
-	nXbxoB5O0He57+QcoRwv46roasl0+4GqtrvV0wkh++dMJEe7xj1TeCQW66ryWv2NXKj8iuULJW0mR
-	LAOYMD/LDVNu8abkfs8Ud3gCSwN9sCXBJeRr/vJLheAADucdgBCw1DFwiPN2L00ukpLrASno4bu4G
-	1Fob7LjpKvoYxPoQCGy8jcL0mrRG/u4AGYDBpF1n2H5v0emNKl+wLBz8DLvwhAD+RLwa1i0j5NwmM
-	vydfApPVC2QEHTxdP5cl8fJnAyH05zlvhWbLx81uUGz7VyVUJR52LgJiJbHoc7IrzKB2XmbUZbdRE
-	sADePOOcxgWujujGZJ/Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Gttw5xeMff/V3ScrS63RD0s3YjSmRioMduCXn7Y22vA=; b=c2/OrOKwSe/igd
+	FO8BU2GrS9TpI+GAb/SGUWJHj7bMIAq9TJt91g18sqU91e6u99dAuJ51GxUHhe1gkueGw/HqpmhQL
+	HRIpXW8gaveVk5Xtw66KeaZPAE/N/peDGgqd16xpkbO8KJhQ0pGju27+Ox3U5C79z31+N6ZoHlcMe
+	uR7/S0o2pFSDVrb0vXqQ56oukUL/f5xB6QTgaT3Slekp4zbJrSgB8r1skaACDmbxjFfRCZ2mo+vQ/
+	eJXEPYG4RdWawZw6IEbNg+O8HhjySaJhGhgg2B//UD7qf9cjbyLwdZbFEnxMav8IQvvbF2SeeD+x/
+	jMhdaOMEvxhQ4jwsqMeA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9CRb-00000006ubv-0ctF;
-	Wed, 23 Sep 2026 02:10:47 +0000
-Received: from mail-japanwestazlp170120003.outbound.protection.outlook.com ([2a01:111:f403:c406::3] helo=OS8PR02CU002.outbound.protection.outlook.com)
+	id 1x9Co6-00000006woX-1Q65;
+	Wed, 23 Sep 2026 02:34:02 +0000
+Received: from mail-pz2-x10.google.com ([2607:f8b0:4864:3b::10])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9CRY-00000006uay-0CHE;
-	Wed, 23 Sep 2026 02:10:45 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=v62iWZCwdpPiudXjYVRd2lpUBX19fgsL+VLr9GEc8mCJlaar70bfsz7D9vjJ+T5lkHZc3fIy4+hFz7M2y4WgkmVkoJ5BLaXI7Xzw5OeUmFU28Bfbjl+2ilY6IQSFSAQcIDfwPnqx7gbFPk4IcQQbLwEIbytS3LMCyMhwofTz4pisDVApD8PJPRcqvWlEucnkTVKHy9cD5jBgj5/7gMyS07KUjc/EaJufltmWVbEwlqduCw2l6i/XYnZJsJ08//vt91DB3xELWnWeEv4DyXp7RwwEeWNvcq532vJW4rGXTFFelFr9tn3QQNDP984GxscDLwQwPqr1Xd79zV2P3xtxEw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=JtX4IYHJBHH9nu5PK7b9bb5RF1Cf861jiEF1RVf8+tI=;
- b=gL9NILr3uTg+ZdBAdtoXLoajqC1Z9YWBbEd/3yIxVw/fUQwnSOxYZipN5dtjGYrBh976b7tU5N5+UYlTT3r0MFx7taKsltYlv5w3WZ3Kre9GgCO3WROwgvzyXBUshpMi2zUfniYH89sJ8Jm5fdMfEGt132jdEKyohpqD6WXo4lwlbjvmVD88jmxkw4LIW5iFcfUpfRq1eeLSXPXdpsja3bdUqNHHs5Nj4Hpnoso4NIJ4LKsfJ3hI2dK0pLqC4ikzm3FfWJlykcDNlhCu9R8tg3pzmAFFKUhHMmCnYWzKWFjXxkUWrHZxpVHfHhU+TLScFCVF5FRGi4LvK/uDUnyshA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 222.71.101.198) smtp.rcpttodomain=cixtech.com smtp.mailfrom=cixtech.com;
- dmarc=bestguesspass action=none header.from=cixtech.com; dkim=none (message
- not signed); arc=none (0)
-Received: from SI3PR03CA0012.apcprd03.prod.outlook.com (2603:1096:4:297::12)
- by PUZPR06MB5721.apcprd06.prod.outlook.com (2603:1096:301:f7::11) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.451.14; Wed, 23 Sep
- 2026 02:10:34 +0000
-Received: from OSA0EPF000000CB.apcprd02.prod.outlook.com
- (2603:1096:4:297:cafe::4d) by SI3PR03CA0012.outlook.office365.com
- (2603:1096:4:297::12) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.21.451.14 via Frontend Transport; Wed,
- 23 Sep 2026 02:10:34 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 222.71.101.198)
- smtp.mailfrom=cixtech.com; dkim=none (message not signed)
- header.d=none;dmarc=bestguesspass action=none header.from=cixtech.com;
-Received-SPF: Pass (protection.outlook.com: domain of cixtech.com designates
- 222.71.101.198 as permitted sender) receiver=protection.outlook.com;
- client-ip=222.71.101.198; helo=smtprelay.cixcomputing.com; pr=C
-Received: from smtprelay.cixcomputing.com (222.71.101.198) by
- OSA0EPF000000CB.mail.protection.outlook.com (10.167.240.57) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.451.8 via Frontend Transport; Wed, 23 Sep 2026 02:10:33 +0000
-Received: from hongliang-System-Product-Name (unknown [172.20.64.180])
-	by smtprelay.cixcomputing.com (Postfix) with ESMTPSA id 288A343B1061;
-	Wed, 23 Sep 2026 10:10:32 +0800 (CST)
-From: Hongliang Yang <hongliang.yang@cixtech.com>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Hongliang Yang <hongliang.yang@cixtech.com>,
-	peter.chen@kernel.org,
-	neil.armstrong@linaro.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	krzk@kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
+	id 1x9Co3-00000006wnz-2wq3
+	for linux-phy@lists.infradead.org;
+	Wed, 23 Sep 2026 02:34:00 +0000
+Received: by mail-pz2-x10.google.com with SMTP id 41be03b00d2f7-cc1cea4ae2cso372774a12.0
+        for <linux-phy@lists.infradead.org>; Tue, 22 Sep 2026 19:33:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1790130839; x=1790735639; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=RevM+Pm4qTHqsRt7MmtP02SEgC+bsSUvf93SBWhNqHU=;
+        b=KDU7CP9GhESUY4Qpb0brhtPHX6gcUCUsjGWev+O+OIOrlGU0i2+7ZuQfnzyBd6os5m
+         OEZ/5gEEy2eERnEY45npaDhczEPQSNkvB3TDU0yF1Xi8gYzuz5oc3zz2B+d/cd4pqEoT
+         +AtUBCFlT++zEmIVv9pBRppot7ihL4gNaWYMvP/HCkwtIpKzZs7cG6ni5cITx4o7cT5M
+         CO9wCNKbueOG5Huwi6ShjYFUsTOrNhFfI/Eo7CaTUrseglqKF3vqnoF54zsNUlidhWYk
+         CnjYU7Gn7u4LS08d9GusUviR9AkOfjJ+Di318uULjJ8CvSXO5LOiMxj55OXwOPQQhC/0
+         Z07A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1790130839; x=1790735639;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=RevM+Pm4qTHqsRt7MmtP02SEgC+bsSUvf93SBWhNqHU=;
+        b=J3UF4Lr3XdfMMPm4225ttwiNH537epwH3q7msWSKS9L4d/sntSKfdtcF+gbQcrUCVF
+         ldyJk9p1wzn8BAJsjFhHWsboFkc1jnEBOH+Kki0Stv41RVrqbp3NXjOqmtFruIubt5fZ
+         9kllU+fzW9A5cQECAIQgoLaifrDX5fCwhiPs84DD7YLNrpqI8m8CYNxPnhe60oa7/8Kp
+         lhstBsZtFcvsbrqm+V1lGYQSVvCXmsjhgcV84RkF8RctmgeTA3DpgWgeGzL3Xn+vL+rq
+         W4hjZblnhubGJxuo8i9VGIklzim38sslFWqSfcH5cz0V9xIAIG/IHSLGfWyigeZ98mhZ
+         5fVA==
+X-Forwarded-Encrypted: i=1; AKwUvBxtLph+0QRpyHCwYHafPefVGXkRwwPcGyuB5ElNwd4/rrTtEtvDR9JY7alpeGgv5dsx/JYZ2JQoSMY=@lists.infradead.org
+X-Gm-Message-State: AFuF++nEHtD7BR48o+wxxQVZWeeDi1zj7M1GcSSj1WOIVAynBH+oSdG2
+	bD8glXSxOLZMLivCd+mIrV/fTpnMEGcWMksAgz4R7uRZJlCz+Lu34yKl
+X-Gm-Gg: AYBFou0Y0DCCk3YitpNXEQ0n1980pMxSwbJvLhHERrGgmqmceURsWJhuhlOW2UKx6A6
+	0GHZhKbkwqFim9CmVLGFVxw1JhtsB3b1zFPDnWmFoqbP+5LXkZO9QeOzOfR8CSReRU9LsZ9WDea
+	TbsI43aw9IzfJSOj9116r12gtrnaP9DKreNscf9lMPAIdxJ10rMVGYgD7crRoHsZsInbPeHRpVc
+	TwoOkMHNu6zDEklG72A4F1XeKqWfiQ1tE895T7IzTUSNKafTtaHA+3Qp9zAvRqfe4WwnqoVJ0oo
+	K2cXQFjSUnYYl8aqQsXQfmevUZRyTcOKnzbLS0ozrBynJhwZmRQ/t4njrh+zCgXrdkyVqyQbAOv
+	B5BsH6EBW7ei5RHCqTNjlkYRfGwN+Kl/pFAsQy4+5y8scVNOcTjmGguImTcR7I1t6rqub9hleJ1
+	4g8+1eUEO54gBIuyOi+lPTMTspgu8GIjc78uKjwefDc3q66Svrwp1ZUS1FHkEfXjk9AJ8A
+X-Received: by 2002:a17:90b:1652:b0:39d:ee20:1e3b with SMTP id 98e67ed59e1d1-3a07e55b403mr1202832a91.23.1790130838813;
+        Tue, 22 Sep 2026 19:33:58 -0700 (PDT)
+Received: from localhost ([2001:19f0:8000:3e6e:5400:6ff:fe38:3d01])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3a07ddae723sm2076064a91.5.2026.09.22.19.33.58
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 22 Sep 2026 19:33:58 -0700 (PDT)
+From: Inochi Amaoto <inochiama@gmail.com>
+To: Jonathan Corbet <corbet@lwn.net>,
+	Shuah Khan <skhan@linuxfoundation.org>,
+	Randy Dunlap <rdunlap@infradead.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rhys Tumelty <rhys@tumelty.co.uk>,
+	Inochi Amaoto <inochiama@gmail.com>
+Cc: linux-doc@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
-	p.zabel@pengutronix.de,
-	gregkh@linuxfoundation.org,
-	cix-kernel-upstream@cixtech.com
-Subject: Re: [PATCH v4 2/3] phy: cix: Add CIX Sky1 USB3 PHY driver
-Date: Wed, 23 Sep 2026 10:10:31 +0800
-Message-ID: <20260923021031.815275-1-hongliang.yang@cixtech.com>
-X-Mailer: git-send-email 2.54.0
-In-Reply-To: <20260906032431.470744-3-hongliang.yang@cixtech.com>
-References: <20260906032431.470744-3-hongliang.yang@cixtech.com>
+	linux-phy@lists.infradead.org,
+	Yixun Lan <dlan@gentoo.org>,
+	Longbin Li <looong.bin@gmail.com>
+Subject: [PATCH v3 0/5] phy: core: Add phy bulk helpers support
+Date: Wed, 23 Sep 2026 10:32:58 +0800
+Message-ID: <20260923023304.78428-1-inochiama@gmail.com>
+X-Mailer: git-send-email 2.55.0
 MIME-Version: 1.0
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: OSA0EPF000000CB:EE_|PUZPR06MB5721:EE_
-X-MS-Office365-Filtering-Correlation-Id: 4e811cd2-16cb-40e1-1b7f-08df1917d9a7
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|36860700016|1800799024|7416014|23010399003|376014|10067099003|22082099003|18002099003|56012099006;
-X-Microsoft-Antispam-Message-Info: l4+qGz4o4dffyc/iXgKb3SsxbB1CZcmlJEY4EieCrVPb//DBODLRVEvKfQTglMLFhyrE9abUaurzQzB4fJ9WC56KvNH0QAWPnMDGOQSaHfLXG79DMoZtTgEXOGHGyqwzqEjrKEnbBo1k8ngezu4LnMFZWEyWQjJBtpzUgskbX3wD6Q2FCDded5F5BCxQEjfQxnap7WqX8+I54fvmJGPQ+kBh+/UGbOnAWWrdH8l8Df+nZcl7mE46ixYkTPOWtS9onWM3fvtPn2171j+1LY3dfEFISgfO71ioSI7uBPYeY8XPUowCiabc50ezOWWuW25tMWjhGK3m2mLDyv3v2elqem22qcxDmkWX6TlrqWBIBzPtr40NBD2i9M1CphX6t7V4TwX9DK4YpvbuA/Jfe70ux8yHE9TIua2jHeF766aTGF2X+dZGIOiTJmhHhB4f+XjzxK6lZTGe+g5Ec9TR3Hxzy4XTKibLmaoEKumXFgbFVlzMyD5jjvfpfEyTX3NSnA0nVGhBNIwxz1FdPplEiDoMSbky2WycaMS98QRDYpf/WFY9qBiP9xfEQw4DDV6jtEv/FHrR7pUUcMbUBz7uYCwC/mN4RgF6A/ygMxyA5eTGxRKuQp78o82keVDnkuJcFU+S3cpmV6uDupqvAAE5jf6kVBo29OgbQ9R2EYmqr4RhXSZUXJA75Ks5D00xIjYcmuRvPshbzpHHYV/yvpz7118xEA==
-X-Forefront-Antispam-Report: CIP:222.71.101.198;CTRY:CN;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:smtprelay.cixcomputing.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(82310400026)(36860700016)(1800799024)(7416014)(23010399003)(376014)(10067099003)(22082099003)(18002099003)(56012099006);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 2uI9ZaesvWZnNi46dBIwbF3UGudV8pBsTr0TGMBcq5LufZRVUHjF2pudP420BMP7CeeoDT9cj9IzcnNb606zYUA2AmPvN8eUty6R/+3XlC2x5geOPz7vIAKxd0UP7F+WzN8SUQIFW30ChiJNBr4gC5Ll2amWLVoft8urNPFpt/6sB5GSO2AfbZw1d6NtOqgFm2xu0CL7Yp6doTiqGdsI4Vl7BGmCiAfmKMY/8BJJpXJLKaqIPURukDREAaxdA/jvxEFBwEVVzFBlIq6oXeeNKi9b8dU+9eI7XL1GzmgJMnl7lWOaNnF0nUsUKc47s/ZBD+8Ro8l4LQ7JalOLPia4Ghp/OHskjEG0GBstEsCuX8QgYDOddB0LilvHoEhllbsPwGMzwLp0lBoudHwB1ViZPM+uq1gtzVulJTOh/bv1z8awFcc+rckCYwegKH7Sjfmq
-X-OriginatorOrg: cixtech.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Sep 2026 02:10:33.4038
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4e811cd2-16cb-40e1-1b7f-08df1917d9a7
-X-MS-Exchange-CrossTenant-Id: 0409f77a-e53d-4d23-943e-ccade7cb4811
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=0409f77a-e53d-4d23-943e-ccade7cb4811;Ip=[222.71.101.198];Helo=[smtprelay.cixcomputing.com]
-X-MS-Exchange-CrossTenant-AuthSource: OSA0EPF000000CB.apcprd02.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PUZPR06MB5721
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260922_191044_084576_2CD82E4A 
-X-CRM114-Status: UNSURE (   4.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260922_193359_753971_0F7240C5 
+X-CRM114-Status: GOOD (  13.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,16 +106,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
+As discussed in [1], some drivers may do not care the difference between
+phys. Instead, they only need to treat them as a group and operate them
+together. This means a bulk operation is needed.
 
-Gentle ping on this series. The binding (1/3) has Conor's Acked-by.
-The driver patch (2/3) could still use a review.
+Add some bulk helper functions for phy core by referencing the design of
+clock/reset subsystem. This can relieve the driver owners' life who needs
+to handle many phys, as well as each phy error reporting.
 
-The USB controller glue series that consumes this PHY is also under
-review, so having the PHY side settled would help both.
+The example consumer driver is at [2], with the following function used:
+- phy_bulk_init
+- phy_bulk_exit
+- phy_bulk_power_on
+- phy_bulk_power_off
+- devm_of_phy_bulk_get_all
+The devm_phy_bulk_get_all() is also added as a simple wrapper of
+devm_of_phy_bulk_get_all().
 
-Thanks,
-Hongliang
+Note: The patch still uses -EOPNOTSUPP for dummy blob. Instead, I send
+a new patch [3] for fixing the left function.
+
+[1] https://lore.kernel.org/linux-pci/ak9KzNFF26B0Kttz@ashevche-desk.local/
+[2] https://lore.kernel.org/linux-pci/20260923015016.64069-1-inochiama@gmail.com/
+[3] https://lore.kernel.org/linux-phy/20260922024724.191412-1-inochiama@gmail.com/
+
+Changed from v2:
+patch 1:
+1. Add Andy's tag
+2. Update comment for phy_add_device_link
+patch 2:
+1. Add Andy's tag
+2. Update comment for changed function
+patch 3:
+1. Remove all unused function and make the dependency as static things.
+2. Update comments for struct phy_bulk_data and left functions
+patch 4:
+1. Remove all unused function and make the dependency as static things.
+patch 5:
+1. Add phy document for these newly added apis.
+
+Changed from v1:
+- https://lore.kernel.org/linux-phy/20260831025319.94886-1-inochiama@gmail.com/
+patch 1:
+1. Update document.
+patch 2:
+1. Fix document format.
+2. Fix several document description.
+patch 3:
+1. Split into two patches: one for non devm helpers, one for devm helpers.
+2. All the bulk helper now use unsigned int for counts.
+3. Fix multiple the while loop statement.
+4. Rename of_phy_get_parent_count() to of_phy_get_count().
+5. Fix some 80 line function problems.
+6. Use PTR_ERR_OR_ZERO() to simplify the error handle.
+7. Fix zero value in the document
+8. Use two separate release function for devm helpers.
+
+Inochi Amaoto (5):
+  phy: core: Add common helper to add phy phandle device link
+  phy: core: Add common helper for get phy phandle by index
+  phy: core: Add phy bulk data helper functions
+  phy: core: Add managed phy bulk data helper functions
+  doc: phy: Document some bulk helper functions
+
+ Documentation/driver-api/phy/phy.rst |  29 ++
+ drivers/phy/phy-core.c               | 416 ++++++++++++++++++++++++---
+ include/linux/phy/phy.h              |  74 +++++
+ 3 files changed, 483 insertions(+), 36 deletions(-)
+
+--
+2.55.0
+
 
 -- 
 linux-phy mailing list
