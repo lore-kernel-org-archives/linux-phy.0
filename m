@@ -4,143 +4,138 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45E60C982EA
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Sep 2026 05:54:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37282C982EA
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Sep 2026 06:37:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=177OWzskvoP52oO4HITt6YXKXzcsHd5akbTgAuIIFvc=; b=Hvyc2aL8n6+mMG
-	zCOOHFwzxEQNvKsqD3k27Frj+DmACULtgM53QLe+0wOsMr+S3YqmoEMWKQnoAN3B05ZbP+ikySe1S
-	WOrTKAD6U+ivX/5KBJfvZ/CnnxwX8VkXARazBeCi8KT6Aj0kJL9/pGEsp6ElnWYwPsIrsqsB9r1JB
-	+Ex/MJCFuBlTlDBn3W5H6d8Jtv54MNkpQPXgJjVduxNzZS8PemLSz8pI9PPZWDlZc3iu4TU8kipfZ
-	dgAx+LlMwHouPQ/uLn2cxzVr7RT0bB/l/1gBzMDbMOnPHJRzhXey/O6DSTg6YC2ATqkKl2nq4eRSi
-	Dj3JFaWHkDPEk14mK5TQ==;
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
+	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=fOaDaEHebyv6kcppmQY8wF7ixfX/B0fTU5EHymW95uw=; b=aiMzhm4h43xagh0ui/dwjqG1RU
+	R3G2gM3gjUkcW4QuU41G6zmywp5SPnIn+iv+FSk9BvUKqP8T95UXTvd2mqGB0S7eMRAlgKiyQoA2B
+	f+50Y0OxztO6nesSAxG/nOeoBizCeBfNW5M83BdsQ8AjF2oJvwLmQM5NUSd29pWVkeahYGxdWXwWo
+	Rd+uStPNRNKTFzU1xT5gGc1Ua7MVtITA1EqfxrFMeHp1GbY9A5fQXiv+/M6XuxpbLA5S8Q6SvScU0
+	DmTVeWMpQPcJjhepTBdYS2SgjlPXynUK4k+Gh8NGco1776Rv+GmaCNdzZr+X60TDQVzQ4uBt4yXDY
+	boiYntGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9Fvw-00000007DQr-2QRP;
-	Wed, 23 Sep 2026 05:54:20 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1x9GbN-00000007Iva-3hZS;
+	Wed, 23 Sep 2026 06:37:09 +0000
+Received: from mail-northcentralusazon11012045.outbound.protection.outlook.com ([40.107.200.45] helo=CH5PR02CU005.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9Fvt-00000007DP4-2jMl
+	id 1x9GbK-00000007Iuw-3yqR
 	for linux-phy@lists.infradead.org;
-	Wed, 23 Sep 2026 05:54:19 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68N3ie101986388
-	for <linux-phy@lists.infradead.org>; Wed, 23 Sep 2026 05:54:16 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	1qjLbtTDhsHiX99dZ4U9zPc7b9TIIVkqC+Y1oTNhL7I=; b=gs6N7DBdlGDdnTzF
-	J6NVzxTVIPUy88VXKo6EAbYiC6noCrTNvdM9E6DNFHc5S9bGvWyddl1rXMpRvaLp
-	TfUF9IEVfo2WBmS0BqHPpWOMSoEbBDuD0Om94aunEBQ91h/9c/hAAEESrH140Dj/
-	j45sKoMQp2hN76zSYykEeSw8QwB73dsLO+0z32CCBTbmCBKz169T6o4RGNn2opy8
-	+CW2A3Z8iWUn5SZrrdWCX9bT38Qr5FhRGUA9QNrFF1tNAhjD/EtOv2iUVYynfh6q
-	Tgr2G2Z40PIUPRYCKi0FIFdQU/hnUuEHuIsugjlPpgpFA56O1gWHQ9AZk9QqVNXa
-	oNnpTw==
-Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gv3319802-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 23 Sep 2026 05:54:16 +0000 (GMT)
-Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-3282d5302ffso596777eec.1
-        for <linux-phy@lists.infradead.org>; Tue, 22 Sep 2026 22:54:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1790142855; x=1790747655; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=1qjLbtTDhsHiX99dZ4U9zPc7b9TIIVkqC+Y1oTNhL7I=;
-        b=aqdONwryQKi12i4m1K7lxPtTySANUMnDu6wiucgXmNKUQgvKziRRz7jFmh9kYimnBT
-         dSbB3Wb7KpzziJA2ZVi91LgWAoJuPajv5g+5CmBmUWI4RqfHNSPX7JxG13G6k52B/SuB
-         41QZD4qATId6csgeqx4y+1EPybz79p6bSzhPBotNFyyYNG66WORNMDQ610fSvtWlLhJ7
-         pjgLg9dtXUH+PcT0utxageRxLfQWNI4yhrZgswyAH2oc2wCTFGT+UuTBNfaEjs3gnZ/2
-         abJzXbU6p9gXFEYZScs0MJEGLUtoEIuGSyWPrIJqf8btRe001j/QZYHc1tKEW4KPafWH
-         truw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1790142855; x=1790747655;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=1qjLbtTDhsHiX99dZ4U9zPc7b9TIIVkqC+Y1oTNhL7I=;
-        b=QLFjYtTTyv+tHf5lFKe9fA2zTOWkLHbsQW3BZ7oOLVQbY2nrcQ0jWu2oaDhxZvtiwr
-         aawnUFUazNOEAcUXw2fdznFJF7mMLq/6pi/iRazOawNUf0Ctetp5XYunJwfh37sHza6B
-         Xu3t7ijJVJnKzBwYNdsNz6rXnGZa1dDixbXU1l8VmleBYRR/3qcnHS3/6mf2bpbuMnGw
-         ghKVtPvsBUQTfWUZY/JbKW4fmz7L5SmTpogo0mYSOQbuEby2FqbjKap33CvGGNOaESQl
-         1ShmAcqfXAK6Pi1VbBBdsJFZlPqZTjIgx2ErIEuMNkSS/KG2mILdZKBID/Cja4CyReLy
-         4niw==
-X-Forwarded-Encrypted: i=1; AKwUvBxSOcy2PnwlrIWFJOK0L2Gt3a/nEZAfFkR10EcgOrfPUzj51AK8Oj8e0TeRPOFT6y1zkRlIiMKzojA=@lists.infradead.org
-X-Gm-Message-State: AFuF++nMuSw9WRs7WtZys4Dmky99q7gKRgTyf5LIlApOSayWlows/WOj
-	J8OaXfUArvVAZN1X1Sm6gS7lRcymrILPsS3vPpQgryDZAjFaMN9aiW/1khb4ycYdNqv3crQLJOS
-	rNnJmwxB/mspSMNbFInRtfoXFiiIHk4Vuyur8PPQe3atfux6j2rh/ARm6Jb62a0BpEukw
-X-Gm-Gg: AYBFou2MUfUCoRxlDYb8qAOzreaH2GfXW9tMVxvBdIPQh/VVh3Utxo2iRRg2inwSEUh
-	6CGmXuzCCgqFJ8cF0+HtPEHYJxe6rFsd+gj1McCm8u1++YYg7GvcNX3tHmZwHH+A41Aawy7T6uq
-	YavosD2wQduhpFV18Zb9CluyQOky/7YY1Egk8lEAJFeyVWY8D2GF1R0T2e3LgHCLHk93x4BlZkv
-	nraJeF1CRvEEVlTHMhL3R3W1lEiv1QteqOD4odUTk8rC2ERrXCGsApD6qoH8NW7I/ox3ftmOFq9
-	I7LR4h4LKX51aAH0on+uM0TAXRdJYmnj/Rwecb8lu+sdpHbHV8lltfl/dSllz0HF7AQGTLR2onV
-	mLTKPXZRIQtZr9cyrTjMRS0Aji+lNoslf4IDVwoZt/dORdpQFPEaEJYzq+uZoOitG13k=
-X-Received: by 2002:a05:693c:80cb:b0:33c:43c:f3dd with SMTP id 5a478bee46e88-33e7c426a71mr1660473eec.11.1790142855408;
-        Tue, 22 Sep 2026 22:54:15 -0700 (PDT)
-X-Received: by 2002:a05:693c:80cb:b0:33c:43c:f3dd with SMTP id 5a478bee46e88-33e7c426a71mr1660444eec.11.1790142854850;
-        Tue, 22 Sep 2026 22:54:14 -0700 (PDT)
-Received: from [10.217.219.121] ([202.46.22.19])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-33e96258351sm3304240eec.12.2026.09.22.22.54.10
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 22 Sep 2026 22:54:14 -0700 (PDT)
-Message-ID: <f4b3fb1e-4628-43c5-97da-8af96da4d642@oss.qualcomm.com>
-Date: Wed, 23 Sep 2026 11:24:08 +0530
-MIME-Version: 1.0
+	Wed, 23 Sep 2026 06:37:08 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=GC0ajB0YBcgjS0Nl0kY/hcLtJbLJ+vxA5/S+S1L61legTUniaFQPkTMgn1ia5ht/TDAOSVbMvu9/1F6UYJvyjXxTZlBqMTKJD0DxzMbLiiNTWLTzA6DDcXSA3N9eD64nVsSVrML3vHyoKzcdhCDPNWDMI4pSBP8X/NXJBPdmOIBF7Vr2R8umCqDKBonF/33KAMZU9TgT732ARph9MSNFNM8G410xum8Sj2GpNIZP12oCExsFwgUOi3b5d6UKjqih8FjnC7iSL0QnHxgVVXeoDYbi1EUyj2AMh914AxjpyzxlfAP/aJFX9HBYqpecuREqSQQ4V7/+uPhxq7UAeQFOrg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=GPopnA/y/SJiLkKSTtzUyn7NJ5MvCZBdzAnPXKVokWg=;
+ b=iGcxOdl4GnoIR/PtdjMz/KH3c+cHea362JEo8jGMHs4Qq8rgDML4YryS7lXLdYCwG9ju2k5oM1RufTfY+L+yKlJP3Q9qpaC+RNRL1LUAXLAooLckcEQWkxxyOwlF2ACM+PaWG0+8hC0Ar9AWVwuAuUFf00KFHt2DZxKZkKrK2auI7ZY+nuEpSnMTSCTNqtbc4EXb5UJb136Ki1JtjLPalN6l6QVu90Le2x3Z350Fldl3L/Y2AeJAVGIXWnJixY+VPH2O8f92n3XJh1evGc4FduUBEZfPmYYPJFYUFahw6P/59R6lNFBDoR+6DcMY83pQG/AuIe7R4InFNuxdFNi68g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
+ dkim=pass header.d=nvidia.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=GPopnA/y/SJiLkKSTtzUyn7NJ5MvCZBdzAnPXKVokWg=;
+ b=e/8Kl1/ww2FEpKEowTnk4CxUQCM1bsyvanK3EJW7ahxHMv/qvO8UhCnI0u1If20mGHCcADehsquoA8ZIWVzBX9EZTBHI7zGoa1iUH0qlZf1DS0RcmVvWZauCFPtyPfAlXvgdb1BgTAtlcN+E3WBJ9HuoQizJU58CVSzSLQgi6SFfOo1d+MradSDZxExMsIQbotubBzdiYALAmY7e2deQ7iSEO59QjsGndrjpq8P9oSkE2QtgprFN6YzF/Wmr2jVDgJrcWufPLEZXmzIgZnBkXXu0tKjki2OxS/qKWLXvjNDNCZf9p/ZRLpzuzvyLR5XIqy6EEFwX1uDJa90KuILD8w==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nvidia.com;
+Received: from PH8PR12MB7110.namprd12.prod.outlook.com (2603:10b6:510:22e::11)
+ by EAYPR12MB999180.namprd12.prod.outlook.com (2603:10b6:303:2c2::7) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.451.14; Wed, 23 Sep
+ 2026 06:37:00 +0000
+Received: from PH8PR12MB7110.namprd12.prod.outlook.com
+ ([fe80::736a:e1be:ec64:5740]) by PH8PR12MB7110.namprd12.prod.outlook.com
+ ([fe80::736a:e1be:ec64:5740%6]) with mapi id 15.21.0451.014; Wed, 23 Sep 2026
+ 06:36:59 +0000
+Message-ID: <78798ac4-cfe0-4c0d-a79e-3f49611b7ae6@nvidia.com>
+Date: Wed, 23 Sep 2026 07:36:54 +0100
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 3/5] usb: dwc3: core: add post PHY registration hook for
- platform glue
-To: Sebastian Reichel <sebastian.reichel@collabora.com>,
-        Thinh Nguyen <Thinh.Nguyen@synopsys.com>
-Cc: linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
-        linux-arm-kernel@lists.infradead.org,
-        linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
-        kernel@collabora.com, Igor Paunovic <royalnet026@gmail.com>,
-        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-        Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Manivannan Sadhasivam <mani@kernel.org>
-References: <20260915-b4-rockchip-dwc3-rockchip-glue-v1-0-763bb546824e@collabora.com>
- <20260915-b4-rockchip-dwc3-rockchip-glue-v1-3-763bb546824e@collabora.com>
+Subject: Re: [PATCH 2/3] phy: tegra: xusb: Use dev_err_probe()
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Thierry Reding <thierry.reding@kernel.org>, JC Kuo <jckuo@nvidia.com>
+Cc: Thierry Reding <thierry.reding@gmail.com>, Wayne Chang
+ <waynec@nvidia.com>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-tegra@vger.kernel.org
+References: <20260921-tegra-phy-v1-0-83466bf9a7cd@nvidia.com>
+ <20260921-tegra-phy-v1-2-83466bf9a7cd@nvidia.com>
 Content-Language: en-US
-From: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-In-Reply-To: <20260915-b4-rockchip-dwc3-rockchip-glue-v1-3-763bb546824e@collabora.com>
-X-Proofpoint-GUID: RLAL_35I_-6l2KkPcYPWrRJey3oyBTg-
-X-Authority-Analysis: v=2.4 cv=HdaB3SE8 c=1 sm=1 tr=0 ts=6ab36988 cx=c_pps
- a=cFYjgdjTJScbgFmBucgdfQ==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
- a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
- a=pGLkceISAAAA:8 a=QX4gbG5DAAAA:8 a=EUspDBNiAAAA:8 a=fFHpL_doKWamrhBxXOoA:9
- a=QEXdDO2ut3YA:10 a=scEy_gLbYbu1JhEsrz4S:22 a=AbAUZ8qAyYyZVLSsDulk:22
-X-Proofpoint-ORIG-GUID: RLAL_35I_-6l2KkPcYPWrRJey3oyBTg-
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTIzMDAyMyBTYWx0ZWRfX6jqwKj1W++kj
- vckOXdkcwJRTosUT65eA+JlvXMT4LnUyxZ3pBbQmal59k9FaCyUkesTqf3vRWtWafzWzBbWbJfX
- 35o49voRjWkoR88NKST+X6GKGhSQOJHh5L6Ej7qFfSkKGEokEPa3y/SjfXrn/+TtG5BKfXBve8O
- sXRMt6BL+7VvkYqODCr3EsQxhMRdCFcAhXjECQW0ANbgpVHaS9Mq6/D2QatKn4gzZFVzkvtjiTg
- 68Lf+Z4lQW5+UbDTdMYkGI45xGXyT7MsOm6Aump0PrLx0IuWgKb+Hfra12uad8ArhAeGVr+wI8q
- FXsRnnFoQSn9Oe1JKPVkIDDO4gUo3FESclW2AWsoFvqKAQX0mYVDS3kXyBj+v4iHZja+D1I9XTO
- QzlfiBK8M9p9lKwWFjKsz1AlPjUYz6WwtgwEkKY9IL3h8fyx+tIkBMVHh6VYygw0niLsdbW3Rfu
- pKA0LmzZGVJxtfdNUzQ==
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTIzMDAyMyBTYWx0ZWRfX97tFR+9JUJep
- 9crw48O8kGC5WpFLrcwAwXeJQPl2sjinqjYiJgYLxWGB3hNBmyXynaznUwoU2k/pPek2CQtHdUx
- r1JohQ7PRp9MJJZTAC5vAB9n+FE4u7U=
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-09-23_02,2026-09-21_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 phishscore=0 lowpriorityscore=0 spamscore=0 bulkscore=0
- priorityscore=1501 clxscore=1015 suspectscore=0 adultscore=0 malwarescore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2609230023
+From: Jon Hunter <jonathanh@nvidia.com>
+In-Reply-To: <20260921-tegra-phy-v1-2-83466bf9a7cd@nvidia.com>
+X-ClientProxiedBy: AM9P195CA0005.EURP195.PROD.OUTLOOK.COM
+ (2603:10a6:20b:21f::10) To PH8PR12MB7110.namprd12.prod.outlook.com
+ (2603:10b6:510:22e::11)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PH8PR12MB7110:EE_|EAYPR12MB999180:EE_
+X-MS-Office365-Filtering-Correlation-Id: 15e0e3d6-b494-4f12-82f0-08df193d1208
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|376014|23010399003|366016|1800799024|4143699003|56012099006|11063799006|10067099003|22082099003|18002099003;
+X-Microsoft-Antispam-Message-Info: c+MSH+oDX0uFqPOrMXgA9ZR7zE/aIhtrY1Glc0oQNGaeqLFNVZ16R8mpVni+iHf/e9hP2WpsxcmAkMbrfGM88Rp5345pF7KbX9S+9YIymUuo65lkP5lLeAdR2UwHv2iGQcnHOr4Idy3hUt8xBD0RZuqFA39gxoGpWxijsFDpb+rD5PTpUKr5Watd287ollaOwdWmK9uznDE3BI65wovEP3i0VIq2OQS/U3Z8czKhfnY/EhhATwaZYbsYu2BTtLKMGrNU1ndfiZMQN1AvDJkkhS/P1xp0i3RcrwzrNFJx4SLRxy/h6rZKE00beobCfsI+wlGun++HgDSpZkxgUfh+Okg+caMULOnoDV4Ma+w4YNWc7dswFnIcXfSs40j77rAnqLRjxS+V3B/iYHWk1N0vHcTZlEvt4f95QwSwN5iMz2DNZdJNTG2SE6b85b750mRzNBFVnE5Mun3nEGozc3LLMdkj4dEuMqusqv8T/sbpRHFI3+CkiqrJa6Lc/+9lC5S89z4BgXcZFY+A5WXzCfwOSYJi9IygjrYLD0wIdJP3NF9gdq+wy/CFzlBYfzaEkTVHLw1q880b2DTl9my+mMAsARkcX8Wskb6kcbJjjeZ3KgpQYvejOibebwxJ8pizE6qkuyLBcneeGLh4LHJvAFkRtEh06XFX/MfESF90wE4YLzM=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PH8PR12MB7110.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(376014)(23010399003)(366016)(1800799024)(4143699003)(56012099006)(11063799006)(10067099003)(22082099003)(18002099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?MWZtemo0YXprY0RHU2pRcVYvcTFRNGhEV0V4dFF1Q1BJWTNibGxycU5zNmVS?=
+ =?utf-8?B?eFdVZ0Zud0YzWEkwa0lnL1pJSG1qMnZ0UmZUZFhZODVya3RBT1lnbjNEZHlj?=
+ =?utf-8?B?WDZKZVp5ODYvT2NXL1NwOVMzZ25xR3FSOENOaDJ5cUs0NzFTTldidndzZlZQ?=
+ =?utf-8?B?blFXd2FsWkN1UU5FUldOazJnamNOTGVMUzVmNkJkVVJNTjQ5Y0ZRbURncFMr?=
+ =?utf-8?B?eUl1MGlDakp0dVJoc2t3cFZUb1YySTFUdW1PdXkvdzZOV2VyWmFsN2V0a3VW?=
+ =?utf-8?B?a3BQVWNVbDN3RlRneDlRbWgwdHBMLyt4aDRSNW9wNVJPWk05ZmlZejFXRWlZ?=
+ =?utf-8?B?OUc4WmJtaFdVVVAra0F2UlZUOTJUdHNQNkxRbm9SVmF6NVpMN0V1U0lINEFx?=
+ =?utf-8?B?Ri84QTV0anFvN2JOZE1USXBhU1JvMUg3b2JZYlA4WGJUMVlsNFJONzdmbW0y?=
+ =?utf-8?B?QUk4NTYrUkJKUzBRTkZNRVk3TWY0dVlTL3dPdmE5bk5iM1VUSXhpY1YxYzFZ?=
+ =?utf-8?B?NzdpUXhtNG1Dc1UvT3kva1psbVV3WWZiS3dZc0VUUHN3MCs4Q3FTZEJQcWhU?=
+ =?utf-8?B?bUJHWjNQQmRuSnJKNGFRL0dFMDk4ekZlbW5aZ016d1lxQ2YyL2hhTGU5TE5a?=
+ =?utf-8?B?RmdSV29yTjlsQ2gzTVFVckhOendqVU5SSXZ6dkY2Yzc0RXFMRlM2S1QxTi9q?=
+ =?utf-8?B?WmNnMWFIQjBvaWVvbGFrTjZSWFM3Vm1tOUhZaWZxRVhpVWJjcHF5b241eHpW?=
+ =?utf-8?B?YzdpYjIyNi8wM3FFazFnTDhxcG5YYmV0Y2pxL2JaaVhsSzUvZXhrS085UnJQ?=
+ =?utf-8?B?N2ZSNkU2R0xXdTZ5MmY3Y25XMGZiUDNoNDhjalJ5UTVTcllQQkVBMWRTb1FM?=
+ =?utf-8?B?eEU4MXdwbDNaekFZSVdaR0ltcS9Jc3BJcElWZ0JVc1M0K1p1bkhXK0c3NEJn?=
+ =?utf-8?B?a2pSNzFUaTQweFJrMVV4S1NWeFM4dEJaRnZTQTUvNzZrWVNKc2xOM1o2QkJo?=
+ =?utf-8?B?TnBZdU12TUxXL0pmY3FJdW1DbjZ2cE9ybTg3eURCd2pWM1oyTXFYT3kwRTcv?=
+ =?utf-8?B?VUlmSG9aSG03ZXpnb3BlcCtWTE00dkRZVVlKbUlQZDRBL3huclVuWEJSKzg4?=
+ =?utf-8?B?eFYvZzJWamZGM3dpcmhKNjJHT2FGVnhYcmdhQ2JnTCtEZXJCVWlZTEE2dkcx?=
+ =?utf-8?B?TkRqUkZVZTZKdEZnMFNWOWRIYkQrSitLVkdFMFMwL1RFZ1Q4dE5kRUZXQTlV?=
+ =?utf-8?B?bEZ4TkxTT3lUSjI1VXhQR0VlNFUrVGlteEYzTlBpK01mSktLTWdNcUFQbkxR?=
+ =?utf-8?B?MXlNTXcwZzB2TzZFV1p1cHV5MDdIU2FMYmh0dW9EcFlxc2pjaUhadGVycnRJ?=
+ =?utf-8?B?OEJTVHhkVDhmUnRVNWZqR05YeWpxalBxZ0lUejFNdktZZEFvNDM4cnZMYThG?=
+ =?utf-8?B?eE8yUlZTRnBZSmE4NmE3NW54OEF1c0NmejhUME1xZEhVc0R6dHVlZWpZc3N1?=
+ =?utf-8?B?cjRsQ2h2RXgzOElac2xKQkhTOHBMR3kvckgyNHlyVksrMjUyNmlKcytUZ28w?=
+ =?utf-8?B?cCtWTW5UYXNSaXJTV3VEalNnL2tqc0J4ZFJPbHh2VnNaNlZqK2E3RGZlTUNm?=
+ =?utf-8?B?QUJWVkNCdm0ycnJMYVV6eDRxc0drbnNUMG03NVZ6Qzk1aS9IUE05dVlJR21T?=
+ =?utf-8?B?K2k2RWMwMWF6S1ZXaHNrMUF3ZGk3NEE1dTNzQ3RteE9JcWloaEh3d0gySldY?=
+ =?utf-8?B?R05yUUtrL1hWdWY3WjNxVFozYTRJZTd6d3R3RytJOTdkNVMwQndBTVBUTjhh?=
+ =?utf-8?B?S3NZNExPcjc3RGtSNFFzMm15MTRpNFR2TjJsQW5wN0daSnhaU3BwM2kvQU9D?=
+ =?utf-8?B?c0RQL0VmVXlCUTlraFFEdHk3eSszN1Q4by9UWk5YWVdseUJFV2laZmVndmFD?=
+ =?utf-8?B?b0xtY00zTHAzZm5EdFpsSlQ4RStHTVBvVU5KelViWVFJQ21ZRkJpK3dSdnBC?=
+ =?utf-8?B?Z1RSeE1Ka2loU2ZWMGtlSzBwQ0FtTzVrYmNpU0lGOUNsdUx5NW13eWpudUd3?=
+ =?utf-8?B?TTBYaDM2S1U2QnhFVy9wL1V5VVpVckNxM2JCT01yc01iY25KaGJEWVhMNjJQ?=
+ =?utf-8?B?V1UxSEFwOU9OeVhKdzZSdmlIbG5WWWpUSzFYUEZkaGFaUkk4Y3lDMzB2cGZP?=
+ =?utf-8?B?Q2p1TXJpTjZ4dzVIT3lzd0d5d2ppbFdoZUxKNDI2cklmVGlrRlAvdm1maXEw?=
+ =?utf-8?B?SkpubnFDbUFVODhDdGxvanFsaExsQ25KQUw5RndhRUNzY3YzZUZqNHQyejdY?=
+ =?utf-8?B?eXBNUmt2dW1YS1llUTlubDBtQzVGVGdyZkhZUUwvVC9iNnZ4SWZVZz09?=
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 15e0e3d6-b494-4f12-82f0-08df193d1208
+X-MS-Exchange-CrossTenant-AuthSource: PH8PR12MB7110.namprd12.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Sep 2026 06:36:59.8686
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: DGFHqvS7NFzCc+zy0BqbzIl9Uj3qNPajKeXZOrTMyoSxJIoEmgKgdb7MS3CbhRkUbJ0TOKANWZzlqIzF9Nivjg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: EAYPR12MB999180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260922_225417_798808_4BF8C972 
-X-CRM114-Status: GOOD (  21.62  )
+X-CRM114-CacheID: sfid-20260922_233707_010959_586980F1 
+X-CRM114-Status: GOOD (  14.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -158,67 +153,40 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-
-On 9/15/2026 8:47 PM, Sebastian Reichel wrote:
-> Add support for custom PHY handling steps in platform glue code
-> by adding a post registration hook. This will be used for handling
-> PHY reset notifications on the Rockchip platform.
+On 21/09/2026 13:14, Jon Hunter wrote:
+> Use the function dev_err_probe() instead of open coding the same logic.
 > 
-> Tested-by: Igor Paunovic <royalnet026@gmail.com> # Orange Pi 5 Plus
-> Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-
-Reviewed-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-
+> Signed-off-by: Jon Hunter <jonathanh@nvidia.com>
 > ---
->   drivers/usb/dwc3/core.c | 2 +-
->   drivers/usb/dwc3/core.h | 9 +++++++++
->   2 files changed, 10 insertions(+), 1 deletion(-)
+>   drivers/phy/tegra/xusb.c | 9 ++-------
+>   1 file changed, 2 insertions(+), 7 deletions(-)
 > 
-> diff --git a/drivers/usb/dwc3/core.c b/drivers/usb/dwc3/core.c
-> index 4b7132887a03..daf5aec07fbf 100644
-> --- a/drivers/usb/dwc3/core.c
-> +++ b/drivers/usb/dwc3/core.c
-> @@ -1613,7 +1613,7 @@ static int dwc3_core_get_phy(struct dwc3 *dwc)
->   		}
->   	}
+> diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
+> index d0d0b252a205..f16c81520a60 100644
+> --- a/drivers/phy/tegra/xusb.c
+> +++ b/drivers/phy/tegra/xusb.c
+> @@ -1257,13 +1257,8 @@ static int tegra_xusb_padctl_probe(struct platform_device *pdev)
 >   
-> -	return 0;
-> +	return dwc3_post_phy_registration(dwc);
->   }
->   
->   static int dwc3_core_init_mode(struct dwc3 *dwc)
-> diff --git a/drivers/usb/dwc3/core.h b/drivers/usb/dwc3/core.h
-> index 608daeb7ef10..e9d8df0a298e 100644
-> --- a/drivers/usb/dwc3/core.h
-> +++ b/drivers/usb/dwc3/core.h
-> @@ -995,10 +995,12 @@ struct dwc3_scratchpad_array {
->    *				need to be passed on to glue layer
->    * @pre_set_role: Notify glue of role switch notifications
->    * @pre_run_stop: Notify run stop enable/disable information to glue
-> + * @post_phy_registration: Called directly after PHY got registered
->    */
->   struct dwc3_glue_ops {
->   	void	(*pre_set_role)(struct dwc3 *dwc, enum usb_role role);
->   	void	(*pre_run_stop)(struct dwc3 *dwc, bool is_on);
-> +	int	(*post_phy_registration)(struct dwc3 *dwc);
->   };
->   
->   /**
-> @@ -1655,6 +1657,13 @@ static inline void dwc3_pre_run_stop(struct dwc3 *dwc, bool is_on)
->   		dwc->glue_ops->pre_run_stop(dwc, is_on);
->   }
->   
-> +static inline int dwc3_post_phy_registration(struct dwc3 *dwc)
-> +{
-> +	if (dwc->glue_ops && dwc->glue_ops->post_phy_registration)
-> +		return dwc->glue_ops->post_phy_registration(dwc);
-> +	return 0;
-> +}
-> +
->   #if IS_ENABLED(CONFIG_USB_DWC3_HOST) || IS_ENABLED(CONFIG_USB_DWC3_DUAL_ROLE)
->   int dwc3_host_init(struct dwc3 *dwc);
->   void dwc3_host_exit(struct dwc3 *dwc);
-> 
+>   	err = tegra_xusb_setup_ports(padctl);
+>   	if (err) {
+> -		const char *level = KERN_ERR;
+> -
+> -		if (err == -EPROBE_DEFER)
+> -			level = KERN_DEBUG;
+> -
+> -		dev_printk(level, &pdev->dev,
+> -			   dev_fmt("failed to setup XUSB ports: %d\n"), err);
+> +		dev_err_probe(&pdev->dev, err, "failed to setup XUSB ports\n",
+> +			      err);
+
+
+Looks like I left this extra unneeded 'err' argument. I will fix this in
+the next version.
+
+Jon
+
+-- 
+nvpublic
 
 
 -- 
