@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F139CC982FA
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Sep 2026 11:52:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E6FCC98307
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Sep 2026 11:53:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j3i5LxzTOs411T/qR83VGVpeaCG3DFm6dyUDA8+92N0=; b=Tb9sob7jy9nHrQ
-	xjvqolm9uaYZ3BHBaketVQg16WjfH0WHmXECZ3j7YU31Fy1qdJMHWaFanwBaV7Fmu8s3t5YTkBtMQ
-	hWafOUmI72TZDY6Z41C1xaclREM/9EuiAu6aJLCqlvZ6KEfsuiK6K+SgHmM5LgmdG8gvCdhiAMt+u
-	nrr5iqasK4hzaX8+crdG7XuNemiXjcdMbZuaDAcwggd1HPZarGrukjRKg/LA5Cy/QpIXdKDNycS8+
-	N4OR4FPjATuNAxvdGvyZkUJ8s3xxHINDyztaAHE9lCkR5m4UNkZLvWV6UAYFtLPJvYk+3j8U0NNua
-	ejlEJc6j0pE+MXlFwkJw==;
+	List-Owner; bh=m+C+/WScG7kh2RxY9hTmgKZdR3XspvNzxIPWHjZCs5s=; b=lgQwdyFSfVMy+D
+	MCpNf08w0uW3A2o9z/yY+DAJloG/jA+VJysVGQjCkfeWJuNlADvT/0AL37PMKtqRtxVAixATjaw7M
+	ZygG32Ug1eK0Sq8XEROsONfKJ6mrT/Y/9CcKNkZVIvzN7fbjubt7fz1kuW+yAZfmRdC63oZQhVOTy
+	cuHpxlJTn7lKUap6TxX0YDfqTqjZ+xK4Oky+9pNeBV+f+jiTXt1rxtSyB3AvQr9hyj45VQo11LgMT
+	Jmi+q7A5+FVeVNKEROhgkPsRcfYmb7fcaY28ZD1Z7Zuj9zdOCMioHnS9wF8/MW2GMM62n2BfcnvVO
+	jCiokY4bpR81ZeNscmRQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9LWG-000000088Na-23dv;
-	Wed, 23 Sep 2026 11:52:12 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1x9LXT-000000088na-0fWF;
+	Wed, 23 Sep 2026 11:53:27 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9LWF-000000088N9-2Iy0
+	id 1x9LXS-000000088n9-2dTh
 	for linux-phy@lists.infradead.org;
-	Wed, 23 Sep 2026 11:52:11 +0000
+	Wed, 23 Sep 2026 11:53:26 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id A3F1C601FB;
-	Wed, 23 Sep 2026 11:52:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7B0541F000FF;
-	Wed, 23 Sep 2026 11:52:04 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 636D343433;
+	Wed, 23 Sep 2026 11:53:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 048191F000FF;
+	Wed, 23 Sep 2026 11:53:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790164330;
-	bh=Ltd0iFxeEgXCHootaIL+uLOVqz8Tw6zB7ny0MXqjoM0=;
+	s=k20260515; t=1790164406;
+	bh=gGyo6Eb0jT42lGzTz4kJcOSvoayimItz3MEoCgBysnQ=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=BlI5GGP2G2T08oCdruDc1Gnl5QrmY2cv7Ma3AGuSUVVQSK8CUCKK6MDjAhuklGYYt
-	 cGqhZxs8U1eBnDMU4qb/+0hYXwi8EnMUPeytAS/9k9NxZ3ohuyZDVIyZi98UZVH3qC
-	 x3o32W91dl8QDcm6A7esB28Tl67E9TdFfv+bg5HB4XmtA5QD1yAQHi9DGd9Z6LPl/p
-	 uNtTpVr6Ha2z4gAnJtNwfLsBmb/ZMHOYTZDZmEAbNt4crF1lpGgCsw5j7Bd/iD2FtO
-	 +PxIF/h/yB7f+60req2O6tIxosjSqgmt2XaiqlBbpv8VtG3dLBXvkhhCoinDIry5KT
-	 csaQMgLJH5c/Q==
-Message-ID: <7923c064-e869-4fa0-8b3d-ee1bc73aae53@kernel.org>
-Date: Wed, 23 Sep 2026 13:52:01 +0200
+	b=BWJGWyX4HY70wsPo4+lxHMr6LaBKE5+9mCvYEIbzfsweyZVyxM0EnFo9aWYnnGaBg
+	 OzMs/4iAfmI5wGPjlppUjReUGeliYbzZg+v+vAlzaSIud39QZJmCgidmLZRRMIn2oX
+	 X8jRvhONrzuHxDHtH2TM1hXgR1hgyjnew/dqjCWo8JggbUrXQ6h+1ITqJuBwme6c75
+	 n1+Jsl+MUCm9WFcKa6QYm8VVErT5++5F9aFLDN/lMesmo8K6dGiSB8wMbQEhAr+xW2
+	 GlwqahlVUo9b5qVweX/hNZpS+CXxCDJDr33IU5sWzz9cM/eV1UibTvjImFXL3tZ76V
+	 ysZp/r/8584SA==
+Message-ID: <8f2fe9d2-13c9-42aa-a326-58a48917a215@kernel.org>
+Date: Wed, 23 Sep 2026 13:53:18 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/6] dt-bindings: phy: qcom,x1e80100-csi2-phy: Add
- Glymur compatible
+Subject: Re: [PATCH v2 2/6] dt-bindings: media: qcom,glymur-camss: Add Glymur
+ CAMSS
 To: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>,
  Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
  Neil Armstrong <neil.armstrong@linaro.org>,
@@ -65,7 +65,7 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  Suresh Vankadara <svankada@qti.qualcomm.com>,
  Vikram Sharma <vikram.sharma@oss.qualcomm.com>
 References: <20260907-glymur_camss-v2-0-75f7982dc983@oss.qualcomm.com>
- <20260907-glymur_camss-v2-1-75f7982dc983@oss.qualcomm.com>
+ <20260907-glymur_camss-v2-2-75f7982dc983@oss.qualcomm.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -111,7 +111,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  K9bCVaboTA2T77QYkRcRJYSsO1alGX0ome/hMLD1daXlkrNUp1HWa3K4iytLRXjCSIorWiGs
  n+q3krnpXu3TFkA8qtOFZMdnIiFuiq1yLT8hptsV5xh1TA2nsVvSYiaCr3q4s4BKjS/KrLDb
  qoxzw8ISjdUp4pA85vb6YLCmb39NgidD+7PmAr65lBNveIFynTgsja1rRQ4=
-In-Reply-To: <20260907-glymur_camss-v2-1-75f7982dc983@oss.qualcomm.com>
+In-Reply-To: <20260907-glymur_camss-v2-2-75f7982dc983@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,11 +129,16 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 07/09/2026 10:13, Nihal Kumar Gupta wrote:
-> Glymur integrates the same CSI2 PHY IP as X1E80100. Add
-> qcom,glymur-csi2-phy falling back to qcom,x1e80100-csi2-phy.
+> X1E80100 supports both the legacy CSIPHY resources and the new PHY API;
+> Glymur uses only the new PHY API via standalone phy@ child nodes,
+> so per-CSIPHY clocks, interrupts and supplies are absent here.
 > 
+> X1E80100 has four CSIPHY instances while Glymur has three
+> (CSIPHY0, CSIPHY1, CSIPHY4), expressed entirely in DT.
+> 
+> Co-developed-by: Vikram Sharma <vikram.sharma@oss.qualcomm.com>
+> Signed-off-by: Vikram Sharma <vikram.sharma@oss.qualcomm.com>
 > Signed-off-by: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
-> ---
 
 
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
