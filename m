@@ -4,114 +4,149 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E6FCC98307
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Sep 2026 11:53:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65918C9830B
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Sep 2026 12:20:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m+C+/WScG7kh2RxY9hTmgKZdR3XspvNzxIPWHjZCs5s=; b=lgQwdyFSfVMy+D
-	MCpNf08w0uW3A2o9z/yY+DAJloG/jA+VJysVGQjCkfeWJuNlADvT/0AL37PMKtqRtxVAixATjaw7M
-	ZygG32Ug1eK0Sq8XEROsONfKJ6mrT/Y/9CcKNkZVIvzN7fbjubt7fz1kuW+yAZfmRdC63oZQhVOTy
-	cuHpxlJTn7lKUap6TxX0YDfqTqjZ+xK4Oky+9pNeBV+f+jiTXt1rxtSyB3AvQr9hyj45VQo11LgMT
-	Jmi+q7A5+FVeVNKEROhgkPsRcfYmb7fcaY28ZD1Z7Zuj9zdOCMioHnS9wF8/MW2GMM62n2BfcnvVO
-	jCiokY4bpR81ZeNscmRQ==;
+	List-Owner; bh=PM7nclOwLtMW8wniZeELXcHzDbdT1/MfIsMIeSSxQRU=; b=eGEclz33vk/hcG
+	DLfceBh4VrbX2IBN1tcoq9ZGIN1yGI4HDKojlX5yDcQlzpDf/Pxt95UTpvI7alIFQCCCOg1MQEy7K
+	aR+zB30+H8C2rDFyruzO2xIHkGIcK08zM8BynRaWiaRb0K1uiGrpiucFvzXWhu5oDzgzgdJTrpmq0
+	LvocMdgQn2uq/RvyE/j2M5VNOiLruEtF98YpNjep5uFpwiNxUwjJQpKpQO2k4PQo7jfJ3gHovFdGj
+	0wC0apHNVNUyO8S+D2GjURwCcM/tmeb8W3L604gM7OgQ9AwC3vgFTyCDgS8WYolo+Cmz1upWvRtDO
+	LUJ8M40BljHXBBatzLnw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9LXT-000000088na-0fWF;
-	Wed, 23 Sep 2026 11:53:27 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1x9LxE-00000008EFY-0VWg;
+	Wed, 23 Sep 2026 12:20:04 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9LXS-000000088n9-2dTh
+	id 1x9Lwr-00000008ECN-3tm7
 	for linux-phy@lists.infradead.org;
-	Wed, 23 Sep 2026 11:53:26 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 636D343433;
-	Wed, 23 Sep 2026 11:53:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 048191F000FF;
-	Wed, 23 Sep 2026 11:53:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790164406;
-	bh=gGyo6Eb0jT42lGzTz4kJcOSvoayimItz3MEoCgBysnQ=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=BWJGWyX4HY70wsPo4+lxHMr6LaBKE5+9mCvYEIbzfsweyZVyxM0EnFo9aWYnnGaBg
-	 OzMs/4iAfmI5wGPjlppUjReUGeliYbzZg+v+vAlzaSIud39QZJmCgidmLZRRMIn2oX
-	 X8jRvhONrzuHxDHtH2TM1hXgR1hgyjnew/dqjCWo8JggbUrXQ6h+1ITqJuBwme6c75
-	 n1+Jsl+MUCm9WFcKa6QYm8VVErT5++5F9aFLDN/lMesmo8K6dGiSB8wMbQEhAr+xW2
-	 GlwqahlVUo9b5qVweX/hNZpS+CXxCDJDr33IU5sWzz9cM/eV1UibTvjImFXL3tZ76V
-	 ysZp/r/8584SA==
-Message-ID: <8f2fe9d2-13c9-42aa-a326-58a48917a215@kernel.org>
-Date: Wed, 23 Sep 2026 13:53:18 +0200
+	Wed, 23 Sep 2026 12:20:01 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68NBbVpi4144497
+	for <linux-phy@lists.infradead.org>; Wed, 23 Sep 2026 12:19:41 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	GnMmorU5z7ubvp2RV2au0vwumoI2G82ZHEvqLawCVIM=; b=kSFRmsHs+oW+GSUU
+	LEz6kZCbnLmpB6rmdxPPBwFZ8nEOw6U3TrYlxIcfTNQg5rpTCFb0P4h3jowlyhRA
+	HkpRBwcDwfH0kDYeBBhUwa8GRa/Z+H+mmVWHOHw4mlbl1kjQSo10i3kN5LrrPcdm
+	knEs9W5dcHZjmPCaoFnVPTQKtchQqGhmyNFg1xf7jYj4cfgyizDvxcQGUmf00e06
+	1sjSaUZgzZvoo7wcoRn5JT20n818K2hSJOWlNULI1wz2xV+So11VZTZyIK/lml3g
+	8HR0IsaDkrXUpzcJUFH/m6yy5ETHH+tyjj+bTYuEnUGPDq9+6/y3ursRtUiGw6j4
+	ysbULQ==
+Received: from mail-ua1-f71.google.com (mail-ua1-f71.google.com [209.85.222.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4gv428tpqq-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 23 Sep 2026 12:19:41 +0000 (GMT)
+Received: by mail-ua1-f71.google.com with SMTP id a1e0cc1a2514c-97cace0be95so41489241.1
+        for <linux-phy@lists.infradead.org>; Wed, 23 Sep 2026 05:19:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1790165980; x=1790770780; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=GnMmorU5z7ubvp2RV2au0vwumoI2G82ZHEvqLawCVIM=;
+        b=F8qpHY5lZPbTMBalGcIq7KXMQR7xDK+WAeqCTZs7tluQsVi8DBKQ0UqtyuQ4kcuwun
+         zCv6Qr1p1bCfs0/M3zoADooJ4HBn2XcOHaaNQYZBxzlYpA972r5nOC9382c3YslIIMxY
+         zXMefTRLpevlFtSttyP1DNXfLYwowuTwGBZl8D0Ygd/C06BJU/1Rf+0A4RO/1lAk9Ntr
+         f0RzfTnQC7dtXHOv6PIlrMkRBi7JD4E1amqUsweGePSqydWVvA9XJ8bWvWxOfO4rGwgG
+         3MyslIFgGHgswpT58hMwXF2Qz95Wqh1oiccKBNyI7zG3BE3FDcNQl6dPJOJKDcDTbIqh
+         Z6KA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1790165980; x=1790770780;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=GnMmorU5z7ubvp2RV2au0vwumoI2G82ZHEvqLawCVIM=;
+        b=VkkJsyg13yHVf0VImGgFVF162cxFAaX6TDN2ccocQX+vUsa6jM6I3tH0V3tM4zR+FF
+         hSnti6a0eQM4xuKDU5nW3MUYfHA+ToYthj7/hqIrw2LUnImnoCAgR1wls3rW2ndrmNK9
+         U0DJKn9W2S+LRLz0mxvKXyM3U67S7n6q5yjoxi/p1IswRenzqzA0AItmy3fSKX8PnN8s
+         qZO1XmgkIc2LDcnlcSWKDGa/kBgJu1KuZU7IaiDMzfCAI6vGdwSSkxhs0YwtYd6AFL4L
+         bFtaH3P7hgA3uH9VEbK3NyTi66yHa0nIjbyCuAy0P50ymoAf6DQvWutnklqjzgVB8pdG
+         NvrA==
+X-Forwarded-Encrypted: i=1; AKwUvBxdey8leK9Jv48bSzjgpu63zR0/d3+UdPE3Ot8fx+uIYAdiETKdPRgwALrPL9Y7C8iooTfrsFWRDl0=@lists.infradead.org
+X-Gm-Message-State: AFuF++mTo1+L4BtQQkIAmGZUDCERIG5bscqZaUlJMZ3JdB6EXPYtD71E
+	IbusK/EjjTEFQ7TnDM2nyQK439KVTdFdoSUSMiEPSiqfo9A81vnaAaSGAbHhbNBk2kdpB0ia6lO
+	zNwJ7iwVj6lZT3KN71HmU79SnpW+5phEFYjvpd2i/wDgezoBHprEcFxl16hK6N8xTLT1d
+X-Gm-Gg: AYBFou34dViQk6sgxIpV4dvhWhtIrbzzFu/k6V/JBgYuMF0CpyH6RpYOiThp5NFks4H
+	fekCJyALOozwswUv4lavBb+I4xdiFDH5lvme40i2O2L3LYfl4o0I9wywJueJtnCEU9ts4yeMzdx
+	Q1KdOHdec3dv4RZshOA5nkvbvMF3vrCtVi7o7MHWnHOplGjbBue0DEQ+UBnVkcND2Y6+hRpDLyF
+	0Zh+T6wdyfw9YrhRLP4qKJvFdFp5w5D+MLEhrCjYhw/6uBMWwZ5yetcckVMLId/fT18amIHl00a
+	TRqiGK6XilhVwY1IGNswQfL/hlBs23gz67f8mH3wrqhtCK1tXycOZAkXHtOckFgOr4we5Ky8+Oc
+	Bl5lt23Bc6mC/2/9ZZWmAXg==
+X-Received: by 2002:a05:6102:5e93:b0:7a7:ad9f:539c with SMTP id ada2fe7eead31-7ac1ca9015dmr1987618137.2.1790165979985;
+        Wed, 23 Sep 2026 05:19:39 -0700 (PDT)
+X-Received: by 2002:a05:6102:5e93:b0:7a7:ad9f:539c with SMTP id ada2fe7eead31-7ac1ca9015dmr1987594137.2.1790165979587;
+        Wed, 23 Sep 2026 05:19:39 -0700 (PDT)
+Received: from [192.168.202.12] ([178.235.128.140])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c2ab0aae727sm92143166b.0.2026.09.23.05.19.36
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 23 Sep 2026 05:19:38 -0700 (PDT)
+Message-ID: <07ad0b0e-f666-44f7-b5a2-bf9ad016b297@oss.qualcomm.com>
+Date: Wed, 23 Sep 2026 14:19:35 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/6] dt-bindings: media: qcom,glymur-camss: Add Glymur
- CAMSS
-To: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>,
- Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
- Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
- Loic Poulain <loic.poulain@oss.qualcomm.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Lee Jones <lee@kernel.org>,
- Guru Das Srinagesh <linux@gurudas.dev>, Liam Girdwood <lgirdwood@gmail.com>,
- Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH 3/6] phy: qcom: qmp-pcie: Add endpoint PHY configuration
+ for QCS8300
+To: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley
+ <conor+dt@kernel.org>,
+        Bjorn Helgaas <bhelgaas@google.com>,
+        Lorenzo Pieralisi <lpieralisi@kernel.org>,
+        =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, mfd@lists.linux.dev,
- Suresh Vankadara <svankada@qti.qualcomm.com>,
- Vikram Sharma <vikram.sharma@oss.qualcomm.com>
-References: <20260907-glymur_camss-v2-0-75f7982dc983@oss.qualcomm.com>
- <20260907-glymur_camss-v2-2-75f7982dc983@oss.qualcomm.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-pci@vger.kernel.org
+References: <20260921-monaco_ep-v1-0-63c5282fb0db@oss.qualcomm.com>
+ <20260921-monaco_ep-v1-3-63c5282fb0db@oss.qualcomm.com>
 Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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
-In-Reply-To: <20260907-glymur_camss-v2-2-75f7982dc983@oss.qualcomm.com>
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <20260921-monaco_ep-v1-3-63c5282fb0db@oss.qualcomm.com>
+X-Authority-Analysis: v=2.4 cv=EZdd0/mC c=1 sm=1 tr=0 ts=6ab3c3dd cx=c_pps
+ a=KB4UBwrhAZV1kjiGHFQexw==:117 a=PRfkaYvzSr8QmIIGAkY2Sg==:17
+ a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
+ a=Z49P6srHwRQ8gCsPR7EA:9 a=QEXdDO2ut3YA:10 a=o1xkdb1NAhiiM49bd1HK:22
+X-Proofpoint-ORIG-GUID: 48mZvaDkDwSMHUM0Tt3M-UO0MhCqzmLG
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTIzMDA0OSBTYWx0ZWRfX2xEaw4pd1XmT
+ 1iGyQy1SdtXpuFO9TqJj7XnhwmFOMnSF2m2Sb5y4U+R33NATD5dTq19thzuLsNS3Y1U5tdrS/c2
+ 6Gp8dW+gDt/cq8wnAUDQOi3a1dGlqfmhT+2h+xhlPM685dyZwMLSMjZgbS5bNsHiNjNsy8u08f+
+ wBOTyCJXCmQG7WK/X0re0gtCTMlPcsCTukZ5aortkMPZonLyFclkGczVveSvMJqQvOtx6+YaKLV
+ Q4r9augqctgB625L/53dw/fQOX/A3oPaXa8Xh8CE9uKVJi/LrjmJXQTxEo1wRALHAu9c5iACgFy
+ C0IQabNoHvZsTNST/IZUm49sC6N194FF/fVZPVZyroTIjefPTxhRCnh0jLrqoqbtjwvBbattSqF
+ wzFb67sfUl6Ngj1ZHchMZABxchzUsc9SZVqpT5rhzMbKjo17aFs2iWpbdCA89LbQA9M5EjIkTRX
+ apWwmjU9SJGet5y69Bg==
+X-Proofpoint-Spam-Info: AW1haW4tMjYwOTIzMDA0OSBTYWx0ZWRfX17hJTsZBnn0l
+ UvrfOwXZ0YTnQSqHmpA5+4zc5q0wTVf2tH76e1sZrsdsnUyYBagG/A295we22RZ0LGIFxQo6UTO
+ zYxtJwOya7t+TyWcIcGbwz5BgHV1QHc=
+X-Proofpoint-GUID: 48mZvaDkDwSMHUM0Tt3M-UO0MhCqzmLG
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-09-23_04,2026-09-21_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 suspectscore=0 bulkscore=0 adultscore=0 spamscore=0
+ lowpriorityscore=0 phishscore=0 priorityscore=1501 impostorscore=0
+ malwarescore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2609040000
+ definitions=main-2609230049
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260923_051941_986457_8212C18A 
+X-CRM114-Status: UNSURE (   8.72  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,23 +163,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 07/09/2026 10:13, Nihal Kumar Gupta wrote:
-> X1E80100 supports both the legacy CSIPHY resources and the new PHY API;
-> Glymur uses only the new PHY API via standalone phy@ child nodes,
-> so per-CSIPHY clocks, interrupts and supplies are absent here.
+On 9/21/26 12:58 PM, Krishna Chaitanya Chundru wrote:
+> Monaco supports PCIe Endpoint mode on both PCIe controllers. Reuse
+> the existing SA8775P Endpoint PHY programming for the 16 GT/s x2 PHY and
+> add a new 16 GT/s x4 Endpoint PHY configuration with the required RX
+> tuning parameters.
 > 
-> X1E80100 has four CSIPHY instances while Glymur has three
-> (CSIPHY0, CSIPHY1, CSIPHY4), expressed entirely in DT.
-> 
-> Co-developed-by: Vikram Sharma <vikram.sharma@oss.qualcomm.com>
-> Signed-off-by: Vikram Sharma <vikram.sharma@oss.qualcomm.com>
-> Signed-off-by: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
+> This allows both Monaco PCIe controllers to operate reliably in
+> Endpoint mode.
 
+Does that also apply to lemans?
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-
-Best regards,
-Krzysztof
+Konrad
 
 -- 
 linux-phy mailing list
