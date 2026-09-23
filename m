@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1E64C98302
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Sep 2026 02:34:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0B7AC98302
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Sep 2026 02:34:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1DrCHb2Ki+bhfHKZrTrb6pzr5//Waoxzp97ySeIvhNk=; b=CU2BtcT3fvFjAU
-	oKZJVCfF3OEgQ0ubo3Z54IXVhdp8DLjTLL4A8Gl5D2DVHn/thOfjPo9DrG1mAj7vahud+a62/nxk4
-	MeWpuWtjp0eFd/UdjtvNB0qf5Y/9LfTmQ36hD7rq5qQvQTj1MnF3xMv1BetSAW7Xe940rFpjjqzN6
-	UN0YqWm2k9L8lLgH1mddx8NngLA9O3qARjoL6hR4qAOnnNzV2GO8tbS/bWTwEi8XCJDlPocex/5lq
-	fUtDRLbPR9nb3q96vIjPDRlDc1+wxWSepV2nF5vAapshKhncmdyRogu84dnr/2UEgNRwH5b1lUGA4
-	yPdqVeWchLy8lGrBF/jg==;
+	List-Owner; bh=FU637HqW2slLZVhZqRA/wFxaRhF264XduN3VKxokYVk=; b=YDtBC2rnypi3Th
+	oOX35l956vpfYiOFG2FB++yLWVplM51hrxDMkEQHFhCt9ifRqXaJQOvL1+tuK6zVGgwpnKlldZ5bk
+	PRG4g8p7ayXLn1mkc4G4Dqk8EkdV+L+1pOGRV3VNk4uJe4eTbcKQx+2HmAdphRFm/uPbDcH0TpY+Q
+	Fe1V9yTE8k/nG7Z+JHF6WR9uQGEzd9dt+xnPLegPZDad+Eeyb9LaGTaZfAFYgCUx8sbjwPzSULhb+
+	8MPnXyzzhNNORo4c8m3yS4FPM9YLVunxcXufiNY6x8DDat27zgOYgcAjJGehhwZzS03JcCrRkEEeI
+	LqJsatSlBJZjJaWMXlwA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9CoN-00000006wsO-2b0X;
-	Wed, 23 Sep 2026 02:34:19 +0000
-Received: from mail-pj2-f14.google.com ([74.125.227.142])
+	id 1x9CoR-00000006wtE-2lBd;
+	Wed, 23 Sep 2026 02:34:23 +0000
+Received: from mail-pz2-x16.google.com ([2607:f8b0:4864:3b::16])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9CoK-00000006wrh-2t4U
+	id 1x9CoO-00000006wse-2Inz
 	for linux-phy@lists.infradead.org;
-	Wed, 23 Sep 2026 02:34:17 +0000
-Received: by mail-pj2-f14.google.com with SMTP id d9443c01a7336-2d747f05ffcso2517055ad.0
-        for <linux-phy@lists.infradead.org>; Tue, 22 Sep 2026 19:34:16 -0700 (PDT)
+	Wed, 23 Sep 2026 02:34:21 +0000
+Received: by mail-pz2-x16.google.com with SMTP id 41be03b00d2f7-cc4bdf8abaaso416625a12.2
+        for <linux-phy@lists.infradead.org>; Tue, 22 Sep 2026 19:34:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1790130856; x=1790735656; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1790130860; x=1790735660; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=F23PT++YfQdFZCmgLsj0Bh4dPpOhTY0Wr6NJKb8T5Wo=;
-        b=o7vk6QfM6fMn9YnX29dnuitY0QPHaU9XubIXk/DejiAyGYczDC2h1EVTskbTMDXlyq
-         +bo5zBsf3FfTqojTUzOcqasSdqX3+WulDmB2ofq+L+513KJngFdiNys/LQp602P/XGKK
-         B/sxyXweusePADtQIRhBbjFaDlh+vFfddJSP+jW9lnWV9jQQn94MoBMY+mpvzS+/up9I
-         4CFrG8R1v73xm9ryKiwary7DW8HC2rA8GdYOPtO8hY9rRFF5v/txhOOPEpIOoOC333pq
-         hJNP2ms2mT24DA7SQis6AbA5Rq05EYkRdu1lYeHuE9SmjSvXmaW1zMDIcUVQdWo6zxFM
-         3lqQ==
+        bh=xnrcjxk0kzIW2dBkRTKNaLCxSo8UzYbysB1rR/EfFJo=;
+        b=dyHdiU+dhyMJ6avlrEB7HcAabEYIGA4JuB2xC56YvVdCTPZtM6qXfMeD3izPlSo3GN
+         aPBhjSdN45V5dZ034AMAGk8A+IwjiaPLCaoX+jZmgmctLvefPS+9NfKNGUxNL95PBbwz
+         8i8Te9Q73w26cjuPzsu4TdWM7CkfDl/PUw7StaUDF+vd7Tcdeyaf9o0RcqqWakaD/g3M
+         3nV50/6QLu1qZYmfWO56tAsiKVI+j0sWEP2dDy56nIHr/HpzP8OkKYyeGy5KSEFh8NNO
+         VooCPLTWOfTt/EoO4M05IfuWDq6qiFa/PhJSIQWW07EMz0St4L7oML7cvlNKXDM9dbnc
+         IUAQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1790130856; x=1790735656;
+        d=1e100.net; s=20260707; t=1790130860; x=1790735660;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=F23PT++YfQdFZCmgLsj0Bh4dPpOhTY0Wr6NJKb8T5Wo=;
-        b=QfdPWDuXshoL8A20+TEj7FbIcn1sEZLgTEkd9AlctrkjKTjUFEPp0nsj1rB1hN73jg
-         qHQybKHwRff9C7fxaly48h9J7kEdFGBRdD/Z3OaN5i7RHCTW+dxAnCSTRoX54CvAMe0p
-         raz/SpAq3tRPDJv1I6Ty6shL/gEm+PaBS0mYni/A42KJQFc5ovJ0KY8LdI93GHezzqAh
-         6w7igmzzWg7LL8gyOY/yy3xhGXq/kbUZ3sU0XnvHxJsE1cmZPw39jeF3/EsmwgQ1kaYT
-         bHl0H2AnxCEN30xsX79CZoSWPoGFpc1kKV66qzZhvN31vDdb+YAAntJFJ17FiPa7n/g6
-         JMbw==
-X-Forwarded-Encrypted: i=1; AKwUvBySN9UxMrrarSGpKC2pQ62h51LPOGyNdRBt4NNe07Q97F+oK0gV+h+CZ1QQi/I0hR+WbbWv6pBXlwk=@lists.infradead.org
-X-Gm-Message-State: AFuF++lsTbY3bnC1taVQYn6EjAL/emkZXJkouNuK5IgjK3PrcjaSuvmq
-	JBtph27FoG61MtsYwUjgLHxCFiUNXtqqS9wYgIJ4k/9iLqHlW9YogSuP
-X-Gm-Gg: AYBFou0n9DesHFSgk2P35GRp3gAKuWQtYFXeZ/pKUMReuvh4HDg34lyjfMkGd391Yrz
-	fqIS5KwzDKji93Oj93cDcggIb8g8hEpXrdkmXMiO7FJE271yO87793spT8/vErZySevBty+nJCg
-	JbdN9mx3cSDR2dHk3/UB6tDAjmNEI1u3exjtMU2e928nCM0XD+D/nwMKoO89jGuuoB1dbgzYz1U
-	CO8LMpg9gTraHIhS4ePx0vLbLdqEHBCiklEGQzK00Y2lxIBdMzeYhvtPDGGHg9DkPvBdiUS89pO
-	bhdHpGbgaoZO0j4uvR30T8k+1rCNWgCOkUxJI0Q6FOWOSAYMNzU/z6tXfYvFaEUa1ZhoLtauPrH
-	/CjRAIX0FtyqHM/3tt0xoI6yViyikSK1XFylvlX0gePiTerVPI4VaPgAXqknam4h5LtyEadc6Dt
-	gFmCjiXsWZZkfVYNuw+RJITDjvyymKPsDy0pr5B7hoN7DlhJm9dKe6pycS0Hgy3oKgb+X3
-X-Received: by 2002:a17:902:e741:b0:2dd:c053:e0fa with SMTP id d9443c01a7336-2df69e017bdmr10714565ad.41.1790130855762;
-        Tue, 22 Sep 2026 19:34:15 -0700 (PDT)
+        bh=xnrcjxk0kzIW2dBkRTKNaLCxSo8UzYbysB1rR/EfFJo=;
+        b=E5yZ2G/5DprZP+bvIhEo1BKGTm7uTXHwuQwI4REQUBPNSVtzYyK+yVRFaM+rBXKx/n
+         rDWO5m+jMfr+5/yXVQGjnXpdtokkgO4SkNK9LpaCog/MvohC9DYtiltEUaThjDz90LoA
+         jebH8ybhwVkhfGw0aSSAFqT6rVNoFkwYZhW4bCMDpSMQZjFjwVBhE0BKDmZBmFmFmUtd
+         lkiYM2r8H8zdT0hFI+daYV55O/lEedjEfMGLOiVyu8rRdmNcpSfFgQnrsSqk/H/wRT9S
+         v8oPAnjquWtgpdO901d3OxOcZtHtROOeaynYJ+EmCDkDVJ11kBjXekkC/E8m4wr6+Vou
+         vqWQ==
+X-Forwarded-Encrypted: i=1; AKwUvBxWk1VhtsHT2JBttIg2/G8DI4OTLz9vFeqS53d1mJ40K2X7ZAjpRYlBp3PumqCppdlrBV9efolthMM=@lists.infradead.org
+X-Gm-Message-State: AFuF++kPcV9ZbliJDv26J6Et6BLZn27WsNW746+nX4Pxm1dpjHs6CIw6
+	FebD6q34lw+fEyJkix716LBN84sZTqClZK0KALPoG0aoK9qmVk955Vmr
+X-Gm-Gg: AYBFou3ND93EsS9D5m4MU/LP0W4PZw7/vihURbb5WEBhDdszEnEhMM8b82/0WAgVzSp
+	OJToU2CHdcWLlHn5DVyAgqjHI3QyPjIJU4804pfI+CM3GDbwHMAF3I5W1SO2ibMBrc4jSW5SzA6
+	cGUj/7Wi9BfMKYech7AaqjDt+2FOgbcRMSm3Toy4ql+T930j75bDANL5oXJ8uizgUbUxDLHBtw7
+	cuu+u9jOW1jiTlDlyu75w+7XhErE4xg+aA5C74DqsNDOz2ytDiVBdRAMJl2AQ/up/RhFgoqdstz
+	DTk8Av69E5PjrYECmEKXMg0MEvvH/0Z0V/GpDzVJKYe601ZvwMf9puqmJvbpIg9K4b2eQVrXYnt
+	zrgRLqaVPVtjfOTFUOfBYq76VJZMqbRceZzayeBag3ABh6ruSXwq3ELgK5Ne6XCYWJXkaNdp1B3
+	ZeP+N++05hsgVk29CuOGMzQux6GBNQ4c1Cfl2K6pgaunZvw1RZTCWZgRXYUOlGsk/fYcVI
+X-Received: by 2002:a05:6a20:3c9f:b0:3dd:a196:53a8 with SMTP id adf61e73a8af0-3ddf82fd72emr1311152637.74.1790130859652;
+        Tue, 22 Sep 2026 19:34:19 -0700 (PDT)
 Received: from localhost ([2001:19f0:8000:3e6e:5400:6ff:fe38:3d01])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2df6a5c16f6sm3133945ad.35.2026.09.22.19.34.15
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-cc75f3d5ce8sm316506a12.17.2026.09.22.19.34.18
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 22 Sep 2026 19:34:15 -0700 (PDT)
+        Tue, 22 Sep 2026 19:34:19 -0700 (PDT)
 From: Inochi Amaoto <inochiama@gmail.com>
 To: Jonathan Corbet <corbet@lwn.net>,
 	Shuah Khan <skhan@linuxfoundation.org>,
@@ -83,16 +83,16 @@ Cc: linux-doc@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	Yixun Lan <dlan@gentoo.org>,
 	Longbin Li <looong.bin@gmail.com>
-Subject: [PATCH v3 4/5] phy: core: Add managed phy bulk data helper functions
-Date: Wed, 23 Sep 2026 10:33:02 +0800
-Message-ID: <20260923023304.78428-5-inochiama@gmail.com>
+Subject: [PATCH v3 5/5] doc: phy: Document some bulk helper functions
+Date: Wed, 23 Sep 2026 10:33:03 +0800
+Message-ID: <20260923023304.78428-6-inochiama@gmail.com>
 X-Mailer: git-send-email 2.55.0
 In-Reply-To: <20260923023304.78428-1-inochiama@gmail.com>
 References: <20260923023304.78428-1-inochiama@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260922_193416_732053_BFB7945F 
-X-CRM114-Status: GOOD (  16.85  )
+X-CRM114-CacheID: sfid-20260922_193420_595728_D844E229 
+X-CRM114-Status: GOOD (  16.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,136 +109,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add device managed variants of the phy bulk helper functions. So
-the driver can benefit from automatically managed phy handles.
+Document all newly added bulk helper function, it can be used to manage
+a set of PHYs automatically. This is useful when the driver want to
+simplify the management of multiple PHYs.
 
 Signed-off-by: Inochi Amaoto <inochiama@gmail.com>
 ---
- drivers/phy/phy-core.c  | 73 +++++++++++++++++++++++++++++++++++++++++
- include/linux/phy/phy.h | 19 +++++++++++
- 2 files changed, 92 insertions(+)
+ Documentation/driver-api/phy/phy.rst | 29 ++++++++++++++++++++++++++++
+ 1 file changed, 29 insertions(+)
 
-diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-index 5b76c006575b..a588fba33313 100644
---- a/drivers/phy/phy-core.c
-+++ b/drivers/phy/phy-core.c
-@@ -1145,6 +1145,79 @@ static void phy_bulk_put_all(struct device *dev, unsigned int num_phys,
- 	kfree(phys);
- }
+diff --git a/Documentation/driver-api/phy/phy.rst b/Documentation/driver-api/phy/phy.rst
+index 0865c2e94eec..c5d3d7cc1a74 100644
+--- a/Documentation/driver-api/phy/phy.rst
++++ b/Documentation/driver-api/phy/phy.rst
+@@ -114,6 +114,10 @@ it. This framework provides the following APIs to get a reference to the PHY.
+ 	struct phy *devm_of_phy_get_by_index(struct device *dev,
+ 					     struct device_node *np,
+ 					     int index);
++	int devm_phy_bulk_get_all(struct device *dev,
++				  struct phy_bulk_data **phys);
++	int devm_of_phy_bulk_get_all(struct device *dev, struct device_node *np,
++				     struct phy_bulk_data **phys);
  
-+struct phy_bulk_devres {
-+	struct phy_bulk_data *phys;
-+	unsigned int num_phys;
-+};
-+
-+static void devm_phy_bulk_release_all(struct device *dev, void *res)
-+{
-+	struct phy_bulk_devres *devres = res;
-+
-+	phy_bulk_put_all(dev, devres->num_phys, devres->phys);
-+}
-+
-+/**
-+ * devm_phy_bulk_get_all() - managed lookup of all PHYs requested by a device
-+ * @dev: device that requests the PHYs
-+ * @phys: pointer to store the allocated array of struct phy_bulk_data
-+ *
-+ * The function calls devm_of_phy_bulk_get_all() directly, but sets the
-+ * @np parameter to dev_of_node(dev).
-+ *
-+ * Return: the number of PHYs on success, %0 if no PHYs are found, or a
-+ * negative error code otherwise
-+ */
-+int devm_phy_bulk_get_all(struct device *dev, struct phy_bulk_data **phys)
-+{
-+	return devm_of_phy_bulk_get_all(dev, dev_of_node(dev), phys);
-+}
-+EXPORT_SYMBOL_GPL(devm_phy_bulk_get_all);
-+
-+/**
-+ * devm_of_phy_bulk_get_all() - managed lookup of all PHYs from a device node
-+ * @dev: device that requests the PHYs
-+ * @np: device node containing the PHY references
-+ * @phys: pointer to store the allocated array of struct phy_bulk_data
-+ *
-+ * Gets all PHYs from the specified device node, associates the allocated array
-+ * and PHY references with @dev, and creates a device link for each PHY. They
-+ * are automatically released on driver detach.
-+ *
-+ * Return: the number of PHYs on success, %0 if no PHYs are found, or a
-+ * negative error code otherwise
-+ */
-+int devm_of_phy_bulk_get_all(struct device *dev, struct device_node *np,
-+			     struct phy_bulk_data **phys)
-+{
-+	struct phy_bulk_devres *devres;
-+	int ret;
-+
-+	*phys = NULL;
-+
-+	if (!np)
-+		return 0;
-+
-+	devres = devres_alloc(devm_phy_bulk_release_all, sizeof(*devres),
-+			      GFP_KERNEL);
-+	if (!devres)
-+		return -ENOMEM;
-+
-+	ret = of_phy_bulk_get_all(np, &devres->phys);
-+	if (ret > 0) {
-+		for (int i = 0; i < ret; i++)
-+			phy_add_device_link(dev, devres->phys[i].phy);
-+		*phys = devres->phys;
-+		devres->num_phys = ret;
-+		devres_add(dev, devres);
-+	} else {
-+		devres_free(devres);
-+	}
-+
-+	return ret;
-+}
-+EXPORT_SYMBOL_GPL(devm_of_phy_bulk_get_all);
-+
- /**
-  * phy_bulk_init() - initialize multiple PHYs
-  * @num_phys: number of entries in the phys array
-diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-index 77d9d74682b7..e60e42eb7e0b 100644
---- a/include/linux/phy/phy.h
-+++ b/include/linux/phy/phy.h
-@@ -322,6 +322,9 @@ void devm_of_phy_provider_unregister(struct device *dev,
- int phy_create_lookup(struct phy *phy, const char *con_id, const char *dev_id);
- void phy_remove_lookup(struct phy *phy, const char *con_id, const char *dev_id);
+ phy_get, devm_phy_get and devm_phy_optional_get can be used to get the PHY.
+ In the case of dt boot, the string arguments
+@@ -129,6 +133,13 @@ Some generic drivers, such as ehci, may use multiple phys. In this case,
+ devm_of_phy_get or devm_of_phy_get_by_index can be used to get a phy
+ reference based on name or index.
  
-+int devm_phy_bulk_get_all(struct device *dev, struct phy_bulk_data **phys);
-+int devm_of_phy_bulk_get_all(struct device *dev, struct device_node *np,
-+			     struct phy_bulk_data **phys);
- int phy_bulk_init(unsigned int num_phys, struct phy_bulk_data *phys);
- int phy_bulk_exit(unsigned int num_phys, struct phy_bulk_data *phys);
- int phy_bulk_power_on(unsigned int num_phys, struct phy_bulk_data *phys);
-@@ -511,6 +514,22 @@ static inline struct phy *devm_of_phy_get_by_index(struct device *dev,
- 	return ERR_PTR(-ENOSYS);
- }
++When a controller needs every PHY listed in a device node's ``phys`` property,
++devm_phy_bulk_get_all() obtains them from the controller's device node.
++devm_of_phy_bulk_get_all() does the same for an explicitly supplied device
++node. On success, these functions return the number of PHYs and store an array
++of ``struct phy_bulk_data`` in ``*phys``. The PHY references and array are
++managed by devres and are released when the device is detached.
++
+ It should be noted that NULL is a valid phy reference. All phy
+ consumer calls on the NULL phy become NOPs. That is the release calls,
+ the phy_init() and phy_exit() calls, and phy_power_on() and
+@@ -149,6 +160,19 @@ The general order of calls should be::
+     phy_exit()
+     [[of_]phy_put()]
  
-+static inline int devm_of_phy_bulk_get_all(struct device *dev,
-+					   struct device_node *np,
-+					   struct phy_bulk_data **phys)
-+{
-+	if (phys)
-+		*phys = NULL;
++For a set of PHYs acquired with devm_phy_bulk_get_all() or
++devm_of_phy_bulk_get_all(), the corresponding order is::
 +
-+	return 0;
-+}
++    devm_[of_]phy_bulk_get_all()
++    phy_bulk_init()
++    phy_bulk_power_on()
++    ...
++    phy_bulk_power_off()
++    phy_bulk_exit()
 +
-+static inline int devm_phy_bulk_get_all(struct device *dev,
-+					struct phy_bulk_data **phys)
-+{
-+	return devm_of_phy_bulk_get_all(dev, dev_of_node(dev), phys);
-+}
++The bulk get-all APIs release the PHY references and the array automatically
++when the device is detached.
 +
- static inline int phy_bulk_check_disabled(unsigned int num_phys,
- 					  struct phy_bulk_data *phys)
- {
+ Some PHY drivers may not implement :c:func:`phy_init` or :c:func:`phy_power_on`,
+ but controllers should always call these functions to be compatible with other
+ PHYs. Some PHYs may require :c:func:`phy_set_mode <phy_set_mode_ext>`, while
+@@ -221,3 +245,8 @@ DeviceTree Binding
+ 
+ The documentation for PHY dt binding can be found @
+ Documentation/devicetree/bindings/phy/phy-bindings.txt
++
++Missing Bulk Helpers
++====================
++Currently, Only a few bulk helper functions are added as they have users.
++Function not upstreamed can be found at https://lore.kernel.org/linux-phy/20260904083709.425893-1-inochiama@gmail.com/
 -- 
 2.55.0
 
