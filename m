@@ -4,72 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7BEF3C9830E
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Sep 2026 15:36:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EDE46C9830E
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Sep 2026 17:26:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=pWsSueSbRb79kz1fnxAPT0R0k1STlHbOzpwynnyqGGk=; b=uT1m46E7HuQXPEABo1wOXtiEmJ
-	v2sZtY4/lRwohJpbh+N+LS9aYFtaqMpXhfM14ps2jPX0VLCgFIsEdJkRZDC3atL4l/UK2h99oUk/m
-	kKCc52v12kIjZp8t40Cw9GaEKTFJbEwfYYp/vHhFBGSsbBVZqGK71hu6a8yVJu3vNzO2gzX8vR3RH
-	QWL6H0WfuX+tyNF/VeTvmYJhrb0Jwn9K0nohqXDi6iBOJQ3smcTXx2iEyE4D7197yilKYMre/+ufs
-	8evVrHDxYgxX6FQ92CkO+zl/UGM6vAKaWArpINeDcXKiwgE7GYlNj3LbZP4558/B69R4McaZpjCQh
-	YbkJonoA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zmZCkk4eZGLU1wkV7MovHSp/1XwiSwL2dZk+wrkti5s=; b=yodznawUBhspkQ
+	imzfupDq6G3sR5XWIQYtA0famrhW9fhxVk3mVrWlgaM2GFktbiWdkdVP6X5kR3DGjiPKJpjgoshDC
+	dQAjJJ9XZjRzcIsb84OXxtdRCxDKDrstMVFr+OXFe/hefppaC1fHC5371/ujdG/RPMTgf/Hek3GYd
+	f4lnRwp1LANXu784PE5GJwFiaX6/eoitf1qh/+Bz0t0VlOMjVdjzRqErMNcHALWNIu+3w/1FBscZo
+	JNNjfj+gA+znz2T9OH7szQ+GVp011wko74ZKNocfshw927TYj96tIuuVwUlaXzW3qcGkbwlLqhLPm
+	jqXNKyyjV01jlm1hYpTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9lV9-0000000BRra-49oQ;
-	Thu, 24 Sep 2026 15:36:47 +0000
-Received: from sender6-op-o11.zoho.com ([165.173.180.11])
+	id 1x9nD2-0000000Bidw-2lWm;
+	Thu, 24 Sep 2026 17:26:12 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9lV7-0000000BRql-1oR3;
-	Thu, 24 Sep 2026 15:36:46 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1790264193; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=avEIboCA7whGHLn5oj39qSTIrGRfMJV8ZiqxKNhqRMdlnAl9laOyKXZRMmDZGxAtqsOnI3KNvBup4aRqDeDGqAGSTxMBP3YIpLoFYceDvCnpHw6KRBZCd5Pi55cmpyk7ytvnBrur4jWrt7Gkrw9pDA7zTbKIKA26vOyisPURA8A=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1790264193; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=xpHCM0iE2esEzIC122AELBh0E5yUB3wABaM/lIaa61Q=; 
-	b=IGLIylyyEAOON9rdg0yA4hqUjiuq6Jqrl1jUNsPi/mNalOeB2EAYnEMZck+mj4p3YvS2lLKf1QUKxyyz8iE2fudVRUpg0YzJfd72WOB1ombH24l3MvMc6CIuoy6PRSPAbZmGBT0mhrYy9CoyX0YJhYc7E3qBx+PV2G4C1kFgBec=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
-	dmarc=pass header.from=<sebastian.reichel@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1790264193;
-	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
-	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
-	bh=xpHCM0iE2esEzIC122AELBh0E5yUB3wABaM/lIaa61Q=;
-	b=LeGGMk8wl/AL71GOyYLhJRlUUDzBlpFLWqtDay16AcCmgywF2N0TZJvNyycTamoh
-	e/LbcaLUo5dg0Z+buiTWVA5YujHT7M6thspb81LXzpJjAHSC5yZ7O/WOTV5aXtF+X3W
-	ZRjh6q31BvSv5IY0K9S718XkXmfZRTBhOzbFjsfA=
-Received: by smtp.zohomail.com with SMTPS id 179026419157669.64049589350486;
-	Thu, 24 Sep 2026 08:36:31 -0700 (PDT)
-Received: by venus (Postfix, from userid 1000)
-	id C4383180EDC; Thu, 24 Sep 2026 17:36:26 +0200 (CEST)
-Date: Thu, 24 Sep 2026 17:36:26 +0200
+	id 1x9nCu-0000000BibN-2HCT;
+	Thu, 24 Sep 2026 17:26:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1790270762;
+	bh=3sBvjQKw6DJCadb53xNtWm7YOjLNwu7mLDnxmC9FK5w=;
+	h=From:Subject:Date:To:Cc:From;
+	b=OvimmMZvvNPbU+qiwT8pkh8D04s1znDaTjrL5RbYxyw91Pols0o4QT8N45TstG/Dm
+	 iGeGhgTuxgZf3iXKZfYhlYm3Uyn16/MQz1q7PyyO5JWveBJEiKJBNnpitJBdGtn9mv
+	 bXqNJ0hd9BBvpOmBjZBYoJUBYl38ZxT0A7+6uKVzqCVlObkzyln5hB9OfQp3WjD4Ou
+	 25rZ9AIRM3jE/C5H3E5oDFyu7TTUu6Km2b9QsYLreFkRV4wc52AdY8Hj5joQIlQo9R
+	 D/CPAEDJxn/uCfilhRjAta2OvzhZOGLJXTvQa79Vzvfx39gUaC+XrmmasaEFddaXwN
+	 exQA2DZIpwKIQ==
+Received: from jupiter.universe (unknown [100.64.1.62])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: sre)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id E96D517E0082;
+	Thu, 24 Sep 2026 19:26:01 +0200 (CEST)
+Received: by jupiter.universe (Postfix, from userid 1000)
+	id 9861748002B; Thu, 24 Sep 2026 19:26:01 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-Cc: Thinh Nguyen <Thinh.Nguyen@synopsys.com>, linux-kernel@vger.kernel.org, 
-	linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org, kernel@collabora.com, 
-	Igor Paunovic <royalnet026@gmail.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
-	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>
-Subject: Re: [PATCH 2/5] usb: dwc3: rockchip: introduce glue driver
-Message-ID: <arVB7k5QRcwYfZEO@venus>
-References: <20260915-b4-rockchip-dwc3-rockchip-glue-v1-0-763bb546824e@collabora.com>
- <20260915-b4-rockchip-dwc3-rockchip-glue-v1-2-763bb546824e@collabora.com>
- <6eacce65-5636-413f-8213-10910f3a7ee8@oss.qualcomm.com>
+Subject: [PATCH v16 0/6] usb: dwc3: introduce Rockchip glue driver
+Date: Thu, 24 Sep 2026 19:25:36 +0200
+Message-Id: <20260924-b4-rockchip-dwc3-rockchip-glue-v16-0-126a2e9133c3@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <6eacce65-5636-413f-8213-10910f3a7ee8@oss.qualcomm.com>
-X-Zoho-Virus-Status: 1
-X-Zoho-AV-Stamp: zmail-av-0.2.13.1.5.4/290.230.26
-X-ZohoMailClient: External
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/4WOyw6CMBBFf4XM2hpKCwgr/8O4aMsIVaDaFtQY/
+ t3ySFy6PJM799wPOLQaHZTRByyO2mnTB6DZLgLViL5GoqtwgCROsrignEhOrFE31eg7qZ6K/ah
+ uByRFXqBgOUsrziCU3C1e9GsxnM4ru0FeUfm5dUtYfAxB7dcYSOGQKNN12pfRmO+DQ1GYvxvtv
+ LHvZe5Il/A2LP03bKQkJnnGpEx5dkg4HpVpWyGNFfvggvM0TV9qFEn6DwEAAA==
+X-Change-ID: 20260914-b4-rockchip-dwc3-rockchip-glue-979ea3735d43
+To: Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>
+Cc: Igor Paunovic <royalnet026@gmail.com>, linux-kernel@vger.kernel.org, 
+ linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org, 
+ kernel@collabora.com, Sebastian Reichel <sebastian.reichel@collabora.com>, 
+ Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3046;
+ i=sebastian.reichel@collabora.com; h=from:subject:message-id;
+ bh=3sBvjQKw6DJCadb53xNtWm7YOjLNwu7mLDnxmC9FK5w=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGq1XSmZhKGkf1izi3YlOhbYNbqIV6op3jl0F
+ 61epOfYQ/gp/YkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqtV0pAAoJENju1/PI
+ O/qax+wP/Ahzg72x8NLtRMgZovPAcWOphz1v0/zYHXkHMkouZ/xu1IREC7H0l4cDhe28zyTX3m/
+ YxxadEhLponFpvA8np0OcKyYAolg8zpmeC+/v4TCBg1aFShNqzoHn9gszHl4X5ne0WtSVQKSguE
+ v7qfEyZ/JaTwSev7frVc2ugB6qvKKxJJ9y0A9PobV9TPNwyH+hk7jfFE/9jmMZi4pxXRYAY1zBo
+ 7rUQivWhVwXY/Q8BFZGMRmt236pw3mi+7WB5bSTbG7JJFHgMptpxFNl6o9tBi6ZB9iTy5L1Q8PN
+ RVTfVNSMrYCRyFsFlhdfKj9QWhrO8foy2da0jA4sMO7oE21448UBXbFSexttcDOU5a0VS88Qfw2
+ 6oUg2r4s2XaUDsz3wqp5z7ggpP9r44wt9pID++jPj5kg1r06evftKwvBMuwlSXxtjctoOTr9x4x
+ mSgJlWQeSjUMIhQM2JqE/IH9fNZkQfN0/JT4LN6pHffnlxfGRaRlYcU+fdBdF5x46KwMpC1UnqW
+ C0ECA4JA90wYmPtNQ+vXlTkoVEziJqdwahqxPVNM0nJEwCekH85jvn8M+03hXqG1W6ktj+KyscZ
+ fRYWL2+33Qn2AEJahnc1gZjIit5GgyQHDzngcb0fAC4EGu+c4yzOATk30+A3wiOiRacRbVhRuCs
+ VQNrQqAWNhZUF99CyjXAsoA==
+X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
+ fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260924_083645_524409_975FDE9C 
-X-CRM114-Status: GOOD (  29.68  )
+X-CRM114-CacheID: sfid-20260924_102607_931328_070C5388 
+X-CRM114-Status: GOOD (  16.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,231 +97,78 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============9071645371274959234=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The recent Rockchip platform have a combined PHY, which does USB3 and
+DisplayPort as well as muxing the lines in arbitrary order. Changing
+its enabled functionality requires a PHY reset and as the PHY provides
+a clock to the DWC3 controller, this can result in an SError. Apart
+from that the PHY might not start up correctly when the DWC3 PIPE
+interface is running. This series prepares a Rockchip specific DWC3
+glue driver to help out with these problems. To become useful more
+patches are needed on the Rockchip USBDP PHY side, which are send
+separately.
 
---===============9071645371274959234==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="vu4syrqui7xkgy6d"
-Content-Disposition: inline
+This was split from the USBDP cleanup series. It has no dependencies,
+but is required for part 3 for the USBDP cleanup series (which will
+be the final part).
 
+Changes in v16:
+- Link to v15 (sorry, I missed force setting the revision for this
+  part in the series split, so the series says v1 in the patch subject):
+  https://patch.msgid.link/20260915-b4-rockchip-dwc3-rockchip-glue-v1-0-763bb546824e@collabora.com
+- Update first patch to also build the PM functions even when
+  PM is disabled
+- Add new patch for defining an empty usb_udc_vbus_handler stub
+  when USB_GADGET is disabled
+- Add dependency to Rockchip DWC3 glue, which disallows the
+  configuration with USB_DWC3_ROCKCHIP=y and USB_GADGET=m
+- Collect tags
 
---vu4syrqui7xkgy6d
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH 2/5] usb: dwc3: rockchip: introduce glue driver
-MIME-Version: 1.0
+Changes in v15:
+ - Link to v14: https://patch.msgid.link/20260813-rockchip-usbdp-cleanup-v14-0-b5ad9c68fa11@collabora.com
+ - Avoid #ifdef for CONFIG_PM in the new glue driver (Thinh Nguyen)
+ - Do not add #if IS_ENABLED around the DT compatible blacklist in the
+   generic driver, using the glue driver should be mandatory as the
+   generic driver results in arbitrary system hangs. Thinh Nguyen suggested
+   updating Kconfig for this, but did not clarify what that means.
+   Current Kconfig works the same way as the other mandatory glue
+   drivers.
+ - Split series to simplify review
 
-Hi Krishna,
+Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+---
+Sebastian Reichel (6):
+      phy: core: add notifier infrastructure
+      usb: dwc3: rockchip: introduce glue driver
+      usb: dwc3: core: add post PHY registration hook for platform glue
+      usb: dwc3: rockchip: support PHY reset notifications
+      usb: gadget: define stub for usb_udc_vbus_handler
+      usb: dwc3: rockchip: fix USB-C reconnect in gadget mode
 
-On Wed, Sep 23, 2026 at 11:23:01AM +0530, Krishna Kurapati wrote:
->=20
->=20
-> On 9/15/2026 8:47 PM, Sebastian Reichel wrote:
-> > Introduce Rockchip specific glue code for the Synopsys DWC3 USB driver.
-> > For now this handles things identical to the default glue.
-> >=20
->=20
-> [...]
->=20
-> > @@ -2448,11 +2448,26 @@ int dwc3_core_probe(const struct dwc3_probe_dat=
-a *data)
-> >   }
-> >   EXPORT_SYMBOL_GPL(dwc3_core_probe);
-> > +/*
-> > + * List of compatibles, which have "synopsys,dwc3" as a fallback
-> > + * compatible, but have a vendor specific glue driver that should
-> > + * be used instead of this one.
-> > + */
-> > +static const char *const dwc3_compatible_blocklist[] =3D {
-> > +	"rockchip,rk3588-dwc3",
-> > +	"rockchip,rk3576-dwc3",
-> > +};
-> > +
-> >   static int dwc3_probe(struct platform_device *pdev)
-> >   {
-> >   	struct dwc3_probe_data probe_data =3D {};
-> >   	struct resource *res;
-> >   	struct dwc3 *dwc;
-> > +	int i;
-> > +
-> > +	for (i =3D 0; i < ARRAY_SIZE(dwc3_compatible_blocklist); i++)
-> > +		if (device_is_compatible(&pdev->dev, dwc3_compatible_blocklist[i]))
-> > +			return -ENODEV;
->=20
-> Would it be better to split this patch into two ? I see core changes are
-> independent of addition of the new driver.
+ drivers/phy/phy-core.c           |  65 ++++++++++
+ drivers/usb/dwc3/Kconfig         |  12 ++
+ drivers/usb/dwc3/Makefile        |   1 +
+ drivers/usb/dwc3/core.c          |  17 ++-
+ drivers/usb/dwc3/core.h          |   9 ++
+ drivers/usb/dwc3/dwc3-rockchip.c | 254 +++++++++++++++++++++++++++++++++++++++
+ drivers/usb/dwc3/trace.c         |   3 +
+ include/linux/phy/phy.h          |  40 ++++++
+ include/linux/usb/gadget.h       |   5 +
+ 9 files changed, 405 insertions(+), 1 deletion(-)
+---
+base-commit: e5e04726cdd043e309677071ab1b65a4b18f422b
+change-id: 20260914-b4-rockchip-dwc3-rockchip-glue-979ea3735d43
 
-That's true from a pure compile time perspective, but the new glue
-driver is effectively dead code as it will never probe without that
-change.
+Best regards,
+--  
+Sebastian Reichel <sebastian.reichel@collabora.com>
 
-Greetings,
-
--- Sebastian
-
->=20
-> Regards,
-> Krishna,
->=20
-> >   	res =3D platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> >   	if (!res) {
-> > diff --git a/drivers/usb/dwc3/dwc3-rockchip.c b/drivers/usb/dwc3/dwc3-r=
-ockchip.c
-> > new file mode 100644
-> > index 000000000000..62f2a03b08a2
-> > --- /dev/null
-> > +++ b/drivers/usb/dwc3/dwc3-rockchip.c
-> > @@ -0,0 +1,106 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/* Copyright (c) 2026, Collabora Ltd. */
-> > +#include <linux/module.h>
-> > +#include <linux/platform_device.h>
-> > +#include <linux/pm_runtime.h>
-> > +#include "glue.h"
-> > +
-> > +struct dwc3_rockchip {
-> > +	struct dwc3		dwc;
-> > +};
-> > +
-> > +static int dwc3_rockchip_probe(struct platform_device *pdev)
-> > +{
-> > +	struct dwc3_probe_data probe_data =3D {};
-> > +	struct resource *res;
-> > +	struct dwc3_rockchip *dwc_rk;
-> > +
-> > +	res =3D platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> > +	if (!res) {
-> > +		dev_err(&pdev->dev, "missing memory resource\n");
-> > +		return -ENODEV;
-> > +	}
-> > +
-> > +	dwc_rk =3D devm_kzalloc(&pdev->dev, sizeof(*dwc_rk), GFP_KERNEL);
-> > +	if (!dwc_rk)
-> > +		return -ENOMEM;
-> > +
-> > +	dwc_rk->dwc.dev =3D &pdev->dev;
-> > +	dwc_rk->dwc.glue_ops =3D NULL;
-> > +
-> > +	probe_data.dwc =3D &dwc_rk->dwc;
-> > +	probe_data.res =3D res;
-> > +	probe_data.properties =3D DWC3_DEFAULT_PROPERTIES;
-> > +
-> > +	return dwc3_core_probe(&probe_data);
-> > +}
-> > +
-> > +static void dwc3_rockchip_remove(struct platform_device *pdev)
-> > +{
-> > +	dwc3_core_remove(platform_get_drvdata(pdev));
-> > +}
-> > +
-> > +static int __maybe_unused dwc3_rockchip_runtime_suspend(struct device =
-*dev)
-> > +{
-> > +	return dwc3_runtime_suspend(dev_get_drvdata(dev));
-> > +}
-> > +
-> > +static int __maybe_unused dwc3_rockchip_runtime_resume(struct device *=
-dev)
-> > +{
-> > +	return dwc3_runtime_resume(dev_get_drvdata(dev));
-> > +}
-> > +
-> > +static int __maybe_unused dwc3_rockchip_runtime_idle(struct device *de=
-v)
-> > +{
-> > +	return dwc3_runtime_idle(dev_get_drvdata(dev));
-> > +}
-> > +
-> > +static int __maybe_unused dwc3_rockchip_suspend(struct device *dev)
-> > +{
-> > +	return dwc3_pm_suspend(dev_get_drvdata(dev));
-> > +}
-> > +
-> > +static int __maybe_unused dwc3_rockchip_resume(struct device *dev)
-> > +{
-> > +	return dwc3_pm_resume(dev_get_drvdata(dev));
-> > +}
-> > +
-> > +static void __maybe_unused dwc3_rockchip_complete(struct device *dev)
-> > +{
-> > +	dwc3_pm_complete(dev_get_drvdata(dev));
-> > +}
-> > +
-> > +static int __maybe_unused dwc3_rockchip_prepare(struct device *dev)
-> > +{
-> > +	return dwc3_pm_prepare(dev_get_drvdata(dev));
-> > +}
-> > +
-> > +static const struct dev_pm_ops dwc3_rockchip_dev_pm_ops =3D {
-> > +	SET_SYSTEM_SLEEP_PM_OPS(dwc3_rockchip_suspend, dwc3_rockchip_resume)
-> > +	SET_RUNTIME_PM_OPS(dwc3_rockchip_runtime_suspend, dwc3_rockchip_runti=
-me_resume,
-> > +			   dwc3_rockchip_runtime_idle)
-> > +	.complete =3D pm_sleep_ptr(dwc3_rockchip_complete),
-> > +	.prepare =3D pm_sleep_ptr(dwc3_rockchip_prepare),
-> > +};
-> > +
-> > +static const struct of_device_id dwc3_rockchip_of_match[] =3D {
-> > +	{ .compatible =3D "rockchip,rk3588-dwc3" },
-> > +	{ .compatible =3D "rockchip,rk3576-dwc3" },
-> > +	{ }
-> > +};
-> > +MODULE_DEVICE_TABLE(of, dwc3_rockchip_of_match);
-> > +
-> > +static struct platform_driver dwc3_rockchip_driver =3D {
-> > +	.probe		=3D dwc3_rockchip_probe,
-> > +	.remove		=3D dwc3_rockchip_remove,
-> > +	.driver		=3D {
-> > +		.name	=3D "dwc3-rockchip",
-> > +		.pm	=3D pm_ptr(&dwc3_rockchip_dev_pm_ops),
-> > +		.of_match_table	=3D dwc3_rockchip_of_match,
-> > +	},
-> > +};
-> > +
-> > +module_platform_driver(dwc3_rockchip_driver);
-> > +
-> > +MODULE_LICENSE("GPL");
-> > +MODULE_DESCRIPTION("DesignWare DWC3 Rockchip Glue Driver");
-> >=20
->=20
-
---vu4syrqui7xkgy6d
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmq1Q3oACgkQ2O7X88g7
-+pqNww/9EHGMcp537E32jHoRUriW7+ZRqiKtCJUEczh/NpGV7a9xXNuE+bkz7LVq
-8UvGrp0IAOp4D25D87IBZIwDPnw67hIbvheZ0jI1RSFoEfccO2RDqEJuwgr7TqdC
-g0d427lgmozamZMyUVzI09/4Utnl3DSa8uWwYIq9/qRf6b5iqraovAoySq+KmKOY
-5hss824MlBk2PKv5Zo8O0dd9CwcSyZuwxDgRoBToCZxQbHJdnAoHtJJN2VmLzZVx
-N5IeQwKnqfLMS2lfiX5xSoRNotkrA7Ui5iKFvsKsLU/gARuQ6LHhChy9SE8aBww+
-chxvuSCF2s+FGF71RIHfUpVyq4+jMUdlL3ptA0mLVQrrUQsfinFAIuDtzQdTflBb
-ap3t6hwgj5zfBq/BueWKWUDfh8WurhILCEk45ALEKePEDKa7D5Dh1KEdwYBtTMy/
-G7FflOWk8J5oA9DiPHVGD5Bnu92PmD/yCxIEIDCWz03nK1cDJTl2+ahxrKrVKQa8
-1PmUSIabWXinh1fiptThR0Egj/dzscArNESi2IvoxtGBLyAVZ0aesZgGdURhV7w1
-lUxmBBlwcpDZr9TDgDakKW70TgPsuccXeCsgxLkMNm5ydtqU7l/gH5kDun4FrbWz
-0xZWpKVyrZvU0zEoz56h56Rbd+Hcas6pXZIFgJH1+tnZMCVfD7U=
-=yBxX
------END PGP SIGNATURE-----
-
---vu4syrqui7xkgy6d--
-
-
---===============9071645371274959234==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============9071645371274959234==--
-
