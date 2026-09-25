@@ -4,63 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8B66C9830E
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Sep 2026 15:25:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68CE2C98325
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Sep 2026 15:32:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oSZ5vZ3KTKJEnXMNfuQNKQHlvsci8ZUzJShHTR5G6Lo=; b=dXZpa+PcfP5FPo
-	JvdWZxBS7lWWgiEUXedXtQ+V9DvW9D0+m8UVtVRtV/LXW1BctGYu75BFzwAmR7pOXcHtP7Ppdd3Y3
-	qLi3659Hxi8Kz0pZ1jIAx1/QTefhVIALE/Ytrg042HMUfR+yuYnq2nfYhd8TKUSPB5G6u4Su72i5Z
-	4j7FOlLDv+Psj7SthqJxpyreIi4flNPrVYZPzD/W6iivDz0jN7HDuhqFV3vyHApQLmTCyqNZuA0Ce
-	wFqzpjOSsnmC4Bp+ghOcu86719xeoAl8whPW+6p2VDl4oInluOcNM7nCaoi3Ci+ddNNl6ew6FmaqS
-	NobE6qZoHG2g7ojsbeSQ==;
+	List-Owner; bh=gKei5RQ7A4AA8pY4zcCTHdcebHIGrg//U/NqMpXdGK0=; b=uXVnk9P3LGLv/e
+	0xjYlhSIcvqyOXXnIoeoklleudzUjYr0kf0X1gRLzSjU6cku9fx9MalUEUuRReaQ2hNSOySAxzQ4z
+	j9R2Igo/ALvUgSeg/m93iJXnXuEYgS29edpfTr6L83apS0yqSCqPMtGkYQIJ5OkHNJk35GaT59Zxy
+	x4xhS7EUWGcIfvvdXKhY1j4wIZslvunCJY+kJbgTdQ4LhtASDu554HyA8WDKnGFpnT23ce/WSl+jy
+	qWdT2G/qHGUiaqnXZBWtl6Edc18tQkogjfIFgnhnzHcxEPuvkYOfxWWbv2sxFqgYBHztFsdc5Jrb2
+	EXlPSGSuUAr1h5RUz6AA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xA7ns-0000000DmMg-2AXx;
-	Fri, 25 Sep 2026 15:25:36 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xA7ua-0000000Dnyl-0WTg;
+	Fri, 25 Sep 2026 15:32:32 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xA7nq-0000000DmMA-2vL7
+	id 1xA7uY-0000000DnyL-22jf
 	for linux-phy@lists.infradead.org;
-	Fri, 25 Sep 2026 15:25:34 +0000
+	Fri, 25 Sep 2026 15:32:30 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id F382360136;
-	Fri, 25 Sep 2026 15:25:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EDE2E1F000FF;
-	Fri, 25 Sep 2026 15:25:27 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id E788642E55;
+	Fri, 25 Sep 2026 15:32:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8795E1F00893;
+	Fri, 25 Sep 2026 15:32:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790349933;
-	bh=XjJu85d7wfISfmZzNSzPkWwyChELnjkdxti837YiI74=;
+	s=k20260515; t=1790350349;
+	bh=ahXr8iYLMCrTGMdibdd3fWSZuNO3BxDrBHng23DkL6Y=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=TklBtAtvfD4nKCooVinJbxY9ggCZg+43JN5Q8zDDCGOS4uG5RKMm55zXl3VbJpGKg
-	 J47SESdECcQgOBxpGz0mKeWEcyGcDOXNiN3eXsjOLxhXyi/5xF09/VxrH3D6USBb6W
-	 tbCKDpLicK7Hkus/J5y85XbqUhWWHw9BLpaQF+rplzaH9zNmLelzrjShAA6cVbeNon
-	 Isfq6SxEv7TD8gHhILn9TsO053Hk/dQNU58rhuhrb5IYURSuhpvY/cuLFGLuXq6qWr
-	 isHX+UVJ3uALkTHTFdq+eI/K+eMvShr5z6+MwTnbNoAi2WpI0RBiK/FUcQ2gIvCG62
-	 Vzsk3UmQnlLzg==
-Date: Fri, 25 Sep 2026 17:25:13 +0200
+	b=RcW4JHkVjo86U9vcg6YxHgnyKvA+NAtGNMzXx2kZwZhT61+dzlihBa2BiiYS4tflT
+	 hfNoJMdMs463BtFOro0ZYKY+ZnrCRINmyRBShwFGHpb84CD0+oMBy/PAS7aIDXlfWs
+	 qS8+uTLup22Z+Rs+L+id+G7BXnxrHMLxOAUbbn5A0EKLxHq+v14hkNvw9Eoj0PNR8S
+	 tyG8aBVJO7XlE0yHzx7aCGcsAKGGudickvxZBTFGEb7VkNkupmk8180XvPlEkqt5RW
+	 zBuiv+NGQ0L1brDt8F/zhWX3t11eXCXOxJoeXNRtfP3wqlf9lWSDJkiDxijAk8KH8h
+	 3LjZQnRkM28KQ==
+Date: Fri, 25 Sep 2026 17:32:13 +0200
 From: Manivannan Sadhasivam <mani@kernel.org>
 To: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
 Cc: Vinod Koul <vkoul@kernel.org>, 
 	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
 	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Lorenzo Pieralisi <lpieralisi@kernel.org>, Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
-	Bjorn Helgaas <bhelgaas@google.com>, Bjorn Andersson <andersson@kernel.org>, 
-	Maxime Chevallier <maxime.chevallier@bootlin.com>, Philipp Zabel <p.zabel@pengutronix.de>, 
-	shengchao.guo@oss.qualcomm.com, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	Bjorn Helgaas <bhelgaas@google.com>, Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org
-Subject: Re: [PATCH v4 6/6] phy: qcom: qmp-pcie: Add Nord Gen5x16 PCIe
- multi-PHY support
-Message-ID: <q6trptalussxqayvkvfti7cm2uje4a6novrhelxp4adzd7smtu@3j5rpztp7jmr>
-References: <20260921-nord-v4-0-ed05c6e09240@oss.qualcomm.com>
- <20260921-nord-v4-6-ed05c6e09240@oss.qualcomm.com>
+Subject: Re: [PATCH 3/6] phy: qcom: qmp-pcie: Add endpoint PHY configuration
+ for QCS8300
+Message-ID: <tdzyms6ci25zh2sxthg3khyqjvqpsnhpciqmjmbsj5hnzc35er@5fjuieis44ca>
+References: <20260921-monaco_ep-v1-0-63c5282fb0db@oss.qualcomm.com>
+ <20260921-monaco_ep-v1-3-63c5282fb0db@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260921-nord-v4-6-ed05c6e09240@oss.qualcomm.com>
+In-Reply-To: <20260921-monaco_ep-v1-3-63c5282fb0db@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,24 +76,19 @@ Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBTZXAgMjEsIDIwMjYgYXQgMTE6MDc6MTRBTSArMDUzMCwgS3Jpc2huYSBDaGFpdGFu
-eWEgQ2h1bmRydSB3cm90ZToKPiBBZGQgc3VwcG9ydCBmb3IgdGhlIE5vcmQgR2VuNXgxNiBiaWZ1
-cmNhdGVkIFFNUCBQQ0llIFBIWS4KPiAKPiBOb3JkIGhhcyBhIHNpbmdsZSBQQ0llIFBIWSBibG9j
-ayBzcGxpdCBpbnRvIGZvdXIgcG9ydHMgd2hpY2ggY2FuIGJlCj4gdXNlZCBpbiBtdWx0aXBsZSBs
-YW5lIGNvbmZpZ3VyYXRpb25zOiB4MTYsIHg4K3g4LCB4OCt4NCt4NCBhbmQKPiB4OCt4NCt4Mit4
-Mi4gVGhlIGFjdGl2ZSB0b3BvbG9neSBpcyBzZWxlY3RlZCB0aHJvdWdoIHRoZSBsaW5rIG1vZGUK
-PiBjb25maWd1cmF0aW9uIHJlZ2lzdGVyLCBhbmQgdGhlIGRyaXZlciBleHBvc2VzIHRoZSBjb3Jy
-ZXNwb25kaW5nIFBIWQo+IGluc3RhbmNlcyBiYXNlZCBvbiB0aGF0IG1vZGUuCj4gCj4gVW5saWtl
-IEdseW11ciwgd2hlcmUgdGhlIFBIWSBpcyBpbml0aWFsaXplZCBieSBmaXJtd2FyZSwgTm9yZCBy
-ZXF1aXJlcwo+IExpbnV4IHRvIHByb2dyYW0gdGhlIFBIWSByZWdpc3RlcnMuIEFkZCB0aGUgUExM
-LCBUWFJYWiwgUENTIGFuZCBQQ1MKPiBsYW5lIGluaXRpYWxpemF0aW9uIHRhYmxlcywgYWxvbmcg
-d2l0aCB0aGUgcmVxdWlyZWQgcG93ZXItdXAsCj4gcG93ZXItZG93biBhbmQgc29mdC1yZXNldCBz
-ZXF1ZW5jaW5nLgo+IAo+IEFkZCBwZXItcG9ydCBhbmQgZ3JvdXBlZCBQSFkgY29uZmlndXJhdGlv
-bnMgZm9yIGFsbCBzdXBwb3J0ZWQgTm9yZAo+IGxhbmUgbW9kZXMuIEFsc28gYWRkIHN1cHBvcnQg
-Zm9yIHJlZ3VsYXIgUEhZIHJlc2V0cyBpbiBhZGRpdGlvbiB0byB0aGUKPiBOT0NTUiByZXNldC4K
-PiAKPiBTaWduZWQtb2ZmLWJ5OiBLcmlzaG5hIENoYWl0YW55YSBDaHVuZHJ1IDxrcmlzaG5hLmNo
-dW5kcnVAb3NzLnF1YWxjb21tLmNvbT4KClJldmlld2VkLWJ5OiBNYW5pdmFubmFuIFNhZGhhc2l2
-YW0gPG1hbml2YW5uYW4uc2FkaGFzaXZhbUBvc3MucXVhbGNvbW0uY29tPgoKLSBNYW5pCgotLSAK
-4K6u4K6j4K6/4K614K6j4K+N4K6j4K6p4K+NIOCumuCupOCuvuCumuCuv+CuteCuruCvjQoKLS0g
-CmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+T24gTW9uLCBTZXAgMjEsIDIwMjYgYXQgMDQ6Mjg6MTRQTSArMDUzMCwgS3Jpc2huYSBDaGFpdGFu
+eWEgQ2h1bmRydSB3cm90ZToKPiBNb25hY28gc3VwcG9ydHMgUENJZSBFbmRwb2ludCBtb2RlIG9u
+IGJvdGggUENJZSBjb250cm9sbGVycy4gUmV1c2UKPiB0aGUgZXhpc3RpbmcgU0E4Nzc1UCBFbmRw
+b2ludCBQSFkgcHJvZ3JhbW1pbmcgZm9yIHRoZSAxNiBHVC9zIHgyIFBIWSBhbmQKPiBhZGQgYSBu
+ZXcgMTYgR1QvcyB4NCBFbmRwb2ludCBQSFkgY29uZmlndXJhdGlvbiB3aXRoIHRoZSByZXF1aXJl
+ZCBSWAo+IHR1bmluZyBwYXJhbWV0ZXJzLgo+IAoKVGhpcyBzb3VuZHMgbGlrZSB0aGUgUEhZIGlu
+aXQgc2VxdWVuY2Ugb25seSB3b3JrcyBmb3IgRW5kcG9pbnQgbW9kZS4gQnV0IHRoZQpzZXF1ZW5j
+ZSBsb29rcyB0byBiZSBjb21tb24gZm9yIGJvdGggUkMgYW5kIEVQLCBldmVuIHRob3VnaCBpdCBp
+cyBvbmx5IHRlc3RlZAp3aXRoIEVQIG1vZGUuCgo+IFRoaXMgYWxsb3dzIGJvdGggTW9uYWNvIFBD
+SWUgY29udHJvbGxlcnMgdG8gb3BlcmF0ZSByZWxpYWJseSBpbgo+IEVuZHBvaW50IG1vZGUuCj4g
+Cj4gU2lnbmVkLW9mZi1ieTogS3Jpc2huYSBDaGFpdGFueWEgQ2h1bmRydSA8a3Jpc2huYS5jaHVu
+ZHJ1QG9zcy5xdWFsY29tbS5jb20+CgpSZXZpZXdlZC1ieTogTWFuaXZhbm5hbiBTYWRoYXNpdmFt
+IDxtYW5pdmFubmFuLnNhZGhhc2l2YW1Ab3NzLnF1YWxjb21tLmNvbT4KCi0gTWFuaQoKLS0gCuCu
+ruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDgrprgrqTgrr7grprgrr/grrXgrq7gr40KCi0tIAps
+aW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBz
+Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
