@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40A34C98321
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Sep 2026 15:23:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8B66C9830E
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Sep 2026 15:25:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fttxzzht1PzmNu3XawmfegN86Dr2wCQmlYSRy/rKF48=; b=pm3A1Gmazm6Tk0
-	z+6JlYC4O7a+xB4oy6m5+zeu6Bpa5DYPuX352rceDz7JzyNXCd6koSLQ8ra1tQs4abdKBOg6BVpWL
-	woBoBKWucXnwX2yJPmw7Y4q2iOL318xJNDtMrM5J1ihKZgoSJPozrgVsrt19CNgxoB3va6YuJYIWV
-	YEvXMD0W0F3ujiUAtF+hvAhICPEs7oaZs1MykCxXDvOno0rPCoAsqtDsKAYWDrwnzVKc6Vbsmt83l
-	GOjLhVnRm9SkEurP60hpIjnwUr8zVg5oOVGF5Swr8sC3pyzAiTpRFq8bH++r5NwtT81CkvIfpEKl6
-	R3lasdwN4eB7dgJWxWQA==;
+	List-Owner; bh=oSZ5vZ3KTKJEnXMNfuQNKQHlvsci8ZUzJShHTR5G6Lo=; b=dXZpa+PcfP5FPo
+	JvdWZxBS7lWWgiEUXedXtQ+V9DvW9D0+m8UVtVRtV/LXW1BctGYu75BFzwAmR7pOXcHtP7Ppdd3Y3
+	qLi3659Hxi8Kz0pZ1jIAx1/QTefhVIALE/Ytrg042HMUfR+yuYnq2nfYhd8TKUSPB5G6u4Su72i5Z
+	4j7FOlLDv+Psj7SthqJxpyreIi4flNPrVYZPzD/W6iivDz0jN7HDuhqFV3vyHApQLmTCyqNZuA0Ce
+	wFqzpjOSsnmC4Bp+ghOcu86719xeoAl8whPW+6p2VDl4oInluOcNM7nCaoi3Ci+ddNNl6ew6FmaqS
+	NobE6qZoHG2g7ojsbeSQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xA7lf-0000000DlyS-41qK;
-	Fri, 25 Sep 2026 15:23:19 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xA7ns-0000000DmMg-2AXx;
+	Fri, 25 Sep 2026 15:25:36 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xA7lf-0000000Dly9-0cIT
+	id 1xA7nq-0000000DmMA-2vL7
 	for linux-phy@lists.infradead.org;
-	Fri, 25 Sep 2026 15:23:19 +0000
+	Fri, 25 Sep 2026 15:25:34 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 5F5A360136;
-	Fri, 25 Sep 2026 15:23:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F15BC1F000FF;
-	Fri, 25 Sep 2026 15:23:11 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id F382360136;
+	Fri, 25 Sep 2026 15:25:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EDE2E1F000FF;
+	Fri, 25 Sep 2026 15:25:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790349798;
-	bh=kANBcDB93ekcXy8yI3BeOtertVshNaMZPmStPqf4cgI=;
+	s=k20260515; t=1790349933;
+	bh=XjJu85d7wfISfmZzNSzPkWwyChELnjkdxti837YiI74=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=BxJ7jdQGXHEFCGpvRSvy6X4RbrF+w+/idYZYlZDWY3IkIj+8XU7+vaMNIs6u85Sqk
-	 FApFK4LsozIcAJ+tR/cRE6YJIq1uhICKpnGhkPjS8IVw29P1NzYdQ8whr7zYFMT0ks
-	 sDaEG3lTrtpiwXBQQfvDX3NOyUYF4K4mHR8ETlR1nubSnb3o9mcxYr9nNeWLJOIr8O
-	 mh4ebSKnw4Eo2ucS4LcTM24aVBwJ1ckFYsZHpccQ6ldklagEpzPEcN30pLYIcfm9mq
-	 VUaJkLylpyv4P+Cpk55tUgdqHoPOn29LhpZN4rlMFBrvyWroSqh/gXNFhCqwq/CVKD
-	 lCKuI3wxtk15g==
-Date: Fri, 25 Sep 2026 17:23:02 +0200
+	b=TklBtAtvfD4nKCooVinJbxY9ggCZg+43JN5Q8zDDCGOS4uG5RKMm55zXl3VbJpGKg
+	 J47SESdECcQgOBxpGz0mKeWEcyGcDOXNiN3eXsjOLxhXyi/5xF09/VxrH3D6USBb6W
+	 tbCKDpLicK7Hkus/J5y85XbqUhWWHw9BLpaQF+rplzaH9zNmLelzrjShAA6cVbeNon
+	 Isfq6SxEv7TD8gHhILn9TsO053Hk/dQNU58rhuhrb5IYURSuhpvY/cuLFGLuXq6qWr
+	 isHX+UVJ3uALkTHTFdq+eI/K+eMvShr5z6+MwTnbNoAi2WpI0RBiK/FUcQ2gIvCG62
+	 Vzsk3UmQnlLzg==
+Date: Fri, 25 Sep 2026 17:25:13 +0200
 From: Manivannan Sadhasivam <mani@kernel.org>
 To: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
 Cc: Vinod Koul <vkoul@kernel.org>, 
@@ -53,14 +53,14 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	Maxime Chevallier <maxime.chevallier@bootlin.com>, Philipp Zabel <p.zabel@pengutronix.de>, 
 	shengchao.guo@oss.qualcomm.com, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org
-Subject: Re: [PATCH v4 5/6] phy: qcom: qmp-pcie: Refactor common multiphy
- handling
-Message-ID: <kcatb2mcwqb64lk5afcq7dfn5mxmzd4d4ertblsryjilv373hb@ivbibuq7byma>
+Subject: Re: [PATCH v4 6/6] phy: qcom: qmp-pcie: Add Nord Gen5x16 PCIe
+ multi-PHY support
+Message-ID: <q6trptalussxqayvkvfti7cm2uje4a6novrhelxp4adzd7smtu@3j5rpztp7jmr>
 References: <20260921-nord-v4-0-ed05c6e09240@oss.qualcomm.com>
- <20260921-nord-v4-5-ed05c6e09240@oss.qualcomm.com>
+ <20260921-nord-v4-6-ed05c6e09240@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260921-nord-v4-5-ed05c6e09240@oss.qualcomm.com>
+In-Reply-To: <20260921-nord-v4-6-ed05c6e09240@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,20 +77,24 @@ Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBTZXAgMjEsIDIwMjYgYXQgMTE6MDc6MTNBTSArMDUzMCwgS3Jpc2huYSBDaGFpdGFu
-eWEgQ2h1bmRydSB3cm90ZToKPiBSZXVzZSB0aGUgZXhpc3RpbmcgcG9ydCByZXNvdXJjZSBhcnJh
-eXMgZm9yIEdseW11ciByZWdpc3RlciByZWdpb25zLAo+IHBvd2VyIGRvbWFpbnMsIGFuZCBOT0NT
-UiByZXNldHMgaW5zdGVhZCBvZiBtYWludGFpbmluZyBkdXBsaWNhdGUKPiBHbHltdXItc3BlY2lm
-aWMgbGlzdHMuCj4gCj4gQXR0YWNoIGVhY2ggUEhZIGluc3RhbmNlJ3MgcG93ZXIgZG9tYWlucyB0
-byB0aGUgZGV2aWNlIGNyZWF0ZWQgZm9yIHRoYXQKPiBQSFkuIFRoaXMgZW5zdXJlcyB0aGF0IHRo
-ZSBhc3NvY2lhdGVkIEdEU0NzIGFyZSBtYW5hZ2VkIHdpdGggdGhlCj4gbGlmZXRpbWUgb2YgdGhl
-IGluZGl2aWR1YWwgUEhZIGRldmljZSByYXRoZXIgdGhhbiB0aGUgcGFyZW50IG11bHRpcGh5Cj4g
-cGxhdGZvcm0gZGV2aWNlLgo+IAo+IFZhbGlkYXRlIHRoZSBjbG9jay1vdXRwdXQtbmFtZXMgcHJv
-cGVydHkgYmVmb3JlIHVzaW5nIGl0cyBjb3VudCBmb3IKPiBhbGxvY2F0aW9uLCBhbmQgdXNlIGEg
-Z2VuZXJpYyBtb2R1bGUgZGVzY3JpcHRpb24uCj4gCj4gU2lnbmVkLW9mZi1ieTogS3Jpc2huYSBD
-aGFpdGFueWEgQ2h1bmRydSA8a3Jpc2huYS5jaHVuZHJ1QG9zcy5xdWFsY29tbS5jb20+CgpSZXZp
-ZXdlZC1ieTogTWFuaXZhbm5hbiBTYWRoYXNpdmFtIDxtYW5pdmFubmFuLnNhZGhhc2l2YW1Ab3Nz
-LnF1YWxjb21tLmNvbT4KCi0gTWFuaQoKLS0gCuCuruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDg
-rprgrqTgrr7grprgrr/grrXgrq7gr40KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4
-LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
-bWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+T24gTW9uLCBTZXAgMjEsIDIwMjYgYXQgMTE6MDc6MTRBTSArMDUzMCwgS3Jpc2huYSBDaGFpdGFu
+eWEgQ2h1bmRydSB3cm90ZToKPiBBZGQgc3VwcG9ydCBmb3IgdGhlIE5vcmQgR2VuNXgxNiBiaWZ1
+cmNhdGVkIFFNUCBQQ0llIFBIWS4KPiAKPiBOb3JkIGhhcyBhIHNpbmdsZSBQQ0llIFBIWSBibG9j
+ayBzcGxpdCBpbnRvIGZvdXIgcG9ydHMgd2hpY2ggY2FuIGJlCj4gdXNlZCBpbiBtdWx0aXBsZSBs
+YW5lIGNvbmZpZ3VyYXRpb25zOiB4MTYsIHg4K3g4LCB4OCt4NCt4NCBhbmQKPiB4OCt4NCt4Mit4
+Mi4gVGhlIGFjdGl2ZSB0b3BvbG9neSBpcyBzZWxlY3RlZCB0aHJvdWdoIHRoZSBsaW5rIG1vZGUK
+PiBjb25maWd1cmF0aW9uIHJlZ2lzdGVyLCBhbmQgdGhlIGRyaXZlciBleHBvc2VzIHRoZSBjb3Jy
+ZXNwb25kaW5nIFBIWQo+IGluc3RhbmNlcyBiYXNlZCBvbiB0aGF0IG1vZGUuCj4gCj4gVW5saWtl
+IEdseW11ciwgd2hlcmUgdGhlIFBIWSBpcyBpbml0aWFsaXplZCBieSBmaXJtd2FyZSwgTm9yZCBy
+ZXF1aXJlcwo+IExpbnV4IHRvIHByb2dyYW0gdGhlIFBIWSByZWdpc3RlcnMuIEFkZCB0aGUgUExM
+LCBUWFJYWiwgUENTIGFuZCBQQ1MKPiBsYW5lIGluaXRpYWxpemF0aW9uIHRhYmxlcywgYWxvbmcg
+d2l0aCB0aGUgcmVxdWlyZWQgcG93ZXItdXAsCj4gcG93ZXItZG93biBhbmQgc29mdC1yZXNldCBz
+ZXF1ZW5jaW5nLgo+IAo+IEFkZCBwZXItcG9ydCBhbmQgZ3JvdXBlZCBQSFkgY29uZmlndXJhdGlv
+bnMgZm9yIGFsbCBzdXBwb3J0ZWQgTm9yZAo+IGxhbmUgbW9kZXMuIEFsc28gYWRkIHN1cHBvcnQg
+Zm9yIHJlZ3VsYXIgUEhZIHJlc2V0cyBpbiBhZGRpdGlvbiB0byB0aGUKPiBOT0NTUiByZXNldC4K
+PiAKPiBTaWduZWQtb2ZmLWJ5OiBLcmlzaG5hIENoYWl0YW55YSBDaHVuZHJ1IDxrcmlzaG5hLmNo
+dW5kcnVAb3NzLnF1YWxjb21tLmNvbT4KClJldmlld2VkLWJ5OiBNYW5pdmFubmFuIFNhZGhhc2l2
+YW0gPG1hbml2YW5uYW4uc2FkaGFzaXZhbUBvc3MucXVhbGNvbW0uY29tPgoKLSBNYW5pCgotLSAK
+4K6u4K6j4K6/4K614K6j4K+N4K6j4K6p4K+NIOCumuCupOCuvuCumuCuv+CuteCuruCvjQoKLS0g
+CmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
+cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
