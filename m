@@ -4,67 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F602C9830D
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Sep 2026 06:28:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB0EAC9830D
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Sep 2026 06:36:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IW/eQhYTP82t93WaHxewiJBEric5opnbi7ZAYDi+Of8=; b=vgzYSfL3QE2Oti
-	m9/wLiMJeYnbFlRELebC/FjmEL/FfgSskm/Rak9L+R99egrXaXszX8vWCwdoK9zczFiZRequ1e0h3
-	FYsOpSGahllX0UaE4meQgnYN1GTkp7glWSkuBqTSmx3Y75GrNirCoPBrnSXzO9O0RS+ELthUe/i6H
-	vRGoKDDbycnvdGy/NoN7TuGDRS9ihbO3ZVPrEd9Nd4bfgMr6fbLkV+47SQ8m+WJD/WDFiZkLR2PNO
-	haIqZio05P/Bus6HMhXH1bjM80s6nftdr24Xspm8Rkw9XmQebgB/mnIcY7NB6032lC+8g23/AiCnM
-	BDMkWLLQPbrm1aBTB1ng==;
+	List-Owner; bh=B1fYEdE3FpWS3kpByfd/vBG8TFrbIGyhTX98EpaesO8=; b=3ngffTyUtcxp9b
+	RN+aCex3CPgi0I75Z6Bgph2cTsOtMBJSVIaNUwMdY24f5UwvmDcU89gBvFIv9JgsiOOwJ+nfsUGrG
+	bPxVEkN4m5loY8WU2fV5j5vlfTMhODcl6hPPq4GDf6PbPKLAOfXPaNYk928VKvMOV7hitgpI7eECd
+	2CyfFENYjSQNFJTzbJeSXRJiBXMAPAWQE73up9ZWsdznMqmaXb30wFXcgDJG+fImg93yUXtqRMKrP
+	/BwDTbCNF3d4GFOmmdn2nzCjjwEB9os7zp5BsDZrdfSZbMyVTuIKuQjZtZn/p1HqHOtfHpJ7l+lOZ
+	CAoWNcQH+oHuzKXkYA2A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9zQT-0000000CkJb-0G6j;
-	Fri, 25 Sep 2026 06:28:53 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1x9zXg-0000000Cl3m-2RN3;
+	Fri, 25 Sep 2026 06:36:20 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9zQQ-0000000CkJJ-3fGU
+	id 1x9zXf-0000000Cl3d-0nzZ
 	for linux-phy@lists.infradead.org;
-	Fri, 25 Sep 2026 06:28:50 +0000
+	Fri, 25 Sep 2026 06:36:19 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id DCAA96022E;
-	Fri, 25 Sep 2026 06:28:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B71241F000FF;
-	Fri, 25 Sep 2026 06:28:43 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 90AAF407D0;
+	Fri, 25 Sep 2026 06:36:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 336731F000FF;
+	Fri, 25 Sep 2026 06:36:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790317729;
-	bh=BPPjjn1CvKsUI7yM/hq8jU+Pg8KjNYzEAq1cyTZMulw=;
+	s=k20260515; t=1790318176;
+	bh=p8rslO5t96PYUDZI3bkR02KMKPkCIVM1vCUFIY9mUhs=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=hFWHnpDQrT3THQcEbsmGsm9HiEjbg8wN/Bdd0IEQGC8H8v0+iy+stF8sAMhhf701S
-	 v5lAENcU4rRSWVs3xFhfrDTxSz/LJwl0b2V69EomdKpi5FsJNGQmptda9K/wIH35Qb
-	 7yZ2wnz1AxDDi5xxzkuAYkUFHd81rFImIKz+l5yMz2t9E+4B8Zm/oq/b96Nta5CnJH
-	 gXuYwoopEnQW7LBUV5HLwYfdI9OMvgpWBKfdxpdHk6qpGZTlzBOkuu6Vk1VjA74XYL
-	 AZjXMOJtMzX/ywRBsyPQt5gx6PNDQVOqD6/zrbeCo9wGbvei9HF217PI39GeK2ps3X
-	 ym3LV0LFdcdRA==
-Message-ID: <89bdd01c-74b5-4425-9ef1-19a69b9a07a5@kernel.org>
-Date: Fri, 25 Sep 2026 08:28:40 +0200
+	b=R26EJ6z44sny9/A+y/pfZfdhChALd+J9fbCYr4DV2JfuV5lwMH5nlAyQ0eXb+IZN/
+	 qghgCsCRkji/g5HCltDIWIdBVvP/Q0PStgWEsw5tSXBJ4YxlGpFby/RnBtPAB/CCxe
+	 Vc5qb8OZsGcvhbqdqpAOTMVuk3WyvsVRCmVIKCj6NKeDzyNEgFpQNCLI/GvvOagb3j
+	 5XZrttOFlEN8CJybugQJWsqbSU/Ov0RHzuT0iCYUNwzAvWkoyt6ZHktUzzusQTvEok
+	 iD2XxIvufE4OWmdbo5BXFzBWDBlZFWyKCi9whZHrn1De7M9Htis2lYWc6TfZW8sEKF
+	 ttXmneRW5df7g==
+Message-ID: <5674102a-9460-43e6-907b-97efd8263853@kernel.org>
+Date: Fri, 25 Sep 2026 08:36:07 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v4 1/6] dt-bindings: phy: qcom: add Nord QMP PCIe PHY
  binding
-To: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
- <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Lorenzo Pieralisi <lpieralisi@kernel.org>,
- =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
- Manivannan Sadhasivam <mani@kernel.org>, Bjorn Helgaas
- <bhelgaas@google.com>, Bjorn Andersson <andersson@kernel.org>,
+To: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Lorenzo Pieralisi
+ <lpieralisi@kernel.org>, =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?=
+ <kwilczynski@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>,
+ Bjorn Helgaas <bhelgaas@google.com>, Bjorn Andersson <andersson@kernel.org>,
  Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, shengchao.guo@oss.qualcomm.com,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-pci@vger.kernel.org
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: shengchao.guo@oss.qualcomm.com, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org
 References: <20260921-nord-v4-0-ed05c6e09240@oss.qualcomm.com>
  <20260921-nord-v4-1-ed05c6e09240@oss.qualcomm.com>
- <20260924-lumpy-robust-fulmar-1bfbe0@quoll>
- <050f7d22-48a2-4114-babf-7cf21c4bc08b@oss.qualcomm.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -110,7 +107,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  K9bCVaboTA2T77QYkRcRJYSsO1alGX0ome/hMLD1daXlkrNUp1HWa3K4iytLRXjCSIorWiGs
  n+q3krnpXu3TFkA8qtOFZMdnIiFuiq1yLT8hptsV5xh1TA2nsVvSYiaCr3q4s4BKjS/KrLDb
  qoxzw8ISjdUp4pA85vb6YLCmb39NgidD+7PmAr65lBNveIFynTgsja1rRQ4=
-In-Reply-To: <050f7d22-48a2-4114-babf-7cf21c4bc08b@oss.qualcomm.com>
+In-Reply-To: <20260921-nord-v4-1-ed05c6e09240@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,45 +119,26 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMjUvMDkvMjAyNiAwNjowOCwgS3Jpc2huYSBDaGFpdGFueWEgQ2h1bmRydSB3cm90ZToKPiAK
-PiAKPiBPbiA5LzI0LzIwMjYgNjo1MiBQTSwgS3J6eXN6dG9mIEtvemxvd3NraSB3cm90ZToKPj4g
-T24gTW9uLCBTZXAgMjEsIDIwMjYgYXQgMTE6MDc6MDlBTSArMDUzMCwgS3Jpc2huYSBDaGFpdGFu
-eWEgQ2h1bmRydSB3cm90ZToKPj4+ICsKPj4+ICsgIHZkZGEtcGxsLWQtc3VwcGx5OiB0cnVlCj4+
-PiArCj4+PiArICBxY29tLGxpbmstbW9kZToKPj4+ICsgICAgZGVzY3JpcHRpb246Cj4+PiArICAg
-ICAgUmVmZXJlbmNlIHRvIHRoZSBUQ1NSIHN5c2NvbiByZWdpc3RlciBjb250YWluaW5nIHRoZSBQ
-Q0llIGxpbmsgbW9kZQo+Pj4gKyAgICAgIHNlbGVjdGVkIGJ5IGZpcm13YXJlLiBUaGUgcHJvcGVy
-dHkgY29uc2lzdHMgb2YgdGhlIFRDU1Igc3lzY29uCj4+PiArICAgICAgcGhhbmRsZSBmb2xsb3dl
-ZCBieSB0aGUgb2Zmc2V0IG9mIHRoZSBUQ1NSX1BDSUVfTElOS19DT05GSUdfTU9ERQo+Pj4gKyAg
-ICAgIHJlZ2lzdGVyLgo+Pj4gKyAgICAgIFRoZSByZWdpc3RlciB2YWx1ZSBzZWxlY3RzIG9uZSBv
-ZiB0aGVzZSB0b3BvbG9naWVzLgo+Pj4gKyAgICAgICAgMCAoUU1QX1BDSUVfTk9SRF9NT0RFX1gx
-NikgICAgICAgICDigJQgYWxsIHBvcnRzIGNvbWJpbmVkIGFzIG9uZSB4MTYgUEhZCj4+PiArICAg
-ICAgICAxIChRTVBfUENJRV9OT1JEX01PREVfWDhfWDgpICAgICAgIOKAlCBwb3J0IEEgYXMgeDgg
-YW5kIHBvcnRzIEIrQytEIGFzIHg4Cj4+PiArICAgICAgICAyIChRTVBfUENJRV9OT1JEX01PREVf
-WDhfWDRfWDQpICAgIOKAlCBwb3J0IEEgYXMgeDgsIHBvcnQgQiBhcyB4NCwgYW5kIHBvcnRzIEMr
-RCBhcyB4NAo+Pj4gKyAgICAgICAgMyAoUU1QX1BDSUVfTk9SRF9NT0RFX1g4X1g0X1gyX1gyKSDi
-gJQgcG9ydCBBIGFzIHg4LCBwb3J0IEIgYXMgeDQsIGFuZCBwb3J0cyBDIGFuZCBEIGFzIHgyCj4+
-IFNhbWUgcXVlc3Rpb24gYXMgbGFzdCB0aW1lLiBwaHktY2VsbHMgdGVsbHMgd2hpY2ggbW9kZSB5
-b3UgYXJlIGhlcmUuCj4+IFRoaXMgaXMgZHVwbGljYXRpbmcgaXQgYW5kIHRoZSByZWdpc3RlciB2
-YWx1ZSBDQU5OT1QgY2hvb3NlIHRoZQo+PiB0b3BvbG9neS4gSWYgaXQgZG9lcywgdGhlbiBwaHkt
-Y2VsbHMgc2hvdWxkIGJlIDAgYXMgdG9wb2xvZ3kgaXMgZGVmaW5lZAo+PiBieSBoYXJkd2FyZSBh
-bHJlYWR5LCBubz8KPiBwaHktY2VsbHMgZG9lcyBub3QgZGVzY3JpYmUgdGhlIHRvcG9sb2d5LiBU
-aGUgUEhZIGFyZ3VtZW50IGlzIG9ubHnCoHVzZWQgYnkgdGhlCj4gUENJZSBjb250cm9sbGVyIHRv
-IGlkZW50aWZ5IHRoZSBQSFkgaW5zdGFuY2UgYXNzb2NpYXRlZCB3aXRowqB0aGF0IGNvbnRyb2xs
-ZXIKPiAoZm9yIGV4YW1wbGUsIHBoeXMgPSA8JnBjaWVfcGh5IDI+IHNlbGVjdHMgUEhZIGluc3Rh
-bmNlIDIpLgo+IAo+IFRoZSBxY29tLGxpbmstbW9kZSBwcm9wZXJ0eSBzZXJ2ZXMgYSBkaWZmZXJl
-bnQgcHVycG9zZS4gSXQgcHJvdmlkZXPCoGFjY2VzcyB0bwo+IHRoZSBmaXJtd2FyZS1wcm9ncmFt
-bWVkIFRDU1JfUENJRV9MSU5LX0NPTkZJR19NT0RFIHJlZ2lzdGVyLCB3aGljaCBkZXNjcmliZXMK
-PiB0aGUgZ2xvYmFsIGxhbmUgcGFydGl0aW9uaW5nICh4MTYsIHg4K3g4LCB4OCt4NCt4NCwgeDgr
-eDQreDIreDIsIGV0Yy4pLgo+IAo+IMKgIC0gcGh5LWNlbGxzIGlkZW50aWZpZXMgd2hpY2ggUEhZ
-IGluc3RhbmNlIGEgY29udHJvbGxlciBpcyB1c2luZy4KPiDCoCAtIHFjb20sbGluay1tb2RlIHJl
-cG9ydHMgdGhlIG92ZXJhbGwgdG9wb2xvZ3kgc2VsZWN0ZWQgYnkgZmlybXdhcmUuCk9LLCBJIGFz
-c3VtZWQgdGhlIGNlbGwgYXJndW1lbnQgZGVmaW5lcyB0aGUgaW5zdGFuY2UgaW4gdGhhdCB0b3Bv
-bG9neSwKYnV0IGl0IHNlZW1zIG5vdC4gSSB0aGluayB0aGF0IHdhcyB0aGUgbWlzdW5kZXJzdGFu
-ZGluZy4KCkJlc3QgcmVnYXJkcywKS3J6eXN6dG9mCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlz
-dApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On 21/09/2026 07:37, Krishna Chaitanya Chundru wrote:
+> Document the PCIe PHY found on the Qualcomm Nord platform.
+> 
+> Nord has a 32.0 GT/s capable QMP PCIe PHY that can operate in multiple
+> lane configurations using four PHY segments (A/B/C/D). The active
+> topology is selected by firmware through a TCSR configuration
+> register and may be configured as x16, x8+x8, x8+x4+x4, or
+> x8+x4+x2+x2.
+
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+
+Best regards,
+Krzysztof
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
