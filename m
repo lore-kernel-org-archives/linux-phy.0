@@ -4,52 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4890C98332
-	for <linux-phy@archiver.kernel.org>; Sat, 26 Sep 2026 14:21:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47410C98332
+	for <linux-phy@archiver.kernel.org>; Sat, 26 Sep 2026 14:24:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g6LiQTOEKJScQBxdnJMsOAbLFs8ZbgPqbvA9nkF+qa8=; b=PoF8BwbWwEw9NZ
-	lG0Cq9OlU799IKsoHlNwNn2Is+kzZyLCrkH0/OHSa60bLw9E8stAImMmPISaYC6mCWBRS1iaIwc2T
-	kJZJrcjxPKceStHznmPesRm0pIadrdG35upO0dD9ELrnxAvWqEQhusEVWJTmW+xu2VdVziEKjVOWv
-	Ebvk9h3VPAjNtU8WEBBN0ki3CVKTIvygQ5Z6FZR692/DxXr5BQquKG62F+KqlSXVMrKx+RmhH0v/6
-	K3sHs+EUWqHN4sIE0w3ZBYv3RhhE8QqU99PXe64G9h1W34RAtfRDf2W+cDT3drsjtpoXZt0N3aKau
-	z8x9unMYT3Ju37SkEvsw==;
+	List-Owner; bh=OysAPZ9EONUvwS6Naj885wzwvZpjUqt1KlmfZGwgwk4=; b=BOGKgy3ya4dteA
+	kvDAPT0w+gKUhlawyMhOrheVEJSs7mHhMeDESVBRbqdGfIdOLCAOu27eJ+AP3af0I+ho3BNvePxe8
+	XLj5py+sS769/YKjnsp2HPkpEBFWet5fNnhk6z9Z5xxcqV/xDutMfaAwYs/r4sowdErcTMvGzFUG7
+	OpmfDnb073DAJoxxXBdPRJcKA8QFksEvGU3lJOQTmGDaa72DEFP0i9h9JhunI/CtCWiU4sb+S4ylh
+	FNN78l1GQWuBCZQr04HakZmBrV0IkZcwa2fwB/d7m12dXFKGsOWJfAhNPFtMxby9Xf9TdqBuB1nzz
+	s2olOQHyz2ge/ZOC5eSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xATHc-0000000FW3D-21Kx;
-	Sat, 26 Sep 2026 14:21:44 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xATKC-0000000FWB0-3Pno;
+	Sat, 26 Sep 2026 14:24:24 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xATHb-0000000FW35-0n4Z
+	id 1xATKB-0000000FWAr-1l2Z
 	for linux-phy@lists.infradead.org;
-	Sat, 26 Sep 2026 14:21:43 +0000
+	Sat, 26 Sep 2026 14:24:23 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id A0AFE6020C;
-	Sat, 26 Sep 2026 14:21:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 797381F000FF;
-	Sat, 26 Sep 2026 14:21:39 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 7A8966020C;
+	Sat, 26 Sep 2026 14:24:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7DAD31F000FF;
+	Sat, 26 Sep 2026 14:24:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790432502;
-	bh=mcNV7E5affOLKemIdC1o8Ken3eCPRrUXW0HnEaaGIWc=;
+	s=k20260515; t=1790432662;
+	bh=a34dKCFGnj1YhLXhoEWVxE1cmbQtJTn1UZf0QYyW3u0=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=nVWBvkwCA1jI79/+Dwlx1Xb6PstnKY3hTTae+Xgt9sT1N6gZJoKyJ5v5ci+Fkydgz
-	 K0tj7pdn9HJadKI3kqu6rKWUIt/q7PgHCEef5zKghzDmENNoBw7ZfvbX87H/kM53sy
-	 M8Hr/kWDkqxJvooye7Wgaa03yWooHPfRoXZLy74Dj47c1lMX933ku5SGEif1fBsvFa
-	 BBT4NRG9JhjRqoB8t/kCGU9d0jyqqdeicc5dNPoEMv0D/ZZ7CYiPDCRw8PkTf/YLMS
-	 CEqCOgL8hIUwTV/vOigr9y2BWZ1QlBD2gUxFG4ZeSra2j9YMD0j6NNWJCLpzR+aSYJ
-	 ZaLM8Kpou07zg==
-Date: Sat, 26 Sep 2026 16:21:24 +0200
+	b=ET8y45OpVi01KkX0kIn6q1NJ2NbMjGdLsNWSWGyV3YfshbpjmBaQ/7QW33gekyxW9
+	 yx47I3zv6Xr/hHwk4wvYBh0ZUeJ71cfichVp2vKNcHeiIudUPNY8acwWyITS22qSdP
+	 yYX8qUXYXgaOp/qgWrgUrE46sb+6sa9rNyBnywDyl/k0ZDO+Lmo12QQpEzIoTB4dxn
+	 7zpBBryWAQzTGfNPG9ZpwP/3lheQx5FIn04EIqzhXMT0RCZt26UlMDdZmDdz3LZrgS
+	 NsCcv0VYd2uNiJPqKTsC8iuslQJUrBg2DNlhaPl+j3Yclcf3gkwuv/zJIyATLLf0Sm
+	 toJmeMCGLlcjA==
+Date: Sat, 26 Sep 2026 16:24:09 +0200
 From: Manivannan Sadhasivam <mani@kernel.org>
 To: Can Peng <pengcan@kylinos.cn>
 Cc: vkoul@kernel.org, neil.armstrong@linaro.org, bmasney@redhat.com, 
 	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, stable@vger.kernel.org
 Subject: Re: [PATCH v2 1/4] phy: freescale: fsl-samsung-hdmi: Fix runtime PM
  cleanup
-Message-ID: <klm6moh7mnsrlvh4gfmu6a7dczqmxmp4z3j2dtwdbdshl65fpw@6ujkywilegww>
+Message-ID: <millx4qmsnogv3uxol44dp243oyct7n5duvrhomapgoc3egsia@6e4p7id3igyk>
 References: <20260721064752.153338-1-pengcan@kylinos.cn>
  <20260721064752.153338-2-pengcan@kylinos.cn>
 MIME-Version: 1.0
@@ -99,8 +99,7 @@ bV9ydW50aW1lX3NldF9hY3RpdmUocGh5LT5kZXYpOwo+IC0JcG1fcnVudGltZV9lbmFibGUocGh5
 LT5kZXYpOwo+ICsJcmV0ID0gcG1fcnVudGltZV9zZXRfYWN0aXZlKHBoeS0+ZGV2KTsKPiArCWlm
 IChyZXQpCj4gKwkJZ290byBwbV9wdXRfbm9pZGxlOwo+ICsKPiArCXJldCA9IGRldm1fcG1fcnVu
 dGltZV9lbmFibGUocGh5LT5kZXYpOwo+ICsJaWYgKHJldCkKPiArCQlnb3RvIHBtX3B1dF9ub2lk
-bGU7CgpXaHkgbm90IGRldm1fcG1fcnVudGltZV9zZXRfYWN0aXZlX2VuYWJsZWQoKT8KCi0gTWFu
-aQoKLS0gCuCuruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDgrprgrqTgrr7grprgrr/grrXgrq7g
-r40KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBo
-eQo=
+bGU7CgpVc2UgZGV2bV9wbV9ydW50aW1lX3NldF9hY3RpdmVfZW5hYmxlZCgpLgoKLSBNYW5pCgot
+LSAK4K6u4K6j4K6/4K614K6j4K+N4K6j4K6p4K+NIOCumuCupOCuvuCumuCuv+CuteCuruCvjQoK
+LS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcK
+aHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
