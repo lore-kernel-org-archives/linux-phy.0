@@ -4,55 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28F29C9832F
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Sep 2026 01:52:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CBC65C9833F
+	for <linux-phy@archiver.kernel.org>; Mon, 28 Sep 2026 10:16:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vilB+Q5nLQjDY+5lY6+mpOhtrfZTn2CYZca+o+4soGI=; b=SBgvvTrDmfIDyZ
-	B3ZiXY2jUFbj5fxp9rteT/crAu+I8R8CSxtwhdZF6F/zBTwVP2FJ8ywlAP1PVwrazL801gsbIm6Gv
-	bsCiw6RnqT4P/e/oVaLuljKVQ8yFn1w+VWm++c3GAtAw13rcGc7otiyLsxfAA/Jug+l6M1FVLy1IC
-	jTwxerh/cjVeE/7E1WuD1v75vrKFRKxRLbCElrCZU7VT1F/B2F2HHaBzshypBeT92npOxK7hOkisa
-	RUQ4rYu/QlAIBb7szKjjozp8x38D2jmqZPaoZa7/Q9OAL+JRz9DQZdXPNokfn9+0KpvgXM4N7cSwe
-	qwvxbCKNKnXzKm0ynlzg==;
+	List-Owner; bh=gOwDWVcatjIF4ZZUrtq2b7QyQwOi/bDZ4EPIabkwE+c=; b=bs1oBgIt1trmgT
+	O8pJdEfb/eJj4bb96Q0DQVaNoz6V6aw42TF3eP92d2e4A/JGHRqoQv6ExAClxQAthVChy1wkQkIsZ
+	66bOGjIbPjm0OvL/04X3dZpNT533OhH/rtIxt4mE+i9+jMp8wN69DxW4YmJ6kGjdWdKGgakeqOydU
+	oxJsiXkZp6yC3ZoY4j9EEZAa6ERJ3YdHh2wH7uEC5DTdNsIHKp6I7/fJA7laOg/1K9rLzzJO/ojSp
+	MPGnTjsgbizjH+DIs6+yvmOk5l5XkfOkkWRGawojMZqj0eKU8puEW366uZrg1R5S0bp3/HVsB318n
+	NFik9i9e9dNhhx3fjd4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xB0Xg-0000000H9J2-2hnc;
-	Mon, 28 Sep 2026 01:52:32 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xB8Pk-00000000KSt-1d4D;
+	Mon, 28 Sep 2026 10:16:52 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xB0Xf-0000000H9In-1Boe
+	id 1xB8Pi-00000000KSM-3XtN
 	for linux-phy@lists.infradead.org;
-	Mon, 28 Sep 2026 01:52:31 +0000
+	Mon, 28 Sep 2026 10:16:50 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9844942A44;
-	Mon, 28 Sep 2026 01:52:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5024C1F000FF;
-	Mon, 28 Sep 2026 01:52:28 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id E7DFC601F7;
+	Mon, 28 Sep 2026 10:16:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 700881F00893;
+	Mon, 28 Sep 2026 10:16:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790560350;
-	bh=g4qrWy3y9uJPbY/OvSLN+16ssruOHCwhOSiPWblXYLI=;
+	s=k20260515; t=1790590609;
+	bh=mK8ulxnnMyP5eYT/pg3uyc6XYyBAinaTknBXP5XtnZA=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=HvYvrmvkJWMwBO+WhRnWuCQbCsMwmrNOsEeVCzwcxQIbvj0ZBWGVgAUbSVOK1xSyf
-	 J7nlySDhq7nKs6pZzXtntzhxyMRztP9wi90657FA/E0kfku9uZgQrUdPmXfjOuiMqg
-	 SOPSrK+D3yQzyr3NG6kSyq2/6l8CnXtjc8CJbjBC15cofD6+wn2+0rsVvXzQOiNOfR
-	 Mu2L2445KOwySBNVRCGPSwXO4QPVPtfh1emZp42aEPgxmG3lipRE3/qldvhblor3fG
-	 Fc+KiGjJNAvJO1bx3yCFbdpWs5gGT2Lwn2VFdsVH92N7agBJSiY7Pjm6veLk7NECqB
-	 PsM3eidw2onfg==
-Date: Mon, 28 Sep 2026 03:52:11 +0200
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Matthias Goergens <matthias.goergens@gmail.com>
+	b=ES/gPL16MsVcOsAJ7UHwllsLtlGfv3MBKpTIvn+xuuClTj+jY7hev4G7wJc14Pjm9
+	 aUFFlURIeqo++FJW4LCti3ieqN4hQHjjvstl2m360zskD0xfcDVzf3nSYutszbFSRt
+	 E0O6ATp3950xLbz66TBsrtNgjnmhyE9gVFl7S5y9yI++KGulhIPx9WA4uIYtCSTsKu
+	 7WP1Z1gqCxAAQWma0rYq4g2wtMfD8zO55kpbvYogdoMwQtgAmS0x+X7/7SOkvcgSNj
+	 BidbUD7uMAbyyOTnMvOAzi9M3et/JL/ip8NXXnUev1tshZyza4uffkdQ4tTNqhFGqb
+	 +T/zPb+4NNCWw==
+Date: Mon, 28 Sep 2026 12:16:45 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
 Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, linux-phy@lists.infradead.org
-Subject: Re: [PATCH] MAINTAINERS: name the phy/linux-phy next branch
-Message-ID: <3zhlyj7yz5wkd3yh3p6t6dhck2kta5ksjgoci3b26li5szna6n@jpen4lp6swz7>
-References: <20260927051252.2751812-1-matthias.goergens@gmail.com>
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+	Conor Dooley <conor+dt@kernel.org>, Bartosz Golaszewski <brgl@kernel.org>, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, Lorenzo Bianconi <lorenzo.bianconi@oss.qualcomm.com>, 
+	Shawn Guo <shengchao.guo@oss.qualcomm.com>, Zhangfei Gao <zhangfei.gao@oss.qualcomm.com>
+Subject: Re: [PATCH 1/3] dt-bindings: phy: qcom,sa8775p-dwmac-sgmii-phy: add
+ Nord compatible
+Message-ID: <20260928-gregarious-deft-boar-e776ae@quoll>
+References: <20260923-nord_ethernet_serdes-v1-0-f8ac1c487882@oss.qualcomm.com>
+ <20260923-nord_ethernet_serdes-v1-1-f8ac1c487882@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260927051252.2751812-1-matthias.goergens@gmail.com>
+In-Reply-To: <20260923-nord_ethernet_serdes-v1-1-f8ac1c487882@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -64,20 +71,25 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gU3VuLCBTZXAgMjcsIDIwMjYgYXQgMDE6MTI6NTJQTSArMDgwMCwgTWF0dGhpYXMgR29lcmdl
-bnMgd3JvdGU6Cj4gVGhlIFQ6IGVudHJ5IGZvciBHRU5FUklDIFBIWSBGUkFNRVdPUksgbmFtZXMg
-cGh5L2xpbnV4LXBoeSB3aXRob3V0IGEKPiBicmFuY2guICBUaGUgcmVwb3NpdG9yeSdzIEhFQUQg
-cG9pbnRzIHRvIGJyYW5jaCBtYXN0ZXIsIHdoaWNoIG1haW5saW5lCj4gYWxyZWFkeSBjb250YWlu
-cy4gIGxpbnV4LW5leHQgbWVyZ2VzIHRoZSBuZXh0IGJyYW5jaCBvZiB0aGlzIHJlcG9zaXRvcnkK
-PiAoTmV4dC9UcmVlcykuICBOYW1lIHRoYXQgYnJhbmNoIGluIHRoZSBlbnRyeS4KPiAKPiBTaWdu
-ZWQtb2ZmLWJ5OiBNYXR0aGlhcyBHb2VyZ2VucyA8bWF0dGhpYXMuZ29lcmdlbnNAZ21haWwuY29t
-PgoKUmV2aWV3ZWQtYnk6IE1hbml2YW5uYW4gU2FkaGFzaXZhbSA8bWFuaXZhbm5hbi5zYWRoYXNp
-dmFtQG9zcy5xdWFsY29tbS5jb20+CgotIE1hbmkKCi0tIArgrq7grqPgrr/grrXgrqPgr43grqPg
-rqngr40g4K6a4K6k4K6+4K6a4K6/4K614K6u4K+NCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlz
-dApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On Wed, Sep 23, 2026 at 05:34:17AM +0530, Mohd Ayaan Anwar wrote:
+> Add the qcom,nord-dwmac-sgmii-phy compatible to the Qualcomm DWMAC
+> SGMII PHY binding.
+
+Why random order? Why not enum with existing part? Why not even
+compatible with existing device?
+
+So many questions, yet commit msg copies subject.
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
