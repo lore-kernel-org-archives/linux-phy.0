@@ -4,139 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 449B4CA5FA2
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Sep 2026 13:51:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44607CA5FA1
+	for <linux-phy@archiver.kernel.org>; Mon, 28 Sep 2026 16:18:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:Cc:To:From:
-	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=nhJckMD3pBIod8zNX/YjSWYLbsbqSpK3gDdqOoTFwIE=; b=j3A2IyFLd9DhaaPySmHqBVGoX6
-	evSYMu+x1cAv+/1T7KaNedGxD8GRRunuE4FWfwRZzvz7vPKoRJYK8+bCyuAFV8Yz4qtgCvskia+oZ
-	VPiHrF+GzL+p//Wrm0JkKw3TP6vcoYG/xU14to9I3B81kysYDbSzSEmUJUTIVhnWstphNJt7iqwry
-	Mkw2XvoEWe+rwcLTZjZgvdN9Ci1JDg+Lmtzzq2RCSrDbU0xTjKK+Mx8OK6bp96276F1an0fccfV+f
-	cKg994Jvg/fd8MEL4q7jHPD1n4WRFsjNKj97B+ps+/vOEf793FnN/8nBvQZ5Dnmk+uprACgQW7UN9
-	DCRp6seg==;
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Q/mQdjZNK4rQtUmD+/Q/eTqdq9p11A2i2bCGjMDnm7Q=; b=lb8poeWtl6bvqwmPeLbcyAi37r
+	bsH9hgtXpNbNI2GjO5DgvEkTSkVxv8fizFa2Zbd8NZZgJ9m8R4b46g224zByw/TNKzuTfhvKThRte
+	YLyEwjPO1N1Z9X9ZJp0nJ5Cs28rpZE5RHlJoC8A9FiZa/flXtH7YhRmXpSD6Kl6sKUZm7cWlVp8q4
+	JEQfCVvxAtRoB8srRpGPTIBnBWLVUOGRJBmYm+RRPM+IN4u1TtcQfnUM4eURkS+9aFfsz7/VqWFT+
+	3PKFWbqUNfgGuFeSXDpELNS4xxLs1Lv6vuSlhmML4CmmvrKg0QF+yxUI4pYHTw7D1WdhfiexLIw0G
+	wJxzv18g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBBlM-00000000i1p-3ILH;
-	Mon, 28 Sep 2026 13:51:24 +0000
-Received: from mail-westus3azon11011017.outbound.protection.outlook.com ([40.107.208.17] helo=PH0PR06CU001.outbound.protection.outlook.com)
+	id 1xBE3v-00000000zxY-41L2;
+	Mon, 28 Sep 2026 16:18:43 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBBlJ-00000000i0F-0rn0
-	for linux-phy@lists.infradead.org;
-	Mon, 28 Sep 2026 13:51:24 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=pZNjNc8l+rqq7GJdf6MeNR5tFY8Ez/r9XihfLkxjSlCzj7pt/2K97fY1foNh3m5CQ+4g0w99Kt5q7KDXu9B61DJ8pE6eQ8DH0qJmVJLRvyUHFkfEQ7tb+YrnaO6Rtx1iOQf4EcRyCmSibbMRhqIkxLSEwrOi3meznGSCymHmlq3hl5mnJnrDxI6z9Ll6EbaHVMYpyhqEimZ35b40Tiruz8j/RTByrdT9/6WZEAKseYHtHPz7Liy3Nuueb0zOaDHUyRYic+GqWjFdx/pCJQGXpDTTCuxqKocfH8QUlyKyRPlw3/joaGCUnBGcufDyZT1fAdK0JecMVH+PI7wIDZcR0A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=6U/hKKZRrRw4rOo6Z6BeiXo33OorVON/Zk9rQWV7flk=;
- b=t6HR0qnktnZgivb+8NC3BZet2Yw80USKAO99wCGAAaIaP0HH6mtpkQ6k4oKP08lTBcaKTaRtKl5yNEG/zTQNOBTU6VA7PTGUijSE6OtDL+RhvRC8VmJqGJ2K0xzbUKwiS0UgWsjq0WAwZz4t/AcO3gxnCbDQKeeYo1ejILqF7k0gRytYZqjbig01ju3rSbg9FYLTjQHSkpbTQd1bEsIqE63MBZcwYKdkKA4wP1ZL/ht44l0tl7YcldDTD8xlhj/Wd3gmyR4Mmb13RfMK5aLKbSt24fyIEhpv/OQHq1qTxHs2mmuEBfI28nDW+L/xHyeD7t3TAhoiHvlvDUuMnhJaNg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
- dkim=pass header.d=nvidia.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=6U/hKKZRrRw4rOo6Z6BeiXo33OorVON/Zk9rQWV7flk=;
- b=IHzRKkRO5OrWKWX0Cx2uQd428YeniF3/7XyQdPge41Rk+uapDes8w5l861DC85PkaOufYbBGL5tkSnes9LHzzKjURk70P9XWv6tnZm6NzBRBlvaKlSlm6JtCzLnwT4nQ4eK34xjJF+tn+AE/JS6Vie3siDWVWd8J9mBIQf92eKxNGYR9H/kv5m0znSJgv25Nxs23w1v118mXrx9loILTKNtP8bZhXlRnMB6U9kEmLN2JtlHIh2oS47WTRoWG0oOcGrfY8eUlnv7beiNkQChfTab61U7C8fObkfjd3snI0ShzKzXLAnvd0JSeqjPHCT1d8b+TilK5wbOMt737TGIVxA==
-Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nvidia.com;
-Received: from PH8PR12MB7110.namprd12.prod.outlook.com (2603:10b6:510:22e::11)
- by PH0PR12MB7485.namprd12.prod.outlook.com (2603:10b6:510:1e9::19) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.451.24; Mon, 28 Sep
- 2026 13:51:11 +0000
-Received: from PH8PR12MB7110.namprd12.prod.outlook.com
- ([fe80::736a:e1be:ec64:5740]) by PH8PR12MB7110.namprd12.prod.outlook.com
- ([fe80::736a:e1be:ec64:5740%6]) with mapi id 15.21.0451.014; Mon, 28 Sep 2026
- 13:51:11 +0000
-Message-ID: <b93e29fd-fc1b-46db-b8f6-f24a5e3d39ae@nvidia.com>
-Date: Mon, 28 Sep 2026 14:51:05 +0100
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V3 0/4] phy: tegra: xusb: Add Tegra264 support
-From: Jon Hunter <jonathanh@nvidia.com>
-To: Wayne Chang <waynec@nvidia.com>, Vinod Koul <vkoul@kernel.org>,
- JC Kuo <jckuo@nvidia.com>, Thierry Reding <thierry.reding@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20260903071937.533646-1-waynec@nvidia.com>
- <f74e21be-c66a-4a26-8b32-389c2d118c02@nvidia.com>
-Content-Language: en-US
-In-Reply-To: <f74e21be-c66a-4a26-8b32-389c2d118c02@nvidia.com>
-X-ClientProxiedBy: AS4P195CA0005.EURP195.PROD.OUTLOOK.COM
- (2603:10a6:20b:5e2::14) To PH8PR12MB7110.namprd12.prod.outlook.com
- (2603:10b6:510:22e::11)
+	id 1xBE3t-00000000zwg-42ou;
+	Mon, 28 Sep 2026 16:18:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=Sp0M9B/bP1jd6S7I+UWdWmITpna+tOZ70JPTfOnFT3A=; b=UrtkAtKCw8fBRDoppoXVbDcds/
+	nXOQfF+1Lg3+H+SPmiXBi8202Bq1K+ZX6GomlFWISMkMVE90dHsDOdlIyfGk/DSyf5lmCb0HNC+Lt
+	/67KEG/KBeZrtH8KqGHMSSOkea0DfsBD7KCQ/nhbGbHjEkLS+VvN+Ybe/LLtIoMS6IKujuUM9E0CP
+	kLbKOJZetZfKhumX588LqFsqvv7VuTmS3n+qCfcGCol/xJR/pRVtGgGuZLzezGCcCf5NLIq0APRIY
+	4Nx/K2Q1JDHH08gZbbcvP0f75zw/DFCgzwhf0zVvGKvZqAzJ7vZtX669w/yuqawKmEHAWMpiTvKsR
+	kUAfWVBg==;
+Received: from sender5-op-o11.zoho.com ([165.173.182.11])
+	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
+	id 1xBE3r-00000001fVd-0V47;
+	Mon, 28 Sep 2026 16:18:40 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1790612299; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=ADkYs/ZWlxn//vwV9N9LBs+0kmUH4807uixXEgVjLufqWLK0goIs4MhqM/QwvaR/1zJ+y+NVw20Gi7fusIl9DN5DNSBjy5uyk51J295fT2vqU7ouv7sdaTi5GuxqP0fKQi4c2mQa3XOtizXELCB8RyHSCCc8c2ZeI0uG6DsLOCM=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1790612299; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=Sp0M9B/bP1jd6S7I+UWdWmITpna+tOZ70JPTfOnFT3A=; 
+	b=i7ExCdSQ/xKn6Y2q5rfnW0XOLh9Q8kZIeS1vGEe9B7fccHcSYzO7g0yZqrVglHuHLvG9Kt716zzJCRQrFpZaTAuEt0Ee5OXtT+74CVz8vEGyLCUzjlxxJgG/CWyJ5VBSLmr0/FdiwZq3g9QEGAfJhaTF+NVMT/bsOYuLxjAS+3w=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
+	dmarc=pass header.from=<sebastian.reichel@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1790612299;
+	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
+	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
+	bh=Sp0M9B/bP1jd6S7I+UWdWmITpna+tOZ70JPTfOnFT3A=;
+	b=brrS4kNH6nPwqm1uLLtBETvHEQNU3mCmn+eSwLkH/vg1wV/uxYNX/oL2EMMg+rCS
+	6GfMOiBOdAeBw63xRra25WKs5PxcuM9RyDufxHFPfeOmGOHruYjzOYnUjlzNwIHFpE3
+	7iRYIu5FkuOrZCYz4D2QPrYkij7geW8bicb3c+E4=
+Received: by smtp.zohomail.com with SMTPS id 1790612297707333.3498687074484;
+	Mon, 28 Sep 2026 09:18:17 -0700 (PDT)
+Received: by venus (Postfix, from userid 1000)
+	id 2C4A41828DF; Mon, 28 Sep 2026 18:18:13 +0200 (CEST)
+Date: Mon, 28 Sep 2026 18:18:13 +0200
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+To: Manivannan Sadhasivam <mani@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Heiko Stuebner <heiko@sntech.de>, 
+	Zhang Yubing <yubing.zhang@rock-chips.com>, Frank Wang <frank.wang@rock-chips.com>, 
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, kernel@collabora.com, 
+	Igor Paunovic <royalnet026@gmail.com>
+Subject: Re: [PATCH v15 1/6] phy: rockchip: usbdp: Add phy reset notification
+ support
+Message-ID: <arqLbsCgz9vkr3JG@venus>
+References: <20260915-b4-rockchip-usbdp-cleanup-part3-v15-0-9ad90a456953@collabora.com>
+ <20260915-b4-rockchip-usbdp-cleanup-part3-v15-1-9ad90a456953@collabora.com>
+ <zbqy5gqtmprapsqpodoohyxs6gml6swkie6fy7fxszfvtfgz6c@eae55gdmknaw>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PH8PR12MB7110:EE_|PH0PR12MB7485:EE_
-X-MS-Office365-Filtering-Correlation-Id: fbbf3311-56e1-4841-5b54-08df1d678de3
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|10070799003|23010399003|376014|7416014|1800799024|366016|10067099003|56012099006|11063799006|6133799003|22082099003|18002099003|4143699003;
-X-Microsoft-Antispam-Message-Info: z/6jOyXdIWTEfRhS6o9pYn7UvR7Weu9RBSyCN4DeGK4HELwovJ1LlZRR8MJHc0zr9JbqlTMccnncwIjDcvVkqec3erYsjPN1VfgKqOPowYDsImK/uniVsWwZpI2t5TMXXquh3/yAvQWYxH9xQg4XoAn7dGg6XgUkhPiv5ZGoHmmYQcwWMNQWyrBE1xoil8Bak7ML+m9WPRFTw/cef7oxBFVlC9rdcVUWf/ltqfNDG1eZtqwlwczpHcbM/4us4wX9OFSRJVhjtTL56pKj7ybOMZyEroxXho57FOuTFto+63dLmjF9rGYvowSEIbpXPm5y9v57VinBdeP2sG36jKhHvXlLkt1x7O3pBnRkM/IZqFrIvqh2/ulrydzZUUB0hvVDTx6HbJKD/8zyoogsPZaBnT0QK7B2sFaRp2JWRE0ekFLquXpV+zDmUULQ58TkIx6No2JnBIVutD1GWEe+MsiNDNzV+WvQGlmn89SQBQbWv0BJSnyAE5IFVzwQsOydnJZZRfTFDp3nktXOWZTtMTRv1Bm1DKGm1hWqGeSOybJuw/gslfZA5xyyJo+C1Lit1n64aqEb3eta/MUHT4dziunVBGyJjUaZk8tO0lyIwfGEQzFZ/rvJY2yCE1onuCbvbUtDnoz1+c4LQomrA0JVa0hilzYXbWTuSqs7JczLRH3GhAo=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PH8PR12MB7110.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(10070799003)(23010399003)(376014)(7416014)(1800799024)(366016)(10067099003)(56012099006)(11063799006)(6133799003)(22082099003)(18002099003)(4143699003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?TWNKak5VZDA0WGg0UGVaOUZSQXloZWh4QjJzL1pxbXpZbXorNU40ZFhYK3Ni?=
- =?utf-8?B?WU1tQVQrQ0pGTU0wdkVJbWRudTdscFNsTkY3bkJYeTdvQS9RTC9DY3dKRW9P?=
- =?utf-8?B?SmdhcFVQTVVvQWpVd0JZekdsY2swUlRHeDk3VzRJTmxGTDdLaXBJMUthU0FL?=
- =?utf-8?B?UEUxU3Y1NC9GKzFsc2lzR1JJajRxUCs3eDJZd0FsZkZkcDdHODRpcGZWWW1i?=
- =?utf-8?B?cU9uTUtDeDJlTERZMHBiMXY0SG40aVJOOW1nWVhXQjZhTUZoY3B3cG8wMHBj?=
- =?utf-8?B?YllzQndoQmUzd1ZqN0JnVnFxZ0l0cFo5eEcwbk1tWmFOekVFT05PZFVXQ0FZ?=
- =?utf-8?B?bWdKMWQxTFlXTnlYWmdMT1hYMW9WSmEwaHJNTS81cnRjT0RycnBpbTJaN3Mw?=
- =?utf-8?B?c01KSCtDdlBXOXV3dkFTK3FtcEovZ0VCYTM2SGVHT0NJSzhJK1NWTStHMCs0?=
- =?utf-8?B?WWYyaGJ2NmV0NjVMNU1HaUFYS3FOR05QaE9TdzFPNGxnVTZwVFZwcEtWYjVH?=
- =?utf-8?B?TVlLRmJ3SFhuYUFycFRNc2Z3ZmE2MHVvRlNSNS8zRXAzdGplZGYwcCtIeHd6?=
- =?utf-8?B?US93cWM4clVZU0VkL2dzZDlRR0o3eEtDRURBQy9BWitzUGJYcHJ2VFYwVm45?=
- =?utf-8?B?cEp5Ulh2bkRtRXFrOFdVTnM5NnVMZ3FqU1dzQnRWaDFxaEVXdWRnb1VweW1L?=
- =?utf-8?B?SjV1aDBoRER6UzBVRXRxTXEzNU9RRU13VkZQTGJzbHlnaXpOZmxmaHN2UmtX?=
- =?utf-8?B?RHF2WEtqUUFLWHQwZzZnd0RpVlFLbW5ibVE0b1JxSVR5ZnZGWXloU0VIK0FM?=
- =?utf-8?B?WERLYXZqeFF4bDF5SGpWVWxXRzVpSEpRaTlWVitWNWc4ZlRyTVVrdE1IMXp4?=
- =?utf-8?B?STJIYkV6ZEVLV3E1bXBnT3hiZ2c4cndNREJDWGsrQ2lNNW9uQXoyTEV1alVo?=
- =?utf-8?B?bXBuQjZxSkdVZXJZYWZNdTYycVpxeG9oUlluRHY0VzBqbWI2LzBPK0dOV3JZ?=
- =?utf-8?B?MVd2QlQyT0xkOGFia0VSakRob2RXRWFiZ3F5bFA5OXV1NHJpWjNpcmt2YWN1?=
- =?utf-8?B?eGdaamxwZ25vWEdWNklHekxtV1dTai8ySWJmVHM2WHJ2b3N0RDU4QmJ3a0tO?=
- =?utf-8?B?WGhPa29yRW5NZ3BhUmdqdjhteEhlbzZjcTg0eTVvcWE2N2hIQTZxTGNQWEp3?=
- =?utf-8?B?OWhTWXpyUkRXUE5YZm0wOFIrQlV6ZEI0SGh5RDJubjJSRDlXNXQ2V1U3YWdU?=
- =?utf-8?B?UnZQdjlVY0VKLzFlLzlEY1lJSXNad093Mk1vY3NjL1FoY3hFQ3k2dXpDbkIx?=
- =?utf-8?B?Sk9QYUlMMDBtUVo2V3Q0bERCODUxSHMwT1ZtNFR2c0FwU0xrNlB6YnhMWldq?=
- =?utf-8?B?RW1OZDdMMDlMMkpqU1lVV2tmeW8vcWVZdFZFRFk0d0pXdHl2OXNpa3ZrZFpG?=
- =?utf-8?B?dnVPTTRyVkVwVVlwSHlBelI4RDNqVHA1TVJVdlFjcFlnZkcxcVQzRndEbUxw?=
- =?utf-8?B?bXdXZUt2dFZIUU9EcG5TaHdvdFlLbGNOM3B6aGlJUUlHR0FFUXRuaXFScm44?=
- =?utf-8?B?SElBbW9BYitETW1QSXFQVkY5ZGYxaDcrR2c3RWJXZU9aM24wZkh3dENBYjhq?=
- =?utf-8?B?WlZRVXgvbnUxNlNhdmp0dThSVURFWDNiUUdGd2tHTmFEcis2eDB5dE1scWlR?=
- =?utf-8?B?TVd6RVJGNlI1aUdkNlp5aDBFbGFIQnBrZ1JJMzdjQzBnOHk2YjR4T3ZKb3k3?=
- =?utf-8?B?RmIrVUwrc1U5eG1HUlM2Mk93cXVTNXorVWFMOTdCeFVZRUdpS1N2cFBzb09B?=
- =?utf-8?B?MTdhcldsaXVxTHIyWEUycEZEaUswVnRHMHJQZlM4V20ydFczUWE4WXhyWGFN?=
- =?utf-8?B?N2RLR2ZldGRBVVhTclduZVlFdk92MkYzdDFFNjdZOGhrZVZna0l2OVljYjdF?=
- =?utf-8?B?K2hIMldtU3pnM25PcnJ5ZnRtNGxOR0U1NlFCM3dycXRkVjRaQlU0Sm1KZU9N?=
- =?utf-8?B?UGtGMlNLZm1EYzVVb3VGaTM3YWprSE1LM0F4L2tHWmRxb2RsNnBBVzVIdTVB?=
- =?utf-8?B?WStZZ3FUeTdMY2tJeDI4aDl5cWRlaXdyWVNoeWtaUFh3TWJQa0ltVXAyc3A3?=
- =?utf-8?B?TWtYeXM4VHZmWmZlcE9pWjUvS2RUcWJFUnNoRjNNZ1h6alBwSm0rcmE0a2Vz?=
- =?utf-8?B?anN3MDN1QllGOWdHZStqNVkxamp1NXBGKzNVdEVoWkhZMmRnYmxVMFBxNm4z?=
- =?utf-8?B?MUtPazJDdU10OTJQNlZ1L1NJNnVoTExWTkNaVU9NOW80eHcvMldNS2tZQXY1?=
- =?utf-8?B?NmNnSTlTTURPdVd6WUJXVHYzN0YvTmJLTEJuVWxzbXZJdVpaUEtscGw2Z1ph?=
- =?utf-8?Q?ucdT7D4seOobzlxfO7WSUCrBOK5GNlQz4VTWbsJECL1Fl?=
-X-MS-Exchange-AntiSpam-MessageData-1: evMwCfPcDFLA1g==
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: fbbf3311-56e1-4841-5b54-08df1d678de3
-X-MS-Exchange-CrossTenant-AuthSource: PH8PR12MB7110.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Sep 2026 13:51:11.3512
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: JJcwY6NHroLE2ruouMcETSJhpZm1ZugAKTx1qlnBqbkyeyFgEj9t9UsF5k4PXZ7kW+kyiM7E/6qUKl/xv6vaTw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH0PR12MB7485
+In-Reply-To: <zbqy5gqtmprapsqpodoohyxs6gml6swkie6fy7fxszfvtfgz6c@eae55gdmknaw>
+X-Zoho-Virus-Status: 1
+X-Zoho-AV-Stamp: zmail-av-0.2.13.1.5.4/290.602.86
+X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260928_065121_271951_9C5BB30F 
-X-CRM114-Status: GOOD (  13.77  )
+X-CRM114-CacheID: sfid-20260928_171839_405308_F0923435 
+X-CRM114-Status: GOOD (  25.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,49 +96,106 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============7511867820617891250=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgVmlub2QsCgpPbiAwOC8wOS8yMDI2IDE4OjAxLCBKb24gSHVudGVyIHdyb3RlOgo+IAo+IE9u
-IDAzLzA5LzIwMjYgMDg6MTksIFdheW5lIENoYW5nIHdyb3RlOgo+PiBBZGQgVGVncmEyNjQgc3Vw
-cG9ydCB0byB0aGUgVGVncmEgWFVTQiBQSFkgZHJpdmVyIGFuZCBpdHMgYmluZGluZywgYXMKPj4g
-cGFydCBvZiBlbmFibGluZyBVU0IgaG9zdCBmdW5jdGlvbnMgb24gdGhlIFRlZ3JhMjY0IEpldHNv
-biBBR1ggVGhvcgo+PiBwbGF0Zm9ybS4KPj4KPj4gVGhpcyBzZXJpZXMgd2FzIHByZXZpb3VzbHkg
-cG9zdGVkIGFzIHBhcnQgb2YgYSBzaW5nbGUgOC1wYXRjaCBzZXJpZXMKPj4gY292ZXJpbmcgcGh5
-LCBVU0IgaG9zdCBhbmQgYXJtNjQgRFRTIGNoYW5nZXMgdG9nZXRoZXIgWzFdLiBQZXIgcmV2aWV3
-Cj4+IGZlZWRiYWNrLCBpdCBoYXMgYmVlbiBzcGxpdCBieSBzdWJzeXN0ZW0gc28gZWFjaCBtYWlu
-dGFpbmVyIGNhbiBwaWNrCj4+IHVwIG9ubHkgd2hhdCBiZWxvbmdzIHRvIHRoZWlyIHRyZWU6Cj4+
-Cj4+IC0gcGh5OiB0ZWdyYTogeHVzYjogdGhpcyBzZXJpZXMgKGR0LWJpbmRpbmdzL3BoeSArIGRy
-aXZlcnMvcGh5L3RlZ3JhKQo+PiAtIHVzYjogaG9zdDogeGhjaS10ZWdyYSArIGl0cyBkdC1iaW5k
-aW5ncy91c2I6IHNlcGFyYXRlIHNlcmllcywgdG8KPj4gwqDCoCBmb2xsb3cgc2hvcnRseSAod2ls
-bCByZWZlcmVuY2UgdGhpcyBzZXJpZXMgb25jZSBwb3N0ZWQpCj4+IC0gYXJtNjQ6IHRlZ3JhIERU
-UyBlbmFibGVtZW50OiBzZXBhcmF0ZSBzZXJpZXMsIHRvIGJlIHNlbnQgb25jZSBib3RoCj4+IMKg
-wqAgb2YgdGhlIGFib3ZlIGhhdmUgbGFuZGVkLCBzaW5jZSBpdCBkZXBlbmRzIG9uIGJvdGgKPj4K
-Pj4gUGF0Y2ggMS80IChkdC1iaW5kaW5nczogcGh5KSBub3cgc3BlbGxzIG91dCBpbiB0aGUgY29t
-bWl0IG1lc3NhZ2Ugd2h5Cj4+IFRlZ3JhMjY0IG5lZWRzIGl0cyBvd24gY29tcGF0aWJsZSBzdHJp
-bmcgaW5zdGVhZCBvZiBmYWxsaW5nIGJhY2sgdG8KPj4gbnZpZGlhLHRlZ3JhMjM0LXh1c2ItcGFk
-Y3RsLCBwZXIgQ29ub3IncyBhbmQgS3J6eXN6dG9mJ3MgcmVwZWF0ZWQKPj4gcXVlc3Rpb24gb24g
-djEvdjIuCj4+Cj4+IFsxXSBodHRwczovL2xvcmUua2VybmVsLm9yZy9saW51eC10ZWdyYS8yMDI2
-MDgzMTE4NTgzNS4zNzMyNzA3LTEtd2F5bmVjQG52aWRpYS5jb20vCj4+Cj4+IFNpbmctSGFuIENo
-ZW4gKDEpOgo+PiDCoMKgIHBoeTogdGVncmE6IHh1c2I6IFVzZSBkZXZtX2Nsa19nZXRfb3B0aW9u
-YWwgdG8gZmV0Y2ggVVNCMiB0cmFja2luZwo+PiDCoMKgwqDCoCBjbG9jawo+Pgo+PiBXYXluZSBD
-aGFuZyAoMyk6Cj4+IMKgwqAgZHQtYmluZGluZ3M6IHBoeTogdGVncmEteHVzYjogQWRkIHN1cHBv
-cnQgZm9yIFRlZ3JhMjY0Cj4+IMKgwqAgcGh5OiB0ZWdyYTogeHVzYjogSW5jcmVhc2UgdGltZW91
-dCBmb3IgVVNCMl9UUktfQ09NUExFVEVEIHBvbGxpbmcKPj4gwqDCoCBwaHk6IHRlZ3JhOiB4dXNi
-OiBBZGQgVGVncmEyNjQgc3VwcG9ydAo+Pgo+PiDCoCAuLi4vYmluZGluZ3MvcGh5L252aWRpYSx0
-ZWdyYTE5NC14dXNiLXBhZGN0bC55YW1sIHzCoCAxICsKPj4gwqAgZHJpdmVycy9waHkvdGVncmEv
-TWFrZWZpbGXCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHzC
-oCAxICsKPj4gwqAgZHJpdmVycy9waHkvdGVncmEveHVzYi10ZWdyYTE4Ni5jwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqAgfCAzMSArKysrKysrKysrKysrKysrKysrLS0tCj4+IMKgIGRy
-aXZlcnMvcGh5L3RlZ3JhL3h1c2IuY8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgIHzCoCA2ICsrKysrCj4+IMKgIGRyaXZlcnMvcGh5L3RlZ3JhL3h1c2Iu
-aMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHzCoCAz
-ICsrKwo+PiDCoCA1IGZpbGVzIGNoYW5nZWQsIDM5IGluc2VydGlvbnMoKyksIDMgZGVsZXRpb25z
-KC0pCj4gCj4gRm9yIHRoZSBzZXJpZXMgLi4uCj4gCj4gUmV2aWV3ZWQtYnk6IEpvbiBIdW50ZXIg
-PGpvbmF0aGFuaEBudmlkaWEuY29tPgo+IFRlc3RlZC1ieTogSm9uIEh1bnRlciA8am9uYXRoYW5o
-QG52aWRpYS5jb20+CkFueSBmZWVkYmFjayBvbiB0aGlzPwoKVGhhbmtzIQpKb24KCi0tIApudnB1
-YmxpYwoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRl
-YWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
-LXBoeQo=
+
+--===============7511867820617891250==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="y7ik32cx75s6xqrz"
+Content-Disposition: inline
+
+
+--y7ik32cx75s6xqrz
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v15 1/6] phy: rockchip: usbdp: Add phy reset notification
+ support
+MIME-Version: 1.0
+
+Hello Mani,
+
+On Sat, Sep 26, 2026 at 09:54:56AM +0200, Manivannan Sadhasivam wrote:
+> On Tue, Sep 15, 2026 at 05:32:48PM +0200, Sebastian Reichel wrote:
+> > To resolve issues with running into permanent "cmn ana lcpll lock
+> > timeout" errors after a few device replugs, add support for reset
+> > notifications, which will be handled by the DWC3 driver to gracefully
+> > handle the PHY being disabled. This avoids corrupting the controller's
+> > internal state and the PIPE interface between the USB3 controller and
+> > the PHY, thus fixing the issue.
+> >=20
+> > Tested-by: Igor Paunovic <royalnet026@gmail.com> # Orange Pi 5 Plus
+> > Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+> > ---
+> >  drivers/phy/rockchip/phy-rockchip-usbdp.c | 19 +++++++++++++++++--
+> >  1 file changed, 17 insertions(+), 2 deletions(-)
+> >=20
+> > diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/ro=
+ckchip/phy-rockchip-usbdp.c
+> > index e748acdd2d31..0f39982c70b1 100644
+> > --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
+> > +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
+> > @@ -1004,24 +1004,39 @@ static int rk_udphy_power_on(struct rk_udphy *u=
+dphy, u8 mode)
+> >  	}
+> > =20
+> >  	if (udphy->status =3D=3D UDPHY_MODE_NONE) {
+> > +		phy_notify_reset(udphy->phy_u3, PHY_NOTIFY_PRE_RESET);
+> > +
+> > +		rk_udphy_u3_port_disable(udphy, true);
+>=20
+> This change is not described in the commit message.
+
+Good catch. I'm not sure when that sneaked in. I will split it into
+its own follow-up patch.
+
+FWIW these two things are a little bit interleaved:
+
+resetting the PHY results in disabled clocks, results in SError when
+dwc3 driver tries to access its registers during the PHY reset. This
+is worked around by the u3 port disabling, which reroutes the clock.
+But doing that increases the chance a lot, that the PHY does not
+start up properly again, which requires the reset notifier bits.
+
+Greetings,
+
+-- Sebastian
+
+--y7ik32cx75s6xqrz
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmq6kz0ACgkQ2O7X88g7
++prxFA//RkRn91TuHhTtQSrpWA0YPTIPzbvMilpCIChKhbH++hVwoksGFGltul3o
+KFh58VDd/huD1gXsKAsMPtDhQLxSgJBy0/MD7HZPhTn6duX3syly5IBaBdt0uAXN
+4ys/GBgdfPhO3I6J/6B4oX7dlqgBbMPOMr/rIf6iKhoCGlB+/H/xz69JlZDfxHOj
+IveJlSGGE7l1K3Q23rjF/tAVJRl6AocqyBSNibyTpDNb2d6nDYl+b3duqrsBcKId
+i+iibr9lLC8F3yMHGItO/qw7N7eDk9MHNAxUayRItJwf2jLLV6xfcb8JIq804Mup
+7gQbazgOa4glMZ6yFHWw/fAgfDPWSLW28FAiei15uQXuFFnuLAVgXaXrVl+1yzcb
+ui7IFIttv4mo/eFTteA337RgaH5cgvercRqarEOENfZVAMXGReVlfLi2HhT/pFMW
+7zdRRq1ylysrhLb00dp8zCaXUS+0WxV6y9WesEt3ICVDCRg22SU6AEL34kerdPt2
+95vSn314kdaFNUNV4kPvg3qQsaGlUE162AKVYHSdfHxXFwa3yyfCIk7iBRilIfrJ
+f6fUBq5glitp2VhpHZW7qoD2vzgXKRlJimggMKsr59U2XawJMe6mb2FH8kOrhkD8
+aXCRTzcXghDRMEIfkyZweT5740nurh8oYAD3OlXx234q9nEgUQg=
+=uXNM
+-----END PGP SIGNATURE-----
+
+--y7ik32cx75s6xqrz--
+
+
+--===============7511867820617891250==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============7511867820617891250==--
+
