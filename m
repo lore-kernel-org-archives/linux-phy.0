@@ -4,71 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20E59CA5FA2
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Sep 2026 18:00:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 18F8FCA5FA3
+	for <linux-phy@archiver.kernel.org>; Mon, 28 Sep 2026 18:34:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=y9UubQOYkZawwlrauOTtZP/rxbpiJWA1thL1cWpiZAw=; b=QENyXhMKiH7T7HUBDBVTdf7kdq
-	dXfJZNGKw2XcPq1viq6BqxhdDugB+7NFBVZBxTNGCHLIsQQLT3+kSAqapqMAixEG8unaKzchSWs2l
-	j/Rw8n1K4Iq0yiLexM+ROwuLNaiWDISYNKgTQAodaJPnc1U8ZvIh+pDgneh4BuqOPtuMGgJl46B6v
-	08LfsYnKA/rffMP+wLH93VGSnrF+rrRoNP3afJpn05WieUvFCXgNMXi5Jq7bLxL5RScPJGi2x5GmB
-	/bf+zatWmjh2/ssy/9AYOTA5YPjmsBlp9QKWSgCKAV4wMv2QK27wbjYaRIcDRfiCb2TCaUdySHyvM
-	xFEQYNvQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:From:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5/4L7xPqpI1qZC/6yY/isSvsBur3PoQWenQ2/m/N5Sc=; b=nBHtoMyRaOB8ET
+	Gp7xBKTltnS73hm2OnZ2Wb0utaJJbIN9U0DsCUzengC9FwIDYdczthbCC1ata9moAvIn1UFKT1WGh
+	ebSqq53zJ1QeFzo7Mb+4aUrXF8tB0IqEEb/335rGWo/+S5aGjCRoqr19kXGaDoPQgQGlNjvBTtB+Y
+	5jKhVfq7ZOVXziQhu38g5VLWB6hK4mTVuBukJMgZlGBHgEKbdrfadoyOwr7cxEKfAW9Ea+xupcllz
+	FBYLYgt9sTQi37ohoD8Qbckwx/NOQ30fYS675m/l3SRqzn99d5pWGf3+WXREUzAB2Fid+UeDo62Lw
+	YBKPg46+JcVHUykfQHcg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBFel-00000001FzN-2kdr;
-	Mon, 28 Sep 2026 18:00:51 +0000
-Received: from sender6-op-o11.zoho.com ([165.173.180.11])
+	id 1xBGBZ-00000001LCz-1fiR;
+	Mon, 28 Sep 2026 18:34:45 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBFei-00000001FyD-3GE8;
-	Mon, 28 Sep 2026 18:00:49 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1790618430; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=LPNI4MswH7Lzntzn90zDKT599utqlLYYxB65mXavT7wDLugpHBgF6zCKDAVr3jpuTuWKpt7nSHohwlogSJNXIQu63ODrw5AlEo1wbT/uAOB1meoE0y/JOIZWObjS48MJzKNOWXR+/Gwpfeu0NsS/MqRC8ilLhMcFIKhPRJGZWes=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1790618430; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=rx2Dp8F0G79AkzZ8TkfSoNMZCeNYUm4dgXzgVmBJYYU=; 
-	b=RQOMq9AHmT+JrwZb2c/bEpey0HjPjzJTWBWcDG727xpNONUU4xzfZPVGClzjnSnSWqpz4kQW0cAE8356G+oMxtia1EF6JRlNsd7Jy7hDRolt9GgGnqWRrFRAq0C10TQG7cRhZ1qgaLy5N/O59MY1uPqZ5GdezLaa6LjwQZVjRAI=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
-	dmarc=pass header.from=<sebastian.reichel@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1790618430;
-	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
-	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
-	bh=rx2Dp8F0G79AkzZ8TkfSoNMZCeNYUm4dgXzgVmBJYYU=;
-	b=kNNoiGV6doOW3mVcl+p8MW6tf2EKhNZuGCmyzX6mJpdPZNghSdU5Lb7032525Zvi
-	WsihPJchqqZ/b++ELDdBz3wbWea72I1hph29bZ1pwvO4itw20C2m2xDLzMPCcn5HWxP
-	hmUx8QU2gtztNZf44iZHQ22CZGuiMMVwjsOqZUzY=
-Received: by smtp.zohomail.com with SMTPS id 1790618428921626.3807045692041;
-	Mon, 28 Sep 2026 11:00:28 -0700 (PDT)
-Received: by venus (Postfix, from userid 1000)
-	id 9FC5618081B; Mon, 28 Sep 2026 20:00:24 +0200 (CEST)
-Date: Mon, 28 Sep 2026 20:00:24 +0200
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Manivannan Sadhasivam <mani@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Heiko Stuebner <heiko@sntech.de>, 
-	Maxime Chevallier <maxime.chevallier@bootlin.com>, linux-phy@lists.infradead.org, 
-	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	Igor Paunovic <royalnet026@gmail.com>, kernel@collabora.com
-Subject: Re: [PATCH] phy: rockchip: inno-usb2: ensure PHY is running when
- clock is requested
-Message-ID: <arqnn8s5yFmZzQvG@venus>
-References: <20260908-phy-rockchip-inno-usb2-clock-fix-v1-1-f7d59c31b908@collabora.com>
- <xnvakstneih6njyxfe27kdx54vy3zpnth24o4mjlzuoykb2pfh@np7dx62waujo>
+	id 1xBGBQ-00000001L96-1hXN;
+	Mon, 28 Sep 2026 18:34:38 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+	by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id 20260928183430euoutp02d8c2ceefbbbee78d8631d795eb470987~Zj9SaDp1F1266812668euoutp02d;
+	Mon, 28 Sep 2026 18:34:30 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com 20260928183430euoutp02d8c2ceefbbbee78d8631d795eb470987~Zj9SaDp1F1266812668euoutp02d
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1790620470;
+	bh=4Zph+siZBeGkLK5OkBadCTawnz0zQ5RVLKRomkp3JFM=;
+	h=Date:Subject:To:Cc:From:In-Reply-To:References:From;
+	b=ooCPWuWAFvYF4ZM2kjMd6Sk5u8LAPjsE03rJcvHzAe/OskadksFIcixYe9TFn3SG5
+	 x2Lag0CNxSduPsZVTUcvY8qADKxrETrS0mODDs5RLBK7W0fG+vhAH96c+oaZU+BhSr
+	 uY8fE2y2hrrSNfQ4261WxiEAHHMqI6kqWuuKrmhg=
+Received: from eusmtip2.samsung.com (unknown [203.254.199.222]) by
+	eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+	20260928183429eucas1p291d65fe935c65b88fc63e99837bf87f8~Zj9RjhP5N2664926649eucas1p2Q;
+	Mon, 28 Sep 2026 18:34:29 +0000 (GMT)
+Received: from [192.168.1.44] (unknown [106.210.136.40]) by
+	eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+	20260928183427eusmtip29fd870671ef52906c604dca1dab6db1e~Zj9Pk2-JD0396803968eusmtip22;
+	Mon, 28 Sep 2026 18:34:27 +0000 (GMT)
+Message-ID: <d4fb48de-829d-4285-9ca6-ab418a6f4987@samsung.com>
+Date: Mon, 28 Sep 2026 20:34:26 +0200
 MIME-Version: 1.0
-In-Reply-To: <xnvakstneih6njyxfe27kdx54vy3zpnth24o4mjlzuoykb2pfh@np7dx62waujo>
-X-Zoho-Virus-Status: 1
-X-Zoho-AV-Stamp: zmail-av-0.2.13.1.5.4/290.602.86
-X-ZohoMailClient: External
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 03/20] dt-bindings: mfd: Add
+ starfive,jh7110-hdmi-subsystem
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+	<neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, Krzysztof
+	Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Andrzej
+	Hajda <andrzej.hajda@intel.com>, Robert Foss <rfoss@kernel.org>, Laurent
+	Pinchart <Laurent.pinchart@ideasonboard.com>, Jonas Karlman
+	<jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>, Luca Ceresoli
+	<luca.ceresoli@bootlin.com>, Maarten Lankhorst
+	<maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>, Lee Jones <lee@kernel.org>, Andy
+	Yan <andy.yan@rock-chips.com>, Philipp Zabel <p.zabel@pengutronix.de>, Emil
+	Renner Berthing <kernel@esmil.dk>, Hal Feng <hal.feng@starfivetech.com>,
+	Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+	<sboyd@kernel.org>, Heiko Stuebner <heiko@sntech.de>, Paul Walmsley
+	<pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou
+	<aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>, Dominique
+	Belhachemi <db@domibel.de>, Brian Masney <bmasney+clk@redhat.com>, Jerome
+	Brunet <jbrunet+clk@baylibre.com>, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	dri-devel@lists.freedesktop.org, mfd@lists.linux.dev,
+	linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-riscv@lists.infradead.org, Marek
+	Szyprowski <m.szyprowski@samsung.com>, Maud Spierings
+	<maud_spierings@murena.io>, Graham Markall <hello@big-grey.co.uk>, Icenowy
+	Zheng <zhengxingda@iscas.ac.cn>, Chaoyi Chen <chaoyi.chen@rock-chips.com>,
+	Joshua Peisach <jpeisach@ubuntu.com>, =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?=
+	<u.kleine-koenig@baylibre.com>
+Content-Language: en-US
+From: Michal Wilczynski <m.wilczynski@samsung.com>
+In-Reply-To: <20260917-colossal-phenomenal-rattlesnake-7aca88@quoll>
+X-CMS-MailID: 20260928183429eucas1p291d65fe935c65b88fc63e99837bf87f8
+X-Msg-Generator: CA
+X-RootMTR: 20260915153218eucas1p278c4870936afe1aaa52438660418f8c8
+X-EPHeader: CA
+X-CMS-RootMailID: 20260915153218eucas1p278c4870936afe1aaa52438660418f8c8
+References: <20260915-jh7110-clean-send-v4-0-f0e4fd6f2cc8@samsung.com>
+	<CGME20260915153218eucas1p278c4870936afe1aaa52438660418f8c8@eucas1p2.samsung.com>
+	<20260915-jh7110-clean-send-v4-3-f0e4fd6f2cc8@samsung.com>
+	<20260917-colossal-phenomenal-rattlesnake-7aca88@quoll>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260928_110048_879199_1B9D9577 
-X-CRM114-Status: GOOD (  36.85  )
+X-CRM114-CacheID: sfid-20260928_113437_040804_3F85479A 
+X-CRM114-Status: UNSURE (   9.90  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,149 +105,28 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2077980243300543939=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============2077980243300543939==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="untgwae5zqmwhmvm"
-Content-Disposition: inline
 
+On 9/17/26 08:54, Krzysztof Kozlowski wrote:
+> On Tue, Sep 15, 2026 at 05:32:11PM +0200, Michal Wilczynski wrote:
+>> Add the dt-binding for the StarFive JH7110 HDMI subsystem.
+> 
+> Your cover letter, in the first paragraph, should explain the
+> merging/dependencies constraints - this depends on previous patches and
+> cannot be taken alone.
 
---untgwae5zqmwhmvm
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH] phy: rockchip: inno-usb2: ensure PHY is running when
- clock is requested
-MIME-Version: 1.0
+OK I will update this in the v5
 
-Hello Mani,
-
-On Sat, Sep 26, 2026 at 04:50:07AM +0200, Manivannan Sadhasivam wrote:
-> On Tue, Sep 08, 2026 at 06:07:42PM +0200, Sebastian Reichel wrote:
-> > On RK3588 the OHCI controller registers can only be accessed when the
-> > PHY's 480MHz clock is running. After system suspend the controller is
-> > resumed before the PHY.
->=20
-> This statement is slightly confusing. There is no PM ops in this
-> PHY driver.
-
-I will take a closer look how it is powered off during suspend.
-Generally I expect it to loose state in any case as the related
-power domain should be disabled.
-
-> > The controller requests the clock, which opens
-> > the gate in the PHY's clock prepare function. But with the PHY suspended
-> > this just results in a dead clock being routed. The OHCI driver will
-> > then continue to access its registers resulting in a board hang.
-> >=20
-> > Fix this by resuming the suspended PHY in the clock's prepare function,
-> > so that the clock is really prepared once the function returns.
-> >=20
-> > Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-> > ---
-> > This was noticed on RK3588 EVB1 when resuming from system suspend. This
-> > is technically a fix, but its unclear when the bug was introduced and
-> > system suspend is broken on RK3588 for quite a while and not just due
-> > to this problem. So I think this fix can be merged the normal way via
-> > linux-next.
-> > ---
-> >  drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 37 +++++++++++++++++++=
-++++++++
-> >  1 file changed, 37 insertions(+)
-> >=20
-> > diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/ph=
-y/rockchip/phy-rockchip-inno-usb2.c
-> > index 7d8a533f24ae..07d400967def 100644
-> > --- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> > +++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> > @@ -332,6 +332,39 @@ rockchip_usb2phy_clk480m_clkout_ctl(struct clk_hw =
-*hw, struct regmap **base,
-> >  	}
-> >  }
-> > =20
-> > +static int rockchip_usb2phy_clk480m_leave_suspend(struct clk_hw *hw)
-> > +{
-> > +	struct rockchip_usb2phy *rphy =3D container_of(hw, struct rockchip_us=
-b2phy, clk480m_hw);
-> > +	bool relock =3D false;
-> > +	int ret, i;
-> > +
-> > +	/* Limit to single port; it's unclear how multi-port should be handle=
-d */
-> > +	if (rphy->phy_cfg->num_ports > 1)
-> > +		return 0;
-> > +
-> > +	for (i =3D 0; i < rphy->phy_cfg->num_ports; i++) {
-> > +		struct rockchip_usb2phy_port *rport =3D &rphy->ports[i];
-> > +		const struct rockchip_usb2phy_port_cfg *port_cfg =3D rport->port_cfg;
-> > +
-> > +		if (!rport->phy || !port_cfg || !port_cfg->phy_sus.enable)
-> > +			continue;
-> > +		if (property_enabled(rphy->grf, &port_cfg->phy_sus)) {
-> > +			property_enable(rphy->grf, &port_cfg->phy_sus,
-> > +					false);
-> > +			relock =3D true;
-> > +		}
-> > +	}
-> > +
-> > +	if (relock) {
-> > +		ret =3D rockchip_usb2phy_reset(rphy);
-> > +		if (ret)
-> > +			return ret;
-> > +		usleep_range(1500, 2000);
-> > +	}
-> > +
->=20
-> This looks like a duplication of rockchip_usb2phy_power_on(). So I'm assu=
-ming
-> that phy_power_on() is not called by the OHCI driver before accessing the
-> registers. So why don't you fix that instead?
-
-I can look into it. My way of thinking was, that the clock should be
-running independently of that when the clock has been requested via
-common clock framework.
-
-Greetings,
-
--- Sebastian
-
---untgwae5zqmwhmvm
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmq6qzQACgkQ2O7X88g7
-+pog+A/+MEyOCVKuYQ5mvlVbb5Ag+syHiOeLRFUzhUivNdnzrXzfdkriXModstAY
-TFfa4898XF49E/Ru7SIFZBvG/X+K0TwZmezCy6NKxZKAkxbt13pc8x4gxwMaalKb
-Pf7G51RdsaL+QVUGKiHzqjt2Ij8J3qvOp6QUTceI6kKA8xIg4D8ObWXi1m9FV0vT
-ep8U5w/l8/ZJ+8wTDawVBPMG/IZ03HoviEfeN7YB3Bbu7unEWkWUKWLAaa3o5Bj2
-urmwDdGa4AI7v8AQqg8hapFNDWNbW+0ltgv0fLBRJl9jyN49BVjDHbK/3YNFW4Vk
-nchGhClmnnc7g+Arwj+ddamMh42B52eXdN062igi1+9omeDm7QdXNoIyyuLT+Jwm
-Yu+fB+HiiOe2AKHNdB4mi85Z4D2p9eTNbA7xXgAAA+BGb7mNm02wdY3zvUC2mtCU
-6a/5qXzoypPq+WkbcKPOKfESeQ7wNcdETRAnHfSg8izrfW5lZ9ZsC2amUVDkWLo9
-VRJ61SESKkPvgTaqscTNIBFX20I46FU0noS/JSe6jTL7j+Phn36Ert4ZIH6JRZZK
-8ADc8nasbNs7VJ6AERiF5Z34j8uL36z7oRDiK7CzlYWhQGg9mbvfH5PjBZwuoYkr
-IGuop0RFl3hrViQsLJ4KPhyfNPUKIFPB+SbuAV0wy08eia2W4YU=
-=dCQG
------END PGP SIGNATURE-----
-
---untgwae5zqmwhmvm--
-
-
---===============2077980243300543939==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Best regards,
+-- 
+Michal Wilczynski <m.wilczynski@samsung.com>
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============2077980243300543939==--
-
