@@ -4,54 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43245C9832A
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Sep 2026 06:17:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2A2FCA5FA5
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Sep 2026 08:47:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kOy3S8FN/GMQi02bjSX1du+NsseQqU56OwzT3atIfLc=; b=GTleHJM6X8GC4c
-	8f7np4MypSx03lr2LCg8N92mBsWL5HuEt+SO3QliNlbJs9/R2Bnjk0VtXhpD+LZjvsot8ZFukODPj
-	y0ks5/GsOGJMNjVpX1tJmLTewzvXX37BBX5ZJjd9NHuPnTp7aixbnuUl4CQV3I1nQgrtQoJDa1oOt
-	wAJxlGu1lD6VCsquZrjXU21fB0jH6CBzngFR97ZNO9QB2XZkYnBbE7lfHhHMrw68wciWwoNVqxsrJ
-	MllE0oj/oLaP1n/MYkaFLaiYMDVbUD2yONt7ytsLexz6pltfqP/tqdblmtX9HUMMIV9HKFXGcIhgS
-	QUcn5PP71Rl/OvKoWj0Q==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=W5n8oq6XxwXBxCaPriB2zgBLMNRlgI5sHzdJ7espEBk=; b=qodw5ywno3AXaD
+	uiqAYaPEuF6vfyA6rkUUXT+wdRA7urwA5heBb9HGfdBO6uAv0c4pXTTFkFmv9etfYvwNQByF5MjD1
+	7PoIxsIxDo0YNZEPgscfmSJ1cS64Qt2B1lepXdKrfZZ1V0VXWuQPB/EGFWKM5trbsCRTfHwhOlXUI
+	f69XGHmHFFR2YFzvD+PHQammbLSgH2N0Ubwk6GfXLqEiJaqB9B6MfCYrlyvX2RM3M1dy9vJsKFf0l
+	S2039FmCmeDvGs8MNfae44d8lpq6c6pSrIAz/osw3nsNEB3U+eZSxnUT8D0oD2ODFy5vo4qjWqm2Y
+	KBGA/n1rHfNMyM0zxQ/A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBRA5-00000002R42-3Rez;
-	Tue, 29 Sep 2026 06:17:57 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xBTVC-00000002qOy-2EKy;
+	Tue, 29 Sep 2026 08:47:54 +0000
+Received: from mail-pj2-x10.google.com ([2607:f8b0:4864:39::10])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBRA4-00000002R3r-2Doy
+	id 1xBTV9-00000002qNv-1jpU
 	for linux-phy@lists.infradead.org;
-	Tue, 29 Sep 2026 06:17:56 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 235FF409C0;
-	Tue, 29 Sep 2026 06:17:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8BA321F000FF;
-	Tue, 29 Sep 2026 06:17:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790662676;
-	bh=174VKadjpnQO2aVNnniXDbyR10JgcnxfaZociXI3Cck=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=Sod+t1SB7SCKCVbr12Cx6/UQh2LpXgIr2X7dkRFXzdotWwFOGIxduSKZxw/GTc7Ps
-	 hvK9htPNevX1F6kHBYy5D9iffI+N0UPrYkHdhqel5jsaaBIDqyrLva5UWSawLhBK93
-	 i/54kwGumEfaY1ze4ASbPsfU+B748nHnJUETgr1YXOpJ+6bgGHAf93xIUs+0Bjiguv
-	 bZJNXG8pd0Zp5/8CJKvm+WdaFXtsDVAKJUWHxYnbFqYorqoFMMfVHnZ0Kw3lnjf/hE
-	 Iw8L1O7Why+osJ9EAOzXe38phojoYOX3+DrBiLnER47MRo47ZOcTX+Y9b+UoBpDhtw
-	 45iL5LXz706tg==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v17 07/11] media: qcom: camss: vfe: Add support for VFE
- Gen4
-To: "Hangxiang Ma" <hangxiang.ma@oss.qualcomm.com>
-Cc: conor+dt@kernel.org, vkoul@kernel.org, devicetree@vger.kernel.org, olteanv@gmail.com, neil.armstrong@linaro.org, linux-phy@lists.infradead.org, robh@kernel.org, media-ci@linuxtv.org
-In-Reply-To: <20260928-kaanapali-camss-v17-7-dcf3fd37f76c@oss.qualcomm.com>
-References: <20260928-kaanapali-camss-v17-0-dcf3fd37f76c@oss.qualcomm.com>
- <20260928-kaanapali-camss-v17-7-dcf3fd37f76c@oss.qualcomm.com>
-Date: Tue, 29 Sep 2026 06:17:55 +0000
-Message-Id: <20260929061755.8BA321F000FF@smtp.kernel.org>
+	Tue, 29 Sep 2026 08:47:53 +0000
+Received: by mail-pj2-x10.google.com with SMTP id 98e67ed59e1d1-396ccb65437so2269559a91.3
+        for <linux-phy@lists.infradead.org>; Tue, 29 Sep 2026 01:47:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1790671670; x=1791276470; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=L+b3HR+GEBXlqBxQ57YrkqhyM2+pU3HtshFJ6f9asNw=;
+        b=M2slDJ3icv521wVQaDhdL5dMp88MKTUvIufakyeYmlnSbPoO1nkeCxEwV8xS/UMK8c
+         nvVyvHTlpGRTM97nNTYQ5wI8oNSl4YSqZeaErMvyFRfp5qvtA0x9r+PZwp/2rAZGFKU2
+         j9vTkR+CZfhoPLYYDu3EPhgsVXs2LfQD+9+07OMMw0CCV3VtFkvDPENmNGgcMAs1JC4r
+         Q29h2yQzUQLR5315QKkCblzigIqpVL581VcigtNs5V32GeihQlQNO3WfB5+6RP6JhjJM
+         biRuzfALxg7KzZYN8CHJdH2+wUr1c3K1/EkL5CNLz7I+C5Cz1OuPRJrpru8f56sMUa4k
+         AmiQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1790671670; x=1791276470;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=L+b3HR+GEBXlqBxQ57YrkqhyM2+pU3HtshFJ6f9asNw=;
+        b=qYoX4q+YcTTJt2UoihNndlB8usbVHF9Olq+LsD7ndyHh6wGQrLpe3cLInMglE++xfh
+         gbP9VvH9niLPFcI9O4200uH3dgm41IaQUiLjntNCvGC5UofohSD2vvEjn7o+qfg9pCRf
+         qGnYmbcVEVk54bkegP1f633fq6tx9RIA4oRWMR/6EU3wtWfIvXaXGHRDZCwMO2Nwxp0l
+         h3WYBlwFsptg26GIhPpA0B3HG35MZcm06vgEqVRXOb3tSFsjaiHwC9CQ3KPbENfaw0Xd
+         U84pjARQUXvZXnM1ucuabOIdj1v0bs046tRyZrXqW7yq7EL3pJCGHg/36kMc3YAKqOzo
+         778Q==
+X-Forwarded-Encrypted: i=1; AKwUvBygn00sE70PFSKrFATWj4x7/tsFQE9VE3mXncJz/poSEQtT+K257MX1XDsCbcVPDdYbfbZgVwk8MHM=@lists.infradead.org
+X-Gm-Message-State: AFq9FYKWEVh8Nw5hjI3nZKpYim4YRF+2K06YWq5b9HpUTlOqATLBoCvM
+	6wuexix0Q7EiXkbpyxrm3oKMH60nhhkBLTVn7ee1UkTZdJdZkmCNRtDR
+X-Gm-Gg: AYBFou2v7tJpa2n50veZv3vUY0ZJNk3Jpe+Byhk6y8MLjnINVnUAYpV84pmTdv8upWg
+	DviVqQmLjw3I+/2GJKz08Wlc91GTLfCkhvqrnqa4wWIDdt+WMZtjh89v9h/O9LcPuTTDeKZ71s3
+	8XXTBjBZHfmLRoLl7b3vl422IBZ1BSsJKUL1YvhEbJMIROGi3ISyiRrxvnxzz1/Z5FnJ4hSSksM
+	j+GnjNOPnEe00hwNnZ7F30lUuOJnkLmNf1pRhMbDefj1VZNmXH36UQbC1FTbBoOK+h4rJy7ABC8
+	pW9hM5+oBcQBSftTj97/TMOvm3kCRkT/hOO7EiQdUmmp9/zxslup9zY8a+eOt5hBEf+RMCGcPpL
+	1hnhDKWJWAnbM3nfsR1ceKp4kmkS0EIfUYlfkpwqG3ym3x4V1eJTZSRPEXq9Sb2LsOE1hVF/yZO
+	CMrSjpzIx1VRh+5YBShK8nUQwNGlceNMfrhp5Gf9USepfhYZZpTfu5VY2mFiatMWqxkiXJPf/ek
+	s6cEmA=
+X-Received: by 2002:a17:90a:38e4:b0:3a0:b223:6830 with SMTP id 98e67ed59e1d1-3a0b2236c1dmr6514691a91.7.1790671670089;
+        Tue, 29 Sep 2026 01:47:50 -0700 (PDT)
+Received: from localhost ([2001:19f0:8000:3e6e:5400:6ff:fe38:3d01])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3a49867a4b1sm4317440a91.11.2026.09.29.01.47.49
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 29 Sep 2026 01:47:49 -0700 (PDT)
+From: Inochi Amaoto <inochiama@gmail.com>
+To: Hans de Goede <hansg@kernel.org>,
+	Damien Le Moal <dlemoal@kernel.org>,
+	Niklas Cassel <cassel@kernel.org>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Robert Foss <rfoss@kernel.org>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>,
+	Simona Vetter <simona@ffwll.ch>,
+	Minas Harutyunyan <hminas@synopsys.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Damon Ding <damon.ding@rock-chips.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	Heiko Stuebner <heiko@sntech.de>
+Cc: Inochi Amaoto <inochiama@gmail.com>,
+	linux-ide@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	dri-devel@lists.freedesktop.org,
+	linux-usb@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Yixun Lan <dlan@gentoo.org>,
+	Longbin Li <looong.bin@gmail.com>
+Subject: [PATCH] phy: core: Use EOPNOTSUPP for disabled blob return value
+Date: Tue, 29 Sep 2026 16:47:38 +0800
+Message-ID: <20260929084739.467082-1-inochiama@gmail.com>
+X-Mailer: git-send-email 2.55.0
+MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260929_014751_461683_554EF067 
+X-CRM114-Status: GOOD (  16.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,81 +120,329 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIGNhbXNzOiBoYXJkd2Fy
-ZSBjb25zdHJhaW50IHZpb2xhdGlvbiBkdWUgdG8gdW5jb25kaXRpb25hbCBBVVBfVVBEQVRFIGxv
-b3AgaW4gQ1NJRAotIFtIaWdoXSBjYW1zczogc3Vic3lzdGVtIEFQSSB2aW9sYXRpb24gd2hlcmUg
-SUZFIExpdGUncyA0dGggUkRJIGxpbmUgaXMgaW5jb3JyZWN0bHkgY29uZmlndXJlZCBhcyBQSVgK
-LS0KCmNvbW1pdCBkZWY5OWM2Y2Y5NzJkMjMwNWM0YzI3NzAxMjMzZjQyZTQxMWY3ODU3CkF1dGhv
-cjogSGFuZ3hpYW5nIE1hIDxoYW5neGlhbmcubWFAb3NzLnF1YWxjb21tLmNvbT4KCm1lZGlhOiBx
-Y29tOiBjYW1zczogdmZlOiBBZGQgc3VwcG9ydCBmb3IgVkZFIEdlbjQKClRoaXMgY29tbWl0IGFk
-ZHMgc3VwcG9ydCBmb3IgdGhlIFZGRSBHZW40IChURkUpIGZvdW5kIG9uIHRoZSBLYWFuYXBhbGkg
-U29DLgpJdCBjb25maWd1cmVzIHRoZSBoYXJkd2FyZSBibG9ja3MgYW5kIGNsb2NrIHJlcXVpcmVt
-ZW50cywgd2hpbGUgZGVmZXJyaW5nClJFR19VUERBVEUgYW5kIEFVUF9VUERBVEUgdW50aWwgYWZ0
-ZXIgQ1NJRCBjb25maWd1cmF0aW9uIGNvbXBsZXRlcy4KCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMv
-bWVkaWEvcGxhdGZvcm0vcWNvbS9jYW1zcy9jYW1zcy12ZmUuYyBiL2RyaXZlcnMvbWVkaWEvcGxh
-dGZvcm0vcWNvbS9jYW1zcy9jYW1zcy12ZmUuYwo+IC0tLSBhL2RyaXZlcnMvbWVkaWEvcGxhdGZv
-cm0vcWNvbS9jYW1zcy9jYW1zcy12ZmUuYwo+ICsrKyBiL2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0v
-cWNvbS9jYW1zcy9jYW1zcy12ZmUuYwoKWyAuLi4gXQoKPiBAQCAtNTUyLDcgKzU1NCw5IEBAIGlu
-dCB2ZmVfZW5hYmxlX291dHB1dF92MihzdHJ1Y3QgdmZlX2xpbmUgKmxpbmUpCj4gIAkJb3V0cHV0
-LT5nZW4yLmFjdGl2ZV9udW0rKzsKPiAgCQlvcHMtPnZmZV93bV91cGRhdGUodmZlLCBvdXRwdXQt
-PndtX2lkeFswXSwKPiAgCQkJCSAgIG91dHB1dC0+YnVmW2ldLT5hZGRyWzBdLCBsaW5lKTsKPiAt
-CQlvcHMtPnJlZ191cGRhdGUodmZlLCBsaW5lLT5pZCk7Cj4gKwo+ICsJCWlmICghdmZlLT5yZXMt
-PnJlZ191cGRhdGVfYWZ0ZXJfY3NpZF9jb25maWcpCj4gKwkJCW9wcy0+cmVnX3VwZGF0ZSh2ZmUs
-IGxpbmUtPmlkKTsKPiAgCX0KPiAgCj4gIAlzcGluX3VubG9ja19pcnFyZXN0b3JlKCZ2ZmUtPm91
-dHB1dF9sb2NrLCBmbGFncyk7CgpbU2V2ZXJpdHk6IEhpZ2hdClRoZSBjb21taXQgbWVzc2FnZSBz
-dGF0ZXM6ICJ0aGUgbnVtYmVyIG9mIEFVUF9VUERBVEUgcmVxdWVzdHMgbXVzdCBtYXRjaCB0aGUK
-bnVtYmVyIG9mIGJ1ZmZlcnMgcXVldWVkIHRvIHRoZSB3cml0ZSBtYXN0ZXIgd2hpbGUgaXQgaXMg
-YmVpbmcgZW5hYmxlZC4iCgpJbiB2ZmVfZW5hYmxlX291dHB1dF92MigpLCB0aGUgVkZFIGxvb3Ag
-c2hvd24gYWJvdmUgcXVldWVzIHBlbmRpbmcgYnVmZmVycwpkeW5hbWljYWxseSB1cCB0byBDQU1T
-U19JTklUX0JVRl9DT1VOVCwgYnV0IGJyZWFrcyBlYXJseSBpZiB1c2Vyc3BhY2UgcXVldWVkCmZl
-d2VyIGJ1ZmZlcnMuIEJ5IHNldHRpbmcgcmVnX3VwZGF0ZV9hZnRlcl9jc2lkX2NvbmZpZyB0byB0
-cnVlIGZvciBLYWFuYXBhbGksCnRoaXMgZGVmZXJzIHRoZSB1cGRhdGUgdG8gQ1NJRC4KCkhvd2V2
-ZXIsIHRoZSBjb3JyZXNwb25kaW5nIENTSUQgY29kZSBhdCBjc2lkX2NvbmZpZ3VyZV9zdHJlYW0o
-KSBpbgpjYW1zcy1jc2lkLWdlbjQuYyBibGluZGx5IGlzc3VlcyBBVVBfVVBEQVRFcyBtYXRjaGlu
-ZyB0aGUgbWF4aW11bSBidWZmZXIKY291bnQ6Cgpmb3IgKGsgPSAwOyBrIDwgQ0FNU1NfSU5JVF9C
-VUZfQ09VTlQ7IGsrKykKICAgIF9fY3NpZF9hdXBfdXBkYXRlKGNzaWQsIGkpOwoKSWYgdXNlcnNw
-YWNlIHF1ZXVlcyBmZXdlciBidWZmZXJzIGJlZm9yZSBzdGFydGluZyB0aGUgc3RyZWFtLCBkb2Vz
-IHRoaXMgY2F1c2UKYSBtaXNtYXRjaCBiZXR3ZWVuIHRoZSBnZW5lcmF0ZWQgQVVQX1VQREFURXMg
-YW5kIHRoZSBhY3R1YWxseSBxdWV1ZWQgYnVmZmVycywKdmlvbGF0aW5nIHRoZSBoYXJkd2FyZSBj
-b25zdHJhaW50PwoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9xY29tL2Nh
-bXNzL2NhbXNzLmMgYi9kcml2ZXJzL21lZGlhL3BsYXRmb3JtL3Fjb20vY2Ftc3MvY2Ftc3MuYwo+
-IC0tLSBhL2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0vcWNvbS9jYW1zcy9jYW1zcy5jCj4gKysrIGIv
-ZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9xY29tL2NhbXNzL2NhbXNzLmMKClsgLi4uIF0KCj4gQEAg
-LTE1OCw2ICsxNTgsMTU3IEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3QgY2Ftc3Nfc3ViZGV2X3Jlc291
-cmNlcyBjc2lkX3Jlc19rYWFuYXBhbGlbXSA9IHsKClsgLi4uIF0KCj4gKwkvKiBWRkUzIC0gSUZF
-IExpdGUgKi8KPiArCXsKPiArCQkuY2xvY2sgPSB7ICJnY2NfYXhpX2hmIiwgImNwYXNfYWhiIiwg
-ImNwYXNfZmFzdF9haGIiLAo+ICsJCQkgICAidmZlX2xpdGVfYWhiIiwgInZmZV9saXRlIiwKPiAr
-CQkJICAgImNwYXNfdmZlX2xpdGUiLCAiY2Ftbm9jX3J0X2F4aSIsCj4gKwkJCSAgICJjYW1ub2Nf
-bnJ0X2F4aSIsICJxZHNzX2RlYnVnX3hvIiB9LAo+ICsJCS5jbG9ja19yYXRlID0geyB7IDAgfSwK
-PiArCQkJCXsgMCB9LAo+ICsJCQkJeyAwIH0sCj4gKwkJCQl7IDAgfSwKPiArCQkJCXsgMjY2NjY2
-NjY3LCA0MDAwMDAwMDAsIDQ4MDAwMDAwMCB9LAo+ICsJCQkJeyAwIH0sCj4gKwkJCQl7IDIwMDAw
-MDAwMCwgMzAwMDAwMDAwLCA0MDAwMDAwMDAsIDQ4MDAwMDAwMCB9LAo+ICsJCQkJeyAwIH0sCj4g
-KwkJCQl7IDAgfSB9LAo+ICsJCS5yZWcgPSB7ICJ2ZmVfbGl0ZTAiIH0sCj4gKwkJLmludGVycnVw
-dCA9IHsgInZmZV9saXRlMCIgfSwKPiArCQkudmZlID0gewo+ICsJCQkubGluZV9udW0gPSA0LAo+
-ICsJCQkuaXNfbGl0ZSA9IHRydWUsCgpbU2V2ZXJpdHk6IEhpZ2hdClRoZSBjb21taXQgbWVzc2Fn
-ZSBleHBsaWNpdGx5IHN0YXRlczogIlN1cHBvcnQgaXMgY3VycmVudGx5IGxpbWl0ZWQgdG8gdGhy
-ZWUKb3V0cHV0IGxpbmVzLCBtYXRjaGluZyB0aGUgY29uc3RyYWludHMgb2YgdGhlIENBTVNTIGZy
-YW1ld29yay4iCgpCdXQgbGluZV9udW0gaXMgaW5pdGlhbGl6ZWQgdG8gNCBmb3IgdGhlIElGRSBM
-aXRlIGJsb2Nrcy4KClNpbmNlIHRoZSBDQU1TUyBmcmFtZXdvcmsgaGFyZGNvZGVzIFZGRV9MSU5F
-X1BJWCB0byBpbmRleCAzLCBkb2VzIGNvbmZpZ3VyaW5nCjQgbGluZXMgY2F1c2UgdGhlIDR0aCBs
-aW5lIChSREkzIHdpdGggaWQgMykgdG8gYmUgaW5jb3JyZWN0bHkgc3ViamVjdGVkIHRvClBJWC1z
-cGVjaWZpYyBsb2dpYz8gRm9yIGV4YW1wbGUsIGluIHZmZV90cnlfZm9ybWF0KCksIHRoaXMgd291
-bGQgZm9yY2UgYSByYXcKUkRJIGR1bXAgc3RyZWFtIHRvIHVzZSBQSVggZm9ybWF0IHRhYmxlcyBh
-bmQgdmFsaWRhdGlvbjoKCmlmIChsaW5lLT5pZCA9PSBWRkVfTElORV9QSVgpIHsKICAgIHN0cnVj
-dCB2NGwyX3JlY3QgKnJlY3Q7CiAgICByZWN0ID0gX192ZmVfZ2V0X2Nyb3AobGluZSwgc2Rfc3Rh
-dGUsIHdoaWNoKTsKICAgIGZtdC0+d2lkdGggPSByZWN0LT53aWR0aDsKICAgIGZtdC0+aGVpZ2h0
-ID0gcmVjdC0+aGVpZ2h0Owp9CgpJcyB0aGlzIGluaXRpYWxpemF0aW9uIHRvIDQgbGluZXMgdW5p
-bnRlbnRpb25hbCBnaXZlbiB0aGUgMy1saW5lIGxpbWl0Cm1lbnRpb25lZCBpbiB0aGUgY29tbWl0
-PwoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNl
-dC8yMDI2MDkyOC1rYWFuYXBhbGktY2Ftc3MtdjE3LTAtZGNmM2ZkMzdmNzZjQG9zcy5xdWFsY29t
-bS5jb20/cGFydD03CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1waHkK
+Currently, the phy subsystem uses ENOSYS for dummy blob functions,
+it does not reflect the function state correctly. As kernel already
+has EOPNOTSUPP for disabled blob function, replace ENOSYS with
+EOPNOTSUPP for a clear return value. Also adapt the return value
+changed in the following affect file:
+- ata/libahci_platform.c
+- drm/bridge/analogix/analogix_dp_core.c
+- usb/dwc2/platform.c
+- usb/dwc3/core.c
+
+Signed-off-by: Inochi Amaoto <inochiama@gmail.com>
+---
+The related discussion for switch to EOPNOTSUPP is at
+https://lore.kernel.org/linux-phy/20260907114837.2y55l7dfqqrgcka2@skbuf/
+
+Changed from RFC:
+- https://lore.kernel.org/linux-phy/20260922024724.191412-1-inochiama@gmail.com/
+1. Merge all patch into one to avoid function break.
+2. Improve libahci_platform's comment as Damien request.
+---
+ drivers/ata/libahci_platform.c                |  6 +--
+ .../drm/bridge/analogix/analogix_dp_core.c    |  2 +-
+ drivers/usb/dwc2/platform.c                   |  2 +-
+ drivers/usb/dwc3/core.c                       |  4 +-
+ include/linux/phy/phy.h                       | 52 +++++++++----------
+ 5 files changed, 32 insertions(+), 34 deletions(-)
+
+diff --git a/drivers/ata/libahci_platform.c b/drivers/ata/libahci_platform.c
+index 6e072d681341..b04789e7a23f 100644
+--- a/drivers/ata/libahci_platform.c
++++ b/drivers/ata/libahci_platform.c
+@@ -371,12 +371,10 @@ static int ahci_platform_get_phy(struct ahci_host_priv *hpriv, u32 port,
+
+ 	rc = PTR_ERR(hpriv->phys[port]);
+ 	switch (rc) {
+-	case -ENOSYS:
++	case -EOPNOTSUPP:
+ 		/* No PHY support. Check if PHY is required. */
+ 		if (of_property_present(node, "phys")) {
+-			dev_err(dev,
+-				"couldn't get PHY in node %pOFn: ENOSYS\n",
+-				node);
++			dev_err(dev, "Node %pOFn: PHY not supported\n", node);
+ 			break;
+ 		}
+ 		fallthrough;
+diff --git a/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c b/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
+index 30c0c0b41d5a..8e26cd772482 100644
+--- a/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
++++ b/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
+@@ -1360,7 +1360,7 @@ analogix_dp_probe(struct device *dev, struct analogix_dp_plat_data *plat_data)
+ 			 * phy itself is not enabled, so we can move forward
+ 			 * assigning NULL to phy pointer.
+ 			 */
+-			if (ret == -ENOSYS || ret == -ENODEV)
++			if (ret == -EOPNOTSUPP || ret == -ENODEV)
+ 				dp->phy = NULL;
+ 			else
+ 				return ERR_PTR(ret);
+diff --git a/drivers/usb/dwc2/platform.c b/drivers/usb/dwc2/platform.c
+index ef0d73077034..62b663ef1504 100644
+--- a/drivers/usb/dwc2/platform.c
++++ b/drivers/usb/dwc2/platform.c
+@@ -243,7 +243,7 @@ static int dwc2_lowlevel_hw_init(struct dwc2_hsotg *hsotg)
+ 		ret = PTR_ERR(hsotg->phy);
+ 		switch (ret) {
+ 		case -ENODEV:
+-		case -ENOSYS:
++		case -EOPNOTSUPP:
+ 			hsotg->phy = NULL;
+ 			break;
+ 		default:
+diff --git a/drivers/usb/dwc3/core.c b/drivers/usb/dwc3/core.c
+index fd5c2cd36c59..6d253810c71f 100644
+--- a/drivers/usb/dwc3/core.c
++++ b/drivers/usb/dwc3/core.c
+@@ -1588,7 +1588,7 @@ static int dwc3_core_get_phy(struct dwc3 *dwc)
+ 		dwc->usb2_generic_phy[i] = devm_phy_get(dev, phy_name);
+ 		if (IS_ERR(dwc->usb2_generic_phy[i])) {
+ 			ret = PTR_ERR(dwc->usb2_generic_phy[i]);
+-			if (ret == -ENOSYS || ret == -ENODEV)
++			if (ret == -EOPNOTSUPP || ret == -ENODEV)
+ 				dwc->usb2_generic_phy[i] = NULL;
+ 			else
+ 				return dev_err_probe(dev, ret, "failed to lookup phy %s\n",
+@@ -1605,7 +1605,7 @@ static int dwc3_core_get_phy(struct dwc3 *dwc)
+ 		dwc->usb3_generic_phy[i] = devm_phy_get(dev, phy_name);
+ 		if (IS_ERR(dwc->usb3_generic_phy[i])) {
+ 			ret = PTR_ERR(dwc->usb3_generic_phy[i]);
+-			if (ret == -ENOSYS || ret == -ENODEV)
++			if (ret == -EOPNOTSUPP || ret == -ENODEV)
+ 				dwc->usb3_generic_phy[i] = NULL;
+ 			else
+ 				return dev_err_probe(dev, ret, "failed to lookup phy %s\n",
+diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+index ea47975e288a..3e84b54a4b03 100644
+--- a/include/linux/phy/phy.h
++++ b/include/linux/phy/phy.h
+@@ -314,14 +314,14 @@ static inline int phy_pm_runtime_get(struct phy *phy)
+ {
+ 	if (!phy)
+ 		return 0;
+-	return -ENOSYS;
++	return -EOPNOTSUPP;
+ }
+
+ static inline int phy_pm_runtime_get_sync(struct phy *phy)
+ {
+ 	if (!phy)
+ 		return 0;
+-	return -ENOSYS;
++	return -EOPNOTSUPP;
+ }
+
+ static inline void phy_pm_runtime_put(struct phy *phy)
+@@ -332,35 +332,35 @@ static inline int phy_pm_runtime_put_sync(struct phy *phy)
+ {
+ 	if (!phy)
+ 		return 0;
+-	return -ENOSYS;
++	return -EOPNOTSUPP;
+ }
+
+ static inline int phy_init(struct phy *phy)
+ {
+ 	if (!phy)
+ 		return 0;
+-	return -ENOSYS;
++	return -EOPNOTSUPP;
+ }
+
+ static inline int phy_exit(struct phy *phy)
+ {
+ 	if (!phy)
+ 		return 0;
+-	return -ENOSYS;
++	return -EOPNOTSUPP;
+ }
+
+ static inline int phy_power_on(struct phy *phy)
+ {
+ 	if (!phy)
+ 		return 0;
+-	return -ENOSYS;
++	return -EOPNOTSUPP;
+ }
+
+ static inline int phy_power_off(struct phy *phy)
+ {
+ 	if (!phy)
+ 		return 0;
+-	return -ENOSYS;
++	return -EOPNOTSUPP;
+ }
+
+ static inline int phy_set_mode_ext(struct phy *phy, enum phy_mode mode,
+@@ -368,7 +368,7 @@ static inline int phy_set_mode_ext(struct phy *phy, enum phy_mode mode,
+ {
+ 	if (!phy)
+ 		return 0;
+-	return -ENOSYS;
++	return -EOPNOTSUPP;
+ }
+
+ #define phy_set_mode(phy, mode) \
+@@ -397,35 +397,35 @@ static inline int phy_reset(struct phy *phy)
+ {
+ 	if (!phy)
+ 		return 0;
+-	return -ENOSYS;
++	return -EOPNOTSUPP;
+ }
+
+ static inline int phy_calibrate(struct phy *phy)
+ {
+ 	if (!phy)
+ 		return 0;
+-	return -ENOSYS;
++	return -EOPNOTSUPP;
+ }
+
+ static inline int phy_notify_connect(struct phy *phy, int index)
+ {
+ 	if (!phy)
+ 		return 0;
+-	return -ENOSYS;
++	return -EOPNOTSUPP;
+ }
+
+ static inline int phy_notify_disconnect(struct phy *phy, int index)
+ {
+ 	if (!phy)
+ 		return 0;
+-	return -ENOSYS;
++	return -EOPNOTSUPP;
+ }
+
+ static inline int phy_notify_state(struct phy *phy, union phy_notify state)
+ {
+ 	if (!phy)
+ 		return 0;
+-	return -ENOSYS;
++	return -EOPNOTSUPP;
+ }
+
+ static inline int phy_configure(struct phy *phy,
+@@ -434,7 +434,7 @@ static inline int phy_configure(struct phy *phy,
+ 	if (!phy)
+ 		return 0;
+
+-	return -ENOSYS;
++	return -EOPNOTSUPP;
+ }
+
+ static inline int phy_validate(struct phy *phy, enum phy_mode mode, int submode,
+@@ -443,12 +443,12 @@ static inline int phy_validate(struct phy *phy, enum phy_mode mode, int submode,
+ 	if (!phy)
+ 		return 0;
+
+-	return -ENOSYS;
++	return -EOPNOTSUPP;
+ }
+
+ static inline int phy_get_bus_width(struct phy *phy)
+ {
+-	return -ENOSYS;
++	return -EOPNOTSUPP;
+ }
+
+ static inline void phy_set_bus_width(struct phy *phy, int bus_width)
+@@ -458,12 +458,12 @@ static inline void phy_set_bus_width(struct phy *phy, int bus_width)
+
+ static inline struct phy *phy_get(struct device *dev, const char *string)
+ {
+-	return ERR_PTR(-ENOSYS);
++	return ERR_PTR(-EOPNOTSUPP);
+ }
+
+ static inline struct phy *devm_phy_get(struct device *dev, const char *string)
+ {
+-	return ERR_PTR(-ENOSYS);
++	return ERR_PTR(-EOPNOTSUPP);
+ }
+
+ static inline struct phy *devm_phy_optional_get(struct device *dev,
+@@ -476,7 +476,7 @@ static inline struct phy *devm_of_phy_get(struct device *dev,
+ 					  struct device_node *np,
+ 					  const char *con_id)
+ {
+-	return ERR_PTR(-ENOSYS);
++	return ERR_PTR(-EOPNOTSUPP);
+ }
+
+ static inline struct phy *devm_of_phy_optional_get(struct device *dev,
+@@ -490,7 +490,7 @@ static inline struct phy *devm_of_phy_get_by_index(struct device *dev,
+ 						   struct device_node *np,
+ 						   int index)
+ {
+-	return ERR_PTR(-ENOSYS);
++	return ERR_PTR(-EOPNOTSUPP);
+ }
+
+ static inline void of_phy_put(struct phy *phy)
+@@ -507,27 +507,27 @@ static inline void devm_phy_put(struct device *dev, struct phy *phy)
+
+ static inline struct phy *of_phy_get(struct device_node *np, const char *con_id)
+ {
+-	return ERR_PTR(-ENOSYS);
++	return ERR_PTR(-EOPNOTSUPP);
+ }
+
+ static inline struct phy *of_phy_simple_xlate(struct device *dev,
+ 					      const struct of_phandle_args *args)
+ {
+-	return ERR_PTR(-ENOSYS);
++	return ERR_PTR(-EOPNOTSUPP);
+ }
+
+ static inline struct phy *phy_create(struct device *dev,
+ 				     struct device_node *node,
+ 				     const struct phy_ops *ops)
+ {
+-	return ERR_PTR(-ENOSYS);
++	return ERR_PTR(-EOPNOTSUPP);
+ }
+
+ static inline struct phy *devm_phy_create(struct device *dev,
+ 					  struct device_node *node,
+ 					  const struct phy_ops *ops)
+ {
+-	return ERR_PTR(-ENOSYS);
++	return ERR_PTR(-EOPNOTSUPP);
+ }
+
+ static inline void phy_destroy(struct phy *phy)
+@@ -543,7 +543,7 @@ static inline struct phy_provider *__of_phy_provider_register(
+ 	struct phy * (*of_xlate)(struct device *dev,
+ 				 const struct of_phandle_args *args))
+ {
+-	return ERR_PTR(-ENOSYS);
++	return ERR_PTR(-EOPNOTSUPP);
+ }
+
+ static inline struct phy_provider *__devm_of_phy_provider_register(struct device
+@@ -551,7 +551,7 @@ static inline struct phy_provider *__devm_of_phy_provider_register(struct device
+ 	struct phy * (*of_xlate)(struct device *dev,
+ 				 const struct of_phandle_args *args))
+ {
+-	return ERR_PTR(-ENOSYS);
++	return ERR_PTR(-EOPNOTSUPP);
+ }
+
+ static inline void of_phy_provider_unregister(struct phy_provider *phy_provider)
+--
+2.55.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
