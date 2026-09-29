@@ -4,74 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9753CA5FA1
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Sep 2026 13:30:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0893C9832A
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Sep 2026 14:44:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KTzqTG0q8Vkd43rqX5SxlfvkX5vBVHPcFrwDRHNB9Rk=; b=A1rQl3M6Wsupic
-	+/Zj4QDiLBbkug2rBB2z6Zwc8S32L/FtQYAJAmG1K2LqtoUYTdYVmXs9B+rHaqae/eN6WrtuXxCa/
-	7UzKlbkXpAvu6OG4JL0sN+DHD33MULXEshyhPnyzvWYyiGyyKIuaSJjB/9cDtUvj8UncPi7JLQLX7
-	CJKdw8slpb3S21DyZMBn5dm38VwaN43PdvkR8d36//lDOAxHAchGWjy8nLZdF1WORv8hJbxvqOc4i
-	BKUdodLRKaGSTi0HJ+Wtn20p1R/3uJ6mu6swuHAPDxOMqmHieUg4dG4ewaDS5haLwMs7th7DAYUM+
-	lvSdyTj5JvLeMEcgSPbw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ctQHRYQSmKlEt7iB21hXsWsZGJwbHmA0N7Ed6H7mNmE=; b=YuZKbhSMl12FAHEMZmjWWuYpxL
+	uzi7nlIZlNmD4IXlFXMmUmS/yd+mpQ7V/jWJDxkdlHEVFdCYSyyNXVqVQU6TIBBiI6mKBC1jAiAqH
+	/ZjtgQoxx7LpW8xxOT6S9yl8Xxaoq/zlm2Pc5spZ7ytLPyGRg0Z5UuqIIoePjBq6nUDBv7XvDLm4E
+	+Tt+QiFhmLG5TXErQ0PaUdz6arfiYaEFKY36KZrSpRrY4CG41Uw5WBkJxLKUHY6a0DIqviuVemMEk
+	WQ6pFgbqnzAkjZm2xmGebVgCdcEfq+CgqouqgNYEhW7C9Ksn32/+gWZsSQF/pRd/+lK1FKTSYQc2F
+	oR2O0oyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBXud-00000003fxB-14Ab;
-	Tue, 29 Sep 2026 13:30:27 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xBZ4L-00000003oo9-2UcN;
+	Tue, 29 Sep 2026 14:44:33 +0000
+Received: from sender5-op-o11.zoho.com ([165.173.182.11])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBXub-00000003fwl-1fmb
-	for linux-phy@lists.infradead.org;
-	Tue, 29 Sep 2026 13:30:25 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id A8AF3412E7;
-	Tue, 29 Sep 2026 13:30:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 67FB61F00893;
-	Tue, 29 Sep 2026 13:30:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790688624;
-	bh=YddyNBlBeMGDVbqSqWAWeupeImPN1+vt/HIPaYWlt0Y=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=RIuUtXQ7pN1ntHH5E9SHtFiVxk4VlC3Lx05nbDdqWgnrCoGrr5Kaw9EB3EurZOqnd
-	 ver7PIljjQDwRadvVv/c0J+hSkjXNlJWDffpZQLU4o93+0nCvAAl0Ux4SYrhGz087x
-	 /Em+ZWodHWV8OvgVNkTQErGD8adcsGYl1RKaedB7Hpt6DTY+b0QeVKsaMmFWtR0wIy
-	 1brTzz3b1fmLHV899/10+jQutIesNgOTsfOa5laHgSWmjnUC6CSWuXFwsRIMHGnLYv
-	 HGMSS19MSaUoKNmt7xqQq6t+vM1Gswc7Xht5EjiEDmf4hpi5r6Q6EcIVHkhsOwMVNz
-	 JNZ4Kdafpc/Lw==
-Message-ID: <45963e29-f896-4e67-87ee-ac90131773e2@kernel.org>
-Date: Tue, 29 Sep 2026 15:30:16 +0200
+	id 1xBZ4J-00000003onT-0iNA;
+	Tue, 29 Sep 2026 14:44:32 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1790693060; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=f4GeXpY1M2bwtODjax+4rYiqEzHIdRQurPqhyj6N4cYvd5bCzJmWuq28K3/9fQW8j5WA8i5JQbSvT3bbr8T08vj0QdCWs+gg4Fox57W1EFVdXlncp2as/sIdWsOVD48QFk61w2SaxI52ps0yJiPXrTDyrIpmgXWdPby5gyI4C30=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1790693060; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=I4ENDV94a3fiIT12CeebVXBQSZWge4T+VpgKHXCne54=; 
+	b=T8au3eYwVkYRSgQvbZRF4vF3W/1Jk5SCjscJLoO0I397BWODpCQttq6x40cCCZcVU5UsQLRGsHywfTTyeoz2NG4ysCOm3fOvbF3TQykkjcwzPOdWGU5xh7RpCsx7tZ3gvOCXdb1KXC4G2aGjCe+xd6yhlcgcbYbv78OgoZgR10w=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
+	dmarc=pass header.from=<sebastian.reichel@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1790693060;
+	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
+	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
+	bh=I4ENDV94a3fiIT12CeebVXBQSZWge4T+VpgKHXCne54=;
+	b=b4weWwb+x4fDkwXTT/9RcFrN3ABI1gy5HjK5Hr1usQeqALSAoMXyz1kXwhPsVXCi
+	TX9TEywTJGhtlyx87qHhcQ6BJjVBSL1v55EQdRk3cG0rEFvlcxO5CdAwg/4OmYsap+0
+	Tgl+aGxAHXnTGaQt3B19zpXzpTP+6vsA6DvQbKM0=
+Received: by smtp.zohomail.com with SMTPS id 1790693059734721.4714077251464;
+	Tue, 29 Sep 2026 07:44:19 -0700 (PDT)
+Received: by venus (Postfix, from userid 1000)
+	id B9376182AB2; Tue, 29 Sep 2026 16:44:15 +0200 (CEST)
+Date: Tue, 29 Sep 2026 16:44:15 +0200
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+To: Manivannan Sadhasivam <mani@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Heiko Stuebner <heiko@sntech.de>, 
+	Maxime Chevallier <maxime.chevallier@bootlin.com>, linux-phy@lists.infradead.org, 
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	Igor Paunovic <royalnet026@gmail.com>, kernel@collabora.com
+Subject: Re: [PATCH] phy: rockchip: inno-usb2: ensure PHY is running when
+ clock is requested
+Message-ID: <aru3ZSWtaHTdufXM@venus>
+References: <20260908-phy-rockchip-inno-usb2-clock-fix-v1-1-f7d59c31b908@collabora.com>
+ <xnvakstneih6njyxfe27kdx54vy3zpnth24o4mjlzuoykb2pfh@np7dx62waujo>
+ <arqnn8s5yFmZzQvG@venus>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: core: Use EOPNOTSUPP for disabled blob return value
-To: Inochi Amaoto <inochiama@gmail.com>, Hans de Goede <hansg@kernel.org>,
- Niklas Cassel <cassel@kernel.org>, Andrzej Hajda <andrzej.hajda@intel.com>,
- Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- Luca Ceresoli <luca.ceresoli@bootlin.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Minas Harutyunyan <hminas@synopsys.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Thinh Nguyen <Thinh.Nguyen@synopsys.com>, Vinod Koul <vkoul@kernel.org>,
- Manivannan Sadhasivam <mani@kernel.org>,
- Damon Ding <damon.ding@rock-chips.com>,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
- Heiko Stuebner <heiko@sntech.de>
-Cc: linux-ide@vger.kernel.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-usb@vger.kernel.org,
- linux-phy@lists.infradead.org, Yixun Lan <dlan@gentoo.org>,
- Longbin Li <looong.bin@gmail.com>
-References: <20260929084739.467082-1-inochiama@gmail.com>
-From: Damien Le Moal <dlemoal@kernel.org>
-Content-Language: en-US
-Organization: Western Digital Research
-In-Reply-To: <20260929084739.467082-1-inochiama@gmail.com>
+In-Reply-To: <arqnn8s5yFmZzQvG@venus>
+X-Zoho-Virus-Status: 1
+X-Zoho-AV-Stamp: zmail-av-0.7.7.1.5.4/290.556.6
+X-ZohoMailClient: External
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260929_074431_248538_35DFE874 
+X-CRM114-Status: GOOD (  45.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,45 +81,194 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4245368374468915245=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2026/09/29 10:47, Inochi Amaoto wrote:
-> Currently, the phy subsystem uses ENOSYS for dummy blob functions,
-> it does not reflect the function state correctly. As kernel already
 
-s/function state/hardware capability ?
+--===============4245368374468915245==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="cc3vyrofs6pfoimn"
+Content-Disposition: inline
 
-s/As kernel/As the kernel
 
-> has EOPNOTSUPP for disabled blob function, replace ENOSYS with
+--cc3vyrofs6pfoimn
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH] phy: rockchip: inno-usb2: ensure PHY is running when
+ clock is requested
+MIME-Version: 1.0
 
-What is "blob function" ? Are you talking about all the phy_xxx() functions?
+Hello Mani,
 
-> EOPNOTSUPP for a clear return value. Also adapt the return value
-> changed in the following affect file:
+On Mon, Sep 28, 2026 at 08:00:24PM +0200, Sebastian Reichel wrote:
+> On Sat, Sep 26, 2026 at 04:50:07AM +0200, Manivannan Sadhasivam wrote:
+> > On Tue, Sep 08, 2026 at 06:07:42PM +0200, Sebastian Reichel wrote:
+> > > On RK3588 the OHCI controller registers can only be accessed when the
+> > > PHY's 480MHz clock is running. After system suspend the controller is
+> > > resumed before the PHY.
+> >=20
+> > This statement is slightly confusing. There is no PM ops in this
+> > PHY driver.
+>=20
+> I will take a closer look how it is powered off during suspend.
+> Generally I expect it to loose state in any case as the related
+> power domain should be disabled.
 
-s/affect/affected
+The PHY is disabled/enabled via generic hcd_bus_suspend and
+hcd_bus_resume, which is called by usb_dev_suspend/usb_dev_resume
+(i.e. the child USB bus PM handles the PHY power), which is a child
+of the OHCI platform device.
 
-> - ata/libahci_platform.c
-> - drm/bridge/analogix/analogix_dp_core.c
-> - usb/dwc2/platform.c
-> - usb/dwc3/core.c
-> 
-> Signed-off-by: Inochi Amaoto <inochiama@gmail.com>
+The OHCI platform device itself just handles resets and clocks.
 
-The ata bits looks OK, but this still feels like a lot of churn for no
-functional change since the error is an internal one that is not exposed to the
-user, as far as I can tell. The code in many places also uses -ENODEV, so the
-error returned does not seem to be consistent anyway.
+It works in the normal driver probe case, since there are no
+controller registers accessed before the USB bus itself is started.
 
--- 
-Damien Le Moal
-Western Digital Research
+> > > The controller requests the clock, which opens
+> > > the gate in the PHY's clock prepare function. But with the PHY suspen=
+ded
+> > > this just results in a dead clock being routed. The OHCI driver will
+> > > then continue to access its registers resulting in a board hang.
+> > >=20
+> > > Fix this by resuming the suspended PHY in the clock's prepare functio=
+n,
+> > > so that the clock is really prepared once the function returns.
+> > >=20
+> > > Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+> > > ---
+> > > This was noticed on RK3588 EVB1 when resuming from system suspend. Th=
+is
+> > > is technically a fix, but its unclear when the bug was introduced and
+> > > system suspend is broken on RK3588 for quite a while and not just due
+> > > to this problem. So I think this fix can be merged the normal way via
+> > > linux-next.
+> > > ---
+> > >  drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 37 +++++++++++++++++=
+++++++++++
+> > >  1 file changed, 37 insertions(+)
+> > >=20
+> > > diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/=
+phy/rockchip/phy-rockchip-inno-usb2.c
+> > > index 7d8a533f24ae..07d400967def 100644
+> > > --- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+> > > +++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+> > > @@ -332,6 +332,39 @@ rockchip_usb2phy_clk480m_clkout_ctl(struct clk_h=
+w *hw, struct regmap **base,
+> > >  	}
+> > >  }
+> > > =20
+> > > +static int rockchip_usb2phy_clk480m_leave_suspend(struct clk_hw *hw)
+> > > +{
+> > > +	struct rockchip_usb2phy *rphy =3D container_of(hw, struct rockchip_=
+usb2phy, clk480m_hw);
+> > > +	bool relock =3D false;
+> > > +	int ret, i;
+> > > +
+> > > +	/* Limit to single port; it's unclear how multi-port should be hand=
+led */
+> > > +	if (rphy->phy_cfg->num_ports > 1)
+> > > +		return 0;
+> > > +
+> > > +	for (i =3D 0; i < rphy->phy_cfg->num_ports; i++) {
+> > > +		struct rockchip_usb2phy_port *rport =3D &rphy->ports[i];
+> > > +		const struct rockchip_usb2phy_port_cfg *port_cfg =3D rport->port_c=
+fg;
+> > > +
+> > > +		if (!rport->phy || !port_cfg || !port_cfg->phy_sus.enable)
+> > > +			continue;
+> > > +		if (property_enabled(rphy->grf, &port_cfg->phy_sus)) {
+> > > +			property_enable(rphy->grf, &port_cfg->phy_sus,
+> > > +					false);
+> > > +			relock =3D true;
+> > > +		}
+> > > +	}
+> > > +
+> > > +	if (relock) {
+> > > +		ret =3D rockchip_usb2phy_reset(rphy);
+> > > +		if (ret)
+> > > +			return ret;
+> > > +		usleep_range(1500, 2000);
+> > > +	}
+> > > +
+> >=20
+> > This looks like a duplication of rockchip_usb2phy_power_on(). So I'm as=
+suming
+> > that phy_power_on() is not called by the OHCI driver before accessing t=
+he
+> > registers. So why don't you fix that instead?
+>=20
+> I can look into it. My way of thinking was, that the clock should be
+> running independently of that when the clock has been requested via
+> common clock framework.
+
+The exact call trace is:
+
+ohci_platform_resume
+    -> ohci_platform_resume_common
+        -> deassert resets
+        -> ohci_platform_power_on -> enable clocks required by controller
+        -> ohci_resume
+            -> ohci_readl(ohci, &ohci->regs->control); // boom
+            -> ...
+        -> ...
+    -> root hub being resumed will resume the PHY
+
+The ohci_readl results in the mentioned crash, since the clock is
+not enabled. The read is used to figure out if the controller is
+already running. There is no bus operation, so the PHY is
+technically not needed. Of course the controller's clocks have to
+be enabled, though. It's just on RK3588 that this means the PHY
+must be enabled.
+
+I also checked Rockchip's vendor kernel for their solution: It
+solved the problem by using device_link_add() from EHCI to OHCI
+based on the RK3588 compatible, so that OHCI is always resumed after
+EHCI. This fixes the problem, since both share the same PHY.
+
+I think handling this in rockchip_usb2phy_clk480m_prepare() is the
+cleanest option as the disabled clock is the real issue as far as
+I can tell. I will look into improving the patch to re-use
+rockchip_usb2phy_power_on and improve the commit message.
+
+Greetings,
+
+-- Sebastian
+
+--cc3vyrofs6pfoimn
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmq7zrgACgkQ2O7X88g7
++prAxQ//UtVryFe3OI5zppL3hdhln6C9+oXtOoavPPdK1xl5CXhNLG5XxFgRPcpr
+yT6S/gP9ilfRQ6B+8PsWyF6FcJLDwLjLC/pqjqWNCLCXv4uD+96S7yfDqqqTFpOQ
+cCY74QP0S4eZxeMC6oGxMF309Bv66loWkovrQL1psnznigaNESWCvTRobNPTZQ0N
+ZQ7rKO5Pj6Ze7OwmBMh7W+WO4RBx8rPzkJxeYnX4tWvl2pmkKN4gnG+R1DE+lHiL
+rLRciOz3VAwGQOermfbrS/0/1VEQhfLUgUYhUdnOiNAxJ84WQZZ/1WDc8Ls4x0Jw
+kMcbVBRVxxjqj5pmekFThoJpH7njjOFcYGiGMV8D+lr4hGlmDzb+5E2qm5SqYFyK
+Y9PFVX/wGmgqaUiD/MvzU8kFlHuyzMYC2sf2Uodzz7KmCTaTcT1zKRcyQvx6ByVs
+HCGZ87wxIp0wmOJmRYKA+KBRnNDuTwXzu0pAN8ro4Zn7idMCr6i4wowQWNJ8dIlr
+r9LuVxpk/dpEPmgJvgJK+zzmCM7mavsRmXOn4Ck0LC3WWUHYiik/jaOgjWNswZln
+M+ST0PUqfAdX2WgGhauS/B9fcRXupZbNIKdEeJfXmgRJLnNzij6yZZ1jB7pJ2fph
+zMRjPLaRbgrxWViyjInmHmIm5zkBYwro/htN9IuKKHV1X9HDAns=
+=nOuG
+-----END PGP SIGNATURE-----
+
+--cc3vyrofs6pfoimn--
+
+
+--===============4245368374468915245==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============4245368374468915245==--
+
