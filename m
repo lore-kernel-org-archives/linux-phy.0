@@ -4,139 +4,155 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDF20CA5FC7
-	for <linux-phy@archiver.kernel.org>; Wed, 30 Sep 2026 14:08:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9567CA5FC7
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Sep 2026 14:12:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bSUe2XtdQo3rDrX/aUJ6/hh/+c88Q8YcDLbziJsxb04=; b=ozLC/QKObvPRH/
-	fGlcnqkCHalkfiGDSkCI9JLJQ/E1EmgJIpwsvqZttclFWE2T/tgb7PbdiLECVvX5WfiiIahyyU0lL
-	a++pcLQRsqASiMWOuOLKkj2ZE6C5DI8GhvZGrVh67ml5Qbvw+uHsGOClQi86z0ekRHzPSuWHifVpM
-	ZL0D7I9vrQhoQAVSfhadMEvS0DShNXGzNRVaEjJY9HLoLZDhI9YWv6FHvjobEQpDbH/4+s/T3lgLz
-	XF5X5Udj+d8x+7YDHoaY1RNeHIAqRYVFtxacg+nsCuSvyefeMKiJtjezigv/SJ2dgLMT+37aYhVUG
-	+BlTXKPpF80FiMmb1g+g==;
+	List-Owner; bh=KQDilu2fW0jRKvcizatxwL8UilWptnnINmKyp2m81k4=; b=snkzQnPdKaLg4Y
+	rJ8cDQR7ARck/5X7lR8oFrYbtSvW0c7ZDZJ+YOgeFeuPomXpauoPE2QTGVGSpcHLrmOX6/14CMvaW
+	VgZJaOTA8ncCy7idHUtij5bUWPOBBrccn+EVo3PMUXFqxxJ9riZAoFgQqJCx8At+bDtdq62EQF0RR
+	wf6PSf4zvWir3FaPgWFJWo7YVBdyV0CevE12Ex/clrPpRCXOD2ted0L3wih56QfdzDdKJvA2Sla5J
+	4x2RE2iyipirps+O0mgZ8mWfwRv8RqdoB1YVWE1D/3ZKAjmW2vmJp5ZRryxBufooXEoyLM4T/YsiE
+	ODXNxPIBTJJyzYATjZkg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBuye-00000006EBm-3kHS;
-	Wed, 30 Sep 2026 14:08:09 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1xBv31-00000006G8b-1a71;
+	Wed, 30 Sep 2026 14:12:39 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBuya-00000006EAm-3GqD
+	id 1xBv2r-00000006G5M-3sAK
+	for linux-phy@bombadil.infradead.org;
+	Wed, 30 Sep 2026 14:12:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=GmTEgmvcedeaRztRcqF8ocCncIDFUGQAfG0sHwoFEVA=; b=cXfNnIBpDouKidxSUv58KGKvg2
+	9la9fATZ4PYhLYfhQ7RsRgnsFvNf1vQkvUvgC56wmGT1EBAGQGj35ksYH8eGuDZqDxa4BvJkxj79A
+	2udKOBimA8YqGhiAwITdhA3E+3lSKAHQZT+HgmM4go4nqnNz0SDejgC6QgngT3v7TDq6zU8w1oSwo
+	jQ+bu43CLds/+c1mcHGXiRfTAOrsUEiGA1xBjL+UtJWQejSgq4oCiJDpZaRdBE1bw2EJjlur2zyuH
+	s7US0Qs10VYtJPKZB1nk4Fp4nPgmt7qGNmQQ7cyddu5ypZn+kKJQkkh2qrftcJTuCY3qYGngRBQ7B
+	e6I1Bpeg==;
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
+	id 1xBv2o-00000003u3s-47VO
 	for linux-phy@lists.infradead.org;
-	Wed, 30 Sep 2026 14:08:06 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68UE03IX3942313
-	for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 14:08:03 GMT
+	Wed, 30 Sep 2026 14:12:28 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68UDxqhW3519842
+	for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 14:12:25 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Z5/lWtloNnIfNbXA6QSNEOy67CLHeyzL4Sp3AyQejEA=; b=AFZgrenaxIKYQYHP
-	eIAPyxWdOBavkYQMZ3yZJunIvi/wwGAea1kGZQOUwdyutlJ1/iLazEtabuUIv0on
-	25hSZhX4tCnskI1yUv/RqFrqbYDlVfMK95BiXxjdYdkhj1oPIjBM7+AuUmZ1yRm9
-	JG4+3rgzUxW8KlQGlBRdfNAkVMGoJWSwfExmX9z6a3JDnmWVg61MBVfQghnC+pma
-	jvCEWIOZu1GZFiOJiIRlLJ947UrTGZ5dCwUJHPS3p76Lmua8K3QrDbPoXkaHOmZW
-	doezSkwPKo/Mjk0LGzVuMMyawvTR16Y2D4/AU5vSmBUVNYqAyw26VnMCz/3srj7e
-	ZMygZw==
-Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h10bk90us-1
+	GmTEgmvcedeaRztRcqF8ocCncIDFUGQAfG0sHwoFEVA=; b=LvstrZ3FmNqKMCU+
+	YOINyttxrcLdo6zYFXhCPETIYunbXuJyuTqRGDLu9Otuqgap/pqrgWd6vcZ2SZL3
+	mjLol0XuWqD6dWusIvRgwWSAyxSWT/C+N+OdgjeV1jxx55YwDlHQEaVtafWpvXSd
+	LB7tyGOd3O8MAseyX0xzFMsFgChrnqw70H1sDxyn2R9WkoTcUBatDC+U9nt7iYMD
+	LEpIQCVeJFvzlH16r7yEEG/MEM5fOve+umiEgAmbMOhnOhR9mRT6jZ/eDpxzyYvR
+	VSIc/Tc1+c9t99ivi6EW7dBsOTZG47ZhxGgG+ctpWAUNMlYReI7vHi3FzF06a5JL
+	293foQ==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h0x27hshq-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 14:08:03 +0000 (GMT)
-Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-39aee9b4cf2so8910032a91.0
-        for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 07:08:03 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 14:12:24 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2e2ebeaa0a4so3664745ad.1
+        for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 07:12:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1790777283; x=1791382083; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1790777544; x=1791382344; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:in-reply-to:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=Z5/lWtloNnIfNbXA6QSNEOy67CLHeyzL4Sp3AyQejEA=;
-        b=e4GXM6CDOqi8/G2IXJdC7IrdnXYZWq5Qi2Nq3DWeqvzxxIEJ3wi935P3FouGQyDcfi
-         E2gAq53olx2UbjmBuer7PSZi4Ssv0os9iPEiYmWSBxUAAFe/V1pmScFZWpFC8CvXTzNR
-         q+W1wjl9DSE+PJvVTGiBmvsHqnWKiqW1dyHMlOf4SDVvwiUPT7nUAFxomL9N235W78EI
-         lDuNhE8EUKTk0qw1qeL3Z36s/SODal9cQaTgoOUIjZBWt6yk3n1izqeZktP31+xhpQNj
-         jeGlB2StAlfjflGPy5DToYVFQHBeco0JFMf3oTaWNFFTKDFO6A0sJA/gd2tyBuq/8YQ/
-         X6Aw==
+        bh=GmTEgmvcedeaRztRcqF8ocCncIDFUGQAfG0sHwoFEVA=;
+        b=aoj+/lYz8/mK/8da4GHfoIuVYXiYxvRjnWSEV3sYebPj1YG5pTkB5mJBiDNuWsQG0K
+         Kzk0leQz6WS7F04JHu/VYwipeJjt8y4ydQt/Y78Xm7OmYMP9QTV12luOrcX+PvdsceL7
+         LkYAzEwz/MJX9hm7QwVvYvsIYZ39cWBzLeizxtmnf/u0QzpuCKSCzwO2WRidwYp+/FfM
+         hNU/YqBj63YtgHPi5ZTDPNwYEaTLt/xH3xn8eKzO8Xgw7CYQJsK/JyEBf8zuN1gTMuiS
+         LeUg44607lK+FfLzoaQv6LLVzmWGq38v4Wre9nb8a/cPrfnCT8AkLdiXDyMBxxi28vbe
+         Itqw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1790777283; x=1791382083;
+        d=1e100.net; s=20260707; t=1790777544; x=1791382344;
         h=content-transfer-encoding:content-type:in-reply-to:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=Z5/lWtloNnIfNbXA6QSNEOy67CLHeyzL4Sp3AyQejEA=;
-        b=Hdun6QKR2kPBUiQJKOAyjOTFZRlT5A7H2IJcI9BvGDwQ8V3u6swtDW3sZaMcg8Wi9d
-         0W1d1K8xfTniTWPb4sB7NNfGdi7CZ1lSVPT+3K6+i1NEgrltcnPXkyGRpsaA+CrbpTb9
-         Ak8d/fpv+PyPfZ5Y4a176eXrunLFfi+xvRrm/bM/V9lUC/iMojpg0uBujZJfT+eHCT2q
-         hFjeTL5MPHTla5HWATFkQwyYatWpB6lG75mlclF76sI2M0hMqMGtiMxk+fTf40AU0C/g
-         PdF3ZGHTXHsi4rBTTtkuFQngR+olrFuQN5/OayU8Xor4zVBOEm0F8a3bY+j2OxVdo1PW
-         lt6g==
-X-Forwarded-Encrypted: i=1; AKwUvBxY8z5ERVW44cSzHdGF997Txu51Fsv5E8DdJ70gV1kidwop4I/wthopkUHR543exWXvz4Rl9SHgPBA=@lists.infradead.org
-X-Gm-Message-State: AFq9FYIn0IQeWdFrKYV6vg2a3NIzPSXxIIBO0Q+oikEQB0yQDMNxmk/3
-	1Sc7Wg126GfxiBbDRZE5jAMIi9h8Cc2aX372pqPaz1ghgFk7k2i+0wPyKzo4/toxVj6U8SLsOGt
-	5BDuRaXvEOD4EGseWKoWhzYtKVyJGb54zDjTD6ws6ttRQxtuR5Z6dCN7WtizN+SOMbZ+0
-X-Gm-Gg: AYBFou0D+OYb52xbCbWDIQPIL4Pp/WZ1UGtclUfHM8XYenIm4WMUCJ4LALbrYpI9CdC
-	8WsMhO5ZsZg+PGqgUfxF2/hy47YwQuoMq8WAeXAGn42X5LYPiKVWduApMDojSJnsNj0FMafQEgn
-	5I2h+1w+8UE3ww87FAbwatLJTcuhHqe+cFMnKAYXQis4Zc6RBmPgfCeG6tXc5XBacQjERwXwqEv
-	Nir9hicZ7bup+PX3kjJXqMogxOlkeRr2BMBkNvrMGrdQDQkTiuk6zdxHWaV+hcN2aT3t9YyHsuR
-	TdsZ08FQtCz6tpFnTm2ZS+sQCaIq1C/99Cmh/WI09QhJrrfiKUSLfzg54iKjL+Lbj2xqmKlMSqQ
-	NWINd2EPp80DYu4xpaQJ4A+Mub8dg7OjkZGS0xV/w+rJYl9JrtdNpfD8LFQbK6vU=
-X-Received: by 2002:a17:90a:2cc5:b0:3a4:e635:a8b9 with SMTP id 98e67ed59e1d1-3a4e636a641mr365457a91.32.1790777282552;
-        Wed, 30 Sep 2026 07:08:02 -0700 (PDT)
-X-Received: by 2002:a17:90a:2cc5:b0:3a4:e635:a8b9 with SMTP id 98e67ed59e1d1-3a4e636a641mr365426a91.32.1790777281916;
-        Wed, 30 Sep 2026 07:08:01 -0700 (PDT)
+        bh=GmTEgmvcedeaRztRcqF8ocCncIDFUGQAfG0sHwoFEVA=;
+        b=n2YI4UIVPjgD92tyrJ1o67gKudxbuFAiJnSLF7Lo9dVNIK8jA2m5H43QS0vsxLAe8P
+         629hNxqaAHBb4yLpTo26uQXJ53zXRn2W+wjJLTJcJ/CJwDuU+cV6EolH186zKBQRP287
+         xnlEuZbda28IYFYb7kCjRcikwOTywstgMWoY2QYcBypM3GlcRV2md+gZJk4EsVbeSY4p
+         i8vL9yWibdnxTKUGkK0yxg/6hplMYCuQWDqxnkqDh4Gm0sM99ZifD4p4rEMmDk3cMWWg
+         vPPEXkS3NlXoeCTyBy7/EKTVbMKy2egzphVDCIJqTwFpw2Ic6nvSdxod36YcSf53HM87
+         8vOg==
+X-Forwarded-Encrypted: i=1; AKwUvBwp6G0lsU0X3pchdBhHVkMRZIBXYFD8TnHE9YOAMVKkDdtquQlg9S8A8HQUWT0ux6FVYfzd6L+jwxQ=@lists.infradead.org
+X-Gm-Message-State: AFq9FYKlkH/BgRblq/QKTODQgZ5cxU6WmiqveBQv1aLVj5QGY3EzLZT0
+	yad1cI7ZU4Y4DV+aFGh8e2H73OeItim09e6+sH7quZvctZ5jVewGdw9cvQCwKftcYBTe/aRKu8k
+	oLADDRJycqgidjgzfDokXoJ3b700uwc+TRF0iTRJDEJKdHNjD6/zUeYzaP0gVQPYnjl+V
+X-Gm-Gg: AYBFou3uUR1V1GXw636Ci8YOB3+IAdlVYwQig6boMwct9XMEN71Xzf9HfkhbAasMuHr
+	/1dvHDxYz3WveaIC5RD2t7C+1lG8NxgnO+HG02r8scAm+U27BKnzW294nrJDyJooYW4CxuiAqwM
+	LTW75bc41vyvFveL0apwJiYBQSQ3FY4sdFa9UBZ0G0UMuwm1hzllY840nCogppzkzoNIBMBu93C
+	tfhvJwE3EzT/V53s16+rxgxkSrEUYB76OZkLio9wjM8P9V3BZdH2hkomZDMGsPmgt/lKbxBopZ5
+	FSDd2Wbhp8afS98b5sddsP9dx9p4ih8fHvMHqmIc3omJ2V9DRUGvwCAcUoY1dclQMVnlLBPRPg7
+	ey4SA0nLOKXkHMK/0Gst32cWTRLX/DukuQH7vDupJESua4fmn3kBfpJVsavVP7vk=
+X-Received: by 2002:a17:902:f64f:b0:2df:8c28:886e with SMTP id d9443c01a7336-2e2e49172bcmr13489575ad.4.1790777543824;
+        Wed, 30 Sep 2026 07:12:23 -0700 (PDT)
+X-Received: by 2002:a17:902:f64f:b0:2df:8c28:886e with SMTP id d9443c01a7336-2e2e49172bcmr13489355ad.4.1790777543304;
+        Wed, 30 Sep 2026 07:12:23 -0700 (PDT)
 Received: from [192.168.1.6] ([117.143.161.217])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3a4e5d9adeasm628557a91.0.2026.09.30.07.07.58
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2e2e5bd5c67sm8402635ad.48.2026.09.30.07.12.20
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 30 Sep 2026 07:08:01 -0700 (PDT)
-Message-ID: <a77004e6-c375-46fb-ba32-bc6f34bba2ab@oss.qualcomm.com>
-Date: Wed, 30 Sep 2026 22:07:53 +0800
+        Wed, 30 Sep 2026 07:12:22 -0700 (PDT)
+Message-ID: <5286c573-1331-4bf2-a97f-e06fd004f6c4@oss.qualcomm.com>
+Date: Wed, 30 Sep 2026 22:12:19 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v17 07/11] media: qcom: camss: vfe: Add support for VFE
- Gen4
+Subject: Re: [PATCH v17 08/11] media: qcom: camss: tpg: Add support for v2.4.0
+ TPG
 To: sashiko-reviews@lists.linux.dev
-Cc: conor+dt@kernel.org, vkoul@kernel.org, devicetree@vger.kernel.org,
-        olteanv@gmail.com, neil.armstrong@linaro.org,
-        linux-phy@lists.infradead.org, robh@kernel.org, media-ci@linuxtv.org
+Cc: media-ci@linuxtv.org, neil.armstrong@linaro.org,
+        devicetree@vger.kernel.org, conor+dt@kernel.org,
+        linux-phy@lists.infradead.org, olteanv@gmail.com, robh@kernel.org,
+        vkoul@kernel.org
 References: <20260928-kaanapali-camss-v17-0-dcf3fd37f76c@oss.qualcomm.com>
- <20260928-kaanapali-camss-v17-7-dcf3fd37f76c@oss.qualcomm.com>
- <20260929061755.8BA321F000FF@smtp.kernel.org>
+ <20260928-kaanapali-camss-v17-8-dcf3fd37f76c@oss.qualcomm.com>
+ <20260929061248.E035C1F000FF@smtp.kernel.org>
 Content-Language: en-US
 From: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
-In-Reply-To: <20260929061755.8BA321F000FF@smtp.kernel.org>
-X-Proofpoint-GUID: bKwqWnWgwshaYD5nvJyMRoQNn6vsVHf-
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTMwMDA1NiBTYWx0ZWRfX4wS+zdzYI0fj
- xqw0pU7ZevNgax+Cfy6OOMM+oy1ydTPSABm4GpytMJHYl1ChkKfBBTluGPfN5lH+LgIaiGZpWex
- mZC35vJGJt+brpvkkAzUKIc+3a0AMdJ4oLVsC5tlD4QXLhEoFJYtduuasTAk8Arpy+FC4qA6lzv
- nffmPsEhVPkJEPnKtYHj2wxJtFmwkajokJ58QZVk6EV158wfwQvHwccJykxxWUKrpRl1sff/k3C
- UWQWQFZhqBRJRmf34+Kvrijh4A3I26BFLSC2e2E8Wko8gnRuqA22zgCb8BME/23qtPYVXXKgy3E
- zUefdW9UT9TWUCFbd1i9IrP/wDIUhtfOwftUN8QVRegugt1WyWc8s2e1QOndTIFH8q3JKm0Wpgj
- xW1zak0waq/GzDpTJw9Xbf8ijEKzDz42uvUxvhzl7DDJ0zEFZ98PiNcsUl7SHmDRXsXCDLLw3Df
- p9c+vUcw22lMIc98oYg==
-X-Authority-Analysis: v=2.4 cv=MZn5KJ/f c=1 sm=1 tr=0 ts=6abd17c3 cx=c_pps
- a=0uOsjrqzRL749jD1oC5vDA==:117 a=K/RrOd38U9TixX+j9hIN8g==:17
+In-Reply-To: <20260929061248.E035C1F000FF@smtp.kernel.org>
+X-Proofpoint-Spam-Info: AW1haW4tMjYwOTMwMDA1NiBTYWx0ZWRfX/LrNN8p2sXUk
+ 7EABkbtVSV/aehtdUvVCyWfBZhG3xPGrgZI99fKVbhwVFw0vuGpIbRVm/H/gpx+LZghuL2Pi+4N
+ QSE6+M5eEogqLXRg8T+71fxNmseFJ9A=
+X-Proofpoint-GUID: -2LCkj7aUZeGhDwzqHZaXgDxlSRqjMU5
+X-Authority-Analysis: v=2.4 cv=W9GtxhWk c=1 sm=1 tr=0 ts=6abd18c8 cx=c_pps
+ a=JL+w9abYAAE89/QcEU+0QA==:117 a=K/RrOd38U9TixX+j9hIN8g==:17
  a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=gowsoOTTUOVcmtlkKump:22
- a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=aJ_sJalLn2DonVaVJ1AA:9 a=QEXdDO2ut3YA:10
- a=mQ_c8vxmzFEMiUWkPHU9:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTMwMDA1NiBTYWx0ZWRfX0V1QNbtq+iGS
- syhmoufsGefxODBoxpxb8E606MLOpWrMR7uMUlnigEnn/15AqqTMVp1UcbjTh4asfJsgzN/VUto
- ytQkLtP6/fuvn+7LgPmX2WtQmNgQKKI=
-X-Proofpoint-ORIG-GUID: bKwqWnWgwshaYD5nvJyMRoQNn6vsVHf-
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=N7nUT5zUQ4Ea-L6S4pIA:9 a=QEXdDO2ut3YA:10
+ a=324X-CrmTo6CU4MGRt3R:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTMwMDA1NiBTYWx0ZWRfXyTFxz9Ut5z49
+ bnj+sq+1cHamXLBIkRoeIc5Mt6bWeLGxClfIXFDcsVzeHSJCKey5KwJpRCFSn4czE6mgpwC4lbd
+ IWh6hAb2i+VIZbO7PvWK+hSGJqC7rXWauqpKx/eoBH7WZ7QDtwYenw8kd40lgV6BIK0pe/OfGdW
+ AamLb9RKWBImbD1750qkCPFUTL/IGWqlRWn6BZOc19g8TCx1PqwORg4O8xoONNUYOTzeNgzXlGg
+ 3wXKIZliEjLYdaOHS+0B5jPjpmDITKXG3BPWmIVXS7QW5MfqDBRXpBw2fJtTx5edx8uGen7pz45
+ WZ1K2dfQ8vziBkRIr4GNI7o2akQIizvvEfzIK8BUi1arfC7DEqPjUoC/wn42B3DC3n40mDGoloY
+ X0d50IUBdDOD1G7RC/4nSc29CiheFMnJNUAdT5dGM5ltT0XRrgmia+aWynkZd0Uoh1NCyLRf9hS
+ s1OMkqA0fJuWRqQcD9Q==
+X-Proofpoint-ORIG-GUID: -2LCkj7aUZeGhDwzqHZaXgDxlSRqjMU5
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-09-30_03,2026-09-21_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 lowpriorityscore=0 spamscore=0 suspectscore=0
- priorityscore=1501 bulkscore=0 clxscore=1015 impostorscore=0 adultscore=0
- phishscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ adultscore=0 malwarescore=0 clxscore=1015 phishscore=0 spamscore=0
+ priorityscore=1501 bulkscore=0 impostorscore=0 suspectscore=0
+ lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2609040000
  definitions=main-2609300056
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260930_070805_675162_BEEE059E 
-X-CRM114-Status: GOOD (  26.65  )
+X-CRM114-CacheID: sfid-20260930_151227_260376_615DE453 
+X-CRM114-Status: GOOD (  26.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -153,121 +169,75 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 9/29/2026 2:17 PM, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 2 potential issue(s) to consider:
-> - [High] camss: hardware constraint violation due to unconditional AUP_UPDATE loop in CSID
-> - [High] camss: subsystem API violation where IFE Lite's 4th RDI line is incorrectly configured as PIX
+On 9/29/2026 2:12 PM, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 1 potential issue(s) to consider:
+> - [Medium] media: camss: uninitialized tpg->hw_version used in tpg_reset()
 > --
 > 
-> commit def99c6cf972d2305c4c27701233f42e411f7857
+> commit e2a0aed20f3751127d25b2596032eac51d537c58
 > Author: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
 > 
-> media: qcom: camss: vfe: Add support for VFE Gen4
+> media: qcom: camss: tpg: Add support for v2.4.0 TPG
 > 
-> This commit adds support for the VFE Gen4 (TFE) found on the Kaanapali SoC.
-> It configures the hardware blocks and clock requirements, while deferring
-> REG_UPDATE and AUP_UPDATE until after CSID configuration completes.
+> This commit adds support for the TPG hardware version 2.4.0 found on
+> Kaanapali. It updates the configuration and reset logic to use the new
+> TPG_CTRL_CMD register instead of TPG_CTRL.
 > 
->> diff --git a/drivers/media/platform/qcom/camss/camss-vfe.c b/drivers/media/platform/qcom/camss/camss-vfe.c
->> --- a/drivers/media/platform/qcom/camss/camss-vfe.c
->> +++ b/drivers/media/platform/qcom/camss/camss-vfe.c
-> 
-> [ ... ]
-> 
->> @@ -552,7 +554,9 @@ int vfe_enable_output_v2(struct vfe_line *line)
->>   		output->gen2.active_num++;
->>   		ops->vfe_wm_update(vfe, output->wm_idx[0],
->>   				   output->buf[i]->addr[0], line);
->> -		ops->reg_update(vfe, line->id);
->> +
->> +		if (!vfe->res->reg_update_after_csid_config)
->> +			ops->reg_update(vfe, line->id);
->>   	}
->>   
->>   	spin_unlock_irqrestore(&vfe->output_lock, flags);
-> 
-> [Severity: High]
-> The commit message states: "the number of AUP_UPDATE requests must match the
-> number of buffers queued to the write master while it is being enabled."
-> 
-> In vfe_enable_output_v2(), the VFE loop shown above queues pending buffers
-> dynamically up to CAMSS_INIT_BUF_COUNT, but breaks early if userspace queued
-> fewer buffers. By setting reg_update_after_csid_config to true for Kaanapali,
-> this defers the update to CSID.
-> 
-> However, the corresponding CSID code at csid_configure_stream() in
-> camss-csid-gen4.c blindly issues AUP_UPDATEs matching the maximum buffer
-> count:
-> 
-> for (k = 0; k < CAMSS_INIT_BUF_COUNT; k++)
->      __csid_aup_update(csid, i);
-> 
-> If userspace queues fewer buffers before starting the stream, does this cause
-> a mismatch between the generated AUP_UPDATEs and the actually queued buffers,
-> violating the hardware constraint?
-> 
-No. The hardware accept this operation and no issue is found in tests.
-
->> diff --git a/drivers/media/platform/qcom/camss/camss.c b/drivers/media/platform/qcom/camss/camss.c
->> --- a/drivers/media/platform/qcom/camss/camss.c
->> +++ b/drivers/media/platform/qcom/camss/camss.c
+>> diff --git a/drivers/media/platform/qcom/camss/camss-tpg-gen1.c b/drivers/media/platform/qcom/camss/camss-tpg-gen1.c
+>> index d29de5f93c18e..770a9e5d5ba5f 100644
+>> --- a/drivers/media/platform/qcom/camss/camss-tpg-gen1.c
+>> +++ b/drivers/media/platform/qcom/camss/camss-tpg-gen1.c
 > 
 > [ ... ]
 > 
->> @@ -158,6 +158,157 @@ static const struct camss_subdev_resources csid_res_kaanapali[] = {
+>> @@ -164,18 +167,30 @@ static int tpg_stream_on(struct tpg_device *tpg)
 > 
 > [ ... ]
 > 
->> +	/* VFE3 - IFE Lite */
->> +	{
->> +		.clock = { "gcc_axi_hf", "cpas_ahb", "cpas_fast_ahb",
->> +			   "vfe_lite_ahb", "vfe_lite",
->> +			   "cpas_vfe_lite", "camnoc_rt_axi",
->> +			   "camnoc_nrt_axi", "qdss_debug_xo" },
->> +		.clock_rate = { { 0 },
->> +				{ 0 },
->> +				{ 0 },
->> +				{ 0 },
->> +				{ 266666667, 400000000, 480000000 },
->> +				{ 0 },
->> +				{ 200000000, 300000000, 400000000, 480000000 },
->> +				{ 0 },
->> +				{ 0 } },
->> +		.reg = { "vfe_lite0" },
->> +		.interrupt = { "vfe_lite0" },
->> +		.vfe = {
->> +			.line_num = 4,
->> +			.is_lite = true,
+>>   static int tpg_reset(struct tpg_device *tpg)
+>>   {
+>> -	writel(0, tpg->base + TPG_CTRL);
+>> -	writel(1, tpg->base + TPG_CLEAR);
+>> +	/*
+>> +	 * On TPG older than v2.4.0 test-enable lives in TPG_CTRL, so clear it
+>> +	 * first; v2.4.0+ drives both test-enable and reset through TPG_CTRL_CMD.
+>> +	 */
+>> +	if (tpg->hw_version < TPG_HW_VER_2_4_0)
+>> +		writel(0, tpg->base + TPG_CTRL);
 > 
-> [Severity: High]
-> The commit message explicitly states: "Support is currently limited to three
-> output lines, matching the constraints of the CAMSS framework."
+> [Severity: Medium]
+> Will this execute the legacy reset logic on v2.4.0+ hardware during the
+> first power-on sequence?
 > 
-> But line_num is initialized to 4 for the IFE Lite blocks.
+> When the driver powers up the device, tpg_set_power() calls the reset
+> function before calling hw_version():
 > 
-> Since the CAMSS framework hardcodes VFE_LINE_PIX to index 3, does configuring
-> 4 lines cause the 4th line (RDI3 with id 3) to be incorrectly subjected to
-> PIX-specific logic? For example, in vfe_try_format(), this would force a raw
-> RDI dump stream to use PIX format tables and validation:
-> 
-> if (line->id == VFE_LINE_PIX) {
->      struct v4l2_rect *rect;
->      rect = __vfe_get_crop(line, sd_state, which);
->      fmt->width = rect->width;
->      fmt->height = rect->height;
+> drivers/media/platform/qcom/camss/camss-tpg.c:tpg_set_power() {
+> 	...
+> 	tpg->res->hw_ops->reset(tpg);
+> 	tpg->res->hw_ops->hw_version(tpg);
+> 	...
 > }
 > 
-> Is this initialization to 4 lines unintentional given the 3-line limit
-> mentioned in the commit?
+> Because the tpg object is zero-initialized and tpg->hw_version is not
+> populated until after the reset function is called, tpg->hw_version
+> is strictly 0 during the first execution of tpg_reset().
+> 
+> Does this mean the condition here evaluates to true for all hardware
+> versions on the initial power-up, inadvertently causing an unintended
+> write to TPG_CTRL?
+> 
+>> +
+>> +	writel(TPG_CTRL_CMD_HW_RESET, tpg->base + TPG_CTRL_CMD);
+>>   
+>>   	return 0;
+>>   }
 > 
 
-It's acceptable to align with the commits. Actually this is a CAMSS 
-framework restriction which needs additional efforts. Will keep it the 
-same for TFE Full and TFE Lite in next revision.
+No. The version data is always valid no matter the reset is called or not.
 
 Best Regards,
 Hangxiang
-
 
 -- 
 linux-phy mailing list
