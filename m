@@ -4,57 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43D48CA5FB1
-	for <linux-phy@archiver.kernel.org>; Wed, 30 Sep 2026 08:29:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3AECFCA5FC1
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Sep 2026 08:30:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1mmhtkAYq8JNzLsawJLlmRF9k6v7QnxPZ/t//ceq4KI=; b=wETIS7TTv6aYou
-	HUTMH/n74pTnbRYkc8NQlXOQrU/nvTmhtev9zXnJkfWve6VC2CDfdvgRsryGycK/v4Kcla0BUzbsN
-	Y1fGT9OqUtGyjmAH9JymDZ9bWZ/tJBuXaiIqx0HzmZYRK+ZKt1pWlrcpO/au2zpkM7zi+6vdYOSue
-	mttcm6Cj3LsS4az6hUPCZEym3cRMaTQFCWj8Z6TIvgOVdMNcWRgHtepI3TCOXqzuCWr8RIb+2Xai7
-	p1/JHf9Dj1DTpiLP+l6B79yRlbyRX+aWOgxsldZf5HusD1U90v/9vOKuGMDQypDhsfgsUJspKGego
-	JP8bODyEccXxplrQyIhw==;
+	List-Owner; bh=RuiOASWOUkjU/5VF2Swyonhbsa1uc3mvSCdjbMNL4eM=; b=KB36pMoHFl7yhi
+	WQqkW6IEKYVMtbEmvoeLeVbMCG3afZSqwRdnbNkvDg3YrbYLL4QRFvbxpDLfQgg2pRe27hOIM2T/o
+	yAbqLhQIpPseFc6KXh54yyPTshYTMp/AfS/KHErmpSRJm4ZUpXVKErDrFbIxuoSJcRhd4LJV8npq2
+	Felq5tB+E3Rz5xdj3+AAAP9fdMaNsRMgNbQ3CF/Odw2s8BSly8oLDPHonm3tv9mOmry1992WEr+n2
+	jk85kdfz5Y1F0ktfo9e09wfFfaH+a1ussQgUoWpCJMymegrFIUA18jUYIhrrFslDB8Aho//28d3eX
+	5aAfnA5SsxR9adOoWHqQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBpgb-00000005QCP-3pnV;
-	Wed, 30 Sep 2026 08:29:09 +0000
-Received: from mgamail.intel.com ([192.198.163.14])
+	id 1xBpi2-00000005Qbj-0Bn4;
+	Wed, 30 Sep 2026 08:30:39 +0000
+Received: from mgamail.intel.com ([192.198.163.11])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBpgY-00000005Q9f-3tEN
+	id 1xBphx-00000005Qag-2to7
 	for linux-phy@lists.infradead.org;
-	Wed, 30 Sep 2026 08:29:08 +0000
+	Wed, 30 Sep 2026 08:30:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1790756947; x=1822292947;
+  t=1790757033; x=1822293033;
   h=date:from:to:cc:subject:message-id:references:
    mime-version:in-reply-to;
-  bh=Z25ssbYYgPIJRf3a6E0xksOuvmIiLp75bFgZ1UY4UR8=;
-  b=ZMwmfh66IttEywZlQmFnHZK0Ys+zg6Mk16bgGdJuKHbem3z+Sm9LrlNZ
-   07dQr6Oh73ob3PWTN0g2rBOk1Z5LRSl1z3IRLBGe78RDrJoHUskW8kxk8
-   bBgVTP3trqDXwCQPTey0n3pRV5RCY4mvs8sNi0HGuKLOdV/l+qLPf4TKC
-   3Gt953Vtyt2WuR5ilk91Ly6g1F9i7+1r23KcDfQIBOp9AApJ3iB2OtybD
-   IF5NyAU2/MSA1ltnuJl76FyHtHvtKl4j+zSyljYltcWdSQhugXgYmLClR
-   mN0Lnh5RATjdiFn+wsuDQhA2UZtuzCLPA0HBT3ViZmZ8HpvW26oBPAsvX
-   A==;
-X-CSE-ConnectionGUID: S6y5rrF3Q3+0RsuirOU+WQ==
-X-CSE-MsgGUID: qKYVlefCSBuixMj7Sa25Gg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11920"; a="91508792"
+  bh=Ydk1UzmYkCmyaMmUxBF1eUbedcHi9fidK7gv8ursg1Q=;
+  b=UM0QPOCx7i1cBHmoV/iWCNQ60H4Am2XyPneGAaSg1EV96GJ99qREVKcr
+   Rgfawg037wZywQerjVlKZJXkM4Nf9uc9/Zcg9JbccYR4dDlbAsaYyNEDH
+   vApdpylVE2MO9mPpEfozu9fD8UbcbRGGxOflkXiDe1TKgsGE8clXfbJEz
+   2JQnVTgSoqsCo+VksV5o3q+8F5GhbkgfdCwZ+TvZxCz8OTobSSQtnhNqy
+   j1T9eTiSCSEKK6QehuPjvB6eHUUhjotNUGtnuxDVNRLTwpreN1ScSqt4d
+   9xeP8JixW5HvRsqG5pTa0wl8gr7U8TT9wzpD/kNVk6rvTNDvBrUduroQ/
+   g==;
+X-CSE-ConnectionGUID: /EJ5jmFqTBqp4swpKq6ozQ==
+X-CSE-MsgGUID: ZgkVQ04kRpCQVssntMDzBQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11920"; a="102060237"
 X-IronPort-AV: E=Sophos;i="6.27,132,1787036400"; 
-   d="scan'208";a="91508792"
-Received: from orviesa001.jf.intel.com ([10.64.159.141])
-  by fmvoesa108.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 30 Sep 2026 01:29:06 -0700
-X-CSE-ConnectionGUID: xui/SqCMRcKIypiANYyu6A==
-X-CSE-MsgGUID: jN9DPEBDQL+3nuHkVYXM3w==
+   d="scan'208";a="102060237"
+Received: from fmviesa009.fm.intel.com ([10.60.135.149])
+  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 30 Sep 2026 01:30:33 -0700
+X-CSE-ConnectionGUID: 7Cdf1t9XTKiLIl7ly1EE1Q==
+X-CSE-MsgGUID: die/4IOeQrawIw+kc5WN2A==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.27,132,1787036400"; 
-   d="scan'208";a="313568986"
+   d="scan'208";a="272091278"
 Received: from spandruv-desk1.amr.corp.intel.com (HELO localhost) ([10.245.245.137])
-  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 30 Sep 2026 01:29:04 -0700
-Date: Wed, 30 Sep 2026 11:29:01 +0300
+  by fmviesa009-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 30 Sep 2026 01:30:30 -0700
+Date: Wed, 30 Sep 2026 11:30:28 +0300
 From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
 To: Inochi Amaoto <inochiama@gmail.com>
 Cc: Jonathan Corbet <corbet@lwn.net>,
@@ -65,19 +65,19 @@ Cc: Jonathan Corbet <corbet@lwn.net>,
 	Rhys Tumelty <rhys@tumelty.co.uk>, linux-doc@vger.kernel.org,
 	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
 	Yixun Lan <dlan@gentoo.org>, Longbin Li <looong.bin@gmail.com>
-Subject: Re: [PATCH v4 4/5] phy: core: Add managed phy bulk data helper
- functions
-Message-ID: <arzITUCmgUp3uiRn@ashevche-desk.local>
+Subject: Re: [PATCH v4 5/5] doc: phy: Document some bulk helper functions
+Message-ID: <arzIpLoItQemk3CG@ashevche-desk.local>
 References: <20260929085235.469515-1-inochiama@gmail.com>
- <20260929085235.469515-5-inochiama@gmail.com>
+ <20260929085235.469515-6-inochiama@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260929085235.469515-5-inochiama@gmail.com>
+In-Reply-To: <20260929085235.469515-6-inochiama@gmail.com>
 Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
  krs, Bertel Jungin Aukio 5, 02600 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260930_012906_997258_4C0A7426 
-X-CRM114-Status: GOOD (  15.94  )
+X-CRM114-CacheID: sfid-20260930_013033_761314_2EF433FD 
+X-CRM114-Status: UNSURE (   8.30  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,66 +94,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 29, 2026 at 04:52:34PM +0800, Inochi Amaoto wrote:
-> Add device managed variants of the phy bulk helper functions. So
-> the driver can benefit from automatically managed phy handles.
+On Tue, Sep 29, 2026 at 04:52:35PM +0800, Inochi Amaoto wrote:
+> Document all newly added bulk helper function, it can be used to manage
+> a set of PHYs automatically. This is useful when the driver want to
+> simplify the management of multiple PHYs.
 
-...
-
-> +int devm_of_phy_bulk_get_all(struct device *dev, struct device_node *np,
-> +			     struct phy_bulk_data **phys)
-> +{
-> +	struct phy_bulk_devres *devres;
-> +	int ret;
-
-> +	*phys = NULL;
-
-Why?! In case of error we modify the output, this is usually not the best
-approach as in most of the cases the expectation is that whatever user
-provide (including a garbage) should be left untouched in case of an error.
-
-> +	if (!np)
-> +		return 0;
-
-Same here. On top why do we even care about np like this? Interestingly that
-some other APIs consider this as np == dev_of_node(dev) case, and automatically
-propagate that.
-
-> +	devres = devres_alloc(devm_phy_bulk_release_all, sizeof(*devres),
-> +			      GFP_KERNEL);
-> +	if (!devres)
-> +		return -ENOMEM;
-> +
-> +	ret = of_phy_bulk_get_all(np, &devres->phys);
-> +	if (ret > 0) {
-> +		for (int i = 0; i < ret; i++)
-> +			phy_add_device_link(dev, devres->phys[i].phy);
-> +		*phys = devres->phys;
-> +		devres->num_phys = ret;
-> +		devres_add(dev, devres);
-> +	} else {
-> +		devres_free(devres);
-> +	}
-> +
-> +	return ret;
-> +}
-
-...
-
-> +static inline int devm_of_phy_bulk_get_all(struct device *dev,
-> +					   struct device_node *np,
-> +					   struct phy_bulk_data **phys)
-> +{
-> +	if (phys)
-> +		*phys = NULL;
-
-Same as per above.
-
-> +	return 0;
-
-Why not an error? I do not see the _optional word in the function name.
-
-> +}
+It misses to document unusual behaviour on an error and np==NULL cases.
+But before updating let's discuss first if that kind of behaviour
+is even desired.
 
 -- 
 With Best Regards,
