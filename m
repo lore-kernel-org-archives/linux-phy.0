@@ -4,90 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1135DCA5FA5
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Sep 2026 21:33:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1EEECA5FAD
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Sep 2026 00:20:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4tW0V4Guqzl+77rJhNMY+kyBnkQHcKD7TU+s63Bm+Co=; b=eeO4NrchUIBXNk
-	m53ZEpD5rFdATq+JZQMlUrQVK6ESD5HFmyQjpzpvx7qkLzi+vhpu9B37e6LY9jtqds7ffMe2nDJMn
-	bzyGID4l3qzf0ybHhWg/7lhokFFtPTBdWEhsgyZRmB8LHX65U4cZkv10bb6MO4YGbcsPmeQSM6fNL
-	4y4QlasANEq3A6oJwBJXxg41OAD3yr2KOJBvZFVsnfIqVCUDaGstJFMYUqlmnMopdzlgv0gbuXsjo
-	p9vYff8b3vKlpg5T83pv1kkDbq4v5xmc4lJSPvWAtYqcUjgOMAf1pwQemA84sTqYqM5j7G9l8r+sB
-	PQ6lTpfDGfTMKHT/+p8A==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:In-Reply-To:
+	Subject:cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=qxGFFvUfqsQ4qvTpjf89sh2tzXRSGqiKOO7uEeOyvro=; b=tGPti1KT/Jalv40CwCh2E07S3h
+	fndCiGDA9GRIDTqsvbG4j58F+64BW14PIwOihzFmS3+5kSoExwXH/QaGh6my+IyDbU/+rqqtzwJ+t
+	ZFZNmd3IcVrQ0/BW1pQLQtwDNU5GWeIS8IC7CIPPaE5d0FMj8j71Je5j9RwDDUMtfGc3jaCcaVPRt
+	hyYeSivQc6N7PqEDv40xoOvqCkxt6JPLUxDf2cjv77dCJSZCX/XCIuHaECQ1D7poG15WrqSSesWbQ
+	+b0Dq7PEL42CP04Q2Aqk3wZKwO1lQIo5OcK1Tv+dzdEitqTfeWT10bR9zcaLxC34aQtwONPtpdk6p
+	e5DHgxnw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBfRg-00000004bWt-2uW2;
-	Tue, 29 Sep 2026 21:33:04 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xBi49-00000004oOO-0NKq;
+	Wed, 30 Sep 2026 00:20:57 +0000
+Received: from winds.org ([68.75.195.9])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBfRf-00000004bVn-13NH;
-	Tue, 29 Sep 2026 21:33:03 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 051C541311;
-	Tue, 29 Sep 2026 21:33:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9AC841F000FF;
-	Tue, 29 Sep 2026 21:33:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790717582;
-	bh=lelsT5w70qSo6Jz1QIPHWdCUzI8GluF0Gnl5Y70qLj4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=Gfnygp67yJoU6wYQYLDHLLsHUQOt3WctNaX7omRMnGuvm1Trzfh2TcVbInjG0SRzC
-	 l4y/e5J59XBb1uIJP6uCTkR0bnAHoy5KZmTycC4CSKePUIMHTg2oFKWSR90/GCzXDh
-	 o/fmm64t4CTs+61hfFGioN1k3ZiSaTjYvXdPDSKMiXb3wp0ZPFGOfYOxeQ9QHv4Akn
-	 Og0tnEZ8BBAP+QxJLIqo/7plV4g/0Hyny+aTmJ+DzDhuuDMv9P330XmTikiI9Yw/R1
-	 98tcZsMmJpAdRX0uFEOjwsYZu/vNfp5EYAwW8P6DJogbkEBOgl3chBUEfU7QR0lnOL
-	 KIpRVJAVlPBvw==
-Date: Tue, 29 Sep 2026 16:33:01 -0500
-From: Rob Herring <robh@kernel.org>
+	id 1xBi47-00000004oNo-04QW;
+	Wed, 30 Sep 2026 00:20:56 +0000
+Received: by winds.org (Postfix, from userid 100)
+	id 26A288F95F83; Tue, 29 Sep 2026 20:20:50 -0400 (EDT)
+Received: from localhost (localhost [127.0.0.1])
+	by winds.org (Postfix) with ESMTP id 2557E13363343;
+	Tue, 29 Sep 2026 20:20:50 -0400 (EDT)
+Date: Tue, 29 Sep 2026 20:20:50 -0400 (EDT)
+From: Byron Stanoszek <gandalf@winds.org>
 To: Michal Wilczynski <m.wilczynski@samsung.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Robert Foss <rfoss@kernel.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Emil Renner Berthing <kernel@esmil.dk>,
-	Hal Feng <hal.feng@starfivetech.com>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
-	Paul Walmsley <pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
-	Dominique Belhachemi <db@domibel.de>,
-	Brian Masney <bmasney+clk@redhat.com>,
-	Jerome Brunet <jbrunet+clk@baylibre.com>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
-	linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-riscv@lists.infradead.org,
-	Marek Szyprowski <m.szyprowski@samsung.com>,
-	Maud Spierings <maud_spierings@murena.io>,
-	Graham Markall <hello@big-grey.co.uk>,
-	Icenowy Zheng <zhengxingda@iscas.ac.cn>,
-	Chaoyi Chen <chaoyi.chen@rock-chips.com>,
-	Joshua Peisach <jpeisach@ubuntu.com>,
-	Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@baylibre.com>
-Subject: Re: [PATCH v5 06/21] dt-bindings: display: verisilicon: Add
- starfive,jh7110-dc8200
-Message-ID: <20260929213301.GA2839911-robh@kernel.org>
-References: <20260929-jh7110-clean-send-v5-0-82b4d8e3c6c7@samsung.com>
- <CGME20260929103214eucas1p20a39791b0286596d4c33c2e459030943@eucas1p2.samsung.com>
- <20260929-jh7110-clean-send-v5-6-82b4d8e3c6c7@samsung.com>
+cc: Vinod Koul <vkoul@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+    Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+    Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+    Conor Dooley <conor+dt@kernel.org>, 
+    Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss <rfoss@kernel.org>, 
+    Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, 
+    Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
+    Luca Ceresoli <luca.ceresoli@bootlin.com>, 
+    Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+    Maxime Ripard <mripard@kernel.org>, 
+    Thomas Zimmermann <tzimmermann@suse.de>, 
+    Andy Yan <andy.yan@rock-chips.com>, Philipp Zabel <p.zabel@pengutronix.de>, 
+    Emil Renner Berthing <kernel@esmil.dk>, 
+    Hal Feng <hal.feng@starfivetech.com>, 
+    Michael Turquette <mturquette@baylibre.com>, 
+    Stephen Boyd <sboyd@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+    Paul Walmsley <pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>, 
+    Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>, 
+    Dominique Belhachemi <db@domibel.de>, 
+    Brian Masney <bmasney+clk@redhat.com>, 
+    Jerome Brunet <jbrunet+clk@baylibre.com>, linux-phy@lists.infradead.org, 
+    devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+    dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org, 
+    linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+    linux-riscv@lists.infradead.org, 
+    Marek Szyprowski <m.szyprowski@samsung.com>, 
+    Maud Spierings <maud_spierings@murena.io>, 
+    Graham Markall <hello@big-grey.co.uk>, 
+    Icenowy Zheng <zhengxingda@iscas.ac.cn>, 
+    Chaoyi Chen <chaoyi.chen@rock-chips.com>, 
+    Joshua Peisach <jpeisach@ubuntu.com>, 
+    =?ISO-8859-15?Q?Uwe_Kleine-K=F6nig?= <u.kleine-koenig@baylibre.com>, 
+    Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Subject: Re: [PATCH v5 00/21] drm: starfive: jh7110: Enable display
+ subsystem
+In-Reply-To: <20260929-jh7110-clean-send-v5-0-82b4d8e3c6c7@samsung.com>
+Message-ID: <e946786b-e063-6ddc-6b07-2fb67ff7a459@polinggroup.com>
+References: <CGME20260929103200eucas1p17af134cc3b93c242227964f574f13aa5@eucas1p1.samsung.com> <20260929-jh7110-clean-send-v5-0-82b4d8e3c6c7@samsung.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260929-jh7110-clean-send-v5-6-82b4d8e3c6c7@samsung.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260929_172055_152920_21BA96E1 
+X-CRM114-Status: GOOD (  15.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,21 +87,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 29, 2026 at 12:31:03PM +0200, Michal Wilczynski wrote:
-> The JH7110 embeds a DC8200. The binding requires an SoC specific
-> compatible ahead of the generic one, so add the JH7110 to the enum.
-> 
-> Signed-off-by: Michal Wilczynski <m.wilczynski@samsung.com>
-> ---
->  Documentation/devicetree/bindings/display/verisilicon,dc.yaml | 1 +
->  1 file changed, 1 insertion(+)
+On Tue, 29 Sep 2026, Michal Wilczynski wrote:
 
-Acked-by: Rob Herring (Arm) <robh@kernel.org>
+> This series enables the display subsystem on the StarFive JH7110.
+>
+> [...]
+> - New patch 1 fixes v_HSYNC_POLARITY and v_VSYNC_POLARITY, which have
+>  been swapped in inno-hdmi since the driver was merged. The hardware
+>  puts HSYNC in bit 2 and VSYNC in bit 3, and the driver had them the
+>  other way round. Almost all CEA modes drive both syncs with the same
+>  polarity, so the two writes are indistinguishable and the bug only
+>  shows on a mode whose polarities differ - a band of black rows at the
+>  top of the screen, vsync_end - vsync_start + 1 rows tall. Reported
+>  independently by Dominique Belhachemi, Maud Spierings and Byron
+>  Stanoszek, and confirmed against the RK3128 TRM by Icenowy Zheng, so
+>  this is a Rockchip fix too.
+> - Added a 201 MHz entry to the JH7110 pre-PLL table for a 2560x1440
+>  mode Byron Stanoszek runs on a Dell U2711. It is derived the same way
+>  as the neighbouring entries (fbdiv 134, /16, VCO 3.216 GHz) but I have
+>  no sink that asks for it, so it is untested on my hardware.
+
+Hi Michal,
+
+I confirm that the hsync/vsync polarity and 201 MHz mode are both working on my
+setup in v5. Tested against 7.3-rc5 with af384d6e0573 and Bo Gan's cache
+coherency fixes. Thanks again for your work on this series!
+
+Tested-by: Byron Stanoszek <gandalf@winds.org>
+
+Best regards,
+  -Byron
+
 
 -- 
 linux-phy mailing list
