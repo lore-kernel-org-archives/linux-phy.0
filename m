@@ -4,54 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F749CA5FB1
-	for <linux-phy@archiver.kernel.org>; Wed, 30 Sep 2026 07:31:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57446CA5FB1
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Sep 2026 08:22:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m2iJby35RUcvEpk4mVz8yKT7fFH5r/Tya7E86fsLHTY=; b=Oee/sAsnWxE8VX
-	itGUeCaaWUe+k2rgVuUtMaVTYo9SzIXVqcvVbmjjn8xKMN1m/OqbzFD/XYWPW9tevmBUbcpHN2UJt
-	/NOAaCUoBN+8sm7mom3IqpvuBxUmzK9Ul1a1IjMwLNf9kN1OfZO/ngTt2i0K9agX4SH2wVE63dfYj
-	x5XtA9VLrqIg5/RfkvT5nOc/w8rRo56b71kcZagSEaGtcjDAbPX4EVpn+1Jh2IaFeAKThGNHVw1V0
-	BV93Eri93ktmuwjpXLN7nby5GrkdjO2qVCef18sCIUn/i/2wXYnJF9t5M88PysV/aORAjDXrZM5gF
-	0VBEgf4fsr/ipwLrGung==;
+	List-Owner; bh=sKvUtXSnex7XqQ+iq8uoDpg/GKCde1P6uNPKMJpL0kY=; b=ymwUDB1yeR7YWr
+	a07uqPV/JRKkvMGlz6qzmLQm5K7/gCjDdUO44mCkdmOEyAeT9wrNRal9tsYxtMkgTOboXT56UHPqR
+	APksOYV41VOIklFW6j++yWev7EIwW0kYhzSrkz8eqogJW8/va5Xcf0rlQ1813RCAtAdOfE29lrARg
+	SrEvqwNby9KGOVHFtEvkCiZYQYbDGVkMhlByGoC+7SuRNcshWso9h2COkn5nwjeHqMCbtskjCjcFk
+	iB/pZKpo0CXbw7u4v/KWXVuSt4yZTr0CCwmd3mRN8I31bOSwNZWivCx724IQgMi3ZH8jtnH1rjxYW
+	WijCd3vM3DYJ1gq77/hg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBomL-00000005HFf-2rpY;
-	Wed, 30 Sep 2026 07:31:01 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xBpaO-00000005PUV-30mF;
+	Wed, 30 Sep 2026 08:22:44 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBomK-00000005HFV-2yOl
+	id 1xBpaN-00000005PU5-3ZYg
+	for linux-phy@bombadil.infradead.org;
+	Wed, 30 Sep 2026 08:22:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=H90ReHI/TkU7w1Jsq13T0jYJ8I33i7SIr4MSueB+J0g=; b=oJFSymfwnUzswcjBwLbkhlLIa0
+	/H0GMgqkV/38hGWSKVOUtWYBv2ozLOEsXpFxRuanQx3sG14VxGNV/BgZD3hk2oq5EhMX1w5LifOD/
+	C9sYpQCVsiUcrLQSMK0CDHiUlMNrES1hnZo5kZrzELk3Nzf2pO0um7FXQ3KEMT8VSoDQgAgnyPWW1
+	FyrPx9KGAcKZkNo/yvRlpW07EHxlJLPuWnT5pU4VQC5Qx28AyIt9p3NiL2mKN0NtjPJ11IdH2ST4Q
+	1QE/XMwRSzsWlEbjmHFp+I2WwnDVrT2XknpmIJrG4DNIVQ18I/EH4OSubZXhvjlhKBA8nhg/SrN9m
+	qyjCpMsA==;
+Received: from mgamail.intel.com ([192.198.163.14])
+	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
+	id 1xBpaK-00000003WOj-2Mdr
 	for linux-phy@lists.infradead.org;
-	Wed, 30 Sep 2026 07:31:00 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 1BAF443C73;
-	Wed, 30 Sep 2026 07:31:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8373D1F000FF;
-	Wed, 30 Sep 2026 07:30:59 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790753460;
-	bh=X4MFlg9iQNr1WSjE1OVvLSYFm1fkVX5AH3CfVM/UAqk=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=VGT5vV8cjjlSBMAYRLHsxdNPmyubH31LxdWPEXg36I3iCjXOR2MOyG4oPgH/bCRxW
-	 m0JVPgqBnWW1Ae0U7ElEeTW5J0++GclTkHeE0w2k6Kf2TT2aLpanyAjCI5DCdq6AqR
-	 QhxcjJCBRdURTmGGhMzfnUs2iTtHSSc0DHzshEkIR0C+7sM6yufyS8bXwiMA6+iTMF
-	 YRP1fML6YmXl32O4qQ0WUPO5jIEBS3bIbAYgKEGAD931IdxvqMiHx3uF6gTkwuQLJI
-	 JeucUwx/04Lka6S19NnvQdWqJarQ9XGmg5U+aer+TXlj3uBW8MSKpAghWhCBuiFXpv
-	 AlF9K6dARiF7g==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v12 3/3] phy: airoha: Add support for Airoha AN7581 USB
- PHY
-To: "Christian Marangi" <ansuelsmth@gmail.com>
-Cc: robh@kernel.org, conor+dt@kernel.org, olteanv@gmail.com, vkoul@kernel.org, neil.armstrong@linaro.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org
-In-Reply-To: <20260930071826.48811-4-ansuelsmth@gmail.com>
-References: <20260930071826.48811-1-ansuelsmth@gmail.com>
- <20260930071826.48811-4-ansuelsmth@gmail.com>
-Date: Wed, 30 Sep 2026 07:30:59 +0000
-Message-Id: <20260930073059.8373D1F000FF@smtp.kernel.org>
+	Wed, 30 Sep 2026 08:22:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1790756561; x=1822292561;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=o4gTPctULW30OzZW+mqa9A666j84wqZq3CbG0iIigpQ=;
+  b=MXdOo06QHWqnlRJfSqayBl+wWlrXcEe5I9S4h33fbDA8PaV0qMfc2RZG
+   L8wYAlW00VFRNCx/B2jZMbyFrrv51IddVC5f2Ktaq1GQz0lGMiMNBpoM6
+   blkjYlyqGT7upWa7Z8G+jUYNko3wquVdES9wg3HkDTJ5A7y2pqToizqmX
+   U3M5/yvCchd4ZgX+utCmfTdLdSyQQWQB54dpXxyPq3A/yxOfl5gU4dhq3
+   2sVn6YBZDXUZA+oEU9A4NNXz2JEmIMSxeMX3lbLrz3foNTVImvd1xozOl
+   huCGc816rKGf3BVdqGfSOV88Z/ddryteklTM1xlSlfxWY+jlSNB8Ckk37
+   w==;
+X-CSE-ConnectionGUID: yTjm51J9TFOT59cNX2JgVQ==
+X-CSE-MsgGUID: iX9fnSXnRZK9f9mib8WGOA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11920"; a="91508218"
+X-IronPort-AV: E=Sophos;i="6.27,132,1787036400"; 
+   d="scan'208";a="91508218"
+Received: from orviesa001.jf.intel.com ([10.64.159.141])
+  by fmvoesa108.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 30 Sep 2026 01:22:38 -0700
+X-CSE-ConnectionGUID: CFK0LhMsQL6mR7FHfLN22w==
+X-CSE-MsgGUID: wT7fPAKNRT6OULzQo4/XiQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.27,132,1787036400"; 
+   d="scan'208";a="313567473"
+Received: from spandruv-desk1.amr.corp.intel.com (HELO localhost) ([10.245.245.137])
+  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 30 Sep 2026 01:22:35 -0700
+Date: Wed, 30 Sep 2026 11:22:32 +0300
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Inochi Amaoto <inochiama@gmail.com>
+Cc: Jonathan Corbet <corbet@lwn.net>,
+	Shuah Khan <skhan@linuxfoundation.org>,
+	Randy Dunlap <rdunlap@infradead.org>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rhys Tumelty <rhys@tumelty.co.uk>, linux-doc@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	Yixun Lan <dlan@gentoo.org>, Longbin Li <looong.bin@gmail.com>
+Subject: Re: [PATCH v4 3/5] phy: core: Add phy bulk data helper functions
+Message-ID: <arzGyL8gGrxeZoN7@ashevche-desk.local>
+References: <20260929085235.469515-1-inochiama@gmail.com>
+ <20260929085235.469515-4-inochiama@gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260929085235.469515-4-inochiama@gmail.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
+ krs, Bertel Jungin Aukio 5, 02600 Espoo
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260930_092241_072246_B2049015 
+X-CRM114-Status: GOOD (  23.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,108 +103,156 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIHBoeTogYWlyb2hhOiBN
-aXNzaW5nIHBoeV9pbml0KCkgYW5kIHBoeV9wb3dlcl9vbigpIGZvciBzZXJkZXNfcGh5Ci0gW01l
-ZGl1bV0gcGh5OiBhaXJvaGE6IHJlZ21hcF9zZXRfYml0cygpIGZhaWxzIHRvIGNsZWFyIG11bHRp
-LWJpdCBmaWVsZAotIFtMb3ddIHBoeTogYWlyb2hhOiBTaWxlbnQgdHJ1bmNhdGlvbiBvZiBkeW5h
-bWljIHNyY3RybCBjYWxpYnJhdGlvbiB2YWx1ZQotLQoKY29tbWl0IDRhMGMyN2YwMmZlNDg2NGU2
-NjBjOWEzNDI3NmVlOTA2N2VjMzM5OTgKQXV0aG9yOiBDaHJpc3RpYW4gTWFyYW5naSA8YW5zdWVs
-c210aEBnbWFpbC5jb20+CgpwaHk6IGFpcm9oYTogQWRkIHN1cHBvcnQgZm9yIEFpcm9oYSBBTjc1
-ODEgVVNCIFBIWQoKQWRkIHN1cHBvcnQgZm9yIEFpcm9oYSBBTjc1ODEgVVNCIFBIWSBkcml2ZXIu
-IEFONzU4MSBzdXBwb3J0cyB1cCB0byAyClVTQiBwb3J0IHdpdGggVVNCIDIuMCBtb2RlIGFsd2F5
-cyBzdXBwb3J0ZWQgYW5kIFVTQiAzLjAgbW9kZSBhdmFpbGFibGUKb25seSBpZiB0aGUgU2VyZGVz
-IHBvcnQgaXMgY29ycmVjdGx5IGNvbmZpZ3VyZWQgZm9yIFVTQiAzLjAuCgo+IGRpZmYgLS1naXQg
-YS9kcml2ZXJzL3BoeS9haXJvaGEvcGh5LWFuNzU4MS11c2IuYyBiL2RyaXZlcnMvcGh5L2Fpcm9o
-YS9waHktYW43NTgxLXVzYi5jCj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiBpbmRleCAwMDAwMDAw
-MDAwMDAwLi45MmM1ZTVjMmZiZjNiCj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBiL2RyaXZlcnMvcGh5
-L2Fpcm9oYS9waHktYW43NTgxLXVzYi5jCgpbIC4uLiBdCgo+ICtzdGF0aWMgdm9pZCBhbjc1ODFf
-dXNiX3BoeV91Ml9zbGV3X3JhdGVfY2FsaWJyYXRpb24oc3RydWN0IGFuNzU4MV91c2JfcGh5X3By
-aXYgKnByaXYpCj4gK3sKPiArCXUzMiBmbV9vdXQgPSAwOwo+ICsJdTMyIHNyY3RybDsKClsgLi4u
-IF0KCj4gKwkvKiBGcmVxdWVuY3kgd2FzIG5vdCBkZXRlY3RlZCwgdXNlIGRlZmF1bHQgU1IgY2Fs
-aWJyYXRpb24gdmFsdWUgKi8KPiArCWlmICghZm1fb3V0KSB7Cj4gKwkJc3JjdHJsID0gQUlST0hB
-X1VTQl9QSFlfREVGQVVMVF9TUl9DQUxJQlJBVElPTjsKPiArCQlkZXZfZXJyKHByaXYtPmRldiwg
-IkZyZXF1ZW5jeSBub3QgZGV0ZWN0ZWQsIHVzaW5nIGRlZmF1bHQgU1IgY2FsaWJyYXRpb24uXG4i
-KTsKPiArCX0gZWxzZSB7Cj4gKwkJLyogKDEwMjQgLyBGTV9PVVQpICogUkVGX0NLICogVTJfU1Jf
-Q09FRiAocm91bmQgdG8gdGhlIG5lYXJlc3QgZGlnaXRzKSAqLwo+ICsJCXNyY3RybCA9IEFJUk9I
-QV9VU0JfUEhZX1JFRl9DSyAqIEFJUk9IQV9VU0JfUEhZX1UyX1NSX0NPRUY7Cj4gKwkJc3JjdHJs
-ID0gKHNyY3RybCAqIEFJUk9IQV9VU0JfUEhZX1UyX0ZNX0RFVF9DWUNMRV9DTlQpIC8gZm1fb3V0
-Owo+ICsJCXNyY3RybCA9IERJVl9ST1VORF9DTE9TRVNUKHNyY3RybCwgQUlST0hBX1VTQl9QSFlf
-VTJfU1JfQ09FRl9ESVZJU09SKTsKPiArCQlkZXZfZGJnKHByaXYtPmRldiwgIlNSIGNhbGlicmF0
-aW9uIGFwcGxpZWQ6ICV4XG4iLCBzcmN0cmwpOwo+ICsJfQo+ICsKPiArCXJlZ21hcF91cGRhdGVf
-Yml0cyhwcml2LT5yZWdtYXAsIEFJUk9IQV9VU0JfUEhZX1VTQlBIWUFDUjUsCj4gKwkJCSAgIEFJ
-Uk9IQV9VU0JfUEhZX1VTQjIwX0hTVFhfU1JDVFJMLAo+ICsJCQkgICBGSUVMRF9QUkVQKEFJUk9I
-QV9VU0JfUEhZX1VTQjIwX0hTVFhfU1JDVFJMLCBzcmN0cmwpKTsKCltTZXZlcml0eTogTG93XQpE
-b2VzIHRoaXMgZHluYW1pY2FsbHkgY2FsY3VsYXRlZCBzcmN0cmwgdmFsdWUgbmVlZCBib3VuZHMg
-Y2hlY2tpbmc/CgpJZiBhIGdsaXRjaHkgb3Igc2xvdyBjbG9jayByZXN1bHRzIGluIGEgc21hbGwg
-bm9uLXplcm8gZm1fb3V0LCBzcmN0cmwKbWlnaHQgZXhjZWVkIHRoZSAzLWJpdCBtYXhpbXVtICg3
-KSBkZWZpbmVkIGJ5CkFJUk9IQV9VU0JfUEhZX1VTQjIwX0hTVFhfU1JDVFJMLiBTaW5jZSBpdCBp
-cyBwYXNzZWQgdG8gRklFTERfUFJFUCgpCndpdGhvdXQgY2xhbXBpbmcsIHRoZSB1cHBlciBiaXRz
-IHdpbGwgYmUgc2lsZW50bHkgdHJ1bmNhdGVkLCBhcHBseWluZwphIHBvdGVudGlhbGx5IGluY29y
-cmVjdCBzbGV3IHJhdGUgY2FsaWJyYXRpb24gcmF0aGVyIHRoYW4gYSBzYWZlIGRlZmF1bHQuCgpb
-IC4uLiBdCgo+ICtzdGF0aWMgdm9pZCBhbjc1ODFfdXNiX3BoeV91M19pbml0KHN0cnVjdCBhbjc1
-ODFfdXNiX3BoeV9wcml2ICpwcml2KQo+ICt7Cj4gKwlyZWdtYXBfdXBkYXRlX2JpdHMocHJpdi0+
-cmVnbWFwLCBBSVJPSEFfVVNCX1BIWV9VM19QSFlBX1JFRzgsCj4gKwkJCSAgIEFJUk9IQV9VU0Jf
-UEhZX1NTVVNCX0NEUl9SU1RfRExZLAo+ICsJCQkgICBBSVJPSEFfVVNCX1BIWV9TU1VTQl9DRFJf
-UlNUX0RMWV8zMik7Cj4gKwo+ICsJcmVnbWFwX3VwZGF0ZV9iaXRzKHByaXYtPnJlZ21hcCwgQUlS
-T0hBX1VTQl9QSFlfVTNfUEhZQV9SRUc2LAo+ICsJCQkgICBBSVJPSEFfVVNCX1BIWV9TU1VTQl9D
-RFJfUkVTRVJWRSwKPiArCQkJICAgRklFTERfUFJFUChBSVJPSEFfVVNCX1BIWV9TU1VTQl9DRFJf
-UkVTRVJWRSwgMHhlKSk7Cj4gKwo+ICsJcmVnbWFwX3VwZGF0ZV9iaXRzKHByaXYtPnJlZ21hcCwg
-QUlST0hBX1VTQl9QSFlfVTNfUEhZQV9SRUcwLAo+ICsJCQkgICBBSVJPSEFfVVNCX1BIWV9TU1VT
-Ql9CR19ESVYsCj4gKwkJCSAgIEFJUk9IQV9VU0JfUEhZX1NTVVNCX0JHX0RJVl80KTsKPiArCj4g
-KwlyZWdtYXBfc2V0X2JpdHMocHJpdi0+cmVnbWFwLCBBSVJPSEFfVVNCX1BIWV9VM19QSFlBX1JF
-RzEsCj4gKwkJCUZJRUxEX1BSRVAoQUlST0hBX1VTQl9QSFlfU1NVU0JfWFRBTF9UT1BfUkVTRVJW
-RSwgMHg2MDApKTsKCltTZXZlcml0eTogTWVkaXVtXQpTaG91bGQgdGhpcyBiZSB1c2luZyByZWdt
-YXBfdXBkYXRlX2JpdHMoKSBpbnN0ZWFkIG9mIHJlZ21hcF9zZXRfYml0cygpPwoKQUlST0hBX1VT
-Ql9QSFlfU1NVU0JfWFRBTF9UT1BfUkVTRVJWRSBpcyBhIDE2LWJpdCBtYXNrIChHRU5NQVNLKDI1
-LCAxMCkpLgpVc2luZyByZWdtYXBfc2V0X2JpdHMoKSB3aXRoIEZJRUxEX1BSRVAoKSBwZXJmb3Jt
-cyBhIHNpbXBsZSBiaXR3aXNlIE9SLgpUaGlzIHdpbGwgc2V0IHRoZSBiaXRzIGNvcnJlc3BvbmRp
-bmcgdG8gMXMgaW4gMHg2MDAsIGJ1dCBpdCB3aWxsIGZhaWwgdG8KY2xlYXIgYW55IG90aGVyIGJp
-dHMgYWNyb3NzIHRoZSByZXN0IG9mIHRoZSAxNi1iaXQgbWFzayBpZiB0aGV5IGhhcHBlbgp0byBi
-ZSBzZXQgYnkgZGVmYXVsdC4gVGhpcyBjb3VsZCBsZWF2ZSBzdGFsZSBiaXRzIGluIHRoZSByZWdp
-c3Rlci4KCj4gKwo+ICsJcmVnbWFwX3VwZGF0ZV9iaXRzKHByaXYtPnJlZ21hcCwgQUlST0hBX1VT
-Ql9QSFlfVTNfUEhZQV9EQV9SRUcxOSwKPiArCQkJICAgQUlST0hBX1VTQl9QSFlfU1NVU0JfUExM
-X1NTQ19ERUxUQTFfVTMsCj4gKwkJCSAgIEZJRUxEX1BSRVAoQUlST0hBX1VTQl9QSFlfU1NVU0Jf
-UExMX1NTQ19ERUxUQTFfVTMsIDB4NDMpKTsKPiArfQo+ICsKPiArc3RhdGljIGludCBhbjc1ODFf
-dXNiX3BoeV9pbml0KHN0cnVjdCBwaHkgKnBoeSkKPiArewo+ICsJc3RydWN0IGFuNzU4MV91c2Jf
-cGh5X2luc3RhbmNlICppbnN0YW5jZSA9IHBoeV9nZXRfZHJ2ZGF0YShwaHkpOwo+ICsJc3RydWN0
-IGFuNzU4MV91c2JfcGh5X3ByaXYgKnByaXYgPSBkZXZfZ2V0X2RydmRhdGEocGh5LT5kZXYucGFy
-ZW50KTsKPiArCWludCByZXQ7Cj4gKwo+ICsJc3dpdGNoIChpbnN0YW5jZS0+dHlwZSkgewo+ICsJ
-Y2FzZSBQSFlfVFlQRV9VU0IyOgo+ICsJCWFuNzU4MV91c2JfcGh5X3UyX2luaXQocHJpdik7Cj4g
-KwkJYnJlYWs7Cj4gKwljYXNlIFBIWV9UWVBFX1VTQjM6Cj4gKwkJcmV0ID0gcGh5X3NldF9tb2Rl
-KHByaXYtPnNlcmRlc19waHksIFBIWV9NT0RFX1VTQl9ERVZJQ0VfU1MpOwo+ICsJCWlmIChyZXQp
-Cj4gKwkJCXJldHVybiByZXQ7Cj4gKwo+ICsJCWFuNzU4MV91c2JfcGh5X3UzX2luaXQocHJpdik7
-CgpbU2V2ZXJpdHk6IEhpZ2hdCklzIGEgY2FsbCB0byBwaHlfaW5pdChwcml2LT5zZXJkZXNfcGh5
-KSBtaXNzaW5nIGhlcmU/CgpUaGUgc2VyZGVzX3BoeSBtb2RlIGlzIHNldCwgYnV0IHRoZSBtYW5k
-YXRvcnkgcGh5X2luaXQoKSBsaWZlY3ljbGUgY2FsbAppcyBvbWl0dGVkLiBUaGUgZG93bnN0cmVh
-bSBjb250cm9sbGVyIChlLmcuLCB4SENJIG9yIERXQzMpIHJlcXVlc3RzIHRoaXMKd3JhcHBlciBQ
-SFkgYW5kIGludm9rZXMgcGh5X2luaXQoKS4gVGhlIHdyYXBwZXIgcmVjZWl2ZXMgdGhpcyBjYWxs
-IHZpYQphbjc1ODFfdXNiX3BoeV9pbml0KCkgYnV0IGNvbXBsZXRlbHkgZmFpbHMgdG8gcHJvcGFn
-YXRlIGl0IHRvIGl0cyBjb25zdW1lZApwcml2LT5zZXJkZXNfcGh5LCBsZWF2aW5nIHRoZSBoYXJk
-d2FyZSB1bmNvbmZpZ3VyZWQgYW5kIGJyZWFraW5nIFVTQiAzLjAKZnVuY3Rpb25hbGl0eS4KCj4g
-KwkJYnJlYWs7Cj4gKwlkZWZhdWx0Ogo+ICsJCXJldHVybiAtRUlOVkFMOwo+ICsJfQo+ICsKPiAr
-CXJldHVybiAwOwo+ICt9CgpbIC4uLiBdCgo+ICtzdGF0aWMgaW50IGFuNzU4MV91c2JfcGh5X3Bv
-d2VyX29uKHN0cnVjdCBwaHkgKnBoeSkKPiArewo+ICsJc3RydWN0IGFuNzU4MV91c2JfcGh5X2lu
-c3RhbmNlICppbnN0YW5jZSA9IHBoeV9nZXRfZHJ2ZGF0YShwaHkpOwo+ICsJc3RydWN0IGFuNzU4
-MV91c2JfcGh5X3ByaXYgKnByaXYgPSBkZXZfZ2V0X2RydmRhdGEocGh5LT5kZXYucGFyZW50KTsK
-PiArCj4gKwlzd2l0Y2ggKGluc3RhbmNlLT50eXBlKSB7Cj4gKwljYXNlIFBIWV9UWVBFX1VTQjI6
-Cj4gKwkJYW43NTgxX3VzYl9waHlfdTJfcG93ZXJfb24ocHJpdik7Cj4gKwkJYnJlYWs7Cj4gKwlj
-YXNlIFBIWV9UWVBFX1VTQjM6Cj4gKwkJYW43NTgxX3VzYl9waHlfdTNfcG93ZXJfb24ocHJpdik7
-Cj4gKwkJYnJlYWs7CgpbU2V2ZXJpdHk6IEhpZ2hdCkRvZXMgdGhpcyBmdW5jdGlvbiBhbHNvIG5l
-ZWQgdG8gY2FsbCBwaHlfcG93ZXJfb24ocHJpdi0+c2VyZGVzX3BoeSk/CgpUaGUgbG9jYWwgVVNC
-MyByZWdpc3RlcnMgYXJlIHBvd2VyZWQgb24gdmlhIGFuNzU4MV91c2JfcGh5X3UzX3Bvd2VyX29u
-KCksCmJ1dCB0aGUgZHJpdmVyIGZhaWxzIHRvIHByb3BhZ2F0ZSB0aGUgcG93ZXJfb24gY2FsbCB0
-byB0aGUgdW5kZXJseWluZwpwcml2LT5zZXJkZXNfcGh5LiBUaGUgUEhZIHN1YnN5c3RlbSBBUEkg
-c3RyaWN0bHkgcmVxdWlyZXMgYSBjb25zdW1lciBvZiBhClBIWSB0byBjYWxsIHBoeV9pbml0KCkg
-YW5kIHBoeV9wb3dlcl9vbigpIGJlZm9yZSB0aGUgUEhZIGNhbiBiZSBmdW5jdGlvbmFsLgoKLS0g
-ClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2
-MDkzMDA3MTgyNi40ODgxMS0xLWFuc3VlbHNtdGhAZ21haWwuY29tP3BhcnQ9MwoKLS0gCmxpbnV4
-LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On Tue, Sep 29, 2026 at 04:52:33PM +0800, Inochi Amaoto wrote:
+> Add several helper functions that allow drivers to get several phy
+> consumers in one operation. If any of the phy cannot be acquired then
+> any phys that were got will be put before returning to the caller.
+> 
+> This can relieve the driver owners' life who needs to handle many phys,
+> as well as each phy error reporting.
+
+...
+
+> +/**
+> + * of_phy_get_count() - Get the number of phys of a device node
+> + * @np: device_node for which to get the phy
+> + *
+> + * Return: the phy count if successful, %0 if no phy handle is found,
+> + * negative error value if error occurs.
+> + */
+> +static int of_phy_get_count(const struct device_node *np)
+> +{
+> +	int count;
+> +
+> +	count = of_count_phandle_with_args(np, "phys", "#phy-cells");
+
+> +
+
+I would drop this blank line.
+
+> +	if (count == -ENOENT)
+> +		return 0;
+
+I'm not sure about usefulness of this kind of trick in the _count API.
+
+> +	return count;
+> +}
+
+...
+
+> +static void phy_bulk_put(struct device *dev, unsigned int num_phys,
+> +			 struct phy_bulk_data *phys)
+> +{
+> +	while (num_phys--) {
+
+> +		if (!IS_ERR_OR_NULL(phys[num_phys].phy))
+
+This should be part of phy_put(). In general many kernel resource release APIs
+are NULL and/or error pointer aware. This is a slow path and it makes user's life
+easier
+
+> +			phy_put(dev, phys[num_phys].phy);
+> +		phys[num_phys].phy = NULL;
+> +	}
+> +}
+
+...
+
+> +static void of_phy_bulk_put(unsigned int num_phys, struct phy_bulk_data *phys)
+> +{
+> +	while (num_phys--) {
+> +		of_phy_put(phys[num_phys].phy);
+
+> +		phys[num_phys].phy = NULL;
+
+Is NULLification mandatory?
+
+> +	}
+> +}
+
+...
+
+> +static int of_phy_bulk_get_by_index(struct device_node *np,
+> +				    unsigned int num_phys,
+> +				    struct phy_bulk_data *phys)
+> +{
+> +	unsigned int i;
+> +	int ret;
+> +
+> +	for (i = 0; i < num_phys; i++) {
+> +		phys[i].id = NULL;
+> +		phys[i].phy = NULL;
+> +	}
+
+But why? The below does the assognments.
+
+> +	for (i = 0; i < num_phys; i++) {
+> +		of_property_read_string_index(np, "phy-names", i, &phys[i].id);
+
+> +		phys[i].phy = of_phy_get_by_index(np, i);
+> +
+> +		ret = PTR_ERR_OR_ZERO(phys[i].phy);
+> +		if (ret) {
+> +			phys[i].phy = NULL;
+
+Same Q: do we need a NULLification in this case? Perhaps the respective APIs
+should be error pointer aware?
+
+> +			goto err;
+> +		}
+> +	}
+> +
+> +	return 0;
+> +
+> +err:
+> +	of_phy_bulk_put(i, phys);
+> +
+> +	return ret;
+> +}
+
+...
+
+> +/**
+> + * phy_bulk_exit() - exit multiple PHYs
+> + * @num_phys: number of entries in the phys array
+> + * @phys: array of struct phy_bulk_data to exit
+> + *
+> + * Exits the PHYs in reverse array order. All PHYs are processed even if an
+> + * error occurs.
+> + *
+> + * Return: %0 if successful, the first negative error code otherwise
+> + */
+> +int phy_bulk_exit(unsigned int num_phys, struct phy_bulk_data *phys)
+> +{
+> +	int ret = 0;
+> +	int err;
+> +
+> +	while (num_phys--) {
+> +		err = phy_exit(phys[num_phys].phy);
+> +		if (err && !ret)
+> +			ret = err;
+> +	}
+> +
+> +	return ret;
+
+So, we return an arbitrary error and inconsistent state of the phys[] array.
+What can caller do about all this? Any type of recovery? TL;DR:
+I put in doubt the function prototype and the implementation (error handling).
+
+> +}
+
+-- 
+With Best Regards,
+Andy Shevchenko
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
