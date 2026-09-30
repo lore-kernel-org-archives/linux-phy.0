@@ -4,137 +4,139 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C059CA5FC7
-	for <linux-phy@archiver.kernel.org>; Wed, 30 Sep 2026 14:18:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51770CA5FC5
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Sep 2026 14:23:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b6HPpao9NBaPVi8xMoKdGjfV9/mKpIM0KJbvVgsOvDY=; b=wqJxsOIsC1xLOB
-	oRlwqMCMDHNglrpcQftSPGinR08EJPo2FgTb49ez13QqPkW2sKWgMeSXrwEoJKKWjXUWvaOSi6KQY
-	fqMv3zc8YMxQtg+eNg09u8levIgC5HCqTyZsxGUQMt1mAuzbX+zDPU6Bk4i1ue1SnuQEsFzu419SH
-	XRQYYeRf72WptXrITWcAls1QnnzMcuSHZEZWYl3K09AyJSsehJ7whUfi3fpT09LpGT6xwv6vPrN3j
-	6zLfq53DpO38Zg3dPV7jtmF3HNPza/PZjqLnVdaMp5iBea2uOikMOPOV3Zld1goH20AIbBSE0xPGz
-	aJTHWO4G0oPOsFAOdlgA==;
+	List-Owner; bh=s93oMRf6ru3ZlXiOB58UhWfn7wnBWYJmY5aM9oLSgVs=; b=u2A0Pl4KsTE6I5
+	1wpl+hR3OLRQ+SsCfnbPKeilHyawC1nvUu1PnTpprYQIiyvFGpn2gblzD6s0lLX0+vZi1/xMPbUJA
+	i6KKX+1JTo7jjvVUvvPzfCLwldjgslD7Dhvgev910xXJ/s8UoOJyUH5zKxFKVHltVqnv/d37wvQP0
+	UBpxVj7aO2/sniMBb+N81/xZ/+MHb+ANAgwHIOqsxCFmuLg/rQQtkkEbBmaXpKAnTYj1UvB6/P/ii
+	atGbgcdD7ksbyNBI1sQWWpG/oq0P/8J601EiJ22Nj2chgFFxf5ToHYLp7Q92lbtuFDrb1FAR1A2va
+	RVCjPBDaCBEA9WqVxRDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBv8Y-00000006HEF-2Ude;
-	Wed, 30 Sep 2026 14:18:22 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1xBvDG-00000006J37-3z2M;
+	Wed, 30 Sep 2026 14:23:14 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBv88-00000006HAD-1tQN
+	id 1xBvDE-00000006J22-1JnI
 	for linux-phy@lists.infradead.org;
-	Wed, 30 Sep 2026 14:17:59 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68UE03qC2970672
-	for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 14:17:55 GMT
+	Wed, 30 Sep 2026 14:23:14 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68UDxq0C3063759
+	for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 14:23:12 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	IHynm5lLmvt6eNbo8aMZmXzLWs0hWbVYmgJcOHD1D9c=; b=imuhky6HWATxTqQG
-	UczYTQK1lNKfCgqlUjHzAvWkewbXt5P1GBb3lKCGJvSNwTGvciGXJvXvqcCVH+XV
-	Vgrr14v7smBQzbrtwLLM49IR6nTVSWE+4KFld96DmpQuIli8H61gZXHFVfF6e88Z
-	rs1IK9IS6mTqfDqdN5FtiT1pjOIl+J6+ea+XA+DgrI1bigCIurL1LgYLTTkSxKmW
-	S3zpKJoFYqHPiLriAYJQBxKyDOXaNWW1uexf9wFZM+49u6HZXPm1z3mvf0Kcsv4I
-	YsrVRFaxqNz6rpw3wpLz4DRL1X1cym59n/OrZdfKPnv3qUV0scqRd8naVreWaOdC
-	d2rd7Q==
-Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h0rhek7yg-1
+	+dKTowMYQvfYuqv4dK+vY7KJhOttZlfJWenJ4O7Vbwg=; b=H/E9aISuRD3tFJVR
+	qXrqYGHMnZllbufIOsN6kXaaMCcijMS1AzFmhsqdGj4IQO56mGauhv1F+RmxtXsR
+	6Dlaxaxqlv/ZO3MKu4FAqCC6a7DXXU5KC2UHy7EmxDEb1tnCPD/33gWsaFOABArq
+	RVM0IhjZwXPLbrwRvz/d/3pLZp9lnpGlb7tw+8G2tpsuMu+/O0JvvwymeUKSET3h
+	S4CEUYbGLCN7fWtTq4BbuMShzVpWz96zqPQdUdu75yuQpgSh/Z7RaZyNNlO4QP5C
+	t+SCOr+Mucb53mApRhMb5WTMqMiDBH7ZFjDEumy/yGBbSeH7ua+Zkl7f7ZvrMDvh
+	4YxS9Q==
+Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h0smjjyme-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 14:17:55 +0000 (GMT)
-Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-cc4c1fc9ceaso3295665a12.3
-        for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 07:17:55 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 14:23:11 +0000 (GMT)
+Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2d6f75c1219so69295145ad.3
+        for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 07:23:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1790777874; x=1791382674; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1790778191; x=1791382991; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:in-reply-to:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=IHynm5lLmvt6eNbo8aMZmXzLWs0hWbVYmgJcOHD1D9c=;
-        b=bQw2XUj71emmBVKvvNs0xrWsT81XTfmh4KlwKXCqeVPwmaY5tai7Ro1wO0YQK9pGZN
-         sHnMP31Osc/IUpz0VMG4LLq3TyaMsY0x58qEfiAQUv1F6vJIhJo0a4Mm/7y93DAtf2OG
-         8PU2ItZPLgb/XWF8BHIioARhxFVGUqhQz8owozicGs37IZclvRxIwafYz9BQ8YPmpQa/
-         c5+Dxucv7On1si2AfPakg3vFHHeNFMku+BEqu7/NahG1gUW8VFXsxHHgPr8CSyffR4Bo
-         lcJ8ipbPICU1kwxbZQnOZrpxBDuNMAxUPtNjHo0ODq1LPFWaGe7g0sr+Cm2SbcW6sH5w
-         TFfw==
+        bh=+dKTowMYQvfYuqv4dK+vY7KJhOttZlfJWenJ4O7Vbwg=;
+        b=GWp+hStK50epDy0FzvGsx9V2gU8CQjV7xxn5L1y3v2Az4+dacV47eYxm8J+Lb9dus7
+         EbxtgEf7VczUhnPvCTDgT+262OrD/yw9uaELyjGNf05Pibgu7FYzQ+pBAAGkcXTah/eW
+         pUghq/aue92EGZKHyheut4tZ9IboxuMX9H8Z3UfcXZVTZAQSBz5x37l4rWVx8Dh+yY1P
+         CLu9xV98V4frvJzN6p/v5Y2uS7abRsuG31svEIf2CvE/y+QJO4nwZ4Cfyf+I95icGhXR
+         Saw+GpBm2O0rmxyweJ+wOTbniUW9MY/NAR0OmjVMUCTFMtOdZFI22jHAA8iOX8uEyiAX
+         RJWg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1790777874; x=1791382674;
+        d=1e100.net; s=20260707; t=1790778191; x=1791382991;
         h=content-transfer-encoding:content-type:in-reply-to:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=IHynm5lLmvt6eNbo8aMZmXzLWs0hWbVYmgJcOHD1D9c=;
-        b=Bd0fKO9kLmKAzZRDlE0kfD52mvkrZH5YDpn4EzKWWAB7jYH1VZ267G1NTznQ5+wWGc
-         7Mm74Ev2gzNgNkxLhfpQnNicKJQLo/9kSVNMqy+by8UU38g35qCdgNZ8y33bkZ7TA8YU
-         xiUWjsa4EswNYWqvJFfoc8XSlx/a5IeMIo5CukCvNsln5AUuB7fEPIf+fZXEwN8ch+Vw
-         8V7QgvsK6V+fF3waQIWrdKPFdlJ76WlGGUvBQAtV856uSDNorusHkAvNzad8X6gSXsR0
-         klN20uJkPM4O+xHiQCu13/45aighewH0mW2tWGkZX2rPLTgkFKoV4F4aKYRbaAPCF5J4
-         oSmw==
-X-Gm-Message-State: AFuF++ls3DFibvbPhuiWWVlYnq8C64o7Gjxlm2UujfzGSYYyMsKV+RGs
-	+dtTlc+WpWvYK7HevkNky0byj1lOCkWdMOYhiP2DVJIyVMREcgC8zbg5DognsGxcryymizfCv8B
-	BHcAAEqkGPICYWGXFHlyk/4zX3dwcdMaH+Gi/AkTmxzQmG8zXJJXeZ4179MjAQ6JM7c6F
-X-Gm-Gg: AYBFou2U9yvRh4cTkGJojIHcolLiRWIuMLBaBbAll2DZfTSFVFY7727UrZEyFTYJjjM
-	/Tz7eZVm7S3ClxtrmzSevzVBd+6Dm3BqB6Dyzww1dU6A9hUXdySBclxY4Mf+31YUkWD5f23gS9M
-	bIKZriw3Xo51t7bhR9qs4KmTqFYlnI0XixCDauYuMXQvbpLqMUOyUinlqEIlokMkc0aP3cYehq/
-	64Hb9vVXtX+sg1a8kk/gVUYw5z6Rszmmnea0sL0jRnq4jxbGYAxRKWLKjKwtv2HbtafK8V8zXUu
-	IjGSLGQXU7cMpTXQDm0ZQTtv8BrDnh0Awu0/pid2dMX19PgBpnN4j87SjzZv9y0spwOKoHzzwiP
-	Jd0U6hFXDCnlILac1JkK163wEsv1EvH+7qu+r6ZxGzz+aYtVMktRAR9gbHqzrrc4=
-X-Received: by 2002:a05:6a20:9c17:b0:3dd:e2e3:30fc with SMTP id adf61e73a8af0-3de9e7ad978mr1665744637.49.1790777874454;
-        Wed, 30 Sep 2026 07:17:54 -0700 (PDT)
-X-Received: by 2002:a05:6a20:9c17:b0:3dd:e2e3:30fc with SMTP id adf61e73a8af0-3de9e7ad978mr1665719637.49.1790777873995;
-        Wed, 30 Sep 2026 07:17:53 -0700 (PDT)
+        bh=+dKTowMYQvfYuqv4dK+vY7KJhOttZlfJWenJ4O7Vbwg=;
+        b=VoDsuXKRpHFvmK3L56kuNOV3whfIvZkVnlZlKoNsGLuSqk9x06T4J5hWUVXboANzaR
+         j3lz7UZao7aJHG5Q207UYaPICHSgBYcFBye7Tu/5/E6aPQWRWQIffwDxossMD+lyZ2Bv
+         BbadVZHo9Vu4qgV4DRTRVIPutfF3wa2NU+UEuwI1Re1KFS8xW/rtj9oEF0JhEFW0kxJj
+         e0+DmbYtgVZAf3YWPkIFMFOo2L0yE28gHdBm5rhl0fPoLPvmNTNMEeJv84j+mg6A+UFg
+         i4WrOpWU9HWTC3kLu/nUyOj1cm6XWZ1hEuEtWAvp/kaSLvgSXJbXMkf+05naI2cijv8+
+         1Fdw==
+X-Forwarded-Encrypted: i=1; AKwUvBznjiZZG3saAxGCO1KYXpgu19enh19udaSi5+XL+Jbs9aOMUMs8xVlIV7bnTVmt2n7IYIsD79w0pqM=@lists.infradead.org
+X-Gm-Message-State: AFq9FYI9L44KZWi/2oqxxHNA/Wg5IEMCjE74/byRYdYMac1BtOkI+TZG
+	RKRufEuV+xvPCL4SFwYPXGm04eO8HCQbsK3fq7yGkF3baY0RDQnzgOj4HK4n8IKoTNt9bCq6vwS
+	FxsBzzO/RK7cb7V0O529LsBBm7/DvTft5wipO/cx3suqZl+Q5dUUES59qQaljMfAvLSepn0RnAy
+	u0
+X-Gm-Gg: AYBFou1YhKvtUdZXQCXqdqI3vTm/TbsYZG5sg5s3Et1saIhVaniADnRDbf33O9AnGY3
+	KiMjOmc90ylpD7HIH6xXAqjAK8b8pqOd/upBAcW2CnyPdkHXwgziSkmk8MaJwBuJABUS8T2kjnB
+	cFyznROSu938p4Y679dTuttYB/t9RjY+Zs3PMohHinl07hn6nB0mwgft7H5F5B2wlXcOysBqpMK
+	a7Ism1uURCd2qZBaYyqIC9VjQRHCif9aQ7+FnI4DODHu023Ws6ZMpM6lBhJm6enWlRkq7u9Qn6M
+	Bw94/SvAWBmivCCFRLANKDHSFHX71eIxB4JFC97HQKyvigeGZJsIgUpLkMa5SCxCbwP0F8nt3L4
+	p9E1l3oep/zBxPXRf2neUCVB7FJKJxy1CZ8aOCYIGpqa5xQeQrhWdJsTwiREnhVU=
+X-Received: by 2002:a17:903:32c3:b0:2df:964a:fd42 with SMTP id d9443c01a7336-2e2e4b5e112mr12495895ad.38.1790778190994;
+        Wed, 30 Sep 2026 07:23:10 -0700 (PDT)
+X-Received: by 2002:a17:903:32c3:b0:2df:964a:fd42 with SMTP id d9443c01a7336-2e2e4b5e112mr12495585ad.38.1790778190243;
+        Wed, 30 Sep 2026 07:23:10 -0700 (PDT)
 Received: from [192.168.1.6] ([117.143.161.217])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-cc7d9f160b7sm1040104a12.3.2026.09.30.07.17.48
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2e2e587d2desm8727315ad.12.2026.09.30.07.23.06
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 30 Sep 2026 07:17:53 -0700 (PDT)
-Message-ID: <dd0ddd6b-f2a3-4f10-9baf-7420e66d6a5d@oss.qualcomm.com>
-Date: Wed, 30 Sep 2026 22:17:46 +0800
+        Wed, 30 Sep 2026 07:23:09 -0700 (PDT)
+Message-ID: <cc620871-e6cf-44a4-8026-ff42f35efc15@oss.qualcomm.com>
+Date: Wed, 30 Sep 2026 22:23:05 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v17 09/11] arm64: dts: qcom: kaanapali: Add CAMSS and
- CSIPHY block definitions
+Subject: Re: [PATCH v17 11/11] arm64: dts: qcom: kaanapali: Add camera MCLK
+ pinctrl
 To: sashiko-reviews@lists.linux.dev
-Cc: linux-phy@lists.infradead.org, robh@kernel.org, conor+dt@kernel.org,
-        media-ci@linuxtv.org, vkoul@kernel.org, neil.armstrong@linaro.org,
-        devicetree@vger.kernel.org, olteanv@gmail.com
+Cc: media-ci@linuxtv.org, robh@kernel.org, devicetree@vger.kernel.org,
+        vkoul@kernel.org, linux-phy@lists.infradead.org, olteanv@gmail.com,
+        neil.armstrong@linaro.org, conor+dt@kernel.org
 References: <20260928-kaanapali-camss-v17-0-dcf3fd37f76c@oss.qualcomm.com>
- <20260928-kaanapali-camss-v17-9-dcf3fd37f76c@oss.qualcomm.com>
- <20260929061112.51F2C1F000FF@smtp.kernel.org>
+ <20260928-kaanapali-camss-v17-11-dcf3fd37f76c@oss.qualcomm.com>
+ <20260929060743.537E11F000FF@smtp.kernel.org>
 Content-Language: en-US
 From: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
-In-Reply-To: <20260929061112.51F2C1F000FF@smtp.kernel.org>
-X-Proofpoint-GUID: 4Ca9asEaVEI_Iger9-mocu0Yo8nNfW4L
-X-Proofpoint-ORIG-GUID: 4Ca9asEaVEI_Iger9-mocu0Yo8nNfW4L
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTMwMDA1NiBTYWx0ZWRfX94RWUlv7Z9lu
- q1Ck+HhOhHS4X5Roe8HX+7qWPD+XR0uRaCWA18IAT/t1lmBmChahpRga6FJQ4Ib1Qoshzcx6k3m
- wG3AbV2JrAYoZV7tDXmRkvPyPTmX5SyCKPEJR9hRRm0d17OnqfS2XKrGtlzyXfnKB0VlA1ZmdXL
- yrAl4edA8GcqZfwg52AxTCslJV+whWiE0yAZdj9TRly72IUYp5W7KfLJp8tF6llEe4CYZ/wpjCa
- PgFJvXSokzLFFf4exUz1aJLKF+5XmtMKDd4rWwQXq1hpcedKAUICzTfvxpjmNym4vCTdBggd4k+
- CokHD8zQxSyxAQnM6mHORRgRtreO95pDr3XxRgjnjSANH+j7p2pl1zadkjWroT0C+15tFf7L3/K
- EjvWeb6YKclRk5PY10P+7vwNAm+/kJ6nQLPR539KU9FrCsHinZ7Zb9wBZSE7R0FgkQalImTx2FL
- LLrdpDm/0Ih3wle+jiQ==
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTMwMDA1NiBTYWx0ZWRfXx0llyU/yAGiu
- p6mSzU7kDkUD+Eglju+CGO3YXSbNaJVw4eQmtEC98oAn4gJOAexhgwu+o2cf1JGnUYXUnXTeC6Q
- hy5IEVP/tDkGOQcf1qIJX5aC4xrswqc=
-X-Authority-Analysis: v=2.4 cv=Tu1zFzXh c=1 sm=1 tr=0 ts=6abd1a13 cx=c_pps
- a=Oh5Dbbf/trHjhBongsHeRQ==:117 a=K/RrOd38U9TixX+j9hIN8g==:17
+In-Reply-To: <20260929060743.537E11F000FF@smtp.kernel.org>
+X-Proofpoint-Spam-Info: AW1haW4tMjYwOTMwMDA1NyBTYWx0ZWRfX8CkaQPPSbrd/
+ CfKGlKn2CvJolYMpf4o7ZxOc9i3iQDTIWOCUJDFMrQQQlmnYdH2DXkRDF6bNT4DmFhjbaNef132
+ wCGVChamX//CRvRFkJc995ng1/tbVW0=
+X-Proofpoint-GUID: t44hsFZ6Dz0Lq7Xgw3zbMe0QKCtxUpJd
+X-Proofpoint-ORIG-GUID: t44hsFZ6Dz0Lq7Xgw3zbMe0QKCtxUpJd
+X-Authority-Analysis: v=2.4 cv=KfxHIgYD c=1 sm=1 tr=0 ts=6abd1b4f cx=c_pps
+ a=cmESyDAEBpBGqyK7t0alAg==:117 a=K/RrOd38U9TixX+j9hIN8g==:17
  a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22
- a=VwQbUJbxAAAA:8 a=KKAkSRfTAAAA:8 a=EUspDBNiAAAA:8 a=aJNJXID8IE6Oa3qSs_0A:9
- a=QEXdDO2ut3YA:10 a=_Vgx9l1VpLgwpw_dHYaR:22 a=cvBusfyB2V15izCimMoJ:22
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=dezkyaf-IGWI9O4KkrQA:9 a=QEXdDO2ut3YA:10
+ a=1OuFwYUASf3TG4hYMiVC:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTMwMDA1NyBTYWx0ZWRfX75DDezRVM0+A
+ hyKEe7pGLziy7suRWHS+xCWe4qS4rK2b0YzIwYdTfER0On0doM/TvjlW14U2HhwlIz/TYmPMi06
+ jJlRB31ZZ7MbAUB1NjDnTShDJsjXB7u59qtNvqKQiL96CA0+JMmxyRy7r+X45xdnFkbyiDZ1fPO
+ jGiHi3RxaTXE8biEhxHSxDbn1Mq9Nq+GnS+ybhwT3epqSU943p4IXzX9BmWEuower/TI+DUDhg7
+ n606jm8NFacZQAOCKczCDtxzjf/Ojip/zadaPKLMaS8lWcClz419+nXtFg1pO3Jkf7ZU7e0fvpx
+ Xvnk0paMj83prnMPCsqPvARks/u9aQ5QmM7IBTPm2jutim1B6T3qyiZJ8a7+O9AXbwuVuI6zaK6
+ jQ3P/J9U3hyxPyXsNkXk1NwH5qx63VGtWtEPg/s6ufjQN5v4JnhGTuE8CT1QGidAUo1+cDBi228
+ 6YQUrP/Qv5YIr1aIlzA==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-09-30_03,2026-09-21_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 spamscore=0 malwarescore=0 suspectscore=0 phishscore=0
- lowpriorityscore=0 adultscore=0 clxscore=1015 bulkscore=0 priorityscore=1501
+ malwarescore=0 impostorscore=0 suspectscore=0 phishscore=0 clxscore=1015
+ priorityscore=1501 bulkscore=0 adultscore=0 spamscore=0 lowpriorityscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2609300056
+ reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2609300057
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260930_071756_712921_3E446B52 
-X-CRM114-Status: GOOD (  16.79  )
+X-CRM114-CacheID: sfid-20260930_072312_783879_8D1D6766 
+X-CRM114-Status: GOOD (  15.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -151,62 +153,54 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 9/29/2026 2:11 PM, sashiko-bot@kernel.org wrote:
+On 9/29/2026 2:07 PM, sashiko-bot@kernel.org wrote:
 > Thank you for your contribution! Sashiko AI review found 1 potential issue(s) to consider:
-> - [Medium] dts: missing #phy-cells in CSIPHY nodes breaks phy lookup
+> - [Low] dts: devicetree node names incorrectly use underscores
 > --
 > 
-> commit 0d5dc943d2ac26c65efdf11a56970db1bd7ff6f9
+> commit 185a6cf958fbea99362a9e2c9f3989dad4362d3c
 > Author: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
 > 
-> arm64: dts: qcom: kaanapali: Add CAMSS and CSIPHY block definitions
+> arm64: dts: qcom: kaanapali: Add camera MCLK pinctrl
 > 
-> This commit adds device tree nodes for the CAMSS and CSIPHY blocks on the
-> Kaanapali platform. These definitions enable camera pipelines to be configured
-> and used by board-specific device trees.
+> This commit adds TLMM pinctrl states for the camera master clock GPIOs on
+> Kaanapali so camera sensor nodes can select the proper MCLK pin functions
+> when enabled.
 > 
 >> diff --git a/arch/arm64/boot/dts/qcom/kaanapali.dtsi b/arch/arm64/boot/dts/qcom/kaanapali.dtsi
->> index 3e63e62251089..7a80438bde570 100644
+>> index c19945bc438eb..bbcd5a622f0b2 100644
 >> --- a/arch/arm64/boot/dts/qcom/kaanapali.dtsi
 >> +++ b/arch/arm64/boot/dts/qcom/kaanapali.dtsi
-> 
 > [ ... ]
-> 
->> @@ -3595,6 +3596,307 @@ usb_dp_qmpphy_dp_in: endpoint {
->>   			};
->>   		};
->>   
->> +		camss: isp@9253000 {
-> 
-> [ ... ]
-> 
->> +		csiphy0: phy@9523000 {
->> +			compatible = "qcom,kaanapali-csi2-phy";
->> +			reg = <0x0 0x09523000 0x0 0x2000>;
-> 
-> [Severity: Medium]
-> Does this node need a #phy-cells property? The generic PHY framework requires
-> this for consumers to successfully probe.
-> 
-> The qcom,kaanapali-csi2-phy compatible binds to a generic PHY provider via
-> devm_of_phy_provider_register(dev, of_phy_simple_xlate). When a consumer
-> calls phy_get(), the PHY core invokes of_parse_phandle_with_args() to parse
-> the reference.
-> 
-> Without #phy-cells = <0>; in this and the other csiphy nodes (csiphy0 through
-> csiphy5) in arch/arm64/boot/dts/qcom/kaanapali.dtsi, the translation will fail,
-> leaving the consumer devices non-functional.
-> 
+>> +			cam_mclk2_default: cam-mclk2-default-state {
+>> +				pins = "gpio91";
+>> +				function = "cam_asc_mclk2";
+>> +				drive-strength = <2>;
+>> +				bias-disable;
+>> +			};
 >> +
->> +			clocks = <&camcc CAM_CC_CSIPHY0_CLK>,
->> +				 <&camcc CAM_CC_CSI0PHYTIMER_CLK>,
->> +				 <&camcc CAM_CC_CORE_AHB_CLK>;
+>> +			cam_mclk3_default: cam_mclk3-default-state {
 > 
+> [Severity: Low]
+> Does this node name incorrectly use an underscore instead of a hyphen?
+> 
+> Devicetree node names conventionally use hyphens rather than underscores.
+> The previous nodes like cam-mclk0-default-state use the correct hyphenated
+> pattern.
+> 
+> Using an underscore here and in the subsequent cam_mclk4 through cam_mclk7
+> nodes will trigger dtc style warnings (node_name_chars_strict) and fail
+> standard devicetree style checks.
+> 
+>> +				pins = "gpio92";
+>> +				function = "cam_mclk";
+>> +				drive-strength = <2>;
+>> +				bias-disable;
+>> +			};
 > [ ... ]
 > 
-
-This node style aligns with the x1e80100 example:
-https://lore.kernel.org/all/20260917-x1e-camss-csi2-phy-dtsi-v7-4-1a63eb35838b@linaro.org/
+Yes. I change original names to align with Glymur style but makes this 
+mistake. Will fix it in next revision.
 
 Best Regards,
 Hangxiang
