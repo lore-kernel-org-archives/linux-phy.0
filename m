@@ -4,87 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 706C0CA5FBB
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC62ECA5FC1
 	for <linux-phy@archiver.kernel.org>; Wed, 30 Sep 2026 07:18:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cV0a+L5YfCrqnc0MyCxa478nfNN5zwRr4+zSi+e6s/w=; b=IhGwpI5tFQuDHf
-	vTPum7KP6AmxxdLkqTKb2FV7Zz/elllvtuAs48cYlartJjELOv02DD+lPhSRYAJ8ncMaCo4JhXX4V
-	xXaer1YPDxl/uY93YWQgPL3qxTy3NXtbSsfuvKa9WQa3C4Ovdu49WkET8uxpIyzUOeT6xCF1Avhl8
-	cjlVmuBuQ9CZqiL3MatLopPGgjeEgTkAGfTff0ae4upHBZkW7G+y7rzbHIvY0uPCaVJffl3pTk1kZ
-	rbA9/DvBn/JKpDXIzN7ODtx84mQwnEfSsedFrtBiJsKaTiJeCVKPAwMVuBKBsAYWnI2YTZozo637O
-	adp81GXUvreRs/rQLmfA==;
+	List-Owner; bh=OxWdtKhqaVPRzDKYuHgLlP3e/NKzQ/Glyt20jkyPWSE=; b=e/VjyDuRQmFE+D
+	HRhdG73ZV+KZfHXEq8mRxwbFY3JGRAVNH0HnCyD7KQojLFbLHh5B7gMp1YurmpZnrRsAjw4lt6cLc
+	1hFYAaVto5lcn5VI/99Gmb8L24pMfKajACcLN3fDtmR6BZdMwJ0j0/MRsNHql9BAorgSFKUHn9ZkX
+	e9/1OQ4fA4Ai6Z8wySU76bBaCOBXA/YJe7tIrdJtqKlYfWDA48qtfrOA6RnWKnvjThLoWq5duH6O0
+	e5CLbfMI7hKSPmLHc7u0KNURJTF52nX0ebEeLY/i2M41RjzM6eeJ8HNH04jV4idSxlPf/hy2xGqQY
+	8ai6/Qc3n/Q7tYiA+09g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBoaZ-00000005Fm9-0cZx;
+	id 1xBoaZ-00000005Fmo-1WaS;
 	Wed, 30 Sep 2026 07:18:51 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBoaP-00000005Fj2-3z8o
+	id 1xBoaQ-00000005FjB-1lSv
 	for linux-phy@bombadil.infradead.org;
 	Wed, 30 Sep 2026 07:18:42 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	:References:In-Reply-To:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:
 	Content-Type:Content-ID:Content-Description;
-	bh=jaOi9SgQBlcEjje0pSLuoVl2zNe4f+4W9jub/av1TQM=; b=RNQ1CNa2GyGxzeKz9EgPVrA0Nz
-	r7+eVxD8nfo2+zsJcmV3OQY/jCpBGLb/BHeMZsJRPtSbwuzaaFAlD9tIZoKUtNZDCV80L8xR5v6QQ
-	z+sSA8PiAHCgyTyxrUb6abh8g3dxvU2zdUvjTNxNl5bVldoHq4kRLSJQQPsaZI4/V3kytrriAQjDU
-	kqpxF/c0bqo4hnBdLsVvyB9elzRDGZGW2Gun1TVaYbdDbr8mN1zasuf4fflnVJfGBG3zIJSUSI1Pu
-	V+l9NTiYzNRYy4v9I8XmKOwlXyrZWMamTCjQoF9Yrk+vAaVszmbBllWA8K0Ohwd+J3kEImwqlK0Z5
-	LMrX02dA==;
+	bh=OBFy3gRg9djAHfzdZsNUfVoPCNaFFvApu+nxOmSEsi0=; b=XVLR7tKNdJ4rMaqlW3XMYkig/Y
+	B0i79RPDZ53PHY3fesBv26gg9rfnFVqL3waaeYzwzHAFi/zu/ICq6pyC/I/hZ4ghLAvDn5wEVd6a5
+	OujuE8Uv8yCM6zkJQqBXuNzdR0lO7zSLyvLlrr6iYqNQx2CMSxk+dVGm7duzO1Xgic0lQFEvo7ifu
+	qbnKrGTpF0S8PTdJD1ivHtqFi1X6Z12oTTIGjtWyxdTj9XNRKY1iSGzkD+Hnaj9oCLmdcPTABvSye
+	r1OdaNCJskBJmJtYYDUJIcjMoi93yQN5OEl61YL4scpy4LU5KQED08WKwEfK2AigiZAdLkLEbvYB9
+	CNrPlTwg==;
 Received: from mail-wm2-x10.google.com ([2a00:1450:4864:31::10])
 	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1xBoaM-00000003Sgd-2oue
+	id 1xBoaN-00000003ShG-1HX1
 	for linux-phy@lists.infradead.org;
-	Wed, 30 Sep 2026 07:18:40 +0000
-Received: by mail-wm2-x10.google.com with SMTP id 5b1f17b1804b1-4a003bd18e5so16331535e9.0
-        for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 00:18:38 -0700 (PDT)
+	Wed, 30 Sep 2026 07:18:41 +0000
+Received: by mail-wm2-x10.google.com with SMTP id 5b1f17b1804b1-49fff72474fso20506635e9.3
+        for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 00:18:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1790752717; x=1791357517; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1790752718; x=1791357518; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=jaOi9SgQBlcEjje0pSLuoVl2zNe4f+4W9jub/av1TQM=;
-        b=IpTZ0OdHzPQ5uzmpwWtldITwrNEUVUXp7NPnQimt4AjBTryvNuxQ+BWPBV3sMF7bw2
-         pGrUL9FB573yvcbxvMJFat594/ahOrpgeLbb5TSqYSEcyUJuvkbxzNdu5I71i2kp/JMK
-         tKgbEs4ZiWmhCR3l6zLYOmsaeyHRsOque3pUdNrOXNJWpU9rvH1mBNruG11cxt2lTuDz
-         EEwlETsN3/5aP6tB05ZzzDV0MPYipTxDE2PoFEFx9Eo8PntrvJpIA107DH1s0Unr8zzD
-         a1TS++o9SLBWHwI9/l+R7FEvxWj06xXNkB/vPLvdVZvCkZ5zk8azNz1VCtdz70+LZ+x/
-         xy1w==
+         :message-id:date:subject:to:from:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=OBFy3gRg9djAHfzdZsNUfVoPCNaFFvApu+nxOmSEsi0=;
+        b=VqrESNZyng5QFkPOQQ/4aqg6wk7xkZ5WHxPlLgedUfqxLcInNCwEUfTkg9lBgRCQ4J
+         dNX+kyPDHtUwX5ExUMlJ4RB97vlMMV4QnMSI3JKp/eulJGrR9Biw0BVbZrxjLUVlwqKg
+         /iq+aS3bmfimVuTpauH/qsEBLMdS1EfjrOcCJYJBGeWBwI3ufQ/Yt6fW5kmFZR0Zmaqp
+         gKlU9BJrbfTdhNc2cIncQGehhswBMxqqHIxcHAaQK7wM033dnJq0avWGyyTFN2KrYP0W
+         lmrOXRg1AtWwRt6Z996oLcujfMfSY7xMu0aWt4tC2YWqJzwbUNvnjM8zyqy0pbKFzOw3
+         9UOA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1790752717; x=1791357517;
+        d=1e100.net; s=20260707; t=1790752718; x=1791357518;
         h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=jaOi9SgQBlcEjje0pSLuoVl2zNe4f+4W9jub/av1TQM=;
-        b=vbefevHQ6rMGil2Ce6qW1DHPmT1LE9nFgA4mD9sq5WZM+GXiZb6nCAVk4QIEQ6TN5n
-         zt68CMPC0EpBaUqP9NO6axE5OYTRlvFYraKvQYpiNxf4TO/l2h9sa5BFTuTmU6wY6JGy
-         93JTPbkfV689WK4TAS1y8ogT7bnUxPv8B+wxJBlkd1l2JC+Dd8lI12C/FHxZ/F/GgAU6
-         zoLA3nnmu7OxrjwdrE5W9LQ0lYxcEpEslMaWHLnVxmRVkNzkjrfwnt5Hm1Wh4pLU9Sng
-         CRtaAp0S6YpPM1b3FZvsAAN3TO6/HjgNY8wLMQ8GP/ZFt8g9v99Ol52t2kVm3R0r8uet
-         hiSw==
-X-Forwarded-Encrypted: i=1; AKwUvBxH4v25CiXgEGlg+1jTEqYUE7T7IMYmoW25GLAzhANd0LVI2Co4tu7zJalfNmyHNvS6RIon6kFXNEI=@lists.infradead.org
-X-Gm-Message-State: AFuF++nHt4u5wsVFpgNIe+f+i2g1QjPggNBbWB0RBFALd52969/rtVlz
-	m6sdHIUR8iYWSk0tIepMCQ0FUldHzBVu0bJn3WJBYwsCzh7HUv4YKjrV
-X-Gm-Gg: AYBFou39xAF24zIFVQGMLtLzlypoHldov3wdFftoWyx1gxfqMM/Qucr63gy0cHobNV5
-	WSQcfbWiMAVxBmoggnFhQ5GuaRBZrDStXwUHnZdlFcHQkvtAPe3u+35hXMmVkbqVpQb6GL/Y9jh
-	83B5qts4zXrx/yk8/fbu9VllMhsdJTlZ7ZZ70jo1DW7jFUNZyVV87LspFdGGt36jmcJpsziq4T+
-	I7qcXbqmH6bw6v65v9+JWFflDKTJKRjJ0s/fGnnYmBpQXHdsf11U0fW4j6HYZmnL5P83ujmggvw
-	tgQ8LkEVtaMS6f9lRd10TJjHhWtV7gVt0/E5LVCVTw0pEQHWlN4yg395cg2rLhgdtRPzQjQsG84
-	N2HuXmRp5gu0FISMFJEwHFKtz6rxJGV6ffbltOKobqbpKENUEdAnVQOwJ18UXPA5+U/BQv3QZ1u
-	Uyj260nkq7r2MhH+nKx1VooygpnyxRnXXktkQlFHPcWF2KaVGAVeWHdNt4V+WRJgXGFdWybTVah
-	gtvCr86VDTNDsle/+tnMqpZ8enn6+Vg2Z5l5hOpx6UDLasRc3nTVWCwq1bjEeiB
-X-Received: by 2002:a05:600c:6815:b0:49f:f963:7093 with SMTP id 5b1f17b1804b1-4a01b00d679mr6300785e9.23.1790752716700;
-        Wed, 30 Sep 2026 00:18:36 -0700 (PDT)
+         :message-id:date:subject:to:from:x-gm-gg:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to:content-type;
+        bh=OBFy3gRg9djAHfzdZsNUfVoPCNaFFvApu+nxOmSEsi0=;
+        b=1QQGYVg1sz8FrwP8t/bNCBu7EOhAcWvXm8pB8ALGzJ0gB/1y6VTxugoDBro3WNoMh5
+         uaKfzhbEzDeFSXRmmuy997KUz4CLxBan+J7/FOlHlefELz/K07ZBW17u6BrxUdZM+VoC
+         7DbP7UkB9HAGhjmM5ljWEPebEwvzX/fs61YTLA/NKmWOYLeA5YeqhPJPn8fZGZBu5Tzu
+         O2L6GOBaBscQXKWCPTCJd5xOc71DM7yJ3GGAsEiF9Pw6DGspMLumEHly/m1TAM4/BE1l
+         pSgAYjQduLmRNs98jTkjn7wO6K6PFBs6p5cBMC/RgDWvw/vNtAoch0m+Bn2iPapJ2wd6
+         d1mw==
+X-Forwarded-Encrypted: i=1; AKwUvBzerceW1ResZ2qb8QCM4bIFpHaMdYkcJtk0q75jaw9D2aBTHXqzM1QCwur0Ma0YrwtBZHcxadEwo7U=@lists.infradead.org
+X-Gm-Message-State: AFuF++m+MdO/TTSz65ZPh0DVdBc0cPe021gJ89Vy9fxX66hPudgMvxdl
+	qfisg8I7prlRr/nVAflJQGCpe/A7sHm/Y2a4+k5R8AmbS6M+w/JF4HYN
+X-Gm-Gg: AYBFou0ht14NSY/KQZCDYvh7LBF4ZGCicOUjpqRQXa0PAEqvMIwymjwkX0fx7Lm0CNl
+	6PWDcnh49+mhDpJDIu90lePeSn1/lZ9nGWVDKZY92cUwFf4KrtfEgWzhu9Sh/5tNMmAyx7gQNUt
+	5IisDH8MqKZlDFPiliHWdKSy2SSGrrGjP0cGrLd2X8OHiQCQ7cQAWubPPFiOIR6BMKR6B/5NvFl
+	SN47mS9eaUsU05qnh8hq8XFGW8Q58dKzWrs76vXPZshVZ/etnrBKw/J/vtX3WPhHJ8MtP/nPxKi
+	jKpqdn90zTOBne67u74dlyOroNWOi28JbT21hj+Mn3//ExUaMD0gy8LY3dxxTZXXB0x0OCYgI+Q
+	AGVGsweqF7jUUQ9UykLH2Ac9AJ0nLElF0EauP/XCCClAC+smVyspMo9fA86JidVyQVZ7uY4fltV
+	03Zt+kRpv5Qsek8jsjyG7R0gyM3i6AjAGc6wu9a6FFwS4MyZHJZzMILoEXHSKjMRvJrguQlxfVN
+	JBcPYtAaAVcHNrGepmpb088f6rBfnyIbrpHuFOKxeY5NXd1N8qFyzOpLnvjdpKo
+X-Received: by 2002:a05:600c:37c4:b0:49f:ce78:356b with SMTP id 5b1f17b1804b1-4a01b125598mr5076455e9.28.1790752718096;
+        Wed, 30 Sep 2026 00:18:38 -0700 (PDT)
 Received: from Ansuel-XPS24.localdomain (host-82-57-191-234.retail.telecomitalia.it. [82.57.191.234])
-        by smtp.googlemail.com with ESMTPSA id 5b1f17b1804b1-4a01b1e79e4sm10590905e9.2.2026.09.30.00.18.35
+        by smtp.googlemail.com with ESMTPSA id 5b1f17b1804b1-4a01b1e79e4sm10590905e9.2.2026.09.30.00.18.36
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 30 Sep 2026 00:18:36 -0700 (PDT)
+        Wed, 30 Sep 2026 00:18:37 -0700 (PDT)
 From: Christian Marangi <ansuelsmth@gmail.com>
 To: Christian Marangi <ansuelsmth@gmail.com>,
 	Vinod Koul <vkoul@kernel.org>,
@@ -98,17 +98,16 @@ To: Christian Marangi <ansuelsmth@gmail.com>,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-Subject: [PATCH v12 1/3] dt-bindings: phy: Add documentation for Airoha AN7581 USB PHY
-Date: Wed, 30 Sep 2026 09:18:17 +0200
-Message-ID: <20260930071826.48811-2-ansuelsmth@gmail.com>
+Subject: [PATCH v12 2/3] phy: move and rename Airoha PCIe PHY driver to dedicated directory
+Date: Wed, 30 Sep 2026 09:18:18 +0200
+Message-ID: <20260930071826.48811-3-ansuelsmth@gmail.com>
 X-Mailer: git-send-email 2.55.0
 In-Reply-To: <20260930071826.48811-1-ansuelsmth@gmail.com>
 References: <20260930071826.48811-1-ansuelsmth@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260930_081838_940766_8ABEBAC7 
-X-CRM114-Status: GOOD (  20.37  )
+X-CRM114-CacheID: sfid-20260930_081839_672130_65CBA535 
+X-CRM114-Status: GOOD (  27.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,119 +124,174 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add documentation for Airoha AN7581 USB PHY that describe the USB PHY
-for the USB controller.
+To keep the generic PHY directory tidy, move the PCIe PHY driver for
+Airoha AN7581 SoC to a dedicated directory.
 
-Airoha AN7581 SoC support a maximum of 2 USB port. The USB 2.0 mode is
-always supported. The USB 3.0 mode is optional and depends on the Serdes
-mode currently configured on the system for the relevant USB port.
+Also rename the driver and add the relevant SoC name to the .c and .h
+file in preparation for support of PCIe and USB PHY driver for Airoha
+AN7583 SoC that use a completely different implementation and
+calibration for PHYs and will have their own dedicated drivers.
 
-To correctly calibrate, the USB 2.0 port require correct value in
-"airoha,usb2-monitor-clk-sel" property. Both the 2 USB 2.0 port permit
-selecting one of the 4 monitor clock for calibration (internal clock not
-exposed to the system) but each port have only one of the 4 actually
-connected in HW hence the correct value needs to be specified in DT
-based on board and the physical port. Normally it's monitor clock 1 for
-USB1 and monitor clock 2 for USB2.
+The rename permits to better identify the specific usage of the driver
+in the future once the airoha PHY directory will have multiple driver
+for multiple SoC.
 
-To correctly setup the Serdes mode attached to the USB 3.0 mode, a phys
-property is required with the phandle pointing to the correct Serdes port
-provided by the SCU node. Providing the phys property is optional if USB
-3.0 is not used.
+The config is changed from PHY_AIROHA_PCIE to PHY_AIROHA_AN7581_PCIE.
 
 Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Acked-by: Lorenzo Bianconi <lorenzo@kernel.org>
 ---
- .../bindings/phy/airoha,an7581-usb-phy.yaml   | 62 +++++++++++++++++++
- MAINTAINERS                                   |  6 ++
- 2 files changed, 68 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
+ MAINTAINERS                                         |  4 ++--
+ drivers/phy/Kconfig                                 | 11 +----------
+ drivers/phy/Makefile                                |  4 ++--
+ drivers/phy/airoha/Kconfig                          | 13 +++++++++++++
+ drivers/phy/airoha/Makefile                         |  3 +++
+ .../phy-an7581-pcie-regs.h}                         |  2 +-
+ .../{phy-airoha-pcie.c => airoha/phy-an7581-pcie.c} |  6 +++---
+ 7 files changed, 25 insertions(+), 18 deletions(-)
+ create mode 100644 drivers/phy/airoha/Kconfig
+ create mode 100644 drivers/phy/airoha/Makefile
+ rename drivers/phy/{phy-airoha-pcie-regs.h => airoha/phy-an7581-pcie-regs.h} (99%)
+ rename drivers/phy/{phy-airoha-pcie.c => airoha/phy-an7581-pcie.c} (99%)
 
-diff --git a/Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml b/Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
-new file mode 100644
-index 000000000000..f42e3d49a61f
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
-@@ -0,0 +1,62 @@
-+# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/airoha,an7581-usb-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Airoha AN7581 SoC USB PHY
-+
-+maintainers:
-+  - Christian Marangi <ansuelsmth@gmail.com>
-+
-+description: >
-+  The Airoha AN7581 SoC USB PHY describes the USB PHY for the USB controller.
-+
-+  Airoha AN7581 SoC support a maximum of 2 USB port. The USB 2.0 mode is
-+  always supported. The USB 3.0 mode is optional and depends on the Serdes
-+  mode currently configured on the system for the relevant USB port.
-+
-+properties:
-+  compatible:
-+    const: airoha,an7581-usb-phy
-+
-+  reg:
-+    maxItems: 1
-+
-+  airoha,usb2-monitor-clk-sel:
-+    description: Describe what oscillator across the available 4
-+      should be selected for USB 2.0 Slew Rate calibration.
-+    $ref: /schemas/types.yaml#/definitions/uint32
-+    enum: [0, 1, 2, 3]
-+
-+  phys:
-+    items:
-+      - description: phandle to Serdes PHY. Optional if USB 3.0 is not used.
-+
-+  '#phy-cells':
-+    description: The cell contains the mode, PHY_TYPE_USB2 or PHY_TYPE_USB3,
-+      as defined in dt-bindings/phy/phy.h.
-+    const: 1
-+
-+required:
-+  - compatible
-+  - reg
-+  - airoha,usb2-monitor-clk-sel
-+  - '#phy-cells'
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/soc/airoha,scu-ssr.h>
-+
-+    phy@1fac0000 {
-+        compatible = "airoha,an7581-usb-phy";
-+        reg = <0x1fac0000 0x10000>;
-+
-+        airoha,usb2-monitor-clk-sel = <1>;
-+        phys = <&scu AIROHA_SCU_SERDES_USB1>;
-+
-+        #phy-cells = <1>;
-+    };
-+
 diff --git a/MAINTAINERS b/MAINTAINERS
-index 70a11f2ff61d..0b9946c532af 100644
+index 0b9946c532af..d2f2a491f3c0 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -785,6 +785,12 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/spi/airoha,en7581-snand.yaml
- F:	drivers/spi/spi-airoha-snfi.c
+@@ -765,8 +765,8 @@ M:	Lorenzo Bianconi <lorenzo@kernel.org>
+ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ S:	Maintained
+ F:	Documentation/devicetree/bindings/phy/airoha,en7581-pcie-phy.yaml
+-F:	drivers/phy/phy-airoha-pcie-regs.h
+-F:	drivers/phy/phy-airoha-pcie.c
++F:	drivers/phy/airoha/phy-an7581-pcie-regs.h
++F:	drivers/phy/airoha/phy-an7581-pcie.c
  
-+AIROHA USB PHY DRIVER
-+M:	Christian Marangi <ansuelsmth@gmail.com>
-+L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
+ AIROHA SOUND DRIVER
+ M:	Christian Marangi <ansuelsmth@gmail.com>
+diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+index 19f3b7d12b7d..e93951a4a898 100644
+--- a/drivers/phy/Kconfig
++++ b/drivers/phy/Kconfig
+@@ -46,16 +46,6 @@ config GENERIC_PHY_MIPI_DPHY
+ 	  Provides a number of helpers a core functions for MIPI D-PHY
+ 	  drivers to us.
+ 
+-config PHY_AIROHA_PCIE
+-	tristate "Airoha PCIe-PHY Driver"
+-	depends on ARCH_AIROHA || COMPILE_TEST
+-	depends on OF
+-	select GENERIC_PHY
+-	help
+-	  Say Y here to add support for Airoha PCIe PHY driver.
+-	  This driver create the basic PHY instance and provides initialize
+-	  callback for PCIe GEN3 port.
+-
+ config PHY_CAN_TRANSCEIVER
+ 	tristate "CAN transceiver PHY"
+ 	select GENERIC_PHY
+@@ -168,6 +158,7 @@ config PHY_XGENE
+ 	help
+ 	  This option enables support for APM X-Gene SoC multi-purpose PHY.
+ 
++source "drivers/phy/airoha/Kconfig"
+ source "drivers/phy/allwinner/Kconfig"
+ source "drivers/phy/amlogic/Kconfig"
+ source "drivers/phy/apple/Kconfig"
+diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
+index d7aa516bcc49..4ca4a07963fc 100644
+--- a/drivers/phy/Makefile
++++ b/drivers/phy/Makefile
+@@ -7,7 +7,6 @@ obj-$(CONFIG_PHY_COMMON_PROPS)		+= phy-common-props.o
+ obj-$(CONFIG_PHY_COMMON_PROPS_TEST)	+= phy-common-props-test.o
+ obj-$(CONFIG_GENERIC_PHY)		+= phy-core.o
+ obj-$(CONFIG_GENERIC_PHY_MIPI_DPHY)	+= phy-core-mipi-dphy.o
+-obj-$(CONFIG_PHY_AIROHA_PCIE)		+= phy-airoha-pcie.o
+ obj-$(CONFIG_PHY_CAN_TRANSCEIVER)	+= phy-can-transceiver.o
+ obj-$(CONFIG_PHY_ECONET_PCIE)		+= phy-econet-pcie.o
+ obj-$(CONFIG_PHY_EYEQ5_ETH)		+= phy-eyeq5-eth.o
+@@ -20,7 +19,8 @@ obj-$(CONFIG_PHY_PISTACHIO_USB)		+= phy-pistachio-usb.o
+ obj-$(CONFIG_PHY_SNPS_EUSB2)		+= phy-snps-eusb2.o
+ obj-$(CONFIG_PHY_XGENE)			+= phy-xgene.o
+ 
+-obj-$(CONFIG_GENERIC_PHY)		+= allwinner/	\
++obj-$(CONFIG_GENERIC_PHY)		+= airoha/	\
++					   allwinner/	\
+ 					   amlogic/	\
+ 					   apple/	\
+ 					   axiado/	\
+diff --git a/drivers/phy/airoha/Kconfig b/drivers/phy/airoha/Kconfig
+new file mode 100644
+index 000000000000..9a1b625a7701
+--- /dev/null
++++ b/drivers/phy/airoha/Kconfig
+@@ -0,0 +1,13 @@
++# SPDX-License-Identifier: GPL-2.0-only
++#
++# Phy drivers for Airoha devices
++#
++config PHY_AIROHA_AN7581_PCIE
++	tristate "Airoha AN7581 PCIe-PHY Driver"
++	depends on ARCH_AIROHA || COMPILE_TEST
++	depends on OF
++	select GENERIC_PHY
++	help
++	  Say Y here to add support for Airoha AN7581 PCIe PHY driver.
++	  This driver create the basic PHY instance and provides initialize
++	  callback for PCIe GEN3 port.
+diff --git a/drivers/phy/airoha/Makefile b/drivers/phy/airoha/Makefile
+new file mode 100644
+index 000000000000..912f3e11a061
+--- /dev/null
++++ b/drivers/phy/airoha/Makefile
+@@ -0,0 +1,3 @@
++# SPDX-License-Identifier: GPL-2.0
 +
- AIRSPY MEDIA DRIVER
- L:	linux-media@vger.kernel.org
- S:	Orphan
++obj-$(CONFIG_PHY_AIROHA_AN7581_PCIE)	+= phy-an7581-pcie.o
+diff --git a/drivers/phy/phy-airoha-pcie-regs.h b/drivers/phy/airoha/phy-an7581-pcie-regs.h
+similarity index 99%
+rename from drivers/phy/phy-airoha-pcie-regs.h
+rename to drivers/phy/airoha/phy-an7581-pcie-regs.h
+index 58572c793722..b938a7b468fe 100644
+--- a/drivers/phy/phy-airoha-pcie-regs.h
++++ b/drivers/phy/airoha/phy-an7581-pcie-regs.h
+@@ -1,4 +1,4 @@
+-/* SPDX-License-Identifier: GPL-2.0-only */
++// SPDX-License-Identifier: GPL-2.0-only
+ /*
+  * Copyright (c) 2024 AIROHA Inc
+  * Author: Lorenzo Bianconi <lorenzo@kernel.org>
+diff --git a/drivers/phy/phy-airoha-pcie.c b/drivers/phy/airoha/phy-an7581-pcie.c
+similarity index 99%
+rename from drivers/phy/phy-airoha-pcie.c
+rename to drivers/phy/airoha/phy-an7581-pcie.c
+index 56e9ade8a9fd..81ddf0e7638b 100644
+--- a/drivers/phy/phy-airoha-pcie.c
++++ b/drivers/phy/airoha/phy-an7581-pcie.c
+@@ -13,7 +13,7 @@
+ #include <linux/platform_device.h>
+ #include <linux/slab.h>
+ 
+-#include "phy-airoha-pcie-regs.h"
++#include "phy-an7581-pcie-regs.h"
+ 
+ #define LEQ_LEN_CTRL_MAX_VAL	7
+ #define FREQ_LOCK_MAX_ATTEMPT	10
+@@ -1279,12 +1279,12 @@ MODULE_DEVICE_TABLE(of, airoha_pcie_phy_of_match);
+ static struct platform_driver airoha_pcie_phy_driver = {
+ 	.probe	= airoha_pcie_phy_probe,
+ 	.driver	= {
+-		.name = "airoha-pcie-phy",
++		.name = "airoha-an7581-pcie-phy",
+ 		.of_match_table = airoha_pcie_phy_of_match,
+ 	},
+ };
+ module_platform_driver(airoha_pcie_phy_driver);
+ 
+-MODULE_DESCRIPTION("Airoha PCIe PHY driver");
++MODULE_DESCRIPTION("Airoha AN7581 PCIe PHY driver");
+ MODULE_AUTHOR("Lorenzo Bianconi <lorenzo@kernel.org>");
+ MODULE_LICENSE("GPL");
 -- 
 2.55.0
 
