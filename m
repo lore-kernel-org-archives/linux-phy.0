@@ -4,139 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51770CA5FC5
-	for <linux-phy@archiver.kernel.org>; Wed, 30 Sep 2026 14:23:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B988DCA5FC4
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Sep 2026 18:40:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s93oMRf6ru3ZlXiOB58UhWfn7wnBWYJmY5aM9oLSgVs=; b=u2A0Pl4KsTE6I5
-	1wpl+hR3OLRQ+SsCfnbPKeilHyawC1nvUu1PnTpprYQIiyvFGpn2gblzD6s0lLX0+vZi1/xMPbUJA
-	i6KKX+1JTo7jjvVUvvPzfCLwldjgslD7Dhvgev910xXJ/s8UoOJyUH5zKxFKVHltVqnv/d37wvQP0
-	UBpxVj7aO2/sniMBb+N81/xZ/+MHb+ANAgwHIOqsxCFmuLg/rQQtkkEbBmaXpKAnTYj1UvB6/P/ii
-	atGbgcdD7ksbyNBI1sQWWpG/oq0P/8J601EiJ22Nj2chgFFxf5ToHYLp7Q92lbtuFDrb1FAR1A2va
-	RVCjPBDaCBEA9WqVxRDw==;
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=jvvEME5DNqJ6RwAGObSsCGhKomBJgL+D5p5QFN6Nw3g=; b=tdY
+	got9UbTX46Y2Toeei9lurs6Tc1Ye8TCWz3lPOJ5LD6bCfokPr6boWsB+6JQ1pdOkyU8VXFLafYW1I
+	gl6jUzzNRuVjcLOXxT3u0TdVouba6IjrOlaUc2LLhBvXyh0gSMgLpZak4RHdIzT3ytzj/sE7xu5r0
+	1HbWaKLbeWOriW3TllKLYsCLUoP6bvTznW+1BJoAVQhGM5HhXWGjV9LRXz9iGhFuHVlcgW5Uz9GZ+
+	sF4wcel3lKI+lobRHKPJ9f3IpYqxTBhijz57q/cIGci+5sTfd06DaUAMnvQAxzHEdMYFPxpfKk+tq
+	5ZH5qvUm1qZhQV9xImWhuy6sRdiiQ4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBvDG-00000006J37-3z2M;
-	Wed, 30 Sep 2026 14:23:14 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1xBzED-00000006zkq-0rE6;
+	Wed, 30 Sep 2026 18:40:29 +0000
+Received: from mail-wr2-x0e.google.com ([2a00:1450:4864:30::e])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBvDE-00000006J22-1JnI
+	id 1xBzEB-00000006zjv-0QDl
 	for linux-phy@lists.infradead.org;
-	Wed, 30 Sep 2026 14:23:14 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 68UDxq0C3063759
-	for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 14:23:12 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	+dKTowMYQvfYuqv4dK+vY7KJhOttZlfJWenJ4O7Vbwg=; b=H/E9aISuRD3tFJVR
-	qXrqYGHMnZllbufIOsN6kXaaMCcijMS1AzFmhsqdGj4IQO56mGauhv1F+RmxtXsR
-	6Dlaxaxqlv/ZO3MKu4FAqCC6a7DXXU5KC2UHy7EmxDEb1tnCPD/33gWsaFOABArq
-	RVM0IhjZwXPLbrwRvz/d/3pLZp9lnpGlb7tw+8G2tpsuMu+/O0JvvwymeUKSET3h
-	S4CEUYbGLCN7fWtTq4BbuMShzVpWz96zqPQdUdu75yuQpgSh/Z7RaZyNNlO4QP5C
-	t+SCOr+Mucb53mApRhMb5WTMqMiDBH7ZFjDEumy/yGBbSeH7ua+Zkl7f7ZvrMDvh
-	4YxS9Q==
-Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h0smjjyme-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 14:23:11 +0000 (GMT)
-Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-2d6f75c1219so69295145ad.3
-        for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 07:23:11 -0700 (PDT)
+	Wed, 30 Sep 2026 18:40:28 +0000
+Received: by mail-wr2-x0e.google.com with SMTP id ffacd0b85a97d-48aff58e6abso699988f8f.3
+        for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 11:40:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1790778191; x=1791382991; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=+dKTowMYQvfYuqv4dK+vY7KJhOttZlfJWenJ4O7Vbwg=;
-        b=GWp+hStK50epDy0FzvGsx9V2gU8CQjV7xxn5L1y3v2Az4+dacV47eYxm8J+Lb9dus7
-         EbxtgEf7VczUhnPvCTDgT+262OrD/yw9uaELyjGNf05Pibgu7FYzQ+pBAAGkcXTah/eW
-         pUghq/aue92EGZKHyheut4tZ9IboxuMX9H8Z3UfcXZVTZAQSBz5x37l4rWVx8Dh+yY1P
-         CLu9xV98V4frvJzN6p/v5Y2uS7abRsuG31svEIf2CvE/y+QJO4nwZ4Cfyf+I95icGhXR
-         Saw+GpBm2O0rmxyweJ+wOTbniUW9MY/NAR0OmjVMUCTFMtOdZFI22jHAA8iOX8uEyiAX
-         RJWg==
+        d=gmail.com; s=20251104; t=1790793625; x=1791398425; darn=lists.infradead.org;
+        h=content-type:mime-version:message-id:date:subject:cc:to:from:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=Sudsrgh6olVvguill/NXjWeyuYPJdT70+yOGXWlPI0g=;
+        b=EMkfO5zb3xJcgX98bWilRkV1RB5ekLd7oZ88XkjDXkiL21HxzJYDPUCGNRxl9ztUrk
+         tFApiVeokdaY07pyjQ4c4ijjP3smYxdGEiI/C1eEqSd7/0fqoRfK80Cx99h8nvjkSX06
+         RmSyEzf/mBedMr4J4K70UmWkcrhcM8khU21SQ341FlI+tQ6HO0olJAv7AUH+q5HHGXqL
+         lc75+jDkfo7IR4CFARN8x1DoB5isz8UonxVd/YXJJKGcrANgeTpoC7ugP12KnjvMfp/q
+         gejgPxyCOR00ZnafO/21XFSLo/4hTgElGhe0iEITWF3cwWFLPfPWk3IK5hQAGp4oks+D
+         rPYg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1790778191; x=1791382991;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=+dKTowMYQvfYuqv4dK+vY7KJhOttZlfJWenJ4O7Vbwg=;
-        b=VoDsuXKRpHFvmK3L56kuNOV3whfIvZkVnlZlKoNsGLuSqk9x06T4J5hWUVXboANzaR
-         j3lz7UZao7aJHG5Q207UYaPICHSgBYcFBye7Tu/5/E6aPQWRWQIffwDxossMD+lyZ2Bv
-         BbadVZHo9Vu4qgV4DRTRVIPutfF3wa2NU+UEuwI1Re1KFS8xW/rtj9oEF0JhEFW0kxJj
-         e0+DmbYtgVZAf3YWPkIFMFOo2L0yE28gHdBm5rhl0fPoLPvmNTNMEeJv84j+mg6A+UFg
-         i4WrOpWU9HWTC3kLu/nUyOj1cm6XWZ1hEuEtWAvp/kaSLvgSXJbXMkf+05naI2cijv8+
-         1Fdw==
-X-Forwarded-Encrypted: i=1; AKwUvBznjiZZG3saAxGCO1KYXpgu19enh19udaSi5+XL+Jbs9aOMUMs8xVlIV7bnTVmt2n7IYIsD79w0pqM=@lists.infradead.org
-X-Gm-Message-State: AFq9FYI9L44KZWi/2oqxxHNA/Wg5IEMCjE74/byRYdYMac1BtOkI+TZG
-	RKRufEuV+xvPCL4SFwYPXGm04eO8HCQbsK3fq7yGkF3baY0RDQnzgOj4HK4n8IKoTNt9bCq6vwS
-	FxsBzzO/RK7cb7V0O529LsBBm7/DvTft5wipO/cx3suqZl+Q5dUUES59qQaljMfAvLSepn0RnAy
-	u0
-X-Gm-Gg: AYBFou1YhKvtUdZXQCXqdqI3vTm/TbsYZG5sg5s3Et1saIhVaniADnRDbf33O9AnGY3
-	KiMjOmc90ylpD7HIH6xXAqjAK8b8pqOd/upBAcW2CnyPdkHXwgziSkmk8MaJwBuJABUS8T2kjnB
-	cFyznROSu938p4Y679dTuttYB/t9RjY+Zs3PMohHinl07hn6nB0mwgft7H5F5B2wlXcOysBqpMK
-	a7Ism1uURCd2qZBaYyqIC9VjQRHCif9aQ7+FnI4DODHu023Ws6ZMpM6lBhJm6enWlRkq7u9Qn6M
-	Bw94/SvAWBmivCCFRLANKDHSFHX71eIxB4JFC97HQKyvigeGZJsIgUpLkMa5SCxCbwP0F8nt3L4
-	p9E1l3oep/zBxPXRf2neUCVB7FJKJxy1CZ8aOCYIGpqa5xQeQrhWdJsTwiREnhVU=
-X-Received: by 2002:a17:903:32c3:b0:2df:964a:fd42 with SMTP id d9443c01a7336-2e2e4b5e112mr12495895ad.38.1790778190994;
-        Wed, 30 Sep 2026 07:23:10 -0700 (PDT)
-X-Received: by 2002:a17:903:32c3:b0:2df:964a:fd42 with SMTP id d9443c01a7336-2e2e4b5e112mr12495585ad.38.1790778190243;
-        Wed, 30 Sep 2026 07:23:10 -0700 (PDT)
-Received: from [192.168.1.6] ([117.143.161.217])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2e2e587d2desm8727315ad.12.2026.09.30.07.23.06
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 30 Sep 2026 07:23:09 -0700 (PDT)
-Message-ID: <cc620871-e6cf-44a4-8026-ff42f35efc15@oss.qualcomm.com>
-Date: Wed, 30 Sep 2026 22:23:05 +0800
+        d=1e100.net; s=20260707; t=1790793625; x=1791398425;
+        h=content-type:mime-version:message-id:date:subject:cc:to:from
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=Sudsrgh6olVvguill/NXjWeyuYPJdT70+yOGXWlPI0g=;
+        b=wDu4k8JLJ0kDu6ISKlQheD8dvFyq8dLrNtmiXs4+G87RtcsHR/YxDQJsRlL8+Pyqgq
+         YbdrCVltrezi0V2JkSFXjHZ5FahMJLWZfMCQ0xl98QHVTBacy5GukGAR/INOeqNpwULL
+         o8whshkoNYddhjxbMLiCB/PSfwSNNGb+lSc6DMFuLAKA8lu6wKzoUtTlBn2ye0Myie/D
+         s+fF2HxuVEMBfn4dRJipDtDP/h5F1X1M9qTc3PRKtRMSq2BpOgvqAr5RQEVfUxHy6S0X
+         tlzXl8fpR34t3CMaEthEQ0/D6xEDnXDyqeVHMr8P+j8CJdZU5M6dP0d193OXaHdIhz9Z
+         52PQ==
+X-Forwarded-Encrypted: i=1; AKwUvBzM/j5t+uj05Tfgvc6CA0i57yXUjmcOEW9EV6jjkh7nwUTItujD/taopDkS08ho9bGE40L3JMi9VYs=@lists.infradead.org
+X-Gm-Message-State: AFq9FYLuPdAbKOxqKSgL2AlbQDFuOYZ3lAcuo3ZoryFcjNK8HGfu/wuB
+	Iawjthj2UEpUrRVQivwVkKCAkqUDFxYhoKxqEG+5RT5tLoA/QUA4KDg6
+X-Gm-Gg: AYBFou0QC6fQGu6VvNtSRiAtrYcehOYVSqgRpa4n8TZPWi2YeePC9Y5PUTseXuBaPWR
+	/ybu4uQfMgDWlZSikIqaD+QpBG2PMjiZWlZ7K9E/AsXI5vZOCix1B/S4p2SlKLcbgtlKlGXaUvw
+	B7AaJ+W97eVB6oTe13WZthOqWE5kN5bVp16J9rNzXff4u5ZHpLuqPIDV0ggzAdWqED8gmJ+jQhS
+	FdNOmDfPI3BG9W261owk7L3d89UAnv00PnO/AHYgmkVOW4sQWAZxFOxhwcvCR466tDnc80tb+9I
+	W87HYL4Bz6Ds/hCYJsUg9axmcxEgNMXMcU8oXpx3yJqPOmC/deV63GduSUnhgXmMO/Z39y5JY2G
+	ohkCJWWzsxb76LVVmNc5NkSRM6EAXJtQwVG1koFBeXOsfw4bNDL+nxHuxyUD1D5lGn4T5SAvZx8
+	qhPusrUn9cLwdNvYDTGk0dsUH5p/PdvxFTJnH8/aUIa9k+K5b9GE/FpON3Fj6gJlndBy/PaqOxR
+	rEd39Xtn1U=
+X-Received: by 2002:a5d:5d0c:0:b0:488:8132:143d with SMTP id ffacd0b85a97d-48b024df747mr4886436f8f.19.1790793624363;
+        Wed, 30 Sep 2026 11:40:24 -0700 (PDT)
+Received: from strix.localnet ([197.250.96.176])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48b068ff6c1sm1063999f8f.13.2026.09.30.11.40.20
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 30 Sep 2026 11:40:23 -0700 (PDT)
+From: Stefan =?UTF-8?B?RMO2c2luZ2Vy?= <stefandoesinger@gmail.com>
+To: linux-clk@vger.kernel.org
+Cc: Brian Masney <bmasney+clk@redhat.com>, Conor Dooley <conor+dt@kernel.org>,
+ devicetree@vger.kernel.org, Jerome Brunet <jbrunet+clk@baylibre.com>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, Manivannan Sadhasivam <mani@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Rob Herring <robh@kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ mturquette@baylibre.com
+Subject: [GIT PULL] clk: zte: zx297520v3 clock bindings and driver
+Date: Wed, 30 Sep 2026 21:40:12 +0300
+Message-ID: <LTD3_tELRsyCnoeF8FU_TQ@gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v17 11/11] arm64: dts: qcom: kaanapali: Add camera MCLK
- pinctrl
-To: sashiko-reviews@lists.linux.dev
-Cc: media-ci@linuxtv.org, robh@kernel.org, devicetree@vger.kernel.org,
-        vkoul@kernel.org, linux-phy@lists.infradead.org, olteanv@gmail.com,
-        neil.armstrong@linaro.org, conor+dt@kernel.org
-References: <20260928-kaanapali-camss-v17-0-dcf3fd37f76c@oss.qualcomm.com>
- <20260928-kaanapali-camss-v17-11-dcf3fd37f76c@oss.qualcomm.com>
- <20260929060743.537E11F000FF@smtp.kernel.org>
-Content-Language: en-US
-From: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
-In-Reply-To: <20260929060743.537E11F000FF@smtp.kernel.org>
-X-Proofpoint-Spam-Info: AW1haW4tMjYwOTMwMDA1NyBTYWx0ZWRfX8CkaQPPSbrd/
- CfKGlKn2CvJolYMpf4o7ZxOc9i3iQDTIWOCUJDFMrQQQlmnYdH2DXkRDF6bNT4DmFhjbaNef132
- wCGVChamX//CRvRFkJc995ng1/tbVW0=
-X-Proofpoint-GUID: t44hsFZ6Dz0Lq7Xgw3zbMe0QKCtxUpJd
-X-Proofpoint-ORIG-GUID: t44hsFZ6Dz0Lq7Xgw3zbMe0QKCtxUpJd
-X-Authority-Analysis: v=2.4 cv=KfxHIgYD c=1 sm=1 tr=0 ts=6abd1b4f cx=c_pps
- a=cmESyDAEBpBGqyK7t0alAg==:117 a=K/RrOd38U9TixX+j9hIN8g==:17
- a=IkcTkHD0fZMA:10 a=VdqzKS8jKosA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
- a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=dezkyaf-IGWI9O4KkrQA:9 a=QEXdDO2ut3YA:10
- a=1OuFwYUASf3TG4hYMiVC:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwOTMwMDA1NyBTYWx0ZWRfX75DDezRVM0+A
- hyKEe7pGLziy7suRWHS+xCWe4qS4rK2b0YzIwYdTfER0On0doM/TvjlW14U2HhwlIz/TYmPMi06
- jJlRB31ZZ7MbAUB1NjDnTShDJsjXB7u59qtNvqKQiL96CA0+JMmxyRy7r+X45xdnFkbyiDZ1fPO
- jGiHi3RxaTXE8biEhxHSxDbn1Mq9Nq+GnS+ybhwT3epqSU943p4IXzX9BmWEuower/TI+DUDhg7
- n606jm8NFacZQAOCKczCDtxzjf/Ojip/zadaPKLMaS8lWcClz419+nXtFg1pO3Jkf7ZU7e0fvpx
- Xvnk0paMj83prnMPCsqPvARks/u9aQ5QmM7IBTPm2jutim1B6T3qyiZJ8a7+O9AXbwuVuI6zaK6
- jQ3P/J9U3hyxPyXsNkXk1NwH5qx63VGtWtEPg/s6ufjQN5v4JnhGTuE8CT1QGidAUo1+cDBi228
- 6YQUrP/Qv5YIr1aIlzA==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-09-30_03,2026-09-21_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 impostorscore=0 suspectscore=0 phishscore=0 clxscore=1015
- priorityscore=1501 bulkscore=0 adultscore=0 spamscore=0 lowpriorityscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2609300057
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260930_072312_783879_8D1D6766 
-X-CRM114-Status: GOOD (  15.92  )
+X-CRM114-CacheID: sfid-20260930_114027_191089_9EC01E23 
+X-CRM114-Status: GOOD (  13.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,64 +98,171 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============5704559888163630990=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 9/29/2026 2:07 PM, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 1 potential issue(s) to consider:
-> - [Low] dts: devicetree node names incorrectly use underscores
-> --
-> 
-> commit 185a6cf958fbea99362a9e2c9f3989dad4362d3c
-> Author: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
-> 
-> arm64: dts: qcom: kaanapali: Add camera MCLK pinctrl
-> 
-> This commit adds TLMM pinctrl states for the camera master clock GPIOs on
-> Kaanapali so camera sensor nodes can select the proper MCLK pin functions
-> when enabled.
-> 
->> diff --git a/arch/arm64/boot/dts/qcom/kaanapali.dtsi b/arch/arm64/boot/dts/qcom/kaanapali.dtsi
->> index c19945bc438eb..bbcd5a622f0b2 100644
->> --- a/arch/arm64/boot/dts/qcom/kaanapali.dtsi
->> +++ b/arch/arm64/boot/dts/qcom/kaanapali.dtsi
-> [ ... ]
->> +			cam_mclk2_default: cam-mclk2-default-state {
->> +				pins = "gpio91";
->> +				function = "cam_asc_mclk2";
->> +				drive-strength = <2>;
->> +				bias-disable;
->> +			};
->> +
->> +			cam_mclk3_default: cam_mclk3-default-state {
-> 
-> [Severity: Low]
-> Does this node name incorrectly use an underscore instead of a hyphen?
-> 
-> Devicetree node names conventionally use hyphens rather than underscores.
-> The previous nodes like cam-mclk0-default-state use the correct hyphenated
-> pattern.
-> 
-> Using an underscore here and in the subsequent cam_mclk4 through cam_mclk7
-> nodes will trigger dtc style warnings (node_name_chars_strict) and fail
-> standard devicetree style checks.
-> 
->> +				pins = "gpio92";
->> +				function = "cam_mclk";
->> +				drive-strength = <2>;
->> +				bias-disable;
->> +			};
-> [ ... ]
-> 
-Yes. I change original names to align with Glymur style but makes this 
-mistake. Will fix it in next revision.
+--===============5704559888163630990==
+Content-Type: multipart/signed; boundary="nextPartulVVFYPFRfOzbNRxaXxRQA";
+ micalg="pgp-sha256"; protocol="application/pgp-signature"
 
-Best Regards,
-Hangxiang
+--nextPartulVVFYPFRfOzbNRxaXxRQA
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"; protected-headers="v1"
+From: Stefan =?UTF-8?B?RMO2c2luZ2Vy?= <stefandoesinger@gmail.com>
+To: linux-clk@vger.kernel.org
+Subject: [GIT PULL] clk: zte: zx297520v3 clock bindings and driver
+Date: Wed, 30 Sep 2026 21:40:12 +0300
+Message-ID: <LTD3_tELRsyCnoeF8FU_TQ@gmail.com>
+MIME-Version: 1.0
+
+Hi,
+
+This pull request contains the device tree bindings and clock driver for ZTE
+zx297520v3 boards. It contains the next step in adding support for
+zx297520v3 boards: Documenting clock and reset manager hardware and
+adding drivers for its PLLs and clock tree.
+
+The patches have been reviewed and carry appropriate R-B tags by Krzysztof =
+Kozlowski (bindings) and Conor Dooley (clk driver).
+
+The PR does not contain the MFD, reset and device tree patches. They
+will be submitted to the MFD, reset and soc trees respectively. The
+clock driver compiles without them, but won't be instantiated without
+the MFD parent.
+
+The following changes since commit b1470947e92aeedd522ddb7363369c956e55d6b6:
+
+  Merge branch 'clk-pile' into clk-next (2026-09-29 14:14:32 -0400)
+
+are available in the Git repository at:
+
+  https://gitlab.com/stefandoesinger/zx297520-kernel.git tags/zx29-clk-for-=
+7.4
+
+for you to fetch changes up to 89e2c0fa481f6a0da23ad5c4dc98bcd940f09fd2:
+
+  clk: zte: Introduce a driver for zx297520v3 LSP clocks (2026-09-30 20:03:=
+29 +0300)
+
+=2D---------------------------------------------------------------
+clk: zte: Add clock drivers for zx297520v3 SoC
+
+This tag contains the device tree bindings and clock driver for ZTE
+zx297520v3 boards. It contains the next step in adding support for
+zx297520v3 boards: Documenting clock and reset manager hardware and
+adding drivers for its PLLs and clock tree.
+
+The PR does not contain the MFD, reset and device tree patches. They
+will be submitted to the MFD, reset and soc trees respectively. The
+clock driver compiles without them, but won't be instantiated without
+the MFD parent.
+
+=2D---------------------------------------------------------------
+Stefan D=C3=B6singer (9):
+      dt-bindings: clk: zte: Add zx297520v3 top clock and reset controller
+      dt-bindings: clk: zte: Add zx297520v3 matrix clock and reset controll=
+er
+      dt-bindings: clk: zte: Add zx297520v3 LSP clock and reset controller
+      clk: zte: Add Clock registration infrastructure
+      clk: zte: Add regmap-based clocks
+      clk: zte: Add zx PLL support infrastructure
+      clk: zte: Introduce a driver for zx297520v3 top clocks
+      clk: zte: Introduce a driver for zx297520v3 matrix clocks
+      clk: zte: Introduce a driver for zx297520v3 LSP clocks
+
+ Documentation/devicetree/bindings/clock/zte,zx297520v3-lspcrm.yaml    |  1=
+01 ++
+ Documentation/devicetree/bindings/clock/zte,zx297520v3-matrixcrm.yaml |   =
+98 ++
+ Documentation/devicetree/bindings/clock/zte,zx297520v3-topcrm.yaml    |  1=
+22 +++
+ MAINTAINERS                                                           |   =
+ 7 +
+ drivers/clk/Kconfig                                                   |   =
+ 1 +
+ drivers/clk/Makefile                                                  |   =
+ 1 +
+ drivers/clk/zte/Kconfig                                               |   =
+28 +
+ drivers/clk/zte/Makefile                                              |   =
+ 6 +
+ drivers/clk/zte/clk-regmap.c                                          |  2=
+37 +++++
+ drivers/clk/zte/clk-zx.c                                              |  1=
+92 ++++
+ drivers/clk/zte/clk-zx.h                                              |  1=
+37 +++
+ drivers/clk/zte/clk-zx297520v3.c                                      | 16=
+57 +++++++++++++++++++++++++++++++++
+ drivers/clk/zte/pll-zx.c                                              |  5=
+76 ++++++++++++
+ include/dt-bindings/clock/zte,zx297520v3-clk.h                        |  1=
+54 +++
+ include/dt-bindings/phy/zte,zx297520v3-topcrm.h                       |   =
+12 +
+ include/dt-bindings/reset/zte,zx297520v3-reset.h                      |   =
+62 ++
+ 16 files changed, 3391 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/clock/zte,zx297520v3-=
+lspcrm.yaml
+ create mode 100644 Documentation/devicetree/bindings/clock/zte,zx297520v3-=
+matrixcrm.yaml
+ create mode 100644 Documentation/devicetree/bindings/clock/zte,zx297520v3-=
+topcrm.yaml
+ create mode 100644 drivers/clk/zte/Kconfig
+ create mode 100644 drivers/clk/zte/Makefile
+ create mode 100644 drivers/clk/zte/clk-regmap.c
+ create mode 100644 drivers/clk/zte/clk-zx.c
+ create mode 100644 drivers/clk/zte/clk-zx.h
+ create mode 100644 drivers/clk/zte/clk-zx297520v3.c
+ create mode 100644 drivers/clk/zte/pll-zx.c
+ create mode 100644 include/dt-bindings/clock/zte,zx297520v3-clk.h
+ create mode 100644 include/dt-bindings/phy/zte,zx297520v3-topcrm.h
+ create mode 100644 include/dt-bindings/reset/zte,zx297520v3-reset.h
+
+--nextPartulVVFYPFRfOzbNRxaXxRQA
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part.
+Content-Transfer-Encoding: 7Bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQJPBAABCAA5FiEEQxb0tqoFWyeVMl1sPRO8yFRPGiIFAmq9V4wbFIAAAAAABAAO
+bWFudTIsMi41KzEuMTIsMiwyAAoJED0TvMhUTxois3cQAKOqW1nSvwLMITtTcza2
+Vdp9CeR6iivrtbKOMsiIk4809MI5SPaDrZFTRhGptF1lkghAVFzE4/C142dNneqi
+WS1IWjBaka+M4nOj8ytObhnAw4aDfykrhsTbf728cm5NREgu40tbKntocyBAVZ/9
+lhmCkEYxNdFf9XmkdccrWzFzz0frS76WMl49qqGtKx4wMHLyy5if01smKb/s7++d
+N64P2US67mjeHpEARXF59w57dsyBJeBOO52m/WvN2SnBE6RDdczhOSyhxVHj/TMQ
+UdhoCB/8qBLeHgiMXlc0E6Z8/JepjhF0COQ2N47RQ68hwl3u1jFQdOxuGVvhUKOG
+WYqKt43r4MLjBv9IInWAhT+C0hUrNeJ+sM1nnVQcnLW4liwjl4x2FOxGRjqnvKdq
+b5tIcljluruQuR59Zm0v0EjPxEAcWCZdC635QIkSpkTaLdQAS2jJ5vkmghy6v8Bx
+Hjn8zxLFFeqoyhUOtK3d8JXvAWh/OkA+TgC7l5pbPqe8utUYyoT157nsTu8cVMHj
+hZbZpr9dUpG5SH8kg10o9QPqIXPAhaqJtPSNFKEu04mhtaCcrbMOlo0c9gJBjefW
+UN/hh2zY88uedgd0O+QAdSe+DAJQ5iZ7ZRGcP6Yx9i88QNepx5BZFGueC9v1aWls
+MmfTH79WEXLfNxj7sch8COSO
+=tmC8
+-----END PGP SIGNATURE-----
+
+--nextPartulVVFYPFRfOzbNRxaXxRQA--
+
+
+
+
+
+--===============5704559888163630990==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============5704559888163630990==--
+
+
+
+
