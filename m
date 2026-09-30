@@ -4,73 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA698CA5FC1
-	for <linux-phy@archiver.kernel.org>; Wed, 30 Sep 2026 08:59:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 765F1CA5FB1
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Sep 2026 09:21:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CCOLZU4+hbfiSzXKlrosjDuGtk4CoenFycu6y2xYofo=; b=11ysYzb68Lx6wU
-	Ra/5gCkAjqS1kkAbI9XHuBqjCuhFvwa+zST8pX5V3T5KRyTly3TBDYDKmbyFZ9hTFdN7oDN5aUf1M
-	uO0pdXEV++MptPrYR8z+r10f451EQadqEhAPeX0HhwnEs7z2V+2zTT1oslyDbipwWj+EFXHKFwCYb
-	OSObmqT3wkWNW8eJhLrWwRpL2wN7dfQMb5qG23kkRJaaWvP3h55M/rE2QRK8JdeCYsuKEy360XaA5
-	/ypoKdAEkAWhc+oUlcCOEXexF+EjyFjKms4FPTUKVnKb/QJ5sIxtTz2ljZBRCtw7u1opbKE+3w6Nn
-	Er0hQLy9cqnxhKMSe1mQ==;
+	List-Owner; bh=+3MpRrSLSxZx8nRHawQ8aUMHLLniQsdf9aXEUFZJ2OU=; b=TGgiXHwAtmKRIb
+	AdhFoEvaOkhsYQ4D150IcX0XxJPaWsaPfEuvaxUmyVGx5TazU9fvp+7OsH+tUppHdxAtV384yRncJ
+	jkJHdDyLe3mOKOShBuFUyGlQ223Cl61qlD46EoPfLFdmxGrns6Mk2wi8LqUqZsXUD3i2X9yRD4pph
+	9xxnVjKyssDUTVHjhcjBtp2iCKtuWC3H4CX80+LDbXHMs6l3dISO02Gpwqo6WX3F4ZVaHiZqFQOBl
+	+JJYqrdtfL+4kmQMzvbSGTk+K60+xya7LSdjmeKgMdpiowNxI82ktBYwMerjBYiVZhBeL/YRhptd/
+	l7hhdK9TjZkWHq3mQnkg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBq9u-00000005VmQ-0yeg;
-	Wed, 30 Sep 2026 08:59:26 +0000
-Received: from mail-pj2-x10.google.com ([2607:f8b0:4864:39::10])
+	id 1xBqV7-00000005XtL-0Alk;
+	Wed, 30 Sep 2026 09:21:21 +0000
+Received: from mail-pj2-x11.google.com ([2607:f8b0:4864:39::11])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBq9s-00000005Vll-1Zxc
+	id 1xBqV5-00000005XsA-03es
 	for linux-phy@lists.infradead.org;
-	Wed, 30 Sep 2026 08:59:25 +0000
-Received: by mail-pj2-x10.google.com with SMTP id 98e67ed59e1d1-396ccc02279so2811241a91.1
-        for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 01:59:23 -0700 (PDT)
+	Wed, 30 Sep 2026 09:21:20 +0000
+Received: by mail-pj2-x11.google.com with SMTP id 98e67ed59e1d1-396ccda24afso2637657a91.3
+        for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 02:21:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1790758763; x=1791363563; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1790760078; x=1791364878; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:content-type:mime-version
          :references:message-id:subject:cc:to:from:date:from:to:cc:subject
          :date:message-id:reply-to:content-type;
-        bh=lwqDJJxq+i6yiMKe3H7XeoLAk9BxxMBDZsuZ7Sfnq6I=;
-        b=Z2/6vvMpNYqisNXZcDRvO0Ouam8iFOapZHTz52kSmAT5XHukVE40oEOC/BAehfr6cJ
-         PAoEOurw3Uqqj4WZPWjbhsrtB4epLwMOMG+AK1KxWMCSfy8qgbm4peDOkSAssWppOc46
-         ujTDWC2wCU58Lam5ODuD1OZwU8oZBayIiSs8Vl6zz+USOV7GhYEM9Uc660BRQ4nLKjUl
-         sKYJHmUaDR9NqvbfiipVskvWdlug6Wn52D0N4FcBFrBz3vpxOTLBYnqp4eVffJQU/+Mw
-         dy0i2bENjieqGq0JztG2aA9HirI4mY76QOaGTWGXSzIIwhvHmpTPABfbU01GehSafyI6
-         J6eA==
+        bh=4uFxrRSZblzhovR/kIrS1Ft+xK7V+IoAvsNqkY5KOFo=;
+        b=Q3aFfmdWxilFcZClxVih40TbHSxgtJfCgSJoe20tpydfWTpBnLI/F5CaI/yhROPzdE
+         g35qMGPaGvuGdrcTBjZHPP6eRT506kG5OWNXh653HV/f2AH7797UkW0yDo61+WOcHnyZ
+         k2/hJkquzeD8dwCxNJA4zK5j7hmBIsFIsu+/uI54iYySe+MOf+5+Voksa4x8vqjcdtgt
+         Fc9pWXRikhpfFgxoaaO7Ke4qjpYLqyDbiT3RG1Xw66dP/dycdJadzBjlaF3Ql3gMOrOy
+         K9k6tHZXrXDTYCZCYBrya6jhGRJsrdgAe153N+1Iv4+GU/A36qR2dBjLsUjC6c1bc6y2
+         fj+Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1790758763; x=1791363563;
+        d=1e100.net; s=20260707; t=1790760078; x=1791364878;
         h=in-reply-to:content-disposition:content-type:mime-version
          :references:message-id:subject:cc:to:from:date:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=lwqDJJxq+i6yiMKe3H7XeoLAk9BxxMBDZsuZ7Sfnq6I=;
-        b=NNZDIyZMIKO8H0aINDslvxAewdJ5e6R6o5XW9WuCZMH8pURx+mvfK6pEuyqWl0+j0k
-         dQlwdYapiMs7Y3hQCggp0/AvG/hvHmDLt0Pyk9QGZ8bdHMxrI0LXYPeJo8NI6wmCi8ei
-         x5k1a/AGn/IhjC+aEhPlbVPzW/YBWrXbfttEEiqK84R+Brz9oekaphIXH/O3ABXY1Ich
-         z0NF8wfLLa8ilROM6DoqnE2F7t+aCw5IsQrqXhw9Ji8xeT/J7+Ppj3CxjvwcZ8q2K3nE
-         MqDHtAkY2mLt5SAHtnQ0VFKh1YsE+kRD/KDMqn5HnJHU46H2b6jNaP8566NQ46erNsor
-         weUw==
-X-Forwarded-Encrypted: i=1; AKwUvBxzx9ii6Qh79F2N+3IE499OyDc8MzFvbMw1UKfunjL8Smkq3pySTdbFlNn3bKvOu8LW+FekjBMEE2w=@lists.infradead.org
-X-Gm-Message-State: AFq9FYK5XHD4s8umcwuUquu6ZIwpTLijmnQqG1aknD9agwXb3KKLvWwh
-	dIMvSohICxFZflX85+w5OpdDDaUWGpHb14VdKQiUZ1VW/ok0hvyqZP8S
-X-Gm-Gg: AYBFou0ipSJuDD9BNZwHTk7j5P67mUelE6Xo7b61zG+a0mapbUmtNuRU0ip+HMTyiZA
-	3M2wFvhCWeq5rI6Ou6VbHFI+vJYlYeuycR/Po6vGCsxd4v5RivYHMMLOXnTQ3kIPCamA+Udk32k
-	b6eQvewvHIUUjM+drjXYfbuQRKpk2p/Jf565qeqHYj9FOmSfBX1pmXoGI2KIVK/Qo2Vice0avTs
-	VQQpBB7jDe7rwDcYkZVR0OFIVjWo2V/5PPfamwMzZt857xI3qSWUFse42+Sgu/bZz2IKeoCZkKy
-	t5SZAKfyltf9m+387BG3vuJpIsCDY8E8n9iehCUO0YUCcSFA63CF0256CzRIt/+gIxJxVL7KNuF
-	AHvHpwupsukBaXQAQRQUkVTluy03Auapk1ziIR0tJd6DDP6YwpPdCTl2SHkx0g5K7/YysrMrPdk
-	jMYswYztC+5Pg1p5ZRQSrt/ioYvoD7pXpBzLSUNb7c+M8xoXjNn1csZmQ77Sl2UHIEKor8rA==
-X-Received: by 2002:a17:90b:1d0d:b0:3a0:e476:576b with SMTP id 98e67ed59e1d1-3a4d179ece8mr721296a91.37.1790758763142;
-        Wed, 30 Sep 2026 01:59:23 -0700 (PDT)
+        bh=4uFxrRSZblzhovR/kIrS1Ft+xK7V+IoAvsNqkY5KOFo=;
+        b=RKeJaFLXWvHfMKbeSGwJAjOh/Wns//JPpFA5Qxn0iessVgO11mAqyyOxkcB8YIN82c
+         TUxEVuDPTgK3z/VPU+QM10SbP2fT1Sn0UkYDVjl8pg1hBm5C+3V+9JE8INnQZy40nZ5D
+         A0za9ZYDSJxiKMGBEHrLZkbVhm0oGJZIX3RQElNuQ6s6JpgYdlQ8BJoDIkhRww2C+QLn
+         wtB6LZP+ALtyga9xAp5MvP9uxL5WxAHJL5f6AYT9fMSZNysbQ2EUUQ12TJ6z8CR5RsdG
+         //c3esNYHFEc3IxS/bSiQwP5JCcwMHgsr5U+vy1g4nFSOyAScKYqO/p1SuJ/1TTIjtGy
+         VDFA==
+X-Forwarded-Encrypted: i=1; AKwUvBzCi+eg/h6dyFE21j0n7DtYkP3NqKb4aZrrkcr6/VFm6bsLoeXNCZPNWMy7dMoF6ANm04q13wsg4KE=@lists.infradead.org
+X-Gm-Message-State: AFq9FYIZUVfXvEIbtBqyQZUsA42F9I05iPPibnkP4brcCRj+4ltl/ces
+	LNb1tIYiosfcmEp0+e+Ma9eP/a9JCWFMD5+tsicHFKSjGCj/Lbe5sBsc
+X-Gm-Gg: AYBFou3Y81lm6ZeA22+41wZTJGp2yFo9BnMg9M2q53pr0iN1qzyVNIxS6lipiL6Ty42
+	U+J7e8a48V9R90NSuw0Rp4OdIM9H7PVLEdwirV8u1PCb9X6w7PglawtX3acSQ3hZRgnIum1jY6g
+	9u/19QyoCr4/AtBzFocAp/L0kOXqjuXQ1egBQQDNgU1sxc36c0x/+J5vybMiYSG/du+FbQOF4Ow
+	j+vGNVai66gP6qQruTlfZ8Ht/n+CXaatz8/tE1PfCwPV8h2fPga5B7AFcrn6+eFwjIUMCBUCswy
+	MeWUPhQHEqf0hXqYiHxZ7ZDo0q0FrmeQfPMlD5bhN6pT1wa1SBQssMJFB88BdnX/JY7k29B5/M6
+	aSMUaP4FlHTN/14hVfc8YEaFUmYXkJMIU1VJwO+K5bkXWY8ted9n78wFlnOxQmXZxAZx3PCv+nq
+	SLL1KNJQ16r4IeU60D1ILoq1xnp3Qcwlsdw6CL4V5yluVJB+mvZwuFL2wt/uCUXO+t2xJj
+X-Received: by 2002:a17:90a:f944:b0:39d:f08e:e6e7 with SMTP id 98e67ed59e1d1-3a4d0f038e8mr414812a91.9.1790760077844;
+        Wed, 30 Sep 2026 02:21:17 -0700 (PDT)
 Received: from localhost ([2001:19f0:8000:3e6e:5400:6ff:fe38:3d01])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3a4ce16ac10sm2149770a91.8.2026.09.30.01.59.22
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3a4ca7810d6sm3182760a91.6.2026.09.30.02.21.16
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 30 Sep 2026 01:59:22 -0700 (PDT)
-Date: Wed, 30 Sep 2026 16:59:13 +0800
+        Wed, 30 Sep 2026 02:21:17 -0700 (PDT)
+Date: Wed, 30 Sep 2026 17:21:08 +0800
 From: Inochi Amaoto <inochiama@gmail.com>
 To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>, 
 	Inochi Amaoto <inochiama@gmail.com>
@@ -80,17 +80,18 @@ Cc: Jonathan Corbet <corbet@lwn.net>,
 	Manivannan Sadhasivam <mani@kernel.org>, Rhys Tumelty <rhys@tumelty.co.uk>, linux-doc@vger.kernel.org, 
 	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, Yixun Lan <dlan@gentoo.org>, 
 	Longbin Li <looong.bin@gmail.com>
-Subject: Re: [PATCH v4 3/5] phy: core: Add phy bulk data helper functions
-Message-ID: <arzLeuO0qbRxofFv@inochi.infowork>
+Subject: Re: [PATCH v4 4/5] phy: core: Add managed phy bulk data helper
+ functions
+Message-ID: <arzSkE1kY_u4jJWT@inochi.infowork>
 References: <20260929085235.469515-1-inochiama@gmail.com>
- <20260929085235.469515-4-inochiama@gmail.com>
- <arzGyL8gGrxeZoN7@ashevche-desk.local>
+ <20260929085235.469515-5-inochiama@gmail.com>
+ <arzITUCmgUp3uiRn@ashevche-desk.local>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <arzGyL8gGrxeZoN7@ashevche-desk.local>
+In-Reply-To: <arzITUCmgUp3uiRn@ashevche-desk.local>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260930_015924_421731_5C89BD4A 
-X-CRM114-Status: GOOD (  36.38  )
+X-CRM114-CacheID: sfid-20260930_022119_068935_B17AF2FD 
+X-CRM114-Status: GOOD (  26.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,168 +108,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Sep 30, 2026 at 11:22:32AM +0300, Andy Shevchenko wrote:
-> On Tue, Sep 29, 2026 at 04:52:33PM +0800, Inochi Amaoto wrote:
-> > Add several helper functions that allow drivers to get several phy
-> > consumers in one operation. If any of the phy cannot be acquired then
-> > any phys that were got will be put before returning to the caller.
-> > 
-> > This can relieve the driver owners' life who needs to handle many phys,
-> > as well as each phy error reporting.
+On Wed, Sep 30, 2026 at 11:29:01AM +0300, Andy Shevchenko wrote:
+> On Tue, Sep 29, 2026 at 04:52:34PM +0800, Inochi Amaoto wrote:
+> > Add device managed variants of the phy bulk helper functions. So
+> > the driver can benefit from automatically managed phy handles.
 > 
 > ...
 > 
-> > +/**
-> > + * of_phy_get_count() - Get the number of phys of a device node
-> > + * @np: device_node for which to get the phy
-> > + *
-> > + * Return: the phy count if successful, %0 if no phy handle is found,
-> > + * negative error value if error occurs.
-> > + */
-> > +static int of_phy_get_count(const struct device_node *np)
+> > +int devm_of_phy_bulk_get_all(struct device *dev, struct device_node *np,
+> > +			     struct phy_bulk_data **phys)
 > > +{
-> > +	int count;
-> > +
-> > +	count = of_count_phandle_with_args(np, "phys", "#phy-cells");
+> > +	struct phy_bulk_devres *devres;
+> > +	int ret;
 > 
-> > +
+> > +	*phys = NULL;
 > 
-> I would drop this blank line.
+> Why?! In case of error we modify the output, this is usually not the best
+> approach as in most of the cases the expectation is that whatever user
+> provide (including a garbage) should be left untouched in case of an error.
 > 
-> > +	if (count == -ENOENT)
+
+This is something I think this is wrong and I need to removed.
+
+> > +	if (!np)
 > > +		return 0;
 > 
-> I'm not sure about usefulness of this kind of trick in the _count API.
+> Same here. On top why do we even care about np like this? Interestingly that
+> some other APIs consider this as np == dev_of_node(dev) case, and automatically
+> propagate that.
 > 
-> > +	return count;
+
+After a deep recheck. I think you are true. We do not need to care
+about that, just let the internal api decide whether it should be
+an error is better. I misunderstand that it should check it at early
+stage to avoid some bad use in the following logic. Now I found it
+is meaningless.
+
+> > +	devres = devres_alloc(devm_phy_bulk_release_all, sizeof(*devres),
+> > +			      GFP_KERNEL);
+> > +	if (!devres)
+> > +		return -ENOMEM;
+> > +
+> > +	ret = of_phy_bulk_get_all(np, &devres->phys);
+> > +	if (ret > 0) {
+> > +		for (int i = 0; i < ret; i++)
+> > +			phy_add_device_link(dev, devres->phys[i].phy);
+> > +		*phys = devres->phys;
+> > +		devres->num_phys = ret;
+> > +		devres_add(dev, devres);
+> > +	} else {
+> > +		devres_free(devres);
+> > +	}
+> > +
+> > +	return ret;
 > > +}
 > 
 > ...
 > 
-> > +static void phy_bulk_put(struct device *dev, unsigned int num_phys,
-> > +			 struct phy_bulk_data *phys)
+> > +static inline int devm_of_phy_bulk_get_all(struct device *dev,
+> > +					   struct device_node *np,
+> > +					   struct phy_bulk_data **phys)
 > > +{
-> > +	while (num_phys--) {
+> > +	if (phys)
+> > +		*phys = NULL;
 > 
-> > +		if (!IS_ERR_OR_NULL(phys[num_phys].phy))
+> Same as per above.
 > 
-> This should be part of phy_put(). In general many kernel resource release APIs
-> are NULL and/or error pointer aware. This is a slow path and it makes user's life
-> easier
-> 
-
-Something reasonable, As of_phy_put does have a check, but phy_put
-does not and it use phy->dev directly. I think this is acceptable
-QoL change.
-
-> > +			phy_put(dev, phys[num_phys].phy);
-> > +		phys[num_phys].phy = NULL;
-> > +	}
-> > +}
-> 
-> ...
-> 
-> > +static void of_phy_bulk_put(unsigned int num_phys, struct phy_bulk_data *phys)
-> > +{
-> > +	while (num_phys--) {
-> > +		of_phy_put(phys[num_phys].phy);
-> 
-> > +		phys[num_phys].phy = NULL;
-> 
-> Is NULLification mandatory?
-> 
-
-I think it may not be as the phy is managed internally.
-But I think it could be keeped to avoid misuse.
-
-> > +	}
-> > +}
-> 
-> ...
-> 
-> > +static int of_phy_bulk_get_by_index(struct device_node *np,
-> > +				    unsigned int num_phys,
-> > +				    struct phy_bulk_data *phys)
-> > +{
-> > +	unsigned int i;
-> > +	int ret;
-> > +
-> > +	for (i = 0; i < num_phys; i++) {
-> > +		phys[i].id = NULL;
-> > +		phys[i].phy = NULL;
-> > +	}
-> 
-> But why? The below does the assognments.
-> 
-
-I refered of_clk_bulk_get(). And at least I think the init for
-phy field should be kept for an initial state. For id, I think
-it is possible to be removed.
-
-> > +	for (i = 0; i < num_phys; i++) {
-> > +		of_property_read_string_index(np, "phy-names", i, &phys[i].id);
-> 
-> > +		phys[i].phy = of_phy_get_by_index(np, i);
-> > +
-> > +		ret = PTR_ERR_OR_ZERO(phys[i].phy);
-> > +		if (ret) {
-> > +			phys[i].phy = NULL;
-> 
-> Same Q: do we need a NULLification in this case? Perhaps the respective APIs
-> should be error pointer aware?
-> 
-
-I think this should be removed to keep the error info. This is the
-thing I have missed. Thanks.
-
-> > +			goto err;
-> > +		}
-> > +	}
-> > +
 > > +	return 0;
-> > +
-> > +err:
-> > +	of_phy_bulk_put(i, phys);
-> > +
-> > +	return ret;
-> > +}
 > 
-> ...
-> 
-> > +/**
-> > + * phy_bulk_exit() - exit multiple PHYs
-> > + * @num_phys: number of entries in the phys array
-> > + * @phys: array of struct phy_bulk_data to exit
-> > + *
-> > + * Exits the PHYs in reverse array order. All PHYs are processed even if an
-> > + * error occurs.
-> > + *
-> > + * Return: %0 if successful, the first negative error code otherwise
-> > + */
-> > +int phy_bulk_exit(unsigned int num_phys, struct phy_bulk_data *phys)
-> > +{
-> > +	int ret = 0;
-> > +	int err;
-> > +
-> > +	while (num_phys--) {
-> > +		err = phy_exit(phys[num_phys].phy);
-> > +		if (err && !ret)
-> > +			ret = err;
-> > +	}
-> > +
-> > +	return ret;
-> 
-> So, we return an arbitrary error and inconsistent state of the phys[] array.
-> What can caller do about all this? Any type of recovery? TL;DR:
-> I put in doubt the function prototype and the implementation (error handling).
+> Why not an error? I do not see the _optional word in the function name.
 > 
 
-This is something I have done wrongly. It should return when the first
-error occurs. So the caller can continue to exit the left phys.
-
-As the phy_exit() does not check whether the init_count is 0, I think 
-an additional check is needed fpr phy_exit() to avoid a negative 
-init_count.
+IIRC get_all it a special optional meaning: treat not existing device as
+0, this follows the same meaning like clk. Vladimir has a good explaination
+on this in the previous version:
+https://lore.kernel.org/linux-phy/20260907124318.6q4rr2huxyehm3zs@skbuf/
 
 > > +}
 > 
@@ -277,7 +191,6 @@ init_count.
 > Andy Shevchenko
 > 
 > 
-
 
 -- 
 linux-phy mailing list
