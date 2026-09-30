@@ -4,93 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68030CA5FBA
-	for <linux-phy@archiver.kernel.org>; Wed, 30 Sep 2026 10:19:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E991FCA5FB1
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Sep 2026 10:33:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+6Cs1jyEQA5NBiHPd1E9nPRd8UsHLX5dsdkE09ZUXFg=; b=Xh5ro181nTn76c
-	fzOAKyR4kIc+lUPkhoJ/s84WbUA+3TvKBXtM3BpyXYIWUIcP+4WQ+UdQVwEPJWBDLSM0lsBIoQQ4V
-	EaD+/oQqHSq5o4wal96NT+OO48kY9Ub22A3/W6GqWIghTbJx0cfgbldeQicSmumkN4oDDLdj5HwtA
-	P+Y6ltzCk0iaPHjg7r/wwNrIKObQ3IUZJYouRKgVd4sxl9NuWWsq0RCS5zU6D1xptuGRgBk4i7I+M
-	CexfcI3/Kmr9TSq/8uZeHL2wCKSLeaw7mizHCGoBcKNMgg1fFhqO6pJdQWhlz+olGveyFs2ZR0m7+
-	ED2h6Vtg7Fb63VwxFJjw==;
+	List-Owner; bh=8ZJKQLw5fgS5+SIUf6uKGzPjp2V21Z5YDQxgZ5P32mg=; b=kl10Hrpu6/xhyt
+	ZXSWgTlN3DWRohCda5nL85T9Rjw/v2myNUp5qNIIgMorYlvAI1e5MnQskijOq/xIrf8vUGaZelNT3
+	CtcQ1l5B1QOLVq+jZpmH6irwDTVa+e8SVKV879w1R5n4SauA/1fkN0/c0FqRcXilrUEWaM+SEFdvV
+	f45J3TypAlR/l75vK9YdV8SXVFjAKxC2b9nfCXEQfXtxhC5TG2EFkGf3NUu1QK6DOjImIi4bHhtkS
+	0OwqSBmtMsxE4iX2SfofbgcDWgKMGFByIBFY4WsS/D7eYtbBneV54VdX8W+UGbOV3714IIJb9ex96
+	12PCiaVwSylsNCnO/IdA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBrPi-00000005jlI-3raE;
-	Wed, 30 Sep 2026 10:19:51 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1xBrci-00000005laY-1R1B;
+	Wed, 30 Sep 2026 10:33:16 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xBrPe-00000005jju-2qQt;
-	Wed, 30 Sep 2026 10:19:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
-	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=jJeVTal18ZboXas5TlF0vpQa6AGU2gJphl8DkP+LlWE=; b=IefxlXqZ3F0hn9gV3v56G+U05y
-	1DGNXxCp8HTu7aYwbC0F6nk2OCeioqjdyZFs8d63QWKp89j8zJeAG3Dqks5bbUVcV2vXBfWcqTgJN
-	oUJTt7yBPTxfIVgI7WBf8iZ1uaHYCEBy1KwbgAm0wZIWT6/5ldDohbO+PJPaxecY+vFi/iq9W2Nbv
-	4vXCZeVFTd+Xrf7m0l6wv2Q6QvujzPhDYI/PuZ8nbyW8UJOzUhZfnmiFfUxSK3HYqhtjFVVjRbfqI
-	7FgSE0SfPMMOSFfjDgfUNSrdJ8jcKbzY646X8Zm9c8qLviIHoXuI3QHnnHSfKcLhJqBzOVfklqY/W
-	6JZXLhEQ==;
-Received: from gloria.sntech.de ([185.11.138.130])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1xBrPb-00000003dqU-2g5E;
-	Wed, 30 Sep 2026 10:19:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Reply-To;
-	bh=jJeVTal18ZboXas5TlF0vpQa6AGU2gJphl8DkP+LlWE=; b=nNpZ6W6XiB5Nc5MTJcyBWGCqKX
-	j6cKBfoDGI+MQo2ik+/teJHWq5My68+4ohp1EICY2XTXxoETiH5RxSOIKaYz5uwcM2Eb2A+uPeipm
-	QtiyW5CYiCyIOjPZjqLy4HMSFCTKcm+EzdZJnODlw2RsZjvDgJHfSxa7PpiFtye5E6XNoebW9dP78
-	6uUC/gndnqMIgVFE4+oAywabv8gajwt1ppnkUA3FIlsNkAi6R1bp+oKw0mNfy9CP0lRaOjC3YVk8b
-	ILpDVJhvdbWddVOiV9r2YTk4kjdnK/cZdlOkTuSBdboUBH+YFGOedYVL25tTLbaShqPw/irPKUBjb
-	1nRJGHOQ==;
-From: Heiko =?UTF-8?B?U3TDvGJuZXI=?= <heiko@sntech.de>
-To: Vinod Koul <vkoul@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
- Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss <rfoss@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- Luca Ceresoli <luca.ceresoli@bootlin.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- Andy Yan <andy.yan@rock-chips.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- Emil Renner Berthing <kernel@esmil.dk>, Hal Feng <hal.feng@starfivetech.com>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>,
- Paul Walmsley <pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
- Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
- Dominique Belhachemi <db@domibel.de>, Brian Masney <bmasney+clk@redhat.com>,
- Jerome Brunet <jbrunet+clk@baylibre.com>,
- Michal Wilczynski <m.wilczynski@samsung.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-riscv@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Maud Spierings <maud_spierings@murena.io>,
- Graham Markall <hello@big-grey.co.uk>,
- Icenowy Zheng <zhengxingda@iscas.ac.cn>,
- Chaoyi Chen <chaoyi.chen@rock-chips.com>,
- Joshua Peisach <jpeisach@ubuntu.com>,
- Uwe =?UTF-8?B?S2xlaW5lLUvDtm5pZw==?= <u.kleine-koenig@baylibre.com>,
- Michal Wilczynski <m.wilczynski@samsung.com>
-Subject: Re: [PATCH v5 11/21] drm/bridge: inno-hdmi: Add .mode_valid platform
- operation
-Date: Wed, 30 Sep 2026 12:19:15 +0200
-Message-ID: <6458508.5fSG56mABF@diego>
-In-Reply-To: <20260929-jh7110-clean-send-v5-11-82b4d8e3c6c7@samsung.com>
-References: <20260929-jh7110-clean-send-v5-0-82b4d8e3c6c7@samsung.com>
- <CGME20260929103229eucas1p2e440f2ec00fdf7986eed7597674bf6a9@eucas1p2.samsung.com>
- <20260929-jh7110-clean-send-v5-11-82b4d8e3c6c7@samsung.com>
+	id 1xBrcg-00000005laH-3YlN
+	for linux-phy@lists.infradead.org;
+	Wed, 30 Sep 2026 10:33:14 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 20A8B60239;
+	Wed, 30 Sep 2026 10:33:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9EFB31F000FF;
+	Wed, 30 Sep 2026 10:33:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1790764393;
+	bh=SlzvIfXQMZTAzcLfa5qKcO8crOpD4oFhPZi7BRvdPzQ=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=ZZE4ZykabQV5457FSFVZUAy4R8uyjvhBUSYq+h3sPAOhU4YaClyRQmb4ALS5vKQLL
+	 KJvIYHx7Z0R1RfaimF7D77ekp8C8M1kJ+BTo8Ey0ScFgZZX2jbD0Ug2CJxlceAL8+H
+	 l3rh15F/+Mo6nU3jYTnHSArFnBUuseJEH9WbLxED4BpnO6+posbJkkoYOc2HHepj1D
+	 gRYIaMf013xFeIkkHeCv0VgKlJv0rPAM66Rj+cZVdZXECSNNMeaTxwGbZpSuoWIgS7
+	 qfUmIA6MGJfqZu5LbSncqE9JuDWi1ruVSrQyOU8Af3dXzfYxzQePUPqD5EkglEjcsT
+	 WlQ0CZ248MsSQ==
+Date: Wed, 30 Sep 2026 12:33:10 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
+Cc: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+	Conor Dooley <conor+dt@kernel.org>, Bryan O'Donoghue <bryan.odonoghue@linaro.org>, 
+	Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>, Loic Poulain <loic.poulain@oss.qualcomm.com>, 
+	Mauro Carvalho Chehab <mchehab@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>, linux-phy@lists.infradead.org, 
+	linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, jeyaprakash.soundrapandian@oss.qualcomm.com, 
+	Vijay Kumar Tumati <vijay.tumati@oss.qualcomm.com>
+Subject: Re: [PATCH v17 01/11] dt-bindings: phy: qcom,x1e80100-csi2-phy: Add
+ Kaanapali CSI2 PHY
+Message-ID: <20260930-passionate-mole-of-efficiency-8dd27a@quoll>
+References: <20260928-kaanapali-camss-v17-0-dcf3fd37f76c@oss.qualcomm.com>
+ <20260928-kaanapali-camss-v17-1-dcf3fd37f76c@oss.qualcomm.com>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260930_111944_024402_33F84A6E 
-X-CRM114-Status: GOOD (  14.48  )
+Content-Disposition: inline
+In-Reply-To: <20260928-kaanapali-camss-v17-1-dcf3fd37f76c@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,31 +74,28 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-QW0gRGllbnN0YWcsIDI5LiBTZXB0ZW1iZXIgMjAyNiwgMTI6MzE6MDggTWl0dGVsZXVyb3DDpGlz
-Y2hlIFNvbW1lcnplaXQgc2NocmllYiBNaWNoYWwgV2lsY3p5bnNraToKPiBpbm5vX2hkbWlfYnJp
-ZGdlX21vZGVfdmFsaWQoKSB2YWxpZGF0ZXMgdGhlIHBpeGVsIGNsb2NrIGFnYWluc3QKPiBoZG1p
-LT5yZWZjbGssIGJ1dCB0aGF0IGNsb2NrIGlzIG9wdGlvbmFsIGFuZCBpcyBvbmx5IHByZXNlbnQg
-b24KPiBwbGF0Zm9ybXMgdGhhdCBkZXNjcmliZSBhICJyZWYiIGNsb2NrLiBQbGF0Zm9ybXMgd2hl
-cmUgdGhlIHBpeGVsIGNsb2NrCj4gaXMgcHJvZHVjZWQgYnkgYSBzZXBhcmF0ZSBkZXZpY2UgLSBz
-dWNoIGFzIHRoZSBTdGFyRml2ZSBKSDcxMTAsIHdob3NlCj4gUEhZIGlzIGJvdGggdGhlIGNsb2Nr
-IGFuZCB0aGUgUEhZIHByb3ZpZGVyIC0gaGF2ZSBubyAicmVmIiBjbG9jaywgc28KPiB0aGUgY2hl
-Y2sgaXMgc2tpcHBlZCBlbnRpcmVseSBhbmQgZXZlcnkgbW9kZSBpcyByZXBvcnRlZCBhcyB2YWxp
-ZC4KPiAKPiBBIG1vZGUgdGhlIHBsYXRmb3JtIGNhbm5vdCBnZW5lcmF0ZSBpcyB0aGVuIGFkdmVy
-dGlzZWQgdG8gdXNlcnNwYWNlLgo+IFRoZSBzdWJzZXF1ZW50IG1vZGVzZXQgYXBwZWFycyB0byBz
-dWNjZWVkLCBzaW5jZSB0aGUgYXRvbWljIGVuYWJsZSBwYXRoCj4gY2Fubm90IGZhaWwsIGFuZCB0
-aGUgZGlzcGxheSBzaWxlbnRseSBzdGF5cyBibGFuay4KPiAKPiBBZGQgYSAubW9kZV92YWxpZCBw
-bGF0Zm9ybSBvcGVyYXRpb24gc28gcGxhdGZvcm1zIGNhbiByZWplY3QgbW9kZXMgdGhleQo+IGFy
-ZSB1bmFibGUgdG8gZHJpdmUuIFBsYXRmb3JtcyB0aGF0IGRvIG5vdCBpbXBsZW1lbnQgaXQgYXJl
-IHVuYWZmZWN0ZWQuCj4gCj4gUmV2aWV3ZWQtYnk6IEpvc2h1YSBQZWlzYWNoIDxqcGVpc2FjaEB1
-YnVudHUuY29tPgo+IFNpZ25lZC1vZmYtYnk6IE1pY2hhbCBXaWxjenluc2tpIDxtLndpbGN6eW5z
-a2lAc2Ftc3VuZy5jb20+CgpJbiBwYXRjaCAxOSB5b3UgYWRkIHRoZSBqaDcxMTAtaW5uby1oZG1p
-LXBoeSB2YXJpYW50IG9mIHRoZSBwaHkgd2hpY2gKcmVnaXN0ZXJzIGEgY2xvY2sgcHJvdmlkZXIg
-Zm9yIHRoZSBwaXhlbCBjbG9jay4gSXNuJ3QgdGhhdCB0aGUgcmVmY2xrIHlvdSdyZQptaXNzaW5n
-PwoKVGhhbmtzCkhlaWtvCgoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LXBoeQo=
+On Mon, Sep 28, 2026 at 11:00:27PM -0700, Hangxiang Ma wrote:
+> The Kaanapali CSI2 PHY is compatible with the existing x1e80100 CSI2
+> C-PHY/DPHY binding. Add the "qcom,kaanapali-csi2-phy" compatible.
+> 
+> Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+> Signed-off-by: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
+> ---
+>  Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
+
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
