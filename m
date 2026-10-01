@@ -4,54 +4,121 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F794CA5FD2
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Oct 2026 13:23:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7BB9ACA5FCB
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Oct 2026 13:29:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OneRmDpHe+pY+gnpHBZP0ydczKaGAQbaNZ/3/yESrjE=; b=BQtcOS2Nqk8vpQ
-	WqXtzo2lF6Inu+sbn3VUeJvHJgNTsHx3z2W+OI2ZYz5GtSKLitjONY/x1dZ1TD2bkCMN94WH+9gXT
-	oyQdplkDpMA2Mz/Zry3iHpom/QZgirU+m+Y6HcAkYDNXLuxlw3Mt7RlW2OTOXANBknQ8yorGy+7k4
-	afCtKIoDqt2eyI0mEEXAXT8thvqzyBJUNVJanajtOkEyOowL/cSP1ArzyoKXR0lETLW+ztgEGbQZd
-	Ro1rpBSVV9F4ySA7/AyrUKmuO0Sq/PkhpMBth3jNdkMPqAIbscBhNATrw6YQJJCIxi/g83wJf176a
-	juX3EltZxpTSKgW2d/9g==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:CC:To:MIME-Version:Message-ID:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7+jZFms+SWhvADFov+zTQQrQKmKRNKvcamRvqYkYy1Y=; b=lbxvJi6dZVaDYM
+	DmH5tcznkHoQ81nxe+VDG1zUaj7md2fdjPCBIOb4PGe9vQ+bX+JAM+IujXaX1OB/d3QOrGu6M6UZc
+	5UJvhL+bOby4RZA5H0t3W7ckorQieZbjPq2oeWlzl4TkcwzEQYnAn0TKHc5/tvYy4iHWvuCIHp+6R
+	W86dgVBZEC2D2h6REQuVpBJVmlx8t6WuRC+KC4nnGtEcx0JxWu+WpPYNDyH6/Dzz8ooeycvQPb5J+
+	DiMFi7c3CUTUjoXDl2gjAD8ktr+xejw/Qi092pOSG13r3DCKef6oIElmBznu1gkJywzf0Hk0lTgxe
+	u0OTZ1EiZSo33IOQZMaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCGlP-00000009EF2-30De;
-	Thu, 01 Oct 2026 13:23:56 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xCGqR-00000009EfA-0tRO;
+	Thu, 01 Oct 2026 13:29:07 +0000
+Received: from mail-eastusazon11011060.outbound.protection.outlook.com ([52.101.52.60] helo=BL2PR02CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCGlO-00000009EEh-1uUX
+	id 1xCGqO-00000009EeL-3BFt
 	for linux-phy@lists.infradead.org;
-	Thu, 01 Oct 2026 13:23:54 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 7496960A52;
-	Thu,  1 Oct 2026 13:23:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E78DE1F000FF;
-	Thu,  1 Oct 2026 13:23:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790861033;
-	bh=vVc2eHRjPisecvdNVsMkoTDnZKMhHoWpQcqSumxwY+c=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=QNNx4GZgPCvdpJFP8Q+0VvyMbLyR90R/nnS/HRrai3a11duDse2iyElmXoLN9va9w
-	 OtyAIbpnvKmEITGG5HhFUIVEPKey1SdwCAWZpF1tMlneqrW0/RYIKDdhpO7cNl1gDu
-	 y4g6V537xgoUWMYC1Dx516d8xUMDpFcjGeuMTghpzHyA4ys98+BrQEyV2J9yv1Xy5N
-	 lcyQirpPWBe1/C2u6Aq4NE/9Lf7ZefXUuNCwoLdwyMr3ZuUCaVteoHVl7wUXp0vn75
-	 OkEKwmJp0gpu6ffKmKhU6Q2n3nFjUB1eyqL6a4NChT/ClVw3GFpLbE52LQJ0c9toWL
-	 TVb4rDrPnGElw==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v2 2/4] phy: rockchip: inno-usb2: drop duplicated update
- of rport->suspended
-To: "Sebastian Reichel" <sebastian.reichel@collabora.com>
-Cc: olteanv@gmail.com, neil.armstrong@linaro.org, vkoul@kernel.org, linux-phy@lists.infradead.org
-In-Reply-To: <20261001-phy-rockchip-inno-usb2-clock-fix-v2-2-e01bf509359e@collabora.com>
-References: <20261001-phy-rockchip-inno-usb2-clock-fix-v2-0-e01bf509359e@collabora.com>
- <20261001-phy-rockchip-inno-usb2-clock-fix-v2-2-e01bf509359e@collabora.com>
-Date: Thu, 01 Oct 2026 13:23:52 +0000
-Message-Id: <20261001132352.E78DE1F000FF@smtp.kernel.org>
+	Thu, 01 Oct 2026 13:29:06 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=m+edMWFSAoGtH6Bsz37dw8J7WMTejp1gy6kDWjzpRauVN0BPclM9evYUx8xsLWrJxRBt479AbWuYy4oez1QO92FOWzg1rDyWKp3084Gqu4xDx628Vw9/NaiAub2CENrKS0Gd2cu2OxnSV3h83Wf5EbGibEV0SOB897Qoagp0ET2PUuzvMUovQznQ7c8YEDgefh6ifdWAj3sPEZ5f4wYkukqfJeropfS1pAdYbnKiuFvtXntFGArXnBgE52WeiW11U0rf+7qwdQsl+iBF3OfnzSWYox4ziJ91+gGTIZ/Lpul4Z6xWJu3U0bM3NcKjGBOVd+GFDWLPxmtwfb3M3jrHZw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=H7WdEIDxonddAEwKrPapSaVHk9lPYRBKGndmzZvnjcI=;
+ b=e8Tcfmhw8BRFSoUurWskFkpavUnZGq5qKr/1AP26sd5pJN5ONGkPDZk71b1i+l/88R6YXvPVisL/6CqXAHGPSPcku+g8yldsQwzq/LCf4ORYqGpsb1JhZnj9R5sgundLu1br0eY/ageTMk3DbA6vnhpFgLpvh9b8g6E2twNzGK1vTY+bozzvDkT3srJ2kc8r6pllwNozhpRrT2VHCZ2q4bSkgD8DezzB0XJeeUNXbeCygQh6QtJPGmgrDrc0CVuMiGJ0WiaF93BhiLTbAHtMlBkp/XLivi9j/lncZI4dgWcIK+nacT/a6cgAch97eoKTeyLlwwj5NUgaIK67BDt71A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.117.160) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=H7WdEIDxonddAEwKrPapSaVHk9lPYRBKGndmzZvnjcI=;
+ b=pG/uyata1Gs2BRnT47ZZlC+8sK01Pwr25ob+sx0pNM76OTaoUfp7eRQQjf05PRwk3Iz+ZbRrbx3OpYADLpuT5vWclMc4LdAgyAMdEA9ibmjQD5p1UR0gfxvOsu/lon0Ae7bAw51Ye/oi7CjIbNNbtQLKXlEg9214HlgVpIqbX5+gDAz3AV2QsiCvJDhnRWV90/CNf7vcJq7+0oXKQrdT2YDtWbN2QnzkVwVDXtdiBl7kAlxe89ISN1BMZPuo93dyQONo1Tqk5mJrGFnILmhcCewJbXzgnMYmw+k2ZqUhUsfJ084DIiUB2gIzpUv+RxVQDd0s+Q9zWEL3b+/zeg7l0Q==
+Received: from MN2PR08CA0030.namprd08.prod.outlook.com (2603:10b6:208:239::35)
+ by IA1PR12MB6483.namprd12.prod.outlook.com (2603:10b6:208:3a8::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.451.26; Thu, 1 Oct
+ 2026 13:28:52 +0000
+Received: from BN7PEPF0000009F.namprd04.prod.outlook.com
+ (2603:10b6:208:239:cafe::65) by MN2PR08CA0030.outlook.office365.com
+ (2603:10b6:208:239::35) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.472.16 via Frontend Transport; Thu, 1
+ Oct 2026 13:28:52 +0000
+X-MS-Exchange-Authentication-Results: mx.microsoft.com 1; spf=pass (sender IP
+ is 216.228.117.160) smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.160) by
+ BN7PEPF0000009F.mail.protection.outlook.com (10.167.248.151) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.472.14 via Frontend Transport; Thu, 1 Oct 2026 13:28:52 +0000
+Received: from rnnvmail201.nvidia.com (10.129.68.8) by mail.nvidia.com
+ (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.49; Thu, 1 Oct
+ 2026 06:28:27 -0700
+Received: from [127.0.1.1] (10.126.231.37) by rnnvmail201.nvidia.com
+ (10.129.68.8) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.49; Thu, 1 Oct
+ 2026 06:28:23 -0700
+From: Jon Hunter <jonathanh@nvidia.com>
+Subject: [PATCH v2 0/3] phy: tegra: xusb: Add Tegra238 support
+Date: Thu, 1 Oct 2026 14:28:17 +0100
+Message-ID: <20261001-tegra-phy-v2-0-3e453b1fb271@nvidia.com>
+MIME-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIAPFfvmoC/02PQW6DMBBFr4K8riOPbcaAqqr3qLIYzDh4AaQ2p
+ UURdy+BTZZvNHr//4fInCJn0RQPkXiJOU7jDvqtEL6n8cYydjsLrTSqGio58y2RvPerBAQI0JW
+ WAon9/544xL/D9XU9OfH3z66cz6MYOGc6lE3xfhqVUQ5q4y6lMWhRgvyldWT/OS6xi3Tx0/Dxl
+ LeUWe4wxLkpGEtHFi21VDkTSqZgPFUaWmSrANFZW+sOxbNGH/M8pfVYuMDR44zW8DJmAalkZSx
+ iG2pyvnspIK7btv0DSy1cJCoBAAA=
+X-Change-ID: 20260918-tegra-phy-1611f1d54afa
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
+	Thierry Reding <thierry.reding@kernel.org>, JC Kuo <jckuo@nvidia.com>
+CC: Thierry Reding <thierry.reding@gmail.com>, Wayne Chang
+	<waynec@nvidia.com>, <linux-phy@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-tegra@vger.kernel.org>, Jon Hunter
+	<jonathanh@nvidia.com>, Krzysztof Kozlowski
+	<krzysztof.kozlowski@oss.qualcomm.com>
+X-Mailer: b4 0.14.2
+X-Originating-IP: [10.126.231.37]
+X-ClientProxiedBy: rnnvmail201.nvidia.com (10.129.68.8) To
+ rnnvmail201.nvidia.com (10.129.68.8)
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: BN7PEPF0000009F:EE_|IA1PR12MB6483:EE_
+X-MS-Office365-Filtering-Correlation-Id: 07029c4e-c56e-4e7e-b626-08df1fbfef7a
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|36860700016|1800799024|23010399003|82310400026|13003099007|11063799006|10067099003|260925022911599003|260925021311599003|260925021911599003|56012099006|18002099003;
+X-Microsoft-Antispam-Message-Info: wHRVJW3s/duIIZArers2fQVs3/P3Q3k6ff6V06tdsJkC4H4z2vuC7VRdYX9ikz8uxkDK16ep/HXPVm/BSAIRWuxPQziuYF0NjVoaL4lt8CwCTiYttehG62JzY9t/HdUIkRc3bRKAzw8KfOUN8dJ4DgqJXatRYa/2PQG6ui+B/iwHq9mW7fDZUJSZEQzAXryIpeik43FuvSsJG/2W+M2aEWjOfzsHedwbYF5k7MIVre0b2XjofnYfAQQqx7B165aSoq8G94nGwQD47xWT8sDZkgQX1p5doX0nZH+KBVRuvIMjkAz6B62hGv6rhJ6bNGWf3ntHH2QnIP+a/mzArEyiUGgBsuknhRPe9zYAJxmcdP7Oq5+KDkZOWVzd06JzmcnoP2Yt6e8jCzSJOBMnEQp5XX37wTr+Fj29MzhY1DXD8VUAMoGJFm1wpbyXtx18qYG0e4S9bY3U9C5LnRBhA2G1QIeDm9GFAe7xN/iguMhfPEf4sxKXpiSK0sWdK9or+oXu11rVIM6ocAIMQgCMFC6Ol7KXGzsOcS4BZmIx0rISyFpFfhy3n0Ayf3emMTCVnyryhxQWK1q6rwNzWdKBkvdqlgPCjtfuhvsTqCN/99m0zsaK+bOuFDLdM49/Kan9GQmlI8SmyXkRe3x61cNYVcVv13gYTHcC7NqmasCRVpJSADix/pabE7PX4RZ+52/tgXMz5NDgSbQTkjelUr3icCdO3g==
+X-Forefront-Antispam-Report: CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230040)(376014)(7416014)(36860700016)(1800799024)(23010399003)(82310400026)(13003099007)(11063799006)(10067099003)(260925022911599003)(260925021311599003)(260925021911599003)(56012099006)(18002099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 9WLP+u8bZuN7ZxFpstTHnBEFwfektOIsCFE3lftixEJ1Ix1GipMsWrZ6sNljQVMMWP8qUN+ezkprwh0eiHYav3A1+ruQXaNUDtj34XjsB6rMy26iuU8+KdjUDJF64s/3J5T6EQf3wsPERyaudG3bQRbQQZGPKGjFeeb91wYqQQ+UVvR8s0njs673vjRA+ad2T1JCdXViO66wQqYyL6xhUSnPoXOTJ4Xo0wPbN6m6FZC/y+wPwFJ5jQerft8atAK+9WfETEupY0koL/B17SGn5v8GAQXUug8bas7450/FgYimeGdwBPNR5cTaWkUe5/1eM/vBnN9rg2Jj7xxDG8W7UKRX4F0myIAKzPxfahHYRZosifU3ctWhw7bgxbcW1OzER21jdkJqiJzstQCUPvEfoS+tWH0+FdTPQp7x8wGJI4Tr+T7/xugbuxW9tebM8AuF
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Oct 2026 13:28:52.5143
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 07029c4e-c56e-4e7e-b626-08df1fbfef7a
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: BN7PEPF0000009F.namprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: IA1PR12MB6483
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261001_062904_810980_8A96D3B4 
+X-CRM114-Status: GOOD (  10.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,60 +130,56 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gcGh5OiByb2NrY2hp
-cC1pbm5vLXVzYjI6IGhvdHBsdWcgZGVhZGxvY2sgaWYgcm9ja2NoaXBfdXNiMnBoeV9wb3dlcl9v
-ZmYoKSBmYWlscwotLQoKY29tbWl0IGEyZGQ0YmIyZmQ1Mjg1YzNiZWRmOTFkMDgwYTAwMjQyM2Mx
-ZTZiNDAKQXV0aG9yOiBTZWJhc3RpYW4gUmVpY2hlbCA8c2ViYXN0aWFuLnJlaWNoZWxAY29sbGFi
-b3JhLmNvbT4KCnBoeTogcm9ja2NoaXA6IGlubm8tdXNiMjogZHJvcCBkdXBsaWNhdGVkIHVwZGF0
-ZSBvZiBycG9ydC0+c3VzcGVuZGVkCgpyb2NrY2hpcF91c2IycGh5X3Bvd2VyX29uIGFuZCByb2Nr
-Y2hpcF91c2IycGh5X3Bvd2VyX29mZiBhbHJlYWR5IHVwZGF0ZQpycG9ydC0+c3VzcGVuZGVkIGlu
-IHRoZWlyIHN1Y2Nlc3MgcGF0aC4gSW4gY2FzZSBvZiBlcnJvciBpdCdzIG5vdApzZW5zaWJsZSB0
-byB1cGRhdGUgcnBvcnQtPnN1c3BlbmRlZC4gU28gZHJvcCB0aGUgZHVwbGljYXRlZCB1cGRhdGUu
-Cgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtaW5uby11
-c2IyLmMgYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtaW5uby11c2IyLmMKPiBp
-bmRleCAwYWIwNTRlZTg0Y2JlLi5lNGQ4YWJmOTM1YzFiIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMv
-cGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1pbm5vLXVzYjIuYwo+ICsrKyBiL2RyaXZlcnMvcGh5
-L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1pbm5vLXVzYjIuYwpbIC4uLiBdCj4gQEAgLTEwMDQsNyAr
-MTAwMyw2IEBAIHN0YXRpYyB2b2lkIHJvY2tjaGlwX3VzYjJwaHlfc21fd29yayhzdHJ1Y3Qgd29y
-a19zdHJ1Y3QgKndvcmspCj4gIAkJaWYgKCFycG9ydC0+c3VzcGVuZGVkKSB7Cj4gIAkJCWRldl9k
-YmcoJnJwb3J0LT5waHktPmRldiwgIkRpc2Nvbm5lY3RlZFxuIik7Cj4gIAkJCXJvY2tjaGlwX3Vz
-YjJwaHlfcG93ZXJfb2ZmKHJwb3J0LT5waHkpOwo+IC0JCQlycG9ydC0+c3VzcGVuZGVkID0gdHJ1
-ZTsKCltTZXZlcml0eTogTWVkaXVtXQpJZiByb2NrY2hpcF91c2IycGh5X3Bvd2VyX29mZigpIGZh
-aWxzLCB3aWxsIHJwb3J0LT5zdXNwZW5kZWQgcmVtYWluIGZhbHNlPwoKPiAgCQl9Cj4gIAo+ICAJ
-CS8qCj4gIAkJICogYWN0aXZhdGUgdGhlIGxpbmVzdGF0ZSBkZXRlY3Rpb24gdG8gZ2V0IHRoZSBu
-ZXh0IGRldmljZQo+ICAJCSAqIHBsdWctaW4gaXJxLgo+ICAJCSAqLwo+ICAJCXByb3BlcnR5X2Vu
-YWJsZShycGh5LT5ncmYsICZycG9ydC0+cG9ydF9jZmctPmxzX2RldF9jbHIsIHRydWUpOwo+ICAJ
-CXByb3BlcnR5X2VuYWJsZShycGh5LT5ncmYsICZycG9ydC0+cG9ydF9jZmctPmxzX2RldF9lbiwg
-dHJ1ZSk7Cj4gIAo+ICAJCS8qCj4gIAkJICogd2UgZG9uJ3QgbmVlZCB0byByZWFybSB0aGUgZGVs
-YXllZCB3b3JrIHdoZW4gdGhlIHBoeSBwb3J0Cj4gIAkJICogaXMgc3VzcGVuZGVkLgo+ICAJCSAq
-Lwo+ICAJCW11dGV4X3VubG9jaygmcnBvcnQtPm11dGV4KTsKPiAgCQlyZXR1cm47CgpbU2V2ZXJp
-dHk6IE1lZGl1bV0KU2luY2UgdGhlIHN0YXRlIG1hY2hpbmUgZXhpdHMgaGVyZSB3aXRob3V0IHJl
-LWFybWluZyB0aGUgZGVsYXllZCB3b3JrLCBhbmQKcnBvcnQtPnN1c3BlbmRlZCBjb3VsZCByZW1h
-aW4gZmFsc2UsIGRvZXMgdGhpcyBjYXVzZSBhIHBlcm1hbmVudCBsb3NzIG9mCmhvdHBsdWcgZGV0
-ZWN0aW9uPwoKTG9va2luZyBhdCByb2NrY2hpcF91c2IycGh5X2xpbmVzdGF0ZV9pcnEoKSwgdGhl
-IElSUSBoYW5kbGVyIHJlZnVzZXMgdG8KcmUtYXJtIHRoZSBzdGF0ZSBtYWNoaW5lIGlmIHRoZSBw
-b3J0IGlzIG5vdCBzdXNwZW5kZWQ6CgpzdGF0aWMgaXJxcmV0dXJuX3Qgcm9ja2NoaXBfdXNiMnBo
-eV9saW5lc3RhdGVfaXJxKGludCBpcnEsIHZvaWQgKmRhdGEpCnsKCS4uLgoJaWYgKHJwb3J0LT5z
-dXNwZW5kZWQgJiYgcnBvcnQtPnBvcnRfaWQgPT0gVVNCMlBIWV9QT1JUX0hPU1QpCgkJcm9ja2No
-aXBfdXNiMnBoeV9zbV93b3JrKCZycG9ydC0+c21fd29yay53b3JrKTsKCglyZXR1cm4gSVJRX0hB
-TkRMRUQ7Cn0KCklmIGEgVVNCIGRldmljZSBpcyBkaXNjb25uZWN0ZWQgYW5kIHRoZSB1bmRlcmx5
-aW5nIHJlZ21hcF93cml0ZSgpIGZhaWxzIGR1ZQp0byBsb2NhbCBoYXJkd2FyZSBvciBNTUlPIGZh
-aWx1cmUgZHVyaW5nIHJvY2tjaGlwX3VzYjJwaHlfcG93ZXJfb2ZmKCksCmNvdWxkIHRoaXMgcmVz
-dWx0IGluIGEgaG90cGx1ZyBkZWFkbG9jayBmb3IgdGhlIFVTQiBob3N0IHBvcnQ/CgpXaGlsZSB0
-aGUgY29kZSBhcHBlYXJzIGludGVuZGVkIHRvIGhhbmRsZSB0aGlzIGVycm9yIHBhdGggZ3JhY2Vm
-dWxseSwgaXQKc2VlbXMgdG8gaW5hZHZlcnRlbnRseSBicmVhayB0aGUgc3RhdGUgbWFjaGluZSdz
-IHJlLWFybWluZyBjb25kaXRpb24uIFRoaXMKaXNzdWUgYWxzbyBhcHBlYXJzIHRvIHBlcnNpc3Qg
-aW4gdGhlIGZpbmFsIGNvbW1pdCBvZiB0aGUgc2VyaWVzLgoKLS0gClNhc2hpa28gQUkgcmV2aWV3
-IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MTAwMS1waHktcm9ja2NoaXAt
-aW5uby11c2IyLWNsb2NrLWZpeC12Mi0wLWUwMWJmNTA5MzU5ZUBjb2xsYWJvcmEuY29tP3BhcnQ9
-MgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5v
-cmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5
-Cg==
+Add support for the Tegra238 device to the Tegra XUSB PHY driver and
+add the necessary device-tree binding documentation for this device.
+
+This series also includes a trivial clean-up patch to use the
+dev_err_probe() function in the Tegra XUSB PHY driver instead of open
+coding this function.
+
+This series is based on top of the series that adds support for the
+Tegra264 device to the Tegra XUSB PHY driver [0].
+
+[0] https://lore.kernel.org/linux-tegra/20260903071937.533646-1-waynec@nvidia.com/
+
+Signed-off-by: Jon Hunter <jonathanh@nvidia.com>
+---
+Changes in v2:
+- Dropped extra 'err' variable from patch that migrates to dev_err_probe
+- Added Krzysztof's Reviewed-by for device-tree binding.
+- Link to v1: https://patch.msgid.link/20260921-tegra-phy-v1-0-83466bf9a7cd@nvidia.com
+
+---
+Jon Hunter (3):
+      dt-bindings: phy: tegra194: Add compatible for Tegra238
+      phy: tegra: xusb: Use dev_err_probe()
+      phy: tegra: Add support for Tegra238 XUSB pad controller
+
+ .../bindings/phy/nvidia,tegra194-xusb-padctl.yaml  | 38 ++++++++++++++++++++++
+ drivers/phy/tegra/xusb-tegra186.c                  | 29 +++++++++++++----
+ drivers/phy/tegra/xusb.c                           | 14 ++++----
+ drivers/phy/tegra/xusb.h                           |  3 ++
+ 4 files changed, 71 insertions(+), 13 deletions(-)
+---
+base-commit: e657a464aba873f5eaf3ca821b6e4016674492d6
+change-id: 20260918-tegra-phy-1611f1d54afa
+prerequisite-message-id: <20260903071937.533646-1-waynec@nvidia.com>
+prerequisite-patch-id: 4d5aee86ddf39567e3751c3e3067d9381635de46
+prerequisite-patch-id: 532f630446505f9258dee65ab43887fc3cf877e0
+prerequisite-patch-id: 4660a52fe6277f5d91ee70cee0b74280a8ce927e
+prerequisite-patch-id: d58ecf03061a3c26f4f0a71f2dd5c97a673e23eb
+
+Best regards,
+-- 
+Jon Hunter <jonathanh@nvidia.com>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
