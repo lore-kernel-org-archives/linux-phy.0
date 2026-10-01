@@ -4,106 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DFBDACA5FB3
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Oct 2026 11:45:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC477CA5FCB
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Oct 2026 13:13:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fnb0mq2xPCs8C4+8/7YXcr9I8lSO782H3APO9xy4xlE=; b=1lYe+NDSUjbWk5
-	6bAR38Xnq0gRb3WzK0kKmcEMIl/O7pjBRBLk+sB4vz2UcCc5l7yWxW9Bi0KOA+obJ0nu+up+N3k6v
-	w9JlSlqOQ/IlHeRM4VAlFuzT3zn261vTMgxKvsSg68yudAmRBqQjhKoLy0vHxCpZaLbIoB0fYGHV2
-	xUu5puNEfdzlRCh5tZovm9HGQ75Jcd8sT8EWtG4/aowuAXKN3RbV0HCKc6UTroNPcenV0IDFzVEOp
-	RaerJghFUp0GE3ftUj4gNTix92dtj/NWDCjTAToGzdnxodhTo3cvtde8tvTn4UAN8gGzO6U8KsYwF
-	OOvF4cfyvb4ygqkDqaCQ==;
+	List-Owner; bh=fxg5ReDo7z0K9w+jx7KJgamDyIGIKjh60nT4LTXxaXk=; b=N3Z3RvgUGdVHXp
+	4DHL+wVjxG4FQX6OQ3U+89vdqv8G8/18QsIXyP7DzRxhRqSaK8I5SKpnAXDV5sysIZyJPxdw9bjbL
+	GvZLE5CPgIEDw4W+W5elobeAs83TSTKEXYF2+LVHyh1m5JtjnrbHpnjiUqxYhsItqTOK9HzJ+Uyu9
+	6s2lqN6ANZnfRn5Z8P+c8kLRDCQngmQQ7+0WmLwff47Ueydxlw11e+04oFp3D2xMhhsBRXOugmeWb
+	shbDzHXdhzh2xQvHD/Rxi6VyAd8pxpdo0G9i47LZy8h/4NZZccb7jS6rjQ/Z1lien5bGaCVS3gTAA
+	Rm58+glYOhTkD7QgjBlw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCFEW-00000008fzC-1BnV;
-	Thu, 01 Oct 2026 11:45:52 +0000
-Received: from mail-ed2-x2b.google.com ([2a00:1450:4864:33::2b])
+	id 1xCGaz-00000009BqQ-0wkv;
+	Thu, 01 Oct 2026 13:13:09 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCFER-00000008fxx-3haB
-	for linux-phy@lists.infradead.org;
-	Thu, 01 Oct 2026 11:45:50 +0000
-Received: by mail-ed2-x2b.google.com with SMTP id 4fb4d7f45d1cf-6ae7aa02cb6so1016680a12.3
-        for <linux-phy@lists.infradead.org>; Thu, 01 Oct 2026 04:45:47 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1790855146; cv=none;
-        d=google.com; s=arc-20260327;
-        b=hWg7igVp74V1eHiKGQqQvccHxM0iIAtN9B1/Ea24+Q+VXX+9/7EHzORUjfiMB1U+bE
-         Uyzt7tQCWZhzW/BwjTd6U4hxVCXlHVJM9WCap/Al/eJde0avVdIn9aTvaJ4l8kj/iU8z
-         qho41gVjFAOq9cZZ338/ICDZY7dlkvBnTXD4hbNe+guNbBeJsATf2HVVR04Cil1Ns1u1
-         EUS+Xv2wXBVND78my+bQv/70+bkCCyaU62tlu1m9SARn3TApAy1v9OdnafimpiU5Y1u0
-         Kd4w79Hr6JiNBLIK8h+PBOdDBpRcMmJL/7e52Hg6xv4qbDUvmjcz2avRr2NIERdcsv3m
-         wg+A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:dkim-signature;
-        bh=9vaT1r+UkRQ9frjkUsIiEb8tP1FGw7pwyqFfm7QQnxU=;
-        fh=/SvPQDX9vni2eYB5oQuvwzhUsZclZ2nu/bk4zP0Okt8=;
-        b=IAZCCzRCQQnfdXm87oRi9VYZBRIOijOusgLTLIGK2Df+GchxS4ZYgolMrnjOcTXLLA
-         FFhX4YeYXUKCKNb9umRdkYsiSPqdjFnv3wg9nF64gVbgZWmwC84UJfz5yPKOXAHHuv5R
-         4SQ6CPaXtn7WOHm7nldBUNeklAy3reFK154x/fT/7AhKd2SVIUNRRmt4Fi2A4Zgshk0e
-         P9wO2W88u1qizCd2YGoO7hcMTOHdKH46qM3CfeW8zxTCnul06SQMaTK0oQuI2aDA9AYQ
-         ZtbM7WMEgTPhQ15SRJG98RC0be87dkiKXU9HPB6cZPWrKRPNHfRVoXuJD4RRbkeqVW00
-         LWXg==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1790855146; x=1791459946; darn=lists.infradead.org;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=9vaT1r+UkRQ9frjkUsIiEb8tP1FGw7pwyqFfm7QQnxU=;
-        b=KW8Ur6TMbkvszSLOLCrmxovRUx66DV/Zz9W+/8E2j1wpOUXnV8f+MTzKpDP04Lf862
-         xCZm4u0gCFODbfumTcHjO72MwmMN58siXfGZOHtgqlqsKBScQspJys+ulZqjAQGrMWZT
-         sfCFYLxO86kSmYnAOueZCmMBbYmJIArgW0LDsEmAvAVMO0xYBCZTCOuSwjY5EGoPliFy
-         Af5hOwNAwxBmVLSecnDol5+HyitsJ0L27qfP0vlTgmpwq/eDizqBhZ+FPH1IqY+Dz+Sj
-         gInFRCAHYfFcJcMnXck4xetmzWoWamMUyfTpsPjgwfdWXyOZUA1L90QLXTC34kmHTQUo
-         EHzQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1790855146; x=1791459946;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=9vaT1r+UkRQ9frjkUsIiEb8tP1FGw7pwyqFfm7QQnxU=;
-        b=Kpi639L/x9wQRDcVCwXNSriIhgrR0sOhwj8YaOojWAPeyT5ecroT/iQzdL8fPQwQKE
-         MKjh2Md0BoKhOJEtAy8L4GYnmZMJfc6osZB1qlGpdeW+vpacP+hZoUE483c+maqEOU+o
-         zBkCZIbyw7SVhgA+IusoXn2+jZ893WnnFfE3r7mhq8AsyOCKD31F/MAXpeEvSYsQn8gA
-         ZZ7YY+uamsgmkBi0+YCsrVSH4QaaHAuS4dFiMUaTQZTHify0fX3UMYfmhVzG8MmyOb3D
-         Y+a+nT39Z2Y/aN81mrY6ADN1LYA19Vo7SAJOGuDyvYbw6jdykd5E+Yl49xA5WfXOMNDl
-         /XEw==
-X-Forwarded-Encrypted: i=1; AKwUvBztfqdfHr1z4ddN1ulMQNxSgZe541NqqNhPapfe+N4RB2Mwq0gOZnhTtv4u8r26xtiKhT7QHqISJpg=@lists.infradead.org
-X-Gm-Message-State: AFq9FYIec2xTgqBNAoBJ8K5+O4vnhWmvWKXW1XPneo9k2rclap16BwAg
-	GvTSD1CISyuHN6vRP7aCg7jVtnKggtKqEa65Q9tTUX0ElN/Q3wxCTikBjEFINQBXCXJdppy7+Ab
-	SXRx8QsehiyN5d/8ZcDDhz2oEFcBrwC397ZvxSVqnyA==
-X-Gm-Gg: AYBFou0gcNGbXOKfeLZe8ERpqdnhJGnVOlY1okCC0YNkdz/hvARqEHOhw7jyNm83X/C
-	tmowNIMiALf52/7qfq/DBbNj2iqQfekmdm9j51Ho9v6Y5EIg/CsV87uKcfut3JQxJV+ZW0UTCwS
-	AQEMvTGu3Ob6kYnOfRtpACoiGArhve47o02Cnul3eEnvqzwg6dfIxhDmVuKTA20hep7XZSYuLJK
-	qTjwT6CHlhqlB7wN0rj5T5LzVFLNW1hHVVjk5ow4x1q7E5aie5WZcT3bZPV/5jcsy4lNQlJI3cl
-	ZkQ0h/aMrQ58sI0LFcOwvYP4BbOn7qflT3maLr2c/mg13usZoILnrAitye3kZdQITh23+hsLa2H
-	v72ZVbUGZ6kLn42Y=
-X-Received: by 2002:a05:6402:4244:10b0:6ae:231d:5b04 with SMTP id
- 4fb4d7f45d1cf-6ae231d5f6cmr2443234a12.34.1790855145707; Thu, 01 Oct 2026
- 04:45:45 -0700 (PDT)
+	id 1xCGaw-00000009BnA-0xIQ;
+	Thu, 01 Oct 2026 13:13:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1790860382;
+	bh=uFbEv/1TqnqlOuSGoR42a3bpiDveNN7733gqKv617I4=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
+	b=pPdrR9jI0cK58QWxUwsH4kGbXZ/FWujMugIZL+xfEcRoAsx7EXQVRq5A/KME9OZPN
+	 euPKfEu3G77MbE/rLIVlKfEBuez7YLAFT7HNEXov2k6wHPK4dRcIGDQVaQtBms01TP
+	 vZSEKbg5H82U1wkE2h4A+c7W5R2mxwpbnJH+2FcuOTHVmgY1rPerE2CGRGbcwAQHHh
+	 S2t7EOHxVqwUJGHTMjd7+8PUrPki9qPkWst/Y8ezD40VAzs4ARusvsXzMuMzGK3ksw
+	 dJ0hGsG9oxiZOSQne4ifdB9KOut4LmJCnYqk0cysMj67hJdGcyMVg188mS0al+8T07
+	 MuyhTEBu+Vv1A==
+Received: from jupiter.universe (unknown [100.64.1.62])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: sre)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 7569617E0667;
+	Thu, 01 Oct 2026 15:13:02 +0200 (CEST)
+Received: by jupiter.universe (Postfix, from userid 1000)
+	id 277F8480030; Thu, 01 Oct 2026 15:13:02 +0200 (CEST)
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+Date: Thu, 01 Oct 2026 15:12:41 +0200
+Subject: [PATCH v2 3/4] phy: rockchip: inno-usb2: move suspend handling
+ into new function
 MIME-Version: 1.0
-References: <20260925222959.3607769-2-rdbabiera@google.com>
-In-Reply-To: <20260925222959.3607769-2-rdbabiera@google.com>
-From: Peter Griffin <peter.griffin@linaro.org>
-Date: Thu, 1 Oct 2026 12:45:33 +0100
-X-Gm-Features: AclHuK894a9mH0wxTgrH_ipYnE4vTzJB_Zx5PNoCbbgWS97eFldmJSZCTR0eUZE
-Message-ID: <CADrjBPrAHtpeVsuaTdJQ-bkf7s61-NViTBe+461d+Cwg0C9h=w@mail.gmail.com>
-Subject: Re: [PATCH v8] phy: Add USB3 PHY support to Google Tensor SoC USB PHY driver
-To: RD Babiera <rdbabiera@google.com>
-Cc: vkoul@kernel.org, andre.draszik@linaro.org, tudor.ambarus@linaro.org, 
-	p.zabel@pengutronix.de, neil.armstrong@linaro.org, badhri@google.com, 
-	nkapron@google.com, linux-arm-kernel@lists.infradead.org, 
-	linux-samsung-soc@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org
+Message-Id: <20261001-phy-rockchip-inno-usb2-clock-fix-v2-3-e01bf509359e@collabora.com>
+References: <20261001-phy-rockchip-inno-usb2-clock-fix-v2-0-e01bf509359e@collabora.com>
+In-Reply-To: <20261001-phy-rockchip-inno-usb2-clock-fix-v2-0-e01bf509359e@collabora.com>
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, Heiko Stuebner <heiko@sntech.de>
+Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Igor Paunovic <royalnet026@gmail.com>, kernel@collabora.com, 
+ Sebastian Reichel <sebastian.reichel@collabora.com>
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2718;
+ i=sebastian.reichel@collabora.com; h=from:subject:message-id;
+ bh=uFbEv/1TqnqlOuSGoR42a3bpiDveNN7733gqKv617I4=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGq+XF6B98k0YLaQ3k15aklynKvMPiCB6RPbD
+ fRii1jNsvGscokCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqvlxeAAoJENju1/PI
+ O/qa8usP/0ve5gpKWNGmuTNBPDErf2viFgWW//19Ku1xoBv2Kkg8XSD9ejdQYKx7R/qm/fhREH2
+ Fzj4FCzWz4uOCjJZ+ff+1UGzUk78TsX3Ej88kqan2ykOMWBtp8nS3D/r77GxLJCoC8oXqiguil8
+ m8rp8kWcsFPbjZ/0/N1qBqsgluPmeWK/0QR7VwtEdaWhRZpNsOoGJ0IKM77m78dlMw7Mrl6Wzgn
+ aCDguu0xmWtJaTcA/Z4gmCByhH782hehHh6feYPmLyIJjdX8xjivHCYAJvDMl3eYvf9qDhSW//1
+ emmK2A6lfYOU/H8v6EgFhKh+6RwxFLjmyIWxnsQYZHmPgvTxtl9gN06pJvEowcMbnmiBa1/gt10
+ vwmFxXQdSMjOjcOmPDFXzZPHDsIQmrBEAS0X97ch17CBzNYxH7qS8YV1BM/mBtmVDYGFVT3XGJW
+ e8Lp281/RUHedEcaEJzx4r9BQDyy8Zt+gZZHvDDMgDfomIaMcIbaI0TwGNyPgN3ORkJJEKwjvbD
+ GjlagYbWwG0/okT3LGYt9iQ5DOfTbOtbMSvztHI4QTzOiCmRXLpnzLoD1ese+q/9ENL+PF/3KU8
+ 6CY7nutDg89IbdHcLGDOjBEViM5kuI7MCC+Kob2wNgyI9SpniItWc07nD/zrtnGXvWuKwx1Dl4F
+ a7+NbC+hmB2aZyvwuDXI4tw==
+X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
+ fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261001_044548_246911_5F287449 
-X-CRM114-Status: GOOD (  35.62  )
+X-CRM114-CacheID: sfid-20261001_061306_442876_0F2D4424 
+X-CRM114-Status: GOOD (  14.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,697 +97,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 25 Sept 2026 at 23:30, RD Babiera <rdbabiera@google.com> wrote:
->
-> Add USB3 PHY support for the Google Tensor G5 USB PHY driver.
-> This patch adds functionality for the usb3_tca register, usb3 clock,
-> and usb3 reset as defined in google,lga-usb-phy.yaml. Kconfig now lists
-> USB SuperSpeed support.
->
-> Refactor the probe sequence to initialize the USB2 and USB3 PHYs, and then
-> initialize clocks and resets for both PHYs afterwards.
->
-> Refactor set_vbus_valid to reduce duplicated code.
->
-> Implement USB3 phy_ops for phy_init, phy_exit, and phy_power_on.
-> combo_phy_state enum is added to track PHY bringup state across
-> PHY API calls. google_usb_set_orientation can reprogram the TCA when the
-> PHY is ready.
->
-> google_usb_set_orientation now calls pm_runtime_get_if_active to
-> guarantee register access. Setting orientation and pm_runtime management
-> are now handled within phy_mutex.
->
-> Signed-off-by: RD Babiera <rdbabiera@google.com>
-> ---
+Move handling of the PHY suspend handling into its own dedicated
+function. No functional changes intended.
 
-Reviewed-by: Peter Griffin <peter.griffin@linaro.org>
+Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+---
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 48 +++++++++++++++++----------
+ 1 file changed, 31 insertions(+), 17 deletions(-)
 
-> Changes since v1:
-> * Removed mix of goto-based and scope-based cleanup from usb3 phy_init
-> * Removed unused usb3_core resource from probe
-> * Added combo_phy_state enum to interally track ComboPHY bringup state
->   to allow google_usb_set_orientation() to change TCA orientation.
-> * Modify Kconfig documentation to reflect SuperSpeed support
->
-> Changes since v2:
-> * google_usb3_phy_init now sets USBDP_TOP_CFG_REG_PMGT_REF_CLK_REQ_N
->   to false if phy_init fails elsewhere.
-> * google_usb3_phy_init errors are now handled via DEFINE_FREE structures.
->   This affects set_pmgt_ref_clk_req_n, clk_bulk_prepare_enable, and
->   reset_control_bulk_deassert.
-> * google_usb2_phy_init also handles undoing clk_bulk_prepare_enable via
->   DEFINE_FREE structure.
-> * google_usb3_phy_power_on allows program_tca_locked in the
->   COMBO_PHY_TCA_READY state. Waiting for PoR=>NC is only performed once.
-> * Note: there are checkpatch errors for the DEFINE_FREE macros resulting
->   in "ERROR: trailing statements should be on next line". Other cases of
->   DEFINE_FREE where the line limit would otherwise exceed 100 columns
->   have the indentation done the same way.
->
-> Changes since v3:
-> * set_pmgt_ref_clk_req_n(false) in google_usb3_phy_exit() comes after
->   reset assertion and clock disable to match phy_init() sequence.
-> * program_tca_locked in usb3 power_on() now requires a valid orientation
->   to match google_usb_set_orientation requirements.
->
-> Changes since v4:
-> * google_usb_set_orientation sets gphy->orientation while holding
->   phy_mutex.
-> * google_usb_set_orientation now holds a pm_runtime reference before
->   checking for suspend, and calls put_autosuspend prior to normal
->   exit.
->
-> Changes since v5:
-> * google_usb_set_orientation replaces pm_runtime_suspended check with
->   pm_runtime_get_if_active call.
->
-> Changes since v6:
-> * google_usb_set_orientation uses pm_runtime_put() instead of
->   pm_runtime_put_autosuspend().
-> * Added newline to all dev_* logs
-> * xa_ack sw poll changed to 100ms, and xa_timeout_val is programmed
->   to match during usb3 phy init
-> * google_usb3_phy_power_on returns -EINVAL when PHY is idle and
->   only performs PoR->NC wait in COMBO_PHY_INIT_DONE
->
-> Changes since v7:
-> * Explicitly include linux/iopoll.h and linux/pm_runtime.h.
-> * Bump GPHY_TCA_TIMEOUT_US to 110ms so the 100ms hardware xa_timeout
-> expires before the software poll.
-> * Add blank lines flagged by checkpatch --strict.
-> * Change pm_runtime_enable() to devm_pm_runtime_enable(), removing
-> pm_runtime_disable() from driver remove() and fixing missing disable
-> call from typec_switch_register() error path.
-> ---
->  drivers/phy/Kconfig          |   2 +-
->  drivers/phy/phy-google-usb.c | 447 +++++++++++++++++++++++++++++++----
->  2 files changed, 404 insertions(+), 45 deletions(-)
->
-> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-> index 19f3b7d12b7d..d2d401129af7 100644
-> --- a/drivers/phy/Kconfig
-> +++ b/drivers/phy/Kconfig
-> @@ -100,7 +100,7 @@ config PHY_GOOGLE_USB
->           the G5 generation (Laguna). This driver provides the PHY interfaces
->           to interact with the SNPS eUSB2 and USB 3.2/DisplayPort Combo PHY,
->           both of which are integrated with the DWC3 USB DRD controller.
-> -         This driver currently supports USB high-speed.
-> +         This driver currently supports USB high-speed and SuperSpeed.
->
->  config USB_LGM_PHY
->         tristate "INTEL Lightning Mountain USB PHY Driver"
-> diff --git a/drivers/phy/phy-google-usb.c b/drivers/phy/phy-google-usb.c
-> index ab20bc20f19e..70d3a3833948 100644
-> --- a/drivers/phy/phy-google-usb.c
-> +++ b/drivers/phy/phy-google-usb.c
-> @@ -9,6 +9,7 @@
->  #include <linux/cleanup.h>
->  #include <linux/clk.h>
->  #include <linux/io.h>
-> +#include <linux/iopoll.h>
->  #include <linux/kernel.h>
->  #include <linux/mfd/syscon.h>
->  #include <linux/module.h>
-> @@ -16,10 +17,12 @@
->  #include <linux/of.h>
->  #include <linux/phy/phy.h>
->  #include <linux/platform_device.h>
-> +#include <linux/pm_runtime.h>
->  #include <linux/regmap.h>
->  #include <linux/reset.h>
->  #include <linux/usb/typec_mux.h>
->
-> +/* USB_CFG_CSR */
->  #define USBCS_USB2PHY_CFG19_OFFSET 0x0
->  #define USBCS_USB2PHY_CFG19_PHY_CFG_PLL_FB_DIV GENMASK(19, 8)
->
-> @@ -28,11 +31,44 @@
->  #define USBCS_USB2PHY_CFG21_REF_FREQ_SEL GENMASK(15, 13)
->  #define USBCS_USB2PHY_CFG21_PHY_TX_DIG_BYPASS_SEL BIT(19)
->
-> +/* USBDP_TOP */
->  #define USBCS_PHY_CFG1_OFFSET 0x28
-> +#define USBCS_PHY_CFG1_PHY0_MPLLA_SSC_EN BIT(1)
-> +#define USBCS_PHY_CFG1_PHY0_SRAM_BYPASS_MODE GENMASK(11, 10)
-> +#define SRAM_BYPASS_MODE_BYPASS_FIRMWARE BIT(0)
-> +#define SRAM_BYPASS_MODE_BYPASS_CONTEXT BIT(1)
->  #define USBCS_PHY_CFG1_SYS_VBUSVALID BIT(17)
->
-> +#define USBDP_TOP_CFG_REG_OFFSET 0x44
-> +#define USBDP_TOP_CFG_REG_PMGT_REF_CLK_REQ_N BIT(0)
-> +
-> +#define PHY_POWER_CONFIG_REG1_OFFSET 0x48
-> +#define PHY_POWER_CONFIG_REG1_PG_MODE_EN BIT(1)
-> +#define PHY_POWER_CONFIG_REG1_UPCS_PIPE_CONFIG GENMASK(31, 14)
-> +#define UPCS_PIPE_CONFIG_ISO_CPM BIT(5)
-> +#define UPCS_PIPE_CONFIG_PG_MODE_STATIC BIT(6)
-> +#define UPCS_PIPE_CONFIG_LANE_RESET_NO_PG_EXIT BIT(9)
-> +
-> +/* USB3_TCA */
-> +#define TCA_INTR_STS_OFFSET 0x8
-> +#define TCA_INTR_STS_XA_ACT_EVT BIT(0)
-> +#define TCA_TCPC_OFFSET 0x14
-> +#define TCA_TCPC_MUX_CONTROL GENMASK(2, 0)
-> +#define TCA_TCPC_MUX_CONTROL_USB_ONLY 0x1
-> +#define TCA_TCPC_CONNECTOR_ORIENTATION BIT(3)
-> +#define TCA_TCPC_VALID BIT(4)
-> +#define TCA_CTRLSYNCMODE_CFG1_OFFSET 0x24
-> +#define TCA_CTRLSYNCMODE_CFG1_XA_TIMEOUT_VAL GENMASK(19, 0)
-> +#define TCA_CTRLSYNCMODE_CFG1_XA_TIMEOUT_VAL_100MS 0x1e85
-> +#define TCA_PSTATE_0_OFFSET 0x50
-> +#define TCA_PSTATE_0_UPCS_LANE0_PHYSTATUS BIT(8)
-> +
-> +#define GPHY_TCA_DELAY_US 10
-> +#define GPHY_TCA_TIMEOUT_US 110000
-> +
->  enum google_usb_phy_id {
->         GOOGLE_USB2_PHY,
-> +       GOOGLE_USB3_PHY,
->         GOOGLE_USB_PHY_NUM,
->  };
->
-> @@ -46,53 +82,205 @@ struct google_usb_phy_instance {
->         struct reset_control_bulk_data *rsts;
->  };
->
-> +struct google_usb_phy_config {
-> +       const char * const *clk_names;
-> +       unsigned int num_clks;
-> +       const char * const *rst_names;
-> +       unsigned int num_rsts;
-> +};
-> +
-> +static const char * const u2phy_clk_names[] = {
-> +       "usb2",
-> +       "usb2_apb",
-> +};
-> +
-> +static const char * const u3phy_clk_names[] = {
-> +       "usb3"
-> +};
-> +
-> +static const char * const u2phy_rst_names[] = {
-> +       "usb2",
-> +       "usb2_apb",
-> +};
-> +
-> +static const char * const u3phy_rst_names[] = {
-> +       "usb3"
-> +};
-> +
-> +static const struct google_usb_phy_config phy_configs[GOOGLE_USB_PHY_NUM] = {
-> +       [GOOGLE_USB2_PHY] = {
-> +               .clk_names = u2phy_clk_names,
-> +               .num_clks = ARRAY_SIZE(u2phy_clk_names),
-> +               .rst_names = u2phy_rst_names,
-> +               .num_rsts = ARRAY_SIZE(u2phy_rst_names),
-> +       },
-> +       [GOOGLE_USB3_PHY] = {
-> +               .clk_names = u3phy_clk_names,
-> +               .num_clks = ARRAY_SIZE(u3phy_clk_names),
-> +               .rst_names = u3phy_rst_names,
-> +               .num_rsts = ARRAY_SIZE(u3phy_rst_names),
-> +       },
-> +};
-> +
-> +static inline void google_usb_phy_clk_disable(struct google_usb_phy_instance *inst)
-> +{
-> +       clk_bulk_disable_unprepare(inst->num_clks, inst->clks);
-> +}
-> +
-> +DEFINE_FREE(inst_clk_disable, struct google_usb_phy_instance *,
-> +           if (_T) google_usb_phy_clk_disable(_T))
-> +
-> +static inline void google_usb_phy_rst_disable(struct google_usb_phy_instance *inst)
-> +{
-> +       reset_control_bulk_assert(inst->num_rsts, inst->rsts);
-> +}
-> +
-> +DEFINE_FREE(inst_rst_disable, struct google_usb_phy_instance *,
-> +           if (_T) google_usb_phy_rst_disable(_T))
-> +
-> +/*
-> + * combo_phy_state
-> + *     COMBO_PHY_IDLE: The ComboPHY has been torn down and USB3 has not completed
-> + *                     bringup
-> + *     COMBO_PHY_INIT_DONE: The ComboPHY bringup sequence is complete.
-> + *     COMBO_PHY_TCA_READY: The PoR => NC transition is complete, and the TCA can be
-> + *                          moved into USB.
-> + */
-> +enum combo_phy_state {
-> +       COMBO_PHY_IDLE,
-> +       COMBO_PHY_INIT_DONE,
-> +       COMBO_PHY_TCA_READY,
-> +};
-> +
->  struct google_usb_phy {
->         struct device *dev;
->         struct regmap *usb_cfg_regmap;
->         unsigned int usb2_cfg_offset;
->         void __iomem *usbdp_top_base;
-> +       void __iomem *usb3_tca_base;
->         struct google_usb_phy_instance *insts;
->         /*
->          * Protect phy registers from concurrent access, specifically via
-> -        * google_usb_set_orientation callback.
-> +        * google_usb_set_orientation callback. phy_mutex also protects
-> +        * concurrent access to phy_state.
->          */
->         struct mutex phy_mutex;
->         struct typec_switch_dev *sw;
->         enum typec_orientation orientation;
-> +       enum combo_phy_state phy_state;
->  };
->
->  static void set_vbus_valid(struct google_usb_phy *gphy)
->  {
->         u32 reg;
->
-> -       if (gphy->orientation == TYPEC_ORIENTATION_NONE) {
-> -               reg = readl(gphy->usbdp_top_base + USBCS_PHY_CFG1_OFFSET);
-> +       reg = readl(gphy->usbdp_top_base + USBCS_PHY_CFG1_OFFSET);
-> +       if (gphy->orientation == TYPEC_ORIENTATION_NONE)
->                 reg &= ~USBCS_PHY_CFG1_SYS_VBUSVALID;
-> -               writel(reg, gphy->usbdp_top_base + USBCS_PHY_CFG1_OFFSET);
-> -       } else {
-> -               reg = readl(gphy->usbdp_top_base + USBCS_PHY_CFG1_OFFSET);
-> +       else
->                 reg |= USBCS_PHY_CFG1_SYS_VBUSVALID;
-> -               writel(reg, gphy->usbdp_top_base + USBCS_PHY_CFG1_OFFSET);
-> -       }
-> +       writel(reg, gphy->usbdp_top_base + USBCS_PHY_CFG1_OFFSET);
-> +}
-> +
-> +static void set_sram_bypass(struct google_usb_phy *gphy, u32 bypass)
-> +{
-> +       u32 reg;
-> +
-> +       reg = readl(gphy->usbdp_top_base + USBCS_PHY_CFG1_OFFSET);
-> +       reg &= ~USBCS_PHY_CFG1_PHY0_SRAM_BYPASS_MODE;
-> +       reg |= FIELD_PREP(USBCS_PHY_CFG1_PHY0_SRAM_BYPASS_MODE, bypass);
-> +       writel(reg, gphy->usbdp_top_base + USBCS_PHY_CFG1_OFFSET);
-> +}
-> +
-> +static void set_pmgt_ref_clk_req_n(struct google_usb_phy *gphy, bool resume)
-> +{
-> +       u32 reg;
-> +
-> +       reg = readl(gphy->usbdp_top_base + USBDP_TOP_CFG_REG_OFFSET);
-> +       if (resume)
-> +               reg |= USBDP_TOP_CFG_REG_PMGT_REF_CLK_REQ_N;
-> +       else
-> +               reg &= ~USBDP_TOP_CFG_REG_PMGT_REF_CLK_REQ_N;
-> +       writel(reg, gphy->usbdp_top_base + USBDP_TOP_CFG_REG_OFFSET);
-> +}
-> +
-> +static inline void disable_pmgt_ref_clk_req_n(struct google_usb_phy *gphy)
-> +{
-> +       set_pmgt_ref_clk_req_n(gphy, false);
-> +}
-> +
-> +DEFINE_FREE(pmgt_ref_clk_req_n, struct google_usb_phy *, if (_T) disable_pmgt_ref_clk_req_n(_T))
-> +
-> +static int wait_tca_xa_ack(struct google_usb_phy *gphy)
-> +{
-> +       int ret;
-> +       u32 reg;
-> +
-> +       ret = readl_poll_timeout(gphy->usb3_tca_base + TCA_INTR_STS_OFFSET,
-> +                                reg, !!(reg & TCA_INTR_STS_XA_ACT_EVT),
-> +                                GPHY_TCA_DELAY_US, GPHY_TCA_TIMEOUT_US);
-> +       if (ret)
-> +               dev_err(gphy->dev, "tca xa_ack timeout, ret=%d\n", ret);
-> +
-> +       return ret;
-> +}
-> +
-> +static int program_tca_locked(struct google_usb_phy *gphy)
-> +          __must_hold(&gphy->phy_mutex)
-> +{
-> +       int ret;
-> +       u32 reg;
-> +
-> +       reg = readl(gphy->usb3_tca_base + TCA_INTR_STS_OFFSET);
-> +       writel(reg, gphy->usb3_tca_base + TCA_INTR_STS_OFFSET);
-> +
-> +       reg = readl(gphy->usb3_tca_base + TCA_TCPC_OFFSET);
-> +       reg &= ~TCA_TCPC_MUX_CONTROL;
-> +       reg |= FIELD_PREP(TCA_TCPC_MUX_CONTROL, TCA_TCPC_MUX_CONTROL_USB_ONLY);
-> +       if (gphy->orientation == TYPEC_ORIENTATION_REVERSE)
-> +               reg |= TCA_TCPC_CONNECTOR_ORIENTATION;
-> +       else
-> +               reg &= ~TCA_TCPC_CONNECTOR_ORIENTATION;
-> +       reg |= TCA_TCPC_VALID;
-> +       writel(reg, gphy->usb3_tca_base + TCA_TCPC_OFFSET);
-> +
-> +       ret = wait_tca_xa_ack(gphy);
-> +       dev_dbg(gphy->dev, "TCA switch %s, mux %lu, orientation %s\n",
-> +               ret ? "failed" : "success",
-> +               FIELD_GET(TCA_TCPC_MUX_CONTROL, reg),
-> +               FIELD_GET(TCA_TCPC_CONNECTOR_ORIENTATION, reg) ? "reverse" : "normal");
-> +
-> +       reg = readl(gphy->usb3_tca_base + TCA_INTR_STS_OFFSET);
-> +       writel(reg, gphy->usb3_tca_base + TCA_INTR_STS_OFFSET);
-> +
-> +       return ret;
->  }
->
->  static int google_usb_set_orientation(struct typec_switch_dev *sw,
->                                       enum typec_orientation orientation)
->  {
->         struct google_usb_phy *gphy = typec_switch_get_drvdata(sw);
-> +       int ret = 0;
->
->         dev_dbg(gphy->dev, "set orientation %d\n", orientation);
->
-> -       gphy->orientation = orientation;
-> +       guard(mutex)(&gphy->phy_mutex);
->
-> -       if (pm_runtime_suspended(gphy->dev))
-> -               return 0;
-> +       gphy->orientation = orientation;
->
-> -       guard(mutex)(&gphy->phy_mutex);
-> +       if (IS_ENABLED(CONFIG_PM)) {
-> +               if (pm_runtime_get_if_active(gphy->dev) <= 0)
-> +                       return 0;
-> +       }
->
->         set_vbus_valid(gphy);
->
-> -       return 0;
-> +       if (gphy->phy_state == COMBO_PHY_TCA_READY && orientation != TYPEC_ORIENTATION_NONE)
-> +               ret = program_tca_locked(gphy);
-> +
-> +       pm_runtime_put(gphy->dev);
-> +
-> +       return ret;
->  }
->
->  static int google_usb2_phy_init(struct phy *_phy)
-> @@ -122,17 +310,18 @@ static int google_usb2_phy_init(struct phy *_phy)
->         ret = clk_bulk_prepare_enable(inst->num_clks, inst->clks);
->         if (ret)
->                 return ret;
-> +       struct google_usb_phy_instance *clk_dev __free(inst_clk_disable) = inst;
->
->         ret = reset_control_bulk_deassert(inst->num_rsts, inst->rsts);
-> -       if (ret) {
-> -               clk_bulk_disable_unprepare(inst->num_clks, inst->clks);
-> +       if (ret)
->                 return ret;
-> -       }
->
->         regmap_read(gphy->usb_cfg_regmap, gphy->usb2_cfg_offset + USBCS_USB2PHY_CFG21_OFFSET, &reg);
->         reg |= USBCS_USB2PHY_CFG21_PHY_ENABLE;
->         regmap_write(gphy->usb_cfg_regmap, gphy->usb2_cfg_offset + USBCS_USB2PHY_CFG21_OFFSET, reg);
->
-> +       retain_and_null_ptr(clk_dev);
-> +
->         return 0;
->  }
->
-> @@ -161,6 +350,128 @@ static const struct phy_ops google_usb2_phy_ops = {
->         .exit           = google_usb2_phy_exit,
->  };
->
-> +static int google_usb3_phy_init(struct phy *_phy)
-> +{
-> +       struct google_usb_phy_instance *inst = phy_get_drvdata(_phy);
-> +       struct google_usb_phy *gphy = inst->parent;
-> +       int ret = 0;
-> +       u32 reg;
-> +
-> +       dev_dbg(gphy->dev, "initializing usb3 phy\n");
-> +
-> +       guard(mutex)(&gphy->phy_mutex);
-> +
-> +       if (gphy->phy_state != COMBO_PHY_IDLE) {
-> +               dev_warn(gphy->dev, "usb3 phy init called when combo phy state is not idle\n");
-> +               return 0;
-> +       }
-> +
-> +       reg = readl(gphy->usb3_tca_base + TCA_CTRLSYNCMODE_CFG1_OFFSET);
-> +       reg &= ~TCA_CTRLSYNCMODE_CFG1_XA_TIMEOUT_VAL;
-> +       reg |= FIELD_PREP(TCA_CTRLSYNCMODE_CFG1_XA_TIMEOUT_VAL,
-> +                         TCA_CTRLSYNCMODE_CFG1_XA_TIMEOUT_VAL_100MS);
-> +       writel(reg, gphy->usb3_tca_base + TCA_CTRLSYNCMODE_CFG1_OFFSET);
-> +
-> +       reg = readl(gphy->usbdp_top_base + PHY_POWER_CONFIG_REG1_OFFSET);
-> +       reg |= PHY_POWER_CONFIG_REG1_PG_MODE_EN;
-> +       reg &= ~PHY_POWER_CONFIG_REG1_UPCS_PIPE_CONFIG;
-> +       reg |= FIELD_PREP(PHY_POWER_CONFIG_REG1_UPCS_PIPE_CONFIG,
-> +                         (UPCS_PIPE_CONFIG_ISO_CPM |
-> +                          UPCS_PIPE_CONFIG_PG_MODE_STATIC |
-> +                          UPCS_PIPE_CONFIG_LANE_RESET_NO_PG_EXIT));
-> +       writel(reg, gphy->usbdp_top_base + PHY_POWER_CONFIG_REG1_OFFSET);
-> +
-> +       set_vbus_valid(gphy);
-> +
-> +       reg = readl(gphy->usbdp_top_base + USBCS_PHY_CFG1_OFFSET);
-> +       reg |= USBCS_PHY_CFG1_PHY0_MPLLA_SSC_EN;
-> +       writel(reg, gphy->usbdp_top_base + USBCS_PHY_CFG1_OFFSET);
-> +
-> +       set_sram_bypass(gphy, SRAM_BYPASS_MODE_BYPASS_FIRMWARE |
-> +                       SRAM_BYPASS_MODE_BYPASS_CONTEXT);
-> +       set_pmgt_ref_clk_req_n(gphy, true);
-> +       struct google_usb_phy *pmgt_ref_clk_req_dev __free(pmgt_ref_clk_req_n) = gphy;
-> +
-> +       ret = clk_bulk_prepare_enable(inst->num_clks, inst->clks);
-> +       if (ret)
-> +               return ret;
-> +       struct google_usb_phy_instance *clk_dev __free(inst_clk_disable) = inst;
-> +
-> +       ret = reset_control_bulk_deassert(inst->num_rsts, inst->rsts);
-> +       if (ret)
-> +               return ret;
-> +       struct google_usb_phy_instance *rst_dev __free(inst_rst_disable) = inst;
-> +
-> +       ret = readl_poll_timeout(gphy->usb3_tca_base + TCA_PSTATE_0_OFFSET,
-> +                                reg, !(reg & TCA_PSTATE_0_UPCS_LANE0_PHYSTATUS),
-> +                                GPHY_TCA_DELAY_US, GPHY_TCA_TIMEOUT_US);
-> +       if (ret) {
-> +               dev_err(gphy->dev, "wait for lane0 phystatus timed out\n");
-> +               return ret;
-> +       }
-> +
-> +       gphy->phy_state = COMBO_PHY_INIT_DONE;
-> +
-> +       retain_and_null_ptr(rst_dev);
-> +       retain_and_null_ptr(clk_dev);
-> +       retain_and_null_ptr(pmgt_ref_clk_req_dev);
-> +
-> +       return 0;
-> +}
-> +
-> +static int google_usb3_phy_exit(struct phy *_phy)
-> +{
-> +       struct google_usb_phy_instance *inst = phy_get_drvdata(_phy);
-> +       struct google_usb_phy *gphy = inst->parent;
-> +
-> +       dev_dbg(gphy->dev, "exiting usb3 phy\n");
-> +
-> +       guard(mutex)(&gphy->phy_mutex);
-> +
-> +       reset_control_bulk_assert(inst->num_rsts, inst->rsts);
-> +       clk_bulk_disable_unprepare(inst->num_clks, inst->clks);
-> +       set_pmgt_ref_clk_req_n(gphy, false);
-> +
-> +       gphy->phy_state = COMBO_PHY_IDLE;
-> +
-> +       return 0;
-> +}
-> +
-> +static int google_usb3_phy_power_on(struct phy *_phy)
-> +{
-> +       struct google_usb_phy_instance *inst = phy_get_drvdata(_phy);
-> +       struct google_usb_phy *gphy = inst->parent;
-> +       int ret;
-> +
-> +       dev_dbg(gphy->dev, "power on usb3 phy\n");
-> +
-> +       guard(mutex)(&gphy->phy_mutex);
-> +
-> +       if (gphy->phy_state == COMBO_PHY_IDLE)
-> +               return -EINVAL;
-> +
-> +       if (gphy->phy_state == COMBO_PHY_INIT_DONE) {
-> +               /* Wait for PoR -> NC transitions*/
-> +               ret = wait_tca_xa_ack(gphy);
-> +               if (ret) {
-> +                       dev_err(gphy->dev, "PoR->NC transition timeout\n");
-> +                       return ret;
-> +               }
-> +               gphy->phy_state = COMBO_PHY_TCA_READY;
-> +       }
-> +
-> +       if (gphy->orientation != TYPEC_ORIENTATION_NONE)
-> +               return program_tca_locked(gphy);
-> +
-> +       return 0;
-> +}
-> +
-> +static const struct phy_ops google_usb3_phy_ops = {
-> +       .init           = google_usb3_phy_init,
-> +       .exit           = google_usb3_phy_exit,
-> +       .power_on       = google_usb3_phy_power_on,
-> +};
-> +
->  static struct phy *google_usb_phy_xlate(struct device *dev,
->                                         const struct of_phandle_args *args)
->  {
-> @@ -173,14 +484,61 @@ static struct phy *google_usb_phy_xlate(struct device *dev,
->         return gphy->insts[args->args[0]].phy;
->  }
->
-> +static int google_usb_phy_parse_clocks(struct google_usb_phy *gphy)
-> +{
-> +       struct device *dev = gphy->dev;
-> +       int id, i, ret;
-> +
-> +       for (id = 0; id < GOOGLE_USB_PHY_NUM; id++) {
-> +               const struct google_usb_phy_config *cfg = &phy_configs[id];
-> +               struct google_usb_phy_instance *inst = &gphy->insts[id];
-> +
-> +               inst->num_clks = cfg->num_clks;
-> +               inst->clks = devm_kcalloc(dev, inst->num_clks, sizeof(*inst->clks), GFP_KERNEL);
-> +               if (!inst->clks)
-> +                       return -ENOMEM;
-> +
-> +               for (i = 0; i < inst->num_clks; i++)
-> +                       inst->clks[i].id = cfg->clk_names[i];
-> +
-> +               ret = devm_clk_bulk_get(dev, inst->num_clks, inst->clks);
-> +               if (ret)
-> +                       return dev_err_probe(dev, ret, "failed to get phy%d clks\n", id);
-> +       }
-> +
-> +       return 0;
-> +}
-> +
-> +static int google_usb_phy_parse_resets(struct google_usb_phy *gphy)
-> +{
-> +       struct device *dev = gphy->dev;
-> +       int id, i, ret;
-> +
-> +       for (id = 0; id < GOOGLE_USB_PHY_NUM; id++) {
-> +               const struct google_usb_phy_config *cfg = &phy_configs[id];
-> +               struct google_usb_phy_instance *inst = &gphy->insts[id];
-> +
-> +               inst->num_rsts = cfg->num_rsts;
-> +               inst->rsts = devm_kcalloc(dev, inst->num_rsts, sizeof(*inst->rsts), GFP_KERNEL);
-> +               if (!inst->rsts)
-> +                       return -ENOMEM;
-> +
-> +               for (i = 0; i < inst->num_rsts; i++)
-> +                       inst->rsts[i].id = cfg->rst_names[i];
-> +               ret = devm_reset_control_bulk_get_exclusive(dev, inst->num_rsts, inst->rsts);
-> +               if (ret)
-> +                       return dev_err_probe(dev, ret, "failed to get phy%d resets\n", id);
-> +       }
-> +
-> +       return 0;
-> +}
-> +
->  static int google_usb_phy_probe(struct platform_device *pdev)
->  {
->         struct typec_switch_desc sw_desc = { };
-> -       struct google_usb_phy_instance *inst;
->         struct phy_provider *phy_provider;
->         struct device *dev = &pdev->dev;
->         struct google_usb_phy *gphy;
-> -       struct phy *phy;
->         u32 args[1];
->         int ret;
->
-> @@ -212,46 +570,48 @@ static int google_usb_phy_probe(struct platform_device *pdev)
->                 return dev_err_probe(dev, PTR_ERR(gphy->usbdp_top_base),
->                                     "invalid usbdp top\n");
->
-> +       gphy->usb3_tca_base = devm_platform_ioremap_resource_byname(pdev,
-> +                                                                   "usb3_tca");
-> +       if (IS_ERR(gphy->usb3_tca_base))
-> +               return dev_err_probe(dev, PTR_ERR(gphy->usb3_tca_base),
-> +                                   "invalid usb3 tca\n");
-> +
->         gphy->insts = devm_kcalloc(dev, GOOGLE_USB_PHY_NUM, sizeof(*gphy->insts), GFP_KERNEL);
->         if (!gphy->insts)
->                 return -ENOMEM;
->
-> -       inst = &gphy->insts[GOOGLE_USB2_PHY];
-> -       inst->parent = gphy;
-> -       inst->index = GOOGLE_USB2_PHY;
-> -       phy = devm_phy_create(dev, NULL, &google_usb2_phy_ops);
-> -       if (IS_ERR(phy))
-> -               return dev_err_probe(dev, PTR_ERR(phy),
-> +       gphy->insts[GOOGLE_USB2_PHY].phy = devm_phy_create(dev, NULL, &google_usb2_phy_ops);
-> +       gphy->insts[GOOGLE_USB2_PHY].index = GOOGLE_USB2_PHY;
-> +       gphy->insts[GOOGLE_USB2_PHY].parent = gphy;
-> +       if (IS_ERR(gphy->insts[GOOGLE_USB2_PHY].phy))
-> +               return dev_err_probe(dev, PTR_ERR(gphy->insts[GOOGLE_USB2_PHY].phy),
->                                      "failed to create usb2 phy instance\n");
-> -       inst->phy = phy;
-> -       phy_set_drvdata(phy, inst);
-> +       phy_set_drvdata(gphy->insts[GOOGLE_USB2_PHY].phy, &gphy->insts[GOOGLE_USB2_PHY]);
->
-> -       inst->num_clks = 2;
-> -       inst->clks = devm_kcalloc(dev, inst->num_clks, sizeof(*inst->clks), GFP_KERNEL);
-> -       if (!inst->clks)
-> -               return -ENOMEM;
-> -       inst->clks[0].id = "usb2";
-> -       inst->clks[1].id = "usb2_apb";
-> -       ret = devm_clk_bulk_get(dev, inst->num_clks, inst->clks);
-> +       gphy->insts[GOOGLE_USB3_PHY].phy = devm_phy_create(dev, NULL, &google_usb3_phy_ops);
-> +       gphy->insts[GOOGLE_USB3_PHY].index = GOOGLE_USB3_PHY;
-> +       gphy->insts[GOOGLE_USB3_PHY].parent = gphy;
-> +       if (IS_ERR(gphy->insts[GOOGLE_USB3_PHY].phy))
-> +               return dev_err_probe(dev, PTR_ERR(gphy->insts[GOOGLE_USB3_PHY].phy),
-> +                                    "failed to create usb3 phy instance\n");
-> +       phy_set_drvdata(gphy->insts[GOOGLE_USB3_PHY].phy, &gphy->insts[GOOGLE_USB3_PHY]);
-> +
-> +       ret = google_usb_phy_parse_clocks(gphy);
->         if (ret)
-> -               return dev_err_probe(dev, ret, "failed to get u2 phy clks\n");
-> +               return ret;
->
-> -       inst->num_rsts = 2;
-> -       inst->rsts = devm_kcalloc(dev, inst->num_rsts, sizeof(*inst->rsts), GFP_KERNEL);
-> -       if (!inst->rsts)
-> -               return -ENOMEM;
-> -       inst->rsts[0].id = "usb2";
-> -       inst->rsts[1].id = "usb2_apb";
-> -       ret = devm_reset_control_bulk_get_exclusive(dev, inst->num_rsts, inst->rsts);
-> +       ret = google_usb_phy_parse_resets(gphy);
->         if (ret)
-> -               return dev_err_probe(dev, ret, "failed to get u2 phy resets\n");
-> +               return ret;
->
->         phy_provider = devm_of_phy_provider_register(dev, google_usb_phy_xlate);
->         if (IS_ERR(phy_provider))
->                 return dev_err_probe(dev, PTR_ERR(phy_provider),
->                                      "failed to register phy provider\n");
->
-> -       pm_runtime_enable(dev);
-> +       ret = devm_pm_runtime_enable(dev);
-> +       if (ret)
-> +               return ret;
->
->         sw_desc.fwnode = dev_fwnode(dev);
->         sw_desc.drvdata = gphy;
-> @@ -271,7 +631,6 @@ static void google_usb_phy_remove(struct platform_device *pdev)
->         struct google_usb_phy *gphy = dev_get_drvdata(&pdev->dev);
->
->         typec_switch_unregister(gphy->sw);
-> -       pm_runtime_disable(&pdev->dev);
->  }
->
->  static const struct of_device_id google_usb_phy_of_match[] = {
->
-> base-commit: c7f2322431cb6d108b18fb4154606b49e2bc50f7
-> --
-> 2.56.0.rc1.315.gc6ed9934b7-goog
->
+diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+index e4d8abf935c1..925a03fee6bc 100644
+--- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
++++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+@@ -332,6 +332,35 @@ rockchip_usb2phy_clk480m_clkout_ctl(struct clk_hw *hw, struct regmap **base,
+ 	}
+ }
+ 
++static int rockchip_usb2phy_set_suspend(struct rockchip_usb2phy *rphy,
++					struct rockchip_usb2phy_port *rport,
++					bool do_suspend)
++{
++	int ret;
++
++	ret = property_enable(rphy->grf, &rport->port_cfg->phy_sus, !do_suspend);
++	if (ret)
++		return ret;
++
++	if (!do_suspend) {
++		/*
++		 * For rk3588, it needs to reset phy when exit from suspend
++		 * mode with common_on_n 1'b1(aka REFCLK_LOGIC, Bias, and PLL
++		 * blocks are powered down) for lower power consumption. If you
++		 * don't want to reset phy, please keep the common_on_n 1'b0 to
++		 * set these blocks remain powered.
++		 */
++		ret = rockchip_usb2phy_reset(rphy);
++		if (ret)
++			return ret;
++
++		/* waiting for the utmi_clk to become stable */
++		usleep_range(1500, 2000);
++	}
++
++	return 0;
++}
++
+ static int rockchip_usb2phy_clk480m_prepare(struct clk_hw *hw)
+ {
+ 	const struct usb2phy_reg *clkout_ctl;
+@@ -603,27 +632,12 @@ static int rockchip_usb2phy_power_on(struct phy *phy)
+ 	if (ret)
+ 		return ret;
+ 
+-	ret = property_enable(rphy->grf, &rport->port_cfg->phy_sus, false);
++	ret = rockchip_usb2phy_set_suspend(rphy, rport, false);
+ 	if (ret) {
+ 		clk_disable_unprepare(rphy->clk480m);
+ 		return ret;
+ 	}
+ 
+-	/*
+-	 * For rk3588, it needs to reset phy when exit from
+-	 * suspend mode with common_on_n 1'b1(aka REFCLK_LOGIC,
+-	 * Bias, and PLL blocks are powered down) for lower
+-	 * power consumption. If you don't want to reset phy,
+-	 * please keep the common_on_n 1'b0 to set these blocks
+-	 * remain powered.
+-	 */
+-	ret = rockchip_usb2phy_reset(rphy);
+-	if (ret)
+-		return ret;
+-
+-	/* waiting for the utmi_clk to become stable */
+-	usleep_range(1500, 2000);
+-
+ 	rport->suspended = false;
+ 	return 0;
+ }
+@@ -639,7 +653,7 @@ static int rockchip_usb2phy_power_off(struct phy *phy)
+ 	if (rport->suspended)
+ 		return 0;
+ 
+-	ret = property_enable(rphy->grf, &rport->port_cfg->phy_sus, true);
++	ret = rockchip_usb2phy_set_suspend(rphy, rport, true);
+ 	if (ret)
+ 		return ret;
+ 
+
+-- 
+2.53.0
+
 
 -- 
 linux-phy mailing list
