@@ -4,99 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE210CA5FDD
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Oct 2026 08:22:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9487ACA5FCF
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Oct 2026 08:30:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gw2AtOyfE7YcEILqn7flhqcpNRL6CFlWiVqE1DRrAM8=; b=aKmoSmzR+nhRhY
-	MjdmLbkuJU5kpKBdyQnbyPPdV5MhhP/RsfnttBERWqqaYZwXwtilkRr5JNl4M4tIUhQAyyLzPTf38
-	YhaGEKXCUW0g1SKo7fPfelKyZeqZ/2Af2sxmIksbZMnTHrk3GQD+bqm/0BZeEExFShizAl17dBEXN
-	oUyNCv6ncWWEfl0uQuxvdxl9Y4RGO/Z9RxCAOSBg+JJNVyDGhAEaF1UrqyTGzdsRbeACRoyzKTekl
-	J4LzquDD6aP0of+0aaPPUc3iDtzGM2Q5hFZzoQpMidUYC+5zJaI4G5ATwpv7CDTpOO23LA3ahXl1q
-	NqmJskIIbI3NIGxInI5Q==;
+	List-Owner; bh=cDtlemvb7DD+4F/oR8kUpI4nyN96CKUakLB9It/h7Ik=; b=TOVbr/G9HXyBbm
+	H+PR29V/kqlG6FQsX30YifP+ghrpljZldtm3+o+FZsrrp4vGmaK8e6pOdlS2HSJLsSspY8wDlFckw
+	+5rmAvKvgctXV2nOXAZLtEkipTdeYsSkJ4z1miRZd1vvFVp8xaPMkCsHMuhjEX/Ba3RH1boethhKb
+	T6R3f+ztL06oQGZ9YAthj/pCfFy2E216pJ21zvK2a2WZk7/cr7WW+nfPx+egFVR6S7xlOhV8UP/Vo
+	igekI4Ln0ztoUtxgwLV9Y3dQsNJt7L4277/ED69idiqo3+K8XAitpfkukUvSo4tA6i3eK0r1YaKzG
+	EoYuBbRak700ZNCLCRlQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCC49-000000088fi-1VJ1;
-	Thu, 01 Oct 2026 08:22:57 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1xCCBW-00000008AjX-1FWn;
+	Thu, 01 Oct 2026 08:30:34 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCC3g-000000087bO-3CaP;
-	Thu, 01 Oct 2026 08:22:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
-	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=Cw5Md4vlQmmym/q3UHeWVb3S8Fi8h4WqY6aiv8+6FGI=; b=JCxQDXGPHAUQuYSe+HuE54nGcn
-	3e52nLUgbG0HW2+UNma/0KtGCYJCGDN55ClqTsX1BBkuwGF5KA+kxY1DFvZ/2Z/cOOvq3LjcaslDk
-	GCJpMWV62sZ+R/tyW1KBDJL491208Zgaswp7qIRcUNKPIygpKWJ8735bF+g9IO1K3GBeFZOddwIxk
-	ywpS5J42z93tG4I7EzHnJYep8sYRlWVRNW+XH5Jtpc1A6Ot5x16ZeFfHqOmOrtYCiJ6l+Ld9mx1KV
-	zXWFw2EYBgeYiiFxza1pOe64tIGARqylLf8lXBRGVZoB+LDRStW64/yzFWfof7n8EE4dTQOPi5qjG
-	4bWYe1Eg==;
-Received: from bali.collaboradmins.com ([148.251.105.195])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1xCC3d-00000004ivl-0jKp;
-	Thu, 01 Oct 2026 08:22:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1790842944;
-	bh=l2hO/KJEmWtszH5GEQpJ9ssJ+uFhum7Wp730pKmXQZE=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=FbYY91ZzRC3wwCMrOXQfj24wxM99+qJcYnUjn5FFei/yamq6OKy5HiejzW7NLcTzO
-	 BziPHhBa1DTWD1x3w7AK5Lp3W1Hmx1K2QGxO/P9HViBOEtbij1N3Zm1xtO5LD5UamP
-	 PUxuT83ShpTn0CWxO2G6j6bLE6XTu+f4UUDqJ13H0RDGoWhGVULoBiCrc2V/r7USqb
-	 z/ZH/p+ymex8dQ0fEmXefssqCmLX2vON8W/O3xrXZ25caxH0q8vJAwJWtJ7MqllS1a
-	 kET8usk2EtuaSelOxWBifGIW9lWaLJaVBHAknwdMgtpc7WUy30P/kjjDiiSr7K+CGd
-	 RhkGmz8dDuqMw==
-Received: from yukiji.home (unknown [100.64.0.131])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: laeyraud)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 1ECDE17E0906;
-	Thu, 01 Oct 2026 10:22:23 +0200 (CEST)
-From: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-Date: Thu, 01 Oct 2026 10:21:55 +0200
-Subject: [PATCH v13 23/24] scsi: ufs: mediatek: Remove undocumented
- "clk-scale-up-vcore-min"
-MIME-Version: 1.0
-Message-Id: <20261001-mt8196-ufs-v13-23-60854adab6d9@collabora.com>
+	id 1xCCBU-00000008Aj8-428G
+	for linux-phy@lists.infradead.org;
+	Thu, 01 Oct 2026 08:30:32 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 7ABBB43A1D;
+	Thu,  1 Oct 2026 08:30:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 339681F000FF;
+	Thu,  1 Oct 2026 08:30:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1790843432;
+	bh=tx802UC4J2g+jpO1y12LT8axhFS70v9Ik/UZtnMKgCI=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=QgnR3HH+O19Vw4ah1ceswscnK77HynLb0Q5JqBQegxRjRYI0S1AdrgLtis1wO7/CV
+	 G+ihxG5+Teo/cBJpls93amMtB1KgBssOlb0/Mn8UckDeF6+CxXtP1t4LxppkbQqa3I
+	 s5io3Gufw0QgZxsRvSeRF7I/oPGzHj5Pv/U4j+4jlnDGt84nHLmKo//Ig5V9NXwDl6
+	 9cf5wSxr6kS0Ny7R7fgOPRKa6knQqU4frB5l+v9pFoMYG3a7LmygXVAl0fpMU8w3iH
+	 BMoHE6ZNi6MmvQJwc3A6mlvCA6XFPaZ4VRbfGAXY69jOoRcoLAUwnz3E+VuBHaAwR7
+	 RuEzPvWtOnNEA==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v13 19/24] scsi: ufs: mediatek: Don't acquire
+ dvfsrc-vcore twice
+To: "Louis-Alexis Eyraud" <louisalexis.eyraud@collabora.com>
+Cc: devicetree@vger.kernel.org, linux-scsi@vger.kernel.org, neil.armstrong@linaro.org, robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, linux-phy@lists.infradead.org, olteanv@gmail.com
+In-Reply-To: <20261001-mt8196-ufs-v13-19-60854adab6d9@collabora.com>
 References: <20261001-mt8196-ufs-v13-0-60854adab6d9@collabora.com>
-In-Reply-To: <20261001-mt8196-ufs-v13-0-60854adab6d9@collabora.com>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Matthias Brugger <matthias.bgg@gmail.com>, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
- Peter Wang <peter.wang@mediatek.com>, 
- Chaotian Jing <chaotian.jing@mediatek.com>, 
- Alim Akhtar <alim.akhtar@samsung.com>, 
- Avri Altman <avri.altman@sandisk.com>, Bart Van Assche <bvanassche@acm.org>, 
- Stanley Jhu <chu.stanley@gmail.com>, 
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>, 
- Philipp Zabel <p.zabel@pengutronix.de>, Liam Girdwood <lgirdwood@gmail.com>, 
- Mark Brown <broonie@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>, 
- "Martin K. Petersen" <mkp@kernel.org>
-Cc: kernel@collabora.com, linux-arm-kernel@lists.infradead.org, 
- linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-scsi@vger.kernel.org, 
- Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, 
- Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1790842918; l=4256;
- i=louisalexis.eyraud@collabora.com; s=20250113; h=from:subject:message-id;
- bh=+k1PcNjMZn/9p7ErJS/nfzOKBYihpmoa+aVg+KcZuzY=;
- b=I838HejL2+NaULLx0/FQ7CpMXTpT8/5/LSuQp+RqKKtncdxp/2ULV2pWi4rXudAAgWE1agIak
- 9wvTNPuyspZBCrI3na9qr1n8R+pYHrFFAOH+G+4iW8gJQY1XjWZcG0b
-X-Developer-Key: i=louisalexis.eyraud@collabora.com; a=ed25519;
- pk=CHFBDB2Kqh4EHc6JIqFn69GhxJJAzc0Zr4e8QxtumuM=
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261001_092225_851495_3CE4058B 
-X-CRM114-Status: GOOD (  18.91  )
+ <20261001-mt8196-ufs-v13-19-60854adab6d9@collabora.com>
+Date: Thu, 01 Oct 2026 08:30:29 +0000
+Message-Id: <20261001083030.339681F000FF@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,140 +63,49 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-
-The MediaTek UFS driver contains support for an undocumented,
-non-vendor-prefixed u32 property named "clk-scale-up-vcore-min".
-
-Since it is not part of any binding, and would not pass a bindings
-review in its current form, remove it.
-
-To return this functionality, it needs to be resubmitted in a series
-that also introduces it to the binding, and justifies what it is used
-for. Compatibility with downstream device trees is not a valid
-justification for its existence.
-
-Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Reviewed-by: Chaotian Jing <chaotian.jing@mediatek.com>
-Signed-off-by: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
----
- drivers/ufs/host/ufs-mediatek.c | 42 +----------------------------------------
- drivers/ufs/host/ufs-mediatek.h |  1 -
- 2 files changed, 1 insertion(+), 42 deletions(-)
-
-diff --git a/drivers/ufs/host/ufs-mediatek.c b/drivers/ufs/host/ufs-mediatek.c
-index 2473aba8fbf8..1d9cb928de49 100644
---- a/drivers/ufs/host/ufs-mediatek.c
-+++ b/drivers/ufs/host/ufs-mediatek.c
-@@ -922,8 +922,6 @@ static void ufs_mtk_init_clocks(struct ufs_hba *hba)
- 	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
- 	struct list_head *head = &hba->clk_list_head;
- 	struct ufs_clk_info *clki, *clki_tmp;
--	struct device *dev = hba->dev;
--	u32 volt;
- 
- 	/*
- 	 * Find private clocks and store them in struct ufs_mtk_clk.
-@@ -960,24 +958,7 @@ static void ufs_mtk_init_clocks(struct ufs_hba *hba)
- 	if (!ufs_mtk_is_clk_scale_ready(hba)) {
- 		hba->caps &= ~UFSHCD_CAP_CLK_SCALING;
- 		dev_info(hba->dev, "%s: Clock scaling unavailable", __func__);
--		return;
--	}
--
--	if (!host->reg_vcore)
--		return;
--
--	if (of_property_read_u32(dev->of_node, "clk-scale-up-vcore-min",
--				 &volt)) {
--		dev_info(dev, "failed to get clk-scale-up-vcore-min");
--		return;
- 	}
--
--	host->mclk.vcore_volt = volt;
--
--	/* If default boot is max gear, request vcore */
--	if (volt && host->clk_scale_up)
--		if (regulator_set_voltage(host->reg_vcore, volt, INT_MAX))
--			dev_err(hba->dev, "Failed to set vcore to %d\n", volt);
- }
- 
- static void ufs_mtk_setup_clk_gating(struct ufs_hba *hba)
-@@ -1971,8 +1952,7 @@ static void _ufs_mtk_clk_scale(struct ufs_hba *hba, bool scale_up)
- 	struct ufs_mtk_clk *mclk = &host->mclk;
- 	struct ufs_clk_info *clki = mclk->ufs_sel_clki;
- 	struct ufs_clk_info *fde_clki = mclk->ufs_fde_clki;
--	int volt, ret = 0;
--	bool clk_bind_vcore = false;
-+	int ret = 0;
- 	bool clk_fde_scale = false;
- 
- 	if (!hba->clk_scaling.is_initialized)
-@@ -1981,10 +1961,6 @@ static void _ufs_mtk_clk_scale(struct ufs_hba *hba, bool scale_up)
- 	if (!clki || !fde_clki)
- 		return;
- 
--	volt = host->mclk.vcore_volt;
--	if (host->reg_vcore && volt)
--		clk_bind_vcore = true;
--
- 	if (mclk->ufs_fde_max_clki && mclk->ufs_fde_min_clki)
- 		clk_fde_scale = true;
- 
-@@ -2005,14 +1981,6 @@ static void _ufs_mtk_clk_scale(struct ufs_hba *hba, bool scale_up)
- 	}
- 
- 	if (scale_up) {
--		if (clk_bind_vcore) {
--			ret = regulator_set_voltage(host->reg_vcore, volt, INT_MAX);
--			if (ret) {
--				dev_err(hba->dev, "Failed to set vcore to %d\n", volt);
--				goto out;
--			}
--		}
--
- 		ret = clk_set_parent(clki->clk, mclk->ufs_sel_max_clki->clk);
- 		if (ret) {
- 			dev_err(hba->dev, "%s: Failed to set clock mux: %pe\n",
-@@ -2044,14 +2012,6 @@ static void _ufs_mtk_clk_scale(struct ufs_hba *hba, bool scale_up)
- 				__func__, ERR_PTR(ret));
- 			goto out;
- 		}
--
--		if (clk_bind_vcore) {
--			ret = regulator_set_voltage(host->reg_vcore, 0, INT_MAX);
--			if (ret) {
--				dev_err(hba->dev, "%s: Failed to set vcore to minimum: %pe\n",
--					__func__, ERR_PTR(ret));
--			}
--		}
- 	}
- 
- out:
-diff --git a/drivers/ufs/host/ufs-mediatek.h b/drivers/ufs/host/ufs-mediatek.h
-index 1fa14a83e8cd..4966aae5bd34 100644
---- a/drivers/ufs/host/ufs-mediatek.h
-+++ b/drivers/ufs/host/ufs-mediatek.h
-@@ -154,7 +154,6 @@ struct ufs_mtk_clk {
- 	struct ufs_clk_info *ufs_fde_clki; /* Mux */
- 	struct ufs_clk_info *ufs_fde_max_clki; /* Max src */
- 	struct ufs_clk_info *ufs_fde_min_clki; /* Min src */
--	int vcore_volt;
- };
- 
- struct ufs_mtk_hw_ver {
-
--- 
-2.55.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0xvd10gdWZzOiBtZWRpYXRlazog
+bWlzc2luZyBkZXZfZXJyX3Byb2JlKCkgY2F1c2VzIHByb2JlIGRlZmVycmFsIGxvZyBzcGFtCi0t
+Cgpjb21taXQgZDc5MzczMmY0YmI3YjA2MTQ1ZTdiZDIzMjNhM2QyMWY5NTZlODI5YQpBdXRob3I6
+IE5pY29sYXMgRnJhdHRhcm9saSA8bmljb2xhcy5mcmF0dGFyb2xpQGNvbGxhYm9yYS5jb20+Cgpz
+Y3NpOiB1ZnM6IG1lZGlhdGVrOiBEb24ndCBhY3F1aXJlIGR2ZnNyYy12Y29yZSB0d2ljZQoKVGhl
+IHVmcy1tZWRpYXRlayBkcml2ZXIgbmVlZHMgdG8gbWFuYWdlIGFuIG9wdGlvbmFsIGR2ZnNyYy12
+Y29yZSByZWd1bGF0b3IKYnV0IGN1cnJlbnRseSBhY3F1aXJlcyB0d28gZGlmZmVyZW50IHJlZmVy
+ZW5jZXMgdG8gaXQgaW4gZGlmZmVyZW50IHBsYWNlcy4KVGhpcyBjb21taXQgY2VudHJhbGl6ZXMg
+dGhlIHJlZ192Y29yZSBhY3F1aXNpdGlvbiBpbiB0aGUgaG9zdCBzdHJ1Y3QgYW5kCnJld29ya3Mg
+dGhlIHJlZ3VsYXRvciB1c2VycyB0byBlbGltaW5hdGUgdGhlIGR1cGxpY2F0ZWQgbG9naWMuCgpS
+ZXZpZXdlZC1ieTogQW5nZWxvR2lvYWNjaGlubyBEZWwgUmVnbm8gPGFuZ2Vsb2dpb2FjY2hpbm8u
+ZGVscmVnbm9AY29sbGFib3JhLmNvbT4KUmV2aWV3ZWQtYnk6IFBldGVyIFdhbmcgPHBldGVyLndh
+bmdAbWVkaWF0ZWsuY29tPgpTaWduZWQtb2ZmLWJ5OiBOaWNvbGFzIEZyYXR0YXJvbGkgPG5pY29s
+YXMuZnJhdHRhcm9saUBjb2xsYWJvcmEuY29tPgpTaWduZWQtb2ZmLWJ5OiBMb3Vpcy1BbGV4aXMg
+RXlyYXVkIDxsb3Vpc2FsZXhpcy5leXJhdWRAY29sbGFib3JhLmNvbT4KCj4gZGlmZiAtLWdpdCBh
+L2RyaXZlcnMvdWZzL2hvc3QvdWZzLW1lZGlhdGVrLmMgYi9kcml2ZXJzL3Vmcy9ob3N0L3Vmcy1t
+ZWRpYXRlay5jCj4gaW5kZXggY2EzMWYwN2QzODJiNC4uZDE0MTkyZGMzZTMxYyAxMDA2NDQKPiAt
+LS0gYS9kcml2ZXJzL3Vmcy9ob3N0L3Vmcy1tZWRpYXRlay5jCj4gKysrIGIvZHJpdmVycy91ZnMv
+aG9zdC91ZnMtbWVkaWF0ZWsuYwpbIC4uLiBdCj4gQEAgLTExMDYsNiArMTA5MSwxNyBAQCBzdGF0
+aWMgaW50IHVmc19tdGtfZ2V0X3N1cHBsaWVzKHN0cnVjdCB1ZnNfbXRrX2hvc3QgKmhvc3QpCj4g
+IAljb25zdCBzdHJ1Y3QgdWZzX210a19zb2NfZGF0YSAqZGF0YSA9IG9mX2RldmljZV9nZXRfbWF0
+Y2hfZGF0YShkZXYpOwo+ICAJaW50IHJldDsKPiAgCj4gKwlob3N0LT5yZWdfdmNvcmUgPSBkZXZt
+X3JlZ3VsYXRvcl9nZXRfb3B0aW9uYWwoZGV2LCAiZHZmc3JjLXZjb3JlIik7Cj4gKwlpZiAoSVNf
+RVJSKGhvc3QtPnJlZ192Y29yZSkpIHsKPiArCQlpZiAoUFRSX0VSUihob3N0LT5yZWdfdmNvcmUp
+ICE9IC1FTk9ERVYpIHsKPiArCQkJZGV2X2VycihkZXYsICJGYWlsZWQgdG8gZ2V0IGR2ZnNyYy12
+Y29yZSBzdXBwbHk6ICVwZVxuIiwKPiArCQkJCWhvc3QtPnJlZ192Y29yZSk7CgpbU2V2ZXJpdHk6
+IExvd10KU2luY2UgZGV2bV9yZWd1bGF0b3JfZ2V0X29wdGlvbmFsKCkgY2FuIHJldHVybiAtRVBS
+T0JFX0RFRkVSLCB3aWxsIHVzaW5nCmRldl9lcnIoKSBoZXJlIGNhdXNlIHNwdXJpb3VzIGVycm9y
+IGxvZ3MgaW4gZG1lc2cgZXZlcnkgdGltZSB0aGUgcHJvYmUgaXMKZGVmZXJyZWQ/CgpDb3VsZCB0
+aGlzIGJlIGNoYW5nZWQgdG8gZGV2X2Vycl9wcm9iZSgpIHRvIHF1aWV0bHkgaGFuZGxlIHRoZSAt
+RVBST0JFX0RFRkVSCmNhc2Ugd2hpbGUgcHJvcGVybHkgbG9nZ2luZyByZWFsIGVycm9ycz8KCj4g
+KwkJCXJldHVybiBQVFJfRVJSKGhvc3QtPnJlZ192Y29yZSk7Cj4gKwkJfQo+ICsKPiArCQlob3N0
+LT5yZWdfdmNvcmUgPSBOVUxMOwo+ICsJfQo+ICsKPiAgCWlmICghZGF0YSkKPiAgCQlyZXR1cm4g
+MDsKCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hz
+ZXQvMjAyNjEwMDEtbXQ4MTk2LXVmcy12MTMtMC02MDg1NGFkYWI2ZDlAY29sbGFib3JhLmNvbT9w
+YXJ0PTE5CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1waHkK
