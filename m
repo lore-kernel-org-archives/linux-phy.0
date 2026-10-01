@@ -4,105 +4,136 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2CB69CA5FC5
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Oct 2026 00:27:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AE25CA5FC5
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Oct 2026 01:16:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OtJNB/B9B1jriw0EQyyhPdYWFPq6pOP+65RQ312J5A4=; b=FpFg4mMHpLlBJs
-	7xUeZ8KD5RaLmkRVwRTpr3gsdQlz2nSLpcitZ38j3WgB/fFmk6pdr+Tulxn8zoS0d9B5/K2vIeq18
-	vGraU6sJOGDL18+b2M6rUVDXzUwMOp8bBrOExamFvdDATdGhrpqzQWZrVS+GCRKVXaZNJO7s6nq17
-	TXrIL/VC21ZSex4fMxtBuS+HYf/8pnog8gw9C3RHQ/bvLIgKdxBl/tFwCCd7Jn+8mMQDSJn7bfeb4
-	QFNxkTEKvB0KPiRJChl31jCGMF//NsMJ1krlfz4UW4SZdt0c5dbo7i03ByQ0qp99CYXYAJZ+BxLrO
-	c8CHIVsuFtn9kTPiuvKA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WI46pxXNlwYwFbddBvIHhv5qLtuVQdgEoUGgHHIlrvU=; b=jNUuI0nI8NqZ2a
+	+0lKylg/0jr8NIemEr+ZQ9bpEEJqpfB4HJySnsYTWwb3I+GwCZbcuNV+COCPBHm3WtTd+QqI/2NGo
+	+SFSjNX2GFk/LyvQeKOVVClsZ01KrSd8vw24ZWrDqlo5VLb/Ee6jqs/VuCs3MnjHpDSmm9MudVnAi
+	ChfuUWpbZX4TVjTsWwl6/2qYwtLiBkyC71QEnZDLoReqiBVl8t7C971ZWYoOBXyMmiER0jFsoV/Na
+	JP8RZnlXIDLfZ/jxpNuAb4BCB8SWq+zSIdw1V8/wP5r7eoY4haUDuoQdPUGtqzc4a58yQdCx75+Y1
+	UH66sNo72juXe+6JSnxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xC4e6-00000007Vjt-2pEJ;
-	Thu, 01 Oct 2026 00:27:34 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+	id 1xC5Pd-00000007Z2T-0VUG;
+	Thu, 01 Oct 2026 01:16:41 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xC4e4-00000007Vj2-08KW
+	id 1xC5Pa-00000007Z1Z-23eY
 	for linux-phy@lists.infradead.org;
-	Thu, 01 Oct 2026 00:27:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1790814449;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=9Nk4sGQfUZPJr906VGnTLrhpfwNs9+S7HqUA3QKJmnY=;
-	b=J4TSmKTHWiyiGi4BxmklrzEDbZGRK5cQV0wjFBuEE+qseaqntyxWE1Ahm65qcHx78rPVql
-	ibjg/rsuUVMOgwHOGtqcqP7pVrC/ZQpdz6Bv26vErzwsUv8vIKm2ilwzzAm/i8txesdPIp
-	bxKB69lcbwKz+0tvS+fKJdhLQvc8iPI=
-Received: from mail-qt1-f200.google.com (mail-qt1-f200.google.com
- [209.85.160.200]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-66-iJQlSXihMPiXMFY9tLm5Rw-1; Wed, 30 Sep 2026 20:27:27 -0400
-X-MC-Unique: iJQlSXihMPiXMFY9tLm5Rw-1
-X-Mimecast-MFC-AGG-ID: iJQlSXihMPiXMFY9tLm5Rw_1790814447
-Received: by mail-qt1-f200.google.com with SMTP id d75a77b69052e-530d028f779so74446241cf.2
-        for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 17:27:27 -0700 (PDT)
+	Thu, 01 Oct 2026 01:16:39 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6910joIh1140889
+	for <linux-phy@lists.infradead.org>; Thu, 1 Oct 2026 01:16:37 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=8LTwY7IbNj9bE+34TwGiIF
+	xUUUMboXxjX5o58rh98Fg=; b=c9G1vDL003HrgYM8gEmL6SUiRKFm2A714lEBNV
+	OJEDmdFIlPkZL2Zv0JJDX7imO17aDtQexMn2dCSsC8OFpDZ5BRM4tkD0XpGBSReN
+	s/Ba5fu3GV2JQeOazEZUvRvO+nivSgvsbu/Scn478LwbN9q+2ZKzI73JQpgO9GqE
+	NqW5hsyJxKNkbPbBIsK17yBO0yjhWnLoYYKynfe25drtd0oVP1qLhMFg+3l3iGrH
+	zI5mmOKGBt4EYa1ZjsMjIg+OYncJW3Hcr8iWPfUuINlJssA0MFJCEtdqJeZv6Gtg
+	RKJwCefomM2J6CiYq+uA9vKgST+YMkXayORlc5D5BtzVfmjQ==
+Received: from mail-dy1-f200.google.com (mail-dy1-f200.google.com [74.125.82.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h10bkbkja-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Thu, 01 Oct 2026 01:16:36 +0000 (GMT)
+Received: by mail-dy1-f200.google.com with SMTP id 5a478bee46e88-33713e5e6daso8663517eec.0
+        for <linux-phy@lists.infradead.org>; Wed, 30 Sep 2026 18:16:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1790817396; x=1791422196; darn=lists.infradead.org;
+        h=cc:to:message-id:content-transfer-encoding:content-type
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=8LTwY7IbNj9bE+34TwGiIFxUUUMboXxjX5o58rh98Fg=;
+        b=ic5/Sd5hupzdQQd6OgCSevvrKCMVMXUdfiEGQeoq97PVQJnS8yn/N8DulAk5HNGJSd
+         1bzOEvzh9NvKg2iv+MqaKvxD4++o8rvbhWq3BlBGZWCdmNF4/BWvHk0/e4g+U162Fvyu
+         yT8/TGgnTI/UgkUYTlJ7F3RLFgn7Vy1W1NUuJGRNqVCmwCJQt1+PfV4Fi8f3lYbq+9lO
+         GBCGNEhsD/3sJI76cMBCHrWay/KZFja58OG6UdBheRu+Bwj5k53PyD8K7Dy83EKPJ9hn
+         xj38EwGQXg2vgfweBj3z+a8lPY7REs8qM8s8OKFQTQyUI5735BwQiOBfk1SslzBgGvRk
+         YBZg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1790814447; x=1791419247;
-        h=user-agent:in-reply-to:content-transfer-encoding
-         :content-disposition:content-type:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=9Nk4sGQfUZPJr906VGnTLrhpfwNs9+S7HqUA3QKJmnY=;
-        b=P2S+NXrEh7jqer++pkbqg/jxwUCWh9UXo8Pih76OjfOP8mVwQeF7sRAaLEm/3+1KCg
-         qChmE0FkiyMXOfcKsgSiWqbPg5jVjtlrH8BTXET7wYCRBqdYagL50f4qJeIvLPwHXb2I
-         LKjj9cayUmztHjLlSa2QQKR638gbgt4IkP1YJNY7Q7iYu7S4TaoOe1tuE+oGVGeuELQz
-         EPIDO7vVBXPV18+qO0WPYtTOWOdd1YrpvyfXbbM1uz9TNXG2echmDM4FsskTGUZkpgz8
-         VtoX0ALayt6N48lkTApnvPJ3x0kmpy7ioCRiXonn7TXGaiR85KG0cDUG287C2//T0+iP
-         HhCQ==
-X-Forwarded-Encrypted: i=1; AKwUvBx7jbhaOP7n7VNfwgjW4dpvx9k97tbs9JdV9rivqOlYyeNa1LP9kQK+LmoexLDU8yjch9fnUkedamI=@lists.infradead.org
-X-Gm-Message-State: AFuF++nYMkPOvkjkUTJZhlOsM+9KpFLLzZACaVAZw253H7veTRh5FoZU
-	i6HCQTVH40pVrCY2HN13tpddzGjN9mgPZrUFP9sRHj+XEj1qvkk+VW9eC1JsX3anfHsrZysWyPR
-	UuiPUOB54HTEHt23jJiNwub0/wTI0MWNyxaocLMLMq1exKP9J3reRCQLKPtIdygu6AbM=
-X-Gm-Gg: AYBFou04ox3/PszERQKO5DjuiRCoVff3drYB0Z8Rfn1OAhAGzxdNQ/6GD5s5KM8lfOH
-	In0YQDo9dE3DNUyLBfqqct32gQePcU2Z2JqvMQ+SNSEeMtuLJsdIwwyQC7ysllHOGZsAJlo1E5J
-	IUdivhgudSvCk7GuXs2GtjU0+x29AI3tpaILSvVzFaE7mN5OxaJ9GPVvimMEjSDJjCFCxE/F5CW
-	K3zx4z9XcWFKs9BrBSv3rAwB4zcBTc9hjQcwVoYOyC78Xefgpqhjx9AV5v3jFsV3X75PDONVPl5
-	bWVwf3/PjddihETzkrAPiZlAz9hkamSlvWpd2T7+KW+1Jp1r6UoV9RJbX8mbWxTFQX51t44LKyB
-	PSX9jWn+GPSGPMF8XJErCeSkas+ZJtToET+s=
-X-Received: by 2002:a05:622a:4d9a:b0:533:3868:1f78 with SMTP id d75a77b69052e-53374328747mr61077701cf.51.1790814446779;
-        Wed, 30 Sep 2026 17:27:26 -0700 (PDT)
-X-Received: by 2002:a05:622a:4d9a:b0:533:3868:1f78 with SMTP id d75a77b69052e-53374328747mr61077101cf.51.1790814446078;
-        Wed, 30 Sep 2026 17:27:26 -0700 (PDT)
-Received: from redhat.com (c-73-183-53-213.hsd1.pa.comcast.net. [73.183.53.213])
-        by smtp.gmail.com with ESMTPSA id d75a77b69052e-53385f87469sm6552381cf.3.2026.09.30.17.27.23
+        d=1e100.net; s=20260707; t=1790817396; x=1791422196;
+        h=cc:to:message-id:content-transfer-encoding:content-type
+         :mime-version:subject:date:from:x-gm-gg:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to:content-type;
+        bh=8LTwY7IbNj9bE+34TwGiIFxUUUMboXxjX5o58rh98Fg=;
+        b=egASl8hwsVRlB9fd0sFC4C5RtfU1Jk+Slab/EkK9jflhpFWnqDiSWFxulNhX4uV8Dm
+         vbHQaN4uUwRoBNpoD2dCvABIOk0IdaSWmsxvnp69xowPmKa8H/Wuz4xAsKzdHP1m2M/y
+         zz/Cr/Y3QRT3BphHFSRTvbH97nKiIOw3jUZcbiB59HgiFX95m+lFiflC6/jVRfLD4LVR
+         x/LWuLF/jZEL6zrRRVPG9QXAPGIfyzqWmvSDEw9J/w4FYuRFAUBmOqxMvkmROyZeVecZ
+         vxTOKgyvXOZh2ZGJi2DiN75Y0oEgBFfUOGUYeRAGVWjZUe/dEV02Cnq/5yGL2ZDcBvoi
+         7baA==
+X-Forwarded-Encrypted: i=1; AKwUvBw+X+G319Hw0RAos36S9dPww2tKXKfBE3LO6X1LOzH0DfwT7eRhXaLC7DzCqiIjA0UYM3bFU+B7+ms=@lists.infradead.org
+X-Gm-Message-State: AFuF++lGlroVeyKufh0fb75+Ap62EpWMAqQdIdGea6uA9RMByG4LSrGl
+	zqLZKlCsVRBaZFZ/JIfFC2MKwOUF4QkvzOgOXvS55HYl+WTafmTJDoQij/rAg2g9zfldMa8QuBK
+	9z8XvJONGEPjGCkFrCsDVsNkGKMwaZPknmHhtZyjkWPDva997vRrfADQhSxJos4BKU0Dm
+X-Gm-Gg: AYBFou0JBtQibPi6mdtjFHGRah+JfR+Ac/gVCVZWXo7m4Mibr6Uq/IIJFveg/5UKYpJ
+	5HSRpczuMcl39s5pmpYJ/LXMsqLrdqnqBuxOM8AHACSB5aB9f5Es3VEEEWC8wDmwcnI3pYD+G3F
+	dhFKgpZGhWQvzp1A9C0m4a5oT5pQCUdDkHzQHEWXuYpPW1yBQbFULGJjgOoI2dBJrjMIuhjjEhl
+	8R66L9NO1NvAg/xHNt8YR5z1nkvug6KKcf774sweEsjR5PFdzs5FE4V4C7omyq+81+tdyt8b7pt
+	2wFm+V/lmdexUkoOJqzcdqFsgZ+8JNqZKO33HbwivqgW7uTUTPDMqodme/w5/ohUtRFowyJwh3h
+	Lq7N4EzJdwEaS72LaOLrSwYufM38NpPTonWhJctdJ+GXp85OdIAOm
+X-Received: by 2002:a05:7022:3a89:b0:14d:b813:852d with SMTP id a92af1059eb24-14db822c86emr1313976c88.6.1790817395551;
+        Wed, 30 Sep 2026 18:16:35 -0700 (PDT)
+X-Received: by 2002:a05:7022:3a89:b0:14d:b813:852d with SMTP id a92af1059eb24-14db822c86emr1313954c88.6.1790817394799;
+        Wed, 30 Sep 2026 18:16:34 -0700 (PDT)
+Received: from hu-wcheng-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-34db3750765sm2190286eec.12.2026.09.30.18.16.33
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 30 Sep 2026 17:27:24 -0700 (PDT)
-Date: Wed, 30 Sep 2026 20:27:23 -0400
-From: Brian Masney <bmasney@redhat.com>
-To: Stefan =?iso-8859-1?Q?D=F6singer?= <stefandoesinger@gmail.com>
-Cc: linux-clk@vger.kernel.org, Brian Masney <bmasney+clk@redhat.com>,
-	Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org,
-	Jerome Brunet <jbrunet+clk@baylibre.com>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Rob Herring <robh@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>, mturquette@baylibre.com
-Subject: Re: [GIT PULL] clk: zte: zx297520v3 clock bindings and driver
-Message-ID: <ar2o6yUzJP0H1YJv@redhat.com>
-References: <LTD3_tELRsyCnoeF8FU_TQ@gmail.com>
+        Wed, 30 Sep 2026 18:16:34 -0700 (PDT)
+From: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+Date: Wed, 30 Sep 2026 18:16:31 -0700
+Subject: [PATCH] phy: qualcomm: qmp-combo: Differentiate clocks related to
+ the USB block
 MIME-Version: 1.0
-In-Reply-To: <LTD3_tELRsyCnoeF8FU_TQ@gmail.com>
-User-Agent: Mutt/2.4.2 (2026-08-30)
-X-Mimecast-Spam-Score: 0
-X-Mimecast-MFC-PROC-ID: vf0DnUbUHJ_cyHtUvdgKHOOW3ZULlgc3_z1NcQyTTuM_1790814447
-X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
+Message-Id: <20260930-qmp_phy_usb_clks_v1-v1-1-d4dccc9eb263@oss.qualcomm.com>
+X-B4-Tracking: v=1; b=H4sIAG60vWoC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
+ vPSU3UzU4B8JSMDIzMDS2MD3cLcgviCjMr40uKk+OSc7OL4MkNdI9MkS2NzEwMLsyQjJaDOgqL
+ UtMwKsKnRsRB+cWlSVmpyCcgopdpaADC08D53AAAA
+X-Change-ID: 20260930-qmp_phy_usb_clks_v1-25b9374086b2
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+        Manivannan Sadhasivam <mani@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org, jason.pettit@oss.qualcomm.com,
+        Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+X-Mailer: b4 0.15.2
+X-Proofpoint-GUID: nkSS4HxhDu-sacfjrCzzocbvmP0JsMMx
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDAxMDAwNCBTYWx0ZWRfX4Kq/2eTxGUut
+ 2jkuWNKE9CLyFTmzQj7gq/xhk+cm03QvFpZzw4F001NBE/z2l2uo3H+8KlJSPvgFagbmAa1omn7
+ 6Nz34g7ZgxpP0oFxrFV581/8bP2KyCRYellSzCsMFFbhVrp2v85nxjQGrXzqueD/M760SbTYJk3
+ 6Nd5lwJ0dhK1FczERTgmcfeUD8Q6+98rqInVxfguzniEE+dtaONgtoCZx66zj0y3D6MxzWjZRw7
+ 8D4x1UMSmbd5oYhH6vVtS8FG9lsKiAU4vaT3jnuOKw4pNhDD1Zp2DefN0C5BqlRom0V78W5KESx
+ E7fSBvIFKheRayS2ZanJMbbN6RhULrzpVkTtyTsHVmJVUat8bqoHTCUfe/DUBBxL89zmEQdrHkQ
+ 493jf2T5bCCM1x7GHXa6zQOYHuaplucoZeY+FiUaPGPZi/3vrf5yidgVjrBuYd+6T8kzuw+GmKo
+ EuWcHpn+b7WUQzzGCtw==
+X-Authority-Analysis: v=2.4 cv=MZn5KJ/f c=1 sm=1 tr=0 ts=6abdb474 cx=c_pps
+ a=PfFC4Oe2JQzmKTvty2cRDw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=gowsoOTTUOVcmtlkKump:22
+ a=EUspDBNiAAAA:8 a=KCRQXf5DRPPkNQcuQH4A:9 a=QEXdDO2ut3YA:10
+ a=6Ab_bkdmUrQuMsNx7PHu:22
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDAxMDAwNCBTYWx0ZWRfXzdSH8+cxyOhs
+ KRCSW6PzrRo1R/PmmGn7bDzKUTOfhxIBxxnnOhYLf4KEukdRumHIsXrkWjhXVbDQlp/QV4O/pVx
+ lrRvZfgWGXtmT1QTHmywboG3u4yxZ7I=
+X-Proofpoint-ORIG-GUID: nkSS4HxhDu-sacfjrCzzocbvmP0JsMMx
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-10-01_01,2026-09-21_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 lowpriorityscore=0 spamscore=0 suspectscore=0
+ priorityscore=1501 bulkscore=0 clxscore=1011 impostorscore=0 adultscore=0
+ phishscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2609040000
+ definitions=main-2610010004
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260930_172732_157915_B5FC1AF6 
-X-CRM114-Status: GOOD (  21.45  )
+X-CRM114-CacheID: sfid-20260930_181638_656158_C2EBB402 
+X-CRM114-Status: GOOD (  18.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,146 +145,161 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Stefan,
+The Qualcomm QMP combo PHY has a USB and Displayport block that is
+sourced with different clocks.  In situations where the USB path is not
+utilized, and only Displayport is active, unnecessary clocks are enabled
+and not used.  Split the current clock list into USB specific clocks,
+which will be enabled whenever the USB initialization routine is
+executed.
 
-On Wed, Sep 30, 2026 at 09:40:12PM +0300, Stefan D=F6singer wrote:
-> Hi,
-> =
+In addition, move autonomous mode control specifically when USB is
+active, as its primary purpose is to detect RX detection and LFPS
+signals, which occurs only when USB is active.
 
-> This pull request contains the device tree bindings and clock driver for =
-ZTE
-> zx297520v3 boards. It contains the next step in adding support for
-> zx297520v3 boards: Documenting clock and reset manager hardware and
-> adding drivers for its PLLs and clock tree.
-> =
+Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 56 ++++++++++++++++++++++++++-----
+ 1 file changed, 47 insertions(+), 9 deletions(-)
 
-> The patches have been reviewed and carry appropriate R-B tags by Krzyszto=
-f Kozlowski (bindings) and Conor Dooley (clk driver).
-> =
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index a4f130fc33e3..f14fb8ef9028 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -2607,6 +2607,8 @@ struct qmp_combo {
+ 	struct clk_bulk_data *clks;
+ 	struct clk *p2rr2p_pipe_clk;
+ 	int num_clks;
++	struct clk_bulk_data *usb_clks;
++	int num_usb_clks;
+ 	struct reset_control_bulk_data *resets;
+ 	struct regulator_bulk_data *vregs;
+ 
+@@ -2678,7 +2680,11 @@ static inline void qphy_clrbits(void __iomem *base, u32 offset, u32 val)
+ 
+ /* list of clocks required by phy */
+ static const char * const qmp_combo_phy_clk_l[] = {
+-	"aux", "cfg_ahb", "ref", "com_aux",
++	"cfg_ahb", "ref",
++};
++
++static const char * const qmp_combo_usb_phy_clk_l[] = {
++	"aux", "com_aux",
+ };
+ 
+ /* list of resets */
+@@ -4403,13 +4409,20 @@ static int qmp_combo_usb_init(struct phy *phy)
+ 		return 0;
+ 	}
+ 
+-	ret = qmp_combo_com_init(qmp, false);
++	ret = clk_bulk_prepare_enable(qmp->num_usb_clks, qmp->usb_clks);
+ 	if (ret)
+ 		return ret;
+ 
++	ret = qmp_combo_com_init(qmp, false);
++	if (ret) {
++		clk_bulk_disable_unprepare(qmp->num_usb_clks, qmp->usb_clks);
++		return ret;
++	}
++
+ 	ret = qmp_combo_usb_power_on(phy);
+ 	if (ret) {
+ 		qmp_combo_com_exit(qmp, false);
++		clk_bulk_disable_unprepare(qmp->num_usb_clks, qmp->usb_clks);
+ 		return ret;
+ 	}
+ 
+@@ -4440,6 +4453,8 @@ static int qmp_combo_usb_exit(struct phy *phy)
+ 	if (ret)
+ 		return ret;
+ 
++	clk_bulk_disable_unprepare(qmp->num_usb_clks, qmp->usb_clks);
++
+ 	qmp->usb_init_count--;
+ 
+ 	return 0;
+@@ -4670,7 +4685,10 @@ static int __maybe_unused qmp_combo_runtime_suspend(struct device *dev)
+ 		return 0;
+ 	}
+ 
+-	qmp_combo_enable_autonomous_mode(qmp);
++	if (qmp->usb_init_count) {
++		qmp_combo_enable_autonomous_mode(qmp);
++		clk_bulk_disable_unprepare(qmp->num_usb_clks, qmp->usb_clks);
++	}
+ 
+ 	clk_disable_unprepare(qmp->pipe_clk);
+ 	clk_bulk_disable_unprepare(qmp->num_clks, qmp->clks);
+@@ -4701,7 +4719,12 @@ static int __maybe_unused qmp_combo_runtime_resume(struct device *dev)
+ 		return ret;
+ 	}
+ 
+-	qmp_combo_disable_autonomous_mode(qmp);
++	if (qmp->usb_init_count) {
++		ret = clk_bulk_prepare_enable(qmp->num_usb_clks, qmp->usb_clks);
++		if (ret)
++			return ret;
++		qmp_combo_disable_autonomous_mode(qmp);
++	}
+ 
+ 	return 0;
+ }
+@@ -4736,19 +4759,34 @@ static int qmp_combo_reset_init(struct qmp_combo *qmp)
+ static int qmp_combo_clk_init(struct qmp_combo *qmp)
+ {
+ 	struct device *dev = qmp->dev;
+-	int num = ARRAY_SIZE(qmp_combo_phy_clk_l);
++	int num_clks = ARRAY_SIZE(qmp_combo_phy_clk_l);
++	int num_usb_clks = ARRAY_SIZE(qmp_combo_usb_phy_clk_l);
+ 	int i;
++	int ret;
+ 
+-	qmp->clks = devm_kcalloc(dev, num, sizeof(*qmp->clks), GFP_KERNEL);
++	qmp->clks = devm_kcalloc(dev, num_clks, sizeof(*qmp->clks), GFP_KERNEL);
+ 	if (!qmp->clks)
+ 		return -ENOMEM;
+ 
+-	for (i = 0; i < num; i++)
++	for (i = 0; i < num_clks; i++)
+ 		qmp->clks[i].id = qmp_combo_phy_clk_l[i];
+ 
+-	qmp->num_clks = num;
++	qmp->num_clks = num_clks;
++
++	qmp->usb_clks = devm_kcalloc(dev, num_usb_clks, sizeof(*qmp->usb_clks), GFP_KERNEL);
++	if (!qmp->usb_clks)
++		return -ENOMEM;
++
++	for (i = 0; i < num_usb_clks; i++)
++		qmp->usb_clks[i].id = qmp_combo_usb_phy_clk_l[i];
++
++	qmp->num_usb_clks = num_usb_clks;
++
++	ret = devm_clk_bulk_get_optional(dev, num_clks, qmp->clks);
++	if (ret)
++		return ret;
+ 
+-	return devm_clk_bulk_get_optional(dev, num, qmp->clks);
++	return devm_clk_bulk_get_optional(dev, num_usb_clks, qmp->usb_clks);
+ }
+ 
+ static void phy_clk_release_provider(void *res)
 
-> The PR does not contain the MFD, reset and device tree patches. They
-> will be submitted to the MFD, reset and soc trees respectively. The
-> clock driver compiles without them, but won't be instantiated without
-> the MFD parent.
-> =
+---
+base-commit: c7f2322431cb6d108b18fb4154606b49e2bc50f7
+change-id: 20260930-qmp_phy_usb_clks_v1-25b9374086b2
 
-> The following changes since commit b1470947e92aeedd522ddb7363369c956e55d6=
-b6:
-> =
-
->   Merge branch 'clk-pile' into clk-next (2026-09-29 14:14:32 -0400)
-
-Please send a new pull that's based on v7.3-rc1. Or if it's easier you
-can post a new version of the patch series with just these clk patches.
-
-Brian
+Best regards,
+--  
+Wesley Cheng <wesley.cheng@oss.qualcomm.com>
 
 
-> =
-
-> are available in the Git repository at:
-> =
-
->   https://gitlab.com/stefandoesinger/zx297520-kernel.git tags/zx29-clk-fo=
-r-7.4
-> =
-
-> for you to fetch changes up to 89e2c0fa481f6a0da23ad5c4dc98bcd940f09fd2:
-> =
-
->   clk: zte: Introduce a driver for zx297520v3 LSP clocks (2026-09-30 20:0=
-3:29 +0300)
-> =
-
-> ----------------------------------------------------------------
-> clk: zte: Add clock drivers for zx297520v3 SoC
-> =
-
-> This tag contains the device tree bindings and clock driver for ZTE
-> zx297520v3 boards. It contains the next step in adding support for
-> zx297520v3 boards: Documenting clock and reset manager hardware and
-> adding drivers for its PLLs and clock tree.
-> =
-
-> The PR does not contain the MFD, reset and device tree patches. They
-> will be submitted to the MFD, reset and soc trees respectively. The
-> clock driver compiles without them, but won't be instantiated without
-> the MFD parent.
-> =
-
-> ----------------------------------------------------------------
-> Stefan D=F6singer (9):
->       dt-bindings: clk: zte: Add zx297520v3 top clock and reset controller
->       dt-bindings: clk: zte: Add zx297520v3 matrix clock and reset contro=
-ller
->       dt-bindings: clk: zte: Add zx297520v3 LSP clock and reset controller
->       clk: zte: Add Clock registration infrastructure
->       clk: zte: Add regmap-based clocks
->       clk: zte: Add zx PLL support infrastructure
->       clk: zte: Introduce a driver for zx297520v3 top clocks
->       clk: zte: Introduce a driver for zx297520v3 matrix clocks
->       clk: zte: Introduce a driver for zx297520v3 LSP clocks
-> =
-
->  Documentation/devicetree/bindings/clock/zte,zx297520v3-lspcrm.yaml    | =
- 101 ++
->  Documentation/devicetree/bindings/clock/zte,zx297520v3-matrixcrm.yaml | =
-  98 ++
->  Documentation/devicetree/bindings/clock/zte,zx297520v3-topcrm.yaml    | =
- 122 +++
->  MAINTAINERS                                                           | =
-   7 +
->  drivers/clk/Kconfig                                                   | =
-   1 +
->  drivers/clk/Makefile                                                  | =
-   1 +
->  drivers/clk/zte/Kconfig                                               | =
-  28 +
->  drivers/clk/zte/Makefile                                              | =
-   6 +
->  drivers/clk/zte/clk-regmap.c                                          | =
- 237 +++++
->  drivers/clk/zte/clk-zx.c                                              | =
- 192 ++++
->  drivers/clk/zte/clk-zx.h                                              | =
- 137 +++
->  drivers/clk/zte/clk-zx297520v3.c                                      | =
-1657 +++++++++++++++++++++++++++++++++
->  drivers/clk/zte/pll-zx.c                                              | =
- 576 ++++++++++++
->  include/dt-bindings/clock/zte,zx297520v3-clk.h                        | =
- 154 +++
->  include/dt-bindings/phy/zte,zx297520v3-topcrm.h                       | =
-  12 +
->  include/dt-bindings/reset/zte,zx297520v3-reset.h                      | =
-  62 ++
->  16 files changed, 3391 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/clock/zte,zx297520v=
-3-lspcrm.yaml
->  create mode 100644 Documentation/devicetree/bindings/clock/zte,zx297520v=
-3-matrixcrm.yaml
->  create mode 100644 Documentation/devicetree/bindings/clock/zte,zx297520v=
-3-topcrm.yaml
->  create mode 100644 drivers/clk/zte/Kconfig
->  create mode 100644 drivers/clk/zte/Makefile
->  create mode 100644 drivers/clk/zte/clk-regmap.c
->  create mode 100644 drivers/clk/zte/clk-zx.c
->  create mode 100644 drivers/clk/zte/clk-zx.h
->  create mode 100644 drivers/clk/zte/clk-zx297520v3.c
->  create mode 100644 drivers/clk/zte/pll-zx.c
->  create mode 100644 include/dt-bindings/clock/zte,zx297520v3-clk.h
->  create mode 100644 include/dt-bindings/phy/zte,zx297520v3-topcrm.h
->  create mode 100644 include/dt-bindings/reset/zte,zx297520v3-reset.h
-
-
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
