@@ -4,97 +4,148 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BEE62CA5FDD
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Oct 2026 13:13:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 553E8CA5FD2
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Oct 2026 13:15:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s0k/0v3HJrdVzBF07lIUhlFF0lDkgEbqKEg5Rbgm2f8=; b=Vmzf7+E6zN0mGh
-	/WnsmDHy7hvI4Y5ES7BIsW4c7Dzp5kRFbj50szwguEBKGsPQ7K5pLF6aJadIilqxjxSHydwmh1eJs
-	DoU+p7Assvv0eobLt2kDn4t/iHBighSedL9gPz6i+4v46/+D45s658eR43mnkyoOUvoC3JZ2E5OiB
-	ApFDFkmhX+Vt6trHG5/FBZrsdXv59kUao415ZAfr0VfyyWm+5a6edrt0Y6SmknV1poV9NRxH8b7UM
-	XJC8MC+Abvh2HbYGlijQvh2Es9n5pNrxZ7acOp/8Boz9jy1sOIVoUTU0y/7Z7+SYeKgYBwsUcA2Ut
-	13HGUC1qKxGUkflF03cQ==;
+	List-Owner; bh=sPefjGUq1963JmJ0lJXgXefAUHNTmVMatTIfS3m1WGQ=; b=s14qqqyKjnrRm8
+	NWD9pNPvKDwEYX9S8K08VMg90WrO7tb7ZfZn3XhZvM+MCiSroH3VbvxolrABZSBL6yrx7LsCh6tX7
+	/MtAJeGB5/8z0S1aCd6Jo4LLgjsTFbmcrGkyKDH0IAbtasrYKAZCY0GBvQA2LHbD3kZyX4hOhggg3
+	ushoJ13hNaOsNvsiwLmQq5zhPp44GHDQRHEVAUfS27lUChgJerQTqksx0u0XZzFH0+1bfE3hyvzxL
+	/a3JwTlL6gDKHSnZhmuVj8thClJHZqY8kMzhTEqVygx018mDqg/culOfszpeDS6KJ/xhDQMVepijD
+	m722+BdaUfmNtGVUJTVw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCGb5-00000009ByA-1RG7;
-	Thu, 01 Oct 2026 13:13:15 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1xCGcm-00000009Ch5-0Bt2;
+	Thu, 01 Oct 2026 13:15:00 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCGb3-00000009BtO-06bz;
-	Thu, 01 Oct 2026 13:13:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
-	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=KiGr11fAHi/7AnQbTXosmTOB0Z2Y6vkn85Jogv4VtXM=; b=finNThG15EwJTDQSNPq0cXzU2U
-	IoKRaptwrYs9csgasvjQG3azPiYlXBxfuG9g8jSEUL4FrXVgfuHPWuHDgV8rBFtyL1O2ujBuYR5cf
-	tS7nMYHpnDlR6ql6yfP/iG93PknHYXQIrx9wgLXQGk4ePB70mJzOY1Hix+AsgM/QYZaHZcwimtASV
-	V32azhUQMd21g0LqneLlOeFZqZcsokkjKcUanWlTD0JCL7XyKzWVHIcrQb4gu8LXzWZ4B9zWsqVcq
-	9NL3Jttk3rJsnau9WgRXaYj6dSbcq4cyuBY7SGkRbV1FvUbO9UUPekWquKLRfGO8yEG5tgpwsMqKN
-	D9B0JDMw==;
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1xCGaz-000000050P5-0l6x;
-	Thu, 01 Oct 2026 13:13:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1790860382;
-	bh=P+YbvSg/zHk4rh/5DoiW/obrjfRyH/ubuevAC6b+9+A=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=DctwH0EfioodF34jYitpL9ufl7e5DZ2C2mJpdEQjl7BOh/N2UWyQ13DZwDI3w9i/7
-	 prcFJhh/k3BEP13ssTomPgqxGOBISf0Sn56puT/PAKzqkwoaVY+7fFjLovtMQ6nsLx
-	 Pgl48BNsgvKLgxj2vCSivM47HgcAfwUQHiuTWOPTM8vHEZDWp4ndh5uufo9R9Chspe
-	 Av3gTKB6aqdiH+LOsWfE0uEqfxT+UD22tttIxajhG0yyNbBZoQdS7tf9h8dCSfadC7
-	 5WFZfXzntGSTAv8mNQIMBFrkO2Jz6UlC89hIyL70qaMwOtbwrKX/hbsKQlf4ULfs6m
-	 4eHZ7bOp5sBtQ==
-Received: from jupiter.universe (unknown [100.64.1.62])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 7439517E056B;
-	Thu, 01 Oct 2026 15:13:02 +0200 (CEST)
-Received: by jupiter.universe (Postfix, from userid 1000)
-	id 254C448002F; Thu, 01 Oct 2026 15:13:02 +0200 (CEST)
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Thu, 01 Oct 2026 15:12:40 +0200
-Subject: [PATCH v2 2/4] phy: rockchip: inno-usb2: drop duplicated update of
- rport->suspended
+	id 1xCGcj-00000009CgM-1p2T
+	for linux-phy@lists.infradead.org;
+	Thu, 01 Oct 2026 13:14:58 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 691Ce1MF1661060
+	for <linux-phy@lists.infradead.org>; Thu, 1 Oct 2026 13:14:56 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	rdVvxn/rNxjV2Wxk0pSxtdz9QKHEvAiBofKWCfzPRtk=; b=fwtyXP65Z5tghmlP
+	LiMq3NpSZJze1bBwY97yIzL5/6CC6u2acyzhIanCFBUYSqBWipIxfDdAl6FljVxl
+	yPdVVqi21AuWBZMnsUU79G1CdMDS1RVp/zUK4+lcMwDU/ljuGoN8piUE+GRAs356
+	IprWvvG5xpr7kqaP7muevHzY410lEX9gJ0uYM2YMkNDzjf3EnQZr4qNYId/XEE+O
+	C/ATJDYjXKER9xdCkb7rzP36NzvOz5NrYdRbzhNr/Y9NRGUNg2Y5yF9QiYhzYeui
+	OoKyK1X0r+0NpklSbG2YEUJAXu5fgo6pk1Inn6buMFTmIQguu6FM6NUPmsUwQ/PC
+	j/Se+w==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h167pmnh8-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Thu, 01 Oct 2026 13:14:55 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2d6f75c1219so82923215ad.3
+        for <linux-phy@lists.infradead.org>; Thu, 01 Oct 2026 06:14:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1790860495; x=1791465295; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=rdVvxn/rNxjV2Wxk0pSxtdz9QKHEvAiBofKWCfzPRtk=;
+        b=MVbVCsACld9fpJnSdfb4zu4q+WXGKQlA0zWaX/EwYIp7gLvglF5989kboWNWh7jaxY
+         DBBOFqM9YWasB0r1PsC7g/ekOwyt4b0SSMmLNqdoYHTU7PjWrBY8rtomnTcUPbpsyX4z
+         hm8Y2t0om+cSiQFZHoP3iWSOw9A+pesyDx9Y8aVM7Nq1/ZJ06F3JmMOc+QLerHs56Yrq
+         2AwcdG4kGsiNeclniwFikKXEvfpwjbjk3CY67WfC75JTL2XF+DwMEbGHPbcBXFF7ZsS/
+         bsCDiBiXZ+Ng4Ld9BnSo3bR2L3XKxxmWIVdfSzMwGiFM882Z2yZJnBrUuwqF0xvi1g+z
+         EGXQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1790860495; x=1791465295;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=rdVvxn/rNxjV2Wxk0pSxtdz9QKHEvAiBofKWCfzPRtk=;
+        b=fot15K59z5iLIY28MAr5HdQu3MGguAdxk4AXD6hRGTejoad62PxmNrsVgz61y4/aZf
+         2NkyxZIOSztfvNzezHNQmMDFwQbbZDb+lMmvBc6KvCFeYMLP0G9tAntH17t1S3aQycy7
+         3ZkTKFv8uoNdUMu0ZrAwFZ89Omqm4T19ghWyzVX1cJ9ztGmJZImSq2Unu8Xwk6/hJ9/s
+         F5Qo00YuIG/ZQ1YFiyXyWXU2S3otXrfr3UANglliaEp6c6I+fRhY3ONcby3PmNGL66d5
+         HNKUWGO6eYllwcU47DRqVbNWEVrrp7AdYNbV5PskEGHN/voVnBtDxZ3jri1sEAfgXNUn
+         PIWw==
+X-Forwarded-Encrypted: i=1; AKwUvByADQohb5FrP6PAvFSU/h2yHeIEFAjNOEtXn9cKnF0XmXslwjxy5U5A5ginnBzzyxXkIx9RywFS/Mo=@lists.infradead.org
+X-Gm-Message-State: AFq9FYL9OVfXz6/16aagGzUflwsDpYVpxLHqa0XImPnhye4/Cw5irNmy
+	cIPX3N6oh1+B6xiL0BoVYksROIX2/L2snHh2lDttZSGaPE6IJE9cG9YFlTwz7LmqXh46Uc7ctku
+	r67jhDPLCTV7GuIkjk0/OpnRWMgUki3oSiJQP+eby0aTFeGhjlZsgMfpmgYXyDCXfvXS54FsF3R
+	Th
+X-Gm-Gg: AYBFou0BqhDC8xircrUMRIfJwpuDlB+oCXYBPtYUczp8rItn7ZyQcgeLq66rkIyw20B
+	SqddsyLQc8v0zLFXYg0CdtvxAJiori+zJgyGAqAWLrkn8jlgC9jb7F5QW9n4dZENWwznC4CefYX
+	pR5KVEIU6QyBiQJJRSdzkRs6aA059TSu2sqHNKS9klPWGLvK9YbQkq7lfQo+OKDTVVdwYVVwXxj
+	dk54ivmBcJUN0dCGv+O91pOL581e9ftlE9ezURfY8DbyHr0/CMOmHGMuJHVIN/xGNGaOca3Bz43
+	5g4CzCCNAVtQ536vQoKIbjupoZ50gjXfECzj2Qb1lBWWbCXuLAL1yOoNZj4RALhP9RXTkMfn+0G
+	3BenG3BQegRCOxR4WpS7Y+h2upQ0d
+X-Received: by 2002:a17:903:298b:b0:2db:55d6:349d with SMTP id d9443c01a7336-2e2e49fe3efmr39712785ad.21.1790860495057;
+        Thu, 01 Oct 2026 06:14:55 -0700 (PDT)
+X-Received: by 2002:a17:903:298b:b0:2db:55d6:349d with SMTP id d9443c01a7336-2e2e49fe3efmr39712635ad.21.1790860494592;
+        Thu, 01 Oct 2026 06:14:54 -0700 (PDT)
+Received: from [10.204.78.119] ([202.46.23.25])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2e300b04ccesm10512655ad.48.2026.10.01.06.14.50
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 01 Oct 2026 06:14:54 -0700 (PDT)
+Message-ID: <4bd4199e-8552-4686-ad85-9c3e27b1f967@oss.qualcomm.com>
+Date: Thu, 1 Oct 2026 18:44:48 +0530
 MIME-Version: 1.0
-Message-Id: <20261001-phy-rockchip-inno-usb2-clock-fix-v2-2-e01bf509359e@collabora.com>
-References: <20261001-phy-rockchip-inno-usb2-clock-fix-v2-0-e01bf509359e@collabora.com>
-In-Reply-To: <20261001-phy-rockchip-inno-usb2-clock-fix-v2-0-e01bf509359e@collabora.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Heiko Stuebner <heiko@sntech.de>
-Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Igor Paunovic <royalnet026@gmail.com>, kernel@collabora.com, 
- Sebastian Reichel <sebastian.reichel@collabora.com>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1243;
- i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=P+YbvSg/zHk4rh/5DoiW/obrjfRyH/ubuevAC6b+9+A=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGq+XF5jSibh9SSHs85/tEuXM4mrYvkxhWQXz
- qesUuGwvsDt74kCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqvlxeAAoJENju1/PI
- O/qai3MP/17FpQ3tAeT30uQjQU1TyBlJjwIh3agesZ+kJVlzvuHtBAVKIVmmhRcLY5A/fvVBWH6
- INP/1vM0PT8p78YkLgUgKuJV7xSpN8bbhKBqSG9cK7e4xSDTqD07GdRb+xT/1dJW2JIriU+evd5
- T8jX3yThyYHljJSFv8JfbA+303N5MUdkcDpqVYfZrd0gH8sFN6v1jJ/VYJVzDmZtihDvWXEgUrf
- W5Ybt216WkDRA+QVnM7qfTkvHw5L+bw2LJayYa5yJpAGU7TW3SPjoG7C1dNaRwpAmhISVgti8tr
- 1Zf3AwKJkXkTeurNgX4tmp3srKVkBEo8cw/IEc/rMc7TPCr1+u/nDE0JY/cphBpeeAaqKBaDAZA
- rMP7lilDQxj3oFXsRRuSzXphvB/xPj5xjjthJcvG1uj1pS92DDURYcN+bgqQ1MEKcFqKK6I3z/T
- YuJRy/xSUD57iEIx7Walr8YuU543iG6TMhhAOtmmvA4YRzXxO3/+Xx/zZTurVFsEMoqT6AaAwi7
- 77ZBPJECgghnmK4PuSrJ0smUKhKqWQENfJyS6xUtvcDIgC4Ev0oRPgTYXxfTis74KbymWhangnJ
- jJ56kZ0G0WNfrCL9Hlr58ZYjLq1ZdjOmZRIqCBBB0qB3XY6QNeEe0UZgm9qo8VEzsRsiCwNJNdp
- 60qr0WRWBFG41ED5RQWYmMw==
-X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
- fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v5 04/11] phy: qualcomm: qmp-combo: Ignore Type-C
+ orientation for Glymur DP mode
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>,
+        Manivannan Sadhasivam <mani@kernel.org>,
+        Wesley Cheng <wesley.cheng@oss.qualcomm.com>,
+        Abel Vesa
+ <abelvesa@kernel.org>,
+        Johan Hovold <johan+linaro@kernel.org>,
+        Bjorn Andersson <quic_bjorande@quicinc.com>,
+        Dmitry Baryshkov <lumag@kernel.org>, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+        Ritesh Kumar <ritesh.kumar@oss.qualcomm.com>,
+        Mahadevan P <mahadevan.p@oss.qualcomm.com>
+References: <20261001-glymur-phy-v3-v5-0-3848c2615d5a@oss.qualcomm.com>
+ <20261001-glymur-phy-v3-v5-4-3848c2615d5a@oss.qualcomm.com>
+ <rp53rdt4rseek4cjmyqhmwg6rm25nnm7e3p2qvmjkr3l42ymmo@25os6fta5wm3>
+Content-Language: en-GB
+From: Nabige Aala <nabige.aala@oss.qualcomm.com>
+In-Reply-To: <rp53rdt4rseek4cjmyqhmwg6rm25nnm7e3p2qvmjkr3l42ymmo@25os6fta5wm3>
+X-Proofpoint-ORIG-GUID: AQP3LPfFL-9bTUtIwCM6-1h2kZT-AHg1
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDAxMDA1MiBTYWx0ZWRfX8TVxNSiWQXHe
+ VU6wt14ChLLPfFAxEP8JEVVmk+7VuhjtTChuWLuEw3b5RDVVB91VIf0NoDbW6yTLrfebQ2A4dlI
+ kfyRFu+LXEbeU9lRiQet/PukA8R7P+8=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDAxMDA1MiBTYWx0ZWRfX2rtQD+eQR13K
+ 2mYfLyzSO2tHFPtnrdeb2bdrkeQ6E/X7E7sok9KzyjWPRWmqP3Fu1cyzF07tVX+u1rwdY1FLyAi
+ ylQTpbIREx24MG2vnFmJqqFDIR9CxSBUwqF+K2Hheqj3R0i5WLkfMpcFx/cK/YDHYGlk6SnPEJV
+ 8ofgPxa3T1ROwrk1o9lO9NhsUCcM86mmHu4pmZa7ex2lD0P0+Da9FDIS2XuqOXChKufdi9AnEpq
+ JFcEExqCHucTYIh8BAq/pIZbMCjzcxc08c/V2qfuVyZ1X/AAf2CzggCDHlIhfMAR8f0wARu+UHN
+ ZB0BUbpie1aTRbVhiY6GRcnM6QsNQ0gu08enWVxAzHERf3kr9o6ZQ0YnPHn8iA1evmY1kpeCxiR
+ 29TLv9icO4wsS6KOl+Wk252CfEAq97ZnZ8RURSD7BlRZzr9Ai0i0E1FsYQ7jQ7XJlk57URsCMT3
+ CxvHB+u27oFV7QCUwCg==
+X-Proofpoint-GUID: AQP3LPfFL-9bTUtIwCM6-1h2kZT-AHg1
+X-Authority-Analysis: v=2.4 cv=WpC+otfv c=1 sm=1 tr=0 ts=6abe5cd0 cx=c_pps
+ a=JL+w9abYAAE89/QcEU+0QA==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+ a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
+ a=EUspDBNiAAAA:8 a=PCPe1U30QhSBGYhJ7sAA:9 a=QEXdDO2ut3YA:10
+ a=324X-CrmTo6CU4MGRt3R:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-10-01_03,2026-09-21_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ lowpriorityscore=0 phishscore=0 bulkscore=0 priorityscore=1501 suspectscore=0
+ malwarescore=0 impostorscore=0 adultscore=0 clxscore=1015 spamscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2609040000 definitions=main-2610010052
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261001_141309_324684_268D44E5 
-X-CRM114-Status: GOOD (  11.75  )
+X-CRM114-CacheID: sfid-20261001_061457_616091_8CF24560 
+X-CRM114-Status: GOOD (  16.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,44 +157,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-rockchip_usb2phy_power_on and rockchip_usb2phy_power_off already update
-rport->suspended in their success path. In case of error it's not
-sensible to update rport->suspended. So drop the duplicated update.
 
-Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
----
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 2 --
- 1 file changed, 2 deletions(-)
+On 10/1/2026 3:31 PM, Dmitry Baryshkov wrote:
+> On Thu, Oct 01, 2026 at 03:04:21PM +0530, Nabige Aala wrote:
+>> From: Ritesh Kumar <ritesh.kumar@oss.qualcomm.com>
+>>
+>> Glymur platforms use a fixed DP lane mapping and do not support DP PHY
+>> mode reversal based on Type-C orientation. Add a configuration flag to
+> Does it handle orientation somewhere else? Where? Is it a property of
+> the SoC or is it a way how it is plumbed on a particular device?
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-index 0ab054ee84cb..e4d8abf935c1 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-@@ -994,7 +994,6 @@ static void rockchip_usb2phy_sm_work(struct work_struct *work)
- 		if (rport->suspended) {
- 			dev_dbg(&rport->phy->dev, "Connected\n");
- 			rockchip_usb2phy_power_on(rport->phy);
--			rport->suspended = false;
- 		} else {
- 			/* D+ line pull-up, D- line pull-down */
- 			dev_dbg(&rport->phy->dev, "FS/LS online\n");
-@@ -1004,7 +1003,6 @@ static void rockchip_usb2phy_sm_work(struct work_struct *work)
- 		if (!rport->suspended) {
- 			dev_dbg(&rport->phy->dev, "Disconnected\n");
- 			rockchip_usb2phy_power_off(rport->phy);
--			rport->suspended = true;
- 		}
- 
- 		/*
+Hi Dmitry,
 
--- 
-2.53.0
+This is the Soc-specific property. As defined in glymur HPG DP_PHY_MODE 
+should always be 0x5c
 
+for all the case 1lane/2lane/4lane and for all the orientation 
+(normal/flip).
+
+>
+>> ignore reverse orientation during DP mode setup and enable it for Glymur,
+>> ensuring that QSERDES_DP_PHY_MODE is always programmed with the
+>> fix mode value (0x5c).
+>>
+>> Fixes: 815891eee6687 ("phy: qcom-qmp-combo: Introduce orientation variable")
+>> Signed-off-by: Ritesh Kumar <ritesh.kumar@oss.qualcomm.com>
+>> Signed-off-by: Mahadevan P <mahadevan.p@oss.qualcomm.com>
+>> Signed-off-by: Nabige Aala <nabige.aala@oss.qualcomm.com>
+>> ---
+>>   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 8 +++++++-
+>>   1 file changed, 7 insertions(+), 1 deletion(-)
+>>
 
 -- 
 linux-phy mailing list
