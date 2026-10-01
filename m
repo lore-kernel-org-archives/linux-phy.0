@@ -4,55 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A149CA5FD2
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Oct 2026 13:13:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3840CA5FCB
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Oct 2026 13:13:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DH+BM4tZp2BE6psCYfWc3/ka245bS4vWe1mW5/ACqjg=; b=UbHCAhPSLl+6t0
-	b3JHf6q/21bOlEZdKCWncyU+z/ufKqybrdp/b3/74KQsZ/IvQb9ZCG8EQWUcN9rtx1hc7JSfmEQua
-	cBYc0XuUlSYGSw8gWnFELl6c0q1//EbVGsYwY1AOwOT6CXLa4yoO6XPrHidZ0jaGxhTtEDBp8LkwI
-	YtGO34xCD8U2y32UapXo2AE+4wFP1qJ3T1xuIa59UHkgRhGz53HyJGkySnokDEzi/LJxpRwVNlMsx
-	h01WBQNLc9EdO/giVrSd5YGu7f28XPEqL8ElbtWmN2L7B4AwSpADZEhGolGYCmxhuYKI/J/TFRtCC
-	jct4bp6dRVxr1+PEdeEg==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LV+5m6EEbKZsq9PPSTcI1SdHPKzJvavjN3b4x3PRA08=; b=UggcTqlRCpYTFH
+	aLe12GLxs39jKZ/1jinURTHnz6ZYuAy/L/xIOHU/C1MTzUHGnCbL2tVKpPJd+VQRHSrkQAFV4hkUE
+	e3SLIzrqWgBXDDXHHFJxeSRBrEWRAfBfXAdTYv1BdrNW4FRziSSPsUNAyRRwKVm7Q41BgM+W5N/2X
+	EjxQsdcuU6CiEc4xeQ3/yWH2m7KQ7Ym2dir977MjA61c0ZtNaDQYjHODQ+hbqIIxBFyPDe9vemvbH
+	e2p2HqMH8mUnwT7VWCWP/8EZBRxa0Q3cPZetcH2stK7m3pQxymYPREUneAnHtaVlX7j1J6O9v6ZsQ
+	woaCPP63FEzP2LsEtOwA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCGay-00000009Bpq-3w7u;
-	Thu, 01 Oct 2026 13:13:08 +0000
+	id 1xCGb2-00000009Btt-2N44;
+	Thu, 01 Oct 2026 13:13:12 +0000
 Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCGav-00000009Bn7-3jSh;
-	Thu, 01 Oct 2026 13:13:07 +0000
+	id 1xCGaw-00000009Bn8-0yuI;
+	Thu, 01 Oct 2026 13:13:09 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1790860382;
-	bh=LqRHdeRqB3JBonmJ1Qavl1AGpOkWFclCKjb3FPr6XEU=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=D2gi/aP+Hmhci5z5zv6yzHBwoES/N7dsTJejP0CvCr00TPTWbp+fmPQEOGGbjM4QX
-	 x4eJrkj43RXjig/pz6/o8hAc+PslXF5kgVriIwXaOH5mnBq2Ui/bEGD6qGte+I2aTJ
-	 YPXtHPZ8Fr2l7A6RunrJ0Cp/Co2VRvw+/pyIsd1DHjfkYr2IKg7KRsz5E0imWi+fXa
-	 7QZWVB1m8tHpCxeSdZZ+vNs97X32ZsK3jWwV2sCVceN5JTvowuqGJN98H/2ocN4ftw
-	 /pDFYHxVx0pIw3RIwZ32F2jbih7ecloqwlVNPGHrcP8TMX+UACvihlWL2VMf5yZLb7
-	 qiasat3U2O+ZQ==
+	bh=t6lInvK3aRwDH9VyS1NNHIgQfFT/8Cs0hOtlMTScPJs=;
+	h=From:Subject:Date:To:Cc:From;
+	b=nO5KZFbpPnrlr2fNq2mWrGQRh3S8UYQvgNeXjd3fMxvB6YIRPDIynqhEMUdStQlng
+	 ofsbm6MTjVH9MK6henmgbIpozHVEEEBIdX4/Lzg1wtYYn7ckfsd+gbGXftnwlbBiTE
+	 O7ONmEKOGW3qzmvNfSzQHsIzEd+PvgAM+I8p3E5rFf4qFUGXeu+AfuaMorRWqGHdOK
+	 Dauz6I7+EQxwuBNj9Q3wW8Gqc5RlGIAIHLPI8ITJZxvPLAq0jVEZethx6XPnUxSqYP
+	 A7U5hZSgLR7qazAiXfk0o+G9PVHgWx4AfmCTpSBzwa5oy+M7Jdz34kNNqVnxWBQIYu
+	 3CRxdCLdO7DIw==
 Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 769B617E0803;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 72FED17E0524;
 	Thu, 01 Oct 2026 15:13:02 +0200 (CEST)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id 294ED480031; Thu, 01 Oct 2026 15:13:02 +0200 (CEST)
+	id 2284448002B; Thu, 01 Oct 2026 15:13:02 +0200 (CEST)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Thu, 01 Oct 2026 15:12:42 +0200
-Subject: [PATCH v2 4/4] phy: rockchip: inno-usb2: move suspend handling
- into clock prepare/unprepare for RK3588/RK3576
+Subject: [PATCH v2 0/4] phy: rockchip: inno-usb2: ensure PHY is running
+ when clock is requested
+Date: Thu, 01 Oct 2026 15:12:38 +0200
+Message-Id: <20261001-phy-rockchip-inno-usb2-clock-fix-v2-0-e01bf509359e@collabora.com>
 MIME-Version: 1.0
-Message-Id: <20261001-phy-rockchip-inno-usb2-clock-fix-v2-4-e01bf509359e@collabora.com>
-References: <20261001-phy-rockchip-inno-usb2-clock-fix-v2-0-e01bf509359e@collabora.com>
-In-Reply-To: <20261001-phy-rockchip-inno-usb2-clock-fix-v2-0-e01bf509359e@collabora.com>
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/5WOSw6CMBRFt0I69hla5efIfRgG9LXYp9CSFoiEs
+ HcLrsDhubm/lQXtSQd2S1bm9UyBnI0gTglD09inBlKRmUhFnlZpCYNZwDt8o6EByFoHU5ACsIs
+ atPQBrVSeyaxoy/LKYs3gdZSPiUf94zDJl8Zx790dhsLo/HJ8mPnu+2Nu5sChLVRW4YXLGLmj6
+ 7pGOt+c0fWs3rbtC0Y6ag/mAAAA
+X-Change-ID: 20260908-phy-rockchip-inno-usb2-clock-fix-edd65b57f884
 To: Vinod Koul <vkoul@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>, 
  Manivannan Sadhasivam <mani@kernel.org>, Heiko Stuebner <heiko@sntech.de>
@@ -61,26 +64,26 @@ Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  Igor Paunovic <royalnet026@gmail.com>, kernel@collabora.com, 
  Sebastian Reichel <sebastian.reichel@collabora.com>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3741;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2034;
  i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=LqRHdeRqB3JBonmJ1Qavl1AGpOkWFclCKjb3FPr6XEU=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGq+XF76P9cQAjt6hMwhAFreZmNUhQKycK4P0
- 1G/cgbYsIbnE4kCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqvlxeAAoJENju1/PI
- O/qap6EP/01UisRTHqF/46cdECa+p6iVGK/P8oHwCtPXo3CrkQrUoFyoqniD6UyspkztDobc3zy
- uzvHNXe4QATibVEqp8Zlh48SJcpQZXiNaCW39cXI4LN5NAFOv5cAq2iOR0nZAYbNx5oTld5sY41
- bwtnrpHAJOM8acEALV+J/Suj+ncev03vwjYxy6ry/j7/y87SGsjSqN3XPGpjRYZDnWZef+WapuF
- IwBZ+gAOhIIvGKZTJHImoT5QmGvkRRA687VLVjhy23xxYDWlPoYWOXXU8YIUoIwNMY8dZ7QLnBS
- 6qhk5DZaH5L1+5zpXqHgPDjRjwoywkdZDoUt9EkCTGMWFwCnKqmWh3kbdgfoaBQF2HVLNP6zCZO
- r4i2sX9PmUNjW/e2zZjWYuXvlV0cy3Vepx3WDsKbOsPD0kDwUeOSXbOEcddcrhHXqwd73D58KbX
- mGj2Nzkv+o1bUTg3lBCXg90b8PBPd2QeJaqRL8fLM68kHygC71XnHmOlkQ2VbEIIyLPJtBlUNhX
- wKtvFhfNPkYb2mM5rC3vk8HAkr+J9VJ5FkbBMZPOPbpmRwqCvaYOBPe9NL3PTpTALzaYQbsueNs
- 5sHYYIw4p2A+UfUDVgqLIBHywo99WyY2EVFkjIHtcDubuNqCJk6lsb4OSECDTFhxXLD/ZLqc1FL
- XeNORufyJDaO7UsnubwM1Ag==
+ bh=t6lInvK3aRwDH9VyS1NNHIgQfFT/8Cs0hOtlMTScPJs=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGq+XF1biLFiroa0UA9ehqBv4ImnysmtIuG8b
+ LupGTnctScLiokCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJqvlxdAAoJENju1/PI
+ O/qaefAQAJ9MtP8RAG3vVkfvbaag4HVkc+TIPMChNWiidphZT0NSriInc75M4hlgOEEpJY3TE1a
+ ljYyIiQJV7E41/9i0A7bENufCeDS6WVquKMPMHMgttP7YiYRcmQpZnAst2IvbKu7jApgOrIzHxd
+ XuT5FuM+hOZTCtMKawiYA3QGxUCcK9SnjmMpNBnf+InfKp2xDvWKxSNiBsGLXpPKoT5htl+nl6z
+ iSiqzKOPCwGrtSU+n4ga4RUBFUqavAz+LhCp1ECt9U5AebU32vpjIH51TJ5pvxcVYSgR8DMIrqx
+ SmpAP3krF8u998OGSLwzbUCOkOuvFPQy3OXDoGR8LE0MqbrzyRfXsZFArmpcmyxKRyg/mZRqym3
+ 7tJd84FSfFh6rDiZvovoET09eolvUk0pzzDPvr/R5By7UKxC+eT/zt/pflkSdst35iqVSs/5kEE
+ WWQ4W6yNSZcNXBySEO+dI6ubDQEa4mQ3XFjoDbCtEtrszUNeQRIC41dzSCFZh+s7zDnpwjkT68n
+ 8MF2RREc6ALl7TyLzbXBXsDNBZG3yahYtWswYmSEvC3aDAb7nuQDHZeeKuEDjny6hCyQaVhR2AE
+ oWpBkfnJrmSiDQZjOhFa/jJb1CSqs+K7xD+xz2Agw4YDGsqkjkMLIv/wUXkwd2rPuio5C/Lr8Gq
+ mbvhqvH+dEETfE8FqkKMu0g==
 X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
  fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261001_061306_100771_978F5B2C 
-X-CRM114-Status: GOOD (  16.54  )
+X-CRM114-CacheID: sfid-20261001_061306_462745_EC74E602 
+X-CRM114-Status: GOOD (  12.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,116 +100,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On RK3588 the 480MHz PHY clock must be running to access registers on
-the OHCI and EHCI controllers. This requires that the clock output bit
-is configured correctly (already happening) and that the PHY PLL itself
-is running. The PHY PLL is only running when the PHY is not suspended.
-This is currently handled independently of the clock and thus the clock
-might be enabled with the PHY being suspended resulting in a
-non-functional clock despite the clock being marked as prepared and
-enabled according to the common clock framework.
+This was noticed on RK3588 EVB1 when resuming from system suspend. This
+is technically a fix, but its unclear when the bug was introduced and
+system suspend is broken on RK3588 for quite a while and not just due
+to this problem. So I think this fix can be merged the normal way via
+linux-next.
 
-This is especially a problem with OHCI system resume on RK3588, which
-does:
+Changes in v2:
+- Link to v1: https://patch.msgid.link/20260908-phy-rockchip-inno-usb2-clock-fix-v1-1-f7d59c31b908@collabora.com
+- Move suspend exit code from rockchip_usb2phy_power_on into a
+  separate patch and reuse it in the clock prepare function;
+  move is done in a separate patch
+- Updated commit messages with proper rationale
+- Added one more patch dropping useless assignment
+  of rport->suspended directly after calling
+  rockchip_usb2phy_power_on/off
+- Add one more patch unifying and simplifying the debug
+  messages for phy init/power_on/power_off/exit
 
-ohci_platform_resume
-    -> ohci_platform_resume_common
-        -> deassert resets
-        -> ohci_platform_power_on -> enable clocks
-        -> ohci_resume
-            -> ohci_readl(ohci, &ohci->regs->control); // SError !
-            -> ...
-        -> ...
-    -> root hub resume (this resumes the PHY)
-
-Fix this by fully powering the PHY from the clock prepare function.
-
-This does not work on older platforms, which have multiple ports and
-only one 480MHz clock as we do not know which port should be resumed.
-But as far as I can tell these platforms do not have the clock
-dependency from their USB controllers and thus are not affected.
-
-Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 31 +++++++++++++++++++++------
- 1 file changed, 24 insertions(+), 7 deletions(-)
+To: Vinod Koul <vkoul@kernel.org>
+To: Neil Armstrong <neil.armstrong@linaro.org>
+To: Manivannan Sadhasivam <mani@kernel.org>
+To: Heiko Stuebner <heiko@sntech.de>
+Cc: linux-phy@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-rockchip@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+Cc: Igor Paunovic <royalnet026@gmail.com>
+Cc: kernel@collabora.com
+Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-index 925a03fee6bc..cc923d12ef7b 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-@@ -363,6 +363,8 @@ static int rockchip_usb2phy_set_suspend(struct rockchip_usb2phy *rphy,
- 
- static int rockchip_usb2phy_clk480m_prepare(struct clk_hw *hw)
- {
-+	struct rockchip_usb2phy *rphy =
-+		container_of(hw, struct rockchip_usb2phy, clk480m_hw);
- 	const struct usb2phy_reg *clkout_ctl;
- 	struct regmap *base;
- 	int ret;
-@@ -379,16 +381,27 @@ static int rockchip_usb2phy_clk480m_prepare(struct clk_hw *hw)
- 		usleep_range(1200, 1300);
- 	}
- 
-+	if (rphy->phy_cfg->num_ports == 1) {
-+		ret = rockchip_usb2phy_set_suspend(rphy, &rphy->ports[0], false);
-+		if (ret)
-+			return ret;
-+	}
-+
- 	return 0;
- }
- 
- static void rockchip_usb2phy_clk480m_unprepare(struct clk_hw *hw)
- {
-+	struct rockchip_usb2phy *rphy =
-+		container_of(hw, struct rockchip_usb2phy, clk480m_hw);
- 	const struct usb2phy_reg *clkout_ctl;
- 	struct regmap *base;
- 
- 	rockchip_usb2phy_clk480m_clkout_ctl(hw, &base, &clkout_ctl);
- 
-+	if (rphy->phy_cfg->num_ports == 1)
-+		rockchip_usb2phy_set_suspend(rphy, &rphy->ports[0], true);
-+
- 	/* turn off 480m clk output */
- 	property_enable(base, clkout_ctl, false);
- }
-@@ -632,10 +645,12 @@ static int rockchip_usb2phy_power_on(struct phy *phy)
- 	if (ret)
- 		return ret;
- 
--	ret = rockchip_usb2phy_set_suspend(rphy, rport, false);
--	if (ret) {
--		clk_disable_unprepare(rphy->clk480m);
--		return ret;
-+	if (rphy->phy_cfg->num_ports > 1) {
-+		ret = rockchip_usb2phy_set_suspend(rphy, rport, false);
-+		if (ret) {
-+			clk_disable_unprepare(rphy->clk480m);
-+			return ret;
-+		}
- 	}
- 
- 	rport->suspended = false;
-@@ -653,9 +668,11 @@ static int rockchip_usb2phy_power_off(struct phy *phy)
- 	if (rport->suspended)
- 		return 0;
- 
--	ret = rockchip_usb2phy_set_suspend(rphy, rport, true);
--	if (ret)
--		return ret;
-+	if (rphy->phy_cfg->num_ports > 1) {
-+		ret = rockchip_usb2phy_set_suspend(rphy, rport, true);
-+		if (ret)
-+			return ret;
-+	}
- 
- 	rport->suspended = true;
- 	clk_disable_unprepare(rphy->clk480m);
+---
+Sebastian Reichel (4):
+      phy: rockchip: inno-usb2: simplify and unify PHY op debug messages
+      phy: rockchip: inno-usb2: drop duplicated update of rport->suspended
+      phy: rockchip: inno-usb2: move suspend handling into new function
+      phy: rockchip: inno-usb2: move suspend handling into clock prepare/unprepare for RK3588/RK3576
 
--- 
-2.53.0
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 85 +++++++++++++++++++--------
+ 1 file changed, 59 insertions(+), 26 deletions(-)
+---
+base-commit: cee9395acd8043be0644b25c34bfa86623f2b935
+change-id: 20260908-phy-rockchip-inno-usb2-clock-fix-edd65b57f884
+
+Best regards,
+--  
+Sebastian Reichel <sebastian.reichel@collabora.com>
 
 
 -- 
