@@ -4,72 +4,117 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4BF21CA5FE3
-	for <linux-phy@archiver.kernel.org>; Fri,  2 Oct 2026 09:41:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5AAECA5FC4
+	for <linux-phy@archiver.kernel.org>; Fri,  2 Oct 2026 15:08:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OVFQ+upVfQCEsxUwYMjklBZV4HEVU2ZvkDaxW90+ZtI=; b=uNAYA5QCjelQQS
-	DSV/tHMq4rbALQ++ZrpFx++tVz6O4aI8V/jiYqszVv3iPaIfqN5f4suxrUZBcz+6LmOIag3NhB+Cr
-	lAjWvHXVIV11Y7EM9sr1OusqIcgyG1GAEwl7MM+GqEBr7HIfEPXYAu79Un8AC3qfutfgk0ym6C66z
-	w0sa2AbirAyGxYRk6FmR6r/U4XGolY21n9wVWoqo6ugqv0TOMqNrRh75nqooHHQtc08LtGN50n//5
-	RQ0ZUQtC1sqxzmUOESZjd5ukP4TArMJDvew41OSZfhll5E5wkkMau+LQXad6eq7XuNV+3S5M9KE+p
-	3phLvaSct6qQulIoq0Iw==;
+	List-Owner; bh=2z9c37uRtFvIgSebW0ZQTRozYgmiC0fXrf38ATUzkDI=; b=Vk2fVQQm+Dv2Um
+	2snBU3kmPHnw6LnQrqy6QQLluAa6mhd/7KbnI8BvbgAoAjFqgcmImJ4lQI7ZOlDkns6tlXlBAKYOU
+	WtORmPo5iSZ+LzvInlX7KxpUO1oyqXNFir8EH0RAK07JyWJ/nknIFaaDtdS7KVTFfIVsI9imDzCVq
+	hdERUoB+0AryUsZ6yFk9IWkOYCsx3h9ptXUmmJsCp36aL7lW4tnJuGUWJ078OfTRqM8BPv6oL9SQh
+	vPESO425oVW6eAEwSrLFJ6l5DwPN6DUM1/zy3mXPHFQspiFeAQ+McxiREmIvjNNddD8HswlS7wcpi
+	0dS6GR9SIdrABBedqUow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCZlf-0000000BBUX-0236;
-	Fri, 02 Oct 2026 09:41:27 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xCesM-0000000BrkB-1J5m;
+	Fri, 02 Oct 2026 15:08:42 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCZld-0000000BBTf-1BwS
+	id 1xCesI-0000000Brh8-3QY7
 	for linux-phy@lists.infradead.org;
-	Fri, 02 Oct 2026 09:41:25 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0FB48423D7;
-	Fri,  2 Oct 2026 09:41:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7378C1F00898;
-	Fri,  2 Oct 2026 09:41:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790934084;
-	bh=bWHrESK9oTrjK0HunS9kcXpOHvZY9XPBn4hjN9hzQrk=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc;
-	b=E7fImYBuMM90xfg+6/+564eKF0j7tZeyZI638i0OlZ2qm9UL5o8TChDBIITtb98Ow
-	 BmbJLuW99c692JA3OMtDvpz8ewJ1g+jW07jAMCJnc+ZVGL5Egw2guRrtBQu5fEFwuO
-	 jTUKSSgb+l/bncp6Yl0SdOI7zr/seEkGNl9IG73qXov0Kz/bdeqvOTp4/+KnJ7DBnI
-	 65PzrGzqohauKiNxY23Cb6Va9Famjq/0FmwNaJY1Kp6sO3lWbJ28iPYgXw5SdQrOPG
-	 /ohiTIq6LvpYN4GW0Ew1TiIS+xlCgcmPmzhy3s212qIeHyIEFwGCmdRjqHXOODP8pD
-	 emDSJFluBOL+Q==
-From: Mattijs Korpershoek <mkorpershoek@kernel.org>
-Date: Fri, 02 Oct 2026 11:41:10 +0200
-Subject: [PATCH v3 2/2] phy: qcom-snps-femto-v2: Add support for SA8255P
-MIME-Version: 1.0
-Message-Id: <20261002-phy-qcom-snps-femto-v2-8255-v3-2-342542bd9bc6@kernel.org>
-References: <20261002-phy-qcom-snps-femto-v2-8255-v3-0-342542bd9bc6@kernel.org>
-In-Reply-To: <20261002-phy-qcom-snps-femto-v2-8255-v3-0-342542bd9bc6@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+	Fri, 02 Oct 2026 15:08:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1790953716;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=LD/A3nglaC31jBIMtUDrqXBiepN73OFs6DJpCa6dtO4=;
+	b=Gf3pglWfrqbJTauSJEYdtySw15tpLwpmvdX4QPA8PCQTvTLYRw5O7Yt1XRqlFx8Yqi74mH
+	Hb3A1Fxhsv8i0lkm/cTXBaG0bh7qs+X05+6bPkdki6E5jV8dK3w7QU33+6aIFbgO+dmzGA
+	p4F+YuLSyQiCHhblyCDltkkX9/sv14Y=
+Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com
+ [209.85.160.197]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
+ us-mta-244-p0jBoi5kPX6biWzIYjgoZA-1; Fri, 02 Oct 2026 11:08:34 -0400
+X-MC-Unique: p0jBoi5kPX6biWzIYjgoZA-1
+X-Mimecast-MFC-AGG-ID: p0jBoi5kPX6biWzIYjgoZA_1790953714
+Received: by mail-qt1-f197.google.com with SMTP id d75a77b69052e-51c26012cd0so154314351cf.0
+        for <linux-phy@lists.infradead.org>; Fri, 02 Oct 2026 08:08:34 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1790953714; x=1791558514;
+        h=content-transfer-encoding:content-type:mime-version:date:message-id
+         :subject:references:in-reply-to:cc:to:from:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=LD/A3nglaC31jBIMtUDrqXBiepN73OFs6DJpCa6dtO4=;
+        b=2LlKlKexjh5+s4Mr1ZURYqI3MIFYcqlPJ6Z2vd3FgHRd9CavM3BUwSwuQ59UfCC41x
+         8Mc2VGAGRDi4AERk1aCiPknmkRDo/dL0M8//DFUp4xaoq8zVRMHbFWJL/PXZh/ISFkcJ
+         lxOh4LleSu1sw+5REFv8+ku/ZMr3WufdaaQbPBun/IPei0gIiBULr2TNnpV1RrqeTFgY
+         KsLUeuc0PBimMgBeH7hx0tyIsxGUgv5DZrUWScshEOc6OSl6bygn7z1eG0FudUkIk68y
+         cx1CBQhqyaxvTftjy3m7MryQ2rLMvoA+AEaZt1YdBwvMcXQm7f79VjByHOBiadQoa1ps
+         EVjg==
+X-Forwarded-Encrypted: i=1; AKwUvBwdbyaDCxdkzmcGbwW8sV+0DQUdo6cfLo+tYfHT/gYXFy6hjNVzxUg6YTl4AfwSSd8qk9ksXyMXhRE=@lists.infradead.org
+X-Gm-Message-State: AFuF++kgIkBzDWBX02tof4faRCZc7/JAeRBWn4QfBXQRugjA2Jyq4b0k
+	n6I+AIRV+XkQd0bZ7MkYxgxcMB6jisRgEpk7sNXtrV2F7e5UwswjWslOZ9kI20FpAWN8jw7am/g
+	d7agS3CN02eIMfbfWiqI+tuKr11TOAoHAb8aT1Qt9MOXlD/GS3S/Dik9VuzTt6ibRU2k=
+X-Gm-Gg: AYBFou0iBA177KOfRhvlu3dvWaWKrVlhUeHKvlN8cAIKCZoYGwlDy+9gLAHGFvilaFo
+	S51duf+fRFOQregCFDiWQinN7nmB4GWt7oLh6dHyuKnVR3rzbUmJiFRA9kDVapHorzqzY84j6CQ
+	ZRoNhxIYlr0Tm55bRzrR7Aw1uUXCkjbNIp9SHHW3U/vtDoBcoIBnRlc+nhCWwpT8By0IGciTnIU
+	R63xrDERxjwQKm/ecGsjChNU4s9ftx3NyX09PitFv+4zz+E0U+2uDefjJZ3GMMlPQiNrAAcEPOy
+	eNztb6g3G8V0HbL+u+7od8nWalT2DQpuE6dHpFIK0gksGzjaq1iy4ptwGate/x6gL0aATWXuykq
+	yi714rjMwnL9NiJDKvJYZdGUPAMBc5qahKP+q82MX0IeV6VFen5U=
+X-Received: by 2002:a05:622a:1353:b0:533:3610:c5eb with SMTP id d75a77b69052e-533d96b6966mr49792621cf.53.1790953713826;
+        Fri, 02 Oct 2026 08:08:33 -0700 (PDT)
+X-Received: by 2002:a05:622a:1353:b0:533:3610:c5eb with SMTP id d75a77b69052e-533d96b6966mr49791681cf.53.1790953713259;
+        Fri, 02 Oct 2026 08:08:33 -0700 (PDT)
+Received: from bmasney-x1.rmtuswv.csb (c-73-183-53-213.hsd1.pa.comcast.net. [73.183.53.213])
+        by smtp.gmail.com with ESMTPSA id d75a77b69052e-53398d128ccsm27596841cf.24.2026.10.02.08.08.31
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 02 Oct 2026 08:08:32 -0700 (PDT)
+From: Brian Masney <bmasney@redhat.com>
+To: Michael Turquette <mturquette@baylibre.com>, 
+ Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Mattijs Korpershoek <mkorpershoek@kernel.org>, 
- Sriram Dash <quic_sriramd@quicinc.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=7859;
- i=mkorpershoek@kernel.org; h=from:subject:message-id;
- bh=SOWJEBkcPX+Lj3ns9r/5JduDnG3bstl6L0j/AF/OvMY=;
- b=owEBbQGS/pANAwAKARkNHbRmThk1AcsmYgBqv3w+tCcQQGkgRlRMK7P7TI1O1uFR9aUup4yxl
- t/SUphR+w+JATMEAAEKAB0WIQQu6UKnth9qvlMTrQAZDR20Zk4ZNQUCar98PgAKCRAZDR20Zk4Z
- NbQ6B/9C+UkHRFjAt5UNxIeXKX/UIkf15RDBIvcJl0UQhYuAVaLsem1LCQN7J+FBrHyrdUC7taS
- Ky9r/wunO2lzjj4fZc2xorBvlZK73x6oYn0IzuxU4+b07DUUxc0XByNWitCsZouuaJnr813OVPG
- uqbL9yNGG47F5KExlQ/b7EdaZiMlr+1i3RREmQ2lZGpakLfCvh6x1t6gpNopHQXnz6dNmgphrRu
- H3UYg30kSi2/iNkX/LA00Gu26Vr/1lrINHzFWuQPyVvp/41ldznM8pisrv03BI6jkBSWuSaRJLK
- JFwWpeaZSRA91U8s3Xcz924k4F6mBBVGqcQreTEB1Wm3MeEs
-X-Developer-Key: i=mkorpershoek@kernel.org; a=openpgp;
- fpr=8234A35B45C0D26B31C1A2DA570338B018144F28
+ Conor Dooley <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+ Russell King <linux@armlinux.org.uk>, Lee Jones <lee@kernel.org>, 
+ Brian Masney <bmasney+clk@redhat.com>, 
+ Jerome Brunet <jbrunet+clk@baylibre.com>, 
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ =?utf-8?q?Stefan_D=C3=B6singer?= <stefandoesinger@gmail.com>
+Cc: linux-clk@vger.kernel.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-phy@lists.infradead.org, mfd@lists.linux.dev, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+In-Reply-To: <20260927-zx29clk-v13-0-70d8f673386c@gmail.com>
+References: <20260927-zx29clk-v13-0-70d8f673386c@gmail.com>
+Subject: Re: (subset) [PATCH v13 00/13] ZTE zx297520v3 clock bindings and
+ driver
+Message-Id: <179095369547.791677.11922932020340915175.b4-ty@b4>
+Date: Fri, 02 Oct 2026 11:08:15 -0400
+MIME-Version: 1.0
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1464; i=bmasney@redhat.com;
+ s=20250903; h=from:subject:message-id;
+ bh=LWMTx7OVyEurkrK8gxvgvVLf0aBDX7nOCsHhfPnuLAk=;
+ b=owGbwMvMwCW2/dJd9di6A+2Mp9WSGLL2n3j1sCJv/pFzhTZJnIp6XLMW1T+Zsn17zf5NPhp2l
+ nuniVRzdZSyMIhxMciKKbIsyTUqiEhdZXvvjiYLzBxWJpAhDFycAjARdn2GP5ylRUdjm2eldZ5u
+ XD5jQ+j9xzleR9dJh/49fXhFlVPSDB9Ght0/fk9fsCKpqrNG5anMU3n7TWp/uuXyZ0pIxLpUpGv
+ P4wMA
+X-Developer-Key: i=bmasney@redhat.com; a=openpgp;
+ fpr=A46D32705865AA3DDEDC2904B7D2DD275D7EC087
+X-Mimecast-Spam-Score: 0
+X-Mimecast-MFC-PROC-ID: 6AD6ENt5kwkmJhcqXu_hHqb_NefleP9fxDhWEiGGuGU_1790953714
+X-Mimecast-Originator: redhat.com
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261002_080838_953047_41A822C8 
+X-CRM114-Status: UNSURE (   8.60  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,271 +126,36 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Sriram Dash <quic_sriramd@quicinc.com>
-
-The Qualcomm automotive SA8255p SoC relies on firmware to configure
-platform resources, including clocks, interconnects and TLMM.
-The driver requests resources operations over SCMI using power protocols.
-
-The SCMI power protocol enables or disables resources like clocks,
-interconnect paths, and TLMM (GPIOs) using runtime PM framework APIs,
-such as resume/suspend, to control power on/off.
-
-Power domain "core" controls the GDSC, resets, and TLMM (GPIOs)
-whereas power domain "transfer" controls clocks and interconnects.
-
-In this variant, two disjoint sets of resources are modeled against
-the power domain suppliers which can be turned on/off to achieve modeled
-device states. Two modeled low power states d1 and d3 are supported.
-
-transition: d0 <--> d3  :: both core and transfer suppliers
-transition: d0 <--> d1  :: only transfer supplier
-
-Signed-off-by: Sriram Dash <quic_sriramd@quicinc.com>
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
-Signed-off-by: Mattijs Korpershoek <mkorpershoek@kernel.org>
----
- drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 127 ++++++++++++++++++++++++--
- 1 file changed, 118 insertions(+), 9 deletions(-)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-index 980ad1fb1e2e..9fdf7ae681b6 100644
---- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-+++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-@@ -12,6 +12,7 @@
- #include <linux/of.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
-+#include <linux/pm_domain.h>
- #include <linux/regmap.h>
- #include <linux/regulator/consumer.h>
- #include <linux/reset.h>
-@@ -95,6 +96,7 @@ struct override_param_map {
- 	u8 table_size;
- 	u8 reg_offset;
- 	u8 param_mask;
-+	bool fw_managed;
- };
- 
- struct phy_override_seq {
-@@ -121,6 +123,7 @@ struct phy_override_seq {
-  * @phy_initialized: if PHY has been initialized correctly
-  * @mode: contains the current mode the PHY is in
-  * @update_seq_cfg: tuning parameters for phy init
-+ * @pd_list: list of power domains associated with the device
-  */
- struct qcom_snps_hsphy {
- 	struct device *dev;
-@@ -136,8 +139,81 @@ struct qcom_snps_hsphy {
- 	bool phy_initialized;
- 	enum phy_mode mode;
- 	struct phy_override_seq update_seq_cfg[NUM_HSPHY_TUNING_PARAMS];
-+
-+	struct dev_pm_domain_list *pd_list;
- };
- 
-+static void qcom_snps_domain_detach(void *data)
-+{
-+	struct qcom_snps_hsphy *hsphy = data;
-+
-+	dev_pm_domain_detach_list(hsphy->pd_list);
-+}
-+
-+static int qcom_snps_domain_attach(struct qcom_snps_hsphy *hsphy)
-+{
-+	struct dev_pm_domain_attach_data pd_data = {
-+		.pd_flags       = PD_FLAG_NO_DEV_LINK,
-+		.pd_names       = (const char*[]) { "core", "transfer" },
-+		.num_pd_names   = 2,
-+	};
-+	struct device *dev = hsphy->dev;
-+	int ret;
-+
-+	ret = dev_pm_domain_attach_list(dev, &pd_data, &hsphy->pd_list);
-+	if (ret < 0)
-+		return dev_err_probe(dev, ret, "domain attach failed\n");
-+
-+	return 0;
-+}
-+
-+/* d3_to_d0 transition by turning on all the suppliers */
-+static int qcom_snps_d3_to_d0(struct qcom_snps_hsphy *hsphy)
-+{
-+	int ret;
-+
-+	if (!hsphy->pd_list)
-+		return 0;
-+
-+	ret = pm_runtime_resume_and_get(hsphy->pd_list->pd_devs[0]);
-+	if (ret)
-+		return ret;
-+
-+	ret = pm_runtime_resume_and_get(hsphy->pd_list->pd_devs[1]);
-+	if (ret)
-+		pm_runtime_put_sync(hsphy->pd_list->pd_devs[0]);
-+
-+	return ret;
-+}
-+
-+/* d0_to_d3 transition by turning off all the suppliers */
-+static void qcom_snps_d0_to_d3(struct qcom_snps_hsphy *hsphy)
-+{
-+	if (!hsphy->pd_list)
-+		return;
-+
-+	pm_runtime_put_sync(hsphy->pd_list->pd_devs[1]);
-+	pm_runtime_put_sync(hsphy->pd_list->pd_devs[0]);
-+}
-+
-+/* d1_to_d0 transition by turning on the 'transfer' supplier */
-+static int qcom_snps_d1_to_d0(struct qcom_snps_hsphy *hsphy)
-+{
-+	if (!hsphy->pd_list)
-+		return 0;
-+
-+	return pm_runtime_resume_and_get(hsphy->pd_list->pd_devs[1]);
-+}
-+
-+/* d0_to_d1 transition by turning off the 'transfer' supplier */
-+static void qcom_snps_d0_to_d1(struct qcom_snps_hsphy *hsphy)
-+{
-+	if (!hsphy->pd_list)
-+		return;
-+
-+	pm_runtime_put_sync(hsphy->pd_list->pd_devs[1]);
-+}
-+
- static int qcom_snps_hsphy_clk_init(struct qcom_snps_hsphy *hsphy)
- {
- 	struct device *dev = hsphy->dev;
-@@ -196,6 +272,8 @@ static int qcom_snps_hsphy_suspend(struct qcom_snps_hsphy *hsphy)
- 					   0, USB2_AUTO_RESUME);
- 	}
- 
-+	qcom_snps_d0_to_d1(hsphy);
-+
- 	return 0;
- }
- 
-@@ -203,7 +281,7 @@ static int qcom_snps_hsphy_resume(struct qcom_snps_hsphy *hsphy)
- {
- 	dev_dbg(&hsphy->phy->dev, "Resume QCOM SNPS PHY, mode\n");
- 
--	return 0;
-+	return qcom_snps_d1_to_d0(hsphy);
- }
- 
- static int __maybe_unused qcom_snps_hsphy_runtime_suspend(struct device *dev)
-@@ -316,6 +394,10 @@ static const struct override_param ls_fs_output_impedance_sc7280[] = {
- 	{ 1310, 0 },
- };
- 
-+static const struct override_param_map sa8255p_snps_hs_phy = {
-+	.fw_managed = true,
-+};
-+
- static const struct override_param_map sc7280_snps_7nm_phy[] = {
- 	{
- 		"qcom,hs-disconnect-bp",
-@@ -390,9 +472,15 @@ static int qcom_snps_hsphy_init(struct phy *phy)
- 
- 	dev_vdbg(&phy->dev, "%s(): Initializing SNPS HS phy\n", __func__);
- 
-+	ret = qcom_snps_d3_to_d0(hsphy);
-+	if (ret < 0) {
-+		dev_err(hsphy->dev, "Failed to transition to d0 state\n");
-+		return ret;
-+	}
-+
- 	ret = regulator_bulk_enable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
- 	if (ret)
--		return ret;
-+		goto transition_to_d3;
- 
- 	ret = clk_bulk_prepare_enable(hsphy->num_clks, hsphy->clks);
- 	if (ret) {
-@@ -472,6 +560,8 @@ static int qcom_snps_hsphy_init(struct phy *phy)
- 	clk_bulk_disable_unprepare(hsphy->num_clks, hsphy->clks);
- poweroff_phy:
- 	regulator_bulk_disable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
-+transition_to_d3:
-+	qcom_snps_d0_to_d3(hsphy);
- 
- 	return ret;
- }
-@@ -485,6 +575,8 @@ static int qcom_snps_hsphy_exit(struct phy *phy)
- 	regulator_bulk_disable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
- 	hsphy->phy_initialized = false;
- 
-+	qcom_snps_d0_to_d3(hsphy);
-+
- 	return 0;
- }
- 
-@@ -496,6 +588,10 @@ static const struct phy_ops qcom_snps_hsphy_gen_ops = {
- };
- 
- static const struct of_device_id qcom_snps_hsphy_of_match_table[] = {
-+	{
-+		.compatible	= "qcom,sa8255p-usb-hs-phy",
-+		.data		= &sa8255p_snps_hs_phy,
-+	},
- 	{ .compatible	= "qcom,sm8150-usb-hs-phy", },
- 	{ .compatible	= "qcom,usb-snps-hs-5nm-phy", },
- 	{
-@@ -565,6 +661,7 @@ static int qcom_snps_hsphy_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
- 	struct qcom_snps_hsphy *hsphy;
-+	const struct override_param_map *cfg;
- 	struct phy_provider *phy_provider;
- 	struct phy *generic_phy;
- 	int ret, i;
-@@ -580,14 +677,26 @@ static int qcom_snps_hsphy_probe(struct platform_device *pdev)
- 	if (IS_ERR(hsphy->base))
- 		return PTR_ERR(hsphy->base);
- 
--	ret = qcom_snps_hsphy_clk_init(hsphy);
--	if (ret)
--		return dev_err_probe(dev, ret, "failed to initialize clocks\n");
-+	cfg = of_device_get_match_data(dev);
-+
-+	if (cfg && cfg->fw_managed) {
-+		ret = qcom_snps_domain_attach(hsphy);
-+		if (ret)
-+			return ret;
-+
-+		ret = devm_add_action_or_reset(dev, qcom_snps_domain_detach, hsphy);
-+		if (ret)
-+			return ret;
-+	} else {
-+		ret = qcom_snps_hsphy_clk_init(hsphy);
-+		if (ret)
-+			return dev_err_probe(dev, ret, "failed to initialize clocks\n");
- 
--	hsphy->phy_reset = devm_reset_control_get_exclusive(&pdev->dev, NULL);
--	if (IS_ERR(hsphy->phy_reset)) {
--		dev_err(dev, "failed to get phy core reset\n");
--		return PTR_ERR(hsphy->phy_reset);
-+		hsphy->phy_reset = devm_reset_control_get_exclusive(&pdev->dev, NULL);
-+		if (IS_ERR(hsphy->phy_reset)) {
-+			dev_err(dev, "failed to get phy core reset\n");
-+			return PTR_ERR(hsphy->phy_reset);
-+		}
- 	}
- 
- 	num = ARRAY_SIZE(hsphy->vregs);
-
--- 
-2.55.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+Ck9uIFN1biwgMjcgU2VwIDIwMjYgMjM6MTM6MjggKzAzMDAsIFN0ZWZhbiBEw7ZzaW5nZXIgd3Jv
+dGU6Cj4gWlRFIHp4Mjk3NTIwdjMgY2xvY2sgYmluZGluZ3MgYW5kIGRyaXZlcgo+IAo+IEhpLAo+
+IAo+IEkgYW0gc2VuZGluZyB2ZXJzaW9uIDEzIG9mIG15IHp4Mjk3NTIwdjMgY2xvY2sgcGF0Y2gu
+IEl0IGFkZHJlc3NlcyByZXZpZXcKPiBjb21tZW50cyBmb3IgdGhlIE1GRCBkcml2ZXIgYnV0IGhh
+cyBubyBvdGhlciBzdWJzdGFudGlhbCBjaGFuZ2VzCj4gCj4gWy4uLl0KCkFwcGxpZWQsIHRoYW5r
+cyEKClswMS8xM10gZHQtYmluZGluZ3M6IGNsazogenRlOiBBZGQgengyOTc1MjB2MyB0b3AgY2xv
+Y2sgYW5kIHJlc2V0IGNvbnRyb2xsZXIKICAgICAgICBjb21taXQ6IDliOWU1ZGFhZWE4ZmViY2Rm
+NjdhNjU2ZTc2YjNhN2UxZDBmMjI5MGEKWzAyLzEzXSBkdC1iaW5kaW5nczogY2xrOiB6dGU6IEFk
+ZCB6eDI5NzUyMHYzIG1hdHJpeCBjbG9jayBhbmQgcmVzZXQgY29udHJvbGxlcgogICAgICAgIGNv
+bW1pdDogMzg0N2JjOTRkMTc0NmMxNDQ4Yzk4NDMzOGZjZmRmMTIxNmRiMDgyNwpbMDMvMTNdIGR0
+LWJpbmRpbmdzOiBjbGs6IHp0ZTogQWRkIHp4Mjk3NTIwdjMgTFNQIGNsb2NrIGFuZCByZXNldCBj
+b250cm9sbGVyCiAgICAgICAgY29tbWl0OiA0NTAwZTJlMzYxZWNiYTQyY2IxYWJkNmY2ODkxYTQ1
+ZDk5ZjU3NzQxClswNi8xM10gY2xrOiB6dGU6IEFkZCBDbG9jayByZWdpc3RyYXRpb24gaW5mcmFz
+dHJ1Y3R1cmUKICAgICAgICBjb21taXQ6IGFkNTEwN2E4OGU5OTNiNTc2YjAxNzYxYzY1NjBlMTU3
+NTE5ZTBmODQKWzA3LzEzXSBjbGs6IHp0ZTogQWRkIHJlZ21hcC1iYXNlZCBjbG9ja3MKICAgICAg
+ICBjb21taXQ6IDBmOTczZmZkMTAzOGUyYmNhNWFkODkyNzk0MTJhNTA4ZGY2MmY0NGYKWzA4LzEz
+XSBjbGs6IHp0ZTogQWRkIHp4IFBMTCBzdXBwb3J0IGluZnJhc3RydWN0dXJlCiAgICAgICAgY29t
+bWl0OiA3NzczMmU2NmNkNDdlODQ5MDMxZTRmYzg5OTljYmZmMGVjOTU4ZGViClswOS8xM10gY2xr
+OiB6dGU6IEludHJvZHVjZSBhIGRyaXZlciBmb3IgengyOTc1MjB2MyB0b3AgY2xvY2tzCiAgICAg
+ICAgY29tbWl0OiAzOTJhNDk1N2RiNWMyZjJjMzdiZjAxOTFkOTUzMTcxMGIzMDgwZGJmClsxMC8x
+M10gY2xrOiB6dGU6IEludHJvZHVjZSBhIGRyaXZlciBmb3IgengyOTc1MjB2MyBtYXRyaXggY2xv
+Y2tzCiAgICAgICAgY29tbWl0OiA0ZWEyOTlhZmZmNDJjNmEwOWViMWFlYTFkMjljNjc4YzMzNzRi
+ODI0ClsxMS8xM10gY2xrOiB6dGU6IEludHJvZHVjZSBhIGRyaXZlciBmb3IgengyOTc1MjB2MyBM
+U1AgY2xvY2tzCiAgICAgICAgY29tbWl0OiBmOGEzY2JmODY3OGFiODBkM2FiYTU5MThmMmY1ZTFh
+Y2MxZTcyODdkCgpCZXN0IHJlZ2FyZHMsCi0tIApCcmlhbiBNYXNuZXkgPGJtYXNuZXlAcmVkaGF0
+LmNvbT4KCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1waHkK
