@@ -4,105 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2507ACA5FDD
-	for <linux-phy@archiver.kernel.org>; Fri,  2 Oct 2026 15:12:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1D9ECA5FC4
+	for <linux-phy@archiver.kernel.org>; Fri,  2 Oct 2026 15:31:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o4kjv3tx4P5EeC4cW0x6uzIkBe0FPVrGBFQ3wKSy3FE=; b=ieWAj8w/qQlRhp
-	cAFjAzte3bJIlr+MB63abNKclottQApOBP4HP9g8dDgQchVaxHiL+tL6If+TI6KcigYdXpV3vTs8o
-	g8MHJxJlmSyqdjWxL7cwYVz8mdVSpwLuJ7DskYdTxcoYciNMeMJut9XGEsw0ZGWw3dsedTjzHQlBw
-	bRZl7RjA9nSBY+ubo/ST+QTPgHHKkqC0duUfqtXDxoQ+ihw5DbVADuA7j8305yRR7UUU5feJCf0Ww
-	Otod4MvLsb2kVoynaHLsjrHYAVPBrHCas+Cg+MseZaqbOTi23b7Y6Zx8SDraCVjzPHgxEWkWbMt4D
-	niYmYYwfBqpvNcHuszaw==;
+	List-Owner; bh=nSvZHDlMjg1LsgZcwj2Z1js4k00SeyPp3mZdnFdajas=; b=LAPhDMc9i2AZVI
+	Czpo24L5GtoOXpuEmiESfTMH6TkURnMN/TvVy2ie3R8H971EElme3wRLGvlP7N+iQN+UamDQQWKb7
+	l55wrBTrAmgowtm/R+R+uH8C7j36mF83d0ZeXCUTVYcEVixqdznOeufAVgm6y9b4C0eTzDaNZPxhF
+	VfmfQzDXoaoNY03Jj2bPSNtCfoyR4It817WlgXP75KDEW6nProU2aiH1NvX2yzxsyNwELkx6wpu4u
+	wrtCJbsqS4P68Vw/Dj3+37GCOEuJjMLwDtMLWDOKmkwiAjJZDijnC/cSamaT+afyFYm2BimHRoD53
+	gBRw1Tsyq47EVLWKuG2g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCeva-0000000BsGJ-36ns;
-	Fri, 02 Oct 2026 15:12:02 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
+	id 1xCfEm-0000000Bvnh-1xqr;
+	Fri, 02 Oct 2026 15:31:52 +0000
+Received: from mout.gmx.net ([212.227.15.19])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCevX-0000000BsFF-2oOP
-	for linux-phy@lists.infradead.org;
-	Fri, 02 Oct 2026 15:12:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1790953918;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=LWmLd+rLGF8wp2MGoAWUFRqguzK3p2qoTL1+rkmSfkI=;
-	b=VIj4M1lGrl4ak7hE9jiGTMhpPJ4vVUHRdhpZmjXhdiTFOlA8h5lnB+R3KR5oAwB4xX9WmD
-	mxha+TYV40mHn2e+qqtSv6HToRZkLlIisSiwM8itJ8C3it+ZQjYu6THWcbsz05Bsmla+AQ
-	41POWjiBgqZqXNhx4FDa5blWM2HDGM8=
-Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com
- [209.85.222.200]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-613-YC_-o93gMfGzqSYPpDfK1w-1; Fri, 02 Oct 2026 11:11:56 -0400
-X-MC-Unique: YC_-o93gMfGzqSYPpDfK1w-1
-X-Mimecast-MFC-AGG-ID: YC_-o93gMfGzqSYPpDfK1w_1790953916
-Received: by mail-qk1-f200.google.com with SMTP id af79cd13be357-93bfb2da664so2040621185a.1
-        for <linux-phy@lists.infradead.org>; Fri, 02 Oct 2026 08:11:56 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1790953916; x=1791558716;
-        h=user-agent:in-reply-to:content-transfer-encoding
-         :content-disposition:content-type:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=LWmLd+rLGF8wp2MGoAWUFRqguzK3p2qoTL1+rkmSfkI=;
-        b=pMkw0vEyq4PyEugnqjCy4TAhOUzUaA9WiaCMn/1W8AJV2yAOVaa5oe7MPTxwphbQ9Z
-         RU4skD9flhin9jehtGM4anrnqNtnTklyX3NidenHNk0+a6F5raMNolmUoGn55ctvtEjU
-         sR3vMf+YktS+pZhWOGuSA9NDaGdo3sAal0FLQ4zeMsqD/IOfVQhIWjQf3mAhTRMv79BI
-         Hu/jGd42sE+cBX3Unc/AnNbAW2mHAsHoPNUi/MyQ5hsYm13hozOYAvAOHor85PWxXhyv
-         iMMM8znREK3u/AW1vTG1a+hKB7h9PuPqL0ThNyBLnBYvvnp8jQo9HSwosTcpZMAjCsmz
-         2TdQ==
-X-Forwarded-Encrypted: i=1; AKwUvBwbRfa+8duQ5OBXX3VuVd7xVkqdbvTYSSHImtNvdwT2V9NwVg3gwgQghrbjfGyY7982lINg8ncFbeQ=@lists.infradead.org
-X-Gm-Message-State: AFuF++m1alitbQ3Y6mGr0lUU4fqbrd7FmcVCIelX2ErMO5/aH5Iuq+Fi
-	oV4wy7+E55MtkH/D1PYcuQ3RVGxPG+XHG4252to80BMIlv7us5dvhcIwI3Mo0IUMqjEpZ63bIuz
-	2AT+P++WTcZ9iRL0QOa5VdUqljFOBCdTfD3Vbwk9L3VcwQKT7HsGWSLBpGWWQdUIztZs=
-X-Gm-Gg: AYBFou15VXSFm006JAPtSFgP51djZ63Ffi421tVdhUNIZD+brhO1nFhpWCgR6uL7gqe
-	Ez5qhpLf2l8oRVFHio7HAJ9S7pEkR/MOtORze90dE4U+Qoc4DfcWDPmigehcxLWSuJuW/xKLR2N
-	No7qf/geOxKQd6VRlIPH4AVPZiqCLnFFAuFbyjS9rFZ9yuGKWwli35YY1PoxJTcNhLx47LdspJf
-	BzsC06XjRQqPt/L7Eaoj/wYxbQwEo3TAbQM4hXIy7eqBi6zT64DNeTJGj7BNxOcn5C6XB7T5mcS
-	AjDVPzagqdfq5HEy+wvS9EguBj9RyKv0/y7JujsGX5T73tneFkKdrkoM0aPT9EZunViaWEKgsSs
-	nfxcqd/j2Q0cJ0KWTIouNFzeiw2vJc15ctbg=
-X-Received: by 2002:a05:620a:26a6:b0:93c:5efa:39ae with SMTP id af79cd13be357-93ce7c1228emr548898285a.12.1790953915761;
-        Fri, 02 Oct 2026 08:11:55 -0700 (PDT)
-X-Received: by 2002:a05:620a:26a6:b0:93c:5efa:39ae with SMTP id af79cd13be357-93ce7c1228emr548889585a.12.1790953914967;
-        Fri, 02 Oct 2026 08:11:54 -0700 (PDT)
-Received: from redhat.com (c-73-183-53-213.hsd1.pa.comcast.net. [73.183.53.213])
-        by smtp.gmail.com with ESMTPSA id af79cd13be357-93cca1a433dsm240505285a.13.2026.10.02.08.11.52
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 02 Oct 2026 08:11:53 -0700 (PDT)
-Date: Fri, 2 Oct 2026 11:11:51 -0400
-From: Brian Masney <bmasney@redhat.com>
-To: Stefan =?iso-8859-1?Q?D=F6singer?= <stefandoesinger@gmail.com>
-Cc: linux-clk@vger.kernel.org, Brian Masney <bmasney+clk@redhat.com>,
-	Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org,
-	Jerome Brunet <jbrunet+clk@baylibre.com>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Rob Herring <robh@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>, mturquette@baylibre.com
-Subject: Re: [GIT PULL] clk: zte: zx297520v3 clock bindings and driver (v2)
-Message-ID: <ar_Jt4eIPy1-uq1-@redhat.com>
-References: <hUBEMGo3TGyVsIj5LaphmQ@gmail.com>
+	id 1xCfEj-0000000Bvmq-0JA5;
+	Fri, 02 Oct 2026 15:31:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmx.net;
+	s=s31663417; t=1790955085; x=1791559885; i=wahrenst@gmx.net;
+	bh=95dkucxPGADp6gQm+VpfESFlbMOcIIRz3dt8riizcQo=;
+	h=X-UI-Sender-Class:Message-ID:Date:MIME-Version:Subject:From:To:
+	 Cc:References:In-Reply-To:Content-Type:Content-Transfer-Encoding:
+	 cc:content-transfer-encoding:content-type:date:from:message-id:
+	 mime-version:reply-to:subject:to;
+	b=aGLKlYxHgHtSwp6UtwuXsgoUeA1IouiGcv0cHKInIBZhIqazkAkgx2ud5wxxV81W
+	 esExOuR85Qc4Oe+S1dN3sF0M2RdFcrO5lwjaJoPr32gF5CqbZqCk+feRbi0qm/Qm3
+	 3PVZuAVe1gsABUeJNamF7TUn0ORZhAVqy8bNzR+c5YlnhfGGmAVfuzy9/eayZ1lx2
+	 YMDQfRZNAVWyMqmV/H8moWp6j2WohPwbr31Q7SFn46hESw5YmWQGPxv9RsT86F286
+	 P+gstTBOvjK4Sw0KQdzEzPkFywoPPgDCWIIMtKQRp5GneZ8sOv88OdRh+4I743U4r
+	 DMTMYy9HmsMqLMxsjg==
+X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
+Received: from client.hidden.invalid by mail.gmx.net (mrgmx005
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 1MJmGZ-1xRiAm2ITB-00HuFz; Fri, 02
+ Oct 2026 17:31:25 +0200
+Message-ID: <7cc6e394-9895-4f42-a0c1-f1fbd7eafbfa@gmx.net>
+Date: Fri, 2 Oct 2026 17:31:23 +0200
 MIME-Version: 1.0
-In-Reply-To: <hUBEMGo3TGyVsIj5LaphmQ@gmail.com>
-User-Agent: Mutt/2.4.2 (2026-08-30)
-X-Mimecast-Spam-Score: 0
-X-Mimecast-MFC-PROC-ID: jZuDEYFTml1dAcavZW3z-TK8T6fjoRziunSbzgJGolk_1790953916
-X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH V5 0/4] arm64: dts: freescale: Add chargebyte Charge
+ Control Y
+From: Stefan Wahren <wahrenst@gmx.net>
+To: Frank Li <Frank.li@oss.nxp.com>, Vinod Koul <vkoul@kernel.org>
+Cc: Frank Li <Frank.Li@nxp.com>, Christoph Stoidner <c.stoidner@phytec.de>,
+ Conor Dooley <conor+dt@kernel.org>, linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Fabio Estevam
+ <festevam@gmail.com>, Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Marc Kleine-Budde <mkl@pengutronix.de>, devicetree@vger.kernel.org,
+ linux-can@vger.kernel.org, linux-phy@lists.infradead.org,
+ imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
+ Rob Herring <robh@kernel.org>, Vincent Mailhol <mailhol@kernel.org>,
+ Aswath Govindraju <a-govindraju@ti.com>
+References: <20260907150420.18787-1-wahrenst@gmx.net>
+ <9cb548d3-f3cf-4757-a9ff-5f878479c7d7@gmx.net> <arFDUby0v52HSNnU@SMW015318>
+ <1a7c722b-a4ff-45d5-a590-0910ac47b541@gmx.net>
+Content-Language: en-US
+Autocrypt: addr=wahrenst@gmx.net; keydata=
+ xjMEZ1dOJBYJKwYBBAHaRw8BAQdA7H2MMG3q8FV7kAPko5vOAeaa4UA1I0hMgga1j5iYTTvN
+ IFN0ZWZhbiBXYWhyZW4gPHdhaHJlbnN0QGdteC5uZXQ+wo8EExYIADcWIQT3FXg+ApsOhPDN
+ NNFuwvLLwiAwigUCZ1dOJAUJB4TOAAIbAwQLCQgHBRUICQoLBRYCAwEAAAoJEG7C8svCIDCK
+ JQ4BAP4Y9uuHAxbAhHSQf6UZ+hl5BDznsZVBJvH8cZe2dSZ6AQCNgoc1Lxw1tvPscuC1Jd1C
+ TZomrGfQI47OiiJ3vGktBc44BGdXTiQSCisGAQQBl1UBBQEBB0B5M0B2E2XxySUQhU6emMYx
+ f5QR/BrEK0hs3bLT6Hb9WgMBCAfCfgQYFggAJhYhBPcVeD4Cmw6E8M000W7C8svCIDCKBQJn
+ V04kBQkHhM4AAhsMAAoJEG7C8svCIDCKJxoA/i+kqD5bphZEucrJHw77ujnOQbiKY2rLb0pE
+ aHMQoiECAQDVbj827W1Yai/0XEABIr8Ci6a+/qZ8Vz6MZzL5GJosAA==
+In-Reply-To: <1a7c722b-a4ff-45d5-a590-0910ac47b541@gmx.net>
+X-Provags-ID: V03:K1:ti88zxwXG0PNCj/HDiERVHlmeVKTyXeIBq8kQN1TEywM61/pzlR
+ fZcirPvUk6yXefHLxiIecFIorAkEefvcwVuFwOkTJY/t9VAUa4jPdd143kC1ipfPt9eXzhX
+ yzjbfhPoirE+CWbboy1n6cVXail+FhAV3/2PQf/fqRIbeQ+YsTCWhp5T81pZCStp2RN8iyC
+ NTrcciXQe/kyO0n0sRMmA==
+UI-OutboundReport: notjunk:1;M01:P0:bJLaUhldQhY=;vp4yUG/JoWnM6b94lcSG8Ku6OFC L3vlEG9zy5hbYBjoTti9S50jaSyfqxVCv+jkcue+9zd2jJxj43Kt7Zfc80hjyNBa/L2TUdwJZ 6efGBaFFtsF1fGFEsiGH6aa7I8xW8FR87QLI/TqiGtgRhiUIcvzrOnAQooNfSOn5MhEhVQ7uA 9w2vB+OaA/LTbw4+GyYvuc5YuLrirNOHov6Z5NPt/oZcrFWWQ7l9lLrsSvklZm98GbPONrpQB kC1oLke/CriTBVeV0sydelFibMdd8/VFxOlPeDhL5zxwHBh9802/OFb4M3yhHvE8MI/9CDp4a YReHh/1tRF3XhqEqu6/0Z+cvNo/CMSj3sZoz3CIvx/asMGY9aJNKgw736g2hoBeleonmLRbjt BGOQXVrJzfAzZCRN8WV73aaVqc8EfMEdoJS9S10qO25MdNGRbny7eB6LgimXTsBppPh6lMlqq 7l1rLaIvDzfD9Ol5D5SKXWiwQLx2/unUfeCN9X5QURYOQ00zqv7OQ8GxeYgxD8sFcs5zvl4CH aOb+jqUBumIfnbNwyMVPKi9O814os7n5H7gE20hFMRRVAwhFdAC9vKBKEg2qd6GmB4wCaydY2 H9tZkYJ2AODdH/IEwhD9QUwmCbzZ457peTYNhE1hMyARiotiipsbaBJIaPY+63d0DjnIEalA8 YHyzzxn2mXE0Qy0u86NU/gbREv89XuG8Pj3Ne4QxkrZBgsA7WI5aWZp+XGl/iq0ITAGeBmgdX uPJJ+7GXhkDzSKUpTtvEZGlkNWcbcwr/0ChRAg0L/2nQiAKjkpcJ+UvkBwltyaSQDzDmSyIgA 1jZH2TBLhKYpDiQ46phDo9JtLnLFV/qtm+zGsUXVM1NY/b8pNhUhfc+lFEO7DtYeJr0E4GRcL YJw1a2wRwW3gQrqQtwJoAc6gt2DzSJ34AyzN+3hJNmeyFqyF7VDFxSu5hLTJCniJAoFbKztB5 d1EeWzbSeuCcCXnc3aCS21VIQlRCQhH5RqonEcYHEPFu362CmFFyUMOCvuuqDk9MRqXl6IF7Y tyItkQR0ZMPVTvpDZeAjET9otDluNzwimMpv8RgieMedP6yan2jtEU4VmFeTnUOnskRwNDc3R TN+VcqHEFLglD3TGJhjuT+uohZwXHUgyoHed/DmGg9NajMgubkj/zz0oyeSYKJyVznyvUX3I5 L8ck4UIwgQ92LlK8LlX44dqR/+pNtdfRRwL02OjxTDrhmlIYX4jbn0or14R440/ZLmXAut4mq /hzlf+zBTis8c/vF0ZMf6HZV+N3KLAe1nPVq/YNiu++CYEIFnxfROjK54hewWBBPTOxiONGTS R+gydLrZXlpJbnyoT1p5mzYZ6oE0Z6IPD0ldtxUP0HmMVQcYOo+dd4vuhFIFmaPw23J1mv4PG bm2IPcTalblmCTc0iMqKe3Ay63mx/INCoXmXCTvSB0F/zeomgWyvlfAsr0NIbYqohkrWI7/18 LpFPjbvKxR9d0A24BiPUhM9EFk6QLVQX3eqis7IjjstLDKbfVR+8qzkAL25lKyv6xk6CjP9ln hzeJ7PL+MyUPZ68XrTkJVog1deY3hX5SYFuM9XE24t3cD8XoBkq/SeHSO3KWwwPQBsiDx8nAW EQQ8KkDUlwQtT6nvKwBG6Ag958+uGisGB09J7+XYy5KT51A/A/wdxbAQ+GTC2d8AzAVL+9Tf0 dneQzdPkEgFUz3BEanvNUZ9ufdnsxBp5krJax6GoBeqNGOiE0O7WRlTz84ePULnjyiytcxLKt uKwGHlO9A9t1LHkt2KSqjtStcVllCHEMBohgreF+rN4dMrYQ5wVpBpstL8NsEFssD79XKPM3z uylSYNXpsnRFvcu9wdYx1EbUBqup9J0twOiAPAiidFB+41JnCGBbIbi14nN/xeWV/KALSpqZT PaDyV2Dez4vQt9iGj8KgBskaZ0Uplk79XyZlRoCz4vwUmZUZaLXGMhvnGhzYHVmy7tjSAeCuc NHNKrh3Fy6MpX8CAb/LbBmJFhqOHOSaqfRI2CGv8AukS8g7WyGhOZGMrMf/jxd2wnMlf9KeiG QaC0lKmUoOD4DqKwJxR+U4clE/ltJ2djCQ+ciOP3l/4de4THpKE3AY7xVwJIBwiYChjNhZQhf jkx4ONIGVdUQnPfXfwcPZDbNQMHXgo+U1V5YaWSx+phA/p5cvS4V3cVxXU4yqwlVOndafHowZ F1xhMg0uEXFMaPvXlubdbzyfcu0gEQrL2J0iaX/soyN8l6R0cPxI0o/wZBS4KOsyKk/F9NKb1 XFjfn/kZqSpqyuUtuAaBwoWfDZpoMJ9h5ctBJtYf3l4puyiysmx4duAP8ZS6JiiInx9wbhy/R a6hqbePNRuzuXZy0TXZYwz4vmyIaC3936lypmQxf5G41ZrSjy1UCu+n7nXFi0rPEdplat2RGo 77swS8YJejRyqvFNi3BiaMX+MYBouMQZNIKGk9EL4/n6O2zsS7fQvlVmUR40hfqV2YfyyKSBx r3qtUPHV7sNI7s+T7ZHGVD90ngDGErrknurXftNscreSgl/TgQtvHZbG9Sp5HyPysdiyV/Rb+ qxwjOR4OltR2G5NPKny2d+YJV63T7F+xbRRkslXcg4NyJv1tvYyowfnx513Cr7hZDJfMTFL+g qiPbEEwvqw0QRTq8u4glSMzRNWbhdGVgfGX6egpmxrJmCbqYVNi5aqriXvyEp39hmzpZkp5Im VbTY/CMWEU84ecZYaZVePvmW6KavK3LDVMibJDi7pZ9vgrV/fljkXsSlify6MwGYtEdiSNTPG d0xaOOllCDUIxCzd+rpvs6UHZJYAiBmuiWMrSCWHEKfAeFeBF2HdI5YF2wmVP6LLfdU1laewv yztqIXcuD7JSWAZn/oRIOZvDBidXoureCz6BNmblwtF961o9mcuXn6n40XdtuQnuQ24gYBGed jRoFZQ7STAOxk0EU15qO/0yE1IKFV90OIfSxHAMnnTNyUAIt5TSoU3cpMSv7N/Gg37aZw4Kp+ Tkcd+P6PC8LTzNs6AQqtkQEbu79DQwFZ3nk7/vnZrEZLi2DP1geeijP+LfghAUDKh4PrhVsA4 HD1vRoBZS1LK8FPvFD3cBaZUGe8VYXa7c//5fTiKXzwgPizw68z//hgQVDhnS1ATMG6nvepfb sdGFV5hyAWKNiinBOx5mQO1K1TUpsX4x8SWXn9vQI07fjnsd6SGzysARQCETxkbewvm2/h4Uw 8LZ3NDPomovL5DuQZJoOkXY4xxgMEDxG4M6kbfYtqaZQdv3k+4uHtY7aBefo0vU3JwnZwLcjM 89ok4W0umxmIXAXBnEx0Wi0maLkrNwDU1zP9LSOsX+oDZhmIq0l3Rwlo3XSZzEj+OOyZK7Tpd 0HDBh8I371q/HhUyIWojX+clP5q9O5kZtQRQCLasn4nFe8aujG/ZQ+pZSoG8HBCTiGpfBoDEc gLNnooK9lvWGa7RQuwWuY0PYp8kWh4yd0RvGpEzIOd1Dp8KcPEAFCMB+FdTcYDNMrXr9VB4oS Z1OeyeO3TXRdFdUa1PLBEi+LXjSTkKSKyGXKdOSxejWCzEwyTSFL1Gq9GlyBk8C6VLwnCqow4 Ab1XNL0gmj2WRj6ShMbOKxDypz3LUhZvWkGDkfNqGvn/h+z9R9CUnfXKGv4a1usOosJ1UF9xG kykl4YWaQADAJvOF7bSz95cBPbcFNve/nfhqil7ZIS4UvORMuTMsT+Ctu2/rBOdF2LFkWVCHl 6IqqkdwCgq0nuwP3buEtUKQOnDaBRpEgOp5Rqgv5kfSMOMhu2hvnVG3S096xkuuD2g3yywX9I pvsjp+zpxX5+oz7vQFLF3HQb9lgU509KfHUvE5Czpi/LZrEjlYa17MazxtZ23ge5aWHSjDX8P r4HZFHjgvPQJu70FGz3ZoR+Aw2ohU7m8ckoE935UAZvGQtNDqHoYss9g6L4Plq1WY1Whz8wZ8
+ qtTiuNnCQQ07DG3QQWtCxXDfTQVU7L/7t0TaH6GW5ffMoByDJTqrwBeoXd8incdVHYoskOIGN N1LMVgo4sLSag97YpbYogiByOcR9VonFtOsOZIjvQGmoraW8xJT+MrMDEZFuBpEU3ChAOfN9+ K55HL2AWlitWsJjliPpQGTC0vhq7lNeGr1R/TkOIhNpn1viDJPqsJMNGgx9MTnewns6t8iew0 CXLKwHA9Vm5wLnIXkCvyRFa4lmX5DviN2r422yzP1A42+k6bpBLc+mvoTaQjaP+xA2GyNGCBG Q9HxGc32Xvmjm+uWeCLS0UZ//2U9fEZnTG091iA7tOI0n6mg5Myavcf27zAzEliZnH4BnP4XW vJZkZl76voh+ycx+MeXMuBDoTl89AN9e8gLDoyC9ABCptOle3bSy4QW0G8JIVokQKfK1tI1Bq 3tkXgYqlstt9J5FkEaFfiRDD9RAxsCLpVTmRq+xGYtIFU9rMMDbixN9/F90kHdTfvj7wprTzD U+HQDcpbauu7+pWgcHA/fGqDf1x8qSd96qchzhLxcvo77Vw8eC2IrLiy5/i1JqnnXbKSODy3Y Yq2ytqWXP0aF1sDbQ6YJBLKqMFUoqXd3nU2scmpo0q8CpGE4gYYsBum2wxmf2e/5QeuHJStEJ z2snFelGTEQ51SiLNCR/fyMfclG4/CvA0sV2XYOEbnAbVwM3rOT2CqY6DBfkoo5EyUEK9UHWX zXqBWeQBXugzlP0Zzi8PdrTTVcxJUYRqC7vXDGtXfHop0mLxPX5+8ddZhUCvdtVDI19M1WP/4 4s9kOICodUV6fa0IDqZ3gUOFNNg/TY4yDDO5ILp4MnrReExYhNMtml0rA4zS/GbbpJNpzdwW8 4+3zNyfXFItTI/7iSagpcSmzQWOypRk/opkbbJkHN+aX6C1G4hqWb8UcZCCNm92b008JPPA2G 9jRARc+TBlCuKkOVEh5vvG6/axCCx68h/COjJ1jZO5Psje32T3MDaoFDXKOE+koxIh1WwhZcJ mE1QwIgnLfeT4RTnVCNVKrjGDGSwp5KOp/mNpNE1BrfjCjry4kkXNbxOevAXLudbyuSINmR1J b9vbsJpryeRoS2Aon2RxOXgyad64pmk3q8hulwgzHIOoCElMhIoojn/ZN7gr8xlVhr57XvRzH Cs/8+LH8XIbhQQw0ONu6xwOJK6e402j6OpADyfLf5E3rPoLmRPu31b7J3KBlOiVRlpW+ioVzK jBfJ/718EVt1OxPPECHU8JqaRRiKLqMpQH1Z/PyrdH2ohwXhyrmkkcWYIiX5pRd/TbubwLzMd UaBI+tyehTZe8zAA6DRTXlWeQ521RSqZz1IoiZGknU1TxtW+Dg089i1HgVm4gY5dJnMj+yGdQ 8hG286JT1RJeZ73da2Dhc8W+yotb3PEgtog28im3X29Y2Z7o3dqgIdnC6TXI/GornbE4aZUAw PUvqn4mMMR9x4jJGWNWXAZVw2jIPDgZkEZWRcruIMvP0NGxrdowE9EexXW0t/3ckYphvwolVU aLfp+tU7C5jklAcWjFlhRnrejwCfgEuEtN/ynuGWgXe3DNC9RM8XGaM/aj5K+1RRN8tPDRo2n TtBWpH/rvZNDz2IGeIQo2LIK7lLUKFGdlDAcwcxa/9+OzFx6eCvSlB8/FrPCrjNx7ZWIeu8Mb gLde6KRDmrCvE4d8WBk9ztUv4hFr8wg1CqtaxwC2hezNqleia+nKvPQ3D810xKnjeDns8INpA o3Sc89jcjLHEw3q2crnWmRWLIO34QcPV6p2+3B4qhYAJPrAMyoBv7xtXwt001bgP4RZuIh8aa 72wmIZUUKoRkYFJk4VvvghDJvuYI68jOWgCX0+s6GEtqxebgAow3az65SPm2twSafxmuBlwXo mTkEcpR9qvX9x+umdPsun1kBkPziJvNkYFHKq3FXB/aHAolSawTbaalpHhnwUbIrBtOLYYQYM 5RLQNIXjCXeMgMrSDIFK9hHTU3+REqweuXkt0UP4qKlfN3Gd59p9cOZWC9YiD+ThjMx79lDf6 protZEge3elZJuyVCyFt/5t/+RNIy0DBmsdOcnhqpQ24rBUIiizk+bRMIMhDkECmaSH2ThKrs W6SAWKU2ANm1KnXgIrcq6um9Sfxi4U06lGyE/cqK4m3EwR1nEawGpPkRMO2GClxpBpODaiT3d M6S4Ou+SGSZcdIyWJx9LfD8pCzaISSCKTC+li+/zoHlBbKeU49CgxQrrS85u2XAxbNlsPoDhe 9eLg7JQ8xC3mvhRIGyTTspqd4nHYT8LPGrEWb0Zt+JO55E7mDxh9J6Jfl7QXnKoQ22ROLyk4R 5TG8dJ5XXfIVb1dcX3nbJ4CKnXsNDlkMBoJjmsc4tWoVKFCBcHbM717aKrCluObtw9kyCIFdU ASTvXY6ij2hcyXb8zBloYcH0WEZ5viMsQk/pfG44Ep8DCHE+N1/fO4h25pTErf15V+r05JBK5 iRvLx/kxk4meQ1oPeh9tKDUFoa/vWoV891QhCY8jYTdXOXp4S3LeTWbLMT2j3AW7jB3x3R7Tf dqFsy5DhguBOJJPyfE/chilUag==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261002_081200_262549_D2DF3866 
-X-CRM114-Status: GOOD (  18.29  )
+X-CRM114-CacheID: sfid-20261002_083149_979377_5C81EFB1 
+X-CRM114-Status: GOOD (  15.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,97 +95,71 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Stefan,
+Hi Frank,
 
-On Thu, Oct 01, 2026 at 08:39:27PM +0300, Stefan D=F6singer wrote:
-> Hi,
-> =
+Am 23.09.26 um 11:19 schrieb Stefan Wahren:
+> Hi Frank,
+> hi Vinod,
+>
+> Am 21.09.26 um 16:46 schrieb Frank Li:
+>> On Mon, Sep 21, 2026 at 03:09:23PM +0200, Stefan Wahren wrote:
+>>> Hi Frank,
+>>>
+>>> Am 07.09.26 um 17:04 schrieb Stefan Wahren:
+>>>> This series adds support for the chargebyte Charge Control Y, which is
+>>>> an Electrical Vehicle Supply Equipment (EVSE) for MCS (Megawatt
+>>>> Charging System) charging stations.
+>>>>
+>>>> sashiko reported in the first version of the series [1] that 
+>>>> X_nRST_LAN
+>>>> is available via GPIO line names, but there is no reset mechanismn 
+>>>> in the
+>>>> device tree. This finding is valid. Since the reset line feature isn't
+>>>> implemented for LAN8651 driver yet, I like to proceed with the current
+>>>> version. The LAN8651 handles reset via SPI commands and in rare cases
+>>>> we still have the possibility to control the reset from userspace.
+>>>> Btw the pin has a pull resistor in hardware, so it's not floating.
+>>>>
+>>>> sashiko complained in the fourth version of the series [2] about the
+>>>> reset polarity of ethphy2 and the different drive strength across the
+>>>> data lines. Both is intended.
+>>>>
+>>>> [1] - 
+>>>> https://lore.kernel.org/linux-devicetree/20260818093147.E556C1F000E9@smtp.kernel.org/
+>>>> [2] - 
+>>>> https://lore.kernel.org/linux-devicetree/20260903082122.A777C1F000E9@smtp.kernel.org/
+>>>>
+>>>> Changes in V5:
+>>>> - fix delete-node for pinctrl_leds (reported by sashiko)
+>>>> - add Krzysztof's Reviewed-by
+>>> I didn't received any feedback for V5 yet. Do you have any comments 
+>>> or could
+>>> it be merged?
+>> Wait for vinod pick phy binding part.
+> @Vinod are you fine with both PHY bindings?
+>
+> @Frank I noticed that this patch has a conflict with the Makefile in 
+> linux-next. Should I rebase or do you resolve the conflict?
+would it be better if I rebase now and send a V6, I concerned that this 
+misses the cycle.
 
-> This pull request contains the device tree bindings and clock driver for
-> ZTE zx297520v3 boards. It contains the next step in adding support for
-> zx297520v3 boards: Documenting clock and reset manager hardware and
-> adding drivers for its PLLs and clock tree. This is v2 of the pull
-> request, based on v7.3-rc1 rather than clk-next.
-> =
-
-> The patches have been reviewed and carry appropriate R-B tags by
-> Krzysztof Kozlowski (bindings) and Brian Masney (clk driver).
-> =
-
-> The PR does not contain the MFD, reset and device tree patches. They
-> will be submitted to the MFD, reset and soc trees respectively. The
-> clock driver compiles without them, but won't be instantiated without
-> the MFD parent.
-> =
-
-> The following changes since commit cee9395acd8043be0644b25c34bfa86623f2b9=
-35:
-> =
-
->   Linux 7.3-rc1 (2026-08-30 13:34:40 -0700)
-> =
-
-> are available in the Git repository at:
-> =
-
->   https://gitlab.com/stefandoesinger/zx297520-kernel.git tags/v2-zx29-clk=
--for-7.4
-> =
-
-> for you to fetch changes up to 75e4151c9e157d84c8c6c365893ecf33d221bca5:
-> =
-
->   clk: zte: Introduce a driver for zx297520v3 LSP clocks (2026-10-01 20:2=
-0:43 +0300)
-> =
-
-> ----------------------------------------------------------------
-> clk: zte: Add clock drivers for zx297520v3 SoC
-> =
-
-> This tag contains the device tree bindings and clock driver for ZTE
-> zx297520v3 boards. It contains the next step in adding support for
-> zx297520v3 boards: Documenting clock and reset manager hardware and
-> adding drivers for its PLLs and clock tree.
-> =
-
-> The PR does not contain the MFD, reset and device tree patches. They
-> will be submitted to the MFD, reset and soc trees respectively. The
-> clock driver compiles without them, but won't be instantiated without
-> the MFD parent.
-> =
-
-> ----------------------------------------------------------------
-> Stefan D=F6singer (9):
->       dt-bindings: clk: zte: Add zx297520v3 top clock and reset controller
->       dt-bindings: clk: zte: Add zx297520v3 matrix clock and reset contro=
-ller
->       dt-bindings: clk: zte: Add zx297520v3 LSP clock and reset controller
->       clk: zte: Add Clock registration infrastructure
->       clk: zte: Add regmap-based clocks
->       clk: zte: Add zx PLL support infrastructure
->       clk: zte: Introduce a driver for zx297520v3 top clocks
->       clk: zte: Introduce a driver for zx297520v3 matrix clocks
->       clk: zte: Introduce a driver for zx297520v3 LSP clocks
-
-The commits in the pull have the changelog in the commit message. For
-example:
-
-https://gitlab.com/stefandoesinger/zx297520-kernel/-/commit/75e4151c9e157d8=
-4c8c6c365893ecf33d221bca5
-
-I went to the last series and cherry picked the relevant commits.
-
-Brian
+Best regards
+>
+> Best regards
+>>
+>> Frank
+>>
+>>> Best regards
+>>>
+>
 
 
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
