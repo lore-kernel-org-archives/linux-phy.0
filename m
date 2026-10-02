@@ -4,55 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E08DCA5FC4
-	for <linux-phy@archiver.kernel.org>; Fri,  2 Oct 2026 09:41:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4BF21CA5FE3
+	for <linux-phy@archiver.kernel.org>; Fri,  2 Oct 2026 09:41:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=sYGIhFu4uEfZ7F1JtSivdoGrd0sAsXGBaYrc+q0GjnI=; b=qLKlX5U4qLQHTu
-	G+IppLgWvgQhA23xUfpTsPO4PHXMZf1sZnejbzbWysFvjFBvvhJ8SDtDaCddlgs5xTOfABGB3FRbk
-	upxZkDkS+7l1eZ0ZHG4n4i/NXf9YBHfBthLLTFjsGxunqSKACFcX4nU/zGSHUizzS0neQQ7rKTRaK
-	usC2ckMNY5Gr0j++5k6dEQGgZJjhLnahPxWIcrGIYKT91c9P+1GljAym7vVPfIj2eDaXjl/yPpb50
-	khCSTgpXO35+TbeIWEj4UKFnaCag5M40HE9BDrkEupvJw6WVVkbMjdb8jDdI3r5TdGfS5FVa35Qg0
-	0tg+uLBHtJpi54yCY8cg==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OVFQ+upVfQCEsxUwYMjklBZV4HEVU2ZvkDaxW90+ZtI=; b=uNAYA5QCjelQQS
+	DSV/tHMq4rbALQ++ZrpFx++tVz6O4aI8V/jiYqszVv3iPaIfqN5f4suxrUZBcz+6LmOIag3NhB+Cr
+	lAjWvHXVIV11Y7EM9sr1OusqIcgyG1GAEwl7MM+GqEBr7HIfEPXYAu79Un8AC3qfutfgk0ym6C66z
+	w0sa2AbirAyGxYRk6FmR6r/U4XGolY21n9wVWoqo6ugqv0TOMqNrRh75nqooHHQtc08LtGN50n//5
+	RQ0ZUQtC1sqxzmUOESZjd5ukP4TArMJDvew41OSZfhll5E5wkkMau+LQXad6eq7XuNV+3S5M9KE+p
+	3phLvaSct6qQulIoq0Iw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCZla-0000000BBSj-28DW;
-	Fri, 02 Oct 2026 09:41:22 +0000
+	id 1xCZlf-0000000BBUX-0236;
+	Fri, 02 Oct 2026 09:41:27 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCZlZ-0000000BBSd-3jzQ
+	id 1xCZld-0000000BBTf-1BwS
 	for linux-phy@lists.infradead.org;
-	Fri, 02 Oct 2026 09:41:21 +0000
+	Fri, 02 Oct 2026 09:41:25 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 71EB444816;
-	Fri,  2 Oct 2026 09:41:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D60511F000FF;
-	Fri,  2 Oct 2026 09:41:19 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 0FB48423D7;
+	Fri,  2 Oct 2026 09:41:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7378C1F00898;
+	Fri,  2 Oct 2026 09:41:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790934080;
-	bh=z5TQabQ1D2Wa2nsxYdARNxqVeVCpmXXD7CYEGzmCmfk=;
-	h=From:Subject:Date:To:Cc;
-	b=gHEaho+tFGkSLCtGFfeiQN/c2wsxWmdyritOOHdIqSSRsPljQxpZw2q2MnXX94yJ8
-	 +pXL4AelwU1bxvnwASOSy0iApcoKitYbsCHEbqjnetKWSlgbTz1zusn/Qjz8I5JEEm
-	 EhKlYYaoJaWSFG17PdPwtFDXAhqpHL5JL3zjKiZqrluBbL6MmmivO4SS1vDs34nN2U
-	 YPGZizwMPOJUVel5zJ/YG4fpdRqGB3UqpkZ8bCgacTIa39pkqLGQlCLwez26Fje8mq
-	 yXkLVdX7Scd8YAZwY4ES2OyPpSne3mEH2oasZmtcURUR0vu9HY/+2ykHLdBvxuSjzR
-	 BydMSGzy35Ecw==
+	s=k20260515; t=1790934084;
+	bh=bWHrESK9oTrjK0HunS9kcXpOHvZY9XPBn4hjN9hzQrk=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc;
+	b=E7fImYBuMM90xfg+6/+564eKF0j7tZeyZI638i0OlZ2qm9UL5o8TChDBIITtb98Ow
+	 BmbJLuW99c692JA3OMtDvpz8ewJ1g+jW07jAMCJnc+ZVGL5Egw2guRrtBQu5fEFwuO
+	 jTUKSSgb+l/bncp6Yl0SdOI7zr/seEkGNl9IG73qXov0Kz/bdeqvOTp4/+KnJ7DBnI
+	 65PzrGzqohauKiNxY23Cb6Va9Famjq/0FmwNaJY1Kp6sO3lWbJ28iPYgXw5SdQrOPG
+	 /ohiTIq6LvpYN4GW0Ew1TiIS+xlCgcmPmzhy3s212qIeHyIEFwGCmdRjqHXOODP8pD
+	 emDSJFluBOL+Q==
 From: Mattijs Korpershoek <mkorpershoek@kernel.org>
-Subject: [PATCH v3 0/2] Add support for SA8255P in the
- phy-qcom-snps-femto-v2 phy driver
-Date: Fri, 02 Oct 2026 11:41:08 +0200
-Message-Id: <20261002-phy-qcom-snps-femto-v2-8255-v3-0-342542bd9bc6@kernel.org>
+Date: Fri, 02 Oct 2026 11:41:10 +0200
+Subject: [PATCH v3 2/2] phy: qcom-snps-femto-v2: Add support for SA8255P
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAAAAAAAC/33NQQ6CMBRF0a2Qjv2mLRaKI/dhHFD4hapQbLGRE
- PYuoIlxwvAlL+eOxKMz6MkxGonDYLyx7TziXUSKOm8rBFPOm3DKE5ryDLp6gEdhG/Bt50Fj01s
- IHCQXAjKqNaZJeqCUkVnoHGrzWvXz5bP9U12x6BdyedTG99YNaz6w5fctxXSzFBhQkEoqLRgVe
- SJPN3Qt3vfWVWRJBf7DZMy2MT5jZZGwLNW6RKb+sGma3hsfvSgmAQAA
-X-Change-ID: 20260729-phy-qcom-snps-femto-v2-8255-90ffe7674001
+Message-Id: <20261002-phy-qcom-snps-femto-v2-8255-v3-2-342542bd9bc6@kernel.org>
+References: <20261002-phy-qcom-snps-femto-v2-8255-v3-0-342542bd9bc6@kernel.org>
+In-Reply-To: <20261002-phy-qcom-snps-femto-v2-8255-v3-0-342542bd9bc6@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -60,19 +56,18 @@ To: Vinod Koul <vkoul@kernel.org>,
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  Mattijs Korpershoek <mkorpershoek@kernel.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
  Sriram Dash <quic_sriramd@quicinc.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2537;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=7859;
  i=mkorpershoek@kernel.org; h=from:subject:message-id;
- bh=I8f5JVoGmYDVjbiGqZNXzfuTNyuO3ICuUx0Wq4F5izs=;
- b=owEBbQGS/pANAwAKARkNHbRmThk1AcsmYgBqv3w9hnrrBoEgCdv0712HwcQje9sxyuuC0yIsO
- /ka581UUrqJATMEAAEKAB0WIQQu6UKnth9qvlMTrQAZDR20Zk4ZNQUCar98PQAKCRAZDR20Zk4Z
- NRbRCADAo0Fs6PgYxQF6rmqaMirfmreTdVzVPTBv4xtEl74LHBoi5Sv5egDQwxm7CSdRmTu3Gjx
- rr5H8QuGmysZAGwf+z59nogdWiMO3LB0WwBojHwoywEKlUlD2wYdxqv7X2044dAxVyHCedu/CKy
- jaItHiNrQaWb8qI2dVP1d7q+trNZ8OgHmfyLyyULSybiurgA74Nn0xnuemll1yWfzhXSdZ+i6ex
- wYQTkcytoGOiF2e+8Zl6NS01owXB7sKR4yYIQeJw3rqzRX/02b3Uo0/Pf93Hd/nqvxp8xR5w8aZ
- XqOAG+0rOfJ+FQr+CNjyz/CjNYg+Cu+iBo+VS9JN2GBsu58H
+ bh=SOWJEBkcPX+Lj3ns9r/5JduDnG3bstl6L0j/AF/OvMY=;
+ b=owEBbQGS/pANAwAKARkNHbRmThk1AcsmYgBqv3w+tCcQQGkgRlRMK7P7TI1O1uFR9aUup4yxl
+ t/SUphR+w+JATMEAAEKAB0WIQQu6UKnth9qvlMTrQAZDR20Zk4ZNQUCar98PgAKCRAZDR20Zk4Z
+ NbQ6B/9C+UkHRFjAt5UNxIeXKX/UIkf15RDBIvcJl0UQhYuAVaLsem1LCQN7J+FBrHyrdUC7taS
+ Ky9r/wunO2lzjj4fZc2xorBvlZK73x6oYn0IzuxU4+b07DUUxc0XByNWitCsZouuaJnr813OVPG
+ uqbL9yNGG47F5KExlQ/b7EdaZiMlr+1i3RREmQ2lZGpakLfCvh6x1t6gpNopHQXnz6dNmgphrRu
+ H3UYg30kSi2/iNkX/LA00Gu26Vr/1lrINHzFWuQPyVvp/41ldznM8pisrv03BI6jkBSWuSaRJLK
+ JFwWpeaZSRA91U8s3Xcz924k4F6mBBVGqcQreTEB1Wm3MeEs
 X-Developer-Key: i=mkorpershoek@kernel.org; a=openpgp;
  fpr=8234A35B45C0D26B31C1A2DA570338B018144F28
 X-BeenThere: linux-phy@lists.infradead.org
@@ -91,6 +86,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+From: Sriram Dash <quic_sriramd@quicinc.com>
+
 The Qualcomm automotive SA8255p SoC relies on firmware to configure
 platform resources, including clocks, interconnects and TLMM.
 The driver requests resources operations over SCMI using power protocols.
@@ -102,53 +99,250 @@ such as resume/suspend, to control power on/off.
 Power domain "core" controls the GDSC, resets, and TLMM (GPIOs)
 whereas power domain "transfer" controls clocks and interconnects.
 
-Patch 1 adds the binding for sa8255p. Similarly to what has been done
-for I2C [1], this is a separate binding.
+In this variant, two disjoint sets of resources are modeled against
+the power domain suppliers which can be turned on/off to achieve modeled
+device states. Two modeled low power states d1 and d3 are supported.
 
-Patch 2 adds the driver change, which is based on a public vendor
-patch from qualcomm [2].
-I did the following changes on top of that:
-* Use devm_add_action_or_reset() for dev_pm_domain_detach_list() instead
-  of implementing a driver .remove()
-* Changed power domain names to drop 'usb_' prefix
-* Fixed various error handling paths
-* Added suspend/resume support
+transition: d0 <--> d3  :: both core and transfer suppliers
+transition: d0 <--> d1  :: only transfer supplier
 
-This has been tested on next-20260728 with a Ride4 SA8775P board that
-has SCMI firmware (which is compatible).
-
-[1] https://lore.kernel.org/all/20260617-enable-i2c-on-sa8255p-v7-1-ad736dbeab57@oss.qualcomm.com/
-[2] https://git.codelinaro.org/clo/le/meta-qti-auto-kernel/-/blob/LY.AU.0.1.0.r1-16800-gen4meta.0/recipes-kernel/linux/files/usb/0014-PENDING-phy-qcom-snps-femto-v2-Add-support-for-SA825.patch
-
+Signed-off-by: Sriram Dash <quic_sriramd@quicinc.com>
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 Signed-off-by: Mattijs Korpershoek <mkorpershoek@kernel.org>
 ---
-Changes in v3:
-- Applied R-b from Krzysztof and Neil
-- Link to v2: https://patch.msgid.link/20260831-phy-qcom-snps-femto-v2-8255-v2-0-dc6197ffde1b@kernel.org
+ drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 127 ++++++++++++++++++++++++--
+ 1 file changed, 118 insertions(+), 9 deletions(-)
 
-Changes in v2:
-- Move 'core' as first domain, before 'transfer' (Krzysztof)
-- Reworded binding commit message to be more precise about the various
-  domains ('core', 'transfer' and 'perf') (Krzysztof)
-- Link to v1: https://patch.msgid.link/20260730-phy-qcom-snps-femto-v2-8255-v1-0-8b8bf5105a68@kernel.org
+diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+index 980ad1fb1e2e..9fdf7ae681b6 100644
+--- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
++++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+@@ -12,6 +12,7 @@
+ #include <linux/of.h>
+ #include <linux/phy/phy.h>
+ #include <linux/platform_device.h>
++#include <linux/pm_domain.h>
+ #include <linux/regmap.h>
+ #include <linux/regulator/consumer.h>
+ #include <linux/reset.h>
+@@ -95,6 +96,7 @@ struct override_param_map {
+ 	u8 table_size;
+ 	u8 reg_offset;
+ 	u8 param_mask;
++	bool fw_managed;
+ };
+ 
+ struct phy_override_seq {
+@@ -121,6 +123,7 @@ struct phy_override_seq {
+  * @phy_initialized: if PHY has been initialized correctly
+  * @mode: contains the current mode the PHY is in
+  * @update_seq_cfg: tuning parameters for phy init
++ * @pd_list: list of power domains associated with the device
+  */
+ struct qcom_snps_hsphy {
+ 	struct device *dev;
+@@ -136,8 +139,81 @@ struct qcom_snps_hsphy {
+ 	bool phy_initialized;
+ 	enum phy_mode mode;
+ 	struct phy_override_seq update_seq_cfg[NUM_HSPHY_TUNING_PARAMS];
++
++	struct dev_pm_domain_list *pd_list;
+ };
+ 
++static void qcom_snps_domain_detach(void *data)
++{
++	struct qcom_snps_hsphy *hsphy = data;
++
++	dev_pm_domain_detach_list(hsphy->pd_list);
++}
++
++static int qcom_snps_domain_attach(struct qcom_snps_hsphy *hsphy)
++{
++	struct dev_pm_domain_attach_data pd_data = {
++		.pd_flags       = PD_FLAG_NO_DEV_LINK,
++		.pd_names       = (const char*[]) { "core", "transfer" },
++		.num_pd_names   = 2,
++	};
++	struct device *dev = hsphy->dev;
++	int ret;
++
++	ret = dev_pm_domain_attach_list(dev, &pd_data, &hsphy->pd_list);
++	if (ret < 0)
++		return dev_err_probe(dev, ret, "domain attach failed\n");
++
++	return 0;
++}
++
++/* d3_to_d0 transition by turning on all the suppliers */
++static int qcom_snps_d3_to_d0(struct qcom_snps_hsphy *hsphy)
++{
++	int ret;
++
++	if (!hsphy->pd_list)
++		return 0;
++
++	ret = pm_runtime_resume_and_get(hsphy->pd_list->pd_devs[0]);
++	if (ret)
++		return ret;
++
++	ret = pm_runtime_resume_and_get(hsphy->pd_list->pd_devs[1]);
++	if (ret)
++		pm_runtime_put_sync(hsphy->pd_list->pd_devs[0]);
++
++	return ret;
++}
++
++/* d0_to_d3 transition by turning off all the suppliers */
++static void qcom_snps_d0_to_d3(struct qcom_snps_hsphy *hsphy)
++{
++	if (!hsphy->pd_list)
++		return;
++
++	pm_runtime_put_sync(hsphy->pd_list->pd_devs[1]);
++	pm_runtime_put_sync(hsphy->pd_list->pd_devs[0]);
++}
++
++/* d1_to_d0 transition by turning on the 'transfer' supplier */
++static int qcom_snps_d1_to_d0(struct qcom_snps_hsphy *hsphy)
++{
++	if (!hsphy->pd_list)
++		return 0;
++
++	return pm_runtime_resume_and_get(hsphy->pd_list->pd_devs[1]);
++}
++
++/* d0_to_d1 transition by turning off the 'transfer' supplier */
++static void qcom_snps_d0_to_d1(struct qcom_snps_hsphy *hsphy)
++{
++	if (!hsphy->pd_list)
++		return;
++
++	pm_runtime_put_sync(hsphy->pd_list->pd_devs[1]);
++}
++
+ static int qcom_snps_hsphy_clk_init(struct qcom_snps_hsphy *hsphy)
+ {
+ 	struct device *dev = hsphy->dev;
+@@ -196,6 +272,8 @@ static int qcom_snps_hsphy_suspend(struct qcom_snps_hsphy *hsphy)
+ 					   0, USB2_AUTO_RESUME);
+ 	}
+ 
++	qcom_snps_d0_to_d1(hsphy);
++
+ 	return 0;
+ }
+ 
+@@ -203,7 +281,7 @@ static int qcom_snps_hsphy_resume(struct qcom_snps_hsphy *hsphy)
+ {
+ 	dev_dbg(&hsphy->phy->dev, "Resume QCOM SNPS PHY, mode\n");
+ 
+-	return 0;
++	return qcom_snps_d1_to_d0(hsphy);
+ }
+ 
+ static int __maybe_unused qcom_snps_hsphy_runtime_suspend(struct device *dev)
+@@ -316,6 +394,10 @@ static const struct override_param ls_fs_output_impedance_sc7280[] = {
+ 	{ 1310, 0 },
+ };
+ 
++static const struct override_param_map sa8255p_snps_hs_phy = {
++	.fw_managed = true,
++};
++
+ static const struct override_param_map sc7280_snps_7nm_phy[] = {
+ 	{
+ 		"qcom,hs-disconnect-bp",
+@@ -390,9 +472,15 @@ static int qcom_snps_hsphy_init(struct phy *phy)
+ 
+ 	dev_vdbg(&phy->dev, "%s(): Initializing SNPS HS phy\n", __func__);
+ 
++	ret = qcom_snps_d3_to_d0(hsphy);
++	if (ret < 0) {
++		dev_err(hsphy->dev, "Failed to transition to d0 state\n");
++		return ret;
++	}
++
+ 	ret = regulator_bulk_enable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
+ 	if (ret)
+-		return ret;
++		goto transition_to_d3;
+ 
+ 	ret = clk_bulk_prepare_enable(hsphy->num_clks, hsphy->clks);
+ 	if (ret) {
+@@ -472,6 +560,8 @@ static int qcom_snps_hsphy_init(struct phy *phy)
+ 	clk_bulk_disable_unprepare(hsphy->num_clks, hsphy->clks);
+ poweroff_phy:
+ 	regulator_bulk_disable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
++transition_to_d3:
++	qcom_snps_d0_to_d3(hsphy);
+ 
+ 	return ret;
+ }
+@@ -485,6 +575,8 @@ static int qcom_snps_hsphy_exit(struct phy *phy)
+ 	regulator_bulk_disable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
+ 	hsphy->phy_initialized = false;
+ 
++	qcom_snps_d0_to_d3(hsphy);
++
+ 	return 0;
+ }
+ 
+@@ -496,6 +588,10 @@ static const struct phy_ops qcom_snps_hsphy_gen_ops = {
+ };
+ 
+ static const struct of_device_id qcom_snps_hsphy_of_match_table[] = {
++	{
++		.compatible	= "qcom,sa8255p-usb-hs-phy",
++		.data		= &sa8255p_snps_hs_phy,
++	},
+ 	{ .compatible	= "qcom,sm8150-usb-hs-phy", },
+ 	{ .compatible	= "qcom,usb-snps-hs-5nm-phy", },
+ 	{
+@@ -565,6 +661,7 @@ static int qcom_snps_hsphy_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+ 	struct qcom_snps_hsphy *hsphy;
++	const struct override_param_map *cfg;
+ 	struct phy_provider *phy_provider;
+ 	struct phy *generic_phy;
+ 	int ret, i;
+@@ -580,14 +677,26 @@ static int qcom_snps_hsphy_probe(struct platform_device *pdev)
+ 	if (IS_ERR(hsphy->base))
+ 		return PTR_ERR(hsphy->base);
+ 
+-	ret = qcom_snps_hsphy_clk_init(hsphy);
+-	if (ret)
+-		return dev_err_probe(dev, ret, "failed to initialize clocks\n");
++	cfg = of_device_get_match_data(dev);
++
++	if (cfg && cfg->fw_managed) {
++		ret = qcom_snps_domain_attach(hsphy);
++		if (ret)
++			return ret;
++
++		ret = devm_add_action_or_reset(dev, qcom_snps_domain_detach, hsphy);
++		if (ret)
++			return ret;
++	} else {
++		ret = qcom_snps_hsphy_clk_init(hsphy);
++		if (ret)
++			return dev_err_probe(dev, ret, "failed to initialize clocks\n");
+ 
+-	hsphy->phy_reset = devm_reset_control_get_exclusive(&pdev->dev, NULL);
+-	if (IS_ERR(hsphy->phy_reset)) {
+-		dev_err(dev, "failed to get phy core reset\n");
+-		return PTR_ERR(hsphy->phy_reset);
++		hsphy->phy_reset = devm_reset_control_get_exclusive(&pdev->dev, NULL);
++		if (IS_ERR(hsphy->phy_reset)) {
++			dev_err(dev, "failed to get phy core reset\n");
++			return PTR_ERR(hsphy->phy_reset);
++		}
+ 	}
+ 
+ 	num = ARRAY_SIZE(hsphy->vregs);
 
----
-Mattijs Korpershoek (1):
-      dt-bindings: phy: Add sa8255p high-speed USB PHY
-
-Sriram Dash (1):
-      phy: qcom-snps-femto-v2: Add support for SA8255P
-
- .../bindings/phy/qcom,sa8255p-usb-hs-phy.yaml      |  52 +++++++++
- drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c      | 127 +++++++++++++++++++--
- 2 files changed, 170 insertions(+), 9 deletions(-)
----
-base-commit: e30626823a406725ce29bc75cb8ec467d3e1e326
-change-id: 20260729-phy-qcom-snps-femto-v2-8255-90ffe7674001
-
-Best regards,
 -- 
-Mattijs Korpershoek <mkorpershoek@kernel.org>
+2.55.0
 
 
 -- 
