@@ -4,57 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96969CA5FDD
-	for <linux-phy@archiver.kernel.org>; Sat,  3 Oct 2026 09:36:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD77ECA5FE3
+	for <linux-phy@archiver.kernel.org>; Sat,  3 Oct 2026 09:36:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qUboyrK7lMvQ3eNWkc1IBz68Pb+aMPFAJghhtTD5j0k=; b=mmH9Ej2XSti8I9
-	6eY+WFAZ2awMB1EUe2idz89KjcHxIuOQgr7CraSsruSogP1cAeCi+4e9UrN7A3A3B0c8nqEvC8s5H
-	p0DGEl3kB2rf/JNMxrxqvFkIp4OghJvYTvBauaFTlUvjQzu2hy0gqYDiuN7Mo7JExD8kArspEPUy3
-	nKp3dp1MxkVE590rP8/H5JmrFT5Hv1cv4/Qmi/gc6s3gPRAYW1yp7mBxDgWHhr8mW2grFBuXVT3z+
-	mPETdHo35N80pkqYRQBz9Hl041h415PYC2mVwatvehuDIFnNtotVmJbY96TLShomIJUIbfFmZGJ85
-	/UAQ76jnXsVdtm3JLVGw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2PWKgBoLqPiDQMyD1NmCoYiSz4zyg3r7jJFzlwRGZvQ=; b=zCN1Gl50W5G+mK
+	KphmezvdqqM2g9HZk7livDO0ZLKztAsBlr+aanVV4Up831zjfcbOKPkF8tArHkk0gwtAcWz/VLq0d
+	ROtUVp52MwhXhM1K6jpwLrObOJ2SgqrTPMTWblH1Za50ww5TVh3XmX6lQRXF0iRaRq4UI2BcFnCvP
+	SQor97aUz6I3c9VMU1gmvzGHDW78yda4KzCeuZR74Ra/uTBgK+aGNrp8rUqST1YO7fJekgjAoW6Yd
+	z4HMoFpJQFpVd2RMjYu5hKzgYGDB8PJGPugEO07Nj8aQw6fidNJPGmXruWbgIpD0CCaU1JFZi6hQS
+	Mq8gF7nfctfvbzHrRrmA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCwAA-0000000DHhU-0QEr;
-	Sat, 03 Oct 2026 09:36:14 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xCwAK-0000000DHiE-0bY7;
+	Sat, 03 Oct 2026 09:36:24 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCwA9-0000000DHhO-1S0Y
+	id 1xCwAJ-0000000DHi8-1SVQ
 	for linux-phy@lists.infradead.org;
-	Sat, 03 Oct 2026 09:36:13 +0000
+	Sat, 03 Oct 2026 09:36:23 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id B970E4359F;
-	Sat,  3 Oct 2026 09:36:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 41D7C1F0089B;
-	Sat,  3 Oct 2026 09:36:09 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 78477602C2;
+	Sat,  3 Oct 2026 09:36:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 98B001F0089B;
+	Sat,  3 Oct 2026 09:36:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791020172;
-	bh=LHVi8YAWKqT0hgLh9GC7pntaEBOAfqv6q1MAwH2fQJg=;
-	h=From:To:Cc:Subject:Date;
-	b=OP7q66tzWK07mFyoLAtSt1E1AtDcs0/Dslh2s/vk7g0IODypVeYs8RJktqbK4P/Km
-	 TkTbzlJCGgmMMI0AsasrU4a8LFnG5NDonsAU1OL4NY+DVOoChsGWD6UtBmiwzDQIwv
-	 KdYgCwt7hXZYqKNend4t1AgNvzVEdo4BJsuPTpwAThwPEkyD4tuQWT+VuqvMONVOAu
-	 wJkhneCvlEjpOpCSmcTZNR4ZmPyeOejl6EA2kEk3u2Xpg6QN5BVdFAB0osTgSuRGcY
-	 jqb3ndAAyhaKrA4BihNN0aqEnsT5kTws/eHjtg7lK4sjaaOXJXqPApfBZtYDVdzpfu
-	 UG8tvpN3ZaUYA==
+	s=k20260515; t=1791020182;
+	bh=FWcGi/CHS/a4B/lMqSn+qerEcKaHZX/sUv9NmysE1Hc=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date;
+	b=ENoKWe8yidcvyJffyu1+2Qy3LoB4l28Rb/Llq6oZuvybneqkCSvo+13aX5ryXsdoM
+	 OxFMFXJ2g3fIUnQ2wkQsvWS5qJXzzJF3N4KUEKdZT/xn8oYOKKImIr6MaSrzX7Zd+D
+	 KuT+yzeZU1wpW39GSWveU0zmdSF+pNaAr1TUq4unKmVeqg5/sKQziZks8PPSV7JDZq
+	 BKfpz3Ltewwvn1lE5CnjwzI4V/Y+/pnGp4Tg1HLtKJrj6ouO6HAhOCnWEXLpHjtdYr
+	 BJ57ih1PnBR6URXx8ZaiUS0Kxl+yWCtWGawKBaeEV2aPKOKqJSZUGwdQbvGl6QomUE
+	 5ty+Mc3oX9s6g==
 From: Vinod Koul <vkoul@kernel.org>
-To: linux-phy@lists.infradead.org
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Vladimir Oltean <olteanv@gmail.com>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
-	Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-Subject: [PATCH] phy: qcom: qmp-pcie: drop unused reset names
-Date: Sat,  3 Oct 2026 11:35:59 +0200
-Message-ID: <20261003093559.199326-1-vkoul@kernel.org>
-X-Mailer: git-send-email 2.53.0
+To: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ Akash Sukhavasi <akash.sukhavasi@gmail.com>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20260708-b4-hi3670-v1-1-f9236f3e585c@gmail.com>
+References: <20260708-b4-hi3670-v1-1-f9236f3e585c@gmail.com>
+Subject: Re: [PATCH] phy: HiSilicon: Fix error handling in
+ hi3670_pcie_allclk_ctrl()
+Message-Id: <179102018033.199361.1412125804515687799.b4-ty@kernel.org>
+Date: Sat, 03 Oct 2026 11:36:20 +0200
 MIME-Version: 1.0
+X-Mailer: b4 0.14.3
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -66,41 +67,34 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Q29tbWl0IGUzOTdjODUwN2UzNiAoInBoeTogcWNvbTogcW1wLXBjaWU6IEFkZCBOb3JkIEdlbjV4
-MTYgUENJZQptdWx0aS1QSFkgc3VwcG9ydCIpIGFkZGVkIGEgYnVuY2ggb2YgcmVzZXQgbmFtZXMs
-IGJ1dCBhbHNvIGFkZGVkIHR3bwp3aGljaCBhcmUgbm90IGJlaW5nIHVzZWQuCgpUaGlzIGxlYWRz
-IHRvIGNvbXBpbGVyIHdhcm5pbmdzOgpkcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAt
-cGNpZS1tdWx0aXBoeS5jOjc1MDoyNzogZXJyb3I6IOKAmG5vcmRfcGNpZXBoeV9wb3J0X2Jfbm9j
-c3JfcmVzZXRfbOKAmSBkZWZpbmVkIGJ1dCBub3QgdXNlZCBbLVdlcnJvcj11bnVzZWQtY29uc3Qt
-dmFyaWFibGU9XQogIDc1MCB8IHN0YXRpYyBjb25zdCBjaGFyICogY29uc3Qgbm9yZF9wY2llcGh5
-X3BvcnRfYl9ub2Nzcl9yZXNldF9sW10gPSB7CiAgICAgIHwgICAgICAgICAgICAgICAgICAgICAg
-ICAgICBefn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn4KZHJpdmVycy9waHkvcXVhbGNv
-bW0vcGh5LXFjb20tcW1wLXBjaWUtbXVsdGlwaHkuYzo3NDY6Mjc6IGVycm9yOiDigJhub3JkX3Bj
-aWVwaHlfcG9ydF9hX25vY3NyX3Jlc2V0X2zigJkgZGVmaW5lZCBidXQgbm90IHVzZWQgWy1XZXJy
-b3I9dW51c2VkLWNvbnN0LXZhcmlhYmxlPV0KICA3NDYgfCBzdGF0aWMgY29uc3QgY2hhciAqIGNv
-bnN0IG5vcmRfcGNpZXBoeV9wb3J0X2Ffbm9jc3JfcmVzZXRfbFtdID0gewogICAgICB8ICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgXn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+CgpE
-cm9wIHRoZXNlCgpGaXhlczogZTM5N2M4NTA3ZTM2ICgicGh5OiBxY29tOiBxbXAtcGNpZTogQWRk
-IE5vcmQgR2VuNXgxNiBQQ0llIG11bHRpLVBIWSBzdXBwb3J0IikKU2lnbmVkLW9mZi1ieTogVmlu
-b2QgS291bCA8dmtvdWxAa2VybmVsLm9yZz4KLS0tCiBkcml2ZXJzL3BoeS9xdWFsY29tbS9waHkt
-cWNvbS1xbXAtcGNpZS1tdWx0aXBoeS5jIHwgOCAtLS0tLS0tLQogMSBmaWxlIGNoYW5nZWQsIDgg
-ZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20t
-cW1wLXBjaWUtbXVsdGlwaHkuYyBiL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1w
-Y2llLW11bHRpcGh5LmMKaW5kZXggZjEyNjc2OTFiZjMyLi43YmM2MmE2NjhkMzQgMTAwNjQ0Ci0t
-LSBhL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1wY2llLW11bHRpcGh5LmMKKysr
-IGIvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXBjaWUtbXVsdGlwaHkuYwpAQCAt
-NzQzLDE0ICs3NDMsNiBAQCBzdGF0aWMgY29uc3QgY2hhciAqIGNvbnN0IG5vcmRfcGNpZXBoeV9w
-b3J0X2FiY2RfcmVzZXRfbFtdID0gewogCSJwb3J0X2EiLCAicG9ydF9iIiwgInBvcnRfYyIsICJw
-b3J0X2QiLAogfTsKIAotc3RhdGljIGNvbnN0IGNoYXIgKiBjb25zdCBub3JkX3BjaWVwaHlfcG9y
-dF9hX25vY3NyX3Jlc2V0X2xbXSA9IHsKLQkicG9ydF9hX25vY3NyIiwKLX07Ci0KLXN0YXRpYyBj
-b25zdCBjaGFyICogY29uc3Qgbm9yZF9wY2llcGh5X3BvcnRfYl9ub2Nzcl9yZXNldF9sW10gPSB7
-Ci0JInBvcnRfYl9ub2NzciIsCi19OwotCiBzdGF0aWMgY29uc3QgY2hhciAqIGNvbnN0IG5vcmRf
-cGNpZXBoeV9wb3J0X2Nfbm9jc3JfcmVzZXRfbFtdID0gewogCSJwb3J0X2Nfbm9jc3IiLAogfTsK
-LS0gCjIuNTMuMAoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LXBoeQo=
+
+On Wed, 08 Jul 2026 16:31:00 -0500, Akash Sukhavasi wrote:
+> When hi3670_pcie_pll_ctrl() fails, hi3670_pcie_allclk_ctrl() returns
+> -EINVAL directly, skipping the close_clocks cleanup path. This leaves
+> the PLL with its power-down bit cleared.
+> 
+> Use goto close_clocks instead, which disables the PLL and propagates
+> the original error code from hi3670_pcie_pll_ctrl().
+> 
+> [...]
+
+Applied, thanks!
+
+[1/1] phy: HiSilicon: Fix error handling in hi3670_pcie_allclk_ctrl()
+      commit: 7540fc0a4f667b6773d10753a602a42a3113087b
+
+Best regards,
+-- 
+~Vinod
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
