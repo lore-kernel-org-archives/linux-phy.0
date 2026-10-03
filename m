@@ -4,60 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 428CDCA5FDD
-	for <linux-phy@archiver.kernel.org>; Sat,  3 Oct 2026 20:50:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 599C8CA5FDD
+	for <linux-phy@archiver.kernel.org>; Sat,  3 Oct 2026 21:13:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GW5QGI1+HFJkFKIA1H3iEiCYQ2BL6GcQpkYJG3+YQR0=; b=xSdonrSc0E1zsU
-	WlT2wsq0qgT0DQbxT6aW70SdX5We1ev5JwJ8kzHtYSjqoyE9mLU0PnJwYtmFIJ3EGk2Bui0E6cRoR
-	9XxOcrxn2d1CYUYN49SOv1qfyQDepcNhhSweXLamaIlUlTB+IhZ4GYKtR6ZGLFYZIgCYkpfxXrWcE
-	X/JvI4mg0TB5aRJ30dCxJrTdStK9P0mJGPhTBeVXnQnoJBwvkFAy52LMNG7nydrtnOmaAYxi4kTKQ
-	GcmpLtcLzkyrXSWZBf2P/1S22ML9RmBYJIiuand4tUjht6W/LqRzICAT6ySwh5ANrPN8lPXn678Y/
-	JiOkzCebQh0Wp+UdkQKg==;
+	List-Owner; bh=PoWYL/7IFEi5Hvy9z1RuLC8AoSDlQ+/15tBd66Ax3hI=; b=LfKLfVHbTPpFlp
+	Rmdu8ncDmb6PHQRRklrF2TGhiK4XBUjTWXEbalK+ZI+izh7A60BTNCZx/GSKxr3hF7CBaW1rbmsAk
+	LmX38xgWW9YUVkd3nPc+38S/U2pw51/xlA7Um7DA1FPEbccMqEL1YsVN+Fif34DeROy2/tu4NzC5V
+	FmhTZQOKXotFlt8FyyvJbAg5QucafC/5BvaoYubOC0UyOhwvKnDMs9M+a4SCi655kEFCsqGmXHXqm
+	rgXi6xfe8hkJSmrJLRS47eV4i8JWU+sCFJyLJb9MXrc3d6ORXNjY2N1MREyEIkR2PbxvUi7Ryf61z
+	fdZAaWNA5vPOvvJqZZ6A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xD6gD-0000000E2B4-012S;
-	Sat, 03 Oct 2026 20:50:01 +0000
+	id 1xD72v-0000000E3qZ-3DZH;
+	Sat, 03 Oct 2026 21:13:29 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xD6gB-0000000E2AK-2DWE
+	id 1xD72u-0000000E3q5-3hvm
 	for linux-phy@lists.infradead.org;
-	Sat, 03 Oct 2026 20:49:59 +0000
+	Sat, 03 Oct 2026 21:13:28 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0A37640E4C;
-	Sat,  3 Oct 2026 20:49:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DACC01F0089B;
-	Sat,  3 Oct 2026 20:49:55 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 480B141A58;
+	Sat,  3 Oct 2026 21:13:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 582251F0089B;
+	Sat,  3 Oct 2026 21:13:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791060598;
-	bh=QfrorZ6rtjIFYE5aV8rqfdcw0h5kHOTLW0YV95Dx+kI=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=dlevTAy/Djb0/QzspRxSUWQa52YELAFxNCJBgEfimfVmR655NQz+BuUZhyrZO4mb/
-	 vUiVzR/OTFX/0QNjN0zDemnAbosBxz+eWOBpnyevGMMytFN0Rjh+uFhYYjSNftB79v
-	 o4WmkUJbZnJ2uRuNGU7BNwzdFIWeUDNt+RYF5ygJMAHJuml1Y33xotv6AWDOqYrrqJ
-	 73wH1ivZKyzzehoouH3KPEmU20pJBxMtPobtOkSHnZCh+XmhpmtSn8saSf+csA1Wk8
-	 mAzVlFQClGg5ZLfpS6wFXuB6I+bASitPAOAg1ii8O4P680REITRJ43KsDCXP2JjaQY
-	 V7Np/dDr+Bnyg==
-From: Vinod Koul <vkoul@kernel.org>
-To: JC Kuo <jckuo@nvidia.com>, Thierry Reding <thierry.reding@kernel.org>, 
- Jonathan Hunter <jonathanh@nvidia.com>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Wayne Chang <waynec@nvidia.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org
-In-Reply-To: <20260903071937.533646-1-waynec@nvidia.com>
-References: <20260903071937.533646-1-waynec@nvidia.com>
-Subject: Re: [PATCH V3 0/4] phy: tegra: xusb: Add Tegra264 support
-Message-Id: <179106059555.240943.9716161970164658069.b4-ty@kernel.org>
-Date: Sat, 03 Oct 2026 22:49:55 +0200
+	s=k20260515; t=1791062008;
+	bh=zoaAztcduFikRu5y8ddbEbi/0t0xD56e4i3RtKzY8uc=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=EA4WsPXGWNMm8f0ARKUqiVPzu67MFO47V4Wc2SCH7bWKeFBY4K7c0aTpQZYNtAZnx
+	 zgcT5UE+XLOwJdnWVqNCqGlCFjfHUfJwDFGTacJ830fO2AAZe/5dHLyV0nTJiClVOL
+	 9gcA/HYWq8vw8+2toJ3JycWq/kBvaniN1vsVuqeJIdUyyskhqy+nOcGjkFUYLTRTfP
+	 M/BRUcVLz2jxjXFS+5ajsqFJVmwpexDWNaMonPzU7zdNauu6ewXV8o+NZO5pFJ2yAK
+	 DwC0NDY7jghDGX7jYkjE3YWj6neAokcoBuDL/ULb1W6B4hv7+KRrWT5lEBN1qSnxQG
+	 lcTD+R0L9WQAg==
+Message-ID: <f4a918fe-b5d6-486f-991f-9507f6498d37@kernel.org>
+Date: Sat, 3 Oct 2026 22:13:22 +0100
 MIME-Version: 1.0
-X-Mailer: b4 0.14.3
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v18 04/11] phy: qcom-mipi-csi2: Parametrise the common
+ status register offset
+To: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>,
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>, Vinod Koul
+ <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+ Loic Poulain <loic.poulain@oss.qualcomm.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, jeyaprakash.soundrapandian@oss.qualcomm.com,
+ Vijay Kumar Tumati <vijay.tumati@oss.qualcomm.com>
+References: <20261003-kaanapali-camss-v18-0-87ba4ebe0db1@oss.qualcomm.com>
+ <20261003-kaanapali-camss-v18-4-87ba4ebe0db1@oss.qualcomm.com>
+ <022c47c3-54b1-43a4-9161-1d0acb13b736@linaro.org>
+ <ACVwxDrnf9WK32jW5xC0UYBfohhBm5mX8qTEbUBO8fizllttHigUtwYItt3yfQBlJTLfLCB5w2KOAnBEH5CyaQ==@protonmail.internalid>
+ <CACbMrhr1srrcz-c3w1VgzHjdCEiG+6zRGZpjm9qMO3dt09YbPw@mail.gmail.com>
+From: Bryan O'Donoghue <bod@kernel.org>
+Content-Language: en-GB
+Autocrypt: addr=bod@kernel.org; keydata=
+ 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
+In-Reply-To: <CACbMrhr1srrcz-c3w1VgzHjdCEiG+6zRGZpjm9qMO3dt09YbPw@mail.gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,40 +124,43 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Thu, 03 Sep 2026 15:19:33 +0800, Wayne Chang wrote:
-> Add Tegra264 support to the Tegra XUSB PHY driver and its binding, as
-> part of enabling USB host functions on the Tegra264 Jetson AGX Thor
-> platform.
+On 03/10/2026 12:10, Hangxiang Ma wrote:
+>>> diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h b/drivers/phy/
+>>> qualcomm/phy-qcom-mipi-csi2.h
+>>> index 7e55ae007370..d6366f809e51 100644
+>>> --- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h
+>>> +++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h
+>>> @@ -51,6 +51,7 @@ struct mipi_csi2phy_device_regs {
+>>>        const struct mipi_csi2phy_lane_regs *init_seq;
+>>>        const int lane_array_size;
+>>>        const u32 common_regs_offset;
+>>> +    const u32 common_status_offset;
+>>>    };
+>>>    struct mipi_csi2_genpd {
+>>>
+>> Aren't you using the CSIPHY driver in drivers/phy now ?
+>>
+>> So if phy stuff has to change then that change needs to go into drivers/phy
+>>
+>> ---
+>> bod
+> Since v15 the series has been based on the new CSI-2 re-architecture,
+> and this change is a prerequisite for the subsequent patches. The main
+> reason for keeping this in the Kaanapali series is to avoid introducing
+> an extra dependency and keep the series self-contained, which should
+> help with mergeability.
 > 
-> This series was previously posted as part of a single 8-patch series
-> covering phy, USB host and arm64 DTS changes together [1]. Per review
-> feedback, it has been split by subsystem so each maintainer can pick
-> up only what belongs to their tree:
-> 
-> [...]
+> If you'd prefer this to go through the PHY tree, I'm happy to split it out.
 
-Applied, thanks!
+phy driver is in -next now so there's no out-of-tree dependency.
 
-[1/4] dt-bindings: phy: tegra-xusb: Add support for Tegra264
-      commit: c850a8821901163998ec4b7932b3d79dbe480543
-[2/4] phy: tegra: xusb: Use devm_clk_get_optional to fetch USB2 tracking clock
-      commit: 9358936fa13a8d7d9fbe92762ab38271c8dcb7c0
-[3/4] phy: tegra: xusb: Increase timeout for USB2_TRK_COMPLETED polling
-      commit: 475df243ffcad579c9beb6fbd47b1f9ee1045b7c
-[4/4] phy: tegra: xusb: Add Tegra264 support
-      commit: 46fc5849823a67a4b480dec59266969a1b7f8a42
-
-Best regards,
--- 
-~Vinod
-
-
+---
+bod
 
 -- 
 linux-phy mailing list
