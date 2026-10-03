@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16AAFCA5FED
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16AECCA5FEF
 	for <linux-phy@archiver.kernel.org>; Sat,  3 Oct 2026 15:25:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,46 +12,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z8HjC3Y/U1P/ETx+jg6b7kExYx0nb1RGbe/XgfJNgGY=; b=hgdElJoHQHqwAm
-	RwSeaVyy9IBtbhQZ+6RY3GVtyUb3CF2aFpxa3VByM9wwz/hX+7sYjIxtcflJv4Rn80QfmyPRMrreU
-	8wSrfs9BnjGZkWACo/HaNnix9lPYLygEkpRz2quL0t6+GkeG0ubiX0ZbG55S5KMLCKBglmzbm/8jM
-	fORxHsJBJl980g+tWVg6y21+jF3nITGUIdYkGMrE9DmTQwREF20ZIHYfkkK89P2ZZE4KNcuL7zQAy
-	48jmBbq22YGucjF/Q+UyEOSsGGZ2uFVx50nKZeoKtV7xRxjpzBKADhQmv7NQIwWRfDtAZGzRbXQOk
-	GsiUgbRRFRuR+ltBDz2Q==;
+	List-Owner; bh=mq3w30q5BgVQl2SQfjq+RX4cDPZJ85mjFMuEFwRXP/8=; b=b4rcNOqfF5KZr5
+	7F8iXJXd6sjF1NiTfh0kuve6RKlfX481bMmomcVuYsta6PpP4zlY1n6PFEDvKRMpi42JtmcwBqdsq
+	5jkJLJkeoqmmzBeFicu/Kqf1uZNASCuIEfsvkBly69o+OKGoTrfBepMmpKWeJlN++ny19j2OBp78J
+	1+lhyIAABZYasEVI8v8FNhzzgRESTBCtgsM91Z405JYuSrHqWqLIptgOAd5SUOkrnxBAMvAz3XT1C
+	jYDzEL3vDLtUbN2hvjzIVU+odA0tQ/wD7WPcUJByZ/9mw1ylX4hgGwdnHL/ExA0qpAeXvYxgKmAFp
+	5UL3Qbljxml6JxCfKpqw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xD1c6-0000000Dgb9-2x7e;
+	id 1xD1c6-0000000Dgae-2IQZ;
 	Sat, 03 Oct 2026 15:25:26 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xD1c5-0000000DgZD-16Q8
-	for linux-phy@lists.infradead.org;
-	Sat, 03 Oct 2026 15:25:25 +0000
+	id 1xD1c2-0000000DgYG-3ow6;
+	Sat, 03 Oct 2026 15:25:22 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id B1D8960DA7;
-	Sat,  3 Oct 2026 15:25:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2160B1F0089C;
+	by sea.source.kernel.org (Postfix) with ESMTP id AA22C43DF5;
 	Sat,  3 Oct 2026 15:25:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BED251F0089E;
+	Sat,  3 Oct 2026 15:25:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791041124;
-	bh=Bwb0uQvjF5uOv/mdqqLowm/S3PGsxAPSbHv05csY3hQ=;
+	s=k20260515; t=1791041122;
+	bh=kyYsESqJs1RzwQhHHMRkPTPKvdniJodMlR3dH9oEz/8=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=RijQrBJUFx3FnIsikmoyrSHdF8f5DD698drgXSSHZnVsiJFCiYREfBWRQC6L+buSg
-	 9BB1ibxHFOknW1KXzOTK8WZB06tYVIuKyzDM5m7g4yYBQdfjgssXA8SmuK4Rkb2ygS
-	 38SQKDA2SRsQiV+hMqJzI55kwEWdHnypYw2nJJYLZ8z2MjIx/96MZ4mr+dfQp3eKKt
-	 4Xi4a+mkVwf06VcQ2O8b6jYfISlQNWgKkwpjNQddHCI8Ph7P9k/IpvAdizeRKVRn6v
-	 y/fYh42PXXLsNPaI4Dwu9Dbjs1KYh3luxxMMuFVN3QOvN49J69RzCZt8QnujZleUCk
-	 9+Xl1+WBBPcRw==
+	b=XJUp2+9Tqlk4TNP3RVNnPIwzWwolmcT3BKGH1Eoy96F2Oe9bNwPFx2R1ST/lXpOma
+	 MR+TEEWlACc43BraA2FSUXEIW/6Px3Uhi129sF2N05SluWKma2Y4SgWN+gpNUCcyVm
+	 oi84C8hiS669+WIDvDKM3u8AJj/boBddD6I5bCkjFkMYVf1/td00zuhycERKL1rDVo
+	 pc6u4gPX2CceGauBDEdIp/PMunjwzSECLED+zFEvTFBTbx2jN9AeJVw28YBMNmxkXr
+	 pb3D3ds3c6Z3wubvJ+H9W8+bsQ6Eaz9NCCOCIY60RDHmRNhTVr9btQUZ8St9cyQHVN
+	 KL6dnZBPXD4gg==
 From: Vinod Koul <vkoul@kernel.org>
 To: Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- Hemanth Selam <hemanth.selam@gmail.com>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-In-Reply-To: <20260907062518.12810-1-hemanth.selam@gmail.com>
-References: <20260907062518.12810-1-hemanth.selam@gmail.com>
-Subject: Re: [PATCH] phy: fix typos in comments
-Message-Id: <179104112277.223537.1284926343224482532.b4-ty@kernel.org>
-Date: Sat, 03 Oct 2026 17:25:22 +0200
+ Manivannan Sadhasivam <mani@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Geert Uytterhoeven <geert+renesas@glider.be>
+Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-clk@vger.kernel.org
+In-Reply-To: <cover.1787240165.git.geert+renesas@glider.be>
+References: <cover.1787240165.git.geert+renesas@glider.be>
+Subject: Re: [PATCH 0/2] phy: Make sure clk_init_data is fully initialized
+Message-Id: <179104112038.223537.2313404929289351328.b4-ty@kernel.org>
+Date: Sat, 03 Oct 2026 17:25:20 +0200
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
 X-BeenThere: linux-phy@lists.infradead.org
@@ -71,17 +71,24 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 07 Sep 2026 11:55:18 +0530, Hemanth Selam wrote:
-> Fix typos in comments, reported by scripts/checkpatch.pl using the
-> misspelling list in scripts/spelling.txt.  Only touches comments, no code
-> changes.
+On Fri, 21 Aug 2026 12:08:38 +0200, Geert Uytterhoeven wrote:
+> 	Hi all,
 > 
+> The clk_init_data structure contains several mutually-exclusive members
+> for different methods to specify the possible parents of a clock,
+> prompting drivers to initialize only the members they need.  However,
+> not initializing all members may cause subtle issues, which are only
+> exposed when CONFIG_INIT_STACK_ALL_PATTERN or CONFIG_INIT_STACK_NONE is
+> enabled.
 > 
+> [...]
 
 Applied, thanks!
 
-[1/1] phy: fix typos in comments
-      commit: f1d07d242b4c25a259276cc2b136f49c68ee71ab
+[1/2] phy: freescale: fsl-samsung-hdmi: Make sure clk_init_data is fully initialized
+      commit: fdc340bfc7ab60c4cbdb198c9972114b51d7caa3
+[2/2] phy: rockchip: Make sure clk_init_data is fully initialized
+      commit: 91967098fd985237ba0deff97809ab52d3e51fba
 
 Best regards,
 -- 
