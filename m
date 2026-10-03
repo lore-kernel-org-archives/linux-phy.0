@@ -4,58 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CE791CA5FDD
-	for <linux-phy@archiver.kernel.org>; Sat,  3 Oct 2026 20:20:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EDBFECA5FDD
+	for <linux-phy@archiver.kernel.org>; Sat,  3 Oct 2026 20:39:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=do20M3dvt5D7Hyzsk/1ZQI/HrjsknyWosBfe2sfZ+dU=; b=p2iMDD2UGtunvZ
-	dp8WGx+2yFNOLHEO4/gpERvtNPEpqbnBCBalOycf2djBxAQvSTliFvLs2KBtWC84tcEtCJsTSh5E/
-	Gn4OtVsiB7GkRK0fxHrp8otb4KTEaM2t6aKIhTTPS5THaa3E4XvsVx1mGYiPpOT7f6vqChlQTWAzI
-	pEJVPt5u3JnWb5TnRCxCIJYE0cBI35aENt6kirOvyPXppZHoEgKbWn4rklOmntIAqBiEDbqzgtRRA
-	W7NDuznA9++JazxuBLktOYn/BtbfKKBoAIWPp0YDwpwn/jQs4a9Vt+SMVV4wBB99mhkrCvJ+3sX5w
-	Vz9SzKA3Fm9YAKbT59Fg==;
+	List-Owner; bh=7cAfePub19mHRprm4AsYQ2oRvwibBZ7IvONF45Q4E5s=; b=eQ3dS2gP6Y1GRd
+	MlHIopP3OzpBVytILHGoEHeGpseX5UCQLR2qKtEYjAqap27olnLq9V9tbDxMJK++/urcRBqkLRUbS
+	4N6ZCI7k5mKKpbsukimMrg85vQ4KmWBAXpnSIdUXTiqF9odvBOjYpEp4e9dC/2Fn/JfV/9QUVmVjg
+	K9SMt87LDwYHzqmEJ1EDY+35sy3xHll8QZc9R4JjhlrV/xDv4RXVyyfCw22IpJy8cyntzzsuKXbTq
+	57ESBQSb0LmLnkCsN7ylBPtZnISHIK11ayrseDIXw0HbpcdLidih3vT+efmy6WIX06kxk9amP9IVb
+	+hklhE2Re7kFVcBJiPSQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xD6DZ-0000000E09i-2gp9;
-	Sat, 03 Oct 2026 20:20:25 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xD6WC-0000000E1CX-0EBC;
+	Sat, 03 Oct 2026 20:39:40 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xD6DZ-0000000E09a-123B
-	for linux-phy@lists.infradead.org;
-	Sat, 03 Oct 2026 20:20:25 +0000
+	id 1xD6WB-0000000E1CG-04pY;
+	Sat, 03 Oct 2026 20:39:39 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 44E8E43D3B;
-	Sat,  3 Oct 2026 20:20:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 45C391F0089B;
-	Sat,  3 Oct 2026 20:20:21 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id E6F2560120;
+	Sat,  3 Oct 2026 20:39:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D5A7D1F0089B;
+	Sat,  3 Oct 2026 20:39:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791058823;
-	bh=0qBoi4a6oIR++oPs2TdrsPznD5Dh3pxdqqWtp0fkXCU=;
+	s=k20260515; t=1791059977;
+	bh=tSUhjkfC0Q2//h6dWhCqwgi4jeXYnkhNBRpnLdYChkc=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=CThf2tokWjK3INJLMbYXps8ipGGerD9euCWoE3Fl4ZBwzib5mTEegaxkpAMPsZsAI
-	 u9aWnHbchTrQUzMbjD1p4VRC3PPhvHnUcZkw/3cBuOwWYBxbDb1l2cJnEECM7ldG8a
-	 fziV1b1tkyfCCvcDzOry2gR+k8/RJCCJXJXd7KYMCq8KYhyIEU/Mdtcj4gfT0fPnyS
-	 HzmwZHCDpombbki1tsw8uhRCopE+CIzF5OkX5mhKUfMtF6aY14PAK3kc7GE1r3Up5E
-	 p78Kz8qIVH4SPOqBHaABe56rL6tMQRREoTxAz2WTjPwhVC1g3JpgvgGiqygIAC/2/Z
-	 IiXuCLFov6vVQ==
-Date: Sat, 3 Oct 2026 22:20:19 +0200
+	b=noA68/7ksmbSP7UWWC0+zA5kZh994tu+Z+faRzxxNrfp0AT6nCJlGUpSNMXxx1fUP
+	 GRIbAYUlUrqClUoxTLdcx0TP8SVcfUtkH+sAaETa9Z8whx8gxSbLAjebarfJitsFJF
+	 7XHDuUURtnQGPfZYoHN2F8p+EXF5ACwpGpguq31uHjm3yolN7WBeTPNBs3Z2NS5TNV
+	 DwJksVsvtfbsS5ObA9cWGmuGLG1RKCry+TCfkDNBR7d57lxhkrKnD6yM4B8R33rsD1
+	 yN2OmBM2kE9RRGwbcMgGOMQzjVKgx3pCmUzyUuVqfypnWNqg8MMkoAz6dR3ba7HeVD
+	 zxLHpuf9ort0A==
+Date: Sat, 3 Oct 2026 22:39:34 +0200
 From: Vinod Koul <vkoul@kernel.org>
-To: Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>
+To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
 Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Johan Hovold <johan@kernel.org>, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: omap-usb2: add explicit PHY comparator API
-Message-ID: <asFjg44FteVbJdj2@parshuram>
-References: <20260722053618.602702-1-ivo.g.dimitrov.75@gmail.com>
- <apBdFetctMKBH-iT@vaman>
- <16609718-fc04-4e1e-b63f-e54aafd14eb6@gmail.com>
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Andy Yan <andy.yan@rock-chips.com>, kernel@collabora.com,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org
+Subject: Re: [PATCH v2 1/3] phy: hdmi: Add optional FRL TxFFE config options
+Message-ID: <asFoBih6P7Cr6Ute@parshuram>
+References: <20260901-hdptx-ffe-v2-0-3a5922c76fc5@collabora.com>
+ <20260901-hdptx-ffe-v2-1-3a5922c76fc5@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <16609718-fc04-4e1e-b63f-e54aafd14eb6@gmail.com>
+In-Reply-To: <20260901-hdptx-ffe-v2-1-3a5922c76fc5@collabora.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,59 +69,77 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMzEtMDgtMjYsIDE5OjE0LCBJdmF5bG8gRGltaXRyb3Ygd3JvdGU6Cj4gCj4gCj4gT24gMjcu
-MDguMjYg0LMuIDE4OjUxINGHLiwgVmlub2QgS291bCB3cm90ZToKPiA+IE9uIDIyLTA3LTI2LCAw
-ODozNiwgSXZheWxvIERpbWl0cm92IHdyb3RlOgo+ID4gPiBUaGUgZXhpc3Rpbmcgb21hcF91c2Iy
-X3NldF9jb21wYXJhdG9yKCkgQVBJIGxvY2F0ZXMgdGhlIE9NQVAgVVNCMiBQSFkKPiA+ID4gaW5z
-dGFuY2UgYnkgY2FsbGluZyB1c2JfZ2V0X3BoeShVU0JfUEhZX1RZUEVfVVNCMiksIGFzc3VtaW5n
-IHRoZXJlIGlzIGEKPiA+ID4gc2luZ2xlIFVTQjIgUEhZIHJlZ2lzdGVyZWQgaW4gdGhlIHN5c3Rl
-bS4KPiA+ID4gCj4gPiA+IFRoaXMgYXNzdW1wdGlvbiBubyBsb25nZXIgaG9sZHMgb24gc3lzdGVt
-cyB3aXRoIG11bHRpcGxlIFVTQjIgUEhZCj4gPiA+IHByb3ZpZGVycy4gSW4gc3VjaCBjYXNlcywg
-dGhlIGdsb2JhbCBsb29rdXAgbWF5IHJldHVybiBhIGRpZmZlcmVudCBVU0IyCj4gPiA+IFBIWSBp
-bnN0YW5jZSwgY2F1c2luZyB0aGUgT01BUCBkcml2ZXIgdG8gcGVyZm9ybSBhbiBpbnZhbGlkIGNv
-bnRhaW5lcl9vZigpCj4gPiA+IGNvbnZlcnNpb24gd2hlbiBhY2Nlc3NpbmcgaXRzIHByaXZhdGUg
-ZGF0YS4KPiA+ID4gCj4gPiA+IEludHJvZHVjZSBvbWFwX3VzYjJfc2V0X3BoeV9jb21wYXJhdG9y
-KCksIGFsbG93aW5nIGNhbGxlcnMgdG8gZXhwbGljaXRseQo+ID4gPiBzcGVjaWZ5IHRoZSBPTUFQ
-IFVTQjIgUEhZIGluc3RhbmNlIHRvIGFzc29jaWF0ZSB3aXRoIGEgcGh5X2NvbXBhbmlvbi4KPiA+
-ID4gVGhlIG5ldyBoZWxwZXIgdmFsaWRhdGVzIHRoYXQgdGhlIHN1cHBsaWVkIFVTQiBQSFkgaXMg
-YW4gT01BUCBVU0IyIFBIWQo+ID4gPiBiZWZvcmUgYWNjZXNzaW5nIGl0cyBwcml2YXRlIGRhdGEu
-Cj4gPiAKPiA+IFdlbGwgdGhlIG5hbWUgY2FuIGNhdXNlIGFtYmlndWl0eSB3aXRoIG9sZCBBUEku
-IFNlY29uZCBJIHdvdWxkIGxpa2UgdG8KPiA+IHNlZSB1c2VycyBvZiB0aGlzIEFQSSBhcyB3ZWxs
-Cj4gPiAKPiAKPiBXb3VsZCBgb21hcF91c2IyX3NldF9jb21wYXJhdG9yX2Zvcl9waHkoKWAgYmUg
-Y2xlYXJlcj8gT3IgY291bGQgeW91Cj4gc3VnZ2VzdCBhIGJldHRlciBuYW1lPwoKWWVzIHRoYXQg
-d291bGQgYmUgb2theQoKPiBSZWdhcmRpbmcgdGhlIHVzZXIgb2YgdGhlIEFQSSwgbGV0IG1lIHBy
-b3ZpZGUgc29tZSBiYWNrZ3JvdW5kLgo+IAo+IEN1cnJlbnRseSwgdGhlIGNwY2FwLWNoYXJnZXIg
-ZHJpdmVyIHVzZXMgdGhlIG9sZCBvbWFwX3VzYjJfc2V0X2NvbXBhcmF0b3IoKQo+IEFQSS4gT24g
-bWFwcGhvbmUgZGV2aWNlcyB0aGVyZSBhcmUgdHdvCj4gVVNCLVBIWSBkZXZpY2VzLCBwaHlfb21h
-cF91c2IyIGFuZCBwaHlfY3BjYXBfdXNiLiBUaGUgb2xkIEFQSSBzZWxlY3RzCj4gdGhlIGZpcnN0
-IFVTQjIgUEhZIHByb2JlZCwgd2hpY2ggaXMgbm90IGd1YXJhbnRlZWQgdG8gYmUgdGhlIE9NQVAg
-UEhZLgo+IAo+IEkgaGF2ZSBhbHNvIGFkZGVkIERDUCBkZXRlY3Rpb24gYW5kIGV4dGNvbiBzdXBw
-b3J0IHRvIHRoZSBDUENBUCBQSFksIGFuZAo+IEknbSB3b3JraW5nIG9uIHByb3BlciBjaGFyZ2lu
-ZyBjdXJyZW50IGxpbWl0aW5nIGluIGNwY2FwLWNoYXJnZXIuIEZvciB0aGF0LAo+IHRoZSBjaGFy
-Z2VyIGRyaXZlciBuZWVkcyB0byBiZSBhYmxlIHRvIGV4cGxpY2l0bHkgc2VsZWN0IHRoZSBPTUFQ
-Cj4gUEhZIGZyb20gRFQgYW5kIHJlZ2lzdGVyIGZvciBpdHMgUEhZIGV2ZW50cywgaW4gb3JkZXIg
-dG8gcHJvcGVybHkgbGltaXQKPiB0aGUgY3VycmVudCBpbiBjYXNlIG9mIERDUC9nYWRnZXQvT1RH
-IGNvbm5lY3Rpb24uCj4gCj4gV2l0aCB0aGUgRFQgY29uZmlndXJhdGlvbiwgY3BjYXAtY2hhcmdl
-ciBoYXMgdGhlIHNwZWNpZmljIFBIWSBpbnN0YW5jZQo+IGF2YWlsYWJsZSBhbmQgY2FuIHVzZSB0
-aGUgbmV3IEFQSS4gRm9yIGxlZ2FjeSBjb25maWd1cmF0aW9ucyB3aXRob3V0IGEKPiBQSFkgc3Bl
-Y2lmaWVkIGluIERULCBpdCB3aWxsIGNvbnRpbnVlIHRvIHVzZSB0aGUgZXhpc3RpbmcgQVBJLgo+
-IAo+IFRoZSByZWxldmFudCBjaGFuZ2VzIGFyZToKPiAKPiBEQ1AgZGV0ZWN0aW9uL2V4dGNvbiBz
-dXBwb3J0IGluIHRoZSBDUENBUCBQSFk6Cj4gaHR0cHM6Ly9sa21sLm9yZy9sa21sLzIwMjYvNy8x
-MS82MDAKPiAKPiBgY3BjYXAtY2hhcmdlcmAgY2hhbmdlcyAoY3VycmVudGx5IG91dC1vZi10cmVl
-KToKPiBodHRwczovL2dpdC5tYWVtby5vcmcvbGVzdGUtdXBzdHJlYW0tZm9ya3MvZHJvaWQ0LWxp
-bnV4L2NvbW1pdC8wMjYxY2JiNzI0ZDg3NWVlNGFhMmU1YWYzNGNhZWFkMzllNWU0N2ZiCj4gCj4g
-SSBpbml0aWFsbHkga2VwdCB0aGUgY3BjYXAtY2hhcmdlciBjaGFuZ2Ugc2VwYXJhdGUgc2luY2Ug
-dGhlIHR3bwo+IHBhdGNoZXMgbG9vayBzb21ld2hhdCB1bnJlbGF0ZWQuIEkgYWxzbyB3YW50ZWQg
-dG8gc2VlIHdoZXRoZXIgdGhlCj4gYXBwcm9hY2ggaW4gdGhpcyBwYXRjaCBpcyBhY2NlcHRhYmxl
-IGluIHByaW5jaXBsZSBiZWZvcmUgcHJlcGFyaW5nIHRoZQo+IGNwY2FwLWNoYXJnZXIgY2hhbmdl
-cyBmb3IgdXBzdHJlYW1pbmcuCj4gCj4gV291bGQgeW91IHByZWZlciBtZSB0byBzZW5kIGEgc2Vy
-aWVzIHdpdGggdGhlICRzdWJqZWN0IHBhdGNoIGFuZCB0aGUKPiBjcGNhcC1jaGFyZ2VyIGNoYW5n
-ZXMsIGluY2x1ZGluZyB0aGUgcmVxdWlyZWQgRFQgc2NoZW1hIGNoYW5nZXM/Cj4gCj4gVGhhbmtz
-IGFuZCByZWdhcmRzLAo+IEl2bwo+IAoKLS0gCn5WaW5vZAoKLS0gCmxpbnV4LXBoeSBtYWlsaW5n
-IGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 01-09-26, 22:55, Cristian Ciocaltea wrote:
+> During HDMI 2.1 FRL link training, the source and sink can negotiate a
+> Transmitter Feed-Forward Equalization (TxFFE) level to improve the
+> signal quality.  Starting from zero, the source may increment the TxFFE
+> level up to a maximum agreed during the LTS3 stage if the sink keeps
+> reporting FLT failures.  TxFFE adjustment is optional and only attempted
+> when both the source and the connected sink support it.
+> 
+> Since the existing HDMI PHY configuration API covers the FRL rate/lane
+> selection only, provide the following fields to the frl sub-struct of
+> phy_configure_opts_hdmi:
+> 
+> * ffe_level: the TxFFE level to apply, only meaningful when
+>   set_ffe_level is set.
+> 
+> * set_ffe_level: a 1-bit flag that changes the semantics of the
+>   phy_configure() call, i.e. when set, the PHY driver must apply the new
+>   ffe_level and ignore the other frl related fields.
+
+The ffe_level 0 implies it is disabled, so why should we use a flag for
+this? Rather use if value valid (non zero) logic to apply..?
+
+> 
+> The flag-based approach reflects an important invariant in the link
+> training process: whenever the FRL rate or lane count changes, the TxFFE
+> level must be reset to zero.  A separate phy_configure() call with
+> set_ffe_level can only follow after the rate has been established,
+> making the two operations deliberately distinct.
+> 
+> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+> ---
+>  include/linux/phy/phy-hdmi.h | 6 ++++++
+>  1 file changed, 6 insertions(+)
+> 
+> diff --git a/include/linux/phy/phy-hdmi.h b/include/linux/phy/phy-hdmi.h
+> index d4cf4430ee8f..1d4b62475079 100644
+> --- a/include/linux/phy/phy-hdmi.h
+> +++ b/include/linux/phy/phy-hdmi.h
+> @@ -19,6 +19,10 @@ enum phy_hdmi_mode {
+>   * @tmds_char_rate: HDMI TMDS Character Rate in Hertz.
+>   * @frl.rate_per_lane: HDMI FRL Rate per Lane in Gbps.
+>   * @frl.lanes: HDMI FRL lanes count.
+> + * @frl.ffe_level: Transmitter Feed Forward Equalizer Level.
+> + *	Optional, only meaningful when set_ffe_level flag is on.
+> + * @frl.set_ffe_level: Flag indicating whether or not to reconfigure ffe_level.
+> + *	All the other struct fields must be ignored when this is used.
+>   *
+>   * This structure is used to represent the configuration state of a HDMI phy.
+>   */
+> @@ -29,6 +33,8 @@ struct phy_configure_opts_hdmi {
+>  		struct {
+>  			u8 rate_per_lane;
+>  			u8 lanes;
+> +			u8 ffe_level;
+> +			u8 set_ffe_level : 1;
+>  		} frl;
+>  	};
+>  };
+> 
+> -- 
+> 2.55.0
+
+-- 
+~Vinod
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
