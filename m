@@ -4,60 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EE276CA5FDD
-	for <linux-phy@archiver.kernel.org>; Sat,  3 Oct 2026 20:49:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BEFDFCA5FE6
+	for <linux-phy@archiver.kernel.org>; Sat,  3 Oct 2026 20:49:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VaWj7w4VSe7mJ6DzJP+2ivJcB//vXAwusVXfSoZBwpk=; b=rDDYFKSyJ4mQyo
-	k98fpJYeUG9FXHPF9TF1kkTRn7t/+hfVDgdFm117GVimATzsgtO7ngq0eZ+S5Sexn09EoToytvzyR
-	CeiHkXxAtj3cYxPVVgI0AxjlGJi3xYruSF6BoAr1ZfXnToOgZW4W5V/owBMGxEJou+Hsdy4Dfg8uh
-	YxKTRMviDQ149XER1RjDzOzaWdIvtd1qycRj7zwp/q3gqnXjzbt8P0n5ykH5dMai2Wq2yZieV9tau
-	AXaDluBhaehbVP1dpe7txJkdTJjCAZ76bkINq7yMsl0lu4f8HpzcHxBtDyunyWd75aBa0JsH1+trL
-	zUVSvCMqq//P9YdvfgJw==;
+	List-Owner; bh=VLjZcnIoxkd70BKcusvAjIBhnc8vuejFULq+t70EKU4=; b=Kx5uAJZxQQtNOv
+	VgDL3qq6K8cpy/tB4gsrKHAJUWgom61GMx40gQKsIkvhK5DG+DNZK17Lsv7nGNC3ezTeyQmo8q4Tj
+	rzXdbH7h7mn8CRSO9j8ZtY5RxylKZmUEr98CABoPtiJhQ9hYrFkce3rUUFc3Sk7ywE6MODyPsrYfa
+	UrfL6WKliTwn2bVLqgMaTKzFAmyMSlizeooDMs6gHFE/7IwaGw5+8t/lrSzmxN6vZceG7lRFqcAG4
+	VgIUBiy68FLnNwxWR1stGyEkOX4y7wYiF0XSoymZyp5ezWPT2Da/Y0PWoM5lT/04ap0jUTgf5+eF0
+	c4zQdoeYTZsl11aZwzFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xD6g1-0000000E25y-1vRE;
-	Sat, 03 Oct 2026 20:49:49 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xD6g2-0000000E26b-27uB;
+	Sat, 03 Oct 2026 20:49:50 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xD6fz-0000000E25J-29xD;
-	Sat, 03 Oct 2026 20:49:47 +0000
+	id 1xD6g1-0000000E25V-1e2I;
+	Sat, 03 Oct 2026 20:49:49 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id D17114027E;
-	Sat,  3 Oct 2026 20:49:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7D9AA1F0089B;
-	Sat,  3 Oct 2026 20:49:43 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id C316B60120;
+	Sat,  3 Oct 2026 20:49:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4803F1F0089C;
+	Sat,  3 Oct 2026 20:49:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791060586;
-	bh=1BuU7jC4i69chPY01RNYqlbIN9dzYHsP3HeLG1L5754=;
+	s=k20260515; t=1791060588;
+	bh=uLpwZPO1GiiGvBIyjD7usPVtdy8rIg18LV4hbOtCaUc=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=GM3ziYP9DJpdpqyZUdsiOItfTiwlDIV53YabQDxNKLKY6JpkOms/6aC9WNsXAc85A
-	 ijv6PbGX04i93Vu8W0mWkMuzDrJpy+A1k58fCuYuwqbgsxIMrZQ64rlQGukUtbZrnX
-	 KX1mUDuQ2BNtOKdU5C1ZsI5QhzeGYH0C8cQbVQrUur3uMLkDBzcotnk4sdPuo7GZkl
-	 HrJs6d9bGceDMMIuCx2eJ/5UaYb2NyYfnodkBJ6lF/tChW7qqXp+Fugy5vS58zJQeu
-	 plRpQUFpk709ZQbPlv805TmwWB2rSIGtr3yAkC/YMZlXzyLErCI3W5um9I88z1yL2E
-	 e/EYllVn/5DLA==
+	b=I+D2htlQtoBEc7czW/e/gBvOF/j5BI2CXVNVMPgq4N5GxNHWZCYvvXsfGi7bKQksD
+	 +i1AZbJeiXpim+gCvJ2E8nnaz/rRs/AcJrD5iGi4Mggm2fH6iq3XMb5UTA3plFAiOB
+	 zdh8DCgAEuIi491FPq5o86MZzBQd+zAdoFrTJ8Ydcja5lg2WJQ6fuBFxKZ0BmGCRYk
+	 nQ4Qv17ukCnRZ9ujdpFY4uc7KQAypGz+oQYeHy63hYnX42zE7GWm7IHzAMyNjFTe+K
+	 6rXgtI9IiOD1qo9zKXB/oWemYzHPlvF65RrIfqU7liGLqAtPdi/N3Nd/ga7d/LINVp
+	 doIu2JFwOuaVA==
 From: Vinod Koul <vkoul@kernel.org>
-To: kernel@collabora.com, Chunfeng Yun <chunfeng.yun@mediatek.com>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Matthias Brugger <matthias.bgg@gmail.com>, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
- Julien Massot <julien.massot@collabora.com>
-Cc: linux-arm-kernel@lists.infradead.org, 
- linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-In-Reply-To: <20260826-mtk-usb2-repeater-usb2-v1-0-e8e48e2fd6d8@collabora.com>
-References: <20260826-mtk-usb2-repeater-usb2-v1-0-e8e48e2fd6d8@collabora.com>
-Subject: Re: [PATCH 0/2] phy: mediatek: xsphy: add eUSB2 repeater support
- for USB2 ports
-Message-Id: <179106058316.240943.4391434773392918237.b4-ty@kernel.org>
-Date: Sat, 03 Oct 2026 22:49:43 +0200
+To: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Shawn Lin <shawn.lin@rock-chips.com>
+Cc: linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org
+In-Reply-To: <1788158204-161347-1-git-send-email-shawn.lin@rock-chips.com>
+References: <1788158204-161347-1-git-send-email-shawn.lin@rock-chips.com>
+Subject: Re: [PATCH] phy: rockchip: naneng-combphy: Fix TX detect RX
+ termination errata
+Message-Id: <179106058693.240943.3035344211255216321.b4-ty@kernel.org>
+Date: Sat, 03 Oct 2026 22:49:46 +0200
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
 X-BeenThere: linux-phy@lists.infradead.org
@@ -77,26 +71,21 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Wed, 26 Aug 2026 14:38:34 +0200, Julien Massot wrote:
-> Some USB2 PHY ports are connected to an external eUSB2 repeater chip
-> that sits between the PHY and the USB connector. To support such
-> configurations, this series adds an optional phys property to the
-> MediaTek xsphy port sub-node and integrates the repeater into the USB2
-> PHY init, exit and mode handling.
+On Mon, 31 Aug 2026 14:36:44 +0800, Shawn Lin wrote:
+> Some PHY revisions may fail to detect the peer RX's termination
+> resistor (RTERM) under certain critical temperature conditions.
+> This causes TX detection failures on PCIe links.
 > 
-> The binding follows the same pattern as the Synopsys eUSB2 PHY, which
-> already uses a phys property at the sub-node level to reference an
-> external repeater. The driver change similarly manages the repeater PHY
-> alongside the MediaTek USB2 PHY.
+> Add a workaround to force the RTERM detection ready signal for
+> affected PHY revisions. This ensures reliable TX-to-RX termination
+> detection across all operating temperature ranges.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/2] dt-bindings: phy: mediatek,xsphy: add optional repeater phys property
-      commit: e95b476302852ac1fb5bffaa824ac2cd35178e58
-[2/2] phy: mediatek: xsphy: add optional repeater support for USB2 ports
-      commit: bda1af7b177a94f6d169f0b359c61e7a7d39a36e
+[1/1] phy: rockchip: naneng-combphy: Fix TX detect RX termination errata
+      commit: d68e47a06c5cdc90cbd29ce2e74fa61eab5d47cc
 
 Best regards,
 -- 
