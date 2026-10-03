@@ -4,62 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 218FECA5FDD
-	for <linux-phy@archiver.kernel.org>; Sat,  3 Oct 2026 09:04:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D0DCCA5FE3
+	for <linux-phy@archiver.kernel.org>; Sat,  3 Oct 2026 09:05:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0a8J8OJJUjlZ/1NPRVUOOJPk4gXFpk0dJqcW9A6BH2s=; b=UNtTkS3zNMuoQh
-	4+ELEYE2LfMta2p9vXw5/8Kr7WnxYr1NSsTj54FGZYrimb3AmCYE5PklT0x2+NQo+Kr2QMUecfjfs
-	ZXR1aV83MpMgZCHbShbB9YqLvKmGYeQFeB22y1O9gN7m+G32XhufUxof0zgyM+K9HZGvOnWOlFaPZ
-	oNsfVVGxbRfoMqlJKQNB3PDCy9qZ6hLRA3UAn03RC2BmFUjxeeLA/R/tMuR7RV4eBB5EuMx6EwXCe
-	MXAhpfzjTyXuZ8RZ15DotpacMB5w7SA+BQYLx9d5gj/ucQ2+gTjIzb6KlNvSjwByAMqAXuaS3kD33
-	cvTPyUCm+SzZ/KmLav1A==;
+	List-Owner; bh=iOccQo1CdWhX760NL97Z2N86oEAHo0WYoBvyRcPUd7c=; b=tnbH1CpEpR42k1
+	dmUAB09ZQ04rC/nXDxTWOvWq+9Wnzqvpvq4bEJRzdLTubm4pq/41noFrkTHrQHsouv0L1S4PAUzpn
+	Z1dEKmkbTS+I/ILPgZ/5/QUMuphcboIwWZ9Puc53MSR+3ogLmgGv51cikRMu+T/Ye2OBhqY0bUs1k
+	/rXDKV8RAHPsM2ezz8Sn/4y87Uiy4U688DUuK6bPfpnJ+GUpoRsoIKraF9GnHRfra78XVVaZahNTt
+	L8Ve87bBlzxvFeMETZeVMUOWKIx/k1MqS9V2TfB8NXY8k670xU4DihooGzx6Fc9haWi/ZiREZz/w8
+	o+l6gcFp7cIQ3Of5xPQw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCvfG-0000000DEWP-3Ut8;
-	Sat, 03 Oct 2026 09:04:18 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xCvfw-0000000DEfz-0KOB;
+	Sat, 03 Oct 2026 09:05:00 +0000
+Received: from mail-ej2-x10.google.com ([2a00:1450:4864:34::10])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCvfF-0000000DEVt-3m7J;
-	Sat, 03 Oct 2026 09:04:17 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 56CAA60534;
-	Sat,  3 Oct 2026 09:04:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 432F81F0089C;
-	Sat,  3 Oct 2026 09:04:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791018257;
-	bh=r7Cqps3I7ChVDkfGpYIwv5W5QyZBtV/wchFikLgUd30=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=ifsv1HpTllRjuu7fRpQtXxhQXDdrFcHAzARMmhx+d0R+gZ6eAYie2pV4O1aXnLYOY
-	 vcZGUlC2cwlJOCpajrRIorSilCW1DUSoHoNzVh4IjzXfttEYPC1lcrmHYlmHNCEfmN
-	 sB4ziC3sjmt/onjTlQUba1XPFTYQpeX/65W3ivSDa9DWoNETMRLMf7ksu0Ii1TFhOr
-	 YiBszfZok4J5UWgbDyHqJhYfpcw3dcPFjIzGSa2tPD6UNa1RG1T8ON4zenRDVfscgH
-	 qXc44TtRs8L5/6mxVvELB0rVqEE2ltB5etHgXfPHBKvszaQU2GF7oPWaCe2hEFPvwX
-	 5jQl56+Y07PTg==
-Date: Sat, 3 Oct 2026 11:04:13 +0200
-From: Vinod Koul <vkoul@kernel.org>
-To: Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Igor Paunovic <royalnet026@gmail.com>, linux-kernel@vger.kernel.org,
-	linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
-	kernel@collabora.com
-Subject: Re: [PATCH v16 1/6] phy: core: add notifier infrastructure
-Message-ID: <asDFBIVf06-VaWdx@parshuram>
-References: <20260924-b4-rockchip-dwc3-rockchip-glue-v16-0-126a2e9133c3@collabora.com>
- <20260924-b4-rockchip-dwc3-rockchip-glue-v16-1-126a2e9133c3@collabora.com>
+	id 1xCvft-0000000DEfJ-3VqZ
+	for linux-phy@lists.infradead.org;
+	Sat, 03 Oct 2026 09:04:59 +0000
+Received: by mail-ej2-x10.google.com with SMTP id a640c23a62f3a-c264788fd58so92599566b.1
+        for <linux-phy@lists.infradead.org>; Sat, 03 Oct 2026 02:04:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1791018295; x=1791623095; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=0SCNo95/BixJDrCNj1e89Xl9YT1Mqeqtzc6x6damSjo=;
+        b=GoCIqKQSJgFGL2hhMgM+h1eM2CRxhoJuZVb060y9wFtFhWUpISuwEpi4sEsfzRkqsC
+         0xo9iHNGqCSAKaG7jJ1csJwCu6NcqMMJZvhyAlE1JydVl+6R6CPpXjr/WcPg6nkZKhGk
+         OQrh9KrLNslnUviJWEaVpHc+Gw4op+regPRvLZ6jpI21FXhEwNjm/r1Vgy+i+g7Y3XEo
+         eWMyC42OdlDyVcGH+88OQWlo51CMa4r2x9Jdz4SNvUZSHFc6il7QSSFBLzW3ZLGpRft9
+         PLNNkkTV9vYgre4b8J0ZfUs7AzuA8aL2oyAe08MA41mUfxN2aIN91WVoUA1+xxPjK+te
+         TTDg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1791018295; x=1791623095;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=0SCNo95/BixJDrCNj1e89Xl9YT1Mqeqtzc6x6damSjo=;
+        b=wh1j+SZ+5kLAZdiSpmitxuxrfiaRKXpt+EKAa3YF9IYYwoUyWcGiHWCqL/ravdcjbG
+         SmFBXvunytQobCHuZQzRECqG2H1I5NwYgFjgRW8AwD3SQ1xXKzwnSCHrFQIKNeSjz84Q
+         Cc6Mz+DKkVnwdJYinD/9D+wZASsQffjaDZlBeZq8UJHYfFbuuYWbI5P7MG/AhFwvT1TE
+         GqvwhynvmrApZggbvmoIWlaFWI9OgvAdGNKa0X61EPcz6Ae1sfemyiiHzjNLjx9mfj66
+         F4FGecVr2kV1Nzlpqwhle2wrDhxxyaaWmPY/XV029Vm6FdZgaZHH3IafsA1kTcd5E4Dr
+         KzMQ==
+X-Gm-Message-State: AFuF++mdIuoTWwRk97tTbhQSuCSntINvN+IAfRJ9mlwwp7hKvclk2V5j
+	gNLnGdch315+iuyI4aKe9C0+/Pedpf1TazQUmEe1Zmw/SrrsalYqTcQwoaU6cntwm5o=
+X-Gm-Gg: AYBFou27vjUvyFlDWTba8+CjPfd97nzWdBqzMvGdur/k4YbtU+PFdiENEZF9W9RMq2U
+	/8EOD1TnrZVbYmlys+gamygl7iapcIc+ZKhkhb/2Q9HouI5YNlUThJMfn/BjhAHDWBQPEfAtjQc
+	LFM/6duINZsmsOs15GDfuz4oXe/bfTgjnABL03qRjLzw3Q8pOOXJagdWgXD/V7CuBrPVRHycWZu
+	+2CumxbVdgBO9ZyUNj5tBhEEdgHUwTAnw1uCLNbiEb1kyShD3rcwxFgac5gdvmerH9U0BydfCV6
+	a0webuXMa0Rhhe8xJuik4tcnnV7MGZHgoyog5R7eOOJQ65GzxX6Xs5G5vfsLDoD0+aQzDzlfREg
+	7e4ARv65op33K2U72loOjSS5HreuqcPwSZ0+4j0EBrV0PyTqJ8Bo4jm22DU/P1WfPBxrf1ioKji
+	LrmLet9L0PJhFbS32ODy7zxjIsgZEn37vANJXuefBHTbskTnmpf56em0do4JSkpqG0QbRBqRGGR
+	5irZ0bXpwQ=
+X-Received: by 2002:a17:907:94cd:b0:c2e:3d17:5265 with SMTP id a640c23a62f3a-c2e4acecd07mr452317266b.21.1791018295547;
+        Sat, 03 Oct 2026 02:04:55 -0700 (PDT)
+Received: from [192.168.0.167] ([109.77.86.130])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c2e71d5876fsm48745266b.0.2026.10.03.02.04.54
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 03 Oct 2026 02:04:55 -0700 (PDT)
+Message-ID: <86300678-cc2e-48ea-9421-b615dd263f24@linaro.org>
+Date: Sat, 3 Oct 2026 10:04:53 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260924-b4-rockchip-dwc3-rockchip-glue-v16-1-126a2e9133c3@collabora.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v18 02/11] media: dt-bindings: Add CAMSS device for
+ Kaanapali
+To: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>,
+ Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+ Loic Poulain <loic.poulain@oss.qualcomm.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, jeyaprakash.soundrapandian@oss.qualcomm.com,
+ Vijay Kumar Tumati <vijay.tumati@oss.qualcomm.com>
+References: <20261003-kaanapali-camss-v18-0-87ba4ebe0db1@oss.qualcomm.com>
+ <20261003-kaanapali-camss-v18-2-87ba4ebe0db1@oss.qualcomm.com>
+From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+Content-Language: en-GB
+In-Reply-To: <20261003-kaanapali-camss-v18-2-87ba4ebe0db1@oss.qualcomm.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261003_020457_907077_309AF7D2 
+X-CRM114-Status: UNSURE (   5.90  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,36 +110,25 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-Hello Sebastian,
-
-On 24-09-26, 19:25, Sebastian Reichel wrote:
-> Some PHY devices with multiple ports (e.g. USB3 and DP) require a reset
-> if the configuration changes or cable orientation changes. This is a
-> problem, as the consumer device will run into undefined behavior.
+On 03/10/2026 10:02, Hangxiang Ma wrote:
+> Add bindings for Camera Subsystem (CAMSS) on the Qualcomm Kaanapali
+> platform.
 > 
-> With the new PHY notifier API introduced in this patch, the consumer
-> driver can hook into reset events coming from a PHY device to handle the
-> PHY going down gracefully.
+> The Kaanapali platform provides:
+> - 6 x CSIPHY (CSI Physical Layer)
+> - 3 x TPG (Test Pattern Generator)
+> - 3 x CSID (CSI Decoder)
+> - 2 x CSID Lite
+> - 3 x VFE (Video Front End), 5 RDI per VFE
+> - 2 x VFE Lite, 4 RDI per VFE Lite
 > 
-> Note that this uses -ENOSYS instead of the more sensible -ENOTSUP for
-> the stub functions when GENERIC_PHY is disabled to stay consistent with
-> the existing ones.
-
-I dont think this series has the usage of this.
-
-I think I am still not convinced why a phy should notify as I dont feel
-we have any mechanism to notifying. Checking status and letting people
-know if not really a notification mechanism... Maybe add a status call
-instead?
-
--- 
-~Vinod
+> Signed-off-by: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
+Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
 
 -- 
 linux-phy mailing list
