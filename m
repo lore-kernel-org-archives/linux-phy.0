@@ -4,59 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2FC4CA5FEC
-	for <linux-phy@archiver.kernel.org>; Sat,  3 Oct 2026 14:34:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6E6CCA5FED
+	for <linux-phy@archiver.kernel.org>; Sat,  3 Oct 2026 15:25:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NmPhf4bwVmLtpD0WFSaT1NQ0QwTT5ZVDb6MEHhq8F+U=; b=I1WqQ8hrGn21BU
-	CsXersqjpRAwk5q1gszBX7BrEalRB8BuYLCMbcBLGsB6vxhegA4Ahig5OIlnt74VdflvzMQweu3vS
-	doyvGv2+2iwGHc8/i0gEkJaaEXds+34U8LUcIWvmm0f5GCGyVXHXCEhGPHWGhaHRlh5v96qTnYcPQ
-	e9YGRLXSUmXyc6gutosIgvY+LT18YGdDA540LcwxRLIs+Euu2KV997pT6oQeJrxDcg5xrMHGCCcUk
-	opIy82RiSc2UD/6riI7bivxxe2fEfPQuiI8lkEgXP5j95NTOCZIh22Qzy6EvZcRily5TVBmZ3Bcp3
-	OQg/yzlfuQ3r0bS1JPIA==;
+	List-Owner; bh=uVr2Ttae/y2V7CxrvyG2RxkldmaMRoHJXwi6ecLaFik=; b=ye79ATXvwzpG1T
+	vSDkFB6RpHkklBJr9RoomDxE7ndmT0j4prx04hIRTEGq6pKaT5H4v15melf05E8wteZcn+Avz8xmo
+	R04sKDQEqkHWKXGUGursSDobmzfDupCuROyZbFeffxhFtmImCG2bqQtSmuJlkRKr3dtimtwI5nV25
+	bhL1nhvPShFwNZzd2KQhcetSep4RGjd6ZawNfr+8xguu7mrmAOqgbe3byViEre/i9+CBaCTq2MQNi
+	uI83SHlDZzF+awbBkEXc/mrEI77NUNLv1uzINP+ngPdG+MoWQbDyODH9QX2vELKvQRFWpKh7YiulY
+	OhQM8KgzrUsPX0pECpZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xD0oM-0000000Dcn1-1bmy;
-	Sat, 03 Oct 2026 14:34:02 +0000
+	id 1xD1c2-0000000DgXE-0BpQ;
+	Sat, 03 Oct 2026 15:25:22 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xD0oL-0000000Dcmh-0HMW;
-	Sat, 03 Oct 2026 14:34:01 +0000
+	id 1xD1bz-0000000DgWX-3d7A;
+	Sat, 03 Oct 2026 15:25:20 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id CE20F42CEC;
-	Sat,  3 Oct 2026 14:34:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E78321F0089C;
-	Sat,  3 Oct 2026 14:33:59 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 8CB99418CB;
+	Sat,  3 Oct 2026 15:25:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9B8701F0089B;
+	Sat,  3 Oct 2026 15:25:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791038040;
-	bh=AFR639q8tbGk2o2B7bnw3EP7nlm2AxE19opzLE9d4MY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=PQLdvN5kALf6gJs73wjnLUlULwRHpG5ddyq+nlsq5nKLkvhk2vfQwyfN+NPRPkC2H
-	 Oi4t+Bm4kV3aMZHP51vZLtSRRe3JhiKeQAfGKgt/1eFSXW8kV5beZBqyGCbCh86cn7
-	 gVpon8b+BBA07NzoUaf0684GUFRFdWBhwrcqaGzFANB+UUq8mtNlYWJpdbkOHpCP+V
-	 r9S/wHF2XRanD5eAczJfi2fpAQiLzKMW+2HnQkBBJiKKCbMDth0l4WGU+EmVuGtRXg
-	 +pNPiwqJAIFDYnwQkAz53N98WVBEDeSrcDe2Ry/CGpOWI3fpOqid16SerRcZJv00ya
-	 0PiEX5Z8SsNXQ==
-Date: Sat, 3 Oct 2026 16:33:57 +0200
+	s=k20260515; t=1791041117;
+	bh=MX9aB6PwQHsHsiY0tEeijH0+CAtN1fEbIer9DwvycAc=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date;
+	b=aAoqDat+Q89oO/U4XsYvv+6iolQlUiVFN2uAyCGDz9O8O5zeNf0bG9/M5BtZVfbRA
+	 y9vpNHqOqXKntCf5ly5efU77IKcGAPsbjCnJ5AOySwX32MWJ2Hlj2tRrwCGSGS0rfE
+	 6e8aEXzKDNQlyvmteKbXFUNUFx2vorFfutyKmDWOZF7Q/ypTCubxFVRgwpidjfqBAD
+	 qUIOWvYgBu0kDXgJBNTLILGsXLSqcFL+4nOrAztAnmhMVwO1z19zfE2GzlVCWteRzW
+	 HKfz+COj3lDOhi/JAF7BaVJTZhKP0FCWFlOfNSeiTAKShGexJvyGWqfyXlFOpwjGc3
+	 939xtt+1OLawQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>, linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Igor Paunovic <royalnet026@gmail.com>, kernel@collabora.com
-Subject: Re: [PATCH v2 0/4] phy: rockchip: inno-usb2: ensure PHY is running
- when clock is requested
-Message-ID: <asESVQlMjOYfHk_M@parshuram>
-References: <20261001-phy-rockchip-inno-usb2-clock-fix-v2-0-e01bf509359e@collabora.com>
+To: peter.griffin@linaro.org, andre.draszik@linaro.org, 
+ tudor.ambarus@linaro.org, p.zabel@pengutronix.de, neil.armstrong@linaro.org, 
+ RD Babiera <rdbabiera@google.com>
+Cc: badhri@google.com, nkapron@google.com, 
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20260925222959.3607769-2-rdbabiera@google.com>
+References: <20260925222959.3607769-2-rdbabiera@google.com>
+Subject: Re: [PATCH v8] phy: Add USB3 PHY support to Google Tensor SoC USB
+ PHY driver
+Message-Id: <179104111428.223537.9712692661355161326.b4-ty@kernel.org>
+Date: Sat, 03 Oct 2026 17:25:14 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20261001-phy-rockchip-inno-usb2-clock-fix-v2-0-e01bf509359e@collabora.com>
+X-Mailer: b4 0.14.3
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,60 +72,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 01-10-26, 15:12, Sebastian Reichel wrote:
-> This was noticed on RK3588 EVB1 when resuming from system suspend. This
-> is technically a fix, but its unclear when the bug was introduced and
-> system suspend is broken on RK3588 for quite a while and not just due
-> to this problem. So I think this fix can be merged the normal way via
-> linux-next.
 
-This looks fine to me, can you check the sashiko issues reported...
+On Fri, 25 Sep 2026 22:30:00 +0000, RD Babiera wrote:
+> Add USB3 PHY support for the Google Tensor G5 USB PHY driver.
+> This patch adds functionality for the usb3_tca register, usb3 clock,
+> and usb3 reset as defined in google,lga-usb-phy.yaml. Kconfig now lists
+> USB SuperSpeed support.
+> 
+> Refactor the probe sequence to initialize the USB2 and USB3 PHYs, and then
+> initialize clocks and resets for both PHYs afterwards.
+> 
+> [...]
 
-> 
-> Changes in v2:
-> - Link to v1: https://patch.msgid.link/20260908-phy-rockchip-inno-usb2-clock-fix-v1-1-f7d59c31b908@collabora.com
-> - Move suspend exit code from rockchip_usb2phy_power_on into a
->   separate patch and reuse it in the clock prepare function;
->   move is done in a separate patch
-> - Updated commit messages with proper rationale
-> - Added one more patch dropping useless assignment
->   of rport->suspended directly after calling
->   rockchip_usb2phy_power_on/off
-> - Add one more patch unifying and simplifying the debug
->   messages for phy init/power_on/power_off/exit
-> 
-> ---
-> To: Vinod Koul <vkoul@kernel.org>
-> To: Neil Armstrong <neil.armstrong@linaro.org>
-> To: Manivannan Sadhasivam <mani@kernel.org>
-> To: Heiko Stuebner <heiko@sntech.de>
-> Cc: linux-phy@lists.infradead.org
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-rockchip@lists.infradead.org
-> Cc: linux-kernel@vger.kernel.org
-> Cc: Igor Paunovic <royalnet026@gmail.com>
-> Cc: kernel@collabora.com
-> Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-> 
-> ---
-> Sebastian Reichel (4):
->       phy: rockchip: inno-usb2: simplify and unify PHY op debug messages
->       phy: rockchip: inno-usb2: drop duplicated update of rport->suspended
->       phy: rockchip: inno-usb2: move suspend handling into new function
->       phy: rockchip: inno-usb2: move suspend handling into clock prepare/unprepare for RK3588/RK3576
-> 
->  drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 85 +++++++++++++++++++--------
->  1 file changed, 59 insertions(+), 26 deletions(-)
-> ---
-> base-commit: cee9395acd8043be0644b25c34bfa86623f2b935
-> change-id: 20260908-phy-rockchip-inno-usb2-clock-fix-edd65b57f884
-> 
-> Best regards,
-> --  
-> Sebastian Reichel <sebastian.reichel@collabora.com>
+Applied, thanks!
 
+[1/1] phy: Add USB3 PHY support to Google Tensor SoC USB PHY driver
+      commit: 8c2b331e6327ead44e72e347ce405c21dd781a99
+
+Best regards,
 -- 
 ~Vinod
+
+
 
 -- 
 linux-phy mailing list
