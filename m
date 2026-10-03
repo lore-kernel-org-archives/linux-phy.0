@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6E6CCA5FED
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4051CA5FDD
 	for <linux-phy@archiver.kernel.org>; Sat,  3 Oct 2026 15:25:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,48 +12,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uVr2Ttae/y2V7CxrvyG2RxkldmaMRoHJXwi6ecLaFik=; b=ye79ATXvwzpG1T
-	vSDkFB6RpHkklBJr9RoomDxE7ndmT0j4prx04hIRTEGq6pKaT5H4v15melf05E8wteZcn+Avz8xmo
-	R04sKDQEqkHWKXGUGursSDobmzfDupCuROyZbFeffxhFtmImCG2bqQtSmuJlkRKr3dtimtwI5nV25
-	bhL1nhvPShFwNZzd2KQhcetSep4RGjd6ZawNfr+8xguu7mrmAOqgbe3byViEre/i9+CBaCTq2MQNi
-	uI83SHlDZzF+awbBkEXc/mrEI77NUNLv1uzINP+ngPdG+MoWQbDyODH9QX2vELKvQRFWpKh7YiulY
-	OhQM8KgzrUsPX0pECpZw==;
+	List-Owner; bh=Aar1BjXTTRtzv47feoaN2iq0a2SKR4yrz+x+B7y3Ts8=; b=gF/QOFJH9ZO2IS
+	Ud4/ZE35M0EN3RUsW1+qdamiBfzg+CSF78jREtI61PHXH8L1aG5Yyz+ktpuDsTFAYadDD6ggRfSkE
+	mJjluGTKz1O24PHCT7Tky1tfYx95b8qUIWfe7+Tjlye1LhJUyLn4jU5e6QRviOD/suxkxXGzUK4EY
+	jvBr7NxrJmB4uXyKveXXfTf98Zbsd4D5hEbfw5Imzup+0/pyJDSKhueAX6drPOGF1t+O6rZlXo3FM
+	GaY4aVUyDh1GKxYqOLVP/BOLoUXl0XOnYcsZpTkcO9pRQMghDp6HB2UslxjDW1xTY5yTLUtu/lV/W
+	ZRwdAMvgbH9RjMdnhlvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xD1c2-0000000DgXE-0BpQ;
+	id 1xD1c2-0000000DgXj-0ias;
 	Sat, 03 Oct 2026 15:25:22 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xD1bz-0000000DgWX-3d7A;
-	Sat, 03 Oct 2026 15:25:20 +0000
+	id 1xD1c0-0000000DgWY-48nq;
+	Sat, 03 Oct 2026 15:25:21 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 8CB99418CB;
+	by tor.source.kernel.org (Postfix) with ESMTP id 68BFB60DA3;
+	Sat,  3 Oct 2026 15:25:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 042F71F0089C;
 	Sat,  3 Oct 2026 15:25:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9B8701F0089B;
-	Sat,  3 Oct 2026 15:25:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791041117;
-	bh=MX9aB6PwQHsHsiY0tEeijH0+CAtN1fEbIer9DwvycAc=;
+	s=k20260515; t=1791041120;
+	bh=DiX5YW6EBF7WudDBAa3mCh5+8hepxsK5EmgVDcVUaHs=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=aAoqDat+Q89oO/U4XsYvv+6iolQlUiVFN2uAyCGDz9O8O5zeNf0bG9/M5BtZVfbRA
-	 y9vpNHqOqXKntCf5ly5efU77IKcGAPsbjCnJ5AOySwX32MWJ2Hlj2tRrwCGSGS0rfE
-	 6e8aEXzKDNQlyvmteKbXFUNUFx2vorFfutyKmDWOZF7Q/ypTCubxFVRgwpidjfqBAD
-	 qUIOWvYgBu0kDXgJBNTLILGsXLSqcFL+4nOrAztAnmhMVwO1z19zfE2GzlVCWteRzW
-	 HKfz+COj3lDOhi/JAF7BaVJTZhKP0FCWFlOfNSeiTAKShGexJvyGWqfyXlFOpwjGc3
-	 939xtt+1OLawQ==
+	b=KxpJPO9Qmv2UgUpdX5duGVS+kcrJcLxiLByfXnXLACZpzcadShH9Ab148O92g8LYx
+	 3n4IWgPohS6M+beqz1UK5gL6Aykjda4JVWuRBu2mIyJ9ytS1ru2a0M5+mTtQTXERv8
+	 rto/2CSxMpZD8UbhRJvRq0yZ/RpjBLcOPpo2hQr0WGHROIpDGCRREEiRVaEr/7q1X/
+	 xYu7XQW3+gxpqgYjlefdOoafEgWwLkMeHZIkVX0xgCyE9dNdvZhNB2Zhx9z3bprTTf
+	 CvtwmoFlkp3jrcXTLJVk+sxgANh1xV803u9i68pbUHOASGA6CYrK2ZtOu9LNN77Sz6
+	 Vh2/3utiS3vmA==
 From: Vinod Koul <vkoul@kernel.org>
-To: peter.griffin@linaro.org, andre.draszik@linaro.org, 
- tudor.ambarus@linaro.org, p.zabel@pengutronix.de, neil.armstrong@linaro.org, 
- RD Babiera <rdbabiera@google.com>
-Cc: badhri@google.com, nkapron@google.com, 
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-In-Reply-To: <20260925222959.3607769-2-rdbabiera@google.com>
-References: <20260925222959.3607769-2-rdbabiera@google.com>
-Subject: Re: [PATCH v8] phy: Add USB3 PHY support to Google Tensor SoC USB
- PHY driver
-Message-Id: <179104111428.223537.9712692661355161326.b4-ty@kernel.org>
-Date: Sat, 03 Oct 2026 17:25:14 +0200
+To: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Heiko Stuebner <heiko@sntech.de>, 
+ Sebastian Reichel <sebastian.reichel@collabora.com>, 
+ Jason Yang <jason98166@gmail.com>
+Cc: Heiko Stuebner <heiko.stuebner@cherry.de>, 
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20260821-dcphy-rpm-v1-v1-1-a7db728b2539@gmail.com>
+References: <20260821-dcphy-rpm-v1-v1-1-a7db728b2539@gmail.com>
+Subject: Re: [PATCH] phy: rockchip-samsung-dcphy: Enable runtime PM at PHY
+ core level
+Message-Id: <179104111766.223537.14780886695955286078.b4-ty@kernel.org>
+Date: Sat, 03 Oct 2026 17:25:17 +0200
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
 X-BeenThere: linux-phy@lists.infradead.org
@@ -73,21 +74,20 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 25 Sep 2026 22:30:00 +0000, RD Babiera wrote:
-> Add USB3 PHY support for the Google Tensor G5 USB PHY driver.
-> This patch adds functionality for the usb3_tca register, usb3 clock,
-> and usb3 reset as defined in google,lga-usb-phy.yaml. Kconfig now lists
-> USB SuperSpeed support.
-> 
-> Refactor the probe sequence to initialize the USB2 and USB3 PHYs, and then
-> initialize clocks and resets for both PHYs afterwards.
+On Fri, 21 Aug 2026 19:44:19 +0800, Jason Yang wrote:
+> phy_create() only enables runtime PM on the new PHY device if the parent
+> already has it enabled, and this driver enables it afterwards. The PHY
+> device therefore never gets runtime PM, and phy_pm_runtime_get_sync()
+> returns -ENOTSUPP for every phy_init() and phy_power_on(). The block is
+> still resumed today, but only through the supplier link fw_devlink builds
+> from the phys phandle, which fw_devlink=off and =permissive do not.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] phy: Add USB3 PHY support to Google Tensor SoC USB PHY driver
-      commit: 8c2b331e6327ead44e72e347ce405c21dd781a99
+[1/1] phy: rockchip-samsung-dcphy: Enable runtime PM at PHY core level
+      commit: 261e84f9278f4373970471ad71479df20d82ed4c
 
 Best regards,
 -- 
