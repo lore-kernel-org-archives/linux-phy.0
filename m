@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 455AACA5FF1
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35000CA5FED
 	for <linux-phy@archiver.kernel.org>; Sat,  3 Oct 2026 15:25:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,48 +12,47 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Imq7zq1VWj8lXik7URUyLlx5yiz2VhZG0Mvp5wuIKHU=; b=NKeGQI5fz5HHZ3
-	KZcXKqMU5GTg0627rzZRkTfv1URRl4RpmxjEGg5qK04Ud8CSMAIOWhvapTlzCufbgh8yu7Y0qpOHG
-	moV1kP81MDVBcHwMb59cnCwRX5zN4BCjBNcHsXMsZRNGSiP/2KfVXzoQ0O7h1/iyRUpzpacJeWqlu
-	qeUqmdjNMbwwvnLEfS+GjTmqIx3zcb+hbuYsFzP7C9Jy/d0cQZICRh0SgkKA9fn7yxlA1rXyfumZs
-	9sZdNbtv6QgJD+38Rk3Bni0Lx8TbitzPMtqQEY9bW8aYvgzyoXSz+hocST+lpMm70g2NF2l5uJIi9
-	1be7OkC7AgBj6zK9VAWQ==;
+	List-Owner; bh=MXWEDFG9FBotAufCgMYcTtbJQFFzTQGyw//ghXkLyqU=; b=akpvne+rTtGUDE
+	sBzk4/ky9PpDDOqy9TuLDH96PCvBfIITr/ed06kRNhZUTM29ffvc9kOw+pdRFsn7olOdVJSUuOb9M
+	NxIluecJ+LvD4FxMWfQId3LzH5POFK9msCrPAFEN1RxW0FAuWXsrJ6Pz63hboUAcblobNF7H/go6P
+	4XKUOxxgiq2AIjSbayi5rgxitvQT+n3SLu+RWuSPrrUIl5z800mzIUlbGi8KQ8yGs9wOS6mwX4eXr
+	Gvecj/yEIV+TEC0qB6XMp11wqHedRoZA4hq7i4+55w0UdS9o1qeysIQ1ABKGAUx/98hWcBsjBvqe0
+	myr7/XxRc5BLmj0N8zMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xD1cJ-0000000Dgi6-3vyU;
+	id 1xD1cJ-0000000Dgi1-3k5x;
 	Sat, 03 Oct 2026 15:25:39 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xD1cE-0000000Dgff-0H3s
-	for linux-phy@lists.infradead.org;
-	Sat, 03 Oct 2026 15:25:38 +0000
+	id 1xD1cC-0000000DgfT-33vI;
+	Sat, 03 Oct 2026 15:25:35 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 8256360D82;
-	Sat,  3 Oct 2026 15:25:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1F8C41F0089D;
+	by sea.source.kernel.org (Postfix) with ESMTP id A3E0E44843;
 	Sat,  3 Oct 2026 15:25:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3E8F71F0089C;
+	Sat,  3 Oct 2026 15:25:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791041133;
-	bh=049uPGtYxN8IGOPOlZbVCBT70USK+uuKiYpF8itJ5Fc=;
+	s=k20260515; t=1791041130;
+	bh=q643Wt6fe0ntTTDTKOYlrl8Wj5XitvlnnZ6YOFvEOnc=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=nVtyIJM8IjKyr3dA2F2MEBbVGv03WpB3+Lfv1JfvrIoWwpsExT9nicFOr7lyRzwn1
-	 N0kvYK0xtgdNMQuctFS8S6lEn6oUBQRXlCM7w4mmYnyq2Fc8s9pYs9DiiH7LiFkMC8
-	 aLjHG8ng+CveIfWp3Dh10Pk7xRm87SsdlolIKO3LB22uSn6RGxalbxck/FR+QxNqni
-	 PVev6S9Hfco5Lzh+WCRskUBLPSVoK1LlzJ2P2gQOnFdB/QVUL2VqQoLNjLM+9MvtBa
-	 HZyTSDXYY8aVLXZcTIlSV/LKMOvhfMAAt2LqDNFO9FzSN0XUGlGIj33QdyMgIefQH/
-	 OSXvdRZgXCcSg==
+	b=cDCh1URWwts0elrdZ20jLCn18/umO4ONLw1oxNhmmHlvCzhYp0Pm/trdDFICN1PPD
+	 UcefMWA7kmVyHMwYWG+lFZdswmpHbkDmSdw4dXNEXosj7Lpbzf9Za1ajBgcLCRw/8v
+	 WSD5BoLsDVWB+qGTEXu2Bg44C1J4YQUfoVPVitITBx9VWCVVfPNHfbnzzCxex1rV+u
+	 MyzBF2kRhy9OgYo75V/sQyrKrG5DJmCNwCV17dPSbhYAHZGf63dbU0oC8rAiqMXtYa
+	 KW7eugMboXNw4X7gLeqK9pKigM1Tf+oEIqODYsLK4++kHMy/0x09+whxbqIzRXQYYk
+	 bR0+NNfswjUIw==
 From: Vinod Koul <vkoul@kernel.org>
-To: David Carlier <devnexen@gmail.com>
-Cc: neil.armstrong@linaro.org, qiang.yu@oss.qualcomm.com, mani@kernel.org, 
- konrad.dybcio@oss.qualcomm.com, krishna.chundru@oss.qualcomm.com, 
- linux-phy@lists.infradead.org, linux-arm-msm@vger.kernel.org, 
- linux-kernel@vger.kernel.org
-In-Reply-To: <20260825225729.230493-1-devnexen@gmail.com>
-References: <20260825225729.230493-1-devnexen@gmail.com>
-Subject: Re: [PATCH 1/2] phy: qcom: qmp-pcie: Select MFD_SYSCON for the
- multi-PHY driver
-Message-Id: <179104113076.223537.8163260919027364085.b4-ty@kernel.org>
-Date: Sat, 03 Oct 2026 17:25:30 +0200
+To: Bruno Banelli <bbanelli@gmail.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>, Yixun Lan <dlan@kernel.org>, 
+ Ze Huang <huang.ze@linux.dev>, Alex Elder <elder@riscstar.com>, 
+ linux-phy@lists.infradead.org, linux-riscv@lists.infradead.org, 
+ spacemit@lists.linux.dev, linux-kernel@vger.kernel.org
+In-Reply-To: <20260825065007.69353-1-bbanelli@gmail.com>
+References: <20260825065007.69353-1-bbanelli@gmail.com>
+Subject: Re: [PATCH v2 0/2] phy: spacemit: fix and enable the K1 USB 2.0
+ PHY
+Message-Id: <179104112791.223537.13672084423793291489.b4-ty@kernel.org>
+Date: Sat, 03 Oct 2026 17:25:27 +0200
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
 X-BeenThere: linux-phy@lists.infradead.org
@@ -73,23 +72,23 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 25 Aug 2026 23:57:28 +0100, David Carlier wrote:
-> The driver reads the active link mode through
-> syscon_regmap_lookup_by_phandle_args(). Without CONFIG_MFD_SYSCON the
-> stub returning -ENOTSUPP is compiled in instead, so probe fails for
-> every device and no PHY is ever registered.
+On Tue, 25 Aug 2026 08:50:05 +0200, Bruno Banelli wrote:
+> v1 was a single patch adding "default ARCH_SPACEMIT" to
+> PHY_SPACEMIT_K1_USB2.  Automated review pointed out two pre-existing
+> Kconfig problems in the same entry, and that change makes them easier
+> to hit: enabling the symbol by default means configurations that would
+> previously have left it off will now build the driver.
 > 
-> Nothing in the build catches this: the driver still compiles, and arm64
-> defconfig happens to enable MFD_SYSCON through an unrelated select.
+> So fix the dependencies first, then enable it by default.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/2] phy: qcom: qmp-pcie: Select MFD_SYSCON for the multi-PHY driver
-      commit: 77a0e6ae5dec54fb6049e3ab88288bc40c81f9fd
-[2/2] phy: qcom: qmp-pcie: Check clock-output-names count in the multi-PHY driver
-      commit: fb0f0e0e9e5dace7a6d9cde289537980ad35db3d
+[1/2] phy: spacemit: fix K1 USB 2.0 PHY Kconfig dependencies
+      commit: 882af55e42a4cd5bd61db0244c0b78941884518a
+[2/2] phy: spacemit: enable K1 USB 2.0 PHY by default on ARCH_SPACEMIT
+      commit: 392101240b22256105da3b5af6348d1889c63112
 
 Best regards,
 -- 
