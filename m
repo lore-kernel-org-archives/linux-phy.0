@@ -4,56 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD77ECA5FE3
-	for <linux-phy@archiver.kernel.org>; Sat,  3 Oct 2026 09:36:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0C5FCA5FE3
+	for <linux-phy@archiver.kernel.org>; Sat,  3 Oct 2026 09:36:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2PWKgBoLqPiDQMyD1NmCoYiSz4zyg3r7jJFzlwRGZvQ=; b=zCN1Gl50W5G+mK
-	KphmezvdqqM2g9HZk7livDO0ZLKztAsBlr+aanVV4Up831zjfcbOKPkF8tArHkk0gwtAcWz/VLq0d
-	ROtUVp52MwhXhM1K6jpwLrObOJ2SgqrTPMTWblH1Za50ww5TVh3XmX6lQRXF0iRaRq4UI2BcFnCvP
-	SQor97aUz6I3c9VMU1gmvzGHDW78yda4KzCeuZR74Ra/uTBgK+aGNrp8rUqST1YO7fJekgjAoW6Yd
-	z4HMoFpJQFpVd2RMjYu5hKzgYGDB8PJGPugEO07Nj8aQw6fidNJPGmXruWbgIpD0CCaU1JFZi6hQS
-	Mq8gF7nfctfvbzHrRrmA==;
+	List-Owner; bh=pUPp8w9+SSGVgLOWySyyDzKC24SyMT50RfKGYLgrSeQ=; b=gthZvfuBXQk2Db
+	Cso6LC42EftbWOWosRIr1NvNJRNWyHzIsrVYRKI/3jh8MpvHYSJcnSeknXCz1QK64B9MKTx37VQSr
+	HRJRYlckAsJpza4ttu+31SvO6VbU7D/OUrMq15Qv/p82/xBO+3fIsxnC98Np9kl27bn0sw0wbc4mw
+	kTfFPb4cz7vYlP9of1w++3DxFJ+s/9lI7CO3UsdKQ+YKnlNMgFx5gM+fCIdxynG6XDa/0foHcIIiI
+	rexPnRZN+hpasKAVgfmWAWQfMkcMGK0/lhcqCb2ERT64EVi/3yDxaOaMvybsgPuWD5epJrFcDuP4Q
+	5GuoYJjOV+fl7v87Otug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCwAK-0000000DHiE-0bY7;
-	Sat, 03 Oct 2026 09:36:24 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xCwAN-0000000DHjD-1PzV;
+	Sat, 03 Oct 2026 09:36:27 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xCwAJ-0000000DHi8-1SVQ
-	for linux-phy@lists.infradead.org;
-	Sat, 03 Oct 2026 09:36:23 +0000
+	id 1xCwAL-0000000DHii-2HUm;
+	Sat, 03 Oct 2026 09:36:25 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 78477602C2;
+	by sea.source.kernel.org (Postfix) with ESMTP id 408FA4359F;
+	Sat,  3 Oct 2026 09:36:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D04801F0089C;
 	Sat,  3 Oct 2026 09:36:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 98B001F0089B;
-	Sat,  3 Oct 2026 09:36:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791020182;
-	bh=FWcGi/CHS/a4B/lMqSn+qerEcKaHZX/sUv9NmysE1Hc=;
+	s=k20260515; t=1791020185;
+	bh=MrBYuxJRI8Q0gYPvH2mARUPM0a0QmKyyZXNcWC/6qBU=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=ENoKWe8yidcvyJffyu1+2Qy3LoB4l28Rb/Llq6oZuvybneqkCSvo+13aX5ryXsdoM
-	 OxFMFXJ2g3fIUnQ2wkQsvWS5qJXzzJF3N4KUEKdZT/xn8oYOKKImIr6MaSrzX7Zd+D
-	 KuT+yzeZU1wpW39GSWveU0zmdSF+pNaAr1TUq4unKmVeqg5/sKQziZks8PPSV7JDZq
-	 BKfpz3Ltewwvn1lE5CnjwzI4V/Y+/pnGp4Tg1HLtKJrj6ouO6HAhOCnWEXLpHjtdYr
-	 BJ57ih1PnBR6URXx8ZaiUS0Kxl+yWCtWGawKBaeEV2aPKOKqJSZUGwdQbvGl6QomUE
-	 5ty+Mc3oX9s6g==
+	b=kzA2DMIs3EUtDVSj0D37/deDvrCJb8OHldkuyNuYtIzVLVnjGVEr6538nJKIb9M0i
+	 XGPf2Uf/IDYVGE5zoBZbX8hbpT4O3+aj6QG/4Hsh/msjtBZ6EvSUIW6L74StrtVTty
+	 wTh+Yz932o20f9ZY2jO4BQS8xXIZHaNC2RHjrEyQ1hJE0P8PbBAmyAxk2TaR5bi+eb
+	 8+VY1kshFzf0cH9hD9OYt5DOhylO5OTtE/AO9zOGTXKFZWffYxAg3mCkBhlWPLP7e7
+	 uerw1wJ868hHFRf1bhxEUUhhtV7W2QC/Ctm6yqKUHBf67HvkQip+HCopBTa8Vlxaoi
+	 gjdBa9B8WGADA==
 From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>, 
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- Akash Sukhavasi <akash.sukhavasi@gmail.com>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-In-Reply-To: <20260708-b4-hi3670-v1-1-f9236f3e585c@gmail.com>
-References: <20260708-b4-hi3670-v1-1-f9236f3e585c@gmail.com>
-Subject: Re: [PATCH] phy: HiSilicon: Fix error handling in
- hi3670_pcie_allclk_ctrl()
-Message-Id: <179102018033.199361.1412125804515687799.b4-ty@kernel.org>
-Date: Sat, 03 Oct 2026 11:36:20 +0200
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ Nikolai Burov <nikolai.burov@jolla.com>
+Cc: linux-arm-kernel@lists.infradead.org, 
+ linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, 
+ Nikolai Burov <nikolai.burov+review@abscue.de>
+In-Reply-To: <20260711-mt6858-xsphy-poweron-v1-1-dee2fb71c7d5@jolla.com>
+References: <20260711-mt6858-xsphy-poweron-v1-1-dee2fb71c7d5@jolla.com>
+Subject: Re: [PATCH] phy: mediatek: xsphy: clear U2 DTM0 force bits during
+ init
+Message-Id: <179102018248.199361.12549208373713075681.b4-ty@kernel.org>
+Date: Sat, 03 Oct 2026 11:36:22 +0200
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
 X-BeenThere: linux-phy@lists.infradead.org
@@ -73,20 +76,18 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Wed, 08 Jul 2026 16:31:00 -0500, Akash Sukhavasi wrote:
-> When hi3670_pcie_pll_ctrl() fails, hi3670_pcie_allclk_ctrl() returns
-> -EINVAL directly, skipping the close_clocks cleanup path. This leaves
-> the PLL with its power-down bit cleared.
+On Sat, 11 Jul 2026 13:34:46 +0300, Nikolai Burov wrote:
+> On mobile SoCs, the USB PHY is completely powered off during bootup.
+> As a result, various bits in the DTM0 register are set that prevent
+> the USB 2.0 PHY from functioning. Clear them as part of the
+> initialization sequence.
 > 
-> Use goto close_clocks instead, which disables the PLL and propagates
-> the original error code from hi3670_pcie_pll_ctrl().
 > 
-> [...]
 
 Applied, thanks!
 
-[1/1] phy: HiSilicon: Fix error handling in hi3670_pcie_allclk_ctrl()
-      commit: 7540fc0a4f667b6773d10753a602a42a3113087b
+[1/1] phy: mediatek: xsphy: clear U2 DTM0 force bits during init
+      commit: 02df7fe1297d35d33c9841f345f61bf10f969300
 
 Best regards,
 -- 
