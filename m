@@ -4,54 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39698CA5FDD
-	for <linux-phy@archiver.kernel.org>; Sat,  3 Oct 2026 15:25:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 455AACA5FF1
+	for <linux-phy@archiver.kernel.org>; Sat,  3 Oct 2026 15:25:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yOofWUI15OizbSHZGErwJRe63xFTD+IA0bxt0YO0txo=; b=njtCvMTrBpvamb
-	zvBJT7f3Jtqn9ZNNQyH4vXwziSy7NZENkmQY6fPUw0/Q7QHVdMNJHNbV84w0YiJnPIrMTfvyngqrc
-	7I/fU4nej0XpimL7tmm4JEirf7AbERTcJJ9H4UX4kx2VUvWsgIQa/eT1NlcXdpb07U6fVl1BwkQg2
-	+gR4JrjZJZ+ZWeu4K6h5P6MUr5I2Vj7IrCaLGlUfPyItbZJE/D2foUBIwtYmUDBRNZ0vuEosr/9tq
-	7cWlv2GNt30DySIbRm/1ctllX+N+FgGA5dRxzXXIWXuLlFp8/App0FpEgemaC+BTfOTHKBlRoRDXN
-	bBP3FSbjlRlmA9NayPVA==;
+	List-Owner; bh=Imq7zq1VWj8lXik7URUyLlx5yiz2VhZG0Mvp5wuIKHU=; b=NKeGQI5fz5HHZ3
+	KZcXKqMU5GTg0627rzZRkTfv1URRl4RpmxjEGg5qK04Ud8CSMAIOWhvapTlzCufbgh8yu7Y0qpOHG
+	moV1kP81MDVBcHwMb59cnCwRX5zN4BCjBNcHsXMsZRNGSiP/2KfVXzoQ0O7h1/iyRUpzpacJeWqlu
+	qeUqmdjNMbwwvnLEfS+GjTmqIx3zcb+hbuYsFzP7C9Jy/d0cQZICRh0SgkKA9fn7yxlA1rXyfumZs
+	9sZdNbtv6QgJD+38Rk3Bni0Lx8TbitzPMtqQEY9bW8aYvgzyoXSz+hocST+lpMm70g2NF2l5uJIi9
+	1be7OkC7AgBj6zK9VAWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xD1c9-0000000DgeK-3Wmf;
-	Sat, 03 Oct 2026 15:25:29 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xD1cJ-0000000Dgi6-3vyU;
+	Sat, 03 Oct 2026 15:25:39 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xD1c8-0000000DgcX-3enI;
-	Sat, 03 Oct 2026 15:25:28 +0000
+	id 1xD1cE-0000000Dgff-0H3s
+	for linux-phy@lists.infradead.org;
+	Sat, 03 Oct 2026 15:25:38 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 012E660DA2;
-	Sat,  3 Oct 2026 15:25:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 001C01F0089B;
-	Sat,  3 Oct 2026 15:25:24 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 8256360D82;
+	Sat,  3 Oct 2026 15:25:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1F8C41F0089D;
+	Sat,  3 Oct 2026 15:25:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791041127;
-	bh=23Y/2PgTxZUSaSmiQQfmGqgPefme+EflMV6C57Dhc+k=;
+	s=k20260515; t=1791041133;
+	bh=049uPGtYxN8IGOPOlZbVCBT70USK+uuKiYpF8itJ5Fc=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=MA8BBvY0ou10kc8WBVXZjL4stUd0LzlylLRTDrUop31oOaz6fkE8QYjQJF9aX4g74
-	 cxxeRYPlFn7YiiDxiVbtof6pHcpcA8GA8Tlof/m6YOMeIfl6gTVgr+p6Pre6sgh8wZ
-	 Pv1OKhKstaP9k6NxwECz95xX4OT4k2Ev0yNdGAuZJkKKP+o9uMdEKuY1n3iQkWt8yY
-	 naO8oaIFK99O/JCIf04jL3UWM34vPeRWb/FVmXsydxmeL3VRURQaCIfixmhLt2U7oq
-	 sCYwq/H/CISdQCG8ZZ3T31V4OsXBK/PtLnE05Fon9uLHOnOrYRpnH6LarRCWdzbs52
-	 9FziDx0tLUByg==
+	b=nVtyIJM8IjKyr3dA2F2MEBbVGv03WpB3+Lfv1JfvrIoWwpsExT9nicFOr7lyRzwn1
+	 N0kvYK0xtgdNMQuctFS8S6lEn6oUBQRXlCM7w4mmYnyq2Fc8s9pYs9DiiH7LiFkMC8
+	 aLjHG8ng+CveIfWp3Dh10Pk7xRm87SsdlolIKO3LB22uSn6RGxalbxck/FR+QxNqni
+	 PVev6S9Hfco5Lzh+WCRskUBLPSVoK1LlzJ2P2gQOnFdB/QVUL2VqQoLNjLM+9MvtBa
+	 HZyTSDXYY8aVLXZcTIlSV/LKMOvhfMAAt2LqDNFO9FzSN0XUGlGIj33QdyMgIefQH/
+	 OSXvdRZgXCcSg==
 From: Vinod Koul <vkoul@kernel.org>
-To: Janne Grunau <j@jannau.net>, Neal Gompa <neal@gompa.dev>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Sven Peter <sven@kernel.org>
-Cc: asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Paul Cristian <p4ulcristian@gmail.com>, stable@vger.kernel.org
-In-Reply-To: <20260821-b4-atcphy-usb4-v1-0-45c0b741e0c0@kernel.org>
-References: <20260821-b4-atcphy-usb4-v1-0-45c0b741e0c0@kernel.org>
-Subject: Re: [PATCH 0/3] phy: apple: atc: Prepare USB3-via-4 tunneling
-Message-Id: <179104112470.223537.13101636843380037853.b4-ty@kernel.org>
-Date: Sat, 03 Oct 2026 17:25:24 +0200
+To: David Carlier <devnexen@gmail.com>
+Cc: neil.armstrong@linaro.org, qiang.yu@oss.qualcomm.com, mani@kernel.org, 
+ konrad.dybcio@oss.qualcomm.com, krishna.chundru@oss.qualcomm.com, 
+ linux-phy@lists.infradead.org, linux-arm-msm@vger.kernel.org, 
+ linux-kernel@vger.kernel.org
+In-Reply-To: <20260825225729.230493-1-devnexen@gmail.com>
+References: <20260825225729.230493-1-devnexen@gmail.com>
+Subject: Re: [PATCH 1/2] phy: qcom: qmp-pcie: Select MFD_SYSCON for the
+ multi-PHY driver
+Message-Id: <179104113076.223537.8163260919027364085.b4-ty@kernel.org>
+Date: Sat, 03 Oct 2026 17:25:30 +0200
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
 X-BeenThere: linux-phy@lists.infradead.org
@@ -71,24 +73,23 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 21 Aug 2026 15:50:26 +0200, Sven Peter wrote:
-> This short series first fixes an oversight that prevents USB2 from
-> working when DP AltMode with 4 lanes is used. Then it adds the required
-> sequence to point dwc3's PIPE interface to the USB4 Native Host
-> Interface which I plan to submit soon to support USB3-via-USB4 tunnels.
+On Tue, 25 Aug 2026 23:57:28 +0100, David Carlier wrote:
+> The driver reads the active link mode through
+> syscon_regmap_lookup_by_phandle_args(). Without CONFIG_MFD_SYSCON the
+> stub returning -ENOTSUPP is compiled in instead, so probe fails for
+> every device and no PHY is ever registered.
 > 
-> Best,
+> Nothing in the build catches this: the driver still compiles, and arm64
+> defconfig happens to enable MFD_SYSCON through an unrelated select.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/3] phy: apple: atc: Support DUMMY PIPEHANDLER state in configure_pipehandler
-      commit: a2fd3d1f4db720ac1deb477ce4811c5e4e60e5f8
-[2/3] phy: apple: atc: Factor out the PIPE mux sequence
-      commit: 8ca2e111117bf1d571f7c9de5d0dd91f5b770b11
-[3/3] phy: apple: atc: Implement the USB4 pipehandler state
-      commit: c319906aa47f8616019b01b1dd5c14eef293bb66
+[1/2] phy: qcom: qmp-pcie: Select MFD_SYSCON for the multi-PHY driver
+      commit: 77a0e6ae5dec54fb6049e3ab88288bc40c81f9fd
+[2/2] phy: qcom: qmp-pcie: Check clock-output-names count in the multi-PHY driver
+      commit: fb0f0e0e9e5dace7a6d9cde289537980ad35db3d
 
 Best regards,
 -- 
