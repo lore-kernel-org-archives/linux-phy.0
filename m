@@ -4,101 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1B9BCA5FCE
-	for <linux-phy@archiver.kernel.org>; Sun,  4 Oct 2026 09:34:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 787FBCA5FCE
+	for <linux-phy@archiver.kernel.org>; Sun,  4 Oct 2026 10:05:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z2Zh3JjYEQCLNTkJtnZ4fu1cIhnx19G+NVxTRrPLd6A=; b=GQ+X4rMU0bmryU
-	tmoeZpCcAco6PwxCQEi1OSxub0LtMsFm+E3TtwgYDpEk3p0z1kjSui7E1T/WjDq6trOOJfrw5wSNf
-	FUdgm8hxCBazPKZxCq571nLuCAato8kUEVKXIyRFV+LDL2ZIvNAUZSFf2+QrjrFu9N8B9YfLvpn2e
-	4u2jplw30mlaKXbgYfWAU9FLJHTM9743ucT10hMV3IyGcNQQDPgLfApnGPqdEZ+p4rmyIq/N7PjGm
-	u3SalOevR450bh9dJIF4y00rZ5CFpJtTulAqxy5npOxj6c5WKLXJTWM6/LU1QEkoqz3Z65+joz5mp
-	VaP6Spzs0uzAmhx40M4Q==;
+	List-Owner; bh=vrjTNID6X8e0YrilqYMsTUmAqH7/0SAf0mE94OprC1A=; b=TWXUkDJ25bLFrq
+	xttnf2cg6kE4V5IV+YGIddax1QKJTKp51N5lW6SwQr6l/XF1HT2avU8iHWkaC9x0I6gnebSW8O3ij
+	xI6bP4SpYJvPho907E7BPZ9Y1QgjwSyuEMkaxun6IInrp1jCJyXE2u5faFXapqkTEW4xZgKI/GaWE
+	apB27M8BHGEFPk9y2WEGGlK1eUvuYq6OEm3jaeoq4+Lt8icBrjeu5go5KonshQwPu62wSEo5i2ZN3
+	7qYn2J9ceDxCXsCnoOGSAeV50I7yR9Ihas/pHERLeV3rkgGbLZhlHpAh4MSyOmeu34TNLLylPC4rc
+	VuHDZQYZMQozi8SV3yMA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDIcS-0000000Ecad-1bn4;
-	Sun, 04 Oct 2026 09:34:56 +0000
-Received: from mail-pf1-x434.google.com ([2607:f8b0:4864:20::434])
+	id 1xDJ6K-0000000Ee18-3zwh;
+	Sun, 04 Oct 2026 10:05:48 +0000
+Received: from mail-wm2-x10.google.com ([2a00:1450:4864:31::10])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDIcP-0000000EcaJ-1YPf
+	id 1xDJ6I-0000000Ee0n-2DFR
 	for linux-phy@lists.infradead.org;
-	Sun, 04 Oct 2026 09:34:54 +0000
-Received: by mail-pf1-x434.google.com with SMTP id d2e1a72fcca58-885cd98d226so83816b3a.1
-        for <linux-phy@lists.infradead.org>; Sun, 04 Oct 2026 02:34:52 -0700 (PDT)
+	Sun, 04 Oct 2026 10:05:47 +0000
+Received: by mail-wm2-x10.google.com with SMTP id 5b1f17b1804b1-49ccf3ca626so6261795e9.0
+        for <linux-phy@lists.infradead.org>; Sun, 04 Oct 2026 03:05:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1791106492; x=1791711292; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=xMFsAlTkgLQleDkb6BgHggPAQsd5lT/CEjafnTCRCdw=;
-        b=d4TLZnD2ZzG8tZRtwS4WZdb1RWb9baxRLEGMRQBWenmslgnLKMpXyohztTF4BgniJn
-         i/Nq0gT7s09rFHhHnXTf14eNNn9lEVC9jT6PxEFupB/0Hsqum7OTBHqFXci3fVkx5LFa
-         cMJiiAkEfVWRRRkKlE+sYGWRBDWcHr0XkTAwF183OvKVAsnxX0dnx7ZMkMoPSlqV1fo0
-         a0w4qJns/BRyHWUtYelGV96j/G2CY0hI52hx2L8H1w3kUURwLvx+nWjIm9x5LbVz8rEY
-         PbzEz0XqzuhSZ6jQsZfshht0alnno1/SoPzSMQGDK8EYXRfTtNPKcGm9eyj9b8WgqJ3L
-         oSQQ==
+        d=gmail.com; s=20251104; t=1791108344; x=1791713144; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:mime-version:references
+         :in-reply-to:message-id:date:subject:cc:to:from:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=C7dO0Rcfru0/bHBYtaY5qQl2mBgYh6+npZqhA24Mb2E=;
+        b=FM+POSE12XzjUv3DyKqvImbRnuwEuWuEX8YdcH47zF1KwBGOpbwA1TSkeffJ6J7HJd
+         GfH53bJ2XZagwZ71t0ay+4O0HGnYEQ8cLot/sY9FrqL/TIl/1o+I7LzzXFmIa/2Zl16e
+         39ehpFIQbphpkNC5En5x13EUZKLkrRkseXatUQTIzonrgWp0EDgHtwT+Gs09hFiI3LYq
+         Z+iUnEeNH8+HD0So3B6cGkh4WTqvx9rtywFi6kq/gq+xUHwXljMPat9neX2z842E8A+2
+         BfER5+pikZ6YUdlPI57MZQAtwkva4uE39kZ+uT+Zro8sd16TMEKdL/1Ru+1Y6CeZJ1+b
+         k8vA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791106492; x=1791711292;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=xMFsAlTkgLQleDkb6BgHggPAQsd5lT/CEjafnTCRCdw=;
-        b=Es1GP78sSTWa1BXeKB4E1vyqmsz6i89cKnFmp13bpmyyarusUvS2N34G2RR9+yvLzv
-         MGf987/aPdvoRSxMsBY92Dj8BdUuK5d9bK4vORQoUOqAegjZ5IoUw36ff8dVe83io1ef
-         V9GjcWaaGH9RqyAliiwBeNXEdE6PXElEeY4++ebTfw0epe1HMm5yGxdIIhiALA8OnJ7w
-         huLEK64LocnOYjUBVOGzIom0NTmw8TGLrVnPxp9HVX3KkOMY7vAwuKJv8qTLnQs3Mwqo
-         zoBu5s3abplU0BvVQ/qKaBuveeY0BQMit565ycICP+dCj/sGx3guGvInmLb5NjQw29cN
-         wcNw==
-X-Forwarded-Encrypted: i=1; AKwUvBzBc45sxz/TfQEt3R9jonHe6bSy+OgvZlnXOnM/xM6QLjBD4rREONdCdhkuzyD0opazExn151va2o8=@lists.infradead.org
-X-Gm-Message-State: AFuF++lgzpkcVj9S6xVO5ZiiaVcSNzvd5iBDWdRt+wiw4nA/FWpji0iB
-	XWF83/Y42ldWcZvv1Hz80MNhOfb+rWp1Xry6BQXbwEMU5k4ySAA+G5OG
-X-Gm-Gg: AYBFou0WEnpEGjrOgT0KDMSMHCabWG3ZiKUENWoaMkrY4yhqxhHrcVlb/OYBA3tIZ/E
-	jDp7X3rvQdDJwAS8nR7NNx0cbUQF5THUme4SyYOhetO2MVlRi+N89CLnUtKEA6qW5CoWQ36NcO+
-	x3B62HcNgkwx8WYem3VNWU6OzSDmLw+hkiWqoLXj9ivg7bmKBb3o/1YACqqadeKrYR46u6iuzES
-	fJhbC625sX0dfV/sLyjrB9EfVc3QYl8iP0Rt+HdJpJO+j+cpXreOatRoAYqllxtqVyo3jZOSXt7
-	MEwQsMF2hdzz1JvaCebIzw/VJxaMNELGJdu6SDv3yAHQwX5Iv5ZlaSc8YxMVPB607UOA/tfO0fi
-	ES4qJjZtpu/7BPyTVwv6eda4tRhGs93b1B+36ky50Gr0BuR3uOxT7tESquRsT1wX8O/7RHWTvpS
-	FPeaZmhd8EY5ZjQZZbU/mU/brwn3Hba44gbxrgFIODBRW0RYuFeLpfzhlEuyJpl3Bna0zX2ajTf
-	46CyRlzSa5aTg==
-X-Received: by 2002:a05:6a00:2d92:b0:882:4cdd:140e with SMTP id d2e1a72fcca58-887fd634a7fmr6960101b3a.15.1791106491984;
-        Sun, 04 Oct 2026 02:34:51 -0700 (PDT)
-Received: from DESKTOP-NM9EKIA ([125.134.240.130])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-88d62aaf2f8sm620337b3a.10.2026.10.04.02.34.48
+        d=1e100.net; s=20260707; t=1791108344; x=1791713144;
+        h=content-transfer-encoding:content-type:mime-version:references
+         :in-reply-to:message-id:date:subject:cc:to:from:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=C7dO0Rcfru0/bHBYtaY5qQl2mBgYh6+npZqhA24Mb2E=;
+        b=RLy7NJYwLwyH/LYd2y6yUn4iOLrhPhSAcdsNvAB09xxN/VoAh6ZI0TWBHFtDOMzHvj
+         KwZqFfMyMr1GReISAvbVMQtyredKKF6eAbxHXzVMQDCGM7+2AUJEhSgcGKlBJKyd8/WJ
+         venHBsBm+GCQrBp9HTH4Jg4aIrHML5rGYtioTs44HduYZgrYeRUuS4Cp5GB6vQoa1FWq
+         WX7I8+wVVyFxisC5o3pfBE8+RQ7Fa/5xMyQR2EXP9kqhZyLMr14vRJ2/nmT+LbGAwm4z
+         kI26t0FAsWDZXyyag90/IFYaAR55HUFXBQlK0Epcdi68JgJkEU4U3gtfPKTP+AgBTzBJ
+         temg==
+X-Forwarded-Encrypted: i=1; AKwUvBzF7IsEubKxAs/Ujj6BbJbgrxfwKiTLQuN2AOAHK7gPZ2Rh7AAKrFqmQTEBttY1CX9E+rgOW5QMwFY=@lists.infradead.org
+X-Gm-Message-State: AFuF++kuyGR8htVgZ6I60TaKzSQbUkV3wRjWJSWrqd2QOdD7PX9PPyYV
+	emE53DRZ56sqzBDRxkZkNjF+S3kAYt/EQdfd8P3hjJ2OvFVxN2ktP+p3
+X-Gm-Gg: AYBFou3DbH65mmfxhpY6UkttSe7aRNccAg3bjxsvb6pR/YSqgPidlHXnYmiflMOCPmM
+	Pbcf0Zvtl6WmE0xi0gp/AeI/67Vw+hY+YF7nZFAWHahwRlBF1+evFsJ/fbalfF4+MY84S/iUlHw
+	fHM/2SQPe/1eOckiKliy/kv/dNEiCu/hPOr2il6Eyw2IcrEU4GvSH98rCTmzw+JnLs5dnprF+Xv
+	24rbrHyQxVrISOjPQPpgmXR0ty+xJB7x3nz2ZUXmtF4ohm2PRLkYojAY7z9k8czwiKUO1wCbQLW
+	Gbkyz7bD3IEEkCnYgPrlERzHs0NLWDXFR2pCORROM/13YsspJLuUBaYfkvqAX6/DhyabsOGPe1S
+	u6/UGr1wR2YCVxHbmK/K916YYgGm2BRN2JrbF2f+SP/lWXA+UdffMZIGwtddzFfcTXh6X+WWo0P
+	zzCHGpx4QESDTPkDruxsXc6wAwex03njdA4jPkVaXjjyfIbvseZfHDhA+EV7+EV1otXBWcNM1x0
+	+dSDQ==
+X-Received: by 2002:a05:600c:620c:b0:49c:fa20:cbfd with SMTP id 5b1f17b1804b1-4a027583fb0mr131735445e9.20.1791108344053;
+        Sun, 04 Oct 2026 03:05:44 -0700 (PDT)
+Received: from localhost.localdomain ([94.252.75.11])
+        by smtp.googlemail.com with ESMTPSA id 5b1f17b1804b1-4a02770e8f2sm215687755e9.6.2026.10.04.03.05.42
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 04 Oct 2026 02:34:51 -0700 (PDT)
-From: Joonhoe Kim <26rote@gmail.com>
-To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-Cc: Joonhoe Kim <26rote@gmail.com>,
+        Sun, 04 Oct 2026 03:05:43 -0700 (PDT)
+From: Oleg Keri <okerixx@gmail.com>
+To: Saurabh Anand <saurabh.anand@oss.qualcomm.com>,
+	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
 	Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
 	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Rob Clark <robin.clark@oss.qualcomm.com>,
+	Dmitry Baryshkov <lumag@kernel.org>,
+	Abhinav Kumar <abhinav.kumar@linux.dev>,
+	Jessica Zhang <jesszhan0024@gmail.com>,
+	Sean Paul <sean@poorly.run>,
+	Marijn Suijten <marijn.suijten@somainline.org>,
+	David Airlie <airlied@gmail.com>,
+	Simona Vetter <simona@ffwll.ch>
+Cc: linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
-	linux-arm-msm@vger.kernel.org,
-	linux-usb@vger.kernel.org,
-	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
-	Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>,
-	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Subject: Re: [PATCH v8 0/5] Modify interrupt handling for eUSB2 Phy targets
-Date: Sun,  4 Oct 2026 18:34:49 +0900
-Message-ID: <20261004093449.74244-1-26rote@gmail.com>
-X-Mailer: git-send-email 2.55.0.windows.5
-In-Reply-To: <20260913-eusb2-interrupt-v8-v8-0-0f505b9c394b@oss.qualcomm.com>
-References: <20260913-eusb2-interrupt-v8-v8-0-0f505b9c394b@oss.qualcomm.com>
+	dri-devel@lists.freedesktop.org,
+	freedreno@lists.freedesktop.org,
+	Mahadevan P <mahadevan.p@oss.qualcomm.com>
+Subject: Re: [PATCH 2/4] drm/msm/dp: clear force_link_train flag when link training succeeds
+Date: Sun,  4 Oct 2026 12:04:59 +0200
+Message-ID: <179110829900.3315.15040287408420454805@gmail.com>
+X-Mailer: git-send-email 2.55.0
+In-Reply-To: <8b45dfc1-5350-4a63-9213-a1160478683d@oss.qualcomm.com>
+References: <8b45dfc1-5350-4a63-9213-a1160478683d@oss.qualcomm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261004_023453_425017_20C59E9B 
-X-CRM114-Status: UNSURE (   7.33  )
+X-CRM114-CacheID: sfid-20261004_030546_592904_A0C6AB56 
+X-CRM114-Status: UNSURE (   8.74  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -116,24 +118,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, Sep 13, 2026 at 08:10:43PM +0530, Krishna Kurapati wrote:
-> Changes pushed on top of usb-next branch. And v8 is only compile tested.
+On Mon, Sep 07, 2026, Saurabh Anand wrote:
+> Yes, agreed. I will update it in the next version.
 
-I ran v8 on a Lenovo Legion Tab Y700 Gen 5 (Kaanapali, M31 eUSB2 PHY),
-v7.3-rc4 plus board patches. Host mode, wakeup enabled, s2idle:
+Any updates?
 
- - hub with a FS keyboard behind it: no early wakeup in 10 RTC-timed
-   cycles, and a key press wakes the system (dm_hs_phy_irq). Without
-   the series it woke up right after entering suspend (dp_hs_phy_irq).
- - FS keyboard directly on the port: a key press wakes the system.
- - unplugging the hub during suspend wakes the system.
- - wakeup disabled: no change from before.
- - low speed: not tested, I have no LS device.
+This is not limited to Type-C. On a Lenovo Yoga Slim 7x Gen 11 (Glymur)
+the eDP panel sometimes stays dark at boot without this patch, since
+msm_dp_display_prepare_link() is shared with eDP. The only training
+error in the log is the forced second retrain:
 
-Only the m31 and dwc3-qcom parts were exercised; the snps-eusb2 change
-was only built.
+[    1.839032] [drm:msm_dp_ctrl_link_train_1_2] *ERROR* link training #2 on phy 0 failed. ret=-110
+[    1.839043] [drm:msm_dp_ctrl_setup_main_link] *ERROR* link training on sink failed. ret=-110
 
-Tested-by: Joonhoe Kim <26rote@gmail.com> # Lenovo Legion Tab Y700 Gen 5 (Kaanapali, M31 eUSB2 PHY)
+msm_dp_ctrl_on_link() succeeded just before, but the retrain from
+msm_dp_ctrl_prepare_stream_on() is not retried and its return value is
+ignored, so the link is left untrained. I'll test v2 when it is out.
+
+Oleg
 
 -- 
 linux-phy mailing list
