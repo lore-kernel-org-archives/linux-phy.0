@@ -4,62 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2435CA5FCE
-	for <linux-phy@archiver.kernel.org>; Sun,  4 Oct 2026 10:52:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C915DCA5FCE
+	for <linux-phy@archiver.kernel.org>; Sun,  4 Oct 2026 12:53:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gOToHrJuM0Q19uZMfeT2+Qr2IReHhaqte07sTpg1Fnw=; b=bYczCrJH7mR/P/
-	edRu9e/46RL0uG7FVfUaW/At5oI/s2tUQTtVUr1EgEcjqW4jaX+t+XREHTHDrieslqkSTtXj+8gW9
-	T9/O+NAMdSleE8VA+vAg2OWJZIWUhLHpfqd/bzpFC8eMMedHlE257MEHZ9mkWlW7RldRaTDKYP+zV
-	ONlM9BZTgaEWrqXksXZlf6BMOrw5Cu6GNTjhBPtuGeW4UJDmKi7LQ7wnBf+oCdeCZfvZzG+MSeWJ+
-	dr0O+tGKrVr371hBcj7vco06kxZ192LGQmtryEMZ9RICDSygAaACMlLVyp5UuI6odNCoEtBlrv11K
-	8i7YG1fIDTf+HY0sZWMQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=SaLjoUXLXengaCW6cw7mQINu8PWOBNch2Ee+C1lHTDk=; b=KyowuzyYpX11uY7x5d2mENRPcR
+	zd8SbX184dd7fzbiTfioLnNHafbqzzSLVpDOIQHkeWE+OlwMr+/NV6anSMb1nkHUNTLqHG6Run9H/
+	2xFSThMgFom0f6RZf4gJceuhPe3jW4uY7GtUFx7ZRBzbh5Pp56CQm/q21PkIMvdz2JJPzoy/+fnFR
+	OY9u6rt0YhoSiB6PYCRixP6CJIFLYztf+cqSjwBXHFhPBbhOcUGxjC0zLClXrH6s96A1pLjtzN4Ih
+	5WrCD4wATmkF6/v7DIuDO8C8lYupDorR5rFXI2ZxooJZwjO8Hz1058cA8DY/Xshyf03qyIMYXEV4F
+	S+XuSzkg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDJpF-0000000EgDw-2NNj;
-	Sun, 04 Oct 2026 10:52:13 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xDLiq-0000000Eo2M-3gog;
+	Sun, 04 Oct 2026 12:53:45 +0000
+Received: from sender6-op-o11.zoho.com ([165.173.180.11])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDJpE-0000000EgCq-1SbB;
-	Sun, 04 Oct 2026 10:52:12 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id C73CA429D5;
-	Sun,  4 Oct 2026 10:52:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1A0C51F000FF;
-	Sun,  4 Oct 2026 10:52:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791111131;
-	bh=Ded2t/lxa5/OOJ87UbsbJnDc5Xdi5OA3X44Xyk2z2B0=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=FFLg41iwcTX3eTrwV8t5ajXGLkgtY0ZvuL5T/qeDdnKQBwVWD6N5vCzTPBYi+bBZY
-	 05fFRj3tAJZR+cbH5AyVdJa2W40q3K3/wb9BimQtqdglNKNr8+LXBwCiacs6srl2OR
-	 D1nb+Bqi7YFJkK8yerA5MXws9WGktv/Pf3ROeJSV0kVYffAZuT0/PNGgMQx5+u214k
-	 A7n7yhaCNIk/le8m+R9bbMMpGoc9Bfk21DQzyv2XNzjpVvTYeobV8hfnxfA8c0sh0c
-	 1v8WYrvs0C4AMhH4LDWpQBYsyvPmHVsnuGAofGaPT4Eyd4NqyueuT98NECkdbuH0nJ
-	 vVE6AkYtBSPsw==
-Date: Sun, 4 Oct 2026 12:52:07 +0200
-From: Vinod Koul <vkoul@kernel.org>
-To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Andy Yan <andy.yan@rock-chips.com>, kernel@collabora.com,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org
-Subject: Re: [PATCH v2 1/3] phy: hdmi: Add optional FRL TxFFE config options
-Message-ID: <asIv1zepKlIvzHX5@parshuram>
-References: <20260901-hdptx-ffe-v2-0-3a5922c76fc5@collabora.com>
- <20260901-hdptx-ffe-v2-1-3a5922c76fc5@collabora.com>
- <asFoBih6P7Cr6Ute@parshuram>
- <3c0dc77b-b692-498e-aed6-aa97d827b2f4@collabora.com>
+	id 1xDLin-0000000Eo1N-28PD;
+	Sun, 04 Oct 2026 12:53:43 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1791118408; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=ERdHo3cHKccOXgbrq8b29QDOmGsQZIGiBis4jkL77Qx8UdRQMBfHlcNfSBS3cvCxoEduYJzELzh/dsQjxEVkdf7tuOJlAikSIqen9Uc6TTfDpfY6KL/EUCO7kV5TOGmmWsfS+OYG239Kb161mPp0JhFlDFXaNkHPQIRueXCeD2g=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1791118408; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=bgDESfLrXKLmUyRoB+jOHoxIwRj5hwAQyXCFLNMDOaw=; 
+	b=BXb+XQbo8mfOEN2KNkURN75mCY7JDE2I8ckalYq3up5otZwNMvysJ3h9ZJtQ5daH3U+OHzk2S+VYXW8ok6VNcvjjiJ+YN748u4H91mAEPPwjxZOgpObKX8lhKYOX33BNdDcZEYLzcNC8okGJBr3vZQda9S6/rIxsy7gvFjLwMwc=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
+	dmarc=pass header.from=<sebastian.reichel@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1791118408;
+	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
+	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
+	bh=bgDESfLrXKLmUyRoB+jOHoxIwRj5hwAQyXCFLNMDOaw=;
+	b=LhlWsWuNz8iImIBP5PZJ7pN2Sjr03aA/vSWjOVJW+ydfVhsJshIfdrJL+P4aIEsX
+	qg6O2BDs8Qb4TRGiykr3anHHOL6KSAhgXJ8521bM+bO4UA2IeMurmPbb7h2pMaL0FrI
+	mHKpUMRMDWq2Eoc44L0JuKe0cM9JzpzmYmbBFTYs=
+Received: by smtp.zohomail.com with SMTPS id 1791118407425681.0566603227451;
+	Sun, 4 Oct 2026 05:53:27 -0700 (PDT)
+Received: by venus (Postfix, from userid 1000)
+	id AA4F4180950; Sun, 04 Oct 2026 14:44:11 +0200 (CEST)
+Date: Sun, 4 Oct 2026 14:44:11 +0200
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Heiko Stuebner <heiko@sntech.de>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Igor Paunovic <royalnet026@gmail.com>, linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+	linux-phy@lists.infradead.org, kernel@collabora.com
+Subject: Re: [PATCH v16 1/6] phy: core: add notifier infrastructure
+Message-ID: <asJGziv0N3qtXo6_@venus>
+References: <20260924-b4-rockchip-dwc3-rockchip-glue-v16-0-126a2e9133c3@collabora.com>
+ <20260924-b4-rockchip-dwc3-rockchip-glue-v16-1-126a2e9133c3@collabora.com>
+ <asDFBIVf06-VaWdx@parshuram>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <3c0dc77b-b692-498e-aed6-aa97d827b2f4@collabora.com>
+In-Reply-To: <asDFBIVf06-VaWdx@parshuram>
+X-Zoho-Virus-Status: 1
+X-Zoho-AV-Stamp: zmail-av-0.2.13.1.5.4/291.108.66
+X-ZohoMailClient: External
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261004_055341_615556_7FC161CC 
+X-CRM114-Status: GOOD (  23.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,49 +81,116 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2140987305518167858=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 04-10-26, 00:33, Cristian Ciocaltea wrote:
-> Hi Vinod,
-> 
-> On 10/3/26 11:39 PM, Vinod Koul wrote:
-> > On 01-09-26, 22:55, Cristian Ciocaltea wrote:
-> >> During HDMI 2.1 FRL link training, the source and sink can negotiate a
-> >> Transmitter Feed-Forward Equalization (TxFFE) level to improve the
-> >> signal quality.  Starting from zero, the source may increment the TxFFE
-> >> level up to a maximum agreed during the LTS3 stage if the sink keeps
-> >> reporting FLT failures.  TxFFE adjustment is optional and only attempted
-> >> when both the source and the connected sink support it.
-> >>
-> >> Since the existing HDMI PHY configuration API covers the FRL rate/lane
-> >> selection only, provide the following fields to the frl sub-struct of
-> >> phy_configure_opts_hdmi:
-> >>
-> >> * ffe_level: the TxFFE level to apply, only meaningful when
-> >>   set_ffe_level is set.
-> >>
-> >> * set_ffe_level: a 1-bit flag that changes the semantics of the
-> >>   phy_configure() call, i.e. when set, the PHY driver must apply the new
-> >>   ffe_level and ignore the other frl related fields.
-> > 
-> > The ffe_level 0 implies it is disabled, so why should we use a flag for
-> > this? Rather use if value valid (non zero) logic to apply..?
-> 
-> That's not quite possible because level 0 is valid (and the default) according
-> to HDMI 2.1 spec. The source is expected to reset TxFFE to default whenever a
-> new FRL rate is set, hence the API shall be conformant. 
 
-Ah, looks like AI gave me wrong info about 0 being invalid, this is okay
-then
+--===============2140987305518167858==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="tscrktrwpqpmy56x"
+Content-Disposition: inline
 
 
--- 
-~Vinod
+--tscrktrwpqpmy56x
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v16 1/6] phy: core: add notifier infrastructure
+MIME-Version: 1.0
+
+Hello Vinod,
+
+On Sat, Oct 03, 2026 at 11:04:13AM +0200, Vinod Koul wrote:
+> On 24-09-26, 19:25, Sebastian Reichel wrote:
+> > Some PHY devices with multiple ports (e.g. USB3 and DP) require a reset
+> > if the configuration changes or cable orientation changes. This is a
+> > problem, as the consumer device will run into undefined behavior.
+> >=20
+> > With the new PHY notifier API introduced in this patch, the consumer
+> > driver can hook into reset events coming from a PHY device to handle the
+> > PHY going down gracefully.
+> >=20
+> > Note that this uses -ENOSYS instead of the more sensible -ENOTSUP for
+> > the stub functions when GENERIC_PHY is disabled to stay consistent with
+> > the existing ones.
+>=20
+> I dont think this series has the usage of this.
+>=20
+> I think I am still not convinced why a phy should notify as I dont feel
+> we have any mechanism to notifying. Checking status and letting people
+> know if not really a notification mechanism... Maybe add a status call
+> instead?
+
+This series contains the infrastructure and the consumer of the PHY
+reset notification (dwc3 rockchip glue driver). The producer/sender
+of the PHY reset notification is the first patch in the USBDP part 3
+series. I grouped the patches like this, so that this series has PHY
+patches followed by USB patches instead of PHY - USB - PHY. Patches
+must be applied in the exact order (i.e. first the patches added the
+PHY reset notifier infrastructure, then the DWC3 notification
+consumer and then the USBDP notification producer).
+
+The broader picture solved by this is (pre-existing race condition
+issue in USBDP):
+
+1. USBDP PHY provides critical resources to DWC3 USB controller
+2. USBDP PHY needs to reset to reconfigure (e.g. enable/disable DP side),
+   which means the resource is temporarily not available
+3. DWC3 accesses its registers during the reset -> SError, because PHY is o=
+ff
+
+This series combined with the first patch of USBDP part 3 changes
+things, so that it works like this:
+
+1. USBDP PHY provides critical resources to DWC3 USB controller
+2. USBDP PHY needs to reset to reconfigure (e.g. enable/disable DP side),
+   which means the resource is temporarily not available
+3. USBDP PHY driver sends pre-reset notification
+4. DWC3 goes into a safe mode after receiving the pre-reset notifiaction
+5. USBDP PHY does the reset
+6. USBDP PHY reset finishes, USBDP PHY driver sends post-reset nofication
+7. DWC3 returns to normal mode after receiving the post-reset notification
+
+This avoids running into the SError.
+
+Greetings,
+
+-- Sebastian
+
+--tscrktrwpqpmy56x
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmrCShcACgkQ2O7X88g7
++pqKZQ/5AZjgJZAP0K7j3fjtoZWVfKvHdK5zDgEney3DOH3py7hJca0N2aruS7Ei
+b798piV1K9OKQHjBrBXdIRq9PbLP+iRfwiYmrNEaWbfPa+Gt8jUd0plVPFKZsb2e
+SIFgHA+ghthCj7o6RnwkkjB776aE1g+iAfqcJ74FJ023E2V6iFUasqkfukGiSeK9
+2QmzIwlJw6P+BIQw9YTAaEhbmzqHkWsO3gL7ACpNtd6fCigECCx1Brl2im0O53v/
+17gjBhQIQ4/wosGxPndKsqQaDhK92y4ZSNPf/rMfvR4UWt4Q0W0g2VT+blOXQ5Iu
+eppv8irdrM9VEhHr9LK/ZjkZaSqwJNe9w29lsfmSV3gFKnW4kiBhDF66ii3RvWfl
+lBPvlJvdZSB8+vpf/0Bjv3hedBnqlf4Wuhhv+j+PDqJUv54cWJN9c6scMvNezOT2
+H08JLoO48Ou6mrazNWQQISDlH/7hTWQ9F8+AhNXqrCnbxtxmiVJvgxDPYpe2kiTo
+aTDiIhg2z94VD2h/CmgiN5lwrKynXDzCC+eiDWZzHDUx13IabkIqgJeiLUMBkG3S
+RBwjLIm+MjmFCV2lQIyCIUJ70iCiue04CSR+h1HrloFZmXMEpmXkvUdWPLP4PiVC
+MaJaHzBopWFhSxD3c3yuweo4ywxFe9jp3Y4iK4Jmn9cVC+0OwHI=
+=lRt1
+-----END PGP SIGNATURE-----
+
+--tscrktrwpqpmy56x--
+
+
+--===============2140987305518167858==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============2140987305518167858==--
+
