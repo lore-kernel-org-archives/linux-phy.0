@@ -4,135 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C926CA5FE6
-	for <linux-phy@archiver.kernel.org>; Sun,  4 Oct 2026 07:15:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1B9BCA5FCE
+	for <linux-phy@archiver.kernel.org>; Sun,  4 Oct 2026 09:34:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iRxmsJtDP5qLRKmvQCL+f+QjF2ROw90J7wgFu6ur+q4=; b=CfHGNfPXgPlwBY
-	OLH0kz0vf4Pg6VC4ET+GH+CNxagTAcFG6LcIqP4U2AidHHJRZDp8tjuzTT9ZjDZj2DMW9lCmCtnbm
-	qvf3gK1NG9AkFkkn5QrvMxQ+0+gdmvnXMnv33aqjlspxz3KcX5P93AXwQii1EMASzvIUR5iqSAjKH
-	gkuCBAz58pkPG10g0DWXHo5ctkK+p+oFDf5vYdHlJMQ7JFoKUbbZBB8e5LvrhxvKJXEjVy2razoay
-	mVKV6eTHK47M6XPbV56AhNtotCED9ZAl57STAhQRmnz2Cmnd+0uA5B86SscIqX7GCqgDO9iQrfGg/
-	RNsyiW1nQ5yrjI1/OBEA==;
+	List-Owner; bh=z2Zh3JjYEQCLNTkJtnZ4fu1cIhnx19G+NVxTRrPLd6A=; b=GQ+X4rMU0bmryU
+	tmoeZpCcAco6PwxCQEi1OSxub0LtMsFm+E3TtwgYDpEk3p0z1kjSui7E1T/WjDq6trOOJfrw5wSNf
+	FUdgm8hxCBazPKZxCq571nLuCAato8kUEVKXIyRFV+LDL2ZIvNAUZSFf2+QrjrFu9N8B9YfLvpn2e
+	4u2jplw30mlaKXbgYfWAU9FLJHTM9743ucT10hMV3IyGcNQQDPgLfApnGPqdEZ+p4rmyIq/N7PjGm
+	u3SalOevR450bh9dJIF4y00rZ5CFpJtTulAqxy5npOxj6c5WKLXJTWM6/LU1QEkoqz3Z65+joz5mp
+	VaP6Spzs0uzAmhx40M4Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDGRT-0000000ESLM-3Ga8;
-	Sun, 04 Oct 2026 07:15:27 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xDIcS-0000000Ecad-1bn4;
+	Sun, 04 Oct 2026 09:34:56 +0000
+Received: from mail-pf1-x434.google.com ([2607:f8b0:4864:20::434])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDGRR-0000000ESKv-3ZF9;
-	Sun, 04 Oct 2026 07:15:26 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 4487660052;
-	Sun,  4 Oct 2026 07:15:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7EBF51F000FF;
-	Sun,  4 Oct 2026 07:15:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791098124;
-	bh=1YLqc6z8LyeKl0+KHcGgxZtXD3B6g5rBKBLuGBPQUYU=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=kn0TAw1qOPg5KYhpCD5VwxN5UsLsVZecc5X1+BlRO+/o/J0KyyUVCwJWD/DeTKK/E
-	 RYh5KVemaOG0bO5S4ZTiYG/rO+u7yoB1LVNJ2PrMNN87Sh+fHO+Hq2NFic5LVZSdNR
-	 StXIBQEf4ikYEcKOKN7jweHKB/e76NgzG1YzjtfmJvW5Ja9QS/+fdpD3Cv7OiopjY9
-	 snCT50OgtZ/e6e1g0T+tyndQn8GOvnTkD0WDMzLqDdlp3pU/mFxN5S9WqNFfz2OnG3
-	 gO2r9kpPI+glHqLVWBRh4vYaKeLHwwi5f/RIs3BogGDhK+P8plcxCS4Zt7KsoAs2O7
-	 btLDUv5erfrhA==
-Message-ID: <ac7b82e6-22ea-465c-8477-bbe0bd9c8c27@kernel.org>
-Date: Sun, 4 Oct 2026 09:15:11 +0200
+	id 1xDIcP-0000000EcaJ-1YPf
+	for linux-phy@lists.infradead.org;
+	Sun, 04 Oct 2026 09:34:54 +0000
+Received: by mail-pf1-x434.google.com with SMTP id d2e1a72fcca58-885cd98d226so83816b3a.1
+        for <linux-phy@lists.infradead.org>; Sun, 04 Oct 2026 02:34:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1791106492; x=1791711292; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=xMFsAlTkgLQleDkb6BgHggPAQsd5lT/CEjafnTCRCdw=;
+        b=d4TLZnD2ZzG8tZRtwS4WZdb1RWb9baxRLEGMRQBWenmslgnLKMpXyohztTF4BgniJn
+         i/Nq0gT7s09rFHhHnXTf14eNNn9lEVC9jT6PxEFupB/0Hsqum7OTBHqFXci3fVkx5LFa
+         cMJiiAkEfVWRRRkKlE+sYGWRBDWcHr0XkTAwF183OvKVAsnxX0dnx7ZMkMoPSlqV1fo0
+         a0w4qJns/BRyHWUtYelGV96j/G2CY0hI52hx2L8H1w3kUURwLvx+nWjIm9x5LbVz8rEY
+         PbzEz0XqzuhSZ6jQsZfshht0alnno1/SoPzSMQGDK8EYXRfTtNPKcGm9eyj9b8WgqJ3L
+         oSQQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1791106492; x=1791711292;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=xMFsAlTkgLQleDkb6BgHggPAQsd5lT/CEjafnTCRCdw=;
+        b=Es1GP78sSTWa1BXeKB4E1vyqmsz6i89cKnFmp13bpmyyarusUvS2N34G2RR9+yvLzv
+         MGf987/aPdvoRSxMsBY92Dj8BdUuK5d9bK4vORQoUOqAegjZ5IoUw36ff8dVe83io1ef
+         V9GjcWaaGH9RqyAliiwBeNXEdE6PXElEeY4++ebTfw0epe1HMm5yGxdIIhiALA8OnJ7w
+         huLEK64LocnOYjUBVOGzIom0NTmw8TGLrVnPxp9HVX3KkOMY7vAwuKJv8qTLnQs3Mwqo
+         zoBu5s3abplU0BvVQ/qKaBuveeY0BQMit565ycICP+dCj/sGx3guGvInmLb5NjQw29cN
+         wcNw==
+X-Forwarded-Encrypted: i=1; AKwUvBzBc45sxz/TfQEt3R9jonHe6bSy+OgvZlnXOnM/xM6QLjBD4rREONdCdhkuzyD0opazExn151va2o8=@lists.infradead.org
+X-Gm-Message-State: AFuF++lgzpkcVj9S6xVO5ZiiaVcSNzvd5iBDWdRt+wiw4nA/FWpji0iB
+	XWF83/Y42ldWcZvv1Hz80MNhOfb+rWp1Xry6BQXbwEMU5k4ySAA+G5OG
+X-Gm-Gg: AYBFou0WEnpEGjrOgT0KDMSMHCabWG3ZiKUENWoaMkrY4yhqxhHrcVlb/OYBA3tIZ/E
+	jDp7X3rvQdDJwAS8nR7NNx0cbUQF5THUme4SyYOhetO2MVlRi+N89CLnUtKEA6qW5CoWQ36NcO+
+	x3B62HcNgkwx8WYem3VNWU6OzSDmLw+hkiWqoLXj9ivg7bmKBb3o/1YACqqadeKrYR46u6iuzES
+	fJhbC625sX0dfV/sLyjrB9EfVc3QYl8iP0Rt+HdJpJO+j+cpXreOatRoAYqllxtqVyo3jZOSXt7
+	MEwQsMF2hdzz1JvaCebIzw/VJxaMNELGJdu6SDv3yAHQwX5Iv5ZlaSc8YxMVPB607UOA/tfO0fi
+	ES4qJjZtpu/7BPyTVwv6eda4tRhGs93b1B+36ky50Gr0BuR3uOxT7tESquRsT1wX8O/7RHWTvpS
+	FPeaZmhd8EY5ZjQZZbU/mU/brwn3Hba44gbxrgFIODBRW0RYuFeLpfzhlEuyJpl3Bna0zX2ajTf
+	46CyRlzSa5aTg==
+X-Received: by 2002:a05:6a00:2d92:b0:882:4cdd:140e with SMTP id d2e1a72fcca58-887fd634a7fmr6960101b3a.15.1791106491984;
+        Sun, 04 Oct 2026 02:34:51 -0700 (PDT)
+Received: from DESKTOP-NM9EKIA ([125.134.240.130])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-88d62aaf2f8sm620337b3a.10.2026.10.04.02.34.48
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 04 Oct 2026 02:34:51 -0700 (PDT)
+From: Joonhoe Kim <26rote@gmail.com>
+To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+Cc: Joonhoe Kim <26rote@gmail.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org,
+	linux-usb@vger.kernel.org,
+	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
+	Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>,
+	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Subject: Re: [PATCH v8 0/5] Modify interrupt handling for eUSB2 Phy targets
+Date: Sun,  4 Oct 2026 18:34:49 +0900
+Message-ID: <20261004093449.74244-1-26rote@gmail.com>
+X-Mailer: git-send-email 2.55.0.windows.5
+In-Reply-To: <20260913-eusb2-interrupt-v8-v8-0-0f505b9c394b@oss.qualcomm.com>
+References: <20260913-eusb2-interrupt-v8-v8-0-0f505b9c394b@oss.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 01/20] dt-bindings: phy: Add
- starfive,jh7110-inno-hdmi-phy
-To: Michal Wilczynski <m.wilczynski@samsung.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
- <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Andrzej Hajda <andrzej.hajda@intel.com>,
- Robert Foss <rfoss@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- Luca Ceresoli <luca.ceresoli@bootlin.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- Lee Jones <lee@kernel.org>, Andy Yan <andy.yan@rock-chips.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Emil Renner Berthing <kernel@esmil.dk>, Hal Feng
- <hal.feng@starfivetech.com>, Michael Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Paul Walmsley <pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
- Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
- Dominique Belhachemi <db@domibel.de>, Brian Masney <bmasney+clk@redhat.com>,
- Jerome Brunet <jbrunet+clk@baylibre.com>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, mfd@lists.linux.dev,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-riscv@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Maud Spierings <maud_spierings@murena.io>,
- Graham Markall <hello@big-grey.co.uk>,
- Icenowy Zheng <zhengxingda@iscas.ac.cn>,
- Chaoyi Chen <chaoyi.chen@rock-chips.com>,
- Joshua Peisach <jpeisach@ubuntu.com>,
- =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
-References: <20260915-jh7110-clean-send-v4-0-f0e4fd6f2cc8@samsung.com>
- <CGME20260915153214eucas1p2b548f3236ef98fb0cbf320e397420125@eucas1p2.samsung.com>
- <20260915-jh7110-clean-send-v4-1-f0e4fd6f2cc8@samsung.com>
- <20260917-mutant-chamois-of-competence-46ca77@quoll>
- <1a1a9b49-430b-4218-b27d-e133d488e8d9@samsung.com>
- <6cf9e611-bfc5-407b-8132-bd328f8b61fc@kernel.org>
- <eaba2fa9-a1ce-4dac-9bd6-e0b3a3dd01ef@samsung.com>
- <3ee91c92-4e3a-4bac-85cf-923f5d77ceff@kernel.org>
- <3c5c15d9-ea7e-49a2-adae-ec3e3c72594b@samsung.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
- cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
- JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
- gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
- J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
- NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
- BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
- vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
- Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
- TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
- S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGPBBMBCgA5AhsDBgsJCAcDAgYVCAIJCgsE
- FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJp2mE8AAoJEBuTQ307QWKbeaIP
- /ihHTkTW4KsN/DQ945JJbyu5tI0J80Wue7QyyLPglyKfhgb5cLLNPpOC8cCIJsc7+W3i2P38
- s2c1cOH6CYGE7E9ur3Vfme8NW2S2I/Z8VC7bZnzyS23wT17LrsdS/qCpx4o8U+pt/xdXDKph
- EGRYrIEmMpUWvyYzyYKGIe25FtaayIIKpq8eZYyFcp2f/sG5IkOW5uZzHPMPdcm87jU7fyuQ
- rAU2vx9r+ulUfQ/q9Z2roC/ode3l7t2pN7BCBCsUDp6JCrUyZrtT1e7EbA0ZRP3aOBNk2P2E
- DQOgJGjGdO5Yx2Y9LFtltu6JbsBJHi1syGRX3AtQYOMc4Y1WGoeZJmMlvKj2ZqqXNkcWi2DS
- IQEWB0uW6CqFsBBIMGDa+6OzdaVO/uAVXWDWml02Men3CILdI1MbVjoh8ECqYUY7OQ+JJvNN
- vnliuq5WM3Ghd3jg/LZZrxXjdIginRHFQCjIJYLKpLZWm1/iDFedcfzqRNYmTtqscdCNHW41
- oT3Z7BmO9xwdjuwBS6nmS6JJwkbf5Ot2QR4pB/DRU7ZwjT1qHe+9r9gF32wXVQatHNGK/VVu
- sfwOnkdxCWkp/qb2gdQRmZh+SedStWshigH6sNfuHBloF/q+hjMRc8b2m326OZdrbSHwY1Sz
- vti8Hn7n8NjdHO9LKB7BIdjkA9DA5WsqOuVCzsFNBFVDXDQBEADNkrQYSREUL4D3Gws46JEo
- Z9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLueMNsWLJBv
- BaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6eiOMheesVS
- 5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wAGldWsRxb
- f3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA6z6lBZn0
- WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9YegxWKvX
- XHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt91pFzBSO
- IpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gUBLHFTg2h
- YnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/JoFzZ4B0
- p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu4vXVFBYI
- GmpyNPYzRm0QPwARAQABwsF2BBgBCgAgAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtBYpsFAmna
- YUkACgkQG5NDfTtBYptX+BAApg32CkxwNucNEi8WfWA8oKkW0y8YDuY6ORMo9FWNGiT/OTy0
- vyJrLocrpn86zwfjVp+eCrssPYh8eqJfnWqmYv6ACQtHPYzPZQ3mSo8H97Z01oUxITzCxpXm
- ZkLgPIqtDPcC2E3dPM/fVxcyowM8XsaMA9wcsaUYrta8toOq2b9tKcjleKMfMrm0gQ9u7wUc
- QbLkwj6TCLOwucb07GXzLTNF9PZmaDUpKAZjMjmrW+le+SFvQbhamx0rxLWPR0NWntXpbCn+
- +ACch03p/JyTBVktxFsFyCt7pTPE1kEaeuXBTe/a2D9iQvRxRW19LvuO2e59/u1wYUiH/orz
- wbIC2S4dBsPAPihL3ztOU1yE86GPyQtSE0kU+/7snnLt4QGi6PChf3t5gnNjAzjUUovO8rgI
- c+5yN5heq5loYHgK6OQ9OlHzsPHO9e9MOQcKlFycs1pyijFGzDwdNUm/SchK8iWT2QApTx4A
- K9bCVaboTA2T77QYkRcRJYSsO1alGX0ome/hMLD1daXlkrNUp1HWa3K4iytLRXjCSIorWiGs
- n+q3krnpXu3TFkA8qtOFZMdnIiFuiq1yLT8hptsV5xh1TA2nsVvSYiaCr3q4s4BKjS/KrLDb
- qoxzw8ISjdUp4pA85vb6YLCmb39NgidD+7PmAr65lBNveIFynTgsja1rRQ4=
-In-Reply-To: <3c5c15d9-ea7e-49a2-adae-ec3e3c72594b@samsung.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261004_023453_425017_20C59E9B 
+X-CRM114-Status: UNSURE (   7.33  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,133 +116,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 04/10/2026 00:35, Michal Wilczynski wrote:
-> 
-> 
-> On 10/3/26 22:45, Krzysztof Kozlowski wrote:
->> On 03/10/2026 17:36, Michal Wilczynski wrote:
->>>
->>>
->>> On 9/30/26 13:01, Krzysztof Kozlowski wrote:
->>>> On 25/09/2026 23:05, Michal Wilczynski wrote:
->>>>>>> +  clocks:
->>>>>>> +    maxItems: 1
->>>>>>> +    description: Reference oscillator.
->>>>>>
->>>>>> This barely counts as a resource, so usual question: no resources here?
->>>>>> no MMIO? Even the user of this phy is the block itself.
->>>>>>
->>>>>> This makes me wonder if this should be a device node in the first place
->>>>>> (instead folded into the parent).
->>>>>
->>>>> The PHY has no reg because the reg is shared with the controller and
->>>>> owned by the parent - patch 9 lets the bridge take its regmap from
->>>>> there.
->>>>>
->>>>> The user of the PHY is not only the block itself. It is the pixel clock
->>>>> provider for the whole display subsystem, voutcrg takes hdmitx0_pixelclk
->>>>> as the parent of its DC8200 pixel MUXes, and while HDMI output is active
->>>>> it is the only intended source for that clock. The parent has to be
->>>>> assigned explicitly so the general PLL does not end up driving the pixel
->>>>> clock, and so a DSI user does not reach the HDMI PHY clock generator.
->>>>>
->>>>> So it has to be its own node. The HDMI block has two independent
->>>>
->>>> I do not see the logic which lead to this conclusion. Pixel clock
->>>> provider, so a clock controller, cannot be a user of a phy. Clock
->>>> controller does not have a physical layer.
->>>
->>> Sorry I think the wording was not perfect. I meant the PHY node is a
->>> pixel clock provider. voutcrg consumes a clock not a PHY.
->>>
->>> voutcrg: clock-controller@295c0000 {
->>>          clocks = <&syscrg ...>, <&hdmi_phy>;
->>>          clock-names = ...,"hdmitx0_pixelclk";
->>> };
->>>
->>> The consumer of the PHY is only the hdmi controller.
->>>
->>> What matters for the node layout is where that clock goes. voutcrg is the
->>> SoC display clock controller - it is not part of the HDMI block:
->>>
->>> hdmi_phy -- pixel clock -> voutcrg
->>>                               |
->>>                               - pclk/mclk/bclk -> hdmi_controller
->>>                               - pix0/pix1 -> dc8200
->>>
->>> hdmi_phy and hdmi_controller are the same register block with one reg
->>> owned by the parent. So if that block is described as a single node:
->>>
->>> hdmi_node - pixel clock -> voutcrg
->>>      ^                          |
->>>      --- pclk/mclk/bclk --------
->>>
->>> the node provides a clock to voutcrg and consumes three clocks from
->>> voutcrg. That is a cycle in the device tree description.
->>
->> There is no cycle. Internal signals to the block are not represented in DT.
->>
->> What you have is a driver problem and you create some sort of DT
->> structure to solve that. DT purpose is NOT to solve your driver
->> dependencies or circular connections.
-> 
-> The structure is not something I added. The voutcrg binding has required
-> an input clock named hdmitx0_pixelclk since it was merged in 2023
-> a097a5ec14df ("dt-bindings: clock: Add StarFive JH7110 Video-Output
-> clock and reset generator") and this series does not touch that file:
-> 
-> Documentation/devicetree/bindings/clock/starfive,jh7110-voutcrg.yaml
->        - const: hdmitx0_pixelclk
-> 
-> Mainline satisfies it with a placeholder, because so far nothing provided the
-> real clock:
-> 
-> hdmitx0_pixelclk: hdmitx0-pixel-clock {
->             compatible = "fixed-clock";                                                                          
->             clock-output-names = "hdmitx0_pixelclk";
->             #clock-cells = <0>;
-> };
-> 
-> All this series does is point that existing input at the device that actually
-> generates it.
-> 
-> TRM [1] table 5-3  on page 529 lists the display CRG's input clocks. Most come from
-> dom_vout_top, but three come from IP blocks inside the subsystem:
-> 
-> clk_hdmitx0_pixelclk        297 MHz   u0_hdmi_tx.clk_pix
-> clk_mipitx_dphy_rxesc        10 MHz   u0_mipitx_dphy.clk_rxesc
-> clk_mipitx_dphy_txbytehs    297 MHz   u0_mipitx_dphy.clk_txbytehs
-> 
-> and on page 530 the CRG offers clk_hdmitx0_pixelclk as Source1 for:
-> 
-> u0_dc8200.clk_pix0      Source0 clk_dc8200_pix0  Source1 clk_hdmitx0_pixelclk
-> u0_dc8200.clk_pix1      Source0 clk_dc8200_pix0  Source1 clk_hdmitx0_pixelclk
-> u0_cdns_dsiTx.clk_dpi   Source0 clk_dc8200_pix0  Source1 clk_hdmitx0_pixelclk
-> 
-> The DC8200 and the DSI TX are separate devices, so the pixel clock
-> crosses two block boundaries to reach them.
-> 
-> That is also why the DT has to be able to name it. Those MUXes have two
-> parents and the selection is made in DT:
-> 
-> &dc8200 {
->           assigned-clocks = <&voutcrg JH7110_VOUTCLK_DC8200_PIX0>, ...;
->           assigned-clock-parents = <&hdmi_phy>, <&hdmi_phy>;
-> };
-> 
-> and voutcrg takes it as an input clock because that is what the hardware
-> does. If the PHY is folded into the HDMI node, that input phandle points at
-> a node which also consumes pclk/mclk/bclk from voutcrg. That is where the
-> cycle comes from - the hardware topology not the driver.
+On Sun, Sep 13, 2026 at 08:10:43PM +0530, Krishna Kurapati wrote:
+> Changes pushed on top of usb-next branch. And v8 is only compile tested.
 
-Which is perfectly "fine" - present in many other SoCs as well. This is
-not different and your arguments are insufficient to give here
-exceptions. Why? Because again you use as an argument a Linux driver
-problem (cyclic dependency). Basically to solve Linux problem you
-introduce new empty nodes.
+I ran v8 on a Lenovo Legion Tab Y700 Gen 5 (Kaanapali, M31 eUSB2 PHY),
+v7.3-rc4 plus board patches. Host mode, wakeup enabled, s2idle:
 
-Best regards,
-Krzysztof
+ - hub with a FS keyboard behind it: no early wakeup in 10 RTC-timed
+   cycles, and a key press wakes the system (dm_hs_phy_irq). Without
+   the series it woke up right after entering suspend (dp_hs_phy_irq).
+ - FS keyboard directly on the port: a key press wakes the system.
+ - unplugging the hub during suspend wakes the system.
+ - wakeup disabled: no change from before.
+ - low speed: not tested, I have no LS device.
+
+Only the m31 and dwc3-qcom parts were exercised; the snps-eusb2 change
+was only built.
+
+Tested-by: Joonhoe Kim <26rote@gmail.com> # Lenovo Legion Tab Y700 Gen 5 (Kaanapali, M31 eUSB2 PHY)
 
 -- 
 linux-phy mailing list
