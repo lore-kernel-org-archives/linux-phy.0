@@ -4,60 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86F77CA5FF0
-	for <linux-phy@archiver.kernel.org>; Mon,  5 Oct 2026 10:15:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5EFFACA5FCE
+	for <linux-phy@archiver.kernel.org>; Mon,  5 Oct 2026 10:20:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FkLcYAgzWp3eA8QC+9mQdkVX6/Mnt0l6je83pNGArzQ=; b=CasgfCCFmV18we
-	QdKTfBgVSS9cdmZqUcSzjz5MrgepbQc35PeoZ0VsDWo4ignEkhNOkFjhE0fa9LnEYyTqtvPxATrXD
-	KAax++Sgh1AcisE/lLXYj/iv6cQhD/dypFfCK+g6KoyO9d8zcRYAOkI6hfdOU9IpezCUWzdz6OFD+
-	QhFDgDdBLLyKDD6tF6nAF/E5t7oHbllWUiXtr/VRd/wHSGgqxFAIMQGsAMvM3a1PseJfOwqb/UTAJ
-	RrkcIle2ujoS5pKi0DbUp2wxn0XPBr8NRGw9xwURB+el1hr4b9Qnkrb8brhBMY/9OWb69y2Ep95/k
-	ptUygw5YRVUZW6cUb/9A==;
+	List-Owner; bh=FdHSZvWRp4VeZVmffBIwCIq6U5f2qrrx75ZJA6ag960=; b=2sakHQ5f2d1Z+M
+	dZlVHcAvzK8TLq3vJYnD/NcRk1FLVtqT+/Kv7O6UD4+KxxEmPOrE3vVepgfYhO+9qBEFg6Z8SsZ6F
+	NmucGm/qbeB56Qq5SWy9sw11zWkFYHXbJgvzGWb9x0k0VBsjZarJ5ZOPPY8Cq1VfBslzKDePCQEUS
+	PB+ePl86WmXNp7HUSM+hyB2ru1+ihUA0HBIpOLigbYlOU7S5KqidAHYLQff8RfWUKW7a9nwMiDWaT
+	2nTrowXlSBMvwYviyV/7W8xstZ5wbcs7300DOgWdFqFzMp7Ds1HVufqQGNB2X0oFfwpx9GVN1UhQ8
+	nqsPiFdHVbDwluCBNSFg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDfjj-0000000G8iF-12l3;
-	Mon, 05 Oct 2026 10:15:59 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xDfoM-0000000G9YK-33cS;
+	Mon, 05 Oct 2026 10:20:46 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDfjh-0000000G8hX-37Z2;
-	Mon, 05 Oct 2026 10:15:57 +0000
+	id 1xDfoL-0000000G9Xk-0iZu;
+	Mon, 05 Oct 2026 10:20:45 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id D16016022E;
-	Mon,  5 Oct 2026 10:15:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D9D621F000FF;
-	Mon,  5 Oct 2026 10:15:55 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id E54EF40631;
+	Mon,  5 Oct 2026 10:20:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9ABB71F000FF;
+	Mon,  5 Oct 2026 10:20:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791195356;
-	bh=igZN1JZDbo2eUKBPEUpUUpCrkVNkHeN8r7Knm9kKQTQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=An2WvZiwsWKnpOmzD7EhVh/cUnMfKgzdSuhVcnMzNFQSLCIoBtJx78i0B1znUxaDN
-	 RgCKZaTMVvAjf93YFfRIbzLoP53eGrP3LrCzQrln7v/TJnHAXuwNhA19BRsMC9+TMl
-	 aMysBMrB0hNy1SPB6gJwdT9kQp6uY6q7oouukBqJinSSS3v9IhDy5ecEujy0ShzCa9
-	 U2rLLXsg5fAmaANx438MBfL8cjcvbnS9kiG8AVR/HGyZ0OerZ6bq7iOvAdxsJZqSrI
-	 P8cyxXrk669aMgH4FcOwhcrxvJM4csesxv9fvIuXSeU6KYRCZQ2ni6wMiRFGpx7CZ+
-	 jxylDv3tBpikg==
-Date: Mon, 5 Oct 2026 12:15:53 +0200
+	s=k20260515; t=1791195644;
+	bh=GWsLWEMDwrfL0znv9a1FFmG5Ojsurr2FWtMoeDb6oDs=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date;
+	b=kVL8xfQvfFGbxJe4asQyapC32bvl7t5tNtCf+kV4HgCD3ysm196T2XvxN078vUec3
+	 J5zll9onL2I6q34ewBt5CxXO2/1tc3qhcDYDl+VYTpgbuMtCC0O3d9vSfmDZex9WWh
+	 mz6KaNHGEZZM8R2H1H4E9cfePa3nbl0FaULsIYTTr1g8k4np5APdyjGMCKZDbjYO0Z
+	 fMKLjFHFXOjpYMH8OfaxtyZ0CJR/zZc2mhk5F9ItlXbbiqAMB5pM5R4phuajVDwomD
+	 d0UtqWoQpyxH28/E9OHzMO83qSiHB0r0dsLyVkaGFXI0L5qOFh2/RkeU0+jBvqLnP2
+	 t6qsokrdJeOXw==
 From: Vinod Koul <vkoul@kernel.org>
-To: Christian Marangi <ansuelsmth@gmail.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v12 0/3] airoha: an7581: USB support
-Message-ID: <asN42bZlK_jwS6uH@parshuram>
-References: <20260930071826.48811-1-ansuelsmth@gmail.com>
+To: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Andy Yan <andy.yan@rock-chips.com>, 
+ Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Cc: kernel@collabora.com, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org
+In-Reply-To: <20260901-hdptx-ffe-v2-0-3a5922c76fc5@collabora.com>
+References: <20260901-hdptx-ffe-v2-0-3a5922c76fc5@collabora.com>
+Subject: Re: [PATCH v2 0/3] phy: hdmi: Add FRL TxFFE level control
+Message-Id: <179119564237.316652.11654112643268830882.b4-ty@kernel.org>
+Date: Mon, 05 Oct 2026 12:20:42 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260930071826.48811-1-ansuelsmth@gmail.com>
+X-Mailer: b4 0.14.3
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,31 +72,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 30-09-26, 09:18, Christian Marangi wrote:
-> This is a major rework of the old v2 series.
-> 
-> The SoC always support USB 2.0 but for USB 3.0 it needs additional
-> configuration for the Serdes port. Such port can be either configured
-> for USB usage or for PCIe lines or HSGMII and these are configured
-> in the SCU space.
-> 
-> The previous implementation of a dedicated SSR driver was too
-> complex and fragile for the simple task of configuring a register
-> hence it was dropped and the handling is entirely in the PHY driver.
-> 
-> Everything was reducted to the dt-bindings to describe the Serdes line.
-> 
-> Also the property for the PHY are renamed to a more suitable name and
-> everything is now mandatory to simplify the implementation.
-> (the PHY are always present and active on the SoC)
-> 
-> Also other unrelated patch are dropped from this series.
 
-This does not apply for me and Kconfig seems to have a trailing
-whitespace which checkpatch complains about. Can you fix these and send
+On Tue, 01 Sep 2026 22:55:12 +0300, Cristian Ciocaltea wrote:
+> During HDMI 2.1 Fixed Rate Link training, the source and sink may
+> negotiate a Transmitter Feed Forward Equalizer (TxFFE) level to
+> compensate for signal quality degradation on the physical channel.  The
+> source starts at level 0 and may increment it up to a maximum agreed
+> upon during LTS3 in response to persistent link failures reported by the
+> sink.  TxFFE adjustment is optional and entirely independent of the FRL
+> rate and lane count selection.
+> 
+> [...]
 
+Applied, thanks!
+
+[1/3] phy: hdmi: Add optional FRL TxFFE config options
+      commit: af00a892e6515e3f08f2079578695389b01ba3a2
+[2/3] phy: rockchip: samsung-hdptx: Handle PHY config after module reload
+      commit: a673b3d18e37e573d52bf41c47e75d46982f2fae
+[3/3] phy: rockchip: samsung-hdptx: Add support for FRL TxFFE level control
+      commit: 192244b9cb5d15288f318f20ad202f2274359474
+
+Best regards,
 -- 
 ~Vinod
+
+
 
 -- 
 linux-phy mailing list
