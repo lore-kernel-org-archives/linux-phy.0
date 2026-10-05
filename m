@@ -4,60 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3FD70CA5FFD
-	for <linux-phy@archiver.kernel.org>; Mon,  5 Oct 2026 10:20:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F7A9CA5FFD
+	for <linux-phy@archiver.kernel.org>; Mon,  5 Oct 2026 10:20:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9bSNQIklemsfy5mKhJm94eHMYPEuRzka5ImRA5CYavU=; b=Dle9tcCMUZTR15
-	WtRfgJQeghoYrGN/KqHCDrkXUfr2OSxqPspymiWojPu/OyKoQNnAwZ4KxipiN2A9nvDH5kXWE0ZlP
-	7qkL/RpMJgAn/Z1sXytSNKFar9XDAM8QvZiQQsDrjUuLz4YWErfWixXatcaV6EeNdIaRY0Hja+CyR
-	JRQqWMFSEFg/Vjhrz/9o4YXD6kui3duV1luNd7UF/wc/AsYO2Dk0s+MmaCenNaQ8q1MCP1Ngl4RJ6
-	EdQXb9TSl5nENwPuj318Dr1p4cjxx5E6+HOnX3K1eVhMYbY/Wt16O2Um//yhdR8AmVMLEfbcpkLCe
-	n4dqDR/UhjIV0ik5DFUA==;
+	List-Owner; bh=JwK8pImrlTCSgvqS5Y4GRoSACutoMg94lVsWM5fVp9Q=; b=MSHEbqh/Jq/5n3
+	7I3+gpF4KBmTU3H1vf+y2/yMmAByWjV+TaWaq285O+Jfe711nbr0xfuG943/hHYRUSUkETQtbpmXx
+	ecfXY+hjfmHQagyDmbIYFhZLluWiHv4ESAyIqg1M1/s0tstn5DjlevJnZUgqaQtwU/MA0UjO+bOSo
+	+72Mi09JyugnPqe2YVsujg0YUOspi9WWwIp5FuiGZdHaL+nmw5cWrflus9o/GsMO2OB+abLadzpTc
+	xrJGUohpE8+zu7//w9iEOozMd9DLn8W+QHmQ7NLOMhlzR/N1KWHT7aELhr/LelEOP4skY2bVK25o/
+	DFEWsApjVubGy5EsVqPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDfoQ-0000000G9aM-3tQt;
-	Mon, 05 Oct 2026 10:20:50 +0000
+	id 1xDfoU-0000000G9cO-1K06;
+	Mon, 05 Oct 2026 10:20:54 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDfoP-0000000G9Zn-0yG3
-	for linux-phy@lists.infradead.org;
-	Mon, 05 Oct 2026 10:20:49 +0000
+	id 1xDfoS-0000000G9as-2b9q;
+	Mon, 05 Oct 2026 10:20:52 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id AB43D60A87;
+	by tor.source.kernel.org (Postfix) with ESMTP id 1446B60A7F;
+	Mon,  5 Oct 2026 10:20:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EADC41F000FF;
 	Mon,  5 Oct 2026 10:20:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5E3571F00893;
-	Mon,  5 Oct 2026 10:20:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791195648;
-	bh=Rb0VYPbJkOx1WDjx5OjWPu/39PyXY8+/uBeKMQTxRkM=;
+	s=k20260515; t=1791195651;
+	bh=BBZu3H0Bx6rtd/133+q6MGFZh6JR1+IEl9gcErsM3o0=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=jMsiRSioiu7zK/pzkKgEMleObWMHpP9/u4h1vIuvq1WLCIWlYHJrD4XUWVOHGzz1e
-	 8aBJFS3EzKl35QGYgTToI5WJknOZYCyyk8FuBmFvQhHe29KrWD0tI5GDuOg2/Ogt36
-	 I8TfpYF77Ng64LZ1J5mN44AvNW1Hll6juD3XenNH0YcKxte9H7i8ugSNyu5kZRoh/A
-	 Iui/gbExtFNS2x8wjn2drAfFkaNnbnGCLDGO8MwMPCJpLTSY11X3LPB+SMWLAjJ7D6
-	 Bn5PKtakTcM6MQPIQicUWJ3eK3KXzvxttn1grd0VMlTCz1VKfmvL1Zj1SrJkF0O0LZ
-	 WESPvvqAV/DxA==
+	b=YA7pMzaNehf2X3TgCxFjiGYJ0RwhihrvMCma8vPnk7RhGH7AW3mNejHHBHFDHDygG
+	 kLVoFtnxBgPRAqIgsaIQilj+UyrfNTPMKJ/Ru5Why5puNFxN19X96OmlAZsOus8SGY
+	 1VAmmxrtoQxBtd4khvhKfiDh9BVJ+vbW4VWYdOiKfQ3U/DWy6MkpmCJlYRhzmQf7Xk
+	 u7PATVwyADCqeDmRt806why6ke38dmb2lTQpruToK2nCchYlNK0F7hnBKm7Inkji/U
+	 VOoEzP5hye/p/kLz6kNE/DF3a1yBq9N/de4QqJDFGqCP2Kt/hFsfkRpigZN2NT720t
+	 t4PWXR7HFnFog==
 From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Thierry Reding <thierry.reding@kernel.org>, 
- Jonathan Hunter <jonathanh@nvidia.com>, 
- Philipp Zabel <p.zabel@pengutronix.de>, Kartik Rajput <kkartik@nvidia.com>
-Cc: Thierry Reding <treding@nvidia.com>, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-tegra@vger.kernel.org, 
- linux-kernel@vger.kernel.org
-In-Reply-To: <20260909-tegra264-mphy-v1-0-ce61a80dc065@nvidia.com>
-References: <20260909-tegra264-mphy-v1-0-ce61a80dc065@nvidia.com>
-Subject: Re: [PATCH 0/2] Add M-PHY support for NVIDIA Tegra264
-Message-Id: <179119564503.316652.18424670686928632323.b4-ty@kernel.org>
-Date: Mon, 05 Oct 2026 12:20:45 +0200
+To: chunfeng.yun@mediatek.com, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: neil.armstrong@linaro.org, robh@kernel.org, krzk+dt@kernel.org, 
+ conor+dt@kernel.org, matthias.bgg@gmail.com, 
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, kernel@collabora.com
+In-Reply-To: <20260915101022.23852-1-angelogioacchino.delregno@collabora.com>
+References: <20260915101022.23852-1-angelogioacchino.delregno@collabora.com>
+Subject: Re: [PATCH v4 0/2] PHY: Add MediaTek PCI-Express Gen4 S-PHY Driver
+Message-Id: <179119564860.316652.15464320957974464041.b4-ty@kernel.org>
+Date: Mon, 05 Oct 2026 12:20:48 +0200
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
 X-BeenThere: linux-phy@lists.infradead.org
@@ -77,19 +73,24 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Wed, 09 Sep 2026 15:13:57 +0530, Kartik Rajput wrote:
-> Add MIPI M-PHY support for NVIDIA Tegra264 SoCs. The M-PHY is a hardware
-> block with two lanes, l0 and l1, used by the Tegra264 UFS host
-> controller.
+On Tue, 15 Sep 2026 12:10:20 +0200, AngeloGioacchino Del Regno wrote:
+> Changes in v4:
+>  - Mentioned MT6991 in the commit description for commit 2 (Mani)
+>  - Added comment to clarify that if one calibration is missing, no
+>    calibration should be trusted
+>  - Changed Kconfig to mention module build (Mani)
+>  - Changed header comment to add "Author" and change indentation (Mani)
+>  - Moved cktx_impsel, tx_impsel to the top (Mani)
+>  - Added pm_runtime_no_callbacks() call (Mani)
 > 
-> 
+> [...]
 
 Applied, thanks!
 
-[1/2] dt-bindings: phy: Add nvidia,tegra264-mphy
-      commit: 6f61db971065919bd6ca2d62fdc4be158857c403
-[2/2] phy: tegra: Add Tegra264 MPHY driver
-      commit: 256cb243f4c21b5ba845885df9d1e79ce29eb706
+[1/2] dt-bindings: phy: Document MT8196 MediaTek PCI-Express Gen4 S-PHY
+      commit: c5e6a552846b253294d0b37f447aeea20c1938a1
+[2/2] phy: mediatek: Add support for PCI-Express Gen4 S-PHY
+      commit: e9434ed4effaf46351fce729380d3c8d7d918f20
 
 Best regards,
 -- 
