@@ -4,54 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 04A3CCA5FCE
-	for <linux-phy@archiver.kernel.org>; Mon,  5 Oct 2026 09:57:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7D5DCA5FCE
+	for <linux-phy@archiver.kernel.org>; Mon,  5 Oct 2026 10:07:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JBlQS2Hqd+1ZboXO2vuJBB7zdyRbVb8hReVxiIKdaO0=; b=kIXqMPH21/siKQ
-	T/QNMcqQHIwLfHIAQllZhYKBIf4R3OHjerDY7A9Ac1FKhGhktN0cRaoFP4hPT30ZseydBMSAB8Nwy
-	zta0NbSwl7GLHQkYFtGVvHeEG1Onzf3r1H7k9r49K5zzFxN4EUlOc7vQqT3OzanJvuYgZFhQluLP/
-	Lgjzck06Una9+WUro4y1npct404p8S7pc/wuzJwk6Tjhn3Ith+XBC7Fzn8bkJXYBbKwkcxkd0yQPl
-	0XreI+XosDplUWK1ojOxu+eziNPSJ5wJIBa8Gra0cvyHyXp1BDn2p7rs2sVawhRAWj311H7qzoWH2
-	8kvp2yuiOUMEc53rx7Bg==;
+	List-Owner; bh=/A4vANquEh4M1P87HyUhxUOx03UcsRjTzIOnmra3vdw=; b=zYxMNWK/jrSUfb
+	dMbefAOVhRcKP/hp+mXOXJkHPTzqzo/ZW8zM2d2f6cpXFWIfdGvVEHNLw/mueSVkLgg2NQeG+G/YX
+	pUYlGbzRPo0iauw1lLF1GE9vsWuphmK+g055FEyK5m0rz5bwQfn8Nmhto7sWO7J+H8CmniENdv+ui
+	iOvVtHnkHDTCFTaiUkoapdRi9Ps89yifL/GrmcaL1ETZx8OiId1l9Fd91LluOaPn90AlKxFkPCUAp
+	cBpyRTlZf11SVTdOA4QkeWk7u3Df+t4eP2E9z9cM7weXutsGfiWxJZ+vIKDEwdOm6B7+U1ddw5pB3
+	96AB6pjBjSlg3hZm4Mew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDfRa-0000000G6Y2-0hl9;
-	Mon, 05 Oct 2026 09:57:14 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xDfbu-0000000G7qK-1UZQ;
+	Mon, 05 Oct 2026 10:07:54 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDfRW-0000000G6Wf-47PP
-	for linux-phy@lists.infradead.org;
-	Mon, 05 Oct 2026 09:57:11 +0000
+	id 1xDfbt-0000000G7pi-0Rbe;
+	Mon, 05 Oct 2026 10:07:53 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id B774C40552;
-	Mon,  5 Oct 2026 09:57:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 18BD01F000FF;
-	Mon,  5 Oct 2026 09:57:09 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 9F8D54085A;
+	Mon,  5 Oct 2026 10:07:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CEEE81F000FF;
+	Mon,  5 Oct 2026 10:07:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791194230;
-	bh=YcSoPbLaWh0ot66x48z9S3+qMbs44+arAPPBRj/XpXI=;
+	s=k20260515; t=1791194872;
+	bh=JNnXFWmwLPPFEi6jlV/oyQsN1wGX9viqM9jVVnzW/i8=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=n8CPP3CVET9hDcw2Mg9pszo/RhXfl022Lf1qN2MsXKunAk85H8ZNxVfSO45jdrly7
-	 r5gTRMDBEi85qTEtjqSHZiwxqae63IgpYNl8jacNtaNEMyi61UFPT8/N8VLLkrXuE3
-	 ISa/JyUJPvJNcSXmJh/RrIppqYV0Bfk9dAK3688ERx5Cd/8DLDT91i3sdpwqz8Rwez
-	 ZH5qqnnBgsq9tnRGtgw+Ka2qR1Ty1kgBazZlx0UUwzA6l47Q6YW5zMbInwt8aFKpd2
-	 NRHREJPZd/bHKyyon3pPFdzoBSLhj83+do6J4yjOpot/6dcTcw3Du/+kzqf5+a9eLg
-	 R4uDQZUvV/RSA==
-Date: Mon, 5 Oct 2026 11:57:07 +0200
+	b=B0IGPCmopouwW4cNU/iiNXWslex16ZrFSaZWk+rbei8IkBWTpW+mED5m/GCumV/SG
+	 no1UZ2WJcFvrMvhahxidGR4x16U22EUuNdSo9xlSIXCzgCrswGOEHXw2uLo0iJHyej
+	 UHnHWlnebk77fBHM5YQFz7A2vQaetdbvT2ZgkSU8vHRajSAaDSOqL3mP7yiqGvHhMV
+	 8Z9PVedgr8kj0Zes5R59C5QAHsMKhjFbGMGgkyhC3uuvWSjP0GiGcIvXxxHLrr6klh
+	 zMSJC36ju56wUgtTZhl5qWESGlBRce+PaxkQPqpPVnJ3A6xHHBTSVZ/oHZPRjYQ+vS
+	 dWU0GX10jyF1w==
+Date: Mon, 5 Oct 2026 12:07:48 +0200
 From: Vinod Koul <vkoul@kernel.org>
-To: Ruslan Vagner <rusya92266@gmail.com>
-Cc: linux-phy@lists.infradead.org
-Subject: Re: [PATCH] phy: omap-control: fix comment typo
-Message-ID: <asN0c5W7Hq7u2upE@parshuram>
-References: <CAF9RqJ7iqOjXqX+95eM-0Hv1o=ZTJZaF8cMePGi7_NFnmsptzw@mail.gmail.com>
+To: Joey Lu <a0987203069@gmail.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+	Catalin Marinas <catalin.marinas@arm.com>,
+	Jacky Huang <ychuang3@nuvoton.com>,
+	Shan-Chun Hung <schung@nuvoton.com>,
+	Hui-Ping Chen <hpchen0nvt@gmail.com>, Joey Lu <yclu4@nuvoton.com>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v6 3/3] phy: nuvoton: phy-ma35d1-usb2: extend to
+ dual-port with OTG support
+Message-ID: <asN29Gi71MIA-2fq@parshuram>
+References: <20260929020854.1282339-1-a0987203069@gmail.com>
+ <20260929020854.1282339-4-a0987203069@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAF9RqJ7iqOjXqX+95eM-0Hv1o=ZTJZaF8cMePGi7_NFnmsptzw@mail.gmail.com>
+In-Reply-To: <20260929020854.1282339-4-a0987203069@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,33 +78,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 15-09-26, 05:56, Ruslan Vagner wrote:
-> Fix the spelling in comments. No functional change.
-
-This was fixed by f1d07d242b4c ("phy: fix typos in comments")
+On 29-09-26, 10:08, Joey Lu wrote:
+> PHY0 and PHY1 use the same power-on/reset sequence in USBPMISCR, with
+> PHY1 control bits shifted 16 positions relative to PHY0.  A separate
+> driver for PHY1 would duplicate this logic, so the existing driver is
+> extended to manage both ports.
 > 
-> Signed-off-by: Ruslan Vagner <rusya92266@gmail.com>
+> The original driver polled only DEVCKSTB after releasing PHY0 from
+> reset.  When USB0 operates in host mode (USB ID pin floating or tied
+> high) only HSTCKSTB and CK12MSTB assert; DEVCKSTB never sets.  Polling
+> exclusively for DEVCKSTB in host mode causes a 1 ms timeout on every
+> phy_init() call from the EHCI driver.  The init callback is changed to
+> accept either host-mode or device-mode clock stability, whichever
+> asserts first.
+> 
+> The power_on and power_off callbacks are replaced by a single init
+> callback that handles PHY reset and clock-stable polling, because
+> there is no PHY-specific clock gate on MA35D1; the PHY analog block
+> derives its reference from the HXT crystal.
+> 
+> A read-only USB role switch is registered for PHY0 to expose the USB0
+> role to userspace via the standard role-switch sysfs interface.  The
+> .set callback returns -EOPNOTSUPP because the hardware mux is fully
+> automatic with no software override path.  When CONFIG_USB_ROLE_SWITCH
+> is not enabled, the registration returns -ENODEV and the driver skips
+> the role switch gracefully without failing probe.
+> 
+> Two new optional device-tree properties are implemented:
+>   - nuvoton,rcalcode: writes per-port 4-bit resistor calibration trim
+>     codes to the RCALCODE field in USBPMISCR.
+>   - nuvoton,oc-active-high: sets the UHOVRCURH bit in MISCFCR0 to treat
+>     the over-current detect input as active-high.
+> 
+> Signed-off-by: Joey Lu <a0987203069@gmail.com>
 > ---
->  include/linux/phy/omap_control_phy.h | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  drivers/phy/nuvoton/phy-ma35d1-usb2.c | 286 +++++++++++++++++++-------
+>  1 file changed, 211 insertions(+), 75 deletions(-)
 > 
-> diff --git a/include/linux/phy/omap_control_phy.h
-> b/include/linux/phy/omap_control_phy.h
-> index aec57dd784f7..5652aa2f4915 100644
-> --- a/include/linux/phy/omap_control_phy.h
-> +++ b/include/linux/phy/omap_control_phy.h
-> @@ -12,7 +12,7 @@
->  enum omap_control_phy_type {
->  	OMAP_CTRL_TYPE_OTGHS = 1,	/* Mailbox OTGHS_CONTROL */
->  	OMAP_CTRL_TYPE_USB2,	/* USB2_PHY, power down in CONTROL_DEV_CONF */
-> -	OMAP_CTRL_TYPE_PIPE3,	/* PIPE3 PHY, DPLL & seperate Rx/Tx power */
-> +	OMAP_CTRL_TYPE_PIPE3,	/* PIPE3 PHY, DPLL & separate Rx/Tx power */
->  	OMAP_CTRL_TYPE_PCIE,	/* RX TX control of ACSPCIE */
->  	OMAP_CTRL_TYPE_DRA7USB2, /* USB2 PHY, power and power_aux e.g. DRA7 */
->  	OMAP_CTRL_TYPE_AM437USB2, /* USB2 PHY, power e.g. AM437x */
-> -- 
-> 2.54.0.windows.1
+> diff --git a/drivers/phy/nuvoton/phy-ma35d1-usb2.c b/drivers/phy/nuvoton/phy-ma35d1-usb2.c
+> index 9a459b700ed4..547c7d55d8ff 100644
+> --- a/drivers/phy/nuvoton/phy-ma35d1-usb2.c
+> +++ b/drivers/phy/nuvoton/phy-ma35d1-usb2.c
+> @@ -1,11 +1,16 @@
+>  // SPDX-License-Identifier: GPL-2.0
+>  /*
+> - * Copyright (C) 2024 Nuvoton Technology Corp.
+> + * Nuvoton MA35D1 USB 2.0 PHY driver
+> + *
+> + * Supports PHY0 (USB0 OTG port, shared between DWC2 gadget and EHCI0/OHCI0)
+> + * and PHY1 (USB1 host-only port, used by EHCI1/OHCI1). The hardware mux on
+> + * PHY0 switches automatically via the USB ID pin.
+> + *
+> + * Copyright (C) 2026 Nuvoton Technology Corp.
 
+Not correct, this should be updated to 2024-2026, you dont drop the
+copyright notices, you update them!
+
+>   */
+>  #include <linux/bitfield.h>
+>  #include <linux/clk.h>
+>  #include <linux/delay.h>
+> -#include <linux/io.h>
+
+why is this dropped? 
 -- 
 ~Vinod
 
