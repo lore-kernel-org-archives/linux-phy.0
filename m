@@ -4,58 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16B7CCA5FCE
-	for <linux-phy@archiver.kernel.org>; Mon,  5 Oct 2026 10:20:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2239CA5FFD
+	for <linux-phy@archiver.kernel.org>; Mon,  5 Oct 2026 10:21:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0GheyybvyFliHPe0OwT5DinCxXTUElNnzU8EIAFfdI4=; b=GF6XxsMDfOSLCt
-	ychCpopzzfIMGukXwHm+LBE1tzqTZEETCp3B4kkqXMvDofB0Rom2g7UGtc4jJg8SaXS2i46bnkiOH
-	4hkNu2xXwsu1lIiIo9hboNj81g1B6PWEOrg6WsswYiqK1dpiY+fWNYKZOOSB5+wI8uS2PY1LCJ2OC
-	9o/UgHhrvcsdpWYmpjVftg4rZkrxNCCdeVdBIxpkxHlhNXLtdIRBw+HsTM1+YhNumNCiWjEF+ZWuz
-	/O4qoYANmv3m91Bv5sbmNk/g1S1ybKloaOS/R6xqSnxLctxWwrI/L/25EUwLX5xLjH4XTnLVIdnwc
-	BYe+jpgetKEstc0wxQLg==;
+	List-Owner; bh=h8h7tFWVwP/V8u9p3aCxmy+gYQM6fQomthC7du7ArSE=; b=HoE6hhPLPIclX+
+	fSe8RDqjbeCOTpMN/Gn9H58x4rNEBpDUAmMYZDeBDztDy8LdWsfQsFigo2gFGQ05gAWDZ4php3zK/
+	EH4wflStcze5qn2Xb6B+qmHZVdycBhxLl0CHN+ZvYBemIxejbdEVppjnyxInF7DnEr/DocH9XEy2a
+	KD40fs2woVaa1VSgjHY+TKvpw8Pa+rQ3Dd4a9HTyW5siDbYIbDWPntTPrSV7Uy5PV/mZbuw1X3hdl
+	Akn4wzd74RLYSFx35sBbym5UFwiEhprc+qJYmGU82RONa/TojxQ5Kh03KfbujAO7mVkG0hNNprK7S
+	CH1xnPV96Hx5NGcSYkvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDfoX-0000000G9fZ-2vFd;
-	Mon, 05 Oct 2026 10:20:57 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xDfof-0000000G9lk-1H6M;
+	Mon, 05 Oct 2026 10:21:05 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDfoW-0000000G9dt-0EER;
-	Mon, 05 Oct 2026 10:20:56 +0000
+	id 1xDfob-0000000G9ip-0uOk;
+	Mon, 05 Oct 2026 10:21:01 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 70DD360A7F;
+	by sea.source.kernel.org (Postfix) with ESMTP id 5CD7043E5C;
+	Mon,  5 Oct 2026 10:20:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B2AEB1F00899;
 	Mon,  5 Oct 2026 10:20:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 552301F00893;
-	Mon,  5 Oct 2026 10:20:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791195655;
-	bh=fs+vPKGM9euFPbmuig/kk7Y6Q16/AWU1bovoyR6PvLA=;
+	s=k20260515; t=1791195659;
+	bh=wjjeW5yegDf0KDKbY7d9B07KRu5nvSc+73Tk90wGuNM=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=bx1ru7FUxUOa8za+jHJc18vTvLSX0rGMjYYZQPSfq/jyKsKUa7bZaaGGUva8/CfTp
-	 WMdg/G++C81yk6gAFR3I/6NfoohQO81VTmyJhdUvgpHl2uq7oES27vbdPul7Gg/ycR
-	 8ahPijtcC+M5tH33Nfw/9dR1u5U0cimYXpI8rG+4T5Sq9bvKPkC5xC1w6OplhFZ/pc
-	 XLACWo7KRYFVaNrB6q8VDfoc0b8heJahjdluTXnjV31T5YWumh5k9jFg53gseGOWjc
-	 Oyqzl+xkSTbBZL52hshd/MO5n45nFRAZiZgl6bsY3Q9RzZrNMw9P6d65IV36uGpAws
-	 P6enf4OhHtvkw==
+	b=eMISnwWYbwAjJzdqTp1EndL/6YzWzvZJSug5EJGr2jtZNIZCGvgQUtOo/AsJAiCYr
+	 +E1hnYT4xvJiCYwADhkmpjBg6fl+Ja7L26Nq440OorctF3IyVDx4uQpKqf8bQXiEX8
+	 zUoCno7H9tIc0pwRXCIX1Nzzqd6u2NnwYfMMOw75ynXo84/V7vrrjui9gQmfz6ZbHT
+	 BzibSNnRobFRMCWdHNiODMLdDg+pYWFhco2mWIfJWroxsstHwYsPgNEG3VobYxdy+B
+	 CeWOQJudndNmaZjWZC//p4aa08U/ZkdhTQYUX90ZddAQSIbmCpFUPDAGGpfXUEzmdb
+	 1ZSePukef936Q==
 From: Vinod Koul <vkoul@kernel.org>
-To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Amin Gattout <amin.gattout@gmail.com>
-Cc: Michael Riesch <michael.riesch@collabora.com>, 
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
- linux-phy@lists.infradead.org, Conor Dooley <conor.dooley@microchip.com>
-In-Reply-To: <20260915-rk3576-dphy-v2-0-b56e68b54b8c@gmail.com>
-References: <20260915-rk3576-dphy-v2-0-b56e68b54b8c@gmail.com>
-Subject: Re: [PATCH v2 0/4] phy: rockchip: add support for the RK3576 MIPI
- CSI-2 DPHYs
-Message-Id: <179119565198.316652.7051689992732505012.b4-ty@kernel.org>
-Date: Mon, 05 Oct 2026 12:20:51 +0200
+To: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>, 
+ Andrew Jeffery <andrew@codeconstruct.com.au>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ Billy Tsai <billy_tsai@aspeedtech.com>, 
+ Ryan Chen <ryan_chen@aspeedtech.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org, 
+ linux-kernel@vger.kernel.org, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
+ Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+In-Reply-To: <20260916-upstream_usb3phy-v4-0-812e76037d01@aspeedtech.com>
+References: <20260916-upstream_usb3phy-v4-0-812e76037d01@aspeedtech.com>
+Subject: Re: [PATCH v4 0/3] Add AST2700 USB3.2 PHY driver
+Message-Id: <179119565537.316652.120525327400272705.b4-ty@kernel.org>
+Date: Mon, 05 Oct 2026 12:20:55 +0200
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
 X-BeenThere: linux-phy@lists.infradead.org
@@ -75,27 +79,21 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 15 Sep 2026 12:42:45 +0200, Amin Gattout wrote:
-> The Rockchip RK3576 features two MIPI CSI-2 DPHYs. The CSI-2 DPHYs can be
-> supported using the existing phy-rockchip-inno-csidphy driver.
+On Wed, 16 Sep 2026 08:38:00 +0800, Ryan Chen wrote:
+> Add AST2700 USB3.2 PHY support.
+>  - Supports Super Speed Plus Gen2x1 (10 Gbps), Super Speed (5 Gbps),
+>    High Speed (480 Mbps), Full Speed (12Mbps), and Low Speed (1.5 Mbps).
 > 
-> This patch series adds support for this variant.
 > 
-> As you may have guessed, this is part of the efforts to bring the
-> support for the RK3576 camera pipeline (VICAP) mainline.
-> 
-> [...]
 
 Applied, thanks!
 
-[1/4] dt-bindings: soc: rockchip: add rk3576 csidphy grf syscon
-      (no commit info)
-[2/4] dt-bindings: phy: rockchip-inno-csi-dphy: add rk3576 variant
-      commit: 40c95f05093129e75f0180938de53dac65ce7e75
-[3/4] phy: rockchip: phy-rockchip-inno-csidphy: add support for rk3576 variant
-      commit: 47de65075563915363ed25affff41b9b4d004d4f
-[4/4] arm64: dts: rockchip: add csi dphy nodes to rk3576
-      (no commit info)
+[1/3] dt-bindings: phy: aspeed: Document AST2700 USB3.2 PHY
+      commit: e22b112f2fa565fd7d2715ac9d1bc3ba1a3c2427
+[2/3] phy: aspeed: Add AST2700 USB3.2 PHY driver
+      commit: ad72aff5b4b5396a2a443a8f838fcfb8067dc603
+[3/3] MAINTAINERS: Add ASPEED USB3 PHY driver
+      commit: ea01f446f0682a5e7bd7a275889a890b7e0c6e02
 
 Best regards,
 -- 
