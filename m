@@ -4,105 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7092CA5FFC
-	for <linux-phy@archiver.kernel.org>; Mon,  5 Oct 2026 15:32:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52CF4CA5FFC
+	for <linux-phy@archiver.kernel.org>; Mon,  5 Oct 2026 15:49:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YPBeFr0o3XtFJXnkz9V593SCPkkvJws2JjjkKBvoiFY=; b=AsdAiwo3eKkB/L
-	F58u/61MlOn1PAgRjrBsiTXZ1Fv8GzfXY/JPSeBTfu7Req24dKLLR9eQ9j6jwviUYYl0V53h4s9Xg
-	F+IT1p87ESFM0xSdkkhL8dbG4XS1F/Ik7v3Sj18C3cnJKWeQbNulD6D7PrD3J0I8E3flMQz7QMP+5
-	z7kVQXf4cPJubpyfLZsSoPviVTD8ITFyBKygvKviuB99fRtCLfvsPlkPLfUd8M/OG8JCR4CM143J0
-	UjGyLQESO535QZXrRhpeITllUtrQ8Q5mLQ488YGEBRkIRCBFBL9XYaxNOW4XupZjaa+GYCFp612Wt
-	BaotQxXDPxFtLauvVjXQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=HFHwEW8QPui04n2f0TQazqN7ERUUEs7lGRVEJ7Z446o=; b=iKxY7IpNBvsDfr
+	11rP1f+19t+4l4XyFp3dhEgU7it4hAg8I7kHhEN+edPiKXSiuNpgj58MJVHqC26Rm4+0sfB1nZqnk
+	zLzMKU/i2uXRrF5qbSBp5wMGS/2mAeFAhBPI7jNi1P/hx1ORDfjarbNUUNyZOyweOwAhl5zjp+dD/
+	20LbFBlbL84o5wIEd99eFjFIvjxDluLrNX8hmYPU8KnPXk5BIXFRnK9T8RoF/xZx/cnYnl+ZLrwnO
+	YQMsjhEriHQAbTuL31PhKBc/reNDBbLrUOGiwAgEF1QICn5n/p7P3AuDeI9EEu37ggXnNpRJFtZkt
+	sOfoUtm+SDy0ZX7vxXjQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDkfq-0000000GlLR-1bFE;
-	Mon, 05 Oct 2026 15:32:18 +0000
-Received: from mail-qv1-xf35.google.com ([2607:f8b0:4864:20::f35])
+	id 1xDkwE-0000000GnGe-07YO;
+	Mon, 05 Oct 2026 15:49:14 +0000
+Received: from mail-wr2-x0f.google.com ([2a00:1450:4864:30::f])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDkfn-0000000GlK7-43IC
+	id 1xDkwB-0000000GnFc-27dV
 	for linux-phy@lists.infradead.org;
-	Mon, 05 Oct 2026 15:32:17 +0000
-Received: by mail-qv1-xf35.google.com with SMTP id 6a1803df08f44-917a2800e83so25428896d6.2
-        for <linux-phy@lists.infradead.org>; Mon, 05 Oct 2026 08:32:15 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1791214335; cv=none;
-        d=google.com; s=arc-20260327;
-        b=qV2dew88E3VXh6osdYX9Dp2CIX889xDXamCA50sCW3XLGqBAHlzOZ+rONfEDzi2bym
-         EzLPYf6Vjb3Yp8pEtqHKqRT50jdLFKyqkrOpHI9YCRnNVhGioinmSbuGY0ymp9RKtrG/
-         1h0NC4JGxOUvehZVRMXz3PGfOhz829Nl9LKi+IaRTGxxNvcRdBZkT6idKXXTygnxxbli
-         QOcr90CcB31sHpB0TDuGGQ+a6pChwZE0ASQ/uWJowMGzr1wxsLXUioqBPBEEnN1ATfYn
-         ZFCAvq45J9etV5vT0oEDcKKgp7VKE0YfwBSUZDp7lsV1rXMToKhUvfdjc/KeZef/DZ2X
-         v3fA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:dkim-signature;
-        bh=DHbE/ZQrnN4lIbhz9d2lRY1XaGiqJgT56yvkXrJ87/I=;
-        fh=4as2E0YLTkW+KrsOQxwkjRHsmM3g/hXC4Y3esKFlmS8=;
-        b=Ix6a+Y5DXjV8dMRqfWApKjcYAN930mYQYStxP4eUVooNwlxxD9YnI1gkiyrKcvA+WU
-         mJquXy9uP436ZHU95pBDkjn3kbWuHPRgJUpHFEm3uHQJQx1jFKov3WfhH5dJ/gE8GCh0
-         7/8man3VxECYXRWTUHs7FkbbhzKl7dxnEipEzFYZGoHBWC+KYIqoo1nZhMSC6D6jmFpo
-         ywNQzTdFYtw8EZ0iLRNFh8Z6NapnR1nDdfkTLnWUXfLTCQHvqwb9NkLX0HvfkrAgaP5c
-         3ly8wkovzGhSU26DjM+Ya6M2aQq7NMahSxo1gSjmsAJdVOu9l5QGtS6RwsDmkh+Jz5++
-         4eqA==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
+	Mon, 05 Oct 2026 15:49:12 +0000
+Received: by mail-wr2-x0f.google.com with SMTP id ffacd0b85a97d-48b05fdb2f9so1583202f8f.0
+        for <linux-phy@lists.infradead.org>; Mon, 05 Oct 2026 08:49:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1791214335; x=1791819135; darn=lists.infradead.org;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=DHbE/ZQrnN4lIbhz9d2lRY1XaGiqJgT56yvkXrJ87/I=;
-        b=ewktG0izUUkKqGfBmeqVNE3QirViIS3PkFLNCA2pVuZawu1f87/8ghSiQz3bTfHu96
-         pRbl87NONM9ROaJlpGSuNk2yoOp/BCXkfv9qpcpX4K173cDufcqX60l241cRk9dlzbGb
-         OS5YtipwIPGtW/0LP5fF4TFuRz2AQ4TzDx3zn/Zl5iHqpaEPisD9ci6DkRrL6dg1b9Vg
-         HbMrNfZf/d6Pi+82bLts70zsEeINMp8YkolljrHMluPoQVlM9F/0Z0+qhOFkvE2Ysvtg
-         9y+HCxdUjqf4f+ebI/Xf8g/sp854MPaq+okbDp72Z/UnYg38NdyU3EYNd6vJ05Fv5PBx
-         WfJw==
+        d=gmail.com; s=20251104; t=1791215349; x=1791820149; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=xDA7SE8Bs6IcBW2j1ppM+dM+f01g1/9YMIx6NP+5lIU=;
+        b=hBYxlDBCyt4TuHuzRK8C/FoLANfoS22RWRd2DaEWB2Bk4EeGsn+uKeaK33xchO/opA
+         8KxJRF4CMiWuMGjhf+Ay24M3cMZ2AI89DUi4Nrop/mOQjctqkMSArRTkkZYUNBzo27vZ
+         J7u8UMyZxzWfJV5mOZRgOAQf+0d3GF/nkdh6pnKY5xc46GFQBgytV02mJ2hh5Ox9N6jp
+         QFZKooVc0l1yV+DxB8iH6iN/Ng3IIw5gYfnk95zwohiJojEr7o6xfKIIM0f4FQCaXpd/
+         YDMMPbLZtrK6ddRXRK/Y+dZYvB0A7vX8V+nfCVJQ+CXkLvQ2R8knwNO3d4fUR4cgzZbP
+         aycw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791214335; x=1791819135;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=DHbE/ZQrnN4lIbhz9d2lRY1XaGiqJgT56yvkXrJ87/I=;
-        b=ICrgR3zvdEWvSwbuKAz6Lej6EgPOBWxqv9/XyxqvHoqLJq8wmgDkTlws3qOPE0Eo7I
-         s550qzqC/ze3cFSiId62eOGEMBuRv61NG9Mo4sN2nu4tFiRfXeo0fHPb7E75jxFZPikW
-         qEcHYZiHEvHL+x8G0q3G2B7Cz2OclGleTBZE3WRsWTtcJk1W08u7YBf/Mpaz+AtH/9t5
-         izCjAYHkw9gUxO/Yj5vwYHv7zmIVX9Z1I3uFQpLX1JkSWNJzaLbUQ/CaEGvukffmYI6D
-         9GXN2V/4i1jy7+UNnFZRiQAyYNq4wGvqpFbK9NbgUYPf+C21jXdl+sgjQ6bMykKH/DkU
-         b2jw==
-X-Forwarded-Encrypted: i=1; AKwUvBwUv1Kk3HQ6j+fA1cNcpktHSO4eI+TlwJd7LlNe450bmaYFA6xBxFJm1LBmhFEaylfnAhUo9QDesJE=@lists.infradead.org
-X-Gm-Message-State: AFuF++kmHh7Yr0eMuy5kIf52PJ5scOmDOiUBCWscdW98CYfJOBN2GHKn
-	3XHuocoTBbjOHRMM1QzbJWUPKbj0O2aCfTywSZ4dKVTFy79kl3d3luxAhlJd50bKPCRHE+7hznw
-	YDeqWqROcQMueCNfRV0OQYtFFTDvHixU=
-X-Gm-Gg: AYBFou2rwmlJdomsKOR8RjEqhq13M3VQacUv17/0nru+80TbPK9zOFdWKUyzperU1Jq
-	Do/ux1HwRdFPtph3JfAyhhjbDmRd+X5EYuw6L42pmhAjZSMPaoatT8eFWh1oY96ttdq6O5NfU0q
-	9N1fpi7wuF+9M2M3OWydXSwIx6TCKmL9MlB+384XLr7NkrE8xaflKFs+3qwYHaVLsXa3moo418S
-	qbWiefTT8++zFjQuy5gXfmivTdBfNXhmxr/1b1nwioaDvwf6v+AyPzIaV3PaxHmchGgDqFqjHqC
-	thoqz3eBPVHRCuixiguAFV3cQ4yF/rQnUwkSjVEvvos0Tus5pQ18MIM=
-X-Received: by 2002:a05:6214:4906:b0:915:e9af:3145 with SMTP id
- 6a1803df08f44-9195d07bd1amr138006566d6.12.1791214333390; Mon, 05 Oct 2026
- 08:32:13 -0700 (PDT)
+        d=1e100.net; s=20260707; t=1791215349; x=1791820149;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=xDA7SE8Bs6IcBW2j1ppM+dM+f01g1/9YMIx6NP+5lIU=;
+        b=lPtstIvj9sojYA2Xs63xLYLVIX1EZENT/GDHefDiVfpMtJ2leAAYLyxy8cBnRr9Vnt
+         R3sA6qh3Ocx74d/7iynmq6C6LilQvyKAV/GkZbLZiuqdaODNfjeFi3fx2m7+L/RjbF2J
+         peUUcg3DfGpCW1+6XSKyvDXlgqW1G9ln/RlAHzvQNTfsZYboI06l9Ew3tZ5IMmdLXATp
+         CbGwj2sno0d01zlFJ9k21kDB71/a6jQrV9PyeW41coNCA2qOCpBpy3U3u+b5ZF4+ODp1
+         NZ9zurbsgw/c12vKXjvX/mIJTwt4G1fl+BwEIgYxWBQ+iDwEOKyTyvcIqhgciKpO0GTU
+         vTwA==
+X-Forwarded-Encrypted: i=1; AKwUvBy4qjieSNnvy5NTc7sMa/9g4k4Jdk5xifMyEvAO3xA4B0E2GyLfL1o1mPR0Xv3WLHBt1Q+oxwjqVp8=@lists.infradead.org
+X-Gm-Message-State: AFq9FYLVjHoC8cs2iCsJfdsjMbnWdk6GjQ7QkK7MZXFRd9HHNsjzE869
+	4o7MIzljLAowq0fQM9P0mfkr7EZ6/pX+4ALfUqTJKvQheI2VZWNiLxzH
+X-Gm-Gg: AYBFou2YXe5QrIGbSSWhu91q1bKbUSyel1mXJRrDj75UwZSWeFEHwDclcX9foiA2VFZ
+	IPx4pgkVnm+CAADGuwW6z9on5Fe26tap1jHBiJtGMj668QjJ2TbVwkctCNOtA4cApBMQGEtp67a
+	wPbLzG8sWc473FvWzVMN8WvV0YSkC8dM4w1hSOberF4WKT6JHefHnwHa3MZz2Ao+A61Lt+XmI4Z
+	n17Pg+zO2dk3RHtqW9pxagcgHUqIJaz22WSDJFfrLP4weFEh1klPSr0LPppbZn7IA4zPKCoft9l
+	zS2r/A08pVn8ZFO2hV/wtp+Aia0fe0gn+eRKrtJIlJlQ3Tpip1lbT9zoE7A2nSmaPTzZg75/Nfm
+	kisQ7mPIfOawbhKtQW1c4EzD7o79xDjo0wo+PD42i8Uf/UpXYO7vVA4uoVLiBW9uCYxEXieHZMo
+	RmD/Yr058RtE/Qmni12whLRhM3TotLNYb9WnZ2LBpoaCiXA2eUpq25zj+lSAThC1VlSTmahSALQ
+	CKKGf6vUR7QCE5ZZPWtgOhDtVJYLIyUkMT07UR8/0h8Hgb2aQqi8vQgEiIo6433Qm4QqXmjsSet
+	ReqYzvcM
+X-Received: by 2002:a5d:5f42:0:b0:487:27f9:82f with SMTP id ffacd0b85a97d-48b1271aaa4mr19605297f8f.36.1791215348860;
+        Mon, 05 Oct 2026 08:49:08 -0700 (PDT)
+Received: from iku.Home ([2a06:5906:61b:2d00:19ee:7722:1d2a:b728])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48c622704c1sm3714976f8f.10.2026.10.05.08.49.07
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 05 Oct 2026 08:49:08 -0700 (PDT)
+From: Prabhakar <prabhakar.csengg@gmail.com>
+X-Google-Original-From: Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>
+Cc: linux-renesas-soc@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Prabhakar <prabhakar.csengg+renesas@gmail.com>,
+	Biju Das <biju.das.jz@bp.renesas.com>,
+	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
+	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
+	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: [PATCH] phy: renesas: rcar-gen3-usb2: Keep OTG VBUS disabled until role is known
+Date: Mon,  5 Oct 2026 16:48:41 +0100
+Message-ID: <20261005154841.168047-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+X-Mailer: git-send-email 2.55.0
 MIME-Version: 1.0
-References: <20261005105535.2472-1-ansuelsmth@gmail.com> <asPCFDMXyntAV6lx@parshuram>
-In-Reply-To: <asPCFDMXyntAV6lx@parshuram>
-From: "Christian Marangi (Ansuel)" <ansuelsmth@gmail.com>
-Date: Mon, 5 Oct 2026 17:31:59 +0200
-X-Gm-Features: AclHuK9sfRTTob9cejo5rJV-vGSG3XFEFgdIAL7ikLesT7uwwOKne_JE24bBBNs
-Message-ID: <CA+_ehUx_B2K3WgLYkt2fz5jzDRB24LQRB3uX_VScZ2QSxCojPg@mail.gmail.com>
-Subject: Re: [PATCH v13 0/3] airoha: an7581: USB support
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Lorenzo Bianconi <lorenzo@kernel.org>, linux-arm-kernel@lists.infradead.org, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261005_083216_004820_F5D0487D 
-X-CRM114-Status: GOOD (  23.60  )
+X-CRM114-CacheID: sfid-20261005_084911_563860_DA66AB56 
+X-CRM114-Status: GOOD (  14.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,52 +110,94 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il giorno lun 5 ott 2026 alle ore 17:28 Vinod Koul <vkoul@kernel.org>
-ha scritto:
->
-> On 05-10-26, 12:55, Christian Marangi wrote:
-> > This is a major rework of the old v2 series.
-> >
-> > The SoC always support USB 2.0 but for USB 3.0 it needs additional
-> > configuration for the Serdes port. Such port can be either configured
-> > for USB usage or for PCIe lines or HSGMII and these are configured
-> > in the SCU space.
-> >
-> > The previous implementation of a dedicated SSR driver was too
-> > complex and fragile for the simple task of configuring a register
-> > hence it was dropped and the handling is entirely in the PHY driver.
-> >
-> > Everything was reducted to the dt-bindings to describe the Serdes line.
-> >
-> > Also the property for the PHY are renamed to a more suitable name and
-> > everything is now mandatory to simplify the implementation.
-> > (the PHY are always present and active on the SoC)
-> >
-> > Also other unrelated patch are dropped from this series.
-> >
-> > Changes v13:
-> > - Rebase on top of phy next
->
-> Pls fix the chechpatch issues. There is new blank line at EOF, SPDX
-> format mismatches and many more. Make sure you pass --strict flag to it
->
+From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 
-My checkpatch doesn't report the blank line. Am I missing something?
-For SPDX, is it ok to change it? The commit just move file. I would
-like to fix that in a separate commit after. (I can include in this
-series if you
-want)
+Prevent the OTG PHY from driving VBUS during probe, as the port role has
+not yet been determined and doing so can back-power an external host.
 
-The other warning are about Kconfig description where I can
-artificially make the help text longer (no idea if it's OK...)
+Keep the regulator enabled while disabling its physical VBUS output until
+the port role is established. If disabling the hardware output fails,
+release the regulator reference to avoid leaving the regulator enabled
+after probe fails.
 
-And the line too long for the define but making the line shorter
-would result in a disaster for the register.
+Rename the regulator helper to reflect that it acquires the regulator
+without enabling its physical VBUS output.
 
-Up to you what I should fix but I guess the real important one
-is the blank line but my checkpatch script is not detecting that...
+Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+---
+ drivers/phy/renesas/phy-rcar-gen3-usb2.c | 26 +++++++++++++++++-------
+ 1 file changed, 19 insertions(+), 7 deletions(-)
 
-Can you help?
+diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+index b5ba751805aa..08db619a43a0 100644
+--- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
++++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+@@ -1114,8 +1114,8 @@ static void rcar_gen3_phy_usb2_vbus_disable_action(void *data)
+ 	regulator_disable(vbus);
+ }
+ 
+-static int rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable(struct rcar_gen3_chan *channel,
+-								  bool enable)
++static int rcar_gen3_phy_usb2_vbus_regulator_get_exclusive(struct rcar_gen3_chan *channel,
++							   bool acquire)
+ {
+ 	struct device *dev = channel->dev;
+ 	int ret;
+@@ -1133,15 +1133,27 @@ static int rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable(struct rcar_ge
+ 		return 0;
+ 	}
+ 
+-	if (enable) {
++	if (acquire) {
+ 		ret = regulator_enable(channel->vbus);
+ 		if (ret)
+ 			return ret;
+ 	}
+ 
+-	if (regulator_is_enabled(channel->vbus))
++	if (regulator_is_enabled(channel->vbus)) {
++		/*
++		 * The internal regulator is enabled above only so that the regulator
++		 * core holds a reference to it. Do not drive VBUS until the port's
++		 * role is known; rcar_gen3_enable_vbus_ctrl() switches it from then on.
++		 */
++		ret = regulator_hardware_enable(channel->vbus, false);
++		if (ret) {
++			regulator_disable(channel->vbus);
++			return ret;
++		}
++
+ 		return devm_add_action_or_reset(dev, rcar_gen3_phy_usb2_vbus_disable_action,
+ 						channel->vbus);
++	}
+ 
+ 	return 0;
+ }
+@@ -1151,7 +1163,7 @@ static int rcar_gen3_phy_usb2_vbus_regulator_register(struct rcar_gen3_chan *cha
+ 	struct device *dev = channel->dev;
+ 	struct regulator_config rcfg = { .dev = dev, };
+ 	struct regulator_dev *rdev;
+-	bool enable = false;
++	bool acquire = false;
+ 
+ 	rcfg.of_node = of_get_available_child_by_name(dev->of_node,
+ 						      "vbus-regulator");
+@@ -1165,10 +1177,10 @@ static int rcar_gen3_phy_usb2_vbus_regulator_register(struct rcar_gen3_chan *cha
+ 					     "Failed to create vbus-regulator\n");
+ 
+ 		channel->otg_internal_reg = true;
+-		enable = true;
++		acquire = true;
+ 	}
+ 
+-	return rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable(channel, enable);
++	return rcar_gen3_phy_usb2_vbus_regulator_get_exclusive(channel, acquire);
+ }
+ 
+ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
+-- 
+2.55.0
+
 
 -- 
 linux-phy mailing list
