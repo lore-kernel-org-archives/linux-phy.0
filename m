@@ -4,64 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 864F5CA5FCE
-	for <linux-phy@archiver.kernel.org>; Mon,  5 Oct 2026 09:36:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 04A3CCA5FCE
+	for <linux-phy@archiver.kernel.org>; Mon,  5 Oct 2026 09:57:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/BqO3dx7WIlW94dKJVkzF9a9G3bvl4oAg5zLKeEWLfo=; b=ay9QsF5wga45OF
-	ObMDsFSVsk/YdvFW5jBE2XkYGp9ObZFLMJDpLphwYNgfMf0/90QgWpVactoq0qlp8aVvAeEecnfJb
-	me/VQA1WnfXwTd2ZeApzOB4+9vxHno8oZ/WMrseFwF0UygZ59VhDhWVJBVXXDRtoOhFpw5rXldO5N
-	8i0fIbf1LxxqpWwg3oYcPQvpr+GG2g7Ddb/7h/4l/kHhd5FXLMGXCgBHbLLmeEoxAcNfr9GSl9Jv5
-	n+zS9lKscwa1mkt3Ufr9JSk1dWU2v+avwnRaLaBiIj1o5B4SUTTtKpDqW8MhkdSPK4HbmSe3S7s/r
-	6n6qSh6W059vrqWwbtaQ==;
+	List-Owner; bh=JBlQS2Hqd+1ZboXO2vuJBB7zdyRbVb8hReVxiIKdaO0=; b=kIXqMPH21/siKQ
+	T/QNMcqQHIwLfHIAQllZhYKBIf4R3OHjerDY7A9Ac1FKhGhktN0cRaoFP4hPT30ZseydBMSAB8Nwy
+	zta0NbSwl7GLHQkYFtGVvHeEG1Onzf3r1H7k9r49K5zzFxN4EUlOc7vQqT3OzanJvuYgZFhQluLP/
+	Lgjzck06Una9+WUro4y1npct404p8S7pc/wuzJwk6Tjhn3Ith+XBC7Fzn8bkJXYBbKwkcxkd0yQPl
+	0XreI+XosDplUWK1ojOxu+eziNPSJ5wJIBa8Gra0cvyHyXp1BDn2p7rs2sVawhRAWj311H7qzoWH2
+	8kvp2yuiOUMEc53rx7Bg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDf78-0000000G17k-3wOA;
-	Mon, 05 Oct 2026 09:36:06 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xDfRa-0000000G6Y2-0hl9;
+	Mon, 05 Oct 2026 09:57:14 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDf77-0000000G17Z-1CBo
+	id 1xDfRW-0000000G6Wf-47PP
 	for linux-phy@lists.infradead.org;
-	Mon, 05 Oct 2026 09:36:05 +0000
+	Mon, 05 Oct 2026 09:57:11 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 548FC60A87;
-	Mon,  5 Oct 2026 09:36:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5D67F1F00898;
-	Mon,  5 Oct 2026 09:36:02 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id B774C40552;
+	Mon,  5 Oct 2026 09:57:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 18BD01F000FF;
+	Mon,  5 Oct 2026 09:57:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791192963;
-	bh=0Ao/mLNTjmSkWmcOamQdcSXL9pFAvIeKIenqzfFwDYE=;
+	s=k20260515; t=1791194230;
+	bh=YcSoPbLaWh0ot66x48z9S3+qMbs44+arAPPBRj/XpXI=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=MkAVn3g+inmSBSz5Fzu0VGiuBrdRC72Erc14Fo1fRXNMasfI6jc0ioFi29XAC4WUb
-	 e0EMo8YHg0iO5T49/1QOyhu7gzVXYTKh1Ra03l2yI1N5pDAWyfWZGXnpgl/lkbc55/
-	 /4VmY1qRBi0mp2CzzTYl2NnJxFED1hhZetH9teyAcddp5gm5QnYXPXWGJZV/4QHkia
-	 XAzd7keTIL4Jh5vl2AFjtM5xzaF+4ZrTujk54/pMK4cdJIWOLzKKLGhX8DTxGdD4zq
-	 Savyadu6JZABjEYih4G0DUtpL2Nxu0+8kPyqyfA9i5gEWMqPf/sl1/p+oNpRAfal6D
-	 EaRDByI2FZxmQ==
-Date: Mon, 5 Oct 2026 11:35:59 +0200
+	b=n8CPP3CVET9hDcw2Mg9pszo/RhXfl022Lf1qN2MsXKunAk85H8ZNxVfSO45jdrly7
+	 r5gTRMDBEi85qTEtjqSHZiwxqae63IgpYNl8jacNtaNEMyi61UFPT8/N8VLLkrXuE3
+	 ISa/JyUJPvJNcSXmJh/RrIppqYV0Bfk9dAK3688ERx5Cd/8DLDT91i3sdpwqz8Rwez
+	 ZH5qqnnBgsq9tnRGtgw+Ka2qR1Ty1kgBazZlx0UUwzA6l47Q6YW5zMbInwt8aFKpd2
+	 NRHREJPZd/bHKyyon3pPFdzoBSLhj83+do6J4yjOpot/6dcTcw3Du/+kzqf5+a9eLg
+	 R4uDQZUvV/RSA==
+Date: Mon, 5 Oct 2026 11:57:07 +0200
 From: Vinod Koul <vkoul@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
-	Vincent Mailhol <mailhol@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Aswath Govindraju <a-govindraju@ti.com>, linux-can@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] dt-bindings: phy: ti,tcan104x-can: Fixup unapplied
- constraint to ti,tcan1042 family
-Message-ID: <asNvf1LZET8i7UoQ@parshuram>
-References: <20260918110116.94024-2-krzysztof.kozlowski@oss.qualcomm.com>
+To: Ruslan Vagner <rusya92266@gmail.com>
+Cc: linux-phy@lists.infradead.org
+Subject: Re: [PATCH] phy: omap-control: fix comment typo
+Message-ID: <asN0c5W7Hq7u2upE@parshuram>
+References: <CAF9RqJ7iqOjXqX+95eM-0Hv1o=ZTJZaF8cMePGi7_NFnmsptzw@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260918110116.94024-2-krzysztof.kozlowski@oss.qualcomm.com>
+In-Reply-To: <CAF9RqJ7iqOjXqX+95eM-0Hv1o=ZTJZaF8cMePGi7_NFnmsptzw@mail.gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,14 +68,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 18-09-26, 13:01, Krzysztof Kozlowski wrote:
-> ti,tcan1042 is also used as fallback for a few devices, thus the check
-> in "if:" conditional should use "contains" to properly validate these
-> other devices.  The other compatibles used in the changed enum are used
-> alone, so it does not affect them.
+On 15-09-26, 05:56, Ruslan Vagner wrote:
+> Fix the spelling in comments. No functional change.
 
-looks duplicate of c7f2322431cb ("dt-bindings: phy: ti,tcan104x-can: Fix
-property constrains") ? if not please rebase on this and send
+This was fixed by f1d07d242b4c ("phy: fix typos in comments")
+> 
+> Signed-off-by: Ruslan Vagner <rusya92266@gmail.com>
+> ---
+>  include/linux/phy/omap_control_phy.h | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/include/linux/phy/omap_control_phy.h
+> b/include/linux/phy/omap_control_phy.h
+> index aec57dd784f7..5652aa2f4915 100644
+> --- a/include/linux/phy/omap_control_phy.h
+> +++ b/include/linux/phy/omap_control_phy.h
+> @@ -12,7 +12,7 @@
+>  enum omap_control_phy_type {
+>  	OMAP_CTRL_TYPE_OTGHS = 1,	/* Mailbox OTGHS_CONTROL */
+>  	OMAP_CTRL_TYPE_USB2,	/* USB2_PHY, power down in CONTROL_DEV_CONF */
+> -	OMAP_CTRL_TYPE_PIPE3,	/* PIPE3 PHY, DPLL & seperate Rx/Tx power */
+> +	OMAP_CTRL_TYPE_PIPE3,	/* PIPE3 PHY, DPLL & separate Rx/Tx power */
+>  	OMAP_CTRL_TYPE_PCIE,	/* RX TX control of ACSPCIE */
+>  	OMAP_CTRL_TYPE_DRA7USB2, /* USB2 PHY, power and power_aux e.g. DRA7 */
+>  	OMAP_CTRL_TYPE_AM437USB2, /* USB2 PHY, power e.g. AM437x */
+> -- 
+> 2.54.0.windows.1
 
 -- 
 ~Vinod
