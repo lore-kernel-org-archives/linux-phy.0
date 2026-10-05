@@ -4,53 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC203CA5FF0
-	for <linux-phy@archiver.kernel.org>; Mon,  5 Oct 2026 15:58:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84CFCCA5FF0
+	for <linux-phy@archiver.kernel.org>; Mon,  5 Oct 2026 18:09:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eUJj5T98enveMdWQVhps3dI5Ol04vAR1I43eygiX26k=; b=Uz+0nJuDQJbR7G
-	blqLr9b5xmuGy792ZPWssAONOeanPcyvXtd/ELPfo43wVXU5I9AOS0VT8FZifYuP+hII1TAhjKAnh
-	iMC5ISkCGm7jX2N3kuaI4jl9TgH/DWQHJ7HNVwDvHAsRbsOXqhdYhnBumLpBJO/1CXXgXlVNpYk9D
-	h65f4BBQi+jgfkoN6yEMqJYQP2/vm24FzQEkKWBkztbnYlYAIO6B+t/qXuQ6ThmWe1/QscL9IEgjv
-	rmNfD2nYfuiSQA/BhAgLgEGCH0rPnFmbvagWZ5CD89YBm7xEyJxfNFNVYhNinIs8Qgy8Qi/tExa12
-	DKlafEY6XYmJOBbnZeDQ==;
+	List-Owner; bh=syXzKMg2+rRd9KC6qHgwresUOLIQ9CuAQPWeAqLdALE=; b=guJYdQrxyTNaVv
+	y3Y7PoVQ8tSlMmsflL+zMBeVWmnoh3XJSpVdELi87bK+PY1XKIB6NKXZhiTXRZ2ZY+Mf8OVkqoMg5
+	AAsM02trhNIoogRP3AHEni2rSDV+bNIsKUDrl0Yc4JvQ3Y+lx8atHg1dSM3OjP1mBprqpO1K0DGIG
+	ciicvw1OA/gvJ0iMjJW+xdRMRqm+DltfIN3982EIqCpVPHgp9GnRh1LOoKD64aLI9ddrFg225S7ak
+	sFqPm5UtfJ++u4Sy9XQqUkz+l/i4Ljgt7zQ1pCz2Z9dFRLaewTVsV3bXrRztmcih/aOVf/u1qyFsM
+	ZzrAFZen+aXzfMe0u3zQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDl5H-0000000Go7i-1AjN;
-	Mon, 05 Oct 2026 15:58:35 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xDn84-0000000GymI-3ulL;
+	Mon, 05 Oct 2026 18:09:36 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDl5F-0000000Go7a-1bD3
-	for linux-phy@lists.infradead.org;
-	Mon, 05 Oct 2026 15:58:33 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 7601260534;
-	Mon,  5 Oct 2026 15:58:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C9A271F00893;
-	Mon,  5 Oct 2026 15:58:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791215912;
-	bh=PgvYFGyWhGsvIMmnETXkduZJY/CEJuPaqMjsw7ovXm4=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=VQMItucxM9fbRCoumdHW9TbWNXYXO9+W9fjregXW7zFva30CuWT48NKkkrjYlY7UZ
-	 hhd3Rov1Ryv3qY9Xg9QyeyWaVp6AORqiFOpz0KEFRgHTKzanBsnTBx3fU2ZWpiXkGb
-	 JMOaRqzzsfvKY6bZlubrIL1I/zcMw/SJ+KQZJMuRzGvcwZeqaJ894sYcwKr/1iI2EA
-	 xnASuuAOBJ71fLzmLXbDMZwqg1g8LAf0mTvnARLu26UEf1g2Zx6ITR9O9I2XH6h2sK
-	 mbmjmzOn2D6JesJD86seEUUwZjRUPdpBQAkLk/1n2UcQp17NLlQz8ALrrTJ90pQqrG
-	 JpeMcCSHiafbQ==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH] phy: renesas: rcar-gen3-usb2: Keep OTG VBUS disabled
- until role is known
-To: Prabhakar <prabhakar.csengg@gmail.com>
-Cc: neil.armstrong@linaro.org, olteanv@gmail.com, wsa+renesas@sang-engineering.com, vkoul@kernel.org, linux-phy@lists.infradead.org
-In-Reply-To: <20261005154841.168047-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-References: <20261005154841.168047-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-Date: Mon, 05 Oct 2026 15:58:31 +0000
-Message-Id: <20261005155831.C9A271F00893@smtp.kernel.org>
+	id 1xDn7x-0000000Gyky-16ie;
+	Mon, 05 Oct 2026 18:09:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Transfer-Encoding:Content-Type:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Reply-To;
+	bh=KWSjVCVfhYPrZE0ETR+lrH3OHG2RwgKAy0qCp+LBWOw=; b=wh8lZYdIq/+MLr9OmtxrVg5feF
+	wI8VSnydL3P+HMY/5BjwvsD2lnnS06rSgU2W8euhhCDVFrefnQ5PCU32v/O7zKxhLGsOt2R6qFyxh
+	LwRR5LelPnF25xPtDCvLom2b2ER2TWO0iUs08pyds84ppCK7xdd2KEzTnTM34xe4nT9DVQAdFJkLA
+	gMqrn4CzaLBO+4naoyBcls4HYaJ6wiUkERUaXynfy8M6hRPA5FMdGM5rVR9NNB4e3JWF2XLJqlKyB
+	jFb2VWcrHXvg4e/81tr2Hl1rjA08pjLEgByzNAMA0U3qSfrxPBv/IvsQXd/Tr//wBAWhOOf5jImut
+	+joamz0g==;
+From: Heiko Stuebner <heiko@sntech.de>
+To: Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Amin Gattout <amin.gattout@gmail.com>
+Cc: Heiko Stuebner <heiko@sntech.de>,
+	Michael Riesch <michael.riesch@collabora.com>,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Conor Dooley <conor.dooley@microchip.com>
+Subject: Re: (subset) [PATCH v2 0/4] phy: rockchip: add support for the RK3576 MIPI CSI-2 DPHYs
+Date: Mon,  5 Oct 2026 20:09:18 +0200
+Message-ID: <179122375594.3298998.10291240183600049512.b4-ty@sntech.de>
+X-Mailer: git-send-email 2.47.3
+In-Reply-To: <20260915-rk3576-dphy-v2-0-b56e68b54b8c@gmail.com>
+References: <20260915-rk3576-dphy-v2-0-b56e68b54b8c@gmail.com>
+MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261005_110929_641681_C73A0529 
+X-CRM114-Status: GOOD (  11.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,62 +71,35 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIHBoeTogcmVuZXNhczog
-dW5iYWxhbmNlZCByZWd1bGF0b3IgZGlzYWJsZSBhbmQgcHJvYmUgZmFpbHVyZSBvbiBleHRlcm5h
-bCBWQlVTCi0tCgpjb21taXQgMGIwZTVkOTFkMWQ5YjY4OTRmZTUxMzJmMDg0ZTdkYTE0NzI0NmY1
-NQpBdXRob3I6IExhZCBQcmFiaGFrYXIgPHByYWJoYWthci5tYWhhZGV2LWxhZC5yakBicC5yZW5l
-c2FzLmNvbT4KCnBoeTogcmVuZXNhczogcmNhci1nZW4zLXVzYjI6IEtlZXAgT1RHIFZCVVMgZGlz
-YWJsZWQgdW50aWwgcm9sZSBpcyBrbm93bgoKUHJldmVudCB0aGUgT1RHIFBIWSBmcm9tIGRyaXZp
-bmcgVkJVUyBkdXJpbmcgcHJvYmUsIGFzIHRoZSBwb3J0IHJvbGUgaGFzCm5vdCB5ZXQgYmVlbiBk
-ZXRlcm1pbmVkIGFuZCBkb2luZyBzbyBjYW4gYmFjay1wb3dlciBhbiBleHRlcm5hbCBob3N0LgoK
-PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcmVuZXNhcy9waHktcmNhci1nZW4zLXVzYjIuYyBi
-L2RyaXZlcnMvcGh5L3JlbmVzYXMvcGh5LXJjYXItZ2VuMy11c2IyLmMKPiBpbmRleCBiNWJhNzUx
-ODA1YWFlLi4wOGRiNjE5YTQzYTAzIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L3JlbmVzYXMv
-cGh5LXJjYXItZ2VuMy11c2IyLmMKPiArKysgYi9kcml2ZXJzL3BoeS9yZW5lc2FzL3BoeS1yY2Fy
-LWdlbjMtdXNiMi5jClsgLi4uIF0KPiBAQCAtMTEzMywxNSArMTEzMywyNyBAQCBzdGF0aWMgaW50
-IHJjYXJfZ2VuM19waHlfdXNiMl92YnVzX3JlZ3VsYXRvcl9nZXRfZXhjbHVzaXZlX2VuYWJsZShz
-dHJ1Y3QgcmNhcl9nZQo+ICAJCXJldHVybiAwOwo+ICAJfQo+ICAKPiAtCWlmIChlbmFibGUpIHsK
-PiArCWlmIChhY3F1aXJlKSB7Cj4gIAkJcmV0ID0gcmVndWxhdG9yX2VuYWJsZShjaGFubmVsLT52
-YnVzKTsKPiAgCQlpZiAocmV0KQo+ICAJCQlyZXR1cm4gcmV0Owo+ICAJfQo+ICAKPiAtCWlmIChy
-ZWd1bGF0b3JfaXNfZW5hYmxlZChjaGFubmVsLT52YnVzKSkKPiArCWlmIChyZWd1bGF0b3JfaXNf
-ZW5hYmxlZChjaGFubmVsLT52YnVzKSkgewo+ICsJCS8qCj4gKwkJICogVGhlIGludGVybmFsIHJl
-Z3VsYXRvciBpcyBlbmFibGVkIGFib3ZlIG9ubHkgc28gdGhhdCB0aGUgcmVndWxhdG9yCj4gKwkJ
-ICogY29yZSBob2xkcyBhIHJlZmVyZW5jZSB0byBpdC4gRG8gbm90IGRyaXZlIFZCVVMgdW50aWwg
-dGhlIHBvcnQncwo+ICsJCSAqIHJvbGUgaXMga25vd247IHJjYXJfZ2VuM19lbmFibGVfdmJ1c19j
-dHJsKCkgc3dpdGNoZXMgaXQgZnJvbSB0aGVuIG9uLgo+ICsJCSAqLwo+ICsJCXJldCA9IHJlZ3Vs
-YXRvcl9oYXJkd2FyZV9lbmFibGUoY2hhbm5lbC0+dmJ1cywgZmFsc2UpOwo+ICsJCWlmIChyZXQp
-IHsKPiArCQkJcmVndWxhdG9yX2Rpc2FibGUoY2hhbm5lbC0+dmJ1cyk7CiAgICAgICAgICAgICAg
-ICAgICAgICAgIF5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXgpbU2V2ZXJpdHk6IEhp
-Z2hdCkRvZXMgdGhpcyBlcnJvciBwYXRoIHRyaWdnZXIgYW4gdW5iYWxhbmNlZCByZWd1bGF0b3Ig
-ZGlzYWJsZSB3YXJuaW5nPwoKSWYgcmNhcl9nZW4zX3BoeV91c2IyX3ZidXNfcmVndWxhdG9yX2dl
-dF9leGNsdXNpdmUoKSBpcyBjYWxsZWQgd2l0aAphY3F1aXJlID0gZmFsc2Ugd2hlbiB1c2luZyBh
-biBleHRlcm5hbCBWQlVTIHJlZ3VsYXRvciwgcmVndWxhdG9yX2VuYWJsZSgpIGlzCmJ5cGFzc2Vk
-IGFuZCB0aGUgY29uc3VtZXIncyBlbmFibGVfY291bnQgcmVtYWlucyAwLgoKSWYgdGhlIGV4dGVy
-bmFsIHJlZ3VsYXRvciBpcyBhbHJlYWR5IHBoeXNpY2FsbHkgZW5hYmxlZCAoZS5nLiBieSB0aGUK
-Ym9vdGxvYWRlciksIHJlZ3VsYXRvcl9pc19lbmFibGVkKCkgd2lsbCByZXR1cm4gdHJ1ZS4KCklm
-IHJlZ3VsYXRvcl9oYXJkd2FyZV9lbmFibGUoY2hhbm5lbC0+dmJ1cywgZmFsc2UpIGlzIG5vdCBz
-dXBwb3J0ZWQgYnkgdGhlCmV4dGVybmFsIHJlZ3VsYXRvciAoZS5nLiBmaXhlZCByZWd1bGF0b3Jz
-IHdpdGhvdXQgR1BJTyksIGl0IHJldHVybnMKLUVPUE5PVFNVUFAsIHRha2luZyB0aGlzIGVycm9y
-IHBhdGguCgpTaW5jZSB0aGUgcmVndWxhdG9yIHdhcyBuZXZlciBlbmFibGVkIGJ5IHRoaXMgZHJp
-dmVyLCB3b24ndCBjYWxsaW5nCnJlZ3VsYXRvcl9kaXNhYmxlKCkgaGVyZSB0cmlnZ2VyIGFuIHVu
-YmFsYW5jZWQgZGlzYWJsZSB3YXJuaW5nIGFuZCBhYm9ydAp0aGUgcHJvYmUgZW50aXJlbHk/CgpT
-aW1pbGFybHksIGlmIHJlZ3VsYXRvcl9oYXJkd2FyZV9lbmFibGUoKSBzdWNjZWVkcywgZGV2bV9h
-ZGRfYWN0aW9uX29yX3Jlc2V0KCkKcmVnaXN0ZXJzIHJjYXJfZ2VuM19waHlfdXNiMl92YnVzX2Rp
-c2FibGVfYWN0aW9uLiBTaW5jZSB0aGF0IGFjdGlvbiBjYWxscwpyZWd1bGF0b3JfZGlzYWJsZSgp
-LCB3aWxsIGl0IGNhdXNlIHRoZSBzYW1lIHVuYmFsYW5jZWQgd2FybmluZyB3aGVuIHRoZQpkcml2
-ZXIgdW5iaW5kcz8KCj4gKwkJCXJldHVybiByZXQ7Cj4gKwkJfQo+ICsKPiAgCQlyZXR1cm4gZGV2
-bV9hZGRfYWN0aW9uX29yX3Jlc2V0KGRldiwgcmNhcl9nZW4zX3BoeV91c2IyX3ZidXNfZGlzYWJs
-ZV9hY3Rpb24sCj4gIAkJCQkJCWNoYW5uZWwtPnZidXMpOwo+ICsJfQo+ICAKPiAgCXJldHVybiAw
-Owo+ICB9CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3Bh
-dGNoc2V0LzIwMjYxMDA1MTU0ODQxLjE2ODA0Ny0xLXByYWJoYWthci5tYWhhZGV2LWxhZC5yakBi
-cC5yZW5lc2FzLmNvbT9wYXJ0PTEKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBo
-eUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LXBoeQo=
+
+On Tue, 15 Sep 2026 12:42:45 +0200, Amin Gattout wrote:
+> The Rockchip RK3576 features two MIPI CSI-2 DPHYs. The CSI-2 DPHYs can be
+> supported using the existing phy-rockchip-inno-csidphy driver.
+> 
+> This patch series adds support for this variant.
+> 
+> As you may have guessed, this is part of the efforts to bring the
+> support for the RK3576 camera pipeline (VICAP) mainline.
+> 
+> [...]
+
+Applied, thanks!
+
+[1/4] dt-bindings: soc: rockchip: add rk3576 csidphy grf syscon
+      commit: 21792937b01b9c36c9a1c4d039f3e1883856157c
+[4/4] arm64: dts: rockchip: add csi dphy nodes to rk3576
+      commit: e68360ded44be19051df2cb7e121ba7afd52035e
+
+Best regards,
+-- 
+Heiko Stuebner <heiko@sntech.de>
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
