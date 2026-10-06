@@ -4,95 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7EC90CA5FF0
-	for <linux-phy@archiver.kernel.org>; Mon,  5 Oct 2026 23:00:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B57BCCA5FF0
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Oct 2026 01:11:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ltcuGmdX+nU3v20TGjdnbXQaEk/ZCxWiV/rUviX3EOw=; b=G3s0SAKpEdqgpT
-	CHiyJuR+8pIL9+6G0gHwYdwheRtAS5rhlbbTRU4oMrheVCz2MFaBacHqXp266CF7zbdrSdKiBDGxH
-	wlHODm2Y1muaWBb/WiHVIyLAn5lytLbmigqfXz3o8P+c7cpRqQPV5VoeJplNg5AGvMW6jhE5F4cDM
-	xSEcLGsyezMZ8aUMPqt6CzssTJ6qoJCTH8lZZ+o7nkivgr9VVGJRH0/fA8jSvx4oyMqKCofY85CUe
-	GC/GYHzjK2wv6b49e5uOZ8jwrHDTpgBauP16WTCsNYx0rReHojGvoeRb7o+EIMwHMnx2ojK18A4Qp
-	4lAFlbVoVf2N0ciBL5Hw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=6pdD3f5GRaY3lelJ4lA1EJXx2VZEuMPq0C7LCQjIlsY=; b=nRMbY0pBoyvgvxewhju+hX/uJ6
+	5ry3VkkdltwF1jykvO84NpjUqUSmxQPBqBoO78FNEgqf+Ioed0wYUB3mBQKzqWu/e+/jbVjwC4Cb3
+	MuNdO75O7ImO0PXZ/2YiK3W6zFsnDke88R0LuysdJ+HJ9ooSQv+XS/qWoR47puP87oFaeQz1Htcre
+	nO+OFj2uQTD20p4BAtYIQxamq9gB27i3KxN7F+J27YBbiMLzuzPmkNzKwCkx/isFF1CWFiAS98xeY
+	jbKSs1hmoMsnvrZ8nk/GjdDYvHAR/DESIMdlhxVtY3O+vyoKTEzAWUZ+zrGGUS/xSoFNvs2dJkDu2
+	LebALWhg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDrfH-0000000HJC1-0iDM;
-	Mon, 05 Oct 2026 23:00:11 +0000
-Received: from mail-pj2-x01.google.com ([2607:f8b0:4864:39::1])
+	id 1xDtia-0000000HRoH-3Eu2;
+	Tue, 06 Oct 2026 01:11:44 +0000
+Received: from sender5-op-o11.zoho.com ([165.173.182.11])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDrfD-0000000HJ8V-1kNb
-	for linux-phy@lists.infradead.org;
-	Mon, 05 Oct 2026 23:00:09 +0000
-Received: by mail-pj2-x01.google.com with SMTP id 98e67ed59e1d1-3a51696a650so1333295a91.1
-        for <linux-phy@lists.infradead.org>; Mon, 05 Oct 2026 16:00:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1791241206; x=1791846006; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=8Rz7MTGiT2Oa/TzTvQEqnIct/KOrKk64RBkMgo9sxQM=;
-        b=hzg5MNJSt3fWd0joSBWt4quGEKwa55AqNvFCuxaDP6L6k9t4xwKnmN3fgC8pqcLTP3
-         dQJ6iJgM6OotqF9alzcLdZsYB1a13uyG1bbT3DM9wCfmZ6r7Slwe8vePEU1IEw+cobeK
-         xFaJ1P24rBsQzHnj+6upImMw+F60kSsjxcthM5B2SEHI1RC0DRlkvKDPlJCW1Nblk+w5
-         80m1/sIrJRoxMGtFoMYDkEBlDdJoz57gWRLxvSTGqEzq/SoWhkHhlGWOSmsFRDqCPJ6s
-         ChVpWdUmBp8fxMgemAO5hqAScj05cWcW9tXmb2JIW1n85nshRBRKfjMBB3MuWRtzq9lZ
-         eJDg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791241206; x=1791846006;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=8Rz7MTGiT2Oa/TzTvQEqnIct/KOrKk64RBkMgo9sxQM=;
-        b=MNJzJVwJGrYK6Wjb7Q8VK13nvL7H+dyl62LZ7sKTgjIhlpWGiEVdXzhFrZ3/LGjqvX
-         tTLscuuiX/ktAPrLDI1ydPfsHh79tnKeH4e9oewWsgENeMKdXdWICbTMha1wahE1yDMZ
-         rohtD23Z6d/CIgZOar5JioE2XXk5Tpy/rciN1PphSoTDi7dYwwrmPajEvJ7yMHSAf8U7
-         ye0j4pTJarKlHRVhhNkedghki2GuldsfE185RI7kMr94Xe2nZyt5/bEvBVUTWrYNmAnc
-         hZpmRN/wUlX44UBik/FqMZeoa8uyMjHmw8ACgqC8OBGzW/Z9t+9iW3Nuv/EoqQL7ggnC
-         cQMg==
-X-Forwarded-Encrypted: i=1; AKwUvBz5NKI6h9Mr+LgpifVICTZYafYCVbSm0aYJ0N5YJIrOAgFpp9mKt9skcrSSzqeByPcMOQuOCxR/Z2E=@lists.infradead.org
-X-Gm-Message-State: AFuF++mhpcgk5nC6bHW3tCPFS599/d/8rOdEhAhgXkCe138frbfNH9SE
-	JuRk8BK9gcrpwpYqCBkCnZ6K/qe15pi8z1fO4gNZmROyWc6d543/ovPu
-X-Gm-Gg: AYBFou3dSt8DIpx6AZ38/7fJb2gRffOQZFZhESxVOjXpB3U6iBSBHLR7lsv499WiWUR
-	GcV5V4NQv5E+tl+0FhoZbidYflrExim6X148P7U+rZdcvYTyVQz2MSz6lyxkHdqZs1vZdizSP9x
-	BwdziYGv/Viv0KQml31UrM7fpPbj4tx8g1DIm03pyIge0UkwBxxd6JipArI7GEbAhj1xP9PtmrU
-	kwr11w5OVoJVnUH4tVQvt3sVh23WXlChvBpKGdbVPQR1M+/6Q1++flRgfWAiuit6SGCkvNTotHu
-	2yZfHKcN+LvKlZVPOMcXIJhlF0GNHEYJDo5l6sUOJimDuVArAawR/SH1FBonhzpUnBzS7mSTpxm
-	8tYDJt27GTi1B2Hjy/lb4NzeDU2ZWm19lV2ymf0y/w4pidVbkbLkF8600zluP2QZYhVOc+cCu9n
-	Mc5Prhim7AqMPRYYkndi+mrXycDcVP4O4M1k+Q6AbmmjByIfqAt4NbfFhBdsM0Hh6yrH48
-X-Received: by 2002:a05:6a00:1ca8:b0:87c:e1a0:139e with SMTP id d2e1a72fcca58-88af73eaf5amr9796306b3a.20.1791241206300;
-        Mon, 05 Oct 2026 16:00:06 -0700 (PDT)
-Received: from server.lan ([168.138.199.194])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-88b0b8f5b79sm4183327b3a.15.2026.10.05.16.00.00
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 05 Oct 2026 16:00:05 -0700 (PDT)
-From: Coia Prant <coiaprant@gmail.com>
+	id 1xDtiY-0000000HRnj-3EAB;
+	Tue, 06 Oct 2026 01:11:44 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1791249086; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=UphQXAU/8dtSAC9wsyqP35Qa3f1HNvW4msk27OanqQD3AKV5hyCYsGe90TiCtJmGJOklkkoPANnt8hKRIl813PvFK1fz2AmUriV3aUuFaIag96tzcbdKdXh4q5Xq36uBQKXDoVCOif5UAQm6PNmoP5GZpzbRmgR/ReLokZjU+zY=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1791249086; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=4g+yzmxwnHRAzQmnEJ5mwE4FFc81WOxCdDpsE9tbhVc=; 
+	b=jsShWKSMqI1fU95cbydp7+OmBIkgJHmiuaE5mNCU6lZjDnnRQqcNzT/G5V0TtLXyACBa+l0yhbSvWDnlXV/mhxkMxX8zOTkQ4THerhqaTOltf/nBCUSk6yY2G0hTynaFDxLg1FnniOjfYoxZXuMr/oqcvPdgzm2WFsPMmkJ2DbE=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
+	dmarc=pass header.from=<sebastian.reichel@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1791249086;
+	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
+	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
+	bh=4g+yzmxwnHRAzQmnEJ5mwE4FFc81WOxCdDpsE9tbhVc=;
+	b=BWMC7Fgpu4vfzSx2dRxmcm8X0xbNsrl+3pMPPdfYAR+gwcHqKmU5y3UiY4IlLZD5
+	uZ2VIPl3C+NGGNwiDORh8V5NMniZq3rcf3MjKrNmkJdOU1IXwJ4mXEjAONTRqfptlsB
+	/hT2rYapOvn0nmA0a2/EAMtkxmekiDhwud586w+U=
+Received: by smtp.zohomail.com with SMTPS id 1791249086400943.0393043827197;
+	Mon, 5 Oct 2026 18:11:26 -0700 (PDT)
+Received: by venus (Postfix, from userid 1000)
+	id 6D128180A89; Tue, 06 Oct 2026 03:11:20 +0200 (CEST)
+Date: Tue, 6 Oct 2026 03:11:20 +0200
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Coia Prant <coiaprant@gmail.com>
-Subject: [PATCH v11 2/2] phy: rockchip: naneng-combphy: add SGMII MAC selection for RK3568
-Date: Tue,  6 Oct 2026 06:59:44 +0800
-Message-ID: <20261005225944.1171574-3-coiaprant@gmail.com>
-X-Mailer: git-send-email 2.47.3
-In-Reply-To: <20261005225944.1171574-1-coiaprant@gmail.com>
-References: <20261005225944.1171574-1-coiaprant@gmail.com>
+Cc: Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Heiko Stuebner <heiko@sntech.de>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Igor Paunovic <royalnet026@gmail.com>, linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+	linux-phy@lists.infradead.org, kernel@collabora.com
+Subject: Re: [PATCH v16 1/6] phy: core: add notifier infrastructure
+Message-ID: <asRID3dSdb-ZI5KH@venus>
+References: <20260924-b4-rockchip-dwc3-rockchip-glue-v16-0-126a2e9133c3@collabora.com>
+ <20260924-b4-rockchip-dwc3-rockchip-glue-v16-1-126a2e9133c3@collabora.com>
+ <asDFBIVf06-VaWdx@parshuram>
+ <asJGziv0N3qtXo6_@venus>
+ <asNgINDic6A3Gvtq@parshuram>
 MIME-Version: 1.0
+In-Reply-To: <asNgINDic6A3Gvtq@parshuram>
+X-Zoho-Virus-Status: 1
+X-Zoho-AV-Stamp: zmail-av-0.2.13.1.5.4/291.247.40
+X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261005_160007_481413_A466A826 
-X-CRM114-Status: GOOD (  14.88  )
+X-CRM114-CacheID: sfid-20261005_181142_878424_340B5E23 
+X-CRM114-Status: GOOD (  37.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,91 +83,159 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2166859721877068352=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On RK3568, the SGMII interface can be routed to either GMAC0 or
-GMAC1 via the GRF register pipe_sgmii_mac_sel.
 
-Add support for this selection by introducing
-the "rockchip,sgmii-mac-sel" DT property.
+--===============2166859721877068352==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="mo6nligphgtrk3kj"
+Content-Disposition: inline
 
-From the RK3568 TRM (Part1, Page 229), the PIPE_GRF_XPCS_CON0
-bit 1 (pipe_sgmii_mac_sel) is defined as:
 
-    0: SGMII routed to GMAC0
-    1: SGMII routed to GMAC1
+--mo6nligphgtrk3kj
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v16 1/6] phy: core: add notifier infrastructure
+MIME-Version: 1.0
 
-The hardware reset value is 1 (GMAC1). If the property is set to 0,
-the driver routes SGMII to GMAC0; if set to 1 (or omitted), it
-remains at GMAC1.
+Hello Vinod,
 
-This is necessary for boards such as the Ariaboard Photonicat, which
-uses the SGMII interface connected to GMAC0.
+On Mon, Oct 05, 2026 at 10:30:24AM +0200, Vinod Koul wrote:
+> On 04-10-26, 14:44, Sebastian Reichel wrote:
+> > On Sat, Oct 03, 2026 at 11:04:13AM +0200, Vinod Koul wrote:
+> > > On 24-09-26, 19:25, Sebastian Reichel wrote:
+> > > > Some PHY devices with multiple ports (e.g. USB3 and DP) require a r=
+eset
+> > > > if the configuration changes or cable orientation changes. This is a
+> > > > problem, as the consumer device will run into undefined behavior.
+> > > >=20
+> > > > With the new PHY notifier API introduced in this patch, the consumer
+> > > > driver can hook into reset events coming from a PHY device to handl=
+e the
+> > > > PHY going down gracefully.
+> > > >=20
+> > > > Note that this uses -ENOSYS instead of the more sensible -ENOTSUP f=
+or
+> > > > the stub functions when GENERIC_PHY is disabled to stay consistent =
+with
+> > > > the existing ones.
+> > >=20
+> > > I dont think this series has the usage of this.
+> > >=20
+> > > I think I am still not convinced why a phy should notify as I dont fe=
+el
+> > > we have any mechanism to notifying. Checking status and letting people
+> > > know if not really a notification mechanism... Maybe add a status call
+> > > instead?
+> >=20
+> > This series contains the infrastructure and the consumer of the PHY
+> > reset notification (dwc3 rockchip glue driver). The producer/sender
+> > of the PHY reset notification is the first patch in the USBDP part 3
+> > series. I grouped the patches like this, so that this series has PHY
+> > patches followed by USB patches instead of PHY - USB - PHY. Patches
+> > must be applied in the exact order (i.e. first the patches added the
+> > PHY reset notifier infrastructure, then the DWC3 notification
+> > consumer and then the USBDP notification producer).
+> >=20
+> > The broader picture solved by this is (pre-existing race condition
+> > issue in USBDP):
+>=20
+> Thanks, this is helpful to understand the context. Few questions on
+> below to help me understand more...
+>=20
+> >=20
+> > 1. USBDP PHY provides critical resources to DWC3 USB controller
+>=20
+> what resources are these?
 
-Out-of-range values are rejected by dtschema, so the driver does not
-duplicate the range check.
+The documentation I have is not perfect, but my understanding is,
+that it is effectively a clock.
 
-Link: https://dl.radxa.com/rock3/docs/hw/datasheet/Rockchip%20RK3568%20TRM%20Part1%20V1.1-20210301.pdf (Page 229)
-Signed-off-by: Coia Prant <coiaprant@gmail.com>
----
- drivers/phy/rockchip/phy-rockchip-naneng-combphy.c | 8 ++++++++
- 1 file changed, 8 insertions(+)
+> > 2. USBDP PHY needs to reset to reconfigure (e.g. enable/disable DP side=
+),
+> >    which means the resource is temporarily not available
+>=20
+> Who invokes reset, I guess the controller (dwc3), so it ought to be
+> aware of the reset condition.
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-index 7843356a4dd47..7b867e7520064 100644
---- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-+++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-@@ -186,6 +186,7 @@ struct rockchip_combphy_grfcfg {
- 	struct combphy_reg pipe_xpcs_phy_ready;
- 	struct combphy_reg pipe_pcie1l0_sel;
- 	struct combphy_reg pipe_pcie1l1_sel;
-+	struct combphy_reg pipe_sgmii_mac_sel;
- 	struct combphy_reg u3otg0_port_en;
- 	struct combphy_reg u3otg1_port_en;
- };
-@@ -212,6 +213,7 @@ struct rockchip_combphy_priv {
- 	bool enable_ssc;
- 	bool ext_refclk;
- 	struct clk *refclk;
-+	u32 sgmii_mac_sel;
- };
- 
- static void rockchip_combphy_updatel(struct rockchip_combphy_priv *priv,
-@@ -375,6 +377,9 @@ static int rockchip_combphy_parse_dt(struct device *dev, struct rockchip_combphy
- 
- 	priv->ext_refclk = device_property_present(dev, "rockchip,ext-refclk");
- 
-+	priv->sgmii_mac_sel = 1;
-+	device_property_read_u32(dev, "rockchip,sgmii-mac-sel", &priv->sgmii_mac_sel);
-+
- 	priv->phy_rst = devm_reset_control_get_exclusive(dev, "phy");
- 	/* fallback to old behaviour */
- 	if (PTR_ERR(priv->phy_rst) == -ENOENT)
-@@ -873,6 +878,8 @@ static int rk3568_combphy_cfg(struct rockchip_combphy_priv *priv)
- 		break;
- 
- 	case PHY_TYPE_SGMII:
-+		rockchip_combphy_param_write(priv->pipe_grf, &cfg->pipe_sgmii_mac_sel,
-+					     priv->sgmii_mac_sel > 0);
- 		rockchip_combphy_param_write(priv->pipe_grf, &cfg->pipe_xpcs_phy_ready, true);
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_phymode_sel, true);
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_sel_qsgmii, true);
-@@ -984,6 +991,7 @@ static const struct rockchip_combphy_grfcfg rk3568_combphy_grfcfgs = {
- 	.con3_for_sata		= { 0x000c, 15, 0, 0x00, 0x4407 },
- 	/* pipe-grf */
- 	.pipe_con0_for_sata	= { 0x0000, 15, 0, 0x00, 0x2220 },
-+	.pipe_sgmii_mac_sel	= { 0x0040, 1, 1, 0x00, 0x01 },
- 	.pipe_xpcs_phy_ready	= { 0x0040, 2, 2, 0x00, 0x01 },
- 	.u3otg0_port_en		= { 0x0104, 15, 0, 0x0181, 0x1100 },
- 	.u3otg1_port_en		= { 0x0144, 15, 0, 0x0181, 0x1100 },
--- 
-2.47.3
+No, it's not dwc3. It's TCPM. The USBDP PHY is a combo PHY with USB3
+and Displayport. It supports muxing the USB and DP functionality
+more or less arbitrary to 4 differential lanes, so it's registered
+as a USB-C orientation-switch and mode-switch.
 
+Thus the TCPM (Type-C Port Manager) will start to send mux requests
+to the USBDP PHY. Going from USB3 only to USB+DP or vice versa
+requires a reset affecting the USB3 controller.
+
+> > 3. DWC3 accesses its registers during the reset -> SError, because PHY =
+is off
+>=20
+> I would assume that dwc3 should know about it as invoking entity..
+
+It does not invoke it.
+
+> >=20
+> > This series combined with the first patch of USBDP part 3 changes
+> > things, so that it works like this:
+> >=20
+> > 1. USBDP PHY provides critical resources to DWC3 USB controller
+> > 2. USBDP PHY needs to reset to reconfigure (e.g. enable/disable DP side=
+),
+> >    which means the resource is temporarily not available
+> > 3. USBDP PHY driver sends pre-reset notification
+> > 4. DWC3 goes into a safe mode after receiving the pre-reset notifiaction
+> > 5. USBDP PHY does the reset
+> > 6. USBDP PHY reset finishes, USBDP PHY driver sends post-reset noficati=
+on
+> > 7. DWC3 returns to normal mode after receiving the post-reset notificat=
+ion
+>=20
+> > This avoids running into the SError.
+> >=20
+> > Greetings,
+> >=20
+> > -- Sebastian
+
+Greetings from Prague,
+
+-- Sebastian
+
+--mo6nligphgtrk3kj
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmrESrMACgkQ2O7X88g7
++pplyxAAjGAIjxL79MBKiqFsaSMx80W9QsWL89MsmCOq+Y+mlMa2QoBfGcd07ENk
+W4b/fszSIuWqG1/lg3khOBGKcpgENkCFyd/i1mfL4KdUzoKY6L/xzEcTWLZZ2qts
+oTCCgbM+LRPLAwZ5K4vwqQSvSPClqhteJRqQMyTWoouyTu2sEMX9SsBLhdNhVHmJ
+eO6keDzqGXGSyWA43NpOp8lU0OkBhu/hvmFzKgYsa3zU1dB2tRToae4iBUJsb8/F
+zmqOF5WduxNL9iXF3ZLRrM3R/P78VVsNX5nr3japeOSOYeroGwUShDxT9prlPIWz
+aqHgHC9Iu5cCd1oL0Anv1fb/GCU+3VRkkx9aAKpO32WYM9r1TWvqul+rIH3VEOWS
+/+fFKX0w5eVNOwdok8l3SXn7MttaRVyG+dpVWEuHbLixRFVs5CIfWK9prYMbLp3O
++/jFN/zkv2iN5fSU0B7qA++CEPuzjxfrKfN23m0WOdUZnJxpQpOmrinmYKF386ZK
+4R+VkOYNG2IlQb3/fkyPNcvB8T6Vzx4DeitrDDI0SKMbxYrCZI3SleqBvrN3laog
+da49e51yqOrOA1HG1N7O2gzrNiEB4lQ8J3keD/5oR+q9SzhBpmIcG+q7Lm/EIQi/
+buF5mAMGWX1XJlg8gdxU9Qc7VGGCuhfz7PV8xqyZXLjzTy5QOsM=
+=VAAL
+-----END PGP SIGNATURE-----
+
+--mo6nligphgtrk3kj--
+
+
+--===============2166859721877068352==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============2166859721877068352==--
+
