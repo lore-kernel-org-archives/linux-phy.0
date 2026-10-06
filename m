@@ -4,62 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD873CA5FF0
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Oct 2026 09:18:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09EDACA5FF0
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Oct 2026 10:22:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zRMCHPQv4MOOU179pSkliobWdUkyetQDWa7MekwkewI=; b=f+ffcw6ITMj6Jf
-	gZZoBXGKQnWU7KA/b/TO0Sx6TlUkgFGBeO0nB9YyerpYoSXiOcwt/gZxXC08x3jhrvg/qUTXHiHs1
-	5QqojsBrtZurDasZSycUUL2L41WP+vRf7wus3ZqtRZU584Z1sHf+zRRlsEJN2wrur/GFT/RgogIwd
-	6XaNGq9Umw69IxtrbcWq0I/Ary+MB1yVbhtvFGWZQ1XT4e+sU3RhAtDWfxHxutbMD0xppGCddHCYP
-	gqj2PWYeMa1KNrKekTpjHxG7almALF/YvzXEN0BCfifP0tKGnaNKUGPcA+4Nf5F/xgve5khZFQqAk
-	akeQFIDXANsITjrI0nGQ==;
+	List-Owner; bh=CtCUrq48iz4gpywVksP4K1pTw9KN+ZYUnpAyLQ4IyHs=; b=zD73w13w+Hq+14
+	AW0wDvpl7SeBbEZfEhbmTYhH6MATN69XMSMUAsCo8GJosAtA4qPZlC4GWQJFqtFnVvb/lkqQllozI
+	4eQTkbA3J+SWW1AvunX747eyV2LyxDBE83mRvt6QnjJkGJKlwoJv1kpQXwM06rvW3SZvTGNBNArnt
+	v+j/bSHqrY2z9CyrazHUt9wB9qsMp8KEVhZbpF4xmeCvTyTaOUVXpItBOHEICiSLMV0IQrlEIV1kt
+	fSOx6ZmIo/6lyX6J6oJPVP9FGUADB3ur+h7UqHQzQQxRXdmzCwEaWv7TnZlkB9Pt+TbjR9mh2OWOd
+	k9xe8bowSy9uD6iN4XrQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xE1JX-00000000MTm-2EJd;
-	Tue, 06 Oct 2026 09:18:24 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xE2JU-00000000UdJ-1xuw;
+	Tue, 06 Oct 2026 10:22:24 +0000
+Received: from mail-pg1-x52d.google.com ([2607:f8b0:4864:20::52d])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xE1JO-00000000MSu-3qEC;
-	Tue, 06 Oct 2026 09:18:15 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 59C3140B73;
-	Tue,  6 Oct 2026 09:18:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 932121F000FF;
-	Tue,  6 Oct 2026 09:18:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791278294;
-	bh=fwBCYnwNFk4ZMTj+qPeBrwzZbK88LLQJgUmh18M8wj4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=LrnFRMCbzA2dvkuIb9FmCIRXf86GBtg+uVN951Mp/yjNRbpw0ntKPKAeIjiNjzP/P
-	 SXDDTtx5vrRRhL5+Pa4KqAWGOR3Dtxcqxh372werY7LeQGtSmp5q1PxSJU0Z9isJD3
-	 mqdQrgbBE4SZzJc5f3wQd2Qnwwuvei29faM58vhjDwfZuL7fifJ6JF4vNtKY3bL715
-	 lA/JZgGpZeptfb6agSvYSvvcZx3jB9jAC9iDAkfW/6MDK25jAl+tLNPG/V9rgyoXDT
-	 U2+LljHN7+vDV7NvEf2qf2P3Bf2bAIJntyExKKXfYRtfemRjbGvrmqlRK4RtK5q1S6
-	 G0bDMidMT8cXg==
-Date: Tue, 6 Oct 2026 11:18:11 +0200
-From: Vinod Koul <vkoul@kernel.org>
-To: "Christian Marangi (Ansuel)" <ansuelsmth@gmail.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v13 0/3] airoha: an7581: USB support
-Message-ID: <asS805-vbum46Oji@parshuram>
-References: <20261005105535.2472-1-ansuelsmth@gmail.com>
- <asPCFDMXyntAV6lx@parshuram>
- <CA+_ehUx_B2K3WgLYkt2fz5jzDRB24LQRB3uX_VScZ2QSxCojPg@mail.gmail.com>
+	id 1xE2JS-00000000UbY-1mQi
+	for linux-phy@lists.infradead.org;
+	Tue, 06 Oct 2026 10:22:23 +0000
+Received: by mail-pg1-x52d.google.com with SMTP id 41be03b00d2f7-cc502d509c0so964516a12.2
+        for <linux-phy@lists.infradead.org>; Tue, 06 Oct 2026 03:22:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1791282141; x=1791886941; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=M/hrvnn0z+2DlIg4l/OJm7mUefYyBjl4fij27fEnYo4=;
+        b=YUgAv4Q1CIpgLgvktynvzrXnLj7mPUA/1pM4yfs6qJmacv0bUz1qxnbn/WGm656oj6
+         Op6aj1c/aU2COxOi5RYviqDvcuQsjxvCrdqIye4HbHYHrA7fsi44s/6hKYKO027gFGIW
+         6nNKN0+sQoHQyHpjDEgWCdMTzCBLPG8n7TnwB6L6PhMM/hiKaRcGYmNu8r1FcEtTSAHR
+         vFgiXaDdKF7xUdZ3X6m22QDYG3ShCNN1pB2LaDY4hLREl+WZLhTkQ26s+6gcmEblDbgN
+         LtLyIjxyi0Q6hIPf4y9iVD+lIqWs09l1EjXgWwwjOHtO9y0T/ve2yPNxHU53qj0N4bLV
+         HmbA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1791282141; x=1791886941;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=M/hrvnn0z+2DlIg4l/OJm7mUefYyBjl4fij27fEnYo4=;
+        b=wpkuan/0aZCwmc0kc8fXKihKWJCaaq2CkPQ4Sp9kBXEVN/63YUdiC4+dEKBmr8GJ5Y
+         fXC+FVpLpDxvE8bfHGtIhP9jQdFB9HFX7i0G2uf77mDK6PivTFXmIuOL7xSO8+Yi3w3x
+         6Kez9Li6P3uRmpsQ2jsWp6dCCwknRHmSF8+xIDei+tWmJCwZOgNRAkjp7gvhEDMxIu3s
+         O8w0sNB9sCulajELc2WBzcEvWN9YpVneRoogFB6OjyL6AcKxZnqkw6ZEp9+cevxo1atD
+         ZD4tLjKunt5u6KnEI50NlWwG12cmYr3RpmT/9j3aJXGcz6t3sm5mPYW1sDAaolu4Lzbw
+         ErhA==
+X-Forwarded-Encrypted: i=1; AKwUvBztIDvjLE6EwLgpSp62qDzHBQZ15hA1JKE4QIHlBeRJeBzS3Zl+w/8zhEHDPOrN+6h9WBYearwuWf8=@lists.infradead.org
+X-Gm-Message-State: AFq9FYJ9PCYVxNUAe3eoC6BTrvQgUELX4d0uYBcs2f/JAMa+oFaZGZk9
+	rDLnbSLesdyiGy2WYy54O23i3WtquvhDY7eFb1X5Jydh+xNz1ES8YX83
+X-Gm-Gg: AYBFou0d1Owe0NemumXUVJJXpRA/SbkYtRoC10HVZQ3fGNAf9oXReb20M/N9G9k84oT
+	/2KgyYd4vN9+AQ3704DLWVHP1cLApD3QZF4PoepnO3kEnuNLogavmNhPH3cXDaGIJzYj7a4QB1e
+	M3CwCLjLpQlS2FUGLYIDFHTNX9uZgwsa5eWZaBnVJwJFeGd24QZeSYDruf/4/QoXU5NICqD/DcS
+	i+J1qw5Nh0HVYU7k4kIUt2OuiFn+FXxWo7doqUz7ce+QxK1nk3Q2tx4IcFeVapy/Z1tm36zhYQt
+	jUpZ/i1WfrJnfwxPB/PXdt6Y5NeMdmRQgCYS2VB2G/5yTfLvLZCRoqNOiatIxX/I5KfGZNhlnCF
+	4ObG5gV1vgoflV/2GVizeNtnOjSlzQ6PdhkTOZV0GkIoOOC7ZrY93wkHaqvgvw9qEy+jym1XjYN
+	JG1Re5wU1ITPEohem4HHmr8lqg7yIcaqLx/ZYD66weHoSKEJzozbul20A6ZNUd4s1aUUHG3wG9p
+	pTyjyLZKMQCDQ1r4YMOmwV9BB+avZsvSeWrNDnjbq3R263E32Pm/dE=
+X-Received: by 2002:a17:90b:4f:b0:3a0:deda:3d07 with SMTP id 98e67ed59e1d1-3a787181df6mr8026458a91.14.1791282141410;
+        Tue, 06 Oct 2026 03:22:21 -0700 (PDT)
+Received: from [192.168.0.100] (60-250-196-139.hinet-ip.hinet.net. [60.250.196.139])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3a85436fb54sm4153971a91.10.2026.10.06.03.22.17
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 06 Oct 2026 03:22:21 -0700 (PDT)
+Message-ID: <413f21b6-90ca-4102-9466-3cf7b9feddc3@gmail.com>
+Date: Tue, 6 Oct 2026 18:22:17 +0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CA+_ehUx_B2K3WgLYkt2fz5jzDRB24LQRB3uX_VScZ2QSxCojPg@mail.gmail.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 3/3] phy: nuvoton: phy-ma35d1-usb2: extend to dual-port
+ with OTG support
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring
+ <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jacky Huang
+ <ychuang3@nuvoton.com>, Shan-Chun Hung <schung@nuvoton.com>,
+ Hui-Ping Chen <hpchen0nvt@gmail.com>, Joey Lu <yclu4@nuvoton.com>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20260929020854.1282339-1-a0987203069@gmail.com>
+ <20260929020854.1282339-4-a0987203069@gmail.com> <asN29Gi71MIA-2fq@parshuram>
+ <ab91b558-e7e6-4758-b4e3-66e5db75b790@gmail.com> <asSzYUA5W51Ngn4X@parshuram>
+Content-Language: en-US
+From: Joey Lu <a0987203069@gmail.com>
+In-Reply-To: <asSzYUA5W51Ngn4X@parshuram>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261006_032222_561342_2E497555 
+X-CRM114-Status: UNSURE (   9.05  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,74 +108,26 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05-10-26, 17:31, Christian Marangi (Ansuel) wrote:
-> Il giorno lun 5 ott 2026 alle ore 17:28 Vinod Koul <vkoul@kernel.org>
-> ha scritto:
-> >
-> > On 05-10-26, 12:55, Christian Marangi wrote:
-> > > This is a major rework of the old v2 series.
-> > >
-> > > The SoC always support USB 2.0 but for USB 3.0 it needs additional
-> > > configuration for the Serdes port. Such port can be either configured
-> > > for USB usage or for PCIe lines or HSGMII and these are configured
-> > > in the SCU space.
-> > >
-> > > The previous implementation of a dedicated SSR driver was too
-> > > complex and fragile for the simple task of configuring a register
-> > > hence it was dropped and the handling is entirely in the PHY driver.
-> > >
-> > > Everything was reducted to the dt-bindings to describe the Serdes line.
-> > >
-> > > Also the property for the PHY are renamed to a more suitable name and
-> > > everything is now mandatory to simplify the implementation.
-> > > (the PHY are always present and active on the SoC)
-> > >
-> > > Also other unrelated patch are dropped from this series.
-> > >
-> > > Changes v13:
-> > > - Rebase on top of phy next
-> >
-> > Pls fix the chechpatch issues. There is new blank line at EOF, SPDX
-> > format mismatches and many more. Make sure you pass --strict flag to it
-> >
-> 
-> My checkpatch doesn't report the blank line. Am I missing something?
-> For SPDX, is it ok to change it? The commit just move file. I would
-> like to fix that in a separate commit after. (I can include in this
-> series if you
-> want)
-
-Yeah checkpatch wont. Git complains when i apply:
-
-Applying: dt-bindings: phy: Add documentation for Airoha AN7581 USB PHY
-.git/rebase-apply/patch:74: new blank line at EOF.
-+
-
-I think we should fix SPDX ones.
-
-> The other warning are about Kconfig description where I can
-> artificially make the help text longer (no idea if it's OK...)
-
-That one is okay, I this description is fine
-
-> And the line too long for the define but making the line shorter
-> would result in a disaster for the register.
-> 
-> Up to you what I should fix but I guess the real important one
-> is the blank line but my checkpatch script is not detecting that...
-
-Yep, line and SPDX ones are important. long line splitting will make
-code worse to read, i care more about readablity more..
-
--- 
-~Vinod
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+ClZpbm9kIEtvdWwg5pa8IDIwMjYvMTAvNiDkuIvljYggMDQ6Mzcg5a+r6YGTOgo+IE9uIDA2LTEw
+LTI2LCAwOTozNywgSm9leSBMdSB3cm90ZToKPj4gVmlub2QgS291bCDmlrwgMjAyNi8xMC81IOS4
+i+WNiCAwNjowNyDlr6vpgZM6Cj4+Pj4gICAgICovCj4+Pj4gICAgI2luY2x1ZGUgPGxpbnV4L2Jp
+dGZpZWxkLmg+Cj4+Pj4gICAgI2luY2x1ZGUgPGxpbnV4L2Nsay5oPgo+Pj4+ICAgICNpbmNsdWRl
+IDxsaW51eC9kZWxheS5oPgo+Pj4+IC0jaW5jbHVkZSA8bGludXgvaW8uaD4KPj4+IHdoeSBpcyB0
+aGlzIGRyb3BwZWQ/Cj4+IFRoaXMgZHJpdmVyIG5ldmVyIGRpZCBkaXJlY3QgTU1JTyBhY2Nlc3Mg
+KG5vIHJlYWRsKCkvd3JpdGVsKCkvaW9yZW1hcCgpLwo+PiBfX2lvbWVtKSwgZXZlbiBiZWZvcmUg
+dGhpcyBzZXJpZXMgLSBhbGwgcmVnaXN0ZXIgYWNjZXNzIGdvZXMgdGhyb3VnaAo+PiByZWdtYXAg
+dmlhIHN5c2Nvbl9yZWdtYXBfbG9va3VwX2J5X3BoYW5kbGUoKS4gU28gbGludXgvaW8uaCB3YXMg
+YW4KPj4gdW51c2VkIGluY2x1ZGUgYWxyZWFkeSwgYW5kIGl0J3MgZHJvcHBlZCBoZXJlIGFzIHBh
+cnQgb2YgdGhlIGJyb2FkZXIKPj4gcmV3cml0ZSB0b3VjaGluZyB0aGlzIGluY2x1ZGUgYmxvY2su
+IEhhcHB5IHRvIGtlZXAgaXQgaWYgeW91J2QgcHJlZmVyCj4+IG5vdCB0byBidW5kbGUgdW5yZWxh
+dGVkIGluY2x1ZGUgY2xlYW51cCBpbnRvIHRoaXMgc2VyaWVzLgo+IFRoZW4gaXQgc2hvdWxkIGJl
+IGEgZGlmZmVyZW50IHBhdGNoIGV4cGxhaW5pbmcgdGhpcwpVbmRlcnN0b29kLiBJJ2xsIGRyb3Ag
+dGhpcyBjaGFuZ2UgZnJvbSB0aGUgc2VyaWVzLiBJJ2xsIGxlYXZlIHRoZSAKaW5jbHVkZSB1bmNo
+YW5nZWQuClRoYW5rcyBmb3IgdGhlIGZlZWRiYWNrLgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxp
+c3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
