@@ -4,107 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42A18CA5FED
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Oct 2026 07:48:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58D47CA5FF0
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Oct 2026 07:48:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QQ7jv5EbGklNn/aU5e0eFJPvJRK9anpTcaL0+Ygh4k8=; b=Ug0q0yYdfI/yhZ
-	dlqLjIyagLkfC/dxc+H7D+1UJ4FidIphZgoeQvUduwZUUHDSyCkd9KPPWIJegtVzA9WcPtiPg8HlP
-	7rUDdB458lLyOmZQibppRPYD08oZHbnlAfKfpFRIiFqYVhWp2CaF7YebiraP/Ln3M6o3G0/jLmPId
-	nm5WYujINYCFofFns8ZFSibKBemeRoxFJTYQEE6xfm1qj8Uqw4FVkAawZIl4ize2nL3FLj/gghwly
-	fO5XfUn6rG5RPmZxid7YHyAlNmWzRk0bkO4cxxg0xYFVj/I4+O+oacTj/AGDhXHEAi+AeT8SGFdsP
-	ZsyCZpUxi6XIISwbMJZQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+XgZS8dhOU0Uqc0JgOgfXmd4ZKEueE0/I2YItk0H69Y=; b=jzB2Q4pXVNq0L+
+	4tQa8zJZ6cFNmNs2nLIfXB8qBq4vbdzzaRFdq3V16LGhlSQXKxs/X+1GHtFqImd+q1O56jJVkGnHf
+	twdyI7g8lDLoQ/tnqceiRE+3Daq1qSnp3hevZ0vZh/ksML2R/zXXn5Htw/7SrCFjeOHpNOWAPXfqx
+	O9VgIa3btObQBbhSwH4VvWSiTWg6Tu/Ro5HOg2VF5YuLRNBlI1xL37kXWhIQUs1UWPxuYYM1IR7e7
+	LgjyPDFn6nrEG9J7Yn0wbfVUsNrcrgAqB7OHAM3vN9MBBGPrVb8k19mXi8yrYujnqJfSfpnPXIE9v
+	07qRRS7xpejTy/VbvbvA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDzuo-00000000DKr-2ixW;
-	Tue, 06 Oct 2026 07:48:46 +0000
-Received: from mail-ej2-x06.google.com ([2a00:1450:4864:34::6])
+	id 1xDzup-00000000DLR-3xYs;
+	Tue, 06 Oct 2026 07:48:47 +0000
+Received: from mail-pj2-x01.google.com ([2607:f8b0:4864:39::1])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xDzul-00000000DIL-2u6t
+	id 1xDzum-00000000DJP-1P4M
 	for linux-phy@lists.infradead.org;
-	Tue, 06 Oct 2026 07:48:44 +0000
-Received: by mail-ej2-x06.google.com with SMTP id a640c23a62f3a-c2e61353ec3so72751466b.1
-        for <linux-phy@lists.infradead.org>; Tue, 06 Oct 2026 00:48:43 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1791272922; cv=none;
-        d=google.com; s=arc-20260327;
-        b=DX2hJ5iEKzNtLDmyu5RlTr4qI0CGupi/+WpetPWBPylHa7ZmZr3BBhUVK5VZ0xcEFw
-         q/0eYmtxars1KRP9lzHylFS++uMA+xKeQUcpH7aDgeO1mm7b66Jgcse40mARs3HBwIo8
-         hqDhCqxQs097hkhvdgRaRoLqPanik0SPLQMHO0YQpU40QlpchYb6sTA48RMVMYegDrmv
-         JcJMddtyUa+99TpuEuGqdoXuXG7tQviLqrIsxKhj2xjiphilrUldfSvz4cYN3Dbu5aif
-         9BZxfuq/AUYCOyASMnarzY0aW/b3A3WtyuCn1tBy/M0YSqpTIH8olhlXWwlgu/xqmac3
-         CFBw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:dkim-signature;
-        bh=LIS7LQGXFKGRWwjzJfFhANm/+ELSmq9NRDYM4Ibfol0=;
-        fh=r15jJFxmae7NiexbQcJ5Z3Hssj5j/an1WHQgEx/LrHI=;
-        b=I+K7t0T52Gc8iJaUY6TFAwcwkuq7hty8apudS2HNkgz404gIH2GfaOPcHWb969+yNi
-         MEKkqYSRmXNcGdZZPGhDSHmdDaUvXocFuwtcYHL1KxHjglmoEWFhHnmhKaZbhHYT9vYa
-         zQCEtzK0bfXka2gPz9rPEiqRSQyLuxuCo12c4LCYwx/NxDzDdtI4VmXnjfRU60dS62aH
-         ox9yxop8x/ri8UhizxuiAStjjxty+XFw/KiAkiPPaCg0LGqJAX3E7MWxGICFx2H5DST/
-         1ypElBmummYAJGNECCNvbgCBiflMwLTRtPJxQQtWShkMgZ0nY1sK35IdsEtINHoHJBYi
-         +FlQ==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
+	Tue, 06 Oct 2026 07:48:46 +0000
+Received: by mail-pj2-x01.google.com with SMTP id d9443c01a7336-2e31e9f035fso9726705ad.1
+        for <linux-phy@lists.infradead.org>; Tue, 06 Oct 2026 00:48:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1791272922; x=1791877722; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=LIS7LQGXFKGRWwjzJfFhANm/+ELSmq9NRDYM4Ibfol0=;
-        b=nTjjfp6jnMaS0+/hdsaWSFeaHEMEWKDzxVNQ+m89g0YV8gbdwZB7t3T4nZ6vKeHGLo
-         VdiJsDQac2J0uKgHMil3xXZVPsvOC5NjehoexUpsCu0Sv6zBAmQDduF7rC/qL9m/3Ao+
-         yFKpAV20w/IjS94XShrFR7ViDn6Ml1SJjwAeQ+NfkBFCU+2g1L5LILQbUxoiK5kumPYI
-         qF1xO/tt5kWiqG8n7tnOfe/TzMSQGXgsOnCIMlT7SJgFIHHgGrSiDx5kf670ZcFhJ3z4
-         hEIKr/mseGtZzVum52WQIVmzvwoOkFgCx6I3p6mNdkN3YXgSd8vZ2rT4t7PbQhNC6bTc
-         Zw0w==
+        d=gmail.com; s=20251104; t=1791272923; x=1791877723; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=5FZEAA0Lgtv6ilrYXH3YJyGzw6r/Idq0zYgWK6iHl90=;
+        b=oSB0CBW5HxLnx+YoMMMA/b4pud6jytQM1gEGC0Mh/pgE4pPPVcqUMd10dXCqqr4re2
+         0uRg+XOu1uvu8E7cDzNJT5n8eUulTe6OO8iz6Of5ljQ9h+8wTdFYfCXhBMbmodw8kEFm
+         TXbijUxniIiTeVcBna4W06MTTdk8bMk9AdAN9augU3G/uY1BkUz1/OY/pk2Yr7aSlF9a
+         0VIphgOmWFGjbB+OcjtHtNXuxEYrf2IHP+g+UPzJV3uqdG7I+h9q99+tyaSPyQ/vf/M/
+         AtWrbNuxg6PlIxJE4XStY/46waMQeBPdxE3TFAkhAFowu5XlhNDhpLhsR23UCqYYbrnv
+         H7yw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791272922; x=1791877722;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=LIS7LQGXFKGRWwjzJfFhANm/+ELSmq9NRDYM4Ibfol0=;
-        b=h3YJp/IKSnL4qDpW9cnNJV37PY9Zu5V7Lki8VbPyQWys87R84GGTi88I91CfFr5sHi
-         XEULraAC/YsUrGHOsN2sRwQk3nEeZMVRhdbAE/BOf+sd0o9CCKq1W+MKYdNF7ZY0VeZ5
-         SHUCga9fxT2vh9+EsTEziQ5zaXZyreVR7usOAg5N94aDhyqQUNqkeWU71gRqOxkhTWSZ
-         t1quk4P1B1h9ggT7mIMVi9toGl8Vdp8l1IiIA3o87fyvt4adnipvQA5BJ6z6hFqEUfQ6
-         vD2FLnJ/bpgmwI+fPPAIjK051PCacRGq7C4/owlI2eGgXarLml51pYvw1ML30IUlwFfx
-         nZLg==
-X-Forwarded-Encrypted: i=1; AKwUvBxEdJ6iQl65a5M+JaNVBky+1DihoskyHxKN65dZVIHslC+d31xfP295vp7Bc6241uzrI927p3f7ibQ=@lists.infradead.org
-X-Gm-Message-State: AFuF++lxngj40PgodF2N1niQ2wvqzI5SSsxKYTujqURUtGwW0+eFJPXs
-	eTrxOhzEYSIPQ8f6JANQNJ7IrTQVYK6UAjsELOmYUFy1CsSURLTB6UN8jGlMYceWH9lu2+OYS7Q
-	U7dVq0LOy24HR9gOjgCHu1HrU+nmjw48=
-X-Gm-Gg: AYBFou0H2q/J86dTA61XcUknhWB6gUYlfyvwX0+RAd/ifgj+EX0d48l/QJECJrCBHUV
-	YkFOWy5DVYhSQCW51WbjGw2KMGDZ9il1GQrVWmfNBXm3bx5zyBMA5VA3IkTizcQ/kovP+sFU3XK
-	nZQRhXAufesdhj+izIvyE/ris+OwqR26p8IYnLHAEt/cs+XBQRQwU48vD9AKjWoSDiuzqzrL4sI
-	rQExXs9BdVHOlU6lPVPQJhRunDGZy2VSo9VqgSV3fTYi2SxK2TDvU/d8eAAyGm7vJSVgkI+dwoR
-	yj8Bod0bKzN6LQSxCfuE4Pc5m63HBER+6vHqn/aWwQjetqzWwg2llVk8dw==
-X-Received: by 2002:a17:907:9405:b0:c2a:f360:1c67 with SMTP id
- a640c23a62f3a-c316a07eb4cmr65136466b.35.1791272920911; Tue, 06 Oct 2026
- 00:48:40 -0700 (PDT)
-MIME-Version: 1.0
-References: <20261005225944.1171574-1-coiaprant@gmail.com> <20261006032710.GA3539706-robh@kernel.org>
-In-Reply-To: <20261006032710.GA3539706-robh@kernel.org>
+        d=1e100.net; s=20260707; t=1791272923; x=1791877723;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=5FZEAA0Lgtv6ilrYXH3YJyGzw6r/Idq0zYgWK6iHl90=;
+        b=0R+pnzLvIQqF72SCvEvsfhoZpTq3W6Dic/o9IY2KAC5/jSbAR7qdCqYsJtbPhR9hzn
+         laNGEtM+bH1FK3Wwy1DjQICGVnOBa3M+HtTAVcQzap5tBtWJPE4aA15lQX555XUKzUZo
+         I4PXZ2wQaruZHoh5KbVAfVyeW4EzridOb/MSu8SvFxqBlccHwVFFTQej3bvvKDjNiL98
+         rouTKGjTXC1Ln4kjwAV1FeN9V5Ji9BHZwRce+KBZB7LGOfZ/LHFKGKLipozL0ixQcRBu
+         9zEdggzK29Ca6cmwx4/N4FgyimG4Uv56dvtmtgDsBFjkPKcLCrg8RWZn9AtXNjuLayfJ
+         nozQ==
+X-Forwarded-Encrypted: i=1; AKwUvBy+KcoazBsROpPJA0Avsn9KDk4gRWW2NqCwLtVgClGanxZpIyhH62XQemxG2HiQVo6uq6jZF06g5rQ=@lists.infradead.org
+X-Gm-Message-State: AFuF++kgyB0S+FKOQUCxIAdJNRQoL2AerivURBiVX2w2TQh/Nr5cGHA8
+	rBsg2g9qlOykir/O18Jl0kwA8DZLNq6O9K9TEPW0nHFN4y1QuULd58QW
+X-Gm-Gg: AYBFou10zpYLIoqRfojgmAnxd6bXEsl1gHOSEbV7xS2fEDpoja63RXbouy0n4nS6VrL
+	R1MavWRmZ6sTYyhGcEudq/vwbIj9ScfqSyq9wDDLTI42JFhXFn8dgXUv2Ehfx+ZYyMlVtUV84Ol
+	waW4Kp5oQSfHi6z/dFU84DXeigsqIiLpBM5e/FMXhKWzUE0Kh57L/CQGsYDqbgxfrRq6Sx14es7
+	CjvZ2hRYC6jCw37FFUBmzM8WzByC5lAUXMplE8BITjyss/EmipgTBqKRPR7fAaK2/RhavbShBOL
+	dcoYc/ooJ1ZDG/kTXFTGWNQEfg0QUwyMamkL+bA29BRO07L/UMPNOSo9sH0DzW75Dae8cBRYlxe
+	UNnFHBvpam3N0KnMK67cSH/4cWwAFHjJFfMFUxXI/WCoYcP1dm082fLgw+HF33ZAmrKW1+utNx4
+	F52o+LUozhdMzj60IdybOZ4R2R5Bwidk+Q6zXbnqmfLbeSWdcqKke5hneCskg/HslzVT8V
+X-Received: by 2002:a05:6a20:94ca:b0:3dd:85a8:4c56 with SMTP id adf61e73a8af0-3e1246dea5dmr525873637.29.1791272923390;
+        Tue, 06 Oct 2026 00:48:43 -0700 (PDT)
+Received: from server.lan ([168.138.199.194])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-cce6d2406b1sm1998173a12.8.2026.10.06.00.48.38
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 06 Oct 2026 00:48:42 -0700 (PDT)
 From: Coia Prant <coiaprant@gmail.com>
-Date: Tue, 6 Oct 2026 15:48:27 +0800
-X-Gm-Features: AclHuK-_H5DMjjR501xY25PLqDQ4wPnk0DiXBT1PdwIvhQ2wQ01nPR-CgEl7PoQ
-Message-ID: <CALj3r0hwkXBowh=vUbC9yPimkraMH1NJ3OmgBb0zp-z22ZFXvg@mail.gmail.com>
-Subject: Re: [PATCH v11 0/2] phy: rockchip: naneng-combphy: add SGMII MAC
- selection for RK3568
-To: Rob Herring <robh@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Manivannan Sadhasivam <mani@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Heiko Stuebner <heiko@sntech.de>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
-	linux-kernel@vger.kernel.org
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Coia Prant <coiaprant@gmail.com>
+Subject: [PATCH v12 0/2] phy: rockchip: naneng-combphy: add SGMII MAC selection for RK3568
+Date: Tue,  6 Oct 2026 15:47:47 +0800
+Message-ID: <20261006074749.2010233-1-coiaprant@gmail.com>
+X-Mailer: git-send-email 2.47.3
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261006_004843_755228_8E2BB8FC 
-X-CRM114-Status: GOOD (  12.72  )
+X-CRM114-CacheID: sfid-20261006_004844_399740_3618362D 
+X-CRM114-Status: GOOD (  10.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,26 +101,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Um9iIEhlcnJpbmcgPHJvYmhAa2VybmVsLm9yZz4g5LqOMjAyNuW5tDEw5pyINuaXpeWRqOS6jCAx
-MToyN+WGmemBk++8mgo+Cj4gT24gVHVlLCBPY3QgMDYsIDIwMjYgYXQgMDY6NTk6NDJBTSArMDgw
-MCwgQ29pYSBQcmFudCB3cm90ZToKPiA+IENoYW5nZXMgc2luY2UgdjEwOgo+ID4KPiA+IC0gRHJv
-cCB0aGUgdG9wLWxldmVsICJkZWZhdWx0OiAxIiBmb3IgInJvY2tjaGlwLHNnbWlpLW1hYy1zZWwi
-Lgo+ID4gICBkdHNjaGVtYSBpbmplY3RzIHRvcC1sZXZlbCBkZWZhdWx0cyBpbnRvIGV2ZXJ5IG1h
-dGNoaW5nIG5vZGUsIGFuZCB0aGUKPiA+ICAgaW5qZWN0ZWQgdmFsdWUgY29uZmxpY3RzIHdpdGgg
-dGhlICJlbHNlIiBicmFuY2ggdGhhdCBmb3JiaWRzIHRoZQo+ID4gICBwcm9wZXJ0eSBvbiBub24t
-UkszNTY4IHZhcmlhbnRzLCBicmVha2luZyBkdGJzX2NoZWNrIG9uIHRob3NlCj4gPiAgIHBsYXRm
-b3Jtcy4gVGhlIGRyaXZlciBhbHJlYWR5IHRyZWF0cyBhbiBhYnNlbnQgcHJvcGVydHkgYXMgMSAo
-R01BQzEpLAo+ID4gICBzbyBiZWhhdmlvciBpcyB1bmNoYW5nZWQuCj4KPiBXaGF0PyBUaGF0J3Mg
-bm90IHJpZ2h0LiAnZGVmYXVsdCcgaGFzIG5vIGVmZmVjdCBvbiB0aGUgdmFsaWRhdGlvbi4KPiBQ
-bGVhc2UgYWRkIGl0IGJhY2suIElmIHRoZSBwcm9wZXJ0eSBkb2Vzbid0IGFwcGx5IHRvIHNvbWUg
-dmFyaWFudCwgdGhlbgo+IGRlZmF1bHQgZG9lc24ndCBtYXR0ZXIuCj4KPiBSb2IKCkhpIFJvYiwK
-ClRoYW5rcyBmb3IgdGhlIGNvcnJlY3Rpb24uIFlvdSdyZSByaWdodCwgJ2RlZmF1bHQnIGhhcyBu
-byBlZmZlY3Qgb24KdmFsaWRhdGlvbi4gSSdsbCBhZGQgaXQgYmFjayBhbmQgc2VuZCBhIHYxMiBy
-aWdodCBhd2F5LgoKU29ycnkgZm9yIHRoZSBub2lzZS4KCkNvaWEKCi0tIApsaW51eC1waHkgbWFp
-bGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Changes since v11:
+
+- Revert changes in v10.
+
+Changes since v10:
+
+- Drop the top-level "default: 1" for "rockchip,sgmii-mac-sel".
+  dtschema injects top-level defaults into every matching node, and the
+  injected value conflicts with the "else" branch that forbids the
+  property on non-RK3568 variants, breaking dtbs_check on those
+  platforms. The driver already treats an absent property as 1 (GMAC1),
+  so behavior is unchanged.
+
+===
+
+This is the PHY part split out from the v10 RK3568 SGMII series, sent
+separately to linux-phy as suggested by Vinod and Jakub.
+
+On RK3568, the SGMII interface can be routed to either GMAC0 or GMAC1 via
+the GRF register pipe_sgmii_mac_sel. Patch 1 documents the
+"rockchip,sgmii-mac-sel" DT property, patch 2 adds the driver support.
+
+From the RK3568 TRM (Part1, Page 229), PIPE_GRF_XPCS_CON0 bit 1
+(pipe_sgmii_mac_sel) is defined as:
+
+    0: SGMII routed to GMAC0
+    1: SGMII routed to GMAC1
+
+The hardware reset value is 1 (GMAC1). If the property is set to 0, the
+driver routes SGMII to GMAC0; if set to 1 (or omitted), it remains at
+GMAC1. This is necessary for boards such as the Ariaboard Photonicat,
+which uses the SGMII interface connected to GMAC0.
+
+The DTS changes using this property are sent separately to
+Heiko/linux-rockchip, and the net-next parts (XPCS glue, dwmac-rk SGMII
+support) are sent separately to net-next. There is no hard build
+dependency; the pieces can converge during the merge window.
+---
+Coia Prant (2):
+  dt-bindings: phy: rockchip: naneng-combphy: add rockchip,sgmii-mac-sel
+    property
+  phy: rockchip: naneng-combphy: add SGMII MAC selection for RK3568
+
+ .../bindings/phy/phy-rockchip-naneng-combphy.yaml   | 13 +++++++++++++
+ drivers/phy/rockchip/phy-rockchip-naneng-combphy.c  |  8 ++++++++
+ 2 files changed, 21 insertions(+)
+
+-- 
+2.47.3
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
