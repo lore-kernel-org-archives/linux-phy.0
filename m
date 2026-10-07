@@ -4,140 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7A46CA5FFC
-	for <linux-phy@archiver.kernel.org>; Wed,  7 Oct 2026 16:27:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD756CA5FFF
+	for <linux-phy@archiver.kernel.org>; Wed,  7 Oct 2026 19:07:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
-	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Ke3oyDuQ/z4H/IONeaCmiXMhw+oDXQSxVRyWMsHDrSg=; b=2yOZVLa2lFFuAv6h4THhGey3Nx
-	L5dQx6UWcEm/YrTcINZj2+J86QSaygBA+O0Bf+gL1WU3ZvHPEnfVYL6RkGfN6U5PKPxkteQHgMpc3
-	NZNBQp4B5X1tVclGU7MPR+UulVtr0wS/vK27NvBj4RLm3vd2vz/NhefQoRLOFqV8i0+6uvVF7l6Cu
-	DGEP8s+Qd1meEa+nx6V8OdBhfLXENdkc+UjLS5ImKWR7Ybe6k5DDjJJDg3NOx/mvipPbStqFlIxYa
-	OKIrexf7Cvav27id8Et4EUuiMW/82Kf89/9RblzD9dJDtA/couZbpP4XGLliq5VurwX+S9K3VUCjt
-	bKIisK8Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LPG/7zXkYDg6QbC9tD0vRdE2/oNqv/+I/pmEBOFEOHY=; b=QPrmhiKDeRkZdY
+	qOPSzyL2YzQphSj0jullPbI9RLWrvUoG7fsfZvz4SiqzGQkpABYlWwi4v7F3Hf/+n0tZyBippBuR7
+	dP8t3BRnYIj4r6z3rbY+drLXGJFrboF03kQZkH5exNKaQ8DP2MdgkSzxwGBYDOPKPlzSStitynf0J
+	RN9LEtMlZLINZbZm9pNEFOFGi+yECkOHlJrNjnRv1DkRTBFH8s3zR+KGDN0T6ZOpY0FSPQGQtKehM
+	bO8/WpceO4kS0tMPZ8q7wpypfntxfiPKhStRIrBiVJObAO2nsww2ZLAdO2jEklPfIbY86dpDhOS0b
+	Q7Rpo+HDhEJbcLnWDM5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xEUUE-00000002lOw-056T;
-	Wed, 07 Oct 2026 16:27:22 +0000
-Received: from mail-northcentralusazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c105::7] helo=CH4PR04CU002.outbound.protection.outlook.com)
+	id 1xEWym-000000030ES-3q1o;
+	Wed, 07 Oct 2026 19:07:04 +0000
+Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xEUUB-00000002lOV-3mKU
+	id 1xEWyl-000000030E6-0UtX
 	for linux-phy@lists.infradead.org;
-	Wed, 07 Oct 2026 16:27:21 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=D59SMxnzKoq5lLq8wXCvrmxP8bYwBlU5FFDTWOhJ6ytC8+lROH09inVExdoKGYVkSrCmow4JkanbqxelDHgsUJg3vZbVR0GBT1GNWBYKMzrgA5yUzAn2hWkQEWuKaaeteRfX9iEC8+hMa8Rja15bjLrfDj8gXEN/IKwEJU8+I+8XVMmmyHatjCHbPHo7KFRUoQVWY1wEuYc8vE909CqtWClZwLYMnnb7MHlPbHLuwIfFJ8+ErYemj4plIOjf9FY0tKK16jRK1xwfLsRFp3rTNeV0uPSnmrAhze7Y/TVZFpQZiv/he45ks/PUSw4+y3XDGhL0fs1j8CbFPkYzbMH1Hw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=jd2iowYxTjb3SerXCXWQeaM6oMsfPlPMuFXy1wDX81U=;
- b=iVod7hdEQUkEglCKFxJ41baP20dNs+Wiph2TPfbz4EjbF4dnxz9Qmhs2A5UyBKYXOjfGPfr003Q5CkLkpW24k7AvfThSixm6csrjoZA/noivBlZxR1uX4P7nnltsuF3xU+IXM/+h6to91EJLcXzvqFVZ+ByDTmLHMv3sknUTYcKaCfEBDBp6R3R/Xz2N/+1tv7oYUIOIjifVgJLcA8vOe4IBD7WpCju6sF5oy9Fglr8QqPWF1EJuyIMPj80BTZ7kZXnyx7hXIbeWXXjcWmgTvpZqJuWU0OYpP6QLykAMu6Od0cUlMt3AcjMOlppfpILd+FEZndPrNPYUsiGQJi3bZA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
- dkim=pass header.d=nvidia.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jd2iowYxTjb3SerXCXWQeaM6oMsfPlPMuFXy1wDX81U=;
- b=Ixr/35sOE3d8JcyDFfH6oB4mMkcjc+lPuOBehr8zD9+PUr+P3SNGaP4LHUV80xgXVi7kYkoaoPTdvIKc874/MEkNd9gDCwYRmWILG/kXMJQRzb9vFtgMGqGK9oXJBKT6IYe343TXhbO2txqM0lBFV0PeKU51Y7bWLZXMi+lGgM/gA0Nwnranfy5vyYSMwFRQItj7RTelKvmSF0P9MEDM3LkEYtrhQvBDYzaFBNkTsmecFug3qyGhrB7ccGe2gzNnkdvGlevnV+q5gURUTD+F61ZYCDUeXSmYeZM03D2UkviM2GcShzlsVKaMu94K/J+TbzN5A7OvA1s9Pre0LnWGPA==
-Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nvidia.com;
-Received: from PH8PR12MB7110.namprd12.prod.outlook.com (2603:10b6:510:22e::11)
- by MN2PR12MB4205.namprd12.prod.outlook.com (2603:10b6:208:198::10) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.496.15; Wed, 7 Oct
- 2026 16:27:13 +0000
-Received: from PH8PR12MB7110.namprd12.prod.outlook.com
- ([fe80::736a:e1be:ec64:5740]) by PH8PR12MB7110.namprd12.prod.outlook.com
- ([fe80::736a:e1be:ec64:5740%6]) with mapi id 15.21.0451.014; Wed, 7 Oct 2026
- 16:27:13 +0000
-Message-ID: <25b96f0f-afc6-493c-9428-ab00a0bd9aff@nvidia.com>
-Date: Wed, 7 Oct 2026 17:27:06 +0100
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 3/3] phy: tegra: Add support for Tegra238 XUSB pad
- controller
-To: Manivannan Sadhasivam <mani@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
- <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Thierry Reding <thierry.reding@kernel.org>,
- JC Kuo <jckuo@nvidia.com>, Thierry Reding <thierry.reding@gmail.com>,
- Wayne Chang <waynec@nvidia.com>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-tegra@vger.kernel.org
-References: <20261007-tegra-phy-v3-0-d501de414710@nvidia.com>
- <20261007-tegra-phy-v3-3-d501de414710@nvidia.com>
- <y7p44oeut66usohn3hdfsx2fndlxhup6osok6uo27c5xreyjvv@uyk37kiedv3u>
-Content-Language: en-US
-From: Jon Hunter <jonathanh@nvidia.com>
-In-Reply-To: <y7p44oeut66usohn3hdfsx2fndlxhup6osok6uo27c5xreyjvv@uyk37kiedv3u>
-X-ClientProxiedBy: FR0P281CA0191.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:d10:ab::14) To PH8PR12MB7110.namprd12.prod.outlook.com
- (2603:10b6:510:22e::11)
+	Wed, 07 Oct 2026 19:07:04 +0000
+Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-4a021c809e3so22187085e9.0
+        for <linux-phy@lists.infradead.org>; Wed, 07 Oct 2026 12:07:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1791400020; x=1792004820; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=YNDMmUWUsrhS7fqAay6BVjhWp+dL3PANyoZAcSZozLo=;
+        b=C3IBM3CpUiPNTj4SpMuapVuneEsYY21IfkRSoxpiGtyiWA+oSIsRnPwooWKUKkYQH0
+         P6gB7gG/zNDWd80xxQOGW/id4RvezIkubB0lL9NnFqAQwAPWSQXk+HSb/Ds+T7W+ZoFn
+         Yan03ftNTQW4JZxsh32EPRTeWXAUsxOAEWwY3Jxqg3q6gxc5cbp7W3rDYAOCxbYL/tYI
+         0zZnOH9+vU0+KQc/e1JNKdxlJNT9SZBhA3oVuYUxRBUvqWxgYie6G5tq4TKVhtKjRhJt
+         656++xPCbBXjz3S/A2FpG4tmTLbxEcvvQwOXALudgDuSfmdGkNoSExIn90JUmXvgka8x
+         Lm6w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1791400020; x=1792004820;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=YNDMmUWUsrhS7fqAay6BVjhWp+dL3PANyoZAcSZozLo=;
+        b=XVd38tfWl8P/XKBefysWoEZiwar4INmXvFLYVsIA/B4AjR2cEhctCfEcq/W9slWAJo
+         tLNT7/K0WHlDSAiyB1qacJkmJkCWaxo/niJmUWE3gpzwtfn4JbOR7vl8oS9in9PwL9V8
+         vm6Wf+uWcL5dbL7p3V9qeLRHM+bbpGcPpUUVrG1BQ8C6LShAIQgzzJB/10JzgSpHavCd
+         X7KYoJhFqrgmlGi9tjqm5EiVmthz8/buKUcZpGqfknwSH8b/IH6pfm6JPpdlkAfkYZ99
+         /ImzxHsvPlJr+Mx1n4lTn9CLvnnvtMqkXCXMmMdmKr1TnK4bVBT03F2yDzIxLsiGaUa+
+         /Nlw==
+X-Forwarded-Encrypted: i=1; AKwUvBx2wQoDhLcd2UK6179dJngsXMxUG85aH21bs2USkZy7/m1GTwaXQJF5MRdwXyyBml4E74IrUGZc/lM=@lists.infradead.org
+X-Gm-Message-State: AFuF++n4BGeZCmXDNXX6fsTW8Yf2NPb4Hqu/UrgLUJSEpDPh3nFWY2RX
+	ssnMJa7tiQnnz28yODpqSguxJTX1mcBMqEpCnIIF9hKikaGPBLERx9N/
+X-Gm-Gg: AYBFou0HDEUCjbBtX8SZaSYikMw19cI9Oap7HVsxKPA6V6AdlAfsyslZ1/+RrYk0+Fp
+	cIgE1xThU/yYVQV/ltT1AtVR1sI3tGsu+9Q218vp/GOnxa52WM9447h4hkpxQmdQZq3+mZS6blq
+	9gOEUIBBGg8S/TGJY6TF6B+70OQIfoXyvs8fPjsozssKdgTdc6p2N38OCGLkIScPb1FVV44GYTs
+	L6ryT/T9g1Wr6sr8OzyaDPicnKdM/3tBMELhdmhDKHPE1gLItY3D0iKm389kbBBKuDiF+kpiDmJ
+	CpgoGcBVDxe+G/xVkdZu6ZK+PWoheTX5YyJVTtdhiLWaBFkElQ5NjRe5DXmOUNPlqtRbwusbA0O
+	l58jPec84JMzzi0lz91+Pgjyk7DeVSyJxj6JR/fghgIwtgah7x370lh98reGfwYlr/X7SbrGxDb
+	rMJh7S+gmKfqLvcQzWuQyOuCCB7GaItEFsosPKuddJeiydIXxxGRq0w8FAiMYqxtvDWporCyX70
+	84rwSt0oTMAA80xpOj/eBg2rB1CSdjPc2BtUMsYNqR4zXG0bbCeAkOUmAvvy47R6+3ZnzNikm50
+	/go9hntY8YqJScEWh/8=
+X-Received: by 2002:a05:600c:8882:b0:4a1:813f:2a60 with SMTP id 5b1f17b1804b1-4a1813f2d5fmr38969725e9.11.1791400020224;
+        Wed, 07 Oct 2026 12:07:00 -0700 (PDT)
+Received: from iku.example.org ([2a06:5906:61b:2d00:1b59:c95c:e030:dbb2])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4a1843d8997sm12449275e9.10.2026.10.07.12.06.59
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 07 Oct 2026 12:06:59 -0700 (PDT)
+From: Prabhakar <prabhakar.csengg@gmail.com>
+X-Google-Original-From: Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>
+Cc: linux-renesas-soc@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Prabhakar <prabhakar.csengg+renesas@gmail.com>,
+	Biju Das <biju.das.jz@bp.renesas.com>,
+	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
+	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
+	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: [PATCH v2] phy: renesas: rcar-gen3-usb2: Keep OTG VBUS disabled until role is known
+Date: Wed,  7 Oct 2026 20:06:54 +0100
+Message-ID: <20261007190654.452376-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+X-Mailer: git-send-email 2.55.0
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PH8PR12MB7110:EE_|MN2PR12MB4205:EE_
-X-MS-Office365-Filtering-Correlation-Id: d035b041-b27c-42ab-d1fb-08df248fd7dc
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|1800799024|366016|376014|7416014|4143699003|11063799006|10067099003|56012099006|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: G4HBIaRWDCoO/Ox3gqrcuCsI0p6lICBRM2QfzGS3mXhihU4ZjaW/H4lBBUSwN/flA+QrVG90HAoswZl5lndxpWM/dEacokZxsZiH19kn+/zfcND0LtT5uSj3TyyesfGTskgks6PX3IXz39uYNgh6rBB7PGpcd5O4V9aFEfixa9WaC0kxs3ySkYJj8tuTuiOqEe9JvLuDliElt0enKN64bi31SKrcjRn6xzvRNllDWf8Xt/xlYdOLetUwghyE2XM/+Rx8qD4iPaYcKSY/finCH0brvv8q5RTNOMnzG9xz65hE+Y375tdz0YwwjKaa6uzONR985TSoq4HOaUfGP5EV1k2dqh3nyZT2Z+t6RSc9bPjhlVlJFURbu5akwouMtNJna0wt5HXwbK0dW7XoxBJY3DJ922wW9xjvXKYmFwSIX8ZP7eciiu80ZYQjpEwn5ZUI0ksmpCscfl5+Kh9gIJRS2FXOnASipvcD1pj4HqFiFQXOZ7fYqw1czxlnSLbJ9BqUrdaFBTmmLjEuPgZ0AOkL1iDZf5qDsI3gFGfF3VMjabgqpQwDCoGmz0+JbvT3JRYTS6oPcy7rVJqmQWQaClEK9x9ngregqbGbbVW781Gl/gbKNrhAZ4iA4zVyJ8MqiE/CZXbJDQbbLnBwasqNoYu2UgCe9k+g7f/tW/YWlyBsvaY=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PH8PR12MB7110.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(1800799024)(366016)(376014)(7416014)(4143699003)(11063799006)(10067099003)(56012099006)(18002099003)(22082099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?eWFROVpQR1dKdG9aRFRkdXZqbk9leU1IMTZzTG4yZjg1bkRrQ2hWRG9GUFVt?=
- =?utf-8?B?Q0N4eXc2TEJYU1J3NTRseDEreUZkdlkyMXcwb2xKVDJxdk9jOGlySlRibmhM?=
- =?utf-8?B?SjdQbTNjSWhMbzRLWDQ1UEZ5SXFDMWFvWVBsd0REcDQ1cVRLTWZQazUxVXBr?=
- =?utf-8?B?Tmh5eFhCbzJWWWQzT0VFc1hNZnFQQjFPSFh4SkNXZkl2OGlCRERkMGhYbTAr?=
- =?utf-8?B?WjUzZ3pINmZpY0RRbEE2ZjlwZkt4aW9peDd2a0I1OHJqbzZBZHNHb1VFS21Y?=
- =?utf-8?B?WGJvc2xJNENWM0RBdnZtRTdrYUVpSjV2VVFvdFVtUjQ5aTRLaEszUVAveDIv?=
- =?utf-8?B?YUVKQ1BCbnRnWnJzeUg2UU5iOXprL09TZ3Y2SFhDZlBCcllZdldaSXFmRUN5?=
- =?utf-8?B?NTRHaFFZalpCZTZFeVVzc0RjYVF6L0M2L2ltNldhRDgyQi9yaWtkL1hDMEd4?=
- =?utf-8?B?ZUU5K1pudG13emlBczBLcUwvc1NIZjM1UG5NbnBNclJlOXQ3dWZWK01GcTRD?=
- =?utf-8?B?dTQ0YTdQZUlRbElLMXpsNVpuT2dIb3FiNUtxNjQxR3RycDV5eFRENVNqV2lP?=
- =?utf-8?B?WDBJc3JlVHZpRkt6SmE5THBpc2haL0oycGN3K2kyQ3h4elFHaERTZTNRZzhL?=
- =?utf-8?B?WkdNamE3NzR3NnBydXBIbm1wbEpKeS90QUhvMXlhM1lJVnpzNGxsUzQxckZ1?=
- =?utf-8?B?THN4c3VSR0hLOGxsU2pLZ3dEQ1lLZGJ4dzB0VUgzaWNLa20vTVo5TlBVNkY4?=
- =?utf-8?B?dWZHUzZnRW01MTVZdW9KZEpQVWpZL0Q4UGt4RGk2ZlJESmRQY1cvNGFPR2I5?=
- =?utf-8?B?SkNkWStsUUtDOHdMa0pOU2UzSko0ckQ2aDhyc04waGd3d1dlYW9SdW9hWnVG?=
- =?utf-8?B?SXkyNUgySFcyQTdNdGxlUExramk3UkVKcWZSd2hLeVJqaXo0TEtRMk00cGNi?=
- =?utf-8?B?OW1wbExkNlN5ZHdza1V3WUliZUZ3cDZzK0prY2x4bVBPdVRkUXFwMGFxM25Q?=
- =?utf-8?B?b2RKY1pDVzdmUUJvT1dVWG80UVVwVXpWcXNqcGtwRktxZVhkV0VMZnUvbzVh?=
- =?utf-8?B?MkpZM1M0TEJrVHlKVjdZTFd2c3BUeHg2TXMyR1J5Y1FpNy9GaDdPakFJWFJ6?=
- =?utf-8?B?UGdiSWR6czBFMTExZzhQNTdlWlUzcjI0bmlCQ3R3VElBNE9lcGYxbFJRQnlv?=
- =?utf-8?B?bVpqdEV6cWNISFhVdEUzVU5OUy9uL01ZdENHMG0yT2Rud3ZFZmhTM3NEM000?=
- =?utf-8?B?V0p0TmY4akRsTWF4ZkJpTHE3cmh6K1dEYXBFMFNDRjhoYm9QQ25qZHU0U3Ju?=
- =?utf-8?B?a1NzUWVXOU9mQmxJVUdnVElLMklIMThhanBOaGtIR0NvTUlNcENIc2FQR0p3?=
- =?utf-8?B?U0RHVG5UcnM4K01EZjE1ZWJpcnZhZGQ4OEo3K2I0bHpYdm9WWVBXdFZ3THFX?=
- =?utf-8?B?RGxyK3VLNDJpci91dmExRjhuak9HNkVMaHoyRmh1ZG9pVmc4WllMQ0FnR29O?=
- =?utf-8?B?dW5ld3FYZDBOWjh4dkQzUWt6eldRVTRhRE5Tblg5cHZzYlF0dTEvR0JtY3U4?=
- =?utf-8?B?dWdqbW93bG1NYTRGcWVzTFp3OFZaOERNTVR3UEVaVlNNWVh6aVFFQlhobE92?=
- =?utf-8?B?MXdRZ1RYOFVCSWRDNzU1ZWRzcDVBTnNSY3ZaU1hCSW4vbFQ3d0dLLzY1NUV5?=
- =?utf-8?B?blFSM3VhbXkzWmhKVnp2K3h6aFExNVphbHllZFZIeXBCUEd0MDdlbGpJVXhH?=
- =?utf-8?B?emNPL0c3b0oxdnh6dEovcWRZVjRaRkdGbE4wNmVKOVR6d3NIN2NydGY0S2xU?=
- =?utf-8?B?SUZGcHFrVGFYaFlUcHdqSFVDV0tSRnpsMTMycEh6L0tqMWlmR0x6V0cyOG4r?=
- =?utf-8?B?bnQzbUhZUk9obDVGdW5wUzVkOUVhUWYxc3dNcUM0REZaWnllZFRpVzFCTjdE?=
- =?utf-8?B?WUtOa2dBQmltSkRNT1lwWHNhUi9wNW9pZUhHOGROU0NLMWQ0M0pqR1I4V2xS?=
- =?utf-8?B?aUtDanpTeTNnU2hCOXFjRnNDS1pjVWhWTzNYb241Y3Jid0JMOEtFYTBJc3Ew?=
- =?utf-8?B?WFNMYVFaOThxZ1QyMXBTVTErekNWRGswaCtnZzVXNFFsRWdOVmZRWnphdGE2?=
- =?utf-8?B?ZnBXeEpjRllzd0VWZDh1UmplcXNSbzlVdmxuNm5HYy9XbW01YlRnazF1cmJi?=
- =?utf-8?B?WjBKOFdmcGtBUldVeHlSZVdhaTFzUHRQS3pjU1NnUVRjRHg2eEtoeFhtVW5T?=
- =?utf-8?B?TGY5Nkt4YzFlU3hvL3M1QWhzVTlQSUFTL0taMWp3LzRsR2xFbVVlVHVmT1BU?=
- =?utf-8?B?MVpXNjZ5ZkVDYmdwcnZrUXFPRnpKdi9oQnFEOWh3VEZ5aCthbHdKdz09?=
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d035b041-b27c-42ab-d1fb-08df248fd7dc
-X-MS-Exchange-CrossTenant-AuthSource: PH8PR12MB7110.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 Oct 2026 16:27:13.3870
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: LMQXQL/Eqx5e9H4O0zWECf68Lj9Gv/pmowE8qVQxb6elB+/UCSAIUogg9SOgnt89651V7z+vMnu5bl0flekH1A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR12MB4205
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261007_092719_948275_259F0893 
-X-CRM114-Status: GOOD (  14.46  )
+X-CRM114-CacheID: sfid-20261007_120703_185725_9050B96E 
+X-CRM114-Status: GOOD (  22.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,50 +105,132 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 
-On 07/10/2026 16:20, Manivannan Sadhasivam wrote:
-> On Wed, Oct 07, 2026 at 03:44:43PM +0100, Jon Hunter wrote:
->> Add support for the Tegra238 XUSB pad controller by populating the
->> Tegra238 specific SoC data for the controller. The Tegra238 has three
->> USB2 and USB3 ports, uses the same port ops as Tegra186 and has the
->> same supplies as Tegra194. Due to the dependencies the Tegra238 device
->> has on the Tegra186 port ops and Tegra194 supplies, drop the compile
->> time guards around these structures.
->>
->> Signed-off-by: Jon Hunter <jonathanh@nvidia.com>
->> ---
->>   drivers/phy/tegra/Makefile        |  1 +
->>   drivers/phy/tegra/xusb-tegra186.c | 29 +++++++++++++++++++++++------
->>   drivers/phy/tegra/xusb.c          |  6 ++++++
->>   drivers/phy/tegra/xusb.h          |  3 +++
->>   4 files changed, 33 insertions(+), 6 deletions(-)
->>
->> diff --git a/drivers/phy/tegra/Makefile b/drivers/phy/tegra/Makefile
->> index f5ed9582d80b..018a4cab2b40 100644
->> --- a/drivers/phy/tegra/Makefile
->> +++ b/drivers/phy/tegra/Makefile
->> @@ -8,6 +8,7 @@ phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_210_SOC) += xusb-tegra210.o
->>   phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_186_SOC) += xusb-tegra186.o
->>   phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_194_SOC) += xusb-tegra186.o
->>   phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_234_SOC) += xusb-tegra186.o
->> +phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_238_SOC) += xusb-tegra186.o
->>   phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_264_SOC) += xusb-tegra186.o
-> 
-> This is just a mess. As a followup patch, could you please please switch to
-> generic ARCH_TEGRA Kconfig option as done in this commit, 6b5e2f70a95c
-> ("PCI: dwc: tegra194: Broaden architecture dependency")?
+On OTG channels of SoCs without ADP control, the VBUS regulator is
+acquired with devm_regulator_get_exclusive() and its output is switched
+by rcar_gen3_enable_vbus_ctrl() using regulator_hardware_enable() once
+the port role is known.
 
-Yes that would be a good idea and yes I can do that as a follow-up.
+The helper acquiring the regulator has the following problems:
 
-Jon
+- The internal regulator is unconditionally enabled at probe, so VBUS
+  is driven before the port role is known. If the port is connected to
+  an external host this can back-power it.
 
+- regulator_get_exclusive() hands the consumer an enable reference if
+  the regulator is already enabled, for example by the bootloader. The
+  unconditional regulator_enable() then takes a second reference while
+  only one is released on unbind, leaving the regulator enabled and
+  triggering the WARN_ON() in _regulator_put().
+
+Fix this by making sure the driver always holds exactly one reference
+to the regulator: reuse the reference handed over by the exclusive get
+if the regulator is already enabled, and call regulator_enable()
+otherwise. Register the disable action in both cases, then turn off the
+physical VBUS output with regulator_hardware_enable() until the port
+role is established. Enabling a disabled regulator to take the
+reference may briefly drive VBUS during probe; this cannot be avoided
+with the regulator API.
+
+Rename the regulator helper to reflect that it acquires the regulator
+without directly enabling its physical VBUS output.
+
+Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+---
+v1->v2:
+- regulator_enable() is only called if the regulator is not already enabled,
+  ensuring exactly one reference is held.
+- Dropped enable parameter from the function
+- Renamed function rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable()
+  to rcar_gen3_phy_usb2_vbus_regulator_get_exclusive()
+- Updated commit message
+---
+ drivers/phy/renesas/phy-rcar-gen3-usb2.c | 35 +++++++++++++++++-------
+ 1 file changed, 25 insertions(+), 10 deletions(-)
+
+diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+index b5ba751805aa..3481505dea2e 100644
+--- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
++++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+@@ -1114,8 +1114,7 @@ static void rcar_gen3_phy_usb2_vbus_disable_action(void *data)
+ 	regulator_disable(vbus);
+ }
+ 
+-static int rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable(struct rcar_gen3_chan *channel,
+-								  bool enable)
++static int rcar_gen3_phy_usb2_vbus_regulator_get_exclusive(struct rcar_gen3_chan *channel)
+ {
+ 	struct device *dev = channel->dev;
+ 	int ret;
+@@ -1133,17 +1132,35 @@ static int rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable(struct rcar_ge
+ 		return 0;
+ 	}
+ 
+-	if (enable) {
++	ret = regulator_is_enabled(channel->vbus);
++	if (ret < 0)
++		return ret;
++
++	if (!ret) {
+ 		ret = regulator_enable(channel->vbus);
+ 		if (ret)
+ 			return ret;
+ 	}
+ 
+-	if (regulator_is_enabled(channel->vbus))
+-		return devm_add_action_or_reset(dev, rcar_gen3_phy_usb2_vbus_disable_action,
+-						channel->vbus);
++	/*
++	 * An exclusive get of an enabled regulator already holds a reference, so
++	 * add a cleanup action to disable it when the device is released.
++	 */
++	ret = devm_add_action_or_reset(dev, rcar_gen3_phy_usb2_vbus_disable_action,
++				       channel->vbus);
++	if (ret)
++		return ret;
+ 
+-	return 0;
++	/*
++	 * The regulator is enabled only so that the regulator core holds a
++	 * reference to it. Do not drive VBUS until the port's role is known;
++	 * rcar_gen3_enable_vbus_ctrl() switches it from then on.
++	 *
++	 * The VBUS regulator used on these SoCs implement the .enable/.disable
++	 * ops, so regulator_hardware_enable() cannot fail with -EOPNOTSUPP here
++	 * and no special handling for it is needed.
++	 */
++	return regulator_hardware_enable(channel->vbus, false);
+ }
+ 
+ static int rcar_gen3_phy_usb2_vbus_regulator_register(struct rcar_gen3_chan *channel)
+@@ -1151,7 +1168,6 @@ static int rcar_gen3_phy_usb2_vbus_regulator_register(struct rcar_gen3_chan *cha
+ 	struct device *dev = channel->dev;
+ 	struct regulator_config rcfg = { .dev = dev, };
+ 	struct regulator_dev *rdev;
+-	bool enable = false;
+ 
+ 	rcfg.of_node = of_get_available_child_by_name(dev->of_node,
+ 						      "vbus-regulator");
+@@ -1165,10 +1181,9 @@ static int rcar_gen3_phy_usb2_vbus_regulator_register(struct rcar_gen3_chan *cha
+ 					     "Failed to create vbus-regulator\n");
+ 
+ 		channel->otg_internal_reg = true;
+-		enable = true;
+ 	}
+ 
+-	return rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable(channel, enable);
++	return rcar_gen3_phy_usb2_vbus_regulator_get_exclusive(channel);
+ }
+ 
+ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
 -- 
-nvpublic
+2.55.0
 
 
 -- 
