@@ -4,54 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5116ECA6009
-	for <linux-phy@archiver.kernel.org>; Wed,  7 Oct 2026 14:53:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BDB64CA6007
+	for <linux-phy@archiver.kernel.org>; Wed,  7 Oct 2026 15:15:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D6SZneBRqqH3GZIyqAb2xAJ3ydVW58Rde/Wf9vwLXVo=; b=zLSVlu5zHn2qXk
-	vKYouSIBx8S6ch77BHF5ZbyUQLg0VLaY2E08tJmyMlvQwxLOwixLBcts9dJXNx5a95/Pg0TtLKAP+
-	dU18vV1QIxMEdyrBpyKFXmhakUOkI3OEUgtcInQv2Wr6M5gRC3BnlB6QXZv4pQdoSY248dMY4sZzb
-	1/eHOTVdpV4kkgPgPOkt8tGev/l4jJv7aXm90aq/3fCc5xBzfZC1LD+WbpSouMIs8173ThF5LhGL9
-	NHsuY1rmGxF6NJ5xsS5WOzpCzzTUc5K0nLYzvagpihIECztp/Ait8lXTqh7MMd/TD7mGydQk51QLS
-	tL0RgAlxW978bDQ8BY+w==;
+	List-Owner; bh=lgNKzTAvVwxuFJH6eVPKr01Uot0QssPjIXWhpt++op0=; b=LELJMFIPbG8paa
+	1wNpfKd8oDmK41jvi8uHiAsNU/qceITDY32y6QOL98sV36lazh6SGd7zAD4lIjM15rlO0WH1KMPkK
+	1w170LmineE2GGqYiA/V0gR1jPQtNJHctq6J5VLNj/mkGfGjtFYyCj0505JTRl/pCuECwjtB3+Bvr
+	EIVwWtwOhMrBzQlFQ32x+z73iMoecIDs2AMSU8cs2BLmfs3EttkVVac2f8YnSYF7hcnrqoKYwtq5I
+	hC9RmFnChgZ/z7zFc4L+s0XXsdahSx1M5zRUBP6rE3wtFwmpaNpc4ef6uuBgD1xms1YQDF6CaJIjW
+	nLu/XEBocx6OKP3UWxhw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xET0v-00000002eoI-034b;
-	Wed, 07 Oct 2026 14:53:01 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xETMk-00000002gt6-05v4;
+	Wed, 07 Oct 2026 15:15:34 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xET0t-00000002eo0-2Y9g
+	id 1xETMj-00000002gt0-0hbJ
 	for linux-phy@lists.infradead.org;
-	Wed, 07 Oct 2026 14:52:59 +0000
+	Wed, 07 Oct 2026 15:15:33 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0175540DC7;
-	Wed,  7 Oct 2026 14:52:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6A34F1F000FF;
-	Wed,  7 Oct 2026 14:52:58 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 4537F60219;
+	Wed,  7 Oct 2026 15:15:31 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E4BF61F000FF;
+	Wed,  7 Oct 2026 15:15:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791384778;
-	bh=25LVs5sPzYyXyo7uI6ETl9DrGXMCuKluHnqZ342D9zc=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=eWf0ABBPN1hThGfZUMvMwrbyZQdAOtOOlLjaESZkl3ffSkymKr0QJ1a+x2eBcJxCv
-	 3SpmO4oY4pKqzuRnEHArjbdZIYVS2DLwX2iC7YZAfJf2dQpgDspYij2A7p+79X8G0t
-	 ccVb575vzicKtkFsLJeejakM9saECeRU4nPS6hgLrGidIT/l0fLzaoGM8bBstNvm6f
-	 sq5ka9lhso5ZKKP0unBj9GffFAG1eXnw5+YGg1ZPW73NfEWDFdeSMTNoNbSTWv2t2y
-	 1orMtsAd1sxhfdKwZQHxsUe/ejdzySx7Mh2BoFhFPj8zvGYJsaW6dNC0qEo+NaDOe3
-	 yDuc8uhFCQWiw==
-Message-ID: <sashiko-outbox-163126@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v3 3/3] phy: tegra: Add support for Tegra238 XUSB pad
- controller
-To: "Jon Hunter" <jonathanh@nvidia.com>
-Cc: robh@kernel.org, neil.armstrong@linaro.org, vkoul@kernel.org, conor+dt@kernel.org, devicetree@vger.kernel.org, olteanv@gmail.com, linux-phy@lists.infradead.org
-In-Reply-To: <20261007-tegra-phy-v3-3-d501de414710@nvidia.com>
+	s=k20260515; t=1791386131;
+	bh=TjVi7Rx1rFn3sJeEh/l1JhFtiUFQYPyDX/et1rX8SSw=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=Nty2Uc3MCI5Zn9Agpj9e+dynGJEtMbnGCx4L9CwvW4rmBgoTn8OFkTqe3SR6FHb5n
+	 dP/eytvJ0+NHxSHwgUpjjIZd0Bj25ak8TabWTLcZ8O5BEj8sAfC0TTVwzO/968nj4R
+	 PRlcxn4PMrUXFRpVzA/6psqVCHE1bBk5EIQuvO/H3PagWcztCy9cPyrG0Jy5tq2awY
+	 eVK2ao5Uv1NfKSSYWh/18G1uFkKcLdD4UsGrOZelfMU2KOP0N+MILcD/ElNPkyx1u8
+	 o7/8rRw45AK7KGai7zyHvbBWN/wfuQiNTf4jtjteeXO3zv+M4wtfJXyGfYLyeZJRcS
+	 D+TCXjTYvAR0Q==
+Date: Wed, 7 Oct 2026 17:15:24 +0200
+From: Manivannan Sadhasivam <mani@kernel.org>
+To: Jon Hunter <jonathanh@nvidia.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Thierry Reding <thierry.reding@kernel.org>, JC Kuo <jckuo@nvidia.com>, 
+	Thierry Reding <thierry.reding@gmail.com>, Wayne Chang <waynec@nvidia.com>, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-tegra@vger.kernel.org, 
+	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Subject: Re: [PATCH v3 0/3] phy: tegra: xusb: Add Tegra238 support
+Message-ID: <uf6h4xyzc7c7jp7ekas2frmnynnwnrxpghq5krto6zyhimbcgx@asb7p5h5dqb6>
 References: <20261007-tegra-phy-v3-0-d501de414710@nvidia.com>
- <20261007-tegra-phy-v3-3-d501de414710@nvidia.com>
-Date: Wed, 07 Oct 2026 14:52:57 +0000
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20261007-tegra-phy-v3-0-d501de414710@nvidia.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,52 +69,20 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0xvd10gcGh5OiB0ZWdyYTogbWlz
-c2luZyBkZWNsYXJhdGlvbnMgZm9yIGV4cG9ydGVkIFNvQyBzdHJ1Y3RzIGluIHh1c2IuaAotLQoK
-Y29tbWl0IDhhY2Y0ODcyZjE3NDY1ZjU5ZjMyNTU4YWVmYWNiN2JlOGUyYzY3OWYKQXV0aG9yOiBK
-b24gSHVudGVyIDxqb25hdGhhbmhAbnZpZGlhLmNvbT4KCnBoeTogdGVncmE6IEFkZCBzdXBwb3J0
-IGZvciBUZWdyYTIzOCBYVVNCIHBhZCBjb250cm9sbGVyCgpUaGlzIGNvbW1pdCBhZGRzIHN1cHBv
-cnQgZm9yIHRoZSBUZWdyYTIzOCBYVVNCIHBhZCBjb250cm9sbGVyLiBJdCBwb3B1bGF0ZXMKdGhl
-IFRlZ3JhMjM4IHNwZWNpZmljIFNvQyBkYXRhLCByZXVzaW5nIHN0cnVjdHVyZXMgZnJvbSBUZWdy
-YTE4NiBhbmQKVGVncmExOTQsIGFuZCBkcm9wcyB0aGUgY29tcGlsZSB0aW1lIGd1YXJkcyBhcm91
-bmQgdGhlc2Ugc2hhcmVkIHN0cnVjdHVyZXMgaW4KdGhlIHNvdXJjZSBmaWxlLgoKPiBkaWZmIC0t
-Z2l0IGEvZHJpdmVycy9waHkvdGVncmEveHVzYi10ZWdyYTE4Ni5jIGIvZHJpdmVycy9waHkvdGVn
-cmEveHVzYi10ZWdyYTE4Ni5jCj4gaW5kZXggMzIyZWZkZWEwZDgwNy4uYWE4YWI5NGZhZDRjZiAx
-MDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS90ZWdyYS94dXNiLXRlZ3JhMTg2LmMKPiArKysgYi9k
-cml2ZXJzL3BoeS90ZWdyYS94dXNiLXRlZ3JhMTg2LmMKWyAuLi4gXQo+IEBAIC0xNjY1LDExICsx
-NjY0LDcgQEAgY29uc3Qgc3RydWN0IHRlZ3JhX3h1c2JfcGFkY3RsX3NvYyB0ZWdyYTE4Nl94dXNi
-X3BhZGN0bF9zb2MgPSB7Cj4gIAkubnVtX3N1cHBsaWVzID0gQVJSQVlfU0laRSh0ZWdyYTE4Nl94
-dXNiX3BhZGN0bF9zdXBwbHlfbmFtZXMpLAo+ICB9Owo+ICBFWFBPUlRfU1lNQk9MX0dQTCh0ZWdy
-YTE4Nl94dXNiX3BhZGN0bF9zb2MpOwo+IC0jZW5kaWYKCltTZXZlcml0eTogTG93XQpTaW5jZSB0
-aGUgZ3VhcmRzIGFyZSByZW1vdmVkIGhlcmUsIHRlZ3JhMTg2X3h1c2JfcGFkY3RsX3NvYyBpcyBu
-b3cgZGVmaW5lZAphbmQgZXhwb3J0ZWQgdW5jb25kaXRpb25hbGx5LiBIb3dldmVyLCBpdHMgZXh0
-ZXJuIGRlY2xhcmF0aW9uIGluCmRyaXZlcnMvcGh5L3RlZ3JhL3h1c2IuaCByZW1haW5zIGNvbmRp
-dGlvbmFsbHkgZ3VhcmRlZDoKCiNpZiBkZWZpbmVkKENPTkZJR19BUkNIX1RFR1JBXzE4Nl9TT0Mp
-CmV4dGVybiBjb25zdCBzdHJ1Y3QgdGVncmFfeHVzYl9wYWRjdGxfc29jIHRlZ3JhMTg2X3h1c2Jf
-cGFkY3RsX3NvYzsKI2VuZGlmCgpEb2VzIHRoaXMgY2F1c2UgbWlzc2luZyBkZWNsYXJhdGlvbiB3
-YXJuaW5ncyAoLVdtaXNzaW5nLWRlY2xhcmF0aW9ucyBvcgotV21pc3NpbmctcHJvdG90eXBlcykg
-ZHVyaW5nIHRoZSBidWlsZCBpZiB0aGUga2VybmVsIGlzIGNvbmZpZ3VyZWQgd2l0aApDT05GSUdf
-QVJDSF9URUdSQV8yMzhfU09DPXkgYnV0IENPTkZJR19BUkNIX1RFR1JBXzE4Nl9TT0M9bj8gU2hv
-dWxkIHRoZQpjb3JyZXNwb25kaW5nIGd1YXJkcyBpbiB4dXNiLmggYmUgcmVtb3ZlZCBhcyB3ZWxs
-PwoKPiAgCj4gLSNpZiBJU19FTkFCTEVEKENPTkZJR19BUkNIX1RFR1JBXzE5NF9TT0MpIHx8IFwK
-PiAtCUlTX0VOQUJMRUQoQ09ORklHX0FSQ0hfVEVHUkFfMjM0X1NPQykgfHwgXAo+IC0JSVNfRU5B
-QkxFRChDT05GSUdfQVJDSF9URUdSQV8yNjRfU09DKQo+ICBzdGF0aWMgY29uc3QgY2hhciAqIGNv
-bnN0IHRlZ3JhMTk0X3h1c2JfcGFkY3RsX3N1cHBseV9uYW1lc1tdID0gewo+ICAJImF2ZGQtdXNi
-IiwKPiAgCSJ2Y2xhbXAtdXNiIiwKCltTZXZlcml0eTogTG93XQpBIHNpbWlsYXIgbWlzbWF0Y2gg
-b2NjdXJzIGhlcmUgZm9yIHRlZ3JhMTk0X3h1c2JfcGFkY3RsX3NvYy4gVGhlIGRlZmluaXRpb24K
-aXMgbm93IHVuY29uZGl0aW9uYWwsIGJ1dCB0aGUgZXh0ZXJuIGRlY2xhcmF0aW9uIGluIHh1c2Iu
-aCBpcyBzdGlsbCBndWFyZGVkCmJ5ICNpZiBkZWZpbmVkKENPTkZJR19BUkNIX1RFR1JBXzE5NF9T
-T0MpLiBDb3VsZCB0aGlzIGFsc28gdHJpZ2dlciBtaXNzaW5nCnByb3RvdHlwZSB3YXJuaW5ncyB3
-aGVuIGJ1aWxkaW5nIHdpdGggY2VydGFpbiBjb25maWdzIGRpc2FibGVkPwoKLS0gClNhc2hpa28g
-QUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MTAwNy10ZWdy
-YS1waHktdjMtMC1kNTAxZGU0MTQ3MTBAbnZpZGlhLmNvbT9wYXJ0PTMKCi0tIApsaW51eC1waHkg
-bWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMu
-aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+T24gV2VkLCBPY3QgMDcsIDIwMjYgYXQgMDM6NDQ6NDBQTSArMDEwMCwgSm9uIEh1bnRlciB3cm90
+ZToKPiBBZGQgc3VwcG9ydCBmb3IgdGhlIFRlZ3JhMjM4IGRldmljZSB0byB0aGUgVGVncmEgWFVT
+QiBQSFkgZHJpdmVyIGFuZAo+IGFkZCB0aGUgbmVjZXNzYXJ5IGRldmljZS10cmVlIGJpbmRpbmcg
+ZG9jdW1lbnRhdGlvbiBmb3IgdGhpcyBkZXZpY2UuCj4gCj4gVGhpcyBzZXJpZXMgYWxzbyBpbmNs
+dWRlcyBhIHRyaXZpYWwgY2xlYW4tdXAgcGF0Y2ggdG8gdXNlIHRoZQo+IGRldl9lcnJfcHJvYmUo
+KSBmdW5jdGlvbiBpbiB0aGUgVGVncmEgWFVTQiBQSFkgZHJpdmVyIGluc3RlYWQgb2Ygb3Blbgo+
+IGNvZGluZyB0aGlzIGZ1bmN0aW9uLgo+IAo+IFNpZ25lZC1vZmYtYnk6IEpvbiBIdW50ZXIgPGpv
+bmF0aGFuaEBudmlkaWEuY29tPgoKUmV2aWV3ZWQtYnk6IE1hbml2YW5uYW4gU2FkaGFzaXZhbSA8
+bWFuaXZhbm5hbi5zYWRoYXNpdmFtQG9zcy5xdWFsY29tbS5jb20+CgotIE1hbmkKCi0tIArgrq7g
+rqPgrr/grrXgrqPgr43grqPgrqngr40g4K6a4K6k4K6+4K6a4K6/4K614K6u4K+NCgotLSAKbGlu
+dXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
