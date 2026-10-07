@@ -4,96 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD756CA5FFF
-	for <linux-phy@archiver.kernel.org>; Wed,  7 Oct 2026 19:07:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD730CA6002
+	for <linux-phy@archiver.kernel.org>; Wed,  7 Oct 2026 19:20:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LPG/7zXkYDg6QbC9tD0vRdE2/oNqv/+I/pmEBOFEOHY=; b=QPrmhiKDeRkZdY
-	qOPSzyL2YzQphSj0jullPbI9RLWrvUoG7fsfZvz4SiqzGQkpABYlWwi4v7F3Hf/+n0tZyBippBuR7
-	dP8t3BRnYIj4r6z3rbY+drLXGJFrboF03kQZkH5exNKaQ8DP2MdgkSzxwGBYDOPKPlzSStitynf0J
-	RN9LEtMlZLINZbZm9pNEFOFGi+yECkOHlJrNjnRv1DkRTBFH8s3zR+KGDN0T6ZOpY0FSPQGQtKehM
-	bO8/WpceO4kS0tMPZ8q7wpypfntxfiPKhStRIrBiVJObAO2nsww2ZLAdO2jEklPfIbY86dpDhOS0b
-	Q7Rpo+HDhEJbcLnWDM5A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4sGEhnCwty9X2wEdkXJDPkawvmMgP+GsRi1T9jcJFH0=; b=UFgAdLSa2B/4ot
+	LNXMFuEyqEaE3bA+cSl8z6uOhIRi2hfh7zrVMX7TWLCLNnTAQLGccTtNRExwfV/D1WrBxDVnpqjdp
+	mPM4rMYf5zz5DmIkmgYPQ9oQVayrMzVwIBFd08eSCPy326DXs57VTiK1w8oe25zt80B+Fr+Es9fwk
+	rQh9XYItCIf3RJ2rJ2uEH4/fn3XeHcEBqO+JHon2iIu1gZr6SF3OpBfaYl/nKV3b3B4s6RBeatIw+
+	ST1lsNWYRjSGYH5JFX2Ax+BCTK3549sPF0V0bD3dIJA46iMWjzaXra5Xa2KCSqkm6a9Acd1IHXm1y
+	3R7yXPnzKnHqCz8GRMzg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xEWym-000000030ES-3q1o;
-	Wed, 07 Oct 2026 19:07:04 +0000
-Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
+	id 1xEXBc-000000031FH-0BMs;
+	Wed, 07 Oct 2026 19:20:20 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xEWyl-000000030E6-0UtX
+	id 1xEXBa-000000031Em-3xVa
 	for linux-phy@lists.infradead.org;
-	Wed, 07 Oct 2026 19:07:04 +0000
-Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-4a021c809e3so22187085e9.0
-        for <linux-phy@lists.infradead.org>; Wed, 07 Oct 2026 12:07:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1791400020; x=1792004820; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=YNDMmUWUsrhS7fqAay6BVjhWp+dL3PANyoZAcSZozLo=;
-        b=C3IBM3CpUiPNTj4SpMuapVuneEsYY21IfkRSoxpiGtyiWA+oSIsRnPwooWKUKkYQH0
-         P6gB7gG/zNDWd80xxQOGW/id4RvezIkubB0lL9NnFqAQwAPWSQXk+HSb/Ds+T7W+ZoFn
-         Yan03ftNTQW4JZxsh32EPRTeWXAUsxOAEWwY3Jxqg3q6gxc5cbp7W3rDYAOCxbYL/tYI
-         0zZnOH9+vU0+KQc/e1JNKdxlJNT9SZBhA3oVuYUxRBUvqWxgYie6G5tq4TKVhtKjRhJt
-         656++xPCbBXjz3S/A2FpG4tmTLbxEcvvQwOXALudgDuSfmdGkNoSExIn90JUmXvgka8x
-         Lm6w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791400020; x=1792004820;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=YNDMmUWUsrhS7fqAay6BVjhWp+dL3PANyoZAcSZozLo=;
-        b=XVd38tfWl8P/XKBefysWoEZiwar4INmXvFLYVsIA/B4AjR2cEhctCfEcq/W9slWAJo
-         tLNT7/K0WHlDSAiyB1qacJkmJkCWaxo/niJmUWE3gpzwtfn4JbOR7vl8oS9in9PwL9V8
-         vm6Wf+uWcL5dbL7p3V9qeLRHM+bbpGcPpUUVrG1BQ8C6LShAIQgzzJB/10JzgSpHavCd
-         X7KYoJhFqrgmlGi9tjqm5EiVmthz8/buKUcZpGqfknwSH8b/IH6pfm6JPpdlkAfkYZ99
-         /ImzxHsvPlJr+Mx1n4lTn9CLvnnvtMqkXCXMmMdmKr1TnK4bVBT03F2yDzIxLsiGaUa+
-         /Nlw==
-X-Forwarded-Encrypted: i=1; AKwUvBx2wQoDhLcd2UK6179dJngsXMxUG85aH21bs2USkZy7/m1GTwaXQJF5MRdwXyyBml4E74IrUGZc/lM=@lists.infradead.org
-X-Gm-Message-State: AFuF++n4BGeZCmXDNXX6fsTW8Yf2NPb4Hqu/UrgLUJSEpDPh3nFWY2RX
-	ssnMJa7tiQnnz28yODpqSguxJTX1mcBMqEpCnIIF9hKikaGPBLERx9N/
-X-Gm-Gg: AYBFou0HDEUCjbBtX8SZaSYikMw19cI9Oap7HVsxKPA6V6AdlAfsyslZ1/+RrYk0+Fp
-	cIgE1xThU/yYVQV/ltT1AtVR1sI3tGsu+9Q218vp/GOnxa52WM9447h4hkpxQmdQZq3+mZS6blq
-	9gOEUIBBGg8S/TGJY6TF6B+70OQIfoXyvs8fPjsozssKdgTdc6p2N38OCGLkIScPb1FVV44GYTs
-	L6ryT/T9g1Wr6sr8OzyaDPicnKdM/3tBMELhdmhDKHPE1gLItY3D0iKm389kbBBKuDiF+kpiDmJ
-	CpgoGcBVDxe+G/xVkdZu6ZK+PWoheTX5YyJVTtdhiLWaBFkElQ5NjRe5DXmOUNPlqtRbwusbA0O
-	l58jPec84JMzzi0lz91+Pgjyk7DeVSyJxj6JR/fghgIwtgah7x370lh98reGfwYlr/X7SbrGxDb
-	rMJh7S+gmKfqLvcQzWuQyOuCCB7GaItEFsosPKuddJeiydIXxxGRq0w8FAiMYqxtvDWporCyX70
-	84rwSt0oTMAA80xpOj/eBg2rB1CSdjPc2BtUMsYNqR4zXG0bbCeAkOUmAvvy47R6+3ZnzNikm50
-	/go9hntY8YqJScEWh/8=
-X-Received: by 2002:a05:600c:8882:b0:4a1:813f:2a60 with SMTP id 5b1f17b1804b1-4a1813f2d5fmr38969725e9.11.1791400020224;
-        Wed, 07 Oct 2026 12:07:00 -0700 (PDT)
-Received: from iku.example.org ([2a06:5906:61b:2d00:1b59:c95c:e030:dbb2])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4a1843d8997sm12449275e9.10.2026.10.07.12.06.59
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 07 Oct 2026 12:06:59 -0700 (PDT)
-From: Prabhakar <prabhakar.csengg@gmail.com>
-X-Google-Original-From: Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>
-Cc: linux-renesas-soc@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Prabhakar <prabhakar.csengg+renesas@gmail.com>,
-	Biju Das <biju.das.jz@bp.renesas.com>,
-	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
-	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Subject: [PATCH v2] phy: renesas: rcar-gen3-usb2: Keep OTG VBUS disabled until role is known
-Date: Wed,  7 Oct 2026 20:06:54 +0100
-Message-ID: <20261007190654.452376-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-X-Mailer: git-send-email 2.55.0
-MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261007_120703_185725_9050B96E 
-X-CRM114-Status: GOOD (  22.54  )
+	Wed, 07 Oct 2026 19:20:19 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 6617341422;
+	Wed,  7 Oct 2026 19:20:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 147CA1F000FF;
+	Wed,  7 Oct 2026 19:20:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1791400818;
+	bh=4mssLBrQD53hnbh9qAvHqcX2xALFfZkT9wgjktMEf3s=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=I9RuJEpOCi5LaCIKN0uGhcLppnMnk+A/VNklSeGdb9hFU3E++BE14rkxeEZm1T0P1
+	 ikrfcRigG3dvmbxwkHmiZvEew/TnBuZdyxCox4+1PiNP/vVxfHwj2IjhtRRd0YeRmP
+	 xUIj17QZrPCCkg463vW2fsRcw2shwYBDk0GjuZ0xtqlEHXOQB1JgZe25/JmXqdof6h
+	 XStR3zzsEqqM90xEk9jEr8GhHPjBPdTu+fl22/m3ImvmaxhUAf/G8F7gkNULgHjEa1
+	 /1R7FBdrcipCbRbTJqzgY9cFpnmAKFKReuITtPTnEhn9bcxBb1xwyqNo6WD+ahG2GI
+	 DGBMvCgi+Q9WA==
+Message-ID: <sashiko-outbox-163308@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v2] phy: renesas: rcar-gen3-usb2: Keep OTG VBUS disabled
+ until role is known
+To: Prabhakar <prabhakar.csengg@gmail.com>
+Cc: olteanv@gmail.com, linux-phy@lists.infradead.org, vkoul@kernel.org, neil.armstrong@linaro.org, wsa+renesas@sang-engineering.com
+In-Reply-To: <20261007190654.452376-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+References: <20261007190654.452376-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Date: Wed, 07 Oct 2026 19:20:17 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,135 +62,77 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-
-On OTG channels of SoCs without ADP control, the VBUS regulator is
-acquired with devm_regulator_get_exclusive() and its output is switched
-by rcar_gen3_enable_vbus_ctrl() using regulator_hardware_enable() once
-the port role is known.
-
-The helper acquiring the regulator has the following problems:
-
-- The internal regulator is unconditionally enabled at probe, so VBUS
-  is driven before the port role is known. If the port is connected to
-  an external host this can back-power it.
-
-- regulator_get_exclusive() hands the consumer an enable reference if
-  the regulator is already enabled, for example by the bootloader. The
-  unconditional regulator_enable() then takes a second reference while
-  only one is released on unbind, leaving the regulator enabled and
-  triggering the WARN_ON() in _regulator_put().
-
-Fix this by making sure the driver always holds exactly one reference
-to the regulator: reuse the reference handed over by the exclusive get
-if the regulator is already enabled, and call regulator_enable()
-otherwise. Register the disable action in both cases, then turn off the
-physical VBUS output with regulator_hardware_enable() until the port
-role is established. Enabling a disabled regulator to take the
-reference may briefly drive VBUS during probe; this cannot be avoided
-with the regulator API.
-
-Rename the regulator helper to reflect that it acquires the regulator
-without directly enabling its physical VBUS output.
-
-Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
----
-v1->v2:
-- regulator_enable() is only called if the regulator is not already enabled,
-  ensuring exactly one reference is held.
-- Dropped enable parameter from the function
-- Renamed function rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable()
-  to rcar_gen3_phy_usb2_vbus_regulator_get_exclusive()
-- Updated commit message
----
- drivers/phy/renesas/phy-rcar-gen3-usb2.c | 35 +++++++++++++++++-------
- 1 file changed, 25 insertions(+), 10 deletions(-)
-
-diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-index b5ba751805aa..3481505dea2e 100644
---- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-+++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-@@ -1114,8 +1114,7 @@ static void rcar_gen3_phy_usb2_vbus_disable_action(void *data)
- 	regulator_disable(vbus);
- }
- 
--static int rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable(struct rcar_gen3_chan *channel,
--								  bool enable)
-+static int rcar_gen3_phy_usb2_vbus_regulator_get_exclusive(struct rcar_gen3_chan *channel)
- {
- 	struct device *dev = channel->dev;
- 	int ret;
-@@ -1133,17 +1132,35 @@ static int rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable(struct rcar_ge
- 		return 0;
- 	}
- 
--	if (enable) {
-+	ret = regulator_is_enabled(channel->vbus);
-+	if (ret < 0)
-+		return ret;
-+
-+	if (!ret) {
- 		ret = regulator_enable(channel->vbus);
- 		if (ret)
- 			return ret;
- 	}
- 
--	if (regulator_is_enabled(channel->vbus))
--		return devm_add_action_or_reset(dev, rcar_gen3_phy_usb2_vbus_disable_action,
--						channel->vbus);
-+	/*
-+	 * An exclusive get of an enabled regulator already holds a reference, so
-+	 * add a cleanup action to disable it when the device is released.
-+	 */
-+	ret = devm_add_action_or_reset(dev, rcar_gen3_phy_usb2_vbus_disable_action,
-+				       channel->vbus);
-+	if (ret)
-+		return ret;
- 
--	return 0;
-+	/*
-+	 * The regulator is enabled only so that the regulator core holds a
-+	 * reference to it. Do not drive VBUS until the port's role is known;
-+	 * rcar_gen3_enable_vbus_ctrl() switches it from then on.
-+	 *
-+	 * The VBUS regulator used on these SoCs implement the .enable/.disable
-+	 * ops, so regulator_hardware_enable() cannot fail with -EOPNOTSUPP here
-+	 * and no special handling for it is needed.
-+	 */
-+	return regulator_hardware_enable(channel->vbus, false);
- }
- 
- static int rcar_gen3_phy_usb2_vbus_regulator_register(struct rcar_gen3_chan *channel)
-@@ -1151,7 +1168,6 @@ static int rcar_gen3_phy_usb2_vbus_regulator_register(struct rcar_gen3_chan *cha
- 	struct device *dev = channel->dev;
- 	struct regulator_config rcfg = { .dev = dev, };
- 	struct regulator_dev *rdev;
--	bool enable = false;
- 
- 	rcfg.of_node = of_get_available_child_by_name(dev->of_node,
- 						      "vbus-regulator");
-@@ -1165,10 +1181,9 @@ static int rcar_gen3_phy_usb2_vbus_regulator_register(struct rcar_gen3_chan *cha
- 					     "Failed to create vbus-regulator\n");
- 
- 		channel->otg_internal_reg = true;
--		enable = true;
- 	}
- 
--	return rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable(channel, enable);
-+	return rcar_gen3_phy_usb2_vbus_regulator_get_exclusive(channel);
- }
- 
- static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
--- 
-2.55.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIHBoeTogcmVuZXNhczog
+UHJvYmUgZmFpbHMgd2l0aCAtRU9QTk9UU1VQUCBmb3IgZ2VuZXJpYyBWQlVTIHJlZ3VsYXRvcnMK
+LSBbTWVkaXVtXSBwaHk6IHJlbmVzYXM6IGRhbmdsaW5nIHJlZ3VsYXRvciBlbmFibGUgcmVmZXJl
+bmNlIG9uIHJlZ3VsYXRvcl9pc19lbmFibGVkIGZhaWx1cmUKLS0KCmNvbW1pdCBhOTVlNDNjYzg2
+ZDc5ZjE2ZjQxOGViYjg3NzY4N2MyZDMwMjQyNjBlCkF1dGhvcjogTGFkIFByYWJoYWthciA8cHJh
+Ymhha2FyLm1haGFkZXYtbGFkLnJqQGJwLnJlbmVzYXMuY29tPgoKcGh5OiByZW5lc2FzOiByY2Fy
+LWdlbjMtdXNiMjogS2VlcCBPVEcgVkJVUyBkaXNhYmxlZCB1bnRpbCByb2xlIGlzIGtub3duCgpU
+aGlzIGNvbW1pdCBhZGRyZXNzZXMgYW4gaXNzdWUgb24gU29DcyB3aXRob3V0IEFEUCBjb250cm9s
+IHdoZXJlIHRoZSBWQlVTCnJlZ3VsYXRvciB3YXMgdW5jb25kaXRpb25hbGx5IGVuYWJsZWQgYXQg
+cHJvYmUsIHBvdGVudGlhbGx5IGJhY2stcG93ZXJpbmcgYW4KZXh0ZXJuYWwgaG9zdC4gSXQgcmV1
+c2VzIHRoZSByZWZlcmVuY2UgaGFuZGVkIG92ZXIgYnkgYW4gZXhjbHVzaXZlIGdldCBpZiB0aGUK
+cmVndWxhdG9yIGlzIGFscmVhZHkgZW5hYmxlZCwgcmVnaXN0ZXJzIGEgZGV2bSBjbGVhbnVwIGFj
+dGlvbiwgYW5kIHVzZXMKcmVndWxhdG9yX2hhcmR3YXJlX2VuYWJsZSgpIHRvIHR1cm4gb2ZmIHRo
+ZSBwaHlzaWNhbCBWQlVTIG91dHB1dCB1bnRpbCB0aGUKcG9ydCByb2xlIGlzIGtub3duLgoKPiBk
+aWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcmVuZXNhcy9waHktcmNhci1nZW4zLXVzYjIuYyBiL2Ry
+aXZlcnMvcGh5L3JlbmVzYXMvcGh5LXJjYXItZ2VuMy11c2IyLmMKPiBpbmRleCBiNWJhNzUxODA1
+YWFlLi4zNDgxNTA1ZGVhMmU4IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L3JlbmVzYXMvcGh5
+LXJjYXItZ2VuMy11c2IyLmMKPiArKysgYi9kcml2ZXJzL3BoeS9yZW5lc2FzL3BoeS1yY2FyLWdl
+bjMtdXNiMi5jClsgLi4uIF0KPiBAQCAtMTEzMywxNyArMTEzMiwzNSBAQCBzdGF0aWMgaW50IHJj
+YXJfZ2VuM19waHlfdXNiMl92YnVzX3JlZ3VsYXRvcl9nZXRfZXhjbHVzaXZlX2VuYWJsZShzdHJ1
+Y3QgcmNhcl9nZQo+ICAJCXJldHVybiAwOwo+ICAJfQo+ICAKPiAtCWlmIChlbmFibGUpIHsKPiAr
+CXJldCA9IHJlZ3VsYXRvcl9pc19lbmFibGVkKGNoYW5uZWwtPnZidXMpOwo+ICsJaWYgKHJldCA8
+IDApCj4gKwkJcmV0dXJuIHJldDsKCltTZXZlcml0eTogTWVkaXVtXQpJZiBkZXZtX3JlZ3VsYXRv
+cl9nZXRfZXhjbHVzaXZlKCkgYWNxdWlyZWQgYSByZWd1bGF0b3IgdGhhdCB3YXMgYWxyZWFkeQpl
+bmFibGVkIChlLmcuIGJ5IHRoZSBib290bG9hZGVyKSwgdGhlIHJlZ3VsYXRvciBjb3JlIGltcGxp
+Y2l0bHkgc2V0cyB0aGUKZW5hYmxlX2NvdW50IHRvIDEuIAoKSWYgcmVndWxhdG9yX2lzX2VuYWJs
+ZWQoKSB0aGVuIGZhaWxzIGR1ZSB0byBhbiBpbnRlcm1pdHRlbnQgSTJDIGNvbW11bmljYXRpb24K
+ZXJyb3IgYW5kIHdlIHJldHVybiBlYXJseSBoZXJlLCBkb2VzIHRoaXMgbGVhayB0aGUgZW5hYmxl
+IHJlZmVyZW5jZSBzaW5jZSB3ZQpieXBhc3NlZCB0aGUgcmVnaXN0cmF0aW9uIG9mIHRoZSBkZXZt
+X2FkZF9hY3Rpb25fb3JfcmVzZXQoKSBkaXNhYmxlIGFjdGlvbgpiZWxvdz8gCgpUaGlzIHVuYmFs
+YW5jZWQgY291bnQgY291bGQgdHJpZ2dlciBhIFdBUk5fT04oKSBpbiB0aGUgcmVndWxhdG9yIGNv
+cmUgZHVyaW5nCnJlZ3VsYXRvcl9wdXQoKSB3aGVuIGRldnJlcyB0ZWFycyBkb3duIHRoZSBwcm9i
+ZSBzdGF0ZS4KCj4gKwo+ICsJaWYgKCFyZXQpIHsKPiAgCQlyZXQgPSByZWd1bGF0b3JfZW5hYmxl
+KGNoYW5uZWwtPnZidXMpOwo+ICAJCWlmIChyZXQpCj4gIAkJCXJldHVybiByZXQ7Cj4gIAl9Cj4g
+IAo+IC0JaWYgKHJlZ3VsYXRvcl9pc19lbmFibGVkKGNoYW5uZWwtPnZidXMpKQo+IC0JCXJldHVy
+biBkZXZtX2FkZF9hY3Rpb25fb3JfcmVzZXQoZGV2LCByY2FyX2dlbjNfcGh5X3VzYjJfdmJ1c19k
+aXNhYmxlX2FjdGlvbiwKPiAtCQkJCQkJY2hhbm5lbC0+dmJ1cyk7Cj4gKwkvKgo+ICsJICogQW4g
+ZXhjbHVzaXZlIGdldCBvZiBhbiBlbmFibGVkIHJlZ3VsYXRvciBhbHJlYWR5IGhvbGRzIGEgcmVm
+ZXJlbmNlLCBzbwo+ICsJICogYWRkIGEgY2xlYW51cCBhY3Rpb24gdG8gZGlzYWJsZSBpdCB3aGVu
+IHRoZSBkZXZpY2UgaXMgcmVsZWFzZWQuCj4gKwkgKi8KPiArCXJldCA9IGRldm1fYWRkX2FjdGlv
+bl9vcl9yZXNldChkZXYsIHJjYXJfZ2VuM19waHlfdXNiMl92YnVzX2Rpc2FibGVfYWN0aW9uLAo+
+ICsJCQkJICAgICAgIGNoYW5uZWwtPnZidXMpOwo+ICsJaWYgKHJldCkKPiArCQlyZXR1cm4gcmV0
+Owo+ICAKPiAtCXJldHVybiAwOwo+ICsJLyoKPiArCSAqIFRoZSByZWd1bGF0b3IgaXMgZW5hYmxl
+ZCBvbmx5IHNvIHRoYXQgdGhlIHJlZ3VsYXRvciBjb3JlIGhvbGRzIGEKPiArCSAqIHJlZmVyZW5j
+ZSB0byBpdC4gRG8gbm90IGRyaXZlIFZCVVMgdW50aWwgdGhlIHBvcnQncyByb2xlIGlzIGtub3du
+Owo+ICsJICogcmNhcl9nZW4zX2VuYWJsZV92YnVzX2N0cmwoKSBzd2l0Y2hlcyBpdCBmcm9tIHRo
+ZW4gb24uCj4gKwkgKgo+ICsJICogVGhlIFZCVVMgcmVndWxhdG9yIHVzZWQgb24gdGhlc2UgU29D
+cyBpbXBsZW1lbnQgdGhlIC5lbmFibGUvLmRpc2FibGUKPiArCSAqIG9wcywgc28gcmVndWxhdG9y
+X2hhcmR3YXJlX2VuYWJsZSgpIGNhbm5vdCBmYWlsIHdpdGggLUVPUE5PVFNVUFAgaGVyZQo+ICsJ
+ICogYW5kIG5vIHNwZWNpYWwgaGFuZGxpbmcgZm9yIGl0IGlzIG5lZWRlZC4KPiArCSAqLwo+ICsJ
+cmV0dXJuIHJlZ3VsYXRvcl9oYXJkd2FyZV9lbmFibGUoY2hhbm5lbC0+dmJ1cywgZmFsc2UpOwoK
+W1NldmVyaXR5OiBIaWdoXQpEb2VzIHRoaXMgYWN0dWFsbHkgZmFpbCBwcm9iZSB1bmNvbmRpdGlv
+bmFsbHkgd2l0aCAtRU9QTk9UU1VQUCBmb3IgZ2VuZXJpYwpWQlVTIHJlZ3VsYXRvcnM/CgpVcHN0
+cmVhbSBkZXZpY2UgdHJlZXMgbGlrZSByOWEwN2cwNDRjMi1odW1taW5nYm9hcmQtcmlwcGxlLmR0
+cyB1c2UKcmVuZXNhcyxyemcybC11c2IyLXBoeSAod2hpY2ggc2V0cyBub19hZHBfY3RybCA9IHRy
+dWUpIGFuZCBtYXAgdmJ1cy1zdXBwbHkgdG8KYSBnZW5lcmljIEdQSU8gcmVndWxhdG9yLWZpeGVk
+ICh2YnVzMSkuCgpGb3IgdGhlc2UgZ2VuZXJpYyByZWd1bGF0b3JzLCBmaXhlZF92b2x0YWdlX29w
+cyBkb2VzIG5vdCBwcm92aWRlIGV4cGxpY2l0Ci5lbmFibGUvLmRpc2FibGUgY2FsbGJhY2tzIHNp
+bmNlIEdQSU9zIGFyZSBoYW5kbGVkIGludGVybmFsbHkgYnkgdGhlIHJlZ3VsYXRvcgpjb3JlLiBJ
+biB0aGlzIGNhc2UsIHJlZ3VsYXRvcl9oYXJkd2FyZV9lbmFibGUoKSByZXR1cm5zIC1FT1BOT1RT
+VVBQIGFuZCB3b3VsZApjYXVzZSByY2FyX2dlbjNfcGh5X3VzYjJfcHJvYmUoKSB0byB1bmNvbmRp
+dGlvbmFsbHkgZmFpbC4KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28u
+ZGV2LyMvcGF0Y2hzZXQvMjAyNjEwMDcxOTA2NTQuNDUyMzc2LTEtcHJhYmhha2FyLm1haGFkZXYt
+bGFkLnJqQGJwLnJlbmVzYXMuY29tP3BhcnQ9MQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QK
+bGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
