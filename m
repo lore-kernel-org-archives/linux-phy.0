@@ -4,63 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81EA8CA6007
-	for <linux-phy@archiver.kernel.org>; Thu,  8 Oct 2026 11:28:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E96DCA6007
+	for <linux-phy@archiver.kernel.org>; Thu,  8 Oct 2026 11:39:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XO6gRBY9lOj89o+JGSywYbrneYXO58yM5UVTt4CmNko=; b=TQcMU7eWqac55O
-	VuVr0K+cq7sb4N6aS+TSMtY4K1dISdac51/p/xQvJgOJN4ACWby7n9DJxKwAVfHzZMmqo0eRkUsau
-	aPuhbJQLZa9M/dppNHVPFQwsz5x4bUrk+Arls54jYhpve5Z58op7RzHRanTGABOOIwmsDR3ZVLChK
-	czdLfXrNf6JfWUTtvUEFCOJvjcQO+tDgizONriynGZzdlO4E5fHBcznqXPSUaoy3aG8Rp6ewGIgLw
-	83pkba26+3r5t3mm1eCadDEBVpc69WeK4xy0FqFsSlpHDKUrWmT7BgkURAS1KGzqRfpZnJStNgOk0
-	jzMYmJMGS6pSe9wSIJsg==;
+	List-Owner; bh=ziYGnn9a0VAKB4kTpiiYpnSQ3rkBM0/CKJNwdAnQG4Q=; b=cQZr6+9ownbzWN
+	3FlUD+ItcjEYV7cIb6qQTRCqpd2m/pYDaRsTl12ArDBPn9x3OEaOj9OASN67XaFlGyyTQlZlmmtRT
+	OiBlBJAI3+BYNxXbEOyArbJybHHkzY/je0k02B2Ny7YcqlaBYs5VZHKdCcV4VgrHtVpFBBD7imXzr
+	N93mCbZ/o62Plu8CqIt4T3F2E/4k1hbMGQUQHRIILvaZuHqIfnwKlB2ANVTK8dUmbv7YP2XiHX77W
+	iQbWAMdOAvUvWrgTpKRHb6o3tyZJRsjlhpJ4JSLHhy8OChbcNGADI/vRP3HCzGKbNe19RSBKfPX5F
+	DnQ7ROAtsMundh4l6Omw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xEmIp-00000004F47-0vsu;
-	Thu, 08 Oct 2026 11:28:47 +0000
-Received: from mail.aspeedtech.com ([211.20.114.72] helo=twmbx01.aspeedtech.com)
+	id 1xEmTL-00000004GTT-3a7U;
+	Thu, 08 Oct 2026 11:39:39 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xEmIm-00000004Eyu-3yLE;
-	Thu, 08 Oct 2026 11:28:46 +0000
-Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
- (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Thu, 8 Oct
- 2026 19:28:28 +0800
-Received: from [127.0.1.1] (192.168.10.13) by TWMBX01.aspeed.com
- (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
- Transport; Thu, 8 Oct 2026 19:28:28 +0800
-From: Jacky Chou <jacky_chou@aspeedtech.com>
-Date: Thu, 8 Oct 2026 19:28:21 +0800
-Subject: [PATCH 3/3] MAINTAINERS: Add ASPEED PCIe PHY driver
-MIME-Version: 1.0
-Message-ID: <20261008-aspeed_pcie_phy-v1-3-96764937aef0@aspeedtech.com>
+	id 1xEmTL-00000004GTE-0KZZ
+	for linux-phy@lists.infradead.org;
+	Thu, 08 Oct 2026 11:39:39 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 87106438A1;
+	Thu,  8 Oct 2026 11:39:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F09E21F000FF;
+	Thu,  8 Oct 2026 11:39:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1791459578;
+	bh=MEQ/WGt30g3uE836dXb/ot0HcFGDv/bs7yWpwc7rEow=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=HWD0ha+IegfdYhFmuy2rzUEqcaXQXf5QiBo0iEwLisVoLqlOKCnPbiBAK/Rzw8oT/
+	 dNoZGg4IXe1NxUV4oCuwES1tL1D8MSQfaWJTT+DjKpYetAn6zp94LNnYmfekJx1u3d
+	 ZkNsq2ofestTRkMVsXdDo5W627xn8ZXkTGJYNOpec8e3T/E3X0RarggocaojA0fwkg
+	 eOGJ/6RaDXGxJQM+7sSGroZECyoZrF/TgNatNR81C1s8MhV9LX2N6qWO/3v3hJNQgY
+	 esITsreCOD8k4K19DIrZ79g1YyRJ100Cj3JFU5DRjX4aYVyT7DYc3xUqXCk/Q++lse
+	 AU6t7A1G7w3vg==
+Message-ID: <sashiko-outbox-164098@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH 2/3] phy: aspeed: Add ASPEED PCIe PHY driver
+To: "Jacky Chou" <jacky_chou@aspeedtech.com>
+Cc: linux-phy@lists.infradead.org, neil.armstrong@linaro.org, robh@kernel.org, conor+dt@kernel.org, devicetree@vger.kernel.org, vkoul@kernel.org, olteanv@gmail.com
+In-Reply-To: <20261008-aspeed_pcie_phy-v1-2-96764937aef0@aspeedtech.com>
 References: <20261008-aspeed_pcie_phy-v1-0-96764937aef0@aspeedtech.com>
-In-Reply-To: <20261008-aspeed_pcie_phy-v1-0-96764937aef0@aspeedtech.com>
-To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>, "Andrew
- Jeffery" <andrew@codeconstruct.com.au>, Manivannan Sadhasivam
-	<mani@kernel.org>, Ryan Chen <ryan_chen@aspeedtech.com>, Billy Tsai
-	<billy_tsai@aspeedtech.com>
-CC: <linux-aspeed@lists.ozlabs.org>, <linux-phy@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>, Jacky Chou <jacky_chou@aspeedtech.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1791458908; l=878;
- i=jacky_chou@aspeedtech.com; s=20251031; h=from:subject:message-id;
- bh=YHD/I/0JKp9KeOT+Xzp15SjhKbuwAUqqCo+GFOfkoDI=;
- b=GCJ1DAkF3dtg0StyLJYn2Lu/VzaT7HCKTM8mzTXwp5k942BVdvTflXXUroYQt0WOwGHTKAlqK
- o1YRyouBCddBUUGxJUaunwhpIpwZQiAcFqefBaNbn79+q1OYswjPzb8
-X-Developer-Key: i=jacky_chou@aspeedtech.com; a=ed25519;
- pk=8XBx7KFM1drEsfCXTH9QC2lbMlGU4XwJTA6Jt9Mabdo=
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261008_042845_035247_B004A964 
-X-CRM114-Status: UNSURE (   7.03  )
-X-CRM114-Notice: Please train this message.
+ <20261008-aspeed_pcie_phy-v1-2-96764937aef0@aspeedtech.com>
+Date: Thu, 08 Oct 2026 11:39:37 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,43 +62,70 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add maintainer entry for ASPEED PCIe PHY driver.
-
-Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
----
- MAINTAINERS | 8 ++++++++
- 1 file changed, 8 insertions(+)
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 0570815ee980..33a0336110a7 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -4044,6 +4044,14 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/crypto/aspeed,*
- F:	drivers/crypto/aspeed/
- 
-+ASPEED PCIE PHY DRIVER
-+M:	Jacky Chou <jacky_chou@aspeedtech.com>
-+L:	linux-aspeed@lists.ozlabs.org (moderated for non-subscribers)
-+L:	linux-phy@lists.infradead.org
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/phy/aspeed,ast2600-pcie-phy.yaml
-+F:	drivers/phy/aspeed/phy-aspeed-pcie.c
-+
- ASPEED PECI CONTROLLER
- M:	Iwona Winiarska <iwona.winiarska@intel.com>
- L:	linux-aspeed@lists.ozlabs.org (moderated for non-subscribers)
-
--- 
-2.34.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gcGh5OiBhc3BlZWQ6
+IERlc3RydWN0aXZlIG92ZXJ3cml0ZSBvZiBQRUhSX0dMT0JBTCBhbmQgUEVIUl9NSVNDXzVDIHJl
+Z2lzdGVycwotIFtMb3ddIGJ1aWxkOiBtaXNzaW5nIDxsaW51eC9iaXRmaWVsZC5oPiBhbmQgPGxp
+bnV4L2lvLmg+IGNhdXNlcyBDT01QSUxFX1RFU1QgZmFpbHVyZXMKLS0KCmNvbW1pdCBkNmM2ODdh
+ZjA4ZjUyY2U4YzUxMDY4ODNhMGFkYTM3MzUyOGZlMWI4CkF1dGhvcjogSmFja3kgQ2hvdSA8amFj
+a3lfY2hvdUBhc3BlZWR0ZWNoLmNvbT4KCnBoeTogYXNwZWVkOiBBZGQgQVNQRUVEIFBDSWUgUEhZ
+IGRyaXZlcgoKVGhpcyBjb21taXQgaW50cm9kdWNlcyB0aGUgQXNwZWVkIFBDSWUgUEhZIGNvbnRy
+b2xsZXIgZHJpdmVyIGZvcgpBU1QyNjAwLzI3MDAgcGxhdGZvcm1zLiBJdCBhZGRzIEtjb25maWcg
+YW5kIE1ha2VmaWxlIGNoYW5nZXMgYWxvbmdzaWRlCnRoZSBtYWluIGRyaXZlciBjb2RlIGltcGxl
+bWVudGluZyBQSFkgb3BlcmF0aW9ucy4KCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L2FzcGVl
+ZC9waHktYXNwZWVkLXBjaWUuYyBiL2RyaXZlcnMvcGh5L2FzcGVlZC9waHktYXNwZWVkLXBjaWUu
+Ywo+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4gaW5kZXggMDAwMDAwMDAwMDAwMC4uZWIzMDA4ODdi
+NjQ0MQo+IC0tLSAvZGV2L251bGwKPiArKysgYi9kcml2ZXJzL3BoeS9hc3BlZWQvcGh5LWFzcGVl
+ZC1wY2llLmMKPiBAQCAtMCwwICsxLDIzNyBAQAo+ICsvLyBTUERYLUxpY2Vuc2UtSWRlbnRpZmll
+cjogR1BMLTIuMCsKPiArLyoKPiArICogQ29weXJpZ2h0IDIwMjUgQXNwZWVkIFRlY2hub2xvZ3kg
+SW5jLgo+ICsgKi8KPiArCj4gKyNpbmNsdWRlIDxsaW51eC9jbGsuaD4KPiArI2luY2x1ZGUgPGxp
+bnV4L2Vyci5oPgo+ICsjaW5jbHVkZSA8bGludXgvbW9kdWxlLmg+Cj4gKyNpbmNsdWRlIDxsaW51
+eC9wbGF0Zm9ybV9kZXZpY2UuaD4KPiArI2luY2x1ZGUgPGxpbnV4L3BoeS9wY2llLmg+Cj4gKyNp
+bmNsdWRlIDxsaW51eC9waHkvcGh5Lmg+CgpbU2V2ZXJpdHk6IExvd10KQ2FuIHRoaXMgY2F1c2Ug
+YnVpbGQgZmFpbHVyZXMgd2hlbiBDT01QSUxFX1RFU1QgaXMgZW5hYmxlZCBvbiBhcmNoaXRlY3R1
+cmVzCnRoYXQgZG8gbm90IGltcGxpY2l0bHkgaW5jbHVkZSA8bGludXgvYml0ZmllbGQuaD4gYW5k
+IDxsaW51eC9pby5oPj8KClRoZSBGSUVMRF9QUkVQLCBGSUVMRF9NT0RJRlksIHJlYWRsLCBhbmQg
+d3JpdGVsIG1hY3JvcyBhbmQgZnVuY3Rpb25zIGFyZQp1c2VkIHRocm91Z2hvdXQgdGhpcyBmaWxl
+LCBidXQgdGhlaXIgaGVhZGVycyBhcmUgbm90IGV4cGxpY2l0bHkgaW5jbHVkZWQuCgpbIC4uLiBd
+Cj4gK3N0YXRpYyBpbnQgYXN0MjYwMF9waHlfc2V0X21vZGUoc3RydWN0IHBoeSAqcGh5LCBlbnVt
+IHBoeV9tb2RlIG1vZGUsCj4gKwkJCQlpbnQgc3VibW9kZSkKPiArewo+ICsJc3RydWN0IGFzcGVl
+ZF9wY2llX3BoeSAqcGNpZV9waHkgPSBwaHlfZ2V0X2RydmRhdGEocGh5KTsKPiArCj4gKwlzd2l0
+Y2ggKHN1Ym1vZGUpIHsKPiArCWNhc2UgUEhZX01PREVfUENJRV9SQzoKPiArCQl3cml0ZWwoQVNU
+MjYwMF9QT1JUX1RZUEUoMHgzKSwgcGNpZV9waHktPnJlZyArIFBFSFJfR0xPQkFMKTsKCltTZXZl
+cml0eTogTWVkaXVtXQpDb3VsZCB0aGlzIHdyaXRlIHVuaW50ZW50aW9uYWxseSBjbGVhciBvdGhl
+ciBjb25maWd1cmF0aW9uIGJpdHMgaW4gUEVIUl9HTE9CQUw/Ckl0IG92ZXJ3cml0ZXMgdGhlIGVu
+dGlyZSByZWdpc3RlciBpbnN0ZWFkIG9mIHBlcmZvcm1pbmcgYSByZWFkLW1vZGlmeS13cml0ZQpv
+cGVyYXRpb24uCgo+ICsJCWJyZWFrOwo+ICsJZGVmYXVsdDoKPiArCQlkZXZfZXJyKCZwaHktPmRl
+diwgIlVuc3VwcG9ydGVkIHN1Ym1vZGUgJWRcbiIsIHN1Ym1vZGUpOwo+ICsJCXJldHVybiAtRUlO
+VkFMOwo+ICsJfQo+ICsKPiArCXJldHVybiAwOwo+ICt9CgpbIC4uLiBdCj4gK3N0YXRpYyBpbnQg
+YXN0MjcwMF9waHlfc2V0X21vZGUoc3RydWN0IHBoeSAqcGh5LCBlbnVtIHBoeV9tb2RlIG1vZGUs
+Cj4gKwkJCQlpbnQgc3VibW9kZSkKPiArewo+ICsJc3RydWN0IGFzcGVlZF9wY2llX3BoeSAqcGNp
+ZV9waHkgPSBwaHlfZ2V0X2RydmRhdGEocGh5KTsKPiArCXUzMiBjZmdfdmFsOwo+ICsKPiArCXN3
+aXRjaCAoc3VibW9kZSkgewo+ICsJY2FzZSBQSFlfTU9ERV9QQ0lFX1JDOgo+ICsJCXdyaXRlbCgw
+LCBwY2llX3BoeS0+cmVnICsgUEVIUl9NSVNDXzI3OCk7Cj4gKwkJd3JpdGVsKFNFTF9JTlRFUk5B
+TF9SRVNFVCwgcGNpZV9waHktPnJlZyArIFBFSFJfTUlTQ18yODApOwo+ICsJCXdyaXRlbChQT1NU
+RURfREFUQV9DUkVESVRTKDB4YzApIHwgUE9TVEVEX0hFQURFUl9DUkVESVRTKDB4YSksCj4gKwkJ
+ICAgICAgIHBjaWVfcGh5LT5yZWcgKyBQRUhSX01JU0NfNzApOwo+ICsJCXdyaXRlbChDT01QTEVU
+SU9OX0RBVEFfQ1JFRElUUygweDMwKSB8IENPTVBMRVRJT05fSEVBREVSX0NSRURJVFMoMHg4KSwK
+PiArCQkgICAgICAgcGNpZV9waHktPnJlZyArIFBFSFJfTUlTQ183OCk7Cj4gKwkJd3JpdGVsKExP
+Q0FMX1NDQUxFX1NVUCwgcGNpZV9waHktPnJlZyArIFBFSFJfTUlTQ181OCk7Cj4gKwkJd3JpdGVs
+KENPTkZJR19SQ19ERVZJQ0UsIHBjaWVfcGh5LT5yZWcgKyBQRUhSX01JU0NfNUMpOwoKW1NldmVy
+aXR5OiBNZWRpdW1dCkRvZXMgd3JpdGluZyBDT05GSUdfUkNfREVWSUNFIGRpcmVjdGx5IHRvIFBF
+SFJfTUlTQ181QyByaXNrIHplcm9pbmcgb3V0IG90aGVyCmJpdHMgaW4gdGhpcyByZWdpc3Rlcj8K
+CkEgcmVhZC1tb2RpZnktd3JpdGUgcGF0dGVybiBtaWdodCBiZSBuZWVkZWQgaGVyZSwgc2ltaWxh
+ciB0byBob3cgUEVIUl9NSVNDXzYwCmlzIGhhbmRsZWQganVzdCBiZWxvdyB0aGlzLgoKPiArCQlj
+ZmdfdmFsID0gcmVhZGwocGNpZV9waHktPnJlZyArIFBFSFJfTUlTQ182MCk7Cj4gKwkJRklFTERf
+TU9ESUZZKEFTVDI3MDBfUE9SVF9UWVBFX01BU0ssICZjZmdfdmFsLAo+ICsJCQkgICAgIFBPUlRf
+VFlQRV9ST09UKTsKPiArCQl3cml0ZWwoY2ZnX3ZhbCwgcGNpZV9waHktPnJlZyArIFBFSFJfTUlT
+Q182MCk7CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3Bh
+dGNoc2V0LzIwMjYxMDA4LWFzcGVlZF9wY2llX3BoeS12MS0wLTk2NzY0OTM3YWVmMEBhc3BlZWR0
+ZWNoLmNvbT9wYXJ0PTIKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0
+cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LXBoeQo=
