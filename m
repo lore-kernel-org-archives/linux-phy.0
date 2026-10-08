@@ -4,28 +4,28 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0BB5CA6007
-	for <linux-phy@archiver.kernel.org>; Thu,  8 Oct 2026 11:28:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16398CA600E
+	for <linux-phy@archiver.kernel.org>; Thu,  8 Oct 2026 11:28:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:MIME-Version:Message-ID:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0PQsQe5baWbIG7NRHLEJKlFfDQSrBg/bBvwX/FmUvD8=; b=lfrOOb9tkL6UtQ
-	fhdevVjSsO/dbf1lHgfDcHfhvWr3z1p7h8mWVWr+V79ybnZP21k54eQcs0xB9BlmW3DSB/sIY7N7f
-	yPg4T4gkE30lB1hplLezSEXRhXC3dzSOsJEgYZtH96QtM+b6udZ9MEfzvE+3m6TVy+mX9jEMYZrT1
-	EosqoyWfOjoEqembDoAuUF615JdoN0Ah4C7schXU7PZ7JmzsjK1uuS1UJ/hEabR7cIjYVQfjf6XE4
-	g3XJCJIEoCMqFJNthxeKjZ88/kmWFcHBop2FxHd96bBSabzPK4Bzwn4L2GQXqvEXjrZOZPRhJFVlB
-	RAAPQ4aoWRsXTZI6vZPw==;
+	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=X4pglTKxzF3Z8VjZyEWYQfbbwxpL3AzrB59EZnok2qQ=; b=WVkdaDWp1zqgee
+	Q1WknoNR/pKmu39asa6K0nXyJLxMu/enjz/9zcGU+QiZcByb5T+6z3BLSR65xVVMo0UaeymBK1PBr
+	hB0O4mrOPkLPvKd1ztvrQ0nmLJtETXGVrtoyfRsZOhOQg2AwfU167tX/EOFIThCJmcN4QYz4iWCoD
+	lxQku1IzS9vGHc0HMQ2g8l7SNnhB2ODhMV5ld7ibCrcTOH5gqyVJUBr2a9kMNO6fXR3AgKfr338i3
+	2gc0/vc4UiJBbj+36elDEhGV1nyHwPgm3WHyHG+AWnNXTSuc1a+sxznjCHviLt392DZ6Okuu2s7FF
+	hlFv6FbXsJ6snfSB145w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xEmIk-00000004Ezd-1SC6;
-	Thu, 08 Oct 2026 11:28:42 +0000
+	id 1xEmIl-00000004F0c-3AD1;
+	Thu, 08 Oct 2026 11:28:43 +0000
 Received: from mail.aspeedtech.com ([211.20.114.72] helo=twmbx01.aspeedtech.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xEmIh-00000004Eyu-0xi3;
-	Thu, 08 Oct 2026 11:28:40 +0000
+	id 1xEmIj-00000004Eyu-1g4y;
+	Thu, 08 Oct 2026 11:28:42 +0000
 Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
  (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Thu, 8 Oct
@@ -34,14 +34,12 @@ Received: from [127.0.1.1] (192.168.10.13) by TWMBX01.aspeed.com
  (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
  Transport; Thu, 8 Oct 2026 19:28:28 +0800
 From: Jacky Chou <jacky_chou@aspeedtech.com>
-Subject: [PATCH 0/3] phy: aspeed: Add ASPEED PCIe PHY support
-Date: Thu, 8 Oct 2026 19:28:18 +0800
-Message-ID: <20261008-aspeed_pcie_phy-v1-0-96764937aef0@aspeedtech.com>
+Date: Thu, 8 Oct 2026 19:28:19 +0800
+Subject: [PATCH 1/3] dt-bindings: phy: aspeed: Add ASPEED PCIe PHY
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAFJ+x2oC/x3MSwqAIBRG4a3EHSf4CIm2EiGmf3UnJQpRRHtPG
- n6Dcx4qyIxCQ/NQxsmFj71CtQ2Fze8rBMdq0lJbaY0UviQguhQYLm23MJ2yapamtwZUq5Sx8PU
- fx+l9P07DBk1hAAAA
-X-Change-ID: 20260630-aspeed_pcie_phy-34161b03863e
+Message-ID: <20261008-aspeed_pcie_phy-v1-1-96764937aef0@aspeedtech.com>
+References: <20261008-aspeed_pcie_phy-v1-0-96764937aef0@aspeedtech.com>
+In-Reply-To: <20261008-aspeed_pcie_phy-v1-0-96764937aef0@aspeedtech.com>
 To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
 	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>, "Andrew
@@ -52,17 +50,16 @@ CC: <linux-aspeed@lists.ozlabs.org>, <linux-phy@lists.infradead.org>,
 	<devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
 	<linux-kernel@vger.kernel.org>, Jacky Chou <jacky_chou@aspeedtech.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1791458908; l=1483;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1791458908; l=1816;
  i=jacky_chou@aspeedtech.com; s=20251031; h=from:subject:message-id;
- bh=iu4Zl2XLhk1c2sygQvsZ6Yp6z//xHF44lf3a3D+enh0=;
- b=WEva4gZIureOwV8wbKrsmtAfd2JtufHc6mn7kCstj8/nqIh8PqvVumxtDKzG2pskx3VXMDz6L
- iHViDNsxYxrADPJ3jP7f1HmbExdLIosqCQl8al7SFuRz5mUjoDKKNM/
+ bh=R1Rp45+kmKh9eM16JpYNajIX3lEUCLAV021oQUooi3w=;
+ b=QtvZBxEegbrYy4Tja19fXhxOY7/V57v5Nz2LD/pFCWnOWiUGwKQFAr0KYu1YOiqpnntDbDZJ3
+ Ma+fzCLojZEA0HqMt0u3AENCL8onaoZIpNyQfxhwXgOE4EnZ8YTEny3
 X-Developer-Key: i=jacky_chou@aspeedtech.com; a=ed25519;
  pk=8XBx7KFM1drEsfCXTH9QC2lbMlGU4XwJTA6Jt9Mabdo=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261008_042839_273545_D1F2CE6A 
-X-CRM114-Status: UNSURE (   9.70  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20261008_042841_444084_4F9257A4 
+X-CRM114-Status: GOOD (  10.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,40 +76,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the ASPEED PCIe PHY binding and driver for AST2600 and AST2700
-SoCs. The PHY provides the physical layer used by the PCIe controller
-when it is configured to run in root complex mode.
+Introduce device-binding for ASPEED AST2600/2700 PCIe PHY.
+The PHY provides the physical layer used by the PCIe
+controller when operating in root complex mode.
 
-The driver registers an ASPEED PCIe PHY provider through the generic PHY
-framework and programs the SoC-specific PEHR registers from set_mode().
-For AST2600 this selects the root complex port type. For AST2700 this
-also configures the posted/completion credit values, local scaling,
-device type, internal reset selection, and downstream port setting
-needed by the controller.
-
-This series also adds the devicetree binding for the PHY provider and a
-MAINTAINERS entry for the ASPEED PCIe PHY driver.
+Describe the compatible strings, register range, clocks and
+phy-cells value required by the PHY provider.
 
 Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
 ---
-Jacky Chou (3):
-      dt-bindings: phy: aspeed: Add ASPEED PCIe PHY
-      phy: aspeed: Add ASPEED PCIe PHY driver
-      MAINTAINERS: Add ASPEED PCIe PHY driver
+ .../bindings/phy/aspeed,ast2600-pcie-phy.yaml      | 49 ++++++++++++++++++++++
+ 1 file changed, 49 insertions(+)
 
- .../bindings/phy/aspeed,ast2600-pcie-phy.yaml      |  49 +++++
- MAINTAINERS                                        |   8 +
- drivers/phy/aspeed/Kconfig                         |  12 +-
- drivers/phy/aspeed/Makefile                        |   1 +
- drivers/phy/aspeed/phy-aspeed-pcie.c               | 237 +++++++++++++++++++++
- 5 files changed, 306 insertions(+), 1 deletion(-)
----
-base-commit: ea01f446f0682a5e7bd7a275889a890b7e0c6e02
-change-id: 20260630-aspeed_pcie_phy-34161b03863e
+diff --git a/Documentation/devicetree/bindings/phy/aspeed,ast2600-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/aspeed,ast2600-pcie-phy.yaml
+new file mode 100644
+index 000000000000..686b2e3d9457
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/aspeed,ast2600-pcie-phy.yaml
+@@ -0,0 +1,49 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/aspeed,ast2600-pcie-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: ASPEED PCIe PHY
++
++maintainers:
++  - Jacky Chou <jacky_chou@aspeedtech.com>
++
++description:
++  The ASPEED PCIe PHY provides the physical layer functionality for PCIe
++  controllers in the SoC.
++
++properties:
++  compatible:
++    items:
++      - enum:
++          - aspeed,ast2600-pcie-phy
++          - aspeed,ast2700-pcie-phy
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++    description:
++      Fixed 100MHz reference clock provided on the board.
++
++  "#phy-cells":
++    const: 0
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    phy@1e6ed200 {
++      compatible = "aspeed,ast2600-pcie-phy";
++      reg = <0x1e6ed200 0x100>;
++      clocks = <&pcie_refclk>;
++      #phy-cells = <0>;
++    };
 
-Best regards,
 -- 
-Jacky Chou <jacky_chou@aspeedtech.com>
+2.34.1
 
 
 -- 
