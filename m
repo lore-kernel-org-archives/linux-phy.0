@@ -4,64 +4,134 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C884DCA6019
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Oct 2026 14:44:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5DCFCA6019
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Oct 2026 14:59:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=wogTADwOD8joNNK1/yF3jYeR17mV2ACk7Of7vJJXUZE=; b=kqKK+/rYpWXcgt0TYG6j8aM1I6
-	RsB5pkPJh9bH5ba7+l16WjBCGiDA0atMoCW0o2JKQ46k8i/PtQC4tBc1FaM9D8zBsudkiNEEJzIgt
-	V3Lc/ZsLBfbQy+0m3Ky42dJK0Mi+IbVPXXWd77RLzVfNu0aoTl/pk/hPukk59BHKm7xdsi9WX0fvZ
-	GXo8bZFf4Lby0ZOYmB5FnyjPdXOff8a4K4TyhbY5H0lTH2T3zA406BZo5sy4RLpFvUlnpuLTFobcY
-	D5eq91Vg6VOcgE/aeZOG3fc/zREKelYysW+9FA4rvbCVMkZLJs6p9zHRkBYQ7zjt6WfmxmBa23v+p
-	9Fn3+7GA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/nygn3tgUJgfWfP0MQ9JBr3Xbx7CfB0DlMkVACSPzVE=; b=mXtIJhkqOTf3mz
+	cMqaG4fifuFOtqGkWfPzQQXOXP1bPsLzyRD2+jEBzb9OJJuO7B8Wo9zPzarv+itAUpBjmqNGYludO
+	qECml6mf0oLCqdc0Zka/KIH74ffKB9T10P7MZ6U+RkQLjhgJraGFJwI19IG+fR7C19GpFAsMb2tuK
+	u3geqWpic36wWF/0ELsrVTWVcklT/J8iaer4e8x9y7OjPuX1cABKzDM+NQTpYNbOm+LIwTQ/7tpta
+	Y+gARSU/zq6bvMgNIL9UrFzkMDirkuK3V/RiNsob9+Ob7pXcaQWm+6fUvWE0riEUhD0nrryWLhgwI
+	EngzYkZLus8rfxLkekDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xFBpm-00000006Tf5-28b7;
-	Fri, 09 Oct 2026 14:44:30 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xFC4d-00000006Vd8-46r6;
+	Fri, 09 Oct 2026 14:59:51 +0000
+Received: from mail-japanwestazlp170100003.outbound.protection.outlook.com ([2a01:111:f403:c407::3] helo=OS0P286CU011.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xFBpl-00000006Teo-41VK;
-	Fri, 09 Oct 2026 14:44:29 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 4E1E943C62;
-	Fri,  9 Oct 2026 14:44:29 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7AB5C1F000FF;
-	Fri,  9 Oct 2026 14:44:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791557069;
-	bh=2aemY+UGhY60/8ubgvUnN8kpzs04w1+otIMRTikkqSA=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=NgAR/+ie4+daensuw6LnghvUqohOWB2OOndjQ6APqUGKaRf696uyKQDXhRFLJm1Sg
-	 DSg+yB5xqnwSFvc/tGJlgQt1qjvcDGn7d0suHXwYE8CUDpS1k2vFm669OSb2eFw1ww
-	 El2fGJYM4N6E81y6MXCvmG34JFlfcm0RSkK4nag5xqr7BilubV28run/XYfLpLgv5g
-	 plMRiMz0DtTaadbWBBcmRhRMQ8SzJUgXoMndv1bkHBi4MHtbpwJ5uFhIl3pJeuONCD
-	 ZJpS1wtHwEF1ZqbPmKC5oPATUQ3PJNsS9pHKBC9XlHs13o8co3gNivgpF573To/dFj
-	 hXYhPMNCZcYng==
-Date: Fri, 9 Oct 2026 15:44:19 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Icenowy Zheng <zhengxingda@iscas.ac.cn>
-Cc: Vinod Koul <vkoul@kernel.org>,
+	id 1xFC4a-00000006Vc7-1F4e
+	for linux-phy@lists.infradead.org;
+	Fri, 09 Oct 2026 14:59:50 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=kntDntTUdyCTagg92OwT58RebASuIPqMTSV9wqpDNr3AyJH3Shaxgxn1huy3sZS8k8Uh63h/uuWE8P9f8z7S7/wgOPgV3SFn7XmExJQDbNXgrsItMi/L0coNQ9UbjLArv9tZJ8fkgCg1gX1ENGQyI7xklrhRsuZifxwEYADHNtYL16+rcb+LDBnZ1JSUWBNqjXFgk/vKEaK+yTKFS08Rqa0acX6jCUbmkCxq7eY+H9+li65l//itWCs+Siur27v5QeTvm/HNmeqyO1d8+YcKserMUqvO+pV9Qnzr/enaWlQdBWp0df7un7nDF07AnKIYyrDUtXnad5JfMqt19G9mYg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=icEMLBHysAbcAW7nlu4dufUZug+GwG2TFD5B4bM+jNc=;
+ b=BEsvKEY6tzfIGz56YwaL1Pye3HBTSZRMux0l8j6HmuhusN6bm3dUeCRpcsnXfx8kM+q7M8daAWSD72eAiniw31tur+SqUJBvpwW8PQOEHJWJMnwCctqP7Az4z5hZQ4jYy/7t+jKQAG6Gxb9J3TjDg0ocCTN9yUqtvsqTzekGM6hJKj2QOUruF+y2KzhaONwx8zs7Jg2aS3iHy7Uv6HfpIx7Qm9XbJHzp0LSREvrcjaM2roskQjIC1yALCLw8wGlCLMi4cNvNm6AkcAnZd7Q+6+AfxlHNBTAIWbcL/8WSA9VnUu80hqIGlj19IZIUE8QjPdUKvKWQGSTNCgZMbHwN0Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
+ header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=icEMLBHysAbcAW7nlu4dufUZug+GwG2TFD5B4bM+jNc=;
+ b=hexDpARPLXFQbnvkEOvwJMfWCFBnaXZ1zA7/kBkihK4+E7o0PfyXfOet5LVfTlXXm4x6PZMNX5DEknu4qkz5RKIFb2NWTR88imfBENHRuaClB58Swf+oZQuuzqzCFx1GsEvxivTNCG8sT1iPdCYDgBLOmERJUBS/v5R2LFVWmDI=
+Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=bp.renesas.com;
+Received: from TYRPR01MB13588.jpnprd01.prod.outlook.com (2603:1096:405:18d::7)
+ by TYRPR01MB12608.jpnprd01.prod.outlook.com (2603:1096:405:1b3::8) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.496.17; Fri, 9 Oct
+ 2026 14:59:38 +0000
+Received: from TYRPR01MB13588.jpnprd01.prod.outlook.com
+ ([fe80::2f5b:8560:48ed:3828]) by TYRPR01MB13588.jpnprd01.prod.outlook.com
+ ([fe80::2f5b:8560:48ed:3828%4]) with mapi id 15.21.0496.015; Fri, 9 Oct 2026
+ 14:59:38 +0000
+Date: Fri, 9 Oct 2026 16:59:15 +0200
+From: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+To: Prabhakar <prabhakar.csengg@gmail.com>
+Cc: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+	Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
 	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>, Wei Fu <wefu@redhat.com>,
-	Drew Fustini <dfustini@tenstorrent.com>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org,
-	Icenowy Zheng <uwu@icenowy.me>, Han Gao <rabenda.cn@gmail.com>
-Subject: Re: [PATCH v3 1/2] dt-bindings: phy: add binding for T-Head TH1520
- USB PHY
-Message-ID: <20261009-8fbfc1b31a4f57046e1735e4@squawk>
-References: <20261009090444.3319517-1-zhengxingda@iscas.ac.cn>
- <20261009090444.3319517-2-zhengxingda@iscas.ac.cn>
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>,
+	linux-renesas-soc@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Prabhakar <prabhakar.csengg+renesas@gmail.com>,
+	Biju Das <biju.das.jz@bp.renesas.com>,
+	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
+	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: Re: [PATCH v2] phy: renesas: rcar-gen3-usb2: Keep OTG VBUS disabled
+ until role is known
+Message-ID: <askBQzpjiQX0CY0e@tom-desktop>
+References: <20261007190654.452376-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Content-Disposition: inline
+In-Reply-To: <20261007190654.452376-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+X-ClientProxiedBy: FR3P281CA0153.DEUP281.PROD.OUTLOOK.COM
+ (2603:10a6:d10:a2::11) To TYRPR01MB13588.jpnprd01.prod.outlook.com
+ (2603:1096:405:18d::7)
 MIME-Version: 1.0
-In-Reply-To: <20261009090444.3319517-2-zhengxingda@iscas.ac.cn>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: TYRPR01MB13588:EE_|TYRPR01MB12608:EE_
+X-MS-Office365-Filtering-Correlation-Id: 9448e9aa-e5e2-40a5-d562-08df2615f03b
+X-LD-Processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|7416014|376014|1800799024|52116014|366016|3023799007|6133799003|22082099003|18002099003|10067099003|11063799006|56012099006|38350700014;
+X-Microsoft-Antispam-Message-Info: q/ef5NJi4eu3xuqtsiUzvrvlpsscNZAB3MEJtEEgAm7WnF2+1TetcaSFC1mzT5DNCdcQ1ZQS0u8PaanCX/vYe5Dnl0fFbsTDlr8HnCqkhOWeb+XVfVT6XDOt9MrJ4zXgWaK7XKXNaLD2MOHn5NWXPUF96+Dk/DkHpwyvqiZMgPeUwyMoQ6jgI9bNENynaWBcKoedFjfIQ9CjDvfw1aGX8sJ50F5Sf3bzeOyfMBZ4M7DuMdBwSn8mNHqY0gEEC8XjIM+n0a05fGhIiV2viILsVi98bdz0EGbu6gIHHQAs26mtvbjgKOV7YQ+fbwu1v0yVrXsQTSxwZZOAr8Ojpnp6qGeIetStTPnCAXpWM2eoLimYQsFrWvwXAChXHohsT1OWIePQ6rDv0Wy16Fi40ThQSrAB85EZvnQpck7/UfXf7o+9Z2eUtlWM0uflT5JkeCzOSeVVAov82aFnzaL2myjca+ti2cq5WteqKgvQUgbm2s59Vq6j1TS1uXNg4EZ17eg9TeSIdK/K69YpfoiaBX0sbIHaHGKJn7ZN8b+wPg2raWShzmsrACyK0X+LxSlfPvRMtna+Q0oCNBt7hy+1+rcovi7xXVhSjhEg0iT9rYOTgfeGqtJZ8yTXB15w6RHp5mRBmIRxjpcWRRkacV9MdfPqnxzeBGOJPu2RfaYhLMNUXCAUTfYOMXAiDHlBIb7/EwWnhB/msRlONV3OM96VoBTZfJdZP+HaA05T7BlGNYWkv28=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYRPR01MB13588.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(7416014)(376014)(1800799024)(52116014)(366016)(3023799007)(6133799003)(22082099003)(18002099003)(10067099003)(11063799006)(56012099006)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?r/IXCLDOwIZ9574471S6hcLkJHH0F9O/C4l9jtbR1aJWf4KSws5FN0ReoFhZ?=
+ =?us-ascii?Q?eKrz+FTujq7XacqZq3oFV5ksKxF8CyZ3rDebzCzkIQLXyE9q16HlaQtVCPTU?=
+ =?us-ascii?Q?NVrs9jiDMp0K5XK6h9Iw3QwAMlllo0jiodlfOcRd05jwy/mNNjPF9qrPwSOY?=
+ =?us-ascii?Q?5ynZkKAYMxjNIQX50Hkc33At87Fzf4yR/G9LWq8ZntUHLGWPtBhTH9oOxe1u?=
+ =?us-ascii?Q?87d8itJ5sfzyaRVKfiqYzuaxPQzFygsOV9vW2lDxJhlCE1j0Zk83DSdChaL9?=
+ =?us-ascii?Q?qiCltv9+8NCe7U9Iwwpf9EWcan0roWrLYo0vu/vygUhtFE7/Nd8p08eBckhv?=
+ =?us-ascii?Q?FKPwxyrs4GeT+Zj4NfXR+ZYd7Vy3doMTNNnpxFl6xS07ZwBAy6LIhOt3wGqq?=
+ =?us-ascii?Q?p1Sb/SkN32Jr+RUqS5cabZAfckdWRGiggT56rhNZCxMUCouA5I4oVajJHmTY?=
+ =?us-ascii?Q?wkpIqPGUybeZwrQUJgiewmNt5fzN5A0D05oEvmKzBqUu6XAtyetXQ7A5uLBV?=
+ =?us-ascii?Q?HHNAdEDNmab3f1cwuKZ4/RPSZbniuBgdUz9KExrLZ5i5mg/h5KEQU5lIcnEI?=
+ =?us-ascii?Q?hXx0BgG7+eTQJ1HKuWe3ggvKCJrCKXBawT6eib0ZIFa2QtOlr1+Z5a4L+wnh?=
+ =?us-ascii?Q?m2tkiuUjO9ZiNXYbb8EPYOFD1E2w6FaDxwq1fWtjvP6nc8s75+K+iWfKK6C2?=
+ =?us-ascii?Q?+54F6r2ZhMYpLuIy38eUd6bUlr3H1tpmlAfYDovuOxDYvoHV0HyG29LsNndL?=
+ =?us-ascii?Q?zx2z6sp5O3DnowLmNVehkYNSMbrct5udZvf0cUWtPDDNy7G3egIbFMvu9592?=
+ =?us-ascii?Q?NAPlJcYOJmEZyqulmhXjexR1sCTH2JE9seq/AM0NNWTbVeLcVDA9U871iHRL?=
+ =?us-ascii?Q?6BPgrE2XqWTfoCUdDtj7uKfW9nenhibUnLKEq81XlU0lPuFFglFVTV+pALZB?=
+ =?us-ascii?Q?/MMDQ3JZOE4qdrLQy7IFv+xHTUelpzDn0uUtPFgC21Q/Pf7H34jnDHtTNbN/?=
+ =?us-ascii?Q?tgxe+fWNWozJRBvMsHBtAePgeQi4pNT/z0oJBUfTPCT6clZsFib6eEXd39Vv?=
+ =?us-ascii?Q?A/ciKzhSdiTrOES8ICzwy9v9Wh6MY3LoCBVS4MdZC3PZN0V9+7S2CafDEenH?=
+ =?us-ascii?Q?0lCgbi3OUisLZXUlRH23ruhyNcrj13TS1AMxwwHzbeRKS6FfVLD97wfdY5YD?=
+ =?us-ascii?Q?Ti/FP4w6cY1jH+3vFCRmEGXU/lsuftVDTewBdqmwzbymYOVofiYrtRNYhkzc?=
+ =?us-ascii?Q?+YttpYYr4axi2WK5YPIkpUOMTv22Emq8ia3z+r9yXrTRnIVtGTiJnZ8i5wrJ?=
+ =?us-ascii?Q?zP9QTimpz+ajZhS71gMA7yY88iWNM6mo2DPLMJOLsXZv+i4V9Hq6DFKhMhKR?=
+ =?us-ascii?Q?I2GsSqOpORsiwyUh4tl5zJUGjxyYCENHNWPUo+Hn7ZhG0PN8ffNukjXR4To6?=
+ =?us-ascii?Q?p1cEhpY10KDyzToI84DRnWw0L+owoeo9I4Cwm1Yxk0IZR2CIOd7mFc4HhlWS?=
+ =?us-ascii?Q?V5WT5sYKyribeX1dvfd0ay8wHGfTHVSoTbXCysOXjqP+hLH5xlS/q84skOoE?=
+ =?us-ascii?Q?sRrYP9li2pdJg/JeI5cLZ1laOwoe53tpOiaYZBaBOIZHEIG4UHtZEgQd9pBW?=
+ =?us-ascii?Q?0kLk/OxXaJHEOzhHAezjJcdyt/VIl8vat2JGiu7WWvG9/7m2fUTWde9h5HeF?=
+ =?us-ascii?Q?JgNHzPYSsvbneFYGp61dCBSXrBRw8tpUIeehrwqJdfxjwjD1W1uas+OWqSTJ?=
+ =?us-ascii?Q?7zYtH7IiiIH/bJmzfb9ga5UDBx9PuVFp5U0OrVd5c7xhMHlEXjtj?=
+X-OriginatorOrg: bp.renesas.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9448e9aa-e5e2-40a5-d562-08df2615f03b
+X-MS-Exchange-CrossTenant-AuthSource: TYRPR01MB13588.jpnprd01.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Oct 2026 14:59:38.2505
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: TezWnUlzxmPNgF/PPzaM52sC+FhnNtSJARgF5txd3/nhi2HF5vwJ2N6fwPi3oWKXr2O9WTYydlO2xKi+CIyg6qmLfWgROQ5eA3w1F0PduYk0ZhsjATMQU193YhbmYWrm
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYRPR01MB12608
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261009_075948_388602_15F4F1E6 
+X-CRM114-Status: GOOD (  36.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,46 +143,146 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2799029226577588717=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============2799029226577588717==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="Yut5qOub1ik3//Ee"
-Content-Disposition: inline
+Hi Prabhakar,
+Thanks for your patch.
 
---Yut5qOub1ik3//Ee
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+On Wed, Oct 07, 2026 at 08:06:54PM +0100, Prabhakar wrote:
+> From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> 
+> On OTG channels of SoCs without ADP control, the VBUS regulator is
+> acquired with devm_regulator_get_exclusive() and its output is switched
+> by rcar_gen3_enable_vbus_ctrl() using regulator_hardware_enable() once
+> the port role is known.
+> 
+> The helper acquiring the regulator has the following problems:
+> 
+> - The internal regulator is unconditionally enabled at probe, so VBUS
+>   is driven before the port role is known. If the port is connected to
+>   an external host this can back-power it.
+> 
+> - regulator_get_exclusive() hands the consumer an enable reference if
+>   the regulator is already enabled, for example by the bootloader. The
+>   unconditional regulator_enable() then takes a second reference while
+>   only one is released on unbind, leaving the regulator enabled and
+>   triggering the WARN_ON() in _regulator_put().
+> 
+> Fix this by making sure the driver always holds exactly one reference
+> to the regulator: reuse the reference handed over by the exclusive get
+> if the regulator is already enabled, and call regulator_enable()
+> otherwise. Register the disable action in both cases, then turn off the
+> physical VBUS output with regulator_hardware_enable() until the port
+> role is established. Enabling a disabled regulator to take the
+> reference may briefly drive VBUS during probe; this cannot be avoided
+> with the regulator API.
+> 
+> Rename the regulator helper to reflect that it acquires the regulator
+> without directly enabling its physical VBUS output.
+> 
+> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 
-Acked-by: Conor Dooley <conor.dooley@microchip.com>
-pw-bot: not-applicable
+Tested on RZ/G3E.
+Tested-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
 
---Yut5qOub1ik3//Ee
-Content-Type: application/pgp-signature; name=signature.asc
+Kind regards,
+Tommaso
 
------BEGIN PGP SIGNATURE-----
-
-iHUEARYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCasj9wwAKCRB4tDGHoIJi
-0vHJAQCouzdHFAMv0dhxG/70lwYrwlY/tBaOX+vRU2EbD8bV0QD/Q3xZKbb4nEal
-KrbLNq/GRpjWQmheqwB9+olZLhGWmQg=
-=1yjO
------END PGP SIGNATURE-----
-
---Yut5qOub1ik3//Ee--
-
-
---===============2799029226577588717==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> ---
+> v1->v2:
+> - regulator_enable() is only called if the regulator is not already enabled,
+>   ensuring exactly one reference is held.
+> - Dropped enable parameter from the function
+> - Renamed function rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable()
+>   to rcar_gen3_phy_usb2_vbus_regulator_get_exclusive()
+> - Updated commit message
+> ---
+>  drivers/phy/renesas/phy-rcar-gen3-usb2.c | 35 +++++++++++++++++-------
+>  1 file changed, 25 insertions(+), 10 deletions(-)
+> 
+> diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+> index b5ba751805aa..3481505dea2e 100644
+> --- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+> +++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+> @@ -1114,8 +1114,7 @@ static void rcar_gen3_phy_usb2_vbus_disable_action(void *data)
+>  	regulator_disable(vbus);
+>  }
+>  
+> -static int rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable(struct rcar_gen3_chan *channel,
+> -								  bool enable)
+> +static int rcar_gen3_phy_usb2_vbus_regulator_get_exclusive(struct rcar_gen3_chan *channel)
+>  {
+>  	struct device *dev = channel->dev;
+>  	int ret;
+> @@ -1133,17 +1132,35 @@ static int rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable(struct rcar_ge
+>  		return 0;
+>  	}
+>  
+> -	if (enable) {
+> +	ret = regulator_is_enabled(channel->vbus);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	if (!ret) {
+>  		ret = regulator_enable(channel->vbus);
+>  		if (ret)
+>  			return ret;
+>  	}
+>  
+> -	if (regulator_is_enabled(channel->vbus))
+> -		return devm_add_action_or_reset(dev, rcar_gen3_phy_usb2_vbus_disable_action,
+> -						channel->vbus);
+> +	/*
+> +	 * An exclusive get of an enabled regulator already holds a reference, so
+> +	 * add a cleanup action to disable it when the device is released.
+> +	 */
+> +	ret = devm_add_action_or_reset(dev, rcar_gen3_phy_usb2_vbus_disable_action,
+> +				       channel->vbus);
+> +	if (ret)
+> +		return ret;
+>  
+> -	return 0;
+> +	/*
+> +	 * The regulator is enabled only so that the regulator core holds a
+> +	 * reference to it. Do not drive VBUS until the port's role is known;
+> +	 * rcar_gen3_enable_vbus_ctrl() switches it from then on.
+> +	 *
+> +	 * The VBUS regulator used on these SoCs implement the .enable/.disable
+> +	 * ops, so regulator_hardware_enable() cannot fail with -EOPNOTSUPP here
+> +	 * and no special handling for it is needed.
+> +	 */
+> +	return regulator_hardware_enable(channel->vbus, false);
+>  }
+>  
+>  static int rcar_gen3_phy_usb2_vbus_regulator_register(struct rcar_gen3_chan *channel)
+> @@ -1151,7 +1168,6 @@ static int rcar_gen3_phy_usb2_vbus_regulator_register(struct rcar_gen3_chan *cha
+>  	struct device *dev = channel->dev;
+>  	struct regulator_config rcfg = { .dev = dev, };
+>  	struct regulator_dev *rdev;
+> -	bool enable = false;
+>  
+>  	rcfg.of_node = of_get_available_child_by_name(dev->of_node,
+>  						      "vbus-regulator");
+> @@ -1165,10 +1181,9 @@ static int rcar_gen3_phy_usb2_vbus_regulator_register(struct rcar_gen3_chan *cha
+>  					     "Failed to create vbus-regulator\n");
+>  
+>  		channel->otg_internal_reg = true;
+> -		enable = true;
+>  	}
+>  
+> -	return rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable(channel, enable);
+> +	return rcar_gen3_phy_usb2_vbus_regulator_get_exclusive(channel);
+>  }
+>  
+>  static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
+> -- 
+> 2.55.0
+> 
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============2799029226577588717==--
-
