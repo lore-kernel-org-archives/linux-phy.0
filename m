@@ -4,134 +4,146 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5DCFCA6019
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Oct 2026 14:59:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED050CA601D
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Oct 2026 17:00:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/nygn3tgUJgfWfP0MQ9JBr3Xbx7CfB0DlMkVACSPzVE=; b=mXtIJhkqOTf3mz
-	cMqaG4fifuFOtqGkWfPzQQXOXP1bPsLzyRD2+jEBzb9OJJuO7B8Wo9zPzarv+itAUpBjmqNGYludO
-	qECml6mf0oLCqdc0Zka/KIH74ffKB9T10P7MZ6U+RkQLjhgJraGFJwI19IG+fR7C19GpFAsMb2tuK
-	u3geqWpic36wWF/0ELsrVTWVcklT/J8iaer4e8x9y7OjPuX1cABKzDM+NQTpYNbOm+LIwTQ/7tpta
-	Y+gARSU/zq6bvMgNIL9UrFzkMDirkuK3V/RiNsob9+Ob7pXcaQWm+6fUvWE0riEUhD0nrryWLhgwI
-	EngzYkZLus8rfxLkekDA==;
+	List-Owner; bh=VcPYrmsKGkALUpCjD62GEMxRIjeBv6EnkeAVyecSPiI=; b=Kyh0mI7W42KiXt
+	6in6ncvsdGP/Aq5EZDbsS8rCgZuPBNgAkxoF8dXQOZV5XYyOQOY9IiBNRN+b+jmaknxoOBQyveEIw
+	ZHE1fWbXXsQ+Jjs3YCqBWwYSK2k/fRoIukyiMgCI/Eg62ynBqphfmsXoF9lZ4/SKd++bqZoYdTjYF
+	RMZN9A4iI7B6hfD0a30WrK6fps+qBYOh+qWxvm9Iukpa77RtIC9S2/mqXXZGyPF9n93qHTaNr9jtl
+	5QZF88mD8pM02vkhOs174dqv7p7A+vje62hCDCsY3JK+NWMc0GbFl3C0QW8b5cpuRdg8cryFGXOeg
+	2uqzp54HkKzRiLaOQkaw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xFC4d-00000006Vd8-46r6;
-	Fri, 09 Oct 2026 14:59:51 +0000
-Received: from mail-japanwestazlp170100003.outbound.protection.outlook.com ([2a01:111:f403:c407::3] helo=OS0P286CU011.outbound.protection.outlook.com)
+	id 1xFDx4-00000006k6i-21VC;
+	Fri, 09 Oct 2026 17:00:10 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xFC4a-00000006Vc7-1F4e
+	id 1xFDx1-00000006k4a-11X1
 	for linux-phy@lists.infradead.org;
-	Fri, 09 Oct 2026 14:59:50 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=kntDntTUdyCTagg92OwT58RebASuIPqMTSV9wqpDNr3AyJH3Shaxgxn1huy3sZS8k8Uh63h/uuWE8P9f8z7S7/wgOPgV3SFn7XmExJQDbNXgrsItMi/L0coNQ9UbjLArv9tZJ8fkgCg1gX1ENGQyI7xklrhRsuZifxwEYADHNtYL16+rcb+LDBnZ1JSUWBNqjXFgk/vKEaK+yTKFS08Rqa0acX6jCUbmkCxq7eY+H9+li65l//itWCs+Siur27v5QeTvm/HNmeqyO1d8+YcKserMUqvO+pV9Qnzr/enaWlQdBWp0df7un7nDF07AnKIYyrDUtXnad5JfMqt19G9mYg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=icEMLBHysAbcAW7nlu4dufUZug+GwG2TFD5B4bM+jNc=;
- b=BEsvKEY6tzfIGz56YwaL1Pye3HBTSZRMux0l8j6HmuhusN6bm3dUeCRpcsnXfx8kM+q7M8daAWSD72eAiniw31tur+SqUJBvpwW8PQOEHJWJMnwCctqP7Az4z5hZQ4jYy/7t+jKQAG6Gxb9J3TjDg0ocCTN9yUqtvsqTzekGM6hJKj2QOUruF+y2KzhaONwx8zs7Jg2aS3iHy7Uv6HfpIx7Qm9XbJHzp0LSREvrcjaM2roskQjIC1yALCLw8wGlCLMi4cNvNm6AkcAnZd7Q+6+AfxlHNBTAIWbcL/8WSA9VnUu80hqIGlj19IZIUE8QjPdUKvKWQGSTNCgZMbHwN0Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=icEMLBHysAbcAW7nlu4dufUZug+GwG2TFD5B4bM+jNc=;
- b=hexDpARPLXFQbnvkEOvwJMfWCFBnaXZ1zA7/kBkihK4+E7o0PfyXfOet5LVfTlXXm4x6PZMNX5DEknu4qkz5RKIFb2NWTR88imfBENHRuaClB58Swf+oZQuuzqzCFx1GsEvxivTNCG8sT1iPdCYDgBLOmERJUBS/v5R2LFVWmDI=
-Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=bp.renesas.com;
-Received: from TYRPR01MB13588.jpnprd01.prod.outlook.com (2603:1096:405:18d::7)
- by TYRPR01MB12608.jpnprd01.prod.outlook.com (2603:1096:405:1b3::8) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.496.17; Fri, 9 Oct
- 2026 14:59:38 +0000
-Received: from TYRPR01MB13588.jpnprd01.prod.outlook.com
- ([fe80::2f5b:8560:48ed:3828]) by TYRPR01MB13588.jpnprd01.prod.outlook.com
- ([fe80::2f5b:8560:48ed:3828%4]) with mapi id 15.21.0496.015; Fri, 9 Oct 2026
- 14:59:38 +0000
-Date: Fri, 9 Oct 2026 16:59:15 +0200
-From: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-To: Prabhakar <prabhakar.csengg@gmail.com>
-Cc: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>,
-	linux-renesas-soc@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Prabhakar <prabhakar.csengg+renesas@gmail.com>,
-	Biju Das <biju.das.jz@bp.renesas.com>,
-	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Subject: Re: [PATCH v2] phy: renesas: rcar-gen3-usb2: Keep OTG VBUS disabled
- until role is known
-Message-ID: <askBQzpjiQX0CY0e@tom-desktop>
-References: <20261007190654.452376-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-Content-Disposition: inline
-In-Reply-To: <20261007190654.452376-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-X-ClientProxiedBy: FR3P281CA0153.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:d10:a2::11) To TYRPR01MB13588.jpnprd01.prod.outlook.com
- (2603:1096:405:18d::7)
+	Fri, 09 Oct 2026 17:00:08 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 699GbJsu2841481
+	for <linux-phy@lists.infradead.org>; Fri, 9 Oct 2026 17:00:05 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	xsMlwv29UHJ/iYsm6gVY/2H7g6IrA01pTEowYzyQ57E=; b=DRdR7Sx94OAR5rKQ
+	GpSjlI3Et0TCCMsP/se5dpCAJnMz9quWray0E0ed0GMKSPyH3sdiMHPw52vGvrNN
+	K2idutEA4pSTiUDjOw4gJlrfu085cjCzHZnKUqWy/L9M15fF0yMEBf3SPuHb69Tb
+	/qRchcrGQowVYP2AaGPRakqGMveRXEE3t9MBxOMMwZl90VVVyE9eNBdAdQk7zsoM
+	gye+n5p9+877nlqHwNnj4HuxkjzfyF1lHXPZZ+KvcMymLvdhPf8h0HbhCrnE5N+k
+	v1RIVU+CUW9hUA6Wcfmi/Szea7zLZuKc9MWZCKV8mIrRpudOx1AhNGrJqHjWUgk8
+	d6KvIQ==
+Received: from mail-pf1-f198.google.com (mail-pf1-f198.google.com [209.85.210.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h72ty0df2-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Fri, 09 Oct 2026 17:00:05 +0000 (GMT)
+Received: by mail-pf1-f198.google.com with SMTP id d2e1a72fcca58-88c768885b4so8293062b3a.0
+        for <linux-phy@lists.infradead.org>; Fri, 09 Oct 2026 10:00:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1791565204; x=1792170004; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=xsMlwv29UHJ/iYsm6gVY/2H7g6IrA01pTEowYzyQ57E=;
+        b=gwzwfBte2itwUogPDu2p8WoVjvTCSNlrmdIFRJi06Q9Bmh9eAQ0QZB/yeEY5ipRZ8y
+         huJqBVtMoxN8Kp9BeZ5Qza8Nb01bBFH+YosN4Q6g85WVYaBGK5eyNheUxwn5TdlwE/4l
+         ZwKFOyV+fqT4pBsQt5WQYTRgVa+RmTLfofLbzYfzooIAJPW1GvqG2Gi+dx+1Wi624gJL
+         r8HQm0m2RR0iiYgztOWEoFS7P67UcWlAirZjRJ2100nLvknGrrBArxHEyEIpuwnhvtT5
+         tNX1f709DhKX4n5tXYnR/8yQeBGXsYNsgJMUevhL4ooVhqys5lR0RM/UsiLXxDVZnE3t
+         OZew==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1791565204; x=1792170004;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=xsMlwv29UHJ/iYsm6gVY/2H7g6IrA01pTEowYzyQ57E=;
+        b=UWLKPJH75PgeLndp9A9tvd1G+HOWjhMB3DUfakE7n+da5wCo9ZLn0QIbzLT5oV8Sr/
+         tKBxM4/X2LG04rf+/sZe0RYSyFRYfoZkBHM0+cJmjEgWTD2iJycVTFQ8u4+ttQjPJkaX
+         CBLtMyfGcB4Rz8i3DImO2yySOQFQbGai2pLUvfkj4bTMCwt8A4mga0j5pgSRQmuKc1eN
+         /Dt/Z2XD5SeeIcId+zPu/0qVd/gXeHHahZzy/cKJnMrZTMMvnASbhsI0mwuBBXwfVVkh
+         hmdZNEInqD0NSKZhWH/8FRrb6xx7V9zP4RypeQAnYqd+2Th1gJ5wBO1Jcwr2ig2N9rCJ
+         I6rg==
+X-Forwarded-Encrypted: i=1; AKwUvBwQH3hF6LpKLBKIFh4hk0JPCns0auRiPrwALrVgDTLBb7qYeRTP6+ogs07/iYWLVdScEIh3SANnirM=@lists.infradead.org
+X-Gm-Message-State: AFuF++mkkSjOzaPv4RtIfZJ7vWWhxiFKLplXJ3BOdEExfIFz7e5Qm0MG
+	O6TvPsGkpzT2jEc2IhRQ+EnTTmKOGSFhb8ksuSJDeAskzQECHUsx+bLs9lvd9WhPz6yMgqFcYMs
+	TRvlvA+UvuALcrRmxY0nDs/ZErC7xRuXcnt8+7d5xavhqMxUlIFbD8+7cTHdJu38t9zg3
+X-Gm-Gg: AYBFou0J2c6GyS4ajDOVNfZwMhiAnVWrpMhNzgIdH9e7/eGCUzIHPVRqqg+J3ZTGCE1
+	guf8BQZe/hmt96LLyeBbsPDX5pL2pxM1dmiM8yxRsXG2uoXr/F7en7pcoBbEoRdEJp2KgdmrO+H
+	KphH3596MwfMU5vfTx/ZbLdWmY1TMFnp4FASpCNyBnVYbW1xz8wUP1Qtx2dbwrMPVxOMJsua1XC
+	VS2dXdwDhFpnfbwYPXs1ba8YxN1ySuNlFnSkonfDS/2EJsad1eJx/MwPv6C18IwpCDwfryLi8ys
+	Ut9H7Ke0RT0RbdN4vPfFy67w3A/RcdJrEvlKYVKGcuGDpshz47OVIp1leJYarjae7aApIUvV2kQ
+	PkZFbABBFnZi7Fi6GyT1p4/1GhTjA+IYvAeqZB07Ar1SqBuYsyfDXZVeNF9IWw/h6NNHf
+X-Received: by 2002:a05:6a20:3d06:b0:3e0:b9ec:7c64 with SMTP id adf61e73a8af0-3e16bd85989mr2589979637.18.1791565204192;
+        Fri, 09 Oct 2026 10:00:04 -0700 (PDT)
+X-Received: by 2002:a05:6a20:3d06:b0:3e0:b9ec:7c64 with SMTP id adf61e73a8af0-3e16bd85989mr2589960637.18.1791565203736;
+        Fri, 09 Oct 2026 10:00:03 -0700 (PDT)
+Received: from [192.168.0.106] ([49.205.100.237])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-cd3da0596f9sm1395220a12.31.2026.10.09.09.59.58
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 09 Oct 2026 10:00:03 -0700 (PDT)
+Message-ID: <3a3cf540-816f-41a3-b31d-2902e7f4cf01@oss.qualcomm.com>
+Date: Fri, 9 Oct 2026 22:29:56 +0530
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: TYRPR01MB13588:EE_|TYRPR01MB12608:EE_
-X-MS-Office365-Filtering-Correlation-Id: 9448e9aa-e5e2-40a5-d562-08df2615f03b
-X-LD-Processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|7416014|376014|1800799024|52116014|366016|3023799007|6133799003|22082099003|18002099003|10067099003|11063799006|56012099006|38350700014;
-X-Microsoft-Antispam-Message-Info: q/ef5NJi4eu3xuqtsiUzvrvlpsscNZAB3MEJtEEgAm7WnF2+1TetcaSFC1mzT5DNCdcQ1ZQS0u8PaanCX/vYe5Dnl0fFbsTDlr8HnCqkhOWeb+XVfVT6XDOt9MrJ4zXgWaK7XKXNaLD2MOHn5NWXPUF96+Dk/DkHpwyvqiZMgPeUwyMoQ6jgI9bNENynaWBcKoedFjfIQ9CjDvfw1aGX8sJ50F5Sf3bzeOyfMBZ4M7DuMdBwSn8mNHqY0gEEC8XjIM+n0a05fGhIiV2viILsVi98bdz0EGbu6gIHHQAs26mtvbjgKOV7YQ+fbwu1v0yVrXsQTSxwZZOAr8Ojpnp6qGeIetStTPnCAXpWM2eoLimYQsFrWvwXAChXHohsT1OWIePQ6rDv0Wy16Fi40ThQSrAB85EZvnQpck7/UfXf7o+9Z2eUtlWM0uflT5JkeCzOSeVVAov82aFnzaL2myjca+ti2cq5WteqKgvQUgbm2s59Vq6j1TS1uXNg4EZ17eg9TeSIdK/K69YpfoiaBX0sbIHaHGKJn7ZN8b+wPg2raWShzmsrACyK0X+LxSlfPvRMtna+Q0oCNBt7hy+1+rcovi7xXVhSjhEg0iT9rYOTgfeGqtJZ8yTXB15w6RHp5mRBmIRxjpcWRRkacV9MdfPqnxzeBGOJPu2RfaYhLMNUXCAUTfYOMXAiDHlBIb7/EwWnhB/msRlONV3OM96VoBTZfJdZP+HaA05T7BlGNYWkv28=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYRPR01MB13588.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(7416014)(376014)(1800799024)(52116014)(366016)(3023799007)(6133799003)(22082099003)(18002099003)(10067099003)(11063799006)(56012099006)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?r/IXCLDOwIZ9574471S6hcLkJHH0F9O/C4l9jtbR1aJWf4KSws5FN0ReoFhZ?=
- =?us-ascii?Q?eKrz+FTujq7XacqZq3oFV5ksKxF8CyZ3rDebzCzkIQLXyE9q16HlaQtVCPTU?=
- =?us-ascii?Q?NVrs9jiDMp0K5XK6h9Iw3QwAMlllo0jiodlfOcRd05jwy/mNNjPF9qrPwSOY?=
- =?us-ascii?Q?5ynZkKAYMxjNIQX50Hkc33At87Fzf4yR/G9LWq8ZntUHLGWPtBhTH9oOxe1u?=
- =?us-ascii?Q?87d8itJ5sfzyaRVKfiqYzuaxPQzFygsOV9vW2lDxJhlCE1j0Zk83DSdChaL9?=
- =?us-ascii?Q?qiCltv9+8NCe7U9Iwwpf9EWcan0roWrLYo0vu/vygUhtFE7/Nd8p08eBckhv?=
- =?us-ascii?Q?FKPwxyrs4GeT+Zj4NfXR+ZYd7Vy3doMTNNnpxFl6xS07ZwBAy6LIhOt3wGqq?=
- =?us-ascii?Q?p1Sb/SkN32Jr+RUqS5cabZAfckdWRGiggT56rhNZCxMUCouA5I4oVajJHmTY?=
- =?us-ascii?Q?wkpIqPGUybeZwrQUJgiewmNt5fzN5A0D05oEvmKzBqUu6XAtyetXQ7A5uLBV?=
- =?us-ascii?Q?HHNAdEDNmab3f1cwuKZ4/RPSZbniuBgdUz9KExrLZ5i5mg/h5KEQU5lIcnEI?=
- =?us-ascii?Q?hXx0BgG7+eTQJ1HKuWe3ggvKCJrCKXBawT6eib0ZIFa2QtOlr1+Z5a4L+wnh?=
- =?us-ascii?Q?m2tkiuUjO9ZiNXYbb8EPYOFD1E2w6FaDxwq1fWtjvP6nc8s75+K+iWfKK6C2?=
- =?us-ascii?Q?+54F6r2ZhMYpLuIy38eUd6bUlr3H1tpmlAfYDovuOxDYvoHV0HyG29LsNndL?=
- =?us-ascii?Q?zx2z6sp5O3DnowLmNVehkYNSMbrct5udZvf0cUWtPDDNy7G3egIbFMvu9592?=
- =?us-ascii?Q?NAPlJcYOJmEZyqulmhXjexR1sCTH2JE9seq/AM0NNWTbVeLcVDA9U871iHRL?=
- =?us-ascii?Q?6BPgrE2XqWTfoCUdDtj7uKfW9nenhibUnLKEq81XlU0lPuFFglFVTV+pALZB?=
- =?us-ascii?Q?/MMDQ3JZOE4qdrLQy7IFv+xHTUelpzDn0uUtPFgC21Q/Pf7H34jnDHtTNbN/?=
- =?us-ascii?Q?tgxe+fWNWozJRBvMsHBtAePgeQi4pNT/z0oJBUfTPCT6clZsFib6eEXd39Vv?=
- =?us-ascii?Q?A/ciKzhSdiTrOES8ICzwy9v9Wh6MY3LoCBVS4MdZC3PZN0V9+7S2CafDEenH?=
- =?us-ascii?Q?0lCgbi3OUisLZXUlRH23ruhyNcrj13TS1AMxwwHzbeRKS6FfVLD97wfdY5YD?=
- =?us-ascii?Q?Ti/FP4w6cY1jH+3vFCRmEGXU/lsuftVDTewBdqmwzbymYOVofiYrtRNYhkzc?=
- =?us-ascii?Q?+YttpYYr4axi2WK5YPIkpUOMTv22Emq8ia3z+r9yXrTRnIVtGTiJnZ8i5wrJ?=
- =?us-ascii?Q?zP9QTimpz+ajZhS71gMA7yY88iWNM6mo2DPLMJOLsXZv+i4V9Hq6DFKhMhKR?=
- =?us-ascii?Q?I2GsSqOpORsiwyUh4tl5zJUGjxyYCENHNWPUo+Hn7ZhG0PN8ffNukjXR4To6?=
- =?us-ascii?Q?p1cEhpY10KDyzToI84DRnWw0L+owoeo9I4Cwm1Yxk0IZR2CIOd7mFc4HhlWS?=
- =?us-ascii?Q?V5WT5sYKyribeX1dvfd0ay8wHGfTHVSoTbXCysOXjqP+hLH5xlS/q84skOoE?=
- =?us-ascii?Q?sRrYP9li2pdJg/JeI5cLZ1laOwoe53tpOiaYZBaBOIZHEIG4UHtZEgQd9pBW?=
- =?us-ascii?Q?0kLk/OxXaJHEOzhHAezjJcdyt/VIl8vat2JGiu7WWvG9/7m2fUTWde9h5HeF?=
- =?us-ascii?Q?JgNHzPYSsvbneFYGp61dCBSXrBRw8tpUIeehrwqJdfxjwjD1W1uas+OWqSTJ?=
- =?us-ascii?Q?7zYtH7IiiIH/bJmzfb9ga5UDBx9PuVFp5U0OrVd5c7xhMHlEXjtj?=
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9448e9aa-e5e2-40a5-d562-08df2615f03b
-X-MS-Exchange-CrossTenant-AuthSource: TYRPR01MB13588.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Oct 2026 14:59:38.2505
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: TezWnUlzxmPNgF/PPzaM52sC+FhnNtSJARgF5txd3/nhi2HF5vwJ2N6fwPi3oWKXr2O9WTYydlO2xKi+CIyg6qmLfWgROQ5eA3w1F0PduYk0ZhsjATMQU193YhbmYWrm
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYRPR01MB12608
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v8 2/5] include: linux: phy: Add phy attribute "type" and
+ associated helpers
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+        Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley
+ <conor+dt@kernel.org>,
+        Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+        linux-usb@vger.kernel.org,
+        Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+References: <20260913-eusb2-interrupt-v8-v8-0-0f505b9c394b@oss.qualcomm.com>
+ <20260913-eusb2-interrupt-v8-v8-2-0f505b9c394b@oss.qualcomm.com>
+ <asNji2_GUda8x245@parshuram>
+Content-Language: en-US
+From: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+In-Reply-To: <asNji2_GUda8x245@parshuram>
+X-Proofpoint-ORIG-GUID: 66sM6EcZ7AwUb8s4-1hioXuaCELnP9lv
+X-Authority-Analysis: v=2.4 cv=Zvd4uN7G c=1 sm=1 tr=0 ts=6ac91d95 cx=c_pps
+ a=m5Vt/hrsBiPMCU0y4gIsQw==:117 a=jBUYxde0W5cEf5DRjetLAw==:17
+ a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22
+ a=jIQo8A4GAAAA:8 a=EUspDBNiAAAA:8 a=a43HgpfhDiYDw8gHJIcA:9 a=QEXdDO2ut3YA:10
+ a=IoOABgeZipijB_acs4fv:22
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDA5MDA2NyBTYWx0ZWRfX7BPnPP53tsyI
+ 7iFuy9ODkmUo89x1FDnobFxsF71KhUbTetMmR5O3QOEEY4flV2JQdJJ96DZDV1eb9r1etlOYI4C
+ PSf5TzPchCzdNL9CgPCMLACn8an9xEI=
+X-Proofpoint-GUID: 66sM6EcZ7AwUb8s4-1hioXuaCELnP9lv
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDA5MDA2NyBTYWx0ZWRfX/e3I01fKkJeC
+ wOo4RxgDVRuNjdjEetbYK8VZdnUvE0ktgfMVrBuPEKSH2aEv42v0g9og55YdKgNshH7NXMxKmXs
+ j96Ugukl9evEIkKV69sgRu8yWa2TrPyoZC99Bo3R4zuDq9AmlJ28OHBK3Yb1uQAHhq/l2agoBMm
+ I4vw3xmMa2nDNbqPIR7YQH/3+AOMmyf/L7n+QwPt8wpbDxuLT+lYOEGtvc6UUdorC9LSztldAHV
+ rhyUkSW5T8wJDwOm+tlqZ0Ns8dN//E0REWD84EiWlu2tNQ/TELaNDTDbNTQN1boF8NWsjuJ7Cyc
+ AqmPW+coqcsReCqsmgt5WnaIlLpCQY3T0jvNifNPEY/0rYFYmAyPJTV5pc/ZuOtqTUDDdGl6OTn
+ YarSJnFXQkHMMvnGQdlPOHY0SlmWqjVJaeuUx5Ct1Z4pyj1GeHUngsST7s2LpzJDpY0Vc6ymoig
+ X3GaUHLZZIj+RspgOPQ==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-10-09_04,2026-10-09_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ suspectscore=0 priorityscore=1501 spamscore=0 clxscore=1015 impostorscore=0
+ bulkscore=0 lowpriorityscore=0 malwarescore=0 phishscore=0 adultscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2610020000 definitions=main-2610090067
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261009_075948_388602_15F4F1E6 
-X-CRM114-Status: GOOD (  36.07  )
+X-CRM114-CacheID: sfid-20261009_100007_418151_D74CF3A2 
+X-CRM114-Status: GOOD (  23.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -143,144 +155,124 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Prabhakar,
-Thanks for your patch.
 
-On Wed, Oct 07, 2026 at 08:06:54PM +0100, Prabhakar wrote:
-> From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> 
-> On OTG channels of SoCs without ADP control, the VBUS regulator is
-> acquired with devm_regulator_get_exclusive() and its output is switched
-> by rcar_gen3_enable_vbus_ctrl() using regulator_hardware_enable() once
-> the port role is known.
-> 
-> The helper acquiring the regulator has the following problems:
-> 
-> - The internal regulator is unconditionally enabled at probe, so VBUS
->   is driven before the port role is known. If the port is connected to
->   an external host this can back-power it.
-> 
-> - regulator_get_exclusive() hands the consumer an enable reference if
->   the regulator is already enabled, for example by the bootloader. The
->   unconditional regulator_enable() then takes a second reference while
->   only one is released on unbind, leaving the regulator enabled and
->   triggering the WARN_ON() in _regulator_put().
-> 
-> Fix this by making sure the driver always holds exactly one reference
-> to the regulator: reuse the reference handed over by the exclusive get
-> if the regulator is already enabled, and call regulator_enable()
-> otherwise. Register the disable action in both cases, then turn off the
-> physical VBUS output with regulator_hardware_enable() until the port
-> role is established. Enabling a disabled regulator to take the
-> reference may briefly drive VBUS during probe; this cannot be avoided
-> with the regulator API.
-> 
-> Rename the regulator helper to reflect that it acquires the regulator
-> without directly enabling its physical VBUS output.
-> 
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 
-Tested on RZ/G3E.
-Tested-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-
-Kind regards,
-Tommaso
-
-> ---
-> v1->v2:
-> - regulator_enable() is only called if the regulator is not already enabled,
->   ensuring exactly one reference is held.
-> - Dropped enable parameter from the function
-> - Renamed function rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable()
->   to rcar_gen3_phy_usb2_vbus_regulator_get_exclusive()
-> - Updated commit message
-> ---
->  drivers/phy/renesas/phy-rcar-gen3-usb2.c | 35 +++++++++++++++++-------
->  1 file changed, 25 insertions(+), 10 deletions(-)
+On 10/5/2026 2:14 PM, Vinod Koul wrote:
+> On 13-09-26, 20:10, Krishna Kurapati wrote:
+>> In cases like USB High-speed phys which can be either USB2 or EUSB2, it is
+>> required to know the type of phy (rather than the operating mode) because
+>> DP and DM interrupt lines need to be configured differently for each of
+>> them.
 > 
-> diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-> index b5ba751805aa..3481505dea2e 100644
-> --- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-> +++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-> @@ -1114,8 +1114,7 @@ static void rcar_gen3_phy_usb2_vbus_disable_action(void *data)
->  	regulator_disable(vbus);
->  }
->  
-> -static int rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable(struct rcar_gen3_chan *channel,
-> -								  bool enable)
-> +static int rcar_gen3_phy_usb2_vbus_regulator_get_exclusive(struct rcar_gen3_chan *channel)
->  {
->  	struct device *dev = channel->dev;
->  	int ret;
-> @@ -1133,17 +1132,35 @@ static int rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable(struct rcar_ge
->  		return 0;
->  	}
->  
-> -	if (enable) {
-> +	ret = regulator_is_enabled(channel->vbus);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	if (!ret) {
->  		ret = regulator_enable(channel->vbus);
->  		if (ret)
->  			return ret;
->  	}
->  
-> -	if (regulator_is_enabled(channel->vbus))
-> -		return devm_add_action_or_reset(dev, rcar_gen3_phy_usb2_vbus_disable_action,
-> -						channel->vbus);
-> +	/*
-> +	 * An exclusive get of an enabled regulator already holds a reference, so
-> +	 * add a cleanup action to disable it when the device is released.
-> +	 */
-> +	ret = devm_add_action_or_reset(dev, rcar_gen3_phy_usb2_vbus_disable_action,
-> +				       channel->vbus);
-> +	if (ret)
-> +		return ret;
->  
-> -	return 0;
-> +	/*
-> +	 * The regulator is enabled only so that the regulator core holds a
-> +	 * reference to it. Do not drive VBUS until the port's role is known;
-> +	 * rcar_gen3_enable_vbus_ctrl() switches it from then on.
-> +	 *
-> +	 * The VBUS regulator used on these SoCs implement the .enable/.disable
-> +	 * ops, so regulator_hardware_enable() cannot fail with -EOPNOTSUPP here
-> +	 * and no special handling for it is needed.
-> +	 */
-> +	return regulator_hardware_enable(channel->vbus, false);
->  }
->  
->  static int rcar_gen3_phy_usb2_vbus_regulator_register(struct rcar_gen3_chan *channel)
-> @@ -1151,7 +1168,6 @@ static int rcar_gen3_phy_usb2_vbus_regulator_register(struct rcar_gen3_chan *cha
->  	struct device *dev = channel->dev;
->  	struct regulator_config rcfg = { .dev = dev, };
->  	struct regulator_dev *rdev;
-> -	bool enable = false;
->  
->  	rcfg.of_node = of_get_available_child_by_name(dev->of_node,
->  						      "vbus-regulator");
-> @@ -1165,10 +1181,9 @@ static int rcar_gen3_phy_usb2_vbus_regulator_register(struct rcar_gen3_chan *cha
->  					     "Failed to create vbus-regulator\n");
->  
->  		channel->otg_internal_reg = true;
-> -		enable = true;
->  	}
->  
-> -	return rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable(channel, enable);
-> +	return rcar_gen3_phy_usb2_vbus_regulator_get_exclusive(channel);
->  }
->  
->  static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
-> -- 
-> 2.55.0
+> Does the controller care? In preceding patch you defined the EUSB2 in dt
+> type, so this describes the hardware. So phy knows it is usb or eusb...
+>>
+
+Controller is agnostic of whether the phy is usb2 or eusb2. Phy does now 
+its type, but it needs to communicate the same to controller.
+
+>> Add support to cache the PHY_TYPE and add the following helpers:
+>>
+>> - phy_set_type() for the phy drivers (like m31_eusb2 or snps-eusb2) to
+>> declare what type of PHY they are (in this case PHY_TYPE_EUSB2).
+>>
+>> - phy_get_type() for the consumers (like USB controllers) to query the
+>> type of phy connected to them.
 > 
+> I am not convinced that this is the way to go... Driver already knows
+> the type and should use it...
+> we alreayd have mode, i am inclined to not say yes to adding type here
+> 
+
+"Mode" attribute describes the current operating scenario of the phy 
+(device mode, host mode, high speed, super speed etc.,). But it doesn't 
+describe the type of hardware and hence a new attribute.
+
+Regards,
+Krishna,
+
+>>
+>> Reviewed-by: Thinh Nguyen <Thinh.Nguyen@synopsys.com>
+>> Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+>> Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+>> ---
+>>   include/linux/phy/phy.h | 27 +++++++++++++++++++++++++++
+>>   1 file changed, 27 insertions(+)
+>>
+>> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+>> index ea47975e288a..038c2b58bbe1 100644
+>> --- a/include/linux/phy/phy.h
+>> +++ b/include/linux/phy/phy.h
+>> @@ -21,6 +21,8 @@
+>>   #include <linux/phy/phy-lvds.h>
+>>   #include <linux/phy/phy-mipi-dphy.h>
+>>   
+>> +#include <dt-bindings/phy/phy.h>
+>> +
+>>   struct phy;
+>>   
+>>   enum phy_mode {
+>> @@ -152,11 +154,13 @@ struct phy_ops {
+>>    * @bus_width: Data path width implemented by PHY
+>>    * @max_link_rate: Maximum link rate supported by PHY (units to be decided by producer and consumer)
+>>    * @mode: PHY mode
+>> + * @type: PHY type
+>>    */
+>>   struct phy_attrs {
+>>   	u32			bus_width;
+>>   	u32			max_link_rate;
+>>   	enum phy_mode		mode;
+>> +	int			type;
+>>   };
+>>   
+>>   /**
+>> @@ -262,6 +266,20 @@ static inline enum phy_mode phy_get_mode(struct phy *phy)
+>>   {
+>>   	return phy->attrs.mode;
+>>   }
+>> +
+>> +static inline int phy_get_type(struct phy *phy)
+>> +{
+>> +	if (phy)
+>> +		return phy->attrs.type;
+>> +
+>> +	return PHY_NONE;
+>> +}
+>> +
+>> +static inline void phy_set_type(struct phy *phy, int type)
+>> +{
+>> +	phy->attrs.type = type;
+>> +}
+>> +
+>>   int phy_reset(struct phy *phy);
+>>   int phy_calibrate(struct phy *phy);
+>>   int phy_notify_connect(struct phy *phy, int port);
+>> @@ -393,6 +411,15 @@ static inline enum phy_mode phy_get_mode(struct phy *phy)
+>>   	return PHY_MODE_INVALID;
+>>   }
+>>   
+>> +static inline int phy_get_type(struct phy *phy)
+>> +{
+>> +	return PHY_NONE;
+>> +}
+>> +
+>> +static inline void phy_set_type(struct phy *phy, int type)
+>> +{
+>> +}
+>> +
+>>   static inline int phy_reset(struct phy *phy)
+>>   {
+>>   	if (!phy)
+>>
+>> -- 
+>> 2.34.1
+> 
+
 
 -- 
 linux-phy mailing list
