@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 451E3CA6012
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Oct 2026 10:32:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64AA8CA6019
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Oct 2026 10:33:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6UcchW1cRrfK6HbrvYPTwkyW9fX85pvE7ZlRdq7mtlg=; b=OfMSrzFk24k7IP
-	af0qIQDZ3l7NJQpjysG6YcFx3vn8igWaUOyWnuzcFUvU8bpPP32WK1YxVL2pyxQQAEoLJKYFVmYy2
-	4hDpimgBHgsGRKSutSHmRiW3Yrb76d6j6em51XSf+CIS+IjToEBc4eXE+JvyP9Wyl3NEQ2JKgqjtb
-	bkllSdHqgc68i+DUB1BLAQdPi58BOoVk2UmZIeCelrHIXoqYvcPGAyiJ1LJU9jX22sVQuUUCUXu8W
-	qssHqJkIG96iSvmHMndZ3IL66CQ31rKXBP76OHAZuBRuBjzRJ3odFHqB7I7RjZLikRFSmiH5GAYlL
-	PXaDDyhgwLZTuS1L9HzA==;
+	List-Owner; bh=SWkqWixPFsN5p+xZBeVmRiQAvbp3NGgOZ/wxZ5GR1CY=; b=R/MFLVb4u24Qyh
+	aBagSIp8HTzlCUqHLLnt4xqG5PUdXoM57nKsaTiKWvGOxfpoxJkT3+z+hFBI9ZBi+prhgUz26IGNi
+	MxgXcrOcR+rz+3UHiYGu5UszaHoND3vIY+mVDJdTCOMQbFb2H2/+aqNNoQzN2uv9YAGy/YwAxl3Fa
+	HY+8wzsm6k9+iBOmnYEl7WAEXELzBpNR3xRxnTU99m/uCrBXsoUOOwgloa0BrLPsdyX7akeb03iY4
+	dy2BwLwiUKI4dy78NwB9Do8HZEbjmXPR3MZVzm1sR523GdFk0m67HG8YDkBQvItrkL4nOdj2II16N
+	JFsJsPOyZGyDNvLBvVTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xF7uE-000000064e7-2Ubd;
-	Fri, 09 Oct 2026 10:32:50 +0000
+	id 1xF7uq-000000064ii-0Yfl;
+	Fri, 09 Oct 2026 10:33:28 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xF7uD-000000064df-2une;
-	Fri, 09 Oct 2026 10:32:49 +0000
+	id 1xF7uo-000000064iM-0FK6;
+	Fri, 09 Oct 2026 10:33:26 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 0F21E60DBB;
-	Fri,  9 Oct 2026 10:32:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8A7EC1F000FF;
-	Fri,  9 Oct 2026 10:32:47 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 7DE4660DBB;
+	Fri,  9 Oct 2026 10:33:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 683DE1F000FF;
+	Fri,  9 Oct 2026 10:33:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791541968;
-	bh=Fz4v9C4NJeucclJ4dP4f/7Y/qrP44cVlU8hrb155EX0=;
+	s=k20260515; t=1791542005;
+	bh=HtCYHP8bkaekZ1veqlqX8aXKZ4Lf0sSj0bK6Dp/TMpg=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=IlRHztSPGHLNnIEqKiOzckUamhY3gEriL98qwKunMtuXg52gXtbU/pABUzt1GmZoi
-	 bsPPguajRRS2afjxnAXk4Mh+XMPrXcQ6Z5dGzzyWWkjM5aqpcVOEwS5c+p+VlgxJYk
-	 xqsPDgkAJRl1bJjife2FkYh+f+DpEgHcWj1so7nfGyMXqwTzOe+fiGJoDc6tXYl8+a
-	 OOUjJ7O2ovUus+WjJRiJQCga2LHfjk6v3IghycjItQMW84hfawikzlzZpLx0yPs6Tg
-	 86TlwUso9zQAxtapPRSHlN+Y30z33bcpJ76knV38aZgiLA5a8EZGpH3yOcjKkx9VlR
-	 L2LWs8SfGPnFw==
-Date: Fri, 9 Oct 2026 12:32:44 +0200
+	b=WaUM1kYadguyw8AItenfIPKE+2el6/RQ4bJ8E+TYjvKl4Il9CdtIZWShD9/VD3/it
+	 9aq9OUbP4tKmDKhdenx9cC6kzeXTgCt9UYIAHBj6J6Ti39TqubXCUVZr4QEx1jpy+H
+	 zToPjLf2lBqGro4dxedF+SQG8Eku5lZRo4Fcgf1MCRcIdQAarEQ7GqlR9AwcVqs9I9
+	 FawLC9aanhudklh9wqqfnJwTw2Nf81SrEjiD69L+UXoRlcEQmaDJb0DqeTU2M+0RhU
+	 uy+RjX84pLmZm7sNntHuNsG6Zd/Z+Id6/WbBTF4sngHLNcVLuMHgaUytAjHDb5l2bO
+	 IFvu16Cb/XBpg==
+Date: Fri, 9 Oct 2026 12:33:21 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Jacky Chou <jacky_chou@aspeedtech.com>
 Cc: Vinod Koul <vkoul@kernel.org>, 
@@ -52,12 +52,13 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	Billy Tsai <billy_tsai@aspeedtech.com>, linux-aspeed@lists.ozlabs.org, linux-phy@lists.infradead.org, 
 	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
 	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 0/3] phy: aspeed: Add ASPEED PCIe PHY support
-Message-ID: <20261009-vociferous-puma-of-amplitude-1c4dde@quoll>
+Subject: Re: [PATCH 2/3] phy: aspeed: Add ASPEED PCIe PHY driver
+Message-ID: <20261009-cherry-caribou-of-glamour-adaba4@quoll>
 References: <20261008-aspeed_pcie_phy-v1-0-96764937aef0@aspeedtech.com>
+ <20261008-aspeed_pcie_phy-v1-2-96764937aef0@aspeedtech.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20261008-aspeed_pcie_phy-v1-0-96764937aef0@aspeedtech.com>
+In-Reply-To: <20261008-aspeed_pcie_phy-v1-2-96764937aef0@aspeedtech.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,32 +75,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Oct 08, 2026 at 07:28:18PM +0800, Jacky Chou wrote:
-> Add the ASPEED PCIe PHY binding and driver for AST2600 and AST2700
-> SoCs. The PHY provides the physical layer used by the PCIe controller
-> when it is configured to run in root complex mode.
-> 
-> The driver registers an ASPEED PCIe PHY provider through the generic PHY
-> framework and programs the SoC-specific PEHR registers from set_mode().
-> For AST2600 this selects the root complex port type. For AST2700 this
-> also configures the posted/completion credit values, local scaling,
-> device type, internal reset selection, and downstream port setting
-> needed by the controller.
-> 
-> This series also adds the devicetree binding for the PHY provider and a
-> MAINTAINERS entry for the ASPEED PCIe PHY driver.
+On Thu, Oct 08, 2026 at 07:28:20PM +0800, Jacky Chou wrote:
+> Introduce support for Aspeed PCIe PHY controller available in
+> AST2600/2700.
 > 
 > Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
 > ---
-> Jacky Chou (3):
->       dt-bindings: phy: aspeed: Add ASPEED PCIe PHY
->       phy: aspeed: Add ASPEED PCIe PHY driver
->       MAINTAINERS: Add ASPEED PCIe PHY driver
+>  drivers/phy/aspeed/Kconfig           |  12 +-
+>  drivers/phy/aspeed/Makefile          |   1 +
+>  drivers/phy/aspeed/phy-aspeed-pcie.c | 237 +++++++++++++++++++++++++++++++++++
 
-And changelog plus versioning are completely missing.
-
-People sometimes wonder why maintainers are grumpy. Easy answer: you
-do not respect their time.
+And unlike 10 previous versions, this wasn't even built!
 
 Best regards,
 Krzysztof
