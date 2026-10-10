@@ -4,101 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 55F86CA6017
-	for <linux-phy@archiver.kernel.org>; Sat, 10 Oct 2026 12:24:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DDC8CA6017
+	for <linux-phy@archiver.kernel.org>; Sat, 10 Oct 2026 13:22:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:From:Cc:To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X5YSptcLBigaSkc7pi6WhL50dHKwMHBs/asX7D6A608=; b=MdbGvQPSIlpH6d
-	vvJ1V9l6cyK7tJ3d4P9d6RDTjWChyrSagnrX5jxdvTZeob/1KjoUAukIIreCsEqBgocs0YCjDZ++i
-	jSlQdlTEO8q8KpsaFMnOK+7lp9tDFX8P1pV5pIzhE9pi2Mha7F9+BivrrqKdbVVf5IjN0gRiSccRL
-	vREUuniJ3P+4D4rowI/1reqE8EGxHU2UidwyRQt9HcK4mLL48ysQtMsljqA/O8yPMbdrgv4S/Zyh1
-	a7l7MDMGxR+LT5p1EZGalWjnYgH7ZHfR9eqCScJuAYAghv0AQBRqgZDEbRjDhxCjbuPLXXsOw2KEB
-	nBXTo4etQHHz+bBaQmpQ==;
+	List-Owner; bh=wZT2WuDvezGpnlY51jBXwQqkrVdL+U4I/Kvs64ITzaY=; b=brcFxeHWdipBNI
+	YhGZvyXqyJfnERMoXH3TiOLv7TAdDbQDSs2uc6HTc+OygIsj1HA6yeMJbYlKiv+jHFZF4C05nM2GJ
+	mpc9Id9nBcJmukAYok3INou2EPta9TatzK21Jl5JoeimRmzbGBXGhNfr8QPObkFq2wCC1yNRQBmv7
+	wmGjp0oxv/lSfZzmlUahfBZDxIXRIT4b4AJVxIxs1A3HLR+do22d2n7047LRnL/K7VFEktkn5inj/
+	OHRfqtUHO3ppEyQtTZ6z6MhlNT9zaGBGv23YNDtfsn1xJy4OahVPWpqAVHM7KgHhodtzxAuqEEZg2
+	A2J+NA3/EaGhlAW7BLtg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xFW7V-000000080wu-3W3w;
-	Sat, 10 Oct 2026 12:24:09 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
+	id 1xFX1f-000000086Cp-3FwS;
+	Sat, 10 Oct 2026 13:22:11 +0000
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xFW7Q-000000080vf-3AJO;
-	Sat, 10 Oct 2026 12:24:08 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
-	by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id 20261010122357euoutp02bf04a99341e5bbc43473ffce11d38391~dKpMJ5mLK1277212772euoutp02E;
-	Sat, 10 Oct 2026 12:23:57 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com 20261010122357euoutp02bf04a99341e5bbc43473ffce11d38391~dKpMJ5mLK1277212772euoutp02E
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1791635037;
-	bh=W/evXz/fk2nDwkRg/LgD/8BHntxXciqgyux6ksl533s=;
-	h=Date:Subject:To:Cc:From:In-Reply-To:References:From;
-	b=WBqwhh+vwDnb1ddbWTUFdAtvh6PQvDDQRRNk1HdcMIi3YL0IpQaH9EngEeVFTNiS2
-	 zAYBnlByApQHLgVml8kj8M6k9C1EeX0he4lF7JmuWaeUwc9WRCYjLFDgXMMFHKWIh+
-	 8uGWecAQfgqPR4OXwT5HvF14YaSXEiRzHLkPV2iY=
-Received: from eusmtip2.samsung.com (unknown [203.254.199.222]) by
-	eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
-	20261010122357eucas1p1892ef8aa961af3208f81f5356316372e~dKpL1ApHV2372723727eucas1p1W;
-	Sat, 10 Oct 2026 12:23:57 +0000 (GMT)
-Received: from [192.168.1.44] (unknown [106.210.136.40]) by
-	eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
-	20261010122355eusmtip2ad5884c70b787c8d696f7ac9805aa691~dKpKCi3Gt0696206962eusmtip2U;
-	Sat, 10 Oct 2026 12:23:55 +0000 (GMT)
-Message-ID: <e0c42946-ed2a-41cc-9f2a-1bb089e02085@samsung.com>
-Date: Sat, 10 Oct 2026 14:23:55 +0200
+	id 1xFX1e-000000086CE-03C3;
+	Sat, 10 Oct 2026 13:22:11 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1791638521; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=dD2gFjlbKNoAl8LTV75sK9VXGb7c7D2nja/IdlD13MvBaNvNn4+3enQUGEPSn1bVUpnv4GH5D006AzpsHyb6NIqR1eCxNqvngLW+xust6QHTsdJ2QaQdBsZidF3RyKmDzxMO1MlfBrPvb8iCrnR9qVANLFCGDc78+0ed154BUMk=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1791638521; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=kcVMv81811zZuAv2FuonuKSFUIjIBAqY9YBibiFltS4=; 
+	b=XyjSZBsJxu0e6lteqZ47727sNylQS80cuJcxtpX9oUqsmo+pAfboKegDpMlyZ2eXcM9nB590ERRPgGNgQ40vx+n2QPIb8rX6/9WnplcC/vLB8KP4i0P4210hjdhDs9qEQjls4LX+RTxfrDjfFIhdr7+4G6ZlFzWAYwbwMXUrM74=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=michael.riesch@collabora.com;
+	dmarc=pass header.from=<michael.riesch@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1791638521;
+	s=zohomail; d=collabora.com; i=michael.riesch@collabora.com;
+	h=Message-ID:Date:Date:MIME-Version:Subject:Subject:To:To:Cc:Cc:From:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:Message-Id:Reply-To;
+	bh=kcVMv81811zZuAv2FuonuKSFUIjIBAqY9YBibiFltS4=;
+	b=SFlalIgSeP3zaMP6VPGO7p4PDiu3c6Eqoa8nkuvLg9ifm2r7sLMsqkKF/zIul6Cb
+	C7NfoS9w5Gd+EHYW16ky0t8G1IdtnJPu1vAakoNQtDI5TxuecoHB7n7C4mz94aGNLse
+	rPlpxc24X2XblYNlB4ms6gA6JM4iL/alk6pPR+Gs=
+Received: by smtp.zohomail.com with SMTPS id 1791638520514317.5735096552768;
+	Sat, 10 Oct 2026 06:22:00 -0700 (PDT)
+Message-ID: <c746c60f-cc12-4827-bef2-1d1d6f605d0b@collabora.com>
+Date: Sat, 10 Oct 2026 15:21:54 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 01/20] dt-bindings: phy: Add
- starfive,jh7110-inno-hdmi-phy
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
-	<neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, Krzysztof
-	Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Andrzej
-	Hajda <andrzej.hajda@intel.com>, Robert Foss <rfoss@kernel.org>, Laurent
-	Pinchart <Laurent.pinchart@ideasonboard.com>, Jonas Karlman
-	<jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>, Luca Ceresoli
-	<luca.ceresoli@bootlin.com>, Maarten Lankhorst
-	<maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>, Lee Jones <lee@kernel.org>, Andy
-	Yan <andy.yan@rock-chips.com>, Philipp Zabel <p.zabel@pengutronix.de>, Emil
-	Renner Berthing <kernel@esmil.dk>, Hal Feng <hal.feng@starfivetech.com>,
-	Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
-	<sboyd@kernel.org>, Heiko Stuebner <heiko@sntech.de>, Paul Walmsley
-	<pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou
-	<aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>, Dominique
-	Belhachemi <db@domibel.de>, Brian Masney <bmasney+clk@redhat.com>, Jerome
-	Brunet <jbrunet+clk@baylibre.com>, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	dri-devel@lists.freedesktop.org, mfd@lists.linux.dev,
-	linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-riscv@lists.infradead.org, Marek
-	Szyprowski <m.szyprowski@samsung.com>, Maud Spierings
-	<maud_spierings@murena.io>, Graham Markall <hello@big-grey.co.uk>, Icenowy
-	Zheng <zhengxingda@iscas.ac.cn>, Chaoyi Chen <chaoyi.chen@rock-chips.com>,
-	Joshua Peisach <jpeisach@ubuntu.com>, =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?=
-	<u.kleine-koenig@baylibre.com>
+Subject: Re: [PATCH v4 5/7] phy: rockchip-samsung-dcphy: Factor the
+ transmitter teardown into a helper
+To: jason98166@gmail.com, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Guochun Huang <hero.huang@rock-chips.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: Sebastian Reichel <sebastian.reichel@collabora.com>,
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <20260821-dcphy-rx-v1-v4-0-f1797634233d@gmail.com>
+ <20260821-dcphy-rx-v1-v4-5-f1797634233d@gmail.com>
 Content-Language: en-US
-From: Michal Wilczynski <m.wilczynski@samsung.com>
-In-Reply-To: <ac7b82e6-22ea-465c-8477-bbe0bd9c8c27@kernel.org>
-X-CMS-MailID: 20261010122357eucas1p1892ef8aa961af3208f81f5356316372e
-X-Msg-Generator: CA
-X-RootMTR: 20260915153214eucas1p2b548f3236ef98fb0cbf320e397420125
-X-EPHeader: CA
-X-CMS-RootMailID: 20260915153214eucas1p2b548f3236ef98fb0cbf320e397420125
-References: <20260915-jh7110-clean-send-v4-0-f0e4fd6f2cc8@samsung.com>
-	<CGME20260915153214eucas1p2b548f3236ef98fb0cbf320e397420125@eucas1p2.samsung.com>
-	<20260915-jh7110-clean-send-v4-1-f0e4fd6f2cc8@samsung.com>
-	<20260917-mutant-chamois-of-competence-46ca77@quoll>
-	<1a1a9b49-430b-4218-b27d-e133d488e8d9@samsung.com>
-	<6cf9e611-bfc5-407b-8132-bd328f8b61fc@kernel.org>
-	<eaba2fa9-a1ce-4dac-9bd6-e0b3a3dd01ef@samsung.com>
-	<3ee91c92-4e3a-4bac-85cf-923f5d77ceff@kernel.org>
-	<3c5c15d9-ea7e-49a2-adae-ec3e3c72594b@samsung.com>
-	<ac7b82e6-22ea-465c-8477-bbe0bd9c8c27@kernel.org>
+From: Michael Riesch <michael.riesch@collabora.com>
+In-Reply-To: <20260821-dcphy-rx-v1-v4-5-f1797634233d@gmail.com>
+X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261010_052405_396423_8D215D84 
-X-CRM114-Status: GOOD (  31.48  )
+X-CRM114-CacheID: sfid-20261010_062210_128199_94A74AC6 
+X-CRM114-Status: GOOD (  19.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,161 +88,93 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Jason,
 
+Thank you for your work!
 
-On 10/4/26 09:15, Krzysztof Kozlowski wrote:
-> On 04/10/2026 00:35, Michal Wilczynski wrote:
->>
->>
->> On 10/3/26 22:45, Krzysztof Kozlowski wrote:
->>> On 03/10/2026 17:36, Michal Wilczynski wrote:
->>>>
->>>>
->>>> On 9/30/26 13:01, Krzysztof Kozlowski wrote:
->>>>> On 25/09/2026 23:05, Michal Wilczynski wrote:
->>>>>>>> +  clocks:
->>>>>>>> +    maxItems: 1
->>>>>>>> +    description: Reference oscillator.
->>>>>>>
->>>>>>> This barely counts as a resource, so usual question: no resources here?
->>>>>>> no MMIO? Even the user of this phy is the block itself.
->>>>>>>
->>>>>>> This makes me wonder if this should be a device node in the first place
->>>>>>> (instead folded into the parent).
->>>>>>
->>>>>> The PHY has no reg because the reg is shared with the controller and
->>>>>> owned by the parent - patch 9 lets the bridge take its regmap from
->>>>>> there.
->>>>>>
->>>>>> The user of the PHY is not only the block itself. It is the pixel clock
->>>>>> provider for the whole display subsystem, voutcrg takes hdmitx0_pixelclk
->>>>>> as the parent of its DC8200 pixel MUXes, and while HDMI output is active
->>>>>> it is the only intended source for that clock. The parent has to be
->>>>>> assigned explicitly so the general PLL does not end up driving the pixel
->>>>>> clock, and so a DSI user does not reach the HDMI PHY clock generator.
->>>>>>
->>>>>> So it has to be its own node. The HDMI block has two independent
->>>>>
->>>>> I do not see the logic which lead to this conclusion. Pixel clock
->>>>> provider, so a clock controller, cannot be a user of a phy. Clock
->>>>> controller does not have a physical layer.
->>>>
->>>> Sorry I think the wording was not perfect. I meant the PHY node is a
->>>> pixel clock provider. voutcrg consumes a clock not a PHY.
->>>>
->>>> voutcrg: clock-controller@295c0000 {
->>>>          clocks = <&syscrg ...>, <&hdmi_phy>;
->>>>          clock-names = ...,"hdmitx0_pixelclk";
->>>> };
->>>>
->>>> The consumer of the PHY is only the hdmi controller.
->>>>
->>>> What matters for the node layout is where that clock goes. voutcrg is the
->>>> SoC display clock controller - it is not part of the HDMI block:
->>>>
->>>> hdmi_phy -- pixel clock -> voutcrg
->>>>                               |
->>>>                               - pclk/mclk/bclk -> hdmi_controller
->>>>                               - pix0/pix1 -> dc8200
->>>>
->>>> hdmi_phy and hdmi_controller are the same register block with one reg
->>>> owned by the parent. So if that block is described as a single node:
->>>>
->>>> hdmi_node - pixel clock -> voutcrg
->>>>      ^                          |
->>>>      --- pclk/mclk/bclk --------
->>>>
->>>> the node provides a clock to voutcrg and consumes three clocks from
->>>> voutcrg. That is a cycle in the device tree description.
->>>
->>> There is no cycle. Internal signals to the block are not represented in DT.
->>>
->>> What you have is a driver problem and you create some sort of DT
->>> structure to solve that. DT purpose is NOT to solve your driver
->>> dependencies or circular connections.
->>
->> The structure is not something I added. The voutcrg binding has required
->> an input clock named hdmitx0_pixelclk since it was merged in 2023
->> a097a5ec14df ("dt-bindings: clock: Add StarFive JH7110 Video-Output
->> clock and reset generator") and this series does not touch that file:
->>
->> Documentation/devicetree/bindings/clock/starfive,jh7110-voutcrg.yaml
->>        - const: hdmitx0_pixelclk
->>
->> Mainline satisfies it with a placeholder, because so far nothing provided the
->> real clock:
->>
->> hdmitx0_pixelclk: hdmitx0-pixel-clock {
->>             compatible = "fixed-clock";                                                                          
->>             clock-output-names = "hdmitx0_pixelclk";
->>             #clock-cells = <0>;
->> };
->>
->> All this series does is point that existing input at the device that actually
->> generates it.
->>
->> TRM [1] table 5-3  on page 529 lists the display CRG's input clocks. Most come from
->> dom_vout_top, but three come from IP blocks inside the subsystem:
->>
->> clk_hdmitx0_pixelclk        297 MHz   u0_hdmi_tx.clk_pix
->> clk_mipitx_dphy_rxesc        10 MHz   u0_mipitx_dphy.clk_rxesc
->> clk_mipitx_dphy_txbytehs    297 MHz   u0_mipitx_dphy.clk_txbytehs
->>
->> and on page 530 the CRG offers clk_hdmitx0_pixelclk as Source1 for:
->>
->> u0_dc8200.clk_pix0      Source0 clk_dc8200_pix0  Source1 clk_hdmitx0_pixelclk
->> u0_dc8200.clk_pix1      Source0 clk_dc8200_pix0  Source1 clk_hdmitx0_pixelclk
->> u0_cdns_dsiTx.clk_dpi   Source0 clk_dc8200_pix0  Source1 clk_hdmitx0_pixelclk
->>
->> The DC8200 and the DSI TX are separate devices, so the pixel clock
->> crosses two block boundaries to reach them.
->>
->> That is also why the DT has to be able to name it. Those MUXes have two
->> parents and the selection is made in DT:
->>
->> &dc8200 {
->>           assigned-clocks = <&voutcrg JH7110_VOUTCLK_DC8200_PIX0>, ...;
->>           assigned-clock-parents = <&hdmi_phy>, <&hdmi_phy>;
->> };
->>
->> and voutcrg takes it as an input clock because that is what the hardware
->> does. If the PHY is folded into the HDMI node, that input phandle points at
->> a node which also consumes pclk/mclk/bclk from voutcrg. That is where the
->> cycle comes from - the hardware topology not the driver.
+On 8/21/26 14:02, Jason Yang via B4 Relay wrote:
+> From: Jason Yang <jason98166@gmail.com>
 > 
-> Which is perfectly "fine" - present in many other SoCs as well. This is
-> not different and your arguments are insufficient to give here
-> exceptions. Why? Because again you use as an argument a Linux driver
-> problem (cyclic dependency). Basically to solve Linux problem you
-> introduce new empty nodes.
+> The transmitter's power-on path is in samsung_mipi_dphy_tx_power_on(),
+> but the power_off callback still does the teardown itself.
 > 
-> Best regards,
-> Krzysztof
+> Move the teardown into samsung_mipi_dphy_tx_power_off(), so that
+> power-on and power-off are a matching pair. Both callbacks then have a
+> type switch whose arms are plain returns. Turn each into an early guard
+> for the not yet supported C-PHY and drop the unreachable trailing
+> return.
 > 
+> No functional change intended.
+> 
+> Signed-off-by: Jason Yang <jason98166@gmail.com>
+> ---
+>  drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c | 31 ++++++++++-------------
+>  1 file changed, 14 insertions(+), 17 deletions(-)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
+> index f58907dec733..5d9d44a1d6a2 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
+> @@ -1361,37 +1361,34 @@ static int samsung_mipi_dphy_tx_power_on(struct samsung_mipi_dcphy *samsung)
+>  	return 0;
+>  }
+>  
+> +static int samsung_mipi_dphy_tx_power_off(struct samsung_mipi_dcphy *samsung)
+> +{
+> +	samsung_mipi_dphy_tx_lane_disable(samsung);
+> +	samsung_mipi_dcphy_pll_disable(samsung);
+> +
+> +	return 0;
+> +}
+> +
+>  static int samsung_mipi_dcphy_tx_power_on(struct phy *phy)
+>  {
+>  	struct samsung_mipi_dcphy *samsung = phy_get_drvdata(phy);
+>  
+> -	switch (samsung->type) {
+> -	case PHY_TYPE_DPHY:
+> -		return samsung_mipi_dphy_tx_power_on(samsung);
+> -	default:
+> -		/* CPHY part to be implemented later */
+> +	/* CPHY part to be implemented later */
+> +	if (samsung->type != PHY_TYPE_DPHY)
+>  		return -EOPNOTSUPP;
+> -	}
 
-OK probe ordering is a Linux concern and can't be used it to justify the
-binding.
-
-We spoke briefly about this on Monday and I came away thinking the node
-is acceptable as long as it is justified by what it describes rather
-than by probe order. Is that the right reading of what you meant?
-
-On that basis the PHY node:
-- is a clock provider, and voutcrg consumes that clock and
-  routes it on to the DC8200 pixel MUXes and the DSI TX
-- is a phy provider for the controller
-- takes a different input clock than the controller - xin24m, against
-  pclk/mclk/bclk from voutcrg
-- is separate IP - the same Innosilicon PHY that RK3328 instantiates at its
-  own address (phy@ff430000), which here shares a register window with the
-  controller
-
-The reg is the only thing it does not have of its own, and that is shared
-with the controller and owned by the parent.
+What is the value of doing that? Personally I'd leave the switch.
 
 Best regards,
--- 
-Michal Wilczynski <m.wilczynski@samsung.com>
+Michael
+
+>  
+> -	return 0;
+> +	return samsung_mipi_dphy_tx_power_on(samsung);
+>  }
+>  
+>  static int samsung_mipi_dcphy_tx_power_off(struct phy *phy)
+>  {
+>  	struct samsung_mipi_dcphy *samsung = phy_get_drvdata(phy);
+>  
+> -	switch (samsung->type) {
+> -	case PHY_TYPE_DPHY:
+> -		samsung_mipi_dphy_tx_lane_disable(samsung);
+> -		break;
+> -	default:
+> -		/* CPHY part to be implemented later */
+> +	/* CPHY part to be implemented later */
+> +	if (samsung->type != PHY_TYPE_DPHY)
+>  		return -EOPNOTSUPP;
+> -	}
+>  
+> -	samsung_mipi_dcphy_pll_disable(samsung);
+> -
+> -	return 0;
+> +	return samsung_mipi_dphy_tx_power_off(samsung);
+>  }
+>  
+>  static int
+> 
+
 
 -- 
 linux-phy mailing list
