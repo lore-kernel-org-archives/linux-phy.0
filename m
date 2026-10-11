@@ -4,40 +4,40 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19226CA9EBD
-	for <linux-phy@archiver.kernel.org>; Sun, 11 Oct 2026 06:01:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22822CA9EC9
+	for <linux-phy@archiver.kernel.org>; Sun, 11 Oct 2026 06:03:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aLFFXL3LsLjxZEvuw8LaX2PUcS4wnAFSWfNHJ/H0khE=; b=CYDzT2K6nSarz3
-	gLPjLUhX+az6yizL2vgoYCQer4IpkP6u75YIPMTKZLL+P3RdkZu4jorZeNCXbpXzQAmYNVxzpx1Sj
-	kujBwxEYY+cZi2fji2pAwzByTiuscklim2R44zMGiUXy/7X6Th861ceYRkR4EBgCDmq+vdXYc9dAt
-	TJLWBEycq+6YkkdTASLB6BWF4Tw/7TKKN1KfZhGSccGnT9KkwfYX4R5Uzx2ww3WZyc6EoU3v6nKqX
-	eMikR8xRdjLU5G9//tMhSGMkajrD9XZkYfpk7KZLcPQNYi4CgcF1ZUmHoGMZoIYod65GE28FhlaH2
-	qKUKRgHrbw3Iorq4mLwg==;
+	List-Owner; bh=BafwsHpUzpCB2fnN1hXseAn3C5JFRl94AA1dAFCcHqU=; b=wUbqEwc0Obyy1s
+	GhtHUlVIs8tLd3ZRkppTjorGJFOC80wOD5Wox12fL/Un5oFSkL6nZ0gZyMWZoiKeX1Xx2W135KaYj
+	YJ7MTN2+4V3w5f3974QpMsCd0Maqi5+VSbrNGNsCt6Nb2YDFnfYA/pIMf1Ehkecmrng/NWriUB7JB
+	o/3IGgwF+xaYgYVUaFtvmuGOCE3UP2bg/KjxCyneYGfaEWc/WoDXgNsRBohn9fl+kEP+BSfelnoop
+	HSLZwJkZ0sUwHmfAP3LvAc+sorz5DjbaIB9UufvmSic+yGiLsvGr6JisuXi6ZH3XQcjGF0TqSHTiL
+	2p8PKlyAqf06ZmGzl1Mg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xFmdC-00000008k87-264r;
-	Sun, 11 Oct 2026 06:01:58 +0000
+	id 1xFmej-00000008kDj-3Ggw;
+	Sun, 11 Oct 2026 06:03:33 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xFmd8-00000008k7R-0pol;
-	Sun, 11 Oct 2026 06:01:56 +0000
+	id 1xFmef-00000008kD0-2JIr;
+	Sun, 11 Oct 2026 06:03:30 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 605DF1A00C4;
-	Sun, 11 Oct 2026 08:01:52 +0200 (CEST)
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id D45D01A00B4;
+	Sun, 11 Oct 2026 08:03:27 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com [134.27.226.22])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 4719A1A00C3;
-	Sun, 11 Oct 2026 08:01:52 +0200 (CEST)
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B25C61A0031;
+	Sun, 11 Oct 2026 08:03:27 +0200 (CEST)
 Received: from lsv051416.swis.nl-cdc01.nxp.com (lsv051416.swis.nl-cdc01.nxp.com [10.168.48.122])
-	by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id A8FF920301;
-	Sun, 11 Oct 2026 08:01:51 +0200 (CEST)
-Date: Sun, 11 Oct 2026 08:01:52 +0200
+	by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 29BEC20301;
+	Sun, 11 Oct 2026 08:03:27 +0200 (CEST)
+Date: Sun, 11 Oct 2026 08:03:27 +0200
 From: Jan Petrous <jan.petrous@oss.nxp.com>
-To: Maxime Chevallier <maxime.chevallier@bootlin.com>
+To: Andrew Lunn <andrew@lunn.ch>
 Cc: Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>,
 	NXP S32 Linux Team <s32@nxp.com>, Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
@@ -56,11 +56,12 @@ Cc: Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>,
 	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
 	Bjorn Helgaas <bhelgaas@google.com>,
 	Bogdan Hamciuc <bogdan.hamciuc@nxp.com>,
-	Ionut Vicovan <ionut.vicovan@nxp.com>, Andrew Lunn <andrew@lunn.ch>,
+	Ionut Vicovan <ionut.vicovan@nxp.com>,
 	Heiner Kallweit <hkallweit1@gmail.com>,
 	Russell King <linux@armlinux.org.uk>,
 	Clark Wang <xiaoning.wang@nxp.com>,
 	Philipp Zabel <p.zabel@pengutronix.de>,
+	Maxime Chevallier <maxime.chevallier@bootlin.com>,
 	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
 	Alexandre Torgue <alexandre.torgue@foss.st.com>,
 	Chester Lin <chester62515@gmail.com>,
@@ -70,7 +71,6 @@ Cc: Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>,
 	Pengutronix Kernel Team <kernel@pengutronix.de>,
 	Fabio Estevam <festevam@gmail.com>,
 	Richard Cochran <richardcochran@gmail.com>,
-	Coia Prant <coiaprant@gmail.com>,
 	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
 	netdev@vger.kernel.org, devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
@@ -78,17 +78,17 @@ Cc: Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>,
 	linux-stm32@st-md-mailman.stormreply.com,
 	Vincent Guittot <vincent.guittot@linaro.org>
 Subject: Re: [PATCH RFC v3 04/12] net: pcs: add NXP SerDes XPCS shared core
-Message-ID: <assmUIvWMuZsp8OO@lsv051416.swis.nl-cdc01.nxp.com>
+Message-ID: <assmr2PH8064/pJn@lsv051416.swis.nl-cdc01.nxp.com>
 References: <20260919-s32g_serdes-v3-0-9d68868c1e89@oss.nxp.com>
  <20260919-s32g_serdes-v3-4-9d68868c1e89@oss.nxp.com>
- <6aabb56e-406f-4d13-9fd8-54822202039f@bootlin.com>
+ <07c5ed86-755a-4094-b45a-6316d10f4515@lunn.ch>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <6aabb56e-406f-4d13-9fd8-54822202039f@bootlin.com>
+In-Reply-To: <07c5ed86-755a-4094-b45a-6316d10f4515@lunn.ch>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261010_230154_513523_383C1C88 
-X-CRM114-Status: GOOD (  24.39  )
+X-CRM114-CacheID: sfid-20261010_230329_877691_D24D1DFE 
+X-CRM114-Status: GOOD (  16.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,12 +105,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Maxime, Coia
-
-On Sat, Sep 19, 2026 at 05:31:42PM +0200, Maxime Chevallier wrote:
-> Hi Jan,
-> 
-> On 9/19/26 08:54, Jan Petrous via B4 Relay wrote:
+On Sun, Sep 20, 2026 at 08:39:26PM +0200, Andrew Lunn wrote:
+> On Sat, Sep 19, 2026 at 08:54:32AM +0200, Jan Petrous via B4 Relay wrote:
 > > From: Clark Wang <xiaoning.wang@nxp.com>
 > > 
 > > The SerDes subsystems found on NXP S32G and i.MX SoCs integrate a
@@ -119,53 +115,41 @@ On Sat, Sep 19, 2026 at 05:31:42PM +0200, Maxime Chevallier wrote:
 > > memory mapped access on S32G, Clause 45 MDIO on i.MX.
 > > 
 > > Add a transport agnostic phylink PCS core which operates on regmaps
-> > provided by the platform glue. It implements the phylink PCS operations,
-> > the Clause 37 SGMII / 2500BASE-X / USXGMII / 10GBASE-R configuration and
-> > link state handling, soft reset and polling helpers, and the common
-> > feature sets. The platform specific register sequences, compatibility
-> > tables and quirks are supplied through a per revision descriptor by the
-> > platform drivers selecting this core.
-> > 
-> > The register sequences and the feature lists are derived from the
-> > Synopsys pcs-xpcs driver, so its copyright is retained. A separate driver
-> > is needed because struct dw_xpcs is built around an mdio_device and owns
-> > the transport, the reset and the identification of a standalone PCS,
-> > while here the PMA can be shared with a PCIe controller, the bring-up is
-> > sequenced across both XPCS instances by the SerDes PHY driver, and the
-> > transport is not always MDIO.
+> > provided by the platform glue.
 > 
-> Is there a way to avoid code duplication by wrapping the accesses into
-> a mii_bus ?
+> What is not transport agnostic with the current code.
 > 
-> This is what the Rockchip submission does : 
-> 
-> https://lore.kernel.org/r/20260919125119.2107089-8-coiaprant@gmail.com
+> Think carefully about that, before you answer.
 > 
 
-Yes. The S32G accessor is the same DW indirect scheme pcs-xpcs-plat
-implements (page into the viewport at 0xff, then the low address byte
-at a 4-byte stride), so there is no reason for S32G to carry its own
-copy of the XPCS code. The next version drops the shared core, exposes
-each XPCS instance as a mii_bus from the SerDes PHY driver and creates
-the PCS with xpcs_create_pcs_mdiodev(), much like the RK3568 glue.
-Details in my reply to Andrew.
+Ok, got it, pcs-xpcs only reaches the hardware through mdiodev_c45_*(), so
+whatever sits behind the mii_bus is the transport. pcs-xpcs-plat already
+puts the DW indirect MMIO viewport behind one, sja1105 and txgbe put
+their own register access behind one, and on i.MX the XPCS is on plain
+Clause 45 MDIO in the first place. The claim in the commit message was
+wrong, and with it the justification for a second core.
 
-The part that does not fit pcs-xpcs-plat as-is is ownership, not
-access: the XPCS windows sit inside the SerDes subsystem register
-space, and their bring-up is ordered against the PCIe lane and the
-other XPCS instance, so the bus is registered by the SerDes PHY driver
-rather than by a standalone snps,dw-xpcs device. The accessor itself
-is a few lines; if Alex's pcs-xpcs-regmap is merged first I will use
-it rather than open-code another bus.
+For the next version I will drop this patch and move S32G onto
+pcs-xpcs. The SerDes PHY driver registers a mii_bus per XPCS instance
+over the existing indirect accessor and creates the PCS with
+xpcs_create_pcs_mdiodev(). The S32G PMA sequence becomes a
+dw_xpcs_compat .pma_config keyed on an S32G PMA ID, the same way the
+SJA1110 and TXGBE ones are.
 
-On 9/20/26 00:31, Coia Prant wrote:
-> A callback in dw_xpcs would let platform glues express those
-> differences without copying the register sequences.
+That leaves two things S32G needs from pcs-xpcs, neither of which is
+about the transport:
 
-S32G needs the same kind of thing: skip the generic soft reset, and no
-EEE registers. I will start with the existing PMA-ID mechanism, since
-that is what TXGBE and FBNIC use today, and switch to a callback if one
-is agreed in the Rockchip thread. I'll Cc you on those patches.
+ - skipping the generic soft reset. The vendor reset
+   (VR_MII_DIG_CTRL1.VR_RST) is part of an ordered bring-up of both
+   XPCS instances, which the SerDes PHY driver owns because the PMA is
+   shared with the PCIe lane. The PMA ID check that already clears
+   need_reset for TXGBE and FBNIC would cover it.
+
+ - no EEE. S32G3 does not implement VR_MII_EEE_MCTRL0/1, so
+   pcs_enable_eee/pcs_disable_eee must not touch them.
+
+Both will be separate small patches against pcs-xpcs so they can be
+judged on their own.
 
 Thanks,
 Jan
