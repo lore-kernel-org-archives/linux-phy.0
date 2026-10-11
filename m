@@ -4,54 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A067DCA9EC1
-	for <linux-phy@archiver.kernel.org>; Sat, 10 Oct 2026 16:25:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B608CCA9EC9
+	for <linux-phy@archiver.kernel.org>; Sun, 11 Oct 2026 05:53:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CVJ2CZVa65irme40RyLhdsA2srAC422vnnIgJ89Bbug=; b=3dBfXFv2lhLxRZ
-	voJEC/+zs8+PKOl5vUEBkyurcXtpC7VhY0PaYlK0DHC52Tj1hLT5DPHOJt/h+u+X7N7TPjDA9kk5v
-	oMQnFXCylEd8ugyocPNGw9Dp9PX/6Hl3bFfJkGNhDEmP7+gydMdJelHvnGPrOOYEZDAUB+0WQs8CJ
-	GoUEewKdPPIMkumYHgJFdfEBZ6IBHCpo6Uc/jysInbfI0xjLaG/Ku6GGoKUpb7iTt6ejRIFdk7hXq
-	LGCJbOJwgxF3EH94G/8uesMKuPK/m+p/QDG1sOJqKM3++yGVov3DVZGe7fSKiw4Lkn0Vv8FkG1fs9
-	T76g/4fqQUlsKUs1Cm8Q==;
+	List-Owner; bh=UF6GvSoWsJ5WI2dsvLneBuc4OjdCYs4CoZ1cRkM255o=; b=fcQNuGgJs2Oa1K
+	yasql1WHXQlsI/dQvp9o+haWxSATaf9KvVJFDU3YX+HgvUr6OuZLrx531gnyc6u8Z2VgpIlU0f2rA
+	zXi+PQNdTanvNFcZy2FhnorN52Y3WcH4I2WJsdbyUKd3/8vIV/bjF4erphvnb94LVaHE0K47adtfk
+	UniTtNFFvRldGhef6/oLLOhCxSRPJKxAOo7zjv2IuOOqFfOM5hWwRu1wbfNP7ZQ/DymToWt9uEIgc
+	FFlJ7yIqzvRzkz9DHqlc8b6Yz5zoGFi7+ryzz37GBIanCAD8ZYWx8BYdRh1ukKhHpvz125wVVYtwo
+	h4dkYcd+dmrJimZda8Bg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xFZtW-00000008GoF-1Ncq;
-	Sat, 10 Oct 2026 16:25:58 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xFmVS-00000008jo9-1vvT;
+	Sun, 11 Oct 2026 05:53:58 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xFZtR-00000008Gnu-0NoP
-	for linux-phy@lists.infradead.org;
-	Sat, 10 Oct 2026 16:25:56 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 7BC2343448;
-	Sat, 10 Oct 2026 16:25:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C7C011F000FF;
-	Sat, 10 Oct 2026 16:25:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791649552;
-	bh=9BQoPNpg/BuzHBZB4mO3d/+THaNd9C2XTiHsMc60QaY=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=CtAKnH5tK5prTd7sikrq+hsrzJFXD4KQPW8uWMIXGIAR+0YktZqvH+qX6hknBIWL3
-	 XwdAvvi4Yz9C8YvxWFM2Wnce1RDYVXUEMboz9zLe2WIV5pl2loQJhAK0KJRukLL6Y/
-	 FnUox1zaibUQQ8RCZ3hWjqqP3Im8FR8g3efqF6xWqmnfF9M2VeqXLDGLtgkUh1W2BO
-	 jf6qph7SQAeyA9KqDuWkgMAqQv8YRDdHb4Z3yeflBJHE6W0NJyHVnwiSEj9/WoSXl5
-	 dY/Ud52M7Rg/9xx3qF6N1Kl+SsIzvrEJo+Z5SrEK1PGEnEVMqli87CaX7+h8kHFgWa
-	 S5bdLBUCx3gDw==
-Message-ID: <sashiko-outbox-166736@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v20 08/13] media: qcom: camss: vfe: Add support for VFE
- 1080
-To: "Hangxiang Ma" <hangxiang.ma@oss.qualcomm.com>
-Cc: conor+dt@kernel.org, devicetree@vger.kernel.org, olteanv@gmail.com, vkoul@kernel.org, neil.armstrong@linaro.org, linux-phy@lists.infradead.org, robh@kernel.org, media-ci@linuxtv.org
-In-Reply-To: <20261010-kaanapali-camss-v20-8-63e98ce9ac0c@oss.qualcomm.com>
-References: <20261010-kaanapali-camss-v20-0-63e98ce9ac0c@oss.qualcomm.com>
- <20261010-kaanapali-camss-v20-8-63e98ce9ac0c@oss.qualcomm.com>
-Date: Sat, 10 Oct 2026 16:25:51 +0000
+	id 1xFmVP-00000008jnM-1ENm;
+	Sun, 11 Oct 2026 05:53:56 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 4672020005D;
+	Sun, 11 Oct 2026 07:53:51 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com [134.27.226.22])
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 2C1FF200055;
+	Sun, 11 Oct 2026 07:53:51 +0200 (CEST)
+Received: from lsv051416.swis.nl-cdc01.nxp.com (lsv051416.swis.nl-cdc01.nxp.com [10.168.48.122])
+	by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 8C61220301;
+	Sun, 11 Oct 2026 07:53:50 +0200 (CEST)
+Date: Sun, 11 Oct 2026 07:53:51 +0200
+From: Jan Petrous <jan.petrous@oss.nxp.com>
+To: Maxime Chevallier <maxime.chevallier@bootlin.com>
+Cc: Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>,
+	NXP S32 Linux Team <s32@nxp.com>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Ghennadi Procopciuc <ghennadi.procopciuc@nxp.com>,
+	Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	Bogdan Hamciuc <bogdan.hamciuc@nxp.com>,
+	Ionut Vicovan <ionut.vicovan@nxp.com>, Andrew Lunn <andrew@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Russell King <linux@armlinux.org.uk>,
+	Clark Wang <xiaoning.wang@nxp.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Chester Lin <chester62515@gmail.com>,
+	Matthias Brugger <mbrugger@suse.com>,
+	Ghennadi Procopciuc <ghennadi.procopciuc@oss.nxp.com>,
+	Frank Li <Frank.Li@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>,
+	Richard Cochran <richardcochran@gmail.com>,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	netdev@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+	imx@lists.linux.dev, linux-pci@vger.kernel.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	Vincent Guittot <vincent.guittot@linaro.org>
+Subject: Re: [PATCH RFC v3 07/12] net: stmmac: dwmac-s32: Add SGMII support
+Message-ID: <asskbxR0/ioYD5mg@lsv051416.swis.nl-cdc01.nxp.com>
+References: <20260919-s32g_serdes-v3-0-9d68868c1e89@oss.nxp.com>
+ <20260919-s32g_serdes-v3-7-9d68868c1e89@oss.nxp.com>
+ <7b0a957d-f770-4bad-b3b9-aeb7a61bfb49@bootlin.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <7b0a957d-f770-4bad-b3b9-aeb7a61bfb49@bootlin.com>
+X-Virus-Scanned: ClamAV using ClamSMTP
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261010_225355_687028_9B9381B3 
+X-CRM114-Status: GOOD (  49.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,86 +99,237 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIG1lZGlhOiB2ZmU6IEFV
-UF9VUERBVEUgbWlzbWF0Y2ggZHVyaW5nIHN0cmVhbSBlbmFibGUgdmlvbGF0ZXMgaGFyZHdhcmUg
-Y29uc3RyYWludAotIFtIaWdoXSBtZWRpYTogY3NpZDogbG9ja2xlc3MgcmVhZC1tb2RpZnktd3Jp
-dGUgcmFjZSBvbiBjc2lkLT5hdXBfdXBkYXRlIGZyb20gcHJvY2VzcyBhbmQgaGFyZGlycQotIFtN
-ZWRpdW1dIG1lZGlhOiB2ZmU6IGhhcmRjb2RlZCB2ZmUtPmlkIG1hcHBpbmcgYnJlYWtzIE1lZGlh
-IENvbnRyb2xsZXIgY3Jvc3Mtcm91dGluZwotLQoKY29tbWl0IGQ2ZjA5YjJkMzUyMjBiZjFmOTE4
-NzNmNjY1ZTJkZTcwMTk2YzJlODMKQXV0aG9yOiBIYW5neGlhbmcgTWEgPGhhbmd4aWFuZy5tYUBv
-c3MucXVhbGNvbW0uY29tPgoKbWVkaWE6IHFjb206IGNhbXNzOiB2ZmU6IEFkZCBzdXBwb3J0IGZv
-ciBWRkUgMTA4MAoKQWRkIHN1cHBvcnQgZm9yIHRoZSBWRkUgKFZpZGVvIEZyb250IEVuZCkgMTA4
-MCBmb3VuZCBvbiBLYWFuYXBhbGkgU29DLgpUaGUgZHJpdmVyIGNvbnRpbnVlcyB0byB1c2UgVkZF
-IG5hbWluZywgYW5kIEthYW5hcGFsaSByZXF1aXJlcyBSRUdfVVBEQVRFCmFuZCBBVVBfVVBEQVRF
-IHRvIGJlIGlzc3VlZCBvbmx5IGFmdGVyIENTSUQgY29uZmlndXJhdGlvbi4KCj4gZGlmZiAtLWdp
-dCBhL2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0vcWNvbS9jYW1zcy9jYW1zcy12ZmUtMTA4MC5jIGIv
-ZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9xY29tL2NhbXNzL2NhbXNzLXZmZS0xMDgwLmMKPiBuZXcg
-ZmlsZSBtb2RlIDEwMDY0NAo+IGluZGV4IDAwMDAwMDAwMDAwMDAuLjAxNjg1N2NkMTAyNTEKPiAt
-LS0gL2Rldi9udWxsCj4gKysrIGIvZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9xY29tL2NhbXNzL2Nh
-bXNzLXZmZS0xMDgwLmMKClsgLi4uIF0KCj4gK3N0YXRpYyB2b2lkIHZmZV9yZWdfdXBkYXRlKHN0
-cnVjdCB2ZmVfZGV2aWNlICp2ZmUsIGVudW0gdmZlX2xpbmVfaWQgbGluZV9pZCkKPiArewo+ICsJ
-aW50IHBvcnRfaWQgPSBsaW5lX2lkOwo+ICsKPiArCWNhbXNzX3JlZ191cGRhdGUodmZlLT5jYW1z
-cywgdmZlLT5pZCwgcG9ydF9pZCwgZmFsc2UpOwo+ICt9CgpbU2V2ZXJpdHk6IE1lZGl1bV0KVGhl
-IENBTVNTIGRyaXZlciBmcmFtZXdvcmsgYWxsb3dzIGZsZXhpYmxlIHN0cmVhbSByb3V0aW5nLCBt
-ZWFuaW5nIHVzZXJzcGFjZQpjYW4gbGluayBhbnkgQ1NJRCBwYWQgdG8gYW55IFZGRSBwYWQgdmlh
-IHRoZSBNZWRpYSBDb250cm9sbGVyIGdyYXBoIChlLmcuLApyb3V0aW5nIGNzaWQwIHRvIHZmZTEp
-LgoKQnkgaGFyZGNvZGluZyB0aGUgaGFyZHdhcmUgSUQgdG8gdGhlIGxvY2FsIFZGRSdzIElEICh2
-ZmUtPmlkKSwgaWYgY3NpZDAgaXMKcm91dGVkIHRvIHZmZTEsIHZmZV9yZWdfdXBkYXRlKCkgd2ls
-bCBsb29rIHVwIGNzaWQxIGFuZCBpbmNvcnJlY3RseSBpc3N1ZSB0aGUKYnVmZmVyIEFVUF9VUERB
-VEUgY29tbWFuZHMgdG8gdGhlIGNzaWQxIGhhcmR3YXJlIGluc3RlYWQgb2YgdGhlIGFjdGl2ZSBj
-c2lkMC4KCkNvdWxkIHRoaXMgZHJvcCBxdWV1ZWQgYnVmZmVycyBvbiB0aGUgYWN0aXZlIHN0cmVh
-bSBhbmQgY29ycnVwdCB0aGUgcmVnaXN0ZXIKc3RhdGUgb2YgdGhlIGluYWN0aXZlIENTSUQ/Cgpb
-U2V2ZXJpdHk6IEhpZ2hdClRoaXMgd2lyZXMgdXAgdmZlX3JlZ191cGRhdGUoKSB0byBjYW1zc19y
-ZWdfdXBkYXRlKCksIGJyaWRnaW5nIFZGRSdzIGJ1ZmZlcgpxdWV1ZSBwYXRoIGludG8gdGhlIENT
-SUQgcmVnaXN0ZXIgdXBkYXRlIHBhdGguCgp2ZmVfcXVldWVfYnVmZmVyX3YyKCkgZXhlY3V0ZXMg
-aW4gcHJvY2VzcyBjb250ZXh0IGFuZCBhY3F1aXJlcwp2ZmUtPm91dHB1dF9sb2NrICh3aGljaCBk
-aXNhYmxlcyBsb2NhbCBpbnRlcnJ1cHRzIGJ1dCBkb2VzIG5vdCBwcmV2ZW50CmV4ZWN1dGlvbiBv
-biBvdGhlciBDUFVzKSwgYW5kIGl0IHRyaWdnZXJzIHZmZV9yZWdfdXBkYXRlKCkgLT4KX19jc2lk
-X2F1cF91cGRhdGUoKS4gVGhpcyBwZXJmb3JtcyBhIG5vbi1hdG9taWMgcmVhZC1tb2RpZnktd3Jp
-dGUgb24gc2hhcmVkCnN0YXRlOgoKICAgIGNzaWQtPmF1cF91cGRhdGUgfD0gQ1NJRF9SVVBfQVVQ
-X1JESShwb3J0X2lkKTsKCkNvbmN1cnJlbnRseSwgY3NpZF9pc3IoKSBjYW4gZXhlY3V0ZSBpbiBo
-YXJkaXJxIGNvbnRleHQgb24gYW5vdGhlciBDUFUuIEl0CmNhbGxzIF9fY3NpZF9hdXBfcnVwX2Ns
-ZWFyKCksIHdoaWNoIG1vZGlmaWVzIHRoZSBleGFjdCBzYW1lIHZhcmlhYmxlCmxvY2tsZXNzbHk6
-CgogICAgY3NpZC0+YXVwX3VwZGF0ZSAmPSB+Q1NJRF9SVVBfQVVQX1JESShwb3J0X2lkKTsKClNp
-bmNlIF9fY3NpZF9hdXBfdXBkYXRlKCkgYW5kIF9fY3NpZF9hdXBfcnVwX2NsZWFyKCkgdXNlIG5v
-bi1hdG9taWMgc3RhbmRhcmQKYml0d2lzZSBvcGVyYXRvcnMgKHw9IGFuZCAmPSkgZnJvbSBjb21w
-ZXRpbmcgY29udGV4dHMgd2l0aG91dCBhIHNoYXJlZApzcGlubG9jaywgZG9lcyB0aGlzIGZvcm0g
-YSBUT0NUT1UgZGF0YSByYWNlIHRoYXQgd2lsbCBjb3JydXB0CmNzaWQtPmF1cF91cGRhdGU/IENv
-dWxkIHRoaXMgcmVzdWx0IGluIGxvc3QgcmVnaXN0ZXIgdXBkYXRlcywgZHJvcHBlZCBidWZmZXJz
-LAphbmQgcGlwZWxpbmUgc3RhbGxzPwoKWyAuLi4gXQoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9t
-ZWRpYS9wbGF0Zm9ybS9xY29tL2NhbXNzL2NhbXNzLXZmZS5jIGIvZHJpdmVycy9tZWRpYS9wbGF0
-Zm9ybS9xY29tL2NhbXNzL2NhbXNzLXZmZS5jCj4gaW5kZXggMjY4MGE5OTE0NzY1Zi4uNTcxMGZk
-YmU0MWIzZSAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL21lZGlhL3BsYXRmb3JtL3Fjb20vY2Ftc3Mv
-Y2Ftc3MtdmZlLmMKPiArKysgYi9kcml2ZXJzL21lZGlhL3BsYXRmb3JtL3Fjb20vY2Ftc3MvY2Ft
-c3MtdmZlLmMKClsgLi4uIF0KCj4gQEAgLTU1Miw3ICs1NTMsOSBAQCBpbnQgdmZlX2VuYWJsZV9v
-dXRwdXRfdjIoc3RydWN0IHZmZV9saW5lICpsaW5lKQo+ICAJCW91dHB1dC0+Z2VuMi5hY3RpdmVf
-bnVtKys7Cj4gIAkJb3BzLT52ZmVfd21fdXBkYXRlKHZmZSwgb3V0cHV0LT53bV9pZHhbMF0sCj4g
-IAkJCQkgICBvdXRwdXQtPmJ1ZltpXS0+YWRkclswXSwgbGluZSk7Cj4gLQkJb3BzLT5yZWdfdXBk
-YXRlKHZmZSwgbGluZS0+aWQpOwo+ICsKPiArCQlpZiAoIXZmZS0+cmVzLT5yZWdfdXBkYXRlX2Fm
-dGVyX2NzaWRfY29uZmlnKQo+ICsJCQlvcHMtPnJlZ191cGRhdGUodmZlLCBsaW5lLT5pZCk7Cj4g
-IAl9CgpbU2V2ZXJpdHk6IEhpZ2hdClRoZSBjb21taXQgbWVzc2FnZSBzdGF0ZXMgdGhhdCAidGhl
-IG51bWJlciBvZiBBVVBfVVBEQVRFIHJlcXVlc3RzIG11c3QgbWF0Y2gKdGhlIG51bWJlciBvZiBi
-dWZmZXJzIHF1ZXVlZCB0byB0aGUgd3JpdGUgbWFzdGVyIHdoaWxlIGl0IGlzIGJlaW5nIGVuYWJs
-ZWQuIgpIZXJlIGluIHZmZV9lbmFibGVfb3V0cHV0X3YyKCksIHRoZSBsb29wIGZldGNoaW5nIHF1
-ZXVlZCBidWZmZXJzIGJyZWFrcyBlYXJseQppZiBmZXdlciB0aGFuIENBTVNTX0lOSVRfQlVGX0NP
-VU5UICgyKSBidWZmZXJzIGFyZSBhdmFpbGFibGUsIG1lYW5pbmcgaXQgaXMKdmFsaWQgZm9yIHVz
-ZXJzcGFjZSB0byBxdWV1ZSBvbmx5IDAgb3IgMSBidWZmZXJzLgoKSG93ZXZlciwgY3NpZF9jb25m
-aWd1cmVfc3RyZWFtKCkgaW4gY2Ftc3MtY3NpZC0xMDgwLmMgaW5kaXNjcmltaW5hdGVseSBsb29w
-cwphbmQgaXNzdWVzIGV4YWN0bHkgMiBBVVBfVVBEQVRFIHJlcXVlc3RzIHVuY29uZGl0aW9uYWxs
-eSwgaWdub3JpbmcgdGhlIFZGRSdzCmFjdHVhbCBhY3RpdmVfbnVtLgoKRG9lcyB0aGlzIG1pc21h
-dGNoIHZpb2xhdGUgdGhlIGhhcmR3YXJlIGNvbnN0cmFpbnQgYW5kIGNhdXNlIHRoZSBWRkUgV3Jp
-dGUKTWFzdGVyIHRvIGZldGNoIHVuaW5pdGlhbGl6ZWQgYnVmZmVyIGFkZHJlc3NlcyAoMHgwKSBm
-b3IgdGhlIG1pc3NpbmcgdXBkYXRlcywKcG90ZW50aWFsbHkgbGVhZGluZyB0byBETUEgZmF1bHRz
-IG9yIHBoeXNpY2FsIG1lbW9yeSBjb3JydXB0aW9uPwoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3
-IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MTAxMC1rYWFuYXBhbGktY2Ftc3Mt
-djIwLTAtNjNlOThjZTlhYzBjQG9zcy5xdWFsY29tbS5jb20/cGFydD04CgotLSAKbGludXgtcGh5
-IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3Rz
-LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+Hi Maxime,
+
+On Sat, Sep 19, 2026 at 02:04:43PM +0200, Maxime Chevallier wrote:
+> Hi Jan,
+> 
+> On 9/19/26 08:54, Jan Petrous via B4 Relay wrote:
+> > From: "Jan Petrous (OSS)" <jan.petrous@oss.nxp.com>
+> > 
+> > Wire the NXP S32G SerDes XPCS PCS into the dwmac-s32 glue layer so the
+> > MAC can run SGMII over a SerDes lane.
+> > 
+> > Changes:
+> > - s32_gmac_write_phy_intf_select: replace the hard-coded RGMII selector
+> >   with a switch on phy_interface so SGMII (0x01), RGMII, RMII and MII
+> >   all programme the SoC control register correctly.
+> > - Add s32_gmac_pcs_init: obtain the phylink_pcs handle from the SerDes
+> >   subsystem via s32g_serdes_pcs_create(), keyed by the standard
+> >   pcs-handle property on the GMAC node pointing at the SerDes XPCS lane
+> >   child. Propagates -EPROBE_DEFER if the SerDes driver has not probed
+> >   yet. There is no matching exit hook: the device link created by
+> >   s32g_serdes_pcs_create() covers the lifetime.
+> > - Add s32_gmac_select_pcs: return the stored PCS handle when the
+> >   negotiated interface is SGMII.
+> > - Hook pcs_init and select_pcs into plat_stmmacenet_data.
+> > 
+> > Note that installing a select_pcs callback suppresses the core's
+> > integrated_pcs fallback, because stmmac treats a NULL return from
+> > select_pcs as "no PCS" rather than "fall through". This matches what
+> > dwmac-rzn1 and dwmac-intel already do.
+> > 
+> > Both negotiation modes are supported by the PCS. The board device
+> > trees added later in this series describe the MAC-side link as fixed,
+> > so they exercise the out-of-band path.
+> > 
+> > The XPCS header guards its s32g_serdes_pcs_create() declaration with
+> > IS_REACHABLE(CONFIG_PHY_S32G_SERDES) and provides a static-inline stub
+> > returning -ENODEV otherwise. IS_REACHABLE is false both when the SerDes
+> > driver is disabled and in the built-in-consumer / modular-provider case
+> > (DWMAC_S32=y with PHY_S32G_SERDES=m), so this driver links in all four
+> > combinations of the two symbols.
+> > 
+> > Linking is not sufficient on its own, though. In the DWMAC_S32=y with
+> > PHY_S32G_SERDES=m case the stub makes s32_gmac_pcs_init() return
+> > -ENODEV, and stmmac treats a failing plat->pcs_init() as fatal, so a
+> > built-in MAC would refuse to probe on any device tree describing
+> > pcs-handle. Add a Kconfig dependency forbidding that combination
+> > rather than letting it build into a MAC that cannot probe.
+> > 
+> > Tested on an S32G3-VNP-RDB3 board: GMAC0 links at 1G over SGMII and
+> > passes traffic, both in SerDes mode 1 (alongside two active PCIe root
+> > complexes) and in mode 3.
+> > 
+> > Signed-off-by: Jan Petrous (OSS) <jan.petrous@oss.nxp.com>
+> > ---
+> >  drivers/net/ethernet/stmicro/stmmac/Kconfig     |  6 ++
+> >  drivers/net/ethernet/stmicro/stmmac/dwmac-s32.c | 74 ++++++++++++++++++++++++-
+> >  2 files changed, 78 insertions(+), 2 deletions(-)
+> > 
+> > diff --git a/drivers/net/ethernet/stmicro/stmmac/Kconfig b/drivers/net/ethernet/stmicro/stmmac/Kconfig
+> > index e3dd5adda5ac..1443ff4149b4 100644
+> > --- a/drivers/net/ethernet/stmicro/stmmac/Kconfig
+> > +++ b/drivers/net/ethernet/stmicro/stmmac/Kconfig
+> > @@ -192,6 +192,12 @@ config DWMAC_S32
+> >  	tristate "NXP S32G/S32R GMAC support"
+> >  	default ARCH_S32
+> >  	depends on OF && (ARCH_S32 || COMPILE_TEST)
+> > +	# SGMII needs the PCS from the SerDes driver. The header falls back
+> > +	# to a stub returning -ENODEV when that driver is not reachable, and
+> > +	# stmmac makes a failing plat->pcs_init() fatal, so a built-in MAC
+> > +	# with a modular SerDes would refuse to probe on any DT describing
+> > +	# pcs-handle. Forbid that combination instead.
+> > +	depends on PHY_S32G_SERDES || PHY_S32G_SERDES=n
+> 
+> select PHY_S32G_SERDES ? This is what other glues that require PCS do,
+> or there's a catch that prevents using it ?
+> 
+
+No real catch. As posted, PHY_S32G_SERDES "depends on"
+PCS_NXP_S32G_XPCS, so selecting it from DWMAC_S32 would give an unmet
+dependency warning, but that dependency should have been a select in
+the first place: PCS_NXP_S32G_XPCS has no dependencies of its own.
+With that fixed, PHY_S32G_SERDES only needs ARCH_S32 || COMPILE_TEST,
+which DWMAC_S32 already implies, so DWMAC_S32 can select it the same
+way DWMAC_RZN1 selects PCS_RZN1_MIIC. Done in the next version; a
+built-in MAC then always gets a built-in SerDes driver. The
+IS_REACHABLE() stub in the SerDes header stays, for other consumers
+of s32g_serdes_pcs_create().
+
+> >  	help
+> >  	  Support for ethernet controller on NXP S32CC SOCs.
+> >  
+> > diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-s32.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-s32.c
+> > index 024d8e10e918..a3a56b21181a 100644
+> > --- a/drivers/net/ethernet/stmicro/stmmac/dwmac-s32.c
+> > +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-s32.c
+> > @@ -16,12 +16,14 @@
+> >  #include <linux/of_mdio.h>
+> >  #include <linux/of_address.h>
+> >  #include <linux/phy.h>
+> > +#include <linux/phy/nxp-s32g-serdes.h>
+> >  #include <linux/phylink.h>
+> >  #include <linux/platform_device.h>
+> >  #include <linux/regmap.h>
+> >  #include <linux/stmmac.h>
+> >  
+> >  #include "stmmac_platform.h"
+> > +#include "stmmac.h"
+> >  
+> >  #define GMAC_INTF_RATE_125M	125000000	/* 125MHz */
+> >  
+> > @@ -40,23 +42,89 @@ struct s32_priv_data {
+> >  	phy_interface_t *intf_mode;
+> >  	struct clk *tx_clk;
+> >  	struct clk *rx_clk;
+> > +	/* SGMII PCS provided by the SerDes subsystem (NULL if not SGMII) */
+> > +	struct phylink_pcs *pcs;
+> 
+> There's already a phylink_pcs pointer in priv->hw, you shouldn't have to
+> store your own here.
+> 
+
+Right, I'll use priv->hw->phylink_pcs as dwmac-rzn1 and dwmac-socfpga do.
+
+> >  };
+> >  
+> >  static int s32_gmac_write_phy_intf_select(struct s32_priv_data *gmac)
+> >  {
+> > +	u32 intf_sel;
+> >  	int ret = 0;
+> >  
+> > +	switch (*gmac->intf_mode) {
+> > +	case PHY_INTERFACE_MODE_SGMII:
+> > +		intf_sel = S32_PHY_INTF_SEL_SGMII;
+> > +		break;
+> > +	case PHY_INTERFACE_MODE_RGMII:
+> > +	case PHY_INTERFACE_MODE_RGMII_ID:
+> > +	case PHY_INTERFACE_MODE_RGMII_RXID:
+> > +	case PHY_INTERFACE_MODE_RGMII_TXID:
+> > +		intf_sel = S32_PHY_INTF_SEL_RGMII;
+> > +		break;
+> > +	case PHY_INTERFACE_MODE_RMII:
+> > +		intf_sel = S32_PHY_INTF_SEL_RMII;
+> > +		break;
+> > +	case PHY_INTERFACE_MODE_MII:
+> > +		intf_sel = S32_PHY_INTF_SEL_MII;
+> > +		break;
+> > +	default:
+> > +		dev_err(gmac->dev, "Unsupported phy interface mode: %s\n",
+> > +			phy_modes(*gmac->intf_mode));
+> > +		return -EINVAL;
+> > +	}
+> 
+> We go from supporting RGMII only to RGMII + RMII + MII + SGMII.
+> 
+> Are RMII and MII actually supported on that platform ? if so, can you split
+> that into 2 commits : one for proper inft_sel support with RMII + MII added,
+> the another one for SGMII ? 
+> 
+
+OK, I'll drop RMII+MII modes from it and postpone them to the follow-up
+patch as current focus is SGMII.
+
+> > +
+> >  	if (gmac->ctrl_sts)
+> > -		writel(S32_PHY_INTF_SEL_RGMII, gmac->ctrl_sts);
+> > +		writel(intf_sel, gmac->ctrl_sts);
+> >  	else
+> >  		ret = regmap_write(gmac->sts_regmap, gmac->sts_offset,
+> > -				   S32_PHY_INTF_SEL_RGMII);
+> > +				   intf_sel);
+> >  
+> >  	dev_dbg(gmac->dev, "PHY mode set to %s\n", phy_modes(*gmac->intf_mode));
+> >  
+> >  	return ret;
+> >  }
+> >  
+> > +static int s32_gmac_pcs_init(struct stmmac_priv *priv)
+> > +{
+> > +	struct s32_priv_data *gmac = priv->plat->bsp_priv;
+> > +	struct device_node *pcs_node;
+> > +
+> > +	/*
+> > +	 * pcs-handle points at the SerDes XPCS lane child node; its
+> > +	 * nxp,xpcs-instance property is what identifies the XPCS instance.
+> > +	 */
+> > +	pcs_node = of_parse_phandle(gmac->dev->of_node, "pcs-handle", 0);
+> > +	if (!pcs_node) {
+> > +		dev_dbg(gmac->dev, "no 'pcs-handle' property, SGMII PCS unavailable\n");
+> > +		return 0;
+> > +	}
+> > +
+> > +	gmac->pcs = s32g_serdes_pcs_create(gmac->dev, pcs_node);
+> > +	of_node_put(pcs_node);
+> > +
+> > +	if (IS_ERR(gmac->pcs)) {
+> > +		int err = PTR_ERR(gmac->pcs);
+> > +
+> > +		gmac->pcs = NULL;
+> > +		/* SerDes may not be probed yet - defer probe. */
+> > +		return err;
+> > +	}
+> > +
+> > +	dev_dbg(gmac->dev, "SGMII PCS created via SerDes XPCS\n");
+> > +	return 0;
+> > +}
+> > +
+> > +static struct phylink_pcs *s32_gmac_select_pcs(struct stmmac_priv *priv,
+> > +					       phy_interface_t interface)
+> > +{
+> > +	struct s32_priv_data *gmac = priv->plat->bsp_priv;
+> > +
+> > +	if (interface == PHY_INTERFACE_MODE_SGMII && gmac->pcs)
+> > +		return gmac->pcs;
+> 
+> No need for the && gmac->pcs here, if it's NULL we return NULL anyway so you
+> can return priv->hw->phylink_pcs
+> 
+
+Agreed. The field is NULL unless the DT has a pcs-handle, so this
+becomes a plain "return priv->hw->phylink_pcs;", as in dwmac-rzn1.
+
+Thanks,
+Jan
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
