@@ -4,132 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4C16CA9ED0
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Oct 2026 18:00:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89D1DCA9EDE
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Oct 2026 18:17:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m2Ln04xXVFhDs/xo/2ByEK/pq/zeHZL/PsQFySHl+B8=; b=uGpes6+5LfkgE+
-	5whuYjS7SbVfn7xa8PEkSxQxNmQw1je5OoVZEOB+9FuGk10RvbFcSBkMmTa8Z1LqapnmRp8fjQrdj
-	Ozlpuv/C5jL96NyuOwXJsjl9OUCt0Gdp5XpoVZGClMBiVqDyiovDl3JFxrz1jzb9N7PueM+7VcMtc
-	+bGTtbhTMDxSdHXiAmkvAjuImNmuvj/Oi8zc69pmJHB09HhPAV01x/96ScOBw1iJy4fJ0RADPonnk
-	2tbvnHHfqgDs9WcYU9XD0dqBKA+PM1MZokKAKddYAUExNnxxLzBuRGePaNxeH4ttNl7p5kEiAwypI
-	AgnNRTuVw49KPT/TLYYw==;
+	List-Owner; bh=wplRFDKoIXgW4pJI5gmsrs/cwluZXbitkVMpwjTf4c4=; b=RWzdcoDBnYa/ho
+	+1olhj2sCCIJA89lvx3TIcts9FUyaUkF6bg2SMf31unEoKcBM7IdR1BdDrFp4WRoqcT6D5q4pvd1e
+	/JB8yG87DLTLIHqBCRrUgdOqv/aAH5weDcrPhKfdr+b2os8PO8a31xHgYGQJM+KGUJIvAB8xVLoSA
+	C2iPl/zHXD6dq9PiZbmCAJx6MpyLoHnB9DRq4qneutFpoJEyAwbKEYXsN7/nZ2cDO2O0HLhx0p0pS
+	HMNaU5KDVaL+cNmLn2t9N9OMz43TxN8uHyBkAkiSBtCXLDd1mKMd+ShLdAPm2cre5TIaeeRjUCJyS
+	v+mSnSlxSw8E0ESaV7wA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGKJh-0000000BAEr-0y87;
-	Mon, 12 Oct 2026 18:00:05 +0000
-Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
+	id 1xGKar-0000000BCp9-3kNi;
+	Mon, 12 Oct 2026 18:17:49 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGKJe-0000000BADa-1DLh
+	id 1xGKaq-0000000BCoq-3snb
 	for linux-phy@lists.infradead.org;
-	Mon, 12 Oct 2026 18:00:03 +0000
-Received: by mail-wm1-x335.google.com with SMTP id 5b1f17b1804b1-4a161d9b8c7so14931345e9.3
-        for <linux-phy@lists.infradead.org>; Mon, 12 Oct 2026 11:00:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1791828000; x=1792432800; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=7efvOtPkVQs2r0jJvys2pZpGeATiCwhTrDVdy86Rwg8=;
-        b=p46KUBmH1voUDn7tk/zYNTUmCJCLtlM+TA1drOwfvyJBZu/sDAGZxQyWuCNIwIA6TW
-         77bx17NPHLaf32FEmqkG0AJOIXUBqJ5JV+Z6YVL5DA5DE1X3Z8TfknDX9CSUFd9mgu6U
-         73u4vSNX8nQ3T7OwTOHFU1SuqkocobX92oYOWjl6c4oTgUwGMc8zAsBnRY1n3mv7NJat
-         /Xh8IlaUKL7BOtjPtMHVhGGJJRdNIdvLA860E5CcKWJHQ0V+TH89yqCyMTRi1vTI5Ebx
-         mc1igQEkI3fhfMykuOFCdJDLxi//5tnYwYwVarDsXyAES8aQmrL+vaXuhy2atiIyTbQY
-         eZ8Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791828000; x=1792432800;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=7efvOtPkVQs2r0jJvys2pZpGeATiCwhTrDVdy86Rwg8=;
-        b=U2rr584aKPsYnTuweAi3VBCvvxosHmVVhMBXoOrB3y2aPV/CzV7Z+dq9Ij+0UITZRZ
-         bNc2BFkg79WmKX40kUitnjyM08ywnYlrSCaaJSrg0BzSeXbifxCDkR0CnLkRFMWOnL8V
-         ArkO2WsI7jg1Ey2TVa1aI6nWS7lYQAU/CwmPs23g618W+yNmM7hjzWzmMNk5L7kuUs70
-         HUutLbWuPc3TI5deibJYq6iteZwfVWP5lCHA1ZibhIbOGHd/ILa1cihI8G7mag6y3tdW
-         zDpA+bvOxzmwDAsCOwW+nqys2TgVXfG6OO+XtE2IoskPfGUm/jZgvQPoM54/NsAw5pqO
-         Ef+w==
-X-Forwarded-Encrypted: i=1; AKwUvBytvjVcj6hAo6XBy4g2nlfT7AfonKXClpRHp4Ml+wfrTTQiaotMBu/Kdg19QO4a0LTOr3HhpEObjaM=@lists.infradead.org
-X-Gm-Message-State: AFq9FYIoiiYnfgK6Ls8tNSYpv+ZqpoedQK87dNpjj5o+Zw6PDRtD+t1V
-	YWFmJuwaJQ+CNf9dV53U80D6JlQv5To5QXg9uojmlyKq13agkU/tcu08
-X-Gm-Gg: AYBFou0ULIRkiu3ufZ0O1ygd+3jVlhuWkydoTQPLClw8uhj0iUyLX5wrKX3p942TB4l
-	coxIZTaSRY/Ftj/xLj4tXtMir3N8waFkWKzZWXNpfC1+OTpN4Oo90AJfpp+9KYKYz4aMrBqLgq9
-	VVpPYK+VmNcjP6BWbMG29erzHCl26/D1AeJp+jYy5s1crvR/F25hlUXkJ2onTaOQRzHoUqwyaQj
-	y666Fd/PJGbRX47CdtqiQ2yUW4qN6U9313VesiHr1jpnjjb8py/3iiTYGgYdjCKSRH/E2aCY26I
-	R+EPlTc0HVNrhHlhQmam7gDhmRCdFUR/fB6xrEbFI16gaMtr/tSLi7Fk9SWLRIar6yXS5QOEpiE
-	eLvJQANsc0JdiWouS5bkcFBRE1BDCtfgQIdqY9EdRsEjOZA30xicGi+HP5jZeqz7dsUyldLTB1B
-	y1soCCtdAd7WLV6NlJnMmxFdj5dw7rIEgnkC/T/ORnVGi8lCE6H70UQ1UZzE69wK+KYuYr1uqZO
-	QdOEclk+opJPve8
-X-Received: by 2002:a05:600c:83c9:b0:4a1:70f0:ac2 with SMTP id 5b1f17b1804b1-4a18e4ce9cfmr193832545e9.24.1791827999830;
-        Mon, 12 Oct 2026 10:59:59 -0700 (PDT)
-Received: from hp-z640.fritz.box ([109.76.80.100])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4a18bf2343asm561705395e9.9.2026.10.12.10.59.57
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 12 Oct 2026 10:59:59 -0700 (PDT)
-From: OOHehir <oo.hehir@gmail.com>
-X-Google-Original-From: OOHehir <electronicconsult1@gmail.com>
-To: m.wilczynski@samsung.com
-Cc: Laurent.pinchart@ideasonboard.com,
-	alex@ghiti.fr,
-	andrzej.hajda@intel.com,
-	andy.yan@rock-chips.com,
-	aou@eecs.berkeley.edu,
-	bmasney+clk@redhat.com,
-	chaoyi.chen@rock-chips.com,
-	conor+dt@kernel.org,
-	db@domibel.de,
-	devicetree@vger.kernel.org,
-	dri-devel@lists.freedesktop.org,
-	gandalf@winds.org,
-	hal.feng@starfivetech.com,
-	heiko@sntech.de,
-	hello@big-grey.co.uk,
-	jbrunet+clk@baylibre.com,
-	jernej.skrabec@gmail.com,
-	jonas@kwiboo.se,
-	jpeisach@ubuntu.com,
-	kernel@esmil.dk,
-	krzk+dt@kernel.org,
-	krzysztof.kozlowski@oss.qualcomm.com,
-	linux-arm-kernel@lists.infradead.org,
-	linux-clk@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-riscv@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	luca.ceresoli@bootlin.com,
-	m.szyprowski@samsung.com,
-	maarten.lankhorst@linux.intel.com,
-	mani@kernel.org,
-	maud_spierings@murena.io,
-	mripard@kernel.org,
-	mturquette@baylibre.com,
-	neil.armstrong@linaro.org,
-	p.zabel@pengutronix.de,
-	palmer@dabbelt.com,
-	pjw@kernel.org,
-	rfoss@kernel.org,
-	robh@kernel.org,
-	sboyd@kernel.org,
-	tzimmermann@suse.de,
-	u.kleine-koenig@baylibre.com,
-	vkoul@kernel.org,
-	zhengxingda@iscas.ac.cn
-Subject: Re: [PATCH v5 00/21] drm: starfive: jh7110: Enable display subsystem
-Date: Mon, 12 Oct 2026 18:59:41 +0100
-Message-ID: <20261012175941.258219-1-electronicconsult1@gmail.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20260929-jh7110-clean-send-v5-0-82b4d8e3c6c7@samsung.com>
-References: <20260929-jh7110-clean-send-v5-0-82b4d8e3c6c7@samsung.com>
-MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261012_110002_351073_E3FE5BC8 
-X-CRM114-Status: UNSURE (   6.98  )
-X-CRM114-Notice: Please train this message.
+	Mon, 12 Oct 2026 18:17:48 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 195FC60258;
+	Mon, 12 Oct 2026 18:17:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8D2E71F0089B;
+	Mon, 12 Oct 2026 18:17:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1791829067;
+	bh=rg+waL6gGML+UjnyPtSo5tpeaQaZuuKV6I1lYZjepdw=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=bmjLQSTrIKJ3sYoF6/awGbHYtpmnbupWWGy2U4gM6gltOxeo1IYvjPp3UX0RK9jUU
+	 WN1jqPe4yVr+HIU/eAuwzYpvV3vMIKCVkn0AcEZ5Qilu9zKEFdYEfqjN9eQqAT5f64
+	 /xYt/DxY7T3glSUEU/CFBG0jzNpm8cW9mE5su5mUjLlQiy+2i6ZmknJc+xMCeT4J6D
+	 nvyNomCkR+giZasm51k8u9s+biLuhm/ake7wR7S6kVm2FELRGQLEFvDPewtVQjRouS
+	 8hvwESXgQ+8dzW8yu2OrzfLLKDpyPNGHLAHRvpIdQggrvC4CAaX/pFQMEARYLysO8c
+	 LlsBpzRJPeqiw==
+Message-ID: <sashiko-outbox-168528@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v8 5/6] phy: realtek: usb2: add support for RTL9607C
+ USB2 PHY
+To: "Rustam Adilov" <adilov@disroot.org>
+Cc: neil.armstrong@linaro.org, olteanv@gmail.com, linux-phy@lists.infradead.org, vkoul@kernel.org
+In-Reply-To: <20261012173739.36377-6-adilov@disroot.org>
+References: <20261012173739.36377-1-adilov@disroot.org>
+ <20261012173739.36377-6-adilov@disroot.org>
+Date: Mon, 12 Oct 2026 18:17:47 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,44 +63,49 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Tested on a VisionFive 2 v1.3B with patches 1-17 & 19-21 of v5 on
-Linux 7.2.8, plus the clk patch that was 14/20 in v4. Patch 18 was not
-applied: it conflicts on 7.2 & there is no Rockchip hardware here. The
-same kernel also carries the out-of-tree PowerVR BXE-4-32 enablement &
-the SiFive XPbmtUC errata patches, so the GPU could render to the
-display.
-
-- The dc8200, the HDMI controller & PHY & the vout clock controller
-  all probe, with nothing left in deferred probe; HDMI-A-1 reports
-  connected.
-- kmscube (GLES via zink on the PowerVR Vulkan driver) runs at the
-  monitor's preferred mode: 1683 frames in 28.1 s, 59.93 fps with
-  vsync, picture confirmed on the monitor, no GPU firmware resets.
-
-Only that one mode was tested; the modetest sweep in the cover letter
-was not repeated.
-
-One error at boot:
-
-  i2c i2c-7: of_i2c: modalias failure on /soc/display-subsystem@29400000/hdmi@29590000/controller/ports
-  i2c i2c-7: Failed to create I2C device for /soc/display-subsystem@29400000/hdmi@29590000/controller/ports
-
-inno_hdmi_i2c_adapter() sets adap->dev.of_node to the controller's
-node, so the I2C core registers the controller's children as I2C
-clients, & on the JH7110 that node has a 'ports' child. The display
-still comes up. Should the adapter get no of_node, or a dedicated
-child node?
-
-For patches 1-17 & 19-21:
-
-Tested-by: OOHehir <oo.hehir@gmail.com>
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIHBoeTogbWlzc2luZyBO
+VUxMIGNoZWNrIGZvciBvZl9pb21hcCBsZWFkcyB0byBkZXJlZmVyZW5jZQotLQoKY29tbWl0IGFi
+MDlkZDRkZWYzZjIyMTU5NTA3MjZjYjc4MGVhNjQ1YmU0MzljM2EKQXV0aG9yOiBSdXN0YW0gQWRp
+bG92IDxhZGlsb3ZAZGlzcm9vdC5vcmc+CgpwaHk6IHJlYWx0ZWs6IHVzYjI6IGFkZCBzdXBwb3J0
+IGZvciBSVEw5NjA3QyBVU0IyIFBIWQoKQWRkIHN1cHBvcnQgZm9yIHRoZSB1c2IyIHBoeSBvZiBS
+VEw5NjA3QyBzZXJpZXMgYmFzZWQgU29Dcy4gQWRkIHRoZSBtYWNyb3MKYW5kIHBoeSBjb25maWcg
+c3RydWN0IGZvciBydGw5NjA3LiBSVEw5NjA3QyByZXF1aXJlcyB0byBjbGVhciBhIGZvcmNlIGhv
+c3QKZGlzY29ubmVjdCBiaXQgaW4gdGhlIHNwZWNpZmljIHJlZ2lzdGVyIGJlZm9yZSBwcm9jZWVk
+aW5nIHdpdGggcGh5CnBhcmFtZXRlciB3cml0ZXMuCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3Bo
+eS9yZWFsdGVrL3BoeS1ydGstdXNiMi5jIGIvZHJpdmVycy9waHkvcmVhbHRlay9waHktcnRrLXVz
+YjIuYwo+IGluZGV4IDJkZGFkN2JlNzM1MzQuLjY0MDc2OTM4YzgyMWQgMTAwNjQ0Cj4gLS0tIGEv
+ZHJpdmVycy9waHkvcmVhbHRlay9waHktcnRrLXVzYjIuYwo+ICsrKyBiL2RyaXZlcnMvcGh5L3Jl
+YWx0ZWsvcGh5LXJ0ay11c2IyLmMKClsgLi4uIF0KCj4gQEAgLTYwMCw2ICs2MTcsMjMgQEAgc3Rh
+dGljIGludCBkb19ydGtfcGh5X2luaXQoc3RydWN0IHJ0a19waHkgKnJ0a19waHksIGludCBpbmRl
+eCkKPiAgCQlnb3RvIGRvX3RvZ2dsZTsKPiAgCX0KPiAgCj4gKwlpZiAocGh5X2NmZy0+Zm9yY2Vf
+aG9zdF9kaXNjb25uZWN0KSB7Cj4gKwkJY29uc3Qgc3RydWN0IHBoeV9yZWdfZGVzYyAqcmVnX2Rl
+c2MgPSBwaHlfcmVnLT5kZXNjOwo+ICsJCXZvaWQgX19pb21lbSAqdnN0YXR1cyA9IHBoeV9yZWct
+PnJlZ193cmFwX3ZzdGF0dXM7Cj4gKwkJdTMyIHRlbXA7Cj4gKwo+ICsJCXRlbXAgPSByZWdfZGVz
+Yy0+cmVhZCh2c3RhdHVzICsgUEhZXzk2MDdfRk9SQ0VfRElTQ09OTkVDVF9SRUcpOwoKW1NldmVy
+aXR5OiBIaWdoXQpJcyBpdCBwb3NzaWJsZSBmb3IgdnN0YXR1cyB0byBiZSBOVUxMIGhlcmU/CgpJ
+biBwYXJzZV9waHlfZGF0YSgpLCB0aGUgZHJpdmVyIGNhbGxzIG9mX2lvbWFwKCkgYW5kIGFzc2ln
+bnMgdGhlIHJlc3VsdCB3aXRob3V0CmNoZWNraW5nIGZvciBhIE5VTEwgcmV0dXJuIHZhbHVlOgoK
+cGFyc2VfcGh5X2RhdGEoKSB7CgkuLi4KCXBoeV9wYXJhbWV0ZXItPnBoeV9yZWcucmVnX3dyYXBf
+dnN0YXR1cyA9IG9mX2lvbWFwKG5wLCAwKTsKCS4uLgp9CgpJZiB0aGUgZGV2aWNlIHRyZWUgbm9k
+ZSBsYWNrcyB0aGUgbWVtb3J5IHJlZ2lvbiBvciBtYXBwaW5nIGZhaWxzLCB2c3RhdHVzCndpbGwg
+YmUgTlVMTC4gVW5jb25kaXRpb25hbGx5IGRlcmVmZXJlbmNpbmcgaXQgaGVyZSB2aWEgcmVnX2Rl
+c2MtPnJlYWQoKQpjb3VsZCBjYXVzZSBhIG51bGwgcG9pbnRlciBkZXJlZmVyZW5jZS4KCj4gKwo+
+ICsJCS8qIGRpc2FibGUgZm9yY2UtaG9zdC1kaXNjb25uZWN0ICovCj4gKwkJdGVtcCAmPSB+UEhZ
+Xzk2MDdfRk9SQ0VfRElTQ09OTkVDVF9CSVQ7Cj4gKwo+ICsJCXJlZ19kZXNjLT53cml0ZSh0ZW1w
+LCB2c3RhdHVzICsgUEhZXzk2MDdfRk9SQ0VfRElTQ09OTkVDVF9SRUcpOwo+ICsJCXRlbXAgPSBy
+ZWdfZGVzYy0+cmVhZCh2c3RhdHVzICsgUEhZXzk2MDdfRk9SQ0VfRElTQ09OTkVDVF9SRUcpOwo+
+ICsKPiArCQkvKiBhbGxvdyBJUCB0byBzdGFydHVwICovCj4gKwkJdXNsZWVwX3JhbmdlKDEwMDAw
+LCAxMTAwMCk7Cj4gKwl9Cj4gKwo+ICAJLyogU2V0IHBhZ2UgMCAqLwo+ICAJcGh5X2RhdGFfcGFn
+ZSA9IHBoeV9jZmctPnBhZ2UwOwo+ICAJcnRrX3BoeV9zZXRfcGFnZShwaHlfcmVnLCAwKTsKCi0t
+IApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAy
+NjEwMTIxNzM3MzkuMzYzNzctMS1hZGlsb3ZAZGlzcm9vdC5vcmc/cGFydD01CgotLSAKbGludXgt
+cGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
