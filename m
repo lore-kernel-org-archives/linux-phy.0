@@ -4,160 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 377FACA9ED0
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Oct 2026 18:43:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C087CA9EDE
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Oct 2026 18:54:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kxkXXCiM+CX1sAjbKHSyJvdNpnBLvWooZgtohbnoxsY=; b=z/o//SmXfok9S1
-	fvHfxdWeMJ80Nv9Hd22ngLQuaGHKZd9z9/zozBrCD3rpEWSeZWZxfc7N50rYgqNgiyj4V+MxzTg+J
-	ar4AVhu379k9fO3DxAU20VdvEcFfiTySL63956wn0ttke4hI16Y4E4sHEJpRycF5NqaBFOIWtcSwd
-	66898gkYYxfUL3idzAVBdkEFWD7wPLFH1ND8xzONv8qRoJZaTUCH97S5Ef9ZhP5q4K9JQW9D2sMnt
-	LchBIW/0a/r1ZkeNKYxld0Zs72faVgd1YPVkI+Q4nyUam2YJQGcWufn3TPS15ETiOcMaF0hApWHXy
-	qGE+bq6P7Y3US0oicyXg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=loANgoBwCfVvaXGEwHD1pZy0kgpyhaTLVY39ZErDG5E=; b=mmaxKG+h8oy4l/rd8omLpGpCAr
+	dFurdj+Qx4vENy8oY1ioV8XjpZBc5DBx6AxD9AujlT3ITqoFyQIZxQMcFiaPLN7rjvAU4qSj763QL
+	+IQjX8/0Gn3nW648L2/9kY5HD8SqXy5r/Zfpy7gAnT4ziGjXT/Nqj3w5swRt174cFKTA0aXnfFWk6
+	d/wQd4CrFJed5AuX0AccjCvTFpLMzVC1o9rtc112UGLAVwUPT99QYK2ecZzrg/pyenIoEOXruptJT
+	Hqi3h3k4mPrmJwJVc5Y8kj2+/0dCepAYyOs17zNrYXj8K68q/W3I4NGeFhFCK/6Wa37v1f6Mff4QB
+	Zbd1j46g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGKzn-0000000BGxI-2d25;
-	Mon, 12 Oct 2026 18:43:35 +0000
-Received: from mail-westeuropeazon11010046.outbound.protection.outlook.com ([52.101.69.46] helo=AM0PR83CU005.outbound.protection.outlook.com)
+	id 1xGLAV-0000000BIqP-3I2P;
+	Mon, 12 Oct 2026 18:54:39 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGKzj-0000000BGvo-2SUn;
-	Mon, 12 Oct 2026 18:43:32 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=cM880S8+V+EZ14Vo4OUN3gVrvLrpFXKP6410kY5pjaxZ2xpW7xvcR5/8XQxxSSmZhDgSbOdCcMOtfkw+1m5FjlOQdojGNtbH6clqDFpCNOmcDNZPLFGEzbilN6GlOLalow9U39H/XAm4Ity5bmlfA1rtKXvMxs+zBYd0Im9YxW9Ex8PjVMxWZiC8RDUV8UaHyVkeP/fM/XAkVXK1PtIv3gOEwBJxBjihR/RUbwJyK5qE0AbMKLjgtBz6WazvDhN0/Yxe6YPvthdt0PVd65nsR8Y3nvM8NpmJaQFs393cFOVsoKITvQdtfAZr2laSmaRffrkUGlmOVBOeXYOFYfm0XQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=YwQBedko8sbySKXN9Elm9cJu8dLKGldjjgM4x8UNyd4=;
- b=SjAGfPWrdZ8J55eQKE7nh48jiQVI6r1Zu7CxxTIbd0bXWvy3MRgevbgh/kDzoC2rIlINElkXaJuDO7D9901JOhEfrRV4DGL+3PZQJ558t6eKn3qX/2bqfGaxkBJ2nihY+VYYE2FkRx0O/46tYcRqdBf+GJwNRqcHmPckmshuEsVIz3PQPOoZ/gjAwEqPmroWqRCkkbnwqXn7U6Qj+hGSb8Er5OdEqsOivyyLIh3Uwsn66aIeumbJ+letC7uvnKaD9Wg5lpy17wtYzv6/0XxvzUGZ193ic+h6HsWSDt8Z9O0jqTrMWwb35Qcaqkg6KBmK51S4IkCjz5+55lSHvc8hjA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=YwQBedko8sbySKXN9Elm9cJu8dLKGldjjgM4x8UNyd4=;
- b=ozXjTQPdmyOUR6461ZWwzxKdXN8xkZJelM0ZnVnJQM/62oo/M8MRPeHdJtf9U753IP9rEv0zxiIQjpQUXstcV2coBFUAWzhxJkHRgK+y80ewPTSxN6BX4pQ3SNHtA6vGvvrP6PB6YPmEuD0hSLM8oz3cNFF2sMMVIL5XjDp6LcCr5t9lAQ51E7fhmWp4wF/VtewmTe0pb5FKUM8V94MLtsI/UbE/GS0/ftcsxmdzSVxFlPEEfXT8+vQaRn1qiox6wFhgNgeENVx167DCkxCC5T/7KRCVnXm7bw6PRWiR3S1cXFcBE6aHkjE15RSAlZ4qJTxDpnPnhASZcYPsFnGPlQ==
-Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by VI2PR04MB10716.eurprd04.prod.outlook.com (2603:10a6:800:270::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.496.21; Mon, 12 Oct
- 2026 18:43:21 +0000
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c%7]) with mapi id 15.21.0496.021; Mon, 12 Oct 2026
- 18:43:21 +0000
-Date: Mon, 12 Oct 2026 13:43:05 -0500
-From: Frank Li <Frank.li@oss.nxp.com>
-To: jan.petrous@oss.nxp.com
-Cc: Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>,
-	NXP S32 Linux Team <s32@nxp.com>, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Ghennadi Procopciuc <ghennadi.procopciuc@nxp.com>,
-	Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Bogdan Hamciuc <bogdan.hamciuc@nxp.com>,
-	Ionut Vicovan <ionut.vicovan@nxp.com>, Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
-	Clark Wang <xiaoning.wang@nxp.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Maxime Chevallier <maxime.chevallier@bootlin.com>,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Chester Lin <chester62515@gmail.com>,
-	Matthias Brugger <mbrugger@suse.com>,
-	Ghennadi Procopciuc <ghennadi.procopciuc@oss.nxp.com>,
-	Frank Li <Frank.Li@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>,
-	Richard Cochran <richardcochran@gmail.com>,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	netdev@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
-	imx@lists.linux.dev, linux-pci@vger.kernel.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	Vincent Guittot <vincent.guittot@linaro.org>
-Subject: Re: [PATCH RFC v3 03/12] dt-bindings: PCI: nxp,s32g-pcie: Fix SerDes
- PHY phandle in example
-Message-ID: <as0qORxP0Roh9ktO@SMW015318>
-References: <20260919-s32g_serdes-v3-0-9d68868c1e89@oss.nxp.com>
- <20260919-s32g_serdes-v3-3-9d68868c1e89@oss.nxp.com>
-Content-Disposition: inline
-In-Reply-To: <20260919-s32g_serdes-v3-3-9d68868c1e89@oss.nxp.com>
-X-ClientProxiedBy: CY5PR19CA0006.namprd19.prod.outlook.com
- (2603:10b6:930:15::29) To DU4PR04MB11791.eurprd04.prod.outlook.com
- (2603:10a6:10:623::11)
+	id 1xGLAU-0000000BIqB-2Lgx;
+	Mon, 12 Oct 2026 18:54:38 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id C0CFA60142;
+	Mon, 12 Oct 2026 18:54:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5D18F1F0089B;
+	Mon, 12 Oct 2026 18:54:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1791831277;
+	bh=l2zp4t4NyTHWHTKgbsdObniAY39EXm7EQZMRjqNl5/Y=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=QvEE5ZPENu7PNxG06VtqOrBJ9I+4/4AvOSce4C6PgW1JhTezsdxcBc5OFRgf7tKXe
+	 uNaVspMFklqOciONRUFo9ovRO0fX8FHiWTlXEgnaJpSSQV7nBUmajlK678Jczj+ZLy
+	 CU+1EMdvfFcAStiHOslndLlC8/KnyFMixWDmR4D4gudeBQY4eBCFQinb14X3x2CCxp
+	 8udDd04Q8OMo8sF6mH4hp87AnNiRX2BkSoHP+EAD3oDz6flQ4fdOSvhnnETifVCwUa
+	 1U6L5HRjHs1VXwQP+zioa0qRD15ccFovMB3KraCwUkWvyvxnhzS/AgVqWGSrESsIyN
+	 VF/wIIpWxWLGA==
+Date: Mon, 12 Oct 2026 19:54:32 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Luo Liu <Luo.Liu@cixtech.com>
+Cc: vkoul@kernel.org, neil.armstrong@linaro.org, mani@kernel.org,
+	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+	gary.yang@cixtech.com, fugang.duan@cixtech.com,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	cix-kernel-upstream@cixtech.com, p.zabel@pengutronix.de,
+	linux-kernel@vger.kernel.org, Wuyi.Shen@cixtech.com,
+	EastLake.Yang@cixtech.com
+Subject: Re: [PATCH v2 1/3] dt-bindings: phy: Add CIX Sky1 DP PHY
+Message-ID: <20261012-founding-stench-55cff46fe1a3@spud>
+References: <20261012123618.648930-1-Luo.Liu@cixtech.com>
+ <20261012123618.648930-2-Luo.Liu@cixtech.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|VI2PR04MB10716:EE_
-X-MS-Office365-Filtering-Correlation-Id: a1c945f3-de41-4a5f-0422-08df2890afc8
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|376014|7416014|19092799006|23010399003|1800799024|11063799006|4143699003|56012099006|22082099003|18002099003|6133799003|261009223027099003|3023799007|10067099003;
-X-Microsoft-Antispam-Message-Info: IfcSg5xQsvaevAib+loyfoVr1DihwvkYT+CsxLCSyfHHN37z5Ip7fdPT59Rls8wqxmX/2DSwkbwZ6DzIGlP3qSlXn9ymB8YrGjCvr7ym5z1YWno8a2wUs3p7IodTj6H4pxVGNiCQ8z75YfNZ6PLpltsgodLj6fOXowT7zjcFsZ6KCuY3ADQitfkjwOwJIuAjHsqBXjEz76kz5hcYCHdm+tAxnPsEzFrmoJd+Oap6345kExfXHZsPc21ZUa4nhnf75NgFSYAfdnKjvQBSqjz/TW4CaPb3jyGE0os9RUtfGk5WTx/AB2Juw7mCzaKb0eSAaw8msn6DU6vKGSn0S0CFGRzKhUyVXK3U8HoNCcTkOInx/0CNkOta00ees1z40ndwz4RNezYfu5nmPHYAJVImSdVmDeYUiJJOTJtjy9MyquwE9qKE3keRaOCnaO8cDQVxAKsLVmBClJGgxr+7LWu1a1cEcs7lKb2Q6HI7jzmUO0MoLLxlV8ZWLsL/QmkTXMeuWiiBm+6kmrLdeySRQFZf2wCVLQJ8BGpAUgdhbqKRu7ng4gfD0lv7Hl7prWW8LbcN2JtXrsKZDME3CUKiaDYwdRbMZDdup2SMTrTJGdfnB9Yv/oGivEEv/r+R3xnDCgSLQwD3wEuSgapFgc6W2xEPztR8gBoqz71ArOudIuOqvgQ=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(7416014)(19092799006)(23010399003)(1800799024)(11063799006)(4143699003)(56012099006)(22082099003)(18002099003)(6133799003)(261009223027099003)(3023799007)(10067099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?Rk2aNl7bzMpTYd31cOd/KYyfy/q534R99OObTr08wW02VMUdtC+33fjXrzoL?=
- =?us-ascii?Q?9L+0Uu+C+5hOKVfJeaUBFKj0reRugVGmTiYaNZHXgxfSbunR+4vwdy1WrxMn?=
- =?us-ascii?Q?fdaKqEwg8Vuy+uCz5emmlq2Ougg2jJzTKz/hZ8EyINMqJ1yEDEbCuxjPj4/E?=
- =?us-ascii?Q?7hh5cHR89eDKNV/ecIk2fp5V59x/VFPw3wt1K8ScFaWuSd362W5NWTx2meGj?=
- =?us-ascii?Q?U0OqhaTvTneYTKiomF7ANILR4JfP6pGNqLJev/n8jLxAeZ+Tf3ViIDoxxDXB?=
- =?us-ascii?Q?Dzc+Skw//FhK07APkxEpKHVbFj9zCMdPQ8HxwHkR6y2FeM6Wm08vVS/LwG4V?=
- =?us-ascii?Q?nldMFGKcwNBoSdmtAxec+IM1TGOe2O8aKXR4a4lixNU9knVRCV4dNtcEVK+A?=
- =?us-ascii?Q?pnd8H4RIJxSuFFz0ow+9DgID9+KZxMQ9RpoiPRzc7qUv8Mj2jfuYv5j5yR8S?=
- =?us-ascii?Q?Nmcfqb9Cie6Sp+96CUvWn7nrUGIMAh2+O7bb0FWm1jDOFWcSr7sO7itjC+pn?=
- =?us-ascii?Q?6EetS51Stub3z68RLge8oSDPm1uz7azHYCCCa/3susKXJ6ufYYAa5/VeHwsx?=
- =?us-ascii?Q?1by60Dk+cxHzF4wW/6QQ96OQW7sAHT51CYbrVsUGKKsU8r6z1BW/jB/tksFR?=
- =?us-ascii?Q?tpIsFCgQA+asjq2cYdmQrj5Imbsmty6epY+66VOYZfYJrc1WByMm8B7E1hz3?=
- =?us-ascii?Q?aIUVYF7r9BWG0IjZ8DxR+w4p19UKLmlJyc9l6hRrAPyxnsjvZ/eRXSuiwbAg?=
- =?us-ascii?Q?QyRkhjQULi8X9esz7dLwdnMMwy2t+fubnCHtaTtsDySFleYOfc8cAqfMGIkJ?=
- =?us-ascii?Q?S1BRE/Ply65PSk5YlIPc5z0K7+N6DVcq+fXOGj2TtObqDvMiQIc62sEZ8LNH?=
- =?us-ascii?Q?3cv7d3dP6Nq6Ish9PXISf4CVeZymm39URzBTCech2cGvhwUp18LFHGaceH4A?=
- =?us-ascii?Q?6DcwIdK5tEjBj0MRdyNWbXzH35CF1cZT/m3OKC01uEdMjLswdwmMK/7oigW8?=
- =?us-ascii?Q?9nz9onDFrjJP7/UcAPolR4Ayg/pfHoglyD4vtInb04ip9CJXs2tUowr6Xyvb?=
- =?us-ascii?Q?9tc8wu3Y+V+t+6kZhiLZIW3wLpFsjuZ/Aj31xXWijlgwZPv2cYiKPV3lMuAS?=
- =?us-ascii?Q?FcHq/HRSLI50EQDFRd0UwxtQfo91rMR23FZzEqc8hmYO9VjGej5k0H6L5lwQ?=
- =?us-ascii?Q?NQXn1FCUpfQqp9ZGiHrKU22mXnXiOh3OLWrfd/CNtSKwrJRKB7KWgYRF1af3?=
- =?us-ascii?Q?K1J3DnZET2beLaifysSg3+Dfx3DIlthqMyMEvhFKlRmwizQy2otFlhQ+cnir?=
- =?us-ascii?Q?j/+e7+s6pwKnhqCu2P6Lv1UXDdW0SfEec6JeedM835rbEgznmmDI1AcwOlmF?=
- =?us-ascii?Q?5s9RMU1wK5HzRc7oSrKe8D32HgN611QxUHgCpI1398FCIBuoHCUs51ba7xTX?=
- =?us-ascii?Q?7oiVAM49lpL73+1Fz/vbznDbztANcw7ULd4puQymDI6tFKA7Y7dXQnRCcmIj?=
- =?us-ascii?Q?eNgg3qh6gZQoQgO5jr9ju6XPvtCwZUyRbI693BT2W6LFddq4drzXRQvfSO5p?=
- =?us-ascii?Q?SyAVwF8XI2rG5to+KxO+Q39vNw74WSNT1tKiFpju6HkMwouv6zw+X/o2a9SN?=
- =?us-ascii?Q?NS12kEdxEUousN0S9Lt1B0C0wne8m2YS5mq+f8vHmBmSN6M++7E+xt3Cn/yS?=
- =?us-ascii?Q?EKQB5R6iTA7REOkfwBDZ31Lk3SrAVAPq0HoX7HdL7IX2I7/pATlZg3vklSEL?=
- =?us-ascii?Q?MJ6fdS3asJIzSCoDcI/ftkJfBsPDjK82J5vtkOWgAkdl/NHP3Mkj?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a1c945f3-de41-4a5f-0422-08df2890afc8
-X-MS-Exchange-CrossTenant-AuthSource: DU4PR04MB11791.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Oct 2026 18:43:21.0372
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: T5gZC/1In5jn/bS2coyS5CjgQEMGFPdj425ZuT4T8pR4L+/LzXrzT9FIEz5wTLOZsGIv8FpWSy1RwoXH9Lna9aLOjgnMH5rH+b28X+t45NeMAPLhj+EKqK+Rx+hjduo5
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI2PR04MB10716
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261012_114331_635753_4C740013 
-X-CRM114-Status: GOOD (  19.41  )
+In-Reply-To: <20261012123618.648930-2-Luo.Liu@cixtech.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -169,75 +69,149 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============1273829921522513888=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Sep 19, 2026 at 08:54:31AM +0200, Jan Petrous via B4 Relay wrote:
-> [You don't often get email from devnull+jan.petrous.oss.nxp.com@kernel.org. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]
->
-> From: "Jan Petrous (OSS)" <jan.petrous@oss.nxp.com>
->
-> The example references the SerDes PHY as
->
->   phys = <&serdes0 PHY_TYPE_PCIE 0 0>;
->
-> i.e. the SerDes node itself with three PHY cells. That does not match
-> the SerDes binding: the per-lane child node is the generic PHY
-> provider and carries '#phy-cells = <0>', while the SerDes node itself
-> has no '#phy-cells' at all.
->
-> Point the example at the PCIe lane child instead, which is also what
-> the S32G3 board device trees use. The dt-bindings/phy/phy.h include is
-> dropped along with the now-unused PHY_TYPE_PCIE constant.
->
-> The schema itself is unchanged; 'phys: maxItems: 1' already describes
-> the corrected form.
->
-> Signed-off-by: Jan Petrous (OSS) <jan.petrous@oss.nxp.com>
+--===============1273829921522513888==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="q6HPCk6NTpYhk7J2"
+Content-Disposition: inline
+
+--q6HPCk6NTpYhk7J2
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Mon, Oct 12, 2026 at 08:36:16PM +0800, Luo Liu wrote:
+> Document the dedicated DisplayPort PHY on CIX Sky1, including the
+> optional cix,external-dp board property for external connector swing.
+> Add a MAINTAINERS entry for the binding and driver.
+>=20
+> Signed-off-by: Luo Liu <Luo.Liu@cixtech.com>
 > ---
->  Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml | 3 +--
->  1 file changed, 1 insertion(+), 2 deletions(-)
->
-> diff --git a/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml b/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml
-> index 66a050028278..29323e50bd8b 100644
-> --- a/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml
-> +++ b/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml
-> @@ -82,7 +82,6 @@ unevaluatedProperties: false
->  examples:
->    - |
->      #include <dt-bindings/interrupt-controller/arm-gic.h>
-> -    #include <dt-bindings/phy/phy.h>
->
->      bus {
->          #address-cells = <2>;
-> @@ -124,7 +123,7 @@ examples:
->                  ranges;
->
->                  device_type = "pci";
-> -                phys = <&serdes0 PHY_TYPE_PCIE 0 0>;
-> +                phys = <&serdes0_pcie0>;
+>  .../bindings/phy/cix,sky1-dp-phy.yaml         | 53 +++++++++++++++++++
+>  MAINTAINERS                                   |  8 +++
+>  2 files changed, 61 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/cix,sky1-dp-phy=
+=2Eyaml
+>=20
+> diff --git a/Documentation/devicetree/bindings/phy/cix,sky1-dp-phy.yaml b=
+/Documentation/devicetree/bindings/phy/cix,sky1-dp-phy.yaml
+> new file mode 100644
+> index 000000000000..c6914cab74e0
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/cix,sky1-dp-phy.yaml
+> @@ -0,0 +1,53 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/cix,sky1-dp-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: CIX Sky1 DisplayPort PHY
+> +
+> +maintainers:
+> +  - Luo Liu <Luo.Liu@cixtech.com>
+> +
+> +description:
+> +  The CIX Sky1 DP PHY provides the PMA/CDB register interface for the
+> +  dedicated DisplayPort instance on CIX Sky1.
+> +
+> +properties:
+> +  compatible:
+> +    const: cix,sky1-dp-phy
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +  resets:
+> +    maxItems: 1
+> +    description: PHY hardware reset
+> +
+> +  cix,external-dp:
+> +    type: boolean
+> +    description:
+> +      Use voltage swing values suitable for an external DisplayPort
+> +      connector instead of the default low-voltage values.
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - "#phy-cells"
+> +  - resets
 
-I don't think it fix somethings. The "serdes0" just a label, point to
-provider, which is not neccsary that "#phy-cells" is 0.
+A reset but no clocks? That's a bit hard to believe.
 
-Examples just show need how many phys and don't care about phy provider's
-arguments
+Seems fine otherwise, unless I am missing some sort of common property
+for the voltage swing stuff.
 
-Frank
+Thanks,
+Conor.
 
->              };
->          };
->      };
->
-> --
-> 2.55.0
->
->
->
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/reset/cix,sky1-s5-system-control.h>
+> +
+> +    phy@1414c000 {
+> +        compatible =3D "cix,sky1-dp-phy";
+> +        reg =3D <0x1414c000 0x4000>;
+> +        resets =3D <&s5_syscon SKY1_DP_PHY_RST_N>;
+> +        #phy-cells =3D <0>;
+> +    };
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 3a19da74d00c..b46d0f4220a9 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -6360,6 +6360,14 @@ M:	Satish Kharat <satishkh@cisco.com>
+>  S:	Supported
+>  F:	drivers/infiniband/hw/usnic/
+> =20
+> +CIX SKY1 DISPLAYPORT PHY DRIVER
+> +M:	Luo Liu <Luo.Liu@cixtech.com>
+> +R:	CIX Linux Kernel Upstream Group <cix-kernel-upstream@cixtech.com>
+> +L:	linux-phy@lists.infradead.org
+> +S:	Maintained
+> +F:	Documentation/devicetree/bindings/phy/cix,sky1-dp-phy.yaml
+> +F:	drivers/phy/cix/
+> +
+>  CLANG CONTEXT ANALYSIS
+>  M:	Marco Elver <elver@google.com>
+>  R:	Bart Van Assche <bvanassche@acm.org>
+> --=20
+> 2.25.1
+>=20
+
+--q6HPCk6NTpYhk7J2
+Content-Type: application/pgp-signature; name=signature.asc
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCas0s6AAKCRB4tDGHoIJi
+0iXrAQDtZlLwnBeXrt0sJP/AohrnXaoa1UW1wN5d8Yjkimco7AEA1Aly54IhsVhf
+2zcuFqWPKZ7+HlGCLNIbW0h8KFKPPQA=
+=oFLx
+-----END PGP SIGNATURE-----
+
+--q6HPCk6NTpYhk7J2--
+
+
+--===============1273829921522513888==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============1273829921522513888==--
+
