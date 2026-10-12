@@ -4,65 +4,116 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9256CCA9ED0
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Oct 2026 17:38:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2EBE6CA9EDE
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Oct 2026 17:44:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z8JlLaK6ReWNj4rMAb4Q8gafOwvTGckHLULrdfs67QQ=; b=AHcyBc7y/9/bcG
-	krCjk/x58qDM3bApw+ZnqxhZ76AZlCBQ1NHgIZ9ZV/VxY/vqQYkzSDA59wblXdymh8g1YVSn3pgLi
-	vdusH8VbOZjRH2xkupylSh/nUTRtcDCDqOkHtpYLsOC0b0F2IMWM9gkzcVTjIwzklbJZPHE82zh2B
-	OePjuJ+6aE2sS//6I9qGnTng5lLyEwfQlRT6mlyWdERik7xi1fm7F9NYSHIRPO61vEIP739/onW9P
-	nOwvZanGd/EQVf6F+KRY2AxytxReQobaYR5nO/0waBpRKW7ZHOtMn3sVUnFutLWEKYbpFAy1FqkOl
-	iiFe/AhSNcZHIHiwuenw==;
+	List-Owner; bh=ozp0bK1ndauOpZtQGUs5MjuiQby3B2ptQPCzmzmR/nI=; b=Tlm2FvxwAkhY6r
+	/+gw4CGbPZrhJJ3nMONNgFqEUReODhoSdtOx2UfOBk/vH6VdCsrQVz5dQ9NPGUblStGvW01uhCzLF
+	8696XKdyqCtG+OXB5Tv5Cb0oPUAWT9eXt7QrcvzaHdas9edmyN85BcbDA30jmvZrymATA5x2W3ki5
+	TnPc5W99VBsE25ihOysodbUCrNNH0a4xrEL9ER2yMXod3uBNWnUXkpJiTtUrcYoxuqxgJSomEFbJ9
+	q+t0+Icb7wgJDx5T3aaotuydMMtdJNzZ6VeD+YfATppcQ3qBYuZ5GG9UDSVxFjllZJkOBFALGuVny
+	IuRoLEAAQprdJud55OrQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGJzE-0000000B8BV-1Fqp;
-	Mon, 12 Oct 2026 17:38:56 +0000
-Received: from layka.disroot.org ([178.21.23.139])
+	id 1xGK47-0000000B8r3-3eEJ;
+	Mon, 12 Oct 2026 17:43:59 +0000
+Received: from mail-ed1-x530.google.com ([2a00:1450:4864:20::530])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGJzB-0000000B8Aa-38f3
+	id 1xGK44-0000000B8p9-3Mcv
 	for linux-phy@lists.infradead.org;
-	Mon, 12 Oct 2026 17:38:55 +0000
-Received: from mail01.layka.lan (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id AD03B82C29;
-	Mon, 12 Oct 2026 19:38:27 +0200 (CEST)
-X-Virus-Scanned: SPAM Filter at disroot.org
-Received: from layka.disroot.org ([127.0.0.1])
- by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id flE9_WqyuLty; Mon, 12 Oct 2026 19:38:26 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1791826706; bh=GMvbzah6mZA3ys6/05jR+TSRw4EUnonbzpVaTY6kNkY=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=gmYFWraQE7C2fFmfILWvlalgdUIYNJ4kwhxuBnEfGdyDVeC/Zu0Y5Oblg0vMmUPMn
-	 KO7CcCuwtRqlIO2iVglhfyHrbrJYRVeJspqrWebOKzXTHQEHQG9QuCopka4HoDuhli
-	 yEm8HHuQfaevCSfHKX5+jio9wIOlV/fdQdDpdlPBHWg6cwFZY42lckNy/YpZAScgVT
-	 EzJ9kVsxg0h3T9hCK/hYkc/u8x6ishMkzG/8CSr5CEycMP4WBVNt+4t739xEJ0Kk2w
-	 Rx858EAostVZNhJejUPvwsX3Z0xU35++GBd8uF19Pf8reH6XaLPrPBjKD/V9GAbvzx
-	 XsZGyJxgaQOMw==
-From: Rustam Adilov <adilov@disroot.org>
-To: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Stanley Chang <stanley_chang@realtek.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Cc: Rustam Adilov <adilov@disroot.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
-	Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-Subject: [PATCH v8 3/6] dt-bindings: phy: realtek,usb2phy.yaml: extend for resets and RTL9607C support
-Date: Mon, 12 Oct 2026 22:37:36 +0500
-Message-ID: <20261012173739.36377-4-adilov@disroot.org>
-In-Reply-To: <20261012173739.36377-1-adilov@disroot.org>
-References: <20261012173739.36377-1-adilov@disroot.org>
+	Mon, 12 Oct 2026 17:43:58 +0000
+Received: by mail-ed1-x530.google.com with SMTP id 4fb4d7f45d1cf-6ab006eb282so2670408a12.0
+        for <linux-phy@lists.infradead.org>; Mon, 12 Oct 2026 10:43:55 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1791827035; cv=none;
+        d=google.com; s=arc-20260327;
+        b=hwXNGIcwRNE85QVC8PiQlBfQaUmdVTi415/jas1qy0jVU7TZeTtuPq1JEhNAvE/ES4
+         dsAgcFpjinh7nxplsN8/MnMLl1r+8Fn8Drp2QnEpUI7k1xXS14KNu+iH5CsI7AWLcny0
+         KWUFtuiqNpmFKRZ6pxouBfsCYg9PFZrbjkMRY/I7S92MeefQXWa+qy2t//nGj2khhx5n
+         /N6dlWrHwZnHvwkpbP2pQB+7ubd00eZaNfHt4CaM/LlizDbwdg4hCjWHuC9u5FqbFTgn
+         wtrSDqSRCdWjWedROmkDuQMGRDb59qQpVnJ3brVgXO9WPn1svkaSO9VUZAVWLAw+8kdj
+         rIEQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=aQmNTGROGdvgxfWPGJ1OogqSDxU0dKMs1Ijyj+pgCT8=;
+        fh=TYmnomqCqUVCCDvrLDKn+xCW5m0AoF2p/N5Uj0rWIIM=;
+        b=fJpG5vcQa6fQ/gJBDV2t/sr09eHteV3kPsiUKjiPbc113My0P0Mowopr/821vCqRV+
+         l03ehOcoTmsg6DWQ+YOtmskt3YXBVD1DXVaaMLExwq0fMp0VeddTEfaqJ1dmHU2/dHzV
+         1zeU29WPD/U3Md5VgH5ks3rlSZFb2XKUfn43SAgtkfoRWWNiCjR2efgVYfFoE+9wiGKx
+         Zut+q+Y0SPNFS2/keaY9qEGiWmjPZ2jVVEAzuTKq0BJ56Okt7+Xpw5cm5+gmHvkDXBjs
+         b0Ypcu6uyiJLBs9rgEeFBOcchsrXWUF4gy1l+ggbBqITxCQ+IRl3u99TWT1IiX6bXJov
+         RNKQ==;
+        darn=lists.infradead.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1791827035; x=1792431835; darn=lists.infradead.org;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=aQmNTGROGdvgxfWPGJ1OogqSDxU0dKMs1Ijyj+pgCT8=;
+        b=r5pqoxkgDMpNNApP+YitL2xWGnQm7iFZgg06hXWmqgkr11mpVkoa7LZS2gKuqPX1sk
+         hQUXIXsT95hHIEDYpLZ9ILTnIWd3V3x+ekNdYJRy2O+3TTAD55NJD8bnFvQd5I1kC7N/
+         REhBqRoA9Kbuje77A+F6Ig7XXdkZoP8IEUj/+HCafdm8KzTeD/1JRjTw2kKYDRZjDIgT
+         fI/ovDwZoTwXIBSPzRuN4dxye/bYGDtomJdEmRviObcZAGYMkMHY4+pRw68i3oBrO7VR
+         IZr03HX/CVdUKuv64sQ0UHDQ/B5IU7623frLMbyO5PxUvpDs7+WDj9kZ3cBc9VYIsrxd
+         rXEQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1791827035; x=1792431835;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=aQmNTGROGdvgxfWPGJ1OogqSDxU0dKMs1Ijyj+pgCT8=;
+        b=dQv0jp4b+cRcDQaHIIo2lxjj/4Ig+WY/PHoqa5XM1+GYBADGUkN0mua6H2HueW4iUL
+         3DCl4MQEdYXKsgRx+Izi7D8zTFAmu46usXmsxPIqWeunXrzratteM4pI8Qzj8d8cI5tX
+         +Rlem+cKkmpfQIRI35XF4uX4Xi1VignU1meR/y4FC+4TcqOZwyQ2qvxV0m7GM6u3zcJR
+         yvRcl8oQcXPH+MKRfycInBkBX6i7uQixKT38jI54hIlVTQQ7s8ZGeVQGdg9Ehq+5CO/L
+         pupyFTLp/V8fhRimFpkj2doeW73DOM4HC+LVNeGulk0GGYTkj7q1CBeJRuhbPu3rbpPi
+         UQxw==
+X-Forwarded-Encrypted: i=1; AKwUvByQ4Lmg4rTnuKP59a3ZBHZhDUBh0jH9LZ23pro9eK+xIpv1d0OMUsCJa6sZXAFU7cmG/oeXUq64t4Y=@lists.infradead.org
+X-Gm-Message-State: AFq9FYLokGXu+fJTbZpR7YINz2AfB2N5xtScfVeabqCrIkkcNxIGhZ8C
+	4v5dCiIkfvBeBGYrglWgWrqBp1uND5+Kt4xrx/CSHW/428oho32tp9RZFHTMILdm4UGhHIU50wz
+	qlawCAoar37g6ekeJ92vW7MoPkD19aT4=
+X-Gm-Gg: AYBFou0bmSijGPyafK/EEwqRYRzs+vK2uUsCYpM/RrLeanSLY6AS3DGKCwVHpSkK1np
+	9HM54NEoG1Idl72jy8VsyOyjUTNKL8bjp7RG47dOz8DKSbNFaIt5xPKbtVdMk36RJhsJV+j9ZMR
+	kZs1Qaoning6qLVVg2nFCFMzXZIX0/F5YNPGz9M+oUkQ9dj/69PrhcWr6SKlMex7wh9TnfvOgnP
+	7xsMy6G+dclt3MfEi5dA+1vLPGYt6Hyt4k41Uc6fJLjjWnKXMsewGKLHrspi9jYBS4IRkn021B8
+	XpXbbjvPCRlsOIeJLWJm7Tl8W41s3c5laeLIpRzka/2QeeZP0617nA==
+X-Received: by 2002:a05:6402:4341:b0:6ac:8761:17a1 with SMTP id
+ 4fb4d7f45d1cf-6b17c27a7famr8072014a12.36.1791827034421; Mon, 12 Oct 2026
+ 10:43:54 -0700 (PDT)
 MIME-Version: 1.0
+References: <20261010115539.9237-1-l.scorcia@gmail.com> <20261010115539.9237-2-l.scorcia@gmail.com>
+ <20261012-quirky-emu-of-renovation-c217dc@quoll>
+In-Reply-To: <20261012-quirky-emu-of-renovation-c217dc@quoll>
+From: Luca Leonardo Scorcia <l.scorcia@gmail.com>
+Date: Mon, 12 Oct 2026 19:43:42 +0200
+X-Gm-Features: AclHuK-aSGZTx-4HZF0vtpTq6BBo_BN-ay9Tv6iz0b611lBgirjVShAwSUrYMCA
+Message-ID: <CAORyz2KgX-7=gfax06+Pb5SFq4dVTtcTY2pbH+FDCRNZ+AVXOA@mail.gmail.com>
+Subject: Re: [PATCH 1/7] dt-bindings: mediatek: hdmi-phy: Add compatible for mt8167
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: linux-mediatek@lists.infradead.org, 
+	Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Matthias Brugger <matthias.bgg@gmail.com>, 
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, Stephen Boyd <sboyd@kernel.org>, 
+	Brian Masney <bmasney+clk@redhat.com>, Jerome Brunet <jbrunet+clk@baylibre.com>, 
+	Chun-Kuang Hu <chunkuang.hu@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+	Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, Chen-Yu Tsai <wenst@chromium.org>, 
+	Fabien Parent <fparent@baylibre.com>, CK Hu <ck.hu@mediatek.com>, 
+	chunhui dai <chunhui.dai@mediatek.com>, linux-arm-kernel@lists.infradead.org, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org, 
+	dri-devel@lists.freedesktop.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261012_103853_924340_A1D21527 
-X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-CacheID: sfid-20261012_104356_856148_96277D7C 
+X-CRM114-Status: UNSURE (   9.52  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -80,94 +131,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the "realtek,rtl9607-usb2phy" compatible for USB2 PHY on the RTL9607C
-SoC series.
+> Why do you have flexible clocks?
 
-Add a resets property to properties to describe the usb2phy reset line.
+Hi, I'm sorry but I need a little help in understanding your comment.
+If you meant "Why isn't there a constraint on the clocks' names", it
+is already provided by the existing conditional block [1].
 
-In RTL9607C, USB2 PHY reset line is from "IP Enable controller" which is
-multipurpose and handle activating various SoC peripherals.
+If you meant "Why does clock-output-names have only the maxItems
+number and does not specify the clock name", it was there before [2].
+It could probably be added back with another conditional expression.
+If you meant something else entirely I apologize and would appreciate
+some additional guidance.
 
-It is unclear whether RTD SoCs have something similar to that so set
-the resets to false for these devices.
+Thank you,
+Luca
 
-RTL9607C requires the "resets" to be specified so add the corresponding
-if check for the "realtek,rtl9607-usb2phy" compatible.
-
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-Acked-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-Signed-off-by: Rustam Adilov <adilov@disroot.org>
----
- .../bindings/phy/realtek,usb2phy.yaml         | 25 ++++++++++++++++++-
- 1 file changed, 24 insertions(+), 1 deletion(-)
-
-diff --git a/Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml b/Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml
-index 9911ada39ee7..7b50833c8e19 100644
---- a/Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml
-@@ -11,7 +11,8 @@ maintainers:
-   - Stanley Chang <stanley_chang@realtek.com>
- 
- description: |
--  Realtek USB 2.0 PHY support the digital home center (DHC) RTD series SoCs.
-+  Realtek USB 2.0 PHY support the digital home center (DHC) RTD and
-+  RTL9607C series SoCs.
-   The USB 2.0 PHY driver is designed to support the XHCI controller. The SoCs
-   support multiple XHCI controllers. One PHY device node maps to one XHCI
-   controller.
-@@ -57,6 +58,12 @@ description: |
-   XHCI controller#1 -- usb2phy -- phy#0
-   XHCI controller#2 -- usb2phy -- phy#0
- 
-+  RTL9607C SoCs USB
-+  The USB architecture includes OHCI and EHCI controllers.
-+  Both of them map to one USB2.0 PHY.
-+  OHCI controller#0 -- usb2phy -- phy#0
-+  EHCI controller#0 -- usb2phy -- phy#0
-+
- properties:
-   compatible:
-     enum:
-@@ -69,6 +76,7 @@ properties:
-       - realtek,rtd1395-usb2phy-2port
-       - realtek,rtd1619-usb2phy
-       - realtek,rtd1619b-usb2phy
-+      - realtek,rtl9607-usb2phy
- 
-   reg:
-     items:
-@@ -130,6 +138,9 @@ properties:
-     minimum: -8
-     maximum: 8
- 
-+  resets:
-+    maxItems: 1
-+
- required:
-   - compatible
-   - reg
-@@ -157,6 +168,18 @@ allOf:
-     then:
-       properties:
-         realtek,driving-level-compensate: false
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - realtek,rtl9607-usb2phy
-+    then:
-+      required:
-+        - resets
-+    else:
-+      properties:
-+        resets: false
- 
- additionalProperties: false
- 
--- 
-2.56.0
-
+[1] https://github.com/torvalds/linux/blob/master/Documentation/devicetree/bindings/phy/mediatek%2Chdmi-phy.yaml#L90-L102
+[2] https://lore.kernel.org/all/20251217-mtk-genio-evk-hdmi-support-v2-1-a994976bb39a@collabora.com/
 
 -- 
 linux-phy mailing list
