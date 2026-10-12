@@ -4,71 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A00BCA9ED0
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Oct 2026 09:41:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44812CA9ED0
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Oct 2026 09:43:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CU414JZvmaRY3efO7TbbrDngKfDvj6DTxsDZQVv/07A=; b=jffrV/BkFRRO2n
-	gWWdUz/BwCi2Y4pXqLjjLLsI9wQk1uxNWgwsNlJOkt3akHYEFro144bkElr6SK7LmBZJfZzOUjbzg
-	HRhrYOFSwlxK8Thhsngya9xdfUYQc5O9LyWtKIf3AsA0mTR37aBat6MiCp7Ljr5RVJ0iWiHi4m4Hw
-	oTsme2+ClMNEgU3mqsvSqzIx9NMKFGMoJcUvEjMOkk/6V7oMJlVxX5tAlgb+qq5g5eFRPQ4s3G5Z6
-	2vy7i6QYfc3a4JjLWuMesaE7uvyG0hEZEwlk6aCiEeMITYDYd/+fd4fmnOc3+Z+Lj0lQz1HeCE1Rv
-	XJj8gWm9uIpXY3xIktLQ==;
+	List-Owner; bh=r7r9L3tlkDuZETkbUrjn+McTN6l2X3Pzf25NbNRI6UU=; b=OlM0xWlu9Pusmo
+	n092jgYocrkD4aBv5Ds2uvJa0KskpkU4tfrOBWFH3Ufy+PPxUkQIKO7HQYoiV6Z0TfieufwhJDFK1
+	AR3JcTqmgTzx5RZrc38vkhjdjPx8V0AJ/oBYorjbFYaH2BHQXUd7FH7nP0KH12nsqwhjdoxNiCHaL
+	7DT/fmRSCi48orLtQAOarvuNPWIHaiVOzKOLDcoIWI7BSzYdgkevKhNOonwL59cGmeYRQw/JwxIi2
+	voCIzI+jile41XqDTyvdO10vTkmgIt4Sw3O9Ix+S/ISkOtuTtNCSFUuk5tfnVOV11s5tSPXa4jQ82
+	rbALQJCYpKgIhDoTSULg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGCWx-0000000A5aI-12Tq;
-	Mon, 12 Oct 2026 09:41:15 +0000
+	id 1xGCZX-0000000A5z6-41ce;
+	Mon, 12 Oct 2026 09:43:55 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGCWu-0000000A5ZL-3M0R;
-	Mon, 12 Oct 2026 09:41:13 +0000
+	id 1xGCZW-0000000A5yp-0qok
+	for linux-phy@lists.infradead.org;
+	Mon, 12 Oct 2026 09:43:55 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 3E80B600E2;
-	Mon, 12 Oct 2026 09:41:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0B1091F0089B;
-	Mon, 12 Oct 2026 09:41:11 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 8FEB8600E2;
+	Mon, 12 Oct 2026 09:43:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 27A101F0089B;
+	Mon, 12 Oct 2026 09:43:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791798072;
-	bh=onWJ6ONltn94K0nYjjsvbs8zBVxp2RtNkWHz5Qqtqr0=;
+	s=k20260515; t=1791798233;
+	bh=n8g3m07kswQUB2aEv58Z2fxCH8Bc2AGaIzxQdV0JnjE=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=HNvG2Hdz9LqP3HuiblCNkrZDD3gYnj021ugBuK5zLthlyi/HJsV2SvQbppMUxum2Q
-	 TaPYv+DPuIqAPnc43QMtP0l1cISjDlIMEomSHV5Zn0J984X2fS+YG+XYCAIXsH1ZTt
-	 Ba7bTc+/K01AyMCyoZ0JapPT5SQ1XZJQarXiZcQm6V3lnPTXF9hlesm2eUm8DIaqzl
-	 eo/nH/jWCxxKJ2EFoUp5C9zj27jWw+jySu/iZ3+1vtnEo3r4Q27C6MUmuTawuvoK/N
-	 T/Fg0Yp5va8TGtdxs6eKzTwbBqZ8Nuy94CPEZwWPdhhrf+Zz2UlbBBvcVc6by/MNpe
-	 J/TeqwjLhjHIw==
-Date: Mon, 12 Oct 2026 11:41:08 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: CK Hu =?utf-8?B?KOiDoeS/iuWFiSk=?= <ck.hu@mediatek.com>
-Cc: "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>, 
-	"l.scorcia@gmail.com" <l.scorcia@gmail.com>, "fparent@baylibre.com" <fparent@baylibre.com>, 
-	"linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>, "robh@kernel.org" <robh@kernel.org>, 
-	Chunfeng Yun =?utf-8?B?KOS6keaYpeWzsCk=?= <Chunfeng.Yun@mediatek.com>, "simona@ffwll.ch" <simona@ffwll.ch>, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, 
-	"conor+dt@kernel.org" <conor+dt@kernel.org>, "jbrunet+clk@baylibre.com" <jbrunet+clk@baylibre.com>, 
-	"bmasney+clk@redhat.com" <bmasney+clk@redhat.com>, "chunkuang.hu@kernel.org" <chunkuang.hu@kernel.org>, 
-	"vkoul@kernel.org" <vkoul@kernel.org>, "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, 
-	"krzk+dt@kernel.org" <krzk+dt@kernel.org>, "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, 
-	"p.zabel@pengutronix.de" <p.zabel@pengutronix.de>, 
-	"dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>, "chunhui.dai@mediatek.com" <chunhui.dai@mediatek.com>, 
-	"wenst@chromium.org" <wenst@chromium.org>, "airlied@gmail.com" <airlied@gmail.com>, 
-	"mani@kernel.org" <mani@kernel.org>, "neil.armstrong@linaro.org" <neil.armstrong@linaro.org>, 
-	"matthias.bgg@gmail.com" <matthias.bgg@gmail.com>, "sboyd@kernel.org" <sboyd@kernel.org>, 
-	"nicolas.frattaroli@collabora.com" <nicolas.frattaroli@collabora.com>, 
-	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Subject: Re: [PATCH 1/7] dt-bindings: mediatek: hdmi-phy: Add compatible for
- mt8167
-Message-ID: <20261012-eager-agile-pegasus-7aacd2@quoll>
-References: <20261010115539.9237-1-l.scorcia@gmail.com>
- <20261010115539.9237-2-l.scorcia@gmail.com>
- <ecdf765641209f3d0f27fe8ae77fe9145884d932.camel@mediatek.com>
+	b=VvQ3uqexE/Ntit4Uo3Vnyg1hfJ5wxdiRHSmkrQz2UynJivsnVns11WZvmUtdFQ+Np
+	 vUZms2MpfqdwiihALNylI7gBnQTtYqomf0s4nk9GNPPpWxLzNEQ+uKoX1kmdD/Wz7x
+	 HW8OL9GhTXSMosGLbjUQjO6ff1Iu6loj56wKj8lyybKhGOjVzh4+yPQ7WDkAdhPhtP
+	 sm8dS4tSZL8Zhe3PsLI2/i0H1mwr359RzrwTlwKwOc2+L+C1lMAnEfDi9xCKMejdGP
+	 oEAJKfI9cm3VlT2tfIBYBOEx5BbO1LIdLTiTEarIzuNRfYTBxEVGLXJJbArYMhF5Ts
+	 PjH/vNLgk6Hlg==
+Date: Mon, 12 Oct 2026 15:13:45 +0530
+From: Manivannan Sadhasivam <mani@kernel.org>
+To: Xu Yang <xu.yang_2@oss.nxp.com>
+Cc: ivaylo <ivo.ivanov.ivanov1@gmail.com>, vkoul@kernel.org, 
+	neil.armstrong@linaro.org, dmitry.baryshkov@oss.qualcomm.com, linux-phy@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev
+Subject: Re: [PATCH] phy: phy-snps-eusb2: fix FSEL_48_MHZ_VAL definition
+Message-ID: <asyrexEOKzZkoD23@debian>
+References: <20260908085953.3315953-1-xu.yang_2@oss.nxp.com>
+ <aaf8a5ef-2abe-4269-804e-4d2dd1bc4d3e@gmail.com>
+ <ogfpkqixf3xkyvh4bbpvui5ybfaro6g35g6u5kb56k2jsyrsmt@jm67at6cpksf>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <ecdf765641209f3d0f27fe8ae77fe9145884d932.camel@mediatek.com>
+In-Reply-To: <ogfpkqixf3xkyvh4bbpvui5ybfaro6g35g6u5kb56k2jsyrsmt@jm67at6cpksf>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,16 +72,30 @@ Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBPY3QgMTIsIDIwMjYgYXQgMDk6MTk6NTlBTSArMDAwMCwgQ0sgSHUgKOiDoeS/iuWF
-iSkgd3JvdGU6Cj4gT24gU2F0LCAyMDI2LTEwLTEwIGF0IDEzOjU0ICswMjAwLCBMdWNhIExlb25h
-cmRvIFNjb3JjaWEgd3JvdGU6Cj4gPiBFeHRlcm5hbCBlbWFpbCA6IFBsZWFzZSBkbyBub3QgY2xp
-Y2sgbGlua3Mgb3Igb3BlbiBhdHRhY2htZW50cyB1bnRpbCB5b3UgaGF2ZSB2ZXJpZmllZCB0aGUg
-c2VuZGVyIG9yIHRoZSBjb250ZW50Lgo+ID4gCj4gPiAKPiA+IFRoZSBoZG1pLXBoeSBmb3IgdGhl
-IE1lZGlhVGVrIG10ODE2NyBTb0MgaXMgbm90IGNvbXBhdGlibGUgd2l0aCBhbnkgb2YKPiA+IHRo
-ZSBleGlzdGluZyBoZG1pLXBoeS4gQWRkIGEgc2VwYXJhdGUgY29tcGF0aWJsZSB0byBkZXNjcmli
-ZSBpdC4KPiAKPiBSZXZpZXdlZC1ieTogQ0sgSHUgPGNrLmh1QG1lZGlhdGVrLmNvbT4KCklmIHlv
-dSBhcmUgZ29pbmcgdG8gcmV2aWV3IHRoaXMsIHRoZW4gcmV2aWV3IGVudGlyZSBjb2RlLCBub3Qg
-anVzdCBwaWVjZQp2aXNpYmxlIGhlcmUgd2hpbGUgbGVhdmluZyB0aGUgcmVzdCBvYnZpb3VzbHkg
-aW5jb21wbGV0ZS4KCkJlc3QgcmVnYXJkcywKS3J6eXN6dG9mCgoKLS0gCmxpbnV4LXBoeSBtYWls
-aW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+T24gV2VkLCBTZXAgMDksIDIwMjYgYXQgMTA6NDk6NDFBTSArMDgwMCwgWHUgWWFuZyB3cm90ZToK
+PiBPbiBUdWUsIFNlcCAwOCwgMjAyNiBhdCAwNDoxNzo1N1BNICswNDAwLCBpdmF5bG8gd3JvdGU6
+Cj4gPiBPbiA4LjA5LjI2IDEyOjU5LCBYdSBZYW5nIHdyb3RlOgo+ID4gPiBGcm9tOiBYdSBZYW5n
+IDx4dS55YW5nXzJAbnhwLmNvbT4KPiA+ID4gCj4gPiA+IEFjY29yZGluZyB0byBTeW5vcHN5cyBl
+VVNCMiBQSFkgRGF0YWJvb2ssIEZTRUxfNDhfTUhaX1ZBTCBzaG91bGQgYmUgMHg2Cj4gPiA+IGZv
+ciBzdXBwb3J0ZWQgNDggTUh6IHJlZmVyZW5jZSBjbG9jay4KPiA+IAo+ID4gSSBkb24ndCBzZWUg
+dGhpcyBhcyBhIGp1c3RpZmllZCBjaGFuZ2UuIFNhbXN1bmcncyBpbXBsZW1lbnRhdGlvbiBvZiBl
+VVNCMgo+ID4gZGlmZmVycyBmcm9tIHRoZSBnZW5lcmljIFN5bm9wc3lzIGludGVyZmFjZSwgYXMg
+aXMgdmlzaWJsZSBmcm9tIHRoZQo+ID4gZGlmZmVyZW5jZXMKPiA+IGJldHdlZW4gUUNPTSdzIGlt
+cGxlbWVudGF0aW9uIGFuZCBTYW1zdW5nJ3MuCj4gPiAKPiA+IEZyb20gd2hhdCBJIHNlZSBmb3Ig
+ZXh5bm9zMjIwMCwgdGhlIEZTRUwgdmFsdWUgaXMgMHgyIGZvciBib3RoIDI0IE1IeiBhbmQKPiA+
+IDQ4IE1Iei4gVGhlIGRpZmZlcmVudGlhdGluZyBwYXJ0IGlzIHRoYXQgdGhlIHVwcGVyIFBMTCBk
+aXZpZGVyIGlzIDB4MCBmb3IgMjQKPiA+IE1Iego+ID4gYW5kIDB4MSBmb3IgNDggTUh6LiBUaGUg
+Y3VycmVudCBwcm9ncmFtbWluZyB3YXMgdGFrZW4gZnJvbSB0aGUgc2Ftc3VuZ1wKPiAKPiBGb3Ig
+UHJvZHVjdCBDb2RlIEg0ODMtMCwgaXQncyAweDIgZm9yIDI0IE1IeiBhbmQgMHg2IGZvciA0OCBN
+SHouIFRoZSBQTEwgZGl2aWRlcgo+IGlzIDB4MCBmb3IgMjQgTUh6IGFuZCAweDEgZm9yIDQ4IE1I
+eiB0b28uIFNvIGl0IGRvZXMgc2VlbSBsaWtlIHNvbWV0aGluZyBtaXNtYXRjaAo+IGluIHlvdXIg
+c2lkZS4gQmVjYXVzZSB0aGUgRlNFTF8qX01IWl9WQUwgaXMgY29tbW9uIGRlZmluaXRpb24gaW4g
+dGhlIGRyaXZlciwgdGhpcwo+IG1lYW5zIEZTRUxfNDhfTUhaX1ZBTCBpcyBub3QgY29tbW9uIGFu
+eW1vcmUuIEJ1dCBpZiB5b3UgaGF2ZSBjb25maXJtZWQgaXQncyBzaW1wbHkKPiBsaWtlIHRoYXQs
+IGl0J3MgZmluZS4gT3RoZXJzIG5lZWQgdG8gYWRkIHRoZWlyIHNwZWNpZmljIGRlZmluaXRpb24g
+aW4gdGhlIGZ1dHVyZS4KPiAKCklmIHRoZSB2YWx1ZXMgZGlmZmVyIGJldHdlZW4gdmVuZG9yIGlt
+cGxlbWVudGF0aW9ucywgdGhlbiBwbGVhc2UgZGVhbCB3aXRoIGl0CnVzaW5nIGNvbXBhdGlibGUg
+Y2hlY2sgb3IgZHJ2ZGF0YS4KCi0gTWFuaQoKLS0gCuCuruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCv
+jSDgrprgrqTgrr7grprgrr/grrXgrq7gr40KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0Cmxp
+bnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
+YWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
