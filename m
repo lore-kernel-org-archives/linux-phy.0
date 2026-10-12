@@ -4,57 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B390CA9ED1
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Oct 2026 16:06:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0554DCA9ED0
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Oct 2026 16:10:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/9zRuAMz3YABQ99laxDqPcrrarqkkFhcCruNusLznmI=; b=JbO3v73oIGVKnw
-	aZ8BaG2Hx4Ff2tfWgivpSY/PPvhtcACRfQ/eV09UoNcnIQoGx37uqzyAjO+rybITOHi7TqPVVHf6z
-	MyHh9jTSZEpT94qxS9olurJ5y3fVyMuXxcZgqX+AFgVFxFTv9AwDKJGFh2+cn/daIMkrBiwo5Abae
-	tQZSXfKT4g+IIRJYtb82hsCgwRXXWOuN7c3P3RPxERtef/two48c/goq0uVwB2s5mM3T3ZEwjuzKD
-	hDmbCmqw7m4bnbLONw55t2JytPxXnmRxQzsFKMae0lmm75WqmtY7uDWaPTIYW2Ao1CPYLZj0sArep
-	henleA+w4Tsy51u9qwwA==;
+	List-Owner; bh=/aNIOPu6IryZFBeaoQ90YZ+JoV2lW5YIP6odMTGSj0A=; b=GsAs5ABxkTRZR8
+	E5VG6ukAnyq+oIsI3wEFNR32du7J7/x51SmKDM6fxq206+NbWjWOmT8jX5pkrlUyhn5ycJdFs7xn7
+	oywses03bZ7fuUXgLEhG0hqTuMkEIwg8yjCbUzVMyHKaqhgXPH91CgKdLGTJnQQgZfy/lEX+qVfQu
+	YHbQEerbQlm+E0tz4leOBIXEqpIv2UGxdnzBThzQPy+kpSzSaaWS8mxNREeIKo0exF2xvbE/psxhz
+	7DS6MSwbEy28ggWEMr2NSB7LIyiNf+nMQJyCoqQfKJWfi5zrkxuFfI5eiG6EOIQYhUEJY86K84ZUS
+	FoXANUrUnFM+TCZhm46g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGIXz-0000000Av0t-3b6C;
-	Mon, 12 Oct 2026 16:06:43 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xGIbI-0000000AvJ0-135f;
+	Mon, 12 Oct 2026 16:10:08 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGIXy-0000000Av0f-3FLi
+	id 1xGIbG-0000000AvIp-2Pbt
 	for linux-phy@lists.infradead.org;
-	Mon, 12 Oct 2026 16:06:42 +0000
+	Mon, 12 Oct 2026 16:10:06 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 4F09D41E8B;
-	Mon, 12 Oct 2026 16:06:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 775731F0089B;
-	Mon, 12 Oct 2026 16:06:39 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 028274046C;
+	Mon, 12 Oct 2026 16:10:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 119031F0089B;
+	Mon, 12 Oct 2026 16:10:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791821202;
-	bh=gbkr106sXoUgppdlb+ZSrU2jd/q9tIoiewjkowRaRfg=;
+	s=k20260515; t=1791821405;
+	bh=7KAK9Ha46yxLOafPMgOcsQUsdwCoqPNAXO5r2ANiEQo=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=WV5NNIbuTCFo2kzEUuJ6x5ZlINuthEvhTZcd0TCNpHCT8VL8HYaUDutljPXQTsuZ/
-	 nUinJb59wS/oEfnjqewdH5z5pOAF+drVl/KdPdcrysY3veHHzvoTSEa02z1La5iNom
-	 CBxSbvhqoQ0GGfW6KnBslU5jJH9rtNMtSR0v0mDeItmqpPWwgG4A7robOD8dZ3pON8
-	 9/SPVIV70l2CKnR1kwVhuH8cqpHwpTFhNFxr0w9uSUS9SsQxYOd4K5HPPP3opZY4Qx
-	 84BPioSvsOVkL0QKlQ1KMxVU7+80i5/FYoGvAAJ0uutSjCzv1Fuf5v1VW8VwbAXUgA
-	 vquhjicD63Vuw==
-Date: Mon, 12 Oct 2026 21:36:35 +0530
+	b=Z2kIGQLb7uS/hU7K6MupmDTHy6YNB2rPp8yAil8KxKP8Tn44p84DOTVQjndtMwRhk
+	 NriywCKuuT8jALq9NWpLq60bLDOZlcF4HnVWbUZfmHqKHnpB83P4ee1fY8YAi0fxpy
+	 OfYEb+7Gv3MXbkNddTfJTRT9K6tXi1hfdCmhdAX8ONT5ZSIgRDJcpWmRhAqQC2XYfM
+	 9ek4nOX5ol/A6C56sVB3mkdGKXIkrdJzNzWjDHtNebez1yluWQW/0zIPr8JqzLF2AE
+	 nH9LOROEhdqFmFcQJ7ZE6LllAawk5JnZXqBw+Nxfm3npb262e302DBhKerCGXh2PVY
+	 drOQx2Ubi924g==
+Date: Mon, 12 Oct 2026 21:39:58 +0530
 From: Manivannan Sadhasivam <mani@kernel.org>
 To: Wentao Liang <vulab@iscas.ac.cn>
 Cc: linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
 	mchehab+huawei@kernel.org, neil.armstrong@linaro.org, vkoul@kernel.org, 
 	stable@vger.kernel.org
-Subject: Re: [PATCH] phy: HiSilicon: Fix PCIe device reference leak in
+Subject: Re: [PATCH] phy: HiSilicon: Fix device node reference leak in
  hi3670_pcie_get_resources_from_pcie()
-Message-ID: <as0Fef-JdS-fVBLI@debian>
-References: <20260917133935.2153674-1-vulab@iscas.ac.cn>
+Message-ID: <as0GUIYPYYoyq00T@debian>
+References: <20260917134144.2153731-1-vulab@iscas.ac.cn>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260917133935.2153674-1-vulab@iscas.ac.cn>
+In-Reply-To: <20260917134144.2153731-1-vulab@iscas.ac.cn>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,19 +71,19 @@ Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBTZXAgMTcsIDIwMjYgYXQgMDE6Mzk6MzVQTSArMDAwMCwgV2VudGFvIExpYW5nIHdy
-b3RlOgo+IGhpMzY3MF9wY2llX2dldF9yZXNvdXJjZXNfZnJvbV9wY2llKCkgZ2V0cyBhIHJlZmVy
-ZW5jZSB0byB0aGUgUENJZQo+IHBsYXRmb3JtIGRldmljZSB3aXRoIGJ1c19maW5kX2RldmljZV9i
-eV9vZl9ub2RlKCksIGJ1dCBuZXZlciByZWxlYXNlcwo+IGl0LiAgVGhlIHJlZmVyZW5jZSBpcyBu
-b3Qgc3RvcmVkIGFueXdoZXJlLCBzbyBpdCBpcyBsZWFrZWQgYm90aCB3aGVuCj4gZGV2X2dldF9y
-ZWdtYXAoKSBmYWlscyBhbmQgb24gdGhlIHN1Y2Nlc3MgcGF0aC4KPiAKPiBEcm9wIHRoZSByZWZl
-cmVuY2UgcmlnaHQgYWZ0ZXIgdGhlIHJlZ21hcCBsb29rdXAsIHRoZSBsYXN0IHVzZSBvZiB0aGUK
-PiBkZXZpY2UuCj4gCj4gRml4ZXM6IDczMDc1MDExZmZmZiAoInBoeTogSGlTaWxpY29uOiBBZGQg
-ZHJpdmVyIGZvciBLaXJpbiA5NzAgUENJZSBQSFkiKQo+IENjOiBzdGFibGVAdmdlci5rZXJuZWwu
-b3JnCgpQbGVhc2UgZG9uJ3QgQ0Mgc3RhYmxlIGZvciB0aGVzZSB0cml2aWFsIGZpeGVzLgoKPiBT
-aWduZWQtb2ZmLWJ5OiBXZW50YW8gTGlhbmcgPHZ1bGFiQGlzY2FzLmFjLmNuPgoKUmV2aWV3ZWQt
-Ynk6IE1hbml2YW5uYW4gU2FkaGFzaXZhbSA8bWFuaXZhbm5hbi5zYWRoYXNpdmFtQG9zcy5xdWFs
-Y29tbS5jb20+CgotIE1hbmkKCi0tIArgrq7grqPgrr/grrXgrqPgr43grqPgrqngr40g4K6a4K6k
-4K6+4K6a4K6/4K614K6u4K+NCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1waHkK
+T24gVGh1LCBTZXAgMTcsIDIwMjYgYXQgMDE6NDE6NDRQTSArMDAwMCwgV2VudGFvIExpYW5nIHdy
+b3RlOgo+IGhpMzY3MF9wY2llX2dldF9yZXNvdXJjZXNfZnJvbV9wY2llKCkgb2J0YWlucyB0aGUg
+InBjaWUiIGNoaWxkIG5vZGUKPiB3aXRoIG9mX2dldF9jaGlsZF9ieV9uYW1lKCksIHdoaWNoIHRh
+a2VzIGEgcmVmZXJlbmNlIG9uIHRoZSBub2RlLCBidXQKPiBuZXZlciByZWxlYXNlcyBpdDogYm90
+aCB0aGUgIkRpZG4ndCBmaW5kIHBjaWUgZGV2aWNlIiBhbmQgdGhlICJGYWlsZWQKPiB0byBnZXQg
+QVBCIHJlZ21hcCIgZXJyb3IgcGF0aHMsIGFzIHdlbGwgYXMgdGhlIHN1Y2Nlc3MgcGF0aCwgcmV0
+dXJuCj4gd2l0aG91dCBjYWxsaW5nIG9mX25vZGVfcHV0KCkuCj4gCj4gVGhlIG5vZGUgaXMgb25s
+eSBuZWVkZWQgZm9yIHRoZSBkZXZpY2UgbG9va3VwLCBzbyBkcm9wIHRoZSByZWZlcmVuY2UKPiBy
+aWdodCBhZnRlciBidXNfZmluZF9kZXZpY2VfYnlfb2Zfbm9kZSgpLgo+IAo+IEZpeGVzOiA3MzA3
+NTAxMWZmZmYgKCJwaHk6IEhpU2lsaWNvbjogQWRkIGRyaXZlciBmb3IgS2lyaW4gOTcwIFBDSWUg
+UEhZIikKPiBDYzogc3RhYmxlQHZnZXIua2VybmVsLm9yZwo+IFNpZ25lZC1vZmYtYnk6IFdlbnRh
+byBMaWFuZyA8dnVsYWJAaXNjYXMuYWMuY24+CgpSZXZpZXdlZC1ieTogTWFuaXZhbm5hbiBTYWRo
+YXNpdmFtIDxtYW5pdmFubmFuLnNhZGhhc2l2YW1Ab3NzLnF1YWxjb21tLmNvbT4KCi0gTWFuaQoK
+LS0gCuCuruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDgrprgrqTgrr7grprgrr/grrXgrq7gr40K
+Ci0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3Jn
+Cmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
