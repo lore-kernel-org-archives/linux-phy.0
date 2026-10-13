@@ -4,81 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6DCBCC6B10
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Oct 2026 12:50:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 459D6CA9ED2
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Oct 2026 13:00:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c0TjacMsTxMsNeXH79DTH6r+1jY4SN/bAIdeS3i/tv8=; b=HnXrwGoJEslak2
-	kW/mGY7thKcgcsnHA6+vuC8zs437LOzD62DMzZDGZ+63SpnOVyfgvKOppiL10z9eVwdk/MoKc4EXA
-	3yYTb5CfmPgAOcLUY5YKK2FI6+twMmlNEPflie2nrZf/eUeXOZYJyzV0URajTtMBOR52fVGQ2kOZC
-	y1tpQRp0VyN86QER0pPBR1NxHDyyWPEwRcE0WQINZSbxd2f9vj71sLvC5hu1EPqYlq2lG9VigoGTq
-	fUiRvPFJCS9iYhecWst6HOxlKJEGRiIgecOR4j6abPU2ah0cxtoQ6K5lrHLjwTjZ6GW1ADicl0RNW
-	P+zl/vvHiZrSFfg82N1g==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:
+	References:MIME-Version:In-Reply-To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=bj7ua9H2LnyzVJQhGkPv+KWrpI0g+XW5PAMGkKaTHr8=; b=DTi7VgCUO1VRHENV1fjHBck/RY
+	BXbcYxhQpw+FiBG67crYCg/P5DUl4kfpKvF9DdZCD7a2BHoSmWX+doqy3KLEAZkzI2/QSPXMW0fgn
+	lebkWARjz/me2ZkDJ/GBpvt/5K1zDtEstKVDzqu9d6wu5ow0AfTEzdXtNYT6Ufcg/1hgXap2nDYu1
+	flM4iB8ijC8OeBCMtvqSBK9aE1ccpQe7A0vy27uVN6PT2pohYwieCi5M4gPTeHSZW7jhCbrJDNBNi
+	zi8gmI38SEYdnOU2VeU5dINrNOSkWS0CBgCbFP54bf9Nt7ruZVzUb+wKb99ka/zrB0/PYYWWmyDNQ
+	tb8UeU+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGbxQ-0000000CrcA-20N6;
-	Tue, 13 Oct 2026 12:50:16 +0000
-Received: from mail-m10313119144.xmail.ntesmail.com ([103.131.191.44])
+	id 1xGc72-0000000CtNn-3Ngw;
+	Tue, 13 Oct 2026 13:00:12 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGbxE-0000000CrRq-40xC;
-	Tue, 13 Oct 2026 12:50:11 +0000
-Received: from zyb-HP-ProDesk-680-G2-MT.. (unknown [61.154.14.86])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 50e2b940d;
-	Tue, 13 Oct 2026 20:49:53 +0800 (GMT+08:00)
-From: Damon Ding <damon.ding@rock-chips.com>
-To: Sandy Huang <hjc@rock-chips.com>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	David Airlie <airlied@gmail.com>,
-	Simona Vetter <simona@ffwll.ch>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Robert Foss <rfoss@kernel.org>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
-	Dave Jones <s.dave.jones@gmail.com>,
-	dri-devel@lists.freedesktop.org,
-	linux-rockchip@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Damon Ding <damon.ding@rock-chips.com>
-Subject: [PATCH v1 1/6] dt-bindings: display: rockchip: analogix-dp: Add support for RK3568
-Date: Tue, 13 Oct 2026 20:49:41 +0800
-Message-Id: <20261013124946.1807886-2-damon.ding@rock-chips.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20261013124946.1807886-1-damon.ding@rock-chips.com>
-References: <20261013124946.1807886-1-damon.ding@rock-chips.com>
+	id 1xGc70-0000000CtMi-2Zpv
+	for linux-phy@lists.infradead.org;
+	Tue, 13 Oct 2026 13:00:11 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id B5E75600D1
+	for <linux-phy@lists.infradead.org>; Tue, 13 Oct 2026 13:00:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6A67D1F00899
+	for <linux-phy@lists.infradead.org>; Tue, 13 Oct 2026 13:00:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1791896409;
+	bh=+f7hjFqoYYqzepasa7AMCSjMXUQ0fFSA/uS2EJqU4CM=;
+	h=From:In-Reply-To:References:Date:Subject:To:Cc;
+	b=lYz0A2VGRIjTym12aH7Axy6K6VnTpv7jGWciRk1bblvGAYscj441T/pFP2TA0/JxU
+	 NPDTi5RsDCOwHAzVLSuPBzzLdw5WHJ0vxu7/xPPvq03fKOLFHjtvV9oSf937mmX8kY
+	 wYUrRJI4AgfjY0NF9y9rT95umNJUCzazccQ2MJAypFke97E0ZO3YONDyCLcFqwy/I8
+	 kE8SuLO5Y0TStqcx2Ek+ZaGX1qL62tMg4YJQ+IZ3KxDnjYysblmyIDDVjLK8ey1nCU
+	 zXTrSnHu/T7h2hG6qP89QwF/Rt4ZPOil3/XNvLobxi3/mJ91/h3qiKFEGxMwvNvgjV
+	 9E4/xQgc8QrhQ==
+Received: by mail-lj1-f176.google.com with SMTP id 38308e7fff4ca-3a76ac0bdafso40626321fa.1
+        for <linux-phy@lists.infradead.org>; Tue, 13 Oct 2026 06:00:09 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AKwUvByZiyzhtALvIMoxRW+PMvbUYtKhcHsR07pxlEHJnvvntVKlLI3Z4LLox1XRw2nLVbBTF7XiE/OPCI0=@lists.infradead.org
+X-Gm-Message-State: AFq9FYKv0iEPVmLooeHbrqrpPCzfy5ZS2OR+4wHPKm7pnEI7wFFp1HeN
+	PET6cwe6Ht25PFQlLPoe53sYizHe/0n1k/AF0zqTpPWLzhMHwm53GeZOYEwtXnf19PldEC5hjtR
+	SmgVI4cZ5b7+nAim04TstUGncaNvcgK0Lc/ysx4b6Mw==
+X-Received: by 2002:a2e:a985:0:b0:3a9:829e:1def with SMTP id
+ 38308e7fff4ca-3a9c2b39c17mr26551871fa.21.1791896408192; Tue, 13 Oct 2026
+ 06:00:08 -0700 (PDT)
+Received: from 969154062570 named unknown by gmailapi.google.com with
+ HTTPREST; Tue, 13 Oct 2026 09:00:06 -0400
+Received: from 969154062570 named unknown by gmailapi.google.com with
+ HTTPREST; Tue, 13 Oct 2026 09:00:06 -0400
+From: Bartosz Golaszewski <brgl@kernel.org>
+In-Reply-To: <20261008015017.3359804-4-shengchao.guo@oss.qualcomm.com>
 MIME-Version: 1.0
-X-HM-Tid: 0aa1354ff06a03a8kunm2e7c128b3006
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVlDTEpNVkgZHkxNTENJGUgfT1YVFA
-	kWGhdVEwETFhoSFyQUDg9ZV1kYEgtZQVlNSlVKTk9VSk9VQ01ZV1kWGg8SFR0UWUFZT0tIVUpLSE
-	pKQk1VSktLVUpCWQY+
-DKIM-Signature: a=rsa-sha256;
-	b=esBq9R/0QwuJDYEtUDg/KknoEf7ksaQ6gizTruRkyCR2u10Wc22GMR33bSvqXmlMkjNtueJ7cE8cwrjHlLY2rslWcSTFtVpKvEdcaZcIXtZEaxocYkP0xempWqC3vjvhud7ANeDNZ0SFpMljUV3zVZ4fM5VKFGRE5yhXiW6CMBs=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=aqA05e3tEQzex5IV+W6xDQvoZ2RGk3y5IlP3Z09UWS0=;
-	h=date:mime-version:subject:message-id:from;
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261013_055005_910758_5C535C14 
-X-CRM114-Status: UNSURE (   8.58  )
-X-CRM114-Notice: Please train this message.
+References: <20261008015017.3359804-1-shengchao.guo@oss.qualcomm.com> <20261008015017.3359804-4-shengchao.guo@oss.qualcomm.com>
+Date: Tue, 13 Oct 2026 09:00:06 -0400
+X-Gmail-Original-Message-ID: <CAMRc=MefoZdGp__cRjUigLeYoiFbrm+Pw1n-XHJnhggMcBVP9A@mail.gmail.com>
+X-Gm-Features: AclHuK9rvV4-J4UvpGWlPsTNZi6lIIFpSgWSmTv6XmB-X6vr7YFYN1b-k_O-n6g
+Message-ID: <CAMRc=MefoZdGp__cRjUigLeYoiFbrm+Pw1n-XHJnhggMcBVP9A@mail.gmail.com>
+Subject: Re: [PATCH 3/3] phy: phy-snps-eusb2: Enable AHB2PHY bus clock on Nord
+To: Shawn Guo <shengchao.guo@oss.qualcomm.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Abel Vesa <abelvesa@kernel.org>, Bartosz Golaszewski <brgl@kernel.org>, 
+	Taniya Das <taniya.das@oss.qualcomm.com>, 
+	Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, Vinod Koul <vkoul@kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,83 +89,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document the "rockchip,rk3568-edp" compatible.  Like RK3576/RK3588,
-the RK3568 eDP controller has the dp/pclk/hclk clocks and dp/apb
-resets, but unlike them it does not use GRF registers, so make the
-"rockchip,grf" property conditional on the SoC.
+On Thu, 8 Oct 2026 03:50:17 +0200, Shawn Guo
+<shengchao.guo@oss.qualcomm.com> said:
+> On Nord, the eUSB2 PHY registers sit behind the AHB2PHY_0 bridge, gated
+> by NE_GCC_AHB2PHY_CLK. The Nord PHY currently matches the sm8550
+> fallback, which only requests the "ref" clock, so the bridge clock is
+> never enabled by the PHY. When nothing else holds it, e.g. on boards
+> where only the USB20-only controller is in use, clk_disable_unused()
+> gates the bridge and PHY init accesses go nowhere:
+>
+>   xhci-hcd xhci-hcd.2.auto: can't setup: -110
+>
+> Add Nord-specific match data that requests both "ref" and "bus" clocks,
+> reusing the existing Qualcomm init sequence. The bus clock is enabled
+> and disabled together with the ref clock in phy init/exit.
+>
+> Signed-off-by: Shawn Guo <shengchao.guo@oss.qualcomm.com>
+> ---
 
-Also document the optional avdd-0v9 and avdd-1v8 supplies, which are
-needed by the RK3568 eDP controller.
-
-Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
----
- .../rockchip/rockchip,analogix-dp.yaml        | 25 ++++++++++++++++++-
- 1 file changed, 24 insertions(+), 1 deletion(-)
-
-diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
-index 39dafe75a680..f8670a4e0430 100644
---- a/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
-+++ b/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
-@@ -15,6 +15,7 @@ properties:
-     enum:
-       - rockchip,rk3288-dp
-       - rockchip,rk3399-edp
-+      - rockchip,rk3568-edp
-       - rockchip,rk3576-edp
-       - rockchip,rk3588-edp
- 
-@@ -47,6 +48,16 @@ properties:
-       - const: dp
-       - const: apb
- 
-+  avdd-0v9-supply:
-+    description:
-+      A 0.9V supply that powers up the SoC internal circuitry. The actual
-+      supply source varies between different boards.
-+
-+  avdd-1v8-supply:
-+    description:
-+      A 1.8V supply that powers up the SoC internal circuitry. The actual
-+      supply source varies between different boards.
-+
-   rockchip,grf:
-     $ref: /schemas/types.yaml#/definitions/phandle
-     description:
-@@ -61,11 +72,22 @@ required:
-   - clock-names
-   - resets
-   - reset-names
--  - rockchip,grf
- 
- allOf:
-   - $ref: /schemas/display/bridge/analogix,dp.yaml#
- 
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            const: rockchip,rk3568-edp
-+    then:
-+      properties:
-+        rockchip,grf: false
-+    else:
-+      required:
-+        - rockchip,grf
-+
-   - if:
-       properties:
-         compatible:
-@@ -100,6 +122,7 @@ allOf:
-         compatible:
-           contains:
-             enum:
-+              - rockchip,rk3568-edp
-               - rockchip,rk3576-edp
-               - rockchip,rk3588-edp
-     then:
--- 
-2.34.1
-
+Reviewed-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+Tested-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 
 -- 
 linux-phy mailing list
