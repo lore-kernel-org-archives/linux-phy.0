@@ -4,93 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83225CC6B0E
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Oct 2026 14:47:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7AF2CC6B12
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Oct 2026 16:07:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EILeePaQG0JrRhXhFpLfPpKrueerwjS4W1uViZDWd30=; b=XeFcEh1rbsQIyN
-	9Wp+bfKnPYUmpFHvI3mi/K8KSKB3w+EiRvkxN5eM9+39z3jNfrNkYh90uM4qIwBVZXRYDNh2Da3sl
-	rSCsZoi32qnGGEuQQsW6JkxBR68jOo0AbJCZ4HLsBRvjFhYVGpJj54MR1OJ3sbkEaO0zFylQ6V1xl
-	Fsx26rUGBXbvulYhvwvXE9bY+K4iuv0eZFp8l3w3zJApuBBHlxNE3wdQN+afbyFh/SvC1wzQLnsid
-	M1RBX+gblyECVZO6b9RIepQkaQSsU3V+KYWTTxQqq1Y+ZyozvGHNtemQGh8tRDwk6knf6S4VwPTgl
-	iVkYReGG1isUdBLVSDJw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=1pj270M2f5C4+2wpB56YqvhjeFO8mT7ZrlXuPKBKgTg=; b=0v4YLNpvAQIbruS7tbZyMxGAEr
+	L67LUFO6By7WD13Ib9FcHbyaYWB52k9ewpa9/fH3+/mvj74m3+U8llUgRo6MvByzxgoKrYy1Rx4YH
+	EkwzcTWIhwrfJ+RbELO3k4I0BRktBSBXcrnfbsaxt6mHmhw2D/d/t7rLtu8qWbYCwFFAtmYeRPYpO
+	sQgbtHkQUlldiWdKv/NZGV3NxrK1v7cHz57nBESElV6i93XN8/6XgkCn+zIJe26Y0eJID5M3kWcFS
+	Uxny7TBrinO+ECnBd0trOJbS6vzBOEuCPREm0ZvzR3k/mGkv+KQEi/13oQB51YKGbcg5CiM63NvyY
+	tGPZQx9g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGdn5-0000000DAZN-0KOF;
-	Tue, 13 Oct 2026 14:47:43 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1xGf2O-0000000DSfw-0nEg;
+	Tue, 13 Oct 2026 16:07:36 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGdn2-0000000DAYK-3c9F;
-	Tue, 13 Oct 2026 14:47:42 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 023391A0231;
-	Tue, 13 Oct 2026 16:47:39 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com [134.27.226.22])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id DF3581A022D;
-	Tue, 13 Oct 2026 16:47:38 +0200 (CEST)
-Received: from lsv051416.swis.nl-cdc01.nxp.com (lsv051416.swis.nl-cdc01.nxp.com [10.168.48.122])
-	by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 616FA202DA;
-	Tue, 13 Oct 2026 16:47:38 +0200 (CEST)
-Date: Tue, 13 Oct 2026 16:47:38 +0200
-From: Jan Petrous <jan.petrous@oss.nxp.com>
-To: Coia Prant <coiaprant@gmail.com>
-Cc: Maxime Chevallier <maxime.chevallier@bootlin.com>,
-	Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>,
-	NXP S32 Linux Team <s32@nxp.com>, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Ghennadi Procopciuc <ghennadi.procopciuc@nxp.com>,
-	Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Bogdan Hamciuc <bogdan.hamciuc@nxp.com>,
-	Ionut Vicovan <ionut.vicovan@nxp.com>, Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
-	Clark Wang <xiaoning.wang@nxp.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Chester Lin <chester62515@gmail.com>,
-	Matthias Brugger <mbrugger@suse.com>,
-	Ghennadi Procopciuc <ghennadi.procopciuc@oss.nxp.com>,
-	Frank Li <Frank.Li@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>,
-	Richard Cochran <richardcochran@gmail.com>,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	netdev@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
-	imx@lists.linux.dev, linux-pci@vger.kernel.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	Vincent Guittot <vincent.guittot@linaro.org>
-Subject: Re: [PATCH RFC v3 04/12] net: pcs: add NXP SerDes XPCS shared core
-Message-ID: <as5EioEfZqMZhyJg@lsv051416.swis.nl-cdc01.nxp.com>
-References: <20260919-s32g_serdes-v3-0-9d68868c1e89@oss.nxp.com>
- <20260919-s32g_serdes-v3-4-9d68868c1e89@oss.nxp.com>
- <6aabb56e-406f-4d13-9fd8-54822202039f@bootlin.com>
- <assmUIvWMuZsp8OO@lsv051416.swis.nl-cdc01.nxp.com>
- <CALj3r0gQkUARS1e+2CGB3JsrGJ2XrzuoChfz0cWYRpK4kq1Uxg@mail.gmail.com>
+	id 1xGf2N-0000000DSfp-2lpz
+	for linux-phy@lists.infradead.org;
+	Tue, 13 Oct 2026 16:07:35 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id AFB23602C3;
+	Tue, 13 Oct 2026 16:07:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D1ACD1F000FF;
+	Tue, 13 Oct 2026 16:07:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1791907654;
+	bh=GBVbDGl2c9If1Fq7/UIXtrAbvzfYNy0H304YHDTcBq8=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=HRgx9u0cshb6sfdOnwhluWCVaCOQmW+se64tQDBAG+aKWA2BH782kofh0u7vBuzwE
+	 P8I2zanCfV2BKANrITX7kaRew0p8zrOb53jxt4j6CQWFZWvIpt/IvZYciX053eBrdW
+	 +2OohdEFlJICfMtsxoxlHW4chvM0jP3bq57fCXBIiiSkp2I3LAxVNbMV/BArCmDiRd
+	 04d17cIARZrpnMOz1xeloRPSvlPJObLqCRyACDzCc4ZUtWvZAmfton/M553ozjrTKC
+	 jTL8Zs4uo1nattIlyOswnYJlu9KVAoJMY/Rc+CbOyzkCoy378fK4/Inuhwd4jZphN/
+	 0EfIlvWbruslQ==
+Date: Tue, 13 Oct 2026 18:07:31 +0200
+From: Thierry Reding <thierry.reding@kernel.org>
+To: Jon Hunter <jonathanh@nvidia.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	JC Kuo <jckuo@nvidia.com>, linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org, 
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: tegra: Clean-up Makefile for Tegra186
+Message-ID: <as5WkN6Wt08TeRax@orome>
+References: <20261012-tegra-phy-v1-1-3241bf3c86e9@nvidia.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CALj3r0gQkUARS1e+2CGB3JsrGJ2XrzuoChfz0cWYRpK4kq1Uxg@mail.gmail.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261013_074741_175605_F2798E65 
-X-CRM114-Status: GOOD (  41.17  )
+In-Reply-To: <20261012-tegra-phy-v1-1-3241bf3c86e9@nvidia.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,118 +65,157 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4648131800838433359=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Oct 13, 2026 at 03:47:58AM +0800, Coia Prant wrote:
-> Hi Jan,
-> 
-> Thanks for the pointers. A few thoughts.
-> 
-> > Yes. The S32G accessor is the same DW indirect scheme pcs-xpcs-plat
-> > implements (page into the viewport at 0xff, then the low address byte
-> > at a 4-byte stride), so there is no reason for S32G to carry its own
-> > copy of the XPCS code. The next version drops the shared core, exposes
-> > each XPCS instance as a mii_bus from the SerDes PHY driver and creates
-> > the PCS with xpcs_create_pcs_mdiodev(), much like the RK3568 glue.
-> > Details in my reply to Andrew.
-> >
-> > The part that does not fit pcs-xpcs-plat as-is is ownership, not
-> > access: the XPCS windows sit inside the SerDes subsystem register
-> > space, and their bring-up is ordered against the PCIe lane and the
-> > other XPCS instance, so the bus is registered by the SerDes PHY driver
-> > rather than by a standalone snps,dw-xpcs device. The accessor itself
-> > is a few lines; if Alex's pcs-xpcs-regmap is merged first I will use
-> > it rather than open-code another bus.
-> 
-> On the transport split: I think the cleanest path is to split the MMIO
-> accessor out into its own module, say pcs-xpcs-mmio, exporting the
-> read/write helpers. Then pcs-xpcs-plat can call into those exported
 
-Fine with me. The S32G accessor is a few lines, so I will move it onto
-pcs-xpcs-regmap if that lands first, or onto a shared mmio helper if
-you post one. Until then it stays open-coded in the glue.
+--===============4648131800838433359==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="zn46flkbhokfeb4k"
+Content-Disposition: inline
 
-> symbols instead of open-coding the page/stride scheme, and S32G can do
-> the same for its indirect window. That way nobody carries a private
-> copy of the accessor. If that turns out to be too invasive for plat,
-> keeping a separate pcs-xpcs-plat copy is workable too, but I'd rather
-> avoid it.
-> 
-> If Alex's pcs-xpcs-regmap lands first, that's the natural place for
-> the S32G accessor; pcs-xpcs-mmio would only be needed if the regmap
-> approach doesn't fit.
-> 
-> > S32G needs the same kind of thing: skip the generic soft reset, and no
-> > EEE registers. I will start with the existing PMA-ID mechanism, since
-> > that is what TXGBE and FBNIC use today, and switch to a callback if one
-> > is agreed in the Rockchip thread. I'll Cc you on those patches.
-> 
-> On the shared-core duplication: rather than copying the whole XPCS
-> core, I'd look at how the existing users express their quirks.
-> 
-> Wangxun has a genuinely different PMA ID, so it can branch on the
-> ID before the reset path and keep the generic core untouched.
-> 
-> The older NXP devices do the opposite: they fake the PCS ID at the MDIO
-> layer so the core sees a magic value it then interprets. That leaves
-> the magic in the core and a fake ID in the glue, and it doesn't scale
-> to a third user.
-> 
-> For S32G, I'd prefer one of these two approaches:
-> 
-> - A flag in struct dw_xpcs, e.g. DW_XPCS_NO_RESET, that the glue sets
->   and the core checks before the soft reset and EEE paths. Works when
->   the quirk applies to a whole instance regardless of the PMA ID.
-> - A platform callback, e.g. plat->pma_config(), where the glue can
->   return early to skip the parts it doesn't need. More flexible, but
->   also more surface area; I'd only go there if flags aren't enough.
-> 
-> Either is better than another fake ID, because the quirk stays visible
-> at the point where it matters instead of being hidden behind a made-up
-> value in the transport layer.
-> 
 
-Agreed on the principle. The problem is that pcs_pre_config and the
-PMA hook are reached only through the ID-keyed compat table, and S32G
-needs a pma_config (link timer, lane on MPLLA). Without a platform
-callback the ID is the only way in.
+--zn46flkbhokfeb4k
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH] phy: tegra: Clean-up Makefile for Tegra186
+MIME-Version: 1.0
 
-What I have for v4 is an ID-keyed entry with the two quirks as
-explicit flags in struct dw_xpcs_desc (no soft reset, no EEE), so at
-least the table says what the entry does.
+On Mon, Oct 12, 2026 at 12:16:31PM +0100, Jon Hunter wrote:
+> The Makefile for the Tegra XUSB PHY driver has an entry for every Tegra
+> SoC that compiles the xusb-tegra186.c file. Clean this up by adding a
+> new Kconfig option called PHY_TEGRA186_XUSB that when defined compiles
+> the xusb-tegra186.c file.
+>=20
+> Finally, update the xusb.[ch] files to use this new config option as
+> well instead of using the individual SoC Kconfig options.
+>=20
+> Signed-off-by: Jon Hunter <jonathanh@nvidia.com>
+> ---
+>  drivers/phy/tegra/Kconfig  |  6 ++++++
+>  drivers/phy/tegra/Makefile |  6 +-----
+>  drivers/phy/tegra/xusb.c   | 10 +---------
+>  drivers/phy/tegra/xusb.h   | 10 +---------
+>  4 files changed, 9 insertions(+), 23 deletions(-)
+>=20
+> diff --git a/drivers/phy/tegra/Kconfig b/drivers/phy/tegra/Kconfig
+> index b5ed5bc0c8ef..bc14c1c443b1 100644
+> --- a/drivers/phy/tegra/Kconfig
+> +++ b/drivers/phy/tegra/Kconfig
+> @@ -11,6 +11,12 @@ config PHY_TEGRA_XUSB
+>  	  To compile this driver as a module, choose M here: the module will
+>  	  be called phy-tegra-xusb.
+> =20
+> +config PHY_TEGRA186_XUSB
+> +	bool
+> +	default y if ARCH_TEGRA_186_SOC || ARCH_TEGRA_194_SOC || \
+> +		     ARCH_TEGRA_234_SOC || ARCH_TEGRA_238_SOC || \
+> +		     ARCH_TEGRA_264_SOC
+> +
+>  config PHY_TEGRA194_P2U
+>  	tristate "NVIDIA Tegra194 PIPE2UPHY PHY driver"
+>  	depends on ARCH_TEGRA || COMPILE_TEST
+> diff --git a/drivers/phy/tegra/Makefile b/drivers/phy/tegra/Makefile
+> index 018a4cab2b40..7d9c05149d6b 100644
+> --- a/drivers/phy/tegra/Makefile
+> +++ b/drivers/phy/tegra/Makefile
+> @@ -5,10 +5,6 @@ phy-tegra-xusb-y +=3D xusb.o
+>  phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_124_SOC) +=3D xusb-tegra124.o
+>  phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_132_SOC) +=3D xusb-tegra124.o
+>  phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_210_SOC) +=3D xusb-tegra210.o
+> -phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_186_SOC) +=3D xusb-tegra186.o
+> -phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_194_SOC) +=3D xusb-tegra186.o
+> -phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_234_SOC) +=3D xusb-tegra186.o
+> -phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_238_SOC) +=3D xusb-tegra186.o
+> -phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_264_SOC) +=3D xusb-tegra186.o
+> +phy-tegra-xusb-$(CONFIG_PHY_TEGRA186_XUSB) +=3D xusb-tegra186.o
 
-> One question: how does S32G relate to the earlier NXP devices already
-> in pcs-xpcs.c? Same IP, same PCS ID, same quirks, or something else?
-> If they're the same family, it would be good to clean all of them up
-> in one go rather than adding a third mechanism on top of the old
-> fake-ID one.
-> 
+I suppose that's one way of doing it, but I don't know if I see the
+advantage in it. You're effectively trading 5 lines of Makefile for
+6 lines of Kconfig.
 
-Same DW XPCS IP, different integration. SJA1105/1110 are switches with
-the XPCS behind their internal MDIO; S32G is an SoC with the XPCS in an
-MMIO window inside the SerDes, sharing the PMA with a PCIe lane. The
-PMA sequences differ, and so do the quirks. The ID is synthetic in all
-three cases. On S32G the XPCS reports the generic DW ID 0x7996ced0
-and the PMA/PCS/AN MMDs read as zero (checked on an RDB3), so there is
-no hardware ID to key S32G behaviour on.
+>  obj-$(CONFIG_PHY_TEGRA194_P2U) +=3D phy-tegra194-p2u.o
+>  obj-$(CONFIG_PHY_TEGRA_MPHY) +=3D phy-tegra-mphy.o
+> diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
+> index 89ce9ac87300..79a3624faa10 100644
+> --- a/drivers/phy/tegra/xusb.c
+> +++ b/drivers/phy/tegra/xusb.c
+> @@ -60,31 +60,23 @@ static const struct of_device_id tegra_xusb_padctl_of=
+_match[] =3D {
+>  		.data =3D &tegra210_xusb_padctl_soc,
+>  	},
+>  #endif
+> -#if defined(CONFIG_ARCH_TEGRA_186_SOC)
+> +#if defined(CONFIG_PHY_TEGRA186_XUSB)
+>  	{
+>  		.compatible =3D "nvidia,tegra186-xusb-padctl",
+>  		.data =3D &tegra186_xusb_padctl_soc,
+>  	},
+> -#endif
+> -#if defined(CONFIG_ARCH_TEGRA_194_SOC)
+>  	{
+>  		.compatible =3D "nvidia,tegra194-xusb-padctl",
+>  		.data =3D &tegra194_xusb_padctl_soc,
+>  	},
+> -#endif
+> -#if defined(CONFIG_ARCH_TEGRA_234_SOC)
+>  	{
+>  		.compatible =3D "nvidia,tegra234-xusb-padctl",
+>  		.data =3D &tegra234_xusb_padctl_soc,
+>  	},
+> -#endif
+> -#if defined(CONFIG_ARCH_TEGRA_238_SOC)
+>  	{
+>  		.compatible =3D "nvidia,tegra238-xusb-padctl",
+>  		.data =3D &tegra238_xusb_padctl_soc,
+>  	},
+> -#endif
+> -#if defined(CONFIG_ARCH_TEGRA_264_SOC)
+>  	{
+>  		.compatible =3D "nvidia,tegra264-xusb-padctl",
+>  		.data =3D &tegra264_xusb_padctl_soc,
 
-> Separately, I have a plan to propose platform callbacks for the XPCS core
-> at some point, regardless of whether S32G ends up needing them. The
-> core currently has no way for a platform glue or PMA to limit or override
-> parts of the generic behaviour, and I think that gap needs closing.
-> The exact shape can be discussed once RK3568 lands. Happy to Cc you on
-> the related thread when that happens.
-> 
+And this means you now get data for all SoCs as soon as one of them is
+enabled. Yes, I know that most of the time we want to build multi-SoC
+kernels anyway, but it now is not just a clean up anymore.
 
-Yes, please Cc me on the callback thread.
+Thierry
 
-BR.
-/Jan
+--zn46flkbhokfeb4k
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmrOV0MACgkQ3SOs138+
+s6G1vhAAqI3RjJdCd6/T04a22m/UJkOGgpjh0keHOp6hK58A2F9HD7ottIV4qwT8
++cvdwiPlu7cU55SwOUC5nkXp35XrHXQlczG4Rh1PQqna0cvWkZfzN/nwlJ4aKVUL
+c7bAEd25kRTFlA49kPQUZxIHB33Az0PWmAYesQcIHGFRNnCxuDgRQhUGJ/xSBfm7
+QaBBlHO4aUMJGlJDRWHOQEW2g6N1hHOT1yiyxEmdc2HwXt8OP0sdkrUvlhVtXsL2
+1FI5hsyks9McMO8Y/2YwHGXxEZqd8GHUoQ3HqqWKb86nAyGb9RFEIZ3q6sHjerhH
+e0KOKAK/YAj96Ku8k+7T5+YvvIAmfTOazk/2+UWEUS/mKb5D8I0qTf1LgAfi+SDx
+xml6l6NLc63SibsxMIVy/grOcNd/Qb/xaPMU9fEDvsh7Z6lTYFv6+jatz+aFbCcZ
+frGCDrMBdIKadRI9VEGLYxHeoDtKENOOnc5ZkYV0Bpr4KgNt40BpcnEus//RkXYj
+v6hGZHPMCSV1rowASe9WgPT6jpNH4KerRjAJxdpfzea1fYxYImE9wKZsiiW61EAQ
+lgd5D9Ky+08w2SGCM1IkruSETylEM94ymern6gPNyOpkN64qPa1lAGnVXdR1r8jE
+uvH4ag4Kc/TUICsOJkIDcw/f3/lmCuKXG4zaIAtsEUQh808B0rc=
+=Bb1C
+-----END PGP SIGNATURE-----
+
+--zn46flkbhokfeb4k--
+
+
+--===============4648131800838433359==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============4648131800838433359==--
+
