@@ -4,53 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0815CC6B03
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Oct 2026 13:02:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 340CACC6B08
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Oct 2026 14:23:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O4BAurxWbN+x/sPbMo7QmZxhknPc+kaWVxq/z1MVbSQ=; b=VzBMKL7vBJYmN1
-	rovOQhSI560KjQZHPEAyhxEy5KcYlGdTlJzpG//Vdl5iWDFjgbJCGSgtmvWLKIjoTPIscfB7EJK52
-	c/OoRlc38GsKPtVfkz3GHEfw/pGzsvuq2Zr2XeUN850o/7W3BLkviHnyqx+SmNdHq5Y9GLDhOM0Th
-	bunjgJkTsd65NsPJSvcU1OQl44+u10yKdf2PG3XdkTszCPguQa+LWCQ48hArEqlm1KXG40UgdTm5G
-	W5thuEz5F6iCUQnR8oRfjwghJa+Lk5GWa+IqRVFvzBnX36JgQNTxZLUsf0IuO/rHoJ+HEL2nwAl62
-	UkQQgafeabsrwR12aVHA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zsfcUoCwt89/P5Dt+u+WMciYEIWnCgPy2DAOf3rdxdE=; b=aNACfr65E30Sfu
+	qdRfY8nE8HTkF2uzSQ91ScNGviDIdh4yy5Qx6YjJvpqM5oRZ9jLa0duy7IOGUahNCrli6PStIpr/A
+	6XKIr+G/SbkpBt84V0FSUYUfcEvheqpEd5jnii5KmcJ8mKzk7WN7/rDtUDO+BCWEjDdQFTOKCcTmW
+	7X+bTyDKhytVnMTWLeuPJ/oS/5XMM6cP8pkv+HNDqj8qiaS5OX73+iQbyulAuQ3pmUyjBSn8BdJ9Q
+	S2S5cqB4Z78HeGTJ2KViMfDoON7NFR+HhUzjw3flJBMOoc1oaN3wHAizaUgJfp7W/3bxrIVyQySi3
+	O5uFOtzoDjiFCzVU7/Jg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGc9K-0000000CthB-2PFJ;
-	Tue, 13 Oct 2026 13:02:34 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xGdPJ-0000000D4qb-316c;
+	Tue, 13 Oct 2026 14:23:09 +0000
+Received: from mail-westus3azlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c107::3] helo=PH0PR06CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGc9I-0000000Cth4-3F9C
+	id 1xGdPH-0000000D4q5-3RTW
 	for linux-phy@lists.infradead.org;
-	Tue, 13 Oct 2026 13:02:32 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 3931D602C3;
-	Tue, 13 Oct 2026 13:02:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7144B1F000FF;
-	Tue, 13 Oct 2026 13:02:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791896551;
-	bh=XJ2kkZ+RvTB0VG/+3wOa1NDgrg0e/cxGLS6EIfDrKl0=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=dNyZjoAD/in71vjBe7A66me2pfaxbPkqCz5x3+X2HGyV/XzafFOe/4clLZSg5Ymz6
-	 GVu3mMl6ddDBDSgBfK7Fr1fG3ug982XyaVHF9h7UBBSZDmO0OgVonYUdltBZYDDGfw
-	 Fmu2/icpsh/7Sxb/SD4DAPwqs5d3UIFHascDPI1/yBIp/VT8cV9o+L7BEhKjeO57ye
-	 4BoUwM47Ftwhla/CKI5zG/VaKwDVvr4jHZc79M6C7zBUayWmjIrmaXMve/5QPre5HN
-	 rfQpjsKoHelP6prnA4Owk4xpErMWpQP9z1qavOW7NKYCii/zk1JMY0RrFjPqry2aYN
-	 +/qBBcPNDObGQ==
-Message-ID: <sashiko-outbox-169767@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v1 4/6] phy: rockchip: Add support for Naneng eDP phy
-To: "Damon Ding" <damon.ding@rock-chips.com>
-Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-phy@lists.infradead.org, robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
-In-Reply-To: <20261013124946.1807886-5-damon.ding@rock-chips.com>
-References: <20261013124946.1807886-1-damon.ding@rock-chips.com>
- <20261013124946.1807886-5-damon.ding@rock-chips.com>
-Date: Tue, 13 Oct 2026 13:02:31 +0000
+	Tue, 13 Oct 2026 14:23:08 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=lEswWi2Go9mrHTX7klS6dm0VocO9728H6tdZ7lxk9VndIlMg8/JqmIwTIzNobKg55B2o5IaG6SXRlNAHTs/YDUTWDs7EH4wVQdhJVikLiLmfydjkRynq+tU67EjqPU6Mjx11gsOOeoQM+aBXkhZQ1t0qNK65oGrzMwvmIM0AmEzkfdFvXlZJz/sii4tTmXCT2pYDt3EfNQPhQ2AseG8hSDlOVUXP1DTeZlZ1I4vTVKl43p4+Lm1vTSLacoXdAAMcVL8EF6yOx5gD1NuL638eNLnn1/h5MuUUd49kAqKB3lqvY3+G1zaocdGZQAeC6HG14+ZgcDiWNe2wOftR5p/wkg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=thg9fG52rM50NDtUu7xWYdpMHnTNV/btZXKejMSXb0E=;
+ b=BEXkbja9BDa8G0hRGs0imKMENblZ3+ZQrkDL8SGSRAzZLc6NG0e3WsYkjdiP/SKTclOX/e8mwmXjFA+DNDuHYhueU7fXGfW1mVrfNuX4T++3/eeADTKunv4saqZGkzr2SqBaMvxVYj+fgmKrvQCyMnc4nLcFz3dJoNkhAxkBxwcbpMIoK/KC6iU8uIwZd88HRXeF91nSw/NtxpZRmpTmmBRbv6RJQzABHotXShZzhamSrjs6m0REto1o1kQ6u9e2wtHCNK2DDLD8YTB0M7snCHktl/E75feSZ+Ml+WlT5rMxyqXhSVGGFmEqwNYx2Ej4ffYZVTOwxSLS5+4AOvQKpg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=trailworks.io; dmarc=pass action=none
+ header.from=michaelburch.net; dkim=pass header.d=michaelburch.net; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=michaelburch.net;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=thg9fG52rM50NDtUu7xWYdpMHnTNV/btZXKejMSXb0E=;
+ b=NHzuFsk3EeCfZdyjMr+aUL37blB0tUn+dWqkXEJRO6wNJu+oqA4ciHduX0Kx/qy9BNQsJPsIQC8rMCcqiCDF6/PV7emlaqpAQ9ZTNHimb9Y7lqj7Iak3KqM2UFL9KBv5U36EK4dqrQjzu/R6H5r/WavaMOBMp5+JAaBH/HznlGlh0G7heTQzVwZdnnCTumIRE587PJFSz1J21qlipJgu3Lnoqdgtw482YwY/D4lE0RxG7VWMjvMauTahfWrtHygavbojFFQ8yxSC2utJMed1fhZLIVJyGEUYkl/9Ms8bEgkbuwQG9DvnvA+n7+uWmsBxb3QY1I24ZjEw1uRlE09lGQ==
+Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=michaelburch.net;
+Received: from PH7PR01MB8123.prod.exchangelabs.com (2603:10b6:510:2a4::19) by
+ DS6PR01MB277206.prod.exchangelabs.com (2603:10b6:8:469::19) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.496.23; Tue, 13 Oct 2026 14:23:01 +0000
+Received: from PH7PR01MB8123.prod.exchangelabs.com
+ ([fe80::da98:a31d:73b6:7930]) by PH7PR01MB8123.prod.exchangelabs.com
+ ([fe80::da98:a31d:73b6:7930%5]) with mapi id 15.21.0496.015; Tue, 13 Oct 2026
+ 14:23:01 +0000
+From: Michael Burch <me@michaelburch.net>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
+	Qiang Yu <qiang.yu@oss.qualcomm.com>,
+	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+	Abel Vesa <abel.vesa@oss.qualcomm.com>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Hans de Goede <johannes.goede@oss.qualcomm.com>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-pci@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	regressions@lists.linux.dev
+Subject: [PATCH] Revert "phy: qcom: qmp-pcie: Skip PHY reset if already up"
+Date: Tue, 13 Oct 2026 09:22:49 -0500
+Message-ID: <20261013-qmp-pcie-skip-reset-revert-v1@michaelburch.net>
+X-Mailer: git-send-email 2.56.0
+X-ClientProxiedBy: SA9PR11CA0006.namprd11.prod.outlook.com
+ (2603:10b6:806:6e::11) To PH7PR01MB8123.prod.exchangelabs.com
+ (2603:10b6:510:2a4::19)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PH7PR01MB8123:EE_|DS6PR01MB277206:EE_
+X-MS-Office365-Filtering-Correlation-Id: 0825bcaf-20bb-403c-faed-08df29357c73
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|366016|1800799024|376014|7416014|6133799003|18002099003|10067099003|3023799007|261009223027099003|56012099006;
+X-Microsoft-Antispam-Message-Info: fZyGF3dm1UdAhY62QN31ZgehEiq1JvvMXnY34Rj2Hd0g1x7OtaBlDg9VTLBIWm0PVa23mR/lfdJY2hiEj3gQYcVJta+XPtTQ2Z+0IoZ2hD5NujUAXrudxABkk8fdCD/FyScufwM6bua6UYVuk99UBw3MplHW1ePMVOr8PlFVzS7sYt8vm8PEFz1boXmm4DM8hHrmkhaFrSeilZGzOdKQgmSJRBX1nIGVlRHmfcNYdk+KB/gScrZqMdL/pCRvZ2QZskAlVi5lbJ2x2kd1luTNtBtMT1XU+z4R6nQVomP/84fz4pEdXf1tBX06XqSCdJwY+xUEHTng+kCtP82cMfAxoHYNCNlrFdinIaA8zQkeuPn8Ze/6Ncl7MA4mpKTEFNgBsTbRbSHZTHbyjLrHS/bkw3h/TFZZPJfNwXSaSAsecbnPlQdmd0IGRtmy6KUWHqgZApbFS2EN+EeGXOPdQdrz29BvV38x/TeHagGQAPZp3Z/guxegphyfqblL4iMfMgKCa+duXYnb0qIQSbZlUPjFaE2HlJufd9CCM7e0DpcQUaJ9y1D6sc82lDJaSOQsaGmkfODvIjFENHpSbfP0Z77XWt0nxfPDKGEye8F1V9Flkqo=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PH7PR01MB8123.prod.exchangelabs.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(366016)(1800799024)(376014)(7416014)(6133799003)(18002099003)(10067099003)(3023799007)(261009223027099003)(56012099006);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?0KPQsCPe62vfHVH56ZZLxdNyUWaCPlhkHGx6696wGmbu4T+B2zj+aDJJCFUA?=
+ =?us-ascii?Q?fnP/e0YSNKcDOd/keJ0BzUunlObFCDdQFWhm60N1vrz4h2h8UDP9q/lmz9gq?=
+ =?us-ascii?Q?stGzR96C9+SXmT4miqp67B4VZNhw4toZnb2dtpV1cKAuYukOzFr7UFgom7Pz?=
+ =?us-ascii?Q?cRlUs99WJCtBQWmDTGWVq9EyoYnQgWipxjGvq7ATnhhiPFxlCkGEpIZF1LDr?=
+ =?us-ascii?Q?3mQB6fInRnMrAxwfLLpfNOYh2oOCti0glBQGpiZ3IrAp1CUjSchoEC/arhXV?=
+ =?us-ascii?Q?boTGoWCtl2rkOWNVKcjMwd+OQxn1M86xwNKyEfhIQuBuvw6Iv6J3fjRJJi5E?=
+ =?us-ascii?Q?/lSBUmAjXEpgoBMpFEafQ0JZGtlj8tsWnMgESh9S/W1lzEwAt1sZOndiSxto?=
+ =?us-ascii?Q?mi7KMXyTnJa1yR5gZ7YhMyjbTkPv1MVUVGsjA9jJF+34W9nedMKKOYIeXMJJ?=
+ =?us-ascii?Q?VjjzhoBAe0YDCx9NAAOFGLf1Ow+49hhcy6qDFMXnClPGERNjUYBmI++xCZiM?=
+ =?us-ascii?Q?+4zJRRmCLadxrctgYLJT7sSZ7J6ulp05UGuZncWEoqXubYSHGq+8Cmbx8MDO?=
+ =?us-ascii?Q?aXXJPH/RGQviEmWKhbWnn6zT850CTpYTW8yjg4sjO/rcKRNjoQ4JGTPgly8Z?=
+ =?us-ascii?Q?wG6pj0HiFR3mHwZEDGAKH6FTtXlm1TL/gs/PMoHcVfzbvOKw/DdpM17aqHl/?=
+ =?us-ascii?Q?nA1rCD3+bj9Ydk1tYJMDRrpevXNkQ/32oE+mXORxp8PPAPxgYwZGts/oclzi?=
+ =?us-ascii?Q?XLIh6SC5yBglquOYLbKvpzhyNg9unVYa1rr22nhVk+eabzbheXwOgw6rLRDa?=
+ =?us-ascii?Q?Rt3tUgE3OBFSCC5QzH+wl1ptOBHxR3D6U6+EhazvelgH6V9Dw4Ar6A3ZKiOA?=
+ =?us-ascii?Q?HQWgOr5uAAYxIqURDtOv1bhVf7EnVU3ODupeRPXW/zQ/D4ijeCPs0AVCMkFE?=
+ =?us-ascii?Q?fUdSh2tH9OYh3eYrtgn9Ha02L4rkC+pHMNQ1qHmNV/go09EpEWUKGctj6UiH?=
+ =?us-ascii?Q?G0fQl+OtWdXlJcil5UfuBS+qaWXQqCMFTs3u7RzaqK+C8cTOaCwIc4kSjsG5?=
+ =?us-ascii?Q?WhQYNkfqXT1meLRJed7BKoNRSkEO/kcXTyfk6Y/M8NVKaKzb83QUff6svf7q?=
+ =?us-ascii?Q?1Px6sqzP6s4Gs+Cqq7jj9kFZ8r7247wuYZGqXnf+Y3NiZyn0VZJVrY14vL3o?=
+ =?us-ascii?Q?hBEwkdOG4inYptvlvziMkGKnh7tMCUCYDQYGS8GIpoIjSl8yQGzAODzLd2Mt?=
+ =?us-ascii?Q?bLwnOfmnBv9osetn6w2Lni1IuMGZ5yBM0+qPu3Idy0QEqxfo6LoOrYMwfdYR?=
+ =?us-ascii?Q?S7uUlyYvczTRDfsVRobCy3x6BNdHwgycsJMx9du2xsO5g2QEqDI256Dw683n?=
+ =?us-ascii?Q?2DSzANVKzp5T72b5PwL7NgOVh7aareE597GXP5jkFLoPpfY0KycgTV49/bUR?=
+ =?us-ascii?Q?/mpuFfkpAKeZ3PmB1QpWNIfOamWV/9Lk3jG0+4VqP+2gGwzkutj6pCFyhsFg?=
+ =?us-ascii?Q?g5KZr8wRM2C0RGvQ4EW669uFE42n7acOfsaVi7vUYNVEwPC5RrJbR/Z5mFfW?=
+ =?us-ascii?Q?dK/P2t7CHydxsMRxZExNNI3mi3KRE1+3IEDc4UhW9Kl5wFTqhUxOGLSfV5cs?=
+ =?us-ascii?Q?10KtBU9b1DFA3D82iPjtMrE6m+7IbH8D0YwwgAjgunw76e6VJlOssjhV+cJo?=
+ =?us-ascii?Q?YWyurgoQe11oiCDC7Tey6+e4/Bhc/R6Mf37MisOqVTupf0nUAcHKeVRuruPy?=
+ =?us-ascii?Q?+7p7G3VVGQ=3D=3D?=
+X-OriginatorOrg: michaelburch.net
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0825bcaf-20bb-403c-faed-08df29357c73
+X-MS-Exchange-CrossTenant-AuthSource: PH7PR01MB8123.prod.exchangelabs.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Oct 2026 14:23:00.9776
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 8256b244-08e6-4df2-b146-877069d9ce10
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: zC8x7zI8C5vGvT1we68MoMMyX0NF3sz5IibtJ0NHQM5hlbDk4+C/MviHMax8/wbNPt5SnP1OH6E5kLwEKhh3fQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS6PR01MB277206
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261013_072307_881300_F00F7B32 
+X-CRM114-Status: GOOD (  15.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,85 +139,147 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIHBoeTogcm9ja2NoaXA6
-IE1pc3Npbmcgc2V0X2xhbmVzIGNvbmZpZ3VyYXRpb24gYW5kIFVCIG9uIHVudmVyaWZpZWQgZHAt
-PmxhbmVzCi0gW01lZGl1bV0gVW5pbml0aWFsaXplZCB2YXJpYWJsZSB2YWwgdXNlZCBpZiByZWdt
-YXBfcmVhZCBmYWlscwotLQoKY29tbWl0IGJlNTY4Y2JkNjBiMWE3M2E2OWVhN2I5MjMzZjZiZDlj
-ZjlhOGIwNjcKQXV0aG9yOiBEYW1vbiBEaW5nIDxkYW1vbi5kaW5nQHJvY2stY2hpcHMuY29tPgoK
-ICAgIHBoeTogcm9ja2NoaXA6IEFkZCBzdXBwb3J0IGZvciBOYW5lbmcgZURQIHBoeQogICAgCiAg
-ICBBZGQgYSBkcml2ZXIgZm9yIHRoZSBSb2NrY2hpcCBlRFAgdHJhbnNtaXR0ZXIgUEhZIHdpdGgg
-TmFOZW5nIElQCiAgICBibG9jaywgYXMgZm91bmQgb24gdGhlIFJLMzU2OCBTb0MuCgo+IGRpZmYg
-LS1naXQgYS9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtbmFuZW5nLWVkcC5jIGIv
-ZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLW5hbmVuZy1lZHAuYwo+IG5ldyBmaWxl
-IG1vZGUgMTAwNjQ0Cj4gaW5kZXggMDAwMDAwMDAwMDAwMC4uYTQwNzcxNGY2MzlhNwo+IC0tLSAv
-ZGV2L251bGwKPiArKysgYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtbmFuZW5n
-LWVkcC5jClsgLi4uIF0KPiArc3RhdGljIGludCByb2NrY2hpcF9lZHBfcGh5X3NldF9yYXRlKHN0
-cnVjdCByb2NrY2hpcF9lZHBfcGh5ICplZHBwaHksCj4gKwkJCQkgICAgIHN0cnVjdCBwaHlfY29u
-ZmlndXJlX29wdHNfZHAgKmRwKQo+ICt7ClsgLi4uIF0KPiArCXJlZ21hcF93cml0ZShlZHBwaHkt
-PmdyZiwgRURQX1BIWV9HUkZfQ09OMCwgRklFTERfUFJFUF9XTTE2KEVEUF9QSFlfUERfUExMX01B
-U0ssIDApKTsKPiArCXJlZ21hcF93cml0ZShlZHBwaHktPmdyZiwgRURQX1BIWV9HUkZfQ09OMCwK
-PiArCQkgICAgIEZJRUxEX1BSRVBfV00xNihFRFBfUEhZX1RYX1BEX01BU0ssIH5HRU5NQVNLKGRw
-LT5sYW5lcyAtIDEsIDApKSk7CgpbU2V2ZXJpdHk6IEhpZ2hdCklmIGEgY2FsbGVyIHBhc3NlcyBh
-IHN0cnVjdCB3aGVyZSBkcC0+bGFuZXMgaXMgMCwgd2lsbCB0aGlzIHRyaWdnZXIgdW5kZWZpbmVk
-CmJlaGF2aW9yPwoKSWYgZHAtPmxhbmVzIGlzIDAsIH5HRU5NQVNLKGRwLT5sYW5lcyAtIDEsIDAp
-IGV2YWx1YXRlcyB0bwpHRU5NQVNLKFVJTlRfTUFYLCAwKSwgdHJpZ2dlcmluZyBhIG5lZ2F0aXZl
-IHJpZ2h0LXNoaWZ0IGNvdW50IGluIEMuIFRoaXMgY2FuCm9jY3VyIGlmIGEgY2FsbGVyIGludm9r
-ZXMgcGh5X2NvbmZpZ3VyZSgpIHdpdGggb3B0cy0+ZHAuc2V0X3JhdGUgPSAxIHdpdGhvdXQKaGF2
-aW5nIGZpcnN0IGNvbmZpZ3VyZWQgdGhlIGxhbmUgY291bnQuCgpbIC4uLiBdCj4gK3N0YXRpYyBp
-bnQgcm9ja2NoaXBfZWRwX3BoeV92ZXJpZnlfY29uZmlnKHN0cnVjdCByb2NrY2hpcF9lZHBfcGh5
-ICplZHBwaHksCj4gKwkJCQkJICBzdHJ1Y3QgcGh5X2NvbmZpZ3VyZV9vcHRzX2RwICpkcCkKPiAr
-ewpbIC4uLiBdCj4gKwlpZiAoZHAtPnNldF9sYW5lcykgewo+ICsJCS8qIFZlcmlmeSBsYW5lIGNv
-dW50LiAqLwo+ICsJCXN3aXRjaCAoZHAtPmxhbmVzKSB7Cj4gKwkJY2FzZSAxOgo+ICsJCWNhc2Ug
-MjoKPiArCQljYXNlIDQ6Cj4gKwkJCS8qIHZhbGlkIGxhbmUgY291bnQuICovCj4gKwkJCWJyZWFr
-Owo+ICsJCWRlZmF1bHQ6Cj4gKwkJCXJldHVybiAtRUlOVkFMOwo+ICsJCX0KPiArCX0KPiArCj4g
-KwkvKgo+ICsJICogSWYgY2hhbmdpbmcgdm9sdGFnZXMgaXMgcmVxdWlyZWQsIGNoZWNrIHN3aW5n
-IGFuZCBwcmUtZW1waGFzaXMKPiArCSAqIGxldmVscywgcGVyLWxhbmUuCj4gKwkgKi8KPiArCWlm
-IChkcC0+c2V0X3ZvbHRhZ2VzKSB7Cj4gKwkJLyogTGFuZSBjb3VudCB2ZXJpZmllZCBwcmV2aW91
-c2x5LiAqLwo+ICsJCWZvciAoaSA9IDA7IGkgPCBkcC0+bGFuZXM7IGkrKykgewo+ICsJCQlpZiAo
-ZHAtPnZvbHRhZ2VbaV0gPiAzIHx8IGRwLT5wcmVbaV0gPiAzKQo+ICsJCQkJcmV0dXJuIC1FSU5W
-QUw7CgpbU2V2ZXJpdHk6IEhpZ2hdCklzIGl0IHBvc3NpYmxlIGZvciBkcC0+bGFuZXMgdG8gYmUg
-dXNlZCB1bnZhbGlkYXRlZCBoZXJlPwoKVGhlIGNvbW1lbnQgc2F5cyAiTGFuZSBjb3VudCB2ZXJp
-ZmllZCBwcmV2aW91c2x5IiwgYnV0IHRoZSB2YWxpZGF0aW9uIG9mCmRwLT5sYW5lcyBpcyBieXBh
-c3NlZCBpZiBkcC0+c2V0X2xhbmVzIGlzIGZhbHNlLiBJZiBhIGRyaXZlciBjYWxscwpwaHlfY29u
-ZmlndXJlKCkgd2l0aCBvcHRzLT5kcC5zZXRfdm9sdGFnZXMgPSAxIGFuZCBvcHRzLT5kcC5zZXRf
-bGFuZXMgPSAwLAphbiB1bmluaXRpYWxpemVkIG9yIGludmFsaWQgZHAtPmxhbmVzIHZhbHVlIGNv
-dWxkIGxlYWQgdG8gb3V0LW9mLWJvdW5kcyBhcnJheQpyZWFkcy4KClsgLi4uIF0KPiArc3RhdGlj
-IGludCByb2NrY2hpcF9lZHBfcGh5X2NvbmZpZ3VyZShzdHJ1Y3QgcGh5ICpwaHksIHVuaW9uIHBo
-eV9jb25maWd1cmVfb3B0cyAqb3B0cykKPiArewo+ICsJc3RydWN0IHJvY2tjaGlwX2VkcF9waHkg
-KmVkcHBoeSA9IHBoeV9nZXRfZHJ2ZGF0YShwaHkpOwo+ICsJaW50IHJldDsKPiArCj4gKwlyZXQg
-PSByb2NrY2hpcF9lZHBfcGh5X3ZlcmlmeV9jb25maWcoZWRwcGh5LCAmb3B0cy0+ZHApOwo+ICsJ
-aWYgKHJldCkgewo+ICsJCWRldl9lcnIoZWRwcGh5LT5kZXYsICJJbnZhbGlkIHBhcmFtcyBmb3Ig
-cGh5IGNvbmZpZ3VyZVxuIik7Cj4gKwkJcmV0dXJuIHJldDsKPiArCX0KPiArCj4gKwlpZiAob3B0
-cy0+ZHAuc2V0X3JhdGUpIHsKPiArCQlyZXQgPSByb2NrY2hpcF9lZHBfcGh5X3NldF9yYXRlKGVk
-cHBoeSwgJm9wdHMtPmRwKTsKPiArCQlpZiAocmV0KSB7Cj4gKwkJCWRldl9lcnIoZWRwcGh5LT5k
-ZXYsICJGYWlsZWQgdG8gc2V0IHJhdGVcbiIpOwo+ICsJCQlyZXR1cm4gcmV0Owo+ICsJCX0KPiAr
-CX0KPiArCj4gKwlpZiAob3B0cy0+ZHAuc2V0X3ZvbHRhZ2VzKSB7Cj4gKwkJcmV0ID0gcm9ja2No
-aXBfZWRwX3BoeV9zZXRfdm9sdGFnZXMoZWRwcGh5LCAmb3B0cy0+ZHApOwo+ICsJCWlmIChyZXQp
-IHsKPiArCQkJZGV2X2VycihlZHBwaHktPmRldiwgIkZhaWxlZCB0byBzZXQgdm9sdGFnZXNcbiIp
-Owo+ICsJCQlyZXR1cm4gcmV0Owo+ICsJCX0KPiArCX0KPiArCj4gKwlyZXR1cm4gMDsKPiArfQoK
-W1NldmVyaXR5OiBIaWdoXQpJcyBvcHRzLT5kcC5zZXRfbGFuZXMgaW50ZW50aW9uYWxseSBpZ25v
-cmVkIHdoZW4gY29uZmlndXJpbmcgdGhlIFBIWT8KClRoZSBvcHRzLT5kcC5zZXRfbGFuZXMgZmxh
-ZyBpc24ndCBoYW5kbGVkIGhlcmUsIG1lYW5pbmcgdGhlIGhhcmR3YXJlIGxhbmUKY291bnQgaXMg
-bmV2ZXIgY29uZmlndXJlZC4gVGhpcyBtaXNzaW5nIHN0YXRlIGFsc28gY2F1c2VzIHRoZSB1bmlu
-aXRpYWxpemVkCmRwLT5sYW5lcyBpc3N1ZXMgaW4gcm9ja2NoaXBfZWRwX3BoeV9zZXRfcmF0ZSgp
-IGFuZApyb2NrY2hpcF9lZHBfcGh5X3NldF92b2x0YWdlcygpLgoKWyAuLi4gXQo+ICtzdGF0aWMg
-Ym9vbCByb2NrY2hpcF9lZHBfcGh5X2VuYWJsZWQoc3RydWN0IHJvY2tjaGlwX2VkcF9waHkgKmVk
-cHBoeSkKPiArewo+ICsJdTMyIHZhbDsKPiArCj4gKwlyZWdtYXBfcmVhZChlZHBwaHktPmdyZiwg
-RURQX1BIWV9HUkZfU1RBVFVTMCwgJnZhbCk7Cj4gKwo+ICsJcmV0dXJuIEZJRUxEX0dFVChQTExf
-UkRZLCB2YWwpOwoKW1NldmVyaXR5OiBNZWRpdW1dCklmIHJlZ21hcF9yZWFkKCkgZmFpbHMsIGRv
-ZXMgdGhpcyByZXR1cm4gc3RhY2sgZ2FyYmFnZT8KCkEgZmFpbHVyZSBpbiByZWdtYXBfcmVhZCgp
-IGxlYXZlcyB2YWwgdW5pbml0aWFsaXplZC4gVXNpbmcgdGhlIHVuaW5pdGlhbGl6ZWQKc3RhY2sg
-dmFyaWFibGUgY291bGQgY2F1c2UgdGhlIGRyaXZlciB0byBpbmNvcnJlY3RseSBhc3N1bWUgdGhl
-IFBIWSBpcyBhbHJlYWR5CmVuYWJsZWQuCgo+ICt9CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcg
-aHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYxMDEzMTI0OTQ2LjE4MDc4ODYtMS1k
-YW1vbi5kaW5nQHJvY2stY2hpcHMuY29tP3BhcnQ9NAoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxp
-c3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+This reverts commit 910b828b22b7b91054b3bd4be676a017444b0e00.
+
+That commit skips the no-csr reset assert/deassert (and the 200-300us
+settle) whenever the bootloader already brought the PCIe QMP PHY up:
+
+  skip_reset = qmp->skip_init &&
+               !qphy_checkbits(pcs, cfg->regs[QPHY_PCS_STATUS],
+                               cfg->phy_status);
+
+and states its own assumption explicitly: "This relies on the assumption
+that when skip_init is enabled and the PHY is reported as up, the
+bootloader has already configured the PHY correctly and the link is in a
+usable state."
+
+That assumption does not hold on the Dell XPS 13 9345 (X1E80100).  UEFI
+boots from the NVMe behind pcie6a, so the PHY is always already started
+when Linux takes over, skip_init is true, and the reset is skipped.  The
+link then never retrains and the root port comes up with no endpoint:
+
+  qcom-pcie 1bf8000.pcie: Device found, but not active
+  pci 0006:00:00.0: [17cb:0111] type 01 class 0x060400 PCIe Root Port
+  (no 0006:01:00.0, no nvme at all)
+
+"Device found, but not active" is dw_pcie_wait_for_link() reporting LTSSM
+stuck in POLL.Active/POLL.Compliance -- receiver detected, training never
+completes -- so the machine cannot find its root filesystem and drops to
+a dracut emergency shell.  v7.2 is unaffected because it always performed
+the reset.
+
+The commit was applied on its own as patch 1/4 of "PCI: qcom: Add link
+retention support"; 2/4-4/4 have not landed. Without them,
+qcom_pcie_host_init() still asserts PERST# and resets the controller
+before qcom_pcie_phy_power_on(), so the link is down while
+QPHY_PCS_STATUS still reports the bootloader's state, and the skip's
+precondition never holds. Revert it until the rest of the series lands.
+
+Fixes: 910b828b22b7 ("phy: qcom: qmp-pcie: Skip PHY reset if already up")
+Signed-off-by: Michael Burch <me@michaelburch.net>
+---
+Reproduced today with Fedora's stock 7.3.0-0.rc7.58 kernel: the NVMe
+never enumerates and boot stops in dracut. It was first seen here on
+the stock 7.3.0-0.rc2 kernel. Every 7.3 build I have made with this
+revert finds the NVMe (Gen4 x4 link up); the latest are v7.3-rc6 based.
+Applying 2/4-4/4 of the original series on top of -rc2 also boots, but
+only with clk_ignore_unused here. This applies to v7.3-rc7 and to
+linux-phy fixes.
+
+Qiang Yu's "PCI: qcom: Align PHY init sequence with HPG" carries the
+same skip into the new phy_ops::reset. I'm replying there separately.
+
+#regzbot introduced: 910b828b22b7
+
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 31 ++++++++----------------
+ 1 file changed, 10 insertions(+), 21 deletions(-)
+
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index da83358c97ea..17c53ae62fac 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -5677,7 +5677,6 @@ static int qmp_pcie_init(struct phy *phy)
+ 	struct qmp_pcie *qmp = phy_get_drvdata(phy);
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	void __iomem *pcs = qmp->pcs;
+-	bool skip_reset;
+ 	int ret;
+ 
+ 	/*
+@@ -5693,9 +5692,6 @@ static int qmp_pcie_init(struct phy *phy)
+ 		qphy_checkbits(pcs, cfg->regs[QPHY_START_CTRL], SERDES_START | PCS_START) &&
+ 		qphy_checkbits(pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL], cfg->pwrdn_ctrl);
+ 
+-	skip_reset = qmp->skip_init && !qphy_checkbits(pcs, cfg->regs[QPHY_PCS_STATUS],
+-							    cfg->phy_status);
+-
+ 	if (!qmp->skip_init && !cfg->tbls.serdes_num) {
+ 		dev_err(qmp->dev, "Init sequence not available\n");
+ 		return -ENODATA;
+@@ -5719,16 +5715,14 @@ static int qmp_pcie_init(struct phy *phy)
+ 		}
+ 	}
+ 
+-	if (!skip_reset) {
+-		ret = reset_control_assert(qmp->nocsr_reset);
+-		if (ret) {
+-			dev_err(qmp->dev, "no-csr reset assert failed\n");
+-			goto err_assert_reset;
+-		}
+-
+-		usleep_range(200, 300);
++	ret = reset_control_assert(qmp->nocsr_reset);
++	if (ret) {
++		dev_err(qmp->dev, "no-csr reset assert failed\n");
++		goto err_assert_reset;
+ 	}
+ 
++	usleep_range(200, 300);
++
+ 	if (!qmp->skip_init) {
+ 		ret = reset_control_bulk_deassert(cfg->num_resets, qmp->resets);
+ 		if (ret) {
+@@ -5777,11 +5771,8 @@ static int qmp_pcie_power_on(struct phy *phy)
+ 	void __iomem *pcs = qmp->pcs;
+ 	void __iomem *status;
+ 	unsigned int mask, val;
+-	bool skip_reset;
+ 	int ret;
+ 
+-	skip_reset = qmp->skip_init && !qphy_checkbits(pcs, cfg->regs[QPHY_PCS_STATUS],
+-							    cfg->phy_status);
+ 	/*
+ 	 * Write CSR register for PHY that doesn't support no_csr reset or has not
+ 	 * been initialized.
+@@ -5805,12 +5796,10 @@ static int qmp_pcie_power_on(struct phy *phy)
+ 	if (ret)
+ 		return ret;
+ 
+-	if (!skip_reset) {
+-		ret = reset_control_deassert(qmp->nocsr_reset);
+-		if (ret) {
+-			dev_err(qmp->dev, "no-csr reset deassert failed\n");
+-			goto err_disable_pipe_clk;
+-		}
++	ret = reset_control_deassert(qmp->nocsr_reset);
++	if (ret) {
++		dev_err(qmp->dev, "no-csr reset deassert failed\n");
++		goto err_disable_pipe_clk;
+ 	}
+ 
+ 	if (qmp->skip_init)
+
+base-commit: 24a19b953e2a3d0ea5a8c4951a0ab8f32720c907
+-- 
+2.56.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
