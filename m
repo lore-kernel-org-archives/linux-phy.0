@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BE77CC6B0E
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Oct 2026 07:37:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80899CC6B03
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Oct 2026 07:44:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zxctMyQ7xbJsFGNz/1wIdHLrbi8x8RK+q43BK5Hya+4=; b=tI57h055VEgIkv
-	dUf6j8gw6Mu/u1NvWdBZXpX28YTvPTmWnDHqn1zdYFOOXo/bMcr4niIin07hTzspiPo7VdxQyYeEE
-	cH6v8xSP7wNBHwTs+tXZSc/pUaY49pE4DMqphXd17BPA7guZd4b+FKrmLlwfjr/8vDEIWpftYUcGa
-	ID9Nuoq+YMpuqzWg9oyK7CzLjfg1DMN3qg1tP0uvG6egMD2fcSGeX1YK9bTZPps4oiUSZjJSsWiU3
-	f7tBi/krpCaccJWB6X3SU+yMT9UFKwoTTfyFaMwQUVALqEuigD4iN7PZimihgAoQ8dYQSgf9RhBxM
-	wCwFnhFg5VQZAg3jK+Ig==;
+	List-Owner; bh=vffGkDRZ+xX7PKVTgwIsvJgSS6KK6iKCsQo8eP1Qm8s=; b=ARsrN1qVvN/w5h
+	cWBU56OQ7BjwvWjY79EB0ggO+e7dwCzrw83I0OZEtL+F4oazNc/aPyXw7oINbIPrlhs/JKtyjsnm1
+	BRKxmCyMxdllvKDRoLgdUGmry6W0kLR+4UwJk7S0rfvwBengt4hLn1Rr0Cj+vejOU/auYw6wrKWip
+	pKnwTwCCEpzICRC8PhIiya38+P7cHtL69LtBSHVbbVsYn3312+X7Fs+U/8jGAMOqnSpwqq7S9UQrh
+	s70JW9y2iOryQ+JvzY05VibwKWjJeD5MHTcX0U2Ls5HXvTxJYi9ZXpatywBhVt/aID1CKLyW+h4IJ
+	2c221F1XymzJ6lrIdRGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGX4P-0000000CEKf-2y2H;
-	Tue, 13 Oct 2026 07:37:09 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xGXBM-0000000CF9V-329l;
+	Tue, 13 Oct 2026 07:44:20 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGX4O-0000000CEKS-2IgQ
+	id 1xGXBL-0000000CF9I-2G7M
 	for linux-phy@lists.infradead.org;
-	Tue, 13 Oct 2026 07:37:08 +0000
+	Tue, 13 Oct 2026 07:44:19 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id B8485600D1;
-	Tue, 13 Oct 2026 07:37:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D25D61F000FF;
-	Tue, 13 Oct 2026 07:37:06 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 0D13340F08;
+	Tue, 13 Oct 2026 07:44:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2EC351F000FF;
+	Tue, 13 Oct 2026 07:44:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791877027;
-	bh=i+pC2obaIGGB4V4M0zaUFjWaDrcyP3lwZCtySrn98To=;
+	s=k20260515; t=1791877458;
+	bh=HYvpkbg3bM0lZjaWpN1iEes4TNSBAyDxgJuCv3mMd2E=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=ldKtogeUzd/aBwyOxdYNBr9Qa2OiQSHlKRmb3TMb97JKdmzFa2x/O4ieFa2MCayxr
-	 /KvURpTVGnMGWYr86fLjT5xOOuHdA7/pJPPjH9TWmKqr3jNM7qxrVCKVwk22Ctzzcv
-	 Kl4EtgiURLO68qYkqtl9f4z81chc/V50/vsFOW4CwyJ+JN4zzGIPq6KuUZLrH0IoPz
-	 kEm8pY4Ugv0f6VoD0p5zX7FlzQXYJCDmBCg/ZDRhYdRcpqS5TcUSdcMdijrl/ixhNv
-	 pQ3yQvdc7CiXvDoarOdnvAcV28s+zjijopI6fMGCxgEl2zqSrAO2tCZFYoADt0cEvs
-	 n5mMBmCNFnf3w==
-Date: Tue, 13 Oct 2026 09:37:03 +0200
+	b=JQ1iNRisyw0myBjkG/d0FOkYKgA4v2GrUEEM/v/+lIoIQMHTsxHEQTl7alEpcyftL
+	 k7l0zHN1ZaMgDzBW0KtsyxelZW4lS3Wd5mutI8B+vT68ChvYVxQ/XDuyxv7WBiJwDt
+	 V2BhfRJKOObjxJ3HwC8uvQJTPOHxpoCtf9PkqOxmIVAE9w/9wbGSIBLJbuv4+vDJL6
+	 p2TkABiIhfdpecL2HyANlxNbBeBVQjufZchEF+AKGKN3iz5BCsP8h7bKQH6PfmgVQl
+	 rs9J9p2RBwFZqWcg4kb9yZaWcfkbZGUxi7ksjNREZDz3ERArwKgKVm4k0EkjPBBUW3
+	 cau0XNmDq087w==
+Date: Tue, 13 Oct 2026 09:44:15 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Nabige Aala <nabige.aala@oss.qualcomm.com>
 Cc: Vinod Koul <vkoul@kernel.org>, 
@@ -59,14 +59,14 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
 	freedreno@lists.freedesktop.org, Ritesh Kumar <ritesh.kumar@oss.qualcomm.com>, 
 	Mahadevan P <mahadevan.p@oss.qualcomm.com>
-Subject: Re: [PATCH v2 01/13] dt-bindings: phy: qcom,edp-phy: Add DP PHY
- compatible for Nord
-Message-ID: <20261013-vanilla-chimera-of-rain-efb58c@quoll>
+Subject: Re: [PATCH v2 02/13] dt-bindings: display: msm: Document the Nord
+ DiplayPort controller
+Message-ID: <20261013-tangible-wakeful-swift-a38f8f@quoll>
 References: <20261012-nord-drv-dt-v2-0-a2ab9af954d2@oss.qualcomm.com>
- <20261012-nord-drv-dt-v2-1-a2ab9af954d2@oss.qualcomm.com>
+ <20261012-nord-drv-dt-v2-2-a2ab9af954d2@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20261012-nord-drv-dt-v2-1-a2ab9af954d2@oss.qualcomm.com>
+In-Reply-To: <20261012-nord-drv-dt-v2-2-a2ab9af954d2@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,22 +83,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 12, 2026 at 07:02:11PM +0530, Nabige Aala wrote:
+On Mon, Oct 12, 2026 at 07:02:12PM +0530, Nabige Aala wrote:
 > From: Mahadevan P <mahadevan.p@oss.qualcomm.com>
 > 
-> Nord relocates several PHY/QSERDES registers relative to existing
-> SoCs, so it cannot reuse an existing compatible. Add qcom,nord-dp-phy
-> to the compatible list. Nord also needs a dedicated ref clock besides
-> aux and cfg_ahb, so add it to the allOf condition that requires
-> three clocks (aux, cfg_ahb, ref).
+> Nord uses MDSS 12.1 with two independent DP controller instances,
+> each exposing two DP cores at new IO offsets. None of the existing
+> compatibles match this layout, so add qcom,nord-dp.
 > 
 > Signed-off-by: Mahadevan P <mahadevan.p@oss.qualcomm.com>
 > Signed-off-by: Nabige Aala <nabige.aala@oss.qualcomm.com>
-> ---
->  Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml | 2 ++
->  1 file changed, 2 insertions(+)
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Do I understand correctly:
+Device is fully compatible with qcom,sa8775p-dp, but a simple to fix
+driver limitation is preventing compatibility?
+
+If so, let's fix the driver - just add more addresses to the
+msm_dp_desc_sa8775p array?
+
 
 Best regards,
 Krzysztof
