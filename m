@@ -4,158 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F435CC6B03
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Oct 2026 05:47:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2045CA9ECF
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Oct 2026 06:05:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E5No79Wi37H62wcWTIGehxWfevAmtSLLDanJRA0lh9U=; b=yGROViBgExIfbw
-	V/tT7R4KcWfSuKt4WjwdaEQR58hMJQZEOA36Pg9uGg/twq/6gvGiir89mnbIqKOucjiWuAkC/Zjrl
-	mpvOnsQcINi9H9NpBxfajOQFWxPKFwfhhYlvZ4WzmMVr27ovLZZ6cSZiDD5qP2aDq8VrjFMo0TVf6
-	5cmtFqJl4u6AfjzEukfgx070/NiF4COL1BzzSAvCD55TmjWom7G/DEW3TToBIFdJjfRNThllu3CPE
-	CW2+2L65dDrt7GkBi1dZwBNbJ/C7SZ482+IaTiY6u0YstGW9lXT2Jv6gF1CkqT+DhcXn5LwH97TMi
-	ApSgn4dzWpDDv0WNjXpw==;
+	List-Owner; bh=tiPkrqT+1Hipk089OrLMb9fcgt4bbotzCaQRvqzpOOk=; b=ZQnUVNvEwYusOy
+	DQJjQe1N2PUxndWjEffqeMhQVFSsJJmoGU5oe/xbCKQH3Z7ge2tFH7s7x3d6k/IbadajXwqKdVTe/
+	0s5VYy2pXgernJXfyIYTG9moKDIY2mbroDgWxAshW/X5xC7JmtFPDrAXrlP4+2JAmZt4ncTerU3A6
+	P+wi0n0zbJOHh9EjwLs07nHjDtQQfSS0c7zfs0m4EAPiqtoob7UoQh6HK4CW2b2eQMiNxLc3ECsbT
+	rcLyHFJxPESVMoG5gjKQ/dlAF5BjuvY9dDPFIZWTyuEnMR8JAquOBcM8paAhrCMwvtNEbR0BAE+mH
+	6JFPkW3FcKu8OxaotQWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGVLo-0000000C378-18fC;
-	Tue, 13 Oct 2026 05:47:00 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1xGVda-0000000C5BF-2nQ2;
+	Tue, 13 Oct 2026 06:05:22 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGVLm-0000000C36s-3AaC;
-	Tue, 13 Oct 2026 05:46:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=MIME-Version:Content-Transfer-Encoding
-	:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=cst2eBIhdCMkloKJXh9zjv04CSd2w73zJ/tEv2xtZvo=; b=pl1uFrRSaQlnwAYwP9Ps4wmbe8
-	AC/qSeGeLMBPVyIgPWMKGXEPfOmjCDih4qI5X9N8I+YI0VHNTho0P/Aj+Q8XNf7AjgSKPYfyZbiyc
-	raUUhuw9SMM/+uPNrmQuZybOk8FqmKZX2Hvw+2nHlQVva1gXaqUhr92wAziOA6/1U5M7RkK1w06DZ
-	Obm3A2UuqLciyuKES32VAx/rXRtZ2Yg5a03+HI1z5781uBXGJecBHn/FXqwbXg4S2Xi++/puyOwn8
-	0SiSPIYcqt2iyLy27N0NEk311YDrFalAKwQ5282DZMRgA2yTc+pSxuWHJmQzGLlMcIX83A71LC/vy
-	sz0gqcuQ==;
-Received: from mail-japaneastazon11022091.outbound.protection.outlook.com ([52.101.126.91] helo=TYPPR03CU001.outbound.protection.outlook.com)
-	by desiato.infradead.org with esmtps (Exim 4.99.5 #2 (Red Hat Linux))
-	id 1xGVLe-0000000F7yt-1cm8;
-	Tue, 13 Oct 2026 05:46:54 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=AJONilKyHuMj3X/8dgK9rTcnBxT28cWtf5HQ80AMCeNocCMXrHWDXU2ObSVDPaZuuB4ViKkvNcX/Mq3voJIVo8118L9zorqAEqV6UHg09rdURG37gSFXGfHssLJ0Mv2Gksww7/K3KzyXt99yaJVZsbYMMtxxhIUJK7X8elxwbQljM5tAcfHWFj/djKn0mifMpLyr1uAulLSPt6pyrOJBTQepghIHJ9zmeKsFzm6Cwd6l5gwF3MkLU7bfty4aQ05BWT96uTCS8tMhltNGWc3UlN4GQYEXabzqnr6JOB9psyiAyYLHCaDhAHcAuMHbvd9Xzsm/cyRHHiiMJ5BlpzR7WQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=cst2eBIhdCMkloKJXh9zjv04CSd2w73zJ/tEv2xtZvo=;
- b=kD75IEcwiM2QoeJDflWVnUOPofQPwxZAICJYRE9KbDY9YDANQRn/TrmKJvQ8enbIdVndjOOH2s5+GBZJEQ8oFpC6zPo8jCwsWhLDwoQrtetTnTJsXJkQI0cXm6uj6Khck4soZB7ZG3dxUG0tjoYCIPHwtRhvpAyGj8/4e4GuTXnTJ75e9BRC3WMriNacS6KVBNVWJ5xSjtpw8WmEC/binH45GJ3MARLg8AwTVpDJWuBvFEAOBFGBBZSchc+AAYtGLDIWSzU/Gn1CJPajNtXkspKICuB/FX+jdgUgepGjxzK2hrQV8GqOpeASP37hV4qn7sp7UGdtxFNOqo2WgpEwgA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=aspeedtech.com; dmarc=pass action=none
- header.from=aspeedtech.com; dkim=pass header.d=aspeedtech.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aspeedtech.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=cst2eBIhdCMkloKJXh9zjv04CSd2w73zJ/tEv2xtZvo=;
- b=l/jRQKhJNbqfC72MQzda7btH3Twv5BC9Pyl5A2U1Wj/BXwfqJ+Y4yJqjF5IHaZn3FIQu3wXpaLNdI12O0qaVIR7tHe3OvTvB3UrJlOt/mr/glcwrv0XWg2doZcBGtkr/6NnZ+o2IYO6RL3gQKuQjPr9k6EjcIOELe/lMXf9/r6djfNnEHQNBMPQhkTAbsCseZ+jlXigYX7l3Xd9sb0Ri/0o7upY0BJLBirq+UBCAp8Zx1i08jJvyM4osveIhtfMRXgtZHy7M37/1ab/lYYOno7FH96pcJuHWk7sLRdFJNpze48wgV1sefkXSfJ47gCTujpEGdlWQ7/AlANSdoOIahw==
-Received: from SEYPR06MB5134.apcprd06.prod.outlook.com (2603:1096:101:5a::12)
- by SEYPR06MB7000.apcprd06.prod.outlook.com (2603:1096:101:1e3::7) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.496.21; Tue, 13 Oct
- 2026 05:46:39 +0000
-Received: from SEYPR06MB5134.apcprd06.prod.outlook.com
- ([fe80::f53d:547a:8c11:fc6c]) by SEYPR06MB5134.apcprd06.prod.outlook.com
- ([fe80::f53d:547a:8c11:fc6c%3]) with mapi id 15.21.0496.021; Tue, 13 Oct 2026
- 05:46:39 +0000
-From: Jacky Chou <jacky_chou@aspeedtech.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-CC: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>, Andrew
- Jeffery <andrew@codeconstruct.com.au>, Manivannan Sadhasivam
-	<mani@kernel.org>, Ryan Chen <ryan_chen@aspeedtech.com>, Billy Tsai
-	<billy_tsai@aspeedtech.com>, "linux-aspeed@lists.ozlabs.org"
-	<linux-aspeed@lists.ozlabs.org>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "devicetree@vger.kernel.org"
-	<devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>
-Subject: =?utf-8?B?5Zue6KaGOiBbUEFUQ0ggMi8zXSBwaHk6IGFzcGVlZDogQWRkIEFTUEVFRCBQ?=
- =?utf-8?Q?CIe_PHY_driver?=
-Thread-Topic: [PATCH 2/3] phy: aspeed: Add ASPEED PCIe PHY driver
-Thread-Index: AQHdVxgnBL20YPLWJky4Vc5bhAVwAbb1BQWAgAX33OA=
-Date: Tue, 13 Oct 2026 05:46:39 +0000
-Message-ID: <SEYPR06MB5134569F41D37B0CD4D201569D9E2@SEYPR06MB5134.apcprd06.prod.outlook.com>
-References: <20261008-aspeed_pcie_phy-v1-0-96764937aef0@aspeedtech.com>
- <20261008-aspeed_pcie_phy-v1-2-96764937aef0@aspeedtech.com>
- <20261009-cherry-caribou-of-glamour-adaba4@quoll>
-In-Reply-To: <20261009-cherry-caribou-of-glamour-adaba4@quoll>
-Accept-Language: zh-TW, en-US
-Content-Language: zh-TW
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=aspeedtech.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: SEYPR06MB5134:EE_|SEYPR06MB7000:EE_
-x-ms-office365-filtering-correlation-id: ab070e7e-7ada-4cd4-a26a-08df28ed5a4d
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|376014|7416014|366016|1800799024|23010399003|38070700021|56012099006|4143699003|261009223027099003|10067099003|18002099003|22082099003;
-x-microsoft-antispam-message-info: IYv718EY0lkwv6LDEjj4wxuxxFykSoGVJx2ZaRr1ZlbGVs4FkzKqS7WMn1LdK/yfyoLqFTq73waIrOHIIoVFYqpl4lUfzFLWPNV3XzT4oOuEvm6OSy6ZpB6bZnDxzQYUfN+7MMn/M8ktSmOIQR+rTNAexKLdiXzyvteoHJUthCVLmuRVXHAZ9IOACzmka0xk+0wF3HbrUaxDh5FNs17gZgmAKh88ld2+E4xFj6PexwnE5Ma7tV+YdoNOeLvJq9UuXO5KiBafWeufJ7SiNh0EoKvqzq2MHqtM4YqOUHXut/1uqQXTO03+NriM3LFOnxIjyhxNhMfrYRNTClbFEuvsYnJthI6EcrkNkXAu2zdwp1nDGj8gvRxw9A5JCANJmYqumkSB7gtZ5loVop2Kn73v4nPHP3QbqPyEOsBBz/YoAYiazXTmEVoe6oRaxn0K21WUwsItNbXJI3bcgK5GAQkDyQIJ2JITiFZ+HCrkkblFoUGGO3HV2T8c1I2+s+VYUhMEBLVmasJvvGp9qe4UIqsWw9fa5sU11JiYH/O9ZCPQFWC/bqrKxXjsK1EQthP03ztdhkKpVuQjDzZ0Evzbt9vOAW6EO0gwAIEfZaqzyAgeB6iJcOGOH0f1SBXIrM7g99zafdVsVRM/jgqTDGfcrDEHmufkP/o2Gz6NC2/gW/obNBydcZS+YOkKBDfWcpLKlG4XQGPs4imbOVYJ8seH/GoCbvM6FkMVbtt4U2mVYkQiD/U=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:zh-tw;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SEYPR06MB5134.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(366016)(1800799024)(23010399003)(38070700021)(56012099006)(4143699003)(261009223027099003)(10067099003)(18002099003)(22082099003);DIR:OUT;SFP:1102;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?THpxK0NYWG5UQTlMNUFmWkU0QXllWEFVOUQ4VTk3bDBPTnc5RWgyeHBpdXlO?=
- =?utf-8?B?VHE2Q3VxTTRBbXF2emhGc3IrakN4aDREQVI3VFZQbWhUdTM4UlF0VjNSTlVt?=
- =?utf-8?B?Mkhab0xadjlkUFpjclFST0xWaUNydTQvWHVPQmZNRGFza1R5S25hQllaZllI?=
- =?utf-8?B?WXJnNittSS9laTVRQ2lIRTdVQVR0dGl0OEVJNE00MkZLMUlwKzU4SWMzd3lv?=
- =?utf-8?B?b0txeFFlZ0ZkRE16OFJ5KzM3MUR3K3Z2cUpwNm1PbDJmdjdwdktMNVFRNGhL?=
- =?utf-8?B?R3ZvUE1IWlhtaE9FVlo1L2RYNGQ1a2VabVBESFdvN25Ca1o1MHcyRyt1L3Bx?=
- =?utf-8?B?MDNxV0IxWXBRR1NWWnBWSTBDZnhJdElMeldjamtiZkNtTW5SRjdiMEo3WURY?=
- =?utf-8?B?b1k1QzZNNW9vdWdwdG5PTkt4VlF6YmJIMUJ0dS9lOWRuQWdUcE9ONDg0cWVy?=
- =?utf-8?B?NWdQdlc0djFTdkNvdEJ3enlQaFhFSmsrSW9DKzlXUlBvSlZFNGpnbnRsOHcv?=
- =?utf-8?B?eGtiZ1VMZ1Y4bmV0TXF6TkwwOWxGSTNhTUYwdkdmR2ZlYmRPdjNabWQrVmNj?=
- =?utf-8?B?RXdzZzROVCtzMEhPbWtyaThtdGRQOC9lVHlqR29SZEJlamZHMnhYN1BIWEJu?=
- =?utf-8?B?R0N2dzUvQ0ZtMUxFLzFhU2h4SXdEVmFhVGFEVExnd2dJekZxYTFzQnloMExG?=
- =?utf-8?B?ZWdSaTRicCt0QmZhMnFMSjg4VnBMQ3EwcVJBSXJpczVDQkowZllldVVhSjJj?=
- =?utf-8?B?amlIbHdvbFk5YkN5bk1TSHVGbU12Nm03SldPTURLR0hrbmNtRE9uOFlGWVFw?=
- =?utf-8?B?U3VtVjE2MC9YWU8vZDJIYlgwZ1RBNEpDNGxQMUdpSmJzR0x0NzZlUm1ZS3Uw?=
- =?utf-8?B?VEVsT2dwWW5BSkRGZ2ZpWWNkamNGQmNhM1VoT0RiNjlKQ3EvSmJBV3pXSDZZ?=
- =?utf-8?B?dk5IK1piRmxPMGFOY205UFJmUGNlNmNuZW54eWFXWkdhcTRtU1RUaGxSaUlu?=
- =?utf-8?B?NnV0YnFPQ1Rzc09pcUMzbnFGeDErNlBqLzJWcFVlUlc5Y2RMY1FWUXAzOW5Z?=
- =?utf-8?B?S1o4YXpSRzNoZ3FobmpON0taSlpIUDFySFVobysyQURQYTlzUklwVWlZNGRL?=
- =?utf-8?B?d0pCb0o0a3ZXQ0p1UVBVaFFlb0JnYUVlNkxyRGp3Vkc0ZHZuWncwdW5HQTZ3?=
- =?utf-8?B?ckk2WEMyOVV4Q2laMVRsS0l5SHc3ZWc3RVVHOWlqL3FVZFJrQkVYdXpVV1Fp?=
- =?utf-8?B?MFJDZklvTkwwalQ1SVNnTlJtVTZ5R1dhUlhzd09JMzdzVWd2TmlLRWhPTkxh?=
- =?utf-8?B?aEhLY3pHKzVnaHVkcC9LZGdmSE1xcSs4ZlY0WW1FK1loSnpISGZOYjdGaWVS?=
- =?utf-8?B?YmtKQWVzZ1VBOVEwSzV6bUJMT3J5MkYxcUtrVHZma0p2c0JUVGxNZ3Ivampi?=
- =?utf-8?B?L1lnN3BjMkNjTjU3TFI5Ri81aWUrVTZRRlp0RyszSWRZV2FFVnVMZzEzQTg4?=
- =?utf-8?B?QnorZDlXelFJSm1heTRwVnZ4Q0VBczE4V1FQNTJWdDZ4NmFuKzlLTVRHL0xL?=
- =?utf-8?B?T3ZRREY4aGcxNG9Gdm9uSXpDaDRQcHpWZTA4Uk9qZmNZV2FWOUJld1J5cFox?=
- =?utf-8?B?SnJxZXVxdmtnQ0dmMkRDbDdDZUI1bmZuTmRMbDhEQlFFbnlDQ2tNVkNSbUZC?=
- =?utf-8?B?WUZzRG0zb0NxSmdpc2tiVEZLWTZPdjdmbUllYmlsWU9sOWpNaEhUTmxkZ1Z0?=
- =?utf-8?B?OFhJTWtsSXhuOU8vZmhkaVFmWU0remwzQW96NmdPcFRrcWYwaXFkU21aZ2Rz?=
- =?utf-8?B?TnZ0TUw2S2svNGEwK2ozNFBDZHNvbmg2MkJiVWs1SjkrRlMwL0FUNmI4VUVX?=
- =?utf-8?B?U3l0eXZ1S20rbGs3cGIvbHFRcUxKQnBSZ0pjQWhHT0ZBY2pJM3U4bFVNMmxo?=
- =?utf-8?B?VngvcVFHdGxFOVcyVVYzKzAvS0RRTFYwSmxsUlZOSUtsSW5DcXJjNk9NWXEv?=
- =?utf-8?B?R0E2K1BabFBxbXRhaENIWFl1clBkdk9oWjZ1UXY1TzQ3WkhnQzRTOVZteGY0?=
- =?utf-8?B?azNBVkh1MnludVltdnBQdWtTdk9NeUJxb3IxRjdrZ2xlZ1dUZGEwSU9aZ1BT?=
- =?utf-8?B?b3NERmxwWDJoR0NKVGJyekJtWFlrUFhKYU9TT3NsKzFmbEt2QUxlZjJrYU54?=
- =?utf-8?B?VU9lWGpoMkNxZDB5cVNUQldkaXFCZTAzK2l5ZW9zMmR2RzZzNHFIZEthZW5j?=
- =?utf-8?B?bUtybUFlKzY0WnNXcm1EL0U3MkxmVGx4U1lxeEhKa3lNZWo4dDFLQjlDQks3?=
- =?utf-8?B?TVE2bW1JZ3pSZEZnYlVrT1lkNnZzVW5BRkN6eDV5WE5hQS9Cd2l0QT09?=
+	id 1xGVdZ-0000000C5As-1ZqP
+	for linux-phy@lists.infradead.org;
+	Tue, 13 Oct 2026 06:05:21 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 06E2F40519;
+	Tue, 13 Oct 2026 06:05:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D0A481F000FF;
+	Tue, 13 Oct 2026 06:05:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1791871520;
+	bh=uScoy2H3OSHAs7yinIbTWsFjT1gxqmZ8XBt3nXP+ePo=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=CILSu49CFKyPD7iQRHyf2nkc0hv446jb6fM5JgkrcLDuyVP4wPJpEewks5ACDI40b
+	 bWG39LQNT7f1ahbM5GT2uVZqayLTyb5D9s3ydVGxWahL5EN/RQjK6vZiTUJMK1dPe3
+	 JKtyV1Or7p04s+TqJQc6sAnhTAIioLwAhYaPlmAlJao3ePWTg8seuyfUlGXwinclIf
+	 pd3UtUa862ZQQaqtej5oEVPHJLP2GVYaQyrXCuKKycPLiozzYuniAB6Yk5NOR2pJyG
+	 qBk9VLxw5c0Uny46j4ltiscp5nx1ucmkjFpNr/SCK28+oEdxeZ1A26mY8ukH/2lQVH
+	 rLybtMqLzxxzg==
+Message-ID: <1106b5dd-5453-46e4-90a4-7c7673cd4dd3@kernel.org>
+Date: Tue, 13 Oct 2026 08:05:14 +0200
 MIME-Version: 1.0
-X-OriginatorOrg: aspeedtech.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: SEYPR06MB5134.apcprd06.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ab070e7e-7ada-4cd4-a26a-08df28ed5a4d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Oct 2026 05:46:39.6327
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 43d4aa98-e35b-4575-8939-080e90d5a249
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 4LSuV4iFbQDRQGAUOJwOZ/dpCVz2BYdNWc/XSz6HKfiTHUuYyrdzl/+XJRSrqI+Bbvm+WeBo5ib66tLDJWzqxk2d2MWjH6sybVU1Rxb2IXw=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SEYPR06MB7000
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261013_064652_579080_8863B7BE 
-X-CRM114-Status: GOOD (  12.13  )
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v8 3/6] dt-bindings: phy: realtek,usb2phy.yaml: extend for
+ resets and RTL9607C support
+To: Rustam Adilov <adilov@disroot.org>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>,
+ Stanley Chang <stanley_chang@realtek.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+References: <20261012173739.36377-1-adilov@disroot.org>
+ <20261012173739.36377-4-adilov@disroot.org>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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
+In-Reply-To: <20261012173739.36377-4-adilov@disroot.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -172,30 +120,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krzysztof,
-
-Thank you for your reply.
-
-> > Introduce support for Aspeed PCIe PHY controller available in
-> > AST2600/2700.
-> >
-> > Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
-> > ---
-> >  drivers/phy/aspeed/Kconfig           |  12 +-
-> >  drivers/phy/aspeed/Makefile          |   1 +
-> >  drivers/phy/aspeed/phy-aspeed-pcie.c | 237
-> > +++++++++++++++++++++++++++++++++++
+On 12/10/2026 19:37, Rustam Adilov wrote:
+> Add the "realtek,rtl9607-usb2phy" compatible for USB2 PHY on the RTL9607C
+> SoC series.
 > 
-> And unlike 10 previous versions, this wasn't even built!
+> Add a resets property to properties to describe the usb2phy reset line.
 > 
+> In RTL9607C, USB2 PHY reset line is from "IP Enable controller" which is
+> multipurpose and handle activating various SoC peripherals.
+> 
+> It is unclear whether RTD SoCs have something similar to that so set
+> the resets to false for these devices.
+> 
+> RTL9607C requires the "resets" to be specified so add the corresponding
+> if check for the "realtek,rtl9607-usb2phy" compatible.
+> 
+> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+> Acked-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+> Signed-off-by: Rustam Adilov <adilov@disroot.org>
 
-I built this version with an ARM64 compiler and encountered no errors. 
-After seeing that the reported failure occurred in an x86_64 build, 
-I also tested an x86_64 build and reproduced the errors.
-I'll check builds for both architectures in future submissions.
+Please use scripts/get_maintainers.pl to get a list of necessary people
+and lists to CC. It might happen, that command when run on an older
+kernel, gives you outdated entries. Therefore please be sure you base
+your patches on recent Linux kernel.
 
-Thanks,
-Jacky
+Tools like b4 or scripts/get_maintainer.pl provide you proper list of
+people, so fix your workflow. Tools might also fail if you work on some
+ancient tree (don't, instead use mainline) or work on fork of kernel
+(don't, instead use mainline). Just use b4 and everything should be
+fine, although remember about `b4 prep --auto-to-cc` if you added new
+patches to the patchset.
+
+You missed at least devicetree list (maybe more), so this won't be
+tested by automated tooling. Performing review on untested code might be
+a waste of time.
+
+Please kindly resend and include all necessary To/Cc entries.
+
+
+Please use subject prefixes matching the subsystem. You can get them for
+example with `git log --oneline -- DIRECTORY_OR_FILE` on the directory
+your patch is touching. For bindings, the preferred subjects are
+explained here:
+https://www.kernel.org/doc/html/latest/devicetree/bindings/submitting-patches.html#i-for-patch-submitters
+
+There is never "yaml" in any prefix. Don't come up with own style.
+
+
+Best regards,
+Krzysztof
+
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
