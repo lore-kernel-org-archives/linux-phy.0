@@ -4,71 +4,136 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E147FCC6B0E
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Oct 2026 16:17:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C015CC6B12
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Oct 2026 18:18:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=u2l/gT8IuDYsPATlHE4VT8LeUa/kILUhlGpRTe4UD5o=; b=2uduSzdsBHkbB9UaDFTAZviXBz
-	v1T403TEqPHth8J86A/VPHyiag76J3LNx0SCm0UCuJwKoPfhiLxwNKq/fmQC9x1HM8ZET6pOYO8Fh
-	TFVO37zbo2jc7+HM82YkDZ/o4LXAT9Mr+uI4OUXJs4SZlWmmDdIGyLMA5Hg+bDqsfGRgsMPcow9Jp
-	1LrEmq/nDSmJw8lwe3rFHx/CR9EpBV9PZipW7pz92+vCRP2DiftFUKZ+lCtIeAsD/SrmkN172aZTF
-	6EkmSxuj1cmvqOtSkDIJ/aN180aClKN/waYPLk5uORiqOYf+mXNxjR9qn7tFK25yaoqusW2C7KGiS
-	sM4m+j/Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=oZ00s/90w25e+rmCUHioPgbA8Ovi8NG0MMAB0m5pWy8=; b=M8NwDnkB0uJNQs9FidIFSjKdvB
+	d/5eQRipJedaiedRsMxBRWK33RIaDzXfZvYcegalwdJyZbsFtOg2Vm8ALNKC94o6b4BNazrFIKSQ/
+	o6Ww4R3NhdYCUDC/6HCpORuLpmYQNJKcsmvpqdRuAoRixWV1QVwq186G593yuh8Si/M4l73Iqj1/9
+	R9O/69YJ8f17otm+jQxmdQKHY3ObSEJLx9QDqgCagO3oj4lNDl6mp7fiv46HIrIODbXA4Qz3Wq8H9
+	t4cwO806RKiE+nxOjxwr12h0mmlgHa6MTyN3HIx76yW0SjRH/RUCK9AkJTHwI1tcCv6kofpO6ntL4
+	FpEinzOA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGfBy-0000000DTc9-2Wa0;
-	Tue, 13 Oct 2026 16:17:30 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xGh4m-0000000DoWM-3POa;
+	Tue, 13 Oct 2026 18:18:13 +0000
+Received: from mail-southcentralusazon11012026.outbound.protection.outlook.com ([40.93.195.26] helo=SN4PR2101CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGfBx-0000000DTbt-0qkV;
-	Tue, 13 Oct 2026 16:17:29 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 587A6602C3;
-	Tue, 13 Oct 2026 16:17:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DAE441F000FF;
-	Tue, 13 Oct 2026 16:17:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791908248;
-	bh=d/AqZyAHTs/5Ze0NJawuBTwqntQ1EEyvYdHwstfLlgs=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=oRtc0YuLUrkDiSZrEta9ZbfPGe4YcN4dg0b8m/8AWubxvc4grOmzg8WO6T7Oo3/QN
-	 ITtmcNAysxUoKc9jlntXO14pj6PsLmUFLgPbw4C8oTZNyh5RAodoFEo09kFjLHcJHj
-	 KgZrYZIlZfv6I6vPzxymih+kS+WwEMP4eDG+084gTWl+hskXlBuJ0vzzCffC0nzIeU
-	 E5KX0q9UIqEbCHHkBr9FRcgQ+n098/teFuk3wxQJbC7N+Uo8Bw+jneIr0q3sPKgaXV
-	 Sy70rxVC5TuezkUnhslo+Dgb3rttwfup3bKnsUEHtlMsvmGp23L591WZqSl2jqmvgw
-	 KekC5BGC8/9/w==
-Date: Tue, 13 Oct 2026 17:17:22 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Luo Liu =?utf-8?B?KOWImOe9lyk=?= <Luo.Liu@cixtech.com>
-Cc: "vkoul@kernel.org" <vkoul@kernel.org>,
-	"neil.armstrong@linaro.org" <neil.armstrong@linaro.org>,
-	"mani@kernel.org" <mani@kernel.org>,
-	"robh@kernel.org" <robh@kernel.org>,
-	"krzk+dt@kernel.org" <krzk+dt@kernel.org>,
-	"conor+dt@kernel.org" <conor+dt@kernel.org>,
-	Gary Yang =?utf-8?B?KOadqOaWsOS8nyk=?= <Gary.Yang@cixtech.com>,
-	Fugang Duan =?utf-8?B?KOauteWvjOWImik=?= <fugang.duan@cixtech.com>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
-	cix-kernel-upstream <cix-kernel-upstream@cixtech.com>,
-	"p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	Wuyi Shen =?utf-8?B?KOayiOatpuS5iSk=?= <wuyi.shen@cixtech.com>,
-	Eastlake Yang =?utf-8?B?KOadqOS4nOiZjik=?= <Eastlake.Yang@cixtech.com>
-Subject: Re: =?utf-8?B?5Zue5aSN?= =?utf-8?Q?=3A?= [PATCH v2 1/3] dt-bindings:
- phy: Add CIX Sky1 DP PHY
-Message-ID: <20261013-retry-unturned-70c276adf382@spud>
-References: <20261012123618.648930-1-Luo.Liu@cixtech.com>
- <20261012123618.648930-2-Luo.Liu@cixtech.com>
- <20261012-founding-stench-55cff46fe1a3@spud>
- <JH0SPRMB0074821E0A55434A23B60E45F59E2@JH0SPRMB0074.apcprd06.prod.outlook.com>
+	id 1xGh4j-0000000DoVu-2r3n
+	for linux-phy@lists.infradead.org;
+	Tue, 13 Oct 2026 18:18:10 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=Jyxoo3jC5cH4ODDIMRZEl29v3XNUcZ66EH19V4/+JuG54f65aC3dEJD8Bf4o7KjQobBAOm+j9VJ1ml3loQ5yX5hC5rlVnCEvdhUbcLWWlJpjCvxZcxEzr3VXvU3COVQ0gXO28yW48QYiAoxQ64PGRy6/MmhVyo8VLWFrj27DqGoN27JagDdiDMnvU8MRi0hHRUVb1y2H2WjCZkEUdt2VpvgOgtgXglJghBk+Kx0w4AxmeYJLKLUDsxCVDyI/4FJWYTE365JOxDUOHJvyQzu1pQj2/mn6YPxsuwDGKr1EnfaGgUK76Uj0AsJe8N1fEk5MV8AzrNjAzuzFpIiY4pv+1w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Gi90tKNLYtIbmNNhZiqDE4uGUNB8sMet3Uhx7Qjm8Q8=;
+ b=OyqM5qoq41aRpdEcr3r0KSnpYDd+h3vjHxK5uARHzYO1yets9/yyP6HE9bGTz7+00KvWWBs/8xV2yX4c9Lbwh8qG7YBIEFra+jxrj9bCuFlDWyB41fkLuEp0p8h2adK3HgFh8YRaV3rwAXaJuGnC4dSCCTKq35XMdqDMYUwntl356SVAfUQRUkBBAxJk1CeOstCH1ZGpNg6Qgb6HiHi1fwzCSN3mgwYFLFix3u0XksFDEVCexhy33G75RqHoTLyD//L1wF2WPPbA4AMTPnW4aOJfZVHhKGMtT2QHvzqc69moQpOfgJYPc7Z0uBj+/i0sVHh5yCUXI1MqP29lwyFE+g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
+ dkim=pass header.d=nvidia.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Gi90tKNLYtIbmNNhZiqDE4uGUNB8sMet3Uhx7Qjm8Q8=;
+ b=tANm6/8sXV8f9UxAUqi9iVFnKwrGm1p0A0OGZ1xJiC07wQlAlbbPjouBdS+MupVWOJnxOmoji2CucWUfdabNUbaJKO6RQlJrtfo2fiEKCSSq0B9UHFWVmGfmtrMQ/UxVpTG2LGaMY5/umJ//CJN4UzhWbPcOc2ljuznefGfqv1BcxBtntTjgW5oYVCpQUrw6o5E5THyf6Q/ozhKdV0Q7gSwrU21rz5LHqM5faD+UwkW7MpdGl+9Q8IGPtkUBBQCYmDrY6a2KW2Ou9nw2y07q3+cq6OwuQpMO6JaUL3WmWCd+RlzAe/CPiDvemY4TZ4YAAfu6kV+WvwLqKunDGtdKkg==
+Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nvidia.com;
+Received: from PH8PR12MB7110.namprd12.prod.outlook.com (2603:10b6:510:22e::11)
+ by PH8PR12MB7303.namprd12.prod.outlook.com (2603:10b6:510:220::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.496.24; Tue, 13 Oct
+ 2026 18:18:01 +0000
+Received: from PH8PR12MB7110.namprd12.prod.outlook.com
+ ([fe80::736a:e1be:ec64:5740]) by PH8PR12MB7110.namprd12.prod.outlook.com
+ ([fe80::736a:e1be:ec64:5740%6]) with mapi id 15.21.0496.021; Tue, 13 Oct 2026
+ 18:18:01 +0000
+Message-ID: <3a37bd0d-104d-4c27-a97e-dca6a3f53aa4@nvidia.com>
+Date: Tue, 13 Oct 2026 19:17:55 +0100
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] phy: tegra: Clean-up Makefile for Tegra186
+To: Thierry Reding <thierry.reding@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>,
+ JC Kuo <jckuo@nvidia.com>, linux-phy@lists.infradead.org,
+ linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20261012-tegra-phy-v1-1-3241bf3c86e9@nvidia.com>
+ <as5WkN6Wt08TeRax@orome>
+From: Jon Hunter <jonathanh@nvidia.com>
+Content-Language: en-US
+In-Reply-To: <as5WkN6Wt08TeRax@orome>
+X-ClientProxiedBy: FR4P281CA0440.DEUP281.PROD.OUTLOOK.COM
+ (2603:10a6:d10:c6::19) To PH8PR12MB7110.namprd12.prod.outlook.com
+ (2603:10b6:510:22e::11)
 MIME-Version: 1.0
-In-Reply-To: <JH0SPRMB0074821E0A55434A23B60E45F59E2@JH0SPRMB0074.apcprd06.prod.outlook.com>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PH8PR12MB7110:EE_|PH8PR12MB7303:EE_
+X-MS-Office365-Filtering-Correlation-Id: ca5c3a6d-6d40-4066-4b50-08df295650a5
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|23010399003|366016|1800799024|56012099006|11063799006|4143699003|261009223027099003|10067099003|18002099003|22082099003;
+X-Microsoft-Antispam-Message-Info: 6laxUdDHf1ug5jinzjM+jAbYZkfluxV9gh1veKJDDx61gwyctgUHCcRmnI2byY71QoJQeAqNMaTIJw4qJ7jsgqcovTA2vwHKc6dcWmcXmUgZUz5aN1xCbLDUuVUejT8nxSct25ZFIpfrU3gk9UESlTQg4XEARCotHUapbkxbwZXPT2ihaksPWojZJQ4HOj+CQ/Dffm5yFdp2lOq3VLX79795G5i0gt9uQlAeUcAEAAt/u7IuwLDM8L8H97uQ9U3q+278vjBQCAo6a9/UpqgXKZnSuyxqHJ3HWIEYX8vHBKZZp0iW7fjkxobjKNZH6XqPenAD+pVF07HqYGKUoxJUU7poIFv9MpiRanOn1ppjnFDcGJ1bQk+6GMILA9c633jzKW3aQrTi7qE+HywWy5papSSw6p0cSf6FNAxuauZ6gH+10LhW6PO5kxncaDCihXD3ZW8vWhz7TNoC0QbHSUIoPxVDCZmORmyBPUHsGrwGBWP02/H8DYBVQd0a8GGQGvy3CxOd0KftonpY2rpFeyqrWs8hE8v+DTk+4Sqw6W5GngT6jjf9q1phh3yYi5HrA1Yd2JKeyu/lKGeuhmb9/MU4xCyIml7UC5L8ZHh1AKRmmezXQ1TISp2w2/C05Nq28pTznfqWC6JyIk0RyL39+8HqltO+2TsaloHJNlRDyD4/pa4=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PH8PR12MB7110.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(23010399003)(366016)(1800799024)(56012099006)(11063799006)(4143699003)(261009223027099003)(10067099003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?dHdoTFY4U2hkVG12L2w2c1QvcUJUcklncStKandBdmhYTldQd1A0K1BhWUdp?=
+ =?utf-8?B?SzZ5VVJnUitoQ2RHNzBaN0Z3WitaOVU2UGprNlhnVnkydm1kRVM2TW5maE1k?=
+ =?utf-8?B?NDhmS1FhdldrMDNLTkJDYi9rM2R6ZVlLRnN3L0w3UUZXRGdPM1ZsLzFBZ25B?=
+ =?utf-8?B?VHovZXl6b0M0QnpLVytUU3VZdlZ6QUpiTCt3VE5RazNpaHFKdjN0U0M0dnE4?=
+ =?utf-8?B?Y3IyZW01MmdBY05UMm5RVkxPRnZyNzk5cmU2OXJPRHdOWkRIdTFWVFYwSndB?=
+ =?utf-8?B?eWlvMHV4YlRiVzFqTEhIQ0NpYnFRLyt0cW1lZmYwblpGQlZLa05VOTJYeVFz?=
+ =?utf-8?B?OE5Md1hsdFJYL1AvYlZmWVRtYzZCOWVwK3ZSN242V2hhZFIvVTZ3eStnbzJv?=
+ =?utf-8?B?Q1NwbzBsMHJPckRJQU1SOHVWTVZJWC9sVWIra1A3SE03eHBLNE5STE5TWURZ?=
+ =?utf-8?B?THZodUUyeHBKK1R5R2dDUnY5bkw5ZEphTEx2NktqVVJBc0pTUGt5c1d2SjdX?=
+ =?utf-8?B?dXEyYmI4Nk1pMUUzYVVwOHZhOElEbUlkczFnTWxQZmR5djYyaUhMb3lHdXV1?=
+ =?utf-8?B?T0IrQ21iYUZEWHB2cHp1eUFGZ3kvaFZYRGFFT2l2cFRWa1BIK1RkZTBJMUVT?=
+ =?utf-8?B?amoxbjl0N0x0b2o4eGFDS080RjU2a3RFWXBORTBXd05CdDlOcUY0SHdMN1Az?=
+ =?utf-8?B?YSthRDdXYWVQWnV3YVowdlo0SFN6S01HM3k2Sm93TnNmandZOWZGN05nR09X?=
+ =?utf-8?B?K2ZHekpsQkxacE1FWExUdEY0a0pBNlhnOUZSU2FKZFIybnN1TXl0NCtFK1A2?=
+ =?utf-8?B?bjRTZjJ4SXlycGJnYnNwQ1VhSThycGFVQTl2RjFVOXJBNk5mTzQ5anRNQkhG?=
+ =?utf-8?B?NXp5OUFvV0VmK2VUanhLb21vamNvWGJiZlR5OE5PVzFLZUJVVGVhdG4ydDg3?=
+ =?utf-8?B?bTFkTDYwd1B6eGl5c1owWUhSRXVsZFpGeGFuck5EemQ1RSs5T1lhT0RoOWEy?=
+ =?utf-8?B?Y00xZEs3Y3pvWFZHajVQWjIvaTVDZThKUGZLa2xqcDRtQTdCNUZoWlVrbWpE?=
+ =?utf-8?B?ZVpIczFnK0huYmREY3JjSXdVcEtKYmwrS3FFV1RYWFllYXZHQ21mOXNZVld5?=
+ =?utf-8?B?OW5PODhzdDdpVS9OWmFBUzJQTHZmMUtUclZJcTZvS2U1OHkrSkp6WTRRWExK?=
+ =?utf-8?B?b28vbk5weU5vN0FYRmFKbXAxVlI0NFozeHo3djZycEF6Rjl6R0JJNnZkQkly?=
+ =?utf-8?B?VVcwajNzS3JyNytBQXltQmowOGpITlFnZ21GSHlhaElJMndmODhubGp2aHZo?=
+ =?utf-8?B?OW1vazF2K1F5cmMrMUN1L1dneEkzT1QxUkZPU2Z6UTZvejQ1WG5oQTkvQlAy?=
+ =?utf-8?B?UEdLalU3VUFqVERocHBpSlBPbHdxbTVaSTRYN1pLOEJUejJDQTlEaThXM01G?=
+ =?utf-8?B?anhDSDBBVGRkdGdIT0JCZkFqSEJ3TlptbjNCK0ZzaTAxNGN5RFA4eWdKMzR0?=
+ =?utf-8?B?UDFFL1lKc1hSSndidHdnNnNWbzRWdE4rd1UzdmNXRnkvOG1DRGh2bkxXa1Zx?=
+ =?utf-8?B?REY2MVhVekdBSHpvMFNRTXpLU2hEbnBMdkkzS2lUMldnY25FZThGY2ZDelp1?=
+ =?utf-8?B?UE1sS05FMkhDUTNoek1KUVRTWWorNlRCUzFEZWtaNnh1blpIRktZQS9zbzlo?=
+ =?utf-8?B?V2hqL1JzYnNwaGZRVkRJUUFLTTJXQnVMVnBGN0c5dTFmU2NOK1RuRjhrN3JF?=
+ =?utf-8?B?VDNQWHRXTm9oY2xSTFlvb2lkZmJpSjhONmxXbzFuOGVUNEJwZkhMTDJRTUNS?=
+ =?utf-8?B?N3dZUm93dGhvOTMvb0pHeG0wZFhwVFVMTTFxSEJSbE90b3pPSjR5ZDBkNUxM?=
+ =?utf-8?B?U2dVWmVFdFRDTllIN2hpdlNaZldsa0kxYmo4ck4xc2dnNEE5aVhFSm9mZEpB?=
+ =?utf-8?B?R3l6dFhWb05JR0xQYXpIVm5XSnQxV2wwRUJYRGc3SU1EUDVYU0E4eXBBS3M3?=
+ =?utf-8?B?blpTVExrU2phZXIyS1JmRjJKb2Z6b2xjQWIxU0VCWEZ3NjNZQU8yRFp1T0NZ?=
+ =?utf-8?B?Y3VTKzBNWUdwdWhiZUYrZVVZc1k2M1VlWlRqbXlZT0VObnRXc1NqVUpsUU1J?=
+ =?utf-8?B?SXlweFFpUi9Dek55YlJIazNVbTFoLzQyUm5uUm9XdzRyaXd3bFRuc2dsZG9O?=
+ =?utf-8?B?eU43UEJvaVdEc1YrTWgyY0puTE44Q0dPYmxlQ2JNQzZ6cG5BQ2hVYWNORDBr?=
+ =?utf-8?B?b1VldzFiYWtVSVZsVnFuMDRZdmgwZ21YUUhuWU9yV3B4cGFDbjh0d0srUHZB?=
+ =?utf-8?B?TlpUNEF5UEhDbFBVb2Jiam9ybHlCMkl3YmlkNGEvci9sSGhRTXV1dz09?=
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ca5c3a6d-6d40-4066-4b50-08df295650a5
+X-MS-Exchange-CrossTenant-AuthSource: PH8PR12MB7110.namprd12.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Oct 2026 18:18:01.2551
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: HOnEyW6Yj/UD1AidwcKNQ9tPlo8oF78GiSr/MZ43Mlki1Tmn5i+A4Vfzu7TX9ah57Q4EzgnRwJquG337RqYXyQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH8PR12MB7303
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261013_111809_735814_C4504C31 
+X-CRM114-Status: GOOD (  15.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,186 +145,85 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3488486664338921807=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============3488486664338921807==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="pQxb2iB7MuCcOiZL"
-Content-Disposition: inline
 
---pQxb2iB7MuCcOiZL
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+On 13/10/2026 17:07, Thierry Reding wrote:
+> On Mon, Oct 12, 2026 at 12:16:31PM +0100, Jon Hunter wrote:
+>> The Makefile for the Tegra XUSB PHY driver has an entry for every Tegra
+>> SoC that compiles the xusb-tegra186.c file. Clean this up by adding a
+>> new Kconfig option called PHY_TEGRA186_XUSB that when defined compiles
+>> the xusb-tegra186.c file.
+>>
+>> Finally, update the xusb.[ch] files to use this new config option as
+>> well instead of using the individual SoC Kconfig options.
+>>
+>> Signed-off-by: Jon Hunter <jonathanh@nvidia.com>
 
-On Tue, Oct 13, 2026 at 08:50:48AM +0000, Luo Liu (=E5=88=98=E7=BD=97) wrot=
-e:
-> HI Conor,=20
->=20
-> 	Thank you very much for your reply and suggestions.
->=20
-> -----=E9=82=AE=E4=BB=B6=E5=8E=9F=E4=BB=B6-----
-> =E5=8F=91=E4=BB=B6=E4=BA=BA: Conor Dooley <conor@kernel.org>=20
-> =E5=8F=91=E9=80=81=E6=97=B6=E9=97=B4: 2026=E5=B9=B410=E6=9C=8813=E6=97=A5=
- 2:55
-> =E6=94=B6=E4=BB=B6=E4=BA=BA: Luo Liu (=E5=88=98=E7=BD=97) <Luo.Liu@cixtec=
-h.com>
-> =E6=8A=84=E9=80=81: vkoul@kernel.org; neil.armstrong@linaro.org; mani@ker=
-nel.org; robh@kernel.org; krzk+dt@kernel.org; conor+dt@kernel.org; Gary Yan=
-g (=E6=9D=A8=E6=96=B0=E4=BC=9F) <gary.yang@cixtech.com>; Fugang Duan (=E6=
-=AE=B5=E5=AF=8C=E5=88=9A) <fugang.duan@cixtech.com>; linux-phy@lists.infrad=
-ead.org; devicetree@vger.kernel.org; linux-arm-kernel@lists.infradead.org; =
-cix-kernel-upstream <cix-kernel-upstream@cixtech.com>; p.zabel@pengutronix.=
-de; linux-kernel@vger.kernel.org; Wuyi Shen (=E6=B2=88=E6=AD=A6=E4=B9=89) <=
-Wuyi.Shen@cixtech.com>; Eastlake Yang (=E6=9D=A8=E4=B8=9C=E8=99=8E) <EastLa=
-ke.Yang@cixtech.com>
-> =E4=B8=BB=E9=A2=98: Re: [PATCH v2 1/3] dt-bindings: phy: Add CIX Sky1 DP =
-PHY
->=20
-> On Mon, Oct 12, 2026 at 08:36:16PM +0800, Luo Liu wrote:
-> > Document the dedicated DisplayPort PHY on CIX Sky1, including the=20
-> > optional cix,external-dp board property for external connector swing.
-> > Add a MAINTAINERS entry for the binding and driver.
-> >=20
-> > Signed-off-by: Luo Liu <Luo.Liu@cixtech.com>
-> > ---
-> >  .../bindings/phy/cix,sky1-dp-phy.yaml         | 53 +++++++++++++++++++
-> >  MAINTAINERS                                   |  8 +++
-> >  2 files changed, 61 insertions(+)
-> >  create mode 100644=20
-> > Documentation/devicetree/bindings/phy/cix,sky1-dp-phy.yaml
-> >=20
-> > diff --git=20
-> > a/Documentation/devicetree/bindings/phy/cix,sky1-dp-phy.yaml=20
-> > b/Documentation/devicetree/bindings/phy/cix,sky1-dp-phy.yaml
-> > new file mode 100644
-> > index 000000000000..c6914cab74e0
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/phy/cix,sky1-dp-phy.yaml
-> > @@ -0,0 +1,53 @@
-> > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause) %YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/phy/cix,sky1-dp-phy.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: CIX Sky1 DisplayPort PHY
-> > +
-> > +maintainers:
-> > +  - Luo Liu <Luo.Liu@cixtech.com>
-> > +
-> > +description:
-> > +  The CIX Sky1 DP PHY provides the PMA/CDB register interface for the
-> > +  dedicated DisplayPort instance on CIX Sky1.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    const: cix,sky1-dp-phy
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  "#phy-cells":
-> > +    const: 0
-> > +
-> > +  resets:
-> > +    maxItems: 1
-> > +    description: PHY hardware reset
-> > +
-> > +  cix,external-dp:
-> > +    type: boolean
-> > +    description:
-> > +      Use voltage swing values suitable for an external DisplayPort
-> > +      connector instead of the default low-voltage values.
-> > +
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +  - "#phy-cells"
-> > +  - resets
->=20
-> A reset but no clocks? That's a bit hard to believe.
->=20
-> Seems fine otherwise, unless I am missing some sort of common property fo=
-r the voltage swing stuff.
->=20
-> Thanks,
-> Conor.
->=20
->=20
-> 1=EF=BC=8CRegarding the missing clocks property:=20
->=20
-> 	The PHY APB clock is physically the same clock as the DPTx controller AP=
-B clock. It is described and=20
->=20
-> managed only by the DPTx controller driver, so the PHY node does not list=
- a separate clocks property.
->=20
-> The PHY driver only implements the standard PHY callbacks. It does not to=
-uch the hardware in probe;=20
->=20
-> All PHY programming happens later, when the DPTx driver actively calls ph=
-y_init() / phy_power_on() / phy_configure()=20
->=20
-> and similar interfaces.=20
->=20
-> 	By that time the shared APB clock is already under DPTx control.
->=20
-> So from this binding's point of view there are no clocks to describe =E2=
-=80=94 only the reset line owned by the PHY node.
+...
 
-This sounds wrong, if the PHY uses this clock then the "DPTx" (no idea
-what that actually is) it should also have this clock as an input.
+>> diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
+>> index 89ce9ac87300..79a3624faa10 100644
+>> --- a/drivers/phy/tegra/xusb.c
+>> +++ b/drivers/phy/tegra/xusb.c
+>> @@ -60,31 +60,23 @@ static const struct of_device_id tegra_xusb_padctl_of_match[] = {
+>>  		.data = &tegra210_xusb_padctl_soc,
+>>  	},
+>>  #endif
+>> -#if defined(CONFIG_ARCH_TEGRA_186_SOC)
+>> +#if defined(CONFIG_PHY_TEGRA186_XUSB)
+>>  	{
+>>  		.compatible = "nvidia,tegra186-xusb-padctl",
+>>  		.data = &tegra186_xusb_padctl_soc,
+>>  	},
+>> -#endif
+>> -#if defined(CONFIG_ARCH_TEGRA_194_SOC)
+>>  	{
+>>  		.compatible = "nvidia,tegra194-xusb-padctl",
+>>  		.data = &tegra194_xusb_padctl_soc,
+>>  	},
+>> -#endif
+>> -#if defined(CONFIG_ARCH_TEGRA_234_SOC)
+>>  	{
+>>  		.compatible = "nvidia,tegra234-xusb-padctl",
+>>  		.data = &tegra234_xusb_padctl_soc,
+>>  	},
+>> -#endif
+>> -#if defined(CONFIG_ARCH_TEGRA_238_SOC)
+>>  	{
+>>  		.compatible = "nvidia,tegra238-xusb-padctl",
+>>  		.data = &tegra238_xusb_padctl_soc,
+>>  	},
+>> -#endif
+>> -#if defined(CONFIG_ARCH_TEGRA_264_SOC)
+>>  	{
+>>  		.compatible = "nvidia,tegra264-xusb-padctl",
+>>  		.data = &tegra264_xusb_padctl_soc,
+> 
+> And this means you now get data for all SoCs as soon as one of them is
+> enabled. Yes, I know that most of the time we want to build multi-SoC
+> kernels anyway, but it now is not just a clean up anymore.
+So you already get all the data for all the SoCs. This is simply
+populating the compatible string and pointer for the data structure in
+the match table.
 
-pw-bot: changes-requested
+Prior to commit 8f56fdf3d8cb ("phy: tegra: Add support for Tegra238 XUSB
+pad controller") it was possible to only have some of the SoC data
+present, however, due to all the inter-dependencies between all the
+underlying structures, IMO it became pointless and messy.
 
->=20
->=20
-> 2=EF=BC=8COn the voltage swing property: there is no suitable common DT p=
-roperty for this.
->=20
-> 	The flag only selects which vendor calibration table to use for the same=
- PHY IP =E2=80=94 the DisplayPort swing/EQ table=20
->=20
-> versus the eDP table.=20
->=20
-> 	Runtime swing/pre-emphasis levels still come from phy_configure_opts_dp =
-as usual.
->=20
-> The old name cix,external-dp was misleading. I will rename it to cix,edp =
-(present =3D> eDP table, absent =3D> DP table)
+So I still see this as a clean-up overall.
 
-I dunno, I think "external" is clearer than "e", since eDP is also used
-for embedded displayport?
+Jon
 
-Thanks,
-Conor.
+-- 
+nvpublic
 
---pQxb2iB7MuCcOiZL
-Content-Type: application/pgp-signature; name=signature.asc
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCas5ZkgAKCRB4tDGHoIJi
-0jyPAQDRmqHdCBu+JEY6WYgMJc70ELue4zQ5RLYDWcTc2EDf6AEA8BKvY64jcv/u
-g0LbGUnfGhL/p52BclTRXUFOId1YRgo=
-=gF/s
------END PGP SIGNATURE-----
-
---pQxb2iB7MuCcOiZL--
-
-
---===============3488486664338921807==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============3488486664338921807==--
-
