@@ -4,75 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 459D6CA9ED2
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Oct 2026 13:00:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F5A2CC6B03
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Oct 2026 13:00:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:
-	References:MIME-Version:In-Reply-To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=bj7ua9H2LnyzVJQhGkPv+KWrpI0g+XW5PAMGkKaTHr8=; b=DTi7VgCUO1VRHENV1fjHBck/RY
-	BXbcYxhQpw+FiBG67crYCg/P5DUl4kfpKvF9DdZCD7a2BHoSmWX+doqy3KLEAZkzI2/QSPXMW0fgn
-	lebkWARjz/me2ZkDJ/GBpvt/5K1zDtEstKVDzqu9d6wu5ow0AfTEzdXtNYT6Ufcg/1hgXap2nDYu1
-	flM4iB8ijC8OeBCMtvqSBK9aE1ccpQe7A0vy27uVN6PT2pohYwieCi5M4gPTeHSZW7jhCbrJDNBNi
-	zi8gmI38SEYdnOU2VeU5dINrNOSkWS0CBgCbFP54bf9Nt7ruZVzUb+wKb99ka/zrB0/PYYWWmyDNQ
-	tb8UeU+g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cKTi1Cev7N4sbRfT5GXCa/pKxiSIGBUiuO4poqKEyTE=; b=zZqDpdzLsmMGXY
+	7bS6B9zBtHVfqzV0LaDfvDPIENpqwrf3sNfk+AQqO2gqlw/ISrQpwuAomhg7zJR5jZvbOuP4lBeod
+	qqoATTfdO/H4PxwS6aqo2sGsFflga5K/neIY49xo6GhP/n8nm1/KP7tY1FuFkg5Aee9OLzqCvV6NV
+	8umCHTdKx7Q9ik+SdxJZN5rUp0Tj2P8QWVcSYEzq/Re4ex0FjUgAPqYsgk7GoIKhkb9RsQLIhfFuV
+	FvyZ2ox7TIQ8PwB2AyKzN6GAHXDGkXhF4uqNICZdohJGOveJzs8DZ87n70T6rFw+AVcAvPN1dK1kL
+	Sl+loXUAS3gv2SbebWcA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGc72-0000000CtNn-3Ngw;
-	Tue, 13 Oct 2026 13:00:12 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xGc74-0000000CtOc-4BBH;
+	Tue, 13 Oct 2026 13:00:14 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGc70-0000000CtMi-2Zpv
+	id 1xGc72-0000000CtNY-3lqR
 	for linux-phy@lists.infradead.org;
-	Tue, 13 Oct 2026 13:00:11 +0000
+	Tue, 13 Oct 2026 13:00:12 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id B5E75600D1
-	for <linux-phy@lists.infradead.org>; Tue, 13 Oct 2026 13:00:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6A67D1F00899
-	for <linux-phy@lists.infradead.org>; Tue, 13 Oct 2026 13:00:09 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 6403E43AC9;
+	Tue, 13 Oct 2026 13:00:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C1DDA1F000FF;
+	Tue, 13 Oct 2026 13:00:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1791896409;
-	bh=+f7hjFqoYYqzepasa7AMCSjMXUQ0fFSA/uS2EJqU4CM=;
-	h=From:In-Reply-To:References:Date:Subject:To:Cc;
-	b=lYz0A2VGRIjTym12aH7Axy6K6VnTpv7jGWciRk1bblvGAYscj441T/pFP2TA0/JxU
-	 NPDTi5RsDCOwHAzVLSuPBzzLdw5WHJ0vxu7/xPPvq03fKOLFHjtvV9oSf937mmX8kY
-	 wYUrRJI4AgfjY0NF9y9rT95umNJUCzazccQ2MJAypFke97E0ZO3YONDyCLcFqwy/I8
-	 kE8SuLO5Y0TStqcx2Ek+ZaGX1qL62tMg4YJQ+IZ3KxDnjYysblmyIDDVjLK8ey1nCU
-	 zXTrSnHu/T7h2hG6qP89QwF/Rt4ZPOil3/XNvLobxi3/mJ91/h3qiKFEGxMwvNvgjV
-	 9E4/xQgc8QrhQ==
-Received: by mail-lj1-f176.google.com with SMTP id 38308e7fff4ca-3a76ac0bdafso40626321fa.1
-        for <linux-phy@lists.infradead.org>; Tue, 13 Oct 2026 06:00:09 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AKwUvByZiyzhtALvIMoxRW+PMvbUYtKhcHsR07pxlEHJnvvntVKlLI3Z4LLox1XRw2nLVbBTF7XiE/OPCI0=@lists.infradead.org
-X-Gm-Message-State: AFq9FYKv0iEPVmLooeHbrqrpPCzfy5ZS2OR+4wHPKm7pnEI7wFFp1HeN
-	PET6cwe6Ht25PFQlLPoe53sYizHe/0n1k/AF0zqTpPWLzhMHwm53GeZOYEwtXnf19PldEC5hjtR
-	SmgVI4cZ5b7+nAim04TstUGncaNvcgK0Lc/ysx4b6Mw==
-X-Received: by 2002:a2e:a985:0:b0:3a9:829e:1def with SMTP id
- 38308e7fff4ca-3a9c2b39c17mr26551871fa.21.1791896408192; Tue, 13 Oct 2026
- 06:00:08 -0700 (PDT)
-Received: from 969154062570 named unknown by gmailapi.google.com with
- HTTPREST; Tue, 13 Oct 2026 09:00:06 -0400
-Received: from 969154062570 named unknown by gmailapi.google.com with
- HTTPREST; Tue, 13 Oct 2026 09:00:06 -0400
-From: Bartosz Golaszewski <brgl@kernel.org>
-In-Reply-To: <20261008015017.3359804-4-shengchao.guo@oss.qualcomm.com>
-MIME-Version: 1.0
-References: <20261008015017.3359804-1-shengchao.guo@oss.qualcomm.com> <20261008015017.3359804-4-shengchao.guo@oss.qualcomm.com>
-Date: Tue, 13 Oct 2026 09:00:06 -0400
-X-Gmail-Original-Message-ID: <CAMRc=MefoZdGp__cRjUigLeYoiFbrm+Pw1n-XHJnhggMcBVP9A@mail.gmail.com>
-X-Gm-Features: AclHuK9rvV4-J4UvpGWlPsTNZi6lIIFpSgWSmTv6XmB-X6vr7YFYN1b-k_O-n6g
-Message-ID: <CAMRc=MefoZdGp__cRjUigLeYoiFbrm+Pw1n-XHJnhggMcBVP9A@mail.gmail.com>
-Subject: Re: [PATCH 3/3] phy: phy-snps-eusb2: Enable AHB2PHY bus clock on Nord
-To: Shawn Guo <shengchao.guo@oss.qualcomm.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Abel Vesa <abelvesa@kernel.org>, Bartosz Golaszewski <brgl@kernel.org>, 
-	Taniya Das <taniya.das@oss.qualcomm.com>, 
-	Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, Vinod Koul <vkoul@kernel.org>
+	s=k20260515; t=1791896412;
+	bh=jkn00oKNilqawMytVOgJxaKIXAtfj8HSDkaiQNLRYgI=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=V1xvDhsR8EK8bwdQiFPZqK3arBNNSPIfLZf1Pm4ZPVewADGjyzUVOZg8/w0x26one
+	 vCFX4l+ahbDdbWwe90P+fASGoLBFP8LLZw9z8/5ODH0VD1q4nf8D+sVCNSjxL6rUkx
+	 nlezNQj1LN0F6QBxvWjJ34JQey9B3G3q6wG8Ht0NluP8QS6HCddKtJF5SmATsc/vlm
+	 7HVpTU7tJ4K9rspY0VbZGr1giJgwCClcKNdhYyzgM94jsNBr6dH0nvqNK7okG4Lzrb
+	 HzHZ2boO8Vv08vGAoMAJRANEd+zN52mSTh27Bmsu1fW62l0mPo2O9LChUBz1DvL8XJ
+	 hJ/sZDBxzJ9OA==
+Message-ID: <sashiko-outbox-169764@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v1 5/6] drm/rockchip: analogix_dp: Add support for
+ RK3568
+To: "Damon Ding" <damon.ding@rock-chips.com>
+Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-phy@lists.infradead.org, robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20261013124946.1807886-6-damon.ding@rock-chips.com>
+References: <20261013124946.1807886-1-damon.ding@rock-chips.com>
+ <20261013124946.1807886-6-damon.ding@rock-chips.com>
+Date: Tue, 13 Oct 2026 13:00:11 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,33 +63,55 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 8 Oct 2026 03:50:17 +0200, Shawn Guo
-<shengchao.guo@oss.qualcomm.com> said:
-> On Nord, the eUSB2 PHY registers sit behind the AHB2PHY_0 bridge, gated
-> by NE_GCC_AHB2PHY_CLK. The Nord PHY currently matches the sm8550
-> fallback, which only requests the "ref" clock, so the bridge clock is
-> never enabled by the PHY. When nothing else holds it, e.g. on boards
-> where only the USB20-only controller is in use, clk_disable_unused()
-> gates the bridge and PHY init accesses go nowhere:
->
->   xhci-hcd xhci-hcd.2.auto: can't setup: -110
->
-> Add Nord-specific match data that requests both "ref" and "bus" clocks,
-> reusing the existing Qualcomm init sequence. The bus clock is enabled
-> and disabled together with the ref clock in phy init/exit.
->
-> Signed-off-by: Shawn Guo <shengchao.guo@oss.qualcomm.com>
-> ---
-
-Reviewed-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
-Tested-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIHJvY2tjaGlwL2RwOiB1
+bmNoZWNrZWQgTlVMTCBwb2ludGVyIGRlcmVmZXJlbmNlIG9uIG1pc3NpbmcgR1JGIHByb3BlcnR5
+Ci0tCgpjb21taXQgOWE2ZTZmNDVjODU0YzIyZjI0ZDQwM2NmOGJkYWI3YTA1MDQxOTliNgpBdXRo
+b3I6IERhbW9uIERpbmcgPGRhbW9uLmRpbmdAcm9jay1jaGlwcy5jb20+Cgpkcm0vcm9ja2NoaXA6
+IGFuYWxvZ2l4X2RwOiBBZGQgc3VwcG9ydCBmb3IgUkszNTY4CgpUaGUgUkszNTY4IGVEUCBjb250
+cm9sbGVyIGRvZXMgbm90IHJlcXVpcmUgYW55IEdSRiBjb25maWd1cmF0aW9ucywKc28gbWFrZSB0
+aGUgInJvY2tjaGlwLGdyZiIgcHJvcGVydHkgb3B0aW9uYWwuICBBbHNvIGVuYWJsZSB0aGUKb3B0
+aW9uYWwgYXZkZC0wdjkgYW5kIGF2ZGQtMXY4IHN1cHBsaWVzIHdoaWNoIHBvd2VyIHRoZSBlRFAg
+UEhZLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUvZHJtL3JvY2tjaGlwL2FuYWxvZ2l4X2Rw
+LXJvY2tjaGlwLmMgYi9kcml2ZXJzL2dwdS9kcm0vcm9ja2NoaXAvYW5hbG9naXhfZHAtcm9ja2No
+aXAuYwo+IC0tLSBhL2RyaXZlcnMvZ3B1L2RybS9yb2NrY2hpcC9hbmFsb2dpeF9kcC1yb2NrY2hp
+cC5jCj4gKysrIGIvZHJpdmVycy9ncHUvZHJtL3JvY2tjaGlwL2FuYWxvZ2l4X2RwLXJvY2tjaGlw
+LmMKPiBAQCAtMzIwLDggKzMyMCw5IEBAIHN0YXRpYyBpbnQgcm9ja2NoaXBfZHBfb2ZfcHJvYmUo
+c3RydWN0IHJvY2tjaGlwX2RwX2RldmljZSAqZHApCj4gIAlzdHJ1Y3QgZGV2aWNlICpkZXYgPSBk
+cC0+ZGV2Owo+ICAJc3RydWN0IGRldmljZV9ub2RlICpucCA9IGRldi0+b2Zfbm9kZTsKPiAgCXN0
+cnVjdCBjbGsgKmNsazsKPiArCWludCByZXQ7Cj4gIAo+IC0JZHAtPmdyZiA9IHN5c2Nvbl9yZWdt
+YXBfbG9va3VwX2J5X3BoYW5kbGUobnAsICJyb2NrY2hpcCxncmYiKTsKPiArCWRwLT5ncmYgPSBz
+eXNjb25fcmVnbWFwX2xvb2t1cF9ieV9waGFuZGxlX29wdGlvbmFsKG5wLCAicm9ja2NoaXAsZ3Jm
+Iik7Cj4gIAlpZiAoSVNfRVJSKGRwLT5ncmYpKQo+ICAJCXJldHVybiBkZXZfZXJyX3Byb2JlKGRl
+diwgUFRSX0VSUihkcC0+Z3JmKSwKPiAgCQkJCSAgICAgImZhaWxlZCB0byBnZXQgcm9ja2NoaXAs
+Z3JmIHByb3BlcnR5XG4iKTsKCltTZXZlcml0eTogSGlnaF0KU2luY2UgdGhpcyBjaGFuZ2VzIHRo
+ZSBsb29rdXAgdG8gc3lzY29uX3JlZ21hcF9sb29rdXBfYnlfcGhhbmRsZV9vcHRpb25hbCgpLApk
+cC0+Z3JmIHdpbGwgYmUgTlVMTCB3aGVuIHRoZSBwcm9wZXJ0eSBpcyBhYnNlbnQsIGFuZCB0aGUg
+SVNfRVJSKCkgY2hlY2sgd2lsbApwYXNzLgoKQ2FuIHRoaXMgY2F1c2UgYSBOVUxMIHBvaW50ZXIg
+ZGVyZWZlcmVuY2UgZm9yIGxlZ2FjeSBTb0NzIChsaWtlIFJLMzI4OCwgUkszMzk5LApvciBSSzM1
+ODgpIGlmIHRoZSBkZXZpY2UgdHJlZSBpcyBtaXNzaW5nIHRoZSBwcm9wZXJ0eT8KCkZvciB0aG9z
+ZSBvbGRlciBTb0NzLCB0aGUgY2hpcF9kYXRhIHNwZWNpZmllcyB2YWxpZCBHUkYgZmllbGRzLiBE
+dXJpbmcgZGlzcGxheQppbml0aWFsaXphdGlvbiwgdGhlIGRyaXZlciBjYWxscyByb2NrY2hpcF9n
+cmZfZmllbGRfd3JpdGUoKToKCmRyaXZlcnMvZ3B1L2RybS9yb2NrY2hpcC9hbmFsb2dpeF9kcC1y
+b2NrY2hpcC5jOnJvY2tjaGlwX2dyZl9maWVsZF93cml0ZSgpIHsKCWlmICghZmllbGQtPnZhbGlk
+KQoJCXJldHVybiAwOwoKCW1hc2sgPSBHRU5NQVNLKGZpZWxkLT5tc2IsIGZpZWxkLT5sc2IpOwoJ
+dmFsIDw8PSBmaWVsZC0+bHNiOwoKCXJldHVybiByb2NrY2hpcF9ncmZfd3JpdGUoZ3JmLCBmaWVs
+ZC0+cmVnLCBtYXNrLCB2YWwpOwp9CgpUaGlzIGZvcndhcmRzIHRoZSBwb3RlbnRpYWxseSBOVUxM
+IGdyZiBwb2ludGVyIHRvIHJvY2tjaGlwX2dyZl93cml0ZSgpIGFuZApldmVudHVhbGx5IHRvIHJl
+Z21hcF93cml0ZSgpLCB3aGljaCBkZXJlZmVyZW5jZXMgaXQ6Cgpkcml2ZXJzL2Jhc2UvcmVnbWFw
+L3JlZ21hcC5jOnJlZ21hcF93cml0ZSgpIHsKCS4uLgoJaWYgKCFJU19BTElHTkVEKHJlZywgbWFw
+LT5yZWdfc3RyaWRlKSkKCQlyZXR1cm4gLUVJTlZBTDsKCS4uLgp9CgpTaG91bGQgcHJvYmUgdmFs
+aWRhdGUgdGhhdCBkcC0+Z3JmICE9IE5VTEwgaWYgdGhlIGNoaXAgdHlwZSByZXF1aXJlcyBpdCwK
+cmF0aGVyIHRoYW4gYWxsb3dpbmcgcHJvYmUgdG8gc3VjY2VlZCBhbmQgY2F1c2luZyBhIGtlcm5l
+bCBvb3BzIGxhdGVyPwoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5k
+ZXYvIy9wYXRjaHNldC8yMDI2MTAxMzEyNDk0Ni4xODA3ODg2LTEtZGFtb24uZGluZ0Byb2NrLWNo
+aXBzLmNvbT9wYXJ0PTUKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0
+cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LXBoeQo=
