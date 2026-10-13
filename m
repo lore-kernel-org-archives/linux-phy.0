@@ -4,134 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F298CC6B16
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Oct 2026 14:26:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5FD26CC6B08
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Oct 2026 14:37:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1Axy7n6sYZRSSOQAx0ylmtIDMYZ7Cec3yAHMNix9Pwg=; b=H0Qinvql0D6DwA
-	8xqtJfljwjvcjEFNbDjMX6fsmw8IgDg5arPVc6hkLbi5ecwJCl3OmPruJLpoRvgtmFnFVAiTagtNO
-	+dzm1DpZ9HZ29VlxkWB4FwL2KioiPxLG+b48+DTGcCtsGhpSJp1zK5kPUyzATp8u0imJhjLv12DhS
-	qaVGOOmnQ8pQv8hkFkbVVs43S3uPj2java8dzyXdanpPCvTnYv7hK2fbxi9ipEbZ41CII15ZPvKuY
-	/ntahh0fOyfkrSQIDuH4OuZsGOsMgPN76T4ukxwkj7u3i5xqH7iiSv71HM+Hd88gh3QMWF13oEzp9
-	GDTxCRayt5s+lqjiENTA==;
+	List-Owner; bh=ZGPi81IJYPBItYP+D3j/mUNKjaoBYUzTCGZjzyVDsSI=; b=Iq71h+AZkY8nTG
+	hSqXNk9IjwXPQGWp8ryZFS3pPacldhipak4X3a6jqWloAEMVYLolXLHHvjTH3Isr1L1YR1zQD50CW
+	znBrUhgDFXb8qSidLYycQqD+0YI4fn6khb6S83S+NYAhAUfCe5sr1lAWTTfv6lqgkx59oyFiHw035
+	mctc0uuCHHeOqT9gDfJZ/RGiCPv0OvGS+/3dOxKNOyWNawRuUakdjeXxjhDNWObYfGsON23z8p/h4
+	WNSkfa8qKQO+BgGe08B7u4/pqlOi8oKanOBztOmM2FEtKH9PxDLWS6UFoh3LbAeZK8kv6AOHj5iLJ
+	5oxwLJGiCYpbHGYsnNvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGdSh-0000000D5Q9-3g6L;
-	Tue, 13 Oct 2026 14:26:39 +0000
-Received: from mail-westusazon11022076.outbound.protection.outlook.com ([52.101.43.76] helo=SJ2PR03CU001.outbound.protection.outlook.com)
+	id 1xGddI-0000000D8Ow-45bN;
+	Tue, 13 Oct 2026 14:37:36 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGdSd-0000000D5Om-1bF4
-	for linux-phy@lists.infradead.org;
-	Tue, 13 Oct 2026 14:26:36 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=ZIWYYVoQF8QtA47UGDopwXMzi4Zia9wMzfk2D9MGG7LqOGgzlmtNg+FGG9DPpdltd96FqPJA5wZJArzr7FsFQaab0dyUY0Y6TEq65A7eVpFtx4enGYLxcfi94VONIw4gE62Ef7U6z4WHs8KrWyjG2m2P9DDzItgq7XJV3erVd6p/7B5lI/EXj6Ue6ffVxB5dYX7bzCdkJY3luIhQfw0BGFurgQXCP/oyjJBUlrb3Lpsj9N/RempQnLiAqnhjrkeSu7+9dVGMNfK5ZVEbBaaHwcOkIKbkb5v3mWAD+psusqtmgM8e6lkwFEtR9oAwioadN/a6jtbIZVNYOWCO/O5zmQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=TzuXkWtft/NRmmBriE60SwiLFY8ZDsH64Ez4OgqK7QE=;
- b=khgpC06s3J50mDP9Dpk2a4BnOvWaYrkDaNC+F12CAJzvSlLpc6RvUTWPQvhrRh2K7BtZf9G7RVjPlGzb3616y1IADIH2bMfwciPpN31+qaOm7fEVm87OcbVXZxpT0SCfEjgZNJSHKwd5hUwObS6HGMrlrz0KCnqTaBvWsD/F5VQjpNfkE6O33SHZxMoc6/Nl9bSUJScWEkQwloSpq9tyHo6K2wJC/xxSzqVSSgepc+N49DatJ5zn3j5Q9GGfwKNmurE5qgSLXRR1IkHylaDbxg6PjVYkDY31m7PPlWgGoXSP9SnUv3NEZdjv04pK+J5G2JHytdDF/VgHfdoGFr+kmQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=trailworks.io; dmarc=pass action=none
- header.from=michaelburch.net; dkim=pass header.d=michaelburch.net; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=michaelburch.net;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=TzuXkWtft/NRmmBriE60SwiLFY8ZDsH64Ez4OgqK7QE=;
- b=pFXqpAGIW7UcAQNfYwMuVFf7vm31QoeR8skkWepOYx5GAg3KtpFHTUONTElFEnorVCot1o/YUt3c0CxvyTCFXP9MPTd1NUcQ1X3WAW4T4lLXFqifEh95v/eaTr0SbVTbEUBgtaVJSzAizJ6Ur0EiX7GqA0QIQcbIGGkwQpM2KRdzDgQO0sg4UCTTrCVNNk2GUD8xgFHcReJCz3jSVoB+/aKP6t7G/fsffmNHKzgADNjnrRK3D1YAuy3yOtYmR4B0lwIEoxI4qqfAGLqPH5ckyDS/YaukgVzota/4HwK24Hiew+Ritg9xMFvnEQ0f4i1K3parkwCzF81Jgqv3/K554A==
-Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=michaelburch.net;
-Received: from PH7PR01MB8123.prod.exchangelabs.com (2603:10b6:510:2a4::19) by
- SN4PR01MB7454.prod.exchangelabs.com (2603:10b6:806:201::7) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.496.23; Tue, 13 Oct 2026 14:26:30 +0000
-Received: from PH7PR01MB8123.prod.exchangelabs.com
- ([fe80::da98:a31d:73b6:7930]) by PH7PR01MB8123.prod.exchangelabs.com
- ([fe80::da98:a31d:73b6:7930%5]) with mapi id 15.21.0496.015; Tue, 13 Oct 2026
- 14:26:30 +0000
-From: Michael Burch <me@michaelburch.net>
-To: Qiang Yu <qiang.yu@oss.qualcomm.com>
-Cc: Manivannan Sadhasivam <mani@kernel.org>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	=?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Vinod Koul <vkoul@kernel.org>,
+	id 1xGdd8-0000000D8JR-0C8w;
+	Tue, 13 Oct 2026 14:37:35 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id EC50A1A01A5;
+	Tue, 13 Oct 2026 16:37:21 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com [134.27.226.22])
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id C89A01A00E9;
+	Tue, 13 Oct 2026 16:37:21 +0200 (CEST)
+Received: from lsv051416.swis.nl-cdc01.nxp.com (lsv051416.swis.nl-cdc01.nxp.com [10.168.48.122])
+	by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 516EE202DA;
+	Tue, 13 Oct 2026 16:37:21 +0200 (CEST)
+Date: Tue, 13 Oct 2026 16:37:21 +0200
+From: Jan Petrous <jan.petrous@oss.nxp.com>
+To: Frank Li <Frank.li@oss.nxp.com>
+Cc: Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>,
+	NXP S32 Linux Team <s32@nxp.com>, Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Ghennadi Procopciuc <ghennadi.procopciuc@nxp.com>,
+	Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	Bogdan Hamciuc <bogdan.hamciuc@nxp.com>,
+	Ionut Vicovan <ionut.vicovan@nxp.com>, Andrew Lunn <andrew@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Russell King <linux@armlinux.org.uk>,
+	Clark Wang <xiaoning.wang@nxp.com>,
 	Philipp Zabel <p.zabel@pengutronix.de>,
-	Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
-	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-	Abel Vesa <abel.vesa@oss.qualcomm.com>,
-	linux-arm-msm@vger.kernel.org,
-	linux-pci@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH 4/4] phy: qcom-qmp-pcie: Split phy_ops into init/exit/reset/power_on
-Date: Tue, 13 Oct 2026 09:26:19 -0500
-Message-ID: <20261013142621.10328-1-me@michaelburch.net>
-X-Mailer: git-send-email 2.56.0
-In-Reply-To: <20260915-align_pcie_init_sequence_0916-v1-4-0b2195836f30@oss.qualcomm.com>
-References: <20260915-align_pcie_init_sequence_0916-v1-0-0b2195836f30@oss.qualcomm.com> <20260915-align_pcie_init_sequence_0916-v1-4-0b2195836f30@oss.qualcomm.com>
-X-ClientProxiedBy: SA0PR12CA0021.namprd12.prod.outlook.com
- (2603:10b6:806:6f::26) To PH7PR01MB8123.prod.exchangelabs.com
- (2603:10b6:510:2a4::19)
+	Maxime Chevallier <maxime.chevallier@bootlin.com>,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Chester Lin <chester62515@gmail.com>,
+	Matthias Brugger <mbrugger@suse.com>,
+	Ghennadi Procopciuc <ghennadi.procopciuc@oss.nxp.com>,
+	Frank Li <Frank.Li@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>,
+	Richard Cochran <richardcochran@gmail.com>,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	netdev@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+	imx@lists.linux.dev, linux-pci@vger.kernel.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	Vincent Guittot <vincent.guittot@linaro.org>
+Subject: Re: [PATCH RFC v3 03/12] dt-bindings: PCI: nxp,s32g-pcie: Fix SerDes
+ PHY phandle in example
+Message-ID: <as5CIYxKJTra4hqM@lsv051416.swis.nl-cdc01.nxp.com>
+References: <20260919-s32g_serdes-v3-0-9d68868c1e89@oss.nxp.com>
+ <20260919-s32g_serdes-v3-3-9d68868c1e89@oss.nxp.com>
+ <as0qORxP0Roh9ktO@SMW015318>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PH7PR01MB8123:EE_|SN4PR01MB7454:EE_
-X-MS-Office365-Filtering-Correlation-Id: 3746569e-a5ff-48e4-b389-08df2935f96f
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|1800799024|376014|366016|7416014|261009223027099003|10067099003|4143699003|18002099003|22082099003|56012099006;
-X-Microsoft-Antispam-Message-Info: zORX+ggSHsZk57BKCyF2ET2J2GEphkyMX0IH95O111cR9kJbr5pxgDkpqj7rdZEJimY5txzzRKVQgvzmI/+wvA5G2BpemlRERw8ZKpFtbsVuLkrvHTiqF3Kn1fO6g/D2Nq9MCJR6FyklUfY5D18SvBxTo1PMwtXXJXn1WgCXsMIXaZ1FaEyWfuzd3TVAIXywFeeAbi8mzw8cXvZlvJ7+2cwMGLfFDucm5F1NGYHi/FLVScWR1/gCDZKQ3iVz3Nj5xhsL4f+LpKS2nJLS/sJ3ZlwP8zTNXNSVsmApSDVdhNLLwqTJgiYjqDFeOL8si935zbOmLJd0ww0saY2+u3vLy1ciTBI5tArjaDvSkIOnfBBxoOAxWjBTtkIc7GsVJsCO0uSkO1glqyWQGnexpHbM7ZbboqaAO14AXjKi8vXNF9ifFWogXD+mUhEsOJGJJ+lJ4ZzN53PnQB+/Qb7qynqX9I70qAe2+X3Z0jC0scYFRE6ak8rkSxEF+qgKb+QIJ2YXCtkr3q+Q+W02iDze0OTctHAKZ8aiVvDCrIEpfXM6XN6j+KYMMbA7ZA20gg29mCfJYQwcesJCvJOt+VfmSvHoJhF9DDToE+p/iy0j03mWM54=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PH7PR01MB8123.prod.exchangelabs.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(1800799024)(376014)(366016)(7416014)(261009223027099003)(10067099003)(4143699003)(18002099003)(22082099003)(56012099006);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?s1/f5lfkzDrt3PW52KiU+PlFOd3Pt7TSodOrJEMMR/qak4avkjD2b+5VtpQe?=
- =?us-ascii?Q?+HgUuYsmP0JR+/qiRcpUtXhJIDxSquchFFnrk3oHkjjS7jkgXsDPHfBs/PGH?=
- =?us-ascii?Q?I066Quf40sNj4IbFHAkNB6DNOTwnpBsxWJicOIr9YbDzuSFAHRtl6TPhrozD?=
- =?us-ascii?Q?ivNm4z/DWkmJbf9+fLNThvaQjB5GfY0p4jdXrYRx5uq6lTi0NgTMS2nQ5gcw?=
- =?us-ascii?Q?RzaqA67yTWdY6EByZzufxIME4f5ZoHM8oVele7qkmCnNnRtr+6CEdlz6RVUU?=
- =?us-ascii?Q?LZ6Gm4aL1Rur1UmCrcYi0/PC3xqEeKimC0QLZWqb7w+O+8ML/7t0jfVLHSsQ?=
- =?us-ascii?Q?MVZEt/Ue6D0dHP4w7eON5csjp97RhDH6MbCIZGyY6rYn9/cgeDi2TS03RVuJ?=
- =?us-ascii?Q?M11nfbW6HUpZjFbJatdtnsPGJdrObrnqEBxVHGwcw9OKjjRZwT5BlYLgWioq?=
- =?us-ascii?Q?07v5hUOD3ouLJWGY/OKgMJMRLgoqxsB/U2ysCBbhZXHFQ0wNkve0VtQbDMda?=
- =?us-ascii?Q?Lwh6eVpxgk6G5uHt4rg/GFIwCxCtnpxtwixUVKlYCT3fR9m1/JLh5b4C71Hb?=
- =?us-ascii?Q?jlxiUMYgVvxuQr5TKnPTnb2Iz+WagbuHUtJ7QApWJcK3JWdMqPs+I5C8RazQ?=
- =?us-ascii?Q?sKakyJsKkS02ak+A4dTv+S9U8NOFXHQL8/yGAFB6kK3M7hbrJcQlIu3HF7kA?=
- =?us-ascii?Q?rdEFs/+e9hTAwNwHw0NAwVr6OBjRC5aJ5K8NkJWjmJN0t/Y5Ahw+RPGflq2/?=
- =?us-ascii?Q?NdE03hVB1vCv8EHRyBIOuGAwryzaiQvArNAHECIq5c5OCDfh/nXMlVzYEvc4?=
- =?us-ascii?Q?voK9b2wTrUVeDY553ALa5/gNnzV2S03dc2Voqlc5oejdG6wp+xTWfnxYrNvR?=
- =?us-ascii?Q?49TuchyOuW+TeynUTi/vWLj8VFkBUYkwbymldWsfeLYut3PD7+S2pVSb4L/q?=
- =?us-ascii?Q?z25MTsJsr1SXU1DtW3gGf5SKVHT2VNwZu6tX2xHxH4MpPGMw5PbfotHGDVnL?=
- =?us-ascii?Q?T/FelqCV3DVbCpopvKmFCye5NPurm0oEoxnZZ7EnaljiwDnoNAButCj0GSSW?=
- =?us-ascii?Q?f3jTwx1lIfRcJpHb5TDIuo2hKbbMQhij8L7UH7WyTS1UipgdhtaWDFf+72Cd?=
- =?us-ascii?Q?q0DbfbzYELqoA4/JDOcVpY5/GcBGiu6ddO0haTjahl3va2SCTwDW+GZE3vr8?=
- =?us-ascii?Q?QuvWmaQMFHzEhrfuGBiCtPrIi3a0RA7zgm5Ypa9qLOP+gr4qVDBAxdH9aeLV?=
- =?us-ascii?Q?S50bBA13W44GukIpwWgLUb8ZfFpXSFplG7KeVKg6kcqkeXYZ7l0ReuTs4UQ0?=
- =?us-ascii?Q?aV5N+2sU0YP+6vQctBqWaoh8Ud+HdaZn8uFXu4GYdIW87XBUk//a5Sz2xh2W?=
- =?us-ascii?Q?4DRfJkPy2K1dOaxIvS4KKAN0d9YEbxgX4eAdVW7yMScOxr42ZuwdbRiRh/VQ?=
- =?us-ascii?Q?e+lxZ7S6rIuXWqX9LlpbuOa6GnOEBVA9+1MdYU6Qo0zX5Dh7kXpacvZI8AMo?=
- =?us-ascii?Q?GZYU/FgmwNgYhdb8KogQXfwWfSnL9NALsNCn28s1lWuvTpkK8vEP4MDPd54h?=
- =?us-ascii?Q?mi2jaK0jyV+Ijm0LP9GJP2bI/0K138WaafDjcn+MIbTbQ3XBc/QBYVktqh1D?=
- =?us-ascii?Q?Nwru3knXlKHoJsCQ8jhO9HpgXNcefEkyPFDCmlXG5+Y/8yh7TXxC2dXYO32E?=
- =?us-ascii?Q?2NhqunD5K2YPbb6hMAc4f1L37JR3hv1SZASAnFFzech5kYNVOf4etPfSD9iL?=
- =?us-ascii?Q?CRXd3NzH2Q=3D=3D?=
-X-OriginatorOrg: michaelburch.net
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3746569e-a5ff-48e4-b389-08df2935f96f
-X-MS-Exchange-CrossTenant-AuthSource: PH7PR01MB8123.prod.exchangelabs.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Oct 2026 14:26:30.5887
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 8256b244-08e6-4df2-b146-877069d9ce10
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: TfsgLxjJdoefzb6qf3Wq2b+gt4CyoYYI66wfYysSqwl7N5cPFY4hZYJA6cklIM8k4yb/E+9J8+lZthPdUgOotg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN4PR01MB7454
+Content-Disposition: inline
+In-Reply-To: <as0qORxP0Roh9ktO@SMW015318>
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261013_072635_426001_CCD42548 
-X-CRM114-Status: GOOD (  12.31  )
+X-CRM114-CacheID: sfid-20261013_073726_363855_872BEC68 
+X-CRM114-Status: GOOD (  24.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,57 +106,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 15, 2026 at 11:04:24PM -0700, Qiang Yu wrote:
-> -	skip_reset = qmp->skip_init && !qphy_checkbits(pcs, cfg->regs[QPHY_PCS_STATUS],
-> +	qmp->skip_reset = qmp->skip_init && !qphy_checkbits(pcs, cfg->regs[QPHY_PCS_STATUS],
->  							    cfg->phy_status);
+On Mon, Oct 12, 2026 at 01:43:05PM -0500, Frank Li wrote:
+> On Sat, Sep 19, 2026 at 08:54:31AM +0200, Jan Petrous via B4 Relay wrote:
+> > [You don't often get email from devnull+jan.petrous.oss.nxp.com@kernel.org. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]
+> >
+> > From: "Jan Petrous (OSS)" <jan.petrous@oss.nxp.com>
+> >
+> > The example references the SerDes PHY as
+> >
+> >   phys = <&serdes0 PHY_TYPE_PCIE 0 0>;
+> >
+> > i.e. the SerDes node itself with three PHY cells. That does not match
+> > the SerDes binding: the per-lane child node is the generic PHY
+> > provider and carries '#phy-cells = <0>', while the SerDes node itself
+> > has no '#phy-cells' at all.
+> >
+> > Point the example at the PCIe lane child instead, which is also what
+> > the S32G3 board device trees use. The dt-bindings/phy/phy.h include is
+> > dropped along with the now-unused PHY_TYPE_PCIE constant.
+> >
+> > The schema itself is unchanged; 'phys: maxItems: 1' already describes
+> > the corrected form.
+> >
+> > Signed-off-by: Jan Petrous (OSS) <jan.petrous@oss.nxp.com>
+> > ---
+> >  Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml | 3 +--
+> >  1 file changed, 1 insertion(+), 2 deletions(-)
+> >
+> > diff --git a/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml b/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml
+> > index 66a050028278..29323e50bd8b 100644
+> > --- a/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml
+> > +++ b/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml
+> > @@ -82,7 +82,6 @@ unevaluatedProperties: false
+> >  examples:
+> >    - |
+> >      #include <dt-bindings/interrupt-controller/arm-gic.h>
+> > -    #include <dt-bindings/phy/phy.h>
+> >
+> >      bus {
+> >          #address-cells = <2>;
+> > @@ -124,7 +123,7 @@ examples:
+> >                  ranges;
+> >
+> >                  device_type = "pci";
+> > -                phys = <&serdes0 PHY_TYPE_PCIE 0 0>;
+> > +                phys = <&serdes0_pcie0>;
+> 
+> I don't think it fix somethings. The "serdes0" just a label, point to
+> provider, which is not neccsary that "#phy-cells" is 0.
+> 
+> Examples just show need how many phys and don't care about phy provider's
+> arguments
+> 
 
-[...]
+The example validates either way, agreed. The three cells are the
+'#phy-cells = <3>' of the downstream nxp,s32cc-serdes binding, which
+was never posted upstream; patch 1 is the only SerDes binding for S32G
+and has no three-cell provider. I would rather have the example match
+it.
 
-> +static int qmp_pcie_reset(struct phy *phy)
-> +{
-> +	struct qmp_pcie *qmp = phy_get_drvdata(phy);
-> +	const struct qmp_phy_cfg *cfg = qmp->cfg;
-> +	int ret;
-> +
-> +	if (qmp->skip_reset)
-> +		return 0;
+The form depends on the outcome of your patch 1 comment, so I will
+keep this patch in sync with that. If you prefer the phys line
+untouched, I can drop it and keep only the ranges fix v4 adds here.
 
-This keeps the skip from 910b828b22b7 ("phy: qcom: qmp-pcie: Skip PHY
-reset if already up"). That skip stops v7.3-rc7 from booting on the
-Dell XPS 13 9345 (X1E80100), and I've sent a revert [1].
-
-UEFI boots from the NVMe behind pcie6a, so the PHY is already up when
-Linux probes it and the no-csr reset is skipped. pcie-qcom still
-asserts PERST# and resets the controller, so the link has to train
-again, and it doesn't:
-
-  qcom-pcie 1bf8000.pcie: Device found, but not active
-
-910b828b22b7 only changes whether that reset runs, and reverting it
-fixes boot.
-
-With patch 1/4, X1E (qcom_pcie_init_2_7_0()) would run:
-
-  qcom_pcie_perst_assert()
-  phy_init()                        skip_reset = true
-  reset_control_assert(res->rst)
-  phy_reset()                       returns 0, PHY not reset
-  reset_control_deassert(res->rst)
-  phy_power_on()                    skip_init: no tables, no SERDES start
-
-That is the same sequence as 910b828b22b7, so this series would bring
-the failure back. It also doesn't follow the HPG order in the cover
-letter: the controller reset is toggled, the PHY reset isn't.
-
-Could qmp_pcie_reset() always toggle the reset that skip_init selects,
-with qmp->skip_reset dropped? If link retention comes back, the
-controller knows whether it is keeping the link, so it can skip both
-its own reset and phy_reset() then.
-
-[1] https://lore.kernel.org/r/20261013-qmp-pcie-skip-reset-revert-v1@michaelburch.net
-
-Michael
+BR.
+/Jan
 
 -- 
 linux-phy mailing list
