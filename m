@@ -4,67 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70DF2CC6B1D
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Oct 2026 02:51:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BFB3BCC6B1A
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Oct 2026 07:23:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uZTHZr+8aHfWILHCkJ3u1CBGhZASq+zI8p413Ed2D2w=; b=JdHabXcmIqTw9k
-	EUYVFNwTuwETFHbbOIi2XjqUqRrrNx7w/5sWozIdQE35Q8Q11ykrW64DEHJME27j1xf4l6Bw61og9
-	D+MY3V4dEHmHhhAUbF0U7NiLpH+khyZ37n5onrDp0kBOerJSYziy9IuBwEnaBmXb8mL0n71Opxzgb
-	KxL8c5WZb/MFQckJeolIavAhlZIM+KAcad6u7CFOTan41nLskjPzk896R0doqqIYSa0mbVQDaXRlh
-	YJrt/Ws+OO7m9iLTiO8IqzZRPLlIC8R6I5CMOsfBXc0S7RsvxyIvzq6oi0ASb7lLbaTbxH7bzYu+Z
-	B++HIfKDM0AEDn08YYjQ==;
+	List-Owner; bh=NvD4JionXQg5+psWSve4tFMB497dEbDmbLthOzdk8hQ=; b=RrkMJZ/XmyHkWS
+	yoxAEmadWsowSakicrrM6QJJYGNwAaXUSYnH+Ujm8P8h4DY2d4VOuys3BDHi3jNV5LmFcIGH6Nude
+	+kQiTGqscbvJBjNj/v1xtzX7FpIlpB4jxJsyY7WyTankpmJ7lx9oJw+gIZ5rfcJHTgELu8BlntayV
+	m2iSgBwQ4gZWTxWx+4UduiMg2WnaethPvcIANatGAMJKmJNla+6erFWEXvC6qIwAqChyhJ2DXGuYZ
+	JD0PgQYiWmkqavC2nehflS1x9GJW9UFUyYrkWQoHZ2G0cuE2cVM4cgOM3YoYBsr7liaIAbyYIk9pP
+	xcB/nAyOjXYsstFYeJZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGp5m-0000000ENsM-0I9x;
-	Wed, 14 Oct 2026 02:51:48 +0000
-Received: from m16.mail.163.com ([117.135.210.2])
+	id 1xGtKe-0000000EjVs-10DF;
+	Wed, 14 Oct 2026 07:23:24 +0000
+Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGp5i-0000000ENs2-45ot
+	id 1xGtKK-0000000EjFj-0d78
 	for linux-phy@lists.infradead.org;
-	Wed, 14 Oct 2026 02:51:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
-	s=s110527; h=From:To:Subject:Date:Message-ID:MIME-Version; bh=ci
-	6lwH7Wlf5uolwLWEhz1tMpvPXE5t0FdSARax8LoT8=; b=GCS0FuDwBl3yq1Hua4
-	y1Q3fmf0QcxS/JH+v1IOl2TFzWR1vTnzfFxqpmfCEXxcyiZBP9k2cDGR1YTP4Dwp
-	csgoq5rPvj3Rpz0WDxWH1HszpLHjuyMKJ0pUjdJyihVvMkK417ctiFAIvd5jzxa0
-	KjGq7PZgk1UdlaOCvRfl3J6OU=
-Received: from localhost.localdomain (unknown [])
-	by gzsmtp2 (Coremail) with SMTP id PSgvCgD3H9kt7s5qJrRlEA--.21370S2;
-	Wed, 14 Oct 2026 10:51:26 +0800 (CST)
-From: Pengpeng Hou <hppiscas@163.com>
-To: konrad.dybcio@oss.qualcomm.com
-Cc: robert.marko@sartura.hr,
-	luka.perkov@sartura.hr,
-	vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	mani@kernel.org,
-	p.zabel@pengutronix.de,
-	linux-arm-msm@vger.kernel.org,
+	Wed, 14 Oct 2026 07:23:08 +0000
+Received: by mail-wr1-x42f.google.com with SMTP id ffacd0b85a97d-48c411d6615so2673527f8f.3
+        for <linux-phy@lists.infradead.org>; Wed, 14 Oct 2026 00:23:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1791962582; x=1792567382; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=HJ88z5GPX8b+VXAqaP3/v3qo/EtaXQO2geHV+4a1+Gc=;
+        b=CocUF8qg9pp2Gr8SoEIdAGuKDwYubGYeY/wVwAN1PzCnZqdtqk+reW6xyRYdrdXKB2
+         9BenJmXzx4KhKlcKCWnSpJNiugL/0vl3M8/3q/ivlZvqN+bi6JbrIaTnx2yzC7V8UTlL
+         OSqMHxtjpYkMlCsRlN93vEngN4eblmmiRYDVvr96FW4MkbYICpNohilB/4OoU9JXmAJJ
+         OMR73MYZGQNAD6T/ARzoOzG+DgQ2Uv5C59q6HcYbfNmVvuoWRNzNfzb6YmvHmrdvG4ZL
+         4j1hISG/AY/8NNbsEdErn5UHEJjyF2jl4zGKVDI24y9IkR44Mu6v4RoMoL2exD1kwChc
+         HbKg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1791962582; x=1792567382;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=HJ88z5GPX8b+VXAqaP3/v3qo/EtaXQO2geHV+4a1+Gc=;
+        b=2Z5xGDJSXk4ZsYmHXZVDJCeUh01jHA66BaLHpx2BGXHlL8MhkI+xd69j6dXST6hhe/
+         MwKpJBRigH+3928o+qgBeZ42kuE6pu+vT+mVgLq6w6OH+zWH+0z3hqh3MvTo9Cu+udu8
+         UM0zrQuL9bCxCxEbKKkmTc7AMpDmLhhQTJHacNjkUVLfAOfXbxzIBjey8RE/hqxnhdXC
+         dGW1gS85Q2X83fC0Lr91hLKUcnh8hvFvRBE0qrDhaVjQgB6eUfarrgLT2sBMYZqgt2Ku
+         P4eWzNguKnnilN2guXl7WW5mye7hVR+JpLu9iXW3nBsvSyayoYF/CysoCknAPLZOgZU7
+         8z3w==
+X-Forwarded-Encrypted: i=1; AKwUvBy8vrLrS0IQ/4w+GKC+ixrYMHPXBWbIO4Bhg+B8CAprhoguKxSeJ3YBYxw6NDqh5OO6AtAvFan7kbA=@lists.infradead.org
+X-Gm-Message-State: AFq9FYLc0cSjvzZKjiHJ6dQahv1RKNrWSga7ICoROalYDqLWIkzQcDHE
+	ZmBmioaRpK9MmXWn6eF/CuvtRW1ahYCjzQowgOZuwkvhF7d0Eei0m9U9
+X-Gm-Gg: AYBFou24xDEdVbSb5G2aqPQHzlPGdYlCmd876sVEWQ5ChvK05OI7zoc4gW9JNFdcS92
+	zw1l4HnoyVi50LOuEyDUw7IKiO5qFGbr1ldvWTMCGf4xurWMGrfcXNrzSwC8IxLEbqrPPl/6WIk
+	w2st7Ts7XOC7qAFB0XB/kqiClPxZTQbbZeB8mqDpUr0nABzbt4t//h78Lt0ytakTzcZvY8Qbtt/
+	NRUScft9FqcwG/YRI31G/j9uojowSrB528L9LOamWSYJ/qBHAf/rhDT/ZygbYQA9KToecdpNH/3
+	tR9z1j6SVA6tJpy7CkFGxdee+adF28/zTDg8aEC0iR4LuMkrXk0QZTDbHJ7R+M5FjuqpamP9Ib3
+	bUTdhBwcZnmgBoULdAzOmhGOaeaCDNiX82sKQiuAkH1jIgeIIcMHnMWZRiiUAIF0wuI8B4jXuA+
+	AB5vv6OQrtloPiziXkJGz6FArfpTgrWaenNbZdoI9KcBdKf0B8II1YJ4H5Q0KAIySOMru3AbjGu
+	pxKA50wZU9hLVGZmyeVF1hi4+XxvyPDq8txW5QabEQW1RYDjrookLooYsb542I+26dzz9Kk5I2K
+	cJTIx1NOniv54AVD3SOqMwYN52pNBCLI0KHB50+ZrEXQZyGOxTgxd9Ms+aAa+A==
+X-Received: by 2002:a05:6000:2dc5:b0:48a:fb26:23a4 with SMTP id ffacd0b85a97d-48dd6517828mr15172799f8f.31.1791962582334;
+        Wed, 14 Oct 2026 00:23:02 -0700 (PDT)
+Received: from navid-pc ([2a01:4b00:a856:6220::a11])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48de3f7f8b8sm8500933f8f.35.2026.10.14.00.23.01
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 14 Oct 2026 00:23:01 -0700 (PDT)
+From: Navid Ghahremani <ghahramani.navid@gmail.com>
+To: linux-arm-kernel@lists.infradead.org
+Cc: arnd@arndb.de,
+	stefandoesinger@gmail.com,
+	krzk@kernel.org,
+	Navid Ghahremani <ghahramani.navid@gmail.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
 	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	hppiscas@163.com
-Subject: Re: [RFC PATCH] phy: qcom: ipq4019-usb: Propagate reset operation failures
-Date: Wed, 14 Oct 2026 10:51:24 +0800
-Message-ID: <20261014025124.81874-1-hppiscas@163.com>
-X-Mailer: git-send-email 2.50.1
-In-Reply-To: <f6f632b9-cc2a-4966-a43b-c474a05da7ca@oss.qualcomm.com>
-References: <20260828091857.8581-1-pengpeng@iscas.ac.cn> <f6f632b9-cc2a-4966-a43b-c474a05da7ca@oss.qualcomm.com>
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v2 10/24] dt-bindings: phy: Add ZTE ZX279128S PCIe PHY binding
+Date: Wed, 14 Oct 2026 08:20:50 +0100
+Message-ID: <20261014072109.1759502-11-ghahramani.navid@gmail.com>
+X-Mailer: git-send-email 2.55.0
+In-Reply-To: <20261014072109.1759502-1-ghahramani.navid@gmail.com>
+References: <20261014072109.1759502-1-ghahramani.navid@gmail.com>
 MIME-Version: 1.0
-X-CM-TRANSID: PSgvCgD3H9kt7s5qJrRlEA--.21370S2
-X-Coremail-Antispam: 1Uf129KBjvdXoWrJry3Ar43JF4UZrW8Gr13CFg_yoWxWrb_u3
-	4Skw17Aw4kta1UtF4UKr43tF9IgrWDAr1rW395ta13t348JrsrWFWDAry5uayrAF4aqr93
-	Gr1Uu34fuwnrZjkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
-	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7VUjahF7UUUUU==
-X-CM-SenderInfo: 5kssx2xfdvqiywtou0bp/xtbC7g4V3WrO7i67vwAA3I
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261013_195143_418538_E4536EE0 
-X-CRM114-Status: UNSURE (   5.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20261014_002304_258242_97118962 
+X-CRM114-Status: GOOD (  11.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,22 +112,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Konrad,
+Add Device Tree binding for the PCIe SerDes PHY found inside the
+topcrm block of the ZTE ZX279128S SoC.
 
-Your comments on the declaration layout and unchecked rollback return
-are valid. Rechecking the provider exposed a more fundamental limitation
-in the RFC's premise: the in-tree IPQ4019 DT uses GCC resets, and
-qcom_reset_set_assert() returns zero after the regmap operations.
+Signed-off-by: Navid Ghahremani <ghahramani.navid@gmail.com>
+---
+ .../bindings/phy/zte,zx279128s-pcie-phy.yaml  | 40 +++++++++++++++++++
+ 1 file changed, 40 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/zte,zx279128s-pcie-phy.yaml
 
-I therefore do not have evidence that the hardware-failure case described
-in the RFC is reported through this provider. Generic reset API errors
-alone do not establish that case on this platform.
-
-Please keep this RFC on hold. I will not respin it as a demonstrated
-IPQ4019 bug fix based only on the local return-value checks.
-
-Thanks,
-Pengpeng
+diff --git a/Documentation/devicetree/bindings/phy/zte,zx279128s-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/zte,zx279128s-pcie-phy.yaml
+new file mode 100644
+index 0000000000..7bfa363294
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/zte,zx279128s-pcie-phy.yaml
+@@ -0,0 +1,40 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/zte,zx279128s-pcie-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: ZTE ZX279128S PCIe PHY
++
++maintainers:
++  - Navid Ghahremani <ghahramani.navid@gmail.com>
++
++description:
++  PCIe PHY block inside the ZTE ZX279128S Top CRM.
++
++properties:
++  compatible:
++    const: zte,zx279128s-pcie-phy
++
++  reg:
++    description: Port index (0 or 1)
++    items:
++      - enum: [0, 1]
++
++  "#phy-cells":
++    const: 0
++
++required:
++  - compatible
++  - reg
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    phy@0 {
++        compatible = "zte,zx279128s-pcie-phy";
++        reg = <0>;
++        #phy-cells = <0>;
++    };
+-- 
+2.55.0
 
 
 -- 
