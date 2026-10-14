@@ -4,94 +4,161 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E88FBCC6B24
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Oct 2026 07:23:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87865CC6B1F
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Oct 2026 09:19:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=00KucJgRI1rt4tkosnNMOe8kvtQPij0fN0VHcg7FwCo=; b=iYiNLusz3lj4wq
-	EHXfVyAcoJty6+hjsnqKS6fTyhjFovsORoq8OhhSnT6xpMNSxxlYiu0KlvxoX4Po/lI5xf1Zm+YFN
-	+/27e0uG/o+W5L4qDMzOWAYerAVb/yW8UAgLzJDotSA1TpaRQHq3gXt9zoZ1WaxX33zW+xJcaCKYA
-	J0mgeQcxfrSFCuIUiIkki6Q9zfdw/8v/xikChuf6l7dyPA+v0pc54zfj0e5jEohT5UE0e/EomSc/x
-	9ZayqjHoBwM2W2lejqQlJsXbfCQ/ftIfd6jyntAnAGXKMiaosSLcoSm1qAkukbwkXnjtElIZbsay+
-	hfy3AwGVEW8KXLZW+gtQ==;
+	List-Owner; bh=AUrEqugyCjK0hPsAXhJwX51GxolOQ7800ZGHoKG9pyA=; b=y9lHOsCxOmBMvp
+	seWKUFfBn6iNrMcuQwBmLLR2IJBTpkEZfT69YOh2/ubmL/B/jK5C0CTGo5J+lQ+9SibthFtMuheOw
+	iJ+mt6osbLdk6/GWYwQ2LFssTq+4MkItkiQjOOXBDrQMw/cJJATiFxd26obDpECw48XdA22IkBzII
+	5m4MgjLY/hwssWt51Y9Am7OiubsIoMY1HeAIHZP6mHEF+16/T9A503fBDZRFNgQQlhOhXm8bwgK6Y
+	yY1D+Ig2TII+MVeRTRETZ/Y19t7OEbivaQ0Efz73NWqYnkc/0ZhYXAqRu/RT7ZDcOgp4WaqbwtLpj
+	vYEM6p5DcLDn8exGgbQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGtKf-0000000EjYj-1xgt;
-	Wed, 14 Oct 2026 07:23:25 +0000
-Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
+	id 1xGv92-0000000F0aw-02ob;
+	Wed, 14 Oct 2026 09:19:32 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGtKL-0000000EjGW-1Ms1
+	id 1xGv8y-0000000F0ZT-31IS
 	for linux-phy@lists.infradead.org;
-	Wed, 14 Oct 2026 07:23:10 +0000
-Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-4a19cba5c14so31038015e9.3
-        for <linux-phy@lists.infradead.org>; Wed, 14 Oct 2026 00:23:04 -0700 (PDT)
+	Wed, 14 Oct 2026 09:19:29 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69E4elsm806697
+	for <linux-phy@lists.infradead.org>; Wed, 14 Oct 2026 09:19:27 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	I9vbNOPgSoW2/s5EmJhhLhQxF1+z/I0nBNc1/Lx6mzA=; b=RZSQxUg8DMWENbz8
+	/2tgFMNww2z5LvmzbTrkdYN9ICez/UgIJRwOx/TMVyQvFAjY3qR4Y8Mm9dNGlfat
+	A1064UEzfyNvw8PSF2d9hDrnNn23L1YXP7hFAL8Kh5SBc1Sv4q6y6ZPI7mwFxNjH
+	m9UsN7zh2CIHVNo5eTvRL7oQAb1E6+3vtAu1tYOdi0E0OuRHHJkvnJ1z1dsZcFFN
+	8xHSTAl2DVJwQIxTfEr5veeA6ukArm2e6oXEA3lN/FGyhaIJz0wyAsmrT9TWTZ4y
+	yXdXPTtfHdXenKcYL9+rAuaODX1Ac9FAgS8NseC9haHxLCURnbGlLwg3xy9sP1XN
+	9opTeg==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4h9ud6apxd-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 14 Oct 2026 09:19:27 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2e605efae40so50491525ad.1
+        for <linux-phy@lists.infradead.org>; Wed, 14 Oct 2026 02:19:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1791962583; x=1792567383; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=rI7TsTerh3v+6374ARnTnPJ5az3i60OfV5pa17I1CSc=;
-        b=ccXWRBg3i4ISTCxVpmeXuBmB8qe/SbUZH738w4r3B7EQLmeiDHrIntJdEzsTgfv7M7
-         SOSQmwgtwa/WAPjxLsu5fhkB99BaSNZpDUwAPFV/5kS6hRAc4sKNaLALPZgaISJcVzgm
-         Sgm+/SmCa2LwQ43xVVsTmg7j4GntpZa7sOgjJSn3jqEgXfwJXocKj0GJtC6y6MJ0Asgl
-         LCUA03tkgHxkZyB/hU+wTBlKkNu6Sfk4MoarOyDuZ94SmdxiVYTYKQEQ4m+TV/i5sM/x
-         ppY3l9vPmxixvayG/W+Dc7r6dfVpv8cKX8Q9Bkqk1RmV+YYNDmP1UUbrRBPW1sjPOtwZ
-         ZUkg==
+        d=oss.qualcomm.com; s=google; t=1791969566; x=1792574366; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=I9vbNOPgSoW2/s5EmJhhLhQxF1+z/I0nBNc1/Lx6mzA=;
+        b=MGSiyHNdQbDITT5UezWgDToNnQVVJ107iYfUaUnkMNVZb4zy8Q9erIvUwVgnkBLYQi
+         z+4CsNWUbagravIEfv20YIpwSOfmEuC5hJJIzQpd48NPgs3Cowh2vH72kFxZk5uGqSet
+         AGiKq7ZkYjriHt8m9umxS0rqFvjvcVzlqADB7b7HR4EiwC50FLdspi9zmz4wP8UsS+KY
+         Jnqwfa3d7nZ3y7Lwx/uj351vXchcmeCq/etFCSdfgFyaBbM8PWk0+fy4P4p95BsO0hwD
+         kTtY4iO5jeSbc/6ZEGTRajQqakQx0MSjthVdRR7oxM7Jx35fMLWugueny7fj6Cd09Gx5
+         qa+Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791962583; x=1792567383;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=rI7TsTerh3v+6374ARnTnPJ5az3i60OfV5pa17I1CSc=;
-        b=uB8WKWNDjbHxhtFSCOgj2IA7TCc3aYy/Q2gY9nbz9+W0QCEg0lFCGt6am94sdUIWHx
-         8es9AHd5Rab6iM+IqJjpT/nXzO+2UiKAllOKH0FsAL+/RC79D1b2n131XCyq+EL4CAx6
-         e4nUxkEbZZhkUqztQqmA0eMvnah/aAdiiBkuDreb6RFqxaZrkwXuv4NiNPG7/le68ohg
-         bm6E+ETis2PZfRFR6wk4xo4OIjIUBMORaex+/ndnz6/49DC5joCIrj3fmiI8DQQ+wEYm
-         jKGmyZwTPP3g5fSSQ12Z4wsuEXFqEi8eh3N8Ss5kE3yxUucsNKBYGh8CVGq4ztvxHa1p
-         ROVQ==
-X-Forwarded-Encrypted: i=1; AKwUvBx2zUp07ccZQIax/PjJGncl7Ve2rsNXnm7YGj4EZsGRwE5aZbSonEaEPOB4SV6290JxUBgiIWhSVn0=@lists.infradead.org
-X-Gm-Message-State: AFq9FYL7ekQE52LuxEmhg2Gc91s7boQaAq7wCfbfXpomKes0KL5QOboy
-	OR2u+sDbhqZ7pOKo06Yi7G/4AnbpLUcgENSIve9oJrI06MgN/Ik2tqcU
-X-Gm-Gg: AYBFou23ReDAr9DZDubuPBOHt+1nHR2FzUtGByVlQPtZa51h7UGMtsqKTFIjrFU75Zj
-	WKyOb2oDDF7TIFklTzKsbx2EiIJ4uDZjDUWNCFYfyuM/qp/o5U5+24vaZ2moixOQQPsXmGIrcUO
-	2BvIG2K/q25d53sOHNymAFeafjnOjvNgxU2ul+xkMsETeyT2s5JM2m9B1shHxo/1iL4mI8u8Z6b
-	4QrzSxWjFphFivIHmWlIMoDtw1+xsIiqgxP4j6peqgcsOsqkeePMUnDE0CFVG/yY+8FCGoLon2L
-	HAR0OGfWHX3wGIZQjK3ZKzt8Mv6j3GbXIrEvI+wqmY09aCvv0hi0Q0F7cSPPs/VwZaWxEwPm8o/
-	G1gMgbsc88572ApqPugIXbHPeOR5WsOR5Ysl3dhaTBXvBq3EgWoE7mt+rELgFmrvKKK5U5CiXd3
-	9e+yAPIQnOYIqly+0qOUAGtn8xe8ZbjAaBGAPJ48JflryRJ3FRKBNv0nL0qiRs69ZIuVawzwvq8
-	CE4gmDnR+YzfQy2qnqTLMWOREz0grtibkO/rVbNBGtYiA1eQN+fBVQ0EFjoRiqhZ6v9AKsN2mPG
-	S0/WkOsxalFWdfvis74e/0szf7uNkL1TXPJS6RleUKl3Uprj8S1Pzaj7sO+P9g==
-X-Received: by 2002:a05:600c:3e8d:b0:4a1:7701:f863 with SMTP id 5b1f17b1804b1-4a18e4aeae4mr269940335e9.15.1791962583469;
-        Wed, 14 Oct 2026 00:23:03 -0700 (PDT)
-Received: from navid-pc ([2a01:4b00:a856:6220::a11])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48de3f7f8b8sm8500933f8f.35.2026.10.14.00.23.02
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 14 Oct 2026 00:23:03 -0700 (PDT)
-From: Navid Ghahremani <ghahramani.navid@gmail.com>
-To: linux-arm-kernel@lists.infradead.org
-Cc: arnd@arndb.de,
-	stefandoesinger@gmail.com,
-	krzk@kernel.org,
-	Navid Ghahremani <ghahramani.navid@gmail.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: [PATCH v2 11/24] phy: zte: Add ZTE ZX279128S PCIe PHY driver
-Date: Wed, 14 Oct 2026 08:20:51 +0100
-Message-ID: <20261014072109.1759502-12-ghahramani.navid@gmail.com>
-X-Mailer: git-send-email 2.55.0
-In-Reply-To: <20261014072109.1759502-1-ghahramani.navid@gmail.com>
-References: <20261014072109.1759502-1-ghahramani.navid@gmail.com>
+        d=1e100.net; s=20260707; t=1791969566; x=1792574366;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=I9vbNOPgSoW2/s5EmJhhLhQxF1+z/I0nBNc1/Lx6mzA=;
+        b=JabFhHeOiPlgNMEbUlNwKZwbIrlHq0JyPTZz4t933C+R2rY/yB0+TykPoZReE72s4c
+         HudZHtfr3m7U1fe1qxnfo6eHHzHjMp8cMxjdiRHwhLkGhxFdk9NiVQL0IaSQ388jM2cd
+         w/qxe7Bq20m+GHSKGPkLo8FXXjrCp/BEKUeFKbzEyI9pDGU/kyi9tNyyNpt22sXg0Pt0
+         nddnFJL9qvbxW+aSKjK0nIBVRtMEuulbJk00m4BI1/p4gkzUZnoUlhjMm+iWeqmrvJ9l
+         yr3j1TCemczOjWtr/1iX6FdnPwD0pvx9wNLvP3yzNdPuy5khgIwBf7SWS7oUgyDbSF/C
+         lNlA==
+X-Forwarded-Encrypted: i=1; AKwUvBxUXGuzNC3lwZHRHdYSc8E8LaRdEHR3U4P45ZbMkixQb+KsTxz7ndbEfWGrbs49doXjCBYh2rE0RNk=@lists.infradead.org
+X-Gm-Message-State: AFq9FYKVnPm5pE3JwU1uLLfpeDkHYfrny2Ku7yu8o7f5X8WM9Emo0JzK
+	lpNpcTjTFdrO17c2v+u3FIogRi6VSW4crfX/wqGwBfDg7OB0ov9//ycY+YZFfDtiUWjVaA9ml4B
+	YpVJTDO37kizNsx+F3rDQS7ibIkWWHlZs1bMdiEMfJOqcn00oGEqu1fjDXcKo9h82T2AcyCnLCW
+	jH
+X-Gm-Gg: AYBFou3Bo5IgpM/Zf4tKguPbDulQipX/jnM+6+4Y/rqZpkD5eNn1BiK0eEc5ZJIXcKd
+	OVxW037/HRpxdwv0PKaipcn0L0MPhjm32TPDrLODwObdbDWbGy+TAswDuLLNW9mjoCDcgjg7Qyx
+	oIePMIwNQE8HjWf17rkZLQxF6xNh6uDXe4bLmlHiAfRNy+QgXDJ1XFv+hrOwLeSdgVGE4R7ocRT
+	a1yPqClAy0GTv2vISN8obWQej2lQdyraoS8pyYlZvVIYwFCbbM9CLBazRn4Pr+EYlcrZOcvyYfl
+	Y/b+EB+GjgRWkv1ZfNUTR445MzMuLDYU5JaWH52iALc6l1m+nztGA2XdXpleCpbzvrM6vvvCFSv
+	SjqALYjdmPdOpUeUR1Nx/eJD0cCJk
+X-Received: by 2002:a17:902:cec2:b0:2e8:2f95:764d with SMTP id d9443c01a7336-2e842dfd299mr134805505ad.59.1791969566535;
+        Wed, 14 Oct 2026 02:19:26 -0700 (PDT)
+X-Received: by 2002:a17:902:cec2:b0:2e8:2f95:764d with SMTP id d9443c01a7336-2e842dfd299mr134804985ad.59.1791969565791;
+        Wed, 14 Oct 2026 02:19:25 -0700 (PDT)
+Received: from [10.204.78.119] ([202.46.23.25])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2e8422b8202sm64057305ad.51.2026.10.14.02.19.17
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 14 Oct 2026 02:19:25 -0700 (PDT)
+Message-ID: <76ad74bd-e742-428b-b206-9db6cc98f10d@oss.qualcomm.com>
+Date: Wed, 14 Oct 2026 14:49:16 +0530
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 06/13] drm/msm/dp: Add support for DP controllers on
+ Nord
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>,
+        Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Rob Clark <robin.clark@oss.qualcomm.com>,
+        Dmitry Baryshkov
+ <lumag@kernel.org>,
+        Abhinav Kumar <abhinav.kumar@linux.dev>,
+        Jessica Zhang <jesszhan0024@gmail.com>, Sean Paul <sean@poorly.run>,
+        Marijn Suijten <marijn.suijten@somainline.org>,
+        Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+        Maxime Ripard <mripard@kernel.org>,
+        Thomas Zimmermann <tzimmermann@suse.de>,
+        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+        Kuogee Hsieh <quic_khsieh@quicinc.com>,
+        Shawn Guo <shengchao.guo@oss.qualcomm.com>,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+        Ritesh Kumar
+ <ritesh.kumar@oss.qualcomm.com>,
+        Mahadevan P <mahadevan.p@oss.qualcomm.com>
+References: <20261012-nord-drv-dt-v2-0-a2ab9af954d2@oss.qualcomm.com>
+ <20261012-nord-drv-dt-v2-6-a2ab9af954d2@oss.qualcomm.com>
+ <gmsyzeugteg67h5vwzf2y2e7k56eg6aicbonzjl72etgedd5oe@vlizd2npwtn6>
+Content-Language: en-GB
+From: Nabige Aala <nabige.aala@oss.qualcomm.com>
+In-Reply-To: <gmsyzeugteg67h5vwzf2y2e7k56eg6aicbonzjl72etgedd5oe@vlizd2npwtn6>
+X-Proofpoint-ORIG-GUID: LXctVopxtYNYwoUBNKz5txP6YIX03HjV
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDE0MDAzNiBTYWx0ZWRfXzKnkA19xSg38
+ kInjP0ZqkgCDURhnTj5bJxxQpVLjiueEGeMem6vdGYoS/Igb/y8NrqAjB/8U4wRBk4U/K0gDPkH
+ TI8RBvNIJxB5T1t6GLxWAXdor0N9cZ8=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDE0MDAzNiBTYWx0ZWRfXw1A7Zsl64PIA
+ dEM4SOLP/ZS9272UPCopbUCX8dZS6IdtvuzgryWaR8w7TN30+/5NfqDrDWv4htmicFZGz0S21Xj
+ 96KEEsO8YStmONeAMKe7cmtX8jKw/dozDOnfqf+ZiCpukkqbHjfBNpCYr8ci5Pf/CJ3pv7VvqhV
+ 4C6WzG/2vBTrPImRDMG706Nq0E8p1b6GBjYq85OErA4TWcBp/0vlsHWzGYLlyTyA62ghztnfTVB
+ 11hWCIpdWzNUxuyYd7cI98qERsNJPlzuhYp6z9KjH34aGCoxg4XkwQcwNJyr1fb9WAEqvA3E1Hb
+ QWmv9/wN4fbr9RqX1t1qN7DCtB7xXf3AQherpzxZwOe/sjGYc+RR6gqtwMa/R0z2rwrQIZs/fvl
+ qkCXUssphDePeDXfejiJSyYz121ijL8Jn45wEXFxDWwS9XfpPAUKRtwXuPLcK7v2QkzoxQqSWWY
+ 84lkwaFOGUFesHaq/Wg==
+X-Authority-Analysis: v=2.4 cv=fJ6sTpae c=1 sm=1 tr=0 ts=6acf491f cx=c_pps
+ a=IZJwPbhc+fLeJZngyXXI0A==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+ a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
+ a=EUspDBNiAAAA:8 a=9x1Nq3F55a8nTBbgZHMA:9 a=QEXdDO2ut3YA:10
+ a=uG9DUKGECoFWVXl0Dc02:22
+X-Proofpoint-GUID: LXctVopxtYNYwoUBNKz5txP6YIX03HjV
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-10-13_01,2026-10-09_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 spamscore=0 lowpriorityscore=0 malwarescore=0
+ suspectscore=0 adultscore=0 impostorscore=0 phishscore=0 bulkscore=0
+ clxscore=1015 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2610080000
+ definitions=main-2610140036
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261014_002308_698009_0317D0FF 
-X-CRM114-Status: GOOD (  23.15  )
+X-CRM114-CacheID: sfid-20261014_021928_805374_C3050D28 
+X-CRM114-Status: GOOD (  14.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,224 +170,30 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a generic PHY driver for the PCIe SerDes PHY inside the Top CRM
-block of the ZTE ZX279128S SoC. This driver encapsulates PLL power
-and analog SerDes calibration for the two PCIe ports, isolating
-these hardware details from the PCIe host controller driver.
 
-Signed-off-by: Navid Ghahremani <ghahramani.navid@gmail.com>
----
- drivers/phy/Kconfig              |  12 +++
- drivers/phy/Makefile             |   1 +
- drivers/phy/phy-zx279128s-pcie.c | 156 +++++++++++++++++++++++++++++++
- 3 files changed, 169 insertions(+)
- create mode 100644 drivers/phy/phy-zx279128s-pcie.c
-
-diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-index 19f3b7d12b..3518d384be 100644
---- a/drivers/phy/Kconfig
-+++ b/drivers/phy/Kconfig
-@@ -91,6 +91,18 @@ config PHY_ECONET_PCIE
- 	  callback for PCIe GEN1 and GEN2 ports. This PHY is found on
- 	  EcoNet SoCs including EN751221 and EN7528.
- 
-+config PHY_ZX279128S_PCIE
-+	tristate "ZTE ZX279128S PCIe PHY driver"
-+	depends on ARCH_ZTE || COMPILE_TEST
-+	depends on OF
-+	select GENERIC_PHY
-+	select MFD_SYSCON
-+	help
-+	  Enable support for the PCIe SerDes PHY found inside the Top CRM
-+	  of ZTE ZX279128S SoCs. This driver configures PLL power and analog
-+	  calibration for the two PCIe ports.
-+	  If you say Y or M here, you will enable PCIe PHY initialization.
-+
- config PHY_GOOGLE_USB
- 	tristate "Google Tensor SoC USB PHY driver"
- 	select GENERIC_PHY
-diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-index d7aa516bcc..1323aa817f 100644
---- a/drivers/phy/Makefile
-+++ b/drivers/phy/Makefile
-@@ -19,6 +19,7 @@ obj-$(CONFIG_PHY_NXP_TJA1145)		+= phy-nxp-tja1145.o
- obj-$(CONFIG_PHY_PISTACHIO_USB)		+= phy-pistachio-usb.o
- obj-$(CONFIG_PHY_SNPS_EUSB2)		+= phy-snps-eusb2.o
- obj-$(CONFIG_PHY_XGENE)			+= phy-xgene.o
-+obj-$(CONFIG_PHY_ZX279128S_PCIE)	+= phy-zx279128s-pcie.o
- 
- obj-$(CONFIG_GENERIC_PHY)		+= allwinner/	\
- 					   amlogic/	\
-diff --git a/drivers/phy/phy-zx279128s-pcie.c b/drivers/phy/phy-zx279128s-pcie.c
-new file mode 100644
-index 0000000000..33bf0eaac8
---- /dev/null
-+++ b/drivers/phy/phy-zx279128s-pcie.c
-@@ -0,0 +1,156 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+/*
-+ * ZTE zx279128s PCIe PHY driver
-+ *
-+ * Controls the analog SerDes and PLL for the two PCIe ports inside the
-+ * Top CRM block.
-+ *
-+ * Copyright (C) 2026 Navid Ghahremani <ghahramani.navid@gmail.com>
-+ */
-+
-+#include <linux/bitfield.h>
-+#include <linux/delay.h>
-+#include <linux/mfd/syscon.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+
-+#define CRM1_PHY_CTRL		0x008
-+#define CRM1_MISC		0x024
-+#define CRM1_MISC_BIT26		BIT(26)
-+#define CRM1_PHY1_CAL0		0x1b0
-+#define CRM1_PHY1_CAL1		0x1b4
-+
-+struct zx_pcie_phy_port {
-+	u32 phy_on[3];
-+	bool has_cal;
-+};
-+
-+static const struct zx_pcie_phy_port zx_phy_ports[] = {
-+	[0] = {
-+		.phy_on = { BIT(15), BIT(13), BIT(14) },
-+	},
-+	[1] = {
-+		.phy_on = { BIT(27), BIT(25), BIT(26) },
-+		.has_cal = true,
-+	},
-+};
-+
-+struct zx_pcie_phy {
-+	struct regmap *regmap;
-+	const struct zx_pcie_phy_port *port;
-+	unsigned int port_id;
-+};
-+
-+static int zx_pcie_phy_init(struct phy *phy)
-+{
-+	struct zx_pcie_phy *zphy = phy_get_drvdata(phy);
-+	const struct zx_pcie_phy_port *port = zphy->port;
-+	int i, ret;
-+
-+	for (i = 0; i < ARRAY_SIZE(port->phy_on); i++) {
-+		ret = regmap_write_bits(zphy->regmap, CRM1_PHY_CTRL,
-+					port->phy_on[i], port->phy_on[i]);
-+		if (ret)
-+			return ret;
-+		fsleep(50);
-+
-+		if (i == 0 && port->has_cal) {
-+			ret = regmap_write(zphy->regmap, CRM1_PHY1_CAL1, 0x00202d5a);
-+			if (ret)
-+				return ret;
-+			ret = regmap_write(zphy->regmap, CRM1_PHY1_CAL0, 0x0046c24a);
-+			if (ret)
-+				return ret;
-+		}
-+	}
-+
-+	ret = regmap_write_bits(zphy->regmap, CRM1_MISC, CRM1_MISC_BIT26, 0);
-+	if (ret)
-+		return ret;
-+	fsleep(50);
-+
-+	return 0;
-+}
-+
-+static int zx_pcie_phy_exit(struct phy *phy)
-+{
-+	struct zx_pcie_phy *zphy = phy_get_drvdata(phy);
-+	const struct zx_pcie_phy_port *port = zphy->port;
-+	int i, ret;
-+
-+	for (i = ARRAY_SIZE(port->phy_on) - 1; i >= 0; i--) {
-+		ret = regmap_write_bits(zphy->regmap, CRM1_PHY_CTRL,
-+					port->phy_on[i], 0);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops zx_pcie_phy_ops = {
-+	.init = zx_pcie_phy_init,
-+	.exit = zx_pcie_phy_exit,
-+	.owner = THIS_MODULE,
-+};
-+
-+static int zx_pcie_phy_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct phy_provider *provider;
-+	struct zx_pcie_phy *zphy;
-+	struct phy *phy;
-+	u32 port_id;
-+	int ret;
-+
-+	zphy = devm_kzalloc(dev, sizeof(*zphy), GFP_KERNEL);
-+	if (!zphy)
-+		return -ENOMEM;
-+
-+	ret = of_property_read_u32(dev->of_node, "reg", &port_id);
-+	if (ret)
-+		return dev_err_probe(dev, ret, "missing reg property\n");
-+
-+	if (port_id >= ARRAY_SIZE(zx_phy_ports))
-+		return dev_err_probe(dev, -EINVAL, "invalid port id %u\n", port_id);
-+
-+	zphy->port_id = port_id;
-+	zphy->port = &zx_phy_ports[port_id];
-+
-+	zphy->regmap = syscon_node_to_regmap(dev->parent->of_node);
-+	if (IS_ERR(zphy->regmap))
-+		return dev_err_probe(dev, PTR_ERR(zphy->regmap),
-+				     "failed to get parent topcrm regmap\n");
-+
-+	phy = devm_phy_create(dev, dev->of_node, &zx_pcie_phy_ops);
-+	if (IS_ERR(phy))
-+		return dev_err_probe(dev, PTR_ERR(phy), "failed to create phy\n");
-+
-+	phy_set_drvdata(phy, zphy);
-+
-+	provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+	return PTR_ERR_OR_ZERO(provider);
-+}
-+
-+static const struct of_device_id zx_pcie_phy_of_match[] = {
-+	{ .compatible = "zte,zx279128s-pcie-phy" },
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(of, zx_pcie_phy_of_match);
-+
-+static struct platform_driver zx_pcie_phy_driver = {
-+	.probe = zx_pcie_phy_probe,
-+	.driver = {
-+		.name = "zx279128s-pcie-phy",
-+		.of_match_table = zx_pcie_phy_of_match,
-+		.suppress_bind_attrs = true,
-+	},
-+};
-+builtin_platform_driver(zx_pcie_phy_driver);
-+
-+MODULE_AUTHOR("Navid Ghahremani <ghahramani.navid@gmail.com>");
-+MODULE_DESCRIPTION("ZTE ZX279128S PCIe PHY driver");
-+MODULE_LICENSE("GPL");
--- 
-2.55.0
-
+On 10/13/2026 2:48 PM, Dmitry Baryshkov wrote:
+> On Mon, Oct 12, 2026 at 07:02:16PM +0530, Nabige Aala wrote:
+>> From: Mahadevan P <mahadevan.p@oss.qualcomm.com>
+>>
+>> Add the Nord DP desc and compatible. Nord is supporting the
+>> four DP cotnrollers, two per MDSS instance.
+>>
+>> Signed-off-by: Mahadevan P <mahadevan.p@oss.qualcomm.com>
+>> Signed-off-by: Nabige Aala <nabige.aala@oss.qualcomm.com>
+>> ---
+>>   drivers/gpu/drm/msm/dp/dp_display.c | 9 +++++++++
+>>   1 file changed, 9 insertions(+)
+> Why are they not a part of the existing entries? Is it a newer core?
+Nord has two MDSS instances, each with two DP controllers. The first 
+pair (0x0af54000, 0x0af5c000) is MDSS0 and the second pair (0x08d54000, 
+0x08d5c000) is MDSS1 at a different base. No existing table covers this 
+combination, So I added a new desc entry for Nord.
+>
 
 -- 
 linux-phy mailing list
