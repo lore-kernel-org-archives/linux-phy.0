@@ -4,42 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D493CC6B1A
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Oct 2026 12:44:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56A94CC6B1A
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Oct 2026 14:07:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RPBrJlwifi5DPOmYU9Q1QuDcAChtBSLj+2UcptKT9W8=; b=3s8cBSzdpg0SaG
-	fpGGEXAoDWWyD3F5RDe3v5vitOp5Artheey0tQkpSSBTI0gKRNG29yE8ulakfIatS3vJP5IPdP3Xd
-	98jEXmrbpDn/uid/tCVrklw6bokJCAlUJTdAnvjPDplVE6jaNrZxH6S/KU9b3Fk2xBMN8QKJxdINO
-	qg9TgrjPnIM9S7fjPqftPEiD+xvRu6tX5qm/LyYEJUFMnJJ9fXL0UEspihl8774V7+QQKPr6hc9qC
-	jiSeXI2uR2QKRdAMf2BCundUlmkAJFnZpzclbkxfH/aDXaEQyopS4qDansiPSjn+lHt936WR7I1oH
-	lzD0H5lAVuWimsYitSwA==;
+	List-Owner; bh=z0s4Vf9QlfL/9Xgfl3Igawxzi9e/IoWqMiwX5VeQ7uk=; b=JxfeFJDpNSG+pX
+	VHku86wyO04WzXCRE8H1oDJrD1dSk98aG4uDReR5Mj6Zp6Sf2Zqbts5AoybNg9ixaXlvLeljaMKzY
+	B64l+7N+opBubrOOp0Hec+yQSjnlUoeiDhC2Psc6A05wYpqTAVrFrxOCIz6J0R/F2gvdZOzW+qP/P
+	79R8MHHZwjfcFC9QOkpuG0z5zv5VTKXjpTWRdsoHCqw35sse01Md4K9oA2jIKIotyNGPXstvTuoOW
+	hmvUJSJn32FyQl5zzEYg2X03EwaQp9yzEvKvgFeoOyZOwDuQLtI//A5EKGstobAldPsNYr+aa+q3B
+	gd5el+7jiF78zd0AMo/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGyLP-0000000FTlu-3f2t;
-	Wed, 14 Oct 2026 12:44:31 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1xGzdT-0000000FgDg-2wmN;
+	Wed, 14 Oct 2026 14:07:17 +0000
+Received: from mail-francesouthazon11011062.outbound.protection.outlook.com ([40.107.130.62] helo=MRWPR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGyLJ-0000000FTkA-2rAG;
-	Wed, 14 Oct 2026 12:44:27 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 20E9C1A006F;
-	Wed, 14 Oct 2026 14:44:23 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com [134.27.226.22])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 084D91A0071;
-	Wed, 14 Oct 2026 14:44:23 +0200 (CEST)
-Received: from lsv051416.swis.nl-cdc01.nxp.com (lsv051416.swis.nl-cdc01.nxp.com [10.168.48.122])
-	by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 2D59A2035A;
-	Wed, 14 Oct 2026 14:44:22 +0200 (CEST)
-Date: Wed, 14 Oct 2026 14:44:22 +0200
-From: Jan Petrous <jan.petrous@oss.nxp.com>
-To: Coia Prant <coiaprant@gmail.com>
-Cc: Maxime Chevallier <maxime.chevallier@bootlin.com>,
-	Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>,
+	id 1xGzdR-0000000FgCs-07Vs;
+	Wed, 14 Oct 2026 14:07:14 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=jMSoqCjAe88K932Sl5LR6L3X1tlAReT+O+kfHcHXNHNMD3EHuN8EZ3qjSiujUyxMw2rg/DuSQG7BKLlHhHhvOxGbN64r1i46xOAOs74EXPE8z6PER9Ls3NBtdaWrV7K9PBImKS1EpJ1MaGqoob5tbgjH5N8V7WiCghuM8Idid3ugTw9Lbs8LUT2T6Nw+gHDsKKCIjbEKLYvZFIxPGTzJXbLR2fBvkSV/c1lJmSyXQhCE7IhdNEJ79iD4auokHiltmAXwn6bBJ6NJaPi+Nf3SAHQvj7BAErUw9bqW+qyYIGEefH4vBsAy/Q7OFsZjtOTm0b75ji/2yZXHu69VZ2cPNw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=0knYD4PTfnrDYj2BE5MqF8qj2rOuMIrCF+0vtLWdKFc=;
+ b=tll7ONcj+LpomYR2epRYoZFUHWC6OA6mR533k8sDO1txuCIyc5x6Z75zYgusUGufYFj878cNItiOuXGOwAQWeRUexUOmfcakiwgIBVXs46oc9VINvbTcOuNgO9+gXlqHvjRY8AlHff1HOZzNRiMI7an46XjkRMaQRtDI2IpMDVic3MSJk/WBrLCjs2buWeQqAKbb+bCF/ibreIrBRr01B3E/HNSradk+WtPhnEouILNAbabbh3WE27kTXijnnxO8x5kzSaxeopPWuHd/o0BN/bIBnuCEsWHeVsN6LNICYmusasnNvr8lepdAmXW8Pvb1YCzs/OVOgdCigEZFgPY90g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=0knYD4PTfnrDYj2BE5MqF8qj2rOuMIrCF+0vtLWdKFc=;
+ b=SWYvVQH4eoAuAddExdneEobQ4a0EugisndrylpsKmmSc7lej7SCPAvJN5zTMgnTQIkjNKYYfcYk0tW4OLynWxh8sqk1XaHF0cI3lq/d0Vv9eXQOclmoLefqv7vPo0LKabPxGpHG+uh+kmrpcFPOJNyS2I+yOZIehHr9DvNkfXKRkydO35nxFGEUbuXDTHMXd6/7pSxzLoYErHfh1zqxOtl/0Q6ILFzSngHjFyflEV/EN9Kv0wb7nfmnawisOvoSWkj4KHMCNh7VqfFxd0pdbYULYZKZI+WwEI0birSPCvDiQVLUhX9Ug0bqzTOF0wAC7tvUoTzCavMEGszlZ8WYxDA==
+Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
+ by DUZPR04MB9845.eurprd04.prod.outlook.com (2603:10a6:10:4d8::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.522.13; Wed, 14 Oct
+ 2026 14:07:04 +0000
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c%7]) with mapi id 15.21.0522.012; Wed, 14 Oct 2026
+ 14:07:03 +0000
+Date: Wed, 14 Oct 2026 09:06:46 -0500
+From: Frank Li <Frank.li@oss.nxp.com>
+To: Jan Petrous <jan.petrous@oss.nxp.com>
+Cc: Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>,
 	NXP S32 Linux Team <s32@nxp.com>, Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
 	Manivannan Sadhasivam <mani@kernel.org>,
@@ -62,6 +78,7 @@ Cc: Maxime Chevallier <maxime.chevallier@bootlin.com>,
 	Russell King <linux@armlinux.org.uk>,
 	Clark Wang <xiaoning.wang@nxp.com>,
 	Philipp Zabel <p.zabel@pengutronix.de>,
+	Maxime Chevallier <maxime.chevallier@bootlin.com>,
 	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
 	Alexandre Torgue <alexandre.torgue@foss.st.com>,
 	Chester Lin <chester62515@gmail.com>,
@@ -77,21 +94,72 @@ Cc: Maxime Chevallier <maxime.chevallier@bootlin.com>,
 	imx@lists.linux.dev, linux-pci@vger.kernel.org,
 	linux-stm32@st-md-mailman.stormreply.com,
 	Vincent Guittot <vincent.guittot@linaro.org>
-Subject: Re: [PATCH RFC v3 04/12] net: pcs: add NXP SerDes XPCS shared core
-Message-ID: <as95JpawMfSSk+Pa@lsv051416.swis.nl-cdc01.nxp.com>
+Subject: Re: [PATCH RFC v3 03/12] dt-bindings: PCI: nxp,s32g-pcie: Fix SerDes
+ PHY phandle in example
+Message-ID: <as-MdloKd-7oJsUU@SMW015318>
 References: <20260919-s32g_serdes-v3-0-9d68868c1e89@oss.nxp.com>
- <20260919-s32g_serdes-v3-4-9d68868c1e89@oss.nxp.com>
- <6aabb56e-406f-4d13-9fd8-54822202039f@bootlin.com>
- <assmUIvWMuZsp8OO@lsv051416.swis.nl-cdc01.nxp.com>
- <CALj3r0gQkUARS1e+2CGB3JsrGJ2XrzuoChfz0cWYRpK4kq1Uxg@mail.gmail.com>
- <as5EioEfZqMZhyJg@lsv051416.swis.nl-cdc01.nxp.com>
-MIME-Version: 1.0
+ <20260919-s32g_serdes-v3-3-9d68868c1e89@oss.nxp.com>
+ <as0qORxP0Roh9ktO@SMW015318>
+ <as5CIYxKJTra4hqM@lsv051416.swis.nl-cdc01.nxp.com>
 Content-Disposition: inline
-In-Reply-To: <as5EioEfZqMZhyJg@lsv051416.swis.nl-cdc01.nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+In-Reply-To: <as5CIYxKJTra4hqM@lsv051416.swis.nl-cdc01.nxp.com>
+X-ClientProxiedBy: CY8PR11CA0028.namprd11.prod.outlook.com
+ (2603:10b6:930:4a::14) To GV2PR04MB11799.eurprd04.prod.outlook.com
+ (2603:10a6:150:2cf::9)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|DUZPR04MB9845:EE_
+X-MS-Office365-Filtering-Correlation-Id: fbf40c06-1bcb-4bd7-61d3-08df29fc6c4b
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|23010399003|1800799024|376014|7416014|366016|6133799003|22082099003|10067099003|18002099003|3023799007|11063799006|4143699003|261009223027099003|56012099006;
+X-Microsoft-Antispam-Message-Info: hD40Yb1gfcLxcIVRMcMSkYUq5QeHQJ6LbH8j3c9xDOsM/1a+OEMVbzAEnOJAiwH3ifkHuN4M7Ue9EF9D+m8iXlO+lylwEPkgcIRV7ZFM9hQIMcM37XL3PTsxT+kBpGHDk3Nb1AtjCwi3l2mwGo7lY0tEOZWCKB1/b5CTrjo0vDYLkt1+mYUP55y3DKX4rncF+OugjehtgdTFzpLV9pmVZN/h8l0GfvkeuEIG3rtdWq6NrNB+gjVHqCCPAEr/Sc9sxks/ZOd+XeDuHEeuuXiayx8LTDIdYjMc9lM9x1Mg9TLsWy1p/b01Gsm3flqdQvx8SEmQJY6PhpHd/52fir61Dfk11fbAeD/pEscZIyWQEzkULRysduH0+ufFhpcvF5lJAkalV+tk6lGN7B9k3cVYZ7vKZp3amjeoSCXVuP6GIV7zZBsDVIvQg74B4EvTpflwq4NP/1q+blp1yZAjr4XglSXW+OdAh/lNRPCgYegGij/m/f537KffLwgI5G+WG7VkSntMjeqdO0gPN8CWfeX+rGjfb34KpyGUpk7R1mDYaASxAfObrHHJ1NQc5DCjC1311lKtEFLDEVWpTFbXU+Vhs6uGxK2dCuKLgaTBiNf9XsSyE4rXrsmdpjvJ9ow2VmlMnuoyW2Otywu/cEVB/AsKT/hmxMkvi2qvA9fttrLvaWY=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(23010399003)(1800799024)(376014)(7416014)(366016)(6133799003)(22082099003)(10067099003)(18002099003)(3023799007)(11063799006)(4143699003)(261009223027099003)(56012099006);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?E++54nhll/b8CZAKz7RwlzS6+E1LH9Y/VcnKAONgLO8iIzSJh5lcLpgCipzE?=
+ =?us-ascii?Q?fTg+nlHr/ecORHsGrBMSsmDssHkcHxCwI+eejc8pDodE1bjOrcX4GPW99Af4?=
+ =?us-ascii?Q?AsVdYifyBAXVFHNv38BN2Y01gGFiftuYabXNEETrmAkx/0y//mJZ7vyI13KT?=
+ =?us-ascii?Q?zIUgZsZQCIpAp4CHpWUrVQFaLpKS5HfpI7nS3e2qxq0DDwr4LgtufoDd7T51?=
+ =?us-ascii?Q?lpcLFWTR1eT0RSQsR9jUHG9+flq47hTkmvKLC1KQuzkqQCjE/L4Hno2zZvKb?=
+ =?us-ascii?Q?2SeDTD9PHUsBWAummin169UxUtmT8uDECn32/fi3YpjzKvtL6G7fih0r3Dcs?=
+ =?us-ascii?Q?orSnesiBky6HY6d94IOvesIpOpLrjhgNhTeOmq3MCb22zM5wWrylYdh65WYY?=
+ =?us-ascii?Q?haPgkWqTndxf/yfKECQpcVctRdRDl0JBIWg7xXBf3nTwTHgp+0roSFjoGHN3?=
+ =?us-ascii?Q?q+oi8k5w5QEP2bxj7zpiBVkhAuav8kQ8DJIJiBTV+0u1uFioWkKn9QOujKGu?=
+ =?us-ascii?Q?t04pHlp+iYjgXtA0MAuhczXs1YpqoE0UKyLdXo2ypJFsmH1FJ2QeoFErWJOM?=
+ =?us-ascii?Q?SGZOx1MnV8Lex/xkcjmH+I+cWmOjfhGt8zrVErcMMwreZlaxp65pWKUvFi+4?=
+ =?us-ascii?Q?O5hH1bnO4yA5GGAsnqAyFY9LdUyhVEYLuAJs9w/RncDMhp0afN6bT0+0hYar?=
+ =?us-ascii?Q?vMkvg4L2P+S9Go907tA9Y9tkkDyLGUAZ/w2gHrx8LPMe/AKBWCUFJRkSWc3d?=
+ =?us-ascii?Q?U0yU1KKqBRB8HL30I5A6g3SJ8TUfow12oxTNyLtGXXqQU1IfP9edaHFluHpB?=
+ =?us-ascii?Q?rTwfIUN6n7x4jKmi8qng1Wn36s2zKoP9D582MQoXzcX43mfnjRYacs2WS/L6?=
+ =?us-ascii?Q?qtbSFkYU22ELss0zTUuVqvNgP2kkPhJXi9QSHKlKlccpUz6a0uX8h5/8wYLd?=
+ =?us-ascii?Q?OrpnJW6/2vPyCzg5rhnuZMTi4sWleTT2NjVrvCl1ySEZ+m7XzMnT2sOGgTub?=
+ =?us-ascii?Q?d5SdAlNvaVm6uS+Op17XmqhhHhjOXUVvFRJIlz1WugtEGOEFwv1Hi5J4YQQW?=
+ =?us-ascii?Q?ycApmqM7FAcf5xxKOW+HvooZWLlzC8HTuqQxPrAbzxzSAw2c1QeTo3dV9eN2?=
+ =?us-ascii?Q?AMrzmsbkQpIRRI2/2cYTgtzS7Qf26latX3ejkAFiyojmwsXvx5yeiY/WTZZ2?=
+ =?us-ascii?Q?m3gHp1Em5Nia390oI+b6cWOp5Xdkwa277PHZwGxrMqGtd6610JB15WRlhaV7?=
+ =?us-ascii?Q?GlcYXJGEFil8mV0jZdQJgZ33HJbinWBdBZCxaPkBNtzK3IUy0n8uy8hY2s/k?=
+ =?us-ascii?Q?2Hp+aPQ0tBF00HljhH+79E4mpTCmuGd0LnkQ5o4TLxNb0d7zoJgUjLVaI6aV?=
+ =?us-ascii?Q?iqWsOUd/kol8rJ9uqOln6HBjt0O9a3RSNSVuCz8Pmdv9Wz7XtMWr3jxYaJYe?=
+ =?us-ascii?Q?+Kmi+5ASYyjCGYp+yqtV/CWUAWf6cIljco7lvUC+Xfy9Rm9U/Uzmo/L+jF3d?=
+ =?us-ascii?Q?coFhgbNg2KqB9qBrn6RwpQk3qmaWbiSx54N+RPoapE0A8a1onak7su3WExK0?=
+ =?us-ascii?Q?nXFi+dajv91FrT6fB6HakdgGXL2gReQ8oBFiKfbfzcbuCFtXiI3gJUM+mepG?=
+ =?us-ascii?Q?ox1bxmfMdPVlpCNg6qjjUz1T2RuDX5W6Jb4OVwXZnJXe4t17olHcPTwcN5Qx?=
+ =?us-ascii?Q?xu+hFNb9lIkcHRSBGK0jOjiu4NRTdhbDNw9H5hJVVAxTqYgoa0inkWO9z/St?=
+ =?us-ascii?Q?J8Sh9XznSPmrYvXYmJEg0cBaR6CPw1ZsVUFNB7G03OPbLyRxB1Xz?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: fbf40c06-1bcb-4bd7-61d3-08df29fc6c4b
+X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Oct 2026 14:07:03.8337
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: onGrR+0cx0Dm0pJ4FQFXvM0/eJ0xts5dCx8X5xSOLxC93PUNEeFLVCiTFWcNmG9DaVDdKz0lI5n2cttofix6Soq400PqnnVPnY91hzfj1kVAnQ8TD53vaQBBj+ypat4H
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DUZPR04MB9845
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261014_054426_001079_E6D6DDE3 
-X-CRM114-Status: GOOD (  50.00  )
+X-CRM114-CacheID: sfid-20261014_070713_073907_6E99E29F 
+X-CRM114-Status: GOOD (  29.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,144 +176,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Oct 13, 2026 at 04:47:38PM +0200, Jan Petrous wrote:
-> On Tue, Oct 13, 2026 at 03:47:58AM +0800, Coia Prant wrote:
-> > Hi Jan,
-> > 
-> > Thanks for the pointers. A few thoughts.
-> > 
-> > > Yes. The S32G accessor is the same DW indirect scheme pcs-xpcs-plat
-> > > implements (page into the viewport at 0xff, then the low address byte
-> > > at a 4-byte stride), so there is no reason for S32G to carry its own
-> > > copy of the XPCS code. The next version drops the shared core, exposes
-> > > each XPCS instance as a mii_bus from the SerDes PHY driver and creates
-> > > the PCS with xpcs_create_pcs_mdiodev(), much like the RK3568 glue.
-> > > Details in my reply to Andrew.
+On Tue, Oct 13, 2026 at 04:37:21PM +0200, Jan Petrous wrote:
+> On Mon, Oct 12, 2026 at 01:43:05PM -0500, Frank Li wrote:
+> > On Sat, Sep 19, 2026 at 08:54:31AM +0200, Jan Petrous via B4 Relay wrote:
+> > > [You don't often get email from devnull+jan.petrous.oss.nxp.com@kernel.org. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]
 > > >
-> > > The part that does not fit pcs-xpcs-plat as-is is ownership, not
-> > > access: the XPCS windows sit inside the SerDes subsystem register
-> > > space, and their bring-up is ordered against the PCIe lane and the
-> > > other XPCS instance, so the bus is registered by the SerDes PHY driver
-> > > rather than by a standalone snps,dw-xpcs device. The accessor itself
-> > > is a few lines; if Alex's pcs-xpcs-regmap is merged first I will use
-> > > it rather than open-code another bus.
-> > 
-> > On the transport split: I think the cleanest path is to split the MMIO
-> > accessor out into its own module, say pcs-xpcs-mmio, exporting the
-> > read/write helpers. Then pcs-xpcs-plat can call into those exported
-> 
-> Fine with me. The S32G accessor is a few lines, so I will move it onto
-> pcs-xpcs-regmap if that lands first, or onto a shared mmio helper if
-> you post one. Until then it stays open-coded in the glue.
-> 
-> > symbols instead of open-coding the page/stride scheme, and S32G can do
-> > the same for its indirect window. That way nobody carries a private
-> > copy of the accessor. If that turns out to be too invasive for plat,
-> > keeping a separate pcs-xpcs-plat copy is workable too, but I'd rather
-> > avoid it.
-> > 
-> > If Alex's pcs-xpcs-regmap lands first, that's the natural place for
-> > the S32G accessor; pcs-xpcs-mmio would only be needed if the regmap
-> > approach doesn't fit.
-> > 
-> > > S32G needs the same kind of thing: skip the generic soft reset, and no
-> > > EEE registers. I will start with the existing PMA-ID mechanism, since
-> > > that is what TXGBE and FBNIC use today, and switch to a callback if one
-> > > is agreed in the Rockchip thread. I'll Cc you on those patches.
-> > 
-> > On the shared-core duplication: rather than copying the whole XPCS
-> > core, I'd look at how the existing users express their quirks.
-> > 
-> > Wangxun has a genuinely different PMA ID, so it can branch on the
-> > ID before the reset path and keep the generic core untouched.
-> > 
-> > The older NXP devices do the opposite: they fake the PCS ID at the MDIO
-> > layer so the core sees a magic value it then interprets. That leaves
-> > the magic in the core and a fake ID in the glue, and it doesn't scale
-> > to a third user.
-> > 
-> > For S32G, I'd prefer one of these two approaches:
-> > 
-> > - A flag in struct dw_xpcs, e.g. DW_XPCS_NO_RESET, that the glue sets
-> >   and the core checks before the soft reset and EEE paths. Works when
-> >   the quirk applies to a whole instance regardless of the PMA ID.
-> > - A platform callback, e.g. plat->pma_config(), where the glue can
-> >   return early to skip the parts it doesn't need. More flexible, but
-> >   also more surface area; I'd only go there if flags aren't enough.
-> > 
-> > Either is better than another fake ID, because the quirk stays visible
-> > at the point where it matters instead of being hidden behind a made-up
-> > value in the transport layer.
-> > 
-> 
-> Agreed on the principle. The problem is that pcs_pre_config and the
-> PMA hook are reached only through the ID-keyed compat table, and S32G
-> needs a pma_config (link timer, lane on MPLLA). Without a platform
-> callback the ID is the only way in.
-> 
-> What I have for v4 is an ID-keyed entry with the two quirks as
-> explicit flags in struct dw_xpcs_desc (no soft reset, no EEE), so at
-> least the table says what the entry does.
-> 
+> > > From: "Jan Petrous (OSS)" <jan.petrous@oss.nxp.com>
+> > >
+> > > The example references the SerDes PHY as
+> > >
+> > >   phys = <&serdes0 PHY_TYPE_PCIE 0 0>;
+> > >
+> > > i.e. the SerDes node itself with three PHY cells. That does not match
+> > > the SerDes binding: the per-lane child node is the generic PHY
+> > > provider and carries '#phy-cells = <0>', while the SerDes node itself
+> > > has no '#phy-cells' at all.
+> > >
+> > > Point the example at the PCIe lane child instead, which is also what
+> > > the S32G3 board device trees use. The dt-bindings/phy/phy.h include is
+> > > dropped along with the now-unused PHY_TYPE_PCIE constant.
+> > >
+> > > The schema itself is unchanged; 'phys: maxItems: 1' already describes
+> > > the corrected form.
+> > >
+> > > Signed-off-by: Jan Petrous (OSS) <jan.petrous@oss.nxp.com>
+> > > ---
+> > >  Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml | 3 +--
+> > >  1 file changed, 1 insertion(+), 2 deletions(-)
+> > >
+> > > diff --git a/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml b/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml
+> > > index 66a050028278..29323e50bd8b 100644
+> > > --- a/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml
+> > > +++ b/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml
+> > > @@ -82,7 +82,6 @@ unevaluatedProperties: false
+> > >  examples:
+> > >    - |
+> > >      #include <dt-bindings/interrupt-controller/arm-gic.h>
+> > > -    #include <dt-bindings/phy/phy.h>
+> > >
+> > >      bus {
+> > >          #address-cells = <2>;
+> > > @@ -124,7 +123,7 @@ examples:
+> > >                  ranges;
+> > >
+> > >                  device_type = "pci";
+> > > -                phys = <&serdes0 PHY_TYPE_PCIE 0 0>;
+> > > +                phys = <&serdes0_pcie0>;
+> >
+> > I don't think it fix somethings. The "serdes0" just a label, point to
+> > provider, which is not neccsary that "#phy-cells" is 0.
+> >
+> > Examples just show need how many phys and don't care about phy provider's
+> > arguments
+> >
+>
+> The example validates either way, agreed. The three cells are the
+> '#phy-cells = <3>' of the downstream nxp,s32cc-serdes binding, which
+> was never posted upstream; patch 1 is the only SerDes binding for S32G
+> and has no three-cell provider. I would rather have the example match
+> it.
+>
+> The form depends on the outcome of your patch 1 comment, so I will
+> keep this patch in sync with that. If you prefer the phys line
+> untouched, I can drop it and keep only the ranges fix v4 adds here.
 
-A follow-up with measurements, since "the glue needs to skip the soft
-reset" deserved more than my word. I ran the v4 pcs-xpcs patches on an
-S32G399A-RDB3 with both quirks removed, so the S32G entry went through
-the generic xpcs_pre_config() soft reset and the generic EEE path.
+This patch is not important. suggest drop it.
 
-Soft reset: it is a hardware requirement, not a preference. The SGMII
-soft reset writes BMCR_RESET in MMD 31. On the in-band lane the bit
-never self-clears, xpcs_poll_reset() times out after 600 ms, and from
-then on every register of that XPCS reads 0x8000, BMSR and
-VR_MII_DIG_STS included. The block is stuck in reset until the next
-SerDes bring-up.
-On the other two lanes the reset bit did clear, but the receive path
-was dead afterwards: links reported up, TX counted, zero RX frames,
-no ARP across either lane. Restoring only the no-soft-reset flag
-brought back the reference numbers (2.35/2.32 Gbit/s at 2.5G, 941/942
-at 1G, 0 failures in 36 speed changes, 10/10 down/up on each lane).
-The reason is the shared combo PHY: the XPCS reset that works is
-VR_MII_DIG_CTRL1.VR_RST inside the vendor sequence, with the power-good
-wait and the RX reset around it, and that sequence is ordered against
-the PCIe lane and the other XPCS instance, so the SerDes driver has to
-own it.
+Frank
 
-EEE: VR_MII_EEE_MCTRL0/1 read as zero and ignore writes, so the generic
-xpcs_config_eee() does no damage on S32G. I still want the no-EEE flag:
-the registers are not implemented, and a driver should not read and
-write registers it knows are not there, nor let phylink believe the PCS
-configured EEE when it did not. The flag is a statement of fact about
-the integration, not a workaround.
-
-The AN-complete gate in xpcs_get_state_c37_sgmii() also ran ungated in
-that test and the stale-speed race stayed fixed, so I can post it as
-generic behaviour rather than behind a flag if nobody objects. It has
-only been tested on S32G, though.
-
-That leaves S32G needing three things from pcs-xpcs for 1G: skipping
-the soft reset, no EEE register access, and a .pma_config for the PMA.
-(2.5G will later need the PMA hook on every pcs_config, because the
-lane moves between MPLLA and MPLLB with the line rate. That is why a
-PMA entry point stays necessary whatever happens to the quirks.)
-
-On the ID: I would rather not add another synthetic PCS ID either. The
-Nord RFC picked the same 0x30, which makes your collision point for me.
-What the core already has is the dw_xpcs_info platform data that
-pcs-xpcs-plat passes for the PMA generations it cannot read from
-hardware. S32G could do the same: leave the PCS ID native, it reads the
-real 0x7996ced0, and declare an S32G PMA token in dw_xpcs_info, with
-xpcs_identify() matching the desc on the PMA token as well. No faked
-register read, and the token names what actually differs on S32G, the
-PMA integration. The core change is a .pma field in struct dw_xpcs_desc
-and about ten lines. If you prefer glue-set flags, the no-soft-reset and
-no-EEE parts fit them directly; the .pma_config still needs the entry.
-
-Tell me which of the two you would rather review and I will shape next
-series (most likely not v4 as I have it tested and ready for send
-already) accordingly.
-
-BR.
-/Jan
+>
+> BR.
+> /Jan
+>
 
 -- 
 linux-phy mailing list
