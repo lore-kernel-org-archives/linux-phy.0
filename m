@@ -4,79 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E80ACC6B1D
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Oct 2026 09:35:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9DBBCC6B1D
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Oct 2026 09:38:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qBoW1ztSke1t/IDBonKwS2Zw++s+Mmt58r6CcE5ryx8=; b=p7Qs4DkcZl+bzx
-	F9Nzggiy6rZbVVe/yOvZUjb+S051mNjI5wiVkVLsv2Kj9o0k8xAZ4L37nntIq2zyjS9ZjSm0G+UQt
-	FOY2xzMdtfnufpXdbPxRLBAFthMskuhesG51gacwVXMgl6ZKGNMm/Nr3FV4L8MqwjzBs7R/4hydXN
-	GAGI2HANtXapREQfEXdC4dLJcWNqvIZOFphaZUhdBCKzAGym9BQM/V/ZCXIDnmm5XjdlX4xac120x
-	bGJuKtdwgOvoRCUUIiupkdbffI3czbyGSqeL0r/BpLtbIKtXcTMJWeMhoJ/sBkOpac8+8N3vpGunZ
-	rsdAggq+aXbKv60yAVWw==;
+	List-Owner; bh=+0AHEXYNhfQz66El2K4hIBr8ntzZzEZjv91HQPaP5Ns=; b=VmneZJBhqvJFtV
+	EnAV1NeVvouexyaGs4Eq8QHDPU18Jbe+TJ1eraFIzdIaQcMQF/3sZNyYeZth3xUxeL48c6t/gdWON
+	oSQ9ayLY71FTcs/pQmV+wWPj1tGbb26xUaDa2wQwH66fpGXSI0cHNgeYv5AzKTfL+zsSB1ac71PP+
+	tO4K/IM0EnRp4SZxjTNAMMSoz1ofILkles8fWNXz84mjYvY4q5PYwuthx01YpFMdL+hxPY9l2yxrY
+	r53IMWhChpgB9SEwwNuvBH3OQzWrvyE/s4+kpMKuj/lRY3ZD806cG1wWRqoZwO71fGSHes89RXWFU
+	PmhaWyaZnPc4xJzbkW/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGvOk-0000000F3Aa-0ToD;
-	Wed, 14 Oct 2026 09:35:46 +0000
-Received: from mail-ed1-x534.google.com ([2a00:1450:4864:20::534])
+	id 1xGvR8-0000000F42o-1tOT;
+	Wed, 14 Oct 2026 09:38:14 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xGvOZ-0000000F38Q-3XiN
+	id 1xGvR0-0000000F3um-0Iid
+	for linux-phy@bombadil.infradead.org;
+	Wed, 14 Oct 2026 09:38:06 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=gnTWC5fZozzSwkHK4q+Oqe31gSO1RQ9RdzCpCj2F8RY=; b=hWA0/yh3KU3N9GOG9A/ldyjrJ0
+	kUidZ6T78mNUfXBI+wI7Vp3AQMtGJspTUEFGoN/4dI/hFC67vRoYKchQ+7YBobUv9q1k64s9l3ubM
+	vW5a/lgAP3MShefmN+hGtsthV4adZVy25ZuYQ0Gxn0/H21uApi6Q0JXugQkG6RB22txv+VNdyRqdv
+	1nJjZiD9n83IyOK2AkzkzN1OZUvB1n5J+mU+2gihnEFGWjS+5dfl8Vl1XEHRFRLLVz9n0xYrlfAwW
+	tOpgf3vcGnGiafGfC+Zg88n+dLxEmfcFpaEsVoYjgVf010YHveFi/gmM2WW47D5QIFaGwFYS9HCpx
+	nSfhbxqg==;
+Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
+	by desiato.infradead.org with esmtps (Exim 4.99.5 #2 (Red Hat Linux))
+	id 1xGvQw-0000000GZfZ-3aly
 	for linux-phy@lists.infradead.org;
-	Wed, 14 Oct 2026 09:35:45 +0000
-Received: by mail-ed1-x534.google.com with SMTP id 4fb4d7f45d1cf-6aa9164072cso5727819a12.2
-        for <linux-phy@lists.infradead.org>; Wed, 14 Oct 2026 02:35:34 -0700 (PDT)
+	Wed, 14 Oct 2026 09:38:04 +0000
+Received: by mail-wm1-x332.google.com with SMTP id 5b1f17b1804b1-4a171b677d2so23591755e9.0
+        for <linux-phy@lists.infradead.org>; Wed, 14 Oct 2026 02:38:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1791970533; x=1792575333; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1791970681; x=1792575481; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:in-reply-to:content-language
          :from:references:cc:to:subject:user-agent:mime-version:date
          :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=kzIz0X6ttxgOxkC5LXT332DK567KH/TTx/ooIFt2UKA=;
-        b=n11/YmSwypQdUzpM5C3G5BZDgzm4Vrl11jQQkWnmcuBKDDbsvO06k6NoZ0AlSQZy11
-         Yxw+ZNa8w40pAKrvO6vDEPcC5PNp8Tpr8WcKgpeZFrMIR5piXylvQgN8owi9EMRaM2rT
-         o5wvBJobA+mn4oq+232TZsIRJPIgpnX1Wv9qYW9O7l8umna7vLl+ExRxPL+I5xk3Ax++
-         CWqwxD6hK4QnG9L1zS554MQM909q3Rw8ZztBWSk9v547yLNOp/P9L1cydH679/9L6Ehv
-         zc3d1tRQqWugzztYKCEFY/2d0MiFYPSzEY49UqhBxrHHE9XE4SQUusWmLOsvZvMgOA75
-         Wy0w==
+        bh=gnTWC5fZozzSwkHK4q+Oqe31gSO1RQ9RdzCpCj2F8RY=;
+        b=ttFMYbpZFmQ7ojFM0ldrEW19KiXUXNETnhfYZI/bwZkvl8YgylYcpdBb0OtvBH7GJ/
+         CM9qD8VljfY+ckZhJln1tbDuRuQvFTo7GrMnG1dfq3XOcAFObghKFe5sslDiDIWlHG77
+         oElrPugTkSsIBye7sQW53zODkGjhxw6kZcSbv98iyDJgrHNgXsAe3bnzU1ea6ShYe66q
+         ZOEaVd+sBHqZk+xd+USYfjyc6rpiGkw9Pt/J1AF/008P9vRqB9vWz4bAXGGzkBsf4bhx
+         nFTfycc2xKIV2txjLxpBvU4kHXvEHK89UBGTdv3BTd1MlHc+k5XqBn70EufME+NddHbN
+         /ewg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1791970533; x=1792575333;
+        d=1e100.net; s=20260707; t=1791970681; x=1792575481;
         h=content-transfer-encoding:content-type:in-reply-to:content-language
          :from:references:cc:to:subject:user-agent:mime-version:date
          :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=kzIz0X6ttxgOxkC5LXT332DK567KH/TTx/ooIFt2UKA=;
-        b=cLwOyKuVLCMRgyYbB7L+KY8fIsztGyqZN/86Uzm2+IWF3MrSD6o7NmyahVLyGX9CXK
-         dUMnXg7ky5qtD1qAE2oojQ33myfSeLyjKJ4OsiTgSNP1mpYHtMpT6WRXnlFCGm+UoVEq
-         vTCsJvn0MWpIRIG8V+lKNdFeeyFAijwuBIWTnjxt6l2KnkXwYfP2hvAxLRNOyb5oHH38
-         CDYvCP0eJ1fMHkF3Z5/47q/pPxqfkthpFF05aLyR4S2nXHQpATwOblOw7i8GcYvFBtG1
-         2cmfAQxRXxcuKZsaGMo5e1p0ZIZBWpT/FBa/Iyhln49ofbdlwXH5/XAJUTYHAfGYzjP5
-         8xDA==
-X-Forwarded-Encrypted: i=1; AKwUvBzQnoWVkwAHkmQav+jZYipNaw2L8SqsVO+CegeBLR6FJFIvY2LwxQDi2SFBJRwR0qhmPmp7ljoOIM4=@lists.infradead.org
-X-Gm-Message-State: AFq9FYLpwLaHHyRBgFVA01nszxwaVJbZnyzgBYcyv/llhbzY88AsrmXV
-	ZaA0VcdjncQ4PErH/RVRdW8BGJqP9hOLjls3mHZD1Wry5+ZDwBmhKp20vo4RUdBFQXs=
-X-Gm-Gg: AYBFou2OgQpaY1T0gFaeVoFSDKhKiRmKfN4sHC/rh7FqWECdQWWFLQ5/HVFNm7DXBsX
-	RvCa+gwExsf9Flt41a7VRZO602oK/O+gbMQYeaGCQvLQfmkuumBHRdInvK4bPlyDu/FxrPYP46c
-	4J+R0n9MUfVxQm0qLwV3JsKJ0Px7uE9IBfLmydQn3Nvm4/QfkDVbJBeS7o7h/tEcYTRCutMThhX
-	hKESfdKlWk/Ig8AQW2QaQw6wfreHMJNKRFJ2Cr47SYQzcO69o4eqRcbQTdI2nC8myKRP+fATGmR
-	5muWz60kD2pcvEdBBjkWRgbg9H2E5lOXaiUSOrLr4j1vHO8U2IxpSmq2xosJz1kZDI8ovRGenQx
-	JOGvVKpZjio+knCS8ecUkuFZQ5SOrues13MZgsUluOEuod0rjyjUWvIMy8nHTNV+rVjRWoC7IDX
-	lC0zHhXCcJz3IqpHCc2yqnsb1NF2OrAwVAqRhA9hi/EkOf7iU9Hnxlqach8Uhau26Vei/Sj3h1f
-	R/3OKIeDt3I
-X-Received: by 2002:a05:6402:2351:b0:6b1:b626:5bd9 with SMTP id 4fb4d7f45d1cf-6b1b6265e2fmr7285065a12.0.1791970533495;
-        Wed, 14 Oct 2026 02:35:33 -0700 (PDT)
+        bh=gnTWC5fZozzSwkHK4q+Oqe31gSO1RQ9RdzCpCj2F8RY=;
+        b=rTSNo7d2X2JYfCBRPuBi20fEx3rR++AcBHgrCvv9bnW3VbLUp6Gey8ySSdLb8UJiF2
+         tdnVDitTvoMoQLeB/4OsqifQ45tQTO6u4TDTSIlplokTCGptL1q6+5B48srttUu+G/hM
+         IK16cOOFn+BtijDOJEj4Cyre/m+iVZS/VR6z6+bGttQvOIZXD6BjvOWIVkILvzJzqRPG
+         KjtMQs20VCTNy2F3QrLJ9TieksL2u3fJ2o4b9GTuEbitg1Ajg1opqOh4q+BZlOze2oYH
+         pCShcQozjGcipUMSLGJgWW1JPpzDIZLkjvMh+7N93GQEXanP7DUEpaEMEAf3tl8ry2c4
+         zlwA==
+X-Forwarded-Encrypted: i=1; AKwUvBxfZYDYf7DcpzV/GGX9q1HgkerbHTj9ACIZyyCe2ZQdx6eMsOBzuwojksZCozdohgHvMA2XjEUt1GA=@lists.infradead.org
+X-Gm-Message-State: AFq9FYIk31JT9rnRtqrib0aW1RVRA1lr3/3UDP2ktwvBMmdcG29idPEl
+	U5BENiGWn9jhLN64eC+sdVrgZwW3UpF8lzq4II5MKTBt4rCdOt2KE8KuZQtotLIbMZc=
+X-Gm-Gg: AYBFou2zKFqTi3bm8hPqpObcg/1b2BUr2iBpIzxejEe3NsxzSHRWuJCRDP24J90Cnqx
+	N2KbbBRgYsJa3Xcd6Pp0IvITMapbXmXTe/YtepWNm9f8abv0AwZLmB1Nz8qoZyqkvDIaqDfd5xh
+	sBIgtjaRHfuJfWCbmQ71iI+0sfS2vmt1djx+usuSaSJfJiRAnKCbMYVCHAvfpLtFSP2IgmGOzTp
+	KS2Wnbk/i8SMg6nhDE449HjlUfdzmaRU+6UUmmGiaPD1vuIme1pjLBho613UKgEf1hjMwutIAzN
+	i9q7V9on6wJ2zzwo3H0ywYWR2MjOdXgOmO8p70c4+mZZf7q+rR6a+fLoKuiKwmBS1rcKV/lbhof
+	kv8tA9KnZYh0DtdXlcNEGEpWjHXr63uGJNWUrIvwn9AQgA7BFVWrFzsFX53IWGoMbl6HeMWFyIY
+	ezL0wcmUO7kcz2JAhxHmzn7gWox9nY5djonUIDFKSQTQR0lYs+iLT/qeBMhggk0zmOBYKAz6tg+
+	V/UYNFbTK+O
+X-Received: by 2002:a05:600c:3e0f:b0:4a0:1b21:2628 with SMTP id 5b1f17b1804b1-4a18e4b60d8mr299229875e9.23.1791970680941;
+        Wed, 14 Oct 2026 02:38:00 -0700 (PDT)
 Received: from [192.168.0.167] ([109.76.126.202])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-6b203839764sm943163a12.7.2026.10.14.02.35.30
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48de7273a0esm6026436f8f.29.2026.10.14.02.37.59
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 14 Oct 2026 02:35:32 -0700 (PDT)
-Message-ID: <8cb5164e-9f27-4e19-9f4a-37da35fe0770@linaro.org>
-Date: Wed, 14 Oct 2026 10:35:30 +0100
+        Wed, 14 Oct 2026 02:38:00 -0700 (PDT)
+Message-ID: <db980e07-adf9-464c-9fee-401581986508@linaro.org>
+Date: Wed, 14 Oct 2026 10:37:58 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/8] dt-bindings: phy: qcom,x1e80100-csi2-phy: Add Hawi
- and Maili compatibles
+Subject: Re: [PATCH v2 3/8] dt-bindings: media: Add CAMSS device for Hawi
 To: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>,
  Loic Poulain <loic.poulain@oss.qualcomm.com>, Robert Foss
  <rfoss@kernel.org>, Andi Shyti <andi.shyti@kernel.org>,
@@ -93,13 +107,14 @@ Cc: Suresh Vankadara <svankada@qti.qualcomm.com>,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-media@vger.kernel.org
 References: <20261013-hawi-maili-camss-v2-0-fc93222da89c@oss.qualcomm.com>
- <20261013-hawi-maili-camss-v2-2-fc93222da89c@oss.qualcomm.com>
+ <20261013-hawi-maili-camss-v2-3-fc93222da89c@oss.qualcomm.com>
 From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
 Content-Language: en-GB
-In-Reply-To: <20261013-hawi-maili-camss-v2-2-fc93222da89c@oss.qualcomm.com>
+In-Reply-To: <20261013-hawi-maili-camss-v2-3-fc93222da89c@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261014_023535_918721_1E3B10A4 
-X-CRM114-Status: GOOD (  11.36  )
+X-CRM114-CacheID: sfid-20261014_103803_189680_04DE3E60 
+X-CRM114-Status: UNSURE (   7.06  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,40 +132,19 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 13/10/2026 12:02, Nihal Kumar Gupta wrote:
-> Hawi and Maili integrate the same CSIPHY IP as Kaanapali with an
-> identical register interface. Add qcom,hawi-csi2-phy and
-> qcom,maili-csi2-phy falling back to qcom,hawi-csi2-phy.
-> 
-> Co-developed-by: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
-> Signed-off-by: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
-> Signed-off-by: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
-> ---
->   Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml | 5 +++++
->   1 file changed, 5 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
-> index 6e9eb8e265df93b631101ae13f31f6365b6239b6..627aebc7cd9b7ca313457d3f70f72796e9671e8a 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
-> @@ -18,11 +18,16 @@ properties:
->     compatible:
->       oneOf:
->         - enum:
-> +          - qcom,hawi-csi2-phy
->             - qcom,kaanapali-csi2-phy
->             - qcom,x1e80100-csi2-phy
->         - items:
->             - const: qcom,glymur-csi2-phy
->             - const: qcom,x1e80100-csi2-phy
-> +      - items:
-> +          - enum:
-> +              - qcom,maili-csi2-phy
-> +          - const: qcom,hawi-csi2-phy
->   
->     reg:
->       maxItems: 1
-> 
-Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+> +
+> +  iommus:
+> +    maxItems: 1
+
+Just the one iommu entry ?
+
+Please:
+
+- Make sure its just the one
+- Include a comment to name the one in this file
+
+---
+bod
 
 -- 
 linux-phy mailing list
