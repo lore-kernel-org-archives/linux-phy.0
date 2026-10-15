@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F05B5CCA464
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED54DCCA462
 	for <linux-phy@archiver.kernel.org>; Thu, 15 Oct 2026 22:20:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,45 +12,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wNdSOJUpgJDmwHKB9DE0Y5OGWFfNzose93wIrrQ+Gdc=; b=Fbk08sCBPAiUA5
-	3ywfQoUdIgnV0dN/D4JQyuab8G2jKx+StUDQKBo5neEbMGrYZV+B0ogyHL2flP6ZRsggHw5tMSxVv
-	BiwZ3jz48q4g06rNNS+aSiRDI6KCp3IzM07suktGQ9pFpjjrgWdF2wtZBW5FrIeyyDQzsZE04/El3
-	g6ycRbLLrLs7mljccOnJAwZdQB/jwE6HHU33yu5FMXLsxGrB5ib6luAAElqkojylIvqBEucDT7O0G
-	U/dUV30IEdsOeMeXf5toZ6p9UkzAHgbGST3gFSjuPpVIbMKlJ7QU/q55AGQFlDAzRe4512sp/Gi0F
-	M5Ce5BVHKFAtoI9vHq7Q==;
+	List-Owner; bh=gsy5E98LbcFZaP4vbgLGXjfemRdOJxiHUX+K/FEgSyw=; b=F8S6SpzPwmo1og
+	Lgj1IiP9RvuyicKjG9Nd2codPjcdk3cVlmJB1LgUhBnCAAd5EIV7fe0lBVKb0ITIaccQP8200qLx7
+	4Dhdtzyo2XywH8v4WiaE4VTKxMBRIj4J7k/ebC56FoATwEDr2yIfPeLkHUdDiDGDj7AKYuYNwTMwp
+	gkxe3+fpn0r+vnGOGhaM6wzHn9ZhZTen6/eLvnBkRpI3L0SSEOWoGZ2euuEt43HAILfbkI2zPEheI
+	tGyIZhInp555EkgNFzrRxA8lk1VJ0xlJiF54oAoI/L1b9WHCwQjf90EJ2skEB26Cf0OfU7pTVbv6Z
+	Gm1fsoOUTKASix9R9Abg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHToV-00000001UF1-1kia;
+	id 1xHToV-00000001UEt-1NTw;
 	Thu, 15 Oct 2026 22:20:39 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHToU-00000001UEQ-0GoG
+	id 1xHToU-00000001UER-0GoM
 	for linux-phy@lists.infradead.org;
 	Thu, 15 Oct 2026 22:20:38 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 7C29443EFF;
+	by sea.source.kernel.org (Postfix) with ESMTP id 8802743F99;
 	Thu, 15 Oct 2026 22:20:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 5B7FAC2BD01;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 60E0AC2BCFF;
 	Thu, 15 Oct 2026 22:20:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1792102837;
-	bh=opFYL6eJfRLIJ4Mi1M4Y9sNi8J7wJU4m5CxqbvcQwSE=;
+	bh=uJOH69sAakDOgLkjFww6q1aB0GM/pUFm+9OqUgtS+X0=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=KVCsrwuL5n5Gkp2z4QRuS/+oBmW9JTe5uP0SYvQo+VeelwJPsaeGa6nzWZI378vbk
-	 D3vBZSTj46dTrub13+7ko9ZTR8wvC0cwi/UkbchCIatZxaB9bu24aF4HsEdZf1zFu3
-	 h7/Or0c/AFKhU3RsuFRzNd+dnr6+IzSfzQBNS6+CHzCW0O95gM9N4FNYFhXTh99PSZ
-	 2d95LvyR3ddJoNFtQNGXKLvHJ1FaalWzvYmlG4K/eRLqW049/ClNRg9pGxukDDJqd5
-	 1UtRe71e3kwUHO+vWRyDBnkodi1AgxBNBCh5+XGptgUOVe+PON/VBRzZT40bQ1diVp
-	 Nx9pm81b65f6w==
+	b=qVBlvbM0QCZA1hyi7SsFVlyq9jBzUcMCCdiS5YKEE6v+P8p96l1NXMyaww73CL1Dl
+	 oCXkaaajeYxtKJuaSxuNjwgrDQfr3JEJyMbkfu30jbceSU1OJ1kSMCvp3lIx5FBxB/
+	 RJoM+ww8nx+Df2Zf0ERBW798zW/pL500mtkb6TZhCUEzkkEb1IJQuJV6UwihCfNjAD
+	 Fv/YMSt4BgAgtVVTLcWTQJOEHkht05tWSE7XhHAQf4FmLRco4O8wRA/E9cNiucyUNj
+	 WFjlCMNjBw9UZcCeylo4pcuWxDRhC7oQxN2uyQSKjGlF6USG2tri/h2aWEw/OWdZtX
+	 tgfFh6vzmr1gg==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 3F5ABCCA46B;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 4CC65CCA465;
 	Thu, 15 Oct 2026 22:20:37 +0000 (UTC)
 From: George Neacsu via B4 Relay <devnull+geocausa.gmail.com@kernel.org>
-Date: Thu, 15 Oct 2026 23:20:38 +0100
-Subject: [PATCH RFC 3/4] media: qcom: camss: csid-680: Select C-PHY in the
- receiver
+Date: Thu, 15 Oct 2026 23:20:39 +0100
+Subject: [PATCH RFC 4/4] media: qcom: camss: Configure C-PHY through the
+ PHY API
 MIME-Version: 1.0
-Message-Id: <20261015-x1e-cphy-rfc-v1-3-1f3fa9af940a@gmail.com>
+Message-Id: <20261015-x1e-cphy-rfc-v1-4-1f3fa9af940a@gmail.com>
 References: <20261015-x1e-cphy-rfc-v1-0-1f3fa9af940a@gmail.com>
 In-Reply-To: <20261015-x1e-cphy-rfc-v1-0-1f3fa9af940a@gmail.com>
 To: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
@@ -63,11 +63,11 @@ Cc: Neil Armstrong <neil.armstrong@linaro.org>,
  linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
  linux-kernel@vger.kernel.org, George Neacsu <geocausa@gmail.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1792102835; l=954;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1792102835; l=2783;
  i=geocausa@gmail.com; s=20261015; h=from:subject:message-id;
- bh=zIA90Rl/gtkLGho4hrUCxdrlhc5niDyVArSGj4xfgdM=;
- b=dxq1mf8fO50sxXqgXje86lxdhpWCCkmpix7jS568ln4jpofHpoSqOKdUHmWuSicEhghudMqwy
- zROe31y06DkCFz0gFQ8ltbPCGY67/Y7Q6MEooCwAXKNVWlTfde6sBz0
+ bh=TrW9HxBrbhZsq4EBR8HwxBI6x1lIFRbaMbGLoCMihE0=;
+ b=mJbdWh87bdTZxwdovvLTqT1YLJZ7GTzTkFuy7n1Fo0lK2PcHmSi6ZNJiatw1CZ1+XFqmUzbnx
+ TMxuPnShS9mAAS0QDBKLz7B0ltv+BOS6zCLMUCYQUZ0NuIBW17icFpD
 X-Developer-Key: i=geocausa@gmail.com; a=ed25519;
  pk=KyQk/iWbxsikewDBh0SwlHI51RvAqahD3loqmRp9DVI=
 X-Endpoint-Received: by B4 Relay for geocausa@gmail.com/20261015 with
@@ -92,29 +92,83 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: George Neacsu <geocausa@gmail.com>
 
-CSID 680 has a PHY type select in CSI2_RX_CFG0, next to the PHY number.
-The field is defined but never written, so the receiver always decodes
-D-PHY. Write phy_sel to it, as csid-gen2 does for C-PHY.
+With a PHY API CSIPHY, csiphy_stream_on() always asks for D-PHY. Ask for
+C-PHY when the endpoint is C-PHY, and pass the trio count and the symbol
+rate, which by the V4L2 convention is twice the link frequency.
 
 Assisted-by: Claude:claude-opus-5-5
 Signed-off-by: George Neacsu <geocausa@gmail.com>
 ---
- drivers/media/platform/qcom/camss/camss-csid-680.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/media/platform/qcom/camss/camss-csiphy.c | 35 ++++++++++++++----------
+ 1 file changed, 21 insertions(+), 14 deletions(-)
 
-diff --git a/drivers/media/platform/qcom/camss/camss-csid-680.c b/drivers/media/platform/qcom/camss/camss-csid-680.c
-index 345a67c8f..16b199f06 100644
---- a/drivers/media/platform/qcom/camss/camss-csid-680.c
-+++ b/drivers/media/platform/qcom/camss/camss-csid-680.c
-@@ -202,6 +202,8 @@ static void __csid_configure_rx(struct csid_device *csid,
- 			<< CSI2_RX_CFG0_PHY_NUM_SEL;
+diff --git a/drivers/media/platform/qcom/camss/camss-csiphy.c b/drivers/media/platform/qcom/camss/camss-csiphy.c
+index f44f2aeb9..8e1b4335a 100644
+--- a/drivers/media/platform/qcom/camss/camss-csiphy.c
++++ b/drivers/media/platform/qcom/camss/camss-csiphy.c
+@@ -329,17 +329,15 @@ static int csiphy_stream_on(struct csiphy_device *csiphy)
+ 	u8 bpp = csiphy_get_bpp(csiphy->res->formats->formats, csiphy->res->formats->nformats,
+ 				csiphy->fmt[MSM_CSIPHY_PAD_SINK].code);
+ 	struct csiphy_lanes_cfg *lncfg = &csiphy->cfg.csi2->lane_cfg;
+-	struct phy_configure_opts_mipi_dphy *dphy_cfg;
+-	union phy_configure_opts dphy_opts = { 0 };
++	const bool cphy = lncfg->phy_cfg == V4L2_MBUS_CSI2_CPHY;
++	union phy_configure_opts opts = { 0 };
+ 	struct device *dev = csiphy->camss->dev;
+ 	u8 num_lanes = lncfg->num_data;
+ 	s64 link_freq;
+ 	int ret;
+ 
+-	dphy_cfg = &dphy_opts.mipi_dphy;
+-
+ 	link_freq = camss_get_link_freq(&csiphy->subdev.entity, bpp, num_lanes,
+-					csiphy->cfg.csi2->lane_cfg.phy_cfg == V4L2_MBUS_CSI2_CPHY);
++					cphy);
+ 
+ 	if (link_freq <= 0) {
+ 		dev_err(dev,
+@@ -347,23 +345,32 @@ static int csiphy_stream_on(struct csiphy_device *csiphy)
+ 		return -EINVAL;
  	}
  
-+	val |= phy->phy_sel << CSI2_RX_CFG0_PHY_TYPE_SEL;
-+
- 	writel(val, csid->base + CSID_CSI2_RX_CFG0);
+-	ret = phy_mipi_dphy_get_default_config_for_hsclk(link_freq, num_lanes,
+-							 dphy_cfg);
+-	if (ret < 0) {
+-		dev_err(dev, "Invalid config for link frequency %lld\n",
+-			link_freq);
+-		return ret;
++	if (cphy) {
++		/* A C-PHY link frequency is half the symbol rate. */
++		opts.mipi_cphy.symbol_rate = link_freq * 2;
++		opts.mipi_cphy.lanes = num_lanes;
++	} else {
++		ret = phy_mipi_dphy_get_default_config_for_hsclk(link_freq,
++								 num_lanes,
++								 &opts.mipi_dphy);
++		if (ret < 0) {
++			dev_err(dev, "Invalid config for link frequency %lld\n",
++				link_freq);
++			return ret;
++		}
+ 	}
  
- 	val = CSI2_RX_CFG1_PACKET_ECC_CORRECTION_EN;
+-	ret = phy_set_mode(csiphy->phy, PHY_MODE_MIPI_DPHY);
++	ret = phy_set_mode(csiphy->phy,
++			   cphy ? PHY_MODE_MIPI_CPHY : PHY_MODE_MIPI_DPHY);
+ 	if (ret) {
+ 		dev_err(dev, "Failed to set phy mode\n");
+ 		return ret;
+ 	}
+ 
+-	ret = phy_configure(csiphy->phy, &dphy_opts);
++	ret = phy_configure(csiphy->phy, &opts);
+ 	if (ret) {
+-		dev_err(dev, "failed to configure MIPI D-PHY\n");
++		dev_err(dev, "failed to configure MIPI %s\n",
++			cphy ? "C-PHY" : "D-PHY");
+ 		goto error;
+ 	}
+ 
 
 -- 
 2.53.0
