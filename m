@@ -4,113 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48F55CC6B3A
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Oct 2026 14:19:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F926CC6B34
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Oct 2026 14:24:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hedGzmiXej+mXSzwGKKzNANjn/jij29rvrbMjby16cQ=; b=xVxg5yCqXoO9Ya
-	fL+O/5wIEMHqwYyKGo5Jm9Se3t+tdGyX9Vaopcb27SEmIvdc9iFd/PufZlJ8XQ/MSXFwkWVOdYVwo
-	crgmXA+pCyjBaM4dXrtZmSyUvNsgOARGvhjrj0pzWOytR/8z5uwV1KlA4PqhGPBtD5LsiJ98zgCuI
-	eNg04ECc33AEYl9Co1hr0dHwbvvRbooG1zKKtxF3d5lL+bOV78IiZA9t84XrgXzpiDDtKS0skeqNB
-	8D2IcoPHsZBjcLoldQBPMBvZY952lVLmUBT2H8IXTlT5+xAdnxqz10SlcnTHbWQZdyKs+S6q+QW6W
-	hwNjjWXaKi4KY04utntA==;
+	List-Owner; bh=0f8RHI/5QDj5qNUIQBmjBw8ItbFGSI1u/rWYJtgLkV0=; b=hvPc9Wy6yCJ+8x
+	fdtIMeSW2qBD74C3/KhYPEHul9bVLJaWKnTEzwTECnr9m7dRRCFfl1gvrV7MWHijc4Jmat6BFz+wT
+	UK8D47VryZApq87xbudRcA/RaBI+MUlVQaV59hSmdzZmEugTMJOGWxkd+yFY8QbeSKcsBqDcH7B+L
+	s00eJ6iO0BBbzAArZaVFqn41i2bWbWueP8/CCv1MEVH8tOU0hzamw9HwW62EGaYbMQJsdKG7JnOYn
+	wL8wQpQjZ87D8hDq6CuvNKs3XdwJ6wEU6NsnjF5YknlrYzGkIFM7oofVbv50iIQvsQclf9YDVJpvX
+	XVZfO/8UCBmzzNkfLmqw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHMIg-00000000LfN-2uLK;
-	Thu, 15 Oct 2026 14:19:18 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xHMNH-00000000M0Q-2jJB;
+	Thu, 15 Oct 2026 14:24:03 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHMIe-00000000Ler-1FK2
+	id 1xHMNG-00000000M03-1wbr
 	for linux-phy@lists.infradead.org;
-	Thu, 15 Oct 2026 14:19:16 +0000
+	Thu, 15 Oct 2026 14:24:02 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id ADB93413C4;
-	Thu, 15 Oct 2026 14:19:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EDA3A1F000C4;
-	Thu, 15 Oct 2026 14:19:11 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 8869360120;
+	Thu, 15 Oct 2026 14:24:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C26AF1F000C5;
+	Thu, 15 Oct 2026 14:24:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792073955;
-	bh=OMbcusVFFCQHBChDr+K/gnTypIJ5iHka3+90bcArCZY=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=JrWS3WxJqu7YYtY8eNtGGyzPuES0zzNGeYqXBK+Dzml6NT4kA14py9NBuhtBlLiYk
-	 2+J7olVslfx1F9geVbOkwRIROSHTrTgH64noqdrhQ3djy8dQ+7drNLpZjNKXREuaJV
-	 FOBTu33f8CqvOoqzEri+R/m8paDhdqRmSp/TYJwsJYyQPzpbSZCKoFspSm3RUStmmI
-	 ninOFQPa2wTA+/6Z4BhEV/joib2tMAg7RZOv6c366ZX7BtzLSZ3hKePBn1UAKYGZTk
-	 +AB3cKopFGM6pU27bUMbHXilb+Y/rY4gBvGSa2rk35MSw8cKuCzoBO86Qb69FuN/uj
-	 7o0rgYReatWGA==
-Message-ID: <9f75b5d1-c8f9-4e74-a857-ca2a1fb096d9@kernel.org>
-Date: Thu, 15 Oct 2026 15:19:10 +0100
+	s=k20260515; t=1792074241;
+	bh=kAQvCi2NgTn3vfjg1SkEBfJE/6zrPOW3vHosweeArbc=;
+	h=From:To:Cc:Subject:In-Reply-To:References:Date;
+	b=SjnWGMyCbmD0su9hA+XiQM1geHSMw1xk4W8g/sQmzPo4KjdiWvcmwkzng8JoxAOuY
+	 ucjh2DBxE9pXF80393L4VO6ULkJQwBEOSFq2DT9tHo/1kHtUHqSDKjHUQQxFSXMhwx
+	 DfpkwvLwCOwzpoYA4M6xjFYqjFbPm8yiTqQJRA8nTLImagUdURXQXbKvA8Kv1HbunR
+	 8xGpqg+ufNI98qsa0ZeQsZ48juTGJyPAoYjA5w+MNNv4/u5oXiSQG5RhfHA5TFLiM6
+	 JxPNrRIZVvrZp3yDWlcUgViQaprrxx3VZTl3E2+5SUGeLLe6JH2+WcVAv8YNdygEYy
+	 1pxeKdqVAjIUQ==
+From: Mattijs Korpershoek <mkorpershoek@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, Krzysztof
+ Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
+ Manivannan Sadhasivam <mani@kernel.org>
+Cc: Maxime Ripard <mripard@kernel.org>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Krzysztof Kozlowski
+ <krzysztof.kozlowski@oss.qualcomm.com>, Sriram Dash
+ <quic_sriramd@quicinc.com>, Shazad Hussain <quic_shazhuss@quicinc.com>
+Subject: Re: [PATCH v6 0/2] Add support for SA8255P in the qcom-qmp-usb phy
+ driver
+In-Reply-To: <20261002-phy-qcom-qmp-usb-8255-v6-0-bb7dfc5636b4@kernel.org>
+References: <20261002-phy-qcom-qmp-usb-8255-v6-0-bb7dfc5636b4@kernel.org>
+Date: Thu, 15 Oct 2026 16:23:58 +0200
+Message-ID: <xhkdby0bz59fl.fsf@mkorpers-koolstof.csb>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v21 14/14] arm64: dts: qcom: kaanapali-mtp-camera-s5kjn5:
- Add DT overlay
-To: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>,
- Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
- Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
- Loic Poulain <loic.poulain@oss.qualcomm.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>
-Cc: linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, jeyaprakash.soundrapandian@oss.qualcomm.com,
- Vijay Kumar Tumati <vijay.tumati@oss.qualcomm.com>
-References: <20261011-kaanapali-camss-v21-0-04fd28d815c6@oss.qualcomm.com>
- <yiDHbPcdxx4FNvCqU35drQaTjUFm6D6-6QEw1IlQjiF1MKicjyTasDPEGBTspeMPoNMkHrBCLgyaGM5ALeC0NA==@protonmail.internalid>
- <20261011-kaanapali-camss-v21-14-04fd28d815c6@oss.qualcomm.com>
-From: Bryan O'Donoghue <bod@kernel.org>
-Content-Language: en-GB
-Autocrypt: addr=bod@kernel.org; keydata=
- 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
-In-Reply-To: <20261011-kaanapali-camss-v21-14-04fd28d815c6@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,153 +70,112 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12/10/2026 07:45, Hangxiang Ma wrote:
-> Enable the S5KJN5 image sensor via CCI on Kaanapali MTP board.
-> 
-> The Kaanapali MTP board connect S5KJN5 with QUP I2C bus by default. This
-> DTBO enables S5KJN5 on CCI-0 interface connected to the CSIPHY2 in four
-> lane mode on a rework camera module.
-> 
-> Signed-off-by: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
+Hi Mani,
+
+On Fri, Oct 02, 2026 at 11:39, Mattijs Korpershoek <mkorpershoek@kernel.org> wrote:
+
+> The Qualcomm automotive SA8255p SoC relies on firmware to configure
+> platform resources, including clocks, interconnects and TLMM.
+> The driver requests resources operations over SCMI using power protocols.
+>
+> The SCMI power protocol enables or disables resources like clocks,
+> interconnect paths, and TLMM (GPIOs) using runtime PM framework APIs,
+> such as resume/suspend, to control power on/off.
+>
+> Power domain "core" controls the GDSC, resets, and TLMM (GPIOs)
+> whereas power domain "transfer" controls clocks and interconnects.
+>
+> Patch 1 adds the binding for sa8255p. Similarly to what has been done
+> for I2C [1], this is a separate binding.
+>
+> Patch 2 adds the driver change, which is based on a public vendor
+> patch from qualcomm [2].
+> I did the following changes on top of that:
+> * Use devm_add_action_or_reset() for dev_pm_domain_detach_list() instead
+>   of implementing a driver .remove()
+> * Drop the .lanes struct member since it no longer exists.
+> * Re-order some functions
+>
+> This has been tested on next-20260706 with a Ride4 SA8775P board that
+> has SCMI firmware (which is compatible).
+>
+> [1] https://lore.kernel.org/all/20260617-enable-i2c-on-sa8255p-v7-1-ad736dbeab57@oss.qualcomm.com/
+> [2] https://git.codelinaro.org/clo/le/meta-qti-auto-kernel/-/blob/LY.AU.0.1.0.r1-16800-gen4meta.0/recipes-kernel/linux/files/usb/0011-PENDING-phy-qcom-qmp-usb-Add-support-for-SA8255P.patch
+
+I've talked to Vinod at plumbers and he told me your review is mandatory
+for these patches to get picked up.
+
+Could you have a look at let me know what you think please?
+
+Thanks
+Mattijs
+
+>
+> Signed-off-by: Mattijs Korpershoek <mkorpershoek@kernel.org>
 > ---
->   arch/arm64/boot/dts/qcom/Makefile                  |  5 ++
->   .../boot/dts/qcom/kaanapali-mtp-camera-s5kjn5.dtso | 81 ++++++++++++++++++++++
->   arch/arm64/boot/dts/qcom/kaanapali-mtp.dts         |  7 ++
->   3 files changed, 93 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/Makefile b/arch/arm64/boot/dts/qcom/Makefile
-> index 88230c4e00ea..84b244d43e9e 100644
-> --- a/arch/arm64/boot/dts/qcom/Makefile
-> +++ b/arch/arm64/boot/dts/qcom/Makefile
-> @@ -48,6 +48,11 @@ dtb-$(CONFIG_ARCH_QCOM)	+= ipq9574-rdp449.dtb
->   dtb-$(CONFIG_ARCH_QCOM)	+= ipq9574-rdp453.dtb
->   dtb-$(CONFIG_ARCH_QCOM)	+= ipq9574-rdp454.dtb
->   dtb-$(CONFIG_ARCH_QCOM)	+= ipq9650-rdp488.dtb
-> +dtb-$(CONFIG_ARCH_QCOM)	+= kaanapali-mtp-camera-s5kjn5.dtbo
-> +
-> +kaanapali-mtp-camera-s5kjn5-dtbs	:= kaanapali-mtp.dtb kaanapali-mtp-camera-s5kjn5.dtbo
-> +
-> +dtb-$(CONFIG_ARCH_QCOM)	+= kaanapali-mtp-camera-s5kjn5.dtb
->   dtb-$(CONFIG_ARCH_QCOM)	+= kaanapali-mtp.dtb
->   dtb-$(CONFIG_ARCH_QCOM)	+= kaanapali-qrd.dtb
->   dtb-$(CONFIG_ARCH_QCOM)	+= lemans-evk.dtb
-> diff --git a/arch/arm64/boot/dts/qcom/kaanapali-mtp-camera-s5kjn5.dtso b/arch/arm64/boot/dts/qcom/kaanapali-mtp-camera-s5kjn5.dtso
-> new file mode 100644
-> index 000000000000..d0e39855e0e6
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/qcom/kaanapali-mtp-camera-s5kjn5.dtso
-> @@ -0,0 +1,81 @@
-> +// SPDX-License-Identifier: BSD-3-Clause
-> +/*
-> + * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-> + */
-> +
-> +/dts-v1/;
-> +/plugin/;
-> +
-> +#include <dt-bindings/clock/qcom,kaanapali-cambistmclkcc.h>
-> +#include <dt-bindings/clock/qcom,kaanapali-camcc.h>
-> +#include <dt-bindings/gpio/gpio.h>
-> +#include <dt-bindings/media/video-interfaces.h>
-> +
-> +&camss {
-> +	status = "okay";
-> +};
-> +
-> +&camss_csiphy2_in_port {
-> +	camss_csiphy2_inep: endpoint {
-> +		data-lanes = <1 2 3 4>;
-> +		remote-endpoint = <&csiphy2_out_ep>;
-> +	};
-> +};
-> +
-> +&cci0 {
-> +	status = "okay";
-> +};
-> +
-> +&cci0_i2c1 {
-> +	#address-cells = <1>;
-> +	#size-cells = <0>;
-> +
-> +	camera@10 {
-> +		compatible = "samsung,s5kjn5";
-> +		reg = <0x10>;
-> +
-> +		reset-gpios = <&tlmm 3 GPIO_ACTIVE_LOW>;
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&cam_mclk2_default &cam_reset2_default>;
-> +
-> +		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK2_CLK>;
-> +		assigned-clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK2_CLK>;
-> +		assigned-clock-rates = <19200000>;
-> +
-> +		vddio-supply = <&vreg_l4n_1p8>;
-> +		vddd-supply = <&vreg_l1m_1p0>;
-> +		vdda-supply = <&vreg_l4m_2p2>;
-> +		vddio1p2-supply = <&vreg_l2n_1p2>;
-> +		afvdd-supply = <&vreg_l7m_2p8>;
-> +
-> +		port {
-> +			s5kjn5_out_ep: endpoint {
-> +				data-lanes = <1 2 3 4>;
-> +				link-frequencies = /bits/ 64 <1248000000>;
-> +				remote-endpoint = <&csiphy2_in_ep>;
-> +			};
-> +		};
-> +	};
-> +};
-> +
-> +&csiphy2 {
-> +	vdda-0p9-supply = <&vreg_l3d_0p8>;
-> +	vdda-1p2-supply = <&vreg_l1d_1p2>;
-> +
-> +	status = "okay";
-> +};
-> +
-> +&csiphy2_in_port {
-> +	csiphy2_in_ep: endpoint {
-> +		bus-type = <MEDIA_BUS_TYPE_CSI2_DPHY>;
-> +		clock-lanes = <0>;
-> +		data-lanes = <1 2 3 4>;
-> +		remote-endpoint = <&s5kjn5_out_ep>;
-> +	};
-> +};
-> +
-> +&csiphy2_out_port {
-> +	csiphy2_out_ep: endpoint {
-> +		remote-endpoint = <&camss_csiphy2_inep>;
-> +	};
-> +};
-> diff --git a/arch/arm64/boot/dts/qcom/kaanapali-mtp.dts b/arch/arm64/boot/dts/qcom/kaanapali-mtp.dts
-> index 9eb02fd09dab..c70cd39bcb75 100644
-> --- a/arch/arm64/boot/dts/qcom/kaanapali-mtp.dts
-> +++ b/arch/arm64/boot/dts/qcom/kaanapali-mtp.dts
-> @@ -1243,6 +1243,13 @@ &tlmm {
->   			       <119 2>, /* SoCCP */
->   			       <144 4>; /* CXM UART */
-> 
-> +	cam_reset2_default: cam-reset2-default-state {
-> +		pins = "gpio3";
-> +		function = "gpio";
-> +		drive-strength = <16>;
-> +		bias-disable;
-> +	};
-> +
->   	wlan_en: wlan-en-state {
->   		pins = "gpio16";
->   		function = "gpio";
-> 
-> --
-> 2.34.1
-
-Really nice to see sensor stuff in this series.
-
-Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+> Changes in v6:
+> - Applied R-b tags from Krzysztof and Neil
+> - Link to v5: https://patch.msgid.link/20260903-phy-qcom-qmp-usb-8255-v5-0-e251e22b341e@kernel.org
+>
+> Changes in v5:
+> - Move 'core' as first domain, before 'transfer' (Krzysztof)
+> - Reworded binding commit message to be more precise about the various
+>   domains ('core', 'transfer' and 'perf') (Krzysztof)
+> - Dropped Krzysztof review due to the above binding changes
+> - Set .num_vregs=0 since regulators are managed by firmware
+> - Link to v4: https://patch.msgid.link/20260724-phy-qcom-qmp-usb-8255-v4-0-a90014fab476@kernel.org
+>
+> Changes in v4:
+> * bindings: Use additionalProperties: instead of unevaluatedProperties:
+>   (Krzysztof)
+> - Link to v3: https://patch.msgid.link/20260722-phy-qcom-qmp-usb-8255-v3-0-e789070b48f7@kernel.org
+>
+> Changes in v3:
+> * Binding changes:
+>   * Use a separate binding file (Krzysztof)
+>   * Remove 'usb_' prefix from power-domain-names (Krzysztof)
+> * Driver changes:
+>   * Remove 'usb_' prefix from power-domain-names
+>   * Moved sa8255p_usb3_uniphy_cfg before sa8775p_usb3_uniphy_cfg
+> * Link to v2: https://patch.msgid.link/20260709-phy-qcom-qmp-usb-8255-v2-0-3b6c26a45788@kernel.org
+>
+> Changes in v2:
+> * Driver changes:
+>   * Fix comment typo tranfer -> transfer
+>   * Fix print statement to add a missing '(' in the string
+>   * Use dev_err_probe() in qmp_usb_domain_attach() to reduce log noise
+>   * Fix pm_runtime_put_sync() order in qmp_usb_d0_to_d3 (Sashiko)
+>   * Fix runtime PM reference leak on usb_transfer (Sashiko)
+>   * Fix runtime PM reference leak on error in qmp_usb_init (Sashiko)
+>   * Reorder qmp_usb_d0_to_d3() to mirror init ordering in qmp_usb_exit()
+>     (Sashiko)
+>   * Reorder qmp_usb_d0_to_d3() to mirror resume ordering in
+>     qmp_usb_runtime_suspend() (Sashiko)
+>   * Fix error handling in qmp_usb_runtime_resume() (Sashiko)
+> * Link to v1: https://patch.msgid.link/20260708-phy-qcom-qmp-usb-8255-v1-0-8d852a9535db@kernel.org
+>
+> ---
+> Mattijs Korpershoek (1):
+>       dt-bindings: phy: Add sa8255p USB PHY
+>
+> Sriram Dash (1):
+>       phy: qcom: qmp-usb: Add support for SA8255P
+>
+>  .../phy/qcom,sa8255p-qmp-usb3-uni-phy.yaml         |  52 ++++++
+>  drivers/phy/qualcomm/phy-qcom-qmp-usb.c            | 182 ++++++++++++++++++---
+>  2 files changed, 212 insertions(+), 22 deletions(-)
+> ---
+> base-commit: 32b6ef9a5d0eca44f9cd91f52f4faa89f145a0de
+> change-id: 20260708-phy-qcom-qmp-usb-8255-9986907cdbc9
+>
+> Best regards,
+> -- 
+> Mattijs Korpershoek <mkorpershoek@kernel.org>
 
 -- 
 linux-phy mailing list
