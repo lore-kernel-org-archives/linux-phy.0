@@ -4,60 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64C84CCA464
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Oct 2026 20:30:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F05B5CCA464
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Oct 2026 22:20:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fisxsds0TEg3uIeiAsCbptjCJvPdQw6tupNdOWfxNHo=; b=Xsz47rAwty39rN
-	ukfLPkX5LCDN2S196LSe4kOGGcWmSPDZEFLi8VlEKIq2wwVfn+Bk1gDl0W0F+l9ziL14vruV11WvP
-	tS6FR/kI+zo1ytp6/8BhoAtQx7+ALMdYlI6/ksuRUdOzDs4MMzY6/nyCmNePZcqRfq+kCkaZjUOfi
-	fZfG0Qzk5+tcNCeRVe+IcWFYFMcQC2qSo+pBC0MLfcFXW03HAYF3y+J+3he39YFtEAgKgiCZiWFyF
-	e5owKlnV289PlmB8TCU7Npzin5U8ufAv9LK6dipDe+/w8j+0tbfxQB8IlBeCLahsDO3NIPhgDZIGw
-	JLPazLs6cXJ9bJeNvrRQ==;
+	List-Owner; bh=wNdSOJUpgJDmwHKB9DE0Y5OGWFfNzose93wIrrQ+Gdc=; b=Fbk08sCBPAiUA5
+	3ywfQoUdIgnV0dN/D4JQyuab8G2jKx+StUDQKBo5neEbMGrYZV+B0ogyHL2flP6ZRsggHw5tMSxVv
+	BiwZ3jz48q4g06rNNS+aSiRDI6KCp3IzM07suktGQ9pFpjjrgWdF2wtZBW5FrIeyyDQzsZE04/El3
+	g6ycRbLLrLs7mljccOnJAwZdQB/jwE6HHU33yu5FMXLsxGrB5ib6luAAElqkojylIvqBEucDT7O0G
+	U/dUV30IEdsOeMeXf5toZ6p9UkzAHgbGST3gFSjuPpVIbMKlJ7QU/q55AGQFlDAzRe4512sp/Gi0F
+	M5Ce5BVHKFAtoI9vHq7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHS6B-00000001LZ4-3owI;
-	Thu, 15 Oct 2026 20:30:47 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xHToV-00000001UF1-1kia;
+	Thu, 15 Oct 2026 22:20:39 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHS69-00000001LYI-3HKB;
-	Thu, 15 Oct 2026 20:30:45 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 2E16A40A56;
-	Thu, 15 Oct 2026 20:30:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BB0211F000C4;
-	Thu, 15 Oct 2026 20:30:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792096245;
-	bh=URfziB+RyIP02hVDIQqdBJwppVeDD9L3S3oe92U9tBM=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=aM3qhn2Jv+MxF6pn7Q4eodY6rAS2Po1i2tj5SPhIJm0gS9XpOBBbFW6QEMTtijmdt
-	 7v24a2QT3fUgwCkOYOrSFov1KInJHvfA8VAi9x5ir2tLUqaSRWmF4ya4vDRQCcRxZ4
-	 pouQM2nkBItybpN3NZrV9m6KxDPzb3/bxllCOjwF9IoO5FaYOnRKMq72iCWQZ3C9Lg
-	 sfEG3SV3R7JT/0+vPLEmabT0isItZ4eO4Ohf/pdqONpirZlLm6X3pa3l/Ml/yGhxjM
-	 WBRBp7bL7fg1yJ8KGA90V9PHvqq0bxF1sVh+LZTb8kgvLoMJGaNCWcM4TCWTC2Zdon
-	 iZjik/DiI4/vA==
-Date: Thu, 15 Oct 2026 15:30:43 -0500
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Luo Liu <Luo.Liu@cixtech.com>
-Cc: vkoul@kernel.org, linux-arm-kernel@lists.infradead.org,
-	EastLake.Yang@cixtech.com, cix-kernel-upstream@cixtech.com,
-	mani@kernel.org, linux-kernel@vger.kernel.org, conor+dt@kernel.org,
-	gary.yang@cixtech.com, krzk+dt@kernel.org, p.zabel@pengutronix.de,
-	Wuyi.Shen@cixtech.com, devicetree@vger.kernel.org,
-	neil.armstrong@linaro.org, linux-phy@lists.infradead.org,
-	fugang.duan@cixtech.com
-Subject: Re: [PATCH v3 1/3] dt-bindings: phy: Add CIX Sky1 DP PHY
-Message-ID: <179209624254.3079823.9194269374126037719.robh@kernel.org>
-References: <20261013095900.758464-1-Luo.Liu@cixtech.com>
- <20261013095900.758464-2-Luo.Liu@cixtech.com>
+	id 1xHToU-00000001UEQ-0GoG
+	for linux-phy@lists.infradead.org;
+	Thu, 15 Oct 2026 22:20:38 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 7C29443EFF;
+	Thu, 15 Oct 2026 22:20:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 5B7FAC2BD01;
+	Thu, 15 Oct 2026 22:20:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1792102837;
+	bh=opFYL6eJfRLIJ4Mi1M4Y9sNi8J7wJU4m5CxqbvcQwSE=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=KVCsrwuL5n5Gkp2z4QRuS/+oBmW9JTe5uP0SYvQo+VeelwJPsaeGa6nzWZI378vbk
+	 D3vBZSTj46dTrub13+7ko9ZTR8wvC0cwi/UkbchCIatZxaB9bu24aF4HsEdZf1zFu3
+	 h7/Or0c/AFKhU3RsuFRzNd+dnr6+IzSfzQBNS6+CHzCW0O95gM9N4FNYFhXTh99PSZ
+	 2d95LvyR3ddJoNFtQNGXKLvHJ1FaalWzvYmlG4K/eRLqW049/ClNRg9pGxukDDJqd5
+	 1UtRe71e3kwUHO+vWRyDBnkodi1AgxBNBCh5+XGptgUOVe+PON/VBRzZT40bQ1diVp
+	 Nx9pm81b65f6w==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3F5ABCCA46B;
+	Thu, 15 Oct 2026 22:20:37 +0000 (UTC)
+From: George Neacsu via B4 Relay <devnull+geocausa.gmail.com@kernel.org>
+Date: Thu, 15 Oct 2026 23:20:38 +0100
+Subject: [PATCH RFC 3/4] media: qcom: camss: csid-680: Select C-PHY in the
+ receiver
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20261013095900.758464-2-Luo.Liu@cixtech.com>
+Message-Id: <20261015-x1e-cphy-rfc-v1-3-1f3fa9af940a@gmail.com>
+References: <20261015-x1e-cphy-rfc-v1-0-1f3fa9af940a@gmail.com>
+In-Reply-To: <20261015-x1e-cphy-rfc-v1-0-1f3fa9af940a@gmail.com>
+To: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+ David Heidelberg <david@ixit.cz>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>, 
+ Loic Poulain <loic.poulain@oss.qualcomm.com>, 
+ Mauro Carvalho Chehab <mchehab@kernel.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, linux-phy@lists.infradead.org, 
+ linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, George Neacsu <geocausa@gmail.com>
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1792102835; l=954;
+ i=geocausa@gmail.com; s=20261015; h=from:subject:message-id;
+ bh=zIA90Rl/gtkLGho4hrUCxdrlhc5niDyVArSGj4xfgdM=;
+ b=dxq1mf8fO50sxXqgXje86lxdhpWCCkmpix7jS568ln4jpofHpoSqOKdUHmWuSicEhghudMqwy
+ zROe31y06DkCFz0gFQ8ltbPCGY67/Y7Q6MEooCwAXKNVWlTfde6sBz0
+X-Developer-Key: i=geocausa@gmail.com; a=ed25519;
+ pk=KyQk/iWbxsikewDBh0SwlHI51RvAqahD3loqmRp9DVI=
+X-Endpoint-Received: by B4 Relay for geocausa@gmail.com/20261015 with
+ auth_id=1199
+X-Original-From: George Neacsu <geocausa@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,26 +84,41 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Reply-To: geocausa@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+From: George Neacsu <geocausa@gmail.com>
 
-On Tue, 13 Oct 2026 17:58:58 +0800, Luo Liu wrote:
-> Document the dedicated DisplayPort PHY on CIX Sky1, including the
-> optional cix,edp board property to select the eDP swing table.
-> Add a MAINTAINERS entry for the binding and driver.
-> 
-> Signed-off-by: Luo Liu <Luo.Liu@cixtech.com>
-> ---
->  .../bindings/phy/cix,sky1-dp-phy.yaml         | 56 +++++++++++++++++++
->  MAINTAINERS                                   |  8 +++
->  2 files changed, 64 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/cix,sky1-dp-phy.yaml
-> 
+CSID 680 has a PHY type select in CSI2_RX_CFG0, next to the PHY number.
+The field is defined but never written, so the receiver always decodes
+D-PHY. Write phy_sel to it, as csid-gen2 does for C-PHY.
 
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+Assisted-by: Claude:claude-opus-5-5
+Signed-off-by: George Neacsu <geocausa@gmail.com>
+---
+ drivers/media/platform/qcom/camss/camss-csid-680.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/drivers/media/platform/qcom/camss/camss-csid-680.c b/drivers/media/platform/qcom/camss/camss-csid-680.c
+index 345a67c8f..16b199f06 100644
+--- a/drivers/media/platform/qcom/camss/camss-csid-680.c
++++ b/drivers/media/platform/qcom/camss/camss-csid-680.c
+@@ -202,6 +202,8 @@ static void __csid_configure_rx(struct csid_device *csid,
+ 			<< CSI2_RX_CFG0_PHY_NUM_SEL;
+ 	}
+ 
++	val |= phy->phy_sel << CSI2_RX_CFG0_PHY_TYPE_SEL;
++
+ 	writel(val, csid->base + CSID_CSI2_RX_CFG0);
+ 
+ 	val = CSI2_RX_CFG1_PACKET_ECC_CORRECTION_EN;
+
+-- 
+2.53.0
+
 
 
 -- 
