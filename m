@@ -4,53 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84BCDCC6B2F
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Oct 2026 08:26:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 636D0CC6B39
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Oct 2026 08:26:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=87h19kDL7Ab21E/MkcmZBy1Hu1Kh93YiW0onrr+UhYM=; b=tRJ0Su33n+sFZy
-	DhG+OnrTT1SjDbmoSrqTeMaK47zY/gYiOD32oSDiv7idMiUHPAwBuS2DQobAhCuH7zJXZuYhbR8sO
-	wHQs4aWAjKtm0gqauO/QqeSzjD4eIX605AV++D+FrFTQIhOhlETJ9Bg4J/8eQpm+4VR44gRKqOSFm
-	5dtZdxdPgfIaMuyDwmojxoHrihR4YVA5FNhMkm2a7pfCpdQlLlBUnhWbvmzPeRFd0Y7NHJrcTnwyE
-	4gVi4N98mAzBwNr9BUoq8SPoBSt10sjf0iIzzeTS2LGz8yhk/m/FXwNQh2S7cj1XVX+1jFsUicncQ
-	C+iP3hZBTZs4gLlvc38A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=gAy+XXwfCbLoPCmPvdR3yGiZ/IyJyWpZLqkU42Td9Pg=; b=DM9GTZ15rmMO7j
+	pkNQUDkJ2do+IsSrAp6KIDFofRjnblc06COIr/9u2zfMEE6cnStf9+yRtiRPvnY9NMBkju3iK+fBg
+	OzWu3aNYf3UjJDTdH1c2xzZrodbQL9mX8gGB+yb+AYGGBvxrcaZBE7Ph4md5X9aMdlBZLaO0hpo+C
+	kTyuwHgMTEu/9CyHbf15p7tNQP9NLlPAsVoCozRsFp2lhPPvTIxAdE8YyMSKI+S0HZZru5+IobdqC
+	7L84839Cp0N/tbZEmhlYGeI3InCaa240dBuf4iac+R/hNo/IJY4c2Gh1Vm4ALgLzrW4ZX7WEVCxHk
+	dN56PIuSXw1HhngWyPyA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHGmr-0000000H94e-47ts;
-	Thu, 15 Oct 2026 08:26:05 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xHGmv-0000000H96Q-0Lnb;
+	Thu, 15 Oct 2026 08:26:09 +0000
+Received: from mail-m1973193.qiye.163.com ([220.197.31.93])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHGmr-0000000H94F-0uQ7
-	for linux-phy@lists.infradead.org;
-	Thu, 15 Oct 2026 08:26:05 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 79AF76020C;
-	Thu, 15 Oct 2026 08:26:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D9D031F000C4;
-	Thu, 15 Oct 2026 08:26:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792052764;
-	bh=6n19YtRIF5Z2DjIPhwmvgVbruOHwvsSd8aB2SUvtKwU=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=Sdplh5p7bH5qE97mge+nmVilqoZWQo+1gM7XDTrX91WW6LmRyRMZzIom5q9RBUGLu
-	 HLa2nVcffoNmtm9fsrf6Oqcxf5LsshrwKXUEiy1kx+wW4bkQHOkxhuQoDrrsjxdXov
-	 sBJMT19629LGW+VhHrR12xLZ/CMn4LEel792lZcpFyNZBjHOC3cEcFNAdVm4Ccxl2i
-	 vgLW9z2Bjpu4DPFIDbEZodX9g8+bDXejHThNSD4qEet48gqglMSQeI3BC7l1M/vNse
-	 1hVBeBQVvaJXbGDfKhwfN8PTO7BGnDPfpxTOVcBs7Rg2iowFE2Y6dHnV/cS1MnDhX7
-	 rU356XMlpvOAQ==
-Message-ID: <sashiko-outbox-172487@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v2] phy: rockchip: snps-pcie3: Raise the SRAM init
- timeout
-To: "Shawn Lin" <shawn.lin@rock-chips.com>
-Cc: linux-phy@lists.infradead.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
-In-Reply-To: <1792051843-93245-1-git-send-email-shawn.lin@rock-chips.com>
-References: <1792051843-93245-1-git-send-email-shawn.lin@rock-chips.com>
-Date: Thu, 15 Oct 2026 08:26:03 +0000
+	id 1xHGms-0000000H946-1xUk;
+	Thu, 15 Oct 2026 08:26:08 +0000
+Received: from localhost.localdomain (unknown [61.154.14.86])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 5125548e2;
+	Thu, 15 Oct 2026 16:10:59 +0800 (GMT+08:00)
+From: Shawn Lin <shawn.lin@rock-chips.com>
+To: Neil Armstrong <neil.armstrong@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>
+Cc: linux-rockchip@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	Heiko Stuebner <heiko@sntech.de>,
+	linux-kernel@vger.kernel.org,
+	Shawn Lin <shawn.lin@rock-chips.com>
+Subject: [PATCH v2] phy: rockchip: snps-pcie3: Raise the SRAM init timeout
+Date: Thu, 15 Oct 2026 16:10:43 +0800
+Message-Id: <1792051843-93245-1-git-send-email-shawn.lin@rock-chips.com>
+X-Mailer: git-send-email 2.7.4
+X-HM-Tid: 0aa13e9d4cdd03a4kunmff98bd243d8280
+X-HM-MType: 1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVkZShpJVkwfSUpLHxhJTk1PTlYVFA
+	kWGhdVEwETFhoSFyQUDg9ZV1kYEgtZQVlNSlVKTk9VSk9VQ01ZV1kWGg8SFR0UWUFZT0tIVUpLSU
+	9PT0hVSktLVUpCS0tZBg++
+DKIM-Signature: a=rsa-sha256;
+	b=cadfJqWos44zIX7hyQWrJmLvw8qsbJto6mNuj/ggulUOlhYSNRr07ODcQf36OMhS8ukJGJDtNL4GbrM96tM78GL+iQaiaYKxUodKlLPAT0Dx1tWaNOsjKpn+8DIwft/gPmrq8IT7RCWNMQ/hfzcQZV94NEgtGbBTZnvvX4t4iXw=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=f6mtt1FuPkav0gMKJDC6dik1kQ9Fy+q/TLzhk6xwuhU=;
+	h=date:mime-version:subject:message-id:from;
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261015_012606_707224_B87E23E4 
+X-CRM114-Status: GOOD (  13.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,56 +65,83 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0xvd10gcGh5OiByb2NrY2hpcDog
-bWlzbGVhZGluZyBsb2cgYW5kIGJpdHdpc2UgT1Igb2YgZXJyb3IgY29kZXMKLS0KCmNvbW1pdCAz
-YmNiNTAzMzM4N2UyZTVmZmZjNTZlMjlkNDE5N2ZlY2RiMTc4OTY4CkF1dGhvcjogU2hhd24gTGlu
-IDxzaGF3bi5saW5Acm9jay1jaGlwcy5jb20+CgpwaHk6IHJvY2tjaGlwOiBzbnBzLXBjaWUzOiBS
-YWlzZSB0aGUgU1JBTSBpbml0IHRpbWVvdXQKClRoZSBTUkFNIGluaXRpYWxpemF0aW9uIG9mIHRo
-ZSBQQ0llMyBQSFkgbWF5IHRha2UgbG9uZ2VyIHRoYW4gdGhlIDUwMHVzCmN1cnJlbnRseSBhbGxv
-d2VkLiBUaGlzIGNvbW1pdCByYWlzZXMgdGhlIHRpbWVvdXQgdG8gMjBtcyBhbmQgdXNlcyBhIG5v
-bi16ZXJvCnNsZWVwIGludGVydmFsIHRvIHlpZWxkIHRoZSBDUFUgaW5zdGVhZCBvZiB0aWdodC1s
-b29waW5nLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlw
-LXNucHMtcGNpZTMuYyBiL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1zbnBzLXBj
-aWUzLmMKPiBpbmRleCA0ZThmZmQxNzMwOTZhLi42OWJkYThiMjI1NWQxIDEwMDY0NAo+IC0tLSBh
-L2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1zbnBzLXBjaWUzLmMKPiArKysgYi9k
-cml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtc25wcy1wY2llMy5jCgpbIC4uLiBdCgo+
-IEBAIC0xODcsMTEgKzE4OSwxMSBAQCBzdGF0aWMgaW50IHJvY2tjaGlwX3AzcGh5X3JrMzU4OF9p
-bml0KHN0cnVjdCByb2NrY2hpcF9wM3BoeV9wcml2ICpwcml2KQo+ICAJcmV0ID0gcmVnbWFwX3Jl
-YWRfcG9sbF90aW1lb3V0KHByaXYtPnBoeV9ncmYsCj4gIAkJCQkgICAgICAgUkszNTg4X1BDSUUz
-UEhZX0dSRl9QSFkwX1NUQVRVUzEsCj4gIAkJCQkgICAgICAgcmVnLCBSSzM1ODhfU1JBTV9JTklU
-X0RPTkUocmVnKSwKPiAtCQkJCSAgICAgICAwLCA1MDApOwo+ICsJCQkJICAgICAgIDEwMDAsIFJL
-X1BDSUVfU1JBTV9JTklUX1RJTUVPVVQpOwo+ICAJcmV0IHw9IHJlZ21hcF9yZWFkX3BvbGxfdGlt
-ZW91dChwcml2LT5waHlfZ3JmLAo+ICAJCQkJCVJLMzU4OF9QQ0lFM1BIWV9HUkZfUEhZMV9TVEFU
-VVMxLAo+ICAJCQkJCXJlZywgUkszNTg4X1NSQU1fSU5JVF9ET05FKHJlZyksCj4gLQkJCQkJMCwg
-NTAwKTsKPiArCQkJCQkxMDAwLCBSS19QQ0lFX1NSQU1fSU5JVF9USU1FT1VUKTsKPiAgCWlmIChy
-ZXQpCj4gIAkJZGV2X2VycigmcHJpdi0+cGh5LT5kZXYsICJsb2NrIGZhaWxlZCAweCV4LCBjaGVj
-ayBpbnB1dCByZWZjbGsgYW5kIHBvd2VyIHN1cHBseVxuIiwKPiAgCQkJcmVnKTsKCltTZXZlcml0
-eTogTG93XQpEb2VzIHRoaXMgc2VxdWVuY2Ugc2FmZWx5IGhhbmRsZSBlcnJvcnMgd2hlbiB0aGUg
-Zmlyc3QgcG9sbCB0aW1lcyBvdXQgYnV0IHRoZQpzZWNvbmQgb25lIHN1Y2NlZWRzPwoKTG9va2lu
-ZyBhdCByb2NrY2hpcF9wM3BoeV9yazM1ODhfaW5pdCgpLCBpZiB0aGUgZmlyc3QKcmVnbWFwX3Jl
-YWRfcG9sbF90aW1lb3V0KCkgZmFpbHMsIGl0IHdpbGwgcmV0dXJuIGFuIGVycm9yIGNvZGUgYW5k
-IGxlYXZlIHJlZwphdCBpdHMgZmFpbGluZyB2YWx1ZS4gSG93ZXZlciwgdGhlIGJpdHdpc2UgT1Ig
-YXNzaWdubWVudCBleGVjdXRlcyB0aGUgc2Vjb25kCnBvbGwgcmVnYXJkbGVzcyBvZiB0aGUgZmly
-c3QgcG9sbCdzIG91dGNvbWUuCgpJZiB0aGUgc2Vjb25kIHBvbGwgc3VjY2VlZHMsIHJlZyBpcyBv
-dmVyd3JpdHRlbiB3aXRoIGEgc3VjY2Vzc2Z1bCBzdGF0ZS4KVGhlIGJpdHdpc2UgT1Igd2lsbCBj
-b21iaW5lIHRoZSBlcnJvciBjb2RlIHdpdGggdGhlIHNlY29uZCBwb2xsJ3MgcmV0dXJuCnZhbHVl
-LCB3aGljaCBtaWdodCBjb3JydXB0IHRoZSBlcnJvciBjb2RlIHJldHVybmVkIHRvIHRoZSBjYWxs
-ZXIuCgpBZGRpdGlvbmFsbHksIHRoZSBlcnJvciBjaGVjayBldmFsdWF0ZXMgaWYgdGhlIGNvbWJp
-bmVkIHJldCBpcyBub24temVybywKdHJpZ2dlcmluZyB0aGUgZXJyb3IgbG9nLiBUaGUgbG9nIHdp
-bGwgcHJpbnQgdGhlIHBvdGVudGlhbGx5IHN1Y2Nlc3NmdWwgcmVnCnZhbHVlIGZyb20gdGhlIHNl
-Y29uZCBsYW5lLCB3aGljaCBjb3VsZCBtaXNsZWFkIGRldmVsb3BlcnMgaW52ZXN0aWdhdGluZyBs
-b2NrCmZhaWx1cmVzLgoKU2hvdWxkIHRoZSBzZWNvbmQgcG9sbCBiZSBza2lwcGVkIGlmIHRoZSBm
-aXJzdCBvbmUgZmFpbHMsIG9yIHNob3VsZCBzZXBhcmF0ZQp2YXJpYWJsZXMgYmUgdXNlZCB0byB0
-cmFjayB0aGUgc3RhdHVzIG9mIGVhY2ggbGFuZT8KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBo
-dHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMTc5MjA1MTg0My05MzI0NS0xLWdpdC1zZW5k
-LWVtYWlsLXNoYXduLmxpbkByb2NrLWNoaXBzLmNvbT9wYXJ0PTEKCi0tIApsaW51eC1waHkgbWFp
-bGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+The SRAM initialization of the PCIe3 PHY may take longer than the 500us
+currently allowed, especially on a slow power-up such as at low
+temperature. In that case the driver reports
+
+  lock failed 0x..., check input refclk and power supply
+
+even though the input refclk and power supply are fine.
+
+Raise the timeout to 20ms and use a named constant for it, applied to
+both the RK3568 and RK3588 paths.
+
+A non-zero sleep interval (1ms) is passed to the polling helpers so the
+CPU is yielded between reads. With sleep_us == 0 the helpers tight-loop,
+which would otherwise burn the CPU during the now much longer wait.
+
+The two PHY lanes share most of their circuitry in both aggregation and
+bifurcation mode, so in practice once the first PHY locks the second one
+can be assumed to lock as well. The two sequential polls therefore do
+not add any noticeable delay.
+
+Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
+
+---
+
+Changes in v2:
+- address Sashiko's comment
+
+ drivers/phy/rockchip/phy-rockchip-snps-pcie3.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c b/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
+index 4e8ffd1..69bda8b 100644
+--- a/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
++++ b/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
+@@ -19,6 +19,8 @@
+ #include <linux/regmap.h>
+ #include <linux/reset.h>
+ 
++#define RK_PCIE_SRAM_INIT_TIMEOUT		20000
++
+ /* Register for RK3568 */
+ #define GRF_PCIE30PHY_CON1			0x4
+ #define GRF_PCIE30PHY_CON6			0x18
+@@ -127,7 +129,7 @@ static int rockchip_p3phy_rk3568_init(struct rockchip_p3phy_priv *priv)
+ 	ret = regmap_read_poll_timeout(priv->phy_grf,
+ 				       GRF_PCIE30PHY_STATUS0,
+ 				       reg, SRAM_INIT_DONE(reg),
+-				       0, 500);
++				       1000, RK_PCIE_SRAM_INIT_TIMEOUT);
+ 	if (ret)
+ 		dev_err(&priv->phy->dev, "%s: lock failed 0x%x, check input refclk and power supply\n",
+ 		       __func__, reg);
+@@ -187,11 +189,11 @@ static int rockchip_p3phy_rk3588_init(struct rockchip_p3phy_priv *priv)
+ 	ret = regmap_read_poll_timeout(priv->phy_grf,
+ 				       RK3588_PCIE3PHY_GRF_PHY0_STATUS1,
+ 				       reg, RK3588_SRAM_INIT_DONE(reg),
+-				       0, 500);
++				       1000, RK_PCIE_SRAM_INIT_TIMEOUT);
+ 	ret |= regmap_read_poll_timeout(priv->phy_grf,
+ 					RK3588_PCIE3PHY_GRF_PHY1_STATUS1,
+ 					reg, RK3588_SRAM_INIT_DONE(reg),
+-					0, 500);
++					1000, RK_PCIE_SRAM_INIT_TIMEOUT);
+ 	if (ret)
+ 		dev_err(&priv->phy->dev, "lock failed 0x%x, check input refclk and power supply\n",
+ 			reg);
+-- 
+2.7.4
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
