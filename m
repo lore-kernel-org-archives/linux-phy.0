@@ -4,67 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77FF4CCA464
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Oct 2026 19:47:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64C84CCA464
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Oct 2026 20:30:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:
-	Subject:Cc:To:From:Date:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w39EWV73qJ3+5wG0713NTSC1i7R4AJveUkfIKhVmsTo=; b=ikkGO2Nt2+w16F
-	VonrmmYfnDKVIscBvJlHVFhnpCdqIXWGP2ovNfaHgP9dxt681/nnGW6QLEQs79BsgQ7eBbwck85em
-	LXpRHpLEGrEl4U8e0qQWRs0C5Ncytj7AycwLG/3JKN0p4xIzXY4P4bIgjklYsGbOXs4XGMsbGHJe1
-	p26PaesyVu0BUI/yjCFI/Ty2ijfMU4edhfcdUfo7DqlzXk9s4wpLQU1c8qXmhNIL/s8aqA5lH1XAc
-	aFDVffplpvlECFolEu3ZS85b63dFk4IHnb7UzF9W1UYEmCWIjR1DSp1c5K/ItEsNF2bmrFVMu0F88
-	31LXA3L6gb6qaKvUMMMw==;
+	List-Owner; bh=Fisxsds0TEg3uIeiAsCbptjCJvPdQw6tupNdOWfxNHo=; b=Xsz47rAwty39rN
+	ukfLPkX5LCDN2S196LSe4kOGGcWmSPDZEFLi8VlEKIq2wwVfn+Bk1gDl0W0F+l9ziL14vruV11WvP
+	tS6FR/kI+zo1ytp6/8BhoAtQx7+ALMdYlI6/ksuRUdOzDs4MMzY6/nyCmNePZcqRfq+kCkaZjUOfi
+	fZfG0Qzk5+tcNCeRVe+IcWFYFMcQC2qSo+pBC0MLfcFXW03HAYF3y+J+3he39YFtEAgKgiCZiWFyF
+	e5owKlnV289PlmB8TCU7Npzin5U8ufAv9LK6dipDe+/w8j+0tbfxQB8IlBeCLahsDO3NIPhgDZIGw
+	JLPazLs6cXJ9bJeNvrRQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHRQb-00000001H5z-2o97;
-	Thu, 15 Oct 2026 19:47:49 +0000
-Received: from layka.disroot.org ([178.21.23.139])
+	id 1xHS6B-00000001LZ4-3owI;
+	Thu, 15 Oct 2026 20:30:47 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHRQY-00000001H5Y-1yAZ
-	for linux-phy@lists.infradead.org;
-	Thu, 15 Oct 2026 19:47:48 +0000
-Received: from mail01.layka.lan (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id 87A6A81043;
-	Thu, 15 Oct 2026 21:47:34 +0200 (CEST)
-X-Virus-Scanned: SPAM Filter at disroot.org
-Received: from layka.disroot.org ([127.0.0.1])
- by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id 9Diwc9Re1lGn; Thu, 15 Oct 2026 21:47:33 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1792093653; bh=rEzZFF3roU9aTVZ9/CO59TibiUooKjnCPKswifSLXUo=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References;
-	b=j/xQ8388pn3sZMK4saWSF55ZYjCUe16chydMwkSrSE2RGaeI3LK0MkCqwFisOYAJG
-	 BAfGhY0c+b29/Zj/Tz6AoErq2ZHYH1Zsb68FWk+w/Zl83M5fAzxMpsd1YdF0SQvQJM
-	 eE8LZO+IN80wShucwt+NZFAlJLDshvwqBIP/BeO7gWl8wkwsz8pYzVwuFVJDOsc2Yk
-	 ZZxeMpsA8j40Xznf4KRnh+TASBiLBN/wqc1yy2CdO3aABm1D2sbcNsauBIS9ij0Yri
-	 xf7jfjJf5q0q2Ou42AjodD6ewb+SGdOBePRZcUum2UNf85EXOO5HcTS3nG0QTWchSg
-	 8Cac7cSXGKugw==
+	id 1xHS69-00000001LYI-3HKB;
+	Thu, 15 Oct 2026 20:30:45 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 2E16A40A56;
+	Thu, 15 Oct 2026 20:30:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BB0211F000C4;
+	Thu, 15 Oct 2026 20:30:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1792096245;
+	bh=URfziB+RyIP02hVDIQqdBJwppVeDD9L3S3oe92U9tBM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=aM3qhn2Jv+MxF6pn7Q4eodY6rAS2Po1i2tj5SPhIJm0gS9XpOBBbFW6QEMTtijmdt
+	 7v24a2QT3fUgwCkOYOrSFov1KInJHvfA8VAi9x5ir2tLUqaSRWmF4ya4vDRQCcRxZ4
+	 pouQM2nkBItybpN3NZrV9m6KxDPzb3/bxllCOjwF9IoO5FaYOnRKMq72iCWQZ3C9Lg
+	 sfEG3SV3R7JT/0+vPLEmabT0isItZ4eO4Ohf/pdqONpirZlLm6X3pa3l/Ml/yGhxjM
+	 WBRBp7bL7fg1yJ8KGA90V9PHvqq0bxF1sVh+LZTb8kgvLoMJGaNCWcM4TCWTC2Zdon
+	 iZjik/DiI4/vA==
+Date: Thu, 15 Oct 2026 15:30:43 -0500
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Luo Liu <Luo.Liu@cixtech.com>
+Cc: vkoul@kernel.org, linux-arm-kernel@lists.infradead.org,
+	EastLake.Yang@cixtech.com, cix-kernel-upstream@cixtech.com,
+	mani@kernel.org, linux-kernel@vger.kernel.org, conor+dt@kernel.org,
+	gary.yang@cixtech.com, krzk+dt@kernel.org, p.zabel@pengutronix.de,
+	Wuyi.Shen@cixtech.com, devicetree@vger.kernel.org,
+	neil.armstrong@linaro.org, linux-phy@lists.infradead.org,
+	fugang.duan@cixtech.com
+Subject: Re: [PATCH v3 1/3] dt-bindings: phy: Add CIX Sky1 DP PHY
+Message-ID: <179209624254.3079823.9194269374126037719.robh@kernel.org>
+References: <20261013095900.758464-1-Luo.Liu@cixtech.com>
+ <20261013095900.758464-2-Luo.Liu@cixtech.com>
 MIME-Version: 1.0
-Date: Thu, 15 Oct 2026 19:47:33 +0000
-From: Rustam Adilov <adilov@disroot.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
- <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>,
- Stanley Chang <stanley_chang@realtek.com>, Philipp Zabel
- <p.zabel@pengutronix.de>, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, Krzysztof Kozlowski
- <krzysztof.kozlowski@oss.qualcomm.com>, Manivannan Sadhasivam
- <manivannan.sadhasivam@oss.qualcomm.com>
-Subject: Re: [PATCH v8 3/6] dt-bindings: phy: realtek,usb2phy.yaml: extend for
- resets and RTL9607C support
-In-Reply-To: <1106b5dd-5453-46e4-90a4-7c7673cd4dd3@kernel.org>
-References: <20261012173739.36377-1-adilov@disroot.org>
- <20261012173739.36377-4-adilov@disroot.org>
- <1106b5dd-5453-46e4-90a4-7c7673cd4dd3@kernel.org>
-Message-ID: <d71a544ad34c34ac4db7dc8fd8004245@disroot.org>
-X-Sender: adilov@disroot.org
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261015_124746_650225_B9D3301D 
-X-CRM114-Status: GOOD (  22.26  )
+Content-Disposition: inline
+In-Reply-To: <20261013095900.758464-2-Luo.Liu@cixtech.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,71 +74,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2026-10-13 06:05, Krzysztof Kozlowski wrote:
-> On 12/10/2026 19:37, Rustam Adilov wrote:
->> Add the "realtek,rtl9607-usb2phy" compatible for USB2 PHY on the RTL9607C
->> SoC series.
->> 
->> Add a resets property to properties to describe the usb2phy reset line.
->> 
->> In RTL9607C, USB2 PHY reset line is from "IP Enable controller" which is
->> multipurpose and handle activating various SoC peripherals.
->> 
->> It is unclear whether RTD SoCs have something similar to that so set
->> the resets to false for these devices.
->> 
->> RTL9607C requires the "resets" to be specified so add the corresponding
->> if check for the "realtek,rtl9607-usb2phy" compatible.
->> 
->> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
->> Acked-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
->> Signed-off-by: Rustam Adilov <adilov@disroot.org>
-> 
-> Please use scripts/get_maintainers.pl to get a list of necessary people
-> and lists to CC. It might happen, that command when run on an older
-> kernel, gives you outdated entries. Therefore please be sure you base
-> your patches on recent Linux kernel.
-> 
-> Tools like b4 or scripts/get_maintainer.pl provide you proper list of
-> people, so fix your workflow. Tools might also fail if you work on some
-> ancient tree (don't, instead use mainline) or work on fork of kernel
-> (don't, instead use mainline). Just use b4 and everything should be
-> fine, although remember about `b4 prep --auto-to-cc` if you added new
-> patches to the patchset.
-> 
-> You missed at least devicetree list (maybe more), so this won't be
-> tested by automated tooling. Performing review on untested code might be
-> a waste of time.
-> 
-> Please kindly resend and include all necessary To/Cc entries.
-> 
-> 
-> Please use subject prefixes matching the subsystem. You can get them for
-> example with `git log --oneline -- DIRECTORY_OR_FILE` on the directory
-> your patch is touching. For bindings, the preferred subjects are
-> explained here:
-> https://www.kernel.org/doc/html/latest/devicetree/bindings/submitting-patches.html#i-for-patch-submitters
-> 
-> There is never "yaml" in any prefix. Don't come up with own style.
-> 
-> 
-> Best regards,
-> Krzysztof
 
-Oi, i am very sorry about that. I am using the scripts/get_maintainers.pl
-command from [1] and it only covers the last commit which was not the one
-touching the realtek,usb2phy.yaml so it didn't get any of the device tree
-people. I don't exactly know if i can get it to output full maintainer list
-in the context of patch series in one swoop without running it across every 
-single commit and then manually combining all. I think that is what i did in
-v7 and prior versions and forgot to do it here.
+On Tue, 13 Oct 2026 17:58:58 +0800, Luo Liu wrote:
+> Document the dedicated DisplayPort PHY on CIX Sky1, including the
+> optional cix,edp board property to select the eDP swing table.
+> Add a MAINTAINERS entry for the binding and driver.
+> 
+> Signed-off-by: Luo Liu <Luo.Liu@cixtech.com>
+> ---
+>  .../bindings/phy/cix,sky1-dp-phy.yaml         | 56 +++++++++++++++++++
+>  MAINTAINERS                                   |  8 +++
+>  2 files changed, 64 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/cix,sky1-dp-phy.yaml
+> 
 
-As for the yaml prefix, will remove it.
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 
-[1] https://kernelnewbies.org/FirstKernelPatch#SubmitPatch
-
-Best,
-Rustam
 
 -- 
 linux-phy mailing list
