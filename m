@@ -4,57 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42465CCA464
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Oct 2026 19:11:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77FF4CCA464
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Oct 2026 19:47:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:
+	Subject:Cc:To:From:Date:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HVmlKB8r4gG2CwXdnoaAjQHvPbwOiMtStCCgk9X60+E=; b=xJ7Glcv+12wceD
-	OJWayjU501AawMBj5XJHB8rq/mc6YFaOcIrbH2S/YMSKXl6OjrU8Jt/4gCa83aWs+4ZcmxZ15cmLi
-	Ua0fGID+KpnxGl0yQQpMDKRT3ql4SlV+GIDF2kpi0YqJWt4/HquWewGjVd2H5tBkN6yk75xXB99ED
-	TmRjXmO8oJEzs4+2cY2sqdoyhLFLxW4a+1+ZvIg8rB+oCVOa2zcgVb8LdwrUBJSaGAMw0/ZX6OEpE
-	GldxfFShDlqSkfzFR1BK4cKeap9OWfqj8j4bjqoPru7LR+LnkX/4/tysSyhgIw02hakJKcDGkEq+i
-	klJp7z2S6EBqv1PjMk8Q==;
+	List-Owner; bh=w39EWV73qJ3+5wG0713NTSC1i7R4AJveUkfIKhVmsTo=; b=ikkGO2Nt2+w16F
+	VonrmmYfnDKVIscBvJlHVFhnpCdqIXWGP2ovNfaHgP9dxt681/nnGW6QLEQs79BsgQ7eBbwck85em
+	LXpRHpLEGrEl4U8e0qQWRs0C5Ncytj7AycwLG/3JKN0p4xIzXY4P4bIgjklYsGbOXs4XGMsbGHJe1
+	p26PaesyVu0BUI/yjCFI/Ty2ijfMU4edhfcdUfo7DqlzXk9s4wpLQU1c8qXmhNIL/s8aqA5lH1XAc
+	aFDVffplpvlECFolEu3ZS85b63dFk4IHnb7UzF9W1UYEmCWIjR1DSp1c5K/ItEsNF2bmrFVMu0F88
+	31LXA3L6gb6qaKvUMMMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHQrA-00000001ETW-3hO2;
-	Thu, 15 Oct 2026 19:11:12 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xHRQb-00000001H5z-2o97;
+	Thu, 15 Oct 2026 19:47:49 +0000
+Received: from layka.disroot.org ([178.21.23.139])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHQr8-00000001ETC-3thr
+	id 1xHRQY-00000001H5Y-1yAZ
 	for linux-phy@lists.infradead.org;
-	Thu, 15 Oct 2026 19:11:12 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 52D7D40DCF;
-	Thu, 15 Oct 2026 19:11:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E871F1F000C4;
-	Thu, 15 Oct 2026 19:11:09 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792091470;
-	bh=oXmNpCPOc7PrRNagDxNj32NtDgAynuREgwko8j7L/e4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=MJ6QBdLESoihs7ojJe0WyX14k3HyCS8Zbur1LvFynwMgVseVTywHsa3dXvK9LEgkd
-	 Xn5RJd4VwJ0inw54iet+mqd05a5EQXQq8EH3g8+PLSEKT5oCAhl9+BajdAoetf4bpb
-	 5CBLMz/bQnpgIfbqShg4vBb5a4q9e69J0JwawMjZKDeI/VhE4DCYa8rvoQ7/JcEFHe
-	 EVBqnrASLT0r/5CTVkRpYnuaY4pW4C6sbA/Z3ImBBWkPxPE6Tb85WL1/JJAwxowah7
-	 GhX+E0i+tOs9kf7VGQ1XzGFcFpT66v4YwhISVI3OHliG9CGCi4+XOkm0uu/3coJvsH
-	 g5YVaFufPGFsQ==
-Date: Thu, 15 Oct 2026 14:11:08 -0500
-From: Rob Herring <robh@kernel.org>
-To: sashiko-reviews@lists.linux.dev
-Cc: vkoul@kernel.org, devicetree@vger.kernel.org, olteanv@gmail.com,
-	conor+dt@kernel.org, neil.armstrong@linaro.org,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH] dt-bindings: phy: qcom: Relax required supplies
-Message-ID: <20261015191108.GB5059-robh@kernel.org>
-References: <20260921232603.3129898-1-robh@kernel.org>
- <20260921233422.E6B0D1F000FF@smtp.kernel.org>
+	Thu, 15 Oct 2026 19:47:48 +0000
+Received: from mail01.layka.lan (localhost [127.0.0.1])
+	by disroot.org (Postfix) with ESMTP id 87A6A81043;
+	Thu, 15 Oct 2026 21:47:34 +0200 (CEST)
+X-Virus-Scanned: SPAM Filter at disroot.org
+Received: from layka.disroot.org ([127.0.0.1])
+ by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
+ id 9Diwc9Re1lGn; Thu, 15 Oct 2026 21:47:33 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
+	t=1792093653; bh=rEzZFF3roU9aTVZ9/CO59TibiUooKjnCPKswifSLXUo=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References;
+	b=j/xQ8388pn3sZMK4saWSF55ZYjCUe16chydMwkSrSE2RGaeI3LK0MkCqwFisOYAJG
+	 BAfGhY0c+b29/Zj/Tz6AoErq2ZHYH1Zsb68FWk+w/Zl83M5fAzxMpsd1YdF0SQvQJM
+	 eE8LZO+IN80wShucwt+NZFAlJLDshvwqBIP/BeO7gWl8wkwsz8pYzVwuFVJDOsc2Yk
+	 ZZxeMpsA8j40Xznf4KRnh+TASBiLBN/wqc1yy2CdO3aABm1D2sbcNsauBIS9ij0Yri
+	 xf7jfjJf5q0q2Ou42AjodD6ewb+SGdOBePRZcUum2UNf85EXOO5HcTS3nG0QTWchSg
+	 8Cac7cSXGKugw==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260921233422.E6B0D1F000FF@smtp.kernel.org>
+Date: Thu, 15 Oct 2026 19:47:33 +0000
+From: Rustam Adilov <adilov@disroot.org>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>,
+ Stanley Chang <stanley_chang@realtek.com>, Philipp Zabel
+ <p.zabel@pengutronix.de>, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Krzysztof Kozlowski
+ <krzysztof.kozlowski@oss.qualcomm.com>, Manivannan Sadhasivam
+ <manivannan.sadhasivam@oss.qualcomm.com>
+Subject: Re: [PATCH v8 3/6] dt-bindings: phy: realtek,usb2phy.yaml: extend for
+ resets and RTL9607C support
+In-Reply-To: <1106b5dd-5453-46e4-90a4-7c7673cd4dd3@kernel.org>
+References: <20261012173739.36377-1-adilov@disroot.org>
+ <20261012173739.36377-4-adilov@disroot.org>
+ <1106b5dd-5453-46e4-90a4-7c7673cd4dd3@kernel.org>
+Message-ID: <d71a544ad34c34ac4db7dc8fd8004245@disroot.org>
+X-Sender: adilov@disroot.org
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261015_124746_650225_B9D3301D 
+X-CRM114-Status: GOOD (  22.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,57 +81,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Sep 21, 2026 at 11:34:22PM +0000, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 1 potential issue(s) to consider:
-> - [Medium] dt-bindings: unintended schema relaxation for qcom,ipq5210-qusb2-phy
-> --
+On 2026-10-13 06:05, Krzysztof Kozlowski wrote:
+> On 12/10/2026 19:37, Rustam Adilov wrote:
+>> Add the "realtek,rtl9607-usb2phy" compatible for USB2 PHY on the RTL9607C
+>> SoC series.
+>> 
+>> Add a resets property to properties to describe the usb2phy reset line.
+>> 
+>> In RTL9607C, USB2 PHY reset line is from "IP Enable controller" which is
+>> multipurpose and handle activating various SoC peripherals.
+>> 
+>> It is unclear whether RTD SoCs have something similar to that so set
+>> the resets to false for these devices.
+>> 
+>> RTL9607C requires the "resets" to be specified so add the corresponding
+>> if check for the "realtek,rtl9607-usb2phy" compatible.
+>> 
+>> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+>> Acked-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+>> Signed-off-by: Rustam Adilov <adilov@disroot.org>
 > 
-> commit 69ee638f4004f6e325a963f3b804b3c1cac5c6fb
-> Author: Rob Herring (Arm) <robh@kernel.org>
+> Please use scripts/get_maintainers.pl to get a list of necessary people
+> and lists to CC. It might happen, that command when run on an older
+> kernel, gives you outdated entries. Therefore please be sure you base
+> your patches on recent Linux kernel.
 > 
-> dt-bindings: phy: qcom: Relax required supplies
+> Tools like b4 or scripts/get_maintainer.pl provide you proper list of
+> people, so fix your workflow. Tools might also fail if you work on some
+> ancient tree (don't, instead use mainline) or work on fork of kernel
+> (don't, instead use mainline). Just use b4 and everything should be
+> fine, although remember about `b4 prep --auto-to-cc` if you added new
+> patches to the patchset.
 > 
-> This commit relaxes the requirement for three regulator supplies in the QUSB2
-> PHY binding for legacy IPQ6018 nodes that do not describe board rails.
+> You missed at least devicetree list (maybe more), so this won't be
+> tested by automated tooling. Performing review on untested code might be
+> a waste of time.
 > 
-> > diff --git a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-> > index 001fd0ccc9852..2516eab7f6d32 100644
-> > --- a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-> > +++ b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-> [ ... ]
-> >  allOf:
-> > +  - if:
-> > +      not:
-> > +        properties:
-> > +          compatible:
-> > +            contains:
-> > +              enum: 
-> > +                - qcom,ipq6018-qusb2-phy
-> > +                - qcom,ipq8074-qusb2-phy
+> Please kindly resend and include all necessary To/Cc entries.
 > 
-> [Severity: Medium]
-> Does this unintentionally relax the schema requirements for IPQ5210?
+> 
+> Please use subject prefixes matching the subsystem. You can get them for
+> example with `git log --oneline -- DIRECTORY_OR_FILE` on the directory
+> your patch is touching. For bindings, the preferred subjects are
+> explained here:
+> https://www.kernel.org/doc/html/latest/devicetree/bindings/submitting-patches.html#i-for-patch-submitters
+> 
+> There is never "yaml" in any prefix. Don't come up with own style.
+> 
+> 
+> Best regards,
+> Krzysztof
 
-Yes.
+Oi, i am very sorry about that. I am using the scripts/get_maintainers.pl
+command from [1] and it only covers the last commit which was not the one
+touching the realtek,usb2phy.yaml so it didn't get any of the device tree
+people. I don't exactly know if i can get it to output full maintainer list
+in the context of patch series in one swoop without running it across every 
+single commit and then manually combining all. I think that is what i did in
+v7 and prior versions and forgot to do it here.
 
-> Since qcom,ipq5210-qusb2-phy falls back to qcom,ipq6018-qusb2-phy, an IPQ5210
-> device tree node's compatible array will contain qcom,ipq6018-qusb2-phy.
-> 
-> The 'contains: enum' logic matches this fallback, which seems like it might
-> incorrectly apply this legacy IPQ6018 exemption to IPQ5210 nodes, allowing
-> them to silently pass schema validation without the required regulator
-> supplies.
-> 
-> > +    then:
-> > +      required:
-> > +        - vdd-supply
-> > +        - vdda-pll-supply
-> > +        - vdda-phy-dpdm-supply
+As for the yaml prefix, will remove it.
 
-If these are compatible with ipq5210, they can't really have more 
-constraints than it.
+[1] https://kernelnewbies.org/FirstKernelPatch#SubmitPatch
 
-Rob
+Best,
+Rustam
 
 -- 
 linux-phy mailing list
