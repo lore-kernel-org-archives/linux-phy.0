@@ -4,56 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 636D0CC6B39
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Oct 2026 08:26:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E50E9CC6B33
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Oct 2026 09:29:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=gAy+XXwfCbLoPCmPvdR3yGiZ/IyJyWpZLqkU42Td9Pg=; b=DM9GTZ15rmMO7j
-	pkNQUDkJ2do+IsSrAp6KIDFofRjnblc06COIr/9u2zfMEE6cnStf9+yRtiRPvnY9NMBkju3iK+fBg
-	OzWu3aNYf3UjJDTdH1c2xzZrodbQL9mX8gGB+yb+AYGGBvxrcaZBE7Ph4md5X9aMdlBZLaO0hpo+C
-	kTyuwHgMTEu/9CyHbf15p7tNQP9NLlPAsVoCozRsFp2lhPPvTIxAdE8YyMSKI+S0HZZru5+IobdqC
-	7L84839Cp0N/tbZEmhlYGeI3InCaa240dBuf4iac+R/hNo/IJY4c2Gh1Vm4ALgLzrW4ZX7WEVCxHk
-	dN56PIuSXw1HhngWyPyA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+mZEAqxCh0e+pLyGZeLxXJOugmxhLlPrehmzPAQzXPQ=; b=vP1n4UvP+/24Hp
+	TCvJ09/L72t6Ds+u7QMpYKJaMaL5wj8R98otaoB1MPn9WlQ/1Ig8dp+iXsNJYm+IXHH9v67LOZFn5
+	0i6SVeTwjnyyWGADuOYOHnC/GePSsMtGyVIXchPmIB/TV29A5DQBgxebXM3U2JvtLBmai6MaMzMAV
+	RRzuRWc2tE7SxM5qiVTGIz2yBSDmKAHO8zHS/Ut517Z4W2u9hSfvk1cT3qOo/fLrsZvhgorub8GMA
+	YOQSP9/HbTc+V6MPXMfyVeR469fW0fLE8EIBhXXIaa++lSZahjXh22VpfTfKysAbSe2obX5hulcZJ
+	yXSzh/KWSJUYI5xPOTXw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHGmv-0000000H96Q-0Lnb;
-	Thu, 15 Oct 2026 08:26:09 +0000
-Received: from mail-m1973193.qiye.163.com ([220.197.31.93])
+	id 1xHHm8-0000000HGku-1MV3;
+	Thu, 15 Oct 2026 09:29:24 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHGms-0000000H946-1xUk;
-	Thu, 15 Oct 2026 08:26:08 +0000
-Received: from localhost.localdomain (unknown [61.154.14.86])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 5125548e2;
-	Thu, 15 Oct 2026 16:10:59 +0800 (GMT+08:00)
-From: Shawn Lin <shawn.lin@rock-chips.com>
-To: Neil Armstrong <neil.armstrong@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>
-Cc: linux-rockchip@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	Heiko Stuebner <heiko@sntech.de>,
-	linux-kernel@vger.kernel.org,
-	Shawn Lin <shawn.lin@rock-chips.com>
-Subject: [PATCH v2] phy: rockchip: snps-pcie3: Raise the SRAM init timeout
-Date: Thu, 15 Oct 2026 16:10:43 +0800
-Message-Id: <1792051843-93245-1-git-send-email-shawn.lin@rock-chips.com>
-X-Mailer: git-send-email 2.7.4
-X-HM-Tid: 0aa13e9d4cdd03a4kunmff98bd243d8280
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVkZShpJVkwfSUpLHxhJTk1PTlYVFA
-	kWGhdVEwETFhoSFyQUDg9ZV1kYEgtZQVlNSlVKTk9VSk9VQ01ZV1kWGg8SFR0UWUFZT0tIVUpLSU
-	9PT0hVSktLVUpCS0tZBg++
-DKIM-Signature: a=rsa-sha256;
-	b=cadfJqWos44zIX7hyQWrJmLvw8qsbJto6mNuj/ggulUOlhYSNRr07ODcQf36OMhS8ukJGJDtNL4GbrM96tM78GL+iQaiaYKxUodKlLPAT0Dx1tWaNOsjKpn+8DIwft/gPmrq8IT7RCWNMQ/hfzcQZV94NEgtGbBTZnvvX4t4iXw=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=f6mtt1FuPkav0gMKJDC6dik1kQ9Fy+q/TLzhk6xwuhU=;
-	h=date:mime-version:subject:message-id:from;
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261015_012606_707224_B87E23E4 
-X-CRM114-Status: GOOD (  13.11  )
+	id 1xHHm7-0000000HGkS-00IU;
+	Thu, 15 Oct 2026 09:29:23 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 30F14601F0;
+	Thu, 15 Oct 2026 09:29:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EE5F91F000C4;
+	Thu, 15 Oct 2026 09:29:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1792056561;
+	bh=HgKPVZ2e357Rb0z+ZGzfAhokRDWTxHYeRTuy+cn/s8g=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=ga7E1uNX2JLUwn3p2Jgx5FUxgmjbldoWqRc6sEp3V6Ymuk1jNvloxJNdJQ/tiJyp9
+	 eyd3fm7KGNjyDZHB+VPrO6cds1TTYgBqkVavjM1SM6f/x9uaFBB1XQrINTQv4tlxAL
+	 2O6VUfjxEore5O4DANBID3OUuPHc1qiWl8Hs4ZdFQtKfhTlWja8WXRv0eYop56QOJp
+	 9UxemPFG/kRh0miA7l37cbf8RUR0rUklGqh4adebf88675tlRVcCo3EwoCfkK3cKL8
+	 772CEum32XcHwLOBVoa4owV+64s/Av7dDwad+7o/RJXx21FnkFCjnPlHBD8zr1pcye
+	 KaS72h4m6sCsg==
+Date: Thu, 15 Oct 2026 11:29:18 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Navid Ghahremani <ghahramani.navid@gmail.com>
+Cc: linux-arm-kernel@lists.infradead.org, arnd@arndb.de, 
+	stefandoesinger@gmail.com, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+	Conor Dooley <conor+dt@kernel.org>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 10/24] dt-bindings: phy: Add ZTE ZX279128S PCIe PHY
+ binding
+Message-ID: <20261015-celestial-wealthy-cockatrice-7f100d@quoll>
+References: <20261014072109.1759502-1-ghahramani.navid@gmail.com>
+ <20261014072109.1759502-11-ghahramani.navid@gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20261014072109.1759502-11-ghahramani.navid@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -65,80 +69,61 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The SRAM initialization of the PCIe3 PHY may take longer than the 500us
-currently allowed, especially on a slow power-up such as at low
-temperature. In that case the driver reports
+On Wed, Oct 14, 2026 at 08:20:50AM +0100, Navid Ghahremani wrote:
+> Add Device Tree binding for the PCIe SerDes PHY found inside the
+> topcrm block of the ZTE ZX279128S SoC.
+> 
+> Signed-off-by: Navid Ghahremani <ghahramani.navid@gmail.com>
+> ---
+>  .../bindings/phy/zte,zx279128s-pcie-phy.yaml  | 40 +++++++++++++++++++
+>  1 file changed, 40 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/zte,zx279128s-pcie-phy.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/zte,zx279128s-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/zte,zx279128s-pcie-phy.yaml
+> new file mode 100644
+> index 0000000000..7bfa363294
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/zte,zx279128s-pcie-phy.yaml
+> @@ -0,0 +1,40 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/zte,zx279128s-pcie-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: ZTE ZX279128S PCIe PHY
+> +
+> +maintainers:
+> +  - Navid Ghahremani <ghahramani.navid@gmail.com>
+> +
+> +description:
+> +  PCIe PHY block inside the ZTE ZX279128S Top CRM.
+> +
+> +properties:
+> +  compatible:
+> +    const: zte,zx279128s-pcie-phy
+> +
+> +  reg:
+> +    description: Port index (0 or 1)
+> +    items:
+> +      - enum: [0, 1]
 
-  lock failed 0x..., check input refclk and power supply
+No, that's pointless. What is this index meaning on the bus?
 
-even though the input refclk and power supply are fine.
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
 
-Raise the timeout to 20ms and use a named constant for it, applied to
-both the RK3568 and RK3588 paths.
+No other resources? Then this belongs to the parent node.
 
-A non-zero sleep interval (1ms) is passed to the polling helpers so the
-CPU is yielded between reads. With sleep_us == 0 the helpers tight-loop,
-which would otherwise burn the CPU during the now much longer wait.
-
-The two PHY lanes share most of their circuitry in both aggregation and
-bifurcation mode, so in practice once the first PHY locks the second one
-can be assumed to lock as well. The two sequential polls therefore do
-not add any noticeable delay.
-
-Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
-
----
-
-Changes in v2:
-- address Sashiko's comment
-
- drivers/phy/rockchip/phy-rockchip-snps-pcie3.c | 8 +++++---
- 1 file changed, 5 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c b/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
-index 4e8ffd1..69bda8b 100644
---- a/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
-+++ b/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
-@@ -19,6 +19,8 @@
- #include <linux/regmap.h>
- #include <linux/reset.h>
- 
-+#define RK_PCIE_SRAM_INIT_TIMEOUT		20000
-+
- /* Register for RK3568 */
- #define GRF_PCIE30PHY_CON1			0x4
- #define GRF_PCIE30PHY_CON6			0x18
-@@ -127,7 +129,7 @@ static int rockchip_p3phy_rk3568_init(struct rockchip_p3phy_priv *priv)
- 	ret = regmap_read_poll_timeout(priv->phy_grf,
- 				       GRF_PCIE30PHY_STATUS0,
- 				       reg, SRAM_INIT_DONE(reg),
--				       0, 500);
-+				       1000, RK_PCIE_SRAM_INIT_TIMEOUT);
- 	if (ret)
- 		dev_err(&priv->phy->dev, "%s: lock failed 0x%x, check input refclk and power supply\n",
- 		       __func__, reg);
-@@ -187,11 +189,11 @@ static int rockchip_p3phy_rk3588_init(struct rockchip_p3phy_priv *priv)
- 	ret = regmap_read_poll_timeout(priv->phy_grf,
- 				       RK3588_PCIE3PHY_GRF_PHY0_STATUS1,
- 				       reg, RK3588_SRAM_INIT_DONE(reg),
--				       0, 500);
-+				       1000, RK_PCIE_SRAM_INIT_TIMEOUT);
- 	ret |= regmap_read_poll_timeout(priv->phy_grf,
- 					RK3588_PCIE3PHY_GRF_PHY1_STATUS1,
- 					reg, RK3588_SRAM_INIT_DONE(reg),
--					0, 500);
-+					1000, RK_PCIE_SRAM_INIT_TIMEOUT);
- 	if (ret)
- 		dev_err(&priv->phy->dev, "lock failed 0x%x, check input refclk and power supply\n",
- 			reg);
--- 
-2.7.4
+Best regards,
+Krzysztof
 
 
 -- 
