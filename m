@@ -4,54 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D499CC6B2F
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Oct 2026 03:16:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60AD0CA9EDE
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Oct 2026 04:00:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:Cc:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IglimPgRj8cblGOWqx/dZIl++efzTEcdfgJteIaYWNc=; b=L14UGMw+RaLIZn
-	RYUPnf8dhIbcNpODg4YBbwfQBZNrODPRPQcW5B7gB27nLwgxx98C9OVZi2dQKZTvje0e1vfjKYb2x
-	HdTpNZx9oOxpaW8hjMAKJ25hHonS+CP8Wh82GsnnLs+N3OdW0xzX3ieVKwESgJ5ZfXL1L5Lo0VCvK
-	Uv+gUtzAhT0I308XgicRDNGUCU5Vq1CF8tXyy9CJut6WEaGFgOy4tfxXKS8FKRUfff/8TVJr+657V
-	YXFRLHEgA0nPgsT2ufN4Uk8PKAYiscLvUsLBoH0FuvKE9K2frBrmcpjb1vjoDHAyTqYT2cKQqY1tp
-	D17UbRHAxPRElRx87Rlw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ngb3CcuYNiokItrk8DTzeTXx9Z85XzfVu9q25/xNYcc=; b=gbirizbBGoI91H
+	lQ0OzWzf4FaHmE6onb7N9oe/HgoQ+piJtb/Jzskp+CNP6KC6KbECmu+haIMvtbQWwzy5f6IVxA1HZ
+	Y/YVr+Ap07C/+hu9ItUrKDo7TCPL7amaxX5OJ8iVbPDoHSc4SBhaYG6fzxC133IraM0IvKiVxgY5E
+	M40/tsu0qOEbcVNxueVEmbeAahQyu3RyjYmFN3PszB7OmrLLcebSo3M9ffMFpUDC+P6WBuJY7qlqr
+	AEZiQ3koQq7tQ623/zUdxAUrzjM4vNydrSzSy9KXd5hVTnJoFiyUXCWUdy1PXN6gv59ex7XJ/363x
+	rTvOYDc6hXKC9aCjAmEA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHBxc-0000000Gikb-26Zk;
-	Thu, 15 Oct 2026 03:16:52 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xHCdS-0000000GmMR-1VYJ;
+	Thu, 15 Oct 2026 04:00:07 +0000
+Received: from mail-m10169.netease.com ([154.81.10.169])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHBxb-0000000GikF-3oEb
-	for linux-phy@lists.infradead.org;
-	Thu, 15 Oct 2026 03:16:51 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id DF2A6444FA;
-	Thu, 15 Oct 2026 03:16:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B60F31F000C4;
-	Thu, 15 Oct 2026 03:16:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792034209;
-	bh=2ou87yQuIEg2z7mT9ieRZYq1trZ1IHgqCJodj9CZDBs=;
-	h=In-Reply-To:References:Subject:From:Cc:To:Date;
-	b=Pi7XzO/zUTN1unENBI/pj2wA7Mr5dc3U7XaaIyECGU5gB3+XfUjcU4JOkpTy+8oDe
-	 y7EYQ+gVO581hDokD+dreZABYwcx9ijoQkU69wUblPq3CIs+hWboglgAZRh8+nTlzD
-	 MJ1yQ2+mlu1flVdZKFH77UMusmFgkTa1+Q+YZD75mCaCaeWutm8178dkjrigwQzFVf
-	 ZLyUJDEwce/K6dGaC0py/FnJEWPYbCmmLpITDilXghJyCOG/4VcmeK+0wkLPI2UszR
-	 S0JpaMeUURQV/wLefMeVvevTReV1cqupGgPIMKdLHFGa4uRlRJxlM22EXO2wzx3Ii7
-	 L47pBRvDOWdAw==
-MIME-Version: 1.0
-In-Reply-To: <231214ab-9ae9-4e3f-a75b-d65a597e9956@collabora.com>
-References: <20260721093626.96264-1-angelogioacchino.delregno@collabora.com> <231214ab-9ae9-4e3f-a75b-d65a597e9956@collabora.com>
-Subject: Re: [PATCH v13 00/12] SPMI: Implement sub-devices and migrate drivers
-From: Stephen Boyd <sboyd@kernel.org>
-Cc: dlechner@baylibre.com, nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de, gregkh@linuxfoundation.org, srini@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, sre@kernel.org, krzk@kernel.org, dmitry.baryshkov@oss.qualcomm.com, quic_wcheng@quicinc.com, melody.olvera@oss.qualcomm.com, quic_nsekar@quicinc.com, ivo.ivanov.ivanov1@gmail.com, abelvesa@kernel.org, luca.weiss@fairphone.com, konrad.dybcio@oss.qualcomm.com, mitltlatltl@gmail.com, krishna.kurapati@oss.qualcomm.com, linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, linux-pm@vger.kernel.org, kernel@collabora.com
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, jic23@kernel.org
-Date: Wed, 14 Oct 2026 20:04:49 -0700
-Message-ID: <179203348991.5720.8006688809115365098@localhost.localdomain>
-User-Agent: alot/0.12
+	id 1xHCdN-0000000GmLP-1YbV;
+	Thu, 15 Oct 2026 04:00:05 +0000
+Received: from localhost.localdomain (unknown [58.22.7.114])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 511c64fea;
+	Thu, 15 Oct 2026 11:59:55 +0800 (GMT+08:00)
+From: Shawn Lin <shawn.lin@rock-chips.com>
+To: Neil Armstrong <neil.armstrong@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>
+Cc: linux-rockchip@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Shawn Lin <shawn.lin@rock-chips.com>
+Subject: [PATCH] phy: rockchip: naneng-combphy: Fix overwritten PLL SSC control bit
+Date: Thu, 15 Oct 2026 11:59:47 +0800
+Message-Id: <1792036787-37927-1-git-send-email-shawn.lin@rock-chips.com>
+X-Mailer: git-send-email 2.7.4
+X-HM-Tid: 0aa13db771c103a4kunm0d452a123b0e15
+X-HM-MType: 1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFDSUNOT01LS0k3V1kYFggdWUFKV1ktWUFJV1kPCRoVCBIfWUFZQkpMHlYaGkJLGhhPH0
+	gaTh9WFRQJFhoXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0
+	tIVUpLSU9PT0hVSktLVUpCS0tZBg++
+DKIM-Signature: a=rsa-sha256;
+	b=UsVVxotJPQ1v+E+yDQ7Hi3OH6sxoy5G2le0fc7Kf46PYtHIc/cK8J2RGT0KFe/VlZTC7a7MQ8Cbbb7bNvBv2gwl8Xod/CFpt6nzvR6Uc0zSs8AfQoelkaJfkBqSBKWkCxF1W13N9FQ076FLaUPmurKAHWGwyIGTlj4LzuwYaLB0=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=5ouESOob9KPg2dEHIqwtyo3anJ0ed+UGtz0b1buJpts=;
+	h=date:mime-version:subject:message-id:from;
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261014_210002_319726_E5F969F4 
+X-CRM114-Status: GOOD (  10.56  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,22 +64,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Quoting AngeloGioacchino Del Regno (2026-09-17 07:45:06)
-> On 7/21/26 11:36, AngeloGioacchino Del Regno wrote:
-> > Changes in v13:
-> >   - Removed `if (IS_ENABLED(CONFIG_OF))` check in spmi_dev_release (Andy)
-> >   - Rebased (though still applies cleanly) over next-20260720
-> > 
-> 
-> Is there any further comment on this series?
-> 
+rk_combphy_common_cfg_ssc() first sets RK3568_PHYREG33_PLL_SSC_CTRL on the
+RK3588 and RK3576 SoCs, then, for PCIe at 24MHz, programs the PLL KVCO
+adjust field. The latter used a plain writel() of the FIELD_PREP() value,
+which cleared all the other bits of RK3568_PHYREG33, including the
+PLL_SSC_CTRL bit that had just been set a few lines above.
 
-Applied the whole series to spmi-next
+Use rockchip_combphy_updatel() so that only the KVCO field is updated and
+the SSC control bit is preserved, as the comment and the pre-consolidation
+code intended.
+
+Fixes: 0b31f297557f ("phy: rockchip: naneng-combphy: Consolidate SSC configuration")
+Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
+---
+
+ drivers/phy/rockchip/phy-rockchip-naneng-combphy.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+index 3102a99..b6cc010 100644
+--- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
++++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+@@ -526,7 +526,8 @@ static void rk_combphy_common_cfg_ssc(struct rockchip_combphy_priv *priv, unsign
+ 
+ 		val = FIELD_PREP(RK3568_PHYREG33_PLL_KVCO_MASK,
+ 				 RK3576_PHYREG33_PLL_KVCO_VALUE);
+-		writel(val, priv->mmio + RK3568_PHYREG33);
++		rockchip_combphy_updatel(priv, RK3568_PHYREG33_PLL_KVCO_MASK,
++					 val, RK3568_PHYREG33);
+ 	}
+ }
+ 
+-- 
+2.7.4
+
 
 -- 
 linux-phy mailing list
