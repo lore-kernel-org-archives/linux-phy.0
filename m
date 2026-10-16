@@ -4,88 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DFAEBCCF2C1
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8032CCA46C
 	for <linux-phy@archiver.kernel.org>; Fri, 16 Oct 2026 23:55:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=i+y53oMpalzHc6Rzg2rxDB4Bh4THimS3ABRTn29UETo=; b=BqT961KHrBzo7O
-	s4gBE5g9C5/6Qnlbm8wpSX8EZDUsuj6+c5Bl8wvcn4Pznyyof5m6Z6pnhlRHdfpq27Wq7vgm6fgd1
-	LWfUn9911dn4mzsq6gzCQ9nKRLgO3Hs7ZVxYxRqqXyKAahiPHp0EWLaOdGduuGlDZIXSNs7J598ds
-	tkzwBgwT7Nnkqn3oJas57A3SYJJkA6RTVXr9nz6geGcZ8UDNVOGc6PhzgOGXT1I4HuE95OgHStPK4
-	c3KzlLTnwQ0l8ZIZdEL1PJwGo24fGT+8SLKSBdLwr9KKVYpRvf50FoSiYRpvCZBSg3UB0jlonjsEx
-	sBAmVFc2TBQlksd1w+mQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kGfdnxTbqtC1zd3q8qjbtX2QBK1njIL3uOPwgtKTpBY=; b=WSc1b91ce2ZIQt
+	W+Hxqc54PmmcS2gm1YgZS9d+rI5dxJM3upTddU6AhDgnXw3eFJZvPJoFgsPtrHraWEjwfqdFooOaj
+	K0L/C86144rptpNjoAUK0RcqPd2DGvfYZpRIRIaXhMiCAVozCG2bUdWJi3voM7jRTH+DZ5vWO1JQm
+	Y+j/eFuW01qumRhUlP/Tp4XZqzN6JkBvLXY0SMmHHaljPQfAmi468lLNmSknqC6UcZZm9NJGDtZ61
+	2oo71WBcjsykwyoZGM6ide0N9aRD7dFQkudEhpmBlxVSwgVoCcBh0FfPfJXQqQUkvb1P3NlsyGrr3
+	/7faQyLMaz1kSIB82mhw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHrlh-00000004DhV-2OGz;
+	id 1xHrlh-00000004DhR-2BK4;
 	Fri, 16 Oct 2026 23:55:21 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHrlZ-00000004DdD-3qVq
+	id 1xHrlZ-00000004DdA-3uUf
 	for linux-phy@lists.infradead.org;
 	Fri, 16 Oct 2026 23:55:16 +0000
 Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69GNFEKS3083003
-	for <linux-phy@lists.infradead.org>; Fri, 16 Oct 2026 23:55:10 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69GNFSnE3083229
+	for <linux-phy@lists.infradead.org>; Fri, 16 Oct 2026 23:55:06 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=Da3JUHpl7sB4Q12CBYMw5Y+27TKx1gdrPHE
-	G0KS3IG8=; b=XMeYHSjHTT4nmyTxjLcysq/slxcmS7qMBAB/X2saWbGn7SElRqm
-	clKh+zG4ECntgZ5a5544sMm1+WpuPVeKXVGC6EXaklBknLZOlk+OhX1R0SqiWoK7
-	i1TOBOfZhMkUAAubZ0Bn4fi4cXMG16A78HYB6G+VjvGlWj4ZqmyxsXtp2o6B3XPt
-	gRZYOt0l8nRt1Jfc/l584tCfbJP71Vh4WTcft5e23FRQa2JQt58LwIaypFd+hv/K
-	azZisbv4e3jWwKShIrRvKerpC6wrhM73cKPvJzai8f5XTIbHaVD+m1rpdP0ZEPju
-	wKTzHwPsEv4LEXqzwWoODvN1453hbr6FVKw==
-Received: from mail-dy1-f200.google.com (mail-dy1-f200.google.com [74.125.82.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hbjmfamy5-1
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=qedLgstS3gt
+	vnc8k0/THvcA4SPaoe9apJzndlL1Fd8Q=; b=R6tCCfI6INMnbSklELJE70qfOPY
+	/4ANoeEhAN3uBss9uTpg+DlG+NJTzVxxDWNuI4YiFLNnp/I7w0mGyhea4X5BNIeO
+	rJZNLpJ/308HpITn8wBST7eR1BrRSUlPp754rxeiSISho0JTl7osN7tdex8V1Eo9
+	46tVMA3akcgNXfJJp7Cxxzpobnuz8Y2fdWp2rOXfNDJMeXRyamyNQLlyM9Ph2yy4
+	0pWCHtLF2zXBWQwTvwy/x46vG9baoCeAOd2n/m+ei2D8hGLvls3JwRFvLuVRHYZB
+	Yy0usMJqiyqQlWHnI2NYfeWxKdjX9EyGRYU+vghikxVANiTQWjcrJCLflAw==
+Received: from mail-dl1-f72.google.com (mail-dl1-f72.google.com [74.125.82.72])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hbjmfamxt-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 16 Oct 2026 23:55:10 +0000 (GMT)
-Received: by mail-dy1-f200.google.com with SMTP id 5a478bee46e88-3425098ae4bso2079012eec.0
-        for <linux-phy@lists.infradead.org>; Fri, 16 Oct 2026 16:55:09 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Fri, 16 Oct 2026 23:55:06 +0000 (GMT)
+Received: by mail-dl1-f72.google.com with SMTP id a92af1059eb24-139b62317d0so1333111c88.0
+        for <linux-phy@lists.infradead.org>; Fri, 16 Oct 2026 16:55:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1792194904; x=1792799704; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=Da3JUHpl7sB4Q12CBYMw5Y+27TKx1gdrPHEG0KS3IG8=;
-        b=eeKahx4Fhp92FgJMuNApHZd0czLKgVbw31gnY46Z74aGpUVzcljdkJRApddVaTllKY
-         Wmc1Y2lMQ4ymquUtsNHtfNJrWGFnqeGz6GgzHXSwpI1BNo8UG7fIqsL3jSUKlOxs3i++
-         k296FuGrqN80W2SfAbKlb8rvDtY5H2dYZrJQXgBqfG1s3O3Cfnw6whaSjggzWlp1HRTr
-         6wOJIiyoqNUCQmPZOVOWXp93kg7fcKinOXAtehxGss14xmhqXlI6qKlxHT9H3WRH/jgG
-         b+c0SgYAXTbIhBCvYV8tsal6JyVpnbcBz/uSpyCwgOAU56/48A5okVHdZiZFvo0ADbCb
-         eL5Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1792194904; x=1792799704;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=oss.qualcomm.com; s=google; t=1792194906; x=1792799706; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=Da3JUHpl7sB4Q12CBYMw5Y+27TKx1gdrPHEG0KS3IG8=;
-        b=IGmgvSxwoErI1vNeVm3fo8W4mmGsc4B2W+bPid5ldp83G7BfHapBdLkw3u2tp890uk
-         aQb+xIfRexXiFdd54rtyp2UWYdacJOZcq773eyvI1+iHkHColmNywh4+e/CMn3oKoq2Q
-         q3SJIQXfeHslSpD7Ab3lPrlWuEc79QrHmh9+xCKvvE6/4MacIwDBZc3nkCnC0FIuaZjY
-         e3zJNJFXUoOh9UVE4FLU+o55TOXEZVY9bzXsQc1nRYqWg52FPXIw3agdftB5AVMgnQJL
-         2A+i/oH5zxIPyzqJJqDDYEOAYdxCJlNsdDt2H9VhfgGzmo8EBfqUGq5E/ixtX2xSZR1L
-         LyBA==
-X-Forwarded-Encrypted: i=1; AKwUvByBbNQAwU1TTIRPka/mTF3OiD//Wy/MLVb0EzSKeEl49MjMabrSqLGuaaqb/Tmaxz1M2gzDSKWwPLQ=@lists.infradead.org
-X-Gm-Message-State: AFq9FYJKq/+38Y0QyvEj9nMUO3aphiogjsmz9gGu7jpTw7nJVW8FMaQ8
-	msHs2qtfgnjdB8hA4v/609IJz0N0BfUMtngq1ZuyPiG/SuVXi3mUpqpNKQxinZbJXWZcw1GMwQ4
-	3MmEC64FaKl0gI9L+VYgD6EdcwshyCaskBdPWsEnICaWhM75yqZIxjb3sIO3JYpcvKnzA
-X-Gm-Gg: AYBFou17z25CCJkRbfnUO9cgOqNKHuntAZe2cxNQFtm5ijT1nTd9i/L6Pzqzt4sTijT
-	2HNbYNLBCND89iApg+nCEcLK+zH9FOYtVX8FKXtdiPNZo9bFLv/ESA+DQ+VfaM8k+Jzi1MeyrzK
-	+B9iluNpzQLVUA7MLkeaaEz7ez3aC9qhAOiLOrZYSuQvdmwr+c45XBBlocquFy2ag1+yDEmzGBL
-	nhmWFrLNS3Ri7bitZg1mFOjf9EgrGRgXRZvXMX2udeKuWHrJI/JPwnaROwWUfPnxKNej8KRZEAt
-	hGr7aWx1/GxIs+I5KGkuaSrY1Z4OUqqFbBqWH2aGiqQYu+tMWvYlHeFQ1nF/8MCGkkjFb8Z0ScT
-	tu3J7P1okycf2f8V/BoFvkl9Fql/DHYtQibkVjc419cFW/nxcQWxm9A==
-X-Received: by 2002:a05:701b:220e:b0:159:d448:dd1c with SMTP id a92af1059eb24-1825a67565cmr5222846c88.19.1792194904266;
+        bh=qedLgstS3gtvnc8k0/THvcA4SPaoe9apJzndlL1Fd8Q=;
+        b=VzN+OBTfwhI+s7/0h0vCCVVu6kzhz/Faf6eP303FMzjA2OwnfZ9n2dKH/jOu5ifEMX
+         W3ADeA65DA3mzYjcDujZniYrJKauIz86eYzVA5IM12dCoidsh+zispxY6AsvFRSA6jeL
+         YFPUyw87jEaJshP5Zc0mXyqLYyFmucbE1jtkrT5ogzVwR9z5jC0vhKpbsK7Xfc7rHdgF
+         udIUHXV38ZKo3l5Uf2FhpcFSASIuL1m1RKpuiF3JJiFpPxE6AhhDgIkRVleEX1CG0jY5
+         rFQM9eSTt00ri38YdYmBhU/hZhgb/BhMGV8REluoXbHT2X8X2wye8/h/TADLMvUJW8oL
+         aurg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1792194906; x=1792799706;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=qedLgstS3gtvnc8k0/THvcA4SPaoe9apJzndlL1Fd8Q=;
+        b=khX6c95c/oAlsuab/PZa+63pRE4RxtCxsoG53a+lpBC/EB18ouApfiNUMrqTSwp5SW
+         UjDe0Chn7BydDMVBGI2m8LdgzioSukDbbr5ppMe9XqR3iVbtJGLt249jYZfZSk3zrEp/
+         T9LT6ks5/WSa9CDsX6yvecWyW15fDGZISKP5dLpZZDokZz4M4/8YQmupoSEjS7TPTfx/
+         rcwhhc3dx9Ua9kVTOQV1gvR3TTQF7/Z69BQLM6HEg4pQp30UAnEWGbSFcC3ZVjGhEVe8
+         GgriWjNip7n7EopmeFodOMtgXT0n5o3P9Z0VkkOuKtYgJIGvy/AVU7bxbzJ1+gcP6lZ+
+         ug+w==
+X-Forwarded-Encrypted: i=1; AKwUvBy5hKPt41alFS1GxRWQItE8yghMOX8C81+DG5kV8Mh3oxemNJPFwhmWffvz4fdFnXsU+11zu0jLXJE=@lists.infradead.org
+X-Gm-Message-State: AFq9FYIu00g/hAIiTPx9OF/7gIS9D8NGIYaSQfsZxrXYBbe1tnBzYxkv
+	Wxy6AH2aWyby3Jn9iw9jWkWmabXihZcKTFArxhiM3E5qIeD9ZLi2dG96duf29Whb6c/bodxOsJd
+	KADUVPtEZLISnx4DZaouY+AZy8aEm3A3uv7mnBILKimfR/QmRTiopRDh8SxE1M8nBiTr7
+X-Gm-Gg: AYBFou3jra/xpPYaSYofLIhm2MPKg8A7vt2VlxJf0NbV17YVEAW8qicxVyjvlsR82nV
+	4bs5Iiei6kMGDLC8nAB8GglNGkx8wlaGq87Iz/SI/lFSKy9eCbWR+WDndLNH/MvdsKJb7PMDsYV
+	FJ5jUk0+/Q1AX7cp3I5mM44roNjQ0z8lWRwMkyVh0SqM63F+6q9SK778LQkhZf1qmwWjvxl0BPd
+	guOwOLT2+W9zXwv0TN0RQOPKHFSi90pnQQukTCvd9lgmpSbNAhijGzpCAaz9BYXFtYZdpaV/JnD
+	tYDw+gGySqZ7TvwtDK+zKbtHFsSZXLX5cgWcm4tuG5zGEB+pwmz7u1rs/tFF0wvZ3w6HKW4p7hN
+	G6h9JACmdOwR+TQXWx12PgSlQIoUayhI6Ok3L7Dz95kLLiZvLBGAuKA==
+X-Received: by 2002:a05:701b:208e:b0:168:6ad8:e8b0 with SMTP id a92af1059eb24-185120a831bmr1673764c88.14.1792194905552;
+        Fri, 16 Oct 2026 16:55:05 -0700 (PDT)
+X-Received: by 2002:a05:701b:208e:b0:168:6ad8:e8b0 with SMTP id a92af1059eb24-185120a831bmr1673738c88.14.1792194904917;
         Fri, 16 Oct 2026 16:55:04 -0700 (PDT)
-X-Received: by 2002:a05:701b:220e:b0:159:d448:dd1c with SMTP id a92af1059eb24-1825a67565cmr5222800c88.19.1792194903624;
-        Fri, 16 Oct 2026 16:55:03 -0700 (PDT)
 Received: from hu-aarunnan-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-183190aa7bbsm8556183c88.5.2026.10.16.16.55.02
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-183190aa7bbsm8556183c88.5.2026.10.16.16.55.03
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 16 Oct 2026 16:55:03 -0700 (PDT)
+        Fri, 16 Oct 2026 16:55:04 -0700 (PDT)
 From: Anusha Arun Nandi <anusha.nandi@oss.qualcomm.com>
 To: bod@kernel.org, vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
         krzk+dt@kernel.org, conor+dt@kernel.org, neil.armstrong@linaro.org,
@@ -96,42 +97,43 @@ Cc: gjorgji.rosikopulos@oss.qualcomm.com,
         vladimir.zapolskiy@linaro.org, linux-arm-msm@vger.kernel.org,
         linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
         devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: [PATCH 0/7] phy: qcom-mipi-csi2: Add D-PHY support for sa8775p, qcs8300 and sc7280
-Date: Fri, 16 Oct 2026 16:54:55 -0700
-Message-Id: <20261016235502.2274268-1-anusha.nandi@oss.qualcomm.com>
+Subject: [PATCH 1/7] phy: qcom-mipi-csi2: fix -EEXIST probe failure on single power-domain SoCs
+Date: Fri, 16 Oct 2026 16:54:56 -0700
+Message-Id: <20261016235502.2274268-2-anusha.nandi@oss.qualcomm.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20261016235502.2274268-1-anusha.nandi@oss.qualcomm.com>
+References: <20261016235502.2274268-1-anusha.nandi@oss.qualcomm.com>
 MIME-Version: 1.0
-X-Proofpoint-GUID: 4n2x08zk-eP_2q-nBSNezjUzEz0w19DW
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDE2MDA5NSBTYWx0ZWRfXyfdnCktYWHDX
- Rr5Npy6O2ywLOC2lOP8ytCXPECMF+XJVWwZXAJQEfpt/bfJap4KqbEG3WRNAPaTbd3QVRDKYy2o
- sRbI5FDzZJw8djrvAsFm7rI/MYFfelc=
-X-Authority-Analysis: v=2.4 cv=SrAFe/O0 c=1 sm=1 tr=0 ts=6ad2b95e cx=c_pps
- a=PfFC4Oe2JQzmKTvty2cRDw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+X-Proofpoint-GUID: sf7JPN_Oh3EYAsZUiqyE44kjSWUZV_Wj
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDE2MDA5NSBTYWx0ZWRfX7J6LieGLYgKH
+ bj4gRP7Y/NuTKimNOlVnq6o3QdudJJpN19l/NClA9lH8VxfNGrNBrK8dmTUpMESca7Vlb4Nm/px
+ Vsyyyj5zZULElH+vAn4mShbMoZQLpmc=
+X-Authority-Analysis: v=2.4 cv=SrAFe/O0 c=1 sm=1 tr=0 ts=6ad2b95a cx=c_pps
+ a=bS7HVuBVfinNPG3f6cIo3Q==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
  a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22 a=VwQbUJbxAAAA:8
- a=KKAkSRfTAAAA:8 a=EUspDBNiAAAA:8 a=3gKqbpTmytvcg6W9XpQA:9
- a=6Ab_bkdmUrQuMsNx7PHu:22 a=cvBusfyB2V15izCimMoJ:22
-X-Proofpoint-ORIG-GUID: 4n2x08zk-eP_2q-nBSNezjUzEz0w19DW
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDE2MDA5NSBTYWx0ZWRfX3ggtylSQMvvA
- Ba99rVQ7gtZNaddkVtDa6eakWFruT2rl+qKfLtTJ1SOl/dLQ1ZF8/8E6JNMuDzqcy0HCv9Cx3MB
- DeV5C+ojB6mYpoaKYeBXnZH2a4re677+EXh0/uo5eS8aJtoqURuFxTia+7KZaee4gY+Kv9x7MlK
- KolVlPHPIGUDgp/dKjzncO4RXO2KFeoU1nQilrE+B7Q+AoCDhCefsNQk5NdhQk0LnbM7+YYUhiO
- nvcv93rGDae23BdFGUL8A0t+K/vEAc0cPtwcep3zUMlptnL5Sexet0zOFXV37bZcxbBaSL8WFyd
- 4TSJDbw+8eytpsUd5A/2/TXB78VYzqjZb5JsThkoBP5l9dFNvIhjD6GZHeGuWASxnr5cEzTrsyq
- zkvM48MY/TajCTH0haB6RgIxn3ROr3IqQQeUYswRfURGkWfVFVxHZKot4czX3k51UwzeTmBmKfA
- r+SpqPSw8TjXy+JUoeQ==
+ a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22 a=EUspDBNiAAAA:8
+ a=uorg23y0nfgcnAkg4s0A:9 a=vBUdepa8ALXHeOFLBtFW:22
+X-Proofpoint-ORIG-GUID: sf7JPN_Oh3EYAsZUiqyE44kjSWUZV_Wj
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDE2MDA5NSBTYWx0ZWRfXz9aIm6YSJAaD
+ nPAS6G1Ef0T2FfHFcIFGwJmykUDD2ujYuQLh+VcR14JrOkj1fx/SJNeza+G/TpIsL2R/s2K92O4
+ Lx7ngi03P0DewqF3rUVB6bZxrUerq9sW1HexIVZ8pgRcqkhg2kU5VRakMJAmyTYV/q3HO8EI4iP
+ 46q2alAXKS7vnhiQWE7zGTMRv9C28VappmogDO0TH+xvzdTE8TpUaZXJNqJgJMg/iDrO75EyuB9
+ aKsBRjdSKRd6SC4TDTi7KuDupbIlCEuD/lJ3KY2yd1Olh7xkf3k15dJKf0/4bbDyqaMdJo4ENZB
+ OldvL4fgMuXsQFljdM3okU+dO6w3SHyBw5Enkr6ktK8IPQTYGlHlzREuyEhYDQJ+5vYkBdBdmaH
+ 6Z0haxcVpdzBTPBYd4x+8P6pNaCG5SX9z/yNHZgNdNcx/xkhBxj14EqRGsZpl4O2RbYMz8RJzSn
+ vN+CxQPCbsJ61cYlliA==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-10-16_04,2026-10-14_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  impostorscore=0 suspectscore=0 bulkscore=0 spamscore=0 phishscore=0
- clxscore=1015 malwarescore=0 priorityscore=1501 adultscore=0
+ clxscore=1011 malwarescore=0 priorityscore=1501 adultscore=0
  lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2610080000
  definitions=main-2610160095
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261016_165513_974790_B8737044 
-X-CRM114-Status: GOOD (  15.11  )
+X-CRM114-CacheID: sfid-20261016_165513_990942_F4475EA8 
+X-CRM114-Status: GOOD (  20.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,75 +150,102 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This series extends the generic Qualcomm MIPI CSI2 PHY driver
-(drivers/phy/qualcomm/phy-qcom-mipi-csi2-*) with three additional
-CSIPHY variants: SA8775P, QCS8300 and SC7280. The driver currently 
-only supports x1e80100; these SoCs let CAMSS consume the CSIPHY through 
-the common PHY framework instead of the CSIPHY logic embedded in the 
-legacy in-tree CAMSS driver.
+sa8775p, qcs8300 and sc7280 each list exactly one power-domain ("top")
+on the CSI2 PHY node. For a device with a single power-domain phandle,
+the generic platform-bus code (platform_probe() ->
+dev_pm_domain_attach()) auto-attaches it via genpd_dev_pm_attach()
+before the driver's own probe() runs. phy_qcom_mipi_csi2_probe() then
+unconditionally calls devm_pm_domain_attach_list(), which fails with
+-EEXIST because dev->pm_domain is already set, and the driver treats
+that as fatal:
 
-All three targets share one hardware trait that x1e80100 does not:
-each has a single CSIPHY power-domain ("top", the Titan Top GDSC)
-instead of three. Patch 1 fixes a latent bug this exposes: for a
-single-power-domain device, the generic platform-bus code
-auto-attaches the domain before probe() runs, so the driver's own
-unconditional devm_pm_domain_attach_list() call fails with -EEXIST.
-x1e80100 never hit this because auto-attach only applies when there
-is exactly one power-domain phandle. This fix is a prerequisite for
-every patch that follows and is kept first per bisectability.
+  qcom-mipi-csi2-phy ace6000.phy: error -EEXIST: Failed to attach
+  power-domain list
+  qcom-mipi-csi2-phy ace6000.phy: probe with driver qcom-mipi-csi2-phy
+  failed with error -17
 
-The remaining patches add each SoC as its own variant, per the usual
-split of core/generic changes from SoC-specific data:
+x1e80100 is unaffected: it lists three power-domains, so the generic
+code does not auto-attach any of them (auto-attach only applies to
+single-power-domain devices); the driver's explicit attach is the
+only one that runs.
 
- - Patches 2-3 add the devicetree binding for SA8775P, then extend it
-   to QCS8300, which reuses the exact same CSIPHY (same D-PHY register
-   layout, common-control offset and clock set) as a second compatible
-   string in one schema rather than a duplicate file.
+For the single power-domain case, call dev_pm_domain_attach() instead
+of devm_pm_domain_attach_list(): it returns early when dev->pm_domain
+is already set, so csi2phy->pd_list is left NULL rather than built up
+by hand. The three call sites that walk pd_list for genpd
+performance-state scaling now guard against a NULL pd_list, which is
+harmless since scaling is unused (scaled = false) on every SoC that has
+a single "top" domain.
 
- - Patch 4 adds the SA8775P driver-side soc_cfg (register init sequence
-   ported from the legacy camss-csiphy-3ph-1-0.c table, clocks and
-   power-domain), and generalises the previously-hardcoded "timer"/
-   "core" clock-name string literals in the probe path into per-SoC
-   soc_cfg fields so other SoCs can declare their own.
+Signed-off-by: Anusha Arun Nandi <anusha.nandi@oss.qualcomm.com>
+---
+ .../phy/qualcomm/phy-qcom-mipi-csi2-core.c    | 24 +++++++++++++------
+ 1 file changed, 17 insertions(+), 7 deletions(-)
 
- - Patch 5 binds QCS8300 to the same soc_cfg added in patch 4 -- no new
-   register data or power-domain wiring is needed.
-
- - Patches 6-7 repeat the binding + driver split for SC7280, which has
-   its own register set and only two clocks.
-
-Tested on sa8775p, qcs8300 and sc7280.
-
-Depends-on: https://lore.kernel.org/all/20260917-x1e-csi2-phy-v18-0-6515b5255fa9@linaro.org/
-Depends-on: https://lore.kernel.org/all/20260918-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v20-0-dc244e124e71@linaro.org/
-
-Anusha Arun Nandi (7):
-  phy: qcom-mipi-csi2: fix -EEXIST probe failure on single power-domain
-    SoCs
-  dt-bindings: phy: qcom: Add qcom,sa8775p-csi2-phy schema
-  dt-bindings: phy: qcom: Add qcs8300 to the CSI2 PHY schema
-  phy: qcom-mipi-csi2: Add sa8775p D-PHY support
-  phy: qcom-mipi-csi2: Add qcs8300 CSI2 PHY support
-  dt-bindings: phy: qcom: Add qcom,sc7280-csi2-phy schema
-  phy: qcom-mipi-csi2: Add sc7280 D-PHY provider
-
- .../bindings/phy/qcom,sa8775p-csi2-phy.yaml   | 175 ++++++++++++
- .../bindings/phy/qcom,sc7280-csi2-phy.yaml    | 169 ++++++++++++
- .../qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c    | 251 ++++++++++++++++++
- .../phy/qualcomm/phy-qcom-mipi-csi2-core.c    |  31 ++-
- drivers/phy/qualcomm/phy-qcom-mipi-csi2.h     |   5 +
- 5 files changed, 622 insertions(+), 9 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/phy/qcom,sa8775p-csi2-phy.yaml
- create mode 100644 Documentation/devicetree/bindings/phy/qcom,sc7280-csi2-phy.yaml
---
-base-commit: b38d06ad1e13c32970d58039c154f009b81a3368
-change-id: 20250710-x1e-csi2-phy-f6434b651d3a
-base-commit: 617b69946d330ed334861a3cc2660966e8c14b2c
-change-id: 20250313-b4-linux-next-25-03-13-dtsi-x1e80100-camss-1506f74bbd3a
-
-Best regards,
--- 
-Anusha Arun Nandi <anusha.nandi@oss.qualcomm.com>
+diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
+index c0a4fa20eaf0..00285be9dd64 100644
+--- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
++++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
+@@ -43,7 +43,7 @@ phy_qcom_mipi_csi2_set_clock_rates(struct mipi_csi2phy_device *csi2phy,
+ 	}
+ 
+ 	pstate = 0;
+-	for (i = 0; i < csi2phy->pd_list->num_pds; i++) {
++	for (i = 0; csi2phy->pd_list && i < csi2phy->pd_list->num_pds; i++) {
+ 		unsigned int perf;
+ 
+ 		if (!csi2phy->soc_cfg->genpds[i].scaled)
+@@ -174,7 +174,7 @@ static int phy_qcom_mipi_csi2_power_on(struct phy *phy)
+ unset_rate:
+ 	dev_pm_opp_set_rate(csi2phy->dev, 0);
+ 
+-	for (i = 0; i < csi2phy->pd_list->num_pds; i++) {
++	for (i = 0; csi2phy->pd_list && i < csi2phy->pd_list->num_pds; i++) {
+ 		if (!csi2phy->soc_cfg->genpds[i].scaled)
+ 			continue;
+ 
+@@ -204,7 +204,7 @@ static int phy_qcom_mipi_csi2_power_off(struct phy *phy)
+ 
+ 	dev_pm_opp_set_rate(csi2phy->dev, 0);
+ 
+-	for (i = 0; i < csi2phy->pd_list->num_pds; i++) {
++	for (i = 0; csi2phy->pd_list && i < csi2phy->pd_list->num_pds; i++) {
+ 		if (!csi2phy->soc_cfg->genpds[i].scaled)
+ 			continue;
+ 
+@@ -233,6 +233,19 @@ static int phy_qcom_mipi_csi2_attach_pm_domains(struct mipi_csi2phy_device *csi2
+ 	const char **pd_names;
+ 	int i;
+ 
++	/*
++	 * A device with a single power-domain entry in the devicetree is
++	 * already attached by the generic platform-bus code before probe()
++	 * runs (genpd_dev_pm_attach()), so calling devm_pm_domain_attach_list()
++	 * here would fail with -EEXIST. dev_pm_domain_attach() returns early
++	 * in that case (dev->pm_domain already set) instead of leaving
++	 * csi2phy->pd_list unset; this is fine since pd_list is only used for
++	 * performance-state scaling, which is unused ("scaled = false") on
++	 * every SoC that has a single "top" power-domain.
++	 */
++	if (csi2phy->soc_cfg->num_genpds == 1)
++		return dev_pm_domain_attach(csi2phy->dev, 0);
++
+ 	pd_names = devm_kzalloc(csi2phy->dev,
+ 				sizeof(char *) * csi2phy->soc_cfg->num_genpds,
+ 				GFP_KERNEL);
+@@ -369,11 +382,8 @@ static int phy_qcom_mipi_csi2_probe(struct platform_device *pdev)
+ 		return ret;
+ 
+ 	ret = phy_qcom_mipi_csi2_attach_pm_domains(csi2phy);
+-	if (ret < 0 || csi2phy->pd_list == NULL) {
+-		if (ret == 0)
+-			ret = -ENODEV;
++	if (ret < 0)
+ 		return dev_err_probe(dev, ret, "Failed to attach power-domain list\n");
+-	}
+ 
+ 	ret = devm_pm_runtime_enable(dev);
+ 	if (ret < 0)
 -- 
 2.34.1
 
