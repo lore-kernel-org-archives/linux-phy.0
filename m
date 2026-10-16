@@ -4,65 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 710F6CCF2C5
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Oct 2026 12:34:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BAA35CCA464
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Oct 2026 12:34:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xvXpIZDs5Uyynwb83jiFDkyws7idLcI3qNEqkhknfao=; b=bfi2axzXQLv1pv
-	TErnlbD9QWnrUi5T0gzhoSwpOko1bhmfQ/7OcsHmGoy0TY5IfsyPyNHAhaN83vhhAEuuTUsKXMFFC
-	ypEiN26FB9nt79HVvMaarEFX/d9ghPvEjDO9R1NUGPBvZ8x3eRxPzj2gV+5J20Joa8Pg5JncoJCxk
-	xxZrMUiogU31kyIianCaYSe1S8YpsrI4TvvsisFZF8U7gwnvhsEOFJi5xw4YweSqMxDeaw/HXs90v
-	FqZdGBb7+KeW1cAHC2zRfVIzd9FJ8s5U7tyQTdEttvrIe0TG5wnaA5dmVs5Wy3YShIP8sPngTA5Nn
-	rCopTbYMwuf1XMjol0hw==;
+	List-Owner; bh=ftcBG5pSVc694WJ3XunybG8uk5rYotHn4FyMNTQYpYU=; b=iCbifne3lnnyF7
+	ojwKerBrRUoOtKLtWEK/kojjndZl+L3lXIKPqxxaSR4KMmPQS8Kzv1nH98iatMN1hJZEZdlSX0zqR
+	4W9igsb7bPdmOPPkQfvjdheMdmGs7GeXUPjqhJoRrvmbq6/mlZ/qu7AbqvtYbxSTyz/1C06Vw13Rl
+	ZxcImTUOBytHiJUeiNJh4SvUk53EGblsKaQoPo+poCt3KDk3IRp8PJa5WUvbYLDbCMgBeMLyrX715
+	morgn4JY2dWzr5BshdsB0DMosFAZpoaoQlQ2eV2q4oBac6751ZjwERyqehIP+I5r/IUVwMrz0u/fu
+	XfZCmTwA7gS2borhYFOA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHh8L-00000002toR-2Gso;
-	Fri, 16 Oct 2026 12:34:01 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1xHh8M-00000002tqb-19xC;
+	Fri, 16 Oct 2026 12:34:05 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHh8A-00000002tEi-0GQ3;
+	id 1xHh89-00000002tCp-197x;
 	Fri, 16 Oct 2026 12:33:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
-	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=DXB5ZHeqgM8KG82ft1t1OEAMht1cOl5FdRFE6628Ciw=; b=pvygVUfPtPG9UV5v1UArtKhZNa
-	WjovfFFEPEuIl+sem2W/f0Aob8qGrlIodyz9Wt+aZAU7i1y/XA6N45rpxBFHzRcQR8G22h/eyJwsl
-	Z0PeT/Mpe8MI3aTPwTawE30OM5rr+9gMtpPNKMgzOYBOFC1t4FBqaSJ75xwE9IQLAVDtLt/oP6OMU
-	KsEAHumcBv8bAStxv9YVeFD2f9rtNolVYM7jU4zZGX6FKeDLo5u0Scj5l70AlQdPObmLiR6mxOux8
-	bVP8kGQYdyK2HxG3Arc/Cia3kPa9SzVOctZjGdQ+w6LKBz88kIvb4kO34eC/x+aEVvyQVGRagSFtM
-	gq55TBbA==;
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
-	by desiato.infradead.org with esmtps (Exim 4.99.5 #2 (Red Hat Linux))
-	id 1xHh85-00000001UCM-3lh2;
-	Fri, 16 Oct 2026 12:33:48 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1792154023;
-	bh=lkTtSrZZebD0D1MrHOhVvg4ecqLH9ywFPtjBgVBc6iY=;
+	s=mail; t=1792154027;
+	bh=mUx/eqhBbS3ZWeGbki32wgj3Da1ja1JDeEvy1gkVPRQ=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=U2DeIx5O45yR79/+d5IIaAUWFtuDBLjYPEhiACW47IXthUmdhc4l1sS2V9aVtwn8v
-	 ACmAgSRruaFrncM18TON7GiZdIGlKZiTUrvBPondSHL3itKXo5P9zpPT+CtHUBOBnR
-	 LsIHgozKu2io295ROFwWx6mUvxpYQb/kY2Kavbq+jGi9sAyqy/fuzqnu1F5QYyzaU5
-	 nLgfBOLbHoRsVmg+lRHH1XW83ebc45IiG35KudpHI14biW2zq8724Vbbczs7u6XrWO
-	 +vK5o0CbSRpiAhZcoSqJm96v6xeEJ+5xm1KkryYg4afkBxGi+lYL2NU4LwJVpETcU+
-	 HI0e2Dqhj28IQ==
+	b=Jfh3FjeMiw++OPa5JDbMIoswR8AqHEN8TxIz77hdXGHXFnltDhdwvDFomrGo3Wzzk
+	 OyYkMU2rbpfv1UhA5wgrDVDfCWVQLrCiCIqz4WT1iIDlpfPFSEA6fSNGRZO30tq93l
+	 ThR9QTvFooKelSpPMEEAEFwy2i9RmZuOHy9nVzEXG7tlwf9cz0c8jcjD1/Lans3c8C
+	 0vGSTApsch8JnlECSkSNfmyo7C7Q3u043KWd+VwSXz1WhskDgsWpXJjTml8UpT3UPL
+	 Rhgo2w/iofg9BLKw85UkRzfTpWjjmTh/zpuiI9rIaJkR2F9BrFMNtAJLasWLIDbaj0
+	 VaUaaIP/DSHMg==
 Received: from yukiji.home (unknown [100.64.0.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: laeyraud)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 039D117E3747;
-	Fri, 16 Oct 2026 14:33:42 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 5814217E377E;
+	Fri, 16 Oct 2026 14:33:46 +0200 (CEST)
 From: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-Date: Fri, 16 Oct 2026 14:33:04 +0200
-Subject: [PATCH v14 12/23] scsi: ufs: mediatek: Remove undocumented
- downstream reset cruft
+Date: Fri, 16 Oct 2026 14:33:07 +0200
+Subject: [PATCH v14 15/23] scsi: ufs: mediatek: Remove
+ mediatek,ufs-broken-rtc property
 MIME-Version: 1.0
-Message-Id: <20261016-mt8196-ufs-v14-12-e8d565e0cd45@collabora.com>
+Message-Id: <20261016-mt8196-ufs-v14-15-e8d565e0cd45@collabora.com>
 References: <20261016-mt8196-ufs-v14-0-e8d565e0cd45@collabora.com>
 In-Reply-To: <20261016-mt8196-ufs-v14-0-e8d565e0cd45@collabora.com>
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
@@ -88,16 +74,16 @@ Cc: kernel@collabora.com, linux-arm-kernel@lists.infradead.org,
  Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, 
  Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1792154009; l=2332;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1792154009; l=2134;
  i=louisalexis.eyraud@collabora.com; s=20250113; h=from:subject:message-id;
- bh=EY0U3sj6rvUEERgFSF8RhjFWo7pI9Zw40jOv/4R8JTc=;
- b=V6CjxCJjTnXt3CI41w2YUJqdYY7UzjTUKmEB/PI3JatcVd6ItXmxU+wGsSAg2/tDPVVrcs20p
- MnC6A1s5L40CMEaOWUuo9notrrMHNCScEluylpPBLXsDysE5lOy//iK
+ bh=scxCpVLtfp4Tto+BcuHpIAru+gsvEa5xQ+joNcVj0xg=;
+ b=snsL0RSQTjAJZ/3TQaexjZJsyofCJCysiLGLUQqMMORzEjHaGMmJjDATqq5D8qiuQHZCe6auR
+ 56sooG/Co//DDSeCgd89YM1eCGlsSoSEYDWTczGWIacSVQJlhI7Ue1A
 X-Developer-Key: i=louisalexis.eyraud@collabora.com; a=ed25519;
  pk=CHFBDB2Kqh4EHc6JIqFn69GhxJJAzc0Zr4e8QxtumuM=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261016_133347_444005_10CA39E2 
-X-CRM114-Status: GOOD (  15.27  )
+X-CRM114-CacheID: sfid-20261016_053349_499020_16262B58 
+X-CRM114-Status: GOOD (  10.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,74 +102,60 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 
-The MediaTek UFS host driver's probe function allows using a
-ti,syscon-reset as a reset, without going through the appropriate
-abstractions, or by documenting this in the binding at all.
+This flag property was never described in the binding, and its
+capability wrapper seems pointless.
 
-Remove this, it's downstream code and does not belong here.
+If one of the MediaTek SoCs needs the ufshcd quirk applied, then this
+can be done per-compatible, without needing to give the device tree
+author the option to forget to set it.
+
+Remove it and the associated capability flag wrapping code.
 
 Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Reviewed-by: Peter Wang <peter.wang@mediatek.com>
 Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Reviewed-by: Chaotian Jing <chaotian.jing@mediatek.com>
 Signed-off-by: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 ---
- drivers/ufs/host/ufs-mediatek.c | 33 +++------------------------------
- 1 file changed, 3 insertions(+), 30 deletions(-)
+ drivers/ufs/host/ufs-mediatek.c | 5 -----
+ drivers/ufs/host/ufs-mediatek.h | 2 --
+ 2 files changed, 7 deletions(-)
 
 diff --git a/drivers/ufs/host/ufs-mediatek.c b/drivers/ufs/host/ufs-mediatek.c
-index 58ae8499ebf7..46c9153be6e2 100644
+index 808365b880fd..b8812005b6c4 100644
 --- a/drivers/ufs/host/ufs-mediatek.c
 +++ b/drivers/ufs/host/ufs-mediatek.c
-@@ -2474,38 +2474,12 @@ MODULE_DEVICE_TABLE(of, ufs_mtk_of_match);
- static int ufs_mtk_probe(struct platform_device *pdev)
- {
- 	int err;
--	struct device *dev = &pdev->dev, *phy_dev = NULL;
--	struct device_node *reset_node, *phy_node = NULL;
--	struct platform_device *reset_pdev, *phy_pdev = NULL;
--	struct device_link *link;
- 	struct ufs_hba *hba;
-+	struct platform_device *phy_pdev = NULL;
-+	struct device *dev = &pdev->dev, *phy_dev = NULL;
-+	struct device_node *phy_node = NULL;
- 	struct ufs_mtk_host *host;
+@@ -704,9 +704,6 @@ static void ufs_mtk_init_host_caps(struct ufs_hba *hba)
+ 	if (of_property_read_bool(np, "mediatek,ufs-rtff-mtcmos"))
+ 		host->caps |= UFS_MTK_CAP_RTFF_MTCMOS;
  
--	reset_node = of_find_compatible_node(NULL, NULL,
--					     "ti,syscon-reset");
--	if (!reset_node) {
--		dev_notice(dev, "find ti,syscon-reset fail\n");
--		goto skip_reset;
--	}
--	reset_pdev = of_find_device_by_node(reset_node);
--	if (!reset_pdev) {
--		dev_notice(dev, "find reset_pdev fail\n");
--		goto skip_reset;
--	}
--	link = device_link_add(dev, &reset_pdev->dev,
--		DL_FLAG_AUTOPROBE_CONSUMER);
--	put_device(&reset_pdev->dev);
--	if (!link) {
--		dev_notice(dev, "add reset device_link fail\n");
--		goto skip_reset;
--	}
--	/* supplier is not probed */
--	if (link->status == DL_STATE_DORMANT) {
--		err = -EPROBE_DEFER;
--		goto out;
--	}
+-	if (of_property_read_bool(np, "mediatek,ufs-broken-rtc"))
+-		host->caps |= UFS_MTK_CAP_MCQ_BROKEN_RTC;
 -
--skip_reset:
- 	/* find phy node */
- 	phy_node = of_parse_phandle(dev->of_node, "phys", 0);
- 
-@@ -2551,7 +2525,6 @@ static int ufs_mtk_probe(struct platform_device *pdev)
- 
- out:
- 	of_node_put(phy_node);
--	of_node_put(reset_node);
- 	return err;
+ 	dev_info(hba->dev, "caps: 0x%x", host->caps);
  }
  
+@@ -1247,8 +1244,6 @@ static int ufs_mtk_init(struct ufs_hba *hba)
+ 	hba->quirks |= UFSHCI_QUIRK_SKIP_MANUAL_WB_FLUSH_CTRL;
+ 
+ 	hba->quirks |= UFSHCD_QUIRK_MCQ_BROKEN_INTR;
+-	if (host->caps & UFS_MTK_CAP_MCQ_BROKEN_RTC)
+-		hba->quirks |= UFSHCD_QUIRK_MCQ_BROKEN_RTC;
+ 
+ 	hba->vps->wb_flush_threshold = UFS_WB_BUF_REMAIN_PERCENT(80);
+ 
+diff --git a/drivers/ufs/host/ufs-mediatek.h b/drivers/ufs/host/ufs-mediatek.h
+index bde2b53f5798..d97951ee1f4e 100644
+--- a/drivers/ufs/host/ufs-mediatek.h
++++ b/drivers/ufs/host/ufs-mediatek.h
+@@ -138,8 +138,6 @@ enum ufs_mtk_host_caps {
+ 	UFS_MTK_CAP_DISABLE_MCQ                = 1 << 8,
+ 	/* Control MTCMOS with RTFF */
+ 	UFS_MTK_CAP_RTFF_MTCMOS                = 1 << 9,
+-
+-	UFS_MTK_CAP_MCQ_BROKEN_RTC             = 1 << 10,
+ };
+ 
+ struct ufs_mtk_crypt_cfg {
 
 -- 
 2.56.0
