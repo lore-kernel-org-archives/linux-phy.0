@@ -4,94 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54FE6CCA48B
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Oct 2026 08:57:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 991A6CCA462
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Oct 2026 08:57:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jp3pYDnJVxE6b6LbAL8IieL0r6f1vEXw+fId9usTa3U=; b=wzPYVNslg0rhiS
-	ZZLsrswE7luNqCGumd+DH60yf4NkhTz/TyF3Bqa9hmenoPiMtEj5eVojTzZBiS+4tAVY/MXif8ZZX
-	LyawkDIwPizQSECc0Kc9bPPzyBf+8EPJd9qtTIsN/ZHKnRyWfpMSpysDYnaM6Y769KIfn4KBD3T8u
-	5W8zLQ3Ua28MrOt0QEhtU5ZzEzooiyfb7JPjsQzUBmpY3y0vBpVvW5cTB+HfN29UYAtuv19gizeBS
-	0Cnm082/gSfwgQBVAkSxLUL6f3SRZbfKPB++pUEvDmu5bMWnw2NH4xFfb55gWVq29FOj5YoBhWldz
-	/leiLGInw2lju65FW07g==;
+	List-Owner; bh=fUkj319Tyw7kFAiEcdADMxBK3pPlPWegAkTTuUhYoDY=; b=HZOUtAJH/672th
+	5rql+JIThmc+iVMgNWcJ1soxh8aO4sBCi50+ZDkofmR+6xHT9E46WUWxn0tpQv0DpS+PY98TLHVpe
+	hDwakJwFrZZFjrHpdNb+h9J1khajVY35AzZJZWaJSoR7dfVru+Bbb7PqMRRSSPFvmM/X48P6FTd0A
+	tcTW3oJkacgiruRWuF40e2udD//tHIFAHJhXE8LtUyFE2E5m3wxDl0qXUGJ1m6okIKGgswiPTkmdB
+	SQiSbi+Wnt1bCb7k4MBZTDbTuXVVA+Bg6jdOiKAurF2Oxzlq16YUIS58x7+Xg/lMx/ZrVha9NArtT
+	uviO/eEe782q6f9SOaWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHdkK-00000002OCn-351m;
-	Fri, 16 Oct 2026 08:57:00 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1xHdkP-00000002OHp-19DQ;
+	Fri, 16 Oct 2026 08:57:05 +0000
+Received: from mail-pl1-x62a.google.com ([2607:f8b0:4864:20::62a])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHdkJ-00000002O9x-2GuM
-	for linux-phy@bombadil.infradead.org;
-	Fri, 16 Oct 2026 08:56:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
-	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=4t98YFhToVmXSdqpvYlx+jh33cXkNHD7dPs1AUtblco=; b=cpE4TGIK9Ve1em3ZaLyzQGF0mk
-	SbBZF9sXSOJ3gXfjMsh/YHJ3OHs6PEBEKZ6N+A+XiErR+cXWfN+wBmCBFJtYImrlddlbKTH9LSSpt
-	4lyjdQfHM/gGIpYhB57Eu7BPFmDqMw1C7NDM8AYCTw9vXdr0L9SnuRCGfA2JGEQ8QunVpQ1bMUZjl
-	RGim9mka56sUHZ4SOFxWZ59qOA6sRD5zOg1e3MvnnUNx1sAzwRGcdVEEYZLhFFUkIxiverdenYncS
-	zBuEnUQzL4/JWWl09o0rYAnywolQqqAXGTQDP85ecj9U4FsFaDS6MqpyAnBaX+LXQPsoa71Xgql39
-	sspqKpjg==;
-Received: from mail-pg1-x535.google.com ([2607:f8b0:4864:20::535])
-	by desiato.infradead.org with esmtps (Exim 4.99.5 #2 (Red Hat Linux))
-	id 1xHdkD-00000001Hrd-2TzN
+	id 1xHdkK-00000002OBA-1zYK
 	for linux-phy@lists.infradead.org;
-	Fri, 16 Oct 2026 08:56:55 +0000
-Received: by mail-pg1-x535.google.com with SMTP id 41be03b00d2f7-cbe437a530dso369579a12.1
-        for <linux-phy@lists.infradead.org>; Fri, 16 Oct 2026 01:56:52 -0700 (PDT)
+	Fri, 16 Oct 2026 08:57:02 +0000
+Received: by mail-pl1-x62a.google.com with SMTP id d9443c01a7336-2d01548ac96so4296035ad.3
+        for <linux-phy@lists.infradead.org>; Fri, 16 Oct 2026 01:57:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1792141011; x=1792745811; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1792141020; x=1792745820; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=4t98YFhToVmXSdqpvYlx+jh33cXkNHD7dPs1AUtblco=;
-        b=b2Wr8fHP1/ARpXnQO1CI99PtwGhY5z+RgnlrCkXgys4RaqrO3Vm7d6AKvJU1ZAKMcV
-         1YfVrWWWYnnK1KglX1JbYtSk6iS6jy99QXRoQJ+9vgJqIpyCrZVJw00gW5mdJdN0xzN9
-         WmJHOZO5T0Lq+tIP79WPkNSwM4TFBGy8ntPgfiumXX9WJlbv5w8VzO3qfOCcJwNFH55w
-         V9KIpiVENDVSdmQA7S4J4SfZWyGirTNiYlZCJ1JIIebj1B2XZ0rEoU6t0AwyV61c/Rpp
-         UgObuDWdGrwSbJoF/k88467yJWd7NOuh3pfZU2ycQuRmrLJzDo6n3qf9WKqwtkzTJD6/
-         VcAA==
+        bh=tVh2yBZbg04QeorXCBZsTA793N8VgD96vnjMkJMi9Ig=;
+        b=f8cqJ66DrG7NoODKdehl8ZJ1HDiEivMvdY2lBlDtjqc+/En6UkQs/XZP+GdUpcfvE4
+         Ck/w9BgFMlwpoE2cyZYHeOu0ChcghvtPwJzj/92Mp6z6JYpVvRv+OLaCvGgXS6zmwJil
+         BgBNN1q8IhT27GfnA5pN+opO0+8tPfFlO9PVFw1zz/jc/KPU3JnfD0lZsc4Xz8Zef13X
+         7gKmFYUt+M0VFXUuCr6FacOWLtn+e/7+8aGl8Wv+D+Fm14UCCz7Su2tTmN/R4NaErlJo
+         +953z7VbWE6dCbLGPJshD+/V9DblGx/izE950ixaGRef0VLIkE3xo9kBBE1hYJO5DtFk
+         L7Yw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1792141011; x=1792745811;
+        d=1e100.net; s=20260707; t=1792141020; x=1792745820;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=4t98YFhToVmXSdqpvYlx+jh33cXkNHD7dPs1AUtblco=;
-        b=t8VnUFO13tkG0msN7EMAlrdQMBYIx7JLqvxBO9+CPGgg0nFb9YzLYMTNUyWFls5ov9
-         XXkSzn0yKH6KfHfqETYSz+xGBQ65zm4NnOtCA/EL6X4HR6bQihDJEdvTDLxXOWW12iof
-         rGFW4Efg6uTF1owWqbLu2EdWoSdNxrIKwxeRIRMVJnlf1W/o2QhMTDZjXbH1goIBJcNE
-         3YYFmfY7J3CkSkYSvFY6wNBw912eI3MbApbjLohkIb94bmZjqJCVkuHIJhnVHUq1jCYp
-         JOM9Jaeu46ip4Psfsrgu4SE8t2aFIIufG2O5SRQZQvFYyOLeKs2vFisprhVqCMnhtEd7
-         0bQw==
-X-Forwarded-Encrypted: i=1; AKwUvBwEsWzuuWIUYLcJ1Nb44udv5X2BFC7dkmpGZF5sDshE8jPTIRcRbRemGVHltTRdIGgiiPGCgZu0Jhc=@lists.infradead.org
-X-Gm-Message-State: AFq9FYJMZ4W1wgnoxKaXCwS/r7PZ9U/08B29pzE7tz7YUpuNfaZh0uWN
-	74WZDoVNExBJe5+2V/PkJTLcpaSeMj2ei4+oHHMuBXOq/JVjtTHu9IVC
-X-Gm-Gg: AYBFou0l7hAneO7/7NFhG28Ry6x46N2ZRM8MTqvhGaGupMgFL33fg6ZUjesm3QRbc6z
-	XE0EVDidkJdaIEtTIqtPSikRCxtItj/gLWLFGzrvMPGudH92nKzkpB5Lma0bVUaMnp6PM2VkpI8
-	7Q+a6ont5+I1q7wAxdci8wD1qjdM90GL6dXVwMMyO0KhBwxGcNxq+ZJzkTvMJmoHJDNIWgsE8AN
-	fQkOs9y8pxIHJ6ETx61347gJKv68TkVCYQ8aF2DS8mQXkVV+3syoO+aMycJGtB46CNpfQa4cwpN
-	Un0BGXX8o5uVb01/HHaU13E9gQJ/ypooGfG2bbQ9CnCSqNetZnXchmiSQyD0ILNG8mKgcB9ZR9b
-	L2yirtoRs6XqHeB2u2XvW+yPULcJeS0EyA8mGBniBfn4Q5oMR75TiaXZ1gJXiRB8dERblkxGnTp
-	czftBJx8dNNKQoa4LJPbrnn+LeyKcOAytNYmWTIXZsTtofMjdVbVUIirX1VRORMoUbzSHgnOEAD
-	OYlHsWXLXKo9lHdmthx70EDBzStzg==
-X-Received: by 2002:a17:902:dac2:b0:2dd:b95a:e1db with SMTP id d9443c01a7336-2e8429a9f89mr307105675ad.3.1792141010736;
-        Fri, 16 Oct 2026 01:56:50 -0700 (PDT)
+        bh=tVh2yBZbg04QeorXCBZsTA793N8VgD96vnjMkJMi9Ig=;
+        b=OyL5GrUVxPcYZlUoIHv/O1vLczQxAD6dtlkXVgaqurW0x8mrexuAGKO6eZ73LkBfEc
+         mfDqm+lhjI0J+0Ju+2mspOYfTJj+JA9/AmpbeTg3Wh/8crAIaRS+/uUR+bWSHMZO1nBu
+         HTrikRV3DuYG5Lnuv6yZz7Hx5/Ovk3vFdye1XjindPLDHpQPrlEi4fzyFBe8dXVMBDMk
+         2x01WxgojXyQoBa0H1Y4mb93riyaM2PGWxDfQHPqa5KucAeDcMJIAsAl5AKFr/Zij095
+         vvt/ytS5I856pd1wJ22sRnsgl+n5GyXIvlYnLyE0ysKZZZLmvX3VN4jAGfehN2UOuGm2
+         FgdQ==
+X-Forwarded-Encrypted: i=1; AKwUvBzqviV/fivXyH0rDRe8gq/M+mZOG2ZYMQkZhwtwUQa4cNeQKRDChNdZU3D59yBknIeZJFE+ds7HogQ=@lists.infradead.org
+X-Gm-Message-State: AFq9FYJ4ob2NUSmF0df4A/Tj3uej4znw4+dKKAR3aOX6Zci44FS2xI+l
+	YZCWx4iXywKTtDbZhPhi3spRErBMEAeXc+eDjohHjrcXFklYSCpzDsek
+X-Gm-Gg: AYBFou0eprvqPzqjnEKC91YYkGNJV+P+/S+Gb3N1o2dP27GQmyDSwTpgOlHEuDoo+ub
+	Y2T5nkwvu0UablQRUiF5m8Ui1j47GIliqeLVlKOQXWMCqLsbwFBG6PyY1nkI5gRtPuMmdCidmRF
+	KX8SB+9m2NSH7dYSTe06hDyEOQdhPrbLqYEYRkI22K9X2829mVXCvumKh3RTrj6EQrlURpa9hMG
+	AcuNYokPeledF11puQf87EVRDzea1PHAOXHNYfxTwCT6byy9YwmvjtpUd5sKAI9H0kfcXT4LrgY
+	XvIxxBK5QrkUZK0gbs21z7QSiN8+FvOedjP7pTmchgTCqrezISwWdOP1GnVJ8VQIHYkOkgFtRFP
+	souKv+YQWiOt/Y258JJz1hFv/J/0n6X8AzxK6tmhCUDrzYDtX2drQ6e5tNwo3ZnZk0w1jcF0JrG
+	wIrolOw3UmPmxme73n+SVxOqYdLXnEb80rdEkmUfa6JtrPkjBffPhi/AlALrqJaH+yH/h6i0mst
+	/NdpFRkPrtobIbYZomvv/WYw6NcNvcysNn7rMYl
+X-Received: by 2002:a17:903:2a8d:b0:2e9:6468:1ff1 with SMTP id d9443c01a7336-2e9646824d2mr63085325ad.2.1792141019112;
+        Fri, 16 Oct 2026 01:56:59 -0700 (PDT)
 Received: from [127.0.1.1] (211-23-39-77.hinet-ip.hinet.net. [211.23.39.77])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2e97e882a20sm6971025ad.62.2026.10.16.01.56.46
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2e97e882a20sm6971025ad.62.2026.10.16.01.56.55
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 16 Oct 2026 01:56:50 -0700 (PDT)
+        Fri, 16 Oct 2026 01:56:58 -0700 (PDT)
 From: Jason Yang <jason98166@gmail.com>
-Date: Fri, 16 Oct 2026 16:56:35 +0800
-Subject: [PATCH v5 1/8] dt-bindings: phy: Add PHY_DIRECTION_TX/RX
- definitions
+Date: Fri, 16 Oct 2026 16:56:37 +0800
+Subject: [PATCH v5 3/8] phy: rockchip-samsung-dcphy: Move block-level setup
+ to runtime resume
 MIME-Version: 1.0
-Message-Id: <20261016-dcphy-rx-v1-v5-1-e63b49eabe2d@gmail.com>
+Message-Id: <20261016-dcphy-rx-v1-v5-3-e63b49eabe2d@gmail.com>
 References: <20261016-dcphy-rx-v1-v5-0-e63b49eabe2d@gmail.com>
 In-Reply-To: <20261016-dcphy-rx-v1-v5-0-e63b49eabe2d@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -108,16 +93,16 @@ Cc: Michael Riesch <michael.riesch@collabora.com>,
  linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
  linux-kernel@vger.kernel.org, Jason Yang <jason98166@gmail.com>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1792141002; l=1157;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1792141002; l=3359;
  i=jason98166@gmail.com; s=20260721; h=from:subject:message-id;
- bh=YkXszimtwNYxX/s0QEul4OMgnFGKSMEKdd1MDqGTukk=;
- b=LEId1ZHxKIWdktOliHM+CAcf07+0pEcd9I8lHvqF1BdgteiRACfEYBQ+XTP3tpx89PFHzEumx
- aaGdm4smqtiD2t/AMT7acnwO3RJ+9CO4aUpskESVMlXGNjLOdrzRAUn
+ bh=PaA+7EhfjjyXSykHdMCAcs/0kj/172DSX40sjJai2Vs=;
+ b=hOMpC3DGfbUpIpLLafpPHjqPnGV4sluEAXnjKxw4tpYX/teHfoW6y5UED13eX1vDR6A9Q7kpt
+ me89SI01UkhASRauzk+6cNOCWTsoXBiWJaGuu5kjAWRlBRFI731Q3dH
 X-Developer-Key: i=jason98166@gmail.com; a=ed25519;
  pk=xQmD001Q/ooHl39PxyQtusbUQmgbOsSfpFryRVWZ/k4=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261016_095653_906216_6AE961BF 
-X-CRM114-Status: GOOD (  11.15  )
+X-CRM114-CacheID: sfid-20261016_015700_558358_DC7F7791 
+X-CRM114-Status: GOOD (  13.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,36 +119,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-A MIPI D-PHY or C-PHY can be a transmitter or a receiver. Some PHY
-blocks have one of each and can use them at the same time, so one PHY
-node offers two PHYs. The existing cell, PHY_TYPE_DPHY or
-PHY_TYPE_CPHY, selects the mode of the whole block, not one of the two
-PHYs.
+The APB reset and the BIAS references have to be treated as block-level
+[1]: both the transmitter and the receiver need them, and they only have
+to be programmed once. They are programmed from the transmitter's
+power-on path today. A later change registers one struct phy for each of
+them, and a second consumer coming up would then reset the block
+underneath a PHY that is already running.
 
-Add PHY_DIRECTION_TX and PHY_DIRECTION_RX for a cell that selects the
-transmitter or the receiver. The first user is the Rockchip RK3588 MIPI
-DC-PHY, where the transmitter serves a DSI host and the receiver a CSI-2
-host.
+Program them from runtime resume instead, where whichever of the two
+comes up first brings the block up and a second one no longer resets it.
+This puts the BIAS writes ahead of the per-PHY reset assert, where the
+TRM's worked example has them after [1]. That is safe: neither M_RESETN
+nor S_RESETN covers the BIAS registers, and the values written are those
+registers' reset defaults.
 
-Suggested-by: Michael Riesch <michael.riesch@collabora.com>
-Link: https://lore.kernel.org/r/7425ac83-f6d8-4443-a26e-a47f9306aa24@collabora.com
+The output level select in BIAS_CON4 stays on the power-on path: it
+selects 400mV for D-PHY and 530mV for C-PHY, and the driver core resumes
+a runtime-PM supplier before the consumer's probe runs, so runtime resume
+cannot yet know which of the two applies.
+
+[1] RK3588 TRM: sections 22.4.1 (address map), 22.4.2 (reset values),
+    22.6.1.2 (reset) and 22.6.4.1 (D-PHY transmitter start-up)
+
 Signed-off-by: Jason Yang <jason98166@gmail.com>
 ---
- include/dt-bindings/phy/phy.h | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c | 25 ++++++++++++-----------
+ 1 file changed, 13 insertions(+), 12 deletions(-)
 
-diff --git a/include/dt-bindings/phy/phy.h b/include/dt-bindings/phy/phy.h
-index 979b5dfd8353..9ead74d9a172 100644
---- a/include/dt-bindings/phy/phy.h
-+++ b/include/dt-bindings/phy/phy.h
-@@ -29,4 +29,7 @@
- #define PHY_POL_INVERT		1
- #define PHY_POL_AUTO		2
+diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
+index 7382043e1f31..1471a1563d2a 100644
+--- a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
++++ b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
+@@ -980,13 +980,6 @@ static void samsung_mipi_dcphy_bias_block_enable(struct samsung_mipi_dcphy *sams
+ 						 I_LADDER_1_00V);
+ 	regmap_write(samsung->regmap, BIAS_CON2, REG_325M_325MV | REG_LP_400M_400MV |
+ 						 REG_400M_400MV | REG_645M_645MV);
+-
+-	/* default output voltage select:
+-	 * dphy: 400mv
+-	 * cphy: 530mv
+-	 */
+-	regmap_update_bits(samsung->regmap, BIAS_CON4,
+-			   I_MUX_SEL_MASK, I_MUX_400MV);
+ }
  
-+#define PHY_DIRECTION_TX	0
-+#define PHY_DIRECTION_RX	1
+ static void samsung_mipi_dphy_lane_enable(struct samsung_mipi_dcphy *samsung)
+@@ -1338,7 +1331,13 @@ static int samsung_mipi_dphy_power_on(struct samsung_mipi_dcphy *samsung)
+ 
+ 	reset_control_assert(samsung->m_phy_rst);
+ 
+-	samsung_mipi_dcphy_bias_block_enable(samsung);
++	/* default output voltage select:
++	 * dphy: 400mv
++	 * cphy: 530mv
++	 */
++	regmap_update_bits(samsung->regmap, BIAS_CON4,
++			   I_MUX_SEL_MASK, I_MUX_400MV);
 +
- #endif /* _DT_BINDINGS_PHY */
+ 	samsung_mipi_dcphy_pll_configure(samsung);
+ 	samsung_mipi_dphy_clk_lane_timing_init(samsung);
+ 	samsung_mipi_dphy_data_lane_timing_init(samsung);
+@@ -1362,10 +1361,6 @@ static int samsung_mipi_dcphy_power_on(struct phy *phy)
+ {
+ 	struct samsung_mipi_dcphy *samsung = phy_get_drvdata(phy);
+ 
+-	reset_control_assert(samsung->apb_rst);
+-	udelay(1);
+-	reset_control_deassert(samsung->apb_rst);
+-
+ 	switch (samsung->type) {
+ 	case PHY_TYPE_DPHY:
+ 		return samsung_mipi_dphy_power_on(samsung);
+@@ -1656,6 +1651,12 @@ static __maybe_unused int samsung_mipi_dcphy_runtime_resume(struct device *dev)
+ 		return ret;
+ 	}
+ 
++	reset_control_assert(samsung->apb_rst);
++	udelay(1);
++	reset_control_deassert(samsung->apb_rst);
++
++	samsung_mipi_dcphy_bias_block_enable(samsung);
++
+ 	return 0;
+ }
+ 
 
 -- 
 2.43.0
