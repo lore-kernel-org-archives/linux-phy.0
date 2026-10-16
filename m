@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6BF0CCCF2C2
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38306CCA46C
 	for <linux-phy@archiver.kernel.org>; Fri, 16 Oct 2026 14:56:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,44 +12,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ks0+qCaA4Vb5EhGL3EmhceBCLLIqceNTHdAq/Ee7v7k=; b=VV0/l04lDgPiB0
-	EJW9pp+BAKV3LHXotXIsyDIXag6exs0qUj8kx/JgREGEtI6xwU7zL7Sxg8HwnFs+OhTpvfAHnMJUv
-	aMF6Q6WZYK0BgW4kEDhxoSwnuC2SZTUuXKdihQAzD7Ns/315qM2rITJo9BYQ2GejbMFXMnS1ItS89
-	Ihd/WK7RarsBIkXxAD1EYmKioMRYXzF0ZEki9K2VsPmIDEJGVlFXsoqNwTOla8qAkCu5fSe6/sMxa
-	F1Tyhz0mDVloV7BXUlR6UOuqOJXYLjeUsYMDvVTQUgcig0clKdPesaoh9sk2cMQe9KjVS/Bf+e2qv
-	4U7WnVtYSdnaQXCskAvA==;
+	List-Owner; bh=CJzVgO/SzgjsjvS0ubWbH9UhP4yBi0PWaOUWl0+Z13o=; b=jxk7pGljk5gdTp
+	i78uz6bgzytVqko3e9x6akK60efT0/STZ4Oz3mDr5ruODZ3l3dXLo4RYt3QTJ0mRHzvc25FgZuP3v
+	maiLr/7zDm49D/UspBgYriX8hBNuMp+Dt5a9eyfmmcoD76A9RhKzhXmWvP1Dtjv1S1Cb81+Sh6i6K
+	fDmU3UCFkbwnOF1Cg9IyF0LST+y2QlfhRT8KU5OLb92uFCv3mQfIXAZr+3xD+pf+YP0ROtOku/zfH
+	cunIxArrEmHSv14AG/zmBgzJTCMjvgYHu5yW0Aa5v0PPGE0OuEO+g4hcVnUeWiuJdZ5rg5fq8I7KL
+	YGMc/Ah4uZ+pKf2O2U/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHjLy-00000003DIh-44Is;
+	id 1xHjLy-00000003DIU-3i3N;
 	Fri, 16 Oct 2026 14:56:14 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHjLx-00000003DHV-05bC
+	id 1xHjLw-00000003DHR-3uMj
 	for linux-phy@lists.infradead.org;
-	Fri, 16 Oct 2026 14:56:13 +0000
+	Fri, 16 Oct 2026 14:56:12 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id AA65E444E7;
+	by sea.source.kernel.org (Postfix) with ESMTP id 7C480439D1;
 	Fri, 16 Oct 2026 14:56:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 8D789C2BD00;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 5BB07C2BCFC;
 	Fri, 16 Oct 2026 14:56:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1792162572;
-	bh=g1rs06tI/ggxRizlgmcCCbC0xEg6/V1KLq1k/5Uc+ic=;
+	bh=ctStdelPIUVc7VW6eWcZJlQ+36ihtcbruWdKm/IRbJ0=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=k/Z/ReEM4RxPVirQhPcnZ06818EvIsJ75S30UYjAhgmu6P6eAUWQg7FPvxnZne8pL
-	 fHXJ+bOMB1isBGNT9dm/WqCSBDjR7BA+VXr/DOxtmzPCeckPDaAnlkxKieRKOwdiQV
-	 QwJ4JA8efO7UOgmHUrG7pnyI9rzox6CilQZsWdWyLXkx/KR/ats04VuewMojDlvdmA
-	 9UsRgUR+3bg7dbC5Mq4CgQrmzg8Uc+0ICKmDFPZVfGF5WGhx0raJd5sMqbwTO93ooW
-	 9tRi8oVNe9wXFSsK9A0YrbxB99JhoPIwXKkBTChTqZnfdV0Oc4LBuCF+BmB0qJbHAi
-	 v74eaixqcPMbw==
+	b=hItC4af0oSg/HMj79OqJkifEghupwcEX4yyPuxe92oeLpStZnLBz0XtnHZ47XsHoH
+	 Ujr622b5JOUWv5SYSCJ5emp8MgmvsHgomXQ6tKOjAnKclzm4elfKbjqRuyNvEAFZjY
+	 eTokADNfACz/8ccWAuwnT9+ezRcFfYlnTQCLnWzcEwyllA+Na+fZwekcQpWxohnEHY
+	 M8v9ymvKNgVB+pf/oLMoOmDi8G69+Dwxh+UFOJY4iGTZ6HpzQEnaVU1rmMACOCasHN
+	 fvp8a5RRVXRFbJyJu+ORWcMJzauK/Ap23EH8QIxXWMHE+onOccJw8BoxpmAJuUNLdD
+	 mSpaFTEkOHR2g==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 75A20CCA46C;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 38F0BCC6B38;
 	Fri, 16 Oct 2026 14:56:12 +0000 (UTC)
 From: George Neacsu via B4 Relay <devnull+geocausa.gmail.com@kernel.org>
-Date: Fri, 16 Oct 2026 15:56:13 +0100
-Subject: [PATCH v3 3/6] phy: qcom-mipi-csi2: Rename the D-PHY init sequence
+Date: Fri, 16 Oct 2026 15:56:11 +0100
+Subject: [PATCH v3 1/6] phy: Add MIPI C-PHY mode and configuration options
 MIME-Version: 1.0
-Message-Id: <20261016-x1e-cphy-rfc-v3-3-40a346a72153@gmail.com>
+Message-Id: <20261016-x1e-cphy-rfc-v3-1-40a346a72153@gmail.com>
 References: <20261016-x1e-cphy-rfc-v3-0-40a346a72153@gmail.com>
 In-Reply-To: <20261016-x1e-cphy-rfc-v3-0-40a346a72153@gmail.com>
 To: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
@@ -67,11 +67,11 @@ Cc: Neil Armstrong <neil.armstrong@linaro.org>,
  linux-kernel@vger.kernel.org, Bryan O'Donoghue <bryan.odonoghue@linaro.org>, 
  George Neacsu <geocausa@gmail.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1792162570; l=2374;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1792162570; l=2907;
  i=geocausa@gmail.com; s=20261015; h=from:subject:message-id;
- bh=A4f3txo8ZFwqS2VX8XxM7L9p+S6DusnZS+18o4BDeVo=;
- b=lT1vBk//aXrLmPNBTm9/YQvSEQMRYuLIq8DU7UAvDwJdIpXcyQjiRehgHz7JXb1AwGolvY6GR
- fusquOScyt2DJHUDKvT7iqKB5BL0Klej8XGWBwjT3DHZA5XFKCQfpFt
+ bh=36uZ+JScSYFLwexM/kC6X4AHkDlZ/9zLHIZ2E9kp+04=;
+ b=R3n9/fFP8SEKy/tEs43CfcYQIzGpRgt3AwVdDMRQLH8c8JT8ATg3b6NnKTNhQffP8hftvk43w
+ Dr68UEtadiCAG10tfOVlY/eM2WDrkmt3CoSXXxcZZ8sSLIs9EIG39a+
 X-Developer-Key: i=geocausa@gmail.com; a=ed25519;
  pk=KyQk/iWbxsikewDBh0SwlHI51RvAqahD3loqmRp9DVI=
 X-Endpoint-Received: by B4 Relay for geocausa@gmail.com/20261015 with
@@ -96,62 +96,96 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: George Neacsu <geocausa@gmail.com>
 
-The init sequence and its size describe the D-PHY mode only. Call them
-dphy_init_seq and dphy_lane_array_size, so that a C-PHY sequence can sit
-next to them under matching names.
+The generic PHY framework has a mode and configuration options for MIPI
+D-PHY but none for C-PHY, so a CSI-2 receiver has no way to ask a PHY
+that does both for C-PHY. Add PHY_MODE_MIPI_CPHY and struct
+phy_configure_opts_mipi_cphy. The options are the two values a receiver
+knows: the symbol rate on each trio and the number of trios.
 
-No functional change.
+The first user is the Qualcomm CSI2 PHY, whose X1E80100 instances carry
+the C-PHY front camera of the Surface Pro 11.
 
-Suggested-by: Bryan O'Donoghue <bod@kernel.org>
 Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+Reviewed-by: Loic Poulain <loic.poulain@oss.qualcomm.com>
 Assisted-by: Claude:claude-opus-5-5
 Signed-off-by: George Neacsu <geocausa@gmail.com>
 ---
- drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c | 8 ++++----
- drivers/phy/qualcomm/phy-qcom-mipi-csi2.h          | 4 ++--
- 2 files changed, 6 insertions(+), 6 deletions(-)
+ include/linux/phy/phy-mipi-cphy.h | 29 +++++++++++++++++++++++++++++
+ include/linux/phy/phy.h           |  5 +++++
+ 2 files changed, 34 insertions(+)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
-index 966d79c98f..b2d4ec3e81 100644
---- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
-+++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
-@@ -246,8 +246,8 @@ phy_qcom_mipi_csi2_gen2_config_lanes(struct mipi_csi2phy_device *csi2phy,
- 				     u8 settle_cnt)
- {
- 	const struct mipi_csi2phy_device_regs *regs = csi2phy_dev_to_regs(csi2phy);
--	const struct mipi_csi2phy_lane_regs *r = regs->init_seq;
--	int i, array_size = regs->lane_array_size;
-+	const struct mipi_csi2phy_lane_regs *r = regs->dphy_init_seq;
-+	int i, array_size = regs->dphy_lane_array_size;
- 	u32 val;
+diff --git a/include/linux/phy/phy-mipi-cphy.h b/include/linux/phy/phy-mipi-cphy.h
+new file mode 100644
+index 0000000000..9b748d577b
+--- /dev/null
++++ b/include/linux/phy/phy-mipi-cphy.h
+@@ -0,0 +1,29 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++#ifndef __PHY_MIPI_CPHY_H_
++#define __PHY_MIPI_CPHY_H_
++
++#include <linux/types.h>
++
++/**
++ * struct phy_configure_opts_mipi_cphy - MIPI C-PHY configuration set
++ *
++ * This structure is used to represent the configuration state of a
++ * MIPI C-PHY phy.
++ */
++struct phy_configure_opts_mipi_cphy {
++	/**
++	 * @symbol_rate:
++	 *
++	 * Symbol rate on each trio, in symbols per second.
++	 */
++	u64			symbol_rate;
++
++	/**
++	 * @trios:
++	 *
++	 * Number of active trios.
++	 */
++	u8			trios;
++};
++
++#endif /* __PHY_MIPI_CPHY_H_ */
+diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+index c480d6cb42..f123378340 100644
+--- a/include/linux/phy/phy.h
++++ b/include/linux/phy/phy.h
+@@ -19,6 +19,7 @@
+ #include <linux/phy/phy-dp.h>
+ #include <linux/phy/phy-hdmi.h>
+ #include <linux/phy/phy-lvds.h>
++#include <linux/phy/phy-mipi-cphy.h>
+ #include <linux/phy/phy-mipi-dphy.h>
+ #include <linux/phy/phy-thunderbolt.h>
  
- 	for (i = 0; i < array_size; i++, r++) {
-@@ -372,8 +372,8 @@ static struct mipi_csi2_genpd x1e_genpds[] = {
- const struct mipi_csi2phy_soc_cfg mipi_csi2_dphy_4nm_x1e = {
- 	.ops = &phy_qcom_mipi_csi2_ops_3ph_1_0,
- 	.reg_info = {
--		.init_seq = lane_regs_x1e80100,
--		.lane_array_size = ARRAY_SIZE(lane_regs_x1e80100),
-+		.dphy_init_seq = lane_regs_x1e80100,
-+		.dphy_lane_array_size = ARRAY_SIZE(lane_regs_x1e80100),
- 		.common_regs_offset = 0x1000,
- 	},
- 	.supply_names = (const char **)x1e_supplies,
-diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h b/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h
-index 7e55ae0073..0d6031a4d8 100644
---- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h
-+++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h
-@@ -48,8 +48,8 @@ struct mipi_csi2phy_lane_regs {
- };
- 
- struct mipi_csi2phy_device_regs {
--	const struct mipi_csi2phy_lane_regs *init_seq;
--	const int lane_array_size;
-+	const struct mipi_csi2phy_lane_regs *dphy_init_seq;
-+	const int dphy_lane_array_size;
- 	const u32 common_regs_offset;
- };
- 
+@@ -42,6 +43,7 @@ enum phy_mode {
+ 	PHY_MODE_PCIE,
+ 	PHY_MODE_ETHERNET,
+ 	PHY_MODE_MIPI_DPHY,
++	PHY_MODE_MIPI_CPHY,
+ 	PHY_MODE_SATA,
+ 	PHY_MODE_LVDS,
+ 	PHY_MODE_DP,
+@@ -69,6 +71,8 @@ union phy_notify {
+  *
+  * @mipi_dphy:	Configuration set applicable for phys supporting
+  *		the MIPI_DPHY phy mode.
++ * @mipi_cphy:	Configuration set applicable for phys supporting
++ *		the MIPI_CPHY phy mode.
+  * @dp:		Configuration set applicable for phys supporting
+  *		the DisplayPort protocol.
+  * @lvds:	Configuration set applicable for phys supporting
+@@ -78,6 +82,7 @@ union phy_notify {
+  */
+ union phy_configure_opts {
+ 	struct phy_configure_opts_mipi_dphy	mipi_dphy;
++	struct phy_configure_opts_mipi_cphy	mipi_cphy;
+ 	struct phy_configure_opts_dp		dp;
+ 	struct phy_configure_opts_lvds		lvds;
+ 	struct phy_configure_opts_hdmi		hdmi;
 
 -- 
 2.53.0
