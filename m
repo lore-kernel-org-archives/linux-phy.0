@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3B4D8CCF2C9
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F999CCF2CB
 	for <linux-phy@archiver.kernel.org>; Fri, 16 Oct 2026 12:33:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,43 +12,57 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=htt5h8tNkKdJLgiWD/TOiV/4Nrq9Pl7OggCpe21LVy4=; b=PyF/DlIDJcibXD
-	H6Frk+DMc7HCdJPromyPxRUFI1hc4LbScJtLvJgB7Nlt7BcdX4EqwxzgHv0sHdrFF5wiFsnDCN4th
-	0W5DcwusDkiR7vYzDHPs//Cr3DT13LHzh/z4s2fUyA9UqLCCoFr6GtYFVilbD/vqSuTTexxoaQpOl
-	NKf49X4zq7YxyPQZb5YiEprd0c1ZcZTQ6rlSb+znWbe78QkV5qfVaivxzvNbaTFUedA5vfvUU1y5v
-	x5WNWKourqPSjIIHZ6dOPWWC4cHUOGzkmMC1SjjosXBowXJi+aJ9tcKuYIvy/yMATChFgG8GVIaqK
-	e+RFM5vIlRtBRAOXt0LA==;
+	List-Owner; bh=ltbzMYk3Cono7R5FCdqlEhlimCnEziVhVnT//12V890=; b=RZscO9tc7VnYwy
+	HhouMiSJmZec4BiMphyEOS+0LvKKsOaQniWvbyrtuU6iOcyRNSSX4nv8k0852GUBADLpwG8yzJCT9
+	69R6SqRSG0BEkAwjWdKwE0o03ufThz71DiAB+D5xoYAF11VdyZwDBn7nRCZ1khI9Ww7BYQSoOoYV4
+	rwL+jObEguuwtiqfK2oUx8RVScpqBa7mcIKN34I/LWc3xUAVpPXgZXPDfgyjbNKa1xXwrDt5M0xJ2
+	/SwPaVmwCriJ4WnmnjMXmHuYf7pcjge6eb3Uu09bNaAjxKoqN8h3v9ITgDhD3V01oADC8B8Ju5aUd
+	16esNkM+hsqMSDutkHRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHh8D-00000002tRX-3U7l;
-	Fri, 16 Oct 2026 12:33:53 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1xHh8E-00000002tS1-04PA;
+	Fri, 16 Oct 2026 12:33:54 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHh83-00000002t8O-3HE4;
+	id 1xHh85-00000002t9S-0R5H;
 	Fri, 16 Oct 2026 12:33:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
+	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
+	From:Sender:Reply-To:Content-ID:Content-Description;
+	bh=2oAmGIlpdPl2AN1PftE2Ur8HmShgIa7sf5IdyJU07Fw=; b=QIHxeSZXwnrhLLqXgDeDkaBsB7
+	YO1grsSfaEHq1QEGtR7kPqpqlRr1bUT5A+0sx5YhVTEy1VHJxYNtylUweYs0/de7/m3K7KboIaXSl
+	Kn+dH4TQimH5ft9jJZF5Jm4VfaGPlEWMXxqDRCXtOwZvuSk12jHBrUPGlvKdg+Kuj63eaa+FaIJSO
+	m+qoDhzqBXhRLn2GVRZHpVC2lnAeM/LvQW8ut9MNEB8rPDNNTvqGc6XzSQyLn/B7yn/uZXE2NOMVK
+	eUH+GKpylkqENWWvtbvTymmqWVXiI4NJh+BZljZsmYGsrlT+yUpKjk8rrTmXNwkH7EIgp/0VOmbn+
+	z1LGyFVw==;
+Received: from bali.collaboradmins.com ([148.251.105.195])
+	by desiato.infradead.org with esmtps (Exim 4.99.5 #2 (Red Hat Linux))
+	id 1xHh7x-00000001U9O-13St;
+	Fri, 16 Oct 2026 12:33:43 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1792154021;
-	bh=LnDN71zBmnghJgf22oZAFV2IgN4Qz8LaYeEh/iwGY40=;
+	s=mail; t=1792154014;
+	bh=m5hJfIrVYgzyNoAPyhFPMGOJ7BJWLS/eKC+SWXbrdVE=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=lxl85AIixRi3ijqgvpWfiORgGNkHJEUKkR0kRHiwKqnR7CF9y45tx28t7oAVkD2v7
-	 B7S5/k6csHuvMvgeIRWky6bYbF5Ek8BibRqMlDSAW8v0AtU72JZLdp81MHZ72BDBQq
-	 46Bp06EwOrK1CjWGr7+CnnIckDM38hhAPxlkW/xSjaWkpG5LfCvjOnAMX3+SeUmklL
-	 /y8SboHunedkZnFcF0nQTbfd0xqTzXXFrCmbF4AoLAbYgDI3dg6HuRYyLJcOHp/r06
-	 QnrK6cH9xV3rJteTR/6IeYN6FGg2b/khJV6HbYOPnK1dvMKtzjiRxwt+jeXip6diPI
-	 YH+n0qiRIoe1A==
+	b=dVEfJGNWzq86haeY9ndZyivAyUvzSqrI57+Ovmd8GZceHLiUa/R4V3STE4rK0Vq0b
+	 gHXr96h2dv1eudtBhGCb1PR3A7GPDnEGmhOsXOUq4XWPZooem0J030HOp4M51o5i7J
+	 nKV7tIaSjq2z9dTztaLeRseclDh4iXv/zyi2k0jsZ0H2TFNaQXQmsJHc8ntN1h+iI+
+	 HsDXkC/Ez2fpXqtzcR1KltZHWeZ5r8wzufH/EiIKoZqTAy8MivPlmaRMEP6v2zjMCH
+	 hABCcc8W8mnnEg+ZiZJylgON7BfHpI07DbPYpTn58CsBTzb0hHw0tKTUYTYz+zO4Qi
+	 EqHu4CwSMdIRQ==
 Received: from yukiji.home (unknown [100.64.0.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: laeyraud)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id C99B317E3643;
-	Fri, 16 Oct 2026 14:33:40 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 29B6217E1509;
+	Fri, 16 Oct 2026 14:33:33 +0200 (CEST)
 From: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-Date: Fri, 16 Oct 2026 14:33:02 +0200
-Subject: [PATCH v14 10/23] scsi: ufs: mediatek: Rework the crypt-boost
- stuff
+Date: Fri, 16 Oct 2026 14:32:55 +0200
+Subject: [PATCH v14 03/23] dt-bindings: ufs: mediatek,ufs: Add mt8196
+ variant
 MIME-Version: 1.0
-Message-Id: <20261016-mt8196-ufs-v14-10-e8d565e0cd45@collabora.com>
+Message-Id: <20261016-mt8196-ufs-v14-3-e8d565e0cd45@collabora.com>
 References: <20261016-mt8196-ufs-v14-0-e8d565e0cd45@collabora.com>
 In-Reply-To: <20261016-mt8196-ufs-v14-0-e8d565e0cd45@collabora.com>
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
@@ -74,16 +88,16 @@ Cc: kernel@collabora.com, linux-arm-kernel@lists.infradead.org,
  Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, 
  Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1792154009; l=4293;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1792154009; l=2540;
  i=louisalexis.eyraud@collabora.com; s=20250113; h=from:subject:message-id;
- bh=Q2Qx2eRppKfrjg0+xsG2wdryOA7BoTrGsrnKsVzyv8Y=;
- b=KfCaHibW39uBOpXy3arSkOwcseZfrQuNXs0z72ky5Lcx6+70gjVoX50+eZT/Gk00Erg+/9HD0
- rwtMoFR00Y4A/j8CiAB1oPGLWI6HkME1o5HqbsiI7hU4XgQvvVBVMZ6
+ bh=Fu9MfrHRxOqGq0SuEgCjBQkvUm2tW9NvFGGI8VG1HyQ=;
+ b=1/2z1sYlEqYqWvUjCr1bFKPYOg+fGPuR+qxM0EZDMaRkQhteiSyfOGvcrTpF7IuvlDPu870EN
+ gSReGPSA1l+BxbjNpGO5YlgIZ6KdbTvprRO2e3se/wH9KohmybDbpTY
 X-Developer-Key: i=louisalexis.eyraud@collabora.com; a=ed25519;
  pk=CHFBDB2Kqh4EHc6JIqFn69GhxJJAzc0Zr4e8QxtumuM=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261016_053344_128023_9E310F01 
-X-CRM114-Status: GOOD (  14.50  )
+X-CRM114-CacheID: sfid-20261016_133341_976236_8A9B4855 
+X-CRM114-Status: GOOD (  11.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,84 +109,96 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-RnJvbTogTmljb2xhcyBGcmF0dGFyb2xpIDxuaWNvbGFzLmZyYXR0YXJvbGlAY29sbGFib3JhLmNv
-bT4KCkkgZG9uJ3Qga25vdyB3aGV0aGVyIHRoZSBjcnlwdC1ib29zdCBmdW5jdGlvbmFsaXR5IGFz
-IGl0IGlzIGN1cnJlbnRseQppbXBsZW1lbnRlZCBpcyBldmVuIGFwcHJvcHJpYXRlIGZvciBtYWlu
-bGluZS4gSXQgbWlnaHQgYmUgYmV0dGVyIGRvbmUgaW4Kc29tZSBnZW5lcmljIHdheS4gQnV0IHdo
-YXQgSSBkbyBrbm93IGlzIHRoYXQgSSBjYW4gcmV3b3JrIHRoZSBjb2RlIHRvCm1ha2UgaXQgbGVz
-cyBvYnR1c2UuCgpQcmVmaXggdGhlIGJvb3N0IHN0dWZmIHdpdGggdGhlIGFwcHJvcHJpYXRlIHZl
-bmRvciBwcmVmaXgsIHJlbW92ZSB0aGUKcG9pbnRsZXNzIGNsb2NrIHdyYXBwZXJzLCBhbmQgcmV3
-b3JrIHRoZSBmdW5jdGlvbi4KClJldmlld2VkLWJ5OiBBbmdlbG9HaW9hY2NoaW5vIERlbCBSZWdu
-byA8YW5nZWxvZ2lvYWNjaGluby5kZWxyZWdub0Bjb2xsYWJvcmEuY29tPgpSZXZpZXdlZC1ieTog
-UGV0ZXIgV2FuZyAo546L5L+h5Y+LKSA8cGV0ZXIud2FuZ0BtZWRpYXRlay5jb20+ClNpZ25lZC1v
-ZmYtYnk6IE5pY29sYXMgRnJhdHRhcm9saSA8bmljb2xhcy5mcmF0dGFyb2xpQGNvbGxhYm9yYS5j
-b20+ClNpZ25lZC1vZmYtYnk6IExvdWlzLUFsZXhpcyBFeXJhdWQgPGxvdWlzYWxleGlzLmV5cmF1
-ZEBjb2xsYWJvcmEuY29tPgotLS0KIGRyaXZlcnMvdWZzL2hvc3QvdWZzLW1lZGlhdGVrLmMgfCA4
-OSArKysrKysrKysrKysrKy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogMSBmaWxlIGNoYW5n
-ZWQsIDMxIGluc2VydGlvbnMoKyksIDU4IGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL2RyaXZl
-cnMvdWZzL2hvc3QvdWZzLW1lZGlhdGVrLmMgYi9kcml2ZXJzL3Vmcy9ob3N0L3Vmcy1tZWRpYXRl
-ay5jCmluZGV4IDFiZTUzMzAyMGVkNC4uMmJjZjM1YmZhYmI3IDEwMDY0NAotLS0gYS9kcml2ZXJz
-L3Vmcy9ob3N0L3Vmcy1tZWRpYXRlay5jCisrKyBiL2RyaXZlcnMvdWZzL2hvc3QvdWZzLW1lZGlh
-dGVrLmMKQEAgLTYwOSwyMSArNjA5LDYgQEAgc3RhdGljIGludCB1ZnNfbXRrX21waHlfcG93ZXJf
-b24oc3RydWN0IHVmc19oYmEgKmhiYSwgYm9vbCBvbikKIAlyZXR1cm4gMDsKIH0KIAotc3RhdGlj
-IGludCB1ZnNfbXRrX2dldF9ob3N0X2NsayhzdHJ1Y3QgZGV2aWNlICpkZXYsIGNvbnN0IGNoYXIg
-Km5hbWUsCi0JCQkJc3RydWN0IGNsayAqKmNsa19vdXQpCi17Ci0Jc3RydWN0IGNsayAqY2xrOwot
-CWludCBlcnIgPSAwOwotCi0JY2xrID0gZGV2bV9jbGtfZ2V0KGRldiwgbmFtZSk7Ci0JaWYgKElT
-X0VSUihjbGspKQotCQllcnIgPSBQVFJfRVJSKGNsayk7Ci0JZWxzZQotCQkqY2xrX291dCA9IGNs
-azsKLQotCXJldHVybiBlcnI7Ci19Ci0KIHN0YXRpYyB2b2lkIHVmc19tdGtfYm9vc3RfY3J5cHQo
-c3RydWN0IHVmc19oYmEgKmhiYSwgYm9vbCBib29zdCkKIHsKIAlzdHJ1Y3QgdWZzX210a19ob3N0
-ICpob3N0ID0gdWZzaGNkX2dldF92YXJpYW50KGhiYSk7CkBAIC02ODAsNjUgKzY2NSw1MyBAQCBz
-dGF0aWMgdm9pZCB1ZnNfbXRrX2Jvb3N0X2NyeXB0KHN0cnVjdCB1ZnNfaGJhICpoYmEsIGJvb2wg
-Ym9vc3QpCiAJY2xrX2Rpc2FibGVfdW5wcmVwYXJlKGNmZy0+Y2xrX2NyeXB0X211eCk7CiB9CiAK
-LXN0YXRpYyBpbnQgdWZzX210a19pbml0X2hvc3RfY2xrKHN0cnVjdCB1ZnNfaGJhICpoYmEsIGNv
-bnN0IGNoYXIgKm5hbWUsCi0JCQkJIHN0cnVjdCBjbGsgKipjbGspCi17Ci0JaW50IHJldDsKLQot
-CXJldCA9IHVmc19tdGtfZ2V0X2hvc3RfY2xrKGhiYS0+ZGV2LCBuYW1lLCBjbGspOwotCWlmIChy
-ZXQpIHsKLQkJZGV2X2luZm8oaGJhLT5kZXYsICIlczogZmFpbGVkIHRvIGdldCAlczogJWQiLCBf
-X2Z1bmNfXywKLQkJCSBuYW1lLCByZXQpOwotCX0KLQotCXJldHVybiByZXQ7Ci19Ci0KIHN0YXRp
-YyB2b2lkIHVmc19tdGtfaW5pdF9ib29zdF9jcnlwdChzdHJ1Y3QgdWZzX2hiYSAqaGJhKQogewog
-CXN0cnVjdCB1ZnNfbXRrX2hvc3QgKmhvc3QgPSB1ZnNoY2RfZ2V0X3ZhcmlhbnQoaGJhKTsKIAlz
-dHJ1Y3QgdWZzX210a19jcnlwdF9jZmcgKmNmZzsKIAlzdHJ1Y3QgZGV2aWNlICpkZXYgPSBoYmEt
-PmRldjsKLQlzdHJ1Y3QgcmVndWxhdG9yICpyZWc7CiAJdTMyIHZvbHQ7CisJaW50IHJldDsKIAot
-CWhvc3QtPmNyeXB0ID0gZGV2bV9remFsbG9jKGRldiwgc2l6ZW9mKCooaG9zdC0+Y3J5cHQpKSwK
-LQkJCQkgICBHRlBfS0VSTkVMKTsKLQlpZiAoIWhvc3QtPmNyeXB0KQotCQlnb3RvIGRpc2FibGVf
-Y2FwczsKKwljZmcgPSBkZXZtX2t6YWxsb2MoZGV2LCBzaXplb2YoKmNmZyksIEdGUF9LRVJORUwp
-OworCWlmICghY2ZnKQorCQlyZXR1cm47CiAKLQlyZWcgPSBkZXZtX3JlZ3VsYXRvcl9nZXRfb3B0
-aW9uYWwoZGV2LCAiZHZmc3JjLXZjb3JlIik7Ci0JaWYgKElTX0VSUihyZWcpKSB7Ci0JCWRldl9p
-bmZvKGRldiwgImZhaWxlZCB0byBnZXQgZHZmc3JjLXZjb3JlOiAlbGQiLAotCQkJIFBUUl9FUlIo
-cmVnKSk7Ci0JCWdvdG8gZGlzYWJsZV9jYXBzOworCWNmZy0+cmVnX3Zjb3JlID0gZGV2bV9yZWd1
-bGF0b3JfZ2V0X29wdGlvbmFsKGRldiwgImR2ZnNyYy12Y29yZSIpOworCWlmIChJU19FUlIoY2Zn
-LT5yZWdfdmNvcmUpKSB7CisJCWRldl9lcnIoZGV2LCAiRmFpbGVkIHRvIGdldCBkdmZzcmMtdmNv
-cmU6ICVwZVxuIiwgY2ZnLT5yZWdfdmNvcmUpOworCQlyZXR1cm47CiAJfQogCi0JaWYgKG9mX3By
-b3BlcnR5X3JlYWRfdTMyKGRldi0+b2Zfbm9kZSwgImJvb3N0LWNyeXB0LXZjb3JlLW1pbiIsCi0J
-CQkJICZ2b2x0KSkgewotCQlkZXZfaW5mbyhkZXYsICJmYWlsZWQgdG8gZ2V0IGJvb3N0LWNyeXB0
-LXZjb3JlLW1pbiIpOwotCQlnb3RvIGRpc2FibGVfY2FwczsKKwlyZXQgPSBvZl9wcm9wZXJ0eV9y
-ZWFkX3UzMihkZXYtPm9mX25vZGUsICJtZWRpYXRlayxib29zdC1jcnlwdC12Y29yZS1taW4iLAor
-CQkJCSAgICZ2b2x0KTsKKwlpZiAocmV0KSB7CisJCWRldl9lcnIoZGV2LCAiRmFpbGVkIHRvIGdl
-dCBtZWRpYXRlayxib29zdC1jcnlwdC12Y29yZS1taW46ICVwZVxuIiwKKwkJCUVSUl9QVFIocmV0
-KSk7CisJCXJldHVybjsKIAl9CisJY2ZnLT52Y29yZV92b2x0ID0gdm9sdDsKIAotCWNmZyA9IGhv
-c3QtPmNyeXB0OwotCWlmICh1ZnNfbXRrX2luaXRfaG9zdF9jbGsoaGJhLCAiY3J5cHRfbXV4IiwK
-LQkJCQkgICZjZmctPmNsa19jcnlwdF9tdXgpKQotCQlnb3RvIGRpc2FibGVfY2FwczsKKwljZmct
-PmNsa19jcnlwdF9tdXggPSBkZXZtX2Nsa19nZXQoZGV2LCAiY3J5cHRfbXV4Iik7CisJaWYgKElT
-X0VSUihjZmctPmNsa19jcnlwdF9tdXgpKSB7CisJCWRldl9lcnIoZGV2LCAiRmFpbGVkIHRvIGdl
-dCBjbG9jayBjcnlwdF9tdXg6ICVwZVxuIiwgY2ZnLT5jbGtfY3J5cHRfbXV4KTsKKwkJcmV0dXJu
-OworCX0KIAotCWlmICh1ZnNfbXRrX2luaXRfaG9zdF9jbGsoaGJhLCAiY3J5cHRfbHAiLAotCQkJ
-CSAgJmNmZy0+Y2xrX2NyeXB0X2xwKSkKLQkJZ290byBkaXNhYmxlX2NhcHM7CisJY2ZnLT5jbGtf
-Y3J5cHRfbHAgPSBkZXZtX2Nsa19nZXQoZGV2LCAiY3J5cHRfbHAiKTsKKwlpZiAoSVNfRVJSKGNm
-Zy0+Y2xrX2NyeXB0X2xwKSkgeworCQlkZXZfZXJyKGRldiwgIkZhaWxlZCB0byBnZXQgY2xvY2sg
-Y3J5cHRfbHA6ICVwZVxuIiwgY2ZnLT5jbGtfY3J5cHRfbHApOworCQlyZXR1cm47CisJfQogCi0J
-aWYgKHVmc19tdGtfaW5pdF9ob3N0X2NsayhoYmEsICJjcnlwdF9wZXJmIiwKLQkJCQkgICZjZmct
-PmNsa19jcnlwdF9wZXJmKSkKLQkJZ290byBkaXNhYmxlX2NhcHM7CisJY2ZnLT5jbGtfY3J5cHRf
-cGVyZiA9IGRldm1fY2xrX2dldChkZXYsICJjcnlwdF9wZXJmIik7CisJaWYgKElTX0VSUihjZmct
-PmNsa19jcnlwdF9wZXJmKSkgeworCQlkZXZfZXJyKGRldiwgIkZhaWxlZCB0byBnZXQgY2xvY2sg
-Y3J5cHRfcGVyZjogJXBlXG4iLCBjZmctPmNsa19jcnlwdF9wZXJmKTsKKwkJcmV0dXJuOworCX0K
-IAotCWNmZy0+cmVnX3Zjb3JlID0gcmVnOwotCWNmZy0+dmNvcmVfdm9sdCA9IHZvbHQ7CisJaG9z
-dC0+Y3J5cHQgPSBjZmc7CiAJaG9zdC0+Y2FwcyB8PSBVRlNfTVRLX0NBUF9CT09TVF9DUllQVF9F
-TkdJTkU7Ci0KLWRpc2FibGVfY2FwczoKLQlyZXR1cm47CiB9CiAKIHN0YXRpYyB2b2lkIHVmc19t
-dGtfaW5pdF9ob3N0X2NhcHMoc3RydWN0IHVmc19oYmEgKmhiYSkKCi0tIAoyLjU2LjAKCgotLSAK
-bGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-czovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+
+The MediaTek MT8196 SoC's UFS controller uses a different set of supplies.
+It is therefore not compatible with the MT8195. It also have an additional
+0.9V supply pin (AVDD09_UFS_1), that is specific to this SoC, thus not
+currently described in the binding.
+
+Add a compatible for this SoC and new property for the additional supply,
+and modify the binding correspondingly.
+
+Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Reviewed-by: Chaotian Jing <chaotian.jing@mediatek.com>
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+Signed-off-by: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
+---
+ .../devicetree/bindings/ufs/mediatek,ufs.yaml       | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/ufs/mediatek,ufs.yaml b/Documentation/devicetree/bindings/ufs/mediatek,ufs.yaml
+index 945cb986b06b..99181ec9dda0 100644
+--- a/Documentation/devicetree/bindings/ufs/mediatek,ufs.yaml
++++ b/Documentation/devicetree/bindings/ufs/mediatek,ufs.yaml
+@@ -16,6 +16,7 @@ properties:
+       - mediatek,mt8183-ufshci
+       - mediatek,mt8192-ufshci
+       - mediatek,mt8195-ufshci
++      - mediatek,mt8196-ufshci
+ 
+   clocks:
+     minItems: 1
+@@ -60,6 +61,9 @@ properties:
+   avdd09-supply:
+     description: Phandle to the 0.9V supply powering the AVDD09_UFS pin
+ 
++  avdd09-1-supply:
++    description: Phandle to the 0.9V supply powering the AVDD09_UFS_1 pin
++
+   avdd12-supply:
+     description: Phandle to the 1.2V supply powering the AVDD12_UFS pin
+ 
+@@ -104,6 +108,7 @@ allOf:
+         clock-names:
+           items:
+             - const: main
++        avdd09-1-supply: false
+         avdd12-ckbuf-supply: false
+   - if:
+       properties:
+@@ -119,6 +124,7 @@ allOf:
+           minItems: 3
+           maxItems: 3
+         avdd09-supply: false
++        avdd09-1-supply: false
+   - if:
+       properties:
+         compatible:
+@@ -131,6 +137,21 @@ allOf:
+         clock-names:
+           minItems: 10
+         avdd09-supply: false
++        avdd09-1-supply: false
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: mediatek,mt8196-ufshci
++    then:
++      properties:
++        clocks:
++          minItems: 10
++        clock-names:
++          minItems: 10
++        avdd18-supply: false
++      required:
++        - operating-points-v2
+ 
+ examples:
+   - |
+
+-- 
+2.56.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
