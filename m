@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 251C0CCF2C3
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Oct 2026 18:04:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E2CFCCF2C4
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Oct 2026 18:04:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9E1vSb1b8fzNEQpoaE25x01/QqLg0nt9KL0x7sxxdUA=; b=KrnUvbm14C3yyy
-	T+uZib2mYEBXSiFk07Lz4rud6xFoVxaYNyWq0NSgfZ4HoB3nBKbzSLOXLbZs1hI0UUHWpKl6c0LVF
-	cxes97ZZjszkmnNIL6n6vUjyW1N7Sp2/6gB3vMd4PVUlMZI249bUIbLEPKnoP9EXJsMLvJ2kREV11
-	Nk/Kd3+pYByhcN/TosdnGlU+LjB+ZFsULKbcgRrqeuqYRiVPrD+oQCHpNBAbKGCMoJIsAcSg1sBND
-	BCWtFtFjzYq1NAKfZxKcBd7yz0QwxvpJpsm7WLQaADokfhyIDUTOnVVlCTwj1yD9C3EyoookZoKK3
-	7t0H51/3C0x8oijAoS1g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=POWW0qkLtQIEuPuB4LnSG6mVBLMFo3W22+veiup585A=; b=CgItOE082Jd4iV
+	m+xVAl9KjGcgZTHjuoneVCqfjZ6yZVslSPH5zbxRKzSoC2gJbqQHUzdSzlYlWHhcj7SD2VjGZ0H4P
+	XpqJzccGlSQFhcp2UE0qtbeoSR7X0+v+rk2ZG3z5wNHXCE0q+8AuC4b9MVSXXfGOAfNyMDoeNLxmi
+	cjD9XnuGeKMAqipPWzdM6kMhNNwr9EkkFHFF4bZBgAZcr2Yzravi12DeKGYYeU/dtjoKy3rpuP9hG
+	4lg+dcABS96971jjME/BLgAe2FeDK56Qf9UWzPBAjrzgqbgZhj/deeOQoCsnrMl2zpSwEC4XrG2Km
+	RnIvHgp+qOhD1Jo7j1tQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHmHp-00000003cTc-2j39;
-	Fri, 16 Oct 2026 18:04:09 +0000
+	id 1xHmHs-00000003cUs-3J7d;
+	Fri, 16 Oct 2026 18:04:12 +0000
 Received: from layka.disroot.org ([178.21.23.139])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHmHn-00000003cS5-0b8Q
+	id 1xHmHo-00000003cSf-2sXz
 	for linux-phy@lists.infradead.org;
-	Fri, 16 Oct 2026 18:04:08 +0000
+	Fri, 16 Oct 2026 18:04:09 +0000
 Received: from mail01.layka.lan (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id BACC982B68;
-	Fri, 16 Oct 2026 20:03:46 +0200 (CEST)
+	by disroot.org (Postfix) with ESMTP id D858B807C2;
+	Fri, 16 Oct 2026 20:04:06 +0200 (CEST)
 X-Virus-Scanned: SPAM Filter at disroot.org
 Received: from layka.disroot.org ([127.0.0.1])
  by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id UwRSPM_91TBd; Fri, 16 Oct 2026 20:03:45 +0200 (CEST)
+ id oTAlrEeAuC64; Fri, 16 Oct 2026 20:04:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1792173825; bh=QBYLfLJsLNk2FtJsexPJnPF0b30/u+TamAKMN3lJkIM=;
-	h=From:To:Cc:Subject:Date;
-	b=O7mCONx+YjYRaHLECXO56xmuguePcul6GS5Tk5WogRuKl/bJufJx9OamOkAg7/VX4
-	 zD0ykyxSCY4N2Ii8f/8wgKuBe24ig2mex4xhyzdjZdzek5aeKJkUPPE88P4OnVT2gb
-	 SMsZ3V8PLTrKoTYRr8gWnrYDMpiGdUr8csOEDi+5YLhkmhljTMLpIeJGYHPCcs6XGz
-	 qKBECCrPppul6qnxVrFTug9rPVyiJLRx6evL1fFjhzYLkLnSPuNUr53VhrSU3T64gh
-	 9SJYUaeyRQs9Ek0s/2e6Z1L1vm0p/HKkS4CplsQeZB7iLg/vsMcIedQb/JQUi0PHHc
-	 P/fhaWKzDEFWg==
+	t=1792173846; bh=gQxRqRAcTBBtn+Pdf8s6VE+j9Sm8M1pZxvO62yYs9oE=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References;
+	b=Wl9iBqhZITXp/tXTCIW9fRLHOcjidAy1NdHfh/akFgG9J2GxxJW9XROPR5saZZLAr
+	 ILxj3CCIpExEC8Mr1c0q/nhCP9bm4b0OuNVAxMf5xb1w7Y0C6x0kHb8jAUh2k0qUFo
+	 eBrXThKkzOyCwCZXa8WzcZveVLPqshfezj+oZ74Rdo6ig3LqnWsrgux8k58FNDJh0f
+	 5LuZApVE5s4Yq//KkkstGuSaAg8w+tCgctS0CSxwkNUcztkcVaRw4YDQjdBqNVp6zM
+	 6y4HTW+gnGUNB6uj9bPDBGgXUYb6Zj/Mijr0P/7CvCVLcLTRKb5tzwfNoD7Mc19KL0
+	 QYeF1V9C3VPhw==
 From: Rustam Adilov <adilov@disroot.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
@@ -54,14 +54,18 @@ To: Vinod Koul <vkoul@kernel.org>,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Cc: Rustam Adilov <adilov@disroot.org>
-Subject: [PATCH v9 0/6] phy: realtek: usb2: support for RTL9607C USB2 PHY
-Date: Fri, 16 Oct 2026 23:03:08 +0500
-Message-ID: <20261016180314.31760-1-adilov@disroot.org>
+Cc: Rustam Adilov <adilov@disroot.org>,
+	Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+Subject: [PATCH v9 6/6] phy: realtek: Make configs available for MACH_REALTEK_RTL
+Date: Fri, 16 Oct 2026 23:03:14 +0500
+Message-ID: <20261016180314.31760-7-adilov@disroot.org>
+In-Reply-To: <20261016180314.31760-1-adilov@disroot.org>
+References: <20261016180314.31760-1-adilov@disroot.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261016_110407_467193_29EC7730 
-X-CRM114-Status: GOOD (  18.21  )
+X-CRM114-CacheID: sfid-20261016_110408_860515_BAC9EEA3 
+X-CRM114-Status: UNSURE (   8.75  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,137 +82,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch series for Realtek USB2 PHY driver adds support for RTL9607C
-USB2 PHY.
+Add the MACH_REALTEK_RTL to the if statement to make the config
+options available for Realtek RTL SoCs as well.
 
-RTL9607C is a big endian MIPS CPU which is quite far from RTD series SoCs
-supported by realtek usb2 phy driver, but the phy initilization is found
-to be very indentical in most areas.
-
-Most of the code was based on the Realtek's usb driver from the GPL tarball
-in [1] and adjusted to fit into the realtek usb2 phy driver code format.
-
-The patch series was split into smaller patches that add/change something
-in the driver that are not exactly related to RTL9607C and that also
-helps for easier review. That also means, patch 5 depends on all the prior
-patches that come before it.
-
-USB2 PHY on RTL9607C is primarly used for its internal OHCI/EHCI controllers.
-
-Tested on my RTL9607C based machine as a backport to 6.18 linux in OpenWrt.
-
-[1] - https://github.com/jameywine/GPL-for-GP3000/blob/main/linux-5.10.x/arch/mips/rtl9607c/usb.c
-
+Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+Signed-off-by: Rustam Adilov <adilov@disroot.org>
 ---
-Changelog in v9:
-- Patch 3:
- - removed yaml prefix from the commit subject.
-- Link to v8: https://lore.kernel.org/linux-phy/20261012173739.36377-1-adilov@disroot.org/
+ drivers/phy/realtek/Kconfig | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-Changelog in v8:
-- Patch 5
- - changed 0xf3 mapping to index 11 (sashiko)
-- Link to v7: https://lore.kernel.org/linux-phy/20260815091340.26910-1-adilov@disroot.org/
-
-Changelog in v7:
-- Patch 1
- - created a phy_reg_desc struct to get rid of duplicated fields across phy_cfg and phy_reg.
- - added a default rtd_phy_reg_desc for all existing SoC phy configs.
-- Patch 2
- - moved the read/write to a newly added phy_reg_desc struct.
-- Patch 3
- - added an Acked-by tag from Manivannan Sadhasivam.
-- Patch 4
- - replaced devm_reset_control_array_get*() with devm_reset_control_get*()
-- Patch 5
- - added the read operation after write to FORCE_DISCONNECT_REG.
-- Patch 6
- - added a Reviewed-by tag from Manivannan Sadhasivam.
-- Link to v6: https://lore.kernel.org/linux-phy/20260520175728.720877-1-adilov@disroot.org/
-
-Changelog in v6:
-Driver has been refactored with enabled SWAP_IO_SPACE config in mind.
-- Patch 1
- - fixed one line exceeding 80 columns.
-- Patch 2
- - changed to use the introduced read/write functions for reg_wrap_vstatus
-   instead of reg_gusb2phyacc0.
-- Patch 3
- - properly added the review tag from v4 of patch series.
-- Patch 5
- - fixed the lines exceeding 80 columns.
- - changed msleep(10) to usleep_range(10000, 11000).
- - changed the read and write functions to use ioread32be instead of __le32 
-   now that we are using them for reg_wrap_vstatus.
-- Link to v5: https://lore.kernel.org/linux-phy/20260420191941.81834-1-adilov@disroot.org/
-
-Changelog in v5:
-Mostly addressing LLM review
-- Patch 1
- - changed int to u32 type for new_reg_req and vstatus_busy data fields.
- - changed comments in rtk_phy_read/write from PHY_NEW_REG_REQ to phy_reg->new_reg_req.
-- Patch 2
- - explained readl/writel native endianess issue in more detail.
- - explained why vstatus register doesn't need byte swapping.
-- Patch 4
- - moved reset_control_deassert to rtk_phy_init function to keep it outside of for loop.
- - changed msleep(5) to usleep_range(5000, 6000).
- - explained why reset_control_assert is not needed.
-- Patch 5
- - explained readl/writel native endianess issue here as well.
- - explained why FORCE_DISCONNECT_REG doesn't need byte swapping.
-- Link to v4: https://lore.kernel.org/linux-phy/20260406181228.25892-1-adilov@disroot.org/
-
-Changelog in v4:
-- Patch 2
- - moved the le variations of read/write functions to Patch 5 where it is actually used because
-   otherwise, it results in unused errors when only Patch 2 is applied.
- - updated the commit message to to point the reason for le32 wrappers around readl/writel.
-- Patch 3
- - added "Reviewed by Krzysztof Kozlowski"
-- Patch 5
- - updated the commit message to include the addition of little endian read/write functions from
-   Patch 2.
-- Link to v3: https://lore.kernel.org/linux-phy/20260402154414.196012-1-adilov@disroot.org/
-
-Changelog in v3:
-- Patch 2
- - renamed phy read and functions to "rtk_usb2phy" to not collide with networking API functions
- - fixed the sparse warnings by creating intermidiate "tmp" variable and then pass it to writel
- - sligtly adjusted commit message to instead use "default read" not "default phy_read"
-- Patch 4
- - added the check for reset_control_deassert() just in case
- - changed mdelay(5) to msleep(5)
- - changed dev_err and return combo with one dev_err_probe for phy_rst
-- Patch 5
- - changed mdelay(10) under force_host_disconnect to msleep(10)
- - removed struct fields with false like force_host_disconnect and more in rtl9607_phy_cfg
-- Patch 6
- - updated the #endif commend to now include MACH_REALTEK_RTL to reflect if on top
-- Link to v2: https://lore.kernel.org/linux-phy/20260327160638.15134-1-adilov@disroot.org/
-
-Changelog in v2:
-- Patch 3
- - removed the line about OHCI/EHCI controllers from description.
- - set the resets to false for RTD SoC devices and changed the
-   commit message to reflect that.
-- Link to v1: https://lore.kernel.org/linux-phy/20260326193419.48419-1-adilov@disroot.org/
-
-Rustam Adilov (6):
-  phy: realtek: usb2: introduce phy_reg_desc struct to the driver
-  phy: realtek: usb2: introduce read and write functions to phy_reg_desc
-    struct
-  dt-bindings: phy: realtek,usb2phy: extend for resets and RTL9607C
-    support
-  phy: realtek: usb2: introduce reset controller struct
-  phy: realtek: usb2: add support for RTL9607C USB2 PHY
-  phy: realtek: Make configs available for MACH_REALTEK_RTL
-
- .../bindings/phy/realtek,usb2phy.yaml         |  25 ++-
- drivers/phy/realtek/Kconfig                   |   4 +-
- drivers/phy/realtek/phy-rtk-usb2.c            | 154 ++++++++++++++++--
- 3 files changed, 165 insertions(+), 18 deletions(-)
-
+diff --git a/drivers/phy/realtek/Kconfig b/drivers/phy/realtek/Kconfig
+index 75ac7e7c31ae..76f9215d8b94 100644
+--- a/drivers/phy/realtek/Kconfig
++++ b/drivers/phy/realtek/Kconfig
+@@ -3,7 +3,7 @@
+ # Phy drivers for Realtek platforms
+ #
+ 
+-if ARCH_REALTEK || COMPILE_TEST
++if ARCH_REALTEK || MACH_REALTEK_RTL || COMPILE_TEST
+ 
+ config PHY_RTK_RTD_USB2PHY
+ 	tristate "Realtek RTD USB2 PHY Transceiver Driver"
+@@ -29,4 +29,4 @@ config PHY_RTK_RTD_USB3PHY
+ 	  DWC3 USB IP. This driver will do the PHY initialization
+ 	  of the parameters.
+ 
+-endif # ARCH_REALTEK || COMPILE_TEST
++endif # ARCH_REALTEK || MACH_REALTEK_RTL || COMPILE_TEST
 -- 
 2.56.0
 
