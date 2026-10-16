@@ -4,54 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 741E8CCA464
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Oct 2026 12:51:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5381DCC6B38
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Oct 2026 13:10:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x9xSu9bxOF0Z2qgUhuoGBugb+gSgAq0Q55WsLOyvCao=; b=olUKa5cIdaa9SE
-	yUVq1oj/P48f5SPWswpSXjLopHutpBm5jB5XfJBH+9w/MbxPvvmJNZCy1Gp53gaB9Pnjlq5lYniCm
-	r2RVUaWVNOqKRkYAj+OV2jgVzlHH8Thv/u4NydHsM1fyJsr2G7xYWM7DKOh+vpp++WRk3SBcqTmdN
-	+PE1hCXZIpLaM6Krh4cESYMv68L3P27oMF0mS+Iz968dv+jnlwD30sSHl0LWchY50b54s6Pd4u8Nh
-	T41HAA5KUS3U6tFXYPo4HTAECp8T9G0VkC21MVhJsvmPLCMEC4m0aNoVANOk9l8Ef/QqKB5KEee63
-	tC95Pff/z8WTfVymszLA==;
+	List-Owner; bh=9Cx1CpiFXHmCppS+UFdudENpcLqsv/pdUd9ZcIb5rhI=; b=LaJ4G2AQfklUAq
+	wA8pDkdrZHtpnZEd4AWFTzJA9dgZvlZ5GJSEBNotd6+16mv6lJjioeJyrvIuX46+OKSt+Q1FUoJ5Y
+	Li6jUsbCxRvF8xIvvjFRIuVbj7pdHiSXnhuh4MrG8c3n4jSrjqh6gG/DpwjLKgWFFvOi6hkqKbJWX
+	putEdz+T8l+Myiw4s3mhWskuonjo1Q1SK7Lnj1ZRpm/40uZCUxGiv7Z9fzAe0PaRHjIM0zXgf2VNM
+	ODXYqqgoQSqKnftjmskdWCvmNSLtuuvng77GCEIALmLrigXhXP6EfW9l7AMu98QHE7qrDglMce3bu
+	V/EtTcNUtVwhRhkpThhQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHhOp-00000002xoH-0htS;
-	Fri, 16 Oct 2026 12:51:03 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xHhhC-000000030pS-1yiV;
+	Fri, 16 Oct 2026 13:10:02 +0000
+Received: from ixit.cz ([84.42.129.46])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHhOn-00000002xo3-4BEZ
+	id 1xHhh9-000000030o9-0vf5
 	for linux-phy@lists.infradead.org;
-	Fri, 16 Oct 2026 12:51:02 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 2F7EB60008;
-	Fri, 16 Oct 2026 12:51:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 69F2F1F000C4;
-	Fri, 16 Oct 2026 12:51:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792155060;
-	bh=d+WdJzJtILJkxjVuh+bW292/ECfJKXQbsIGEdKBLmlA=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=DBI57qAgxy8LfoR8KYk4b/T5IZH0ooR/i2wM/L3Rjw2jqpaKseR28OPC0TH7yd5AR
-	 Qb4Y5QlAkngciw5/flllUg9MJ70M0g2ICFq3eVqTGfPzMogqvyJljYP46HOC2EuSk6
-	 8Mec7qAVDx1LFzTzOJ/SD8wMC9Mx/ByCWL+fd26CG+fx73ZqZamMqI2CYTZtn2Jhqq
-	 T5uNQ2XhYz6AgIjHdJah5++Q15qVIdvNy4i6O8EUW4NDihUMuyV1iZNL1KcbNrVxy0
-	 z74MzLqqSRyz/G1xG2XzfWs9k+29KUYG7mfEA5hxo7fKjpOLuc8Bjaxfwii+ClqBWF
-	 yOTXc3L8JJ74A==
-Message-ID: <sashiko-outbox-174338@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v14 14/23] scsi: ufs: mediatek: Use the common PHY
- framework
-To: "Louis-Alexis Eyraud" <louisalexis.eyraud@collabora.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-scsi@vger.kernel.org, robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
-In-Reply-To: <20261016-mt8196-ufs-v14-14-e8d565e0cd45@collabora.com>
-References: <20261016-mt8196-ufs-v14-0-e8d565e0cd45@collabora.com>
- <20261016-mt8196-ufs-v14-14-e8d565e0cd45@collabora.com>
-Date: Fri, 16 Oct 2026 12:50:59 +0000
+	Fri, 16 Oct 2026 13:10:01 +0000
+Received: from [IPV6:2a02:830a:f787:8f00:d622:eaa3:3dd6:8f5e] (unknown [IPv6:2a02:830a:f787:8f00:d622:eaa3:3dd6:8f5e])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange x25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by ixit.cz (Postfix) with ESMTPSA id D416C53407C7;
+	Fri, 16 Oct 2026 14:24:46 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ixit.cz; s=dkim;
+	t=1792153487;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
+	bh=ZUcM5vWKLfam7a7VYZQ/bOBV8s2Pn4a8iyb1gpC1DhI=;
+	b=W9NZqwo4/o2uTz9OchdKEyGJEet0GRxovTM9Sg8EqX3Cic6H+QKlJmofj9qAR4Fr9QG2Uf
+	CwSRN7uuwPsRCsgbR/qRhxpufBthaizACWXRaTK8MjCG0g0ED5418icEB8fXXIBIeP/DKB
+	oFhFhO50eMHL6k7YA+Au0cWrf6OJf6s=
+Message-ID: <5009ea04-c715-4273-a1cf-81c4162d5b02@ixit.cz>
+Date: Fri, 16 Oct 2026 14:24:46 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH RFC v2 4/4] phy: qcom-mipi-csi2: Add C-PHY support for
+ X1E80100
+To: geocausa@gmail.com, Bryan O'Donoghue <bod@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+ Loic Poulain <loic.poulain@oss.qualcomm.com>,
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+ Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>,
+ Vikram Sharma <vikram.sharma@oss.qualcomm.com>,
+ Suresh Vankadara <svankada@qti.qualcomm.com>, tjose@qti.qualcomm.com,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Manivannan Sadhasivam <mani@kernel.org>, linux-phy@lists.infradead.org,
+ linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20261016-x1e-cphy-rfc-v2-0-377654253193@gmail.com>
+ <20261016-x1e-cphy-rfc-v2-4-377654253193@gmail.com>
+Content-Language: en-US, cs-CZ
+From: David Heidelberg <david@ixit.cz>
+Autocrypt: addr=david@ixit.cz; keydata=
+ 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
+In-Reply-To: <20261016-x1e-cphy-rfc-v2-4-377654253193@gmail.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261016_060959_499045_902CF980 
+X-CRM114-Status: GOOD (  21.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,93 +124,96 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-NCBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIHVmcy9tZWRpYXRlazog
-UE0gc3RhdGUgbWFjaGluZSBkZXN5bmMgb24gUEhZIHBvd2VyLW9mZiBmYWlsdXJlCi0gW0hpZ2hd
-IHNjc2k6IHVmczogbWVkaWF0ZWs6IFBIWSBpbmNvcnJlY3RseSBwb3dlcmVkIG9mZiBkdXJpbmcg
-YWN0aXZlIGxpbmsgcnVudGltZSBzdXNwZW5kCi0gW01lZGl1bV0gdWZzL21lZGlhdGVrOiByZXNv
-dXJjZSBsZWFrIG9mIFBIWSBpbml0aWFsaXphdGlvbiBvbiBlcnJvciBwYXRoCi0gW01lZGl1bV0g
-dWZzL21lZGlhdGVrOiBQSFkgc3RhdGUgZGVzeW5jaHJvbml6YXRpb24gb24gcmVndWxhdG9yIGRp
-c2FibGUgZmFpbHVyZQotLQoKY29tbWl0IGQ3NDk1NzI4MDc4OTMwMmJhZmQwNTFjOTdhOGQwYWRk
-NGYyZDQwMGEKQXV0aG9yOiBOaWNvbGFzIEZyYXR0YXJvbGkgPG5pY29sYXMuZnJhdHRhcm9saUBj
-b2xsYWJvcmEuY29tPgoKc2NzaTogdWZzOiBtZWRpYXRlazogVXNlIHRoZSBjb21tb24gUEhZIGZy
-YW1ld29yawoKVGhpcyBwYXRjaCB0cmFuc2l0aW9ucyB0aGUgTWVkaWF0ZWsgVUZTIGRyaXZlciB0
-byB1c2UgdGhlIGNvbW1vbiBQSFkgZnJhbWV3b3JrCmluc3RlYWQgb2YgY3VzdG9tIE9GIHBhcnNp
-bmcgYW5kIG1hbnVhbCBQSFkgZGV2aWNlIHBvd2VyIG1hbmFnZW1lbnQuIEl0IHVwZGF0ZXMKdWZz
-X210a19pbml0KCkgdG8gYWNxdWlyZSBhbmQgaW5pdGlhbGl6ZSB0aGUgUEhZIHZpYSBzdGFuZGFy
-ZCBBUElzIGFuZCByZXBsYWNlcwpwbV9ydW50aW1lX2dldF9zeW5jKCkvcHV0X3N5bmMoKSBjYWxs
-cyB3aXRoIGRpcmVjdCBQSFkgcG93ZXIgY29udHJvbC4KCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMv
-dWZzL2hvc3QvdWZzLW1lZGlhdGVrLmMgYi9kcml2ZXJzL3Vmcy9ob3N0L3Vmcy1tZWRpYXRlay5j
-Cj4gaW5kZXggNDFlMmU5Zjg2NzAxMy4uODA4MzY1Yjg4MGZkNyAxMDA2NDQKPiAtLS0gYS9kcml2
-ZXJzL3Vmcy9ob3N0L3Vmcy1tZWRpYXRlay5jCj4gKysrIGIvZHJpdmVycy91ZnMvaG9zdC91ZnMt
-bWVkaWF0ZWsuYwpbIC4uLiBdCj4gQEAgLTEzMTksMTEgKzEyODksMjIgQEAgc3RhdGljIGludCB1
-ZnNfbXRrX2luaXQoc3RydWN0IHVmc19oYmEgKmhiYSkKPiAgCj4gIAlyZXR1cm4gMDsKPiAgCj4g
-K291dF9waHlfZXhpdDoKPiArCXBoeV9leGl0KGhvc3QtPm1waHkpOwo+ICBvdXRfdmFyaWFudF9j
-bGVhcjoKPiAgCXVmc2hjZF9zZXRfdmFyaWFudChoYmEsIE5VTEwpOwo+ICAJcmV0dXJuIGVycjsK
-PiAgfQoKW1NldmVyaXR5OiBNZWRpdW1dCkRvZXMgdGhpcyBlcnJvciBwYXRoIGJ5cGFzcyBwaHlf
-ZXhpdCgpIGlmIHVmc19tdGtfbXBoeV9wb3dlcl9vbigpIGZhaWxzPwoKRWFybGllciBpbiB1ZnNf
-bXRrX2luaXQoKSwgcGh5X2luaXQoaG9zdC0+bXBoeSkgaXMgY2FsbGVkIHN1Y2Nlc3NmdWxseS4g
-TGF0ZXIKaW4gdGhlIHNhbWUgZnVuY3Rpb24sIGlmIHVmc19tdGtfbXBoeV9wb3dlcl9vbihoYmEs
-IHRydWUpIGZhaWxzLCB0aGUgY29kZQpqdW1wcyBkaXJlY3RseSB0byBvdXRfdmFyaWFudF9jbGVh
-cjoKCiAgICBlcnIgPSB1ZnNfbXRrX21waHlfcG93ZXJfb24oaGJhLCB0cnVlKTsKICAgIGlmIChl
-cnIpCiAgICAgICAgZ290byBvdXRfdmFyaWFudF9jbGVhcjsKClNpbmNlIG91dF92YXJpYW50X2Ns
-ZWFyIGlzIHBoeXNpY2FsbHkgYmVsb3cgb3V0X3BoeV9leGl0LCB0aGlzIHNraXBzIHRoZQpuZXds
-eSBpbnRyb2R1Y2VkIHBoeV9leGl0KGhvc3QtPm1waHkpIGNhbGwsIGxlYWtpbmcgdGhlIFBIWSBp
-bml0aWFsaXphdGlvbi4KClsgLi4uIF0KPiBAQCAtMjUzMyw4ICsyNDc3LDExIEBAIHN0YXRpYyBp
-bnQgdWZzX210a19ydW50aW1lX3N1c3BlbmQoc3RydWN0IGRldmljZSAqZGV2KQo+ICAJaWYgKHVm
-c19tdGtfaXNfcnRmZl9tdGNtb3MoaGJhKSkKPiAgCQl1ZnNfbXRrX210Y21vc19jdHJsKGZhbHNl
-LCByZXMpOwo+ICAKPiAtCWlmIChob3N0LT5waHlfZGV2KQo+IC0JCXBtX3J1bnRpbWVfcHV0X3N5
-bmMoaG9zdC0+cGh5X2Rldik7Cj4gKwlyZXQgPSB1ZnNfbXRrX21waHlfcG93ZXJfb24oaGJhLCBm
-YWxzZSk7Cj4gKwlpZiAocmV0KSB7Cj4gKwkJZGV2X2VycihkZXYsICJGYWlsZWQgdG8gcG93ZXIg
-b2ZmIFBIWTogJXBlXG4iLCBFUlJfUFRSKHJldCkpOwo+ICsJCXJldHVybiByZXQ7Cj4gKwl9Cj4g
-IAo+ICAJcmV0dXJuIDA7Cj4gIH0KCltTZXZlcml0eTogSGlnaF0KRG9lcyByZXR1cm5pbmcgYW4g
-ZXJyb3IgaGVyZSBicmVhayB0aGUgcnVudGltZSBQTSBjb250cmFjdD8KCkJlZm9yZSByZWFjaGlu
-ZyB0aGlzIGNvZGUsIHVmc2hjZF9ydW50aW1lX3N1c3BlbmQoZGV2KSBoYXMgYWxyZWFkeSBzdXNw
-ZW5kZWQKdGhlIFVGUyBjb250cm9sbGVyLCBhbmQgdWZzX210a19kZXZfdnJlZ19zZXRfbHBtKCkg
-aGFzIHB1dCByZWd1bGF0b3JzIGludG8KbG93LXBvd2VyIG1vZGUuIFJldHVybmluZyBhbiBlcnJv
-ciBzaWduYWxzIGZhaWx1cmUgdG8gdGhlIFBNIGNvcmUsIHdoaWNoCmFib3J0cyB0aGUgc3VzcGVu
-ZCB0cmFuc2l0aW9uIGFuZCBsZWF2ZXMgdGhlIGRldmljZSBzdGF0dXMgYXMgUlBNX0FDVElWRS4K
-CkJlY2F1c2UgdGhlIHVuZGVybHlpbmcgaGFyZHdhcmUgaXMgYWxyZWFkeSBwb3dlcmVkIG9mZiwg
-c3Vic2VxdWVudCBJL08KcmVxdWVzdHMgd2lsbCBieXBhc3MgcnVudGltZV9yZXN1bWUoKSBhbmQg
-YWNjZXNzIHVucG93ZXJlZCBoYXJkd2FyZS4gVGhpcwpjYW4gbGVhZCB0byBidXMgdGltZW91dHMg
-b3Iga2VybmVsIGNyYXNoZXMuCgpbU2V2ZXJpdHk6IEhpZ2hdCkRvZXMgdGhpcyB1bmNvbmRpdGlv
-bmFsIHBvd2VyIGRvd24gYnJlYWsgY29uZmlndXJhdGlvbnMgd2hlcmUgdGhlIFVGUyBsaW5rCmlz
-IG1lYW50IHRvIHJlbWFpbiBhY3RpdmUgZHVyaW5nIHJ1bnRpbWUgUE0/CgpJZiB0aGUgc3lzdGVt
-IGlzIGNvbmZpZ3VyZWQgdG8ga2VlcCB0aGUgbGluayBhY3RpdmUgZHVyaW5nIHJ1bnRpbWUgc3Vz
-cGVuZCwKdGhlIGhvc3QgY29udHJvbGxlciBjYW4gc3RpbGwgYmUgc3VzcGVuZGVkIG9uY2UgdGhl
-IGRldmljZSBXTFVOIGlzIHN1c3BlbmRlZC4KUHJldmlvdXNseSwgcG1fcnVudGltZV9wdXRfc3lu
-YygpIHdvdWxkIG5vdCBwaHlzaWNhbGx5IHBvd2VyIG9mZiB0aGUgUEhZCmJlY2F1c2UgdGhlIE1l
-ZGlhdGVrIFBIWSBkcml2ZXIgbGFja3MgcnVudGltZSBQTSBvcHMuIEluc3RlYWQsIFBIWSBwb3dl
-ciB3YXMKc2FmZWx5IG1hbmFnZWQgYnkgdWZzX210a19wd3JfY3RybCgpIHdoaWNoIGV4cGxpY2l0
-bHkgY2hlY2tzIHRoZSBsaW5rIHN0YXRlCmFuZCBza2lwcyBwb3dlci1kb3duIGlmIHRoZSBsaW5r
-IGlzIGFjdGl2ZS4KCkJ5IHJlcGxhY2luZyB0aGlzIHdpdGggYW4gdW5jb25kaXRpb25hbCB1ZnNf
-bXRrX21waHlfcG93ZXJfb24oaGJhLCBmYWxzZSksCnRoaXMgZnVuY3Rpb24gYmxpbmRseSBjYWxs
-cyBwaHlfcG93ZXJfb2ZmKCkgcmVnYXJkbGVzcyBvZiB0aGUgbGluayBzdGF0ZS4KVGhpcyBmb3Jj
-ZXMgdGhlIFBIWSBvZmYgd2hpbGUgdGhlIE1BQy9TQ1NJIGxheWVycyBleHBlY3QgaXQgdG8gcmVt
-YWluIGFjdGl2ZSwKY2F1c2luZyBVRlMgYWNjZXNzIHRvIGhhbmcgb24gd2FrZS4KCltTZXZlcml0
-eTogTWVkaXVtXQpDYW4gdGhpcyBjYWxsIGxlYWQgdG8gYSBzdGF0ZSBkZXN5bmNocm9uaXphdGlv
-biBpZiB0aGUgcmVndWxhdG9yIGRpc2FibGUKZmFpbHM/CgpJbnNpZGUgdGhlIHVmc19tdGtfbXBo
-eV9wb3dlcl9vbihoYmEsIGZhbHNlKSBoZWxwZXIgZnVuY3Rpb24sIHRoZSBjb2RlIHBvd2Vycwpk
-b3duIHRoZSBoYXJkd2FyZSBhbmQgdGhlbiBkaXNhYmxlcyB0aGUgcmVndWxhdG9yczoKCgl9IGVs
-c2UgewoJCXBoeV9wb3dlcl9vZmYobXBoeSk7CgkJcmV0ID0gdWZzX210a18wOXZfb2ZmKGhvc3Qs
-IHRydWUpOwoJCWlmIChyZXQpCgkJCXJldHVybiByZXQ7Cgl9CgoJaG9zdC0+bXBoeV9wb3dlcmVk
-X29uID0gb247CgpJZiB1ZnNfbXRrXzA5dl9vZmYoKSBmYWlscywgaXQgcmV0dXJucyBlYXJseS4g
-VGhpcyBza2lwcyB0aGUgYXNzaWdubWVudApvZiBob3N0LT5tcGh5X3Bvd2VyZWRfb24gPSBvbiAo
-d2hpY2ggd291bGQgYmUgZmFsc2UpLiBTb2Z0d2FyZSB3aWxsIHJldGFpbgp0aGUgYmVsaWVmIHRo
-YXQgdGhlIFBIWSBpcyBzdGlsbCBwb3dlcmVkIG9uLgoKV2hlbiB0aGUgZGV2aWNlIHN1YnNlcXVl
-bnRseSByZXN1bWVzLCB1ZnNfbXRrX21waHlfcG93ZXJfb24oaGJhLCB0cnVlKSBjaGVja3MKaWYg
-KG9uID09IGhvc3QtPm1waHlfcG93ZXJlZF9vbikgd2hpY2ggZXZhbHVhdGVzIHRvIHRydWUgPT0g
-dHJ1ZSwgcmV0dXJuaW5nIDAKd2l0aG91dCBjYWxsaW5nIHBoeV9wb3dlcl9vbihtcGh5KS4gVGhp
-cyBsZWF2ZXMgdGhlIGhhcmR3YXJlIHBoeXNpY2FsbHkgb2ZmCndoaWxlIHRoZSBkcml2ZXIgZXhw
-ZWN0cyBpdCB0byBiZSBvbiwgY2F1c2luZyB0aGUgVUZTIGxpbmsgdG8gZmFpbC4KCi0tIApTYXNo
-aWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjEwMTYt
-bXQ4MTk2LXVmcy12MTQtMC1lOGQ1NjVlMGNkNDVAY29sbGFib3JhLmNvbT9wYXJ0PTE0CgotLSAK
-bGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-czovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On 16/10/2026 12:57, George Neacsu via B4 Relay wrote:
+> From: George Neacsu <geocausa@gmail.com>
+> 
+> The CSI2 PHY schema already allows bus-type C-PHY, but the driver
+> rejects it. Accept it on SoCs that provide a C-PHY sequence, with up to
+> three trios and no lane polarities. The endpoint's bus-type now sets the
+> PHY mode, set_mode() only accepts that mode, and in C-PHY mode
+> configure() takes the symbol rate and keeps the matching link frequency,
+> so clock scaling works as for D-PHY.
+> 
+> lanes_enable() picks the sequence for the mode and is split into
+> helpers: the CTRL5 lane mask, where the trios are the odd bits and the
+> D-PHY data lanes the even ones plus the clock bit, and the D-PHY lane
+> polarities. The settle count is computed in both modes. With a C-PHY
+> link frequency of half the symbol rate, the unit interval in the
+> existing formula is one symbol, which is also how David Heidelberg's
+> CAMSS C-PHY series computes it. Sequence delays now use fsleep(), as
+> the C-PHY sequence waits 3 ms after its reset exit.
+> 
+> The X1E80100 sequence is Qualcomm's for the v2.1.2 3PH PHY at 2.5 Gsps,
+> taken from the downstream camera driver's GPL-2.0
+> cam_csiphy_2_1_2_hwreg.h (csiphy_3ph_v2_1_2_reg, datarate_212_2p5Gsps
+> and the 3PH reset exit), as the D-PHY sequence above it is. Its three
+> settle count entries are the ones downstream marks as such.
+> 
+> Tested on the Surface Pro 11 (X1E80100) with an IMX681 on CSIPHY2, one
+> trio at 2.4 Gsym/s, and raw capture through CSID1 and an RDI interface,
+> with David's CAMSS C-PHY series and two CAMSS patches on top:
+> 3844x2640 at 30 fps, and the sensor's colour bars are byte-identical to
+> the same pattern captured with an out-of-tree driver. The timer runs at
+> 400 MHz and the computed settle count is 28; forcing anything from 6 to
+> 48 gives the same frames. D-PHY is unchanged: an OV13858 on CSIPHY1
+> over four lanes streams at 29.9 fps with the same settle count as
+> before.
+> 
+> Assisted-by: Claude:claude-opus-5-5
+> Signed-off-by: George Neacsu <geocausa@gmail.com>
+> ---
+>   drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c | 216 ++++++++++++++++++---
+>   drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c     |  53 ++++-
+>   drivers/phy/qualcomm/phy-qcom-mipi-csi2.h          |   2 +
+>   3 files changed, 242 insertions(+), 29 deletions(-)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
+> index b2d4ec3e8..39e48e7ac 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
+> @@ -161,6 +161,137 @@ mipi_csi2phy_lane_regs lane_regs_x1e80100[] = {
+>   	{.reg_addr = 0x0c64, .reg_data = 0x7f, .param_type = CSIPHY_SKEW_CAL},
+>   };
+>   
+> +/* Qualcomm's 2.5 Gsps settings, from the GPL-2.0 cam_csiphy_2_1_2_hwreg.h */
+> +static const struct
+> +mipi_csi2phy_lane_regs lane_regs_v2_1_2_cphy[] = {
+> +	/* Power up lanes 3ph mode */
+> +	{.reg_addr = 0x101c, .reg_data = 0x7a, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x1018, .reg_data = 0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +
+> +	/* datarate_212_2p5Gsps: AFE settings */
+> +	{.reg_addr = 0x0268, .reg_data = 0xf1, .param_type = CSIPHY_DEFAULT_PARAMS},
+
+as you can see repeating pattern (e.g. another lane), please use macros.
+
+I would suggest something like I did in
+
+https://lore.kernel.org/all/20260729-qcom-cphy-v9-6-1f8d9fdab037@ixit.cz/
+
+
+David
+
+> +	{.reg_addr = 0x0294, .reg_data = 0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0288, .reg_data = 0x20, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0278, .reg_data = 0x20, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x026c, .reg_data = 0x3d, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x028c, .reg_data = 0x30, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0270, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0274, .reg_data = 0x03, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +
+> +	{.reg_addr = 0x0668, .reg_data = 0xf1, .param_type = CSIPHY_DEFAULT_PARAMS},
+
+^ (reference)
+
+David
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
