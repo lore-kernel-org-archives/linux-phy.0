@@ -4,78 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45E7CCCA464
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Oct 2026 11:06:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 768E1CC6B38
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Oct 2026 11:07:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jCFetDhIgt6NqSI12A50gPeaZskVDWtIi+Ht14UPIlM=; b=LhAlWbh6SUJ+CR
-	d+GUupIQaJ2FVaeaiClrjUcVsxDy0uEu08kyzQF9nWyjn22Kozd9Ca+hEIUKk9Nl6Cm9MP9AwF8KA
-	3BUcNGlRhz9SODKh51tC2gxScoFH+VDyHu7Wplw8VCYMmofZO5TQnq7ybQTx6uRoYAlq2QoM/r3ud
-	EAyDe9v7RLKwk7S+O7JENGkStQxa6dqOfa3/V7Hi3fk7FoUFIrMQhmA8HEHA8gW+tf6o3FKMujNJR
-	0kWjsiuzYuVyZzvhKiK2bYwegLr9yFp6dmouYEm5KlAcEv85hFWbRSCrUTrBYKd6oO9WiHYrYj1AK
-	yB8XAnAFp8a7aRSBwFvw==;
+	List-Owner; bh=REyuxe1TagqyMD2CIxhuPaQPXXKQb8WumC7ufgrcS7w=; b=biEgeS0D6W3LWY
+	TX/UcG//+EBSbgLdKNBrcjaIg01M55Rt3cWf1t5FjqE0aJ5SifS8BWzNxKPkKMksI8k54DsZtR1eb
+	cCLynDSkjGQdYo9cfQK+AlEakUqHIcX7ZfmdM2G/uBBj1bXoVRN4X9Hex5XzWQn28BpiKY6utNUKE
+	zobhyr6CuvkOwhpQOka41Br419N2hGGxRyITo3JpoHl5uXjUQP7E6W6o8JOICaALgb9BjXeDBPG+a
+	eWU2sNaiao055XtdLcp8ei58QqkCjC/TGsdD0i5lqqIGPvPuudwWTaeDi4oOh8mEu1lwx0tJLHXnh
+	BML676vSsZfMhibCPIuQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHflv-00000002k3B-3lZI;
-	Fri, 16 Oct 2026 11:06:47 +0000
-Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
+	id 1xHfmd-00000002k60-0kKE;
+	Fri, 16 Oct 2026 11:07:31 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHfls-00000002k2o-2Tuy
+	id 1xHfmb-00000002k5X-1Db4
 	for linux-phy@lists.infradead.org;
-	Fri, 16 Oct 2026 11:06:45 +0000
-Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-4a140e7405dso29401465e9.3
-        for <linux-phy@lists.infradead.org>; Fri, 16 Oct 2026 04:06:43 -0700 (PDT)
+	Fri, 16 Oct 2026 11:07:30 +0000
+Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-48870973bddso537717f8f.1
+        for <linux-phy@lists.infradead.org>; Fri, 16 Oct 2026 04:07:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1792148802; x=1792753602; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1792148847; x=1792753647; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:in-reply-to:content-language
          :from:references:cc:to:subject:user-agent:mime-version:date
          :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=BhJhQfG6m5IjmjHeVsqFyoc/qVFSsNb+YvIuAxHlx2E=;
-        b=b/nNNo453XEMMDRh0KLE8x8IZMfxi41N9+ZCQ7W2zdIHuwBR/uAnKyQGGygu5tpDIL
-         dBL3vs1zsc1LgWToUbzAuKSJVTLP4HvZLlKxfM0jDI971yoj+sr5P3rPQs5ycIgu8Fvb
-         aC+FPxrNJ0F+16Ds+8FTPtwrnjO40RQGmB26QwVWqwB539Ut1876LoLSMw1jrmJvqJE/
-         A7TEVjtpm46g8LGMwWkQT2vSNirpSC0WrwHU/w0Z9W6v/nra+Iynt0462MGHBtlay9zx
-         YOUSJkVjRWnXXrsj5xjKNKxyEygDu3y65LneymMzNuoCT7qM5tOmxtqaqWeJEku8MG4V
-         C/jQ==
+        bh=cJqf2rITdCzziip2V1CcQ4gA2chUDN+IaUybbZl++MI=;
+        b=ETLuPFN/cIn4Tq6e6IAM5qnpr60BVrMx4gub5D0Zb9fwut+5fhyRycSTSY9rwhwr1e
+         K924DX8rSUbumz8mbbVsEvnh7ghOzZnKqKkqVIL3Ig4FlRrP6GiTOkRyreAWXvgiqEb+
+         BB0I0h7KbM+w+kIJk4yXCTrdPQ73+YLKi4FpzHBjgkN7G0aBkE24DfRstidC+lDwF3N+
+         QPWYgD9UzIvpWgCYSFZgPMQq2V8aDA2Zm0aQm+GH5uGbzca9XVB5HqQ2UXDcBA05To3J
+         xCLl8Py9MF56iuzWUVpJy7gBmIFSlBd91g/UBJWZhiUL1TTSlpKS9HL3MstOidiGpQpk
+         y+qw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1792148802; x=1792753602;
+        d=1e100.net; s=20260707; t=1792148847; x=1792753647;
         h=content-transfer-encoding:content-type:in-reply-to:content-language
          :from:references:cc:to:subject:user-agent:mime-version:date
          :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=BhJhQfG6m5IjmjHeVsqFyoc/qVFSsNb+YvIuAxHlx2E=;
-        b=uguIRAV2QK3YXJjtvzUeAl/pHczwV2ejJDhiNm06rcE1QFE9EvyejUbInsEvOtDrRh
-         xN93mm+SpEA2vmRzM4qirTt3Lqhza9OUEZiueqzV4V+kEx3WxHVd2Cj+2ZtxwQKoAIlx
-         q9FwVGZO+wlyvIlROuEx0eis0RtfAw3k5IAV1cCZtzdx+zd1iZNt+PEmyb0A866vCr8V
-         PRDBDtc6F7QtMC9Fut7Gcv6NQ0bPluZaK5jqDabWkaYLrz5EZwniOeANTWcO9UBuAGcr
-         1G2Iq9i5VVm1gx8gsV1wOgIxnhDef45kSw++51P9aG7A4gg9s0VxG4LXEGEJwcKFQdJe
-         61yQ==
-X-Forwarded-Encrypted: i=1; AKwUvBwneCRmZgmV1ZWtGVXvh2We/VEG4vaxXv08t9VLE3FHs/EqFeJo0a4fUV9YFSLHqmKz6gdT5Ab7mXg=@lists.infradead.org
-X-Gm-Message-State: AFq9FYLOcDR1n1QCTvmIbTc3r/n0fYt7qEMo/tK7NVLcLNPQ8rP6YOH3
-	Y7jSsmW2+ei1smvo+LSsapAr52Hd1PYiCynv4Q3Anf5PO9z0YTfittEpuQMac4HdmQI=
-X-Gm-Gg: AYBFou02dtodCZmQyidRn7oFDqLSFtqEEf3gGgAfFu6EmHWUObwTnf9Hdstx10GH4e+
-	JaVv2tymrj4pgnjczs6EQ2xwxbnWqrTRtkNwKEoqmsjfFvWnM4oigSMvvRs97yLMEdIAyRYVHN+
-	naoa3ucspNFDIvSK9iqYawX5kHXFqiG1TNzO16IuBsbB7amufGG+UJvhHoM8/fao8U063HyQmrp
-	pZWWSaqEjVc1CgWsJD7Uz4hUob7ErzZMIL6/Po+7LIhIQKuFtqkd71Xf63MeNAosWlMB+OUx7C5
-	B7YnwaZViDr5BnGOLHftXISRv6IdvZzvIZEq+7/sFeFQ0DWW98sctuRkzs+092LibYVBbekUab5
-	9yJecwo2FeJhHBfl+v7XT4qCfDH0uR9fP+K+NZG2oCK/ng1kAfZC4V6u8vBxFD1Be+cVngZwo87
-	HDzoaLiF/PFEmegVHSrxoP7J9tNvvmZt3HPCkD1OgqCz7TQ8EdAM475KK8SABqc1v1UJ1wo0bAO
-	AHgqjZDyaU=
-X-Received: by 2002:a05:600c:46cc:b0:4a1:688d:a41c with SMTP id 5b1f17b1804b1-4a18e4c06a8mr423248765e9.25.1792148802433;
-        Fri, 16 Oct 2026 04:06:42 -0700 (PDT)
+        bh=cJqf2rITdCzziip2V1CcQ4gA2chUDN+IaUybbZl++MI=;
+        b=Yt4Ny/aPp4HOfFn4FNasZVdw2nMbwU+h4euDFGntnR3Z0ktMoJv9Wz5qafpRuOjt3A
+         +Fh69IPl61cx47qzE/kucoix1PPiY61mtr6YjgD9w9ZgKnQ7Kj3ERcRm1m0+qwykRUkd
+         X/OhxfRZ2cM7H3pthpQ0LYTDPzFG1HvLWQYvJu8furS/w5Y2L6WsbUEeeP8cEuEEaOOq
+         2D01+69/ZzRvcZtU09TDBgebveq8wgXT50vunHMJB9CZm+RR9/oaqqzk06u1aP33ahhk
+         DW/Fny6IqKEFZWjC6Lb7u0ZgDWE4QGxV/NDCaW95dyba+6+ebJ5P6PEmc6s8FZb2MCNu
+         GsBQ==
+X-Forwarded-Encrypted: i=1; AKwUvByQ/FjRiqZkeHDTetUwJs04BxXIv69+GDc3jUmY+Q1rZr6GNMfSV8C9rw5Tg03CF+9iteFjoLp2bjw=@lists.infradead.org
+X-Gm-Message-State: AFq9FYJr5tI6y7DR8d4HitVcIoyW/c08TLrrLQfhCgH6ynwLNIYdKX7H
+	TzJVNJLllwyjlqTcUkGsdlUku0Fc/IF/WL+jqPKQrryzWKILzCUTyMZunr6PTu/trl4=
+X-Gm-Gg: AYBFou3nR+DqJLLFpuzwH+eQGx228ejN3XofIa5nRIpkwmOy11iUcqZ6GEq+/zkkXfQ
+	gfDHLxUaDewWsiZh46uFZRNaeYwe7pEAURMIVhVgyVMboT0w1vR/q3qSIg1bsUZFx1k/UsYavmd
+	lDmlFDNzkxMImq52XpEwOmfvCxWD66+CzksX5E84ahBORXMpxLBXv1kXPcXXdTjCEhADyDsHzWX
+	mtdr7EuH3s6QGEjzZyFgokduil+uy3O9ng8YUypZWS+SnLt+dcdlV48hTijUgtaPqYzWXxBeYwo
+	KX93pKVTCQna3/4SJ8D15ffOzhRfwEIIj+hA2lDLtDghnaZF8OEqqJA4Q0VJIn2ocgbPLhJSORZ
+	5F2zo4yQvdv6ipXcPt0V26IdmNkqGtriZ4iWWKmaCBdfkHAd60qs5SGW5doma77qZPgqRbC3twC
+	yjcIRxnIOPJLeXJbFO93CufiHBw8XrVXsrajuDVP5J98aOQ2yl4HljcV++78urtwi8E8MW7Iy1e
+	gB4nuZp5+k=
+X-Received: by 2002:a5d:6750:0:b0:48d:ed2e:6f3a with SMTP id ffacd0b85a97d-48dfacf53edmr4363835f8f.5.1792148847254;
+        Fri, 16 Oct 2026 04:07:27 -0700 (PDT)
 Received: from [192.168.0.167] ([109.78.92.136])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48dfd4d4978sm4017925f8f.21.2026.10.16.04.06.40
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48dfd503a0dsm4468353f8f.47.2026.10.16.04.07.25
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 16 Oct 2026 04:06:41 -0700 (PDT)
-Message-ID: <a295568c-1599-45c1-a60b-66fc106a2281@linaro.org>
-Date: Fri, 16 Oct 2026 12:06:40 +0100
+        Fri, 16 Oct 2026 04:07:26 -0700 (PDT)
+Message-ID: <27382104-14f0-4721-8d76-03fe9f2c1ba5@linaro.org>
+Date: Fri, 16 Oct 2026 12:07:24 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH RFC v2 2/4] phy: Add MIPI C-PHY configuration helpers
+Subject: Re: [PATCH RFC v2 3/4] phy: qcom-mipi-csi2: Rename the D-PHY init
+ sequence
 To: geocausa@gmail.com, Vinod Koul <vkoul@kernel.org>,
  David Heidelberg <david@ixit.cz>
 Cc: Neil Armstrong <neil.armstrong@linaro.org>,
@@ -90,14 +91,14 @@ Cc: Neil Armstrong <neil.armstrong@linaro.org>,
  linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org,
  linux-kernel@vger.kernel.org
 References: <20261016-x1e-cphy-rfc-v2-0-377654253193@gmail.com>
- <FSgHquVCF3k-Ipt8d6Xu8eAn745A_NyIA7d_BvByx3RTufBZXE-NlVL7jHWYixnuNYx8MvrFfT6LUcHtq-BXDA==@protonmail.internalid>
- <20261016-x1e-cphy-rfc-v2-2-377654253193@gmail.com>
+ <0mIVMmu2iTCn5IeBYzGgIAH1kG2MFMNadT3axJ3D5fX-n2f-sXxmZeicphrhRwRt4YUTZBY-4uEATZz7IiQEGQ==@protonmail.internalid>
+ <20261016-x1e-cphy-rfc-v2-3-377654253193@gmail.com>
 From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
 Content-Language: en-GB
-In-Reply-To: <20261016-x1e-cphy-rfc-v2-2-377654253193@gmail.com>
+In-Reply-To: <20261016-x1e-cphy-rfc-v2-3-377654253193@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261016_040644_673294_0148B4EC 
-X-CRM114-Status: GOOD (  22.84  )
+X-CRM114-CacheID: sfid-20261016_040729_357880_319F141C 
+X-CRM114-Status: GOOD (  17.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,105 +118,61 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 On 16/10/2026 11:57, George Neacsu via B4 Relay wrote:
 > From: George Neacsu <geocausa@gmail.com>
 > 
-> A CSI-2 receiver knows the link frequency of its transmitter, and by the
-> V4L2 convention a C-PHY link frequency is half the symbol rate on each
-> trio. Add helpers so that the receiver and the PHY do not each open-code
-> that conversion, as phy_mipi_dphy_get_default_config_for_hsclk() does
-> for D-PHY:
+> The init sequence and its size describe the D-PHY mode only. Call them
+> dphy_init_seq and dphy_lane_array_size, so that a C-PHY sequence can sit
+> next to them under matching names.
 > 
-> - phy_mipi_cphy_get_default_config_for_link_freq() fills a
->    configuration from a link frequency and a trio count;
-> - phy_mipi_cphy_config_validate() checks for a symbol rate and one to
->    three trios;
-> - phy_mipi_cphy_link_freq() gives the link frequency of a configuration.
-> 
-> They are small enough to be inline, so no new Kconfig symbol is needed.
+> No functional change.
 > 
 > Suggested-by: Bryan O'Donoghue <bod@kernel.org>
-> Suggested-by: Loic Poulain <loic.poulain@oss.qualcomm.com>
 > Assisted-by: Claude:claude-opus-5-5
 > Signed-off-by: George Neacsu <geocausa@gmail.com>
 > ---
->   include/linux/phy/phy-mipi-cphy.h | 61 +++++++++++++++++++++++++++++++++++++++
->   1 file changed, 61 insertions(+)
+>   drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c | 8 ++++----
+>   drivers/phy/qualcomm/phy-qcom-mipi-csi2.h          | 4 ++--
+>   2 files changed, 6 insertions(+), 6 deletions(-)
 > 
-> diff --git a/include/linux/phy/phy-mipi-cphy.h b/include/linux/phy/phy-mipi-cphy.h
-> index ef6af61de..f6746dcb0 100644
-> --- a/include/linux/phy/phy-mipi-cphy.h
-> +++ b/include/linux/phy/phy-mipi-cphy.h
-> @@ -2,6 +2,10 @@
->   #ifndef __PHY_MIPI_CPHY_H_
->   #define __PHY_MIPI_CPHY_H_
+> diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
+> index 966d79c98..b2d4ec3e8 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
+> @@ -246,8 +246,8 @@ phy_qcom_mipi_csi2_gen2_config_lanes(struct mipi_csi2phy_device *csi2phy,
+>   				     u8 settle_cnt)
+>   {
+>   	const struct mipi_csi2phy_device_regs *regs = csi2phy_dev_to_regs(csi2phy);
+> -	const struct mipi_csi2phy_lane_regs *r = regs->init_seq;
+> -	int i, array_size = regs->lane_array_size;
+> +	const struct mipi_csi2phy_lane_regs *r = regs->dphy_init_seq;
+> +	int i, array_size = regs->dphy_lane_array_size;
+>   	u32 val;
 > 
-> +#include <linux/errno.h>
-> +
-> +#define PHY_MIPI_CPHY_MAX_TRIOS		3
-> +
->   /**
->    * struct phy_configure_opts_mipi_cphy - MIPI C-PHY configuration set
->    *
-> @@ -24,4 +28,61 @@ struct phy_configure_opts_mipi_cphy {
->   	unsigned char		trios;
+>   	for (i = 0; i < array_size; i++, r++) {
+> @@ -372,8 +372,8 @@ static struct mipi_csi2_genpd x1e_genpds[] = {
+>   const struct mipi_csi2phy_soc_cfg mipi_csi2_dphy_4nm_x1e = {
+>   	.ops = &phy_qcom_mipi_csi2_ops_3ph_1_0,
+>   	.reg_info = {
+> -		.init_seq = lane_regs_x1e80100,
+> -		.lane_array_size = ARRAY_SIZE(lane_regs_x1e80100),
+> +		.dphy_init_seq = lane_regs_x1e80100,
+> +		.dphy_lane_array_size = ARRAY_SIZE(lane_regs_x1e80100),
+>   		.common_regs_offset = 0x1000,
+>   	},
+>   	.supply_names = (const char **)x1e_supplies,
+> diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h b/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h
+> index 7e55ae007..0d6031a4d 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h
+> +++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h
+> @@ -48,8 +48,8 @@ struct mipi_csi2phy_lane_regs {
 >   };
 > 
-> +/**
-> + * phy_mipi_cphy_config_validate() - Validate a MIPI C-PHY configuration
-> + * @cfg: configuration to check
-> + *
-> + * Return: 0 if @cfg has a symbol rate and one to three trios, -EINVAL
-> + * otherwise.
-> + */
-> +static inline int
-> +phy_mipi_cphy_config_validate(const struct phy_configure_opts_mipi_cphy *cfg)
-> +{
-> +	if (!cfg->symbol_rate)
-> +		return -EINVAL;
-> +
-> +	if (cfg->trios < 1 || cfg->trios > PHY_MIPI_CPHY_MAX_TRIOS)
-> +		return -EINVAL;
-> +
-> +	return 0;
-> +}
-> +
-> +/**
-> + * phy_mipi_cphy_get_default_config_for_link_freq() - C-PHY configuration
-> + * from a link frequency
-> + * @link_freq: link frequency in Hz
-> + * @trios: number of active trios
-> + * @cfg: configuration to fill
-> + *
-> + * A C-PHY link frequency is half the symbol rate on each trio, the
-> + * convention V4L2 uses for the link frequency of a C-PHY transmitter.
-> + *
-> + * Return: 0 on success, -EINVAL if the resulting configuration is invalid.
-> + */
-> +static inline int
-> +phy_mipi_cphy_get_default_config_for_link_freq(unsigned long long link_freq,
-> +					       unsigned int trios,
-> +					       struct phy_configure_opts_mipi_cphy *cfg)
-> +{
-> +	if (trios > PHY_MIPI_CPHY_MAX_TRIOS)
-> +		return -EINVAL;
-> +
-> +	cfg->symbol_rate = link_freq * 2;
-> +	cfg->trios = trios;
-> +
-> +	return phy_mipi_cphy_config_validate(cfg);
-> +}
-> +
-> +/**
-> + * phy_mipi_cphy_link_freq() - Link frequency of a MIPI C-PHY configuration
-> + * @cfg: configuration
-> + *
-> + * Return: the link frequency in Hz, half the symbol rate on each trio.
-> + */
-> +static inline unsigned long long
-> +phy_mipi_cphy_link_freq(const struct phy_configure_opts_mipi_cphy *cfg)
-> +{
-> +	return cfg->symbol_rate / 2;
-> +}
-> +
->   #endif /* __PHY_MIPI_CPHY_H_ */
+>   struct mipi_csi2phy_device_regs {
+> -	const struct mipi_csi2phy_lane_regs *init_seq;
+> -	const int lane_array_size;
+> +	const struct mipi_csi2phy_lane_regs *dphy_init_seq;
+> +	const int dphy_lane_array_size;
+>   	const u32 common_regs_offset;
+>   };
+> 
 > 
 > --
 > 2.53.0
