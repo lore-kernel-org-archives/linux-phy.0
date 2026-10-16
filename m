@@ -4,85 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84047CCF2C6
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Oct 2026 18:43:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8B324CCF2C3
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Oct 2026 18:50:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=20PqjcP+IJBdFk1COePu3LaFKf/MPKhngLs7SIOc54A=; b=ClWEWLfg8RIZ5Z
-	q42q58lsp+48YOsjUeMd050uHxeJ6NDkb7JSkMy2LBSeCdUK3oVTfQEycJl8nIWZqhFbHP9+hnmeN
-	DNrU+b5o6qe0LNybm5icIdHB0qqaYsnxQWvcmAmLoMq+T5amBtwFbic1AQvEb302RUyzSVqaCXyOH
-	Deh9D7mRBgektowGBrN4gADteokrFRWZ8hlzCtqLQTphISYXorqn7WLws2o6ZksuqSuhXHD0Hlq0L
-	KasFgmXDc5965iIKvpvTxd4t+ziTxd3C+2VQLiaSJ6vTchl8tx/ecp6VSKtEAEsN0sRs1KqFO8XJU
-	NuW6t6HUu6omZgKKM8Wg==;
+	List-Owner; bh=mq7evmm2BcHl4DqFzubNgFVeNPlebsSe216GadKbFJE=; b=ppxfWM7ica5dQJ
+	s2dokCzYisdUaG4dCsS29v8rpa6wwPuUTCxh94f3kFvrw0+R9rsWxxSVmNNb2oDgp7mGGzIpWZ86i
+	4SaVYylGcaNUtiCPDNiLetIuZHmYvIbF6adDuWJ+XRQVAc54pdrorvm9EmTOda2Kag9gsUL2QyvK5
+	GvCUzYS4ooF4xRVFCZqvi3nvu81R7j1XkPXKV9ohB0RD9E8MmYTmVIq3upeJ6/8zfan24361MWeKj
+	QN2lfrAkomRfkfE1iLgl+3XObTojVNKEya1wSJMHB1NX3a0jFdv2qTbjAj+hENjgFkqJNcKeBjyGF
+	X2DJhTmrTDl+fAMxwROQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHmuK-00000003iE8-0IJZ;
-	Fri, 16 Oct 2026 18:43:56 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1xHn0J-00000003jC5-0wXJ;
+	Fri, 16 Oct 2026 18:50:07 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHmu5-00000003huc-2cAr;
-	Fri, 16 Oct 2026 18:43:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1792176215;
-	bh=C0aeOmS9sPLL/qJwqoFzotL1XmRAOgMH6m/vPGSwRVM=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=oIxys4qoOZiseYN5V43CVayuctRKCRQC1ExO0bZLZP4ZVgijLLFFLA8CsBzTkxseu
-	 4FOi8uNzg8fD+Hr00sNoXPKnYokjMle/qbeD9bD55cqpXAjpaWcKjMRMWiX/rVQdQN
-	 T6vUNvGkj2lOUvf/uRDUVi3SxNJ8G0nAltNfPHbMihzj/PAx3j0O0gm2nGA3CSt2/p
-	 CeclEvpKFd2nOYUDDqCzgVGXD4+YZqkk7H/gGTYZ1bLRGxrsVi04WN7NhqpF9OOzr9
-	 UVPO99aaYE0ReMNNwKS6iGGrjRqtcE6c1eHYawfB0OWgFFEuAiYVG/skAtWObGfMvL
-	 A8K0SKrFfZEbQ==
-Received: from jupiter.universe (unknown [100.64.1.62])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange x25519)
-	(No client certificate requested)
-	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 0E99D17E153B;
-	Fri, 16 Oct 2026 20:43:35 +0200 (CEST)
-Received: by jupiter.universe (Postfix, from userid 1000)
-	id 6B1AE48003A; Fri, 16 Oct 2026 20:43:34 +0200 (CEST)
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Fri, 16 Oct 2026 20:43:23 +0200
-Subject: [PATCH v17 7/7] usb: dwc3: rockchip: fix USB-C reconnect in gadget
- mode
-MIME-Version: 1.0
-Message-Id: <20261016-b4-rockchip-dwc3-rockchip-glue-v17-7-876f96893e2f@collabora.com>
+	id 1xHn0H-00000003jBn-0i6U
+	for linux-phy@lists.infradead.org;
+	Fri, 16 Oct 2026 18:50:05 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 8957742A5B;
+	Fri, 16 Oct 2026 18:50:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 139751F000C4;
+	Fri, 16 Oct 2026 18:50:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1792176604;
+	bh=+q0qV9ULc6y0ecSGZLpCEu4TNbzlZEBwvJkejh92dOo=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=lI5b7d2qiszfxyvtoCmf20KaXSPzvt1pPl6lxfZRTHp7l5t9JVip/hJGWyxSaaGTU
+	 HUb67w4/pQe/rj+Smj7pqZAwtQ6CNq98KpYJejOF6fORMNdU2X7weusO1fEnf4pfkD
+	 k2Pfsu5o9biA22enRPhb+HwwYYCmfbvKn6oUho95CHtcSXurpanZ5dIGhWO85ozu6K
+	 ExXeSUULxWNj0uglcVij8pPf7cBwV2F8ZGcA7c6KCYoSFkAIgCrEmquf1EMrVbDAy2
+	 ccq4JbXj/x9ihllSovXjjm+mT54kjG8y+Q5G4tnHYs4s07RKOONqgVm9gZfawjCiDA
+	 7TDSsOpBfpuqA==
+Message-ID: <sashiko-outbox-174782@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v17 1/7] phy: rockchip: usbdp: Track PHY power state
+To: "Sebastian Reichel" <sebastian.reichel@collabora.com>
+Cc: linux-usb@vger.kernel.org, linux-phy@lists.infradead.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20261016-b4-rockchip-dwc3-rockchip-glue-v17-1-876f96893e2f@collabora.com>
 References: <20261016-b4-rockchip-dwc3-rockchip-glue-v17-0-876f96893e2f@collabora.com>
-In-Reply-To: <20261016-b4-rockchip-dwc3-rockchip-glue-v17-0-876f96893e2f@collabora.com>
-To: Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>
-Cc: Igor Paunovic <royalnet026@gmail.com>, linux-kernel@vger.kernel.org, 
- linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org, 
- kernel@collabora.com, Sebastian Reichel <sebastian.reichel@collabora.com>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3255;
- i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=C0aeOmS9sPLL/qJwqoFzotL1XmRAOgMH6m/vPGSwRVM=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGrScFbVPfVUApqPMxSUh2rHPf/nEbJ1tr2vi
- 8KFoP8e21z1hIkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJq0nBWAAoJENju1/PI
- O/qaCXsP/A0h4by3pYZzgmq6LcweRSRiEiUTMh3E3tnb1J8EGyk6/N/ZU8MiQCSzVqYW7VpQVUr
- f4UaRhmbYMrdGBywoO/22rjL4RfAX695hSHcH0sdmWW8CEXclj4avbl5lXb+y15DDo+m/H7mqIn
- 2IRrnX9cP6jzcffWec/9FVL6VMiw4Mi4a/rLrVCnQo7sCDzOcwdUU0Q/qyWcyY853vXtNijbTKZ
- r7TtqMSEKe3UQy2QQQhv4OkzNYDJZfYSx9ACO7cCNJxmFgaFczstawQJ/EZJi9URtSyqP9N7VkM
- d1PpAaxF4Y4winNq9dgu7rygHgyjr9wFgFeuOpxPYy9gmUDf0EeqObRrowK9jGRsQO3x0QMlMt2
- wsoT7VH1MoxqQFf32yok3sp8uSNd6Fii/WV9rmmnpoWut//yfCG7VdgUI0Jy4nDEulq21snL3DR
- Qw2AxUHxPcl3UgkljdmkUR3MAbdVK9D4fcU7Gmk8UN7lo/NeUyhHS4zaFkt9Z7UBwdMYCPxmYMB
- OSCzUiPC1laIfTNpyLODN6oIAWL/7pLkaXWG6R2hwx+vkXoxsG09cny0FX53D8WXFkZnCOzgzgi
- aTGYfYgl9gkbTb1xnUMRAtXn2D8N2TEmrPKrI40HYBHJImJhBqxyKugKyEf9B6BkkpAOK4xBrv9
- GItSKkjFPUO1DEZs1HDkqWA==
-X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
- fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261016_114341_840430_8BF1413D 
-X-CRM114-Status: GOOD (  14.58  )
+ <20261016-b4-rockchip-dwc3-rockchip-glue-v17-1-876f96893e2f@collabora.com>
+Date: Fri, 16 Oct 2026 18:50:03 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,109 +62,53 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-When USB-C is configured in gadget mode and the cable is unplugged
-the USB controller is suspended. After plugging in the cable again,
-the USB controller stays suspended and thus the port status remains
-not-attached.
-
-Fix this by informing the USB core about VBUS updates when the PHY
-mode changes.
-
-Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
----
- drivers/usb/dwc3/Kconfig         |  1 +
- drivers/usb/dwc3/dwc3-rockchip.c | 24 ++++++++++++++++++++++++
- 2 files changed, 25 insertions(+)
-
-diff --git a/drivers/usb/dwc3/Kconfig b/drivers/usb/dwc3/Kconfig
-index c86c1ac293bf..4cbc949c6abd 100644
---- a/drivers/usb/dwc3/Kconfig
-+++ b/drivers/usb/dwc3/Kconfig
-@@ -194,6 +194,7 @@ config USB_DWC3_ROCKCHIP
- 	tristate "Rockchip DWC3 Platform Driver"
- 	depends on ARCH_ROCKCHIP || COMPILE_TEST
- 	depends on PHY_ROCKCHIP_USBDP || !PHY_ROCKCHIP_USBDP
-+	depends on USB_GADGET || !USB_GADGET
- 	depends on OF
- 	default USB_DWC3
- 	help
-diff --git a/drivers/usb/dwc3/dwc3-rockchip.c b/drivers/usb/dwc3/dwc3-rockchip.c
-index 1f32150caa09..5cb5feec8bd4 100644
---- a/drivers/usb/dwc3/dwc3-rockchip.c
-+++ b/drivers/usb/dwc3/dwc3-rockchip.c
-@@ -25,8 +25,17 @@ struct dwc3_rk_phy_nb {
- struct dwc3_rockchip {
- 	struct dwc3		dwc;
- 	u8			phy_reset_active;
-+	enum usb_role		role;
- };
- 
-+static void dwc3_rockchip_vbus_handler(struct dwc3 *dwc, bool present)
-+{
-+	if (!dwc->gadget || !dwc->gadget_driver)
-+		return;
-+
-+	usb_udc_vbus_handler(dwc->gadget, present);
-+}
-+
- static int dwc3_rockchip_phy_pre_reset(struct dwc3_rockchip *dwc_rk, int port)
- {
- 	struct dwc3 *dwc = &dwc_rk->dwc;
-@@ -51,6 +60,8 @@ static int dwc3_rockchip_phy_pre_reset(struct dwc3_rockchip *dwc_rk, int port)
- 	if (!ret)
- 		return ret;
- 
-+	dwc3_rockchip_vbus_handler(dwc, false);
-+
- 	/*
- 	 * Assert USB3 PHY soft reset within DWC3 before the external
- 	 * PHY resets. This disconnects the PIPE interface, preventing
-@@ -70,6 +81,8 @@ static int dwc3_rockchip_phy_pre_reset(struct dwc3_rockchip *dwc_rk, int port)
- static int dwc3_rockchip_phy_post_reset(struct dwc3_rockchip *dwc_rk, int port)
- {
- 	struct dwc3 *dwc = &dwc_rk->dwc;
-+	bool gadget_mode = (dwc->current_dr_role == DWC3_GCTL_PRTCAP_DEVICE) ||
-+			   (dwc_rk->role == USB_ROLE_DEVICE);
- 	unsigned long flags;
- 	u32 reg;
- 
-@@ -87,6 +100,8 @@ static int dwc3_rockchip_phy_post_reset(struct dwc3_rockchip *dwc_rk, int port)
- 	dwc3_writel(dwc, DWC3_GUSB3PIPECTL(port), reg);
- 	spin_unlock_irqrestore(&dwc->lock, flags);
- 
-+	dwc3_rockchip_vbus_handler(dwc, gadget_mode);
-+
- 	pm_runtime_put_autosuspend(dwc->dev);
- 
- 	return 0;
-@@ -138,7 +153,16 @@ static int dwc3_rk_phy_register_reset_handler(struct dwc3 *dwc)
- 	return devm_add_action_or_reset(dwc->dev, dwc3_rk_phy_unregister_notifiers, dwc_rk);
- }
- 
-+static void dwc3_rockchip_set_role(struct dwc3 *dwc, enum usb_role role)
-+{
-+	struct dwc3_rockchip *dwc_rk = container_of(dwc, struct dwc3_rockchip, dwc);
-+
-+	dwc_rk->role = role;
-+	dwc3_rockchip_vbus_handler(dwc, role == USB_ROLE_DEVICE);
-+}
-+
- static struct dwc3_glue_ops dwc3_rockchip_glue_ops = {
-+	.pre_set_role = dwc3_rockchip_set_role,
- 	.post_phy_registration = dwc3_rk_phy_register_reset_handler,
- };
- 
-
--- 
-2.53.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gcGh5OiBzdGF0ZSB0
+cmFja2luZyBsZWFrIGluIHJrX3VkcGh5X3VzYjNfcGh5X2V4aXQoKQotLQoKY29tbWl0IDcxZjc3
+OWM3YTRhOGNlZGJkNzI1YjEyZTY2ZmNiZjNkOTJmODg0YmYKQXV0aG9yOiBTZWJhc3RpYW4gUmVp
+Y2hlbCA8c2ViYXN0aWFuLnJlaWNoZWxAY29sbGFib3JhLmNvbT4KCnBoeTogcm9ja2NoaXA6IHVz
+YmRwOiBUcmFjayBQSFkgcG93ZXIgc3RhdGUKClRyYWNrIFBIWSBzdGF0ZSByZXF1ZXN0ZWQgYnkg
+c29mdHdhcmUgZm9yIERQIGFuZCBVU0IzIGluZGl2aWR1YWxseQppbiBwcmVwYXJhdGlvbiB0byBy
+ZXdvcmsgYW5kIGZpeCB1cCBwb3dlciBzdGF0ZSBoYW5kbGluZy4KCj4gZGlmZiAtLWdpdCBhL2Ry
+aXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC11c2JkcC5jIGIvZHJpdmVycy9waHkvcm9j
+a2NoaXAvcGh5LXJvY2tjaGlwLXVzYmRwLmMKPiBpbmRleCBlNzQ4YWNkZDJkMzEzLi5kYjY5ZGQy
+NGY3M2IzIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC11
+c2JkcC5jCj4gKysrIGIvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLXVzYmRwLmMK
+ClsgLi4uIF0KCj4gQEAgLTEyODYsMTYgKzEyOTMsMjUgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBw
+aHlfb3BzIHJrX3VkcGh5X2RwX3BoeV9vcHMgPSB7Cj4gIHN0YXRpYyBpbnQgcmtfdWRwaHlfdXNi
+M19waHlfaW5pdChzdHJ1Y3QgcGh5ICpwaHkpCj4gIHsKPiAgCXN0cnVjdCBya191ZHBoeSAqdWRw
+aHkgPSBwaHlfZ2V0X2RydmRhdGEocGh5KTsKPiArCWludCByZXQ7Cj4gIAo+ICAJZ3VhcmQobXV0
+ZXgpKCZ1ZHBoeS0+bXV0ZXgpOwo+ICAKPiArCXVkcGh5LT5zd19tb2RlIHw9IFVEUEhZX01PREVf
+VVNCOwo+ICsKPiAgCS8qIERQIG9ubHkgb3IgaGlnaC1zcGVlZCwgZGlzYWJsZSBVMyBwb3J0ICov
+Cj4gIAlpZiAoISh1ZHBoeS0+bW9kZSAmIFVEUEhZX01PREVfVVNCKSB8fCB1ZHBoeS0+aHMpIHsK
+PiAgCQlya191ZHBoeV91M19wb3J0X2Rpc2FibGUodWRwaHksIHRydWUpOwo+ICAJCXJldHVybiAw
+Owo+ICAJfQo+ICAKPiAtCXJldHVybiBya191ZHBoeV9wb3dlcl9vbih1ZHBoeSwgVURQSFlfTU9E
+RV9VU0IpOwo+ICsJcmV0ID0gcmtfdWRwaHlfcG93ZXJfb24odWRwaHksIFVEUEhZX01PREVfVVNC
+KTsKPiArCWlmIChyZXQpIHsKPiArCQl1ZHBoeS0+c3dfbW9kZSAmPSB+VURQSFlfTU9ERV9VU0I7
+Cj4gKwkJcmV0dXJuIHJldDsKPiArCX0KPiArCj4gKwlyZXR1cm4gMDsKPiAgfQo+ICAKPiAgc3Rh
+dGljIGludCBya191ZHBoeV91c2IzX3BoeV9leGl0KHN0cnVjdCBwaHkgKnBoeSkKPiBAQCAtMTMw
+OCw2ICsxMzI0LDggQEAgc3RhdGljIGludCBya191ZHBoeV91c2IzX3BoeV9leGl0KHN0cnVjdCBw
+aHkgKnBoeSkKPiAgCWlmICghKHVkcGh5LT5tb2RlICYgVURQSFlfTU9ERV9VU0IpIHx8IHVkcGh5
+LT5ocykKPiAgCQlyZXR1cm4gMDsKPiAgCj4gKwl1ZHBoeS0+c3dfbW9kZSAmPSB+VURQSFlfTU9E
+RV9VU0I7Cj4gKwoKW1NldmVyaXR5OiBNZWRpdW1dCkluIHJrX3VkcGh5X3VzYjNfcGh5X2luaXQo
+KSwgVURQSFlfTU9ERV9VU0IgaXMgdW5jb25kaXRpb25hbGx5IGFkZGVkIHRvCnN3X21vZGUgYmVm
+b3JlIHRoZSBlYXJseSByZXR1cm4gZm9yIERQLW9ubHkgb3IgaGlnaC1zcGVlZCBjYXNlcy4KCkhv
+d2V2ZXIsIGluIHJrX3VkcGh5X3VzYjNfcGh5X2V4aXQoKSwgdGhlIGNvcnJlc3BvbmRpbmcgZWFy
+bHkgcmV0dXJuIGhhcHBlbnMKYmVmb3JlIGNsZWFyaW5nIFVEUEhZX01PREVfVVNCIGZyb20gc3df
+bW9kZS4KCldpbGwgdGhpcyBjYXVzZSB0aGUgc3dfbW9kZSBzdGF0ZSB0byBsZWFrPyBJZiBzbywg
+Y291bGQgc3Vic2VxdWVudCBvcGVyYXRpb25zCmxpa2UgcmtfdWRwaHlfcG93ZXJfb24oKSBjYWxs
+ZWQgZHVyaW5nIERQIFBIWSBpbml0aWFsaXphdGlvbiBpbmNvcnJlY3RseSBzZWUKVURQSFlfTU9E
+RV9VU0IgYXMgcmVxdWVzdGVkLCBwb3RlbnRpYWxseSBleGVjdXRpbmcgdGhlIERXQzMgcmVzZXQg
+aGFuZGxlcgp1bm5lY2Vzc2FyaWx5PwoKPiAgCXJrX3VkcGh5X3Bvd2VyX29mZih1ZHBoeSwgVURQ
+SFlfTU9ERV9VU0IpOwo+ICAKPiAgCXJldHVybiAwOwoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3
+IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MTAxNi1iNC1yb2NrY2hpcC1kd2Mz
+LXJvY2tjaGlwLWdsdWUtdjE3LTAtODc2Zjk2ODkzZTJmQGNvbGxhYm9yYS5jb20/cGFydD0xCgot
+LSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
+dHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
