@@ -4,57 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C654CCF2C1
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80F3CCCF2C3
 	for <linux-phy@archiver.kernel.org>; Fri, 16 Oct 2026 14:56:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id
-	:Date:Subject:From:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FgnrKd3wS6/oARHUm/ygd7vtIe7/ete2hxaKDvfaXwQ=; b=f8ZxyJCMjPHK4N
-	Rgi8YvmYcKAyIpQtWN0wJZ64jd3jAB/+m1O46b5t4730OD4U6DbLlVVbxkF/YuTqbL0TLxaxKdeyf
-	1+349GCg499dxeyWY+zl+W678Vkhx3PShdYVN4DHYc1g81SL+h87d0D1kSU/z+7o2Iu1yc4wL1joR
-	6vEuzvf5bVtVKKOBXqGa9zcuQUwaY56H+a/u5Wgwvmn39ySgM4p1X39OYNcSBvZyoELiluNeTzqlP
-	sXyjQtjwQHeD09t7cKIRu6aI+pmTqSRxkghPGb5xNvIfv9ftJcU9mbTAviNqKSUI6DIZeVKOCuJAj
-	GwC2nBY8+bgugLEtty/w==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oS22LRjmIiV/oaiLl11c/q0XfLGpBeR/CETdPIegJbk=; b=BSCb3xY2lj2Jhi
+	m5HXCT8dcemQ0Ax8xXXUDMeBQkqSxavNGzSJWzwSAubjMMDpyH8ooR6GSZv+nnKR+wtS+fJ00LZL/
+	92iS5PtQ1DyA6hpn1jXGkdw++sswVvnk49PVkh89aHl5cmPh2PI1w+4WgI4xRFH4EnXtHaI7P0qf7
+	gb4Sq7wJWSHuiSaHswT4PrbcMdddrND0CbIQiH050wlMZXmMsbukC0xcuEzorXPL9ul/LaK4tsY6X
+	b5nR3QY6cIXA0vNppn4PKkuyBA93+D72NG4ZVPPcxX17IwijjRCJekAL9WLNy1BdpaGWPSE61lhJD
+	koi90aR2M1AdBoZYwu1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHjLy-00000003DIM-3R1b;
-	Fri, 16 Oct 2026 14:56:14 +0000
+	id 1xHjLz-00000003DJ7-093h;
+	Fri, 16 Oct 2026 14:56:15 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHjLw-00000003DHQ-3uIl
+	id 1xHjLx-00000003DHo-0rm7
 	for linux-phy@lists.infradead.org;
-	Fri, 16 Oct 2026 14:56:12 +0000
+	Fri, 16 Oct 2026 14:56:13 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 58983417B1;
+	by sea.source.kernel.org (Postfix) with ESMTP id E97FC447A7;
 	Fri, 16 Oct 2026 14:56:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 36478C2BCFB;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id CCC46C2BCF4;
 	Fri, 16 Oct 2026 14:56:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1792162572;
-	bh=8lA3HsNRuOnlxrVsmZO40BONawW+tjdMtTTEtweogBc=;
-	h=From:Subject:Date:To:Cc:Reply-To:From;
-	b=aakyiWVfqmj3XOiwtCd60MwsZd/Le4LWAFXNHk/IqpK1A0h2N1swmbF3w1uy1G8wn
-	 VOVOj+3IBONeu0bseDjzfQPJ8wb58QoAU2nrCHK+MtJ5nPdSBxExLuL7Lm3YMeSk4A
-	 QUQtlO+cahbwXtfMkZNTJPNbobhQA430j4TgE84GJr1gvR1DDfUkt3FSojoTdDL9XP
-	 U35jJDYBB1GenxERy0lfo5+m4GkcRJwZNpVJtAB+nTxFCdGw1NQZbuTiSDKOvtuMjV
-	 PJV27WTHgHV2CzSD1nxUng08d9Q4OlzhbLGVD8QXKUmj+0NBqhaaFSggR8saXQrA+a
-	 hPK+/Q9YABrhQ==
+	bh=v0VrKMVD9fdxJiPOnY6hqXtSLPjhyVJ/XO5t9vz1WBc=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=SUlmK3WbfMdCWw4Pmg+0VYWQCpCPq8g35A07GqlY938phGVVN5RYIxQZ94Bn+Du0u
+	 tknTOtZylgCZ7MwVFBlbDkrzHo09+S2B6brYtWZ4WSl0/zsK7TcYzsVsiNk9mjweDN
+	 Sqlq8FEeY4s9m4gkcfmeK8+aGhQ0giMQZlAOsd9CP3as1QIi5mH10IJ0Gq3kJzjgij
+	 LvHnMernBUosqXffIkmmAn6uyoGLjLFPCPgGQUKFwcK3DIkE3c/3VVG6EmFqsP5kPO
+	 i8vkDTj7WMaWL8y/aSnuiSqAR4r3spMmK6Bqoj2wieIjFgIXijQIesUcFzWN3xtKf/
+	 PkgXWhXbS1xdg==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 1C432CCA46C;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B577DCC6B38;
 	Fri, 16 Oct 2026 14:56:12 +0000 (UTC)
 From: George Neacsu via B4 Relay <devnull+geocausa.gmail.com@kernel.org>
-Subject: [PATCH v3 0/6] phy: qcom-mipi-csi2: C-PHY for X1E80100
-Date: Fri, 16 Oct 2026 15:56:10 +0100
-Message-Id: <20261016-x1e-cphy-rfc-v3-0-40a346a72153@gmail.com>
+Date: Fri, 16 Oct 2026 15:56:15 +0100
+Subject: [PATCH v3 5/6] phy: qcom-mipi-csi2: Use fsleep() for init sequence
+ delays
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAAAAAAAC/3XMSwqDMBSF4a1Ixr3l3kSj6aj7KB2ENNFAfZCUo
- Ih7b3QkhQ7Pge9fWbTB28huxcqCTT76cchDXApmOj20Fvwrb8aRS0KqYCYLZuoWCM4AR2okmgZ
- V7VgmU7DOz0fu8cy78/EzhuWoJ9rfP6FEgEBOOK20UyXqe9tr/76asWd7KPEzlj+YZyzqWlYlr
- wQpccbbtn0B4RtFt+UAAAA=
-X-Change-ID: 20261015-x1e-cphy-rfc-201860c8097f
+Message-Id: <20261016-x1e-cphy-rfc-v3-5-40a346a72153@gmail.com>
+References: <20261016-x1e-cphy-rfc-v3-0-40a346a72153@gmail.com>
+In-Reply-To: <20261016-x1e-cphy-rfc-v3-0-40a346a72153@gmail.com>
 To: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
  David Heidelberg <david@ixit.cz>
 Cc: Neil Armstrong <neil.armstrong@linaro.org>, 
@@ -67,14 +65,13 @@ Cc: Neil Armstrong <neil.armstrong@linaro.org>,
  Mauro Carvalho Chehab <mchehab@kernel.org>, 
  Manivannan Sadhasivam <mani@kernel.org>, linux-phy@lists.infradead.org, 
  linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
- linux-kernel@vger.kernel.org, Bryan O'Donoghue <bryan.odonoghue@linaro.org>, 
- George Neacsu <geocausa@gmail.com>
+ linux-kernel@vger.kernel.org, George Neacsu <geocausa@gmail.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1792162570; l=5109;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1792162570; l=1325;
  i=geocausa@gmail.com; s=20261015; h=from:subject:message-id;
- bh=8lA3HsNRuOnlxrVsmZO40BONawW+tjdMtTTEtweogBc=;
- b=JTjancBLJyXu+BJLpy4seLLTjj2IZ0gvDhFqhi+x7z6Ki7QFe+gWoMjC79u+TcMGss3BnP6BF
- CHHZLH3o4CPBWAQRMYhRZv2LKfaFwpeUm7Z20+nID02Yr6qdirNVe6k
+ bh=9kgF6eCoWKoJtXzcHCM7JYWoQiK6MqWjKyWCuLZbYNo=;
+ b=MJURgf8PcL2d1vyDxikxUMr1tK+dJRgdnoA1QAvGbpfjfoaSr74WoIqg0h+eUoZLDJNwlmfdv
+ 3WkbvGu0E2dAeafzBDOHgziTqZnzU5jtj8You2l1rWxSqY7RvWnwhae
 X-Developer-Key: i=geocausa@gmail.com; a=ed25519;
  pk=KyQk/iWbxsikewDBh0SwlHI51RvAqahD3loqmRp9DVI=
 X-Endpoint-Received: by B4 Relay for geocausa@gmail.com/20261015 with
@@ -97,112 +94,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Bryan, Vinod, David,
+From: George Neacsu <geocausa@gmail.com>
 
-The Snapdragon Surface Pro 11's front camera, an IMX681, is on CSIPHY2
-over one MIPI C-PHY trio. linux-next has the CSI2 PHY driver and the CAMSS
-PHY API path, and C-PHY is the piece still missing for this camera. This
-series adds the PHY side:
+The init sequence delays are applied with udelay(), which busy-waits.
+That is fine for the 1 us delays in the current D-PHY sequence, but the
+X1E80100 C-PHY sequence added next waits about 3 ms after its reset
+exit, and busy-waiting that long is wasteful. The sequence is written
+from phy_power_on(), in process context, where sleeping is allowed; the
+PHY reset just before it already uses usleep_range().
 
-1. PHY_MODE_MIPI_CPHY and C-PHY configuration options in the generic PHY
-   framework, because CAMSS had no way to ask the PHY for C-PHY;
-2. C-PHY configuration helpers, the analogue of
-   phy_mipi_dphy_get_default_config_for_hsclk();
-3. a rename of the D-PHY init sequence in qcom-mipi-csi2;
-4. lane mask and lane polarity helpers in qcom-mipi-csi2, with no
-   functional change;
-5. fsleep() for the init sequence delays, the same udelay() for the
-   current D-PHY sequence;
-6. C-PHY in qcom-mipi-csi2, with the X1E80100 sequence taken from
-   Qualcomm's GPL-2.0 downstream header.
+Switch to fsleep(). It still uses udelay() for delays of 10 us or less,
+so the existing D-PHY sequence behaves as before.
 
-The series is on next-20261015 and applies there on its own. The two
-CAMSS patches that use it build on David's "media: camss: Add support
-for C-PHY configuration on Qualcomm platforms" v9, which is not in
-linux-next yet, so I will send them on top of David's series:
-https://lore.kernel.org/all/20260729-qcom-cphy-v9-0-1f8d9fdab037@ixit.cz/
-
-Tested on the Surface Pro 11 (X1E80100), booting next-20261015 with this
-series, David's v9 and those two CAMSS patches on top, with CSI2 PHY
-nodes as in Bryan's x1e80100 camera DT v7, CAMSS in PHY API mode, and raw
-capture over RDI:
-- front IMX681 (Sergey's and Andre's v8 driver plus its C-PHY RFC) on
-  CSIPHY2, one C-PHY trio at 2.4 Gsym/s: 3844x2640 at 30 fps, and the
-  sensor's colour bars are byte-identical to the pattern captured with an
-  out-of-tree driver. The settle count is computed, 28 at a 400 MHz
-  timer;
-- rear OV13858 on CSIPHY1, four D-PHY lanes: 29.9 fps.
-On the earlier test setup, linux-next's CAMSS and CSI2 PHY as modules on
-7.1.5, forcing any settle count from 6 to 48 gave the same frames.
-
-Open question, from Nihal: the X1E table is Qualcomm's 2.5 Gsps one, and
-downstream picks C-PHY settings by symbol rate. I would keep a single
-table here and add selection by rate when a second rate is needed,
-unless you would rather have the structure now.
-
-Thanks,
-George
-
+Suggested-by: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
+Assisted-by: Claude:claude-opus-5-5
+Signed-off-by: George Neacsu <geocausa@gmail.com>
 ---
-Changes in v3:
-- Drop the RFC prefix (Bryan)
-- Test on a linux-next kernel instead of linux-next's modules on 7.1.5
-  (Bryan)
-- phy: u64 and u8 in struct phy_configure_opts_mipi_cphy and the
-  helpers (sashiko); pick up Reviewed-by tags from Loic and Bryan
-- qcom-mipi-csi2: split the lane mask and polarity helpers and the
-  fsleep() change out of the C-PHY patch, each with no functional change
-  for D-PHY
-- qcom-mipi-csi2: write the C-PHY per-trio register addresses with
-  CSIPHY_LN_CTRLn(); the object code is unchanged (David)
-- Link to v2: https://lore.kernel.org/r/20261016-x1e-cphy-rfc-v2-0-377654253193@gmail.com
+ drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Changes in v2:
-- Rebase on next-20261015, PHY patches only; the CAMSS patches follow
-  David's series (Bryan)
-- phy: rename lanes to trios (Loic), make symbol_rate unsigned long long
-  so 32-bit can hold rates above 4.29 Gsym/s, and keep Bryan's R-b for
-  that patch
-- phy: new patch with the C-PHY helpers (Bryan, Loic)
-- qcom-mipi-csi2: new patch renaming init_seq/lane_array_size to
-  dphy_init_seq/dphy_lane_array_size (Bryan)
-- qcom-mipi-csi2: rename the C-PHY table to lane_regs_v2_1_2_cphy and
-  shorten its comment (Konrad)
-- qcom-mipi-csi2: no separate bus_type; the endpoint sets phy_mode and
-  set_mode() checks against it (Nihal)
-- qcom-mipi-csi2: if/else instead of the ternaries, one declaration per
-  line, and lanes_enable() split into lane mask and polarity helpers
-  instead of the goto (Bryan, Nihal)
-- qcom-mipi-csi2: configure() uses the helpers and keeps the link
-  frequency, so clocks scale as for D-PHY
-- qcom-mipi-csi2: compute the C-PHY settle count instead of the fixed
-  table value; blank lines between the per-trio blocks; fsleep() for the
-  sequence delays (Nihal)
-- qcom-mipi-csi2: drop the video-interfaces.h include, no longer needed
-- Link to v1: https://lore.kernel.org/r/20261015-x1e-cphy-rfc-v1-0-1f3fa9af940a@gmail.com
+diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
+index a44e104301..84c45f67fd 100644
+--- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
++++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
+@@ -264,7 +264,7 @@ phy_qcom_mipi_csi2_gen2_config_lanes(struct mipi_csi2phy_device *csi2phy,
+ 		}
+ 		writel(val, csi2phy->base + r->reg_addr);
+ 		if (r->delay_us)
+-			udelay(r->delay_us);
++			fsleep(r->delay_us);
+ 	}
+ }
+ 
 
----
-George Neacsu (6):
-      phy: Add MIPI C-PHY mode and configuration options
-      phy: Add MIPI C-PHY configuration helpers
-      phy: qcom-mipi-csi2: Rename the D-PHY init sequence
-      phy: qcom-mipi-csi2: Add lane mask and lane polarity helpers
-      phy: qcom-mipi-csi2: Use fsleep() for init sequence delays
-      phy: qcom-mipi-csi2: Add C-PHY support for X1E80100
-
- drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c | 228 ++++++++++++++++++---
- drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c     |  53 ++++-
- drivers/phy/qualcomm/phy-qcom-mipi-csi2.h          |   6 +-
- include/linux/phy/phy-mipi-cphy.h                  |  89 ++++++++
- include/linux/phy/phy.h                            |   5 +
- 5 files changed, 348 insertions(+), 33 deletions(-)
----
-base-commit: b810335a0699d1810683796b0e3ffe8827ddfe6c
-change-id: 20261015-x1e-cphy-rfc-201860c8097f
-
-Best regards,
 -- 
-George Neacsu <geocausa@gmail.com>
+2.53.0
 
 
 
