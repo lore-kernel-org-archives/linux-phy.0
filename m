@@ -4,79 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 484D9CC6B38
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Oct 2026 10:38:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7AFB3CC6B38
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Oct 2026 10:44:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d0z6ujpSPJFkjBk3t2VwyklRzqhTC2dG11zd6km6//g=; b=dik6xhftgsTfve
-	H8m9O/jwlLD2WZYU1s9oN/LA6fg2KFApgWl+1FlgCXOIIoOm0mlUVc3L/jiCcsoOUtfMcSnyV5ej9
-	AGeLCDNYpLEZbEQDJeapA1vBSyMxpg7VXp5zEL1NDG7DCPS8HrIMpMHEzR5JzzWdICzSQzHy3N66v
-	M0Jp6La8JzyT9/g2D6PEwsJarTcxF1WFphCn04qHbsHUFEJS2lw3vsCsjBFvhAVKyuAF1VCs32/nN
-	vrE0yauDCOf6hgN2BcSneDvHWfn00Odg4o98X/nFyO114IpemhFeiqJZomx9LYHFPxUMVhHM5cCY7
-	tl9MgcIU5yl3OmMISCdw==;
+	List-Owner; bh=V1ziG5FtX7qtcp+RCqxroRgbblWVXib4OAxo/8fMzts=; b=vqkxpjDvmIrse7
+	aQ0HifhlhbOx+l2/813SuHJVZoksFifTUWejR01RRI41dDDadZbHwtj4Rs1oCexFlhgBMYK6rNGxn
+	a76qG/N6sEV1MQfD0fXS1Sd+SUFv4OtZmRlRdwE7h0h72AviVh2QXPT5qmD4NCcYEdruYSaqOW1XM
+	hmhEvYFv0GqKB/VrghGH8xElCnGCwEYaOBKA/apbV3WDfab7srCofSjGhKG6bLDVsqMxN9h1gAnCK
+	o80Ge7gGDpazcTk5UdjI9zkzKOLbUN5ZswPL/UZPMZP5mJFvA1BhAMjzOiRcEO1nKhEgmYejeQwC7
+	BteUxArKGrV0/E5c/vdA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHfKH-00000002fA4-3Vc3;
-	Fri, 16 Oct 2026 10:38:13 +0000
-Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
+	id 1xHfPs-00000002hJc-0iyT;
+	Fri, 16 Oct 2026 10:44:00 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHfKF-00000002f9Y-1X6G
+	id 1xHfPq-00000002hHr-0lvY
+	for linux-phy@bombadil.infradead.org;
+	Fri, 16 Oct 2026 10:43:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=C4YkMEnEcFAsesSJUaufOq7VhqrmQqlZmujS8ZU12sw=; b=kURA2vo25/m7MygP8q4xjQfS6F
+	uI7afq3i8mNPC0EvyW06Lh7l2+eBBZYesQDG609B27+c9sh6Tkdcgc5uvG8W0lfJcBKsfuhg6fdTh
+	4+KsWcBwvk/GZ3//TI38iToD9RouqsGnhTcXDJZp4ohP9e6JNOVUefJh2jKz123xjmjD1yDJYOj2D
+	DZmDgn2xY5EopjWxjnwISIlVN89RexhoXPjy6kuuVB01fS+zh3KuAG1ZVHJ0Iliv8PZwbTfWDin7p
+	DKqhQkpo98+LMwssVHtHnhSf9lvjH/13XL8Kp1RfvRjIbS7eV2//1h4lMWqq88oZhae4P8PZdzPUO
+	NgbawDsg==;
+Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	by desiato.infradead.org with esmtps (Exim 4.99.5 #2 (Red Hat Linux))
+	id 1xHfPf-00000001P4H-2sp5
 	for linux-phy@lists.infradead.org;
-	Fri, 16 Oct 2026 10:38:12 +0000
-Received: by mail-wm1-x335.google.com with SMTP id 5b1f17b1804b1-4a16bc2278aso45282235e9.1
-        for <linux-phy@lists.infradead.org>; Fri, 16 Oct 2026 03:38:10 -0700 (PDT)
+	Fri, 16 Oct 2026 10:43:55 +0000
+Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-4a1af482519so6999885e9.1
+        for <linux-phy@lists.infradead.org>; Fri, 16 Oct 2026 03:43:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1792147089; x=1792751889; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1792147426; x=1792752226; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:in-reply-to:content-language
          :from:references:cc:to:subject:user-agent:mime-version:date
          :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=6nGmaW43TFsY8203dyOJ+Nrc5EUvdzx8Ca6xsjCPHmQ=;
-        b=qSEMOPoy0di1fSChhX5qAZDyjRvOX0AUiXWTwUI+HNeEG39q0aIicyT5kuVKh4AYWu
-         miw/EoeBRMo9LJ80udrgXGORd6MzuePFzB9mOvj+kPAdQhrcOiNCvak4tAQdM795jJUx
-         qq52W3TzIHDe2lNWneTQ1iMv1NcPTxSr5k3o9wnopZn+NcASzIbLIzTzeqswPbej73aB
-         0luznByx55IAplKd0tQzHLKIz6sPuB0k/Njm2AJOf71vfOe86yStfVArYFNQr6qU3Ts3
-         kHOjwTBAsSN/cBeYAMgVKvnAO9tZ1CFUm3HHf+nDrSndLBU8AiRk4O0US9yeK/zoLuNX
-         W45A==
+        bh=C4YkMEnEcFAsesSJUaufOq7VhqrmQqlZmujS8ZU12sw=;
+        b=JnLOtINQkuc89/x+8oAm+JVtma69/HdhGSkl9Mo5Ro2uvYWgdaiTF8Om/Pp0bw5kfd
+         MhEyNR4BUMMny3hkz/mwf1Mz3LcQEJDDSGijopXnYXJXcf30dMMV7DrEFB1176HUPX4A
+         lEqbjNZ+fGgGUVpPB6BVYeyI++tFo90pNOvW+f+MBWTs7tccqO1gYWReE6Mtb5lp1v2N
+         zOpqIi/GWn5GnEf2Y2umIV27i0pthifJCHZqINqX4dZj7ik6gdEl0F0ZNamcs90Le5Tv
+         WoJYgU/CnjfWSvvjOiytn8B7cnUOUBF44EoKN611430exWrjNqZyJwoKkSYb28Evu75X
+         o2kQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1792147089; x=1792751889;
+        d=1e100.net; s=20260707; t=1792147426; x=1792752226;
         h=content-transfer-encoding:content-type:in-reply-to:content-language
          :from:references:cc:to:subject:user-agent:mime-version:date
          :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=6nGmaW43TFsY8203dyOJ+Nrc5EUvdzx8Ca6xsjCPHmQ=;
-        b=2bRFVBVIPE9oSg1GlHzDfr6uGN7y9il/cf+ZYC3vWe0KFxpL5lfYFDcNY4kcUopIF6
-         5evwJ4Ph3wjoVb+ANNFBpJxkOJCr7xiGVlLlzvYpd8pJv3QvFgOKKxRYhvwsv3arh65u
-         dAayn574T81yoRtWvZstY5+t+IxZUjZBLJ0tW6M51L/x89oVP5boaxaobf2KKDD4B+67
-         EUBcuE0JB2PLivvqGs1Jt2AurAZnglN84imZUQgP3cRMmVeo2WfJgyltEGxQ+saRvC5u
-         Zys676o6Hu3SFceGdG6Y0ZU9UK90sUMM132pnYqvwewpr8/dt0CSPRR3EcOrGORe7hEv
-         Xcfw==
-X-Forwarded-Encrypted: i=1; AKwUvBxXxn598gjSFEgAiUehUzbKtjarDVFq5zoeiBqYWH3o/Dja/kL/QVsoAzqnJRKn9YPsPKQtXIW4x9Y=@lists.infradead.org
-X-Gm-Message-State: AFq9FYIS/I6BBTpHZQQhDay729SbicZVCmV7V9ymkjqteT1h6ilOoOu2
-	Ub+bKf+COfi6V2glqmb1ljdh4hE0fuTJmRWeYPE9gH0pWuF17y/YNgTwitYMDNJiI6E=
-X-Gm-Gg: AYBFou02BkiszYsDs1e+2Ac1it8QCNpzRLwYhVauq8pjqk5tHWiLOFKvyugxp5UgVOg
-	X5jZJfS17qDfKqIe1MoUK56lzbmCrpaqD0TtYECRxxzXlhtA7d/FmkdCB3TT0gsxfPggaiXewaz
-	MmSNi0h49wqnP6lhceKEemai85wVH75IF9oJeMXOI8lfbFNGucZpoRgdudpxjtVF3KFa41z9B9a
-	R5nW+Ir1oIZUosPv6bJv24Y1GzQPIef+vm2EhbbotS0D/SMmieAyd2Uv/Cswyb9jRUOM1fwhwmg
-	c1k6EdA+Mx09vzszkb/+qFeL7e+modcV1FZ94xSbCchxNAqapYjFJWY0u854KP8BJNRUkoGoNoi
-	tBAw5aqMoVCIgyUBVDRN5/xw8Ef0brvK3E0Ta7y6iVWWRzqVDnDEjx0KZiCXEYH9bwa/TOKUAIS
-	dkbpBtZlUKMPI3nUQYXp+BnQrsUBYZMikqsWXeUzBQZZMMnrGACFE2fqW7muuhXz/foVV672Xs1
-	mZs36lo2U0=
-X-Received: by 2002:a05:600c:1c23:b0:4a1:cef3:fb3a with SMTP id 5b1f17b1804b1-4a1cef3fd00mr28299025e9.9.1792147089174;
-        Fri, 16 Oct 2026 03:38:09 -0700 (PDT)
+        bh=C4YkMEnEcFAsesSJUaufOq7VhqrmQqlZmujS8ZU12sw=;
+        b=DcTkbGoyvktOdMOeiOMQIgFTpDATKAKj5RWYlx0g+Zw6i98JyfMXASN4X9uRT/L/fv
+         GQgHFIXQRU5QCZ17MF2SeTAFdTcdXFOs0ScR5fdjMomIQJcX0F8w/EjkelBTvc93uSTn
+         dmLU6dn8jc/Jot3wFrTowHmHs/rknZSjQq8luwVgrrnjUmD9YIUh/JbSZ6vcbZ29ZpvD
+         k8nEBjDjbWj4YD2dSTtFLnp9Tlgs04v3tN+RRIXBFzKXMUV1DZ59gXz3HwSMhhBC6geY
+         Lq2i2Uw7Pj6oEKS9/HRMaJojZMWWQPDZFbpPv8h88f+VZC3MNbheMNaQfhlJ9lim2Lp9
+         XhNQ==
+X-Forwarded-Encrypted: i=1; AKwUvBwH55oKAggvzxs5DcyMucSrDlOdx7/xIfZbPXP213gy6D1+15KHZuhk7SlpvSPVptmQHOgFuZ9nOpY=@lists.infradead.org
+X-Gm-Message-State: AFq9FYJ/I9KYbYxVkCPqxXXnO6yQb+DQVo0GVy0V50HcRAwaAXe2ftjB
+	S9vEJ+4eb3vfwBFBkP/TYQhFjnWcIDKFgVPqjB6VzYxO5n1D1I9VjnCzZgBmS0EY3Bs=
+X-Gm-Gg: AYBFou2XmVdS+ZF1ZO32HgZhAI7Cs3tfFFnYNrZTQcUkEoyG+pT+bOmk1qx905/BF2F
+	mubA2NjXXJh2F23lMj+4PfJ22xn24TBbX088Ses1z7YoqvOyszwE3XkE4KjLFrjyqjZnNbs7NuR
+	Kbp1wbAwHrB9FXVBTrnedtw3HiRfZNNqdAqZRXpBTPn0ZDRl7veCxfbSzG58U82mYxeNCMB6x9t
+	x4oH88ludHEB+KNi/DR3VCbe1jGo+OjcZJ549voQF448d9BVw9sayqQ1xeU2zU7Oh9nWBVkRY+p
+	rPUzaqjjGEMv1pFVQ5lOhSyGKj7o/sBYLrMwCd+LueKXkIenMDHPQouRKV16uvAjcqsMZVzlYo0
+	ip87OFTfywLcQD28NGt6SDcGGk1JACld05IJvXnHPAThRhdMtAavpQpnsmFMDjEnyX86mjZpBra
+	L3GLl7uR+Qjg8NnQcBglEkVqVfJbvEsWFMbbpOwj/kVBT8IcHcpLgsjew6hF0dnZE4v9Lmo6tXU
+	tQGcPMvzDRN
+X-Received: by 2002:a7b:c3c1:0:b0:4a1:8849:17ae with SMTP id 5b1f17b1804b1-4a1c663b460mr49457595e9.1.1792147425952;
+        Fri, 16 Oct 2026 03:43:45 -0700 (PDT)
 Received: from [192.168.0.167] ([109.78.92.136])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4a1ce02d619sm26430935e9.3.2026.10.16.03.38.07
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48dfd4f9c41sm4500725f8f.38.2026.10.16.03.43.44
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 16 Oct 2026 03:38:08 -0700 (PDT)
-Message-ID: <b4a76677-0929-44bb-9c94-7ceb09952168@linaro.org>
-Date: Fri, 16 Oct 2026 11:38:06 +0100
+        Fri, 16 Oct 2026 03:43:45 -0700 (PDT)
+Message-ID: <f337f41f-2ada-4958-b0f9-379e78e96a3d@linaro.org>
+Date: Fri, 16 Oct 2026 11:43:43 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5 1/8] dt-bindings: phy: Add PHY_DIRECTION_TX/RX
- definitions
+Subject: Re: [PATCH v5 2/8] dt-bindings: phy: rockchip,rk3588-mipi-dcphy: Add
+ a cell to select TX or RX
 To: Jason Yang <jason98166@gmail.com>, Vinod Koul <vkoul@kernel.org>,
  Neil Armstrong <neil.armstrong@linaro.org>,
  Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
@@ -90,13 +105,13 @@ Cc: Michael Riesch <michael.riesch@collabora.com>,
  linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
  linux-kernel@vger.kernel.org
 References: <20261016-dcphy-rx-v1-v5-0-e63b49eabe2d@gmail.com>
- <20261016-dcphy-rx-v1-v5-1-e63b49eabe2d@gmail.com>
+ <20261016-dcphy-rx-v1-v5-2-e63b49eabe2d@gmail.com>
 From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
 Content-Language: en-GB
-In-Reply-To: <20261016-dcphy-rx-v1-v5-1-e63b49eabe2d@gmail.com>
+In-Reply-To: <20261016-dcphy-rx-v1-v5-2-e63b49eabe2d@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261016_033811_430246_868CF141 
-X-CRM114-Status: GOOD (  15.84  )
+X-CRM114-CacheID: sfid-20261016_114347_854113_BD199740 
+X-CRM114-Status: GOOD (  24.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,41 +129,102 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 16/10/2026 09:56, Jason Yang wrote:
-> A MIPI D-PHY or C-PHY can be a transmitter or a receiver. Some PHY
-> blocks have one of each and can use them at the same time, so one PHY
-> node offers two PHYs. The existing cell, PHY_TYPE_DPHY or
-> PHY_TYPE_CPHY, selects the mode of the whole block, not one of the two
-> PHYs.
+> The Samsung MIPI D-/C-PHY block on RK3588 and RK3576 has a transmitter
+> for DSI and a receiver for CSI-2, and two consumers can use them at the
+> same time. 
+
+Two consumers use them - which them ? Two consumers use the receivers at 
+the same time ?
+
+Its minor but instead of "them" define what the them is.
+
+The single cell of this binding selects the mode and refers
+> to the transmitter, so the receiver cannot be described.
 > 
-> Add PHY_DIRECTION_TX and PHY_DIRECTION_RX for a cell that selects the
-> transmitter or the receiver. The first user is the Rockchip RK3588 MIPI
-> DC-PHY, where the transmitter serves a DSI host and the receiver a CSI-2
-> host.
+> Allow a second cell that selects the transmitter or the receiver. With
+> D-PHY:
 > 
-> Suggested-by: Michael Riesch <michael.riesch@collabora.com>
-> Link: https://lore.kernel.org/r/7425ac83-f6d8-4443-a26e-a47f9306aa24@collabora.com
+> 	/* the MIPI DSI host, driving the transmitter */
+> 	phys = <&mipidcphy0 PHY_TYPE_DPHY PHY_DIRECTION_TX>;
+> 
+> 	/* the MIPI CSI-2 host, driving the receiver */
+> 	phys = <&mipidcphy0 PHY_TYPE_DPHY PHY_DIRECTION_RX>;
+> 
+> and with C-PHY:
+> 
+> 	phys = <&mipidcphy0 PHY_TYPE_CPHY PHY_DIRECTION_TX>;
+> 	phys = <&mipidcphy0 PHY_TYPE_CPHY PHY_DIRECTION_RX>;
+> 
+> The transmitter and the receiver cannot operate in different modes [1],
+> so the first cell must match in both consumers.
+> 
+> Two cells describe the receiver as well. A single cell keeps referring
+> to the transmitter, so existing device trees are unaffected.
+> 
+> [1] RK3588 TRM: section 22.1 (overview): "The TX and RX only support
+>      operate in the same PHY mode."
+> 
 > Signed-off-by: Jason Yang <jason98166@gmail.com>
 > ---
->   include/dt-bindings/phy/phy.h | 3 +++
->   1 file changed, 3 insertions(+)
+>   .../bindings/phy/rockchip,rk3588-mipi-dcphy.yaml     | 20 +++++++++++++++++---
+>   1 file changed, 17 insertions(+), 3 deletions(-)
 > 
-> diff --git a/include/dt-bindings/phy/phy.h b/include/dt-bindings/phy/phy.h
-> index 979b5dfd8353..9ead74d9a172 100644
-> --- a/include/dt-bindings/phy/phy.h
-> +++ b/include/dt-bindings/phy/phy.h
-> @@ -29,4 +29,7 @@
->   #define PHY_POL_INVERT		1
->   #define PHY_POL_AUTO		2
+> diff --git a/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml b/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml
+> index c8ff5ba22a86..6e8cc56e4986 100644
+> --- a/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml
+> @@ -20,11 +20,25 @@ properties:
+>       maxItems: 1
 >   
-> +#define PHY_DIRECTION_TX	0
-> +#define PHY_DIRECTION_RX	1
+>     "#phy-cells":
+> -    const: 1
+> +    enum: [1, 2]
+>       description: |
+> -      Argument is mode to operate in. Supported modes are:
+> +      The first cell selects the mode to operate in:
+>           - PHY_TYPE_DPHY
+>           - PHY_TYPE_CPHY
 > +
->   #endif /* _DT_BINDINGS_PHY */
+> +      A single cell refers to the transmitter and is kept for existing
+> +      device trees.
+> +
+> +      The second cell selects the transmitter or the receiver, so that a
+
+The second cell, if present
+
+-> you want to make clear it is optional.
+
+> +      MIPI DSI host and a MIPI CSI-2 host can be described as independent
+> +      consumers of the same PHY node:
+> +        - PHY_DIRECTION_TX
+> +        - PHY_DIRECTION_RX
+> +
+> +      The transmitter and the receiver cannot operate in different modes,
+> +      so when both are described, the first cell must match in both
+> +      consumers.
+> +
+
+Not really related to this patch but how do you envision that 
+requirement being enforced, per driver ?
+>         See include/dt-bindings/phy/phy.h for constants.
+>   
+>     clocks:
+> @@ -82,6 +96,6 @@ examples:
+>                    <&cru SRST_S_MIPI_DCPHY0>;
+>           reset-names = "m_phy", "apb", "grf", "s_phy";
+>           rockchip,grf = <&mipidcphy0_grf>;
+> -        #phy-cells = <1>;
+> +        #phy-cells = <2>;
+>         };
+>       };
 > 
 
-This looks like a neat solution to your problem.
+Looks pretty good to me I'm interested in adding an RB here - please 
+include me in CC for next versions so I may do so.
 
-Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+---
+bod
+
 
 -- 
 linux-phy mailing list
