@@ -4,54 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 253ECCCF2C2
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Oct 2026 18:17:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9BD21CC6B38
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Oct 2026 18:31:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:
+	Subject:Cc:To:From:Date:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P8cutdmOwYEuk8nuKjOHmmPUocF3wYIP1Y7dMgW1cCk=; b=1HMPC/zhIlCkGm
-	rQ99ESHqo4hDhqqOq5LptNqHJoWgByPKaVKiudT68ZR4xPwliyv6O4eSWEmM6UyR5nXjGb293i2WZ
-	XzyQGpAdrH5Wo1W+uVxGAdDJ0uw4wgVTck4OfStVtoLq7yQVtYU6Roac0mVz+nXVi6ZqKOCIKFm0v
-	4NdRST/wlPKLZ6wQyJBbFwgjd9+QIGOaGgCpsgiNrNCJpWjGOPy4LJetNXbciLyIrvSJAdmmusaCp
-	EtS2ExpxkrD0TbMagigBs9eq1rerhgMaoIT+3cXkO0UXa7e2WgckcvdO6aZ4GtW2XzBBIUntWHsN6
-	Y2uea5peK59ubHzAfcJQ==;
+	List-Owner; bh=RiKZl4ZxyPIOPKyNW1hGfxuXXM+zHyG8/KCbflbvrRk=; b=Tlc+/0qWe0igf+
+	NUa8oCDAVj+9t65I86p53ETwCRd9Wjsikyp6fgD84lfIC2f+bM4wAg5hRwQaAtuYt/CHOAG9hYrkw
+	G+iMKxXsGyT3dwPDhx3k4MYqbPksS95JVa2bJOCdsjw9FlO7+ZNkXK8kEl15+9DO0/+4ylYiiEs0W
+	bKjIGb+2rVj6UMHibMsH4XhZ15jZ0T4S9/J6Q+ad0GJEwWBJkln5C+DQ0i0RB+MPFE3wQYjsmvI6g
+	QOqEwYNG1BjqiaomRAUV4u8bef6bjz+bcljLQXcsfr3q6lk8WGEEaNacUpmmMjQwiOsEsmmc7Kd/Q
+	Lu73tXe+9g6fx+K/LazA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHmUO-00000003dmH-2OyX;
-	Fri, 16 Oct 2026 18:17:08 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xHmih-00000003gBr-0ovQ;
+	Fri, 16 Oct 2026 18:31:55 +0000
+Received: from layka.disroot.org ([178.21.23.139])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xHmUN-00000003dm8-2sWO
+	id 1xHmif-00000003g9d-1hoJ
 	for linux-phy@lists.infradead.org;
-	Fri, 16 Oct 2026 18:17:07 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 3DBEC41841;
-	Fri, 16 Oct 2026 18:17:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AF6D31F000C4;
-	Fri, 16 Oct 2026 18:17:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792174627;
-	bh=qhzTzwfxB4FUI9NuybMbOBFVPvM3VMC+au2duGOGqm8=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=nzkvPTHCuAXE1zqei4dPE4TdUY5j7BsRb+iV0wp+VeiQr8FRenHiJI64ri2nHvd8W
-	 yNvdA775FRMYpCbYi7m4ANoWLZk8CsLUHX//ZAxtYS6icQbuW2rWQpHOtx5/hrfFrn
-	 2wCtDeXUUVzff5kDEEhMQ9fIMlesvjFZ+dWOIArvLQK9BoGTi4Scn1Ma4gdOlrxoHi
-	 OSyVbgoB0nJ2dVnxXrTBhkyW5HzrqbQI1OUAJ1f3Ccp94bbVOaaopId/N9GZg8bVSu
-	 QHKA5hURg0D8/iSAcXbuka6Gvt6M5O6w5O4OQCusFjuKRfwB+4oT81oTxxzkWHAxvt
-	 CSvtJ9weiYwRQ==
-Message-ID: <sashiko-outbox-174762@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v9 5/6] phy: realtek: usb2: add support for RTL9607C
- USB2 PHY
-To: "Rustam Adilov" <adilov@disroot.org>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org
-Cc: robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
-In-Reply-To: <20261016180314.31760-6-adilov@disroot.org>
+	Fri, 16 Oct 2026 18:31:54 +0000
+Received: from mail01.layka.lan (localhost [127.0.0.1])
+	by disroot.org (Postfix) with ESMTP id AC38482A7F;
+	Fri, 16 Oct 2026 20:31:44 +0200 (CEST)
+X-Virus-Scanned: SPAM Filter at disroot.org
+Received: from layka.disroot.org ([127.0.0.1])
+ by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
+ id nQzl9y60FTqC; Fri, 16 Oct 2026 20:31:43 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
+	t=1792175503; bh=04sQwonfurbo4BOea32Zt9xLoudiO0LSI0mstw4NKL8=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References;
+	b=ZrhSzoyAKpDYe4+YPMKwxs0900t3u8XQ2ttWPi8bbpaeUqsblbmzpSnctT2nFnn7Z
+	 J4onYGK1qdrEJpcXajb/HhIU+ofGuCPj+VqqCg8Q2YEUsmwm4ZH4npfP+oRpfGB3in
+	 evSFPE72WkO46livCtdIfKvOpmInsmV/8VWEkKeHhlKZ7ljgBTrCtktdnsAakuNYRc
+	 9ik5E9k4osR6VlQynoGoQpVHOwq7sOTXue/TWj+EzTfuvIv5q8mSrl4G3WMmoHJXgo
+	 DUWPhwlzXjByqBUl2Zjvzflf0AaR+pCFgSfxclDcJKcAvOODjMQ4GZAlelvW+F2lif
+	 N0a+KeHvGS/IQ==
+MIME-Version: 1.0
+Date: Fri, 16 Oct 2026 18:31:42 +0000
+From: Rustam Adilov <adilov@disroot.org>
+To: sashiko-reviews@lists.linux.dev
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org,
+ neil.armstrong@linaro.org, olteanv@gmail.com
+Subject: Re: [PATCH v9 4/6] phy: realtek: usb2: introduce reset controller
+ struct
+In-Reply-To: <sashiko-outbox-174759@kernel.org>
 References: <20261016180314.31760-1-adilov@disroot.org>
- <20261016180314.31760-6-adilov@disroot.org>
-Date: Fri, 16 Oct 2026 18:17:06 +0000
+ <20261016180314.31760-5-adilov@disroot.org>
+ <sashiko-outbox-174759@kernel.org>
+Message-ID: <742854ba3f87aee86ea78e3f39f9682d@disroot.org>
+X-Sender: adilov@disroot.org
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261016_113153_727768_53ACFBD2 
+X-CRM114-Status: GOOD (  26.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,43 +72,117 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIHBoeTogcmVhbHRlazog
-bWlzc2luZyBvZl9pb21hcCgpIGNoZWNrIGxlYWRzIHRvIE5VTEwgZGVyZWZlcmVuY2UKLS0KCmNv
-bW1pdCA2OWUyMmRhNTI5ZjNjYWQ0NGNhOTdjMGM2ZjBhODBlMDNmNDNhZDdlCkF1dGhvcjogUnVz
-dGFtIEFkaWxvdiA8YWRpbG92QGRpc3Jvb3Qub3JnPgoKcGh5OiByZWFsdGVrOiB1c2IyOiBhZGQg
-c3VwcG9ydCBmb3IgUlRMOTYwN0MgVVNCMiBQSFkKClRoaXMgY29tbWl0IGFkZHMgc3VwcG9ydCBm
-b3IgdGhlIFVTQjIgUEhZIG9uIFJUTDk2MDdDIHNlcmllcyBTb0NzLiBJdAppbmNsdWRlcyBuZXcg
-bWFjcm9zLCBjb25maWd1cmF0aW9uIHN0cnVjdHVyZXMsIGJpZy1lbmRpYW4gYWNjZXNzIGZ1bmN0
-aW9ucywKYW5kIGxvZ2ljIHRvIGNsZWFyIGEgZm9yY2UgaG9zdCBkaXNjb25uZWN0IGJpdCBkdXJp
-bmcgaW5pdGlhbGl6YXRpb24uCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9yZWFsdGVrL3Bo
-eS1ydGstdXNiMi5jIGIvZHJpdmVycy9waHkvcmVhbHRlay9waHktcnRrLXVzYjIuYwo+IGluZGV4
-IDJkZGFkN2JlNzM1MzQuLjY0MDc2OTM4YzgyMWQgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9waHkv
-cmVhbHRlay9waHktcnRrLXVzYjIuYwo+ICsrKyBiL2RyaXZlcnMvcGh5L3JlYWx0ZWsvcGh5LXJ0
-ay11c2IyLmMKClsgLi4uIF0KCj4gQEAgLTYwMCw2ICs2MTcsMjMgQEAgc3RhdGljIGludCBkb19y
-dGtfcGh5X2luaXQoc3RydWN0IHJ0a19waHkgKnJ0a19waHksIGludCBpbmRleCkKPiAgCQlnb3Rv
-IGRvX3RvZ2dsZTsKPiAgCX0KPiAgCj4gKwlpZiAocGh5X2NmZy0+Zm9yY2VfaG9zdF9kaXNjb25u
-ZWN0KSB7Cj4gKwkJY29uc3Qgc3RydWN0IHBoeV9yZWdfZGVzYyAqcmVnX2Rlc2MgPSBwaHlfcmVn
-LT5kZXNjOwo+ICsJCXZvaWQgX19pb21lbSAqdnN0YXR1cyA9IHBoeV9yZWctPnJlZ193cmFwX3Zz
-dGF0dXM7Cj4gKwkJdTMyIHRlbXA7Cj4gKwo+ICsJCXRlbXAgPSByZWdfZGVzYy0+cmVhZCh2c3Rh
-dHVzICsgUEhZXzk2MDdfRk9SQ0VfRElTQ09OTkVDVF9SRUcpOwoKW1NldmVyaXR5OiBIaWdoXQpD
-YW4gdGhpcyByZXN1bHQgaW4gYSBOVUxMIHBvaW50ZXIgZGVyZWZlcmVuY2U/CgpJZiBvZl9pb21h
-cCgpIGZhaWxzIHRvIG1hcCBkZXZpY2UgbWVtb3J5LCBpdCByZXR1cm5zIE5VTEwgd2hpY2ggaXMg
-c3RvcmVkCndpdGhvdXQgdmFsaWRhdGlvbjoKCmRyaXZlcnMvcGh5L3JlYWx0ZWsvcGh5LXJ0ay11
-c2IyLmM6cGFyc2VfcGh5X2RhdGEoKSB7CiAgICAuLi4KICAgIHBoeV9wYXJhbWV0ZXItPnBoeV9y
-ZWcucmVnX3dyYXBfdnN0YXR1cyA9IG9mX2lvbWFwKG5wLCAwKTsKICAgIC4uLgp9CgpUaGlzIG5l
-dyBjb2RlIGluIGRvX3J0a19waHlfaW5pdCgpIHJlbGllcyBvbiB0aGlzIHBvaW50ZXIgYnkgZGVy
-ZWZlcmVuY2luZwp2c3RhdHVzIHZpYSB0aGUgcmVhZCBmdW5jdGlvbi4gRG9lcyB0aGlzIG5lZWQg
-YW4gZXJyb3IgY2hlY2sgZHVyaW5nIHRoZQppbml0aWFsIG1hcHBpbmcgb3IgYmVmb3JlIHRoaXMg
-ZGVyZWZlcmVuY2U/CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRl
-di8jL3BhdGNoc2V0LzIwMjYxMDE2MTgwMzE0LjMxNzYwLTEtYWRpbG92QGRpc3Jvb3Qub3JnP3Bh
-cnQ9NQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
-cGh5Cg==
+On 2026-10-16 18:15, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 2 potential issue(s) to consider:
+> - [High] phy: realtek: register access before reset deassertion causes hang/timeout
+> - [Medium] phy: missing reset_control_assert in rtk_phy_exit and error paths
+> --
+> 
+> commit ae1074cfd8fee3a5506c0c9db06f187c80793713
+> Author: Rustam Adilov <adilov@disroot.org>
+> 
+> phy: realtek: usb2: introduce reset controller struct
+> 
+> In RTL9607C, there is so called "IP Enable Controller" which resemble
+> reset controller with reset lines and is used for various things like
+> USB, PCIE, GMAC and such.
+> 
+>> phy: realtek: usb2: introduce reset controller struct
+>> 
+>> In RTL9607C, there is so called "IP Enable Controller" which resemble
+>> reset controller with reset lines and is used for various things like
+>> USB, PCIE, GMAC and such.
+>> 
+>> Introduce the reset_control struct to this driver to handle deasserting
+>> usb2 phy reset line.
+>> 
+>> Make use of the function devm_reset_control_get_optional_exclusive()
+>> function to get the reset controller and since existing RTD SoCs don't
+>> specify the resets we can have a cleaner code.
+>> 
+>> Since the vendor usb driver developed by Realtek doesn't assert the reset
+>> line (or in their case clear the register bit), we can reasonably assume
+>> reset_control_assert is not needed here.
+> 
+> [Severity: Medium]
+> Since this is an exclusive reset control, does it need to be asserted on
+> teardown even if the vendor driver doesn't do it?
+> 
+> If the reset line is never asserted during module removal or driver unbind
+> (such as in an rtk_phy_exit() function), could this lead to power leakage
+> or unexpected initial states during subsequent driver reloads?
+
+There is still a lot unknown about the IP enable controller and what it really
+does, the reset controller is just my best guess. I would ideally not deviate
+from what the vendor usb driver did.
+
+>> diff --git a/drivers/phy/realtek/phy-rtk-usb2.c b/drivers/phy/realtek/phy-rtk-usb2.c
+>> index 5e483c853f02f..2ddad7be73534 100644
+>> --- a/drivers/phy/realtek/phy-rtk-usb2.c
+>> +++ b/drivers/phy/realtek/phy-rtk-usb2.c
+> [ ... ]
+>> @@ -676,6 +678,15 @@ static int rtk_phy_init(struct phy *phy)
+>>  	if (!rtk_phy)
+>>  		return -EINVAL;
+>>  
+>> +	if (rtk_phy->phy_rst) {
+>> +		ret = reset_control_deassert(rtk_phy->phy_rst);
+>> +
+>> +		if (ret)
+>> +			return ret;
+>> +
+>> +		usleep_range(5000, 6000);
+>> +	}
+>> +
+>>  	for (i = 0; i < rtk_phy->num_phy; i++)
+>>  		ret = do_rtk_phy_init(rtk_phy, i);
+> 
+> [Severity: Medium]
+> If do_rtk_phy_init() fails, the reset line remains deasserted on the error
+> path. Should the reset line be asserted before returning the error?
+> 
+> [ ... ]
+>> @@ -1055,6 +1066,11 @@ static int rtk_usb2phy_probe(struct platform_device *pdev)
+>>  
+>>  	rtk_phy->num_phy = phy_cfg->num_phy;
+>>  
+>> +	rtk_phy->phy_rst = devm_reset_control_get_optional_exclusive(dev, NULL);
+>> +	if (IS_ERR(rtk_phy->phy_rst))
+>> +		return dev_err_probe(dev, PTR_ERR(rtk_phy->phy_rst),
+>> +				     "usb2 phy reset is not working\n");
+>> +
+>>  	ret = parse_phy_data(rtk_phy);
+> 
+> [Severity: High]
+> Can calling parse_phy_data() here before deasserting the reset control cause
+> a hardware hang or timeout?
+> 
+> Inside parse_phy_data(), if the SoC configuration lacks a pre-populated
+> default value for certain registers, functions like update_hs_clk_select()
+> and update_dc_driving_level() will attempt to read from the PHY registers:
+> 
+> drivers/phy/realtek/phy-rtk-usb2.c:update_hs_clk_select() {
+> 	if (phy_parameter->inverse_hstx_sync_clock) {
+> 		if (!phy_cfg->page0[6].addr) {
+> 			rtk_phy_set_page(phy_reg, 0);
+> 			phy_cfg->page0[6].addr = PAGE0_0XE6;
+> 			phy_cfg->page0[6].data = rtk_phy_read(phy_reg, PAGE0_0XE6);
+> 		}
+> 	}
+> }
+> 
+> If the realtek,inverse-hstx-sync-clock DT property is set, it will read
+> from the unclocked or reset IP block, which could lock up the system bus
+> on many SoCs.
+
+realtek,inverse-hstx-sync-clock property is irrelevant to rtl9607c.
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
