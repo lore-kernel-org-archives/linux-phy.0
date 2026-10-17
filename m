@@ -4,97 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D3EACCF2CA
-	for <linux-phy@archiver.kernel.org>; Sat, 17 Oct 2026 17:13:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2550BCCF2C4
+	for <linux-phy@archiver.kernel.org>; Sat, 17 Oct 2026 17:13:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1dFp1af30vnDRXQEX2ec4XjC6mG+blXgNQLf3N4xApk=; b=TdgcVSVl+prTJI
-	xWfOHiMMB5sVbnDGSJVbSLMURuf/28Oo5YMdAmHCgwXJ1JbiMe80wokIqaCzZZF3MzfSzZ6vRK8nZ
-	vnSEGqdSOqcQ1pWW4KPEho1wZSc4oVIOTNrL4rwBgq4C0sbmjDeahXiSo24jrHkIPb0vIclNSCluQ
-	vsChfk5wQDeFxFZZYPJDYffcp8OvkKaVsZV+I/N4ykihG4o4v6pdCNQhGaTlzZa+PVocBQY1l3hfo
-	xWQC5fjsa0qWBVStTCfrTqp3avFTH9pkoEFv9giSs5fazGu8ssJWCI1K6CGhBXaXlMC7qRGVKVCYW
-	Uwrl6zD0oa7d4A+xb7gg==;
+	List-Owner; bh=noLlLph9id8eBWhugH1h1BIxwp8r373lS9rGLYfkz/A=; b=f7PYgDurL3To3p
+	YJAjDm+bU6vXmbnYQ+S4ql6tjEWV11UGnFQLYgPy7e9xUHKNkTBEPM0uawJ7XAbULh5QOL9YUeB5x
+	KHxQuxlncav/zNf5JDMryybf15IhqK+xD7bJkU+rXAq8pQnvzjQ9jiLFjKv3eElCwCufP55+UPJzM
+	cya2+nQ9Vn+9WiAv6YJbUHK9ubnpuIjg61yRavp2BjeXMsFpkSf1xlx+rHf+kk+6JlNTqDmVFW8lj
+	njaBUTBb9VUn9W7zyPZOIGWDgZPaxRagjCS6uFQvyNRpi3sCLH19xWplcmQ0NsameKHjCOmN/fIA+
+	wjex6YOCPbsnaera0P8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xI7yU-00000004yxi-35lz;
-	Sat, 17 Oct 2026 17:13:38 +0000
+	id 1xI7yZ-00000004yz6-3HXQ;
+	Sat, 17 Oct 2026 17:13:43 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xI7yS-00000004yxA-0bJU
+	id 1xI7yW-00000004yyU-3tRa
 	for linux-phy@lists.infradead.org;
-	Sat, 17 Oct 2026 17:13:37 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69HGA3eC019873
-	for <linux-phy@lists.infradead.org>; Sat, 17 Oct 2026 17:13:35 GMT
+	Sat, 17 Oct 2026 17:13:42 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69HG9ns32533980
+	for <linux-phy@lists.infradead.org>; Sat, 17 Oct 2026 17:13:40 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	2Z3ZvBV6x0VOlnroXPGGo486t6fpn5GiWYT9/m40b3A=; b=R4zYrXE83RY9Fix9
-	fA73EVqgzUDxLBIHWC/orHTIPnAchkCm8Nl100i5RfR8arMYr6+oIR0GDD/o68it
-	WgQlQGcyIXYs6J549pYHl8QVDDG0FtlOP+FdHvzE8LE9GVfgPVXvopEGHyf56l19
-	y8DQHapbkD616934dHj4LHkmx8rTSDZGj4LlioA03BWJe2/uTRlytEZSp5MvcmPk
-	FZ9M8c+OFCgK5tVndXWRYeze9OaP2H8Q6l5BAXrI+c+nWem1Zs8SUgdWImNm1d1R
-	nAwM04ye5HHzTp43BnBzZ9Uv94WvSXM/ltOouGXiIc5XzC5BlqRjHlDiA1JA6bEx
-	51miBw==
-Received: from mail-dy1-f198.google.com (mail-dy1-f198.google.com [74.125.82.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hc26k199u-1
+	CBP5FDgUuNI+IeQ3fpaNQaTXKxFW4xAkNLJmRGA+1TA=; b=EN7Ou5H7e9t8ssm6
+	o0/BfNMfdK1jZXxwwLsBRLiPkhqegbihae1z31SMXRARi2ginadODJZuM8ZZ07zg
+	gHw7Eip5eK72CoFCVJPpYodvCnL9x3v9jfV1hrTl88C4UZvUYcI56l5S4xzKqOme
+	zKE48Dbh8FDGdeGOSRbUk/6oK4YGOB92ugbyWTvUAgVLXuxZqTjE9HBjyC4XD1Gp
+	itJMgHvC3+2tWMvdo04N/FuR5ohOPFqQUQl4UuxvvQf59C3PL6C0dxrQIYglsNBF
+	OkPB8Ej2uEUK+3vPzbaB3aKzSU5EvjSAcmH+bcV4s3uiGIt5JwNJLNmrcRsQTji+
+	9KyZxg==
+Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hbyys1j93-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Sat, 17 Oct 2026 17:13:35 +0000 (GMT)
-Received: by mail-dy1-f198.google.com with SMTP id 5a478bee46e88-33c35f5ca6cso1755153eec.1
-        for <linux-phy@lists.infradead.org>; Sat, 17 Oct 2026 10:13:35 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Sat, 17 Oct 2026 17:13:40 +0000 (GMT)
+Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-35c5aef2a74so145890eec.0
+        for <linux-phy@lists.infradead.org>; Sat, 17 Oct 2026 10:13:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1792257215; x=1792862015; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1792257220; x=1792862020; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=2Z3ZvBV6x0VOlnroXPGGo486t6fpn5GiWYT9/m40b3A=;
-        b=S7QS1pFy185w1Z9hvGLnX1uN/Zt2Kant6MziGuW0qAv+wxdF1PXRoMnmVdzdIslQ6H
-         1lSLNlcmHTXP+Hn0VPA32nYIBKFrxvbB/HMsrdj1crZ4CLinV3d2ZKDniHwjOqOxCtcE
-         HqeYCXf9xfSFlTdqQNdkAJ46Hrjk1iozmp7Gku/KFc5xBgfRy2ptMg3HAcpWb6Zk1CbY
-         oH6quM0fRN2ANQmGnq2i6C2t9kh9iPSYo9ZMazxAMHGnnu8NGmUNyfpcLB7LX7tKD/DT
-         AFnk4btoFYn+pmJwNPR/JtFUueBeP25tFipBj5IaDVmJAav4MxNKwhZ7Xyjc4GAbkHWO
-         wNog==
+        bh=CBP5FDgUuNI+IeQ3fpaNQaTXKxFW4xAkNLJmRGA+1TA=;
+        b=bjQ5OkJM/f5x/FAw5cg3na6VtSV0rJzMfpuUUBK9v/ft/J9DsoWtbf4nkyifaDdZc+
+         5NaK0zfdN1NJ9Jk3pQOxnLDCVO969T8d/VlKLuVREAF6ALSHSge+lqnablPHWba3N3Zf
+         0ed0fVzdad18KNjYesaN2QPH3nybvoBvDOXws0WdzvzOg00Wob7yKQsBwm1iGw05xcvU
+         gBPAOSb16srfRLL/IOQ0NMANKP+FLUy4DzVZ/iO/Kwv7Bm2UPUwYz5CQggGUjAL76LMI
+         fQT4QWvcXxSQLycpRdsTK6iWWM6k0gHMhpvuwwiHWM7RIx9MJtl0OzEOGSllpAsX6Pre
+         +vwg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1792257215; x=1792862015;
+        d=1e100.net; s=20260707; t=1792257220; x=1792862020;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=2Z3ZvBV6x0VOlnroXPGGo486t6fpn5GiWYT9/m40b3A=;
-        b=fE3ORKdYlQjW+JA+UA7TpubDnnO8BvCscZ//QP49/03VvnmCw9pjFy3SZJHA+pro3c
-         al5c4uoYEQRJjx1gtXOJz1iQqyjHUdZGdD+SM9FiJ8s86rACgmUSo1qfWhN6tWv0TYGb
-         mr8AM3lyc+PtaE1VpkA0Efvzc6aN9Vz3CkraDh15EBeaqqMLlxcF5L/hrFCfrigZ+shL
-         eQl61udwkX5JHs8C+qSiroo3pHIFGKVJ7UkGoU63Ajch+0YbWl6PWSvz7EmDv7krr05W
-         O5+RNxp2jRoaZSIsi9Ao+zfYRBe8o5t5WKfCPvVV8TYMTDq/uOO4x3GyeJbzvtonwf/y
-         KUUg==
-X-Forwarded-Encrypted: i=1; AKwUvBwq9DRAXPVc4E0SRl+XqMJEFKljwrSQwfJpP1JjuU4p27Mipk9qpEsRirQ3mgdfLTf/Vfd8DhBUwRg=@lists.infradead.org
-X-Gm-Message-State: AFq9FYIatuog4U7k30W2G9LP1auKTBFkJ2YOO6EOJpxJYEdAGg5KrDHB
-	G4n3/Nl8BSL9NUjTosZN/8GNemSR2KRL+aQcJziNgbwKX6Tke0zQuATCwI/A2EvsPUCtGpn9xF3
-	BrG5J/nJPc1yX5qzSrl+pwzZpVuFETiI9XGxFZq6KOiUVBfNhXZaCZuunPHdtkpM3Xkz7
-X-Gm-Gg: AYBFou0xSJDUBWFa7bxgapY0HtZgTLIi4og+Umq7P4ui3UQdBbl02VG+pwDoeEfm+kN
-	wy4cE4ihJFjr/MWcn/BbWJkln3O2SErlsCWMkznOTIMRyLJvHy7S+QuSA9ym/4yAGqv14V8LpSG
-	UElw8B5JZU2scfF+9VQTIqZhueeZAGFUEgB9CZA7vu2tSBiUbbVzdDXm8k8PpHGDTRgz1vILZoO
-	z5cSPbNmASWDYvVSw0b5BhaDEt4ac+P2mxo83SVtEWDmy7GFWeyuo2MCDjorBkrzN44/2xPT+pF
-	/I/KuB2+zvSbObJdaAvLyN5Lg+X879Dq2BLbpMzSKPLGNER/9NfWwEyhUrECc5jKryZIJXUlKiR
-	zmWsu3bGsMPHLmeHaevdaPZqVgUWKTA==
-X-Received: by 2002:a05:693c:4152:20b0:34e:c001:1486 with SMTP id 5a478bee46e88-361a0b97ba9mr4942448eec.8.1792257214694;
-        Sat, 17 Oct 2026 10:13:34 -0700 (PDT)
-X-Received: by 2002:a05:693c:4152:20b0:34e:c001:1486 with SMTP id 5a478bee46e88-361a0b97ba9mr4942403eec.8.1792257214089;
-        Sat, 17 Oct 2026 10:13:34 -0700 (PDT)
+        bh=CBP5FDgUuNI+IeQ3fpaNQaTXKxFW4xAkNLJmRGA+1TA=;
+        b=uwo/8vAufypjNH2BmkQ2YHlu5R58X9XMs50fdrIZhKi4JBu+aRmbtT3I09513XqVwT
+         BU6p2D9xhKAX3MQ6PMfXWJQuO+fGiqd+kkdtp9dGy1LFK0cqpvH7NkhIi9WngJrnoQTa
+         qobYzslql5Ux4L9CWaZJAwBTDHRAV2Cu+xO0kfKSrbsO2lIsQUCdH5urpjpXhay2AcMe
+         6GBdc5IkL5hDvygVp60ieo7vBU1LDWR+84X/ymJuG/9bKhFAAG8O2HIi389zISWEy6Xy
+         9jAfBLCJmg1vjSjxI8CPkn6SFmXP9YX2ClKHFMrFYCbk8a7zGZ+rPnMomTxM6DH/l4v9
+         3z1A==
+X-Forwarded-Encrypted: i=1; AKwUvBzLJTqRLktoSU4BeFgUkMwDTIwxUH1UMmbKh0XIOy4w098QsHQQGdOyFLsva9Cf2GDyvBNMGw4Xu/Y=@lists.infradead.org
+X-Gm-Message-State: AFq9FYJ7TORi1nNMIB+ivwzn8Xw35viJ4/WQ6DrdBWm9xF96iF6Hz+rl
+	5UK6lWPL2p6Q4LtlxywbqZdOt554nye8H7oreT8Ze1EVx7Pw3AdVVe5S6MsqPSXkwQbAFebzOPa
+	OVSCT7Pxg42fhPCRaFrYHIRkw03FoZ4sS0au9ZS3Z7G3agfuWMXcQpfNYr06yTIuhk9rJ
+X-Gm-Gg: AYBFou0K+FdTjtslw9U6b2taY/uAPAJ9mM+d8VnCHA3SPSYWHsVKk3IumjOk/MHa+aD
+	pefkWFtS1OqeDCHqF1RqndORY73eysFtn82P16XjQHoz/d8q87+x+Cq32x1meaLcikHHmOfEOtT
+	5VrFUaH6awKyYgY7p1dxObPNOlH1s+6WaUUlt2Uoel9ECuyKutD7N5L8j+Se+23UkWeC1ux1OmQ
+	2NFmfsftYTCHczW5NiDD/Zfyf1Vs3+guVMP/ygJr8ZlwJFQDhieJ6bPsaG3PlutSEz+c4M3kYWT
+	VvkgLmPuHeZKtWlIJct0HWWxJ62GIh/csvUAeO86hU8HwsncNrpZlDb6c1+5nbisAnkIiSX1xq4
+	sYBph1QunVYjl3Kd0Zha8CdwPgxsKMA==
+X-Received: by 2002:a05:7300:d10:b0:35a:84cc:d941 with SMTP id 5a478bee46e88-361a341c8e6mr6210297eec.37.1792257219585;
+        Sat, 17 Oct 2026 10:13:39 -0700 (PDT)
+X-Received: by 2002:a05:7300:d10:b0:35a:84cc:d941 with SMTP id 5a478bee46e88-361a341c8e6mr6210263eec.37.1792257219047;
+        Sat, 17 Oct 2026 10:13:39 -0700 (PDT)
 Received: from hu-nihalkum-hyd.qualcomm.com ([202.46.23.25])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-360813b6e33sm17893966eec.7.2026.10.17.10.13.29
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-360813b6e33sm17893966eec.7.2026.10.17.10.13.34
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 17 Oct 2026 10:13:33 -0700 (PDT)
+        Sat, 17 Oct 2026 10:13:38 -0700 (PDT)
 From: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
-Date: Sat, 17 Oct 2026 22:43:09 +0530
-Subject: [PATCH RFC 2/6] media: qcom: camss: Add C-PHY timing fields and
- get config from sensor
+Date: Sat, 17 Oct 2026 22:43:10 +0530
+Subject: [PATCH RFC 3/6] phy: qcom: mipi-csi2: Split D-PHY register
+ settings
 MIME-Version: 1.0
-Message-Id: <20261017-cphy_support-v1-2-8b0e1237ce95@oss.qualcomm.com>
+Message-Id: <20261017-cphy_support-v1-3-8b0e1237ce95@oss.qualcomm.com>
 References: <20261017-cphy_support-v1-0-8b0e1237ce95@oss.qualcomm.com>
 In-Reply-To: <20261017-cphy_support-v1-0-8b0e1237ce95@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
@@ -109,43 +109,44 @@ Cc: Vikram Sharma <vikram.sharma@oss.qualcomm.com>,
         linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org,
         Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1792257199; l=7527;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1792257199; l=3558;
  i=nihal.gupta@oss.qualcomm.com; s=20260608; h=from:subject:message-id;
- bh=mrZCKxlte38Z4rcqmMXHQzBjM3D3yZZPZyfosetq8XQ=;
- b=6NvCfR2a9ykAq97/zA6GxRlSk5qkrwG6FIm1ek8W4OHQN0FdcoevVBk4dlCDYuhJESINgJ2R2
- QdFFTCo+CKDCmVAmYTdjWR4M/Zye/jXNCEEvZiDqywaWX4LaA1jn5z4
+ bh=EI0RYsZ3yOnKefVjSeOVmfm/PmjAgR2/wT5sSGJujcs=;
+ b=fpg9uAqqItJW+uBq5bvinDXTzTn5xxS1LHLyIQ57YiIFj/XQiVowd/9ok6xaPAzKa3epF5U3w
+ Cjs4AePzRX5BaoAk/paWS290Fb9mDhkOoX6rAo5sg8DVHBHVjHcmABr
 X-Developer-Key: i=nihal.gupta@oss.qualcomm.com; a=ed25519;
  pk=DIbyFMNwqU/iMvU/0pCQp2wmRVgtHFBT3PcSu+A+Ncw=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDE3MDA2OCBTYWx0ZWRfX2Po2ayGsyvWr
- JmDjLyulV0e11MC+mxTLjP65Ir5NpBu2mB/tyIQZDl6F70zn3Cl0PsRVcLBQ0Izli+Y1bo9JYGb
- T8KAvk4r3HqUhEg6ICiDt5+x4aWt8dx/raWIzfckoEadb+4r8upa29RkfHn+ca/6/aS4NmvUiL5
- 52McBqIJWjjTXmomaDmH5sri+K8sQEC/DGtRukREDaApcd+1ZpyehkXiEe735dnadU9hKuU1dbS
- tshoWfHjzc64ZYjL4fYjbTM+vKqflG1BCf044mYf0vYVL0tJho4Vs+Hz6q/MfRNAcD53FfwkDt1
- 4fxnLmSfv207ojMGEPqDsgHhQDMlYGBRis6YPSl4vff7KUYnAMUOlTUKwpdLhSgJWVN0J1J/FDz
- MmnoVnHK+xA2a0AJHbvBX9OLr0NKv5IQ96kbf1ouaSQOeAlNfW5tdhA0qMu0MDDpJIk6Y1ZCkFi
- zp9XnWPhrwnCX8eHQbg==
-X-Proofpoint-GUID: fB7SeBrfR3f9RIEkE4UIzP7_Nev1D3Dz
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDE3MDA2OCBTYWx0ZWRfX+XJq3eM2SRUj
- K/ZivNAkaTvwtPYzcV1dqQHHdlJ4MU0GK3ftxbh2qHuWXtYBs55pP1yXFDuntsK7Itd8EKPXB9/
- 4ASwSYq38+ON0qwYvJUg9f6U9HaBlJw=
-X-Proofpoint-ORIG-GUID: fB7SeBrfR3f9RIEkE4UIzP7_Nev1D3Dz
-X-Authority-Analysis: v=2.4 cv=Cowq4X4D c=1 sm=1 tr=0 ts=6ad3acbf cx=c_pps
- a=wEP8DlPgTf/vqF+yE6f9lg==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDE3MDA2OCBTYWx0ZWRfX/U59n32YHrs+
+ C220BlwyT3cs9EtSes7yg4DMEOBg4e/aiHYwow3W7iOMQyWKeJQ1Yq5+uULNAuy4qukpc/CriNt
+ /ppt+Z5juQEXeZmag1fhHN2qM/4a9/KeBdN5cOS6eSpMwA3NNMEkzPg2MIu4uqWa5TZxfy9rh6P
+ V4pCNPGJSCk4jR8SP5/HjAOuCUyYxZOKhe1vwiKar4cbJ56+bywvpN8bIzeyDR6cQEhBr+qGKXK
+ t/nAJ5z1y8ucQKq0yLaeC3CrqZ/WbrPTt3NiJc056iz6J4Ru5Wl0d+UKnBAMZiYBIZ7zP4l+GSP
+ SFld/B/G2heQA423eFvMzh1iYXfEcC9/6xFYXFF31uAbD718TyXYcStAwRyv9pmNzbJMtAFwX0B
+ IKI0xO+hvfhAjRsQsxHsgJHnbJl134Os7EvfEuiFs45fbfoKqAobEnfUXij90DfnBz9H+kkwm3m
+ Hlfzgnr5JvKEa8akVWA==
+X-Authority-Analysis: v=2.4 cv=W4WtxhWk c=1 sm=1 tr=0 ts=6ad3acc4 cx=c_pps
+ a=cFYjgdjTJScbgFmBucgdfQ==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
  a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
- a=EUspDBNiAAAA:8 a=uwparDF5YPYKf_HLZKMA:9 a=QEXdDO2ut3YA:10
- a=bBxd6f-gb0O0v-kibOvt:22
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
+ a=EUspDBNiAAAA:8 a=sk60x3sEPLDaefoj9B8A:9 a=QEXdDO2ut3YA:10
+ a=scEy_gLbYbu1JhEsrz4S:22
+X-Proofpoint-ORIG-GUID: 2IYkOZQ5Hf7ewSGDuhWY9LX4IwzqR8e7
+X-Proofpoint-GUID: 2IYkOZQ5Hf7ewSGDuhWY9LX4IwzqR8e7
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDE3MDA2OCBTYWx0ZWRfX3MjdapwShUDI
+ HRXMpLFDzvBJpaDuutlg2H53GYiofGE3MxWe7mvGdiT+YtzHyrhGzR1GboIqna/vFF99Rva2WAB
+ /PmRnCrAzhiLNJsJtIdC//rk3r6YT9c=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
  definitions=2026-10-17_05,2026-10-14_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 impostorscore=0 adultscore=0 priorityscore=1501 suspectscore=0
- lowpriorityscore=0 bulkscore=0 phishscore=0 spamscore=0 malwarescore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2610080000 definitions=main-2610170068
+ spamscore=0 clxscore=1015 malwarescore=0 phishscore=0 adultscore=0
+ priorityscore=1501 suspectscore=0 bulkscore=0 impostorscore=0
+ lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2610080000
+ definitions=main-2610170068
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261017_101336_198316_913A17CB 
-X-CRM114-Status: GOOD (  21.98  )
+X-CRM114-CacheID: sfid-20261017_101340_979924_E40278B6 
+X-CRM114-Status: GOOD (  15.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -162,210 +163,97 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-C-PHY settle count is derived from the T_PREPARE and T_PREAMBLE link
-timing parameters reported by the transmitter. Add C-PHY prepare and
-preamble timing fields to the CSI-2 media bus configuration.
+The register sequence storage is tied to a single init table. C-PHY
+support needs separate D-PHY and C-PHY sequence selection without
+changing the existing D-PHY programming.
 
-The endpoint bus type already describes whether the connected CSI-2 link
-uses D-PHY or C-PHY.
-
-Accept C-PHY endpoints, store the parsed CSI-2 PHY type and query the
-remote sensor media bus configuration for C-PHY links. Pass the reported
-link frequency and timing to the generic PHY while keeping the existing
-D-PHY fallback path.
+Wrap the existing D-PHY table in a D-PHY settings structure and route
+lane programming through a common register write helper.
 
 Signed-off-by: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
 ---
- drivers/media/platform/qcom/camss/camss-csiphy.c | 90 +++++++++++++++++++-----
- drivers/media/platform/qcom/camss/camss-csiphy.h |  2 +
- drivers/media/platform/qcom/camss/camss.c        |  8 +--
- include/media/v4l2-mediabus.h                    |  2 +
- 4 files changed, 79 insertions(+), 23 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c | 28 +++++++++++++++-------
+ drivers/phy/qualcomm/phy-qcom-mipi-csi2.h          |  8 +++++--
+ 2 files changed, 26 insertions(+), 10 deletions(-)
 
-diff --git a/drivers/media/platform/qcom/camss/camss-csiphy.c b/drivers/media/platform/qcom/camss/camss-csiphy.c
-index f99eea2ef2289cbee404808348c06968350dc4ac..ed2318d76987d6a9ae7e185d00e258d49d0c79a4 100644
---- a/drivers/media/platform/qcom/camss/camss-csiphy.c
-+++ b/drivers/media/platform/qcom/camss/camss-csiphy.c
-@@ -313,6 +313,29 @@ static void csiphy_stream_off_legacy(struct csiphy_device *csiphy)
- 	csiphy->res->hw_ops->lanes_disable(csiphy, &csiphy->cfg);
+diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
+index 966d79c98f9b21e1a235b8397c4c84b25d869427..79c7fa57d059b29f2f72a0c1208e07115b3fb049 100644
+--- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
++++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
+@@ -241,14 +241,12 @@ static u8 phy_qcom_mipi_csi2_settle_cnt_calc(s64 link_freq, u32 timer_clk_rate)
+ 	return settle_cnt;
  }
  
-+static int csiphy_get_remote_mbus_config(struct csiphy_device *csiphy,
-+					 struct v4l2_mbus_config *cfg)
-+{
-+	struct media_pad *remote;
-+	struct v4l2_subdev *remote_sd;
-+	int ret;
-+
-+	remote = media_pad_remote_pad_first(&csiphy->pads[MSM_CSIPHY_PAD_SINK]);
-+	if (!remote)
-+		return -ENOLINK;
-+
-+	remote_sd = media_entity_to_v4l2_subdev(remote->entity);
-+	if (!remote_sd)
-+		return -EINVAL;
-+
-+	memset(cfg, 0, sizeof(*cfg));
-+	ret = v4l2_subdev_call(remote_sd, pad, get_mbus_config,
-+			      remote->index, cfg);
-+	if (ret == -ENOIOCTLCMD)
-+		return -EOPNOTSUPP;
-+
-+	return ret;
-+}
- /*
-  * csiphy_stream_on - Enable streaming on CSIPHY module
-  * @csiphy: CSIPHY device
-@@ -324,43 +347,74 @@ static void csiphy_stream_off_legacy(struct csiphy_device *csiphy)
-  */
- static int csiphy_stream_on(struct csiphy_device *csiphy)
+-static void
+-phy_qcom_mipi_csi2_gen2_config_lanes(struct mipi_csi2phy_device *csi2phy,
+-				     u8 settle_cnt)
++static void phy_qcom_mipi_csi2_write_regs(struct mipi_csi2phy_device *csi2phy,
++					  const struct mipi_csi2phy_lane_regs *r,
++					  unsigned int array_size, u8 settle_cnt)
  {
-+	struct v4l2_mbus_config mbus_cfg = { };
- 	u8 bpp = csiphy_get_bpp(csiphy->res->formats->formats, csiphy->res->formats->nformats,
- 				csiphy->fmt[MSM_CSIPHY_PAD_SINK].code);
- 	struct csiphy_lanes_cfg *lncfg = &csiphy->cfg.csi2->lane_cfg;
--	struct phy_configure_opts_mipi_dphy *dphy_cfg;
--	union phy_configure_opts dphy_opts = { 0 };
-+	union phy_configure_opts opts = { 0 };
-+	enum phy_mode mode = PHY_MODE_INVALID;
- 	struct device *dev = csiphy->camss->dev;
- 	u8 num_lanes = lncfg->num_data;
- 	s64 link_freq;
- 	int ret;
+-	const struct mipi_csi2phy_device_regs *regs = csi2phy_dev_to_regs(csi2phy);
+-	const struct mipi_csi2phy_lane_regs *r = regs->init_seq;
+-	int i, array_size = regs->lane_array_size;
+ 	u32 val;
++	int i;
  
--	dphy_cfg = &dphy_opts.mipi_dphy;
--
--	link_freq = camss_get_link_freq(&csiphy->subdev.entity, bpp, num_lanes);
-+	ret = csiphy_get_remote_mbus_config(csiphy, &mbus_cfg);
-+	if (ret && ret != -EOPNOTSUPP)
-+		return ret;
- 
--	if (link_freq <= 0) {
--		dev_err(dev,
--			"Cannot get CSI2 transmitter's link frequency\n");
--		return -EINVAL;
-+	if (ret == -EOPNOTSUPP && lncfg->phy_type == V4L2_MBUS_CSI2_CPHY) {
-+		dev_err(dev, "C-PHY transmitter does not report media bus configuration\n");
-+		return ret;
+ 	for (i = 0; i < array_size; i++, r++) {
+ 		switch (r->param_type) {
+@@ -268,6 +266,16 @@ phy_qcom_mipi_csi2_gen2_config_lanes(struct mipi_csi2phy_device *csi2phy,
  	}
+ }
  
--	ret = phy_mipi_dphy_get_default_config_for_hsclk(link_freq, num_lanes,
--							 dphy_cfg);
--	if (ret < 0) {
--		dev_err(dev, "Invalid config for link frequency %lld\n",
--			link_freq);
--		return ret;
-+	if (!ret && mbus_cfg.type == V4L2_MBUS_CSI2_CPHY) {
-+		struct phy_configure_opts_mipi_cphy *cphy = &opts.mipi_cphy;
++static void
++phy_qcom_mipi_csi2_gen2_config_lanes(struct mipi_csi2phy_device *csi2phy,
++				     u8 settle_cnt)
++{
++	const struct mipi_csi2phy_device_regs *regs = csi2phy_dev_to_regs(csi2phy);
 +
-+		link_freq = mbus_cfg.link_freq;
-+		if (link_freq <= 0) {
-+			dev_err(dev,
-+				"Cannot get CSI2 transmitter's link frequency\n");
-+			return -EINVAL;
-+		}
++	phy_qcom_mipi_csi2_write_regs(csi2phy, regs->dphy->dphy_init_seq,
++					 regs->dphy->num_regs, settle_cnt);
++}
 +
-+		cphy->symbol_rate = link_freq * 2;
-+		cphy->trios = num_lanes;
-+		cphy->t_prepare_ns = mbus_cfg.bus.mipi_csi2.t_prepare_ns;
-+		cphy->t_preamble_ns = mbus_cfg.bus.mipi_csi2.t_preamble_ns;
-+
-+		mode = PHY_MODE_MIPI_CPHY;
-+	} else if (ret || mbus_cfg.type == V4L2_MBUS_CSI2_DPHY) {
-+		struct phy_configure_opts_mipi_dphy *dphy = &opts.mipi_dphy;
-+
-+		link_freq = camss_get_link_freq(&csiphy->subdev.entity, bpp, num_lanes);
-+		if (link_freq <= 0) {
-+			dev_err(dev,
-+				"Cannot get CSI2 transmitter's link frequency\n");
-+			return -EINVAL;
-+		}
-+
-+		ret = phy_mipi_dphy_get_default_config_for_hsclk(link_freq, num_lanes,
-+								dphy);
-+		if (ret < 0) {
-+			dev_err(dev, "Invalid config for link frequency %lld\n",
-+				link_freq);
-+			return ret;
-+		}
-+		mode = PHY_MODE_MIPI_DPHY;
-+	} else {
-+		dev_err(dev, "Unsupported mbus type %u\n", mbus_cfg.type);
-+		return -EINVAL;
- 	}
- 
--	ret = phy_set_mode(csiphy->phy, PHY_MODE_MIPI_DPHY);
-+	ret = phy_set_mode(csiphy->phy, mode);
- 	if (ret) {
- 		dev_err(dev, "Failed to set phy mode\n");
- 		return ret;
- 	}
- 
--	ret = phy_configure(csiphy->phy, &dphy_opts);
-+	ret = phy_configure(csiphy->phy, &opts);
- 	if (ret) {
--		dev_err(dev, "failed to configure MIPI D-PHY\n");
-+		dev_err(dev, "failed to configure MIPI CSI-2 PHY\n");
- 		goto error;
- 	}
- 
-diff --git a/drivers/media/platform/qcom/camss/camss-csiphy.h b/drivers/media/platform/qcom/camss/camss-csiphy.h
-index 8c3319f2ca1cfdef4c0185deed2805854ac81703..a13cfaf3796106d421c8d711308d3fb3fb9259a8 100644
---- a/drivers/media/platform/qcom/camss/camss-csiphy.h
-+++ b/drivers/media/platform/qcom/camss/camss-csiphy.h
-@@ -35,11 +35,13 @@ struct csiphy_lane {
-  * @num_data: number of data lanes
-  * @data:     data lanes configuration
-  * @clk:      clock lane configuration (only for D-PHY)
-+ * @phy_type: CSI-2 PHY bus type
-  */
- struct csiphy_lanes_cfg {
- 	int num_data;
- 	struct csiphy_lane *data;
- 	struct csiphy_lane clk;
-+	enum v4l2_mbus_type phy_type;
+ static int phy_qcom_mipi_csi2_lanes_enable(struct mipi_csi2phy_device *csi2phy,
+ 					   struct mipi_csi2phy_stream_cfg *cfg)
+ {
+@@ -369,11 +377,15 @@ static struct mipi_csi2_genpd x1e_genpds[] = {
+ 	{ .name = "mx", .scaled = true },
  };
  
- struct csiphy_csi2_cfg {
-diff --git a/drivers/media/platform/qcom/camss/camss.c b/drivers/media/platform/qcom/camss/camss.c
-index c54185c93a8a98fc6a20fdb8e0f9f8e61bc41058..f61a9c242ef46f968ecc22dddd16a2e96465ca65 100644
---- a/drivers/media/platform/qcom/camss/camss.c
-+++ b/drivers/media/platform/qcom/camss/camss.c
-@@ -4694,11 +4694,8 @@ static int camss_parse_endpoint_node(struct device *dev,
- 	if (ret)
- 		return ret;
- 
--	/*
--	 * Most SoCs support both D-PHY and C-PHY standards, but currently only
--	 * D-PHY is supported in the driver.
--	 */
--	if (vep.bus_type != V4L2_MBUS_CSI2_DPHY) {
-+	if (vep.bus_type != V4L2_MBUS_CSI2_DPHY &&
-+	    vep.bus_type != V4L2_MBUS_CSI2_CPHY) {
- 		dev_err(dev, "Unsupported bus type %d\n", vep.bus_type);
- 		return -EINVAL;
- 	}
-@@ -4706,6 +4703,7 @@ static int camss_parse_endpoint_node(struct device *dev,
- 	csd->interface.csiphy_id = vep.base.port;
- 
- 	mipi_csi2 = &vep.bus.mipi_csi2;
-+	lncfg->phy_type = vep.bus_type;
- 	lncfg->clk.pos = mipi_csi2->clock_lane;
- 	lncfg->clk.pol = mipi_csi2->lane_polarities[0];
- 	lncfg->num_data = mipi_csi2->num_data_lanes;
-diff --git a/include/media/v4l2-mediabus.h b/include/media/v4l2-mediabus.h
-index 24c738cd78940fa7f6118d78595fe221689a39e7..42543ec98a839567c21485d3e97f875b8a081100 100644
---- a/include/media/v4l2-mediabus.h
-+++ b/include/media/v4l2-mediabus.h
-@@ -109,6 +109,8 @@ struct v4l2_mbus_config_mipi_csi2 {
- 	unsigned char num_data_lanes;
- 	bool lane_polarities[1 + V4L2_MBUS_CSI2_MAX_DATA_LANES];
- 	enum v4l2_mbus_csi2_cphy_line_orders_type line_orders[V4L2_MBUS_CSI2_MAX_DATA_LANES];
-+	u32 t_prepare_ns;
-+	u32 t_preamble_ns;
++static const struct mipi_csi2phy_dphy_rate_settings x1e80100_dphy_settings = {
++	.dphy_init_seq = lane_regs_x1e80100,
++	.num_regs = ARRAY_SIZE(lane_regs_x1e80100),
++};
++
+ const struct mipi_csi2phy_soc_cfg mipi_csi2_dphy_4nm_x1e = {
+ 	.ops = &phy_qcom_mipi_csi2_ops_3ph_1_0,
+ 	.reg_info = {
+-		.init_seq = lane_regs_x1e80100,
+-		.lane_array_size = ARRAY_SIZE(lane_regs_x1e80100),
++		.dphy = &x1e80100_dphy_settings,
+ 		.common_regs_offset = 0x1000,
+ 	},
+ 	.supply_names = (const char **)x1e_supplies,
+diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h b/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h
+index 7e55ae00737047f2d0384728a9c98780851eec05..528e80109c2f96b8c66d989ac834e30e7b38c732 100644
+--- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h
++++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h
+@@ -47,9 +47,13 @@ struct mipi_csi2phy_lane_regs {
+ 	const u32 param_type;
  };
  
- /**
++struct mipi_csi2phy_dphy_rate_settings {
++	const struct mipi_csi2phy_lane_regs *dphy_init_seq;
++	unsigned int num_regs;
++};
++
+ struct mipi_csi2phy_device_regs {
+-	const struct mipi_csi2phy_lane_regs *init_seq;
+-	const int lane_array_size;
++	const struct mipi_csi2phy_dphy_rate_settings *dphy;
+ 	const u32 common_regs_offset;
+ };
+ 
 
 -- 
 2.34.1
