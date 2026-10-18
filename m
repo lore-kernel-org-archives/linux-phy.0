@@ -4,108 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E915CCF2C4
-	for <linux-phy@archiver.kernel.org>; Sat, 17 Oct 2026 23:39:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17C06CCF2C7
+	for <linux-phy@archiver.kernel.org>; Sun, 18 Oct 2026 00:47:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=54Oa68ZttYbsy84q6dSmnzU6XS51ub6JYC4Sw+aE2vg=; b=vrq40efREHCKf4
-	J9WAqIcHb4RWIb8ZbgN4+adM5IQ809DU325TsfI1IoK3SREhNoIJAyRdm9/5o3HULEK2ABq+7yE7P
-	GcUU122oEqbtPt0lRqcFzAudndBj7q3TZh3K+PazVYEepzrXiIIHcgbXdDu7vM9+1TVVfU+JJLWR7
-	NiR0ga2LkByyWKplN9cPnst/bDllvLLMBhUEsA39MgVjIx7cilSjvzrnYI3AdJFgu8dzv6VdL24ga
-	bkaig9BNF5wf4PT5D2YHKBvPDBkaS9MhJzXjkJc2Fb6oJbTkVDMbbsgPC345iMa7kMabdFKhCP8eG
-	OLDdlKH/w4z+4hfqS4Vw==;
+	List-Owner; bh=cp9rbXFgfyldWHcux/sQcGtkinIJITLjTP+97EyfxnM=; b=RkneGuBtKEx7PE
+	Yi9GMn3rvlBPaFJU4UmTCZ9hqKqO4dKkd60oT+o0jAwohQM3iEKQKg7tMsb461y5v5SeKZT/HLt7X
+	FTuVHkBiY0czrS55DSArcA9z3ZzZPRYGLu/fR9moofHj8aKI/qEbiEh1NBNC0YfS+pcBpD3eZ8qiR
+	pE7vcDyvSGCTS4eQpWtZ0qlNPC1xUqRw+UhDRDcMR8YhTrcS9GEajZoS9eghZB6yWf/0ATmTqx/mO
+	/dQINtXMYInz15NUsD4gx4HDkc8H9bzCTcVACDqK+CkMM1vsMVXiymuf08+CT1OlRRxigWsfOEBA2
+	GtjzeQIewz0nLCzOlbeA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIE0H-00000005Lyi-0afT;
-	Sat, 17 Oct 2026 23:39:53 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xIF3s-00000005Ng7-0Uxu;
+	Sun, 18 Oct 2026 00:47:40 +0000
+Received: from mgamail.intel.com ([198.175.65.19])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIE0F-00000005Lyc-1qF1
-	for linux-phy@lists.infradead.org;
-	Sat, 17 Oct 2026 23:39:51 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 1B53660142;
-	Sat, 17 Oct 2026 23:39:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 035EB1F000C4;
-	Sat, 17 Oct 2026 23:39:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792280389;
-	bh=IOaIHN9koYBp4/y2xYG+zvcLw+InozkSxxmt+Azkxmo=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=iToMp5fxLcQH7IgAb1ab5ZzA/49xSXrKI2GQNqawjAqYIk/zQdilaZchaGpGUXlpv
-	 iYVY2foBiUqm6ppbXT44B155SUq/sfsyHOI2IF2uhXX8DaSWqzvA5NpAoeY7pH/MIq
-	 hBRSPbNlhDPGyFPnn2tDPuud6lnp834DxZWuA2jiuMctz9Hfp/cfxDH6O2oLVNS7+z
-	 Ae5vhLDhY2NiNdvzMT2VmN0PkXCAguJTTt0tiGa7NnW5otNE3k8r/TXQfcVMnnWXK2
-	 SuKA7ZILgPurFQT2VsS6CM8lMMXpplyliduQaufxE+dmoIl684vGIpQxlxz/GSh26E
-	 0RxHFbBLFfw/Q==
-Message-ID: <141c5032-1915-4dac-bbcf-e697b762ae40@kernel.org>
-Date: Sun, 18 Oct 2026 00:39:45 +0100
+	id 1xIF3p-00000005NfS-0PzM;
+	Sun, 18 Oct 2026 00:47:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1792284457; x=1823820457;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=daoOQm05VwaFoZ0+CpbIgWX8Bo/e4Sr3//Gl6DlQae0=;
+  b=ltODWq9Udr3rn8gdruveJSEkGaH2dYI4GhcMkscBDVkVDd4j+kQyRURm
+   HoI4qgch8o/IWMK5Q4idWmnNVUlhaKZczUqOpkFz+Rtr04N7UdgWem1sr
+   SqN3pFxgkcujbpYe6/Zulg2KGHtI/OHuZo6Ly6pIDfQCosQHcWGVdeDdx
+   VYVVLPnOE55rn3L87ii+YtH8nve5rbkuzben8lx9JgvTa3W3QAYfF1r9W
+   etw/Jmsj35LCpG1xAPheBjI3e81YpMOCCe8AnOhf8aADfxnOWJOD178Q9
+   dakdWGd5a54urq9FV/biSG8MZR8gZPr+1Dt3xfwtQGCbckKj8hMefOcPW
+   Q==;
+X-CSE-ConnectionGUID: dxWA0wcPRuO2D0VIzfSSZQ==
+X-CSE-MsgGUID: h8OOT8z4T/iKp5njtQ8iwQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11938"; a="1049618"
+X-IronPort-AV: E=Sophos;i="6.27,163,1787036400"; 
+   d="scan'208";a="1049618"
+Received: from orviesa010.jf.intel.com ([10.64.159.150])
+  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 17 Oct 2026 17:47:35 -0700
+X-CSE-ConnectionGUID: 7QNb9IvsTCmVMcmTPGQv7w==
+X-CSE-MsgGUID: IT3zV5cIQzKxka3VbTtNMw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.27,163,1787036400"; 
+   d="scan'208";a="2646600"
+Received: from lkp-server01.sh.intel.com (HELO 0caa9d2d175c) ([10.239.97.150])
+  by orviesa010.jf.intel.com with ESMTP; 17 Oct 2026 17:47:32 -0700
+Received: from kbuild by 0caa9d2d175c with local (Exim 4.98.2)
+	(envelope-from <lkp@intel.com>)
+	id 1xIF3h-00000000Juw-19NP;
+	Sun, 18 Oct 2026 00:47:29 +0000
+Date: Sun, 18 Oct 2026 08:47:15 +0800
+From: kernel test robot <lkp@intel.com>
+To: Sebastian Reichel <sebastian.reichel@collabora.com>,
+	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>
+Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
+	Igor Paunovic <royalnet026@gmail.com>, linux-kernel@vger.kernel.org,
+	linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
+	kernel@collabora.com,
+	Sebastian Reichel <sebastian.reichel@collabora.com>
+Subject: Re: [PATCH v17 5/7] usb: dwc3: rockchip: add USBDP PHY reset quirk
+Message-ID: <202610180841.U0qsol4i-lkp@intel.com>
+References: <20261016-b4-rockchip-dwc3-rockchip-glue-v17-5-876f96893e2f@collabora.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH RFC 0/6] phy/media: Add generic MIPI C-PHY support to
- CSI-2 stack
-To: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>,
- Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
- Manivannan Sadhasivam <mani@kernel.org>,
- Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
- Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
- Loic Poulain <loic.poulain@oss.qualcomm.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>
-Cc: Vikram Sharma <vikram.sharma@oss.qualcomm.com>,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org
-References: <pFAaFSKH8thStYg6_Ew1gWdIvj5lbNBF36QKdamV1cU1Nc73wEZfM_KdQWL2NmB5fvaUpMPen7qMOzjHZ9ROIQ==@protonmail.internalid>
- <20261017-cphy_support-v1-0-8b0e1237ce95@oss.qualcomm.com>
-From: Bryan O'Donoghue <bod@kernel.org>
-Content-Language: en-GB
-Autocrypt: addr=bod@kernel.org; keydata=
- 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
-In-Reply-To: <20261017-cphy_support-v1-0-8b0e1237ce95@oss.qualcomm.com>
+Content-Disposition: inline
+In-Reply-To: <20261016-b4-rockchip-dwc3-rockchip-glue-v17-5-876f96893e2f@collabora.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261017_174737_239982_C06D4FFE 
+X-CRM114-Status: UNSURE (   9.38  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,131 +92,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 17/10/2026 18:13, Nihal Kumar Gupta wrote:
-> George posted a C-PHY series [1] which we are currently reviewing.
-> As discussed with Bryan, this series shares our independent
-> implementation so the approaches can be compared.
-> 
-> Two aspects covered here are not in [1]:
-> 
-> - Settle count calculation derived from sensor-reported T_PREPARE and
->    T_PREAMBLE timing via get_mbus_config(). [1] left this as an open
->    question.
-> 
-> - Data rate based register sequence selection using effective bit
->    rate (link_freq * 32 / 7). [1] noted downstream does this but
->    deferred it; this series implements it.
-> 
-> MIPI CSI-2 operates over two physical layer variants. D-PHY uses a
-> dedicated differential clock lane with up to four data lanes. C-PHY
-> encodes the clock within the data stream across up to three wire
-> trios, eliminating the dedicated clock lane.
-> 
-> Patch 1 extends the generic PHY framework with PHY_MODE_MIPI_CPHY
-> and struct phy_configure_opts_mipi_cphy.
-> 
-> Patch 2 adds t_prepare_ns and t_preamble_ns fields to the CSI-2
-> media bus configuration and extends CAMSS to forward them to the PHY
-> provider for settle count calculation. Sensor drivers must implement
-> get_mbus_config() and return non-zero values in nanoseconds; stream-on
-> returns -EINVAL otherwise. The strictness is deliberate: C-PHY settle
-> timing is symbol-rate-range specific and no safe value can be derived
-> from link frequency alone. A conservative fallback could be added if
-> reviewers prefer.
-> 
-> Patches 3-6 extend the Qualcomm CSIPHY driver: refactor D-PHY
-> register storage to accommodate C-PHY, accept C-PHY mode with
-> multiple data rate table selection, compute settle count, and add
-> lane power mask support for C-PHY trios.
-> 
-> C-PHY encodes 16 bits per 7 symbols, so the effective bit rate is:
-> 
->    bit_rate = link_freq * 2 * 16 / 7 = link_freq * 32 / 7
-> 
-> where link_freq is symbol_rate / 2 as reported by the sensor via
-> get_mbus_config(). The rate-table entry whose bandwidth first meets
-> or exceeds bit_rate is selected.
-> 
-> The settle count defines how many timer clock cycles the CSIPHY
-> receiver waits before scanning for C-PHY sync. It is computed from
-> the sensor's T_PREPARE and T_PREAMBLE timing. The /3 factor reflects
-> that C-PHY distributes the preamble sequence across three trios:
-> 
->    settle_cnt = (t_prepare_ns + t_preamble_ns / 3) * timer_clk_rate / 1e9
-> 
-> D-PHY settle count is unchanged from before this series.
-> 
-> [1] https://lore.kernel.org/all/20261016-x1e-cphy-rfc-v3-0-40a346a72153@gmail.com/
-> 
-> Signed-off-by: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
-> ---
-> Nihal Kumar Gupta (6):
->        phy: core: Add MIPI C-PHY configurations
->        media: qcom: camss: Add C-PHY timing fields and get config from sensor
->        phy: qcom: mipi-csi2: Split D-PHY register settings
->        phy: qcom: mipi-csi2: Accept C-PHY mode and add register sequence
->        phy: qcom: mipi-csi2: Add C-PHY settle calculation
->        phy: qcom: mipi-csi2: Add lane mask calculation for C-PHY
-> 
->   drivers/media/platform/qcom/camss/camss-csiphy.c   |  90 +++++++++---
->   drivers/media/platform/qcom/camss/camss-csiphy.h   |   2 +
->   drivers/media/platform/qcom/camss/camss.c          |   8 +-
->   drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c | 159 +++++++++++++++++----
+Hi Sebastian,
 
-So on thing I notice about this series and like is that there's a small 
-change to the existing 3ph-dphy.c
+kernel test robot noticed the following build warnings:
 
-- Since it supports 3ph-cphy the file should be renamed
-   3ph-cphy-dphy.c (or something)
-- I like the progressive nature of he changes in this series
-   as structurally the right way to add stuff in. Small digestable
-   commits
-- I think the missing piece here is data_lanes[] and lane_polarities[]
-   per the other series from Qcom
-- Another thing is the other series from Anusha has
-   a more advanced mipi_ops data-structure for CPHY.
+[auto build test WARNING on 8f56fdf3d8cb9f1dbdc93bf9ac816698aa6f70b7]
 
-Basically I like the approach taken in this series for a smaller change 
-to the phy-qcom-mipi-csi2-3ph-dphy.c file.
+url:    https://github.com/intel-lab-lkp/linux/commits/Sebastian-Reichel/phy-rockchip-usbdp-Track-PHY-power-state/20261016-204317
+base:   8f56fdf3d8cb9f1dbdc93bf9ac816698aa6f70b7
+patch link:    https://lore.kernel.org/r/20261016-b4-rockchip-dwc3-rockchip-glue-v17-5-876f96893e2f%40collabora.com
+patch subject: [PATCH v17 5/7] usb: dwc3: rockchip: add USBDP PHY reset quirk
+config: hexagon-randconfig-1000-20261018 (https://download.01.org/0day-ci/archive/20261018/202610180841.U0qsol4i-lkp@intel.com/config)
+compiler: clang version 24.0.0git (https://github.com/llvm/llvm-project 6719b9e31d6a93099612c474eec76d9f41d0275a)
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20261018/202610180841.U0qsol4i-lkp@intel.com/reproduce)
 
-I'd like the best of both series - I think there is alot to resolve on 
-lanes, data-lanes and lane-polarities in the other series and looking at 
-this series, it seems to me we don't need a separate 
-phy-qcom-mipi-csi2-3ph-cphy.c, I think Konrad observed in George's 
-series that really the file deals with 3-phase PHYs and that seems true 
-enough.
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202610180841.U0qsol4i-lkp@intel.com/
 
-Please work out between yourself and Anusha what's next.
+All warnings (new ones prefixed by >>):
 
-If possible I would prefer to contain 3ph CPHY and DPHY to one file as 
-is done here - at the same time the definition of CPHY ops and lane 
-mappings is closer to the spec in the other series.
+>> Warning: drivers/usb/dwc3/dwc3-rockchip.c:22 struct member 'dwc_rk' not described in 'dwc3_rk_phy_nb'
+>> Warning: drivers/usb/dwc3/dwc3-rockchip.c:22 Excess struct member 'dwc' description in 'dwc3_rk_phy_nb' (did you mean one of: 'dwc_rk')
+>> Warning: drivers/usb/dwc3/dwc3-rockchip.c:22 struct member 'dwc_rk' not described in 'dwc3_rk_phy_nb'
+>> Warning: drivers/usb/dwc3/dwc3-rockchip.c:22 Excess struct member 'dwc' description in 'dwc3_rk_phy_nb' (did you mean one of: 'dwc_rk')
 
-I think either you should take Anusha's structs and lane definitions or 
-Anusha should take your approach to minimal change to the 
-phy-qcom-mipi-csi2-3ph-dphy.c renaming it.
-
-One of you needs to pick up the patches from the other one.
-
-George can land his stuff on top then.
->   drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c     |  51 +++++--
->   drivers/phy/qualcomm/phy-qcom-mipi-csi2.h          |  25 +++-
->   include/linux/phy/phy.h                            |  47 ++++++
->   include/media/v4l2-mediabus.h                      |   2 +
->   8 files changed, 315 insertions(+), 69 deletions(-)
-> ---
-> base-commit: 2efb7a11f1aa4d2dc285fe2680cca22cb9f72f64
-> change-id: 20261017-cphy_support-2ce4d656e631
-> 
-> Best regards,
-> --
-> Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
-
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
