@@ -2,75 +2,68 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8899360820EB
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Oct 2026 15:06:35 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 63AB6606AF83
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Oct 2026 15:47:09 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=2BN2PtTw;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=eMAcO0/8
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=xMXZQ/rA;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=fqwqf.xyz header.i=@fqwqf.xyz header.a=rsa-sha256 header.s=resend header.b=WkEAmPbB;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=amazonses.com header.i=@amazonses.com header.a=rsa-sha256 header.s=zh4gjftm6etwoq6afzugpky45synznly header.b=r0zLaYPc
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:Cc
+	:To:From:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A/hoVRbSQkEk8qWivl8o5Xbiitw3MNAMZSaE6RPzzqI=; b=2BN2PtTwGfYwDg
-	K3fJA9fE+EyJunKWrfQ6fTBKUs2+vEPthWEIDjp7saxHd0eq9hScwGA1cWnfSqzXFSEBpLjnku0j7
-	6/iUtVgCo/Ihqwjkxxb9bnoKKvdJ555uilzb9X4H76vHXabg+n08pagJtt+S/eL/1/opHrkfe2ogs
-	RcdADRAqi6YqVuY351yPRN6YEt1TZAOrVfD29MQwD8Urx9wrXghTGq8TSrkPqA+HcnIKauKSLjmQY
-	+I2jxl/TFbUazgWbxKsAlhk5eR9nyP9BhfAJgm05EVXIBlt7nwq7RIr3eDwQ5SzKxOKeQhD18fWVS
-	4d34QIdM3rDpxdZmk2Og==;
+	List-Owner; bh=EDA4QcId6U2wx41INMXJ2fGmXDal46IGdawKAcRoPiA=; b=xMXZQ/rAMu99px
+	2T33Gd9V5xVE7puf1RjRW+h7QgoE5oJtGr06xXWKL1EGD6Tsjtagfl8YqSnePiK31e17qnGe1mAID
+	O3FKT8GV5rQmRUGcjatMkvBt6+6oULQAklLLoMquQ65/6bLsqzBgKyfQ8SnlN1BfuAag99nqfiezP
+	rVEklXjDn38o5Bn5CEZ6ZLEFSqSwVyzdTTdB7dh0BcgTzItzrTG7SjOED+CbYHAGvmHwQHyPSrZHB
+	KRk69okVHkswwDiwps2yQEv6PKlOVlm0oBXf6+JMDQjRU1Ngjzt4bAqUZOSrb2BIirke2aRwluijq
+	fo24NQLSFn5ET1MpM4QQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIowd-00000007oJC-05FI;
-	Mon, 19 Oct 2026 15:06:35 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xIpZt-00000007saX-00VE;
+	Mon, 19 Oct 2026 15:47:09 +0000
+Received: from e234-52.smtp-out.ap-northeast-1.amazonses.com ([23.251.234.52])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIowb-00000007oHs-1zVL;
-	Mon, 19 Oct 2026 15:06:33 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 9048A6021A;
-	Mon, 19 Oct 2026 15:06:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1E47B1F000C4;
-	Mon, 19 Oct 2026 15:06:32 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792422392;
-	bh=Cr4YwwSLfkiUol1Qs2oQGw7Kr0kUMHG32ZziBkuSaP4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=eMAcO0/8yUllBiV1FwYry+ie9hG4Dd1vc+Lu1I4Tw6w33WQrgBEspZw4t4uvXPmEs
-	 hL0L7gs0tWZWecc4cbCRMKOfqE2bvTL6PVKkzwVi0cLxd7oel/sNEd4grJ3BuyN2ik
-	 bpHKUSTlsFuWeJO4L5Ai5V4ZU1hbN7FdYoP60UaY0vf/Dk1PxwCXyCINaHlmwjfW5h
-	 iTafIxUPLvCaXeQfwcE8anw2fDK2zvackbEKSaJFP0Pkz2NhDZjxM8HqESdL1xPIJw
-	 krncqv99/JN6676OYGThHfR+CtpScn0UP/Ltnh0V2OdnUx/L171lKDEFOw0F/bSW7h
-	 kv14+0p4tthnA==
-Date: Mon, 19 Oct 2026 10:06:31 -0500
-From: Rob Herring <robh@kernel.org>
-To: =?utf-8?B?5qWK5pm65oiQ?= <jason98166@gmail.com>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Guochun Huang <hero.huang@rock-chips.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Michael Riesch <michael.riesch@collabora.com>,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v5 2/8] dt-bindings: phy: rockchip,rk3588-mipi-dcphy: Add
- a cell to select TX or RX
-Message-ID: <20261019150631.GA265407-robh@kernel.org>
-References: <20261016-dcphy-rx-v1-v5-0-e63b49eabe2d@gmail.com>
- <20261016-dcphy-rx-v1-v5-2-e63b49eabe2d@gmail.com>
- <20261016140115.GA1798470-robh@kernel.org>
- <20261017-gainful-goldfish-of-climate-bef863@quoll>
- <CAPwA33+bR1BF9KeA9my07Yz7gXW7TXq8EPhwQ4GvHMSFDk+uWw@mail.gmail.com>
+	id 1xIpZr-00000007sXV-0a4w
+	for linux-phy@lists.infradead.org;
+	Mon, 19 Oct 2026 15:47:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=resend;
+	d=fqwqf.xyz; t=1792424820;
+	h=In-Reply-To:References:From:To:Cc:Subject:Message-ID:Content-Transfer-Encoding:Date:MIME-Version:Content-Type;
+	bh=bA82C24dkHYIS6f3OgsgzKwCX4C0TKB5nurDcZQs6BU=;
+	b=WkEAmPbBXn5sincNaWpZ/EZwEzUK+EcbGbNyd1y+nZU4XVBOqYdvhwo9HV0IWMvx
+	UMgihLiP7BnYazFYubdP2oCExJp/LcdIRasW21YyEsMRZtqEt0brygiFc80Z9AJUD0u
+	UZ2+FAv3azWXhEWg8HOlbzkN99i7ELMi1ct/L1hs=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=zh4gjftm6etwoq6afzugpky45synznly; d=amazonses.com; t=1792424820;
+	h=In-Reply-To:References:From:To:Cc:Subject:Message-ID:Content-Transfer-Encoding:Date:MIME-Version:Content-Type:Feedback-ID;
+	bh=bA82C24dkHYIS6f3OgsgzKwCX4C0TKB5nurDcZQs6BU=;
+	b=r0zLaYPcueOoQaA6xyNudF62tLU7HfLnOZlty4CbcAd+oI+hqN8aLMLW+RBjxI2k
+	WEyicS8Nweq2nNV1YCkBOawh9wOzJBp5TmJydCAI/IUR/fIi1aWwnJsH0hCD4FaJ+Cd
+	EDS+qJYWjdHcB0vEFy4fPu1Uejqs9xpTb54G2JWc=
+In-Reply-To: <sashiko-outbox-168888@kernel.org>
+References: <sashiko-outbox-168888@kernel.org>
+X-Mailer: git-send-email 2.53.0
+From: Jizhou Tong <fqwqf@fqwqf.xyz>
+To: Bryan O'Donoghue <bod@kernel.org>
+Cc: vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com, 
+	linux-phy@lists.infradead.org, linux-media@vger.kernel.org, 
+	linux-arm-msm@vger.kernel.org, sashiko-reviews@lists.linux.dev
+Subject: Re: [RFC PATCH v2] phy: qcom-mipi-csi2: round the requested settle
+  interval up
+Message-ID: <010601a154d83d84-0b2dea8c-14b7-477b-b1ec-3f44b0b55ad4-000000@ap-northeast-1.amazonses.com>
+Date: Mon, 19 Oct 2026 15:47:00 +0000
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAPwA33+bR1BF9KeA9my07Yz7gXW7TXq8EPhwQ4GvHMSFDk+uWw@mail.gmail.com>
+Feedback-ID: :1.ap-northeast-1.6BGMgStFQE7EJYq5syaCRzdneEHVt/+DAaGDrqUmDs9QLO4/SllUBZ3fHvnZ8rcAX/3IjUyTRgi5JFZsWrikFHwlPJqCkqEMlxDFM4JXh+ycxH/J5Tudg5bGdz6h4331g1L1EFsGR8kuYNfGLsrxz4Nym4YXoPcZxeVkrHry4Zx21n8vEVLEjc7s+OCM8PU9:1.ap-northeast-1.DTXDV/V9GPBWozcllKo8innbNB2qs2O/3F8XZSzd9ZM=:AmazonSES
+X-SES-Outgoing: 2026.10.19-23.251.234.52
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261019_084707_336906_465578B9 
+X-CRM114-Status: UNSURE (   7.76  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.5 (/)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,47 +73,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-4.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+X-Spam-Status: No, score=-4.7 required=3.0 tests=BAYES_00,BULK_RE_SUSP_NTLD,
+	DKIMWL_WL_HIGH,DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,
+	FROM_SUSPICIOUS_NTLD,HEADER_FROM_DIFFERENT_DOMAINS,HK_RANDOM_FROM,
 	MAILING_LIST_MULTI,RCVD_IN_DNSWL_BLOCKED,RCVD_IN_ZEN_BLOCKED_OPENDNS,
-	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=4.0.1
+	SPF_HELO_NONE,SPF_PASS,T_PDS_OTHER_BAD_TLD,USER_AGENT_GIT autolearn=no
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-T24gTW9uLCBPY3QgMTksIDIwMjYgYXQgMDQ6MTU6MDNQTSArMDgwMCwg5qWK5pm65oiQIHdyb3Rl
-Ogo+IEhpIEtyenlzenRvZiwgUm9iLAo+IAo+ID4gRXhpc3RpbmcgT1Mgc2hvdWxkIGlnbm9yZSBz
-dXJwbHVzIGNlbGwgaWYgdGhlIGRyaXZlciBpcyBjb2RlZCBwcm9wZXJseS4KPiA+IFNhbWUgYXMg
-YWRkaW5nIG5ldyBwcm9wZXJ0aWVzIG9yIG5ldyBmcm9udC1jb21wYXRpYmxlLiAgVGhlIHF1ZXN0
-aW9uIGlzCj4gPiBob3cgdGhlIGV4aXN0aW5nIGRyaXZlciBiZWhhdmVzPwo+IAo+IEFzIHlvdSBw
-b2ludGVkIG91dCBvbiA1LzgsIHRoZSB4bGF0ZSBjaGVja3MgYXJnc19jb3VudCAhPSAxLiBUaGUg
-REMtUEhZCj4gZHJpdmVyIHdhcyBtZXJnZWQgaW4gdjYuMTUsIHNvIGV2ZXJ5IGtlcm5lbCBzaW5j
-ZSA2LjE1IGZhaWxzIG9uIGEgc2Vjb25kIGNlbGwuCj4gCj4gMS4gS2VlcCB0aGUgc2Vjb25kIGNl
-bGwuIEFkZCB0aGUgcGF0Y2ggYXMgZm9sbG93czoKPiAKPiAtIGlmIChhcmdzLT5hcmdzX2NvdW50
-ICE9IDEpIHsKPiArIGlmIChhcmdzLT5hcmdzX2NvdW50IDwgMSkgewo+ICAgICBkZXZfZXJyKGRl
-diwgImludmFsaWQgbnVtYmVyIG9mIGFyZ3VtZW50c1xuIik7Cj4gICAgIHJldHVybiBFUlJfUFRS
-KC1FSU5WQUwpOwo+ICAgfQo+IAo+ICsgaWYgKGFyZ3MtPmFyZ3NfY291bnQgPiAxICYmIGFyZ3Mt
-PmFyZ3NbMV0pIHsKPiArICAgZGV2X2VycihkZXYsICJvbmx5IHRoZSB0cmFuc21pdHRlciBpcyBz
-dXBwb3J0ZWRcbiIpOwo+ICsgICByZXR1cm4gRVJSX1BUUigtRUlOVkFMKTsKPiArIH0KPiAKPiAg
-IFdpdGggRml4ZXM6IGFuZCBDYzogc3RhYmxlLCB0aGUgc3RhYmxlIGtlcm5lbHMgbWFpbnRhaW5l
-ZCBhdCB0aGF0Cj4gICB0aW1lIChjdXJyZW50bHkgNi4xOC55IGFuZCA3LjIueSkga2VlcCBEU0kg
-d29ya2luZyB3aXRoIHRoZSBuZXcKPiAgIGR0cywgYW5kIHRoZSByZWNlaXZlciBmYWlscyBjbGVh
-bmx5IGluc3RlYWQgb2YgZ2V0dGluZyB0aGUgdHJhbnNtaXR0ZXIuCj4gICBCdXQgRU9MIGtlcm5l
-bHMgKDYuMTUsIDYuMTYsIDYuMTcsIDYuMTksIDcuMCwgNy4xKSBzdGF5IGFmZmVjdGVkLgo+ICAg
-SXQgZ29lcyBpbiB3aXRoIHRoZSBzZXJpZXMsIHNpbmNlIHR3by1jZWxsIGR0cyBvbmx5IGV4aXN0
-IGFmdGVyIGl0Lgo+IAo+IDIuIFVzZSBhIGZsYWcgaW4gdGhlIHVwcGVyIGJpdHMgb2YgdGhlIGV4
-aXN0aW5nIGNlbGwsIGFzIFJvYgo+ICAgICBzdWdnZXN0ZWQuIEV4aXN0aW5nIGtlcm5lbHMgYXJl
-IG5vdCBhZmZlY3RlZCwgdW5sZXNzIGEgYm9hcmQgZW5hYmxlcwo+ICAgICB0aGUgREMtUEhZIENT
-SS0yIHJlY2VpdmVyIG9uIDcuMCBvciBsYXRlciB3aXRob3V0IHRoaXMgc2VyaWVzLgo+IAo+IEkg
-d2lsbCB3cml0ZSB0aGUgaW1wYWN0IGNsZWFybHkgd2hpY2hldmVyICBhcHByb2FjaCBpcyBzZWxl
-Y3RlZCBpbgo+IHRoZSByZWxhdGVkIGNvbW1pdCBtZXNzYWdlcyBhbmQgdGhlIGNvdmVyIGxldHRl
-ci4KPiAKPiBJIHRoaW5rIHRoZSBjZWxsIGFwcHJvYWNoIGlzIGVhc2llciB0byByZWFkIGFuZCBt
-b3JlIHN5bW1ldHJpYyBpbiB0aGUKPiBsb25nIHRlcm0sCj4gYnV0IGl0IGJyZWFrcyBtb3JlLiBX
-aGljaCBvbmUgZG8geW91IHRoaW5rIGlzIGJldHRlcj8gVGhhbmtzLgoKSSdtIG5vdCBhIHVzZXIg
-b2YgdGhpcyBwbGF0Zm9ybSwgc28gSSBkb24ndCBjYXJlLiBVcCB0byB0aGUgcGxhdGZvcm0gCm1h
-aW50YWluZXJzIHRvIGRlY2lkZSBpZiBicmVha2FnZSBpcyBhY2NlcHRpYmxlLiBZb3UganVzdCBu
-ZWVkIHRvIApkb2N1bWVudCB0aGUgaXNzdWUgaW4gdGhlIGNvbW1pdCBtZXNzYWdlLgoKUm9iCgot
-LSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+Hi Bryan,
+
+I checked the zero-count case raised by Sashiko against media-next
+(d7e7bca71698) and the rounding patch. Both the base driver and the
+patched driver return zero when the calculated interval is exactly
+six integer timer periods, and lanes_enable() rejects it with -ENODEV.
+
+For example, link_freq = 600000000 Hz and timer_clk_rate = 66666666 Hz
+produce a 90000 ps interval and a 15000 ps integer timer period. The
+helper returns zero before and after the patch. This is a software
+boundary case, not a clock configuration I have tested on hardware.
+
+Is a programmed settle count of zero valid on the supported PHYs, or
+is rejecting it intentional? If it is valid, the helper would need to
+distinguish it from an unrepresentable interval, with the caller checking
+for an error separately.
+
+The rounding RFC preserves the existing zero-count handling. I would
+keep any change to that hardware policy separate from the rounding fix.
+
+Best regards,
+Jizhou Tong
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
