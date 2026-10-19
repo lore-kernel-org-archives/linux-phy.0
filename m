@@ -4,50 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66AD0CCF2DA
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Oct 2026 09:55:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9278BCCF2D6
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Oct 2026 10:01:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pfvCCWSn2zqtNZEprGa1XCDnP3s/niua4a+/loYbu5U=; b=KSl53J8jJS8Ewv
-	tCI6zZchAfqHXyh3mBezfv6mhgo4KuGD0JAIncTqZhFFo3JrEF1CQFvHhbNA+llnDl1bvsrH0eLc+
-	jPacoQ4nqfXUW+9gVP/HcA4K8PjXBmcX3BoMfVhY3O5pg48pBqO18q8XoDlqt4/L2tyu207/UAkka
-	EZWIqbwR242SiDFaRQzKxgtzhnQS1nvQ9veQ+l5hUWxCDQ2pAqrX7w3Vj9j5iDPpUdbY5h5+Zkumd
-	uNK3wtN7IWa0DoHLfSZVPphmHgC9l8am98HrRNGhmYpozgL5k4eG1ruWfCBWCoXALwI+VFFGn683r
-	pY5eCmKjgUbS09ElCtuQ==;
+	List-Owner; bh=N6mNljrV3Pxm/dV/0+c59oKIiBcU6Ts7An86XKRUPh0=; b=K+l7qjlLvEM+M2
+	9IFKpRbtITZb3OS3lSqlvHrcCrTSL5q0EThpS4NMD+SmrJXIUWyS9dCS0gSTajHuEnYZdlwIuVo+M
+	4Xn2DDfUxmuS2ir9lV5qr7A45wd6eVQpBJHN4sJb7NJXx8bTuhZeM0BYFrMTBhr4/ZqsOJ0Pezprp
+	9KyRIuBoagbaFBS2bnjOBgzjMV+T3VjvNdr9NEXOgcF4ZDfaQscjADk1TLTrkO7CFcIDG4ovbSOlI
+	vHQPv0idpCzea+MctGfzTTXA1G+T6KDkr4DIv4y52KSf43ltkcBnUHs6u7evKHhwCm1h6a8bneCDl
+	NLSnjzG6aS3lr6fe+7Rw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIk5T-000000074bn-3zJ3;
-	Mon, 19 Oct 2026 09:55:23 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xIkB6-000000075Mo-12rr;
+	Mon, 19 Oct 2026 10:01:12 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIk5S-000000074bd-22hX
+	id 1xIkB5-000000075KR-1mjE
 	for linux-phy@lists.infradead.org;
-	Mon, 19 Oct 2026 09:55:22 +0000
+	Mon, 19 Oct 2026 10:01:11 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id EE0564345D;
-	Mon, 19 Oct 2026 09:55:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0418F1F000C4;
-	Mon, 19 Oct 2026 09:55:17 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id B56AA600CB;
+	Mon, 19 Oct 2026 10:01:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 97A1C1F000C4;
+	Mon, 19 Oct 2026 10:01:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792403721;
-	bh=cEDEdBQSjfHF2sgr1B0e6z58gBo2WM/Q9xw4l5QiHv0=;
+	s=k20260515; t=1792404070;
+	bh=6HDV2HcLkfwQjSgKzpnVgoK+4ivvoEHdz75ohcQoHhk=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=FEdFOg+t9QR8ckTMiMXLv+8cjdPdG44hFp6TDdPICFAKaNE+1CCBlpobOSfnRgchx
-	 TX2Q7I5rkdJuVEHA0BfQA+YPXMc5hep5s5Pw4hitbC7PQpZfUVKkHaNkauiW4uWx6j
-	 YB0i2FWG5i/CDU1WV7/bqFEdrH0WULhGg+c8QREU43urszcsKlaVlHluDrorEHffA4
-	 twn4XgnbKQUYZrAbYmNfmrFKb2ucNza8qiFpq00Byu47vMQee6kTiqOZ0lwYzV/Iss
-	 S1+jQdVvF4C2OrvzSU7kBz9NYN0zTJ8WZ/HCdaxWnVLMmdrZI0t9IAm1YhTeK6oG+A
-	 gP6L1rllajBtw==
-Message-ID: <fc2c2f40-8a55-442a-9b0a-d73f040af60d@kernel.org>
-Date: Mon, 19 Oct 2026 10:55:16 +0100
+	b=YOOlmR992iCkxzo8lLqrfm6QBsTap8iuF1rxQ7iZ7zCq94SxSviXJ4s0jj5xMgN1y
+	 u3ecZrigLfaBBcyhIz5vjV60zaZ8SofK/7xpiH/LxFUDiFMl70Z6IAyeGo93P8Mj57
+	 VtUvig875jusO7GHu1mfiqf/vuzWfdqtG9MKdA9KZGR3YNJ7/8mmKDF8NzsV0/VSvl
+	 XZFWML62NHsQJGTCNgmCw50qX7m6CKAfRJm7AibA0nhiEyYGiANTE6Uj0/HYm0EMrs
+	 ZhQkKsBMkT1XLi6zAjSXSrNOJv2P2x5IYi0De3vs4hhiZcW+YxkElKcvRSg4jkTtOw
+	 E6yHw9RxSV/Rw==
+Message-ID: <392642ad-3bac-48bc-9199-8c3923c588c2@kernel.org>
+Date: Mon, 19 Oct 2026 11:01:05 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/7] phy: qcom-mipi-csi2: fix -EEXIST probe failure on
- single power-domain SoCs
+Subject: Re: [PATCH 4/7] phy: qcom-mipi-csi2: Add sa8775p D-PHY support
 To: Anusha Arun Nandi <anusha.nandi@oss.qualcomm.com>, vkoul@kernel.org,
  kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
  neil.armstrong@linaro.org, mani@kernel.org
@@ -58,8 +57,8 @@ Cc: gjorgji.rosikopulos@oss.qualcomm.com,
  linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20261016235502.2274268-1-anusha.nandi@oss.qualcomm.com>
- <0L6D4EGEbw9SabH4L1sIcfqiZK6SmLBEjQEK5ljwkWxWQyXebQ9BNv71oBQmg61s3p8ja2Se4FlB5VtG5EdMXQ==@protonmail.internalid>
- <20261016235502.2274268-2-anusha.nandi@oss.qualcomm.com>
+ <EKfYfLCfqnEg_PLe_TsBkAGryJgP_tA140u-0ZYSL9q5kInrAtoRCiugYV3C2PDDvYjxaeejuYK3gqzAT4FMXQ==@protonmail.internalid>
+ <20261016235502.2274268-5-anusha.nandi@oss.qualcomm.com>
 From: Bryan O'Donoghue <bod@kernel.org>
 Content-Language: en-GB
 Autocrypt: addr=bod@kernel.org; keydata=
@@ -105,7 +104,7 @@ Autocrypt: addr=bod@kernel.org; keydata=
  LKSGEglMpiX07M1AotgvylN5C8fjbouoK+/RAMsXkk8jba6rPfuuXPaDjCyyKn6zSVHETnHW
  3AJbgVY50T8STpnxayBQvWbCvu+6NOEjXCbyaOJig+5l0zlGN9XHjdANXC5HnwmyaGRL9YDq
  Jh2nVXVJDincOdQRdKcJjYLqaOAoWrYWSDi1iZGspHBTDrnOvfMQzzHY
-In-Reply-To: <20261016235502.2274268-2-anusha.nandi@oss.qualcomm.com>
+In-Reply-To: <20261016235502.2274268-5-anusha.nandi@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,125 +122,60 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 17/10/2026 00:54, Anusha Arun Nandi wrote:
-> sa8775p, qcs8300 and sc7280 each list exactly one power-domain ("top")
-> on the CSI2 PHY node. For a device with a single power-domain phandle,
-> the generic platform-bus code (platform_probe() ->
-> dev_pm_domain_attach()) auto-attaches it via genpd_dev_pm_attach()
-> before the driver's own probe() runs. phy_qcom_mipi_csi2_probe() then
-> unconditionally calls devm_pm_domain_attach_list(), which fails with
-> -EEXIST because dev->pm_domain is already set, and the driver treats
-> that as fatal:
+> The timer-clock lookup in phy_qcom_mipi_csi2_probe() and the OPP
+> clkname passed to devm_pm_opp_set_clkname() were both hardcoded
+> string literals sized to x1e80100 ("timer"/"core"). Add
+> timer_clk_name/opp_clk_name to struct mipi_csi2phy_soc_cfg so each
+> SoC can declare its own clock-name strings; x1e80100's soc_cfg now
+> declares "timer"/"core" explicitly, with no behaviour change.
+> SA8775P reuses the same "timer"/"core" names as x1e80100 for this
+> pair of clocks.
+
+LoL I had that in the last design and review said "hard code it" happy 
+to agree with myself in the past, however this change should be 
+standalone and precede the Lemans work.
+
+> SA8775P's CSIPHY has a single power-domain, the Titan Top GDSC,
+> matching the legacy in-tree CAMSS driver's sa8775p_resources.pd_name
+> = "top" and the existing lemans.dtsi camss node. Like x1e80100's own
+> "top" domain, it is not OPP-scaled, only kept enabled.
 > 
->    qcom-mipi-csi2-phy ace6000.phy: error -EEXIST: Failed to attach
->    power-domain list
->    qcom-mipi-csi2-phy ace6000.phy: probe with driver qcom-mipi-csi2-phy
->    failed with error -17
-> 
-> x1e80100 is unaffected: it lists three power-domains, so the generic
-> code does not auto-attach any of them (auto-attach only applies to
-> single-power-domain devices); the driver's explicit attach is the
-> only one that runs.
-> 
-> For the single power-domain case, call dev_pm_domain_attach() instead
-> of devm_pm_domain_attach_list(): it returns early when dev->pm_domain
-> is already set, so csi2phy->pd_list is left NULL rather than built up
-> by hand. The three call sites that walk pd_list for genpd
-> performance-state scaling now guard against a NULL pd_list, which is
-> harmless since scaling is unused (scaled = false) on every SoC that has
-> a single "top" domain.
-
-Fix implies bug but, this patch really adds support for one power-domain 
-cases.
-
-I think the patch title should be something like "Add support for single 
-power-domain case"
-
-or if you believe it is a bugfix level change add
-
-Fixes:
-Cc: stable@vger.kernel.org
-
-My own preference is "Add support" since the driver hasn't been designed 
-to support single PD cases thus far but, OTOH you could make an argument 
-that that is in fact a design bug.
-
-> Signed-off-by: Anusha Arun Nandi <anusha.nandi@oss.qualcomm.com>
+> Signed-off-by: Anusha Arun Nandi<anusha.nandi@oss.qualcomm.com>
 > ---
->   .../phy/qualcomm/phy-qcom-mipi-csi2-core.c    | 24 +++++++++++++------
->   1 file changed, 17 insertions(+), 7 deletions(-)
+>   .../qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c    | 112 ++++++++++++++++++
+>   .../phy/qualcomm/phy-qcom-mipi-csi2-core.c    |   5 +-
+>   drivers/phy/qualcomm/phy-qcom-mipi-csi2.h     |   4 +
+>   3 files changed, 119 insertions(+), 2 deletions(-)
 > 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
-> index c0a4fa20eaf0..00285be9dd64 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
-> @@ -43,7 +43,7 @@ phy_qcom_mipi_csi2_set_clock_rates(struct mipi_csi2phy_device *csi2phy,
->   	}
-> 
->   	pstate = 0;
-> -	for (i = 0; i < csi2phy->pd_list->num_pds; i++) {
-> +	for (i = 0; csi2phy->pd_list && i < csi2phy->pd_list->num_pds; i++) {
->   		unsigned int perf;
-> 
->   		if (!csi2phy->soc_cfg->genpds[i].scaled)
-> @@ -174,7 +174,7 @@ static int phy_qcom_mipi_csi2_power_on(struct phy *phy)
->   unset_rate:
->   	dev_pm_opp_set_rate(csi2phy->dev, 0);
-> 
-> -	for (i = 0; i < csi2phy->pd_list->num_pds; i++) {
-> +	for (i = 0; csi2phy->pd_list && i < csi2phy->pd_list->num_pds; i++) {
->   		if (!csi2phy->soc_cfg->genpds[i].scaled)
->   			continue;
-> 
-> @@ -204,7 +204,7 @@ static int phy_qcom_mipi_csi2_power_off(struct phy *phy)
-> 
->   	dev_pm_opp_set_rate(csi2phy->dev, 0);
-> 
-> -	for (i = 0; i < csi2phy->pd_list->num_pds; i++) {
-> +	for (i = 0; csi2phy->pd_list && i < csi2phy->pd_list->num_pds; i++) {
->   		if (!csi2phy->soc_cfg->genpds[i].scaled)
->   			continue;
-> 
-> @@ -233,6 +233,19 @@ static int phy_qcom_mipi_csi2_attach_pm_domains(struct mipi_csi2phy_device *csi2
->   	const char **pd_names;
->   	int i;
-> 
-> +	/*
-> +	 * A device with a single power-domain entry in the devicetree is
-> +	 * already attached by the generic platform-bus code before probe()
-> +	 * runs (genpd_dev_pm_attach()), so calling devm_pm_domain_attach_list()
-> +	 * here would fail with -EEXIST. dev_pm_domain_attach() returns early
-> +	 * in that case (dev->pm_domain already set) instead of leaving
-> +	 * csi2phy->pd_list unset; this is fine since pd_list is only used for
-> +	 * performance-state scaling, which is unused ("scaled = false") on
-> +	 * every SoC that has a single "top" power-domain.
-> +	 */
+> diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
+> index 966d79c98f9b..85e89235f7c9 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
+> @@ -380,6 +380,118 @@ const struct mipi_csi2phy_soc_cfg mipi_csi2_dphy_4nm_x1e = {
+>   	.num_supplies = ARRAY_SIZE(x1e_supplies),
+>   	.clk_names = (const char **)x1e_clks,
+>   	.num_clk = ARRAY_SIZE(x1e_clks),
+> +	.timer_clk_name = "timer",
+> +	.opp_clk_name = "core",
+>   	.genpds = x1e_genpds,
+>   	.num_genpds = ARRAY_SIZE(x1e_genpds),
+>   };
 
-This is alot of comment - looks like LLM babble to me. I think it can be 
-dropped the code is pretty obvious, if num_genpds == 1 do this other 
-thing here.
+Yes but split it up - "remove hard coded timer and opp names" - actually 
+you want to make the OPP optional no ? In which case you'd expect to see 
+a patch to make OPPs optional - instead of folding that into a 
+functionality drop.
 
-> +	if (csi2phy->soc_cfg->num_genpds == 1)
-> +		return dev_pm_domain_attach(csi2phy->dev, 0);
-> +
->   	pd_names = devm_kzalloc(csi2phy->dev,
->   				sizeof(char *) * csi2phy->soc_cfg->num_genpds,
->   				GFP_KERNEL);
-> @@ -369,11 +382,8 @@ static int phy_qcom_mipi_csi2_probe(struct platform_device *pdev)
->   		return ret;
-> 
->   	ret = phy_qcom_mipi_csi2_attach_pm_domains(csi2phy);
-> -	if (ret < 0 || csi2phy->pd_list == NULL) {
-> -		if (ret == 0)
-> -			ret = -ENODEV;
-> +	if (ret < 0)
->   		return dev_err_probe(dev, ret, "Failed to attach power-domain list\n");
-> -	}
-> 
->   	ret = devm_pm_runtime_enable(dev);
->   	if (ret < 0)
-> --
-> 2.34.1
+Because say we want to revert or re-order the addition of Lemans in the 
+git log - we then have the problem of mixed functionality.
 
+Or say I want to cherry-pick a backport - I don't necessarily want to 
+include lots of SoC specific stuff that doesn't affect my part.
+
+=> More granular patches.
+
+---
+bod
 
 -- 
 linux-phy mailing list
