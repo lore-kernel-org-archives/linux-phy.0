@@ -4,54 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB766CCF2DB
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Oct 2026 10:44:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 323F7CCF2D6
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Oct 2026 12:01:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8o7PzmZ4DbXe+5gbUjLetgA8JEdMklHN1HszvO6bsyQ=; b=zK3sufBu1A/Y9L
-	utzAiS1FwQtJWOXv/2r8LE7uj1kYINhnR48OpI6Ajz65/YOBsFezzYXRPURuhj6AQOWNGTRKp48j+
-	88I1fFgN9efj/H6dS20iyDBxgyYx06WtPD2SOMBTHmEIShyhELJdF0xlH+lYW4VSFtj30twNtSH+O
-	sHO8XIZhLnfjoYwGzm+wYNwwSNsu3Hie9WoGz6+lsCqyKnThnnvwPqHllS3Xq/qYkZL6RRK3oFODR
-	Ytdtw247OU4Qfb+RSyPp0j2TPBHu3wDyFItsakJIEZ8xF41Q9HrC8NPtOMpM8bGhzOAkuiVvclD7d
-	e9wJxmiweijfPTg3fgIQ==;
+	List-Owner; bh=SEcRVjOZZH8AVnHvCMecWgUVzrXiqc799/6hgcmKFNM=; b=tXevZtkch45Nsp
+	5Jvi7rutdSk/IaNbFZXXMLSCJujbIrYcOBvvAQMUQZTsGDmIw5WD5qSv/TXFDYYj+3HAxOVbjRBFY
+	tk62mbkw2G1OEw/IYhcuJPPvEtDOcJ83cxeLYX8xrsOGc5BAaaS4RgFasuKzlYGBn/Toz0oBUMeyV
+	oLxD3Vvt+pHLJe09plSS70IhkD1P4yhqV/Rj+RXZW1y6jwaMzRykx4TSAUfd8CTT7Imsx9wfEdxl8
+	2XmvEvO/MSOMFyBdTxQ3Y0H6CocpmGKqNl+h3Mpa/1huWgR6QGeFR6v5VJOgAkm05xt2ADcwsYLaN
+	yBr3Zqzsu/bihgqKS8Gg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIkrJ-00000007ECy-1Bxj;
-	Mon, 19 Oct 2026 10:44:49 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xIm3t-00000007Kzu-1Z2P;
+	Mon, 19 Oct 2026 12:01:53 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIkrH-00000007ECi-2tC2
-	for linux-phy@lists.infradead.org;
-	Mon, 19 Oct 2026 10:44:47 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 12A4940F27;
-	Mon, 19 Oct 2026 10:44:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 713C31F000C4;
-	Mon, 19 Oct 2026 10:44:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792406687;
-	bh=kyk2wQ9JjK5OLB2gseKGH6q7NLcg48KyXPMNlxewy80=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=l9im3uNHlDky4HxJDCNK+kWm+OULnt+atS/HeDt+MiCFcK4xwsTTigN0CIn000Y+E
-	 9oMSHBJakoKop1MJ+yzKGQmqx4U/bMgc9jHlkx3hsHHaj+OblShkwVS48f5AVvSz25
-	 ye07osH3uD5pLaQK7jEc+lceM9heHJz/6moUbDJIytfKUnswE/+E0HTR+MPF1Mh5s6
-	 r8uxRuRyg/0ItHtxaY7mmQ2AR5B0AWOmJ7yrdj2Alius5e3ggpYgVBtc1S2V6DPk25
-	 RAKkPVibWA6j5ZHsEqOfGB1LTSKnbyKclG6HBn78gnFeB4MtONII27LvTrSegXSsQo
-	 M/AXuFmmCMcmQ==
-Message-ID: <sashiko-outbox-177008@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v2 6/6] arm64: dts: rockchip: rk356x: Add eDP controller
- and phy nodes
-To: "Damon Ding" <damon.ding@rock-chips.com>
-Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-phy@lists.infradead.org, robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
-In-Reply-To: <20261019102824.3157044-7-damon.ding@rock-chips.com>
-References: <20261019102824.3157044-1-damon.ding@rock-chips.com>
- <20261019102824.3157044-7-damon.ding@rock-chips.com>
-Date: Mon, 19 Oct 2026 10:44:45 +0000
+	id 1xIm3m-00000007Kxz-3ErP;
+	Mon, 19 Oct 2026 12:01:51 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 25FCB200011;
+	Mon, 19 Oct 2026 14:01:42 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com [134.27.226.22])
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 0C5AD200007;
+	Mon, 19 Oct 2026 14:01:42 +0200 (CEST)
+Received: from lsv051416.swis.nl-cdc01.nxp.com (lsv051416.swis.nl-cdc01.nxp.com [10.168.48.122])
+	by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id B4878202B7;
+	Mon, 19 Oct 2026 14:01:41 +0200 (CEST)
+Date: Mon, 19 Oct 2026 14:01:41 +0200
+From: Jan Petrous <jan.petrous@oss.nxp.com>
+To: Frank Li <Frank.li@oss.nxp.com>
+Cc: Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>,
+	NXP S32 Linux Team <s32@nxp.com>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Ghennadi Procopciuc <ghennadi.procopciuc@nxp.com>,
+	Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	Bogdan Hamciuc <bogdan.hamciuc@nxp.com>,
+	Ionut Vicovan <ionut.vicovan@nxp.com>, Andrew Lunn <andrew@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Russell King <linux@armlinux.org.uk>,
+	Clark Wang <xiaoning.wang@nxp.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Maxime Chevallier <maxime.chevallier@bootlin.com>,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Chester Lin <chester62515@gmail.com>,
+	Matthias Brugger <mbrugger@suse.com>,
+	Ghennadi Procopciuc <ghennadi.procopciuc@oss.nxp.com>,
+	Frank Li <Frank.Li@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>,
+	Richard Cochran <richardcochran@gmail.com>,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	netdev@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+	imx@lists.linux.dev, linux-pci@vger.kernel.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	Vincent Guittot <vincent.guittot@linaro.org>
+Subject: Re: [PATCH RFC v3 03/12] dt-bindings: PCI: nxp,s32g-pcie: Fix SerDes
+ PHY phandle in example
+Message-ID: <atYGpZpI1ecM10kI@lsv051416.swis.nl-cdc01.nxp.com>
+References: <20260919-s32g_serdes-v3-0-9d68868c1e89@oss.nxp.com>
+ <20260919-s32g_serdes-v3-3-9d68868c1e89@oss.nxp.com>
+ <as0qORxP0Roh9ktO@SMW015318>
+ <as5CIYxKJTra4hqM@lsv051416.swis.nl-cdc01.nxp.com>
+ <as-MdloKd-7oJsUU@SMW015318>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <as-MdloKd-7oJsUU@SMW015318>
+X-Virus-Scanned: ClamAV using ClamSMTP
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261019_050147_090786_45C0535F 
+X-CRM114-Status: GOOD (  32.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,106 +103,87 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIHBoeTogcm9ja2NoaXA6
-IG1pc3Npbmcgc2V0X2xhbmVzIGhhbmRsaW5nIGluIHJvY2tjaGlwX2VkcF9waHlfY29uZmlndXJl
-KCkKLS0KCmNvbW1pdCAzMGY4OTk5ZDNlZWIyMDA3ZGM4NDE5NzllN2E0ODQxMDA0M2IwMDJiCkF1
-dGhvcjogRGFtb24gRGluZyA8ZGFtb24uZGluZ0Byb2NrLWNoaXBzLmNvbT4KCmFybTY0OiBkdHM6
-IHJvY2tjaGlwOiByazM1Nng6IEFkZCBlRFAgY29udHJvbGxlciBhbmQgcGh5IG5vZGVzCgpUaGlz
-IGNvbW1pdCBhZGRzIHRoZSBlRFAgUEhZIEdSRiAod2l0aCB0aGUgZURQIFBIWSBjaGlsZCBub2Rl
-KSBhbmQgdGhlIGVEUApjb250cm9sbGVyIGRldmljZSB0cmVlIG5vZGVzIGZvciB0aGUgUkszNTY4
-IGFuZCBSSzM1NjYgU29Dcy4KCj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9j
-a2NoaXAvcmszNTZ4LWJhc2UuZHRzaSBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcmsz
-NTZ4LWJhc2UuZHRzaQo+IGluZGV4IGE1ODMyODk1YmQzOTIuLjNiNjBlNDM1NWFkOGMgMTAwNjQ0
-Cj4gLS0tIGEvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazM1NngtYmFzZS5kdHNpCj4g
-KysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazM1NngtYmFzZS5kdHNpCj4gQEAg
-LTQwMyw2ICs0MDMsMjAgQEAgdXNiMnBoeTFfZ3JmOiBzeXNjb25AZmRjYTgwMDAgewo+ICAJCXJl
-ZyA9IDwweDAgMHhmZGNhODAwMCAweDAgMHg4MDAwPjsKPiAgCX07Cj4gIAo+ICsJZWRwX3BoeV9n
-cmY6IHN5c2NvbkBmZGNiMDAwMCB7Cj4gKwkJY29tcGF0aWJsZSA9ICJyb2NrY2hpcCxyazM1Njgt
-ZWRwLXBoeS1ncmYiLCAic3lzY29uIiwgInNpbXBsZS1tZmQiOwo+ICsJCXJlZyA9IDwweDAgMHhm
-ZGNiMDAwMCAweDAgMHgxMDA+Owo+ICsJCWNsb2NrcyA9IDwmY3J1IFBDTEtfRURQUEhZX0dSRj47
-Cj4gKwo+ICsJCWVkcF9waHk6IGVkcC1waHkgewo+ICsJCQljb21wYXRpYmxlID0gInJvY2tjaGlw
-LHJrMzU2OC1lZHAtcGh5IjsKPiArCQkJY2xvY2tzID0gPCZwbXVjcnUgWElOX09TQzBfRURQUEhZ
-X0c+Owo+ICsJCQljbG9jay1uYW1lcyA9ICJyZWZjbGsiOwo+ICsJCQkjcGh5LWNlbGxzID0gPDA+
-Owo+ICsJCQlzdGF0dXMgPSAiZGlzYWJsZWQiOwo+ICsJCX07Cj4gKwl9Owo+ICsKPiAgCXBtdWNy
-dTogY2xvY2stY29udHJvbGxlckBmZGQwMDAwMCB7Cj4gIAkJY29tcGF0aWJsZSA9ICJyb2NrY2hp
-cCxyazM1NjgtcG11Y3J1IjsKPiAgCQlyZWcgPSA8MHgwIDB4ZmRkMDAwMDAgMHgwIDB4MTAwMD47
-Cj4gQEAgLTg3OSw2ICs4OTMsMzMgQEAgaGRtaV9vdXQ6IHBvcnRAMSB7Cj4gIAkJfTsKPiAgCX07
-Cj4gIAo+ICsJZWRwOiBlZHBAZmUwYzAwMDAgewo+ICsJCWNvbXBhdGlibGUgPSAicm9ja2NoaXAs
-cmszNTY4LWVkcCI7Cj4gKwkJcmVnID0gPDB4MCAweGZlMGMwMDAwIDB4MCAweDEwMDAwPjsKPiAr
-CQljbG9ja3MgPSA8JnBtdWNydSBYSU5fT1NDMF9FRFBQSFlfRz4sIDwmY3J1IFBDTEtfRURQX0NU
-Ukw+LCA8JmNydSBIQ0xLX1ZPPjsKPiArCQljbG9jay1uYW1lcyA9ICJkcCIsICJwY2xrIiwgImhj
-bGsiOwo+ICsJCWludGVycnVwdHMgPSA8R0lDX1NQSSAxOCBJUlFfVFlQRV9MRVZFTF9ISUdIPjsK
-PiArCQlwaHlzID0gPCZlZHBfcGh5PjsKPiArCQlwaHktbmFtZXMgPSAiZHAiOwoKW1NldmVyaXR5
-OiBIaWdoXQpDYW4gdGhlIEFuYWxvZ2l4IGVEUCBjb250cm9sbGVyIGNvbXBsZXRlIGxpbmsgdHJh
-aW5pbmcgd2hlbiB3aXJlZCB0bwplZHBfcGh5ICgicm9ja2NoaXAscmszNTY4LWVkcC1waHkiKSB3
-aXRob3V0IGhhbmRsaW5nIG9wdHMtPmRwLnNldF9sYW5lcyBpbgpyb2NrY2hpcF9lZHBfcGh5X2Nv
-bmZpZ3VyZSgpPwoKV2hlbiBhbmFsb2dpeF9kcF9saW5rX3N0YXJ0KCkgcnVucyBpbgpkcml2ZXJz
-L2dwdS9kcm0vYnJpZGdlL2FuYWxvZ2l4L2FuYWxvZ2l4X2RwX2NvcmUuYywgaXQgY2FsbHMKYW5h
-bG9naXhfZHBfc2V0X2xpbmtfYmFuZHdpZHRoKCksIGFuYWxvZ2l4X2RwX3NldF9sYW5lX2NvdW50
-KCksIGFuZAphbmFsb2dpeF9kcF9zZXRfbGFuZV9saW5rX3RyYWluaW5nKCkgaW4KZHJpdmVycy9n
-cHUvZHJtL2JyaWRnZS9hbmFsb2dpeC9hbmFsb2dpeF9kcF9yZWcuYy4gRWFjaCBvZiB0aGVzZSBm
-dW5jdGlvbnMKemVyby1pbml0aWFsaXplcyBhIGxvY2FsIHVuaW9uIHBoeV9jb25maWd1cmVfb3B0
-cyBwaHlfY2ZnID0gezB9IGFuZCBzZXRzCm9ubHkgc2V0X3JhdGUsIHNldF9sYW5lcywgb3Igc2V0
-X3ZvbHRhZ2VzIGluZGl2aWR1YWxseToKCmRyaXZlcnMvZ3B1L2RybS9icmlkZ2UvYW5hbG9naXgv
-YW5hbG9naXhfZHBfcmVnLmM6CmFuYWxvZ2l4X2RwX3NldF9sYW5lX2xpbmtfdHJhaW5pbmcoKSB7
-CglpZiAoZHAtPnBoeSkgewoJCXVuaW9uIHBoeV9jb25maWd1cmVfb3B0cyBwaHlfY2ZnID0gezB9
-OwoKCQlmb3IgKGxhbmUgPSAwOyBsYW5lIDwgZHAtPmxpbmtfdHJhaW4ubGFuZV9jb3VudDsgbGFu
-ZSsrKSB7CgkJCS4uLgoJCQlwaHlfY2ZnLmRwLnZvbHRhZ2VbbGFuZV0gPSB2czsKCQkJcGh5X2Nm
-Zy5kcC5wcmVbbGFuZV0gPSBwZTsKCQl9CgoJCXBoeV9jZmcuZHAuc2V0X3ZvbHRhZ2VzID0gdHJ1
-ZTsKCQlyZXQgPSBwaHlfY29uZmlndXJlKGRwLT5waHksICZwaHlfY2ZnKTsKCkhvd2V2ZXIsIGlu
-IGRyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1uYW5lbmctZWRwLmMsCnJvY2tjaGlw
-X2VkcF9waHlfY29uZmlndXJlKCkgb25seSBjaGVja3Mgb3B0cy0+ZHAuc2V0X3JhdGUgYW5kCm9w
-dHMtPmRwLnNldF92b2x0YWdlczoKCmRyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1u
-YW5lbmctZWRwLmM6CnJvY2tjaGlwX2VkcF9waHlfY29uZmlndXJlKCkgewoJaWYgKG9wdHMtPmRw
-LnNldF9yYXRlKSB7CgkJcmV0ID0gcm9ja2NoaXBfZWRwX3BoeV9zZXRfcmF0ZShlZHBwaHksICZv
-cHRzLT5kcCk7CgkJaWYgKHJldCkgewoJCQlkZXZfZXJyKGVkcHBoeS0+ZGV2LCAiRmFpbGVkIHRv
-IHNldCByYXRlXG4iKTsKCQkJcmV0dXJuIHJldDsKCQl9Cgl9CgoJaWYgKG9wdHMtPmRwLnNldF92
-b2x0YWdlcykgewoJCXJldCA9IHJvY2tjaGlwX2VkcF9waHlfc2V0X3ZvbHRhZ2VzKGVkcHBoeSwg
-Jm9wdHMtPmRwKTsKCQlpZiAocmV0KSB7CgkJCWRldl9lcnIoZWRwcGh5LT5kZXYsICJGYWlsZWQg
-dG8gc2V0IHZvbHRhZ2VzXG4iKTsKCQkJcmV0dXJuIHJldDsKCQl9Cgl9CgpCZWNhdXNlIGVhY2gg
-cGh5X2NvbmZpZ3VyZSgpIGNhbGwgcGFzc2VzIGEgZnJlc2ggc3RydWN0IHdpdGggb25seSBvbmUK
-YWN0aW9uIGZsYWcgc2V0OgoKMS4gSW4gYW5hbG9naXhfZHBfc2V0X2xpbmtfYmFuZHdpZHRoKCks
-IHBoeV9jZmcuZHAuc2V0X3JhdGUgaXMgdHJ1ZSB3aGlsZQpwaHlfY2ZnLmRwLmxhbmVzIGlzIDAu
-IHJvY2tjaGlwX2VkcF9waHlfdmVyaWZ5X2NvbmZpZygpIHNraXBzIHRoZSBsYW5lcwpjaGVjayBi
-ZWNhdXNlIGRwLT5zZXRfbGFuZXMgaXMgZmFsc2UsIGFuZCByb2NrY2hpcF9lZHBfcGh5X3NldF9y
-YXRlKCkgdGhlbgpldmFsdWF0ZXMgfkdFTk1BU0soZHAtPmxhbmVzIC0gMSwgMCkgd2l0aCBkcC0+
-bGFuZXMgPT0gMCwgdW5kZXJmbG93aW5nCmRwLT5sYW5lcyAtIDEgd2hlbiBwcm9ncmFtbWluZyBF
-RFBfUEhZX1RYX1BEX01BU0sgYW5kIEVEUF9QSFlfVFhfSURMRV9NQVNLOgoKZHJpdmVycy9waHkv
-cm9ja2NoaXAvcGh5LXJvY2tjaGlwLW5hbmVuZy1lZHAuYzoKcm9ja2NoaXBfZWRwX3BoeV9zZXRf
-cmF0ZSgpIHsKCXJlZ21hcF93cml0ZShlZHBwaHktPmdyZiwgRURQX1BIWV9HUkZfQ09OMCwKCQkg
-ICAgIEZJRUxEX1BSRVBfV00xNihFRFBfUEhZX1BEX1BMTF9NQVNLLCAwKSk7CglyZWdtYXBfd3Jp
-dGUoZWRwcGh5LT5ncmYsIEVEUF9QSFlfR1JGX0NPTjAsCgkJICAgICBGSUVMRF9QUkVQX1dNMTYo
-RURQX1BIWV9UWF9QRF9NQVNLLCB+R0VOTUFTSyhkcC0+bGFuZXMgLSAxLCAwKSkpOwoJLi4uCgly
-ZWdtYXBfd3JpdGUoZWRwcGh5LT5ncmYsIEVEUF9QSFlfR1JGX0NPTjAsCgkJICAgICBGSUVMRF9Q
-UkVQX1dNMTYoRURQX1BIWV9UWF9JRExFX01BU0ssIH5HRU5NQVNLKGRwLT5sYW5lcyAtIDEsIDAp
-KSk7CgoyLiBJbiBhbmFsb2dpeF9kcF9zZXRfbGFuZV9jb3VudCgpLCBwaHlfY2ZnLmRwLnNldF9s
-YW5lcyBpcyB0cnVlIGFuZApwaHlfY2ZnLmRwLmxhbmVzIGhvbGRzIHRoZSBsYW5lIGNvdW50LCBi
-dXQgcm9ja2NoaXBfZWRwX3BoeV9jb25maWd1cmUoKQppZ25vcmVzIG9wdHMtPmRwLnNldF9sYW5l
-cywgbmVpdGhlciBzYXZpbmcgdGhlIGxhbmUgY291bnQgbm9yIHVwZGF0aW5nIHRoZQpsYW5lIHBv
-d2VyIGFuZCBpZGxlIG1hc2tzLgoKMy4gSW4gYW5hbG9naXhfZHBfc2V0X2xhbmVfbGlua190cmFp
-bmluZygpLCBwaHlfY2ZnLmRwLnNldF92b2x0YWdlcyBpcyB0cnVlCndoaWxlIHBoeV9jZmcuZHAu
-bGFuZXMgaXMgMCwgc28gcm9ja2NoaXBfZWRwX3BoeV9zZXRfdm9sdGFnZXMoKSBsb29wcyBmcm9t
-CjAgdG8gZHAtPmxhbmVzICgwKSBhbmQgbmV2ZXIgd3JpdGVzIHRoZSB2b2x0YWdlIHN3aW5nIG9y
-IHByZS1lbXBoYXNpcwpzZXR0aW5nczoKCmRyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hp
-cC1uYW5lbmctZWRwLmM6CnJvY2tjaGlwX2VkcF9waHlfc2V0X3ZvbHRhZ2VzKCkgewoJdTggbGFu
-ZTsKCglmb3IgKGxhbmUgPSAwOyBsYW5lIDwgZHAtPmxhbmVzOyBsYW5lKyspCgkJcm9ja2NoaXBf
-ZWRwX3BoeV9zZXRfdm9sdGFnZShlZHBwaHksIGRwLCBsYW5lKTsKCglyZXR1cm4gMDsKfQoKU2hv
-dWxkIHRoZSBOYW5lbmcgZURQIFBIWSBkcml2ZXIgaGFuZGxlIG9wdHMtPmRwLnNldF9sYW5lcyBh
-bmQgY2FjaGUgdGhlCmNvbmZpZ3VyZWQgbGFuZSBjb3VudCBpbiBzdHJ1Y3Qgcm9ja2NoaXBfZWRw
-X3BoeSBzbyB0aGF0IHNlcGFyYXRlCnNldF9yYXRlLCBzZXRfbGFuZXMsIGFuZCBzZXRfdm9sdGFn
-ZXMgY2FsbHMgZnJvbSB0aGUgQW5hbG9naXggRFAgY29udHJvbGxlcgp3b3JrIHByb3Blcmx5PwoK
-PiArCQlwb3dlci1kb21haW5zID0gPCZwb3dlciBSSzM1NjhfUERfVk8+Owo+ICsJCXJlc2V0cyA9
-IDwmY3J1IFNSU1RfRURQXzI0TT4sIDwmY3J1IFNSU1RfUF9FRFBfQ1RSTD47Cj4gKwkJcmVzZXQt
-bmFtZXMgPSAiZHAiLCAiYXBiIjsKPiArCQlzdGF0dXMgPSAiZGlzYWJsZWQiOwpbIC4uLiBdCgot
-LSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIw
-MjYxMDE5MTAyODI0LjMxNTcwNDQtMS1kYW1vbi5kaW5nQHJvY2stY2hpcHMuY29tP3BhcnQ9NgoK
-LS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcK
-aHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On Wed, Oct 14, 2026 at 09:06:46AM -0500, Frank Li wrote:
+> On Tue, Oct 13, 2026 at 04:37:21PM +0200, Jan Petrous wrote:
+> > On Mon, Oct 12, 2026 at 01:43:05PM -0500, Frank Li wrote:
+> > > On Sat, Sep 19, 2026 at 08:54:31AM +0200, Jan Petrous via B4 Relay wrote:
+> > > > [You don't often get email from devnull+jan.petrous.oss.nxp.com@kernel.org. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]
+> > > >
+> > > > From: "Jan Petrous (OSS)" <jan.petrous@oss.nxp.com>
+> > > >
+> > > > The example references the SerDes PHY as
+> > > >
+> > > >   phys = <&serdes0 PHY_TYPE_PCIE 0 0>;
+> > > >
+> > > > i.e. the SerDes node itself with three PHY cells. That does not match
+> > > > the SerDes binding: the per-lane child node is the generic PHY
+> > > > provider and carries '#phy-cells = <0>', while the SerDes node itself
+> > > > has no '#phy-cells' at all.
+> > > >
+> > > > Point the example at the PCIe lane child instead, which is also what
+> > > > the S32G3 board device trees use. The dt-bindings/phy/phy.h include is
+> > > > dropped along with the now-unused PHY_TYPE_PCIE constant.
+> > > >
+> > > > The schema itself is unchanged; 'phys: maxItems: 1' already describes
+> > > > the corrected form.
+> > > >
+> > > > Signed-off-by: Jan Petrous (OSS) <jan.petrous@oss.nxp.com>
+> > > > ---
+> > > >  Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml | 3 +--
+> > > >  1 file changed, 1 insertion(+), 2 deletions(-)
+> > > >
+> > > > diff --git a/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml b/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml
+> > > > index 66a050028278..29323e50bd8b 100644
+> > > > --- a/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml
+> > > > +++ b/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml
+> > > > @@ -82,7 +82,6 @@ unevaluatedProperties: false
+> > > >  examples:
+> > > >    - |
+> > > >      #include <dt-bindings/interrupt-controller/arm-gic.h>
+> > > > -    #include <dt-bindings/phy/phy.h>
+> > > >
+> > > >      bus {
+> > > >          #address-cells = <2>;
+> > > > @@ -124,7 +123,7 @@ examples:
+> > > >                  ranges;
+> > > >
+> > > >                  device_type = "pci";
+> > > > -                phys = <&serdes0 PHY_TYPE_PCIE 0 0>;
+> > > > +                phys = <&serdes0_pcie0>;
+> > >
+> > > I don't think it fix somethings. The "serdes0" just a label, point to
+> > > provider, which is not neccsary that "#phy-cells" is 0.
+> > >
+> > > Examples just show need how many phys and don't care about phy provider's
+> > > arguments
+> > >
+> >
+> > The example validates either way, agreed. The three cells are the
+> > '#phy-cells = <3>' of the downstream nxp,s32cc-serdes binding, which
+> > was never posted upstream; patch 1 is the only SerDes binding for S32G
+> > and has no three-cell provider. I would rather have the example match
+> > it.
+> >
+> > The form depends on the outcome of your patch 1 comment, so I will
+> > keep this patch in sync with that. If you prefer the phys line
+> > untouched, I can drop it and keep only the ranges fix v4 adds here.
+> 
+> This patch is not important. suggest drop it.
+>
+
+Dropped. The PCIe nodes in the DTS patch carry the 64-bit ranges on
+their own, so nothing else depends on it.
+
+BR.
+/Jan
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
