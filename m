@@ -4,31 +4,31 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3C42CCF2D6
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Oct 2026 10:28:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60BF5CCF2E3
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Oct 2026 10:28:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g9PcvVtbSDeEMISpAnVRBfovYIVLujz8NTtzOsiQ1j0=; b=J4uvNbqWMyaHPs
-	u2o+CCG98s9+Sp9O9TR/lk+921qJa4hNY7QXPGmAMuDLEK+JWryKxTfwDYlRy+6FM4NHELo+mcr83
-	VVLefiXvld1w6OsAbqR9MQoWn7D2MsugBKnVJ2SWzYiCcQvXLdb4tVVw1zkhmwjMDGKkvKQH40cVH
-	PfmJV5LeZP3cTgO+B2y/3mziTdGLUV/mljpUa3o20ZAVjzKIZz2c+nLajf8fshe2RnICDDLMJ0Vmj
-	kgLk8qKrXe8XnVXyz/JKLSS31H9YO4peADOhh3T0Gsa5GxTIAUlR9yF1KZ/fX4C+JNzfpvmT9TeUl
-	gGPxJSEbpIy031QF3AvA==;
+	List-Owner; bh=ccO9kmXjFG0FThjj090MJfFL8+nimrTZBJMry2fz3XQ=; b=Sj2Sgg7Dmbzabf
+	BzwApU6md182RctQJiuNPCpbDMyN+HVNbxJhZC6vCBSk+yZRkGbi6xJb6RBx9V1V49TLgnVWm60sS
+	+7Jp78aAGVYBXQoX3+RA3Yb18rfzCf7yE2a9BY5CIGIdP3ub6Wq2S8b9zpXpRo5j8LHhiiF004DVW
+	mY2I2UgU4pEw/uRZpVg+Me/O2QRf03Zq4tTZ7dUYowAWiFaYL5ntzCSP0fKKrkg7tt2RuEIKBMsZe
+	zB8TbqrtTHTPVY9TK/Y17nbuShpx/2Xa9YMOj2PwRnEtlzfLs0sHkc9ndf3b8gXnrzCAH/n7cjB6t
+	UXcO+2cdPAer+e5yncHw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIkbr-00000007Beh-4BC8;
-	Mon, 19 Oct 2026 10:28:52 +0000
-Received: from mail-m10239.netease.com ([154.81.10.239])
+	id 1xIkbt-00000007Bi2-3RGu;
+	Mon, 19 Oct 2026 10:28:53 +0000
+Received: from mail-m10313119186.xmail.ntesmail.com ([103.131.191.86])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIkbo-00000007Bcu-2Ucl;
-	Mon, 19 Oct 2026 10:28:50 +0000
+	id 1xIkbr-00000007Bcz-08Zo;
+	Mon, 19 Oct 2026 10:28:52 +0000
 Received: from zyb-HP-ProDesk-680-G2-MT.. (unknown [61.154.14.86])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 518d3dd93;
-	Mon, 19 Oct 2026 18:28:44 +0800 (GMT+08:00)
+	by smtp.qiye.163.com (Hmail) with ESMTP id 518d3dd9d;
+	Mon, 19 Oct 2026 18:28:45 +0800 (GMT+08:00)
 From: Damon Ding <damon.ding@rock-chips.com>
 To: Sandy Huang <hjc@rock-chips.com>,
 	Heiko Stuebner <heiko@sntech.de>,
@@ -59,26 +59,27 @@ Cc: Neil Armstrong <neil.armstrong@linaro.org>,
 	linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	Damon Ding <damon.ding@rock-chips.com>
-Subject: [PATCH v2 2/6] dt-bindings: phy: Add rockchip,rk3568-edp-phy
-Date: Mon, 19 Oct 2026 18:28:20 +0800
-Message-Id: <20261019102824.3157044-3-damon.ding@rock-chips.com>
+Subject: [PATCH v2 3/6] drm/bridge: analogix_dp: Add support for RK3568
+Date: Mon, 19 Oct 2026 18:28:21 +0800
+Message-Id: <20261019102824.3157044-4-damon.ding@rock-chips.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20261019102824.3157044-1-damon.ding@rock-chips.com>
 References: <20261019102824.3157044-1-damon.ding@rock-chips.com>
 MIME-Version: 1.0
-X-HM-Tid: 0aa153b4dcab03a8kunme348c01b2f6c23
+X-HM-Tid: 0aa153b4e18c03a8kunme348c01b2f6c34
 X-HM-MType: 1
 X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVkaHxgYVkNIThlMThpPHUxJSVYVFA
+	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVkaSEJOVhgZGE0eSBlNSktMH1YVFA
 	kWGhdVEwETFhoSFyQUDg9ZV1kYEgtZQVlNSlVKTk9VSk9VQ01ZV1kWGg8SFR0UWUFZT0tIVUpLSE
 	pKQk1VSktLVUpCWQY+
 DKIM-Signature: a=rsa-sha256;
-	b=OsrTuEvGRar69oVJvDEGrHyGHJx0cRXhFo3RZDydmmLlOhxprf5M5JS8BIV8sxhtA+Ov7BB80zmj0ic9xAoXpXEKyJpJOaNH81zVu7Azg0KnZ4E7a881tK/1ZJkIGllwUWYzwpuayoG/5BmHLRxLVDSiI58B6NcqJppU17oXVyM=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=V6YTkuc+JQ/Q5NgJoM+Ztyfr/5wVw30o5S+KA6zRLSw=;
+	b=d+VPOf6W6mvTgDPcVFq/fttqL/HWCuxlB1VBSPWI4LiJAjkK2STu5KXpqrHPA6IE7G+RWvBz+VogodsnKp33IwEnh6TEf+510kDqzlUnBPsn3bBsqJ6ljPCPM2vjB5BeqZgGNHlf/0WZ0qFAhINXdeP166ocTHfcGTJbs2FDdCo=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=tCtH0nSoUz9rfFDR40EGktb2UZ4joiDlZGZt7iSx0Yo=;
 	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261019_032849_160110_B51F5D94 
-X-CRM114-Status: GOOD (  12.36  )
+X-CRM114-CacheID: sfid-20261019_032851_411767_C086E420 
+X-CRM114-Status: UNSURE (   8.47  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,124 +96,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document the eDP transmitter PHY with NaNeng IP block found on the
-RK3568 SoC.  The PHY is controlled through the eDP PHY GRF registers,
-so its node is modeled as a child of the eDP PHY GRF syscon.  Also
-add the "rockchip,rk3568-edp-phy-grf" compatible and the "edp-phy"
-child node reference to the Rockchip GRF schema.
+The RK3568 SoC integrates an eDP transmitter based on the Analogix
+DisplayPort core.  Like RK3288 and RK3399, its main link consists of
+4 physical lanes running at 1.62/2.7 Gbps per lane.
+
+Add a new RK3568_EDP device type and let it share the link rate and
+lane count limits of the RK3288/RK3399 variants.
 
 Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
 ---
- .../bindings/phy/rockchip,rk3568-edp-phy.yaml | 59 +++++++++++++++++++
- .../devicetree/bindings/soc/rockchip/grf.yaml | 15 +++++
- 2 files changed, 74 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3568-edp-phy.yaml
+ drivers/gpu/drm/bridge/analogix/analogix_dp_core.c | 1 +
+ include/drm/bridge/analogix_dp.h                   | 2 ++
+ 2 files changed, 3 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/rockchip,rk3568-edp-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,rk3568-edp-phy.yaml
-new file mode 100644
-index 000000000000..afe7bc3d839e
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/rockchip,rk3568-edp-phy.yaml
-@@ -0,0 +1,59 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/rockchip,rk3568-edp-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Rockchip eDP Transmitter PHY with NaNeng IP block
-+
-+maintainers:
-+  - Damon Ding <damon.ding@rock-chips.com>
-+  - Heiko Stuebner <heiko@sntech.de>
-+
-+description:
-+  On the RK3568 SoC the eDP PHY is controlled through the eDP PHY GRF
-+  registers, therefore the PHY node is expected to be a child of the
-+  eDP PHY GRF syscon node.
-+
-+properties:
-+  compatible:
-+    const: rockchip,rk3568-edp-phy
-+
-+  clocks:
-+    maxItems: 1
-+
-+  clock-names:
-+    const: refclk
-+
-+  "#phy-cells":
-+    const: 0
-+
-+required:
-+  - compatible
-+  - clocks
-+  - clock-names
-+  - "#phy-cells"
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/rk3568-cru.h>
-+
-+    soc {
-+      #address-cells = <2>;
-+      #size-cells = <2>;
-+
-+      edp_phy_grf: syscon@fdcb0000 {
-+        compatible = "rockchip,rk3568-edp-phy-grf", "syscon", "simple-mfd";
-+        reg = <0x0 0xfdcb0000 0x0 0x100>;
-+        clocks = <&cru PCLK_EDPPHY_GRF>;
-+
-+        edp_phy: edp-phy {
-+          compatible = "rockchip,rk3568-edp-phy";
-+          clocks = <&pmucru XIN_OSC0_EDPPHY_G>;
-+          clock-names = "refclk";
-+          #phy-cells = <0>;
-+        };
-+      };
-+    };
-diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-index 7bcb4e2f47ec..8d4ced0145b8 100644
---- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-+++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-@@ -93,6 +93,7 @@ properties:
-               - rockchip,rk3399-grf
-               - rockchip,rk3399-pmugrf
-               - rockchip,rk3562-pmu-grf
-+              - rockchip,rk3568-edp-phy-grf
-               - rockchip,rk3568-grf
-               - rockchip,rk3568-pmugrf
-               - rockchip,rk3576-ioc-grf
-@@ -156,6 +157,19 @@ allOf:
-           $ref: /schemas/phy/rockchip,rk3288-dp-phy.yaml#
-           unevaluatedProperties: false
- 
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            const: rockchip,rk3568-edp-phy-grf
-+
-+    then:
-+      properties:
-+        edp-phy:
-+          type: object
-+          $ref: /schemas/phy/rockchip,rk3568-edp-phy.yaml#
-+          unevaluatedProperties: false
-+
-   - if:
-       properties:
-         compatible:
-@@ -309,6 +323,7 @@ allOf:
-         compatible:
-           contains:
-             enum:
-+              - rockchip,rk3568-edp-phy-grf
-               - rockchip,rk3576-dcphy-grf
-               - rockchip,rk3576-vo1-grf
-               - rockchip,rk3588-vo-grf
+diff --git a/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c b/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
+index 6df6963740d2..8bb4c48aa3b4 100644
+--- a/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
++++ b/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
+@@ -1319,6 +1319,7 @@ static int analogix_dp_dt_parse_pdata(struct analogix_dp_device *dp)
+ 	switch (dp->plat_data->dev_type) {
+ 	case RK3288_DP:
+ 	case RK3399_EDP:
++	case RK3568_EDP:
+ 		/*
+ 		 * Like Rk3288 DisplayPort TRM indicate that "Main link
+ 		 * containing 4 physical lanes of 2.7/1.62 Gbps/lane".
+diff --git a/include/drm/bridge/analogix_dp.h b/include/drm/bridge/analogix_dp.h
+index 6033137b651e..e05ff4bd689c 100644
+--- a/include/drm/bridge/analogix_dp.h
++++ b/include/drm/bridge/analogix_dp.h
+@@ -16,6 +16,7 @@ enum analogix_dp_devtype {
+ 	EXYNOS_DP,
+ 	RK3288_DP,
+ 	RK3399_EDP,
++	RK3568_EDP,
+ 	RK3576_EDP,
+ 	RK3588_EDP,
+ };
+@@ -25,6 +26,7 @@ static inline bool analogix_dp_is_rockchip(enum analogix_dp_devtype type)
+ 	switch (type) {
+ 	case RK3288_DP:
+ 	case RK3399_EDP:
++	case RK3568_EDP:
+ 	case RK3576_EDP:
+ 	case RK3588_EDP:
+ 		return true;
 -- 
 2.34.1
 
