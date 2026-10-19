@@ -4,107 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9278BCCF2D6
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Oct 2026 10:01:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A917ECCF2E0
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Oct 2026 10:28:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N6mNljrV3Pxm/dV/0+c59oKIiBcU6Ts7An86XKRUPh0=; b=K+l7qjlLvEM+M2
-	9IFKpRbtITZb3OS3lSqlvHrcCrTSL5q0EThpS4NMD+SmrJXIUWyS9dCS0gSTajHuEnYZdlwIuVo+M
-	4Xn2DDfUxmuS2ir9lV5qr7A45wd6eVQpBJHN4sJb7NJXx8bTuhZeM0BYFrMTBhr4/ZqsOJ0Pezprp
-	9KyRIuBoagbaFBS2bnjOBgzjMV+T3VjvNdr9NEXOgcF4ZDfaQscjADk1TLTrkO7CFcIDG4ovbSOlI
-	vHQPv0idpCzea+MctGfzTTXA1G+T6KDkr4DIv4y52KSf43ltkcBnUHs6u7evKHhwCm1h6a8bneCDl
-	NLSnjzG6aS3lr6fe+7Rw==;
+	List-Owner; bh=c0TjacMsTxMsNeXH79DTH6r+1jY4SN/bAIdeS3i/tv8=; b=UIGznZcU5GRW/d
+	R3bNkRk2uRGvPSPTE8uUSr7qstbytpQyLVtZv5qYnLWwdLEycELZYLGuhe1hCd0tY2NqNscTOAFEL
+	1WqXHuCHgHrrxAv5hKnP6F9H8BSU2T/QrTCqQT8Qj/lhqvRcJEawmHChpn5/BxTXVlyiOsSOUjmBV
+	xki3sPc4dphGMIW6/HXKwu9dYGDRihv7InTNwA3FVuAdNMB/4RTuRzMPY5RqDt8prNgrGuIO4MqOl
+	LOU7Rc7YvvGMQiKEuPD3fpc91ONqrZUT/YXA3lwhKU4UBQBfaSHYujlyx8mbqe4fQgyWzg+SgARtK
+	ueroT0RBNroFVfcxVEWg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIkB6-000000075Mo-12rr;
-	Mon, 19 Oct 2026 10:01:12 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xIkbs-00000007BfD-0vGa;
+	Mon, 19 Oct 2026 10:28:52 +0000
+Received: from mail-m81166.xmail.ntesmail.com ([156.224.81.166])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIkB5-000000075KR-1mjE
-	for linux-phy@lists.infradead.org;
-	Mon, 19 Oct 2026 10:01:11 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id B56AA600CB;
-	Mon, 19 Oct 2026 10:01:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 97A1C1F000C4;
-	Mon, 19 Oct 2026 10:01:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792404070;
-	bh=6HDV2HcLkfwQjSgKzpnVgoK+4ivvoEHdz75ohcQoHhk=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=YOOlmR992iCkxzo8lLqrfm6QBsTap8iuF1rxQ7iZ7zCq94SxSviXJ4s0jj5xMgN1y
-	 u3ecZrigLfaBBcyhIz5vjV60zaZ8SofK/7xpiH/LxFUDiFMl70Z6IAyeGo93P8Mj57
-	 VtUvig875jusO7GHu1mfiqf/vuzWfdqtG9MKdA9KZGR3YNJ7/8mmKDF8NzsV0/VSvl
-	 XZFWML62NHsQJGTCNgmCw50qX7m6CKAfRJm7AibA0nhiEyYGiANTE6Uj0/HYm0EMrs
-	 ZhQkKsBMkT1XLi6zAjSXSrNOJv2P2x5IYi0De3vs4hhiZcW+YxkElKcvRSg4jkTtOw
-	 E6yHw9RxSV/Rw==
-Message-ID: <392642ad-3bac-48bc-9199-8c3923c588c2@kernel.org>
-Date: Mon, 19 Oct 2026 11:01:05 +0100
+	id 1xIkbp-00000007Bcl-1GUc;
+	Mon, 19 Oct 2026 10:28:51 +0000
+Received: from zyb-HP-ProDesk-680-G2-MT.. (unknown [61.154.14.86])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 518d3dd8a;
+	Mon, 19 Oct 2026 18:28:43 +0800 (GMT+08:00)
+From: Damon Ding <damon.ding@rock-chips.com>
+To: Sandy Huang <hjc@rock-chips.com>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	David Airlie <airlied@gmail.com>,
+	Simona Vetter <simona@ffwll.ch>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Robert Foss <rfoss@kernel.org>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	Dave Jones <s.dave.jones@gmail.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	dri-devel@lists.freedesktop.org,
+	linux-rockchip@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Damon Ding <damon.ding@rock-chips.com>
+Subject: [PATCH v2 1/6] dt-bindings: display: rockchip: analogix-dp: Add support for RK3568
+Date: Mon, 19 Oct 2026 18:28:19 +0800
+Message-Id: <20261019102824.3157044-2-damon.ding@rock-chips.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20261019102824.3157044-1-damon.ding@rock-chips.com>
+References: <20261019102824.3157044-1-damon.ding@rock-chips.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 4/7] phy: qcom-mipi-csi2: Add sa8775p D-PHY support
-To: Anusha Arun Nandi <anusha.nandi@oss.qualcomm.com>, vkoul@kernel.org,
- kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- neil.armstrong@linaro.org, mani@kernel.org
-Cc: gjorgji.rosikopulos@oss.qualcomm.com,
- hariram.purushothaman@oss.qualcomm.com, akapatra@quicinc.com,
- jigarkumar.zala@oss.qualcomm.com, loic.poulain@oss.qualcomm.com,
- vladimir.zapolskiy@linaro.org, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20261016235502.2274268-1-anusha.nandi@oss.qualcomm.com>
- <EKfYfLCfqnEg_PLe_TsBkAGryJgP_tA140u-0ZYSL9q5kInrAtoRCiugYV3C2PDDvYjxaeejuYK3gqzAT4FMXQ==@protonmail.internalid>
- <20261016235502.2274268-5-anusha.nandi@oss.qualcomm.com>
-From: Bryan O'Donoghue <bod@kernel.org>
-Content-Language: en-GB
-Autocrypt: addr=bod@kernel.org; keydata=
- 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
-In-Reply-To: <20261016235502.2274268-5-anusha.nandi@oss.qualcomm.com>
+X-HM-Tid: 0aa153b4d77b03a8kunme348c01b2f6c15
+X-HM-MType: 1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVkZTRhCVk9OGE1ITxpNT0oYSFYVFA
+	kWGhdVEwETFhoSFyQUDg9ZV1kYEgtZQVlNSlVKTk9VSk9VQ01ZV1kWGg8SFR0UWUFZT0tIVUpLSE
+	pKQk1VSktLVUpCWQY+
+DKIM-Signature: a=rsa-sha256;
+	b=dV8cVOQCYInOa1uD6nK4OLQJK4otLedaLqwJpo19lKPdVI+2U6+v27GYkcrcQ/oWRJ0xP2vwfnVwl8ZVwjiO9ABNQHITXpj9jEo2hdBfEng38SpTbbYWdF2XNVSKmgmAysEWWJtMSyjGypTw84Dp3eyS6i2BWjhj5o2l65UcKcg=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=aqA05e3tEQzex5IV+W6xDQvoZ2RGk3y5IlP3Z09UWS0=;
+	h=date:mime-version:subject:message-id:from;
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261019_032849_682860_05B0C028 
+X-CRM114-Status: UNSURE (   9.07  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,66 +91,88 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 17/10/2026 00:54, Anusha Arun Nandi wrote:
-> The timer-clock lookup in phy_qcom_mipi_csi2_probe() and the OPP
-> clkname passed to devm_pm_opp_set_clkname() were both hardcoded
-> string literals sized to x1e80100 ("timer"/"core"). Add
-> timer_clk_name/opp_clk_name to struct mipi_csi2phy_soc_cfg so each
-> SoC can declare its own clock-name strings; x1e80100's soc_cfg now
-> declares "timer"/"core" explicitly, with no behaviour change.
-> SA8775P reuses the same "timer"/"core" names as x1e80100 for this
-> pair of clocks.
+Document the "rockchip,rk3568-edp" compatible.  Like RK3576/RK3588,
+the RK3568 eDP controller has the dp/pclk/hclk clocks and dp/apb
+resets, but unlike them it does not use GRF registers, so make the
+"rockchip,grf" property conditional on the SoC.
 
-LoL I had that in the last design and review said "hard code it" happy 
-to agree with myself in the past, however this change should be 
-standalone and precede the Lemans work.
+Also document the optional avdd-0v9 and avdd-1v8 supplies, which are
+needed by the RK3568 eDP controller.
 
-> SA8775P's CSIPHY has a single power-domain, the Titan Top GDSC,
-> matching the legacy in-tree CAMSS driver's sa8775p_resources.pd_name
-> = "top" and the existing lemans.dtsi camss node. Like x1e80100's own
-> "top" domain, it is not OPP-scaled, only kept enabled.
-> 
-> Signed-off-by: Anusha Arun Nandi<anusha.nandi@oss.qualcomm.com>
-> ---
->   .../qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c    | 112 ++++++++++++++++++
->   .../phy/qualcomm/phy-qcom-mipi-csi2-core.c    |   5 +-
->   drivers/phy/qualcomm/phy-qcom-mipi-csi2.h     |   4 +
->   3 files changed, 119 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
-> index 966d79c98f9b..85e89235f7c9 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
-> @@ -380,6 +380,118 @@ const struct mipi_csi2phy_soc_cfg mipi_csi2_dphy_4nm_x1e = {
->   	.num_supplies = ARRAY_SIZE(x1e_supplies),
->   	.clk_names = (const char **)x1e_clks,
->   	.num_clk = ARRAY_SIZE(x1e_clks),
-> +	.timer_clk_name = "timer",
-> +	.opp_clk_name = "core",
->   	.genpds = x1e_genpds,
->   	.num_genpds = ARRAY_SIZE(x1e_genpds),
->   };
-
-Yes but split it up - "remove hard coded timer and opp names" - actually 
-you want to make the OPP optional no ? In which case you'd expect to see 
-a patch to make OPPs optional - instead of folding that into a 
-functionality drop.
-
-Because say we want to revert or re-order the addition of Lemans in the 
-git log - we then have the problem of mixed functionality.
-
-Or say I want to cherry-pick a backport - I don't necessarily want to 
-include lots of SoC specific stuff that doesn't affect my part.
-
-=> More granular patches.
-
+Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
 ---
-bod
+ .../rockchip/rockchip,analogix-dp.yaml        | 25 ++++++++++++++++++-
+ 1 file changed, 24 insertions(+), 1 deletion(-)
+
+diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
+index 39dafe75a680..f8670a4e0430 100644
+--- a/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
++++ b/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
+@@ -15,6 +15,7 @@ properties:
+     enum:
+       - rockchip,rk3288-dp
+       - rockchip,rk3399-edp
++      - rockchip,rk3568-edp
+       - rockchip,rk3576-edp
+       - rockchip,rk3588-edp
+ 
+@@ -47,6 +48,16 @@ properties:
+       - const: dp
+       - const: apb
+ 
++  avdd-0v9-supply:
++    description:
++      A 0.9V supply that powers up the SoC internal circuitry. The actual
++      supply source varies between different boards.
++
++  avdd-1v8-supply:
++    description:
++      A 1.8V supply that powers up the SoC internal circuitry. The actual
++      supply source varies between different boards.
++
+   rockchip,grf:
+     $ref: /schemas/types.yaml#/definitions/phandle
+     description:
+@@ -61,11 +72,22 @@ required:
+   - clock-names
+   - resets
+   - reset-names
+-  - rockchip,grf
+ 
+ allOf:
+   - $ref: /schemas/display/bridge/analogix,dp.yaml#
+ 
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: rockchip,rk3568-edp
++    then:
++      properties:
++        rockchip,grf: false
++    else:
++      required:
++        - rockchip,grf
++
+   - if:
+       properties:
+         compatible:
+@@ -100,6 +122,7 @@ allOf:
+         compatible:
+           contains:
+             enum:
++              - rockchip,rk3568-edp
+               - rockchip,rk3576-edp
+               - rockchip,rk3588-edp
+     then:
+-- 
+2.34.1
+
 
 -- 
 linux-phy mailing list
