@@ -4,146 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BEEBCCCF2DA
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Oct 2026 07:25:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EFE6ECCF2D3
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Oct 2026 08:15:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fkp0f4JnH99S8WJiI+S2p+z1pFgCMCnp1N3OD0KMrUs=; b=QstKxHbynuXqUQ
-	KPgiTuNCB/kkAKIts5kHMnJnzCPBa+trwBiiGwQdMpmN9v1L8fW5w+OuXhdd7QYAEOpqjAyGG2Blk
-	NSXOHarjB4ojk8Dr94YysJrvwdQvIneqCak5aeJtAD37Y/AqfnZxEz1aR8YwwrvtcmYT63JmuhgyC
-	rySbLsdGns7NgRIuys5h6vBp/PW42yzCOjkvWGhXVS1PxncrwvWZsJajygFBTb4sfuSIoV0a4yQuU
-	rkTtts3R/9TrW3+j1oIY3tYW4XddPi8kSMF9wV0SiEpVIpugkpR7kuJ4yeUXQ+ejT7awiBQhMYwO5
-	2ihIMU579JwqBgwuYJgA==;
+	List-Owner; bh=M/anXcaYeOuYGygXkvlBuW6hOPQwrmZ4Qwxtn2ilttE=; b=Tz1HbAbbLo99mx
+	HlG1yl/KViLk//mM+gZU4KBT5XacjChtkGiKv9QxZqXv4A7u7KnDVMJX1k24GKr3E/ecRtX5WX94f
+	CT2cm37dd8s5c6fn1LzuUlvdlAT32Qvtdu5EKQg3inBlJ12ofvYrDbNTEh7sPF2topw4PunW+b2U6
+	6vu2qsDatuZu+yMfD09itqyc/v4JPJ+N4TiU8KfcM3AFdxYJSTcqX/QWySypZ9R/XKalA+8rRjGCz
+	nPmxlkK2OvBejApDkNf4uT4bVD0gfmNzVtY3PWN8HnYSUmx/CtXx6dBh1ICcosaoQ8vVbPuSaycAZ
+	wvkLiCJJ84hj7D89HO5g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIhkl-00000006lBD-1uVP;
-	Mon, 19 Oct 2026 07:25:51 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1xIiWh-00000006qwZ-0H4m;
+	Mon, 19 Oct 2026 08:15:23 +0000
+Received: from mail-yx1-xb136.google.com ([2607:f8b0:4864:20::b136])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIhki-00000006lAq-475g
+	id 1xIiWe-00000006quw-1mVJ
 	for linux-phy@lists.infradead.org;
-	Mon, 19 Oct 2026 07:25:50 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69J4jNqK2268152
-	for <linux-phy@lists.infradead.org>; Mon, 19 Oct 2026 07:25:47 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	MfEQlfKriOoZNiF29x59T585s1PSoDwBql762uznc+4=; b=TNYbOH2Td/6mbw6T
-	2/pcZsReh2I2+54kXl6sXTBtpGyTBa3K63+Tk2botHPQZvWalwe92OP8Zn/IFLig
-	oVPkDxOk5BKaozNWbHkBWFjEfG5cvPm1D1oGrUI13sqyPuNeECNG1kOvapi9PXmZ
-	wXnF4w1VHjPntkM76V8bJj1TMUwi+f/FEqJPkciYb05oDFFIYQu/bkfwlv09Kmkj
-	DcurPDVSjlSU+MCWemYH2IgXUnxIDLpkjSSYwuwAc+WLIrNOC0D9Wgm12GX3uhGc
-	ulGDQrBDJZTeO/eGOBcONckSSa238Lnmy7o3GIHFt3p131FDOY0STpWQHpfdU+vg
-	Ki2xBw==
-Received: from mail-dl1-f71.google.com (mail-dl1-f71.google.com [74.125.82.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hc0kxnhkr-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 19 Oct 2026 07:25:47 +0000 (GMT)
-Received: by mail-dl1-f71.google.com with SMTP id a92af1059eb24-16bc6f3fdb1so774848c88.0
-        for <linux-phy@lists.infradead.org>; Mon, 19 Oct 2026 00:25:47 -0700 (PDT)
+	Mon, 19 Oct 2026 08:15:22 +0000
+Received: by mail-yx1-xb136.google.com with SMTP id 956f58d0204a3-677d9c68d09so243999d50.1
+        for <linux-phy@lists.infradead.org>; Mon, 19 Oct 2026 01:15:19 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1792397718; cv=none;
+        d=google.com; s=arc-20260327;
+        b=QOcmk73KZI56lhMk5ovyBFbgyn5z4l2/mEDWQ4aSNRlpH8ih2ZM75mcfSBkfOjJsq7
+         f6kjWLTJB8+Fag9SUT404d/w+pby+xeW7tiq/Yjl57gqTFKaXPSAwlB3PSlrbvxibl3X
+         QhYXTai2oY8AwjFJQDtpf+ZezgCNMj1QfMWHUxcJzPVloWHuB2u//oWq+r9na6kEroCq
+         ie7rp9vz3472dSHJHTEn3bsLlLBKK+USSKLMkkMv3MbCAJa6SKLWeBvRnkMouSTQB/FP
+         hz4oalfT2c8zJCq0+hahBRwsXU7y4t5kzfofVvAWlhExy5Qo7nFQ+1uB1kALBMe0CqSW
+         Vw/A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=U1X6Ak1b5YnhMEpM33yKsTItIXYeyxlIqpx2Kl/jIFo=;
+        fh=vGNl0Vsa7KrGoSFVxz/SXbMjeaT3yMXvA8VaH0wbSCo=;
+        b=fwAJiEta9cGwHuYR35DtEKKt1AF/b0j3Tbz0aaXHdAPkF+fKX3RnHew6w4NVuqX7IL
+         uCir7NFqY/nK8NRNwuk7TxH6ir6Ib9I8WLlSBoVrt02WxOKkxEIhsC9eTJX31KnFaf6u
+         V4o4XkOzfWaoPr6j+dUkY0yYJQSniYUmqJf7xc11JRF3yjr1B3Ag6YEFrXDb3do3fWB1
+         KY8sO2E7JDOWWOCxOhkWoP1yu22KDul2nk0iVZistelACyFOBz807r4HplrOrKssHNWj
+         yN1Jz/ffPGlLMNHGDDy17o9tyVZwkOmFsaske5xNUvYBvPuPjKD1vDgCe14Fl5M3dNMf
+         qnZg==;
+        darn=lists.infradead.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1792394747; x=1792999547; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+        d=gmail.com; s=20251104; t=1792397718; x=1793002518; darn=lists.infradead.org;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=MfEQlfKriOoZNiF29x59T585s1PSoDwBql762uznc+4=;
-        b=iL2qjcoM+lk9Rk0+2bZd/yrODDB8JuuAZ3etrc7sWhzrcUq9XClHMS3VBqaTp8eD1O
-         Uo/hIQN1mBJhSJhCoEgGDwrt2s4o2ycaqfMwOWMtgmFo0IiUTN7npXvGPReYoB90isZW
-         LCdA9Ci8Cok25lRzQi5QmZAk7fDC75DfSkqtm6Hn2JZdGnE9HRh37DcpqrYfpl3PgrbV
-         HU+UdMzuIk6VQz8Vcq2lCivCsNFcSvy5LeKoZx4FlFk+o+cw0ylE1iSeAuQdiawpvS6Q
-         maNcMJrIwpKUiW2QAXcZefvGehOJU1BFWFaoSQ2+kyOVNwlW9UGFXiLYxNa1bjor/abf
-         MoAg==
+        bh=U1X6Ak1b5YnhMEpM33yKsTItIXYeyxlIqpx2Kl/jIFo=;
+        b=fsm5SSCw8bVv1e+oL1c+Fo3bs0i163BPOjWmRbkPN/IZIzB2pkAzAkPi71WXX9TXkD
+         uqf6Vwai4N+nwfLudyrupJozFv62N6pGDuXrCP0BZGBlT7e5tWRwRcAdmaObfcOWdGRL
+         lSd4tw6/ywrL4IyOZgY+6vlE5W5qqMkae13aoXt913wUeUlxWuk8eo6PkCMNvuzKYQt6
+         gms1b5veaCWQaDpnbmpv73r/VEJtgwwvSVXaKejaqwvNryqR/wncHANYx8Bbqr8hXMtt
+         hSgOI18OxdxdH/fh4HtJeGZZ+7V0BdIFywiDHnyCD4c8ctcukB1EQfQwH380r5DLroay
+         QlJQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1792394747; x=1792999547;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=MfEQlfKriOoZNiF29x59T585s1PSoDwBql762uznc+4=;
-        b=qgVQhuYhRgeNVhyj65H5PzxORWX+rMpUjGbu92URTrj2YOS1dBf4h6Pjo7xIdmHM1h
-         Qi7SlmZVUvBnqDK5HZfzvKm5cJHvZWglXjk9Hdj5NvTBHDT0YjgnsDv+lUqjACm+GuHD
-         O7kc94SH+3phmk63k4rMnBReznod/mRdhLLTyuimzlj5DBKigsbvXoja36WH/pLcO+Op
-         9zDCqL78qMaf5LgASsN2SvJUiWexPAjhiLjHqe9ziskrL69YAlCzZ2D22k9/ooaq7Qvb
-         3oz1zkzK/U8aKkfhl7FrfGwFIQFucMQwkOHQI7Mmoq2UoTptZ128f37hC2eq6Et9PZsQ
-         zOrA==
-X-Forwarded-Encrypted: i=1; AKwUvBw0quQVGlR2+Ji3NfDhUDuCAkprk4miJXo2WgJQ7VpHiBNCrbKTxYrPkWZaOQMgzBBoR2DQBwZBu9s=@lists.infradead.org
-X-Gm-Message-State: AFq9FYLh+guTgIKD2en9z6uTpJn9hH92ZNz3bV3JFt7sDfnFLY3YrE6I
-	Dczmby/Tld6uRTFb/kHgm0O8q3G7tzZJRFCr3jty8eNOGJA6IbKS9pmAE3A3859zG1kUct6caaH
-	BFWy7be0oE7EUIyTY7q2XJDXYRv+zu4c6qb7hSEiJEJuK8TynVVrCcWFBcdKa6Tx/o1/j
-X-Gm-Gg: AYBFou1/TrjKyygWmXxDecIZddimUEOOtorttQIbKdI/lD385TrG1ajikMaXp4YoRCf
-	JIChesC9RnmXtc8IMebdHXWL02jODJv/mdNMG9QTYuA1PCu79dPmBjt81RSTtI9BQXHfc5QwLRq
-	p97GeDHnpzYsDoiYXKkdKNg5srqCqEhINJ4syKoASfjl/ubv8BjWwlnqGvUp3pn6hVdT+7wS+0P
-	rkSNY5EKmWvNLo7qkSlzQhE1Osiw/Ymd1kKwYYIxWGgKOlI+esbYi5puYMIPuFwnQg/G9prdhRR
-	CxSCLEivTgLjfPz3ct6ffpX2Gpeq79BU6OAWs5AlyGANhaV1Kmll1JUJhy2778d2D5/If3G6VY1
-	qm3IuNbwAPIitES+8Pn0skiJF2E4jRQ==
-X-Received: by 2002:a05:701b:4309:b0:168:3243:c91a with SMTP id a92af1059eb24-18511eb6891mr11403402c88.13.1792394746220;
-        Mon, 19 Oct 2026 00:25:46 -0700 (PDT)
-X-Received: by 2002:a05:701b:4309:b0:168:3243:c91a with SMTP id a92af1059eb24-18511eb6891mr11403360c88.13.1792394745648;
-        Mon, 19 Oct 2026 00:25:45 -0700 (PDT)
-Received: from [192.168.1.10] ([103.211.19.100])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1831919fdfesm26416418c88.7.2026.10.19.00.25.38
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 19 Oct 2026 00:25:45 -0700 (PDT)
-Message-ID: <7766382e-5187-465b-aa89-ff1bf9a16588@oss.qualcomm.com>
-Date: Mon, 19 Oct 2026 12:55:37 +0530
+        d=1e100.net; s=20260707; t=1792397718; x=1793002518;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=U1X6Ak1b5YnhMEpM33yKsTItIXYeyxlIqpx2Kl/jIFo=;
+        b=o8RdSMlRZgxO7OttVz9MXu4kvIjEAF+LCT+ez/TkAZL138QlCLHiWd2M0yucnpN19N
+         88MCQOqPDQruVkWQzP41vbnhXUQ2OvV1WHvh2hwFBvcxFYyESNN1uYnzsL0b1f8DprvN
+         3fnCmqdOV2s6u4nez9y+hY4Cds0Z/d8WXkrWmreETMuuz2WJQQAMAxTCw+HkACYlIzN5
+         1rm+YHy56nJNv5GEWIlTxTJglQmRixybvV94yhknVTV8Ih49c30M2bhZ1tttltrsy4xD
+         RXMcgJ95RfNyhtyVyKoqmAHG/ltW3kBIvgC2fKdSBvKYQ0Iu4/eV+Fno56KXdwqAzaEC
+         bXIw==
+X-Forwarded-Encrypted: i=1; AKwUvBynx0MmJPbEO4wVeZr4p0UbWEKszJOC/WsysD6MwmITbMtg88WeO5ejERI9nNMXqewFEDWLad3nt9M=@lists.infradead.org
+X-Gm-Message-State: AFq9FYIwNNt/Ygc1En7vZKLdB4E277OpYxfY1mGVVIeZ7YWROxa29Gwz
+	c7OzJco23uQMX5YsZUnFWsTR6W+qJ22QhKo9fR3djnazEYrAVBZBVbTbHNFsExrlIGyuOY7R1KU
+	+6vodcv4UqZCuWnC53YRzS+A6AslOYcU=
+X-Gm-Gg: AYBFou2oA0a8OyJHdwZcurjMwS0S60QGtU/bzZuCoP+2nfg7JGP9lVB8sVc7sZbv7ku
+	DsATN9cJCV7UaN4g1o0cmDzN7Bm6KCV6WzzRt4T7mNcX/qGI2vyxDzBMcqbcNoefhtq/6qewl1R
+	E7vcTHh6q7Hn++cBbhM8aayzuWXmxCU6vRJ9wGzTPeodGnV3cGb7hcY/o7H7y7ajgE8+Vz2WVMg
+	/wvAejd7vn7uqh/7v0mBLq9E/pLWm3b/+8gXkWjmvOwWx41XmHRKgfCIICYiZ6aseAkfGt603ft
+	erht1MMRdlLnBeCgfKKD9Rz7LcxH4ZAD7UAD9QeuGZONR3ZbKYxyIA==
+X-Received: by 2002:a05:690c:686:b0:853:bc96:d834 with SMTP id
+ 00721157ae682-8b0f2149354mr41098877b3.2.1792397717882; Mon, 19 Oct 2026
+ 01:15:17 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/7] dt-bindings: phy: qcom: Add qcom,sa8775p-csi2-phy
- schema
+References: <20261016-dcphy-rx-v1-v5-0-e63b49eabe2d@gmail.com>
+ <20261016-dcphy-rx-v1-v5-2-e63b49eabe2d@gmail.com> <20261016140115.GA1798470-robh@kernel.org>
+ <20261017-gainful-goldfish-of-climate-bef863@quoll>
+In-Reply-To: <20261017-gainful-goldfish-of-climate-bef863@quoll>
+From: =?UTF-8?B?5qWK5pm65oiQ?= <jason98166@gmail.com>
+Date: Mon, 19 Oct 2026 16:15:03 +0800
+X-Gm-Features: AclHuK9_kQhXB8k-ejh4iETHQ_pbinYeRno2QSundTfXAhMLFdEsJrbL5fs5ZiY
+Message-ID: <CAPwA33+bR1BF9KeA9my07Yz7gXW7TXq8EPhwQ4GvHMSFDk+uWw@mail.gmail.com>
+Subject: Re: [PATCH v5 2/8] dt-bindings: phy: rockchip,rk3588-mipi-dcphy: Add
+ a cell to select TX or RX
 To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Anusha Arun Nandi <anusha.nandi@oss.qualcomm.com>, bod@kernel.org,
-        vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
-        krzk+dt@kernel.org, conor+dt@kernel.org, neil.armstrong@linaro.org,
-        mani@kernel.org, gjorgji.rosikopulos@oss.qualcomm.com,
-        hariram.purushothaman@oss.qualcomm.com, akapatra@quicinc.com,
-        jigarkumar.zala@oss.qualcomm.com, loic.poulain@oss.qualcomm.com,
-        vladimir.zapolskiy@linaro.org, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        Vikram Sharma <vikram.sharma@oss.qualcomm.com>
-References: <20261016235502.2274268-1-anusha.nandi@oss.qualcomm.com>
- <20261016235502.2274268-3-anusha.nandi@oss.qualcomm.com>
- <851434b3-4cf1-4371-9b4a-57dba8022e13@oss.qualcomm.com>
- <20261019-funky-real-skunk-eda6dc@quoll>
-Content-Language: en-US
-From: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
-In-Reply-To: <20261019-funky-real-skunk-eda6dc@quoll>
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDE5MDAyOSBTYWx0ZWRfX4emvSBvKF2Qw
- pW2UND23gm/P2EkCFD20Yh6GS337ZfbMYHXAc2359FGjrGU2gwnnbMWsq+lYr4e7kujnbvDm+wG
- 1XBHL5/ETvyoaHgGh+8ORU2/Mm7IapU=
-X-Authority-Analysis: v=2.4 cv=JpZkP84C c=1 sm=1 tr=0 ts=6ad5c5fb cx=c_pps
- a=JYo30EpNSr/tUYqK9jHPoA==:117 a=ocEEpg4cTnoGtXECQz/e5g==:17
- a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22
- a=K1xP-2VuxSs3Jipg4doA:9 a=QEXdDO2ut3YA:10 a=Fk4IpSoW4aLDllm1B1p-:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDE5MDAyOSBTYWx0ZWRfX1cHsCrrLgPcc
- oIZKx4Fzf0Hx6mdFIMhdySyQcTIpo+zhpZlQ9H//7UBgyrI/B8jcNpkULjytWSPOS6GPDHcqrAu
- jgwkqKZ0TJUzGY+4VX56rpQFp9kXvwEZbzTxaTCsQxd6LPGoq8GMVR21y/nfpb5DhtjWCHq4tlQ
- zNn86i7SELyPK3F8D9EV3eDjGjZubIGwNbECEG4eFqhUw1FXra5crmDMxUfXD5Vd3yLDjGqXmdt
- L5wdYyYXfIy+KmFtLCbNRtfRn7mF8IJEbhrJBx6EmQj7SdIhddCxg2a5qWGG7AOE60BvditrLtq
- +2Z1TTx/vzgVxlYdaI9ATYsUDcwL4nSkWFDHVaET6e8YnPqFDVjKocrUz8DnFirIZEpwHZd5xKM
- uRYhqLxPiBai+s79fIynDx+rs7KAzaj9AvCAhJRdGcfqEaWrtWZCC1q8V+sPDRLXhEYHdEzjgp5
- lJutbyZnrhcrSe37xug==
-X-Proofpoint-ORIG-GUID: DDX_4WV79cvKYtbFWqEG1kMJ9azt4Ihh
-X-Proofpoint-GUID: DDX_4WV79cvKYtbFWqEG1kMJ9azt4Ihh
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-10-19_02,2026-10-14_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 spamscore=0 phishscore=0 suspectscore=0 malwarescore=0
- clxscore=1015 impostorscore=0 lowpriorityscore=0 bulkscore=0
- priorityscore=1501 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2610080000
- definitions=main-2610190029
+Cc: Rob Herring <robh@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Heiko Stuebner <heiko@sntech.de>, Guochun Huang <hero.huang@rock-chips.com>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, Michael Riesch <michael.riesch@collabora.com>, 
+	Sebastian Reichel <sebastian.reichel@collabora.com>, 
+	"Bryan O'Donoghue" <bryan.odonoghue@linaro.org>, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261019_002549_142814_79825FDA 
-X-CRM114-Status: GOOD (  10.08  )
+X-CRM114-CacheID: sfid-20261019_011520_484866_81D6403C 
+X-CRM114-Status: GOOD (  14.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -160,26 +126,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Krzysztof, Rob,
 
+> Existing OS should ignore surplus cell if the driver is coded properly.
+> Same as adding new properties or new front-compatible.  The question is
+> how the existing driver behaves?
 
-On 19-10-2026 12:43, Krzysztof Kozlowski wrote:
->> DTS uses 2-cell reg but binding example uses 1-cell. Please align:
->>   reg = <0x0 0x0ac9c000 0x0 0x2000>;
-> I don't understand what is supposed to be aligned here. The code is
-> correct.
-Right, the DTS change is correct.
+As you pointed out on 5/8, the xlate checks args_count != 1. The DC-PHY
+driver was merged in v6.15, so every kernel since 6.15 fails on a second cell.
 
-My comment was about the binding example using a different address/size cell
-layout from the real DTS. 
+1. Keep the second cell. Add the patch as follows:
 
-Krzysztof, should the binding example mirror the SoC bus address/size cell
-layout here, or is the standalone 2-cell example fine as long as it passes
-dt_binding_check?
+- if (args->args_count != 1) {
++ if (args->args_count < 1) {
+    dev_err(dev, "invalid number of arguments\n");
+    return ERR_PTR(-EINVAL);
+  }
 
--- 
-Regards,
-Nihal Kumar Gupta
++ if (args->args_count > 1 && args->args[1]) {
++   dev_err(dev, "only the transmitter is supported\n");
++   return ERR_PTR(-EINVAL);
++ }
 
+  With Fixes: and Cc: stable, the stable kernels maintained at that
+  time (currently 6.18.y and 7.2.y) keep DSI working with the new
+  dts, and the receiver fails cleanly instead of getting the transmitter.
+  But EOL kernels (6.15, 6.16, 6.17, 6.19, 7.0, 7.1) stay affected.
+  It goes in with the series, since two-cell dts only exist after it.
+
+2. Use a flag in the upper bits of the existing cell, as Rob
+    suggested. Existing kernels are not affected, unless a board enables
+    the DC-PHY CSI-2 receiver on 7.0 or later without this series.
+
+I will write the impact clearly whichever  approach is selected in
+the related commit messages and the cover letter.
+
+I think the cell approach is easier to read and more symmetric in the
+long term,
+but it breaks more. Which one do you think is better? Thanks.
+
+Best regards,
+Jason
 
 -- 
 linux-phy mailing list
