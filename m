@@ -4,81 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E746BCCF2E0
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Oct 2026 10:29:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A56F5CCF2D6
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Oct 2026 10:37:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uwyS0Sw8Gfq16pDaVKenynN4zY/ecCkqFuzbtAYhpXo=; b=ExWf56MRUHx0Ma
-	vMn/IQUeRX4gREgMK9mRgEi+Prr6lqOdq/zpItZO3VWAkMfVOY0M2DR9srrelgjPo3cxUexuDSygO
-	Yoq99LNsP5khkJVgB8jJbJBl4zNkHfo6RjzE2eGrSZk+PgzbwLVZHjtl9xAKZYXWbJMPC3Me7cE+0
-	vi7oruwnOMXpu8shskwTXPJQ3Zz4i8hHNqolMVxrwR4Ow2/aFXJSxSwxgAh/Haf2lhu4Ty9Ctor9j
-	EbInryWZxYL9NXnCduZ1c95ef1kKKapDrARhWifm6v7WmV/iwOqW9WLyHDCPhZDM4ZopsDM9/savL
-	UKjDFM5bJ/ZcijwNjvDg==;
+	List-Owner; bh=g0Z6hr1ACFrr6iC8spdtPhhdmRo9tT1Jf/itNvYEGVo=; b=qH2KYXW8QZ8Ocx
+	sChi12cjjsrgsEdibYCaxkOkis5vATQUT6t09+tbBZexMCbdQ4N1hmiTX6mKoKGpCKWDaZyX1kV6B
+	Z4X3gWfaWus/uEnLPf7UrfQcqWxCvtLCeW2izO1yrE9HM5ZBg556Hr3mRazDEf1KU596uoki5yVps
+	1OKAdLoRsKA1qWtOiA/HFor9rKzrkZb3EhIuLY6X9U2uFq21ef2assn55FpDAoAiydcoMxjp/mAoB
+	U2Fdrdogwgrnr72/xvc/ELBIO+E4Rdk7LGsk+5SRkSXrCdo/KOtwZyIgCmyuPUN1qZ7eFPJcMkSqy
+	bjLRlyRz+Z71tPqdLEbg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIkc9-00000007Buu-1zti;
-	Mon, 19 Oct 2026 10:29:09 +0000
-Received: from mail-m158127.netease.com ([47.251.158.127])
+	id 1xIkkH-00000007DWv-1TLN;
+	Mon, 19 Oct 2026 10:37:33 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xIkbs-00000007Bd5-0Gvq;
-	Mon, 19 Oct 2026 10:28:54 +0000
-Received: from zyb-HP-ProDesk-680-G2-MT.. (unknown [61.154.14.86])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 518d3dda8;
-	Mon, 19 Oct 2026 18:28:46 +0800 (GMT+08:00)
-From: Damon Ding <damon.ding@rock-chips.com>
-To: Sandy Huang <hjc@rock-chips.com>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	David Airlie <airlied@gmail.com>,
-	Simona Vetter <simona@ffwll.ch>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Robert Foss <rfoss@kernel.org>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
-	Dave Jones <s.dave.jones@gmail.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-	dri-devel@lists.freedesktop.org,
-	linux-rockchip@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Damon Ding <damon.ding@rock-chips.com>
-Subject: [PATCH v2 4/6] phy: rockchip: Add support for Naneng eDP phy
-Date: Mon, 19 Oct 2026 18:28:22 +0800
-Message-Id: <20261019102824.3157044-5-damon.ding@rock-chips.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20261019102824.3157044-1-damon.ding@rock-chips.com>
+	id 1xIkkG-00000007DWi-2GgV
+	for linux-phy@lists.infradead.org;
+	Mon, 19 Oct 2026 10:37:32 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 435094163D;
+	Mon, 19 Oct 2026 10:37:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ABF7C1F000C4;
+	Mon, 19 Oct 2026 10:37:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1792406252;
+	bh=/oHQ4bdH43j1fuumTS02Am3jQZBjLwwUEwkgUZPR6zI=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=Naa44i3bJPqsT7f0nOe/lglmj1/NFLsOEbmh3rbA62SBQLNYlWu4pf5JVcf5Pu6SF
+	 Xb91lgPSM8eWmMTsQCfAz+/s9E/JnZr1vlYbH+FWualm8lAI08BBYyU9cOeoU0cDaP
+	 CcRq0dsVSudcSYuhS1VU/8lOtimRIMGm34W/5WbpqxxMi4qmaFYFDWPaO4hYysnpVM
+	 MEnxtdnAslBCPYyvrvjNXiveQi5b7QqYWKCwOzDICPLznqjp/gSK67dhWJAEgPkBww
+	 Fy1MxG8r42DWrT7VhqI32XHwE5nL0Vh6xewUBOdcWvjXEcK+Ql3sI5XK7HNPfi7ZGA
+	 fRpMwogchSsow==
+Message-ID: <sashiko-outbox-177004@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v2 4/6] phy: rockchip: Add support for Naneng eDP phy
+To: "Damon Ding" <damon.ding@rock-chips.com>
+Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-phy@lists.infradead.org, robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20261019102824.3157044-5-damon.ding@rock-chips.com>
 References: <20261019102824.3157044-1-damon.ding@rock-chips.com>
-MIME-Version: 1.0
-X-HM-Tid: 0aa153b4e66603a8kunme348c01b2f6c43
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVlCSkoaVk9IHhpOSEpCTRoeHVYVFA
-	kWGhdVEwETFhoSFyQUDg9ZV1kYEgtZQVlNSlVKTk9VSk9VQ01ZV1kWGg8SFR0UWUFZT0tIVUpLSE
-	pKQk1VSktLVUpCWQY+
-DKIM-Signature: a=rsa-sha256;
-	b=AXhExzwBLZCjQG2BmqEzKsn9ALSLIPDe6XrcdQzzBZgMitn+EBRRVruEdNyzk6g/QXEEPjr0kToY4Pf6BC3uzvCCqcs9ug1ed36aBdxfTJND0omL7oq8xl1SrNB20TPvCj6sznD+B8BuMQj9QTf23Ge0mdkXPwj/k2zkhXzqHs8=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=vk3PW4DcSf72F77XHoEWhmXqK5nS4XB94754EhO18YA=;
-	h=date:mime-version:subject:message-id:from;
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261019_032853_158539_139D4020 
-X-CRM114-Status: GOOD (  22.89  )
+ <20261019102824.3157044-5-damon.ding@rock-chips.com>
+Date: Mon, 19 Oct 2026 10:37:31 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,518 +62,125 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a driver for the Rockchip eDP transmitter PHY with NaNeng IP
-block, as found on the RK3568 SoC.
-
-The PHY registers live in the eDP PHY GRF, of which the PHY is a
-child node, so accesses are performed through the parent syscon
-regmap. The PHY supports 1/2/4 lanes at 1.62 Gbps and 2.7 Gbps,
-optional spread spectrum clocking, as well as per-lane voltage swing
-and pre-emphasis tuning, all exposed through the generic PHY
-DisplayPort configuration interface.
-
-Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
-
----
-
-Changes in v2:
-- Apply the lane-dependent TX configurations in set_lanes() instead of
-  set_rate(), and store the lane count for set_voltages(), since the
-  Analogix DP core issues separate phy_configure() calls and the lane
-  count is only valid in the set_lanes/set_voltages calls.(Sashiko)
-- Initialize val to zero in rockchip_edp_phy_enabled() to avoid using
-  an uninitialized variable when regmap_read() fails.(Sashiko)
----
- drivers/phy/rockchip/Kconfig                  |  10 +
- drivers/phy/rockchip/Makefile                 |   1 +
- .../phy/rockchip/phy-rockchip-naneng-edp.c    | 435 ++++++++++++++++++
- 3 files changed, 446 insertions(+)
- create mode 100644 drivers/phy/rockchip/phy-rockchip-naneng-edp.c
-
-diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
-index 14698571b607..202a6973e20b 100644
---- a/drivers/phy/rockchip/Kconfig
-+++ b/drivers/phy/rockchip/Kconfig
-@@ -74,6 +74,16 @@ config PHY_ROCKCHIP_NANENG_COMBO_PHY
- 	  Enable this to support the Rockchip PCIe/USB3.0/SATA/QSGMII
- 	  combo PHY with NaNeng IP block.
- 
-+config PHY_ROCKCHIP_NANENG_EDP
-+	tristate "Rockchip Naneng eDP Transmitter PHY driver"
-+	depends on ARCH_ROCKCHIP && OF
-+	select GENERIC_PHY
-+	help
-+	  Enable this to support the Rockchip eDP Transmitter PHY with
-+	  NaNeng IP block. The PHY, which is controlled through the eDP
-+	  PHY GRF, provides 1/2/4 lanes running at 1.62/2.7 Gbps per lane
-+	  for the eDP controller found on the RK3568 SoC.
-+
- config PHY_ROCKCHIP_PCIE
- 	tristate "Rockchip PCIe PHY Driver"
- 	depends on (ARCH_ROCKCHIP && OF) || COMPILE_TEST
-diff --git a/drivers/phy/rockchip/Makefile b/drivers/phy/rockchip/Makefile
-index 117aaffd037d..260a10157461 100644
---- a/drivers/phy/rockchip/Makefile
-+++ b/drivers/phy/rockchip/Makefile
-@@ -7,6 +7,7 @@ obj-$(CONFIG_PHY_ROCKCHIP_INNO_DSIDPHY)	+= phy-rockchip-inno-dsidphy.o
- obj-$(CONFIG_PHY_ROCKCHIP_INNO_HDMI)	+= phy-rockchip-inno-hdmi.o
- obj-$(CONFIG_PHY_ROCKCHIP_INNO_USB2)	+= phy-rockchip-inno-usb2.o
- obj-$(CONFIG_PHY_ROCKCHIP_NANENG_COMBO_PHY)	+= phy-rockchip-naneng-combphy.o
-+obj-$(CONFIG_PHY_ROCKCHIP_NANENG_EDP)	+= phy-rockchip-naneng-edp.o
- obj-$(CONFIG_PHY_ROCKCHIP_PCIE)		+= phy-rockchip-pcie.o
- obj-$(CONFIG_PHY_ROCKCHIP_SAMSUNG_DCPHY)	+= phy-rockchip-samsung-dcphy.o
- obj-$(CONFIG_PHY_ROCKCHIP_SAMSUNG_HDPTX)	+= phy-rockchip-samsung-hdptx.o
-diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-edp.c b/drivers/phy/rockchip/phy-rockchip-naneng-edp.c
-new file mode 100644
-index 000000000000..a407714f639a
---- /dev/null
-+++ b/drivers/phy/rockchip/phy-rockchip-naneng-edp.c
-@@ -0,0 +1,435 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright (c) 2026 Rockchip Electronics Co., Ltd.
-+ *
-+ * Author: Damon Ding <damon.ding@rock-chips.com>
-+ */
-+#include <linux/bitfield.h>
-+#include <linux/clk.h>
-+#include <linux/delay.h>
-+#include <linux/hw_bitfield.h>
-+#include <linux/mfd/syscon.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+
-+#define EDP_PHY_GRF_CON0		0x0000
-+#define EDP_PHY_TX_IDLE_MASK		GENMASK(11, 8)
-+#define EDP_PHY_TX_PD_MASK		GENMASK(7, 4)
-+#define EDP_PHY_IDDQ_EN_MASK		BIT(1)
-+#define EDP_PHY_PD_PLL_MASK		BIT(0)
-+
-+#define EDP_PHY_GRF_CON1		0x0004
-+#define EDP_PHY_PLL_DIV_MASK		GENMASK(14, 0)
-+
-+#define EDP_PHY_GRF_CON2		0x0008
-+#define EDP_PHY_TX_RTERM_MASK		GENMASK(10, 8)
-+#define EDP_PHY_RATE_MASK		GENMASK(5, 4)
-+#define EDP_PHY_REF_DIV_MASK		GENMASK(3, 0)
-+
-+#define EDP_PHY_GRF_CON3		0x000c
-+#define EDP_PHY_TX3_EMP_MASK		GENMASK(15, 12)
-+#define EDP_PHY_TX2_EMP_MASK		GENMASK(11, 8)
-+#define EDP_PHY_TX1_EMP_MASK		GENMASK(7, 4)
-+#define EDP_PHY_TX0_EMP_MASK		GENMASK(3, 0)
-+
-+#define EDP_PHY_GRF_CON4		0x0010
-+#define EDP_PHY_TX3_AMP_MASK		GENMASK(14, 12)
-+#define EDP_PHY_TX2_AMP_MASK		GENMASK(10, 8)
-+#define EDP_PHY_TX1_AMP_MASK		GENMASK(6, 4)
-+#define EDP_PHY_TX0_AMP_MASK		GENMASK(2, 0)
-+
-+#define EDP_PHY_GRF_CON5		0x0014
-+#define EDP_PHY_TX_MODE_MASK		GENMASK(9, 8)
-+#define EDP_PHY_TX3_AMP_SCALE_MASK	GENMASK(7, 6)
-+#define EDP_PHY_TX2_AMP_SCALE_MASK	GENMASK(5, 4)
-+#define EDP_PHY_TX1_AMP_SCALE_MASK	GENMASK(3, 2)
-+#define EDP_PHY_TX0_AMP_SCALE_MASK	GENMASK(1, 0)
-+
-+#define EDP_PHY_GRF_CON6		0x0018
-+#define EDP_PHY_SSC_DEPTH_MASK		GENMASK(15, 12)
-+#define EDP_PHY_SSC_EN_MASK		BIT(11)
-+#define EDP_PHY_SSC_CNT_MASK		GENMASK(9, 0)
-+
-+#define EDP_PHY_GRF_CON7		0x001c
-+
-+#define EDP_PHY_GRF_CON8		0x0020
-+#define EDP_PHY_PLL_CTL_H_MASK		GENMASK(15, 0)
-+
-+#define EDP_PHY_GRF_CON9		0x0024
-+#define EDP_PHY_TX_CTL_MASK		GENMASK(15, 0)
-+
-+#define EDP_PHY_GRF_CON10		0x0028
-+#define EDP_PHY_AUX_RCV_PD_SEL_MASK	BIT(5)
-+#define EDP_PHY_AUX_DRV_PD_SEL_MASK	BIT(4)
-+#define EDP_PHY_AUX_IDLE_MASK		BIT(2)
-+#define EDP_PHY_AUX_RCV_PD_MASK		BIT(1)
-+#define EDP_PHY_AUX_DRV_PD_MASK		BIT(0)
-+
-+#define EDP_PHY_GRF_CON11		0x002c
-+#define EDP_PHY_AUX_RCV_VCM_MASK	GENMASK(14, 12)
-+#define EDP_PHY_AUX_MODE_MASK		GENMASK(11, 10)
-+#define EDP_PHY_AUX_AMP_SCALE_MASK	GENMASK(9, 8)
-+#define EDP_PHY_AUX_AMP_MASK		GENMASK(6, 4)
-+#define EDP_PHY_AUX_RTERM_MASK		GENMASK(2, 0)
-+
-+#define EDP_PHY_GRF_STATUS0		0x0030
-+#define PLL_RDY				BIT(0)
-+
-+#define EDP_PHY_GRF_STATUS1		0x0034
-+
-+struct rockchip_edp_phy {
-+	struct regmap *grf;
-+	struct device *dev;
-+	struct clk *refclk;
-+};
-+
-+static struct {
-+	int amp;
-+	int amp_scale;
-+	int emp;
-+} swing_pre_emph_table[4][4] = {
-+	{ {0x1, 0x1, 0x0}, {0x2, 0x1, 0x4}, {0x3, 0x1, 0x8}, {0x4, 0x1, 0xd} },
-+	{ {0x3, 0x1, 0x0}, {0x5, 0x1, 0x7}, {0x6, 0x1, 0x6}, { -1,  -1,  -1} },
-+	{ {0x5, 0x1, 0x0}, {0x7, 0x1, 0x4}, { -1,  -1,  -1}, { -1,  -1,  -1} },
-+	{ {0x7, 0x1, 0x0}, { -1,  -1,  -1}, { -1,  -1,  -1}, { -1,  -1,  -1} },
-+};
-+
-+static void rockchip_edp_phy_set_voltage(struct rockchip_edp_phy *edpphy,
-+					 struct phy_configure_opts_dp *dp,
-+					 u8 lane)
-+{
-+	u32 amp, amp_scale, emp;
-+
-+	amp = swing_pre_emph_table[dp->voltage[lane]][dp->pre[lane]].amp;
-+	amp_scale = swing_pre_emph_table[dp->voltage[lane]][dp->pre[lane]].amp_scale;
-+	emp = swing_pre_emph_table[dp->voltage[lane]][dp->pre[lane]].emp;
-+
-+	switch (lane) {
-+	case 0:
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON3,
-+			     FIELD_PREP_WM16(EDP_PHY_TX0_EMP_MASK, emp));
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON4,
-+			     FIELD_PREP_WM16(EDP_PHY_TX0_AMP_MASK, amp));
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON5,
-+			     FIELD_PREP_WM16(EDP_PHY_TX0_AMP_SCALE_MASK, amp_scale));
-+		break;
-+	case 1:
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON3,
-+			     FIELD_PREP_WM16(EDP_PHY_TX1_EMP_MASK, emp));
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON4,
-+			     FIELD_PREP_WM16(EDP_PHY_TX1_AMP_MASK, amp));
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON5,
-+			     FIELD_PREP_WM16(EDP_PHY_TX1_AMP_SCALE_MASK, amp_scale));
-+		break;
-+	case 2:
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON3,
-+			     FIELD_PREP_WM16(EDP_PHY_TX2_EMP_MASK, emp));
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON4,
-+			     FIELD_PREP_WM16(EDP_PHY_TX2_AMP_MASK, amp));
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON5,
-+			     FIELD_PREP_WM16(EDP_PHY_TX2_AMP_SCALE_MASK, amp_scale));
-+		break;
-+	case 3:
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON3,
-+			     FIELD_PREP_WM16(EDP_PHY_TX3_EMP_MASK, emp));
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON4,
-+			     FIELD_PREP_WM16(EDP_PHY_TX3_AMP_MASK, amp));
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON5,
-+			     FIELD_PREP_WM16(EDP_PHY_TX3_AMP_SCALE_MASK, amp_scale));
-+		break;
-+	}
-+}
-+
-+static int rockchip_edp_phy_set_voltages(struct rockchip_edp_phy *edpphy,
-+					 struct phy_configure_opts_dp *dp)
-+{
-+	u8 lane;
-+
-+	for (lane = 0; lane < dp->lanes; lane++)
-+		rockchip_edp_phy_set_voltage(edpphy, dp, lane);
-+
-+	return 0;
-+}
-+
-+static int rockchip_edp_phy_set_rate(struct rockchip_edp_phy *edpphy,
-+				     struct phy_configure_opts_dp *dp)
-+{
-+	u32 value;
-+	int ret;
-+
-+	regmap_write(edpphy->grf, EDP_PHY_GRF_CON0,
-+		     FIELD_PREP_WM16(EDP_PHY_TX_IDLE_MASK, 0xf) |
-+		     FIELD_PREP_WM16(EDP_PHY_TX_PD_MASK, 0xf));
-+	usleep_range(100, 101);
-+	regmap_write(edpphy->grf, EDP_PHY_GRF_CON5, FIELD_PREP_WM16(EDP_PHY_TX_MODE_MASK, 0x3));
-+	regmap_write(edpphy->grf, EDP_PHY_GRF_CON0, FIELD_PREP_WM16(EDP_PHY_PD_PLL_MASK, 0x1));
-+
-+	switch (dp->link_rate) {
-+	case 1620:
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON1,
-+			     FIELD_PREP_WM16(EDP_PHY_PLL_DIV_MASK, 0x4380));
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON2,
-+			     FIELD_PREP_WM16(EDP_PHY_TX_RTERM_MASK, 0x1) |
-+			     FIELD_PREP_WM16(EDP_PHY_RATE_MASK, 0x1) |
-+			     FIELD_PREP_WM16(EDP_PHY_REF_DIV_MASK, 0x0));
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON8,
-+			     FIELD_PREP_WM16(EDP_PHY_PLL_CTL_H_MASK, 0x0800));
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON9,
-+			     FIELD_PREP_WM16(EDP_PHY_TX_CTL_MASK, 0x0000));
-+		break;
-+	case 2700:
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON1,
-+			     FIELD_PREP_WM16(EDP_PHY_PLL_DIV_MASK, 0x3840));
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON2,
-+			     FIELD_PREP_WM16(EDP_PHY_TX_RTERM_MASK, 0x1) |
-+			     FIELD_PREP_WM16(EDP_PHY_RATE_MASK, 0x0) |
-+			     FIELD_PREP_WM16(EDP_PHY_REF_DIV_MASK, 0x0));
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON8,
-+			     FIELD_PREP_WM16(EDP_PHY_PLL_CTL_H_MASK, 0x0800));
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON9,
-+			     FIELD_PREP_WM16(EDP_PHY_TX_CTL_MASK, 0x0000));
-+		break;
-+	}
-+
-+	if (dp->ssc)
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON6,
-+			     FIELD_PREP_WM16(EDP_PHY_SSC_DEPTH_MASK, 0x9) |
-+			     FIELD_PREP_WM16(EDP_PHY_SSC_EN_MASK, 0x1) |
-+			     FIELD_PREP_WM16(EDP_PHY_SSC_CNT_MASK, 0x17d));
-+	else
-+		regmap_write(edpphy->grf, EDP_PHY_GRF_CON6,
-+			     FIELD_PREP_WM16(EDP_PHY_SSC_EN_MASK, 0x0));
-+
-+	regmap_write(edpphy->grf, EDP_PHY_GRF_CON0, FIELD_PREP_WM16(EDP_PHY_PD_PLL_MASK, 0));
-+	regmap_write(edpphy->grf, EDP_PHY_GRF_CON0,
-+		     FIELD_PREP_WM16(EDP_PHY_TX_PD_MASK, ~GENMASK(dp->lanes - 1, 0)));
-+	ret = regmap_read_poll_timeout(edpphy->grf, EDP_PHY_GRF_STATUS0,
-+				       value, value & PLL_RDY, 100, 1000);
-+	if (ret) {
-+		dev_err(edpphy->dev, "Failed to wait for PHY PLL ready: %d\n", ret);
-+		return ret;
-+	}
-+
-+	regmap_write(edpphy->grf, EDP_PHY_GRF_CON5, FIELD_PREP_WM16(EDP_PHY_TX_MODE_MASK, 0x0));
-+	regmap_write(edpphy->grf, EDP_PHY_GRF_CON0,
-+		     FIELD_PREP_WM16(EDP_PHY_TX_IDLE_MASK, ~GENMASK(dp->lanes - 1, 0)));
-+
-+	return 0;
-+}
-+
-+static int rockchip_edp_phy_verify_config(struct rockchip_edp_phy *edpphy,
-+					  struct phy_configure_opts_dp *dp)
-+{
-+	int i;
-+
-+	/* If changing link rate was required, verify it's supported. */
-+	if (dp->set_rate) {
-+		switch (dp->link_rate) {
-+		case 1620:
-+		case 2700:
-+			/* valid bit rate */
-+			break;
-+		default:
-+			return -EINVAL;
-+		}
-+	}
-+
-+	if (dp->set_lanes) {
-+		/* Verify lane count. */
-+		switch (dp->lanes) {
-+		case 1:
-+		case 2:
-+		case 4:
-+			/* valid lane count. */
-+			break;
-+		default:
-+			return -EINVAL;
-+		}
-+	}
-+
-+	/*
-+	 * If changing voltages is required, check swing and pre-emphasis
-+	 * levels, per-lane.
-+	 */
-+	if (dp->set_voltages) {
-+		/* Lane count verified previously. */
-+		for (i = 0; i < dp->lanes; i++) {
-+			if (dp->voltage[i] > 3 || dp->pre[i] > 3)
-+				return -EINVAL;
-+
-+			/*
-+			 * Sum of voltage swing and pre-emphasis levels cannot
-+			 * exceed 3.
-+			 */
-+			if (dp->voltage[i] + dp->pre[i] > 3)
-+				return -EINVAL;
-+		}
-+	}
-+
-+	return 0;
-+}
-+
-+static int rockchip_edp_phy_configure(struct phy *phy, union phy_configure_opts *opts)
-+{
-+	struct rockchip_edp_phy *edpphy = phy_get_drvdata(phy);
-+	int ret;
-+
-+	ret = rockchip_edp_phy_verify_config(edpphy, &opts->dp);
-+	if (ret) {
-+		dev_err(edpphy->dev, "Invalid params for phy configure\n");
-+		return ret;
-+	}
-+
-+	if (opts->dp.set_rate) {
-+		ret = rockchip_edp_phy_set_rate(edpphy, &opts->dp);
-+		if (ret) {
-+			dev_err(edpphy->dev, "Failed to set rate\n");
-+			return ret;
-+		}
-+	}
-+
-+	if (opts->dp.set_voltages) {
-+		ret = rockchip_edp_phy_set_voltages(edpphy, &opts->dp);
-+		if (ret) {
-+			dev_err(edpphy->dev, "Failed to set voltages\n");
-+			return ret;
-+		}
-+	}
-+
-+	return 0;
-+}
-+
-+static bool rockchip_edp_phy_enabled(struct rockchip_edp_phy *edpphy)
-+{
-+	u32 val;
-+
-+	regmap_read(edpphy->grf, EDP_PHY_GRF_STATUS0, &val);
-+
-+	return FIELD_GET(PLL_RDY, val);
-+}
-+
-+static int rockchip_edp_phy_power_on(struct phy *phy)
-+{
-+	struct rockchip_edp_phy *edpphy = phy_get_drvdata(phy);
-+	int ret;
-+
-+	ret = clk_prepare_enable(edpphy->refclk);
-+	if (ret < 0) {
-+		dev_err(edpphy->dev, "Failed to prepare_enable refclk [%d]\n", ret);
-+		return ret;
-+	}
-+
-+	if (rockchip_edp_phy_enabled(edpphy))
-+		return 0;
-+
-+	regmap_write(edpphy->grf, EDP_PHY_GRF_CON10,
-+		     FIELD_PREP_WM16(EDP_PHY_AUX_RCV_PD_MASK, 0x1) |
-+		     FIELD_PREP_WM16(EDP_PHY_AUX_DRV_PD_MASK, 0x1) |
-+		     FIELD_PREP_WM16(EDP_PHY_AUX_IDLE_MASK, 0x1));
-+	regmap_write(edpphy->grf, EDP_PHY_GRF_CON0,
-+		     FIELD_PREP_WM16(EDP_PHY_TX_IDLE_MASK, 0xf) |
-+		     FIELD_PREP_WM16(EDP_PHY_TX_PD_MASK, 0xf) |
-+		     FIELD_PREP_WM16(EDP_PHY_PD_PLL_MASK, 0x1));
-+	usleep_range(100, 101);
-+
-+	regmap_write(edpphy->grf, EDP_PHY_GRF_CON11,
-+		     FIELD_PREP_WM16(EDP_PHY_AUX_RCV_VCM_MASK, 0x4) |
-+		     FIELD_PREP_WM16(EDP_PHY_AUX_MODE_MASK, 0x1) |
-+		     FIELD_PREP_WM16(EDP_PHY_AUX_AMP_SCALE_MASK, 0x1) |
-+		     FIELD_PREP_WM16(EDP_PHY_AUX_AMP_MASK, 0x3) |
-+		     FIELD_PREP_WM16(EDP_PHY_AUX_RTERM_MASK, 0x1));
-+
-+	regmap_write(edpphy->grf, EDP_PHY_GRF_CON10,
-+		     FIELD_PREP_WM16(EDP_PHY_AUX_RCV_PD_MASK, 0x0) |
-+		     FIELD_PREP_WM16(EDP_PHY_AUX_DRV_PD_MASK, 0x0));
-+	usleep_range(100, 101);
-+
-+	regmap_write(edpphy->grf, EDP_PHY_GRF_CON10, FIELD_PREP_WM16(EDP_PHY_AUX_IDLE_MASK, 0x0));
-+	usleep_range(10000, 11000);
-+
-+	return 0;
-+}
-+
-+static int rockchip_edp_phy_power_off(struct phy *phy)
-+{
-+	struct rockchip_edp_phy *edpphy = phy_get_drvdata(phy);
-+
-+	regmap_write(edpphy->grf, EDP_PHY_GRF_CON0,
-+		     FIELD_PREP_WM16(EDP_PHY_TX_IDLE_MASK, 0xf) |
-+		     FIELD_PREP_WM16(EDP_PHY_TX_PD_MASK, 0xf));
-+	usleep_range(100, 101);
-+	regmap_write(edpphy->grf, EDP_PHY_GRF_CON5, FIELD_PREP_WM16(EDP_PHY_TX_MODE_MASK, 0x3));
-+	regmap_write(edpphy->grf, EDP_PHY_GRF_CON0, FIELD_PREP_WM16(EDP_PHY_PD_PLL_MASK, 0x1));
-+	regmap_write(edpphy->grf, EDP_PHY_GRF_CON10,
-+		     FIELD_PREP_WM16(EDP_PHY_AUX_RCV_PD_MASK, 0x1) |
-+		     FIELD_PREP_WM16(EDP_PHY_AUX_DRV_PD_MASK, 0x1) |
-+		     FIELD_PREP_WM16(EDP_PHY_AUX_IDLE_MASK, 0x1));
-+
-+	clk_disable_unprepare(edpphy->refclk);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops rockchip_edp_phy_ops = {
-+	.power_on = rockchip_edp_phy_power_on,
-+	.power_off = rockchip_edp_phy_power_off,
-+	.configure = rockchip_edp_phy_configure,
-+	.owner = THIS_MODULE,
-+};
-+
-+static int rockchip_edp_phy_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct rockchip_edp_phy *edpphy;
-+	struct phy *phy;
-+	struct phy_provider *phy_provider;
-+
-+	edpphy = devm_kzalloc(dev, sizeof(*edpphy), GFP_KERNEL);
-+	if (!edpphy)
-+		return -ENOMEM;
-+
-+	edpphy->dev = dev;
-+
-+	edpphy->grf = syscon_node_to_regmap(dev->parent->of_node);
-+	if (IS_ERR(edpphy->grf))
-+		return dev_err_probe(dev, PTR_ERR(edpphy->grf), "Failed to get GRF syscon\n");
-+
-+	edpphy->refclk = devm_clk_get(dev, "refclk");
-+	if (IS_ERR(edpphy->refclk))
-+		return dev_err_probe(dev, PTR_ERR(edpphy->refclk), "Failed to get refclk\n");
-+
-+	phy = devm_phy_create(dev, NULL, &rockchip_edp_phy_ops);
-+	if (IS_ERR(phy))
-+		return dev_err_probe(dev, PTR_ERR(phy), "Failed to create PHY\n");
-+
-+	phy_set_drvdata(phy, edpphy);
-+
-+	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+	if (IS_ERR(phy_provider))
-+		return dev_err_probe(dev, PTR_ERR(phy_provider),
-+				     "Failed to register PHY provider\n");
-+
-+	return 0;
-+}
-+
-+static const struct of_device_id rockchip_edp_phy_of_match[] = {
-+	{ .compatible = "rockchip,rk3568-edp-phy", },
-+	{}
-+};
-+MODULE_DEVICE_TABLE(of, rockchip_edp_phy_of_match);
-+
-+static struct platform_driver rockchip_edp_phy_driver = {
-+	.driver = {
-+		.name = "rockchip-edpphy-naneng",
-+		.of_match_table	= of_match_ptr(rockchip_edp_phy_of_match),
-+	},
-+	.probe = rockchip_edp_phy_probe,
-+};
-+module_platform_driver(rockchip_edp_phy_driver);
-+
-+MODULE_AUTHOR("Damon Ding <damon.ding@rock-chips.com>");
-+MODULE_DESCRIPTION("Rockchip Naneng eDP Transmitter PHY driver");
-+MODULE_LICENSE("GPL");
--- 
-2.34.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIHBoeTogcm9ja2NoaXA6
+IG1pc3Npbmcgc2V0X2xhbmVzIGhhbmRsaW5nIGluIHJvY2tjaGlwX2VkcF9waHlfY29uZmlndXJl
+KCkKLSBbTWVkaXVtXSBwaHk6IHJvY2tjaGlwOiB1bmluaXRpYWxpemVkIHZhbCByZWFkIGluIHJv
+Y2tjaGlwX2VkcF9waHlfZW5hYmxlZCgpCi0tCgpjb21taXQgZDA3YTNhMGUzNTMzYjg0Y2RjNjdi
+NmRlNDVkYjM0MGU5ZDk4OThjOQpBdXRob3I6IERhbW9uIERpbmcgPGRhbW9uLmRpbmdAcm9jay1j
+aGlwcy5jb20+CgpwaHk6IHJvY2tjaGlwOiBBZGQgc3VwcG9ydCBmb3IgTmFuZW5nIGVEUCBwaHkK
+ClRoaXMgY29tbWl0IGFkZHMgYSBkcml2ZXIgZm9yIHRoZSBSb2NrY2hpcCBlRFAgdHJhbnNtaXR0
+ZXIgUEhZIHdpdGggdGhlCk5hTmVuZyBJUCBibG9jayBmb3VuZCBvbiB0aGUgUkszNTY4IFNvQywg
+Y29udHJvbGxlZCB2aWEgdGhlIGVEUCBQSFkgR1JGCnN5c2NvbiByZWdtYXAuCgo+IGRpZmYgLS1n
+aXQgYS9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtbmFuZW5nLWVkcC5jIGIvZHJp
+dmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLW5hbmVuZy1lZHAuYwo+IG5ldyBmaWxlIG1v
+ZGUgMTAwNjQ0Cj4gaW5kZXggMDAwMDAwMDAwMDAwMC4uYTQwNzcxNGY2MzlhNwo+IC0tLSAvZGV2
+L251bGwKPiArKysgYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtbmFuZW5nLWVk
+cC5jCgpbIC4uLiBdCgo+ICtzdGF0aWMgaW50IHJvY2tjaGlwX2VkcF9waHlfc2V0X3ZvbHRhZ2Vz
+KHN0cnVjdCByb2NrY2hpcF9lZHBfcGh5ICplZHBwaHksCj4gKwkJCQkJIHN0cnVjdCBwaHlfY29u
+ZmlndXJlX29wdHNfZHAgKmRwKQo+ICt7Cj4gKwl1OCBsYW5lOwo+ICsKPiArCWZvciAobGFuZSA9
+IDA7IGxhbmUgPCBkcC0+bGFuZXM7IGxhbmUrKykKPiArCQlyb2NrY2hpcF9lZHBfcGh5X3NldF92
+b2x0YWdlKGVkcHBoeSwgZHAsIGxhbmUpOwo+ICsKPiArCXJldHVybiAwOwo+ICt9Cj4gKwo+ICtz
+dGF0aWMgaW50IHJvY2tjaGlwX2VkcF9waHlfc2V0X3JhdGUoc3RydWN0IHJvY2tjaGlwX2VkcF9w
+aHkgKmVkcHBoeSwKPiArCQkJCSAgICAgc3RydWN0IHBoeV9jb25maWd1cmVfb3B0c19kcCAqZHAp
+Cj4gK3sKPiArCXUzMiB2YWx1ZTsKPiArCWludCByZXQ7CgpbIC4uLiBdCgo+ICsJcmVnbWFwX3dy
+aXRlKGVkcHBoeS0+Z3JmLCBFRFBfUEhZX0dSRl9DT04wLCBGSUVMRF9QUkVQX1dNMTYoRURQX1BI
+WV9QRF9QTExfTUFTSywgMCkpOwo+ICsJcmVnbWFwX3dyaXRlKGVkcHBoeS0+Z3JmLCBFRFBfUEhZ
+X0dSRl9DT04wLAo+ICsJCSAgICAgRklFTERfUFJFUF9XTTE2KEVEUF9QSFlfVFhfUERfTUFTSywg
+fkdFTk1BU0soZHAtPmxhbmVzIC0gMSwgMCkpKTsKPiArCXJldCA9IHJlZ21hcF9yZWFkX3BvbGxf
+dGltZW91dChlZHBwaHktPmdyZiwgRURQX1BIWV9HUkZfU1RBVFVTMCwKPiArCQkJCSAgICAgICB2
+YWx1ZSwgdmFsdWUgJiBQTExfUkRZLCAxMDAsIDEwMDApOwo+ICsJaWYgKHJldCkgewo+ICsJCWRl
+dl9lcnIoZWRwcGh5LT5kZXYsICJGYWlsZWQgdG8gd2FpdCBmb3IgUEhZIFBMTCByZWFkeTogJWRc
+biIsIHJldCk7Cj4gKwkJcmV0dXJuIHJldDsKPiArCX0KPiArCj4gKwlyZWdtYXBfd3JpdGUoZWRw
+cGh5LT5ncmYsIEVEUF9QSFlfR1JGX0NPTjUsIEZJRUxEX1BSRVBfV00xNihFRFBfUEhZX1RYX01P
+REVfTUFTSywgMHgwKSk7Cj4gKwlyZWdtYXBfd3JpdGUoZWRwcGh5LT5ncmYsIEVEUF9QSFlfR1JG
+X0NPTjAsCj4gKwkJICAgICBGSUVMRF9QUkVQX1dNMTYoRURQX1BIWV9UWF9JRExFX01BU0ssIH5H
+RU5NQVNLKGRwLT5sYW5lcyAtIDEsIDApKSk7Cj4gKwo+ICsJcmV0dXJuIDA7Cj4gK30KPiArCj4g
+K3N0YXRpYyBpbnQgcm9ja2NoaXBfZWRwX3BoeV92ZXJpZnlfY29uZmlnKHN0cnVjdCByb2NrY2hp
+cF9lZHBfcGh5ICplZHBwaHksCj4gKwkJCQkJICBzdHJ1Y3QgcGh5X2NvbmZpZ3VyZV9vcHRzX2Rw
+ICpkcCkKPiArewo+ICsJaW50IGk7Cj4gKwo+ICsJLyogSWYgY2hhbmdpbmcgbGluayByYXRlIHdh
+cyByZXF1aXJlZCwgdmVyaWZ5IGl0J3Mgc3VwcG9ydGVkLiAqLwo+ICsJaWYgKGRwLT5zZXRfcmF0
+ZSkgewo+ICsJCXN3aXRjaCAoZHAtPmxpbmtfcmF0ZSkgewo+ICsJCWNhc2UgMTYyMDoKPiArCQlj
+YXNlIDI3MDA6Cj4gKwkJCS8qIHZhbGlkIGJpdCByYXRlICovCj4gKwkJCWJyZWFrOwo+ICsJCWRl
+ZmF1bHQ6Cj4gKwkJCXJldHVybiAtRUlOVkFMOwo+ICsJCX0KPiArCX0KPiArCj4gKwlpZiAoZHAt
+PnNldF9sYW5lcykgewo+ICsJCS8qIFZlcmlmeSBsYW5lIGNvdW50LiAqLwo+ICsJCXN3aXRjaCAo
+ZHAtPmxhbmVzKSB7Cj4gKwkJY2FzZSAxOgo+ICsJCWNhc2UgMjoKPiArCQljYXNlIDQ6Cj4gKwkJ
+CS8qIHZhbGlkIGxhbmUgY291bnQuICovCj4gKwkJCWJyZWFrOwo+ICsJCWRlZmF1bHQ6Cj4gKwkJ
+CXJldHVybiAtRUlOVkFMOwo+ICsJCX0KPiArCX0KPiArCj4gKwkvKgo+ICsJICogSWYgY2hhbmdp
+bmcgdm9sdGFnZXMgaXMgcmVxdWlyZWQsIGNoZWNrIHN3aW5nIGFuZCBwcmUtZW1waGFzaXMKPiAr
+CSAqIGxldmVscywgcGVyLWxhbmUuCj4gKwkgKi8KPiArCWlmIChkcC0+c2V0X3ZvbHRhZ2VzKSB7
+Cj4gKwkJLyogTGFuZSBjb3VudCB2ZXJpZmllZCBwcmV2aW91c2x5LiAqLwo+ICsJCWZvciAoaSA9
+IDA7IGkgPCBkcC0+bGFuZXM7IGkrKykgewo+ICsJCQlpZiAoZHAtPnZvbHRhZ2VbaV0gPiAzIHx8
+IGRwLT5wcmVbaV0gPiAzKQo+ICsJCQkJcmV0dXJuIC1FSU5WQUw7Cj4gKwo+ICsJCQkvKgo+ICsJ
+CQkgKiBTdW0gb2Ygdm9sdGFnZSBzd2luZyBhbmQgcHJlLWVtcGhhc2lzIGxldmVscyBjYW5ub3QK
+PiArCQkJICogZXhjZWVkIDMuCj4gKwkJCSAqLwo+ICsJCQlpZiAoZHAtPnZvbHRhZ2VbaV0gKyBk
+cC0+cHJlW2ldID4gMykKPiArCQkJCXJldHVybiAtRUlOVkFMOwo+ICsJCX0KPiArCX0KPiArCj4g
+KwlyZXR1cm4gMDsKPiArfQo+ICsKPiArc3RhdGljIGludCByb2NrY2hpcF9lZHBfcGh5X2NvbmZp
+Z3VyZShzdHJ1Y3QgcGh5ICpwaHksIHVuaW9uIHBoeV9jb25maWd1cmVfb3B0cyAqb3B0cykKPiAr
+ewo+ICsJc3RydWN0IHJvY2tjaGlwX2VkcF9waHkgKmVkcHBoeSA9IHBoeV9nZXRfZHJ2ZGF0YShw
+aHkpOwo+ICsJaW50IHJldDsKPiArCj4gKwlyZXQgPSByb2NrY2hpcF9lZHBfcGh5X3ZlcmlmeV9j
+b25maWcoZWRwcGh5LCAmb3B0cy0+ZHApOwo+ICsJaWYgKHJldCkgewo+ICsJCWRldl9lcnIoZWRw
+cGh5LT5kZXYsICJJbnZhbGlkIHBhcmFtcyBmb3IgcGh5IGNvbmZpZ3VyZVxuIik7Cj4gKwkJcmV0
+dXJuIHJldDsKPiArCX0KPiArCj4gKwlpZiAob3B0cy0+ZHAuc2V0X3JhdGUpIHsKPiArCQlyZXQg
+PSByb2NrY2hpcF9lZHBfcGh5X3NldF9yYXRlKGVkcHBoeSwgJm9wdHMtPmRwKTsKPiArCQlpZiAo
+cmV0KSB7Cj4gKwkJCWRldl9lcnIoZWRwcGh5LT5kZXYsICJGYWlsZWQgdG8gc2V0IHJhdGVcbiIp
+Owo+ICsJCQlyZXR1cm4gcmV0Owo+ICsJCX0KPiArCX0KPiArCj4gKwlpZiAob3B0cy0+ZHAuc2V0
+X3ZvbHRhZ2VzKSB7Cj4gKwkJcmV0ID0gcm9ja2NoaXBfZWRwX3BoeV9zZXRfdm9sdGFnZXMoZWRw
+cGh5LCAmb3B0cy0+ZHApOwo+ICsJCWlmIChyZXQpIHsKPiArCQkJZGV2X2VycihlZHBwaHktPmRl
+diwgIkZhaWxlZCB0byBzZXQgdm9sdGFnZXNcbiIpOwo+ICsJCQlyZXR1cm4gcmV0Owo+ICsJCX0K
+PiArCX0KPiArCj4gKwlyZXR1cm4gMDsKPiArfQoKW1NldmVyaXR5OiBIaWdoXQpIb3cgZG9lcyBy
+b2NrY2hpcF9lZHBfcGh5X2NvbmZpZ3VyZSgpIGhhbmRsZSBjYWxsZXJzIHRoYXQgaXNzdWUgc2Vw
+YXJhdGUKcGh5X2NvbmZpZ3VyZSgpIGNhbGxzIGZvciByYXRlLCBsYW5lIGNvdW50LCBhbmQgdm9s
+dGFnZSBsZXZlbHM/CgpMb29raW5nIGF0IGRyaXZlcnMvZ3B1L2RybS9icmlkZ2UvYW5hbG9naXgv
+YW5hbG9naXhfZHBfcmVnLmMsIHRoZSBBbmFsb2dpeCBEUApicmlkZ2UgaXNzdWVzIHRocmVlIHNl
+cGFyYXRlIHBoeV9jb25maWd1cmUoKSBjYWxscywgZWFjaCB3aXRoIGEKemVyby1pbml0aWFsaXpl
+ZCB1bmlvbiBwaHlfY29uZmlndXJlX29wdHM6CgoxLiBhbmFsb2dpeF9kcF9zZXRfbGlua19iYW5k
+d2lkdGgoKSBzZXRzIG9ubHkgcGh5X2NmZy5kcC5saW5rX3JhdGUgYW5kCnBoeV9jZmcuZHAuc2V0
+X3JhdGUgPSB0cnVlLCBsZWF2aW5nIHBoeV9jZmcuZHAubGFuZXMgPSAwOgoKICAgIHVuaW9uIHBo
+eV9jb25maWd1cmVfb3B0cyBwaHlfY2ZnID0gezB9OwoKICAgIHBoeV9jZmcuZHAubGlua19yYXRl
+ID0KICAgICAgICBkcm1fZHBfYndfY29kZV90b19saW5rX3JhdGUoZHAtPmxpbmtfdHJhaW4ubGlu
+a19yYXRlKSAvIDEwMDsKICAgIHBoeV9jZmcuZHAuc2V0X3JhdGUgPSB0cnVlOwogICAgcmV0ID0g
+cGh5X2NvbmZpZ3VyZShkcC0+cGh5LCAmcGh5X2NmZyk7CgpXaGVuIHJvY2tjaGlwX2VkcF9waHlf
+c2V0X3JhdGUoKSBydW5zLCBkcC0+bGFuZXMgaXMgMCAoYW5kIHVudmFsaWRhdGVkIHNpbmNlCmRw
+LT5zZXRfbGFuZXMgaXMgZmFsc2UpLCBzbyBHRU5NQVNLKGRwLT5sYW5lcyAtIDEsIDApIGV2YWx1
+YXRlcwpHRU5NQVNLKFVJTlRfTUFYLCAwKSB3aGVuIHByb2dyYW1taW5nIEVEUF9QSFlfVFhfUERf
+TUFTSyBhbmQKRURQX1BIWV9UWF9JRExFX01BU0suCgoyLiBhbmFsb2dpeF9kcF9zZXRfbGFuZV9j
+b3VudCgpIHNldHMgcGh5X2NmZy5kcC5sYW5lcyBhbmQKcGh5X2NmZy5kcC5zZXRfbGFuZXMgPSB0
+cnVlLCBidXQgcm9ja2NoaXBfZWRwX3BoeV9jb25maWd1cmUoKSBuZXZlciBjaGVja3MKb3B0cy0+
+ZHAuc2V0X2xhbmVzLCBzbyB0aGUgbGFuZS1kZXBlbmRlbnQgVFggY29uZmlndXJhdGlvbiBpcyBu
+b3QgYXBwbGllZCBhbmQKdGhlIGFjdGl2ZSBsYW5lIGNvdW50IGlzIG5vdCBzdG9yZWQgaW4gc3Ry
+dWN0IHJvY2tjaGlwX2VkcF9waHkuCgozLiBhbmFsb2dpeF9kcF9zZXRfbGFuZV9saW5rX3RyYWlu
+aW5nKCkgc2V0cyBwaHlfY2ZnLmRwLnZvbHRhZ2VbXSwKcGh5X2NmZy5kcC5wcmVbXSwgYW5kIHBo
+eV9jZmcuZHAuc2V0X3ZvbHRhZ2VzID0gdHJ1ZSwgd2l0aCBwaHlfY2ZnLmRwLmxhbmVzCmxlZnQg
+YXQgMC4gQm90aCByb2NrY2hpcF9lZHBfcGh5X3ZlcmlmeV9jb25maWcoKSBhbmQKcm9ja2NoaXBf
+ZWRwX3BoeV9zZXRfdm9sdGFnZXMoKSBsb29wIHVwIHRvIGRwLT5sYW5lcywgc28gMCBpdGVyYXRp
+b25zIHJ1biBhbmQKbm8gdm9sdGFnZSBzd2luZyBvciBwcmUtZW1waGFzaXMgcmVnaXN0ZXJzIGFy
+ZSB3cml0dGVuIChvciBpZiBhIGNhbGxlciBwYXNzZXMKc2V0X3ZvbHRhZ2VzID0gdHJ1ZSB3aXRo
+IHNldF9sYW5lcyA9IGZhbHNlIGFuZCBhbiB1bnZhbGlkYXRlZCBkcC0+bGFuZXMgPiA0LAp0aGUg
+bG9vcHMgcmVhZCBwYXN0IHRoZSBlbmQgb2YgZHAtPnZvbHRhZ2VbNF0gYW5kIGRwLT5wcmVbNF0p
+LgoKU2hvdWxkIHRoZSBsYW5lLWRlcGVuZGVudCBUWCBjb25maWd1cmF0aW9uIGJlIGFwcGxpZWQg
+aW4gYSBzZXRfbGFuZXMgaGFuZGxlcgp0aGF0IGFsc28gc3RvcmVzIHRoZSBsYW5lIGNvdW50IGlu
+IHN0cnVjdCByb2NrY2hpcF9lZHBfcGh5IGZvciBzZXRfdm9sdGFnZXMKdG8gdXNlPwoKPiArc3Rh
+dGljIGJvb2wgcm9ja2NoaXBfZWRwX3BoeV9lbmFibGVkKHN0cnVjdCByb2NrY2hpcF9lZHBfcGh5
+ICplZHBwaHkpCj4gK3sKPiArCXUzMiB2YWw7Cj4gKwo+ICsJcmVnbWFwX3JlYWQoZWRwcGh5LT5n
+cmYsIEVEUF9QSFlfR1JGX1NUQVRVUzAsICZ2YWwpOwo+ICsKPiArCXJldHVybiBGSUVMRF9HRVQo
+UExMX1JEWSwgdmFsKTsKPiArfQoKW1NldmVyaXR5OiBNZWRpdW1dCldoYXQgaGFwcGVucyBpbiBy
+b2NrY2hpcF9lZHBfcGh5X2VuYWJsZWQoKSBpZiByZWdtYXBfcmVhZCgpIGZhaWxzPwoKQmVjYXVz
+ZSB2YWwgaXMgdW5pbml0aWFsaXplZCBhbmQgdGhlIHJldHVybiB2YWx1ZSBvZiByZWdtYXBfcmVh
+ZCgpIGlzIG5vdApjaGVja2VkLCBGSUVMRF9HRVQoUExMX1JEWSwgdmFsKSB3aWxsIHJlYWQgYW4g
+dW5pbml0aWFsaXplZCBzdGFjayB2YXJpYWJsZSwKd2hpY2ggY2FuIGNhdXNlIHJvY2tjaGlwX2Vk
+cF9waHlfcG93ZXJfb24oKSB0byByZXR1cm4gMCBlYXJseSB3aXRob3V0CnBvd2VyaW5nIG9uIG9y
+IGNvbmZpZ3VyaW5nIHRoZSBQSFkgQVVYIGNoYW5uZWwuCgpTaG91bGQgdmFsIGJlIGluaXRpYWxp
+emVkIHRvIDAgKG9yIHRoZSByZWdtYXBfcmVhZCgpIGVycm9yIGNoZWNrZWQpPwoKWyAuLi4gXQoK
+PiAtLSAKPiAyLjM0LjEKCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28u
+ZGV2LyMvcGF0Y2hzZXQvMjAyNjEwMTkxMDI4MjQuMzE1NzA0NC0xLWRhbW9uLmRpbmdAcm9jay1j
+aGlwcy5jb20/cGFydD00CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1waHkK
