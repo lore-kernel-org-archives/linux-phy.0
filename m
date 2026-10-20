@@ -2,46 +2,46 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 63D60606A31E
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Oct 2026 07:30:04 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0A3C2606A33A
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Oct 2026 07:30:30 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=JKPjoz6k;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=airkyi.com header.i=@airkyi.com header.a=rsa-sha256 header.s=altu2504 header.b=Ecw7d2ok
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=qPJNQA2M;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=airkyi.com header.i=@airkyi.com header.a=rsa-sha256 header.s=altu2504 header.b=WE1Os1kC
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dHkKu1J0w38u0iR9/zkX/GvcJh5k0nPRcBRATz2Nzk0=; b=JKPjoz6khfjAce
-	giOxLD9zHA9kZeceCr/43G2Q7DTEt+pX1G09ujzXkssfu8aje4sOBEEo/EZkoMIydGy9dUkpae+DT
-	VyzCFyCqsZ9kje2cvOXi+QiPY8b1hgKUVB6a3TqHss43MEFRjnRP4Oo+BjjzDQZb6pe6m4UUmY0a/
-	Q4dJiFcCxEujLk7apUvUdyneJnrqFyB3uPKhArcUR0Eqt0HQjWlIf7YLmsobo95C8AbSN84+WxNjg
-	6QW6hpQU0Mb861PfrMwmT4TGFtmYvlxbgYcVgdjgj7es10NPC0Bwy7MXSyBNo+v1XlfK0sujr7+XI
-	fbWLOAaBrtfqasJo1ljA==;
+	List-Owner; bh=Ozc8iSvRyWyOe/hnou1ve3qMVgpSVSfwWQfkhb50ZAM=; b=qPJNQA2MbSbmlz
+	LMkv2C0pVFa95iDx1Y4tagpTX8c4S9Rj6EAijkWMZCqdXGUYe6WNB9q3ukZn7qQlTohc9n5yrHgXx
+	3o+zmDXDzENz+gV6eLwYiw2b38B2xWeHtkCnGW/I9Ggbow1113DN56V3VhpAdxMxtUOFnP2V3Vq7k
+	bDiOfc26yPD82H3ebU3jiiB6SrDtOzI9/4llgHkS2VomrXzk7L12YGxiQqo7F2PRXXFzqZxu1K7uO
+	lEo1bCO8kTrGUjlrfCL/R9IXqnT+2eOV+WqtVOQAoqbVaAyOt1cextV7hmHfDxu3KmbNTKKvQUL6X
+	b/bPQDIe69FvkJ/iZ4yA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJ4IO-000000092GJ-0Lzt;
-	Tue, 20 Oct 2026 07:30:04 +0000
-Received: from smtpbgbr1.qq.com ([54.207.19.206])
+	id 1xJ4In-000000092dY-3BpR;
+	Tue, 20 Oct 2026 07:30:29 +0000
+Received: from smtpbguseast1.qq.com ([54.204.34.129])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJ4II-0000000923f-0NIm;
-	Tue, 20 Oct 2026 07:30:02 +0000
+	id 1xJ4Ih-000000092Mg-0yAq;
+	Tue, 20 Oct 2026 07:30:26 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=airkyi.com;
-	s=altu2504; t=1792481337;
-	bh=RJlSQp8r350iMwIMlHz6kJOY3IIHWCaiqptCoWQnTWs=;
+	s=altu2504; t=1792481350;
+	bh=ps+5/GB0NshBez8oJzJPOCqkIqmjQyVJoJgHnSj4//Y=;
 	h=From:To:Subject:Date:Message-Id;
-	b=Ecw7d2okmv3MI5PTqvU7ijFiZ6GaLd7uRglRD8ks/FVq//5EOeKHmNgetu5s1uaka
-	 y1RygjT3y9Q/clUQCqjWRetzxo/48/eh1qbFcpnnAGvNipBSFKMmWWXjfO8l8VZLmW
-	 tfLkXAwv279C4jVbIS2CUFqjRYakApsNPfMIBWPA=
-X-QQ-mid: zesmtpsz4t1792481335t9bc8c4d2
-X-QQ-Originating-IP: rMyewjLzKncWQnPrp9ri5tZ/Pt41y4HBpk1o+5qM6Fw=
+	b=WE1Os1kCyShFbPK5b5Sm7DlyzEpw5Gfg+SNl12JlYD7B0FSP62XeHrPEQTWTzR0Mo
+	 tMT01q19JJlyWZ59hTIOXNt8W6wVUWGJo+RLtabspjrfi1VG4O4G2BZV+XsiHoCvun
+	 EoRX3lrk2EW1hy0/PJZTqV8135+h4gs0MPySRzAQ=
+X-QQ-mid: zesmtpsz4t1792481349t498ce6ab
+X-QQ-Originating-IP: 5IQQW5FN/kiyWe2+lWi53DmnbY8e45q3p8I9AC3Xxks=
 Received: from DESKTOP-8BT1A2O.localdomain ( [61.154.14.86])
 	by bizesmtp.qq.com (ESMTP) with 
-	id ; Tue, 20 Oct 2026 15:28:50 +0800 (CST)
+	id ; Tue, 20 Oct 2026 15:29:02 +0800 (CST)
 X-QQ-SSF: 0000000000000000000000000000000
 X-QQ-GoodBg: 0
-X-BIZMAIL-ID: 11522251199344246924
+X-BIZMAIL-ID: 12217570739329010046
 From: Chaoyi Chen <kernel@airkyi.com>
 To: Andrzej Hajda <andrzej.hajda@intel.com>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
@@ -68,36 +68,35 @@ Cc: linux-kernel@vger.kernel.org,
 	linux-rockchip@lists.infradead.org,
 	linux-phy@lists.infradead.org,
 	Chaoyi Chen <chaoyi.chen@rock-chips.com>
-Subject: [PATCH v8 3/7] drm/display: Add soft depend for aux-hpd-typec-dp-bridge module
-Date: Tue, 20 Oct 2026 15:28:12 +0800
-Message-Id: <20261020072816.180-4-kernel@airkyi.com>
+Subject: [PATCH v8 5/7] phy: rockchip: phy-rockchip-typec: Add DRM AUX bridge
+Date: Tue, 20 Oct 2026 15:28:14 +0800
+Message-Id: <20261020072816.180-6-kernel@airkyi.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20261020072816.180-1-kernel@airkyi.com>
 References: <20261020072816.180-1-kernel@airkyi.com>
 X-QQ-SENDSIZE: 520
 Feedback-ID: zesmtpsz:airkyi.com:qybglogicsvrgz:qybglogicsvrgz6b-0
-X-QQ-XMAILINFO: ONv4FG6+I+02HuzVCkn9c1eMWjR1sOgpi+JuGdKA/qUelVTLqUc7tkbY
-	RbOH0B0UsLGVQIKwMchojlDv3dIbFEMBnNIoGa4EwXTGHSkLR2+MhnOgZ0KF+6YhZdrH3f6
-	9vTPDL8l4BhSMEmQROVzAInVBD/lMtIU5nAL/vbJdcT2zy8mqBZElRRwXOMmqzploLr/fPP
-	tZlDSuY41SKs3yltn7mgS9C/IOBSigLbfjWYNJgeCdSqN6+Pie2iGIUKqoC/QVuEkCA7nBN
-	UFMgooxaUPKqHqTTwnYwWoF62HwAA1UEB5Ly7lQiEnK1kYDPIXO72StMGf5HJyM23TVm2KR
-	XDDUUSD6O13JHXLYWLXZmrtgcdnudofXknaoVWU16b2Pb7+i7bpLQDFkkEcHh1+vsQQxFur
-	fr6WMKk0xV86qWDPPvNVefrfz77nYMtfBzcdC6sWsaxAx4qLZXoG9+406wFZCg2t0TG3IhH
-	qzn2Ds+XYRvZ3DD92Bpca0LStAm5SNAHmSuti/mBVMmmg2k8FrEsPMoURiGZblqG3suSHwk
-	fI7oCVJLpaAhg1BeU/Ia8xkasPezBtRs45Q3pYCnjw1+zO7L5Jp45IBzU0yK9Dk8C3mlKIA
-	piQ2Kkj92I12lze9glMPtGzkiwbBPXAItpeNwu3MXFtllSKV1YdtdOceLqP0iV3Ymx8lFQH
-	fkHi7g1iaNFy0L4xoyZIumRE6VNH7AFtyDAJ+U4kDxgFyPVRcHM60TpRNLg0BU5DlEACG9m
-	TF4xtoETQPXGJ52yUYVDAKEegv1He7r+3YUjneSPStEMVddfGL4b+q+TVdsaFCS2ZxrkDtS
-	W8j0Odl4HvbMCrJNk/u0Vgjp7jLd2MK079XzuTS65s2MTCT3eyJ1HF4akUIsabVZCWtgVLU
-	EudQ8MhWhqaPtV0Bo5fRnGJOTqPSNTyq8FzoM0Fk9epnXhvW6fMFnzLSI1xvp8v6kUA/hC9
-	P+DrtruQCgEUoeA04xThdJ4m+HjIeOGmUGPJaEkEq9g3vTXAXFoksOWLLOGOh6xZeZh36Db
-	mWSTVDQLpkquCRSzL1Fvx0Sp3iWCs=
-X-QQ-XMRINFO: Nq+8W0+stu50tPAe92KXseR0ZZmBTk3gLg==
+X-QQ-XMAILINFO: NFcI4DQTV9fm8pZwPapyv3tn281ajQKr81iOFpClffJowLhyLMhz3XXG
+	QRmtFe9TDvvGXnX3dK+Rnm4zu5N7kG0ff8RQn/UCZLeDYh55TONje/yWXxVzR5VRlMrq6En
+	HBqYsKD1j6D/1cdFk48uioFN8jTSWrlgrMEQtZoBaPtaohnqfF+gGxNMdfjXon2mPWmzBEG
+	qfCxJTzdJQwgKHnkHhZuJCEjLXpbW89QyY+P8pOFFj6SRgUeWBpx9ok8Oo0p0u1XWYubUC3
+	eDup+Ej9lvQxTceSsKeJAzaNvxMQk4trOJpJzSx7U+RecWhDFTO8yQcDkcDkIfnknG0wqbD
+	wIKFxBjWCMZmnpYoIbCdhU1Ihat4EhnUQaaU/QjLEFyscXTDXTYfcKtGywqpkFqdkjy/o0C
+	wHVZa/hwORbsMyqIQ/YOZhLdDnqg/cAqWMZSU09w6x4R1bsN6Xgqi2lh3DL8Y+MFQsTkIqn
+	RhjSvFy/NTxd4yCD/+Nw3Y8kcaq09/7PuVq13FuZcsE6fHfEdH+ZbFlS2vdAa70WsLheNUw
+	64h/aIfQ4j8fi2i1SZUTNZEWEKVhSQLnOitbdFIIK21Fk+3Wl8iDF4titxwyqPJqkDu6AsV
+	CUSFjr4h5wQTtWMZH4UD6U7aURLxnIynPiAo6l274J0hkiIJfXaLvxfeuMUo3tayY0E2XK3
+	Y7vxWTtjUACGyukfcOI/AAzucGLvOQtaflGqMPUjastqbjs3szv77EUeQfGpluEoMmJQGhV
+	mcWOIytE7I4Zh5305rRlICRW0C5yK9IrILrpCOQ+w6gyybXTMahwoHSgw5yq2m4gq/QTvcA
+	KpO+tvR32spcLb4pM+QBm0b9+BJbycubttjIATVWMNo4Sk2AqW/K7jneAFDDp7xzPeKW3AB
+	a+3CIxPzLnVFU8yb1cFaGWXE2Do5pMn3f6lBtzWb1ad6X5Cfvo0AF9pRpnMKaJBMI/3aeex
+	7Y62zb4LG3KkeoMvd4npoW6vF1KghdLdDBBQbDdmcPqPTv2/LrLiNmM1pYGYXdNFYlhpPPA
+	pqVjnwRlsEmcEMZVpX/uL+ax8Bq3fP9pGd6ij8s5RuMkPv3h07
+X-QQ-XMRINFO: M/715EihBoGS47X28/vv4NpnfpeBLnr4Qg==
 X-QQ-RECHKSPAM: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261020_002958_944754_AADEB0DD 
-X-CRM114-Status: UNSURE (   8.21  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20261020_003025_118099_01A22FC5 
+X-CRM114-Status: GOOD (  12.01  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -122,35 +121,72 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 
 From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
 
-The aux-hpd-typec-dp-bridge module serves as a generic TypeC
-DisplayPort HPD bridge and is not required by any other
-module. Therefore, it will not be auto-loaded.
+Using the DRM_AUX_BRIDGE helper to create the transparent DRM bridge
+device.
 
-Given that the drm_display_helper module houses DisplayPort-related
-helper code, add a MODULE_SOFTDEP() within it to suggest loading the
-aux-hpd-typec-dp-bridge module beforehand.
-
-Suggested-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-Tested-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+Acked-by: Vinod Koul <vkoul@kernel.org>
 ---
-(no changes since v6)
+(no changes since v1)
 ---
- drivers/gpu/drm/display/drm_display_helper_mod.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/phy/rockchip/Kconfig              |  2 ++
+ drivers/phy/rockchip/phy-rockchip-typec.c | 13 +++++++++++--
+ 2 files changed, 13 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/gpu/drm/display/drm_display_helper_mod.c b/drivers/gpu/drm/display/drm_display_helper_mod.c
-index d8a6e6228773..f0152d6b0b2d 100644
---- a/drivers/gpu/drm/display/drm_display_helper_mod.c
-+++ b/drivers/gpu/drm/display/drm_display_helper_mod.c
-@@ -18,5 +18,6 @@ static void __exit drm_display_helper_module_exit(void)
- 	drm_dp_aux_dev_exit();
- }
+diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
+index 14698571b607..9173d3b4fef4 100644
+--- a/drivers/phy/rockchip/Kconfig
++++ b/drivers/phy/rockchip/Kconfig
+@@ -119,6 +119,8 @@ config PHY_ROCKCHIP_SNPS_PCIE3
+ config PHY_ROCKCHIP_TYPEC
+ 	tristate "Rockchip TYPEC PHY Driver"
+ 	depends on OF && (ARCH_ROCKCHIP || COMPILE_TEST)
++	depends on DRM || DRM=n
++	select DRM_AUX_BRIDGE if DRM_BRIDGE
+ 	select EXTCON
+ 	select GENERIC_PHY
+ 	select RESET_CONTROLLER
+diff --git a/drivers/phy/rockchip/phy-rockchip-typec.c b/drivers/phy/rockchip/phy-rockchip-typec.c
+index d9701b6106d5..48070b50416e 100644
+--- a/drivers/phy/rockchip/phy-rockchip-typec.c
++++ b/drivers/phy/rockchip/phy-rockchip-typec.c
+@@ -54,6 +54,7 @@
  
-+MODULE_SOFTDEP("pre: aux-hpd-typec-dp-bridge");
- module_init(drm_display_helper_module_init);
- module_exit(drm_display_helper_module_exit);
+ #include <linux/mfd/syscon.h>
+ #include <linux/phy/phy.h>
++#include <drm/bridge/aux-bridge.h>
+ 
+ #define CMN_SSM_BANDGAP			(0x21 << 2)
+ #define CMN_SSM_BIAS			(0x22 << 2)
+@@ -1162,16 +1163,24 @@ static int rockchip_typec_phy_probe(struct platform_device *pdev)
+ 
+ 	for_each_available_child_of_node(np, child_np) {
+ 		struct phy *phy;
++		ret = 0;
+ 
+-		if (of_node_name_eq(child_np, "dp-port"))
++		if (of_node_name_eq(child_np, "dp-port")) {
+ 			phy = devm_phy_create(dev, child_np,
+ 					      &rockchip_dp_phy_ops);
+-		else if (of_node_name_eq(child_np, "usb3-port"))
++			ret = drm_aux_bridge_register_from_node(dev, child_np);
++		} else if (of_node_name_eq(child_np, "usb3-port"))
+ 			phy = devm_phy_create(dev, child_np,
+ 					      &rockchip_usb3_phy_ops);
+ 		else
+ 			continue;
+ 
++		if (ret) {
++			pm_runtime_disable(dev);
++			of_node_put(child_np);
++			return ret;
++		}
++
+ 		if (IS_ERR(phy)) {
+ 			dev_err(dev, "failed to create phy: %pOFn\n",
+ 				child_np);
 -- 
 2.53.0
 
