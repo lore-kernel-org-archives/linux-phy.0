@@ -2,67 +2,54 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 37AB7606A31F
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Oct 2026 16:29:16 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DA93B606A321
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Oct 2026 17:00:30 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=VYndshNt;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=a8foUJMU
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=X0sFAdJR
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z2mocPCnZStcuzPUEQ0+5d6lQgpMjWsHxo1B9gLr+90=; b=VYndshNtvM2YfX
-	OqaSYYqG2hMQElmOZqqGz2q33X9hgFKdx8ilEv7kt8m1CKIzrFNDyeIsGJBX/0200IY/fJJodD61g
-	PjAuU/MERXsTj98/rDcXfk58cxSZo/4EYiY8j/+2Gdk/XqU8V6Hf7wBiuDXh4ybw9WkXzpUfdhuDi
-	x1KjyssGTXZE5xHjdvwAxt74ZspeKIdipcIoWcs8cuqjs634bqjw44q7M2tFAGwRPl1Kmyz5f6NAG
-	clslYJ0k/vk6sLoOVF8LFyDUVz/tsHln8mrYvv7UrvSkYYGA4JfAoIBiZsrzgt+I8bX4v6NFzZG0F
-	kKQe360Xnge7zjkU090Q==;
+	List-Owner; bh=d7ye55ugNUMYfOEhO1v00znB5Js4JoluX8YqbIMcEuE=; b=X0sFAdJR5jm7GS
+	rOas/7j3Bb8ofx2qYftLNUUQSXj5cFgVCdoYItPonBuxdUr/LmwM9ZP9MQzdDGqE6yeEXpZAO5cjk
+	fJh3sII+0jGJuC69fSG25RULdyJN5n49OdxkfyVWVRa0licwpWweGaoIVMvHR27hMoY3Y1c9WsQq5
+	RrADFtSr3RLmsoaOA0qL1Ldq3j6ri9nmljCguLvFJRUsG0oJahFuDptG3GPRMcVWD8yi+X4BTUYGx
+	esE5fa61LTGoRXtEDzBtEYMgQu7TSzQcGo8oQGu70L3JsOd+5Uhlvn4w5Is1YoFHIhsKaY0GiOh7w
+	fPFmczqvXm8X3SCkKQUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJCiB-0000000AB3I-2suw;
-	Tue, 20 Oct 2026 16:29:15 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xJDCQ-0000000AIAZ-1y93;
+	Tue, 20 Oct 2026 17:00:30 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJCiA-0000000AB2U-0NaQ;
-	Tue, 20 Oct 2026 16:29:14 +0000
+	id 1xJDCP-0000000AI9a-05hb;
+	Tue, 20 Oct 2026 17:00:29 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 19F2E601F9;
-	Tue, 20 Oct 2026 16:29:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9B7161F000C4;
-	Tue, 20 Oct 2026 16:29:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792513752;
-	bh=+jdyq0Zfmu33A//X/4Q8SrSfQyWMMoDDtV5zWpBiENk=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=a8foUJMUqu5P8nKNaWlNLtBvXMXfnCOSwrfbCydwXzOCOwyOLWOebj+1l10GTer8h
-	 zsAEyQyGQeia0G4wyPi8tP1/HOz3S1r6tDqL0O0E+QAaxHrxPasJbjvusut16walxr
-	 2LyYRwbJnG68aDBb+FHDuG2OVSWQfJkotjPte4vOcuw+eISVmy0eBtTPL2Mz4eLmKk
-	 aidzs3wwJ0pkxCpHds+sahsI6kBunz76pRCaGuflKNYQ/kkZ5XJlFS2UGfO7rcRBKR
-	 d5Dd+DhMu5yPj6Lhbah+g+UMaR3fghb9giemCvasfEds9TP68TCT0zTjQU5q2mkom1
-	 GaGDfgsY9luRA==
-Date: Tue, 20 Oct 2026 11:29:10 -0500
+	by sea.source.kernel.org (Postfix) with ESMTP id 6C7474129D;
+	Tue, 20 Oct 2026 17:00:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 321DB1F000CB;
+	Tue, 20 Oct 2026 17:00:28 +0000 (UTC)
+Date: Tue, 20 Oct 2026 11:59:57 -0500
 From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Jacky Chou <jacky_chou@aspeedtech.com>
-Cc: Andrew Jeffery <andrew@codeconstruct.com.au>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Joel Stanley <joel@jms.id.au>,
-	Billy Tsai <billy_tsai@aspeedtech.com>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	Conor Dooley <conor+dt@kernel.org>, linux-aspeed@lists.ozlabs.org,
+To: Christian Marangi <ansuelsmth@gmail.com>
+Cc: linux-phy@lists.infradead.org,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	linux-kernel@vger.kernel.org, Ryan Chen <ryan_chen@aspeedtech.com>
-Subject: Re: [PATCH v10 1/3] dt-bindings: phy: aspeed: Add ASPEED PCIe PHY
-Message-ID: <179251375007.3988760.929772865298588176.robh@kernel.org>
-References: <20261020-upstream_pcie_rc-v10-0-fba209af8656@aspeedtech.com>
- <20261020-upstream_pcie_rc-v10-1-fba209af8656@aspeedtech.com>
+	linux-arm-kernel@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
+	devicetree@vger.kernel.org, Manivannan Sadhasivam <mani@kernel.org>,
+	linux-kernel@vger.kernel.org,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>
+Subject: Re: [PATCH v4 1/2] dt-bindings: phy: airoha: Document support for
+ AN7583 Gen3 PCIe PHY
+Message-ID: <179251559688.4163940.7901807887627397046.robh@kernel.org>
+References: <20261016071225.2092-1-ansuelsmth@gmail.com>
+ <20261016071225.2092-2-ansuelsmth@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20261020-upstream_pcie_rc-v10-1-fba209af8656@aspeedtech.com>
+In-Reply-To: <20261016071225.2092-2-ansuelsmth@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,18 +70,24 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 
-On Tue, 20 Oct 2026 19:59:49 +0800, Jacky Chou wrote:
-> Introduce device-binding for ASPEED AST2600/2700 PCIe PHY.
-> The PHY provides the physical layer used by the PCIe
-> controller when operating in root complex mode.
+On Fri, 16 Oct 2026 09:12:23 +0200, Christian Marangi wrote:
+> Document support for AN7583 PCIe PHY used to make the Gen3 PCIe port
+> work. Add the required register to configure the PCIe PHY and provide an
+> example for it.
 > 
-> Describe the compatible strings, register range, clocks and
-> phy-cells value required by the PHY provider.
+> The PHY link to another PHY (the QPHY as described in the YAML) to
+> correctly handle Gen2 speed and mode. It's mandatory to have this PHY
+> configured for correct functionality of PCIe. The QPHY is a unified PHY
+> that both handle USB and PCIe PHY.
 > 
-> Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
+> It's also mondatory that the QPHY setup is done in the PCIe PHY setup and
+> calibration phase or calibration might fail.
+> 
+> Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
 > ---
->  .../bindings/phy/aspeed,ast2600-pcie-phy.yaml      | 49 ++++++++++++++++++++++
->  1 file changed, 49 insertions(+)
+>  .../phy/airoha,an7583-pcie-gen3-phy.yaml      | 65 +++++++++++++++++++
+>  1 file changed, 65 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7583-pcie-gen3-phy.yaml
 > 
 
 Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
