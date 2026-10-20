@@ -2,64 +2,83 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CA0E2606A320
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Oct 2026 13:05:32 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 27BB860A3806
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Oct 2026 13:37:55 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=P5wlCqrq;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=myqh4M6I
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=tlEt9Gxs;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=infradead.org header.i=@infradead.org header.a=rsa-sha256 header.s=desiato.20200630 header.b=dUaiSYOh;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=sntech.de header.i=@sntech.de header.a=rsa-sha256 header.s=gloria202408 header.b=R8rsXKOl
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AD6bPEaJAsW7X3Nydbq1L+SAR99RdhJeAJoQBfdWs/8=; b=P5wlCqrqOKIDnc
-	DH98FkhBlts4dVcISTvTyCZ9W501HyhoG8bSOhbV9QLsbPwPakq4zH9RkctDS0tpnzOc0KSQYo3LL
-	nJGBPAB5uPnzAAb07DfTaUVYoZYqSM79hM6OKmxx+R4sRFw8HMN7CRyv59W3sbrSDY/m9U24p5w/q
-	aU1BLbYNrhOnwuj5D7oecfYjlr4oxw4VEt7K1wVFBp10G/2GXiBavwVmM7VmbRabIiA3Azhh6d+FO
-	OodArYLvrJ129Dm8Z0E82EJBcFyzQJDhdnfR8tJoYbKgFWxHfTwZYm+8o/WnUW30AVXaPBufs9HQn
-	ZZz30RNhjoQu6othenAg==;
+	List-Owner; bh=zQBgNT/NWG12R9lp3Ds4gkwDEQg3lGxVL1L+JHkb+d8=; b=tlEt9GxsZv/hY0
+	L1G4ZZOX91QTqW5v9zTGUbShHuqvh1imEIBmyVTyGLVY/CCZCdNriyU9YJZZQ+8luUNiYM0FjC3Wn
+	5XpbopxhDPQKqSgOIpZFt/YpvIs/JVpiyEIYiYAk87IlPvFu+pd+WYPdK45NFOILd3rTPF1EdjALV
+	8oNlMJAAMR/NA+NKTB9Hor5bANOj4ZYnx/2NRZ+zLNRy9IuBxE1DdzL8zREs/RE/SoRhr1LcNlaNH
+	1JKCij1rC+jzF4ZZt/9K2OHWd0OS1+oc0Am1jOFSc3OIyMCPT4mwmWqd9+hj2AZZRzD+Y9PiETboL
+	9FOljJcgPwuh7EgOvzAA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJ9X2-00000009jtE-2KzI;
-	Tue, 20 Oct 2026 13:05:32 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xJA2M-00000009oM4-32Mz;
+	Tue, 20 Oct 2026 13:37:54 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJ9X1-00000009jsV-1kfa
-	for linux-phy@lists.infradead.org;
-	Tue, 20 Oct 2026 13:05:31 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 6B1C860D82;
-	Tue, 20 Oct 2026 13:05:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A33321F000C4;
-	Tue, 20 Oct 2026 13:05:29 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792501530;
-	bh=YDc06yRlsSNlXEmulUrV+Mwea5zL3HsZI3CQkUjyJAw=;
-	h=From:To:Cc:Subject:In-Reply-To:References:Date;
-	b=myqh4M6IAWFmqgXG16kpxErWnj01CbEjVgU4LBAptO3UADlbU19+sv6x/B9PEc7Cb
-	 3jSgOY1ApBSFT+V0uFzp8vLOZZOTiX/r7JyoRKr+ZGHP9ygA8E7K3CZuOR+ycWE4F7
-	 zKbY3RaYPCERlVReQav5DTgE9UYK35x5N+9oQ3jjRjOe70WtIFo/8ASpiIvcce6gVb
-	 tUkQ59WcDlectF6R7qse4nYQqlrrAVqXBS4h8ATJW5VlrtDbnt24YpY5b8CKbdwbqo
-	 oRL5B6DHok1P3BHrNkdtMKx0y6MoRA5Eka8x7ireF5vEFmQNDppxKYmj2FFSCu7T7K
-	 q2L//gCDcU27g==
-From: Mattijs Korpershoek <mkorpershoek@kernel.org>
-To: Manivannan Sadhasivam <mani@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
- <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, Krzysztof
- Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Sriram Dash <quic_sriramd@quicinc.com>
-Subject: Re: [PATCH v3 2/2] phy: qcom-snps-femto-v2: Add support for SA8255P
-In-Reply-To: <179216548965.106618.12539639688235621089.b4-reply@b4>
-References: <20261002-phy-qcom-snps-femto-v2-8255-v3-0-342542bd9bc6@kernel.org>
- <20261002-phy-qcom-snps-femto-v2-8255-v3-2-342542bd9bc6@kernel.org>
- <179216548965.106618.12539639688235621089.b4-reply@b4>
-Date: Tue, 20 Oct 2026 15:05:27 +0200
-Message-ID: <xhkdbzew834ko.fsf@mkorpers-koolstof.csb>
+	id 1xJA2K-00000009oLX-3qp9;
+	Tue, 20 Oct 2026 13:37:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
+	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=m8yfQEcljjdCYG73U7/b7AoriibsdHfzmxVKPS8fPUs=; b=dUaiSYOh4ExQgbxc0XsYsgdbyc
+	gYXUFCtnQX4zJfjSf2fkKrm0fM4isdR2wiFzdlG58Roqr//HTuuy7O9n8UzDM44L+y/R2ZbO5Kj5p
+	wIc5yXe30gACnxEAmLIaqjRips6Dntr6K1BDHOX94v4Or3JUgrLRHkmgw4Yis9OTG7uP6md6EBP6c
+	N14ugyk1ub/oW/XJbhU66nl1sysj1WNgWb6YPQFk/Q02r04QOSDX3AfWEhuB1UCQb74oa46TS4jkB
+	VXYaQPmqDpSkaJhTmErnQH+6Ix3byO9HToUyKre1SuKo6ocvEoR7xyiAUmTRUxjvkgQv0Ov3AQxnv
+	dlkCpU+A==;
+Received: from gloria.sntech.de ([185.11.138.130])
+	by desiato.infradead.org with esmtps (Exim 4.99.5 #2 (Red Hat Linux))
+	id 1xJA2F-00000004ltv-3zYb;
+	Tue, 20 Oct 2026 13:37:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Reply-To;
+	bh=m8yfQEcljjdCYG73U7/b7AoriibsdHfzmxVKPS8fPUs=; b=R8rsXKOlypisObnCg9uR6fNJlX
+	3Ubrwa1LV61x/Q2ZHgC5nkXY6zgx+U0J3139rGr7qgrXVCaOFicihD2ArvNXmk3po7ySxW+/iKiA+
+	ZSVKW6spvm8mn7dKG86W6sztHwm1Zaue5dFIOkgFPxaJDeZsyVWimViZN6t2uR58W/fgW2zSyADH/
+	8N77TIADYxy7+zZMLREv7YAkIfD5l6c7xqSXjnqB0poA9y0O92RuJavkgLP9bEJe05gVeX13vUjgk
+	nRHqV/V6MLrFK3mGyzBM96C2HURgOjSjJup1Yf6oMTK4ddLWw3jTrM9y2A+/+ivOZdy+vdYmznz+I
+	a1VDQpHA==;
+From: Heiko =?UTF-8?B?U3TDvGJuZXI=?= <heiko@sntech.de>
+To: Rob Herring <robh@kernel.org>,
+ =?UTF-8?B?5qWK5pm65oiQ?= <jason98166@gmail.com>,
+ Michael Riesch <michael.riesch@collabora.com>
+Cc: Krzysztof Kozlowski <krzk@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
+ Guochun Huang <hero.huang@rock-chips.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Sebastian Reichel <sebastian.reichel@collabora.com>,
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v5 2/8] dt-bindings: phy: rockchip,rk3588-mipi-dcphy: Add a cell
+ to select TX or RX
+Date: Tue, 20 Oct 2026 15:37:35 +0200
+Message-ID: <2501273.NG923GbCHz@diego>
+In-Reply-To: <73ef0d06-75c5-4c10-b4c3-c7b3c07a1e18@collabora.com>
+References: <20261016-dcphy-rx-v1-v5-0-e63b49eabe2d@gmail.com>
+ <20261019150631.GA265407-robh@kernel.org>
+ <73ef0d06-75c5-4c10-b4c3-c7b3c07a1e18@collabora.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261020_143749_967824_3F127F0F 
+X-CRM114-Status: GOOD (  42.87  )
+X-Spam-Score: -0.2 (/)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,205 +88,90 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-4.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Fri, Oct 16, 2026 at 21:14, Manivannan Sadhasivam <mani@kernel.org> wrote:
-
-> On 2026-10-02 11:41 +0200, Mattijs Korpershoek wrote:
->> From: Sriram Dash <quic_sriramd@quicinc.com>
->> 
->> The Qualcomm automotive SA8255p SoC relies on firmware to configure
->> platform resources, including clocks, interconnects and TLMM.
->> The driver requests resources operations over SCMI using power protocols.
->> 
->> The SCMI power protocol enables or disables resources like clocks,
->> interconnect paths, and TLMM (GPIOs) using runtime PM framework APIs,
->> such as resume/suspend, to control power on/off.
->> 
->> Power domain "core" controls the GDSC, resets, and TLMM (GPIOs)
->> whereas power domain "transfer" controls clocks and interconnects.
->> 
->> In this variant, two disjoint sets of resources are modeled against
->> the power domain suppliers which can be turned on/off to achieve modeled
->> device states. Two modeled low power states d1 and d3 are supported.
->> 
->> transition: d0 <--> d3  :: both core and transfer suppliers
->> transition: d0 <--> d1  :: only transfer supplier
->> 
->> Signed-off-by: Sriram Dash <quic_sriramd@quicinc.com>
->> Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
->> Signed-off-by: Mattijs Korpershoek <mkorpershoek@kernel.org>
->> ---
->>  drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 127 ++++++++++++++++++++++++--
->>  1 file changed, 118 insertions(+), 9 deletions(-)
->> 
->> diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
->> index 980ad1fb1e2e..9fdf7ae681b6 100644
->> --- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
->> +++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
->> @@ -12,6 +12,7 @@
->>  #include <linux/of.h>
->>  #include <linux/phy/phy.h>
->>  #include <linux/platform_device.h>
->> +#include <linux/pm_domain.h>
->>  #include <linux/regmap.h>
->>  #include <linux/regulator/consumer.h>
->>  #include <linux/reset.h>
->> @@ -95,6 +96,7 @@ struct override_param_map {
->>  	u8 table_size;
->>  	u8 reg_offset;
->>  	u8 param_mask;
->> +	bool fw_managed;
->>  };
->>  
->>  struct phy_override_seq {
->> @@ -121,6 +123,7 @@ struct phy_override_seq {
->>   * @phy_initialized: if PHY has been initialized correctly
->>   * @mode: contains the current mode the PHY is in
->>   * @update_seq_cfg: tuning parameters for phy init
->> + * @pd_list: list of power domains associated with the device
->>   */
->>  struct qcom_snps_hsphy {
->>  	struct device *dev;
->> @@ -136,8 +139,81 @@ struct qcom_snps_hsphy {
->>  	bool phy_initialized;
->>  	enum phy_mode mode;
->>  	struct phy_override_seq update_seq_cfg[NUM_HSPHY_TUNING_PARAMS];
->> +
->> +	struct dev_pm_domain_list *pd_list;
->>  };
->>  
->> +static void qcom_snps_domain_detach(void *data)
->> +{
->> +	struct qcom_snps_hsphy *hsphy = data;
->> +
->> +	dev_pm_domain_detach_list(hsphy->pd_list);
->> +}
->> +
->> +static int qcom_snps_domain_attach(struct qcom_snps_hsphy *hsphy)
->> +{
->> +	struct dev_pm_domain_attach_data pd_data = {
->> +		.pd_flags       = PD_FLAG_NO_DEV_LINK,
->> +		.pd_names       = (const char*[]) { "core", "transfer" },
->> +		.num_pd_names   = 2,
->> +	};
->> +	struct device *dev = hsphy->dev;
->> +	int ret;
->> +
->> +	ret = dev_pm_domain_attach_list(dev, &pd_data, &hsphy->pd_list);
->> +	if (ret < 0)
->> +		return dev_err_probe(dev, ret, "domain attach failed\n");
->> +
->> +	return 0;
->> +}
->> +
->> +/* d3_to_d0 transition by turning on all the suppliers */
->> +static int qcom_snps_d3_to_d0(struct qcom_snps_hsphy *hsphy)
->> +{
->> +	int ret;
->> +
->> +	if (!hsphy->pd_list)
->> +		return 0;
->> +
->> +	ret = pm_runtime_resume_and_get(hsphy->pd_list->pd_devs[0]);
->> +	if (ret)
->> +		return ret;
->> +
->> +	ret = pm_runtime_resume_and_get(hsphy->pd_list->pd_devs[1]);
->> +	if (ret)
->> +		pm_runtime_put_sync(hsphy->pd_list->pd_devs[0]);
->> +
->> +	return ret;
->> +}
->> +
->> +/* d0_to_d3 transition by turning off all the suppliers */
->> +static void qcom_snps_d0_to_d3(struct qcom_snps_hsphy *hsphy)
->> +{
->> +	if (!hsphy->pd_list)
->> +		return;
->> +
->> +	pm_runtime_put_sync(hsphy->pd_list->pd_devs[1]);
->> +	pm_runtime_put_sync(hsphy->pd_list->pd_devs[0]);
->> +}
->> +
->> +/* d1_to_d0 transition by turning on the 'transfer' supplier */
->> +static int qcom_snps_d1_to_d0(struct qcom_snps_hsphy *hsphy)
->> +{
->> +	if (!hsphy->pd_list)
->> +		return 0;
->> +
->> +	return pm_runtime_resume_and_get(hsphy->pd_list->pd_devs[1]);
->> +}
->> +
->> +/* d0_to_d1 transition by turning off the 'transfer' supplier */
->> +static void qcom_snps_d0_to_d1(struct qcom_snps_hsphy *hsphy)
->> +{
->> +	if (!hsphy->pd_list)
->> +		return;
->> +
->> +	pm_runtime_put_sync(hsphy->pd_list->pd_devs[1]);
->> +}
->> +
->>  static int qcom_snps_hsphy_clk_init(struct qcom_snps_hsphy *hsphy)
->>  {
->>  	struct device *dev = hsphy->dev;
->> @@ -196,6 +272,8 @@ static int qcom_snps_hsphy_suspend(struct qcom_snps_hsphy *hsphy)
->>  					   0, USB2_AUTO_RESUME);
->>  	}
->>  
->> +	qcom_snps_d0_to_d1(hsphy);
->> +
->>  	return 0;
->>  }
->>  
->> @@ -203,7 +281,7 @@ static int qcom_snps_hsphy_resume(struct qcom_snps_hsphy *hsphy)
->>  {
->>  	dev_dbg(&hsphy->phy->dev, "Resume QCOM SNPS PHY, mode\n");
->>  
->> -	return 0;
->> +	return qcom_snps_d1_to_d0(hsphy);
->>  }
->>  
->>  static int __maybe_unused qcom_snps_hsphy_runtime_suspend(struct device *dev)
->> @@ -316,6 +394,10 @@ static const struct override_param ls_fs_output_impedance_sc7280[] = {
->>  	{ 1310, 0 },
->>  };
->>  
->> +static const struct override_param_map sa8255p_snps_hs_phy = {
->> +	.fw_managed = true,
->> +};
->> +
->>  static const struct override_param_map sc7280_snps_7nm_phy[] = {
->>  	{
->>  		"qcom,hs-disconnect-bp",
->> @@ -390,9 +472,15 @@ static int qcom_snps_hsphy_init(struct phy *phy)
->>  
->>  	dev_vdbg(&phy->dev, "%s(): Initializing SNPS HS phy\n", __func__);
->>  
->> +	ret = qcom_snps_d3_to_d0(hsphy);
->> +	if (ret < 0) {
->> +		dev_err(hsphy->dev, "Failed to transition to d0 state\n");
->> +		return ret;
->> +	}
->> +
->>  	ret = regulator_bulk_enable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
->
-> Why do you still control regulator natively in the SCMI path?
-
-That's an oversight on my end. Thank you for catching it. I will fix for v4.
-
->
-> - Mani
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+QW0gRGllbnN0YWcsIDIwLiBPa3RvYmVyIDIwMjYsIDAwOjIwOjQ3IE1pdHRlbGV1cm9ww6Rpc2No
+ZSBTb21tZXJ6ZWl0IHNjaHJpZWIgTWljaGFlbCBSaWVzY2g6Cj4gSGkgYWxsLAo+IAo+IE9uIDEw
+LzE5LzI2IDE3OjA2LCBSb2IgSGVycmluZyB3cm90ZToKPiA+IE9uIE1vbiwgT2N0IDE5LCAyMDI2
+IGF0IDA0OjE1OjAzUE0gKzA4MDAsIOaliuaZuuaIkCB3cm90ZToKPiA+PiBIaSBLcnp5c3p0b2Ys
+IFJvYiwKPiA+Pgo+ID4+PiBFeGlzdGluZyBPUyBzaG91bGQgaWdub3JlIHN1cnBsdXMgY2VsbCBp
+ZiB0aGUgZHJpdmVyIGlzIGNvZGVkIHByb3Blcmx5Lgo+ID4+PiBTYW1lIGFzIGFkZGluZyBuZXcg
+cHJvcGVydGllcyBvciBuZXcgZnJvbnQtY29tcGF0aWJsZS4gIFRoZSBxdWVzdGlvbiBpcwo+ID4+
+PiBob3cgdGhlIGV4aXN0aW5nIGRyaXZlciBiZWhhdmVzPwo+ID4+Cj4gPj4gQXMgeW91IHBvaW50
+ZWQgb3V0IG9uIDUvOCwgdGhlIHhsYXRlIGNoZWNrcyBhcmdzX2NvdW50ICE9IDEuIFRoZSBEQy1Q
+SFkKPiA+PiBkcml2ZXIgd2FzIG1lcmdlZCBpbiB2Ni4xNSwgc28gZXZlcnkga2VybmVsIHNpbmNl
+IDYuMTUgZmFpbHMgb24gYSBzZWNvbmQgY2VsbC4KPiA+Pgo+ID4+IDEuIEtlZXAgdGhlIHNlY29u
+ZCBjZWxsLiBBZGQgdGhlIHBhdGNoIGFzIGZvbGxvd3M6Cj4gPj4KPiA+PiAtIGlmIChhcmdzLT5h
+cmdzX2NvdW50ICE9IDEpIHsKPiA+PiArIGlmIChhcmdzLT5hcmdzX2NvdW50IDwgMSkgewo+ID4+
+ICAgICBkZXZfZXJyKGRldiwgImludmFsaWQgbnVtYmVyIG9mIGFyZ3VtZW50c1xuIik7Cj4gPj4g
+ICAgIHJldHVybiBFUlJfUFRSKC1FSU5WQUwpOwo+ID4+ICAgfQo+ID4+Cj4gPj4gKyBpZiAoYXJn
+cy0+YXJnc19jb3VudCA+IDEgJiYgYXJncy0+YXJnc1sxXSkgewo+ID4+ICsgICBkZXZfZXJyKGRl
+diwgIm9ubHkgdGhlIHRyYW5zbWl0dGVyIGlzIHN1cHBvcnRlZFxuIik7Cj4gPj4gKyAgIHJldHVy
+biBFUlJfUFRSKC1FSU5WQUwpOwo+ID4+ICsgfQo+ID4+Cj4gPj4gICBXaXRoIEZpeGVzOiBhbmQg
+Q2M6IHN0YWJsZSwgdGhlIHN0YWJsZSBrZXJuZWxzIG1haW50YWluZWQgYXQgdGhhdAo+ID4+ICAg
+dGltZSAoY3VycmVudGx5IDYuMTgueSBhbmQgNy4yLnkpIGtlZXAgRFNJIHdvcmtpbmcgd2l0aCB0
+aGUgbmV3Cj4gPj4gICBkdHMsIGFuZCB0aGUgcmVjZWl2ZXIgZmFpbHMgY2xlYW5seSBpbnN0ZWFk
+IG9mIGdldHRpbmcgdGhlIHRyYW5zbWl0dGVyLgo+ID4+ICAgQnV0IEVPTCBrZXJuZWxzICg2LjE1
+LCA2LjE2LCA2LjE3LCA2LjE5LCA3LjAsIDcuMSkgc3RheSBhZmZlY3RlZC4KPiA+PiAgIEl0IGdv
+ZXMgaW4gd2l0aCB0aGUgc2VyaWVzLCBzaW5jZSB0d28tY2VsbCBkdHMgb25seSBleGlzdCBhZnRl
+ciBpdC4KPiA+Pgo+ID4+IDIuIFVzZSBhIGZsYWcgaW4gdGhlIHVwcGVyIGJpdHMgb2YgdGhlIGV4
+aXN0aW5nIGNlbGwsIGFzIFJvYgo+ID4+ICAgICBzdWdnZXN0ZWQuIEV4aXN0aW5nIGtlcm5lbHMg
+YXJlIG5vdCBhZmZlY3RlZCwgdW5sZXNzIGEgYm9hcmQgZW5hYmxlcwo+ID4+ICAgICB0aGUgREMt
+UEhZIENTSS0yIHJlY2VpdmVyIG9uIDcuMCBvciBsYXRlciB3aXRob3V0IHRoaXMgc2VyaWVzLgo+
+ID4+Cj4gPj4gSSB3aWxsIHdyaXRlIHRoZSBpbXBhY3QgY2xlYXJseSB3aGljaGV2ZXIgIGFwcHJv
+YWNoIGlzIHNlbGVjdGVkIGluCj4gPj4gdGhlIHJlbGF0ZWQgY29tbWl0IG1lc3NhZ2VzIGFuZCB0
+aGUgY292ZXIgbGV0dGVyLgo+ID4+Cj4gPj4gSSB0aGluayB0aGUgY2VsbCBhcHByb2FjaCBpcyBl
+YXNpZXIgdG8gcmVhZCBhbmQgbW9yZSBzeW1tZXRyaWMgaW4gdGhlCj4gPj4gbG9uZyB0ZXJtLAo+
+ID4+IGJ1dCBpdCBicmVha3MgbW9yZS4gV2hpY2ggb25lIGRvIHlvdSB0aGluayBpcyBiZXR0ZXI/
+IFRoYW5rcy4KPiA+IAo+ID4gSSdtIG5vdCBhIHVzZXIgb2YgdGhpcyBwbGF0Zm9ybSwgc28gSSBk
+b24ndCBjYXJlLiBVcCB0byB0aGUgcGxhdGZvcm0gCj4gPiBtYWludGFpbmVycyB0byBkZWNpZGUg
+aWYgYnJlYWthZ2UgaXMgYWNjZXB0aWJsZS4gWW91IGp1c3QgbmVlZCB0byAKPiA+IGRvY3VtZW50
+IHRoZSBpc3N1ZSBpbiB0aGUgY29tbWl0IG1lc3NhZ2UuCj4gPiAKPiA+IFJvYgo+IAo+IEl0J3Mg
+YSBiaXQgb2YgYSBwaWNrbGUsIGFsbCB0aGlzLgo+IAo+IEkgZ2F2ZSBpdCBzb21lIG1vcmUgdGhv
+dWdodC4gSW4gdGhlIGVuZCB0aGlzIGlzIGFuIElQIGJsb2NrIHdpdGggdHdvCj4gUEhZcy4gTm8g
+bW9yZSwgbm8gbGVzcy4gT25lIGNlbGwgaXMgc3VmZmljaWVudCB0byBhZGRyZXNzIHRob3NlLCBh
+bmQgaXQKPiBjb3VsZCBiZSAwIGZvciB0aGUgdHJhbnNtaXR0aW5nIFBIWSAoRFNJLCBkaXNwbGF5
+KSBhbmQgMSBmb3IgdGhlCj4gcmVjZWl2aW5nIFBIWSAoQ1NJLCBjYW1lcmEpLgo+IAo+IE9mIGNv
+dXJzZSB0aGUgdHdvIFBIWXMgY2FuIG9wZXJhdGUgaW4gZWl0aGVyIERQSFkgb3IgQ1BIWSBtb2Rl
+LiBUaGUKPiBwaHktY2VsbHMgaGF2ZSBiZWVuIChtaXM/KXVzZWQgdG8gc2VsZWN0IHRoZSBwcm9w
+ZXIgbW9kZSBvZiBjb21ibyBQSFlzLAo+IGFuZCB0aGlzIHByaW5jaXBsZSBoYXMgYmVlbiBhcHBs
+aWVkIGhlcmUgdG9vLgo+IAo+IEhvd2V2ZXIsIHdlIGhhdmUgdGhlIHNwZWNpYWwgc2l0dWF0aW9u
+IGhlcmUgdGhhdCB0aGUgbW9kZSBjYW4gb25seSBiZQo+IGNoYW5nZWQgZm9yIHRoZSBjb21wbGV0
+ZSBJUCBibG9jayAoYW5kIHRodXMgZm9yIGJvdGggUEhZcyBhdCB0aGUgc2FtZQo+IHRpbWUpLiBB
+cyBCcnlhbiBwb2ludHMgb3V0LCB3ZSBuZWVkIHRvIGNoZWNrIGFuZCBjb21wbGFpbiBpZiB0aGUg
+UEhZCj4gbW9kZSBpcyBub3Qgc2V0IHRvIHRoZSBzYW1lIHZhbHVlIGZvciBib3RoIFBIWXMuCj4g
+Cj4gSSBzdWdnZXN0IHVzaW5nIGEgcHJvcGVydHkKPiAgICAgc2Ftc3VuZyxjcGh5LW1vZGU7CgpJ
+IGd1ZXNzLCBhIG1heWJlIG5pY2VyIHdheSB3b3VsZCBiZSBtaW1pY2luZwoJRG9jdW1lbnRhdGlv
+bi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9pbnRlbCxjb21iby1waHkueWFtbAoKd2l0aCBpdHMK
+CWludGVsLHBoeS1tb2RlID0gPHg+Cgp3aXRoIHggY29taW5nIGZyb20gaW5jbHVkZS9kdC1iaW5k
+aW5ncy9waHkvcGh5LmgKZm9yIHRoZSBkaXN0aW5jdGlvbiBiZXR3ZWVuIGNwaHkgYW5kIGRwaHks
+IHNvIHdlIGRvbid0IGludHJvZHVjZSB5ZXQKYW5vdGhlciB3YXkgdG8gZGVzY3JpYmUgdGhpcy4K
+CkFzIHlvdSBzYWlkLCB0aGUgZWxlY3RyaWNhbCB3aXJpbmcgaXMgY29tcGxldGVseSBkaWZmZXJl
+bnQgYmV0d2VlbiB0aGUgZHBoeQphbmQgY3BoeSBwYXJ0cywgc28gaXMgYSBwcm9wZXJ0eSBvZiB0
+aGUgYm9hcmQuCgoKPiAobmFtZSB0byBiZSBiaWtlc2hlZGRlZCkgdGhhdCBzZXRzIHRoZSBjb21w
+bGV0ZSBJUCBibG9jayBpbnRvIENQSFkgbW9kZQo+IChEUEhZIGJlaW5nIHRoZSBkZWZhdWx0KSB0
+byBkaXN0aW5ndWlzaCBiZXR3ZWVuIHRoZSBtb2Rlcy4gU2luY2UgYm90aAo+IG1vZGVzIHVzZSBh
+IGRpZmZlcmVudCBlbGVjdHJpY2FsIGludGVyZmFjZSwgdGhpcyBpcyBjbGVhcmx5IGEgaGFyZHdh
+cmUKPiB0aGluZyBhbmQgdGh1cyBzdWl0YWJsZSBmb3IgZGV2aWNlIHRyZWUuCj4gCj4gVGhlbiwg
+d2UgY2FuIGFkZHJlc3MgdGhlIHR3byBQSFlzIHdpdGggdGhlIGhlbHAgb2YgdGhlIGFscmVhZHkg
+ZXhpc3RpbmcKPiBwaHkgY2VsbCAod2l0aG91dCBhbnkgYml0ZmxhZyB0d2Vha3MgdG8gdGhlIHZh
+bHVlKS4KPiAKPiBUaGUgc29sZSBkcmF3YmFjayBpcyB0aGF0IHdlIG5lZWQgdG8gYWNjZXB0IHRo
+ZSBQSFlfVFlQRV9EUEhZIGFuZAo+IFBIWV9UWVBFX0NQSFkgdmFsdWVzIHRoYXQgc29tZSBPUyBp
+biB0aGUgZmllbGQgbWlnaHQgcGFzcy4gKEZvciBMaW51eCwKPiBpdCBzaG91bGQgb25seSBiZSB0
+aGUgZm9ybWVyLikgQW5kIHdlIG5lZWQgdG8gaGFuZGxlIHRob3NlIHZhbHVlcwo+IGNvcnJlY3Rs
+eS4gQnV0IEkgdGhpbmsgdGhpcyBpcyBub3QgbW9yZSBwYWluZnVsIHRoYW4gdGhlIG90aGVyCj4g
+YXBwcm9hY2hlcy4gQXQgdGhlIHNhbWUgdGltZSwgdGhpcyBkZXNpZ24gc2VlbXMgdG8gYmUgdGhl
+IG1vc3QgY29ycmVjdAoKVGhlIGN1cnJlbnQgY2VsbCB2YWx1ZXMgYXJlIDEwICsgMTEsIHNvIGFz
+IGxvbmcgYXMgd2UgZG9uJ3QgcmUtdXNlIHRob3NlCmV4YWN0IHZhbHVlcyBmb3IgdGhlIG90aGVy
+IGNvbnN0YW50cyB0aGUgZHJpdmVyIHNob3VsZCBzb21ld2hhdCBlYXNpbHkKYmUgYWJsZSB0byBy
+ZWNvZ25pemUgYW4gb2xkIERUPwoKCkhlaWtvCgoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0
+CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9y
+Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
