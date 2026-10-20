@@ -2,34 +2,34 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A349B60A381D
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Oct 2026 03:09:43 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 63E65606A325
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Oct 2026 03:09:50 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=VYcEID20;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=rock-chips.com header.i=@rock-chips.com header.a=rsa-sha256 header.s=default header.b=f8b/MO0e
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=k+Va92WK;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=rock-chips.com header.i=@rock-chips.com header.a=rsa-sha256 header.s=default header.b=h47p+A9+
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c0TjacMsTxMsNeXH79DTH6r+1jY4SN/bAIdeS3i/tv8=; b=VYcEID205j8v9Q
-	RFm6u0sjVan2uJeZNhVxcnLWK9sVInmDAiVDuAORoAz89uN12WIMB54ZoMc2Am5Kg7PW5Kc5syMAh
-	lvn/zuhb9Vxs9Rh9CODqcv5Q0iuYpbKsBYjvJT1E+804m3kg8qZHaEGesuZXUolY+F/RGuj/f266Y
-	TUp5SsXni7JO8F+oiFslQtJOxPqYvvtEPyDXp3Wbn/H5gejmEunycj2m3gBJma60qR/PMKs73x6Qc
-	4VwKQr2pV8X/sgY0h80DSLetk8uUsSfoBjPEnEUjQ+hqnUjBxLMF3IGArJK+2Ex5T/OpicW8ht0zL
-	XE1SY3u6YD4JUmOVVjFQ==;
+	List-Owner; bh=ccO9kmXjFG0FThjj090MJfFL8+nimrTZBJMry2fz3XQ=; b=k+Va92WKyZvJfJ
+	DKD1Svf+TEUacn3zroywGMepnYAwi1mqLLGb4bUy+v9AxFj5GASHFI5eax9ZUsnq2/8LVHpiwbmC+
+	X+ZutPaj2/E7OGXiUViXWgOVlREVVGc7sg75rbGcpkGP9EOQqQ/3roiweQkzLG++NbAQcN4R3jBag
+	7KdWU5Rt0/QAXJlkZJLWLJg4H9/O3qkUfXRm4uH+2Yg2iR+6GURxwvV8ra2rsuc7F61W6Y/9qgFu6
+	4O2UNxhYWU1j9/5XlyhWGpCdAtSDocxR6IYEEZ2Ckvw/kQXlY+hhpVV6vEUGFYX4XHSrJRFKdAQaK
+	9jbEqiNIXQABBXKmU8Xg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJ0ER-00000008lKW-1Ykl;
-	Tue, 20 Oct 2026 03:09:43 +0000
-Received: from mail-m81138.xmail.ntesmail.com ([156.224.81.138])
+	id 1xJ0EX-00000008lOm-3rtB;
+	Tue, 20 Oct 2026 03:09:49 +0000
+Received: from mail-m10313119159.xmail.ntesmail.com ([103.131.191.59])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJ0EH-00000008lCi-47IN;
-	Tue, 20 Oct 2026 03:09:35 +0000
+	id 1xJ0EK-00000008lD1-022U;
+	Tue, 20 Oct 2026 03:09:37 +0000
 Received: from zyb-HP-ProDesk-680-G2-MT.. (unknown [61.154.14.86])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 51a4cee6e;
-	Tue, 20 Oct 2026 11:09:26 +0800 (GMT+08:00)
+	by smtp.qiye.163.com (Hmail) with ESMTP id 51a4cee96;
+	Tue, 20 Oct 2026 11:09:29 +0800 (GMT+08:00)
 From: Damon Ding <damon.ding@rock-chips.com>
 To: Sandy Huang <hjc@rock-chips.com>,
 	Heiko Stuebner <heiko@sntech.de>,
@@ -60,27 +60,27 @@ Cc: Neil Armstrong <neil.armstrong@linaro.org>,
 	linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	Damon Ding <damon.ding@rock-chips.com>
-Subject: [PATCH v3 1/6] dt-bindings: display: rockchip: analogix-dp: Add support for RK3568
-Date: Tue, 20 Oct 2026 11:09:11 +0800
-Message-Id: <20261020030916.3223833-2-damon.ding@rock-chips.com>
+Subject: [PATCH v3 3/6] drm/bridge: analogix_dp: Add support for RK3568
+Date: Tue, 20 Oct 2026 11:09:13 +0800
+Message-Id: <20261020030916.3223833-4-damon.ding@rock-chips.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20261020030916.3223833-1-damon.ding@rock-chips.com>
 References: <20261020030916.3223833-1-damon.ding@rock-chips.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-HM-Tid: 0aa15749095003a8kunmfd20f05334c736
+X-HM-Tid: 0aa1574915ca03a8kunmfd20f05334c769
 X-HM-MType: 1
 X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVlCQxkeVh1CSBgfT0MdGUpCHVYVFA
+	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVkZGU1OVkoYQkgZQhofS0hCHVYVFA
 	kWGhdVEwETFhoSFyQUDg9ZV1kYEgtZQVlNSlVKTk9VSk9VQ01ZV1kWGg8SFR0UWUFZT0tIVUpLSE
 	pKQk1VSktLVUpCWQY+
 DKIM-Signature: a=rsa-sha256;
-	b=f8b/MO0ehj3Q58MW0sg3fHABf8jei7ay2nU8Ptanbnxs50JXWxgjLWUKEOlA0DASlOICdM3O4p+J8upJFSHdaSbZrNoX7jykGQMWE7vbPFHHTd3dEv9mPNfcpUHxXgXfm7J4mysFjuckFMj5q+IHcqBde5VsZkw2UK0ARQ6tDp8=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=aqA05e3tEQzex5IV+W6xDQvoZ2RGk3y5IlP3Z09UWS0=;
+	b=h47p+A9+Orjc5KlNRuQkCpXbdvutDh5O5pWKLKbspoOL4WfbkeNTL3uYbNUrsxlfwJdTx4EYX1VLEI/vyPprBwLxr8Wvi5HMJP8+kPEPowr6vkBjR3g505Yf5d0FjbXej104NoGdxvGqhhlB3r8rksg3lixw/LGZPTSJLU2Iz9I=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=tCtH0nSoUz9rfFDR40EGktb2UZ4joiDlZGZt7iSx0Yo=;
 	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261019_200934_383591_C6D09075 
-X-CRM114-Status: UNSURE (   9.43  )
+X-CRM114-CacheID: sfid-20261019_200936_401519_1EA18A10 
+X-CRM114-Status: UNSURE (   8.38  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
@@ -102,80 +102,51 @@ X-Spam-Status: No, score=-17.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Document the "rockchip,rk3568-edp" compatible.  Like RK3576/RK3588,
-the RK3568 eDP controller has the dp/pclk/hclk clocks and dp/apb
-resets, but unlike them it does not use GRF registers, so make the
-"rockchip,grf" property conditional on the SoC.
+The RK3568 SoC integrates an eDP transmitter based on the Analogix
+DisplayPort core.  Like RK3288 and RK3399, its main link consists of
+4 physical lanes running at 1.62/2.7 Gbps per lane.
 
-Also document the optional avdd-0v9 and avdd-1v8 supplies, which are
-needed by the RK3568 eDP controller.
+Add a new RK3568_EDP device type and let it share the link rate and
+lane count limits of the RK3288/RK3399 variants.
 
 Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
 ---
- .../rockchip/rockchip,analogix-dp.yaml        | 25 ++++++++++++++++++-
- 1 file changed, 24 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/bridge/analogix/analogix_dp_core.c | 1 +
+ include/drm/bridge/analogix_dp.h                   | 2 ++
+ 2 files changed, 3 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
-index 39dafe75a680..f8670a4e0430 100644
---- a/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
-+++ b/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
-@@ -15,6 +15,7 @@ properties:
-     enum:
-       - rockchip,rk3288-dp
-       - rockchip,rk3399-edp
-+      - rockchip,rk3568-edp
-       - rockchip,rk3576-edp
-       - rockchip,rk3588-edp
- 
-@@ -47,6 +48,16 @@ properties:
-       - const: dp
-       - const: apb
- 
-+  avdd-0v9-supply:
-+    description:
-+      A 0.9V supply that powers up the SoC internal circuitry. The actual
-+      supply source varies between different boards.
-+
-+  avdd-1v8-supply:
-+    description:
-+      A 1.8V supply that powers up the SoC internal circuitry. The actual
-+      supply source varies between different boards.
-+
-   rockchip,grf:
-     $ref: /schemas/types.yaml#/definitions/phandle
-     description:
-@@ -61,11 +72,22 @@ required:
-   - clock-names
-   - resets
-   - reset-names
--  - rockchip,grf
- 
- allOf:
-   - $ref: /schemas/display/bridge/analogix,dp.yaml#
- 
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            const: rockchip,rk3568-edp
-+    then:
-+      properties:
-+        rockchip,grf: false
-+    else:
-+      required:
-+        - rockchip,grf
-+
-   - if:
-       properties:
-         compatible:
-@@ -100,6 +122,7 @@ allOf:
-         compatible:
-           contains:
-             enum:
-+              - rockchip,rk3568-edp
-               - rockchip,rk3576-edp
-               - rockchip,rk3588-edp
-     then:
+diff --git a/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c b/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
+index 6df6963740d2..8bb4c48aa3b4 100644
+--- a/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
++++ b/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
+@@ -1319,6 +1319,7 @@ static int analogix_dp_dt_parse_pdata(struct analogix_dp_device *dp)
+ 	switch (dp->plat_data->dev_type) {
+ 	case RK3288_DP:
+ 	case RK3399_EDP:
++	case RK3568_EDP:
+ 		/*
+ 		 * Like Rk3288 DisplayPort TRM indicate that "Main link
+ 		 * containing 4 physical lanes of 2.7/1.62 Gbps/lane".
+diff --git a/include/drm/bridge/analogix_dp.h b/include/drm/bridge/analogix_dp.h
+index 6033137b651e..e05ff4bd689c 100644
+--- a/include/drm/bridge/analogix_dp.h
++++ b/include/drm/bridge/analogix_dp.h
+@@ -16,6 +16,7 @@ enum analogix_dp_devtype {
+ 	EXYNOS_DP,
+ 	RK3288_DP,
+ 	RK3399_EDP,
++	RK3568_EDP,
+ 	RK3576_EDP,
+ 	RK3588_EDP,
+ };
+@@ -25,6 +26,7 @@ static inline bool analogix_dp_is_rockchip(enum analogix_dp_devtype type)
+ 	switch (type) {
+ 	case RK3288_DP:
+ 	case RK3399_EDP:
++	case RK3568_EDP:
+ 	case RK3576_EDP:
+ 	case RK3588_EDP:
+ 		return true;
 -- 
 2.34.1
 
