@@ -2,66 +2,72 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 65861606A328
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Oct 2026 11:51:21 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 461E0606A319
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Oct 2026 11:57:14 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=szUyBuzu;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=X5Q+GuNf
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=eJ0LqxzV;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=oM8S1IK7
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W6C0ZbI+RSufuyWHEfKBnIWQCELi0mXzorlnesUbxFE=; b=szUyBuzuLB3Mie
-	9fOiQAcRobhxwS5gAtzcoX7sDyAxATVuGvC/U9xxpeYE6mSXEq0MSx6JbKuFoz+/WBraGS6iY091O
-	QrubhdFqEfspFKYEJ0I4eGZGP3e4+4gJH7zmqLiDQJUOlYJYPPTkGx/a1MuszpYt8CMRsNUVRIE/3
-	3zDrIsr/XGFPGJmghd0ZW9yQm3WvaZCSPjtxyr6Q4WE+kvmun4h/UQ6GhEaM2suD7gcVVG09OhZkB
-	H66XwA8eoH5N/XrV6W5vW0QmD0yFnqZ6LCmEiMg1X+TX+tJTCO8uMNygVJ/EGuUpzmEASBJcist7v
-	oGQKVCQ23yhQi9XobvdQ==;
+	List-Owner; bh=k3/eBp3AVaDTpEG2GEmosE5j7q2Xq/TUW7sHC53tQ+4=; b=eJ0LqxzVATnoSS
+	pEdkkroozfeTSBuBcqqTHmAOb/8ADj7yK1jo8nJjH9i4OttQi2NVrAys1hDmGH9WJr0OBH1ZU2Fyb
+	ladKsaMFCrx25m1ZTkgq4aeYmZMir1x/c8mj9bJgd/6hN6GxuUAxd+JaU+zrEeKzORsVO/f+qn+SY
+	p1QR14DWALj3KFoFShfDFtS93YvmWhaKGQfk2X0wUKm/5/eUnSKloI0wD/c2pEB/NrJDSNY/KEdpE
+	eRFIVKe8UbSi9n3CcHX0lz46zc259nbDY2HXFVZktRqGNq90tNzRUH8GRiWYe6HCQA7WmLHVCyUyM
+	PDstOhInyUnJVA3K1nJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJ8NF-00000009alf-04CH;
-	Tue, 20 Oct 2026 11:51:21 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xJ8Sw-00000009bQQ-012K;
+	Tue, 20 Oct 2026 11:57:14 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJ8NE-00000009alS-17xc
-	for linux-phy@lists.infradead.org;
-	Tue, 20 Oct 2026 11:51:20 +0000
+	id 1xJ8Su-00000009bPr-45T2;
+	Tue, 20 Oct 2026 11:57:13 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 652C860098;
-	Tue, 20 Oct 2026 11:51:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9C6841F000C5;
-	Tue, 20 Oct 2026 11:51:18 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 6C07640814;
+	Tue, 20 Oct 2026 11:57:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B1EB11F000C9;
+	Tue, 20 Oct 2026 11:57:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792497079;
-	bh=v+poDdCMqQMdpLhxPUAROlDMmt9p0JT0iZceQMYjtOE=;
-	h=From:To:Cc:Subject:In-Reply-To:References:Date;
-	b=X5Q+GuNflO7uInKcvLeh4NoPPJJ11XgkvXO4nd/e7DAbskiV/bprsQqHBb/C/kimw
-	 dfl7V8D1T0Uv69T7fLhL12TIjZvI8xAPHA6kKAzkaKI9ZbmoAiygGbLCbQjYBSGoRr
-	 9n1OKlm2hrn7MDyrzAZUyOAFccJik+5LFSH/YGy2UFdc/mGA5Q4GKPqqQffR3UG7DX
-	 LjJzFauFsvEnlMHXmUtcZT9uwLZJGVNMMIOtWIvzw7GFJXT+nRAIba/utUt0I6arCA
-	 miF1RIBrI02DrpoYgs0P2Tx2r8SLa4EBxOxGbRxZkoTFRcfOZymY1A1vEUflFwWvhE
-	 JhynWPB5l0zbw==
-From: Mattijs Korpershoek <mkorpershoek@kernel.org>
-To: Manivannan Sadhasivam <mani@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
- <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, Krzysztof
- Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
- Manivannan Sadhasivam <mani@kernel.org>, Maxime Ripard
- <mripard@kernel.org>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Sriram Dash <quic_sriramd@quicinc.com>,
- Shazad Hussain <quic_shazhuss@quicinc.com>
-Subject: Re: [PATCH v6 2/2] phy: qcom: qmp-usb: Add support for SA8255P
-In-Reply-To: <179216560275.106618.16177081518764116321.b4-reply@b4>
-References: <20261002-phy-qcom-qmp-usb-8255-v6-0-bb7dfc5636b4@kernel.org>
- <20261002-phy-qcom-qmp-usb-8255-v6-2-bb7dfc5636b4@kernel.org>
- <179216560275.106618.16177081518764116321.b4-reply@b4>
-Date: Tue, 20 Oct 2026 13:51:17 +0200
-Message-ID: <xhkdb5wyw4mkq.fsf@mkorpers-koolstof.csb>
+	s=k20260515; t=1792497432;
+	bh=kq6rZbpshN3DZ0bSrVhBHHv91P8HlcxbwLHISO06Hiw=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=oM8S1IK7PeAK3jjWXnkQKyllj5j6iBjXPOP87oGc11AzqZ/ey1Njphkbw7bHfCmH4
+	 evooRu8GjmMe8lB6OHwtXtxt29xcVDF9FcEr8jVK6OgPIAFoa6jbGDDKshT0ZRMcP6
+	 TveNXtzaTjjIME2pwjmSh/jgOQfQJclpaXc0NhwHtFE2CFzZJLq9ieztzmhupChCq9
+	 OGIZanHXDTIPdxMx0QloJfYDzC1vmxU32UKMoLlQXtuOWUya8zG9QipU7hzvvVEyqd
+	 VQpxNZPNjcl9tUYU+LlS2fM4Qu/9gHpYWzgArIEgoZfGflj7L+g65CCzZGbIbVMG39
+	 KaNLzZ71FNgVA==
+Date: Tue, 20 Oct 2026 12:57:05 +0100
+From: Lee Jones <lee@kernel.org>
+To: Stefan =?iso-8859-1?Q?D=F6singer?= <stefandoesinger@gmail.com>
+Cc: Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Brian Masney <bmasney@redhat.com>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Russell King <linux@armlinux.org.uk>,
+	Brian Masney <bmasney+clk@redhat.com>,
+	Jerome Brunet <jbrunet+clk@baylibre.com>,
+	Manivannan Sadhasivam <mani@kernel.org>, linux-clk@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	mfd@lists.linux.dev
+Subject: Re: [PATCH v13 04/13] mfd: zx297520v3: Add a clock and reset MFD
+ driver
+Message-ID: <20261020115705.GC1795367@google.com>
+References: <20260927-zx29clk-v13-0-70d8f673386c@gmail.com>
+ <20260927-zx29clk-v13-4-70d8f673386c@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260927-zx29clk-v13-4-70d8f673386c@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,56 +77,321 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-9.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Fri, Oct 16, 2026 at 21:16, Manivannan Sadhasivam <mani@kernel.org> wrote:
+On Sun, 27 Sep 2026, Stefan D=F6singer wrote:
 
-> On 2026-10-02 11:39 +0200, Mattijs Korpershoek wrote:
->> From: Sriram Dash <quic_sriramd@quicinc.com>
->> 
->> The Qualcomm automotive SA8255p SoC relies on firmware to configure
->> platform resources, including clocks, interconnects and TLMM.
->> The driver requests resources operations over SCMI using power protocols.
->> 
->> The SCMI power protocol enables or disables resources like clocks,
->> interconnect paths, and TLMM (GPIOs) using runtime PM framework APIs,
->> such as resume/suspend, to control power on/off.
->> 
->> Power domain "core" controls the GDSC, resets, and TLMM (GPIOs)
->> whereas power domain "transfer" controls clocks and interconnects.
->> 
->> In this variant, two disjoint sets of resources are modeled against
->> the power domain suppliers which can be turned on/off to achieve modeled
->> device states. Two modeled low power states d1 and d3 are supported.
->> 
->> transition: d0 <--> d3  :: both core and transfer suppliers
->> transition: d0 <--> d1  :: only transfer supplier
->> 
->> Signed-off-by: Sriram Dash <quic_sriramd@quicinc.com>
->> Signed-off-by: Shazad Hussain <quic_shazhuss@quicinc.com>
->> Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
->> Signed-off-by: Mattijs Korpershoek <mkorpershoek@kernel.org>
->
-> Same comment as the other series.
+> This driver registers child devices for the zx297520v3 clock and reset
+> controllers. The clk-zx297520v3 and reset-zte-zx297520v3 submitted in
+> the next patches will drive the respective functionalities.
+> =
 
-Yes, thank you. I'll work on the other series and once we have something
-that's good there I'll create a v7 here.
+> Signed-off-by: Stefan D=F6singer <stefandoesinger@gmail.com>
+> =
 
-Thanks
-Mattijs
+> ---
+> =
 
->
-> - Mani
+> v13: Break out the MAINTAINERS change so Lee can selectively apply this
+> patch. I made sure it compiles without the DT binding headers.
+> =
 
--- 
+> Lee, if you prefer, I can send this patch with the MAINTAINERS change
+> folded in stand-alone (or as a pull request). It'll have to tricke into
+> the clk tree before I can PR the bindings and clk driver though.
+> =
+
+> Changes v12:
+> Added comments elaborating on the role of the driver and the hardware.
+> =
+
+> Regarding the names: zx297520v3 is the SoC's name (chip marking, boot
+> messages). TOPCRM, MATRIXCRM, LSPCRM are ZTE's names for the MMIO blocks
+> in their downstream sources. Sadly no datasheet is available. "clk",
+> "reset" names for the child nodes are mine.
+> =
+
+> Regarding personal copyright: I am not affiliated with ZTE nor paid by
+> them. This is my personal hobby project. I am using knowledge extracted
+> from ZTE's kernel dumps, but not code.
+> =
+
+> Changes v10 (All Lee Jones):
+> *) drop "select REGMAP_MMIO"
+> *) Drop comment about unimplemented hwlocks
+> *) Use MFD_CELL_[NAME|OF]
+> *) Renamed the device type enum and its values
+> *) Use device_get_match_data instead of the of_ variant
+> *) Improved debug messages
+> =
+
+> Changes v9:
+> Deassert the LSP reset and enable the LSP pclk here. In practice the
+> boot rom needs to do that because it prints to an LSP-connected UART and
+> reads the boot policy from the LSP connected flash chip.
+> =
+
+> In doing so, I migrated the match data to an enum as mfd.md suggests.
+> =
+
+> Changes v8:
+> *) Remove .of_compatible from PHY mfd child
+> =
+
+> *) Move to drivers/mfd (Sashiko)
+> =
+
+> For me either soc/zte or mfd/ is fine. Note though that this MFD parent
+> is very specific to the zx297520v3 SoC. I don't expect this to be reused
+> anywhere else. There are two more MFD-ish devices in there: soc_sys at
+> 0x140000, which I plan to handle in the same driver, and an i2c PMIC,
+> which would get its own host driver.
+> =
+
+> *) Use PLATFORM_DEVID_AUTO (Sashiko). NONE was intentional as I only
+> ever expect one instance, but I don't see any harm in doing the standard
+> thing and use AUTO
+> =
+
+> *) On the suggestion not to put the link to mfd_cells[] into match data:
+> I see that it is spelled out in Sashiko's mfd.md, written by Lee Jones,
+> the MFD maintainer. I would appreciate some education on the rationale
+> behind it: Putting a pointer into the void *data is a common pattern in
+> the kernel. I don't understand in which situation this can possibly
+> break?
+> =
+
+> Both structs are static const in the same compilation unit. data is a
+> const void *, not a uintptr_t or kernel_ulong_t, so it seems passing a
+> pointer is the intended use. What am I missing?
+> =
+
+> Changes v7:
+> Add phy MFD child
+> =
+
+> Changes v6: Make the ZTE SoC driver section depend on HAS_IOMEM
+> (Sashiko). The entire MFD section, which contains MFD_CORE, depends on
+> HAS_IOMEM even with COMPILE_TEST.
+> =
+
+> Add a NULL ptr check for of_device_get_match_data (Sashiko). While not
+> uniform, rave-sp, rohm-bd9576, atc260x, da9052-i2c protect against
+> incorrect manual attachment that way.
+> =
+
+> Add lspclk here as well in an attempt to satisfy both Conor Dooley, who
+> asks for MFD for top and matrix, and Philipp Zabel, who prefers aux but
+> at least wants the reset driver limited to one driver type.
+> =
+
+> Changes v5: Use MFD instead of Aux bus for top and matrix crm because of
+> extra functionality: Reboot in top, hwlock in Matrix.
+> =
+
+> LSP clocks stay with the aux bus and are thus not handled in this
+> driver. The clk driver will bind directly to the lspcrm node.
+> ---
+>  drivers/mfd/Kconfig              |  12 +++++
+>  drivers/mfd/Makefile             |   2 +
+>  drivers/mfd/zte-zx297520v3-crm.c | 111 +++++++++++++++++++++++++++++++++=
+++++++
+>  3 files changed, 125 insertions(+)
+> =
+
+> diff --git a/drivers/mfd/Kconfig b/drivers/mfd/Kconfig
+> index 857ca3bb0d5b..b30600f6ff0c 100644
+> --- a/drivers/mfd/Kconfig
+> +++ b/drivers/mfd/Kconfig
+> @@ -2580,5 +2580,17 @@ config MFD_MAX7360
+>  	  additional drivers must be enabled in order to use the functionality
+>  	  of the device.
+>  =
+
+> +config MFD_ZTE_ZX297520V3_CRM
+> +	tristate "ZTE zx297520v3 Clock and Reset Manager"
+> +	depends on ARCH_ZTE || COMPILE_TEST
+> +	select MFD_CORE
+> +	default SOC_ZX297520V3
+> +	help
+> +	  Say yes here to enable the driver for the ZTE zx297520v3 clock and
+> +	  reset manager MFD driver. This driver provides the host device for
+> +	  the clock and reset drivers and is required to boot the SoC. You
+> +	  will also need to enable CLK_ZTE_ZX297520V3 and RESET_ZTE_ZX297520V3
+> +	  to build the actual clock and reset child drivers.
+> +
+>  endmenu
+>  endif
+> diff --git a/drivers/mfd/Makefile b/drivers/mfd/Makefile
+> index 72d3944b0ad8..ab0cba2042a2 100644
+> --- a/drivers/mfd/Makefile
+> +++ b/drivers/mfd/Makefile
+> @@ -304,3 +304,5 @@ obj-$(CONFIG_MFD_RSMU_SPI)	+=3D rsmu_spi.o rsmu_core.o
+>  obj-$(CONFIG_MFD_UPBOARD_FPGA)	+=3D upboard-fpga.o
+>  =
+
+>  obj-$(CONFIG_MFD_LOONGSON_SE)	+=3D loongson-se.o
+> +
+> +obj-$(CONFIG_MFD_ZTE_ZX297520V3_CRM)	+=3D zte-zx297520v3-crm.o
+> diff --git a/drivers/mfd/zte-zx297520v3-crm.c b/drivers/mfd/zte-zx297520v=
+3-crm.c
+> new file mode 100644
+> index 000000000000..d896261a4d40
+> --- /dev/null
+> +++ b/drivers/mfd/zte-zx297520v3-crm.c
+> @@ -0,0 +1,111 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * Copyright (C) 2026 Stefan D=F6singer
+> + *
+> + * This driver splits the ZTE zx297520v3 SoC's clock and reset managemen=
+t devices into MFD child
+> + * nodes that are managed by independent drivers in their respective sub=
+systems.
+> + *
+> + * ZTE's downstream kernel names the mmio regions "topcrm", "matrixcrm" =
+and "lspcrm". For an
+> + * explanation of how the controllers relate please see the DT binding d=
+ocumentation found in
+> + * Documentation/devicetree/bindings/clock/zte,zx297520v3-*yaml.
+> + *
+> + * The controllers are primarily clock controllers, but they all have re=
+set controls as well. Top
+> + * and Matrix controllers have further auxiliary functions.
+
+This final paragraph is semi-useful.  The other two can be removed.
+
+By all means add this kind of thing to the Git log, but the driver
+history and rework doesn't belong here.  Talk about what it is and what
+it does.
+
+The reset of the code seems fine.
+
+> + */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/err.h>
+> +#include <linux/errno.h>
+> +#include <linux/mfd/core.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/property.h>
+> +#include <linux/reset.h>
+> +
+> +enum zx_device_type {
+> +	TYPE_INVALID =3D 0,
+> +	TYPE_TOPCRM,
+> +	TYPE_MATRIXCRM,
+> +	TYPE_LSPCRM,
+> +};
+> +
+> +static const struct mfd_cell zx297520v3_topcrm_cells[] =3D {
+> +	MFD_CELL_NAME("zx297520v3-topclk"),
+> +	MFD_CELL_NAME("zx297520v3-topreset"),
+> +	MFD_CELL_OF("reboot", NULL, NULL, 0, 0, "syscon-reboot"),
+> +	MFD_CELL_NAME("zx297520v3-usb-phy"),
+> +};
+> +
+> +static const struct mfd_cell zx297520v3_matrixcrm_cells[] =3D {
+> +	MFD_CELL_NAME("zx297520v3-matrixclk"),
+> +	MFD_CELL_NAME("zx297520v3-matrixreset"),
+> +};
+> +
+> +static const struct mfd_cell zx297520v3_lspcrm_cells[] =3D {
+> +	MFD_CELL_NAME("zx297520v3-lspclk"),
+> +	MFD_CELL_NAME("zx297520v3-lspreset"),
+> +};
+> +
+> +static int zx297520v3_crm_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev =3D &pdev->dev;
+> +	const struct mfd_cell *cells;
+> +	struct reset_control *reset;
+> +	enum zx_device_type type;
+> +	unsigned int num_cells;
+> +	struct clk *pclk;
+> +
+> +	type =3D (enum zx_device_type)(kernel_ulong_t)device_get_match_data(dev=
+);
+> +	switch (type) {
+> +	case TYPE_TOPCRM:
+> +		cells =3D zx297520v3_topcrm_cells;
+> +		num_cells =3D ARRAY_SIZE(zx297520v3_topcrm_cells);
+> +		break;
+> +
+> +	case TYPE_MATRIXCRM:
+> +		cells =3D zx297520v3_matrixcrm_cells;
+> +		num_cells =3D ARRAY_SIZE(zx297520v3_matrixcrm_cells);
+> +		break;
+> +
+> +	case TYPE_LSPCRM:
+> +		cells =3D zx297520v3_lspcrm_cells;
+> +		num_cells =3D ARRAY_SIZE(zx297520v3_lspcrm_cells);
+> +
+> +		pclk =3D devm_clk_get_enabled(dev, "pclk");
+> +		if (IS_ERR(pclk))
+> +			return dev_err_probe(dev, PTR_ERR(pclk), "Could not get 'pclk'\n");
+> +
+> +		reset =3D devm_reset_control_get_exclusive_deasserted(dev, NULL);
+> +		if (IS_ERR(reset))
+> +			return dev_err_probe(dev, PTR_ERR(reset),
+> +					     "Failed to deassert reset control\n");
+> +		break;
+> +
+> +	default:
+> +		return -ENODEV;
+> +	}
+> +
+> +	return devm_mfd_add_devices(dev, PLATFORM_DEVID_AUTO, cells, num_cells,=
+ NULL, 0, NULL);
+> +}
+> +
+> +static const struct of_device_id of_match_zx297520v3_crm[] =3D {
+> +	{ .compatible =3D "zte,zx297520v3-topcrm", .data =3D (void *)TYPE_TOPCR=
+M },
+> +	{ .compatible =3D "zte,zx297520v3-matrixcrm", .data =3D (void *)TYPE_MA=
+TRIXCRM },
+> +	{ .compatible =3D "zte,zx297520v3-lspcrm", .data =3D (void *)TYPE_LSPCR=
+M },
+> +	{ }
+> +};
+> +MODULE_DEVICE_TABLE(of, of_match_zx297520v3_crm);
+> +
+> +static struct platform_driver zx297520v3_crm =3D {
+> +	.probe =3D zx297520v3_crm_probe,
+> +	.driver =3D {
+> +		.name =3D "zx297520v3-crm",
+> +		.of_match_table =3D of_match_zx297520v3_crm,
+> +	},
+> +};
+> +module_platform_driver(zx297520v3_crm);
+> +
+> +MODULE_AUTHOR("Stefan D=F6singer <stefandoesinger@gmail.com>");
+> +MODULE_DESCRIPTION("ZTE zx297520v3 CRM driver");
+> +MODULE_LICENSE("GPL");
+> =
+
+> -- =
+
+> 2.55.0
+> =
+
+
+-- =
+
+Lee Jones
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
