@@ -2,89 +2,116 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AE383606A31A
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Oct 2026 05:26:55 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A1381606A324
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Oct 2026 05:54:31 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=oz0O1rXu;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=samsung.com header.i=@samsung.com header.a=rsa-sha256 header.s=mail20170921 header.b=dYEGJLl/
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=OUL/klq5;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=a/+YHFjX
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:From:Cc:To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bIYtUrtxNXAiozY+HCpF9eHBGqfqcWe9Z5hDZ88yMjA=; b=oz0O1rXuYZCeJ0
-	MDFo05q2dNuoXhFK9K5dCtAo4U2Oy1CGYowoqNiGtQ5WFzCT8QL+sOhEMLYq5Ofn1cWdAXYgr/AGb
-	gOFEd5huxy09+R0kLANjPquThQMrtr2CSKM3IBQBWXCSyhl/boTPiJ9rLFh03SNkS0x6wDxisYMfz
-	7kbxxxi1jEgA7LpPiaEYy2ZJiI4BiVmCW45oONcPOSYDPGgZaLw8WJ8iSdygZNPf1bgs/cu1EtRua
-	sbzmlSBXZ9j5qrk3jENQ6rO9GBMQDyb4sm08/dq6iqgu/03d+4xZTygjM04EFyMtvvqTf08fxhGKL
-	xGfknjOKokU0EFkrnnZQ==;
+	List-Owner; bh=Zi3eK77nsl2uXZGXtba0vxxC5xps7oStJ07Mf05uyDg=; b=OUL/klq5P+hxWh
+	DCnUV7HTEZ1iNWnLd8c0iGk5iL63+s8xEYqn1K6uXOLJdRef2CsBWUJSTwpzFdv0P29FLSVRe9We5
+	2RqHWOvLaJv83gjBhUV8TnKT+jpMOpH4W9G0E99qF/IICZxcwai+huZU7teD58+U1m304/cVP6Z+O
+	JgEqBrh3SVdnZKyFmmi3hDhFcfr1dxDk1D3o+Ls0kJk8RuRBbT8if0OH6RNFU5m5ewicHlnG8aOlU
+	JAvsTaYzdtJVxd5KV+CTE+CqaTGGU6MRjLNVUw69zfAgUH+3e4YuIxIQ5U7DMbl5/FmxhdEmvxmyg
+	eetzwaMzPn3zXmc34doA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJ2ND-00000008s4C-0Zcp;
-	Tue, 20 Oct 2026 05:26:55 +0000
-Received: from mailout3.samsung.com ([203.254.224.33])
+	id 1xJ2nv-00000008u3l-1323;
+	Tue, 20 Oct 2026 05:54:31 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJ2N8-00000008s30-27xM
+	id 1xJ2nu-00000008u3f-1WdH
 	for linux-phy@lists.infradead.org;
-	Tue, 20 Oct 2026 05:26:53 +0000
-Received: from epcas5p1.samsung.com (unknown [182.195.41.39])
-	by mailout3.samsung.com (KnoxPortal) with ESMTP id 20261020052641epoutp032a15d453672a559e1bfdafd66e1cf1f4~gJZuEifg51936119361epoutp03M
-	for <linux-phy@lists.infradead.org>; Tue, 20 Oct 2026 05:26:41 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com 20261020052641epoutp032a15d453672a559e1bfdafd66e1cf1f4~gJZuEifg51936119361epoutp03M
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1792474001;
-	bh=VBaqtAYhzt9vjT0IOaJ3LEbjNlh/6yFmqmAUZP/n84g=;
-	h=Date:Subject:To:Cc:From:In-Reply-To:References:From;
-	b=dYEGJLl/XaI8YLA9R+Ob8BLNL4Oe4NEqVu0yZo7lPIWNUon5CtaJa5P+ABxEeLhKV
-	 RdokE3KZAgTDw4/1+B9Sq4zlulMxapQI/9OppFOFp4VWgAJIEdR+igm+327fNAyrrt
-	 qJWhR/yoLNGDAg38FHqOgluaTODXTEdRRGI7VbQ0=
-Received: from epsnrtp02.localdomain (unknown [182.195.42.154]) by
-	epcas5p2.samsung.com (KnoxPortal) with ESMTPS id
-	20261020052640epcas5p27161ada23d6deba25cb84e6fcb0165b0~gJZtBVh9C2585725857epcas5p2s;
-	Tue, 20 Oct 2026 05:26:40 +0000 (GMT)
-Received: from epcas5p1.samsung.com (unknown [182.195.38.93]) by
-	epsnrtp02.localdomain (Postfix) with ESMTP id 4j819q3JvDz2SSKb; Tue, 20 Oct
-	2026 05:26:39 +0000 (GMT)
-Received: from epsmtip1.samsung.com (unknown [182.195.34.30]) by
-	epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
-	20261020052638epcas5p18ff9bffbddf4c8f106a4669f4810370f~gJZrnNRuA1711217112epcas5p1J;
-	Tue, 20 Oct 2026 05:26:38 +0000 (GMT)
-Received: from [107.122.5.126] (unknown [107.122.5.126]) by
-	epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
-	20261020052635epsmtip1b24d9cf98f9333c343d2bf34c031fda5~gJZoqwYIG2871028710epsmtip1g;
-	Tue, 20 Oct 2026 05:26:35 +0000 (GMT)
-Message-ID: <40a922b9-f56f-4fe1-88f5-5bb236735951@samsung.com>
-Date: Tue, 20 Oct 2026 10:56:34 +0530
+	Tue, 20 Oct 2026 05:54:30 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 762AA43C2B;
+	Tue, 20 Oct 2026 05:54:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 085391F000C4;
+	Tue, 20 Oct 2026 05:54:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1792475669;
+	bh=2rm4Tp2k0RqgpllE3qFFaci0f+Yvkf9cOiz7z+TNkUA=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=a/+YHFjXG40L8kkNWKto7PFCZO4Rp480swjoQiImPCSYz7QYjeb+lVIr+WCamDyxU
+	 RhPqNe3oXL3Xu+HS1SnQkBMrYWhgKMI6Kdw58svhS1wdU42x2SswL7MZBEMpTme4SU
+	 l1EcflHlTkRsUWTwI1xD3OsS5gz7WKYK6AdjaNsuEPoAcWMhclSF90UlgKPsf/rcfB
+	 5l1+EIS7eJ8C4UNBK/3OIjK4IYD6fMbKMQzcdtyga3tuqtakkAr0Slj7X+5fKOTUWu
+	 DkYftZMqnsVu35ntkiQ6S45kpl4/IvFc1D63hP66DFFMZz4fTDgYiMKmZzqNqG4Tzc
+	 hEu+m/bkJThqw==
+Message-ID: <708b9edc-3ee9-49f4-ba62-9fc2806168dd@kernel.org>
+Date: Tue, 20 Oct 2026 07:54:22 +0200
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] phy: exynos5-usbdrd: Use dynamic phy_cfg size to
- prevent OOB access
-To: Manivannan Sadhasivam <mani@kernel.org>
-Cc: vkoul@kernel.org, neil.armstrong@linaro.org, krzk@kernel.org,
-	peter.griffin@linaro.org, alim.akhtar@samsung.com, pritam.sutar@samsung.com,
-	andre.draszik@linaro.org, kernel@lvkasz.us, pengpeng@iscas.ac.cn,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
-	jh0801.jung@samsung.com, h10.kim@samsung.com, dh10.jung@samsung.com,
-	akash.m5@samsung.com, hongpooh.kim@samsung.com, eomji.oh@samsung.com,
-	shijie.cai@samsung.com, muhammed.ali@samsung.com, thiagu.r@samsung.com
+Subject: Re: [PATCH 2/7] dt-bindings: phy: qcom: Add qcom,sa8775p-csi2-phy
+ schema
+To: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
+Cc: Anusha Arun Nandi <anusha.nandi@oss.qualcomm.com>, bod@kernel.org,
+ vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, neil.armstrong@linaro.org, mani@kernel.org,
+ gjorgji.rosikopulos@oss.qualcomm.com,
+ hariram.purushothaman@oss.qualcomm.com, akapatra@quicinc.com,
+ jigarkumar.zala@oss.qualcomm.com, loic.poulain@oss.qualcomm.com,
+ vladimir.zapolskiy@linaro.org, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Vikram Sharma <vikram.sharma@oss.qualcomm.com>
+References: <20261016235502.2274268-1-anusha.nandi@oss.qualcomm.com>
+ <20261016235502.2274268-3-anusha.nandi@oss.qualcomm.com>
+ <851434b3-4cf1-4371-9b4a-57dba8022e13@oss.qualcomm.com>
+ <20261019-funky-real-skunk-eda6dc@quoll>
+ <7766382e-5187-465b-aa89-ff1bf9a16588@oss.qualcomm.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
-From: Selvarasu Ganesan <selvarasu.g@samsung.com>
-In-Reply-To: <as0G-bk_TKRToOkv@debian>
-X-CMS-MailID: 20261020052638epcas5p18ff9bffbddf4c8f106a4669f4810370f
-X-Msg-Generator: CA
-CMS-TYPE: 105P
-cpgsPolicy: CPGSC10-542,Y
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20260918103249epcas5p49c9b4bf6fd60c28f5f09f0b7b69828b6
-References: <CGME20260918103249epcas5p49c9b4bf6fd60c28f5f09f0b7b69828b6@epcas5p4.samsung.com>
-	<20260918103147.2628614-1-selvarasu.g@samsung.com> <as0G-bk_TKRToOkv@debian>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261019_222651_233800_5E71327E 
-X-CRM114-Status: GOOD (  14.63  )
-X-Spam-Score: -4.7 (----)
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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
+In-Reply-To: <7766382e-5187-465b-aa89-ff1bf9a16588@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,44 +121,39 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-10.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-5.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
+	autolearn=no autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Ck9uIDEwLzEyLzIwMjYgOTo0NCBQTSwgTWFuaXZhbm5hbiBTYWRoYXNpdmFtIHdyb3RlOgo+IE9u
-IEZyaSwgU2VwIDE4LCAyMDI2IGF0IDA0OjAxOjQ3UE0gKzA1MzAsIFNlbHZhcmFzdSBHYW5lc2Fu
-IHdyb3RlOgo+PiBUaGUgcHJvYmUgbG9vcCBjdXJyZW50bHkgaXRlcmF0ZXMgdXNpbmcgRVhZTk9T
-NV9EUkRQSFlTX05VTSAoMiksCj4+IGNyZWF0aW5nIGJvdGggVVRNSSBhbmQgUElQRTMgUEhZIGlu
-c3RhbmNlcyByZWdhcmRsZXNzIG9mIHRoZSBTb0MKPj4gY2FwYWJpbGl0eS4gU2V2ZXJhbCBTb0Nz
-IChFeHlub3MyMjAwLCBFeHlub3M3ODcwLCBFeHlub3M4NTAsIEV4eW5vczk5MCwKPj4gYW5kIEV4
-eW5vc0F1dG9WOTIwKSBwcm92aWRlIHBoeV9jZmcgYXJyYXlzIGNvbnRhaW5pbmcgb25seSBhIHNp
-bmdsZQo+PiBlbGVtZW50Lgo+Pgo+PiBPbiB0aGVzZSBTb0NzLCB3aGVuIHRoZSBsb29wIHJlYWNo
-ZXMgaW5kZXggMSwgdGhlIGRyaXZlciByZWFkcyBwYXN0IHRoZQo+PiBlbmQgb2YgdGhlIHJvZGF0
-YSBhcnJheSwgcG9wdWxhdGluZyB0aGUgc2Vjb25kIFBIWSBpbnN0YW5jZSB3aXRoIGdhcmJhZ2UK
-Pj4gZGF0YS4gU2luY2UgdGhlIGNvbmZpZ3VyYXRpb24gc3RydWN0dXJlIGNvbnRhaW5zIGNyaXRp
-Y2FsIGZ1bmN0aW9uCj4+IHBvaW50ZXJzIChwaHlfaXNvbCwgcGh5X2luaXQsIHNldF9yZWZjbGsp
-LCBhbnkgc3Vic2VxdWVudCBhY2Nlc3MgdG8gdGhpcwo+PiBQSFkgaW5zdGFuY2UgdmlhIGV4eW5v
-czVfdXNiZHJkX3BoeV94bGF0ZSBjb3VsZCByZXN1bHQgaW4gYSBrZXJuZWwgb29wcy4KPj4KPj4g
-Rml4IHRoaXMgYnkgYWRkaW5nICduX3BoeV9jZmcnIHRvIHN0cnVjdCBleHlub3M1X3VzYmRyZF9w
-aHlfZHJ2ZGF0YSB0bwo+PiBzdG9yZSB0aGUgYWN0dWFsIHNpemUgb2YgdGhlIHBoeV9jZmcgYXJy
-YXkgZm9yIGVhY2ggU29DLiBVcGRhdGUgdGhlCj4+IHByb2JlIGxvb3AgYW5kIHRoZSB4bGF0ZSBm
-dW5jdGlvbiB0byBib3VuZCB0aGVpciBhY2Nlc3MgYWdhaW5zdCB0aGlzCj4+IHZhbHVlIGluc3Rl
-YWQgb2YgdGhlIGhhcmRjb2RlZCBFWFlOT1M1X0RSRFBIWVNfTlVNLgo+Pgo+PiBBc3Npc3RlZC1i
-eTogTExNCj4+IFNpZ25lZC1vZmYtYnk6IFNlbHZhcmFzdSBHYW5lc2FuIDxzZWx2YXJhc3UuZ0Bz
-YW1zdW5nLmNvbT4KPj4gVGVzdGVkLWJ5OiDFgXVrYXN6IExlYmllZHppxYRza2kgPGtlcm5lbEBs
-dmthc3oudXM+Cj4+IFJldmlld2VkLWJ5OiBBbGltIEFraHRhciA8YWxpbS5ha2h0YXJAc2Ftc3Vu
-Zy5jb20+Cj4+IFJldmlld2VkLWJ5OiBBbmRyw6kgRHJhc3ppayA8YW5kcmUuZHJhc3ppa0BsaW5h
-cm8ub3JnPgo+PiBSZXZpZXdlZC1ieTogUGV0ZXIgR3JpZmZpbiA8cGV0ZXIuZ3JpZmZpbkBsaW5h
-cm8ub3JnPgo+IFNpbmNlIHRoaXMgcGF0Y2ggZml4ZXMgYW4gT09CIGlzc3VlLCBpdCBzaG91bGQg
-aGF2ZSBhIEZpeGVzIHRhZyBhbmQgdGhlIHN0YWJsZQo+IGxpc3Qgc2hvdWxkIGJlIENDZWQgZm9y
-IGJhY2twb3J0aW5nLgoKSGkgTWFuaSwKClRoYW5rcyBmb3IgeW91ciByZXZpZXdpbmcgcGF0Y2gu
-CgpTdXJlLCBJIHdpbGwgYWRkIGZpeGVzIGFuZCBzdGFibGUgdGFnIGluIHRoZSBuZXh0IHZlcnNp
-b24uCgpUaGFua3MsClNlbHZhCj4KPiAtIE1hbmkKPgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxp
-c3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 19/10/2026 09:25, Nihal Kumar Gupta wrote:
+> 
+> 
+> On 19-10-2026 12:43, Krzysztof Kozlowski wrote:
+>>> DTS uses 2-cell reg but binding example uses 1-cell. Please align:
+>>>   reg = <0x0 0x0ac9c000 0x0 0x2000>;
+>> I don't understand what is supposed to be aligned here. The code is
+>> correct.
+> Right, the DTS change is correct.
+> 
+> My comment was about the binding example using a different address/size cell
+> layout from the real DTS. 
+> 
+> Krzysztof, should the binding example mirror the SoC bus address/size cell
+
+Why are you suggesting in review something which maintainers never
+suggested? Or actually opposite to what some maintainers were suggesting
+before. Code has correct example.
+
+Best regards,
+Krzysztof
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
