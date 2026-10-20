@@ -2,87 +2,100 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 712FC606A322
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Oct 2026 06:36:37 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 99F5F606A31B
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Oct 2026 07:29:51 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=otbHJ8ip;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=samsung.com header.i=@samsung.com header.a=rsa-sha256 header.s=mail20170921 header.b=DXurnG+O
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=GsNZSkWR;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=airkyi.com header.i=@airkyi.com header.a=rsa-sha256 header.s=altu2504 header.b=vUBet9So
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-Id:Date
-	:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=hbYlCbtcM/PIVaSDyyu6gMKCFqLsXKqo0xvpa84oBhk=; b=otbHJ8ipW/W9hn
-	vQFzQmjyY2u6hHd24qlsl3vrA+8e3JieU/O9HVXPVk9EaPH8aCoh3WZAK2miil8wGr0dlU9NgCNEr
-	/mmlvTJt992nacnAnmmRtE1DJxMSe7zsuSP+96Cg1nnRSdwV2RZzk8TKta6FssBEwEcoI6sDuH9OL
-	jlZsULyY3EQ/vY1wADZi+9LljjBTQVhGKztd7Tso3+HspILM1NhGpksbi+bSIY+jDZV/SwJBLl/YV
-	RdW8NuCi+Xdlv0R0J43YH5ODCVl7T6xoubUobncJGlryaj0Oef844MZ/rALzBCuYlca9blab1Qt5q
-	b+buTKU7R+3hxjju5i5A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9po3t/D1gxs3+CkVzvFpR8aFd6RnuNISpWgh0DI9OKA=; b=GsNZSkWR5EugLW
+	CmgkOqhqC+SBZRgTkNcFP/Od/nbictxN/xxYFnLiWKhombqUeFBLz+z5BIRQV3ENZjBzo+2jPhh/p
+	psUtIhwpoPlNhk5KL3mz+7SWR6+k6YJe7wj0YK2kOFIvVK1qb7ORlEptfk9zPaVEjR0s/+NjLYMJI
+	U1uDIIg0B5+dnHF9sfbVqHzrxUSKWtGxCrlg95/vKuY7Rg13IPs/a0ALKTgwFyjDjMMPz1PkXIMqx
+	GtIjeEHRUmDGCAtzT6GUe651Up7umoZtLIMEaD11eSB9MBo2/clDFeSDCAmI3qm7fOlYpnCXxvLGb
+	Qa+ZpGD6zcu6eqLNTfQA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJ3Se-00000008vr9-49fO;
-	Tue, 20 Oct 2026 06:36:36 +0000
-Received: from mailout2.samsung.com ([203.254.224.25])
+	id 1xJ4IB-00000009256-0kih;
+	Tue, 20 Oct 2026 07:29:51 +0000
+Received: from smtpbgeu2.qq.com ([18.194.254.142])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJ3SZ-00000008vpr-3WTf
-	for linux-phy@lists.infradead.org;
-	Tue, 20 Oct 2026 06:36:35 +0000
-Received: from epcas5p2.samsung.com (unknown [182.195.41.40])
-	by mailout2.samsung.com (KnoxPortal) with ESMTP id 20261020063620epoutp02315a31e2f5d72d5705dc42afcb786b97~gKWh-rAbu0933109331epoutp02Q
-	for <linux-phy@lists.infradead.org>; Tue, 20 Oct 2026 06:36:20 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com 20261020063620epoutp02315a31e2f5d72d5705dc42afcb786b97~gKWh-rAbu0933109331epoutp02Q
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1792478180;
-	bh=cMOyDvJ+4IZMD7M7ive4vsZM0ebqLEDD0cr3Jg1jYiA=;
-	h=From:To:Cc:Subject:Date:References:From;
-	b=DXurnG+OrImuFVOWre/IHvrEtrR52MixdRlAxE2Mybikle6I4OhJ9ttoIkS0h+vP9
-	 USuIKfMQIJoAvLz4KHwp6ditcFMCwWfD0XgwNgP2/3QoDjwebIggA3uQqtFobZn+pf
-	 WeBDmINrF3DqXaqMNUSkKI5nSxYDh/F2j3GdQGek=
-Received: from epsnrtp01.localdomain (unknown [182.195.42.153]) by
-	epcas5p3.samsung.com (KnoxPortal) with ESMTPS id
-	20261020063619epcas5p3cbe87da155138f7d23f130a048e7700a~gKWhUrZDm0682806828epcas5p3G;
-	Tue, 20 Oct 2026 06:36:19 +0000 (GMT)
-Received: from epcas5p2.samsung.com (unknown [182.195.38.87]) by
-	epsnrtp01.localdomain (Postfix) with ESMTP id 4j82kB4tdfz6B9mB; Tue, 20 Oct
-	2026 06:36:18 +0000 (GMT)
-Received: from epsmtip2.samsung.com (unknown [182.195.34.31]) by
-	epcas5p4.samsung.com (KnoxPortal) with ESMTPA id
-	20261020063617epcas5p4ba00854fcd38bf211c573629ee062621~gKWfYcTjq3015130151epcas5p4j;
-	Tue, 20 Oct 2026 06:36:17 +0000 (GMT)
-Received: from vega.samsungds.net (unknown [107.108.73.84]) by
-	epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
-	20261020063614epsmtip2fdb85f2c138d315a3425597013416486~gKWcIzNpH1615316153epsmtip2_;
-	Tue, 20 Oct 2026 06:36:14 +0000 (GMT)
-From: Selvarasu Ganesan <selvarasu.g@samsung.com>
-To: vkoul@kernel.org, neil.armstrong@linaro.org, mani@kernel.org,
-	krzk@kernel.org, peter.griffin@linaro.org, alim.akhtar@samsung.com,
-	pritam.sutar@samsung.com, andre.draszik@linaro.org, kernel@lvkasz.us,
-	pengpeng@iscas.ac.cn, kishon@kernel.org, linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Cc: jh0801.jung@samsung.com, h10.kim@samsung.com, dh10.jung@samsung.com,
-	akash.m5@samsung.com, hongpooh.kim@samsung.com, eomji.oh@samsung.com,
-	shijie.cai@samsung.com, muhammed.ali@samsung.com, thiagu.r@samsung.com,
-	Selvarasu Ganesan <selvarasu.g@samsung.com>, stable@vger.kernel.org
-Subject: [PATCH v3] phy: exynos5-usbdrd: Use dynamic phy_cfg size to prevent
- OOB access
-Date: Tue, 20 Oct 2026 12:05:59 +0530
-Message-Id: <20261020063559.3530901-1-selvarasu.g@samsung.com>
+	id 1xJ4I4-0000000922k-42es;
+	Tue, 20 Oct 2026 07:29:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=airkyi.com;
+	s=altu2504; t=1792481318;
+	bh=pZgjT+oGEQ5K4V8MyzWimB+k4UA7CFJooI9DXyiZa2E=;
+	h=From:To:Subject:Date:Message-Id;
+	b=vUBet9SowMU58pIAs5Bnq0NBzCzas6qyFybdjJ5bmb6ZL4XF2h+BexdSeruNr8IyF
+	 7sDIjsvaVlmUJiRgguwRODyLOZZwCgQPtaH0pX+FqmtInWU+qDAHOgJrQsoTDHEzYx
+	 lvVKiAZs7JzjX9mC+wv/GwOgzxGR4Ii/MWiAbZ3g=
+X-QQ-mid: zesmtpsz4t1792481315ta7e4ccdc
+X-QQ-Originating-IP: BaQu2KOZZmPISr3BKq2G0ONYeW3roXRaqXQcRqdiHvM=
+Received: from DESKTOP-8BT1A2O.localdomain ( [61.154.14.86])
+	by bizesmtp.qq.com (ESMTP) with 
+	id ; Tue, 20 Oct 2026 15:28:32 +0800 (CST)
+X-QQ-SSF: 0000000000000000000000000000000
+X-QQ-GoodBg: 0
+X-BIZMAIL-ID: 1917325487105428466
+From: Chaoyi Chen <kernel@airkyi.com>
+To: Andrzej Hajda <andrzej.hajda@intel.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Robert Foss <rfoss@kernel.org>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>,
+	Simona Vetter <simona@ffwll.ch>,
+	Sandy Huang <hjc@rock-chips.com>,
+	=?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Sebastian Reichel <sebastian.reichel@collabora.com>,
+	Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
+	Heikki Krogerus <heikki.krogerus@linux.intel.com>
+Cc: linux-kernel@vger.kernel.org,
+	dri-devel@lists.freedesktop.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	Chaoyi Chen <chaoyi.chen@rock-chips.com>
+Subject: [PATCH v8 0/7] drm/bridge: Implement generic USB Type-C DP HPD bridge
+Date: Tue, 20 Oct 2026 15:28:09 +0800
+Message-Id: <20261020072816.180-1-kernel@airkyi.com>
 X-Mailer: git-send-email 2.17.1
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-X-CMS-MailID: 20261020063617epcas5p4ba00854fcd38bf211c573629ee062621
-X-Msg-Generator: CA
-CMS-TYPE: 105P
-cpgsPolicy: CPGSC10-542,Y
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20261020063617epcas5p4ba00854fcd38bf211c573629ee062621
-References: <CGME20261020063617epcas5p4ba00854fcd38bf211c573629ee062621@epcas5p4.samsung.com>
+X-QQ-SENDSIZE: 520
+Feedback-ID: zesmtpsz:airkyi.com:qybglogicsvrgz:qybglogicsvrgz6b-0
+X-QQ-XMAILINFO: M4afFXlZrPyBiC6UULLsbTLemqI7xA+KM1Re9xYGYf9JEeNWHMb/QAGP
+	BpOt68sFuuMP06UgY67XD3KvGH9EjQ1MacU4HdSH6EXLLHOsD49+OfVfvXyysBF5sJtqn+f
+	4QaPG/3KC1uhWsh6XQiNlEzz0US4EZC67lS8pdA/6liA6g/KDPTao3IQ6q6v9TTBkbEMQDz
+	5JJJRvjzXeWmV0pUnGxvJ01BJX8QYyGGbR6IeCcrc2ltslGoF4eC7/qY4YD3/VobIGPIX2N
+	qF0orrnWjgi9nQhii9qUp8mTwXsijFOqeo1u7xWtLCz/ZJJQOTac4JFx2fMbRn+3nWngh7+
+	XbbUFFjBrjmF+KSPDDQgQ0r9M64JuG9by73Rf7rsOr4xCohQ+7lxef5ayfMWap1lTF5le64
+	L6/ESF5RL2ZUuTlUscvkeS4F5hn+xSPJWT2tBekOaM0MEsYbJz3pbZQn87qXTRuK6ANX72t
+	rMX4J0i89/8xCvbxmiZ9httn+B5VCwVIVoDeKdNSmXjWUyDdQ7vqc8KS/XdmVOpnYyQE/w6
+	aKx5YhXRTyrU+3P2YEjfG3wFq8Bsv1wbb1jkXlXPjmH/6TFYvVjDwxJXeHNW5CUs0+MBbEg
+	+Kromx3KIDqIXhGF1LR74VSX+rYGIOVnkx7lkyQYaNiGns5BeKOx0r/nMJx53bJBp2u2mzR
+	6BTJam3q4ptELzod87Jqo0ULo0G9abGIQvQxbCvgOJU3sBAheVLzlC3u1oo7RxEG82BPmeW
+	oSCYzPSh65ozwZSFNpcZyVA2EF59bQRDupBQ75ZV5SAlfOYVFbwkIzMB05ZYzxk6w/z9R1g
+	FTUWVdGMkddEc2l+NuLMOS0HroSFKWetKMG4InDDxKoyH5kR7WjKKFz9cjB8JNqr6nywJnL
+	CR2/YwGoNLaCE19zAAbv166TSeFSGIS++hec6R4iHoLETSI8GjI6fmc1969pKpcB2fZN9rw
+	5JIuyIiIbsTREydTLSMDD8KoLM97NkyhBY0AIrPiVnbDxHOgW12o0eMiccq1n2KIB2tRA+l
+	xgt78zQ4F9HZlKMcnN
+X-QQ-XMRINFO: OWPUhxQsoeAVwkVaQIEGSKwwgKCxK/fD5g==
+X-QQ-RECHKSPAM: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261019_233633_350902_4DD3F330 
-X-CRM114-Status: GOOD (  18.60  )
-X-Spam-Score: -4.7 (----)
+X-CRM114-CacheID: sfid-20261020_002945_525581_E1ABC451 
+X-CRM114-Status: GOOD (  11.84  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,149 +105,126 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-17.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-12.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-VGhlIHByb2JlIGxvb3AgY3VycmVudGx5IGl0ZXJhdGVzIHVzaW5nIEVYWU5PUzVfRFJEUEhZU19O
-VU0gKDIpLApjcmVhdGluZyBib3RoIFVUTUkgYW5kIFBJUEUzIFBIWSBpbnN0YW5jZXMgcmVnYXJk
-bGVzcyBvZiB0aGUgU29DCmNhcGFiaWxpdHkuIFNldmVyYWwgU29DcyAoRXh5bm9zMjIwMCwgRXh5
-bm9zNzg3MCwgRXh5bm9zODUwLCBFeHlub3M5OTAsCmFuZCBFeHlub3NBdXRvVjkyMCkgcHJvdmlk
-ZSBwaHlfY2ZnIGFycmF5cyBjb250YWluaW5nIG9ubHkgYSBzaW5nbGUKZWxlbWVudC4KCk9uIHRo
-ZXNlIFNvQ3MsIHdoZW4gdGhlIGxvb3AgcmVhY2hlcyBpbmRleCAxLCB0aGUgZHJpdmVyIHJlYWRz
-IHBhc3QgdGhlCmVuZCBvZiB0aGUgcm9kYXRhIGFycmF5LCBwb3B1bGF0aW5nIHRoZSBzZWNvbmQg
-UEhZIGluc3RhbmNlIHdpdGggZ2FyYmFnZQpkYXRhLiBTaW5jZSB0aGUgY29uZmlndXJhdGlvbiBz
-dHJ1Y3R1cmUgY29udGFpbnMgY3JpdGljYWwgZnVuY3Rpb24KcG9pbnRlcnMgKHBoeV9pc29sLCBw
-aHlfaW5pdCwgc2V0X3JlZmNsayksIGFueSBzdWJzZXF1ZW50IGFjY2VzcyB0byB0aGlzClBIWSBp
-bnN0YW5jZSB2aWEgZXh5bm9zNV91c2JkcmRfcGh5X3hsYXRlIGNvdWxkIHJlc3VsdCBpbiBhIGtl
-cm5lbCBvb3BzLgoKRml4IHRoaXMgYnkgYWRkaW5nICduX3BoeV9jZmcnIHRvIHN0cnVjdCBleHlu
-b3M1X3VzYmRyZF9waHlfZHJ2ZGF0YSB0bwpzdG9yZSB0aGUgYWN0dWFsIHNpemUgb2YgdGhlIHBo
-eV9jZmcgYXJyYXkgZm9yIGVhY2ggU29DLiBVcGRhdGUgdGhlCnByb2JlIGxvb3AgYW5kIHRoZSB4
-bGF0ZSBmdW5jdGlvbiB0byBib3VuZCB0aGVpciBhY2Nlc3MgYWdhaW5zdCB0aGlzCnZhbHVlIGlu
-c3RlYWQgb2YgdGhlIGhhcmRjb2RlZCBFWFlOT1M1X0RSRFBIWVNfTlVNLgoKRml4ZXM6IDU5MDI1
-ODg3ZmIwOCAoInBoeTogQWRkIG5ldyBFeHlub3M1IFVTQiAzLjAgUEhZIGRyaXZlciIpCkNjOiBz
-dGFibGVAdmdlci5rZXJuZWwub3JnCkFzc2lzdGVkLWJ5OiBMTE0KU2lnbmVkLW9mZi1ieTogU2Vs
-dmFyYXN1IEdhbmVzYW4gPHNlbHZhcmFzdS5nQHNhbXN1bmcuY29tPgpUZXN0ZWQtYnk6IMWBdWth
-c3ogTGViaWVkemnFhHNraSA8a2VybmVsQGx2a2Fzei51cz4KUmV2aWV3ZWQtYnk6IEFsaW0gQWto
-dGFyIDxhbGltLmFraHRhckBzYW1zdW5nLmNvbT4KUmV2aWV3ZWQtYnk6IEFuZHLDqSBEcmFzemlr
-IDxhbmRyZS5kcmFzemlrQGxpbmFyby5vcmc+ClJldmlld2VkLWJ5OiBQZXRlciBHcmlmZmluIDxw
-ZXRlci5ncmlmZmluQGxpbmFyby5vcmc+Ci0tLQoKQ2hhbmdlcyBpbiB2MzoKLSBBZGRlZCBGaXhl
-cyBhbmQgU3RhYmxlIHRhZwotIExpbmsgdG8gdjI6CiAgaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcv
-YWxsLzIwMjYwOTE4MTAzMTQ3LjI2Mjg2MTQtMS1zZWx2YXJhc3UuZ0BzYW1zdW5nLmNvbS8KCkNo
-YW5nZXMgaW4gdjI6Ci0gVXBkYXRlZCAnQXNzaXN0ZWQtYnknIHRhZyB0byBmb2xsb3cgdGhlIHBy
-b3BlciBrZXJuZWwgZG9jdW1lbnRhdGlvbgogIGZvcm1hdC4KLSBMaW5rIHRvIHYxOgogIGh0dHBz
-Oi8vbG9yZS5rZXJuZWwub3JnL2FsbC8yMDI2MDgzMTA3MDMwOS4xNTgwNjktMS1zZWx2YXJhc3Uu
-Z0BzYW1zdW5nLmNvbS8KLS0tCiBkcml2ZXJzL3BoeS9zYW1zdW5nL3BoeS1leHlub3M1LXVzYmRy
-ZC5jIHwgMTcgKysrKysrKysrKysrKysrLS0KIDEgZmlsZSBjaGFuZ2VkLCAxNSBpbnNlcnRpb25z
-KCspLCAyIGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L3NhbXN1bmcvcGh5
-LWV4eW5vczUtdXNiZHJkLmMgYi9kcml2ZXJzL3BoeS9zYW1zdW5nL3BoeS1leHlub3M1LXVzYmRy
-ZC5jCmluZGV4IDA4N2Q1NTJlYjUxMS4uZjEwY2Y3YjZlMGFhIDEwMDY0NAotLS0gYS9kcml2ZXJz
-L3BoeS9zYW1zdW5nL3BoeS1leHlub3M1LXVzYmRyZC5jCisrKyBiL2RyaXZlcnMvcGh5L3NhbXN1
-bmcvcGh5LWV4eW5vczUtdXNiZHJkLmMKQEAgLTQ3Nyw2ICs0NzcsNyBAQCBzdHJ1Y3QgZXh5bm9z
-NV91c2JkcmRfcGh5X2NvbmZpZyB7CiAKIHN0cnVjdCBleHlub3M1X3VzYmRyZF9waHlfZHJ2ZGF0
-YSB7CiAJY29uc3Qgc3RydWN0IGV4eW5vczVfdXNiZHJkX3BoeV9jb25maWcgKnBoeV9jZmc7CisJ
-aW50IG5fcGh5X2NmZzsKIAljb25zdCBzdHJ1Y3QgZXh5bm9zNV91c2JkcmRfcGh5X3R1bmluZyAq
-KnBoeV90dW5lczsKIAljb25zdCBzdHJ1Y3QgcGh5X29wcyAqcGh5X29wczsKIAljb25zdCBjaGFy
-ICogY29uc3QgKmNsa19uYW1lczsKQEAgLTExNzMsNyArMTE3NCw3IEBAIHN0YXRpYyBzdHJ1Y3Qg
-cGh5ICpleHlub3M1X3VzYmRyZF9waHlfeGxhdGUoc3RydWN0IGRldmljZSAqZGV2LAogewogCXN0
-cnVjdCBleHlub3M1X3VzYmRyZF9waHkgKnBoeV9kcmQgPSBkZXZfZ2V0X2RydmRhdGEoZGV2KTsK
-IAotCWlmIChXQVJOX09OKGFyZ3MtPmFyZ3NbMF0gPj0gRVhZTk9TNV9EUkRQSFlTX05VTSkpCisJ
-aWYgKFdBUk5fT04oYXJncy0+YXJnc1swXSA+PSBwaHlfZHJkLT5kcnZfZGF0YS0+bl9waHlfY2Zn
-KSkKIAkJcmV0dXJuIEVSUl9QVFIoLUVOT0RFVik7CiAKIAlyZXR1cm4gcGh5X2RyZC0+cGh5c1th
-cmdzLT5hcmdzWzBdXS5waHk7CkBAIC0yMDIxLDYgKzIwMjIsNyBAQCBzdGF0aWMgY29uc3QgY2hh
-ciAqIGNvbnN0IGV4eW5vczVfcmVndWxhdG9yX25hbWVzW10gPSB7CiAKIHN0YXRpYyBjb25zdCBz
-dHJ1Y3QgZXh5bm9zNV91c2JkcmRfcGh5X2RydmRhdGEgZXh5bm9zMjIwMF91c2IzMmRyZF9waHkg
-PSB7CiAJLnBoeV9jZmcJCT0gcGh5X2NmZ19leHlub3MyMjAwLAorCS5uX3BoeV9jZmcJCT0gQVJS
-QVlfU0laRShwaHlfY2ZnX2V4eW5vczIyMDApLAogCS5waHlfb3BzCQk9ICZleHlub3MyMjAwX3Vz
-YmRyZF9waHlfb3BzLAogCS5wbXVfb2Zmc2V0X3VzYmRyZDBfcGh5CT0gRVhZTk9TMjIwMF9QSFlf
-Q1RSTF9VU0IyMCwKIAkuY2xrX25hbWVzCQk9IGV4eW5vczVfY2xrX25hbWVzLApAQCAtMjAzNCw2
-ICsyMDM2LDcgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBleHlub3M1X3VzYmRyZF9waHlfZHJ2ZGF0
-YSBleHlub3MyMjAwX3VzYjMyZHJkX3BoeSA9IHsKIAogc3RhdGljIGNvbnN0IHN0cnVjdCBleHlu
-b3M1X3VzYmRyZF9waHlfZHJ2ZGF0YSBleHlub3M1NDIwX3VzYmRyZF9waHkgPSB7CiAJLnBoeV9j
-ZmcJCT0gcGh5X2NmZ19leHlub3M1LAorCS5uX3BoeV9jZmcJCT0gQVJSQVlfU0laRShwaHlfY2Zn
-X2V4eW5vczUpLAogCS5waHlfb3BzCQk9ICZleHlub3M1X3VzYmRyZF9waHlfb3BzLAogCS5wbXVf
-b2Zmc2V0X3VzYmRyZDBfcGh5CT0gRVhZTk9TNV9VU0JEUkRfUEhZX0NPTlRST0wsCiAJLnBtdV9v
-ZmZzZXRfdXNiZHJkMV9waHkJPSBFWFlOT1M1NDIwX1VTQkRSRDFfUEhZX0NPTlRST0wsCkBAIC0y
-MDQ3LDYgKzIwNTAsNyBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IGV4eW5vczVfdXNiZHJkX3BoeV9k
-cnZkYXRhIGV4eW5vczU0MjBfdXNiZHJkX3BoeSA9IHsKIAogc3RhdGljIGNvbnN0IHN0cnVjdCBl
-eHlub3M1X3VzYmRyZF9waHlfZHJ2ZGF0YSBleHlub3M1MjUwX3VzYmRyZF9waHkgPSB7CiAJLnBo
-eV9jZmcJCT0gcGh5X2NmZ19leHlub3M1LAorCS5uX3BoeV9jZmcJCT0gQVJSQVlfU0laRShwaHlf
-Y2ZnX2V4eW5vczUpLAogCS5waHlfb3BzCQk9ICZleHlub3M1X3VzYmRyZF9waHlfb3BzLAogCS5w
-bXVfb2Zmc2V0X3VzYmRyZDBfcGh5CT0gRVhZTk9TNV9VU0JEUkRfUEhZX0NPTlRST0wsCiAJLmNs
-a19uYW1lcwkJPSBleHlub3M1X2Nsa19uYW1lcywKQEAgLTIwNTksNiArMjA2Myw3IEBAIHN0YXRp
-YyBjb25zdCBzdHJ1Y3QgZXh5bm9zNV91c2JkcmRfcGh5X2RydmRhdGEgZXh5bm9zNTI1MF91c2Jk
-cmRfcGh5ID0gewogCiBzdGF0aWMgY29uc3Qgc3RydWN0IGV4eW5vczVfdXNiZHJkX3BoeV9kcnZk
-YXRhIGV4eW5vczU0MzNfdXNiZHJkX3BoeSA9IHsKIAkucGh5X2NmZwkJPSBwaHlfY2ZnX2V4eW5v
-czUsCisJLm5fcGh5X2NmZwkJPSBBUlJBWV9TSVpFKHBoeV9jZmdfZXh5bm9zNSksCiAJLnBoeV9v
-cHMJCT0gJmV4eW5vczVfdXNiZHJkX3BoeV9vcHMsCiAJLnBtdV9vZmZzZXRfdXNiZHJkMF9waHkJ
-PSBFWFlOT1M1X1VTQkRSRF9QSFlfQ09OVFJPTCwKIAkucG11X29mZnNldF91c2JkcmQxX3BoeQk9
-IEVYWU5PUzU0MzNfVVNCSE9TVDMwX1BIWV9DT05UUk9MLApAQCAtMjA3Miw2ICsyMDc3LDcgQEAg
-c3RhdGljIGNvbnN0IHN0cnVjdCBleHlub3M1X3VzYmRyZF9waHlfZHJ2ZGF0YSBleHlub3M1NDMz
-X3VzYmRyZF9waHkgPSB7CiAKIHN0YXRpYyBjb25zdCBzdHJ1Y3QgZXh5bm9zNV91c2JkcmRfcGh5
-X2RydmRhdGEgZXh5bm9zN191c2JkcmRfcGh5ID0gewogCS5waHlfY2ZnCQk9IHBoeV9jZmdfZXh5
-bm9zNSwKKwkubl9waHlfY2ZnCQk9IEFSUkFZX1NJWkUocGh5X2NmZ19leHlub3M1KSwKIAkucGh5
-X29wcwkJPSAmZXh5bm9zNV91c2JkcmRfcGh5X29wcywKIAkucG11X29mZnNldF91c2JkcmQwX3Bo
-eQk9IEVYWU5PUzVfVVNCRFJEX1BIWV9DT05UUk9MLAogCS5jbGtfbmFtZXMJCT0gZXh5bm9zNV9j
-bGtfbmFtZXMsCkBAIC0yMDg0LDYgKzIwOTAsNyBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IGV4eW5v
-czVfdXNiZHJkX3BoeV9kcnZkYXRhIGV4eW5vczdfdXNiZHJkX3BoeSA9IHsKIAogc3RhdGljIGNv
-bnN0IHN0cnVjdCBleHlub3M1X3VzYmRyZF9waHlfZHJ2ZGF0YSBleHlub3M3ODcwX3VzYmRyZF9w
-aHkgPSB7CiAJLnBoeV9jZmcJCT0gcGh5X2NmZ19leHlub3M3ODcwLAorCS5uX3BoeV9jZmcJCT0g
-QVJSQVlfU0laRShwaHlfY2ZnX2V4eW5vczc4NzApLAogCS5waHlfdHVuZXMJCT0gZXh5bm9zNzg3
-MF90dW5lcywKIAkucGh5X29wcwkJPSAmZXh5bm9zNzg3MF91c2JkcmRfcGh5X29wcywKIAkucG11
-X29mZnNldF91c2JkcmQwX3BoeQk9IEVYWU5PUzVfVVNCRFJEX1BIWV9DT05UUk9MLApAQCAtMjA5
-Nyw2ICsyMTA0LDcgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBleHlub3M1X3VzYmRyZF9waHlfZHJ2
-ZGF0YSBleHlub3M3ODcwX3VzYmRyZF9waHkgPSB7CiAKIHN0YXRpYyBjb25zdCBzdHJ1Y3QgZXh5
-bm9zNV91c2JkcmRfcGh5X2RydmRhdGEgZXh5bm9zODUwX3VzYmRyZF9waHkgPSB7CiAJLnBoeV9j
-ZmcJCT0gcGh5X2NmZ19leHlub3M4NTAsCisJLm5fcGh5X2NmZwkJPSBBUlJBWV9TSVpFKHBoeV9j
-ZmdfZXh5bm9zODUwKSwKIAkucGh5X29wcwkJPSAmZXh5bm9zODUwX3VzYmRyZF9waHlfb3BzLAog
-CS5wbXVfb2Zmc2V0X3VzYmRyZDBfcGh5CT0gRVhZTk9TNV9VU0JEUkRfUEhZX0NPTlRST0wsCiAJ
-LmNsa19uYW1lcwkJPSBleHlub3M1X2Nsa19uYW1lcywKQEAgLTIxMjUsNiArMjEzMyw3IEBAIHN0
-YXRpYyBjb25zdCBzdHJ1Y3QgZXh5bm9zNV91c2JkcmRfcGh5X3R1bmluZyAqZXh5bm9zOTkwX3R1
-bmVzW1BUU19NQVhdID0gewogCiBzdGF0aWMgY29uc3Qgc3RydWN0IGV4eW5vczVfdXNiZHJkX3Bo
-eV9kcnZkYXRhIGV4eW5vczk5MF91c2JkcmRfcGh5ID0gewogCS5waHlfY2ZnCQk9IHBoeV9jZmdf
-ZXh5bm9zODUwLAorCS5uX3BoeV9jZmcJCT0gQVJSQVlfU0laRShwaHlfY2ZnX2V4eW5vczg1MCks
-CiAJLnBoeV9vcHMJCT0gJmV4eW5vczg1MF91c2JkcmRfcGh5X29wcywKIAkucGh5X3R1bmVzCQk9
-IGV4eW5vczk5MF90dW5lcywKIAkucG11X29mZnNldF91c2JkcmQwX3BoeQk9IEVYWU5PUzk5MF9Q
-SFlfQ1RSTF9VU0IyMCwKQEAgLTI2NjEsNiArMjY3MCw3IEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3Qg
-cGh5X29wcyBleHlub3NhdXRvdjkyMF91c2IzMWRyZF9jb21ib19zc3BoeV9vcHMgPSB7CiBzdGF0
-aWMgY29uc3QKIHN0cnVjdCBleHlub3M1X3VzYmRyZF9waHlfZHJ2ZGF0YSBleHlub3NhdXRvdjky
-MF91c2IzMWRyZF9jb21ib19zc3BoeSA9IHsKIAkucGh5X2NmZwkJPSB1c2IzMWRyZF9waHlfY2Zn
-X2V4eW5vc2F1dG92OTIwLAorCS5uX3BoeV9jZmcJCT0gQVJSQVlfU0laRSh1c2IzMWRyZF9waHlf
-Y2ZnX2V4eW5vc2F1dG92OTIwKSwKIAkucGh5X29wcwkJPSAmZXh5bm9zYXV0b3Y5MjBfdXNiMzFk
-cmRfY29tYm9fc3NwaHlfb3BzLAogCS5wbXVfb2Zmc2V0X3VzYmRyZDBfcGh5CT0gRVhZTk9TQVVU
-T1Y5MjBfUEhZX0NUUkxfVVNCMzEsCiAJLmNsa19uYW1lcwkJPSBleHlub3M1X2Nsa19uYW1lcywK
-QEAgLTI2OTEsNiArMjcwMSw3IEBAIGV4eW5vczVfdXNiZHJkX3BoeV9jb25maWcgdXNiZHJkX2hz
-cGh5X2NmZ19leHlub3NhdXRvdjkyMFtdID0gewogc3RhdGljIGNvbnN0CiBzdHJ1Y3QgZXh5bm9z
-NV91c2JkcmRfcGh5X2RydmRhdGEgZXh5bm9zYXV0b3Y5MjBfdXNiZHJkX2NvbWJvX2hzcGh5ID0g
-ewogCS5waHlfY2ZnCQk9IHVzYmRyZF9oc3BoeV9jZmdfZXh5bm9zYXV0b3Y5MjAsCisJLm5fcGh5
-X2NmZwkJPSBBUlJBWV9TSVpFKHVzYmRyZF9oc3BoeV9jZmdfZXh5bm9zYXV0b3Y5MjApLAogCS5w
-aHlfb3BzCQk9ICZleHlub3NhdXRvdjkyMF91c2JkcmRfY29tYm9faHNwaHlfb3BzLAogCS5wbXVf
-b2Zmc2V0X3VzYmRyZDBfcGh5CT0gRVhZTk9TQVVUT1Y5MjBfUEhZX0NUUkxfVVNCMjAsCiAJLmNs
-a19uYW1lcwkJPSBleHlub3M1X2Nsa19uYW1lcywKQEAgLTI3MTksNiArMjczMCw3IEBAIHN0YXRp
-YyBjb25zdCBzdHJ1Y3QgZXh5bm9zNV91c2JkcmRfcGh5X2NvbmZpZyBwaHlfY2ZnX2V4eW5vc2F1
-dG92OTIwW10gPSB7CiAKIHN0YXRpYyBjb25zdCBzdHJ1Y3QgZXh5bm9zNV91c2JkcmRfcGh5X2Ry
-dmRhdGEgZXh5bm9zYXV0b3Y5MjBfdXNiZHJkX3BoeSA9IHsKIAkucGh5X2NmZwkJPSBwaHlfY2Zn
-X2V4eW5vc2F1dG92OTIwLAorCS5uX3BoeV9jZmcJCT0gQVJSQVlfU0laRShwaHlfY2ZnX2V4eW5v
-c2F1dG92OTIwKSwKIAkucGh5X29wcwkJPSAmZXh5bm9zYXV0b3Y5MjBfdXNiZHJkX3BoeV9vcHMs
-CiAJLnBtdV9vZmZzZXRfdXNiZHJkMF9waHkJPSBFWFlOT1NBVVRPVjkyMF9QSFlfQ1RSTF9VU0Iy
-MCwKIAkuY2xrX25hbWVzCQk9IGV4eW5vczVfY2xrX25hbWVzLApAQCAtMjg5NSw2ICsyOTA3LDcg
-QEAgc3RhdGljIGNvbnN0IGNoYXIgKiBjb25zdCBnczEwMV9yZWd1bGF0b3JfbmFtZXNbXSA9IHsK
-IAogc3RhdGljIGNvbnN0IHN0cnVjdCBleHlub3M1X3VzYmRyZF9waHlfZHJ2ZGF0YSBnczEwMV91
-c2JkMzFyZF9waHkgPSB7CiAJLnBoeV9jZmcJCQk9IHBoeV9jZmdfZ3MxMDEsCisJLm5fcGh5X2Nm
-ZwkJCT0gQVJSQVlfU0laRShwaHlfY2ZnX2dzMTAxKSwKIAkucGh5X3R1bmVzCQkJPSBnczEwMV90
-dW5lcywKIAkucGh5X29wcwkJCT0gJmdzMTAxX3VzYmRyZF9waHlfb3BzLAogCS5wbXVfb2Zmc2V0
-X3VzYmRyZDBfcGh5CQk9IEdTMTAxX1BIWV9DVFJMX1VTQjIwLApAQCAtMzA1Miw3ICszMDY1LDcg
-QEAgc3RhdGljIGludCBleHlub3M1X3VzYmRyZF9waHlfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2Rl
-dmljZSAqcGRldikKIAogCWRldl92ZGJnKGRldiwgIkNyZWF0aW5nIHVzYmRyZF9waHkgcGh5XG4i
-KTsKIAotCWZvciAoaSA9IDA7IGkgPCBFWFlOT1M1X0RSRFBIWVNfTlVNOyBpKyspIHsKKwlmb3Ig
-KGkgPSAwOyBpIDwgZHJ2X2RhdGEtPm5fcGh5X2NmZzsgaSsrKSB7CiAJCXN0cnVjdCBwaHkgKnBo
-eSA9IGRldm1fcGh5X2NyZWF0ZShkZXYsIE5VTEwsIGRydl9kYXRhLT5waHlfb3BzKTsKIAogCQlp
-ZiAoSVNfRVJSKHBoeSkpCi0tIAoyLjE3LjEKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdAps
-aW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+
+This series is split from the v15 "Add Type-C DP support for RK3399 EVB
+IND board" series [1]. It focuses on the DRM bridge and Rockchip
+platform CDN-DP controller changes.
+
+[1] https://lore.kernel.org/all/20260304094152.92-1-kernel@airkyi.com/
+
+====
+1. Generic Type-C DP HPD bridge
+
+Currently, several USB-C controller drivers register their own DP HPD
+bridge via aux-hpd-bridge.c, each duplicating the same logic. For
+devicetree based platforms, the USB-C controller may vary across boards,
+and not every USB-C controller driver implements this feature. Patch 1
+implements a generic DP HPD bridge that monitors Type-C bus events and
+automatically creates an HPD bridge when a Type-C port device with DP
+SVID is registered.
+
+2. Multiple bridge model for CDN-DP
+
+The RK3399 has two USB/DP combo PHY and one CDN-DP controller. Patch 5
+introduces a multi-bridge model where each PHY port gets a separate
+encoder and bridge, allowing flexible selection of the output PHY port.
+This is based on the DRM AUX HPD bridge rather than extcon.
+
+====
+Patch 1 adds new API to check whether a DisplayPort HPD bridge has
+	already been registered (Sebastian).
+Patch 2 adds generic USB Type-C DP HPD bridge (Dmitry, Heikki).
+Patch 3 adds module soft depend for USB Type-C DP HPD bridge(Sebastian).
+Patch 4 adds new API drm_aux_bridge_register_from_node() (Neil).
+Patch 5 adds DRM AUX bridge support for RK3399 USBDP PHY (Neil).
+Patch 6 drops CDN-DP's extcon dependency when Type-C is present (Dmitry).
+Patch 7 adds multiple bridges to support PHY port selection (Dmitry, Luca).
+
+Changes in v8:
+- Link to v7: https://lore.kernel.org/all/20260828084737.565-1-kernel@airkyi.com/
+- Send missing HPD event to userspace in cdn_dp_pd_event_work() (sashiko).
+
+Changes in v7:
+- Link to v6: https://lore.kernel.org/all/20260804070730.68-1-kernel@airkyi.com/
+- Fix extcon HPD detection by checking lanes in cdn_dp_connected_port() (sashiko).
+- Bound endpoint count by PHY ports to avoid overflow and uninitialized reads (sashiko).
+- Use drm_bridge_clear_and_put() to clear next_bridge_list pointers (sashiko).
+- Clear EDID cache pointers after free in unbind() (sashiko).
+
+Changes in v6:
+- Link to v5: https://lore.kernel.org/all/20260730013349.51-1-kernel@airkyi.com/
+- Avoid duplicate registration of the same DisplayPort HPD bridge.
+
+Changes in v5:
+- Link to v4: https://lore.kernel.org/all/20260727064408.101-1-kernel@airkyi.com/
+- Add module soft depend for USB Type-C DP HPD bridge.
+
+Changes in v4:
+- Link to v3: https://lore.kernel.org/all/20260717072323.96-1-kernel@airkyi.com/
+- Scan the entire typec_bus and attempt to register the hpd bridge,
+  so as not to miss devices that were already added during initialization.
+
+Changes in v3:
+- Link to v2: https://lore.kernel.org/all/20260608070805.88-1-kernel@airkyi.com/
+  (Sorry, I forgot to add the "v2" title, so it looks like v1.)
+- Remove now-redundant call to drm_connector_attach_encoder()
+- Rebase to v7.2-rc2
+
+Changes in v2:
+- Link to v1: https://lore.kernel.org/all/20260521032854.103-1-kernel@airkyi.com/
+- Add copyright text.
+- Remove useless goto.
+- Fix incorrect function names in the documentation comments.
+- Fix the check logic for dp->active_port (0 is valid).
+- Fix the uninitialized prev_port.
+- Remove duplicate logic from cdn_dp_switch_port().
+- Fix the prototype of cdn_dp_bridge_hpd_notify().
+- Properly release connector->fwnode.
+- Properly release next_bridge.
+
+Chaoyi Chen (7):
+  drm/bridge: aux-hpd-bridge: Add drm_dev_has_dp_hpd_bridge()
+  drm/bridge: Implement generic USB Type-C DP HPD bridge
+  drm/display: Add soft depend for aux-hpd-typec-dp-bridge module
+  drm/bridge: aux: Add drm_aux_bridge_register_from_node()
+  phy: rockchip: phy-rockchip-typec: Add DRM AUX bridge
+  drm/rockchip: cdn-dp: Support handle lane info without extcon
+  drm/rockchip: cdn-dp: Add multiple bridges to support PHY port
+    selection
+
+ drivers/gpu/drm/bridge/Kconfig                |  10 +
+ drivers/gpu/drm/bridge/Makefile               |   1 +
+ drivers/gpu/drm/bridge/aux-bridge.c           |  26 +-
+ drivers/gpu/drm/bridge/aux-hpd-bridge.c       |  42 +-
+ .../gpu/drm/bridge/aux-hpd-typec-dp-bridge.c  |  67 ++++
+ .../gpu/drm/display/drm_display_helper_mod.c  |   1 +
+ drivers/gpu/drm/rockchip/Kconfig              |   1 +
+ drivers/gpu/drm/rockchip/cdn-dp-core.c        | 369 +++++++++++++++---
+ drivers/gpu/drm/rockchip/cdn-dp-core.h        |  19 +-
+ drivers/phy/rockchip/Kconfig                  |   2 +
+ drivers/phy/rockchip/phy-rockchip-typec.c     |  13 +-
+ include/drm/bridge/aux-bridge.h               |  12 +
+ 12 files changed, 491 insertions(+), 72 deletions(-)
+ create mode 100644 drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
+
+-- 
+2.53.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
