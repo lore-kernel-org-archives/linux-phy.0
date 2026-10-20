@@ -2,66 +2,55 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AB77F60A261D
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Oct 2026 12:00:09 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 72F37606A31C
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Oct 2026 12:27:59 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=bwOTIaXf
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=dicP4Gkx
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XO6gRBY9lOj89o+JGSywYbrneYXO58yM5UVTt4CmNko=; b=bwOTIaXfe51DCg
-	xeLRjAFJo7vZfj43ZJ76UjKj4NvVmsKM1n86Jxgszq7i+ZbtKebtXxbr4AC+z8MPJT0ntXdxrfCNL
-	JSyuCtTYpFoi+hiVCfk5PBveFupHrQIhmQjdniFRPzDtOPwOMQSiDspT9se9EBdSIQ2XP+FgKHLab
-	069ppMPO2edmoqWzAvN9VlSXgcxmrZpLnlbS5zblTgFDW+wkygKf0zxBE+2SG1hi6I/DEZxKldpxD
-	i5enNzuzgdGN2YpeTErdPN55fNmsTrFrvb9XJzO4gtPUgp2omY7k0ATDRrwYqZW9SIdnyb9U+v7tu
-	QiEIVbzLY9Obt1F6kLHQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1uOu3gtiQd3g2/wsBOlxyfIyiKsmfVR2nCzxzYKWigM=; b=dicP4GkxGOcOUc
+	WP8UwkEEPFDbZxsJ9amzPuf93Ca4Vq88R9/jQZdd8CWvdjuHEFvIsw95a0OQgVR5LXwTFNb7jlt3b
+	qQKbmUeQeqYvrWeAmGzyxa7TX8vG/mVmMQM0o+RIoJ6nL5rjgSf18gn+Chnc9CKlQ9KVcfVhH9H1a
+	PQ0E2oV3Si2l6aw7+ZD2fx9W6PN4rUBuR9QXz4gjCCwF/Iw6j56WML5pk5Bo4FMMIn4mX6w9nuzOp
+	WPN/S1RNNB88lx795x8e0NNwbMQfFW6/CXYEPTKYWyPjyZNxcmtHK+n8g3Q0wDipJ39gaMJNCNQMM
+	j3+YOZT/vB1sODntPfJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJ8Vl-00000009cUh-1kqh;
-	Tue, 20 Oct 2026 12:00:09 +0000
-Received: from mail.aspeedtech.com ([211.20.114.72] helo=twmbx01.aspeedtech.com)
+	id 1xJ8wg-00000009f8P-4239;
+	Tue, 20 Oct 2026 12:27:58 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJ8Vh-00000009cPE-2kXj;
-	Tue, 20 Oct 2026 12:00:06 +0000
-Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
- (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Tue, 20 Oct
- 2026 19:59:50 +0800
-Received: from [127.0.1.1] (192.168.10.13) by TWMBX01.aspeed.com
- (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
- Transport; Tue, 20 Oct 2026 19:59:50 +0800
-From: Jacky Chou <jacky_chou@aspeedtech.com>
-Date: Tue, 20 Oct 2026 19:59:51 +0800
-Subject: [PATCH v10 3/3] MAINTAINERS: Add ASPEED PCIe PHY driver
+	id 1xJ8wf-00000009f7I-3vVq;
+	Tue, 20 Oct 2026 12:27:57 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id F0A8C60052;
+	Tue, 20 Oct 2026 12:27:56 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 32DBF1F000C6;
+	Tue, 20 Oct 2026 12:27:54 +0000 (UTC)
+From: Geert Uytterhoeven <geert+renesas@glider.be>
+To: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Peter Griffin <peter.griffin@linaro.org>,
+	=?UTF-8?q?Andr=C3=A9=20Draszik?= <andre.draszik@linaro.org>,
+	Tudor Ambarus <tudor.ambarus@linaro.org>,
+	Joy Chakraborty <joychakr@google.com>,
+	Roy Luo <royluo@google.com>,
+	Naveen Kumar <mnkumar@google.com>
+Cc: linux-phy@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	Geert Uytterhoeven <geert+renesas@glider.be>
+Subject: [PATCH v2] phy: PHY_GOOGLE_USB should depend on ARCH_GOOGLE
+Date: Tue, 20 Oct 2026 14:27:51 +0200
+Message-ID: <90a172c2980073a09b4f01c21a251c3d0d2d6fe5.1792499240.git.geert+renesas@glider.be>
+X-Mailer: git-send-email 2.43.0
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-ID: <20261020-upstream_pcie_rc-v10-3-fba209af8656@aspeedtech.com>
-References: <20261020-upstream_pcie_rc-v10-0-fba209af8656@aspeedtech.com>
-In-Reply-To: <20261020-upstream_pcie_rc-v10-0-fba209af8656@aspeedtech.com>
-To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
-	Joel Stanley <joel@jms.id.au>, Andrew Jeffery <andrew@codeconstruct.com.au>,
-	Ryan Chen <ryan_chen@aspeedtech.com>, Billy Tsai <billy_tsai@aspeedtech.com>
-CC: <linux-aspeed@lists.ozlabs.org>, <linux-phy@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>, Jacky Chou <jacky_chou@aspeedtech.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1792497590; l=878;
- i=jacky_chou@aspeedtech.com; s=20251031; h=from:subject:message-id;
- bh=YHD/I/0JKp9KeOT+Xzp15SjhKbuwAUqqCo+GFOfkoDI=;
- b=LzzTR9aoi8dc341tveSjtXD/pvQogGJy+/xDpgGPzrm+LJ1UXgPOd0bY3szbF2jH3Bvp6u18k
- HiEUQoOGcekBJ0o8IYprf1oaxzK/jmVjGiEBEb3xnnZlRjjgxS1dFcP
-X-Developer-Key: i=jacky_chou@aspeedtech.com; a=ed25519;
- pk=8XBx7KFM1drEsfCXTH9QC2lbMlGU4XwJTA6Jt9Mabdo=
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261020_050005_703355_70EBBBB0 
-X-CRM114-Status: UNSURE (   6.97  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -1.9 (-)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,35 +70,36 @@ X-Spam-Status: No, score=-17.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Add maintainer entry for ASPEED PCIe PHY driver.
+The Google Tensor SoC USB PHY is only present on Google Tensor G5
+(Laguna) SoCs.  Hence add a dependency on ARCH_GOOGLE, to prevent asking
+the user about this driver when configuring a kernel without Google
+Tensor SoC support.
 
-Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
+Fixes: cbce66669c82ee9a ("phy: Add Google Tensor SoC USB PHY driver")
+Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 ---
- MAINTAINERS | 8 ++++++++
- 1 file changed, 8 insertions(+)
+v2:
+  - ARCH_GOOGLE exists as of commit cf3df78629f24b40 ("arm64: dts:
+    google: Add dts directory for Google-designed silicon") in
+    soc/for-next.
+---
+ drivers/phy/Kconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 0570815ee980..33a0336110a7 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -4044,6 +4044,14 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/crypto/aspeed,*
- F:	drivers/crypto/aspeed/
+diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+index 105fbe408aa25b35..d151c05297d7e57a 100644
+--- a/drivers/phy/Kconfig
++++ b/drivers/phy/Kconfig
+@@ -93,6 +93,7 @@ config PHY_ECONET_PCIE
  
-+ASPEED PCIE PHY DRIVER
-+M:	Jacky Chou <jacky_chou@aspeedtech.com>
-+L:	linux-aspeed@lists.ozlabs.org (moderated for non-subscribers)
-+L:	linux-phy@lists.infradead.org
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/phy/aspeed,ast2600-pcie-phy.yaml
-+F:	drivers/phy/aspeed/phy-aspeed-pcie.c
-+
- ASPEED PECI CONTROLLER
- M:	Iwona Winiarska <iwona.winiarska@intel.com>
- L:	linux-aspeed@lists.ozlabs.org (moderated for non-subscribers)
-
+ config PHY_GOOGLE_USB
+ 	tristate "Google Tensor SoC USB PHY driver"
++	depends on ARCH_GOOGLE || COMPILE_TEST
+ 	select GENERIC_PHY
+ 	depends on TYPEC
+ 	help
 -- 
-2.34.1
+2.43.0
 
 
 -- 
