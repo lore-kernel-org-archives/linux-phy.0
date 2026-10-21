@@ -2,96 +2,91 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 863C6606A338
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Oct 2026 17:28:46 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 54BE6606A31B
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Oct 2026 18:05:50 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=cPDdNcuZ;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=infradead.org header.i=@infradead.org header.a=rsa-sha256 header.s=desiato.20200630 header.b=Bb0iBozt;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=dkimrelay header.b=Lnw43Rjo
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=FovLzz44;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=collabora.com header.i=@collabora.com header.a=rsa-sha256 header.s=mail header.b=jUzWPHj/
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oI4WNupSyV3ZDugJZWDb63KmCzS8ya4s38FERVzG6BY=; b=cPDdNcuZ5pNTHg
-	NVZ9Ez3BvvfnCy5Dy9FatTqILPHY8j6dlNQCl5rppj7YT4+39VBcPHREB8TH3QDg4i/5B9OUVL+eN
-	yonsxRMnzLyo6TsgktYTHNALVeGbxcn3qRiqok9s1wRJvGeRBa0WzUQdCcCCWQNm30ys9nK6tkB3I
-	I4EONSXkT/eJs8Bvt2Zjyqe17CwTkPm1uMj74QGxAJIWlJLL40Izebi6XALpF5ccjinprmeItG88/
-	vnDccs4yp8g0wAMz+QVSAdAYWzsGEFudLSXdqOBmPZyNTzJjEXWIGSTGwmiiH2hzqADbvSlj7Zjsa
-	dtsz93zIvnMtse1RIU0Q==;
+	List-Owner; bh=fcG17QLgqUalXvbLxmhg9rX5RX4iG0/1yjvXIopkvPA=; b=FovLzz44Ff/SxT
+	kuh5ooetaruq9pVO2BGdiP6fe8/tgYGqWNUJvBBmhT1nThMyyxE2RNews2AwJUb2FvvWJCYp85cDT
+	q0VZgqUOOpQAwLeizgm54i5+i78CQzXFueNxZLzcaeYcIjvYb+v6mMfp8WbhUN5BLB6b0EjyKUT8t
+	Wxwr86H6Jwcb5xbSIvYrpLzB4EO4iXTKpM1+i8sRqPruuN5r2AM6aJAGB8Urb22EvZKJEekQ1lyjq
+	MzoN8WBy4SrJWjPcuy3wZNAni4vIAlTIubDqPhz9NRu4YeDJZ0hi+7xJMhoUFSf/9joS8L0qnfSyp
+	ZORBZv9Pr1mBdeB9lPTw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJa7K-0000000CYKe-1BmO;
-	Wed, 21 Oct 2026 17:28:46 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1xJahB-0000000Cc3Y-31xu;
+	Wed, 21 Oct 2026 18:05:49 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJa7F-0000000CYF7-10ht;
-	Wed, 21 Oct 2026 17:28:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=n2LWARo8MV/mGVlauERfT0VhLpTZNjWKl5HGBOJ/aaQ=; b=Bb0iBoztiC57DLEQV1WwbzxtjO
-	FDS/tT2AsK4qQ7mZ1rhvDANFfjJUyi/n3Nv3vNHf+/vdN6xrcZ6kZU8i2VdM9sWfuf2IM+SHm4Md7
-	xDeshiSasXuoRV8IxdDxtE5tdiTO+/1dXW3uK0Apbl5woT9aDGd9tClmxp+IBqPyD9BgcYsHvgSmV
-	UU4ZS4wQd7FlzIfCPf7CiUFHesxblsQm9yKvYnpqjRYbcKq3nBpIox2x8lG1nhmygEUwaODGjDWgl
-	DrRu7NdfSp5VWRkbg3hzGKec/FXS+L2SKVk6EX0cdN4lYOlpDHdTGgH98C4RNi+9H7H7aMrii5Z+z
-	VwnJQTaA==;
-Received: from relay.smtp-ext.broadcom.com ([192.19.166.231])
-	by desiato.infradead.org with esmtps (Exim 4.99.5 #2 (Red Hat Linux))
-	id 1xJa7B-000000064uh-0ViA;
-	Wed, 21 Oct 2026 17:28:40 +0000
-Received: from mail-acc-it-01.broadcom.com (mail-acc-it-01.acc.broadcom.net [10.35.36.83])
-	by relay.smtp-ext.broadcom.com (Postfix) with ESMTP id E52F5C0000E4;
-	Wed, 21 Oct 2026 10:28:34 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 relay.smtp-ext.broadcom.com E52F5C0000E4
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=broadcom.com;
-	s=dkimrelay; t=1792603715;
-	bh=/JqeKYtSECU+27WszWV5PvE5N7tLSEr/HEiedmI/3Fw=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=Lnw43Rjoo7WMEr5lSbFj+3+vUdKB08znfjLSjETJ50yT6sgV+7DuXEtQ2zV0BzNii
-	 5mbjcEFbF0NLteDVHedAHhh/fI4Sz5z2E8e712JupZGj2Wnx1f2narVR4IuUmsulAU
-	 FR2MJFmpzaRm+uLS2m7/F6WZkXF0oBLCgq8GuI8A=
-Received: from fainelli-desktop.igp.broadcom.net (fainelli-desktop.dhcp.broadcom.net [10.67.48.245])
+	id 1xJah9-0000000Cc1O-0zKD;
+	Wed, 21 Oct 2026 18:05:48 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1792605943;
+	bh=u1NJ7iPwSqksBo4kmNU/fQeqoWOdC3qmPcDydleD2LU=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
+	b=jUzWPHj/puEpbnunz3zzRwWZh1q40d7fEYPIsxDw8bIkkoidCGw6w/OY7ohmNSZT3
+	 esYWOwmaZULu13KNMbdThmwu0JvPlBrc7N2UTHV80NOncgkDvejqGvtCNW5dFb//5v
+	 99x8eHe35MTV2L4Y4hlo9NZXBSEanBAbVK8pLkmPaHQQnk33MGP9IGMaEDqYe9ua9y
+	 npsnUKq32mTESwFMZh9CDTxI/aiHslRLs37L0CQUcgG6Xx5WpEP4ZxYbIDvrUNUCNP
+	 jh4ju5oaNCPsbz8quOp8K6GaGWz9wubbS6nNGCUhbMlMkG/WoHFBD1VUiZIb8vmCtX
+	 03lGT5Sr9ERzA==
+Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
-	by mail-acc-it-01.broadcom.com (Postfix) with ESMTPSA id 4DA3FAEA2;
-	Wed, 21 Oct 2026 13:28:33 -0400 (EDT)
-From: Florian Fainelli <florian.fainelli@broadcom.com>
-To: linux-arm-kernel@lists.infradead.org
-Cc: Florian Fainelli <florian.fainelli@broadcom.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Ray Jui <rjui@broadcom.com>,
-	Scott Branden <sbranden@broadcom.com>,
-	Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>,
-	Alan Stern <stern@rowland.harvard.edu>,
-	=?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <rafal@milecki.pl>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Yendapally Reddy Dhananjaya Reddy <yendapally.reddy@broadcom.com>,
-	linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK),
-	devicetree@vger.kernel.org (open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS),
-	linux-kernel@vger.kernel.org (open list),
-	linux-usb@vger.kernel.org (open list:USB SUBSYSTEM)
-Subject: [PATCH 8/9] ARM: dts: broadcom: Identify the NSP EHCI controller
-Date: Wed, 21 Oct 2026 10:28:17 -0700
-Message-ID: <20261021172819.668120-9-florian.fainelli@broadcom.com>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20261021172819.668120-1-florian.fainelli@broadcom.com>
-References: <20261021172819.668120-1-florian.fainelli@broadcom.com>
+	(Authenticated sender: sre)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id A45AF17E0928;
+	Wed, 21 Oct 2026 20:05:43 +0200 (CEST)
+Received: by jupiter.universe (Postfix, from userid 1000)
+	id 66D8A480031; Wed, 21 Oct 2026 20:05:43 +0200 (CEST)
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+Date: Wed, 21 Oct 2026 20:05:29 +0200
+Subject: [PATCH v18 4/7] usb: dwc3: core: add post PHY registration hook
+ for platform glue
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
+Message-Id: <20261021-b4-rockchip-dwc3-rockchip-glue-v18-4-60000d03fca2@collabora.com>
+References: <20261021-b4-rockchip-dwc3-rockchip-glue-v18-0-60000d03fca2@collabora.com>
+In-Reply-To: <20261021-b4-rockchip-dwc3-rockchip-glue-v18-0-60000d03fca2@collabora.com>
+To: Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>
+Cc: Igor Paunovic <royalnet026@gmail.com>, linux-kernel@vger.kernel.org, 
+ linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org, 
+ kernel@collabora.com, Sebastian Reichel <sebastian.reichel@collabora.com>, 
+ Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2142;
+ i=sebastian.reichel@collabora.com; h=from:subject:message-id;
+ bh=u1NJ7iPwSqksBo4kmNU/fQeqoWOdC3qmPcDydleD2LU=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGrY/vedIG+V8B/ZmgJaGZ8GI+lWufmYtxAe9
+ +lCbg0mG1JNNIkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJq2P73AAoJENju1/PI
+ O/qa9pcQAKDlfDbyLeOyeNn8M8VfKsd5z2isXeI2HZwm+L7XH4k1t9TzAf3ZlQ3oFlx+uAM+We6
+ XK+9Bu8aAyUCGHLeTvBPY0I9x0LY+pPUM5re2P0JNTi9UBwMtJ7xwywf1kYG6MYSuegTiLl/1pm
+ NqY5OVDOZ8CcDKDGbzYFHwim4+k4xbWc1eX4fqWArgiZExNHSnDjRd4qnFBKxYyIwan61gfrFa7
+ oxRlaZO1AFiz00Xxt7sz92eu49iPmvTLlj+RKN2POJtshGG9cuq+L1tqJ1sX1zannLcsvOMv9AS
+ bFgb7r8C+1XXmsmuTAZ/Qc/J9YlPAyzk8tY7E15OUsMoDkGiNNAM9k+IqhmYNRyflzICj4jW7D/
+ eolqOZotoK3CYKpgR8GepiQysA9JC4QJdzXZ/4Pf6S8MYaPb1kTYjGNBkblTrqU5O4oKyAWhWds
+ aF9rQ2r1rL6viGAsXKl2RIz3Ddj2H2myeNBNLllqYJzpsU7htUPZ8ZBdxx8qLKsdEQlZjGuicD8
+ 5NOx9CyhRgaUhHWJn+WDXAU9sUG/byh0MsQhpe1F9qv6JRSG2JQUurarTa0hR06+wZN+vh/mhYD
+ uhtT7u8lUnMmCA31zD2JUHHYEIERWY1NMNvwueZ/cYJHtbUVD3tHb6n/4/kOTHOIksz0Jp2J6wI
+ 0jYCECLXihtRRdrBIf0A1UQ==
+X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
+ fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261021_182838_367498_7FE920DC 
-X-CRM114-Status: GOOD (  14.90  )
-X-Spam-Score: -1.2 (-)
+X-CRM114-CacheID: sfid-20261021_110547_427034_E12CFEA2 
+X-CRM114-Status: GOOD (  13.78  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,32 +106,64 @@ X-Spam-Status: No, score=-17.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-The NSP SDK programs the EHCI FIFO threshold to 0x00800040, but the
-upstream device tree describes the controller only as generic-ehci.
-This prevents ehci-platform from selecting the required initialization.
+Add support for custom PHY handling steps in platform glue code
+by adding a post registration hook. This will be used for handling
+PHY reset notifications on the Rockchip platform.
 
-Add the NSP compatible to select its FIFO threshold workaround while
-retaining generic-ehci as a fallback.
-
-Fixes: 1d8ece6639e1 ("ARM: dts: NSP: Add EHCI/OHCI USB nodes to device tree")
-Signed-off-by: Florian Fainelli <florian.fainelli@broadcom.com>
+Tested-by: Igor Paunovic <royalnet026@gmail.com> # Orange Pi 5 Plus
+Acked-by: Thinh Nguyen <Thinh.Nguyen@synopsys.com>
+Reviewed-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- arch/arm/boot/dts/broadcom/bcm-nsp.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/usb/dwc3/core.c | 2 +-
+ drivers/usb/dwc3/core.h | 9 +++++++++
+ 2 files changed, 10 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/broadcom/bcm-nsp.dtsi b/arch/arm/boot/dts/broadcom/bcm-nsp.dtsi
-index c3c33f18b92a..b3f0190d0d86 100644
---- a/arch/arm/boot/dts/broadcom/bcm-nsp.dtsi
-+++ b/arch/arm/boot/dts/broadcom/bcm-nsp.dtsi
-@@ -325,7 +325,7 @@ xhci: usb@29000 {
- 		};
+diff --git a/drivers/usb/dwc3/core.c b/drivers/usb/dwc3/core.c
+index 4b7132887a03..daf5aec07fbf 100644
+--- a/drivers/usb/dwc3/core.c
++++ b/drivers/usb/dwc3/core.c
+@@ -1613,7 +1613,7 @@ static int dwc3_core_get_phy(struct dwc3 *dwc)
+ 		}
+ 	}
  
- 		ehci0: usb@2a000 {
--			compatible = "generic-ehci";
-+			compatible = "brcm,nsp-ehci", "generic-ehci";
- 			reg = <0x2a000 0x100>;
- 			interrupts = <GIC_SPI 79 IRQ_TYPE_LEVEL_HIGH>;
- 			dma-coherent;
+-	return 0;
++	return dwc3_post_phy_registration(dwc);
+ }
+ 
+ static int dwc3_core_init_mode(struct dwc3 *dwc)
+diff --git a/drivers/usb/dwc3/core.h b/drivers/usb/dwc3/core.h
+index 608daeb7ef10..e9d8df0a298e 100644
+--- a/drivers/usb/dwc3/core.h
++++ b/drivers/usb/dwc3/core.h
+@@ -995,10 +995,12 @@ struct dwc3_scratchpad_array {
+  *				need to be passed on to glue layer
+  * @pre_set_role: Notify glue of role switch notifications
+  * @pre_run_stop: Notify run stop enable/disable information to glue
++ * @post_phy_registration: Called directly after PHY got registered
+  */
+ struct dwc3_glue_ops {
+ 	void	(*pre_set_role)(struct dwc3 *dwc, enum usb_role role);
+ 	void	(*pre_run_stop)(struct dwc3 *dwc, bool is_on);
++	int	(*post_phy_registration)(struct dwc3 *dwc);
+ };
+ 
+ /**
+@@ -1655,6 +1657,13 @@ static inline void dwc3_pre_run_stop(struct dwc3 *dwc, bool is_on)
+ 		dwc->glue_ops->pre_run_stop(dwc, is_on);
+ }
+ 
++static inline int dwc3_post_phy_registration(struct dwc3 *dwc)
++{
++	if (dwc->glue_ops && dwc->glue_ops->post_phy_registration)
++		return dwc->glue_ops->post_phy_registration(dwc);
++	return 0;
++}
++
+ #if IS_ENABLED(CONFIG_USB_DWC3_HOST) || IS_ENABLED(CONFIG_USB_DWC3_DUAL_ROLE)
+ int dwc3_host_init(struct dwc3 *dwc);
+ void dwc3_host_exit(struct dwc3 *dwc);
+
 -- 
 2.53.0
 
