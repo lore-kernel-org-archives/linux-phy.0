@@ -2,81 +2,81 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B690F606CD51
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Oct 2026 16:12:44 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3551C606D8C3
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Oct 2026 16:12:46 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=xGoK6HRs;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=V0YkxMkK
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=SgBM2C6d;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=feOiJJ7C
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mq6AHhWQI8CmLvaHZNuFFILVqGDHtO0swLz8m44+SRo=; b=xGoK6HRs4rBMI7
-	lk1eZvJ2YXSDuENxJ3WTAMRZJCWN2VfQl/2yQW+BsqIf/nZzfqSk4jg1lHVFcUUhQFar4+fyW2xRD
-	K0K3Lg+umRboFlgpIeVy3f0gQ0n42Te+GYB+2pxZCCu5j1Sgyskl8mQha9H3Dl+bmF7fj0HpRWSBE
-	uyUG6WDZMd7ixTCoqZQhm9T8aIVd8PEgvMclisjNrWFTjbgqYAOAIYQQxISg+eleDj/nwam+YbTDC
-	6hUJ0BRlaAvLHFSdSLp0Sq0orwz+NzM8UCc2MVeWJXRbW+G+VFvMYk4eiDGnsnY52ewqmee/gUL28
-	LOyQWkYbYSpEOggNjGhQ==;
+	List-Owner; bh=XbrfP2EDOsFasH1/J2sXJPAXh44BStE4ZSXyAUyEeLI=; b=SgBM2C6dYFjmYK
+	KDsdek2xep4BnMu9OtVjKxkgFYQudK4jEj8mNRxcpMYu8YA7NcfGtQBc60pFOEctTY46C2rQOO5mK
+	O3vm3EStnMfxiMmYyL3RW6dysuBLFgT6AF3RGdjoarvRuDNJDQyr4lkpZFq/sa4PATkN8oc5Vngtd
+	ghJ8H2aIofN7X+Fxi9GFBExufitEZy84La65pNufn4k438+dx96HWRh+NXhgcgneytJhYvmm4wQWb
+	cy8++1e+X1PvBLEX2/l+AqVTWlm9keyfUIXXjVJeIBLBI4euuU7UaTlPm+5dlsQxhTNimS/P7HnRi
+	YfaxTLZdELKgMB49WmKQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJYvk-0000000CMdq-1kSb;
-	Wed, 21 Oct 2026 16:12:44 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xJYvl-0000000CMfu-3N6c;
+	Wed, 21 Oct 2026 16:12:45 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJYvb-0000000CMPw-32PW;
-	Wed, 21 Oct 2026 16:12:35 +0000
+	id 1xJYvc-0000000CMTP-3k3Q;
+	Wed, 21 Oct 2026 16:12:36 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id BFDFC601F0;
-	Wed, 21 Oct 2026 16:12:34 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 8EB474479B;
+	Wed, 21 Oct 2026 16:12:36 +0000 (UTC)
 Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
 ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1792599154;
-	b=YIXwmwB20pPkeOj3ygmFTgmgPTNnY/IueHYYN8PGtd4xAU666RiJDeXh2ESmAqD8lIby
-	 JppUeeMeKlUIlF2NX2SL942e6LmvELAc7WNXl2nFE66jaPzF1Rwe5Dz01oL9scSNM3xvx
-	 k4oJWvE8zSo0FkZO04aZivNwOGq0SguPK3vt8j125Ipn8CyDLBpxg9xMrFaejvFk3aND1
-	 4ZGN6LI6Cn4540+IszkDoSPhbSj0wMh1ZdVAxcTLi+nYiMV7XGb8UQG6YE+CECfuedIR3
-	 2ua0yGxHKaPihx6+k1IvVVOh9X+Enco4XsDzG2hNGe2b9xfNtn2d9kZT1xgyLWuYzoA==
+	t=1792599156;
+	b=V1AKN+hUQEhmgjm0wYRZG7snHlVnxQE5pSI9FKW/TCzF6Khr+f87coE8Cnu62Pk+YXg6
+	 7D0z7PRFyAENaBXH0VVC2/ik/WPhY2u8d2GyCNDI8PnrgH9AX+/XJ7+SwM0R2aZXAvfVH
+	 iI1qtdQ4stieYTvxCUvMKICbFwuKH4dTt29u+S9VUt0kQiugyK7oMLmq/PLNt7UOqQISk
+	 Anx7T+y82ExaUVALX/4q4As2GZ5I/oCpwzaaHHECVGWAkSo4c2fzZwC08Iq4Xg7QvvNpb
+	 DPqPw/qXSFFWzUsbM05SpzzbiQUz2ACeIaIvHE9EIKo1CfE6icTgI9q0Kfpn7yfmVLQ==
 ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1792599154;
+	c=relaxed/relaxed; t=1792599156;
 	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
 	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
 	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
 	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=vf7ZK5u2reB6Du+GchqoDahqBht5sD1HLOrfvrlTUKY=;
-	b=jNuHH/453SdDGaBJtZaLFcyQwcU7Ti172Z15wqkHX/lc4iHQl73WCbc5IbcYudeLhmlv
-	 U5ZbmXWBfY6vXBRi+OSSXRZ8Pewn+FzsvvGMuYZ8nCdKOArMi85l/A46cE7qoswU4fhvi
-	 3NiYpzPDpUZgiyZuVG1Ie0VIjzt8IdM8torN452L3tIKyLH0ivbfqGTtDv0b56uHGoKwI
-	 YdBhRv4IbNCLbd+GqEfK+vnaHRlr2hjm/DnbFoZVjX8zXFB9CpNaMZ2ZMD9pl47ilDG7k
-	 ftWs9tN+k9vPbq3aDiFmXPID84fnodgSbXqfV6sod9ZPK0q9pYB50I5mrIx3WyPTsdg==
+	bh=HkfHwPyLmt0lyg8sxRRrXUSzNOY48bkzXVEumriQRkI=;
+	b=dqDoS20fyPrd52S0C2OV53JBdMUqJw2XPA/xwDMXM6xQQdLHaUwx1/g9aJUEMTnrWlix
+	 QcmfDa2+laMmZZseOzGUDVDzmHoREArw7bmm3vwuDBuKF5veKNuCbUCPw2yRsRg8d6A3w
+	 z9l9VClgsX/1Ob5n36CxLgk5+q8rn3XY6AilUjhJEXxON2c7gGYMDN2dhnfyvN/oSagvo
+	 UZjwupfOqtp4ApVR8ZUOoCjo2pcG2Gf0vm9K9P8zau+t7Dizrp6kZskgzrZSbR/ykFGZk
+	 EXHkbIbn2xuNnjjN3TF3OMazrorhLoE+NnfADuQEeosIKpTpIpMJeFLU8M2qI5CcvqQ==
 ARC-Authentication-Results: i=1; smtp.kernel.org; 
 	arc=none smtp.remote-ip=100.80.115.77
 Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id D43361F01574;
-	Wed, 21 Oct 2026 16:12:29 +0000 (UTC)
+	by smtp.kernel.org (Postfix) with ESMTPS id 033081F01579;
+	Wed, 21 Oct 2026 16:12:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792599154;
-	bh=vf7ZK5u2reB6Du+GchqoDahqBht5sD1HLOrfvrlTUKY=;
+	s=k20260515; t=1792599156;
+	bh=HkfHwPyLmt0lyg8sxRRrXUSzNOY48bkzXVEumriQRkI=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=V0YkxMkKvI7TQKfoMYaJ7me/jI+v3mJ1Qh8Z2vsH3iHsgzf0zyjvZTLRRo2asOwk+
-	 j8e3bzcDYkzF3TrYcV9qowhtFcKfJS0oeqi8b/P3huvCfCXIhEJe/GRIimSE2dZ+mn
-	 wt0RlRYCSZL23ajaN1j+IaQZZg7Fa2/h5XLutxb7MX9kd7Gx36DRiGaGGJcCdOSG2W
-	 XTpqwV2e4XSVnCuBO4K5BNW80W/qoOFQ80LcDTqzaI1QtUHHCCbHdj0ljdlRb/vwk1
-	 1Acgj4fArnaGpkt7WGdbM92DV+WZIjSsmISRrmk0mi7tDMAH6g4sBpb43QE90szPgw
-	 AqTWJMCJBsmuA==
+	b=feOiJJ7CaEdz4v99fj7u0fDU4oEE8dM0UXT+qfqynL8DOF0iF3/EezTvUrBd/EC/l
+	 jpANYZh5G45vk99pDDJlpoOE9B6g558+gs2u4nkqDOOE3+rPDt6TbG4Js0zAx4qgfW
+	 rwwP6YBENPZ5c54O/ryZEhsp0Fhpt2sVyzNVnV5E9kDSOvy1kjv9pLygRtACtPPwkx
+	 Gh3CAp5Wiqk4QisanjuQhlpLyKWZvxxel7urfaHoWxqOcKLObXmeBGLnMsX7VR5Lik
+	 97qvwQNcZKh1/bUk10BHvZ5b0KSUke0/k9FcNa4ivBOP1A2pXBaWJDZ+TrFY2RrsH0
+	 g+3F02DYhYQcA==
 Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 4A8DC433C1;
+	by lkml.kernel.org (Postfix) with ESMTP id 64558433CD;
 	Wed, 21 Oct 2026 16:12:23 +0000 (UTC)
 From: Cunhao Lu via B4 Relay <devnull+1579567540.qq.com@kernel.org>
-Date: Thu, 22 Oct 2026 00:11:06 +0800
-Subject: [PATCH 09/27] gpio: rockchip: Add RK3572 GPIO support
+Date: Thu, 22 Oct 2026 00:11:09 +0800
+Subject: [PATCH 12/27] dt-bindings: serial: snps-dw-apb-uart: Add RK3572
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261022-add-board-ok3572-c-v1-9-0b0fd85a31ee@qq.com>
+Message-Id: <20261022-add-board-ok3572-c-v1-12-0b0fd85a31ee@qq.com>
 References: <20261022-add-board-ok3572-c-v1-0-0b0fd85a31ee@qq.com>
 In-Reply-To: <20261022-add-board-ok3572-c-v1-0-0b0fd85a31ee@qq.com>
 To: Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney+clk@redhat.com>, 
@@ -113,11 +113,11 @@ Cc: Cunhao Lu <1579567540@qq.com>, linux-clk@vger.kernel.org,
  linux-stm32@st-md-mailman.stormreply.com, linux-phy@lists.infradead.org, 
  linux-usb@vger.kernel.org
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1792599138; l=7782;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1792599138; l=863;
  i=1579567540@qq.com; s=20261015; h=from:subject:message-id;
- bh=ybuMjroqWlGrhbZ7b+7+3KlQvwUxXnFSIMLjfQO0hew=;
- b=RqtBCE+OwGqzr9ILJLcWOVv41u5fPijhMaXsMt68lHeN6E3KIkhV5WLpGINhA51ZzleGRQUis
- c3ga1PlIquNDkoeUSPuKbs2jgMY8vIykxHmYjoi3qmQQiuIcfdpIuu0
+ bh=D1FXViPVwujIOTT9x4HkdtazDzg/Nd0v50dhD62lfCw=;
+ b=bXyhxcCQAaxGkzUkidwaNd9WBOseIQ1bn1C/gLwHjeftMUjLXEIu+l0mtI8wNJbpQezhprCb9
+ eiCgnJoV0jgBq1kJsV9P1ps6h5idPRU5RDnkGRCmnonnKH3T6X+xldJ
 X-Developer-Key: i=1579567540@qq.com; a=ed25519;
  pk=sUTWrzlIwT4C7ctjNfVZAzzg0G7QUn2XxRGpYsw4RtM=
 X-Endpoint-Received: by B4 Relay for 1579567540@qq.com/20261015 with
@@ -146,232 +146,25 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 
 From: Cunhao Lu <1579567540@qq.com>
 
-Support GPIO V2.7, four parent interrupts, and firmware-provided
-interrupt-group masks. Keep all pins on the primary interrupt when group
-queries are unavailable.
+Add the RK3572 UART compatible using the Synopsys fallback.
 
 Signed-off-by: Cunhao Lu <1579567540@qq.com>
 ---
- drivers/gpio/gpio-rockchip.c        | 91 +++++++++++++++++++++++++++++++++----
- drivers/pinctrl/pinctrl-rockchip.h  |  8 +++-
- include/soc/rockchip/rockchip_sip.h |  5 ++
- 3 files changed, 92 insertions(+), 12 deletions(-)
+ Documentation/devicetree/bindings/serial/snps-dw-apb-uart.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/gpio/gpio-rockchip.c b/drivers/gpio/gpio-rockchip.c
-index 77b239a9a601e..35894a68b5446 100644
---- a/drivers/gpio/gpio-rockchip.c
-+++ b/drivers/gpio/gpio-rockchip.c
-@@ -6,6 +6,7 @@
-  * Copyright (c) 2021 Rockchip Electronics Co. Ltd.
-  */
- 
-+#include <linux/arm-smccc.h>
- #include <linux/bitops.h>
- #include <linux/clk.h>
- #include <linux/device.h>
-@@ -21,6 +22,7 @@
- #include <linux/pinctrl/pinconf-generic.h>
- #include <linux/platform_device.h>
- #include <linux/regmap.h>
-+#include <soc/rockchip/rockchip_sip.h>
- 
- #include "../pinctrl/core.h"
- #include "../pinctrl/pinctrl-rockchip.h"
-@@ -35,6 +37,7 @@
- #define GPIO_TYPE_V2		(0x01000C2B)
- #define GPIO_TYPE_V2_1		(0x0101157C)
- #define GPIO_TYPE_V2_2		(0x010219C8)
-+#define GPIO_TYPE_V2_7		(0x01074D2E)
- 
- static const struct rockchip_gpio_regs gpio_regs_v1 = {
- 	.port_dr = 0x00,
-@@ -209,12 +212,27 @@ static int rockchip_gpio_set_debounce(struct gpio_chip *gc,
- 	if (bank->gpio_type == GPIO_TYPE_V2 && !IS_ERR(bank->db_clk)) {
- 		div_debounce_support = true;
- 		freq = clk_get_rate(bank->db_clk);
--		max_debounce = (GENMASK(23, 0) + 1) * 2 * 1000000 / freq;
--		if (debounce > max_debounce)
--			return -EINVAL;
- 
--		div = debounce * freq;
--		div_reg = DIV_ROUND_CLOSEST_ULL(div, 2 * USEC_PER_SEC) - 1;
-+		if (of_device_is_compatible(bank->of_node, "rockchip,rk3572-gpio-bank")) {
-+			if (!freq)
-+				return -EINVAL;
-+
-+			div = (u64)(GENMASK(23, 0) + 1) * USEC_PER_SEC;
-+			max_debounce = div_u64(div, 2 * freq);
-+			if (debounce > max_debounce)
-+				return -EINVAL;
-+
-+			div = (u64)debounce * freq * 2;
-+			div_reg = DIV_ROUND_CLOSEST_ULL(div, USEC_PER_SEC);
-+			div_reg = div_reg ? div_reg - 1 : 0;
-+		} else {
-+			max_debounce = (GENMASK(23, 0) + 1) * 2 * 1000000 / freq;
-+			if (debounce > max_debounce)
-+				return -EINVAL;
-+
-+			div = debounce * freq;
-+			div_reg = DIV_ROUND_CLOSEST_ULL(div, 2 * USEC_PER_SEC) - 1;
-+		}
- 	} else {
- 		div_debounce_support = false;
- 	}
-@@ -342,6 +360,12 @@ static void rockchip_irq_demux(struct irq_desc *desc)
- 	chained_irq_enter(chip, desc);
- 
- 	pending = readl_relaxed(bank->reg_base + bank->gpio_regs->int_status);
-+	for (unsigned int i = 0; i < bank->nr_irqs; i++) {
-+		if (bank->irqs[i] == irq_desc_get_irq(desc)) {
-+			pending &= bank->irq_masks[i];
-+			break;
-+		}
-+	}
- 	for_each_set_bit(irq, &pending, 32) {
- 		dev_dbg(bank->dev, "handling irq %d\n", irq);
- 
-@@ -568,8 +592,9 @@ static int rockchip_interrupts_register(struct rockchip_pin_bank *bank)
- 	rockchip_gpio_writel(bank, 0xffffffff, bank->gpio_regs->int_en);
- 	gc->mask_cache = 0xffffffff;
- 
--	irq_set_chained_handler_and_data(bank->irq,
--					 rockchip_irq_demux, bank);
-+	for (unsigned int i = 0; i < bank->nr_irqs; i++)
-+		irq_set_chained_handler_and_data(bank->irqs[i],
-+						 rockchip_irq_demux, bank);
- 
- 	return 0;
- }
-@@ -645,6 +670,36 @@ static void rockchip_clk_put(void *data)
- 	clk_put(clk);
- }
- 
-+static int rockchip_gpio_read_irq_groups(struct rockchip_pin_bank *bank)
-+{
-+	struct arm_smccc_res res;
-+	u32 assigned = 0;
-+	int status;
-+
-+	for (unsigned int i = 1; i < bank->nr_irqs; i++) {
-+		arm_smccc_smc(ROCKCHIP_SIP_GPIO_CONFIG, ROCKCHIP_SIP_GPIO_GET_GROUP,
-+			      bank->bank_num, i, 0, 0, 0, 0, &res);
-+		status = (int)res.a0;
-+		if (i == 1 && (status == SMCCC_RET_NOT_SUPPORTED ||
-+			       status == ROCKCHIP_SIP_RET_NOT_SUPPORTED)) {
-+			/* Older firmware leaves all pins on the primary IRQ. */
-+			dev_dbg(bank->dev, "GPIO group query unsupported: %d\n",
-+				status);
-+			break;
-+		}
-+		if (status)
-+			return dev_err_probe(bank->dev, -EIO,
-+					     "cannot read interrupt group %u: %d\n",
-+					     i, status);
-+		bank->irq_masks[i] = res.a1;
-+		if (assigned & bank->irq_masks[i])
-+			return -EINVAL;
-+		assigned |= bank->irq_masks[i];
-+	}
-+	bank->irq_masks[0] = ~assigned;
-+	return 0;
-+}
-+
- static int rockchip_get_bank_data(struct rockchip_pin_bank *bank)
- {
- 	struct platform_device *pdev = to_platform_device(bank->dev);
-@@ -654,10 +709,23 @@ static int rockchip_get_bank_data(struct rockchip_pin_bank *bank)
- 	if (IS_ERR(bank->reg_base))
- 		return PTR_ERR(bank->reg_base);
- 
--	ret = platform_get_irq(pdev, 0);
-+	ret = platform_irq_count(pdev);
- 	if (ret < 0)
- 		return ret;
--	bank->irq = ret;
-+	if (ret != (of_device_is_compatible(bank->of_node,
-+					    "rockchip,rk3572-gpio-bank") ? 4 : 1))
-+		return -EINVAL;
-+	bank->nr_irqs = ret;
-+	for (unsigned int i = 0; i < bank->nr_irqs; i++) {
-+		ret = platform_get_irq(pdev, i);
-+		if (ret < 0)
-+			return ret;
-+		bank->irqs[i] = ret;
-+	}
-+
-+	ret = rockchip_gpio_read_irq_groups(bank);
-+	if (ret)
-+		return ret;
- 
- 	bank->clk = devm_clk_get_enabled(bank->dev, NULL);
- 	if (IS_ERR(bank->clk))
-@@ -669,6 +737,7 @@ static int rockchip_get_bank_data(struct rockchip_pin_bank *bank)
- 	case GPIO_TYPE_V2:
- 	case GPIO_TYPE_V2_1:
- 	case GPIO_TYPE_V2_2:
-+	case GPIO_TYPE_V2_7:
- 		bank->gpio_regs = &gpio_regs_v2;
- 		bank->gpio_type = GPIO_TYPE_V2;
- 		bank->db_clk = of_clk_get(bank->of_node, 1);
-@@ -797,7 +866,8 @@ static void rockchip_gpio_remove(struct platform_device *pdev)
- {
- 	struct rockchip_pin_bank *bank = platform_get_drvdata(pdev);
- 
--	irq_set_chained_handler_and_data(bank->irq, NULL, NULL);
-+	for (unsigned int i = 0; i < bank->nr_irqs; i++)
-+		irq_set_chained_handler_and_data(bank->irqs[i], NULL, NULL);
- 	if (bank->domain) {
- 		irq_domain_remove_generic_chips(bank->domain);
- 		irq_domain_remove(bank->domain);
-@@ -807,6 +877,7 @@ static void rockchip_gpio_remove(struct platform_device *pdev)
- 
- static const struct of_device_id rockchip_gpio_match[] = {
- 	{ .compatible = "rockchip,gpio-bank", },
-+	{ .compatible = "rockchip,rk3572-gpio-bank" },
- 	{ .compatible = "rockchip,rk3188-gpio-bank0" },
- 	{ },
- };
-diff --git a/drivers/pinctrl/pinctrl-rockchip.h b/drivers/pinctrl/pinctrl-rockchip.h
-index 553197f6dc690..058b58dcde404 100644
---- a/drivers/pinctrl/pinctrl-rockchip.h
-+++ b/drivers/pinctrl/pinctrl-rockchip.h
-@@ -302,7 +302,9 @@ struct rockchip_drv {
-  *	    bank has its own IOC block
-  * @clk: clock of the gpio bank
-  * @db_clk: clock of the gpio debounce
-- * @irq: interrupt of the gpio bank
-+ * @irqs: parent interrupts of the GPIO bank
-+ * @irq_masks: pins assigned to each parent interrupt
-+ * @nr_irqs: number of parent interrupts
-  * @saved_masks: Saved content of GPIO_INTEN at suspend time.
-  * @pin_base: first pin number
-  * @nr_pins: number of pins in this bank
-@@ -331,7 +333,9 @@ struct rockchip_pin_bank {
- 	struct regmap			*regmap_ioc;
- 	struct clk			*clk;
- 	struct clk			*db_clk;
--	int				irq;
-+	unsigned int			irqs[4];
-+	u32				irq_masks[4];
-+	unsigned int			nr_irqs;
- 	u32				saved_masks;
- 	u32				pin_base;
- 	u8				nr_pins;
-diff --git a/include/soc/rockchip/rockchip_sip.h b/include/soc/rockchip/rockchip_sip.h
-index 501ad1fedb201..984272ede3baf 100644
---- a/include/soc/rockchip/rockchip_sip.h
-+++ b/include/soc/rockchip/rockchip_sip.h
-@@ -20,4 +20,9 @@
- #define ROCKCHIP_SIP_CONFIG_DRAM_SET_PARAM	0x07
- #define ROCKCHIP_SIP_CONFIG_DRAM_SET_ODT_PD	0x08
- 
-+#define ROCKCHIP_SIP_RET_NOT_SUPPORTED		-2
-+
-+#define ROCKCHIP_SIP_GPIO_CONFIG		0x8200002c
-+#define ROCKCHIP_SIP_GPIO_GET_GROUP		0
-+
- #endif
+diff --git a/Documentation/devicetree/bindings/serial/snps-dw-apb-uart.yaml b/Documentation/devicetree/bindings/serial/snps-dw-apb-uart.yaml
+index 664305de4986..4567f8e76c9f 100644
+--- a/Documentation/devicetree/bindings/serial/snps-dw-apb-uart.yaml
++++ b/Documentation/devicetree/bindings/serial/snps-dw-apb-uart.yaml
+@@ -70,6 +70,7 @@ properties:
+               - rockchip,rk3528-uart
+               - rockchip,rk3562-uart
+               - rockchip,rk3568-uart
++              - rockchip,rk3572-uart
+               - rockchip,rk3576-uart
+               - rockchip,rk3588-uart
+               - rockchip,rv1103b-uart
 
 -- 
 2.34.1
