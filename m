@@ -2,81 +2,81 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C1D22606AD0D
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Oct 2026 16:13:15 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2020A606AD37
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Oct 2026 16:13:20 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=GNMCuzdD;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=d//GyDh9
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=iSD1fbYL;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=IeVMPZXC
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LzshyYNt1CJW/oI7x7wf7gZmRkPZM1GNxfqRNC/UqLU=; b=GNMCuzdDDTSX+B
-	CXbCi/N5hO7HNeV6u3Ih6VvYDoE5IYGm5MvDFkyeZh9zr9+TTZNqFIrdUd4CpedUoJkEon5Zf4L5n
-	QvtHk26tmPBqbCWsqojlwVZ+u0F8GnKzyhGOOfTDN4TVNHaGC/ClJs7gPrGoXuW+xsIvbZitQv/ZE
-	Tjx8Ed55kcqyfo5JYGwwX0TBKM11glrLDLDNtBsEmEXuUP3MoSmU4Eq8+3oIBae8CnsJnFnW9dqD4
-	RC7wk5moNYuHee6fM+K8bls2IoE5lzE/uhuy4F6xdzIbEhp/StN1tzvZZUnJXnevy8NGcp3Gg2ajR
-	k/wJKdanFgj3AyUt0cQA==;
+	List-Owner; bh=xdgfFtbGgvo/VDCJb3I4eUUM90ygXOGj89qbrC5BdlQ=; b=iSD1fbYLOX2V7e
+	I/8ZeFWpfxr9TgmYvyaYQytPNJkGvZTqzofqxwPowDLrTRogGErZBP4vHLAObRk4I/Mq2Nu1Mp0lz
+	dRdfhRsr5v5sRdZsp0lcetgWQ+oqGtAmEuwbben93UFHFSimlLdvJ22J/MLF58AVZ94addn83p+7U
+	SsWoVBE4Wzs6ZZPcvLVaMzgt5WM27pcTScxD7QCk3NV65J3ne/9MevXkLZJDr5b/DflO32rtOCqO8
+	aDxvBXBnGtuhQJPgSNbb2YQcAMB+BenSYMxNwHgdvjcGlOgzsmDVn+jCbIxISkz510S2aFiOHdsY7
+	0t7G2yMwFFk2u2xXZBkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJYwF-0000000CNR8-1ynI;
-	Wed, 21 Oct 2026 16:13:15 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xJYwJ-0000000CNXl-3VwC;
+	Wed, 21 Oct 2026 16:13:19 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJYvt-0000000CMs0-3DFA;
-	Wed, 21 Oct 2026 16:12:54 +0000
+	id 1xJYvw-0000000CMvf-2T79;
+	Wed, 21 Oct 2026 16:12:56 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 7C9554479F;
-	Wed, 21 Oct 2026 16:12:53 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 54F4A447DB;
+	Wed, 21 Oct 2026 16:12:56 +0000 (UTC)
 Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
 ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1792599173;
-	b=EIkQ568GjFRNS2Y52wPLXyvc8f5Jh+9+Qhs/SICS2TRjXx1ImOtCJFY3II2xBd6C9KfY
-	 AlfJdnp2CPMoC+t/IBnLgBJPrtF84lBUuwzjjmrq0bWkoZtjt5L89KpqouGjkg/M8DbCk
-	 McRhDU6Jck7PhMvDti6dSm7/IFlMu6kCPQ4puz6QzEHEqGwAj4VAmv+PkipPtxY67qdF3
-	 K9CRuzoV5Tws5x5iVJCzVZ7h4vJlS8rE+2lYfQVBxyIam/5Sv0LMRlGnqxt0qixLBYn+8
-	 LmRKnJgB3mbVo7OiIUSjCAuK9M7XKTRZ0bpgJHbMshaPOYhayCNAUjKV+O2zZt8rSMg==
+	t=1792599176;
+	b=NacEeokNyKGHdeYz0excMCzR0CALu2YnBqka8DbZXuleBLFXi1NE0YDCU8AXM7wH1pj8
+	 PSEWCI8yF+ONY13S8lqdiIXVrWYDnbQTXAMUIrkGf53zvyGMzoDkhLwJ8FbB/tNiUTPHy
+	 JIfD2jlr4tX/X55LeyUBo6hx+eAz/6HELIHrqMik1NyH2pu2B9GkPsKvgIO1ZcOfg+wfp
+	 DBZgwH7IvwxWyh7AvupcrL2jmZSYaVT3DC1MnkSxw4pRixO8XPEoLJDPDQ/g0N6HmpHo3
+	 rWBZGfPo4nzWkCnWLG2vBZEblptTceIOjHJ47a+VTIYmHt+7M82HN6yftrD2EEjw7ZQ==
 ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1792599173;
+	c=relaxed/relaxed; t=1792599176;
 	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
 	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
 	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
 	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=WY4ZEuURDiNmK6i91k8nTN7t5MwK2F4DFp8c3nugGjQ=;
-	b=C8EYqbaB+TfnwyN0Cw2Rk8LNSK+Z2x+mOD63+afcaYpy+axCss2k9VfRswKtNVNkYBDa
-	 sxZOpQ20M3G4C8Q9nnPvzZEqwiX3lOUetGRDq8vISESBffUS0DvbTI7EKt7RTnlB0QHL1
-	 XKEEf86D6O7aWEUeF2NiTJG3IyEDMH7u5H19kXNc9nIRg4LcOZZn8nl+OTn4w9JhscmXG
-	 9JFtv7+g/lit2t3Xpd+X8J/OloS7vICTyE6VWymxfVLXadEa+9qgbdiH2TBmcJ6YlSSt5
-	 ksrDtyHTvP7lIj6seg9fXZMT1HDHGi2eXBsAjswxPE9RZZa5xMdA9s6RIRCymAol12w==
+	bh=ILragtZYitjGhtnbajKHG/lL6QPsFimFt5+gHLVt/IM=;
+	b=H3JSPxhDtjJPFlrS7O+u6qYEVufCd+gqltAklOcss1JEIDjxo8ZqnximL6/EvzfwLbLb
+	 jF+RsIGWFhLerXAcIs9a0W2V+zLxV/ktdT2fGda6QomgGRr6wir/eK24y5A4s/aramxDw
+	 dElaPPzlTjz7f6CAIDkZPq+4vR8ZPWVZVwIgNbmcstAOkeN/UYMDXggDc0/UiAbJNuSaL
+	 6wbIlINPw9AwkdDWHfn2i4Tf3h+DF8XljWUaeqazOZGvXozA6hyn509b3Fx9MX8ECK2cm
+	 kSxdZfUd5IDQ4RFXyqYPT1LJSy0uJpJT8effNNw0dsU8OaEKrhiKQyNE7tPfwALih7g==
 ARC-Authentication-Results: i=1; smtp.kernel.org; 
 	arc=none smtp.remote-ip=100.80.115.77
 Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id C58CE1F0182F;
-	Wed, 21 Oct 2026 16:12:42 +0000 (UTC)
+	by smtp.kernel.org (Postfix) with ESMTPS id 658841F01815;
+	Wed, 21 Oct 2026 16:12:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792599173;
-	bh=WY4ZEuURDiNmK6i91k8nTN7t5MwK2F4DFp8c3nugGjQ=;
+	s=k20260515; t=1792599176;
+	bh=ILragtZYitjGhtnbajKHG/lL6QPsFimFt5+gHLVt/IM=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=d//GyDh9Q8mEJYia/2d2C9i9N7gIFXeUkdAjmltYK94QqbZCID9c+qRZHBYe7os3y
-	 Cc+O5K7WXUhFm21gObU/obbZE6mwrIXttogXBvpJwQprURS+VamFjhjmdo+4taeDWj
-	 u/FQZRlI5H7PGMKRq79q+9+eo5LlWdLq8h0Pk6gr3u35FfSchUSY4kAQ/Rjrp9/Ag5
-	 LDE2ayUW0BPt5A9kGy1jTLnMi00Aaca0ipBYuu1vw0nbdgOSLZeJM50locKONFzERL
-	 L/ZHWJNjhvYJ2Dx519fTX4NDFtA9CTktRKvYx66ZlynBVvA+dVjNBDhMdhbhevdM3q
-	 mGIPuiE0bf+wQ==
+	b=IeVMPZXCHHAFD2jjjiTm8tkPW8yOiSr6KRXyDiviNNXbn0qe2pVoFPN6AdlALfjv8
+	 KWxH7rWYjr9gldzVhzx0RW1MAb79sl/eLbY8WYQn2VCtndZi0NsU+V40xL1xP4l94Z
+	 bJrkdMnmIeBc20gjSFiMqMtRmfG3fxN9P6vxmIlheONr4jNnvQp+kU0rmcncPDgL0l
+	 T9m/0buEpuvXI8Edb/3eiit765E3Krub8sq4GeGlJ8k/nMSJxAhNZdvz/SSnKB0PpY
+	 6OXFmShsQTIy5xhi32qG0OJNi8aS5oe/WTcO3kqidPQj/cSWPVnFcuDPjBSKpn52I6
+	 AbPjcd6eVuPbQ==
 Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id D927E43404;
+	by lkml.kernel.org (Postfix) with ESMTP id B54D9433F3;
 	Wed, 21 Oct 2026 16:12:23 +0000 (UTC)
 From: Cunhao Lu via B4 Relay <devnull+1579567540.qq.com@kernel.org>
-Date: Thu, 22 Oct 2026 00:11:22 +0800
-Subject: [PATCH 25/27] dt-bindings: arm: rockchip: Add Forlinx OK3572-C
+Date: Thu, 22 Oct 2026 00:11:18 +0800
+Subject: [PATCH 21/27] phy: rockchip-inno-usb2: Add RK3572 support
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261022-add-board-ok3572-c-v1-25-0b0fd85a31ee@qq.com>
+Message-Id: <20261022-add-board-ok3572-c-v1-21-0b0fd85a31ee@qq.com>
 References: <20261022-add-board-ok3572-c-v1-0-0b0fd85a31ee@qq.com>
 In-Reply-To: <20261022-add-board-ok3572-c-v1-0-0b0fd85a31ee@qq.com>
 To: Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney+clk@redhat.com>, 
@@ -113,11 +113,11 @@ Cc: Cunhao Lu <1579567540@qq.com>, linux-clk@vger.kernel.org,
  linux-stm32@st-md-mailman.stormreply.com, linux-phy@lists.infradead.org, 
  linux-usb@vger.kernel.org
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1792599138; l=940;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1792599138; l=6030;
  i=1579567540@qq.com; s=20261015; h=from:subject:message-id;
- bh=oauBPTMgwrpEfcYOz8hlG+zW49i1/JZ++ifkxeoDUZ4=;
- b=n2lIa41639g6ID0rghs3WoNNMv7QeAjmDoPk8c0SVRA3+qL8scQhxIssd4e0qw1PHqJhVeq/R
- SluQoGY23TuBCWO1u9LnwDxY6ogyJVzIFE5riu34wg3crDq98cgOfX+
+ bh=MPl2FQncIHhIqjcsF+b7mqwRNlggJx2lRqAwXBLUJcg=;
+ b=csHlm1OtXnrb4d6G2om1X16+yZzKXaej9famSMbN4YeXs2pQos5crLHMU00zCwyO8NPws/R4G
+ ThNK60Wm1bgCtYcGsnwq4TVPa+qGIyky4o2MpdjfhBQxaY5DACYpBGf
 X-Developer-Key: i=1579567540@qq.com; a=ed25519;
  pk=sUTWrzlIwT4C7ctjNfVZAzzg0G7QUn2XxRGpYsw4RtM=
 X-Endpoint-Received: by B4 Relay for 1579567540@qq.com/20261015 with
@@ -146,31 +146,174 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 
 From: Cunhao Lu <1579567540@qq.com>
 
-The board uses the FET3572-C system-on-module and falls back to the
-RK3572 SoC compatible.
+Support both RK3572 USB2 PHY instances.
 
 Signed-off-by: Cunhao Lu <1579567540@qq.com>
 ---
- Documentation/devicetree/bindings/arm/rockchip.yaml | 6 ++++++
- 1 file changed, 6 insertions(+)
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 136 ++++++++++++++++++++++++++
+ 1 file changed, 136 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
-index a799bb843f74..2880ea741e73 100644
---- a/Documentation/devicetree/bindings/arm/rockchip.yaml
-+++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
-@@ -331,6 +331,12 @@ properties:
-           - const: forlinx,fet3588-c
-           - const: rockchip,rk3588
+diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+index 7d8a533f24aea..16a36e68cb6d3 100644
+--- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
++++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+@@ -1544,6 +1544,49 @@ static int rk3528_usb2phy_tuning(struct rockchip_usb2phy *rphy)
+ 	return 0;
+ }
  
-+      - description: Forlinx OK3572-C with FET3572-C
-+        items:
-+          - const: forlinx,ok3572-c
-+          - const: forlinx,fet3572-c
-+          - const: rockchip,rk3572
++static int rk3572_usb2phy_tuning(struct rockchip_usb2phy *rphy)
++{
++	u32 reg = rphy->phy_cfg->reg;
++	struct clk *refclk;
++	unsigned long rate;
++	u32 val;
++	int ret;
 +
-       - description: FriendlyElec NanoPi R2 series boards
-         items:
-           - enum:
++	refclk = devm_clk_get(rphy->dev, "phyclk");
++	if (IS_ERR(refclk))
++		return PTR_ERR(refclk);
++	rate = clk_get_rate(refclk);
++	if (rate != 24000000 && rate != 26000000)
++		return -EINVAL;
++
++	ret = regmap_write(rphy->grf, reg + 0x0004,
++			   GENMASK(18, 16) | (rate == 24000000 ? 2 : 6));
++	if (ret)
++		return ret;
++
++	ret = regmap_read(rphy->grf, reg + 0x0010, &val);
++	if (ret)
++		return ret;
++	if (val & BIT(13)) {
++		ret = regmap_write(rphy->grf, reg + 0x0010, BIT(29));
++		if (ret)
++			return ret;
++		ret = rockchip_usb2phy_reset(rphy);
++		if (ret)
++			return ret;
++	}
++
++	/* Set the normal line-state filter interval. */
++	ret = regmap_write(rphy->grf, reg + 0x0020, 0x30100);
++	if (ret)
++		return ret;
++	/* Increase HS voltage by 5.89% and double pre-emphasis current. */
++	ret = regmap_write(rphy->grf, reg + 0x000c, GENMASK(27, 24) | 0x0900);
++	if (ret)
++		return ret;
++	return regmap_write(rphy->grf, reg + 0x0010, GENMASK(20, 19) | 0x0010);
++}
++
+ static int rk3576_usb2phy_tuning(struct rockchip_usb2phy *rphy)
+ {
+ 	int ret;
+@@ -2126,6 +2169,98 @@ static const struct rockchip_usb2phy_cfg rk3568_phy_cfgs[] = {
+ 	{ /* sentinel */ }
+ };
+ 
++static const struct rockchip_usb2phy_cfg rk3572_phy_cfgs[] = {
++	{
++		.reg = 0x0,
++		.num_ports	= 1,
++		.phy_tuning	= rk3572_usb2phy_tuning,
++		.clkout_ctl	= { 0x0008, 0, 0, 1, 0 },
++		.port_cfgs	= {
++			[USB2PHY_PORT_OTG] = {
++				.phy_sus	= { 0x0000, 8, 0, 0, 0x1d1 },
++				.bvalid_det_en	= { 0x00c0, 1, 1, 0, 1 },
++				.bvalid_det_st	= { 0x00c4, 1, 1, 0, 1 },
++				.bvalid_det_clr = { 0x00c8, 1, 1, 0, 1 },
++				.idfall_det_en	= { 0x00c0, 4, 4, 0, 1 },
++				.idfall_det_st	= { 0x00c4, 4, 4, 0, 1 },
++				.idfall_det_clr = { 0x00c8, 4, 4, 0, 1 },
++				.idrise_det_en	= { 0x00c0, 3, 3, 0, 1 },
++				.idrise_det_st	= { 0x00c4, 3, 3, 0, 1 },
++				.idrise_det_clr = { 0x00c8, 3, 3, 0, 1 },
++				.ls_det_en	= { 0x00c0, 0, 0, 0, 1 },
++				.ls_det_st	= { 0x00c4, 0, 0, 0, 1 },
++				.ls_det_clr	= { 0x00c8, 0, 0, 0, 1 },
++				.disfall_en	= { 0x00c0, 6, 6, 0, 1 },
++				.disfall_st	= { 0x00c4, 6, 6, 0, 1 },
++				.disfall_clr	= { 0x00c8, 6, 6, 0, 1 },
++				.disrise_en	= { 0x00c0, 5, 5, 0, 1 },
++				.disrise_st	= { 0x00c4, 5, 5, 0, 1 },
++				.disrise_clr	= { 0x00c8, 5, 5, 0, 1 },
++				.utmi_avalid	= { 0x0080, 1, 1, 0, 1 },
++				.utmi_bvalid	= { 0x0080, 0, 0, 0, 1 },
++				.utmi_id	= { 0x0080, 6, 6, 0, 1 },
++				.utmi_ls	= { 0x0080, 5, 4, 0, 1 },
++			}
++		},
++		.chg_det = {
++			.cp_det		= { 0x0080, 8, 8, 0, 1 },
++			.dcp_det	= { 0x0080, 8, 8, 0, 1 },
++			.dp_det		= { 0x0080, 9, 9, 1, 0 },
++			.idm_sink_en	= { 0x0010, 5, 5, 1, 0 },
++			.idp_sink_en	= { 0x0010, 5, 5, 0, 1 },
++			.idp_src_en	= { 0x0010, 14, 14, 0, 1 },
++			.rdm_pdwn_en	= { 0x0010, 14, 14, 0, 1 },
++			.vdm_src_en	= { 0x0010, 7, 6, 0, 3 },
++			.vdp_src_en	= { 0x0010, 7, 6, 0, 3 },
++		},
++	},
++	{
++		.reg = 0x2000,
++		.num_ports	= 1,
++		.phy_tuning	= rk3572_usb2phy_tuning,
++		.clkout_ctl	= { 0x2008, 0, 0, 1, 0 },
++		.port_cfgs	= {
++			[USB2PHY_PORT_OTG] = {
++				.phy_sus	= { 0x2000, 8, 0, 0, 0x1d1 },
++				.bvalid_det_en	= { 0x20c0, 1, 1, 0, 1 },
++				.bvalid_det_st	= { 0x20c4, 1, 1, 0, 1 },
++				.bvalid_det_clr = { 0x20c8, 1, 1, 0, 1 },
++				.idfall_det_en	= { 0x20c0, 4, 4, 0, 1 },
++				.idfall_det_st	= { 0x20c4, 4, 4, 0, 1 },
++				.idfall_det_clr = { 0x20c8, 4, 4, 0, 1 },
++				.idrise_det_en	= { 0x20c0, 3, 3, 0, 1 },
++				.idrise_det_st	= { 0x20c4, 3, 3, 0, 1 },
++				.idrise_det_clr = { 0x20c8, 3, 3, 0, 1 },
++				.ls_det_en	= { 0x20c0, 0, 0, 0, 1 },
++				.ls_det_st	= { 0x20c4, 0, 0, 0, 1 },
++				.ls_det_clr	= { 0x20c8, 0, 0, 0, 1 },
++				.disfall_en	= { 0x20c0, 6, 6, 0, 1 },
++				.disfall_st	= { 0x20c4, 6, 6, 0, 1 },
++				.disfall_clr	= { 0x20c8, 6, 6, 0, 1 },
++				.disrise_en	= { 0x20c0, 5, 5, 0, 1 },
++				.disrise_st	= { 0x20c4, 5, 5, 0, 1 },
++				.disrise_clr	= { 0x20c8, 5, 5, 0, 1 },
++				.utmi_avalid	= { 0x2080, 1, 1, 0, 1 },
++				.utmi_bvalid	= { 0x2080, 0, 0, 0, 1 },
++				.utmi_id	= { 0x2080, 6, 6, 0, 1 },
++				.utmi_ls	= { 0x2080, 5, 4, 0, 1 },
++			}
++		},
++		.chg_det = {
++			.cp_det		= { 0x2080, 8, 8, 0, 1 },
++			.dcp_det	= { 0x2080, 8, 8, 0, 1 },
++			.dp_det		= { 0x2080, 9, 9, 1, 0 },
++			.idm_sink_en	= { 0x2010, 5, 5, 1, 0 },
++			.idp_sink_en	= { 0x2010, 5, 5, 0, 1 },
++			.idp_src_en	= { 0x2010, 14, 14, 0, 1 },
++			.rdm_pdwn_en	= { 0x2010, 14, 14, 0, 1 },
++			.vdm_src_en	= { 0x2010, 7, 6, 0, 3 },
++			.vdp_src_en	= { 0x2010, 7, 6, 0, 3 },
++		},
++	},
++	{ /* sentinel */ }
++};
++
+ static const struct rockchip_usb2phy_cfg rk3576_phy_cfgs[] = {
+ 	{
+ 		.reg = 0x0,
+@@ -2378,6 +2513,7 @@ static const struct of_device_id rockchip_usb2phy_dt_match[] = {
+ 	{ .compatible = "rockchip,rk3528-usb2phy", .data = &rk3528_phy_cfgs },
+ 	{ .compatible = "rockchip,rk3562-usb2phy", .data = &rk3562_phy_cfgs },
+ 	{ .compatible = "rockchip,rk3568-usb2phy", .data = &rk3568_phy_cfgs },
++	{ .compatible = "rockchip,rk3572-usb2phy", .data = &rk3572_phy_cfgs },
+ 	{ .compatible = "rockchip,rk3576-usb2phy", .data = &rk3576_phy_cfgs },
+ 	{ .compatible = "rockchip,rk3588-usb2phy", .data = &rk3588_phy_cfgs },
+ 	{ .compatible = "rockchip,rv1108-usb2phy", .data = &rv1108_phy_cfgs },
 
 -- 
 2.34.1
