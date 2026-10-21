@@ -2,81 +2,81 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5D3CA6071DB5
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Oct 2026 16:12:56 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AD9E96073E46
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Oct 2026 16:12:59 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=OzzJ0glu;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=i7Gno09O
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=vc9RF4HH;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=CzkaX/53
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BETz4/zGnBE6JRe1OI1+IKW0uDLeCZLMVf0XZfoN0PY=; b=OzzJ0gluKLRU4x
-	9933FZrS2Kw6Coh4jtgV/4FhMthXZqwolDklpE65zeUppCgf6CuC/OJh59drTYFDt0mHNrbP282ix
-	PB6vmmlx4ytKZRhSrRPNU/GjdKyMCo/4j816UfHitXmNuLN1Kl1kEH/K5P4IfAwrnXzvsaO3QGiWO
-	7jcrUS/wfkQiHU9RJjgNDR9m/EjfC+tbTle0xGAORD6xkitl/G5o8Rrt7SzGoVgFID2Yb4MWSFpA8
-	4ieoYX3aaDQDKPDo9C1euSEz75wpTTlYtfkPKqy3c0+40Q8MtDV1OfkZNqsIce9/dREmwpAylJgAG
-	pJYsPkBz/HLhDAWjw2rg==;
+	List-Owner; bh=V9YMaj0UznXIK1muhAYWAhv/5Vh4Kj0dSAqbeD5/Oas=; b=vc9RF4HHh3awKE
+	AIQkgtoTwKA4Xaz5SwZf7QlgD2Lr/7VeeDjzZrNOAxSpf5UZtkgxbdHewAPcCNe727AAY2+YQrn6v
+	1rnEXXU99zL7qmqAyJwDfS43fy3hg/L2kiU3zId6EW0v/xv+qXFIpKm+kR9GS6ztcevJzz2l5Q1nD
+	O04v0+2Q08x807SYuifSmphoYNVyctHg0SY272ejnGHv361mcfLf7F3EG+NM9q0G1DO2DKKjdvihS
+	QkyJ36/x6I7HFHJFOdz/IzBS4jbNIDHISgZtwj9kbbAaTFlLiPfgVYrXU9sVsyIz1AU+ZJAEMN1TU
+	mlxV45rrcRC5MS/i6xQg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJYvw-0000000CMum-0Jii;
-	Wed, 21 Oct 2026 16:12:56 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xJYvy-0000000CMzc-4Bxm;
+	Wed, 21 Oct 2026 16:12:59 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJYve-0000000CMVt-2u0O;
-	Wed, 21 Oct 2026 16:12:38 +0000
+	id 1xJYvg-0000000CMXU-0NUW;
+	Wed, 21 Oct 2026 16:12:40 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 6CEAB43FB2;
-	Wed, 21 Oct 2026 16:12:38 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 7A44260416;
+	Wed, 21 Oct 2026 16:12:39 +0000 (UTC)
 Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
 ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1792599158;
-	b=kQBo5XwDJjI2oTJt9m522nDBPHsvZ1CWtvBsWBcim7dFRQbszYHeKzg+Rpndas9XZp1b
-	 YsM0eSZnBXelbvqECzYqPX12EsJc/fk+2Z3tR3zsMwJUtLV6tKsof73iniAi2B2po08CH
-	 YKlhtTv/3LrXbZp6S+R7FDMo8u1aNYMx4JXF9lF+LVwB+Yg7XCFlJIIRme1wIbwgP8Gn0
-	 NwDm4S8p9RZTW/rQpwWR4KUH0lciNALA9ABBCPK3l8+jX5WezecBP2689kb512L2yok+b
-	 PLDr/eow9/CGv2tlAWk87Px+9820+pF3oSdfUfsoXFtqfQ6Dsegrfk/A+lhW5tt9zVA==
+	t=1792599159;
+	b=BXdii8qVS0p4GaHWr72K07lh+W2iWmbJLdKMRsOjLUG4046A9333HkvypZ+FT+/jCPq9
+	 L4GHDYKb7rmkyi2+I1OKl+7/OcskgrRwhDKi96RrAeWv1vzG/jYDEO5JzHdQht+mjvKPU
+	 2FGFM/JRu0BuUQCi1F0AYW/BpiwmN+Uvdxs0tI2w0huTmzeHDXs41XgTj6su2Ctj1cpgT
+	 wFQeT0RJJ9WsIsgICr4oIWD4Pd7cQ+YaaoWoLr2BrTux0CG1/cvOZum8FFNCrIMM6Yl8g
+	 Rdavs85X6ZrNV9noMRQTgLfeIXRgBghOxC2Lh2yMzGSg9hFVnyCDEl803COdXu7gqPg==
 ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1792599158;
+	c=relaxed/relaxed; t=1792599159;
 	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
 	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
 	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
 	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=j4tXjeXuIFwdGre8TfOudfHUOYNQAoGCEGDBy7Hf0QE=;
-	b=gARGmV4TrShlWR15jBwZzTxX2gext7H2eNn1ED0LM2BSFUqkuJ3A+859Kij35xW69PRd
-	 9Ay11Ml/wPgB8hLen4h4qnNMfkjwD4poLrOaCle/KeWj3YW631W/yuLtMmN+INi8unPG1
-	 0zP3NPykkgiwDqgdS4fdjYZqTNGbUBElVEcu92aKv0hZAL/MJPvGf2WhfJpCSbb32Ln2D
-	 v0DNQQ3Uk/DD+rtNObiL8IRYlpeZkLrV72PCp34L7tw9g6QFHjs/3h+36wfWTKwhYRYHe
-	 WmELftiMK6PP9e2CtQz/U8vTlF3l8osRJgzVQqvQJhQ1aF+SnIz8TS6khFPC34sxV7g==
+	bh=9OhtDeWco/qHepZsdYaoSDfBdVEmkEvICiVjHgzAKVQ=;
+	b=MBSphSDwZ/XvIwMqVeugBoPtPguRNqf5he2HKHVgMVskTMANsK6T7sNhBRxEwaXFuRnU
+	 dHDcviebuCGCXO46bwu8pRtMU8hxZX707Kk87rIAZMpMSgx2trjcIhqC86F+c67pVzk6K
+	 5i5B1Pyd/dzCXfP5Rz6TeURj+xdyGGjw+VHjWT/S5TmYUN6xdML+SSnw5a1u5VaKMRX8G
+	 38bMVPJqBbnRk8vib23VJIA1xSONfvc0L5o2gvifoHFjTJtIoj90xirEhjgN3d/JoVc7k
+	 VNeiqJ5VKGCf67vu/rSs6E1cFx/vbDpqgsGZC1FxcV0SC1GR35viJ4Dku1P39Mmfo9w==
 ARC-Authentication-Results: i=1; smtp.kernel.org; 
 	arc=none smtp.remote-ip=100.80.115.77
 Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 1FA0A1F01574;
-	Wed, 21 Oct 2026 16:12:35 +0000 (UTC)
+	by smtp.kernel.org (Postfix) with ESMTPS id 44D091F000CB;
+	Wed, 21 Oct 2026 16:12:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792599158;
-	bh=j4tXjeXuIFwdGre8TfOudfHUOYNQAoGCEGDBy7Hf0QE=;
+	s=k20260515; t=1792599159;
+	bh=9OhtDeWco/qHepZsdYaoSDfBdVEmkEvICiVjHgzAKVQ=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=i7Gno09O7aBsF4PAOu5pm+P0ICVnjT3zcXIQ+kxHg0jO/NB6dXNynKudUwEDN2anv
-	 9MzijZ1Wu9HwkAlcclnOrYDd5ajh3Q4JNbAm1NzY7sD2TulYiFsdk5ar+NsIOKW56t
-	 pstZBiJs9U4sDmK670er8L/DDli8MTUiqXYOiKhRzdG1qsiCuxX1TRc6NGaLF59K43
-	 rgRAgy5KWJ5LSfNHRJPCWN1+1f+gy3nH9CKE0CC9Vj778KnhghUybyBEG2sUMMfAzk
-	 B3SQTaIwvtfl64uWWhPw9+ux3uIq7i8fY2UcwPLM12mCzxCehN8crIBIoCKiN35TWN
-	 cmkpYKOGWKoRQ==
+	b=CzkaX/536RR5KOhF4NfhQvSmZXufiBgO7UyIGJ7LXBIDH+dEFrlPhoIs8JZFDVP7h
+	 aD7fdMqI9mPmRdpfoQe7On8fpOJGiJI25AxBP4c/s9qktiHOE5R/BbbdsTEZsESoSe
+	 Hw1BTmH0CNyNACXr8LD+vc1uLaXy5pI0jar0T4jW4uLzGXWslsO9syazkqZyZEAlZf
+	 IwV/FdYOwQdPCQVsAndZBfX9qg7lNyvDbxh4Bt10Hqn7CWniI5EJEm1zsjVuymuwxF
+	 NteIHhYo2fKvlZ3eofppxrJ/KQkvVVDhcp2haTT//zKje/YjHSkTuQyVjwhZcW+TJu
+	 hOG2mV6fYtBkA==
 Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 7E6A8433DA;
+	by lkml.kernel.org (Postfix) with ESMTP id 250A8433AF;
 	Wed, 21 Oct 2026 16:12:23 +0000 (UTC)
 From: Cunhao Lu via B4 Relay <devnull+1579567540.qq.com@kernel.org>
-Date: Thu, 22 Oct 2026 00:11:12 +0800
-Subject: [PATCH 15/27] dt-bindings: thermal: rockchip: Add RK3572
+Date: Thu, 22 Oct 2026 00:11:02 +0800
+Subject: [PATCH 05/27] dt-bindings: pinctrl: rockchip: Add RK3572
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261022-add-board-ok3572-c-v1-15-0b0fd85a31ee@qq.com>
+Message-Id: <20261022-add-board-ok3572-c-v1-5-0b0fd85a31ee@qq.com>
 References: <20261022-add-board-ok3572-c-v1-0-0b0fd85a31ee@qq.com>
 In-Reply-To: <20261022-add-board-ok3572-c-v1-0-0b0fd85a31ee@qq.com>
 To: Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney+clk@redhat.com>, 
@@ -113,11 +113,11 @@ Cc: Cunhao Lu <1579567540@qq.com>, linux-clk@vger.kernel.org,
  linux-stm32@st-md-mailman.stormreply.com, linux-phy@lists.infradead.org, 
  linux-usb@vger.kernel.org
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1792599138; l=1043;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1792599138; l=808;
  i=1579567540@qq.com; s=20261015; h=from:subject:message-id;
- bh=7k7vf74VdFarETYGBuBSnEXvPu9QBBXuBjc821VO3k8=;
- b=MiGBFVzdbKwSSpjdPn72pCR5H82wS/DLvQWUmjMShXqg0Rsc6AzPpC2HrRTVBRF2Se/JOaBPd
- b0g0HY0FTWOAOGDZRcF41L3Z5uMMjOioB4NkawGBAoyJtsTxdHDxs9Q
+ bh=7Cwg4wq5+C6jKGQLPpMc9LwBD2h7LAV97O69wvTBPj8=;
+ b=EF4whsGfJl4BJ74dJFmiD0OLdXtnmpjaJdIa5SjqcpJ1E5QnilqIGFxGptEjeUZVlzPmMEbVw
+ ox/BKH2IxLdDM2nkeGE4jgZCgSye/1RSrtxMlFnb3A+fVMODRy/G6Ux
 X-Developer-Key: i=1579567540@qq.com; a=ed25519;
  pk=sUTWrzlIwT4C7ctjNfVZAzzg0G7QUn2XxRGpYsw4RtM=
 X-Endpoint-Received: by B4 Relay for 1579567540@qq.com/20261015 with
@@ -146,33 +146,25 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 
 From: Cunhao Lu <1579567540@qq.com>
 
-Add the RK3572 thermal sensor compatible.
+Add the RK3572 pinctrl compatible.
 
 Signed-off-by: Cunhao Lu <1579567540@qq.com>
 ---
- Documentation/devicetree/bindings/thermal/rockchip-thermal.yaml | 2 ++
- 1 file changed, 2 insertions(+)
+ Documentation/devicetree/bindings/pinctrl/rockchip,pinctrl.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/thermal/rockchip-thermal.yaml b/Documentation/devicetree/bindings/thermal/rockchip-thermal.yaml
-index 9fa5c4c49d76e..7102a581ef72b 100644
---- a/Documentation/devicetree/bindings/thermal/rockchip-thermal.yaml
-+++ b/Documentation/devicetree/bindings/thermal/rockchip-thermal.yaml
-@@ -21,6 +21,7 @@ properties:
-       - rockchip,rk3368-tsadc
-       - rockchip,rk3399-tsadc
-       - rockchip,rk3568-tsadc
-+      - rockchip,rk3572-tsadc
-       - rockchip,rk3576-tsadc
-       - rockchip,rk3588-tsadc
-       - rockchip,rv1108-tsadc
-@@ -151,6 +152,7 @@ allOf:
-             contains:
-               enum:
-                 - rockchip,rk3568-tsadc
-+                - rockchip,rk3572-tsadc
-                 - rockchip,rk3576-tsadc
-     then:
-       patternProperties:
+diff --git a/Documentation/devicetree/bindings/pinctrl/rockchip,pinctrl.yaml b/Documentation/devicetree/bindings/pinctrl/rockchip,pinctrl.yaml
+index 81747bb53056..cbecabd8e307 100644
+--- a/Documentation/devicetree/bindings/pinctrl/rockchip,pinctrl.yaml
++++ b/Documentation/devicetree/bindings/pinctrl/rockchip,pinctrl.yaml
+@@ -48,6 +48,7 @@ properties:
+       - rockchip,rk3528-pinctrl
+       - rockchip,rk3562-pinctrl
+       - rockchip,rk3568-pinctrl
++      - rockchip,rk3572-pinctrl
+       - rockchip,rk3576-pinctrl
+       - rockchip,rk3588-pinctrl
+       - rockchip,rv1103b-pinctrl
 
 -- 
 2.34.1
