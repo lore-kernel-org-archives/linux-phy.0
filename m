@@ -2,78 +2,67 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4E0C2606A338
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Oct 2026 08:31:41 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 22B0D606A328
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Oct 2026 09:50:24 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=vywtYhn4;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=qq.com header.i=@qq.com header.a=rsa-sha256 header.s=s201512 header.b=fUyjrIWN
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=FZfWl5bw;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Lp5vzeyf
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Message-ID:Date:
-	Mime-Version:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V3ahk48OJbi6WVkUCzRKB5I3xnFl+4mjB6V2dw55CrE=; b=vywtYhn4DCMgQY
-	C25Lj+EePRSmSos987ZXVtV+g58CtJn3nLmJS9ZtI+SXBMMilPRUXhimCMnpVGwyPRgQccKNApsiZ
-	SZ9Izk9YCdmdB/VHkHhNmuREo6F5N5Z2am4SrYAzXcLGmaP9SGDbUaDO6fSZf7H04ti9A6VC0iZMG
-	lpiZ0HWUo1LJKQhrIMyt/YAvHa3XopdSHi/VPQZTTOdFQ2u7hZRD8zSYEodq4iQOAg1ZOw6lLFQgz
-	uz+/1vAD4/xFX3wCnp3HjXgtDRoDA/sTyJoVPMEQgWSF+B+Kh2B1hO7w0s+zNvCG0krNtKwalRV0A
-	KeuSR+CAe0eiFy6J/L4g==;
+	List-Unsubscribe-Post:List-Owner;
+	bh=GyoA+CuLv9zKD/KG+TTBzg37Wqm9ljZDwG4EfMfT6Bg=; b=FZfWl5bwJhKXOnkwsbe2ayWAt1
+	cttVqi6pueUX5zvT/sa8iclbzNPtegJS76CKccUiNWgbc0lG7uoVU9jimOD9BFAsVO8OnFlt1d239
+	JBAGaQcXoPXKw7EQk4+EZ4jcG+ODpUTdyYZSUyFZLdgBE6N7bwQV1iLdHjVW2etsQq7IVL/J4aCSX
+	f8HfzzlyheESB8k9MAwb3M7jR49tlQLZXtPDGiVt0LExdLEQydofWaQ91lTHsshLWGqMmEDX5P2/O
+	ZrlTJA8vGm2x4iBZaV496sWuMGtNM0a0w0hBkx+n+LJWyYsR6hWwujQc2b5StXV4fSWSu04+wtU8y
+	+yLGg9Lw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
-	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJoD4-0000000DfTl-0JN0;
-	Thu, 22 Oct 2026 08:31:40 +0000
-Received: from xmbghk7.mail.qq.com ([43.163.128.47])
-	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJoD1-0000000DfC7-02rs
+	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
+	id 1xJpRH-0000000DsV8-34sW;
+	Thu, 22 Oct 2026 09:50:23 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
+	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
+	id 1xJpRG-0000000DsUc-1fkK
 	for linux-phy@lists.infradead.org;
-	Thu, 22 Oct 2026 08:31:36 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
-	t=1792657892; bh=STANDc24tjLvIjwpWVUmAsj3lx2tDmc6YgtW+icG3B4=;
-	h=From:To:Cc:Subject:Date:References:In-Reply-To;
-	b=fUyjrIWNZngROUclxWWKZVyN/bRgeThQB4k/DjoUpctc/a8tx8gCiSYfCCsdEKoOT
-	 eI6Fcpgm5nbNe6p1TI3zdXAuoVAgFwv97ir6Fo0KXMCbikO9gAi1ZiyB5afHEPF11I
-	 YMmMjBP4xH0nfUlUFSPm7uP4PbORqu3v0foxg+a8=
-X-QQ-XMRINFO: MSVp+SPm3vtSI1QTLgDHQqIV1w2oNKDqfg==
-X-QQ-XMAILINFO: MdmyWVu0InhAZ8CuOl+WbGFKb0ebdFMF3mPSDUyiHYO6r7cCGW4mjYzB3NBROn
-	 A9jpVSF4u5EGvEY+hd9HqK0oJrog5xvbOMlpipPRJufSIYbzcDiHl7z1PQMAap6nUQRMYmsXXrTj2
-	 tk0tu+feORbWkh2MZvFlU6kFWGBDTovA9C78iIph96PStjs9Es57Lo5xtDOysKUKMazNBnBIRzXyV
-	 MrDMJ/nR6ENpT11vObm03xfcgHiUZmvbLYBNxYzkM9rWk/c8kXIUlrVRHSrjx1mJjWSwuR5ikLS90
-	 IA9oWFvjt5F1LrALDB8oYuhsvLYKtLJ5ZkmJZCMyfCvCIOrYeHecIvDsFyx+oo5L4n3vgJ4ILNe7w
-	 IWF/UoBKpSMC6IECVj2Z9f319IRWT7EtoQ3/KSPMVurUnn/z6RI9NhVutrd7FEEPyf2psClNX8xxs
-	 s3PodM+x6fnfX+HsW82g3vD8H2txXYRk7zN+9LrD09FtOt6JshsmPGwwAeMukpJ98J91aFKfwVtXG
-	 hBG+k2dK0PJajAwkc9bcbgYtz+Q2QR/RrNM6mtAf6w1rBmXaym1TMdQrgHoBFJdV2Yq2POKQKAvme
-	 EL86NXj9H2XUOECt/ikrQ4GvvRhc0W9Wo5HM2Kne7g8Tierj5RJN8KGA9QCQrgBYDnaAMIirrE89H
-	 /jI/jnpkPoEF6rQGbKH3V/RamkwDMVcm5rYvbUthGDSPKmiwUJk1kKo+Iyv/ZHZrmPUxG48EfbqTn
-	 HwXwLKP5guQm5Gr592nEMxLOh8CzkPL9PdfBHto0MAlW9nSWwpa6DmlElREMdAJrqEaSDrqmzII0S
-	 sRL9obZFk6mBkHY4RseG3hqBrBd+TNy0yz+nfoR6xF3WORhgAZbTIwwUQwf4/zUhc5WO6AamzLy7e
-	 JEZv0CDUEAtadJBWrvTVq+ZCI77/7ajFV0NgGLf9cPk9NrxnZnSqBHWuF/1iL6D3H7rwgSZ5puDA8
-	 FC5wND+fVe7bNKWVf/B3mWtxt6n1/TKztIPBU/DRVcT1NTS4JlKx6oT9ngX/okTR18+YLz8bG04q4
-	 K40wSnuLyRd1DNII7GNYR7vz6pxerbM2KyZCwhtwsaRd49zRlHj2xiYVP5iDbcjjkWk/Vy7nD++zK
-	 zkFHOwuBXxHfZg==
-From: "=?utf-8?B?Q3VuaGFvIEx1?=" <1579567540@qq.com>
-To: "=?utf-8?B?SGVpa28gU3TDvGJuZXI=?=" <heiko@sntech.de>
-Cc: "=?utf-8?B?RWxhaW5lIFpoYW5n?=" <zhangqing@rock-chips.com>, "=?utf-8?B?bGludXgtY2xr?=" <linux-clk@vger.kernel.org>, "=?utf-8?B?ZGV2aWNldHJlZQ==?=" <devicetree@vger.kernel.org>, "=?utf-8?B?bGludXgtYXJtLWtlcm5lbA==?=" <linux-arm-kernel@lists.infradead.org>, "=?utf-8?B?bGludXgtcm9ja2NoaXA=?=" <linux-rockchip@lists.infradead.org>, "=?utf-8?B?bGludXgta2VybmVs?=" <linux-kernel@vger.kernel.org>, "=?utf-8?B?bWZk?=" <mfd@lists.linux.dev>, "=?utf-8?B?bGludXgtZ3Bpbw==?=" <linux-gpio@vger.kernel.org>, "=?utf-8?B?bmV0ZGV2?=" <netdev@vger.kernel.org>, "=?utf-8?B?bGludXgtcG0=?=" <linux-pm@vger.kernel.org>, "=?utf-8?B?bGludXgtaTJj?=" <linux-i2c@vger.kernel.org>, "=?utf-8?B?bGludXgtc2VyaWFs?=" <linux-serial@vger.kernel.org>, "=?utf-8?B?bGludXgtbW1j?=" <linux-mmc@vger.kernel.org>, 
-	"=?utf-8?B?bGludXgtc3RtMzI=?=" <linux-stm32@st-md-mailman.stormreply.com>, "=?utf-8?B?bGludXgtcGh5?=" <linux-phy@lists.infradead.org>, "=?utf-8?B?bGludXgtdXNi?=" <linux-usb@vger.kernel.org>
-Subject: Re: [PATCH 07/27] clk: rockchip: Add RK3572 clock and reset support
+	Thu, 22 Oct 2026 09:50:22 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id CF03443AE1;
+	Thu, 22 Oct 2026 09:50:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0F6111F000C6;
+	Thu, 22 Oct 2026 09:50:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1792662621;
+	bh=OmbDwKTPv9Vhyd576I3oDOBuRR1wx1NfzLwaR4N0rck=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=Lp5vzeyfqd/HJVg2ip47pTpk1/JsZFxXtHNEod6B7ibNUWscdhgRUtDKZ5+3U6NdO
+	 HKZjCTy/YMx+qQP17kYafRmHrjBxwKZBxvfiVBgZCF5TpUEAR2Df8sU41VVbl8UNPD
+	 KGq7NRXgpKfkpepxoZjH1nLlA6V6McI2i0Qe6ZLYTnxYB5335JLcuxeSRbYMEgtIlc
+	 ni44YEd4jxIf1kDl7lbM8r6Lg5gtZAZwHDN4SqKWCoZ47TeoGLDe4P0hXiTZdJgKNn
+	 wu3jvnoseHxbPQqxSkxYZTXatWvqqXwA3heKZQZ3EyRUt/QmDkCDGXmxBH+nWZB0zN
+	 cZ/2Erloq1Ldw==
+Date: Thu, 22 Oct 2026 11:50:18 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+	Conor Dooley <conor+dt@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, 
+	Lorenzo Pieralisi <lpieralisi@kernel.org>, Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org
+Subject: Re: [PATCH v2 2/6] dt-bindings: PCI: qcom-ep: Add QCS8300 compatible
+Message-ID: <20261022-classic-muscular-quoll-cd3038@quoll>
+References: <20261019-monaco_ep-v2-0-852cb9f5d012@oss.qualcomm.com>
+ <20261019-monaco_ep-v2-2-852cb9f5d012@oss.qualcomm.com>
 X-Archived-By: <archiver.kernel.org>
-Mime-Version: 1.0
-Date: Thu, 22 Oct 2026 16:31:30 +0800
-X-Priority: 3
-Message-ID: <tencent_48E1098E2322016888397E2F4D1D34343208@qq.com>
-X-QQ-MIME: TCMime 1.0 by Tencent
-X-Mailer: QQMail 2.x
-X-QQ-Mailer: QQMail 2.x
-References: <20261022-add-board-ok3572-c-v1-0-0b0fd85a31ee@qq.com>
- <2339330.72vocr9iq0@diego>
- <tencent_791C8CE4050020CEF9E536C9D3B4CA9C250A@qq.com>
-	<2117228.PIDvDuAF1L@diego>
-In-Reply-To: <2117228.PIDvDuAF1L@diego>
-X-QQ-mid: xmsezb41-0t1792657890ti513lphq
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261022_013135_412217_FD737E13 
-X-CRM114-Status: GOOD (  13.25  )
-X-Spam-Score: -1.8 (-)
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20261019-monaco_ep-v2-2-852cb9f5d012@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,31 +75,30 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-0.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
-	DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	FROM_EXCESS_BASE64,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi Heiko,
+On Mon, Oct 19, 2026 at 02:55:10PM +0530, Krishna Chaitanya Chundru wrote:
+> The QCS8300 PCIe Endpoint controller is compatible with the SA8775P
+> PCIe Endpoint controller and uses the same programming model. Document
+> the QCS8300 compatible string and its fallback to the SA8775P
+> compatible.
+> 
+> Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+> ---
+>  Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml | 4 ++++
+>  1 file changed, 4 insertions(+)
 
-> Rockchip has published a development branch based on 6.12 on github [0] .
-> This includes this clock driver [1] and most likely all the other parts as well.
-> You can use this to cross-reference.
->
-> If there are multiple authors changing the rk3572-specific parts of a file,
-> please use the first patch author from that history for your patch, as we
-> don't want to replicate the development history from that vendor kernel
-> tree.
-
-Thank you for the link and clarification.
-
-I'll cross-reference the RK3572 changes with:
-  rockchip-linux/kernel:develop-6.12
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 
 Best regards,
-Cunhao
+Krzysztof
+
+
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
