@@ -2,76 +2,76 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1729E606A319
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Oct 2026 06:37:42 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 17AC7606A319
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Oct 2026 06:50:43 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=iPiwos24;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=qq.com header.i=@qq.com header.a=rsa-sha256 header.s=s201512 header.b=GmTf6oYL
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=sz61s4H/;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=nLn7iabQ
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Message-ID:Date:
-	Mime-Version:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZqzPGpUjUO+NVa93U+H06E/W4u5Kpv6FDBLBD0Nt+8Q=; b=iPiwos24TChLcB
-	TWF/A8j0T/nJA7PB38Ig7B2nxHxk9TYJipVHbdHmpWG3cXlcyqcmBRKBk2tKPcxwSgv3/vbfu+AqV
-	16gr9odhmtlNsmlNyroZe5ydHQwiknj7t2onYs2tD91O/y6zErvL9Ks5983akma8zuiMS9HcgvniJ
-	0qfkTj+lGS4shS7qxVZY5AX6tTPxgr2U+y94R6/web910gFJfWc/MGR2iqvO/VyLhVMRgKwI6YBZq
-	AM+zGD/eUB5E7f7TXu8idlu0vjXkehB1B1w5sF9Ds8X6zQuEZNPNnXjzIGtEDwsgUhEniXEixJzY1
-	lHAyHjqy2FxxHzc+pHTw==;
+	List-Owner; bh=/5DhEeJfAi8f+QPNrqibFL5TXf1lcp1AEF/dYExx8ss=; b=sz61s4H/7w8RIZ
+	L/jV7wqUBWyoqMYsNkn2BtijYRr45P/Xr8tElPoP9ifxE/Kfm0dNAaOwfhmnOH7p70O6a9mHAtMmK
+	3fBbasJqdWuJBqBbeGanoJIzH4Oe1SOSytSTNOP7zAQ0bO7Tk6RyUOJP/hsJpuP49Y3QKmBm7W4ox
+	uJTBvjjVTOGrpjsuDbXO8Sk5TAfKJLMFZ2D57rAZn9qQIyng0X+HcMja+wmRsQLeZ2oBJWOcEuL9/
+	jJvmJEBOgGVNto/oCxtFc8AmgVnQCXwDKgQHp9qqokIvUlX4qyWxcTfh+Cz4mpR02XBZtyT3czfEZ
+	HISA89H6AzTqZpG9bVYA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJmQn-0000000DU0e-2Uis;
-	Thu, 22 Oct 2026 06:37:41 +0000
-Received: from out162-62-57-252.mail.qq.com ([162.62.57.252])
+	id 1xJmdO-0000000DVt2-2qH2;
+	Thu, 22 Oct 2026 06:50:42 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1xJmQk-0000000DTzr-2QtW
-	for linux-phy@lists.infradead.org;
-	Thu, 22 Oct 2026 06:37:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
-	t=1792651052; bh=VQFTusPZWZAQO9ncVP5/pVATTKlUKVRB9FJ/9plts7M=;
-	h=From:To:Cc:Subject:Date:References:In-Reply-To;
-	b=GmTf6oYL8AKlduANqJiMvZbkQOf7gKp/zQwFXmoaknAFcT1VltESHTOaOrg1fcjsW
-	 ooQVtPfnStMG4UMWTARNwo+QdJW0/ktwQv7oAfnOSn7krkbD0yr8PCfT2j9MVsT4Ld
-	 a+4EUQyPnJwSlLkvXFQ17TUOpHSAfKWsStATXj6U=
-X-QQ-XMRINFO: NyFYKkN4Ny6FuXrnB5Ye7Aabb3ujjtK+gg==
-X-QQ-XMAILINFO: N6vT1niysq6m+dolIeSRQmZ0Z/lSCBqEUxgMgKnhlcqyDzFYwRYb/nFI862AH8
-	 hx16FZ7vQ76yOO4KNrAZLP9nGxJ89E38Vmc3rNG+xB70iOUAV7wSRAQwTihTOulk5fqrM0fPZ230B
-	 KEjiMz7HM7L4qzHyBVCqvG9OHxF9AE9K5R4nq44q5B5A5vDvoF2e6N2kZaxF1Xwl7qyXn0HPU+w0q
-	 jx+hU0FDBXH84DVvxXpEVC45nfZW7RE5b4cT+s2JTCz893w+J65yZGKPYhKhbfVjLu1uzs423rZHF
-	 YhpWLoHB7Z5iyFTSqhVekL+bsNuil22wBS381bllGmpRd0Z5eGD8IpYIPKcsKtvIw3suSvGWztqCp
-	 ZGnIzV/u3oZCv65hNU2vXGJYFoE1CwNhDvwyxZLhcqUptZfdM3alzxLkTi4sZcGcAkl0YQLxv0wcs
-	 xDYdGeTy4dt8w7sun/yBo2hbrgzaosoCMO9RohKNuUElD6qUPsPbWHI0n7ImrN45HY2QPGs1bCvVk
-	 MWSRQYnB5gBQQseXW+2S7fzKMYfLxHzAz/06wSHooNP221o35sl8hHLxnG+gxrgIhpp8SEAZcRLdv
-	 wttYLqc66aRhuxibq6faN+1fdUvvf0l4cS04L724Xdz7CC95Ngz5WGvieS2ipVQY1PH3RPEC0SCQc
-	 LLZDi4lUTEtGHPpV3lXVwSsXOJZKBClnzlse4Bo/O+ZEZSX8poOOa0aS22M1U1Gi0XNUU8VxABkh2
-	 bEmFwFeuf6x8bwc+bj+CMBVRMOBbJozHjSlFbbqRMjHcly44ucpG1KRKT5UmvuIARe2VdvezT5O6l
-	 4AjpimmT+Wwm48X5K++Szf3pWy8brWR888+n7HrXrJNl+S1bpTLclyQC60yZO5MIsRD1+1zgcsxEy
-	 Y16MLptC3/0G6NBTSzeoOt/17k+XaE4mdHZh69reiQfF1CWqaBhKA87ASDRQ945nLDYWOlNQ6C5AI
-	 wOHX74OkmtP7bfnjvPr48Afne4f9RYdonvRTS0CxUYkICRgEbasogiv1kyvxnWGZzdyciyj+lRx9T
-	 ZTKQ1aSJt3odwsS1uNe1fIHMqU8WkURomskKvfn9JQJrjd4w=
-From: "=?utf-8?B?Q3VuaGFvIEx1?=" <1579567540@qq.com>
-To: "=?utf-8?B?U2hhd24gTGlu?=" <shawn.lin@rock-chips.com>
-Cc: "=?utf-8?B?c2hhd24ubGlu?=" <shawn.lin@rock-chips.com>, "=?utf-8?B?bGludXgtY2xr?=" <linux-clk@vger.kernel.org>, "=?utf-8?B?ZGV2aWNldHJlZQ==?=" <devicetree@vger.kernel.org>, "=?utf-8?B?bGludXgtYXJtLWtlcm5lbA==?=" <linux-arm-kernel@lists.infradead.org>, "=?utf-8?B?bGludXgtcm9ja2NoaXA=?=" <linux-rockchip@lists.infradead.org>, "=?utf-8?B?bGludXgta2VybmVs?=" <linux-kernel@vger.kernel.org>, "=?utf-8?B?bWZk?=" <mfd@lists.linux.dev>, "=?utf-8?B?bGludXgtZ3Bpbw==?=" <linux-gpio@vger.kernel.org>, "=?utf-8?B?bmV0ZGV2?=" <netdev@vger.kernel.org>, "=?utf-8?B?bGludXgtcG0=?=" <linux-pm@vger.kernel.org>, "=?utf-8?B?bGludXgtaTJj?=" <linux-i2c@vger.kernel.org>, "=?utf-8?B?bGludXgtc2VyaWFs?=" <linux-serial@vger.kernel.org>, "=?utf-8?B?bGludXgtbW1j?=" <linux-mmc@vger.kernel.org>, 
-	"=?utf-8?B?bGludXgtc3RtMzI=?=" <linux-stm32@st-md-mailman.stormreply.com>, "=?utf-8?B?bGludXgtcGh5?=" <linux-phy@lists.infradead.org>, "=?utf-8?B?bGludXgtdXNi?=" <linux-usb@vger.kernel.org>
-Subject: Re: [PATCH 00/27] rockchip: Add RK3572 and Forlinx OK3572-C support
+	id 1xJmdL-0000000DVsO-045S;
+	Thu, 22 Oct 2026 06:50:39 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 81C3143AC6;
+	Thu, 22 Oct 2026 06:50:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3A7021F000C4;
+	Thu, 22 Oct 2026 06:50:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1792651838;
+	bh=VMJJtOaPJzI81KalVBBOZcnAoFG/9Ue++7vqjKuxbS4=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=nLn7iabQcVBxR41nchJsSeKLe50j7FRih7F73CPOfFsH8JkLpmXAv5Z5YmvrWPT2O
+	 X8gmEYBo+etLwTgfB/gX4hWPCJISLVJ1o08ddVC5t1dDmwOpNiUeQjA8M9tN2dCz1c
+	 7xTjNmNztG9zlLhst/cUbacFaJ/WgoF/U+0HwNNxQ00oaOs9NnV12BVTH89Z/67C1O
+	 CBaCtXQz6zVcw0acBIpgXxFlw4WyaYWy+C3WU/cQ+vzM+pu4F17F5lVpyPxgCZcX4q
+	 Jj21bl6bVa6YiQpB4Uv8A++R6RfTXJq41IMP5TC9ti4VKQLNs+XaArlPLmCPPTx4la
+	 Nb+iPMIZDN2xA==
+Message-ID: <79a81f1d-2964-4b2a-80d1-64e01c202468@kernel.org>
+Date: Thu, 22 Oct 2026 08:50:33 +0200
 X-Archived-By: <archiver.kernel.org>
-Mime-Version: 1.0
-Date: Thu, 22 Oct 2026 14:37:30 +0800
-X-Priority: 3
-Message-ID: <tencent_1468586598128C460803261171FD769AA209@qq.com>
-X-QQ-MIME: TCMime 1.0 by Tencent
-X-Mailer: QQMail 2.x
-X-QQ-Mailer: QQMail 2.x
-References: <20261022-add-board-ok3572-c-v1-0-0b0fd85a31ee@qq.com>
-	<7fa26028-5c7c-4c5d-8cc5-3116b2e51cc0@rock-chips.com>
-In-Reply-To: <7fa26028-5c7c-4c5d-8cc5-3116b2e51cc0@rock-chips.com>
-X-QQ-mid: xmsezb41-0t1792651050t9mjujcfl
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261021_233739_163792_42CDA454 
-X-CRM114-Status: UNSURE (   9.65  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -1.8 (-)
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 3/6] ata: ahci_brcm: Initialize the NSP interface clock
+ and reset
+To: Florian Fainelli <florian.fainelli@broadcom.com>,
+ linux-arm-kernel@lists.infradead.org
+Cc: Niklas Cassel <cassel@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Ray Jui <rjui@broadcom.com>,
+ Scott Branden <sbranden@broadcom.com>,
+ Broadcom internal kernel review list
+ <bcm-kernel-feedback-list@broadcom.com>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Tejun Heo <tj@kernel.org>,
+ Yendapally Reddy Dhananjaya Reddy <yendapally.reddy@broadcom.com>,
+ "open list:LIBATA SUBSYSTEM (Serial and Parallel ATA drivers)"
+ <linux-ide@vger.kernel.org>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
+ "open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>
+References: <20261021165555.652102-1-florian.fainelli@broadcom.com>
+ <20261021165555.652102-4-florian.fainelli@broadcom.com>
+From: Damien Le Moal <dlemoal@kernel.org>
+Content-Language: en-US
+Organization: Western Digital Research
+In-Reply-To: <20261021165555.652102-4-florian.fainelli@broadcom.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,23 +81,132 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-0.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
-	DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	FROM_EXCESS_BASE64,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
+	version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-SGksCgo+IFRoYW5rcyBmb3IgeW91ciBwYXRjaGVzLiBUeXBpY2FsbHksIGEgc2VyaWVzIG9mIHRo
-aXMgc2l6ZSBjb3ZlcmluZyBTb0MKPiBzdXBwb3J0IHNob3VsZCBiZSBzcGxpdCBieSBzdWJzeXN0
-ZW3vvIxmb3IgaW5zdGFuY2UsIHNlcGFyYXRlIERUIGJpbmRpbmcKPiBhbmQgZHJpdmVyIHBhdGNo
-ZXMgZm9yIGVhY2ggc3Vic3lzdGVt77yMYW5kIG9ubHkgQ0MgdGhlIHJlbGV2YW50Cj4gbWFpbnRh
-aW5lcnMgYW5kIG1haWxpbmcgbGlzdHMuIFRoZSBEVFMgcGF0Y2ggY2FuIGZvbGxvdyBhZnRlcndh
-cmRzLgoKVGhhbmsgeW91IGZvciB0aGUgZ3VpZGFuY2UuIEkgYXBvbG9naXplIGZvciB0aGUgaW5j
-b252ZW5pZW5jZS4gSSdsbCBzcGxpdAp2MiBieSBzdWJzeXN0ZW0uCgpCZXN0IHJlZ2FyZHMsCkN1
-bmhhbwotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1w
-aHkK
+On 2026/10/21 18:55, Florian Fainelli wrote:
+> The NSP probe path assumes firmware has enabled the SATA IDM interface
+> clock and released the core reset. The downstream iProc config_AHCI()
+> sequence explicitly performs both operations before accessing AHCI.
+> Without that setup, a cold boot can access an inactive controller.
+> 
+> Map the optional NSP IDM register region and enable the interface clock
+> before releasing reset, retaining the downstream settling intervals.
+> Perform the sequence at probe and resume before reconfiguring SATA.
+> 
+> Keep the resource optional so older device trees continue to rely on
+> firmware initialization.
+> 
+> Fixes: 3ee2e6dcaa35 ("ata: ahci_brcm: Add support for Broadcom NSP SoC")
+> Signed-off-by: Florian Fainelli <florian.fainelli@broadcom.com>
+> ---
+>  drivers/ata/ahci_brcm.c | 34 ++++++++++++++++++++++++++++++++++
+>  1 file changed, 34 insertions(+)
+> 
+> diff --git a/drivers/ata/ahci_brcm.c b/drivers/ata/ahci_brcm.c
+> index 29be74fedcf0..2ed60806b671 100644
+> --- a/drivers/ata/ahci_brcm.c
+> +++ b/drivers/ata/ahci_brcm.c
+> @@ -6,7 +6,9 @@
+>   */
+>  
+>  #include <linux/ahci_platform.h>
+> +#include <linux/bcma/bcma_regs.h>
+>  #include <linux/compiler.h>
+> +#include <linux/delay.h>
+>  #include <linux/device.h>
+>  #include <linux/init.h>
+>  #include <linux/interrupt.h>
+> @@ -83,6 +85,7 @@ enum brcm_ahci_quirks {
+>  struct brcm_ahci_priv {
+>  	struct device *dev;
+>  	void __iomem *top_ctrl;
+> +	void __iomem *idm;
+>  	u32 port_mask;
+>  	u32 quirks;
+>  	enum brcm_ahci_version version;
+> @@ -230,6 +233,25 @@ static u32 brcm_ahci_get_portmask(struct ahci_host_priv *hpriv,
+>  	return impl;
+>  }
+>  
+> +static void brcm_sata_init_idm(struct brcm_ahci_priv *priv)
+> +{
+> +	u32 data;
+> +
+> +	if (!priv->idm)
+> +		return;
+> +
+> +	/* Enable the interface clock before taking the SATA core out of reset. */
+
+Long line. Please split before 80 chars.
+
+> +	data = readl(priv->idm + BCMA_IOCTL);
+> +	writel(data | BCMA_IOCTL_CLK, priv->idm + BCMA_IOCTL);
+> +	readl(priv->idm + BCMA_IOCTL);
+> +	usleep_range(1000, 2000);
+> +
+> +	data = readl(priv->idm + BCMA_RESET_CTL);
+> +	writel(data & ~BCMA_RESET_CTL_RESET, priv->idm + BCMA_RESET_CTL);
+> +	readl(priv->idm + BCMA_RESET_CTL);
+> +	usleep_range(1000, 2000);
+> +}
+> +
+>  static void brcm_sata_init(struct brcm_ahci_priv *priv)
+>  {
+>  	void __iomem *ctrl = priv->top_ctrl + SATA_TOP_CTRL_BUS_CTRL;
+> @@ -369,6 +391,8 @@ static int __maybe_unused brcm_ahci_resume(struct device *dev)
+>  	struct brcm_ahci_priv *priv = hpriv->plat_data;
+>  	int ret = 0;
+>  
+> +	brcm_sata_init_idm(priv);
+> +
+>  	ret = reset_control_deassert(priv->rcdev_ahci);
+>  	if (ret)
+>  		return ret;
+> @@ -453,6 +477,14 @@ static int brcm_ahci_probe(struct platform_device *pdev)
+>  	priv->version = (unsigned long)of_id->data;
+>  	priv->dev = dev;
+>  
+> +	/* Older NSP device trees rely on firmware to initialize the IDM. */
+> +	if (priv->version == BRCM_SATA_NSP &&
+> +	    platform_get_resource_byname(pdev, IORESOURCE_MEM, "idm")) {
+> +		priv->idm = devm_platform_ioremap_resource_byname(pdev, "idm");
+> +		if (IS_ERR(priv->idm))
+> +			return PTR_ERR(priv->idm);
+> +	}
+> +
+>  	priv->top_ctrl = devm_platform_ioremap_resource_byname(pdev, "top-ctrl");
+>  	if (IS_ERR(priv->top_ctrl))
+>  		return PTR_ERR(priv->top_ctrl);
+> @@ -493,6 +525,8 @@ static int brcm_ahci_probe(struct platform_device *pdev)
+>  	if (ret)
+>  		return ret;
+>  
+> +	brcm_sata_init_idm(priv);
+
+Here, this is called *before* the clocks are enabled, but in brcm_ahci_resume(),
+brcm_sata_init() -> brcm_sata_init_idm(() is called *after* the clocks are
+enabled. Does this matter?
+
+> +
+>  	ret = ahci_platform_enable_clks(hpriv);
+>  	if (ret)
+>  		goto out_reset;
+
+
+-- 
+Damien Le Moal
+Western Digital Research
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
