@@ -2,119 +2,96 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6820B606A323
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Oct 2026 16:46:42 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 383C3606A331
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Oct 2026 16:52:27 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=KqCRazUB;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=b7XanTeE
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=rtx3rMgv;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20251104 header.b=E+s4EfTQ
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
-	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=bXhJ1M40X5XLb8ydG4S55k/QNtzQS1QO7t310Vf/Aqg=; b=KqCRazUBnEBZdqO9aRwL44g5Qr
-	kkB+wbG9TRzIX7LGWkZ6XkRu5NjdxIppP5kg/m1yMEntvG5Sqn/nNQ+cGn9eM1Rlyu6P/1zoilosq
-	jTUvjLtTIPJIi6UidRJrIrYmZ2TbEfrrQKuLqSuYnVd5ucqtlWHHOFwl02vAb1rcfae+u4u/+QDDZ
-	ianb7DykCaE7KmepL5IJmchnpDvcpy+8oGBMQ4uV5p55w2Pr7of+O0O1xWtn9fACBK/XAI8XdiORm
-	2JV85pIYTwH8gLnq2E8AyfFtstS1PFt3x3s0s1O/+lgdC6X8uLUI83t9+p1Wn2zzEyzkZ5iYvykJ8
-	Mnk0rA7g==;
+	bh=pbvaVyx8LmYZmra2IDqRtyHnGCzR+4X8mWsPi0lVLes=; b=rtx3rMgvlgrrpi0m0XGAVxBOXU
+	IG0dXiBKcv5MTHwQCJkXbNow/tD8wjrgzps15nnn7PCfwDonCGYgKMaPe4fVNPifM2H/DfvBbJEc4
+	pqMtn8MW/9WJXMYLsRoCVONi+gQOWIYNHgsr75SsIPBGzw61v7kL7skNacddZ+F3kgJ8KRExP4Ary
+	MvuneBCJyOOE6H0zFeKkBdY6MQzGqaUa14pLPd6NRs4rTzXbx0XHg/c6E680E5wuEgqKF6U7kn7IY
+	IYrNiw42OW++iRkXDeLshqdk1FWRo7f4w32sDSax48nIXeyhU/whpWqFpbx7Y6WhQtyA40OnZN8kh
+	o33BCwlQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xJvwA-0000000EXMU-06z8;
-	Thu, 22 Oct 2026 16:46:42 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xJw1i-0000000EXom-3l3s;
+	Thu, 22 Oct 2026 16:52:26 +0000
+Received: from mail-dl1-x1235.google.com ([2607:f8b0:4864:20::1235])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xJvw8-0000000EXL5-0x66;
-	Thu, 22 Oct 2026 16:46:40 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id A580F42ACC;
-	Thu, 22 Oct 2026 16:46:39 +0000 (UTC)
-Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
-ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1792687599;
-	b=wZAPmm3nhigupYSPPZpHXdED63UAVhULqOOIQfGY4UvvA6VpaHDmmJqqMaxJzE+QUWsh
-	 0BA5aewg15v0tjbAr2iRcgxHNjHoH74YlyZI5gfdsLzOcLmGS8CFJa6dsgpFT4EcjOLAr
-	 UAwvy8qSDnSDqmT0ChsxA+NKCNPkIeedx2YLYMCUeq8JvQFrypOiekf6KPH1PODHreGAu
-	 /f/Ht7AiLS0fD9VCBusg4yXB8LJqN/jxeEs7Oj7lZbTATf5zwNFlQrcZ1l2zNJEMd+EVl
-	 Oj9C/zkrXPzLRn1PLxrMeU0FdjanCmIAZG9/0aD7/QLXhwE1ocIL0KDbuqEUN3pQbdw==
-ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1792687599;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=xOTUwgjwiqoVK48MuNeiJ5tobUcs3ededaPQ2qfxPUE=;
-	b=1Jw8Kcxd3LU9QF+QPzq8v8t4I6XUBjQnkZ0XVjbhP3i7vmWhk42Ig3IFbeudnzU5v7Dx
-	 ypeIeSkvltVg1glrpObDymfzZ0gcXN02J+JGdA7kcQ35JhqtGRX5KG+9c3f/ZnVFktzTl
-	 tvuK3PKyWn0ufZphjLZbU0y8uSr1GQ8IGit18bX1Yt4UNylD0f2IIw7rrTEO4T81sfPZ/
-	 YnMXSHtf0BMoAhkxuF6p74M27f/JSTw5Q30Jlc6Lx/hlpDQCO89j2paptuLQHioIdftUM
-	 xstx/XgQg8rDjC6PcQ3MMVnNFTDugpuTFawzPD4jvVBy3r/1FeIKuFEpOrBB1K8Ln8g==
-ARC-Authentication-Results: i=1; smtp.kernel.org; 
-	arc=none smtp.remote-ip=100.80.115.77
-Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 9A91A1F01828;
-	Thu, 22 Oct 2026 16:46:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792687599;
-	bh=xOTUwgjwiqoVK48MuNeiJ5tobUcs3ededaPQ2qfxPUE=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=b7XanTeEkgtsXzleqBFNxp3n84XIRmr1QuQV7ky0pDNbu60roJ/sGOq5UZqwdNQEk
-	 o9PpxaWNN6Vz/SOOf6yNKY0LE+NROfRmHf+r5wYte2iH1e+9/7+N69NshNCWT0ZdwN
-	 34GN/+QkcUDAheguag9vT7r9HcZux5qhZCBdpMV9M4U6V3JK2fOX212ed6iVMcbpue
-	 5D2JBjd+REibPM+E+JVdO10NQnYwOckJiAuXbkuhhGandHlH5XMWSSbq89wFWBBlLR
-	 t1o8UAB8YCPmaa/6mfZMCyNURpPW/u+Iie1sgBYNE4t4EQt0qDfxDPp+rOq+wwIQLL
-	 Nl/bi7pciQH+A==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 09FEA41E83;
-	Thu, 22 Oct 2026 16:46:38 +0000 (UTC)
-From: Aiden Isik via B4 Relay <devnull+aidenisik.member.fsf.org@kernel.org>
-Date: Thu, 22 Oct 2026 17:46:37 +0100
-Subject: [PATCH 2/2] phy: exynos5-usbdrd: Add support for the Exynos5515
- usbdrd phy
+	id 1xJw1g-0000000EXoF-22Fd
+	for linux-phy@lists.infradead.org;
+	Thu, 22 Oct 2026 16:52:25 +0000
+Received: by mail-dl1-x1235.google.com with SMTP id a92af1059eb24-1438d9363fbso943257c88.0
+        for <linux-phy@lists.infradead.org>; Thu, 22 Oct 2026 09:52:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1792687943; x=1793292743; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=jMHX9wN/BHCrbGnqRhP4+R8W0f/fc00EEaOQLsHpHDs=;
+        b=E+s4EfTQIRUbhS7lWrIATm0gOwEAu4nQ/sQTGo6NVfe2uP4TnJpK4VhVrOltVjhQ+t
+         Bvk/9OWXdi3Y89F+hq4IGNToF4uN8Ou2NYep088nTDGr9tnCq3uUtOSx+RLsvDX+b3WG
+         qs+BYoNgnZFZPWYV80YD0yOS4i5UvcEddf+43fC0OixZ2jg/sJro2rFWf6sBBoAR34Au
+         VSPCTAPJVwIqaDHADcncNSlJp61OGQOLEG9/fHV5mj9K78oCU6dD7WHmKYzhgDr9Ah0J
+         5smKoSP3JMHqIHV3NYAXe/eUA0TlvoxNj6Gyp24hITDzQlDUUufSARwXF+NJMCr+iaFR
+         RUcA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1792687943; x=1793292743;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=jMHX9wN/BHCrbGnqRhP4+R8W0f/fc00EEaOQLsHpHDs=;
+        b=dlCASBFFjyplwCmAug/oQdsocrRkaesAC5maER+N9z7bKYlgkpIyTLAD9DCLdq5/jZ
+         phfxacbjWvCRU4isJ8sLye2vn6+DptPKtarfyccBS8E/SmY6tJbOW+qDPO/gyeI15GEu
+         OzFXWnjbO/IZmHlmGQmeKWu9nQybHeEy0mMzZtlqXq1nf5FQPweHCPAj2enpc/wMD1ee
+         ZKjdrNKxG8tNqaPcNJJ7AdT+Ku0VOP7M4dQg2Pq0OdheIWrblRb5G3KVrNt5pgBaTBHt
+         TFSMA44lLpQ/qZ1LiUNwk9QQR9BCBZ3HaLhz+9+KQEgTnn/FVhHOIue8JiN3NiVafQAU
+         Wu9g==
+X-Forwarded-Encrypted: i=1; AKwUvBwLtQJ/c9nvg0JtYTRDS7i0TLUI91YXhXteG7iX8lBfy8BxeXtM6ifMTrUKoGXhPgljxwXLvAcRLwo=@lists.infradead.org
+X-Gm-Message-State: AFq9FYL6FF/D9dKsZvyu+V3UCn+5Ca1n1ClHlqZfepKiiBeYNLWW7ISN
+	84kr6iQZZCVV//BlyQo8jfDmQ1Lp2DKFovYVjeYC1Q84Ryli1wj+t4Ev
+X-Gm-Gg: AYBFou1kBMRVXg9uI8oGO6ACQjTfJ/nCLDyltIwe1CNE3WA0ojobCrjoaUrKh01rgUU
+	oeAvZzE1c5IUVvZiN4FpDpqgpzhFhaD8Z2+3QDIoeWE5/7HPNZx0s+oOEtwKXp15CC26ZvXcGsF
+	7ofJ+9wf5rXDvzRTnMBDDAlda/vlL3S+ViZ0YXVFBf08WyWOFs400lZZyu6BTVUM4SB1++pdSUv
+	BYGmVexK/AqCev85beWiD16ONnPJYf20xiiuiJLIrbTfxWHJKOQSa6XQd5JhZZqUFwScsw1db89
+	MhPldVUiLokeByDJWtmrC3aBSZflZ5IkLenKcp/ptDl6wwNZOoMQikyBK9lWRd008XmSI22tB3n
+	NGplSvuq0z0DHrFLWtfkGZmMqoYWrNUZIhajJ6GxP9lO/Ntu2cjBf3x233dLWre7ykeSVP2HYCo
+	M3DCjB19N3fgoR6eKU1niUyA6YT53BkCx1z7KqYOCCT+CzoykEkee8aVcDOiNhoZop2Ptb24S4j
+	PFQ2VJWE6+vg4U9KtKV/Ozt6ERGrSXgBJrnVyiOH/3Ss7KrqL1i/MH+ZhhWqkoBrvhchac=
+X-Received: by 2002:a05:701b:4250:10b0:184:40db:6bb9 with SMTP id a92af1059eb24-192f2d2204cmr3620614c88.8.1792687942800;
+        Thu, 22 Oct 2026 09:52:22 -0700 (PDT)
+Received: from DESKTOP-NM9EKIA ([125.134.240.130])
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1903bb7f098sm25263741c88.12.2026.10.22.09.52.19
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 22 Oct 2026 09:52:21 -0700 (PDT)
+From: Joonhoe Kim <26rote@gmail.com>
+To: vkoul@kernel.org
+Cc: neil.armstrong@linaro.org,
+	mani@kernel.org,
+	konrad.dybcio@oss.qualcomm.com,
+	dmitry.baryshkov@oss.qualcomm.com,
+	val@packett.cool,
+	wesley.cheng@oss.qualcomm.com,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH] phy: qcom: qmp-combo: Leave the USB PCS alone in DP-only mode
+Date: Fri, 23 Oct 2026 01:52:19 +0900
+Message-ID: <20261022165219.1368-1-26rote@gmail.com>
+X-Mailer: git-send-email 2.55.0.windows.5
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261022-for-next-lucky7-usb-phy-v1-2-2e47f8484bf4@member.fsf.org>
-References: <20261022-for-next-lucky7-usb-phy-v1-0-2e47f8484bf4@member.fsf.org>
-In-Reply-To: <20261022-for-next-lucky7-usb-phy-v1-0-2e47f8484bf4@member.fsf.org>
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Marek Szyprowski <m.szyprowski@samsung.com>, 
- Sylwester Nawrocki <s.nawrocki@samsung.com>, 
- Peter Griffin <peter.griffin@linaro.org>, 
- Alim Akhtar <alim.akhtar@samsung.com>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
- Aiden Isik <aidenisik@member.fsf.org>
-X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2950;
- i=aidenisik@member.fsf.org; h=from:subject:message-id;
- bh=Kiiu/e8JIBqj1FtLrHXUkttonZWwk3f0gSxzSjnt6Ys=;
- b=owEBiQJ2/ZANAwAIAUknAbLEetfrAcsmYgBq2j3tvjE8eTgCSASSGRDwhLex1H6pqWKT0Iw0O
- pESfG41hkSJAk8EAAEIADkWIQSDy8UkXGpc3JNbEaVJJwGyxHrX6wUCato97RsUgAAAAAAEAA5t
- YW51MiwyLjUrMS4xMiwyLDIACgkQSScBssR61+sMHhAAsUopH+oG44TXLb0KyNZ1uxDtgyammvw
- MARBRATeyeRUvvyAxR+ENdfAOfQYAoBKDAuo0s2R0jHI8CEzYvzkQ/w8it1CnQjU/j84Ni9j2k5
- o55ZGjUZggmKNDKtjIRG36rtrkQKcu9zWIN6A+55PfCf1c3FMXf78tKycXPO+pngBm9EgsDD5xd
- lAHyTOqxxV9EEjd30IQiq2Riey5A0R/5q37GgGPFhEyTzeIfIILPozVq7cg465VfEhpIxzb+zo4
- ZtYy5tJPU6FicZn1jGewertAY/IfcXQSbdg08kYcgT73zeBL1KXP+Zshiiu5kM+4SZ3Sp9dgoCd
- 1wS06y7CeLuyRsZHHUAnh348rqbp93z0cjKqhe9Ywz47kHjKBQGNr5Wp7Ar5DRNHtBs7WA9BEd6
- KH4nChgwGQLetqtmQowuge88XNMiiNmO8TmaQBJynxK5VurmCcWUjt3EL4JE4Kg7kezAWKHecA6
- izygaxwmaDEIzmRkjFFXY8EKbEtrtP2dzsKi6JPy8Ve0PgZ00daJgeo9Ugx5YQpxGMjOJfh30gG
- Cb/r58KUUZKVa0ujhjTyXzitf0CBPS2omURAxka7Z5Zilhcs5/a15xfc+3/dYTy1oH0vrF0sDwX
- iyiBUvLkOJ51XEsg4TRYNw1NlwjQyoDkVMe4V9ASelqVrhbv7u40=
-X-Developer-Key: i=aidenisik@member.fsf.org; a=openpgp;
- fpr=83CBC5245C6A5CDC935B11A5492701B2C47AD7EB
-X-Endpoint-Received: by B4 Relay for aidenisik@member.fsf.org/default with
- auth_id=956
-X-Original-From: Aiden Isik <aidenisik@member.fsf.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261022_095224_528600_FE961C2D 
+X-CRM114-Status: GOOD (  12.49  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,92 +101,85 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: aidenisik@member.fsf.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,
+	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,
+	FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,
 	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
 	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: Aiden Isik <aidenisik@member.fsf.org>
+In DP-only mode (DisplayPort pin assignments C and E) all four lanes
+belong to the DisplayPort PHY and the USB PCS stays powered down. The
+USB controller can still exit and re-init its PHY in this state, e.g.
+across a system suspend that loses power. qmp_combo_usb_init() then
+programs the USB serdes, lane and PCS tables over the DisplayPort
+configuration and times out waiting for PHYSTATUS, and
+qmp_combo_usb_exit() resets and powers down a PCS that is not in use.
 
-The Exynos5515 USBDRD PHY is a USB PHY which supports USB Super-Speed
-and High-Speed. Add support for High-Speed (UTMI+) operation.
+In DP-only mode only take and drop the common reference, but keep
+counting the USB user, so that qmp_combo_reconfigure_phy() powers the
+USB PCS up when the port leaves DP-only mode.
 
-Signed-off-by: Aiden Isik <aidenisik@member.fsf.org>
+On a Lenovo Y700 Gen 5 (TB323FU, Kaanapali) with a USB-C monitor
+in pin assignment C, resume from s2idle failed with "phy initialization
+timed-out", the dwc3 resume returned -110 and the following xHCI resume
+hung the system.
+
+Fixes: 896277138c13 ("phy: qcom: qmp-combo: register a typec mux to change the QMPPHY_MODE")
+Signed-off-by: Joonhoe Kim <26rote@gmail.com>
 ---
- drivers/phy/samsung/phy-exynos5-usbdrd.c | 43 ++++++++++++++++++++++++++++++++
- 1 file changed, 43 insertions(+)
+Tested on a 7.3-rc4 based tree, where the mux switch itself still drops
+usb_init_count when it enters DP-only mode, so the tested change skipped
+the count as well. This version follows the reworked mux path in
+phy-next and is build-tested only.
 
-diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-index f10cf7b6e0aa..8718e8f01e46 100644
---- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
-+++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-@@ -2075,6 +2075,46 @@ static const struct exynos5_usbdrd_phy_drvdata exynos5433_usbdrd_phy = {
- 	.n_regulators		= ARRAY_SIZE(exynos5_regulator_names),
- };
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 18 +++++++++++-------
+ 1 file changed, 11 insertions(+), 7 deletions(-)
+
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index 187f0cd11f6c..6e3406d519d2 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -4459,10 +4459,12 @@ static int qmp_combo_usb_init(struct phy *phy)
+ 	if (ret)
+ 		return ret;
  
-+static const struct exynos5_usbdrd_phy_tuning exynos5515_tunes_utmi_postinit[] = {
-+	PHY_TUNING_ENTRY_PHY(EXYNOS850_DRD_HSPPARACON,
-+			     (HSPPARACON_TXVREF | HSPPARACON_TXRISE |
-+			      HSPPARACON_TXRES |
-+			      HSPPARACON_TXPREEMPPULSE |
-+			      HSPPARACON_TXPREEMPAMP |
-+			      HSPPARACON_TXHSXV | HSPPARACON_TXFSLS |
-+			      HSPPARACON_SQRX | HSPPARACON_OTG |
-+			      HSPPARACON_COMPDIS),
-+			     (FIELD_PREP_CONST(HSPPARACON_TXVREF, 15) |
-+			      FIELD_PREP_CONST(HSPPARACON_TXRISE, 3) |
-+			      FIELD_PREP_CONST(HSPPARACON_TXRES, 3) |
-+			      FIELD_PREP_CONST(HSPPARACON_TXPREEMPPULSE, 0) |
-+			      FIELD_PREP_CONST(HSPPARACON_TXPREEMPAMP, 3) |
-+			      FIELD_PREP_CONST(HSPPARACON_TXHSXV, 3) |
-+			      FIELD_PREP_CONST(HSPPARACON_TXFSLS, 3) |
-+			      FIELD_PREP_CONST(HSPPARACON_SQRX, 7) |
-+			      FIELD_PREP_CONST(HSPPARACON_OTG, 2) |
-+			      FIELD_PREP_CONST(HSPPARACON_COMPDIS, 7))),
-+	PHY_TUNING_ENTRY_LAST
-+};
-+
-+static const struct exynos5_usbdrd_phy_tuning *exynos5515_tunes[PTS_MAX] = {
-+	[PTS_UTMI_POSTINIT] = exynos5515_tunes_utmi_postinit,
-+};
-+
-+static const struct exynos5_usbdrd_phy_drvdata exynos5515_usbdrd_phy = {
-+	.phy_cfg		= phy_cfg_exynos850,
-+	.n_phy_cfg		= ARRAY_SIZE(phy_cfg_exynos850),
-+	.phy_ops		= &exynos850_usbdrd_phy_ops,
-+	.phy_tunes		= exynos5515_tunes,
-+	.pmu_offset_usbdrd0_phy	= EXYNOS990_PHY_CTRL_USB20,
-+	.clk_names		= exynos5_clk_names,
-+	.n_clks			= ARRAY_SIZE(exynos5_clk_names),
-+	.core_clk_names		= exynos5_core_clk_names,
-+	.n_core_clks		= ARRAY_SIZE(exynos5_core_clk_names),
-+	.regulator_names	= exynos5_regulator_names,
-+	.n_regulators		= ARRAY_SIZE(exynos5_regulator_names),
-+};
-+
- static const struct exynos5_usbdrd_phy_drvdata exynos7_usbdrd_phy = {
- 	.phy_cfg		= phy_cfg_exynos5,
- 	.n_phy_cfg		= ARRAY_SIZE(phy_cfg_exynos5),
-@@ -2936,6 +2976,9 @@ static const struct of_device_id exynos5_usbdrd_phy_of_match[] = {
- 	}, {
- 		.compatible = "samsung,exynos5433-usbdrd-phy",
- 		.data = &exynos5433_usbdrd_phy
-+	}, {
-+		.compatible = "samsung,exynos5515-usbdrd-phy",
-+		.data = &exynos5515_usbdrd_phy
- 	}, {
- 		.compatible = "samsung,exynos7-usbdrd-phy",
- 		.data = &exynos7_usbdrd_phy
+-	ret = qmp_combo_usb_power_on(phy);
+-	if (ret) {
+-		qmp_combo_com_exit(qmp, false);
+-		return ret;
++	if (qmp->qmpphy_mode != QMPPHY_MODE_DP_ONLY) {
++		ret = qmp_combo_usb_power_on(phy);
++		if (ret) {
++			qmp_combo_com_exit(qmp, false);
++			return ret;
++		}
+ 	}
+ 
+ 	qmp->usb_init_count++;
+@@ -4484,9 +4486,11 @@ static int qmp_combo_usb_exit(struct phy *phy)
+ 		return 0;
+ 	}
+ 
+-	ret = qmp_combo_usb_power_off(phy);
+-	if (ret)
+-		return ret;
++	if (qmp->qmpphy_mode != QMPPHY_MODE_DP_ONLY) {
++		ret = qmp_combo_usb_power_off(phy);
++		if (ret)
++			return ret;
++	}
+ 
+ 	ret = qmp_combo_com_exit(qmp, false);
+ 	if (ret)
 
+base-commit: 2efb7a11f1aa4d2dc285fe2680cca22cb9f72f64
 -- 
-2.54.0
-
+2.43.0
 
 
 -- 
