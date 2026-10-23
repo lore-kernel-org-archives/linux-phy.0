@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 17A88606A32E
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2CBEB606A331
 	for <linux-phy@archiver.kernel.org>; Fri, 23 Oct 2026 16:31:37 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=0OhLKneT;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=enVU13qq
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=e/6OKgjA;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=WzPRMhEH
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,36 +14,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=TYHuNXGtz8HH5V5Ers7GvTnmHb5oARw2p6It60zAnRI=; b=0OhLKneTZqmioXTtNvqmxMcn08
-	4UnHEn3p7duvSBjag7RcD5uDTM7Td1uePDN+KPOuahElAiOL+Nj8+mUA2cJmQSu3oDifkdYP7GqEK
-	IXlQydnN0UlyWtAFC9PykQaVyPJ8tjzOsQtLU41zu2u20lkXf1yiZZPrrDJn/1y4B7dCtnfo7j91q
-	/dTBlG6SKB0qOsgj2iC4YRTkSMyFAmY39bMW87i/eOQdBNANOErzRd1c4gqjG8/uyyMt8qAOaIL/9
-	ua+W18gyvZyHkAim6VR5mS/XtXrUsEszdrnucLIjE/CmjqhNhlEn8Os9yvMtpQankEpay9Wkgtw9S
-	MbU3eOmQ==;
+	bh=6xJ3wzy+iLmzWMYq8F3EdMl+ZUYHiqhzxdz1SNxX02E=; b=e/6OKgjAg+M/Y0oL1lkxKMcEto
+	RYSnVJ//DtPcQpjh0J6vUfc9k81rCtuf3xPUEcLBUCLqBOGg+DH/7Dw+7eFtI5I2vsJM36qZmwcnK
+	DrPar1kbjgnP6fkbJ8FRTMh8Z98mCj7x+LcYI5yhPPWGXNmsjnWcp6r42tQE9mnNurZ9qGU0FMI0V
+	GTBpQNsQC8oVRJZNLDGhpV9jzVQKzVW1yLZBxbC8QqhRfGXqRpgzXWFFg+T6F27o4aXB2C7PfjZiK
+	UVKkZs6Orkr2/HJFewCOCmEkLpsqAYi0cVVb8CjSAEsMjuwFh+fA6Gx137n9nVgw0qTm+jRnQrYUN
+	76d72vBQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xKIB6-0000000GfCf-3SjS;
+	id 1xKIB6-0000000GfD0-3kzZ;
 	Fri, 23 Oct 2026 16:31:36 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xKIB0-0000000GfBt-3HwO
+	id 1xKIB5-0000000GfC0-0rsF
 	for linux-phy@lists.infradead.org;
-	Fri, 23 Oct 2026 16:31:34 +0000
+	Fri, 23 Oct 2026 16:31:35 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 8A95D4092A;
+	by sea.source.kernel.org (Postfix) with ESMTP id A7EDE4382D;
+	Fri, 23 Oct 2026 16:31:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DE2A91F01829;
 	Fri, 23 Oct 2026 16:31:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CC1DE1F01825;
-	Fri, 23 Oct 2026 16:31:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1792773090;
-	bh=9OBLysERVKI0mTP1gmUyg2K+fopZDSSLSHMaqGKKL5A=;
+	s=k20260515; t=1792773094;
+	bh=4PgRixtABNqcAoiDj2cnr7AG/pZmEtJOXnWjm9CmQgs=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=enVU13qqaj0s3F5XthfcwP1po2ykbmNy6OWMzuXZP0Dc5WgBcG4pNCKz9V4GS3HNL
-	 ckWBApoPq+vLwPhnkgrZgm5vqAG8ftdkFpDj6DW/UHF6zmz7JFVkIuN7smd9ek8/2T
-	 Gw9BbcpuYeUDxt7zYIz7cJMsoWPz5xwD2vjWaW9Hjx0Lvg3HnQlwrkNybKDBAn1A2C
-	 s+RTazNjdDsrTLJB70tSvqmDWWl+DsIZUJmQEFy3J6pAKl3LZlYnU3l4lhgk0IQ7yc
-	 rtSHKYTUSyD6WNBX2OBQSfRtQtx0vg+jysE3M6ckqEy72TPoomQkGCOGYPv+/uC5U1
-	 K0SZlTOZyaTOw==
+	b=WzPRMhEHQycAdHEP9bcQ2bsUDICn9yKHBEC+0LCGQ9SMzYQv1dO/Hj8v348UMrUaU
+	 qx/4EZDe6TLInklgy30UgS3VvLRXmuCzXr2muE0zQXwsMb5sPlOzV5LZzakf3/eI8H
+	 M9rPupF/KaDkUD5a1ELquUxpVdQc4BC4EIoOlt3i7s0X1KCkC/xmHv2m01X7UdQjaS
+	 QzgbbYLvRcMZ4tFp2rbkfb6Pw2C7oLS0y4ydYDqvbFNf+E13zH2xNhXB9rrxzw4IOg
+	 l1ZRsuZvRXhdJAPw/HrbRn7ykS/27PfEKarjc+DE7kCzPhbgBdO78rcsqTNzna6TZx
+	 BUoZwpmv9+bBQ==
 From: Vladimir Zapolskiy <vz@kernel.org>
 To: Bjorn Andersson <andersson@kernel.org>,
 	Konrad Dybcio <konradybcio@kernel.org>,
@@ -62,9 +62,9 @@ Cc: linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	Conor Dooley <conor+dt@kernel.org>,
 	devicetree@vger.kernel.org
-Subject: [PATCH 2/7] arm64: dts: qcom: sm8450: Add CSI2 PHY device tree nodes
-Date: Fri, 23 Oct 2026 19:30:52 +0300
-Message-ID: <20261023163057.775917-3-vz@kernel.org>
+Subject: [PATCH 3/7] dt-bindings: media: Add description of Qualcomm Waipio CAMSS IP
+Date: Fri, 23 Oct 2026 19:30:53 +0300
+Message-ID: <20261023163057.775917-4-vz@kernel.org>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20261023163057.775917-1-vz@kernel.org>
 References: <20261023163057.775917-1-vz@kernel.org>
@@ -89,312 +89,302 @@ X-Spam-Status: No, score=-17.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Add device tree nodes of six CAMSS CSIPHYs found on Qualcomm Waipio SoC,
-and a shared CSIPHY OPP table for them.
+Add Qualcomm Waipio CAMSS device tree binding description.
+
+The CAMSS IP contains:
+* three CSID and two CSID lite blocks,
+* three VFE and two VFE lite blocks,
+* three CSI test pattern generators,
+
+Six CSIPHY blocks are described as separate CSIPHY devices connected
+to CAMSS input ports.
 
 Signed-off-by: Vladimir Zapolskiy <vz@kernel.org>
 ---
- arch/arm64/boot/dts/qcom/sm8450.dtsi | 280 +++++++++++++++++++++++++++
- 1 file changed, 280 insertions(+)
+ .../bindings/media/qcom,waipio-camss.yaml     | 274 ++++++++++++++++++
+ 1 file changed, 274 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/media/qcom,waipio-camss.yaml
 
-diff --git a/arch/arm64/boot/dts/qcom/sm8450.dtsi b/arch/arm64/boot/dts/qcom/sm8450.dtsi
-index 05417cb5c4e5..babf1a4196a1 100644
---- a/arch/arm64/boot/dts/qcom/sm8450.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sm8450.dtsi
-@@ -564,6 +564,22 @@ cluster_pd: power-domain-cpu-cluster0 {
- 		};
- 	};
- 
-+	csiphy_opp_table: opp-table-csiphy {
-+		compatible = "operating-points-v2";
-+
-+		opp-400000000 {
-+			opp-hz = /bits/ 64 <400000000>;
-+			required-opps = <&rpmhpd_opp_low_svs>,
-+					<&rpmhpd_opp_low_svs>;
-+		};
-+
-+		opp-480000000 {
-+			opp-hz = /bits/ 64 <480000000>;
-+			required-opps = <&rpmhpd_opp_low_svs>,
-+					<&rpmhpd_opp_low_svs>;
-+		};
-+	};
-+
- 	qup_opp_table_100mhz: opp-table-qup {
- 		compatible = "operating-points-v2";
- 
-@@ -3294,6 +3310,270 @@ cci1_i2c1: i2c-bus@1 {
- 			};
- 		};
- 
-+		csiphy0: phy@ace4000 {
-+			compatible = "qcom,waipio-csi2-phy", "qcom,x1e80100-csi2-phy";
-+			reg = <0 0x0ace4000 0 0x2000>;
-+
-+			clocks = <&camcc CAM_CC_CSIPHY0_CLK>,
-+				 <&camcc CAM_CC_CSI0PHYTIMER_CLK>,
-+				 <&camcc CAM_CC_CORE_AHB_CLK>;
-+			clock-names = "core",
-+				      "timer",
-+				      "ahb";
-+
-+			interrupts = <GIC_SPI 477 IRQ_TYPE_EDGE_RISING>;
-+
-+			power-domains = <&camcc TITAN_TOP_GDSC>,
-+					<&rpmhpd RPMHPD_MMCX>,
-+					<&rpmhpd RPMHPD_MXC>;
-+			power-domain-names = "top",
-+					     "mmcx",
-+					     "mx";
-+
-+			operating-points-v2 = <&csiphy_opp_table>;
-+
-+			status = "disabled";
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+
-+					csiphy0_in_ep: endpoint {
-+					};
-+				};
-+
-+				port@1 {
-+					reg = <1>;
-+
-+					csiphy0_out_ep: endpoint {
-+					};
-+				};
-+			};
-+		};
-+
-+		csiphy1: phy@ace6000 {
-+			compatible = "qcom,waipio-csi2-phy", "qcom,x1e80100-csi2-phy";
-+			reg = <0 0x0ace6000 0 0x2000>;
-+
-+			clocks = <&camcc CAM_CC_CSIPHY1_CLK>,
-+				 <&camcc CAM_CC_CSI1PHYTIMER_CLK>,
-+				 <&camcc CAM_CC_CORE_AHB_CLK>;
-+			clock-names = "core",
-+				      "timer",
-+				      "ahb";
-+
-+			interrupts = <GIC_SPI 478 IRQ_TYPE_EDGE_RISING>;
-+
-+			power-domains = <&camcc TITAN_TOP_GDSC>,
-+					<&rpmhpd RPMHPD_MMCX>,
-+					<&rpmhpd RPMHPD_MXC>;
-+			power-domain-names = "top",
-+					     "mmcx",
-+					     "mx";
-+
-+			operating-points-v2 = <&csiphy_opp_table>;
-+
-+			status = "disabled";
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+
-+					csiphy1_in_ep: endpoint {
-+					};
-+				};
-+
-+				port@1 {
-+					reg = <1>;
-+
-+					csiphy1_out_ep: endpoint {
-+					};
-+				};
-+			};
-+		};
-+
-+		csiphy2: phy@ace8000 {
-+			compatible = "qcom,waipio-csi2-phy", "qcom,x1e80100-csi2-phy";
-+			reg = <0 0x0ace8000 0 0x2000>;
-+
-+			clocks = <&camcc CAM_CC_CSIPHY2_CLK>,
-+				 <&camcc CAM_CC_CSI2PHYTIMER_CLK>,
-+				 <&camcc CAM_CC_CORE_AHB_CLK>;
-+			clock-names = "core",
-+				      "timer",
-+				      "ahb";
-+
-+			interrupts = <GIC_SPI 479 IRQ_TYPE_EDGE_RISING>;
-+
-+			power-domains = <&camcc TITAN_TOP_GDSC>,
-+					<&rpmhpd RPMHPD_MMCX>,
-+					<&rpmhpd RPMHPD_MXC>;
-+			power-domain-names = "top",
-+					     "mmcx",
-+					     "mx";
-+
-+			operating-points-v2 = <&csiphy_opp_table>;
-+
-+			status = "disabled";
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+
-+					csiphy2_in_ep: endpoint {
-+					};
-+				};
-+
-+				port@1 {
-+					reg = <1>;
-+
-+					csiphy2_out_ep: endpoint {
-+					};
-+				};
-+			};
-+		};
-+
-+		csiphy3: phy@acea000 {
-+			compatible = "qcom,waipio-csi2-phy", "qcom,x1e80100-csi2-phy";
-+			reg = <0 0x0acea000 0 0x2000>;
-+
-+			clocks = <&camcc CAM_CC_CSIPHY3_CLK>,
-+				 <&camcc CAM_CC_CSI3PHYTIMER_CLK>,
-+				 <&camcc CAM_CC_CORE_AHB_CLK>;
-+			clock-names = "core",
-+				      "timer",
-+				      "ahb";
-+
-+			interrupts = <GIC_SPI 448 IRQ_TYPE_EDGE_RISING>;
-+
-+			power-domains = <&camcc TITAN_TOP_GDSC>,
-+					<&rpmhpd RPMHPD_MMCX>,
-+					<&rpmhpd RPMHPD_MXC>;
-+			power-domain-names = "top",
-+					     "mmcx",
-+					     "mx";
-+
-+			operating-points-v2 = <&csiphy_opp_table>;
-+
-+			status = "disabled";
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+
-+					csiphy3_in_ep: endpoint {
-+					};
-+				};
-+
-+				port@1 {
-+					reg = <1>;
-+
-+					csiphy3_out_ep: endpoint {
-+					};
-+				};
-+			};
-+		};
-+
-+		csiphy4: phy@acec000 {
-+			compatible = "qcom,waipio-csi2-phy", "qcom,x1e80100-csi2-phy";
-+			reg = <0 0x0acec000 0 0x2000>;
-+
-+			clocks = <&camcc CAM_CC_CSIPHY4_CLK>,
-+				 <&camcc CAM_CC_CSI4PHYTIMER_CLK>,
-+				 <&camcc CAM_CC_CORE_AHB_CLK>;
-+			clock-names = "core",
-+				      "timer",
-+				      "ahb";
-+
-+			interrupts = <GIC_SPI 122 IRQ_TYPE_EDGE_RISING>;
-+
-+			power-domains = <&camcc TITAN_TOP_GDSC>,
-+					<&rpmhpd RPMHPD_MMCX>,
-+					<&rpmhpd RPMHPD_MXC>;
-+			power-domain-names = "top",
-+					     "mmcx",
-+					     "mx";
-+
-+			operating-points-v2 = <&csiphy_opp_table>;
-+
-+			status = "disabled";
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+
-+					csiphy4_in_ep: endpoint {
-+					};
-+				};
-+
-+				port@1 {
-+					reg = <1>;
-+
-+					csiphy4_out_ep: endpoint {
-+					};
-+				};
-+			};
-+		};
-+
-+		csiphy5: phy@acee000 {
-+			compatible = "qcom,waipio-csi2-phy", "qcom,x1e80100-csi2-phy";
-+			reg = <0 0x0acee000 0 0x2000>;
-+
-+			clocks = <&camcc CAM_CC_CSIPHY5_CLK>,
-+				 <&camcc CAM_CC_CSI5PHYTIMER_CLK>,
-+				 <&camcc CAM_CC_CORE_AHB_CLK>;
-+			clock-names = "core",
-+				      "timer",
-+				      "ahb";
-+
-+			interrupts = <GIC_SPI 89 IRQ_TYPE_EDGE_RISING>;
-+
-+			power-domains = <&camcc TITAN_TOP_GDSC>,
-+					<&rpmhpd RPMHPD_MMCX>,
-+					<&rpmhpd RPMHPD_MXC>;
-+			power-domain-names = "top",
-+					     "mmcx",
-+					     "mx";
-+
-+			operating-points-v2 = <&csiphy_opp_table>;
-+
-+			status = "disabled";
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+
-+					csiphy5_in_ep: endpoint {
-+					};
-+				};
-+
-+				port@1 {
-+					reg = <1>;
-+
-+					csiphy5_out_ep: endpoint {
-+					};
-+				};
-+			};
-+		};
-+
- 		camcc: clock-controller@ade0000 {
- 			compatible = "qcom,sm8450-camcc";
- 			reg = <0 0x0ade0000 0 0x20000>;
+diff --git a/Documentation/devicetree/bindings/media/qcom,waipio-camss.yaml b/Documentation/devicetree/bindings/media/qcom,waipio-camss.yaml
+new file mode 100644
+index 000000000000..3da1f3c0d618
+--- /dev/null
++++ b/Documentation/devicetree/bindings/media/qcom,waipio-camss.yaml
+@@ -0,0 +1,274 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/media/qcom,waipio-camss.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Qualcomm Waipio Camera Subsystem (CAMSS)
++
++maintainers:
++  - Vladimir Zapolskiy <vz@kernel.org>
++
++description:
++  The CAMSS IP is a CSI decoder and ISP present on Qualcomm platforms.
++
++properties:
++  compatible:
++    const: qcom,waipio-camss
++
++  reg:
++    maxItems: 14
++
++  reg-names:
++    items:
++      - const: csid_wrapper
++      - const: csid0
++      - const: csid1
++      - const: csid2
++      - const: csid_lite0
++      - const: csid_lite1
++      - const: tpg0
++      - const: tpg1
++      - const: tpg2
++      - const: vfe0
++      - const: vfe1
++      - const: vfe2
++      - const: vfe_lite0
++      - const: vfe_lite1
++
++  clocks:
++    maxItems: 21
++
++  clock-names:
++    items:
++      - const: camnoc_axi
++      - const: core_ahb
++      - const: cpas_ahb
++      - const: cpas_fast_ahb
++      - const: cpas_vfe0
++      - const: cpas_vfe1
++      - const: cpas_vfe2
++      - const: cpas_vfe_lite
++      - const: csid
++      - const: csiphy_rx
++      - const: gcc_hf_axi
++      - const: vfe0
++      - const: vfe0_fast_ahb
++      - const: vfe1
++      - const: vfe1_fast_ahb
++      - const: vfe2
++      - const: vfe2_fast_ahb
++      - const: vfe_lite
++      - const: vfe_lite_ahb
++      - const: vfe_lite_cphy_rx
++      - const: vfe_lite_csid
++
++  interrupts:
++    maxItems: 10
++
++  interrupt-names:
++    items:
++      - const: csid0
++      - const: csid1
++      - const: csid2
++      - const: csid_lite0
++      - const: csid_lite1
++      - const: vfe0
++      - const: vfe1
++      - const: vfe2
++      - const: vfe_lite0
++      - const: vfe_lite1
++
++  iommus:
++    items:
++      - description: S1 HLOS IFE and IFE_LITE non-protected
++
++  interconnects:
++    maxItems: 2
++
++  interconnect-names:
++    items:
++      - const: ahb
++      - const: hf_mnoc
++
++  power-domains:
++    items:
++      - description: IFE0 GDSC - Image Front End, Global Distributed Switch Controller.
++      - description: IFE1 GDSC - Image Front End, Global Distributed Switch Controller.
++      - description: IFE2 GDSC - Image Front End, Global Distributed Switch Controller.
++      - description: Titan GDSC - Titan ISP Block, Global Distributed Switch Controller.
++
++  power-domain-names:
++    items:
++      - const: ife0
++      - const: ife1
++      - const: ife2
++      - const: top
++
++  ports:
++    $ref: /schemas/graph.yaml#/properties/ports
++
++    description:
++      CSI input ports.
++
++    patternProperties:
++      "^port@[0-5]$":
++        $ref: /schemas/graph.yaml#/$defs/port-base
++        unevaluatedProperties: false
++
++        description:
++          Input port for receiving CSI data from a CSIPHY device.
++
++        properties:
++          endpoint:
++            $ref: video-interfaces.yaml#
++            unevaluatedProperties: false
++
++            properties:
++              data-lanes:
++                minItems: 1
++                maxItems: 4
++
++required:
++  - compatible
++  - reg
++  - reg-names
++  - clocks
++  - clock-names
++  - interconnects
++  - interconnect-names
++  - interrupts
++  - interrupt-names
++  - iommus
++  - power-domains
++  - power-domain-names
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/qcom,gcc-sm8450.h>
++    #include <dt-bindings/clock/qcom,sm8450-camcc.h>
++    #include <dt-bindings/interconnect/qcom,sm8450.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++
++    soc {
++        #address-cells = <2>;
++        #size-cells = <2>;
++
++        isp@acb6000 {
++            compatible = "qcom,waipio-camss";
++            reg = <0 0xacb6000 0 0x1000>,
++                  <0 0xacb7000 0 0x1000>,
++                  <0 0xacb9000 0 0x1000>,
++                  <0 0xacbb000 0 0x1000>,
++                  <0 0xacc6000 0 0x1000>,
++                  <0 0xacca000 0 0x1000>,
++                  <0 0xacf6000 0 0x1000>,
++                  <0 0xacf7000 0 0x1000>,
++                  <0 0xacf8000 0 0x1000>,
++                  <0 0xac62000 0 0x3000>,
++                  <0 0xac71000 0 0x3000>,
++                  <0 0xac80000 0 0x3000>,
++                  <0 0xacc7000 0 0x2000>,
++                  <0 0xaccb000 0 0x2000>;
++            reg-names = "csid_wrapper",
++                        "csid0",
++                        "csid1",
++                        "csid2",
++                        "csid_lite0",
++                        "csid_lite1",
++                        "tpg0",
++                        "tpg1",
++                        "tpg2",
++                        "vfe0",
++                        "vfe1",
++                        "vfe2",
++                        "vfe_lite0",
++                        "vfe_lite1";
++            clocks = <&camcc CAM_CC_CAMNOC_AXI_CLK>,
++                     <&camcc CAM_CC_CORE_AHB_CLK>,
++                     <&camcc CAM_CC_CPAS_AHB_CLK>,
++                     <&camcc CAM_CC_CPAS_FAST_AHB_CLK>,
++                     <&camcc CAM_CC_CPAS_IFE_0_CLK>,
++                     <&camcc CAM_CC_CPAS_IFE_1_CLK>,
++                     <&camcc CAM_CC_CPAS_IFE_2_CLK>,
++                     <&camcc CAM_CC_CPAS_IFE_LITE_CLK>,
++                     <&camcc CAM_CC_CSID_CLK>,
++                     <&camcc CAM_CC_CSID_CSIPHY_RX_CLK>,
++                     <&gcc GCC_CAMERA_HF_AXI_CLK>,
++                     <&camcc CAM_CC_IFE_0_CLK>,
++                     <&camcc CAM_CC_IFE_0_FAST_AHB_CLK>,
++                     <&camcc CAM_CC_IFE_1_CLK>,
++                     <&camcc CAM_CC_IFE_1_FAST_AHB_CLK>,
++                     <&camcc CAM_CC_IFE_2_CLK>,
++                     <&camcc CAM_CC_IFE_2_FAST_AHB_CLK>,
++                     <&camcc CAM_CC_IFE_LITE_CLK>,
++                     <&camcc CAM_CC_IFE_LITE_AHB_CLK>,
++                     <&camcc CAM_CC_IFE_LITE_CPHY_RX_CLK>,
++                     <&camcc CAM_CC_IFE_LITE_CSID_CLK>;
++            clock-names = "camnoc_axi",
++                          "core_ahb",
++                          "cpas_ahb",
++                          "cpas_fast_ahb",
++                          "cpas_vfe0",
++                          "cpas_vfe1",
++                          "cpas_vfe2",
++                          "cpas_vfe_lite",
++                          "csid",
++                          "csiphy_rx",
++                          "gcc_hf_axi",
++                          "vfe0",
++                          "vfe0_fast_ahb",
++                          "vfe1",
++                          "vfe1_fast_ahb",
++                          "vfe2",
++                          "vfe2_fast_ahb",
++                          "vfe_lite",
++                          "vfe_lite_ahb",
++                          "vfe_lite_cphy_rx",
++                          "vfe_lite_csid";
++            interrupts = <GIC_SPI 464 IRQ_TYPE_EDGE_RISING>,
++                         <GIC_SPI 466 IRQ_TYPE_EDGE_RISING>,
++                         <GIC_SPI 640 IRQ_TYPE_EDGE_RISING>,
++                         <GIC_SPI 468 IRQ_TYPE_EDGE_RISING>,
++                         <GIC_SPI 359 IRQ_TYPE_EDGE_RISING>,
++                         <GIC_SPI 465 IRQ_TYPE_EDGE_RISING>,
++                         <GIC_SPI 467 IRQ_TYPE_EDGE_RISING>,
++                         <GIC_SPI 641 IRQ_TYPE_EDGE_RISING>,
++                         <GIC_SPI 469 IRQ_TYPE_EDGE_RISING>,
++                         <GIC_SPI 360 IRQ_TYPE_EDGE_RISING>;
++            interrupt-names = "csid0",
++                              "csid1",
++                              "csid2",
++                              "csid_lite0",
++                              "csid_lite1",
++                              "vfe0",
++                              "vfe1",
++                              "vfe2",
++                              "vfe_lite0",
++                              "vfe_lite1";
++            interconnects = <&gem_noc MASTER_APPSS_PROC 0 &config_noc SLAVE_CAMERA_CFG 0>,
++                            <&mmss_noc MASTER_CAMNOC_HF 0 &mc_virt SLAVE_EBI1 0>;
++            interconnect-names = "ahb", "hf_mnoc";
++            iommus = <&apps_smmu 0x800 0x460>;
++            power-domains = <&camcc IFE_0_GDSC>,
++                            <&camcc IFE_1_GDSC>,
++                            <&camcc IFE_2_GDSC>,
++                            <&camcc TITAN_TOP_GDSC>;
++            power-domain-names = "ife0", "ife1", "ife2", "top";
++
++            ports {
++                #address-cells = <1>;
++                #size-cells = <0>;
++
++                port@1 {
++                    reg = <1>;
++
++                    camss_csiphy1_ep: endpoint {
++                        remote-endpoint = <&csiphy1_out>;
++                    };
++                };
++            };
++        };
++    };
 -- 
 2.53.0
 
