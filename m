@@ -2,162 +2,107 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 40B7F606A31A
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Oct 2026 11:56:02 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 56962606A32A
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Oct 2026 12:34:05 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=W3+Ou+7q;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=cJKj8NvR;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=KOyaewCO
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=skAtdGI+;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=fairphone.com header.i=@fairphone.com header.a=rsa-sha256 header.s=fair header.b=0lqdxG9T
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=LPK87Z/nC+Oc+1Mdq5vkQrKd+dJzk7Opnm6AaXoN0pw=; b=W3+Ou+7qrfUGYJkb6OF8nYAKLN
-	wzTRE0whDVxuAposdh9gpKJUCak+liLbmNXGoy4QQeSYnvEcQXhg5jMmO5M3YJ7YVKgll2XMWRgtG
-	ACcReiomzCIEyu8sfYB/khPW7V4nStUI85buafDrTyNLbBu+A6RR2VlBuZGsbSC73dkj8/IC8wGKI
-	A73wFC8utBnmYT6VcKSKOV9V9ud8lT5lASEq5S2YchHeTcfHs05IQSwgJ9+FY6fC1jy6NncLbVXP3
-	vn2G3iVnGnGDzHVxwL9uqwUVYtgVwx+E7pY1/Gd+gwfmbL9Y0SXFut8nxePVBlrOXjukV6yTz36cB
-	r9qZsslQ==;
+	bh=zArohSJtzHABXn9NsFFEJtxWF6mHOD7QVEUNjlEEr+I=; b=skAtdGI+7b8I7P1U71+BdaIFSA
+	3eCEcbfdjTN3SkdHgp0+adO4OMiY+sb9m9/tlEetMhc76alOMtcVU3LXR5OXe92wg4+lugfxC2psx
+	bnf+ZSt8bpMluQEW6l24/CqnRmTrdeOtQozGwwgg0S/RONeqnjjxFmsoSrq6prBYNNs/1CEsba2iB
+	DMLl3NBPotgMwMEvkhGBwqkxTZSTTUvzWPGKyPix8WYKygqRRKXA1XyEgBUKUYj3I9MUBvE9HqXYS
+	fyBXFhaxeuL0GnNstxbh4EYO2p62eExToyxNkZvRqN79nQnlbVeQ28J9RXB2WZJeaMv4qxWSlF6sc
+	IzWcN8Yg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xKDsP-0000000GG2W-3QiC;
-	Fri, 23 Oct 2026 11:56:01 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1xKETE-0000000GIap-3QhP;
+	Fri, 23 Oct 2026 12:34:04 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xKDsL-0000000GG1x-0ffW
+	id 1xKETC-0000000GIaM-2BRO
 	for linux-phy@lists.infradead.org;
-	Fri, 23 Oct 2026 11:55:59 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69NAAYFW1948474
-	for <linux-phy@lists.infradead.org>; Fri, 23 Oct 2026 11:55:56 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	0lfjro51D7Qg6x2xly6IGeYnaVRKofx4mi+Gn179GOg=; b=cJKj8NvR2w+BX3vH
-	+aQ4/rwe4iSgxxjXPyYptap1oi8ylQ+JWRjwFhCH4f9p/5hzCx84yZ5T8WByfr3e
-	hQWOMHlXMxxAseNvApfRTki+4bd4EJdrAj3jXjQb8sQORdUov5EK7MjlkLWbTgwa
-	QpiMarlh6BIUdOu0PEYscJ/j8oJSVXisuCa6qiy/kCYiGrbopZOO9f2Ms4l6NUYy
-	TdsMKwQ+jb1mQHAsXNaTaIf7HMdv/DJqAaDoSWJ/RXOdbFCS86TyZo9VyVQKVWtH
-	GPkL1L2LjaALQUBqeNw8dNZs6aE8f3UFbku/7kyiyq6P+IUCizodMfx4ZjYACj4h
-	s3YbHA==
-Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com [209.85.222.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hfqmtuhx9-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 23 Oct 2026 11:55:56 +0000 (GMT)
-Received: by mail-qk1-f200.google.com with SMTP id af79cd13be357-93cac495d99so15478685a.2
-        for <linux-phy@lists.infradead.org>; Fri, 23 Oct 2026 04:55:56 -0700 (PDT)
+	Fri, 23 Oct 2026 12:34:04 +0000
+Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-487049569b6so474997f8f.1
+        for <linux-phy@lists.infradead.org>; Fri, 23 Oct 2026 05:34:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1792756555; x=1793361355; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=0lfjro51D7Qg6x2xly6IGeYnaVRKofx4mi+Gn179GOg=;
-        b=KOyaewCOC+VmrUUk8ZVNXFGlY2wtsVZsTu/41CypN1PZ+b3sPFQ+C3FUOBnuRScCbN
-         C2nnVT1VMPqYD2XieyTC0ACGUAjzmqRXMpQk+SMDsJYDVxvIOvsSVPP1Pwdc9YSi4uIl
-         CdxiNEem9YW1zGxvzSflyp5M7qgXAtLKAZ2Htz8hg5A5AGFlYJWTU6N4f+dLv8zadw9A
-         L3S5WwyP9TQ7BOXuhzcbp8eSI4VFxiDJ3C6yT13aLrJPcM6zv6qienqRnrWQnJSmoOYG
-         VYGSBEoWbk1w1dUmsho2BDaN0lttGM8hN3Rq3lf1ZQt8ciR1VYlGu1Oc/Hh4OL+zDRf9
-         13jg==
+        d=fairphone.com; s=fair; t=1792758839; x=1793363639; darn=lists.infradead.org;
+        h=cc:to:message-id:content-transfer-encoding:content-type
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=0rnI9vadXsYD8rBdMbbzshOtJjoEuCkdwfFl2dhThMg=;
+        b=0lqdxG9TjIa4DWhtbdPs1NkeWV8Cqh/p4c4+5peVVwEGJKQ2pDdUX0riiCCsGoRhWF
+         /vf6UWSTbrcSixJzIlUNXwKTqG+z+N5cfHoKM0HtzM1/cxxhHQ+Ilp5Fgj7H9Im42k7F
+         L7d5fwG8DZkqgqzsaMFTN0Z3F/AzFIuZTsKruVR5Z7UhJ2Neq6PNHAz9tN9v6f6zL5Z+
+         GgEhlXW7oyWhAExI5Kd4AQglsrSLiqJLpBDlr8Ayp+bCFsLMXF6jXcNIqvhZP0l92Hsk
+         8SgybZt3hCgwlEMKKexA4b5QP5UbKm6YY5U05upRfOwEfdQswP7ZlVnAQR2oeV38Rhyj
+         2x4w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1792756555; x=1793361355;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=0lfjro51D7Qg6x2xly6IGeYnaVRKofx4mi+Gn179GOg=;
-        b=0nIkvFokO/7mqfa+G7rhKr5tZagqJ6i4Ye5y0ygRohHs78otYHz/rr1vg2l1ngHL4R
-         9dn9EFgVlX7FYLuC5ydnxcX5SDbCYI6q9LrZ1xeyxpON39KQJUi+YDYY5hMp4qciLNUl
-         2dwmDjh4wf+iWRsPbXga4RZ1IwjdcuMfObOw8eeEEmrR5P0jOAbuy2bMoPr2m+nL5UAo
-         AxkdAVuR5kdEB/JsINs1CmfQLWANQ7pOgNPeAhF2O9RP+Xhq5UgJfnegi+/nvLjHDpSV
-         VytkhAb0oeZCBXkWUnye+G1m/VTq2125S96TCmBdaIBNF4PwJzpsQ0MRl8MJDLfdrb1T
-         qRug==
-X-Forwarded-Encrypted: i=1; AKwUvBxCXYpW/BqGLhJOzVa0fwHIRao++ZUZfippoQRiKRrPSu17Auua+q7VpnUbobcFHwim/wtjCku8CLs=@lists.infradead.org
-X-Gm-Message-State: AFq9FYIgMqDTulnDiGTTncGj3SGGbAMkyMqTTQ3xM8HJUHpF6dlM1770
-	6o3rNtNHAeSQ1N7j2if3RXnUacyvwLtqOdCSPJGmN75gLvQEzRpMK/MSS7Zd4Cfs6j0UeozJCUZ
-	mUG8E9DKTgIUjweIfapJXFwqyv2zDAxxtL2aIJaOiX8dahH1+iotpYJrRMpKegXc6TLeuOmp1rB
-	IK
-X-Gm-Gg: AYBFou3F1fASnnGsIpaWbxpIgX62xnosvsY4J51tH/Bmt/ezp3c51vFwpyburZLrePJ
-	6lQY3W9I7bNXkmTkSxVkW0s7m1pNooaYw8GHkIyzUJjbEIr38taHIXIZJhkBAIlciHwhRMVA3pp
-	tBEu65yLek0nXQWASMOK6lblB+hh3X+njXxsEMqfyDNE1/LMNNMCdxl+2PvtPIR2NvariJ2X0yC
-	tJ8ROdk//Ya229QiRv1+MpaKsj9daHQYVZwgGKmv+eRBPqFQvBmDy/UFFVCALsviGYqzQ5yEEQO
-	UyQ2OfUu8orsuA2EbifZrH6M6Bz9gjB+wAYDce88r4fML9JUQLbVCk3JkDv2TZhQf/ozH/J5PWP
-	2Li+qwu3tEBA3roY6TaQuuA==
-X-Received: by 2002:a05:620a:a8ca:10b0:93e:5a3f:ac13 with SMTP id af79cd13be357-93f6f54812fmr372792185a.0.1792756555413;
-        Fri, 23 Oct 2026 04:55:55 -0700 (PDT)
-X-Received: by 2002:a05:620a:a8ca:10b0:93e:5a3f:ac13 with SMTP id af79cd13be357-93f6f54812fmr372786685a.0.1792756554732;
-        Fri, 23 Oct 2026 04:55:54 -0700 (PDT)
-Received: from [192.168.226.26] ([178.235.128.140])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c46a5c4d67bsm95403966b.14.2026.10.23.04.55.50
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 23 Oct 2026 04:55:53 -0700 (PDT)
-Message-ID: <feb43c1a-9f1b-4181-b663-eab9e55e4831@oss.qualcomm.com>
-Date: Fri, 23 Oct 2026 13:55:49 +0200
+        d=1e100.net; s=20260707; t=1792758839; x=1793363639;
+        h=cc:to:message-id:content-transfer-encoding:content-type
+         :mime-version:subject:date:from:x-gm-gg:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to:content-type;
+        bh=0rnI9vadXsYD8rBdMbbzshOtJjoEuCkdwfFl2dhThMg=;
+        b=HhZrJZJptRbsJlAx+EGvsGG1pMlZbRb0hcKgsUfNJHOoD79BxPz4JdzrMYXAXcmqab
+         xQQH2HnaeSzousqw+sA1yEjeiWLVKgywc8ObYUi/CymQ5f8ud+SGt8JWxdw2Xv9cHtbF
+         9laP51HM86/Yjah8ABiir7++X4Gopzmjxx3f7qy4h3YTIoW8vgfacyuPVha1Zr7sFnzH
+         4Ymek65x6kBdD4qUinX6D9VknfUIt0gwqW88GdcRu9Ht3jrQjE2m/0KiDb42Uksp9Hwu
+         nwqEJFVX3bcy2RsYZzSL9gXCF5pz6ZSXkjm7eGsSmkTAmxQDdaSXy4jnI81Hq5PkeWIV
+         ajxA==
+X-Forwarded-Encrypted: i=1; AKwUvBw/3IevbqIkGbeZ9IQkZ0vuDy0NT4OL2hkEw+d0ak8G/yygqIdDx7YN0LyJtIJTUL8BfmIwgCqQh0M=@lists.infradead.org
+X-Gm-Message-State: AFq9FYIQAdDdheNVMc3KPRi9sXPZkMwZQoxo63I8XkRRXd0M+Xr0ZEOn
+	WO8DyekaNFyOn9hk0qV1+nMBG6imKqOjiXeb3xGCcLSJVBc97mQmVS/O7pz0uD3ubE8=
+X-Gm-Gg: AYBFou2ZKxg5czVCrdSL4smr4rlzMW10E/fho7k7LfKUOUS33Y33bmRn2Kv4yxsAMU/
+	/0FEdBVIXIZc5NmA+SIhdWhogxD6FvqXbP2WGwerC2Doz1+Fq5kaNOMtjhiw7jv5IZwOnDCf6uN
+	BBsCTfQoWQS1GeeL2GzQFDIToZ5l+uQOtsgil3g+aIU52proiEmq/NYYCfFbBnV2hglaaGnYxg/
+	V6PuZ4fnGOTNQDarZMNy4mVe9C/+yVNj5sLMEoox7dB6vxUOyCPeBUWv9PdYUZMLNFvfg8/vQ6y
+	25Egc13+K8nCuK5Zo5dnTGrOu4E/sk4G4FA54jvI5K790zjIqXO5loH3xkE8o9uzoj3ZqlYu7TE
+	w2rrg27PebyaxwztkOYhFPTKvBiP4BEmjINrVS7OacksZCms0qjmWfNO8H+M68AyAFNfyZS1QiL
+	iKSeqwHHc3tgyBnte/0xMOmUu0y445SMdRVzDOSjLAymCdEDx7PZWQ3lopHRfEw+TcLZ0ZENqjF
+	uWKSDm4vkgIGIlr+vGIsZYCph2onzVE+2KTyCTsRwuS7Mqxn6EfNVEM4EY2U6ec4Bw=
+X-Received: by 2002:a05:6000:4288:b0:48d:cda6:4dd7 with SMTP id ffacd0b85a97d-48e385b4621mr3251773f8f.44.1792758839526;
+        Fri, 23 Oct 2026 05:33:59 -0700 (PDT)
+Received: from [10.221.242.139] ([93.123.20.211])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48e37edd26dsm5554766f8f.2.2026.10.23.05.33.54
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 23 Oct 2026 05:33:58 -0700 (PDT)
+From: Luca Weiss <luca.weiss@fairphone.com>
+Date: Fri, 23 Oct 2026 18:01:55 +0530
+Subject: [PATCH RFC] phy: qcom: snps-femto-v2: clear charger-detection
+ state on entry to host mode
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 3/5] arm64: dts: qcom: glymur: Add UFS nodes
-To: Pradeep P V K <pradeep.pragallapati@oss.qualcomm.com>,
-        Vinod Koul <vkoul@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
- <conor+dt@kernel.org>,
-        Alim Akhtar <alim.akhtar@samsung.com>,
-        Avri Altman <avri.altman@sandisk.com>,
-        Bart Van Assche <bvanassche@acm.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-        gopikrishna.garmidi@oss.qualcomm.com, jagadeesh.kona@oss.qualcomm.com,
-        Abel Vesa <abel.vesa@oss.qualcomm.com>,
-        Abel Vesa <abelvesa@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-scsi@vger.kernel.org, nitin.rawat@oss.qualcomm.com,
-        sibi.sankar@oss.qualcomm.com, Taniya Das <taniya.das@oss.qualcomm.com>
-References: <20261009-glymur_ufs_qcb_enablement-v4-0-9a6ce83195b7@oss.qualcomm.com>
- <20261009-glymur_ufs_qcb_enablement-v4-3-9a6ce83195b7@oss.qualcomm.com>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20261009-glymur_ufs_qcb_enablement-v4-3-9a6ce83195b7@oss.qualcomm.com>
-X-Authority-Analysis: v=2.4 cv=Gt3XaU1C c=1 sm=1 tr=0 ts=6adb4b4c cx=c_pps
- a=hnmNkyzTK/kJ09Xio7VxxA==:117 a=PRfkaYvzSr8QmIIGAkY2Sg==:17
- a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
- a=EUspDBNiAAAA:8 a=BBNwevgwxSeHGHzN-EcA:9 a=QEXdDO2ut3YA:10
- a=PEH46H7Ffwr30OY-TuGO:22
-X-Proofpoint-GUID: OzxA0AegcjfvtKVlIBsZah4bHOS7ptIJ
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDIzMDA0NiBTYWx0ZWRfX2B4R3V/coobZ
- o7eq3UkaV6uZJFDE1q/Gfv+iPikcW1IXAYXJdx+spgR36j4GkXdlD6KQDc5pwU6kbFjV4ZNPmK2
- qawUU+0iV3pTQDzb8fJ798w+zl4ITGiaUkOrg3VCuGuE4v74gzTtyBrW0f0cWQYVBJBy7T3UVey
- ch68365pS6NQ2OkiznPGPBrXJIRtibM/4yEd2zt2tCzhydDk/EiMLu/7dlXGkj0+oFkGObnLUYn
- OUu5o/k4TTaHODC1VYGnxUJES9CG8AEvPJVllYzaVycKAiBqkJpgVW1iMCqJomObl2RijrU9wj5
- V87cMusMIGag7olHYiBymHPz2LaOYnv31ultXPAQHllVi4pYRpWKWMBS2CM+IBGNpZdsHIJ5UUk
- +Hd6agOJMGYXiIXMbSgHbE/cpph6zUEdLr/7dXmzpsjkLQcc2YDfJYcieNu9vdoDo4AwK6J7gFW
- H5Pfd85XZdAF1+5LpMg==
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDIzMDA0NiBTYWx0ZWRfX3/316pt4e8cN
- 7fSZrGdhF0xzxGQAD4ao0KZF/2luRruBQfFq9w1JBBEvj4D51Zbfx5/32TH7ZJ87wxe9txGZCHh
- qDRbxQr5OFg2oVZzvMB6eOHEHL02bos=
-X-Proofpoint-ORIG-GUID: OzxA0AegcjfvtKVlIBsZah4bHOS7ptIJ
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
- definitions=2026-10-23_03,2026-10-21_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 spamscore=0 suspectscore=0 malwarescore=0 adultscore=0
- clxscore=1015 priorityscore=1501 impostorscore=0 phishscore=0
- lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2610190000
- definitions=main-2610230046
+Message-Id: <20261023-phy-qcom-snps-femto-v2-host-v1-1-77cf6a5177cd@fairphone.com>
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/yXMQQrCMBBA0auUWTvQjhLUreAB3IqLmE7NCE1iJ
+ hal9O5GXf6/eDMoZ2GFfTND5klUYqjRrRpw3oYbo/S1gVoyXUtrTP6NDxdH1JAUBx5LxInQRy2
+ 4cz1treGNMRaqkDIP8vrpZzgdD3D5T31e7+zK14Vl+QAvmyLfhAAAAA==
+X-Change-ID: 20261023-phy-qcom-snps-femto-v2-host-9cd28a6e466a
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ Elson Serrao <elson.serrao@oss.qualcomm.com>, 
+ Konrad Dybcio <konradybcio@kernel.org>
+Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org, 
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, Luca Weiss <luca.weiss@fairphone.com>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1792758833; l=4680;
+ i=luca.weiss@fairphone.com; s=20250611; h=from:subject:message-id;
+ bh=c//aO+uFRscbScqkNAvaaqbbKqzdZoy9nP9LH9BBuUw=;
+ b=277h+fYW2NZCq8zkRo74BKyfkAOx+NVESfzGX0KBZvoRuS2vkofYvCJnTaYvxZi3/dHOkgswY
+ Y04w1TMcjHWAe7UVqbc4p+2OsP/gemCutXE9HhiaPolYK099c3tFaUw
+X-Developer-Key: i=luca.weiss@fairphone.com; a=ed25519;
+ pk=O1aw+AAust5lEmgrNJ1Bs7PTY0fEsJm+mdkjExA69q8=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261023_045558_641614_8B60D502 
-X-CRM114-Status: UNSURE (   9.11  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.8 (--)
+X-CRM114-CacheID: sfid-20261023_053402_639033_6CFA936F 
+X-CRM114-Status: GOOD (  19.70  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -170,37 +115,123 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-10.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-17.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 10/9/26 12:35 PM, Pradeep P V K wrote:
-> Add UFS PHY and UFS host controller nodes for Glymur SoC.
-> 
-> Reviewed-by: Abel Vesa <abel.vesa@oss.qualcomm.com>
-> Signed-off-by: Pradeep P V K <pradeep.pragallapati@oss.qualcomm.com>
-> ---
+On QCM6490 (Fairphone 5), the firmware runs BC1.2 charger detection over
+pmic_glink when the phone sinks power from a USB-C dock. It leaves the HS
+PHY in UTMI non-driving mode with the datapath override enabled:
 
-[...]
+  UTMI_CTRL0 (0x3c)    OPMODE = NONDRIVING                 01 -> 09
+  CFG0 (0x94)          UTMI_PHY_DATAPATH_CTRL_OVERRIDE_EN  00 -> 01
+  HS_PHY_CTRL2 (0x64)  USB2_SUSPEND_N_SEL                  06 -> 0e
 
-> +				opp-201500000 {
-> +					opp-hz = /bits/ 64 <201500000>,
-> +						 /bits/ 64 <0>,
-> +						 /bits/ 64 <0>,
-> +						 /bits/ 64 <201500000>,
-> +						 /bits/ 64 <0>,
-> +						 /bits/ 64 <0>,
-> +						 /bits/ 64 <0>,
-> +						 /bits/ 64 <0>;
-> +					required-opps = <&rpmhpd_opp_svs_l1>;
-> +				};
+Linux never writes these fields. They match the configuration the
+downstream kernel uses for charger detection (its "dpdm" regulator); the
+downstream kernel re-initialises the PHY afterwards. Any femto re-init
+clears the state, but on mainline nothing re-inits the PHY after
+detection. When the dock then swaps the phone to host role, the
+controller cannot drive the bus. The HS chirp fails, the hub enumerates at
+full speed, and SET_ADDRESS times out (-62). The state persists into
+later sessions until the PHY is re-initialised.
 
-^ this should be svs, not svs_l1
+Clear OPMODE and the datapath override when the PHY is set to a host
+mode. usb_add_hcd() sets the root hub PHYs to PHY_MODE_USB_HOST_SS before
+it starts the host controller, so the clear lands before any port
+activity, on every entry to host mode. The clear is idempotent: when dwc3
+sets PHY_MODE_USB_HOST again after host init, it finds the fields clean
+and writes nothing. On platforms where nothing outside this driver
+touches these fields, the function only reads them.
 
-Konrad
+USB2_SUSPEND_N_SEL is left alone: HS works with it set, and clearing it
+has not been tested.
+
+Tested on Fairphone 5 (7.0.8-sc7280) with an i-tec USB-C dock: the
+unpatched kernel failed every sink attach (15/15) and the control arm of
+an A/B on the same image failed 2/2; the patched kernel enumerated HS on
+every latched attach (3/3, with DP and charging working), and has been
+in daily use since.
+
+[This change was developed by "D.R.racer" (with the help of an LLM), who
+ doesn't want to have their legal name referenced. But they agreed on me
+ taking the change.]
+
+Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
+---
+I'm mostly sending this to get a feel for whether this would make sense
+in the eyes of the maintainers. This does fix an annoying long-standing
+issue with USB stopping to work, so I'm hoping to find a way forward to
+fix this properly.
+---
+ drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 36 +++++++++++++++++++++++++++
+ 1 file changed, 36 insertions(+)
+
+diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+index 980ad1fb1e2e..e2b9404aac4f 100644
+--- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
++++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+@@ -226,12 +226,48 @@ static int __maybe_unused qcom_snps_hsphy_runtime_resume(struct device *dev)
+ 	return qcom_snps_hsphy_resume(hsphy);
+ }
+ 
++/*
++ * Charger detection run by firmware (BC1.2 on QCM6490 with pmic_glink) puts the
++ * PHY into UTMI non-driving mode with the datapath override enabled and can
++ * leave it there. The controller then cannot drive the bus, so the HS chirp
++ * fails. Only a PHY re-init clears this, and nothing re-inits the PHY after
++ * detection. Clear the state; this is a no-op unless something outside this
++ * driver set it.
++ */
++static void qcom_snps_hsphy_clear_chg_det(struct qcom_snps_hsphy *hsphy)
++{
++	u32 ctrl0 = readl_relaxed(hsphy->base + USB2_PHY_USB_PHY_UTMI_CTRL0);
++	u32 cfg0 = readl_relaxed(hsphy->base + USB2_PHY_USB_PHY_CFG0);
++
++	if (!(ctrl0 & OPMODE_MASK) && !(cfg0 & UTMI_PHY_DATAPATH_CTRL_OVERRIDE_EN))
++		return;
++
++	dev_dbg(&hsphy->phy->dev,
++		"clearing charger-detection state (ctrl0 %#x cfg0 %#x)\n",
++		ctrl0, cfg0);
++
++	qcom_snps_hsphy_write_mask(hsphy->base, USB2_PHY_USB_PHY_UTMI_CTRL0,
++				   OPMODE_MASK, OPMODE_NORMAL);
++	qcom_snps_hsphy_write_mask(hsphy->base, USB2_PHY_USB_PHY_CFG0,
++				   UTMI_PHY_DATAPATH_CTRL_OVERRIDE_EN, 0);
++}
++
+ static int qcom_snps_hsphy_set_mode(struct phy *phy, enum phy_mode mode,
+ 				    int submode)
+ {
+ 	struct qcom_snps_hsphy *hsphy = phy_get_drvdata(phy);
+ 
+ 	hsphy->mode = mode;
++
++	/*
++	 * Reached from usb_add_hcd() before the host controller starts.
++	 * phy_initialized only changes in .init/.exit, which phy-core runs
++	 * under phy->mutex, like this callback.
++	 */
++	if (hsphy->phy_initialized &&
++	    (mode == PHY_MODE_USB_HOST || mode == PHY_MODE_USB_HOST_SS))
++		qcom_snps_hsphy_clear_chg_det(hsphy);
++
+ 	return 0;
+ }
+ 
+
+---
+base-commit: bd1ecbb61afefc6a8b876ccbc31e9228b44e9eab
+change-id: 20261023-phy-qcom-snps-femto-v2-host-9cd28a6e466a
+
+Best regards,
+--  
+Luca Weiss <luca.weiss@fairphone.com>
+
 
 -- 
 linux-phy mailing list
