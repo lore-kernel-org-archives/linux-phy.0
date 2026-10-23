@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8D3E6606A31A
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Oct 2026 00:14:58 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C766D606A31D
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Oct 2026 02:35:14 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=gnXM1Xm0;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=packett.cool header.i=@packett.cool header.a=rsa-sha256 header.s=key1 header.b=m60/nwHU
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=mZAlGFvV;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=rock-chips.com header.i=@rock-chips.com header.a=rsa-sha256 header.s=default header.b=hLPmJ282
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
@@ -14,55 +14,68 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=ulAeMrci2qSlTMNTNmYA4oLY6wc+2d164nA+Z0o/fCY=; b=gnXM1Xm0S//Tn1ViGBnvAlnb77
-	AMkSJErzNloDADsYQYtCZQqcANNbSksa3lD2TfhDgR/kd0sZ60RGVGDpRH/ysTg+4I63tPffR1yo2
-	bZw/IB873Iz3+L9JKyAmqxyDZ2zTAPjssy2tpsWWpHczSKOX+w4OB413oVjOUakuOAtIOs117UGlm
-	ZWGWHEgMy24umHweYBsryNpDRaw7CUkVZj99zYwGlJGGfeeuotAHENNdNp6VzCZ0NYtGR1flYKDVi
-	LJkITKv9MKjBIBFJFSlm9XUSSJ6IiH51aJOTfK6tj3Sq+qQRIrtiuC4nHgfD3PPJU3rQFzRiGvjsR
-	T18O6w7w==;
+	bh=l1qDlsVaa0aKqhTIX+stivt8KPAlD7KddCHe2Saeb74=; b=mZAlGFvV/XT5IBIU0oWuFpf6ci
+	DOj1IKJ1XAlZoN2odn5lo8//S634lMxpZ95n9Ug5MAHT1WCdvFA4v+K/rKQuRoYxoIhWESx8lW8+W
+	5cAp1wo8u+UUIIKR6/gHW96l9iDvOf024PbU6ksKmtbOJH/qZ+IcObJ22UCEyDT4d213+4i5luwAr
+	L7j78uQCe+TMraHJOJttDoTawcFkbp2pI7EeeByt5FC2Hsx0VFcFMzMu7DlYXY5h+Pwf3VFjyBize
+	0/IB1OkHlEMwc2vlsIL9goLSm6i77aOYJ7W6lhrHVYVgPEqQKtdqtSqDYm7TrwTTiSMTjwhW1wRjq
+	ALIfso7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xK2vx-0000000FD5Z-2uj5;
-	Fri, 23 Oct 2026 00:14:57 +0000
-Received: from out-13.mta1.migadu.com ([2001:41d0:203:375::d] helo=mta1.migadu.com)
+	id 1xK57i-0000000FKZY-0Q4T;
+	Fri, 23 Oct 2026 02:35:14 +0000
+Received: from mail-m8354.xmail.ntesmail.com ([156.224.83.54])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xK2vu-0000000FD56-3z7y
-	for linux-phy@lists.infradead.org;
-	Fri, 23 Oct 2026 00:14:56 +0000
-X-Envelope-To: linux-phy@lists.infradead.org
-DKIM-Signature: a=rsa-sha256; bh=2swJGTcFLv4kEfw8FDByno5CejpjJPgPYrzDrZPo6QQ=;
- c=simple/simple; d=packett.cool;
- h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1792714490; v=1; x=1793319290;
- b=m60/nwHU6DUW1Z/1jMnLsAyKXgyN5KIrtTHBwlmm7wuYzDNBIgHjoEFkCG9n+AUlGukxeIRD
- 4YPx/QFstIsv4aIUWImB3r36Acbi+ZCrm1pju7gvtf5gflSXDtnnU9sOcXUgwWwTJClE7ERWRyZ
- tZSbiD/zaqqQtwu+HAgtWmniHkRYwDV0HdWhlZKFyGIIOVswoeumVxd+pY1qShfOw7+BX8lJxMU
- O6Ooq0OkpMplKRpK15zAu1rBuG4TJqf4jvyIKCfNx/oWRKUuY4INzGZ8f6ypqQ9g4Qwq7xRs6n9
- HkXbnm81ML7pbnhm4KtfrULoCzXRT3lJCQ5AJjbBLvdMw==
-X-Envelope-To: linux-phy@lists.infradead.org
-Received: by smtp.migadu.com with ESMTPS id 0de22f02c81a06ee;
-	Fri, 23 Oct 2026 00:14:50 +0000
-X-Mizu-Trace-ID: 0de22f02c81a06ee
-X-Migadu-Flow: FLOW_OUT
-Message-ID: <f8a9d12b-c859-4d3f-82f6-d22b9eaee472@packett.cool>
-Date: Thu, 22 Oct 2026 21:14:45 -0300
+	id 1xK57e-0000000FKY3-0AAw;
+	Fri, 23 Oct 2026 02:35:12 +0000
+Received: from [172.16.12.74] (unknown [61.154.14.86])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 52123f987;
+	Fri, 23 Oct 2026 10:34:55 +0800 (GMT+08:00)
+Message-ID: <45615806-fa9a-4823-8f96-9a906e4433aa@rock-chips.com>
+Date: Fri, 23 Oct 2026 10:34:54 +0800
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: qcom: qmp-combo: Leave the USB PCS alone in DP-only
- mode
-To: Joonhoe Kim <26rote@gmail.com>, vkoul@kernel.org
-Cc: neil.armstrong@linaro.org, mani@kernel.org,
- konrad.dybcio@oss.qualcomm.com, dmitry.baryshkov@oss.qualcomm.com,
- wesley.cheng@oss.qualcomm.com, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20261022165219.1368-1-26rote@gmail.com>
+Subject: Re: [PATCH v3 1/6] dt-bindings: display: rockchip: analogix-dp: Add
+ support for RK3568
+To: Rob Herring <robh@kernel.org>
+Cc: Sandy Huang <hjc@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>,
+ Andy Yan <andy.yan@rock-chips.com>, David Airlie <airlied@gmail.com>,
+ Simona Vetter <simona@ffwll.ch>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss <rfoss@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Luca Ceresoli <luca.ceresoli@bootlin.com>,
+ Dave Jones <s.dave.jones@gmail.com>,
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+ dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+References: <20261020030916.3223833-1-damon.ding@rock-chips.com>
+ <20261020030916.3223833-2-damon.ding@rock-chips.com>
+ <20261021133002.GA3886567-robh@kernel.org>
 Content-Language: en-US
-From: Val Packett <val@packett.cool>
-In-Reply-To: <20261022165219.1368-1-26rote@gmail.com>
+From: Damon Ding <damon.ding@rock-chips.com>
+In-Reply-To: <20261021133002.GA3886567-robh@kernel.org>
+X-HM-Tid: 0aa1669c826703a8kunm895555f01716b0
+X-HM-MType: 1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVkZSR5JVk4YS0IeTk5MH0NOS1YVFA
+	kWGhdVEwETFhoSFyQUDg9ZV1kYEgtZQVlNSlVKTk9VSk9VQ01ZV1kWGg8SFR0UWUFZT0tIVUJCSU
+	5KVUpLS1VKQktCWQY+
+DKIM-Signature: a=rsa-sha256;
+	b=hLPmJ282eTgyBRhFIComvj78l4vIa84ErkQymRNMxoY0RgAFUIbIegUnHzdyzCaPeZHu7N1zuHwFlctmx/1NHXSnzItVBvPAC4TxtK4oXwyaJSvDTKLEXeXCs4dnSLQk3TYEixGBh/Q9B2dONuKZXAzcdCq5DXv/MAMPyt8eao0=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=g7p57vMomCUBZccjEesEUi9+rounalBz2hqbDLPfdqw=;
+	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261022_171455_408767_134F8D77 
-X-CRM114-Status: GOOD (  19.89  )
+X-CRM114-CacheID: sfid-20261022_193510_653679_ED9A1BC3 
+X-CRM114-Status: GOOD (  12.83  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -73,10 +86,10 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-15.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
 	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
 	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
@@ -84,56 +97,61 @@ X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Ck9uIDEwLzIyLzI2IDE6NTIgUE0sIEpvb25ob2UgS2ltIHdyb3RlOgo+IEluIERQLW9ubHkgbW9k
-ZSAoRGlzcGxheVBvcnQgcGluIGFzc2lnbm1lbnRzIEMgYW5kIEUpIGFsbCBmb3VyIGxhbmVzCj4g
-YmVsb25nIHRvIHRoZSBEaXNwbGF5UG9ydCBQSFkgYW5kIHRoZSBVU0IgUENTIHN0YXlzIHBvd2Vy
-ZWQgZG93bi4gVGhlCj4gVVNCIGNvbnRyb2xsZXIgY2FuIHN0aWxsIGV4aXQgYW5kIHJlLWluaXQg
-aXRzIFBIWSBpbiB0aGlzIHN0YXRlLCBlLmcuCj4gYWNyb3NzIGEgc3lzdGVtIHN1c3BlbmQgdGhh
-dCBsb3NlcyBwb3dlci4gcW1wX2NvbWJvX3VzYl9pbml0KCkgdGhlbgo+IHByb2dyYW1zIHRoZSBV
-U0Igc2VyZGVzLCBsYW5lIGFuZCBQQ1MgdGFibGVzIG92ZXIgdGhlIERpc3BsYXlQb3J0Cj4gY29u
-ZmlndXJhdGlvbiBhbmQgdGltZXMgb3V0IHdhaXRpbmcgZm9yIFBIWVNUQVRVUywgYW5kCj4gcW1w
-X2NvbWJvX3VzYl9leGl0KCkgcmVzZXRzIGFuZCBwb3dlcnMgZG93biBhIFBDUyB0aGF0IGlzIG5v
-dCBpbiB1c2UuCj4KPiBJbiBEUC1vbmx5IG1vZGUgb25seSB0YWtlIGFuZCBkcm9wIHRoZSBjb21t
-b24gcmVmZXJlbmNlLCBidXQga2VlcAo+IGNvdW50aW5nIHRoZSBVU0IgdXNlciwgc28gdGhhdCBx
-bXBfY29tYm9fcmVjb25maWd1cmVfcGh5KCkgcG93ZXJzIHRoZQo+IFVTQiBQQ1MgdXAgd2hlbiB0
-aGUgcG9ydCBsZWF2ZXMgRFAtb25seSBtb2RlLgo+Cj4gT24gYSBMZW5vdm8gWTcwMCBHZW4gNSAo
-VEIzMjNGVSwgS2FhbmFwYWxpKSB3aXRoIGEgVVNCLUMgbW9uaXRvcgo+IGluIHBpbiBhc3NpZ25t
-ZW50IEMsIHJlc3VtZSBmcm9tIHMyaWRsZSBmYWlsZWQgd2l0aCAicGh5IGluaXRpYWxpemF0aW9u
-Cj4gdGltZWQtb3V0IiwgdGhlIGR3YzMgcmVzdW1lIHJldHVybmVkIC0xMTAgYW5kIHRoZSBmb2xs
-b3dpbmcgeEhDSSByZXN1bWUKPiBodW5nIHRoZSBzeXN0ZW0uCkdvb2QgY2F0Y2guIEkgZG9uJ3Qg
-dGhpbmsgSSd2ZSBzZWVuIHN5c3RlbSBoYW5ncyBmcm9tIHRoaXMgb24gSGFtb2EsIGJ1dCAKSSd2
-ZSBoYWQgVVNCIHN0b3Agd29ya2luZyBvbiB0aGUgcG9ydHMgd2hlcmUgNHhEUCtVU0IyIHdhcyBs
-ZWZ0IApjb25uZWN0ZWQgZHVyaW5nIHN1c3BlbmQuLgo+IEZpeGVzOiA4OTYyNzcxMzhjMTMgKCJw
-aHk6IHFjb206IHFtcC1jb21ibzogcmVnaXN0ZXIgYSB0eXBlYyBtdXggdG8gY2hhbmdlIHRoZSBR
-TVBQSFlfTU9ERSIpCj4gU2lnbmVkLW9mZi1ieTogSm9vbmhvZSBLaW0gPDI2cm90ZUBnbWFpbC5j
-b20+Cj4gLS0tCj4gVGVzdGVkIG9uIGEgNy4zLXJjNCBiYXNlZCB0cmVlLCB3aGVyZSB0aGUgbXV4
-IHN3aXRjaCBpdHNlbGYgc3RpbGwgZHJvcHMKPiB1c2JfaW5pdF9jb3VudCB3aGVuIGl0IGVudGVy
-cyBEUC1vbmx5IG1vZGUsIHNvIHRoZSB0ZXN0ZWQgY2hhbmdlIHNraXBwZWQKPiB0aGUgY291bnQg
-YXMgd2VsbC4gVGhpcyB2ZXJzaW9uIGZvbGxvd3MgdGhlIHJld29ya2VkIG11eCBwYXRoIGluCj4g
-cGh5LW5leHQgYW5kIGlzIGJ1aWxkLXRlc3RlZCBvbmx5Lgo+Cj4gICBkcml2ZXJzL3BoeS9xdWFs
-Y29tbS9waHktcWNvbS1xbXAtY29tYm8uYyB8IDE4ICsrKysrKysrKysrLS0tLS0tLQo+ICAgMSBm
-aWxlIGNoYW5nZWQsIDExIGluc2VydGlvbnMoKyksIDcgZGVsZXRpb25zKC0pCj4KPiBkaWZmIC0t
-Z2l0IGEvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLWNvbWJvLmMgYi9kcml2ZXJz
-L3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtY29tYm8uYwo+IGluZGV4IDE4N2YwY2QxMWY2Yy4u
-NmUzNDA2ZDUxOWQyIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29t
-LXFtcC1jb21iby5jCj4gKysrIGIvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLWNv
-bWJvLmMKPiBAQCAtNDQ1OSwxMCArNDQ1OSwxMiBAQCBzdGF0aWMgaW50IHFtcF9jb21ib191c2Jf
-aW5pdChzdHJ1Y3QgcGh5ICpwaHkpCj4gICAJaWYgKHJldCkKPiAgIAkJcmV0dXJuIHJldDsKPiAg
-IAo+IC0JcmV0ID0gcW1wX2NvbWJvX3VzYl9wb3dlcl9vbihwaHkpOwo+IC0JaWYgKHJldCkgewo+
-IC0JCXFtcF9jb21ib19jb21fZXhpdChxbXAsIGZhbHNlKTsKPiAtCQlyZXR1cm4gcmV0Owo+ICsJ
-aWYgKHFtcC0+cW1wcGh5X21vZGUgIT0gUU1QUEhZX01PREVfRFBfT05MWSkgewo+ICsJCXJldCA9
-IHFtcF9jb21ib191c2JfcG93ZXJfb24ocGh5KTsKPiArCQlpZiAocmV0KSB7Cj4gKwkJCXFtcF9j
-b21ib19jb21fZXhpdChxbXAsIGZhbHNlKTsKPiArCQkJcmV0dXJuIHJldDsKPiArCQl9Cj4gWy4u
-XQoKVGhlIFVTQjQgY2h1bmsgYWJvdmUgKGp1dXV1c3QgYmVmb3JlIHRoZSBzdGFydCBvZiB0aGlz
-IGRpZmYncyBjb250ZXh0KSAKZG9lcyBhIHNpbWlsYXIgdGhpbmcgaW4gYSBkaWZmZXJlbnQgc3R5
-bGU6IGl0IGluY3JlbWVudHMgYm90aCBpbml0X2NvdW50IAphbmQgdXNiX2luaXRfY291bnQgYW5k
-IGVhcmx5LXJldHVybnMsIHNraXBwaW5nIG92ZXIgcW1wX2NvbWJvX2NvbV9pbml0IAphcyB3ZWxs
-LgoKSSB0aGluayBib3RoIFVTQjQgYW5kIERQIHNob3VsZCBiZSB3cml0dGVuIHNpbWlsYXJseSBi
-dXQgc2hvdWxkIApxbXBfY29tYm9fY29tX2luaXQgYmUgc2tpcHBlZCBoZXJlPyBObyBpbiBib3Ro
-IGNhc2VzIG9yIGRvZXMgVVNCNCBza2lwIAppdCBmb3IgYSBnb29kIHJlYXNvbj8KCihJJ20gZXNw
-ZWNpYWxseSB3b25kZXJpbmcgYWJvdXQgdGhlIGltcGFjdCBvZiB0aGF0IG9uIHRoZSBVU0IgSFMg
-UEhZIApjbG9jaywgc2luY2UgaXQncyBhY3R1YWxseSBzb3VyY2VkIGZyb20gaGVyZSB3aXRob3V0
-IGEgcHJvcGVybHkgbW9kZWxlZCAKZGVwZW5kZW5jeSByaWdodCBub3figKYpCgoKVGhhbmtzLAp+
-dmFsCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
-cGh5Cg==
+Hi Rob,
+
+On 10/21/2026 9:30 PM, Rob Herring wrote:
+> On Tue, Oct 20, 2026 at 11:09:11AM +0800, Damon Ding wrote:
+>> Document the "rockchip,rk3568-edp" compatible.  Like RK3576/RK3588,
+>> the RK3568 eDP controller has the dp/pclk/hclk clocks and dp/apb
+>> resets, but unlike them it does not use GRF registers, so make the
+>> "rockchip,grf" property conditional on the SoC.
+>>
+>> Also document the optional avdd-0v9 and avdd-1v8 supplies, which are
+>> needed by the RK3568 eDP controller.
+>>
+>> Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
+>> ---
+>>   .../rockchip/rockchip,analogix-dp.yaml        | 25 ++++++++++++++++++-
+>>   1 file changed, 24 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
+>> index 39dafe75a680..f8670a4e0430 100644
+>> --- a/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
+>> +++ b/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
+>> @@ -15,6 +15,7 @@ properties:
+>>       enum:
+>>         - rockchip,rk3288-dp
+>>         - rockchip,rk3399-edp
+>> +      - rockchip,rk3568-edp
+>>         - rockchip,rk3576-edp
+>>         - rockchip,rk3588-edp
+>>   
+>> @@ -47,6 +48,16 @@ properties:
+>>         - const: dp
+>>         - const: apb
+>>   
+>> +  avdd-0v9-supply:
+>> +    description:
+>> +      A 0.9V supply that powers up the SoC internal circuitry. The actual
+>> +      supply source varies between different boards.
+>> +
+>> +  avdd-1v8-supply:
+>> +    description:
+>> +      A 1.8V supply that powers up the SoC internal circuitry. The actual
+>> +      supply source varies between different boards.
+>> +
+> 
+> Are these valid for other compatibles?
+> 
+
+Got it. These properties are not required for other compatibles.
+I will restrict them to the RK3568 compatible in v4.
+
+Best regards,
+Damon
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
