@@ -2,106 +2,95 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 56962606A32A
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Oct 2026 12:34:05 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4BA95606A31B
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Oct 2026 12:35:21 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=skAtdGI+;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=fairphone.com header.i=@fairphone.com header.a=rsa-sha256 header.s=fair header.b=0lqdxG9T
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=ZRs+0c2+;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20251104 header.b=ontKUZ8z
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=zArohSJtzHABXn9NsFFEJtxWF6mHOD7QVEUNjlEEr+I=; b=skAtdGI+7b8I7P1U71+BdaIFSA
-	3eCEcbfdjTN3SkdHgp0+adO4OMiY+sb9m9/tlEetMhc76alOMtcVU3LXR5OXe92wg4+lugfxC2psx
-	bnf+ZSt8bpMluQEW6l24/CqnRmTrdeOtQozGwwgg0S/RONeqnjjxFmsoSrq6prBYNNs/1CEsba2iB
-	DMLl3NBPotgMwMEvkhGBwqkxTZSTTUvzWPGKyPix8WYKygqRRKXA1XyEgBUKUYj3I9MUBvE9HqXYS
-	fyBXFhaxeuL0GnNstxbh4EYO2p62eExToyxNkZvRqN79nQnlbVeQ28J9RXB2WZJeaMv4qxWSlF6sc
-	IzWcN8Yg==;
+	bh=nONI/cEozSV5jasT0EBdvcoJQWOvrcMkmeYQgjECcj4=; b=ZRs+0c2+o15SwU3Yktok/k5SmQ
+	EYi7zXfqhHU61iavOyWzSarutW7X5LzWFwFMh5CXgQmj4Vyb5cxj9XZV4lbM2UaZJ9mzHRLcU3dY7
+	C+lZY+Q6yNFZHsRmea3IKelNochhFTKrYMbpLSy6OLEDN3Ba/OIDq64vvnOvKAXo3v4RxxTunX46U
+	Uqhz7q+hAN5fZC+7DqpntKjpTqIBK1/PhMEERklRfyMeshks4/PE2FRVnR+VS7QfdZCHV0RM0WEHt
+	++x7/eYJaG6l0sIOBxked/n6528nExwNBPea8Hfw4jOpC7QEH6dkgRpqRVwEjseb/wSA8owzn0BvC
+	f+Tk8y3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xKETE-0000000GIap-3QhP;
-	Fri, 23 Oct 2026 12:34:04 +0000
-Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
+	id 1xKEUT-0000000GIg5-09mq;
+	Fri, 23 Oct 2026 12:35:21 +0000
+Received: from mail-pg1-x52b.google.com ([2607:f8b0:4864:20::52b])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xKETC-0000000GIaM-2BRO
+	id 1xKEUQ-0000000GIfi-2kmR
 	for linux-phy@lists.infradead.org;
-	Fri, 23 Oct 2026 12:34:04 +0000
-Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-487049569b6so474997f8f.1
-        for <linux-phy@lists.infradead.org>; Fri, 23 Oct 2026 05:34:00 -0700 (PDT)
+	Fri, 23 Oct 2026 12:35:20 +0000
+Received: by mail-pg1-x52b.google.com with SMTP id 41be03b00d2f7-cc4c02ddd62so493816a12.0
+        for <linux-phy@lists.infradead.org>; Fri, 23 Oct 2026 05:35:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=fairphone.com; s=fair; t=1792758839; x=1793363639; darn=lists.infradead.org;
-        h=cc:to:message-id:content-transfer-encoding:content-type
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
-         :reply-to:content-type;
-        bh=0rnI9vadXsYD8rBdMbbzshOtJjoEuCkdwfFl2dhThMg=;
-        b=0lqdxG9TjIa4DWhtbdPs1NkeWV8Cqh/p4c4+5peVVwEGJKQ2pDdUX0riiCCsGoRhWF
-         /vf6UWSTbrcSixJzIlUNXwKTqG+z+N5cfHoKM0HtzM1/cxxhHQ+Ilp5Fgj7H9Im42k7F
-         L7d5fwG8DZkqgqzsaMFTN0Z3F/AzFIuZTsKruVR5Z7UhJ2Neq6PNHAz9tN9v6f6zL5Z+
-         GgEhlXW7oyWhAExI5Kd4AQglsrSLiqJLpBDlr8Ayp+bCFsLMXF6jXcNIqvhZP0l92Hsk
-         8SgybZt3hCgwlEMKKexA4b5QP5UbKm6YY5U05upRfOwEfdQswP7ZlVnAQR2oeV38Rhyj
-         2x4w==
+        d=gmail.com; s=20251104; t=1792758917; x=1793363717; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=MqyQtE1h9yD+Uynuj0QWyaJV566vcpdQv5oWHCYlWoE=;
+        b=ontKUZ8zSRTnQw/qLE0ySdEpenAbABPwNfkp9LvoIrXnfutOBdZowwEbba3U8XDURy
+         bvWY1ALJ58eAwXRR04xNIh1WtR6BVRbsT+7MrrYu4oXKXa9KL0SPHoBMnAfwFEjwyaSz
+         3Q8bcdUWGHp8iC/RDi04Tp8wxyS+u922raJKDMT8vYcIWIhNmgQDj8NxX67CJq9B2XYB
+         IVeWvL3eLT4klJ6B9ntE5CFBVjfphXMFNuD87ZxL2W/7Mg7pKgicB864E2BApVocbt+9
+         CFDB5HIinTFlxWup/7IOPNkYO/Fufm9GfdM/SXWca8C2PniFG7zvWUBeETZXufIGNW8H
+         aaDw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1792758839; x=1793363639;
-        h=cc:to:message-id:content-transfer-encoding:content-type
-         :mime-version:subject:date:from:x-gm-gg:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to:content-type;
-        bh=0rnI9vadXsYD8rBdMbbzshOtJjoEuCkdwfFl2dhThMg=;
-        b=HhZrJZJptRbsJlAx+EGvsGG1pMlZbRb0hcKgsUfNJHOoD79BxPz4JdzrMYXAXcmqab
-         xQQH2HnaeSzousqw+sA1yEjeiWLVKgywc8ObYUi/CymQ5f8ud+SGt8JWxdw2Xv9cHtbF
-         9laP51HM86/Yjah8ABiir7++X4Gopzmjxx3f7qy4h3YTIoW8vgfacyuPVha1Zr7sFnzH
-         4Ymek65x6kBdD4qUinX6D9VknfUIt0gwqW88GdcRu9Ht3jrQjE2m/0KiDb42Uksp9Hwu
-         nwqEJFVX3bcy2RsYZzSL9gXCF5pz6ZSXkjm7eGsSmkTAmxQDdaSXy4jnI81Hq5PkeWIV
-         ajxA==
-X-Forwarded-Encrypted: i=1; AKwUvBw/3IevbqIkGbeZ9IQkZ0vuDy0NT4OL2hkEw+d0ak8G/yygqIdDx7YN0LyJtIJTUL8BfmIwgCqQh0M=@lists.infradead.org
-X-Gm-Message-State: AFq9FYIQAdDdheNVMc3KPRi9sXPZkMwZQoxo63I8XkRRXd0M+Xr0ZEOn
-	WO8DyekaNFyOn9hk0qV1+nMBG6imKqOjiXeb3xGCcLSJVBc97mQmVS/O7pz0uD3ubE8=
-X-Gm-Gg: AYBFou2ZKxg5czVCrdSL4smr4rlzMW10E/fho7k7LfKUOUS33Y33bmRn2Kv4yxsAMU/
-	/0FEdBVIXIZc5NmA+SIhdWhogxD6FvqXbP2WGwerC2Doz1+Fq5kaNOMtjhiw7jv5IZwOnDCf6uN
-	BBsCTfQoWQS1GeeL2GzQFDIToZ5l+uQOtsgil3g+aIU52proiEmq/NYYCfFbBnV2hglaaGnYxg/
-	V6PuZ4fnGOTNQDarZMNy4mVe9C/+yVNj5sLMEoox7dB6vxUOyCPeBUWv9PdYUZMLNFvfg8/vQ6y
-	25Egc13+K8nCuK5Zo5dnTGrOu4E/sk4G4FA54jvI5K790zjIqXO5loH3xkE8o9uzoj3ZqlYu7TE
-	w2rrg27PebyaxwztkOYhFPTKvBiP4BEmjINrVS7OacksZCms0qjmWfNO8H+M68AyAFNfyZS1QiL
-	iKSeqwHHc3tgyBnte/0xMOmUu0y445SMdRVzDOSjLAymCdEDx7PZWQ3lopHRfEw+TcLZ0ZENqjF
-	uWKSDm4vkgIGIlr+vGIsZYCph2onzVE+2KTyCTsRwuS7Mqxn6EfNVEM4EY2U6ec4Bw=
-X-Received: by 2002:a05:6000:4288:b0:48d:cda6:4dd7 with SMTP id ffacd0b85a97d-48e385b4621mr3251773f8f.44.1792758839526;
-        Fri, 23 Oct 2026 05:33:59 -0700 (PDT)
-Received: from [10.221.242.139] ([93.123.20.211])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-48e37edd26dsm5554766f8f.2.2026.10.23.05.33.54
+        d=1e100.net; s=20260707; t=1792758917; x=1793363717;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=MqyQtE1h9yD+Uynuj0QWyaJV566vcpdQv5oWHCYlWoE=;
+        b=15RsNlsiH9RnPz8tIZ8saIVk5zSrvWcJ0ueIzWaCNrROEC+IOV7zAKhfRWIqu8GeaN
+         37Er9Nz42ubI0RjBOLwbgxM7gEPvncaVa/WqbWOZ5byiZL5Z6EDXwK8DVYVJR4OhmX4i
+         R2vr8pxFZUJWgF+uGI0jG8JDb4ivjAfX2fuoi2VS5gi0dd2vAsARK0P9EnCVgr4P+9JO
+         R5W0fzel9oxXSHaXRmhjJZG4NiJ8fwP9QFO9WB3VhvimBII4P6vJAkfqBwtfzDcBQ1o8
+         Jmqvdif19+l/kbfOm8+Nz/VmSQgYCn7x5edVTkdbOOXCYNnMyNSH4wTrUOWAQfODZ6lU
+         DR9A==
+X-Forwarded-Encrypted: i=1; AKwUvBy/FwW9ZyZHqwHHeSaJ1DzXjmFs9+7Y1QrLQnwVNjE6HlIV0i/gUCYpdnBWOd/6L64x0ExGJJEC84Q=@lists.infradead.org
+X-Gm-Message-State: AFq9FYLLfxpVcI59+IqsA17ktE+omyByc7np1EZ373o/PCcwitj+xrNq
+	KBla9x588gsi4bOvzrBEweQPllJnvsxZVffJ+NWnD6QtGYvypDqp8gTG
+X-Gm-Gg: AYBFou3B6k4DNJRj3LyPjTs4JurP6Rh0EV9yKluW23WNVP2QvCF+njkt+mTF2FGXZ3t
+	TeZxNpZ02kg/lHtpXlNB5qfvF6IV4rDGSmOWYa7GXZQMSVcQ4Um8FKjdj/Z13o7W9O0aKsmpbn7
+	glwE9noVRFT6jc3iIAfl10FjsOJcGbT83r/he+v9Hujq0hE+FcilVQ5ERmWzBeytpox3KJ9x7Zm
+	IToC1Y1jHJAyftj9AllidEm5Fbf4SK9FHzCD2NN2KEIEbs7Aw1jdavr77jcn1E8NofLI8i08pqK
+	NXT09C6AwkusmTIqWZCBlhnAYaUi2A/YhCQWNUVAFEmi9BZCscpsprUfvxkwPOEv6GvpicsyISL
+	nBPu05FfLCfNwNx0Jmg6pl8mEirNnlYn/3caP0Baaqi4lbwQ4R5uwFwGpTlQB/12LZ8E/484HUO
+	1LKW31/loRdvFAhEdyyH+CmSvWTOeRF7p+sO5lYX9AkC1Cocykh6lckfWPRDZW0ntlBwYF35SfF
+	RSfQ6SfHBmbkhddGOSd93A9ACMtSBrdONUthC9ZUIWlHMPvKfupFdFW0ATaVdVD9D34mHI=
+X-Received: by 2002:a17:90b:3810:b0:3ac:80dc:f40a with SMTP id 98e67ed59e1d1-3adce5ebc38mr1652472a91.16.1792758917389;
+        Fri, 23 Oct 2026 05:35:17 -0700 (PDT)
+Received: from DESKTOP-NM9EKIA ([125.134.240.130])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3addd7fb873sm129139a91.7.2026.10.23.05.35.14
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 23 Oct 2026 05:33:58 -0700 (PDT)
-From: Luca Weiss <luca.weiss@fairphone.com>
-Date: Fri, 23 Oct 2026 18:01:55 +0530
-Subject: [PATCH RFC] phy: qcom: snps-femto-v2: clear charger-detection
- state on entry to host mode
+        Fri, 23 Oct 2026 05:35:16 -0700 (PDT)
+From: Joonhoe Kim <26rote@gmail.com>
+To: vkoul@kernel.org
+Cc: neil.armstrong@linaro.org,
+	mani@kernel.org,
+	konrad.dybcio@oss.qualcomm.com,
+	dmitry.baryshkov@oss.qualcomm.com,
+	val@packett.cool,
+	wesley.cheng@oss.qualcomm.com,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v2] phy: qcom: qmp-combo: Leave the USB PCS alone in DP-only mode
+Date: Fri, 23 Oct 2026 21:35:12 +0900
+Message-ID: <20261023123512.1912-1-26rote@gmail.com>
+X-Mailer: git-send-email 2.55.0.windows.5
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261023-phy-qcom-snps-femto-v2-host-v1-1-77cf6a5177cd@fairphone.com>
-X-B4-Tracking: v=1; b=H4sIAAAAAAAC/yXMQQrCMBBA0auUWTvQjhLUreAB3IqLmE7NCE1iJ
- hal9O5GXf6/eDMoZ2GFfTND5klUYqjRrRpw3oYbo/S1gVoyXUtrTP6NDxdH1JAUBx5LxInQRy2
- 4cz1treGNMRaqkDIP8vrpZzgdD3D5T31e7+zK14Vl+QAvmyLfhAAAAA==
-X-Change-ID: 20261023-phy-qcom-snps-femto-v2-host-9cd28a6e466a
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- Elson Serrao <elson.serrao@oss.qualcomm.com>, 
- Konrad Dybcio <konradybcio@kernel.org>
-Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org, 
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, Luca Weiss <luca.weiss@fairphone.com>
-X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1792758833; l=4680;
- i=luca.weiss@fairphone.com; s=20250611; h=from:subject:message-id;
- bh=c//aO+uFRscbScqkNAvaaqbbKqzdZoy9nP9LH9BBuUw=;
- b=277h+fYW2NZCq8zkRo74BKyfkAOx+NVESfzGX0KBZvoRuS2vkofYvCJnTaYvxZi3/dHOkgswY
- Y04w1TMcjHWAe7UVqbc4p+2OsP/gemCutXE9HhiaPolYK099c3tFaUw
-X-Developer-Key: i=luca.weiss@fairphone.com; a=ed25519;
- pk=O1aw+AAust5lEmgrNJ1Bs7PTY0fEsJm+mdkjExA69q8=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261023_053402_639033_6CFA936F 
-X-CRM114-Status: GOOD (  19.70  )
+X-CRM114-CacheID: sfid-20261023_053518_705635_516BF0A3 
+X-CRM114-Status: GOOD (  16.97  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -115,122 +104,134 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-17.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,
+	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,
+	FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,
 	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
 	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On QCM6490 (Fairphone 5), the firmware runs BC1.2 charger detection over
-pmic_glink when the phone sinks power from a USB-C dock. It leaves the HS
-PHY in UTMI non-driving mode with the datapath override enabled:
+In DP-only mode (DisplayPort pin assignments C and E) all four lanes
+belong to the DisplayPort PHY and the USB PCS stays powered down.
+Three paths still touch the USB PCS in this state:
 
-  UTMI_CTRL0 (0x3c)    OPMODE = NONDRIVING                 01 -> 09
-  CFG0 (0x94)          UTMI_PHY_DATAPATH_CTRL_OVERRIDE_EN  00 -> 01
-  HS_PHY_CTRL2 (0x64)  USB2_SUSPEND_N_SEL                  06 -> 0e
+- The USB controller can exit and re-init its PHY in DP-only mode, e.g.
+  across a system suspend that loses power. qmp_combo_usb_init() then
+  programs the USB serdes, lane and PCS tables over the DisplayPort
+  configuration and times out waiting for PHYSTATUS, and
+  qmp_combo_usb_exit() resets and powers down a PCS that is not in use.
+- qmp_combo_typec_switch_set() powers the USB PCS off and on when the
+  orientation changes in DP-only mode, e.g. when a DP-only sink is
+  plugged in the other way round while the mux is still in DP-only
+  mode.
+- qmp_combo_reconfigure_phy() powers the USB PCS off again when the
+  port leaves DP-only mode.
 
-Linux never writes these fields. They match the configuration the
-downstream kernel uses for charger detection (its "dpdm" regulator); the
-downstream kernel re-initialises the PHY afterwards. Any femto re-init
-clears the state, but on mainline nothing re-inits the PHY after
-detection. When the dock then swaps the phone to host role, the
-controller cannot drive the bus. The HS chirp fails, the hub enumerates at
-full speed, and SET_ADDRESS times out (-62). The state persists into
-later sessions until the PHY is re-initialised.
+Skip the USB PCS in these paths in DP-only mode. Keep the
+qmp_combo_com_init()/qmp_combo_com_exit() reference and usb_init_count,
+so that qmp_combo_reconfigure_phy() powers the USB PCS up when the port
+leaves DP-only mode.
 
-Clear OPMODE and the datapath override when the PHY is set to a host
-mode. usb_add_hcd() sets the root hub PHYs to PHY_MODE_USB_HOST_SS before
-it starts the host controller, so the clear lands before any port
-activity, on every entry to host mode. The clear is idempotent: when dwc3
-sets PHY_MODE_USB_HOST again after host init, it finds the fields clean
-and writes nothing. On platforms where nothing outside this driver
-touches these fields, the function only reads them.
+On a Lenovo Y700 Gen 5 (TB323FU, Kaanapali) with a USB-C monitor
+in pin assignment C, resume from s2idle fails with "phy initialization
+timed-out", the dwc3 resume returns -110 and the following xHCI resume
+hangs the system.
 
-USB2_SUSPEND_N_SEL is left alone: HS works with it set, and clearing it
-has not been tested.
-
-Tested on Fairphone 5 (7.0.8-sc7280) with an i-tec USB-C dock: the
-unpatched kernel failed every sink attach (15/15) and the control arm of
-an A/B on the same image failed 2/2; the patched kernel enumerated HS on
-every latched attach (3/3, with DP and charging working), and has been
-in daily use since.
-
-[This change was developed by "D.R.racer" (with the help of an LLM), who
- doesn't want to have their legal name referenced. But they agreed on me
- taking the change.]
-
-Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
+Fixes: 896277138c13 ("phy: qcom: qmp-combo: register a typec mux to change the QMPPHY_MODE")
+Fixes: 89563a152973 ("phy: qualcomm: qmp-combo: Add preliminary USB4 support")
+Signed-off-by: Joonhoe Kim <26rote@gmail.com>
 ---
-I'm mostly sending this to get a feel for whether this would make sense
-in the eyes of the maintainers. This does fix an annoying long-standing
-issue with USB stopping to work, so I'm hoping to find a way forward to
-fix this properly.
----
- drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 36 +++++++++++++++++++++++++++
- 1 file changed, 36 insertions(+)
+Changes in v2:
+- Also skip the USB PCS in qmp_combo_typec_switch_set() and in the
+  power-off of qmp_combo_reconfigure_phy() in DP-only mode, as the
+  Sashiko review of v1 pointed out [1]. Since 89563a152973 the mux keeps
+  usb_init_count when it enters DP-only mode, so these paths see a
+  non-zero count there.
+- v1: https://lore.kernel.org/all/20261022165219.1368-1-26rote@gmail.com/
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-index 980ad1fb1e2e..e2b9404aac4f 100644
---- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-+++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-@@ -226,12 +226,48 @@ static int __maybe_unused qcom_snps_hsphy_runtime_resume(struct device *dev)
- 	return qcom_snps_hsphy_resume(hsphy);
- }
- 
-+/*
-+ * Charger detection run by firmware (BC1.2 on QCM6490 with pmic_glink) puts the
-+ * PHY into UTMI non-driving mode with the datapath override enabled and can
-+ * leave it there. The controller then cannot drive the bus, so the HS chirp
-+ * fails. Only a PHY re-init clears this, and nothing re-inits the PHY after
-+ * detection. Clear the state; this is a no-op unless something outside this
-+ * driver set it.
-+ */
-+static void qcom_snps_hsphy_clear_chg_det(struct qcom_snps_hsphy *hsphy)
-+{
-+	u32 ctrl0 = readl_relaxed(hsphy->base + USB2_PHY_USB_PHY_UTMI_CTRL0);
-+	u32 cfg0 = readl_relaxed(hsphy->base + USB2_PHY_USB_PHY_CFG0);
-+
-+	if (!(ctrl0 & OPMODE_MASK) && !(cfg0 & UTMI_PHY_DATAPATH_CTRL_OVERRIDE_EN))
-+		return;
-+
-+	dev_dbg(&hsphy->phy->dev,
-+		"clearing charger-detection state (ctrl0 %#x cfg0 %#x)\n",
-+		ctrl0, cfg0);
-+
-+	qcom_snps_hsphy_write_mask(hsphy->base, USB2_PHY_USB_PHY_UTMI_CTRL0,
-+				   OPMODE_MASK, OPMODE_NORMAL);
-+	qcom_snps_hsphy_write_mask(hsphy->base, USB2_PHY_USB_PHY_CFG0,
-+				   UTMI_PHY_DATAPATH_CTRL_OVERRIDE_EN, 0);
-+}
-+
- static int qcom_snps_hsphy_set_mode(struct phy *phy, enum phy_mode mode,
- 				    int submode)
- {
- 	struct qcom_snps_hsphy *hsphy = phy_get_drvdata(phy);
- 
- 	hsphy->mode = mode;
-+
-+	/*
-+	 * Reached from usb_add_hcd() before the host controller starts.
-+	 * phy_initialized only changes in .init/.exit, which phy-core runs
-+	 * under phy->mutex, like this callback.
-+	 */
-+	if (hsphy->phy_initialized &&
-+	    (mode == PHY_MODE_USB_HOST || mode == PHY_MODE_USB_HOST_SS))
-+		qcom_snps_hsphy_clear_chg_det(hsphy);
-+
- 	return 0;
- }
- 
+Tested on v7.3 with the qmp-combo mux changed to keep usb_init_count in
+DP-only mode as in phy-next, on a Lenovo Y700 Gen 5 (out-of-tree board
+support) with a USB-C monitor in pin assignment C: s2idle resume, a
+replug in the other orientation while the mux was still in DP-only
+mode (qmp_combo_typec_switch_set() then left the USB PCS alone), and a
+USB 3 stick afterwards, which enumerated at SuperSpeed. Kernels without
+89563a152973, where the mux drops usb_init_count in DP-only mode, need a
+variant that does not count the USB user there either.
 
----
-base-commit: bd1ecbb61afefc6a8b876ccbc31e9228b44e9eab
-change-id: 20261023-phy-qcom-snps-femto-v2-host-9cd28a6e466a
+[1] https://lore.kernel.org/all/sashiko-outbox-181846@kernel.org/
 
-Best regards,
---  
-Luca Weiss <luca.weiss@fairphone.com>
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 28 +++++++++++++++--------
+ 1 file changed, 18 insertions(+), 10 deletions(-)
+
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index 187f0cd11f6c..f1b565852caf 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -4459,10 +4459,12 @@ static int qmp_combo_usb_init(struct phy *phy)
+ 	if (ret)
+ 		return ret;
+ 
+-	ret = qmp_combo_usb_power_on(phy);
+-	if (ret) {
+-		qmp_combo_com_exit(qmp, false);
+-		return ret;
++	if (qmp->qmpphy_mode != QMPPHY_MODE_DP_ONLY) {
++		ret = qmp_combo_usb_power_on(phy);
++		if (ret) {
++			qmp_combo_com_exit(qmp, false);
++			return ret;
++		}
+ 	}
+ 
+ 	qmp->usb_init_count++;
+@@ -4484,9 +4486,11 @@ static int qmp_combo_usb_exit(struct phy *phy)
+ 		return 0;
+ 	}
+ 
+-	ret = qmp_combo_usb_power_off(phy);
+-	if (ret)
+-		return ret;
++	if (qmp->qmpphy_mode != QMPPHY_MODE_DP_ONLY) {
++		ret = qmp_combo_usb_power_off(phy);
++		if (ret)
++			return ret;
++	}
+ 
+ 	ret = qmp_combo_com_exit(qmp, false);
+ 	if (ret)
+@@ -4511,7 +4515,8 @@ static int qmp_combo_reconfigure_phy(struct qmp_combo *qmp, enum qmpphy_mode new
+ 	dev_dbg(qmp->dev, "qmp_combo_reconfigure_phy: switching from qmpphy mode %d to %d\n",
+ 		qmp->qmpphy_mode, new_mode);
+ 
+-	if (qmp->usb_init_count || qmp->usb4_init_count)
++	if ((qmp->usb_init_count || qmp->usb4_init_count) &&
++	    qmp->qmpphy_mode != QMPPHY_MODE_DP_ONLY)
+ 		qmp_combo_usb_power_off(qmp->usb_phy);
+ 
+ 	if (qmp->dp_init_count)
+@@ -5087,12 +5092,15 @@ static int qmp_combo_typec_switch_set(struct typec_switch_dev *sw,
+ 	qmp->orientation = orientation;
+ 
+ 	if (qmp->init_count) {
+-		if (qmp->usb_init_count || qmp->usb4_init_count)
++		bool usb = (qmp->usb_init_count || qmp->usb4_init_count) &&
++			   qmp->qmpphy_mode != QMPPHY_MODE_DP_ONLY;
++
++		if (usb)
+ 			qmp_combo_usb_power_off(qmp->usb_phy);
+ 		qmp_combo_com_exit(qmp, true);
+ 
+ 		qmp_combo_com_init(qmp, true);
+-		if (qmp->usb_init_count || qmp->usb4_init_count)
++		if (usb)
+ 			qmp_combo_usb_power_on(qmp->usb_phy);
+ 		if (qmp->dp_init_count)
+ 			cfg->dp_aux_init(qmp);
+
+base-commit: 2efb7a11f1aa4d2dc285fe2680cca22cb9f72f64
+-- 
+2.43.0
 
 
 -- 
