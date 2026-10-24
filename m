@@ -2,96 +2,87 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AE206606A31B
-	for <linux-phy@archiver.kernel.org>; Sat, 24 Oct 2026 05:19:19 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 29D0E606A31A
+	for <linux-phy@archiver.kernel.org>; Sat, 24 Oct 2026 14:30:56 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=HeZTAxAz;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=mg-crea-com.20251104.gappssmtp.com header.i=@mg-crea-com.20251104.gappssmtp.com header.a=rsa-sha256 header.s=20251104 header.b=A0Ne+Oi7
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=UxteTv/0;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=web.de header.i=markus.elfring@web.de header.a=rsa-sha256 header.s=s29768273 header.b=W11qdyT0
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:Subject:References:Cc:
+	To:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=2bNP9OVDW5fSGZmpkGpvfBXHD8xepf1CW6vQz8kSX80=; b=HeZTAxAzH0imuHJ82m0Tmf9qvO
-	VU69gcY7GyMJD/5Q0fCrBjqrYB5IUaw5I4muz/GIV57NqO2409uHQEKluGTUOTchyO/JHLvvwjgob
-	FBLZfYDNY0jJ3ceFNQ4Aof4X6lM3qoJF3c9gmr4RX+Up2hhSmTYTzpYq/o/8QV8CvBOFcyWcmajTK
-	Ew7z9VYOb4ZmkPgoWDBYN1rrttneENXX7VfoLPkT/C9ZkfTA91MBGHpm+rZq8AuD/+/aIuUFvZVjw
-	NHzl3YDKH71pD8wQ9s1QoGi/9qcAHm9RxFehj50lOOVtZuxONGGQamlJJPKVGyD7bpVkrKJQIJcYq
-	yci+oasw==;
+	bh=vOZmgQyIdKFSAbUUW8jFqrZZ2jPmmR/ubx4A0YECTr0=; b=UxteTv/0FXbUTIb6p5bQ/nY7zE
+	YFCI09JNondjvYpw7UC9BdwW+5zjK+G1FeuDnLHeRBPAqoxvkUxbispJtBrHN8Ghj7hrgJctIk+Bd
+	Y7f6rSRFPqFd/mIWX9oRmxunnetJSVSg7Nar5FMj0M6UTfCB8QBOuYibeGboAbb1q95hRa1Lk5V8x
+	In2t/HXEmffn+bS7GRgguxXmNHKDckn/MxSbi5Rx2/9RAqpyYsCqcgsFvjkX3yTAF2XkqoScnl34T
+	pmMa8nOAPSfSELIkW/2VEWia33WzV9oOeNu54cGpCNPY6utjmcNZEx16EL2D66AxEWmyts9NQYXQU
+	d6oQuQTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xKUA2-0000000HSMU-1rGA;
-	Sat, 24 Oct 2026 05:19:18 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+	id 1xKclp-00000000GDJ-3rNg;
+	Sat, 24 Oct 2026 14:30:53 +0000
+Received: from mout.web.de ([212.227.17.11])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xKU9z-0000000HSLy-0wSh
+	id 1xKclj-00000000GCn-0I0O
 	for linux-phy@lists.infradead.org;
-	Sat, 24 Oct 2026 05:19:17 +0000
-Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-4a214c5c4c0so9975345e9.3
-        for <linux-phy@lists.infradead.org>; Fri, 23 Oct 2026 22:19:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=mg-crea-com.20251104.gappssmtp.com; s=20251104; t=1792819152; x=1793423952; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=jkumkssa/J8WgHOu5OVjv01fzxPb25j59RB9TTUY5mE=;
-        b=A0Ne+Oi7x6V8yRp2lo19D5Tm9BdgNKpAfyrMPzY+nxVQ6otVHFBFWLtGaxQLYirBhF
-         a5Zemu5NOg8PeNoAJpA+OxuRU9LQ2hsoqjj7bevkX1ZYGpbo4EqI0Lr5ZTsp/f6v1cNf
-         tW3sEMFEzZoPqmnNRY0zR4VW4BJzQ9nRbmaBg6OwsR1rgXOY2Tkzx34rqgVWhV8HF/En
-         zgknf3ul4e5SUVLgyzdctjGMjLusk7JZGm34O/HTkslfsEglrCvW20FoGydyrh+Xxn80
-         Ze3EnKi92/hVNhQeK9rkZpPQ9tCD6tMClAwZxehnbsAx1cHVvnTCDaTJPpQKi4aIbgRQ
-         4pXQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1792819152; x=1793423952;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=jkumkssa/J8WgHOu5OVjv01fzxPb25j59RB9TTUY5mE=;
-        b=hhq+V0Fga/LynYoIy6AyGq6atdbsZLlqm3UbGXyBH52EmscS8SlEIOUVodhy76PIe8
-         d/7S+v3/K5QxZJkGjqZO7RoxFvLrDClwx2+UDWCwsWnMymea9ghTDjs6AKNRDX+yJLUH
-         E5SW+SrB+J4KkBHYIWWN8F8dJaAoG2lPYW/kicdjYj+b/jAmah9smSaoG4X509XXDfQ0
-         bIPkafUKMFgSjmZUm9tya77zAg8v9OQje7WF8k/ztdiitTb9VIW1Iq+ncuGq2NbvFNUK
-         eoJnDA3c13ZRmYpT8Jp15iyJ/7TOxeAMVuEsA0VCGnXjkrfDHdbrvFD7HsCTGdbDuIKj
-         Z/0g==
-X-Forwarded-Encrypted: i=1; AKwUvBwV9WJ+uFvQ5E4+YUwcIVQ9QxCnEn7uAvUJckVuvWCJvxN7jVRL8oZ9NUFJV1HrRWGxaTpOnzPoe8U=@lists.infradead.org
-X-Gm-Message-State: AFq9FYJ4bBJ/YSe6q9hEeSbOjs3KiUHNIGd0uQ3BN2QAxmt+Ltbx62fb
-	/i+iBqZwYuDLYnVU0KgnXpdUUu8RnLJ1RcUGeVD2dRvy32v26e2CoK2mipWFu59Eiws=
-X-Gm-Gg: AYBFou14E0o5NzYWf8SFU95i5fycFccyVW+wdJIG0SIa9M+/OeOLokPu3DYhXDn1BA5
-	WcCZs0td/8caCSJxfeqeVzBTIZQ8CsR2xZQT0JLQtAj4x3mU7hMYWonZfGSBmK/dy8zGj5rNSqA
-	xmHLril24pBAUyEL40CJeDgn45vL2WXd3vPxLdWBbyVAYyCX5FoQtQY0WclIlXg5I3MYR4C5C/Y
-	eqwdQ52tPI9JrhuqINBo8y2SXNoPFXV2qXifMWS3sAhYIAZMqkbc/5DIuhHjUvnfhRMC8Y8EhkC
-	/+vpXIKDHW+xIx1ALz2HRs5xYBpghKJ07s6Y8LOAX2IJrEDZZFl+CW2M86xJex0k+tYtrjxfeq2
-	YLY+SRlYW6Hi0LuY4G7/BWrJtqzwLEX2XE6cdRjaJbpw2K9z30m2ZoB7Q4D2FbbEn3Y4H/U2GjY
-	OKciLSzyYcg10u7pHmI5YsI2CqsYeFWfkojpSPF0K2pyT8kIGvAw+Jv04zxMV0Q02rm4RXVgGMM
-	mpwJ4hXE5ls0+cgPqtpmigXMZ86mdbXrx7jWa0H0y3SmP6MJ1GjKU/TQb9D3gGmVSb8rFq1PIER
-	UYVAGQpiN7BBVJ/HczYGb7b1VZ99YdSuTQ==
-X-Received: by 2002:a05:600c:83c7:b0:4a1:83f0:7c91 with SMTP id 5b1f17b1804b1-4a35aca186amr13037915e9.18.1792819152402;
-        Fri, 23 Oct 2026 22:19:12 -0700 (PDT)
-Received: from localhost.localdomain ([2a01:e0a:9c3:9990:89bb:701c:1852:56c])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4a35a30e11bsm35997685e9.1.2026.10.23.22.19.11
-        (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
-        Fri, 23 Oct 2026 22:19:12 -0700 (PDT)
-From: Olivier Louvignes <olivier@mgcrea.io>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Paul Cercueil <paul@crapouillou.net>,
-	linux-phy@lists.infradead.org,
-	linux-mips@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Olivier Louvignes <olivier@mgcrea.io>
-Subject: [PATCH] phy: ingenic: Don't disable the supply in exit
-Date: Sat, 24 Oct 2026 07:17:56 +0200
-Message-ID: <20261024051756.79342-1-olivier@mgcrea.io>
-X-Mailer: git-send-email 2.54.0
+	Sat, 24 Oct 2026 14:30:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=web.de;
+	s=s29768273; t=1792852235; x=1793457035; i=markus.elfring@web.de;
+	bh=kVpZMCIfcH1djrNaHra1+YTkln/RxVoOm5pZd9mwM3o=;
+	h=X-UI-Sender-Class:Message-ID:Date:MIME-Version:To:Cc:References:
+	 Subject:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:
+	 cc:content-transfer-encoding:content-type:date:from:message-id:
+	 mime-version:reply-to:subject:to;
+	b=W11qdyT00z7D6mBSJvSjCMz3yjj1hfBOEanaJC6l/NAzF/cL5f9vjytS3eORiYgp
+	 tuQ2Gn39FD6wyHyTFwIwVR+33B0LoK75l3cOrEZ66hm8hz+dskkQu1X5PQk8eKF40
+	 Iaca17LNsDkEVu5XQL5tTVjYAxAXml52NH+9YXVwQwTfIQlk9qLJGL8L6Y9ecTQ08
+	 KBW4dgI5IlLgaZ+52GjtnuzdTJGmIs7sscLtX2fooE56bzZ/p1jRPFR3KjxrFkBv2
+	 BFsPA+3SpddeApwjwIa+FZzIJ6dDUzdVmmK1QH7Kf2MmtwTsTccCOn4AUbSNw+d0K
+	 I9koGLDUBShWk0Zp9Q==
+X-UI-Sender-Class: 814a7b36-bfc1-4dae-8640-3722d8ec6cd6
+Received: from client.hidden.invalid by smtp.web.de (mrweb106
+ [213.165.67.124]) with ESMTPSA (Nemesis) id 1MyvBA-1wPn9l25aM-00vxD2; Sat, 24
+ Oct 2026 16:30:35 +0200
+Message-ID: <65db069d-8405-4204-bb66-a39ae1a28722@web.de>
+Date: Sat, 24 Oct 2026 16:30:31 +0200
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+To: Nabige Aala <nabige.aala@oss.qualcomm.com>,
+ linux-phy@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+ Abel Vesa <abelvesa@kernel.org>, Bjorn Andersson
+ <quic_bjorande@quicinc.com>, Dmitry Baryshkov <lumag@kernel.org>,
+ Johan Hovold <johan+linaro@kernel.org>,
+ Manivannan Sadhasivam <mani@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Vinod Koul <vkoul@kernel.org>,
+ Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+Cc: LKML <linux-kernel@vger.kernel.org>,
+ Abel Vesa <abel.vesa@oss.qualcomm.com>,
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+ Mahadevan P <mahadevan.p@oss.qualcomm.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>,
+ Ritesh Kumar <ritesh.kumar@oss.qualcomm.com>
+References: <20261001-glymur-phy-v3-v5-0-3848c2615d5a@oss.qualcomm.com>
+Subject: Re: [PATCH v5 00/11] phy: qualcomm: qmp-combo: update DP PHY PLL
+ programming on Glymur
+Content-Language: en-GB, de-DE
+From: Markus Elfring <Markus.Elfring@web.de>
+In-Reply-To: <20261001-glymur-phy-v3-v5-0-3848c2615d5a@oss.qualcomm.com>
+X-Provags-ID: V03:K1:lCyom24jIU3DJb7Hv3YmYhBMq9uk+jR7SE+GSKh0o7kyDMkw40O
+ FC4krPpUdp0ZKVkUBWspz7BPoBQOJMTvnEh8ekgc69mJ5u+cHdmrHQha9OJ71LnKIcNOmFL
+ AjNYmhDhvZDjZDCkLgZI1rZ4wUbaqh+P7FRTYeYoytAfuWs8JzTf/DpPNbxk+/HtVEd531R
+ 5gy0FLRRd6ciFCeSbNXwQ==
+UI-OutboundReport: notjunk:1;M01:P0:msrD1yVwFII=;8jLYdaSfks5Vxb8inRykNCV9Xnc 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 SbmteG7Q==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261023_221915_278595_D991B547 
-X-CRM114-Status: UNSURE (   8.56  )
+X-CRM114-CacheID: sfid-20261024_073048_582176_31D7D244 
+X-CRM114-Status: UNSURE (   2.11  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.8 (/)
+X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,57 +92,20 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-17.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-7.3 required=3.0 tests=BAYES_00,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
+	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1 autolearn=no
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-The supply is enabled in power_on() and disabled in power_off(); exit()
-disabling it again unbalances it. dwc2 powers its PHY off before exiting
-it, which warns at every probe on an Ingenic X1600:
-
-  WARNING: ... _regulator_disable
-  ...
-  ingenic_usb_phy_exit
-  phy_exit
-  dwc2_lowlevel_hw_disable
-  dwc2_driver_probe
-
-Fixes: 31de313dfdcf ("PHY: Ingenic: Add USB PHY driver using generic PHY framework.")
-Signed-off-by: Olivier Louvignes <olivier@mgcrea.io>
----
-Tested on v7.3 on a HiBy R1 (X1600), whose PHY supply is a dummy
-regulator: without this the warning above came at every probe, with it
-there is none and USB still enumerates at high speed. Build-tested with
-W=1 on phy next.
-
- drivers/phy/ingenic/phy-ingenic-usb.c | 1 -
- 1 file changed, 1 deletion(-)
-
-diff --git a/drivers/phy/ingenic/phy-ingenic-usb.c b/drivers/phy/ingenic/phy-ingenic-usb.c
-index 7e62d46850fd..d8e5ef302b74 100644
---- a/drivers/phy/ingenic/phy-ingenic-usb.c
-+++ b/drivers/phy/ingenic/phy-ingenic-usb.c
-@@ -124,7 +124,6 @@ static int ingenic_usb_phy_exit(struct phy *phy)
- 	struct ingenic_usb_phy *priv = phy_get_drvdata(phy);
- 
- 	clk_disable_unprepare(priv->clk);
--	regulator_disable(priv->vcc_supply);
- 
- 	return 0;
- }
-
-base-commit: 8f56fdf3d8cb9f1dbdc93bf9ac816698aa6f70b7
--- 
-2.39.5
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+4oCmCj4gRml4ZXM6IGQxMDczNmRiOThkMjUg4oCmCj4gU2lnbmVkLW9mZi1ieTogTmFiaWdlIEFh
+bGEg4oCmCgpJIGRvdWJ0IHRoYXQgc3VjaCB0YWdzIHdvdWxkIGJlIHJlbGV2YW50IGZvciBhIGNv
+dmVyIGxldHRlci4KCgo+IENoYW5nZXMgaW4gdjU6CuKApgo+IENoYW5nZXMgaW4gdjI6CuKApgoK
+UGxlYXNlIHNvcnQgeW91ciBjaGFuZ2Vsb2cuCgpSZWdhcmRzLApNYXJrdXMKCi0tIApsaW51eC1w
+aHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
