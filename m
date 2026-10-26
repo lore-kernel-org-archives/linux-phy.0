@@ -2,103 +2,99 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 48647606A337
-	for <linux-phy@archiver.kernel.org>; Mon, 26 Oct 2026 08:36:15 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0A36D606A32E
+	for <linux-phy@archiver.kernel.org>; Mon, 26 Oct 2026 09:14:01 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=0n4GDYWI;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=mg-crea-com.20251104.gappssmtp.com header.i=@mg-crea-com.20251104.gappssmtp.com header.a=rsa-sha256 header.s=20251104 header.b=MR2xpfw+
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=yRqItu7n;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=samsung.com header.i=@samsung.com header.a=rsa-sha256 header.s=mail20170921 header.b=uesWt4mf
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:From:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=m2hKzgFora5P5Z23b/RAMT5i/S8xFI5LM3CYJZsLdL0=; b=0n4GDYWIDME55fqHzsPWeoFpKX
-	e3NvwTKX2JBkCFk57ap2jB6X7cEw8K2ENEd+lizoHwNYD3f4+qQg670RX9EA5zTc1BJDugAF4TtM8
-	nvWqiSgrHLrVt1T93wigTi6sbAm8TswWRP0YAJNzQw4NbyRIPpRbKwkWqczx7RAJ9tPOc7FWUSf0D
-	/3aBWclxDd+QIrold/zCY45is+D98gTgp/suj/VJO3KPs126N2G73SoDHVpgnEmn+L8izoAxCWf0y
-	7YyWk90/29LB52+nReoP+kypTjfZ/RDKiT5A0HWn3Jx2HcsbAIFVucAviabyqIC/72l5vWRudtPIK
-	y/p/viLg==;
+	bh=OZjttcPDzX6DOHUbOpmL2B48ZrU3yruulbHF76/t8v4=; b=yRqItu7nB0b9GDqUoF9SIDVG8H
+	R37rHRFuDaElXcrOe0P/NGshvyNFfuXdAGJTrTCImAW4wLTTPqcizwZd/7Udoj/2K663Q4npMGaJg
+	KbeGc4ftK1dLMUwhFsXo7oKKiMb29dgWVXCwtOZ/qNGT/ShQywqZHC8zioHTXyrxlDyBl9m5TdJ8H
+	0ZCuCGGGO5Cvro3hkcmeKYb7Qm6UBULE0CS6GCMghMEVgqx4n2Q70pEHtfA6jH2PdgB5pB4WOmarD
+	EpM4+zctUQzJGFHC8wPhez66qp5Ulhq8HhImj074euZZSLYjNmopX8L/ZnKswHk+dzXw4ExYbtDqA
+	+dcj2ZKQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLGBj-00000001xcm-08HA;
-	Mon, 26 Oct 2026 08:36:15 +0000
-Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
+	id 1xLGmG-000000021Nj-3FH9;
+	Mon, 26 Oct 2026 09:14:00 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLGBg-00000001xcB-2TFq
-	for linux-phy@lists.infradead.org;
-	Mon, 26 Oct 2026 08:36:14 +0000
-Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-4a4d7ae1ae9so10272425e9.1
-        for <linux-phy@lists.infradead.org>; Mon, 26 Oct 2026 01:36:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=mg-crea-com.20251104.gappssmtp.com; s=20251104; t=1793003770; x=1793608570; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=RgXmha7CcSQWW68lEObtrAB+EUYAPG7XpUlj/LZ3mcs=;
-        b=MR2xpfw+eGTuJXNe6uNiaQR0jsQKhr/gHBW7h0MO7r0oubKKP5pL+i7IFtnjcTDVrp
-         a1uUl5pTJipllrGrPexr7JKRUP4N34KhA26GBtArOGEWi0b+PD74gihtA2gABiIOtps7
-         CR/69H8+/KztMnjiRMgpmLk1suc0WVjATWK53R4FeWChfEIMHRRjKL4Jv/udZtIjmcPO
-         7HyaZPZKvy0HuzVKpx3M6S0BSv4gHUYo3kOf+yPHJ2tGYvC2ZV2fKOgKGXJUDifnaIb3
-         6z+Ac8dGgf4/7VDdwczJ4dyeEqi4+FqEwS5homdok0x9mlu0xR4VI7yx9UAXXcxIaQum
-         WFYg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793003770; x=1793608570;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=RgXmha7CcSQWW68lEObtrAB+EUYAPG7XpUlj/LZ3mcs=;
-        b=z9uKBP2CDpPhvynMg6h+bQsieRq5354OJnebjskyJkWcab0ECmkNtiH+6gDkdLHZy5
-         X3hQAlnMu7P8mccDjjN3GiQQ28ksAon8wgKKe7CRDF7NmHzLKjnMiVen7P/Nv9XxMpUT
-         axsSPlv5jmhLT50uDAwI2rDHzQIxzxGCqZwQ+YLtNe3kP5QtQHvd16SRUhaKRGtOkdZj
-         hdkL+wmGrjRpMzAz3jWtoyC8AFjl1uTkeBJ+VpxZOBPzD0cwAOpb8hZX0nd4/5sfT6kM
-         e79GuYeWO3QTXVBhYXNMWbE9+ebJoOwiLbWuyR9czKwXK7hzafE7PdUnCFJKGK7+bp6I
-         geWA==
-X-Forwarded-Encrypted: i=1; AKwUvBw5ZGrTxjIo3IvX/LHRydbB5CUSNgc65YuHgyJaWGQg9jet3aUOnw31a+QgiL8d3W320Kq2g73h2oU=@lists.infradead.org
-X-Gm-Message-State: AFq9FYJY956OSc4RPLbUH2I+LiwcR7BdE+jNVMPlUxP0BLIxbuANx8pj
-	ucYKVDZ5UbLN2U7GOLBTtOUk30n3GlrEOwN5QHCudk0Xn/gwc/0RQvzbUjsabTXTAhk=
-X-Gm-Gg: AYBFou1ZNcy92zFfnvd5C/s4ANk322XfliBu2ALsCCkhUrkwDg7nTbZcPYjVSJwfuHe
-	mbb6mjo3HmCq87NWmLajuaB4jKUNDe0VCcNpVwvChWitICjcM7RQZDTPOi7wEXI9IZRpeFl0XJq
-	AnL87FPwUnaGKi2W5D57Xv30Vx2Qtlg9ujtV20XQ1DXE2h4LoKBGT+KdKJewKcM1jWbdRQsZg42
-	k2cdjkLDcKcd/q6D+PfxHD8f7lfAyXudqD1EWumy0anqFhC8/FVDywiZ2gc66OnKnn4+4b/oMYP
-	+KhczGogBzxPtCYPtW/mDXXYaafYg9y9IcttBpKl9GGq1JDW2082ExSRzYiDtr9KpC642Ix5H/k
-	dbsfX7w8BPhpamp/lvXpDWmDrw7h13j1sV1LGZ1ooC0ag8L31EnDaNIKgnlH5Cn3zZuEe8qCGW4
-	qCv1eDFgVZydZTMQw6AaC4PpTNs1C3AQp8K2jhWedMfV2GBdFauVDoDmKWZq+cVDFmiqR9LnXAG
-	8QlTdXZajqs9JrKb2W3q3elnulQfXskvKjWSY0UEEjADDv29ELgcMb7f5a+p0669HioOZ0GsqZZ
-	Qn2IzZnAUeVSjA==
-X-Received: by 2002:a05:600c:3e8c:b0:4a2:392:9de2 with SMTP id 5b1f17b1804b1-4a35acab6cdmr93617695e9.28.1793003770060;
-        Mon, 26 Oct 2026 01:36:10 -0700 (PDT)
-Received: from localhost.localdomain ([2a01:e0a:9d2:5a71:6dfc:5715:ead7:7540])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4a35a59d998sm186175175e9.15.2026.10.26.01.36.09
-        (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
-        Mon, 26 Oct 2026 01:36:09 -0700 (PDT)
-From: Olivier Louvignes <olivier@mgcrea.io>
-To: Vinod Koul <vkoul@kernel.org>,
-	"H . Nikolaus Schaller" <hns@goldelico.com>
-Cc: Paul Cercueil <paul@crapouillou.net>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	linux-phy@lists.infradead.org,
-	linux-mips@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
-	Paul Boddie <paul@boddie.org.uk>,
-	Andreas Kemnade <akemnade@kernel.org>,
-	Olivier Louvignes <olivier@mgcrea.io>
-Subject: Re: [PATCH] phy: ingenic: fix unbalanced regulator_disable() warning
-Date: Mon, 26 Oct 2026 09:34:54 +0100
-Message-ID: <20261026083454.29787-1-olivier@mgcrea.io>
-X-Mailer: git-send-email 2.54.0
-In-Reply-To: <96da5fe557f3b2501447358895bd78decc4633ef.1735482146.git.hns@goldelico.com>
-References: <96da5fe557f3b2501447358895bd78decc4633ef.1735482146.git.hns@goldelico.com>
+	id 1xLGmA-000000021N1-2mtU;
+	Mon, 26 Oct 2026 09:13:58 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+	by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id 20261026091349euoutp0260a6484cdb132677f41b85104a90e968~iCXwB5PQU2933229332euoutp024;
+	Mon, 26 Oct 2026 09:13:49 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com 20261026091349euoutp0260a6484cdb132677f41b85104a90e968~iCXwB5PQU2933229332euoutp024
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1793006029;
+	bh=BKmKriFXy7STc0ChdV4GVkhXybSuVhKoMJ3vCyY6ebQ=;
+	h=Date:Subject:To:Cc:From:In-Reply-To:References:From;
+	b=uesWt4mf7L6uH2e2D0Uz0HVRucHuV8HZkP6w6G5X4a91jpvD/uKc3BJqBUmuRXjve
+	 GgrdbGaDFfjJl73WiJG4wPNL+OImYScLzZ5eCyyvPV3LlJUGczWGKuH07jKOHSZaRq
+	 J4j2ifjZbGqdQZI5IPmFXPvANcfdee4i8r50bnPI=
+Received: from eusmtip1.samsung.com (unknown [203.254.199.221]) by
+	eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+	20261026091348eucas1p104a72aa9c878c637a7ef778613c492a9~iCXvH8nmx3193831938eucas1p1i;
+	Mon, 26 Oct 2026 09:13:48 +0000 (GMT)
+Received: from [192.168.1.44] (unknown [106.210.136.40]) by
+	eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+	20261026091345eusmtip1dd488ccf4592aee32b30711c858f6c13~iCXsMa8873092630926eusmtip1x;
+	Mon, 26 Oct 2026 09:13:45 +0000 (GMT)
+Message-ID: <943aa2e7-3945-48f9-9a87-9c963f97099d@samsung.com>
+Date: Mon, 26 Oct 2026 10:13:45 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 16/20] phy: Add common Innosilicon HDMI PHY helpers
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring
+	<robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+	<conor+dt@kernel.org>, Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss
+	<rfoss@kernel.org>, Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>, Maarten Lankhorst
+	<maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>, Lee Jones <lee@kernel.org>, Andy
+	Yan <andy.yan@rock-chips.com>, Philipp Zabel <p.zabel@pengutronix.de>, Emil
+	Renner Berthing <kernel@esmil.dk>, Hal Feng <hal.feng@starfivetech.com>,
+	Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+	<sboyd@kernel.org>, Heiko Stuebner <heiko@sntech.de>, Paul Walmsley
+	<pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou
+	<aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>, Dominique
+	Belhachemi <db@domibel.de>, Brian Masney <bmasney+clk@redhat.com>, Jerome
+	Brunet <jbrunet+clk@baylibre.com>, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	dri-devel@lists.freedesktop.org, mfd@lists.linux.dev,
+	linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-riscv@lists.infradead.org, Marek
+	Szyprowski <m.szyprowski@samsung.com>, Maud Spierings
+	<maud_spierings@murena.io>, Graham Markall <hello@big-grey.co.uk>, Icenowy
+	Zheng <zhengxingda@iscas.ac.cn>, Chaoyi Chen <chaoyi.chen@rock-chips.com>,
+	Joshua Peisach <jpeisach@ubuntu.com>, =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?=
+	<u.kleine-koenig@baylibre.com>
+Content-Language: en-US
+From: Michal Wilczynski <m.wilczynski@samsung.com>
+In-Reply-To: <asEPmpQTwXYADwTk@parshuram>
+X-CMS-MailID: 20261026091348eucas1p104a72aa9c878c637a7ef778613c492a9
+X-Msg-Generator: CA
+X-RootMTR: 20260915153242eucas1p1394a6a5e272f106b9cab2a0f709ddeb8
+X-EPHeader: CA
+X-CMS-RootMailID: 20260915153242eucas1p1394a6a5e272f106b9cab2a0f709ddeb8
+References: <20260915-jh7110-clean-send-v4-0-f0e4fd6f2cc8@samsung.com>
+	<CGME20260915153242eucas1p1394a6a5e272f106b9cab2a0f709ddeb8@eucas1p1.samsung.com>
+	<20260915-jh7110-clean-send-v4-16-f0e4fd6f2cc8@samsung.com>
+	<asEPmpQTwXYADwTk@parshuram>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261026_013612_900221_1045FF5B 
-X-CRM114-Status: UNSURE (   7.36  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.8 (/)
+X-CRM114-CacheID: sfid-20261026_021355_317702_8CBB2635 
+X-CRM114-Status: GOOD (  28.07  )
+X-Spam-Score: -3.1 (---)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,34 +107,105 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-12.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-5.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
+	autolearn=no autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi Vinod, Nikolaus,
+Hi Vinod,
 
-I sent the same one-line fix on Saturday without finding this one first,
-sorry for the duplicate:
-https://lore.kernel.org/all/20261024051756.79342-1-olivier@mgcrea.io/
+On 10/3/26 16:22, Vinod Koul wrote:
+> On 15-09-26, 17:32, Michal Wilczynski wrote:
+>> The Innosilicon HDMI PHY IP is used by several SoCs. They differ in
+>> where the PHY register block sits in the register space and in which
+>> pixel clocks they support, but the pre-PLL programming sequence and the
+>> layout of its registers are the same.
+>>
+>> Add a small library holding that shared part: the pre-PLL configuration
+>> table format, a lookup, clk_ops determine_rate and recalc_rate helpers,
+>> and the pre-PLL register programming. Callers pass a regmap, a register
+>> offset for the PHY block, and their own pixel clock table.
+>>
+>> No driver uses it yet; the users are converted separately.
+> 
+> Is there anything in phy patches here that has dependency with rest? If
+> not consider splitting it up...
 
-Please drop mine and take this one, it is the same change and it came
-first. It still applies to phy next.
+The phy patches don't depend on anything else so they apply cleanly
+from this series alone. The helpers and the Rockchip conversion are
+self contained and the JH7110 phy driver only needs its parent at
+runtime not at build time.
 
-Tested on v7.3 on a HiBy R1 (Ingenic X1600, dummy PHY supply): without
-it the unbalanced disable warning comes at every dwc2 probe, with it
-there is none and USB still enumerates at high speed.
+I kept everything in one series so a single posting applies and boots on
+its own. The patches already target three separate trees and everyone
+testing this has been applying the full set splitting would force them
+to assemble two postings in the correct order, given that the JH7110 phy
+driver build depends on the helpers. The v5 cover letter lists which
+tree each patch goes to.
 
-Tested-by: Olivier Louvignes <olivier@mgcrea.io>
+That being said, the helpers and the Rockchip conversion are the two
+patches independent of the StarFive work - happy to send those as a
+separate series if you'd rather take them that way.
 
-If you want a Fixes tag, mine had:
+> 
+>> +static u8 inno_read(const struct inno_hdmi_phy_pre_pll *pll, unsigned int reg)
+>> +{
+>> +	unsigned int val;
+>> +	int ret;
+>> +
+>> +	ret = regmap_read(pll->regmap, inno_reg(pll, reg), &val);
+>> +	if (ret)
+>> +		return 0;
+>> +
+>> +	return val;
+> 
+> why not just return regmap_read()
+> 
+> There is no logic here, nothing. This is really not ideal.
+> Also why add a wrapper and not use regmap directly?
 
-Fixes: 31de313dfdcf ("PHY: Ingenic: Add USB PHY driver using generic PHY framework.")
+The same IP block is used by both Rockchip and the JH7110 but on the
+JH7110 the registers sit at a 0x100 offset.That is what inno_reg() is
+for.
 
-Thanks,
-Olivier
+Dropping the error is wrong though - nd comes from one of those reads
+and then becomes the divisor in do_div(vco, nd * 5 ) so a failed read
+feeds in 0. I will make it return int and have recalc_rate check.
+
+> 
+>> +/**
+>> + * inno_hdmi_phy_pre_pll_determine_rate - clk_ops.determine_rate helper
+>> + * @pll: pre-PLL instance
+>> + * @req: rate request, updated with the rate the PHY would produce
+>> + *
+>> + * The PHY can only generate the pixel clocks described by its table, so a
+>> + * request that does not appear there is rejected rather than rounded.
+>> + *
+>> + * Return: 0 on success, -EINVAL if the rate is not supported.
+>> + */
+>> +int inno_hdmi_phy_pre_pll_determine_rate(const struct inno_hdmi_phy_pre_pll *pll,
+>> +					 struct clk_rate_request *req)
+>> +{
+>> +	const struct inno_hdmi_phy_pre_pll_config *cfg;
+>> +	unsigned long rate = rounddown(req->rate, 1000);
+>> +
+>> +	for (cfg = pll->table; cfg->pixclock != 0; cfg++) {
+> 
+> Is there a chance of null/garbage if we reach end of table? You dont
+> know the size of table, and incrementing pointer without bounds does not
+> look good to me.
+
+Fair. For now both config tables end with a sentinel, so it cannot
+happen. I can add the count of the bounds though.
+
+> 
+> 
+
+Best regards,
+-- 
+Michal Wilczynski <m.wilczynski@samsung.com>
 
 -- 
 linux-phy mailing list
