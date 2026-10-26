@@ -2,125 +2,81 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id ABC50606A320
-	for <linux-phy@archiver.kernel.org>; Mon, 26 Oct 2026 19:18:27 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 80573606A334
+	for <linux-phy@archiver.kernel.org>; Mon, 26 Oct 2026 22:34:53 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Ewahtisv;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=dvzYI0pq
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=HzfQVMLP;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jfr1jagI
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=pQaQpzMZQ3OnQUkxde9k9IXEif94sU7O8O/0qXaWj4M=; b=EwahtisvFbac8O3M3qs8Tc44wJ
-	BK0EmcoRePQ/DmSv3BVNJwweMTjcdTidiiMygpDZSmJzVXQGk9MR1sUCvoO32Wnf46vYXTwXjlgqp
-	rt21v6u6baaIxn9tAlWeGK8pyQ2zu8ytnLSAXSJo4QAtnc1iu8CoEa4EfudCyXp0tiYsH45zgCIvU
-	LEvt8EWtCwpNoqUoeQEeiM8Lee3itK2Ld0qcO0emz9p76gQN36Ek3mri0FyfuC/sBNXmPpuRCvgiB
-	qvEYugbcgzbtfKwVuXeK0CZ2FyC/2eLR+zriquWSRDxAY16M+uKAHIS1kNexvNPw7UADmDTzuVWBw
-	aOxPvJwg==;
+	bh=k6n3I4t33SEEOoUfPtC8Vtt+12I0IFikn20KonagwTE=; b=HzfQVMLPFx9+Eee0X0aiCf+waZ
+	r7dzv2BHoPnB4qkyRzzkGyZvGY1E6nG5/1MLLUXQF/Y/XoWEj9hJFanAZHKX8Eg8ZUSQdfnHM5mLH
+	wM4Bp5jyAu9+hyuK3CQw/7j8Ogg8ZBe97Y1TRUVOFNHcjMh6Qjrn2CjTNCqS750CQaIBPyOT90amZ
+	6cSohgjW6TM4MI09IF9JyTeZFraDesmsU7k2Ytyt4PCzWxvPwWhUKobiqQdVFLB4CWpkj5GbXtD6c
+	qyeMqJq/Lr6cM4bMnmmmV3qXO6oVctJIImSrRQIn64QMNpHSxplSDlOpg/0h90dgEQQjIWEn6G29P
+	mIT+ibMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLQDD-000000039cR-0pCE;
-	Mon, 26 Oct 2026 19:18:27 +0000
-Received: from mail-pj1-x1062.google.com ([2607:f8b0:4864:20::1062])
+	id 1xLTHI-00000003N9t-45e9;
+	Mon, 26 Oct 2026 22:34:52 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLQDA-000000039Xt-36R7
-	for linux-phy@lists.infradead.org;
-	Mon, 26 Oct 2026 19:18:26 +0000
-Received: by mail-pj1-x1062.google.com with SMTP id 98e67ed59e1d1-3ab752f6244so3333565a91.2
-        for <linux-phy@lists.infradead.org>; Mon, 26 Oct 2026 12:18:24 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793042303; x=1793647103;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:dkim-signature:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=p/JejeyXs+a2BV9S3GP+DdWRq7anNloDPZ8ebf8LoQg=;
-        b=M4SQrJ0uf9TpNQK771jPLnk8WQxI5Xp1/GXN+CXCYQEw+Za7HOY/Nrt62KB5zmd4s6
-         qMavcUb7G5kGhDD8dayj1Bf1uIX3Njn2hZ0h/M/GAChLYI8/R1vYTpys/uqGJu7NvdgN
-         vm/LPTJTqwkRpmLEHIrlOLNe8Ad5xBW7Vwb3QMfUFp6/VnIV83K1fiq2TPCHtjWN51SA
-         w6Y/2vekNKpo+nzm2wNBPTBaet76lLrvRWRqd8jAHwgcYJyyP+N4WOfG6Dt+M4WQDcPE
-         Oxb4GvN1fQa1RpylLFJ+n/JrAWz8SfdXFTRojCazodsI+9fPIBsjXcrlD78/J96/kwSl
-         LT0g==
-X-Forwarded-Encrypted: i=1; AKwUvBxWcYTFlOGRGLjQdGUiKZIRAXgfrtMdl+BLLUrpXksoDOVHTw9Nsh/wivEgR7N6SHjFXzxXIv/rQfg=@lists.infradead.org
-X-Gm-Message-State: AFq9FYLGBjVO50MaWLeITr9lsVi7noXXn87MJtD3BF4sJUY1SL5+oJhU
-	CucE/V4WyonVI1MlkzM3qhP5j7JgljWfdwayex0GbBJOBYQBtLkm0G07Xz6sL39iCnjA9+bnWvx
-	OkynrBfNN8A84Zk7dNqzBwMteh/kYerSN759+hTuNhq/Ii3eHaDONkJLZOavU1zi+yWfl4EKArv
-	e05Q5ouqGlJ9Z0GjbU2uuhqPMjfdQs8o/Wf8nEqx0AIez14nZ0SszbVOcRiHpKagPvbmvU4IrO9
-	+FEQRmwzZ4Rsvlz0n2v/hapYg==
-X-Gm-Gg: AYBFou0FhWvOSoNGDiFs4RI7TPuz+OjlbsaMpFxHK1xAOoUK2XJG+ZrJdoBmBdkjC0w
-	ntsWPhHdQxGO7BckisozhdkAYyTb5atx11nO9j3N2DChOsXqn9c77MdiLgqc+VS67dlMP85EHBx
-	CmHsqhEXD2TCHZ6LJiUaEgQtY8hHtFXIIG0UfzkjGkn7KeryzXi4A2Ft2JGcI75AlbcbnnEsWUm
-	OF2c1YKd11+VwM/IXvv6eSG6BfCeYjrCUH8Q2spzzOSxTmVpAODdmpJEFeur32yZEJDmgS3XOEi
-	H1QkMZ7zpJWXMHzFyKfQHchixxGAmTTNV5RdVJ1Orqwv3+JYMe3Mm01c8LC/9D6CzKl1UMj8Loi
-	0WpLA/33Bcw5NorKFzd0sU7PolFjSAiGGcdbBSNEJAbESZ0/W2kpa7on8bqLI+O5MujoAwOiNJg
-	LUICr2qADnUPbxqfPkHAsW94LVXkAZfZumCacdt3C0
-X-Received: by 2002:a17:90b:3bcf:b0:3ac:9d83:885e with SMTP id 98e67ed59e1d1-3adeafc1f3bmr6377163a91.52.1793042303038;
-        Mon, 26 Oct 2026 12:18:23 -0700 (PDT)
-Received: from smtp-us-east1-p01-i01-si01.dlp.protect.broadcom.com (address-144-49-247-23.dlp.protect.broadcom.com. [144.49.247.23])
-        by smtp-relay.gmail.com with ESMTPS id 98e67ed59e1d1-3adebb37c12sm3509411a91.5.2026.10.26.12.18.22
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Mon, 26 Oct 2026 12:18:23 -0700 (PDT)
-X-Relaying-Domain: broadcom.com
-X-CFilter-Loop: Reflected
-Received: by mail-qt1-f198.google.com with SMTP id d75a77b69052e-5337b591609so38678851cf.3
-        for <linux-phy@lists.infradead.org>; Mon, 26 Oct 2026 12:18:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=broadcom.com; s=google; t=1793042302; x=1793647102; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=p/JejeyXs+a2BV9S3GP+DdWRq7anNloDPZ8ebf8LoQg=;
-        b=dvzYI0pqg6lJgGohU/16PuatElINL4L2WE9kGd/ulRsU/FV6Obr0QJ+zrdcr1fn8C/
-         AEw72414ogSHp39K8xmjvPAnx2xCKD8fl7xzvm0EzHkHxXwNV4jpcil5FCKsGYps5jqS
-         /3o7+LAXzq6QFU4KpjvpNl+kLBos5aM6lA0RM=
-X-Forwarded-Encrypted: i=1; AKwUvBw17oETDalo41uoxhhgg5U8rkT+DSyQdpYT/eLVUBpllBNQgcv/GyOpHMUci4QO4FnQqpj9wKALCn0=@lists.infradead.org
-X-Received: by 2002:ac8:6546:0:b0:535:a5fa:ee0c with SMTP id d75a77b69052e-5383b66652emr111406451cf.76.1793042301521;
-        Mon, 26 Oct 2026 12:18:21 -0700 (PDT)
-X-Received: by 2002:ac8:6546:0:b0:535:a5fa:ee0c with SMTP id d75a77b69052e-5383b66652emr111405901cf.76.1793042300941;
-        Mon, 26 Oct 2026 12:18:20 -0700 (PDT)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-91c62063dacsm33430996d6.37.2026.10.26.12.18.15
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 26 Oct 2026 12:18:18 -0700 (PDT)
-From: Florian Fainelli <florian.fainelli@broadcom.com>
-To: linux-kernel@vger.kernel.org
-Cc: Florian Fainelli <florian.fainelli@broadcom.com>,
-	Damien Le Moal <dlemoal@kernel.org>,
-	Niklas Cassel <cassel@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Ray Jui <rjui@broadcom.com>,
-	Scott Branden <sbranden@broadcom.com>,
-	Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Tejun Heo <tj@kernel.org>,
-	Yendapally Reddy Dhananjaya Reddy <yendapally.reddy@broadcom.com>,
-	linux-ide@vger.kernel.org (open list:LIBATA SUBSYSTEM (Serial and Parallel ATA drivers)),
-	devicetree@vger.kernel.org (open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS),
-	linux-arm-kernel@lists.infradead.org (moderated list:BROADCOM IPROC ARM ARCHITECTURE),
-	linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK)
-Subject: [PATCH v3 6/6] ARM: dts: broadcom: Enable SATA on BCM958625HR
-Date: Mon, 26 Oct 2026 12:16:18 -0700
-Message-ID: <20261026191618.3178830-7-florian.fainelli@broadcom.com>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20261026191618.3178830-1-florian.fainelli@broadcom.com>
-References: <20261026191618.3178830-1-florian.fainelli@broadcom.com>
+	id 1xLTHH-00000003N9U-141Y;
+	Mon, 26 Oct 2026 22:34:51 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 33BC9601F7;
+	Mon, 26 Oct 2026 22:34:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 255931F01828;
+	Mon, 26 Oct 2026 22:34:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1793054089;
+	bh=v2Nrgywn65NL+RE7paBhmd1KoquJfEvns7IjUonmCkc=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=jfr1jagI2Pt7wvdiivuSrWwaHZsjr7u7Ggk+4UrVhiB5fU4Je/W8tTTJCjIxJpK1J
+	 Tzeb1RBUqdUJfpPxa1yyfqbGUkdK04/mN2ACZgCpTU6LHGP/tBhQfJllPNAePmdlgv
+	 w2FMqcuwbZKetfkBm18RKMOUZLiTglEecAMrH8KVJRgxWcALpS1wsHMbbxGetnnn8x
+	 iyLLIEa5I5iQ7M1jTzvYZuPkJcIxab5Z+kank8/A6ajRzxrW+QNFbHS/XuOJAQJLq9
+	 4nGIAS98j6N+ECXwN3QSrQGmckdeTHGPoT0dOuN0TAuyngnPnRE0glbUHmUA/vBlCL
+	 /oGT3gc4ZA0sw==
+Date: Mon, 26 Oct 2026 23:34:46 +0100
+From: Andi Shyti <andi.shyti@kernel.org>
+To: 1579567540@qq.com
+Cc: Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney+clk@redhat.com>, 
+	Jerome Brunet <jbrunet+clk@baylibre.com>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Heiko Stuebner <heiko@sntech.de>, Philipp Zabel <p.zabel@pengutronix.de>, 
+	Elaine Zhang <zhangqing@rock-chips.com>, Lee Jones <lee@kernel.org>, Linus Walleij <linusw@kernel.org>, 
+	Bartosz Golaszewski <brgl@kernel.org>, Richard Cochran <richardcochran@gmail.com>, 
+	Ulf Hansson <ulfh@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+	Jiri Slaby <jirislaby@kernel.org>, Jisheng Zhang <jszhang@kernel.org>, 
+	Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller" <davem@davemloft.net>, 
+	Eric Dumazet <edumazet@kernel.org>, Jakub Kicinski <kuba@kernel.org>, 
+	Paolo Abeni <pabeni@redhat.com>, David Wu <david.wu@rock-chips.com>, 
+	"Rafael J. Wysocki" <rafael@kernel.org>, Daniel Lezcano <daniel.lezcano@kernel.org>, 
+	Zhang Rui <rui.zhang@intel.com>, Lukasz Luba <lukasz.luba@arm.com>, 
+	Maxime Chevallier <maxime.chevallier@bootlin.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
+	Alexandre Torgue <alexandre.torgue@foss.st.com>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Thinh Nguyen <Thinh.Nguyen@synopsys.com>, Jaehoon Chung <jh80.chung@samsung.com>, 
+	Shawn Lin <shawn.lin@rock-chips.com>, linux-clk@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	mfd@lists.linux.dev, linux-gpio@vger.kernel.org, netdev@vger.kernel.org, 
+	linux-pm@vger.kernel.org, linux-i2c@vger.kernel.org, linux-serial@vger.kernel.org, 
+	linux-mmc@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com, 
+	linux-phy@lists.infradead.org, linux-usb@vger.kernel.org
+Subject: Re: [PATCH 11/27] dt-bindings: i2c: rk3x: Add RK3572
+Message-ID: <at_VaLUwxn7h3Dal@zenone.zhora.eu>
+References: <20261022-add-board-ok3572-c-v1-0-0b0fd85a31ee@qq.com>
+ <20261022-add-board-ok3572-c-v1-11-0b0fd85a31ee@qq.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-DetectorID-Processed: b00c1d49-9d2e-4205-b15f-d015386d3d5e
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261026_121824_789138_6C7ADF81 
-X-CRM114-Status: UNSURE (   9.81  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.4 (--)
+Content-Disposition: inline
+In-Reply-To: <20261022-add-board-ok3572-c-v1-11-0b0fd85a31ee@qq.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,41 +89,26 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-17.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-9.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Commit 77416ab35f57 ("ARM: dts: NSP: Disable AHCI controller for HR NSP
-boards") disabled AHCI after reports of boot hangs. Both SATA PHYs
-remain enabled, but the disabled controller leaves the eSATA ports
-unavailable.
+Hi Cunhao,
 
-With explicit IDM clock/reset setup and the corrected shared PHY
-register aperture in place, enable the controller on BCM958625HR.
+On Thu, Oct 22, 2026 at 12:11:08AM +0800, Cunhao Lu via B4 Relay wrote:
+> From: Cunhao Lu <1579567540@qq.com>
+> 
+> Add the RK3572 I2C compatible using the RK3399 fallback.
+> 
+> Signed-off-by: Cunhao Lu <1579567540@qq.com>
 
-Signed-off-by: Florian Fainelli <florian.fainelli@broadcom.com>
----
- arch/arm/boot/dts/broadcom/bcm958625hr.dts | 1 +
- 1 file changed, 1 insertion(+)
+Acked-by: Andi Shyti <andi.shyti@kernel.org>
 
-diff --git a/arch/arm/boot/dts/broadcom/bcm958625hr.dts b/arch/arm/boot/dts/broadcom/bcm958625hr.dts
-index 53acae385822..f6717ca76aef 100644
---- a/arch/arm/boot/dts/broadcom/bcm958625hr.dts
-+++ b/arch/arm/boot/dts/broadcom/bcm958625hr.dts
-@@ -184,6 +184,7 @@ partition@700000 {
- 
- &sata {
- 	/delete-property/ dma-coherent;
-+	status = "okay";
- };
- 
- &sata_phy0 {
--- 
-2.53.0
-
+Thanks,
+Andi
 
 -- 
 linux-phy mailing list
