@@ -2,80 +2,157 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 44EBB606A31A
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Oct 2026 08:14:12 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 53ECF606A31D
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Oct 2026 08:36:09 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=ivY4l3NB;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=qq.com header.i=@qq.com header.a=rsa-sha256 header.s=s201512 header.b=ZRB1vNch
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=MFKm6S+J;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=WZl00uNo;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=bm5ySP8r
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Message-ID:Date:
-	Mime-Version:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=Eem7cVALAyuZ76bfDYMKNlvOqV8TwmaNarHvgOT6QcA=; b=ivY4l3NBuWdjjadriT/LpY7f19
-	Py96tfIAayOFxHSuaVkNzUGfFXbmXqg+3Grufh0taX3RN54ScwjPeutd0bllnB+UZRXwp8N/hvFxk
-	Rh4bT7Y66gd99JsAAXBUDvOwRbvTMcorsSLes0I4PpPwmtfIWCw83V+KXaHs7y0oD4mCKLEl8MSmj
-	nroq8RTMaCrnKAByRDWLGy1xOXy+9CO3mLlJVRNK+Ud5876sYG+/upc/pCdYv573cVy5KFnwPy9fA
-	N98h8BKMrcMYhp/mQP3wCodmf+Q5PdHsHIzD2UWw2z10OxpjcnHzOtTBGhNzpSqu60XYu5SyNJBBF
-	GaL7tN7Q==;
+	bh=faB9y524a58ZeS0s8MEmavbNGiiMdnJsv0QdkFRus5k=; b=MFKm6S+JYfj2+qGskBIT9N45cR
+	w6r8meElQ9uw3QRcdkwfRuPoVgUmlZAYbcaX7VUuP1rCSZYZebXDBoiADPFb0oBsPe/bCXBcVfTox
+	WlOhZY/RzCL7XZrpKKmpbkxJ3+mKEO0RapJKaR4/jeiAkQH2HyoFKJCmR5ZzrZ/zBHTkt8cLyRr0q
+	PmLWQGQcK0M0FARkk7/ZfQUgYkA8KFI9bSdcg+nsXUFCknH68PUCFRyU3pMDJiI8fD5G9VvX4Igfs
+	5Zx9Fvs1F6nSfe/agRnSHvy9oheXkwLn1LNqVHbPoHIqziYfJ9YN6RbfYzlfHexCVQFw/PSGNlTTl
+	dfek6Gbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLcJw-000000040ay-01bC;
-	Tue, 27 Oct 2026 08:14:12 +0000
-Received: from out203-205-221-205.mail.qq.com ([203.205.221.205])
+	id 1xLcfA-000000042hF-3Oya;
+	Tue, 27 Oct 2026 08:36:08 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLcJt-000000040Zg-2p9K
+	id 1xLcf8-000000042d7-0C08
 	for linux-phy@lists.infradead.org;
-	Tue, 27 Oct 2026 08:14:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
-	t=1793088845; bh=nGbu4upuJLgm2lXKD/Z91nFxrjKCKZHpwQrOt6s2bDY=;
-	h=From:To:Cc:Subject:Date:References:In-Reply-To;
-	b=ZRB1vNchEBn1xTDidt7KlotYbtlRGWLoegdUkgm34YutKGqGFS1vndGuabXwuQZ90
-	 /f0QxD6nmcPMBlMpQq6BxhjlE6opBg1xCkYHbn2pqTPsi40cCO5nyYQN/e07PWbv1P
-	 526lVXWyA9AKXODNJhPhJr8lZw09DmYOIJjw38go=
-X-QQ-XMRINFO: OWPUhxQsoeAVwkVaQIEGSKwwgKCxK/fD5g==
-X-QQ-XMAILINFO: M/8oWtQ8RXooJTRnGxFYe36RnPXjfz6V34oARLY5ztdCgTVzwe4zrpt0OZIqiV
-	 6WOy1tfKUMOwIp89CO5v2jtf8fTEeOq5mi2JUzH4Nef7OjAKvx4xPiylH90reQ6IHIXTUg6D63e0T
-	 481ZvsLL6TnnEWH6cGafWPYXdPkOaWIDYmQaR1TyCkbo1JAipqPJjLWdkJ7c5f9Ntm6rE/Vc85MFA
-	 6/0Yv3GuE058KwOnH34QUKfrzxTwP4bBI/d4wotgx7yzEXWjSCUkxlS5SsVZOnxqFUStijqTic+NF
-	 aNvSUUJDUS18HxXkxELs9NR1BNaF9SEdq07pweT3dgStQMYxIOxFwsx6Ap79t3P7Wda50cBNlyUzK
-	 L0nGZYeXMmxra3ro1YB2pEadf81VxEf50WmhVY2f7ZPN8y/UM4PdbyPXVRvhxVv5nxNg2J/hfK3Kw
-	 pSUJyHx1xsdjaUc/Gnio/6cqfs97icdTwq6NCBZO/byU2hnjUaTaSt9AEwM87gAki9zbOe1yZScN+
-	 PYFSmvDn44vv/ex5eNUA78ks2mSVtzQxrO7o6vvSIaJ6tqOmxNsMswoV+th2FwjbUQUCw5dIurGYx
-	 UiC98zYj+8M80tQd0v5a55xNOCWrzJMcpL9u6ctYYBOGjDYnmGgQj5BgHu3DucOOtbhhIP6iVdcse
-	 NZTX916vUU0yg5PAavrQyQmT52VA/r5Xy6Ozbu+A1EzoVqgRPIIiO+pX5cRNy8l9R/uK/vKiFdjfS
-	 Ky3dE5tvMSNS1KhWn0R+OuSWPkiRCjFJy5irVQouqZ4/77IVsPighdskAl4O9q7fgA02C+iRFllws
-	 TrKDgHhDDjWkiTzDvbHNZ+Xui1Lnl5aLZBJ/0ZBY97G6jebO3CJGueOksuo4EaO36eMoHjNsEs7jF
-	 gP2WMOd83oGx+87D1EJrlBu4GKZGwED07/KKJKyeCzvvIAfQ9zrQH9ERkrMRJD8C0oXuiXNt8am21
-	 KQeoVpouoyLgDKb99Ev+/BEPpEcXH07BurkkWIUVwhaRz5pdTGd6RB/IhJuRgQajP6VGsNTm4Hw8p
-	 61dj2p8TsB+wovP+gd5bvf5tjSyip3s4Xa6VnLxgzG1xCV2ekXBbBh4XrhkKmA+tZOsI4QpyF03f0
-	 IPelgJyNvew7LQ==
-From: "=?utf-8?B?Q3VuaGFvIEx1?=" <1579567540@qq.com>
-To: "=?utf-8?B?U2hhd24gTGlu?=" <shawn.lin@rock-chips.com>, "=?utf-8?B?U3RlcGhlbiBCb3lk?=" <sboyd@kernel.org>, "=?utf-8?B?QnJpYW4gTWFzbmV5?=" <bmasney+clk@redhat.com>, "=?utf-8?B?SmVyb21lIEJydW5ldA==?=" <jbrunet+clk@baylibre.com>, "=?utf-8?B?Um9iIEhlcnJpbmc=?=" <robh@kernel.org>, "=?utf-8?B?S3J6eXN6dG9mIEtvemxvd3NraQ==?=" <krzk+dt@kernel.org>, "=?utf-8?B?Q29ub3IgRG9vbGV5?=" <conor+dt@kernel.org>, "=?utf-8?B?SGVpa28gU3R1ZWJuZXI=?=" <heiko@sntech.de>, "=?utf-8?B?UGhpbGlwcCBaYWJlbA==?=" <p.zabel@pengutronix.de>, "=?utf-8?B?RWxhaW5lIFpoYW5n?=" <zhangqing@rock-chips.com>, "=?utf-8?B?TGVlIEpvbmVz?=" <lee@kernel.org>, "=?utf-8?B?TGludXMgV2FsbGVpag==?=" <linusw@kernel.org>, "=?utf-8?B?QmFydG9zeiBHb2xhc3pld3NraQ==?=" <brgl@kernel.org>, "=?utf-8?B?UmljaGFyZCBDb2NocmFu?=" <richardcochran@gmail.com>, 
-	"=?utf-8?B?VWxmIEhhbnNzb24=?=" <ulfh@kernel.org>, "=?utf-8?B?QW5kaSBTaHl0aQ==?=" <andi.shyti@kernel.org>, "=?utf-8?B?R3JlZyBLcm9haC1IYXJ0bWFu?=" <gregkh@linuxfoundation.org>, "=?utf-8?B?SmlyaSBTbGFieQ==?=" <jirislaby@kernel.org>, "=?utf-8?B?SmlzaGVuZyBaaGFuZw==?=" <jszhang@kernel.org>, "=?utf-8?B?QW5kcmV3IEx1bm4=?=" <andrew+netdev@lunn.ch>, "=?utf-8?B?RGF2aWQgUy4gTWlsbGVy?=" <davem@davemloft.net>, "=?utf-8?B?RXJpYyBEdW1hemV0?=" <edumazet@kernel.org>, "=?utf-8?B?SmFrdWIgS2ljaW5za2k=?=" <kuba@kernel.org>, "=?utf-8?B?UGFvbG8gQWJlbmk=?=" <pabeni@redhat.com>, "=?utf-8?B?RGF2aWQgV3U=?=" <david.wu@rock-chips.com>, "=?utf-8?B?UmFmYWVsIEouIFd5c29ja2k=?=" <rafael@kernel.org>, "=?utf-8?B?RGFuaWVsIExlemNhbm8=?=" <daniel.lezcano@kernel.org>, "=?utf-8?B?WmhhbmcgUnVp?=" <rui.zhang@intel.com>, 
-	"=?utf-8?B?THVrYXN6IEx1YmE=?=" <lukasz.luba@arm.com>, "=?utf-8?B?TWF4aW1lIENoZXZhbGxpZXI=?=" <maxime.chevallier@bootlin.com>, "=?utf-8?B?TWF4aW1lIENvcXVlbGlu?=" <mcoquelin.stm32@gmail.com>, "=?utf-8?B?QWxleGFuZHJlIFRvcmd1ZQ==?=" <alexandre.torgue@foss.st.com>, "=?utf-8?B?Vmlub2QgS291bA==?=" <vkoul@kernel.org>, "=?utf-8?B?TmVpbCBBcm1zdHJvbmc=?=" <neil.armstrong@linaro.org>, "=?utf-8?B?TWFuaXZhbm5hbiBTYWRoYXNpdmFt?=" <mani@kernel.org>, "=?utf-8?B?VGhpbmggTmd1eWVu?=" <Thinh.Nguyen@synopsys.com>, "=?utf-8?B?SmFlaG9vbiBDaHVuZw==?=" <jh80.chung@samsung.com>
-Cc: "=?utf-8?B?c2hhd24ubGlu?=" <shawn.lin@rock-chips.com>, "=?utf-8?B?bGludXgtY2xr?=" <linux-clk@vger.kernel.org>, "=?utf-8?B?ZGV2aWNldHJlZQ==?=" <devicetree@vger.kernel.org>, "=?utf-8?B?bGludXgtYXJtLWtlcm5lbA==?=" <linux-arm-kernel@lists.infradead.org>, "=?utf-8?B?bGludXgtcm9ja2NoaXA=?=" <linux-rockchip@lists.infradead.org>, "=?utf-8?B?bGludXgta2VybmVs?=" <linux-kernel@vger.kernel.org>, "=?utf-8?B?bWZk?=" <mfd@lists.linux.dev>, "=?utf-8?B?bGludXgtZ3Bpbw==?=" <linux-gpio@vger.kernel.org>, "=?utf-8?B?bmV0ZGV2?=" <netdev@vger.kernel.org>, "=?utf-8?B?bGludXgtcG0=?=" <linux-pm@vger.kernel.org>, "=?utf-8?B?bGludXgtaTJj?=" <linux-i2c@vger.kernel.org>, "=?utf-8?B?bGludXgtc2VyaWFs?=" <linux-serial@vger.kernel.org>, "=?utf-8?B?bGludXgtbW1j?=" <linux-mmc@vger.kernel.org>, 
-	"=?utf-8?B?bGludXgtc3RtMzI=?=" <linux-stm32@st-md-mailman.stormreply.com>, "=?utf-8?B?bGludXgtcGh5?=" <linux-phy@lists.infradead.org>, "=?utf-8?B?bGludXgtdXNi?=" <linux-usb@vger.kernel.org>
-Subject: Re: [PATCH 24/27] mmc: dw_mmc-rockchip: Keep RK3572 NVM domain powered
+	Tue, 27 Oct 2026 08:36:07 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69R5Z2992350004
+	for <linux-phy@lists.infradead.org>; Tue, 27 Oct 2026 08:36:05 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	XvY9IYbazDj5cgxSX575pRfs5F9okmqxLiTZfoAtW6A=; b=WZl00uNoBQdnt2S0
+	YB1m4Tf03HlEr6meEzoF81gMDGwApPhtgPSv3aF87ZFDmgbZ/mNQ2gzyLEiVHOEq
+	bPfMm4Zh39MH5BUxtJXkMcGhB045stMayepIYGKzNHNW9Y3joAWMT6MGUQNamCcQ
+	7qFD8zUYqfJOMcKLLo1vdpaO9H0ovTvduOPHdQxX8i6Vd3XL1BzNUaKcnq5oTfh+
+	k/0/PbOefWy343XxdLWC2eGjn4z1cxZwfFW1vgrkFY5sOBV7olOPaytGmxyEhoqM
+	3YVssJY0pTjEVsrFBhQ00voYV0SA3Gtqb236AckrNh9ggS0ToxSl3jEc9KnKssiV
+	ivTpxg==
+Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hjh919hua-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 27 Oct 2026 08:36:05 +0000 (GMT)
+Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2ea381ce04fso9154875ad.0
+        for <linux-phy@lists.infradead.org>; Tue, 27 Oct 2026 01:36:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1793090165; x=1793694965; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=XvY9IYbazDj5cgxSX575pRfs5F9okmqxLiTZfoAtW6A=;
+        b=bm5ySP8r+G6m/WWyKmcqTd/EMJ21n4by55XH7Fs7u4TYGfBEfoq34ZDnNXzH0UPF21
+         ifkaaf+69r4XxkOAQ33KvNCzaPbkq2x7dCwuDszZFkDe8ibMVzpePThe847DpSt5CGWj
+         34HWpneNlYL7JBGMGS9T6BqPesONUcleT+wWA3Q7ancjImaHlR8+TrAngQwgzqcD5AaL
+         cGQmWzBpXmN1WQN9AD8kRSh79R70Rfl8yIL+cZ7Ej4JbTOvUVFUPZqPfLo6S8jzwNlga
+         QrZ8j+Agrn1u0ZjEKt+Wic/22Mo6QXRWMuWxWuYxovd9+RBwdVD55tu5A7aqWDAplEEt
+         jCyA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1793090165; x=1793694965;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=XvY9IYbazDj5cgxSX575pRfs5F9okmqxLiTZfoAtW6A=;
+        b=yd8FeCNUSII+q8gRncn2RC/tkzvhTdi3S00j/ZdnrIZjmuLxJeQdO6tuvo+i9JecMj
+         Nn6FlXFr60P+2wTsv2rjAfGy3uodT7dD4WIpWKP2Ep7EndDba4ZyX8r3XyN5OyFzK8Cb
+         7U2Yh0HEY0NzFO5AOC0y3ZYor1FNRcTl+/gHy7/vrX7Dkjjs2zZoLeJdBOf2Dfr9NeQr
+         MZSCJ9Yd0BYcDY6wWar2UqOpWEKk7q2ye+VJ1puFObkQ0+QOgbrbny1iKFweJKOWQZqe
+         tUOJ5qp6QJgnXVsScPqBWH7zflwyGckeZwofieMVDg0NFRJtHS5/zbHaYPy/87hfiGB/
+         HNRQ==
+X-Forwarded-Encrypted: i=1; AKwUvBwlpuVhnStgmOY6J6dul3jav+xcFNuYUnpzi/Uo6idMP9pJYnvqvv2FB3H8N8Lzj9xpSCPONNwNWxo=@lists.infradead.org
+X-Gm-Message-State: AFq9FYJWruRCm63Tg81+oU+ZcbZznmdPLrjRQksdY9Mkjb4nUYCZnsec
+	sFtu1W9xxbP4tddTjHq+qWeZrYF0wwk8ctLJqd2gz8+jmRyUkWdeuXMqnVdhD5z/CkjRQ+Bb0bP
+	7GVE0WOA4I4wuXFFPG1HlHkKTRnPFjoC5jcjeVqYDw0XPADQ5IkfIxBcJJ8mIZPLDBt2s5w6dUz
+	NL
+X-Gm-Gg: AYBFou2s+YSGUVfbNBFiKT5hjm7V5PktvpGcoH5pZV3nWT3S20ciJ6QR2QMwnZgs/Ga
+	Z78JhN6dnfIIq/SPDJERPoOfq34bTg7iw6SZ8sOhYZZ9a5GXmPW2FGNY/up2x/EFDwQu0Sgf7vW
+	Y5BzGiVqkdcZQOqTINKTbfwl0UFB/7tEhiZWxQwvyPssQdM9HIgux7twwmln9LUzxk2zkMHisOL
+	+dLAFnUfWhLOolUZm2dxnmpclzCjQBguYIFDJ4P4IvWIAAzJPZ79TekNygPl6JgCtixRfhDTV4v
+	FswDH8Xb7x1SR0+XGqK8zlVqXZww1WUwYRonHwOKTBNRsQxZs7Ml3InSRA1mfSvmsUjEAdt3DVM
+	XHfQKxTxEfO5NKD1cR94Qp4GDqm0c
+X-Received: by 2002:a17:903:2c04:b0:2e8:3a42:7edf with SMTP id d9443c01a7336-2eae3d18edcmr12346305ad.12.1793090164482;
+        Tue, 27 Oct 2026 01:36:04 -0700 (PDT)
+X-Received: by 2002:a17:903:2c04:b0:2e8:3a42:7edf with SMTP id d9443c01a7336-2eae3d18edcmr12346095ad.12.1793090164009;
+        Tue, 27 Oct 2026 01:36:04 -0700 (PDT)
+Received: from [10.204.78.119] ([202.46.23.25])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2eae6be65f1sm5508205ad.38.2026.10.27.01.35.59
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 27 Oct 2026 01:36:03 -0700 (PDT)
+Message-ID: <ce4edb33-72b6-44ab-82f6-0efbf7111617@oss.qualcomm.com>
+Date: Tue, 27 Oct 2026 14:05:57 +0530
 X-Archived-By: <archiver.kernel.org>
-Mime-Version: 1.0
-Date: Tue, 27 Oct 2026 16:14:00 +0800
-X-Priority: 3
-Message-ID: <tencent_0431D34CCA9424908F2C068820D6F9C1370A@qq.com>
-X-QQ-MIME: TCMime 1.0 by Tencent
-X-Mailer: QQMail 2.x
-X-QQ-Mailer: QQMail 2.x
-References: <20261022-add-board-ok3572-c-v1-0-0b0fd85a31ee@qq.com>
- <20261022-add-board-ok3572-c-v1-24-0b0fd85a31ee@qq.com>
-	<bb38e2c8-1868-4a66-9e0d-78d9f68ab4be@rock-chips.com>
-In-Reply-To: <bb38e2c8-1868-4a66-9e0d-78d9f68ab4be@rock-chips.com>
-X-QQ-mid: xmsezb41-0t1793088840t5jwsbqnj
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v5 06/11] phy: qualcomm: qmp-combo: Add v8 PCS-level drive
+ level tables for Glymur
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Manivannan Sadhasivam <mani@kernel.org>,
+        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+        Wesley Cheng <wesley.cheng@oss.qualcomm.com>,
+        Abel Vesa
+ <abelvesa@kernel.org>,
+        Johan Hovold <johan+linaro@kernel.org>,
+        Bjorn Andersson <quic_bjorande@quicinc.com>,
+        Dmitry Baryshkov <lumag@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org,
+        Ritesh Kumar <ritesh.kumar@oss.qualcomm.com>,
+        Mahadevan P <mahadevan.p@oss.qualcomm.com>
+References: <20261001-glymur-phy-v3-v5-0-3848c2615d5a@oss.qualcomm.com>
+ <20261001-glymur-phy-v3-v5-6-3848c2615d5a@oss.qualcomm.com>
+ <08503be4-d40f-45b2-9f78-27f49125909c@oss.qualcomm.com>
+Content-Language: en-GB
+From: Nabige Aala <nabige.aala@oss.qualcomm.com>
+In-Reply-To: <08503be4-d40f-45b2-9f78-27f49125909c@oss.qualcomm.com>
+X-Proofpoint-ORIG-GUID: L1-Ha438XlTHhPxiWdOcBM9upBsO5gj5
+X-Proofpoint-GUID: L1-Ha438XlTHhPxiWdOcBM9upBsO5gj5
+X-Authority-Analysis: v=2.4 cv=TuxzFzXh c=1 sm=1 tr=0 ts=6ae06275 cx=c_pps
+ a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+ a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
+ a=EUspDBNiAAAA:8 a=fDIfHCVy3xMQvtPnWccA:9 a=QEXdDO2ut3YA:10
+ a=GvdueXVYPmCkWapjIL-Q:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDI3MDAzNCBTYWx0ZWRfX+CJ6zxby8+pF
+ 3mHzHAeODlQY/2HV6+BzVjY/y16foZ/IWNaoTlJwTVeFBI+feCfQQHdakfEQS0NXhRvGKfG+zN8
+ LqtWqHAJ0aicFA/8SM5MSsWUAapcmF/dKJpWAB3+36zxUQ0NiSZ4u097iJWGAFwSABD/dikwGZn
+ Li9EdpbRHab5MglNUsaTuLL7KksSYjskjf/oshjkKecF7y9Zi6E9t5+ais1qE7FBXwQR4EWiYxf
+ 6DMCMFa6cT9WwEMDgpEDOQc4bKvnOKOHs0I0NoksGmf4/mir0xBoa0cMtcaQkF7LkVhtV+i2Ugw
+ j5VgmxRoOI0rXrpd/eqNZsrh8Ii3PqzUJPkBNfs1W1/TEvdb9/90Unc7mvuDk/oJecHtpqWFPhi
+ lZ6IhgeOUdtwtaXJPC+OlKRERb3h2+UYa8GnSMX3C/O4oRUCMfeeLsBAmHjk1TRFQf2DFA+rHLd
+ 43DsmFuIVevWeelreTw==
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDI3MDAzNCBTYWx0ZWRfXwvn5uXnbPKjQ
+ L3YR4O9Q9yGQDl6NJO+1d4aiehxTBuUdg6WX2PAEoHzUnyPUhRnyXg6dzPnnSzSlXcm3Oa+dQQe
+ Ua50PHNJSUHU5NQpzqmph7INwKVVX1Y=
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-10-27_02,2026-10-21_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 malwarescore=0 spamscore=0 priorityscore=1501 bulkscore=0
+ adultscore=0 suspectscore=0 lowpriorityscore=0 impostorscore=0 phishscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2610190000 definitions=main-2610270034
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261027_011410_023357_202C9205 
-X-CRM114-Status: GOOD (  13.04  )
-X-Spam-Score: -1.9 (-)
+X-CRM114-CacheID: sfid-20261027_013606_119539_C043CE1E 
+X-CRM114-Status: GOOD (  12.41  )
+X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,52 +162,49 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-0.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
-	DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	FROM_EXCESS_BASE64,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-5.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
+	autolearn=no autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi Shawn,
 
-> Before your v2 about this path, I would like to ask why you need this?
-> The dw_mmc-rockchip controller is always under A power domain on every
-> SoC, none of the predecessors need this kind of change. If you see
-> some errors during RPM, perhaps you should have a look[1] and check your
-> DTS.
+On 10/22/2026 4:10 PM, Konrad Dybcio wrote:
+> On 10/1/26 11:34 AM, Nabige Aala wrote:
+>> From: Ritesh Kumar <ritesh.kumar@oss.qualcomm.com>
+>>
+>> Add PCS-level drive level tables for the Glymur (V8) DP PHY:
+>> - qmp_dp_v8_ln_drv_lvl_hbr3_hbr2: LN0/LN1_DRV_LVL settings for HBR3/HBR2
+>> - qmp_dp_v8_ln_drv_lvl_hbr_rbr: LN0/LN1_DRV_LVL settings for HBR/RBR
+>> - qmp_dp_v8_pre_emphasis_hbr_rbr: updated TX_EMP_POST1_LVL values for
+>>   HBR/RBR
+> [...]
+>
+>> +/* HBR3 & HBR2: DP2_LN0/LN1_DRV_LVL swing settings (PCS level) */
+> These comments are a bit superfluous
+Ack, I will drop the comment in the next revision.
+>
+> [...]
+>
+>> +	/* PCS-level drive level tables (v8 / Glymur) */
+>> +	const u8 (*ln_drv_lvl_hbr_rbr)[4][4];
+>> +	const u8 (*ln_drv_lvl_hbr3_hbr2)[4][4];
+> Why can't we reuse the existing fields?
 
-Thank you very much for pointing out my mistake.
+No other existing fields are matching these two tables. That's why I 
+added a new field
 
-I wrote this patch after observing repeated SD card resets and recovery.
-After several tests, I found that keeping NVM1 powered prevented the
-problem. I checked the SD supply and pin settings against Forlinx's
-vendor DTS. The settings matched.
+Thanks,
 
-I then searched the mainline history for RK3576 and found its SDHCI
-workaround that keeps PD_NVM powered. I therefore assumed this was a
-shared design issue in the RK357x family.
+Nabige
 
-After your email, I carefully reviewed and compared the Forlinx
-OK3572-C schematic and DTS.
+>
+> Konrad
 
-The OK3572-C_Linux6.12.58_Alpha1 BSP incorrectly references RK806 PLDO4
-as the SD card supply. The card actually uses a separate 3.3 V supply
-through a switch controlled by GPIO0_B6. The original DTS uses native
-PWREN, which loses the enable state when NVM1 powers down.
-
-I incorrectly assumed that Forlinx had validated its vendor kernel
-and the corresponding device tree.
-I am very sorry for this incorrect assumption.
-
-I will report this issue to Forlinx and replace this patch with the DTS
-fix in the next revision.
-
-Best regards,
-Cunhao
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
