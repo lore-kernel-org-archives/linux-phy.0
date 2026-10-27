@@ -2,84 +2,86 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 77943606A324
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Oct 2026 06:40:37 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6FF64606A31F
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Oct 2026 07:08:46 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Wo64TxuT;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20251104 header.b=mI6rt0Wz
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=C0A26h2x;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20251104 header.b=FsStix/8
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:From:Cc:To:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=gLlVShVD94+PXQuFipOXnzgaC0sQHc4X0fhstucnHwA=; b=Wo64TxuT2nyaRmYv/x0bE3BBYV
-	LDHCmlMeQesPAv6Fyag1wXueJ6k5IVqBBBO3k9FYIUkeeG+vV0+G5otX0T4S190GaBsIfTg1o9nrI
-	kBs47pRmtTU8RkepQ+YPs9qSnUGUszJumgOCIdFMu32JPW7InNA+zRxSgdg+jcBs9r7Naca+i8oR/
-	XWNhNaKGRfAfez9KRWE+3EmvHv+hMtJxs/w0nKyyqPS115yASvlM2TIYgUwv0zp3Cl3dc4P7W28JX
-	LUyvMdCv9bXzoxm9Vwo403tFDc2Nk/j5BZcilA1TB9sc1aYySab57wzOt5pka9c6Py0WPK3ALR43s
-	0dBmDJcw==;
+	bh=5v2aC2vEsc/c5GFvXyCe9Te8JgAnN0P1/qQdax4nrkg=; b=C0A26h2xsbCav6Xy7u3p+lhtEN
+	cbO2+X+SqbJQQHgZAViFYSnD5jKvbcIORyArRNnRKN64QVN8RFiry4jX+wLQCQutYAPlglVvkxyaB
+	+mJnyskx0XOFVNUrNiJX6i3+s066Tzb7KoNwKtlnUDAKUaMzN4hTKuIavFrpVHghINU1EdSycij1Q
+	EA1jTVKOxReKt5e+gi43TYbecXFSMqlzYTOpSZIH4kHyJZt8vdbOl1JrEu1cE+ENh9Wadyu+wOddY
+	mpqtvWWqG3GnY1DqavXEgE1Weofq9Lb5jV8+RE7adsbCPlCWUz2iw42DWqYNvfu9yWXWBLGpJk6ul
+	dO+r6oBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLarN-00000003rJH-08UP;
-	Tue, 27 Oct 2026 06:40:37 +0000
-Received: from mail-pj1-x102a.google.com ([2607:f8b0:4864:20::102a])
+	id 1xLbIb-00000003t6q-3gXs;
+	Tue, 27 Oct 2026 07:08:45 +0000
+Received: from mail-pj1-x102e.google.com ([2607:f8b0:4864:20::102e])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLarL-00000003rI3-0feZ
+	id 1xLbIZ-00000003t6X-3qDU
 	for linux-phy@lists.infradead.org;
-	Tue, 27 Oct 2026 06:40:36 +0000
-Received: by mail-pj1-x102a.google.com with SMTP id 98e67ed59e1d1-3ab2cb8d577so2662061a91.1
-        for <linux-phy@lists.infradead.org>; Mon, 26 Oct 2026 23:40:34 -0700 (PDT)
+	Tue, 27 Oct 2026 07:08:45 +0000
+Received: by mail-pj1-x102e.google.com with SMTP id 98e67ed59e1d1-3ae2b7e1e17so823977a91.3
+        for <linux-phy@lists.infradead.org>; Tue, 27 Oct 2026 00:08:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1793083234; x=1793688034; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:subject:from:cc:to
-         :content-language:user-agent:mime-version:date:message-id:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=FMlVixG0r7ucjTAqdIszWewlNzO+T0JDcfYGipLMztI=;
-        b=mI6rt0WzmLvy6jvDag4OI4ImYPzAEtxmLXsnG8+vB9lmjv/0EAGYAAbXyIq1ojtLQp
-         kSQPI7z9eDOLt9lJiA2YO9AyOR3k7WMfPn0DH1EfJdwcazghs6JfYsqwtNLN34n0aX3j
-         S3Sxc+3FkqDROJXZy+NPzN7d062UEnihVvuaKxINis8qM2IgWhcc5S45qMViYnrxMpX4
-         QU2r8wiUIevxkxA5de2VH8CYxR4fK57Tr3j1UofvGnc5pRahLTjHL2+TgK6+a+CVn9/C
-         UIRbHoegbKEossW/4MuDf+qCnipklz9CGFLe8n9t77KhfZOYWHKZGvOP5FVJL2CDxVj7
-         OE+A==
+        d=gmail.com; s=20251104; t=1793084923; x=1793689723; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :references:cc:to:from:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=6zazjVTQz3Lc+/QZ9WoAd0ReZCneFGPIxm+AtvJf/J4=;
+        b=FsStix/8nSBcSqJOIiuc5rwfkfqQV2sg6zLGol7Dc3r6pEg6ADciIvsvZdCOagV2rf
+         buQ8Be4xp4JU267KVKCj2Pog4Fw/T5iDPHXKrNpr2Qc0UQQ963p/CJSGpQT8lc49O28V
+         5I8inKvpY2RfiVB7Kg6HPJfNyoHc9KM132vrmHjvGCqzTwtoRrv6OHD+sI9qB+Pvr5wN
+         bkTBlLXB9lDm59d3G7WrsKnIl/lptJVaP/7XfXjEWw4KCDpjCwFm51XAn1LrnuPbhKQa
+         c0E24DikaCKqKFbTNjgQBFrlMSYBVAmypV6xTh1tQMQY0mMSIAlCPBqBBQdcaqemTDzI
+         yIRg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793083234; x=1793688034;
-        h=content-transfer-encoding:content-type:subject:from:cc:to
-         :content-language:user-agent:mime-version:date:message-id:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=FMlVixG0r7ucjTAqdIszWewlNzO+T0JDcfYGipLMztI=;
-        b=paxxr2pSazGj2Tdpo9nRmooDUzJt83i+pUneDOidziQ6UtlJOoDug6IPD0PsaKLHPe
-         yZfajKyACslnuii6VVqb+i8xB90P91klAvrsi/1G1iJef8jpffkDLQQUg5Haut7Lc9ng
-         D0iq8C96R/nKx/FCBUCZJvhKHg6P1k/Rc4YvzIFeimyIy8nJB4Awj3M2KPk3X6XOGsUM
-         KLJtFhuO2epHJJQbe3IMtXd2RRmdnQNE5UhUVmWYUVV4tlH7OS6UaqyGuQAxP9fvgsTS
-         9zIRH5vTa9wvJJoP2nFcrIz7iGoglLrzv1MvvQ19ACyXQcwpOaDw/qEU6bEp73CVR62N
-         jyUA==
-X-Forwarded-Encrypted: i=1; AKwUvBzUptNEfNos7RuQAoXFVemBZ/Jn2q/vBWIdz5pWkQoMpEvn5KsjxsAzJTv5imS6scCgivkuHtOurz8=@lists.infradead.org
-X-Gm-Message-State: AFq9FYJ+4t8P97cNaEIyV/FrFnH5siCYc48FKzj3Hfxq9txkjs0EZ1MN
-	4s1cYcRLdf0Ju6tHsCvrqD6GHmVinIJzgDr90MWfZjV7wRcSvbDLmKs=
-X-Gm-Gg: AYBFou3UCdoKqso/uJJRZxUqoE1dG4YVi70hpLvHJf92RaHAu/jfpRCHWhxclmv9yls
-	S5QbDIkTnIl6/03sztBsM1vU3zhG4uXVZnQX2C86AoTqAzGnwZAWDvvdYKCUpjnbWvSN7/T6gRq
-	PVyyoxTe9nQGdHYzO5doeSU4TLZcz6oc/OVf8f/Hv6A+8UMtmF8IETXAIgB1GmihLJ1C7DfMRsw
-	rR72ibpoohW3vwoFr56pMwLU4D/6pdBUqAa+9hWdrqPqICTzCNr8UnVQbu3rfVS7qE5j2XtM/OI
-	TH0J95naVql7MB2tQoW+cEsiumHo3wXrRjERxEXKRpSSQsHVW/+hOofoPMZNGqUFuDiw1+INFzE
-	U4dZO2xDkgPgfhbebCG+u+P7Tuqdi4Rh86Wgji7O3icV1jSIBoUrnDdJqo91T5hcwN3HAn1qL3d
-	Pl3Aw7euQFk8YvaNYaTzhj4CrML4HUNto5wvxof/oOjg39dC1nWAgiUbL+TYMXhKj2rG60zieGD
-	FTc627z1HUn7xD596o1kwjF8WP8Eydfw5YH3qP4IcxI+VDN/Q8HjNCgcwOs3hggJd554gq3yrJk
-	i/hqtntnHBBvsg==
-X-Received: by 2002:a17:90b:164e:b0:3ac:4291:f569 with SMTP id 98e67ed59e1d1-3ade9b2ed66mr7926692a91.8.1793083233783;
-        Mon, 26 Oct 2026 23:40:33 -0700 (PDT)
+        d=1e100.net; s=20260707; t=1793084923; x=1793689723;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :references:cc:to:from:subject:user-agent:mime-version:date
+         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=6zazjVTQz3Lc+/QZ9WoAd0ReZCneFGPIxm+AtvJf/J4=;
+        b=kT5ex3TQnuiMfy9M87o1XOpLTwpZSczpTgVEmdNXg5mHyUx45GdGAZ8xTBrX7FUP98
+         DtLX1Bmdt3CZAWLuRPPpt5Ob2f+7WqpwCcTX/9RPmnKcP96Hs+s5NHzqkb5xfUSdjMQE
+         IRPCAMOfXSl+B26BtXgYAxCEblUoFkcyKf3h1NDAEJW828+8PHXIjpeGZkpHRMCLFLFk
+         2bi2zd19zE2Vs3L1OxaWPswTFKT24JJzvp5k0QeP18Hp3sOXMN+KsOh6bd9MBn0+dqTS
+         vr9GOSpTxitUJhXXPooSRHHwv30NPEZnHQIqpfhsCgJf1c4e2EgDrPWfnKl3s1ZnXie3
+         KPsg==
+X-Forwarded-Encrypted: i=1; AKwUvByGkT/FRBCiars7tNpVJYFHW6tddLUR4CyD2SiEmWKv30NuasUbNAJZ+tPwrS6RG7OO/JIYivR1vtM=@lists.infradead.org
+X-Gm-Message-State: AFq9FYJLLOikJSX4yWG5y5Vnllc5Q94cS4uTE+8y0aEMt+3rqskzRMG5
+	QY21YTEA9uvRjTAHb7yoSUvkY1jhT8C7Y+of2o71tJ3wQjp1OyaJe2w=
+X-Gm-Gg: AYBFou1BRrD8Vw+I8pIxlpE6lC2nT2m7kRCkuh/LJgOcMwrKVfjPVm5Dxmdf+oxrgU4
+	Yb+Euu1iHBlGUs4yxAirvOS02sDuMHr0H+egsSgyA+RH83xFoqM6BJs9Zzw4vfvtq9+cTlL/vUZ
+	m5qSbQ5hdykmZBWR0hpQ5kkbUPsTRZAOjFkyLohQE+8eO7n6LLrwC6M8DnSyJbZYBwucFXbcNzz
+	g82bx+YDgCktdJZ7v7bVXEcRLIrB2EZb73QqQAHF+7z1Q6iOyAxnGonlVkG/BFwDz1+DfBnj7gi
+	4lS8taXQAQ5xIzQGUvT93cDtc/tVuxrfmKqQlPyG+b3VUay2YEVt6KvfCFGsm9Hmx7O4b6Y853s
+	+c1HiERDUb1Dt3Sf+O/JaAI7CvrHRMRtf5393Q9Uwic1+B4u81cJH+3Ol87LGJYxlrwXgkpdF5C
+	CoGhLN1/ezuUPXh8QJUa2adQr4VoOWJao2b6bCgyf4veYxBxDKyTUPl3VBgLN84Spcv0rT5/5f+
+	dyL04EZ6G7LAO0ZLT3Rczl4X1Jv+3cYcRf6YGSCgmh0kvG6HuQp4YRPTMNAYVC01nUMQEPunc+Z
+	u8ZPSYVVqihoi6vDWifqRdC2E2dYuo/ykmM=
+X-Received: by 2002:a17:90b:3941:b0:3ac:eeb:e0ed with SMTP id 98e67ed59e1d1-3adead5e324mr7265729a91.36.1793084922903;
+        Tue, 27 Oct 2026 00:08:42 -0700 (PDT)
 Received: from [10.1.1.198] ([71.212.222.246])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3ae4066cf2dsm2200569a91.16.2026.10.26.23.40.32
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3ae401bf352sm2540119a91.0.2026.10.27.00.08.41
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 26 Oct 2026 23:40:33 -0700 (PDT)
-Message-ID: <5b31ea48-7918-4f0b-b012-6915b384b922@gmail.com>
-Date: Mon, 26 Oct 2026 23:40:32 -0700
+        Tue, 27 Oct 2026 00:08:42 -0700 (PDT)
+Message-ID: <4934834b-41ab-4663-b031-d04d736e9fe8@gmail.com>
+Date: Tue, 27 Oct 2026 00:08:41 -0700
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Content-Language: en-US
+Subject: Re: phy: qcom: qmp-combo: Glymur USB Gen2 fails on one port (chip rev
+ 2.0)
+From: Burke Cates <burke.cates@gmail.com>
 To: Wesley Cheng <wesley.cheng@oss.qualcomm.com>,
  Vinod Koul <vkoul@kernel.org>
 Cc: Neil Armstrong <neil.armstrong@linaro.org>,
@@ -91,12 +93,13 @@ Cc: Neil Armstrong <neil.armstrong@linaro.org>,
  Nabige Aala <nabige.aala@oss.qualcomm.com>,
  Mahadevan P <mahadevan.p@oss.qualcomm.com>, linux-phy@lists.infradead.org,
  linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org
-From: Burke Cates <burke.cates@gmail.com>
-Subject: phy: qcom: qmp-combo: Glymur USB Gen2 fails on one port (chip rev
- 2.0)
+References: <5b31ea48-7918-4f0b-b012-6915b384b922@gmail.com>
+Content-Language: en-US
+In-Reply-To: <5b31ea48-7918-4f0b-b012-6915b384b922@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261026_234035_211031_63AC7843 
-X-CRM114-Status: GOOD (  10.51  )
+X-CRM114-CacheID: sfid-20261027_000843_961199_D8C4D2D7 
+X-CRM114-Status: UNSURE (   5.87  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -118,70 +121,19 @@ X-Spam-Status: No, score=-2.3 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi,
+On 26/10/2026 23:40, Burke Cates wrote:
+> These tests used v7.3-rc5 with out-of-tree Glymur platform/board
+> patches, including DP PHY support. They were not on an unmodified
+> mainline kernel.
 
-Could someone at Qualcomm check the Glymur USB43DP USB tables
-(glymur_usb43dp_*, introduced by 5b289913959b "phy: qualcomm:
-qmp-combo: Update QMP PHY with Glymur settings") against the
-supported production settings for chip revision 2.0 and later, and
-post updated tables if needed? Is revision-specific or per-port
-tuning expected?
+The end of my message was cut off when I pasted it. It should have
+continued:
 
-In short: on a retail ASUS Zenbook A16, USB Gen2 fails to enumerate
-on one of its two Type-C ports with the mainline tables, while
-Windows runs Gen2 on that port, and local changes to the Gen2
-receiver/lane and common PLL settings make it enumerate. I'd be happy
-to test proposed settings on both ports and report enumeration, DP
-and suspend/resume results. Details follow.
+AI coding assistants helped with the bring-up and this report. The
+logs and test results above are from the recorded hardware tests.
 
-The machine is a retail ASUS Zenbook A16 (UX3607OA, Snapdragon X2
-Elite Extreme, SoC ID 662, revision 2.0, BIOS UX3607OA.312):
-
-  C1 (left, rear/display-adjacent): Gen1 and Gen2 enumerate
-  C2 (left, front/user-adjacent):   Gen1 works; Gen2 fails
-
-The tested Gen2 device is a Realtek RTL8159 10G NIC. Two different
-C-C cables reproduce the C2 problem. The same adapter enumerates at
-Gen2 on C1 and on the Type-A port. Linux applies the same USB tables
-to both Type-C combo PHYs.
-
-On C2 the adapter either enumerates at Gen2 and resets/disconnects,
-or never enumerates, looping on -71 ("Device not responding to setup
-address"). For context, this October 22 excerpt is from the earlier
-flapping case, before UCSI was started in the initrd:
-
-  [  307.056050] r8152-cfgselector 6-1: reset SuperSpeed Plus Gen 2x1 USB device number 3 using xhci-hcd
-  [  307.136539] r8152-cfgselector 6-1: can't restore configuration #1 (error=-71)
-  [  307.136705] r8152 6-1:1.0 enu1: Get ether addr fail
-  [  307.651093] r8152-cfgselector 6-1: USB disconnect, device number 3
-
-The failure also reproduced with UCSI running in the initrd. In an
-October 24 A/B, keeping the cable and orientation the same, the
-unchanged USB tables failed to enumerate on C2 with the -71 setup
-address loop. Local changes in the Gen2 receiver/lane and common PLL
-settings made it enumerate at 10000M, with no -71 in that capture.
-Windows programs different values on this hardware. The A/B suggests
-a settings issue but does not establish which programming is correct
-for production hardware.
-
-With those local changes, C2 enumerated at Gen2 with both cables,
-in both orientations and after s2idle. C1 still enumerated at Gen2;
-DP still trained four lanes at HBR on both Type-C ports. I haven't
-isolated which part of the settings change is necessary.
-
-This is an enumeration result, not a throughput or complete NIC fix.
-On the changed kernel the RTL8159 still fails to get Ethernet carrier
-on both C1 and C2, and cfgselector resets recur. That is being tracked
-separately; I have no Linux iperf result with the PHY changes.
-
-Under Windows the same NIC negotiates Gen2 on C2 (USBView: "Device
-Bus Speed: SuperSpeedPlus") and carries about 5 Gbit/s each way in
-iperf3 (about 6.5 Gbit/s in total bidirectionally), so the port and
-cable are fine at Gen2 there.
-
-These tests used v7.3-rc5 with out-of-tree Glymur platform/board
-patches, including DP PHY support. They were not on an unmodified
-mainline kernel.
+Thanks,
+Burke
 
 -- 
 linux-phy mailing list
