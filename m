@@ -2,100 +2,72 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 34494606A327
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Oct 2026 15:46:30 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E657F606A321
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Oct 2026 17:00:49 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=bBhC2mG6;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=leemhuis.info header.i=@leemhuis.info header.a=rsa-sha256 header.s=key2 header.b=bjaTcbZX
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=vfbM5Odv;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=f2Bt5010
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=VFhs1+6kWmC1POjBQznkP+YKZOSts95LyOPmYUUqH4o=; b=bBhC2mG69QK3HnnYcpQq7XiQRD
-	Pg8sDBBy5+I21HmnlZnmmavzxfr6+88FqSZ1jnD3L4fOIZ6l7CSlnYMUd2Cjn4zPWF2Hv4xoVWlhL
-	kKlWuu/jBMyNvAqnjyPKri9uGH/XL6wQtfYpyIhzqifvwMMX7eGxiV+BfxjiXRPIQQWSDGuc2LDf8
-	/QM2QRBqoVqY/qmX/zTMoFNs+HKRt6YP4j4tWXimw/CT94TwYa4Nbtyi7gzc6xS17j2spQSfQE74U
-	yAUbmc5AMml9YhuT8rkfbNjFNsBMJoU13+uofdTfr+3bVPmEB0uQbxxckvVSIe3xeYDy3DBzPw595
-	Urk5OdTw==;
+	bh=8wjq1oRiYXiITigS0LRkkUK2XZRlM4/1HBv0n8adWCU=; b=vfbM5OdvuzIsBHBkwxkAoCSw7O
+	4xmkxvUWMWg65ntYOtiJSCfGz8DKWDxUfU7kfCXFTsFHao1IlM+A4WuhUOU4G1x9iVz01AugwUcJw
+	wSTUTVfj9xIUjTx1VJRKWre0aOSDutFm57dl0fCzfAtNX5lgkStgYtZK00iCaCfYerj71zUcPnm9u
+	9WpQTfHE0xibt3k3k2QUb/pjB4Ya1JmGfXDiMOUWfc55voDijgBTTGQchVCEDgzu49eTx+HEDjUEO
+	pjqdU/s7voEqM6qiEuNdLMeLJR3Mg/pC1gzFltVji/X8V6LrQ7k99UMo+CRtqWNIkVoc3cR/MmTye
+	d0Ob3ruw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLjNd-00000005GOM-3FGZ;
-	Tue, 27 Oct 2026 15:46:29 +0000
-Received: from relay.yourmailgateway.de ([185.244.194.184])
+	id 1xLkXZ-00000005R0J-2rVs;
+	Tue, 27 Oct 2026 17:00:49 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLjNZ-00000005GNl-3gpZ
+	id 1xLkXY-00000005R06-2EUb
 	for linux-phy@lists.infradead.org;
-	Tue, 27 Oct 2026 15:46:27 +0000
-Received: from relay01-mors.netcup.net (localhost [127.0.0.1])
-	by relay01-mors.netcup.net (Postfix) with ESMTPS id 4jDZbb0pTXz9VQW;
-	Tue, 27 Oct 2026 16:46:19 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=leemhuis.info;
-	s=key2; t=1793115979;
-	bh=qA56k+l6ygj3dxRxpHulwfQ4k+iK1ctd1p0EB6vaya0=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=bjaTcbZXSFZBGYT+VgmIJ/IrtNpBGAPO1hSj7XfOR81PfE5tjcWz/xJB3aJbrRsGh
-	 gBIJ6+1h1kZlArXr2PyqmOjWBal4NpZfI7O/GJMVwKbYAOZewDqX9sHCQiPDQGS+xy
-	 7v7apsgpkoRdJjJLdjG1/MLxaq2wIuHjKR4bAcgwzPNoCbhYDKHJXw5BfbSZLOUZL7
-	 2ZwXEh8KXsquon7se3heCb3YkI/aaH0K6r8sd1qoAJIxEmeTKo7iha0H9GzdQq2XAi
-	 qUXdutCKXFEcLdRkysC2IuSiH/D+8vx3lXhsm5XVDHITVP+W2TFmBMyY01ZI0+JJhd
-	 c2oxCqpq7B2pw==
-Received: from policy01-mors.netcup.net (unknown [46.38.225.35])
-	by relay01-mors.netcup.net (Postfix) with ESMTPS id 4jDZbb0594z7wyS;
-	Tue, 27 Oct 2026 16:46:19 +0100 (CET)
-X-Virus-Scanned: Debian amavisd-new at policy01-mors.netcup.net
-X-Spam-Score: -2.898
-X-Spam-Level: 
-X-Spam-Status: No, score=-15.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
-	version=4.0.1
-Received: from mxe9fb.netcup.net (unknown [10.243.12.53])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (P-256) server-signature RSA-PSS (2048 bits) server-digest SHA256)
-	(No client certificate requested)
-	by policy01-mors.netcup.net (Postfix) with ESMTPS id 4jDZbY4ZVLz8tgg;
-	Tue, 27 Oct 2026 16:46:17 +0100 (CET)
-Received: from [IPV6:2a02:8108:8984:1d00:a0cf:1912:4be:477f] (unknown [IPv6:2a02:8108:8984:1d00:a0cf:1912:4be:477f])
-	by mxe9fb.netcup.net (Postfix) with ESMTPSA id 63A4B5F9A9;
-	Tue, 27 Oct 2026 16:46:12 +0100 (CET)
-Authentication-Results: mxe9fb;
-        spf=pass (sender IP is 2a02:8108:8984:1d00:a0cf:1912:4be:477f) smtp.mailfrom=regressions@leemhuis.info smtp.helo=[IPV6:2a02:8108:8984:1d00:a0cf:1912:4be:477f]
-Received-SPF: pass (mxe9fb: connection is authenticated)
-Message-ID: <f6a49cbb-e000-4dcf-8b3b-61c3b8d934a9@leemhuis.info>
-Date: Tue, 27 Oct 2026 16:46:11 +0100
+	Tue, 27 Oct 2026 17:00:48 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 1809740840;
+	Tue, 27 Oct 2026 17:00:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 392071F01825;
+	Tue, 27 Oct 2026 17:00:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1793120447;
+	bh=MWogW9v4I9IYrvgTyhl6LKMKwTAkz80m1q6fFg2x4yc=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=f2Bt5010mode/v1AcQmeCHwLvfIEEb58IsTo5RDyviSkvUbpQOyn4kxx+WIau3jC3
+	 FlDRp6uO6LcGJIWb+uNgJ3VoAYew13QuiKEQnzwVPgXm7abXYgvgZCUohOWrHxn7Jn
+	 qIdxdsZN6qP/UnbT9VDtjzlsHiakVkLd4WZqc2fgabMLmAGc/iBQr9lkqUOD1SiZ9C
+	 bl4W6sX3zzh54Q5AM+WXpK0vs7QxVw1cgZxx1ygHX6Y4roF0HBjjMZLvRF2ZBY5O/j
+	 0ziVYaXLTobcTd+ShMtPC532EcR2DDQgrYlFtx6F9YZa6BPEccEOukxwXLise02bVd
+	 ll8LYZRsFP18w==
+Message-ID: <271ccc9b-ccf1-4254-9664-2f00b504a5a9@kernel.org>
+Date: Tue, 27 Oct 2026 19:00:41 +0200
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] Revert "phy: qcom: qmp-pcie: Skip PHY reset if already
- up"
-To: Michael Burch <me@michaelburch.net>, Vinod Koul <vkoul@kernel.org>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
- Manivannan Sadhasivam <mani@kernel.org>,
- Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
- Qiang Yu <qiang.yu@oss.qualcomm.com>,
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
- Abel Vesa <abel.vesa@oss.qualcomm.com>,
- Bjorn Andersson <andersson@kernel.org>,
- Hans de Goede <johannes.goede@oss.qualcomm.com>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
- regressions@lists.linux.dev
-References: <20261013-qmp-pcie-skip-reset-revert-v1@michaelburch.net>
-From: Thorsten Leemhuis <regressions@leemhuis.info>
-Content-Language: de-DE, en-US
-In-Reply-To: <20261013-qmp-pcie-skip-reset-revert-v1@michaelburch.net>
-X-PPP-Message-ID: <179311597306.3027950.18122320877360707537@mxe9fb.netcup.net>
-X-Rspamd-Server: rspamd-worker-8404
-X-Rspamd-Queue-Id: 63A4B5F9A9
-X-NC-CID: TK5HGlw3Xoaqm2/+aKVlhXK+Ovvd/LwoOIt8v2NblzjQxquySck=
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261027_084626_367300_ED58AE50 
-X-CRM114-Status: GOOD (  29.93  )
-X-Spam-Score: -2.1 (--)
+Subject: Re: [PATCH v2 3/7] media: qcom: camss: Allow CSI2 PHY devices without
+ CSIPHY resources
+To: Loic Poulain <loic.poulain@oss.qualcomm.com>,
+ Vladimir Zapolskiy <vz@kernel.org>
+Cc: Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>,
+ Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ linux-arm-msm@vger.kernel.org,
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, linux-media@vger.kernel.org,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>, linux-phy@lists.infradead.org,
+ Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org
+References: <20261026224957.1115370-1-vz@kernel.org>
+ <20261026224957.1115370-4-vz@kernel.org>
+ <CAFEp6-16WAoyS+aY2BzPknsMtHa1cSfVYNmYvTKHm_MWqqW_ag@mail.gmail.com>
+From: Vladimir Zapolskiy <vz@kernel.org>
+In-Reply-To: <CAFEp6-16WAoyS+aY2BzPknsMtHa1cSfVYNmYvTKHm_MWqqW_ag@mail.gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,152 +77,109 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
+X-Spam-Status: No, score=-15.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
+	version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 10/13/26 16:22, Michael Burch wrote:
-> This reverts commit 910b828b22b7b91054b3bd4be676a017444b0e00.
-
-What happened to this regression fix? Is this still needed? And if it
-is: is this on the way to 7.4-rc1? Looks like it fell through the
-cracks, but well, it's easy to miss something from the outside.
-
-Ciao, Thorsten
-> That commit skips the no-csr reset assert/deassert (and the 200-300us
-> settle) whenever the bootloader already brought the PCIe QMP PHY up:
-> 
->   skip_reset = qmp->skip_init &&
->                !qphy_checkbits(pcs, cfg->regs[QPHY_PCS_STATUS],
->                                cfg->phy_status);
-> 
-> and states its own assumption explicitly: "This relies on the assumption
-> that when skip_init is enabled and the PHY is reported as up, the
-> bootloader has already configured the PHY correctly and the link is in a
-> usable state."
-> 
-> That assumption does not hold on the Dell XPS 13 9345 (X1E80100).  UEFI
-> boots from the NVMe behind pcie6a, so the PHY is always already started
-> when Linux takes over, skip_init is true, and the reset is skipped.  The
-> link then never retrains and the root port comes up with no endpoint:
-> 
->   qcom-pcie 1bf8000.pcie: Device found, but not active
->   pci 0006:00:00.0: [17cb:0111] type 01 class 0x060400 PCIe Root Port
->   (no 0006:01:00.0, no nvme at all)
-> 
-> "Device found, but not active" is dw_pcie_wait_for_link() reporting LTSSM
-> stuck in POLL.Active/POLL.Compliance -- receiver detected, training never
-> completes -- so the machine cannot find its root filesystem and drops to
-> a dracut emergency shell.  v7.2 is unaffected because it always performed
-> the reset.
-> 
-> The commit was applied on its own as patch 1/4 of "PCI: qcom: Add link
-> retention support"; 2/4-4/4 have not landed. Without them,
-> qcom_pcie_host_init() still asserts PERST# and resets the controller
-> before qcom_pcie_phy_power_on(), so the link is down while
-> QPHY_PCS_STATUS still reports the bootloader's state, and the skip's
-> precondition never holds. Revert it until the rest of the series lands.
-> 
-> Fixes: 910b828b22b7 ("phy: qcom: qmp-pcie: Skip PHY reset if already up")
-> Signed-off-by: Michael Burch <me@michaelburch.net>
-> ---
-> Reproduced today with Fedora's stock 7.3.0-0.rc7.58 kernel: the NVMe
-> never enumerates and boot stops in dracut. It was first seen here on
-> the stock 7.3.0-0.rc2 kernel. Every 7.3 build I have made with this
-> revert finds the NVMe (Gen4 x4 link up); the latest are v7.3-rc6 based.
-> Applying 2/4-4/4 of the original series on top of -rc2 also boots, but
-> only with clk_ignore_unused here. This applies to v7.3-rc7 and to
-> linux-phy fixes.
-> 
-> Qiang Yu's "PCI: qcom: Align PHY init sequence with HPG" carries the
-> same skip into the new phy_ops::reset. I'm replying there separately.
-> 
-> #regzbot introduced: 910b828b22b7
-> 
->  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 31 ++++++++----------------
->  1 file changed, 10 insertions(+), 21 deletions(-)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> index da83358c97ea..17c53ae62fac 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> @@ -5677,7 +5677,6 @@ static int qmp_pcie_init(struct phy *phy)
->  	struct qmp_pcie *qmp = phy_get_drvdata(phy);
->  	const struct qmp_phy_cfg *cfg = qmp->cfg;
->  	void __iomem *pcs = qmp->pcs;
-> -	bool skip_reset;
->  	int ret;
->  
->  	/*
-> @@ -5693,9 +5692,6 @@ static int qmp_pcie_init(struct phy *phy)
->  		qphy_checkbits(pcs, cfg->regs[QPHY_START_CTRL], SERDES_START | PCS_START) &&
->  		qphy_checkbits(pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL], cfg->pwrdn_ctrl);
->  
-> -	skip_reset = qmp->skip_init && !qphy_checkbits(pcs, cfg->regs[QPHY_PCS_STATUS],
-> -							    cfg->phy_status);
-> -
->  	if (!qmp->skip_init && !cfg->tbls.serdes_num) {
->  		dev_err(qmp->dev, "Init sequence not available\n");
->  		return -ENODATA;
-> @@ -5719,16 +5715,14 @@ static int qmp_pcie_init(struct phy *phy)
->  		}
->  	}
->  
-> -	if (!skip_reset) {
-> -		ret = reset_control_assert(qmp->nocsr_reset);
-> -		if (ret) {
-> -			dev_err(qmp->dev, "no-csr reset assert failed\n");
-> -			goto err_assert_reset;
-> -		}
-> -
-> -		usleep_range(200, 300);
-> +	ret = reset_control_assert(qmp->nocsr_reset);
-> +	if (ret) {
-> +		dev_err(qmp->dev, "no-csr reset assert failed\n");
-> +		goto err_assert_reset;
->  	}
->  
-> +	usleep_range(200, 300);
-> +
->  	if (!qmp->skip_init) {
->  		ret = reset_control_bulk_deassert(cfg->num_resets, qmp->resets);
->  		if (ret) {
-> @@ -5777,11 +5771,8 @@ static int qmp_pcie_power_on(struct phy *phy)
->  	void __iomem *pcs = qmp->pcs;
->  	void __iomem *status;
->  	unsigned int mask, val;
-> -	bool skip_reset;
->  	int ret;
->  
-> -	skip_reset = qmp->skip_init && !qphy_checkbits(pcs, cfg->regs[QPHY_PCS_STATUS],
-> -							    cfg->phy_status);
->  	/*
->  	 * Write CSR register for PHY that doesn't support no_csr reset or has not
->  	 * been initialized.
-> @@ -5805,12 +5796,10 @@ static int qmp_pcie_power_on(struct phy *phy)
->  	if (ret)
->  		return ret;
->  
-> -	if (!skip_reset) {
-> -		ret = reset_control_deassert(qmp->nocsr_reset);
-> -		if (ret) {
-> -			dev_err(qmp->dev, "no-csr reset deassert failed\n");
-> -			goto err_disable_pipe_clk;
-> -		}
-> +	ret = reset_control_deassert(qmp->nocsr_reset);
-> +	if (ret) {
-> +		dev_err(qmp->dev, "no-csr reset deassert failed\n");
-> +		goto err_disable_pipe_clk;
->  	}
->  
->  	if (qmp->skip_init)
-> 
-> base-commit: 24a19b953e2a3d0ea5a8c4951a0ab8f32720c907
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMTAvMjcvMjYgMTI6NTIsIExvaWMgUG91bGFpbiB3cm90ZToKPiBIaSBWbGFkLAo+IAo+IE9u
+IE1vbiwgT2N0IDI2LCAyMDI2IGF0IDExOjUw4oCvUE0gVmxhZGltaXIgWmFwb2xza2l5IDx2ekBr
+ZXJuZWwub3JnPiB3cm90ZToKPj4KPj4gSWYgQ0FNU1MgQ1NJUEhZcyBhcmUgc3VwcG9ydGVkIGJ5
+IHRoZSBzdGFuZC1hbG9uZSBDU0kyIFBIWSBkcml2ZXIgb25seSwKPj4gdGhlcmUgaXMgbm8gbmVl
+ZCB0byBwcm92aWRlIGRlc2NyaXB0aW9uIG9mIGxlZ2FjeSBDU0lQSFkgcmVzb3VyY2VzIGluCj4+
+IHRoZSBDQU1TUyBkcml2ZXIsIHRoZXJlZm9yZSBpZiBDU0lQSFkgcmVzb3VyY2VzIGFyZSBub3Qg
+Z2l2ZW4gZm9yIHNvbWUKPj4gc3VwcG9ydGVkIHBsYXRmb3JtLCB1c2UgQ0FNU1MgQ1NJUEhZIHBv
+cnQgbnVtYmVycyBhcyBDU0lQSFkgaWRlbnRpZmllcnMuCj4+Cj4+IFNpZ25lZC1vZmYtYnk6IFZs
+YWRpbWlyIFphcG9sc2tpeSA8dnpAa2VybmVsLm9yZz4KPj4gLS0tCj4+ICAgZHJpdmVycy9tZWRp
+YS9wbGF0Zm9ybS9xY29tL2NhbXNzL2NhbXNzLWNzaXBoeS5jIHwgMTYgKysrKysrKysrKysrKy0t
+LQo+PiAgIGRyaXZlcnMvbWVkaWEvcGxhdGZvcm0vcWNvbS9jYW1zcy9jYW1zcy5jICAgICAgICB8
+ICA4ICsrKysrKy0tCj4+ICAgMiBmaWxlcyBjaGFuZ2VkLCAxOSBpbnNlcnRpb25zKCspLCA1IGRl
+bGV0aW9ucygtKQo+Pgo+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9xY29t
+L2NhbXNzL2NhbXNzLWNzaXBoeS5jIGIvZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9xY29tL2NhbXNz
+L2NhbXNzLWNzaXBoeS5jCj4+IGluZGV4IGY5OWVlYTJlZjIyOC4uOGVjZDUxNDQ1MWQyIDEwMDY0
+NAo+PiAtLS0gYS9kcml2ZXJzL21lZGlhL3BsYXRmb3JtL3Fjb20vY2Ftc3MvY2Ftc3MtY3NpcGh5
+LmMKPj4gKysrIGIvZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9xY29tL2NhbXNzL2NhbXNzLWNzaXBo
+eS5jCj4+IEBAIC03OTksNiArNzk5LDExIEBAIGludCBtc21fY3NpcGh5X3N1YmRldl9pbml0X2xl
+Z2FjeShzdHJ1Y3QgY2Ftc3MgKmNhbXNzLAo+PiAgICAgICAgICByZXR1cm4gcmV0Owo+PiAgIH0K
+Pj4KPj4gKy8qIEZhbGxiYWNrIHRvIGdlbmVyaWMgU0RNODQ1IGNvbXBhdGlibGUgZm9ybWF0cyBm
+b3Igbm9uLWxlZ2FjeSBDU0lQSFlzICovCj4+ICtzdGF0aWMgY29uc3Qgc3RydWN0IGNzaXBoeV9z
+dWJkZXZfcmVzb3VyY2VzIGNzaXBoeV9yZXNfcGh5ID0gewo+PiArICAgICAgIC5mb3JtYXRzID0g
+JmNzaXBoeV9mb3JtYXRzX3NkbTg0NSwKPj4gK307Cj4+ICsKPj4gICAvKgo+PiAgICAqIG1zbV9j
+c2lwaHlfc3ViZGV2X2luaXQgLSBJbml0aWFsaXplIENTSVBIWSBkZXZpY2Ugc3RydWN0dXJlIGFu
+ZCByZXNvdXJjZXMKPj4gICAgKiBAY2Ftc3M6IENBTVNTIHN0cnVjdHVyZQo+PiBAQCAtODA4LDcg
+KzgxMyw3IEBAIGludCBtc21fY3NpcGh5X3N1YmRldl9pbml0X2xlZ2FjeShzdHJ1Y3QgY2Ftc3Mg
+KmNhbXNzLAo+PiAgICAqLwo+PiAgIGludCBtc21fY3NpcGh5X3N1YmRldl9pbml0KHN0cnVjdCBj
+YW1zcyAqY2Ftc3MsIHU4IHBvcnQpCj4+ICAgewo+PiAtICAgICAgIGNvbnN0IHN0cnVjdCBjYW1z
+c19zdWJkZXZfcmVzb3VyY2VzICpyZXMgPSAmY2Ftc3MtPnJlcy0+Y3NpcGh5X3Jlc1twb3J0XTsK
+Pj4gKyAgICAgICBjb25zdCBzdHJ1Y3QgY2Ftc3Nfc3ViZGV2X3Jlc291cmNlcyAqcmVzID0gY2Ft
+c3MtPnJlcy0+Y3NpcGh5X3JlczsKPj4gICAgICAgICAgc3RydWN0IGNzaXBoeV9kZXZpY2UgKmNz
+aXBoeSA9ICZjYW1zcy0+Y3NpcGh5W3BvcnRdOwo+PiAgICAgICAgICBzdHJ1Y3QgZGV2aWNlICpk
+ZXYgPSBjYW1zcy0+ZGV2Owo+PiAgICAgICAgICBzdHJ1Y3QgZGV2aWNlX25vZGUgKmVwLCAqcmVt
+b3RlOwo+PiBAQCAtODM2LDggKzg0MSwxMyBAQCBpbnQgbXNtX2NzaXBoeV9zdWJkZXZfaW5pdChz
+dHJ1Y3QgY2Ftc3MgKmNhbXNzLCB1OCBwb3J0KQo+PiAgICAgICAgICB9Cj4+Cj4+ICAgICAgICAg
+IGNzaXBoeS0+Y2Ftc3MgPSBjYW1zczsKPj4gLSAgICAgICBjc2lwaHktPmlkID0gcmVzLT5jc2lw
+aHkuaWQ7Cj4+IC0gICAgICAgY3NpcGh5LT5yZXMgPSAmcmVzLT5jc2lwaHk7Cj4+ICsgICAgICAg
+aWYgKHJlcykgewo+PiArICAgICAgICAgICAgICAgY3NpcGh5LT5pZCA9IHJlc1twb3J0XS5jc2lw
+aHkuaWQ7Cj4+ICsgICAgICAgICAgICAgICBjc2lwaHktPnJlcyA9ICZyZXNbcG9ydF0uY3NpcGh5
+Owo+IAo+IFNvLCBjYW4ndCB3ZSBzaW1wbHkgZHJvcCB0aGUgYWJvdmUgYXNzaWdubWVudCBhbmQg
+a2VlcCBvbmx5IHRoZQo+IHBvcnQvY3NpcGh5X3Jlc19waHkgYmVsb3c/IFRoYXQgd291bGQgcHJv
+dmlkZSB0aGUgc2FtZSBiZWhhdmlvciBmb3IKPiBhbGwgbm9uLWxlZ2FjeSBQSFkgaW5pdGlhbGl6
+YXRpb25zLCByZWdhcmRsZXNzIG9mIHdoZXRoZXIgbGVnYWN5Cj4gQ1NJUEhZIHJlc291cmNlcyBh
+cmUgZGVzY3JpYmVkIG9yIG5vdC4KPiAKClBsZWFzZSBub3RlIHRoYXQgJ2NzaXBoeV9yZXNfcGh5
+JyB3YXMgaW50cm9kdWNlZCBhIGZldyBsaW5lcyBhYm92ZQpieSB0aGlzIGNoYW5nZSwgaXQncyBv
+bmx5IHB1cnBvc2UgaXMgdG8gcHJvdmlkZSB0aGUgbmVlZGVkIHN1cHBvcnRlZAptZWRpYSBmb3Jt
+YXRzLCBhbmQgdGhpcyBpcyB1bmF2b2lkYWJsZS4KClRoaXMgY2hhbmdlIGZvbGxvd3MgdGhlIGFz
+c3VtcHRpb24gdGhhdCBwaXhlbCBmb3JtYXRzIGZyb20gYWxsCm5vbi1sZWdhY3kgUEhZcyBhcmUg
+U0RNODQ1IGNvbXBhdGlibGUsIHRoYXQncyB0cnVlIGZvciB0aGlzIHBsYXRmb3JtLAppdCBpcyBl
+eHBlY3RlZCB0byBiZSB0cnVlIGZvciB0aGUgbW9zdCBvZiBhcHByb2FjaGluZyBub24tbGVnYWN5
+CnBsYXRmb3JtcywgYW5kIG9uIGRlbWFuZCBpdCBtYXkgYmUgY2hhbmdlZCBsYXRlciBvbi4KClRo
+ZSBjdXJyZW50IGZvcm0gbGlrZWx5IGlzIHRoZSBtb3N0IGNvbXBhY3QgYW5kIHRoZSBsZWFzdCBp
+bnZhc2l2ZQpjaGFuZ2UsIHdoaWNoIGdldHMgdG8gdGhlIHBvaW50IG9mIHN1cHBvcnRpbmcgQ0FN
+U1Mgb24gcGxhdGZvcm1zCndpdGggbm8gQ1NJUEhZIHJlc291cmNlcyBnaXZlbiBpbiB0aGUgQ0FN
+U1MgZHJpdmVyLgoKRm9yIGluc3RhbmNlLCBub3RlLCB0aGUgcmVjZW50bHkgcHJvcG9zZWQgR2x5
+bXVyIENBTVNTIFsxXSByZWZlcmVuY2VzClgxRSBDU0lQSFkgcmVzb3VyY2VzLCB3aGljaCBpcyBh
+Y3R1YWxseSBpbmNvcnJlY3QsIHNpbmNlIHRoZXJlIGlzCm5vICJjc2lwaHlYIiBJL08gcmVzb3Vy
+Y2VzIGFueW1vcmUgZm9yIEdseW11ci4gVGhpcyBjaGFuZ2UgY2FuIGJlCnJldXNlZCBmb3IgR2x5
+bXVyIGFzIHdlbGwsIGFuZCBpdHMgcmVmZXJlbmNlIHRvIFgxRSBDU0lQSFlzIGNhbiBiZQpkcm9w
+cGVkLCBidXQgYW55IGJldHRlciBwcm9wb3NhbCBvciBpbXByb3ZlbWVudCBhcmUgd2VsY29tZS4K
+Cj4+ICsgICAgICAgfSBlbHNlIHsKPj4gKyAgICAgICAgICAgICAgIGNzaXBoeS0+aWQgPSBwb3J0
+Owo+PiArICAgICAgICAgICAgICAgY3NpcGh5LT5yZXMgPSAmY3NpcGh5X3Jlc19waHk7Cj4+ICsg
+ICAgICAgfQo+Pgo+PiAgICAgICAgICBzbnByaW50Zihjc2lwaHktPm5hbWUsIEFSUkFZX1NJWkUo
+Y3NpcGh5LT5uYW1lKSwgImNzaSVkIiwgY3NpcGh5LT5pZCk7Cj4+Cj4+IGRpZmYgLS1naXQgYS9k
+cml2ZXJzL21lZGlhL3BsYXRmb3JtL3Fjb20vY2Ftc3MvY2Ftc3MuYyBiL2RyaXZlcnMvbWVkaWEv
+cGxhdGZvcm0vcWNvbS9jYW1zcy9jYW1zcy5jCj4+IGluZGV4IGM1NDE4NWM5M2E4YS4uYjBkNjBl
+NzBlNGJiIDEwMDY0NAo+PiAtLS0gYS9kcml2ZXJzL21lZGlhL3BsYXRmb3JtL3Fjb20vY2Ftc3Mv
+Y2Ftc3MuYwo+PiArKysgYi9kcml2ZXJzL21lZGlhL3BsYXRmb3JtL3Fjb20vY2Ftc3MvY2Ftc3Mu
+Ywo+PiBAQCAtNDc5Niw3ICs0Nzk2LDEwIEBAIHN0YXRpYyB2b2lkIGNhbXNzX2RldGVjdF9sZWdh
+Y3lfcGh5KHN0cnVjdCBjYW1zcyAqY2Ftc3MpCj4+ICAgICAgICAgIHN0cnVjdCBkZXZpY2Vfbm9k
+ZSAqcmVtb3RlOwo+PiAgICAgICAgICBzdHJ1Y3QgZGV2aWNlX25vZGUgKmVwOwo+Pgo+PiAtICAg
+ICAgIGNhbXNzLT5sZWdhY3lfcGh5ID0gdHJ1ZTsKPj4gKyAgICAgICAvKiBMZWdhY3kgQ1NJUEhZ
+IGRlc2NyaXB0aW9uIGltcGxpZXMgdGhlIHByb3ZpZGVkIENTSVBIWSByZXNvdXJjZXMgKi8KPj4g
+KyAgICAgICBjYW1zcy0+bGVnYWN5X3BoeSA9ICEhY2Ftc3MtPnJlcy0+Y3NpcGh5X3JlczsKPj4g
+KyAgICAgICBpZiAoIWNhbXNzLT5sZWdhY3lfcGh5KQo+PiArICAgICAgICAgICAgICAgZ290byBk
+b25lOwo+Pgo+PiAgICAgICAgICAvKiBGaW5kIGZpcnN0IHJlbW90ZS1lbmRwb2ludCBhbmQgZGV0
+ZXJtaW5lIGlmIGl0cyBhIFBIWSAqLwo+PiAgICAgICAgICBmb3JfZWFjaF9lbmRwb2ludF9vZl9u
+b2RlKGNhbXNzLT5kZXYtPm9mX25vZGUsIGVwKSB7Cj4+IEBAIC00ODEwLDYgKzQ4MTMsNyBAQCBz
+dGF0aWMgdm9pZCBjYW1zc19kZXRlY3RfbGVnYWN5X3BoeShzdHJ1Y3QgY2Ftc3MgKmNhbXNzKQo+
+PiAgICAgICAgICAgICAgICAgIGJyZWFrOwo+PiAgICAgICAgICB9Cj4+Cj4+ICtkb25lOgo+PiAg
+ICAgICAgICBkZXZfZGJnKGNhbXNzLT5kZXYsICJsZWdhY3kgcGh5IG1vZGUgJXNcbiIsCj4+ICAg
+ICAgICAgICAgICAgICAgY2Ftc3MtPmxlZ2FjeV9waHkgPyAidHJ1ZSIgOiAiZmFsc2UiKTsKPj4g
+ICB9Cj4+IEBAIC00ODQxLDcgKzQ4NDUsNyBAQCBzdGF0aWMgaW50IGNhbXNzX2luaXRfc3ViZGV2
+aWNlcyhzdHJ1Y3QgY2Ftc3MgKmNhbXNzKQo+Pgo+PiAgICAgICAgICAgICAgICAgIGlmIChyZXQg
+PCAwKSB7Cj4+ICAgICAgICAgICAgICAgICAgICAgICAgICBkZXZfZXJyKGNhbXNzLT5kZXYsICJj
+c2lwaHkgJWQgaW5pdCBmYWlsXG4iLAo+PiAtICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+IHJlcy0+Y3NpcGh5X3Jlc1tpXS5jc2lwaHkuaWQpOwo+PiArICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgIHJlcy0+Y3NpcGh5X3JlcyA/IHJlcy0+Y3NpcGh5X3Jlc1tpXS5jc2lwaHkuaWQg
+OiBpKTsKPj4gICAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybiByZXQ7Cj4+ICAgICAgICAg
+ICAgICAgICAgfQo+PiAgICAgICAgICB9Cj4+IC0tCj4+IDIuNTEuMAo+PgoKWzFdIGh0dHBzOi8v
+bG9yZS5rZXJuZWwub3JnL2xpbnV4LWFybS1tc20vMjAyNjEwMTUtZ2x5bXVyX2NhbXNzX2R0cy12
+Mi0wLWU3YjFmNDAzMTQ2ZkBvc3MucXVhbGNvbW0uY29tLwoKLS0gCkJlc3Qgd2lzaGVzLApWbGFk
+aW1pcgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
+cGh5Cg==
