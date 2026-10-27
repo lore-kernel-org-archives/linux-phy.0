@@ -2,100 +2,81 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8F3C6606A322
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Oct 2026 18:25:51 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id ACB01606A31F
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Oct 2026 23:30:27 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=hkRYBZbD;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=samsung.com header.i=@samsung.com header.a=rsa-sha256 header.s=mail20170921 header.b=bCe0DApS
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=TNACgC0P;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=collabora.com header.i=michael.riesch@collabora.com header.a=rsa-sha256 header.s=zohomail header.b=D5O1iFab
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:From:Cc:To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=EOwCtbBhStJ3HcZALao4eiXYl7G4XhWrCpe+AaRUg8E=; b=hkRYBZbDyB+5S5u9ZGGLS22UID
-	vQ2yYKiE83Ue059xkMbbjawljjtTxX51zqv7Lq47ZTfZdZtUwMeviYMOrOZePcB4IQjqrKRzcbgK5
-	qptjG3TyAokfA1BHggJ8OtTFhNGBvDR9DsJbODuo+OTHXBCSLYPpoCDV7emxU7ep7Y9IVytMBRJbs
-	akSBvpyeK0yLy594zzB/f/TAWZgZ/rdyCerRFfC6+Bg3GGgjSPTW3lUlq6GP7CFDMz74t+w52y90U
-	RvIuy2gp7TIO/PtYqI81tSTPT0vy9L/EjIc1jztt2pK3YXthi6xKItdOrwQOB7p+TGFjHTcvLepRo
-	ejPtByQg==;
+	bh=WWDG7+Y3XjJ2BxA+3YRnpwPWPYIHStJ2OhR6i/mNYoE=; b=TNACgC0Pqtf0fzq6WN/0bMOaEm
+	zrFQI+gpN9UFw8Hm4idGhyBdH37x8qYRzTJB3ayY6LG3mVqYP9U2hW5/5L0tCzGKk+WPg+pwJIxsA
+	pWJPJgHhDTIp/iryfBe8vddByQ8AjiUy6zBt7R002IWt8Y4oPfAKYh6ZcRPrgr2wnhWMwQla4bkVw
+	LteK6LRA6pyaTg78ZgRa/Hhc3sp1maAej/M696CNBKsJLxmsxCA8wSnZst+gxDd0QWCYQkoOCW+Jk
+	HNhWcTCT9g96XRgktpBF8+exdLacwpOigbFtXnSV/JJdiGN4q3t01VdC/5zdyc9jcgI/TSigMA59N
+	HUB+3veQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLlrr-00000005YnM-0Yen;
-	Tue, 27 Oct 2026 18:25:51 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1xLqcd-00000005vCM-0tv1;
+	Tue, 27 Oct 2026 23:30:27 +0000
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLlrl-00000005Ylw-3ued;
-	Tue, 27 Oct 2026 18:25:49 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
-	by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id 20261027182540euoutp01808e2a0784b22e974d6c8ffe88c8195c~idi3U5q2O1070810708euoutp01J;
-	Tue, 27 Oct 2026 18:25:40 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com 20261027182540euoutp01808e2a0784b22e974d6c8ffe88c8195c~idi3U5q2O1070810708euoutp01J
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1793125540;
-	bh=yYVnZVngw4wIyvUedHrp/RCi4DEk87r28LIRWXpCLH0=;
-	h=Date:Subject:To:Cc:From:In-Reply-To:References:From;
-	b=bCe0DApSTMa5hEEGgVvneqzfJYakD7qrG9r1rRA787dJcmFkxZeM041kJvQzf1sWi
-	 mFAb6eOSUU0Yw/Y6KAUriZpeXdgumQlCNkdGsLLdF/sfW7mYHnWBx2d7wOenrOEkLR
-	 zJJaDP1dZxSCFavYWwIcrbMKnu0ZvjvRL33YUuUE=
-Received: from eusmtip2.samsung.com (unknown [203.254.199.222]) by
-	eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
-	20261027182539eucas1p2af97fa5bad6b7de6ca761cb86172737b~idi2gJHhp1120011200eucas1p2b;
-	Tue, 27 Oct 2026 18:25:39 +0000 (GMT)
-Received: from [192.168.1.44] (unknown [106.210.136.40]) by
-	eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
-	20261027182538eusmtip2789b0e5587293524b9c364f453c89396~idi03PmTX1528615286eusmtip2f;
-	Tue, 27 Oct 2026 18:25:38 +0000 (GMT)
-Message-ID: <5fec923f-36bb-4dcc-bf3a-13be3eaa8f83@samsung.com>
-Date: Tue, 27 Oct 2026 19:25:37 +0100
+	id 1xLqca-00000005vBi-1qjD;
+	Tue, 27 Oct 2026 23:30:25 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1793143812; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=SbL7Z16pOFv18Hwvzx36QtOl68276uL5GKnFPZLgqBu01Oui/z1/7pM/yLjtUCxEKAXEbWRQuCRbnPfGUgs07qOR5WsgDaxEh4DQn3b9/4qA086PHTC3rnqrzMhTLVxno1FZa9GgvGPXApXVCQhjdSD/8vi0ncYhBwf6JarC5Kg=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1793143812; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=4v/jJQwbsRSs6lwC4Nolc6758ol9hYYCgJeKIbFnn6g=; 
+	b=cH9W1iosI+m47d8phD8H5oXRPDRyVgmVq0beOpyoPUxoLxCblJNcvQPgDJ76OEdoVbUE48CDve1Xiq+aO73mVdA/Jmn3F4CflsaZdvO8MCz1Gpqoywr63DDascQuvG4vLEBCFWdD8w+ev2MeP1SkyXdQf4pj0bv9EbzS5dFDUJg=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=michael.riesch@collabora.com;
+	dmarc=pass header.from=<michael.riesch@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1793143812;
+	s=zohomail; d=collabora.com; i=michael.riesch@collabora.com;
+	h=Message-ID:Date:Date:MIME-Version:Subject:Subject:To:To:Cc:Cc:From:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:Message-Id:Reply-To;
+	bh=4v/jJQwbsRSs6lwC4Nolc6758ol9hYYCgJeKIbFnn6g=;
+	b=D5O1iFabvUsZ5q0epzsXmnDjqu5JduqU8kpqkn3UIMkwpBmdhA2//uTMglg4tKHi
+	sTEZq+R+K8vfvPZr4cH/36hCm8/abo6a0FbF/XJZrDxPUyTrsm45o8K6/CXGu+kvzVJ
+	5KrOwPQE1WQ+UN7Tkl28A+ikpMlEhDSvcbbT7e5E=
+Received: by smtp.zohomail.com with SMTPS id 1793143809239396.72077942876126;
+	Tue, 27 Oct 2026 16:30:09 -0700 (PDT)
+Message-ID: <9e16930c-26fe-4bad-b120-2d4863b05e67@collabora.com>
+Date: Wed, 28 Oct 2026 00:30:03 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 19/20] riscv: dts: starfive: jh7110: Update DT for
- display subsystem
-To: Icenowy Zheng <zhengxingda@iscas.ac.cn>, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
-	<conor+dt@kernel.org>, Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss
-	<rfoss@kernel.org>, Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>, Maarten Lankhorst
-	<maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>, Lee Jones <lee@kernel.org>, Andy
-	Yan <andy.yan@rock-chips.com>, Philipp Zabel <p.zabel@pengutronix.de>, Emil
-	Renner Berthing <kernel@esmil.dk>, Hal Feng <hal.feng@starfivetech.com>,
-	Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
-	<sboyd@kernel.org>, Heiko Stuebner <heiko@sntech.de>, Paul Walmsley
-	<pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou
-	<aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>, Dominique
-	Belhachemi <db@domibel.de>, Brian Masney <bmasney+clk@redhat.com>, Jerome
-	Brunet <jbrunet+clk@baylibre.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
-	mfd@lists.linux.dev, linux-clk@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
-	linux-riscv@lists.infradead.org, Marek Szyprowski
-	<m.szyprowski@samsung.com>, Maud Spierings <maud_spierings@murena.io>,
-	Graham Markall <hello@big-grey.co.uk>, Chaoyi Chen
-	<chaoyi.chen@rock-chips.com>, Joshua Peisach <jpeisach@ubuntu.com>,
-	=?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
+Subject: Re: [PATCH v5 3/8] phy: rockchip-samsung-dcphy: Move block-level
+ setup to runtime resume
+To: Jason Yang <jason98166@gmail.com>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Guochun Huang <hero.huang@rock-chips.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: Sebastian Reichel <sebastian.reichel@collabora.com>,
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <20261016-dcphy-rx-v1-v5-0-e63b49eabe2d@gmail.com>
+ <20261016-dcphy-rx-v1-v5-3-e63b49eabe2d@gmail.com>
 Content-Language: en-US
-From: Michal Wilczynski <m.wilczynski@samsung.com>
-In-Reply-To: <b5eb69f3f41a98b5a98694435df25a632babf05a.camel@iscas.ac.cn>
-X-CMS-MailID: 20261027182539eucas1p2af97fa5bad6b7de6ca761cb86172737b
-X-Msg-Generator: CA
-X-RootMTR: 20260915153248eucas1p27d8d2c9fa536bbd951e0102b04416dad
-X-EPHeader: CA
-X-CMS-RootMailID: 20260915153248eucas1p27d8d2c9fa536bbd951e0102b04416dad
-References: <20260915-jh7110-clean-send-v4-0-f0e4fd6f2cc8@samsung.com>
-	<CGME20260915153248eucas1p27d8d2c9fa536bbd951e0102b04416dad@eucas1p2.samsung.com>
-	<20260915-jh7110-clean-send-v4-19-f0e4fd6f2cc8@samsung.com>
-	<b5eb69f3f41a98b5a98694435df25a632babf05a.camel@iscas.ac.cn>
+From: Michael Riesch <michael.riesch@collabora.com>
+In-Reply-To: <20261016-dcphy-rx-v1-v5-3-e63b49eabe2d@gmail.com>
+X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261027_112546_575882_C87A890E 
-X-CRM114-Status: GOOD (  23.57  )
-X-Spam-Score: -4.4 (----)
+X-CRM114-CacheID: sfid-20261027_163024_611776_CE7047C7 
+X-CRM114-Status: GOOD (  27.72  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,8 +86,8 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 X-Spam-Status: No, score=-15.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
@@ -116,75 +97,137 @@ X-Spam-Status: No, score=-15.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-CgpPbiA5LzI5LzI2IDE3OjA2LCBJY2Vub3d5IFpoZW5nIHdyb3RlOgo+IOWcqCAyMDI2LTA5LTE1
-5LqM55qEIDE3OjMyICswMjAw77yMTWljaGFsIFdpbGN6eW5za2nlhpnpgZPvvJoKPj4gQWN0aXZh
-dGUgdGhlIGRpc3BsYXkgc3Vic3lzdGVtIGJ5IGRlc2NyaWJpbmcgdGhlIHZpZGVvIG91dHB1dAo+
-PiBzdWJzeXN0ZW0sCj4+IHdoaWNoIHRoZSBkb2N1bWVudGF0aW9uIGNhbGxzIGRvbV92b3V0X3Rv
-cCwgYXMgYSBidXMgbm9kZSBjb3ZlcmluZwo+PiB0aGUKPj4gd2hvbGUgMHgyOTQwMDAwMCByZWdp
-b24sIHdpdGggZGM4MjAwLCB0aGUgSERNSSBibG9jaywgdGhlIHZpZGVvCj4+IG91dHB1dAo+PiBz
-eXN0ZW0gY29udHJvbGxlciBhbmQgdm91dGNyZyBhcyBpdHMgY2hpbGRyZW4uCj4+Cj4+IFRoZSBz
-dWJzeXN0ZW0gbm9kZSBvd25zIHRoZSByZXNvdXJjZXMgaXRzIGNoaWxkcmVuIHNoYXJlOiB0aGUg
-Tm9DCj4+IGRpc3BsYXkKPj4gYnVzIGNsb2NrIGFuZCByZXNldCB0aGF0IGdhdGUgYWNjZXNzIHRv
-IGV2ZXJ5IHJlZ2lzdGVyIGluIHRoZSByZWdpb24sCj4+IGFuZAo+PiB0aGUgUERfVk9VVCBwb3dl
-ciBkb21haW4uIE1vZGVsbGluZyBpdCB0aGlzIHdheSBrZWVwcyBhIHNoYXJlZCBnYXRlCj4+IG93
-bmVkCj4+IGJ5IHRoZSBibG9jayB0aGF0IHNoYXJlcyBpdCByYXRoZXIgdGhhbiBieSB3aGljaGV2
-ZXIgY29uc3VtZXIgaGFwcGVucwo+PiB0bwo+PiBwcm9iZSBmaXJzdCwgYW5kIGxldHMgZGM4MjAw
-IGluaGVyaXQgZG1hLW5vbmNvaGVyZW50IGZvciBmcmFtZWJ1ZmZlcgo+PiBETUEKPj4gZnJvbSB0
-aGUgYnVzIGl0IHNpdHMgb24uCj4+Cj4+IFRoZSBtb25vbGl0aGljIGhkbWkgbm9kZSBpcyBpbiB0
-dXJuIG1vZGVsbGVkIGFzIGEgY29udGFpbmVyIHdpdGgKPj4gaGRtaV9waHkKPj4gYW5kIGhkbWlf
-Y29udHJvbGxlciBjaGlsZHJlbi4gVGhpcyBsZXRzIHRoZSBQSFkgKGNsb2NrIHByb3ZpZGVyLAo+
-PiBkZXBlbmRpbmcgb25seSBvbiB4aW4yNG0pIGFuZCB0aGUgY29udHJvbGxlciAoY2xvY2sgY29u
-c3VtZXIpIHByb2JlCj4+IGluZGVwZW5kZW50bHksIGJyZWFraW5nIHRoZSBjaXJjdWxhciBjbG9j
-ayBkZXBlbmRlbmN5IHdpdGggdm91dGNyZy4KPj4KPj4gdm91dGNyZyBjb25zdW1lcyB0aGUgcGl4
-ZWwgY2xvY2sgZnJvbSB0aGUgJmhkbWlfcGh5IG5vZGUgaW5zdGVhZCBvZgo+PiB0aGUKPj4gb2xk
-IGZpeGVkLWNsb2NrLCBhbmQgZGM4MjAwIGdldHMgaXRzIHBpeGVsIGNsb2NrcyBmcm9tIHZvdXRj
-cmcncwo+PiBNVVhlcy4KPj4gVGhlIG9sZCwgaW5jb3JyZWN0IGhkbWl0eDAtcGl4ZWwtY2xvY2sg
-Zml4ZWQtY2xvY2sgbm9kZSBpcyByZW1vdmVkLgo+Pgo+PiBUaGUgSERNSSBjb250cm9sbGVyIGdl
-dHMgYSBwaGFuZGxlIHRvIHRoZSB2aWRlbyBvdXRwdXQgc3lzdGVtCj4+IGNvbnRyb2xsZXIsCj4+
-IHdoaWNoIGhvbGRzIHRoZSBtdXggc2VsZWN0aW5nIHRoZSBEQzgyMDAgb3V0cHV0IHRoYXQgZHJp
-dmVzIHRoZSBIRE1JCj4+IHRyYW5zbWl0dGVyLgo+Pgo+PiBDTUEgaXMgZW5sYXJnZWQgYW5kIGNv
-bnN0cmFpbmVkIHRvIG1lbW9yeSB0aGUgZGlzcGxheSBjb250cm9sbGVyIGNhbgo+PiBhZGRyZXNz
-LCBiZWNhdXNlIHRoZSBkZWZhdWx0IHBvb2wgaXMgdG9vIHNtYWxsIGZvciBpdHMgZnJhbWVidWZm
-ZXJzLgo+Pgo+PiBDby1kZXZlbG9wZWQtYnk6IERvbWluaXF1ZSBCZWxoYWNoZW1pIDxkYkBkb21p
-YmVsLmRlPgo+PiBTaWduZWQtb2ZmLWJ5OiBEb21pbmlxdWUgQmVsaGFjaGVtaSA8ZGJAZG9taWJl
-bC5kZT4KPj4gU2lnbmVkLW9mZi1ieTogTWljaGFsIFdpbGN6eW5za2kgPG0ud2lsY3p5bnNraUBz
-YW1zdW5nLmNvbT4KPiAKPiBgYGAKPiBUZXN0ZWQtYnk6IEljZW5vd3kgWmhlbmcgPHpoZW5neGlu
-Z2RhQGlzY2FzLmFjLmNuPgo+IGBgYAo+IAo+IEJ1dCwKPiAKPj4gLS0tCj4+ICBhcmNoL3Jpc2N2
-L2Jvb3QvZHRzL3N0YXJmaXZlL2poNzExMC1jb21tb24uZHRzaSB8IDEyMQo+PiArKysrKysrKysr
-KysrKysrKysrKysrKy0KPj4gIGFyY2gvcmlzY3YvYm9vdC9kdHMvc3RhcmZpdmUvamg3MTEwLmR0
-c2kgICAgICAgIHwgMTA1Cj4+ICsrKysrKysrKysrKysrKystLS0tCj4+ICAyIGZpbGVzIGNoYW5n
-ZWQsIDIwMyBpbnNlcnRpb25zKCspLCAyMyBkZWxldGlvbnMoLSkKPj4KPj4gZGlmZiAtLWdpdCBh
-L2FyY2gvcmlzY3YvYm9vdC9kdHMvc3RhcmZpdmUvamg3MTEwLWNvbW1vbi5kdHNpCj4+IGIvYXJj
-aC9yaXNjdi9ib290L2R0cy9zdGFyZml2ZS9qaDcxMTAtY29tbW9uLmR0c2kKPj4gaW5kZXgKPj4g
-YTdhMWMwOWEyYzkwNzU3MTFmM2EyMTRhNDk2MTg5MTFmZGM3YjQyMS4uYTRjM2RhZjcxMmE2M2Ix
-NzdmNzQ0ZThjNjEzCj4+IDQxNmQyMmUwYzlkYmQgMTAwNjQ0Cj4+IC0tLSBhL2FyY2gvcmlzY3Yv
-Ym9vdC9kdHMvc3RhcmZpdmUvamg3MTEwLWNvbW1vbi5kdHNpCj4+ICsrKyBiL2FyY2gvcmlzY3Yv
-Ym9vdC9kdHMvc3RhcmZpdmUvamg3MTEwLWNvbW1vbi5kdHNpCj4+IEBAIC0zMyw2ICszMywyNyBA
-QCBtZW1vcnlANDAwMDAwMDAgewo+PiAgCQlib290cGgtcHJlLXJhbTsKPj4gIAl9Owo+PiAgCj4+
-ICsJcmVzZXJ2ZWQtbWVtb3J5IHsKPj4gKwkJI2FkZHJlc3MtY2VsbHMgPSA8Mj47Cj4+ICsJCSNz
-aXplLWNlbGxzID0gPDI+Owo+PiArCQlyYW5nZXM7Cj4+ICsKPj4gKwkJLyoKPj4gKwkJICogVGhl
-IGRpc3BsYXkgY29udHJvbGxlciBhbGxvY2F0ZXMgaXRzIGZyYW1lYnVmZmVycwo+PiBmcm9tIENN
-QSwKPj4gKwkJICogYW5kIHRoZSBkZWZhdWx0IHBvb2wgaXMgdG9vIHNtYWxsIGZvciB0aGVtLiBL
-ZWVwCj4+IHRoZSBwb29sCj4+ICsJCSAqIGluc2lkZSB0aGUgcmFuZ2UgdGhlIGNvbnRyb2xsZXIg
-Y2FuIGFkZHJlc3M7IGl0Cj4+IGZpdHMgaW4gdGhlCj4+ICsJCSAqIG1lbW9yeSBldmVyeSBWaXNp
-b25GaXZlIDIgdmFyaWFudCBoYXMuCj4+ICsJCSAqLwo+PiArCQlsaW51eCxjbWEgewo+PiArCQkJ
-Y29tcGF0aWJsZSA9ICJzaGFyZWQtZG1hLXBvb2wiOwo+PiArCQkJcmV1c2FibGU7Cj4+ICsJCQlz
-aXplID0gPDB4MCAweDIwMDAwMDAwPjsKPj4gKwkJCWFsaWdubWVudCA9IDwweDAgMHgxMDAwPjsK
-Pj4gKwkJCWFsbG9jLXJhbmdlcyA9IDwweDAgMHg3MDAwMDAwMCAweDAKPj4gMHgyMDAwMDAwMD47
-Cj4+ICsJCQlsaW51eCxjbWEtZGVmYXVsdDsKPj4gKwkJfTsKPj4gKwl9Owo+PiArCj4gCj4gSSBk
-b24ndCBrbm93IHdoZXRoZXIgY29uc3RyYWluaW5nIHRoZSBDTUEgcG9vbCBpbiB0aGUgRFQgaXMg
-YSBnb29kCj4gaWRlYS4KPiAKPiBUaGFua3MsCj4gSWNlbm93eQo+CgpTbyBJJ3ZlIHRlc3RlZCB0
-aGUgdmVyc2lvbiB3aXRob3V0IGFsbG9jLXJhbmdlcyBhbmQgc29tZSBvZiB0aGUgbW9kZXRlc3QK
-cnVucyBmYWlsZWQgZXNwZWNpYWxseSB0aGUgaGlnaGVyIHJlc29sdXRpb25zLiBJdCBzZWVtcyB0
-aGlzIGlzIGJlY2F1c2UKd2l0aG91dCBhbGxvYy1yYW5nZXMgX19yZXNlcnZlZF9tZW1fYWxsb2Nf
-c2l6ZSgpIGFsbG9jYXRlcyB0b3AgZG93biB3aXRoCk1FTUJMT0NLX0FMTE9DX0FOWVdIRVJFIHNv
-IHRoZSBwb29sIGxhbmRzIGFib3ZlIDQgR0IsIHdoaWNoIHRoZSBEQzgyMDAKY2Fubm90IHJlYWNo
-IC0gdnNfZGMuYyBzZXRzIGEgMzItYml0IERNQSBtYXNrLgoKMjUgb2YgdGhlIDQyIGFkdmVydGlz
-ZWQgbW9kZXMgZmFpbGVkIHdpdGggImZhaWxlZCB0byBjcmVhdGUgZHVtYiBidWZmZXI6CkNhbm5v
-dCBhbGxvY2F0ZSBtZW1vcnkiIC0gZXZlcnkgNEsgYW5kIDEwODBwIG1vZGUsIGRvd24gdG8gMTM2
-MHg3NjguCk9ubHkgMTI4MHg4MDAgYW5kIGJlbG93IHN1cnZpdmUuCgpTbyB0aGUgcmFuZ2Ugc2Vl
-bXMgdG8gYmUgYSBoYXJkd2FyZSBsaW1pdCB3aGljaCBpcyB3aHkgSSB0aGluayBpdApiZWxvbmdz
-IGluIHRoZSBEVC4gSSdkIGxpa2UgdG8ga2VlcCBpdCBpbiB2Ni4KCkJlc3QgcmVnYXJkcywKLS0g
-Ck1pY2hhbCBXaWxjenluc2tpIDxtLndpbGN6eW5za2lAc2Ftc3VuZy5jb20+CgoKLS0gCmxpbnV4
-LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+Hi Jason,
+
+Thanks for the patch!
+
+On 10/16/26 10:56, Jason Yang wrote:
+> The APB reset and the BIAS references have to be treated as block-level
+> [1]: both the transmitter and the receiver need them, and they only have
+> to be programmed once. They are programmed from the transmitter's
+> power-on path today. A later change registers one struct phy for each of
+> them, and a second consumer coming up would then reset the block
+> underneath a PHY that is already running.
+> 
+> Program them from runtime resume instead, where whichever of the two
+> comes up first brings the block up and a second one no longer resets it.
+> This puts the BIAS writes ahead of the per-PHY reset assert, where the
+> TRM's worked example has them after [1]. That is safe: neither M_RESETN
+> nor S_RESETN covers the BIAS registers, and the values written are those
+> registers' reset defaults.
+> 
+> The output level select in BIAS_CON4 stays on the power-on path: it
+> selects 400mV for D-PHY and 530mV for C-PHY, and the driver core resumes
+> a runtime-PM supplier before the consumer's probe runs, so runtime resume
+> cannot yet know which of the two applies.
+
+This all is about to change. As discussed in the other thread, it is a
+HW specific decision whether D-PHY or C-PHY is used, and it holds for
+both PHYs at the same time. Thus, it is reflected in the device tree, e.g.,
+
+&mipidcphy0 {
+    phy-mode = <PHY_TYPE_CPHY>;
+};
+
+The value can be stored in samsung->type at provider probe time and
+shall be available at PM resume.
+
+> 
+> [1] RK3588 TRM: sections 22.4.1 (address map), 22.4.2 (reset values),
+>     22.6.1.2 (reset) and 22.6.4.1 (D-PHY transmitter start-up)
+> 
+> Signed-off-by: Jason Yang <jason98166@gmail.com>
+> ---
+>  drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c | 25 ++++++++++++-----------
+>  1 file changed, 13 insertions(+), 12 deletions(-)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
+> index 7382043e1f31..1471a1563d2a 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
+> @@ -980,13 +980,6 @@ static void samsung_mipi_dcphy_bias_block_enable(struct samsung_mipi_dcphy *sams
+>  						 I_LADDER_1_00V);
+>  	regmap_write(samsung->regmap, BIAS_CON2, REG_325M_325MV | REG_LP_400M_400MV |
+>  						 REG_400M_400MV | REG_645M_645MV);
+> -
+> -	/* default output voltage select:
+> -	 * dphy: 400mv
+> -	 * cphy: 530mv
+> -	 */
+> -	regmap_update_bits(samsung->regmap, BIAS_CON4,
+> -			   I_MUX_SEL_MASK, I_MUX_400MV);
+
+This can stay here but will need some
+
+switch (samsung->type) {
+case PHY_TYPE_CPHY:
+	// write 530 mV
+	break;
+case PHY_TYPE_DPHY:
+	// write 400 mV
+	break;
+default:
+	//...
+};
+
+once there is support for CPHY.
+
+>  }
+>  
+>  static void samsung_mipi_dphy_lane_enable(struct samsung_mipi_dcphy *samsung)
+> @@ -1338,7 +1331,13 @@ static int samsung_mipi_dphy_power_on(struct samsung_mipi_dcphy *samsung)
+>  
+>  	reset_control_assert(samsung->m_phy_rst);
+>  
+> -	samsung_mipi_dcphy_bias_block_enable(samsung);
+> +	/* default output voltage select:
+> +	 * dphy: 400mv
+> +	 * cphy: 530mv
+> +	 */
+> +	regmap_update_bits(samsung->regmap, BIAS_CON4,
+> +			   I_MUX_SEL_MASK, I_MUX_400MV);
+> +
+
+No need for that change, then.
+
+>  	samsung_mipi_dcphy_pll_configure(samsung);
+>  	samsung_mipi_dphy_clk_lane_timing_init(samsung);
+>  	samsung_mipi_dphy_data_lane_timing_init(samsung);
+> @@ -1362,10 +1361,6 @@ static int samsung_mipi_dcphy_power_on(struct phy *phy)
+>  {
+>  	struct samsung_mipi_dcphy *samsung = phy_get_drvdata(phy);
+>  
+> -	reset_control_assert(samsung->apb_rst);
+> -	udelay(1);
+> -	reset_control_deassert(samsung->apb_rst);
+> -
+>  	switch (samsung->type) {
+>  	case PHY_TYPE_DPHY:
+>  		return samsung_mipi_dphy_power_on(samsung);
+> @@ -1656,6 +1651,12 @@ static __maybe_unused int samsung_mipi_dcphy_runtime_resume(struct device *dev)
+>  		return ret;
+>  	}
+>  
+> +	reset_control_assert(samsung->apb_rst);
+> +	udelay(1);
+> +	reset_control_deassert(samsung->apb_rst);
+> +
+> +	samsung_mipi_dcphy_bias_block_enable(samsung);
+
+Adjust this accordingly. I guess it makes sense to reset from the PM
+resume method.
+
+Best regards,
+Michael
+
+> +
+>  	return 0;
+>  }
+>  
+> 
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
