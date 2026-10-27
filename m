@@ -2,72 +2,83 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 24FC6606A31A
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Oct 2026 12:57:40 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5ADD5606A322
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Oct 2026 13:00:12 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=vBsfqz/G;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=mRc9dkJP
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=dXmWaNnm;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=FHtMqQ96
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=XYm7/sjNUpkuRHgxcIjWrg43zSNu+ekCptGxvF68bvk=; b=vBsfqz/G3AMzij6w3hojkfEtep
-	DipSEACOSve/I5o9FiJdH5myOT7VtS/FrZl3OtcES03ni72tzs21czhN3rj8U8JpzgITDUYrHUmDR
-	594SVCb1DPZe5dxATq0M3OwWX3bPBPqGmEGAaSQrIsgpkfSkO3YivdY52spP1FFJeeQtRofHJYoQ0
-	4doRiglByt4G1z4cjcxVVBR/WF1G1s+WHRQHITjZhcMKSu+gJPNTL5kMBM2CD9fXGGH0JRWNjzRbY
-	uLSDE+r21GBMfoBv8Lkns8ahAHZOTL99LWoCqj1D8Xld8eQAElhUhKA4VZ6yYC2Bfu9bv456G/Khs
-	88jhRl+g==;
+	bh=o4Wq8HAvQtOqEyQYpHyyB5vSqoEK//cQqy2QuTiZ8CM=; b=dXmWaNnm85Mnwyb5ypgjEInStM
+	ZCDHNf4vd9fY5K1Y751LqxcfXglymjgAO7cZs7foOs8kjZY5VQJkIBFfdBBWKOVPHdwTnmkIxNdqA
+	lnxTRVcbKKE4igi2bp0ttryT6q9e7vVmCrxZn6ZK9dzrrX0s1EWrEvfxFuri44Huilu4oZJX/OGMe
+	QAePadtCJ2AfkAotCxkLApmp0yZs8QjoQuc1dkitNzk7BYM5j8DXcSSE1pXLh4hEoh2D+xQ5GNjcc
+	I1YY86+XbzCt0QhTh7tODzPBFXmrhQbnxYrI3DTDyZDizPwm4F+WeVXB9vwtq2efgCMYNVs1Uvz3M
+	Tzevsptg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLgkF-00000004jPv-3g8f;
-	Tue, 27 Oct 2026 12:57:39 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xLgmh-00000004jjg-436t;
+	Tue, 27 Oct 2026 13:00:11 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLgkE-00000004jPp-251u
+	id 1xLgmg-00000004jjV-1tv9
 	for linux-phy@lists.infradead.org;
-	Tue, 27 Oct 2026 12:57:38 +0000
+	Tue, 27 Oct 2026 13:00:10 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id ABAD1601FE;
-	Tue, 27 Oct 2026 12:57:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1BB821F01825;
-	Tue, 27 Oct 2026 12:57:32 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id E850642A52;
+	Tue, 27 Oct 2026 13:00:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 541BC1F01825;
+	Tue, 27 Oct 2026 13:00:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793105857;
-	bh=ladm7VNw3w94qCYNsul6pq86i2SGy96Tryu3X7+mFyY=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=mRc9dkJP49MiwKf3rSOK32sJbhXthHhtbOG/JfyMsNlpq7pddc8gs2aJtUy8AY7Mh
-	 e6fQH/rpFVkUt8zIxrDEPKetT2/IVD5SDxlMNlpd4B1KjR5E/NPJRgUKtMPNeeyJUp
-	 wRqyNNMGOH8MgTooKcF+gd8ErmtonbxJKyUs5/hmKrrBE5bjsaaRYSdHsZwtWl0DVx
-	 i3IFSra+WQuJmNFXuA28aJnUOLl4TvRN2SffGsty6xKJq99kBbfX1DA/1BPL2AyAXs
-	 DEUqcdLKfPs7C4l3dOWepcqNoiFYD9dOggir6Vsr3/0u3ZWs8O58uYpDxNriGMY/SF
-	 dncx6iS/hqWuw==
-Message-ID: <6358dcdc-cdf4-4986-ba6b-a5cca4a093fa@kernel.org>
-Date: Tue, 27 Oct 2026 14:57:31 +0200
+	s=k20260515; t=1793106009;
+	bh=njFkWVmcvK6W9Ax7/0dLK/1HgZ6Q7qmr1RfBoVXi/fo=;
+	h=From:Subject:Date:To:Cc;
+	b=FHtMqQ96VH4ver1xWDcJF/i9dGeYXzfBR24hVmYVeqLM5sfhlUcqM8UnWylVq884Y
+	 bDDSutFAWuqtbHvP/gRSlXAar1394c5q3C2JtNWsunN1z5wkpqei7rtFgMM+6/i3kZ
+	 uzdstkIVA6xrJWNdNA9RMPVS9opHggiHF2n868wQC66tizkmJZgFzvt4btc3CgQzPH
+	 OVksTEY1N3glRfHWTG5Z7KKxDbFvjaCq82M1GYsrz54mT13rT2HObm+DEhrs3g6Zeg
+	 w7H0NVjmTIuAFVt2Jw2Yr+hPBlKCn479OJ6PAcdwxqEbgnEKk89K0dNyQoDtMdkNOv
+	 Xe0op1oP+e8ug==
+From: Mattijs Korpershoek <mkorpershoek@kernel.org>
+Subject: [PATCH v4 0/2] Add support for SA8255P in the
+ phy-qcom-snps-femto-v2 phy driver
+Date: Tue, 27 Oct 2026 14:00:03 +0100
+Message-Id: <20261027-phy-qcom-snps-femto-v2-8255-v4-0-874023825a63@kernel.org>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 4/7] arm64: dts: qcom: sm8450: Add CAMSS device tree node
-To: Loic Poulain <loic.poulain@oss.qualcomm.com>
-Cc: Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>,
- Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- linux-arm-msm@vger.kernel.org, Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-media@vger.kernel.org, Neil Armstrong <neil.armstrong@linaro.org>,
- Manivannan Sadhasivam <mani@kernel.org>, linux-phy@lists.infradead.org,
- Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org
-References: <20261023163057.775917-1-vz@kernel.org>
- <20261023163057.775917-5-vz@kernel.org>
- <CAFEp6-03Kqxya74Cd+hgueZ0D4xAcYNOx_R1sNqdMu2JrMBynw@mail.gmail.com>
- <378094fb-5f7f-42c6-a91f-158e2083a6cb@kernel.org>
- <CAFEp6-3XTotgkOKRACGLT91wUw30CgFB=44RtHnXfA6cOF7bVA@mail.gmail.com>
- <0d25a732-ccd5-4a7b-9809-93e67899b4e7@kernel.org>
- <CAFEp6-1fAAfG+dMsS+bK4KDjX795OXhWBSrkWZKzM4P9r7+m1g@mail.gmail.com>
-From: Vladimir Zapolskiy <vz@kernel.org>
-In-Reply-To: <CAFEp6-1fAAfG+dMsS+bK4KDjX795OXhWBSrkWZKzM4P9r7+m1g@mail.gmail.com>
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/33N0U7DIBTG8VdZuPYYOBRKd+V7LLsY9LCirlSox
+ GXpu0un0RiTXn7Jl9//xjKlQJntdzeWqIQc4lhH87BjbjiNZ4LQ182Qo+YtdjANV3hz8QJ5nDJ
+ 4uswRCoJBpaDj3lOr24ZzwaowJfLh464fjl87v9tncvNKro8h5Dmm6z1fxPr7Lkm+WSoCOBhrr
+ FeCq5M2Ty+URnp9jOnM1lTBX8xIsY1hxXqnRdd635Ow/zD5gwnOcRuTFZMNqgZt31mn/2DLsnw
+ C4oRM0HMBAAA=
+X-Change-ID: 20260729-phy-qcom-snps-femto-v2-8255-90ffe7674001
+To: Vinod Koul <vkoul@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Mattijs Korpershoek <mkorpershoek@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
+ Sriram Dash <quic_sriramd@quicinc.com>
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3851;
+ i=mkorpershoek@kernel.org; h=from:subject:message-id;
+ bh=rpr3MaquFeAFWt0e7SR5ZEfxzmpjxuycEgP0fXoFKCs=;
+ b=owEBbQGS/pANAwAKARkNHbRmThk1AcsmYgBq4KBWFc535eVcBM1h47FV1d+GUsduLTx6UzOy2
+ YtPFhtfQeuJATMEAAEKAB0WIQQu6UKnth9qvlMTrQAZDR20Zk4ZNQUCauCgVgAKCRAZDR20Zk4Z
+ NRAjCADVh+w8VHJ9WLG4k1mtJGdWNwEkqXNfBLNrI/VF1oL7PoyTo7Pv3cBJPxeAf8O3529EXj+
+ k9/HC8LH9/1Up2ey+KrBY3FP8Qka7YlB7VWF8wXkFBpv2C1Yg1p+zVpHYyrngUp0fEgHAKNzFmo
+ kN6WXE36oxqAyi5fpUVZCCcbRN1j1h7blSSQQDKjwe75rg6CizajLhAsUDtV9VsxPWHQ1yupcUq
+ azx5/nkeNEmZDViAmDEqTK7gV9JRdY0EJskqiW02iRqd3/h/hI/P6RTjYYqpqGXFz3ZR/FmTp/7
+ +YUP7EzAFhIuWjgimsfNQn/F6ZjCSTwzzoFF4JdQR9kBqcOZ
+X-Developer-Key: i=mkorpershoek@kernel.org; a=openpgp;
+ fpr=8234A35B45C0D26B31C1A2DA570338B018144F28
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,132 +88,109 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-15.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-22.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
-	version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-SGkgTG9pYy4KCk9uIDEwLzI3LzI2IDEyOjMxLCBMb2ljIFBvdWxhaW4gd3JvdGU6Cj4gSGkgVmxh
-ZCwKPiAKPiAKPiBPbiBUdWUsIE9jdCAyNywgMjAyNiBhdCAxMDo1NOKAr0FNIFZsYWRpbWlyIFph
-cG9sc2tpeSA8dnpAa2VybmVsLm9yZz4gd3JvdGU6Cj4+Cj4+IE9uIDEwLzI3LzI2IDExOjA3LCBM
-b2ljIFBvdWxhaW4gd3JvdGU6Cj4+PiBPbiBNb24sIE9jdCAyNiwgMjAyNiBhdCAxMTozOeKAr1BN
-IFZsYWRpbWlyIFphcG9sc2tpeSA8dnpAa2VybmVsLm9yZz4gd3JvdGU6Cj4+Pj4KPj4+PiBIaSBM
-b2ljLgo+Pj4+Cj4+Pj4gT24gMTAvMjYvMjYgMTg6MzIsIExvaWMgUG91bGFpbiB3cm90ZToKPj4+
-Pj4gT24gRnJpLCBPY3QgMjMsIDIwMjYgYXQgNjozMeKAr1BNIFZsYWRpbWlyIFphcG9sc2tpeSA8
-dnpAa2VybmVsLm9yZz4gd3JvdGU6Cj4+Pj4+Pgo+Pj4+Pj4gQWRkIFF1YWxjb21tIFdhaXBpbyBD
-QU1TUyBkZXZpY2UgdHJlZSBub2RlIHRvIHRoZSBwbGF0Zm9ybSBkdHNpIGZpbGUsCj4+Pj4+PiB0
-aGUgQ0FNU1MgaW5wdXQgcG9ydHMgYXJlIGNvbm5lY3RlZCB0byBvdXRwdXQgcG9ydHMgb2YgQ1NJ
-UEhZIGRldmljZXMuCj4+Pj4+Pgo+Pj4+Pj4gU2lnbmVkLW9mZi1ieTogVmxhZGltaXIgWmFwb2xz
-a2l5IDx2ekBrZXJuZWwub3JnPgo+Pj4+Pj4gLS0tCj4+Pj4+PiAgICAgYXJjaC9hcm02NC9ib290
-L2R0cy9xY29tL3NtODQ1MC5kdHNpIHwgMTY3ICsrKysrKysrKysrKysrKysrKysrKysrKysrKwo+
-Pj4+Pj4gICAgIDEgZmlsZSBjaGFuZ2VkLCAxNjcgaW5zZXJ0aW9ucygrKQo+Pj4+Pj4KPj4+Pj4+
-IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vc204NDUwLmR0c2kgYi9hcmNo
-L2FybTY0L2Jvb3QvZHRzL3Fjb20vc204NDUwLmR0c2kKPj4+Pj4+IGluZGV4IGJhYmYxYTQxOTZh
-MS4uN2Y1YjA1MDFhMjNlIDEwMDY0NAo+Pj4+Pj4gLS0tIGEvYXJjaC9hcm02NC9ib290L2R0cy9x
-Y29tL3NtODQ1MC5kdHNpCj4+Pj4+PiArKysgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vc204
-NDUwLmR0c2kKPj4+Pj4+IEBAIC0zMzEwLDYgKzMzMTAsMTY3IEBAIGNjaTFfaTJjMTogaTJjLWJ1
-c0AxIHsKPj4+Pj4+ICAgICAgICAgICAgICAgICAgICAgICAgICAgIH07Cj4+Pj4+PiAgICAgICAg
-ICAgICAgICAgICAgfTsKPj4+Pj4+Cj4+Pj4+PiArICAgICAgICAgICAgICAgY2Ftc3M6IGlzcEBh
-Y2I2MDAwIHsKPj4+Pj4+ICsgICAgICAgICAgICAgICAgICAgICAgIGNvbXBhdGlibGUgPSAicWNv
-bSx3YWlwaW8tY2Ftc3MiOwo+Pj4+Pj4gKyAgICAgICAgICAgICAgICAgICAgICAgcmVnID0gPDAg
-MHhhY2I2MDAwIDAgMHgxMDAwPiwKPj4+Pj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-IDwwIDB4YWNiNzAwMCAwIDB4MTAwMD4sCj4+Pj4+PiArICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICA8MCAweGFjYjkwMDAgMCAweDEwMDA+LAo+Pj4+Pj4gKyAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgPDAgMHhhY2JiMDAwIDAgMHgxMDAwPiwKPj4+Pj4+ICsgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgIDwwIDB4YWNjNjAwMCAwIDB4MTAwMD4sCj4+Pj4+PiArICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICA8MCAweGFjY2EwMDAgMCAweDEwMDA+LAo+Pj4+Pj4gKyAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgPDAgMHhhY2Y2MDAwIDAgMHgxMDAwPiwKPj4+Pj4+ICsgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgIDwwIDB4YWNmNzAwMCAwIDB4MTAwMD4sCj4+Pj4+PiAr
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8MCAweGFjZjgwMDAgMCAweDEwMDA+LAo+Pj4+
-Pj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPDAgMHhhYzYyMDAwIDAgMHgzMDAwPiwK
-Pj4+Pj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwwIDB4YWM3MTAwMCAwIDB4MzAw
-MD4sCj4+Pj4+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8MCAweGFjODAwMDAgMCAw
-eDMwMDA+LAo+Pj4+Pj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPDAgMHhhY2M3MDAw
-IDAgMHgyMDAwPiwKPj4+Pj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwwIDB4YWNj
-YjAwMCAwIDB4MjAwMD47Cj4+Pj4+PiArICAgICAgICAgICAgICAgICAgICAgICByZWctbmFtZXMg
-PSAiY3NpZF93cmFwcGVyIiwKPj4+Pj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICJjc2lkMCIsCj4+Pj4+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAi
-Y3NpZDEiLAo+Pj4+Pj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgImNzaWQy
-IiwKPj4+Pj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJjc2lkX2xpdGUw
-IiwKPj4+Pj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJjc2lkX2xpdGUx
-IiwKPj4+Pj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJ0cGcwIiwKPj4+
-Pj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJ0cGcxIiwKPj4+Pj4+ICsg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJ0cGcyIiwKPj4+Pj4+ICsgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICJ2ZmUwIiwKPj4+Pj4+ICsgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICJ2ZmUxIiwKPj4+Pj4+ICsgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICJ2ZmUyIiwKPj4+Pj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICJ2ZmVfbGl0ZTAiLAo+Pj4+Pj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgInZmZV9saXRlMSI7Cj4+Pj4+Cj4+Pj4+IElzIHRoZXJlIGEgY2Ftc3MgInRvcCIg
-cmVnaXN0ZXIgdG8gZGVzY3JpYmUgaGVyZT8gZS5nLiB0byByZXRyaWV2ZSB0aGUKPj4+Pj4gQ0FN
-U1MgaGFyZHdhcmUgdmVyc2lvbi4KPj4+Pgo+Pj4+IEknbSBub3QgYXdhcmUgb2YgYW55dGhpbmcg
-bGlrZSB0aGF0LiBXaGF0IGlzICJDQU1TUyBoYXJkd2FyZSB2ZXJzaW9uIj8KPj4+Pgo+Pj4+IENB
-TVNTIGVtYnJhY2VzIHZhcmlvdXMgYmxvY2tzLCB0aGVyZSBhcmUgQ1NJRCBhbmQgVkZFLCBmdWxs
-IGFuZCBsaXRlCj4+Pj4gSVBzLCBhbmQgYWxsIHRoZXNlIGNvbXBvbmVudHMgZG8gZXhwb3J0IHRo
-ZWlyIHZlcnNpb25zIGluZGl2aWR1YWxseS4KPj4+Cj4+PiBJIG1lYW4sIENBTVNTIHVzdWFsbHkg
-aGFzIGEgdG9wLWxldmVsIHJlZ2lzdGVyIGJsb2NrIChvZnRlbiB0b3Agb3IKPj4+IGNwYXNfdG9w
-KSB0aGF0IGNvbnRhaW5zIHRoZSBUaXRhbi9TcGVjdHJhIHZlcnNpb24gaW5mb3JtYXRpb24sIGFs
-b25nCj4+PiB3aXRoIHZhcmlvdXMgZ2xvYmFsIGNvbmZpZ3VyYXRpb24gYW5kIG11eCByZWdpc3Rl
-cnMuCj4+Cj4+IE9uIFNNODQ1MCB0aGVyZSBpcyAiY3Bhc190b3AiIHJlZ2lzdGVyIDwweGFjMTMw
-MDAgMHgxMDAwPiAobm90IGluIHRoZQo+PiBzZXJpZXMpLCBJIGJlbGlldmUgeW91IHJlZmVyZW5j
-ZSB0byBpdC4KPj4KPj4gSXMgQ1BBUyBhIG5hdHVyYWwgcGFydCBvZiBDQU1TUz8gQ2FuIGl0IGJl
-IG1vZGVsbGVkIGRpZmZlcmVudGx5LCBlLmcuCj4+IGFzIGEgc2VwYXJhdGUgZGV2aWNlL2RyaXZl
-ciwgbGlrZSBpdCB3YXMgZG9uZSB3aXRoIEpQRUcgb3IgQ1NJUEhZPwo+Pgo+PiBJIHNlZSB0aGF0
-IHRoZXJlIGFyZSBvbmx5IFNNNjE1MCBhbmQgU002MzUwIHBsYXRmb3JtcyBtZW50aW9uIHRoaXMK
-Pj4gcmVnaXN0ZXIsIHRvIGNhcHR1cmUgYW5kIHByb2Nlc3MgZnJhbWVzIG9uIFNNODQ1MCB0aGVy
-ZSBpcyBubyBuZWVkCj4+IHRvIHByb2dyYW0gQ1BBUy4KPj4KPj4gTm90ZSwgdGhhdCBldmVuIFNN
-NjE1MCBhbmQgU002MzUwIHBsYXRmb3JtcyBkbyBub3QgdXNlIHRoaXMgcmVnaXN0ZXIsCj4+IGl0
-IG1ha2VzIGl0IHJlZHVuZGFudC4KPj4KPj4+IEluIHBhcnRpY3VsYXIsIGV4cG9zaW5nIHRoaXMg
-YmxvY2sgY291bGQgYmUgdXNlZnVsIGZvciByZXBvcnRpbmcgdGhlCj4+PiBTcGVjdHJhIHZlcnNp
-b24gdG8gdXNlcnNwYWNlLCBmb3IgZXhhbXBsZSB0aHJvdWdoIGxpYmNhbWVyYS4KPj4KPj4gSXQg
-Y291bGQgYmUgc28sIGJ1dCBhZGRpbmcgZGVhZCBjb2RlIGlzIGFuIGFudGktcGF0dGVybiBpbiBz
-b2Z0d2FyZSBkZXNpZ24uCj4+Cj4+PiBNb3Jlb3ZlciwgaWYgdGhlIGdvYWwgaXMgdG8gZGVzY3Jp
-YmUgdGhlIENBTVNTIGhhcmR3YXJlIGV4aGF1c3RpdmVseQo+Pj4gaW4gRFQsIHRoaXMgYmxvY2sg
-c2hvdWxkIHByb2JhYmx5IGJlIHJlcHJlc2VudGVkIGFzIHdlbGwuIFdoZXRoZXIgaXQKPj4KPj4g
-SGVyZSBJIG9wcG9zZSBzdWNoIGEgZ29hbCBhcyBpbXByYWN0aWNhbCwgdGhlIHNldCBnb2FsIGlz
-IHRvIGdldCB3b3JraW5nCj4+IGNhbWVyYSBvbiB0aGUgcGxhdGZvcm0gd2l0aCB0aGUgbWluaW11
-bSBvZiBpcnJldmVyc2libGUgY2hhbmdlcy4gSXQgd2FzCj4+IHByb3ZlbiBtdWx0aXBsZSB0aW1l
-cyBpbiB0aGUgcGFzdCwgdGhhdCAiYW4gZXhoYXVzdGl2ZSBkZXNjcmlwdGlvbiIKPj4gZXF1YWxz
-IHRvICJ0aGUgdG90YWxseSBicm9rZW4gZGVzY3JpcHRpb24iLCBhbmQgYnJpbmdzIG5vdGhpbmcg
-dmFsdWFibGUKPj4gYnV0IGlycmVjb3ZlcmFibGUgZXRoZXJuYWwgcHJvYmxlbXMgdG8gb3ZlcmNv
-bWUuCj4+Cj4+PiBiZWxvbmdzIGluIHRoaXMgc3BlY2lmaWMgYmluZGluZyBpcyBvcGVuIGZvciBk
-aXNjdXNzaW9uLCBidXQgbXkKPj4+IGluY2xpbmF0aW9uIGlzIHRoYXQgaXQgZG9lcy4KPj4KPj4g
-VGhpcyByZWdpc3RlciBpcyBub3QgbmVlZGVkIHRvIGdldCBDQU1TUyB1cCB0byB0aGUgZnVuY3Rp
-b25hbGx5Cj4+IHdvcmtpbmcgc3RhZ2UsIHdoaWNoIGlzIHJlcHJlc2VudGVkIGJ5IHRoZSBzZXJp
-ZXMuCj4gCj4gQ0FNU1MgYWxyZWFkeSBzdXBwb3J0cyByZWFkaW5nIHRoZSBoYXJkd2FyZSB2ZXJz
-aW9uIGZyb20gc3VjaAo+IHRvcC1sZXZlbCByZWdpc3RlciBibG9ja3MgYW5kIGV4cG9zaW5nIGl0
-IHRocm91Z2ggdGhlIG1lZGlhIGZyYW1ld29yay4KPiBXaGlsZSB0aGlzIGlzIG5vdCBzdHJpY3Rs
-eSByZXF1aXJlZCwgaXQgd2lsbCBsaWtlbHkgYmVjb21lIHVzZWZ1bCB0bwo+IGxpYmNhbWVyYSBp
-biB0aGUgZnV0dXJlLgoKTGlrZWx5IHNvLCBhbmQgSSBkaWRuJ3Qga25vdyBhYm91dCB0aGUgZmFj
-dCB0aGF0ICJjcGFzX3RvcCIgc3RvcmVzIHNvbWUKaGFyZHdhcmUgdmVyc2lvbiBpbmZvcm1hdGlv
-biwgd2hpY2ggbWF5IGJlIHV0aWxpemVkIGJ5IHVzZXJzcGFjZSwgdGhhbmsKeW91IGZvciBzaGFy
-aW5nIHRoaXMuCgpBbnl3YXkgYXQgdGhpcyBzdGFnZSwgaWYgdGhlcmUgaXMgbm8gc3Ryb25nIG9i
-amVjdGlvbnMsIEknZCBwcmVmZXIgdG8KZm9sbG93IHRoZSBjb25zZXJ2YXRpdmUgbW9kZWwgb2Yg
-bm90IGFkZGluZyAiY3Bhc190b3AiIHRvIENBTVNTLgoKTGlrZSBpdCdzIGJlZW4gc2FpZCwgaXQg
-bWlnaHQgYmUgcHJlZmVycmVkIHRvIGNyZWF0ZSBhIG5ldyBzdGFuZC1hbG9uZQpDUEFTIGRldmlj
-ZSBhYnN0cmFjdGlvbiwgd2l0aCBubyBjb25mbGljdCBmb3IgSS9PIHJlZ2lvbnMgd2l0aCBDQU1T
-UywKZXNwZWNpYWxseSBhc3N1bWluZyB0aGUgbGF0dGVyIG9uZSBqdXN0IGRvZXMgbm90IG5lZWQg
-dGhpcyBJL08gcmVnaW9uCmF0IGFsbCB0byBiZSBmdW5jdGlvbmFsLgoKQWxzbywgSSdtIGEgYml0
-IGNvbmNlcm5lZCB3aGVuIHRoZSBhYnN0cmFjdGlvbiBpbnZlcnNpb24gaXMgdXNlZCBhcwphbiBh
-cmd1bWVudCwgaGVyZSB0aGUga2VybmVsIHNob3VsZCBub3QgZGVwZW5kIG9uIGxpYmNhbWVyYSBv
-ciBvdGhlcgp1c2Vyc3BhY2UgY29tcG9uZW50LCBidXQgdGhlIG9wcG9zaXRlIGlzIHRvIGJlIHNh
-dGlzZmllZCwgaS5lLiBsaWJjYW1lcmEKc2hvdWxkIHdvcmsgcHJvcGVybHkgd2l0aCA5MCUgb2Yg
-Q0FNU1MgdmFyaWFudHMsIHdoaWNoIGRvIG5vdCBleHBvcnQKImNwYXNfdG9wIiBpbmZvLCBsaWtl
-IHRoaXMgb3IgbWFueSBvdGhlciByZWNlbnRseSBhZGRlZCBDQU1TUyB2YXJpYW50cy4KCj4+IEkg
-YmVsaWV2ZSBzb21lb25lIG1heSBjcmVhdGUgYSBuZXcgZmFuY3kgQ1BBUyBkZXZpY2UgZHJpdmVy
-IG9yIHNvLCBhbmQKPj4gdGhlIG5ldyBkZXZpY2UgZHJpdmVyIHdpbGwgdXRpbGl6ZSB0aGUgImNw
-YXNfdG9wIiByZWdpc3RlciBhbmQgb3RoZXIKPj4gQ1BBUyByZXNvdXJjZXMgaW4gYSBiZXR0ZXIg
-d2F5LCB0aGUgcmVnaXN0ZXIgc2hhbGwgbm90IGJlIG5haWxlZCB0bwo+PiB0aGUgQ0FNU1MgcHJl
-bGltaW5hcmx5Lgo+IAo+IFdlbGwsIHllcywgd2UgY291bGQgY2VydGFpbmx5IG1vZGVsIGl0IGFz
-IGEgc3lzY29uIG5vZGUsIGVzcGVjaWFsbHkKPiBub3cgdGhhdCBDQU1TUyBpcyBubyBsb25nZXIg
-dGhlIG1vbm9saXRoaWMgYmxvY2sgaXQgdXNlZCB0byBiZS4KPiAKClN1cmUsIHRoYXQncyB0aGUg
-dmlldyBJIHNoYXJlIHRvIGV4cGxvaXQgdGhlIG1vZHVsYXJpc2F0aW9uIGF0IG1heGltdW0uCgpB
-cyBhbHdheXMsIHRoYW5rIHlvdSB2ZXJ5IG11Y2ggZm9yIHJldmlldyEKCi0tIApCZXN0IHdpc2hl
-cywKVmxhZGltaXIKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LXBoeQo=
+The Qualcomm automotive  SA8255p SoC abstracts resources such as resets,
+clocks and regulators in firmware. The SCMI firmware exposes multiple
+protocols to control such resources which are identified by protocol_id.
+
+For this USB phy, 2 SCMI protocols are exposed by the firmware:
+* power domain management protocol (protocol_id=0x11)
+* performance domain management protocol (protocol_id=0x13)
+
+The power domain has 2 indices: 'core' and 'transfer'.
+* core controls the regulators, the clocks and the reset
+* transfer only controls the clocks
+
+For example, to power on/off the PHY, we should use the 'core' domain.
+To disable data transfer and keeping power enabled, we should use the
+'transfer' domain.
+
+Note: the performance domain (0x13) exposes opaques values (0xa to 0x11)
+for which we don't have any information. Since it is not mandatory
+for the PHY to be functional, we have omitted it from the bindings and
+the driver.
+
+Patch 1 adds the binding for sa8255p. Similarly to what has been done
+for I2C [1], this is a separate binding.
+
+Patch 2 adds the driver change, which is based on a public vendor
+patch from qualcomm [2].
+I did the following changes on top of that:
+* Use devm_add_action_or_reset() for dev_pm_domain_detach_list() instead
+  of implementing a driver .remove()
+* Changed power domain names to drop 'usb_' prefix
+* Fixed various error handling paths
+* Added suspend/resume support
+
+This has been tested on next-20261026 with a Ride4 SA8775P board that
+has SCMI firmware (which is compatible).
+
+[1] https://lore.kernel.org/all/20260617-enable-i2c-on-sa8255p-v7-1-ad736dbeab57@oss.qualcomm.com/
+[2] https://git.codelinaro.org/clo/le/meta-qti-auto-kernel/-/blob/LY.AU.0.1.0.r1-16800-gen4meta.0/recipes-kernel/linux/files/usb/0014-PENDING-phy-qcom-snps-femto-v2-Add-support-for-SA825.patch
+
+Signed-off-by: Mattijs Korpershoek <mkorpershoek@kernel.org>
+---
+Changes in v4:
+- Don't control regulator, clk and reset in SCMI path (Mani)
+- Rename helper functions to qcom_snps_pds_{enable,disable}_all and
+  qcom_snps_pd_{enable,disable}_transfer (Mani)
+- Add some more helper functions to keep probe() cleaner.
+- Dropped Neil's R-b due to the above driver changes
+- Link to v3: https://lore.kernel.org/r/20261002-phy-qcom-snps-femto-v2-8255-v3-0-342542bd9bc6@kernel.org
+
+Changes in v3:
+- Applied R-b from Krzysztof and Neil
+- Link to v2: https://patch.msgid.link/20260831-phy-qcom-snps-femto-v2-8255-v2-0-dc6197ffde1b@kernel.org
+
+Changes in v2:
+- Move 'core' as first domain, before 'transfer' (Krzysztof)
+- Reworded binding commit message to be more precise about the various
+  domains ('core', 'transfer' and 'perf') (Krzysztof)
+- Link to v1: https://patch.msgid.link/20260730-phy-qcom-snps-femto-v2-8255-v1-0-8b8bf5105a68@kernel.org
+
+To: Vinod Koul <vkoul@kernel.org>
+To: Neil Armstrong <neil.armstrong@linaro.org>
+To: Manivannan Sadhasivam <mani@kernel.org>
+To: Rob Herring <robh@kernel.org>
+To: Krzysztof Kozlowski <krzk+dt@kernel.org>
+To: Conor Dooley <conor+dt@kernel.org>
+To: Mattijs Korpershoek <mkorpershoek@kernel.org>
+To: Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-arm-msm@vger.kernel.org
+Cc: linux-phy@lists.infradead.org
+Cc: devicetree@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org
+
+---
+Mattijs Korpershoek (1):
+      dt-bindings: phy: Add sa8255p high-speed USB PHY
+
+Sriram Dash (1):
+      phy: qcom-snps-femto-v2: Add support for SA8255P
+
+ .../bindings/phy/qcom,sa8255p-usb-hs-phy.yaml      |  52 +++++
+ drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c      | 253 +++++++++++++++++----
+ 2 files changed, 256 insertions(+), 49 deletions(-)
+---
+base-commit: f1ac44c32cba88ad65dcecd4a279661d14e93651
+change-id: 20260729-phy-qcom-snps-femto-v2-8255-90ffe7674001
+
+Best regards,
+--  
+Mattijs Korpershoek <mkorpershoek@kernel.org>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
