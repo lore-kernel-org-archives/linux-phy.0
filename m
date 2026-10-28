@@ -2,79 +2,58 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 178AF606A31C
-	for <linux-phy@archiver.kernel.org>; Wed, 28 Oct 2026 10:51:25 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B0D20606A31A
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Oct 2026 10:53:44 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=RMldW26c;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=XGYZqcaI
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=ohvy3pkX;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=nXnFJFug
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:References:In-Reply-To:
-	Cc:To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=QB4dr40RtbkYCZFvTFcvvHW5rpgtDzXRxb4hyuj6Q68=; b=RMldW26cIm95wYvCLEgZfuWTaJ
-	SS3O2BaqytudeTLhWKHGn0k/HhsS4NdiwMJX9ATlVLugizT637SOAJgyftACta4cJCuWsAJm5Okeu
-	jFvq/iU2aatEgK+KSazWUb4CJg8wI5FjnlwEaPiTzwd1dR8djtg4ULGfPSIKW88foTvHGxfB/VhHm
-	8hWsLXq2fpmwyfKmEnAVZ9/whMrYutGDLIx2D0K7C3CGKvwkLqUK8e58EiBSFrwyQ+leeLS1GYoyw
-	h2F7U0bQvovreJ/zzJQhqlrdCgMeNcrLT/c/rkjm8HAtelzG0ATrowJ6nKHTsp4oxI1ERtVWpcN1Y
-	wjMWvI1g==;
+	bh=1kuk+Skhx3TEJ6KT8aZS7+bWBNbO6C1ZfYSWAhx57vs=; b=ohvy3pkXPbIFz7lokS/IDF6iHi
+	BXGs6jHM68LOSrnTMwvsg84x8Z+2MWIUqgoKcItTEJyHXdmI8noG7bvjVcP+MdWxCsFFCSiKdEIDK
+	qfs6krTmESEQ34K/skv9DuWvMVZPO3awqtbExJ1KOFAKQnmZnR0U6BLoaDr6+Nhw22tv48KD3j131
+	WkZKE3WYiy+yOwZSBCHdGK+ktVY2iio9Q6wNE6DXO20KvBeh/JBoEYJXioGF4zKW4XVX7AoP/le6i
+	O1MSmuEM2XcV1zjTO9G9Fvngbune/OOvDspTX13YW9Qvc6wTKj52E0VwJrGSoM4gYha864pgUbVbd
+	2o2x10CA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xM1Fc-00000006ncu-3Qp4;
-	Wed, 28 Oct 2026 10:51:24 +0000
+	id 1xM1Hs-00000006o99-1mS8;
+	Wed, 28 Oct 2026 10:53:44 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xM1Fb-00000006ncW-0dE6
+	id 1xM1Hr-00000006o8h-1PEj
 	for linux-phy@lists.infradead.org;
-	Wed, 28 Oct 2026 10:51:23 +0000
+	Wed, 28 Oct 2026 10:53:44 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9C7DD42200;
-	Wed, 28 Oct 2026 10:51:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id ED5271F01825;
-	Wed, 28 Oct 2026 10:51:17 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 1D4404368E;
+	Wed, 28 Oct 2026 10:53:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B6D201F01828;
+	Wed, 28 Oct 2026 10:53:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793184682;
-	bh=T3nRekxwRytEydRWLjRP5g6gCT4cSFJaD0Z0gNrpDHg=;
-	h=Subject:From:To:Cc:In-Reply-To:References:Date;
-	b=XGYZqcaIK8xhS5PE6Y6FYIUgoM++v2dwnNHIBYcKxlGO4714/5d7eu1uRGUFXwfMY
-	 e520e3J3MslbVEtDsHLjf165VPUuGyalxU6l5C588Bt4IG8bX/cyRVYYICIZs7qULJ
-	 aHXAKC5N/7qDbPFTUx09GVGmH95iW+eqZgEU3uS8s5uLRembdXOaCiqEkFchkOnPAz
-	 EdCwVQ3sKY6MCm+A3oqONmzkoVIH+4zlC3SJ2vTdjwgM6SudgmihgBhtPBNBEch04f
-	 cYGV7AG7o7U7oKgRlPUIznF3DCs6SM6Tsqxqg7QL+Vf+ce4o9Xnji5xoCqQa7jJiLr
-	 6evloN+AGV2ZQ==
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Subject: Re: [PATCH v3 3/3] phy: qcom-qusb2: describe autoresume bit
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Cc: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
- Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
- Kathiravan T <quic_kathirav@quicinc.com>, Baruch Siach <baruch@tkos.co.il>, 
- Dmitry Baryshkov <lumag@kernel.org>, 
- Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>, 
- Manu Gautam <mgautam@codeaurora.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, linux-arm-msm@vger.kernel.org, 
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-In-Reply-To: <67366b4e-21d8-4094-abff-b0539bae47c3@oss.qualcomm.com>
-References: <20260920-fix-qusb2-v3-0-c273e75c9fb7@oss.qualcomm.com>
- <20260920-fix-qusb2-v3-3-c273e75c9fb7@oss.qualcomm.com>
- <67366b4e-21d8-4094-abff-b0539bae47c3@oss.qualcomm.com>
-Date: Wed, 28 Oct 2026 16:21:09 +0530
-Message-Id: <179318466919.5872.3084399469823329926.b4-reply@b4>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1807; i=mani@kernel.org;
- h=from:subject:message-id; bh=7EL0+hpnNQk0OqDGz6aOvSt/kd5txw0p2t7OnssdevQ=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq4dOgdj4iYrpWkk4qezNYCX3u6QoGqpdpnRqpA
- aPeVYt+/ECJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCauHToAAKCRBVnxHm/pHO
- 9ROOB/0ckXiLX2nwRtdpqwrl+Ly326U7T6U6K9I3rfDePZvlRXdgCdsQgHHoMBnyCexY18vCxNF
- FULGI4pYaJ3/n9fr7xOwGSai6TVW7jtMCEoGJwFmXoEMbE+iQvM2eARjNcn8Y79/IzeMGUmMRr7
- Y8ZsDCLoDhFKBiUaW4naaJmPHyYuN5GAZP7C6RnlSuqnhqIJnFk2JfwlE8BQVLF0jLaQ6+dVTND
- VDaQBA48ORyo4DTKmIEXv7lXfbeJHPEMbXir5+6mWoPrnQVxpPHI/zo531SRjtuA4ycyuPv8UQj
- Mdy3mEZH8PkaV/BcCXkzGMn7Qej2DA3xEAhM4wFNtPEB8o+r
-X-Developer-Key: i=mani@kernel.org; a=openpgp;
- fpr=C668AEC3C3188E4C611465E7488550E901166008
+	s=k20260515; t=1793184823;
+	bh=Heo/vFa24EffteH9ncauJu+TH7xa+dS++Fxrj1ZGYPE=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=nXnFJFug+ll3j7mR32JVxqTEll/OUJ9ZFHOX38fdWfRew4INTEeJQnbF1X7YplCr9
+	 4FrT++0eyCpwusnQWoRi72XQSFv7qVDJTBHKEHki+9SaW30ptY/p60C+waE387fopO
+	 W2tLioXc2ip7FvpQY8zj3hScWhJ10sx2D71phfshANwDjbS0kh3LZtWRj7OYYWobNq
+	 W83PjdwAyDzN3WKlqwiLeiki71Rzxq7FSPussFGhaEdoXX+AMdXUZ/sMh+YWxmPaUw
+	 pqBVPIoxq/f1kYznvPhCREgfP0ff8yVcr9paZJYvJXpDAy2Kzoo6reWkXoexS2LtoX
+	 FmK8Du4IASA0Q==
+Message-ID: <sashiko-outbox-187779@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v6 09/11] phy: qualcomm: qmp-combo: Add per-link-rate
+ auxless/LFPS and drive level for Glymur
+To: "Nabige Aala" <nabige.aala@oss.qualcomm.com>
+Cc: linux-phy@lists.infradead.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20261028-glymur-phy-v3-v6-9-1f1d2e565a66@oss.qualcomm.com>
+References: <20261028-glymur-phy-v3-v6-0-1f1d2e565a66@oss.qualcomm.com>
+ <20261028-glymur-phy-v3-v6-9-1f1d2e565a66@oss.qualcomm.com>
+Date: Wed, 28 Oct 2026 10:53:42 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,62 +63,135 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 2026-10-16 12:50 +0200, Konrad Dybcio wrote:
-> On 9/20/26 3:59 PM, Dmitry Baryshkov wrote:
-> > There is a confusion regarding the autoresume bit. Some verions of the
-> > QUSB2 PHY have it in the TEST1 register, while on the others it is a
-> > part of the TEST_CTRL register. When adding support for autoresume bit,
-> > the code attempted to simplify the handling of those registers, putting
-> > both registers to the TEST1 layout entry. In the end,
-> > ipq6018_regs_layout ended up correctly definig TEST1 register at 0x98
-> > (because platforms using that layout didn't use autoresume), while
-> > msm8996_regs_layout used TEST_CTRL offset (0xb8) for the TEST1
-> > layout entry.
-> > 
-> > Update the platform data to specify the register to be used for
-> > autoresume handling, define both TEST1 and TEST_CTRL registers and merge
-> > ipq6018_regs_layout and msm8996_regs_layout which become identical
-> > afterwards.
-> > 
-> > Fixes: 891a96f65ac3 ("phy: qcom-qusb2: Add support for runtime PM")
-> > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-> > ---
-> 
-> GPT has a concern:
-> 
-> [P2] Preserve Shikra's autoresume behavior
-> 
-> shikra_phy_cfg uses msm8996_regs_layout but doesn't set
-> autoresume_disable. This adds TEST_CTRL[3] to the shared layout, so
-> runtime suspend will now toggle it for Shikra whenever the PHY mode
-> is valid. Previously, its unset autoresume_en was zero, making these
-> writes no-ops. Unless enabling autoresume on Shikra is intentional
-> and verified, preserve the old behavior by disabling it for this
-> configuration.
->
-
-Sashiko raised the same concern...
- 
-> but I think that's fine since we *want* autoresume?
-> 
-
-That should be fine, but this side effect should be mentioned in the commit
-message.
-
-- Mani
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIHBoeTogcWNvbS1xbXAt
+Y29tYm86IGxuX2Rydl9sdmwgb25seSBzZXQgaW4gcW1wX3Y4X2NvbmZpZ3VyZV9kcF9jbG9ja3Mo
+KQotIFtIaWdoXSBwaHk6IHFjb20tcW1wLWNvbWJvOiBhdXhsZXNzX3NpbGVuY2Ugb3ZlcndyaXRl
+cyBhdXhsZXNzX3NldHVwIGF0IG9mZnNldCAweDBkOAotLQoKY29tbWl0IDNkZGQ3Y2IyOGNjMGFk
+ZGI5MWNmYWU5ZTcwYzM2NmU5MzgyMDQ3ZTQKQXV0aG9yOiBSaXRlc2ggS3VtYXIgPHJpdGVzaC5r
+dW1hckBvc3MucXVhbGNvbW0uY29tPgoKcGh5OiBxdWFsY29tbTogcW1wLWNvbWJvOiBBZGQgcGVy
+LWxpbmstcmF0ZSBhdXhsZXNzL0xGUFMgYW5kIGRyaXZlIGxldmVsIGZvciBHbHltdXIKClRoaXMg
+Y29tbWl0IHJlcGxhY2VzIGZpeGVkIGNvbnN0YW50cyBpbiBxbXBfdjhfY29uZmlndXJlX2RwX2Ns
+b2NrcygpIHdpdGgKcGVyLWxpbmstcmF0ZSBhdXhsZXNzIHNldHVwL3NpbGVuY2UgY3ljbGUgYW5k
+IExGUFMgcGVyaW9kIHZhbHVlcywgYW5kIGxvb2tzIHVwCnRoZSBQQ1MtbGV2ZWwgbGFuZSBkcml2
+ZSBsZXZlbCBmcm9tIHRoZSBsbl9kcnZfbHZsIHRhYmxlcyBiYXNlZCBvbiB0aGUgbWF4aW11bQp2
+b2x0YWdlIHN3aW5nIGFuZCBwcmUtZW1waGFzaXMgbGV2ZWxzIGFjcm9zcyBhY3RpdmUgbGFuZXMu
+Cgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtY29tYm8u
+YyBiL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1jb21iby5jCj4gaW5kZXggNTFk
+NzEwMmFlZmMzOC4uMTBiM2VmZTQ4NzIxZCAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS9xdWFs
+Y29tbS9waHktcWNvbS1xbXAtY29tYm8uYwo+ICsrKyBiL2RyaXZlcnMvcGh5L3F1YWxjb21tL3Bo
+eS1xY29tLXFtcC1jb21iby5jCj4gQEAgLTM5NDUsMjEgKzM5NDUsNDcgQEAgc3RhdGljIHZvaWQg
+cW1wX3Y0X2NvbmZpZ3VyZV9kcF90eChzdHJ1Y3QgcW1wX2NvbWJvICpxbXApCj4gIHN0YXRpYyBp
+bnQgcW1wX3Y4X2NvbmZpZ3VyZV9kcF9jbG9ja3Moc3RydWN0IHFtcF9jb21ibyAqcW1wKQo+ICB7
+Cj4gIAljb25zdCBzdHJ1Y3QgcGh5X2NvbmZpZ3VyZV9vcHRzX2RwICpkcF9vcHRzID0gJnFtcC0+
+ZHBfb3B0czsKPiAtCXVuc2lnbmVkIGxvbmcgcGl4ZWxfZnJlcTsKPiAgCWNvbnN0IHN0cnVjdCBx
+bXBfcGh5X2NmZyAqY2ZnID0gcW1wLT5jZmc7Cj4gKwl1bnNpZ25lZCBsb25nIHBpeGVsX2ZyZXE7
+Cj4gKwl1MzIgYXV4bGVzc19zZXR1cCwgYXV4bGVzc19zaWxlbmNlLCBsZnBzX3BlcmlvZDsKPiAr
+CXVuc2lnbmVkIGludCB2X2xldmVsID0gMCwgcF9sZXZlbCA9IDA7Cj4gKwl1OCBsbl9kcnZfbHZs
+Owo+ICsJaW50IGk7Cj4gKwo+ICsJZm9yIChpID0gMDsgaSA8IGRwX29wdHMtPmxhbmVzOyBpKysp
+IHsKPiArCQl2X2xldmVsID0gbWF4KHZfbGV2ZWwsIGRwX29wdHMtPnZvbHRhZ2VbaV0pOwo+ICsJ
+CXBfbGV2ZWwgPSBtYXgocF9sZXZlbCwgZHBfb3B0cy0+cHJlW2ldKTsKPiArCX0KPiArCj4gKwlp
+ZiAoZHBfb3B0cy0+bGlua19yYXRlIDw9IDI3MDApCj4gKwkJbG5fZHJ2X2x2bCA9ICgqY2ZnLT5s
+bl9kcnZfbHZsX2hicl9yYnIpW3ZfbGV2ZWxdW3BfbGV2ZWxdOwo+ICsJZWxzZQo+ICsJCWxuX2Ry
+dl9sdmwgPSAoKmNmZy0+bG5fZHJ2X2x2bF9oYnIzX2hicjIpW3ZfbGV2ZWxdW3BfbGV2ZWxdOwo+
+ICAKPiAgCXN3aXRjaCAoZHBfb3B0cy0+bGlua19yYXRlKSB7Cj4gIAljYXNlIDE2MjA6Cj4gIAkJ
+cGl4ZWxfZnJlcSA9IDE2MjAwMDAwMDBVTCAvIDI7Cj4gKwkJYXV4bGVzc19zZXR1cCA9IDB4MDM7
+Cj4gKwkJYXV4bGVzc19zaWxlbmNlID0gMHgwNjsKPiArCQlsZnBzX3BlcmlvZCA9IDB4MDA7Cj4g
+IAkJYnJlYWs7Cj4gIAljYXNlIDI3MDA6Cj4gIAkJcGl4ZWxfZnJlcSA9IDI3MDAwMDAwMDBVTCAv
+IDI7Cj4gKwkJYXV4bGVzc19zZXR1cCA9IDB4MDQ7Cj4gKwkJYXV4bGVzc19zaWxlbmNlID0gMHgw
+ODsKPiArCQlsZnBzX3BlcmlvZCA9IDB4MTE7Cj4gIAkJYnJlYWs7Cj4gIAljYXNlIDU0MDA6Cj4g
+IAkJcGl4ZWxfZnJlcSA9IDU0MDAwMDAwMDBVTCAvIDQ7Cj4gKwkJYXV4bGVzc19zZXR1cCA9IDB4
+MDk7Cj4gKwkJYXV4bGVzc19zaWxlbmNlID0gMHgxMTsKPiArCQlsZnBzX3BlcmlvZCA9IDB4MzM7
+Cj4gIAkJYnJlYWs7Cj4gIAljYXNlIDgxMDA6Cj4gIAkJcGl4ZWxfZnJlcSA9IDgxMDAwMDAwMDBV
+TCAvIDY7Cj4gKwkJYXV4bGVzc19zZXR1cCA9IDB4MGY7Cj4gKwkJYXV4bGVzc19zaWxlbmNlID0g
+MHgxYTsKPiArCQlsZnBzX3BlcmlvZCA9IDB4NTU7Cj4gIAkJYnJlYWs7Cj4gIAlkZWZhdWx0Ogo+
+ICAJCS8qIE90aGVyIGxpbmsgcmF0ZXMgYXJlbid0IHN1cHBvcnRlZCAqLwo+IEBAIC0zOTY5LDE4
+ICszOTk1LDE3IEBAIHN0YXRpYyBpbnQgcW1wX3Y4X2NvbmZpZ3VyZV9kcF9jbG9ja3Moc3RydWN0
+IHFtcF9jb21ibyAqcW1wKQo+ICAJLyogZGlzYWJsZSBjb3JlIHJlc2V0IHRzeW5jICovCj4gIAl3
+cml0ZWwoMHgwOSwgcW1wLT5kcF9kcF9waHkgKyBRU0VSREVTX0RQX1BIWV9DRkcpOwo+ICAKPiAt
+CXdyaXRlbCgweDA0LCBxbXAtPmRwX2RwX3BoeSArIFFTRVJERVNfVjhfRFBfUEhZX0FVWExFU1Nf
+U0VUVVBfQ1lDKTsKPiAtCXdyaXRlbCgweDA4LCBxbXAtPmRwX2RwX3BoeSArIFFTRVJERVNfVjhf
+RFBfUEhZX0FVWExFU1NfU0lMRU5DRV9DWUMpOwo+ICsJd3JpdGVsKGF1eGxlc3Nfc2V0dXAsIHFt
+cC0+ZHBfZHBfcGh5ICsgUVNFUkRFU19WOF9EUF9QSFlfQVVYTEVTU19TRVRVUF9DWUMpOwo+ICsJ
+d3JpdGVsKGF1eGxlc3Nfc2lsZW5jZSwgcW1wLT5kcF9kcF9waHkgKyBRU0VSREVTX1Y4X0RQX1BI
+WV9BVVhMRVNTX1NJTEVOQ0VfQ1lDKTsKCltTZXZlcml0eTogSGlnaF0KRG9lcyB3cml0aW5nIGF1
+eGxlc3Nfc2lsZW5jZSB0byBRU0VSREVTX1Y4X0RQX1BIWV9BVVhMRVNTX1NJTEVOQ0VfQ1lDCmlt
+bWVkaWF0ZWx5IG92ZXJ3cml0ZSB0aGUgYXV4bGVzc19zZXR1cCB2YWx1ZSB3cml0dGVuIHRvClFT
+RVJERVNfVjhfRFBfUEhZX0FVWExFU1NfU0VUVVBfQ1lDPwoKSW4gZHJpdmVycy9waHkvcXVhbGNv
+bW0vcGh5LXFjb20tcW1wLWRwLXBoeS12OC5oLCBib3RoIG1hY3JvcyBhcmUgZGVmaW5lZCB0bwp0
+aGUgc2FtZSByZWdpc3RlciBvZmZzZXQgMHgwZDggKHNraXBwaW5nIDB4MGRjIGJlZm9yZSAweDBl
+MCk6CgogICAgI2RlZmluZSBRU0VSREVTX1Y4X0RQX1BIWV9BVVhMRVNTX1NFVFVQX0NZQwkJMHgw
+ZDgKICAgICNkZWZpbmUgUVNFUkRFU19WOF9EUF9QSFlfQVVYTEVTU19TSUxFTkNFX0NZQwkJMHgw
+ZDgKCkFzIGEgcmVzdWx0LCBib3RoIHdyaXRlbCgpIGNhbGxzIGluIHFtcF92OF9jb25maWd1cmVf
+ZHBfY2xvY2tzKCkgdGFyZ2V0CnFtcC0+ZHBfZHBfcGh5ICsgMHgwZDgsIGNsb2JiZXJpbmcgYXV4
+bGVzc19zZXR1cCB3aXRoIGF1eGxlc3Nfc2lsZW5jZSBhbmQKbGVhdmluZyBvZmZzZXQgMHgwZGMg
+dW5wcm9ncmFtbWVkLgoKPiAgCXdyaXRlbCgweDA4LCBxbXAtPmRwX2RwX3BoeSArIFFTRVJERVNf
+VjhfRFBfUEhZX0xGUFNfQ1lDKTsKPiAtCXdyaXRlbCgweDExLCBxbXAtPmRwX2RwX3BoeSArIFFT
+RVJERVNfVjhfRFBfUEhZX0xGUFNfUEVSSU9EKTsKPiArCXdyaXRlbChsZnBzX3BlcmlvZCwgcW1w
+LT5kcF9kcF9waHkgKyBRU0VSREVTX1Y4X0RQX1BIWV9MRlBTX1BFUklPRCk7Cj4gIAo+ICAJd3Jp
+dGVsKDB4M2UsIHFtcC0+ZHBfZHBfcGh5ICsgUVNFUkRFU19WOF9EUF9QSFlfVFNZTkNfT1ZSRCk7
+Cj4gIAl3cml0ZWwoMHgwNSwgcW1wLT5kcF9kcF9waHkgKyBRU0VSREVTX1Y4X0RQX1BIWV9UWDJf
+VFgzX0xBTkVfQ1RMKTsKPiAgCXdyaXRlbCgweDA1LCBxbXAtPmRwX2RwX3BoeSArIFFTRVJERVNf
+VjhfRFBfUEhZX1RYMF9UWDFfTEFORV9DVEwpOwo+ICAJd3JpdGVsKDB4MDEsIHFtcC0+ZHBfZHBf
+cGh5ICsgUVNFUkRFU19WOF9EUF9QSFlfQVVYTEVTU19DRkcxKTsKPiAtCXdyaXRlbCgweDExLCBx
+bXAtPmRwX2RwX3BoeSArIFFTRVJERVNfVjhfRFBfUEhZX0xGUFNfUEVSSU9EKTsKPiAtCXdyaXRl
+bCgweDFmLCBxbXAtPmRwX2RwX3BoeSArIFFTRVJERVNfVjhfRFBfUEhZX0xOMF9EUlZfTFZMKTsK
+PiAtCXdyaXRlbCgweDFmLCBxbXAtPmRwX2RwX3BoeSArIFFTRVJERVNfVjhfRFBfUEhZX0xOMV9E
+UlZfTFZMKTsKPiArCXdyaXRlbChsbl9kcnZfbHZsLCBxbXAtPmRwX2RwX3BoeSArIFFTRVJERVNf
+VjhfRFBfUEhZX0xOMF9EUlZfTFZMKTsKPiArCXdyaXRlbChsbl9kcnZfbHZsLCBxbXAtPmRwX2Rw
+X3BoeSArIFFTRVJERVNfVjhfRFBfUEhZX0xOMV9EUlZfTFZMKTsKCltTZXZlcml0eTogSGlnaF0K
+QXJlIFFTRVJERVNfVjhfRFBfUEhZX0xOMF9EUlZfTFZMIGFuZCBRU0VSREVTX1Y4X0RQX1BIWV9M
+TjFfRFJWX0xWTCBldmVyCnVwZGF0ZWQgd2hlbiB2b2x0YWdlIHN3aW5nIGFuZCBwcmUtZW1waGFz
+aXMgY2hhbmdlIGR1cmluZyBEaXNwbGF5UG9ydCBsaW5rCnRyYWluaW5nLCBhbmQgY2FuIGFuIGlu
+dmFsaWQgMHhmZiBzZW50aW5lbCB2YWx1ZSBiZSB3cml0dGVuIHRvIHRoZW0/CgpJbiB0aGUgTVNN
+IERpc3BsYXlQb3J0IGRyaXZlciAoZHJpdmVycy9ncHUvZHJtL21zbS9kcC9kcF9jdHJsLmMpLApt
+c21fZHBfY3RybF9lbmFibGVfbWFpbmxpbmtfY2xvY2tzKCkgY2FsbHMgcGh5X3Bvd2VyX29uKCkg
+YmVmb3JlIGxpbmsgdHJhaW5pbmcKc3RhcnRzLCB3aGljaCBydW5zOgoKICAgIHFtcF9jb21ib19k
+cF9wb3dlcl9vbigpCiAgICAgIC0+IHFtcF92OF9jb25maWd1cmVfZHBfcGh5KCkKICAgICAgICAt
+PiBxbXBfY29tYm9fY29uZmlndXJlX2RwX3BoeV9jb21tb24oKQogICAgICAgICAgLT4gcW1wX3Y4
+X2NvbmZpZ3VyZV9kcF9jbG9ja3MoKQoKQXQgdGhhdCBwb2ludCwgZHBfb3B0cy0+dm9sdGFnZVtd
+IGFuZCBkcF9vcHRzLT5wcmVbXSBhcmUgMCBvbiBpbml0aWFsIGxpbmsKYnJpbmd1cCAob3IgaG9s
+ZCBzdGFsZSB2YWx1ZXMgZnJvbSBhIHByaW9yIGF0dGVtcHQgZHVyaW5nCm1zbV9kcF9jdHJsX3Jl
+aW5pdGlhbGl6ZV9tYWlubGluaygpIGJlZm9yZSBtc21fZHBfbGlua19yZXNldF9waHlfcGFyYW1z
+X3Z4X3B4KCkKcmVzZXRzIHRoZW0gaW4gbXNtX2RwX2N0cmxfbGlua190cmFpbl8xKCkpLgoKV2hl
+biBsaW5rIHRyYWluaW5nIHN1YnNlcXVlbnRseSBhZGp1c3RzIHZvbHRhZ2Ugc3dpbmcgYW5kIHBy
+ZS1lbXBoYXNpcyB2aWEKbXNtX2RwX2N0cmxfdXBkYXRlX3BoeV92eF9weCgpIC0+IG1zbV9kcF9j
+dHJsX3NldF92eF9weCgpIC0+IHBoeV9jb25maWd1cmUoKQp3aXRoIHNldF92b2x0YWdlcyA9IDEs
+IHFtcF9jb21ib19kcF9jb25maWd1cmUoKSBvbmx5IGNhbGxzCmNmZy0+Y29uZmlndXJlX2RwX3R4
+KHFtcCk6CgogICAgbWVtY3B5KCZxbXAtPmRwX29wdHMsIGRwX29wdHMsIHNpemVvZigqZHBfb3B0
+cykpOwogICAgaWYgKHFtcC0+ZHBfb3B0cy5zZXRfdm9sdGFnZXMpIHsKICAgICAgICAgICAgY2Zn
+LT5jb25maWd1cmVfZHBfdHgocW1wKTsKICAgICAgICAgICAgcW1wLT5kcF9vcHRzLnNldF92b2x0
+YWdlcyA9IDA7CiAgICB9CgpGb3IgR2x5bXVyLCBjZmctPmNvbmZpZ3VyZV9kcF90eCBpcyBxbXBf
+djRfY29uZmlndXJlX2RwX3R4KCkgLT4KcW1wX2NvbWJvX2NvbmZpZ3VyZV9kcF9zd2luZygpLCB3
+aGljaCB1cGRhdGVzIFFQSFlfVFhfVFhfRFJWX0xWTCBhbmQKUVBIWV9UWF9UWF9FTVBfUE9TVDFf
+TFZMIG9uIGRwX3R4IGFuZCBkcF90eDIsIGJ1dCBuZXZlciB1cGRhdGVzClFTRVJERVNfVjhfRFBf
+UEhZX0xOMF9EUlZfTFZMIG9yIFFTRVJERVNfVjhfRFBfUEhZX0xOMV9EUlZfTFZMLgoKSW4gYWRk
+aXRpb24sIHFtcF9kcF92OF9sbl9kcnZfbHZsX2hicjNfaGJyMiBhbmQgcW1wX2RwX3Y4X2xuX2Ry
+dl9sdmxfaGJyX3Jicgpjb250YWluIDB4ZmYgc2VudGluZWwgZW50cmllcyBmb3IgdW5zdXBwb3J0
+ZWQgY29tYmluYXRpb25zIHdoZXJlCnZfbGV2ZWwgKyBwX2xldmVsID4gMzoKCiAgICBzdGF0aWMg
+Y29uc3QgdTggcW1wX2RwX3Y4X2xuX2Rydl9sdmxfaGJyM19oYnIyWzRdWzRdID0gewogICAgICAg
+ICAgICB7IDB4MDIsIDB4MTIsIDB4MTYsIDB4MWEgfSwKICAgICAgICAgICAgeyAweDA5LCAweDE5
+LCAweDFmLCAweGZmIH0sCiAgICAgICAgICAgIHsgMHgxMCwgMHgxZiwgMHhmZiwgMHhmZiB9LAog
+ICAgICAgICAgICB7IDB4MWYsIDB4ZmYsIDB4ZmYsIDB4ZmYgfQogICAgfTsKClVubGlrZSBxbXBf
+Y29tYm9fY29uZmlndXJlX2RwX3N3aW5nKCksIHdoaWNoIGNoZWNrcyBmb3IgMHhmZiBiZWZvcmUg
+d3JpdGluZyB0bwp0aGUgaGFyZHdhcmUgcmVnaXN0ZXJzLCBxbXBfdjhfY29uZmlndXJlX2RwX2Ns
+b2NrcygpIGRvZXMgbm90IGNoZWNrIHdoZXRoZXIKbG5fZHJ2X2x2bCBpcyAweGZmIGJlZm9yZSBw
+cm9ncmFtbWluZyBRU0VSREVTX1Y4X0RQX1BIWV9MTjBfRFJWX0xWTCBhbmQKUVNFUkRFU19WOF9E
+UF9QSFlfTE4xX0RSVl9MVkwuCgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNo
+aWtvLmRldi8jL3BhdGNoc2V0LzIwMjYxMDI4LWdseW11ci1waHktdjMtdjYtMC0xZjFkMmU1NjVh
+NjZAb3NzLnF1YWxjb21tLmNvbT9wYXJ0PTkKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0Cmxp
+bnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
+YWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
