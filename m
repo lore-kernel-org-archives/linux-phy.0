@@ -2,155 +2,97 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B77AB606A336
-	for <linux-phy@archiver.kernel.org>; Wed, 28 Oct 2026 15:21:43 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7D7CE60A2619
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Oct 2026 15:22:33 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=kjGIMz1h;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=pFAcekdb;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=jkb07HXY
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=SAMaE/NY;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=samsung.com header.i=@samsung.com header.a=rsa-sha256 header.s=mail20170921 header.b=Ht3r8ZbP
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:Cc:To:MIME-Version:
+	Message-Id:Date:Subject:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Unsubscribe-Post:List-Owner;
-	bh=NtrsDjx3Bpx5ApX9vSj4XjkARrY3oMW0b0/2ln5KxTk=; b=kjGIMz1hbHN0lRifFbWZlvhMjS
-	RvlBhpT184aW1U66EA3u8AlWnrqwF4prOJC/ume+SIGPGu5XfTm6rQgUDI7iPIbM+xUqcxmHX8u/K
-	NiR4FQKsyEsfbkjzUx78zVa89G02TsiqqY1KmQ5zijBxGqr8HZPogI6j88fKnZVTkh+OyhK5570Oy
-	LUCrEgPaeFacTuRzj88NS9hhGuXnQM1/C0iTUv+wrQclbQpfW2XBHfpnMi8Ea40Evb1i54ApkLkRs
-	CQIswI8Sn9E47yRZ+UPgUtIOLxG31oPtKbWOTKQY1u3atJcCQhepWUEsvDrtEdeHOASTaV+hkF3cK
-	SgahqMbw==;
+	In-Reply-To:List-Unsubscribe-Post:List-Owner;
+	bh=Toul2FHVrNpeGARM0GSVBEaIZ0dKzhgbFsio4qk62UQ=; b=SAMaE/NYYpQpp3wpgs0ypDRBw3
+	x0TAWWQFA/GClg/P+MtWwiPIHcnVnwLf8vm08Ua/D31U9wxf7FO5IXherCwSHrhDww7Ap2ruD3tVA
+	KhZFAgqAGGtuCphJyXLGXAUG8GpzJFU4aRqD+/DxqnYDjzcZXKbFAAWQC0ZZD6/mc+pg98ZNBaxG/
+	tGyypdVDsuKm12n93U0EHwsq75n3qwcZ37UEfvP6qynu4GAP2yPlAgQCuo2q3vJYnEuKdqi/STkeK
+	1YLRfqUKoKslTAcKY3aeHkLRBPjzwW3kdUikmywdcr8QiWhl3Xsf+7/liVJmEwFCwVkm+mLJJZVKR
+	t8fMJv4Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xM5TD-00000007L4J-1twb;
-	Wed, 28 Oct 2026 15:21:43 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1xM5U1-00000007LBq-0ldi;
+	Wed, 28 Oct 2026 15:22:33 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xM5TA-00000007L2z-3cL1
+	id 1xM5Tx-00000007L81-23LQ
 	for linux-phy@lists.infradead.org;
-	Wed, 28 Oct 2026 15:21:41 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69SFAjKM1517023
-	for <linux-phy@lists.infradead.org>; Wed, 28 Oct 2026 15:21:40 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	4y4vPJgEmDpbRegYbIU8W9VPxzKIFsK6cvaBySnJ4cQ=; b=pFAcekdbJO0/E/fi
-	vzeG2CEw5DMHakRWk+rWkpUZPeNOYmRoT4IyvxAu+bz/iKOlC8g2Mt9NXP/a3QPm
-	Kw6iNpJcpn6s9v6bx8AgRSpg3DCEV35BZ2bfFvNWvWxVTojBnypLPMZqpuZ1bCw6
-	4ZrJhU3ljGCzKXqFLmDrrjou3b+W9B6iEs2GblD5dfkohGVgccRKxxRZS5aOxF1W
-	t2IAPbGfHwfON5rPh7+9uowdz1R7kDe5aCLeV2bn4KqvMzzZOFpWFKPE4l6cGl0H
-	8wpOaVcrA7uwxdK3wD3MMCQb2haXXXRBxWZGvQZYBFgLND7AtS3egPQrt78CMLkx
-	Ew5MvQ==
-Received: from mail-yw1-f200.google.com (mail-yw1-f200.google.com [209.85.128.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hkbhwa3d8-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 28 Oct 2026 15:21:40 +0000 (GMT)
-Received: by mail-yw1-f200.google.com with SMTP id 00721157ae682-8b04ea2d440so16658527b3.2
-        for <linux-phy@lists.infradead.org>; Wed, 28 Oct 2026 08:21:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1793200899; x=1793805699; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :content-type:mime-version:subject:date:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=4y4vPJgEmDpbRegYbIU8W9VPxzKIFsK6cvaBySnJ4cQ=;
-        b=jkb07HXYS7UFl9zkCprbTr6KcM0nlHyzPNaEp3JvpVkIwp5G7zA0LOUpDbMxgxaLh/
-         DBkcyoZiKe9KSjAWm4Bxo+MaoLFJXn7OobIfR94lMPJf/0NIvQbBUxOK3mtoOueUf5Js
-         8glv2HeBCXQnpQT1XUCVFboUuJyVHlYaFPrAsEqWFrHjrfz7I9acMc4n3ATvQzZv5L5Q
-         am7KD5hPJkknmh5NJy5DZIMjYh5hYRyooZzDvVtEqpXQJeTTJ8Q7+CTRN/cnp7wbxuRU
-         kmQ9SeaYFKp2icY7Ym5K8utEf87OObt1hbpxzpXmNCBCBqGFdQvvuiN/X8A4tUyDIghH
-         Gcjw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793200899; x=1793805699;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :content-type:mime-version:subject:date:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=4y4vPJgEmDpbRegYbIU8W9VPxzKIFsK6cvaBySnJ4cQ=;
-        b=UTTUifoXOvjD4/QgzT8WUXlJYZLDqxLyuAnLyGTf6o1xZNnQfAQO6/c3P6fDP3B8aR
-         +ZT6ssZh0bX4yABhlmOUZfzgF40g+Yr4VkQ3v+ahHWfV5Hy3JBpijrmF0jfUuxm949mP
-         pKmeBAQE6KwuBaPTX0UF3WF8a60+MKPuFR+3fPvcMyxxQHDsn9GcjhpxxOezbTsdkYWq
-         KfH9ngeZD6ad6cQFNccHbRSzqFuvfEQdcax1keWtUfoT5hOgZhd8FAGXxrrIH/Mr38uH
-         gscbY2sRPLNfI5Fu6sTs5zvEv9844QEY9qtSQ48ovTsN0FzRS3fWxt/jQD1iyEEx+90a
-         taEw==
-X-Gm-Message-State: AFq9FYLg4ZQZcjOHr4BdK/JBxVC7o8jofzzfuozUTbU2iOAbemm8bni8
-	4tBHx8N49Q49eJs1zz9pCrL5ec1vDaWek7NhUfBQuVtL/E3lGWicchhnYnP8BYozXln/PGzxME+
-	rrM88x9NMtz0wCPfGydArQuXaeF2TDbr4TSYalBAsGlVYZXe3+WoRM4h53OwJoPKKRwr2
-X-Gm-Gg: AYBFou1cEACHCxOJqLqq++bV09czD7B1wF9s8CvBGCId+nNNNqBQhljolPq79Wvi7V3
-	SCwmIY3JNTNLomQ2zcqFMgNFtpgIjhgzJWEXqp4jK/cBj0g0HwfsCyCMNhPc+PYQ6W/gGOvV3+Y
-	wZP3VsLFvXUdl5G0YQ66LrcBd9WJvXAGFZKWXzPpqHrBQij/USS730q81lt1efpqa/L63uvBkQ/
-	b1LrH93WD+KLGMNveXE6w2sdV71YMh4a32yigInDVy5pM1l5DSGp6BmxSHrjYvMMpjVtUBdj6oN
-	vLV8Qeg0CDhX60pUdvhaNK9KXzStogpOPR0V4ku6eX3DEMR9jdExivlzbWIh7VrG3gU9blLlyj1
-	k2a4YmdKoZw8GbMXR6kLtI+5XRIglCA+Ut3Hcbfy/lum/BqkyTa3tbKGK4AhqadT3BD0GTy52eL
-	yW3Bu1uKYiv/OJU1pzNPaJHoq1kHsVXE8EKpTl89G6YDU6OyyNLH0WflaavxpO
-X-Received: by 2002:a53:c78c:0:b0:672:a678:da59 with SMTP id 956f58d0204a3-67a7bf245d2mr1555984d50.108.1793200898910;
-        Wed, 28 Oct 2026 08:21:38 -0700 (PDT)
-X-Received: by 2002:a53:c78c:0:b0:672:a678:da59 with SMTP id 956f58d0204a3-67a7bf245d2mr1555956d50.108.1793200898271;
-        Wed, 28 Oct 2026 08:21:38 -0700 (PDT)
-Received: from hu-hangxian-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id 956f58d0204a3-67a803cdd1asm1107541d50.4.2026.10.28.08.21.35
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 28 Oct 2026 08:21:37 -0700 (PDT)
-From: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
-Date: Wed, 28 Oct 2026 08:20:49 -0700
-Subject: [PATCH v23 15/15] arm64: dts: qcom: kaanapali-mtp-camera-s5kjn5:
- Add DT overlay
+	Wed, 28 Oct 2026 15:22:31 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+	by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id 20261028152226euoutp014f25fe125f331f5ec2bdeaaf25aec16e~iusJ7cgWf0707307073euoutp01b
+	for <linux-phy@lists.infradead.org>; Wed, 28 Oct 2026 15:22:26 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com 20261028152226euoutp014f25fe125f331f5ec2bdeaaf25aec16e~iusJ7cgWf0707307073euoutp01b
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1793200946;
+	bh=eBVG4o5Q+efGxzA1i/yK8O3OZQl+XBXEI5EUCcqeJDk=;
+	h=From:Subject:Date:To:Cc:References:From;
+	b=Ht3r8ZbPzNEEKcx+1KxOvYF+okaPL4voM/rlfSDkgIHFrGiJTrm4xVAzuPadR+sGQ
+	 S2qRspU0ZOteNKzZXxVI3rpIXg7b7s3YErZNqRsozWyNPwDlEk0YWfQn7PKAtrBjAo
+	 PVOSvY6o4vKJquq3KMzELmpp1fYIxd4NI3GKc0LI=
+Received: from eusmtip1.samsung.com (unknown [203.254.199.221]) by
+	eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+	20261028152225eucas1p133ea1b7981dfa2afe085b83e1bd6de3b~iusJjPOhi0628506285eucas1p1y;
+	Wed, 28 Oct 2026 15:22:25 +0000 (GMT)
+Received: from AMDC4942.eu.corp.samsungelectronics.net (unknown
+	[106.210.136.40]) by eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+	20261028152224eusmtip14ff4edada07d0beea9c9bddae2f23311~iusIrBPBq1826418264eusmtip1i;
+	Wed, 28 Oct 2026 15:22:24 +0000 (GMT)
+From: Michal Wilczynski <m.wilczynski@samsung.com>
+Subject: [PATCH v6 0/5] phy: Add the StarFive JH7110 Innosilicon HDMI PHY
+Date: Wed, 28 Oct 2026 16:21:40 +0100
+Message-Id: <20261028-jh7110-inno-hdmi-phy-v6-0-f3379684d97e@samsung.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261028-kaanapali-camss-v23-15-95f250b18612@oss.qualcomm.com>
-References: <20261028-kaanapali-camss-v23-0-95f250b18612@oss.qualcomm.com>
-In-Reply-To: <20261028-kaanapali-camss-v23-0-95f250b18612@oss.qualcomm.com>
-To: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
-        Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
-        Loic Poulain <loic.poulain@oss.qualcomm.com>,
-        Mauro Carvalho Chehab <mchehab@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        Abel Vesa <abelvesa@kernel.org>
-Cc: linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
-        linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org,
-        jeyaprakash.soundrapandian@oss.qualcomm.com,
-        Vijay Kumar Tumati <vijay.tumati@oss.qualcomm.com>,
-        Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
-X-Mailer: b4 0.16.1-dev-17221
-X-Proofpoint-GUID: PyzHJCAMNeCGIrgumlhZ_rqh1ivu8_8Q
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDI4MDA2MSBTYWx0ZWRfX3fTEnU48r3J9
- jqHRyUzXHxVxuV3tNcNK8g+QuU60a+TI36/ND4x6UDMSMkwNcWR+HSF51BblrPLIi8HFYRX9266
- 8uGzRTukPCLs5gCqQlMg7uaNOjsE+dk=
-X-Authority-Analysis: v=2.4 cv=V+joQuni c=1 sm=1 tr=0 ts=6ae21304 cx=c_pps
- a=NMvoxGxYzVyQPkMeJjVPKg==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
- a=KKAkSRfTAAAA:8 a=EUspDBNiAAAA:8 a=ZJyx6tJpJz6uHbTMGDIA:9 a=QEXdDO2ut3YA:10
- a=kLokIza1BN8a-hAJ3hfR:22 a=cvBusfyB2V15izCimMoJ:22
-X-Proofpoint-ORIG-GUID: PyzHJCAMNeCGIrgumlhZ_rqh1ivu8_8Q
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDI4MDA2MSBTYWx0ZWRfX6tcvc7Q/y997
- hA0gPeUl0UlSqSsxEtQUgj3W9toYeRgKd8c31fQ+Oqc52n/nelBdSkLvTqCCdZUXBb9vD7ddz5P
- G0LPgMK4Y8ZiJBqCsND5OQgNL8lW6ttyplSiNY4S/v6ea+OUHsAryBrpZ2xniOlEVwilsDjy8OA
- GC39mJBoBqDIFTAONp8X8vV14XTU/6ZxoPdqP4nEAL/njQaFKNYtYVQMg4y48/efsunQrb+RmlP
- aDpoApOF0QIYy3Zt5lFcRhmoL3iy4JAwJ2JofnDRS40PNiUGibQtH0zaG7rKfri8+vmpFVlIuca
- 7ETxj6i9lu71farLrGEG9DIB4RdvwasynkN5M+POpql040f16ocPkdcvQ+xSBfqIu3yXVpniWVy
- LqIszkgdWeB4MB2rk9fGxB5eO0EI9TpOho2MaAYUikKacbkb2GoDgVcI+P8NuDo1Tlf6gNSUNZC
- xoxtVO2SjauhUdSj6zw==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
- definitions=2026-10-28_05,2026-10-21_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 malwarescore=0 suspectscore=0 clxscore=1015 bulkscore=0
- phishscore=0 impostorscore=0 priorityscore=1501 spamscore=0 adultscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2610190000 definitions=main-2610280061
+X-B4-Tracking: v=1; b=H4sIAAQT4moC/zWNwQ6CMBAFf4X07JrSQime/A/DobYLXSOFtEokh
+	H+3knicSd68jSWMhIldio1FXCjRFDKoU8GsN2FAIJeZCS5UyYWGh2/KkgOFMIF3I8HsV9ASa9s
+	bVUmULE/niD19juyty+wpvaa4Hi9L/bNHkLei/QftE02AhMHBUgMHLe6V0yitss01mTG9w3C20
+	8i6fd+/FvQ0wLcAAAA=
+X-Change-ID: 20261028-jh7110-inno-hdmi-phy-83e5cfa643e3
+To: Vinod Koul <vkoul@kernel.org>,  Neil Armstrong
+	<neil.armstrong@linaro.org>,  Manivannan Sadhasivam <mani@kernel.org>, Rob
+	Herring <robh@kernel.org>,  Krzysztof Kozlowski <krzk+dt@kernel.org>,  Conor
+	Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,  Emil Renner
+	Berthing <kernel@esmil.dk>,  Hal Feng <hal.feng@starfivetech.com>, Dominique
+	Belhachemi <db@domibel.de>,  Michal Wilczynski <m.wilczynski@samsung.com>,
+	Andy Yan <andyshrk@163.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-riscv@lists.infradead.org,  Marek
+	Szyprowski <m.szyprowski@samsung.com>,  Icenowy Zheng
+	<zhengxingda@iscas.ac.cn>,  Chaoyi Chen <chaoyi.chen@rock-chips.com>, 
+	Joshua Peisach <jpeisach@ubuntu.com>, Byron Stanoszek <gandalf@winds.org>, 
+	OOHehir <oo.hehir@gmail.com>
+X-Mailer: b4 0.15-dev
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3586;
+	i=m.wilczynski@samsung.com; h=from:subject:message-id;
+	bh=DYIe08HIrEITFvW4Wmq05N5Ik9goDCsoGozIIBA8kp4=;
+	b=owGbwMvMwCGWumv6zndzRCIZT6slMWQ9EjaQWs9msu2tYfjK3+2JRnETs2bv+KK+Zb3Zkr9/q
+	vz4ksQqOkpZGMQ4GGTFFFnObow2kvzH8LT8+ONfMHNYmUCGMHBxCsBE1FsYGXZvWjUz/V789JgH
+	fed3/Tv3anvpc5GFxa28H9JPnv35pWkKI8P+O9JKzm2851jOK3QWvPAzWr/o9OLyjVu4QoPrdaU
+	XGDMDAA==
+X-Developer-Key: i=m.wilczynski@samsung.com; a=openpgp;
+	fpr=CDB15B3219FE00E577C7E3FA65BA97B9EE9C1459
+X-CMS-MailID: 20261028152225eucas1p133ea1b7981dfa2afe085b83e1bd6de3b
+X-Msg-Generator: CA
+X-RootMTR: 20261028152225eucas1p133ea1b7981dfa2afe085b83e1bd6de3b
+X-EPHeader: CA
+X-CMS-RootMailID: 20261028152225eucas1p133ea1b7981dfa2afe085b83e1bd6de3b
+References: <CGME20261028152225eucas1p133ea1b7981dfa2afe085b83e1bd6de3b@eucas1p1.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261028_082140_910826_023236F4 
-X-CRM114-Status: GOOD (  14.42  )
-X-Spam-Score: -2.8 (--)
+X-CRM114-CacheID: sfid-20261028_082229_839905_0CE43799 
+X-CRM114-Status: GOOD (  17.37  )
+X-Spam-Score: -4.4 (----)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -163,151 +105,90 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Enable the S5KJN5 image sensor via CCI on Kaanapali MTP board.
+This series adds the HDMI PHY driver for the StarFive JH7110 and shares
+the pre-PLL code it has in common with the Rockchip RK3328 Innosilicon
+HDMI PHY.
 
-The Kaanapali MTP board connect S5KJN5 with QUP I2C bus by default. This
-DTBO enables S5KJN5 on CCI-0 interface connected to the CSIPHY2 in four
-lane mode on a rework camera module.
+Up to v5 it was part of the JH7110 display series [1]. It is split out
+as Vinod suggested, so it can go through linux-phy on its own; the rest
+continues as v6 of "drm: starfive: jh7110: Enable display subsystem".
+Nothing here depends on the display series. The display series depends
+on this one: its HDMI subsystem binding references the PHY binding from
+patch 1, and it needs the PHY driver at runtime.
 
-Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-Signed-off-by: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
+[1] https://lore.kernel.org/all/20260929-jh7110-clean-send-v5-0-82b4d8e3c6c7@samsung.com/
+
+The JH7110 has the same Innosilicon PHY as the RK3328, offset by 0x100
+because it sits behind the HDMI controller in a shared register block.
+Patch 2 factors out the pre-PLL config format, table lookup,
+determine_rate, recalc_rate and the pre-PLL programming; patch 3 moves
+Rockchip onto it; patch 4 adds the JH7110 driver. Pixel clock tables,
+post-PLL and analog config stay SoC specific.
+
+Patch 3 should be a no-op for Rockchip - same writes, same order, same
+values - and RK3228, whose pre-PLL is at different addresses, keeps its
+own register code and shares only the lookup. I have no Rockchip
+hardware, so it is build tested only (arm and riscv). A Tested-by would
+help.
+
+Patch 5 adds a MAINTAINERS entry for the binding and the driver, as the
+other JH7110 PHY drivers have.
+
+Testing
+=======
+
+Tested on a VisionFive 2 v1.3B together with the display series, using
+modetest: all 42 modes the sink advertises work, with pixel clocks from
+25.175 MHz up to 297 MHz.
+
+Every commit builds for riscv and arm.
+
+Changes in v6:
+- Split out of the JH7110 display series (Vinod)
+- inno_read() returns the regmap_read() error and recalc_rate checks it,
+  instead of a failed read turning into a zero divisor (Vinod)
+- Bound the pre-PLL and post-PLL table walks with the table size instead
+  of relying on a sentinel (Vinod)
+- Lowercase hex in the JH7110 pixel clock table (Vinod)
+- New patch 5: a MAINTAINERS entry for the JH7110 HDMI PHY, moved out of
+  the display series' entry
+- Rebased onto v7.3, collected tags
+- Link to v5: https://lore.kernel.org/all/20260929-jh7110-clean-send-v5-0-82b4d8e3c6c7@samsung.com/
+
 ---
- arch/arm64/boot/dts/qcom/Makefile                  |  5 ++
- .../boot/dts/qcom/kaanapali-mtp-camera-s5kjn5.dtso | 81 ++++++++++++++++++++++
- arch/arm64/boot/dts/qcom/kaanapali-mtp.dts         |  7 ++
- 3 files changed, 93 insertions(+)
+Michal Wilczynski (5):
+      dt-bindings: phy: Add starfive,jh7110-inno-hdmi-phy
+      phy: Add common Innosilicon HDMI PHY helpers
+      phy: rockchip: inno-hdmi: Use the common Innosilicon PHY helpers
+      phy: starfive: Add jh7110-inno-hdmi-phy driver
+      MAINTAINERS: Add StarFive JH7110 HDMI PHY entry
 
-diff --git a/arch/arm64/boot/dts/qcom/Makefile b/arch/arm64/boot/dts/qcom/Makefile
-index 88230c4e00ea..84b244d43e9e 100644
---- a/arch/arm64/boot/dts/qcom/Makefile
-+++ b/arch/arm64/boot/dts/qcom/Makefile
-@@ -48,6 +48,11 @@ dtb-$(CONFIG_ARCH_QCOM)	+= ipq9574-rdp449.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= ipq9574-rdp453.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= ipq9574-rdp454.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= ipq9650-rdp488.dtb
-+dtb-$(CONFIG_ARCH_QCOM)	+= kaanapali-mtp-camera-s5kjn5.dtbo
-+
-+kaanapali-mtp-camera-s5kjn5-dtbs	:= kaanapali-mtp.dtb kaanapali-mtp-camera-s5kjn5.dtbo
-+
-+dtb-$(CONFIG_ARCH_QCOM)	+= kaanapali-mtp-camera-s5kjn5.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= kaanapali-mtp.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= kaanapali-qrd.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= lemans-evk.dtb
-diff --git a/arch/arm64/boot/dts/qcom/kaanapali-mtp-camera-s5kjn5.dtso b/arch/arm64/boot/dts/qcom/kaanapali-mtp-camera-s5kjn5.dtso
-new file mode 100644
-index 000000000000..d0e39855e0e6
---- /dev/null
-+++ b/arch/arm64/boot/dts/qcom/kaanapali-mtp-camera-s5kjn5.dtso
-@@ -0,0 +1,81 @@
-+// SPDX-License-Identifier: BSD-3-Clause
-+/*
-+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-+ */
-+
-+/dts-v1/;
-+/plugin/;
-+
-+#include <dt-bindings/clock/qcom,kaanapali-cambistmclkcc.h>
-+#include <dt-bindings/clock/qcom,kaanapali-camcc.h>
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/media/video-interfaces.h>
-+
-+&camss {
-+	status = "okay";
-+};
-+
-+&camss_csiphy2_in_port {
-+	camss_csiphy2_inep: endpoint {
-+		data-lanes = <1 2 3 4>;
-+		remote-endpoint = <&csiphy2_out_ep>;
-+	};
-+};
-+
-+&cci0 {
-+	status = "okay";
-+};
-+
-+&cci0_i2c1 {
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+
-+	camera@10 {
-+		compatible = "samsung,s5kjn5";
-+		reg = <0x10>;
-+
-+		reset-gpios = <&tlmm 3 GPIO_ACTIVE_LOW>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&cam_mclk2_default &cam_reset2_default>;
-+
-+		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK2_CLK>;
-+		assigned-clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK2_CLK>;
-+		assigned-clock-rates = <19200000>;
-+
-+		vddio-supply = <&vreg_l4n_1p8>;
-+		vddd-supply = <&vreg_l1m_1p0>;
-+		vdda-supply = <&vreg_l4m_2p2>;
-+		vddio1p2-supply = <&vreg_l2n_1p2>;
-+		afvdd-supply = <&vreg_l7m_2p8>;
-+
-+		port {
-+			s5kjn5_out_ep: endpoint {
-+				data-lanes = <1 2 3 4>;
-+				link-frequencies = /bits/ 64 <1248000000>;
-+				remote-endpoint = <&csiphy2_in_ep>;
-+			};
-+		};
-+	};
-+};
-+
-+&csiphy2 {
-+	vdda-0p9-supply = <&vreg_l3d_0p8>;
-+	vdda-1p2-supply = <&vreg_l1d_1p2>;
-+
-+	status = "okay";
-+};
-+
-+&csiphy2_in_port {
-+	csiphy2_in_ep: endpoint {
-+		bus-type = <MEDIA_BUS_TYPE_CSI2_DPHY>;
-+		clock-lanes = <0>;
-+		data-lanes = <1 2 3 4>;
-+		remote-endpoint = <&s5kjn5_out_ep>;
-+	};
-+};
-+
-+&csiphy2_out_port {
-+	csiphy2_out_ep: endpoint {
-+		remote-endpoint = <&camss_csiphy2_inep>;
-+	};
-+};
-diff --git a/arch/arm64/boot/dts/qcom/kaanapali-mtp.dts b/arch/arm64/boot/dts/qcom/kaanapali-mtp.dts
-index 9eb02fd09dab..c70cd39bcb75 100644
---- a/arch/arm64/boot/dts/qcom/kaanapali-mtp.dts
-+++ b/arch/arm64/boot/dts/qcom/kaanapali-mtp.dts
-@@ -1243,6 +1243,13 @@ &tlmm {
- 			       <119 2>, /* SoCCP */
- 			       <144 4>; /* CXM UART */
- 
-+	cam_reset2_default: cam-reset2-default-state {
-+		pins = "gpio3";
-+		function = "gpio";
-+		drive-strength = <16>;
-+		bias-disable;
-+	};
-+
- 	wlan_en: wlan-en-state {
- 		pins = "gpio16";
- 		function = "gpio";
+ .../phy/starfive,jh7110-inno-hdmi-phy.yaml         |  49 ++
+ MAINTAINERS                                        |   6 +
+ drivers/phy/Kconfig                                |   8 +
+ drivers/phy/Makefile                               |   1 +
+ drivers/phy/phy-inno-hdmi.c                        | 358 +++++++++++++
+ drivers/phy/rockchip/Kconfig                       |   1 +
+ drivers/phy/rockchip/phy-rockchip-inno-hdmi.c      | 169 +-----
+ drivers/phy/starfive/Kconfig                       |  20 +
+ drivers/phy/starfive/Makefile                      |   1 +
+ drivers/phy/starfive/phy-jh7110-inno-hdmi.c        | 587 +++++++++++++++++++++
+ include/linux/phy/inno-hdmi-phy.h                  |  88 +++
+ 11 files changed, 1144 insertions(+), 144 deletions(-)
+---
+base-commit: c03c1a14507dfaf8b856c2608f9ac216021fc222
+change-id: 20261028-jh7110-inno-hdmi-phy-83e5cfa643e3
 
+Best regards,
 -- 
-2.34.1
+Michal Wilczynski <m.wilczynski@samsung.com>
 
 
 -- 
