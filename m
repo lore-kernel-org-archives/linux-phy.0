@@ -2,100 +2,111 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5D2EF606A31C
-	for <linux-phy@archiver.kernel.org>; Wed, 28 Oct 2026 09:13:22 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5B0AA606A322
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Oct 2026 09:58:43 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=nX7cabIm;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=samsung.com header.i=@samsung.com header.a=rsa-sha256 header.s=mail20170921 header.b=YD3seNv1
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=wU4UexGU;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=InsMRDbI
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Cc:To:From:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=43TJkq6OFRqIWmxQwDoCXg3q1Jz2oK5yxm/bH82+oTU=; b=nX7cabImL3Uec3d7xhEfV7D6je
-	6rGVzWq+EpwGmYxsM7iETTi+R9D0WExDsjSxJDwyfsgQaJWZ1NXBdFkIdr7sadX7rCxOv/N9fCqwF
-	wVvz88vfKWzHD835pntMqHrvVijtNYdvjs/ToeAo2CzaoHfL/EXQDvNASm9WO3Dhhv3SEDovCfFXN
-	rgYjZml1CJulZf5/P9XGg8XKOyJEmHEAw8M6/PUwgrfxb+SQZGn3eI97WS8ak+2R/ezDEt85wPU2O
-	J2bcZE4IOlUqSbVgDtRySIUBbLzxvz4EebkTUjGyH/b8xAgTSBJU1jtLTFlc9mQU5KVlXh/sXMFqi
-	8YYGQQ0A==;
+	bh=bPjByPlfoJtfo3s04ewacBXK4QCPzMYO0CSLwwe1FDo=; b=wU4UexGUM+FLUDp1z+tvxbrFgx
+	0gIO+9sCROACa0pkp25iEoaJIedi8Q5CAU0FLPJ3pqTJc5CoPZ+uca9G7gp8/wQ8G41Kp3d7qxVDl
+	s3nUCdz2pJgP8DJXuguEth4dFmKB9z9DCXA7DXGCIvI6vCc2eLfN9I7fHVPuXAUwWh/buOO5GhaOr
+	tYJVdzbETCs8XPihmvXT3SrZP0y7aYbWIe2Aw5uKGw5ZzD2+5kLP2KxaXwcqJQXV6UhVCBSc8RX3Q
+	k77mbN/omjU2aIa1qbyvk7fnMqZYxDTjdIfOuo+PPMKzhVeXzBL+4cBTmek+KIwDlDN2BdJNuanSr
+	0rmdpj3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLzij-00000006dFb-3mTh;
-	Wed, 28 Oct 2026 09:13:21 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
+	id 1xM0Qc-00000006iqp-2gY6;
+	Wed, 28 Oct 2026 09:58:42 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLzic-00000006dEZ-3oXp;
-	Wed, 28 Oct 2026 09:13:17 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
-	by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id 20261028091311euoutp024819ef823fab2c20689b5890d7ddf5ae~ippwwUXVb2349923499euoutp02J;
-	Wed, 28 Oct 2026 09:13:11 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com 20261028091311euoutp024819ef823fab2c20689b5890d7ddf5ae~ippwwUXVb2349923499euoutp02J
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1793178791;
-	bh=3W2zW/ASI3Ufo+rdp+J+HzrLBLxCU9YgEhL1tFo9JN8=;
-	h=Date:Subject:From:To:Cc:In-Reply-To:References:From;
-	b=YD3seNv1lTl6lfYw3bfwIkC48J0uPe3B+5wKAZPK+XeWBwINFgBm5MPb9sVHecN7v
-	 XByNXwrD0JsSH1+jN75BcFsO8ELTz7OD2T7aTRqKuYUS05jwwSQTiJ5lwYNNLhOdCb
-	 QW+IPyyDcEgIBTrDIHHnlhBaaSr8YKqqFO/n8FO4=
-Received: from eusmtip2.samsung.com (unknown [203.254.199.222]) by
-	eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
-	20261028091310eucas1p1df77aa99909e0c12fcd259596f1f2163~ippv92h803159131591eucas1p1d;
-	Wed, 28 Oct 2026 09:13:10 +0000 (GMT)
-Received: from [192.168.1.44] (unknown [106.210.136.40]) by
-	eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
-	20261028091308eusmtip25984a31eb02ec800271e9985aaee42c8~ippuC0ldb0063200632eusmtip2x;
-	Wed, 28 Oct 2026 09:13:08 +0000 (GMT)
-Message-ID: <f6474690-adba-43ff-90f8-cdddf857286b@samsung.com>
-Date: Wed, 28 Oct 2026 10:13:07 +0100
+	id 1xM0Qa-00000006iqg-44jx
+	for linux-phy@lists.infradead.org;
+	Wed, 28 Oct 2026 09:58:41 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 310FA6022A;
+	Wed, 28 Oct 2026 09:58:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5B9881F01825;
+	Wed, 28 Oct 2026 09:58:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1793181519;
+	bh=MupPZO+0cNzAw2UMt75TvJxigWXUI1JXRockTaGvT3g=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=InsMRDbIjvCCpVYJK6h1JFyHQkVysACEIw/37HVT5zCy9l8HVOoB4jlgupwidmuZy
+	 +jRGWrM+XgVc8avmIjQ4iqC5Dfqj0Ju2WuYlpVEHIVz+tL5rNlBSFsrZlvdJwVjFlt
+	 5o1UDBiEYyh9EeBsVO4E2IqNL+yCo8ZuZ3xY0JE7V2jwlYzIl86aZ4mUIJAKJlFsUZ
+	 o4EdiU914pIOmgzvupPhSEt9Aybc4eaZP+k9F3kakDoxg7Rnt+RpJih0qcZRl8jMoH
+	 XmedBv5/lFmMw1Tu8gkw1FiIK4DpH2gl56I+vE1EbD/3fXi3k898eZe5Wpfpnhf3ob
+	 h/hWLM368Is+A==
+Message-ID: <58599b61-a56b-4d6b-b09f-03d813a64c1c@kernel.org>
+Date: Wed, 28 Oct 2026 09:58:35 +0000
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 16/20] phy: Add common Innosilicon HDMI PHY helpers
-From: Michal Wilczynski <m.wilczynski@samsung.com>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring
-	<robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
-	<conor+dt@kernel.org>, Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss
-	<rfoss@kernel.org>, Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>, Maarten Lankhorst
-	<maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>, Lee Jones <lee@kernel.org>, Andy
-	Yan <andy.yan@rock-chips.com>, Philipp Zabel <p.zabel@pengutronix.de>, Emil
-	Renner Berthing <kernel@esmil.dk>, Hal Feng <hal.feng@starfivetech.com>,
-	Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
-	<sboyd@kernel.org>, Heiko Stuebner <heiko@sntech.de>, Paul Walmsley
-	<pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou
-	<aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>, Dominique
-	Belhachemi <db@domibel.de>, Brian Masney <bmasney+clk@redhat.com>, Jerome
-	Brunet <jbrunet+clk@baylibre.com>, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	dri-devel@lists.freedesktop.org, mfd@lists.linux.dev,
-	linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-riscv@lists.infradead.org, Marek
-	Szyprowski <m.szyprowski@samsung.com>, Maud Spierings
-	<maud_spierings@murena.io>, Graham Markall <hello@big-grey.co.uk>, Icenowy
-	Zheng <zhengxingda@iscas.ac.cn>, Chaoyi Chen <chaoyi.chen@rock-chips.com>,
-	Joshua Peisach <jpeisach@ubuntu.com>, =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?=
-	<u.kleine-koenig@baylibre.com>
-Content-Language: en-US
-In-Reply-To: <943aa2e7-3945-48f9-9a87-9c963f97099d@samsung.com>
-X-CMS-MailID: 20261028091310eucas1p1df77aa99909e0c12fcd259596f1f2163
-X-Msg-Generator: CA
-X-RootMTR: 20260915153242eucas1p1394a6a5e272f106b9cab2a0f709ddeb8
-X-EPHeader: CA
-X-CMS-RootMailID: 20260915153242eucas1p1394a6a5e272f106b9cab2a0f709ddeb8
-References: <20260915-jh7110-clean-send-v4-0-f0e4fd6f2cc8@samsung.com>
-	<CGME20260915153242eucas1p1394a6a5e272f106b9cab2a0f709ddeb8@eucas1p1.samsung.com>
-	<20260915-jh7110-clean-send-v4-16-f0e4fd6f2cc8@samsung.com>
-	<asEPmpQTwXYADwTk@parshuram>
-	<943aa2e7-3945-48f9-9a87-9c963f97099d@samsung.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261028_021315_535589_83DFA5DA 
-X-CRM114-Status: GOOD (  12.68  )
-X-Spam-Score: -2.8 (--)
+Subject: Re: [PATCH v2] phy: qcom-mipi-csi2: Add support for single
+ power-domain SoCs
+To: Anusha Arun Nandi <anusha.nandi@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>,
+ gjorgji.rosikopulos@oss.qualcomm.com,
+ hariram.purushothaman@oss.qualcomm.com, akapatra@quicinc.com,
+ jigarkumar.zala@oss.qualcomm.com, linux-phy@lists.infradead.org,
+ linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <ZW6-XDf5dgEFD66QI7ZA8WIK_alWTQD2RWolsXjlSql7pO5IUj9PM1T95LMfBd2Y3zKxRhDXXde1R4asZWzgKw==@protonmail.internalid>
+ <20261028052047.2738893-1-anusha.nandi@oss.qualcomm.com>
+From: Bryan O'Donoghue <bod@kernel.org>
+Content-Language: en-GB
+Autocrypt: addr=bod@kernel.org; keydata=
+ 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
+In-Reply-To: <20261028052047.2738893-1-anusha.nandi@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,8 +116,8 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 X-Spam-Status: No, score=-5.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
@@ -115,38 +126,23 @@ X-Spam-Status: No, score=-5.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
+On 28/10/2026 05:20, Anusha Arun Nandi wrote:
+> -	if (ret < 0 || csi2phy->pd_list == NULL) {
+> -		if (ret == 0)
+> -			ret = -ENODEV;
+> +	if (ret < 0)
+>   		return dev_err_probe(dev, ret, "Failed to attach power-domain list\n");
+> -	}
 
+Shouldn't this be
 
-On 10/26/26 10:13, Michal Wilczynski wrote:
-> Hi Vinod,
-> 
-> On 10/3/26 16:22, Vinod Koul wrote:
->> On 15-09-26, 17:32, Michal Wilczynski wrote:
->>> The Innosilicon HDMI PHY IP is used by several SoCs. They differ in
->>> where the PHY register block sits in the register space and in which
->>> pixel clocks they support, but the pre-PLL programming sequence and the
->>> layout of its registers are the same.
->>>
->>> Add a small library holding that shared part: the pre-PLL configuration
->>> table format, a lookup, clk_ops determine_rate and recalc_rate helpers,
->>> and the pre-PLL register programming. Callers pass a regmap, a register
->>> offset for the PHY block, and their own pixel clock table.
->>>
->>> No driver uses it yet; the users are converted separately.
->>
->> Is there anything in phy patches here that has dependency with rest? If
->> not consider splitting it up...
-> 
+if (ret < 0 || ( csi2phy->soc_cfg->num_genpds > 1 && csi2phy->pd_list == 
+NULL) {
 
-On second thought, I agree it will be easier for maintainers to merge,
-so I'll split it in v6. The PHY patches (the binding, the helpers, the
-Rockchip conversion and the JH7110 PHY driver) will go as a separate
-mini series.
+i.e. you are dropping the NULL check for the case of multiple power-domains.
 
-Best regards,
--- 
-Michal Wilczynski <m.wilczynski@samsung.com>
-
+---
+bod
 
 -- 
 linux-phy mailing list
