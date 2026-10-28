@@ -2,142 +2,94 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B28D3606AB23
-	for <linux-phy@archiver.kernel.org>; Wed, 28 Oct 2026 15:22:41 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6CD0160A5BC5
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Oct 2026 15:22:42 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=GIi6dmpE;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=N+9liaJT
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=bjkHibj0;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=samsung.com header.i=@samsung.com header.a=rsa-sha256 header.s=mail20170921 header.b=gCZAKxfm
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:Cc:To:In-Reply-To:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=mu6MmJVufB1aGOu6PJ/NpJVpAispW8X7a9aIroEee28=; b=GIi6dmpEu1CNTYdccf/MHDR1LQ
-	ucSJnLvX5wOv9oXncqeqybTsAIk3THXZdQdNF2ZrpP0CoVyfIf2stAShvS9R/FUE46a0DlJITK1oz
-	ekifXTcQvuPqJDqeuF3kOSiKGqzxkCBawQRmWgKAucwrkLREH4E1s+mR5K97CQsSez6mGPoz9pLDM
-	fLgvk2Oa8O7XPWK1RVfg8BtCY5zjUnagiUTdVE05GEaEABNPr3XgvxsdNPOT4HwIDHhZb1VSWBgC8
-	oRF1p8aGfgHpJjCSj2cwEldj9dlDEMRzuyEv+WHYWsiPVJiURHOKcwEfTStzxCHO6luzhiZ4TDIjR
-	eyk4oJPg==;
+	bh=DTz2jziBrhZ2GCvGuRecOWmRE4p8pcTooufxE+2st8A=; b=bjkHibj0ofO3CeCyU2MQl1OUZk
+	aSfqxzydMJiFOzhx2KbxKXF3eJIPBhaFp2pKmYQloIpmT5R0vyoGcjtjkIVxJuxy3N/JbCt+RSH2z
+	tUnYewnsstydmbJXvLLDU/c80s1IfzOOCu0AJwJovJxKUB3e7d2pXfTq0gCLQP4m6E6oSl3/8P8Rf
+	1CHTCCzj6ctIOa5GKndheVr3rWkfVRngOw2+kdxYMJHGjChguvs1HJVPik9WKNjYqKIYq7UeHhgOg
+	nfCJGOw9ZKs+IMuZqBXGMNzTtbx1RBiXutjRy+86I37ZwyeRanjYbtkY1brn9REDFTWmOEehRfJOF
+	4bsHozUA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xM5U9-00000007LOR-0zqj;
+	id 1xM5U9-00000007LQF-3oN3;
 	Wed, 28 Oct 2026 15:22:41 +0000
-Received: from mail-westeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c201::3] helo=AS8PR04CU009.outbound.protection.outlook.com)
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xM5U1-00000007LAW-3zTN
+	id 1xM5U2-00000007LCE-2VTn
 	for linux-phy@lists.infradead.org;
 	Wed, 28 Oct 2026 15:22:37 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=QGuDR47QN/uxscA6TIr8jmSql6PgbpKIEDXlMZ/CCQBE96WoRHscmXCp1DFvb86NyxPN00ZpRAD7oc+KSaW+YqrCN5/E1HJfN7A184dGwjiKKe16U8vRCJddCX70RNe+u3SvAwYF/Ti8hd0UQrXVSFUsw2tsNXYin+sYoYBL8duZWZ0ZutoMfvsrbB1rY/DC0v3mimps57Nm3oM41kVuWWhxsQGeHJn5nwtvmUlIjmiw8fTICR63bRyeVYMHEfcUrezmeJftWSuIuz/CclnDrL/TosOUTA3B0SsY2glWOtASk3l7IgDUk9LVHsT/W0JIhtvUPGj7NfpgNbolXoSTOA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=ST25MXQDUN+WqHS62mjpogUkoRYT4IjlWOsqeqjRBjE=;
- b=zL2Uyk4DbBqwKm3e9uX2gcjtvEwGhFe/vsnf5sfD0HLHhTG1Y7vt4FnNQwp92PCi+wnFwtTzD/7XtfiFwx0xe6/0wuccwka4J7/qzZCZ+gmB0m08Cz96GBmBbOtZZnLDf/+m+ceTneHVTctkRzXgookhG/5Rw1WKJBaBlMCxkmMDN61Ctnpz2Ix0r7rShqKLLZSOlhslcEowkIabNyI8uYmprEQh+DKQ+iBCJyxTGzY2AMPXEOhpQgNfQwVYL/w1sZcpHegwrjZRBhuNRI2s2EY01uqO12dds4V8hwouJNWEoVsxadKC9cHYVV4wM3N4LhLD9hExjpOBXL/ad9UNOQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ST25MXQDUN+WqHS62mjpogUkoRYT4IjlWOsqeqjRBjE=;
- b=N+9liaJTBNoRDKzvwXSukud73pupL0ajWICk2ThRW2gEo/XgwWLhTX9hdLuScfQPm/ybjTNayOadhNjSFELz5MYyi1CLZS5PdVnwDxWFyl2RJbFv2wSChAfA4ATp9g/j7jootx7Wnp6hGFutWgsGAtzn1Ttc8R+oZ5v7136IfU7FSPvJYK4ucKyxauCDAy1D9/z/Nt/hJqic++tiZnKxrKRcDumOPGqVZwF5LHuLuCt1DadPmgWqFiPooBqLL2fgD1lQ8MT2wW8f3UNAC9fALAa27y/xEASggaQz3gIbV4LD+Jy4UOBvLJnoCf2L6TisyafRFkmsYhGv8QJixz+PuA==
-Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from MI3PR04MB12438.eurprd04.prod.outlook.com (2603:10a6:290:76::14)
- by DU2PR04MB8584.eurprd04.prod.outlook.com (2603:10a6:10:2db::24) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.546.22; Wed, 28 Oct
- 2026 15:22:26 +0000
-Received: from MI3PR04MB12438.eurprd04.prod.outlook.com
- ([fe80::c715:c32:8bb1:b70b]) by MI3PR04MB12438.eurprd04.prod.outlook.com
- ([fe80::c715:c32:8bb1:b70b%6]) with mapi id 15.21.0546.021; Wed, 28 Oct 2026
- 15:22:26 +0000
-Date: Wed, 28 Oct 2026 11:22:19 -0400
-From: Frank Li <Frank.li@oss.nxp.com>
-To: Vladimir Zapolskiy <vz@kernel.org>
-Cc: Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konradybcio@kernel.org>,
-	Abel Vesa <abelvesa@kernel.org>, Bryan O'Donoghue <bod@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	linux-arm-msm@vger.kernel.org,
-	Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
-	Loic Poulain <loic.poulain@oss.qualcomm.com>,
-	Mauro Carvalho Chehab <mchehab@kernel.org>,
-	linux-media@vger.kernel.org,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	linux-phy@lists.infradead.org, Conor Dooley <conor+dt@kernel.org>,
-	devicetree@vger.kernel.org
-Subject: Re: [PATCH v2 3/7] media: qcom: camss: Allow CSI2 PHY devices
- without CSIPHY resources
-Message-ID: <auITK_NmQYX6E6Vj@lizhi-Precision-Tower-5810>
-References: <20261026224957.1115370-1-vz@kernel.org>
- <20261026224957.1115370-4-vz@kernel.org>
-Content-Disposition: inline
-In-Reply-To: <20261026224957.1115370-4-vz@kernel.org>
-X-ClientProxiedBy: DS1PR05CA0007.namprd05.prod.outlook.com
- (2603:10b6:8:457::17) To MI3PR04MB12438.eurprd04.prod.outlook.com
- (2603:10a6:290:76::14)
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+	by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id 20261028152231euoutp0208ef184cb0724815fef567533c550c36~iusO6OSG_1405914059euoutp02t
+	for <linux-phy@lists.infradead.org>; Wed, 28 Oct 2026 15:22:31 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com 20261028152231euoutp0208ef184cb0724815fef567533c550c36~iusO6OSG_1405914059euoutp02t
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1793200951;
+	bh=QH6jjxSQFlE/SRUSa0R2JTLIXImVKkLijmsa5G5HISU=;
+	h=From:Date:Subject:In-Reply-To:To:Cc:References:From;
+	b=gCZAKxfm5FRNb3iMGpzVSs+9ZEf8KFC2gz5Af8FpuCfCBHRvgakS4SorFHzGOkksU
+	 4KLHxgl5Ys32+af0A8S/iRyCB9VQi38Wcyw2XZNP7GusF9zYeW39ds+FCqkX/I9LeJ
+	 vTokevr51K0ZWG7j5TjLLms9vZs/9pxTQcnxCvQM=
+Received: from eusmtip1.samsung.com (unknown [203.254.199.221]) by
+	eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+	20261028152230eucas1p2bb9681d2ae0139942c850a279b20c5d0~iusOMQrXD1847618476eucas1p2F;
+	Wed, 28 Oct 2026 15:22:30 +0000 (GMT)
+Received: from AMDC4942.eu.corp.samsungelectronics.net (unknown
+	[106.210.136.40]) by eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+	20261028152229eusmtip1dab83fc87e0f4950dfc56f2d63f29ea2~iusNYwzjr2111121111eusmtip1k;
+	Wed, 28 Oct 2026 15:22:29 +0000 (GMT)
+From: Michal Wilczynski <m.wilczynski@samsung.com>
+Date: Wed, 28 Oct 2026 16:21:45 +0100
+Subject: [PATCH v6 5/5] MAINTAINERS: Add StarFive JH7110 HDMI PHY entry
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: MI3PR04MB12438:EE_|DU2PR04MB8584:EE_
-X-MS-Office365-Filtering-Correlation-Id: 2d8e9247-7cd5-4a12-1757-08df350745d2
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|7416014|1800799024|376014|19092799006|366016|261026140227099003|4143699003|11063799006|56012099006|261009223027099003|261022105027099003|261021121427099003|261021123027099003|10067099003|18002099003|261026121527099003|22082099003;
-X-Microsoft-Antispam-Message-Info: BLQE+c6dZCOvYdFlvh8dyr8zVrOKLbfMa23P38FLkf+BMYgHsyflegQbF52GFPQXca2NirAD4onGkYDG8ixrQTZ4TPZNJiV210fXstXOIVaOtkk5D5Rjy5ce85VdYld0TyvNgHRxWOFQ8tsVFsX7M4q89wvL1X08ST8MQHH/drWVYT23RScrSCqe68LM2tjjA2DB01bjFdYewN0+kB9ZuuKuKMoPn/lX5Wy/FoTAshG/Tpne2pWXEXZskXxS1FOwxzGZ1pqg1MT+bVYderXtM3kaPTl2ZJkVIwVBgt8aIRmV1o8chVtcx+XY5ljx9kANIBBZ4dzpEW6M6nWFTyBV+j8DgfENdnzrBXF4naqRTT3XcV6qb5cRdaFUU2gzMaacKxqBhGrbE4mdNZk6h5KFU5T/sInaPErxK63ozJ4MpfJEmYCmyAmKh2jDAngk3hJhoPIZeqhEJ+qFcTV/mz2fgSQOkfFalZV7NbPbXLKvSyCvS6T9F6wzGAyR6Xd9yy9KqLKQV02iDQ2hpP1tZhvubTQr2hwUm43Owk6Ed16s0JGbXK0atMjxoSSfwMlxRPDGzWunItdz6UOlQjYvuTUGQG8NdblUsoS5XjGNTM95WkOBl/8rlRRv2oxKOREwmDR63U4SLfE6+e+E3lAVRsA9PQtCePNk9gM5ILgFeqptlTM=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MI3PR04MB12438.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(7416014)(1800799024)(376014)(19092799006)(366016)(261026140227099003)(4143699003)(11063799006)(56012099006)(261009223027099003)(261022105027099003)(261021121427099003)(261021123027099003)(10067099003)(18002099003)(261026121527099003)(22082099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?dYgRDyDDqYRNsaYBIoTrhiMfT5asJRGlNs9Z7e8IkK72jGzAD5WhWAWz4jD+?=
- =?us-ascii?Q?GSEDHs6ZazptEilWcvsRRF6EyORRa0PS+ltQgxDlCsnRs/Dj+pV42FVRCq3U?=
- =?us-ascii?Q?7bKvUl3ONatCDGEFxMvtFPfZl6ubCbO/QWHLEFZf57L8hvUnuJo4Lb7RiRVP?=
- =?us-ascii?Q?4Jod2EEb9fSZGrh7K7U163/5so0vXxDJOCPB1a/zquxNvOIWOnCwX0f7oDTt?=
- =?us-ascii?Q?b37ds3oOkWKA5qT/xgmEuTzRbWGP0/pxYy/TwNtMazXpL0u/+da3g7SQWrTm?=
- =?us-ascii?Q?IHUjUGLSfRUWix6y8OXGn3O65JHxw1fpVgnDX1jslX5w+9D7EtEGfL8Hr5UB?=
- =?us-ascii?Q?w0+GiqOF9cACkYviS4/d4C5zBk2By3zyrBzNC14UeNU0AtD8lCAX1lPWjDxy?=
- =?us-ascii?Q?boBw1hY1Ux+kA3k1ftFETPhvMKV4FYqKFttqSrc3UWUHeXVtx6vIiAOdr3vB?=
- =?us-ascii?Q?qylujJkjhn9VF1THEEjJk+Qu1tu32fkCFM0I1UNt9byAipaTrh1ufcrrS5si?=
- =?us-ascii?Q?cCot/udZf1fiyE0hdoISd0BbGVIpXN8Fe8zlwG5dIswZH07uos1Lgb1qLcz0?=
- =?us-ascii?Q?wdQ1/rGPCqwlK2Fh6XBfPzwf+D+reXBVtuWEWFSfPB4PzWsPcwMKNMNH6QQb?=
- =?us-ascii?Q?2FEw4zuyIR0WzEFnXOVOhNXlB1MAlTavnd/fOTLSDxA+5Phibf7VLcMPapL6?=
- =?us-ascii?Q?Bh1wbnjSxq4HHa/sCudGlqq6SXgFUIynWFYAvi2S6DaXum3Cc8MQEVkk+vdR?=
- =?us-ascii?Q?FuZL7XiFX/kme0h4tKWFCs90mBFHGkxbc3BeN+GSgnyOOG9bt4KyJ5NojW3a?=
- =?us-ascii?Q?tKhTXa0j/Z/u+SAbZ5RDWFyClV0rKF3gyJDEaJfpaYcpRtGu9GNkh8Ht34zG?=
- =?us-ascii?Q?4z7RAdPTMNtMUmKlLzhSWfHtfXN1wJoolUSdenWUNWbACmv/c/TYXTerL+JV?=
- =?us-ascii?Q?Ay8LOfP5FnY5f3PGqGcnqNG7w9q8JX1Z5jv+ESn/Df41pd+c1NTpbLSppDDd?=
- =?us-ascii?Q?36/raMg0d0scFq8jN2wKZ9telRR64TvrYtpR/TBFTzTfVyyQ0jbIDJxBB8pQ?=
- =?us-ascii?Q?FFPGX8UuiBp5dlFEHHjn0/Q8i6mB7DlnS1T3FrlLskARoA0rHFCoO/zIczDT?=
- =?us-ascii?Q?ZCNUpDFVbEGJZSqvB/b9iE4fZzoCdDPLWAdH16WE5Aa+5PS/JPpliFUckbQi?=
- =?us-ascii?Q?ONaMZzC9vdGTs5nPbz8fz4T1d6wH94Nod3vVsR/iE+gOrQ/1OE44vcNja68n?=
- =?us-ascii?Q?hLzLY/P+gLY/qxYqe4NusxWNoHe69lNMmj8rW31ASk55MkL/hR13NwCJi48R?=
- =?us-ascii?Q?ge81dfsDIc2hETep1ksjBfNweAEUwMZo+DRkoxZgiZ/tdrgv7kuUw1W5bKIa?=
- =?us-ascii?Q?YXFf11O+Rbg0zydrxvI/IbL5+AC0mOpVykgVULdRUm6vFZkEmP/xfrG0083g?=
- =?us-ascii?Q?qtdpRKK+MSKN1U9K2y39oidp1C2/MjkHuaItk3mDlaj6f9iGSIPA9jhNeZRp?=
- =?us-ascii?Q?SHgis2ffS9b1pC5UmEQd5QfY1t1CP7tAxutlw9vFsAtEEHrzITTtGEG/2HJU?=
- =?us-ascii?Q?l/C95Wwr2lBI5rf4BYkEwz7NbAKUBpTT/uhrJE3e5Aac7NR16o8FyuZngicM?=
- =?us-ascii?Q?ttbIO17ShvElk6QTvG3O7J9Bl6u5pQg071io6wwvXSuIqzJ+V6dK0IG5e7Ph?=
- =?us-ascii?Q?9+K7398AlXL9pjFmlPZAltpZg/RsLKdyKfKYn5EPcHajkK5ZPUBlNLTV6BZ5?=
- =?us-ascii?Q?9E9MZ8NoVynPa2s53Go06rbHH92klhEWrg1wuwd6f9HL+Hiluxmb?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2d8e9247-7cd5-4a12-1757-08df350745d2
-X-MS-Exchange-CrossTenant-AuthSource: MI3PR04MB12438.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Oct 2026 15:22:26.3547
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: q5rELYXh6zH+kdNDG66yqUbh9E7bDw10S6g2igtjD0nenwo5eAH+KmMIblUHGGsJS/SxuittWerN1F10IMJ0rg6cFf3c3jKJJ9EQ8ODkp8Qze7m8cT8mabzUnqZobjyL
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU2PR04MB8584
+Message-Id: <20261028-jh7110-inno-hdmi-phy-v6-5-f3379684d97e@samsung.com>
+In-Reply-To: <20261028-jh7110-inno-hdmi-phy-v6-0-f3379684d97e@samsung.com>
+To: Vinod Koul <vkoul@kernel.org>,  Neil Armstrong
+	<neil.armstrong@linaro.org>,  Manivannan Sadhasivam <mani@kernel.org>, Rob
+	Herring <robh@kernel.org>,  Krzysztof Kozlowski <krzk+dt@kernel.org>,  Conor
+	Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,  Emil Renner
+	Berthing <kernel@esmil.dk>,  Hal Feng <hal.feng@starfivetech.com>, Dominique
+	Belhachemi <db@domibel.de>,  Michal Wilczynski <m.wilczynski@samsung.com>,
+	Andy Yan <andyshrk@163.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-riscv@lists.infradead.org,  Marek
+	Szyprowski <m.szyprowski@samsung.com>,  Icenowy Zheng
+	<zhengxingda@iscas.ac.cn>,  Chaoyi Chen <chaoyi.chen@rock-chips.com>, 
+	Joshua Peisach <jpeisach@ubuntu.com>
+X-Mailer: b4 0.15-dev
+X-Developer-Signature: v=1; a=openpgp-sha256; l=916;
+	i=m.wilczynski@samsung.com; h=from:subject:message-id;
+	bh=GkUbaSZ7nQRw0MA7ruQjsKC0roRhT37Hf3V6QvV5qcY=;
+	b=owGbwMvMwCGWumv6zndzRCIZT6slMWQ9EjbY+ujj78SDL06ZLZu9RnvL4/lRZy6fLtBYZjThr
+	RbjVs5ZjztKWRjEOBhkxRRZzm6MNpL8x/C0/PjjXzBzWJlAhjBwcQrARJTnMfxP95XL6O5y/7vq
+	JXPaSZH2CPa2y54/f8481BPanPX3q4YEwz9dB9aA/5M2tD5elyhWmGBTkPBNJHHPi80/vF3KqyZ
+	/5GUHAA==
+X-Developer-Key: i=m.wilczynski@samsung.com; a=openpgp;
+	fpr=CDB15B3219FE00E577C7E3FA65BA97B9EE9C1459
+X-CMS-MailID: 20261028152230eucas1p2bb9681d2ae0139942c850a279b20c5d0
+X-Msg-Generator: CA
+X-RootMTR: 20261028152230eucas1p2bb9681d2ae0139942c850a279b20c5d0
+X-EPHeader: CA
+X-CMS-RootMailID: 20261028152230eucas1p2bb9681d2ae0139942c850a279b20c5d0
+References: <20261028-jh7110-inno-hdmi-phy-v6-0-f3379684d97e@samsung.com>
+	<CGME20261028152230eucas1p2bb9681d2ae0139942c850a279b20c5d0@eucas1p2.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261028_082234_085399_7ABB93AD 
-X-CRM114-Status: GOOD (  20.82  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20261028_082234_990742_B1283A4A 
+X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,105 +102,42 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
 	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Tue, Oct 27, 2026 at 12:49:53AM +0200, Vladimir Zapolskiy wrote:
-> If CAMSS CSIPHYs are supported by the stand-alone CSI2 PHY driver only,
-> there is no need to provide description of legacy CSIPHY resources in
-> the CAMSS driver, therefore if CSIPHY resources are not given for some
-> supported platform, use CAMSS CSIPHY port numbers as CSIPHY identifiers.
->
-> Signed-off-by: Vladimir Zapolskiy <vz@kernel.org>
-> ---
+Add an entry for the StarFive JH7110 HDMI PHY binding and driver, next
+to the other JH7110 PHY drivers.
 
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
+Signed-off-by: Michal Wilczynski <m.wilczynski@samsung.com>
+---
+ MAINTAINERS | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
->  drivers/media/platform/qcom/camss/camss-csiphy.c | 16 +++++++++++++---
->  drivers/media/platform/qcom/camss/camss.c        |  8 ++++++--
->  2 files changed, 19 insertions(+), 5 deletions(-)
->
-> diff --git a/drivers/media/platform/qcom/camss/camss-csiphy.c b/drivers/media/platform/qcom/camss/camss-csiphy.c
-> index f99eea2ef228..8ecd514451d2 100644
-> --- a/drivers/media/platform/qcom/camss/camss-csiphy.c
-> +++ b/drivers/media/platform/qcom/camss/camss-csiphy.c
-> @@ -799,6 +799,11 @@ int msm_csiphy_subdev_init_legacy(struct camss *camss,
->  	return ret;
->  }
->
-> +/* Fallback to generic SDM845 compatible formats for non-legacy CSIPHYs */
-> +static const struct csiphy_subdev_resources csiphy_res_phy = {
-> +	.formats = &csiphy_formats_sdm845,
-> +};
-> +
->  /*
->   * msm_csiphy_subdev_init - Initialize CSIPHY device structure and resources
->   * @camss: CAMSS structure
-> @@ -808,7 +813,7 @@ int msm_csiphy_subdev_init_legacy(struct camss *camss,
->   */
->  int msm_csiphy_subdev_init(struct camss *camss, u8 port)
->  {
-> -	const struct camss_subdev_resources *res = &camss->res->csiphy_res[port];
-> +	const struct camss_subdev_resources *res = camss->res->csiphy_res;
->  	struct csiphy_device *csiphy = &camss->csiphy[port];
->  	struct device *dev = camss->dev;
->  	struct device_node *ep, *remote;
-> @@ -836,8 +841,13 @@ int msm_csiphy_subdev_init(struct camss *camss, u8 port)
->  	}
->
->  	csiphy->camss = camss;
-> -	csiphy->id = res->csiphy.id;
-> -	csiphy->res = &res->csiphy;
-> +	if (res) {
-> +		csiphy->id = res[port].csiphy.id;
-> +		csiphy->res = &res[port].csiphy;
-> +	} else {
-> +		csiphy->id = port;
-> +		csiphy->res = &csiphy_res_phy;
-> +	}
->
->  	snprintf(csiphy->name, ARRAY_SIZE(csiphy->name), "csi%d", csiphy->id);
->
-> diff --git a/drivers/media/platform/qcom/camss/camss.c b/drivers/media/platform/qcom/camss/camss.c
-> index c54185c93a8a..b0d60e70e4bb 100644
-> --- a/drivers/media/platform/qcom/camss/camss.c
-> +++ b/drivers/media/platform/qcom/camss/camss.c
-> @@ -4796,7 +4796,10 @@ static void camss_detect_legacy_phy(struct camss *camss)
->  	struct device_node *remote;
->  	struct device_node *ep;
->
-> -	camss->legacy_phy = true;
-> +	/* Legacy CSIPHY description implies the provided CSIPHY resources */
-> +	camss->legacy_phy = !!camss->res->csiphy_res;
-> +	if (!camss->legacy_phy)
-> +		goto done;
->
->  	/* Find first remote-endpoint and determine if its a PHY */
->  	for_each_endpoint_of_node(camss->dev->of_node, ep) {
-> @@ -4810,6 +4813,7 @@ static void camss_detect_legacy_phy(struct camss *camss)
->  		break;
->  	}
->
-> +done:
->  	dev_dbg(camss->dev, "legacy phy mode %s\n",
->  		camss->legacy_phy ? "true" : "false");
->  }
-> @@ -4841,7 +4845,7 @@ static int camss_init_subdevices(struct camss *camss)
->
->  		if (ret < 0) {
->  			dev_err(camss->dev, "csiphy %d init fail\n",
-> -				res->csiphy_res[i].csiphy.id);
-> +				res->csiphy_res ? res->csiphy_res[i].csiphy.id : i);
->  			return ret;
->  		}
->  	}
-> --
-> 2.51.0
->
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 782389bd5cd3d9e0117ebdfae707e1f61cb3e772..9e42d1705fcb3fa46325761a19c6b7244c18b7c4 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -26106,6 +26106,12 @@ S:	Supported
+ F:	Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-tx.yaml
+ F:	drivers/phy/starfive/phy-jh7110-dphy-tx.c
+ 
++STARFIVE JH7110 HDMI PHY DRIVER
++M:	Michal Wilczynski <m.wilczynski@samsung.com>
++S:	Maintained
++F:	Documentation/devicetree/bindings/phy/starfive,jh7110-inno-hdmi-phy.yaml
++F:	drivers/phy/starfive/phy-jh7110-inno-hdmi.c
++
+ STARFIVE JH7110 MMC/SD/SDIO DRIVER
+ M:	William Qiu <william.qiu@starfivetech.com>
+ S:	Supported
+
+-- 
+2.34.1
+
 
 -- 
 linux-phy mailing list
