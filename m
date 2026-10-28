@@ -2,74 +2,69 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C2838606A32A
-	for <linux-phy@archiver.kernel.org>; Wed, 28 Oct 2026 11:34:38 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2F6AE60A2600
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Oct 2026 12:09:49 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=T8FLRCAN;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=ncrqWbEt
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=r5oSaw2j;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=MM62gqiK
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:References:In-Reply-To:
-	Cc:To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=+6iCBg0BniEQDOWgHb/RRbo97HXPfX+m/SiLP3ATJBE=; b=T8FLRCAN2Yb9yiVFnZ4EHoVR0x
-	CeDIMnWnS3HFzAA16q1LetHQY5rDuSwd+ay8pL23RI9gUfvMpl7c/WWlOGxR+6YuPnxP1anwkfn3h
-	Exmgb6fpHww5mNg9Acazl4HPNgTvU6Ecs31zPR5yncEeG+5Vi/KauMMG3Q4GYzM1rh31P33Zy2ktb
-	vvsIwkcpphVkC6kNyoRKySMSyEUYUfWZX+u23C92IkCgoKbavl7LcLWLTE16srqkmR58kM0fe2shj
-	438gd3d9CGxtHDfWptxsvdpv5Ko1+Ej49DqItAYX4GyZZCtcyF3TqNqv8adCNU9U35TzCjbfWki1j
-	wU8nLx2w==;
+	bh=rC/C4JWTxzwvFvIicUWTrusPFTCMwYE+C8PYW2abHHc=; b=r5oSaw2jfx3+87mhI3cnnm9IJs
+	Rm0XVcFAbMk+WZkYtsHGIYp9ijyNo4t/MVwHxgi7tfTuIrBXw+tD1WgdEiWsGduBdnJGA8Qr56K5e
+	pbAJyU3d3MON1aT7sKK6mEDxTnyXTNY0+2wraT7o3f4BsOVdr4uOJXEvKASC+2GyPGXoEprmoxJuH
+	8cn1T9WYtz9+1iHqr0SaOG7WDgx9RAgvwpG/zd6U4A6Xx6trB76ypnUwxcaW/T9zd0C9he/ftLSi5
+	+ktkNKGK4G7RChPbskUpgiiwa0PR5ewt6GsCsW3fNUDN4tgh/I9uj2DAz5Vh7ZbVfkde/ONA8q1ZU
+	sgRQCBGw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xM1vS-00000006rqW-2ES2;
-	Wed, 28 Oct 2026 11:34:38 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xM2TU-00000006vYb-3mjn;
+	Wed, 28 Oct 2026 12:09:48 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xM1vR-00000006rqI-2sbL
+	id 1xM2TT-00000006vYF-0BfI
 	for linux-phy@lists.infradead.org;
-	Wed, 28 Oct 2026 11:34:37 +0000
+	Wed, 28 Oct 2026 12:09:47 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 9E90F60136;
-	Wed, 28 Oct 2026 11:34:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CA8171F01825;
-	Wed, 28 Oct 2026 11:34:33 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 29E9A601F0;
+	Wed, 28 Oct 2026 12:09:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4E7451F01825;
+	Wed, 28 Oct 2026 12:09:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793187276;
-	bh=Dm2204N5q4pUPSLYAJkabKLi2pj0kqDbpxLVbB0EmvY=;
-	h=Subject:From:To:Cc:In-Reply-To:References:Date;
-	b=ncrqWbEteNkw0tdcqQJOmlYeN4rLNB/aR3RqVXNPszzMrAsYqA4iMxuffdi2o5sSG
-	 BrbEhi3fDg6jMtb1HRRdt8nnbkVr1tJ3epwMA1a57QuqNYL3SMYR67fT6trC+bBOuv
-	 p5WP2Jh6TUBKIL/15kptjV+FB8/1TLusBTDPyxBfA/JVvuhdLgQZ3fLWr5E96XZNdr
-	 httJhs9evRd5CrylnckTJ6eIOCuFpcakik1peGJRcmcIjGl9Ywd4zOGUBBCkOpD8AR
-	 vWrYHVyUb77X5eMdwl0O/J/jXaD/X0MCCbn5E/LuURcK4AxsiVcz6owhYopJvrMHM5
-	 95LazxELTTByg==
+	s=k20260515; t=1793189385;
+	bh=bvZsWGjE5bOOOfMNzS9INtnRdMpQ11g4gS7L2uDyTi8=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=MM62gqiKS2/oZGrVIYik3VvmM2YN0UvVIeo+uvT/paMBKTy6nYfrK1+3Vs0grys1C
+	 6GwZmi7JkJ9AGG0l5L428XfkDaIYCAe6wBmlVFXQCjXO2xnVtm8CKu7xk6d/ZgZW1R
+	 TGaPIyeebuxoQ8WS5kZZjkQnqBYPOpcPOmeUSPlnd8ctpn4/AlD56irsmZSoikF0l6
+	 mBo/zjhWtXJw51FB3UtNCNjLEyKpfz4ULuP4GpmhuMJswqCEedyuczGjUGjwVmPcGc
+	 2hGIgkDybXZg3+4IIN4M5mWzTWOri4npvffJt+jBY71Ys8L7BdRvBAn8zgW5tDSYlr
+	 cgiJVrztQI3MQ==
+Date: Wed, 28 Oct 2026 13:09:42 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Vladimir Zapolskiy <vz@kernel.org>
+Cc: Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>, 
+	Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, linux-arm-msm@vger.kernel.org, 
+	Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>, Loic Poulain <loic.poulain@oss.qualcomm.com>, 
+	Mauro Carvalho Chehab <mchehab@kernel.org>, linux-media@vger.kernel.org, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	linux-phy@lists.infradead.org, Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org, 
+	Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+Subject: Re: [PATCH v2 1/7] dt-bindings: phy: qcom,x1e80100-csi2-phy: Add
+ SM8450 compatible
+Message-ID: <20261028-abiding-soft-beagle-18a1bd@quoll>
+References: <20261026224957.1115370-1-vz@kernel.org>
+ <20261026224957.1115370-2-vz@kernel.org>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Subject: Re: [PATCH] phy: marvell: a3700-comphy: Guard missing polarity
- argument
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: =?utf-8?q?=C5=A0t=C4=9Bp=C3=A1n_Daleck=C3=BD?= <daleckystepan@gmail.com>
-Cc: Miquel Raynal <miquel.raynal@bootlin.com>, 
- Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org
-In-Reply-To: <20261001151939.23658-1-daleckystepan@gmail.com>
-References: <20261001151939.23658-1-daleckystepan@gmail.com>
-Date: Wed, 28 Oct 2026 17:04:29 +0530
-Message-Id: <179318726992.5872.8966112619057702864.b4-reply@b4>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1495; i=mani@kernel.org;
- h=from:subject:message-id; bh=fR2hoJz11vogsarSjJMB47094/svk4kkI+B5BqmBXeI=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq4d3IfjcamPUAIxgUX26jrukCB2rCPDjl/4WDp
- BL5kxdCIACJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCauHdyAAKCRBVnxHm/pHO
- 9X0YB/4t5U7JQ00GkNTsEc4oTiFzpHouhrDd1D6Tjf8G7s8kD7w1G5xn5fNXGZ4l3B1zlnYIsv5
- JB9RVmvXA6MHEqysE27yXwU/wALJG+3UUSgH5dS4LmkyGzqBcWKZIG4gH2s4HnKuOIrP9IwN2U2
- fb6LqKaPXpNg08mC0i7EGU5L+/V8dPPNYhm6lBlDQZQFML2z9mpkb1lNy/tFKdmv5TfGI7kdHBy
- ceHEOk0qn8foJ+oObdRADLYfn7SHAXpHkaa6XJQBhx+Uj/dT8ZGXFNY7bG4gTQb1L1DzJZ9nKk+
- LRDcu+WFlXj+6612XfBLqQuVLCOh100GCggOjyoUWcmK/WgW
-X-Developer-Key: i=mani@kernel.org; a=openpgp;
- fpr=C668AEC3C3188E4C611465E7488550E901166008
+Content-Disposition: inline
+In-Reply-To: <20261026224957.1115370-2-vz@kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,42 +74,39 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,
-	SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no
-	version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-T24gMjAyNi0xMC0wMSAxNzoxOSArMDIwMCwgxaB0xJtww6FuIERhbGVja8O9IHdyb3RlOgo+IFRo
-ZSBBcm1hZGEgMzcwMCBDT01QSFkgYmluZGluZyBzcGVjaWZpZXMgI3BoeS1jZWxscyA9IDwxPiwg
-c28gUEhZCj4gcmVmZXJlbmNlcyBzdXBwbHkgb25seSB0aGUgcG9ydCBhcmd1bWVudC4gSG93ZXZl
-ciwKPiBtdmVidV9hMzcwMF9jb21waHlfeGxhdGUoKSB1bmNvbmRpdGlvbmFsbHkgcmVhZHMgYXJn
-c1sxXSB0byBzZWxlY3QgVFgKPiBhbmQgUlggcG9sYXJpdHkgaW52ZXJzaW9uLiBUaGUgUEhZIGNv
-cmUgZG9lcyBub3QgaW5pdGlhbGl6ZSBpdHMKPiBvZl9waGFuZGxlX2FyZ3Mgc3RydWN0dXJlLCBh
-bmQgdGhlIHBoYW5kbGUgcGFyc2VyIGZpbGxzIG9ubHkgdGhlCj4gc3VwcGxpZWQgY2VsbHMsIGxl
-YXZpbmcgYXJnc1sxXSB1bmluaXRpYWxpemVkLgo+IAo+IFVzaW5nIHRoZSB1bnVzZWQgY2VsbCBj
-YW4gcHJvZ3JhbSB1bmludGVuZGVkIFNlckRlcyBwb2xhcml0eS4gT24gYQo+IFR1cnJpcyBNT1gg
-d2l0aCBhIFBlcmlkb3Qgc3dpdGNoIHJ1bm5pbmcgT3BlbldydCB3aXRoIExpbnV4IDYuMTguNTQs
-Cj4gdGhlIENQVSBsaW5rIHJlcG9ydHMgUlggQ1JDIGVycm9ycyBhbmQgZmFpbHMgdG8gcGFzcyB0
-cmFmZmljLiBUaGUKPiBzd2l0Y2ggUENTIGRvZXMgbm90IHJlY29yZCBhIHBhcnRuZXIgYWR2ZXJ0
-aXNlbWVudCBkZXNwaXRlIGxpbmstdXAuCj4gCj4gQ2hlY2sgYXJnc19jb3VudCBiZWZvcmUgcmVh
-ZGluZyBhcmdzWzFdLCBsZWF2aW5nIHBvbGFyaXR5IGludmVyc2lvbgo+IGRpc2FibGVkIHdoZW4g
-dGhlIHNlY29uZCBhcmd1bWVudCB3YXMgbm90IHN1cHBsaWVkLiBUaGlzIGRvZXMgbm90Cj4gY2hh
-bmdlIHRoZSBiaW5kaW5nIG9yIGludHJvZHVjZSBhIHN1cHBvcnRlZCB0d28tY2VsbCBpbnRlcmZh
-Y2UuCj4gCj4gVGhlIHNhbWUgY2hhbmdlIHJlc3RvcmVzIDI1MDBCQVNFLVggY29tbXVuaWNhdGlv
-biBvbiB0aGUgYWZmZWN0ZWQKPiBNT1ggd2l0aCBubyBDUkMgZXJyb3JzLiBDb2xkIGJvb3RzLCBy
-ZWJvb3RzIGFuZCBpbnRlcmZhY2UgZG93bi91cAo+IGN5Y2xlcyB3ZXJlIGFsc28gdGVzdGVkIHN1
-Y2Nlc3NmdWxseSBvbiBMaW51eCA2LjE4LjU0Lgo+IAo+IEZpeGVzOiA5MzQzMzcwODBjNmMgKCJw
-aHk6IG1hcnZlbGw6IHBoeS1tdmVidS1hMzcwMC1jb21waHk6IEFkZCBuYXRpdmUga2VybmVsIGlt
-cGxlbWVudGF0aW9uIikKPiBDYzogc3RhYmxlQHZnZXIua2VybmVsLm9yZwo+IENsb3NlczogaHR0
-cHM6Ly9naXRodWIuY29tL29wZW53cnQvb3BlbndydC9pc3N1ZXMvMjQwNjkKPiBBc3Npc3RlZC1i
-eTogTExNCj4gU2lnbmVkLW9mZi1ieTogxaB0xJtww6FuIERhbGVja8O9IDxkYWxlY2t5c3RlcGFu
-QGdtYWlsLmNvbT4KClJldmlld2VkLWJ5OiBNYW5pdmFubmFuIFNhZGhhc2l2YW0gPG1hbml2YW5u
-YW4uc2FkaGFzaXZhbUBvc3MucXVhbGNvbW0uY29tPgoKLSBNYW5pCgoKLS0gCmxpbnV4LXBoeSBt
-YWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On Tue, Oct 27, 2026 at 12:49:51AM +0200, Vladimir Zapolskiy wrote:
+> Qualcomm SM8450 SoC has six CSIPHY IPs, which are compatible with Hamoa
+> ones:
+> 
+>     qcom-mipi-csi2-phy acec000.phy: CSIPHY 3PH HW Version = 0x40010000
+> 
+> Hardware supports up to three different 0.9v level power supplies for
+> CSIPHY0/1, CSIPHY2/3 and CSIPHY4/5, but there is just a single 1.2v
+> power line VDD_A_CSI_1P2, which supplies all CSIPHY devices.
+> 
+> Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+> Signed-off-by: Vladimir Zapolskiy <vz@kernel.org>
+> ---
+>  .../devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml       | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
+
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
