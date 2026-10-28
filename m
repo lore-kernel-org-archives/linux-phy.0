@@ -2,74 +2,91 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A84E7606A31F
-	for <linux-phy@archiver.kernel.org>; Wed, 28 Oct 2026 11:19:21 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D814E606A31D
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Oct 2026 11:23:03 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=bk5RlKWH;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=S0uvPGjZ
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Ntwn2aig;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=samsung.com header.i=@samsung.com header.a=rsa-sha256 header.s=mail20170921 header.b=i+/skMd/
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:References:In-Reply-To:
-	Cc:To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:From:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=fsVqmUu76Jdhu1f9JYszIc5VkvjGYKHbgqZOIYIix1A=; b=bk5RlKWHCP7k23IDknPvFlyoap
-	iu9rI2u7XIn5r3Sxg/94WFiPuLYFkKNKKfxSM7xD3HD2fgOEdJEAWttG0hjz000/yrZaXobLYm/SO
-	ZR+WBQn1ZNSEcqzIQHPzEh+pq1qT0IOICChOfjCpSylrH2MTkRTtMwUggU5KJ3UASfa6a9urInkka
-	YDKBS7+5mafeWXt37Egd4U2Nw59+eFPNZiOol+v97yef3JfnLqMGMbVM+Q3SBDodQMZEfEwrbfrRl
-	NpHM7gCQ9Ctdi13LzGNzN5925vBb9JY3Qe1FNKk+VkmLT9Jc+v+wxCjSMaZAEVeu0nEIpD8hsNGiV
-	pItrlaPg==;
+	bh=AIndLQj+eloRfjBkM290h310iB4uDPOaf60x6D5MWko=; b=Ntwn2aig8/O6TYLOVK+4Ug9Pwl
+	HYEWfFZ4nV5uLbtADXY2RCGBP1TXlANuJQPidN5Yq/qhq3O/RBEtP/HtbE5GeZUMeI4LAdLv35KGM
+	eLdgkPCcTL1Vwm3Kms/ZikZdkMxv8160tMdiZ5QUL4Wt2C3IY7S4BppjlBJjTMuHAaezoui0y44bI
+	WckzfZfSIyLmpelQl77QGX4M/5Yfri/nGHUZchGNX932Rjb6PXY7q60MDF/Lb0E3vi/GF/EwR23Yv
+	/WXpK9cp/IOLoZo6cyj3lPSo4ZVOInC0k3fmelNyviX++Io7vXCSywLNq+2EazJ+L7kIn+XHfje/J
+	mMc8RbUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xM1ge-00000006qPt-2gdp;
-	Wed, 28 Oct 2026 11:19:21 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xM1kF-00000006qxs-2WnX;
+	Wed, 28 Oct 2026 11:23:03 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xM1gd-00000006qPd-14rc
-	for linux-phy@lists.infradead.org;
-	Wed, 28 Oct 2026 11:19:19 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 603886022A;
-	Wed, 28 Oct 2026 11:19:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0249C1F01345;
-	Wed, 28 Oct 2026 11:19:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793186358;
-	bh=acx3ERfn6sywUlgPAMqQsMVKffZoJLkimvPtRFxAyY0=;
-	h=Subject:From:To:Cc:In-Reply-To:References:Date;
-	b=S0uvPGjZBd1qbjEyLNDQhv2g9X69ElTHwmdO9lsDdUslyaE92X9tgNltg8Vg9K5HU
-	 LlQBZ3NmzDMkkQWlm33wn5+1tk27tCXJ+jvtXelWZ1kHC46mrqluBz+U4gtTdIHWUZ
-	 8JfQYCDJfVDoHtBk+/wroVq5WGSs40UcUyh5yqGiZ3wbT3V1sYYjekF8wB52wExyr9
-	 oGxpRph1mEe0Ge4Hc5ic3Hp2QAbW/VXO3MwO7E1qNHGh5YCNOZQwHiOXEbJrKMz8jA
-	 wHMWLSfEJjzbJwXRFyz6T+I+CYlLalbpLD8JIdL5XnDH3j8SuJpxS3me/sMg3C2i0C
-	 UKGIkEgve+y/g==
+	id 1xM1k9-00000006qwP-3clO;
+	Wed, 28 Oct 2026 11:23:02 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+	by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id 20261028112254euoutp02b26cbd638eecd1de5239047e5366ec4e~irbBUW4tQ0198001980euoutp02b;
+	Wed, 28 Oct 2026 11:22:54 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com 20261028112254euoutp02b26cbd638eecd1de5239047e5366ec4e~irbBUW4tQ0198001980euoutp02b
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1793186574;
+	bh=8jmB9RanmjeScw6lxO3L8ylBkN0Bh3ZFb96COO2bVGA=;
+	h=Date:Subject:To:Cc:From:In-Reply-To:References:From;
+	b=i+/skMd/joxmQpIWha/jNQK0UIdTcPIoVEd5fvdz8Izsa0FMZ/GVtJm/TVSDc4Wlf
+	 PSmKOj7Xwg6LjngebJx90KPoph5FvRubzdJqkrAB01tQXiW5g0Uhg7YjWQv336Jzoz
+	 0zfJhBqZpNGKdJMpWVeGSx1ReAFKZwymkmP5q8wo=
+Received: from eusmtip1.samsung.com (unknown [203.254.199.221]) by
+	eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+	20261028112253eucas1p28a4257d534aa730b8a96c0bb58fdfa31~irbAWgQHl0931009310eucas1p2l;
+	Wed, 28 Oct 2026 11:22:53 +0000 (GMT)
+Received: from [192.168.1.44] (unknown [106.210.136.40]) by
+	eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+	20261028112251eusmtip1d596afbaa8e50b7128171427ede9319d~ira_nxioV0551305513eusmtip1V;
+	Wed, 28 Oct 2026 11:22:51 +0000 (GMT)
+Message-ID: <ebd333b0-39b6-428f-b8fe-143faa8949bc@samsung.com>
+Date: Wed, 28 Oct 2026 12:22:51 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Subject: Re: [PATCH v6] phy: qualcomm: qmp-combo: Add USB4/TBT3
- configuration data for Hamoa
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: sashiko-reviews@lists.linux.dev
-Cc: Konrad Dybcio <konradybcio@kernel.org>, linux-phy@lists.infradead.org, 
- robh@kernel.org, vkoul@kernel.org, olteanv@gmail.com, 
- neil.armstrong@linaro.org, devicetree@vger.kernel.org, conor+dt@kernel.org
-In-Reply-To: <20260928114013.B44CC1F00899@smtp.kernel.org>
-References: <20260928-topic-usb4phy-v6-1-815a73b063ef@oss.qualcomm.com>
- <20260928114013.B44CC1F00899@smtp.kernel.org>
-Date: Wed, 28 Oct 2026 16:49:11 +0530
-Message-Id: <179318635124.5872.6065890957918101932.b4-reply@b4>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=361; i=mani@kernel.org;
- h=from:subject:message-id; bh=acx3ERfn6sywUlgPAMqQsMVKffZoJLkimvPtRFxAyY0=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq4doyBxSvvpreSwuZ4fkmgC5LGi+wMraug+92R
- 1zlDSl8ppSJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCauHaMgAKCRBVnxHm/pHO
- 9ZC+B/wMIfSERj3XbNehdfoYIqak3PSd5Dyc68G0UNfaltsJQvwPxLu7B5rUlsNpgN8f/kKZrtZ
- qxM8448qNoojyMWkUcs0CZbQbUfmn/wqNNoYVPYI/Meu5JMWSITpP2aC3JvoO4RG7vuyCmNdgv7
- 0kfbrFMVDfQcW9XIZFSvJAxC44qSx+zOPwksomzMvlMVzdezHwzl8X4qEL/9wKEtTMOylvwVlv+
- ggQdJauBySgxAxjUrn0EGy9pCFIqoCobHWGB6IYBpeLYR+bQr4XWFunI3+Bnpz4ZVEG+sEuWTOu
- kQFGRbpNSR+hZI4IIaAshNmeVC39Gfuuex9E2lrUCfjLReHR
-X-Developer-Key: i=mani@kernel.org; a=openpgp;
- fpr=C668AEC3C3188E4C611465E7488550E901166008
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v5 00/21] drm: starfive: jh7110: Enable display
+ subsystem
+To: OOHehir <oo.hehir@gmail.com>
+Cc: Laurent.pinchart@ideasonboard.com, alex@ghiti.fr,
+	andrzej.hajda@intel.com, andy.yan@rock-chips.com, aou@eecs.berkeley.edu,
+	bmasney+clk@redhat.com, chaoyi.chen@rock-chips.com, conor+dt@kernel.org,
+	db@domibel.de, devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
+	gandalf@winds.org, hal.feng@starfivetech.com, heiko@sntech.de,
+	hello@big-grey.co.uk, jbrunet+clk@baylibre.com, jernej.skrabec@gmail.com,
+	jonas@kwiboo.se, jpeisach@ubuntu.com, kernel@esmil.dk, krzk+dt@kernel.org,
+	krzysztof.kozlowski@oss.qualcomm.com, linux-arm-kernel@lists.infradead.org,
+	linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-riscv@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, luca.ceresoli@bootlin.com,
+	m.szyprowski@samsung.com, maarten.lankhorst@linux.intel.com,
+	mani@kernel.org, maud_spierings@murena.io, mripard@kernel.org,
+	mturquette@baylibre.com, neil.armstrong@linaro.org, p.zabel@pengutronix.de,
+	palmer@dabbelt.com, pjw@kernel.org, rfoss@kernel.org, robh@kernel.org,
+	sboyd@kernel.org, tzimmermann@suse.de, u.kleine-koenig@baylibre.com,
+	vkoul@kernel.org, zhengxingda@iscas.ac.cn
+Content-Language: en-US
+From: Michal Wilczynski <m.wilczynski@samsung.com>
+In-Reply-To: <20261012175941.258219-1-electronicconsult1@gmail.com>
+X-CMS-MailID: 20261028112253eucas1p28a4257d534aa730b8a96c0bb58fdfa31
+X-Msg-Generator: CA
+X-RootMTR: 20261012180005eucas1p133b9ffd7327e5e62e3748fcffbac3655
+X-EPHeader: CA
+X-CMS-RootMailID: 20261012180005eucas1p133b9ffd7327e5e62e3748fcffbac3655
+References: <20260929-jh7110-clean-send-v5-0-82b4d8e3c6c7@samsung.com>
+	<CGME20261012180005eucas1p133b9ffd7327e5e62e3748fcffbac3655@eucas1p1.samsung.com>
+	<20261012175941.258219-1-electronicconsult1@gmail.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261028_042259_521602_F7F9A621 
+X-CRM114-Status: GOOD (  17.33  )
+X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,22 +99,68 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-6.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=no
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 2026-09-28 11:40 +0000, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 2 potential issue(s) to consider:
-> - [Low] phy: qualcomm: incorrectly named TX macro for RX UCDR FASTLOCK registers
-> - [Low] phy: qualcomm: typo LPFS instead of LFPS in PCS USB4 macro
 
-Can you please take a look at these nits?
+Hi,
 
-- Mani
+On 10/12/26 19:59, OOHehir wrote:
+> Tested on a VisionFive 2 v1.3B with patches 1-17 & 19-21 of v5 on
+> Linux 7.2.8, plus the clk patch that was 14/20 in v4. Patch 18 was not
+> applied: it conflicts on 7.2 & there is no Rockchip hardware here. The
+> same kernel also carries the out-of-tree PowerVR BXE-4-32 enablement &
+> the SiFive XPbmtUC errata patches, so the GPU could render to the
+> display.
+> 
+> - The dc8200, the HDMI controller & PHY & the vout clock controller
+>   all probe, with nothing left in deferred probe; HDMI-A-1 reports
+>   connected.
+> - kmscube (GLES via zink on the PowerVR Vulkan driver) runs at the
+>   monitor's preferred mode: 1683 frames in 28.1 s, 59.93 fps with
+>   vsync, picture confirmed on the monitor, no GPU firmware resets.
+> 
+> Only that one mode was tested; the modetest sweep in the cover letter
+> was not repeated.
+> 
+> One error at boot:
+> 
+>   i2c i2c-7: of_i2c: modalias failure on /soc/display-subsystem@29400000/hdmi@29590000/controller/ports
+>   i2c i2c-7: Failed to create I2C device for /soc/display-subsystem@29400000/hdmi@29590000/controller/ports
+> 
+> inno_hdmi_i2c_adapter() sets adap->dev.of_node to the controller's
+> node, so the I2C core registers the controller's children as I2C
+> clients, & on the JH7110 that node has a 'ports' child. The display
+> still comes up. Should the adapter get no of_node, or a dedicated
+> child node?
+> 
+> For patches 1-17 & 19-21:
+> 
+> Tested-by: OOHehir <oo.hehir@gmail.com>
+> 
 
+Hi,
+
+Thanks for testing. I'll carry your Tested-by into v6.
+
+The modalias failure reproduces for me as well. It doesn't come from
+this series: inno_hdmi_i2c_adapter() has been assigning the adapter's
+of_node to the controller's node ever since the driver landed, and the
+RK3036 and RK3128 carry the same ports child beneath their hdmi node, so
+they should print the same message.
+
+Nothing on the DDC bus is described in DT so the adapter shouldn't
+receive an of_node at all - dw-hdmi doesn't set one either. Removing
+that line clears the error here with EDID and every mode still
+working. I don't think the fix belongs in this series though.
+
+Best regards,
+-- 
+Michal Wilczynski <m.wilczynski@samsung.com>
 
 -- 
 linux-phy mailing list
