@@ -2,12 +2,12 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 676D3606AB03
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 75BF8606AB2F
 	for <linux-phy@archiver.kernel.org>; Wed, 28 Oct 2026 15:21:36 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=GpiNZmr4;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=h+FY3Gce;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=ATEmBo4z
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=juGjiZ9n;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=h4W73ywx;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=DH/tU/iD
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -15,90 +15,90 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=hmC9NsR5fvho7E+9Tcega3ESrAMv8y6dvF2pEx5GpeU=; b=GpiNZmr4fc4f0sk6DonRvfQh/W
-	uqMFSzXRf7bM32N8/D2RsLBEBs/J4pf+h4zNPwMtCC0UrvghR6dGzc0luWWoCFbKeNUy22zCpas7K
-	slzGAyW/NS5vDQuS0Dlfxl39ReLBJNxA63Z3ExKtwyJ/Z5sDvgeDbQTDxbqRBqHtgHc591TCfNMBn
-	j72DuWGMPBh7GKS/dBpUr4mXbOojmlsjJEe8NhdcZLEaRjYqaIXF6IgT5zByJyMHkcHDF7yrCHFiI
-	gMYewZuLDRBWGy3PAYJU5jXzdW5cQmjjCy6rG3DcQdfcjeh/foK+rH0p9Ru9nvvXkP9oFVCjyL9Ed
-	axAy8lTg==;
+	bh=4dsIIh3igUEdawkMDABr7cDDQqnIfkkjeyEiNfvfB20=; b=juGjiZ9nWu7EMqa8Fi3QB5Rc7+
+	rMC4bYz3IuYp0uvDGD8KkwiMSuK5+u62KLBpAz3U/YCyetGADCGclXWUSQ5uszYtbcytKUEC3LQPq
+	dAHcJ7uccjp6cZ/AbUzZq8kZK19xVwuVRocnnUpeZJ96DiU//F0K9oJyteOiyIT2/sKn6XLkPU0Iw
+	pPdGJPN9H7+mW0dEK0iR+n7vSw0IXj+5Tviegb0vX3oasnGHts1dWp46uAZWMMPnqzy+nY5SJhNVt
+	lMhVBN0T6c7z2fYkkMeVHApzHmGOWaPovQVt6w7tC8Zl1VLbt8lU+QUY2H8FW1JuGSCmaTgkluQXg
+	Nj1YVpYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xM5T6-00000007L17-0Ua8;
+	id 1xM5T6-00000007L1F-0mMP;
 	Wed, 28 Oct 2026 15:21:36 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xM5T2-00000007Kyv-1GNM
+	id 1xM5T4-00000007L0H-1WTt
 	for linux-phy@lists.infradead.org;
-	Wed, 28 Oct 2026 15:21:33 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69SFAb4J1153708
-	for <linux-phy@lists.infradead.org>; Wed, 28 Oct 2026 15:21:31 GMT
+	Wed, 28 Oct 2026 15:21:35 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 69SFACsU2001630
+	for <linux-phy@lists.infradead.org>; Wed, 28 Oct 2026 15:21:33 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	dUwTkjKN1bdAgHLj3eg9nRTcjoAkTsG2eMCX3ocjbk4=; b=h+FY3GceToVvzCTF
-	DBO8pR19qBeNjaLT/EUXh+3TxGDGjaykOP7avc4ZhhzlVUl8uw9OOIK0dLSoBlLX
-	6eq9WIpQGoI/zQ2Zjgk3Q2EDcAgMQhG+2O/SbmCBhzzBVNziv/nTHEPP5+DOVrCD
-	OP6xVX6mdFuWmMjrLjP5PxrPoyI/GvC3mZZpYsXBnviRycwic7d6Im16AvM/jAow
-	edCFvkD/0xtMl5S856Q6kJLJ32TC5KmmeCdgeYDYFqJ4Mlk+7g/IOoePuL3AZwyy
-	zUDLtRtHt8HVYgCtdRg4b0UrXwndNdtR60c3yVdsFj/rv0kT1PlAphpwFy9uVzRW
-	nhJTjQ==
-Received: from mail-yx1-f72.google.com (mail-yx1-f72.google.com [74.125.224.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hk6be34sa-1
+	QJtv1elE22/fRjimfKOj8JWMX+qMHWo6gdQpzkiKlMs=; b=h4W73ywxA4Q8m0U5
+	Usk6b5h8PQNTEKu35aqmA2uN6VgL2B4w9WmiKNwMRqdCErb692kjYqpCclh6PIaw
+	xZmryNihJQZCmqhlwVlzjC1wxDw8NezzHWMGYHGVpL4yk9XVoe98e5Ws/aq+OXsS
+	1Ydlysa1C+zZmSvIzt6epqcXdkujkjmL/u7kOwcJ+Xvd5JGqaX9LLTwJaOMr5D0u
+	DZ/dUfHtftHP3Thqmi62940ZP7CRdUjaxO/BabvnHxVDjFjpTXPaFpQY05+JJKe5
+	5MY+cWbUHndhcrSqu6jA/nib2R/BfqlpUIBU6yiL4h8Ucv47iDn5RVxVWUnZH9zU
+	WYrg4g==
+Received: from mail-yx1-f69.google.com (mail-yx1-f69.google.com [74.125.224.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hkdf7sm6a-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 28 Oct 2026 15:21:31 +0000 (GMT)
-Received: by mail-yx1-f72.google.com with SMTP id 956f58d0204a3-6798fd97f3aso1919947d50.1
-        for <linux-phy@lists.infradead.org>; Wed, 28 Oct 2026 08:21:31 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Wed, 28 Oct 2026 15:21:33 +0000 (GMT)
+Received: by mail-yx1-f69.google.com with SMTP id 956f58d0204a3-677c4ca2265so1848003d50.2
+        for <linux-phy@lists.infradead.org>; Wed, 28 Oct 2026 08:21:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1793200891; x=1793805691; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1793200893; x=1793805693; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=dUwTkjKN1bdAgHLj3eg9nRTcjoAkTsG2eMCX3ocjbk4=;
-        b=ATEmBo4zC0vdqD5XDW2kdRd3oQPZnI5kI7Q/+OtbgHZs1gsB8xGTKqxQJ7PEN94A58
-         2DNSBgXhIyIVZ8nsQ2Z4q3cZy11VdWSYL/JF/y+aHKkFWSKxLwrJQvRdhSYPbpDmBIR1
-         g+4XdA6IrQrrbm9eXnhDFMJEjQc4xlsUeUM8rTqfL1Nejd8nfo7VqI/+U1nnVn8wRSc9
-         gCQCm01rf/JdxaxfU3RBCLl1vTeV62cHSeweeMRtw8Z+zvx4uyVR+lR6bCziFO8B4EsL
-         6EjAraIjTVtrD2nKZeeYBNkchqJ94+XNKm6cFm0UxxJpOdcyThzMJv5D5EO8/kSeYTiR
-         RqYw==
+        bh=QJtv1elE22/fRjimfKOj8JWMX+qMHWo6gdQpzkiKlMs=;
+        b=DH/tU/iDas3MeVgUO1ToaO86UHWpGRF7Wx7SjczsdWd3FUYLZ8SN3uZP08W182hJSJ
+         SxDqwTYhDJEFHbXiJ9+07O9zxJk/fCN5HouLWMAQEpgCoC7MvS6Jehnt6vTu2Rd/Womq
+         v8kDxlUvPYOgQm5y3rc0F2NKcRmgZ5qxCtW1m50I0Ju+4YIu4bepIELd3E3f52HInGmm
+         ADgwj0r8VcFDgjITO0g9z9oCXT4EEjng0V38x9ql/sY6z7p/ix5GEuTMVOn3q36d6+p5
+         AXPmi2Gia58YyMQTnfSoojUedihDRS+2V6vSiyGZVLesnCWH12/Sn3Et8F9It7uoAzCX
+         JUJw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793200891; x=1793805691;
+        d=1e100.net; s=20260707; t=1793200893; x=1793805693;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=dUwTkjKN1bdAgHLj3eg9nRTcjoAkTsG2eMCX3ocjbk4=;
-        b=aev2kp1sj3aKm9aIPKoPe8ZV7+bbT1rG8Kct28bNOeumUXEijQ5CCsqI856YAgP3Nr
-         Erdhg5y/qcDl14JdHVBSd+Iz3aK5OG3S5xYegDIRLT0eQzu2aGF55DzgwfU9IJEKzCss
-         wSdbIIP5RkTFWR+LxyWEPK1EPKdzpShnRzBfvdSDHs4fCQcDg+9m7/JTpl5wNuGZB8cl
-         19ct+Pz3qjHzJqdtQVwficUW0qXcpLcrPnhm5p72+N2+Q4hoYXhZp5qaGtZzxNKJL5K7
-         IghlqJB6i+ps1WqXleB+/V8FI8T085xE1Tq8hxdlaqv8H57jWk9NxeZTI8JyTvDSCnc+
-         /nuQ==
-X-Gm-Message-State: AFq9FYIvX4aaF0LK79NEGm/W94Wmsw1MB9EA2+D0lih0wXH4z+GGAvPS
-	Zz5asHm10S11AydOpqRf6jAMwiQS17gdzorWz1p6ksJtcGOgZrZxLB5E4O32gapsoXIpYFxdtnO
-	oBrWQNyr5r+Gisx4mcPTHpYH/tl38aGs5b3+9cpLd/v4bRBJYimRzs29xAUwZls88vI+0
-X-Gm-Gg: AYBFou1NETDuigPKp49IPJgd//tXjuoQnQMES9ZDgkUvt2uKPWwa5uXCPInhLC6ej33
-	GQBFS8aZenbI0kM1NFa2wpUGgg3Ho33reJHpjkFK407nzydP+v5Lfha0f5LlEvWDwO6oF3cEWv1
-	3XEZ0ydiHDdNpFEixRz/CDDfU13HpHjlPlAimjVtd41fjO+ikk/yDxdU/zT/xev/5Ha1d9NnD9X
-	GAA3KQHRey4Om1AA3WdRODBHIQxDWm48NLQiuZdZS+OfhHXETgI/YEgqvIHmJeQPo1hxwX7/oN4
-	5DVBtqcd4OgRv+O2OyYgJOoHvksetrzvXYLE8rhFvS+RmxwjT4y196l2U7mARr5/8ph+iBkmDT7
-	aP3kNrEsheSCDM4pnPKuLgPBPrkxV5v0vsRhxSWacS7v7kavgO7Kjtr6o0zW49uRVH2p8ezKrAm
-	4uiYC5hI4mBGQ7y2pJUj2PUWazAIBLsvmdqjmH+3q8Verjdvk+SYhoUsNncSDu
-X-Received: by 2002:a05:690e:186:b0:679:9715:a913 with SMTP id 956f58d0204a3-67a7bcb1b87mr1207559d50.80.1793200890302;
-        Wed, 28 Oct 2026 08:21:30 -0700 (PDT)
-X-Received: by 2002:a05:690e:186:b0:679:9715:a913 with SMTP id 956f58d0204a3-67a7bcb1b87mr1207543d50.80.1793200889569;
-        Wed, 28 Oct 2026 08:21:29 -0700 (PDT)
+        bh=QJtv1elE22/fRjimfKOj8JWMX+qMHWo6gdQpzkiKlMs=;
+        b=TerW8yA8PN+yWQjOKgVOxnXGoBU7adzDWNqbYipxxC+IJH9hltVEXC3oZXUE6craEB
+         tC4bImstP8hwI/KDR6Ei3KsqY965CgvzGWD5is0sHrr2oj1FocfmNRzixCIbmEq62NgX
+         vr/2vq5w1oj68de1SjAWc9VxKDDll/GuSetEY0yHj+18/C8oaYaAL3ImO6uDCvvvH/By
+         +H3wv7K3UekUXos22NrToEwneoRoiMQxt62pUlcPd4ef6R+/mlcTbyA/E/1M1/rmUNzm
+         OVlyGwg/YFLDzSQBlO3xkdHga4r9jQusnOtGcvKJrKBuL7/GovQGxNCfChfOlH65xW90
+         f+PA==
+X-Gm-Message-State: AFq9FYIe6u7DXskBgBX7dBiZMz+EMxA3IQPh4INyX7E1XlCNJ7vDV0yH
+	0kg+3v4XMbYTI3IMTZhOLyu6l/3DMpualMP4TRzCLHG3f78fsF4JZ8Q3y9H6s6f9YBacqjY93Xp
+	inkpBUuLVf3hRk9YmKlwS7mfn8FF5eD3WR7F/6Dgkt3UCJ7aBWeq6smKK+BJTJmoOa0C+
+X-Gm-Gg: AYBFou1dqlu0adRNpWbvrLCvrhNjn4ZIBd89OZBxyu69gAP7KHd4c1yG1Tjr8nY7jfP
+	x+NDTmjWfl2D0u8pQa6//7DIQV9rCC7KemJxQpmFh1gs08D1l2T3eq3P0/OYSpydS/QSgWYJX4d
+	dP03qzZW/yfebp3TstZsnorLCGGzm0LXCCORHtKugwJA6512IPKKtPD2ZuHzI8rwiMdk4fbvY/S
+	1fFoIfFUXeKxDmftONKRziu922HmrErbCiVQ9g9LVvQWoBZw5blk14mUfMbCU703IXRS6keRNx5
+	aKWeBMy2UjqspA4Fqb9UcfSg5wGfYdYCmU71V28i9HFUiEv0L970x27MP62nJ3rcEXa1SYf0Ok1
+	Lax9/nGKgxGAitIHi4mFcKylAPwcQbFiF+c+fOIcMh0eEoZHhaEbjr3FhX/z2YAaIWdslLHGh9v
+	oljPyde3qmXugnT2a0JkXJor3kAynjxscl5aAq0Pf78Tdj23ex6vZSdWMv/iJ8
+X-Received: by 2002:a05:690e:43ce:b0:679:cc49:55e6 with SMTP id 956f58d0204a3-67a7bd19598mr1289961d50.80.1793200892549;
+        Wed, 28 Oct 2026 08:21:32 -0700 (PDT)
+X-Received: by 2002:a05:690e:43ce:b0:679:cc49:55e6 with SMTP id 956f58d0204a3-67a7bd19598mr1289910d50.80.1793200891909;
+        Wed, 28 Oct 2026 08:21:31 -0700 (PDT)
 Received: from hu-hangxian-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id 956f58d0204a3-67a803cdd1asm1107541d50.4.2026.10.28.08.21.27
+        by smtp.gmail.com with ESMTPSA id 956f58d0204a3-67a803cdd1asm1107541d50.4.2026.10.28.08.21.29
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 28 Oct 2026 08:21:29 -0700 (PDT)
+        Wed, 28 Oct 2026 08:21:31 -0700 (PDT)
 From: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
-Date: Wed, 28 Oct 2026 08:20:46 -0700
-Subject: [PATCH v23 12/15] arm64: dts: qcom: kaanapali: Add CAMSS and
- CSIPHY block definitions
+Date: Wed, 28 Oct 2026 08:20:47 -0700
+Subject: [PATCH v23 13/15] arm64: dts: qcom: kaanapali: Add CCI controller
+ nodes
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261028-kaanapali-camss-v23-12-95f250b18612@oss.qualcomm.com>
+Message-Id: <20261028-kaanapali-camss-v23-13-95f250b18612@oss.qualcomm.com>
 References: <20261028-kaanapali-camss-v23-0-95f250b18612@oss.qualcomm.com>
 In-Reply-To: <20261028-kaanapali-camss-v23-0-95f250b18612@oss.qualcomm.com>
 To: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
@@ -121,37 +121,36 @@ Cc: linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
         Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>,
         Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 X-Mailer: b4 0.16.1-dev-17221
-X-Proofpoint-ORIG-GUID: ZHqaLukTYb3pNmaZWBrDZxI3z-xkXSiO
-X-Authority-Analysis: v=2.4 cv=HeuB3SE8 c=1 sm=1 tr=0 ts=6ae212fb cx=c_pps
- a=VEzVgl358Dq0xwHDEbsOzA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+X-Authority-Analysis: v=2.4 cv=M4bYuCws c=1 sm=1 tr=0 ts=6ae212fd cx=c_pps
+ a=J+5FMm3BkXb42VdG8aMU9w==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
  a=IkcTkHD0fZMA:10 a=660iZSQnnn4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
- a=EUspDBNiAAAA:8 a=K4jxk-CqiRrnENM1qOEA:9 a=qr563QY0K14S5RZM:21
- a=QEXdDO2ut3YA:10 a=uujmmnXaIg8lM0-o0HFK:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMDI4MDA2MSBTYWx0ZWRfXzQgHbfgSi3VY
- 4fyV5aoj+HSxhxWdZkh7+1uY3pWcAS0sFyY3ifgrsy4JRqvyI09zVAndbn/QvrSaLmuX06VALP+
- 1GDZf5KZEAbpN+tddei8y+xlWBCKcs8=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDI4MDA2MSBTYWx0ZWRfX9bQWCZjOlfsI
- NbF7LKh5Yig0Asj0lUQKN1MOLriv2FGsktRkqq8Awh8G3/NhVgzXM58nv+fgveNQNdD3v+Z77EZ
- a3pZ43fyl6ruF+WdDwhabIfTJwW4ZdyqgSSmqvsL8Xgk05v3sQlTCWbwv1ZV51iKdGp7Jrl02EB
- i1l4mYMh/lKzgmWvTi7+29xrmknqILZHtswMGaMqxk5M63e9ImWjSELo+k+HoEYiWgj9rphLuU9
- uPBORsXIK3dBnTufY9tn1rl02s0t9Tl8fYeQPNPVknmARql0dmC69FOGyvKDY4AOIjT1Eea033h
- SMsYta7IDHUBFKBsvrewaa0115jonxJaPxm7j5Mw9thF8t8ZPJO3Z6NKiFxW5t8LOG5Wl+hLCQh
- EGOgBY7vD31Hei9hqmI5ATpzWEbVuboFuR5hQAUO6qp8XzmWnK9ktLVlvA030ShaKyHlAwE/f8V
- nokGK0AtE6y+PNMWX+A==
-X-Proofpoint-GUID: ZHqaLukTYb3pNmaZWBrDZxI3z-xkXSiO
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
+ a=KKAkSRfTAAAA:8 a=EUspDBNiAAAA:8 a=09nyjJ-fxQ_OzqxZyrIA:9 a=QEXdDO2ut3YA:10
+ a=Epx66wHExT0cjJnnR-oj:22 a=cvBusfyB2V15izCimMoJ:22
+X-Proofpoint-GUID: tvYkXInMDJcvMPEFQHdiU5CKm2NlZ2q-
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMDI4MDA2MSBTYWx0ZWRfXyIgJV+EHUtih
+ EJiiDZufWC3dA0Mjf9mGs7wq8VoL9ghltnZo8peLmr0QauQlJP6+1qBa0NYlIzSDcguV+PjVoqc
+ h9qw5Umn6SURiZ+rExczmk+eYsqGw0Q=
+X-Proofpoint-ORIG-GUID: tvYkXInMDJcvMPEFQHdiU5CKm2NlZ2q-
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMDI4MDA2MSBTYWx0ZWRfX0U25H/VIp6wq
+ cIS/wNGuRLtyAjiOrta9A7afATEEtKY6flpN/s5cfsM2fygGIJKdq08l8VR79P8bbJ3rWdHQKKe
+ qjDD9GhfKvzVYXnm2YO9E9QITPCH87L3c/2hI7LzV8sUT9Sl0hdVOsqkadvytB/SGaRjK8ZsqiM
+ agrrh1DxopvPB5F3MMaLvYf0LPjr4zPswFohCziaf73EVVEZ6YSzAuKrZyrmHivPtAdCwSmH81d
+ vpy4NO1asd1cyoCZgvDQY73D0k9RK+WjkZekb5hbLG4hYUWxNk1O3XmeTt2DCoHcBQC3VF/E9Li
+ 0GpXoLKgED13qJ7hmD4sWOpy3tEJMiZjqdGq99FMSm5kqD6h0RjztPdK8jZmpXq9vil4CrQLcwA
+ kJ+keg0rITmxmxH/YZIYWvAerrx+Zk+N2e8+G10bAGA8c1EnZduEnyK3MrEmOlNmVqjt9L5GfyZ
+ lLnrnSDhakogVWZ3fKg==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-10-28_05,2026-10-21_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 adultscore=0 phishscore=0 impostorscore=0 bulkscore=0
- lowpriorityscore=0 spamscore=0 clxscore=1015 priorityscore=1501
- suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2610190000
- definitions=main-2610280061
+ phishscore=0 priorityscore=1501 clxscore=1015 impostorscore=0 malwarescore=0
+ bulkscore=0 spamscore=0 suspectscore=0 lowpriorityscore=0 adultscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2610190000 definitions=main-2610280061
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261028_082132_485034_036D0F35 
-X-CRM114-Status: GOOD (  11.49  )
+X-CRM114-CacheID: sfid-20261028_082134_559186_EB79379E 
+X-CRM114-Status: GOOD (  11.43  )
 X-Spam-Score: -1.5 (-)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -172,449 +171,359 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Describe the CAMSS and CSIPHY blocks on Kaanapali so that camera pipelines
-can be enabled by board device trees.
+Add the three Camera Control Interface (CCI) controllers present on the
+Kaanapali SoC. Each controller provides two I2C hosts used for camera
+sensor control, so define the controller nodes and their pinctrl states.
 
-The camera subsystem contains:
-- 6 x CSIPHY (CSI Physical Layer)
-- 3 x TPG (Test Pattern Generator)
-- 3 x CSID (CSI Decoder)
-- 2 x CSID Lite
-- 3 x VFE (Video Front End), 5 RDI per VFE
-- 2 x VFE Lite, 4 RDI per VFE Lite
+The first bus has two CCI bus master pinouts:
+cci_i2c_sda0 = gpio109
+cci_i2c_scl0 = gpio110
 
-Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+cci_i2c_sda1 = gpio111
+cci_i2c_scl1 = gpio112
+
+The second bus has two CCI bus master pinouts:
+cci_i2c_sda3 = gpio113
+cci_i2c_scl3 = gpio114
+
+cci_i2c_sda4 = gpio107
+cci_i2c_scl4 = gpio160
+
+The third bus has two CCI bus master pinouts:
+cci_i2c_sda5 = gpio108
+cci_i2c_scl5 = gpio149
+
+cci_i2c_sda6 = gpio115
+cci_i2c_scl6 = gpio116
+
+Reviewed-by: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
+Acked-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 Signed-off-by: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
 ---
- arch/arm64/boot/dts/qcom/kaanapali.dtsi | 401 ++++++++++++++++++++++++++++++++
- 1 file changed, 401 insertions(+)
+ arch/arm64/boot/dts/qcom/kaanapali.dtsi | 303 ++++++++++++++++++++++++++++++++
+ 1 file changed, 303 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/qcom/kaanapali.dtsi b/arch/arm64/boot/dts/qcom/kaanapali.dtsi
-index e48a179d0722..0c8fd7da55b7 100644
+index 0c8fd7da55b7..bf3922f0ffb3 100644
 --- a/arch/arm64/boot/dts/qcom/kaanapali.dtsi
 +++ b/arch/arm64/boot/dts/qcom/kaanapali.dtsi
-@@ -20,6 +20,7 @@
- #include <dt-bindings/interconnect/qcom,kaanapali-rpmh.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/mailbox/qcom-ipcc.h>
-+#include <dt-bindings/phy/phy.h>
- #include <dt-bindings/phy/phy-qcom-qmp.h>
- #include <dt-bindings/power/qcom-rpmpd.h>
- #include <dt-bindings/regulator/qcom,rpmh-regulator.h>
-@@ -3597,6 +3598,384 @@ usb_dp_qmpphy_dp_in: endpoint {
+@@ -3748,6 +3748,117 @@ camss_csiphy5_in_port: port@5 {
  			};
  		};
  
-+		camss: isp@900b000 {
-+			compatible = "qcom,kaanapali-camss";
++		cci0: cci@941b000 {
++			compatible = "qcom,kaanapali-cci", "qcom,msm8996-cci";
++			reg = <0x0 0x0941b000 0x0 0x1000>;
 +
-+			reg = <0x0 0x0900b000 0x0 0x1000>,
-+			      <0x0 0x09253000 0x0 0x5e80>,
-+			      <0x0 0x09263000 0x0 0x5e80>,
-+			      <0x0 0x09273000 0x0 0x5e80>,
-+			      <0x0 0x092d3000 0x0 0x3880>,
-+			      <0x0 0x092e7000 0x0 0x3880>,
-+			      <0x0 0x093fd000 0x0 0x400>,
-+			      <0x0 0x093fe000 0x0 0x400>,
-+			      <0x0 0x093ff000 0x0 0x400>,
-+			      <0x0 0x09151000 0x0 0x20000>,
-+			      <0x0 0x09171000 0x0 0x20000>,
-+			      <0x0 0x09191000 0x0 0x20000>,
-+			      <0x0 0x092dc000 0x0 0x1300>,
-+			      <0x0 0x092f0000 0x0 0x1300>;
-+			reg-names = "top",
-+				    "csid0",
-+				    "csid1",
-+				    "csid2",
-+				    "csid_lite0",
-+				    "csid_lite1",
-+				    "csitpg0",
-+				    "csitpg1",
-+				    "csitpg2",
-+				    "vfe0",
-+				    "vfe1",
-+				    "vfe2",
-+				    "vfe_lite0",
-+				    "vfe_lite1";
++			interrupts = <GIC_SPI 426 IRQ_TYPE_EDGE_RISING>;
 +
-+			clocks = <&camcc CAM_CC_CAMNOC_NRT_AXI_CLK>,
-+				 <&camcc CAM_CC_CAMNOC_RT_AXI_CLK>,
-+				 <&camcc CAM_CC_CAM_TOP_AHB_CLK>,
-+				 <&camcc CAM_CC_CAM_TOP_FAST_AHB_CLK>,
-+				 <&camcc CAM_CC_CAMNOC_RT_TFE_0_MAIN_CLK>,
-+				 <&camcc CAM_CC_CAMNOC_RT_TFE_1_MAIN_CLK>,
-+				 <&camcc CAM_CC_CAMNOC_RT_TFE_2_MAIN_CLK>,
-+				 <&camcc CAM_CC_CAMNOC_RT_IFE_LITE_CLK>,
-+				 <&camcc CAM_CC_CSID_CLK>,
-+				 <&camcc CAM_CC_CSID_CSIPHY_RX_CLK>,
-+				 <&gcc GCC_CAMERA_HF_AXI_CLK>,
-+				 <&gcc GCC_CAMERA_SF_AXI_CLK>,
-+				 <&camcc CAM_CC_TFE_0_MAIN_CLK>,
-+				 <&camcc CAM_CC_TFE_0_MAIN_FAST_AHB_CLK>,
-+				 <&camcc CAM_CC_TFE_1_MAIN_CLK>,
-+				 <&camcc CAM_CC_TFE_1_MAIN_FAST_AHB_CLK>,
-+				 <&camcc CAM_CC_TFE_2_MAIN_CLK>,
-+				 <&camcc CAM_CC_TFE_2_MAIN_FAST_AHB_CLK>,
-+				 <&camcc CAM_CC_IFE_LITE_CLK>,
-+				 <&camcc CAM_CC_IFE_LITE_AHB_CLK>,
-+				 <&camcc CAM_CC_IFE_LITE_CPHY_RX_CLK>,
-+				 <&camcc CAM_CC_IFE_LITE_CSID_CLK>,
-+				 <&camcc CAM_CC_QDSS_DEBUG_XO_CLK>;
-+			clock-names = "camnoc_nrt_axi",
-+				      "camnoc_rt_axi",
-+				      "cpas_ahb",
-+				      "cpas_fast_ahb",
-+				      "cpas_vfe0",
-+				      "cpas_vfe1",
-+				      "cpas_vfe2",
-+				      "cpas_vfe_lite",
-+				      "csid",
-+				      "csid_csiphy_rx",
-+				      "gcc_axi_hf",
-+				      "gcc_axi_sf",
-+				      "vfe0",
-+				      "vfe0_fast_ahb",
-+				      "vfe1",
-+				      "vfe1_fast_ahb",
-+				      "vfe2",
-+				      "vfe2_fast_ahb",
-+				      "vfe_lite",
-+				      "vfe_lite_ahb",
-+				      "vfe_lite_cphy_rx",
-+				      "vfe_lite_csid",
-+				      "qdss_debug_xo";
++			clocks = <&camcc CAM_CC_CAM_TOP_AHB_CLK>,
++				 <&camcc CAM_CC_CCI_0_CLK>;
++			clock-names = "ahb",
++				      "cci";
 +
-+			interrupts = <GIC_SPI 601 IRQ_TYPE_EDGE_RISING>,
-+				     <GIC_SPI 603 IRQ_TYPE_EDGE_RISING>,
-+				     <GIC_SPI 431 IRQ_TYPE_EDGE_RISING>,
-+				     <GIC_SPI 605 IRQ_TYPE_EDGE_RISING>,
-+				     <GIC_SPI 376 IRQ_TYPE_EDGE_RISING>,
-+				     <GIC_SPI 433 IRQ_TYPE_EDGE_RISING>,
-+				     <GIC_SPI 436 IRQ_TYPE_EDGE_RISING>,
-+				     <GIC_SPI 457 IRQ_TYPE_EDGE_RISING>,
-+				     <GIC_SPI 606 IRQ_TYPE_EDGE_RISING>,
-+				     <GIC_SPI 377 IRQ_TYPE_EDGE_RISING>;
-+			interrupt-names = "csid0",
-+					  "csid1",
-+					  "csid2",
-+					  "csid_lite0",
-+					  "csid_lite1",
-+					  "vfe0",
-+					  "vfe1",
-+					  "vfe2",
-+					  "vfe_lite0",
-+					  "vfe_lite1";
++			power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
 +
-+			interconnects = <&gem_noc MASTER_APPSS_PROC QCOM_ICC_TAG_ACTIVE_ONLY
-+					 &config_noc SLAVE_CAMERA_CFG QCOM_ICC_TAG_ACTIVE_ONLY>,
-+					<&mmss_noc MASTER_CAMNOC_HF QCOM_ICC_TAG_ALWAYS
-+					 &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>;
-+			interconnect-names = "ahb",
-+					     "hf_mnoc";
++			pinctrl-0 = <&cci0_i2c0_default &cci0_i2c1_default>;
++			pinctrl-1 = <&cci0_i2c0_sleep &cci0_i2c1_sleep>;
++			pinctrl-names = "default", "sleep";
 +
-+			iommus = <&apps_smmu 0x1c00 0x00>;
-+
-+			power-domains = <&camcc CAM_CC_TFE_0_GDSC>,
-+					<&camcc CAM_CC_TFE_1_GDSC>,
-+					<&camcc CAM_CC_TFE_2_GDSC>,
-+					<&camcc CAM_CC_TITAN_TOP_GDSC>;
-+			power-domain-names = "ife0",
-+					     "ife1",
-+					     "ife2",
-+					     "top";
++			#address-cells = <1>;
++			#size-cells = <0>;
 +
 +			status = "disabled";
 +
-+			ports {
++			cci0_i2c0: i2c-bus@0 {
++				reg = <0>;
++				clock-frequency = <1000000>;
 +				#address-cells = <1>;
 +				#size-cells = <0>;
++			};
 +
-+				camss_csiphy0_in_port: port@0 {
-+					reg = <0>;
-+				};
-+
-+				camss_csiphy1_in_port: port@1 {
-+					reg = <1>;
-+				};
-+
-+				camss_csiphy2_in_port: port@2 {
-+					reg = <2>;
-+				};
-+
-+				camss_csiphy3_in_port: port@3 {
-+					reg = <3>;
-+				};
-+
-+				camss_csiphy4_in_port: port@4 {
-+					reg = <4>;
-+				};
-+
-+				camss_csiphy5_in_port: port@5 {
-+					reg = <5>;
-+				};
++			cci0_i2c1: i2c-bus@1 {
++				reg = <1>;
++				clock-frequency = <1000000>;
++				#address-cells = <1>;
++				#size-cells = <0>;
 +			};
 +		};
 +
-+		csiphy0: phy@9523000 {
-+			compatible = "qcom,kaanapali-csi2-phy";
-+			reg = <0x0 0x09523000 0x0 0x2000>;
++		cci1: cci@941c000 {
++			compatible = "qcom,kaanapali-cci", "qcom,msm8996-cci";
++			reg = <0x0 0x0941c000 0x0 0x1000>;
 +
-+			clocks = <&camcc CAM_CC_CSIPHY0_CLK>,
-+				 <&camcc CAM_CC_CSI0PHYTIMER_CLK>,
-+				 <&camcc CAM_CC_CORE_AHB_CLK>;
-+			clock-names = "core",
-+				      "timer",
-+				      "ahb";
++			interrupts = <GIC_SPI 427 IRQ_TYPE_EDGE_RISING>;
 +
-+			interrupts = <GIC_SPI 477 IRQ_TYPE_EDGE_RISING>;
++			clocks = <&camcc CAM_CC_CAM_TOP_AHB_CLK>,
++				 <&camcc CAM_CC_CCI_1_CLK>;
++			clock-names = "ahb",
++				      "cci";
 +
-+			operating-points-v2 = <&csiphy_mxc_opp_table>;
++			power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
 +
-+			power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>,
-+					<&rpmhpd RPMHPD_MMCX>,
-+					<&rpmhpd RPMHPD_MXC>;
-+			power-domain-names = "top",
-+					     "mmcx",
-+					     "mx";
++			pinctrl-0 = <&cci1_i2c0_default &cci1_i2c1_default>;
++			pinctrl-1 = <&cci1_i2c0_sleep &cci1_i2c1_sleep>;
++			pinctrl-names = "default", "sleep";
++
++			#address-cells = <1>;
++			#size-cells = <0>;
 +
 +			status = "disabled";
 +
-+			ports {
++			cci1_i2c0: i2c-bus@0 {
++				reg = <0>;
++				clock-frequency = <1000000>;
 +				#address-cells = <1>;
 +				#size-cells = <0>;
++			};
 +
-+				csiphy0_in_port: port@0 {
-+					reg = <0>;
-+				};
-+
-+				csiphy0_out_port: port@1 {
-+					reg = <1>;
-+				};
++			cci1_i2c1: i2c-bus@1 {
++				reg = <1>;
++				clock-frequency = <1000000>;
++				#address-cells = <1>;
++				#size-cells = <0>;
 +			};
 +		};
 +
-+		csiphy1: phy@9525000 {
-+			compatible = "qcom,kaanapali-csi2-phy";
-+			reg = <0x0 0x09525000 0x0 0x2000>;
++		cci2: cci@941d000 {
++			compatible = "qcom,kaanapali-cci", "qcom,msm8996-cci";
++			reg = <0x0 0x0941d000 0x0 0x1000>;
 +
-+			clocks = <&camcc CAM_CC_CSIPHY1_CLK>,
-+				 <&camcc CAM_CC_CSI1PHYTIMER_CLK>,
-+				 <&camcc CAM_CC_CORE_AHB_CLK>;
-+			clock-names = "core",
-+				      "timer",
-+				      "ahb";
++			interrupts = <GIC_SPI 428 IRQ_TYPE_EDGE_RISING>;
 +
-+			interrupts = <GIC_SPI 478 IRQ_TYPE_EDGE_RISING>;
++			clocks = <&camcc CAM_CC_CAM_TOP_AHB_CLK>,
++				 <&camcc CAM_CC_CCI_2_CLK>;
++			clock-names = "ahb",
++				      "cci";
 +
-+			operating-points-v2 = <&csiphy_mxc_opp_table>;
++			power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
 +
-+			power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>,
-+					<&rpmhpd RPMHPD_MMCX>,
-+					<&rpmhpd RPMHPD_MXC>;
-+			power-domain-names = "top",
-+					     "mmcx",
-+					     "mx";
++			pinctrl-0 = <&cci2_i2c0_default &cci2_i2c1_default>;
++			pinctrl-1 = <&cci2_i2c0_sleep &cci2_i2c1_sleep>;
++			pinctrl-names = "default", "sleep";
++
++			#address-cells = <1>;
++			#size-cells = <0>;
 +
 +			status = "disabled";
 +
-+			ports {
++			cci2_i2c0: i2c-bus@0 {
++				reg = <0>;
++				clock-frequency = <1000000>;
 +				#address-cells = <1>;
 +				#size-cells = <0>;
++			};
 +
-+				csiphy1_in_port: port@0 {
-+					reg = <0>;
-+				};
-+
-+				csiphy1_out_port: port@1 {
-+					reg = <1>;
-+				};
++			cci2_i2c1: i2c-bus@1 {
++				reg = <1>;
++				clock-frequency = <1000000>;
++				#address-cells = <1>;
++				#size-cells = <0>;
 +			};
 +		};
 +
-+		csiphy2: phy@9527000 {
-+			compatible = "qcom,kaanapali-csi2-phy";
-+			reg = <0x0 0x09527000 0x0 0x2000>;
-+
-+			clocks = <&camcc CAM_CC_CSIPHY2_CLK>,
-+				 <&camcc CAM_CC_CSI2PHYTIMER_CLK>,
-+				 <&camcc CAM_CC_CORE_AHB_CLK>;
-+			clock-names = "core",
-+				      "timer",
-+				      "ahb";
-+
-+			interrupts = <GIC_SPI 479 IRQ_TYPE_EDGE_RISING>;
-+
-+			operating-points-v2 = <&csiphy_mxc_opp_table>;
-+
-+			power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>,
-+					<&rpmhpd RPMHPD_MMCX>,
-+					<&rpmhpd RPMHPD_MXC>;
-+			power-domain-names = "top",
-+					     "mmcx",
-+					     "mx";
-+
-+			status = "disabled";
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				csiphy2_in_port: port@0 {
-+					reg = <0>;
-+				};
-+
-+				csiphy2_out_port: port@1 {
-+					reg = <1>;
-+				};
-+			};
-+		};
-+
-+		csiphy3: phy@9529000 {
-+			compatible = "qcom,kaanapali-csi2-phy";
-+			reg = <0x0 0x09529000 0x0 0x2000>;
-+
-+			clocks = <&camcc CAM_CC_CSIPHY3_CLK>,
-+				 <&camcc CAM_CC_CSI3PHYTIMER_CLK>,
-+				 <&camcc CAM_CC_CORE_AHB_CLK>;
-+			clock-names = "core",
-+				      "timer",
-+				      "ahb";
-+
-+			interrupts = <GIC_SPI 448 IRQ_TYPE_EDGE_RISING>;
-+
-+			operating-points-v2 = <&csiphy_mxc_opp_table>;
-+
-+			power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>,
-+					<&rpmhpd RPMHPD_MMCX>,
-+					<&rpmhpd RPMHPD_MXC>;
-+			power-domain-names = "top",
-+					     "mmcx",
-+					     "mx";
-+
-+			status = "disabled";
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				csiphy3_in_port: port@0 {
-+					reg = <0>;
-+				};
-+
-+				csiphy3_out_port: port@1 {
-+					reg = <1>;
-+				};
-+			};
-+		};
-+
-+		csiphy4: phy@952b000 {
-+			compatible = "qcom,kaanapali-csi2-phy";
-+			reg = <0x0 0x0952b000 0x0 0x2000>;
-+
-+			clocks = <&camcc CAM_CC_CSIPHY4_CLK>,
-+				 <&camcc CAM_CC_CSI4PHYTIMER_CLK>,
-+				 <&camcc CAM_CC_CORE_AHB_CLK>;
-+			clock-names = "core",
-+				      "timer",
-+				      "ahb";
-+
-+			interrupts = <GIC_SPI 122 IRQ_TYPE_EDGE_RISING>;
-+
-+			operating-points-v2 = <&csiphy_mxc_opp_table>;
-+
-+			power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>,
-+					<&rpmhpd RPMHPD_MMCX>,
-+					<&rpmhpd RPMHPD_MXC>;
-+			power-domain-names = "top",
-+					     "mmcx",
-+					     "mx";
-+
-+			status = "disabled";
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				csiphy4_in_port: port@0 {
-+					reg = <0>;
-+				};
-+
-+				csiphy4_out_port: port@1 {
-+					reg = <1>;
-+				};
-+			};
-+		};
-+
-+		csiphy5: phy@952d000 {
-+			compatible = "qcom,kaanapali-csi2-phy";
-+			reg = <0x0 0x0952d000 0x0 0x2000>;
-+
-+			clocks = <&camcc CAM_CC_CSIPHY5_CLK>,
-+				 <&camcc CAM_CC_CSI5PHYTIMER_CLK>,
-+				 <&camcc CAM_CC_CORE_AHB_CLK>;
-+			clock-names = "core",
-+				      "timer",
-+				      "ahb";
-+
-+			interrupts = <GIC_SPI 89 IRQ_TYPE_EDGE_RISING>;
-+
-+			operating-points-v2 = <&csiphy_mxc_opp_table>;
-+
-+			power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>,
-+					<&rpmhpd RPMHPD_MMCX>,
-+					<&rpmhpd RPMHPD_MXC>;
-+			power-domain-names = "top",
-+					     "mmcx",
-+					     "mx";
-+
-+			status = "disabled";
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				csiphy5_in_port: port@0 {
-+					reg = <0>;
-+				};
-+
-+				csiphy5_out_port: port@1 {
-+					reg = <1>;
-+				};
-+			};
-+		};
-+
- 		camcc: clock-controller@956d000 {
- 			compatible = "qcom,kaanapali-camcc";
- 			reg = <0x0 0x0956d000 0x0 0x80000>;
-@@ -6548,6 +6927,28 @@ pdp_tx: scp-sram-section@100 {
- 		};
- 	};
+ 		csiphy0: phy@9523000 {
+ 			compatible = "qcom,kaanapali-csi2-phy";
+ 			reg = <0x0 0x09523000 0x0 0x2000>;
+@@ -4536,6 +4647,198 @@ tlmm: pinctrl@f100000 {
+ 			#interrupt-cells = <2>;
+ 			wakeup-parent = <&pdc>;
  
-+	csiphy_mxc_opp_table: opp-table-mxc {
-+		compatible = "operating-points-v2";
++			cci0_i2c0_default: cci0-i2c0-default-state {
++				scl-pins {
++					pins = "gpio110";
++					function = "cci_i2c_scl";
++					drive-strength = <2>;
++					bias-disable;
++				};
 +
-+		opp-300000000 {
-+			opp-hz = /bits/ 64 <300000000>;
-+			required-opps = <&rpmhpd_opp_low_svs_d1>,
-+					<&rpmhpd_opp_low_svs_d1>;
-+		};
++				sda-pins {
++					pins = "gpio109";
++					function = "cci_i2c_sda";
++					drive-strength = <2>;
++					bias-disable;
++				};
++			};
 +
-+		opp-400000000 {
-+			opp-hz = /bits/ 64 <400000000>;
-+			required-opps = <&rpmhpd_opp_low_svs>,
-+					<&rpmhpd_opp_low_svs>;
-+		};
++			cci0_i2c0_sleep: cci0-i2c0-sleep-state {
++				scl-pins {
++					pins = "gpio110";
++					function = "gpio";
++					drive-strength = <2>;
++					bias-disable;
++				};
 +
-+		opp-480000000 {
-+			opp-hz = /bits/ 64 <480000000>;
-+			required-opps = <&rpmhpd_opp_low_svs>,
-+					<&rpmhpd_opp_low_svs>;
-+		};
-+	};
++				sda-pins {
++					pins = "gpio109";
++					function = "gpio";
++					drive-strength = <2>;
++					bias-disable;
++				};
++			};
 +
- 	thermal-zones {
- 		cpullc-0-0-thermal {
- 			thermal-sensors = <&tsens0 0>;
++			cci0_i2c1_default: cci0-i2c1-default-state {
++				scl-pins {
++					pins = "gpio112";
++					function = "cci_i2c_scl";
++					drive-strength = <2>;
++					bias-disable;
++				};
++
++				sda-pins {
++					pins = "gpio111";
++					function = "cci_i2c_sda";
++					drive-strength = <2>;
++					bias-disable;
++				};
++			};
++
++			cci0_i2c1_sleep: cci0-i2c1-sleep-state {
++				scl-pins {
++					pins = "gpio112";
++					function = "gpio";
++					drive-strength = <2>;
++					bias-disable;
++				};
++
++				sda-pins {
++					pins = "gpio111";
++					function = "gpio";
++					drive-strength = <2>;
++					bias-disable;
++				};
++			};
++
++			cci1_i2c0_default: cci1-i2c0-default-state {
++				scl-pins {
++					pins = "gpio114";
++					function = "cci_i2c_scl";
++					drive-strength = <2>;
++					bias-disable;
++				};
++
++				sda-pins {
++					pins = "gpio113";
++					function = "cci_i2c_sda";
++					drive-strength = <2>;
++					bias-disable;
++				};
++			};
++
++			cci1_i2c0_sleep: cci1-i2c0-sleep-state {
++				scl-pins {
++					pins = "gpio114";
++					function = "gpio";
++					drive-strength = <2>;
++					bias-disable;
++				};
++
++				sda-pins {
++					pins = "gpio113";
++					function = "gpio";
++					drive-strength = <2>;
++					bias-disable;
++				};
++			};
++
++			cci1_i2c1_default: cci1-i2c1-default-state {
++				scl-pins {
++					pins = "gpio160";
++					function = "cci_i2c_scl";
++					drive-strength = <2>;
++					bias-disable;
++				};
++
++				sda-pins {
++					pins = "gpio107";
++					function = "cci_i2c_sda";
++					drive-strength = <2>;
++					bias-disable;
++				};
++			};
++
++			cci1_i2c1_sleep: cci1-i2c1-sleep-state {
++				scl-pins {
++					pins = "gpio160";
++					function = "gpio";
++					drive-strength = <2>;
++					bias-disable;
++				};
++
++				sda-pins {
++					pins = "gpio107";
++					function = "gpio";
++					drive-strength = <2>;
++					bias-disable;
++				};
++			};
++
++			cci2_i2c0_default: cci2-i2c0-default-state {
++				scl-pins {
++					pins = "gpio149";
++					function = "cci_i2c_scl";
++					drive-strength = <2>;
++					bias-disable;
++				};
++
++				sda-pins {
++					pins = "gpio108";
++					function = "cci_i2c_sda";
++					drive-strength = <2>;
++					bias-disable;
++				};
++			};
++
++			cci2_i2c0_sleep: cci2-i2c0-sleep-state {
++				scl-pins {
++					pins = "gpio149";
++					function = "gpio";
++					drive-strength = <2>;
++					bias-disable;
++				};
++
++				sda-pins {
++					pins = "gpio108";
++					function = "gpio";
++					drive-strength = <2>;
++					bias-disable;
++				};
++			};
++
++			cci2_i2c1_default: cci2-i2c1-default-state {
++				scl-pins {
++					pins = "gpio116";
++					function = "cci_i2c_scl";
++					drive-strength = <2>;
++					bias-disable;
++				};
++
++				sda-pins {
++					pins = "gpio115";
++					function = "cci_i2c_sda";
++					drive-strength = <2>;
++					bias-disable;
++				};
++			};
++
++			cci2_i2c1_sleep: cci2-i2c1-sleep-state {
++				scl-pins {
++					pins = "gpio116";
++					function = "gpio";
++					drive-strength = <2>;
++					bias-disable;
++				};
++
++				sda-pins {
++					pins = "gpio115";
++					function = "gpio";
++					drive-strength = <2>;
++					bias-disable;
++				};
++			};
++
+ 			hub_i2c0_data_clk: hub-i2c0-data-clk-state {
+ 				/* SDA, SCL */
+ 				pins = "gpio66", "gpio67";
 
 -- 
 2.34.1
