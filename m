@@ -2,58 +2,80 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1655D606A31A
-	for <linux-phy@archiver.kernel.org>; Wed, 28 Oct 2026 11:01:13 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E700C606A323
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Oct 2026 11:13:56 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=D37CoG7l;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=lbJeg6Lg
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=zTuxcJm3;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=eLtM/wgJ
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:References:In-Reply-To:
+	Cc:To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=wH23AxEqsdNGC0yD6Fd93WW9rSUDciCEXOSTR55jYkI=; b=D37CoG7lO9bbeUp3w4uubp76pN
-	URFoiIfpcTC3Zp+5EVS6+PXe8SsVJ4YUbEGKtrrHkiWpqiLuCKnUNSss8L+dDoqe3G5RcfQGZUY3C
-	gN3a9Sv/d9xwB+x/1FXHFeuZO0HGrVWvgHwsX3BRJ/nRHf0gcKk8+2tzyzhvhcU84AQLQQ9cr1UzB
-	m2Pfrvuu3UGOWw8ssjehPW4DTiAlraka5Wd8J6K3AO9+7TuHb0CNozkdLF/ReVxuJIIv5BQaD8Gvq
-	iYpambX4YVd2xhyJz0j4mojMVdaaArbFNDRvtoPekLrD5f9S2MIpGfygUGJyf7TRp1S5K2/w3uvXo
-	rkdh6V/A==;
+	bh=LBrPBdJNzmvQSr5vd589Q1lnVNQS44xgJKMXEe7GdJ8=; b=zTuxcJm3aiJeKyBazHZzhdrWSD
+	+JRToJr8gmccX+VcoMF6pG4lV1+uxSnxEAgABOHTsBY2GmOUfI6/2G1oFzE9PGPlfzE4zpwRPSDD+
+	WT6BRqbSxl/E2bF79s2HC7U0a6XQmhP+St0+ozZyl+E1Mw+vZeRSafxL3SCI2rFGpUqIuMm4y0vT7
+	T+jBfr2tQNX7uDryXDS9Z3Si8kVuRcekjmlTfJc0R8+d+IW9TmrC18MnaJMRKpwA4ZEpEZQf70ep/
+	2n5eLK7PLw4k86zaoXZj9MnHQRI6WesXHHtEMhHi/Rc4K5qxTZOhwxijMhoF59ovEUtoNeqe5BtD2
+	mGMl1uVg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xM1P6-00000006ouO-2PaW;
-	Wed, 28 Oct 2026 11:01:12 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xM1bQ-00000006qFc-2Frf;
+	Wed, 28 Oct 2026 11:13:56 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xM1P4-00000006ou8-3s2a
+	id 1xM1bO-00000006qFU-1Cyh
 	for linux-phy@lists.infradead.org;
-	Wed, 28 Oct 2026 11:01:11 +0000
+	Wed, 28 Oct 2026 11:13:54 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id D693D60211;
-	Wed, 28 Oct 2026 11:01:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 506E41F01825;
-	Wed, 28 Oct 2026 11:01:09 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 5B306600C8;
+	Wed, 28 Oct 2026 11:13:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 338DD1F01825;
+	Wed, 28 Oct 2026 11:13:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793185269;
-	bh=wk+ScG5kq9qmJwLc886hst5GVsKUElr/DlkWQU/p8DE=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=lbJeg6LgiQo3Y7rgYfgcsfOdEeWOazhZDVSY7w6NAmUrldsJM4tMgw8VzcpCLNbk4
-	 0E+kYa95pv20q6R7065JKxCUPtDWae6vNZCIt7SZq8to4siQca7BU7Eda4NzBj7+HN
-	 RaTR0e+p2BEyQCBh1P1A18uBQaKc72eY3yhYDonJD9yIN8tlYIuuwiPEM9y/z7M1aO
-	 x/+G0f2uDrONsxmcUp/uXGWoqcn/eSKCSdyEjH6U5fpQdKpcBHh7/dpwNxHD9RVn/X
-	 FUtfvLLNwpv8RU9vT8E72ZW6S0ckFokq0QmKr4Ao8KXrXE6KOGj9h/OQTMrjgV98ga
-	 B7+IawTbsEA4Q==
-Message-ID: <sashiko-outbox-187785@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v6 10/11] phy: qualcomm: qmp-combo: Fix Glymur v8 DP PHY
- init and configure sequences
-To: "Nabige Aala" <nabige.aala@oss.qualcomm.com>
-Cc: linux-phy@lists.infradead.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
-In-Reply-To: <20261028-glymur-phy-v3-v6-10-1f1d2e565a66@oss.qualcomm.com>
-References: <20261028-glymur-phy-v3-v6-0-1f1d2e565a66@oss.qualcomm.com>
- <20261028-glymur-phy-v3-v6-10-1f1d2e565a66@oss.qualcomm.com>
-Date: Wed, 28 Oct 2026 11:01:08 +0000
+	s=k20260515; t=1793186033;
+	bh=F5Zte+8AHYgNHGdRO053wS8pXJCV78zgJQHjS+bvvIg=;
+	h=Subject:From:To:Cc:In-Reply-To:References:Date;
+	b=eLtM/wgJ+Yw1WoZwScJscpFG7ogXoOj0WwaS9eNeL0W9Lb+ZvvJlPRYjH/hm6wZHq
+	 cpJLnJlr+PZVXfSIFWulei3gVgcnZxG3wje7YJsGen4AMQA01FB2AF4S+olx0aiqAk
+	 TQQ4wHiiVF6AxyUkGPB2FbNZjThhBlYbsmaNHUIVL86dRGpQDWwyWsBzqQBFlgRIKa
+	 qrgdibn+un/s2lNttBauA+I3D1PLh7krFZrXDNJVaQ8BVJQoTeYRRXGmpI6HsNe3Mn
+	 aPiLtB/m05ZominGFPgetJTig1nac69IrOVIc/Ilpvn1yLgSuqdbKQMvomI/yqhoV1
+	 TSWUSGMrxFlMA==
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Subject: Re: [PATCH 3/3] phy: qcom: sgmii-eth: add Nord USXGMII support
+From: Manivannan Sadhasivam <mani@kernel.org>
+To: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Bartosz Golaszewski <brgl@kernel.org>, 
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Lorenzo Bianconi <lorenzo.bianconi@oss.qualcomm.com>, 
+ Shawn Guo <shengchao.guo@oss.qualcomm.com>, 
+ Zhangfei Gao <zhangfei.gao@oss.qualcomm.com>
+In-Reply-To: <20260923-nord_ethernet_serdes-v1-3-f8ac1c487882@oss.qualcomm.com>
+References: <20260923-nord_ethernet_serdes-v1-0-f8ac1c487882@oss.qualcomm.com>
+ <20260923-nord_ethernet_serdes-v1-3-f8ac1c487882@oss.qualcomm.com>
+Date: Wed, 28 Oct 2026 16:43:36 +0530
+Message-Id: <179318601645.5872.14222392238387100610.b4-reply@b4>
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=openpgp-sha256; l=17801; i=mani@kernel.org;
+ h=from:subject:message-id; bh=phmNu8FS4zZxKTeCViylN+gK9fCWU+OJWNMYsvS1Xv0=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq4djjA1W1cyGIMH9LH2VRl/NMCVHKoLtQqTQYB
+ TPQAEl3gkqJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCauHY4wAKCRBVnxHm/pHO
+ 9RWSB/4/lCpdJExz3JAm0N2lVrk8rOtDjNet8xes2R0Bt+hhd2QkwoFPa7b8PCSD96Ifjg/pFuM
+ Em/AQqRfz53Q0NkwuntlOzvqJj/IYrb4GE7BkQsSyQhEcuznZALsf/VxKrRd2TjSC6o6AWOOFj0
+ 8OD1lvsHLjrDkeMIjMWIZp0uSmu1loR992Q+t8uE5APDVmt1wp9tt4HEGfvxn/aYNxWi+Zhafrw
+ 1xt72v5z5SspRM4LUue6xCVeiot6wSGNGSqKorEBDf3acNtR7JLvE3JSArfCcCC7xP5sRFI6yYX
+ POtZJ5kzhCIQHMP3XBi1rP6y8lLhs0M7VZibkekWlhDCDlmv
+X-Developer-Key: i=mani@kernel.org; a=openpgp;
+ fpr=C668AEC3C3188E4C611465E7488550E901166008
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,207 +85,349 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-12.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,UNWANTED_LANGUAGE_BODY,USER_AGENT_GIT autolearn=ham
 	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-NSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIHBoeTogcWNvbS1xbXAt
-Y29tYm86IHdyb25nIGhlbHBlciBjYWxsZWQgaW4gcW1wX3Y4X2NvbmZpZ3VyZV9kcF9waHkoKQot
-IFtNZWRpdW1dIHBoeTogcWNvbS1xbXAtY29tYm86IHdyb25nIENMS0JVRl9FTkFCTEUgdmFsdWUg
-aW4gcW1wX3Y4X2NvbmZpZ3VyZV9kcF9waHkoKQotIFtNZWRpdW1dIHBoeTogcWNvbS1xbXAtY29t
-Ym86IG1pc3NpbmcgQklUKDEpIHBvbGwgaW4gcW1wX3Y4X2NvbmZpZ3VyZV9kcF9waHkoKQotIFtN
-ZWRpdW1dIHBoeTogcWNvbS1xbXAtY29tYm86IHY4IGRlZmF1bHQgaW4gcW1wX3Y0X2NvbmZpZ3Vy
-ZV9kcF90eCgpIGFmZmVjdHMgdjQtdjYKLSBbTWVkaXVtXSBwaHk6IHFjb20tcW1wLWNvbWJvOiBt
-aXNzaW5nIHY4IFRYMSBhbmQgTE5fRFJWX0xWTCB1cGRhdGVzIG9uIHNldF92b2x0YWdlcwotLQoK
-Y29tbWl0IDEzYzg1NWM0ODllN2ZiODlmZjgyZTEzYWUzMDIwMzQ4YjBkMTQ5MzkKQXV0aG9yOiBS
-aXRlc2ggS3VtYXIgPHJpdGVzaC5rdW1hckBvc3MucXVhbGNvbW0uY29tPgoKcGh5OiBxdWFsY29t
-bTogcW1wLWNvbWJvOiBGaXggR2x5bXVyIHY4IERQIFBIWSBpbml0IGFuZCBjb25maWd1cmUgc2Vx
-dWVuY2VzCgpUaGlzIGNvbW1pdCB1cGRhdGVzIHRoZSBHbHltdXIgdjggRGlzcGxheVBvcnQgUEhZ
-IGluaXRpYWxpemF0aW9uIGFuZApjb25maWd1cmF0aW9uIHNlcXVlbmNlcyBpbiBxbXBfdjhfZHBf
-YXV4X2luaXQoKSwgcW1wX3Y0X2NvbmZpZ3VyZV9kcF90eCgpLAphbmQgcW1wX3Y4X2NvbmZpZ3Vy
-ZV9kcF9waHkoKSB0byBmaXggbGluayB0cmFpbmluZyBmYWlsdXJlcyBhbmQgTEZQUwpzaWduYWxp
-bmcgdGltaW5nLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20t
-cW1wLWNvbWJvLmMgYi9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtY29tYm8uYwo+
-IGluZGV4IDEwYjNlZmU0ODcyMWQuLmIzNGI4OTJjMjcwMjYgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVy
-cy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLWNvbWJvLmMKPiArKysgYi9kcml2ZXJzL3BoeS9x
-dWFsY29tbS9waHktcWNvbS1xbXAtY29tYm8uYwoKWyAuLi4gXQoKPiBAQCAtMzkzNiw4ICszOTM5
-LDggQEAgc3RhdGljIHZvaWQgcW1wX3Y0X2NvbmZpZ3VyZV9kcF90eChzdHJ1Y3QgcW1wX2NvbWJv
-ICpxbXApCj4gIAl3cml0ZWwoMHgyNywgcW1wLT5kcF90eCArIGNmZy0+cmVnc1tRUEhZX1RYX1RY
-X0RSVl9MVkxdKTsKPiAgCXdyaXRlbCgweDI3LCBxbXAtPmRwX3R4MiArIGNmZy0+cmVnc1tRUEhZ
-X1RYX1RYX0RSVl9MVkxdKTsKPiAgCj4gLQl3cml0ZWwoMHgyMCwgcW1wLT5kcF90eCArIGNmZy0+
-cmVnc1tRUEhZX1RYX1RYX0VNUF9QT1NUMV9MVkxdKTsKPiAtCXdyaXRlbCgweDIwLCBxbXAtPmRw
-X3R4MiArIGNmZy0+cmVnc1tRUEhZX1RYX1RYX0VNUF9QT1NUMV9MVkxdKTsKPiArCXdyaXRlbCgw
-eDJiLCBxbXAtPmRwX3R4ICsgY2ZnLT5yZWdzW1FQSFlfVFhfVFhfRU1QX1BPU1QxX0xWTF0pOwo+
-ICsJd3JpdGVsKDB4MmIsIHFtcC0+ZHBfdHgyICsgY2ZnLT5yZWdzW1FQSFlfVFhfVFhfRU1QX1BP
-U1QxX0xWTF0pOwo+ICAKPiAgCXFtcF9jb21ib19jb25maWd1cmVfZHBfc3dpbmcocW1wKTsKPiAg
-fQoKW1NldmVyaXR5OiBNZWRpdW1dCkRvZXMgbW9kaWZ5aW5nIHFtcF92NF9jb25maWd1cmVfZHBf
-dHgoKSBpbiBkcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtY29tYm8uYwpjYXVzZSBh
-IHJlZ3Jlc3Npb24gb24gbm9uLUdseW11ciBwbGF0Zm9ybXMsIGFuZCBkb2VzIGl0IGxlYXZlIEds
-eW11ciB2OCBMQUxCClRYMSBhbmQgUENTIGxhbmUgZHJpdmUgcmVnaXN0ZXJzIHVudXBkYXRlZCBk
-dXJpbmcgbGluayB0cmFpbmluZz8KCnFtcF92NF9jb25maWd1cmVfZHBfdHgoKSBpcyB0aGUgc2hh
-cmVkIC5jb25maWd1cmVfZHBfdHggY2FsbGJhY2sgdXNlZCBhY3Jvc3MKUU1QIHY0LCB2NSwgYW5k
-IHY2IHBsYXRmb3JtcyAoc2FyMjEzMHAsIHNjODE4MHgsIHNjODI4MHhwLCB4MWU4MDEwMCwgc204
-MjUwLApzbTgzNTAsIHNtODQ3NSwgc204NTUwLCBzbTg2NTAsIHNtODc1MCwgYW5kIG5vcmQpIGlu
-IGFkZGl0aW9uIHRvIGdseW11ci4gT24KdjQsIHY1LCBhbmQgdjYgcGxhdGZvcm1zLCB0aGUgaGFy
-ZHdhcmUgZGVmYXVsdCBmb3IgUVBIWV9UWF9UWF9FTVBfUE9TVDFfTFZMIGlzCjB4MjAsIG1hdGNo
-aW5nIHFtcF92NF9kcF90eF90YmwgYW5kIHFtcF92NF9jb25maWd1cmVfZHBfcGh5KCk6Cgpkcml2
-ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtY29tYm8uYzpxbXBfdjRfY29uZmlndXJlX2Rw
-X3BoeSgpIHsKCS4uLgoJd3JpdGVsKDB4MjcsIHFtcC0+ZHBfdHggKyBjZmctPnJlZ3NbUVBIWV9U
-WF9UWF9EUlZfTFZMXSk7Cgl3cml0ZWwoMHgyNywgcW1wLT5kcF90eDIgKyBjZmctPnJlZ3NbUVBI
-WV9UWF9UWF9EUlZfTFZMXSk7CgoJd3JpdGVsKDB4MjAsIHFtcC0+ZHBfdHggKyBjZmctPnJlZ3Nb
-UVBIWV9UWF9UWF9FTVBfUE9TVDFfTFZMXSk7Cgl3cml0ZWwoMHgyMCwgcW1wLT5kcF90eDIgKyBj
-ZmctPnJlZ3NbUVBIWV9UWF9UWF9FTVBfUE9TVDFfTFZMXSk7CgkuLi4KfQoKQ2hhbmdpbmcgMHgy
-MCB0byAweDJiIGhlcmUgYWx0ZXJzIHRoZSBkZWZhdWx0IFFQSFlfVFhfVFhfRU1QX1BPU1QxX0xW
-TCB2YWx1ZQp3cml0dGVuIGR1cmluZyBwaHlfcG93ZXJfb24oKSAtPiBxbXBfY29tYm9fZHBfcG93
-ZXJfb24oKSBhbmQgcGh5X2NvbmZpZ3VyZSgpIC0+CnFtcF9jb21ib19kcF9jb25maWd1cmUoKSBv
-biBhbGwgdjQsIHY1LCBhbmQgdjYgcGxhdGZvcm1zIChhbmQgbGVhdmVzIDB4MmIKcHJvZ3JhbW1l
-ZCBpZiBxbXBfY29tYm9fY29uZmlndXJlX2RwX3N3aW5nKCkgcmV0dXJucyAtRUlOVkFMIG9uIGFu
-IHVuc3VwcG9ydGVkCnN3aW5nL3ByZS1lbXBoYXNpcyBjb21iaW5hdGlvbikuIE1lYW53aGlsZSwg
-b24gR2x5bXVyIHY4LCBxbXBfdjRfY29uZmlndXJlX2RwX3R4KCkKc3RpbGwgd3JpdGVzIHRoZSB2
-NCBkZWZhdWx0IDB4MjcgdG8gUVBIWV9UWF9UWF9EUlZfTFZMIGV2ZW4gdGhvdWdoCnFtcF92OF9u
-M3BfZHBfdHhfdGJsIHVzZXMgMHgwMCBhbmQgdGhpcyBwYXRjaCByZW1vdmVzIHRoZSBwb3N0LWxv
-Y2sgMHgwMCB3cml0ZQpmcm9tIHFtcF92OF9jb25maWd1cmVfZHBfcGh5KCkuCgpGdXJ0aGVybW9y
-ZSwgb24gR2x5bXVyIHY4LCBlYWNoIExBTEIgVFggYmxvY2sgaGFzIHNlcGFyYXRlIFRYMCBhbmQg
-VFgxCnJlZ2lzdGVycywgYnV0IHFtcF92OF9uM191c2I0M2RwcGh5X3JlZ3NfbGF5b3V0IG9ubHkg
-bWFwcyB0aGUgZ2VuZXJpYyByZWdpc3RlcgpzbG90cyB0byBUWDA6CgoJW1FQSFlfVFhfVFhfRFJW
-X0xWTF0JCQk9IFFTRVJERVNfVjhfTEFMQl9UWDBfRFJWX0xWTCwKCVtRUEhZX1RYX1RYX0VNUF9Q
-T1NUMV9MVkxdCQk9IFFTRVJERVNfVjhfTEFMQl9UWDBfRU1QX1BPU1QxX0xWTCwKCkR1cmluZyBE
-aXNwbGF5UG9ydCBsaW5rIHRyYWluaW5nLCB3aGVuIG1zbV9kcF9jdHJsX2xpbmtfdHJhaW5fMSgp
-IG9yCm1zbV9kcF9jdHJsX2xpbmtfdHJhaW5fMigpIGNhbGxzIG1zbV9kcF9jdHJsX3VwZGF0ZV9w
-aHlfdnhfcHgoKSAtPgptc21fZHBfY3RybF9zZXRfdnhfcHgoKSAtPiBwaHlfY29uZmlndXJlKCkg
-d2l0aCBwaHlfb3B0cy0+ZHAuc2V0X3ZvbHRhZ2VzID0gMSwKcW1wX2NvbWJvX2RwX2NvbmZpZ3Vy
-ZSgpIG9ubHkgY2FsbHMgY2ZnLT5jb25maWd1cmVfZHBfdHgocW1wKToKCmRyaXZlcnMvcGh5L3F1
-YWxjb21tL3BoeS1xY29tLXFtcC1jb21iby5jOnFtcF9jb21ib19kcF9jb25maWd1cmUoKSB7Cgku
-Li4KCW1lbWNweSgmcW1wLT5kcF9vcHRzLCBkcF9vcHRzLCBzaXplb2YoKmRwX29wdHMpKTsKCWlm
-IChxbXAtPmRwX29wdHMuc2V0X3ZvbHRhZ2VzKSB7CgkJY2ZnLT5jb25maWd1cmVfZHBfdHgocW1w
-KTsKCQlxbXAtPmRwX29wdHMuc2V0X3ZvbHRhZ2VzID0gMDsKCX0KCS4uLgp9CgpCZWNhdXNlIHFt
-cF92NF9jb25maWd1cmVfZHBfdHgoKSAtPiBxbXBfY29tYm9fY29uZmlndXJlX2RwX3N3aW5nKCkg
-b25seSB3cml0ZXMKUVBIWV9UWF9UWF9EUlZfTFZMIGFuZCBRUEhZX1RYX1RYX0VNUF9QT1NUMV9M
-VkwsIFFTRVJERVNfVjhfTEFMQl9UWDFfRFJWX0xWTAoobGVmdCBhdCAweDAwIHdpdGhvdXQgRFBf
-UEhZX1RYbl9UWF9EUlZfTFZMX01VWF9FTikgYW5kClFTRVJERVNfVjhfTEFMQl9UWDFfRU1QX1BP
-U1QxX0xWTCAobGVmdCBhdCAweDJiKSBhcmUgbmV2ZXIgdXBkYXRlZCwgYW5kClFTRVJERVNfVjhf
-RFBfUEhZX0xOMF9EUlZfTFZMIGFuZCBRU0VSREVTX1Y4X0RQX1BIWV9MTjFfRFJWX0xWTCAod2hp
-Y2ggYXJlIG9ubHkKd3JpdHRlbiBpbiBxbXBfdjhfY29uZmlndXJlX2RwX2Nsb2NrcygpIGR1cmlu
-ZyBwaHlfcG93ZXJfb24oKSkgYWxzbyByZW1haW4gYXQKdGhlaXIgaW5pdGlhbCB2X2xldmVsPTAg
-LyBwX2xldmVsPTAgdmFsdWVzIHdoZW4gdm9sdGFnZSBzd2luZyBvciBwcmUtZW1waGFzaXMKbGV2
-ZWxzIGFyZSBhZGp1c3RlZCBkdXJpbmcgbGluayB0cmFpbmluZy4gU2hvdWxkIEdseW11ciB2OCBo
-YXZlIGl0cyBvd24KLmNvbmZpZ3VyZV9kcF90eCBjYWxsYmFjayB0aGF0IHVwZGF0ZXMgYm90aCBU
-WDAvVFgxIGFuZCB0aGUgUENTIExOMF9EUlZfTFZMIC8KTE4xX0RSVl9MVkwgcmVnaXN0ZXJzIHdo
-aWxlIGtlZXBpbmcgcW1wX3Y0X2NvbmZpZ3VyZV9kcF90eCgpIHVuY2hhbmdlZCBmb3IKdjQsIHY1
-LCBhbmQgdjY/Cgo+IEBAIC00MTI2LDM5ICs0MTI5LDUyIEBAIHN0YXRpYyBpbnQgcW1wX3Y4X2Nv
-bmZpZ3VyZV9kcF9waHkoc3RydWN0IHFtcF9jb21ibyAqcW1wKQo+ICAJfSBlbHNlIGlmIChkcF9v
-cHRzLT5sYW5lcyA9PSAyKSB7Cj4gIAkJYmlhczBfZW4gPSByZXZlcnNlID8gMHgzZiA6IDB4MTU7
-Cj4gIAkJYmlhczFfZW4gPSByZXZlcnNlID8gMHgxNSA6IDB4M2Y7Cj4gLQkJZHJ2cjBfZW4gPSAw
-eDEwOwo+IC0JCWRydnIxX2VuID0gMHgxMDsKPiArCQlkcnZyMF9lbiA9IHJldmVyc2UgPyAweDMw
-IDogMHgxMDsKPiArCQlkcnZyMV9lbiA9IHJldmVyc2UgPyAweDEwIDogMHgzMDsKPiAgCX0gZWxz
-ZSB7Cj4gIAkJYmlhczBfZW4gPSAweDNmOwo+ICAJCWJpYXMxX2VuID0gMHgzZjsKPiAtCQlkcnZy
-MF9lbiA9IDB4MzQ7Cj4gLQkJZHJ2cjFfZW4gPSAweDM0Owo+ICsJCWRydnIwX2VuID0gMHgzMDsK
-PiArCQlkcnZyMV9lbiA9IDB4MzA7Cj4gIAl9Cj4gIAo+ICsJd3JpdGVsKDB4OGYsIHFtcC0+ZHBf
-dHggKyBRU0VSREVTX1Y4X0xBTEJfQ0xLQlVGX0VOQUJMRSk7Cj4gKwl3cml0ZWwoMHg4NywgcW1w
-LT5kcF90eDIgKyBRU0VSREVTX1Y4X0xBTEJfQ0xLQlVGX0VOQUJMRSk7CgpbU2V2ZXJpdHk6IE1l
-ZGl1bV0KU2hvdWxkIHRoZSB3cml0ZSB0byBxbXAtPmRwX3R4ICsgUVNFUkRFU19WOF9MQUxCX0NM
-S0JVRl9FTkFCTEUgaW4KcW1wX3Y4X2NvbmZpZ3VyZV9kcF9waHkoKSB1c2UgMHg4NyBpbnN0ZWFk
-IG9mIDB4OGY/CgpUaGUgY29tbWl0IG1lc3NhZ2Ugc3RhdGVzOgoKICBBZGQgQ0xLQlVGX0VOQUJM
-RSAoMHg4NykgcHJvZ3JhbW1pbmcgZm9yIGJvdGggVFggbGFuZXMgYmVmb3JlIGRyaXZlcgogIGVu
-YWJsZSB3cml0ZXMKCkFuZCBxbXBfdjhfbjNwX2RwX3R4X3RibCBpbiBkcml2ZXJzL3BoeS9xdWFs
-Y29tbS9waHktcWNvbS1xbXAtY29tYm8uYyBhbHNvCmluaXRpYWxpemVzIFFTRVJERVNfVjhfTEFM
-Ql9DTEtCVUZfRU5BQkxFIHRvIDB4ODc6CgoJUU1QX1BIWV9JTklUX0NGRyhRU0VSREVTX1Y4X0xB
-TEJfQ0xLQlVGX0VOQUJMRSwgMHg4NyksCgpXcml0aW5nIDB4OGYgdG8gcW1wLT5kcF90eCB3aGls
-ZSB3cml0aW5nIDB4ODcgdG8gcW1wLT5kcF90eDIgYXN5bW1ldHJpY2FsbHkKc2V0cyBCSVQoMykg
-b24gZHBfdHggcmVnYXJkbGVzcyBvZiBUeXBlLUMgb3JpZW50YXRpb24gd2hlbgpwaHlfcG93ZXJf
-b24oKSAtPiBxbXBfY29tYm9fZHBfcG93ZXJfb24oKSAtPiBxbXBfdjhfY29uZmlndXJlX2RwX3Bo
-eSgpIHJ1bnMuCgo+ICAJd3JpdGVsKGRydnIwX2VuLCBxbXAtPmRwX3R4ICsgY2ZnLT5yZWdzW1FQ
-SFlfVFhfSElHSFpfRFJWUl9FTl0pOwo+ICAJd3JpdGVsKGJpYXMwX2VuLCBxbXAtPmRwX3R4ICsg
-Y2ZnLT5yZWdzW1FQSFlfVFhfVFJBTlNDRUlWRVJfQklBU19FTl0pOwo+ICAJd3JpdGVsKGRydnIx
-X2VuLCBxbXAtPmRwX3R4MiArIGNmZy0+cmVnc1tRUEhZX1RYX0hJR0haX0RSVlJfRU5dKTsKPiAg
-CXdyaXRlbChiaWFzMV9lbiwgcW1wLT5kcF90eDIgKyBjZmctPnJlZ3NbUVBIWV9UWF9UUkFOU0NF
-SVZFUl9CSUFTX0VOXSk7Cj4gIAo+ICsJd3JpdGVsKDB4MDMsIHFtcC0+ZHBfZHBfcGh5ICsgUVNF
-UkRFU19WOF9EUF9QSFlfVFNZTkNfT1ZSRCk7Cj4gKwl3cml0ZWwoMHgyMywgcW1wLT5kcF9kcF9w
-aHkgKyBRU0VSREVTX1Y4X0RQX1BIWV9UU1lOQ19PVlJEKTsKPiArCXdyaXRlbCgweDIyLCBxbXAt
-PmRwX2RwX3BoeSArIFFTRVJERVNfVjhfRFBfUEhZX1RTWU5DX09WUkQpOwo+ICsKPiArCXdyaXRl
-bCgweDBhLCBxbXAtPmRwX3R4ICsgUVNFUkRFU19WOF9MQUxCX1JFU0VUX1RTWU5DX0VOX0NUUkwp
-Owo+ICsJd3JpdGVsKDB4MGEsIHFtcC0+ZHBfdHgyICsgUVNFUkRFU19WOF9MQUxCX1JFU0VUX1RT
-WU5DX0VOX0NUUkwpOwo+ICsKPiArCXdyaXRlbCgweDNlLCBxbXAtPmRwX2RwX3BoeSArIFFTRVJE
-RVNfVjhfRFBfUEhZX1RTWU5DX09WUkQpOwo+ICsKPiAgCXdyaXRlbCgweDA4LCBxbXAtPmRwX2Rw
-X3BoeSArIFFTRVJERVNfRFBfUEhZX0NGRyk7Cj4gIAl1ZGVsYXkoMTAwKTsKPiAgCXdyaXRlbCgw
-eDA5LCBxbXAtPmRwX2RwX3BoeSArIFFTRVJERVNfRFBfUEhZX0NGRyk7Cj4gIAl1ZGVsYXkoNTAw
-KTsKPiAgCj4gLQlpZiAocmVhZGxfcG9sbF90aW1lb3V0KHFtcC0+ZHBfZHBfcGh5ICsgY2ZnLT5y
-ZWdzW1FQSFlfRFBfUEhZX1NUQVRVU10sCj4gKwlyZXQgPSByZWFkbF9wb2xsX3RpbWVvdXQocW1w
-LT5kcF9kcF9waHkgKyBjZmctPnJlZ3NbUVBIWV9EUF9QSFlfU1RBVFVTXSwKPiAgCQkJc3RhdHVz
-LAo+IC0JCQkoKHN0YXR1cyAmIEJJVCgxKSkgPiAwKSwKPiArCQkJKChzdGF0dXMgJiBCSVQoMCkp
-ID4gMCksCj4gIAkJCTUwMCwKPiAtCQkJMTAwMDApKQo+IC0JCXJldHVybiAtRVRJTUVET1VUOwo+
-ICsJCQkxMDAwMCk7Cj4gKwlpZiAocmV0KQo+ICsJCXJldHVybiByZXQ7CgpbU2V2ZXJpdHk6IEhp
-Z2hdCldpbGwgcW1wX3Y4X2NvbmZpZ3VyZV9kcF9waHkoKSBldmVyIHJlYWNoIHRoaXMgUVBIWV9E
-UF9QSFlfU1RBVFVTIEJJVCgwKSBwb2xsCndoZW4gY2FsbGVkIGZyb20gcGh5X3Bvd2VyX29uKCkg
-LT4gcW1wX2NvbWJvX2RwX3Bvd2VyX29uKCkgb24gR2x5bXVyIHY4PwoKQXQgdGhlIHN0YXJ0IG9m
-IHFtcF92OF9jb25maWd1cmVfZHBfcGh5KCkgaW4KZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFj
-b20tcW1wLWNvbWJvLmMsIGl0IHN0aWxsIGNhbGxzCnFtcF92NDU2X2NvbmZpZ3VyZV9kcF9waHko
-KToKCmRyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1jb21iby5jOnFtcF92OF9jb25m
-aWd1cmVfZHBfcGh5KCkgewoJLi4uCglyZXQgPSBxbXBfdjQ1Nl9jb25maWd1cmVfZHBfcGh5KHFt
-cCk7CglpZiAocmV0IDwgMCkKCQlyZXR1cm4gcmV0OwoJLi4uCn0KCkFuZCBxbXBfdjQ1Nl9jb25m
-aWd1cmVfZHBfcGh5KCkgd3JpdGVzIDB4MTkgdG8gUVNFUkRFU19EUF9QSFlfQ0ZHIGFuZCBwb2xs
-cwpRUEhZX0RQX1BIWV9TVEFUVVMgZm9yIGJvdGggQklUKDApIGFuZCBCSVQoMSk6Cgpkcml2ZXJz
-L3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtY29tYm8uYzpxbXBfdjQ1Nl9jb25maWd1cmVfZHBf
-cGh5KCkgewoJLi4uCgl3cml0ZWwoMHgxOSwgcW1wLT5kcF9kcF9waHkgKyBRU0VSREVTX0RQX1BI
-WV9DRkcpOwoKCWlmIChyZWFkbF9wb2xsX3RpbWVvdXQocW1wLT5kcF9kcF9waHkgKyBjZmctPnJl
-Z3NbUVBIWV9EUF9QSFlfU1RBVFVTXSwKCQkJc3RhdHVzLAoJCQkoKHN0YXR1cyAmIEJJVCgwKSkg
-PiAwKSwKCQkJNTAwLAoJCQkxMDAwMCkpCgkJcmV0dXJuIC1FVElNRURPVVQ7CgoJaWYgKHJlYWRs
-X3BvbGxfdGltZW91dChxbXAtPmRwX2RwX3BoeSArIGNmZy0+cmVnc1tRUEhZX0RQX1BIWV9TVEFU
-VVNdLAoJCQlzdGF0dXMsCgkJCSgoc3RhdHVzICYgQklUKDEpKSA+IDApLAoJCQk1MDAsCgkJCTEw
-MDAwKSkKCQlyZXR1cm4gLUVUSU1FRE9VVDsKCglyZXR1cm4gMDsKfQoKRWFybGllciBpbiB0aGUg
-c2VyaWVzLCBjb21taXQgYzBkOGVhOWQzNDc1ICgicGh5OiBxdWFsY29tbTogcW1wLWNvbWJvOiBF
-eHRyYWN0CmNvbW1vbiBEUCBQSFkgaW5pdCBzZXF1ZW5jZSIpIHN0YXRlZCB0aGF0IGl0IHdvdWxk
-IHVwZGF0ZQpxbXBfdjhfY29uZmlndXJlX2RwX3BoeSgpIHRvIGNhbGwgcW1wX2NvbWJvX2NvbmZp
-Z3VyZV9kcF9waHlfY29tbW9uKCkgZGlyZWN0bHkKaW5zdGVhZCBvZiBnb2luZyB0aHJvdWdoIHFt
-cF92NDU2X2NvbmZpZ3VyZV9kcF9waHkoKSwgYnV0IGl0IHVwZGF0ZWQKcW1wX3Y0X2NvbmZpZ3Vy
-ZV9kcF9waHkoKSBpbnN0ZWFkOgoKZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLWNv
-bWJvLmM6cW1wX3Y0X2NvbmZpZ3VyZV9kcF9waHkoKSB7CgkuLi4KCXJldCA9IHFtcF9jb21ib19j
-b25maWd1cmVfZHBfcGh5X2NvbW1vbihxbXApOwoJaWYgKHJldCA8IDApCgkJcmV0dXJuIHJldDsK
-CS4uLgp9CgpCZWNhdXNlIHFtcF92OF9jb25maWd1cmVfZHBfcGh5KCkgc3RpbGwgY2FsbHMgcW1w
-X3Y0NTZfY29uZmlndXJlX2RwX3BoeSgpLAp3b24ndCB0aGUgQklUKDEpIHBvbGwgb24gUVBIWV9E
-UF9QSFlfU1RBVFVTIGluc2lkZSBxbXBfdjQ1Nl9jb25maWd1cmVfZHBfcGh5KCkKdGltZSBvdXQg
-d2l0aCAtRVRJTUVET1VUIG9uIEdseW11ciB2OCBhbmQgYWJvcnQgcW1wX3Y4X2NvbmZpZ3VyZV9k
-cF9waHkoKQpiZWZvcmUgYW55IG9mIHRoZSB2OCBUWCwgVFNZTkMsIG9yIFBIWSBjb25maWd1cmF0
-aW9uIGluIHRoaXMgZnVuY3Rpb24gaXMKZXhlY3V0ZWQgKHdoaWxlIHY0LCB2NSwgYW5kIHY2IHBs
-YXRmb3JtcyB1c2luZyBxbXBfdjRfY29uZmlndXJlX2RwX3BoeSgpIHNraXAKcW1wX3Y0NTZfY29u
-ZmlndXJlX2RwX3BoeSgpKT8KCj4gLQl3cml0ZWwoMHgwMCwgcW1wLT5kcF90eCArIGNmZy0+cmVn
-c1tRUEhZX1RYX1RYX0RSVl9MVkxdKTsKPiAtCXdyaXRlbCgweDAwLCBxbXAtPmRwX3R4MiArIGNm
-Zy0+cmVnc1tRUEhZX1RYX1RYX0RSVl9MVkxdKTsKPiAgCj4gLQl3cml0ZWwoMHgyYiwgcW1wLT5k
-cF90eCArIGNmZy0+cmVnc1tRUEhZX1RYX1RYX0VNUF9QT1NUMV9MVkxdKTsKPiAtCXdyaXRlbCgw
-eDJiLCBxbXAtPmRwX3R4MiArIGNmZy0+cmVnc1tRUEhZX1RYX1RYX0VNUF9QT1NUMV9MVkxdKTsK
-PiArCXJldCA9IHJlYWRsX3BvbGxfdGltZW91dChxbXAtPmRwX3NlcmRlcyArIGNmZy0+cmVnc1tR
-UEhZX0NPTV9DTU5fU1RBVFVTXSwKPiArCQkJc3RhdHVzLAo+ICsJCQkoKHN0YXR1cyAmIEJJVCgw
-KSkgPiAwKSwKPiArCQkJNTAwLAo+ICsJCQkxMDAwMCk7Cj4gIAo+IC0JcmV0dXJuIDA7Cj4gKwly
-ZXR1cm4gcmV0Owo+ICB9CgpbU2V2ZXJpdHk6IE1lZGl1bV0KSXMgdGhlIHNlY29uZCBRUEhZX0NP
-TV9DTU5fU1RBVFVTIHBvbGwgZm9yIEJJVCgxKSBtaXNzaW5nIGF0IHRoZSBlbmQgb2YKcW1wX3Y4
-X2NvbmZpZ3VyZV9kcF9waHkoKSBpbiBkcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAt
-Y29tYm8uYz8KClRoZSBjb21taXQgbWVzc2FnZSBzdGF0ZXM6CgogIFJlcGxhY2UgcG9zdC1sb2Nr
-IFRYX0RSVl9MVkwvVFhfRU1QIHdyaXRlcyB3aXRoIHR3byBDT01fQ01OX1NUQVRVUwogIHBvbGxz
-IChCSVQoMCkgYW5kIEJJVCgxKSkgdG8gcHJvcGVybHkgdmVyaWZ5IFBMTCBsb2NrIGNvbXBsZXRp
-b24KCkluIHFtcF9jb21ib19jb25maWd1cmVfZHBfcGh5X2NvbW1vbigpLCBQTEwgbG9jayB2ZXJp
-ZmljYXRpb24gcG9sbHMgQklUKDApIGFuZAp0aGVuIEJJVCgxKSBvZiBRUEhZX0NPTV9DTU5fU1RB
-VFVTOgoKZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLWNvbWJvLmM6cW1wX2NvbWJv
-X2NvbmZpZ3VyZV9kcF9waHlfY29tbW9uKCkgewoJLi4uCglyZXQgPSByZWFkbF9wb2xsX3RpbWVv
-dXQocW1wLT5kcF9zZXJkZXMgKyBjZmctPnJlZ3NbUVBIWV9DT01fQ01OX1NUQVRVU10sCgkJCXN0
-YXR1cywKCQkJKChzdGF0dXMgJiBCSVQoMCkpID4gMCksCgkJCTUwMCwKCQkJMTAwMDApOwoJaWYg
-KHJldCkKCQlyZXR1cm4gcmV0OwoKCXJldCA9IHJlYWRsX3BvbGxfdGltZW91dChxbXAtPmRwX3Nl
-cmRlcyArIGNmZy0+cmVnc1tRUEhZX0NPTV9DTU5fU1RBVFVTXSwKCQkJc3RhdHVzLAoJCQkoKHN0
-YXR1cyAmIEJJVCgxKSkgPiAwKSwKCQkJNTAwLAoJCQkxMDAwMCk7CgkuLi4KfQoKSG93ZXZlciwg
-cW1wX3Y4X2NvbmZpZ3VyZV9kcF9waHkoKSBvbmx5IHBvbGxzIEJJVCgwKSBvZiBRUEhZX0NPTV9D
-TU5fU1RBVFVTCmFuZCByZXR1cm5zIGJlZm9yZSBjaGVja2luZyBCSVQoMSkuIFNob3VsZCB0aGUg
-c2Vjb25kIHJlYWRsX3BvbGxfdGltZW91dCgpIGZvcgpCSVQoMSkgYmUgYWRkZWQgaGVyZSBhcyB3
-ZWxsPwoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRj
-aHNldC8yMDI2MTAyOC1nbHltdXItcGh5LXYzLXY2LTAtMWYxZDJlNTY1YTY2QG9zcy5xdWFsY29t
-bS5jb20/cGFydD0xMAoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3Rz
-LmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
-Zm8vbGludXgtcGh5Cg==
+On 2026-09-23 05:34 +0530, Mohd Ayaan Anwar wrote:
+> Nord uses a QMP v7 SerDes block which is an updated version of the
+> SGMII SerDes PHY IP.
+> 
+> The SGMII SerDes PHY supports multiple operating modes by programming
+> different SerDes line rates. The driver currently handles SGMII and
+> 2500BASE-X configurations only.
+> 
+> Add support for configuring the SerDes to operate at 10.3125 Gbaud,
+> enabling both USXGMII and 10GBASE-R PHY interface modes. Finally, add a
+> driver compatible for Nord.
+> 
+> Select USXGMII as the initial interface mode for Nord. phy_power_on()
+> can run before the consumer calls set_mode(), so this ensures that the
+> first calibration selects the 10.3125 Gbaud programming sequence.
+> 
+> Signed-off-by: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcs-sgmii.h      |   5 +
+>  drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v7.h |   2 +
+>  .../phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v7.h    |   9 ++
+>  drivers/phy/qualcomm/phy-qcom-sgmii-eth.c          | 166 ++++++++++++++++++++-
+>  4 files changed, 177 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-sgmii.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-sgmii.h
+> index 4d8c962f5e0f52974f3edd5d1acdd8da535de200..67ab2fe085de3d90520cfc43cc0ac7abaab1f21d 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-sgmii.h
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-sgmii.h
+> @@ -10,11 +10,16 @@
+>  #define QPHY_PCS_POWER_DOWN_CONTROL			0x004
+>  #define QPHY_PCS_SW_RESET				0x008
+>  #define QPHY_PCS_LINE_RESET_TIME			0x00c
+> +#define QPHY_PCS_RETIME_BUFFER_EN			0x018
+>  #define QPHY_PCS_TX_LARGE_AMP_DRV_LVL			0x020
+> +#define QPHY_PCS_TX_LARGE_AMP_POST_EMP_LVL		0x024
+>  #define QPHY_PCS_TX_SMALL_AMP_DRV_LVL			0x028
+> +#define QPHY_PCS_TX_SMALL_AMP_POST_EMP_LVL		0x02c
+> +#define QPHY_PCS_RX_SIGDET_CTRL2				0x08c
+>  #define QPHY_PCS_PCS_READY_STATUS			0x094
+>  #define QPHY_PCS_TX_MID_TERM_CTRL1			0x0d8
+>  #define QPHY_PCS_TX_MID_TERM_CTRL2			0x0dc
+> +#define QPHY_PCS_SGMII_MISC_CTRL7			0x114
+>  #define QPHY_PCS_SGMII_MISC_CTRL8			0x118
+>  
+>  #endif
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v7.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v7.h
+> index 7430f49214779855df1cf40acac96440957f9e6d..e8b4a26b361adab6e2b0bd3c91e719f84d1ffbc1 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v7.h
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v7.h
+> @@ -58,6 +58,7 @@
+>  #define QSERDES_V7_COM_CLK_ENABLE1				0xe0
+>  #define QSERDES_V7_COM_SYS_CLK_CTRL				0xe4
+>  #define QSERDES_V7_COM_SYSCLK_BUF_ENABLE			0xe8
+> +#define QSERDES_V7_COM_PLL_EN					0xec
+>  #define QSERDES_V7_COM_PLL_IVCO					0xf4
+>  #define QSERDES_V7_COM_PLL_IVCO_MODE1				0xf8
+>  #define QSERDES_V7_COM_SYSCLK_EN_SEL				0x110
+> @@ -75,6 +76,7 @@
+>  #define QSERDES_V7_COM_CMN_MISC_1				0x184
+>  #define QSERDES_V7_COM_CMN_MODE					0x188
+>  #define QSERDES_V7_COM_PLL_VCO_DC_LEVEL_CTRL			0x198
+> +#define QSERDES_V7_COM_BIN_VCOCAL_HSCLK_SEL_1			0x19c
+>  #define QSERDES_V7_COM_AUTO_GAIN_ADJ_CTRL_1			0x1a4
+>  #define QSERDES_V7_COM_AUTO_GAIN_ADJ_CTRL_2			0x1a8
+>  #define QSERDES_V7_COM_AUTO_GAIN_ADJ_CTRL_3			0x1ac
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v7.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v7.h
+> index 6ab943ff57ff666e4f23f4ad0b4eff211c6dbfd0..0c38d62284e4d0e64a27fb82c468f47aee3760bb 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v7.h
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v7.h
+> @@ -7,9 +7,11 @@
+>  #define QCOM_PHY_QMP_QSERDES_TXRX_V7_H_
+>  
+>  #define QSERDES_V7_TX_CLKBUF_ENABLE				0x08
+> +#define QSERDES_V7_TX_TX_EMP_POST1_LVL				0x0c
+>  #define QSERDES_V7_TX_RESET_TSYNC_EN				0x1c
+>  #define QSERDES_V7_TX_PRE_STALL_LDO_BOOST_EN			0x20
+>  #define QSERDES_V7_TX_TX_BAND					0x24
+> +#define QSERDES_V7_TX_SLEW_CNTL					0x28
+>  #define QSERDES_V7_TX_INTERFACE_SELECT				0x2c
+>  #define QSERDES_V7_TX_RES_CODE_LANE_TX				0x34
+>  #define QSERDES_V7_TX_RES_CODE_LANE_RX				0x38
+> @@ -35,26 +37,32 @@
+>  #define QSERDES_V7_RX_UCDR_FASTLOCK_COUNT_LOW			0x3c
+>  #define QSERDES_V7_RX_UCDR_FASTLOCK_COUNT_HIGH			0x40
+>  #define QSERDES_V7_RX_UCDR_PI_CONTROLS				0x44
+> +#define QSERDES_V7_RX_UCDR_PI_CTRL2				0x48
+>  #define QSERDES_V7_RX_UCDR_SB2_THRESH1				0x4c
+>  #define QSERDES_V7_RX_UCDR_SB2_THRESH2				0x50
+>  #define QSERDES_V7_RX_UCDR_SB2_GAIN1				0x54
+>  #define QSERDES_V7_RX_UCDR_SB2_GAIN2				0x58
+>  #define QSERDES_V7_RX_AUX_DATA_TCOARSE_TFINE			0x60
+> +#define QSERDES_V7_RX_RX_TERM_BW					0x80
+>  #define QSERDES_V7_RX_TX_ADAPT_PRE_THRESH1			0xc4
+>  #define QSERDES_V7_RX_TX_ADAPT_PRE_THRESH2			0xc8
+>  #define QSERDES_V7_RX_TX_ADAPT_POST_THRESH			0xcc
+>  #define QSERDES_V7_RX_VGA_CAL_CNTRL1				0xd4
+>  #define QSERDES_V7_RX_VGA_CAL_CNTRL2				0xd8
+>  #define QSERDES_V7_RX_GM_CAL					0xdc
+> +#define QSERDES_V7_RX_RX_EQU_ADAPTOR_CNTRL1			0xe8
+>  #define QSERDES_V7_RX_RX_EQU_ADAPTOR_CNTRL2			0xec
+>  #define QSERDES_V7_RX_RX_EQU_ADAPTOR_CNTRL3			0xf0
+>  #define QSERDES_V7_RX_RX_EQU_ADAPTOR_CNTRL4			0xf4
+>  #define QSERDES_V7_RX_RX_IDAC_TSETTLE_LOW			0xf8
+>  #define QSERDES_V7_RX_RX_IDAC_TSETTLE_HIGH			0xfc
+> +#define QSERDES_V7_RX_RX_IDAC_MEASURE_TIME			0x100
+>  #define QSERDES_V7_RX_RX_EQ_OFFSET_ADAPTOR_CNTRL1		0x110
+> +#define QSERDES_V7_RX_RX_OFFSET_ADAPTOR_CNTRL2			0x114
+>  #define QSERDES_V7_RX_SIGDET_ENABLES				0x118
+>  #define QSERDES_V7_RX_SIGDET_CNTRL				0x11c
+>  #define QSERDES_V7_RX_SIGDET_DEGLITCH_CNTRL			0x124
+> +#define QSERDES_V7_RX_RX_BAND					0x128
+>  #define QSERDES_V7_RX_RX_MODE_00_LOW				0x15c
+>  #define QSERDES_V7_RX_RX_MODE_00_HIGH				0x160
+>  #define QSERDES_V7_RX_RX_MODE_00_HIGH2				0x164
+> @@ -75,6 +83,7 @@
+>  #define QSERDES_V7_RX_DCC_CTRL1					0x1a8
+>  #define QSERDES_V7_RX_VTH_CODE					0x1b0
+>  #define QSERDES_V7_RX_SIGDET_CAL_CTRL1				0x1e4
+> +#define QSERDES_V7_RX_SIGDET_CAL_CTRL2_AND_CDR_LOCK_EDGE	0x1e8
+>  #define QSERDES_V7_RX_SIGDET_CAL_TRIM				0x1f8
+>  
+>  #endif
+> diff --git a/drivers/phy/qualcomm/phy-qcom-sgmii-eth.c b/drivers/phy/qualcomm/phy-qcom-sgmii-eth.c
+> index 029dafacee7853648ef24afd0d9c4b83a549badf..3c68bfe0ea443ef5cf7f17cead4974862dc04884 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-sgmii-eth.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-sgmii-eth.c
+> @@ -15,7 +15,9 @@
+>  
+>  #include "phy-qcom-qmp-pcs-sgmii.h"
+>  #include "phy-qcom-qmp-qserdes-com-v5.h"
+> +#include "phy-qcom-qmp-qserdes-com-v7.h"
+>  #include "phy-qcom-qmp-qserdes-txrx-v5.h"
+> +#include "phy-qcom-qmp-qserdes-txrx-v7.h"
+>  
+>  #define QSERDES_QMP_PLL					0x0
+>  #define QSERDES_RX					0x600
+> @@ -221,6 +223,114 @@ static void qcom_dwmac_sgmii_phy_init_2p5g(struct regmap *regmap)
+>  	regmap_write(regmap, QSERDES_PCS + QPHY_PCS_PHY_START, 0x01);
+>  }
+>  
+> +static void qcom_dwmac_sgmii_phy_init_10g(struct regmap *regmap)
+> +{
+> +	regmap_write(regmap, QSERDES_PCS + QPHY_PCS_SW_RESET, 0x01);
+> +	regmap_write(regmap, QSERDES_PCS + QPHY_PCS_POWER_DOWN_CONTROL, 0x01);
+> +
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_BG_TIMER, 0x0A);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_PLL_IVCO, 0x0F);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_PLL_BIAS_EN_CLK_BUFLR_EN, 0x07);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_CLK_ENABLE1, 0x0F);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_CP_CTRL_MODE0, 0x08);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_PLL_RCTRL_MODE0, 0x16);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_PLL_CCTRL_MODE0, 0x36);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_INTEGLOOP_GAIN0_MODE0, 0x1F);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_INTEGLOOP_GAIN1_MODE0, 0x00);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_PLL_EN, 0x03);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_SYSCLK_EN_SEL, 0x1A);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_LOCK_CMP1_MODE0, 0x23);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_LOCK_CMP2_MODE0, 0x43);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_DEC_START_MODE0, 0x43);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_DIV_FRAC_START1_MODE0, 0x00);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_DIV_FRAC_START2_MODE0, 0x38);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_DIV_FRAC_START3_MODE0, 0x02);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_VCO_TUNE1_MODE0, 0xE6);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_VCO_TUNE2_MODE0, 0x01);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_VCO_TUNE_INITVAL2, 0x00);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_HSCLK_SEL_1, 0x00);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_HSCLK_HS_SWITCH_SEL_1, 0x00);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_PLL_CORE_CLK_DIV_MODE0, 0x04);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_CORE_CLK_EN, 0x30);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_CMN_CONFIG_1, 0x16);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0xD7);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x0F);
+> +	regmap_write(regmap, QSERDES_QMP_PLL + QSERDES_V7_COM_BIN_VCOCAL_HSCLK_SEL_1, 0x11);
+> +
+> +	regmap_write(regmap, QSERDES_TX + QSERDES_V7_TX_CLKBUF_ENABLE, 0x0D);
+> +	regmap_write(regmap, QSERDES_TX + QSERDES_V7_TX_TX_BAND, 0x04);
+> +	regmap_write(regmap, QSERDES_TX + QSERDES_V7_TX_SLEW_CNTL, 0x08);
+> +	regmap_write(regmap, QSERDES_TX + QSERDES_V7_TX_RES_CODE_LANE_OFFSET_TX, 0x09);
+> +	regmap_write(regmap, QSERDES_TX + QSERDES_V7_TX_RES_CODE_LANE_OFFSET_RX, 0x09);
+> +	regmap_write(regmap, QSERDES_TX + QSERDES_V7_TX_LANE_MODE_1, 0xF5);
+> +	regmap_write(regmap, QSERDES_TX + QSERDES_V7_TX_LANE_MODE_2, 0x06);
+> +	regmap_write(regmap, QSERDES_TX + QSERDES_V7_TX_LANE_MODE_3, 0x3F);
+> +	regmap_write(regmap, QSERDES_TX + QSERDES_V7_TX_LANE_MODE_4, 0x3F);
+> +	regmap_write(regmap, QSERDES_TX + QSERDES_V7_TX_LANE_MODE_5, 0x5F);
+> +	regmap_write(regmap, QSERDES_TX + QSERDES_V7_TX_RCV_DETECT_LVL_2, 0x12);
+> +	regmap_write(regmap, QSERDES_TX + QSERDES_V7_TX_TRAN_DRVR_EMP_EN, 0x0F);
+> +	regmap_write(regmap, QSERDES_TX + QSERDES_V7_TX_TX_EMP_POST1_LVL, 0x2B);
+> +
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_UCDR_FO_GAIN, 0x0D);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_UCDR_SO_GAIN, 0x03);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_UCDR_FASTLOCK_FO_GAIN, 0x0A);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_UCDR_SO_SATURATION_AND_ENABLE, 0x7F);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_UCDR_FASTLOCK_COUNT_LOW, 0x00);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_UCDR_FASTLOCK_COUNT_HIGH, 0x01);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_UCDR_PI_CONTROLS, 0x81);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_UCDR_PI_CTRL2, 0x81);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_UCDR_SB2_THRESH1, 0x11);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_UCDR_SB2_THRESH2, 0x22);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_TERM_BW, 0x03);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_VGA_CAL_CNTRL2, 0x08);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_GM_CAL, 0x0F);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_EQU_ADAPTOR_CNTRL1, 0x04);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_EQU_ADAPTOR_CNTRL2, 0x00);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_EQU_ADAPTOR_CNTRL3, 0x4A);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_EQU_ADAPTOR_CNTRL4, 0x5A);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_IDAC_TSETTLE_LOW, 0x80);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_IDAC_TSETTLE_HIGH, 0x01);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_IDAC_MEASURE_TIME, 0x20);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_EQ_OFFSET_ADAPTOR_CNTRL1, 0x17);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_OFFSET_ADAPTOR_CNTRL2, 0x00);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_SIGDET_CNTRL, 0x0F);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_SIGDET_DEGLITCH_CNTRL, 0x1E);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_BAND, 0x18);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_MODE_00_LOW, 0x1F);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_MODE_00_HIGH, 0xBF);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_MODE_00_HIGH2, 0xFF);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_MODE_00_HIGH3, 0xDF);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_MODE_00_HIGH4, 0xEF);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_MODE_01_LOW, 0xE5);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_MODE_01_HIGH, 0xC8);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_MODE_01_HIGH2, 0xC8);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_MODE_01_HIGH3, 0x14);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_MODE_01_HIGH4, 0xB6);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_MODE_10_LOW, 0xE0);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_MODE_10_HIGH, 0xC8);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_MODE_10_HIGH2, 0xC8);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_MODE_10_HIGH3, 0x3B);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_RX_MODE_10_HIGH4, 0xB7);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_DCC_CTRL1, 0x0C);
+> +
+> +	regmap_write(regmap, QSERDES_PCS + QPHY_PCS_LINE_RESET_TIME, 0x00);
+> +	regmap_write(regmap, QSERDES_PCS + QPHY_PCS_TX_SMALL_AMP_DRV_LVL, 0x03);
+> +	regmap_write(regmap, QSERDES_PCS + QPHY_PCS_TX_LARGE_AMP_DRV_LVL, 0x1A);
+> +	regmap_write(regmap, QSERDES_PCS + QPHY_PCS_TX_SMALL_AMP_POST_EMP_LVL, 0x00);
+> +	regmap_write(regmap, QSERDES_PCS + QPHY_PCS_TX_LARGE_AMP_POST_EMP_LVL, 0x0B);
+> +	regmap_write(regmap, QSERDES_PCS + QPHY_PCS_TX_MID_TERM_CTRL1, 0x83);
+> +	regmap_write(regmap, QSERDES_PCS + QPHY_PCS_TX_MID_TERM_CTRL2, 0x08);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_SIGDET_CAL_CTRL1, 0x00);
+> +	regmap_write(regmap, QSERDES_RX + QSERDES_V7_RX_SIGDET_CAL_CTRL2_AND_CDR_LOCK_EDGE, 0x00);
+> +	regmap_write(regmap, QSERDES_PCS + QPHY_PCS_RX_SIGDET_CTRL2, 0xCC);
+> +	regmap_write(regmap, QSERDES_PCS + QPHY_PCS_SGMII_MISC_CTRL7, 0x00);
+> +	regmap_write(regmap, QSERDES_PCS + QPHY_PCS_SGMII_MISC_CTRL8, 0x14);
+> +	regmap_write(regmap, QSERDES_PCS + QPHY_PCS_RETIME_BUFFER_EN, 0x01);
+> +	regmap_write(regmap, QSERDES_PCS + QPHY_PCS_SW_RESET, 0x00);
+> +
+> +	regmap_write(regmap, QSERDES_PCS + QPHY_PCS_PHY_START, 0x01);
+> +}
+> +
+>  static inline int
+>  qcom_dwmac_sgmii_phy_poll_status(struct regmap *regmap, unsigned int reg,
+>  				 unsigned int bit)
+> @@ -265,6 +375,40 @@ static int qcom_dwmac_sgmii_phy_poll_sgmii_ready(struct device *dev,
+>  	return 0;
+>  }
+>  
+> +static int qcom_dwmac_sgmii_phy_poll_usxgmii_ready(struct device *dev,
+> +						     struct regmap *regmap)
+> +{
+> +	if (qcom_dwmac_sgmii_phy_poll_status(regmap,
+> +					     QSERDES_QMP_PLL + QSERDES_V7_COM_C_READY_STATUS,
+> +					     QSERDES_COM_C_READY)) {
+> +		dev_err(dev, "QSERDES_COM_C_READY_STATUS timed-out");
+> +		return -ETIMEDOUT;
+> +	}
+> +
+> +	if (qcom_dwmac_sgmii_phy_poll_status(regmap,
+> +					     QSERDES_PCS + QPHY_PCS_PCS_READY_STATUS,
+> +					     QSERDES_PCS_READY)) {
+> +		dev_err(dev, "PCS_READY timed-out");
+> +		return -ETIMEDOUT;
+> +	}
+> +
+> +	if (qcom_dwmac_sgmii_phy_poll_status(regmap,
+> +					     QSERDES_PCS + QPHY_PCS_PCS_READY_STATUS,
+> +					     QSERDES_PCS_SGMIIPHY_READY)) {
+> +		dev_err(dev, "SGMIIPHY_READY timed-out");
+> +		return -ETIMEDOUT;
+> +	}
+> +
+> +	if (qcom_dwmac_sgmii_phy_poll_status(regmap,
+> +					     QSERDES_QMP_PLL + QSERDES_V7_COM_CMN_STATUS,
+> +					     QSERDES_COM_C_PLL_LOCKED)) {
+> +		dev_err(dev, "PLL Lock Status timed-out");
+> +		return -ETIMEDOUT;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+>  static int qcom_dwmac_sgmii_phy_calibrate(struct phy *phy)
+>  {
+>  	struct qcom_dwmac_sgmii_phy_data *data = phy_get_drvdata(phy);
+> @@ -275,16 +419,19 @@ static int qcom_dwmac_sgmii_phy_calibrate(struct phy *phy)
+>  	case PHY_INTERFACE_MODE_1000BASEX:
+>  		/* 1.25Gbps mode */
+>  		qcom_dwmac_sgmii_phy_init_1g(data->regmap);
+> -		break;
+> +		return qcom_dwmac_sgmii_phy_poll_sgmii_ready(dev, data->regmap);
+>  	case PHY_INTERFACE_MODE_2500BASEX:
+>  		/* 3.125Gbps mode */
+>  		qcom_dwmac_sgmii_phy_init_2p5g(data->regmap);
+> -		break;
+> +		return qcom_dwmac_sgmii_phy_poll_sgmii_ready(dev, data->regmap);
+> +	case PHY_INTERFACE_MODE_USXGMII:
+> +	case PHY_INTERFACE_MODE_10GBASER:
+> +		/* 10.3125Gbps mode */
+> +		qcom_dwmac_sgmii_phy_init_10g(data->regmap);
+> +		return qcom_dwmac_sgmii_phy_poll_usxgmii_ready(dev, data->regmap);
+>  	default:
+>  		return -EINVAL;
+>  	}
+> -
+> -	return qcom_dwmac_sgmii_phy_poll_sgmii_ready(dev, data->regmap);
+>  }
+>  
+>  static int qcom_dwmac_sgmii_phy_power_on(struct phy *phy)
+> @@ -340,7 +487,9 @@ static int qcom_dwmac_sgmii_phy_validate(struct phy *phy, enum phy_mode mode,
+>  
+>  	if (submode == PHY_INTERFACE_MODE_SGMII ||
+>  	    submode == PHY_INTERFACE_MODE_1000BASEX ||
+> -	    submode == PHY_INTERFACE_MODE_2500BASEX)
+> +	    submode == PHY_INTERFACE_MODE_2500BASEX ||
+> +	    submode == PHY_INTERFACE_MODE_USXGMII ||
+> +	    submode == PHY_INTERFACE_MODE_10GBASER)
+
+So the driver supports all these modes for all platforms? The commit message
+sounds like only Nord supports USXGMII and 10GBASER.
+
+- Mani
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
