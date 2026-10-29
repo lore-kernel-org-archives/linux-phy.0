@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6019A606A333
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Oct 2026 17:23:57 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B4620606A325
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Oct 2026 17:24:05 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=DVMY/A0n;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=hrHOlwAH
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=UGuyVg+p;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=MprXq4RW
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,66 +14,66 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=/EoNaRO27Z56cB4a5ZcZV97z4T65P/HffjEPIUPL7Q4=; b=DVMY/A0nNilYLycVOziljyEw9E
-	Wn69aMfkL1a5EGUkY0pXGRKQmfzDnapUo6ydHEYKC1LFRfd2RNuNNav4WnNCFJ8RSviSMm/C8oGwb
-	Eywi+JXddvtt93j2Ax9dpBVa3up+y8NepvlNRbSHhyA6lTkdHDKtzy5StZyz7gausV6apD/3+fdph
-	6LSGcs3qdsO/8eB3qB4l4/mzXw9a2oXtu6AMR/oh4r6PfLna/dd9qi4Eu3lSji5/Pk1tP0RJ6RaGm
-	WMUKY0bdbuAqOy1PPLNTA/bpmTbWWaQtt6XJ3HLg8JxuCAgezJc5FyL4BUSWIrsNDqTM5FZYwfYrl
-	9+M2ce9g==;
+	bh=LDZBFW+jrpnJpGIMKbBBXWSMhp1E8WZ5kuywxlIGycE=; b=UGuyVg+pvU4yNosqBDXbdIAlk7
+	gQtCK0iyb6gX3LgBPQZPCmZ0WPk62AjXDBg21MQ9GqbU5v1ZRf023/Vi/v8SKPYzzJr1QsIcHVmYm
+	1VSZ442W4AjQNQ3S9hq/kTQ1ADoWCpfw96wkrdE6M9T7VusyR6Rlkoem/1Yz0fexeP7tF+ahgzD7o
+	wM8R01OQ7rziZ3mf4Hw9Ulw4QX/qxxoSwZk0o7ks6Zp/1QYdNFIr2vmgFjrxae0U/uG/wM2sWyRZv
+	8U08EJOdbmG8KFvw0qgUXwsl+QxZnG/vg8jftPjQ5/kYLoUGRaC/3OpbV3cYp1UaFzsa/Vy5THL8E
+	bQegd1zQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMTr3-00000009xlK-0RK4;
-	Thu, 29 Oct 2026 17:23:57 +0000
-Received: from mail-vk1-xa30.google.com ([2607:f8b0:4864:20::a30])
+	id 1xMTrB-00000009xqC-1pp6;
+	Thu, 29 Oct 2026 17:24:05 +0000
+Received: from mail-vs1-xe29.google.com ([2607:f8b0:4864:20::e29])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMTr1-00000009xj2-0EzK
+	id 1xMTr8-00000009xmj-0JLR
 	for linux-phy@lists.infradead.org;
-	Thu, 29 Oct 2026 17:23:56 +0000
-Received: by mail-vk1-xa30.google.com with SMTP id 71dfb90a1353d-5eae1276409so891529e0c.3
-        for <linux-phy@lists.infradead.org>; Thu, 29 Oct 2026 10:23:54 -0700 (PDT)
+	Thu, 29 Oct 2026 17:24:04 +0000
+Received: by mail-vs1-xe29.google.com with SMTP id ada2fe7eead31-7c03744ef27so791199137.1
+        for <linux-phy@lists.infradead.org>; Thu, 29 Oct 2026 10:24:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1793294633; x=1793899433; darn=lists.infradead.org;
+        d=gmail.com; s=20260707; t=1793294640; x=1793899440; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=tY6q0/ZAtlO7c/3kJ3SDz18C60kPr8B6rEIMfU8K4HE=;
-        b=hrHOlwAHrgRiq6BGU7zNtEe59dF/B0whDR2FKt6Y4LCczvyKrllcgEbnZC0swpGZFW
-         IjclOKQgjLMlCK9peZDlxMWRUXyvxdRQ9WiL7piI/Pfgzlmg05TtRW6zDfP1YaLDEvQX
-         3G9UuZdkWKgbHoxip3IZ3qYlxc153kx50vQzp8e4KviPafYucQqbZMM79hpqJR26uXVA
-         ZhaZPbZwmEKenqxxNU7Fs8ObjxZg9W9+G3S/uMhuvUeLslleLyWlJhKwIkk1v+AY0QFS
-         wG1FTnWYDtdjlDgQ6DjGmQJIHjjiHRs32mG4w1dzu87FBuPKGfuVu3+jmcASXQGo0UGA
-         trgA==
+        bh=Vlmh38oDhVKFUzUtt9cRV3aHc0FM1WeWFLP0ZtSzi/k=;
+        b=MprXq4RWUmmLmzzEcBOKSVzosphkhi89sTVG+q5pAshSs3RJOCIsrFL1t8ooeAqTK5
+         aDG37O6USBN3jVYnF+HiRfn4jT1JBnq3s8cQBojXPEzNrUZNZN5mQz+JlGDJ8dR8CWrj
+         RFWZdF+du9pma0Tk5qHRbz40ppL+X/2IJ0CncRJao4d5t/iUIkTIsQRWQoXQJH4Cjlh4
+         eDI7u9Ars5D5UUsn5Unyx3EujoN4TmVbGH2+X3x2vE7pAX/f9gtoEEMPNE4AMBHl5lRG
+         k9ItVH+h0gGQTRIDtE4Tep6PlnpRGS7p6XmvjqvZjWCeysdk0y19RXDQGEo6YSPe8ENe
+         jJdw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793294633; x=1793899433;
+        d=1e100.net; s=20260707; t=1793294640; x=1793899440;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=tY6q0/ZAtlO7c/3kJ3SDz18C60kPr8B6rEIMfU8K4HE=;
-        b=llvkTDuAbHMcJBhr+8h1DAlR4PSuU9k6WrRr/mntSwmdxAtk34lvTIaoWwcvKhfMYz
-         nRekvzRA8/MhlA5c6G0mAVxub2iIl2zWsxzc1I/0WmcdQpUaJc+yNkq090mAeEOZ5grj
-         +Trquo/nwnrgw2zHQsf/RRrp+YgodbKL8EfeZCsSN+o8YUcWz0+POdmRuBB2F0okHf1L
-         bXUv7ENundjDUkpfHIBmJRT+7fGgIV8Tgr5+6Twwq9ZtYTNW5JliT18GgDLzmc+15PE9
-         YMVR98qSsTvMrKoaQ+1N6ofoIJf4ds6J7Wnd7YZegDZi9v+Ve2lvOfjLTfZceE5ozHec
-         K6ww==
-X-Forwarded-Encrypted: i=1; AKwUvBwJkShiL+wrsLacHH8zpOGBkUu5MwOrrYOZXfxnE4O8POdSMHkURlC0lm4nL3YD2c4/zXMnMLH/XgE=@lists.infradead.org
-X-Gm-Message-State: AFq9FYLkUbXRoI269nkQhuk2DUaYl+yk4QnLctN5xTFSCZCSgb1hcRkW
-	BIXL6TVKs0IykeqPM9t7idfgNb0hWlxv3/9ryB+NIdf+L2lGD7hN6o2O
-X-Gm-Gg: AYBFou1pPCIZh/IMI89Oki+61kgj6G8xslpw21o9wWMsof++MMEI0e0E4LqIHhVlB1q
-	S1vJSOnhvZlG3gWeDK5XImbmXZ4BO86OYU2LLgJyoLCO2N9M9eKCNzqLFD8C514WsByULo7SttX
-	T0czExYmwLftMf878G1GOr+Oe8/7W8vhdp0NquK7XvCHeW+M/FiAN2y0PzPQaI7OSp59YwFIJZw
-	Ho/7BtWCROFS+ZW7hiekRru0fpkqKccbTNRcWGBIswJneY0rk2qCYnTdxT0mwe3/zATGdfS+Yug
-	RvVOV8SYfxqBTA3gHQviZHdLTwRtuoOfe30QxCXNf1uKfPyv/zw2CZMHrVGSAXJPMzqFtIQMeJS
-	YibfiH95oNmBpVNtPtZUUWYx96t6P2Q+X+SH1pB6cCe/fQN+VZtVh+jxo6jSX/SNyxr8wExv5TQ
-	/DBPEDlYEFD22wJMphetSZ8Hb4ssQ/IE/tEpPaeWGbRkwUnELId/uaUUAOpYT6EbXupIPpNbwM9
-	Wq+2YTz+KFIs4czmkTWMrvALixJlV+Md1e1x3wehdhB2Box9kBqcP/H0vlP+qvmSp9UV39Ol+rz
-	F1uQXef2H/KyZHMBM9iSkMx6AIhHL4ekGJPNME4Xekp079KStnKx4Wf6gOiA25ZWk+rc64ia13g
-	9X+THl22P67eTqGTI/gcu2fjCLZ6GtsmQA2Fk
-X-Received: by 2002:a05:6102:1626:b0:7cc:2bb7:131d with SMTP id ada2fe7eead31-7d03a4eabe3mr2727809137.9.1793294633099;
-        Thu, 29 Oct 2026 10:23:53 -0700 (PDT)
+        bh=Vlmh38oDhVKFUzUtt9cRV3aHc0FM1WeWFLP0ZtSzi/k=;
+        b=HnGwYFcC4B70CqehRXe6U6BZXF8jK17QxSdMOpUO3TG8R1ny1hwEz9HhLQvVt7oHQ/
+         DUQ3FXMr4KvmBUc2oVOh3/oJwmd94jwAR7qA8qsZhjHgv4+c+ztOcmSy7wtkvyhCMUNi
+         +9votogE2aaeftb5Y06rbr1AUnpSEKLNyCmvjkR0sXqX7RAg88f+emo7KwVGODJsw6rO
+         VRrjFduv9l/hS9dV1Bv/6qBRsbZLIVMXAzkzssjmVbWDymA2IHE8ohpfLxn5tMQh9ChH
+         iZ1oMhn/t8+2UUs/ya5G1xqyN58oTxWdOyBmi9UCwMVX24XvuHI5buN3Kf7Dxywk9HXc
+         THXw==
+X-Forwarded-Encrypted: i=1; AKwUvBzB58TVBo3R8NZiECTpCfVZKCJH4bkdxtpM+Xmym49LyBoJpp5R56CHti1XTI/VJN35hV37bZzyPqU=@lists.infradead.org
+X-Gm-Message-State: AFq9FYLLnR5+r6RH3HJ7lg0kRkp7uCTfVCShnaySHquNos8awAt/iHk1
+	Gh0CD5weyOk04tRipYG2IAhhMKrarlgArpqT4J5dbGCwxgDebogAZwPp
+X-Gm-Gg: AYBFou1vzpXNAbpxn4jyIuqYFVpudfUzAsQLRHt7vUdjyDGUdABHleguLl1hRVEMd/G
+	ay2PBSOU96XDd9Gh62ZqaU/4p7dDTA+9scnrmaUWLtI4SbaF6wCnN+8H44rHVnvlK2bh+DThyyh
+	2Pt8wkJod7l3KEmOSc2tH72D4AYid0ZWbTktndKC/dJoFitp6q630/Zu0fCuMfjvwzSIn6keP6l
+	JqwsqJGQOM9N5+lsJKoVmm+fO8GL0nK5zZv4y/JLRea5EltpXdyCwAFm9A0CLMu5qlehKO4nI0l
+	DvJUEIe1ibrV75UVcqqhtW0RCBB3przQRUiIltEGXWQqn0kxI5Wy7SbPAzCD7ZuNEmWFuy3JW4q
+	CLEUZBeBaE3epFKz0S05HFO059MSRAjAg7eoTNMiZsGWF19gb6piV+Tswigcvvm+A6w6dVrrZp9
+	gvK89Uqxpge1xMjDoPrE8WJ4xt8rTqsm9ICvTG267h0cwQKqUeFuRXekLqzzvXmpChNCVhLla6N
+	w9XSpxP/1NtqQiDnNMbG0jMDMuLPRkKcegaCNyzP8DnjOSK7J4SXr+Yx3F0iYZUpet1kp/aV8Vr
+	WZWDQdCWlLigoBTwhP2V9bgs4LisKwobnbR1bLIKxR0IodoPp6em5P3tZciP58203PXiG7ZC84k
+	Jz2psqjIeyXWDrYfJf71L1SZkt4664HIeEasD
+X-Received: by 2002:a05:6102:3e8d:b0:7a5:7282:1994 with SMTP id ada2fe7eead31-7d03a50a85cmr2383203137.7.1793294640169;
+        Thu, 29 Oct 2026 10:24:00 -0700 (PDT)
 Received: from MaquinaLab.. ([179.179.238.247])
-        by smtp.gmail.com with ESMTPSA id ada2fe7eead31-7cea3d32a48sm9907357137.9.2026.10.29.10.23.47
+        by smtp.gmail.com with ESMTPSA id ada2fe7eead31-7cea3d32a48sm9907357137.9.2026.10.29.10.23.54
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 29 Oct 2026 10:23:52 -0700 (PDT)
+        Thu, 29 Oct 2026 10:23:59 -0700 (PDT)
 From: Vinicius Pedrosa <vinicius.eduardo.pedrosa@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Neil Armstrong <neil.armstrong@linaro.org>,
@@ -91,18 +91,17 @@ Cc: Neil Armstrong <neil.armstrong@linaro.org>,
 	linux-arm-kernel@lists.infradead.org,
 	linux-sunxi@lists.linux.dev,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH 1/2] dt-bindings: phy: document Allwinner A733 USB-2.0 PHY
-Date: Thu, 29 Oct 2026 14:23:24 -0300
-Message-ID: <20261029172325.3425046-2-vinicius.eduardo.pedrosa@gmail.com>
+Subject: [PATCH 2/2] phy: sun4i-usb: clear SIDDQ before the PHY reset on A733
+Date: Thu, 29 Oct 2026 14:23:25 -0300
+Message-ID: <20261029172325.3425046-3-vinicius.eduardo.pedrosa@gmail.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20261029172325.3425046-1-vinicius.eduardo.pedrosa@gmail.com>
 References: <20261029172325.3425046-1-vinicius.eduardo.pedrosa@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261029_102355_103540_890B557F 
-X-CRM114-Status: UNSURE (   9.41  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20261029_102402_684670_597A71F9 
+X-CRM114-Status: GOOD (  17.94  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -124,30 +123,113 @@ X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-The USB 2.0 PHY in the Allwinner A733 works with the D1 settings of
-the sun4i-usb driver. Add its compatible with the D1 fallback, as was
-done for the A523.
+sun4i_usb_phy_init() deasserts the PHY reset first and clears SIDDQ in
+the PMU HCI_PHY_CTL register afterwards. The order comes from the H3
+support and the reason for it isn't documented.
 
-It gets its own compatible because the driver has to clear SIDDQ
-before releasing the PHY reset on this SoC.
+On a Cubie A7Z (A733), the Wi-Fi module on USB1 sometimes came up
+at full speed on the OHCI companion and failed enumeration with -62.
+This happened in 3 of 40 warm boots with a separate local PHY tuning
+change applied.
+
+With that tuning disabled, the current order failed once in 31 warm
+boots. Clearing SIDDQ before releasing reset had no failures in 60
+warm boots in the same interleaved run, or in 10 cold boots.
+Why the order matters is not understood.
+
+The vendor BSP clears SIDDQ while the PHY is still in reset, in its
+common host path.
+
+Add a config flag for the early clear and set it only for the A733,
+whose config is otherwise the D1 one. The other SoCs keep the current
+order: the manuals don't specify one and they weren't tested.
 
 Signed-off-by: Vinicius Pedrosa <vinicius.eduardo.pedrosa@gmail.com>
 ---
- .../devicetree/bindings/phy/allwinner,sun50i-a64-usb-phy.yaml    | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/phy/allwinner/phy-sun4i-usb.c | 35 +++++++++++++++++++++++----
+ 1 file changed, 30 insertions(+), 5 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun50i-a64-usb-phy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun50i-a64-usb-phy.yaml
-index 580c3296a18d..da4ad6fb3531 100644
---- a/Documentation/devicetree/bindings/phy/allwinner,sun50i-a64-usb-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/allwinner,sun50i-a64-usb-phy.yaml
-@@ -23,6 +23,7 @@ properties:
-           - enum:
-               - allwinner,sun50i-a100-usb-phy
-               - allwinner,sun55i-a523-usb-phy
-+              - allwinner,sun60i-a733-usb-phy
-           - const: allwinner,sun20i-d1-usb-phy
+diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
+index 839856c09e30..4d067d97c5a6 100644
+--- a/drivers/phy/allwinner/phy-sun4i-usb.c
++++ b/drivers/phy/allwinner/phy-sun4i-usb.c
+@@ -105,6 +105,7 @@ struct sun4i_usb_phy_cfg {
+ 	bool phy0_dual_route;
+ 	bool needs_phy2_siddq;
+ 	bool siddq_in_base;
++	bool siddq_before_reset;
+ 	bool poll_vbusen;
+ 	int missing_phys;
+ };
+@@ -253,6 +254,19 @@ static void sun4i_usb_phy_passby(struct sun4i_usb_phy *phy, int enable)
+ 	writel(reg_value, phy->pmu);
+ }
  
-   reg:
++static void sun4i_usb_phy_clear_hci_phy_ctl(struct sun4i_usb_phy *phy)
++{
++	struct sun4i_usb_phy_data *data = to_sun4i_usb_phy_data(phy);
++	u32 val;
++
++	if (!phy->pmu || !data->cfg->hci_phy_ctl_clear)
++		return;
++
++	val = readl(phy->pmu + REG_HCI_PHY_CTL);
++	val &= ~data->cfg->hci_phy_ctl_clear;
++	writel(val, phy->pmu + REG_HCI_PHY_CTL);
++}
++
+ static int sun4i_usb_phy_init(struct phy *_phy)
+ {
+ 	struct sun4i_usb_phy *phy = phy_get_drvdata(_phy);
+@@ -270,6 +284,10 @@ static int sun4i_usb_phy_init(struct phy *_phy)
+ 		return ret;
+ 	}
+ 
++	/* Some SoCs want SIDDQ cleared while the PHY is still in reset. */
++	if (data->cfg->siddq_before_reset)
++		sun4i_usb_phy_clear_hci_phy_ctl(phy);
++
+ 	ret = reset_control_deassert(phy->reset);
+ 	if (ret) {
+ 		clk_disable_unprepare(phy->clk2);
+@@ -321,11 +339,8 @@ static int sun4i_usb_phy_init(struct phy *_phy)
+ 		clk_disable_unprepare(phy2->clk2);
+ 	}
+ 
+-	if (phy->pmu && data->cfg->hci_phy_ctl_clear) {
+-		val = readl(phy->pmu + REG_HCI_PHY_CTL);
+-		val &= ~data->cfg->hci_phy_ctl_clear;
+-		writel(val, phy->pmu + REG_HCI_PHY_CTL);
+-	}
++	if (!data->cfg->siddq_before_reset)
++		sun4i_usb_phy_clear_hci_phy_ctl(phy);
+ 
+ 	if (data->cfg->siddq_in_base) {
+ 		if (phy->index == 0) {
+@@ -1013,6 +1028,15 @@ static const struct sun4i_usb_phy_cfg sun50i_h616_cfg = {
+ 	.siddq_in_base = true,
+ };
+ 
++static const struct sun4i_usb_phy_cfg sun60i_a733_cfg = {
++	.phyctl_offset = REG_PHYCTL_A33,
++	.dedicated_clocks = true,
++	.hci_phy_ctl_clear = PHY_CTL_SIDDQ,
++	.phy0_dual_route = true,
++	.siddq_in_base = true,
++	.siddq_before_reset = true,
++};
++
+ static const struct of_device_id sun4i_usb_phy_of_match[] = {
+ 	{ .compatible = "allwinner,sun4i-a10-usb-phy", .data = &sun4i_a10_cfg },
+ 	{ .compatible = "allwinner,sun5i-a13-usb-phy", .data = &sun5i_a13_cfg },
+@@ -1029,6 +1053,7 @@ static const struct of_device_id sun4i_usb_phy_of_match[] = {
+ 	  .data = &sun50i_a64_cfg},
+ 	{ .compatible = "allwinner,sun50i-h6-usb-phy", .data = &sun50i_h6_cfg },
+ 	{ .compatible = "allwinner,sun50i-h616-usb-phy", .data = &sun50i_h616_cfg },
++	{ .compatible = "allwinner,sun60i-a733-usb-phy", .data = &sun60i_a733_cfg },
+ 	{ .compatible = "allwinner,suniv-f1c100s-usb-phy",
+ 	  .data = &suniv_f1c100s_cfg },
+ 	{ },
 -- 
 2.43.0
 
