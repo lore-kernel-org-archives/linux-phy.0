@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 491D6606A31E
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Oct 2026 21:25:47 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id ED2F5606A31C
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Oct 2026 21:25:55 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=2drnPIM+;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=ISQntnuV
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=nZR4Q1dd;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=Lzf9m9+P
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,78 +14,78 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=QSJZ11G0ssRKZ+c60cgjP2m8PGqVabp5GNe3Vw5GR24=; b=2drnPIM+W9ej0O98zI6AG5U9o+
-	87MfMQw6Pxv+iR2Xxi+7g2H/mu3E5o718cL5j4paTkoYzU3HVAB8/7682CYmKAwCd03TX9UnwvSwD
-	mOV4MKOb3Xs1NDfLOIaRylEk3bPKDjsZQNs0t9iv1QdB/YLALIWfzk819p/V1HfpGIFsu+nLQs1Qz
-	nym5/6xgOqcJvyL/MeZ6BuvXNJSFetssuE1aON8fCo5ZGZtpyEN3A7mZ0XzwzQPuLdn5W/l7KinSK
-	+cCKrJFUkqt67j4av5f+LU2Ww2He3LLJ+C+SUGRihMaVSeZAz9g4LOzQ4e3TLlz88aH00R2L7m1N7
-	JnnQmWAw==;
+	bh=i3hEy0OlEG0I5avNx8KyQKPvlA+ksrnRI3xiiGk5sok=; b=nZR4Q1ddkWG1KUPRSCy2sdRTkp
+	hA9pm3lNBJyVEYTck6tSY0s12yw2lc2HYMfjWtrBBMnodv8+0VPPAedn90GZQcUCcPNlNZMHwpGc7
+	BwWQDJnZR2a+GKcGAv826lxKydCfSDtEsJibNOJm2e1Db4zV0z5tOMG3diUuJiJzPv2kqPK3ddlyz
+	OySeSW9JkGbc46lnerc2wJuWwlxg3C5O0yekKNGPqWwXfubCjjUcBUA4UDpTjjDNu6ktl1hTKu9rD
+	bFQjFXfqd7r4UUR0NnpH1GaxQUJgv12lXWh6sUh1Cs0ngkR5Y+j8PxBDwqGSQZ6X2NA78KIzh5FqE
+	2K6hKhzQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMXd4-0000000APc3-4ACk;
-	Thu, 29 Oct 2026 21:25:47 +0000
-Received: from mail-qk1-x761.google.com ([2607:f8b0:4864:20::761])
+	id 1xMXdD-0000000APiA-2dFR;
+	Thu, 29 Oct 2026 21:25:55 +0000
+Received: from mail-pj1-x1064.google.com ([2607:f8b0:4864:20::1064])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMXct-0000000APVO-0nkR
+	id 1xMXcw-0000000APWp-1u8o
 	for linux-phy@lists.infradead.org;
-	Thu, 29 Oct 2026 21:25:36 +0000
-Received: by mail-qk1-x761.google.com with SMTP id af79cd13be357-93e63ee7b4cso270810185a.2
-        for <linux-phy@lists.infradead.org>; Thu, 29 Oct 2026 14:25:34 -0700 (PDT)
+	Thu, 29 Oct 2026 21:25:39 +0000
+Received: by mail-pj1-x1064.google.com with SMTP id 98e67ed59e1d1-3ab752f6244so56627a91.2
+        for <linux-phy@lists.infradead.org>; Thu, 29 Oct 2026 14:25:37 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793309134; x=1793913934;
+        d=1e100.net; s=20260707; t=1793309137; x=1793913937;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:dkim-signature:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=eG9L8JoEnV2/AJh4IZs2XwE9uOcVbAGkOowIPsI/5ZY=;
-        b=qYCcbC00P3gMFFcOMjyylZVPibkP26MegmmfU12Larjsh1O5RlydiCGvs6jTkuFawb
-         bfY1JgI8cdx6TxORcYx2+22tyiaVcSPxkRvENsI3aLfR4WbfFOaY2f17mBUwhcO6j00n
-         ipcoAPPzSgkSrFoZ3NYP2TMRGJ7rUd4S32zHb16tire+1AKx/EQ0ZEugVEzJW+qgFRYi
-         KHowdQyG0oB4ayrPgZS8WWq1jltGAONoLjISSaKJIgnn3q5WdpjxnA1tdMEvSG4bdkhn
-         o1HDOySsTYgXowyZWU0mhrm9jh1NoD11O18XfcgT9gKoZId7QeHDrZSNGLNXPQh6Ad3D
-         H4OA==
-X-Forwarded-Encrypted: i=1; AKwUvBwDzgqri3D5afTjXJUPdf8tpDSQ8cPri7WOa4txeeGpO3ww+Zu5UC3BR61tjlzfCCo44QzIpzbxj/Y=@lists.infradead.org
-X-Gm-Message-State: AFq9FYLQ9D4+E1CbHN8mih4Joknmf11AhY3eCxymlY+kI/I+h7lpRYot
-	xtTq8WaXL9hUqLThPtjUvSrN/BkxF5F+IC2Vy2Ias5id5SeqIBsdhpLJIlXQojP5ucWE7kij5m6
-	6TZQV9OVphvq7rSO3PRN1S6iPrec+FyaCT2HZq+fLS9ImgYmuK7tDgbjOnuaHwGoSCv6Ie9JmPM
-	82tAa9o3oQbzGgYOAYCYSZ+OHSQvuyYgXBFs5/ZRW0X0TWBsw3OF4cXLr95YetBg29dpOw4KWTA
-	/cxjDQ4UuB+UTYCS81b/aX1n7sA
-X-Gm-Gg: AYBFou2kAi73TF0EyYDvrotJotinBiIy+yrERAzsSaEAQFAYO57phHC3gzS0Z1G+tQW
-	DnxIW6bZXi3UOPvs6yKJ8bz03LToTOlAo8Zt/gsltO9oeJsqGd8gdbRKYWP2va9q9huAaVUAnig
-	8tPFFzgcZmLrvLcscyyxQ0gcVkkB6Vt6KfGPxF2eO0wxsSJvfRwGDq3PTFqcTw0zYqdl1CAGoj0
-	AYYfTr6B1CB3Q6AeVZf8MqfT7mmmCK97GEigFb93/X46WRsRhzb6baJU5ivZw8F+sQ9pvsMwQHd
-	pyyUSSnvawifQ1ATXbRo0xz86SODMK5eqDBGJ8JFFSE8//F0MeXRm0kjybPZEJvNGIw5iZ4Yb1y
-	/ezAsl6bsLepmm9o7V/7zySSn67h2r0YVg05mpd8SqvNUvxhCLMh1nnZZ+xgBIQW+CtY+tDU1v+
-	0cfdjAtxKRy+cF2GIidHPVKKWbPRisQnqJnmZm+Gbw
-X-Received: by 2002:a05:620a:270b:b0:93f:565f:e40 with SMTP id af79cd13be357-944217dc91fmr75733785a.65.1793309134051;
-        Thu, 29 Oct 2026 14:25:34 -0700 (PDT)
-Received: from smtp-us-east1-p01-i01-si01.dlp.protect.broadcom.com (address-144-49-247-28.dlp.protect.broadcom.com. [144.49.247.28])
-        by smtp-relay.gmail.com with ESMTPS id af79cd13be357-94421103105sm6571485a.2.2026.10.29.14.25.33
+        bh=1MIbl2zx8FaPW7oX7ST7fbgJ9gFOgJZeuRxXV0E1qzg=;
+        b=SffteNw9Z8fE7zQT7xwGmWNtiFZKbvXPcxkJZ2H/pqiTOI/1+wZc2wg/xBiLEtjtR4
+         xUkEVBQWPijSxMfL1tNb9ixhui5AVjBOxHXZ1qOCQ6lhUUJuW2f63GxFbR4Ywix3oRim
+         HHa7WgvgEmhgGPownEpunuei8yNGI9FlZ2f/K6XLUI0RbT+R9hIeODdWhHuYw43NABPq
+         WHd8RmRXUeJ2yUpbyemrHGY78HJCfhfThpg1lpjlF9R39htgHaGn22lzR+9adRCRJoUS
+         Y7A0RH7uTnSEJQn0pZ1j8bZzYptJ3tqNMH8TRmGAp7JftMUZR4t34ytQl4iGJtIEVT3+
+         0Nqw==
+X-Forwarded-Encrypted: i=1; AKwUvBwwEbOfYiZbkV3ppJWR4d5ogQjfF04tbmWIJGZ47y/N7D/5p6agVDKOHw5WDT3e3SwKqHmjRjFiQjQ=@lists.infradead.org
+X-Gm-Message-State: AFq9FYLcrVwn+bzx27REe6Xx6jFRtzqErLSgA+CvhirQir4UIyEUh6FR
+	kPBQd/Fgfw0ZVDsaBMgCElbqD/L4fwReiU9n7uNadi5L9vdKvdugJGD08QTSdyXbNM/d3biX5E4
+	2ViMIZ21nKA0HoHvvSmsrHZI0pZeCfJJUkZ//pY5QCsugN2As3Xj+fXyaTCo1mUuJYqcAmHco7s
+	PtjxKF/2lDy11bwKImYdgxaK0Qb52jTIN2lsK+I69KgMXlXfBxHbvUA8dc/3Q8tVtPvL14YKWGl
+	FyEoHmfNRJqe8dOGgGIRcXOpw==
+X-Gm-Gg: AYBFou1JdP+McaUM8f8s2z5Ho5uLvlVv8J/ZTwEfADu0KoLPU8guqXwsCu10OCl+Hmc
+	tbKpq2Oi0UWKEuc8CDJ7L95L2deT8c/9dP5T9LEl5uQ3E9cL9+GxuyWWKj5J/Ni79ayfPx9POxj
+	YMz6KpBTH6EHiylBKdPCdNXrJKOL2ZA98iitmro9n9+lOFySRA/iLOlRrQh4pRsU3+6YJiHTZ+7
+	iUdI/L0/cTeMEM/F+xFJHxMwFxs02rFtA684fiKdTA3hKRFPesAMynz1LTRmkkLiAIC5a7XDPu0
+	zcqpkdgaQlXodj6forOcrzcPg7FQuF/2uhlQddahY/1IUCSloqYe2JrXLJgRw8thGaJNd7J4eZn
+	pbKgPLsH1EOXD4qix4J6hfxT3f1P8UDdxiV1a8xKFfOMGpt1EWG79lQyac1py8QE1K6zdoHhsAz
+	zmYzdDoets7r7kTkN7dG207wmbUqLmNcau/ebNZAHp
+X-Received: by 2002:a17:90b:5111:b0:3ab:3384:1a44 with SMTP id 98e67ed59e1d1-3ae897c64b4mr167375a91.12.1793309136993;
+        Thu, 29 Oct 2026 14:25:36 -0700 (PDT)
+Received: from smtp-us-east1-p01-i01-si01.dlp.protect.broadcom.com (address-144-49-247-13.dlp.protect.broadcom.com. [144.49.247.13])
+        by smtp-relay.gmail.com with ESMTPS id 98e67ed59e1d1-3ae85f87a56sm200511a91.1.2026.10.29.14.25.36
         for <linux-phy@lists.infradead.org>
         (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Thu, 29 Oct 2026 14:25:34 -0700 (PDT)
+        Thu, 29 Oct 2026 14:25:36 -0700 (PDT)
 X-Relaying-Domain: broadcom.com
 X-CFilter-Loop: Reflected
-Received: by mail-qv1-f69.google.com with SMTP id 6a1803df08f44-917baea8e5dso1687526d6.3
-        for <linux-phy@lists.infradead.org>; Thu, 29 Oct 2026 14:25:33 -0700 (PDT)
+Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-943e8ff02d0so254489385a.2
+        for <linux-phy@lists.infradead.org>; Thu, 29 Oct 2026 14:25:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=broadcom.com; s=google; t=1793309133; x=1793913933; darn=lists.infradead.org;
+        d=broadcom.com; s=google; t=1793309135; x=1793913935; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=eG9L8JoEnV2/AJh4IZs2XwE9uOcVbAGkOowIPsI/5ZY=;
-        b=ISQntnuVtZsvuEPM0f+wNwR9rM8+w4lovGv9e95vyDO3vX/N841PWFeGNOt9+TKZ/n
-         ykC0PwCz75FuS29yOcr6aW6LmAy2O4foH0ZlRYKS5myloPoC0T4+g16rK2J9Bv9aJJqH
-         VCsXcaMDN7Bbp0mrvDI6jK8jYZjTOqHanTlGU=
-X-Forwarded-Encrypted: i=1; AKwUvBw08Mvmme1hD925X8Aai5kHmgTfmEUxzZ7ld/CK7pN2QoeHwhKM6JlZuNoPsXwWBC2pOeEIqcZL3NE=@lists.infradead.org
-X-Received: by 2002:a05:6214:45a0:b0:91c:7a0e:3385 with SMTP id 6a1803df08f44-91ca4b7973dmr3564046d6.49.1793309132732;
-        Thu, 29 Oct 2026 14:25:32 -0700 (PDT)
-X-Received: by 2002:a05:6214:45a0:b0:91c:7a0e:3385 with SMTP id 6a1803df08f44-91ca4b7973dmr3563736d6.49.1793309132301;
-        Thu, 29 Oct 2026 14:25:32 -0700 (PDT)
+        bh=1MIbl2zx8FaPW7oX7ST7fbgJ9gFOgJZeuRxXV0E1qzg=;
+        b=Lzf9m9+Pi8iV5ooJ6TrKLIETv5Oe6XvPhFBfqdQhD2dt+3Av0japTa8d2HvuAaOCoB
+         jmdtWzp0EPG8kHy2F1VG/L6D2Wos5ONsN81GYo2aO3glZKsPon16MyLiIjeNfYJBOzPJ
+         O1j25rXQ8dCddemO3c0os7KggvHeadxqPD1i8=
+X-Forwarded-Encrypted: i=1; AKwUvBxGfE+pmmw2fV2N3SO2a9tMSEq21MyYPLZlY7AOVDwu4NBi1Dt8nVBQxJhDbizR2NQnGCqCONFWHN0=@lists.infradead.org
+X-Received: by 2002:a05:620a:8385:b0:93e:48fc:aa88 with SMTP id af79cd13be357-944217118e3mr84084185a.44.1793309135499;
+        Thu, 29 Oct 2026 14:25:35 -0700 (PDT)
+X-Received: by 2002:a05:620a:8385:b0:93e:48fc:aa88 with SMTP id af79cd13be357-944217118e3mr84081485a.44.1793309134993;
+        Thu, 29 Oct 2026 14:25:34 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-91ca314fb6csm6384936d6.34.2026.10.29.14.25.29
+        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-91ca314fb6csm6384936d6.34.2026.10.29.14.25.32
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 29 Oct 2026 14:25:31 -0700 (PDT)
+        Thu, 29 Oct 2026 14:25:34 -0700 (PDT)
 From: Florian Fainelli <florian.fainelli@broadcom.com>
 To: linux-kernel@vger.kernel.org
 Cc: Florian Fainelli <florian.fainelli@broadcom.com>,
@@ -107,9 +107,9 @@ Cc: Florian Fainelli <florian.fainelli@broadcom.com>,
 	devicetree@vger.kernel.org (open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS),
 	linux-arm-kernel@lists.infradead.org (moderated list:BROADCOM IPROC ARM ARCHITECTURE),
 	linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK)
-Subject: [PATCH v4 3/6] ata: ahci_brcm: Initialize the NSP interface clock and reset
-Date: Thu, 29 Oct 2026 14:25:10 -0700
-Message-ID: <20261029212513.4126083-4-florian.fainelli@broadcom.com>
+Subject: [PATCH v4 4/6] ARM: dts: broadcom: Add the NSP SATA IDM registers
+Date: Thu, 29 Oct 2026 14:25:11 -0700
+Message-ID: <20261029212513.4126083-5-florian.fainelli@broadcom.com>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261029212513.4126083-1-florian.fainelli@broadcom.com>
 References: <20261029212513.4126083-1-florian.fainelli@broadcom.com>
@@ -117,8 +117,8 @@ X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-DetectorID-Processed: b00c1d49-9d2e-4205-b15f-d015386d3d5e
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261029_142535_293967_2B0CA286 
-X-CRM114-Status: GOOD (  17.16  )
+X-CRM114-CacheID: sfid-20261029_142538_514242_2E62F82C 
+X-CRM114-Status: GOOD (  11.16  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -139,107 +139,44 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-The NSP probe path assumes firmware has enabled the SATA IDM interface
-clock and released the core reset. The downstream iProc config_AHCI()
-sequence explicitly performs both operations before accessing AHCI.
-Without that setup, a cold boot can access an inactive controller.
+The NSP SATA description omits the IDM block at 0x1811e000, leaving the
+interface clock and core reset dependent on firmware initialization.
 
-Map the optional NSP IDM register region and enable the interface clock
-before releasing reset, retaining the downstream settling intervals.
-Perform the sequence at probe and resume before reconfiguring SATA.
+Supply the IDM as the third controller register region so ahci_brcm can
+perform the downstream clock/reset sequence. Extend the AXI bus range to
+cover the complete IDM aperture.
 
-Keep the resource optional so older device trees continue to rely on
-firmware initialization.
-
-Fixes: 3ee2e6dcaa35 ("ata: ahci_brcm: Add support for Broadcom NSP SoC")
+Fixes: 8dbcad020f2e ("ARM: dts: nsp: Add sata device tree entry")
 Signed-off-by: Florian Fainelli <florian.fainelli@broadcom.com>
 ---
- drivers/ata/ahci_brcm.c | 36 ++++++++++++++++++++++++++++++++++++
- 1 file changed, 36 insertions(+)
+ arch/arm/boot/dts/broadcom/bcm-nsp.dtsi | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/ata/ahci_brcm.c b/drivers/ata/ahci_brcm.c
-index 29be74fedcf0..3b6ed56f3e95 100644
---- a/drivers/ata/ahci_brcm.c
-+++ b/drivers/ata/ahci_brcm.c
-@@ -6,7 +6,9 @@
-  */
+diff --git a/arch/arm/boot/dts/broadcom/bcm-nsp.dtsi b/arch/arm/boot/dts/broadcom/bcm-nsp.dtsi
+index 6a4482c93167..9dbcd810e27b 100644
+--- a/arch/arm/boot/dts/broadcom/bcm-nsp.dtsi
++++ b/arch/arm/boot/dts/broadcom/bcm-nsp.dtsi
+@@ -168,7 +168,7 @@ periph_clk: periph_clk {
  
- #include <linux/ahci_platform.h>
-+#include <linux/bcma/bcma_regs.h>
- #include <linux/compiler.h>
-+#include <linux/delay.h>
- #include <linux/device.h>
- #include <linux/init.h>
- #include <linux/interrupt.h>
-@@ -83,6 +85,7 @@ enum brcm_ahci_quirks {
- struct brcm_ahci_priv {
- 	struct device *dev;
- 	void __iomem *top_ctrl;
-+	void __iomem *idm;
- 	u32 port_mask;
- 	u32 quirks;
- 	enum brcm_ahci_version version;
-@@ -230,6 +233,25 @@ static u32 brcm_ahci_get_portmask(struct ahci_host_priv *hpriv,
- 	return impl;
- }
+ 	axi: axi@18000000 {
+ 		compatible = "simple-bus";
+-		ranges = <0x00000000 0x18000000 0x0011c40c>;
++		ranges = <0x00000000 0x18000000 0x0011f000>;
+ 		#address-cells = <1>;
+ 		#size-cells = <1>;
  
-+static void brcm_sata_init_idm(struct brcm_ahci_priv *priv)
-+{
-+	u32 data;
-+
-+	if (!priv->idm)
-+		return;
-+
-+	/* Enable the interface clock before releasing the SATA core reset. */
-+	data = readl(priv->idm + BCMA_IOCTL);
-+	writel(data | BCMA_IOCTL_CLK, priv->idm + BCMA_IOCTL);
-+	readl(priv->idm + BCMA_IOCTL);
-+	usleep_range(1000, 2000);
-+
-+	data = readl(priv->idm + BCMA_RESET_CTL);
-+	writel(data & ~BCMA_RESET_CTL_RESET, priv->idm + BCMA_RESET_CTL);
-+	readl(priv->idm + BCMA_RESET_CTL);
-+	usleep_range(1000, 2000);
-+}
-+
- static void brcm_sata_init(struct brcm_ahci_priv *priv)
- {
- 	void __iomem *ctrl = priv->top_ctrl + SATA_TOP_CTRL_BUS_CTRL;
-@@ -376,6 +398,9 @@ static int __maybe_unused brcm_ahci_resume(struct device *dev)
- 	if (ret)
- 		return ret;
+@@ -538,8 +538,9 @@ sata_phy1: sata-phy@1 {
  
-+	/* Initialize the IDM before enabling the controller clocks. */
-+	brcm_sata_init_idm(priv);
-+
- 	/* Make sure clocks are turned on before re-configuration */
- 	ret = ahci_platform_enable_clks(hpriv);
- 	if (ret)
-@@ -453,6 +478,14 @@ static int brcm_ahci_probe(struct platform_device *pdev)
- 	priv->version = (unsigned long)of_id->data;
- 	priv->dev = dev;
- 
-+	/* Older NSP device trees rely on firmware to initialize the IDM. */
-+	if (priv->version == BRCM_SATA_NSP &&
-+	    platform_get_resource_byname(pdev, IORESOURCE_MEM, "idm")) {
-+		priv->idm = devm_platform_ioremap_resource_byname(pdev, "idm");
-+		if (IS_ERR(priv->idm))
-+			return PTR_ERR(priv->idm);
-+	}
-+
- 	priv->top_ctrl = devm_platform_ioremap_resource_byname(pdev, "top-ctrl");
- 	if (IS_ERR(priv->top_ctrl))
- 		return PTR_ERR(priv->top_ctrl);
-@@ -493,6 +526,9 @@ static int brcm_ahci_probe(struct platform_device *pdev)
- 	if (ret)
- 		return ret;
- 
-+	/* Initialize the IDM before enabling the controller clocks. */
-+	brcm_sata_init_idm(priv);
-+
- 	ret = ahci_platform_enable_clks(hpriv);
- 	if (ret)
- 		goto out_reset;
+ 		sata: sata@41000 {
+ 			compatible = "brcm,bcm-nsp-ahci";
+-			reg-names = "ahci", "top-ctrl";
+-			reg = <0x41000 0x1000>, <0x40020 0x1c>;
++			reg-names = "ahci", "top-ctrl", "idm";
++			reg = <0x41000 0x1000>, <0x40020 0x1c>,
++			      <0x11e000 0x1000>;
+ 			interrupts = <GIC_SPI 159 IRQ_TYPE_LEVEL_HIGH>;
+ 			#address-cells = <1>;
+ 			#size-cells = <0>;
 -- 
 2.53.0
 
