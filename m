@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9C366606A33F
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Oct 2026 11:11:05 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D98DC606A321
+	for <linux-phy@archiver.kernel.org>; Fri, 30 Oct 2026 12:03:37 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=QJedsHVT;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=B6wz9Fxz
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=z7BoMNF0;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=GZoa9hHz
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,53 +14,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=JxLhGEH8zA26//AorEElLAxN8Tg8WwSGQdm7nZxGjLk=; b=QJedsHVTWXMLl6sOEZZjwgp5SO
-	8wpnfyr+Y70n2TSFsRzN4US81nUjH+VEyPuT2kJNlaDqdfun/nyq1So390cxKhqiYMtNf+qdUexcn
-	INQHWLLBGZqbnGyD9j+Mtxmx6bBNkao8ngdRgAhTCpyDOGrJss/cavfs3P37TdXrXZDcq2JDi9BGu
-	F3qWwKMUg5fNipZL/qP4TswjCCQeS0acl7r0vTIDV0Dg3nxKk6fZY+DcFRU1GAHu+Gp23x604pI0v
-	kgAJGqI0WoFWIWZ+W78boe7NEBAOoTDDpDplPLMf1Z2ut4DZ6gd36FCCl/V/lpVJg3r6NGrCp4Jie
-	2mYHYPgQ==;
+	bh=RkpIluP3wSzb1XbykNUVWhB1uZiTah8RmJcO/HiksJ8=; b=z7BoMNF0S+cTy0vhq4dxyMeWQJ
+	KQBhrsSXlldEEQnHpNtPl26m1r4QFZUxwwR+BHF26eeltlNceH12LNtjt4nmzfW6dkfZ08WbZiutQ
+	kdygGESfOT/YW1MFhx1PUT6UV5d3tdudebAA4NOJBaiRfG1KQ4bmHSuxIAu80dyetEyf/ZGW/9uh8
+	B+6KffDbxNQCsbe5/rEYhHv3Xsc5dP3OPRKHb1RE6JAvlvdf/RRfbOa8Q9xz4NttFicRiIkA7TW4v
+	+orOdplNT0O4Higd/2e4XEDnbL+Lgr/SAKElK9LQLbqnERhwLxKE+bCCCiioJ6y2UsW0sTP7dNG6W
+	neSOPkhw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMkVl-0000000BVWs-0xqN;
-	Fri, 30 Oct 2026 11:11:05 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xMlKb-0000000BcoX-2drw;
+	Fri, 30 Oct 2026 12:03:37 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMkVj-0000000BVWV-258K;
-	Fri, 30 Oct 2026 11:11:03 +0000
+	id 1xMlKa-0000000Bcne-0H4w;
+	Fri, 30 Oct 2026 12:03:36 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 57099602CA;
-	Fri, 30 Oct 2026 11:11:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2AD301F00A02;
-	Fri, 30 Oct 2026 11:11:00 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 03E0643D4F;
+	Fri, 30 Oct 2026 12:03:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 151AF1F00A1A;
+	Fri, 30 Oct 2026 12:03:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793358662;
-	bh=zxZ61noBemOEJ9Z/Swm3wSwkY7NkjJ1S3EShVMj989I=;
+	s=k20260515; t=1793361814;
+	bh=C2rZnyIbpP89ye6bG3lNVVpR9E9Mquq/SRfP5Fdrzig=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=B6wz9Fxz6TcjWK5RVkgW6OK/pRylEpQuIfP6QSdziPqzdCOAuAFyIBvq/pCr7qsw5
-	 RfgaO+FBxRrCG1LU3kErftUbiB6gvDTvFbV9W2hBdFTN6jk77WWFZaWZwIcYvxammu
-	 6jzm1CHzHKNkesPb1ERuda8+n5pEP3J06XSRzDXcmJgJmrk/r4jGn7QcrpLsEwqyG4
-	 Z5lzbOp3Y/ycXRLdiqX2+jnRxPjswUlwyzi/o1OKjnruDxpaDCMUROAmawG2BmSc43
-	 Kroj/hsVhjz4f89dQrGEs8kFHbFad30/9x8vNTJMEZAtZeHOS0xXIDEimf/9MEE6Hi
-	 /0MUq4weqCK+g==
-Date: Fri, 30 Oct 2026 12:10:58 +0100
+	b=GZoa9hHzPrOnevW6nL66UFfYPR1bLjl/Gfh/ByEq9wZG4JLMlRqe5GnOZgMMEUEV6
+	 W1t9xyphqrFdCQYwAmTUVv9RVvqRZEj/zrZ5Lx53Pk7O8/VXPoRh8ayBKktFqNZjoy
+	 qNkJESDbPI2FJdxyBabtcv9YkR6rhYRfTkbFxV6OXEMsTaJGXiSt7viFo8A4nE0I78
+	 sLObvsJS7/wq77PxHoToLRpedX4wsxSHfCP441qmRdeAdEtunwv7ylwgOHKFLoMscJ
+	 mKYZIK5hSb8LMqIQvkmIUODAR0smixNBAXB8+7h3eMy+0YTTTmNoVjQOoCU9252Ylp
+	 Fa++KEnxgQ/Dg==
+Date: Fri, 30 Oct 2026 13:03:31 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
-To: christian.koever-draxl@student.uibk.ac.at
-Cc: neil.armstrong@linaro.org, khilman@baylibre.com, jbrunet@baylibre.com, 
-	martin.blumenstingl@googlemail.com, vkoul@kernel.org, mani@kernel.org, robh@kernel.org, 
-	krzk+dt@kernel.org, conor+dt@kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-amlogic@lists.infradead.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, 
-	Christian Stefan =?utf-8?B?S8O2dsOpci1EcmF4bA==?= <ckoever@outlook.de>
-Subject: Re: [PATCH 1/2] dt-bindings: phy: amlogic,g12a-usb2-phy: add S4
- compatible
-Message-ID: <20261030-chihuahua-of-perpetual-current-1d40e3@quoll>
-References: <20261025192202.209045-1-christian.koever-draxl@student.uibk.ac.at>
- <20261025192202.209045-2-christian.koever-draxl@student.uibk.ac.at>
+To: Vinicius Pedrosa <vinicius.eduardo.pedrosa@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+	Conor Dooley <conor+dt@kernel.org>, Chen-Yu Tsai <wens@kernel.org>, 
+	Jernej Skrabec <jernej.skrabec@gmail.com>, Samuel Holland <samuel@sholland.org>, 
+	Andre Przywara <andre.przywara@arm.com>, Xu Rao <raoxu@uniontech.com>, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: document Allwinner A733 USB-2.0 PHY
+Message-ID: <20261030-adaptable-vagabond-skylark-bacc90@quoll>
+References: <20261029172325.3425046-1-vinicius.eduardo.pedrosa@gmail.com>
+ <20261029172325.3425046-2-vinicius.eduardo.pedrosa@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20261025192202.209045-2-christian.koever-draxl@student.uibk.ac.at>
+In-Reply-To: <20261029172325.3425046-2-vinicius.eduardo.pedrosa@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,25 +71,37 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-T24gU3VuLCBPY3QgMjUsIDIwMjYgYXQgMDg6MjI6MDFQTSArMDEwMCwgY2hyaXN0aWFuLmtvZXZl
-ci1kcmF4bEBzdHVkZW50LnVpYmsuYWMuYXQgd3JvdGU6Cj4gRnJvbTogQ2hyaXN0aWFuIFN0ZWZh
-biBLw7Z2w6lyLURyYXhsIDxja29ldmVyQG91dGxvb2suZGU+Cj4gCj4gVGhlIFM0IFVTQjIgUEhZ
-IGlzIHRoZSBHMTJBL0ExIGRlc2lnbiB3aXRoIGEgZmV3IGRpZmZlcmVudCBhbmFsb2cKPiBzZXR0
-aW5ncywgc28gaXQgbmVlZHMgaXRzIG93biBjb21wYXRpYmxlLgo+IAo+IFNpZ25lZC1vZmYtYnk6
-IENocmlzdGlhbiBTdGVmYW4gS8O2dsOpci1EcmF4bCA8Y2tvZXZlckBvdXRsb29rLmRlPgo+IC0t
-LQo+ICBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L2FtbG9naWMsZzEyYS11
-c2IyLXBoeS55YW1sIHwgMSArCj4gIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKQoKQWNr
-ZWQtYnk6IEtyenlzenRvZiBLb3psb3dza2kgPGtyenlzenRvZi5rb3psb3dza2lAb3NzLnF1YWxj
-b21tLmNvbT4KCkJlc3QgcmVnYXJkcywKS3J6eXN6dG9mCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5n
-IGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On Thu, Oct 29, 2026 at 02:23:24PM -0300, Vinicius Pedrosa wrote:
+> The USB 2.0 PHY in the Allwinner A733 works with the D1 settings of
+> the sun4i-usb driver. Add its compatible with the D1 fallback, as was
+> done for the A523.
+> 
+> It gets its own compatible because the driver has to clear SIDDQ
+> before releasing the PHY reset on this SoC.
+
+Each device gets own compatible.
+
+Above suggests they might not be compatible, which feels confusing with
+first paragraph. I don't get why you are making two separate statements
+about the same - first paragraph says A, second says B.
+
+Just one paragrap and explain whether they are compatible or not.
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
