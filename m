@@ -2,84 +2,85 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 466D0606A320
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Oct 2026 06:19:37 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 16E8D606A31A
+	for <linux-phy@archiver.kernel.org>; Fri, 30 Oct 2026 06:49:39 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=oyOY3F4T;
-	dkim=temperror header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=FDVm/0ho
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=ENx2Hg8S;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=rock-chips.com header.i=@rock-chips.com header.a=rsa-sha256 header.s=default header.b=Hrj5Xx5+
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=zniNirQyVXvgUh8GPPJ2Fc+uq2XXMN2Ju4F+/RWjdeE=; b=oyOY3F4TQ3hvS7nAii8U+c239i
-	/joht/tlzf5I4C/Ma0GCqrzMAhKQYvOT9SJKScvT2/41znhY3Kkzghn0mfLooQ9XdsiuvQvOsUO14
-	KvppxNLQSm5wrWIfMFbp/xtlH8nfnzd2uu/v6TZhIZqlMA81Is5p2UXI/vWaMBxDgVhgYsM5Kty9F
-	vsKcvsVY4wbXU4OKlFOo7K4XalVTSiA5tHFzArsLQ+/8j2Ir4nOx6NLSjxVwfHCew6uRoqhjD+64c
-	sQXzaoz67CoA1lwBIo0CSqAgJf2GnNrhbElut5ZrN8fsGOoanyAWHFXREYIKTA67CiQkMcTBQ6xHn
-	V3CEKGIg==;
+	bh=YqhqMhCS6RmXqcIvi8CZF9Pjx0ikRoFIBEyioQjKorM=; b=ENx2Hg8S1EKLDZKh10iP7yn1qw
+	TmkbzxOSPuktc9hEJW4JvXwJWhpc0FEYQ0EHmJf8ubyx55R9Tyv/Lz0KtFNNWlFZ8vERE1CmMXlY8
+	AzO0e8hbIAUfUPOiwVTTyya3LYurZmwd4E41vURqgrVgdd1HZnzRizN54/4ECNrOXb1i54yBsKiGg
+	oNIYU5GLVDhtMJuzfplC7p6+yD6Ah5Tth+gzWQWy2QZ7aP0A0pIf+UOozUsZOS4fNqRd38SUZCrHq
+	D6ykOXoqtv0cJH+lUGR8HYrQfdq7Li7m5Fp1N8FH80j38ZpjMkV93CSlwYFVjqVl1W4Pvr3BfQza1
+	LpL7gdtg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMfxg-0000000AtGJ-39XF;
-	Fri, 30 Oct 2026 06:19:36 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xMgQk-0000000AvEl-2fVH;
+	Fri, 30 Oct 2026 06:49:38 +0000
+Received: from mail-m1075.netease.com ([154.81.10.75])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMfxe-0000000AtGC-3L3i
-	for linux-phy@lists.infradead.org;
-	Fri, 30 Oct 2026 06:19:34 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0BC0441FA6;
-	Fri, 30 Oct 2026 06:19:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2D51E1F000C1;
-	Fri, 30 Oct 2026 06:19:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793341173;
-	bh=QaCFwLra8DnG82pikwLY7UmYZm2bl5OOaV+ZPa2+uIM=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=FDVm/0hoRpZ9k5NWBWvKxngEP4qLQOUtvrwb7n3FIpbbfW1XsljhWL5m5JX0V7Rxi
-	 9ySOL0WV2YxVqusiZRCrvJsUL1xv/VjMg5dWRdVi1Ag+Rw7JPUzBB4BvRzS2zXnENd
-	 dfBXZBnXYRbePFmGj6zU+DS9ReMiWA5njzT9lmxOOx7jHJVY+def2ZF0iOZPGJuOUp
-	 sfzZDm7rjKklzV0M6wlCi0qvFbXRUMWVzIWZdHRg/gqhSsI8xnf28mTfRqyNZE01Ba
-	 GGzdVXwvL0kXuTF9iP+K7FeWZ0DRiXueZKKUb59nQdWMSGMabRqI29Xtc5OCrT47Nd
-	 9R62nHfMnuWEQ==
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Lorenzo Pieralisi <lpieralisi@kernel.org>, 
- =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
- Bjorn Helgaas <bhelgaas@google.com>, Bjorn Andersson <andersson@kernel.org>, 
- Maxime Chevallier <maxime.chevallier@bootlin.com>, 
- Philipp Zabel <p.zabel@pengutronix.de>, 
- Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
-Cc: shengchao.guo@oss.qualcomm.com, linux-arm-msm@vger.kernel.org, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org, 
- Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20261029-nord-v5-0-1a13c214e89d@oss.qualcomm.com>
-References: <20261029-nord-v5-0-1a13c214e89d@oss.qualcomm.com>
-Subject: Re: [PATCH v5 0/2] Add PCIe support for Qualcomm Nord platform
-Message-Id: <179334114173.5551.12630399291214852327.b4-ty@b4>
-Date: Fri, 30 Oct 2026 11:49:01 +0530
+	id 1xMgQf-0000000AvCk-0lKV;
+	Fri, 30 Oct 2026 06:49:36 +0000
+Received: from zyb-HP-ProDesk-680-G2-MT.. (unknown [58.22.7.114])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 52e79690c;
+	Fri, 30 Oct 2026 14:49:25 +0800 (GMT+08:00)
+From: Damon Ding <damon.ding@rock-chips.com>
+To: Sandy Huang <hjc@rock-chips.com>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	David Airlie <airlied@gmail.com>,
+	Simona Vetter <simona@ffwll.ch>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Robert Foss <rfoss@kernel.org>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	Dave Jones <s.dave.jones@gmail.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	dri-devel@lists.freedesktop.org,
+	linux-rockchip@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Damon Ding <damon.ding@rock-chips.com>
+Subject: [PATCH v4 0/6] Add eDP support for RK3568
+Date: Fri, 30 Oct 2026 14:48:59 +0800
+Message-Id: <20261030064905.2248999-1-damon.ding@rock-chips.com>
+X-Mailer: git-send-email 2.34.1
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1205;
- i=manivannan.sadhasivam@oss.qualcomm.com; h=from:subject:message-id;
- bh=dib3mSnynAOgkHD90d30QPT5TiCCYKF0wRsK3qpWYr0=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq5Dbo3c/+lc+jFOulS3o8sM9xyr6yXbWUBG5Ox
- vieb5JcpQaJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCauQ26AAKCRBVnxHm/pHO
- 9b5UB/9jcGdxyvxObvaLWbqvQvDiutHu9IWoG+sqpN0II5IaReKNB4cCmo9OslGRwNBSe4ziHFm
- vWQXq4C1S6u7wnS7dPCOF7zI6j2eDHBJPq64BuHGGdzO3qmMGhAf2DPanIjmpKDxxqZXGpc/9/y
- TPpqS2jcTiINM464YGBV7HTyS4wLeV5KjHhrEYPmqlj1pPABZ5NNFXv4x2KOzbdlOXIDvIfDHuZ
- 1CveXoBx27k1CmLI70GDsT1Ica/IWuA/CJme4xLHZjTJ+x032pt443vCoasq2uFNAdT513cjVsC
- h5PahdeTwNUfv9h/Ec/ZUtWybbOpj8CP6iZ4D2ruaCUE8aGE
-X-Developer-Key: i=manivannan.sadhasivam@oss.qualcomm.com; a=openpgp;
- fpr=C668AEC3C3188E4C611465E7488550E901166008
+X-HM-Tid: 0aa18b92072d03a8kunme14bef99793ce
+X-HM-MType: 1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFDSUNOT01LS0k3V1kYFggdWUFKV1ktWUFJV1kPCRoVCBIfWUFZQxpPTFZNHkJISk1DSE
+	tDT0lWFRQJFhoXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0
+	tIVUpLSEpKQk1VSktLVUpCWQY+
+DKIM-Signature: a=rsa-sha256;
+	b=Hrj5Xx5+UQt5ncE5dsfobj3S6xvum1MUlDrCc5N998ceT7FnyL8nhSGmUOTfFtWkytwwzRbnqc385T5RGKTBPyXQnoCqozAGstr9mGHYw6koxS+RfIATZiacYyS2eQ5SgfXcQaMquiqqb5KR3CwTgCQckU368CMjhu5EMUz4a18=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=pGnhy8KafHjhp0kxxKojoSMc1TwDhFu6AVtDINHFLK8=;
+	h=date:mime-version:subject:message-id:from;
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261029_234933_801649_BDE0C0A9 
+X-CRM114-Status: GOOD (  15.58  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,36 +90,126 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-6.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=no
-	autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Ck9uIFRodSwgMjkgT2N0IDIwMjYgMTE6NDA6MTUgKzA1MzAsIEtyaXNobmEgQ2hhaXRhbnlhIENo
-dW5kcnUgd3JvdGU6Cj4gQWRkIFBDSWUgc3VwcG9ydCBmb3IgUXVhbGNvbW0gTm9yZCBwbGF0Zm9y
-bQo+IAo+IFRoaXMgc2VyaWVzIGFkZHMgUENJZSBzdXBwb3J0IGZvciB0aGUgUXVhbGNvbW0gTm9y
-ZCAoU0E4Nzk3UCkgcGxhdGZvcm0uCj4gCj4gTm9yZCBoYXMgYSBzaW5nbGUgR2VuNS1jYXBhYmxl
-IFFNUCBQQ0llIFBIWSBibG9jayBzcGxpdCBpbnRvIGZvdXIKPiBpbmRlcGVuZGVudGx5LWNsb2Nr
-ZWQgYW5kIGluZGVwZW5kZW50bHktcmVzZXR0YWJsZSBwb3J0cyAoQS9CL0MvRCkuCj4gRmlybXdh
-cmUgc2VsZWN0cyB0aGUgYWN0aXZlIGxhbmUgdG9wb2xvZ3kgYXQgYm9vdCB2aWEgYSBUQ1NSCj4g
-Y29uZmlndXJhdGlvbiByZWdpc3RlciwgYW5kIHRoZSBzYW1lIFBIWSBibG9jayBjYW4gYXBwZWFy
-IGFzIGEgc2luZ2xlCj4geDE2IHBvcnQsIHg4K3g4LCB4OCt4NCt4NCwgb3IgeDgreDQreDIreDIg
-ZGVwZW5kaW5nIG9uIHRoYXQgbW9kZS4gVGhpcwo+IGlzIHNpbWlsYXIgaW4gc3Bpcml0IHRvIHRo
-ZSBHbHltdXIgbXVsdGktUEhZIHN1cHBvcnQgYWxyZWFkeSBwb3N0ZWQsCj4gZXhjZXB0IE5vcmQn
-cyBQSFkgcmVnaXN0ZXJzIGFyZSBwcm9ncmFtbWVkIGJ5IExpbnV4IHJhdGhlciB0aGFuIGJ5Cj4g
-ZmlybXdhcmUsIHNvIHRoaXMgc2VyaWVzIGFkZHMgdGhlIFBMTCwgVFhSWFosIFBDUyBhbmQgUENT
-LWxhbmUgaW5pdAo+IHRhYmxlcyBhbG9uZyB3aXRoIHRoZSBwb3dlci11cC9wb3dlci1kb3duL3Nv
-ZnQtcmVzZXQgc2VxdWVuY2luZyBuZWVkZWQKPiB0byBicmluZyBlYWNoIHBvcnQgdXAuCj4gCj4g
-Wy4uLl0KCkFwcGxpZWQsIHRoYW5rcyEKClsxLzJdIGR0LWJpbmRpbmdzOiBwY2k6IHFjb206IGFk
-ZCBOb3JkIFBDSWUgY29udHJvbGxlciBjb21wYXRpYmxlCiAgICAgIGNvbW1pdDogMDhlN2Y1M2M3
-N2M3ZmE1ZDM0ZjRjYjY5YjllZWQyNjY0Y2NjYzY3MApbMi8yXSBQQ0k6IHFjb206IEFkZCBOb3Jk
-IFBDSWUgY29udHJvbGxlciBzdXBwb3J0CiAgICAgIGNvbW1pdDogMzk5ZmE1OGMzNzE1YzVhNzRh
-NmZkNDY4ZGI3M2NlNzAzMTkzYzRmNwoKQmVzdCByZWdhcmRzLAotLSAK4K6u4K6j4K6/4K614K6j
-4K+N4K6j4K6p4K+NIOCumuCupOCuvuCumuCuv+CuteCuruCvjQoKCgotLSAKbGludXgtcGh5IG1h
-aWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmlu
-ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+PATCH 1 is to document the "rockchip,rk3568-edp" compatible in the
+        Rockchip Analogix DP binding.
+PATCH 2 is to add the binding for the RK3568 eDP PHY with NaNeng IP block.
+PATCH 3 is to add the RK3568 support for the Analogix DP bridge driver.
+PATCH 4 is to add the driver for the Rockchip eDP Transmitter PHY with
+        NaNeng IP block.
+PATCH 5 is to add the RK3568 support for the Rockchip Analogix DP driver.
+PATCH 6 is to add the eDP controller and eDP PHY nodes for the RK3568
+        SoCs.
+
+Tested on RK3568 EVB1 board with LG eDP panel LP079QX1-SP0V.
+
+&edp {
+  avdd-0v9-supply = <&vdda0v9_image>;
+  avdd-1v8-supply = <&vcca1v8_image>;
+  force-hpd;
+  status = "okay";
+
+  aux-bus {
+    panel {
+      compatible = "edp-panel";
+      backlight = <&backlight>;
+      power-supply = <&vcc3v3_lcd0_n>;
+      no-hpd;
+
+      port {
+        panel_in_edp: endpoint {
+          remote-endpoint = <&edp_out_panel>;
+        };
+      };
+    };
+  };
+};
+
+&edp_in {
+  edp_in_vp0: endpoint {
+    remote-endpoint = <&vp0_out_edp>;
+  };
+};
+
+&edp_out {
+  edp_out_panel: endpoint {
+    remote-endpoint = <&panel_in_edp>;
+  };
+};
+
+&edp_phy {
+  status = "okay";
+};
+
+&vp0 {
+  vp0_out_edp: endpoint@ROCKCHIP_VOP2_EP_EDP0 {
+    reg = <ROCKCHIP_VOP2_EP_EDP0>;
+    remote-endpoint = <&edp_in_vp0>;
+  };
+};
+
+Damon Ding (6):
+  dt-bindings: display: rockchip: analogix-dp: Add support for RK3568
+  dt-bindings: phy: Add rockchip,rk3568-edp-phy
+  drm/bridge: analogix_dp: Add support for RK3568
+  phy: rockchip: Add support for Naneng eDP phy
+  drm/rockchip: analogix_dp: Add support for RK3568
+  arm64: dts: rockchip: rk356x: Add eDP controller and phy nodes
+
+ .../rockchip/rockchip,analogix-dp.yaml        |  28 +-
+ .../bindings/phy/rockchip,rk3568-edp-phy.yaml |  68 +++
+ .../devicetree/bindings/soc/rockchip/grf.yaml |  20 +
+ arch/arm64/boot/dts/rockchip/rk356x-base.dtsi |  45 ++
+ .../drm/bridge/analogix/analogix_dp_core.c    |   1 +
+ .../gpu/drm/rockchip/analogix_dp-rockchip.c   |  24 +-
+ drivers/phy/rockchip/Kconfig                  |  10 +
+ drivers/phy/rockchip/Makefile                 |   1 +
+ .../phy/rockchip/phy-rockchip-naneng-edp.c    | 466 ++++++++++++++++++
+ include/drm/bridge/analogix_dp.h              |   2 +
+ 10 files changed, 663 insertions(+), 2 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3568-edp-phy.yaml
+ create mode 100644 drivers/phy/rockchip/phy-rockchip-naneng-edp.c
+
+---
+
+Changes in v2:
+- Apply the lane-dependent TX configurations in set_lanes() instead of
+  set_rate(), and store the lane count for set_voltages(), since the
+  Analogix DP core issues separate phy_configure() calls and the lane
+  count is only valid in the set_lanes/set_voltages calls. (Sashiko)
+- Initialize val to zero in rockchip_edp_phy_enabled() to avoid using
+  an uninitialized variable when regmap_read() fails. (Sashiko)
+- Fail the probe when the chip data requires GRF configurations while
+  the "rockchip,grf" property is missing. (Sashiko)
+- Rebase onto latest drm-misc-next tree.
+
+Changes in v3:
+- Restore the PHY related changes which were missing in v2 for
+  unexpected reasons.
+
+Changes in v4:
+- Restrict the avdd-0v9 and avdd-1v8 supplies to the RK3568 compatible
+  in the Rockchip Analogix DP binding.
+- Add the reg entry for the PHY node and the ranges/#address-cells/
+  #size-cells for the parent syscon node in the Rockchip GRF schema.
+- Map the PHY registers from its own reg property instead of accessing
+  them through the parent syscon regmap.
+- Model the PHY node with a reg property under the parent syscon in the
+  DT.
+
+-- 
+2.34.1
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
