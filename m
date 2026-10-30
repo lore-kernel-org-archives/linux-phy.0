@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C5C06606A31F
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Oct 2026 15:04:18 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6B247606A31A
+	for <linux-phy@archiver.kernel.org>; Fri, 30 Oct 2026 15:06:05 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=a+8/kXOh;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=n+xpX27b
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=xIt4jTqI;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=GinZx1PR
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
@@ -14,38 +14,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=wtgRTpjTY71ZFiR6BfqQ6KudHh/rOTBfgH7sZwyJhZU=; b=a+8/kXOhFxKAcgQTKJH4C053UW
-	DrqWfYq7B0Y42urC31UaQlQUmR4am82YZX2yQjqHH9bAE2tJsYzVVLcsMscL4xgdMZY8fJmj3D34I
-	+IpOfrrFpD4GqEorARCMfnEvN+Rg8qttgU2cEcdd/Fo7FyN7im54wk0H6ngQwn/401jxCrilsIQ/C
-	27tNdNyxaOviUHFAwDHEE/cNQ8X7HQO2q2+Kudvu4LyJi65/fGOLeqtyXYiKs41eLKAvoIAYt93BM
-	SV6pGpnqXkSXLvdTgIr+MfZGNjZZJpWxilygcBD43jsrEvZMzjOcoFa0wMcgSEGZHGkGllDfinpW5
-	Usl+8K4Q==;
+	bh=yBchhWRQH30N/SQqrDBG3s7llp0X+OrvfWys2ddJ0Wc=; b=xIt4jTqIckNNIetjKOY930kEJr
+	JWazzvC/Q9UCm26SA8/6eHFTeLkocU7Zj/iUx5QoB+5sJMPP05rYWP9OrtEfQh2Dzi8PIy5XgdLDa
+	kYXFgXDpNha4vsHQL461sZmxRjFPk5DANWxEcMZMFRPD7OEpzrhWWXNbg8cXXAeEE+r0Q6Q+yGsl4
+	ZLTKC5+QvnSZh09PaoPRfEf7a4EdqjSjX/yfhF+XkjCGE36FzdKhuQRGtnTIAC61Guuezyd82elNh
+	pqzhmTndcR8C6kTZx757z/4cqo8cvBQdPGAmU/H0PaALogogafxTxYPH6BbdMhTjJqJy95sTF2kxZ
+	WSNKv1kw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMo9S-0000000BwD2-15ue;
-	Fri, 30 Oct 2026 15:04:18 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xMoBB-0000000BwT3-0hGZ;
+	Fri, 30 Oct 2026 15:06:05 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMo9Q-0000000BwCq-2EE3
+	id 1xMoBA-0000000BwSj-0QLF
 	for linux-phy@lists.infradead.org;
-	Fri, 30 Oct 2026 15:04:16 +0000
+	Fri, 30 Oct 2026 15:06:04 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id A47C0601EE;
-	Fri, 30 Oct 2026 15:04:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B8E881F000C1;
-	Fri, 30 Oct 2026 15:04:10 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id D8B6540AE4;
+	Fri, 30 Oct 2026 15:06:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4D2C81F000C1;
+	Fri, 30 Oct 2026 15:05:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793372655;
-	bh=3ejU+QwuvUUVlsjsPfu0/M64lUD5vHCXgteWpYlp2rI=;
+	s=k20260515; t=1793372763;
+	bh=sYzDRqOzrEYAZS4hTTZnOPoaD6AkG418LLgUVfOQKBQ=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=n+xpX27bPWE+A2TwUPOE3kmmTRkiwZ/zopIYTmEws4IWwKWLejW2Z7Ym5/KEZUFFl
-	 FsZLfRob1h5sCFMrSQdL+5cazhsLr0XHvEyPqH6sTaTI/oJy+apdaOfOWbDRZ/RjOU
-	 stnzbFpT2HB8K1dQc52sODuD+SWGC9AQbf+v+TLlNIV5f61ODrleB9Ht26auRm+GRr
-	 gFgb9NDKqc2vn6JKdfqE/RVZhr5+6fFBImL223SGX5Zx4CixItBqK6Urd9YtnYexM4
-	 R0Jl/2tJMKrYuSFyd+8tOUJbGHQEmUgPrJTA2jFUst56IwjQVfZrLQWdaWi75g+z2C
-	 arEnhZ87VsAfA==
-Message-ID: <5817be6b-7180-407b-acb5-8c5fdef4edfb@kernel.org>
-Date: Fri, 30 Oct 2026 15:04:09 +0000
+	b=GinZx1PRh60QmM5qiDNQiT6QgBe4qdyaQscATG3RcMHjP0sYl3VQfCqiNevGtSstH
+	 Kojl5XNjX4GDEMYFXnZovD2F0uN+pRSqmUNiMcJ1JfFTIyXRRelJLjFFSzo7z+G5cl
+	 BwYQVngRwWOObknO8quqRzLYK7fuqNx/BYdUnWNbPG/Kt6mQJQalm/Aihl8K0XM7xl
+	 3+HOjVM1zN2Ffbsc3taOMmceOlMq7zJiOGEcH+ixSmxCAQLLpSeNsY2CVCNNDY913n
+	 d7iscjOjR0E2JGZ1fSfCSmd6lvRWIwktOPpl1P8YhSJCcV8WQlhIZ/rmMC/VgAetZp
+	 Ki5jcXQkFA9lA==
+Message-ID: <23845ad3-dedd-4e24-803b-5abf3b030c4a@kernel.org>
+Date: Fri, 30 Oct 2026 15:05:57 +0000
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
@@ -127,29 +127,27 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-5.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
-	autolearn=no autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 On 30/10/2026 12:43, Nihal Kumar Gupta wrote:
-> +static const struct camss_subdev_resources csid_res_hawi[] = {
-> +	/* CSID0 */
-> +	{
-> +		.clock = { "csid", "csid_csiphy_rx" },
-> +		.clock_rate = { { 480000000 },
-> +				{ 480000000 } },
-> +		.reg = { "csid0" },
-> +		.interrupt = { "csid0" },
-> +		.csid = {
-> +			.parent_dev_ops = &vfe_parent_dev_ops,
-> +			.hw_ops = &csid_ops_1190,
-> +			.formats = &csid_formats_gen2
-> +		}
+> @@ -6113,6 +6341,7 @@ static const struct of_device_id camss_dt_match[] = {
+>   	{ .compatible = "qcom,sm8250-camss", .data = &sm8250_resources },
+>   	{ .compatible = "qcom,sm8550-camss", .data = &sm8550_resources },
+>   	{ .compatible = "qcom,sm8650-camss", .data = &sm8650_resources },
+> +	{ .compatible = "qcom,hawi-camss", .data = &hawi_resources },
+>   	{ .compatible = "qcom,x1e80100-camss", .data = &x1e80100_resources },
+>   	{ .compatible = "qcom,glymur-camss", .data = &x1e80100_resources },
 
-This looks strange, why is there only one clock rate ?
+this insertion makes no sense.
+
+In fact glymur should have gone up the top with hawi underneath it.
+
+Could you please remediate ?
 
 ---
 bod
