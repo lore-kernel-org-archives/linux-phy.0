@@ -2,88 +2,58 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5385A606A332
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Oct 2026 06:50:11 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0D773606A31C
+	for <linux-phy@archiver.kernel.org>; Fri, 30 Oct 2026 06:55:40 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=egE9Ttm3;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=rock-chips.com header.i=@rock-chips.com header.a=rsa-sha256 header.s=default header.b=jUjghBRr
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=I4OBnj9s;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=N0L+1KCU
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=7weiAZku+rJpxv2fNuyFl6n1xmzr230Vk62W/PNx7T4=; b=egE9Ttm3MwAj6yhZ4poIa6DtO0
-	xmgy00yv2r3Mv+azBy2yhYK0t6v14oaZJzCUCma3zWCYl86yzhP8XeCojzpTok+1qWaC43ocqn8VA
-	szbVQSnvJ/okqXosnxq/1zaMtJ2wuPhTE+Q95UtOmqlgRxvPkR/fjqiQla0wIp8xYK9Rd0nm2mz/z
-	sZumMqEy0MtSnwtP7NTZpCOj8c/yZmN6GwBrBCbwAajezExkxIYCQH3+FEQbF2q7DBerzNKJdMeTt
-	JFe11YPGEpqKqo4ICg8owpKyBmpPtthFDqlxjbaP5oI0qVbgq0WZu6qLlFW3mYXKIHqoO3PRBJjzd
-	1yb+2YCw==;
+	bh=ZN8X4TlNhEr2m8GaQ3KHFJyEvfS6Q6jJkwXI3aztuSc=; b=I4OBnj9seflYhx1V/PNw8re0hg
+	EVPfLLz9VSsNaySg2NJUbbxGj9HjOBJ6dc5Yb1pTJYxGYb3T+KzddEaGW3/TqjmzBlnuKuChPgS6b
+	cNki2TP/p2fWSOc9sJF3qc6vW0gIbnDqWXjYYN3Z5LEcpzuS/RglnSYvjDCx/D5CfiLJwZE7/s2J6
+	qHcb9N5+YceeBOUYMiecU1uFcHB/PCeOLvsChFiy4PD8ykUUm2BO+kKp1Jht+PJaheYs8cx5EJwsE
+	fuEXUJIbG9rqnBgqQvoz6YgxNJeF6L0Mrsf0xvIP9a1yxMs3bcC7fSa3Tmu+CH5bfMZPTbxfWW1c4
+	yTIY42jQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMgRG-0000000AvmS-3wrY;
-	Fri, 30 Oct 2026 06:50:10 +0000
-Received: from mail-m12836.netease.com ([103.209.128.36])
+	id 1xMgWZ-0000000AwkB-34IK;
+	Fri, 30 Oct 2026 06:55:39 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMgQo-0000000AvFh-3mrM;
-	Fri, 30 Oct 2026 06:49:44 +0000
-Received: from zyb-HP-ProDesk-680-G2-MT.. (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 52e796957;
-	Fri, 30 Oct 2026 14:49:37 +0800 (GMT+08:00)
-From: Damon Ding <damon.ding@rock-chips.com>
-To: Sandy Huang <hjc@rock-chips.com>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	David Airlie <airlied@gmail.com>,
-	Simona Vetter <simona@ffwll.ch>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Robert Foss <rfoss@kernel.org>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
-	Dave Jones <s.dave.jones@gmail.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-	dri-devel@lists.freedesktop.org,
-	linux-rockchip@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Damon Ding <damon.ding@rock-chips.com>
-Subject: [PATCH v4 6/6] arm64: dts: rockchip: rk356x: Add eDP controller and phy nodes
-Date: Fri, 30 Oct 2026 14:49:05 +0800
-Message-Id: <20261030064905.2248999-7-damon.ding@rock-chips.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20261030064905.2248999-1-damon.ding@rock-chips.com>
+	id 1xMgWY-0000000AwjQ-2H0o
+	for linux-phy@lists.infradead.org;
+	Fri, 30 Oct 2026 06:55:38 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 76CC1601EE;
+	Fri, 30 Oct 2026 06:55:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B45781F000C1;
+	Fri, 30 Oct 2026 06:55:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1793343337;
+	bh=P9QrYaq/DkHGTDvTpt/LwceNqoTYAZ3bEDsNS1lBDO8=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=N0L+1KCU7gD0tUR70kHsd7E/hhsFrzeVs0qPM38fcNUO+u/N8H1EEHjllXNrcWZt0
+	 7zkohh73xFr5X49vYoPcbZBcokmeVhuvm2TBQ9+cHUhAkDRpTUViHG2M0+yMShk1v2
+	 yM53I+29/DI6vp5fZ1kHQU2luINy2Re77+JkijAyvWtu6LkqP6E9hCeY7ZYbNw2QFb
+	 QtGyv8scIy91NYsnn+Jq1ZrvGQjeBPRxWYvrOn16akdSpcIKQnriD2hxJVh7vkMw2S
+	 RTH3FQt6nwGufAsvgxOhQ53s9QRbHcVfnMG+Qdv7VnHfMx26Me+K7n2s2/iPqeezYl
+	 R5VlD2U/lMgHQ==
+Message-ID: <sashiko-outbox-190620@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v4 1/6] dt-bindings: display: rockchip: analogix-dp: Add
+ support for RK3568
+To: "Damon Ding" <damon.ding@rock-chips.com>
+Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-phy@lists.infradead.org, robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20261030064905.2248999-2-damon.ding@rock-chips.com>
 References: <20261030064905.2248999-1-damon.ding@rock-chips.com>
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-X-HM-Tid: 0aa18b92353103a8kunme14bef9979446
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1kYFggdWUFKV1ktWUFJV1kPCRoVCBIfWUFZGk5JQlYdSk1MSh0aSR
-	gYHk9WFRQJFhoXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0
-	tIVUpLSEpKQk1VSktLVUpCWQY+
-DKIM-Signature: a=rsa-sha256;
-	b=jUjghBRrjI6cVIGuqcpihieSTRffFrj0ZNC66Rdp4ikFSh+FmctUCIgnLka750gG/cbFnW2kKlUTDPpB1FkGaRt6idnSy1H16Xsvnydyji640t325qBvRczeT7CcDOddoshuTPsWXSd/w22n+LNQRHlO/KBPOpV+ygupsHTJ8uE=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=kW+VR5U0b0jOaOOyCPQjLOX5nd6qRJjRAAQ97MnVWxk=;
-	h=date:mime-version:subject:message-id:from;
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261029_234943_197006_672E8C39 
-X-CRM114-Status: UNSURE (   8.34  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
+ <20261030064905.2248999-2-damon.ding@rock-chips.com>
+Date: Fri, 30 Oct 2026 06:55:36 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,98 +63,61 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Add the eDP PHY GRF (with the eDP PHY child node mapped by its own
-register window) and the eDP controller nodes for the RK3568/RK3566
-SoCs.
-
-Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
-
----
-
-Changes in v4:
-- Model the PHY node with a reg property under the parent syscon.
----
- arch/arm64/boot/dts/rockchip/rk356x-base.dtsi | 45 +++++++++++++++++++
- 1 file changed, 45 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/rockchip/rk356x-base.dtsi b/arch/arm64/boot/dts/rockchip/rk356x-base.dtsi
-index a5832895bd39..7a5168548e55 100644
---- a/arch/arm64/boot/dts/rockchip/rk356x-base.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk356x-base.dtsi
-@@ -403,6 +403,24 @@ usb2phy1_grf: syscon@fdca8000 {
- 		reg = <0x0 0xfdca8000 0x0 0x8000>;
- 	};
- 
-+	edp_phy_grf: syscon@fdcb0000 {
-+		compatible = "rockchip,rk3568-edp-phy-grf", "syscon", "simple-mfd";
-+		reg = <0x0 0xfdcb0000 0x0 0x8000>;
-+		clocks = <&cru PCLK_EDPPHY_GRF>;
-+		ranges = <0x0 0x0 0xfdcb0000 0x100>;
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+
-+		edp_phy: phy@0 {
-+			compatible = "rockchip,rk3568-edp-phy";
-+			reg = <0x0 0x100>;
-+			clocks = <&pmucru XIN_OSC0_EDPPHY_G>;
-+			clock-names = "refclk";
-+			#phy-cells = <0>;
-+			status = "disabled";
-+		};
-+	};
-+
- 	pmucru: clock-controller@fdd00000 {
- 		compatible = "rockchip,rk3568-pmucru";
- 		reg = <0x0 0xfdd00000 0x0 0x1000>;
-@@ -879,6 +897,33 @@ hdmi_out: port@1 {
- 		};
- 	};
- 
-+	edp: edp@fe0c0000 {
-+		compatible = "rockchip,rk3568-edp";
-+		reg = <0x0 0xfe0c0000 0x0 0x10000>;
-+		clocks = <&pmucru XIN_OSC0_EDPPHY_G>, <&cru PCLK_EDP_CTRL>, <&cru HCLK_VO>;
-+		clock-names = "dp", "pclk", "hclk";
-+		interrupts = <GIC_SPI 18 IRQ_TYPE_LEVEL_HIGH>;
-+		phys = <&edp_phy>;
-+		phy-names = "dp";
-+		power-domains = <&power RK3568_PD_VO>;
-+		resets = <&cru SRST_EDP_24M>, <&cru SRST_P_EDP_CTRL>;
-+		reset-names = "dp", "apb";
-+		status = "disabled";
-+
-+		ports {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			edp_in: port@0 {
-+				reg = <0>;
-+			};
-+
-+			edp_out: port@1 {
-+				reg = <1>;
-+			};
-+		};
-+	};
-+
- 	qos_gpu: qos@fe128000 {
- 		compatible = "rockchip,rk3568-qos", "syscon";
- 		reg = <0x0 0xfe128000 0x0 0x20>;
--- 
-2.34.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0xvd10gZHQtYmluZGluZ3M6IGRp
+c3BsYXk6IHJvY2tjaGlwOiB1bndpZWxkeSBwZXItY29tcGF0aWJsZSBjb25kaXRpb25hbHMKLS0K
+CmNvbW1pdCA1M2NlMDllOTljNzVlMTQyYTMyOGY0YmYyZTc1MzVmYWQ3ZGFkZWI5CkF1dGhvcjog
+RGFtb24gRGluZyA8ZGFtb24uZGluZ0Byb2NrLWNoaXBzLmNvbT4KCmR0LWJpbmRpbmdzOiBkaXNw
+bGF5OiByb2NrY2hpcDogYW5hbG9naXgtZHA6IEFkZCBzdXBwb3J0IGZvciBSSzM1NjgKClRoaXMg
+Y29tbWl0IGRvY3VtZW50cyB0aGUgcm9ja2NoaXAscmszNTY4LWVkcCBjb21wYXRpYmxlIGluCnJv
+Y2tjaGlwLGFuYWxvZ2l4LWRwLnlhbWwsIG1ha2luZyByb2NrY2hpcCxncmYgY29uZGl0aW9uYWwg
+YW5kIGFkZGluZyB0aGUKYXZkZC0wdjktc3VwcGx5IGFuZCBhdmRkLTF2OC1zdXBwbHkgcHJvcGVy
+dGllcyBmb3IgUkszNTY4LgoKPiBkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVl
+L2JpbmRpbmdzL2Rpc3BsYXkvcm9ja2NoaXAvcm9ja2NoaXAsYW5hbG9naXgtZHAueWFtbCBiL0Rv
+Y3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L3JvY2tjaGlwL3JvY2tjaGlw
+LGFuYWxvZ2l4LWRwLnlhbWwKPiBpbmRleCA2NTQ4ZjE1N2ZkOTY2Li5mM2U3MGNjM2ExMjM2IDEw
+MDY0NAo+IC0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L3Jv
+Y2tjaGlwL3JvY2tjaGlwLGFuYWxvZ2l4LWRwLnlhbWwKPiArKysgYi9Eb2N1bWVudGF0aW9uL2Rl
+dmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9yb2NrY2hpcC9yb2NrY2hpcCxhbmFsb2dpeC1kcC55
+YW1sCgpbIC4uLiBdCgo+IEBAIC02MSwxMSArNzIsMjUgQEAgcmVxdWlyZWQ6Cj4gICAgLSBjbG9j
+ay1uYW1lcwo+ICAgIC0gcmVzZXRzCj4gICAgLSByZXNldC1uYW1lcwo+IC0gIC0gcm9ja2NoaXAs
+Z3JmCj4gIAo+ICBhbGxPZjoKPiAgICAtICRyZWY6IC9zY2hlbWFzL2Rpc3BsYXkvYnJpZGdlL2Fu
+YWxvZ2l4LGRwLnlhbWwjCj4gIAo+ICsgIC0gaWY6Cj4gKyAgICAgIHByb3BlcnRpZXM6Cj4gKyAg
+ICAgICAgY29tcGF0aWJsZToKPiArICAgICAgICAgIGNvbnRhaW5zOgo+ICsgICAgICAgICAgICBj
+b25zdDogcm9ja2NoaXAscmszNTY4LWVkcAo+ICsgICAgdGhlbjoKPiArICAgICAgcHJvcGVydGll
+czoKPiArICAgICAgICByb2NrY2hpcCxncmY6IGZhbHNlCj4gKyAgICBlbHNlOgo+ICsgICAgICBw
+cm9wZXJ0aWVzOgo+ICsgICAgICAgIGF2ZGQtMHY5LXN1cHBseTogZmFsc2UKPiArICAgICAgICBh
+dmRkLTF2OC1zdXBwbHk6IGZhbHNlCj4gKyAgICAgIHJlcXVpcmVkOgo+ICsgICAgICAgIC0gcm9j
+a2NoaXAsZ3JmCj4gKwo+ICAgIC0gaWY6Cj4gICAgICAgIHByb3BlcnRpZXM6Cj4gICAgICAgICAg
+Y29tcGF0aWJsZToKPiBAQCAtMTAwLDYgKzEyNSw3IEBAIGFsbE9mOgo+ICAgICAgICAgIGNvbXBh
+dGlibGU6Cj4gICAgICAgICAgICBjb250YWluczoKPiAgICAgICAgICAgICAgZW51bToKPiArICAg
+ICAgICAgICAgICAtIHJvY2tjaGlwLHJrMzU2OC1lZHAKPiAgICAgICAgICAgICAgICAtIHJvY2tj
+aGlwLHJrMzU3Ni1lZHAKPiAgICAgICAgICAgICAgICAtIHJvY2tjaGlwLHJrMzU4OC1lZHAKPiAg
+ICAgIHRoZW46CgpbU2V2ZXJpdHk6IExvd10KVGhpcyBpc24ndCBhIGJ1ZywgYnV0IHdpdGggdGhl
+IGFkZGl0aW9uIG9mIHJvY2tjaGlwLHJrMzU2OC1lZHAsIGFsbE9mIGluCkRvY3VtZW50YXRpb24v
+ZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L3JvY2tjaGlwL3JvY2tjaGlwLGFuYWxvZ2l4LWRw
+LnlhbWwKbm93IGhhcyBmb3VyIHNlcGFyYXRlIHBlci1jb21wYXRpYmxlIGlmLXRoZW4gYmxvY2tz
+IGdvdmVybmluZyBhbG1vc3QgYWxsClJvY2tjaGlwLXNwZWNpZmljIHByb3BlcnRpZXMgKGNsb2Nr
+cywgY2xvY2stbmFtZXMsIHJlc2V0cywgcmVzZXQtbmFtZXMsCnJvY2tjaGlwLGdyZiwgYXZkZC0w
+djktc3VwcGx5LCBhbmQgYXZkZC0xdjgtc3VwcGx5KSwgd2l0aApyb2NrY2hpcCxyazM1NjgtZWRw
+IG1hdGNoZWQgaW4gdHdvIGRpZmZlcmVudCBibG9ja3MuCgpHaXZlbiB0aGVzZSBncm93aW5nIHZh
+cmlhbnQgZGlmZmVyZW5jZXMgYWNyb3NzIFNvQ3MsIHdvdWxkIGl0IGJlIGNsZWFuZXIKdG8gc3Bs
+aXQgdGhpcyBiaW5kaW5nIGludG8gc2VwYXJhdGUgc2NoZW1hIGRvY3VtZW50cyByYXRoZXIgdGhh
+biBhZGRpbmcKbW9yZSBwZXItY29tcGF0aWJsZSBjb25kaXRpb25hbHMgaGVyZT8KCi0tIApTYXNo
+aWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjEwMzAw
+NjQ5MDUuMjI0ODk5OS0xLWRhbW9uLmRpbmdAcm9jay1jaGlwcy5jb20/cGFydD0xCgotLSAKbGlu
+dXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
