@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D98DC606A321
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Oct 2026 12:03:37 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 09A81606A323
+	for <linux-phy@archiver.kernel.org>; Fri, 30 Oct 2026 12:13:36 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=z7BoMNF0;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=GZoa9hHz
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=eiaiKGUf;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=fSGgWb0E
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,54 +14,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=RkpIluP3wSzb1XbykNUVWhB1uZiTah8RmJcO/HiksJ8=; b=z7BoMNF0S+cTy0vhq4dxyMeWQJ
-	KQBhrsSXlldEEQnHpNtPl26m1r4QFZUxwwR+BHF26eeltlNceH12LNtjt4nmzfW6dkfZ08WbZiutQ
-	kdygGESfOT/YW1MFhx1PUT6UV5d3tdudebAA4NOJBaiRfG1KQ4bmHSuxIAu80dyetEyf/ZGW/9uh8
-	B+6KffDbxNQCsbe5/rEYhHv3Xsc5dP3OPRKHb1RE6JAvlvdf/RRfbOa8Q9xz4NttFicRiIkA7TW4v
-	+orOdplNT0O4Higd/2e4XEDnbL+Lgr/SAKElK9LQLbqnERhwLxKE+bCCCiioJ6y2UsW0sTP7dNG6W
-	neSOPkhw==;
+	bh=O5y7ACdY5Gm/0WI0gIvZIyFLxQgTjvqX26FDYr9s/So=; b=eiaiKGUfKb2OT3KkYIFoqa2qcI
+	aA8NuhXm3ovcEKv2leit4a+QM5uEdIOgBgzsCbTFfEZHolpKECqWR3SGjKFV3lFlU/fIZPKwKFW80
+	VTcpZfotJ8tIlL6qUu7ICZ4kjvCzuqzvHbiHriEXUirqcrIjJQ9HhZfRQnCh0HwR3tx+U24ple0sD
+	9bQkPVlbdevBl5YWPJkGTZi8ILWGWuZ/epLM7D6+ttIs/iDe/j7b3E9cBqIR6uDs4GpD/IL+sRNaa
+	s15MD00TMdHbEGNcJG2ufNHwxzktcKthgs8cStva0rIpFSXDarCr10XQaJm5EKU1nViHWwsebs3yg
+	bnzhDv9w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMlKb-0000000BcoX-2drw;
-	Fri, 30 Oct 2026 12:03:37 +0000
+	id 1xMlUF-0000000Bemt-2dKa;
+	Fri, 30 Oct 2026 12:13:35 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xMlKa-0000000Bcne-0H4w;
-	Fri, 30 Oct 2026 12:03:36 +0000
+	id 1xMlUE-0000000BemC-1UgY;
+	Fri, 30 Oct 2026 12:13:34 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 03E0643D4F;
-	Fri, 30 Oct 2026 12:03:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 151AF1F00A1A;
-	Fri, 30 Oct 2026 12:03:33 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 91B96402A3;
+	Fri, 30 Oct 2026 12:13:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3F8BC1F00A02;
+	Fri, 30 Oct 2026 12:13:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793361814;
-	bh=C2rZnyIbpP89ye6bG3lNVVpR9E9Mquq/SRfP5Fdrzig=;
+	s=k20260515; t=1793362413;
+	bh=W7iS3Fx6HV5ScNF/DvW83v1rNy7myS3fOAFqhJkCPu0=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=GZoa9hHzPrOnevW6nL66UFfYPR1bLjl/Gfh/ByEq9wZG4JLMlRqe5GnOZgMMEUEV6
-	 W1t9xyphqrFdCQYwAmTUVv9RVvqRZEj/zrZ5Lx53Pk7O8/VXPoRh8ayBKktFqNZjoy
-	 qNkJESDbPI2FJdxyBabtcv9YkR6rhYRfTkbFxV6OXEMsTaJGXiSt7viFo8A4nE0I78
-	 sLObvsJS7/wq77PxHoToLRpedX4wsxSHfCP441qmRdeAdEtunwv7ylwgOHKFLoMscJ
-	 mKYZIK5hSb8LMqIQvkmIUODAR0smixNBAXB8+7h3eMy+0YTTTmNoVjQOoCU9252Ylp
-	 Fa++KEnxgQ/Dg==
-Date: Fri, 30 Oct 2026 13:03:31 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Vinicius Pedrosa <vinicius.eduardo.pedrosa@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
-	Conor Dooley <conor+dt@kernel.org>, Chen-Yu Tsai <wens@kernel.org>, 
-	Jernej Skrabec <jernej.skrabec@gmail.com>, Samuel Holland <samuel@sholland.org>, 
-	Andre Przywara <andre.przywara@arm.com>, Xu Rao <raoxu@uniontech.com>, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/2] dt-bindings: phy: document Allwinner A733 USB-2.0 PHY
-Message-ID: <20261030-adaptable-vagabond-skylark-bacc90@quoll>
-References: <20261029172325.3425046-1-vinicius.eduardo.pedrosa@gmail.com>
- <20261029172325.3425046-2-vinicius.eduardo.pedrosa@gmail.com>
+	b=fSGgWb0E6AmiP/tcFEtpjVO60QzF8LSXfigUs5Tg+3gQ73tVxAEcHeDIOxvDY3CPy
+	 vDuoJf5n0vop7GqdYjtCn/OFY/EAiIviQAEFNouIWp6clFimOSewk464KYx5JgMC45
+	 tX9K326gCKDyJSqBbx+aKuPMyDKdHWZHdumL+wYIg+w2eTgWIWjM0zZ7ic9iNkuwP0
+	 ALuFiHyZd7peiA1kB9BXyuWaszl0he+Ka32BkloZHcApkYCYFlzWy3QuvD/1/godz2
+	 hID0WwoyTGAN+KHtoDqC0hDlagNGndQ8b/pPXGHpqrI4HMBVoiGzzqYAQ9U/6Qa9uV
+	 HGN4BKvk0lSCA==
+Date: Fri, 30 Oct 2026 07:13:30 -0500
+From: Rob Herring <robh@kernel.org>
+To: Damon Ding <damon.ding@rock-chips.com>
+Cc: Sandy Huang <hjc@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Robert Foss <rfoss@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	Dave Jones <s.dave.jones@gmail.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v3 2/6] dt-bindings: phy: Add rockchip,rk3568-edp-phy
+Message-ID: <20261030121330.GC1232511-robh@kernel.org>
+References: <20261020030916.3223833-1-damon.ding@rock-chips.com>
+ <20261020030916.3223833-3-damon.ding@rock-chips.com>
+ <20261021133418.GA3889663-robh@kernel.org>
+ <5892f99c-68cd-4ff9-91f1-af5ee024e025@rock-chips.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20261029172325.3425046-2-vinicius.eduardo.pedrosa@gmail.com>
+In-Reply-To: <5892f99c-68cd-4ff9-91f1-af5ee024e025@rock-chips.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,32 +89,79 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Thu, Oct 29, 2026 at 02:23:24PM -0300, Vinicius Pedrosa wrote:
-> The USB 2.0 PHY in the Allwinner A733 works with the D1 settings of
-> the sun4i-usb driver. Add its compatible with the D1 fallback, as was
-> done for the A523.
+On Fri, Oct 23, 2026 at 11:56:10AM +0800, Damon Ding wrote:
+> Hi Rob,
 > 
-> It gets its own compatible because the driver has to clear SIDDQ
-> before releasing the PHY reset on this SoC.
+> On 10/21/2026 9:34 PM, Rob Herring wrote:
+> > On Tue, Oct 20, 2026 at 11:09:12AM +0800, Damon Ding wrote:
+> > > Document the eDP transmitter PHY with NaNeng IP block found on the
+> > > RK3568 SoC.  The PHY is controlled through the eDP PHY GRF registers,
+> > > so its node is modeled as a child of the eDP PHY GRF syscon.  Also
+> > > add the "rockchip,rk3568-edp-phy-grf" compatible and the "edp-phy"
+> > > child node reference to the Rockchip GRF schema.
+> > > 
+> > > Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
+> > > ---
+> > >   .../bindings/phy/rockchip,rk3568-edp-phy.yaml | 59 +++++++++++++++++++
+> > >   .../devicetree/bindings/soc/rockchip/grf.yaml | 15 +++++
+> > >   2 files changed, 74 insertions(+)
+> > >   create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3568-edp-phy.yaml
+> > > 
+> > > diff --git a/Documentation/devicetree/bindings/phy/rockchip,rk3568-edp-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,rk3568-edp-phy.yaml
+> > > new file mode 100644
+> > > index 000000000000..afe7bc3d839e
+> > > --- /dev/null
+> > > +++ b/Documentation/devicetree/bindings/phy/rockchip,rk3568-edp-phy.yaml
+> > > @@ -0,0 +1,59 @@
+> > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > > +%YAML 1.2
+> > > +---
+> > > +$id: http://devicetree.org/schemas/phy/rockchip,rk3568-edp-phy.yaml#
+> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > > +
+> > > +title: Rockchip eDP Transmitter PHY with NaNeng IP block
+> > > +
+> > > +maintainers:
+> > > +  - Damon Ding <damon.ding@rock-chips.com>
+> > > +  - Heiko Stuebner <heiko@sntech.de>
+> > > +
+> > > +description:
+> > > +  On the RK3568 SoC the eDP PHY is controlled through the eDP PHY GRF
+> > > +  registers, therefore the PHY node is expected to be a child of the
+> > > +  eDP PHY GRF syscon node.
+> > 
+> >  From the driver, looks like there is a specific register range for the
+> > phy regs in the GRF, so please add a 'reg' entry (and 'ranges' in the
+> > parent).
+> > 
+> 
+> I see. For v4, I will add the reg entry for the PHY node and ranges in the
+> parent syscon node, as done in rk3399-emmc-phy.
+> 
+> The proposed eDP PHY DT layout looks like:
+> 
+> edp_phy_grf: syscon@fdcb0000 {
+>   compatible = "rockchip,rk3568-edp-phy-grf", "syscon", "simple-mfd";
+>   reg = <0x0 0xfdcb0000 0x0 0x100>;
+>   clocks = <&cru PCLK_EDPPHY_GRF>;
+>   #address-cells = <1>;
+>   #size-cells = <1>;
+>   ranges;
+> 
+>   edp_phy: phy@0 {
+> 	compatible = "rockchip,rk3568-edp-phy";
+> 	reg = <0x0 0x100>;
 
-Each device gets own compatible.
+The 0 address is not correct with empty 'ranges'.
 
-Above suggests they might not be compatible, which feels confusing with
-first paragraph. I don't get why you are making two separate statements
-about the same - first paragraph says A, second says B.
-
-Just one paragrap and explain whether they are compatible or not.
-
-Best regards,
-Krzysztof
-
+Rob
 
 -- 
 linux-phy mailing list
