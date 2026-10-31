@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C701E606A31C
-	for <linux-phy@archiver.kernel.org>; Sat, 31 Oct 2026 11:53:46 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1BAD7606A323
+	for <linux-phy@archiver.kernel.org>; Sat, 31 Oct 2026 11:57:11 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=X3F3nHCt;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=KeplfHwD
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Y0en+ouZ;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=eW2gBxVF
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,56 +14,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Cc:To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=k4Dqphn5EUzkwk7xc2k6HLhZZiDw99zNi53mNJ6Y5Tg=; b=X3F3nHCtovIlG7q442aLIAfNxw
-	f9D6TM9Qd6CsGLYx570SvdBrwyzqEMM9idirPFqPBmvlwqrjLOG+Oz+ihznDQc/EjICyjg5dDtmB3
-	Y+fzC/BrEnjkZyElvyBhmHBbqulue74n9BzpR5M85pacNILbtCBTaf45TXdcQV0y6VmvMd7gGQCX+
-	H2pVGXTkMhLTXnKkU/FAXk5l8rWshePUNIu+jRpw6hPYKRSC++/IzhTxrg6BSKVuWWX02US2qOK+W
-	lnUqVDJu+WqF7QIHAwn8T8GShzY7lgHJYEXOgnCYXw7HmPfOvccPPFs6TOAypR6rLjyLUrcdru9on
-	nhevB3UA==;
+	bh=efRaIEJ4kX9Kwpk8K+8bTHz8DwSgt806NV/cpR2eSO0=; b=Y0en+ouZkLM1DvzCkVTQ8BeklN
+	6meJgUdgQZoxo7f2UwQC9caAO+mQYr3hhfXysG3bREPkL4tjw2J3KCcBen0GT+adiETPv93QdVgGu
+	Ip6hGJq05p9sYMxN7k3OE2q2wfgoqQidn92RzNDalsFzICNkXOzR9ln4ln5wwVq5zZy3JP+ILiIJw
+	WX3qDNP/obC/R5hzOvoCa9iHzYSNbjSftKfujODHG6hRZMm5vBONkhDIDMKDysss+O93GD/JIOPFj
+	0P+3zVUWS4mLXfDTXm0TJt1R+KDoX4QFOtnNaDTIiJV07WTZH/ygUGwGFa6W5Ed1JmdlnDMAuUNxx
+	AZUkViXA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xN7ec-0000000DHHw-2IaS;
-	Sat, 31 Oct 2026 11:53:46 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xN7hu-0000000DHKy-3Sld;
+	Sat, 31 Oct 2026 11:57:10 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xN7ea-0000000DHHh-2n7Y;
-	Sat, 31 Oct 2026 11:53:44 +0000
+	id 1xN7ht-0000000DHKs-0Vhb
+	for linux-phy@lists.infradead.org;
+	Sat, 31 Oct 2026 11:57:09 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 202B8600DA;
-	Sat, 31 Oct 2026 11:53:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 28F2D1F000C1;
-	Sat, 31 Oct 2026 11:53:38 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 52AA0600D4;
+	Sat, 31 Oct 2026 11:57:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C4CB71F000C1;
+	Sat, 31 Oct 2026 11:56:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793447623;
-	bh=JOLjpjQ2PzwW1G++HftIrCffQhTQyx3QF57ARXdihNk=;
+	s=k20260515; t=1793447828;
+	bh=YtiE6l/jMigtM/KHoQgcbm5oDWmgzE5zJPhM1/rh6dw=;
 	h=Subject:From:To:Cc:In-Reply-To:References:Date;
-	b=KeplfHwDacxN09p6RZ87ZReV5dFbNoxi+MXS55C4m0yBNvF4gPBRYkcDaB56Uyvvo
-	 Mjlmy9oxsmhBP/b9fFMEb56S85a9w3Cx65bPThdmcJSsbmK5wz832BfDEwNoVmsM9m
-	 TtwrH5aB6Bsozbd/Yy3n4S0pRq+FaayTiemS6MZhb2whxHhC9Lm2hTMZnklGv2i4Uc
-	 5o3nwulxOXOToIJiselVKG6Ggj3HTY8YWrxS/dX/g104xkDUWLzvOML7BKY8RBHeO1
-	 7GGIkxR6uxoBttSjZHS+Ua2tmVFNvujFdnqZp41hqiu5WCiCi9mSiUfPKXa1w5kBvN
-	 FpinQZe29LqUA==
+	b=eW2gBxVFmypKh60k0hQ0/3BUzSAxOvyyvaPv30fKxVKkX3d7lTQff+ZnCBo4cyXtr
+	 3X8VECjz1UcsA0wIJqjUasvYltIurB+wxeyBImZt3Fo8WieHDiRtDrJeT4zYREzkJA
+	 E8NXre2MyTzmcrZjN0qdeRIi8Iv3L0hC7aIvtpRQe8ATPT+9WzWTobHy6A2S0ZKDI6
+	 y45Uat9UePmiMIBE4oeI3GMZaTmVzyQwIoKDKJ/s8nhkadSfkaVT/VB1VLX+F6f8Kc
+	 KKI7hfZNfLdfTSyc+Fr6J3VjKd4NJpPvhN2oZ9rChiJCr+KzISoL8iBv1GJGOi3OI9
+	 rEOSUPKTNh2GQ==
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Subject: Re: [PATCH] phy: phy-mtk-pcie-sphy: Remove unneeded semicolon
+Subject: Re: [PATCH v6 0/6] Add support for USB phys in IPQ9650
 From: Manivannan Sadhasivam <mani@kernel.org>
-To: Chen Ni <nichen@iscas.ac.cn>
-Cc: linux-phy@lists.infradead.org, Chunfeng Yun <chunfeng.yun@mediatek.com>, 
- Vinod Koul <vkoul@kernel.org>, linux-mediatek@lists.infradead.org
-In-Reply-To: <20261008082242.3890614-1-nichen@iscas.ac.cn>
-References: <20261008082242.3890614-1-nichen@iscas.ac.cn>
-Date: Sat, 31 Oct 2026 17:22:55 +0530
-Message-Id: <179344757591.5901.8879970568493834974.b4-reply@b4>
+To: Varadarajan Narayanan <varadarajan.narayanan@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Wesley Cheng <quic_wcheng@quicinc.com>, 
+ Manu Gautam <mgautam@codeaurora.org>, Stephen Boyd <sboyd@kernel.org>, 
+ Philipp Zabel <pza@pengutronix.de>, linux-arm-msm@vger.kernel.org, 
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
+ Abel Vesa <abel.vesa@oss.qualcomm.com>, 
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+In-Reply-To: <20261009-phy-v6-0-50408e45bcc1@oss.qualcomm.com>
+References: <20261009-phy-v6-0-50408e45bcc1@oss.qualcomm.com>
+Date: Sat, 31 Oct 2026 17:26:43 +0530
+Message-Id: <179344780362.5901.2262729829662858890.b4-reply@b4>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=320; i=mani@kernel.org;
- h=from:subject:message-id; bh=MQOIrikRe/5fBtAvJ0ptn4/jlssNLex6NGRBJySWcE8=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq5dbB0ioEX9pEOaVyFAznCTc+n4mE5haxVta1U
- BVL02Yy4BWJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCauXWwQAKCRBVnxHm/pHO
- 9Q1bB/4zsqX+828iPQKJK/OSquUkpjHuQL4vPmIRdALlPfDwGZwMUtOUh1nTXYiaM1jq35aQ+Fv
- smVlfLMr0Czgf5WcOkibOXzk6gfmK/HXd5NyVVvUe3Sx6RpU5Ckjq5LRFIFnis7rJwwTS61Ygqk
- rvNQ3lMZiDPtN4xp8a0qzuJa/XIt2XK1/1sSYzOsjIncz4DxZcDpNIEsEG8hfKPIAL5TQJqEbUg
- GrMW5V1e+aFsKTRnEzIsogQIiJmzXMIQBF6xKzNz5ULdscNJoLLmBHU46lNH0CTbxvUGb7gP+f5
- cJ7f59/IhOlCPP9C+8ucakwJ/kBvr1+qvUIGlp1K2a2G/ILC
+X-Developer-Signature: v=1; a=openpgp-sha256; l=585; i=mani@kernel.org;
+ h=from:subject:message-id; bh=sWYwmb04EVM38ISfK/zjGtFwBFhSz7gCtNzj3VIINfU=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq5deK8HsBAkAOEMrzYnDKCKJ2EW0Bef/1JCeh7
+ aqrdbGvmq+JATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCauXXigAKCRBVnxHm/pHO
+ 9SLYCACk7rxS9tdBb0wj6XnxWq8q7eeggfhP93Et1R+R4LS9ysORMOElyoithnQr5XGKMEd+fot
+ S5CcNzOwApSIgpXKhWmGFqvXXc6fmWgD84nX2Rmhmhb5eO2BWA+4c0DdhKNX1Zi4VFL9+zlGF7i
+ iH746cAQ27AkTutnGQf/YPxWOFq9xrmoVZIeRJ/nXC7TsihCk3qfuZ6W8+4RwQW+mjJm+NU4GVM
+ 9CmxG1KiR4tdYUbxVaffp+DbT41ncES8cviaV+7fRCAO0onGeFncBoujMqQppzDyRV4VFKdbzFG
+ 4IRcus31HqwmVSE5Exmke9Ex1Hlm/ozX48T9KJBcqMwk30BA
 X-Developer-Key: i=mani@kernel.org; a=openpgp;
  fpr=C668AEC3C3188E4C611465E7488550E901166008
 X-BeenThere: linux-phy@lists.infradead.org
@@ -85,11 +96,16 @@ X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 2026-10-08 16:22 +0800, Chen Ni wrote:
-> Remove unnecessary semicolons reported by Coccinelle/coccicheck and the
-> semantic patch at scripts/coccinelle/misc/semicolon.cocci.
+On 2026-10-09 10:19 +0530, Varadarajan Narayanan wrote:
+> This series
+>  - Adds dt-bindings and driver changes for the high speed and super speed
+>    phys in IPQ9650.
+>  - IPQ9650 specific init tables to QMP super speed phy driver.
+>  - The Femto high speed phy driver is refactored to accomodate differences
+>    in the init sequences between SoCs first and then support for IPQ9650 is
+>    included.
 > 
-> Signed-off-by: Chen Ni <nichen@iscas.ac.cn>
+> Signed-off-by: Varadarajan Narayanan <varadarajan.narayanan@oss.qualcomm.com>
 
 Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 
