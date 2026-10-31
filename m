@@ -2,108 +2,76 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 82CBE606A334
-	for <linux-phy@archiver.kernel.org>; Sat, 31 Oct 2026 16:24:41 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 73178606A31F
+	for <linux-phy@archiver.kernel.org>; Sat, 31 Oct 2026 17:12:30 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=k3TQLvWc;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=DpNWLkb2
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=fQ0icnK0;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=BMaEYJnL
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:References:In-Reply-To:
+	Cc:To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=YXIkpPLXgb5/f0+iCxTQ5UJGgZ2E+EheXrTb4oSpct0=; b=k3TQLvWcKhuo0g7Snl4BCHjWEk
-	YGgfzVZOTLQleLzQvf12ytgM3OC09Wz61k97FxnKq+t7RDnQDDrVnIUB7s3djymdWCJf7NM86iAus
-	/Yl7G0+gO6g4JnHbpbjJisL5+1EpVxjBUMOtYE/wXvaHoQ2mG6E5rc0PNA38Jb5iFT6F7MW6zwcO0
-	r9kNe/vHUBT+vliqX+Rk3jYCtaqTg1/Mts//R6z0USu1MyZbDEmCVSU6cWrJ1p62z1JH/2yIx5Jdz
-	IYvYOlogMVlmcBPnXGa3MxBtm0hI5dfbHs7XVHc6cL4LQFs6+XtHdSRrni8pA9Mt/1DVzzONM6emk
-	3az3Vaow==;
+	bh=kfHxdJUhse2mTQSEudK+lihNMmWVEAdVVXCOgH3+hDs=; b=fQ0icnK0cqtQkaKS/JMrCPnWhd
+	d9+glU2MInxwg1MSUfs34X0eurFCO3u8IFs7fN5MDQyXKCVz2A0yGAzy7PH5Pv6WS1ZpD1bMVeE6m
+	KTlPQfCmbWOs4Gl9/8r28ueFk5cCjxK4fEfn1maqEXCN4sgRRon7KxZcpN24n8M+sjr1/Jnbd5nAM
+	i3PNXodC0aH1qmmY1V/rlCVqJEejAUY5ViBfLjnoY1VXGMqMQbXgatjIssFNuQYVqvXyKOT+n6+HH
+	ATEY0J0fhAzOGxZZtCIrUhBlaRgAC64Dd6aKYBude3VXftUGKWfk2NTGCukkEtV1ywjbQj3T82bOh
+	Iens9M7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNBsn-0000000DUEi-1DYj;
-	Sat, 31 Oct 2026 16:24:41 +0000
-Received: from mail-qk1-x72b.google.com ([2607:f8b0:4864:20::72b])
+	id 1xNCd4-0000000DWDr-0Eu2;
+	Sat, 31 Oct 2026 17:12:30 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNBsl-0000000DUDv-0IT8
-	for linux-phy@lists.infradead.org;
-	Sat, 31 Oct 2026 16:24:40 +0000
-Received: by mail-qk1-x72b.google.com with SMTP id af79cd13be357-93e515769d3so169477785a.3
-        for <linux-phy@lists.infradead.org>; Sat, 31 Oct 2026 09:24:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1793463878; x=1794068678; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:content-type:references
-         :in-reply-to:message-id:date:subject:cc:to:from:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=lVq0Ao/ZWudJCDsBPok2MvDiDplFAhMivQKS/BD/5Cc=;
-        b=DpNWLkb2dgZMqBfoGXCrM1ZDd+eUvBGyqE5XKhwFFlvVooOgRxtefxt9hkIlAr4up2
-         8ZLnWrJp7ZPwQRjveQK9CW6l3U+UwHXMnnrpoQFmaOLbqlridk7oqYfCgg4M3gpUPUVk
-         yF9fxM4Co+/kqpQVjcvqNMip0IjEmgB55JbSXceJ1ccYk/2E9AOuPpLdd0LdUvvNDomk
-         Ab0nPh9hBGUL/guxnBRGw0dxA/2pbC2BpSj/NOUOdS/8ysEtLN83E+siSk3yaWApe3tV
-         EbV8Do1mHqNSQODjJbAyAHcmEKbT0EZLzgO1NPZ533o63aDcsF2tN8ME/6iBLr6Np+b8
-         +BRg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793463878; x=1794068678;
-        h=content-transfer-encoding:mime-version:content-type:references
-         :in-reply-to:message-id:date:subject:cc:to:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=lVq0Ao/ZWudJCDsBPok2MvDiDplFAhMivQKS/BD/5Cc=;
-        b=QraA9M+mnPsSzLSmgIG9cV4aRgyL8X0PH6ZSbkdYL4siOZqwS67KS0jDYCqNoj5QFb
-         cKql0antMGOY6GlSvU60fYttweuv5qvjF4Wo5VRux6H8DeMCEpT6FqT3WcOGUclRAN42
-         XPtX6U1AmONd3d6hCm0+sjwQy+FqqeZh6Ej6fjcK/HSbnSSmE9Ivg/LU94507wKHIKC7
-         BesyEXQ9gdM4pUZPt5L3o3UpK4VT+3gIPe5K9Yv+cg/Zjt3ZpRZp9W8GIlrftETM1N7Q
-         XbRptGUr783FQ/sVh7LJko4HTeSn1V51KP0EakjX54s99YB6QIEaRcZFUbHPvH6YcVC5
-         9jdw==
-X-Forwarded-Encrypted: i=1; AKwUvBzTKDzx06TatS9ZRkGGz+nDNhlmu7yeN6UCikzYqzuH43F0rtc3Q3qMy/C4wqd+atyPjR6KZQ4rM7c=@lists.infradead.org
-X-Gm-Message-State: AFq9FYIVyIhWALTilq4j9lQQ7AGXSM7kKb7L2KwxKec45UxOgZHN44Z/
-	IUjuYjB6v06rjp0Mu1gNGkqoi8yZltvWtFWNjU3wt8PtCgP/rnljnNzdmR6kFbgpHRxIZQ==
-X-Gm-Gg: AYBFou2BuxY2BUvhFFrhPCkbtKzOfYSbA2rqzs7agtg898/1mMGhgRAwX51gyM3spvM
-	qNHITPpOv+LPB2Q5Nb0XGulzujpvBZnSlLmgNJ95hbhhcaIXVW+HAXncWB9IMhLuLnYTVg03+nA
-	dntwNmd/bic3hVO9IL2TWKYlWnxsniCkkQRybQGDi+hmbiFhiCJTJtKEhtOfN7YN50jD9X/SDK8
-	KOAeJkFijhwvIOCTB/RAq3Is61JK1rwFwEFCKW6L+OC4JM8XoLOFfP9e9Rjf38Eeqt0d/4M7kht
-	Ocot9efKhKIC8qKXZwTVRSPfWvR0VhfXnAVy9f70hyiT9a1WipupgA86h0u7CD+J4okqmV4Px5P
-	M5YI46vNIOfz4MNIyGkgtN4anq1kGlilOlYRdWtANIpcj4h2UQEGjs/NRI4P6ecuU/52+ymaLLw
-	udFQySUOW+552lBJLLihAb31SYedNlThnsn6xrrDQUL2Mqnq4t7dpQ3iUZKLchrmRH73Lc23RUE
-	2Uc9/d2I5HBGHsaI4JdkqCzCob3UFfxlmupeqs6ZwDtuc9h8TAhrhdNVr2EKlADOmMda22ox/Jf
-	ri7pwO5hDQ4MsEYKpMRNyOh6KiePKow+MHjfyjBOAbYcIaaswf2JR/Qd707IhfO19dk/EwDDSts
-	W3s7bqg==
-X-Received: by 2002:a05:620a:471e:b0:93e:3824:4123 with SMTP id af79cd13be357-944216fef10mr997085285a.65.1793463877786;
-        Sat, 31 Oct 2026 09:24:37 -0700 (PDT)
-Received: from localhost (h159-112-31-107.euclwi.broadband.dynamic.tds.net. [159.112.31.107])
-        by smtp.gmail.com with ESMTPSA id af79cd13be357-94425ad7431sm414082885a.40.2026.10.31.09.24.37
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 31 Oct 2026 09:24:37 -0700 (PDT)
-From: Christian Cortner <ccortner@gmail.com>
-To: Peter Chen <peter.chen@oss.qualcomm.com>,
-	Vinod Koul <vkoul@kernel.org>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-	Elson Serrao <elson.serrao@oss.qualcomm.com>,
-	Ronak Raheja <ronak.raheja@oss.qualcomm.com>,
-	Wesley Cheng <wesley.cheng@oss.qualcomm.com>,
-	Udipto Goswami <udipto.goswami@oss.qualcomm.com>,
-	Jack Pham <jack.pham@oss.qualcomm.com>,
-	Pratham Pratap <pratham.pratap@oss.qualcomm.com>,
-	Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 1/1] phy: qualcomm: m31-eusb2: Add register XCFGI_159_152 for SE0 recovery
-Date: Sat, 31 Oct 2026 11:24:36 -0500
-Message-ID: <179346368350.44447.7737375259522591871.x2e-share-m31@gmail.com>
-X-Mailer: git-send-email 2.56.0
-In-Reply-To: <20261027015545.2758784-1-peter.chen@oss.qualcomm.com>
-References: <20261027015545.2758784-1-peter.chen@oss.qualcomm.com>
+	id 1xNCd2-0000000DWDW-2oDq;
+	Sat, 31 Oct 2026 17:12:28 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 6D23043F01;
+	Sat, 31 Oct 2026 17:12:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 98A331F000C1;
+	Sat, 31 Oct 2026 17:12:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1793466748;
+	bh=GMNH5PJ1zs7wQCaXmS01TMbB9K7ZhNKKB1ihknjVnC8=;
+	h=Subject:From:To:Cc:In-Reply-To:References:Date;
+	b=BMaEYJnLIefXDhMWLYdYrrhwXQE62rpfq3dGqj1AU5EeKwav4odEooNw18M8CdsEg
+	 DEGl4kyl//DaTlNwlg1VNv3NZiZFugdHqRvOYJP4ZvJVhFPIs5ZesfSmdB5joFsbpl
+	 wAs2WapbBCTDFiF0Ly6CveX03Vo9O7TlTeLLqqa5/bnMmPkLiTd8YTULcRV6A17LmJ
+	 GD1yJL0ak/fit75+ROYgl81226cPJPYG3jQxm40/lZRIRlUgJeD/90s4GscR1zcraz
+	 aTwjKCeDD6uR7R8S8FVYtzxBOtOIWnfxnjiz0gNdt/BP11sSUwujk1Dhuexz3rElJX
+	 Vcjr/0y9SvkUA==
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261031_092439_111679_B3921DA1 
-X-CRM114-Status: UNSURE (   4.80  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
+Subject: Re: [PATCH v3] phy: mediatek: tphy: simplify main allocation
+From: Manivannan Sadhasivam <mani@kernel.org>
+To: Rosen Penev <rosenp@gmail.com>
+Cc: linux-phy@lists.infradead.org, Chunfeng Yun <chunfeng.yun@mediatek.com>, 
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ Kees Cook <kees@kernel.org>, "Gustavo A. R. Silva" <gustavoars@kernel.org>, 
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, linux-hardening@vger.kernel.org
+In-Reply-To: <20261012173402.24568-1-rosenp@gmail.com>
+References: <20261012173402.24568-1-rosenp@gmail.com>
+Date: Sat, 31 Oct 2026 22:41:57 +0530
+Message-Id: <179346671702.7309.17461254006600303157.b4-reply@b4>
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=openpgp-sha256; l=398; i=mani@kernel.org;
+ h=from:subject:message-id; bh=21ALoJZRF1WHs+ZZUeTM9Q1HsKMp63LeGtOBM/EVfUY=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq5iFgeuOv1+eLZ12O13MSJlXCmdg89j4NckzP5
+ UYGpyFFwNaJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCauYhYAAKCRBVnxHm/pHO
+ 9UuHCACno9GivkxmGWGngNdtOGaQSYyvrb833t8/wh68gbuSJ1dIa5ReLAvEYO4lpDCA0wToCRM
+ k44utPmmDO+2JxDg2MYNr9C+GIbto5pnYY5tNolcefbrnc1e1H2Z7yA9gOye0Ercntu9EO00sCL
+ ZcKgNs35e7SYHzyGpGiuhkcOXH9HFv5aok0KTRRJ9ArHXZtjtPxqYk2Ia8S+twFddHii528/gnV
+ nDLH/5sqEH6NIf5gFoGnyyDrLaxMj3XFsjNB37s0PIcuxZKTFHqfYpxjsBGW4M+IIw+WBWoD3Xd
+ g7Aa8T2gx/abXj3uTO2Wx5bTy5EHhPn9kerkN7MRsELoWTfR
+X-Developer-Key: i=mani@kernel.org; a=openpgp;
+ fpr=C668AEC3C3188E4C611465E7488550E901166008
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,19 +84,27 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.8 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
-	autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Tested-by: Christian Cortner <ccortner@gmail.com> # Asus Zenbook A16 (UX3607OA)
+On 2026-10-12 10:34 -0700, Rosen Penev wrote:
+> Use a flexible array member to replace kzalloc + kcalloc with a single
+> kzalloc.
+> 
+> Shuffled some code around as __counted_by requires the counting variable
+> to be assigned before any array access.
+> 
+> Signed-off-by: Rosen Penev <rosenp@gmail.com>
 
-Before it, a USB SSD on a800000.usb dropped twice in a day with
-error -71 and "not accepting address". With it: 28 GB written in a
-stress test, and no such errors in 27 boots since.
+Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+
+- Mani
+
+
 
 -- 
 linux-phy mailing list
