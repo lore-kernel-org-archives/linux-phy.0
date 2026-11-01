@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 782C4606A327
-	for <linux-phy@archiver.kernel.org>; Sun,  1 Nov 2026 10:28:09 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A1318606A327
+	for <linux-phy@archiver.kernel.org>; Sun,  1 Nov 2026 10:31:03 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=0/3tf0Z2;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jXO0MNtU
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=q4cNRUgq;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=NJCKx8uU
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,40 +14,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Cc:To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=Gky+crHIKkgWulN9NsA3Mxh8hTpBw1D6ofqrRqQefeg=; b=0/3tf0Z2OjHc8OO9voou40ceSS
-	wROU8b/MaO3waRaXxsT5vbGwd88i92hAld22YDRvBGEnhLYUdWdT/ifrMpEWRic8aY2R5LPLQwDjc
-	Hfl1HqPiXzKbSgHIQwPixH6eZjFqN6aBOU9CI7ex0mD1HhcyzuWs+2QTsdY5X3uz8mnRB2fpqdSW2
-	CtKofhyrfPhevZo/oJOcvfeSP/LKfsliqMnt747O/cGaJYbg7qrDo46oC2zeDDFAPIBjxgWq5ED0k
-	xfE4/7u319OUfdmNCQ2QcQ2mQnIu+7oAOyP/YOcFGWEQGVBvayyBtmOEi2/ea7OhXwZT3fBkblkzg
-	nseINcbw==;
+	bh=jVEAdT/EzTHn/wO6c8gi++/4MsxO2aEPkJm8ffdbe00=; b=q4cNRUgqX8mqFP3LQ7UWgyhcpu
+	tL6HY/K4+T2KDcRfZh7LNcBsM16gwmVD7ICBVlH3DxZkhE6sn5o8LLBSwTOg1MlmyzC05JwIBOwnz
+	3tq5HwP+JZ3JQSg8dNiXHuNYvAPliJZrQTB/hDN1xZpm2Rh7yQaFkUxysuOu4ovfrfe6+gQhhSV2T
+	ewfbEc+GVUmGmIlPsyci/qmWoPljrag9paT0cESYVKfwsZvHxQrxZDU2X8zSORXod3xRbgsFG+qZ0
+	Q2K/cmjMtVGxw90Btepm1OwKouAOUNib7JgzOq5KfghwmD6f6EYLs8mVffvQZpLroyjQZKGmE8bHk
+	7tcfpZuA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNSnI-0000000E5XM-1zbu;
-	Sun, 01 Nov 2026 10:28:09 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xNSq7-0000000E5ao-1S5i;
+	Sun, 01 Nov 2026 10:31:03 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNSnH-0000000E5XG-1ybk
+	id 1xNSq6-0000000E5ag-36GK
 	for linux-phy@lists.infradead.org;
-	Sun, 01 Nov 2026 10:28:07 +0000
+	Sun, 01 Nov 2026 10:31:02 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 7591C60054;
-	Sun,  1 Nov 2026 10:28:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A26531F000C1;
-	Sun,  1 Nov 2026 10:28:03 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id DDD9243333;
+	Sun,  1 Nov 2026 10:31:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 146281F000C1;
+	Sun,  1 Nov 2026 10:30:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793528886;
-	bh=HLYIqwxJ5WYlJPpWkXyQBNJeKHSfq/1+H4q2iamRMWQ=;
+	s=k20260515; t=1793529061;
+	bh=toJJi+fh6W256+8bc0G/+hEUx0vkCgcTejgATIdl3t0=;
 	h=Subject:From:To:Cc:In-Reply-To:References:Date;
-	b=jXO0MNtUe65SEoyghzmFa/MdwUxIwKj9CveDEeif3oDJNQ+OX+ITWVsT3Tk7FDUDg
-	 ujipNkc7UZWU0WAQwTIEn32yFh7m76ZJtVk5AItxgH3k0dXwmJO49//LA4UrdLm59g
-	 ZDzpHj3CTv5JydpMPrsI0wQYMR8TjZJPU8YH7/5wabRMdjmDnXhKOFtj3/2LQVSO4G
-	 M+8ARwkdiaE6xrFUQW+wlde0e0YOmkR0lud97G8HPjxR2J+K2Iyfp5WMeCEVOBndic
-	 +4nizcWdv9CyiApCxHZ0HUYppezrTHKjEMG+p8bAXeoK6MQiwQ/yqS/tGP7dQHLkp6
-	 foA1XxUPPT79Q==
+	b=NJCKx8uU4/zCUiaBv9m1S1cHLZ0B4J14tQQ0JpO8r5D+SPZPolFD1PDew+i/nWvEp
+	 AhubdnoGzDn3nyKonjZO8HW3x7PrLyjOEywTUeDmFo1x4RxAfTM5DwPnjjdcz2h7Me
+	 wj+fRZ1X1ICOhtexRS7/jllV5XKK8dgyiPy+QsTr4Rxgm3KAcVTPjqwjG0wcWcPz7M
+	 OvXI7DK8NjHYpkIa9zn/dQRsekcFtuR8xtrABZRJJE0Gw5py+MHUlQ/R3kCUz3k3qT
+	 rykQwwNgfAP4lf5jY/+WuCaFIBunPiolAr/2J9mb/fq5JSXDftXr8SJqWQI+b4rCfC
+	 b53giezSktqlw==
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Subject: Re: [PATCH v9 1/6] phy: realtek: usb2: introduce phy_reg_desc
- struct to the driver
+Subject: Re: [PATCH v9 2/6] phy: realtek: usb2: introduce read and write
+ functions to phy_reg_desc struct
 From: Manivannan Sadhasivam <mani@kernel.org>
 To: Rustam Adilov <adilov@disroot.org>
 Cc: Vinod Koul <vkoul@kernel.org>, 
@@ -58,21 +58,21 @@ Cc: Vinod Koul <vkoul@kernel.org>,
  Stanley Chang <stanley_chang@realtek.com>, linux-phy@lists.infradead.org, 
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  Michael Zavertkin <misha.zavertkin@mail.ru>
-In-Reply-To: <20261016180314.31760-2-adilov@disroot.org>
+In-Reply-To: <20261016180314.31760-3-adilov@disroot.org>
 References: <20261016180314.31760-1-adilov@disroot.org>
- <20261016180314.31760-2-adilov@disroot.org>
-Date: Sun, 01 Nov 2026 15:58:00 +0530
-Message-Id: <179352888089.2955.16034514830661487022.b4-reply@b4>
+ <20261016180314.31760-3-adilov@disroot.org>
+Date: Sun, 01 Nov 2026 16:00:56 +0530
+Message-Id: <179352905617.2955.16793637507628987247.b4-reply@b4>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=778; i=mani@kernel.org;
- h=from:subject:message-id; bh=YhsgLzpm5B4kL+Ankc4Htk9KGAusE+s3+PIjBAX7d1M=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq5xQyKootva6MMYJMdrwgKMExBJDsNC9UePDCM
- pzr2QMBm1GJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCaucUMgAKCRBVnxHm/pHO
- 9QUtB/wL/oOxO69Gco7DrLvUW5JXpedgSTfYEBgXIrhy7Ch08zsI4B7rvIziAqcudMKQOrSHjdR
- ZkV3ANEylVV1OX9x5up3sjwRXh2sSx4CqhFYsa4AhZYa+Q1Ti+wWItEjuiBw2ghn9Siv+wB10QU
- xrHZ4OsA4eeN0pMa9MfRZ+IKcVEKdPVqC8k02M20MsnOattzz/3exu26r15sF+YMcaXv5clcijH
- Djb5f2tDbbf9YuuII28PquiFuKas3QzKM+Kc21C7u736s5T2SHjKRpW4RMwslB5hejJ+s55WiRb
- 9OOPYFez9IHRYJHXDcBT/fxzzlYBGx00jUdKfvdjCGSBWGEM
+X-Developer-Signature: v=1; a=openpgp-sha256; l=736; i=mani@kernel.org;
+ h=from:subject:message-id; bh=KbM2L99ljPSnmMAYBOTA/P9ImHZBmY4HMhXrCrYOlic=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq5xTi3ThHMLGrsjcqmC2Cr5Ik9UsjRTGSryetE
+ Zc05tTuZ3KJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCaucU4gAKCRBVnxHm/pHO
+ 9cOxCACZQEN+puqymiPLWpX07m1evhO+fB1+2BMrP4Df0CwJXHtNRqdb+beHEztLYFpeiZc4eIX
+ xa7ayyIfKB/4fOSCQtaeTqg3QBnzNvZl6FJ8ekihwqsRQqtvVGjbhQs0blTbdBHSJ2WZSxiJncA
+ 3hp/r/nqsU1PIqyaKYL8dPTP1d5NMUCPAjByLclJdjO9PAPlvRRhZG1CZCjX5bYWkyISbkXoETU
+ FfvJU3p9yZAOVxONFX+9EmD3n3aHaw/+QHXkxo3TZUF6cyjCItZQEbIL9jvrE0qeg4aLU2jArV2
+ 9pmARkfBGXD0lKmZZsNG8S8mzULKEMMJs0QYTNZ8yT4tTxu/
 X-Developer-Key: i=mani@kernel.org; a=openpgp;
  fpr=C668AEC3C3188E4C611465E7488550E901166008
 X-BeenThere: linux-phy@lists.infradead.org
@@ -95,15 +95,14 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 On 2026-10-16 23:03 +0500, Rustam Adilov wrote:
-> In RTL9607C SoC, there are a few differences in usb2 phy compared
-> to existing RTD SoCs, like vstatus register is at certain offset
-> from the base, busy bit and new_reg_req bit are at different bits
-> of the register.
+> RTL9607C is a big endian SoC with little endian USB host controller but
+> vstatus register is from big endian memory region and thus existing
+> writel doesn't work. It needs either __raw_writel or iowrite32be
+> instead.
 > 
-> To avoid duplicating these variables across phy cfg and driver data,
-> create a per-SoC struct that would hold them and with that add the
-> default rtd_phy_reg_desc to which all RTD SoCs driver data will
-> point towards.
+> To handle this situation, introduce read and write function to the
+> phy_reg_desc struct and add a default variation that is going to be
+> ponted by the existing rtd_phy_reg_desc.
 > 
 > Co-developed-by: Michael Zavertkin <misha.zavertkin@mail.ru>
 > Signed-off-by: Michael Zavertkin <misha.zavertkin@mail.ru>
