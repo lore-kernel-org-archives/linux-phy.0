@@ -2,75 +2,63 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7C066606A324
-	for <linux-phy@archiver.kernel.org>; Sun,  1 Nov 2026 11:39:14 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 691186070EB6
+	for <linux-phy@archiver.kernel.org>; Sun,  1 Nov 2026 22:16:47 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=VFuc/n8v;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=qq.com header.i=@qq.com header.a=rsa-sha256 header.s=s201512 header.b=XbiFhlDv
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=hEPyQlPB;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=mXLfuPXP
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Message-ID:Date:
-	Mime-Version:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Date:
+	Message-Id:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=sRT0tmgx7HFQHgcuwHvea7t9G7sajGlX/Ws+hc4T7qc=; b=VFuc/n8vDYgcfXQzB+o7OzM3Dc
-	kPzx71pwxMIK9SjlgRqvBijorpZqO20ZG/9xx8DHxjWJ6jOfIclwJ8/Ml6iDwMWjQEqEQRGljUHiK
-	7PKcSEOoad09cdrfDwNKoLGsdRC+N+WdhgclhsrVpBsNF2+sI4WQgaYtE7Yzw5BwMdX9WoPbxYrAr
-	/7hBFt3WDz5Rc12af8ZnIfCqJds9smujKduFLTKTFuxsLkRiHe1YwxqujFCAc4TdiVOXx2y6ElqMp
-	8yrmMzrPwpXFOuIjYOB015SXqwKqar3pvefNjllVlYRVIE5SpTBwKA4uvdTag8f/Kp3yv/4i6aci2
-	v/dTDnMQ==;
+	bh=m/WMTJUB4B7SagScsUKptUgad5M39kFgR/VdsEga84s=; b=hEPyQlPBax+F6bA6YPp+g6sysF
+	fRCIexsX6yB4yXYAmCCtIe/KUvFW4+RfQ/8vFvJlJGzr5EnqtzjgELMYCLf8ce3cpgQiaTZ23pRif
+	wIFA+bWzISvHAAYxRveSCwJizLLRbtolq3ggbjD3GFk1eur6SyQs7DNa328jXotz3iU37Vx0ahCpD
+	yUZhdrGdfgPchfcwBvJMj6+SSCkLFkh1dqESK4efSYTediWmVIRbUBJlqIa4PO0Jv01vaVNpBeWY4
+	TBmqe5N8mj0BunuLrs16jbnQXwCjNdw72p35ky+EQGrpncKjypKanbLmpKpk1/rU81YUXGDw8+w1s
+	Xpc28NMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNTu6-0000000E9OE-10Tz;
-	Sun, 01 Nov 2026 11:39:14 +0000
-Received: from out162-62-57-252.mail.qq.com ([162.62.57.252])
+	id 1xNdr4-0000000F18W-46Ae;
+	Sun, 01 Nov 2026 22:16:46 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNTu2-0000000E9NG-3zvf;
-	Sun, 01 Nov 2026 11:39:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
-	t=1793533145; bh=5uHMqeGCi5xEjxp7eaOraEh1Wivt/hows3ISRJRA5sc=;
-	h=From:To:Cc:Subject:Date:References:In-Reply-To;
-	b=XbiFhlDvI6WGK8Bsvq8LH7n0vu1J/qtX7NScBAtj1EFYUeJUcTbZLekmvevT4pDJi
-	 L8u+hNlUKJHvEKRoq6/56YUkF+SlBI972ERJOauNdaKGMX/9/22qjutC2Pm6sbAO2q
-	 NsM/l0TijMC1xEp+42hCMB2mLk/6qIvFEfR/1PJA=
-X-QQ-XMRINFO: OWPUhxQsoeAVwkVaQIEGSKwwgKCxK/fD5g==
-X-QQ-XMAILINFO: NkQGnmzToUyF0HQ0dYoXDCd8WAlZNEOU7fHjxUZdzBCyuy7mN4509D4z/oFOLF
-	 mp8O3+8yYpU9EBj+4Wa1B83pgvDaatwTABEjm54x+Tj652l17NWrmh8FnTeBZ8iisLukH531dkto3
-	 1epOliaRAypX17H3VMsY07+Wvgqk9e5GsxJ4YxIqwiAtoCfpizYbPcirRK8jekIKSsGuE+TM+9YLr
-	 AU2XW7tYus4vIUesvhJ346t5rtR4aUwsMdXBsoOa2HZapPMreMozjuMFK5bwW/iIjH6dIxifSuROa
-	 +qzyzbrr2KyhW9UgAZib5YZeiP8HHHXR0+g2tyFZ6e7kSjHC4GSi8qadlRcxWfoIR5YbpJi+I43fA
-	 OD2k4aB2C2XdGdWmoTpgLRQsVfJiG8NntDpUwa4rOenYOo/WQzDKvvkNHWxamomjilq3bZLADTeXm
-	 8UT/Y6ZANI7fF96dpgTxR2wGcbnrUJDKNfx9J3r/1MdwjKDY3cXo1BfesRbo0WvJI66tWuYxVYT97
-	 hQypgWt0hBqWYcOMA672gQq2wzqQ/kq6hNVb5OrxmZ+cxcA0UrSzel4V+8Xqs6/i5LlttU7HCmeut
-	 ebxATsgi8CqSuAmOXtopJ34fW38TwplM9fGbTsA5a9Of2Bv1srR0O9+f5EaRTIv//zZLppQMuVNW6
-	 vVH1s2yzLyUrEKVp40L4CIUPPFcH/7XQaMu3Ex5YDVDryrVJJJKNvuvwCTN3ynaeI0Drar8n0vbAT
-	 LhJek8pdik/8YpUYCFZkMwzPv3IlRP70FA42CdsVe2rb+LQsnLyw5wmYdFPVsEnmprnWWtwtexqlu
-	 UT2TSA96rGmBUqgqHO3XCw7Py88VgePSu0+HZXrVQSgQLQM5N9HD7BwemBa8dcccqND2hCHjmd37A
-	 dccK23A7bq37MpdZT1/dOdzhlFZNLWXRiORJiyZw/QMfJxce/w6qwZF3vnH92m84vgdj+w5oRVwHe
-	 8LaTrvTY26iR0TVigTrR/KMO5P3nrpa8BfiZUAUPYScNOl0stTaTm0q9Z2KOE9Um9F2uhZDng9585
-	 ksoGddMClOCvlkKFDu8STVWDH5fhueHuRwyvinVRN8h9L506imQ8DvXDZ698ulVpfx43u
-From: "=?utf-8?B?Q3VuaGFvIEx1?=" <1579567540@qq.com>
-To: "=?utf-8?B?TWFuaXZhbm5hbiBTYWRoYXNpdmFt?=" <mani@kernel.org>
-Cc: "=?utf-8?B?bGludXgtYXJtLWtlcm5lbA==?=" <linux-arm-kernel@lists.infradead.org>, "=?utf-8?B?bGludXgtcm9ja2NoaXA=?=" <linux-rockchip@lists.infradead.org>, "=?utf-8?B?bGludXgta2VybmVs?=" <linux-kernel@vger.kernel.org>, "=?utf-8?B?bGludXgtZ3Bpbw==?=" <linux-gpio@vger.kernel.org>, "=?utf-8?B?bGludXgtcGh5?=" <linux-phy@lists.infradead.org>, "=?utf-8?B?bGludXgtdXNi?=" <linux-usb@vger.kernel.org>
-Subject: Re: [PATCH 21/27] phy: rockchip-inno-usb2: Add RK3572 support
+	id 1xNdqn-0000000F0O5-2E2i;
+	Sun, 01 Nov 2026 22:16:29 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id DBD8A60618;
+	Sun,  1 Nov 2026 22:16:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8F5FE1F00919;
+	Sun,  1 Nov 2026 22:16:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1793571388;
+	bh=mYyAayRoZikGuVa2eTY9XdZusf49iXjgOkDtLITdEgk=;
+	h=Subject:From:Date:References:In-Reply-To:To:Cc;
+	b=mXLfuPXPchjyCsKqUUn6GfbB242wECSzlW5Nl5mVJ6Zte83mHJNI4R4d8xkp7uYcd
+	 PsMB2hamerPq2dnWXNyCSG+wGVJoxOanUM42cDhwQZm6qnyCUjMMHEM/aieCRaZXTY
+	 YZ6bc9U50iXAKJ6034iAZfuM4+M84BeH8T0pGIdkGJ0NIMUEZ1bKDwpu6Qimh7lTAM
+	 tuhkR19/h7UrSYSq4bb66U5CX6UY/m+upd5rhiqJyHWOwF8yMk8WPOWyXOG1GECtPq
+	 WPFZslCedVeFfgCdotFp5j/booJbOqPkd8OugZblxDJ9R1gbY68KHhHXNfQ9JRpvCq
+	 9YL+YH3CTO18w==
+Received: from [10.30.226.235] (localhost [IPv6:::1])
+	by aws-us-west-2-korg-oddjob-rhel9-1.codeaurora.org (Postfix) with ESMTP id 873E338003B8;
+	Sun,  1 Nov 2026 22:16:28 +0000 (UTC)
 X-Archived-By: <archiver.kernel.org>
-Mime-Version: 1.0
-Date: Sun, 1 Nov 2026 19:39:03 +0800
-X-Priority: 3
-Message-ID: <tencent_650649C624E17C043BA00BB1D4CFB8498105@qq.com>
-X-QQ-MIME: TCMime 1.0 by Tencent
-X-Mailer: QQMail 2.x
-X-QQ-Mailer: QQMail 2.x
-References: <20261022-add-board-ok3572-c-v1-0-0b0fd85a31ee@qq.com>
- <20261022-add-board-ok3572-c-v1-21-0b0fd85a31ee@qq.com>
-	<179353031285.2955.4272173079718014092.b4-reply@b4>
-In-Reply-To: <179353031285.2955.4272173079718014092.b4-reply@b4>
-X-QQ-mid: xmsezb41-0t1793533143tqyga0g4o
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261101_033911_529919_6C8CFF0D 
-X-CRM114-Status: GOOD (  13.02  )
-X-Spam-Score: 0.6 (/)
+MIME-Version: 1.0
+Subject: Re: [PATCH v2 0/2] phy: spacemit: fix and enable the K1 USB 2.0 PHY
+From: patchwork-bot+linux-riscv@kernel.org
+Message-Id: <179357138729.2624073.17557863773534626721.git-patchwork-notify@kernel.org>
+Date: Sun, 01 Nov 2026 22:16:27 +0000
+References: <20260825065007.69353-1-bbanelli@gmail.com>
+In-Reply-To: <20260825065007.69353-1-bbanelli@gmail.com>
+To: Bruno Banelli <bbanelli@gmail.com>
+Cc: linux-riscv@lists.infradead.org, vkoul@kernel.org,
+ neil.armstrong@linaro.org, dlan@kernel.org, huang.ze@linux.dev,
+ elder@riscstar.com, linux-phy@lists.infradead.org, spacemit@lists.linux.dev,
+ linux-kernel@vger.kernel.org
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,51 +71,42 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-0.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
-	DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	FROM_EXCESS_BASE64,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi,
+Hello:
 
->> + refclk = devm_clk_get(rphy->dev, "phyclk");
->> + if (IS_ERR(refclk))
->> + return PTR_ERR(refclk);
->
-> Please insert a newline between each operation to improve readability.
->
->> + rate = clk_get_rate(refclk);
->> + if (rate != 24000000 && rate != 26000000)
->> + return -EINVAL;
+This series was applied to riscv/linux.git (fixes)
+by Vinod Koul <vkoul@kernel.org>:
 
-I will add a blank line here and between the other operations to improve
-readability.
+On Tue, 25 Aug 2026 08:50:05 +0200 you wrote:
+> v1 was a single patch adding "default ARCH_SPACEMIT" to
+> PHY_SPACEMIT_K1_USB2.  Automated review pointed out two pre-existing
+> Kconfig problems in the same entry, and that change makes them easier
+> to hit: enabling the symbol by default means configurations that would
+> previously have left it off will now build the driver.
+> 
+> So fix the dependencies first, then enable it by default.
+> 
+> [...]
 
->> + /* Set the normal line-state filter interval. */
->> + ret = regmap_write(rphy->grf, reg + 0x0020, 0x30100);
->> + if (ret)
->> + return ret;
->
-> Here.
->
->> + /* Increase HS voltage by 5.89% and double pre-emphasis current. */
->> + ret = regmap_write(rphy->grf, reg + 0x000c, GENMASK(27, 24) | 0x0900);
->> + if (ret)
->> + return ret;
->
-> And here.
+Here is the summary with links:
+  - [v2,1/2] phy: spacemit: fix K1 USB 2.0 PHY Kconfig dependencies
+    https://git.kernel.org/riscv/c/882af55e42a4
+  - [v2,2/2] phy: spacemit: enable K1 USB 2.0 PHY by default on ARCH_SPACEMIT
+    https://git.kernel.org/riscv/c/392101240b22
 
-I will add blank lines at these places too.
+You are awesome, thank you!
+-- 
+Deet-doot-dot, I am a bot.
+https://korg.docs.kernel.org/patchwork/pwbot.html
 
-I am working on splitting the patches by subsystem, and I will
-resubmit this patch as part of v2 after addressing these comments.
 
-Thank you for your review!
 
-Best regards,
-Cunhao Lu
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
