@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 84DE7606A327
-	for <linux-phy@archiver.kernel.org>; Sun,  1 Nov 2026 10:20:36 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 782C4606A327
+	for <linux-phy@archiver.kernel.org>; Sun,  1 Nov 2026 10:28:09 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=I+nRCwNR;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=P+nHu0+b
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=0/3tf0Z2;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jXO0MNtU
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,63 +14,65 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Cc:To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=bEU1K48nv7oeD1S2xQa5vILrLtxjEkMxjuXINZIT+V4=; b=I+nRCwNRQlJvD06olTOu9WOzC2
-	+bO+m9mcL/cb/jsdDgYyMTbw4NHtyRRL0WhbycJkNS0bTURN81iVBwtuz/dnJukmijJYe4k3UrZqB
-	3vbMGOHhcPOeBT4ozp8aNNw3IZAzWW6oCNkPqpAf91Bn5jtWe+FBuLoEKts228yhNZjXdouT0Hl1R
-	A7ivjuO2VsZSX9weyxC2t7WPkGO7WOxYYfgf1Kk5cmsuq5wvq4r3oozSuOE8b3MjWb1iLhF9hELDD
-	11y0Q7W7aFY+VZUF2noDGythe498p2QQP8ttDC8hRuQDzXWdh6VnM5XLj0hyiU8tr5+dyRLjzR9uv
-	jXNi45gQ==;
+	bh=Gky+crHIKkgWulN9NsA3Mxh8hTpBw1D6ofqrRqQefeg=; b=0/3tf0Z2OjHc8OO9voou40ceSS
+	wROU8b/MaO3waRaXxsT5vbGwd88i92hAld22YDRvBGEnhLYUdWdT/ifrMpEWRic8aY2R5LPLQwDjc
+	Hfl1HqPiXzKbSgHIQwPixH6eZjFqN6aBOU9CI7ex0mD1HhcyzuWs+2QTsdY5X3uz8mnRB2fpqdSW2
+	CtKofhyrfPhevZo/oJOcvfeSP/LKfsliqMnt747O/cGaJYbg7qrDo46oC2zeDDFAPIBjxgWq5ED0k
+	xfE4/7u319OUfdmNCQ2QcQ2mQnIu+7oAOyP/YOcFGWEQGVBvayyBtmOEi2/ea7OhXwZT3fBkblkzg
+	nseINcbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNSfz-0000000E554-3QcC;
-	Sun, 01 Nov 2026 10:20:35 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xNSnI-0000000E5XM-1zbu;
+	Sun, 01 Nov 2026 10:28:09 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNSfy-0000000E54n-2AVz;
-	Sun, 01 Nov 2026 10:20:34 +0000
+	id 1xNSnH-0000000E5XG-1ybk
+	for linux-phy@lists.infradead.org;
+	Sun, 01 Nov 2026 10:28:07 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id DB708439A7;
-	Sun,  1 Nov 2026 10:20:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 25F161F000C1;
-	Sun,  1 Nov 2026 10:20:30 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 7591C60054;
+	Sun,  1 Nov 2026 10:28:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A26531F000C1;
+	Sun,  1 Nov 2026 10:28:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793528433;
-	bh=TkstfqMwLVi3O9Geq9Sw8ekLhOvsr3GA+4QG8GJigxk=;
+	s=k20260515; t=1793528886;
+	bh=HLYIqwxJ5WYlJPpWkXyQBNJeKHSfq/1+H4q2iamRMWQ=;
 	h=Subject:From:To:Cc:In-Reply-To:References:Date;
-	b=P+nHu0+b5rfK+aXhEmjWLD8w8GrD3O3uu18WH0lMRQ4sUXSIdqTNP9iyJ4GuAkxUh
-	 OKppBIwkP5yaYkwup61QUAjbSRjAMdhnenQgRgWsuJiR1aVU4LO4Dvy2nevN6kSeIG
-	 1XAY+SExgSVwzuL6Xkr5HF1msUj9+Q1xUCdw1TKVCPfa23YqGqSVMpuMZVc9bPv+O5
-	 1ERct4siCLQ0LN4Byw825y83ABAnHVSCDOiUbrhEotRJ3e5weoovsQ05jWmnCrk3uf
-	 f6zXV6ZyTRm4AAGnXNfbEhQOhCmH2xe68DRySVRK2+/kJLyGnDw1U9SCg9S14pydmd
-	 mlZU1AD5kDDCw==
+	b=jXO0MNtUe65SEoyghzmFa/MdwUxIwKj9CveDEeif3oDJNQ+OX+ITWVsT3Tk7FDUDg
+	 ujipNkc7UZWU0WAQwTIEn32yFh7m76ZJtVk5AItxgH3k0dXwmJO49//LA4UrdLm59g
+	 ZDzpHj3CTv5JydpMPrsI0wQYMR8TjZJPU8YH7/5wabRMdjmDnXhKOFtj3/2LQVSO4G
+	 M+8ARwkdiaE6xrFUQW+wlde0e0YOmkR0lud97G8HPjxR2J+K2Iyfp5WMeCEVOBndic
+	 +4nizcWdv9CyiApCxHZ0HUYppezrTHKjEMG+p8bAXeoK6MQiwQ/yqS/tGP7dQHLkp6
+	 foA1XxUPPT79Q==
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Subject: Re: [PATCH v4 2/2] phy: airoha: add support for AN7583 Gen3 PCIe
- PHY driver
+Subject: Re: [PATCH v9 1/6] phy: realtek: usb2: introduce phy_reg_desc
+ struct to the driver
 From: Manivannan Sadhasivam <mani@kernel.org>
-To: Christian Marangi <ansuelsmth@gmail.com>
+To: Rustam Adilov <adilov@disroot.org>
 Cc: Vinod Koul <vkoul@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>, 
  Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, linux-arm-kernel@lists.infradead.org, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org
-In-Reply-To: <20261016071225.2092-3-ansuelsmth@gmail.com>
-References: <20261016071225.2092-1-ansuelsmth@gmail.com>
- <20261016071225.2092-3-ansuelsmth@gmail.com>
-Date: Sun, 01 Nov 2026 15:50:23 +0530
-Message-Id: <179352842351.2955.1473721252992943972.b4-reply@b4>
+ Conor Dooley <conor+dt@kernel.org>, 
+ Stanley Chang <stanley_chang@realtek.com>, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Michael Zavertkin <misha.zavertkin@mail.ru>
+In-Reply-To: <20261016180314.31760-2-adilov@disroot.org>
+References: <20261016180314.31760-1-adilov@disroot.org>
+ <20261016180314.31760-2-adilov@disroot.org>
+Date: Sun, 01 Nov 2026 15:58:00 +0530
+Message-Id: <179352888089.2955.16034514830661487022.b4-reply@b4>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=476; i=mani@kernel.org;
- h=from:subject:message-id; bh=QM9ES64G5eMGECElOm5ezgzKCyheAyccn8+aOEbI0Fg=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq5xJuJhIJL80l+IydUaS6U2TPqyRHet4HuM9ew
- Y8yUhlL8CyJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCaucSbgAKCRBVnxHm/pHO
- 9cm3B/4lSOxWPTXOja4ew2u8cVg06zJcuAYJtyd1F8s+DgKJYRb/B1bbKu46J6EBaFvhD8dkusG
- pcCDP0OrFyTRKlw+FiuRDAMAgLJNCcm++Wl/D5OwNZc8AV2u4FBl0ODdi2Q3AmcA0Fg2bL+jHRT
- aqfRlc9I7f/RIp9Y/EA2vjkpNSQhwwBV7oKkUIZHM7+4AOx6z/btmXejbTjP+489QOMsQX/h8wb
- zRTi3PsLctWQXlGFphkM/6sxo69nFcwSxtLyYtGKa81zp/QBkNrXkFU57WcNLtSwsDFltQ5/bFo
- QvqNmaZFUdzw09RtlMFijjORR3sArnDcZMpHn7SSgJV2pxoq
+X-Developer-Signature: v=1; a=openpgp-sha256; l=778; i=mani@kernel.org;
+ h=from:subject:message-id; bh=YhsgLzpm5B4kL+Ankc4Htk9KGAusE+s3+PIjBAX7d1M=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq5xQyKootva6MMYJMdrwgKMExBJDsNC9UePDCM
+ pzr2QMBm1GJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCaucUMgAKCRBVnxHm/pHO
+ 9QUtB/wL/oOxO69Gco7DrLvUW5JXpedgSTfYEBgXIrhy7Ch08zsI4B7rvIziAqcudMKQOrSHjdR
+ ZkV3ANEylVV1OX9x5up3sjwRXh2sSx4CqhFYsa4AhZYa+Q1Ti+wWItEjuiBw2ghn9Siv+wB10QU
+ xrHZ4OsA4eeN0pMa9MfRZ+IKcVEKdPVqC8k02M20MsnOattzz/3exu26r15sF+YMcaXv5clcijH
+ Djb5f2tDbbf9YuuII28PquiFuKas3QzKM+Kc21C7u736s5T2SHjKRpW4RMwslB5hejJ+s55WiRb
+ 9OOPYFez9IHRYJHXDcBT/fxzzlYBGx00jUdKfvdjCGSBWGEM
 X-Developer-Key: i=mani@kernel.org; a=openpgp;
  fpr=C668AEC3C3188E4C611465E7488550E901166008
 X-BeenThere: linux-phy@lists.infradead.org
@@ -92,14 +94,20 @@ X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 2026-10-16 09:12 +0200, Christian Marangi wrote:
-> Add support for AN7583 PCIe PHY driver. This is required to make the
-> Gen3 PCIe port present on the Airoha AN7583 SoC correctly work.
+On 2026-10-16 23:03 +0500, Rustam Adilov wrote:
+> In RTL9607C SoC, there are a few differences in usb2 phy compared
+> to existing RTD SoCs, like vstatus register is at certain offset
+> from the base, busy bit and new_reg_req bit are at different bits
+> of the register.
 > 
-> A different setup is needed compared to Airoha EN7581 where the
-> calibration process and the register map greatly changed.
+> To avoid duplicating these variables across phy cfg and driver data,
+> create a per-SoC struct that would hold them and with that add the
+> default rtd_phy_reg_desc to which all RTD SoCs driver data will
+> point towards.
 > 
-> Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
+> Co-developed-by: Michael Zavertkin <misha.zavertkin@mail.ru>
+> Signed-off-by: Michael Zavertkin <misha.zavertkin@mail.ru>
+> Signed-off-by: Rustam Adilov <adilov@disroot.org>
 
 Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 
