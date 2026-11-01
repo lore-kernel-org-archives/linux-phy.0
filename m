@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5ACF5606A327
-	for <linux-phy@archiver.kernel.org>; Sun,  1 Nov 2026 11:06:22 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 868F9606A334
+	for <linux-phy@archiver.kernel.org>; Sun,  1 Nov 2026 11:07:23 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=VvX7lrB9;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=DNTtMyDY
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=GSdR6Jns;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=e+qDYpEv
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,61 +14,60 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Cc:To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=Iq1OAohCmdpJtEabCKUuqbXZ32L/z4ELVglPTO/1xFU=; b=VvX7lrB9tXKNL4gjWgTp8udWpR
-	9lIpGXR0aSroB3g8nbKiOo9IhTb7SRE6gHAXlUBb2CniwDUmnptcH9vRQhD8KmHf3/i1NdrEZgYic
-	rPjIZkC5MFax7Ee4D83jVHKizTtLxi1fbfst8/YHx8PHqstv18o03GGdwxyJGvUvXsbIm/IN3TY+H
-	aV6aYm6kq/jeQgci3UFkp2ooiX+g/Vn6lSJ6XLKbUK9OMThcuG+JcrWXx9F/UL/UmOKCJilxKTmFH
-	9dCuaXkx8QfGIlkt/6XcvBOHBXgkOUB9UAzeTnPgVxfcZbsL3SPdK7pcbjcOm4S/BsKkbOONAB7bV
-	eKvMbCWQ==;
+	bh=3jmQ4Myle8WXlFjAAxnGdQaqFOxOfKEIsQWW4C1BeqY=; b=GSdR6JnsBXdDz+DaBkprr5WC1s
+	oFfk9nEgS1FmbOKUC7/JYqZQLxi1ZaaE9Q/EnpRhvl7+Zx1OB4r2pAYrNDpjPI77kC+UyxSTmVfms
+	pyP7WTK34MR/eLNyRlE/U/A7ftizZ3tMtXC+JkIqeqOtyhpo5aafL//0Jw4oWTa65kocQVNQcivJX
+	VQEk+cCTyBaRPHjK56QiKnLGYls0yxH0Wb2hvJ2+B/Nm95ldBnGoXMseg8hrtAY8I9CmTR3C+Pd5G
+	9pTm7be1FD3TNtvNnUhwkfDaLMdv6UTptzHP/wvAkXU/D2jYTgctUKT1Bavohq8lLLO5d6N18yGZ1
+	p991w2Fw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNTOI-0000000E7oo-0MER;
-	Sun, 01 Nov 2026 11:06:22 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xNTPH-0000000E7q9-1CbD;
+	Sun, 01 Nov 2026 11:07:23 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNTOG-0000000E7oi-2zxK
+	id 1xNTPF-0000000E7q3-2l9M
 	for linux-phy@lists.infradead.org;
-	Sun, 01 Nov 2026 11:06:20 +0000
+	Sun, 01 Nov 2026 11:07:21 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 7AB1E60220;
-	Sun,  1 Nov 2026 11:06:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 41DBD1F000C1;
-	Sun,  1 Nov 2026 11:06:16 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 5879C406B5;
+	Sun,  1 Nov 2026 11:07:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 017741F000C1;
+	Sun,  1 Nov 2026 11:07:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793531179;
-	bh=ICIkAf3UPu4vp4g9wq9pl5fJ3rhAB5F7TqD0Cz1UXjg=;
+	s=k20260515; t=1793531241;
+	bh=hlNY/PV8DGVOaVDQ87qnWmiDTqBZhpUgMHIAxp3ZzvA=;
 	h=Subject:From:To:Cc:In-Reply-To:References:Date;
-	b=DNTtMyDY6sgakprgJdluxjvivbsnTtKQfLxmqRjCbVA4kgZOmhZOwV67noWIzTw9k
-	 XRTQbPddEJWqhsLM5zko1Agcsj12H5ke6W0KbT9Fv3sDhnCkF4k/qN09OmnrQHwlRW
-	 TzvnEDNp85FaCk4ZJ52ytdc32NOIYM5B44joQWlCSWL65KQq/+ne6briCWGmsi2gkx
-	 tR1zAvGLWy1QwJGBrOXbiT0RxrVKRpv3aRO91Kwxo7xFdxMbzwo+2T2nTTlN66K/2g
-	 t/M4QWYsoIYwayDtpDQTmj+5rpqiHtMcdo+iP4FtTsCg/hnV+osY+zLkLkLc71JbPx
-	 tCOIUQ+oUIJfg==
+	b=e+qDYpEvupV2f4QI+ABCnWxY7QIYk/8tszNFxOaWNecB5AM34b8uv2iIq4abolxIM
+	 BpL8WabsJF7IFYUW+iD14mWdApn1fy4w6+sn7437wyjCjZEFMCzJDolzQuEnxy7ZLr
+	 N7Dbgr6ny5HsgGN8285AkM0x58KVd8NVhmiH4YuQr4aEyhStF520jaBogDpUX6kCUR
+	 mjiykSaF1mWYN43WOol+ROXLJyflx9TgHUOd4tVJDrS+7Rlg99KaygWyn51UHPFdq+
+	 xJ7/fqqcsjA3pIAV3Bp5WshWmbdslIV4l2ll6XqxdO4l2NmYbVSwtNFrIa5e/xa3a4
+	 w5OX2w8X+l7DQ==
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Subject: Re: [PATCH v2] phy: qcom: qmp-combo: Leave the USB PCS alone in
- DP-only mode
+Subject: Re: [PATCH] phy: ingenic: Don't disable the supply in exit
 From: Manivannan Sadhasivam <mani@kernel.org>
-To: Joonhoe Kim <26rote@gmail.com>
-Cc: vkoul@kernel.org, neil.armstrong@linaro.org, mani@kernel.org, 
- konrad.dybcio@oss.qualcomm.com, dmitry.baryshkov@oss.qualcomm.com, 
- val@packett.cool, wesley.cheng@oss.qualcomm.com, 
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org
-In-Reply-To: <20261023123512.1912-1-26rote@gmail.com>
-References: <20261023123512.1912-1-26rote@gmail.com>
-Date: Sun, 01 Nov 2026 16:36:13 +0530
-Message-Id: <179353117353.2955.16116793673558325261.b4-reply@b4>
+To: Olivier Louvignes <olivier@mgcrea.io>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ Paul Cercueil <paul@crapouillou.net>, linux-phy@lists.infradead.org, 
+ linux-mips@vger.kernel.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20261024051756.79342-1-olivier@mgcrea.io>
+References: <20261024051756.79342-1-olivier@mgcrea.io>
+Date: Sun, 01 Nov 2026 16:37:16 +0530
+Message-Id: <179353123621.2955.1763925677067862965.b4-reply@b4>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1723; i=mani@kernel.org;
- h=from:subject:message-id; bh=Qm6xI6pBQHw/JhBtXoNijp9M1lQctxsjcpVxgL/i6NE=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq5x0nDJe3fEmoyf6sZec61aECAaAg0o1cX25Ki
- FMLJUqTzDaJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCaucdJwAKCRBVnxHm/pHO
- 9VZUB/9HhdfzEhaz1Jw9bmrIhDzgSuZ1RwQsR89b8mh4mJ9zXwYloZnv6WkSprFSIE6EPp9RqZt
- XKHYgXFs8bZYfS4UxpKutjkQS+HisdIx+1mkxHgfzfm264wxnLJuTOfhKq8x7UmcYv/rVc/8oKw
- cpZICoXHJfuHgQZOsPlyFEw0tj3OT9QEhrToa5W8qG0EWOtd4n/NR9jeuxcOn/G3sYJ/S2zaclA
- y9CJ8X6zfLb9ApJkpWyUre08yNOnIsyb+IBqYlRx6Mier6ZMlHo34ZmaKli/oC9fbAiGZl84q1d
- cpmOD6JtjKVavlf9u+8cXRUZpwr4SrFllq6wcvriV7ZQsWsc
+X-Developer-Signature: v=1; a=openpgp-sha256; l=640; i=mani@kernel.org;
+ h=from:subject:message-id; bh=/AyMrrTg8Y397zc3NTnyqQqqDGUCh56bFnIUP/Ey9GQ=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq5x1mQ+/vqLmjlLlj7D/J+HKB89tHLr4pP2XBo
+ tc2ISXp6MKJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCaucdZgAKCRBVnxHm/pHO
+ 9Xw1B/9ieynVZm2Z2sQAMUegzCNku6ctqgBumbhH6y9X0wsbZVMD/qiu3Jywa/jY/iPnJTl5dA9
+ wWX0vuIRwDwJhQnYmnht7GMj29L/944OvD1zCrIJkQOjp66r0TyA9ZFI8PiZMN33sRIHmvlo5Pi
+ bgEB7RpUJpCpDBD3wvvMU+U6JR8EIeEvpJaWmlWUOlQ9l/CZeOgVYW9VDfWt9M+MXaGVbvGT6Hn
+ 0xDqpj8+iH1rSV48wjE96QCh4Xt+T21veUGZuAqazHMjhvTPvPyVgzXt47B3A/upAqCD8tzi7x5
+ A7V8QT5SgegqoUHECrrqt7Y9yKfS7ET2dI0cbymQyt3Kfpts
 X-Developer-Key: i=mani@kernel.org; a=openpgp;
  fpr=C668AEC3C3188E4C611465E7488550E901166008
 X-BeenThere: linux-phy@lists.infradead.org
@@ -90,38 +89,22 @@ X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 2026-10-23 21:35 +0900, Joonhoe Kim wrote:
-> In DP-only mode (DisplayPort pin assignments C and E) all four lanes
-> belong to the DisplayPort PHY and the USB PCS stays powered down.
-> Three paths still touch the USB PCS in this state:
+On 2026-10-24 07:17 +0200, Olivier Louvignes wrote:
+> The supply is enabled in power_on() and disabled in power_off(); exit()
+> disabling it again unbalances it. dwc2 powers its PHY off before exiting
+> it, which warns at every probe on an Ingenic X1600:
 > 
-> - The USB controller can exit and re-init its PHY in DP-only mode, e.g.
->   across a system suspend that loses power. qmp_combo_usb_init() then
->   programs the USB serdes, lane and PCS tables over the DisplayPort
->   configuration and times out waiting for PHYSTATUS, and
->   qmp_combo_usb_exit() resets and powers down a PCS that is not in use.
-> - qmp_combo_typec_switch_set() powers the USB PCS off and on when the
->   orientation changes in DP-only mode, e.g. when a DP-only sink is
->   plugged in the other way round while the mux is still in DP-only
->   mode.
-> - qmp_combo_reconfigure_phy() powers the USB PCS off again when the
->   port leaves DP-only mode.
+>   WARNING: ... _regulator_disable
+>   ...
+>   ingenic_usb_phy_exit
+>   phy_exit
+>   dwc2_lowlevel_hw_disable
+>   dwc2_driver_probe
 > 
-> Skip the USB PCS in these paths in DP-only mode. Keep the
-> qmp_combo_com_init()/qmp_combo_com_exit() reference and usb_init_count,
-> so that qmp_combo_reconfigure_phy() powers the USB PCS up when the port
-> leaves DP-only mode.
-> 
-> On a Lenovo Y700 Gen 5 (TB323FU, Kaanapali) with a USB-C monitor
-> in pin assignment C, resume from s2idle fails with "phy initialization
-> timed-out", the dwc3 resume returns -110 and the following xHCI resume
-> hangs the system.
-> 
-> Fixes: 896277138c13 ("phy: qcom: qmp-combo: register a typec mux to change the QMPPHY_MODE")
-> Fixes: 89563a152973 ("phy: qualcomm: qmp-combo: Add preliminary USB4 support")
-> Signed-off-by: Joonhoe Kim <26rote@gmail.com>
+> Fixes: 31de313dfdcf ("PHY: Ingenic: Add USB PHY driver using generic PHY framework.")
+> Signed-off-by: Olivier Louvignes <olivier@mgcrea.io>
 
-Acked-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 
 - Mani
 
