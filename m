@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8FD16606A32D
-	for <linux-phy@archiver.kernel.org>; Sun,  1 Nov 2026 10:14:43 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 809C1606A326
+	for <linux-phy@archiver.kernel.org>; Sun,  1 Nov 2026 10:16:17 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Vnt1sSl9;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=M7CxUNq4
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=F0vYk/mB;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=BIqx48gV
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,61 +14,58 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Cc:To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=pv5uNSrJx7Jw3nM5mMZZDE7LNCK6JjTDOrwMGfI65+I=; b=Vnt1sSl9VGrF2WjTd2wMfWHyE7
-	HdhFukD+R/zhmaMwDogJA4PoRWQrBqeIFLzTYnf1ifLHIGhU0OECoSUkQJL3kRLUYtZc2D7nhomop
-	oeeTQAY++72IggvD2x1Io4T91KLmtMsGlcU16+kWVfS1+2WiN3TYTauh1qWYZKl2HjCmlVb73bDvE
-	euoeM1t83M76FTSVkFfjekVp37KZOi7hQHF9Pq3st9mCcMWrQ8YdbGJQTdN3wXGZTX3Q5K0NWomnZ
-	04mgnIT1quZvKRDgrUk3YAqGGXcZ419xfc+PDDsFjMnuqFbFyccOMtUytBFhkgaRjskYqwTVByVFr
-	mhRIBZ7A==;
+	bh=Sm9aiRTE+SENYsPbe39ROyo/EXbfHt6OYA/chMvUdDg=; b=F0vYk/mBAsvXxMTR8vIkD2eQ+i
+	nHQ+IoRAv8vwzxlf31tepR106z8o36R17FNRtfvkguTXthnOSgt+PmjImGckjP4wzYPAeDMbX5W6g
+	PGm8oc0a5AXOkhCE/R+JMVFEKYe0ly8CUX1TlBZo6BwfRaf9ZRGx5upEu9s0qsmKisF91IBFunb3N
+	tEv4rAiAagOm4bo0x35piZmtP+asYFznZNk5cy7XSrcSwBRFNYUZtpBnSrD8LPYeB4n2jnUFqylkK
+	AMccFcUSgn2z2sXGcVeCximtxalFtRn6wo5OqHnpUjEfYlo1YRWMpmvJ9ECxzGV3zHy+ZhwbfjqMm
+	Mvox3bcw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNSaJ-0000000E4ux-0OUl;
-	Sun, 01 Nov 2026 10:14:43 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xNSbp-0000000E4zE-0yyb;
+	Sun, 01 Nov 2026 10:16:17 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNSaH-0000000E4ud-0rJV
-	for linux-phy@lists.infradead.org;
-	Sun, 01 Nov 2026 10:14:41 +0000
+	id 1xNSbo-0000000E4z2-0m1p;
+	Sun, 01 Nov 2026 10:16:16 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id A9620415AA;
-	Sun,  1 Nov 2026 10:14:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C430A1F000C1;
-	Sun,  1 Nov 2026 10:14:38 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id E0945600E2;
+	Sun,  1 Nov 2026 10:16:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 490771F000C1;
+	Sun,  1 Nov 2026 10:16:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793528080;
-	bh=qcpQH98yXrG88iN1/9biSPLXhNxIVIr/aoycHhtDoAQ=;
+	s=k20260515; t=1793528174;
+	bh=WlyZSmXqoNem4BYxWTM4LbiDAqtNAeNEfmW9zP2dGqI=;
 	h=Subject:From:To:Cc:In-Reply-To:References:Date;
-	b=M7CxUNq40UIbSLROAPliuG7tkrW9JpaehQpsIv3r8tXQdA49Ux47V0htIXaF1PaaL
-	 GNBai8Zm/ABvjQHG9hL63+cxydQ3OxtgnDiK94YIFOEd7ATmlGhQodjDKAYONYOY0W
-	 HB7QoreIcV2Ak3F19NxNZakldWJNzzZchxVg49lYmjrZjA/ljxyHvnmBSoiZMlsMS4
-	 L22G8PnK7H95s3troYg4KjxHJia/SGeDBQgrIMuuX3UPCfhNF0C5pdCBJdtJgCqocs
-	 yvZRJaqywmTlneWtMnolOJcXcwYHLtSYPZAPAAiMtreDImto2AaOWoniu/hHZUkUyy
-	 v0YbC+10sGsQQ==
+	b=BIqx48gVerpSZp3TIv7S9rEWVLbSgq//SFRMil1HVp3LOdwPLoPm9dYOn98MfqZYH
+	 6hcgUC8AdQ0MBYcIo8ec5E2onfidoy6PtYcIULNKgVCdSAVucUkuJ8nNc4KMq+Tzk4
+	 LVVveSF5mU8o2DETRIjUSfKVRRCj21qwlD845qB4vz27leJBkoRuxJvSgweiWZde92
+	 gOSyX4vvyGa3p28nO9gg260rWqL5n0nf9tVDKpB8K3VXWxa/oshQ5tX2z/3Vu5ZSez
+	 dPdUutjWDIkY8E4saqEmfqlvrd66kxszuENNHsKbBbJW/oFdT3PErvV3xs5Z0W9H2m
+	 mVDtZgVNEtf2w==
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Subject: Re: [PATCH] phy: ti: twl4030-usb: free the IRQ before canceling
- work
+Subject: Re: [PATCH] phy: rockchip: naneng-combphy: Fix overwritten PLL SSC
+ control bit
 From: Manivannan Sadhasivam <mani@kernel.org>
-To: Myeonghun Pak <mhun512@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, stable@vger.kernel.org, 
- Ijae Kim <ae878000@gmail.com>
-In-Reply-To: <20261003035111.623790-1-mhun512@gmail.com>
-References: <20261003035111.623790-1-mhun512@gmail.com>
-Date: Sun, 01 Nov 2026 15:44:30 +0530
-Message-Id: <179352807066.2955.5695904295125910316.b4-reply@b4>
+To: Shawn Lin <shawn.lin@rock-chips.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Vinod Koul <vkoul@kernel.org>, linux-rockchip@lists.infradead.org, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+In-Reply-To: <1792036787-37927-1-git-send-email-shawn.lin@rock-chips.com>
+References: <1792036787-37927-1-git-send-email-shawn.lin@rock-chips.com>
+Date: Sun, 01 Nov 2026 15:46:10 +0530
+Message-Id: <179352817065.2955.12861358728899992039.b4-reply@b4>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2336; i=mani@kernel.org;
- h=from:subject:message-id; bh=kmrEgjTeKEpg6c3EfWWIz1qK8YoFa3C7wI+02vgixBQ=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq5xEIW6g18hEmrVsa5SmDh3ZvjXkWVyQONX+vq
- vVAtC2sXFeJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCaucRCAAKCRBVnxHm/pHO
- 9eIEB/0a4PqI70aHy6yZippaf0c03Ksr9Q8Io/qNY2QmaJQ1poTKJG7YZT6rSdTNQxi7PeemIcb
- t5iIUpDcaj33xFQlhF3HNrrNiqPADl+LWp1bhP6WesmLQAaNbOc3/tycOEP8lIZWxEQL5zj28nN
- 0VMcm9ImMQpQBb8bSGm7wPBZmHsnJs5KEBMC2SaXKXyNL84dmc1nNvMlBKWG5w9at0KtRzin/od
- 4M6hId3vY4MHw4ld/WgSKYNHb7NLEzTWBw6y8PQGgRLNGuTw1WPSG8+yUBeYJHrQCmVqxdir17v
- v2vUXGjbYSijGUIR9fBQ3Id9X22ehhlfgidxp8ZrzdGRNRap
+X-Developer-Signature: v=1; a=openpgp-sha256; l=819; i=mani@kernel.org;
+ h=from:subject:message-id; bh=swTg6Ncr3SBC3tfOWyQgwR6RiQDdKAS9vN/fOLu60Cw=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq5xFsyj+J03oXK/LW1Mh7hQdN0TRMcBq7xI7Y3
+ f51oK4cR7KJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCaucRbAAKCRBVnxHm/pHO
+ 9c4gB/0fVuDYxlRny1zg37lWWevofXo/uIoYcKZ7ruzT672dQejgZtSGIMdz1lrQivBQUY/fftn
+ /Nab1sjiY5iVgQoiozItGAethezmNkJyuJgcTx6a0jT7RkrnSCXPzJAFWQLKjibFikSxb/TWTkZ
+ Qh+omLlpDhyF/qjWiZgeKgcVqaD/oqAPiAX1LS45MjrFR+iqG7/0QM153+MBjcfXw5oqNdP+ooP
+ fqUTduZQCto83QOBNuUFeS7XA9qMRJ3YOGRxVm/BteyveZvfguw3c2+tCzmIVNbIpDNCP/9pFCJ
+ GfGEIu+JYYYnDT4/YkXsxbPwPmfIJiNYF09Gtsnk65EhFtdH
 X-Developer-Key: i=mani@kernel.org; a=openpgp;
  fpr=C668AEC3C3188E4C611465E7488550E901166008
 X-BeenThere: linux-phy@lists.infradead.org
@@ -83,73 +80,28 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 2026-10-02 23:51 -0400, Myeonghun Pak wrote:
-> The threaded IRQ handler can schedule id_workaround_work while the PHY
-> is runtime active. The remove callback cancels that work, but leaves
-> the managed IRQ registered until devres cleanup after remove returns.
-> An interrupt after the cancellation can therefore queue work that
-> accesses the freed twl4030_usb allocation.
+On 2026-10-15 11:59 +0800, Shawn Lin wrote:
+> rk_combphy_common_cfg_ssc() first sets RK3568_PHYREG33_PLL_SSC_CTRL on the
+> RK3588 and RK3576 SoCs, then, for PCIe at 24MHz, programs the PLL KVCO
+> adjust field. The latter used a plain writel() of the FIELD_PREP() value,
+> which cleared all the other bits of RK3568_PHYREG33, including the
+> PLL_SSC_CTRL bit that had just been set a few lines above.
 > 
-> The same work can be queued after IRQ registration if phy_create_lookup()
-> fails during probe. Failed probe cleanup releases the managed IRQ and
-> allocation without canceling the delayed work, and does not call remove.
+> Use rockchip_combphy_updatel() so that only the KVCO field is updated and
+> the SSC control bit is preserved, as the comment and the pre-consolidation
+> code intended.
 > 
-> Free the managed IRQ before canceling the delayed work on remove and on
-> the post-IRQ probe failure path. This waits for the threaded IRQ producer
-> to finish before canceling any work it queued. The synchronous work
-> cancellation also handles the worker's own requeueing. Generic PHY
-> consumer callbacks have separate lifetime requirements.
-> 
-> This issue was identified during our ongoing static-analysis research
-> while reviewing kernel code.
-> 
-> Fixes: 85601b8d81e2 ("usb: phy: twl4030-usb: Fix lost interrupts after ID pin goes down")
+> Fixes: 0b31f297557f ("phy: rockchip: naneng-combphy: Consolidate SSC configuration")
+> Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
 
-This doesn't look like the correct tag,
-
-> Cc: stable@vger.kernel.org
-
-Is this patch worth backporting?
-
-> Assisted-by: LLM
-
-Not needed anymore.
-
-> Co-developed-by: Ijae Kim <ae878000@gmail.com>
-> Signed-off-by: Ijae Kim <ae878000@gmail.com>
-> Signed-off-by: Myeonghun Pak <mhun512@gmail.com>
-> ---
->  drivers/phy/ti/phy-twl4030-usb.c | 8 +++++++-
->  1 file changed, 7 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/phy/ti/phy-twl4030-usb.c b/drivers/phy/ti/phy-twl4030-usb.c
-> index a26aec3ab29e..37c326cd1d85 100644
-> --- a/drivers/phy/ti/phy-twl4030-usb.c
-> +++ b/drivers/phy/ti/phy-twl4030-usb.c
-> @@ -779,12 +779,17 @@ static int twl4030_usb_probe(struct platform_device *pdev)
->  	if (pdata)
->  		err = phy_create_lookup(phy, "usb", "musb-hdrc.0");
->  	if (err)
-> -		return err;
-> +		goto err_free_irq;
->  
->  	pm_runtime_mark_last_busy(&pdev->dev);
->  	pm_runtime_put_autosuspend(twl->dev);
->  
->  	return 0;
-> +
-> +err_free_irq:
-> +	devm_free_irq(twl->dev, twl->irq, twl);
-> +	cancel_delayed_work_sync(&twl->id_workaround_work);
-
-This err path is not unwinding all resources taken during probe.
+Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 
 - Mani
 
