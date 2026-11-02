@@ -2,143 +2,72 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A99CD60A2615
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Nov 2026 13:53:52 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DF85960A3813
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Nov 2026 13:58:43 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=xPSXu5Ww;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jwEEKbee
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=cFpFfq2V;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=MfGvGrX1
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=Tz3cjkYZd/bav5NLn5Dq0t3WgbyQWEf6DdGVlttLK+s=; b=xPSXu5Ww3ekF8Ofu72sxnefID1
-	iXhcdsqhMQXrn8GDMQLu9/Q5fFHgobtZOTm/gUy3wnu0HH0QivGrdWY2YUEu3rdjHRddVmcNmg3KG
-	ZGmErW+cN7IX1Uvznv95aU3vNBOPd4Jyn4SL25grz9BWJ98cn6PiOhCfTaizBfQz1Ux8ZY2/Xu9ej
-	3szMIsa9rErfTcn5cuiVDFjGLvBgn33nXzzMFdOKOc+X64KzCdc/H0qbTCsWRT+YR707ISEyPxoVl
-	OPGzdQ3j9ZLHAHlG7Y9DUC5sMJlV6xl8b3EC5O/f30YU8EOAEmOXxJNxAtuxfr71vE1en5GZWNLDt
-	yIjgqKXQ==;
+	bh=03nOPrrrKHNPM26+KWVQAQdgw3VrNqTj8YDsaFhd7hY=; b=cFpFfq2VcYT4YzvQ+tx9KHNa4w
+	ppmGehKM7tPTAWu37z2o+nLuMKfjVdTfcYsq9ux06Ji3sc4kTtXF71FsJa+kCbH6jZIhb/+2O/P+N
+	L+vUwqTVtruNFOy80l6S8TpItDppzlK0jEvxSIPPkHecPZvinyUXZn8w+nGInevIt3KwzuJy96Ab7
+	SjsNYV406msoabOkDUYmhyX5qltrfuoTEq/seQ//2dL/KeKmIeEla8kL1jA2xvbpVTMkvuVwHV4Il
+	7X35CiOJDe2nNuFqpKJ1BDIV32IVbOCnFYdcCSa5UeJ+t0r4009ySBn8QiNxMiPFMdheZbDu6iaDN
+	v/SzUZWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNsTw-0000000GgWv-1CYx;
-	Mon, 02 Nov 2026 13:53:52 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xNsYd-0000000Gh6K-2Kk8;
+	Mon, 02 Nov 2026 13:58:43 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNsTu-0000000GgWd-0btL;
-	Mon, 02 Nov 2026 13:53:50 +0000
+	id 1xNsYd-0000000Gh5J-0PZ3
+	for linux-phy@lists.infradead.org;
+	Mon, 02 Nov 2026 13:58:43 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9BFB8436BD;
-	Mon,  2 Nov 2026 13:53:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 12FAD1F00A16;
-	Mon,  2 Nov 2026 13:53:49 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 6DC906053E;
+	Mon,  2 Nov 2026 13:58:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C23091F00A1C;
+	Mon,  2 Nov 2026 13:58:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793627629;
-	bh=8PdXPsr0BqbOm4N6slLaJkhJmpRccqZjg1DW7FPgi0w=;
-	h=From:To:Cc:Subject:Date;
-	b=jwEEKbeeZuoCHbxJUlWEtLnIQBYGhOQBxwP+tQtMjvmJi6qzxzYcDukdNtIhOkRXJ
-	 6n+Jh8CeRi0Y/l5/zWC7hrZVP8JXsVNK9PuCOwrcCdOTS5C7i0aq2uOP5WBFmJG4mP
-	 +VSYdrI4Dyorre8UfCZIiuH6uKTkx7HccHlCFrt8dY3IAid0u56LI6rz18RSdj1GvE
-	 Y7s+w6UvyezlKJfl2IcZ+A3XK1IREBodAE5iSWak2WphnGkxKjSdn9F8Jz2Du1gOUp
-	 DOCFjJCW4UbSQ/Ho05urr8RhaF9BhcvDHN3iwkoV1CL/R3S62YltgkRa6WGZF6ApT9
-	 i+0fdXIadN4+A==
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>,
-	Simona Vetter <simona@ffwll.ch>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Vadim Fedorenko <vadim.fedorenko@linux.dev>,
-	Arkadiusz Kubalewski <arkadiusz.kubalewski@intel.com>,
-	Jiri Pirko <jiri@resnulli.us>,
-	Ivan Vecera <ivecera@redhat.com>,
-	Benson Leung <bleung@chromium.org>,
-	Guenter Roeck <groeck@chromium.org>,
-	Linus Walleij <linusw@kernel.org>,
-	Bartosz Golaszewski <brgl@kernel.org>,
-	Frank Li <Frank.Li@nxp.com>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>,
-	Jonathan Cameron <jic23@kernel.org>,
-	David Lechner <dlechner@baylibre.com>,
-	=?UTF-8?q?Nuno=20S=C3=A1?= <nuno.sa@analog.com>,
-	Andy Shevchenko <andy@kernel.org>,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Olivier Moysan <olivier.moysan@foss.st.com>,
-	Arnaud Pouliquen <arnaud.pouliquen@foss.st.com>,
-	Dmitry Torokhov <dmitry.torokhov@gmail.com>,
-	Thierry Reding <thierry.reding@kernel.org>,
-	Jonathan Hunter <jonathanh@nvidia.com>,
-	Fabrice Gasnier <fabrice.gasnier@foss.st.com>,
-	Lee Jones <lee@kernel.org>,
-	Srinivas Kandagatla <srini@kernel.org>,
-	Ekansh Gupta <ekansh.gupta@oss.qualcomm.com>,
-	Ulf Hansson <ulfh@kernel.org>,
-	Hans Ulli Kroll <ulli.kroll@googlemail.com>,
-	Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>,
-	Paolo Abeni <pabeni@redhat.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Ray Jui <rjui@broadcom.com>,
-	Scott Branden <sbranden@broadcom.com>,
-	Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>,
-	Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
-	Masami Hiramatsu <mhiramat@kernel.org>,
-	Liam Girdwood <lgirdwood@gmail.com>,
-	Mark Brown <broonie@kernel.org>,
-	"Rafael J. Wysocki" <rafael@kernel.org>,
-	Daniel Lezcano <daniel.lezcano@kernel.org>,
-	Zhang Rui <rui.zhang@intel.com>,
-	Lukasz Luba <lukasz.luba@arm.com>,
-	Orson Zhai <orsonzhai@gmail.com>,
-	Baolin Wang <baolin.wang@linux.alibaba.com>,
-	Chunyan Zhang <zhang.lyra@gmail.com>,
-	Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Chanh Nguyen <chanh@os.amperecomputing.com>,
-	Alistair Francis <alistair@alistair23.me>,
-	Julius Werner <jwerner@chromium.org>,
-	Paul Cercueil <paul@crapouillou.net>,
-	Dmitry Osipenko <digetx@gmail.com>,
-	Florian Fainelli <f.fainelli@gmail.com>
-Cc: Thierry Reding <thierry.reding@gmail.com>,
-	Ray Jui <ray.jui@broadcom.com>,
-	Scott Branden <scott.branden@broadcom.com>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	dri-devel@lists.freedesktop.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	netdev@vger.kernel.org,
-	chrome-platform@lists.linux.dev,
-	linux-gpio@vger.kernel.org,
-	imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org,
-	linux-hwmon@vger.kernel.org,
-	linux-iio@vger.kernel.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-sound@vger.kernel.org,
-	linux-input@vger.kernel.org,
-	linux-tegra@vger.kernel.org,
-	mfd@lists.linux.dev,
-	linux-arm-msm@vger.kernel.org,
-	linux-mmc@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-pm@vger.kernel.org
-Subject: [PATCH] dt-bindings: Use hex unit address patterns
-Date: Mon,  2 Nov 2026 07:53:22 -0600
-Message-ID: <20261102135330.2493332-1-robh@kernel.org>
-X-Mailer: git-send-email 2.53.0
+	s=k20260515; t=1793627922;
+	bh=3QToyCmrd5g9TGZqXK1YjfzTCUE1p2g5NVCSB13BeBQ=;
+	h=From:Subject:Date:To:Cc;
+	b=MfGvGrX1P1+cglTbpqI1vZaM2K0nI+uFQ1+36cUw/jgKT8EnDsvizrgwSWVztQaaz
+	 YBAKTZUpffdCawP/zF/9TKSp1uUW8TabuqWV6SYKazBOsO0X9Apj86CIdJ/4Lzo/BF
+	 YpCmSTbhNlFxE18bjNON+4f7MPYHzhVM2h34EF236Uz4VBlbQoAGRv/M24ZKCUYe90
+	 5AoIrEiOR/+kxotVjpaeLnzQuD4UQYiS3KxQLUV9fbTCPalMnNn6asusOZgAWmxhwP
+	 bjnUhjXGDBJP6gcVovnm9gYKFxG9Dujjn5lEvkK2qVn9f8W1nEkezfrIJVtpk0x+CZ
+	 P9ck4zc9M4SuQ==
+From: Konrad Dybcio <konradybcio@kernel.org>
+Subject: [PATCH 0/2] Patch up sc8280xp/Glymur USB3 PHY sequences
+Date: Mon, 02 Nov 2026 14:58:35 +0100
+Message-Id: <20261102-topic-usb3_sequence-v1-0-5b144f5e6865@oss.qualcomm.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/yXMQQ6CMBBG4auQWdukreKCqxhjmPKDw6JghxITw
+ t2tsPwW722kSAKlptooYRWVKRa4S0Xh3cYBRrpi8tbfnbPeLNMswWTl60vxyYgBhrv2xr2twR5
+ Uyjmhl+9xfTxPa+YRYfmvaN9/6+0KoXcAAAA=
+X-Change-ID: 20261102-topic-usb3_sequence-bda4bf05eb2e
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, 
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1793627920; l=561;
+ i=konrad.dybcio@oss.qualcomm.com; s=20230215; h=from:subject:message-id;
+ bh=JHvM33Z5VlAyKZP57NR5Bvtojwx029Z16yzsmS1JpoM=;
+ b=6026gVPkyhGc77uIUhjiHsW3oUGbTen/5nZKBU8XdN44MJCpCROlW0TRgDonw7Bd+1LfnulDr
+ /elvGuaAXo6AMgM+/CrgeQmBkYzNyCzpaTD5pSSujO+snDZLP/SzHID
+X-Developer-Key: i=konrad.dybcio@oss.qualcomm.com; a=ed25519;
+ pk=iclgkYvtl2w05SSXO5EjjSYlhFKsJ+5OSZBjOkQuEms=
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -158,428 +87,23 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Unit-addresses by default (and most commonly) are hexadecimal. There's a
-number of cases using decimal patterns. Fix all of them, limiting the
-pattern to match the 'reg' limits if there are any.
+Bring them in line with docs.
 
-Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
+Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 ---
- .../bindings/display/xylon,logicvc-display.yaml      |  2 +-
- .../devicetree/bindings/dpll/dpll-device.yaml        |  2 +-
- .../bindings/embedded-controller/google,cros-ec.yaml |  4 ++--
- .../intel,ixp4xx-network-processing-engine.yaml      |  2 +-
- Documentation/devicetree/bindings/gpio/gpio-mxs.yaml |  4 ++--
- .../devicetree/bindings/hwmon/maxim,max31790.yaml    |  2 +-
- .../devicetree/bindings/iio/adc/st,stm32-adc.yaml    |  2 +-
- .../bindings/iio/adc/st,stm32-dfsdm-adc.yaml         |  6 +++---
- .../bindings/input/touchscreen/cypress,tt21000.yaml  |  2 +-
- .../memory-controllers/ddr/jedec,sdram-channel.yaml  | 12 ++++++------
- .../bindings/memory-controllers/ingenic,nemc.yaml    |  2 +-
- .../memory-controllers/nvidia,tegra20-emc.yaml       |  4 ++--
- .../devicetree/bindings/mfd/st,stm32-lptimer.yaml    |  2 +-
- .../devicetree/bindings/mfd/st,stm32-timers.yaml     |  2 +-
- .../devicetree/bindings/misc/qcom,fastrpc.yaml       |  2 +-
- .../bindings/mmc/mmc-controller-common.yaml          |  2 +-
- .../bindings/net/cortina,gemini-ethernet.yaml        |  2 +-
- .../bindings/phy/brcm,cygnus-pcie-phy.yaml           |  2 +-
- .../devicetree/bindings/phy/brcm,sata-phy.yaml       |  2 +-
- .../bindings/phy/socionext,uniphier-usb2-phy.yaml    |  2 +-
- .../devicetree/bindings/sound/qcom,q6asm-dais.yaml   |  2 +-
- .../bindings/sound/qcom,q6dsp-lpass-ports.yaml       |  2 +-
- .../devicetree/bindings/thermal/sprd-thermal.yaml    |  2 +-
- 23 files changed, 33 insertions(+), 33 deletions(-)
+Konrad Dybcio (2):
+      phy: qcom: qmp-combo: Update Glymur USB3 settings
+      phy: qcom: qmp-combo: Update SC8280XP USB3 PCS settings
 
-diff --git a/Documentation/devicetree/bindings/display/xylon,logicvc-display.yaml b/Documentation/devicetree/bindings/display/xylon,logicvc-display.yaml
-index 76b804b7c880..3dd54636d23d 100644
---- a/Documentation/devicetree/bindings/display/xylon,logicvc-display.yaml
-+++ b/Documentation/devicetree/bindings/display/xylon,logicvc-display.yaml
-@@ -123,7 +123,7 @@ properties:
-         const: 0
- 
-     patternProperties:
--      "^layer@[0-9]+$":
-+      "^layer@[0-9a-f]+$":
-         type: object
- 
-         properties:
-diff --git a/Documentation/devicetree/bindings/dpll/dpll-device.yaml b/Documentation/devicetree/bindings/dpll/dpll-device.yaml
-index fb8d7a9a3693..4b5184500b9f 100644
---- a/Documentation/devicetree/bindings/dpll/dpll-device.yaml
-+++ b/Documentation/devicetree/bindings/dpll/dpll-device.yaml
-@@ -65,7 +65,7 @@ properties:
-         const: 0
- 
-     patternProperties:
--      "^pin@[0-9]+$":
-+      "^pin@[0-9a-f]+$":
-         $ref: /schemas/dpll/dpll-pin.yaml
-         unevaluatedProperties: false
- 
-diff --git a/Documentation/devicetree/bindings/embedded-controller/google,cros-ec.yaml b/Documentation/devicetree/bindings/embedded-controller/google,cros-ec.yaml
-index 3ab5737c9a8f..75159078f0ef 100644
---- a/Documentation/devicetree/bindings/embedded-controller/google,cros-ec.yaml
-+++ b/Documentation/devicetree/bindings/embedded-controller/google,cros-ec.yaml
-@@ -155,7 +155,7 @@ patternProperties:
-     type: object
-     $ref: /schemas/i2c/google,cros-ec-i2c-tunnel.yaml#
- 
--  "^regulator@[0-9]+$":
-+  "^regulator@[0-9a-f]+$":
-     type: object
-     $ref: /schemas/regulator/google,cros-ec-regulator.yaml#
- 
-@@ -224,7 +224,7 @@ allOf:
- 
-       patternProperties:
-         "^i2c-tunnel[0-9]*$": false
--        "^regulator@[0-9]+$": false
-+        "^regulator@[0-9a-f]+$": false
-         "^extcon[0-9]*$": false
- 
-       # Using additionalProperties: false here and
-diff --git a/Documentation/devicetree/bindings/firmware/intel,ixp4xx-network-processing-engine.yaml b/Documentation/devicetree/bindings/firmware/intel,ixp4xx-network-processing-engine.yaml
-index 4d66ef483522..a9f874f201aa 100644
---- a/Documentation/devicetree/bindings/firmware/intel,ixp4xx-network-processing-engine.yaml
-+++ b/Documentation/devicetree/bindings/firmware/intel,ixp4xx-network-processing-engine.yaml
-@@ -44,7 +44,7 @@ properties:
-     const: 0
- 
- patternProperties:
--  hss@[0-9]+$:
-+  hss@[0-9a-f]+$:
-     $ref: /schemas/net/intel,ixp4xx-hss.yaml#
-     type: object
-     description: Optional node for the High Speed Serial link (HSS), the
-diff --git a/Documentation/devicetree/bindings/gpio/gpio-mxs.yaml b/Documentation/devicetree/bindings/gpio/gpio-mxs.yaml
-index fed1b06495ad..6cab04ebbdd4 100644
---- a/Documentation/devicetree/bindings/gpio/gpio-mxs.yaml
-+++ b/Documentation/devicetree/bindings/gpio/gpio-mxs.yaml
-@@ -36,7 +36,7 @@ properties:
-     maxItems: 1
- 
- patternProperties:
--  '^(?!gpio@)[^@]+@[0-9]+$':
-+  '^(?!gpio@)[^@]+@[0-9a-f]+$':
-     type: object
-     properties:
-       fsl,pinmux-ids:
-@@ -94,7 +94,7 @@ patternProperties:
- 
-     additionalProperties: false
- 
--  '^gpio@[0-9]+$':
-+  '^gpio@[0-9a-f]+$':
-     type: object
-     properties:
-       compatible:
-diff --git a/Documentation/devicetree/bindings/hwmon/maxim,max31790.yaml b/Documentation/devicetree/bindings/hwmon/maxim,max31790.yaml
-index 558cbd251b0f..bd30886def5f 100644
---- a/Documentation/devicetree/bindings/hwmon/maxim,max31790.yaml
-+++ b/Documentation/devicetree/bindings/hwmon/maxim,max31790.yaml
-@@ -45,7 +45,7 @@ properties:
-     const: 1
- 
- patternProperties:
--  "^fan@[0-9]+$":
-+  "^fan@[0-9a-f]+$":
-     $ref: fan-common.yaml#
-     unevaluatedProperties: false
- 
-diff --git a/Documentation/devicetree/bindings/iio/adc/st,stm32-adc.yaml b/Documentation/devicetree/bindings/iio/adc/st,stm32-adc.yaml
-index c4c4575d3fa9..8e11f769d140 100644
---- a/Documentation/devicetree/bindings/iio/adc/st,stm32-adc.yaml
-+++ b/Documentation/devicetree/bindings/iio/adc/st,stm32-adc.yaml
-@@ -231,7 +231,7 @@ required:
-   - '#size-cells'
- 
- patternProperties:
--  "^adc@[0-9]+$":
-+  "^adc@[0-9a-f]+$":
-     type: object
-     description:
-       An ADC block node should contain at least one subnode, representing an
-diff --git a/Documentation/devicetree/bindings/iio/adc/st,stm32-dfsdm-adc.yaml b/Documentation/devicetree/bindings/iio/adc/st,stm32-dfsdm-adc.yaml
-index c24ac98bbb3d..22cbc6e52537 100644
---- a/Documentation/devicetree/bindings/iio/adc/st,stm32-dfsdm-adc.yaml
-+++ b/Documentation/devicetree/bindings/iio/adc/st,stm32-dfsdm-adc.yaml
-@@ -74,7 +74,7 @@ required:
- additionalProperties: false
- 
- patternProperties:
--  "^filter@[0-9]+$":
-+  "^filter@[0-5]$":
-     type: object
-     unevaluatedProperties: false
-     description: child node
-@@ -334,7 +334,7 @@ allOf:
- 
-     then:
-       patternProperties:
--        "^filter@[0-9]+$":
-+        "^filter@[0-5]$":
-           properties:
-             reg:
-               items:
-@@ -349,7 +349,7 @@ allOf:
- 
-     then:
-       patternProperties:
--        "^filter@[0-9]+$":
-+        "^filter@[0-5]$":
-           properties:
-             reg:
-               items:
-diff --git a/Documentation/devicetree/bindings/input/touchscreen/cypress,tt21000.yaml b/Documentation/devicetree/bindings/input/touchscreen/cypress,tt21000.yaml
-index 037e5d3c447f..e50adb72f808 100644
---- a/Documentation/devicetree/bindings/input/touchscreen/cypress,tt21000.yaml
-+++ b/Documentation/devicetree/bindings/input/touchscreen/cypress,tt21000.yaml
-@@ -46,7 +46,7 @@ properties:
-   wakeup-source: true
- 
- patternProperties:
--  "^button@[0-9]+$":
-+  "^button@[0-9a-f]+$":
-     type: object
-     $ref: ../input.yaml#
-     properties:
-diff --git a/Documentation/devicetree/bindings/memory-controllers/ddr/jedec,sdram-channel.yaml b/Documentation/devicetree/bindings/memory-controllers/ddr/jedec,sdram-channel.yaml
-index 5cdd8ef45100..816c8e8b5713 100644
---- a/Documentation/devicetree/bindings/memory-controllers/ddr/jedec,sdram-channel.yaml
-+++ b/Documentation/devicetree/bindings/memory-controllers/ddr/jedec,sdram-channel.yaml
-@@ -53,7 +53,7 @@ properties:
-     const: 0
- 
- patternProperties:
--  "^rank@[0-9]+$":
-+  "^rank@[0-3]$":
-     type: object
-     description:
-       Each physical SDRAM chip may have one or more ranks. Ranks are
-@@ -72,7 +72,7 @@ allOf:
-             const: jedec,ddr4-channel
-     then:
-       patternProperties:
--        "^rank@[0-9]+$":
-+        "^rank@[0-3]$":
-           $ref: /schemas/memory-controllers/ddr/jedec,ddr4.yaml#
-   - if:
-       properties:
-@@ -81,7 +81,7 @@ allOf:
-             const: jedec,lpddr2-channel
-     then:
-       patternProperties:
--        "^rank@[0-9]+$":
-+        "^rank@[0-3]$":
-           $ref: /schemas/memory-controllers/ddr/jedec,lpddr2.yaml#
-   - if:
-       properties:
-@@ -90,7 +90,7 @@ allOf:
-             const: jedec,lpddr3-channel
-     then:
-       patternProperties:
--        "^rank@[0-9]+$":
-+        "^rank@[0-3]$":
-           $ref: /schemas/memory-controllers/ddr/jedec,lpddr3.yaml#
-   - if:
-       properties:
-@@ -99,7 +99,7 @@ allOf:
-             const: jedec,lpddr4-channel
-     then:
-       patternProperties:
--        "^rank@[0-9]+$":
-+        "^rank@[0-3]$":
-           $ref: /schemas/memory-controllers/ddr/jedec,lpddr4.yaml#
-   - if:
-       properties:
-@@ -108,7 +108,7 @@ allOf:
-             const: jedec,lpddr5-channel
-     then:
-       patternProperties:
--        "^rank@[0-9]+$":
-+        "^rank@[0-3]$":
-           $ref: /schemas/memory-controllers/ddr/jedec,lpddr5.yaml#
- 
- required:
-diff --git a/Documentation/devicetree/bindings/memory-controllers/ingenic,nemc.yaml b/Documentation/devicetree/bindings/memory-controllers/ingenic,nemc.yaml
-index ee74a362f4ca..ca6426c28990 100644
---- a/Documentation/devicetree/bindings/memory-controllers/ingenic,nemc.yaml
-+++ b/Documentation/devicetree/bindings/memory-controllers/ingenic,nemc.yaml
-@@ -37,7 +37,7 @@ properties:
-     maxItems: 1
- 
- patternProperties:
--  ".*@[0-9]+$":
-+  ".*@[0-9a-f]+$":
-     type: object
-     $ref: mc-peripheral-props.yaml#
-     additionalProperties: true
-diff --git a/Documentation/devicetree/bindings/memory-controllers/nvidia,tegra20-emc.yaml b/Documentation/devicetree/bindings/memory-controllers/nvidia,tegra20-emc.yaml
-index 71896cb10692..a0355050a074 100644
---- a/Documentation/devicetree/bindings/memory-controllers/nvidia,tegra20-emc.yaml
-+++ b/Documentation/devicetree/bindings/memory-controllers/nvidia,tegra20-emc.yaml
-@@ -142,7 +142,7 @@ $defs:
-     additionalProperties: false
- 
- patternProperties:
--  "^emc-table@[0-9]+$":
-+  "^emc-table@[0-9a-f]+$":
-     $ref: "#/$defs/emc-table"
- 
-   "^emc-tables@[a-f0-9-]+$":
-@@ -169,7 +169,7 @@ patternProperties:
-         type: object
- 
-     patternProperties:
--      "^emc-table@[0-9]+$":
-+      "^emc-table@[0-9a-f]+$":
-         $ref: "#/$defs/emc-table"
- 
-     oneOf:
-diff --git a/Documentation/devicetree/bindings/mfd/st,stm32-lptimer.yaml b/Documentation/devicetree/bindings/mfd/st,stm32-lptimer.yaml
-index 4eabafb8079d..8de82540d231 100644
---- a/Documentation/devicetree/bindings/mfd/st,stm32-lptimer.yaml
-+++ b/Documentation/devicetree/bindings/mfd/st,stm32-lptimer.yaml
-@@ -109,7 +109,7 @@ properties:
-       - compatible
- 
- patternProperties:
--  "^trigger@[0-9]+$":
-+  "^trigger@[0-4]$":
-     type: object
-     additionalProperties: false
- 
-diff --git a/Documentation/devicetree/bindings/mfd/st,stm32-timers.yaml b/Documentation/devicetree/bindings/mfd/st,stm32-timers.yaml
-index 66aa1550a4e5..5853c6019e98 100644
---- a/Documentation/devicetree/bindings/mfd/st,stm32-timers.yaml
-+++ b/Documentation/devicetree/bindings/mfd/st,stm32-timers.yaml
-@@ -128,7 +128,7 @@ properties:
-       - compatible
- 
- patternProperties:
--  "^timer@[0-9]+$":
-+  "^timer@([0-9a-f]|1[0-3])$":
-     type: object
-     additionalProperties: false
- 
-diff --git a/Documentation/devicetree/bindings/misc/qcom,fastrpc.yaml b/Documentation/devicetree/bindings/misc/qcom,fastrpc.yaml
-index 49d2a5e8ba39..d9444f452585 100644
---- a/Documentation/devicetree/bindings/misc/qcom,fastrpc.yaml
-+++ b/Documentation/devicetree/bindings/misc/qcom,fastrpc.yaml
-@@ -79,7 +79,7 @@ properties:
-     const: 0
- 
- patternProperties:
--  "(compute-)?cb@[0-9]*$":
-+  "(compute-)?cb@[0-9a-f]+$":
-     type: object
- 
-     description: >
-diff --git a/Documentation/devicetree/bindings/mmc/mmc-controller-common.yaml b/Documentation/devicetree/bindings/mmc/mmc-controller-common.yaml
-index 3d7195e9461c..f235f3ed1692 100644
---- a/Documentation/devicetree/bindings/mmc/mmc-controller-common.yaml
-+++ b/Documentation/devicetree/bindings/mmc/mmc-controller-common.yaml
-@@ -317,7 +317,7 @@ properties:
-       power sequence must be maintained while initializing the card.
- 
- patternProperties:
--  "^.*@[0-9]+$":
-+  "^.*@[0-7]$":
-     type: object
-     description: |
-       On embedded systems the cards connected to a host may need
-diff --git a/Documentation/devicetree/bindings/net/cortina,gemini-ethernet.yaml b/Documentation/devicetree/bindings/net/cortina,gemini-ethernet.yaml
-index f0b5bea2458d..900e4e5ac360 100644
---- a/Documentation/devicetree/bindings/net/cortina,gemini-ethernet.yaml
-+++ b/Documentation/devicetree/bindings/net/cortina,gemini-ethernet.yaml
-@@ -35,7 +35,7 @@ properties:
- # They are not independent of each other since they share resources
- # in the parent node, and are thus children.
- patternProperties:
--  "^ethernet-port@[0-9]+$":
-+  "^ethernet-port@[0-9a-f]+$":
-     type: object
-     unevaluatedProperties: false
-     description: contains the resources for ethernet port
-diff --git a/Documentation/devicetree/bindings/phy/brcm,cygnus-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/brcm,cygnus-pcie-phy.yaml
-index 808e90b2465d..25356f03f4a6 100644
---- a/Documentation/devicetree/bindings/phy/brcm,cygnus-pcie-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/brcm,cygnus-pcie-phy.yaml
-@@ -30,7 +30,7 @@ properties:
-     const: 0
- 
- patternProperties:
--  "^pcie-phy@[0-9]+$":
-+  "^pcie-phy@[0-9a-f]+$":
-     type: object
-     additionalProperties: false
-     description: >
-diff --git a/Documentation/devicetree/bindings/phy/brcm,sata-phy.yaml b/Documentation/devicetree/bindings/phy/brcm,sata-phy.yaml
-index 439bda142764..31d534065d42 100644
---- a/Documentation/devicetree/bindings/phy/brcm,sata-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/brcm,sata-phy.yaml
-@@ -46,7 +46,7 @@ properties:
-     const: 0
- 
- patternProperties:
--  "^sata-phy@[0-9]+$":
-+  "^sata-phy@[0-9a-f]+$":
-     type: object
-     description: |
-       Each port's PHY should be represented as a sub-node.
-diff --git a/Documentation/devicetree/bindings/phy/socionext,uniphier-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/socionext,uniphier-usb2-phy.yaml
-index 19522c54f448..b1a69ed96bb4 100644
---- a/Documentation/devicetree/bindings/phy/socionext,uniphier-usb2-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/socionext,uniphier-usb2-phy.yaml
-@@ -29,7 +29,7 @@ properties:
-     const: 0
- 
- patternProperties:
--  "^phy@[0-9]+$":
-+  "^phy@[0-3]$":
-     type: object
-     additionalProperties: false
- 
-diff --git a/Documentation/devicetree/bindings/sound/qcom,q6asm-dais.yaml b/Documentation/devicetree/bindings/sound/qcom,q6asm-dais.yaml
-index bc8c8ba24f9c..988a84099790 100644
---- a/Documentation/devicetree/bindings/sound/qcom,q6asm-dais.yaml
-+++ b/Documentation/devicetree/bindings/sound/qcom,q6asm-dais.yaml
-@@ -32,7 +32,7 @@ properties:
-     const: 0
- 
- patternProperties:
--  "^dai@[0-9]+$":
-+  "^dai@[0-9a-f]+$":
-     type: object
-     description:
-       Q6ASM Digital Audio Interface
-diff --git a/Documentation/devicetree/bindings/sound/qcom,q6dsp-lpass-ports.yaml b/Documentation/devicetree/bindings/sound/qcom,q6dsp-lpass-ports.yaml
-index 3b03e2acd67e..060487b2b72c 100644
---- a/Documentation/devicetree/bindings/sound/qcom,q6dsp-lpass-ports.yaml
-+++ b/Documentation/devicetree/bindings/sound/qcom,q6dsp-lpass-ports.yaml
-@@ -28,7 +28,7 @@ properties:
- 
- # Digital Audio Interfaces
- patternProperties:
--  '^dai@[0-9]+$':
-+  '^dai@[0-9a-f]+$':
-     type: object
-     description:
-       Q6DSP Digital Audio Interfaces.
-diff --git a/Documentation/devicetree/bindings/thermal/sprd-thermal.yaml b/Documentation/devicetree/bindings/thermal/sprd-thermal.yaml
-index afa551f6185f..222d70baef1e 100644
---- a/Documentation/devicetree/bindings/thermal/sprd-thermal.yaml
-+++ b/Documentation/devicetree/bindings/thermal/sprd-thermal.yaml
-@@ -47,7 +47,7 @@ properties:
-     const: 0
- 
- patternProperties:
--  "^([a-z]*-)?sensor(-section)?@[0-9]+$":
-+  "^([a-z]*-)?sensor(-section)?@[0-9a-f]+$":
-     type: object
-     description:
-       Represent one thermal sensor.
--- 
-2.53.0
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 65 ++++++++++++++++---------------
+ 1 file changed, 33 insertions(+), 32 deletions(-)
+---
+base-commit: 7649ba73f9e7e1e04d0b46213e39c79ae09dd55c
+change-id: 20261102-topic-usb3_sequence-bda4bf05eb2e
+
+Best regards,
+--  
+Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 
 
 -- 
