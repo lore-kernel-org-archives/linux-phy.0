@@ -2,114 +2,57 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 65DD1606A324
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Nov 2026 03:04:45 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EC7E8606A324
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Nov 2026 03:23:24 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=d9xCeIRJ
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=d3Jk+pFi;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=fh4PgZqw
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=4P7WfQdEE/ae2Nw52a2j/oG0yWbd6Xy48U3LdAhbTFQ=; b=d9xCeIRJxKU9tDTmd5FE2ie+1z
-	Y5D6FuelGsqJLaz1owlBxHgKvUR4dZtBXKTLOqd8YKRv0pWU9yrggSvYjYNYdfPkuvxi9pA9ekNGt
-	ir4DHKTPk263rYW1LVeVO2Q1xGYEobU/cu4x7bPFRQ6YxJm1pz+vtImOzFUMfM3qCQUas3fTEX+cJ
-	DQlSRwUC3ZmOpyOw3wkjIK/nVm+dVRkawOYEENoiiAeIyfWrmUIhWkBcoURFjQk8bnZnHR/k5DM4v
-	dbD+a8ApUBaAX76dmpkP6UOOcDOCQhWqvIEJarJpvqrDM+BX2pKcsR3SEZ60BQMP7g759vOH419oH
-	ze2ZYtTQ==;
+	bh=1OFBedKAxIzTI27FMKe3nkPSOJQtgm8qP4glmfTz8uY=; b=d3Jk+pFi0fAdpNIfJ3Aaa0VTzJ
+	UhmANAz+JhwA+ny6Rsuv8rf8Vd8RInJGJNpNooalouud94uvQ3yRwSmJsabavW+NMJefLZSJKXuxX
+	K+Qk9dZczePZLVP6TwWFhoxW/ZK2VR/V2MTPknbB5S0uJD1Je7KO3HBkSWvmMxQjSrzZnZ5W2LxnH
+	ORZJLEfY5C24psHSx4E/Uebqn5mZKjUzcCc3GtmCR6gSEJ82WAbp3/8XHRfcBC08ksM5yf2DUZ0lf
+	O4OjGgJfPuWTGfKkooS6zzqySqdNyX6XWqvbq6VMLpnJZJGiCSYxfNYf+5CawPMrOTdlTDBxH/hXC
+	l/AN9g6Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNiLl-0000000FQL3-0Yzg;
-	Mon, 02 Nov 2026 03:04:45 +0000
-Received: from mail-koreacentralazlp170130006.outbound.protection.outlook.com ([2a01:111:f403:c40f::6] helo=SEYPR02CU001.outbound.protection.outlook.com)
+	id 1xNido-0000000FRW3-2M2N;
+	Mon, 02 Nov 2026 03:23:24 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNiLf-0000000FQFx-1Ml0;
-	Mon, 02 Nov 2026 03:04:43 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=h24bck+Z35p2Tww6qmsVzPQ/LiWSNVP4qwfc0y2jO3Ll1sRicHocfga2v3M00I1kDleRvOJRyUG4uKyToZKiKjZmf06cbt3U2iGQpFQWR1pUfdfTJO9smnU1S71buY327fnbRbesL1IbMx+bFRqG4efP8LfgPYTVjcHLhIOYJZ81flavA0hYCv2AUTysEpHKqdqbbFsMNH0qbMQPeuDz52oXTJYiaOc5BDDPkZEhwoSdtYugpsD6jE2Cr/NZYiCML0hXkU/jUitBc94C3n6Qo3rjZWKWp2AKeQYqaUs+AhCYEz9bWdhB/Fxxs+lq3LGela16BKNbdwQ0man+mmBntA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Kybe0YYJOE5rF/u6tYyCnCVmCpSZR1B7KWBQX5J8Q9s=;
- b=hlfDij0G3nlbw3aVEMWabJYWjYKG6zBW6mTPzl02ZNkSi2PeSzZUu96clUVupA1ay0xq2YvdNefxJYw0s1Ctc9n//zwrkF6iBU5dCuk7IVeolYwLkJ2KphD/ZCl4C3JCjcLiG3N3TrONUsZzCsnDejOAXp/JaUTkz/5N9aMce14H2n7zy8sIZwbY3S6ETYs1pPScGv5DMJQyXANZWc2ERtvld1tVDwrFlYxueEvNKSTr/pwS0ez395LzhRchLXOuAUphvAUyw0G9lC/6iPV3zh90juWRYEsU9e/gEtLF8metEX/1S0nLBt2avuWrvEoAMvicnICYOhJj41+ctVuC0g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 222.71.101.198) smtp.rcpttodomain=cixtech.com smtp.mailfrom=cixtech.com;
- dmarc=bestguesspass action=none header.from=cixtech.com; dkim=none (message
- not signed); arc=none (0)
-Received: from TYCP286CA0064.JPNP286.PROD.OUTLOOK.COM (2603:1096:400:31a::11)
- by TY0PR06MB6802.apcprd06.prod.outlook.com (2603:1096:405:11::7) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.592.8; Mon, 2 Nov 2026
- 03:04:27 +0000
-Received: from TY2PEPF0000AB87.apcprd03.prod.outlook.com
- (2603:1096:400:31a:cafe::69) by TYCP286CA0064.outlook.office365.com
- (2603:1096:400:31a::11) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.21.569.12 via Frontend Transport; Mon, 2
- Nov 2026 03:04:27 +0000
-X-MS-Exchange-Authentication-Results: mx.microsoft.com 1; spf=pass (sender IP
- is 222.71.101.198) smtp.mailfrom=cixtech.com; dkim=none (message not signed)
- header.d=none;dmarc=bestguesspass action=none header.from=cixtech.com;
-Received-SPF: Pass (protection.outlook.com: domain of cixtech.com designates
- 222.71.101.198 as permitted sender) receiver=protection.outlook.com;
- client-ip=222.71.101.198; helo=smtprelay.cixcomputing.com; pr=C
-Received: from smtprelay.cixcomputing.com (222.71.101.198) by
- TY2PEPF0000AB87.mail.protection.outlook.com (10.167.253.6) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.592.5 via Frontend Transport; Mon, 2 Nov 2026 03:04:26 +0000
-Received: from localhost.localdomain (unknown [172.16.64.56])
-	by smtprelay.cixcomputing.com (Postfix) with ESMTPSA id A3AA34102B47;
-	Mon,  2 Nov 2026 11:04:25 +0800 (CST)
-From: Luo Liu <Luo.Liu@cixtech.com>
-To: vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	mani@kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	gary.yang@cixtech.com,
-	fugang.duan@cixtech.com,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org
-Cc: cix-kernel-upstream@cixtech.com,
-	p.zabel@pengutronix.de,
-	linux-kernel@vger.kernel.org,
-	Luo.Liu@cixtech.com,
-	Wuyi.Shen@cixtech.com,
-	EastLake.Yang@cixtech.com
-Subject: [PATCH v4 0/3] phy: cix: Add Sky1 DisplayPort PHY support
-Date: Mon,  2 Nov 2026 11:04:22 +0800
-Message-Id: <20261102030425.1957585-1-Luo.Liu@cixtech.com>
-X-Mailer: git-send-email 2.25.1
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: TY2PEPF0000AB87:EE_|TY0PR06MB6802:EE_
-X-MS-Office365-Filtering-Correlation-Id: bc421a90-c38e-4c2c-c391-08df388e014f
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|23010399003|376014|7416014|36860700016|82310400026|42112799006|921020|56012099006|261009223027099003|261028144727099003|261021121427099003|261026121527099003|261026140227099003|261022105027099003|10067099003|18002099003|6133799003;
-X-Microsoft-Antispam-Message-Info: 283JV1R1/2PzXAzInHyT5j65YoJSd3eFpgHXnolMyOlx/iih0PHPADehXpT8PnzZRX4gw7OR9HD6//Otr7t2uL8zFq5+uHrPmQLYrQOgu55JHBk54ffap4+/q73ZqUDL9VonqpdKxdXUusMXjpuRILCyW8LV1cpoZiIwCX37ZCHn07Pim6yXFxJJq5XzoZZJmjruPbBgdQXGxtJ0wF/LBdmm+IHO/cVG4BFhSvpATvG7HLkwB/LG6lNZfDY4YLpjqMh4rt7GhA9Ju1mT3rqm+tNs9B3hfKifSGYohf/kU/qndtMoBGCGbe9bk3KdRfcgH0Bne30SL02HKkXOSbuxgRT4+XzSqoV3ovp4+AAZ/sQncMkZp4/uAZNdLEcgIBpADZ6mTd+Z7Eg52lWNuZfMyT/4La1HAbTFyMMXFXIFM4TopoVHGsUkIHkL9elC7IJtqTgHMuGOaWKKg7qgpdMHvPTJEFNMBvcufitrGrdnE8Ej708SMmgENeKGDM4k50/2gZlW1C0jxY7dSzCE67t8w/BSG+pSzc032sEzUIQOIL0JoMmqej2IZujfoOWvrJlPoHtoDMjCO3TOJ68wMRO0UQLvyaY2wSyWRis5f6JyQi7jQJXyn2AL2PB4Z9gXfWK27YAQaRyJQDeD2hETkitp6DCM/3VYYM+MaCzpnuk7NXa/sWuAxkuikZ0zbZgVO8O2QkMQfJDv+CNDp09xk/gLnVOFR2HN1ms+Dx5MlUj+lAZuRY/7l38/lNjwuWsFkC7P
-X-Forefront-Antispam-Report: CIP:222.71.101.198;CTRY:CN;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:smtprelay.cixcomputing.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(1800799024)(23010399003)(376014)(7416014)(36860700016)(82310400026)(42112799006)(921020)(56012099006)(261009223027099003)(261028144727099003)(261021121427099003)(261026121527099003)(261026140227099003)(261022105027099003)(10067099003)(18002099003)(6133799003);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 99I50TzMExAhPJhebru0eq94cWbAxzfaSnRJZZ37RSSir0shpEReRYBPhj9/jJuljPXAtOHx1Dv8F2re7xozYI1eYDCIIMR8Mj0x2yY4Nm1N5cCCNELlHg2fP6tGU+THvHN9h0RLWpOzBVJs6k8HE9CVw1GIlQBbMFQ1PZ4pohLuVR/LZFfzjZ89i/jdmW55gFYrjdbwuXEi8K/6TBDQfJxCQ6Rvg5woqxAHf5Wl5UorBFAnP+x4+W5JZFNCjgcLjuJ6nxyRb1O6/1ONN3hvMazGGTiBny9fruhdOLz8rhQiZ333uEKvvcHkbypQnBSUgFP9fwXORPdIpc06AQa5w40VhEciNKKeNJnLDPznSKsaWSfEeC3XCiOi2oyHb/4DFr8Gqovd50Ms8Rz4xQh1QGHbPwQt+xeveB9KOZxL+u6v/RTNNA06J8U/phdflckr
-X-OriginatorOrg: cixtech.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Nov 2026 03:04:26.5990
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: bc421a90-c38e-4c2c-c391-08df388e014f
-X-MS-Exchange-CrossTenant-Id: 0409f77a-e53d-4d23-943e-ccade7cb4811
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=0409f77a-e53d-4d23-943e-ccade7cb4811;Ip=[222.71.101.198];Helo=[smtprelay.cixcomputing.com]
-X-MS-Exchange-CrossTenant-AuthSource: TY2PEPF0000AB87.apcprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY0PR06MB6802
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261101_190442_084139_98FD6ADB 
-X-CRM114-Status: GOOD (  13.15  )
-X-Spam-Score: -1.9 (-)
+	id 1xNidm-0000000FRVx-3mOA
+	for linux-phy@lists.infradead.org;
+	Mon, 02 Nov 2026 03:23:23 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 1053860098;
+	Mon,  2 Nov 2026 03:23:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 560F41F000C1;
+	Mon,  2 Nov 2026 03:23:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1793589801;
+	bh=bfSwM2hv4oi+ho9K6WW2gx/Ro7LKpjzjwUjhHb/0aA4=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=fh4PgZqw2lTtIbgX1P8sw5GfDIpdYF5k+hoA1DA/mhdJLE0GTgW6azJtiPRjM7c7Q
+	 FXChYh4PLT9W49ZoBd1WmvA5PZlaiLgDOZeTZDZDdwEeC5a8NyVbPWmnvA0BoQnWsN
+	 CG2hjwU9YQwlrr05YHLbNIAFHRCUS689Su8gfBSwc62PTCTOUXYfd4nLXf0sTsm0KT
+	 ue3hpxKurA0gK5FUHgtJennopz2I7TX3ga50BOQGZYmCu2a7Fpqqt3Vx/5CPN6hYdN
+	 8rbQokiAZ2/Ca6SDZPQimmnoLB+tgPxq58IznJdRXUe/JWsfTzPL4ENWkEUg7F7GHc
+	 137FRiUqNWKvg==
+Message-ID: <sashiko-outbox-192860@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v4 2/3] phy: cix: Add Sky1 DP PHY driver
+To: "Luo Liu" <Luo.Liu@cixtech.com>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org
+Cc: robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20261102030425.1957585-3-Luo.Liu@cixtech.com>
+References: <20261102030425.1957585-1-Luo.Liu@cixtech.com>
+ <20261102030425.1957585-3-Luo.Liu@cixtech.com>
+Date: Mon, 02 Nov 2026 03:23:20 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,80 +62,76 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Add dt-bindings, driver and DTS support for the dedicated DisplayPort
-PHY on the CIX Sky1 SoC.
-
-The PHY exposes a PMA/CDB register interface and is controlled through
-the generic PHY DP configure ops (link rate, lane count, SSC and
-voltage swing). The APB clock is shared with the DPTx controller; the
-PHY driver enables it around init/exit together with the hardware
-reset.
-
-Patch 1 adds the binding and MAINTAINERS entry.
-Patch 2 adds the PHY driver.
-Patch 3 describes the SoC node and enables it on Radxa Orion O6.
-
-Changes in v4:
-- Keep cix,external-dp for the external connector swing table
-- Require clocks/clock-names ("apb"); wire CLK_TREE_DPC2_APBCLK
-- Enable and disable the shared APB clock in phy_init/phy_exit
-- Update copyright years to 2026
-- Move bool members to the end of struct cix_dp
-- Move the lane-count and timeout macros out of the register block
-- Add CIX_DP_CDB_ENABLE_BIT instead of writing 1
-- Drop the power_on/power_off dp->powered check; the PHY core already
-  refcounts those calls. The flag remains so link-rate updates know
-  whether the PLL is running
-- Pick up Reviewed-by from Rob Herring
-
-Changes in v3:
-- Rename cix,external-dp to cix,edp (select eDP vs DP swing table)
-- Restore TX_DIAG_ACYA on cix_dp_phy_set_lane_voltage() error paths
-- Note that the PHY APB clock is managed by the DPTx driver
-
-Changes in v2:
-- Move MAINTAINERS into the binding patch; keep tabs; add R: entry
-- Require resets; use exclusive reset in the driver
-- Include linux/property.h; document Sky1 1/2-lane physical routing
-- Rename DT label to dp_phy; enable it on sky1-orion-o6
-- After CDB_ENABLE, wait for busy then idle to avoid a stale READY race
-
-Luo Liu (3):
-  dt-bindings: phy: Add CIX Sky1 DP PHY
-  phy: cix: Add Sky1 DP PHY driver
-  arm64: dts: cix: Add Sky1 DP PHY node
-
- .../bindings/phy/cix,sky1-dp-phy.yaml         |   67 ++
- MAINTAINERS                                   |    8 +
- arch/arm64/boot/dts/cix/sky1-orion-o6.dts     |    4 +
- arch/arm64/boot/dts/cix/sky1.dtsi             |   10 +
- drivers/phy/Kconfig                           |    1 +
- drivers/phy/Makefile                          |    1 +
- drivers/phy/cix/Kconfig                       |   18 +
- drivers/phy/cix/Makefile                      |    2 +
- drivers/phy/cix/phy-cix-dp.c                  | 1004 +++++++++++++++++
- 9 files changed, 1115 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/cix,sky1-dp-phy.yaml
- create mode 100644 drivers/phy/cix/Kconfig
- create mode 100644 drivers/phy/cix/Makefile
- create mode 100644 drivers/phy/cix/phy-cix-dp.c
-
-
-base-commit: cee9395acd8043be0644b25c34bfa86623f2b935
--- 
-2.25.1
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIHBoeTogY2l4OiBpbmNv
+bXBsZXRlIGhhcmR3YXJlIHJlc2V0IGFuZCBzdGF0ZSBkZXN5bmMgaW4gY2l4X2RwX3Jlc2V0KCkK
+LS0KCmNvbW1pdCBhZDgyMDI5YWM5NzEyMTk2OWNjNzFlNTk4ZDRiMGI5YzQxMDc2ZTAyCkF1dGhv
+cjogTHVvIExpdSA8THVvLkxpdUBjaXh0ZWNoLmNvbT4KCnBoeTogY2l4OiBBZGQgU2t5MSBEUCBQ
+SFkgZHJpdmVyCgpUaGlzIGNvbW1pdCBhZGRzIGEgZ2VuZXJpYyBQSFkgZHJpdmVyIGZvciB0aGUg
+Q0lYIFNreTEgZGVkaWNhdGVkIERpc3BsYXlQb3J0ClBNQSwgc3VwcG9ydGluZyBsaW5rIHJhdGUs
+IGxhbmUgY291bnQsIFNTQywgYW5kIHZvbHRhZ2Ugc3dpbmcgY29uZmlndXJhdGlvbi4KCj4gZGlm
+ZiAtLWdpdCBhL2RyaXZlcnMvcGh5L2NpeC9waHktY2l4LWRwLmMgYi9kcml2ZXJzL3BoeS9jaXgv
+cGh5LWNpeC1kcC5jCj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiBpbmRleCAwMDAwMDAwMDAwMDAw
+Li44ZTUyZDEwZDI1OTVlCj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBiL2RyaXZlcnMvcGh5L2NpeC9w
+aHktY2l4LWRwLmMKClsgLi4uIF0KCj4gK3N0YXRpYyBpbnQgY2l4X2RwX2h3X3Jlc2V0KHN0cnVj
+dCBjaXhfZHAgKmRwKQo+ICt7Cj4gKwlpbnQgcmV0Owo+ICsKPiArCXJldCA9IGNpeF9kcF90b2dn
+bGVfcmVzZXQoZHApOwo+ICsJaWYgKHJldCkKPiArCQlyZXR1cm4gcmV0Owo+ICsKPiArCWNpeF9k
+cF9waHlfd3JpdGUoZHAsIENJWF9EUF9QSFlfREFUQV9FTkFCTEUsIDApOwo+ICsJY2l4X2RwX3Bo
+eV93cml0ZShkcCwgQ0lYX0RQX1BIWV9MQU5FX1JTVE5fQklUUywgMCk7Cj4gKwljaXhfZHBfcGh5
+X3dyaXRlKGRwLCBDSVhfRFBfUEhZX0xBTkVfRU5fQklUUywgMCk7Cj4gKwljaXhfZHBfcGh5X3dy
+aXRlKGRwLCBDSVhfRFBfUEhZX0NPTkZJR19SU1ROLCAwKTsKPiArCWRwLT5wb3dlcmVkID0gZmFs
+c2U7Cj4gKwo+ICsJcmV0dXJuIDA7Cj4gK30KClsgLi4uIF0KCj4gK3N0YXRpYyBpbnQgY2l4X2Rw
+X2luaXQoc3RydWN0IHBoeSAqcGh5KQo+ICt7Cj4gKwlzdHJ1Y3QgY2l4X2RwICpkcCA9IHBoeV9n
+ZXRfZHJ2ZGF0YShwaHkpOwo+ICsJaW50IHJldDsKPiArCj4gKwlyZXQgPSBjbGtfcHJlcGFyZV9l
+bmFibGUoZHAtPmFwYl9jbGspOwo+ICsJaWYgKHJldCkKPiArCQlyZXR1cm4gcmV0Owo+ICsKPiAr
+CXJldCA9IGNpeF9kcF90b2dnbGVfcmVzZXQoZHApOwo+ICsJaWYgKHJldCkKPiArCQlnb3RvIGRp
+c2FibGVfY2xrOwo+ICsKPiArCXJldCA9IGNpeF9kcF9od19wcmVwYXJlKGRwKTsKPiArCWlmIChy
+ZXQpCj4gKwkJZ290byBkaXNhYmxlX2NsazsKPiArCj4gKwlyZXQgPSBjaXhfZHBfaHdfbG9hZF9y
+ZWdzKGRwKTsKPiArCWlmIChyZXQpCj4gKwkJZ290byBkaXNhYmxlX2NsazsKPiArCj4gKwlyZXR1
+cm4gMDsKPiArCj4gK2Rpc2FibGVfY2xrOgo+ICsJY2xrX2Rpc2FibGVfdW5wcmVwYXJlKGRwLT5h
+cGJfY2xrKTsKPiArCXJldHVybiByZXQ7Cj4gK30KClsgLi4uIF0KCj4gK3N0YXRpYyBpbnQgY2l4
+X2RwX3Jlc2V0KHN0cnVjdCBwaHkgKnBoeSkKPiArewo+ICsJc3RydWN0IGNpeF9kcCAqZHAgPSBw
+aHlfZ2V0X2RydmRhdGEocGh5KTsKPiArCj4gKwlyZXR1cm4gY2l4X2RwX2h3X3Jlc2V0KGRwKTsK
+PiArfQoKW1NldmVyaXR5OiBIaWdoXQpXaGVuIGEgY29uc3VtZXIgY2FsbHMgcGh5X3Jlc2V0KCks
+IGNpeF9kcF9yZXNldCgpIGludm9rZXMgY2l4X2RwX2h3X3Jlc2V0KCksCndoaWNoIHB1bHNlcyBk
+cC0+cmVzZXQgdmlhIGNpeF9kcF90b2dnbGVfcmVzZXQoKSwgY2xlYXJzIHRoZSBjb250cm9sCnJl
+Z2lzdGVycywgYW5kIHNldHMgZHAtPnBvd2VyZWQgPSBmYWxzZSB3aXRob3V0IGNhbGxpbmcgY2l4
+X2RwX2h3X3ByZXBhcmUoKQpvciBjaXhfZHBfaHdfbG9hZF9yZWdzKCkuCgpJbiBjaXhfZHBfaW5p
+dCgpLCBwdWxzaW5nIGRwLT5yZXNldCBpcyBmb2xsb3dlZCBieSBjaXhfZHBfaHdfcHJlcGFyZSgp
+ICh0bwpkZWFzc2VydCBDSVhfRFBfQ0RCX1JTVE4gYW5kIGVuYWJsZSBDSVhfRFBfQVVYSFBEX0VO
+QUJMRV9CSVRTKSBhbmQKY2l4X2RwX2h3X2xvYWRfcmVncygpICh0byBwcm9ncmFtIGNpeF9kcF9y
+ZWdfY29uZltdIGFuZApDSVhfRFBfUEhZX1BNQV9QTExfUkFXX0NUUkwgb3ZlciB0aGUgQ0RCIGJ1
+cykuCgpTaW5jZSBwdWxzaW5nIHRoZSBoYXJkd2FyZSByZXNldCByZXNldHMgQ0lYX0RQX0NEQl9S
+U1ROLApDSVhfRFBfQVVYSFBEX0VOQUJMRV9CSVRTLCBhbmQgdGhlIFBNQSByZWdpc3RlcnMgYmFj
+ayB0byBoYXJkd2FyZSBkZWZhdWx0cywKYW5kIHBoeV9yZXNldCgpIGRvZXMgbm90IGRlY3JlbWVu
+dCBwaHktPmluaXRfY291bnQgaW4gdGhlIFBIWSBjb3JlLCB3b24ndApzdWJzZXF1ZW50IGNhbGxz
+IHRvIHBoeV9jb25maWd1cmUoKSBvciBwaHlfcG93ZXJfb24oKSBmYWlsIHdpdGggLUVUSU1FRE9V
+VCBpbgpjaXhfZHBfcGh5X2NkYl9yZWFkeSgpIGJlY2F1c2UgQ0lYX0RQX0NEQl9SU1ROIHJlbWFp
+bnMgYXNzZXJ0ZWQ/CgpBZGRpdGlvbmFsbHksIGlmIHBoeV9yZXNldCgpIGlzIGNhbGxlZCB3aGls
+ZSB0aGUgUEhZIGlzIHBvd2VyZWQgb24KKHBoeS0+cG93ZXJfY291bnQgPiAwKSwgc2V0dGluZyBk
+cC0+cG93ZXJlZCA9IGZhbHNlIGRlc3luY2hyb25pemVzIHRoZSBkcml2ZXIKZnJvbSBwaHktPnBv
+d2VyX2NvdW50IHNvIGEgc3Vic2VxdWVudCBwaHlfcG93ZXJfb24oKSBpcyBza2lwcGVkIGJ5IHRo
+ZSBjb3JlCndoaWxlIHBoeV9wb3dlcl9vZmYoKSBhdHRlbXB0cyBDREIgYWNjZXNzZXMgb24gYSBy
+ZXNldCBQSFkuIENvbnZlcnNlbHksIGlmCnBoeV9yZXNldCgpIGlzIGNhbGxlZCBiZWZvcmUgcGh5
+X2luaXQoKSBvciBhZnRlciBwaHlfZXhpdCgpLApjaXhfZHBfaHdfcmVzZXQoKSB3cml0ZXMgdG8g
+ZHAtPmJhc2Ugd2hpbGUgZHAtPmFwYl9jbGsgaXMgZGlzYWJsZWQuCgpTaG91bGQgY2l4X2RwX3Jl
+c2V0KCkgcmUtcnVuIHRoZSBoYXJkd2FyZSBwcmVwYXJhdGlvbiBhbmQgcmVnaXN0ZXIgbG9hZGlu
+ZwpzZXF1ZW5jZSAob3Igc2hvdWxkIC5yZXNldCBiZSBvbWl0dGVkIGlmIGNpeF9kcF9od19yZXNl
+dCgpIGlzIG9ubHkgaW50ZW5kZWQKZm9yIHRlYXJkb3duIGluIGNpeF9kcF9leGl0KCkpPwoKLS0g
+ClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2
+MTEwMjAzMDQyNS4xOTU3NTg1LTEtTHVvLkxpdUBjaXh0ZWNoLmNvbT9wYXJ0PTIKCi0tIApsaW51
+eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8v
+bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
