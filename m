@@ -2,12 +2,12 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DE5CB60A5BC3
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Nov 2026 10:42:33 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E968D60A260B
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Nov 2026 10:42:35 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=YTlFshOA;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=feLuO0l/;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=h+1iCvRB
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=zOKFTSPj;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=UpwnpaHS;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=USZXTwCT
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -15,90 +15,90 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=axh6FXV/kys5kR6HJKQ3VRQmPQRuNT6p06vjmjkRLKU=; b=YTlFshOAdsP8H49f4lo/UEUTL8
-	mYzCRAueGKS+VQmmSOxoT6+xk9qG8FhWCMpo8k9v1ZtDn9SdD3St5VfPYA1pC3+YfWvrBIgDiM2J8
-	/MKP9BXxsI3BIg3OK34Auv1L+ohS9lImhtTdgYMLGhjC47kq7N/t5uaE3dyCMsBUXX1WL3PMMEzWP
-	QxfRDkuAcU91U52mcqkT0aqx277ciGWEqEEqIBJfFltbU9qip7xkIFftVX1gUdpO7Yr/5GMsshtPM
-	LN4mhXYbmWXrla97fsjylkxMqtcOmqOCqYbqxM6ZIccQDvYvD0vuR0e6BoO5zivRtCiM7ROEqBLzM
-	+XxuqG5A==;
+	bh=7FREi8zreT9E4L1F4n/LK0xJl+yvZbqzxBL0kSNM98E=; b=zOKFTSPjx5KR5rfH8XntTE+WoB
+	rFKk7LNK/7JTxVQyetIbw0GWipVyM5XX/FXCWv/m4tozlsp0YNw/+kAjCCD6dVWl0SMfABTgAWLHP
+	+JRtev44zIUjOTeutI86CgCnw4wcx2dMXCZjAffyqwxfxsstEXIMGtZut7xtfJJOyWy0tA/xa2liW
+	xeoG7M5VhrR+ENfLvQR/wv7aehRaln9gVF4UxPoVTOgSyHt14j1jMKH6HVFqmXJTc2K7Umy75mzz8
+	i1UIiLwiqnuOfiGfxjAZf7rbq3GxLjXbxLkEJOLtOkghpq6z4FdqrxUJxOZHHKyWCgOFxt2y5Rbk9
+	sPLNQGkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNpUn-0000000GCSD-2gWc;
-	Mon, 02 Nov 2026 10:42:33 +0000
+	id 1xNpUp-0000000GCSw-2rek;
+	Mon, 02 Nov 2026 10:42:35 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNpUl-0000000GCQF-1W0n
+	id 1xNpUn-0000000GCRp-1DrC
 	for linux-phy@lists.infradead.org;
-	Mon, 02 Nov 2026 10:42:32 +0000
+	Mon, 02 Nov 2026 10:42:34 +0000
 Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A29AMrD2880852
-	for <linux-phy@lists.infradead.org>; Mon, 2 Nov 2026 10:42:30 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A29AIpA2880814
+	for <linux-phy@lists.infradead.org>; Mon, 2 Nov 2026 10:42:33 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	IAj9mpmnJdc/Aq9gDDAyq0+2DmJDWgCFiwFRYx3AJ/s=; b=feLuO0l/CT2ghoed
-	uWCaqsIZ2w3ODay8cdCXrpqJJAlh3aK0fZ6dgD0motSnF7FBmwAUNfcI8j2jNpoH
-	wZL2zQ48H40pkLtHNzjSuaZx9hVzE3e2cUi87n0AdL/iX/lfYvixOAgtIkm9toqv
-	OIuid24eBWkfw7rBeyamFIVa2+tmGVWBBPKBB2bBxWzV/sJMcKZ0DSb6oF2AB7tl
-	TGkWkB/IsAd4UmrEJdONMYIoAv4ZSxwQAYg+ky/QN/uWE0prZj23nG7I12TywpuX
-	hR+3Q/I3JbsE79i7GV7+/TTzdclL9Ccz9yQQEtIdrX3Rja2f2T7syKYUic1sYfNI
-	/qi0kg==
-Received: from mail-oi1-f198.google.com (mail-oi1-f198.google.com [209.85.167.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hpqfrgdv5-1
+	ZatxASJgP2LkTYNOdR4KsoVlJiV1ZVJXoCNHu7shP6g=; b=UpwnpaHSAilrnpNC
+	45ac+f1d54RpuYYqvQdisI8oRkg6dlc0WjmS1ZGtYGc6Q1HyuFUlQ52EP8I4JF5p
+	YyvbL1Ow+GiHcWsvfMLuysZqP1Qlk2iwa/hZpkOuMuLCs28oK+zCYTdy2o6FR3Cj
+	XtwP5cjAUKh5K0Gxe6j1Xi3U2yHBLpWQQXgsYh6tCPbxiJFwXdZ3Y/qmt4hXgrFB
+	rQjLc6FX9LeyZETvpFDDocIqAaMhQC2mM2nFBYtgxxI+lt50doQ9yullgPk/ALo4
+	vMnfcwCgruxBTjE98/6sOhTU0EHtaKDO8E8FSEN91iBmm78FjCBoCSAMYG3FqLYk
+	EjCJEw==
+Received: from mail-ot1-f72.google.com (mail-ot1-f72.google.com [209.85.210.72])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hpqfrgdvd-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 02 Nov 2026 10:42:30 +0000 (GMT)
-Received: by mail-oi1-f198.google.com with SMTP id 5614622812f47-5587351d419so2112999b6e.1
-        for <linux-phy@lists.infradead.org>; Mon, 02 Nov 2026 02:42:30 -0800 (PST)
+	for <linux-phy@lists.infradead.org>; Mon, 02 Nov 2026 10:42:32 +0000 (GMT)
+Received: by mail-ot1-f72.google.com with SMTP id 46e09a7af769-8255327a28fso3529496a34.0
+        for <linux-phy@lists.infradead.org>; Mon, 02 Nov 2026 02:42:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1793616150; x=1794220950; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1793616152; x=1794220952; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=IAj9mpmnJdc/Aq9gDDAyq0+2DmJDWgCFiwFRYx3AJ/s=;
-        b=h+1iCvRBZSHcmj3cTLLcZhgO+IC32At79zA/gjptAZHQiR5whfYy1ir4tqBqpAhJFC
-         ZSEg1bacT7Z93qm9tfuxspceutKM4camqZPoJnfqka0g6yluCkXVULX7zkqpyN0XIt9q
-         LNsmYg3mbzWVbGSqQbByBnoKR1t4IB6YOp0KlZvT5JFJQT/AW7n62oUFrxeUyM2ogNQ9
-         bqaCSGASXQ3GmFnQzp1dm6s3umxZkSzHSXPHP39oMZUXdfDsjMTnyF8pRE/TzQoQ4qrY
-         zeiVyG0dnG69AyiFWzhKyVTxnOja/aKaFOFncrtQFWXojZmiDwFSsHu21ygsrOmL3aWn
-         FbVw==
+        bh=ZatxASJgP2LkTYNOdR4KsoVlJiV1ZVJXoCNHu7shP6g=;
+        b=USZXTwCTBcB8eAnc2ilK/3lko6e5RdasgmE+pe3fY86cm4yllknA7aH2rTf2EBozQJ
+         MPZPxTIutEI1VdTg/kCG98LNj4lZx0e6aToo+JvkifYsjPGNymUGdl7nZAsEIKBNxccw
+         xGpJsWq3JYp811Y45xRYQCVSAGI5/h8KPAFQpChN+YPTAZudsw5Q6D6gJjiSpg/yJyoJ
+         zrt1T3Ue234qm46iAfjPlY4D7q43YzxUZWBtT9YGAYzqPv0jUrT7im+GKDQELaDNaZRr
+         venopxof1TH+Kbv10oFErKGJTzqZpXMTxN9A068MioSBCzPBc6fgmEivzU1OwDfvoMWN
+         oxVg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793616150; x=1794220950;
+        d=1e100.net; s=20260707; t=1793616152; x=1794220952;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=IAj9mpmnJdc/Aq9gDDAyq0+2DmJDWgCFiwFRYx3AJ/s=;
-        b=MOo7JsLJ+qcDKwajsO70rNg3NnBzcr+CUoiGlHnGDReKRkxxi4qNST6wVauo5BDA7q
-         u2Vz/YhohA+s4/n2QTObCZd0jUJJoI1jpoaPEX2X0fYgjBpZo9bmxNL15+mnOKPxCnVa
-         gVEdO9P8HoDqpwN0CNKNzNvaDj8U/x8U7unvc6GhnLAkgE54aHNL8TD594Iey0iBgASH
-         xHR5RmqPKoBfOEMVjpjG0VFHnRuH3/rHuJewEU7BRah+WbIOGwJtuoWY97jx27Rlw0oK
-         xVzHeAdkc/lBIIgm0WWyKlsWuQB4ZFRjsJsKZzG/B9sU7hDZfAwewALXeURVrOaRMO46
-         J8iw==
-X-Gm-Message-State: AFq9FYJp7/mUtU74jPpRbiSvWq0aUSZQHQ1tXB2jSXyeNyqP9JSbpQR9
-	K4VsAp4x2rkceQMN3oFgdAxQbhsoC7X91wRZmzkaR1X8LQ8M3zE55BqC6n+9YioYtEoLt4fSZ8x
-	Y1GRpZh8w0KePXEtAmx7wbwrkGp2VereVLMSDeIWdMU9f8MH5ZelvmAojv9BLc1XcwxAr
-X-Gm-Gg: AYBFou2wfzkIhL+UoyXMrvPKaJ5eU6JajD/EfOf+WOgT0yB0sWDm0PYmOFw2qs/KTjl
-	pCdIcYOWZ7HeKZ0BRg5AhOlNylpmBYATcIm2gFDRp/yVL4gFNZEPotW+1TEzdpQYdizrPnW3qhv
-	hhAVwXB4VqiaWR/rjzZHk5z2zqaG6sgRT8GSfyED232RfN1TBQhAxK7rM6PDBAHHzjCX2OFSbuX
-	iHtLuzPLnFp8kohzdbv3PiXZZYJ/rsnErdkceJWTTvWiftyp6PH6gQ9bFNJvZLtZyXk3xfAbHs5
-	s7CaaOamTd2kQD6ZP6Ove8B0tQeTWSGgrf8wu95jwJGzMv5jwZTrHkX24hGNOpteWS3KGc0JQBa
-	Vi475O/0mGQu73gfLGjWucsLQWclkGVrZ/pa3abQHSSKuN8/p1QFy3zi5hNiuqObpkdopTtichy
-	kV9UWteCr1unFxQs73n3t+e7yzVtJE6dTj1R04NoFvW03SLmmQ/w9utHL3hmQ=
-X-Received: by 2002:a05:6809:1c:20b0:4fa:8d48:3a6a with SMTP id 5614622812f47-5640dc2a78bmr4290363b6e.18.1793616149907;
-        Mon, 02 Nov 2026 02:42:29 -0800 (PST)
-X-Received: by 2002:a05:6809:1c:20b0:4fa:8d48:3a6a with SMTP id 5614622812f47-5640dc2a78bmr4290357b6e.18.1793616149487;
-        Mon, 02 Nov 2026 02:42:29 -0800 (PST)
+        bh=ZatxASJgP2LkTYNOdR4KsoVlJiV1ZVJXoCNHu7shP6g=;
+        b=qQOf3UjZYCFZDwF7cZeoVBkaPCrn2BvoVsgEp9o0tGwpUYbeZaq370C+k2ITDbGtkl
+         PawdqHQVN8YuTIsMrVECA6IRiY2vaemS1P+8uQOf1hhN/JzjO4Mv0WpbvdK+CEC1jY8k
+         KgGWm4hkNwl9sSuUwRnAViW9yl13aQQJTVfgNf0YXQyD793JEZqgpcBRPI/IIu5u10Q1
+         I+WVSlkuQC56aPMgCAoCmMfVZSXlutKFzaIcseGIBopQ/UuRkiP6oNzbVgQbHhqaDZsG
+         wFiv8xWyHkEJjW+HNXL3mc/Hq5W2xqS3V5ACdyYZDr7tCaNH7mbmTxwWSJF5c0I6vQ8A
+         oe9w==
+X-Gm-Message-State: AFq9FYKIOhd3/nMMGgR6mYbOcALqJELHWST1A1zXatNqyXcoaMVRqjCL
+	fODLHVCGEHsnJSK5M/6JcFGrS6Nu3O1lClJYHz8iLSMXD4FuWJZ1+nm4xg90z67GFMjJRkYSIA7
+	G57zpxcYh+2XAwuHEsqNQi1ESEygyZN3eriFhKOltLYHjtf0wDpHNZUFyQ4WBzpSbCv0k
+X-Gm-Gg: AYBFou2DexVEUJBnKg+GUMa8BlRtX3H49+O6bErNQYk+bGFgvbU4+5GUxQIpuNRMePZ
+	hHkSGbft/k3p0wscivmj8CwDD1YR7eLWuiYq8I/JN4O16qD6csTy3y75q0nlRrTX4AciupOsJii
+	Uu3iBO45IxltJAdnYNOuu9mrvrPAmWZQzTnwCJfH8HPra2xx/LmHMcKzpgwqHqcH7GYjlcM7yty
+	8bvNZkuOF7hOW+HnAR/CXE6diS8bbt9+x/ZCkfikWHmSfqM1UYfuJtRaXXZPfs2ZQmPLtEo7b/H
+	rJblzihO3OgHYgguaralwZRDbO9Kf8mMpIjEqSRtxmjXMw/JNky6kC1su0B30K6gCwTOV+RxTcO
+	hOTT3HF3iXEGySySWAZcmm+l5gzC4k+51pPb1ixcFm9K44p9isKDfnJLTK7fLp9gb6UC2GtV0t7
+	K/DHHwJxBWwncRRxZ2X7saa4H2xotfW1ktywjX6kiNJJJ83c7AXAnDRyNac7g=
+X-Received: by 2002:a05:6808:16a6:b0:4cb:f21c:a79f with SMTP id 5614622812f47-5640df8d97bmr5915325b6e.39.1793616151922;
+        Mon, 02 Nov 2026 02:42:31 -0800 (PST)
+X-Received: by 2002:a05:6808:16a6:b0:4cb:f21c:a79f with SMTP id 5614622812f47-5640df8d97bmr5915303b6e.39.1793616151442;
+        Mon, 02 Nov 2026 02:42:31 -0800 (PST)
 Received: from hu-hangxian-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id 5614622812f47-5640fe0fc77sm7447171b6e.12.2026.11.02.02.42.27
+        by smtp.gmail.com with ESMTPSA id 5614622812f47-5640fe0fc77sm7447171b6e.12.2026.11.02.02.42.29
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 02 Nov 2026 02:42:29 -0800 (PST)
+        Mon, 02 Nov 2026 02:42:30 -0800 (PST)
 From: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
-Date: Mon, 02 Nov 2026 02:42:15 -0800
-Subject: [PATCH v24 07/15] media: qcom: camss: Add PM clock definitions for
- Kaanapali
+Date: Mon, 02 Nov 2026 02:42:16 -0800
+Subject: [PATCH v24 08/15] media: qcom: camss: Allow CSI2 PHY devices
+ without CSIPHY resources
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261102-kaanapali-camss-v24-7-d6b8f3f6f66f@oss.qualcomm.com>
+Message-Id: <20261102-kaanapali-camss-v24-8-d6b8f3f6f66f@oss.qualcomm.com>
 References: <20261102-kaanapali-camss-v24-0-d6b8f3f6f66f@oss.qualcomm.com>
 In-Reply-To: <20261102-kaanapali-camss-v24-0-d6b8f3f6f66f@oss.qualcomm.com>
 To: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
@@ -118,27 +118,28 @@ Cc: linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
         linux-kernel@vger.kernel.org,
         jeyaprakash.soundrapandian@oss.qualcomm.com,
         Vijay Kumar Tumati <vijay.tumati@oss.qualcomm.com>,
-        Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
+        Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>,
+        Vladimir Zapolskiy <vz@kernel.org>, Frank Li <Frank.Li@nxp.com>
 X-Mailer: b4 0.16.1-dev-17221
-X-Authority-Analysis: v=2.4 cv=HMJWhYtv c=1 sm=1 tr=0 ts=6ae86916 cx=c_pps
- a=4ztaESFFfuz8Af0l9swBwA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+X-Authority-Analysis: v=2.4 cv=HMJWhYtv c=1 sm=1 tr=0 ts=6ae86918 cx=c_pps
+ a=+3WqYijBVYhDct2f5Fivkw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
  a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
  a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
- a=KKAkSRfTAAAA:8 a=EUspDBNiAAAA:8 a=3_5DbsQPI53TjtTAKikA:9 a=QEXdDO2ut3YA:10
- a=TPnrazJqx2CeVZ-ItzZ-:22 a=cvBusfyB2V15izCimMoJ:22
-X-Proofpoint-GUID: B1MANVWNn955pbenJLiGFCh9M973KyfL
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTAyMDA0MiBTYWx0ZWRfXxMe3mbLxDQO0
- OsokMNRXfkYpx50WGaD5OmNLSgicWHzb+P8pCWX2HRdsaShGcsAL4VqkJh59Zjg6JWQXyqwHNN3
- a6o+hgT/HOTcmjvCn4pXl1kx75tWuA4=
-X-Proofpoint-ORIG-GUID: B1MANVWNn955pbenJLiGFCh9M973KyfL
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTAyMDA0MiBTYWx0ZWRfX29DWhtp99bLC
- fVQRdz9LR2rlRK1W+HPnKaf9lLhjhbt8Q291EvbvFN6Z8F5ypRg/MEsxHn5SVXXJhyZZotGvVJy
- 8nJiGU1L/Uvshz8Lz2T3E1XdR1I2pf5ozYeoXEpIOa/aud3RQzZ0Wqsay24BCwBrHi/NflRVbDN
- TQ3D+tnu62xuI7Z9iskmEmG1t2bJByl9WJTKhvxT5Sp30YXXqX1428aaJwwGh7hFDHkecLprG2f
- fg1y8ds9RoXj+QzpCE/LZGGsoCD75K/vsWZRttK6WDd7+5qG92GgzL8tDUUo4ljS2yirxVmlATy
- +n3XeBbbkvS/PdfhVNaXCg9H3HG/O6cyu8ywBPt+eVKZtLumGHIm32uF6Y2F8KzsNjYS+XEF6ik
- u3b4byNK0GF561fK4iHy0pLXACaTwtOPxMc/UhAxCnhZYfn45rhmF0SInG86RMWAL2eHBJU0p8q
- muuUx9YAlxYDvWAonYw==
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=8AirrxEcAAAA:8 a=2_0--xn6cTixhlPqFr8A:9
+ a=QEXdDO2ut3YA:10 a=eYe2g0i6gJ5uXG_o6N4q:22 a=ST-jHhOKWsTCqRlWije3:22
+X-Proofpoint-GUID: 1hcOEafkC4RyNfF1P7TYyPsR0BoXi3ls
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTAyMDA0MiBTYWx0ZWRfXzo4I6CZ0bWo4
+ TPYqVTkSxqR56MYd5Vi0i5nVti8UwP7k9h0zXHokYRZxj0SUnqMNPZuWbqIKF/VTwAYfZ4Ru9NC
+ eI1iaV642Bvw33iHTUoOM+Eq6vIfZPg=
+X-Proofpoint-ORIG-GUID: 1hcOEafkC4RyNfF1P7TYyPsR0BoXi3ls
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTAyMDA0MiBTYWx0ZWRfX6Z0FQOfbMekW
+ 24zhr6am7ZfY2kWOZijMB008m1XBWoEymkhtcMf/pzI9quu/kGnDztpi+S/jsZC/R71zuJdtgYP
+ eY9NFKTMWpHsHlRg+ITz0fj3poAUt4B/ig1fWM8rJw2tL833Gmj0s2dv5q3voTXAxEstzCNZWIP
+ 5QDVynMIbx068b/2a+SDnQISaec564xaGu+kiSBEgHTerOc6w5Lip//UCJY2zRi9hRdQT9uaCHh
+ f6ECcL4sF/vN4E3HQRuoZwD7GaFeTNJuohAUG2TnrSjidi7XIY42lezS+gnRniVn9D+d/wOMwtj
+ NAMj1wBs6EPEQaP9ntS6MVyjj6sztY3x+KItKWz2BgK74KJVfJ/mzWFYmh08/DsNJHTZCLz+tUC
+ XvPWGTtvdBhxytwD8KJIiLfPiR2rthvnuo+YHF1gFImL4yFNscDy2wPxxeTSD9HSn46B79J2tdu
+ NMazBcIKOOmu/vL6MMQ==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-02_03,2026-10-21_02,2025-10-01_01
@@ -149,8 +150,8 @@ X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2610300000
  definitions=main-2611020042
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261102_024231_411210_8A9F501E 
-X-CRM114-Status: GOOD (  12.37  )
+X-CRM114-CacheID: sfid-20261102_024233_344148_FF51F98D 
+X-CRM114-Status: GOOD (  17.46  )
 X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -171,29 +172,96 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-The CPAS AHB and AXI clocks are shared by every Kaanapali TFE and IFE
-sub-block. Register them as PM clocks so the PM clock framework enables
-them once when CAMSS resumes, instead of each sub-block listing them and
-taking its own reference.
+From: Vladimir Zapolskiy <vz@kernel.org>
 
-Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+If CAMSS CSIPHYs are supported by the stand-alone CSI2 PHY driver only,
+there is no need to provide description of legacy CSIPHY resources in
+the CAMSS driver, therefore if CSIPHY resources are not given for some
+supported platform, use CAMSS CSIPHY port numbers as CSIPHY identifiers.
+
+Reviewed-by: Loic Poulain <loic.poulain@oss.qualcomm.com>
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
+Signed-off-by: Vladimir Zapolskiy <vz@kernel.org>
 Signed-off-by: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
 ---
- drivers/media/platform/qcom/camss/camss.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/media/platform/qcom/camss/camss-csiphy.c | 16 +++++++++++++---
+ drivers/media/platform/qcom/camss/camss.c        |  8 ++++++--
+ 2 files changed, 19 insertions(+), 5 deletions(-)
 
+diff --git a/drivers/media/platform/qcom/camss/camss-csiphy.c b/drivers/media/platform/qcom/camss/camss-csiphy.c
+index f99eea2ef228..8ecd514451d2 100644
+--- a/drivers/media/platform/qcom/camss/camss-csiphy.c
++++ b/drivers/media/platform/qcom/camss/camss-csiphy.c
+@@ -799,6 +799,11 @@ int msm_csiphy_subdev_init_legacy(struct camss *camss,
+ 	return ret;
+ }
+ 
++/* Fallback to generic SDM845 compatible formats for non-legacy CSIPHYs */
++static const struct csiphy_subdev_resources csiphy_res_phy = {
++	.formats = &csiphy_formats_sdm845,
++};
++
+ /*
+  * msm_csiphy_subdev_init - Initialize CSIPHY device structure and resources
+  * @camss: CAMSS structure
+@@ -808,7 +813,7 @@ int msm_csiphy_subdev_init_legacy(struct camss *camss,
+  */
+ int msm_csiphy_subdev_init(struct camss *camss, u8 port)
+ {
+-	const struct camss_subdev_resources *res = &camss->res->csiphy_res[port];
++	const struct camss_subdev_resources *res = camss->res->csiphy_res;
+ 	struct csiphy_device *csiphy = &camss->csiphy[port];
+ 	struct device *dev = camss->dev;
+ 	struct device_node *ep, *remote;
+@@ -836,8 +841,13 @@ int msm_csiphy_subdev_init(struct camss *camss, u8 port)
+ 	}
+ 
+ 	csiphy->camss = camss;
+-	csiphy->id = res->csiphy.id;
+-	csiphy->res = &res->csiphy;
++	if (res) {
++		csiphy->id = res[port].csiphy.id;
++		csiphy->res = &res[port].csiphy;
++	} else {
++		csiphy->id = port;
++		csiphy->res = &csiphy_res_phy;
++	}
+ 
+ 	snprintf(csiphy->name, ARRAY_SIZE(csiphy->name), "csi%d", csiphy->id);
+ 
 diff --git a/drivers/media/platform/qcom/camss/camss.c b/drivers/media/platform/qcom/camss/camss.c
-index 385be682e8b9..3857515aac7c 100644
+index 3857515aac7c..30c2a0c89100 100644
 --- a/drivers/media/platform/qcom/camss/camss.c
 +++ b/drivers/media/platform/qcom/camss/camss.c
-@@ -5606,6 +5606,7 @@ static void camss_remove(struct platform_device *pdev)
- static const struct camss_resources kaanapali_resources = {
- 	.version = CAMSS_KAANAPALI,
- 	.pd_name = "top",
-+	.pm_clks = { "cpas_fast_ahb", "cpas_ahb", "gcc_axi_hf" },
- 	.icc_res = icc_res_kaanapali,
- 	.tpg_res = tpg_res_8775p,
- 	.icc_path_num = ARRAY_SIZE(icc_res_kaanapali),
+@@ -4810,7 +4810,10 @@ static void camss_detect_legacy_phy(struct camss *camss)
+ 	struct device_node *remote;
+ 	struct device_node *ep;
+ 
+-	camss->legacy_phy = true;
++	/* Legacy CSIPHY description implies the provided CSIPHY resources */
++	camss->legacy_phy = !!camss->res->csiphy_res;
++	if (!camss->legacy_phy)
++		goto done;
+ 
+ 	/* Find first remote-endpoint and determine if its a PHY */
+ 	for_each_endpoint_of_node(camss->dev->of_node, ep) {
+@@ -4824,6 +4827,7 @@ static void camss_detect_legacy_phy(struct camss *camss)
+ 		break;
+ 	}
+ 
++done:
+ 	dev_dbg(camss->dev, "legacy phy mode %s\n",
+ 		camss->legacy_phy ? "true" : "false");
+ }
+@@ -4855,7 +4859,7 @@ static int camss_init_subdevices(struct camss *camss)
+ 
+ 		if (ret < 0) {
+ 			dev_err(camss->dev, "csiphy %d init fail\n",
+-				res->csiphy_res[i].csiphy.id);
++				res->csiphy_res ? res->csiphy_res[i].csiphy.id : i);
+ 			return ret;
+ 		}
+ 	}
 
 -- 
 2.34.1
