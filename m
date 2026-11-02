@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 454AE60A5BE8
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Nov 2026 13:59:41 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4E20360A6F62
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Nov 2026 13:59:44 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=3XUgpwbI;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=lkxNKFQ1
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=XntV8Tba;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=H1bDDCTB
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,43 +14,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=Frctr7QT26Eg8vMkBuetCUlc8XGH6lW+WQtDk0YGJHI=; b=3XUgpwbIB/2sU7kSuHAvpdXokX
-	sjHtkiC+DECEoE4P/2YQZwiFNhvXEHiiaMEl+yDGPJ8GWVW/gxOZO+dNoqO0AYKd6LGd6kU1TKqcr
-	Xpe6voYb72zUcnN9hUaAe2bMH6awglVL6pR/yC5bYhGTmFEYgF5DvnxFRgxSil5+DDYcOnjZn27gs
-	Xc0jVHG/hD+YCwWuY9T0wRZ+o1JpSyrVlEYR/QTM6iBlVxQ674SkCWUZoae/tAULfeGWb2r4oNYVK
-	gDjjxEj3RS7AZEEra1rahByx1yC8sTvFNWr92ZZzYWxleIvb7EKpKTf4c6C+U8BxgdYzZWYmzxPQ1
-	IX+ytoDA==;
+	bh=UW3huYMEshvfSokQeWLZjJfuZwjA8ZuSZDgr1PZET6w=; b=XntV8Tbahe9Da/zPvl6w+h5ufL
+	wvo9csljG6TBV1gJKgFYEPXtjnT2mOw7gENyzouNPqGuV+Y9+ZYsZW2rNgZD9hybBGKhGO9JAzJdB
+	6zBqrfPZdhftm1IieombrFK5QmPCPCPxlae7UpUUqruR3i4UopyoQMTRG/c1LpTPB2bsvB5Dqbene
+	wqafBpWstxceMGshTBGnnGaDonie6h3srsUysLo5uv6y3aJhZBHBXfGreRz26OzEx31J1FDdk69tX
+	nyHgEX31bHsLyJ5XlkNtw1O4eDF6Bk2FE4yA0/aby2NgMypkaOminQ78+ETqZYzKdkvkgr9kgEmY7
+	DtMaztNQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNsZZ-0000000GhPB-05YI;
-	Mon, 02 Nov 2026 13:59:41 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xNsZc-0000000GhQ8-0FMC;
+	Mon, 02 Nov 2026 13:59:44 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNsZY-0000000GhOd-0eGw
+	id 1xNsZa-0000000GhPj-2nmR
 	for linux-phy@lists.infradead.org;
-	Mon, 02 Nov 2026 13:59:40 +0000
+	Mon, 02 Nov 2026 13:59:42 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id E144340E19;
-	Mon,  2 Nov 2026 13:59:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3D4AE1F00A1D;
-	Mon,  2 Nov 2026 13:59:38 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 221EE600DC;
+	Mon,  2 Nov 2026 13:59:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4794E1F00A18;
+	Mon,  2 Nov 2026 13:59:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793627979;
-	bh=tljb7rtsPlQzIzEu/bBj+fXHIpowDv+rky87XRZ9VDw=;
+	s=k20260515; t=1793627981;
+	bh=s2SEqKfMwj/eJrBfK5943BFoWBT1hjDKhKlE5YtTfLU=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc;
-	b=lkxNKFQ1odMKOTvdBvqxcuVuYTL69XNHDMMAahN6rPpg4qNwXrFENKPaWKHscQw0Z
-	 Hq1rVTSFgWM6pTDVEx+R0Uy9WoZOoesyGi2rhboSzIpcQUXW1amB4WOqBL8t643VjT
-	 1Q2a/wILsjbd2E564vFxVeqJGAoDZ/JzKrFlYriUqhwYJOakK8mMA07UCrFP5688xD
-	 RgEwTFtSlJI/V7QT8F8O3vJbWy/3Wp8E4WDjQDiirMJlFVHR7eLvLngfBXiohkD+Qr
-	 rrZJJk/P1xpLqS4FYxaZS6DeDG8JGuidvBoRdvHCLkAWM2r/iSAPaBIAzb3Afn4T1R
-	 4m0RDVe/T9Qjw==
+	b=H1bDDCTBSaagvEKieiyLl0ycCd0zotTLAIm1n4Y3o4yQYdPeIkZqHXN5ob9mX1RgM
+	 rs+JgfVxiAR/9ew+t+ztTDzPBg9Y4jLY7x4sw94Ez8CHaFH1WmAJSrT2pQD7beACEJ
+	 eqNlj6XdyRro3JShpdL/yQyTsopo8NGob4vJui6WSoFVmRnWZjywHVftuPb/L+fWIB
+	 KAHrmIsef7zZDnROu1D8v7Ez0Z2VVKoeDgQVWJuF/m0x39/OFh8EoMg1ZmshxQZ5Pn
+	 knFNPR69aMf05SY9fAY3uEo3MU+QmM8a2FI7Qyj7PFyqwQwnE9hNBN4FbwmD7i7ZVa
+	 rnuHV5LCJBsNg==
 From: Konrad Dybcio <konradybcio@kernel.org>
-Date: Mon, 02 Nov 2026 14:59:33 +0100
-Subject: [PATCH 2/3] phy: qcom: qmp-combo: Make v4/v5 targets use the right
- clamp
+Date: Mon, 02 Nov 2026 14:59:34 +0100
+Subject: [PATCH 3/3] phy: qcom: qmp-combo: Use V6 offsets for PCS-AON
+ clamps
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261102-topic-qmp_aon_clamp-v1-2-141c2cb6cdf6@oss.qualcomm.com>
+Message-Id: <20261102-topic-qmp_aon_clamp-v1-3-141c2cb6cdf6@oss.qualcomm.com>
 References: <20261102-topic-qmp_aon_clamp-v1-0-141c2cb6cdf6@oss.qualcomm.com>
 In-Reply-To: <20261102-topic-qmp_aon_clamp-v1-0-141c2cb6cdf6@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -60,11 +60,11 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-kernel@vger.kernel.org, 
  Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1793627973; l=3162;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1793627973; l=2026;
  i=konrad.dybcio@oss.qualcomm.com; s=20230215; h=from:subject:message-id;
- bh=Jg/cbnzut80B0V7M8OEuBOh1vCJVvAzHbp5LGbo5Akk=;
- b=7etytahGwQHJJkXpWYpzhowAkBH5VofuSlugtYIwvyKJoxmC7f4Fu285zPjvzN0nnmfAOQ3fc
- 36EUJo9p9UeADxWAC35/OmzBJoKVbxBjHfUwuPZxVYvPsiDvCLAdGpY
+ bh=mDJHSwdTtjjsej/30s7NiBPFSWOzYIFb8f7eLcF6NWo=;
+ b=dm/CydIW7rCy9Md1dOuy/b6Nqbly8kGBr1qFcAfYfZW5JFFK+jk3tFM6hf4oLvxO9GkRu459i
+ s06GkcGpwe8CkUUqX+TP1iFofYYo9GOA5Y0jFaTYYrLuYyPV9MbGIo8
 X-Developer-Key: i=konrad.dybcio@oss.qualcomm.com; a=ed25519;
  pk=iclgkYvtl2w05SSXO5EjjSYlhFKsJ+5OSZBjOkQuEms=
 X-BeenThere: linux-phy@lists.infradead.org
@@ -88,67 +88,58 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 
 From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 
-The clamp in PCS_MISC may or may not exist on some of these targets,
-but in any case it's not the right one to assert. Switch over to the
-one the hardware programming guide calls for.
+These V6 combo PHYs were configured with the V3 resource-offset table,
+which omits their PCS-AON window. Autonomous-mode suspend therefore
+cannot reach the HPG-required clamp register.
+
+Select the existing V6 offsets for SAR2130P, SM8475, SM8550, and
+SM8650.
 
 Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c  | 7 ++++++-
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5.h | 1 +
- 2 files changed, 7 insertions(+), 1 deletion(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 1c7b653975f1..84b9d6f3969c 100644
+index 84b9d6f3969c..f9ab503c81ac 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -159,7 +159,7 @@ static const unsigned int qmp_v45_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	[QPHY_PCS_AUTONOMOUS_MODE_CTRL]	= QPHY_V4_PCS_USB3_AUTONOMOUS_MODE_CTRL,
- 	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR] = QPHY_V4_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR,
+@@ -2793,7 +2793,7 @@ static const struct qmp_combo_offsets qmp_combo_usb43dp_offsets_v8 = {
+ };
  
--	[QPHY_PCS_MISC_CLAMP_ENABLE]	= QPHY_V4_PCS_MISC_CLAMP_ENABLE,
-+	[QPHY_PCS_CLAMP_ENABLE]		= QPHY_V4_PCS_CLAMP_ENABLE,
+ static const struct qmp_phy_cfg sar2130p_usb3dpphy_cfg = {
+-	.offsets		= &qmp_combo_offsets_v3,
++	.offsets		= &qmp_combo_offsets_v6,
  
- 	[QPHY_COM_RESETSM_CNTRL]	= QSERDES_V4_COM_RESETSM_CNTRL,
- 	[QPHY_COM_C_READY_STATUS]	= QSERDES_V4_COM_C_READY_STATUS,
-@@ -186,6 +186,7 @@ static const unsigned int qmp_v5_5nm_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	[QPHY_PCS_AUTONOMOUS_MODE_CTRL]	= QPHY_V5_PCS_USB3_AUTONOMOUS_MODE_CTRL,
- 	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR] = QPHY_V5_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR,
+ 	.serdes_tbl		= sar2130p_usb3_serdes_tbl,
+ 	.serdes_tbl_num		= ARRAY_SIZE(sar2130p_usb3_serdes_tbl),
+@@ -3224,7 +3224,7 @@ static const struct qmp_phy_cfg sm8350_usb3dpphy_cfg = {
+ };
  
-+	[QPHY_PCS_CLAMP_ENABLE]		= QPHY_V5_PCS_CLAMP_ENABLE,
- 	[QPHY_PCS_MISC_CLAMP_ENABLE]	= QPHY_V5_PCS_MISC_CLAMP_ENABLE,
+ static const struct qmp_phy_cfg sm8475_usb3dpphy_cfg = {
+-	.offsets		= &qmp_combo_offsets_v3,
++	.offsets		= &qmp_combo_offsets_v6,
  
- 	[QPHY_COM_RESETSM_CNTRL]	= QSERDES_V5_COM_RESETSM_CNTRL,
-@@ -4699,6 +4700,8 @@ static void qmp_combo_enable_autonomous_mode(struct qmp_combo *qmp)
- 			qphy_clrbits(pcs_aon, cfg->regs[QPHY_PCS_USB4_CLAMP_ENABLE], CLAMP_EN);
- 		else
- 			qphy_clrbits(pcs_aon, cfg->regs[QPHY_PCS_CLAMP_ENABLE], CLAMP_EN);
-+	} else if (cfg->regs[QPHY_PCS_CLAMP_ENABLE]) {
-+		qphy_clrbits(qmp->pcs, cfg->regs[QPHY_PCS_CLAMP_ENABLE], CLAMP_EN);
- 	} else if (pcs_misc) {
- 		qphy_clrbits(pcs_misc, cfg->regs[QPHY_PCS_MISC_CLAMP_ENABLE], CLAMP_EN);
- 	}
-@@ -4717,6 +4720,8 @@ static void qmp_combo_disable_autonomous_mode(struct qmp_combo *qmp)
- 			qphy_setbits(pcs_aon, cfg->regs[QPHY_PCS_USB4_CLAMP_ENABLE], CLAMP_EN);
- 		else
- 			qphy_setbits(pcs_aon, cfg->regs[QPHY_PCS_CLAMP_ENABLE], CLAMP_EN);
-+	} else if (cfg->regs[QPHY_PCS_CLAMP_ENABLE]) {
-+		qphy_setbits(qmp->pcs, cfg->regs[QPHY_PCS_CLAMP_ENABLE], CLAMP_EN);
- 	} else if (pcs_misc) {
- 		qphy_setbits(pcs_misc, cfg->regs[QPHY_PCS_MISC_CLAMP_ENABLE], CLAMP_EN);
- 	}
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5.h
-index 36cc80bb9059..1d1688b3d7ba 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5.h
-@@ -11,6 +11,7 @@
- #define QPHY_V5_PCS_PCS_STATUS1				0x014
- #define QPHY_V5_PCS_POWER_DOWN_CONTROL			0x040
- #define QPHY_V5_PCS_START_CONTROL			0x044
-+#define QPHY_V5_PCS_CLAMP_ENABLE			0x08c
- #define QPHY_V5_PCS_LOCK_DETECT_CONFIG1			0x0c4
- #define QPHY_V5_PCS_LOCK_DETECT_CONFIG2			0x0c8
- #define QPHY_V5_PCS_LOCK_DETECT_CONFIG3			0x0cc
+ 	.serdes_tbl		= sar2130p_usb3_serdes_tbl,
+ 	.serdes_tbl_num		= ARRAY_SIZE(sar2130p_usb3_serdes_tbl),
+@@ -3269,7 +3269,7 @@ static const struct qmp_phy_cfg sm8475_usb3dpphy_cfg = {
+ };
+ 
+ static const struct qmp_phy_cfg sm8550_usb3dpphy_cfg = {
+-	.offsets		= &qmp_combo_offsets_v3,
++	.offsets		= &qmp_combo_offsets_v6,
+ 
+ 	.serdes_tbl		= sm8550_usb3_serdes_tbl,
+ 	.serdes_tbl_num		= ARRAY_SIZE(sm8550_usb3_serdes_tbl),
+@@ -3314,7 +3314,7 @@ static const struct qmp_phy_cfg sm8550_usb3dpphy_cfg = {
+ };
+ 
+ static const struct qmp_phy_cfg sm8650_usb3dpphy_cfg = {
+-	.offsets		= &qmp_combo_offsets_v3,
++	.offsets		= &qmp_combo_offsets_v6,
+ 
+ 	.serdes_tbl		= sm8550_usb3_serdes_tbl,
+ 	.serdes_tbl_num		= ARRAY_SIZE(sm8550_usb3_serdes_tbl),
 
 -- 
 2.56.0
