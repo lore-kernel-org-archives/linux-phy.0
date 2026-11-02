@@ -2,98 +2,111 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 749C360A2606
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Nov 2026 07:22:31 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 787C8606A339
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Nov 2026 08:15:47 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=x1ZnEtPm;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=DMUcbWZM
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=vOCFyycY
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=KGnN+7wXFKyJUSCVC1GQjydBd2qVD3Eeuqxj+vLCEbE=; b=x1ZnEtPm1iIav+xXFtsFYy50/d
-	JhrarzRI4lvs/qo3KGWK4npnlw7t5Ml2n1MrtA6259kbYkZASM5uu+tTLvAh0jOOfiBwn9yvLod4e
-	ZOzL7xP7lV0l6d8m9AD9LApGDsU4vgsSJvqyHvqJQAe6WznGL+rbCi3w+r6RG9Y1t7ukOyrKpB/vJ
-	QqV8nM9u0lgweRSya5qdq828Z8EP2aDreNSMk/wkPSnaMCf1kQk3S20ISP53cR5wwzKSXlSPXextU
-	hYSf5WH+OP3RLEsYMwdwdvocGkjPIKcATGVBUyzQYf2uJ2MU/US3InXAtTvlAaROtn9DAPO0iCPeB
-	fy6bXLWg==;
+	bh=G0MgdiQnW5iaaBOg5aIAn1g/Qv3WfF3EJq6TNyDrSWc=; b=vOCFyycYzAKa97ISmF1UGqQPi6
+	exbbfwxiB5RW14ukwPtWpK/I8b7tT8AxwqWfXJpal2d7chkJSpeqU8SeJ+V4PNR4gBGlGpIA8J9wa
+	ICKDPwnUKA2iI37NyoMhkammLneL6R9sfnf8Nj8DyHHb1Vwmh4oyUQJ4OMRm4N2ydbzBDbOP6ySFx
+	ti55Stj7/ua6ZIK0PlhhS3eQdN5su1aku3FPS8KWkWqtx5zCT5IHZO//oPa3bM739kKdAQKFooh9i
+	kmvQpQOnWbqO0dAP+QDXYDDVVMvkDQqrcvpcUJvi64b5MFxQ+u+YZOt3REjc92colOsvVAYxHtYHZ
+	Y7+mK0/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNmND-0000000Fjlj-03DN;
-	Mon, 02 Nov 2026 07:22:31 +0000
-Received: from mail-dy1-x1332.google.com ([2607:f8b0:4864:20::1332])
+	id 1xNnCl-0000000Fqce-07dS;
+	Mon, 02 Nov 2026 08:15:47 +0000
+Received: from mail-japaneastazlp170120005.outbound.protection.outlook.com ([2a01:111:f403:c405::5] helo=TYPPR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xNmNA-0000000Fjkw-3WAU
-	for linux-phy@lists.infradead.org;
-	Mon, 02 Nov 2026 07:22:29 +0000
-Received: by mail-dy1-x1332.google.com with SMTP id 5a478bee46e88-36a18fc7a38so4476059eec.1
-        for <linux-phy@lists.infradead.org>; Sun, 01 Nov 2026 23:22:28 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1793604148; x=1794208948; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=JB/vt8Yqalu6xBIjfgP9QfXpUFDcSpikq6HleBSGoog=;
-        b=DMUcbWZMlD3VgtMCo3/7f51t0epNSN9fPzYUiIjx4LvDLR6inF2wr3Z9WoNhZt8faE
-         Pa9/W75rtEGKHudL4agVCEU40RXCBW3EUSDsCHpTIueT8B8ln02lDLGvaR31rsvKn9pe
-         8G21MHFy71kVPdIU+g1KvP+6sbbNMKTLaQDh6TDFM7I6mVZTt1ngv0sXpc4spysLC2eB
-         qVNtNMn1K7SYnFbZs9b68BvLSYiwlLayfqoAjRKSvA/c2XPyeoLHB+JO5Oz8a1K8lyJc
-         9/ATUwq1yhbXsnylhNxTjPIK4Q1uRBaFXbjJsPN6az25hY3DKsqjnZuoYM2WZfKL17Ih
-         4rFA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793604148; x=1794208948;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=JB/vt8Yqalu6xBIjfgP9QfXpUFDcSpikq6HleBSGoog=;
-        b=pXfCo5JI8KsIO2lEjcmkrrHkzhmLEnFEbPc5QhQJ6ETIceyMXhPjSmr3F/4ZfB8cFz
-         +FzP+wTHzp7j0BI8y9al7h6F8G0TxgZUQjvTMrDtUdINwQi07y2bYj+REpgNbzFOtL2w
-         v/Lulo+4PlDw7GNQIlGx0N5ErH2X9y4BBglovzaZG2Uzj6YzyB8p4d0iR/5a9C207r4y
-         IfFMu2cXYTvyFcmubs7hCvSMk8Ay7QoTBPSn4ZQQs2mGf4PFSHSm1a0oyqxdXT/aA8xs
-         k6v8luAwzunGbR6DGhUNjHHDmMubPe/NHPXn+aHo0YQ57N+IN3SPWYc/TVHweeXs78Ov
-         knig==
-X-Forwarded-Encrypted: i=1; AKwUvBwGEw2MVFqFpECQMdjLiH1ivfGpkYSqInW2mlliPT8gNOxQaArTmFI+d2OtCe/rSihJj0QdA7TeMws=@lists.infradead.org
-X-Gm-Message-State: APuU4Z9hL93UME0BgfyRaJa9cS0ySwookIV4qJE2erb5bXr/DEUR+hNM
-	aaZYrCxhLcupeL1jFQ3CEjXNXQEqGaamHr1boPinh75j8nhd1Qrj4AqU
-X-Gm-Gg: AYBFou0bQc96n7DdfOi1KtBKX8Q0jch+rGzDnrg5sdwkQkkxvJ3NTPJfiVwRnXC1oxR
-	w+Q88bbv9EvFf1tg9UcVEQByC0ly2qyMkJ49SPJkhyDsALrR2EaJScjZ8nq+38vApwA/RzxTLFz
-	Z/5yjpcEDXWZScH5hVnCx0w76tgttG8dQZ9hixXK1ewgWTYdjgq3/EMxv7lD+jsUG+ML02xU8RL
-	vFSe07THYCG8NTjS6cM7BtDaxQwbVBnHh0uVnV6/MKBSbI9LvorO9oGXTCodalzE8pkDBmYz2pm
-	3eL0XAfcYxargGEV1mSeKAPYFIVGHZ4NEHHQIBntDLVfW+NPoXlcUQr0eikPOrkmoV+lHklWuSJ
-	3c7rbvdyd2joSBE0pqH7Qen0V6C0WMkCBPLAwPOJWVgVixDTTh1JtdgbThUBHknGZBINtYufYV0
-	NhrZuScZ/MedY6l0ev5fOu4dkx7jtIkkZPQyMVB+OCdzJlocFTDPHR9PcafCIcJWVS25nEPCUrh
-	5hPoT0f2Vlgb8K26ol12lSZ4RaYWNwvb+bNNeosddANrsXqUh5dlrByBLmwUYre3hxGDclDJjHI
-	UOh/Mph8UX1n3tM1tGeARmuppXrc8H7CF2iFbitIW67IMA9Q8T4=
-X-Received: by 2002:a05:7301:4706:b0:369:eee6:ee2c with SMTP id 5a478bee46e88-36a4221bc98mr13867197eec.5.1793604147501;
-        Sun, 01 Nov 2026 23:22:27 -0800 (PST)
-Received: from localhost.localdomain ([103.178.205.93])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-36a428af1dfsm36376021eec.7.2026.11.01.23.22.23
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 01 Nov 2026 23:22:27 -0800 (PST)
-From: Sreeraj S Kurup <sreekuttan2156239@gmail.com>
-To: chunkuang.hu@kernel.org,
-	p.zabel@pengutronix.de,
-	vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	mani@kernel.org,
-	matthias.bgg@gmail.com,
-	angelogioacchino.delregno@collabora.com
-Cc: dri-devel@lists.freedesktop.org,
-	linux-mediatek@lists.infradead.org,
+	id 1xNnCh-0000000FqaY-3SoQ;
+	Mon, 02 Nov 2026 08:15:45 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=ujsOf9oSvc9yJDp/spRDErYs9DFcAgiDdQ2EzvOYZGgu3vm6xEeAJsFcVl3G1EdJRB85D/IoEB00JmcLZeJLQr3iLhHv2ud2iQLAx/H8ZEpvsGTtM+NL4x1aMoMEUhpMMsq+BO30Y5EVksXmbHTk8EStneqXgMVivHduptbxJLFPMeGQXFcbuk0C7QWCxYC5nsEjTYW5WhoSRvzGGuOzSj8dqIpB4HN1WvWm8DE0Z5weMWPyyZ/G1/FKb4IE9BeaHsSq5jxI0ZO0/hesdIdg1EcFoukMbb1eDb0Cg04UC5/TcKsUdBOhn5DjbK+0s6XoPDWQhZY2uA0S6qOdilKWQQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=TALd2tD3KaCkVwTSjviOuKEa/hjB+/91eq4eMjUUc0U=;
+ b=Zn2UAqFaZxJXIIH+d9iDHQL7R7K0eDbAZX0yfqHqbMSqLvteCNjZa1xTyydj2VnYcqHYytgGZtT0MHQCMGHC//itoePn3Wisj8egDj7jj4jHfuQdTbhtWJFuDcT0Hc+DeR5/kGK5Dnq7b5UfqAdffQdy4eMZAi9fPGtRFg3M1eHtzKQ1B7K4hIEVDPGe1EAIni0BGXO/w+QmXyoHw5BvMjs8CXuK+oiZXmN+tp0i2OsmmAFCi+1QUhluWKq9MsFYIRMkG8v0w8oeMJ6VI3utUYdj4sr4xm7uMRMNyMRL/Ce+i+ENukWeJV7ax691hCjMVkjrUBEcUW2KsXzWdwe0hA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 222.71.101.198) smtp.rcpttodomain=cixtech.com smtp.mailfrom=cixtech.com;
+ dmarc=bestguesspass action=none header.from=cixtech.com; dkim=none (message
+ not signed); arc=none (0)
+Received: from PSBPR02CA0001.apcprd02.prod.outlook.com (2603:1096:301::11) by
+ TYZPR06MB6192.apcprd06.prod.outlook.com (2603:1096:400:332::7) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.592.8; Mon, 2 Nov 2026 08:15:35 +0000
+Received: from TY2PEPF0000AB88.apcprd03.prod.outlook.com
+ (2603:1096:301:0:cafe::25) by PSBPR02CA0001.outlook.office365.com
+ (2603:1096:301::11) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.569.12 via Frontend Transport; Mon, 2
+ Nov 2026 08:15:35 +0000
+X-MS-Exchange-Authentication-Results: mx.microsoft.com 1; spf=pass (sender IP
+ is 222.71.101.198) smtp.mailfrom=cixtech.com; dkim=none (message not signed)
+ header.d=none;dmarc=bestguesspass action=none header.from=cixtech.com;
+Received-SPF: Pass (protection.outlook.com: domain of cixtech.com designates
+ 222.71.101.198 as permitted sender) receiver=protection.outlook.com;
+ client-ip=222.71.101.198; helo=smtprelay.cixcomputing.com; pr=C
+Received: from smtprelay.cixcomputing.com (222.71.101.198) by
+ TY2PEPF0000AB88.mail.protection.outlook.com (10.167.253.11) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.592.5 via Frontend Transport; Mon, 2 Nov 2026 08:15:34 +0000
+Received: from gary-System-Product-Name (unknown [172.16.64.55])
+	by smtprelay.cixcomputing.com (Postfix) with ESMTPSA id C771640920E2;
+	Mon,  2 Nov 2026 16:15:33 +0800 (CST)
+From: Gary Yang <gary.yang@cixtech.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Fugang Duan <fugang.duan@cixtech.com>
+Cc: CIX Linux Kernel Upstream Group <cix-kernel-upstream@cixtech.com>,
+	linux-arm-kernel@lists.infradead.org,
 	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
-	Sreeraj S Kurup <sreekuttan2156239@gmail.com>
-Subject: [PATCH] phy: mediatek: mt8195: Check PLL driver setting return value
-Date: Mon,  2 Nov 2026 07:21:39 +0000
-Message-ID: <20261102072139.3588-1-sreekuttan2156239@gmail.com>
-X-Mailer: git-send-email 2.55.0
+	Gary Yang <gary.yang@cixtech.com>
+Subject: [PATCH 3/3] arm64: dts: cix: add Sky1 USB/DP combo PHY
+Date: Mon,  2 Nov 2026 16:15:32 +0800
+Message-ID: <20261102081532.2305142-4-gary.yang@cixtech.com>
+X-Mailer: git-send-email 2.50.1
+In-Reply-To: <20261102081532.2305142-1-gary.yang@cixtech.com>
+References: <20261102081532.2305142-1-gary.yang@cixtech.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: TY2PEPF0000AB88:EE_|TYZPR06MB6192:EE_
+X-MS-Office365-Filtering-Correlation-Id: 35edf797-eb58-4c78-d734-08df38b97868
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|23010399003|7416014|376014|36860700016|82310400026|56012099006|261009223027099003|261028144727099003|261021121427099003|261026121527099003|261022105027099003|261026140227099003|261022075727099003|10067099003|18002099003|22082099003;
+X-Microsoft-Antispam-Message-Info: Nm9OhhwNLzMkepy6aZpjqjQJfTepYbPlE6bsuOR+yqiL8DAB1u9aG6wIhJK9x6wBQaJcjmePLpP/5GhoW4uoNgVrLO2cUuVV+yrP0h1Q0zd3kw/MFUwR7m7iR2LChfu+pAkKx2uECQjiPTKSMccI5AoNCRCQdmobLT5XTnFaSS+V8zTaprLwWSBYmGVDGACgAdvtQ6FTebinLLHYvDUvC8vDaMRx7QBrAnRLFOTx9fnferuIhiasgyFHyO0JPItx705PNeuJWXnrGULf2SYXvpL+rU2Gwzx3d3itDLL2OqCDzW9Gh0trgj6O8aBl1KspnNwI2kfV1mpd5c0UBS3EUxVjeNxVhqAZpOn1HmomEG0Z3yRYo5wyoLqhon3QlAVhkMD3f01jO9nv+aAEWl+tX+Y0mV66ln0juVDj3oQBtjzBBZShQWKZPqPTs2DEStXF9yfv+zITPg0ZIVM+n0tmQDKxLs1GA0w2lioirg9o2mdY4XSc62Vn2zvqJObIlA0PTMDwpmIB6h0JJsKuJrFd2Xdyi6hFKONMjkqDck/lC0YI9l5gl16mU2AC+lis7c2DN9cpYbjZNbJkbt5D/QJoMONXfsNiv6GqPOm6hVRNZSYOooMTOxJy6tB4TjVO8cvhFEnWv0jp9ZYg9pUqzBh6FgSWxiX5tF83KLzZE0IXOqDzRcAMZv1OGkJ/VvhisvQu
+X-Forefront-Antispam-Report: CIP:222.71.101.198;CTRY:CN;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:smtprelay.cixcomputing.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(1800799024)(23010399003)(7416014)(376014)(36860700016)(82310400026)(56012099006)(261009223027099003)(261028144727099003)(261021121427099003)(261026121527099003)(261022105027099003)(261026140227099003)(261022075727099003)(10067099003)(18002099003)(22082099003);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: FmPSYE7kT66ZDmkgwtkoxUcADCXkZ/zAecoBx9zTEo8zfpDNVkv639E0Yj9aGGgk0x1f3LavNvSipCMZWVpI36BKPKszIubwn/SjfigQbF7iwXTW1F2DjaKmNx+1IjJCZm6wbinJm1HLBHMXi53AfTBSmrp4PimPnAqOgIjLXNckco6d/pnzlePFZnCAD35Y+XiqrhSAXT6nqTxRelDMrFY3o7gq6RtSAdpCJ8zlURw/Kg2z3/0qSxoVDWD5oNm9T0YVKIE4Ca/n4wHlKYkqZyAJPa6xyq1irwy6XEr23n3U7rsGhN69RT05JXtHULuRS/Fz559zSmQeLu1uf7lChNX7PRUG9tiTvo0o9mqOjLuCGk16FE9me25t8N4TLi8ebMmx/IURYn1fFGo8kEE+rztcdMa+fPRafzqTDj/N6tzJ5C5T3LLPi7ayXgazegHu
+X-OriginatorOrg: cixtech.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Nov 2026 08:15:34.7745
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 35edf797-eb58-4c78-d734-08df38b97868
+X-MS-Exchange-CrossTenant-Id: 0409f77a-e53d-4d23-943e-ccade7cb4811
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=0409f77a-e53d-4d23-943e-ccade7cb4811;Ip=[222.71.101.198];Helo=[smtprelay.cixcomputing.com]
+X-MS-Exchange-CrossTenant-AuthSource: TY2PEPF0000AB88.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYZPR06MB6192
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261101_232228_876907_9634CC7F 
-X-CRM114-Status: GOOD (  11.58  )
+X-CRM114-CacheID: sfid-20261102_001543_877994_1085C413 
+X-CRM114-Status: UNSURE (   9.40  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -1.9 (-)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -107,54 +120,173 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,
-	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,
-	FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,
+X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
 	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
 	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-The mtk_hdmi_pll_drv_setting() function can return -EINVAL when
-the requested pixel clock is outside its supported range.
+Add the four USB/DP combo PHY nodes to the Sky1 SoC device tree and
+enable them on the Radxa Orion O6.
 
-Currently, mtk_hdmi_pll_prepare() ignores this return value and
-continues with PLL initialization even when the driver settings
-fail.
+Each PHY node describes its USB and DisplayPort lanes as child nodes,
+points at the S5 system controller instance that controls lane muxing
+and plug orientation, and is disabled by default so that boards that do
+not route the port stay unaffected.
 
-Check the return value and abort PLL preparation on failure to
-avoid powering up the PLL with invalid driver settings.
-
-Signed-off-by: Sreeraj S Kurup <sreekuttan2156239@gmail.com>
+Reviewed-by: Fugang Duan <fugang.duan@cixtech.com>
+Signed-off-by: Gary Yang <gary.yang@cixtech.com>
 ---
- drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/cix/sky1-orion-o6.dts | 28 +++++++
+ arch/arm64/boot/dts/cix/sky1.dtsi         | 96 +++++++++++++++++++++++
+ 2 files changed, 124 insertions(+)
 
-diff --git a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
-index a4bc1268946d..9658781484f1 100644
---- a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
-+++ b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
-@@ -360,6 +360,7 @@ static int mtk_hdmi_pll_prepare(struct clk_hw *hw)
- {
- 	struct mtk_hdmi_phy *hdmi_phy = to_mtk_hdmi_phy(hw);
- 	void __iomem *regs = hdmi_phy->regs;
-+	int ret;
+diff --git a/arch/arm64/boot/dts/cix/sky1-orion-o6.dts b/arch/arm64/boot/dts/cix/sky1-orion-o6.dts
+index e39c87774c12..76f75185b6a8 100644
+--- a/arch/arm64/boot/dts/cix/sky1-orion-o6.dts
++++ b/arch/arm64/boot/dts/cix/sky1-orion-o6.dts
+@@ -117,3 +117,31 @@ &s5_gpio2 {
+ &uart2 {
+ 	status = "okay";
+ };
++
++&usbc_phy0 {
++	orientation-switch;
++	mode-switch;
++	cix,default-conf = /bits/ 8 <0x03>;
++	status = "okay";
++};
++
++&usbc_phy1 {
++	orientation-switch;
++	mode-switch;
++	cix,default-conf = /bits/ 8 <0x03>;
++	status = "okay";
++};
++
++&usbc_phy2 {
++	orientation-switch;
++	mode-switch;
++	cix,default-conf = /bits/ 8 <0x03>;
++	status = "okay";
++};
++
++&usbc_phy3 {
++	orientation-switch;
++	mode-switch;
++	cix,default-conf = /bits/ 8 <0x03>;
++	status = "okay";
++};
+diff --git a/arch/arm64/boot/dts/cix/sky1.dtsi b/arch/arm64/boot/dts/cix/sky1.dtsi
+index 0a820f45feb9..672aade42d6f 100644
+--- a/arch/arm64/boot/dts/cix/sky1.dtsi
++++ b/arch/arm64/boot/dts/cix/sky1.dtsi
+@@ -606,6 +606,102 @@ mbox_ap2sfh: mailbox@80a0000 {
+ 			cix,mbox-dir = "tx";
+ 		};
  
- 	mtk_phy_set_bits(regs + HDMI_1_CFG_6, RG_HDMITX21_TX_POSDIV_EN);
- 
-@@ -374,7 +375,9 @@ static int mtk_hdmi_pll_prepare(struct clk_hw *hw)
- 	mtk_phy_clear_bits(regs + HDMI_1_CFG_6, RG_HDMITX21_FRL_D2_EN);
- 	mtk_phy_clear_bits(regs + HDMI_1_CFG_6, RG_HDMITX21_FRL_CK_EN);
- 
--	mtk_hdmi_pll_drv_setting(hw);
-+	ret = mtk_hdmi_pll_drv_setting(hw);
-+	if (ret)
-+		return ret;
- 
- 	mtk_phy_clear_bits(regs + HDMI_1_CFG_10, RG_HDMITX21_BG_PWD);
- 	mtk_phy_set_bits(regs + HDMI_1_CFG_6, RG_HDMITX21_BIAS_EN);
++		usbc_phy0: usb-phy@9030000 {
++			compatible = "cix,sky1-usbdp-phy";
++			reg = <0x00 0x9030000 0x00 0x40000>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++			clocks = <&scmi_clk CLK_TREE_USB3C_DRD_PHY3_GATE>;
++			resets = <&s5_syscon SKY1_USB_DP_PHY0_RST_N>,
++				 <&s5_syscon SKY1_USB_DP_PHY0_PRST_N>;
++			reset-names = "core", "apb";
++			cix,usbphy-syscon = <&s5_syscon 0>;
++
++			status = "disabled";
++
++			usb3_phy0: usb-port@0 {
++				reg = <0x0>;
++				#phy-cells = <0>;
++			};
++
++			usbc0_dp_phy: dp-port@1 {
++				reg = <0x1>;
++				#phy-cells = <0>;
++			};
++		};
++
++		usbc_phy1: usb-phy@90a0000 {
++			compatible = "cix,sky1-usbdp-phy";
++			reg = <0x00 0x90a0000 0x00 0x40000>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++			clocks = <&scmi_clk CLK_TREE_USB3C_0_PHY3_GATE>;
++			resets = <&s5_syscon SKY1_USB_DP_PHY1_RST_N>,
++				 <&s5_syscon SKY1_USB_DP_PHY1_PRST_N>;
++			reset-names = "core", "apb";
++			cix,usbphy-syscon = <&s5_syscon 1>;
++
++			status = "disabled";
++
++			usb3_phy1: usb-port@0 {
++				reg = <0x0>;
++				#phy-cells = <0>;
++			};
++
++			usbc1_dp_phy: dp-port@1 {
++				reg = <0x1>;
++				#phy-cells = <0>;
++			};
++		};
++
++		usbc_phy2: usb-phy@9110000 {
++			compatible = "cix,sky1-usbdp-phy";
++			reg = <0x00 0x9110000 0x00 0x40000>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++			clocks = <&scmi_clk CLK_TREE_USB3C_1_PHY3_GATE>;
++			resets = <&s5_syscon SKY1_USB_DP_PHY2_RST_N>,
++				 <&s5_syscon SKY1_USB_DP_PHY2_PRST_N>;
++			reset-names = "core", "apb";
++			cix,usbphy-syscon = <&s5_syscon 2>;
++
++			status = "disabled";
++
++			usb3_phy2: usb-port@0 {
++				reg = <0x0>;
++				#phy-cells = <0>;
++			};
++
++			usbc2_dp_phy: dp-port@1 {
++				reg = <0x1>;
++				#phy-cells = <0>;
++			};
++		};
++
++		usbc_phy3: usb-phy@9180000 {
++			compatible = "cix,sky1-usbdp-phy";
++			reg = <0x00 0x9180000 0x00 0x40000>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++			clocks = <&scmi_clk CLK_TREE_USB3C_2_PHY3_GATE>;
++			resets = <&s5_syscon SKY1_USB_DP_PHY3_RST_N>,
++				 <&s5_syscon SKY1_USB_DP_PHY3_PRST_N>;
++			reset-names = "core", "apb";
++			cix,usbphy-syscon = <&s5_syscon 3>;
++
++			status = "disabled";
++
++			usb3_phy3: usb-port@0 {
++				reg = <0x0>;
++				#phy-cells = <0>;
++			};
++
++			usbc3_dp_phy: dp-port@1 {
++				reg = <0x1>;
++				#phy-cells = <0>;
++			};
++		};
++
+ 		pcie_x8_rc: pcie@a010000 {
+ 			compatible = "cix,sky1-pcie-host";
+ 			reg = <0x00 0x0a010000 0x00 0x10000>,
 -- 
-2.55.0
+2.50.1
 
 
 -- 
