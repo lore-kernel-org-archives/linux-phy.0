@@ -2,12 +2,12 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D2A1C606A324
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Nov 2026 08:59:20 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E4FF6606A324
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Nov 2026 08:59:22 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=DcM2LD9U;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=infradead.org header.i=@infradead.org header.a=rsa-sha256 header.s=desiato.20200630 header.b=MCDQRdDu;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=CFFIM3QB
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=UBi6w2kE;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=infradead.org header.i=@infradead.org header.a=rsa-sha256 header.s=desiato.20200630 header.b=XLg+2Cbt;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=RN5Sr9Dq
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -15,81 +15,81 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=KlfLxznXzUnXQylCC2lbW9sygzdQzjVx9QxnV6qvyiA=; b=DcM2LD9UCcHUQGTxRNLNISYaMr
-	TmoICtXF0jnT8GMimTEjjF9Zg5dbjfu4tWJpqZkMUBDf12uQOT6amdiUfsqw66lA1W9jmJsKiOIDR
-	UkX4AxYaLMxR+Y8uiLUOUiSL7BzYABrAQCMq6scbaPcmx6bCio2jeLHv0TNikwZYYHj9vPlYY9P/5
-	GOCRNdcqt1hjRjlLFRmChsJ8fVxrBj008Q7QghO0pmRv59C92T0aLbO08N6lykXxUCL9EdKi91d5r
-	xv6XkLYimB3+YC7OelbnDZuYi0IjKf5vBNnrXZN3j4Sl5HxwRTUQBfxpvU5zjU8KkJIgYNTI0ON7g
-	uDT8LBjA==;
+	bh=uFfHBuVKaUo/BbX6LAcXdTywpN0Sd62++GHHuIT5SBk=; b=UBi6w2kEOU2OvF+XaysSZ1recr
+	xNxXnaMx7kU8JkXfoAgNLeB+RETQKrFBd/vyeaSqWR8PRToxgwRJJ9pG7O57e8WZoWyepty5YLehr
+	OIHkIOhqwNS1JHdEl31s7a1h1lxky679cmPo76o8huC9J0R8EBtRwXaBXHaz/Ehz7XfrV0dAMibmA
+	mykkq1HD0bb8aQ94vwnVg07dWH19k6rKePZQoDF+7I4YHL+YsAn2ZvCrmHtcO6alzEDDOaG9AjSZZ
+	zWSoBSWmZjfKkFvu2UJ0EksecfKR1bxDXN0jIDh66lDsvZIfXSCNvpsvqitHS33Ppe4dThOcSMPz+
+	Z9zIprbg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOAMS-00000001fB2-2FCR;
-	Tue, 03 Nov 2026 08:59:20 +0000
+	id 1xOAMU-00000001fCY-2hJi;
+	Tue, 03 Nov 2026 08:59:22 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOAMO-00000001f8K-3TSD
+	id 1xOAMT-00000001fBP-2CBc
 	for linux-phy@bombadil.infradead.org;
-	Tue, 03 Nov 2026 08:59:16 +0000
+	Tue, 03 Nov 2026 08:59:21 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
 	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
 	Content-Type:Content-ID:Content-Description;
-	bh=XdWSx5jEVXu7O1L25NHaAg46eSzRTcB1Jp91d+n101c=; b=MCDQRdDuU48F8IvbtTe5y2Wc/4
-	1A1ybN+2U80IMFne5NlyvA3RsWIx36+9M60bBD6cr6ToIU508O1d8QV1SuBQAA5/tNRjwuTUZg8gT
-	4k6VgQy0D2hF9a89uy+zeM6Ji+gRoutESw7ZzJz5E/4Hg4tEVDxaa1F4vViEk7VBfh9mTRKjpbq5I
-	gFq+rgiZ74etH21tGbRRyHAxSV+ukdyI0/buU174XMREHvBuMDOQTgUQXhKZ8i3PNms5x+dVyfF1S
-	sA+0nwb5T3YX6FL2RkvrUFMK3FQXMpkw32baXSVtzJedShff1ShGthoHYq7urFvV6FHKrz0lbFNo9
-	r1RM6xRQ==;
-Received: from mail-pj1-x1032.google.com ([2607:f8b0:4864:20::1032])
+	bh=rA1Ovd0Kzmkr6NATBzq19LdNhCK5jrPNyVR/5XvodLA=; b=XLg+2Cbt3WDvXVtOT3nSk8zWHz
+	Yyc4TrhARbUBKayyYqWkRUXg1COVrNrWwCNEEYGji+HP4jMDNFlolGP49isfRy/3Sqge8zicJpr3o
+	ECge/rvwkh1Y0IYqBTXrgyf8MdjF1W0pQ7LMR36gjFz/gkRE5GHRmwKu9Wu3/qBVHfhMxtRXvNnlb
+	UMnmyunDwdxLxtRIF6T5CbcfNjJgB2vU9KKP8kmPcN/5AuKMUX2JekhmT/6Bt54iLVXLCIpyFJ29Z
+	aqVZAxHQI9u+9urrFqDXYc8RgPFEfpoL6mR9J1zHJryp03SUEpiS62LSXjSimldW+/DDzYrsC0G1u
+	GOnCuG4Q==;
+Received: from mail-pj1-x1030.google.com ([2607:f8b0:4864:20::1030])
 	by desiato.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOAMF-00000000DWE-30J3
+	id 1xOAMQ-00000000DXZ-1Q8w
 	for linux-phy@lists.infradead.org;
-	Tue, 03 Nov 2026 08:59:09 +0000
-Received: by mail-pj1-x1032.google.com with SMTP id 98e67ed59e1d1-3ab3f899c8aso686517a91.1
-        for <linux-phy@lists.infradead.org>; Tue, 03 Nov 2026 00:59:07 -0800 (PST)
+	Tue, 03 Nov 2026 08:59:19 +0000
+Received: by mail-pj1-x1030.google.com with SMTP id 98e67ed59e1d1-3ad0c2e71ebso566771a91.2
+        for <linux-phy@lists.infradead.org>; Tue, 03 Nov 2026 00:59:17 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1793696346; x=1794301146; darn=lists.infradead.org;
+        d=gmail.com; s=20260707; t=1793696356; x=1794301156; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=XdWSx5jEVXu7O1L25NHaAg46eSzRTcB1Jp91d+n101c=;
-        b=CFFIM3QBjUl4ShOP2zZT6TO2i/B/N2MieqdXaOtAP8w1NEXWd/vL1U4LwYQ5Ufpo9J
-         hw0Cdia7YLkpjvM5rWeyvr2Z1Gh+lawRgCb0UGly1Q361axI4UN++cn2gDAuxdDJrWM1
-         ZQEbJsoTjcLnKBnfLgL2K9KiLC/1aFltIIaCt1Id6mfoIAnBGdCBsbi5ve/hdt07BSzl
-         74TxyDcPu0xrFEIREqMVbyiJVvuKFenWYu8wYKZKO6quVoHR5PTOiaVLiAfMhxb7bhp/
-         3CMzY2JXCddDC3YRqty8FS6AUXa7JsZVJL6Ks7DQPotteolzyFvKMubu6X6d/Sy98WXb
-         C46A==
+        bh=rA1Ovd0Kzmkr6NATBzq19LdNhCK5jrPNyVR/5XvodLA=;
+        b=RN5Sr9DqxRwGShmFj5Sp6gpk35fHVaMYBjploGAMJol/kLB304zvDlngth25XfJw5k
+         M5zSypfzKZXFUxpvG/f5KAKhoT2o5RjLZQzfe6z83/fsjvNCIgX8sB4OTncvIdF6354V
+         SP3P/c03bM5U+eMrx97EY0fxNpqGnAr8awJ19lD1avZt0rFziFncXSi9rodE2TuNZR2Z
+         YV5k86Owq9xBV4CY79udVY5HJwxwl8ulyEelX1eqj2WXeZyu5Atwh7yxm26AltiiIXfN
+         BZcpZ/tQsWNGnDHSfyWXh45mjzEaPlURgS5CdER0eq6xSql6O51kw3fbBbEnZeaiwsVj
+         jX6Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793696346; x=1794301146;
+        d=1e100.net; s=20260707; t=1793696356; x=1794301156;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=XdWSx5jEVXu7O1L25NHaAg46eSzRTcB1Jp91d+n101c=;
-        b=PcbKw24HNCkmPTFowoxsAIJJsm8MXJ2hgGIaIOf3xxWD/yCbzyWUuBEgSorKRUQ5UK
-         gxgR71oDPTX9uuphN04UrvqVY1c/m462rfppZcIATKERSWGEZ9lxpHdNzDNBf7AyyXR2
-         b4Niv5dmTIzHew1DtsvAZnc+AK1dwDFyzNaCcUm+5dT4C942DiFpmY2D/ohB9g72DMyb
-         +m+8AlkGptbpN252ESL8s4CqaDCJBcZbi9pKkKonDCoJ4202E+aBq7K7azbyoKqJCNDx
-         /yt94wC+mGaIuWILUFNBq5EUYiNgAKmk6cX7flI+ZTQIf49kr9sgMfXLDxtSbCqgYWWU
-         Cs0g==
-X-Forwarded-Encrypted: i=1; AKwUvBzYLHYmZoc2FXyRnPfgj9MELPL/z6XevVXKBHN7teEiK343FFrC7WLLCRSaxEr5rdJkLNwj6sBwTww=@lists.infradead.org
-X-Gm-Message-State: APuU4Z+vZJJMifR+M5hr/Q5qDpGylW404GOFhj0xOgRHFrbdE6ozGCiW
-	Frpq1xwY0RNngEbkuViGsSjLmxK/2AZEENa5uTncfOkYFVfLBgOn+4ni
-X-Gm-Gg: AYBFou1V6mkMBbhj5MvrDbmy+Kktgg3xLVtLTr7yOlYeUJIvklrJiftG4Az8vjT77+7
-	n2UnOcSj+KgMItmbWYUShpbS1tPBU9vBTmelr5detdp3vNw/bng643VvCMRELtQb3nPjJOpyY+p
-	37gk6VOdIlWqaXjeI6cKwBQ/4IMS1uXnckg4JHdzgQFGoiGWRSJB/E+Q6qCzpDEUXZX863hG8EZ
-	MQ8bn4oj+NLdoIZBj1ImUUkgr9/ltvj35yMMp5Ij81tDycKJy1SbPTLmoQG/fdZ8MQXpGN2AKpq
-	lfMrVKLibCTBoE08fc6q9NsCjsE8dJ37kvc7jQywaFfwKoCR1+I0ro7KGnLnYEXmmyNWOSPLRsD
-	gpE91NUnVtjtQz/VNrSYD2RxNDmheK9GAG3mPYIjrOSmnVCuZv1CKQkIqg1UlonPLP7M4w/yweE
-	MfRZ73Hv/oTua1BIxR6mQJfT62y4Kg8btd4c/KOJb37G6KoYd/VFvqOLMTr5IREjRap1Y+u92zi
-	lWqi7iogftwOTDlWpHMJaI/YoutCwXBc/JdNYUuBLfNr0VCHM097rh70EjyNU5qJ8L7diF+VB46
-	DtR+5Bi+eK24NCOilpKvs/t+p98wDhwQp71dg0xIVzQLWypUKGlVjM+pUTAkkLNCB40APqO9iKN
-	HJWtE0qwVThbf
-X-Received: by 2002:a17:90b:4487:b0:3ac:9c37:9422 with SMTP id 98e67ed59e1d1-3ae89626108mr17481897a91.2.1793696345686;
-        Tue, 03 Nov 2026 00:59:05 -0800 (PST)
+        bh=rA1Ovd0Kzmkr6NATBzq19LdNhCK5jrPNyVR/5XvodLA=;
+        b=EU9KJAKR6fW0hJilQyTyAVKgaLlBRYVFvX4m5T8twnY7qKplIfHuqzNxlgD7nzauu3
+         hAS3xHEKh9LH/pnA3+heBEap2VklgcQPzbXTrWrabk7IBxDh72qVQh4GsaODkoivvC6m
+         wJmyw7xSZoChlQKKZ4BSUcwtdHzdbmcozprvGiEdmsGVlwS3iSbhCuDXjkAPop77ucl+
+         RLaeixfjdcg/Ud1DLblzRPbMDTO8Ka+knEZw190YWoRUzZGgrwJXr4GOf1n/0wU2vJx/
+         IjnahMZS1pkSKOt3fs6LpyLr2d7du56387uEg+apSFPQNOlfZ0PZVaezCRcB8L1R3T6u
+         Q5hA==
+X-Forwarded-Encrypted: i=1; AKwUvByUEgwfMnQWlBQ1hkvMtwFf6ljH4FAWwez6ZYnOjmCv5by+ui5AJRrt/JPTdrgDieDZtG+1CQOGYDI=@lists.infradead.org
+X-Gm-Message-State: APuU4Z/fEI+MOEwC81/52YaTv557mLpcNPUa1O5zR/z7qB+Y1rnH3CPT
+	oHf/gChA6mAsbTBTuoOBCq3nWXfyD7fiGDPk79BjTAZi6ZB3ME2gozgg
+X-Gm-Gg: AYBFou0Y5JfyBb2sJ4YMyYPesacmExk9HYu9fC7KRYlCIRvvBHCoj0B/bLp4ufAP1yA
+	DiVJIx25Hatgve8PZdClyuHhjG48zMWYKjb/OYMyTNXC09msRUVZWfBR1Qz2fVlyG2o0Ks3lXzc
+	rK7H2F2UU2dtI3fgl5toPVzdak1f4itsdJECN7fs9BNW49QmnNcSxm2vqsKP6IA8vnYRq2FgA8q
+	Z2+wDqjrAZepmq9zl8QxMwpb/MdIcZtWCCZzQc1PeKVVo7o79P/s0cZvNP5fl3pXnEraLdkbwsk
+	UE2QMmqTUDBjxnYNC+lcw0SPBi2EI4xjzhfNUuE7jg70rsYGuZzrC0GrVMo15AkGC1agzxmm8ri
+	PW4Vx1/pe87uqGA1kLPxmbw4PY81Ebrue+A1hqw3G1FaO2tEMmnOm65QDKTGfGc0LTiv7GwjlY8
+	SkQvMReMoDp+4t2IuSRXLz+oHkLXvVsqWhyhTBKsHI9h/s0KDfCOQtYOIJvDlmYrgmDh0SnxCZM
+	QKJr1/1vQ4kTIq0GdaddGs3Mfe8Ygm5PTOWx921eWh39+E5yIU1RdTHuvsPsS3qfd3vcg4Hb9nA
+	cEhlBuO2IPlNjK8mByvw78CkZT4CFQNjL0T9VoPhHutUEknUq2Do1dywM+yyTNKCnH5rOoNVQwU
+	KwG6rdahbqGst
+X-Received: by 2002:a17:90b:53c4:b0:3ac:9e5e:d1a5 with SMTP id 98e67ed59e1d1-3ae8988339dmr19037670a91.6.1793696355979;
+        Tue, 03 Nov 2026 00:59:15 -0800 (PST)
 Received: from chenyou.. ([140.116.39.229])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b07c6740a1sm3345662a91.10.2026.11.03.00.59.00
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b07c6740a1sm3345662a91.10.2026.11.03.00.59.11
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 03 Nov 2026 00:59:04 -0800 (PST)
+        Tue, 03 Nov 2026 00:59:15 -0800 (PST)
 From: Chen-Yu Yeh <chenyou910331@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
@@ -109,17 +109,17 @@ Cc: Rob Herring <robh@kernel.org>,
 	linux-riscv@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Chen-Yu Yeh <chenyou910331@gmail.com>
-Subject: [PATCH 1/3] dt-bindings: phy: sophgo,cv1800b-usb2-phy: Add USB role switch properties
-Date: Tue,  3 Nov 2026 16:58:45 +0800
-Message-ID: <20261103085847.338613-2-chenyou910331@gmail.com>
+Subject: [PATCH 3/3] riscv: dts: sophgo: sg2002-milkv-duo256m: Enable USB role switch
+Date: Tue,  3 Nov 2026 16:58:47 +0800
+Message-ID: <20261103085847.338613-4-chenyou910331@gmail.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20261103085847.338613-1-chenyou910331@gmail.com>
 References: <20261103085847.338613-1-chenyou910331@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261103_085908_395483_3911CA4B 
-X-CRM114-Status: GOOD (  10.05  )
+X-CRM114-CacheID: sfid-20261103_085918_424078_A4EE3BA9 
+X-CRM114-Status: GOOD (  12.69  )
 X-Spam-Score: 0.1 (/)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -141,45 +141,41 @@ X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-The USB role on CV18XX/SG200X is selected by the ID override in the top
-syscon, which belongs to this PHY, so the PHY is what provides the role
-switch.
+The USB-C port of the Milk-V Duo 256M is the only USB connector on the
+bare board, and the vendor image uses it in device mode by default.
+Host mode is mainly needed with the USB & Ethernet IO board, whose USB
+hub hangs off the same controller.
 
-Allow usb-role-switch and role-switch-default-mode on the PHY node. The
-default mode only has a meaning when the role switch is present.
+Use the role switch in the PHY so that one DTB can do both, and default
+to peripheral to match the vendor image.
+
+This changes the default of the port from host to device. To use host
+mode, including the hub on the IO board, select it at runtime:
+
+  echo host > /sys/class/usb_role/3000000.syscon:phy@48-role-switch/role
 
 Signed-off-by: Chen-Yu Yeh <chenyou910331@gmail.com>
 ---
- .../bindings/phy/sophgo,cv1800b-usb2-phy.yaml         | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ arch/riscv/boot/dts/sophgo/sg2002-milkv-duo256m.dts | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/sophgo,cv1800b-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/sophgo,cv1800b-usb2-phy.yaml
-index 2ff8f85d0282..a1d164686b07 100644
---- a/Documentation/devicetree/bindings/phy/sophgo,cv1800b-usb2-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/sophgo,cv1800b-usb2-phy.yaml
-@@ -34,6 +34,15 @@ properties:
-   resets:
-     maxItems: 1
+diff --git a/arch/riscv/boot/dts/sophgo/sg2002-milkv-duo256m.dts b/arch/riscv/boot/dts/sophgo/sg2002-milkv-duo256m.dts
+index d4e86c15664e..0ad1dfd9449c 100644
+--- a/arch/riscv/boot/dts/sophgo/sg2002-milkv-duo256m.dts
++++ b/arch/riscv/boot/dts/sophgo/sg2002-milkv-duo256m.dts
+@@ -105,6 +105,11 @@ &uart0 {
+ };
  
-+  usb-role-switch:
-+    $ref: /schemas/usb/usb-drd.yaml#/properties/usb-role-switch
+ &usb {
+-	dr_mode = "host";
++	dr_mode = "otg";
+ 	status = "okay";
+ };
 +
-+  role-switch-default-mode:
-+    $ref: /schemas/usb/usb-drd.yaml#/properties/role-switch-default-mode
-+
-+dependencies:
-+  role-switch-default-mode: [ usb-role-switch ]
-+
- required:
-   - compatible
-   - "#phy-cells"
-@@ -51,4 +60,6 @@ examples:
-       clocks = <&clk 93>, <&clk 94>, <&clk 95>;
-       clock-names = "app", "stb", "lpm";
-       resets = <&rst 58>;
-+      usb-role-switch;
-+      role-switch-default-mode = "peripheral";
-     };
++&usbphy {
++	usb-role-switch;
++	role-switch-default-mode = "peripheral";
++};
 -- 
 2.43.0
 
