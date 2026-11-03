@@ -2,142 +2,112 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B3427606A331
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Nov 2026 21:41:28 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 09D90606A31B
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Nov 2026 21:57:57 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=tSGnsyaX;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=f3UbJzwY;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=J64gnc4o
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=dlWcf2St;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=NN4zXVrv
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=AvXJmqt8UAn6KlJgCeK1G3SU5o3ueMBcRKK/NHPX8CA=; b=tSGnsyaX+XssLTP8xlXtamXhSc
-	PdwjBfVN0rcZqFuGKT3xsBhmTsY8ufaTfYbj7JYyaSrxXIYJ6sL/eRz4MbsmhKKcKBnMfFii0OvfC
-	XSkt+iKS9k3u2ybyE0nxbKlWEEP+x5VLUHMc4F79U77ESDr5UD8fVwcQY6GVPJbEZEmS4CyHQ6T2P
-	hbNd6HgOPodx4TcAq/bfCSabMQLMIXlVLjv6fcc5CAuIqLLg7mMOtVBixKhbE1QcczOcHFI3vRRYu
-	XWQVG/RlvnG0yaQNrMKZQMwJX5tp44PpHwa7XBHm1SGHJPzeq5mgc4eHdDSoxeaOeSWK7NrhTdv1R
-	RBlksdSg==;
+	bh=Wnoh2IuEuj+O0cnCx5MHhrwOVmJao8sW6dkF2+XRNig=; b=dlWcf2StZCQIQDt4y/inlgkiIg
+	aA1cQW7sjSI4Dg/U4ppqnmyyLddNro8dc8v4SUFmu1Nvf/G3OLN7sqovXXd2tFSvooxiOHbICjM01
+	s+qKq4aEvPHdZQvIH16kv04oEKwnRPO7cCnJXlzDSx+pYIYQ7VNj7QI9SD2luzDANrMXeBLT2ACeY
+	dFKHNeRMdbQw427UBXgl4+rdKvlp3dKdRuva/D4QUnhdJXp2H+aumwi9MB2VDsBtZJx2p8x+u6xpp
+	IT/Hd4PxylwGketsRnFrN80ybNSUWNjsPQw0CqG3ZG0TbvUmk6xFtbubakQ9pucSAnDL1MMuV0scG
+	mhb6aTxg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOMG0-00000003khR-1dZn;
-	Tue, 03 Nov 2026 21:41:28 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1xOMVw-00000003n4v-2c46;
+	Tue, 03 Nov 2026 21:57:56 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOMFp-00000003kaT-0gc4
+	id 1xOMVv-00000003n4i-0GhO
 	for linux-phy@lists.infradead.org;
-	Tue, 03 Nov 2026 21:41:25 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A3LL0Nj445706
-	for <linux-phy@lists.infradead.org>; Tue, 3 Nov 2026 21:41:16 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=mWF4Em/s+/j
-	7aCjLGWQL65SgDN+9hBOaJk8SJTBvAJo=; b=f3UbJzwYsZb59Z5cK8xXeu3TMXJ
-	7qaeeZGm0cuCdqGGn6Spdu6UEw0IiqLMZ6n1lQkXit13pIEol/9A6dyawmJMmzN6
-	bd7aayDEYF31v5AvAfKHRXfq33qR8coZ8HSClQVR7mZkXseXdiI3Vpr2I7EdDz32
-	RMWPdNbHFO7jqmJQkCTmG83D/rMiJ+BBRmyc/IiG26iK6MakxWmfW4iGDoadVumV
-	fwn9RWVCXJkJgVEw54vKaTRyLco6eImGqzRbDHmjreCCU9qttw+4atEZCPsp2KO6
-	ruNF0YUAFhHM3oQpMnrmpSkdHifvTi02DTDLKGxj8XEyDSeaMhE6Hkp4cPg==
-Received: from mail-dl1-f72.google.com (mail-dl1-f72.google.com [74.125.82.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hqn8mrjy4-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 03 Nov 2026 21:41:16 +0000 (GMT)
-Received: by mail-dl1-f72.google.com with SMTP id a92af1059eb24-1b0d864826cso247841c88.1
-        for <linux-phy@lists.infradead.org>; Tue, 03 Nov 2026 13:41:16 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1793742075; x=1794346875; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=mWF4Em/s+/j7aCjLGWQL65SgDN+9hBOaJk8SJTBvAJo=;
-        b=J64gnc4ooGtBLgMzdLhJLgUTFWRcVOSn8jVvWe1xO61F4uPBSKtSczybbLL2Jd0/PQ
-         0RpjzxYmmo952bpBuSOiWQYlJALK2G4IK8ryFLAAW0WABzmMiEAEVuE007h3+23CV3Fd
-         KaBTLhcIRfhJKj9NzS26CEd8h5PoSSHmaD6BCTWyoN1Iq8x4qyLKh62fTfIk+YCxjHzB
-         PzRay2Wd8h6AZBa0Lq6cEDL63jAbcfmBFVI/Q0FlXfNyWj9zhduNDWf3ypj8IbNbVuHu
-         jacvk4nJpW/H6k0nKk8YDUg+nVq0EUF81swuOUCQIMh9ENrMoUYMsTftADzcYbAYeJVF
-         F5ag==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793742075; x=1794346875;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=mWF4Em/s+/j7aCjLGWQL65SgDN+9hBOaJk8SJTBvAJo=;
-        b=tinTJ+gEPxjlBJrYu6pyYZgLQi0OhV2otlx/SN/xVppKHV3b+hMXM2FtVVBfKJvFkJ
-         UIQBkyPEec+lgNm5u8TU4S17KpY7VLAqLrfm6c36z3YToDbrM+law3qLJNCVWhy/keY0
-         cpR5QG1qkH2Z9HKARKIwZyxsqjviE9kAv0LsZie1twwS6hi1rG73LEJu3qgkk9sk1ot1
-         N3EgkAYE+vNzSzdnhVOG/kBUBSmiy7+i44op62cylSg3cJ50+1rlOBe6tGYIG8LLatR4
-         XswULSAJvGnBvnWlHDabiHHP9XJz3hFzgFWgWQ3TPoZfehw8dvsrKV0V6IqjgsKka0hM
-         3vQA==
-X-Forwarded-Encrypted: i=1; AKwUvBxGnJdQqqL6duZzPjl0P4JTDc4dzysWBcHg8p/3jgYy/KuhJpyfrEK5LzgYIQEGa38lxE4EsNADroA=@lists.infradead.org
-X-Gm-Message-State: APuU4Z+4gbrgCp3jogsmUREFPLo9hahkFFEOygXNBpp2H3+aiilesKqf
-	MMrxYjQ7zSDeJ0GM6rlIIYi7KQURBQ9Cr5k94YHVpMjXoDt+ugZAhi9lnRBQmAsHeRw5XMBe5h5
-	0CXor5sby9LL/OEurkjG9oZNLEZUCEo8OMcQX8bpDlax/+7JQkMQGy43nLV7Ht4vAjKeG
-X-Gm-Gg: AYBFou2EP8Z0HKQ85G4Gb22FLx8+kLo6obxNiufLX5JFAEoTj2tEr+1ejyfHu1GxVPC
-	QnR3QKzn7xmOtqqJjQW+I50geCQH+5Mn8fsClJVPtFFtVpGyzODGgv1BzH5pa1zv4HckOA3mYM9
-	5OymVRw1R9ADWNKzu2xwz28V8Ctm4CfMyagrpwgzC+rdPUDV3dG+Aiy8bBPaNS3r+112knPE77I
-	oeixvuXTmYJ9Hizg7EmkJ21gLnxXjQUBjb3w7fxX7sklKH8sybPCMazFXkeB4zyAYLta32nfHvN
-	N6mMwvF0dLTdE758WhluXP09dgFXtOcGGKn7JKujyyFfATaXKK/wYdU+jNYvneWNyUZI8N6VuK7
-	Qsf0Fr2/RrVfCXeQi5pQ2OWze/CEm2yOnWXZSgH5rb3xcWuPFzt18TEyRCu7iCifKpKsZQLKmhV
-	bADcZvTrQ+fFN+ZrWfMYQhEfFc9Ds=
-X-Received: by 2002:a05:701b:4188:10b0:166:b307:5855 with SMTP id a92af1059eb24-1ac4f91fceemr22434981c88.0.1793742070218;
-        Tue, 03 Nov 2026 13:41:10 -0800 (PST)
-X-Received: by 2002:a05:701b:4188:10b0:166:b307:5855 with SMTP id a92af1059eb24-1ac4f91fceemr22434945c88.0.1793742069598;
-        Tue, 03 Nov 2026 13:41:09 -0800 (PST)
-Received: from hu-aarunnan-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b245c1c272sm1537440c88.8.2026.11.03.13.41.08
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 03 Nov 2026 13:41:09 -0800 (PST)
-From: Anusha Arun Nandi <anusha.nandi@oss.qualcomm.com>
-To: Bryan O'Donoghue <bod@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-        Manivannan Sadhasivam <mani@kernel.org>,
-        gjorgji.rosikopulos@oss.qualcomm.com,
-        hariram.purushothaman@oss.qualcomm.com, akapatra@quicinc.com,
-        jigarkumar.zala@oss.qualcomm.com, linux-phy@lists.infradead.org,
-        linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org,
-        linux-kernel@vger.kernel.org
-Subject: [PATCH v2 3/5] phy: qcom-mipi-csi2: Make OPP table optional
-Date: Tue,  3 Nov 2026 13:41:03 -0800
-Message-Id: <20261103214105.3605181-4-anusha.nandi@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20261103214105.3605181-1-anusha.nandi@oss.qualcomm.com>
-References: <20261103214105.3605181-1-anusha.nandi@oss.qualcomm.com>
+	Tue, 03 Nov 2026 21:57:55 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 988F943F93
+	for <linux-phy@lists.infradead.org>; Tue,  3 Nov 2026 21:57:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7F0A21F00A1C
+	for <linux-phy@lists.infradead.org>; Tue,  3 Nov 2026 21:57:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1793743074;
+	bh=4H8eU6z2JR3iXPnaXPV2uTwunMPI539+3YmBBPsTqq8=;
+	h=References:In-Reply-To:From:Date:Subject:To:Cc;
+	b=NN4zXVrv4HX75rNjDW8n2rGhpIdcwT226SOYEzZIJkf4wky///aAUqXsW/LNjWIkB
+	 +jqhBmbKEGHqpB/RfJ3IOme2x4Uro3Y6FFkYU7Lcb9k3EYVAL1RdZOfZBIO6UiCdmd
+	 KU9/YPoFAEbimG8yPTj0+ET9beRolcznhTqYs/aM+V+aZskkRu62idx1+KnN4AwSau
+	 1qKaj1M79st+FVG6mdkANAoRT1WY2ezZ902n3LEXe1SUMJ3M1nio7P61uGsrtysmqO
+	 t+l8RFDh+9jqGqOg9Z/Kt58ZxPm2v6e40EATAVtiGV3R2E35gTnJzuKbjPNba1LZpc
+	 +CFP4IuYefF8g==
+Received: by mail-lf1-f42.google.com with SMTP id 2adb3069b0e04-5be3d5927ceso626e87.3
+        for <linux-phy@lists.infradead.org>; Tue, 03 Nov 2026 13:57:54 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AKwUvBz9ExU45rQwn9YFVTlpmGxBfY8qkXS1D3CK4jaRlqrmAfC6GRQ3qtrcaco/+azhQUXIAgSn/5JM3CU=@lists.infradead.org
+X-Gm-Message-State: APuU4Z/dyxeNSYYM/E8VrTBD/unDY/bgOIs73jtI9iGyL7zNNZP8JLru
+	nNfrcD0vETAuxZwA7USCflQ7tKVvS30XnI9DDd59NQd5s4zShtP2LjSsDSjz+Nzz0ZVHUHaOzhl
+	oe9Y0T+40D8kd530Z726D2IaqDhkOt0Q=
+X-Received: by 2002:a05:6512:a94:b0:5bf:b246:87a2 with SMTP id
+ 2adb3069b0e04-5bfd957b610mr4953868e87.10.1793743072116; Tue, 03 Nov 2026
+ 13:57:52 -0800 (PST)
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-Proofpoint-GUID: KoKeuHzMczmPcjq6iu6ekRhsdun4tjei
-X-Proofpoint-ORIG-GUID: KoKeuHzMczmPcjq6iu6ekRhsdun4tjei
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTAzMDA4NiBTYWx0ZWRfX5wzSSgGphpbJ
- rlGLd1Rgj0R5MsmTvOUUMhtCM24WViPTJX2RqXMRWXow+aXvfVxjkf9BUfBwpu6LZpwtqKhFgQv
- iL1GkM20WQKrYxFrRq05fMQ3mYm4Q+vbg/Rksha2qgF/2I6l18O3VgepsZpW6lQM2I8WuaUu1nR
- UbCGqbLhIo35J5Te46UhOEhXhECwmAYamEuOBQex7sPBPbjvIgxBwfSCl6Nylw6D5FcuZy5xZia
- 1pNnLIdrt0dWmKcmXlwsw+7LeepXYtdOlg+ZXA/aDrpjzfzy1ikdI0wliE1zYP7WizkXllOvtKr
- tN9NTqr6ihY9XCZ4jkSA7uFVg9PnGIFUGoMPK2J7abcM/MaQXozYhlwd3yCK8tD3Vo95EfBpIE0
- 5hrs0wnwJxZXhxxlifCe2JfQmoqgDEKx17YAlGqE90wOsfXbk4hk9EZABelPWm+dOWANqGI3vuR
- G0XXtgysqoq0NqpGVGA==
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTAzMDA4NiBTYWx0ZWRfX6Dn7IXSE4K/U
- isIANdqCUiRF4jZkzZmtbhd5WFd0ShZmVrte1FYNrff4s+fzm9kCpcmhrA8wJ/HAfwRwCL/YBcI
- s8YQYljWE99ladEj50k5ai8Njp60D9U=
-X-Authority-Analysis: v=2.4 cv=HbWB3SE8 c=1 sm=1 tr=0 ts=6aea54fc cx=c_pps
- a=bS7HVuBVfinNPG3f6cIo3Q==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22 a=EUspDBNiAAAA:8
- a=xhLwaI6HiHkcQTGlYsAA:9 a=vBUdepa8ALXHeOFLBtFW:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
- definitions=2026-11-03_05,2026-11-03_04,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 priorityscore=1501 adultscore=0 malwarescore=0 suspectscore=0
- clxscore=1015 spamscore=0 phishscore=0 lowpriorityscore=0 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2610300000 definitions=main-2611030086
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261103_134117_331200_9F419D35 
-X-CRM114-Status: GOOD (  16.33  )
-X-Spam-Score: -2.8 (--)
+References: <20261102135330.2493332-1-robh@kernel.org>
+In-Reply-To: <20261102135330.2493332-1-robh@kernel.org>
+From: Linus Walleij <linusw@kernel.org>
+Date: Tue, 3 Nov 2026 22:57:39 +0100
+X-Gmail-Original-Message-ID: <CAD++jLm10TL4FkkyhvyF-CKNREA-mOSjbR5zKUisC_Wx1-nqgg@mail.gmail.com>
+X-Gm-Features: AclHuK-xZTzLWXlPWAOCiWHBj5C4K-MSmY2Fnjjj517UPimoWDCn2vjwhrapfPU
+Message-ID: <CAD++jLm10TL4FkkyhvyF-CKNREA-mOSjbR5zKUisC_Wx1-nqgg@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: Use hex unit address patterns
+To: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
+	Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Vadim Fedorenko <vadim.fedorenko@linux.dev>, 
+	Arkadiusz Kubalewski <arkadiusz.kubalewski@intel.com>, Jiri Pirko <jiri@resnulli.us>, 
+	Ivan Vecera <ivecera@redhat.com>, Benson Leung <bleung@chromium.org>, 
+	Guenter Roeck <groeck@chromium.org>, Bartosz Golaszewski <brgl@kernel.org>, Frank Li <Frank.Li@nxp.com>, 
+	Sascha Hauer <s.hauer@pengutronix.de>, Pengutronix Kernel Team <kernel@pengutronix.de>, 
+	Fabio Estevam <festevam@gmail.com>, Jonathan Cameron <jic23@kernel.org>, 
+	David Lechner <dlechner@baylibre.com>, =?UTF-8?B?TnVubyBTw6E=?= <nuno.sa@analog.com>, 
+	Andy Shevchenko <andy@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
+	Alexandre Torgue <alexandre.torgue@foss.st.com>, Olivier Moysan <olivier.moysan@foss.st.com>, 
+	Arnaud Pouliquen <arnaud.pouliquen@foss.st.com>, Dmitry Torokhov <dmitry.torokhov@gmail.com>, 
+	Thierry Reding <thierry.reding@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>, 
+	Fabrice Gasnier <fabrice.gasnier@foss.st.com>, Lee Jones <lee@kernel.org>, 
+	Srinivas Kandagatla <srini@kernel.org>, Ekansh Gupta <ekansh.gupta@oss.qualcomm.com>, 
+	Ulf Hansson <ulfh@kernel.org>, Hans Ulli Kroll <ulli.kroll@googlemail.com>, 
+	Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller" <davem@davemloft.net>, 
+	Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+	Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+	Manivannan Sadhasivam <mani@kernel.org>, Ray Jui <rjui@broadcom.com>, 
+	Scott Branden <sbranden@broadcom.com>, 
+	Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>, 
+	Kunihiko Hayashi <hayashi.kunihiko@socionext.com>, Masami Hiramatsu <mhiramat@kernel.org>, 
+	Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
+	"Rafael J. Wysocki" <rafael@kernel.org>, Daniel Lezcano <daniel.lezcano@kernel.org>, 
+	Zhang Rui <rui.zhang@intel.com>, Lukasz Luba <lukasz.luba@arm.com>, 
+	Orson Zhai <orsonzhai@gmail.com>, Baolin Wang <baolin.wang@linux.alibaba.com>, 
+	Chunyan Zhang <zhang.lyra@gmail.com>, Paul Kocialkowski <paul.kocialkowski@bootlin.com>, 
+	Shawn Guo <shawnguo@kernel.org>, Chanh Nguyen <chanh@os.amperecomputing.com>, 
+	Alistair Francis <alistair@alistair23.me>, Julius Werner <jwerner@chromium.org>, 
+	Paul Cercueil <paul@crapouillou.net>, Dmitry Osipenko <digetx@gmail.com>, 
+	Florian Fainelli <f.fainelli@gmail.com>, Thierry Reding <thierry.reding@gmail.com>, 
+	Ray Jui <ray.jui@broadcom.com>, Scott Branden <scott.branden@broadcom.com>, 
+	Krzysztof Kozlowski <krzk@kernel.org>, dri-devel@lists.freedesktop.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	netdev@vger.kernel.org, chrome-platform@lists.linux.dev, 
+	linux-gpio@vger.kernel.org, imx@lists.linux.dev, 
+	linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org, 
+	linux-iio@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com, 
+	linux-sound@vger.kernel.org, linux-input@vger.kernel.org, 
+	linux-tegra@vger.kernel.org, mfd@lists.linux.dev, 
+	linux-arm-msm@vger.kernel.org, linux-mmc@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-pm@vger.kernel.org
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,145 +117,22 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Not every SoC the generic MIPI CSI2 PHY driver supports needs an OPP
-table: a CSIPHY with only a single, unscaled power-domain has no
-performance state to vote on, so running its "core" clock through
-the OPP framework buys nothing over a plain clk_set_rate(). Skip
-devm_pm_opp_set_clkname()/devm_pm_opp_of_add_table() in probe() and
-the OPP/performance-state handling in
-phy_qcom_mipi_csi2_set_clock_rates() when soc_cfg->opp_clk_name is
-unset, falling back to clk_round_rate()/clk_set_rate() on the timer
-clock only.
-
-x1e80100 still sets opp_clk_name, so this is a no-op for it.
-
-Reviewed-by: Jigarkumar Zala <jigarkumar.zala@oss.qualcomm.com>
-Signed-off-by: Anusha Arun Nandi <anusha.nandi@oss.qualcomm.com>
----
- .../phy/qualcomm/phy-qcom-mipi-csi2-core.c    | 72 ++++++++++---------
- 1 file changed, 39 insertions(+), 33 deletions(-)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
-index 3de25728ed28..181813caf282 100644
---- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
-+++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
-@@ -32,40 +32,43 @@ phy_qcom_mipi_csi2_set_clock_rates(struct mipi_csi2phy_device *csi2phy,
- 	unsigned long opp_rate = link_freq / 4;
- 	struct dev_pm_opp *opp;
- 	long timer_rate;
--	int i, pstate;
-+	int i = 0, pstate;
- 	int ret;
- 
--	opp = dev_pm_opp_find_freq_ceil(dev, &opp_rate);
--	if (IS_ERR(opp)) {
--		dev_err(csi2phy->dev, "Couldn't find ceiling for %lld Hz\n",
--			link_freq);
--		return PTR_ERR(opp);
--	}
-+	if (csi2phy->soc_cfg->opp_clk_name) {
-+		opp = dev_pm_opp_find_freq_ceil(dev, &opp_rate);
-+		if (IS_ERR(opp)) {
-+			dev_err(csi2phy->dev, "Couldn't find ceiling for %lld Hz\n",
-+				link_freq);
-+			return PTR_ERR(opp);
-+		}
- 
--	pstate = 0;
--	for (i = 0; csi2phy->pd_list && i < csi2phy->pd_list->num_pds; i++) {
--		unsigned int perf;
-+		pstate = 0;
-+		for (i = 0; csi2phy->pd_list && i < csi2phy->pd_list->num_pds; i++) {
-+			unsigned int perf;
- 
--		if (!csi2phy->soc_cfg->genpds[i].scaled)
--			continue;
-+			if (!csi2phy->soc_cfg->genpds[i].scaled)
-+				continue;
- 
--		perf = dev_pm_opp_get_required_pstate(opp, pstate);
--		pstate += 1;
-+			perf = dev_pm_opp_get_required_pstate(opp, pstate);
-+			pstate += 1;
- 
--		ret = dev_pm_genpd_set_performance_state(csi2phy->pd_list->pd_devs[i], perf);
--		if (ret) {
--			dev_err(csi2phy->dev, "Couldn't set perf state %u\n",
--				perf);
--			dev_pm_opp_put(opp);
--			goto unset_pstate;
-+			ret = dev_pm_genpd_set_performance_state(csi2phy->pd_list->pd_devs[i],
-+								 perf);
-+			if (ret) {
-+				dev_err(csi2phy->dev, "Couldn't set perf state %u\n",
-+					perf);
-+				dev_pm_opp_put(opp);
-+				goto unset_pstate;
-+			}
- 		}
--	}
--	dev_pm_opp_put(opp);
-+		dev_pm_opp_put(opp);
- 
--	ret = dev_pm_opp_set_rate(dev, opp_rate);
--	if (ret) {
--		dev_err(csi2phy->dev, "dev_pm_opp_set_rate() fail\n");
--		goto unset_opp_rate;
-+		ret = dev_pm_opp_set_rate(dev, opp_rate);
-+		if (ret) {
-+			dev_err(csi2phy->dev, "dev_pm_opp_set_rate() fail\n");
-+			goto unset_opp_rate;
-+		}
- 	}
- 
- 	timer_rate = clk_round_rate(csi2phy->timer_clk, link_freq / 4);
-@@ -83,7 +86,8 @@ phy_qcom_mipi_csi2_set_clock_rates(struct mipi_csi2phy_device *csi2phy,
- 	return 0;
- 
- unset_opp_rate:
--	dev_pm_opp_set_rate(dev, 0);
-+	if (csi2phy->soc_cfg->opp_clk_name)
-+		dev_pm_opp_set_rate(dev, 0);
- 
- unset_pstate:
- 	while (i--) {
-@@ -405,13 +409,15 @@ static int phy_qcom_mipi_csi2_probe(struct platform_device *pdev)
- 	if (!csi2phy->timer_clk)
- 		return dev_err_probe(dev, -ENODEV, "no timer clock\n");
- 
--	ret = devm_pm_opp_set_clkname(dev, csi2phy->soc_cfg->opp_clk_name);
--	if (ret)
--		return dev_err_probe(dev, ret, "Failed to set opp clkname\n");
-+	if (csi2phy->soc_cfg->opp_clk_name) {
-+		ret = devm_pm_opp_set_clkname(dev, csi2phy->soc_cfg->opp_clk_name);
-+		if (ret)
-+			return dev_err_probe(dev, ret, "Failed to set opp clkname\n");
- 
--	ret = devm_pm_opp_of_add_table(dev);
--	if (ret)
--		return dev_err_probe(dev, ret, "invalid OPP table in device tree\n");
-+		ret = devm_pm_opp_of_add_table(dev);
-+		if (ret)
-+			return dev_err_probe(dev, ret, "invalid OPP table in device tree\n");
-+	}
- 
- 	num_supplies = csi2phy->soc_cfg->num_supplies;
- 	csi2phy->supplies = devm_kzalloc(dev, sizeof(*csi2phy->supplies) * num_supplies,
--- 
-2.34.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gTW9uLCBOb3YgMiwgMjAyNiBhdCAyOjUz4oCvUE0gUm9iIEhlcnJpbmcgKEFybSkgPHJvYmhA
+a2VybmVsLm9yZz4gd3JvdGU6Cgo+IFVuaXQtYWRkcmVzc2VzIGJ5IGRlZmF1bHQgKGFuZCBtb3N0
+IGNvbW1vbmx5KSBhcmUgaGV4YWRlY2ltYWwuIFRoZXJlJ3MgYQo+IG51bWJlciBvZiBjYXNlcyB1
+c2luZyBkZWNpbWFsIHBhdHRlcm5zLiBGaXggYWxsIG9mIHRoZW0sIGxpbWl0aW5nIHRoZQo+IHBh
+dHRlcm4gdG8gbWF0Y2ggdGhlICdyZWcnIGxpbWl0cyBpZiB0aGVyZSBhcmUgYW55Lgo+Cj4gU2ln
+bmVkLW9mZi1ieTogUm9iIEhlcnJpbmcgKEFybSkgPHJvYmhAa2VybmVsLm9yZz4KCkFja2VkLWJ5
+OiBMaW51cyBXYWxsZWlqIDxsaW51c3dAa2VybmVsLm9yZz4KCllvdXJzLApMaW51cyBXYWxsZWlq
+CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9y
+ZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
