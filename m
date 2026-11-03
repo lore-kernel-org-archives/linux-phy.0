@@ -2,144 +2,98 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7E7FB606EE9C
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Nov 2026 09:58:36 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3BD3C607E60B
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Nov 2026 10:34:30 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=We+MfgAB;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=URR+HC7V;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=kJ0IQVJW
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=qixsJoOy;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=apqUghqM
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=0OSCBhN5T5t21aiZgcPvNj9Tj3X9QqgFk7J1h1TWf7s=; b=We+MfgABgt1oNZ2xmYFy6eJuRt
-	u2njZCrDd28SzVUWXkxJf61rm1txebk7O/Kk+2yrphXLZq4TSbR9sTggOkQ1+70EHeiVDUZuOYIzj
-	l3Uufjy6HrvKQOnbWWY+HlBGBzTCKUxz5ucPlu2gHZc9AlccUAtjJebp0SIbtKaC0Kf1YfYBYk6qu
-	jQTckFU+AsYfrGVmvXRVU+8NbTTAYAaB+GR3XD2nY5QF3SY5NV2jFoF+iWzJlZahtEa2OgxfXgo6+
-	1cftXqMYen4P22JELNOwaPpJvLiv00PW77seG/tUPYo9nTmCJ8VCy6lLTHSvOdFBVpeE97Z8VnpoM
-	1DG8tKBA==;
+	bh=wW/0rOSKas90dMM7YeAELWzzU4FmhXbzJGQb6t25+8s=; b=qixsJoOy0+WNx3srBbGgvwfg8g
+	oFlJ1HFygpoN5Lg0lfrhS3w1hJS6fL+m4XiblHQrRiivveSY+3Hy7BfNy26eHY1dOaDQi83ReYGW3
+	0jSAMBEhIXZDokQCQ7CajB2U3vjs8bibUNLlwauNrE1o6udUSjGajtDbCBgP/n6XIKf2hocMAJxHJ
+	B0TjBuYUxjTzeJp6FJuTmI+Tn0VOanmLC7+JBFsHTBrA5tVwSY8kXXcWlWxr75rydfsc48LBcPh/J
+	jypR18W004FP0oqonw7VkblfmCc3XPC6IDRu940LjnY/4Sy60LyWUnr/gRBAVkQiytMyK8ezq71/j
+	XUa8wcOw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOBHo-00000001rXj-14Pk;
-	Tue, 03 Nov 2026 09:58:36 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1xOBqX-000000021Rz-3S2n;
+	Tue, 03 Nov 2026 10:34:29 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOBHm-00000001rWt-0Scg
-	for linux-phy@lists.infradead.org;
-	Tue, 03 Nov 2026 09:58:35 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A37iN0f2402837
-	for <linux-phy@lists.infradead.org>; Tue, 3 Nov 2026 09:58:33 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=h8VbAAq/OiCxzdza5wuB7U2i
-	MKbdYZdGtWxp29XUI/s=; b=URR+HC7VSNmr26BD7sbjCXSM8m3Rs0mYiDc87PwZ
-	FLwxM/2wDX7Gnbg7TdfqPYR41ymgU4Oq6J7/ehMsKuO/gvXjYuiU5POIktxva4aB
-	3QK9UMWQ3Nxjia/YMog5YRWQHg7nyrepV+dbEr6BCxyk1j9trKDUL912mfw2D/58
-	+YRYHsJBu8O8u98AeofTzeollGSOnG/YHBh4CHp2UKlO2WdHPcQ+9iIfkrgOAGPn
-	8EGfyLTx6tAYuhzKSQPKeSGbBEew7HYJcu6le7wfgKX61uO3AtgYaDyqD72sAbXA
-	JaQjtNmLQyVPnVvZ0fvpUS3grPXu302A06K7VpD0qkXsYw==
-Received: from mail-qv1-f70.google.com (mail-qv1-f70.google.com [209.85.219.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hq3uy29xk-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 03 Nov 2026 09:58:33 +0000 (GMT)
-Received: by mail-qv1-f70.google.com with SMTP id 6a1803df08f44-91b7e7d5f56so75686616d6.3
-        for <linux-phy@lists.infradead.org>; Tue, 03 Nov 2026 01:58:33 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1793699913; x=1794304713; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=h8VbAAq/OiCxzdza5wuB7U2iMKbdYZdGtWxp29XUI/s=;
-        b=kJ0IQVJWRyRiCMRaVa0E/yb1e7z6yPhmp2WLGW3ZTW6zLwLhCWbDHiPuVM+XdvgK2T
-         +eeu69hcVpFreh/VLtfeAExRMVHoOk10GpiWBswrL+Jlnfg8ovl0HFMENGtpjcydFRVm
-         6zNgtq8RBIz+VArv8IFHKkgaz4gkSYdVnOGZ+BvwCn/bfTm91ZRxW1bR3f7TBoqEdf1e
-         ngtM+HTBt8hmcIxCj9Z+op5KdxOrh6t04EN5GH32mRrsENTxXAD8X08nwN0u/mR946at
-         +E6D69qCkaGLwt1qlF0setIf3NyIUbZ7MJo7F+5fP4+z8HA82zinvQqI8/6H97B0jyfn
-         K1vA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793699913; x=1794304713;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=h8VbAAq/OiCxzdza5wuB7U2iMKbdYZdGtWxp29XUI/s=;
-        b=Vcpm/nxyvxfIzruCtGaULythnyT2J4scQIXBhp3kkYQ30KonVoCHLmAr+VZ+cO1KEn
-         RfH17rStILxFbvOYJXVJWeUuNR2Pm0Eb5oOgLdgyBFYshRm7a18QTVD0X/oy/maoFSxI
-         PaLpmn7gAtBUEuBoIDUhXHRxd5YtoAQQRchIHK4sGN65kHUQsxNMTlGXOaOdd/FmGbF6
-         JWGQc0/4x3vHH/1BAYkA18ow3tqR3RfXAAdkA6XEBHsYG8taf201o4LFgk96TK4F7eJ0
-         YLJezDX2kxFNYmgaiP1sxxCFW0zSS6U0Lm7eUHoSYWCT5J7ZFX0+HtJ8OM2i3ac6QIAG
-         fPIg==
-X-Forwarded-Encrypted: i=1; AKwUvBwWsPBqHOWDmU0IlSWrxrx0EYFYehuNSY1d/Rzgrp6H4iD/ZpsKkOzoyo/pQFxjYvAa7RyXmBWtDBU=@lists.infradead.org
-X-Gm-Message-State: APuU4Z8wefKKPJ1AJUr6CgFRDJWBhiYT5/MtPk+aFbYyUcTG/q5rXmnW
-	A5yTk9o/b2S+gzSY40JBwJSscL7/C5hT/lfJqB6Z5B6yLjMbBlkeMi/wdIKfbV1t2I5aNbXPu8g
-	DNo6D2sGq0txiYOUThQgwWu3G0Siaa3noGvv1SBp+szi+1RV4RT5F+AL2zVQdA/EeTAfa
-X-Gm-Gg: AYBFou0R3CnjZbWDayDG6uqTEWUPRKTnYLuNkxctrGJKvR9wDsiMAY/I+2qkIqhD7bb
-	QfJwhuYXRnn5azFDm2kwNqKOKQdRfDmOadpvpxwXEF3r6854PPJ6f5gm7WIadlAWkM5Yf5dwnvz
-	kh1dYkOjon3r+YOjts7Z+Ue+gqr588Hvz1aMd02jgyIBeP1hQDcDN3j4ZoumTtJAB2+kLzAFBOY
-	XryW5VWwetV9prQNCug1srYGlBwvMI4nBgu14IpTMEMza4ojeL94V5AKA+7gGtXiDiw23V2P1o2
-	zVILdIFMipE4ETXSjGsUqpL5WHp9uSxgPTRiYbMR63IN4nvPOhfWLk7xdOSIVSXiBe+dB68wrwL
-	y4FekhE6DqasYImho4tb6oxae3pbFsNsnsr+lQyuyldrsYr11AEx74dytE9XT0+k=
-X-Received: by 2002:a05:620a:2b43:b0:93d:92a9:1a5e with SMTP id af79cd13be357-94421799683mr2160884185a.37.1793699912361;
-        Tue, 03 Nov 2026 01:58:32 -0800 (PST)
-X-Received: by 2002:a05:620a:2b43:b0:93d:92a9:1a5e with SMTP id af79cd13be357-94421799683mr2160881885a.37.1793699911805;
-        Tue, 03 Nov 2026 01:58:31 -0800 (PST)
-Received: from oss.qualcomm.com ([188.27.161.77])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4b2a82cf248sm69051855e9.2.2026.11.03.01.58.30
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 03 Nov 2026 01:58:31 -0800 (PST)
-Date: Tue, 3 Nov 2026 11:58:29 +0200
-From: Abel Vesa <abel.vesa@oss.qualcomm.com>
-To: Konrad Dybcio <konradybcio@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-        Manivannan Sadhasivam <mani@kernel.org>, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Subject: Re: [PATCH 2/2] phy: qcom: qmp-combo: Update SC8280XP USB3 PCS
- settings
-Message-ID: <6ri5rp62hyh4iwhtlcjycjnjz4zfcvzt6rort3c2443azr5slc@ka7uyggocbei>
-References: <20261102-topic-usb3_sequence-v1-0-5b144f5e6865@oss.qualcomm.com>
- <20261102-topic-usb3_sequence-v1-2-5b144f5e6865@oss.qualcomm.com>
+	id 1xOBqS-000000021R0-1Ij6;
+	Tue, 03 Nov 2026 10:34:24 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 50D7960621;
+	Tue,  3 Nov 2026 10:34:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 547A81F00919;
+	Tue,  3 Nov 2026 10:34:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1793702063;
+	bh=GSqdOUTAGBHqvRwhBajLTqyzAy7NJSRaodL2JaKq0Eg=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=apqUghqMhsHN4Trpoky2ktzmBWOFMhBOIk800IfwMCUvM+YfUWZXmYmUIfWw0Ny8q
+	 M4rGo1Ztuy1Z+7b2SlYoFKvB8WsLBl7xem30ZQqpKKJG+npgYcG6UN0FEGIE7saLzO
+	 w49oM1hEO+mtzHrUuXqu/NBMwXxgmHscEggqPEEqRXWaZcpKAY0YSDmsSLAqn6j15Y
+	 Q+Sth//qr0f+bdqlGX/3j2FZdUUv7toc1V4V/dbIwjMRF+7XVt3f+0Gnu6DwiRIwxo
+	 h0mdUIafykms+4IIO7psb9WuQxayavIhgMhanT99pe5O25qzj973a6Dvw0pf74CbOo
+	 mYCN0dAg2vwAA==
+Date: Tue, 3 Nov 2026 11:34:20 +0100
+From: Thierry Reding <thierry.reding@kernel.org>
+To: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+	Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Vadim Fedorenko <vadim.fedorenko@linux.dev>, Arkadiusz Kubalewski <arkadiusz.kubalewski@intel.com>, 
+	Jiri Pirko <jiri@resnulli.us>, Ivan Vecera <ivecera@redhat.com>, 
+	Benson Leung <bleung@chromium.org>, Guenter Roeck <groeck@chromium.org>, 
+	Linus Walleij <linusw@kernel.org>, Bartosz Golaszewski <brgl@kernel.org>, 
+	Frank Li <Frank.Li@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>, 
+	Pengutronix Kernel Team <kernel@pengutronix.de>, Fabio Estevam <festevam@gmail.com>, 
+	Jonathan Cameron <jic23@kernel.org>, David Lechner <dlechner@baylibre.com>, 
+	Nuno =?utf-8?B?U8Oh?= <nuno.sa@analog.com>, Andy Shevchenko <andy@kernel.org>, 
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue <alexandre.torgue@foss.st.com>, 
+	Olivier Moysan <olivier.moysan@foss.st.com>, Arnaud Pouliquen <arnaud.pouliquen@foss.st.com>, 
+	Dmitry Torokhov <dmitry.torokhov@gmail.com>, Jonathan Hunter <jonathanh@nvidia.com>, 
+	Fabrice Gasnier <fabrice.gasnier@foss.st.com>, Lee Jones <lee@kernel.org>, 
+	Srinivas Kandagatla <srini@kernel.org>, Ekansh Gupta <ekansh.gupta@oss.qualcomm.com>, 
+	Ulf Hansson <ulfh@kernel.org>, Hans Ulli Kroll <ulli.kroll@googlemail.com>, 
+	Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller" <davem@davemloft.net>, 
+	Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, 
+	Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>, 
+	Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>, Kunihiko Hayashi <hayashi.kunihiko@socionext.com>, 
+	Masami Hiramatsu <mhiramat@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>, 
+	Mark Brown <broonie@kernel.org>, "Rafael J. Wysocki" <rafael@kernel.org>, 
+	Daniel Lezcano <daniel.lezcano@kernel.org>, Zhang Rui <rui.zhang@intel.com>, 
+	Lukasz Luba <lukasz.luba@arm.com>, Orson Zhai <orsonzhai@gmail.com>, 
+	Baolin Wang <baolin.wang@linux.alibaba.com>, Chunyan Zhang <zhang.lyra@gmail.com>, 
+	Paul Kocialkowski <paul.kocialkowski@bootlin.com>, Shawn Guo <shawnguo@kernel.org>, 
+	Chanh Nguyen <chanh@os.amperecomputing.com>, Alistair Francis <alistair@alistair23.me>, 
+	Julius Werner <jwerner@chromium.org>, Paul Cercueil <paul@crapouillou.net>, 
+	Dmitry Osipenko <digetx@gmail.com>, Florian Fainelli <f.fainelli@gmail.com>, 
+	Thierry Reding <thierry.reding@gmail.com>, Ray Jui <ray.jui@broadcom.com>, 
+	Scott Branden <scott.branden@broadcom.com>, Krzysztof Kozlowski <krzk@kernel.org>, 
+	dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	netdev@vger.kernel.org, chrome-platform@lists.linux.dev, linux-gpio@vger.kernel.org, 
+	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+	linux-hwmon@vger.kernel.org, linux-iio@vger.kernel.org, 
+	linux-stm32@st-md-mailman.stormreply.com, linux-sound@vger.kernel.org, linux-input@vger.kernel.org, 
+	linux-tegra@vger.kernel.org, mfd@lists.linux.dev, linux-arm-msm@vger.kernel.org, 
+	linux-mmc@vger.kernel.org, linux-phy@lists.infradead.org, linux-pm@vger.kernel.org
+Subject: Re: [PATCH] dt-bindings: Use hex unit address patterns
+Message-ID: <aum4oV6N8g32lr--@orome>
+References: <20261102135330.2493332-1-robh@kernel.org>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20261102-topic-usb3_sequence-v1-2-5b144f5e6865@oss.qualcomm.com>
-X-Proofpoint-ORIG-GUID: Bce3ivNTpyGdnoT2k4X-Kb53Iam4LRnK
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTAzMDAzOSBTYWx0ZWRfX7VFVuVBk09yZ
- pEUtFY5AZGYplMTru09RlxghOuhJosQm8DFSeqEAnY/pJSGhEadgjieMfCxDKFHj5OVMyQNShAo
- 80aoQCXmWHWiiMoi+7bNlYdgGhQyqJNT5Te3QZPrpNCH2Q+j0fslaK6RFiS3gnz7r8byTUg2Lc8
- KBFVu7ah8TPXw3meygPT0Ra5WecBtPomlwrSWnbWgM32Nctt2la+OVrSYRH7maVqU03716fN9gy
- W6gDjLC0lL4oVtA67RQvUBopeheCnaywU+Jy04XfIuFe8UQSWYPbYnM0qA+iVEa3aWnj1XUZzob
- Nn3x/mn4dUOAqBTHAuiqpCbagokj4oQ/5kNg8AUNRV+HHvJsjG0033P1COqRkrprD0/FfKCCfCb
- FGsSIb6MNi9JUQ74Up53VL5oWOG1sUw82q74ZhKRBrDfzUDfSmgI6QwiUFTzPxKprDCvGLqL4C3
- +tKiJovg2GYfKLEAW1g==
-X-Authority-Analysis: v=2.4 cv=VoG2kO2n c=1 sm=1 tr=0 ts=6ae9b049 cx=c_pps
- a=oc9J++0uMp73DTRD5QyR2A==:117 a=asF+/XNaGoxFafzDDLC1GQ==:17
- a=kj9zAlcOel0A:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22
- a=EUspDBNiAAAA:8 a=T_UvXWJlDOeQdzyIPjUA:9 a=CjuIK1q_8ugA:10
- a=iYH6xdkBrDN1Jqds4HTS:22
-X-Proofpoint-GUID: Bce3ivNTpyGdnoT2k4X-Kb53Iam4LRnK
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTAzMDAzOSBTYWx0ZWRfX79StJ8j8D/Kl
- uX3hiDOqdH59wNUZHYbynRFes2ZvGy/9UOvJB/VKLDrzg9e7Lmq4RK6Q8zKi+RPYrVQC9BpXtxj
- WOCONAMrdAhyXVBam6SPEgyt+y4vtPU=
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
- definitions=2026-11-03_01,2026-11-02_03,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 phishscore=0 spamscore=0 bulkscore=0 adultscore=0
- priorityscore=1501 lowpriorityscore=0 suspectscore=0 impostorscore=0
- clxscore=1015 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2610300000
- definitions=main-2611030039
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261103_015834_155297_8F72946E 
-X-CRM114-Status: UNSURE (   9.19  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.8 (--)
+In-Reply-To: <20261102135330.2493332-1-robh@kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,26 +103,96 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============7126232178029845965=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 26-11-02 14:58:37, Konrad Dybcio wrote:
-> From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-> 
-> Update the settings to match the latest hardware reference guide.
-> 
-> Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 
-Reviewed-by: Abel Vesa <abel.vesa@oss.qualcomm.com>
+--===============7126232178029845965==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="trphfeiv2dppwi7j"
+Content-Disposition: inline
+
+
+--trphfeiv2dppwi7j
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH] dt-bindings: Use hex unit address patterns
+MIME-Version: 1.0
+
+On Mon, Nov 02, 2026 at 07:53:22AM -0600, Rob Herring (Arm) wrote:
+> Unit-addresses by default (and most commonly) are hexadecimal. There's a
+> number of cases using decimal patterns. Fix all of them, limiting the
+> pattern to match the 'reg' limits if there are any.
+>=20
+> Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
+> ---
+>  .../bindings/display/xylon,logicvc-display.yaml      |  2 +-
+>  .../devicetree/bindings/dpll/dpll-device.yaml        |  2 +-
+>  .../bindings/embedded-controller/google,cros-ec.yaml |  4 ++--
+>  .../intel,ixp4xx-network-processing-engine.yaml      |  2 +-
+>  Documentation/devicetree/bindings/gpio/gpio-mxs.yaml |  4 ++--
+>  .../devicetree/bindings/hwmon/maxim,max31790.yaml    |  2 +-
+>  .../devicetree/bindings/iio/adc/st,stm32-adc.yaml    |  2 +-
+>  .../bindings/iio/adc/st,stm32-dfsdm-adc.yaml         |  6 +++---
+>  .../bindings/input/touchscreen/cypress,tt21000.yaml  |  2 +-
+>  .../memory-controllers/ddr/jedec,sdram-channel.yaml  | 12 ++++++------
+>  .../bindings/memory-controllers/ingenic,nemc.yaml    |  2 +-
+>  .../memory-controllers/nvidia,tegra20-emc.yaml       |  4 ++--
+>  .../devicetree/bindings/mfd/st,stm32-lptimer.yaml    |  2 +-
+>  .../devicetree/bindings/mfd/st,stm32-timers.yaml     |  2 +-
+>  .../devicetree/bindings/misc/qcom,fastrpc.yaml       |  2 +-
+>  .../bindings/mmc/mmc-controller-common.yaml          |  2 +-
+>  .../bindings/net/cortina,gemini-ethernet.yaml        |  2 +-
+>  .../bindings/phy/brcm,cygnus-pcie-phy.yaml           |  2 +-
+>  .../devicetree/bindings/phy/brcm,sata-phy.yaml       |  2 +-
+>  .../bindings/phy/socionext,uniphier-usb2-phy.yaml    |  2 +-
+>  .../devicetree/bindings/sound/qcom,q6asm-dais.yaml   |  2 +-
+>  .../bindings/sound/qcom,q6dsp-lpass-ports.yaml       |  2 +-
+>  .../devicetree/bindings/thermal/sprd-thermal.yaml    |  2 +-
+>  23 files changed, 33 insertions(+), 33 deletions(-)
+
+Acked-by: Thierry Reding <treding@nvidia.com>
+
+--trphfeiv2dppwi7j
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmrpuKwACgkQ3SOs138+
+s6GdNA/+IZX8Lk6Z0c9f09SsgYk1VvnUVRFPU0WGT4gY2GcvOdD9A5ow9mPdHAAc
+EtBw40T/7BL3Fhk7+uhlr+V7FyVZUy0G5N/4tfMdekpeSl0hmPk6eNUZ3T6URtgO
+dU6lC8r8USCEW3cN8XYrzm82EiRcUX6Pb+RLX4p4C1WruvonZi8XvwZFIKyD920z
+XLF+bH/tVACkaHRY8G7btnFl/DKx31gutQbBPn1RuwO5CjpL0XqWowIgev7f7eRd
+lOK1XJ3GITOI5t++ITd75skGT8DQvmJIbLnN1AIrdaTvua0qsbwIe7isv8fhkiwL
+WcqzIJlLXxItYk3WIqMVtdis5wfA0rWHX0kCOYSDQhuuDx1cgxE5qy/S6UJwc22z
+SlMtdhaJ2gotTfdWL/3/wHgf5dVcYCCGZToG3/JzMfZDxjC/bmL7YEJ4Os/Ywm2R
+mG8PqJy88keVzu5pXohMH1tUyBS7AYXTLIOG9tKRGv37w8l2qILJAExv0GrT2bzd
+bV3fMenc2qrgvCvgHxlE19oMzk/6BVP6Tw6jDKD5n5++y6qdZk/y0jadd3Aa79HZ
+erpcvYYDqZpLqZNGgsqNjq+7LDIsiUnUJyXeWutYkkfejvToDBVoNfiwTpcIC9RF
+z1tGodjD4b8kT4/zSnZ/wB4D8GV5H0Ep57UeyMjnWGLftrC1CzE=
+=oYMU
+-----END PGP SIGNATURE-----
+
+--trphfeiv2dppwi7j--
+
+
+--===============7126232178029845965==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============7126232178029845965==--
+
