@@ -2,10 +2,10 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E15B06082286
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Nov 2026 10:42:40 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4A29E606EEA9
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Nov 2026 10:42:45 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=vzdTrfPY
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=0BoHViY9
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -13,45 +13,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=Tay0WxA2Pm88VGFN2NQN7Ss+Z56cNghs8QFJODusiIY=; b=vzdTrfPYw1lRUE3eVk4XdtM7LV
-	KcOMiR2R2ypuaXuyskNA/4WmeqA+Hc8HobGd1gkBgon0+Be0MOkmj6S0aT2UCp7E12Cr7cSDOBSrJ
-	8R6AJFW8fcVQ/hgqlBxAHUZ5J9ioaL5vGKzmIK6BhmvE6QEgkPYPgULR5RuiV1kdSyKd/YZqHNm2t
-	+yeZyJgrra/fJ5lwXkvdd1rLjwu9qsZyhqr68n4CxoEkBiUf+KSD6JFDfsTzWEbrPcqZdK78iiRJC
-	d+A6BgX5S1/CfUG6bjr5Xc13UNeGotzWJxsPIWZuPd+kUDci19NoZqk836BuJiEPdG5KNK/POkHnJ
-	6lEscwyg==;
+	bh=9NX0wl7B40A5gY5KZ/PAre0cTAT5AUyCh44408059Nk=; b=0BoHViY9ANUZy1ddoV8f1m5ZQD
+	QjzCICKT951QwVkq0/0UdGVQd2s+6kxkEiVkFLe4+0X//4L1mCvkjScc+aB8tTO5WwKRrrVBccra5
+	lCjARJ3evZ1nZBpAwjZrmbx/bU5gW8Y8xpHfsJpxVQmY3w+KOr2lRvCQuTP/pKAoau7dapL9C1bXD
+	W0bTRfkzH/M5rwq+7ptbD2iZYDwNXVMOWe4LLQiiVXGgJY0KSvT16zhX0B7dNNsJQfV7JOjCzM2/L
+	VLzzO+PHoj0gYh8RDpfleUtONPhsQyMsnEHr81csno6qMYTGg0eUUIXZ70VN4WlT7P4uRdLzo9t+/
+	WNsWKdxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOByS-000000023Fl-2ioB;
-	Tue, 03 Nov 2026 10:42:40 +0000
+	id 1xOByX-000000023JU-0C4d;
+	Tue, 03 Nov 2026 10:42:45 +0000
 Received: from smtp81.cstnet.cn ([159.226.251.81] helo=cstnet.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOByP-000000023CW-14F6
-	for linux-phy@lists.infradead.org;
-	Tue, 03 Nov 2026 10:42:38 +0000
+	id 1xOByQ-000000023Ci-18nt;
+	Tue, 03 Nov 2026 10:42:39 +0000
 Received: from dfae2b116770.home.arpa (unknown [36.110.52.2])
-	by APP-03 (Coremail) with SMTP id rQCowAAHFpeXuulqpcg7AA--.2830S2;
+	by APP-03 (Coremail) with SMTP id rQCowACneZqYuulqrMg7AA--.6046S2;
 	Tue, 03 Nov 2026 18:42:32 +0800 (CST)
 From: Wentao Liang <vulab@iscas.ac.cn>
-To: Justin Chen <justin.chen@broadcom.com>,
-	Al Cooper <alcooperx@gmail.com>,
-	Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>,
+To: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
 	Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>
-Cc: linux-kernel@vger.kernel.org,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: dri-devel@lists.freedesktop.org,
+	linux-mediatek@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
 	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
 	Wentao Liang <vulab@iscas.ac.cn>,
 	stable@vger.kernel.org
-Subject: [PATCH] phy: broadcom: use devm_clk_get() in brcm_usb_phy_dvr_init()
-Date: Tue,  3 Nov 2026 10:42:40 +0000
-Message-Id: <20261103104240.1373792-1-vulab@iscas.ac.cn>
+Subject: [PATCH] phy: mediatek: hdmi: use devm clock provider registration
+Date: Tue,  3 Nov 2026 10:42:41 +0000
+Message-Id: <20261103104241.1373838-1-vulab@iscas.ac.cn>
 X-Mailer: git-send-email 2.34.1
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-CM-TRANSID: rQCowAAHFpeXuulqpcg7AA--.2830S2
-X-Coremail-Antispam: 1UD129KBjvJXoWxAF4DtFy5KF4rKr1Duw4fAFb_yoW5XFW5pa
-	yxJFWYkr4DCFW7Ka12qw1DZF1Fyw1IgayYkry8t3WS93W3Z348J3W0gr1FvF4ayrWkCws5
-	Jry7Ka4xJ3WDCFUanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+X-CM-TRANSID: rQCowACneZqYuulqrMg7AA--.6046S2
+X-Coremail-Antispam: 1UD129KBjvJXoW7ur48ZFWxuw1DZFy8ZrWkZwb_yoW8XrW3pF
+	1UGa4jyF98AF4xGw1DJ3W7XFyYka43JFWSkrW7G3y5Za15CryfX3yayFyF9FsYyFykua12
+	vr1qvFWrWFW8ZFDanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
 	9KBjDU0xBIdaVrnRJUUUBEb7Iv0xC_Kw4lb4IE77IF4wAFF20E14v26r4j6ryUM7CY07I2
 	0VC2zVCF04k26cxKx2IYs7xG6rWj6s0DM7CIcVAFz4kK6r1j6r18M28lY4IEw2IIxxk0rw
 	A2F7IY1VAKz4vEj48ve4kI8wA2z4x0Y4vE2Ix0cI8IcVAFwI0_Ar0_tr1l84ACjcxK6xII
@@ -66,10 +70,10 @@ X-Coremail-Antispam: 1UD129KBjvJXoWxAF4DtFy5KF4rKr1Duw4fAFb_yoW5XFW5pa
 	Cr1UMIIF0xvE42xK8VAvwI8IcIk0rVWUJVWUCwCI42IY6I8E87Iv67AKxVW8Jr0_Cr1UMI
 	IF0xvEx4A2jsIEc7CjxVAFwI0_Cr1j6rxdYxBIdaVFxhVjvjDU0xZFpf9x07bOAw3UUUUU
 	=
-X-CM-SenderInfo: pyxotu46lvutnvoduhdfq/1tbiCRIAA2rpnIB7pQAAsZ
+X-CM-SenderInfo: pyxotu46lvutnvoduhdfq/1tbiBgEAA2rpnIR99AAAsW
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261103_024237_667749_0F2DC19D 
-X-CRM114-Status: GOOD (  12.53  )
+X-CRM114-CacheID: sfid-20261103_024238_697979_B2D44874 
+X-CRM114-Status: GOOD (  11.02  )
 X-Spam-Score: -0.9 (/)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -90,74 +94,40 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-brcm_usb_phy_dvr_init() obtains the USB 2.0, USB 3.0 and suspend
-clocks with of_clk_get_by_name() and clk_get().  Both take a reference
-on the clock that the driver never releases: the error paths after the
-lookups return without clk_put(), and brcm_usb_phy_remove() only
-unregisters the sysfs group and the PM notifier.  clk_prepare_enable()
-and clk_disable_unprepare() only change the prepare/enable counts and
-do not drop the reference.
+mtk_hdmi_phy_probe() registers the PLL clock provider with the
+deprecated of_clk_add_provider(), which takes a reference on the device
+node.  The driver has no .remove callback, so neither the node
+reference nor the provider registration is ever released; after the
+device is unbound, the global provider list still points at the freed
+hdmi_phy and at the unregistered clock.
 
-Use devm_clk_get() so that the references are dropped automatically on
-probe failure and driver detach, and drop the now unused device node
-argument.
+Register the provider with devm_of_clk_add_hw_provider() and
+of_clk_hw_simple_get(), matching the sibling MIPI DSI PHY driver, so
+that it is removed when the device is unbound.
 
-Fixes: 49859e55e364 ("phy: usb: phy-brcm-usb: Add Broadcom STB USB phy driver")
+Fixes: be28b6507c46 ("drm/mediatek: separate hdmi phy to different file")
 Cc: stable@vger.kernel.org
 Assisted-by: DeepSeek-V4.1-Flash and OpenAI Codex
 Signed-off-by: Wentao Liang <vulab@iscas.ac.cn>
 ---
- drivers/phy/broadcom/phy-brcm-usb.c | 11 +++++------
- 1 file changed, 5 insertions(+), 6 deletions(-)
+ drivers/phy/mediatek/phy-mtk-hdmi.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/phy/broadcom/phy-brcm-usb.c b/drivers/phy/broadcom/phy-brcm-usb.c
-index e606db489698..c0cb701e419a 100644
---- a/drivers/phy/broadcom/phy-brcm-usb.c
-+++ b/drivers/phy/broadcom/phy-brcm-usb.c
-@@ -401,14 +401,13 @@ static int brcm_usb_get_regs(struct platform_device *pdev,
+diff --git a/drivers/phy/mediatek/phy-mtk-hdmi.c b/drivers/phy/mediatek/phy-mtk-hdmi.c
+index 52a7d525ff9b..e7ed1b789b34 100644
+--- a/drivers/phy/mediatek/phy-mtk-hdmi.c
++++ b/drivers/phy/mediatek/phy-mtk-hdmi.c
+@@ -178,8 +178,8 @@ static int mtk_hdmi_phy_probe(struct platform_device *pdev)
+ 			return ret;
+ 	}
+ 
+-	return of_clk_add_provider(dev->of_node, of_clk_src_simple_get,
+-				   hdmi_phy->pll);
++	return devm_of_clk_add_hw_provider(dev, of_clk_hw_simple_get,
++					   &hdmi_phy->pll_hw);
  }
  
- static int brcm_usb_phy_dvr_init(struct platform_device *pdev,
--				 struct brcm_usb_phy_data *priv,
--				 struct device_node *dn)
-+				 struct brcm_usb_phy_data *priv)
- {
- 	struct device *dev = &pdev->dev;
- 	struct phy *gphy = NULL;
- 	int err;
- 
--	priv->usb_20_clk = of_clk_get_by_name(dn, "sw_usb");
-+	priv->usb_20_clk = devm_clk_get(dev, "sw_usb");
- 	if (IS_ERR(priv->usb_20_clk)) {
- 		if (PTR_ERR(priv->usb_20_clk) == -EPROBE_DEFER)
- 			return -EPROBE_DEFER;
-@@ -440,7 +439,7 @@ static int brcm_usb_phy_dvr_init(struct platform_device *pdev,
- 		priv->phys[BRCM_USB_PHY_3_0].id = BRCM_USB_PHY_3_0;
- 		phy_set_drvdata(gphy, &priv->phys[BRCM_USB_PHY_3_0]);
- 
--		priv->usb_30_clk = of_clk_get_by_name(dn, "sw_usb3");
-+		priv->usb_30_clk = devm_clk_get(dev, "sw_usb3");
- 		if (IS_ERR(priv->usb_30_clk)) {
- 			if (PTR_ERR(priv->usb_30_clk) == -EPROBE_DEFER)
- 				return -EPROBE_DEFER;
-@@ -453,7 +452,7 @@ static int brcm_usb_phy_dvr_init(struct platform_device *pdev,
- 			return err;
- 	}
- 
--	priv->suspend_clk = clk_get(dev, "usb0_freerun");
-+	priv->suspend_clk = devm_clk_get(dev, "usb0_freerun");
- 	if (IS_ERR(priv->suspend_clk)) {
- 		if (PTR_ERR(priv->suspend_clk) == -EPROBE_DEFER)
- 			return -EPROBE_DEFER;
-@@ -542,7 +541,7 @@ static int brcm_usb_phy_probe(struct platform_device *pdev)
- 			return -EINVAL;
- 	}
- 
--	err = brcm_usb_phy_dvr_init(pdev, priv, dn);
-+	err = brcm_usb_phy_dvr_init(pdev, priv);
- 	if (err)
- 		return err;
- 
+ static const struct of_device_id mtk_hdmi_phy_match[] = {
 -- 
 2.34.1
 
