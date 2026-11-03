@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A432F606C577
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Nov 2026 11:10:24 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D902E606C597
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Nov 2026 11:10:26 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=I2KKeeKf;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=CGGniuzx
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=lCtxPPgo;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=chPTcyEu
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,53 +14,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=KAX+T8xPZwjWhdO8ONt22CcQG6HzY1fTgLXOgnf/cGo=; b=I2KKeeKfRKAJTOH6lZbCdR+B3a
-	nbSecM3QAdFq+rVKsLiRrq23bF381MjxKG/DNe4H05rXDb3ElJJXCGRjBS9yNWCIXdYsYmJv3OOB1
-	+R9RJp4WT6olS96NnAr41+lQAuuPnQN2pQBMTxldGUg1defqllmp7DuF+sS5eQOc+XM+24njfkd0O
-	HKbHdaPbjKMCAKpXaX2fnRU5vdSYlEpsgKOUZ3v0ljektSuMZJTANvU0EZvUVKAkPM953RmZ6UTfp
-	u8HhXW4cCzQnppLGiU7Qg+5b4zNdFpqUPCa9XGyIa2Px5UqB02mQ19mHCclw7ppW7w5HA12ZLz6ng
-	YxPyAz+Q==;
+	bh=aU8td4FgVJCXhJdOiA2QIVYiZA5AUnPwZuTJRggIO5Q=; b=lCtxPPgoqQHPirknB2v3TeDsCj
+	6/hmcLLjwgO/qnSWDNFz50uPqeKlRt1hT/pbsd37kjDjF65OWANkqTZ+spxme7+pm0KrYm/IJn8Rl
+	KYe/Mr0LKlSxnIIzioekUWncz6/scUxUJXlSZ4Kh7y8b54yUVJYDYedeH0m4EfjcAyOEr5EBhupD7
+	O7wLBcwaypNQh80NcVpPS2CSbn2GSN5TppiwxPwDMxCFWQswR3mH4dqR4xFFCXmsWkKMTHnlcfR2+
+	W/u0RXPfnJz3G2cbUoCpOJ6BxUJgQHchBLZMKfA0+gLk4eKOMHpYiZqy+M42Srzb0OhbjP/db8Bgc
+	1k70YwSQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOCPI-000000029AE-15ww;
-	Tue, 03 Nov 2026 11:10:24 +0000
+	id 1xOCPK-000000029CT-20JA;
+	Tue, 03 Nov 2026 11:10:26 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOCPG-0000000298d-0N2K;
-	Tue, 03 Nov 2026 11:10:22 +0000
+	id 1xOCPJ-000000029An-0PHA;
+	Tue, 03 Nov 2026 11:10:25 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 977BE43C77;
-	Tue,  3 Nov 2026 11:10:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BF3D41F000C1;
-	Tue,  3 Nov 2026 11:10:20 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id D6A7440659;
+	Tue,  3 Nov 2026 11:10:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 344011F000C1;
+	Tue,  3 Nov 2026 11:10:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793704221;
-	bh=DttFhI0LxeH79eT/YhOIy6UMobLtyg9GPfkbGAxdi3s=;
+	s=k20260515; t=1793704224;
+	bh=/W2mjbTmgpq1pqBSl49B/N5yASScZpRogYzJGRRzFXs=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=CGGniuzx9iamA1AwRWMQ1/ltNGuso7AezbHqZvG0a82iiXHiwroTbFy0Yv0D2P56V
-	 /i8XebYAe+VzhNJoc21a+OLWcTzWVY4BArMpFynRoK/OIafQa3PAxXjLB4Yk+zcHlG
-	 prmDed2NkkYSSKO+ndsUIqitcgo5/TEWdZTJqYCP5oUqCTS9XNMiPy6dfbV5UjSe92
-	 jJWEsLg05NYuiRk6y1ILq5wze+65C5pZ1TWCYp2JmkkJBrnPFPHNVkmZoZr54t37Hf
-	 7uSsVgkIXTA61kgSFV0HcgG3O9l9UZ79fY+oIXA4P8X06WrasZ5jU663w/uNuuzutz
-	 Bly/TlxMd8lqw==
-Date: Tue, 3 Nov 2026 12:10:18 +0100
+	b=chPTcyEu3+6/DSswsWsAKE3hFccxSLecUPqONvn2808hJLH2u9pAFZDufqnPJqcRm
+	 2hTmwuqSPEHqO9LT5G6bbCKKJVixQIQd+2rephmmTvsZXJokl1bIy6nSFv75ODy1Mp
+	 gMrs9tbcm2WRe2e5tI7F0ped9GCj1PxSEaGbJN+PU9/UI9UrcKPDhGt+928fONZuLf
+	 A+bX2wFpEf7Dm1bTv01iVW685qctvFwn00OIrHe6nPpLQeV8HMbc4ovZlNNgg/3b6R
+	 zUJpUi2FU66L8L5rDQSpVLkqqPTLrG+wUU5FF+xGQl+7mCJ8m3yQPCuEksYTALFdZL
+	 P3Hxm0F8QdNCA==
+Date: Tue, 3 Nov 2026 12:10:22 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Wentao Liang <vulab@iscas.ac.cn>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>, 
-	Matthias Brugger <matthias.bgg@gmail.com>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Chunfeng Yun <chunfeng.yun@mediatek.com>, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, linux-mediatek@lists.infradead.org, 
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, stable@vger.kernel.org, 
-	dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org, 
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
-	Manivannan Sadhasivam <mani@kernel.org>
-Subject: Re: [PATCH] phy: mediatek: hdmi: use devm clock provider registration
-Message-ID: <20261103-jumping-nostalgic-mussel-1fddcf@quoll>
-References: <20261103104241.1373838-1-vulab@iscas.ac.cn>
+Cc: Vinod Koul <vkoul@kernel.org>, Shan-Chun Hung <schung@nuvoton.com>, 
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, stable@vger.kernel.org, 
+	linux-phy@lists.infradead.org, Neil Armstrong <neil.armstrong@linaro.org>, 
+	Jacky Huang <ychuang3@nuvoton.com>, Manivannan Sadhasivam <mani@kernel.org>
+Subject: Re: [PATCH] phy: nuvoton: fix USB PHY clock reference leak
+Message-ID: <20261103-tall-elite-otter-d99ba5@quoll>
+References: <20261103104242.1373863-1-vulab@iscas.ac.cn>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20261103104241.1373838-1-vulab@iscas.ac.cn>
+In-Reply-To: <20261103104242.1373863-1-vulab@iscas.ac.cn>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,25 +77,23 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 
-On Tue, 03 Nov 2026 10:42:41 +0000, Wentao Liang wrote:
-> mtk_hdmi_phy_probe() registers the PLL clock provider with the
-> deprecated of_clk_add_provider(), which takes a reference on the device
-> node.  The driver has no .remove callback, so neither the node
-> reference nor the provider registration is ever released; after the
-> device is unbound, the global provider list still points at the freed
-> hdmi_phy and at the unregistered clock.
+On Tue, 03 Nov 2026 10:42:42 +0000, Wentao Liang wrote:
+> ma35_usb_phy_probe() acquires the PHY clock with of_clk_get(), which
+> takes a reference that must be released with clk_put().  The probe
+> error paths after that call return without releasing the reference,
+> and the driver has neither a .remove callback nor a devres-managed
+> clock, so the reference is also leaked when the device is unbound.
 > 
-> Register the provider with devm_of_clk_add_hw_provider() and
-> of_clk_hw_simple_get(), matching the sibling MIPI DSI PHY driver, so
-> that it is removed when the device is unbound.
+> Acquire the clock with devm_clk_get() so that it is released
+> automatically on probe failure and on device removal.
 > 
-> Fixes: be28b6507c46 ("drm/mediatek: separate hdmi phy to different file")
+> Fixes: b48baf69db97 ("phy: nuvoton: add new driver for the Nuvoton MA35 SoC USB 2.0 PHY")
 > Cc: stable@vger.kernel.org
 > Assisted-by: DeepSeek-V4.1-Flash and OpenAI Codex
 > Signed-off-by: Wentao Liang <vulab@iscas.ac.cn>
 > ---
->  drivers/phy/mediatek/phy-mtk-hdmi.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
+>  drivers/phy/nuvoton/phy-ma35d1-usb2.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
 
 Multiple things here:
