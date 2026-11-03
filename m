@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D902E606C597
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Nov 2026 11:10:26 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DA6B4606D830
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Nov 2026 11:10:32 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=lCtxPPgo;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=chPTcyEu
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Vf/NMqMw;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=RyJEK7l3
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,49 +14,51 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=aU8td4FgVJCXhJdOiA2QIVYiZA5AUnPwZuTJRggIO5Q=; b=lCtxPPgoqQHPirknB2v3TeDsCj
-	6/hmcLLjwgO/qnSWDNFz50uPqeKlRt1hT/pbsd37kjDjF65OWANkqTZ+spxme7+pm0KrYm/IJn8Rl
-	KYe/Mr0LKlSxnIIzioekUWncz6/scUxUJXlSZ4Kh7y8b54yUVJYDYedeH0m4EfjcAyOEr5EBhupD7
-	O7wLBcwaypNQh80NcVpPS2CSbn2GSN5TppiwxPwDMxCFWQswR3mH4dqR4xFFCXmsWkKMTHnlcfR2+
-	W/u0RXPfnJz3G2cbUoCpOJ6BxUJgQHchBLZMKfA0+gLk4eKOMHpYiZqy+M42Srzb0OhbjP/db8Bgc
-	1k70YwSQ==;
+	bh=d3KPfhC7ubtpPX15ujidngNXiBRpwxjyn4uiZJ5te1o=; b=Vf/NMqMwLVPRFaR7O8K86oAXud
+	waP/Hh0GH5yqaScm1d3AghIheZ6I2SzahVzDdxXRJVIstU3ra8ZM04pvNNkgSktJJOXxxtZZwGYgD
+	ZvME3o1oC3RD9idJgoHqmt6wr+JXg2PagE2Tn2/a2TfWIO/mnBkURlufh6h8P21oYZX+vQPrcyTZC
+	slvF1Q+RYy5cYXVP8JYwY2oOt8PjZf4DEOxYB73EyBnexjffvZH14e8Wqrefe02+x1ZTMhEGO2EEM
+	uLIIxuNWuSfI6YouZh3E8JNyi62661B095WUTfzyTRbrvTdVB036putXns2aKTvBWYgli4mD2VxoM
+	EEEkUGQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOCPK-000000029CT-20JA;
-	Tue, 03 Nov 2026 11:10:26 +0000
+	id 1xOCPQ-000000029Gx-2emj;
+	Tue, 03 Nov 2026 11:10:32 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOCPJ-000000029An-0PHA;
-	Tue, 03 Nov 2026 11:10:25 +0000
+	id 1xOCPO-000000029Fm-3rMg
+	for linux-phy@lists.infradead.org;
+	Tue, 03 Nov 2026 11:10:30 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id D6A7440659;
-	Tue,  3 Nov 2026 11:10:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 344011F000C1;
-	Tue,  3 Nov 2026 11:10:24 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id ABAE740659;
+	Tue,  3 Nov 2026 11:10:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0B2211F000C1;
+	Tue,  3 Nov 2026 11:10:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793704224;
-	bh=/W2mjbTmgpq1pqBSl49B/N5yASScZpRogYzJGRRzFXs=;
+	s=k20260515; t=1793704230;
+	bh=wwG22fdJmBwOmg0TU45Al3Kqsr0pJf29eGZ38ZwAb+M=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=chPTcyEu3+6/DSswsWsAKE3hFccxSLecUPqONvn2808hJLH2u9pAFZDufqnPJqcRm
-	 2hTmwuqSPEHqO9LT5G6bbCKKJVixQIQd+2rephmmTvsZXJokl1bIy6nSFv75ODy1Mp
-	 gMrs9tbcm2WRe2e5tI7F0ped9GCj1PxSEaGbJN+PU9/UI9UrcKPDhGt+928fONZuLf
-	 A+bX2wFpEf7Dm1bTv01iVW685qctvFwn00OIrHe6nPpLQeV8HMbc4ovZlNNgg/3b6R
-	 zUJpUi2FU66L8L5rDQSpVLkqqPTLrG+wUU5FF+xGQl+7mCJ8m3yQPCuEksYTALFdZL
-	 P3Hxm0F8QdNCA==
-Date: Tue, 3 Nov 2026 12:10:22 +0100
+	b=RyJEK7l3bCWre+kk38VuCHDdjcz94HTRlWD/3iNu0Egasa3PUHwaMAoKuKIpVgRTJ
+	 Iw79dsNijHqIitkKAz5Zy3bTj/UnXFr2rh6Jsdbc5u3eAxRAfr49WmTA16RbckPl5z
+	 dY3or8QA2kyymOeiE54ugE5kC6NprP8spi7gyJJYhO74HgGHaJsONgBxBCZDV65wYi
+	 n6GSTQrFznedeN0hz2fzTiuZtP4fmLVy/T2i8KqFPqGteiGdyYNshb4UIzCmuqdjCZ
+	 NCBJgzsFRYcmQsnv1/xYYUOJWjHCPSQ0m1MUNfBRDrRkX2lPUESXVgxX8fnAAVwkk/
+	 tjgu4LhuUEoXA==
+Date: Tue, 3 Nov 2026 12:10:28 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Wentao Liang <vulab@iscas.ac.cn>
-Cc: Vinod Koul <vkoul@kernel.org>, Shan-Chun Hung <schung@nuvoton.com>, 
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, stable@vger.kernel.org, 
-	linux-phy@lists.infradead.org, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Jacky Huang <ychuang3@nuvoton.com>, Manivannan Sadhasivam <mani@kernel.org>
-Subject: Re: [PATCH] phy: nuvoton: fix USB PHY clock reference leak
-Message-ID: <20261103-tall-elite-otter-d99ba5@quoll>
-References: <20261103104242.1373863-1-vulab@iscas.ac.cn>
+Cc: Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>, 
+	Vinod Koul <vkoul@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>, stable@vger.kernel.org, 
+	Al Cooper <alcooperx@gmail.com>, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Justin Chen <justin.chen@broadcom.com>
+Subject: Re: [PATCH] phy: broadcom: use devm_clk_get() in
+ brcm_usb_phy_dvr_init()
+Message-ID: <20261103-hulking-tuscan-emu-e5ff7e@quoll>
+References: <20261103104240.1373792-1-vulab@iscas.ac.cn>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20261103104242.1373863-1-vulab@iscas.ac.cn>
+In-Reply-To: <20261103104240.1373792-1-vulab@iscas.ac.cn>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,23 +79,26 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 
-On Tue, 03 Nov 2026 10:42:42 +0000, Wentao Liang wrote:
-> ma35_usb_phy_probe() acquires the PHY clock with of_clk_get(), which
-> takes a reference that must be released with clk_put().  The probe
-> error paths after that call return without releasing the reference,
-> and the driver has neither a .remove callback nor a devres-managed
-> clock, so the reference is also leaked when the device is unbound.
+On Tue, 03 Nov 2026 10:42:40 +0000, Wentao Liang wrote:
+> brcm_usb_phy_dvr_init() obtains the USB 2.0, USB 3.0 and suspend
+> clocks with of_clk_get_by_name() and clk_get().  Both take a reference
+> on the clock that the driver never releases: the error paths after the
+> lookups return without clk_put(), and brcm_usb_phy_remove() only
+> unregisters the sysfs group and the PM notifier.  clk_prepare_enable()
+> and clk_disable_unprepare() only change the prepare/enable counts and
+> do not drop the reference.
 > 
-> Acquire the clock with devm_clk_get() so that it is released
-> automatically on probe failure and on device removal.
+> Use devm_clk_get() so that the references are dropped automatically on
+> probe failure and driver detach, and drop the now unused device node
+> argument.
 > 
-> Fixes: b48baf69db97 ("phy: nuvoton: add new driver for the Nuvoton MA35 SoC USB 2.0 PHY")
+> Fixes: 49859e55e364 ("phy: usb: phy-brcm-usb: Add Broadcom STB USB phy driver")
 > Cc: stable@vger.kernel.org
 > Assisted-by: DeepSeek-V4.1-Flash and OpenAI Codex
 > Signed-off-by: Wentao Liang <vulab@iscas.ac.cn>
 > ---
->  drivers/phy/nuvoton/phy-ma35d1-usb2.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  drivers/phy/broadcom/phy-brcm-usb.c | 11 +++++------
+>  1 file changed, 5 insertions(+), 6 deletions(-)
 > 
 
 Multiple things here:
