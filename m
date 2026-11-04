@@ -2,58 +2,68 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AEEF4606A31B
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Nov 2026 23:36:30 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 00014606A337
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Nov 2026 23:44:43 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=1yHVGvtF;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=TkhSGVUY
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=J0fzIUSv;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=GRV9Kd1r
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=fQSsukiesxmTEIRLhnCnZBF7KxnU3qiW+TqVVb4eXNk=; b=1yHVGvtFLnEb3AIx/070+MIobS
-	zcU85lfysOSfVnsr7AReKRuwKmuKtJ117yR6WiUkCBzqzKTX/9/f80WpZSh1PeM2LUJ/yYJ6Wawfe
-	hwfSnx5Rtf7CiBql3pPHFIuMpRDSZisVbAffzLqMjW5c9ek4dSaMLa7JYOB3lVkYl9lBe1n7stXRi
-	pobsX8LF6/v2KGH+REo3tq+c/sKeL7uiAFfgB6YYRl7t99MHVXfYbl35HFvjdVAGUkCdFPuvZzXQj
-	+uLXMj6LP98tyRAMDcfrirr8qJWu5lWLlMENYL4GM0KJlpHXjW2fHxjRDIia63gNtNDSJ+g1Go0Q4
-	nv3/sIwA==;
+	bh=sK4hxrFYAyumzCPkQXVLQCCkz4NzNuIp8CO4eQm2o9I=; b=J0fzIUSvO8bq20U735GcqEtPrH
+	sThsrUNTzeG1Csd5pscFyaDEQOkw5CZ8MfkiaZKvgANjJDvhnnmA6o/8poeqAXAk54T98p2KiFnaq
+	2Aqb2lGL+LhgjW/ePcbgaVTDu0TWorAA951rDa89OEjedBnP6B1peTmjqNDXy1jF8g/kHbgI2/yCX
+	BhcgG3KEgmpw9B99kHqH/hvC8x1iCAHSNfRj6xekrN43JzFk2uOEWInlAGRPB6SSRV6QRaW4fVxVs
+	FfG2obLmOnmyV6ygAcAZqg2g4D15b5F7noluzoqyDrR7ro2yJA/NTEBMFoVOk6HcPyKBJ+cMK4Nra
+	Y9HLa+Sg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOkWs-00000007GFB-1FVN;
-	Wed, 04 Nov 2026 23:36:30 +0000
+	id 1xOkep-00000007GgU-385d;
+	Wed, 04 Nov 2026 23:44:43 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOkWr-00000007GEn-09fm
+	id 1xOkep-00000007GgJ-0Ii8
 	for linux-phy@lists.infradead.org;
-	Wed, 04 Nov 2026 23:36:29 +0000
+	Wed, 04 Nov 2026 23:44:43 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5F3CB40F11;
-	Wed,  4 Nov 2026 23:36:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EF8F21F00A15;
-	Wed,  4 Nov 2026 23:36:27 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 8A31542E67;
+	Wed,  4 Nov 2026 23:44:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EA2E91F000C1;
+	Wed,  4 Nov 2026 23:44:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793835388;
-	bh=HC63oNh8B9d5z9MIjjfOFyT7JXecuzjK9LVa0ZV7YXk=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=TkhSGVUYVoixSIGNPm6RUUt8blIOZ2cbnUNzPnF1nHRSXGlyesuG3xXsRnVa0EXRE
-	 gdnxSa/wbcQnPdIH1C1YvvLLL4lZuxWNZPDsjH/MhH6buVBZJdfBI1zyhYZxT7uKte
-	 nOvl28KOpmtAaflczXritrbjqfRq/x1fSLDkUyY+xxp+l8HyTUhA6l0mmYYzE1w6d9
-	 kQ7ThmrdXc4djVte9kQwyM7ZUf+KIhU7H25nmnKAATw4qKOZFDSDTFC/Lx0r6YTRdH
-	 JGE2zjK8Z097c+CHZ3WvqNqqybRaUZ0mI3vFKeddVgJ/VI9N2XVFofChY2dFbo8UXo
-	 34RhoWgcyMk9w==
-Message-ID: <sashiko-outbox-198301@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v3 4/4] phy: rockchip: inno-usb2: move suspend handling
- into clock prepare/unprepare for RK3588/RK3576
-To: "Sebastian Reichel" <sebastian.reichel@collabora.com>
-Cc: linux-phy@lists.infradead.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
-In-Reply-To: <20261105-phy-rockchip-inno-usb2-clock-fix-v3-4-b20608c08b94@collabora.com>
-References: <20261105-phy-rockchip-inno-usb2-clock-fix-v3-0-b20608c08b94@collabora.com>
- <20261105-phy-rockchip-inno-usb2-clock-fix-v3-4-b20608c08b94@collabora.com>
-Date: Wed, 04 Nov 2026 23:36:27 +0000
+	s=k20260515; t=1793835882;
+	bh=dm6QP+G8YaY/c3dC6XOZVyZ2/2/A8/3XTwxU4Pcnwos=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=GRV9Kd1rEsEfAQ2Kfe2peTMHKixUpD0Ori31y5YzsqVoT4P2WLRH8rnVhNC6Xyk29
+	 v6YIsfMvm/ZB4AdasbzkGk8QeG1n7W3FFSBj0vTFTxDUI4Jn+C4xvtWVkA71egVeh8
+	 kib0ml8hASIq675H42fflpQcJztCXuhT0MJkLTYefQwkvflVfmLiL6+2boJHVzz5u6
+	 MEDv0up8aG8FnSD761ItpDhTkIUoqdbf6aoIeKigx3ebZ1K8jYGEQm7OKgVkL2EGiC
+	 GvMjcMhD5x5QQpuWNl0O2h1olz7by54ZkT/UDQxQ0+Jyk/pwzbDp03XilCFqkvAPO6
+	 iiKGUc92HI91Q==
+Date: Wed, 4 Nov 2026 23:44:37 +0000
+From: Conor Dooley <conor@kernel.org>
+To: joseph@telaak.dev
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Chuanhong Guo <gch981213@gmail.com>, linux-mips@vger.kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: Add Siflower SF19A2890 USB 2.0 PHY
+Message-ID: <20261104-unscented-armory-4dc756ab95cb@spud>
+References: <20261104-sf19a2890-usb-phy-v1-0-db0cad937614@telaak.dev>
+ <20261104-sf19a2890-usb-phy-v1-1-db0cad937614@telaak.dev>
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+In-Reply-To: <20261104-sf19a2890-usb-phy-v1-1-db0cad937614@telaak.dev>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,119 +73,139 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============1985331174955078021=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIHBoeTogcm9ja2NoaXA6
-IGlubm8tdXNiMjogTlVMTCBkZXJlZiBpbiByb2NrY2hpcF91c2IycGh5X2NsazQ4MG1fdW5wcmVw
-YXJlKCkKLSBbSGlnaF0gcGh5OiByb2NrY2hpcDogaW5uby11c2IyOiAtRUFHQUlOIGluIHJvY2tj
-aGlwX3VzYjJwaHlfY2xrNDgwbV9wcmVwYXJlKCkKLS0KCmNvbW1pdCAwNDc3YmMyY2M1OWFkYzJk
-ZmRhMDFjNzI4NjMzNjM3YmU4ZTFmMDQ2CkF1dGhvcjogU2ViYXN0aWFuIFJlaWNoZWwgPHNlYmFz
-dGlhbi5yZWljaGVsQGNvbGxhYm9yYS5jb20+CgpwaHk6IHJvY2tjaGlwOiBpbm5vLXVzYjI6IG1v
-dmUgc3VzcGVuZCBoYW5kbGluZyBpbnRvIGNsb2NrIHByZXBhcmUvdW5wcmVwYXJlIGZvciBSSzM1
-ODgvUkszNTc2CgpUaGlzIGNvbW1pdCBtb3ZlcyBQSFkgc3VzcGVuZCBoYW5kbGluZyBvbiBzaW5n
-bGUtcG9ydCBQSFlzIChSSzM1ODggYW5kClJLMzU3NikgZnJvbSB0aGUgUEhZIHBvd2VyX29uIGFu
-ZCBwb3dlcl9vZmYgY2FsbGJhY2tzIGludG8gdGhlIDQ4ME1IeiBjbG9jawpwcmVwYXJlIGFuZCB1
-bnByZXBhcmUgY2FsbGJhY2tzIHNvIHRoZSBQSFkgUExMIGlzIHJ1bm5pbmcgd2hlbmV2ZXIgdGhl
-IGNsb2NrCmlzIHByZXBhcmVkLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcm9ja2NoaXAv
-cGh5LXJvY2tjaGlwLWlubm8tdXNiMi5jIGIvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tj
-aGlwLWlubm8tdXNiMi5jCj4gaW5kZXggMjkxOWMyZTExOTY4Yi4uYjI2MzNiODNmN2FiMyAxMDA2
-NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtaW5uby11c2IyLmMK
-PiArKysgYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtaW5uby11c2IyLmMKPiBA
-QCAtMzYzLDEwICszNjMsMTUgQEAgc3RhdGljIGludCByb2NrY2hpcF91c2IycGh5X3NldF9zdXNw
-ZW5kKHN0cnVjdCByb2NrY2hpcF91c2IycGh5ICpycGh5LAo+ICAKPiAgc3RhdGljIGludCByb2Nr
-Y2hpcF91c2IycGh5X2NsazQ4MG1fcHJlcGFyZShzdHJ1Y3QgY2xrX2h3ICpodykKPiAgewo+ICsJ
-c3RydWN0IHJvY2tjaGlwX3VzYjJwaHkgKnJwaHkgPQo+ICsJCWNvbnRhaW5lcl9vZihodywgc3Ry
-dWN0IHJvY2tjaGlwX3VzYjJwaHksIGNsazQ4MG1faHcpOwo+ICAJY29uc3Qgc3RydWN0IHVzYjJw
-aHlfcmVnICpjbGtvdXRfY3RsOwo+ICAJc3RydWN0IHJlZ21hcCAqYmFzZTsKPiAgCWludCByZXQ7
-Cj4gIAo+ICsJaWYgKHJwaHktPnBoeV9jZmctPm51bV9wb3J0cyA9PSAxICYmICFycGh5LT5wb3J0
-c1swXS5wb3J0X2NmZykKPiArCQlyZXR1cm4gLUVBR0FJTjsKCltTZXZlcml0eTogSGlnaF0KQXMg
-cmVwb3J0ZWQgYnkgU2FzaGlrbyBvbiB2MiBbMV0sIGluIHJvY2tjaGlwX3VzYjJwaHlfcHJvYmUo
-KSwgdGhlIDQ4ME1IegpjbG9jayBwcm92aWRlciBpcyByZWdpc3RlcmVkIHZpYSByb2NrY2hpcF91
-c2IycGh5X2NsazQ4MG1fcmVnaXN0ZXIoKSBhbmQKb2ZfY2xrX2FkZF9wcm92aWRlcigpIGJlZm9y
-ZSBpbnB1dCBjbG9ja3MgYXJlIGVuYWJsZWQsIGJlZm9yZSBwaHlfdHVuaW5nKCkKcnVucywgYW5k
-IGJlZm9yZSB0aGUgY2hpbGQgcG9ydCBsb29wIGluaXRpYWxpemVzIHJwaHktPnBvcnRzWzBdLnBv
-cnRfY2ZnOgoKZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLWlubm8tdXNiMi5jOnJv
-Y2tjaGlwX3VzYjJwaHlfcHJvYmUoKSB7CgkuLi4KCXJldCA9IHJvY2tjaGlwX3VzYjJwaHlfY2xr
-NDgwbV9yZWdpc3RlcihycGh5KTsKCWlmIChyZXQpCgkJcmV0dXJuIGRldl9lcnJfcHJvYmUoZGV2
-LCByZXQsICJmYWlsZWQgdG8gcmVnaXN0ZXIgNDgwbSBvdXRwdXQgY2xvY2tcbiIpOwoKCXJldCA9
-IGNsa19idWxrX3ByZXBhcmVfZW5hYmxlKHJwaHktPm51bV9jbGtzLCBycGh5LT5jbGtzKTsKCWlm
-IChyZXQpCgkJcmV0dXJuIGRldl9lcnJfcHJvYmUoZGV2LCByZXQsICJmYWlsZWQgdG8gZW5hYmxl
-IHVzYjJwaHkgY2xrc1xuIik7CgkuLi4KCWZvcl9lYWNoX2F2YWlsYWJsZV9jaGlsZF9vZl9ub2Rl
-KG5wLCBjaGlsZF9ucCkgewoJCXN0cnVjdCByb2NrY2hpcF91c2IycGh5X3BvcnQgKnJwb3J0ID0g
-JnJwaHktPnBvcnRzW2luZGV4XTsKCQkuLi4KfQoKQ2xvY2sgY29uc3VtZXJzIG9uIFJLMzU4OCBh
-bmQgUkszNTc2IGluY2x1ZGUgb2hjaS1wbGF0Zm9ybSBhbmQgZWhjaS1wbGF0Zm9ybQooYm90aCBv
-ZiB3aGljaCBzZXQgUFJPQkVfUFJFRkVSX0FTWU5DSFJPTk9VUyBhbmQgY2FsbCBwZGF0YS0+cG93
-ZXJfb24oKSAtPgpjbGtfcHJlcGFyZV9lbmFibGUoKSBpbiB0aGVpciBwcm9iZSBmdW5jdGlvbnMg
-YmVmb3JlIHVzYl9hZGRfaGNkKCkgcmVxdWVzdHMKdGhlIFBIWSkgYXMgd2VsbCBhcyBwaHktcm9j
-a2NoaXAtdXNiZHAgKHdoaWNoIHByZXBhcmVzIGFuZCBlbmFibGVzIHRoZSB1dG1pCmNsb2NrIGlu
-IHJrX3VkcGh5X3NldHVwKCkpLgoKSWYgYW4gYXN5bmNocm9ub3VzIGNvbnN1bWVyIGNhbGxzIGNs
-a19wcmVwYXJlX2VuYWJsZSgpIGFmdGVyCm9mX2Nsa19hZGRfcHJvdmlkZXIoKSBwdWJsaXNoZXMg
-dGhlIGNsb2NrIGJ1dCBiZWZvcmUgcnBoeS0+cG9ydHNbMF0ucG9ydF9jZmcKaXMgaW5pdGlhbGl6
-ZWQgKG9yIG9uIGJvYXJkcyB3aGVyZSB0aGUgcGFyZW50IHVzYjJwaHkgbm9kZSBpcyBlbmFibGVk
-IHRvCnN1cHBseSB0aGUgdXRtaSBjbG9jayB0byB1c2JkcF9waHkgd2hpbGUgdGhlIGNoaWxkIHBv
-cnQgc3Vibm9kZSBpcyBkaXNhYmxlZAppbiBEVCksIHJvY2tjaGlwX3VzYjJwaHlfY2xrNDgwbV9w
-cmVwYXJlKCkgd2lsbCByZXR1cm4gLUVBR0FJTi4KCk5laXRoZXIgY2xrX3ByZXBhcmVfZW5hYmxl
-KCkgbm9yIHRoZSBjYWxsZXJzIGluIG9oY2lfcGxhdGZvcm1fcHJvYmUoKSwKZWhjaV9wbGF0Zm9y
-bV9wcm9iZSgpLCBvciBya191ZHBoeV9zZXR1cCgpIHJldHJ5IG9uIC1FQUdBSU4sIGFuZCB0aGUg
-ZHJpdmVyCmNvcmUgb25seSBkZWZlcnMgcHJvYmluZyBvbiAtRVBST0JFX0RFRkVSLiBDYW4gcmV0
-dXJuaW5nIC1FQUdBSU4gaGVyZSBjYXVzZQpjb25zdW1lciBwcm9iaW5nIG9yIFBIWSBzZXR1cCB0
-byBmYWlsIHBlcm1hbmVudGx5IGluc3RlYWQgb2Ygd2FpdGluZyBmb3IgcG9ydAppbml0aWFsaXph
-dGlvbj8KCj4gKwo+ICAJcm9ja2NoaXBfdXNiMnBoeV9jbGs0ODBtX2Nsa291dF9jdGwoaHcsICZi
-YXNlLCAmY2xrb3V0X2N0bCk7Cj4gIAo+ICAJLyogdHVybiBvbiA0ODBtIGNsayBvdXRwdXQgaWYg
-aXQgaXMgb2ZmICovCj4gQEAgLTM3OSwxNiArMzg0LDMxIEBAIHN0YXRpYyBpbnQgcm9ja2NoaXBf
-dXNiMnBoeV9jbGs0ODBtX3ByZXBhcmUoc3RydWN0IGNsa19odyAqaHcpCj4gIAkJdXNsZWVwX3Jh
-bmdlKDEyMDAsIDEzMDApOwo+ICAJfQo+ICAKPiArCWlmIChycGh5LT5waHlfY2ZnLT5udW1fcG9y
-dHMgPT0gMSkgewo+ICsJCXJldCA9IHJvY2tjaGlwX3VzYjJwaHlfc2V0X3N1c3BlbmQocnBoeSwg
-JnJwaHktPnBvcnRzWzBdLCBmYWxzZSk7Cj4gKwkJaWYgKHJldCkKPiArCQkJZ290byBkaXNhYmxl
-X2Nsa291dDsKPiArCX0KPiArCj4gIAlyZXR1cm4gMDsKPiArCj4gK2Rpc2FibGVfY2xrb3V0Ogo+
-ICsJcHJvcGVydHlfZW5hYmxlKGJhc2UsIGNsa291dF9jdGwsIGZhbHNlKTsKPiArCXJldHVybiBy
-ZXQ7Cj4gIH0KPiAgCj4gIHN0YXRpYyB2b2lkIHJvY2tjaGlwX3VzYjJwaHlfY2xrNDgwbV91bnBy
-ZXBhcmUoc3RydWN0IGNsa19odyAqaHcpCj4gIHsKPiArCXN0cnVjdCByb2NrY2hpcF91c2IycGh5
-ICpycGh5ID0KPiArCQljb250YWluZXJfb2YoaHcsIHN0cnVjdCByb2NrY2hpcF91c2IycGh5LCBj
-bGs0ODBtX2h3KTsKPiAgCWNvbnN0IHN0cnVjdCB1c2IycGh5X3JlZyAqY2xrb3V0X2N0bDsKPiAg
-CXN0cnVjdCByZWdtYXAgKmJhc2U7Cj4gIAo+ICAJcm9ja2NoaXBfdXNiMnBoeV9jbGs0ODBtX2Ns
-a291dF9jdGwoaHcsICZiYXNlLCAmY2xrb3V0X2N0bCk7Cj4gIAo+ICsJaWYgKHJwaHktPnBoeV9j
-ZmctPm51bV9wb3J0cyA9PSAxKQo+ICsJCXJvY2tjaGlwX3VzYjJwaHlfc2V0X3N1c3BlbmQocnBo
-eSwgJnJwaHktPnBvcnRzWzBdLCB0cnVlKTsKCltTZXZlcml0eTogSGlnaF0KV2hhdCBoYXBwZW5z
-IGluIHJvY2tjaGlwX3VzYjJwaHlfY2xrNDgwbV91bnByZXBhcmUoKSBpZgpycGh5LT5wb3J0c1sw
-XS5wb3J0X2NmZyBpcyBOVUxMPwoKSW4gcmszNTg4LWJhc2UuZHRzaSwgcmszNTg4LWV4dHJhLmR0
-c2ksIGFuZCByazM1NzYuZHRzaSwgdGhlIHBhcmVudCB1c2IycGh5Cm5vZGVzIGFuZCB0aGVpciBj
-aGlsZCBvdGctcG9ydCBvciBob3N0LXBvcnQgbm9kZXMgaGF2ZSBpbmRlcGVuZGVudCBzdGF0dXMK
-cHJvcGVydGllcy4gSWYgYSBwYXJlbnQgdXNiMnBoeSBub2RlIGlzIGVuYWJsZWQgd2hpbGUgaXRz
-IGNoaWxkIHBvcnQgbm9kZSBpcwpkaXNhYmxlZCBpbiBEVCwgcm9ja2NoaXBfdXNiMnBoeV9wcm9i
-ZSgpIHJlZ2lzdGVycyBjbGs0ODBtIHdpdGgKcnBoeS0+cG9ydHNbMF0ucG9ydF9jZmcgbGVmdCBh
-cyBOVUxMLgoKQmVjYXVzZSByb2NrY2hpcF91c2IycGh5X2Nsa291dF9vcHMgZGVmaW5lcyAuaXNf
-cHJlcGFyZWQgPQpyb2NrY2hpcF91c2IycGh5X2NsazQ4MG1fcHJlcGFyZWQoKSwgd2hpY2ggY2hl
-Y2tzIHByb3BlcnR5X2VuYWJsZWQoYmFzZSwKY2xrb3V0X2N0bCksIGFuZCBjbGtvdXRfY3RsIGRl
-ZmF1bHRzIHRvIGVuYWJsZWQgaW4gaGFyZHdhcmUgYXQgcmVzZXQgb24KUkszNTg4IGFuZCBSSzM1
-NzYsIGNsa191bnByZXBhcmVfdW51c2VkX3N1YnRyZWUoKSB3aWxsIHNlZSB0aGUgY2xvY2sgYXMK
-cHJlcGFyZWQgYW5kIGNhbGwgcm9ja2NoaXBfdXNiMnBoeV9jbGs0ODBtX3VucHJlcGFyZSgpIGR1
-cmluZwpjbGtfZGlzYWJsZV91bnVzZWQoKSBldmVuIGlmIHJvY2tjaGlwX3VzYjJwaHlfY2xrNDgw
-bV9wcmVwYXJlKCkgd2FzIG5ldmVyCmNhbGxlZCBvciByZXR1cm5lZCAtRUFHQUlOLgoKVW5saWtl
-IHJvY2tjaGlwX3VzYjJwaHlfY2xrNDgwbV9wcmVwYXJlKCksIHJvY2tjaGlwX3VzYjJwaHlfY2xr
-NDgwbV91bnByZXBhcmUoKQpkb2VzIG5vdCBjaGVjayBycGh5LT5wb3J0c1swXS5wb3J0X2NmZyBi
-ZWZvcmUgY2FsbGluZwpyb2NrY2hpcF91c2IycGh5X3NldF9zdXNwZW5kKHJwaHksICZycGh5LT5w
-b3J0c1swXSwgdHJ1ZSksIHdoaWNoIHRoZW4KZGVyZWZlcmVuY2VzICZycG9ydC0+cG9ydF9jZmct
-PnBoeV9zdXM6Cgpyb2NrY2hpcF91c2IycGh5X2NsazQ4MG1fdW5wcmVwYXJlKCkKICAtPiByb2Nr
-Y2hpcF91c2IycGh5X3NldF9zdXNwZW5kKCkKICAgICAgIC0+IHByb3BlcnR5X2VuYWJsZShycGh5
-LT5ncmYsICZycG9ydC0+cG9ydF9jZmctPnBoeV9zdXMsIGRvX3N1c3BlbmQpCgpDYW4gdGhpcyBj
-YXVzZSBhIE5VTEwgcG9pbnRlciBkZXJlZmVyZW5jZSB3aGVuIHVucHJlcGFyaW5nIHVudXNlZCBj
-bG9ja3MgYXQKYm9vdD8KClsxXSBodHRwczovL2xvcmUua2VybmVsLm9yZy9yLzIwMjYxMDAxLXBo
-eS1yb2NrY2hpcC1pbm5vLXVzYjItY2xvY2stZml4LXYyLTQtZTAxYmY1MDkzNTllQGNvbGxhYm9y
-YS5jb20KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0
-Y2hzZXQvMjAyNjExMDUtcGh5LXJvY2tjaGlwLWlubm8tdXNiMi1jbG9jay1maXgtdjMtMC1iMjA2
-MDhjMDhiOTRAY29sbGFib3JhLmNvbT9wYXJ0PTQKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0
-CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9y
-Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+--===============1985331174955078021==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="A3EGkJjMaBMSuLcm"
+Content-Disposition: inline
+
+--A3EGkJjMaBMSuLcm
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, Nov 04, 2026 at 02:21:52AM -0500, Joseph Telaak via B4 Relay wrote:
+> From: Joseph Telaak <joseph@telaak.dev>
+>=20
+> The USB 2.0 PHY of the Siflower SF19A2890 serves its DWC2 controller.
+> It takes a reference clock and two resets, power-on and PHY, from the
+> USB block's clock and reset manager.
+>=20
+> Signed-off-by: Joseph Telaak <joseph@telaak.dev>
+> ---
+>  .../bindings/phy/siflower,sf19a2890-usb-phy.yaml   | 58 ++++++++++++++++=
+++++++
+>  1 file changed, 58 insertions(+)
+>=20
+> diff --git a/Documentation/devicetree/bindings/phy/siflower,sf19a2890-usb=
+-phy.yaml b/Documentation/devicetree/bindings/phy/siflower,sf19a2890-usb-ph=
+y.yaml
+> new file mode 100644
+> index 000000000..77b8e35d8
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/siflower,sf19a2890-usb-phy.ya=
+ml
+> @@ -0,0 +1,58 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/siflower,sf19a2890-usb-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Siflower SF19A2890 USB 2.0 PHY
+> +
+> +maintainers:
+> +  - Joseph Telaak <joseph@telaak.dev>
+> +
+> +description:
+> +  The USB 2.0 PHY of the Siflower SF19A2890, used by its DWC2 controller.
+> +
+> +properties:
+> +  compatible:
+> +    const: siflower,sf19a2890-usb-phy
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 1
+> +    description: PHY reference clock
+> +
+> +  resets:
+> +    items:
+> +      - description: power-on reset
+> +      - description: PHY reset
+> +
+> +  reset-names:
+> +    items:
+> +      - const: por
+> +      - const: phy
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - resets
+> +  - reset-names
+> +  - "#phy-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    usb-phy@19e0c040 {
+> +        compatible =3D "siflower,sf19a2890-usb-phy";
+> +        reg =3D <0x19e0c040 0x60>;
+
+That's a weird offset and size.
+What lies in the regions around this device?
+
+> +        clocks =3D <&usb_crm 2>;
+> +        resets =3D <&usb_crm 1>, <&usb_crm 2>;
+> +        reset-names =3D "por", "phy";
+> +        #phy-cells =3D <0>;
+> +    };
+>=20
+> --=20
+> Git-155)
+>=20
+>=20
+
+--A3EGkJjMaBMSuLcm
+Content-Type: application/pgp-signature; name=signature.asc
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCauvDZQAKCRB4tDGHoIJi
+0go4AP9IBByfY+ZrsMHhRJn/BNGZDtuBmhwUV9BLaN5/9qNPCAEAkk741BcvYirR
+jopiYYHvRgcXyohEzT8v2FZsEeU13gc=
+=X0p7
+-----END PGP SIGNATURE-----
+
+--A3EGkJjMaBMSuLcm--
+
+
+--===============1985331174955078021==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============1985331174955078021==--
+
