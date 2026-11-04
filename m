@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C4FA5606A329
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Nov 2026 07:08:13 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DEBCB606A337
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Nov 2026 07:08:52 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=JT6N+iKh;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=ADSfcTJV
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=0pcqk0lW;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=NyEOmjqt
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,42 +14,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=N3BAGG9KpMOWN1LzUG74hT6EtEmQZduclrQ6s8cH0wM=; b=JT6N+iKh4IybsC3Dv7ZSTH5ABv
-	6kkGVNw9hGrLzEc+Bp/z8GdZykbDGT7OEnJ91IuZcajFrTJX8nphUwQXeMZWrwhAuAuFfb8i/EOsU
-	n+ZGQphRDFOuNi1Y/J1qX1SaGAMroKjk8JXnxFTO9RaBhhZ6EABEGrrPe3rTHcLCLjLuYhEev7165
-	fEkrdaDkRjHA/yViU6o74spN9nNNVpVX6JxpyWqDjd/nfuKwNlSoD6O1vaehUgCIyVmcNXsuQKyr7
-	mM1gMIy42i2ByaGeR4lglsn6/8FRJeKUTRCunAOeAGs4NTNJiC6u0X5/dJsCrMBSEiYUCI9JfTDM/
-	YDs9XlUA==;
+	bh=HbISeQc1FpZkoq8ZhCcWl5F0RGa2Wmz4+jBFPn/H8jc=; b=0pcqk0lWLTPsa91vxwzuKZIYRH
+	e3NaGBe8ft5XZM2o8Op8TrpBOq9kEMDWwUQr1y/e8x6L0zQgI5ES0J/iPySjLj4/1mSxd0T9WRbWx
+	JE/0w4+JUMbpaUGE4kw/Qubrt1ZjpRXYmVCf9NUQrBwmku7o03x9g2+KvjTLDLcjoqwnB/80K6Yp7
+	p2efv1SlMGnHIK5LCTsOw46E2i50bd0NGz52XWmxTcnz99VsD/W2CDv/x6yUgVUbNAA96gBb62ffu
+	cVXIa2V5waxMTQNlho/41nHEBvzZVBjWi7zBunX5X/cEHUs5r1M526YkZeg8QBFfI+4KI+cinASJF
+	+exM+Hbg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOV6T-00000004SiE-2Hps;
-	Wed, 04 Nov 2026 07:08:13 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xOV76-00000004SjQ-2cED;
+	Wed, 04 Nov 2026 07:08:52 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOV6S-00000004Si6-2Zo0
+	id 1xOV75-00000004Sj7-2OIT
 	for linux-phy@lists.infradead.org;
-	Wed, 04 Nov 2026 07:08:12 +0000
+	Wed, 04 Nov 2026 07:08:51 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 57C21434B3;
-	Wed,  4 Nov 2026 07:08:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E5EC91F000C1;
-	Wed,  4 Nov 2026 07:08:06 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 0775A41B5C;
+	Wed,  4 Nov 2026 07:08:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A635F1F000C1;
+	Wed,  4 Nov 2026 07:08:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793776092;
-	bh=vXoloEh6FJGNcPwlC3Osvgak4yvUbh+FGNfQQluoHvM=;
+	s=k20260515; t=1793776130;
+	bh=QsSFH7hGiuSzZGPVmFIBDjkzqluGUsOda7H/G10ICiY=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=ADSfcTJVFSuqx/1GtkR4HF4surfKM+BvmtmCBD0bSmQBdAC1iILVEQ7ypiyKzIs+M
-	 2atdyy8NssQ4VpGMvGTQ2/G5ait7EFXpCUJpWSzTqKZrM81l3DqIEydZUeW8VaRuMX
-	 y4oUmMKm1qHz9wNpuXS8euqJ4bvhwJaGjQmC1ZrECnhxdhrfa/a5rpXL2AWghH+p/n
-	 wOjxryImZywVvWjbD0KKcl6AgMFKO0SaY8H7Y8Yb840NFiFMnmHw8doEEbJTk/NoMP
-	 okNAiG2A71lg2+nxThtU3CJxZG74jpmfaMbxusccqVjwv1bb8uvTDZGPCRqdN+Cl6i
-	 l8dYknklWUWmg==
-Message-ID: <8942bbed-cd53-44a4-8559-c18fb2073bb2@kernel.org>
-Date: Wed, 4 Nov 2026 08:08:04 +0100
+	b=NyEOmjqt1rNJyWVzwGjQM4IVVBfqDx5AjMC/PZmIgzCgVoYJDnsnLt4Zo25hKmdYT
+	 8lLkSD8lsPnf1ZQypLx6YechdbjHwM0TVEKHUSp3Bco8XrssEFAtafjh1970/ZX/Un
+	 0dHcrNz19U6xQWfut5dl09jDKroXL+a9kWAV4PUoDwE4hOatHaS6V17zQ0/9duIhKl
+	 hrWuAqFyGByDKSSJJW73dV5tW4OVV5SonrDv7UFCCv3iI7llecBUdk06X7mD8Ikhq+
+	 jWc1Is+iUYmQJV+wMhipUfroaPt2IJCAgHXhAkN/zwbWgTYezAWvK1AmZunh09zbgi
+	 WhDS+0naDLahg==
+Message-ID: <fe8bfa99-3fbb-4634-b99b-a36c2f8b35e5@kernel.org>
+Date: Wed, 4 Nov 2026 08:08:43 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 5/5] phy: qcom-mipi-csi2: Add sc7280 D-PHY provider
+Subject: Re: [PATCH v2 2/5] phy: qcom-mipi-csi2: Make timer and OPP clock
+ names configurable
 To: Anusha Arun Nandi <anusha.nandi@oss.qualcomm.com>,
  Bryan O'Donoghue <bod@kernel.org>
 Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
@@ -60,7 +61,7 @@ Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
  linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org,
  linux-kernel@vger.kernel.org
 References: <20261103214105.3605181-1-anusha.nandi@oss.qualcomm.com>
- <20261103214105.3605181-6-anusha.nandi@oss.qualcomm.com>
+ <20261103214105.3605181-3-anusha.nandi@oss.qualcomm.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -106,7 +107,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  K9bCVaboTA2T77QYkRcRJYSsO1alGX0ome/hMLD1daXlkrNUp1HWa3K4iytLRXjCSIorWiGs
  n+q3krnpXu3TFkA8qtOFZMdnIiFuiq1yLT8hptsV5xh1TA2nsVvSYiaCr3q4s4BKjS/KrLDb
  qoxzw8ISjdUp4pA85vb6YLCmb39NgidD+7PmAr65lBNveIFynTgsja1rRQ4=
-In-Reply-To: <20261103214105.3605181-6-anusha.nandi@oss.qualcomm.com>
+In-Reply-To: <20261103214105.3605181-3-anusha.nandi@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,47 +120,26 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-5.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
+	autolearn=no autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 On 03/11/2026 22:41, Anusha Arun Nandi wrote:
-> Add the SC7280 CSIPHY to the generic MIPI CSI2 PHY driver, 
-> bound to a new "qcom,sc7280-csi2-phy" compatible
-> and reusing the existing D-PHY 2-phase hw ops
-> (phy_qcom_mipi_csi2_ops_3ph_1_0). The lane_regs_sc7280[] init
-> sequence is the CSIPHY 5nm 2-phase 2.5Gbps 4-lane D-PHY register
-> set ported from the legacy in-tree camss-csiphy-3ph-1-0.c table,
-> with the entries that table left as do-not-program placeholders
-> simply omitted here rather than carried as a new marker. The
-> soc_cfg declares the core/timer clocks (matching x1e80100's and
-> sa8775p's clock-names convention for this pair) and the
-> vdda-phy/vdda-pll supplies.
-> 
-> Like x1e80100 and SA8775P, SC7280's CSIPHY core clock is OPP-scaled
-> against the sensor's link frequency via the shared csiphy_opp_table
-> in kodiak.dtsi, so opp_clk_name is set to "core" here too. SC7280's
-> CSIPHY has a single power-domain, the Titan Top GDSC, matching
-> camss.c's sc7280_resources.pd_name = "top" and kodiak.dtsi's
-> existing camss node; it is not OPP-scaled, only kept enabled.
-> 
-> Reviewed-by: Jigarkumar Zala <jigarkumar.zala@oss.qualcomm.com>
+> The timer-clock lookup in phy_qcom_mipi_csi2_probe() and the OPP
+> clkname passed to devm_pm_opp_set_clkname() were both hardcoded
+> string literals sized to x1e80100 ("timer"/"core"). Add
+> timer_clk_name/opp_clk_name to struct mipi_csi2phy_soc_cfg so each
+> SoC can declare its own clock-name strings instead.
 
-Where/When? Please provide lore links and proper changelog.
 
-...
+But they do not declare different names and they must NOT declare
+different names.
 
-> +
-> +static const char * const sc7280_clks[] = {
-> +	"core",
-> +	"timer",
-> +};
-
-What is the point of this array for each variant if all devices have the
-same names? IOW, what is the point of patch #2?
+This commit is completely pointless. What's more: you do not explain WHY
+you are doing this in the first place.
 
 Best regards,
 Krzysztof
