@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4BC45606A333
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Nov 2026 16:35:31 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 22A24606B905
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Nov 2026 17:32:51 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=CsjjJ+5I;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=b0VM/7bw
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=JFxqGFic;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=EmoIkpga
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,54 +14,86 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=/PXwXtAAzNUSsZqJ02kgnCaHkgWkDoyxJlr5nZGpXPc=; b=CsjjJ+5IfGBhcui5FhUyoBb6kJ
-	df5tXB47pM+2/GKg8P89Nlps9XC/FgTb3T16kLOgdeFjhUyeX0AbLIt8paDPAzmj5tEv5Po7/mgt8
-	zPK6LXucdnzvcO10JrSjZF577W7dxdW75cgyfs4ZNXEGgTQQzbVBItGF7HIAbRVy/+t6/URQ2rk/7
-	nBCZ4aJcR/xCQmZ68dJDjhN/hXcDl9yjG4lK5xFzk9VAAar7yRLBYFaAa4z+3+LgoDf0xdnFZxddY
-	H0WuvyR/OFbigqoqhxiwRBfwGFU1bm7PTiAsXSQjxHhT/byEqoH5EW+UPtz8H1UkuBPeODG0sinna
-	8Z80jU4g==;
+	bh=TdouqQOsxNOwk8fn5x3D/tgbOdvHFuNyea2J518ibMw=; b=JFxqGFicnnRoGF9K8YlbmMi0Tc
+	NJaDJpmrY2M4RQow/NuwfyU1nAil5GTVQPaqLkvw7Vbjs2mGdcxZD3Blhi3mmgmusBgvC3gJ2pY1O
+	01aLWCWHYlWwrCsW3qpyPVFE8dfC/K9hnFkPjgGfSpzEkxOOqA3Y03/ENkMlx3V/+/ERmcb0ON3g0
+	jQV/y1tCCZy16Ux/KHlqsVA38jZmq3tHd3jYYVFhp6cjggIw9JQzSKpsKLtk1y+i42I/EABrY/hnm
+	KS0P2UZdF47Le+SJAg9s1QTiiagfk7VPafc5Z0MrN23jcaMeP4Hop2C1GZ/qI9f39Waam2QKHZ0fV
+	IqvtvNRA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOdxS-00000005zsV-3Yjk;
-	Wed, 04 Nov 2026 16:35:30 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xOeqw-00000006EOx-3cy3;
+	Wed, 04 Nov 2026 17:32:50 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOdxN-00000005zr7-3JKX;
-	Wed, 04 Nov 2026 16:35:25 +0000
+	id 1xOequ-00000006EOT-0XG6;
+	Wed, 04 Nov 2026 17:32:48 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id DF0026022B;
-	Wed,  4 Nov 2026 16:35:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 658F31F00A02;
-	Wed,  4 Nov 2026 16:35:24 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 56A7E6021D;
+	Wed,  4 Nov 2026 17:32:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DBDFF1F000C1;
+	Wed,  4 Nov 2026 17:32:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793810124;
-	bh=SbfzzROp8o1VQd8NPKRivV3cyRBL/18CLJBEtzHhX6E=;
+	s=k20260515; t=1793813567;
+	bh=4KWh+pCjEY3BH9ZXJBW3B3/Mt0CuTTrjLcItJI+O2b0=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=b0VM/7bwi9w7myAwUB/DAoWpEWAE1VI1YPwOtYC2nt7NkXe+D2PLSiNgZpkcy7Tyx
-	 YkfJCRRSynjPkpUZyrO/YvIcHa1wAzUdY0Q9VTyzwLGZbyGffr+riBR8DeEAonU7cf
-	 giiQf9UYosjzx9JYNGJcgUyuxTJ7cjkY/oJXu+I5FVtvrkuPPHUCSwEtjs4e4OauPO
-	 bIV8CKchpprr8cZ5zcMfNLti15ISNryEsdCpekYNUP855Dgnc15Wnx39c3LkQvZB2A
-	 hLwPbSysbg1Hfr8lOdlE6LhLnRPEybSQ63xWYaBHFYWRHQlTyPjD1Pla8kAT6Ck2Ft
-	 Yaee+ybNSdm+A==
-Date: Wed, 4 Nov 2026 10:35:22 -0600
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Christian Marangi <ansuelsmth@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, linux-kernel@vger.kernel.org,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	linux-arm-kernel@lists.infradead.org,
-	Conor Dooley <conor+dt@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>
-Subject: Re: [PATCH v5 1/2] dt-bindings: phy: airoha: Document support for
- AN7583 Gen3 PCIe PHY
-Message-ID: <179381008124.1965616.15041265527185423969.robh@kernel.org>
-References: <20261103195007.9721-1-ansuelsmth@gmail.com>
- <20261103195007.9721-2-ansuelsmth@gmail.com>
+	b=EmoIkpga02mtSmXYZVQn9du3LHYfYYz+585s/PS+UgjsXg/FCvOmrZxU5rFUHZ4Kc
+	 RW4rhqpS4n3dFfRKO8x+a/rqSXZeMNtqoJk/PAMvtTPHidldiR0RNWuPhkUl5Udryh
+	 K0OZRedSeEqK4PfWHQTrv308SVTAoSNO8pALhkzOLoGRqIxAXKmzlYLtjaaWK21Afk
+	 g9ZdhfQJD7HMHHghQ3kYgQdyrMOv9/7V31ENvoFGNFW4fLM8UomjBlAwSX6CbB6Whr
+	 eQxEIfy92LUpsJv+hK5fIokNxiCsnOkTzS6xufVPBmdQ1YFlhlqo+6SIaWZWwTuraz
+	 PbT3jpG2TrNIg==
+Date: Wed, 4 Nov 2026 18:32:43 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+	Andy Shevchenko <andriy.shevchenko@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
+	Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, 
+	Simona Vetter <simona@ffwll.ch>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+	Conor Dooley <conor+dt@kernel.org>, Vadim Fedorenko <vadim.fedorenko@linux.dev>, 
+	Arkadiusz Kubalewski <arkadiusz.kubalewski@intel.com>, Jiri Pirko <jiri@resnulli.us>, Ivan Vecera <ivecera@redhat.com>, 
+	Benson Leung <bleung@chromium.org>, Guenter Roeck <groeck@chromium.org>, 
+	Linus Walleij <linusw@kernel.org>, Bartosz Golaszewski <brgl@kernel.org>, 
+	Frank Li <Frank.Li@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>, 
+	Pengutronix Kernel Team <kernel@pengutronix.de>, Fabio Estevam <festevam@gmail.com>, 
+	Jonathan Cameron <jic23@kernel.org>, David Lechner <dlechner@baylibre.com>, 
+	Nuno =?utf-8?B?U8Oh?= <nuno.sa@analog.com>, Andy Shevchenko <andy@kernel.org>, 
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue <alexandre.torgue@foss.st.com>, 
+	Olivier Moysan <olivier.moysan@foss.st.com>, Arnaud Pouliquen <arnaud.pouliquen@foss.st.com>, 
+	Dmitry Torokhov <dmitry.torokhov@gmail.com>, Thierry Reding <thierry.reding@kernel.org>, 
+	Jonathan Hunter <jonathanh@nvidia.com>, Fabrice Gasnier <fabrice.gasnier@foss.st.com>, 
+	Lee Jones <lee@kernel.org>, Srinivas Kandagatla <srini@kernel.org>, 
+	Ekansh Gupta <ekansh.gupta@oss.qualcomm.com>, Ulf Hansson <ulfh@kernel.org>, 
+	Hans Ulli Kroll <ulli.kroll@googlemail.com>, Andrew Lunn <andrew+netdev@lunn.ch>, 
+	"David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>, 
+	Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>, Kunihiko Hayashi <hayashi.kunihiko@socionext.com>, 
+	Masami Hiramatsu <mhiramat@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>, 
+	Mark Brown <broonie@kernel.org>, "Rafael J. Wysocki" <rafael@kernel.org>, 
+	Daniel Lezcano <daniel.lezcano@kernel.org>, Zhang Rui <rui.zhang@intel.com>, 
+	Lukasz Luba <lukasz.luba@arm.com>, Orson Zhai <orsonzhai@gmail.com>, 
+	Baolin Wang <baolin.wang@linux.alibaba.com>, Chunyan Zhang <zhang.lyra@gmail.com>, 
+	Paul Kocialkowski <paul.kocialkowski@bootlin.com>, Shawn Guo <shawnguo@kernel.org>, 
+	Chanh Nguyen <chanh@os.amperecomputing.com>, Alistair Francis <alistair@alistair23.me>, 
+	Julius Werner <jwerner@chromium.org>, Paul Cercueil <paul@crapouillou.net>, 
+	Dmitry Osipenko <digetx@gmail.com>, Florian Fainelli <f.fainelli@gmail.com>, 
+	Thierry Reding <thierry.reding@gmail.com>, Ray Jui <ray.jui@broadcom.com>, 
+	Scott Branden <scott.branden@broadcom.com>, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, netdev@vger.kernel.org, chrome-platform@lists.linux.dev, 
+	linux-gpio@vger.kernel.org, imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+	linux-hwmon@vger.kernel.org, linux-iio@vger.kernel.org, 
+	linux-stm32@st-md-mailman.stormreply.com, linux-sound@vger.kernel.org, linux-input@vger.kernel.org, 
+	linux-tegra@vger.kernel.org, mfd@lists.linux.dev, linux-arm-msm@vger.kernel.org, 
+	linux-mmc@vger.kernel.org, linux-phy@lists.infradead.org, linux-pm@vger.kernel.org
+Subject: Re: [PATCH] dt-bindings: Use hex unit address patterns
+Message-ID: <20261104-vigorous-flat-dingo-3e5bd2@quoll>
+References: <20261102135330.2493332-1-robh@kernel.org>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20261103195007.9721-2-ansuelsmth@gmail.com>
+In-Reply-To: <20261102135330.2493332-1-robh@kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,30 +113,57 @@ X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-
-On Tue, 03 Nov 2026 20:49:59 +0100, Christian Marangi wrote:
-> Document support for AN7583 PCIe PHY used to make the Gen3 PCIe port
-> work. Add the required register to configure the PCIe PHY and provide an
-> example for it.
+On Mon, Nov 02, 2026 at 07:53:22AM -0600, Rob Herring (Arm) wrote:
+> Unit-addresses by default (and most commonly) are hexadecimal. There's a
+> number of cases using decimal patterns. Fix all of them, limiting the
+> pattern to match the 'reg' limits if there are any.
 > 
-> The PHY link to another PHY (the QPHY as described in the YAML) to
-> correctly handle Gen2 speed and mode. It's mandatory to have this PHY
-> configured for correct functionality of PCIe. The QPHY is a unified PHY
-> that both handle USB and PCIe PHY.
-> 
-> It's also mondatory that the QPHY setup is done in the PCIe PHY setup and
-> calibration phase or calibration might fail.
-> 
-> Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
+> Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
 > ---
->  .../phy/airoha,an7583-pcie-gen3-phy.yaml      | 65 +++++++++++++++++++
->  1 file changed, 65 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7583-pcie-gen3-phy.yaml
+>  .../bindings/display/xylon,logicvc-display.yaml      |  2 +-
+>  .../devicetree/bindings/dpll/dpll-device.yaml        |  2 +-
+>  .../bindings/embedded-controller/google,cros-ec.yaml |  4 ++--
+>  .../intel,ixp4xx-network-processing-engine.yaml      |  2 +-
+>  Documentation/devicetree/bindings/gpio/gpio-mxs.yaml |  4 ++--
+>  .../devicetree/bindings/hwmon/maxim,max31790.yaml    |  2 +-
+>  .../devicetree/bindings/iio/adc/st,stm32-adc.yaml    |  2 +-
+>  .../bindings/iio/adc/st,stm32-dfsdm-adc.yaml         |  6 +++---
+>  .../bindings/input/touchscreen/cypress,tt21000.yaml  |  2 +-
+>  .../memory-controllers/ddr/jedec,sdram-channel.yaml  | 12 ++++++------
+>  .../bindings/memory-controllers/ingenic,nemc.yaml    |  2 +-
+>  .../memory-controllers/nvidia,tegra20-emc.yaml       |  4 ++--
+>  .../devicetree/bindings/mfd/st,stm32-lptimer.yaml    |  2 +-
+>  .../devicetree/bindings/mfd/st,stm32-timers.yaml     |  2 +-
+>  .../devicetree/bindings/misc/qcom,fastrpc.yaml       |  2 +-
+>  .../bindings/mmc/mmc-controller-common.yaml          |  2 +-
+>  .../bindings/net/cortina,gemini-ethernet.yaml        |  2 +-
+>  .../bindings/phy/brcm,cygnus-pcie-phy.yaml           |  2 +-
+>  .../devicetree/bindings/phy/brcm,sata-phy.yaml       |  2 +-
+>  .../bindings/phy/socionext,uniphier-usb2-phy.yaml    |  2 +-
+>  .../devicetree/bindings/sound/qcom,q6asm-dais.yaml   |  2 +-
+>  .../bindings/sound/qcom,q6dsp-lpass-ports.yaml       |  2 +-
+>  .../devicetree/bindings/thermal/sprd-thermal.yaml    |  2 +-
+>  23 files changed, 33 insertions(+), 33 deletions(-)
 > 
+> diff --git a/Documentation/devicetree/bindings/display/xylon,logicvc-display.yaml b/Documentation/devicetree/bindings/display/xylon,logicvc-display.yaml
+> index 76b804b7c880..3dd54636d23d 100644
+> --- a/Documentation/devicetree/bindings/display/xylon,logicvc-display.yaml
+> +++ b/Documentation/devicetree/bindings/display/xylon,logicvc-display.yaml
+> @@ -123,7 +123,7 @@ properties:
+>          const: 0
+>  
+>      patternProperties:
+> -      "^layer@[0-9]+$":
+> +      "^layer@[0-9a-f]+$":
 
-You forgot my tag...
+These two lines are looking good.
 
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+Andy, it's okay if I give Rb tag?
+
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+
+Best regards,
+Krzysztof
 
 
 -- 
