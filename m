@@ -2,89 +2,58 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 08E74606A329
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Nov 2026 23:08:20 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 67C3E606A31B
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Nov 2026 23:16:57 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=LK91E6ck;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=collabora.com header.i=@collabora.com header.a=rsa-sha256 header.s=mail header.b=oJhcIaBk
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=j1JMMA5v;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=TOaWcO0L
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=41Xz+qQLXjxxaVlRBvVKFmCCU0AhyjMXh+EL1obhxY8=; b=LK91E6ckLRnpyVu8QNr2WCkDVE
-	Ecu6ZnUa7SNFkOW2ekA8MtRUFRsyKSjSzP9MOuKftgQUm5BaizFeIJr1cgQdobR2RbXs+BIl4N30O
-	ITr+bz0RfCFqdKz45JNy5ZOtS1d4MdVSj2sqvUZb/UC9qyUbqmp+qlYhM7Ii6cciQ84SM5GxbcZUM
-	BOA8ZP30EK56sQFfPy5gvvIlZYKBdgpJPh8yf8TmtnLOnpqJTfJN9JcqoZ1Db8xZ9IAoErT3EFqz0
-	hN9dgp8nW5kkgaMhnDnVatCqRmKH1wSzorRNo9HE++e2o/QYcyDakChB/cTwqtsTbaJgVTFzWn/AH
-	JVH+G1RA==;
+	bh=BguR1/YFFz1cGEIYaKQ6FvyyINTnEhaNPlXvM/S9zjY=; b=j1JMMA5vouAtNjMBvhIJI1mClt
+	TilfYYpR9QyhZjvQYnKw0sO90O0wAIro4EFIMMStURoFAZdX6qVcoe99r6C2f+2mZxpFjxF2/nwem
+	gZFbTOOzpV+gBDTGEjAlqrsjr9D3HKM4JDf/8swHk3kuAIurthfTrlgi1NaG0f6H7EPf3cdhDbEjN
+	a1WgMb1QypcXvXGj99+Jzslx6mYSLl3EFDMzwIkq4UXSMBGPOlskc62wTmMEvsdToSsVp5CVIp7Y4
+	/4gsgKSMPB6pT9U6N07PHp2KWLJ/wjzMEqDkkelpJULymu85gXYyaEAtavB9t/EnoggsqyZy4uzeM
+	PdEsFwKg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOk5b-00000007Dhn-2n9C;
-	Wed, 04 Nov 2026 23:08:19 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1xOkDx-00000007Ekv-0eYE;
+	Wed, 04 Nov 2026 23:16:57 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOk5Q-00000007DUs-1fNb;
-	Wed, 04 Nov 2026 23:08:10 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1793833685;
-	bh=rX9nu49yVHon/eoArd9zChZ1LRjZoDqVhWArx28DxU4=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=oJhcIaBkcH+r0p8sAeDaziN2EQV/IFXW0JY83ec8IXbVKaJPImGMYY6KHZrJyoo8z
-	 Tw63jYNyVT0sMYXprt3k7j2eDMr/JVntBQtck0lzwwy/h068khx6W1er02nj+yhvNJ
-	 E2xIT00xwx7tEo43kYsdyPrgaucPawviW3Ar1jz3teNAaeYsGVJNmzAW9TrX7+flVn
-	 AcaENKhrekC5O6gGadumv7hpJ7TwYwrmUidDDT07+HWzgrlLZrF/veXDzdxYqs+fbs
-	 U6SFRYfHeMNSrMcEmV0oCcyF3cnMiNiKYbyRoWpQwvIV0Uy0WSush+HWCbPLljJnIh
-	 GQaMHdNxGCoAQ==
-Received: from jupiter.universe (unknown [100.64.1.62])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 97E6617E0D43;
-	Thu, 05 Nov 2026 00:08:05 +0100 (CET)
-Received: by jupiter.universe (Postfix, from userid 1000)
-	id 5BD92480030; Thu, 05 Nov 2026 00:08:05 +0100 (CET)
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Thu, 05 Nov 2026 00:07:59 +0100
-Subject: [PATCH v3 3/4] phy: rockchip: inno-usb2: move suspend handling
- into new function
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Message-Id: <20261105-phy-rockchip-inno-usb2-clock-fix-v3-3-b20608c08b94@collabora.com>
+	id 1xOkDw-00000007Ekg-2DA3
+	for linux-phy@lists.infradead.org;
+	Wed, 04 Nov 2026 23:16:56 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id CA589601DE;
+	Wed,  4 Nov 2026 23:16:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3B45B1F000C1;
+	Wed,  4 Nov 2026 23:16:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1793834215;
+	bh=/jddQLzhmN5+QbsZ5iN46ovSAlJxSoolcX7Q8+HSct4=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=TOaWcO0LUCYL6oSkgx3uD+IB18hraaWy8MHbVDN84UBM+uou3V9YBRsWGAaMNq2AP
+	 9Cc0dTciOxjLCBSWzUs34/N5u8dWWjGAFlp+OiUeKZeD86fRsndneruNH2Pobs34bg
+	 nHkGPYovX91cQG2+7pDcM/WG0m6yQ7nTjOqioah+1j2nAl681p2ABVSkuOS+w+ZjMM
+	 UCwcLrIeV1ihsId5kes2J4VPNd+cdhHFO87vXLG9WuDzxZnpCSt9nQKu06eT6xiQBz
+	 qI4OiKuBoe2R2Zo/Xevnks/Gi55shYuVYs3Wcsitd7TPGlnHttvTszkQ7ILDCSxGUN
+	 pRicYxRnsZfpg==
+Message-ID: <sashiko-outbox-198285@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v3 2/4] phy: rockchip: inno-usb2: drop duplicated update
+ of rport->suspended
+To: "Sebastian Reichel" <sebastian.reichel@collabora.com>
+Cc: linux-phy@lists.infradead.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20261105-phy-rockchip-inno-usb2-clock-fix-v3-2-b20608c08b94@collabora.com>
 References: <20261105-phy-rockchip-inno-usb2-clock-fix-v3-0-b20608c08b94@collabora.com>
-In-Reply-To: <20261105-phy-rockchip-inno-usb2-clock-fix-v3-0-b20608c08b94@collabora.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Heiko Stuebner <heiko@sntech.de>
-Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Igor Paunovic <royalnet026@gmail.com>, kernel@collabora.com, 
- Sebastian Reichel <sebastian.reichel@collabora.com>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2717;
- i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=rX9nu49yVHon/eoArd9zChZ1LRjZoDqVhWArx28DxU4=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGrrutXgLb9DhtD6zxpWrnTdXUCySn85eBGll
- yUpbCI9C/WcdIkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJq67rVAAoJENju1/PI
- O/qaducP/1HoudOHIpkYPZuBpSk+JB3yjf2J/78yalMteoo6DXmXIcU9dLX+Rp6VVatu18uOlCn
- hY9BDwcBVTi4X1g6I78ZP7sw427gIoc/w/91We3afdZL4sg/SQzQHO9S4DBMCzniy4f3cTk/tRK
- 1iceILrYk2WjRnUncIydPSUxmbfqpMGQS+ZPX7aDIiM/ikIG+HGZB52azAEDpbY2NrUnOxhBcR+
- sZtFyfnUN3x6C+5OCdZvkZR1YJGyyqLaO/+gJh8mPR4m+mtCVfyyMPtrfUVBBAgm79Cu9d+qU1K
- o1dI/FkLaoWkDRkU0AMUbPrnfV9FEEtaaY8kDZK9ZqGY5m9xlJrrOZiPfIFZ2OyIBxGrZ4Bn1Er
- hO81XdGGrM98bB9G3W8Nryp+2l+64CaSpJLD9Vkw2hJNAytMMPm8ekM4Hp6ORqFc3UXrHMWfqX2
- cEOvBLtdLIfxvFgtFPXET19zLlnm3yMoePdQA7SosIWlGv1Sz3IwiJbe2nHAppbGyZTGTQVDJGJ
- 0w3z9jhFJKoq67VG9D39av/uoVGJJsGoZger7yiRnu+sNBG7iL5HpenG4gBsAZ46QyarKxfBPKb
- yBCgolS6Zulsbsv32QUPaM65j9zyLYDCMZpECMwWBw5WSajMFTGh2vjvruhMX+PRVHdBd+3w4dJ
- 5DxP4roLm6U/C7Ee7UpwzZA==
-X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
- fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261104_150808_644898_AF3A6023 
-X-CRM114-Status: GOOD (  15.09  )
-X-Spam-Score: -2.1 (--)
+ <20261105-phy-rockchip-inno-usb2-clock-fix-v3-2-b20608c08b94@collabora.com>
+Date: Wed, 04 Nov 2026 23:16:54 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,108 +63,76 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Move handling of the PHY suspend handling into its own dedicated
-function. No functional changes intended.
-
-Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
----
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 48 +++++++++++++++++----------
- 1 file changed, 31 insertions(+), 17 deletions(-)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-index 51afbcc40c4e..2919c2e11968 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-@@ -332,6 +332,35 @@ rockchip_usb2phy_clk480m_clkout_ctl(struct clk_hw *hw, struct regmap **base,
- 	}
- }
- 
-+static int rockchip_usb2phy_set_suspend(struct rockchip_usb2phy *rphy,
-+					struct rockchip_usb2phy_port *rport,
-+					bool do_suspend)
-+{
-+	int ret;
-+
-+	ret = property_enable(rphy->grf, &rport->port_cfg->phy_sus, do_suspend);
-+	if (ret)
-+		return ret;
-+
-+	if (!do_suspend) {
-+		/*
-+		 * For rk3588, it needs to reset phy when exit from suspend
-+		 * mode with common_on_n 1'b1(aka REFCLK_LOGIC, Bias, and PLL
-+		 * blocks are powered down) for lower power consumption. If you
-+		 * don't want to reset phy, please keep the common_on_n 1'b0 to
-+		 * set these blocks remain powered.
-+		 */
-+		ret = rockchip_usb2phy_reset(rphy);
-+		if (ret)
-+			return ret;
-+
-+		/* waiting for the utmi_clk to become stable */
-+		usleep_range(1500, 2000);
-+	}
-+
-+	return 0;
-+}
-+
- static int rockchip_usb2phy_clk480m_prepare(struct clk_hw *hw)
- {
- 	const struct usb2phy_reg *clkout_ctl;
-@@ -603,27 +632,12 @@ static int rockchip_usb2phy_power_on(struct phy *phy)
- 	if (ret)
- 		return ret;
- 
--	ret = property_enable(rphy->grf, &rport->port_cfg->phy_sus, false);
-+	ret = rockchip_usb2phy_set_suspend(rphy, rport, false);
- 	if (ret) {
- 		clk_disable_unprepare(rphy->clk480m);
- 		return ret;
- 	}
- 
--	/*
--	 * For rk3588, it needs to reset phy when exit from
--	 * suspend mode with common_on_n 1'b1(aka REFCLK_LOGIC,
--	 * Bias, and PLL blocks are powered down) for lower
--	 * power consumption. If you don't want to reset phy,
--	 * please keep the common_on_n 1'b0 to set these blocks
--	 * remain powered.
--	 */
--	ret = rockchip_usb2phy_reset(rphy);
--	if (ret)
--		return ret;
--
--	/* waiting for the utmi_clk to become stable */
--	usleep_range(1500, 2000);
--
- 	rport->suspended = false;
- 	return 0;
- }
-@@ -639,7 +653,7 @@ static int rockchip_usb2phy_power_off(struct phy *phy)
- 	if (rport->suspended)
- 		return 0;
- 
--	ret = property_enable(rphy->grf, &rport->port_cfg->phy_sus, true);
-+	ret = rockchip_usb2phy_set_suspend(rphy, rport, true);
- 	if (ret)
- 		return ret;
- 
-
--- 
-2.53.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gcGh5OiByb2NrY2hp
+cDogaW5uby11c2IyOiBob3RwbHVnIHdlZGdlIG9uIHJvY2tjaGlwX3VzYjJwaHlfcG93ZXJfb2Zm
+KCkgZXJyb3IKLS0KCmNvbW1pdCBjODNhM2VkZjYyNTFjN2VmNmFhZDNhZTE4ZTFhMzAzNTA4ZjNk
+YWIxCkF1dGhvcjogU2ViYXN0aWFuIFJlaWNoZWwgPHNlYmFzdGlhbi5yZWljaGVsQGNvbGxhYm9y
+YS5jb20+CgpwaHk6IHJvY2tjaGlwOiBpbm5vLXVzYjI6IGRyb3AgZHVwbGljYXRlZCB1cGRhdGUg
+b2YgcnBvcnQtPnN1c3BlbmRlZAoKVGhpcyBjb21taXQgcmVtb3ZlcyB0aGUgdW5jb25kaXRpb25h
+bCBhc3NpZ25tZW50cyB0byBycG9ydC0+c3VzcGVuZGVkIGluCnJvY2tjaGlwX3VzYjJwaHlfc21f
+d29yaygpIGFmdGVyIGNhbGxpbmcgcm9ja2NoaXBfdXNiMnBoeV9wb3dlcl9vbigpIGFuZApyb2Nr
+Y2hpcF91c2IycGh5X3Bvd2VyX29mZigpLCByZWx5aW5nIG9uIHRob3NlIGZ1bmN0aW9ucyB0byB1
+cGRhdGUKcnBvcnQtPnN1c3BlbmRlZCBvbiBzdWNjZXNzLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVy
+cy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLWlubm8tdXNiMi5jIGIvZHJpdmVycy9waHkvcm9j
+a2NoaXAvcGh5LXJvY2tjaGlwLWlubm8tdXNiMi5jCj4gaW5kZXggMGI2MWYxNTJlYjNmMy4uNTFh
+ZmJjYzQwYzRlYiAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2No
+aXAtaW5uby11c2IyLmMKPiArKysgYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAt
+aW5uby11c2IyLmMKPiBAQCAtOTk0LDcgKzk5NCw2IEBAIHN0YXRpYyB2b2lkIHJvY2tjaGlwX3Vz
+YjJwaHlfc21fd29yayhzdHJ1Y3Qgd29ya19zdHJ1Y3QgKndvcmspCj4gIAkJaWYgKHJwb3J0LT5z
+dXNwZW5kZWQpIHsKPiAgCQkJZGV2X2RiZygmcnBvcnQtPnBoeS0+ZGV2LCAiQ29ubmVjdGVkXG4i
+KTsKPiAgCQkJcm9ja2NoaXBfdXNiMnBoeV9wb3dlcl9vbihycG9ydC0+cGh5KTsKPiAtCQkJcnBv
+cnQtPnN1c3BlbmRlZCA9IGZhbHNlOwo+ICAJCX0gZWxzZSB7Cj4gIAkJCS8qIEQrIGxpbmUgcHVs
+bC11cCwgRC0gbGluZSBwdWxsLWRvd24gKi8KPiAgCQkJZGV2X2RiZygmcnBvcnQtPnBoeS0+ZGV2
+LCAiRlMvTFMgb25saW5lXG4iKTsKPiBAQCAtMTAwNCw3ICsxMDAzLDYgQEAgc3RhdGljIHZvaWQg
+cm9ja2NoaXBfdXNiMnBoeV9zbV93b3JrKHN0cnVjdCB3b3JrX3N0cnVjdCAqd29yaykKPiAgCQlp
+ZiAoIXJwb3J0LT5zdXNwZW5kZWQpIHsKPiAgCQkJZGV2X2RiZygmcnBvcnQtPnBoeS0+ZGV2LCAi
+RGlzY29ubmVjdGVkXG4iKTsKPiAgCQkJcm9ja2NoaXBfdXNiMnBoeV9wb3dlcl9vZmYocnBvcnQt
+PnBoeSk7Cj4gLQkJCXJwb3J0LT5zdXNwZW5kZWQgPSB0cnVlOwo+ICAJCX0KCltTZXZlcml0eTog
+TWVkaXVtXQpBcyByZXBvcnRlZCBieSBTYXNoaWtvIG9uIHYyIFsxXSwgaWYgcm9ja2NoaXBfdXNi
+MnBoeV9wb3dlcl9vZmYoKSBmYWlscyBpbgpyb2NrY2hpcF91c2IycGh5X3NtX3dvcmsoKSB1bmRl
+ciBQSFlfU1RBVEVfRElTQ09OTkVDVCAod2hlbgpwcm9wZXJ0eV9lbmFibGUoKSBvbiBwaHlfc3Vz
+IHJldHVybnMgYW4gZXJyb3IpLCBycG9ydC0+c3VzcGVuZGVkIG5vdyByZW1haW5zCmZhbHNlIGFu
+ZCBycGh5LT5jbGs0ODBtIHN0YXlzIGVuYWJsZWQuCgpIb3dldmVyLCB0aGUgUEhZX1NUQVRFX0RJ
+U0NPTk5FQ1QgcGF0aCBkb2VzIG5vdCBjaGVjayB0aGUgcmV0dXJuIHZhbHVlIG9mCnJvY2tjaGlw
+X3VzYjJwaHlfcG93ZXJfb2ZmKCkgYW5kIHN0aWxsIHByb2NlZWRzIGFzIGlmIHRoZSBwb3J0IHdl
+cmUKc3VzcGVuZGVkLCBlbmFibGluZyBsc19kZXRfY2xyIGFuZCBsc19kZXRfZW4gYW5kIHJldHVy
+bmluZyBlYXJseSB3aXRob3V0CnJlc2NoZWR1bGluZyBycG9ydC0+c21fd29yazoKCgljYXNlIFBI
+WV9TVEFURV9ESVNDT05ORUNUOgoJCWlmICghcnBvcnQtPnN1c3BlbmRlZCkgewoJCQlkZXZfZGJn
+KCZycG9ydC0+cGh5LT5kZXYsICJEaXNjb25uZWN0ZWRcbiIpOwoJCQlyb2NrY2hpcF91c2IycGh5
+X3Bvd2VyX29mZihycG9ydC0+cGh5KTsKCQl9CgoJCXByb3BlcnR5X2VuYWJsZShycGh5LT5ncmYs
+ICZycG9ydC0+cG9ydF9jZmctPmxzX2RldF9jbHIsIHRydWUpOwoJCXByb3BlcnR5X2VuYWJsZShy
+cGh5LT5ncmYsICZycG9ydC0+cG9ydF9jZmctPmxzX2RldF9lbiwgdHJ1ZSk7CgoJCW11dGV4X3Vu
+bG9jaygmcnBvcnQtPm11dGV4KTsKCQlyZXR1cm47CgpXaGVuIHRoZSBuZXh0IGxpbmVzdGF0ZSBp
+bnRlcnJ1cHQgZmlyZXMsIHJvY2tjaGlwX3VzYjJwaHlfbGluZXN0YXRlX2lycSgpCmRpc2FibGVz
+IGxzX2RldF9lbiBhbmQgb25seSByZXN0YXJ0cyByb2NrY2hpcF91c2IycGh5X3NtX3dvcmsoKSB3
+aGVuCnJwb3J0LT5zdXNwZW5kZWQgaXMgdHJ1ZToKCglwcm9wZXJ0eV9lbmFibGUocnBoeS0+Z3Jm
+LCAmcnBvcnQtPnBvcnRfY2ZnLT5sc19kZXRfZW4sIGZhbHNlKTsKCXByb3BlcnR5X2VuYWJsZShy
+cGh5LT5ncmYsICZycG9ydC0+cG9ydF9jZmctPmxzX2RldF9jbHIsIHRydWUpOwoKCW11dGV4X3Vu
+bG9jaygmcnBvcnQtPm11dGV4KTsKCglpZiAocnBvcnQtPnN1c3BlbmRlZCAmJiBycG9ydC0+cG9y
+dF9pZCA9PSBVU0IyUEhZX1BPUlRfSE9TVCkKCQlyb2NrY2hpcF91c2IycGh5X3NtX3dvcmsoJnJw
+b3J0LT5zbV93b3JrLndvcmspOwoKQmVjYXVzZSBycG9ydC0+c3VzcGVuZGVkIGlzIGZhbHNlLCB3
+b3VsZCB0aGlzIGxlYXZlIGxzX2RldF9lbiBkaXNhYmxlZCBhbmQKcnBvcnQtPnNtX3dvcmsgc3Rv
+cHBlZCwgcGVybWFuZW50bHkgd2VkZ2luZyBob3N0IHBvcnQgaG90cGx1ZyBkZXRlY3Rpb24gYW5k
+CmxlYWtpbmcgdGhlIHJwaHktPmNsazQ4MG0gZW5hYmxlIGNvdW50PyBTaG91bGQgcm9ja2NoaXBf
+dXNiMnBoeV9zbV93b3JrKCkKanVtcCB0byBuZXh0X3NjaGVkdWxlIHdoZW4gcm9ja2NoaXBfdXNi
+MnBoeV9wb3dlcl9vZmYoKSByZXR1cm5zIGFuIGVycm9yPwoKWzFdIGh0dHBzOi8vbG9yZS5rZXJu
+ZWwub3JnL3IvMjAyNjEwMDEtcGh5LXJvY2tjaGlwLWlubm8tdXNiMi1jbG9jay1maXgtdjItMi1l
+MDFiZjUwOTM1OWVAY29sbGFib3JhLmNvbQoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBz
+Oi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MTEwNS1waHktcm9ja2NoaXAtaW5uby11c2Iy
+LWNsb2NrLWZpeC12My0wLWIyMDYwOGMwOGI5NEBjb2xsYWJvcmEuY29tP3BhcnQ9MgoKLS0gCmxp
+bnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6
+Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
