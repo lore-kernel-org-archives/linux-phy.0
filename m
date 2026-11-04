@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 49405606A32F
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Nov 2026 07:05:39 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 804FF606A32D
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Nov 2026 07:06:39 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=IAgVvJQI;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=RLnDZLMi
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=HhsOqD/q;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=UvT5gpdu
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,42 +14,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=JTvDgIgAskjyXPSmhVVCScbF/dLjlSKvaOrIyE4Ibmo=; b=IAgVvJQIChwUvbJJgr3MRO8cVG
-	L/fe+3iwucC+1Fw4V7hMxhFKx3ePAo0t4ONepwPWmSI0GFtlnkT4hqEwzG2mCqENZA6j8lPkzCuDG
-	x90ijNv9rmtpvgRdRzwEBoBfdt4/80pJCSY5hNImbzJH6Mrhdlxbbq8dpovVPgwHQAnauTKb5fp+c
-	MCbEVXwUvq7w3+NuPXOZlz0n8VvsRpqH3PWBywQ7Kb3zYIhjkt1HoEOLQvbbzcFq3j9REpWA1GYxv
-	D+vp3UiKdSHz7uisVBfbXH4LYpctgj28g8iEmx247VtNxr4HBAI8VwAqDApRPuERc2BDJQ4pnZxua
-	UhGO8N1w==;
+	bh=hCM96EgjCyG/7dCakHFGEOGXGT6v7ldeBC6tSN0aFm0=; b=HhsOqD/qax5xFJmC8jedaWgFwr
+	r+XklUfjB8k/5biJN2x4lLe60aciKIoFbX9duDPsylXE/jQb2fv9zFj1kXApCoJDoDfCUZbRW0C70
+	ZepD8yI8Pvgu3vt+lFikac7abqZ7lGMWo2/6IGyEZHhOpdlX0E+0MnL3Aq1dfjnK60uimOJiEt2o1
+	ye6cpe4EBizN/h2To4uCWoEhnfOmjUXxlso/h7RehYsFZgghn0zf4+RHPZHQEnvIguDEr49AvCf+R
+	F/w6Fmi2vIPNJ43PnqAgBddLV9LgzrhHFMoSjYjrNjTZ24e2HKKu0PEp7+W/3aSw2cGwAS8Y6LQzk
+	vU4sJW0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOV3y-00000004SUP-43Nn;
-	Wed, 04 Nov 2026 07:05:39 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xOV4x-00000004SdM-107j;
+	Wed, 04 Nov 2026 07:06:39 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOV3y-00000004SU1-1pIP
+	id 1xOV4w-00000004Scz-1y3f
 	for linux-phy@lists.infradead.org;
-	Wed, 04 Nov 2026 07:05:38 +0000
+	Wed, 04 Nov 2026 07:06:38 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id E093843DEF;
-	Wed,  4 Nov 2026 07:05:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B50B81F0093A;
-	Wed,  4 Nov 2026 07:05:32 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 787576022E;
+	Wed,  4 Nov 2026 07:06:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8436F1F000C1;
+	Wed,  4 Nov 2026 07:06:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793775936;
-	bh=i7gGN6qKp1qfdQhQXG8DxbwzMK2glOScLUQMtxcIIpY=;
+	s=k20260515; t=1793775997;
+	bh=oZ4eIQgNg851HiC1LhwvokflDAaGaokZHAdBUHZGe30=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=RLnDZLMiiz4kkM9A9pJovDqU+VLzQjOA9MMX4iCEyFYC9s1UDheI5+/G1gVJmSSC9
-	 Yg3LrSbRVs0/JqxBTl5nK4LcVRggqFeOvfzBsLWI3DbIEu4Mqj8xDyGjAzJvMyeQZe
-	 QLr62LmCbEepEx4wAdyPYbhMHX8mCfxFOR0H7Jagk6w0EJDxFl1lNq5TTBAayGkEqw
-	 zAjk8wktfpd69upnEEgHlNRy4oAmNJPXuj5smhwTbRToLWMS7bkwhZzPKuhZ6/uQ2P
-	 dHhhrpnYiI547Dk+dcp5uAmXvxjziUqoJPSx9odmZhoOH2C5onhtoDdBPMSNzDmPBI
-	 g0MNkUIKyJ4jg==
-Message-ID: <f319ba87-5569-4323-ae4c-3f9f34a9a3c1@kernel.org>
-Date: Wed, 4 Nov 2026 08:05:30 +0100
+	b=UvT5gpduUQKVZ800CmfMM+07oDYD2bgft81mhxQAPxi2siw4JpGseHEbSwbP2LCE2
+	 /pYKuepHMpNfOyqpMP4TyeDywh8AEbrhWfLIoFLGCnwIMzMN2xBNXzv/z2jMT7A3MI
+	 QUo+clMjOFRZMrFFGp2syiZKG7VAndCJpHoHe08RZVlN27t1WQXlFOHVzXW7EPolr2
+	 AykHmdd5Q6qHGKYMOgi7Nys93pAdtUwjOZ7KD9F6rYtdeTqNGVUZvhpv/UVRfqcjzt
+	 B3QnVxcQ71b+npOrmuVMN5+p9uU2D8swChKvxz53zirGbDNj2KxVXLewyWRFeD1rpe
+	 nD8rAZ10GmQWQ==
+Message-ID: <a103b49e-e13f-4c70-b9a0-261534cfef79@kernel.org>
+Date: Wed, 4 Nov 2026 08:06:31 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/5] dt-bindings: phy: qcom: Add common qcom,csi2-phy
+Subject: Re: [PATCH v2 2/5] phy: qcom-mipi-csi2: Make timer and OPP clock
+ names configurable
 To: Anusha Arun Nandi <anusha.nandi@oss.qualcomm.com>,
  Bryan O'Donoghue <bod@kernel.org>
 Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
@@ -60,7 +61,7 @@ Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
  linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org,
  linux-kernel@vger.kernel.org
 References: <20261103214105.3605181-1-anusha.nandi@oss.qualcomm.com>
- <20261103214105.3605181-2-anusha.nandi@oss.qualcomm.com>
+ <20261103214105.3605181-3-anusha.nandi@oss.qualcomm.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -106,7 +107,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  K9bCVaboTA2T77QYkRcRJYSsO1alGX0ome/hMLD1daXlkrNUp1HWa3K4iytLRXjCSIorWiGs
  n+q3krnpXu3TFkA8qtOFZMdnIiFuiq1yLT8hptsV5xh1TA2nsVvSYiaCr3q4s4BKjS/KrLDb
  qoxzw8ISjdUp4pA85vb6YLCmb39NgidD+7PmAr65lBNveIFynTgsja1rRQ4=
-In-Reply-To: <20261103214105.3605181-2-anusha.nandi@oss.qualcomm.com>
+In-Reply-To: <20261103214105.3605181-3-anusha.nandi@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,48 +128,18 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 On 03/11/2026 22:41, Anusha Arun Nandi wrote:
-> SA8775P, QCS8300 and SC7280 CSI2 PHYs are bit-for-bit identical in
-> devicetree shape (ports, bus-type, data-lanes, operating-points-v2,
-> clocks, single "top" power-domain, vdda-phy/vdda-pll supplies).
+> The timer-clock lookup in phy_qcom_mipi_csi2_probe() and the OPP
+> clkname passed to devm_pm_opp_set_clkname() were both hardcoded
+> string literals sized to x1e80100 ("timer"/"core"). Add
+> timer_clk_name/opp_clk_name to struct mipi_csi2phy_soc_cfg so each
+> SoC can declare its own clock-name strings instead.
 > 
-> Describe all three with a single qcom,csi2-phy.yaml and a compatible
-> oneOf, rather than one standalone schema per SoC. QCS8300 is further
-> required to be paired with a qcom,sa8775p-csi2-phy fallback
-> compatible, the same way other Qualcomm bindings express full
-> hardware compatibility between two SoCs (see qcom,qusb2-phy.yaml);
-> this lets the driver bind QCS8300 nodes via its qcom,sa8775p-csi2-phy
-> match entry rather than carrying a duplicate one.
-> 
-> qcom,x1e80100-csi2-phy.yaml is a separate PHY with a different shape
-> (3 clocks, 3 power-domains, different supply names, DPHY split-mode
-> support) and is left untouched.
+> x1e80100's soc_cfg now declares "timer"/"core" explicitly; no
+> behaviour change.
 > 
 > Reviewed-by: Jigarkumar Zala <jigarkumar.zala@oss.qualcomm.com>
 
-How is it possible? There was no such patch, this is basically v1.
-
-If this is v2, please provide changelog and lore links pointing to the
-review.
-
-> Signed-off-by: Anusha Arun Nandi <anusha.nandi@oss.qualcomm.com>
-
-Please use scripts/get_maintainers.pl to get a list of necessary people
-and lists to CC. It might happen, that command when run on an older
-kernel, gives you outdated entries. Therefore please be sure you base
-your patches on recent Linux kernel.
-
-Tools like b4 or scripts/get_maintainer.pl provide you proper list of
-people, so fix your workflow. Tools might also fail if you work on some
-ancient tree (don't, instead use mainline) or work on fork of kernel
-(don't, instead use mainline). Just use b4 and everything should be
-fine, although remember about `b4 prep --auto-to-cc` if you added new
-patches to the patchset.
-
-You missed at least devicetree list (maybe more), so this won't be
-tested by automated tooling. Performing review on untested code might be
-a waste of time.
-
-Please kindly resend and include all necessary To/Cc entries.
+Where did it happen?
 
 Best regards,
 Krzysztof
