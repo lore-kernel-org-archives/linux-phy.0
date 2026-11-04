@@ -2,75 +2,109 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 09660606A326
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Nov 2026 08:11:16 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 320BD606A326
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Nov 2026 08:26:11 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=3aVbEGX0;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=qq.com header.i=@qq.com header.a=rsa-sha256 header.s=s201512 header.b=TRqapx6v
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=HppOLfGo;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=nW5BYAki
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Message-ID:Date:
-	Mime-Version:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=zfQUALPBa3JITUu6P0lUBtSsJ/lhCjjoUph7LOF65ao=; b=3aVbEGX0YEHN07bhfPwe2tMtEZ
-	BUpCYXJnpnSskyGJ9MQkMRuf2yF/8kcQ4jkPdVgoGJevc/bkw6wyNN8urMxlzPOdyihWySkMDzYw9
-	GD+INShJbn/QBaAILB4VvTtXkEVUdFhqktQHJSsQ6l/wtIvvKQ3vV2t2n2R7EgndBgh8w/qiwVW83
-	WqjwsQH/SHdKdjt+YEkXC+WE+RtCJlJ+R04kgYP95R+x3CH4TAkxnbCfU9ynvQk/XNcOjU+FfvEqg
-	PTUW5pTF+c4iAQe9F8ly2kw8XL17Im0svg9rVBM2y+lAXTp9BzsT9GJnIjwYaUNKWVUBe6gHlrgbz
-	qAaXJDxA==;
+	bh=8JLdd5iE/iyJ0z+1mxAa2oAQcfnLGbEaAdephMUMCaI=; b=HppOLfGoOSqFJVfjY8OxJpRWTz
+	15QIj6MK+c1Ek8cM9XaFtyvkgb2KG6zkycbkXzdMWtCRyX3AMjacPSFlknLIe7rbpR2HP6+8v/zB5
+	UaL/KnSvwziZxLFbzTOIp93Vapnh+V06hVMQZ0yInk4yrwfhSlQ6s5Wtos3Fv46SnVDLKDDeoe3RS
+	w8vVYcM5X3B/p7iKLwh2QIfossJXiqou9Guuj4Y1nd+ovbSjhe26FhiX758PLEa38b9vNqOn+GEhP
+	H+rcpAcUPULIUMJa+rcZ8lLVr+TpSEWr9Kdt66VG6rmloEJM+4I3HFB5Fu5KmulsG0yBkhH8/Pxd8
+	7w3eSabQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOW5T-00000004f6x-31cj;
-	Wed, 04 Nov 2026 08:11:15 +0000
-Received: from out203-205-221-173.mail.qq.com ([203.205.221.173])
+	id 1xOWJu-00000004hWY-32Ge;
+	Wed, 04 Nov 2026 08:26:10 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOW5P-00000004f2F-2EmH;
-	Wed, 04 Nov 2026 08:11:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
-	t=1793779869; bh=gF29lVl8HY9M/hv2wsnrcjRNlNM9ZPm3tn3+eQc+KAo=;
-	h=From:To:Cc:Subject:Date:References:In-Reply-To;
-	b=TRqapx6vmU271M8ykSTL3r7nEcjuL/Xg2+At7cL2hGRnGY9dktAXdNk3Wf/nmDw1I
-	 O1vcaPWgebY8QNyzgV8ZkOLIUcjoDvM7GS30C9ufY/BuuZ699wBE5xDKDO5/CfDRHm
-	 Aiu3eRK8gZTagxuJHgC7TVjfVZp7J/SlPkSXBRIk=
-X-QQ-XMRINFO: M/715EihBoGS47X28/vv4NpnfpeBLnr4Qg==
-X-QQ-XMAILINFO: OBsY42vIixr9voHNmCSGxNYclsdG6Sal1N5wgHw975+B912JHF825Qw4JPgdgT
-	 BL7Ap/HQJUY9RvLbpyZBdsClTIdXYkTofIeyOoO/oXJU9HOsiq35MUo9jcpN5B3Ox/bcWYeAP0cxA
-	 MjvPlhgfRX0lmezpiDc0TnHSBhNSDJLMHgLotsTlYJ8L9CHU8+AhvXLscg/RYbe8sH3hJaJwMSwBT
-	 IcviMkBtmt46x1SLAkPTkauNbMXaDgj9Os2p6FqP7KAFuE+FPrz46LEzZJxiYA17CNEkeRbC8LjPW
-	 KDhumM29TAY0FH5wAWYDCCPxZscshbLus7f7+DexD6IeoB5rxUZXhYUOD4yV3oMrGqhbqPkK5VWdX
-	 5kiGRMWAJ2EmVYIE5mSkG3af5u9rHt2Yp9Eh9/bzkR4KlIDjjwNoMCxUiMxNbSdu5OzFEPv4eOGZs
-	 m2KD0f/JvEfD3ShdfMf9uhKTj4Oymny4ScVgb3WntnFFKq3UHBK9OSEI8x544jMnm7w+1+yqHFAFU
-	 oXmch/Zk29Q1oCawqXNnhzksAgDZcTuEAB3cciI6FvcI7eFtnQPHIBJEAAhwR+gCeIWqZfqHOb3RW
-	 UD7AFZgp5HyimOEAYZM0XreHls4bElj0pgA+zzKO8rpGkl611FboPBa2/dE9Vd7izhlC+FYdJM9XD
-	 qPsVbabYhPlOoYSH8cBjGQM+9Zk/Z8lLfHy3PMLEaXLIGUOhyf4d3q52FRxmO6/TTAM6jRShgL9SN
-	 oQwcFbpAvoAedltVZAVmKuKInn5CZ6JAt3vMBF44AwDRbYjAGhP5gT1MIpy3vD5OSsxRPLC+obwkX
-	 zmxLtVGR7HGSMGuiHMEuYFSMDsAOhPuRI5m0EJiy+iLtxkJX4N/nJAva76tPdE1BLjAelqsnrE4qZ
-	 GxSM82Y/bejBLqqUZ1h0gDfo++eA0GaLSwBEnDDjIoOezXUNk1PceiIIEEWtX79Kal1O/FBpZMI1M
-	 nyUN7PzsR1RGj/J6nHCwIVy3Nm6m38XCfVLshvi4aVqI6tSassNe0GkxGNGe7gljEl/oF1LIuuxCZ
-	 SF0jQ7WFkRFOEPv714u2/VLEhTxvKak7V89p5
-From: "=?utf-8?B?Q3VuaGFvIEx1?=" <1579567540@qq.com>
-To: "=?utf-8?B?VGhpbmggTmd1eWVu?=" <Thinh.Nguyen@synopsys.com>
-Cc: "=?utf-8?B?bGludXgtY2xrQHZnZXIua2VybmVsLm9yZw==?=" <linux-clk@vger.kernel.org>, "=?utf-8?B?ZGV2aWNldHJlZUB2Z2VyLmtlcm5lbC5vcmc=?=" <devicetree@vger.kernel.org>, "=?utf-8?B?bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn?=" <linux-arm-kernel@lists.infradead.org>, "=?utf-8?B?bGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZw==?=" <linux-rockchip@lists.infradead.org>, "=?utf-8?B?bGludXgta2VybmVsQHZnZXIua2VybmVsLm9yZw==?=" <linux-kernel@vger.kernel.org>, "=?utf-8?B?bGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmc=?=" <linux-phy@lists.infradead.org>, "=?utf-8?B?bGludXgtdXNiQHZnZXIua2VybmVsLm9yZw==?=" <linux-usb@vger.kernel.org>
-Subject: Re: [PATCH 23/27] usb: dwc3: Configure RK3572 PIPE port before discovery
+	id 1xOWJs-00000004hW1-3zHN;
+	Wed, 04 Nov 2026 08:26:09 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 5197260267;
+	Wed,  4 Nov 2026 08:26:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EBCC81F000C1;
+	Wed,  4 Nov 2026 08:26:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1793780768;
+	bh=J3ThcFtrRkgwnMtkNBNcnxrXl5oKD/YpSEz2FCPS0e4=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=nW5BYAkiJKIjsord9BybRbZzsABBgSbKHBIx+fEbmhHW7NAlvgpmhZEBNrH3ZDIpv
+	 UhpmHApaRr81Eh4mWZONdzdUwVsuTE1On0usga42gDyVkO/wWESG1gSV7gCz5FHKfH
+	 ArDkKEtJHUKJ98HyEcc4qKimFqj4Ic9evIf+rfn5R9454gZSy8kM+VnVmABLUm3YYX
+	 Vvk4BJTwa5bsevXD2+kfMPnRfGB/JvwY8K165e8w870aL0JvVlJRSplmNRfDmErffN
+	 lwPlJDC0BuUdtf1mvvje3goqENp0/1d3ogmhPLXzLc3CNZEpvoA4JAsQicSJ3VlMZ/
+	 BmMkISc4MfhrQ==
+Message-ID: <ee28bd16-11fc-4b78-b1ee-e0e20bb0cfdb@kernel.org>
+Date: Wed, 4 Nov 2026 09:26:00 +0100
 X-Archived-By: <archiver.kernel.org>
-Mime-Version: 1.0
-Date: Wed, 4 Nov 2026 16:11:07 +0800
-X-Priority: 3
-Message-ID: <tencent_B554CB5826E48E2405EC22E6FAED3721D10A@qq.com>
-X-QQ-MIME: TCMime 1.0 by Tencent
-X-Mailer: QQMail 2.x
-X-QQ-Mailer: QQMail 2.x
-References: <20261022-add-board-ok3572-c-v1-0-0b0fd85a31ee@qq.com>
- <20261022-add-board-ok3572-c-v1-23-0b0fd85a31ee@qq.com>
-	<auqRrz1kM-sfJEQ-@vbox>
-In-Reply-To: <auqRrz1kM-sfJEQ-@vbox>
-X-QQ-mid: xmsezb41-0t1793779867tvkd8y3x2
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261104_001111_920703_B76FE886 
-X-CRM114-Status: GOOD (  13.32  )
-X-Spam-Score: -1.9 (-)
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 0/2] phy: add support for TH1520 USB PHY
+To: Icenowy Zheng <zhengxingda@iscas.ac.cn>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Wei Fu <wefu@redhat.com>, Drew Fustini <dfustini@tenstorrent.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org,
+ Icenowy Zheng <uwu@icenowy.me>, Han Gao <rabenda.cn@gmail.com>
+References: <20261103081444.1983071-1-zhengxingda@iscas.ac.cn>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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
+In-Reply-To: <20261103081444.1983071-1-zhengxingda@iscas.ac.cn>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,37 +117,34 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-0.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
-	DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	FROM_EXCESS_BASE64,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-5.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
+	autolearn=no autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi,
+On 03/11/2026 09:14, Icenowy Zheng wrote:
+> This patchset is split from the "Add TH1520 USB support" patchset,
+> with only the PHY binding/driver part.
+> 
+> Icenowy Zheng (2):
+>   dt-bindings: phy: add binding for T-Head TH1520 USB PHY
+>   phy: add a driver for T-Head TH1520 USB PHY
 
-> This can just be:
-> if (device_property_match_string(dev, "phy-names", "usb3-phy") >= 0 &&
->     (speed == USB_SPEED_UNKNOWN || speed >= USB_SPEED_SUPER))
 
-Agreed. This glue-side check will be removed with the helper when the
-configuration moves to the PHY drivers.
+Considering how vulab@iscas.ac.cn is ignoring reviews/comments and spams
+with a lot of unthreaded emails, completely disregarding any tries of
+contact over last 1.5 months, shall we ignore all contributions from
+@iscas.ac.cn?
 
-> This looks like something that can be done in the phy driver. The other
-> Rockchip platforms such as RK3588 do this in the phy right? Why it must
-> be here?
+Maybe this will be the only way to actually be heard?
 
-You are right. I checked the RK3572 hardware capabilities and tested a
-PHY-based implementation on the OK3572-C. Both controllers report DRD
-capability, so DWC3 uses one USB2 and one USB3 port rather than taking the
-host-only port-discovery path. On USB1, USB3 PHY initialization is still
-called with the PIPE port disabled. My original reason for placing this
-before DWC3 core probe was incorrect.
-
-I will fix this issue in v2.
+Icenowy, do you have any possibility to reach to bot spammers from vulab?
 
 Best regards,
-Cunhao Lu
+Krzysztof
+
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
