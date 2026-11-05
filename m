@@ -2,70 +2,67 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EE86B606A32D
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Nov 2026 19:18:22 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 43517606A330
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Nov 2026 19:19:20 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Gm5XMDdT;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=lL5hLUwk
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=xxwYhQxW;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=fqwqf.xyz header.i=@fqwqf.xyz header.a=rsa-sha256 header.s=resend header.b=SKcdGcue;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=amazonses.com header.i=@amazonses.com header.a=rsa-sha256 header.s=zh4gjftm6etwoq6afzugpky45synznly header.b=Sp4/guqN
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:Cc
+	:To:From:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=n6Raf6rCNc2UIEZtytLP5tCaTCKdpdZONrpZE3+arpA=; b=Gm5XMDdTBv82infSmbkd5O6ORU
-	FdEozY7vakjSyNOs5AJ46GyRfq6Sq+FkQ1TsRtcTt8NDpAIZxjhD0iAe4R4R+11WOedY4rLqcXDP3
-	nsqM/LRNGzOZy/Gp8mMjNTMDkounq8cm7FKaolthVHog2yo0k5mLiMhcopPknb7A6vyVxTu9mEe5r
-	VSgDVOUltcmZyBOQBbRzbMDoYFb7IWXRyRv8ThCjfAx/E6I1tAqbgyqwlAUP9BwUcKeHWw88ULsJn
-	AthEgEPTfjFW6Vr2C5PQHffiYp+5sSNj86wB1nuZ5doBW7Mx8ov35gk+i3m02UBSbGP9D4o1m7kPC
-	OAaMi10w==;
+	bh=wshFaF44nnWnEV0IaWUi/qJpwMpp/LPAwVuYsaptTwo=; b=xxwYhQxWLlXRPXB9/WVeXc0UnT
+	H1Xah6gX7lBqWmmvOT31dIYb6BfgpitroKOh02yvI19gbZ7qVOyBDSvUQJ/qxZTf69JYJiArlGraM
+	WX75vVnLTeNpELZV9g+tiFEVmhBpWXC+VkQV+Dt5rNPF8RsyReXa6uNzKfsIr51k6Xx/aXMrpSq/S
+	k6Z3Tu/4Gh/mNm1HxybOmr8naFmewKiiYAKmfxjtr3B/HERTAN9I08Nckc02fFmXMu7QLmE2lOIXP
+	2UbeoZecWCd/rijlqI7pQMqiea3tZIrNkKjNN43kHHFvxG4raiqu/ACujDhQgmL9cB33Oq1+y6fZG
+	eSerZpBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xP2yb-0000000AJ7E-0U9N;
-	Thu, 05 Nov 2026 19:18:22 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xP2zX-0000000AJD4-48UW;
+	Thu, 05 Nov 2026 19:19:20 +0000
+Received: from e234-53.smtp-out.ap-northeast-1.amazonses.com ([23.251.234.53])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xP2yY-0000000AJ73-2JMQ
+	id 1xP2zR-0000000AJAB-0Jz1
 	for linux-phy@lists.infradead.org;
-	Thu, 05 Nov 2026 19:18:19 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 386DE41B46;
-	Thu,  5 Nov 2026 19:18:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A01A21F000C1;
-	Thu,  5 Nov 2026 19:18:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793906298;
-	bh=XD1Rm+iGqF06DKo2ufDJiE26layU8M+F3N4dQIPcMnQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=lL5hLUwkxIEo+DdtEPhhyGUDjYZ/mqvi7E1mpsRNbQY6sAmzotey2EfNE84CYdqeA
-	 n8MRfrJrjOAwcNBinA0i2s//nahSVK+0tD9WboGj6Hb66RtNJDJz7nRFfvRXV4TvN/
-	 FMxdDfN4G0CN1M2wHB8VynPd8ULeTEwfi7zUwGWxNPYgawFCNbdphIx9V8kzSjZTns
-	 AN2VsJ/5biQ8mfSA//Gx7Fu3kf9Mw+2T1whck9xyZdOOCoalUm0JHsfb7Kh/Lp7Opj
-	 KIPjiep9zOAODo2OjWuF+3zgLbdg35OpG8IsXKkHsUAbz4MaOFREJLQAVntAzWa3f+
-	 FoXQwxrLeNBow==
-Date: Thu, 5 Nov 2026 19:18:13 +0000
-From: Conor Dooley <conor@kernel.org>
-To: Joseph Telaak <joseph@telaak.dev>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Chuanhong Guo <gch981213@gmail.com>, linux-mips@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/2] dt-bindings: phy: Add Siflower SF19A2890 USB 2.0 PHY
-Message-ID: <20261105-shampoo-osmosis-6975c7cf734d@spud>
-References: <20261104-sf19a2890-usb-phy-v1-0-db0cad937614@telaak.dev>
- <20261104-sf19a2890-usb-phy-v1-1-db0cad937614@telaak.dev>
- <20261104-unscented-armory-4dc756ab95cb@spud>
- <CAPY4CJ5g+e4iu8p5s+Vf7XmEjB9cYX9xYyzHd0Fz8GEbmFm4hw@mail.gmail.com>
+	Thu, 05 Nov 2026 19:19:18 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=resend;
+	d=fqwqf.xyz; t=1793906349;
+	h=In-Reply-To:References:From:To:Cc:Subject:Message-ID:Content-Transfer-Encoding:Date:MIME-Version:Content-Type;
+	bh=3a2TKKu6c488cLrk+vcl0HofWRPkemnN04CQHxiDno0=;
+	b=SKcdGcuepwvngqsgSoaGpbShB52xUs5KCnngDi3HlsTevSrUzttAkSwwzxAIn7vC
+	knUzOSPTtJ7ctlYUd1HjuOKTLwkbgOWS3iiGoRYUoZO2+LN7B4UXF7sHi037JbgiorU
+	iSyLwgG/bcZ76lfKZln5vDReHqw9mKPuBTzKjjI4=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=zh4gjftm6etwoq6afzugpky45synznly; d=amazonses.com; t=1793906349;
+	h=In-Reply-To:References:From:To:Cc:Subject:Message-ID:Content-Transfer-Encoding:Date:MIME-Version:Content-Type:Feedback-ID;
+	bh=3a2TKKu6c488cLrk+vcl0HofWRPkemnN04CQHxiDno0=;
+	b=Sp4/guqNOezlkOeBBq+FekxGvteZOXi3rbxsYxhhUzY+6zSedYeFdRCjV/e5WFma
+	+itVfomaxqBteLNIfh0vWhnkPwpnkvWL4yAmcQU1rifO7xv50udrwBYbM8oM8dBamEN
+	yxQdi9YNhWgJ6SPlnt+fjH6XRe7ski2457TXwKrc=
+In-Reply-To: <791c7eed-f0c2-47c3-9595-77be72f29771@kernel.org>
+References: <791c7eed-f0c2-47c3-9595-77be72f29771@kernel.org>
+X-Mailer: git-send-email 2.53.0
+From: Jizhou Tong <fqwqf@fqwqf.xyz>
+To: Bryan O'Donoghue <bod@kernel.org>
+Cc: vkoul@kernel.org, linux-phy@lists.infradead.org, 
+	linux-arm-msm@vger.kernel.org, linux-media@vger.kernel.org
+Subject: [RFC PATCH] phy: qcom-mipi-csi2: clamp the programmed settle count
+ to six
+Message-ID: <010601a1ad2694f9-a9be628a-40db-4074-b0bd-1fce00cdb65f-000000@ap-northeast-1.amazonses.com>
+Date: Thu, 5 Nov 2026 19:19:09 +0000
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <CAPY4CJ5g+e4iu8p5s+Vf7XmEjB9cYX9xYyzHd0Fz8GEbmFm4hw@mail.gmail.com>
+Feedback-ID: :1.ap-northeast-1.6BGMgStFQE7EJYq5syaCRzdneEHVt/+DAaGDrqUmDs9QLO4/SllUBZ3fHvnZ8rcAX/3IjUyTRgi5JFZsWrikFHwlPJqCkqEMlxDFM4JXh+ycxH/J5Tudg5bGdz6h4331g1L1EFsGR8kuYNfGLsrxz4Nym4YXoPcZxeVkrHry4Zx21n8vEVLEjc7s+OCM8PU9:1.ap-northeast-1.DTXDV/V9GPBWozcllKo8innbNB2qs2O/3F8XZSzd9ZM=:AmazonSES
+X-SES-Outgoing: 2026.11.05-23.251.234.53
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261105_111913_257639_E29D16D1 
+X-CRM114-Status: GOOD (  11.23  )
+X-Spam-Score: -0.5 (/)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,75 +72,92 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0209550053227467777=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=ham autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-15.3 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,FROM_SUSPICIOUS_NTLD,
+	HEADER_FROM_DIFFERENT_DOMAINS,HK_RANDOM_FROM,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	T_PDS_OTHER_BAD_TLD,USER_AGENT_GIT autolearn=ham autolearn_force=no
+	version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
---===============0209550053227467777==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="fkTf2+Z1l1LqlU4y"
-Content-Disposition: inline
+The settle helper returns zero for intervals no greater than the
+six-tick hardware offset. lanes_enable() then rejects the configuration.
+For slightly larger intervals it can program a count between one and
+five. Bryan requested a minimum programmed count of six instead of
+rejecting the zero-count case.
 
---fkTf2+Z1l1LqlU4y
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Keep the six-tick offset separate from that minimum: first calculate the
+rounded interval in ticks, then return six when subtracting the offset
+would yield less than six. Check before subtracting to avoid underflow
+for intervals shorter than the offset.
 
-On Wed, Nov 04, 2026 at 07:39:32PM -0500, Joseph Telaak wrote:
-> > > +        reg =3D <0x19e0c040 0x60>;
-> >
-> > That's a weird offset and size.
-> > What lies in the regions around this device?
->=20
-> It sits in the 1 KiB from 0x19e0c000 up to the next block at
-> 0x19e0c400. At 0x0, 0x4 and 0xc are the reset, clock gate and bus output
-> enable registers of the USB clock and reset manager, which the clk
-> series describes as siflower,sf19a2890-usb-crm; 0x8 holds a value I
-> have no documentation for. The OpenWrt port gives the PHY 0x40-0x9f,
-> and its driver only uses 0x44, the PHY's sleep control. Read from
-> U-Boot, registers between 0x40 and 0x8f hold non-zero values I have no
-> documentation for either, and the rest reads as 0. The GMAC's
-> configuration registers sit the same way, at 0x40 past its clock and
-> reset manager at 0x19e04400.
->=20
-> If you'd prefer one node for the whole region, providing the clocks,
-> resets and the PHY, I'll restructure it that way for v2.
+Link: https://lore.kernel.org/all/791c7eed-f0c2-47c3-9595-77be72f29771@kernel.org/
+Signed-off-by: Jizhou Tong <fqwqf@fqwqf.xyz>
+---
+Hi Bryan,
 
-No, not asking for that. Just making sure this wasn't some sort of
-syscon being hidden by the offsets and size.
-Acked-by: Conor Dooley <conor.dooley@microchip.com>
-pw-bot: not-applicable
+This implements the minimum you described in the October 19 reply,
+separately from the rounding patch. I have interpreted six as the minimum
+programmed register value, after subtracting the existing six-tick offset.
+Please confirm that this is the intended hardware policy.
 
+For example, the rounded interval of six ticks at link_freq=600000000 Hz
+and timer_clk_rate=66666666 Hz previously returned zero and failed lane
+enable. It now programs six. Intervals of twelve ticks also program six;
+thirteen ticks program seven. The offset itself is unchanged.
 
---fkTf2+Z1l1LqlU4y
-Content-Type: application/pgp-signature; name=signature.asc
+This is based on the accepted rounding RFC v3 [1]. The ARM64 W=1 object
+build and 20,571 ASan/UBSan actual-helper cases pass. The previous helper
+fails the minimum-count checks. No hardware test of the new floor is
+claimed, and it is not installed in my running kernel.
 
------BEGIN PGP SIGNATURE-----
+[1] https://lore.kernel.org/all/010601a154d848df-37257f7a-0553-43ed-93c2-4fcc5b690d14-000000@ap-northeast-1.amazonses.com/
 
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCauzWdQAKCRB4tDGHoIJi
-0htFAQCpfD/ATW+Oh8iIXCWIFJJ9g6tE4XFONhEBugZlFfDZ8gD9GLc6+0RrUu63
-KYjkd0LAmVIcn/ACklIrnrIlzsL5sQ4=
-=PI9i
------END PGP SIGNATURE-----
+base-commit: d7e7bca7169873b46e857c025c10f3336c1258d8
+prerequisite-patch-id: 1f072b82125ac6272dc2a011688afc6cabb0f99c
 
---fkTf2+Z1l1LqlU4y--
+ drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
 
+diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
+index f07699ba1f..dd70f29669 100644
+--- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
++++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
+@@ -223,19 +223,20 @@ static u8 phy_qcom_mipi_csi2_settle_cnt_calc(s64 link_freq, u32 timer_clk_rate)
+ {
+ 	u32 timer_period_ps;
+ 	u64 t_hs_settle_ps;
+-	u8 settle_cnt;
++	u64 settle_ticks;
+ 
+ 	/* Round the complete 6 * UI term up, avoiding an intermediate truncation. */
+ 	t_hs_settle_ps = 85000 + DIV64_U64_ROUND_UP(3 * PSEC_PER_SEC, link_freq);
+ 
+ 	timer_period_ps = div_u64(PSEC_PER_SEC, timer_clk_rate);
+ 
+-	if (div_u64(t_hs_settle_ps, timer_period_ps) < 6)
+-		return 0;
++	settle_ticks = DIV_U64_ROUND_UP(t_hs_settle_ps, timer_period_ps);
+ 
+-	settle_cnt = DIV_U64_ROUND_UP(t_hs_settle_ps, timer_period_ps) - 6;
++	/* The programmed counter has a minimum of six, in addition to its offset. */
++	if (settle_ticks < 12)
++		return 6;
+ 
+-	return settle_cnt;
++	return settle_ticks - 6;
+ }
+ 
+ static void
+-- 
+2.53.0
 
---===============0209550053227467777==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0209550053227467777==--
-
