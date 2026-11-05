@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E4862606A326
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Nov 2026 09:12:42 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 768DE606A32E
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Nov 2026 09:13:42 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=vSCj0SwJ;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=L61cYoga
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=lSZROOU2;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=jJ01zUsR
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,50 +14,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=dusLvX2eYMgELlyJ9uSG7C/tNNisRmn0Dc9WKb9Vm/A=; b=vSCj0SwJgDrgt+tUgyUlLvoyl/
-	xzMJ37gksrr57ibY2hJyFsATuS1QzUS4QdRdlCsz+gJroK57yY8PfXWbmTxQZpx6ApVdHXKHNq57x
-	bhZw2aCWjZsTpF9d4bE4RXuJ9AvIdKfPRowMNdxOdp9+PTEN42hbQjGhp+e1fg0QSX4eHLzAV9BTO
-	mP+qIsxWwnlBc5ZM2zJzgc8Q0WCRsTNqLn5NEzdFh5e8xwP/iyx36GmGtmYJuS7y4eZ8aI8GLsvjm
-	WGdxJtVYKgDMio8vsblbBqmPtMfod/daZYSWpexSuL4FEfoE+1lIxriBM+HOHlCv+BxHNX5m745MI
-	XZ92mT9A==;
+	bh=KomJnSoMMCCQlOcYoH+xbXc8MOFbBFFIVX+wRszv2zk=; b=lSZROOU21xI7ua7f0Cg7zsMkwF
+	X+8m5ePiUCO8H1MONpbzhzLPEW1+DtVe23GBzriZQf6LKsLOc0xg/ahIFrcXxyuznSeymjdcr1EAQ
+	rfgQM6mfQyMKxE8N6778C6FzUkMeAD88tl+EKJj6iw2sFzikDp6Qaw/epKmfeupvtfdD93iTH7ANB
+	oEVkl15zYqEe8DBa40SLTbg5sSg+Tf6yka5BC8cq3+dy7Br+N/khbaLhSbFNpsmytBa8jzT/47i/6
+	yAUXohZaDybnjan4w/mP3ZYfBIaEiQN0mjgnbDEEc8IE4GPUlGcRaRvjkezYfti6squB/QKpk2NjC
+	G5JbEPwA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOtWU-00000008GLv-0uI7;
-	Thu, 05 Nov 2026 09:12:42 +0000
-Received: from mgamail.intel.com ([198.175.65.9])
+	id 1xOtXS-00000008GZh-0Bif;
+	Thu, 05 Nov 2026 09:13:42 +0000
+Received: from mgamail.intel.com ([192.198.163.15])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOtWQ-00000008GLE-3nPw;
-	Thu, 05 Nov 2026 09:12:40 +0000
+	id 1xOtXN-00000008GYG-1LgP;
+	Thu, 05 Nov 2026 09:13:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1793869959; x=1825405959;
+  t=1793870017; x=1825406017;
   h=date:from:to:cc:subject:message-id:references:
    mime-version:in-reply-to;
-  bh=Dz++69HapeENA57zHJBnq0oJ2fOfutZ9NHoiO/H6u9w=;
-  b=L61cYogaRBCqW6JsudCWRsfJL2K3EA2eal08XWtETkl2MOuIByhgzI6F
-   FICIy5UJJzOeLCUOBgNS86CWVfvWs7hN81mGTRhpBvCu++fjWC6fYPYwp
-   CH5v1ucJToptDJk4tqDEVfiNVeGwqAbfqcKqI/mdfqrdu9IEUh+swhlmd
-   M/0MvbOdE0Ce/Q2wA68JQknbJKHFehGAC9Zt5ta8hO1bmZKvqU7jdJayb
-   6HZliQHikfYbPt0pRTceSnrwvVyxGmh7Df37PhZhgXEtCukOpvnriC+k/
-   K9UDh7v+46805hdkP+N5tyUBtcujiFAAhZRy2xsno8VdyOfPY1dSxUJtl
-   w==;
-X-CSE-ConnectionGUID: uFNJ3bodQWWKtNxcouvp4w==
-X-CSE-MsgGUID: XX4KGb5XRgybJpFEnMd07w==
-X-IronPort-AV: E=McAfee;i="6800,10657,11956"; a="2549150"
+  bh=2W6MRtupdrj020Uh4UEb5zyJkRA2+AjPQ8ugIRouE4A=;
+  b=jJ01zUsR9IZepvJmcSQ/uzWF2UFCkvDKo0XC5bBusFJ19bRNiX2e9j4W
+   AxxUrDJuhbde1CW+vB4Fs2cxGBB1uyVHgdioxsBmqzciGk5zR6gW2fBp6
+   uq6ecg7LwixF91bDHtx14IlOHTJyg6KSG+v95vjlI++dCH43UOEbq4kO/
+   TQFXuHjwMht3vn6N/PEJJrI/axGFcRmpeW91urkVNUhBLUmQIqGmc9DSs
+   QzFhWk9cncBKorXadiasT8P8/Xz1WQ62EVRlpM7EY0wCRmDue0REM0RVP
+   F6BX5DZ3M8NxabZPMhMAv6fA+seZQwHU2sKWJyB6y0HtANm86dhjOZLOm
+   g==;
+X-CSE-ConnectionGUID: c7XCGnBeS0aJZxBoOdyGUA==
+X-CSE-MsgGUID: +12x4SLMQ7W0zxc0SiTesA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11956"; a="2643784"
 X-IronPort-AV: E=Sophos;i="6.27,197,1787036400"; 
-   d="scan'208";a="2549150"
-Received: from fmviesa003.fm.intel.com ([10.60.135.143])
-  by orvoesa101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 05 Nov 2026 01:12:38 -0800
-X-CSE-ConnectionGUID: lR6z4GXfReGlu3/EPN36EQ==
-X-CSE-MsgGUID: lPmvdfNRReaL7TajpI3RKQ==
+   d="scan'208";a="2643784"
+Received: from fmviesa006.fm.intel.com ([10.60.135.146])
+  by fmvoesa109.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 05 Nov 2026 01:13:36 -0800
+X-CSE-ConnectionGUID: WHi44R+6TY6k/cxMKjfsGQ==
+X-CSE-MsgGUID: sZYNWWPRQpShUCMMaIX5GQ==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.27,197,1787036400"; 
-   d="scan'208";a="7123499"
+   d="scan'208";a="7295989"
 Received: from amilburn-desk.amilburn-desk (HELO localhost) ([10.245.244.144])
-  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 05 Nov 2026 01:12:20 -0800
-Date: Thu, 5 Nov 2026 11:12:18 +0200
-From: Andy Shevchenko <andriy.shevchenko@intel.com>
-To: Chunyan Zhang <chunyan.zhang@linux.spacemit.com>
+  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 05 Nov 2026 01:13:18 -0800
+Date: Thu, 5 Nov 2026 11:13:16 +0200
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>
 Cc: "Rob Herring (Arm)" <robh@kernel.org>,
 	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
 	Maxime Ripard <mripard@kernel.org>,
@@ -109,6 +109,7 @@ Cc: "Rob Herring (Arm)" <robh@kernel.org>,
 	Zhang Rui <rui.zhang@intel.com>, Lukasz Luba <lukasz.luba@arm.com>,
 	Orson Zhai <orsonzhai@gmail.com>,
 	Baolin Wang <baolin.wang@linux.alibaba.com>,
+	Chunyan Zhang <zhang.lyra@gmail.com>,
 	Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
 	Shawn Guo <shawnguo@kernel.org>,
 	Chanh Nguyen <chanh@os.amperecomputing.com>,
@@ -120,7 +121,6 @@ Cc: "Rob Herring (Arm)" <robh@kernel.org>,
 	Thierry Reding <thierry.reding@gmail.com>,
 	Ray Jui <ray.jui@broadcom.com>,
 	Scott Branden <scott.branden@broadcom.com>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
 	dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org, netdev@vger.kernel.org,
 	chrome-platform@lists.linux.dev, linux-gpio@vger.kernel.org,
@@ -132,19 +132,21 @@ Cc: "Rob Herring (Arm)" <robh@kernel.org>,
 	linux-arm-msm@vger.kernel.org, linux-mmc@vger.kernel.org,
 	linux-phy@lists.infradead.org, linux-pm@vger.kernel.org
 Subject: Re: [PATCH] dt-bindings: Use hex unit address patterns
-Message-ID: <auxIcruDKIYb9I33@ashevche-desk.local>
+Message-ID: <auxIrJ0q9kxEI6-U@ashevche-desk.local>
 References: <20261102135330.2493332-1-robh@kernel.org>
- <CAAfSe-uD=s0RpuqQ_h+_fErcEC+G=N_LA6e=p_sXJ=iG7jMc3Q@mail.gmail.com>
+ <20261104-vigorous-flat-dingo-3e5bd2@quoll>
+ <auuWVGsyb3RrOIfh@ashevche-desk.local>
+ <e390de9a-b7ac-4fb9-8a0d-f6a4935dd665@kernel.org>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAAfSe-uD=s0RpuqQ_h+_fErcEC+G=N_LA6e=p_sXJ=iG7jMc3Q@mail.gmail.com>
+In-Reply-To: <e390de9a-b7ac-4fb9-8a0d-f6a4935dd665@kernel.org>
 Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
  krs, Bertel Jungin Aukio 5, 02600 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261105_011238_982668_ABF26F32 
-X-CRM114-Status: GOOD (  14.49  )
-X-Spam-Score: -4.4 (----)
+X-CRM114-CacheID: sfid-20261105_011337_426911_900D565C 
+X-CRM114-Status: GOOD (  15.46  )
+X-Spam-Score: -4.2 (----)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -157,35 +159,42 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Thu, Nov 05, 2026 at 10:39:06AM +0800, Chunyan Zhang wrote:
-> On Mon, 2 Nov 2026 at 21:53, Rob Herring (Arm) <robh@kernel.org> wrote:
-> >
-> > Unit-addresses by default (and most commonly) are hexadecimal. There's a
-> > number of cases using decimal patterns. Fix all of them, limiting the
-> > pattern to match the 'reg' limits if there are any.
-
-[snip]
-
-> > --- a/Documentation/devicetree/bindings/thermal/sprd-thermal.yaml
-> > +++ b/Documentation/devicetree/bindings/thermal/sprd-thermal.yaml
-> > @@ -47,7 +47,7 @@ properties:
-> >      const: 0
-> >
-> >  patternProperties:
-> > -  "^([a-z]*-)?sensor(-section)?@[0-9]+$":
-> > +  "^([a-z]*-)?sensor(-section)?@[0-9a-f]+$":
+On Thu, Nov 05, 2026 at 09:09:00AM +0100, Krzysztof Kozlowski wrote:
+> On 04/11/2026 21:32, Andy Shevchenko wrote:
+> >>>      patternProperties:
+> >>> -      "^layer@[0-9]+$":
+> >>> +      "^layer@[0-9a-f]+$":
+> >>
+> >> These two lines are looking good.
+> >>
+> >> Andy, it's okay if I give Rb tag?
+> > 
+> > Yes, again a pointer to 34d1e754155b ("dt-bindings: iio: drop unneeded quotes").
+> > 
+> >> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+> > 
+> > I expect to see
+> > 
+> >  Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com> # xylon
+> > 
+> > or something that matches the piece you reviewed.
 > 
-> Reviewed-by: Chunyan Zhang <zhang.lyra@gmail.com>
+> As pointed out in other thread (the SPI), only a few people use that
+> syntax.
 
-Yes, I agree with Krzysztof that this tag is ambiguous. Please, mark precisely
-what have been reviewed.
+So we need to teach them.
+
+> Also look here:
+> https://lore.kernel.org/all/CAAfSe-uD=s0RpuqQ_h+_fErcEC+G=N_LA6e=p_sXJ=iG7jMc3Q@mail.gmail.com/
+
+Yeah, I answered there.
 
 -- 
 With Best Regards,
