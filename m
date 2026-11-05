@@ -2,12 +2,12 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A3D74606EE92
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Nov 2026 23:51:46 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AA783606EE9F
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Nov 2026 23:51:47 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=cEfKIQbm;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=UkMr84MR;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=a3ga47aA
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=sS31wRq4;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=NGHT/rcp;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=hdhWKyYU
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -15,82 +15,82 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=gPsRbyDNPrF26S52Ss0241A2uY+dA9MEGYmRHOMiY9Q=; b=cEfKIQbm1z4Nc7lO0JNRMHsfvi
-	VBeLpjbZEqZvJLK0nNfYHu1QqcXj0tQ5hRml1uVD1I2qzuDTCcUJAGGSan7x2nJKFaeAqSSdX9xPI
-	NmrUOjnlJGZ7LQZ0V7MjBt3JuAQqvrVczAdBiqoOeJvxQDqS+6pEg8N8gkZx3/b7udc8G7kvQ3KJj
-	5ab9Xmfl7OMB6a2dKNmR/nQbLcv44PODpyPysS0Ny+pn393z3VKfQXMeGRe9yetFj7CnIPK0vys/a
-	dSHNz8am8sxIX6xrNmgOCS6NBI5ijgzY14DZ46drQUs74FLzWgmzH/TEJqv4HjOhPE2Sa6aoeuL1B
-	dP/t0HBw==;
+	bh=BF3oHinndwPc9gaJBAIM+2eoFosaTZLyfL+cLEVEQG0=; b=sS31wRq4ctDpivEA737NroVx4V
+	+G4TAJjbmqKOTR0moyibTbIjjOwIm4QktcygejNxLJDd1uGT9LzAS05QdLEpIjf97DB9kjPQX7GvP
+	mVtstkdGGVZLlU7xb9yWkGiI3gWpGI50CpNuFEGwiemaSmeKcarUwP0Rjqsm/k3tBByrSO5GWwuze
+	D1phqta1QQAF2qNCtCGunjOH6IPnhPBR/eo8Mt3rcHaIlmknNOgb1POzClHJBPn8SKRk34t7/GXAn
+	nikaY8zL/kSyzk79fjbXbNup5gEK5UcZvdmcP9dXcg6F1JlUjQsTrvvXztxXFp6DY5zN4RtNfHO2J
+	CQB5ihkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xP7FC-0000000AtSS-1Vyc;
-	Thu, 05 Nov 2026 23:51:46 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1xP7FD-0000000AtT1-1q0I;
+	Thu, 05 Nov 2026 23:51:47 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xP7FA-0000000AtQR-14Nh
+	id 1xP7FA-0000000AtR6-2ceZ
 	for linux-phy@lists.infradead.org;
 	Thu, 05 Nov 2026 23:51:45 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A5NeVGl2261408
-	for <linux-phy@lists.infradead.org>; Thu, 5 Nov 2026 23:51:43 GMT
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A5NeQIl3295461
+	for <linux-phy@lists.infradead.org>; Thu, 5 Nov 2026 23:51:44 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=ZPLdkk8872+
-	3hTdrWeH9X039pnhcr7CAG7eCMOqHgoo=; b=UkMr84MRhG2lwl6GRudk0/V1aKS
-	k6KLoW94KwpoB0/8NXIq8PN2pxR0aylngS8LJuzs+1ioj8sPRmPgOiuJuZq61DMf
-	Nb78RcqMZoNje9ftXFatgSbVwuvSUsZwZ4Bz1zDzk8Lvy4atOm/D70c0D7pr6SH+
-	/uUE4vmoAGYVIaBcznb9huBgRNsta7bZJtxMd3YSpxWgyFTfc+lVbsLtVHreYEm/
-	2hBdudXpsOqHnLFHEhy5V0Cq0rsba5oIrS2KBwzOh8LX3NClFBfk2brdXvhB1/dx
-	RkTlGEJ+C3EcNoR5cNO0dqSXB7DWUxTiGbJ2LgZ7RaRrbX2kTBUzsKMEG5w==
-Received: from mail-dl1-f70.google.com (mail-dl1-f70.google.com [74.125.82.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hs3pa0198-1
+	:mime-version:references:subject:to; s=qcppdkim1; bh=X2o9cUd2qHX
+	ReA0bRiBPgQ74+T3hh2zLgXg2cSSw0KA=; b=NGHT/rcpt23284hfViWjRlWL6uM
+	1vxHTZ9eg7iYKUR6DKr26vy1qAmkUs3It47omRulSZYSMap/vdTkxeSl2VKNsbzT
+	cVkm9yL9rBXvmKxixzGT3iKczwzeLV3XNtV9vCKzIakmAarFclomC1pceykoicXe
+	UfVLxl9rmkR0AzJ7a2ogAG/zMEGs+C15n5vC7YEbH0qAji0IwGQiRJ/hBGydaSAO
+	8m0rC7yieMXsvugTVMDo+w+QI6M4yKnSy7iWGsqILRS6AuWuGZwGFW6E2w0MXNnv
+	GjQqXq1rSFv3gjCgkUIO6YU1Ajso6gQdzkxJvt4QgqY78fcvNUIbsZEnzkw==
+Received: from mail-dl1-f69.google.com (mail-dl1-f69.google.com [74.125.82.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hs3p9r134-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 05 Nov 2026 23:51:42 +0000 (GMT)
-Received: by mail-dl1-f70.google.com with SMTP id a92af1059eb24-147be78cd56so466876c88.1
-        for <linux-phy@lists.infradead.org>; Thu, 05 Nov 2026 15:51:42 -0800 (PST)
+	for <linux-phy@lists.infradead.org>; Thu, 05 Nov 2026 23:51:44 +0000 (GMT)
+Received: by mail-dl1-f69.google.com with SMTP id a92af1059eb24-1a2b6fab7a6so64753c88.1
+        for <linux-phy@lists.infradead.org>; Thu, 05 Nov 2026 15:51:44 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1793922702; x=1794527502; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1793922703; x=1794527503; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=ZPLdkk8872+3hTdrWeH9X039pnhcr7CAG7eCMOqHgoo=;
-        b=a3ga47aAfb8VmJQeflAIbKGHV4L7VlkTaR4Y1QV1h8gAFzULp9rNgED5UkMTLUkg5/
-         aMKZscox+85lauOEVabusVvGoCUP8AmXlOqXvz4vNQ4j3J+Ud5uxihRYvbevX+KnHiSj
-         EIT3LMKd+eIhfbETF7GLrbsGfzMKCq/8NwmFh+nB83X2xrMaxhS/ZU+2OVNINJ+uiI/U
-         AxffVOLRums/GgXYMu0UyFq8mVjb3qN4h/+rr9wIaPLMZ017zOtouzYcRMwY4IviMRD5
-         4yk1iVw/MfTnaA8TC6y87Z14hES2ALQBotQgx3HOmm9H2K1rC0cPgd3qQNttk2dBpqTV
-         qOhA==
+        bh=X2o9cUd2qHXReA0bRiBPgQ74+T3hh2zLgXg2cSSw0KA=;
+        b=hdhWKyYUIofpD1W18ULP4zM0iCxi9XNhNG7+GjfU6TxVIntmwyC3zDPpwkvJruhgKL
+         YsGn097i5HdnIsYPna3XolGx4txtoXJcIoDtfohdHQOF8EqhkfwnUOq+BgOhM4+QHlBg
+         yBwrpodnbxttPVuSg6jnaKWDGH37erg+NPs30VgZKuGrDmgLANMTPxIX991VV8D0HQfV
+         F45zDiDrhUALZguU7UPEjoQYwQQCdkmG0Y8h56hq59JOkanX+hcCBuZ2Zs9KdD9xy/6u
+         P3JVmglU4dt9108fnRTgb8GRGO3vTSn6+HeFnZf2dTizynGW1C7y2twswtjCD9GHZfr4
+         9Pqg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793922702; x=1794527502;
+        d=1e100.net; s=20260707; t=1793922703; x=1794527503;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=ZPLdkk8872+3hTdrWeH9X039pnhcr7CAG7eCMOqHgoo=;
-        b=EB1VUFWF/L4TW6efP0/sNjGDRIO8IRRmD2p/NP6FcKagihu1CDljxdf/sFo6qYVm6R
-         Ta67hnuojJsH7zFl0HwC6N5XWND6cr0x/MMta0vaL2Rhdz2oSkEqu/tIpiBBQi/KGf1T
-         5m+RJcVaISnDxKu3ypGiGRuJxh+IZ4LAmJgOuNuVZy5HtCExe7KGhMoQV5sPSKD/oXUS
-         s4PtG6JIiYYe3IXzUa76vP27I09zLXkg6fR59SYkijYBIokkWeA57NwqXSqEBuQUSrG8
-         lTB7EsRd4CKYOdCXH2amcMawGoYlbR0b8MwhUxLWqW7cE/zupYyhqpNrwcj4a+noO1Fo
-         aIsA==
-X-Forwarded-Encrypted: i=1; AKwUvByj+RSKceZVJrkLsiLgyPfDoIH8TDA8XeJHpCvfi+Cxknz27xkjsGGfAycOKOIDTOcXi5I5CZFGQic=@lists.infradead.org
-X-Gm-Message-State: APuU4Z+VCYBTIjE3rW7FSIEOwdS4Yrkp50rgoDx9h6a2MxesZ0+alwtT
-	UmcVGMABK/ookdA7Jtw7IJrVgC/mJx91ajC6+Tc7q/pilNjcXeG/+ZO9nHgBP3+zis/dX73GTCM
-	VBlfoXhzGfaF+vkMgfOaJKXDoxmn1aoeeDAvW/H9JzIrjlqej+AJErwP1JM2/VoZneIwX
-X-Gm-Gg: AYBFou2siVqfr/xFlVDC53uaJQUeoh4HvV3h+YYpvLOgPWdApo9/bVthY6XRVLOExTk
-	gt4MLuPw99NqJ7pvmMZqt1U4NIePr63jo0sZDZO1IWo/ng4kw6gLcJlQOXV9tv+MppvTZMe2k4M
-	vY9CnMpXbv67gaZ3fr+u7h7U+F2DuirVlZ+FPYwIkG1NeAF7W07WWOv0oT8B9Kc8/vcahPV6r5H
-	dWrbOQjsVMN3cZW2QMSQje6EotPm6+jX5JdIXzSMvgFLok7ykav6h1XJjtE7zEnO1cNuVC9eidV
-	UXV4QLQDD86q/idgAzipMxmbP/ddYnrWgITIlTozEMkZi6PNvxbmW8VHvk/InKR3OThanidnySZ
-	M12ap1bznK4QMhV0PwcnNkl0sEKLvvuYDQlnPMA6H8C8k/T13sjtviL1LHoCLHx+bfaxpHgAcnc
-	LPc1a2IzjtOaLMHaJYFXJVjoYnYF8=
-X-Received: by 2002:a05:701b:280c:b0:192:e5a8:6bae with SMTP id a92af1059eb24-1b25d368d72mr666748c88.40.1793922701656;
-        Thu, 05 Nov 2026 15:51:41 -0800 (PST)
-X-Received: by 2002:a05:701b:280c:b0:192:e5a8:6bae with SMTP id a92af1059eb24-1b25d368d72mr666717c88.40.1793922701154;
-        Thu, 05 Nov 2026 15:51:41 -0800 (PST)
+        bh=X2o9cUd2qHXReA0bRiBPgQ74+T3hh2zLgXg2cSSw0KA=;
+        b=RNwwAv6I1fI4yfDLQHt9F8AuiYVii/hj0Lmah+oeJ7kjw6KGC3mMIQB6961J8FfKCO
+         dD721jpzXDVRqjh8QwK8kJ7xKiKdGeH+/OLCHl5QP5RH0dkeqB4OEuF6HeAvnxWLTSKl
+         xiGPMGAES1uEG/V+RwJ9DOofDRc5JDxb3MecKyLGlQwE72mBzm1j5b+i83ghJ7/wLazq
+         /5rJFeffQio7IWcmuYXkDokSnQKXLjNhN7dIS9/b9kWnvwIHK/l3/W/v/1d/Piyeav/C
+         qc2Jrp9B6IUh73GHZpZj+PIzgFv+Gr8uQ2Ufi/C3KYkX/jC8IQXLnZTpF72lYqZMUcrr
+         n4CQ==
+X-Forwarded-Encrypted: i=1; AKwUvBwoQGGMUbuXmtCkYy3oE0Iu6HSKTPEI+MDdC26zMSYLTftLv40uvEmifCzYY9fb677O5bBtv1kYrMY=@lists.infradead.org
+X-Gm-Message-State: APuU4Z+6oG3jILbB0YNHKZo5WWiu/97lSTxRWqCkb7stVlKMSwEICh1v
+	LoX1j44+DsPVp/myWamWUOm3aT/on7HKsdtS0a1iDZCG5Tvs70bvQvCL3+eDFxEc0OGpcRUX2js
+	10qjgv70q0qnOLfe5pb82T6cx7VaF0Et/oSdla4pYEqz5pMyvPdqAzfJqZ1oDYWhiJkNl
+X-Gm-Gg: AYBFou1ZhWmZi3Z327zjC6Bq3EXj7pc7CXrfPWRFg35XEOHj1xkEsHUD2KIcMiYwu3B
+	vbZD0hkj4nA4NXttBFHksef3c0AnSU/T1qrdDo9Cm85YcnWMF+rxHAZZ61VLK1G0vBV2pCqQxpR
+	XFzzfk33uiVm40xGqTziGIdlmn2YnxtrWnRuNyMrpjgu2lVpOAsnsPSZowvLXCSMmhfGnnIyqNM
+	VLYaOM0kYsuyDjT1zaqW8060se57QboNZX9KiS3fSSE8sdiJLKMimq4bqNK65WtVGrvRuhBfqs9
+	SM5sOyuzqVufnBCE/An2+kvArg8u7NIsecJML8TC8MkQ2aehIcBJtG1GwYXUjoGspfA9DAWEiUM
+	V5rILK54xBMaV3sNy6FAXIWZfKRcE5k3it0W39nMlhh3hqzeBvy7N1T0q2eGinZAjFeZXOVSayC
+	TvZMrf1J1Fo8cpDo88vzVDFG+9d/8=
+X-Received: by 2002:a05:7022:3f0d:b0:156:d588:c881 with SMTP id a92af1059eb24-1b24f432240mr5489993c88.2.1793922702937;
+        Thu, 05 Nov 2026 15:51:42 -0800 (PST)
+X-Received: by 2002:a05:7022:3f0d:b0:156:d588:c881 with SMTP id a92af1059eb24-1b24f432240mr5489933c88.2.1793922702259;
+        Thu, 05 Nov 2026 15:51:42 -0800 (PST)
 Received: from hu-aarunnan-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b25e4a63f6sm389041c88.9.2026.11.05.15.51.40
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b25e4a63f6sm389041c88.9.2026.11.05.15.51.41
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 05 Nov 2026 15:51:40 -0800 (PST)
+        Thu, 05 Nov 2026 15:51:41 -0800 (PST)
 From: Anusha Arun Nandi <anusha.nandi@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh@kernel.org>,
         Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -103,43 +103,43 @@ Cc: gjorgji.rosikopulos@oss.qualcomm.com,
         jigarkumar.zala@oss.qualcomm.com, linux-phy@lists.infradead.org,
         linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org,
         linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
-Subject: [PATCH v3 2/4] phy: qcom-mipi-csi2: Make OPP table optional
-Date: Thu,  5 Nov 2026 15:51:35 -0800
-Message-Id: <20261105235137.2635442-3-anusha.nandi@oss.qualcomm.com>
+Subject: [PATCH v3 3/4] phy: qcom-mipi-csi2: Add sa8775p D-PHY support
+Date: Thu,  5 Nov 2026 15:51:36 -0800
+Message-Id: <20261105235137.2635442-4-anusha.nandi@oss.qualcomm.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20261105235137.2635442-1-anusha.nandi@oss.qualcomm.com>
 References: <20261105235137.2635442-1-anusha.nandi@oss.qualcomm.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-Proofpoint-GUID: vC8bkGCRLcRprR-01Wa8PZsaaeLA3ljU
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTA1MDA5NSBTYWx0ZWRfX4vpVrkaxJyXP
- Hts64d8Zh9nDirnW6G9xUUgMtTEKj+XpxXpCZXu0NF6UED2VVx6Z2LsJ89Y6M08YUgxqpwfknH7
- 2A8iwENpJ428dYdRJ+UZlhWSP18KVgQ=
-X-Authority-Analysis: v=2.4 cv=e7WT2qp/ c=1 sm=1 tr=0 ts=6aed168e cx=c_pps
- a=SvEPeNj+VMjHSW//kvnxuw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTA1MDA5NSBTYWx0ZWRfXwVjO7RWwEJFv
+ ssvnCniGWjNChkGwMvg53dmX/OcSFzAoiGxo3xfReEFS/qIhYYPypkGMAwvhSUzRVy0aYdqIIM4
+ Bv5wno3q3pgx/BMRBzFDH94MWkf84uM=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTA1MDA5NSBTYWx0ZWRfX1sF7OHnl8mll
+ 8TFHoL1XyBzIkoUaEMq6VtP5Q40oQOLVCjY5SvIA/JFQJiHygHif2EoHQYAnbHj1+L0vquxob+8
+ PFFnxaBnyNv8/2+Zev39l+y9TEwShEzrSXDek94Zo49Bv0YWAx88ERU4chOYTVlGE+6I0BuSjoA
+ lsNs7+qBoat+XziyvV2f08jZwVq/+ThcLdPXd4jeknMPyVTGRg1DllnA7XAOi5uZJRNlQ85/3Od
+ wgCkAqFs39mW701HxwZe4Aq+PBobV7uTajhYYsAV2mRAY+zqnpBLwk+qc21MlUUWzib+U3JEVnS
+ 8Dg78kldX/UvFL7I4WhExj5kaCg4kyYinvU8SETKtt3h7bFPDkENxpbyIUP2rLj2nY9XyOoz2z5
+ Ih/lwwWpWoo48FPBx6UMOzkjFA6jdCoa43MBqfdIPZONHHUCyXlLkNA37GHgvyjqqRkW/XR0fRl
+ W6JXFFSmagKYDRYuWOw==
+X-Proofpoint-ORIG-GUID: lvXA75mdlP-jXZNGSyDTHeqV4z3MmRsU
+X-Authority-Analysis: v=2.4 cv=f6Pdl+yM c=1 sm=1 tr=0 ts=6aed1690 cx=c_pps
+ a=kVLUcbK0zfr7ocalXnG1qA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
  a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22 a=EUspDBNiAAAA:8
- a=xhLwaI6HiHkcQTGlYsAA:9 a=Kq8ClHjjuc5pcCNDwlU0:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTA1MDA5NSBTYWx0ZWRfX2Pfh3WpbxtOp
- uzJ9VJVy4sPanPAH6unUGkkscZFW5yVUieKQs+lSDaz7+CFNeZ+AxZ+kGCEkCNdnIHXk0vggEFZ
- gfTcaSxKTJ5nargF7g3TzWk7aTJ6DcmRuKaXP+jdB9PlQ6aHZ3Wf+tPPsszYTZbk2CvZJT4ejyS
- yk0pFxIfgwD2dYlYih1HvPh+DSvMsePMRxuEyRnPuztxKksOC5J7Q3ONYQN2jSnHlQ2Tp8jEwV6
- JgIjpMzGVyojcbNdY0nPrJPUpN9Uz/7R96CANGVAzTQp4+4t4e3xWipne+fecCI/phVdPW9I7jq
- Pw5uNj1aGWvxFLUKEchJ1/dQbukg6iX5lR6Z9UE1/q3ChiJqC0akDNp+NDJiu3dt+CmNTZ6Azww
- KaXMu9zERMuaSXho9P66cofESHu38vqaj4q+HOf+4t8FdV2RNpXCpMkt9t9o27ZzmLdveo0o+X3
- +TwSwdfddX3CXPbd62Q==
-X-Proofpoint-ORIG-GUID: vC8bkGCRLcRprR-01Wa8PZsaaeLA3ljU
+ a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22 a=EUspDBNiAAAA:8
+ a=NbtrdQoedUgDOuZm1b4A:9 a=vr4QvYf-bLy2KjpDp97w:22
+X-Proofpoint-GUID: lvXA75mdlP-jXZNGSyDTHeqV4z3MmRsU
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-05_06,2026-11-04_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 impostorscore=0 suspectscore=0 clxscore=1015 priorityscore=1501
- malwarescore=0 adultscore=0 lowpriorityscore=0 bulkscore=0 phishscore=0
+ priorityscore=1501 lowpriorityscore=0 malwarescore=0 bulkscore=0 phishscore=0
+ adultscore=0 spamscore=0 clxscore=1015 impostorscore=0 suspectscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611050095
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261105_155144_424072_D1335EB9 
-X-CRM114-Status: GOOD (  18.61  )
+X-CRM114-CacheID: sfid-20261105_155144_670284_F340BC42 
+X-CRM114-Status: GOOD (  15.57  )
 X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -160,148 +160,186 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Not every SoC the generic MIPI CSI2 PHY driver supports needs an OPP
-table: a CSIPHY with only a single, unscaled power-domain has no
-performance state to vote on, so running its "core" clock through
-the OPP framework buys nothing over a plain clk_set_rate(). Add a
-no_opp flag to struct mipi_csi2phy_soc_cfg and skip
-devm_pm_opp_set_clkname()/devm_pm_opp_of_add_table() in probe() and
-the OPP/performance-state handling in
-phy_qcom_mipi_csi2_set_clock_rates() when it's set, falling back to
-clk_round_rate()/clk_set_rate() on the timer clock only.
+Add the SA8775P CSIPHY to the generic MIPI CSI2 PHY driver, 
+bound to a new "qcom,sa8775p-csi2-phy" compatible
+and reusing the existing D-PHY 2-phase hw ops
+(phy_qcom_mipi_csi2_ops_3ph_1_0). The lane_regs_sa8775p[] init
+sequence is the CSIPHY v1.3.0 2-phase 2.5Gbps 4-lane D-PHY register
+set ported verbatim from the legacy in-tree camss-csiphy-3ph-1-0.c
+table; common_regs_offset is 0x800.
 
-x1e80100 doesn't set no_opp, so this is a no-op for it. The "core"/
-"timer" clock-name strings themselves stay hardcoded literals: every
-SoC this driver supports uses the same two names, so there's nothing
-to make configurable there.
+SA8775P reuses the same "timer"/"core" clock names as x1e80100 (both
+are hardcoded literals in the driver, not per-SoC configurable - no
+SoC this driver supports uses different names). Like x1e80100, its
+CSIPHY core clock is OPP-scaled against the sensor's link frequency
+via the shared csiphy_opp_table in lemans.dtsi, matching the legacy
+in-tree CSIPHY driver's own sa8775p_resources OPP wiring.
+
+SA8775P's CSIPHY has a single power-domain, the Titan Top GDSC,
+matching the legacy in-tree CAMSS driver's sa8775p_resources.pd_name
+= "top" and the existing lemans.dtsi camss node. Like x1e80100's own
+"top" domain, it is not OPP-scaled, only kept enabled.
+
+QCS8300 shares this same CSIPHY D-PHY hardware and does not need its
+own of_device_id entry: the qcom,csi2-phy.yaml binding declares
+"qcom,sa8775p-csi2-phy" as QCS8300's fallback compatible, so QCS8300
+CSIPHY nodes bind through the "qcom,sa8775p-csi2-phy" match entry
+added here.
 
 Reviewed-by: Jigarkumar Zala <jigarkumar.zala@oss.qualcomm.com>
 Signed-off-by: Anusha Arun Nandi <anusha.nandi@oss.qualcomm.com>
 ---
- .../phy/qualcomm/phy-qcom-mipi-csi2-core.c    | 72 ++++++++++---------
- drivers/phy/qualcomm/phy-qcom-mipi-csi2.h     |  3 +
- 2 files changed, 42 insertions(+), 33 deletions(-)
+ .../qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c    | 108 +++++++++++++++++-
+ .../phy/qualcomm/phy-qcom-mipi-csi2-core.c    |   1 +
+ drivers/phy/qualcomm/phy-qcom-mipi-csi2.h     |   1 +
+ 3 files changed, 109 insertions(+), 1 deletion(-)
 
+diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
+index 966d79c98f9b..52994cb721ec 100644
+--- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
++++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
+@@ -317,7 +317,6 @@ static int phy_qcom_mipi_csi2_lanes_enable(struct mipi_csi2phy_device *csi2phy,
+ 	writel(val, csi2phy->base +
+ 	       CSIPHY_3PH_CMN_CSI_COMMON_CTRLn(regs->common_regs_offset, 7));
+ 
+-	val = 0x00;
+ 	writel(val, csi2phy->base +
+ 	       CSIPHY_3PH_CMN_CSI_COMMON_CTRLn(regs->common_regs_offset, 0));
+ 
+@@ -383,3 +382,110 @@ const struct mipi_csi2phy_soc_cfg mipi_csi2_dphy_4nm_x1e = {
+ 	.genpds = x1e_genpds,
+ 	.num_genpds = ARRAY_SIZE(x1e_genpds),
+ };
++
++/* 5nm 2PH v1.3.0 2p5Gbps 4 lane DPHY mode */
++static const struct mipi_csi2phy_lane_regs lane_regs_sa8775p[] = {
++	{.reg_addr = 0x0724, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0728, .reg_data = 0x04, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0700, .reg_data = 0x80, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x070c, .reg_data = 0xff, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0738, .reg_data = 0x1f, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x072c, .reg_data = 0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0734, .reg_data = 0x0f, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0710, .reg_data = 0x52, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x071c, .reg_data = 0x0a, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0714, .reg_data = 0x60, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x073c, .reg_data = 0xb8, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0704, .reg_data = 0x0c, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0720, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0708, .reg_data = 0x10, .param_type = CSIPHY_SETTLE_CNT_LOWER_BYTE},
++	{.reg_addr = 0x0024, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0000, .reg_data = 0x8d, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0038, .reg_data = 0xfe, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x002c, .reg_data = 0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0034, .reg_data = 0x0f, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0010, .reg_data = 0x52, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x001c, .reg_data = 0x0a, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0014, .reg_data = 0x60, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x003c, .reg_data = 0xb8, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0004, .reg_data = 0x0c, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0020, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0008, .reg_data = 0x10, .param_type = CSIPHY_SETTLE_CNT_LOWER_BYTE},
++	{.reg_addr = 0x0224, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0200, .reg_data = 0x8d, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0238, .reg_data = 0xfe, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x022c, .reg_data = 0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0234, .reg_data = 0x0f, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0210, .reg_data = 0x52, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x021c, .reg_data = 0x0a, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0214, .reg_data = 0x60, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x023c, .reg_data = 0xb8, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0204, .reg_data = 0x0c, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0220, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0208, .reg_data = 0x10, .param_type = CSIPHY_SETTLE_CNT_LOWER_BYTE},
++	{.reg_addr = 0x0424, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0400, .reg_data = 0x8d, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0438, .reg_data = 0xfe, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x042c, .reg_data = 0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0434, .reg_data = 0x0f, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0410, .reg_data = 0x52, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x041c, .reg_data = 0x0a, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0414, .reg_data = 0x60, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x043c, .reg_data = 0xb8, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0404, .reg_data = 0x0c, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0420, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0408, .reg_data = 0x10, .param_type = CSIPHY_SETTLE_CNT_LOWER_BYTE},
++	{.reg_addr = 0x0624, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0600, .reg_data = 0x8d, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0638, .reg_data = 0xfe, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x062c, .reg_data = 0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0634, .reg_data = 0x0f, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0610, .reg_data = 0x52, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x061c, .reg_data = 0x0a, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0614, .reg_data = 0x60, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x063c, .reg_data = 0xb8, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0604, .reg_data = 0x0c, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0620, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
++	{.reg_addr = 0x0608, .reg_data = 0x10, .param_type = CSIPHY_SETTLE_CNT_LOWER_BYTE},
++	{.reg_addr = 0x005c, .reg_data = 0x00, .param_type = CSIPHY_SKEW_CAL},
++	{.reg_addr = 0x0060, .reg_data = 0xfd, .param_type = CSIPHY_SKEW_CAL},
++	{.reg_addr = 0x0064, .reg_data = 0x7f, .param_type = CSIPHY_SKEW_CAL},
++	{.reg_addr = 0x025c, .reg_data = 0x00, .param_type = CSIPHY_SKEW_CAL},
++	{.reg_addr = 0x0260, .reg_data = 0xfd, .param_type = CSIPHY_SKEW_CAL},
++	{.reg_addr = 0x0264, .reg_data = 0x7f, .param_type = CSIPHY_SKEW_CAL},
++	{.reg_addr = 0x045c, .reg_data = 0x00, .param_type = CSIPHY_SKEW_CAL},
++	{.reg_addr = 0x0460, .reg_data = 0xfd, .param_type = CSIPHY_SKEW_CAL},
++	{.reg_addr = 0x0464, .reg_data = 0x7f, .param_type = CSIPHY_SKEW_CAL},
++	{.reg_addr = 0x065c, .reg_data = 0x00, .param_type = CSIPHY_SKEW_CAL},
++	{.reg_addr = 0x0660, .reg_data = 0xfd, .param_type = CSIPHY_SKEW_CAL},
++	{.reg_addr = 0x0664, .reg_data = 0x7f, .param_type = CSIPHY_SKEW_CAL},
++};
++
++static const char * const sa8775p_clks[] = {
++	"core",
++	"timer",
++};
++
++static const char * const sa8775p_supplies[] = {
++	"vdda-hs",
++	"vdda-lp",
++};
++
++static const struct mipi_csi2_genpd sa8775p_genpds[] = {
++	{ .name = "top", .scaled = false },
++};
++
++const struct mipi_csi2phy_soc_cfg mipi_csi2_dphy_sa8775p = {
++	.ops = &phy_qcom_mipi_csi2_ops_3ph_1_0,
++	.reg_info = {
++		.init_seq = lane_regs_sa8775p,
++		.lane_array_size = ARRAY_SIZE(lane_regs_sa8775p),
++		.common_regs_offset = 0x800,
++	},
++	.supply_names = (const char **)sa8775p_supplies,
++	.num_supplies = ARRAY_SIZE(sa8775p_supplies),
++	.clk_names = (const char **)sa8775p_clks,
++	.num_clk = ARRAY_SIZE(sa8775p_clks),
++	.genpds = sa8775p_genpds,
++	.num_genpds = ARRAY_SIZE(sa8775p_genpds),
++};
 diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
-index 269232499fca..8bebc943a771 100644
+index 8bebc943a771..d0e08d4bbea5 100644
 --- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
 +++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
-@@ -32,40 +32,43 @@ phy_qcom_mipi_csi2_set_clock_rates(struct mipi_csi2phy_device *csi2phy,
- 	unsigned long opp_rate = link_freq / 4;
- 	struct dev_pm_opp *opp;
- 	long timer_rate;
--	int i, pstate;
-+	int i = 0, pstate;
- 	int ret;
+@@ -454,6 +454,7 @@ static int phy_qcom_mipi_csi2_probe(struct platform_device *pdev)
+ }
  
--	opp = dev_pm_opp_find_freq_ceil(dev, &opp_rate);
--	if (IS_ERR(opp)) {
--		dev_err(csi2phy->dev, "Couldn't find ceiling for %lld Hz\n",
--			link_freq);
--		return PTR_ERR(opp);
--	}
-+	if (!csi2phy->soc_cfg->no_opp) {
-+		opp = dev_pm_opp_find_freq_ceil(dev, &opp_rate);
-+		if (IS_ERR(opp)) {
-+			dev_err(csi2phy->dev, "Couldn't find ceiling for %lld Hz\n",
-+				link_freq);
-+			return PTR_ERR(opp);
-+		}
- 
--	pstate = 0;
--	for (i = 0; csi2phy->pd_list && i < csi2phy->pd_list->num_pds; i++) {
--		unsigned int perf;
-+		pstate = 0;
-+		for (i = 0; csi2phy->pd_list && i < csi2phy->pd_list->num_pds; i++) {
-+			unsigned int perf;
- 
--		if (!csi2phy->soc_cfg->genpds[i].scaled)
--			continue;
-+			if (!csi2phy->soc_cfg->genpds[i].scaled)
-+				continue;
- 
--		perf = dev_pm_opp_get_required_pstate(opp, pstate);
--		pstate += 1;
-+			perf = dev_pm_opp_get_required_pstate(opp, pstate);
-+			pstate += 1;
- 
--		ret = dev_pm_genpd_set_performance_state(csi2phy->pd_list->pd_devs[i], perf);
--		if (ret) {
--			dev_err(csi2phy->dev, "Couldn't set perf state %u\n",
--				perf);
--			dev_pm_opp_put(opp);
--			goto unset_pstate;
-+			ret = dev_pm_genpd_set_performance_state(csi2phy->pd_list->pd_devs[i],
-+								 perf);
-+			if (ret) {
-+				dev_err(csi2phy->dev, "Couldn't set perf state %u\n",
-+					perf);
-+				dev_pm_opp_put(opp);
-+				goto unset_pstate;
-+			}
- 		}
--	}
--	dev_pm_opp_put(opp);
-+		dev_pm_opp_put(opp);
- 
--	ret = dev_pm_opp_set_rate(dev, opp_rate);
--	if (ret) {
--		dev_err(csi2phy->dev, "dev_pm_opp_set_rate() fail\n");
--		goto unset_opp_rate;
-+		ret = dev_pm_opp_set_rate(dev, opp_rate);
-+		if (ret) {
-+			dev_err(csi2phy->dev, "dev_pm_opp_set_rate() fail\n");
-+			goto unset_opp_rate;
-+		}
- 	}
- 
- 	timer_rate = clk_round_rate(csi2phy->timer_clk, link_freq / 4);
-@@ -83,7 +86,8 @@ phy_qcom_mipi_csi2_set_clock_rates(struct mipi_csi2phy_device *csi2phy,
- 	return 0;
- 
- unset_opp_rate:
--	dev_pm_opp_set_rate(dev, 0);
-+	if (!csi2phy->soc_cfg->no_opp)
-+		dev_pm_opp_set_rate(dev, 0);
- 
- unset_pstate:
- 	while (i--) {
-@@ -405,13 +409,15 @@ static int phy_qcom_mipi_csi2_probe(struct platform_device *pdev)
- 	if (!csi2phy->timer_clk)
- 		return dev_err_probe(dev, -ENODEV, "no timer clock\n");
- 
--	ret = devm_pm_opp_set_clkname(dev, "core");
--	if (ret)
--		return dev_err_probe(dev, ret, "Failed to set opp clkname\n");
-+	if (!csi2phy->soc_cfg->no_opp) {
-+		ret = devm_pm_opp_set_clkname(dev, "core");
-+		if (ret)
-+			return dev_err_probe(dev, ret, "Failed to set opp clkname\n");
- 
--	ret = devm_pm_opp_of_add_table(dev);
--	if (ret)
--		return dev_err_probe(dev, ret, "invalid OPP table in device tree\n");
-+		ret = devm_pm_opp_of_add_table(dev);
-+		if (ret)
-+			return dev_err_probe(dev, ret, "invalid OPP table in device tree\n");
-+	}
- 
- 	num_supplies = csi2phy->soc_cfg->num_supplies;
- 	csi2phy->supplies = devm_kzalloc(dev, sizeof(*csi2phy->supplies) * num_supplies,
+ static const struct of_device_id phy_qcom_mipi_csi2_of_match_table[] = {
++	{ .compatible	= "qcom,sa8775p-csi2-phy", .data = &mipi_csi2_dphy_sa8775p },
+ 	{ .compatible	= "qcom,x1e80100-csi2-phy", .data = &mipi_csi2_dphy_4nm_x1e },
+ 	{ }
+ };
 diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h b/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h
-index 7e55ae007370..6cf9e5b956f7 100644
+index 6cf9e5b956f7..f092366a0436 100644
 --- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h
 +++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h
-@@ -68,6 +68,9 @@ struct mipi_csi2phy_soc_cfg {
- 	const char ** const clk_names;
- 	const unsigned int num_clk;
- 
-+	/* Skip OPP-based clock/pstate scaling. */
-+	const bool no_opp;
-+
- 	const struct mipi_csi2_genpd *genpds;
- 	const unsigned int num_genpds;
+@@ -96,5 +96,6 @@ struct mipi_csi2phy_device {
  };
+ 
+ extern const struct mipi_csi2phy_soc_cfg mipi_csi2_dphy_4nm_x1e;
++extern const struct mipi_csi2phy_soc_cfg mipi_csi2_dphy_sa8775p;
+ 
+ #endif /* __PHY_QCOM_MIPI_CSI2_H__ */
 -- 
 2.34.1
 
