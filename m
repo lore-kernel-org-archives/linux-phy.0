@@ -2,95 +2,143 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 47095606A32E
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Nov 2026 00:39:48 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DDCBB606A32C
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Nov 2026 01:18:09 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Yk6ZNhwz
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Hwjh61ez
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
+	:Subject:CC:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=7M1/EMNpfwTCqZcTSLWTPZBP35S07UCeEgJaLkJ8o34=; b=Yk6ZNhwzfvTR2SzA+sFK87V87r
-	g70Zvj5RwxE25eGDi8LTu1TSasa8KKOVU5iUhQKE7dsfq9ewhO6L5wQD9zHuDzMaSllJVHF3sXuTx
-	KK4UObfuHIh3NJFuKhqbc5fEfdO+xeGt9PyO3yd7mstm8r5OcwEUysG3gvCd+r0ssqQbl7/SqfSMH
-	4s5gTVHTwQAL0rsSeROlLvQT0VDBPIBSRQqpwXW8sVCRaoaCxOOmGhboUmf+qImCZ/mfhcD0u5k2/
-	8kEmWeKbGW6csweqgXsp6fkWt39vr+EWoyK/jUiyQtai0Y8KjYp4i1RK0ZYP1aTrRIdRGVtZ4zUNs
-	P4KUjRIg==;
+	bh=7kZFTkiQ5W3kafPF47fcDk0mYSzWRbdrKjBI97RjrmE=; b=Hwjh61ez9EIOUB1Q4khbS14MhZ
+	N116TP+nqRtnRLfo9ocEbDK7j+ZzGFov2y0ltuW8u274BOSSetR4PEGG4js5i0/ap+bCE1qjwPiQ9
+	hE0HIJOaUfQjeN4H61dGSPv2bKvUHvXht8Wvpgv3ADmxk9F1Pxugyahc12Ze64enzjvvmwFRf3fFS
+	Kg70C4GKYqP2P4jdEjOgDRY5459y/7bGTQoLtDDiDtGeB73j+80FbmroRHbNS0aiBJPiDJhQam5bM
+	lTcy0xCUx6n5/DoCrt2x+b43Kx9a2E0npbv66YtRELNjw7+Q0eqs5v6L51EQriiY0+6zvGsuQvRYn
+	Mv+rYZ7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOlW7-00000007NC5-3UX2;
-	Thu, 05 Nov 2026 00:39:47 +0000
-Received: from mail-pl1-f169.google.com ([209.85.214.169])
+	id 1xOm7F-00000007Ro5-1ltN;
+	Thu, 05 Nov 2026 01:18:09 +0000
+Received: from mail-japaneastazlp170120005.outbound.protection.outlook.com ([2a01:111:f403:c405::5] helo=TYPPR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOlW5-00000007NBj-2PVZ
-	for linux-phy@lists.infradead.org;
-	Thu, 05 Nov 2026 00:39:46 +0000
-Received: by mail-pl1-f169.google.com with SMTP id d9443c01a7336-2ed11653a91so4853485ad.2
-        for <linux-phy@lists.infradead.org>; Wed, 04 Nov 2026 16:39:45 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793839185; x=1794443985;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=GxOPm+285zQy6VsOAo+zo6AXQiUSUYodxFXi8M2wfms=;
-        b=2d1kW5TyVHJmfw38aTRzWHeU6UEym8Xcxbfh0AAcSK+nN1vtABgc1JcBsah+mulntW
-         D2lguPAKaloIpAxZMux64ieJPooXQ7DOSmv4E6CYgaLA+HVRD036Snt3y4v8YiVXwzI6
-         vwVpLkTsiUcOxxxNPwaXLGV6KooTCw9D6D2wGlkWKodNx6nwieqZ3mA9wR4vfR1pTkIv
-         2MMyunyQ3vjpLasNVdN5dzB0SPtnkX2AyWVr3xSXzY49o8nmiUI81OYrd1mbesQrf+bC
-         Lw9LBf4fx/ZpJQrC4TtNPblkqRS+Qqn7I4C1mb74NV0qAoRh2nFqgM/l8k9zVh1jZ1ss
-         48ww==
-X-Forwarded-Encrypted: i=1; AKwUvByn7ftXSb/xb4+Y18ggsuYuhziKNd2gFPdXftLNq/un7kM47hK5GaTjesIt3EMXTfnqV983ksPR1K0=@lists.infradead.org
-X-Gm-Message-State: APuU4Z/CGcTJWleYRb5ZX5baTSaWm7slTDUC85OI5LYAmxOy+Wt9rqX+
-	wgghq3+SsOeu/VtUqBxRYJpVE33maMvKzx54TYhDgwaESWPLZEqdwGp5hPYPQ33X
-X-Gm-Gg: AYBFou1hjYCfnk9U4WcjomHagBSGQK7i9xpyqQMQ9WGiZH4YB5Jj18yNjeps7Yo0AEU
-	2uPVUamBmvHFD5MY6AwaLRYzYIqhXB5LR67j14+U21R2Sz2mSorIR+JTBIGaOcjq+yXFNe4b8IK
-	vAJJGp9EM7XSEAXQWQGx/8+S2ImW/98ZLwQpenEiy8sOBtdGS8wgolAzFg1j9SA+5N9bbuObcdp
-	mcJq9CLjx3ViNqG/CsbmwpqfeGCxdi0/4763hNryxCp4iDDBXHe9gJE2RW06r+4IEIJTuP8V87F
-	tcWkVveJFah97EtCW5a88oMy3oGcpNX4YJPMIOIlVuxB168erEh6xI9vOzRBh4qdXWFnINE5RQb
-	ENA0pxGj2KBOzbLu22GEZ2X+SoNyKsu5qjVDHhd/kQgxz9qRF2ly6rfaOex3sTWFOYZ6DfUPznH
-	RjIhuJD98DayUO9fm2is2rOl6fGHhP9+3QGCR2CsGMqrfdjjgEHu7Cbt50J+gO/LZMHywXkUq1L
-	2PMXBzNCnYcpJfTieEy8n2bTDck0tGQ9t+5YuTEK15lvE4bhin3UA+19Zn7qLZApEjkrymKUg3h
-	onnSIFkx5VSeCLR73NxNQrchYeb4dhXmWCQVRNCdTbAZDavnnfQOtVuQ3NmaW26f8/K03PCow5l
-	MF5fmnBhGeqE5YBaTB9n+a0awyLSRJiXYxqBlq2LRT8g=
-X-Received: by 2002:a17:90b:2f87:b0:3a8:9b79:e6ea with SMTP id 98e67ed59e1d1-3ae897f6d60mr15062341a91.59.1793839184630;
-        Wed, 04 Nov 2026 16:39:44 -0800 (PST)
-Received: from mail-dy1-f170.google.com (mail-dy1-f170.google.com. [74.125.82.170])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b0b313c143sm1020184a91.2.2026.11.04.16.39.44
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 04 Nov 2026 16:39:44 -0800 (PST)
-Received: by mail-dy1-f170.google.com with SMTP id 5a478bee46e88-36661f953e4so1820543eec.1
-        for <linux-phy@lists.infradead.org>; Wed, 04 Nov 2026 16:39:44 -0800 (PST)
-X-Forwarded-Encrypted: i=1; AKwUvByE77nZegULncW/J3R17fEFN+drXDkbZs/i8R/FhAqPPTRvFufp9MMAMOYSOUPTQM3C8K2RHov3Rtg=@lists.infradead.org
-X-Received: by 2002:a05:7300:7f95:b0:35d:eafd:5737 with SMTP id
- 5a478bee46e88-36a423bec77mr38131346eec.22.1793839183442; Wed, 04 Nov 2026
- 16:39:43 -0800 (PST)
+	id 1xOm7C-00000007RnW-2M3N;
+	Thu, 05 Nov 2026 01:18:08 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=jn4R87OKc3tt7tOdE4xQH+9N9ZRx4+AZAlx6l8oKNipXtjjylFNpFtPHcrC6akmdpgUAfcRMu908U22guCNPvWCngvhJchpuppgviI38ZKnoSzcL3W6EiBITfHGIH0gK7QjfkTc00xC8s+Z8TIh7yai7eUrDjk2xsuuVXKTkQH/WK4swu5zfGPGAK0C/h7tW/CsdX11IzrpercB6vNNvWcKOR1nAVYbYbFpoechGCUTk+EQtNx+XQDcQorxm2VqCpqj1nB3YWAeCz10aUqabXbSKCYp9g8EKfh7h2cuL+Z+9r0hnbZpDeecIW1ZFIQzPWLO3OKZFlS/jJQTBAMg31A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ocoQLkq/0y7+ACccrtllEdiwwNtneeJuyQHQow5YuAU=;
+ b=gbABxiznlSBYPZzsE9V7dDWMB8GPfL8pV/PADUwgmpoOaHfoyy8juBislKkkvhS5Nq6fhTYsWIRi+TI2t6NhEBk47Rr6leZwFv/DPDOhCygJlh3Fvl1A4lI4zQ3KIYw2BnEOB2rhlj7DJwByhRoP/AKlpXu0odTmEMVNkT3+KBNYGjrkt1IjP+z/O2JtGUirLX9bv6+UZlLQ417J2PbiNWcWqZC8dlJoq5G401vo/hM0LWmIduBHbLbULrKyd53ehB3ZLxojBTrYHsvaqajNW4z0GzAMAt6nLmnYoYcvelBELzntdlN+4fz+IQAqBp23ewgv8eCCrpqBo6o0CUf1+Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=cixtech.com; dmarc=pass action=none header.from=cixtech.com;
+ dkim=pass header.d=cixtech.com; arc=none
+Received: from PSAPR06MB4439.apcprd06.prod.outlook.com (2603:1096:301:80::7)
+ by TY0PR06MB5260.apcprd06.prod.outlook.com (2603:1096:400:207::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.592.8; Thu, 5 Nov 2026
+ 01:17:57 +0000
+Received: from PSAPR06MB4439.apcprd06.prod.outlook.com
+ ([fe80::c772:e1f:2c48:f9ac]) by PSAPR06MB4439.apcprd06.prod.outlook.com
+ ([fe80::c772:e1f:2c48:f9ac%3]) with mapi id 15.21.0592.007; Thu, 5 Nov 2026
+ 01:17:56 +0000
+From: =?utf-8?B?SG9uZ2xpYW5nIFlhbmcgKOadqOWuj+S6rik=?=
+	<hongliang.yang@cixtech.com>
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	=?utf-8?B?R2FyeSBZYW5nICjmnajmlrDkvJ8p?= <Gary.Yang@cixtech.com>,
+	=?utf-8?B?RnVnYW5nIER1YW4gKOauteWvjOWImik=?= <fugang.duan@cixtech.com>
+CC: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "devicetree@vger.kernel.org"
+	<devicetree@vger.kernel.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>, cix-kernel-upstream
+	<cix-kernel-upstream@cixtech.com>,
+	=?utf-8?B?SG9uZ2xpYW5nIFlhbmcgKOadqOWuj+S6rik=?= <hongliang.yang@cixtech.com>
+Subject: [PATCH v6 0/3] phy: Add CIX Sky1 USB3 PHY support
+Thread-Topic: [PATCH v6 0/3] phy: Add CIX Sky1 USB3 PHY support
+Thread-Index: AQHdbMN99FmueAqJVkeDNl5gof275g==
+Date: Thu, 5 Nov 2026 01:17:56 +0000
+Message-ID: <20261105011751.4058411-1-hongliang.yang@cixtech.com>
+Accept-Language: zh-CN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=cixtech.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: PSAPR06MB4439:EE_|TY0PR06MB5260:EE_
+x-ms-office365-filtering-correlation-id: 4cde4f7a-13b0-4066-d3a0-08df3ada9fc5
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|23010399003|376014|7416014|366016|1800799024|3023799007|6133799003|10067099003|261102123227099003|18002099003|261102130727099003|38070700021|56012099006|261021121427099003|261022075727099003|261026121527099003|261022105027099003|261026140227099003|261009223027099003|261028144727099003;
+x-microsoft-antispam-message-info: mM48Xqk+CABPuMf1T8XXoWkJg0YErhusJvJ4BaIwCdW1L63ZcyCTe2MrOhHd5oqZHxzZPfaWemFZ5bHahkR4VikoZFu1qGqLyMkS+9aAi8nOkrlern8FxLdd0M+vI504cQglEC626TQW08dVGbDahrYDaeEhQOxVxikxwjpgTvc6innTEL6Sv2jZEU7TULLro4mUY1y0TldVfn3lc8Ky3x+OxYSwDFou+QD29km4NAczemPlH2DbuhU4sJnK4KVeSyr3GKpGVH1ZtIL7i/pcMDXQzperVZ57Q3F2AQbs05IoamWSuEWftQjDLrv3H8hKobI/R0/ncWCjXVyZHHV/HSnRrVsgzBj303By2KV2E6VIj4l+hjyoYW5mYXTJvd2KKC/k2z7rXcCBWj9gV32PJieeqoNTVnrzg7cZLv2LRUEqP6XsQykIgI62v3yb0w/SvmrdXJwyL+J1IZUVD8hN/50W08DCP0YvQsLB7LsFDGlgNmJzVoKPGfxdneI3W13uKTbPvXlhzQIOlJWcx0f2FK/SQcv3mPGPTs6fVKVHsLaIttiRnFA1xjmJ1Re8SrkuBjHKrCIKPXZo7EnENluIv2yY0zJV38dQye19/FR/2djb6Wgc9OnJipBbpvn3B9+JqA2fBNNz2B/khTYv6jOIvKTS/N3gboFqBHoAFKB+WKbzoJLHH+/Cy0g6431dO4iYl7dNT6qYdIVRPb88N/M+mU4LH9tyv1fGc9eR5JDPRDE=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PSAPR06MB4439.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(376014)(7416014)(366016)(1800799024)(3023799007)(6133799003)(10067099003)(261102123227099003)(18002099003)(261102130727099003)(38070700021)(56012099006)(261021121427099003)(261022075727099003)(261026121527099003)(261022105027099003)(261026140227099003)(261009223027099003)(261028144727099003);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?S01iL1B6OFdKWFNRY21YM253cS9sRWtwOXgyeG5iOHRtcWZsNzF0Y2tWUEFL?=
+ =?utf-8?B?OUZINi9sOUEzeU1yR3dHOWhPQVQweHFCeFgrY3NLeHB2VllicVBGTjFYTk1t?=
+ =?utf-8?B?T0dWWkJXYUVsTi9seHdLcEVMY3VqRFhaNS8ycEc2ZWdGSTVTLzJTZTRUSVFH?=
+ =?utf-8?B?RUNrN0dWOEQ1UEovOVZudG16bmhFRUtxRmZNaldMSDJ4U3BERDM2OTNGWWRD?=
+ =?utf-8?B?NExvSE1ydEcvcXVxS3BKckFFRGdzWGdZWC90aGNieXIvaU5TTkxwZFNKaWxS?=
+ =?utf-8?B?MU5NUG4xTjJSS3BZaGRHMk9pNTd3bE41em1qb2J5Ky9INzhYMkhYT1VDZFFV?=
+ =?utf-8?B?SjEwd3NORlhXR2NQblFjVkVEc2ZqK3B2Z0RNMEdxRmd3d3BxTEJqcVlwSHFS?=
+ =?utf-8?B?ekhpNmlKSStTUi9FTVhTQmJLZ1Fwc0NxYkZEeWZRT0dPNGlPRVFqQk9SWEhm?=
+ =?utf-8?B?RG1NeUtSekFpL0VBMDJKY2s2OTRJOUZqZHhEOWxjNWRERS9qckYrOWR3YVgr?=
+ =?utf-8?B?NjJrOTFvUnEwNWpMVUNNWXdmeDlWMisxekgybFVlUU52RXFxaTlUUVBJVEF2?=
+ =?utf-8?B?T3d4RVdPeFdiTkJzOWp5U3VFMkhQM1p3N0NhcGVBUjlOTkFQRVRzK2dnTmxh?=
+ =?utf-8?B?NURRaytpc1NBMlprTlJkVUlQUHR1RDlYWGxKMk1JTk1WYjBYNEw5WHJ2NWpq?=
+ =?utf-8?B?UlZKSDVseVh1OTZKWXBwcHBDL09uQWg4UkRXZ0laRUxtQnFTaWhDODFSajE4?=
+ =?utf-8?B?VEdycUpaMVdqS2tyQjlhWURsSlRvd0VWTWIwcVFjNFQvSDNBa2pxOXNKcklX?=
+ =?utf-8?B?Tzl6UTZIMzV2SDViSW5XNGFLVm9Dd0RwbTVGTjV2M2VhZnVGWVN3S200S0RQ?=
+ =?utf-8?B?RW9oQXd0c0FxVjZIcWZhbnU5RUI1MHBmUnZzSUVMMnpDVmxoemFLM3JQTEk4?=
+ =?utf-8?B?TnBvL01WbXpCaEN5V3R3T3lBcGRFS2x2R3ZpQ0R6N0NZcXh0OVA3dmFaRXFl?=
+ =?utf-8?B?aTFma1JCY2lGVzZXU0hlK1VZRmVhUDRRdTNZTzAxSVVGd2owb2U5TGNDSXpZ?=
+ =?utf-8?B?dUZ1SmNVc1FWbCtTV2V4a2hSU05ERVRKbzRXWTBkcFFHcG04RkRYVW1JcUtR?=
+ =?utf-8?B?ZmtyNTM2TFJWNmViZ3d2UmZSWGY0dWJ4bW9nZDlRdW1hRXVTSUtrSFRER05s?=
+ =?utf-8?B?NUd5WXVBNzlwNXk0dkxvMFlWMXptWmVQa3pnTVZXQWpNRCtJMnYzZ0g2VWd3?=
+ =?utf-8?B?NDVrTzBkT2cvbjUyb0MxV1NDOGxTeGUwbEZGZHVtekEvNmg1d29Dd0NqeWIr?=
+ =?utf-8?B?TmJ1VS80TFFWSjJTWVhkTmlnVVdvSzRvYWhRQllwSXYrdTNiRmxUekU0allQ?=
+ =?utf-8?B?eXplSkJoK0RRcmlWekMyYzh2Y1VzZzZaRkpPc1ZPZmxwRSt2aXlKeUhTL0tT?=
+ =?utf-8?B?cjN3QTIrSFFFV21qVk4zSm1yck9lRFdiWmsyQXg0REd3blhKTE5WRWtZL1Rq?=
+ =?utf-8?B?ZFF5WFVyYTNFUVBrYTNWd280TnJjTlIzUXBnNzc2VGxOY3lDTmZPbGVWamdy?=
+ =?utf-8?B?d1lhaThGK0lSNUZUQUhaZ3RTYXE1bG9lN2cyL1N2OFV2VFdPVWprYUZuQWRj?=
+ =?utf-8?B?LytkTDZTNzVYRm51VWhjK2s0NWc3TVJWaHJhNWVCN1hJTmJBajR1Z2ExbjI2?=
+ =?utf-8?B?dHM3bTR2RExNMGRPcXBNUzRrcnpoRUFoS1RkVDlEcnBJd3lxb0k4SXRhNERa?=
+ =?utf-8?B?QjVoaXhUYW5iOTRmNkpwbFdVUHczYllVZ0REVkVXZVZBYnZXNWk4VTlPRTlq?=
+ =?utf-8?B?WmJNbk9ZVlNzUU1tcExub1JJT1IzYVVOZDZ6em42SlppWnpyUkVOQVUrZm43?=
+ =?utf-8?B?aytjWVBSZGhGbENES1Z0K28yclpxZGRzQjZSKzlCbTNyQkRUa2NTSU9COTNP?=
+ =?utf-8?B?U1RsUU1hM3BabFhMV3c2RnhDRTJkMUJVRUczbGJSaHpTZmNhMVBKNCtmWUFO?=
+ =?utf-8?B?TFpodXdhY0NDcDlLTnMvYUJuUHBibTl5aW5iQ0hwckYreUVzY3REQ1Q1emNH?=
+ =?utf-8?B?bVQySW1Ea2tocHY1NVNZbjNIOHBFWkg4MWhuZkNXR3NrTFVWZjNlWTBSUmQz?=
+ =?utf-8?B?MVFaZk9jdXRRU1NmQlp3bVpuSEJZM3dhRU9Va0xzU3dkbERnSVgzVjI4TUh3?=
+ =?utf-8?B?aEt6RllLdnlRVUhEM3lpVHBZSFMrRDYwYllXSDBYSkRCbCs3dkxEVzViZ29Y?=
+ =?utf-8?B?WHQ2cGZOTVVjTGdVSXBWK3ZPa0cxbmhKb05wdHViRkkrR2dnam41Vzl2d2t2?=
+ =?utf-8?B?Mi83Z2lwZ2IwMTd1andUZ2NqKzd1TWlJVU5teG1OQWZ5QjlCVlMzRWRmVVAz?=
+ =?utf-8?Q?m67SuJprXJ2F6FWU=3D?=
+Content-ID: <9F08F847201B0C40B56CDCBBA75C250A@apcprd06.prod.outlook.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-References: <20261104-sf19a2890-usb-phy-v1-0-db0cad937614@telaak.dev>
- <20261104-sf19a2890-usb-phy-v1-1-db0cad937614@telaak.dev> <20261104-unscented-armory-4dc756ab95cb@spud>
-In-Reply-To: <20261104-unscented-armory-4dc756ab95cb@spud>
-From: Joseph Telaak <joseph@telaak.dev>
-Date: Wed, 4 Nov 2026 19:39:32 -0500
-X-Gmail-Original-Message-ID: <CAPY4CJ5g+e4iu8p5s+Vf7XmEjB9cYX9xYyzHd0Fz8GEbmFm4hw@mail.gmail.com>
-X-Gm-Features: AclHuK9Sx3shGebCfLzax5r8eL6ok4wMG4whrKpB9TRpvY4T3TEbHPr-vy2WL-g
-Message-ID: <CAPY4CJ5g+e4iu8p5s+Vf7XmEjB9cYX9xYyzHd0Fz8GEbmFm4hw@mail.gmail.com>
-Subject: Re: [PATCH 1/2] dt-bindings: phy: Add Siflower SF19A2890 USB 2.0 PHY
-To: Conor Dooley <conor@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Philipp Zabel <p.zabel@pengutronix.de>, Chuanhong Guo <gch981213@gmail.com>, linux-mips@vger.kernel.org, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org
+X-OriginatorOrg: cixtech.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: PSAPR06MB4439.apcprd06.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4cde4f7a-13b0-4066-d3a0-08df3ada9fc5
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Nov 2026 01:17:56.7386
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 0409f77a-e53d-4d23-943e-ccade7cb4811
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: nBdhf8W2tABw74FGnwgYYS5vJ+hiPIEGLKBNdT3JobL7VqU2tvGD7zOK+cRz+9frIgky3jRd7ZKzdj7ChKa88mxkH7mgknmU+VkDc/hihYI=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY0PR06MB5260
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261104_163945_633353_3B6F6A08 
-X-CRM114-Status: UNSURE (   9.47  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -1.4 (-)
+X-CRM114-CacheID: sfid-20261104_171806_665592_22D8BAE8 
+X-CRM114-Status: GOOD (  12.74  )
+X-Spam-Score: -1.9 (-)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,32 +151,81 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
 	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-> > +        reg = <0x19e0c040 0x60>;
->
-> That's a weird offset and size.
-> What lies in the regions around this device?
+This series adds support for the USB3 PHY integrated in the CIX Sky1
+SoC.
 
-It sits in the 1 KiB from 0x19e0c000 up to the next block at
-0x19e0c400. At 0x0, 0x4 and 0xc are the reset, clock gate and bus output
-enable registers of the USB clock and reset manager, which the clk
-series describes as siflower,sf19a2890-usb-crm; 0x8 holds a value I
-have no documentation for. The OpenWrt port gives the PHY 0x40-0x9f,
-and its driver only uses 0x44, the PHY's sleep control. Read from
-U-Boot, registers between 0x40 and 0x8f hold non-zero values I have no
-documentation for either, and the rest reads as 0. The GMAC's
-configuration registers sit the same way, at 0x40 past its clock and
-reset manager at 0x19e04400.
+Patch 1 adds the device tree binding, patch 2 the PHY driver, and
+patch 3 the SoC node plus the board enablement.
 
-If you'd prefer one node for the whole region, providing the clocks,
-resets and the PHY, I'll restructure it that way for v2.
+The PHY provides the SuperSpeed lanes for the Cadence USBSSP
+controllers of the SoC. The block drives both USB3 lanes: it is
+exposed as a single PHY provider with #phy-cells = <0>, and its
+init/exit calls are reference counted so that both controllers can
+share it.
 
+Tested on Radxa Orion O6 (Sky1) together with the USBSSP controller
+series: the PHY probes and USB 3.x devices enumerate at SuperSpeed.
+
+The controller device tree nodes use the PHY phandle added here; the
+USBSSP controller series is posted separately.
+
+The series applies on top of v7.4-rc1.
+
+Changes in v6:
+- Drop the per-port child nodes; the PHY provider node itself is
+  referenced with #phy-cells = <0> and the driver exports a single
+  PHY instance shared by both controllers.
+- Select REGMAP in the PHY Kconfig.
+- Use dev_err_probe() for the reset, clock and regmap acquisition
+  failures in the probe path.
+- Corrected the mail sender name: v5 was sent with a non-ASCII
+  display name in the From header, v6 uses the plain ASCII name
+  that matches the Signed-off-by.
+
+Changes in v5:
+- Documented the origin of the PHY initialization sequence.
+- Return -ENODEV instead of -EINVAL when the OF match data is missing.
+- Use dev_err_probe() when creating the child PHYs.
+- Dropped the unused dev_set_drvdata() call.
+- Guarded against underflow in sky1_u3phy_exit().
+
+Changes in v4:
+- Fixed the #size-cells property order and removed the unused phy.h
+  include and the redundant status properties of the PHY port nodes.
+
+Hongliang Yang (3):
+  dt-bindings: phy: Add CIX Sky1 USB3 PHY
+  phy: cix: Add CIX Sky1 USB3 PHY driver
+  arm64: dts: cix: Add USB3 PHY nodes for Sky1
+
+ .../bindings/phy/cix,sky1-usb3-phy.yaml       |  73 ++++
+ MAINTAINERS                                   |   2 +
+ arch/arm64/boot/dts/cix/sky1-orion-o6.dts     |   4 +
+ arch/arm64/boot/dts/cix/sky1.dtsi             |  14 +
+ drivers/phy/Kconfig                           |   1 +
+ drivers/phy/Makefile                          |   1 +
+ drivers/phy/cix/Kconfig                       |  21 +
+ drivers/phy/cix/Makefile                      |   6 +
+ drivers/phy/cix/phy-cix-usb3.c                | 404 ++++++++++++++++++
+ drivers/phy/cix/phy-cix-usbdp.h               | 289 +++++++++++++
+ 10 files changed, 815 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/cix,sky1-usb3-phy.yaml
+ create mode 100644 drivers/phy/cix/Kconfig
+ create mode 100644 drivers/phy/cix/Makefile
+ create mode 100644 drivers/phy/cix/phy-cix-usb3.c
+ create mode 100644 drivers/phy/cix/phy-cix-usbdp.h
+
+
+base-commit: 6628e7d4c6b25c8d18f1345e3a20d21829aae7e4
+-- 
+2.54.0
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
