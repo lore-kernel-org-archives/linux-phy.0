@@ -2,95 +2,160 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0D3B4606A334
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Nov 2026 06:14:11 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 62ABE606A326
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Nov 2026 08:09:42 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=XMKYWxlq;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=infradead.org header.i=@infradead.org header.a=rsa-sha256 header.s=desiato.20200630 header.b=N7Ua67aA;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=FOEcAI/t
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=bG1LM0ia;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=OUol7Wth
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=llgiFiRhBmG214XlWNH/GaPK2prpSsg/87HGuGlFinA=; b=XMKYWxlq1PoQfEUKMV9G9Gg1sn
-	xaRfMKeziHU6gZI+bvFlGBw9c7XEd5wpapODIhLoLNO82v4u+ahpsexX1N77rYsedehPEmLEeLsaR
-	0mGIWuqpYlm3qgZP6bX/7WeaBhqZC6g/fLsPuzWALc3oispe8m0yY8T78bm9E9XSCQvBrweZj34lx
-	LCbMe5rS2+ea9Xh3w0lIW3vF3Tw+v5r+4CEfC2PHxm6gBD/2qcrPRskQ/bWdcQO3KOFUl/g0h0tYD
-	HvHrVwmvc4dqy/KLMvZiIPtNgOPavlPq9/i3qCVAl0jfA+ahkVDD0A/BfONan9JztL5Xdpbyr19zI
-	8u1Jq0gQ==;
+	bh=AQ5Vb/XqVy3ncfFxLOvfY9WGKfDYFhxSrkODPMf/640=; b=bG1LM0iaZ5F4grT9ZHtdzIhqXO
+	PcxJUWm2N/P3DmJPM9FU9jDY4Z91OWxrZLMU9slIwjTUnUzeiGdXvbhM1ZdgAHrS40lisA77H1iJj
+	kH6sNd8GvGntSB1I+qR0iyApwXSb8ZhkgdBVYbSJ1Zk57HO7eBdXkX7cCaLBpP9TMcfc6DVjY6o/r
+	6AHTXWzJhzEEjqjwIU9vAnMw1SoNoB53JLh2cm2uAcWLZBujSziQUNEKZR4Ysrg7ALVKxSHTUNJ2M
+	37+3vM1xRGfEVZ6jej9l/s/Vkl5X0BItIkjbs8A+E/qw7ueEdPcHZYYZulO5orYTGRTmOscJMcclJ
+	iTqzKyqA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOqje-00000007w95-05VQ;
-	Thu, 05 Nov 2026 06:14:10 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1xOsXV-000000086TH-3XoT;
+	Thu, 05 Nov 2026 08:09:41 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOqja-00000007w6a-2AZy
-	for linux-phy@bombadil.infradead.org;
-	Thu, 05 Nov 2026 06:14:02 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=MIME-Version:Content-Transfer-Encoding
-	:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=xRNZ0pQNv0O4AgQe25xHeQd1/afXwgVq8ve3/6zEzsA=; b=N7Ua67aASfcjNTWHWvOChzlAlW
-	f4xk+ZbJONc+SuhXgTXJRqAElMrSLLOEE2E5/dfDozw3XuerzVeUK6GOwLPMrr+PE2Fqtjkfjavtb
-	pFNurAjOr/glgtnGi9pZOwTVlgFAtCBc0X7Qwvh3kQ0JjVTHwRi3jJ1S5z9YQ/WJLnk3dM1Ob3cTT
-	6N3m/ZVlbwmqOLlPNTfVzoj6SGev8Io693WKjsMum40ZFIt645rBoi12VMbHlr9EKpuIlqQgKmHeC
-	WpJcV9a5VnAFfobTSxDTQUhD79ZaDFtQ81fuYPJNsRAFvLtChFnetAI4bVJbtswLdt6X3c9el2JUo
-	Ecs6Az5w==;
-Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
-	by desiato.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOqjW-00000002boh-1pdO
-	for linux-phy@lists.infradead.org;
-	Thu, 05 Nov 2026 06:14:01 +0000
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6A56ChI12526563, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1793859163; bh=xRNZ0pQNv0O4AgQe25xHeQd1/afXwgVq8ve3/6zEzsA=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=FOEcAI/tlG14NSSEwve85seR3xewsDtvND5Tbu7t2sj6uLzFwbA4W4kF28DyknAWP
-	 qOzVbt/tpWg3/4PtPnvAupa1KbJDE6RgzF0FmkhpQmcwKzoGJksXkQxU5C8dBUYLGu
-	 iOkLuZzk8BrCT0qbW6QBYxRGnTXBZlaCYZT6cx4xu2Ovaq+xBcdPV9XBNPO6kDaeFs
-	 x9Lx/TtH7e8MinXDUDqQowZbba9ilrkJvglLUi+ziPIZW8tGeRajg/1IMHEqi37ISa
-	 kZKW7FzlbF/xDcnvupnoGo8mQWsV1YeM+8vYrLxM4n9Q4nlTdsJeSVCeDp3yTlFf/p
-	 LNyoDBZ5XIqIA==
-Received: from mail.realtek.com (rtkexhmbs04.realtek.com.tw[10.21.1.54])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6A56ChI12526563
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Thu, 5 Nov 2026 14:12:43 +0800
-Received: from RTKEXHMBS03.realtek.com.tw (10.21.1.53) by
- RTKEXHMBS04.realtek.com.tw (10.21.1.54) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Thu, 5 Nov 2026 14:12:43 +0800
-Received: from RTKEXHMBS03.realtek.com.tw ([fe80::d2b4:cd25:1a3e:aca8]) by
- RTKEXHMBS03.realtek.com.tw ([fe80::d2b4:cd25:1a3e:aca8%9]) with mapi id
- 15.02.2562.056; Thu, 5 Nov 2026 14:12:43 +0800
-From: =?big5?B?U3RhbmxleSBDaGFuZ1up96h8vHdd?= <stanley_chang@realtek.com>
-To: Joshua Scott <joshua.scott@alliedtelesis.co.nz>, Vinod Koul
-	<vkoul@kernel.org>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>
-CC: Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam
-	<mani@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"stable@vger.kernel.org" <stable@vger.kernel.org>
-Subject: RE: [PATCH] phy: realtek: usb: fix the USB 2.0 PHY's port range check
-Thread-Topic: [PATCH] phy: realtek: usb: fix the USB 2.0 PHY's port range
- check
-Thread-Index: AQHdbGd3K0WzKIaqJEurOjghSm2EKrce/gDA
-Date: Thu, 5 Nov 2026 06:12:43 +0000
-Message-ID: <0cd63684f1ab4704848f317a96a4105b@realtek.com>
-References: <202611041419.6A4EJBeM41365932@rtits1.realtek.com.tw>
-In-Reply-To: <202611041419.6A4EJBeM41365932@rtits1.realtek.com.tw>
-Accept-Language: zh-TW, en-US
-Content-Language: zh-TW
+	id 1xOsXM-000000086SV-1tKD;
+	Thu, 05 Nov 2026 08:09:32 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 8C27443E3E;
+	Thu,  5 Nov 2026 08:09:31 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 63CBB1F00919;
+	Thu,  5 Nov 2026 08:09:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1793866171;
+	bh=R2dfgUSfGvKDjLQlx0gUL2MoOwECt6lNi/6KeCAWzMY=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=OUol7Wth9XsYmxV8LxuJKOhicul9055AZbLBcAIvPqKqrf1MdlRygxx2jokqLhPUq
+	 LX97q8X0DOdhJaBw/ZJ72Kj2fE28BCn9xOmhu6hcUDL2VuPjMyN7YhaPkgckyrkIuJ
+	 p65X7UFLUFldmk17xlijqYcbrEh8H2nvDB30BybBtVQLY/e0SAKFT4q36P0l8aryPZ
+	 En2khHQcTEjHtHNRhf15snwgmmZJxiDkqzx+Z5wE862yzxAuc3OYTJmkwS/jTj0MOs
+	 mc3m4YaUVqXzqNbV8li9zXtIOzhCMBH3IQqQtwPG26HwXBOpk3v84DxK8v01kia4hu
+	 BG+hhEqTceHfg==
+Message-ID: <e390de9a-b7ac-4fb9-8a0d-f6a4935dd665@kernel.org>
+Date: Thu, 5 Nov 2026 09:09:00 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261105_061358_871927_3C70E9E9 
-X-CRM114-Status: GOOD (  20.36  )
-X-Spam-Score: -0.2 (/)
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] dt-bindings: Use hex unit address patterns
+To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Cc: "Rob Herring (Arm)" <robh@kernel.org>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Vadim Fedorenko <vadim.fedorenko@linux.dev>,
+ Arkadiusz Kubalewski <arkadiusz.kubalewski@intel.com>,
+ Jiri Pirko <jiri@resnulli.us>, Ivan Vecera <ivecera@redhat.com>,
+ Benson Leung <bleung@chromium.org>, Guenter Roeck <groeck@chromium.org>,
+ Linus Walleij <linusw@kernel.org>, Bartosz Golaszewski <brgl@kernel.org>,
+ Frank Li <Frank.Li@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, Jonathan Cameron <jic23@kernel.org>,
+ David Lechner <dlechner@baylibre.com>, =?UTF-8?Q?Nuno_S=C3=A1?=
+ <nuno.sa@analog.com>, Andy Shevchenko <andy@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Olivier Moysan <olivier.moysan@foss.st.com>,
+ Arnaud Pouliquen <arnaud.pouliquen@foss.st.com>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Thierry Reding <thierry.reding@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>,
+ Fabrice Gasnier <fabrice.gasnier@foss.st.com>, Lee Jones <lee@kernel.org>,
+ Srinivas Kandagatla <srini@kernel.org>,
+ Ekansh Gupta <ekansh.gupta@oss.qualcomm.com>, Ulf Hansson <ulfh@kernel.org>,
+ Hans Ulli Kroll <ulli.kroll@googlemail.com>,
+ Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller"
+ <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>, Ray Jui <rjui@broadcom.com>,
+ Scott Branden <sbranden@broadcom.com>,
+ Broadcom internal kernel review list
+ <bcm-kernel-feedback-list@broadcom.com>,
+ Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ Mark Brown <broonie@kernel.org>, "Rafael J. Wysocki" <rafael@kernel.org>,
+ Daniel Lezcano <daniel.lezcano@kernel.org>, Zhang Rui <rui.zhang@intel.com>,
+ Lukasz Luba <lukasz.luba@arm.com>, Orson Zhai <orsonzhai@gmail.com>,
+ Baolin Wang <baolin.wang@linux.alibaba.com>,
+ Chunyan Zhang <zhang.lyra@gmail.com>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Shawn Guo <shawnguo@kernel.org>, Chanh Nguyen
+ <chanh@os.amperecomputing.com>, Alistair Francis <alistair@alistair23.me>,
+ Julius Werner <jwerner@chromium.org>, Paul Cercueil <paul@crapouillou.net>,
+ Dmitry Osipenko <digetx@gmail.com>, Florian Fainelli <f.fainelli@gmail.com>,
+ Thierry Reding <thierry.reding@gmail.com>, Ray Jui <ray.jui@broadcom.com>,
+ Scott Branden <scott.branden@broadcom.com>, dri-devel@lists.freedesktop.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ netdev@vger.kernel.org, chrome-platform@lists.linux.dev,
+ linux-gpio@vger.kernel.org, imx@lists.linux.dev,
+ linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
+ linux-iio@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-sound@vger.kernel.org, linux-input@vger.kernel.org,
+ linux-tegra@vger.kernel.org, mfd@lists.linux.dev,
+ linux-arm-msm@vger.kernel.org, linux-mmc@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-pm@vger.kernel.org
+References: <20261102135330.2493332-1-robh@kernel.org>
+ <20261104-vigorous-flat-dingo-3e5bd2@quoll>
+ <auuWVGsyb3RrOIfh@ashevche-desk.local>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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
+In-Reply-To: <auuWVGsyb3RrOIfh@ashevche-desk.local>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,57 +168,41 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi Joshua,
+On 04/11/2026 21:32, Andy Shevchenko wrote:
+>>>      patternProperties:
+>>> -      "^layer@[0-9]+$":
+>>> +      "^layer@[0-9a-f]+$":
+>>
+>> These two lines are looking good.
+>>
+>> Andy, it's okay if I give Rb tag?
+> 
+> Yes, again a pointer to 34d1e754155b ("dt-bindings: iio: drop unneeded quotes").
+> 
+>> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+> 
+> I expect to see
+> 
+>  Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com> # xylon
+> 
+> or something that matches the piece you reviewed.
+
+As pointed out in other thread (the SPI), only a few people use that
+syntax. Also look here:
+
+https://lore.kernel.org/all/CAAfSe-uD=s0RpuqQ_h+_fErcEC+G=N_LA6e=p_sXJ=iG7jMc3Q@mail.gmail.com/
 
 
-> 
-> rtk_phy_toggle() checks the port number before using it to index the
-> phy_parameter array, which has num_phy entries. Ports are numbered from
-> zero, so the check should reject port == num_phy, but it only rejects ports
-> greater than num_phy. Fix the off-by-one.
-> 
-> Found by code inspection.
-> 
-> Fixes: eeda494542e5 ("phy: realtek: usb: add new driver for the Realtek RTD
-> SoC USB 2.0 PHY")
-> Cc: stable@vger.kernel.org
-> Signed-off-by: Joshua Scott <joshua.scott@alliedtelesis.co.nz>
-> ---
-> Prepared with the help of Claude Code (claude-opus-5-5), which drafted the
-> change and changelog. I reviewed it and tested it on an RTL9311B board,
-> where USB devices still connect and disconnect normally.
-> 
->  drivers/phy/realtek/phy-rtk-usb2.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/phy/realtek/phy-rtk-usb2.c
-> b/drivers/phy/realtek/phy-rtk-usb2.c
-> index 1f08b151d90a..e43ad5fa6d64 100644
-> --- a/drivers/phy/realtek/phy-rtk-usb2.c
-> +++ b/drivers/phy/realtek/phy-rtk-usb2.c
-> @@ -670,7 +670,7 @@ static void rtk_phy_toggle(struct rtk_phy *rtk_phy,
-> bool connect, int port)  {
->         int index = port;
-> 
-> -       if (index > rtk_phy->num_phy) {
-> +       if (index >= rtk_phy->num_phy) {
->                 dev_err(rtk_phy->dev, "%s: The port=%d is not in usb phy
-> (num_phy=%d)\n",
->                         __func__, index, rtk_phy->num_phy);
->                 return;
+Best regards,
+Krzysztof
 
-Reviewed-by: Stanley Chang <stanley_chang@realtek.com>
-
-
-Thanks,
-Stanley
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
