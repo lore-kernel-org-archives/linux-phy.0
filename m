@@ -2,66 +2,92 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 93FFE606A909
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Nov 2026 11:52:17 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2324C606A32E
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Nov 2026 13:15:01 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=jT+EjFUv;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Yckc27hE
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=UGqdc5wr;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=pengutronix.de header.i=@pengutronix.de header.a=rsa-sha256 header.s=20260414 header.b=NwIx0qeb
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=gmeyaB9VH1Ke1ibqEgyKHHIBUVNSD3ffCVMlsKUxbXo=; b=jT+EjFUvKqqxSb1dtAQwKPQuPF
-	NfwOahaKQBVL3OnZJ5Ts0mDi7BJCm5vFbJ/HY9qaNi7OplL5E0pnZPJ66mtwmIWN2DS4ORV1pDt4d
-	pIMD5NF2kC7nbXqTI7TK1VBatgc2Bgzfn1hSBf3fH/JQ2+IUs60mxbr14/iDCVfga3dNusQcjdziM
-	4Kg0ftq0rVMX2hgh7//fWxfQ82cdlO1dU2C9BepzABScXKJaJSL8QVfNbfVZGo3JjC+58HXBwYnGo
-	+fGYHn+IxK6Jid8uCo0pp8S0Fcg9y/w4rFqMxvL2bC+Nc5FmKBFEmEASVUuxnjXMWXwXfrNWzaKPY
-	XOkQiERQ==;
+	bh=CHuB8pr/2FH3NUXar0PZ7lT2+hH4YKynB5tI0yU1278=; b=UGqdc5wrFhais9WBykyOheAJYr
+	+FN1WzhFCzWQKHIKbP68C5hZMF4ON5NWQrd3H0S83knBKyTTm6nj38pM50snGoSi0Rk+BPb6jN6IF
+	8nyxrrXNiQHMWV8DYTGrLVwCCtn9SiZQegecYffXFvQR7W9DbmoTJN+4BOj7qTR8+lR64/AUST0OO
+	WFT6r9kK1clsb7Ly/NL2xxTN/zrKkttdID01ttNdtP75v5woOZWNx01tCgccqxeofHCxOrtkcwnKv
+	eXPFXr93ByLbCvgow7JEzQqRkBU8Gi6jZBaLQBo6H+klFLTf9UA6t2K60dHaNURBNZyB3OvjYt2VL
+	1G09ZVtQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOw0v-00000008mDm-1OYt;
-	Thu, 05 Nov 2026 11:52:17 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xOxIy-000000095jN-2zCr;
+	Thu, 05 Nov 2026 13:15:00 +0000
+Received: from mx1.white.stw.pengutronix.de ([185.203.200.13])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xOw0t-00000008mDY-1wk1;
-	Thu, 05 Nov 2026 11:52:15 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 29C0040820;
-	Thu,  5 Nov 2026 11:52:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 47BAF1F00A1E;
-	Thu,  5 Nov 2026 11:52:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793879535;
-	bh=rD8RmJQMPrsB8PneNmgZfAY2EXizpS1GrqOCM57L41Q=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=Yckc27hEL9olUgu869FUQCQ9mLJcNnti/uo61805ZdIL9ud0XP4WrNlW6ZRhmCsDU
-	 E7fI3BMRFZxKzMWFrz+MqsJAfTvE+aKYY5tG5+ThqSlFGqfjKbOoPNLncfPdVPHJ70
-	 Ll+YnrbD8Dm8KML02lcJH8mGPCH2dXuHorKsjB9C3dD0T6FtRy62uddEWYBIphwU40
-	 KCkJuhBECKiW03R5p2mjrlrEa+zWGIRsSYxHg63jVlYW8LYxmMOYcJfRN2Vo8mltbg
-	 3VLOZgxgcY+uqNvRDVWTZDpcVtoQpc3u89DhK20bBDTKf3NoJJE1pGgjyXAWRTJk6F
-	 0FGz6ZspxCuzg==
-Date: Thu, 5 Nov 2026 12:52:11 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Hongliang Yang =?utf-8?B?KOadqOWuj+S6rik=?= <hongliang.yang@cixtech.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
-	Conor Dooley <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
-	Gary Yang =?utf-8?B?KOadqOaWsOS8nyk=?= <Gary.Yang@cixtech.com>, 
-	Fugang Duan =?utf-8?B?KOauteWvjOWImik=?= <fugang.duan@cixtech.com>, "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, 
-	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, 
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, cix-kernel-upstream <cix-kernel-upstream@cixtech.com>
-Subject: Re: [PATCH v6 1/3] dt-bindings: phy: Add CIX Sky1 USB3 PHY
-Message-ID: <20261105-kind-macaque-of-enhancement-ee0365@quoll>
-References: <20261105011751.4058411-1-hongliang.yang@cixtech.com>
- <20261105011751.4058411-2-hongliang.yang@cixtech.com>
+	id 1xOxIv-000000095hk-3WjY
+	for linux-phy@lists.infradead.org;
+	Thu, 05 Nov 2026 13:14:59 +0000
+Received: from [IPv6:2a0a:edc0:0:900:1d::4e] (lupine.office.stw.pengutronix.de [IPv6:2a0a:edc0:0:900:1d::4e])
+	(Authenticated sender: pza@pengutronix.de)
+	by mx1.white.stw.pengutronix.de (Postfix) with ESMTPSA id 7ECF4202007;
+	Thu, 05 Nov 2026 14:14:49 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=pengutronix.de;
+	s=20260414; t=1793884489;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=GiQksdeFR/nSX2v2JYhf8JRjzUbVsY29jogJxq3oHcI=;
+	b=NwIx0qebySam+VAZB/sZ8AHoewiMlnJdvUSzcSnKyCjCIp6cFtT/q6s/bPQQIqCgeUXZrN
+	JCScPIXI1eCeR0xAhu0+U3M8bXVra/sMtrmP7V/LD7Mqg47n0bcdX5kzNNozrdVkJdARy6
+	65tWXlXK6IluxcpbVbyA1kGZjJ3DbWkhzEPXPVh9twbIJF4Uz4taO7K/aAQHksgezmsuzN
+	L9ZZ6nIKQN1FgxFRob+FmfoGLoFTdYc0U4QmgzYNx1XFs8Qf2N1WAcBG1t1RNCqUbtL1xA
+	bndJmKgGSiaKYgVGrWQ7obrdqouLIojrediA8eAewGyOzXVQPxJUVY/kxUA4CA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=pengutronix.de;
+	s=20260414; t=1793884489;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=GiQksdeFR/nSX2v2JYhf8JRjzUbVsY29jogJxq3oHcI=;
+	b=YKBmZA1THUV1MZWPdgtHUs4BKRZ5cEkIktwPi/WIcGXMz0wElSXa3L1CriPdfGZyWqI1UT
+	vT5NIts2JVkYlKZ1Xl2StrSWwCCEG6kWsZCOQTJbWE2g2yWDsTnMIcqqOCmz8f6d26D/3e
+	qzyCKKwBAkC5QNOxmgmPj18Xph69BnxrMoQNLgrOYxkl0QlFdkIjP8Wl2uVzS4OTk6SOkJ
+	q8B+DCg0GSOwObaLikvIyrC7KxT365SoL1o5cXGe4vCmM64jkQL+Oc2LILiv44VPukJkqp
+	8X5/DcivdudvoR1ft7Xiq8M5n2gDRPa32b+1FQDbgRNJjWOa7sbGSBbV30MVaw==
+ARC-Authentication-Results: i=1;
+	ORIGINATING;
+	auth=pass smtp.auth=pza@pengutronix.de smtp.mailfrom=p.zabel@pengutronix.de
+ARC-Seal: i=1; s=20260414; d=pengutronix.de; t=1793884489; a=rsa-sha256;
+	cv=none;
+	b=Ea6uyhHbv7vUSVbVBpdkYpH0vz7uJhd/EBB2S+0iWRwzn+WKesEOubDSbrlkpyOaP7j42Q
+	nhidZ2ULG/TJou+0sU3Mipto4is5gKLyYXdtkwbZzjjzU+x+/J8WgVbWfmUHJJUup+AIL5
+	+QiSghC2bAeumwrlVQggkEIpcPJiFglK2m/ZvrAAKtNCzS5ntStlMkcog6wxYp4sfAwF61
+	CE3WeCFWp9JEtkJP5Vys5/51oCyKJR/QwWS7flIm+hZPXRphQMBNFo5gFltwZ/UuDKpnzZ
+	UtzQxx0TsZGGJroHim/JcX6//h5xLpxHpMoEUS9I7sVn/XCSqVT3jSzIuDuE/A==
+Message-ID: <7905740841dd0f47273b63dd28ee504b6fdf8084.camel@pengutronix.de>
+Subject: Re: [PATCH 2/2] phy: siflower: Add SF19A2890 USB 2.0 PHY driver
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: joseph@telaak.dev, Vinod Koul <vkoul@kernel.org>, Neil Armstrong	
+ <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, Rob
+ Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor
+ Dooley	 <conor+dt@kernel.org>
+Cc: Chuanhong Guo <gch981213@gmail.com>, linux-mips@vger.kernel.org, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org
+Date: Thu, 05 Nov 2026 14:14:49 +0100
+In-Reply-To: <20261104-sf19a2890-usb-phy-v1-2-db0cad937614@telaak.dev>
+References: <20261104-sf19a2890-usb-phy-v1-0-db0cad937614@telaak.dev>
+	 <20261104-sf19a2890-usb-phy-v1-2-db0cad937614@telaak.dev>
+User-Agent: Evolution 3.56.2-0+deb13u1 
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20261105011751.4058411-2-hongliang.yang@cixtech.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261105_051458_057394_23B8C644 
+X-CRM114-Status: GOOD (  12.03  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,26 +97,66 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-T24gVGh1LCBOb3YgMDUsIDIwMjYgYXQgMDE6MTc6NTlBTSArMDAwMCwgSG9uZ2xpYW5nIFlhbmcg
-KOadqOWuj+S6rikgd3JvdGU6Cj4gQWRkIGRldmljZSB0cmVlIGJpbmRpbmcgZm9yIHRoZSBDSVgg
-U2t5MSBVU0IzIFBIWSwgYSBtdWx0aS1wb3J0Cj4gU3VwZXJTcGVlZFBsdXMgUEhZIHN1cHBvcnRp
-bmcgdXAgdG8gdHdvIFVTQjMgbGFuZXMuIFRoZSBQSFkgYmxvY2sKPiBkcml2ZXMgYm90aCBsYW5l
-cyBhbmQgYWxsIGNvbnN1bWVycyBzaGFyZSB0aGUgc2FtZSBpbml0aWFsaXphdGlvbgo+IHNlcXVl
-bmNlLCBzbyB0aGUgUEhZIHByb3ZpZGVyIG5vZGUgaXRzZWxmIGlzIHJlZmVyZW5jZWQgd2l0aCBh
-Cj4gc2luZ2xlICNwaHktY2VsbHMgPSA8MD4gc3BlY2lmaWVyLgoKU28gcHJldmlvdXNseSB5b3Ug
-aGFkIHR3byBwaHlzLCBub3cgeW91IGhhdmUgb25seSBvbmUuIENvbmZ1c2luZy4gV2hlcmUKZGlk
-IHRoZSBzZWNvbmQgcGh5IGdvPwoKPiAKPiBTaWduZWQtb2ZmLWJ5OiBIb25nbGlhbmcgWWFuZyA8
-aG9uZ2xpYW5nLnlhbmdAY2l4dGVjaC5jb20+CgpTYW1lIGlzc3VlIGFzIGxhc3QgdGltZS4KCkJl
-c3QgcmVnYXJkcywKS3J6eXN6dG9mCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgt
-cGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On Mi, 2026-11-04 at 02:21 -0500, Joseph Telaak via B4 Relay wrote:
+> From: Chuanhong Guo <gch981213@gmail.com>
+> 
+> Add a driver for the USB 2.0 PHY of the Siflower SF19A2890. Powering it
+> on enables its reference clock, releases its two resets and takes it
+> out of sleep.
+> 
+> Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
+> [jt: from Chuanhong's siflower-7.1 branch, the SF19A2890 PHY only; reset
+>  names "por" and "phy", dev_err_probe() for the resets, drop the unused
+>  includes and drvdata, Kconfig dependencies and help, commit message,
+>  subject]
+> Signed-off-by: Joseph Telaak <joseph@telaak.dev>
+> ---
+>  drivers/phy/Kconfig                      |   1 +
+>  drivers/phy/Makefile                     |   1 +
+>  drivers/phy/siflower/Kconfig             |  12 +++
+>  drivers/phy/siflower/Makefile            |   2 +
+>  drivers/phy/siflower/phy-sf19a2890-usb.c | 143 +++++++++++++++++++++++++++++++
+>  5 files changed, 159 insertions(+)
+> 
+[...]
+> --- /dev/null
+> +++ b/drivers/phy/siflower/phy-sf19a2890-usb.c
+> @@ -0,0 +1,143 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +
+> +#include <linux/clk.h>
+> +#include <linux/io.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/reset.h>
+> +
+> +#define USB_SLEEPM 0x4
+> +
+> +struct sf19a2890_usb_phy {
+> +	struct device *dev;
+> +	struct clk *phy_clk;
+> +	struct reset_control *usb_phy_rst;
+> +	struct reset_control *power_on_rst;
+
+Since these two resets are always toggled together, consider using the
+reset_control_bulk API for both.
+
+regards
+Philipp
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
