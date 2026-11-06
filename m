@@ -2,93 +2,58 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 85F19606EEA9
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Nov 2026 13:55:33 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 92C1C606A329
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Nov 2026 14:05:09 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=r6pCeWZv;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=samsung.com header.i=@samsung.com header.a=rsa-sha256 header.s=mail20170921 header.b=cnvKamII
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=uh/V/RkR;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=bzH26ZJR
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:Cc:To:In-Reply-To:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=3LoXhKmcnY0oCo5qxBlA9uipWhxYaGlm55exlWdSI+A=; b=r6pCeWZvzvWnkBzuM+6JV1Sdb7
-	Rzjh2kJV22uLvgq6fGJDO2L/959nw25pZ6d/UoZxXsWEyCE0kjmLhzUAAVoVRT9qU14cB7je61Z69
-	7PNl0YXk8X0cCijcvtSgdJ8zQeD10eoTynyeXbuU0zOzOOOSsDYnZqXHcDXY4hJgFy6WKiwX6bWAY
-	cjkE3Fsdd4WZ84FobSIzAwGN9E0GsjN83s1VezvynLCZ7eI5N4zkddiDAH3rHr1Hm8BhO/lS/fjwM
-	WUoP10O0hrbSKsuDcGkqCqmCy3VIHjhtpWDjzh+B5XhQwR9RhSX+3eBaPWc3N9EYcZgYxPX/iL6ek
-	YwtG+f0g==;
+	bh=0bf93N6Fg2MzXW/X+jY5zSYkCQPoPVZ7an8u6R1KDpI=; b=uh/V/RkRKSjC454bHi2TPtsmkH
+	ssmuBfdBspRZIx3M/EuYzFhT7r0rhQlz/DvDTfVCaCE3W2dFwIumIrkuCpMYLL+CasAj2Nk8jfNuC
+	NolPe3UuBI4MhK3HhtH09Qpjvfo6MH4UnrINE1cn8Qf6lF8ac7oijK7omssHhiu61+VuSsFiB4zIm
+	TdGppjBUVIagO/SY7ppfM24NHain2W/etdY8M+7wLWuA1KLKqazFG8QGTX2GHv9Dg9GL8YSkKZ0wT
+	rxQZgNS4rtBiTtBKMiTYkfs9NRiOM2VsMWt21z7nUlYCz4Mg2ajcTy4CKcIK2jli2pStbgNBjAuK4
+	JWp0spvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPKPl-0000000CVFT-0Ku3;
-	Fri, 06 Nov 2026 13:55:33 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1xPKZ3-0000000Cb8j-1NWH;
+	Fri, 06 Nov 2026 14:05:09 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPKPU-0000000CUp1-0Ut8
+	id 1xPKZ1-0000000Cb7m-1cwz
 	for linux-phy@lists.infradead.org;
-	Fri, 06 Nov 2026 13:55:20 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
-	by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id 20261106135510euoutp01df456ab59c37bfc428036715e0843ca0~leTiBvnx40202602026euoutp01e
-	for <linux-phy@lists.infradead.org>; Fri,  6 Nov 2026 13:55:10 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com 20261106135510euoutp01df456ab59c37bfc428036715e0843ca0~leTiBvnx40202602026euoutp01e
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1793973310;
-	bh=cvOXSk4ZSAmZ1qSeP/uBo94WdHQ7wPfDNQM3BweOM/8=;
-	h=From:Date:Subject:In-Reply-To:To:Cc:References:From;
-	b=cnvKamIIbSl9tsxUe8y6gwRkXgcl4iQBYv9nrEE4FK6pdAD7kwaJl1oSAnuYNe1NM
-	 5cw5CiSwh9vI5OwCgLR7Hel6cL9rnpCV4fhvfaN9FU3fhAZ78X9yo3hMf6mmyweWpU
-	 yIiDiggCz8EEOmPskbu47QVbl44lYl8Xb2EJXzRQ=
-Received: from eusmtip2.samsung.com (unknown [203.254.199.222]) by
-	eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
-	20261106135509eucas1p218615ae5c95c50b0f39bfb9cd86b266e~leThlgObN0962609626eucas1p2D;
-	Fri,  6 Nov 2026 13:55:09 +0000 (GMT)
-Received: from AMDC4942.eu.corp.samsungelectronics.net (unknown
-	[106.210.136.40]) by eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
-	20261106135508eusmtip2f32a765489883255f5a9ccb15cfcd996~leTgxvtM92416124161eusmtip2f;
-	Fri,  6 Nov 2026 13:55:08 +0000 (GMT)
-From: Michal Wilczynski <m.wilczynski@samsung.com>
-Date: Fri, 06 Nov 2026 14:53:03 +0100
-Subject: [PATCH v7 5/5] MAINTAINERS: Add StarFive JH7110 HDMI PHY entry
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Message-Id: <20261106-jh7110-inno-hdmi-phy-v7-5-d49368303800@samsung.com>
-In-Reply-To: <20261106-jh7110-inno-hdmi-phy-v7-0-d49368303800@samsung.com>
-To: Vinod Koul <vkoul@kernel.org>,  Neil Armstrong
-	<neil.armstrong@linaro.org>,  Manivannan Sadhasivam <mani@kernel.org>, Rob
-	Herring <robh@kernel.org>,  Krzysztof Kozlowski <krzk+dt@kernel.org>,  Conor
-	Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,  Emil Renner
-	Berthing <kernel@esmil.dk>,  Hal Feng <hal.feng@starfivetech.com>, Dominique
-	Belhachemi <db@domibel.de>,  Michal Wilczynski <m.wilczynski@samsung.com>,
-	Andy Yan <andyshrk@163.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-rockchip@lists.infradead.org, linux-riscv@lists.infradead.org,  Marek
-	Szyprowski <m.szyprowski@samsung.com>,  Icenowy Zheng
-	<zhengxingda@iscas.ac.cn>,  Chaoyi Chen <chaoyi.chen@rock-chips.com>, 
-	Joshua Peisach <jpeisach@ubuntu.com>
-X-Mailer: b4 0.15-dev
-X-Developer-Signature: v=1; a=openpgp-sha256; l=916;
-	i=m.wilczynski@samsung.com; h=from:subject:message-id;
-	bh=1BpQ12qeO8tqDE0Ye1RozUCyoCBDy4gmigUQjixUNvE=;
-	b=owGbwMvMwCGWumv6zndzRCIZT6slMWS9vWNuJCrAc6lxg/fGGdr1Obud8rMm2yds3v1B+ALbx
-	TuH2Q2SO0pZGMQ4GGTFFFnObow2kvzH8LT8+ONfMHNYmUCGMHBxCsBEXlgzMkwW07aMz3PLVFwt
-	sOx6QT9LklNF0L+SMqMjuQsYXHY3XmH4HzfthqaSjffMA3ZvhHomyMYWdyz4PIH/xsbVz3wZPfc
-	+4QcA
-X-Developer-Key: i=m.wilczynski@samsung.com; a=openpgp;
-	fpr=CDB15B3219FE00E577C7E3FA65BA97B9EE9C1459
-X-CMS-MailID: 20261106135509eucas1p218615ae5c95c50b0f39bfb9cd86b266e
-X-Msg-Generator: CA
-X-RootMTR: 20261106135509eucas1p218615ae5c95c50b0f39bfb9cd86b266e
-X-EPHeader: CA
-X-CMS-RootMailID: 20261106135509eucas1p218615ae5c95c50b0f39bfb9cd86b266e
+	Fri, 06 Nov 2026 14:05:07 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 92A1F6020F;
+	Fri,  6 Nov 2026 14:05:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DF1081F008A1;
+	Fri,  6 Nov 2026 14:05:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1793973906;
+	bh=JLfwMbD8ieMoKHUumYpmrrpv16KRq8OjWRwIwoqLIhM=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=bzH26ZJRh9EE+PUgkvxHRxbHNZH9JxHwpCx9HLF/J4A7WRGUHCjHyAYOa5SVGTy8b
+	 /oiohiqQwXTVHR70Pw26NFtVtdos/V97tLgIyVgms64HJT3EScRY7eB1NRPvg+u0k4
+	 1MUcfFOadvU3nvv8d7d6FdJWu1UmvHAb8+uQPZyPtVWf2LL6BGjwGktBrprfIiCwlp
+	 l2AP1wf1WD4VfeX1tqLNrOGO2BQjY+lwlK9KRoHIg5wbO5fleHNCYC4HfNTKzh+Mdf
+	 Madtg/qTYqV+ITNUadM7j9xYwrdkd+iw3cRJlnaqxQXSWQkI/iNJtJToMYszkufGQJ
+	 rgwRAE68/yN+g==
+Message-ID: <sashiko-outbox-201536@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v7 2/5] phy: Add common Innosilicon HDMI PHY helpers
+To: "Michal Wilczynski" <m.wilczynski@samsung.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20261106-jh7110-inno-hdmi-phy-v7-2-d49368303800@samsung.com>
 References: <20261106-jh7110-inno-hdmi-phy-v7-0-d49368303800@samsung.com>
-	<CGME20261106135509eucas1p218615ae5c95c50b0f39bfb9cd86b266e@eucas1p2.samsung.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261106_055516_449927_54D6CA2A 
-X-CRM114-Status: GOOD (  10.19  )
-X-Spam-Score: -4.4 (----)
+ <CGME20261106135506eucas1p228bf1f8e1cacdc716e6bf22b847f49d9@eucas1p2.samsung.com>
+ <20261106-jh7110-inno-hdmi-phy-v7-2-d49368303800@samsung.com>
+Date: Fri, 06 Nov 2026 14:05:05 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,47 +63,82 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Add an entry for the StarFive JH7110 HDMI PHY binding and driver, next
-to the other JH7110 PHY drivers.
-
-Signed-off-by: Michal Wilczynski <m.wilczynski@samsung.com>
----
- MAINTAINERS | 6 ++++++
- 1 file changed, 6 insertions(+)
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 93abbb315065de00c29cc02de16c38eac58ac5a1..42b49ff71415f06f69f749d31e16938dad921833 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -26731,6 +26731,12 @@ S:	Supported
- F:	Documentation/devicetree/bindings/phy/starfive,jh7110-dphy-tx.yaml
- F:	drivers/phy/starfive/phy-jh7110-dphy-tx.c
- 
-+STARFIVE JH7110 HDMI PHY DRIVER
-+M:	Michal Wilczynski <m.wilczynski@samsung.com>
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/phy/starfive,jh7110-inno-hdmi-phy.yaml
-+F:	drivers/phy/starfive/phy-jh7110-inno-hdmi.c
-+
- STARFIVE JH7110 MMC/SD/SDIO DRIVER
- M:	William Qiu <william.qiu@starfivetech.com>
- S:	Supported
-
--- 
-2.34.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwKaXNzdWVzIHRvIGNvbnNpZGVyOgotIFtNZWRpdW1dIHBoeTogaW5uby1oZG1p
+OiAzMi1iaXQgb3ZlcmZsb3cgaW4KICBpbm5vX2hkbWlfcGh5X3ByZV9wbGxfcmVjYWxjX3JhdGUo
+KQotIFtMb3ddIHBoeTogaW5uby1oZG1pOiB1bnNjYWxlZCB2Y29fcmF0ZSBsb2dnZWQgaW4KICBp
+bm5vX2hkbWlfcGh5X3ByZV9wbGxfcmVjYWxjX3JhdGUoKQotLQoKY29tbWl0IDI0YzQzMTc5ODE0
+NzZmYzU5NjE2NzA5MTM3NmVkZWM5OTg4OTVhMDgKQXV0aG9yOiBNaWNoYWwgV2lsY3p5bnNraSA8
+bS53aWxjenluc2tpQHNhbXN1bmcuY29tPgoKcGh5OiBBZGQgY29tbW9uIElubm9zaWxpY29uIEhE
+TUkgUEhZIGhlbHBlcnMKClRoaXMgY29tbWl0IGFkZHMgYSBoZWxwZXIgbGlicmFyeSBmb3IgdGhl
+IElubm9zaWxpY29uIEhETUkgUEhZIHByZS1QTEwsCnByb3ZpZGluZyBwaXhlbCBjbG9jayBsb29r
+dXAsIGNsb2NrIHJhdGUgY2FsY3VsYXRpb24sIGFuZCByZWdpc3Rlcgpwcm9ncmFtbWluZyBmdW5j
+dGlvbnMgdG8gYmUgc2hhcmVkIGFjcm9zcyBTb0MgZHJpdmVycy4KCj4gZGlmZiAtLWdpdCBhL2Ry
+aXZlcnMvcGh5L3BoeS1pbm5vLWhkbWkuYyBiL2RyaXZlcnMvcGh5L3BoeS1pbm5vLWhkbWkuYwo+
+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4gaW5kZXggMDAwMDAwMDAwMDAwMC4uNjkwMGQ0ZDgzZTQ2
+NAo+IC0tLSAvZGV2L251bGwKPiArKysgYi9kcml2ZXJzL3BoeS9waHktaW5uby1oZG1pLmMKClsg
+Li4uIF0KCj4gK3Vuc2lnbmVkIGxvbmcKPiAraW5ub19oZG1pX3BoeV9wcmVfcGxsX3JlY2FsY19y
+YXRlKGNvbnN0IHN0cnVjdCBpbm5vX2hkbWlfcGh5X3ByZV9wbGwgKnBsbCwKPiArCQkJCSAgdW5z
+aWduZWQgbG9uZyBwYXJlbnRfcmF0ZSkKPiArewo+ICsJdW5zaWduZWQgaW50IGNvbnRyb2wsIGRp
+dl8xLCBkaXZfMiwgZGl2XzMsIHBjbGtfZGl2X2FiLCBwY2xrX2Rpdl9jZDsKPiArCXVuc2lnbmVk
+IGludCBmcmFjX2Rpdl83XzAsIGZyYWNfZGl2XzE1XzgsIGZyYWNfZGl2XzIzXzE2LCBkaXY7Cj4g
+Kwl1OCBuZCwgbm9fYSwgbm9fYiwgbm9fZDsKPiArCXVuc2lnbmVkIGxvbmcgZnJhYywgcmF0ZTsK
+PiArCXU2NCB2Y28sIHZjb19yYXRlOwo+ICsJdTE2IG5mOwo+ICsJaW50IHJldDsKClsgLi4uIF0K
+Cj4gKwluZCA9IGRpdl8xICYgSU5OT19QUkVfUExMX1BSRV9ESVZfTUFTSzsKPiArCW5mID0gKGRp
+dl8yICYgSU5OT19QUkVfUExMX0ZCX0RJVl8xMV84X01BU0spIDw8IDg7Cj4gKwluZiB8PSBkaXZf
+MzsKPiArCXZjbyA9IHBhcmVudF9yYXRlICogbmY7Cj4gKwo+ICsJaWYgKCEoZGl2XzIgJiBJTk5P
+X1BSRV9QTExfRlJBQ19ESVZfRElTQUJMRSkpIHsKPiArCQlyZXQgPSBpbm5vX3JlYWQocGxsLCBJ
+Tk5PX1BSRV9QTExfRlJBQ19ESVZfN18wLCAmZnJhY19kaXZfN18wKTsKPiArCQlpZiAocmV0KQo+
+ICsJCQlnb3RvIGVycjsKPiArCQlyZXQgPSBpbm5vX3JlYWQocGxsLCBJTk5PX1BSRV9QTExfRlJB
+Q19ESVZfMTVfOCwgJmZyYWNfZGl2XzE1XzgpOwo+ICsJCWlmIChyZXQpCj4gKwkJCWdvdG8gZXJy
+Owo+ICsJCXJldCA9IGlubm9fcmVhZChwbGwsIElOTk9fUFJFX1BMTF9GUkFDX0RJVl8yM18xNiwK
+PiArCQkJCSZmcmFjX2Rpdl8yM18xNik7Cj4gKwkJaWYgKHJldCkKPiArCQkJZ290byBlcnI7Cj4g
+Kwo+ICsJCWZyYWMgPSBmcmFjX2Rpdl83XzAgfCAoZnJhY19kaXZfMTVfOCA8PCA4KSB8Cj4gKwkJ
+ICAgICAgIChmcmFjX2Rpdl8yM18xNiA8PCAxNik7Cj4gKwkJdmNvICs9IERJVl9ST1VORF9DTE9T
+RVNUKHBhcmVudF9yYXRlICogZnJhYywKPiArCQkJCQkgQklUKElOTk9fRlJBQ19ESVZfV0lEVEgp
+KTsKPiArCX0KCltTZXZlcml0eTogTWVkaXVtXQpDYW4gcGFyZW50X3JhdGUgKiBuZiBhbmQgcGFy
+ZW50X3JhdGUgKiBmcmFjIG92ZXJmbG93IG9uIDMyLWJpdAphcmNoaXRlY3R1cmVzPwoKQm90aCBw
+YXJlbnRfcmF0ZSBhbmQgZnJhYyBhcmUgdW5zaWduZWQgbG9uZywgYW5kIG5mIGlzIHUxNiwgc28g
+Ym90aAptdWx0aXBsaWNhdGlvbnMgYXJlIGV2YWx1YXRlZCBpbiAzMi1iaXQgYXJpdGhtZXRpYyBv
+biAzMi1iaXQgc3lzdGVtcwpiZWZvcmUgd2lkZW5pbmcgdG8gdTY0IHZjby4gIFdpdGggYSAyNCBN
+SHogcmVmZXJlbmNlIGNsb2NrLCBwYXJlbnRfcmF0ZSAqCm5mIG92ZXJmbG93cyAzMiBiaXRzIHdo
+ZW4gbmYgPj0gMTc5LCBhbmQgcGFyZW50X3JhdGUgKiBmcmFjIG92ZXJmbG93cyBmb3IKYW55IDI0
+LWJpdCBmcmFjdGlvbmFsIGRpdmlkZXIgZW50cnksIGNhdXNpbmcKaW5ub19oZG1pX3BoeV9wcmVf
+cGxsX3JlY2FsY19yYXRlKCkgdG8gcmV0dXJuIGEgY29ycnVwdGVkIHBpeGVsIGNsb2NrCnJhdGUu
+ICBDYXN0aW5nIHBhcmVudF9yYXRlIHRvIHU2NCBhbmQgdXNpbmcgRElWX1JPVU5EX0NMT1NFU1Rf
+VUxMKCkgd291bGQKYXZvaWQgdGhlIHRydW5jYXRpb24uCgo+ICsKPiArCXZjb19yYXRlID0gdmNv
+Owo+ICsKPiArCWlmIChjb250cm9sICYgSU5OT19QQ0xLX1ZDT19ESVZfNV9NQVNLKSB7Cj4gKwkJ
+ZGl2ID0gbmQgKiA1Owo+ICsJfSBlbHNlIHsKPiArCQlub19hID0gcGNsa19kaXZfYWIgJiBJTk5P
+X1BDTEtfRElWX0FfTUFTSzsKPiArCQlub19iID0gRklFTERfR0VUKElOTk9fUENMS19ESVZfQl9N
+QVNLLCBwY2xrX2Rpdl9hYikgKyAyOwo+ICsJCW5vX2QgPSBwY2xrX2Rpdl9jZCAmIElOTk9fUENM
+S19ESVZfRF9NQVNLOwo+ICsKPiArCQlkaXYgPSBuZCAqIChub19hID09IDEgPyBub19iIDogbm9f
+YSkgKiBub19kICogMjsKPiArCX0KPiArCj4gKwkvKgo+ICsJICogQW4gdW5wcm9ncmFtbWVkIHBy
+ZS1QTEwgcmVhZHMgaXRzIGRpdmlkZXJzIGJhY2sgYXMgemVybywgd2hpY2ggd291bGQKPiArCSAq
+IGxlYXZlIGRvX2RpdigpIGRpdmlkaW5nIGJ5IGl0Lgo+ICsJICovCj4gKwlpZiAoIWRpdikgewo+
+ICsJCWRldl9kYmcocGxsLT5kZXYsICJwcmUtUExMIGRpdmlkZXJzIHJlYWQgYmFjayBhcyB6ZXJv
+XG4iKTsKPiArCQlyZXR1cm4gMDsKPiArCX0KPiArCj4gKwlkb19kaXYodmNvLCBkaXYpOwo+ICsK
+PiArCXJhdGUgPSBESVZfUk9VTkRfQ0xPU0VTVCgodW5zaWduZWQgbG9uZyl2Y28sIDEwMDApICog
+MTAwMDsKPiArCj4gKwkvKiBUaGUgVkNPIGlzIG9ubHkgaW4gc3BlYyBiZXR3ZWVuIDEuNCBhbmQg
+My4yIEdIeiwgc28gbG9nIGl0LiAqLwo+ICsJZGV2X2RiZyhwbGwtPmRldiwgIiVzIHJhdGUgJWx1
+IHZjbyAlbGx1XG4iLCBfX2Z1bmNfXywgcmF0ZSwgdmNvX3JhdGUpOwoKW1NldmVyaXR5OiBMb3dd
+CkRvZXMgdmNvX3JhdGUgbWlzcyB0aGUgZGl2aXNpb24gYnkgdGhlIHJlZmVyZW5jZSBwcmUtZGl2
+aWRlciBuZD8KCkJlY2F1c2UgbmQgaXMgZm9sZGVkIGludG8gZGl2IHJhdGhlciB0aGFuIGFwcGxp
+ZWQgdG8gdmNvIGJlZm9yZSB2Y29fcmF0ZSA9CnZjbywgZGV2X2RiZygpIGxvZ3MgbmQgdGltZXMg
+dGhlIGFjdHVhbCBWQ08gZnJlcXVlbmN5IHdoZW5ldmVyIHByZWRpdiA+IDEuCgotLSAKU2FzaGlr
+byBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYxMTA2LWpo
+NzExMC1pbm5vLWhkbWktcGh5LXY3LTAtZDQ5MzY4MzAzODAwQHNhbXN1bmcuY29tP3BhcnQ9MgoK
+LS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcK
+aHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
