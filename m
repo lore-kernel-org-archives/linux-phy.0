@@ -2,151 +2,58 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EAC10606D80A
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Nov 2026 08:27:52 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 61EBF606A329
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Nov 2026 08:35:44 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=LhTlHQsq;
-	dkim=temperror header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=E5z0jlUu;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=Xioa0FVk
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=KvRUHL20;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=JgMuHs2a
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=Rgv/KTwqk/VFjJh4kybToTgvxQgyLym+Eu69qfelI4E=; b=LhTlHQsqEK64WU9e553Dsp2Go4
-	uQCKQgDfejiNKjKmMDmqwWAn1Cbeu+PvuhYJ2ITUauzVwy0rRGGdPX/fZUB3fBDj8FPp80yNBiw8h
-	ya8lT3Q9VEhxG/zo5K3v4iRplkVzyX5wJZmaZQDIun3ve2JzZhKKSS832TtR+JWyeLi1oo+VlW/Zj
-	XsG0B19hin6DJh3s/MimQxAVyCLudSNkoqspsQa9sPS/jTxzZJWV0FN2AgwB/ZVMiqRqDTCOM2tcr
-	Sd0lqBW8Kj+oegJHY/cfetnAipITt22TtrlBHAcOQIWlDCA8M42BsDVqXOxtzwgN7EWuny15cY68R
-	pbq/Di0w==;
+	bh=PaW848kH/eHhHtXEp6IgxtHq8gyqwPZ67BqP70k9eUU=; b=KvRUHL20DMSt0hea5zcmw4zt+e
+	MC4F1Ooc5ev1lmPyhfKBCbz/pUQBvT75U1NBQ3wG5gT55LVQW3tXpBT0ZlRpfsrSk0QpuadkdmPCz
+	e7JKTxG3g727wYhigCHfabkdt/E/Xecb4KTmTGtBcODHfs6QZWI2DI04Ucxjy9C86EgdYG5DALKIA
+	nzsVGjWJZH4za4SBsKqaVpLa7io96dcQtq74ULwb0ezENm3yKQfx95gcpiOqL1USzhRzG4/hAD0hL
+	hoc4B6e1N2f0bU960ekcBVXJUbLo/EcMdqW71olOFym+OuFtNmwHpluKW9dMvQ9L886ZaMXUXALpS
+	i3X1bkqA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPFIe-0000000BYZb-2fJm;
-	Fri, 06 Nov 2026 08:27:52 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1xPFQG-0000000BbUN-0WmT;
+	Fri, 06 Nov 2026 08:35:44 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPFIX-0000000BYUq-38hD
+	id 1xPFQE-0000000BbUG-3jom
 	for linux-phy@lists.infradead.org;
-	Fri, 06 Nov 2026 08:27:51 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A67RTPT2730737
-	for <linux-phy@lists.infradead.org>; Fri, 6 Nov 2026 08:27:45 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=9tk+I4vZOr9
-	XanR7g9lQ0IcR5uGKfPMbK/eELVN/uXM=; b=E5z0jlUuI84O/9TmJuPY8MefdF+
-	ncOvlz9BVDgebFROOGx4/yn5ZcGe+YXewiUd/VCnYAS/v2sCHOP1pln2r7FQXNgJ
-	fu5XF/4Vq9Pa8lMbhGpAUwFlxoU7QDULMx5ehsChvwbtVfOYUBWVp43qfL/9yCkq
-	fBT7ArP1Vu/yMdjY+eUceDAG8vXkp82QwOZrPyuWJf/zWJc4wINevAACZiMfjCe/
-	fsc5Z/2tM91xR1kAxjnoKR13HI82vgqwiLhK08ulH3ZbXGeB+RYLexXTbyBpeBRs
-	hxeB89qBvAmH92WSPpH0RD0hAtdPvLIZu7JZS2lqnw9ZU1wbitewLY2swAw==
-Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hs3p9htyx-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 06 Nov 2026 08:27:43 +0000 (GMT)
-Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-3b0a3ee64bbso941223a91.1
-        for <linux-phy@lists.infradead.org>; Fri, 06 Nov 2026 00:27:43 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1793953662; x=1794558462; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=9tk+I4vZOr9XanR7g9lQ0IcR5uGKfPMbK/eELVN/uXM=;
-        b=Xioa0FVkbuuowSTiMGxZuvyUUZWUvfN4/v2nNdHGYdtqs3bwjVh+ed1F+vIsMKMGYM
-         xGJtFiE9dgVoSgNUGUktPf+/DVl5EYb+VB9Z6sj7RySq3fIDIq/qsBUnZdQfe9umAbK9
-         vIN8ll/zPK4/j17n1V04PVkD9v6AEs7syHzwQObUKcvFiIiFQZ+Qz8t4c8xtnr5t0hit
-         By1r07zwVxAkKmC7Rm7wYpo32DNKF6a1IXFi8m6Oc1qayKdY/ykTsItHr92nKaIrps80
-         M/93H/0DwSwB6EBEh7PKpu635h9cl3haa4oaaApmUfimKo3aFdy61fYJwI+3ERMHY5QE
-         8mAg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793953662; x=1794558462;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=9tk+I4vZOr9XanR7g9lQ0IcR5uGKfPMbK/eELVN/uXM=;
-        b=q9ice0bQfPu4+UOYaXSASt5acpMRT3bi5Yr7OTafowzeb+R1FLwFQC49WLNsWLwMmz
-         3w16XL7E/4D8RcNOEN57e8umIAlAJTcxuYyLcGpnO4D+2rh5pV8s+72hUPAlKilUMdIC
-         3kANhuHXNTrjuj2MI1sb0KticKlKijvn/5DoiOlJYush7xYR7GsFyCH3jtW0UIAqwBg/
-         Nf/jmXzqugoX8dotXMeNZbCAzP6rJo5/Y3dZP1Y/UGZIJnX5adPUcOpUR40g7T3g1296
-         4Kw/1ajUzJWo9kzUBjwL2NZViyvB/5dKFPxN4vsaxkO9v6ArlMVYGx/vSlcc9gIwrW/X
-         /ggg==
-X-Forwarded-Encrypted: i=1; AL+hErE5VU4XpGNa99Mg2qvtRjci4Ga8ptAteqnajh8H92Pg1UWa+r4zPwV4GBXuSIDqad2Lu8tQ8IAZiyw=@lists.infradead.org
-X-Gm-Message-State: APuU4Z9BtaUPi2PKHQChqiW5nrWA2pERvly5O3cf8EAqCryHGVMOUDAc
-	Ue9YYj0g4ipvm/uO6PnD7sUrhWBqrcaz7/SXQbwSy+EcEiHMcx4SEts8aYUme3rB4Yw0vnA9NCM
-	Oz2AZnVgQY0Xai7ifzz5nkU9roIrxe6bMwsNJyqccPjN2Ha4LQG9wSzyMFRnNegq2+C00
-X-Gm-Gg: AYBFou35DKC3UkCbC7t306jzbzlEx+MKUVIVDT80ogqD37rTORouDf2YdqkmKT/wUS2
-	7sBO+uTQPdbD8HmN3+nqXe+4T8/9iwvmWeX2G2cUnpNv317iLQS9szxTkPboKiilPM0vOYM43vE
-	o1a9vnjVIJ62HQSLvwtq0d4mU/g4Joc7S8Lkqi/MIK8rzSvdBdCpVvCl4dj93e/0oQwI27cwd2n
-	B2fV9sBAaGB5FouuSd23QPRIqzq0GAJW6bA+B3e/P3LwgSbz58UjR7C+nda6ualclhy3PptPrex
-	bKJ6Ll6yleSRMyaCumxlY8fbPlrqSg3rGtNdK7NuHWFq/ZVeiXPfp0Z00IbUdg75sUn6Y/JeBOk
-	uwN8ieZVWJY4HHAq8y1ztyEcr43BSAN4ske4o9r7+Q98GrO+Ucx+dUzw+VjE97G5eeJiGCktcCk
-	a0pA==
-X-Received: by 2002:a17:90b:52cf:b0:3b0:ae41:2706 with SMTP id 98e67ed59e1d1-3b0db5f60efmr1936184a91.4.1793953662479;
-        Fri, 06 Nov 2026 00:27:42 -0800 (PST)
-X-Received: by 2002:a17:90b:52cf:b0:3b0:ae41:2706 with SMTP id 98e67ed59e1d1-3b0db5f60efmr1936132a91.4.1793953661802;
-        Fri, 06 Nov 2026 00:27:41 -0800 (PST)
-Received: from hu-taparana-hyd.qualcomm.com ([202.46.22.19])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b0d7c42a72sm2433951a91.3.2026.11.06.00.27.36
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 06 Nov 2026 00:27:41 -0800 (PST)
-From: Tapas Rana <tapas.rana@oss.qualcomm.com>
-To: Vinod Koul <vkoul@kernel.org>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
-        Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-        Manivannan Sadhasivam <mani@kernel.org>,
-        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-        Abel Vesa <abelvesa@kernel.org>,
-        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-        Wesley Cheng <wesley.cheng@oss.qualcomm.com>,
-        Esteban Urrutia <esteuwu@proton.me>,
-        Loic Poulain <loic.poulain@oss.qualcomm.com>,
-        Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>,
-        Ronak Raheja <ronak.raheja@oss.qualcomm.com>,
-        Faisal Hassan <faisal.hassan@oss.qualcomm.com>,
-        Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
-        prashanth.k@oss.qualcomm.com, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
-        linux-kernel@vger.kernel.org, Tapas Rana <tapas.rana@oss.qualcomm.com>
-Subject: [PATCH 3/3] usb: dwc3: qcom: pass live SS-link state into PHY at suspend entry
-Date: Fri,  6 Nov 2026 13:57:16 +0530
-Message-ID: <20261106082716.128968-4-tapas.rana@oss.qualcomm.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20261106082716.128968-1-tapas.rana@oss.qualcomm.com>
+	Fri, 06 Nov 2026 08:35:42 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 7DE1C41AFF;
+	Fri,  6 Nov 2026 08:35:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 14F231F0089F;
+	Fri,  6 Nov 2026 08:35:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1793954142;
+	bh=XkAD5MECA2Vbpqcg/7bx21uHwximYQD1JhpCGrttIMk=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=JgMuHs2aAU1YwjdB3OJmmHUq6aJ8l6yc2pBgmdUeftioAKBBhxunUsMdN3RZPS6uW
+	 mUtNftLlxfAybLwSXjnWCG1jF/SHpHzztlmOy+NZ4xzdILF/zD/+dUWAzjj3Sve2NU
+	 h0Joma/ktDA/jguX4+g+Vye86DuzLkJuB2iOvuC6CUWyaneNUPY50cfFHjsluqgLuZ
+	 95daV1wyU0irrC1Pc6X2Zwb2M9p/F1EoI569/MPC6HDwwEQoKTCqNvzq7DvQBhfeu7
+	 PKDAdv0yZa+kIXm0k/X9ImugOFctkna1DFV/uI2bNBWKhQkYtOurFsMsB1rmmyG2Il
+	 mXbMMWW5q7L7Q==
+Message-ID: <sashiko-outbox-201072@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH 2/3] phy: qcom: qmp-combo: Select LFPS detect only when
+ SS link is confirmed present
+To: "Tapas Rana" <tapas.rana@oss.qualcomm.com>
+Cc: linux-phy@lists.infradead.org, linux-usb@vger.kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20261106082716.128968-3-tapas.rana@oss.qualcomm.com>
 References: <20261106082716.128968-1-tapas.rana@oss.qualcomm.com>
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-X-Proofpoint-ORIG-GUID: Y5cjnLs2nChUR4ssmUa68i7AjF_Iq1ie
-X-Proofpoint-GUID: Y5cjnLs2nChUR4ssmUa68i7AjF_Iq1ie
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTA2MDAzMyBTYWx0ZWRfXxiaECf7CkY6i
- eYLB0D8OHKj7AcbW5KMgf4k3wo4l4E8bMXjmZJ8vsKG6LJ3D83+ELgh8l0I3BrTC3iYwYSg5VaL
- ohiE4o0w9V2mHPIyIznmTz7ft68XjKc=
-X-Authority-Analysis: v=2.4 cv=XvNvqlF9 c=1 sm=1 tr=0 ts=6aed8f7f cx=c_pps
- a=0uOsjrqzRL749jD1oC5vDA==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
- a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22 a=EUspDBNiAAAA:8
- a=qBW0Ez0WUtIADFg3DaYA:9 a=mQ_c8vxmzFEMiUWkPHU9:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTA2MDAzMyBTYWx0ZWRfXzXpkoC8woDgT
- 4nskInustAWBo+cdVHfuMYn2WRVLSH0d9Cz7O+/y5AaLkDWtd+8APSB+GOZ0aq7x/p3V8u7pBX0
- Gwtt1Cak0HtdjsefBcOCfrz1h7CCYiCd1IUW2J/U/X/6sK0m/6nqyNmNbZaBznlCzj9/u+FkgPt
- U3qPXvKSda9L24Ai0tdH+pENmDuVlWRAsjTIRKyC10mwp4PaLvxWvnst5WGCyES7Fz7y7JIfKcr
- TtKpS6qM0n/cAvmyDcoRmiIO2ZCHasg8FUpGrrCPqzNzHcjYp7BXvzX3RQgdAbC2EIWp7KAG5V0
- KoqEcYjX/rps5akbOZxflQTqYigoKtvGEfMP2ic1yNbJbRcHhplpV+9jD5oBiBZ7JQUKWUF8GuP
- n5747KO5Bc0QrOQIB0ktEbyCbpvfLciKVZd2UATmBhVUX8zVIo40HslJOey9UXA5KTqSe44K8Bq
- Bs2pWI54/qtkhAhozVg==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
- definitions=2026-11-06_02,2026-11-04_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 suspectscore=0 adultscore=0 malwarescore=0 impostorscore=0
- phishscore=0 spamscore=0 lowpriorityscore=0 bulkscore=0 priorityscore=1501
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611060033
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261106_002745_818280_A601ACAE 
-X-CRM114-Status: GOOD (  16.94  )
-X-Spam-Score: -2.8 (--)
+ <20261106082716.128968-3-tapas.rana@oss.qualcomm.com>
+Date: Fri, 06 Nov 2026 08:35:41 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -156,107 +63,73 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-dwc3_qcom_suspend() puts each host port into autonomous/wake mode
-without ever telling the PHY whether a SuperSpeed device is currently
-attached. qmp_combo_enable_autonomous_mode(), made SS-aware in the
-previous patch, therefore has no live signal to act on and always
-sees QCOM_USB_SS_UNKNOWN, falling back to the legacy receiver-detect
-mask regardless of actual link state.
-
-Add dwc3_qcom_read_ss_state() to check each port's USB3 roothub for
-an attached child device running at SuperSpeed or above, and pass the
-result as the submode argument of phy_set_mode_ext() so the PHY can
-select LFPS detection when appropriate.
-
-Signed-off-by: Tapas Rana <tapas.rana@oss.qualcomm.com>
----
- drivers/usb/dwc3/dwc3-qcom.c | 36 +++++++++++++++++++++++++++++++++++-
- 1 file changed, 35 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/usb/dwc3/dwc3-qcom.c b/drivers/usb/dwc3/dwc3-qcom.c
-index ac68b4218b56..d4ba095e47eb 100644
---- a/drivers/usb/dwc3/dwc3-qcom.c
-+++ b/drivers/usb/dwc3/dwc3-qcom.c
-@@ -19,6 +19,7 @@
- #include <linux/iopoll.h>
- #include <linux/usb/hcd.h>
- #include <linux/usb.h>
-+#include <linux/phy/phy-qcom-qmp-usb-ss.h>
- #include "core.h"
- #include "glue.h"
- 
-@@ -66,6 +67,7 @@ struct dwc3_qcom_port {
- 	int			dm_hs_phy_irq;
- 	int			ss_phy_irq;
- 	enum usb_device_speed	usb2_speed;
-+	enum qcom_usb_ss_state  ss_state;
- };
- 
- struct dwc3_qcom {
-@@ -251,6 +253,34 @@ static enum usb_device_speed dwc3_qcom_read_usb2_speed(struct dwc3_qcom *qcom, i
- 	return udev->speed;
- }
- 
-+static enum qcom_usb_ss_state dwc3_qcom_read_ss_state(struct dwc3_qcom *qcom, int port_index)
-+{
-+	struct usb_device *udev;
-+	struct usb_hcd __maybe_unused *hcd, *usb3_hcd;
-+	struct dwc3 *dwc = &qcom->dwc;
-+
-+	/*
-+	 * FIXME: Fix this layering violation.
-+	 */
-+	hcd = platform_get_drvdata(dwc->xhci);
-+	if (!hcd)
-+		return QCOM_USB_SS_ABSENT;
-+
-+#ifdef CONFIG_USB
-+	usb3_hcd = hcd->shared_hcd ? hcd->shared_hcd : hcd;
-+	if (!usb3_hcd->self.root_hub)
-+		return QCOM_USB_SS_ABSENT;
-+
-+	udev = usb_hub_find_child(usb3_hcd->self.root_hub, port_index + 1);
-+#else
-+	udev = NULL;
-+#endif
-+	if (!udev)
-+		return QCOM_USB_SS_ABSENT;
-+
-+	return udev->speed >= USB_SPEED_SUPER ? QCOM_USB_SS_PRESENT : QCOM_USB_SS_ABSENT;
-+}
-+
- static void dwc3_qcom_enable_wakeup_irq(int irq, unsigned int polarity)
- {
- 	if (!irq)
-@@ -359,8 +389,12 @@ static int dwc3_qcom_suspend(struct dwc3_qcom *qcom, bool wakeup)
- 	 * freezable workqueue.
- 	 */
- 	if (dwc3_qcom_is_host(qcom) && wakeup) {
--		for (i = 0; i < qcom->num_ports; i++)
-+		for (i = 0; i < qcom->num_ports; i++) {
- 			qcom->ports[i].usb2_speed = dwc3_qcom_read_usb2_speed(qcom, i);
-+			qcom->ports[i].ss_state = dwc3_qcom_read_ss_state(qcom, i);
-+			phy_set_mode_ext(qcom->dwc.usb3_generic_phy[i], PHY_MODE_USB_HOST,
-+					 qcom->ports[i].ss_state);
-+		}
- 		dwc3_qcom_enable_interrupts(qcom);
- 	}
- 
--- 
-2.43.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+bm8gbmV3IGlzc3VlcwppbiB0aGlzIHBhdGNoLCBidXQgbm90aWNlZCAxIHJlbGF0ZWQgcHJlLWV4
+aXN0aW5nIGlzc3VlIGl0IGRvZXMgbm90CmludHJvZHVjZToKLSBbSGlnaF0gcGh5OiBxY29tOiBx
+bXAtY29tYm86IGludmFsaWQgUENTX01JU0MgY2xhbXAgcmVnaXN0ZXIgYWNjZXNzIGluCiAgYXV0
+b25vbW91cyBtb2RlIFsxXQotLQoKY29tbWl0IGVlN2ZmZGM0MDg5YmZiNzRlNTlhNzc0N2M1YTJj
+MWFiMmUzZjg3NTgKQXV0aG9yOiBUYXBhcyBSYW5hIDx0YXBhcy5yYW5hQG9zcy5xdWFsY29tbS5j
+b20+CgpwaHk6IHFjb206IHFtcC1jb21ibzogU2VsZWN0IExGUFMgZGV0ZWN0IG9ubHkgd2hlbiBT
+UyBsaW5rIGlzIGNvbmZpcm1lZCBwcmVzZW50CgpUaGlzIGNvbW1pdCBzdG9yZXMgdGhlIHFjb21f
+dXNiX3NzX3N0YXRlIHN1Ym1vZGUgaW4gcW1wX2NvbWJvX3VzYl9zZXRfbW9kZSgpCmFuZCB1c2Vz
+IGl0IGluIHFtcF9jb21ib19lbmFibGVfYXV0b25vbW91c19tb2RlKCkgdG8gZW5hYmxlIExGUFMg
+ZGV0ZWN0aW9uCm9ubHkgd2hlbiBhIFN1cGVyU3BlZWQgbGluayBpcyBjb25maXJtZWQgcHJlc2Vu
+dC4KCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1jb21i
+by5jIGIvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLWNvbWJvLmMKPiBpbmRleCAx
+ODdmMGNkMTFmNmMzLi4wNWQ0OGJhODE3MTlhIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L3F1
+YWxjb21tL3BoeS1xY29tLXFtcC1jb21iby5jCj4gKysrIGIvZHJpdmVycy9waHkvcXVhbGNvbW0v
+cGh5LXFjb20tcW1wLWNvbWJvLmMKClsgLi4uIF0KCj4gQEAgLTQ2NTcsMTEgKzQ2NjksMjAgQEAg
+c3RhdGljIHZvaWQgcW1wX2NvbWJvX2VuYWJsZV9hdXRvbm9tb3VzX21vZGUoc3RydWN0IHFtcF9j
+b21ibyAqcW1wKQo+ICAJdm9pZCBfX2lvbWVtICpwY3NfYW9uID0gcW1wLT5wY3NfYW9uOwo+ICAJ
+dTMyIGludHJfbWFzazsKPiAgCj4gLQlpZiAocW1wLT5waHlfbW9kZSA9PSBQSFlfTU9ERV9VU0Jf
+SE9TVF9TUyB8fAo+IC0JICAgIHFtcC0+cGh5X21vZGUgPT0gUEhZX01PREVfVVNCX0RFVklDRV9T
+UykKPiArCS8qCj4gKwkgKiBVc2UgTEZQUyBkZXRlY3Rpb24gb25seSB3aGVuIGEgU3VwZXJTcGVl
+ZCBkZXZpY2UgaXMga25vd24gdG8gYmUKPiArCSAqIHByZXNlbnQuIEZvciBhYnNlbnQgb3IgdW5r
+bm93biBzdGF0ZSwgdXNlIHJlY2VpdmVyIGRldGVjdGlvbi4KPiArCSAqLwo+ICsJc3dpdGNoIChx
+bXAtPnNzX3N0YXRlKSB7Cj4gKwljYXNlIFFDT01fVVNCX1NTX1BSRVNFTlQ6Cj4gIAkJaW50cl9t
+YXNrID0gQVJDVlJfRFRDVF9FTiB8IEFMRlBTX0RUQ1RfRU47Cj4gLQllbHNlCj4gKwkJYnJlYWs7
+Cj4gKwljYXNlIFFDT01fVVNCX1NTX0FCU0VOVDoKPiArCWNhc2UgUUNPTV9VU0JfU1NfVU5LTk9X
+TjoKPiArCWRlZmF1bHQ6Cj4gIAkJaW50cl9tYXNrID0gQVJDVlJfRFRDVF9FTiB8IEFSQ1ZSX0RU
+Q1RfRVZFTlRfU0VMOwo+ICsJCWJyZWFrOwo+ICsJfQo+ICAKPiAgCS8qIENsZWFyIGFueSBwZW5k
+aW5nIGludGVycnVwdHMgc3RhdHVzICovCj4gIAlxcGh5X3NldGJpdHMocGNzX3VzYiwgY2ZnLT5y
+ZWdzW1FQSFlfUENTX0xGUFNfUlhURVJNX0lSUV9DTEVBUl0sIElSUV9DTEVBUik7CgpbU2V2ZXJp
+dHk6IEhpZ2hdClRoaXMgcHJvYmxlbSB3YXNuJ3QgaW50cm9kdWNlZCBieSB0aGlzIHBhdGNoLCBi
+dXQgY2FuCnFtcF9jb21ib19lbmFibGVfYXV0b25vbW91c19tb2RlKCkgYW5kIHFtcF9jb21ib19k
+aXNhYmxlX2F1dG9ub21vdXNfbW9kZSgpCmNvcnJ1cHQgdGhlIFBDU19NSVNDIGJsb2NrIFsxXSBv
+biBWNiBwbGF0Zm9ybXMgdGhhdCBkbyBub3QgZGVmaW5lCnVzYjNfcGNzX2Fvbj8KCmRyaXZlcnMv
+cGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1jb21iby5jOnFtcF9jb21ib19lbmFibGVfYXV0b25v
+bW91c19tb2RlKCkgewoJLi4uCglpZiAocGNzX2FvbikgewoJCWlmIChxbXAtPnFtcHBoeV9tb2Rl
+ID09IFFNUFBIWV9NT0RFX1VTQjQpCgkJCXFwaHlfY2xyYml0cyhwY3NfYW9uLCBjZmctPnJlZ3Nb
+UVBIWV9QQ1NfVVNCNF9DTEFNUF9FTkFCTEVdLCBDTEFNUF9FTik7CgkJZWxzZQoJCQlxcGh5X2Ns
+cmJpdHMocGNzX2FvbiwgY2ZnLT5yZWdzW1FQSFlfUENTX0NMQU1QX0VOQUJMRV0sIENMQU1QX0VO
+KTsKCX0gZWxzZSBpZiAocGNzX21pc2MpCgkJcXBoeV9jbHJiaXRzKHBjc19taXNjLCBjZmctPnJl
+Z3NbUVBIWV9QQ1NfQ0xBTVBfRU5BQkxFXSwgQ0xBTVBfRU4pOwp9CgpDb25maWdzIHN1Y2ggYXMg
+c204NTUwX3VzYjNkcHBoeV9jZmcgYW5kIHgxZTgwMTAwX3VzYjNkcHBoeV9jZmcgcGFpcgpxbXBf
+djZfdXNiM3BoeV9yZWdzX2xheW91dCBvciBxbXBfdjZfbjRfdXNiM3BoeV9yZWdzX2xheW91dCAo
+d2hlcmUKUVBIWV9QQ1NfQ0xBTVBfRU5BQkxFIGlzIFFQSFlfVjZfUENTX0FPTl9DTEFNUF9FTkFC
+TEUsIDB4MDApIHdpdGggb2Zmc2V0CnRhYmxlcyB0aGF0IGxlYXZlIHVzYjNfcGNzX2FvbiBhdCAw
+LiAgSW4gcW1wX2NvbWJvX3BhcnNlX2R0KCksIHFtcC0+cGNzX2FvbgpyZW1haW5zIE5VTEwgd2hp
+bGUgcW1wLT5wY3NfbWlzYyBpcyBwb3B1bGF0ZWQgdW5jb25kaXRpb25hbGx5LgoKRHVyaW5nIHJ1
+bnRpbWUgc3VzcGVuZCBhbmQgcmVzdW1lLCB0aGUgZWxzZSBpZiAocGNzX21pc2MpIGZhbGxiYWNr
+IHdyaXRlcwpDTEFNUF9FTiB0byBvZmZzZXQgMHgwMCBvZiBwY3NfbWlzYyAoUVBIWV9WNF9QQ1Nf
+TUlTQ19UWVBFQ19DVFJMKSwKY29ycnVwdGluZyB0aGUgVHlwZS1DIGNvbnRyb2wgcmVnaXN0ZXIg
+aW5zdGVhZCBvZiB0b2dnbGluZyB0aGUgaGFyZHdhcmUKSS9PIGNsYW1wLgoKWzFdIGh0dHBzOi8v
+c2FzaGlrby5kZXYvIy9idWcvbGludXgtOTc1ZTA3MDktMWYyYy00ZGNmLWJlYjktYWUzZjBlMDMy
+YWE5CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNo
+c2V0LzIwMjYxMTA2MDgyNzE2LjEyODk2OC0xLXRhcGFzLnJhbmFAb3NzLnF1YWxjb21tLmNvbT9w
+YXJ0PTIKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRl
+YWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
+LXBoeQo=
