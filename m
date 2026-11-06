@@ -2,101 +2,92 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C765F606A330
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Nov 2026 10:13:14 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E1468606A329
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Nov 2026 11:11:49 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=JoTm3UIM;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=DgMOiEkp
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=A95+CJ8F;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=FIXfAf5Z
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=y1ym6a51z6w24YiQD7+tOYKWpHlx0v8Cw/H78vWy/NE=; b=JoTm3UIMPSqSP6QMYD+3EmOQcw
-	r7wJS4yVGxvm5x4xTcBGZlYEsVIl9sE/+kpvYymlq2McvbcSHSYTln5mFWMdYx4l0mTz8DqUFDzU3
-	yMRoBFbhzAMF+bg2KV24H8n3ArnzLwDDKjlWCixVah+w1bUZLvntgKAuDViu3Dxc3OeBlRuQmE0f0
-	cIBIy2YEm80xg5GvwFDNosZmfpT2z8wVmRbDhLVmNQLPZT4GzmJ7MBPuCOSUN4NSmoo3FafhYILoy
-	eb6lVqQoCXWv83Ft4beSUTTDOUKm8T/ccqY4ZBse/N/0e7B7+VOt+69brP9viVMfNb/LQkXOLteQg
-	YYFMJ2iw==;
+	bh=lKMcvJ6J/2+Qv4j1+zxxzyjd67Q+OcQrDRLWov4ShJg=; b=A95+CJ8FMm1sJbX2/id31+oSJe
+	PPuDeyl02GcKXilQTZ3pH2ATHoNVNym14z0K74zaT8YrOKm5fIbfOHtEykMYzM5HMlIR8LlRRzJcU
+	jWh8sZL1ymy3YZkPKb5qA4h3fWKqRhz6NHLvq2w74kTaDJVAtLkJKRiy6M57VpVJ0Sl4BTNJevLW8
+	oM3yHqTFOc9EMHYi7eBiQhQqLZfKuyrZOdheLD+0eeyhMNGehpPhic+T7CBd8/Mb4FBTz7AU3JAHI
+	OF27YeNKmuQyOpeBHojEmfpi3vMv8ruOfW3J9Y6/hDpxiFi35bi2nSUdnFkym1U3lGNeA6L0d/oJM
+	3rpIFUQw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPGwc-0000000BsEQ-1hFG;
-	Fri, 06 Nov 2026 10:13:14 +0000
-Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
+	id 1xPHrJ-0000000C6Mm-1n5S;
+	Fri, 06 Nov 2026 11:11:49 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPGwa-0000000BsCX-03rh
-	for linux-phy@lists.infradead.org;
-	Fri, 06 Nov 2026 10:13:13 +0000
-Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-4a35db1f202so3461975e9.3
-        for <linux-phy@lists.infradead.org>; Fri, 06 Nov 2026 02:13:11 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1793959990; x=1794564790; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=6TKu6N+rhcGhq3Fl4eGSM3fARudAqk/2MFphQxFlg48=;
-        b=DgMOiEkpaPJDuLdWSVRLIuASr+Mr+DAbU4qlRyRIqc3CxuaS5gmCVvBNsgl5N5Qzo0
-         57rlfVv/FM7O/v02J1e/GHD8QsPPzBkCEsWQeFUT9OV/fyq/gjBALy4J+8a6wNv/XcIZ
-         adch8wOJ+668cWx0RcNEG/R7jHAPh9wPmeFtRIxZWyNkAMd82RO2fxHPzVwy5pu6vnK9
-         SrswpL4Wv+hfzZOFTyaA6fJafy76Obl2Dx1S9uCTKkmxSbuX5/QLw/Zi0RZ+aA2sw9Y3
-         V3NKh6H/GzvJ+0vtEcrToLtvsD5Qx45DCSdwhqrVU6uWse4iN5EKFCEnjNAYIqHM9g7p
-         AAPw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793959990; x=1794564790;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=6TKu6N+rhcGhq3Fl4eGSM3fARudAqk/2MFphQxFlg48=;
-        b=HDAv6Ba7scpt0uR/S55frx2BwtDDSG3iShpvTIzU8fk8v+viOD140OkECRge3Uk/a5
-         Vi2eP/L9ZVpqGs7+6++hn02Z0kwRg2t/KXIl4wrNOk/Q2nDNnYHL4s9Uz/N//xjXcgDs
-         4Dr2UbN7Qur5Qio7f5K7YA4j306E/1itJOKyAacXnqL1SWl1q48nysPOlUpDPnhmMUBi
-         8+q/QO/1McYUiOfaDv3HmOQc5X4+u6K/gXyl/3DlbP/rBkOqOZbf2+6gDILccdhswXdc
-         1pJUkNrPVXcoJDDhfGciZFvrMLQ5EaWkav6ldyC0bXOJ9nc2bnWj+y9Vg2NPtuVLOD4d
-         EHeQ==
-X-Forwarded-Encrypted: i=1; AKwUvBxAW/5QD4+tQcFuujfbe7R9h5fweMOZGScoYNEUI7tsdlYz34VnJS9zbQzre1UWW5RKcWfGXtsaeJs=@lists.infradead.org
-X-Gm-Message-State: APuU4Z+KlJeYfj2w9Ktubq/E8NWP0CF7f3BshjLgsJNfxoLrgxPDf9O2
-	b33LDNl5yApvBGtNcMHW8VvAJPv/aDG/cS+jmbwrv0M5O3alt7HU8387kilWiv0U
-X-Gm-Gg: AYBFou3RLdt9JAQhzxwiuXvo/FLxugSx40WqSkrgIHxX7LLArpBpOHRe8q9dfopPMqL
-	C5Zuh7ZB/xvyPbFydfk7noDfmNK8ej9rgHXLjQd9L15TRjzRuX+8vZAsOvuyhva2OlXQ4Q9yBTC
-	+9EulXwGcLhJWvY7Fg2/I71wH1LZ6xRsEuyhWVsYpm2henoE+ScCaRLmHyGB3XeePy0sjGdgMD9
-	7/yUi2Imi7RZgjeNQFSvsiYkrftEPBS7l2l9qFMWvqvizlAr+53EgMeS+H9MAKIaHHwGql/N7L9
-	AqlP60OGnhDryeAhrAKUxKDTXAgwvepRy3jYGzol60s8RbxMl9GIdfPCLZCgwC7oSeFOW3Duyu3
-	a0TlEYutxu8lNvO7tOAnXb6QE95/2I8OZU6Gw/xe7U7oVeGhVYw/EbWisbTJZPI9wnVf2XSSP1U
-	RJNrWc/e2KjcXum/hoKDRqJblT/Mu0HPcoCILPZhIACm1mC6Gyb/oXlJZje+h4HfoV4sXyr+Ns+
-	nb8gmXYucz3/mzIg9WXKjD/v3ZpmgGJI757Dy4cAdUzgVtpaih0CNqAC0tQmF5CIy2KiAAvSCkT
-	nGyLfh5V3RrFRKLe2qDi902Q04+AjYDUyvo=
-X-Received: by 2002:a05:600c:8819:b0:4a1:e00b:a0ea with SMTP id 5b1f17b1804b1-4b6db2ba2ebmr27307405e9.1.1793959989827;
-        Fri, 06 Nov 2026 02:13:09 -0800 (PST)
-Received: from dev.Default ([86.127.229.203])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-492d723310fsm2934846f8f.32.2026.11.06.02.13.08
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 06 Nov 2026 02:13:09 -0800 (PST)
-From: Agustin Santiago Isasmendi <isasmendi.agus@gmail.com>
-To: Navid Ghahremani <ghahramani.navid@gmail.com>
-Cc: linux-arm-kernel@lists.infradead.org,
-	arnd@arndb.de,
-	stefandoesinger@gmail.com,
-	krzk@kernel.org,
-	Vinod Koul <vkoul@kernel.org>,
+	id 1xPHrI-0000000C6M9-0aUL;
+	Fri, 06 Nov 2026 11:11:48 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id DFEFD408E7;
+	Fri,  6 Nov 2026 11:11:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D63A01F008BF;
+	Fri,  6 Nov 2026 11:11:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1793963507;
+	bh=ymv0niTVnWnKS+pFTfZaMzhEe6bmcXaXyLur7KiR9IE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=FIXfAf5Zx37NfO5GLrcenTXjpTMp1DBfUo4/QUReR8rF6AxsQTqUTrgRF+0j5apXe
+	 ZB0NsHvsFvk6EgsiTAMagSpL6uWWpVkZUO8r/FNZUMbhYtYG0rYa3GIKwaKCAp0us4
+	 m2XYoIP+BmjiDtH1xsZMGNKvkY2v/tVzeIN38VtoPTkjn6lQDWYpeUDZFqAW6ehXrX
+	 HhmpmyJ6/r3j3guRCsDqPXblfup0LMrZj9h4WhEYnNGLQLKxw7j5zgX+we3FnKEQaP
+	 LG3OckjSOE1p+dVd5p/tLlaFcGxSYVQbSNoO3UAmI3q0tAj/tgY6QsE4dkqT1/b3An
+	 NzwCDdtReyohQ==
+Received: by traversing.sirena.org.uk (Postfix, from userid 1000)
+	id 91F4627E8491; Fri, 06 Nov 2026 11:11:07 +0000 (GMT)
+Date: Fri, 6 Nov 2026 11:11:07 +0000
+From: Mark Brown <broonie@kernel.org>
+To: =?iso-8859-1?Q?Beno=EEt?= Monin <benoit.monin@bootlin.com>
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Jun Chang <jun.chang@metanoia-comm.com>,
+	Paul Walmsley <pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
+	Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Sebastian Reichel <sre@kernel.org>, Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
 	Manivannan Sadhasivam <mani@kernel.org>,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH v2 11/24] phy: zte: Add ZTE ZX279128S PCIe PHY driver
-Date: Fri,  6 Nov 2026 11:13:07 +0100
-Message-Id: <20261106101307.3936492-2-isasmendi.agus@gmail.com>
-X-Mailer: git-send-email 2.30.2
-In-Reply-To: <20261014072109.1759502-12-ghahramani.navid@gmail.com>
-References: <20261014072109.1759502-1-ghahramani.navid@gmail.com> <20261014072109.1759502-12-ghahramani.navid@gmail.com>
+	Conor Dooley <conor@kernel.org>,
+	Jonathan Cameron <jic23@kernel.org>,
+	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+	Thomas Gleixner <tglx@kernel.org>, Radu Rendec <radu@rendec.net>,
+	Samuel Holland <samuel.holland@sifive.com>,
+	Ben Zong-You Xie <ben717@andestech.com>,
+	Daniel Lezcano <daniel.lezcano@kernel.org>,
+	Ulf Hansson <ulfh@kernel.org>, Jisheng Zhang <jszhang@kernel.org>,
+	CL Wang <cl634@andestech.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Wim Van Sebroeck <wim@linux-watchdog.org>,
+	Guenter Roeck <linux@roeck-us.net>,
+	Adrian Hunter <adrian.hunter@intel.com>,
+	Minas Harutyunyan <hminas@synopsys.com>,
+	Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+	Randolph Sheng-Kai =?utf-8?B?TGluKOael+iBluWHsSk=?= <randolph@andestech.com>,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-riscv@lists.infradead.org, linux-pm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Paul Walmsley <paul.walmsley@sifive.com>, linux-mmc@vger.kernel.org,
+	linux-spi@vger.kernel.org, linux-usb@vger.kernel.org,
+	linux-watchdog@vger.kernel.org
+Subject: Re: [PATCH 11/25] dt-bindings: spi: andestech,ae350-spi: make DMA
+ and interrupts optional
+Message-ID: <07329076-00d4-49c6-a320-165910a364b9@sirena.org.uk>
+References: <20261106-mt2824-v1-0-86087eaf5af4@bootlin.com>
+ <20261106-mt2824-v1-11-86087eaf5af4@bootlin.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261106_021312_055730_208A9ABB 
-X-CRM114-Status: UNSURE (   9.64  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
+In-Reply-To: <20261106-mt2824-v1-11-86087eaf5af4@bootlin.com>
+X-Cookie: Whoever dies with the most toys wins.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,37 +97,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============7716296751972345596=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-3.8 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=no autolearn_force=no
-	version=4.0.1
+X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi Navid,
 
-On Wed, Oct 14, 2026 at 08:20:51AM +0100, Navid Ghahremani wrote:
-> +		if (i == 0 && port->has_cal) {
-> +			ret = regmap_write(zphy->regmap, CRM1_PHY1_CAL1, 0x00202d5a);
-> +			if (ret)
-> +				return ret;
-> +			ret = regmap_write(zphy->regmap, CRM1_PHY1_CAL0, 0x0046c24a);
+--===============7716296751972345596==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="0rA9jbrCb+ammo71"
+Content-Disposition: inline
 
-On my unit both read back 0 after boot: there seems to be no register
-at 0x1b0/0x1b4 in the top CRM. The vendor kernel writes these two
-values into the port 1 controller's "ctrl" window instead
-(0x09600000 + 0x1b4, then + 0x1b0); with this series those read
-0x00203c78 / 0x0c46c24a. The link trains anyway (the MT7916 enumerates
-at 2.5 GT/s), so it may only matter for signal margin, but as written
-the writes have no effect.
 
-Agustin
+--0rA9jbrCb+ammo71
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Fri, Nov 06, 2026 at 10:30:08AM +0100, Beno=EEt Monin wrote:
+> The ATCSPI200 controller can be used in PIO mode, without DMA, and PIO
+> transfers can optionally use the controller's interrupt. Make dmas,
+> dma-names and interrupts optional, and require dma-names if dmas is
+> specified.
+
+Please submit patches using subject lines reflecting the style for the
+subsystem, this makes it easier for people to identify relevant patches.
+Look at what existing commits in the area you're changing are doing and
+make sure your subject lines visually resemble what they're doing.
+There's no need to resubmit to fix this alone.
+
+--0rA9jbrCb+ammo71
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQReagvpf3TrrA7BoYYv73Ows9A4iQUCau21ywAKCRAv73Ows9A4
+iUbmAP9uPXjuvImN4DYj7yBA9yMQ34eBI4TfDanUysfyegnzFwEA41yLk793Adlv
+ceQ4scKXQENx1b01FUJT30h4t/rYaA8=
+=PoeG
+-----END PGP SIGNATURE-----
+
+--0rA9jbrCb+ammo71--
+
+
+--===============7716296751972345596==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============7716296751972345596==--
+
