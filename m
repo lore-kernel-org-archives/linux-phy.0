@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5A713606A331
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Nov 2026 22:29:50 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D87BC606A32C
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Nov 2026 22:33:02 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=YgnwK0NH;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=IaS9er6z
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=E6Aw+0T7;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jCqDvLmO
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
@@ -14,42 +14,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=EIq0KS3pddbrHOYdvQbjlmxdmbpXIJ1ZZDAYslKd2Dw=; b=YgnwK0NHUe7c2mEcIZ/R0o2N9I
-	VSNuXT01FODPobC/KmSgJS+U5T+M5jSHo6AAolOYBREoY0gM/spW+Wl33LjVLOKBLOlAvUp57weIW
-	+SYh7ijJGAyI10Lxw9KbYaGpcwJTfzODvmlk4bxHP/jtkd022cCvnuo47eywPVebiFuH/g+2sxVAt
-	F5DvJB4Fl/h/JmkbmjrYoKEtRgUDL5MRSP+PGxVLT+ButMKFv5zm6OxF8XTlsE0fKBARE0iTOIkX+
-	GqXTPug1dzHeLwzintL3RwW6c2MJmwttA0oy20KOVd/KeseviSoxC/q5Iy9BbTpOSlqBwYYBmfCPS
-	Y6Ctk+dQ==;
+	bh=ZYtd1t3s9SBhMthj8L6/Cm7yqM9Sj7LmDWvUB6eqAkc=; b=E6Aw+0T7eug21MHDxBymTD6sC/
+	B2IZf1oT+73+zftgFNzNTF3PT6+qpQxLPJoQTitcln61zWvkHIKsAKh1MwSDCzVhm4a1hizRoYonX
+	U2EC+pqReWxgN2kuriwXNF2FzCW20zii/CB2VlYGFirLlLZtmObPraMgJpzf7mxgt5ckpb+qgPEKg
+	rfY6jJQ9tUtEbH9xUgSHmmbh2qx/WjQdGVHkzFGnHHfbLsj/Jnch2oyoucwtBSL7wW/ic4bpofJ30
+	LQr3486PI1wRZBkOdZ3xhlwKS0sWwxzRAoWAOK3Q7R/rDBdQ44iA7aLvmPJNULyxtJLZJyiCutAEt
+	yLbT6gAA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPSRS-0000000DmvT-0R2J;
-	Fri, 06 Nov 2026 22:29:50 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xPSUY-0000000DnJL-2cqC;
+	Fri, 06 Nov 2026 22:33:02 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPSRR-0000000DmvF-0TcG
+	id 1xPSUX-0000000DnJ0-2X8i
 	for linux-phy@lists.infradead.org;
-	Fri, 06 Nov 2026 22:29:49 +0000
+	Fri, 06 Nov 2026 22:33:01 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 310E6601BF;
-	Fri,  6 Nov 2026 22:29:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E664A1F0089F;
-	Fri,  6 Nov 2026 22:29:42 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 0602A434DA;
+	Fri,  6 Nov 2026 22:33:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 132861F0089F;
+	Fri,  6 Nov 2026 22:32:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794004187;
-	bh=nMZpNIkcGTdYfdMzEc4nfMQokEv9/vL5W1VNPtjLnMY=;
+	s=k20260515; t=1794004380;
+	bh=2+q+v1jhfTi1dqHhpWP0G7ARYW151hdrkBAttGROBKQ=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=IaS9er6z0421dsbeQGunqP8h1lQkYqY3nFsMQZ/c2bg0F+VGMKzUQcwljNUkt6+7N
-	 oKBa+hFTL4Oqk4brtNbjd1jEMkgyD3OkPY0aVmjf+pIctiXp7bbdDnI9yo0QBwkC6J
-	 QwouoW1UaOhOp/bs2S+nhgjA2Cut9vUX/kzsxvH5mJbQ8y5WXDyLyd6cWFH/AKZGOb
-	 PnNPqWrAnCQSlG0aNSlsqoM7f7iePfWz8NIGH3K6Gw4Owjx/hF/xmxhzJfbaUObLib
-	 gr/wvlXZ55mQ3+TSRWtHU4tgMuOz3AIKnSY04Kd4jUTa3oudS9JJ/cHIN84oYu7xKL
-	 la2xK/yrecG1g==
-Message-ID: <88407f72-0c6e-4e46-b97b-7031c237dac7@kernel.org>
-Date: Fri, 6 Nov 2026 22:29:40 +0000
+	b=jCqDvLmOi7mKWIYTXQbT3YV0IbscfGb4EhSCA1M04ujQgQaVg0Ylx0gKdpFJzlbyl
+	 cJUbBqpFk0BJXXc0enmi++0dMmTpHOBt6xp+JeszB649Qkv2mOGE21YCeTU4NN28wE
+	 /iGhom/9FbT3IXbTAWreCYbvIKwyYsU6T8qHv3eFTtEeB802AMf+/JAcFEF2VZSt68
+	 Nr8NujhFCfZxDE7b5zTLXWrfjKKendfuGQwkulw9vkgIXgRPyw2poBE053DGXcn6SD
+	 N1Ebd9nsBS8NOhHvr8ew2wwyGToprdxIBxCta9pfUq6Y1OI9ybO8IzlgkpPcQMCg+D
+	 7F98MFG6W3mcg==
+Message-ID: <e1c5faeb-458b-4ed7-9bdc-145a2c09cae6@kernel.org>
+Date: Fri, 6 Nov 2026 22:32:54 +0000
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 6/7] phy: qcom-mipi-csi2: Add SM8150 CSI2 DPHY support
+Subject: Re: [PATCH v3 3/7] dt-bindings: phy: qcom,sm8150-csi2-phy: Add SM8150
+ CSI2 PHY
 To: mail@andrewgigena.dev, Loic Poulain <loic.poulain@oss.qualcomm.com>,
  Robert Foss <rfoss@kernel.org>, Andi Shyti <andi.shyti@linaro.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -66,8 +67,8 @@ Cc: linux-arm-msm@vger.kernel.org, linux-i2c@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-media@vger.kernel.org, linux-phy@lists.infradead.org
 References: <20261106-sm8150-v7.4-rc1-camss-v3-0-0103e8a0bbcd@andrewgigena.dev>
- <C4VI5PNThYmwD0VGOO9DvvHRRydBUz2k5DOLjkianYgYaz4G3-El6cDpnQh2siR4mMwjeiL4_Yp2xEAYeJDJ2Q==@protonmail.internalid>
- <20261106-sm8150-v7.4-rc1-camss-v3-6-0103e8a0bbcd@andrewgigena.dev>
+ <K-dfrm01MH_S8xoeoPRIme4aizF5TEc2Hb5PFkhmtltkZTB-XX7Xe_5So3-0XfgVViSBBlCxS30ui9OdszuetQ==@protonmail.internalid>
+ <20261106-sm8150-v7.4-rc1-camss-v3-3-0103e8a0bbcd@andrewgigena.dev>
 From: Bryan O'Donoghue <bod@kernel.org>
 Content-Language: en-GB
 Autocrypt: addr=bod@kernel.org; keydata=
@@ -113,7 +114,7 @@ Autocrypt: addr=bod@kernel.org; keydata=
  LKSGEglMpiX07M1AotgvylN5C8fjbouoK+/RAMsXkk8jba6rPfuuXPaDjCyyKn6zSVHETnHW
  3AJbgVY50T8STpnxayBQvWbCvu+6NOEjXCbyaOJig+5l0zlGN9XHjdANXC5HnwmyaGRL9YDq
  Jh2nVXVJDincOdQRdKcJjYLqaOAoWrYWSDi1iZGspHBTDrnOvfMQzzHY
-In-Reply-To: <20261106-sm8150-v7.4-rc1-camss-v3-6-0103e8a0bbcd@andrewgigena.dev>
+In-Reply-To: <20261106-sm8150-v7.4-rc1-camss-v3-3-0103e8a0bbcd@andrewgigena.dev>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,236 +127,63 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-5.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
-	version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
+	autolearn=no autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 On 06/11/2026 18:35, Andrew Gigena via B4 Relay wrote:
-> From: Andrew Gigena <mail@andrewgigena.dev>
-> 
-> Add SM8150 platform data to the CSI2 DPHY driver so that SM8150 can use
-> the dedicated PHY driver instead of the CAMSS-integrated CSIPHY.
-> 
-> The SM8150 CSIPHY uses the SC8280XP lane register layout, as already
-> used by the CAMSS driver, so reuse that table, dropping the DNP entries,
-> which the new PHY driver does not program. The PHY is fed by the "core"
-> and "timer" clocks, the vdda-phy and vdda-pll supplies, and the Titan top
-> power domain, which is not scaled.
-> 
-> The timer clock is pinned to 300 MHz via a new timer_rate_hz soc field
-> (SM8150 timer only supports 19.2/300 MHz). SM8150 is ordered before
-> X1E80100 as it predates it (7 nm vs 4 nm). A detach of the
-> platform-attached single power domain is done before attaching by name,
-> so single-domain SoCs do not fail with -EEXIST.
-> 
-> Signed-off-by: Andrew Gigena <mail@andrewgigena.dev>
-> ---
->   drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c | 97 ++++++++++++++++++++++
->   drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c     | 16 +++-
->   drivers/phy/qualcomm/phy-qcom-mipi-csi2.h          |  4 +
->   3 files changed, 116 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
-> index 966d79c98f9b..b8b6589cee35 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
-> @@ -45,6 +45,73 @@
->   #define CSIPHY_SETTLE_CNT_LOWER_BYTE			2
->   #define CSIPHY_SKEW_CAL					7
-> 
-> +/* 7nm 2PH v 1.1 2p5Gbps 4 lane DPHY mode */
-> +static const struct
-> +mipi_csi2phy_lane_regs lane_regs_sm8150[] = {
-> +	{.reg_addr = 0x0004, .reg_data = 0x0c, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x002c, .reg_data = 0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0034, .reg_data = 0x0f, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x001c, .reg_data = 0x0a, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0014, .reg_data = 0x60, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x003c, .reg_data = 0xb8, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0000, .reg_data = 0x90, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0008, .reg_data = 0x0e, .param_type = CSIPHY_SETTLE_CNT_LOWER_BYTE},
-> +	{.reg_addr = 0x0010, .reg_data = 0x52, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0038, .reg_data = 0xfe, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0060, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0064, .reg_data = 0x7f, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0704, .reg_data = 0x0c, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x072c, .reg_data = 0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0734, .reg_data = 0x0f, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x071c, .reg_data = 0x0a, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0714, .reg_data = 0x60, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0728, .reg_data = 0x04, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x073c, .reg_data = 0xb8, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0700, .reg_data = 0x80, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0708, .reg_data = 0x0e, .param_type = CSIPHY_SETTLE_CNT_LOWER_BYTE},
-> +	{.reg_addr = 0x070c, .reg_data = 0xa5, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0710, .reg_data = 0x52, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0738, .reg_data = 0x1f, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0760, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0764, .reg_data = 0x7f, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0204, .reg_data = 0x0c, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x022c, .reg_data = 0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0234, .reg_data = 0x0f, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x021c, .reg_data = 0x0a, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0214, .reg_data = 0x60, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x023c, .reg_data = 0xb8, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0200, .reg_data = 0x90, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0208, .reg_data = 0x0e, .param_type = CSIPHY_SETTLE_CNT_LOWER_BYTE},
-> +	{.reg_addr = 0x0210, .reg_data = 0x52, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0238, .reg_data = 0xfe, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0260, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0264, .reg_data = 0x7f, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0404, .reg_data = 0x0c, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x042c, .reg_data = 0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0434, .reg_data = 0x0f, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x041c, .reg_data = 0x0a, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0414, .reg_data = 0x60, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x043c, .reg_data = 0xb8, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0400, .reg_data = 0x90, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0408, .reg_data = 0x0e, .param_type = CSIPHY_SETTLE_CNT_LOWER_BYTE},
-> +	{.reg_addr = 0x0410, .reg_data = 0x52, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0438, .reg_data = 0xfe, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0460, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0464, .reg_data = 0x7f, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0604, .reg_data = 0x0c, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x062c, .reg_data = 0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0634, .reg_data = 0x0f, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x061c, .reg_data = 0x0a, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0614, .reg_data = 0x60, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x063c, .reg_data = 0xb8, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0600, .reg_data = 0x90, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0608, .reg_data = 0x0e, .param_type = CSIPHY_SETTLE_CNT_LOWER_BYTE},
-> +	{.reg_addr = 0x0610, .reg_data = 0x52, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0638, .reg_data = 0xfe, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0660, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +	{.reg_addr = 0x0664, .reg_data = 0x7f, .param_type = CSIPHY_DEFAULT_PARAMS},
-> +};
+> +  vdda-phy-supply:
+> +    description: Phandle to a 0.88V regulator supply to a PHY.
 > +
->   /* 4nm 2PH v 2.1.2 2p5Gbps 4 lane DPHY mode */
->   static const struct
->   mipi_csi2phy_lane_regs lane_regs_x1e80100[] = {
-> @@ -352,6 +419,36 @@ static const struct mipi_csi2phy_hw_ops phy_qcom_mipi_csi2_ops_3ph_1_0 = {
->   	.lanes_disable = phy_qcom_mipi_csi2_lanes_disable,
->   };
-> 
-> +static const char * const sm8150_clks[] = {
-> +	"core",
-> +	"timer"
-> +};
+> +  vdda-pll-supply:
+> +    description: Phandle to a 1.2V regulator supply to a PHY PLL.
 
-Is there really no AHB clock to be listed here ? Seems again suspect.
+Wrong names.
 
+> +  ports:
+> +    $ref: /schemas/graph.yaml#/properties/ports
 > +
-> +static const char * const sm8150_supplies[] = {
-> +	"vdda-phy",
-> +	"vdda-pll"
-> +};
-
-These are not the correct names
-
+> +    properties:
+> +      port@0:
+> +        $ref: /schemas/graph.yaml#/$defs/port-base
+> +        unevaluatedProperties: false
+> +        description:
+> +          Sensor input. A single sensor is described by a single endpoint with
+> +          one to four data lanes, numbered 1-4. The clock lane is position 0.
 > +
-> +static struct mipi_csi2_genpd sm8150_genpds[] = {
-> +	{ .name = "top", .scaled = false },
-> +};
+> +        properties:
+> +          endpoint:
+> +            $ref: /schemas/media/video-interfaces.yaml#
+> +            unevaluatedProperties: false
 > +
-> +const struct mipi_csi2phy_soc_cfg mipi_csi2_dphy_sm8150 = {
-> +	.ops = &phy_qcom_mipi_csi2_ops_3ph_1_0,
-> +	.reg_info = {
-> +		.init_seq = lane_regs_sm8150,
-> +		.lane_array_size = ARRAY_SIZE(lane_regs_sm8150),
-> +		.common_regs_offset = 0x800,
-> +	},
-> +	.supply_names = (const char **)sm8150_supplies,
-> +	.num_supplies = ARRAY_SIZE(sm8150_supplies),
-> +	.clk_names = (const char **)sm8150_clks,
-> +	.num_clk = ARRAY_SIZE(sm8150_clks),
-> +	.timer_rate_hz = 300000000,
-> +	.genpds = sm8150_genpds,
-> +	.num_genpds = ARRAY_SIZE(sm8150_genpds),
-> +};
+> +            properties:
+> +              bus-type:
+> +                enum:
+> +                  - 4 # MEDIA_BUS_TYPE_CSI2_DPHY
+> +                default: 4
 > +
->   static const char * const x1e_clks[] = {
->   	"core",
->   	"timer",
-> diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
-> index c0a4fa20eaf0..3a45b8766311 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
-> @@ -68,7 +68,11 @@ phy_qcom_mipi_csi2_set_clock_rates(struct mipi_csi2phy_device *csi2phy,
->   		goto unset_opp_rate;
->   	}
-> 
-> -	timer_rate = clk_round_rate(csi2phy->timer_clk, link_freq / 4);
-> +	if (csi2phy->soc_cfg->timer_rate_hz)
-> +		timer_rate = clk_round_rate(csi2phy->timer_clk,
-> +					    csi2phy->soc_cfg->timer_rate_hz);
-> +	else
-> +		timer_rate = clk_round_rate(csi2phy->timer_clk, link_freq / 4);
-
-But why ?
-
->   	if (timer_rate <= 0) {
->   		ret = -ENODEV;
->   		goto unset_opp_rate;
-> @@ -233,6 +237,15 @@ static int phy_qcom_mipi_csi2_attach_pm_domains(struct mipi_csi2phy_device *csi2
->   	const char **pd_names;
->   	int i;
-> 
-> +	/*
-> +	 * platform_probe() auto-attaches a single power domain during probe.
-> +	 * Detach it first so devm_pm_domain_attach_list() can attach all
-> +	 * domains by name (otherwise it returns -EEXIST for single-domain
-> +	 * SoCs such as SM8150).
-> +	 */
-> +	if (csi2phy->dev->pm_domain)
-> +		dev_pm_domain_detach(csi2phy->dev, false);
+> +              data-lanes:
+> +                minItems: 1
+> +                maxItems: 4
+> +                items:
+> +                  minimum: 1
+> +                  maximum: 4
 > +
-
-No, there's something in the CPHY series for this already. You'll either 
-have to absorb that patch or apply those changes to your tree and base 
-your stuff off of that, and orchestrate landing this series on top of 
-that series.
-
->   	pd_names = devm_kzalloc(csi2phy->dev,
->   				sizeof(char *) * csi2phy->soc_cfg->num_genpds,
->   				GFP_KERNEL);
-> @@ -443,6 +456,7 @@ static int phy_qcom_mipi_csi2_probe(struct platform_device *pdev)
->   }
-> 
->   static const struct of_device_id phy_qcom_mipi_csi2_of_match_table[] = {
-> +	{ .compatible	= "qcom,sm8150-csi2-phy", .data = &mipi_csi2_dphy_sm8150 },
->   	{ .compatible	= "qcom,x1e80100-csi2-phy", .data = &mipi_csi2_dphy_4nm_x1e },
->   	{ }
->   };
-> diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h b/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h
-> index 7e55ae007370..4da9f12d4f8d 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h
-> +++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h
-> @@ -68,6 +68,9 @@ struct mipi_csi2phy_soc_cfg {
->   	const char ** const clk_names;
->   	const unsigned int num_clk;
-> 
-> +	/* 0 = derive timer rate from link_freq/4; non-zero = fixed rate */
-> +	unsigned long timer_rate_hz;
+> +            required:
+> +              - data-lanes
+> +              - remote-endpoint
 > +
->   	const struct mipi_csi2_genpd *genpds;
->   	const unsigned int num_genpds;
->   };
-> @@ -92,6 +95,7 @@ struct mipi_csi2phy_device {
->   	u32 hw_version;
->   };
-> 
-> +extern const struct mipi_csi2phy_soc_cfg mipi_csi2_dphy_sm8150;
->   extern const struct mipi_csi2phy_soc_cfg mipi_csi2_dphy_4nm_x1e;
-> 
->   #endif /* __PHY_QCOM_MIPI_CSI2_H__ */
-> 
-> --
-> 2.56.0
+> +      port@1:
+> +        $ref: /schemas/graph.yaml#/properties/port
+> +        description: Output to the CAMSS CSI input port.
 
+missing split-mode base case definition.
+
+---
+bod
 
 -- 
 linux-phy mailing list
