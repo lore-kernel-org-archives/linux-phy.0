@@ -2,109 +2,100 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8D94A606A33E
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Nov 2026 10:04:44 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C765F606A330
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Nov 2026 10:13:14 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=ICMuSHup;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=pengutronix.de header.i=@pengutronix.de header.a=rsa-sha256 header.s=20260414 header.b=H9OK/dkj
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=JoTm3UIM;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=DgMOiEkp
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=1y/Ar2+KCL5tEOWbXycVbiZXQZvIiWYW6pL9CGiDeRk=; b=ICMuSHupc6+YdDc0oqfuyPvL0u
-	saIO6UrZOo1YQhYsOWgVrZvt2/yPjV6sLhgQcFPz2DltXj0dtapmX5Y2WODJ/V90fveySY9SyomBw
-	wID5DfTu7BtPenjRkKimQM/9W+fW9z3UEtm6fMvLysY8V+CLwOjeHOjfIzk6mfZvGk8LJb9GlAzaF
-	CYHsX4mpbEwqfM+ud9NoKJFYXLEc6KyqxbDWfKn+zA8O4cNLkyTVqjwKaEYIMFSNOuC4fyoXG9ISD
-	W5GIgHErXq8UgEIURgV0NBhBSA3FqcDdHSlQyR/ujVOVlBeau6e7r2iM80YeiNRE0lukK7WVKiFpg
-	HPQSOBCw==;
+	bh=y1ym6a51z6w24YiQD7+tOYKWpHlx0v8Cw/H78vWy/NE=; b=JoTm3UIMPSqSP6QMYD+3EmOQcw
+	r7wJS4yVGxvm5x4xTcBGZlYEsVIl9sE/+kpvYymlq2McvbcSHSYTln5mFWMdYx4l0mTz8DqUFDzU3
+	yMRoBFbhzAMF+bg2KV24H8n3ArnzLwDDKjlWCixVah+w1bUZLvntgKAuDViu3Dxc3OeBlRuQmE0f0
+	cIBIy2YEm80xg5GvwFDNosZmfpT2z8wVmRbDhLVmNQLPZT4GzmJ7MBPuCOSUN4NSmoo3FafhYILoy
+	eb6lVqQoCXWv83Ft4beSUTTDOUKm8T/ccqY4ZBse/N/0e7B7+VOt+69brP9viVMfNb/LQkXOLteQg
+	YYFMJ2iw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPGoN-0000000BqRo-45Qk;
-	Fri, 06 Nov 2026 10:04:44 +0000
-Received: from mx1.white.stw.pengutronix.de ([185.203.200.13])
+	id 1xPGwc-0000000BsEQ-1hFG;
+	Fri, 06 Nov 2026 10:13:14 +0000
+Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPGoK-0000000BqPa-1Kcd;
-	Fri, 06 Nov 2026 10:04:42 +0000
-Received: from [IPv6:2a0a:edc0:0:900:1d::4e] (lupine.office.stw.pengutronix.de [IPv6:2a0a:edc0:0:900:1d::4e])
-	(Authenticated sender: pza@pengutronix.de)
-	by mx1.white.stw.pengutronix.de (Postfix) with ESMTPSA id 60E23200B4C;
-	Fri, 06 Nov 2026 11:04:38 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=pengutronix.de;
-	s=20260414; t=1793959478;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=E30LKCk16cx9qTN9HOhUZe7RDTiEawi3RYRVo2ca6qc=;
-	b=H9OK/dkjxwsZIZIcV+Hn9L5EPukiz/UuPQboeBcOiGsnIgm8EU8hlNH8ZEfC8eT890B9do
-	t/rVb6rpXkjXoACppi+7N/n7cVqNJSdPp8aqJEDW+PSEkbyYieVNpk7IxfAhDwiTKAo4xL
-	ado3BN8BtQG2+jWeulvtNUN0sRI8hMB6TUrLMnMdIaBwnpvCOnLQNSnfJG05+Fg8G6ekNx
-	wTLI3RyrFamrS95tpbWjU2DpyH0pHRLvdlYDV9INwKl9ANlUtS0gMOEillr9PYvhf0nAci
-	tlHTWlWPibrPVmhg/UBeAtmwpkx0cSwSe2O4flM5/za76ilVe0iFc5wMSZZi8Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=pengutronix.de;
-	s=20260414; t=1793959478;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=E30LKCk16cx9qTN9HOhUZe7RDTiEawi3RYRVo2ca6qc=;
-	b=U0A/V3EsJYIkir8OlEXILK/QpaaTBcw+TopekKMn/NBDo9BnMSPBGSaMxFf7b71vee5BSS
-	XdsZo+oUKVHpOooM1bntAsnxElc4F0668OOL40DTxMbvJhD664+xzqWfSLGVl/6yrJlpx0
-	q6jwNN8j5amCXX0YZPdqg8yCJpxmx8gZ0zcLYdUQD4ZzO+eqHr1xXCcj6TkRFQkYP14un5
-	NbxmfHk72rsHovLcFS2Nqw/AjUPwzpyKA0petrgLmfqsG2bX2hmmJ+c7u9U2IfnGGJrnlv
-	NI3igvN4DvRU3w2u+mblG4zqDHeDvwYjSEx41O+1t10D9V0xDChRkvNIBYFzYQ==
-ARC-Authentication-Results: i=1;
-	ORIGINATING;
-	auth=pass smtp.auth=pza@pengutronix.de smtp.mailfrom=p.zabel@pengutronix.de
-ARC-Seal: i=1; s=20260414; d=pengutronix.de; t=1793959478; a=rsa-sha256;
-	cv=none;
-	b=E5AANVgEXfZ4XGSE7OrvMeYfjW72YCl7fwTT5Jh29NZsLDpdrZf+uFVSoGpiOmSlCUZeWI
-	qzmWBNW9eUwtEarw1v4VhuAZbtXsakr1HiWvDX0mmQkT9A2VS580i4WJJjGhrxQkm1zBks
-	vHvLQtN6ncJiArAuBrEnY5UkDDuuPUSy/OrFmA9WSiQRSmhdDeb88zX3PJPg/E3SBAAda/
-	W2onN0t6PpOhdrPi6TixFlrTdDmqz9nHhtC0jkwPXdhg2YK5BUqySwvQfwouIwdO9W7Bdd
-	3T2Ve0hH3P0NvEOdJOUpeSZdH4rtKXSrVPZxoL0qEmcKBThow//f+ymqktcRGg==
-Message-ID: <35d9bc34110d1663af947189bc74f4ba758612cf.camel@pengutronix.de>
-Subject: Re: [PATCH 24/25] riscv: add Metanoia MT2824 SoC and MT5824 EVB
- support
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: =?ISO-8859-1?Q?Beno=EEt?= Monin <benoit.monin@bootlin.com>, Rob Herring	
- <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley	
- <conor+dt@kernel.org>, Jun Chang <jun.chang@metanoia-comm.com>, Paul
- Walmsley	 <pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou	
- <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>, Sebastian Reichel
-	 <sre@kernel.org>, Vinod Koul <vkoul@kernel.org>, Neil Armstrong	
- <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, Conor
- Dooley <conor@kernel.org>, Jonathan Cameron <jic23@kernel.org>, Lad
- Prabhakar	 <prabhakar.mahadev-lad.rj@bp.renesas.com>, Thomas Gleixner
- <tglx@kernel.org>,  Radu Rendec <radu@rendec.net>, Samuel Holland
- <samuel.holland@sifive.com>, Ben Zong-You Xie	 <ben717@andestech.com>,
- Daniel Lezcano <daniel.lezcano@kernel.org>, Ulf Hansson	 <ulfh@kernel.org>,
- Jisheng Zhang <jszhang@kernel.org>, CL Wang	 <cl634@andestech.com>, Mark
- Brown <broonie@kernel.org>, Greg Kroah-Hartman	
- <gregkh@linuxfoundation.org>, Wim Van Sebroeck <wim@linux-watchdog.org>, 
- Guenter Roeck <linux@roeck-us.net>, Adrian Hunter
- <adrian.hunter@intel.com>, Minas Harutyunyan	 <hminas@synopsys.com>
-Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>, Randolph Sheng-Kai
- =?UTF-8?Q?Lin=28=E6=9E=97=E8=81=96=E5=87=B1=29?=
-	 <randolph@andestech.com>, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org, 
-	linux-pm@vger.kernel.org, linux-phy@lists.infradead.org, Paul Walmsley
-	 <paul.walmsley@sifive.com>, linux-mmc@vger.kernel.org, 
-	linux-spi@vger.kernel.org, linux-usb@vger.kernel.org, 
-	linux-watchdog@vger.kernel.org
-Date: Fri, 06 Nov 2026 11:04:38 +0100
-In-Reply-To: <20261106-mt2824-v1-24-86087eaf5af4@bootlin.com>
-References: <20261106-mt2824-v1-0-86087eaf5af4@bootlin.com>
-	 <20261106-mt2824-v1-24-86087eaf5af4@bootlin.com>
-User-Agent: Evolution 3.56.2-0+deb13u1 
+	id 1xPGwa-0000000BsCX-03rh
+	for linux-phy@lists.infradead.org;
+	Fri, 06 Nov 2026 10:13:13 +0000
+Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-4a35db1f202so3461975e9.3
+        for <linux-phy@lists.infradead.org>; Fri, 06 Nov 2026 02:13:11 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1793959990; x=1794564790; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=6TKu6N+rhcGhq3Fl4eGSM3fARudAqk/2MFphQxFlg48=;
+        b=DgMOiEkpaPJDuLdWSVRLIuASr+Mr+DAbU4qlRyRIqc3CxuaS5gmCVvBNsgl5N5Qzo0
+         57rlfVv/FM7O/v02J1e/GHD8QsPPzBkCEsWQeFUT9OV/fyq/gjBALy4J+8a6wNv/XcIZ
+         adch8wOJ+668cWx0RcNEG/R7jHAPh9wPmeFtRIxZWyNkAMd82RO2fxHPzVwy5pu6vnK9
+         SrswpL4Wv+hfzZOFTyaA6fJafy76Obl2Dx1S9uCTKkmxSbuX5/QLw/Zi0RZ+aA2sw9Y3
+         V3NKh6H/GzvJ+0vtEcrToLtvsD5Qx45DCSdwhqrVU6uWse4iN5EKFCEnjNAYIqHM9g7p
+         AAPw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1793959990; x=1794564790;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=6TKu6N+rhcGhq3Fl4eGSM3fARudAqk/2MFphQxFlg48=;
+        b=HDAv6Ba7scpt0uR/S55frx2BwtDDSG3iShpvTIzU8fk8v+viOD140OkECRge3Uk/a5
+         Vi2eP/L9ZVpqGs7+6++hn02Z0kwRg2t/KXIl4wrNOk/Q2nDNnYHL4s9Uz/N//xjXcgDs
+         4Dr2UbN7Qur5Qio7f5K7YA4j306E/1itJOKyAacXnqL1SWl1q48nysPOlUpDPnhmMUBi
+         8+q/QO/1McYUiOfaDv3HmOQc5X4+u6K/gXyl/3DlbP/rBkOqOZbf2+6gDILccdhswXdc
+         1pJUkNrPVXcoJDDhfGciZFvrMLQ5EaWkav6ldyC0bXOJ9nc2bnWj+y9Vg2NPtuVLOD4d
+         EHeQ==
+X-Forwarded-Encrypted: i=1; AKwUvBxAW/5QD4+tQcFuujfbe7R9h5fweMOZGScoYNEUI7tsdlYz34VnJS9zbQzre1UWW5RKcWfGXtsaeJs=@lists.infradead.org
+X-Gm-Message-State: APuU4Z+KlJeYfj2w9Ktubq/E8NWP0CF7f3BshjLgsJNfxoLrgxPDf9O2
+	b33LDNl5yApvBGtNcMHW8VvAJPv/aDG/cS+jmbwrv0M5O3alt7HU8387kilWiv0U
+X-Gm-Gg: AYBFou3RLdt9JAQhzxwiuXvo/FLxugSx40WqSkrgIHxX7LLArpBpOHRe8q9dfopPMqL
+	C5Zuh7ZB/xvyPbFydfk7noDfmNK8ej9rgHXLjQd9L15TRjzRuX+8vZAsOvuyhva2OlXQ4Q9yBTC
+	+9EulXwGcLhJWvY7Fg2/I71wH1LZ6xRsEuyhWVsYpm2henoE+ScCaRLmHyGB3XeePy0sjGdgMD9
+	7/yUi2Imi7RZgjeNQFSvsiYkrftEPBS7l2l9qFMWvqvizlAr+53EgMeS+H9MAKIaHHwGql/N7L9
+	AqlP60OGnhDryeAhrAKUxKDTXAgwvepRy3jYGzol60s8RbxMl9GIdfPCLZCgwC7oSeFOW3Duyu3
+	a0TlEYutxu8lNvO7tOAnXb6QE95/2I8OZU6Gw/xe7U7oVeGhVYw/EbWisbTJZPI9wnVf2XSSP1U
+	RJNrWc/e2KjcXum/hoKDRqJblT/Mu0HPcoCILPZhIACm1mC6Gyb/oXlJZje+h4HfoV4sXyr+Ns+
+	nb8gmXYucz3/mzIg9WXKjD/v3ZpmgGJI757Dy4cAdUzgVtpaih0CNqAC0tQmF5CIy2KiAAvSCkT
+	nGyLfh5V3RrFRKLe2qDi902Q04+AjYDUyvo=
+X-Received: by 2002:a05:600c:8819:b0:4a1:e00b:a0ea with SMTP id 5b1f17b1804b1-4b6db2ba2ebmr27307405e9.1.1793959989827;
+        Fri, 06 Nov 2026 02:13:09 -0800 (PST)
+Received: from dev.Default ([86.127.229.203])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-492d723310fsm2934846f8f.32.2026.11.06.02.13.08
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 06 Nov 2026 02:13:09 -0800 (PST)
+From: Agustin Santiago Isasmendi <isasmendi.agus@gmail.com>
+To: Navid Ghahremani <ghahramani.navid@gmail.com>
+Cc: linux-arm-kernel@lists.infradead.org,
+	arnd@arndb.de,
+	stefandoesinger@gmail.com,
+	krzk@kernel.org,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH v2 11/24] phy: zte: Add ZTE ZX279128S PCIe PHY driver
+Date: Fri,  6 Nov 2026 11:13:07 +0100
+Message-Id: <20261106101307.3936492-2-isasmendi.agus@gmail.com>
+X-Mailer: git-send-email 2.30.2
+In-Reply-To: <20261014072109.1759502-12-ghahramani.navid@gmail.com>
+References: <20261014072109.1759502-1-ghahramani.navid@gmail.com> <20261014072109.1759502-12-ghahramani.navid@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261106_020440_510818_043197A4 
-X-CRM114-Status: GOOD (  15.95  )
+X-CRM114-CacheID: sfid-20261106_021312_055730_208A9ABB 
+X-CRM114-Status: UNSURE (   9.64  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -115,49 +106,37 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-3.8 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=no autolearn_force=no
+	version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-T24gRnIsIDIwMjYtMTEtMDYgYXQgMTA6MzAgKzAxMDAsIEJlbm/DrnQgTW9uaW4gd3JvdGU6Cj4g
-QWRkIHRoZSBkZXZpY2UgdHJlZSBmb3IgdGhlIE1ldGFub2lhIE1UMjgyNCwgYSBkdWFsLWNvcmUg
-QW5kZXMKPiBBWDQ1TVAtYmFzZWQgU29DLCBhbmQgZm9yIHRoZSBNVDU4MjQgZXZhbHVhdGlvbiBi
-b2FyZC4KPiAKPiBUaGUgU29DIGRldmljZSB0cmVlIGRlc2NyaWJlcyB0aGUgQ1BVcyBhbmQgdGhl
-aXIgTDIgY2FjaGUsIHRoZSBQTElDLAo+IFBMSUNTVyBhbmQgUExNVCwgdGhlIHJlc2V0IGNvbnRy
-b2xsZXIsIHRoZSByZWJvb3QgY29udHJvbGxlciwgdGhlCj4gd2F0Y2hkb2csIHR3byBVQVJUcywg
-dGhlIFFTUEkgYW5kIGVpZ2h0IFNQSSBjb250cm9sbGVycywgdGhlIERXQwo+IE1TSEMgTU1DIGNv
-bnRyb2xsZXIsIGFuZCB0aGUgVVNCMiBjb250cm9sbGVyLgo+IAo+IFRoZSBNVDU4MjQgRVZCIGVu
-YWJsZXMgdGhlIHdhdGNoZG9nLCB0aGUgdHdvIFVBUlRzLCB0aGUgTU1DCj4gY29udHJvbGxlciwg
-dGhlIFFTUEkgcG9ydCB3aXRoIGl0cyBTUEktTk9SIGZsYXNoLCB0aGUgZmlyc3QgdGhyZWUgU1BJ
-Cj4gY29udHJvbGxlcnMsIGFuZCB0aGUgVVNCIGNvbnRyb2xsZXIuCj4gCj4gT3JpZ2luYWxseS1i
-eTogSnVuIENoYW5nIDxqdW4uY2hhbmdAbWV0YW5vaWEtY29tbS5jb20+Cj4gU2lnbmVkLW9mZi1i
-eTogQmVub8OudCBNb25pbiA8YmVub2l0Lm1vbmluQGJvb3RsaW4uY29tPgo+IC0tLQo+ICBhcmNo
-L3Jpc2N2L2Jvb3QvZHRzL01ha2VmaWxlICAgICAgICAgICAgICAgIHwgICAxICsKPiAgYXJjaC9y
-aXNjdi9ib290L2R0cy9tZXRhbm9pYS9NYWtlZmlsZSAgICAgICB8ICAgMiArCj4gIGFyY2gvcmlz
-Y3YvYm9vdC9kdHMvbWV0YW5vaWEvbXQyODI0LmR0c2kgICAgfCAzMzAgKysrKysrKysrKysrKysr
-KysrKysrKysrKysrKwo+ICBhcmNoL3Jpc2N2L2Jvb3QvZHRzL21ldGFub2lhL210NTgyNC1ldmIu
-ZHRzIHwgIDgxICsrKysrKysKPiAgNCBmaWxlcyBjaGFuZ2VkLCA0MTQgaW5zZXJ0aW9ucygrKQo+
-IApbLi4uXQo+IGRpZmYgLS1naXQgYS9hcmNoL3Jpc2N2L2Jvb3QvZHRzL21ldGFub2lhL210Mjgy
-NC5kdHNpIGIvYXJjaC9yaXNjdi9ib290L2R0cy9tZXRhbm9pYS9tdDI4MjQuZHRzaQo+IG5ldyBm
-aWxlIG1vZGUgMTAwNjQ0Cj4gaW5kZXggMDAwMDAwMDAwMDAwLi41ZjczYzZkMzc2MGIKPiAtLS0g
-L2Rldi9udWxsCj4gKysrIGIvYXJjaC9yaXNjdi9ib290L2R0cy9tZXRhbm9pYS9tdDI4MjQuZHRz
-aQo+IEBAIC0wLDAgKzEsMzMwIEBACj4gKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiAoR1BM
-LTIuMCsgT1IgTUlUKQo+ICsvKgo+ICsgKiBDb3B5cmlnaHQgKEMpIDIwMjYgTWV0YW5vaWEgQ29t
-bXVuaWNhdGlvbnMgSW5jLi4gQWxsIHJpZ2h0cyByZXNlcnZlZC4KPiArICovCj4gKwo+ICsjaW5j
-bHVkZSA8ZHQtYmluZGluZ3MvaW50ZXJydXB0LWNvbnRyb2xsZXIvaXJxLmg+Cj4gKwo+ICsvIHsK
-Wy4uLl0KPiArCXNvYzogc29jIHsKWy4uLl0KPiArCj4gKwkJcmVib290OiByZWJvb3RAMTAwMDAw
-MDQgewo+ICsJCQljb21wYXRpYmxlID0gIm1ldGFub2lhLG10MjgyNC1yZWJvb3QiOwo+ICsJCQly
-ZWcgPSA8MHgwIDB4MTAwMDAwMDQgMHgwIDB4MDg+Owo+ICsJCX07Cj4gKwo+ICsJCXJzdDogcmVz
-ZXQtY29udHJvbGxlckAxMDAwMDAwYyB7Cj4gKwkJCSNyZXNldC1jZWxscyA9IDwxPjsKPiArCQkJ
-Y29tcGF0aWJsZSA9ICJtZXRhbm9pYSxtdDI4MjQtcmVzZXQiOwo+ICsJCQlyZWcgPSA8MHgwIDB4
-MTAwMDAwMGMgMHgwIDB4MDQ+Owo+ICsJCX07CgpUaGlzIGxvb2tzIHVudXN1YWwuIEFyZSB5b3Ug
-c3VyZSB0aGVzZSBhcmUgbm90IGJvdGggcGFydCBvZiBhIHNpbmdsZQpkZXZpY2UgQDEwMDAwMDAw
-ID8KCnJlZ2FyZHMKUGhpbGlwcCAKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBo
-eUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Hi Navid,
+
+On Wed, Oct 14, 2026 at 08:20:51AM +0100, Navid Ghahremani wrote:
+> +		if (i == 0 && port->has_cal) {
+> +			ret = regmap_write(zphy->regmap, CRM1_PHY1_CAL1, 0x00202d5a);
+> +			if (ret)
+> +				return ret;
+> +			ret = regmap_write(zphy->regmap, CRM1_PHY1_CAL0, 0x0046c24a);
+
+On my unit both read back 0 after boot: there seems to be no register
+at 0x1b0/0x1b4 in the top CRM. The vendor kernel writes these two
+values into the port 1 controller's "ctrl" window instead
+(0x09600000 + 0x1b4, then + 0x1b0); with this series those read
+0x00203c78 / 0x0c46c24a. The link trains anyway (the MT7916 enumerates
+at 2.5 GT/s), so it may only matter for signal margin, but as written
+the writes have no effect.
+
+Agustin
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
