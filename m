@@ -2,57 +2,148 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 31661606A32F
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Nov 2026 07:12:59 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F095B606A329
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Nov 2026 08:27:28 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=DLVnDDFQ;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=mYv7bpXx
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=MvPpvfFd;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=VAzK8f/P;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=J4snsphi
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=RZhBCrEWztf+zAvkwDJeVuWgb7UZ+YwBUsq7AZBtORg=; b=DLVnDDFQOS/+MXO256F1ZPOYeo
-	fbKGnEcgMI1GgVsBSKZrpYIWPGI1uvTc9ASigmB8xX1QxbLMNCkdwN40h8HZXW+kst6hDzgdxUrxs
-	zLsmOoC9R9JzCDafhBab9gC3olwaXzqMMAeYB9uDkvwPHDizlPVdAEYcoruQknJKEYuUO/SnEyrYb
-	S4OlHOAJHNhE9W4trq49J8Rmt5wxk+vNudqkJyHuJe651IAKCJYs8HQ1+j8hUFkPZ/X39d4bAkydJ
-	tnAHw/tzLq2JcI1UtmWLMpXs2R5lmjQ6LCLl7tdwwxsXtFmXN1PDoKbAeXXQHrbCzhguGvpljHFuJ
-	EoYQ2X2g==;
+	bh=qltKcrDST6UOkjNb0L1YUYDbCFswQewciwoEYfxo/EU=; b=MvPpvfFdIcHZjO8llfW9TRRE0n
+	Fo1HN11IDSYpSidaoJOYhPIsOFZNOXiFTzMbHwCBfmJX8YAJr14wLygpOqtmv0YpCMQ2Nrd9C/3j6
+	HKV2ro4ZQ4/EfLn7jKWRFb0bAg/m0UGLpei4TauzVrSrI0bSQVODywuITrbu0UQ/If1ix43c5gHi2
+	70hte9XMo+3KNEc1HLmwVl4+5o0pq3NZHngB/C8z0vqKylrQ28fxfRy5t73aji+xs+/cc5ZGxDUuM
+	fe4T+lLXIVMo8ZqKbVKvyG27qxwvXiNMpMGHwfKBLRtzm8YTXds0hGPUyN4xP0G8b9neNj8KpjdIX
+	9bk44KVA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPE8A-0000000BPIv-3uOe;
-	Fri, 06 Nov 2026 07:12:58 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xPFIG-0000000BYDU-20ZI;
+	Fri, 06 Nov 2026 08:27:28 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPE89-0000000BPIo-2E41
+	id 1xPFIE-0000000BYAX-0Diw
 	for linux-phy@lists.infradead.org;
-	Fri, 06 Nov 2026 07:12:57 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id BE96E44655;
-	Fri,  6 Nov 2026 07:12:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 23CE41F008A5;
-	Fri,  6 Nov 2026 07:12:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793949176;
-	bh=5XLHt4ws72v48Z4v6bAzP2rEp3zyelYVNcBAKn+rWw4=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=mYv7bpXxoTN7QXBqQXDD9DAK+Eue3xRiIB0U1wjD1Aeg2BQPvPkvxgdRk/zXY7pcS
-	 XRn4+uv88gx6h9gWC2sJp1w7caG8i1EWQX39S/ak5+fW0vdA80G9AkSRuKPuko4mnn
-	 i6Lt8AKbNcE4l8DIEsZuNAEIW15dnJrS6vJNpt0/FqE1qmKEQXYuRTj5So64MiZI5g
-	 N197i17O8aKtL8CCMeweNKjw8Tz2w+x6RK+t0tDIKQbmjWJsbVpGUu8wlYG2WayI6I
-	 KCwRiOPKgCGjeinLh4Qph27Rht5rReTfMxMYrjvlTAaOCqgn5UpNxltwGAaXF+6TPV
-	 Zt+TSrhIgwKBA==
-Message-ID: <sashiko-outbox-200974@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v4 6/6] media: qcom: camss: Add support for Hawi
-To: "Nihal Kumar Gupta" <nihal.gupta@oss.qualcomm.com>
-Cc: devicetree@vger.kernel.org, linux-phy@lists.infradead.org, robh@kernel.org, conor+dt@kernel.org, media-ci@linuxtv.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
-In-Reply-To: <20261106-hawi-maili-camss-v4-6-d528c7a797b4@oss.qualcomm.com>
-References: <20261106-hawi-maili-camss-v4-0-d528c7a797b4@oss.qualcomm.com>
- <20261106-hawi-maili-camss-v4-6-d528c7a797b4@oss.qualcomm.com>
-Date: Fri, 06 Nov 2026 07:12:55 +0000
+	Fri, 06 Nov 2026 08:27:27 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A67R4MB129039
+	for <linux-phy@lists.infradead.org>; Fri, 6 Nov 2026 08:27:25 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=Fi22M5AWeWKIqAQK7fYG+4+YJmJtfLKtzwX
+	j1Fjk21E=; b=VAzK8f/PU6/PwE6Sv5E6eILvFl//DgpBsZ43k45z4PJsbk3U49m
+	Pp5H/fqHTAFEahXIRqhtpm97p6IjB5YyJDyAH2I1HviPoNpRfqRDlllZ3Vunc063
+	aoMCJzqpUsdsIMjAHgYEwbNTfAUFOpAK1G27JjbGcsNmok+mj9QXJSTfJ9zaDxKw
+	j164fGMhDakTJ5NvgMwhk2ojwklk+DwRoB4Yy/yWVdhcBEUtUfCbdPVMbl0CbAMh
+	QgDZ/5tYLYQ9SQn5xw4prsVB/SVlarEsknG+cTyAlha1Kgbgukb3lEop24ztdnyO
+	sK3i3aKz6yGaPhFd/t6qKD7HiwsZqYjd2ZA==
+Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hs3p9svcr-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Fri, 06 Nov 2026 08:27:25 +0000 (GMT)
+Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-3aed1b64104so698324a91.0
+        for <linux-phy@lists.infradead.org>; Fri, 06 Nov 2026 00:27:25 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1793953644; x=1794558444; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=Fi22M5AWeWKIqAQK7fYG+4+YJmJtfLKtzwXj1Fjk21E=;
+        b=J4snsphiwjn0ZNH045tCf/wnmarg+9HAn+ZotpS84Ge78TL8DrQdBq6SJnjqVE+9mf
+         tKESjthrb5uc1vX10sKZ6n+jIDdZda0hqRkym1pm14XUk62IZEaRppbrKQI4JD5PZJX+
+         QLZVKyr3RP1zHiQCmuLc+P8K/vmbBPOa0EPx3bRy16DEGmcEFQXGuQsKQuXTiUfGd1Hf
+         YonbLXXmJM9wOIJYcxmARQsyvJjn2Hhd5PkfhYgC3WgBjMuAQ2D0UOl4eb0lnFSaR8B6
+         WTrmWyeneRxntG5OD+o1IGKhPAveDTBxMW3p7dyqIpsQxV4eic6dwVaXGEJ1+AI7H4oE
+         krNg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1793953644; x=1794558444;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=Fi22M5AWeWKIqAQK7fYG+4+YJmJtfLKtzwXj1Fjk21E=;
+        b=DqMLmdzr6jbH3JcsiJZMSBtzoFqMNJY+anrmG6D7YWgWV1KVwGNZ4wZzfNY41NHWJZ
+         pxznF/wiet8gQ2A+Sb02IwU2oZsuX3CyZ+axZmisbdD38QTliiaAQVXJVbMKJZ4nNUI8
+         bvcOZJluxBHvhfIf1lJb7/Z9FrbSaqb6IMKH569zieZoT6u72sYLSc3rIyi4D5gzU5Jy
+         R063ElUfQScY+WtycpAKI502X8MRThGLWIiNeN8F43I3pCCegRaJGtIog5PjVrH3TVWu
+         uZB2LmIS5DEE8ihv52aOBJIBecDhS/IMB7rJRbErFdduJKumQEOjgInTo7+6YPluMSYt
+         /gDw==
+X-Forwarded-Encrypted: i=1; AL+hErGov6aWn+EF4xFnX8Y/D+ObIDpYPQAIa5w0cGJ2fKBORMlKu0Hsr2V/SihxAvDZahCSfctsISb7MOI=@lists.infradead.org
+X-Gm-Message-State: APuU4Z8Xqi2Qu23j8rcBViNdcV7Cjac3Sslh5uNQjTQNb8PcrEp900Ik
+	9/QW6d7/uYNjhR+3+SNvY8WzukFrtpi9nDKhGdoc/7FkTBGUSCNdrNE65zqMGhjprdDKAdpYaWg
+	LeyV6USYsmrcGpWBjJjOLuzvh0tCC8WJdhzJKKTfwqf6mxE6dP3062esGKK0JzgwEdcoj
+X-Gm-Gg: AYBFou1CdOB45kOO/HK9c2ivLdxlHRXbTnW5A/H9l0plZMsQnv9JyzlJ0EdzQ5hsOqP
+	+aN9G+1/EAQGbojg1Swdhcs4MzSl/TqAiUXN+N90S0X2uYSCMg3RP5KaOHH1SrtAISBlHkmoX51
+	+tbEwsGrzCpFpgC7k8zWE+ba6La1oja+Nvf8aYiDJrIMEtZTynbDIKhL7p+CJj+i+GD4PxNa/ro
+	2S03sT0ylp2ez/42gVJye8GnaE2aO9MeSnU00Mx3RmH+hhe1IpVK3UZO3F6pwkoMHIp2mwzaIWl
+	IzUAvzuB8SFiYn7tAjzw6X0dVST7LuXx1ojdxfcuiPfOBOZmkd6dRqxPTbZlydaDT9TCV37AmGn
+	akgrYdsm04p68Y+v5SLvCg7qheQVY+kzXesJByNhzPDD+gXaoBmyioMcLsmeG7hGCyG7eLMtfzs
+	quHg==
+X-Received: by 2002:a17:90b:5307:b0:3ab:24b2:9016 with SMTP id 98e67ed59e1d1-3b0db6c9e98mr1738385a91.25.1793953644459;
+        Fri, 06 Nov 2026 00:27:24 -0800 (PST)
+X-Received: by 2002:a17:90b:5307:b0:3ab:24b2:9016 with SMTP id 98e67ed59e1d1-3b0db6c9e98mr1738351a91.25.1793953643921;
+        Fri, 06 Nov 2026 00:27:23 -0800 (PST)
+Received: from hu-taparana-hyd.qualcomm.com ([202.46.22.19])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b0d7c42a72sm2433951a91.3.2026.11.06.00.27.18
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 06 Nov 2026 00:27:23 -0800 (PST)
+From: Tapas Rana <tapas.rana@oss.qualcomm.com>
+To: Vinod Koul <vkoul@kernel.org>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+        Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+        Manivannan Sadhasivam <mani@kernel.org>,
+        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+        Abel Vesa <abelvesa@kernel.org>,
+        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+        Wesley Cheng <wesley.cheng@oss.qualcomm.com>,
+        Esteban Urrutia <esteuwu@proton.me>,
+        Loic Poulain <loic.poulain@oss.qualcomm.com>,
+        Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>,
+        Ronak Raheja <ronak.raheja@oss.qualcomm.com>,
+        Faisal Hassan <faisal.hassan@oss.qualcomm.com>,
+        Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
+        prashanth.k@oss.qualcomm.com, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
+        linux-kernel@vger.kernel.org, Tapas Rana <tapas.rana@oss.qualcomm.com>
+Subject: [PATCH 0/3] phy: qcom: carry live SS-link state without growing enum phy_mode
+Date: Fri,  6 Nov 2026 13:57:13 +0530
+Message-ID: <20261106082716.128968-1-tapas.rana@oss.qualcomm.com>
+X-Mailer: git-send-email 2.43.0
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTA2MDAzMyBTYWx0ZWRfX1T9gG/wwO9O9
+ SZ4bAR2dN+Uu065ZVZMMFiPVzh3kGZRd+mD0NqPp4f8GmdjwvmxyJo6vgm//PifsBqYBZODTyt5
+ wH+B4aLU8G01VLWbp2vaUb5i6P3Kw64=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTA2MDAzMyBTYWx0ZWRfXyHrO1xqsJImj
+ PVRuq73aRmEz9opioRTgu2YDc6LtAX12rVoTetFOmNOZYwBShV/NrxnyI0a9PHPjKjrB4yoJhLx
+ PiPAlRBH+sfvxKBLkPEddaRtSeqye1n6DuiS8jXsr+xE8lbZpWpB2x4aQlMvXPUyzqiJS1qNtT7
+ mfUbe6frFiHwh6P4bElQnr7y6qOV+OCONVqeGcRPCwVkhu4wx1awFA4qaoZCXuFz0TB6IvTpJmQ
+ j/0S1nFbql+/GcySj2a6Sw0DAEE9MYeP3VOlr+dyGcYJoG6cCN1l1k1dOG6v8AoyGZpye0/awdd
+ r63OZ4UsSpO4O0bI5FzFINCK9kL9phb4lt7u33zHHMuleWZmNyvBgyZMWmU5nsiY3mohzGlJsLa
+ V5/lTd8cT8hP3EC+BosYI5tOlYMRRyQtnXr29y07yN2DYkPTj3upbCwId0rYfP+tGP48K5meYFP
+ nvrQ6PnHKJyWLbwzpPA==
+X-Proofpoint-ORIG-GUID: RyXSoG9PWN72C9u1hxOFk11Ctjwm2oWd
+X-Authority-Analysis: v=2.4 cv=f6Pdl+yM c=1 sm=1 tr=0 ts=6aed8f6d cx=c_pps
+ a=RP+M6JBNLl+fLTcSJhASfg==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
+ a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22 a=VwQbUJbxAAAA:8
+ a=rQF6O0ERi8bj5yKtaRIA:9 a=iS9zxrgQBfv6-_F4QbHw:22
+X-Proofpoint-GUID: RyXSoG9PWN72C9u1hxOFk11Ctjwm2oWd
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-11-06_02,2026-11-04_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 lowpriorityscore=0 malwarescore=0 bulkscore=0 phishscore=0
+ adultscore=0 spamscore=0 clxscore=1015 impostorscore=0 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611060033
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261106_002726_101156_1DFB1168 
+X-CRM114-Status: GOOD (  15.43  )
+X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,171 +153,79 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
-	autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-NSBwb3RlbnRpYWwKaXNzdWVzIHRvIGNvbnNpZGVyOgotIFtIaWdoXSBtZWRpYTogcWNvbTogY2Ft
-c3M6IHVuY29uZGl0aW9uYWwgQVVQIHN0cm9iZXMgaW4KICBjc2lkX2NvbmZpZ3VyZV9zdHJlYW0o
-KQotIFtNZWRpdW1dIG1lZGlhOiBxY29tOiBjYW1zczogcmFjZSBvbiBjc2lkLT5hZGRyX3VwZGF0
-ZSBhbmQKICBjc2lkLT5yZWdfdXBkYXRlCi0gW01lZGl1bV0gbWVkaWE6IHFjb206IGNhbXNzOiB3
-cm9uZyBjYW1ub2NfcnRfYXhpIGNsb2NrIHJhdGVzIGluCiAgdmZlX3Jlc19oYXdpCi0gW0xvd10g
-bWVkaWE6IHFjb206IGNhbXNzOiBkdXBsaWNhdGUgQ1NJRC9WRkUgMTA4MCBjb2RlIGFuZCBpbmFj
-Y3VyYXRlCiAgY2hhbmdlbG9nCi0gW0xvd10gbWVkaWE6IHFjb206IGNhbXNzOiBjb21taXQgbWVz
-c2FnZSBtaXNtYXRjaCB3aXRoIGhhd2lfcmVzb3VyY2VzCi0tCgpjb21taXQgNTZiZjljZGViZmNh
-YzhiODMxYzhiMTQwZTI3MDNiNWFhMmZkY2M3OApBdXRob3I6IEhhbmd4aWFuZyBNYSA8aGFuZ3hp
-YW5nLm1hQG9zcy5xdWFsY29tbS5jb20+CgptZWRpYTogcWNvbTogY2Ftc3M6IEFkZCBzdXBwb3J0
-IGZvciBIYXdpCgpUaGlzIGNvbW1pdCBhZGRzIENBTVNTIHN1cHBvcnQgZm9yIHRoZSBRdWFsY29t
-bSBIYXdpIFNvQywgaW5jbHVkaW5nIENTSUQKMTE5MCwgVkZFIDExOTAsIGFuZCB0aGUgSGF3aSBz
-dWJkZXZpY2UgcmVzb3VyY2UgdGFibGVzLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9tZWRpYS9w
-bGF0Zm9ybS9xY29tL2NhbXNzL2NhbXNzLWNzaWQtMTE5MC5jIGIvZHJpdmVycy9tZWRpYS9wbGF0
-Zm9ybS9xY29tL2NhbXNzL2NhbXNzLWNzaWQtMTE5MC5jCj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQK
-PiBpbmRleCAwMDAwMDAwMDAwMDAwLi40YmQyY2NlMDk0NDAyCj4gLS0tIC9kZXYvbnVsbAo+ICsr
-KyBiL2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0vcWNvbS9jYW1zcy9jYW1zcy1jc2lkLTExOTAuYwoK
-WyAuLi4gXQoKPiArc3RhdGljIHZvaWQgX19jc2lkX2F1cF9ydXBfdHJpZ2dlcihzdHJ1Y3QgY3Np
-ZF9kZXZpY2UgKmNzaWQpCj4gK3sKPiArCS8qIHRyaWdnZXIgU0VUIGluIGNvbWJpbmVkIHJlZ2lz
-dGVyICovCj4gKwl3cml0ZWwoUlVQX1NFVCwgY3NpZC0+YmFzZSArIENTSURfUlVQX0FVUF9DTUQp
-Owo+ICt9Cj4gKwo+ICtzdGF0aWMgdm9pZCBfX2NzaWRfYWRkcl91cGRhdGUoc3RydWN0IGNzaWRf
-ZGV2aWNlICpjc2lkLCBpbnQgcG9ydF9pZCkKPiArewo+ICsJY3NpZC0+YWRkcl91cGRhdGUgfD0g
-Q1NJRF9SVVBfQVVQX1JESShwb3J0X2lkKTsKPiArCXdyaXRlbChjc2lkLT5hZGRyX3VwZGF0ZSwg
-Y3NpZC0+YmFzZSArIENTSURfQVVQX0NNRCk7Cj4gKwo+ICsJX19jc2lkX2F1cF9ydXBfdHJpZ2dl
-cihjc2lkKTsKPiArfQo+ICsKPiArc3RhdGljIHZvaWQgX19jc2lkX2FkZHJfdXBkYXRlX2NsZWFy
-KHN0cnVjdCBjc2lkX2RldmljZSAqY3NpZCwgaW50IHBvcnRfaWQpCj4gK3sKPiArCS8qIEhhcmR3
-YXJlIGNsZWFycyB0aGUgcmVnaXN0ZXJzIHVwb24gY29uc3VtaW5nIHRoZSBzZXR0aW5ncyAqLwo+
-ICsJY3NpZC0+YWRkcl91cGRhdGUgJj0gfkNTSURfUlVQX0FVUF9SREkocG9ydF9pZCk7Cj4gK30K
-PiArCj4gK3N0YXRpYyB2b2lkIF9fY3NpZF9yZWdfdXBkYXRlKHN0cnVjdCBjc2lkX2RldmljZSAq
-Y3NpZCwgaW50IHBvcnRfaWQpCj4gK3sKPiArCWNzaWQtPnJlZ191cGRhdGUgfD0gQ1NJRF9SVVBf
-QVVQX1JESShwb3J0X2lkKTsKPiArCXdyaXRlbChjc2lkLT5yZWdfdXBkYXRlLCBjc2lkLT5iYXNl
-ICsgQ1NJRF9SVVBfQ01EKTsKPiArCj4gKwlfX2NzaWRfYXVwX3J1cF90cmlnZ2VyKGNzaWQpOwo+
-ICt9Cj4gKwo+ICtzdGF0aWMgdm9pZCBfX2NzaWRfcmVnX3VwZGF0ZV9jbGVhcihzdHJ1Y3QgY3Np
-ZF9kZXZpY2UgKmNzaWQsIGludCBwb3J0X2lkKQo+ICt7Cj4gKwkvKiBIYXJkd2FyZSBjbGVhcnMg
-dGhlIHJlZ2lzdGVycyB1cG9uIGNvbnN1bWluZyB0aGUgc2V0dGluZ3MgKi8KPiArCWNzaWQtPnJl
-Z191cGRhdGUgJj0gfkNTSURfUlVQX0FVUF9SREkocG9ydF9pZCk7Cj4gK30KCltTZXZlcml0eTog
-TWVkaXVtXQpDYW4gY29uY3VycmVudCB1cGRhdGVzIHRvIGNzaWQtPmFkZHJfdXBkYXRlIGFuZCBj
-c2lkLT5yZWdfdXBkYXRlIHJhY2Ugd2l0aApjc2lkX2lzcigpPwoKdmZlX3F1ZXVlX2J1ZmZlcl92
-MigpIGFuZCB2ZmVfZW5hYmxlX291dHB1dF92MigpIGNhbGwgb3BzLT5hZGRyX3VwZGF0ZSgpIGFu
-ZApvcHMtPnJlZ191cGRhdGUoKSB1bmRlciB2ZmUtPm91dHB1dF9sb2NrLCB3aGVyZWFzIGNzaWRf
-aXNyKCkgY2xlYXJzIHRob3NlCmJpdG1hc2tzIG9uIElORk9fUlVQX0RPTkUgd2l0aG91dCBob2xk
-aW5nIHZmZS0+b3V0cHV0X2xvY2sgb3IgYSBDU0lECnNwaW5sb2NrLCBhbmQgY3NpZF9jb25maWd1
-cmVfc3RyZWFtKCkgc2V0cyB0aGVtIHdpdGhvdXQgYSBzcGlubG9jazoKCkNQVTAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgQ1BVMSAoPGhhcmRpcnE+KQp2ZmVfcXVldWVfYnVmZmVy
-X3YyKCkgICAgICAgICAgICAgICAgIGNzaWRfaXNyKCkKICBzcGluX2xvY2tfaXJxc2F2ZSgmdmZl
-LT5vdXRwdXRfbG9jaykKICAuLi4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIF9f
-Y3NpZF9hZGRyX3VwZGF0ZV9jbGVhcihjc2lkLCBpKQogIF9fY3NpZF9hZGRyX3VwZGF0ZShjc2lk
-LCBwb3J0X2lkKSAgICAgICBsb2FkIGNzaWQtPmFkZHJfdXBkYXRlCiAgICBsb2FkIGNzaWQtPmFk
-ZHJfdXBkYXRlICAgICAgICAgICAgICAgIGFuZCB+Q1NJRF9SVVBfQVVQX1JESShpKQogICAgb3Ig
-Q1NJRF9SVVBfQVVQX1JESShwb3J0X2lkKSAgICAgICAgICBzdG9yZSBjc2lkLT5hZGRyX3VwZGF0
-ZQogICAgc3RvcmUgY3NpZC0+YWRkcl91cGRhdGUgIDwtLSBjbG9iYmVycyBjbGVhciAob3IgbG9z
-ZXMgc2V0IGJpdCkKICAgIHdyaXRlbChjc2lkLT5hZGRyX3VwZGF0ZSwgLi4uKQoKVGhpcyBkYXRh
-IHJhY2UgY2FuIGRyb3AgYSBwZW5kaW5nIFJESSBhZGRyZXNzIG9yIHJlZ2lzdGVyIHVwZGF0ZSBv
-cgpyZS13cml0ZSBhIHN0YWxlIFJESSBiaXQgdG8gQ1NJRF9BVVBfQ01EIGFuZCBDU0lEX1JVUF9D
-TUQuCgpbIC4uLiBdCgo+ICtzdGF0aWMgdm9pZCBjc2lkX2NvbmZpZ3VyZV9zdHJlYW0oc3RydWN0
-IGNzaWRfZGV2aWNlICpjc2lkLCB1OCBlbmFibGUpCj4gK3sKPiArCXU4IGksIGs7Cj4gKwo+ICsJ
-X19jc2lkX2NvbmZpZ3VyZV9yeChjc2lkLCAmY3NpZC0+cGh5KTsKPiArCj4gKwlmb3IgKGkgPSAw
-OyBpIDwgTVNNX0NTSURfTUFYX1NSQ19TVFJFQU1TXzExOTA7IGkrKykgewo+ICsJCWlmIChjc2lk
-LT5waHkuZW5fdmMgJiBCSVQoaSkpIHsKPiArCQkJX19jc2lkX2NvbmZpZ3VyZV9yZGlfc3RyZWFt
-KGNzaWQsIGVuYWJsZSwgaSwgMCk7Cj4gKwkJCV9fY3NpZF9jb25maWd1cmVfcnhfdmMoY3NpZCwg
-MCk7Cj4gKwo+ICsJCQlmb3IgKGsgPSAwOyBrIDwgQ0FNU1NfSU5JVF9CVUZfQ09VTlQ7IGsrKykK
-PiArCQkJCV9fY3NpZF9hZGRyX3VwZGF0ZShjc2lkLCBpKTsKPiArCj4gKwkJCV9fY3NpZF9yZWdf
-dXBkYXRlKGNzaWQsIGkpOwo+ICsKPiArCQkJX19jc2lkX2N0cmxfcmRpKGNzaWQsIGVuYWJsZSwg
-aSk7Cj4gKwkJfQo+ICsJfQo+ICt9CgpbU2V2ZXJpdHk6IEhpZ2hdCkRvZXMgdW5jb25kaXRpb25h
-bGx5IGlzc3VpbmcgQ0FNU1NfSU5JVF9CVUZfQ09VTlQgYWRkcmVzcyB1cGRhdGVzIGhlcmUKZGVz
-eW5jaHJvbml6ZSB0aGUgaGFyZHdhcmUgd3JpdGUgbWFzdGVyIHdoZW4gZmV3ZXIgdGhhbiB0d28g
-YnVmZmVycyBhcmUKcXVldWVkIGJlZm9yZSBWSURJT0NfU1RSRUFNT04/CgpCZWNhdXNlIHZiMl9x
-dWV1ZS5taW5fcXVldWVkX2J1ZmZlcnMgaXMgMCBpbiBtc21fdmlkZW9fcmVnaXN0ZXIoKSwKdmZl
-X2VuYWJsZV9vdXRwdXRfdjIoKSBvbmx5IHByb2dyYW1zIFZGRV9CVVNfV01fSU1BR0VfQUREUiBm
-b3IgYXMgbWFueQpwZW5kaW5nIGJ1ZmZlcnMgYXMgYXJlIGFjdHVhbGx5IHF1ZXVlZCAoMCwgMSwg
-b3IgMik6Cgpkcml2ZXJzL21lZGlhL3BsYXRmb3JtL3Fjb20vY2Ftc3MvY2Ftc3MtdmZlLmM6dmZl
-X2VuYWJsZV9vdXRwdXRfdjIoKSB7Cglmb3IgKGkgPSAwOyBpIDwgQ0FNU1NfSU5JVF9CVUZfQ09V
-TlQ7IGkrKykgewoJCW91dHB1dC0+YnVmW2ldID0gdmZlX2J1Zl9nZXRfcGVuZGluZyhvdXRwdXQp
-OwoJCWlmICghb3V0cHV0LT5idWZbaV0pCgkJCWJyZWFrOwoJCW91dHB1dC0+Z2VuMi5hY3RpdmVf
-bnVtKys7CgkJb3BzLT52ZmVfd21fdXBkYXRlKHZmZSwgb3V0cHV0LT53bV9pZHhbMF0sCgkJCQkg
-ICBvdXRwdXQtPmJ1ZltpXS0+YWRkclswXSwgbGluZSk7CgkJaWYgKCFvcHMtPmFkZHJfdXBkYXRl
-KQoJCQlvcHMtPnJlZ191cGRhdGUodmZlLCBsaW5lLT5pZCk7Cgl9Cn0KCmNzaWRfY29uZmlndXJl
-X3N0cmVhbSgpIHRoZW4gcnVucyBhbmQgdHJpZ2dlcnMgdHdvIF9fY3NpZF9hZGRyX3VwZGF0ZSgp
-CnN0cm9iZXMgZXZlbiBpZiAwIG9yIDEgYnVmZmVyIHdhcyB3cml0dGVuIHRvIFZGRV9CVVNfV01f
-SU1BR0VfQUREUiAoYW5kIGFsc28Kd2hlbiBlbmFibGUgaXMgMCBvciBvbiBvdGhlciBsaW5rLWVu
-YWJsZWQgUkRJIHBvcnRzIGluIGNzaWQtPnBoeS5lbl92YykuCkxhdGNoaW5nIHVuaW5pdGlhbGl6
-ZWQgb3IgZHVwbGljYXRlIGJ1ZmZlciBhZGRyZXNzZXMgaW50byB0aGUgaGFyZHdhcmUgRklGTwph
-bmQgdGhlbiBpc3N1aW5nIGZ1cnRoZXIgYWRkcl91cGRhdGUgc3Ryb2JlcyBmcm9tIHZmZV9xdWV1
-ZV9idWZmZXJfdjIoKSB3aGVuCmJ1ZmZlcnMgYXJyaXZlIHdoaWxlIGFjdGl2ZV9udW0gPCAyIGNv
-cnJ1cHRzIGJ1ZmZlciB0cmFja2luZyBhbmQgRE1BIHRhcmdldAphZGRyZXNzZXMuCgpbIC4uLiBd
-Cgo+ICtjb25zdCBzdHJ1Y3QgY3NpZF9od19vcHMgY3NpZF9vcHNfMTE5MCA9IHsKPiArCS5jb25m
-aWd1cmVfc3RyZWFtID0gY3NpZF9jb25maWd1cmVfc3RyZWFtLAo+ICsJLmNvbmZpZ3VyZV90ZXN0
-Z2VuX3BhdHRlcm4gPSBjc2lkX2NvbmZpZ3VyZV90ZXN0Z2VuX3BhdHRlcm4sCj4gKwkuaHdfdmVy
-c2lvbiA9IGNzaWRfaHdfdmVyc2lvbiwKPiArCS5pc3IgPSBjc2lkX2lzciwKPiArCS5yZXNldCA9
-IGNzaWRfcmVzZXQsCj4gKwkuc3JjX3BhZF9jb2RlID0gY3NpZF9zcmNfcGFkX2NvZGUsCj4gKwku
-c3ViZGV2X2luaXQgPSBjc2lkX3N1YmRldl9pbml0LAo+ICsJLnJlZ191cGRhdGUgPSBjc2lkX3N1
-YmRldl9yZWdfdXBkYXRlLAo+ICsJLmFkZHJfdXBkYXRlID0gY3NpZF9zdWJkZXZfYWRkcl91cGRh
-dGUsCj4gK307CgpbU2V2ZXJpdHk6IExvd10KVGhpcyBpc24ndCBhIGJ1ZywgYnV0IGNhbXNzLWNz
-aWQtMTE5MC5jIGlzIHJlZ2lzdGVyLWZvci1yZWdpc3RlciBhbmQKZnVuY3Rpb25hbGx5IGlkZW50
-aWNhbCB0byBjYW1zcy1jc2lkLTEwODAuYywgaW5jbHVkaW5nIHRoZSB1bnVzZWQgbG9jYWwKdmFy
-aWFibGUgbGFuZV9jbnQgaW4gX19jc2lkX2NvbmZpZ3VyZV9yZGlfc3RyZWFtKCkuICBDb3VsZCBj
-c2lkX3Jlc19oYXdpCnJldXNlIGNzaWRfb3BzXzEwODAgZGlyZWN0bHkgaW5zdGVhZCBvZiBkdXBs
-aWNhdGluZyB0aGUgZmlsZSwgYW5kIGNvdWxkCmNhbXNzLXZmZS0xMTkwLmMgc2hhcmUgdGhlIGlk
-ZW50aWNhbCBoZWxwZXIgZnVuY3Rpb25zIHdpdGggY2Ftc3MtdmZlLTEwODAuYz8KCj4gZGlmZiAt
-LWdpdCBhL2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0vcWNvbS9jYW1zcy9jYW1zcy5jIGIvZHJpdmVy
-cy9tZWRpYS9wbGF0Zm9ybS9xY29tL2NhbXNzL2NhbXNzLmMKPiBpbmRleCA3OTc2Nzk2ZGNhNTk4
-Li43MGQ0MzA2NTgxYTIzIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0vcWNv
-bS9jYW1zcy9jYW1zcy5jCj4gKysrIGIvZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9xY29tL2NhbXNz
-L2NhbXNzLmMKPiBAQCAtNDMwOCw2ICs0MzA4LDIxOCBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IHJl
-c291cmNlc19pY2MgaWNjX3Jlc19zYTg3NzVwW10gPSB7Cj4gIAl9LAo+ICB9Owo+ICAKPiArc3Rh
-dGljIGNvbnN0IHN0cnVjdCBjYW1zc19zdWJkZXZfcmVzb3VyY2VzIHZmZV9yZXNfaGF3aVtdID0g
-ewo+ICsJLyogVkZFMCAtIFRGRSBGdWxsICovCj4gKwl7Cj4gKwkJLmNsb2NrID0geyAidmZlMF9m
-YXN0X2FoYiIsICJ2ZmUwIiwgImNwYXNfdmZlMCIsCj4gKwkJCSAgICJjYW1ub2NfcnRfYXhpIiwg
-ImNhbW5vY19ucnRfYXhpIiwgInFkc3NfZGVidWdfeG8iLAo+ICsJCQkgICAiY3Bhc19tbm9jX2hm
-IiwgImNwYXNfbW5vY19zZiIgfSwKPiArCQkuY2xvY2tfcmF0ZSA9IHsgeyAwIH0sCj4gKwkJCQl7
-IDIzODIwMDAwMCwgMzk3MDAwMDAwLCA0NDAwMDAwMDAsIDQ4MDAwMDAwMCwKPiArCQkJCSAgNjMw
-MDAwMDAwLCA3NTAwMDAwMDAsIDgzMzAwMDAwMCB9LAo+ICsJCQkJeyAwIH0sCj4gKwkJCQl7IDE3
-MTQyODU3MSwgMjQwMDAwMDAwLCAzMDAwMDAwMDAsIDQwMDAwMDAwMCwKPiArCQkJCSAgNDgwMDAw
-MDAwLCA2MDAwMDAwMDAgfSwKCltTZXZlcml0eTogTWVkaXVtXQpEbyB0aGUgY2Ftbm9jX3J0X2F4
-aSBmcmVxdWVuY2llcyBpbiB2ZmVfcmVzX2hhd2kgKFZGRTAgdGhyb3VnaCBWRkU0KSBtYXRjaAp0
-aGUgSGF3aSBDQU1DQyBjbG9jayBkcml2ZXI/CgpJbiBkcml2ZXJzL2Nsay9xY29tL2NhbWNjLWhh
-d2kuYywgZnRibF9jYW1fY2NfY2Ftbm9jX3J0X2F4aV9jbGtfc3JjIGRlZmluZXMKdGhlIHN1cHBv
-cnRlZCByYXRlcyBvbiBIYXdpIGFzIDE5LjIgTUh6LCAxMjAgTUh6LCAxNjAgTUh6LCAyNDAgTUh6
-LCAzMjAgTUh6LAphbmQgYSBtYXhpbXVtIG9mIDQ4MCBNSHo6Cgpkcml2ZXJzL2Nsay9xY29tL2Nh
-bWNjLWhhd2kuYzoKc3RhdGljIGNvbnN0IHN0cnVjdCBmcmVxX3RibCBmdGJsX2NhbV9jY19jYW1u
-b2NfcnRfYXhpX2Nsa19zcmNbXSA9IHsKCUYoMTkyMDAwMDAsIFBfQklfVENYTywgMSwgMCwgMCks
-CglGKDEyMDAwMDAwMCwgUF9DQU1fQ0NfUExMNl9PVVRfRVZFTiwgNCwgMCwgMCksCglGKDE2MDAw
-MDAwMCwgUF9DQU1fQ0NfUExMNl9PVVRfRVZFTiwgMywgMCwgMCksCglGKDI0MDAwMDAwMCwgUF9D
-QU1fQ0NfUExMNl9PVVRfRVZFTiwgMiwgMCwgMCksCglGKDMyMDAwMDAwMCwgUF9DQU1fQ0NfUExM
-Nl9PVVRfRVZFTiwgMS41LCAwLCAwKSwKCUYoNDgwMDAwMDAwLCBQX0NBTV9DQ19QTEw2X09VVF9F
-VkVOLCAxLCAwLCAwKSwKCXsgfQp9OwoKV2hlbiB2ZmVfc2V0X2Nsb2NrX3JhdGVzKCkgc2VsZWN0
-cyA2MDAgTUh6IGZvciBhIG1pbl9yYXRlIGJldHdlZW4gNDgwIE1IegphbmQgNjAwIE1IeiwgY2xr
-X3JvdW5kX3JhdGUoKSBjbGFtcHMgdGhlIHJhdGUgZG93biB0byA0ODAgTUh6LCBjYXVzaW5nIGEK
-c3Vic2VxdWVudCB2ZmVfY2hlY2tfY2xvY2tfcmF0ZXMoKSBjYWxsIG9uIHRoZSBzYW1lIFZGRSB0
-byBmYWlsIHdpdGggLUVCVVNZCmJlY2F1c2UgY2xrX2dldF9yYXRlKCkgaXMgYmVsb3cgbWluX3Jh
-dGUuCgpbIC4uLiBdCgo+IEBAIC02MDMwLDYgKzYyNDIsMjEgQEAgc3RhdGljIGNvbnN0IHN0cnVj
-dCBjYW1zc19yZXNvdXJjZXMgc204NjUwX3Jlc291cmNlcyA9IHsKPiAgCS52ZmVfbnVtID0gQVJS
-QVlfU0laRSh2ZmVfcmVzX3NtODY1MCksCj4gIH07Cj4gIAo+ICtzdGF0aWMgY29uc3Qgc3RydWN0
-IGNhbXNzX3Jlc291cmNlcyBoYXdpX3Jlc291cmNlcyA9IHsKPiArCS52ZXJzaW9uID0gQ0FNU1Nf
-SEFXSSwKPiArCS5wZF9uYW1lID0gInRvcCIsCj4gKwkucG1fY2xrcyA9IHsgImNwYXNfZmFzdF9h
-aGIiLCAiY3Bhc19haGIiLCAiZ2NjX2F4aV9oZiIgfSwKPiArCS50cGdfcmVzID0gdHBnX3Jlc184
-Nzc1cCwKPiArCS5jc2lkX3JlcyA9IGNzaWRfcmVzX2hhd2ksCj4gKwkudmZlX3JlcyA9IHZmZV9y
-ZXNfaGF3aSwKPiArCS5pY2NfcmVzID0gaWNjX3Jlc19oYXdpLAo+ICsJLmljY19wYXRoX251bSA9
-IEFSUkFZX1NJWkUoaWNjX3Jlc19oYXdpKSwKPiArCS5jc2lwaHlfbnVtID0gNiwKPiArCS50cGdf
-bnVtID0gQVJSQVlfU0laRSh0cGdfcmVzXzg3NzVwKSwKPiArCS5jc2lkX251bSA9IEFSUkFZX1NJ
-WkUoY3NpZF9yZXNfaGF3aSksCj4gKwkudmZlX251bSA9IEFSUkFZX1NJWkUodmZlX3Jlc19oYXdp
-KSwKPiArfTsKCltTZXZlcml0eTogTG93XQpEb2VzIHRoZSBjb21taXQgbWVzc2FnZSBtYXRjaCBo
-YXdpX3Jlc291cmNlcz8KClRoZSBjaGFuZ2Vsb2cgc3RhdGVzIHRoYXQgdGhlIENTSVBIWSByZXNv
-dXJjZSB0YWJsZSBpcyByZXVzZWQgZnJvbSBLYWFuYXBhbGksCnRoZSBUUEcgdGFibGUgaXMgcmV1
-c2VkIGZyb20gWDFFODAxMDAsIGFuZCB0aGUgY29tbW9uIENQQVMgY2xvY2tzIGFyZSBtYW5hZ2Vk
-CmFzIFBNIGNsb2NrcyByYXRoZXIgdGhhbiBwZXItVkZFIGNsb2Nrcy4gIEhvd2V2ZXIsIGhhd2lf
-cmVzb3VyY2VzIHNldHMKLnRwZ19yZXMgdG8gdHBnX3Jlc184Nzc1cCAobm90IHRwZ19yZXNfeDFl
-ODAxMDApLCBoYXMgbm8gLmNzaXBoeV9yZXMgdGFibGUsCmFuZCB2ZmVfcmVzX2hhd2kgc3RpbGwg
-bGlzdHMgdGhlIHNoYXJlZCBjcGFzX21ub2NfaGYgYW5kIGNwYXNfbW5vY19zZiBjbG9ja3MKaW4g
-ZXZlcnkgVkZFIGVudHJ5IHJhdGhlciB0aGFuIGluIC5wbV9jbGtzLgoKLS0gClNhc2hpa28gQUkg
-cmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MTEwNi1oYXdpLW1h
-aWxpLWNhbXNzLXY0LTAtZDUyOGM3YTc5N2I0QG9zcy5xdWFsY29tbS5jb20/cGFydD02CgotLSAK
-bGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-czovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+QMP PHY drivers always enable receiver detection (ARCVR_DTCT_EN) in
+autonomous mode, and additionally enable LFPS detection (ALFPS_DTCT_EN)
+when a SuperSpeed link is present; otherwise they fall back to
+receiver-detect event selection (ARCVR_DTCT_EVENT_SEL). This choice is
+made by comparing phy_mode against
+PHY_MODE_USB_HOST_SS/PHY_MODE_USB_DEVICE_SS. However, dwc3 core only
+calls phy_set_mode()/phy_set_mode_ext() with the base
+PHY_MODE_USB_HOST or PHY_MODE_USB_DEVICE, never the _SS/_HS/_FS/_LS
+submodes. As a result, the comparison is always false and the PHY
+always falls back to ARCVR_DTCT_EVENT_SEL, the legacy USB2
+receiver-detect path, regardless of actual link state.
+
+Add a dedicated qcom_usb_ss_state submode and carry it through the
+generic submode argument phy_set_mode_ext() already defines for this
+purpose, instead of adding more values to the already-overloaded
+phy_mode USB host/device submode list.
+
+Patch 1 adds the shared enum qcom_usb_ss_state (UNKNOWN/PRESENT/
+ABSENT) as the submode contract. Patch 2 makes
+phy-qcom-qmp-combo.c switch on it instead of on phy_mode. Patch 3
+makes dwc3-qcom.c sample live SuperSpeed child-device presence at
+suspend entry and pass it down.
+
+The contract is intentionally generic so phy-qcom-qmp-usb.c can adopt
+it the same way for the gadget-side case in a follow-up series,
+without a second mechanism.
+
+Tested on an x1e80100 CRD. On a host port with a SuperSpeed hub
+attached, suspended the system and then connected a SuperSpeed USB
+pendrive to the hub; confirmed ALFPS_DTCT_EN is set instead of the
+legacy ARCVR_DTCT_EVENT_SEL mask. Repeated the same sequence on the
+USB-OTG capable port with the same result. As a cross-check, repeated
+both suspend scenarios with a High-Speed-only pendrive attached, and
+again with nothing attached, and confirmed the PHY falls back to
+ARCVR_DTCT_EVENT_SEL in both cases, as expected when no SuperSpeed
+device is present.
+
+This series spans both the generic PHY framework tree and the USB/DWC3
+tree: patch 1 adds a new header, patch 2 depends on patch 1 and touches
+drivers/phy/qualcomm/, patch 3 depends on patches 1-2 and touches
+drivers/usb/dwc3/. All three should be merged in order and ideally
+through the same tree (or with an immutable branch) to avoid a window
+where dwc3-qcom.c references a submode phy-qcom-qmp-combo.c doesn't
+yet switch on. ARM/QUALCOMM MAILING LIST (linux-arm-msm@vger.kernel.org)
+is Cc'd on all three patches since it covers both directories.
+
+Tapas Rana (3):
+  phy: qcom-qmp-usb-ss: add shared SS-link-state submode contract
+  phy: qcom: qmp-combo: Select LFPS detect only when SS link is
+    confirmed present
+  usb: dwc3: qcom: pass live SS-link state into PHY at suspend entry
+
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 27 +++++++++++++++--
+ drivers/usb/dwc3/dwc3-qcom.c              | 36 ++++++++++++++++++++++-
+ include/linux/phy/phy-qcom-qmp-usb-ss.h   | 17 +++++++++++
+ 3 files changed, 76 insertions(+), 4 deletions(-)
+ create mode 100644 include/linux/phy/phy-qcom-qmp-usb-ss.h
+
+-- 
+2.43.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
