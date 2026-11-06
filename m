@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F0334606A326
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Nov 2026 21:24:31 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 73B73606A32D
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Nov 2026 21:26:27 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=VPIKJoF4;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=linaro.org header.i=@linaro.org header.a=rsa-sha256 header.s=google header.b=juMNsF0T
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=0RUpEcrt;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=linaro.org header.i=@linaro.org header.a=rsa-sha256 header.s=google header.b=cJxTHBWL
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
@@ -14,74 +14,74 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=uXQFleTQFaG5vthd+w3EOwkLs4qPOTvYIiTHHsR+aXA=; b=VPIKJoF4/rwAyBF0WAWhrluqkS
-	wqm5/AUGYV7z3tehbtP6VHCYMclZyApi32eFPiUi4VAWfaavqhpivR7ewLepJC4Fv1e4GAUxAc4Bn
-	TUIfqCgs4uaSyMTJsJi/BJbKLU/0e2nbAwQK7d1ERVtYZZ2935RiObxIzOGo1Jty5RszjLTXP07YE
-	gI4K3CKozdk5HK3eQOEgH3QG43CZ/MKuDr+6DtmF0biAz7lWSmvIfRq3lBmbER7xA2199UTL+CFUw
-	jB3HRpZaXh8r3kneq2d8oDOdifmCvR74DXfLMmscKGdmFyH5UQvzvZ+nbs1z6RzIayh/D0HhCC5Yg
-	uGRRUd9Q==;
+	bh=xBJVDcldy3Ze1MSKTVJEyjLU5COXRzh2jjtgfos/zFA=; b=0RUpEcrtuWUCKJsTKHrHoH+k0J
+	2CCGKCqjYdkgNuk3WSyr8U9w98ktRjZbq5o1OjNLUbU5cTxEk7D/bhxLTFzRARzucHw6Ltshm7bsU
+	Y5mSbyGHB/fL515FTqb+sjrC+1J9bPay7GDqbZoapIo0mcMhu1KfycHp0c7MWeqi2z3VpiwdYvz0t
+	awcw1cBw/47m+qlb1vOeivkkSSES0qlUVunTl7HMUACsztHYnqWh3ti7SAE7mJYn5v+mzdpragnKZ
+	aQAPeqvJjJz2HU4D3bY+SfyGV3f6Ng9V6/B0YKqrydwfQsLH2EJZpAxOVG4q4OXRdXXliXTzvPMif
+	7MNgyXPQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPRQF-0000000DgPF-2KDb;
-	Fri, 06 Nov 2026 21:24:31 +0000
+	id 1xPRS7-0000000Dham-0rgu;
+	Fri, 06 Nov 2026 21:26:27 +0000
 Received: from mail-lj1-x22d.google.com ([2a00:1450:4864:20::22d])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPRQD-0000000DgOl-0iQY
+	id 1xPRS4-0000000DhZd-1dHY
 	for linux-phy@lists.infradead.org;
-	Fri, 06 Nov 2026 21:24:30 +0000
-Received: by mail-lj1-x22d.google.com with SMTP id 38308e7fff4ca-3acd263d530so1393671fa.3
-        for <linux-phy@lists.infradead.org>; Fri, 06 Nov 2026 13:24:28 -0800 (PST)
+	Fri, 06 Nov 2026 21:26:26 +0000
+Received: by mail-lj1-x22d.google.com with SMTP id 38308e7fff4ca-3ab1cb6eb70so1202821fa.1
+        for <linux-phy@lists.infradead.org>; Fri, 06 Nov 2026 13:26:23 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1794000266; x=1794605066; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1794000382; x=1794605182; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:in-reply-to:from:references
          :cc:to:subject:user-agent:mime-version:date:message-id:from:to:cc
          :subject:date:message-id:reply-to:content-type;
-        bh=JgQZorfmVJL6DWcFzREhLYKs0WMZqy2VS3+IW1fCCJ4=;
-        b=juMNsF0TtzQuk4J5xadzwOAd9gEXi6azTxJv7Hb4RIntq0cuHxIOkoQC2w2sIksWVj
-         +WEk2/JY3ahf7eYKK7PDnzw0Cjhdb0LrO/T6o4G4wPCrI+mg8D2gHCyID0udLfGcpNEb
-         ReeHKsS7pjkacf/8Z58SnUpw2t4wnzv1btQRSG2MmaU4sjf1yQvY9B3LzZcVcljXM8Uf
-         W0pnOHiq+Qk1BlrjFV9PJ0yaiMvGB17fkqXoPSkJdwwjhbFHiQkXrIY++b8sNgANYLMq
-         obYf9FVTPc8PGp1Uu31pnsrLGtI85Mw58KHaLWdt3w4EcdHSLmRiuGsi9bumzvlu7a+E
-         jqyA==
+        bh=IS0n6SvtrSel8zY6vkWXqf2dHmq9Z3b4+UIE+41Cj1Y=;
+        b=cJxTHBWL9wXW2icjZQqFIzIrL6bGb6A8tiKPjguk4yAqn2F1c6rfo9l9ZROmKalZxJ
+         uLwtRQCAf6XnQpZ5KhfB3UAlpE4twMO/BvnXM2WDdj0kQGSl0fxc/5kPcm3naHntzolv
+         R29uN9r4Ll4e90HBysofHylss/9LFqCd1LGJNbN7T/Z8xt4F8YSHHD0FMZaTgXBvAfu/
+         8brnsIh2mlAvGOvTDcgNMVpGpT21YxOFxMS+Zyt2RhJf7maQJSwGaNEq03JuQGSnrHQP
+         //wyq2sPAnWgtJWomg+Ax0AC35QaTFQZSmyAOTX7qsBQiugZrJK3n115smft66pq/TPY
+         YOww==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794000266; x=1794605066;
+        d=1e100.net; s=20260707; t=1794000382; x=1794605182;
         h=content-transfer-encoding:content-type:in-reply-to:from:references
          :cc:to:subject:user-agent:mime-version:date:message-id:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=JgQZorfmVJL6DWcFzREhLYKs0WMZqy2VS3+IW1fCCJ4=;
-        b=NgNprQweLlQrin3ecb2jcrobFwKg7wPrGgk+AdGGa6xhtE/nKsAqgXnBbitxJTjxQA
-         cRnZhuGpZk5tq24jqmvsr0XEytMCrFCyIVM5UddV1Q7MuGrEY1GURkkpgvYJiR4FNqEy
-         mq0FVmMzg9Ym5qBIUWwXPiMhlFmgwRJz/y2ifyedj2FYEWGTtNH3/u8hKh+cdW7HTp6i
-         MMapiU6cEXejuJM8zr5Bb6lZGsAoLWMU9YSyJM2uPsy3Pub90yBbAXdSwhrKBs3vn3z6
-         k9trvhVfPWThB9gk5jbvQmuWR9ect6U7ml856lD3Z61KenbSTBHhnycuGji4G1P9FiL7
-         za1g==
-X-Forwarded-Encrypted: i=1; AL+hErHyup+FuiEaEhz9UIzUZEDVj0ozmB1ghPp3/PVFy/qyvpjevEoOB05HAXlY0S2STGWdwoQ7xktRC14=@lists.infradead.org
-X-Gm-Message-State: APuU4Z8p5jyAc9sHzXi1HYkdUwPPEe+rW+lvTfHpV1zBn5ICjAlrr5JY
-	v7O7Mf4WEK2W3QafDLJG8F1OQSG0OztNwNCsaWBSrbg1+xD39Joc78V8WRqGbK25noA=
-X-Gm-Gg: AYBFou2oVcCoJP5hqV/SIxT9dFIpKn5qqOkP/KDi7G4Crn4X+9bzwSAO/XB0Oft8A4c
-	UKDIVQhvoCIXeAFLsoMLeUyqM0zIiCyQprn9aD/NS1OKwz5iMvb5wriLJFdamGZaDGE/N9yvgA9
-	/4fTG+LZwgNM+5oi555nHr4uUX568uWZrY8CWvjoNdfErREP/2/K6GuU4OZxGJ68JrjU3GcAGOR
-	Qm6lgbySSpyfYqZqfJaHUF97McJTJOtUkr+wJliYG6oDsNs65dcI9B5s/7BAQCU1nmh/bn7qgii
-	G89O17RGjiR3P8JVUvj47Zm83LQlGQow1kbDMv2RB8wEfxoIjL37uf0gfu6zlfpNgJZpGI0HmMW
-	SfKfQ8gJDCPi8twt1iT1cikqQHHqAtZ65JLcfnUZUY8q+LmodjIXXg2isQRGXlmGlDC1MzDp5Hd
-	2gcGzJMpNwmSSzUheErk6/9tLNlgLRWPZb/4GJPFYzej1IAi11/zC0fQCEzJfCuMgynSk0sYRFV
-	t1igxNcucM2vUiFp+eSBnG7umV2ZWX1Zv4vHVT3bxg44ZDDR4S4nSpU7bzi1a6X37jy5VFR5CGB
-	ZvhPSab70zdBf8L7wOeETSuyOkoH/Wl8i0uEjKAS6qb3Eld7bMpopT+4kTLtwdcLphF4NxjNbvS
-	uBKwBgQ==
-X-Received: by 2002:a05:6512:1296:b0:5bf:a48b:7827 with SMTP id 2adb3069b0e04-5c0037d4da0mr1356307e87.2.1794000266266;
-        Fri, 06 Nov 2026 13:24:26 -0800 (PST)
+        bh=IS0n6SvtrSel8zY6vkWXqf2dHmq9Z3b4+UIE+41Cj1Y=;
+        b=SoZ8Zw29DPTmAxjFJZ7UtBS2QVhP5qQnR2oAIzkFMgpG0ON5Hb3pvvkXGSoelJiZTi
+         uGX+cR4JaTnE94xOF6+rCXtSehk6SqSG9gyjb+7M+ivT/D0gW1DPbkWHUR+WtNJi3ESK
+         6idFkAEUF5SetQ3S1nRx4/vrsml1/Byrtq9u3FHx0vfprqOT86YO19OaELR5o/LiE73c
+         CaWY0g0VV5XvEzuRtTUjmdoey2Cx9Bnf4l2R6+PpeiJLY7DQidnPd25Hn8mpsMHksQFS
+         0yh4B3jNOKkcmPdEWmZ3KvMsToQfeltTaVF/mqpb3/evKOpTtlo+SVnJA+/DGE/BrBLu
+         C6Fw==
+X-Forwarded-Encrypted: i=1; AL+hErEAh0BXx9bfFjZG2Q6J+TBJjG68n9HHnLdTVFOOy1VxAG5ugqeseNV9FQYCL7uGSaGePSKaveRH8EQ=@lists.infradead.org
+X-Gm-Message-State: APuU4Z+attmk19YgkziSh3oMNtXM5WMhxDQAONTj0JJsiTwIyI6Rwq3E
+	xiIjKPHq1GBWlrGNCES9saTGUxtdxRHet/59JpVqusJo2OVA1KUDSo9KsgrdBIs6Sjs=
+X-Gm-Gg: AYBFou2qxJS37dcrUm9DraAN8BsIJ2K9qAb8g5n/7mL0Q1zqCIyaIwrGXfZeIqTMQVT
+	63uQpjf/RgNFXuPkGd9QE0ho9Zp8BFbsIxZREJf5P6WQE560HQkGxX0LvSz7d5OkR0irabWSMEA
+	DVQj9cJuxt9lb0E9CGUMnr/30hWr7y/8+3Xge0FU1838js+eSabAksvxQTceXJSGHAsnkByBGXR
+	gYDY/bSKx8jCpRvudJuC2EOa5zuX2Lu7y/+U2VPAT7nVYZwL18PZXFwPqQvEYtonje/IhMXuLlx
+	/HLNxLwpVs3bVYwV2S/6WjCtmKHVELFrOvQ1yMDdUS8QtKiRw4QXbcls8tnr1IXSqXAuRRQBnko
+	DiC634ChowOVVG25+dkEPmYWhAktDN/KuJmro2SHApb14fep0H8udMjoYXLZEALm84tVqlEgSlJ
+	SNy73arl6EoZHohtRotW1tCUrj5PEWzalQypNZJ4ooA+rclprSURFoiGJJoWzGd/4kK4pLnnZiH
+	FWobO1S+nZ2aIB8/GNJwm7NqcPN0v+txLR1uwv0ulV1icnHeE3CKOC1cBtRJ/p59NwfwnPgqWXe
+	GiFfEP+SJtbA5rVIURt/EGEeUIyOylqmPNbSRjGNhD5bnn3JTl1lYzBdyqFBYtMhcjbi9ax+Ih+
+	Lnm8da73UFm1M/cPZknHHP1h37Zo=
+X-Received: by 2002:ac2:5690:0:b0:5bf:ff57:b346 with SMTP id 2adb3069b0e04-5c003c44406mr1296500e87.5.1794000382152;
+        Fri, 06 Nov 2026 13:26:22 -0800 (PST)
 Received: from [192.168.1.101] (91-159-24-186.elisa-laajakaista.fi. [91.159.24.186])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5c00309a58bsm497564e87.73.2026.11.06.13.24.25
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5c00ba6e7d0sm4667e87.64.2026.11.06.13.26.21
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 06 Nov 2026 13:24:25 -0800 (PST)
-Message-ID: <a9ab1add-5f04-4687-83bf-ca29a068ee33@linaro.org>
-Date: Fri, 6 Nov 2026 23:24:24 +0200
+        Fri, 06 Nov 2026 13:26:21 -0800 (PST)
+Message-ID: <ba22b7a6-83a9-43d3-9eab-93503e23a76e@linaro.org>
+Date: Fri, 6 Nov 2026 23:26:20 +0200
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 3/7] dt-bindings: phy: qcom,sm8150-csi2-phy: Add SM8150
- CSI2 PHY
+Subject: Re: [PATCH v3 1/7] dt-bindings: i2c: qcom-cci: Document SM8150
+ compatible
 To: mail@andrewgigena.dev, Loic Poulain <loic.poulain@oss.qualcomm.com>,
  Robert Foss <rfoss@kernel.org>, Andi Shyti <andi.shyti@linaro.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -95,14 +95,15 @@ To: mail@andrewgigena.dev, Loic Poulain <loic.poulain@oss.qualcomm.com>,
  Manivannan Sadhasivam <mani@kernel.org>
 Cc: linux-arm-msm@vger.kernel.org, linux-i2c@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-media@vger.kernel.org, linux-phy@lists.infradead.org
+ linux-media@vger.kernel.org, linux-phy@lists.infradead.org,
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 References: <20261106-sm8150-v7.4-rc1-camss-v3-0-0103e8a0bbcd@andrewgigena.dev>
- <20261106-sm8150-v7.4-rc1-camss-v3-3-0103e8a0bbcd@andrewgigena.dev>
+ <20261106-sm8150-v7.4-rc1-camss-v3-1-0103e8a0bbcd@andrewgigena.dev>
 From: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
-In-Reply-To: <20261106-sm8150-v7.4-rc1-camss-v3-3-0103e8a0bbcd@andrewgigena.dev>
+In-Reply-To: <20261106-sm8150-v7.4-rc1-camss-v3-1-0103e8a0bbcd@andrewgigena.dev>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261106_132429_278712_E4C0392C 
-X-CRM114-Status: GOOD (  20.21  )
+X-CRM114-CacheID: sfid-20261106_132624_456846_51BE08C5 
+X-CRM114-Status: GOOD (  11.73  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -116,238 +117,49 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-20.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
-	autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
+	version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
-
-Hi Andrew,
 
 On 11/6/26 20:35, Andrew Gigena via B4 Relay wrote:
 > From: Andrew Gigena <mail@andrewgigena.dev>
 > 
-> Document the Qualcomm SM8150 MIPI CSI2 D-PHY. The PHY sits between the
-> CSI2 sensor and the CAMSS CSI decoder and is fed by the CSIPHY "core" and
-> "timer" clocks, the TITAN top power domain and the vdda-phy/vdda-pll
-> supplies.
+> Add qcom,sm8150-cci as a CCI v2 compatible, with qcom,msm8996-cci as
+> the fallback.
 > 
-> Unlike the X1E80100 C-PHY/D-PHY combo PHY, SM8150 only has a D-PHY, has
-> no separate AHB clock and no MMCX/MX power domains, so describe it in a
-> dedicated schema.
-> 
-
-very much appreciated for changing the CAMSS phys to this format.
-
-Please double check if SM8150 CSIPHY v1.1 is capable of C-PHY:
-
-* https://git.codelinaro.org/clo/la/kernel/msm-4.14/-/blob/LA.UM.8.1.r1-16600-sm8150.0/drivers/media/platform/msm/camera/cam_sensor_module/cam_csiphy/cam_csiphy_soc.c#L239-256
-
-D-PHY combo mode is also supported on the CSIPHY apparently.
-
-Likely these features are supported on SM8150.
-
 > Signed-off-by: Andrew Gigena <mail@andrewgigena.dev>
+> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 > ---
->   .../bindings/phy/qcom,sm8150-csi2-phy.yaml         | 163 +++++++++++++++++++++
->   1 file changed, 163 insertions(+)
+>   Documentation/devicetree/bindings/i2c/qcom,i2c-cci.yaml | 2 ++
+>   1 file changed, 2 insertions(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,sm8150-csi2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sm8150-csi2-phy.yaml
-> new file mode 100644
-> index 000000000000..86d8970d1119
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/qcom,sm8150-csi2-phy.yaml
-> @@ -0,0 +1,163 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/qcom,sm8150-csi2-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Qualcomm SM8150 SoC CSI2 PHY
-> +
-> +maintainers:
-> +  - Andrew Gigena <mail@andrewgigena.dev>
-> +
-> +description:
-> +  Qualcomm MIPI CSI2 D-PHY. Connects MIPI CSI2 sensors to Qualcomm's Camera
-> +  CSI decoder (CAMSS).
-> +
-> +properties:
-> +  compatible:
-> +    const: qcom,sm8150-csi2-phy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 2
-> +
-> +  clock-names:
-> +    items:
-> +      - const: core
-> +      - const: timer
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  operating-points-v2: true
-> +
-> +  opp-table:
-> +    type: object
-> +
-> +  power-domains:
-> +    maxItems: 1
-> +
-> +  power-domain-names:
-> +    items:
-> +      - const: top
-
-In downstream camcc-sm8150.c, PLL0 is on MX, and PLL0 supplies CSIPHY
-clocks. I believe MX shall be added to the list of 'power-domains'.
-
-> +
-> +  vdda-phy-supply:
-> +    description: Phandle to a 0.88V regulator supply to a PHY.
-> +
-> +  vdda-pll-supply:
-> +    description: Phandle to a 1.2V regulator supply to a PHY PLL.
-
-Still it would be preferred to get 'vdda-0p9-supply' and 'vdda-1p2-supply'
-properties.
-
-> +
-> +  ports:
-> +    $ref: /schemas/graph.yaml#/properties/ports
-> +
-> +    properties:
-> +      port@0:
-> +        $ref: /schemas/graph.yaml#/$defs/port-base
-> +        unevaluatedProperties: false
-> +        description:
-> +          Sensor input. A single sensor is described by a single endpoint with
-> +          one to four data lanes, numbered 1-4. The clock lane is position 0.
-> +
-> +        properties:
-> +          endpoint:
-
-Back to downstream
-
-* https://git.codelinaro.org/clo/la/kernel/msm-4.14/-/blob/LA.UM.8.1.r1-16600-sm8150.0/drivers/media/platform/msm/camera/cam_sensor_module/cam_csiphy/cam_csiphy_soc.c#L239-256
-
-D-PHY combo mode is also supported on the SM8150 CSIPHY apparently,
-it shall be reflected in a way that two endpoints could be present.
-
-> +            $ref: /schemas/media/video-interfaces.yaml#
-> +            unevaluatedProperties: false
-> +
-> +            properties:
-> +              bus-type:
-> +                enum:
-> +                  - 4 # MEDIA_BUS_TYPE_CSI2_DPHY
-> +                default: 4
-
-Please double check if SM8150 CSIPHY v1.1 is capable of C-PHY:
-
-* https://git.codelinaro.org/clo/la/kernel/msm-4.14/-/blob/LA.UM.8.1.r1-16600-sm8150.0/drivers/media/platform/msm/camera/cam_sensor_module/cam_csiphy/cam_csiphy_soc.c#L239-256
-
-> +
-> +              data-lanes:
-> +                minItems: 1
-> +                maxItems: 4
-> +                items:
-> +                  minimum: 1
-> +                  maximum: 4
-> +
-> +            required:
-> +              - data-lanes
-> +              - remote-endpoint
-> +
-> +      port@1:
-> +        $ref: /schemas/graph.yaml#/properties/port
-> +        description: Output to the CAMSS CSI input port.
-> +
-> +    required:
-> +      - port@0
-> +      - port@1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - interrupts
-> +  - operating-points-v2
-> +  - power-domains
-> +  - power-domain-names
-> +  - vdda-phy-supply
-> +  - vdda-pll-supply
-> +  - ports
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/qcom,sm8150-camcc.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/media/video-interfaces.h>
-> +
-> +    phy@ac65000 {
-> +        compatible = "qcom,sm8150-csi2-phy";
-> +        reg = <0xac65000 0x1000>;
-> +
-> +        clocks = <&camcc CAM_CC_CSIPHY0_CLK>,
-> +                 <&camcc CAM_CC_CSI0PHYTIMER_CLK>;
-> +        clock-names = "core",
-> +                      "timer";
-> +
-> +        interrupts = <GIC_SPI 477 IRQ_TYPE_EDGE_RISING>;
-> +
-> +        operating-points-v2 = <&csiphy0_opp_table>;
-> +
-> +        power-domains = <&camcc TITAN_TOP_GDSC>;
-> +        power-domain-names = "top";
-> +
-> +        vdda-phy-supply = <&vreg_l5a_0p88>;
-> +        vdda-pll-supply = <&vreg_l12a_1p2>;
-> +
-> +        csiphy0_opp_table: opp-table {
-> +            compatible = "operating-points-v2";
-> +
-> +            opp-400000000 {
-> +                opp-hz = /bits/ 64 <400000000>;
-> +            };
-> +        };
-> +
-> +        ports {
-> +            #address-cells = <1>;
-> +            #size-cells = <0>;
-> +
-> +            port@0 {
-> +                reg = <0>;
-> +
-> +                endpoint {
-> +                    bus-type = <MEDIA_BUS_TYPE_CSI2_DPHY>;
-> +                    data-lanes = <1 2 3 4>;
-> +                    remote-endpoint = <&sensor_out>;
-> +                };
-> +            };
-> +
-> +            port@1 {
-> +                reg = <1>;
-> +
-> +                endpoint {
-> +                    remote-endpoint = <&camss_csi0_in>;
-> +                };
-> +            };
-> +        };
-> +    };
+> diff --git a/Documentation/devicetree/bindings/i2c/qcom,i2c-cci.yaml b/Documentation/devicetree/bindings/i2c/qcom,i2c-cci.yaml
+> index 1e8def25ec0e..1e7a8efaa398 100644
+> --- a/Documentation/devicetree/bindings/i2c/qcom,i2c-cci.yaml
+> +++ b/Documentation/devicetree/bindings/i2c/qcom,i2c-cci.yaml
+> @@ -39,6 +39,7 @@ properties:
+>                 - qcom,shikra-cci
+>                 - qcom,sm6150-cci
+>                 - qcom,sm6350-cci
+> +              - qcom,sm8150-cci
+>                 - qcom,sm8250-cci
+>                 - qcom,sm8450-cci
+>                 - qcom,sm8550-cci
+> @@ -218,6 +219,7 @@ allOf:
+>             contains:
+>               enum:
+>                 - qcom,sc7280-cci
+> +              - qcom,sm8150-cci
+>                 - qcom,sm8250-cci
+>                 - qcom,sm8450-cci
+>       then:
 > 
 
-In general the change looks good, thank you, but likely it can be embedded
-into the scheme for X1E.
+Reviewed-by: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
 
 -- 
 Best wishes,
