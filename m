@@ -2,112 +2,87 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 79D08606EE96
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Nov 2026 18:36:45 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3C76A606A326
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Nov 2026 18:46:14 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=sUBRl/vd;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=RNomdTr8
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=PkqWf4CZ;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=ag0eQnT6
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
-	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=LYdsWGsNpB/aB3MIPDyuhl6fKT7AIz+MbIjRgR0lNvU=; b=sUBRl/vdU45DwdwmVk9NaJQKxt
-	AClPr4G/Czm9QK+g00GXjp1kth7ka8MuXKjWFnCousFhwRR6L5Sa1n3EpeEmBKvdUK4ExDIsaQpUS
-	Jxq+sZmPeXi9VX2itrRcYTihN2ZEQ0oNWISs79tGk3NMwx8VcJSYgroXP5GuUOM637uBpOlHI6D7f
-	aNJT4a9YYY0Vx4JVPVX6lGPzkt6TL3U5xABDf/enL/8UBKLJ4n+FbT02xHeMQTIGq6VEWlU+FZO6w
-	5p8q+Ykak6Ycu+5Kp6MDAA+BbON/9Rl3J6lwWJTaPHRRiNN50O4zPxR7mpz01UiDAMg/A0/3SsWiz
-	1qZqBvaA==;
+	bh=pF8+VCxwvRijiLhRgwCALvisKj+9NTCt35TlwVxmpnY=; b=PkqWf4CZGLAfLzS0k/b9QRZ954
+	TZdMKHGpDhaOYprrgPLzT3FJCApDFt834LVdAXXBQY8MLau+WwoKQKZfEs/wPFYbp2IovIjUmadCZ
+	YWA5ftg0+sK3R4h0YwX/4Fr4gB0udfWm6YazOooDqpItxLlvbdWe1K6uVUCz6IqtlkXXPXEYMicTX
+	fu7eyW83y496xITlf5Its438MOkMC5fr4y9Y+zY9EHQLBneoJuZKwJeroaJTKuzJ2H87be5usBN7k
+	+K3KlOt5FbKibLqm1GOuDgYtuhpmvdzJx9v7YarNMxPoRhv6nQqX1HtxOtwW+Ygj3xDypNvigdpuV
+	OK5uc5kg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPOnt-0000000DPdF-0RaU;
-	Fri, 06 Nov 2026 18:36:45 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xPOx3-0000000DR4w-2za9;
+	Fri, 06 Nov 2026 18:46:13 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPOnp-0000000DPaU-2yt3
-	for linux-phy@lists.infradead.org;
-	Fri, 06 Nov 2026 18:36:41 +0000
+	id 1xPOx2-0000000DR4X-1fNj;
+	Fri, 06 Nov 2026 18:46:12 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 764E343D4E;
-	Fri,  6 Nov 2026 18:36:41 +0000 (UTC)
-Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
-ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1793990201;
-	b=qiSctHSLjJKiV1XNuUHFx06u+16vA6Jpijpu4fPTB6qk+kCYr7EX53PYsRDmv6RQrFZD
-	 4kjqMuIrs20W7UEVoDzJhmNfHP3gLSbG55isxz/7SBnGuESuVy8L9Al5nawLJeKVqn/3W
-	 srgcjwh8fKRV0/rkHLXKaTmdLzsX82VVmJeW7E1w3ENy9JJv0nA9ZITlbSsrYp3vdqoXG
-	 7i9CngtA+a8QBEpy9I1G7mb1xNf+VeoqcMR2mAesejFxp/a1aDC893UGJKY73AxZmsOfT
-	 OO5fBd5bj8Q4TeXHuo8zLRMba3tQUKQGJAdJGBxEpt4rPoB+hTzotqRkjMgi0hV1T2w==
-ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1793990201;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=TsuNq2OheNSTqk8/gL9IbJScHhDNNcxGyEjKvs+yA0c=;
-	b=jqxQhn4QzTXhe0yE3DK0PXDQuONAA+zkqUZan9GbN0bQA0Waqn+45FUTRrd5kyLxD7LL
-	 n0t2EVNUv/CyGlxXsbE7PVpjZgx/Gz+oMvSulScMmbLiwuvotEBGPLbN8dKzCu/SZp3/P
-	 QUhl4nhdrGzCNJz7WOjhttfrSMfRFi/pcHkk/rRrCw/qBzVkugE98D9/RIGvhEgcnrZrU
-	 n7bhAkWGTgoFnAe3qezS8tho4j0MQOAh8H3iPnSXLWfqjavsoEXGkbXqpjsm0NT/vkTB2
-	 TssAjV2UyLuuJv7SORnIv8VcEKAv8KQkNwCcPeiHWfYfz8EqdkwaMBj/tXMWh//P8eQ==
-ARC-Authentication-Results: i=1; smtp.kernel.org; 
-	arc=none smtp.remote-ip=100.80.115.77
-Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 06FEB1F008A7;
-	Fri,  6 Nov 2026 18:36:39 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 1A09D601E1;
+	Fri,  6 Nov 2026 18:46:11 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 74ED11F0089F;
+	Fri,  6 Nov 2026 18:46:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793990201;
-	bh=TsuNq2OheNSTqk8/gL9IbJScHhDNNcxGyEjKvs+yA0c=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=RNomdTr8XlEH2fxrIVATX4DXNL60uzjO1/9fC/OEfxRnyM/EOHAKw1m+QFNB7JXd1
-	 +8SK717r5ynAvuCXLNK9jQTyLra6Qph9X9T0P2BysJ9PR4r2PoqgVwQVzjFUuazuLG
-	 LXnIWGtCLKKjHJBAP62jaRwPXlxYmVDlG8hNOWsobneZguFkd4xy6FmxDHkHW2HRw3
-	 cTob+pvQxOr4BAVfozWOx7VKyGN8YZjRIIojgH402L4xgU9ASK15hS3Yx/Pkma5PMu
-	 zo9m7D4c+ADVSo91rcTwF57ivWAYpWQDzo/hkGQelR4BJJMuANTLFiwrfijW7A7THy
-	 y4jZtEOSX6npA==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 7EAC347829;
-	Fri,  6 Nov 2026 18:36:37 +0000 (UTC)
-From: Andrew Gigena via B4 Relay <devnull+mail.andrewgigena.dev@kernel.org>
-Date: Fri, 06 Nov 2026 18:35:39 +0000
-Subject: [PATCH v3 7/7] arm64: dts: qcom: sm8150: Add CAMSS and CCI nodes
+	s=k20260515; t=1793990770;
+	bh=6TYaT587yULVEsFdUlV21e0IlEIkrM/S8nTlyyj5duE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=ag0eQnT68Qn48+lD/gKwyNvXHdwktPEYZRXu+mkFQY9vzL7wiMhYgWeuG+JY3KsEF
+	 gI3XCn0aWsviJENdO79ADtBJ4wfZIqOpW7bHvPyXu5Yx7OAaI64goY95XQoscGuga3
+	 RiRZJJ+z/HCAmj4OreqwgRKM+/JYt0+pMQU8Vi4xBe9mSgJSOH8KtXW9Mw/WQ3o4OY
+	 mrux7OQRSU/obswR+R8vfPypl/xQz/SLtQ2oRx1EySjeD+3V+DGTpGrrAHC+sqD+48
+	 zU0B/50JD3C7b1U4wU/hmZFCOReDSKirjZePi9z/7MbizoMhTqfACiM30W+Y2YprUi
+	 C/pdfJQ6qj/LQ==
+Date: Fri, 6 Nov 2026 18:46:01 +0000
+From: Conor Dooley <conor@kernel.org>
+To: =?iso-8859-1?Q?Beno=EEt?= Monin <benoit.monin@bootlin.com>
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Jun Chang <jun.chang@metanoia-comm.com>,
+	Paul Walmsley <pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
+	Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Sebastian Reichel <sre@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Jonathan Cameron <jic23@kernel.org>,
+	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+	Thomas Gleixner <tglx@kernel.org>, Radu Rendec <radu@rendec.net>,
+	Samuel Holland <samuel.holland@sifive.com>,
+	Ben Zong-You Xie <ben717@andestech.com>,
+	Daniel Lezcano <daniel.lezcano@kernel.org>,
+	Ulf Hansson <ulfh@kernel.org>, Jisheng Zhang <jszhang@kernel.org>,
+	CL Wang <cl634@andestech.com>, Mark Brown <broonie@kernel.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Wim Van Sebroeck <wim@linux-watchdog.org>,
+	Guenter Roeck <linux@roeck-us.net>,
+	Adrian Hunter <adrian.hunter@intel.com>,
+	Minas Harutyunyan <hminas@synopsys.com>,
+	Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+	Randolph Sheng-Kai =?utf-8?B?TGluKOael+iBluWHsSk=?= <randolph@andestech.com>,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-riscv@lists.infradead.org, linux-pm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Paul Walmsley <paul.walmsley@sifive.com>, linux-mmc@vger.kernel.org,
+	linux-spi@vger.kernel.org, linux-usb@vger.kernel.org,
+	linux-watchdog@vger.kernel.org
+Subject: Re: [PATCH 00/25] riscv: add support for the Metanoia MT2824 SoC and
+ MT5824 EVB
+Message-ID: <20261106-annotate-roundup-3cdf03205a91@spud>
+References: <20261106-mt2824-v1-0-86087eaf5af4@bootlin.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261106-sm8150-v7.4-rc1-camss-v3-7-0103e8a0bbcd@andrewgigena.dev>
-References: <20261106-sm8150-v7.4-rc1-camss-v3-0-0103e8a0bbcd@andrewgigena.dev>
-In-Reply-To: <20261106-sm8150-v7.4-rc1-camss-v3-0-0103e8a0bbcd@andrewgigena.dev>
-To: Loic Poulain <loic.poulain@oss.qualcomm.com>, 
- Robert Foss <rfoss@kernel.org>, Andi Shyti <andi.shyti@linaro.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Bryan O'Donoghue <bod@kernel.org>, 
- Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>, 
- Mauro Carvalho Chehab <mchehab@kernel.org>, 
- Bryan O'Donoghue <bryan.odonoghue@linaro.org>, 
- Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>, 
- Andi Shyti <andi.shyti@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-i2c@vger.kernel.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-media@vger.kernel.org, linux-phy@lists.infradead.org, 
- Andrew Gigena <mail@andrewgigena.dev>
-X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1793990195; l=13107;
- i=mail@andrewgigena.dev; s=20261104; h=from:subject:message-id;
- bh=wZwrsoUDBqcXubxpglOHtI9ltv3LEaZKNJvQ/8Ba4ug=;
- b=1HWIC7qdT+/bR9cZ1qHK+5C/DjsRz2nAkmfkmSIVHn85TQCtSOEU9LSPgwPI7o6cmrQXmFNXX
- wt0OT5H0lkvCTVsAc6ibq1hOAph8Ua+Byr7/CAKiQOMf5tLRD572pJl
-X-Developer-Key: i=mail@andrewgigena.dev; a=ed25519;
- pk=OMhlYIBaOEC8g4mJ4JCKy7kbg+lrwRxuujieZF8Ne6U=
-X-Endpoint-Received: by B4 Relay for mail@andrewgigena.dev/20261104 with
- auth_id=1402
-X-Original-From: Andrew Gigena <mail@andrewgigena.dev>
+In-Reply-To: <20261106-mt2824-v1-0-86087eaf5af4@bootlin.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,554 +92,154 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: mail@andrewgigena.dev
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============1893483866356593047=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: Andrew Gigena <mail@andrewgigena.dev>
+--===============1893483866356593047==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="O+KStvozO2m15yOI"
+Content-Disposition: inline
 
-Describe the SM8150 CAMSS block and its CSID, VFE and VFE-Lite
-instances, together with the four dedicated CSI2 PHYs, the two CCI
-controllers and their I2C buses.
+--O+KStvozO2m15yOI
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-The CAMSS node exposes four CSI input ports, each linked to one
-CSI2 PHY output port, and references the CAMCC clocks and GDSCs, the
-interconnects and the IOMMU streams. Each of the four CSIPHY I/O
-spaces is described by its own qcom,sm8150-csi2-phy node, fed by the
-CSIPHY clocks and the Titan top power domain; the vdda-phy and
-vdda-pll supplies are board-specific. The CCI nodes describe the
-CCI0/CCI1 I2C buses, and the TLMM pinctrl states for their clock and
-data lines are added to the existing pin controller node.
+On Fri, Nov 06, 2026 at 10:29:57AM +0100, Beno=EEt Monin wrote:
+> Hi all,
+>=20
+> This series adds initial upstream support for the Metanoia MT2824 SoC
+> and its MT5824 evaluation board.
+>=20
+> The MT2824 is a dual-core RISC-V SoC built on Andes AX45MP cores. It
+> integrates two 8250-compatible UARTs, the Andes PLIC/PLICSW/PLMT interrupt
+> and timer blocks, the AX45MP L2 cache controller, a simple reset controll=
+er
+> and a system reboot controller, the ATCWDT200 watchdog, one QSPI and eight
+> ATCSPI200 SPI controllers, a Synopsys DWC MSHC 2.00a eMMC/SD controller,
+> and a Synopsys DWC2 USB2 host controller with a reset-only USB2 PHY.
+>=20
+> The series is organised as:
+>=20
+> - patches 1-14 add the device tree bindings, the Metanoia vendor prefix,
+>   the RISC-V board schema and the SoC block compatibles
+> - patch 15 adds ARCH_METANOIA and selects the AX45MP errata
+> - patches 16-23 add the reset, SPI, watchdog, MMC, PHY and USB changes
+>   needed to build and probe on this SoC
+> - patch 24 adds the MT2824 SoC and MT5824 EVB device trees
+> - patch 25 adds the MAINTAINERS entry
+>=20
+> The ATCSPI200 driver gains optional interrupt support for PIO transfers:
+> when the controller IRQ is wired, the FIFOs and the end of transfer
+> are serviced from the handler, with a fallback to polling when no IRQ
+> is available.
+>=20
+> The DWC MSHC controller on the evaluation board is wired to either an
+> SD slot or an eMMC through a board jumper that the SoC cannot read. In
+> the absence of a fixed card type in the device tree, the driver probes
+> the eMMC first at 1.8 V and falls back to the SD slot at 3.3 V. The
+> controller also needs custom tuning and HS400 PHY DLL handling, which
+> is why it has its own sdhci_ops.
+>=20
+> The MT2824 SoC contains other controllers not yet exposed (I2C, GPIO,
+> pinctrl, Ethernet, DSP, ...). This first series allows accessing the
+> evaluation board via its serial console, and all its storage options
+> (SPI-NOR, eMMC, SD card). The watchdog and the USB port are also
+> available.
+>=20
+> The driver changes do not depend on the DTS at build time and are gated
+> on the new compatible strings. For merge ordering, the DTS depends on the
+> ARCH_METANOIA Kconfig entry (patch 15) and on the binding compatibles
+> being accepted. The patches can therefore go through their respective
+> subsystem trees, with the Kconfig, DTS and MAINTAINERS patches going
+> through the RISC-V tree once the driver and binding patches have landed.
 
-All new nodes are left disabled. The PHY supplies and the sensor
-wiring are board-specific, so they belong in the board DTS that
-enables the controller.
+I kinda pointed it out elsewhere, but that's not actually the path for
+the Kconfig, dts and MAINTAINERS bits. They go via the soc tree, after
+being applied by a metanoia specific maintainer.
 
-Signed-off-by: Andrew Gigena <mail@andrewgigena.dev>
----
- arch/arm64/boot/dts/qcom/sm8150.dtsi | 488 +++++++++++++++++++++++++++++++++++
- 1 file changed, 488 insertions(+)
+>=20
+> The series is based on v7.4-rc1.
+>=20
+> Signed-off-by: Beno=EEt Monin <benoit.monin@bootlin.com>
+> ---
+> Beno=EEt Monin (25):
+>       dt-bindings: vendor-prefixes: add Metanoia Communications
+>       dt-bindings: riscv: add Metanoia SoC-based boards
+>       dt-bindings: reset: add Metanoia MT2824
+>       dt-bindings: power: reset: add Metanoia MT2824 reboot
+>       dt-bindings: phy: add Metanoia USB2 PHY
+>       dt-bindings: cache: andestech,ax45mp-cache: add MT2824 compatible
+>       dt-bindings: interrupt-controller: sifive,plic-1.0.0: add Metanoia =
+MT2824
+>       dt-bindings: interrupt-controller: andestech,plicsw: add Metanoia M=
+T2824
+>       dt-bindings: timer: andestech,plmt0: add Metanoia MT2824
+>       dt-bindings: mmc: snps,dwcmshc-sdhci: add Metanoia MT2824
+>       dt-bindings: spi: andestech,ae350-spi: make DMA and interrupts opti=
+onal
+>       dt-bindings: spi: andestech,ae350-spi: add Metanoia MT2824
+>       dt-bindings: usb: dwc2: add Metanoia MT2824
+>       dt-bindings: watchdog: andestech,ae350-wdt: add Metanoia MT2824
 
-diff --git a/arch/arm64/boot/dts/qcom/sm8150.dtsi b/arch/arm64/boot/dts/qcom/sm8150.dtsi
-index 293fcbacff34..008f787235b8 100644
---- a/arch/arm64/boot/dts/qcom/sm8150.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sm8150.dtsi
-@@ -2736,6 +2736,86 @@ wake-pins {
- 					bias-pull-up;
- 				};
- 			};
-+
-+			cci0_default: cci0-default-state {
-+				cci0_i2c0_default: cci0-i2c0-default-pins {
-+					/* SDA, SCL */
-+					pins = "gpio17", "gpio18";
-+					function = "cci_i2c";
-+
-+					bias-pull-up;
-+					drive-strength = <2>; /* 2 mA */
-+				};
-+
-+				cci0_i2c1_default: cci0-i2c1-default-pins {
-+					/* SDA, SCL */
-+					pins = "gpio19", "gpio20";
-+					function = "cci_i2c";
-+
-+					bias-pull-up;
-+					drive-strength = <2>; /* 2 mA */
-+				};
-+			};
-+
-+			cci0_sleep: cci0-sleep-state {
-+				cci0_i2c0_sleep: cci0-i2c0-sleep-pins {
-+					/* SDA, SCL */
-+					pins = "gpio17", "gpio18";
-+					function = "cci_i2c";
-+
-+					drive-strength = <2>; /* 2 mA */
-+					bias-pull-down;
-+				};
-+
-+				cci0_i2c1_sleep: cci0-i2c1-sleep-pins {
-+					/* SDA, SCL */
-+					pins = "gpio19", "gpio20";
-+					function = "cci_i2c";
-+
-+					drive-strength = <2>; /* 2 mA */
-+					bias-pull-down;
-+				};
-+			};
-+
-+			cci1_default: cci1-default-state {
-+				cci1_i2c0_default: cci1-i2c0-default-pins {
-+					/* SDA, SCL */
-+					pins = "gpio31", "gpio32";
-+					function = "cci_i2c";
-+
-+					bias-pull-up;
-+					drive-strength = <2>; /* 2 mA */
-+				};
-+
-+				cci1_i2c1_default: cci1-i2c1-default-pins {
-+					/* SDA, SCL */
-+					pins = "gpio33", "gpio34";
-+					function = "cci_i2c";
-+
-+					bias-pull-up;
-+					drive-strength = <2>; /* 2 mA */
-+				};
-+			};
-+
-+			cci1_sleep: cci1-sleep-state {
-+				cci1_i2c0_sleep: cci1-i2c0-sleep-pins {
-+					/* SDA, SCL */
-+					pins = "gpio31", "gpio32";
-+					function = "cci_i2c";
-+
-+					bias-pull-down;
-+					drive-strength = <2>; /* 2 mA */
-+				};
-+
-+				cci1_i2c1_sleep: cci1-i2c1-sleep-pins {
-+					/* SDA, SCL */
-+					pins = "gpio33", "gpio34";
-+					function = "cci_i2c";
-+
-+					bias-pull-down;
-+					drive-strength = <2>; /* 2 mA */
-+				};
-+			};
- 		};
- 
- 		remoteproc_mpss: remoteproc@4080000 {
-@@ -3782,6 +3862,414 @@ camnoc_virt: interconnect@ac00000 {
- 			qcom,bcm-voters = <&apps_bcm_voter>;
- 		};
- 
-+		cci0: cci@ac4a000 {
-+			compatible = "qcom,sm8150-cci", "qcom,msm8996-cci";
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			reg = <0 0xac4a000 0 0x1000>;
-+			interrupts = <GIC_SPI 460 IRQ_TYPE_EDGE_RISING>;
-+			power-domains = <&camcc TITAN_TOP_GDSC>;
-+
-+			clocks = <&camcc CAM_CC_CAMNOC_AXI_CLK>,
-+				 <&camcc CAM_CC_SLOW_AHB_CLK_SRC>,
-+				 <&camcc CAM_CC_CPAS_AHB_CLK>,
-+				 <&camcc CAM_CC_CCI_0_CLK>,
-+				 <&camcc CAM_CC_CCI_0_CLK_SRC>;
-+			clock-names = "camnoc_axi",
-+				      "slow_ahb_src",
-+				      "cpas_ahb",
-+				      "cci",
-+				      "cci_src";
-+
-+			pinctrl-0 = <&cci0_default>;
-+			pinctrl-1 = <&cci0_sleep>;
-+			pinctrl-names = "default", "sleep";
-+
-+			status = "disabled";
-+
-+			cci0_i2c0: i2c-bus@0 {
-+				reg = <0>;
-+				clock-frequency = <1000000>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+			};
-+
-+			cci0_i2c1: i2c-bus@1 {
-+				reg = <1>;
-+				clock-frequency = <1000000>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+			};
-+		};
-+
-+		cci1: cci@ac4b000 {
-+			compatible = "qcom,sm8150-cci", "qcom,msm8996-cci";
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			reg = <0 0xac4b000 0 0x1000>;
-+			interrupts = <GIC_SPI 271 IRQ_TYPE_EDGE_RISING>;
-+			power-domains = <&camcc TITAN_TOP_GDSC>;
-+
-+			clocks = <&camcc CAM_CC_CAMNOC_AXI_CLK>,
-+				 <&camcc CAM_CC_SLOW_AHB_CLK_SRC>,
-+				 <&camcc CAM_CC_CPAS_AHB_CLK>,
-+				 <&camcc CAM_CC_CCI_1_CLK>,
-+				 <&camcc CAM_CC_CCI_1_CLK_SRC>;
-+			clock-names = "camnoc_axi",
-+				      "slow_ahb_src",
-+				      "cpas_ahb",
-+				      "cci",
-+				      "cci_src";
-+
-+			pinctrl-0 = <&cci1_default>;
-+			pinctrl-1 = <&cci1_sleep>;
-+			pinctrl-names = "default", "sleep";
-+
-+			status = "disabled";
-+
-+			cci1_i2c0: i2c-bus@0 {
-+				reg = <0>;
-+				clock-frequency = <1000000>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+			};
-+
-+			cci1_i2c1: i2c-bus@1 {
-+				reg = <1>;
-+				clock-frequency = <1000000>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+			};
-+		};
-+
-+		camss: isp@acaf000 {
-+			compatible = "qcom,sm8150-camss";
-+			status = "disabled";
-+
-+			reg = <0 0xacaf000 0 0x4000>,
-+			      <0 0xacb3000 0 0x1000>,
-+			      <0 0xacb6000 0 0x4000>,
-+			      <0 0xacba000 0 0x1000>,
-+			      <0 0xacc4000 0 0x4000>,
-+			      <0 0xacc8000 0 0x1000>,
-+			      <0 0xaccb000 0 0x4000>,
-+			      <0 0xaccf000 0 0x1000>;
-+
-+			reg-names = "vfe0",
-+				    "csid0",
-+				    "vfe1",
-+				    "csid1",
-+				    "vfe_lite0",
-+				    "csid_lite0",
-+				    "vfe_lite1",
-+				    "csid_lite1";
-+
-+			interrupts = <GIC_SPI 465 IRQ_TYPE_EDGE_RISING>,
-+				     <GIC_SPI 464 IRQ_TYPE_EDGE_RISING>,
-+				     <GIC_SPI 467 IRQ_TYPE_EDGE_RISING>,
-+				     <GIC_SPI 466 IRQ_TYPE_EDGE_RISING>,
-+				     <GIC_SPI 469 IRQ_TYPE_EDGE_RISING>,
-+				     <GIC_SPI 468 IRQ_TYPE_EDGE_RISING>,
-+				     <GIC_SPI 360 IRQ_TYPE_EDGE_RISING>,
-+				     <GIC_SPI 359 IRQ_TYPE_EDGE_RISING>;
-+
-+			interrupt-names = "vfe0",
-+					  "csid0",
-+					  "vfe1",
-+					  "csid1",
-+					  "vfe_lite0",
-+					  "csid_lite0",
-+					  "vfe_lite1",
-+					  "csid_lite1";
-+
-+			power-domains = <&camcc IFE_0_GDSC>,
-+					<&camcc IFE_1_GDSC>,
-+					<&camcc TITAN_TOP_GDSC>;
-+			power-domain-names = "ife0",
-+					     "ife1",
-+					     "top";
-+
-+			clocks = <&camcc CAM_CC_CAMNOC_AXI_CLK>,
-+				 <&camcc CAM_CC_CPAS_AHB_CLK>,
-+				 <&camcc CAM_CC_IFE_0_AXI_CLK>,
-+				 <&camcc CAM_CC_IFE_0_CLK>,
-+				 <&camcc CAM_CC_IFE_0_CPHY_RX_CLK>,
-+				 <&camcc CAM_CC_IFE_0_CSID_CLK>,
-+				 <&camcc CAM_CC_IFE_1_AXI_CLK>,
-+				 <&camcc CAM_CC_IFE_1_CLK>,
-+				 <&camcc CAM_CC_IFE_1_CPHY_RX_CLK>,
-+				 <&camcc CAM_CC_IFE_1_CSID_CLK>,
-+				 <&camcc CAM_CC_IFE_LITE_0_CLK>,
-+				 <&camcc CAM_CC_IFE_LITE_0_CPHY_RX_CLK>,
-+				 <&camcc CAM_CC_IFE_LITE_0_CSID_CLK>,
-+				 <&camcc CAM_CC_IFE_LITE_1_CLK>,
-+				 <&camcc CAM_CC_IFE_LITE_1_CPHY_RX_CLK>,
-+				 <&camcc CAM_CC_IFE_LITE_1_CSID_CLK>,
-+				 <&gcc GCC_CAMERA_AHB_CLK>,
-+				 <&gcc GCC_CAMERA_HF_AXI_CLK>,
-+				 <&gcc GCC_CAMERA_SF_AXI_CLK>;
-+			clock-names = "camnoc_axi",
-+				      "cpas_ahb",
-+				      "vfe0_axi",
-+				      "vfe0",
-+				      "vfe0_cphy_rx",
-+				      "vfe0_csid",
-+				      "vfe1_axi",
-+				      "vfe1",
-+				      "vfe1_cphy_rx",
-+				      "vfe1_csid",
-+				      "vfe_lite0",
-+				      "vfe_lite0_cphy_rx",
-+				      "vfe_lite0_csid",
-+				      "vfe_lite1",
-+				      "vfe_lite1_cphy_rx",
-+				      "vfe_lite1_csid",
-+				      "gcc_ahb",
-+				      "gcc_axi_hf",
-+				      "gcc_axi_sf";
-+
-+			iommus = <&apps_smmu 0x840 0x620>,
-+				 <&apps_smmu 0x860 0x620>,
-+				 <&apps_smmu 0xa40 0x620>,
-+				 <&apps_smmu 0xa60 0x620>,
-+				 <&apps_smmu 0xc40 0x620>,
-+				 <&apps_smmu 0xc60 0x620>,
-+				 <&apps_smmu 0xe40 0x620>,
-+				 <&apps_smmu 0xe60 0x620>;
-+
-+			interconnects = <&gem_noc MASTER_AMPSS_M0 0 &config_noc SLAVE_CAMERA_CFG 0>,
-+					<&mmss_noc MASTER_CAMNOC_HF0 0 &mc_virt SLAVE_EBI_CH0 0>,
-+					<&mmss_noc MASTER_CAMNOC_SF 0 &mc_virt SLAVE_EBI_CH0 0>,
-+					<&mmss_noc MASTER_CAMNOC_HF1 0 &mc_virt SLAVE_EBI_CH0 0>;
-+			interconnect-names = "cam_ahb",
-+					     "cam_hf_0_mnoc",
-+					     "cam_sf_0_mnoc",
-+					     "cam_hf_1_mnoc";
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+
-+					camss_csi0_in: endpoint {
-+						remote-endpoint = <&csiphy0_out>;
-+					};
-+				};
-+
-+				port@1 {
-+					reg = <1>;
-+
-+					camss_csi1_in: endpoint {
-+						remote-endpoint = <&csiphy1_out>;
-+					};
-+				};
-+
-+				port@2 {
-+					reg = <2>;
-+
-+					camss_csi2_in: endpoint {
-+						remote-endpoint = <&csiphy2_out>;
-+					};
-+				};
-+
-+				port@3 {
-+					reg = <3>;
-+
-+					camss_csi3_in: endpoint {
-+						remote-endpoint = <&csiphy3_out>;
-+					};
-+				};
-+			};
-+		};
-+
-+		csiphy0: phy@ac65000 {
-+			compatible = "qcom,sm8150-csi2-phy";
-+			reg = <0 0xac65000 0 0x1000>;
-+			status = "disabled";
-+
-+			clocks = <&camcc CAM_CC_CSIPHY0_CLK>,
-+				 <&camcc CAM_CC_CSI0PHYTIMER_CLK>;
-+			clock-names = "core",
-+				      "timer";
-+
-+			interrupts = <GIC_SPI 477 IRQ_TYPE_EDGE_RISING>;
-+
-+			operating-points-v2 = <&csiphy0_opp_table>;
-+
-+			power-domains = <&camcc TITAN_TOP_GDSC>;
-+			power-domain-names = "top";
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+
-+					csiphy0_in: endpoint {
-+					};
-+				};
-+
-+				port@1 {
-+					reg = <1>;
-+
-+					csiphy0_out: endpoint {
-+						remote-endpoint = <&camss_csi0_in>;
-+					};
-+				};
-+			};
-+
-+			csiphy0_opp_table: opp-table {
-+				compatible = "operating-points-v2";
-+
-+				opp-400000000 {
-+					opp-hz = /bits/ 64 <400000000>;
-+				};
-+			};
-+		};
-+
-+		csiphy1: phy@ac66000 {
-+			compatible = "qcom,sm8150-csi2-phy";
-+			reg = <0 0xac66000 0 0x1000>;
-+			status = "disabled";
-+
-+			clocks = <&camcc CAM_CC_CSIPHY1_CLK>,
-+				 <&camcc CAM_CC_CSI1PHYTIMER_CLK>;
-+			clock-names = "core",
-+				      "timer";
-+
-+			interrupts = <GIC_SPI 478 IRQ_TYPE_EDGE_RISING>;
-+
-+			operating-points-v2 = <&csiphy1_opp_table>;
-+
-+			power-domains = <&camcc TITAN_TOP_GDSC>;
-+			power-domain-names = "top";
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+
-+					csiphy1_in: endpoint {
-+					};
-+				};
-+
-+				port@1 {
-+					reg = <1>;
-+
-+					csiphy1_out: endpoint {
-+						remote-endpoint = <&camss_csi1_in>;
-+					};
-+				};
-+			};
-+
-+			csiphy1_opp_table: opp-table {
-+				compatible = "operating-points-v2";
-+
-+				opp-400000000 {
-+					opp-hz = /bits/ 64 <400000000>;
-+				};
-+			};
-+		};
-+
-+		csiphy2: phy@ac67000 {
-+			compatible = "qcom,sm8150-csi2-phy";
-+			reg = <0 0xac67000 0 0x1000>;
-+			status = "disabled";
-+
-+			clocks = <&camcc CAM_CC_CSIPHY2_CLK>,
-+				 <&camcc CAM_CC_CSI2PHYTIMER_CLK>;
-+			clock-names = "core",
-+				      "timer";
-+
-+			interrupts = <GIC_SPI 479 IRQ_TYPE_EDGE_RISING>;
-+
-+			operating-points-v2 = <&csiphy2_opp_table>;
-+
-+			power-domains = <&camcc TITAN_TOP_GDSC>;
-+			power-domain-names = "top";
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+
-+					csiphy2_in: endpoint {
-+					};
-+				};
-+
-+				port@1 {
-+					reg = <1>;
-+
-+					csiphy2_out: endpoint {
-+						remote-endpoint = <&camss_csi2_in>;
-+					};
-+				};
-+			};
-+
-+			csiphy2_opp_table: opp-table {
-+				compatible = "operating-points-v2";
-+
-+				opp-400000000 {
-+					opp-hz = /bits/ 64 <400000000>;
-+				};
-+			};
-+		};
-+
-+		csiphy3: phy@ac68000 {
-+			compatible = "qcom,sm8150-csi2-phy";
-+			reg = <0 0xac68000 0 0x1000>;
-+			status = "disabled";
-+
-+			clocks = <&camcc CAM_CC_CSIPHY3_CLK>,
-+				 <&camcc CAM_CC_CSI3PHYTIMER_CLK>;
-+			clock-names = "core",
-+				      "timer";
-+
-+			interrupts = <GIC_SPI 448 IRQ_TYPE_EDGE_RISING>;
-+
-+			operating-points-v2 = <&csiphy3_opp_table>;
-+
-+			power-domains = <&camcc TITAN_TOP_GDSC>;
-+			power-domain-names = "top";
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+
-+					csiphy3_in: endpoint {
-+					};
-+				};
-+
-+				port@1 {
-+					reg = <1>;
-+
-+					csiphy3_out: endpoint {
-+						remote-endpoint = <&camss_csi3_in>;
-+					};
-+				};
-+			};
-+
-+			csiphy3_opp_table: opp-table {
-+				compatible = "operating-points-v2";
-+
-+				opp-400000000 {
-+					opp-hz = /bits/ 64 <400000000>;
-+				};
-+			};
-+		};
-+
- 		camcc: clock-controller@ad00000 {
- 			compatible = "qcom,sm8150-camcc";
- 			reg = <0 0x0ad00000 0 0x10000>;
+Other than the tag issues in most of these, riscv and dt wise this looks
+mostly fine. The reset/reboot stuff and probably missing clock support
+are the only real problems.
 
--- 
-2.56.0
+Probably, I would split this series up into multiple smaller
+submissions. spi, mmc, phy, usb, watchdog at least should be their own
+mini series. clock/reset should probably be another, presumably also
+with the reboot thing. What's left (interrupts, timer, cache I think)
+can stay part of the dts series and probably go through the soc tree
+together. For interrupts and timer, the maintainers are usually not
+super responsive in terms of binding only series which is why they may
+go via soc.
+
+Cheers,
+Conor.
+
+>       riscv: add ARCH_METANOIA Kconfig entry
+>       reset: simple: add Metanoia MT2824 support
+>       spi: atcspi200: add optional interrupt support
+>       spi: atcspi200: allow building for Metanoia SoCs
+>       watchdog: atcwdt200: allow building for Metanoia SoCs
+>       mmc: sdhci-of-dwcmshc: add MT2824 support
+>       mmc: sdhci-of-dwcmshc: add MT2824 tuning and HS400 support
+>       phy: metanoia: add USB2 PHY driver
+>       usb: dwc2: add support for Metanoia MT2824
+>       riscv: add Metanoia MT2824 SoC and MT5824 EVB support
+>       MAINTAINERS: add RISC-V Metanoia SoC support
+
+--O+KStvozO2m15yOI
+Content-Type: application/pgp-signature; name=signature.asc
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCau4gaQAKCRB4tDGHoIJi
+0nenAQDXOOACr5dTLojlsekDLPEmerVvDKLX9MTt2AL32IK7ugD+NliqmV6l2V/K
+f/dhIRRWsafkCoQptXJ5wafLha8CkAM=
+=fT+J
+-----END PGP SIGNATURE-----
+
+--O+KStvozO2m15yOI--
 
 
+--===============1893483866356593047==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============1893483866356593047==--
+
