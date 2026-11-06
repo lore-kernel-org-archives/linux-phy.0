@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D87BC606A32C
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Nov 2026 22:33:02 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 19FDE606A333
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Nov 2026 22:34:45 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=E6Aw+0T7;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jCqDvLmO
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=19c/3D7q;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=AmzZ8OtT
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
@@ -14,43 +14,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=ZYtd1t3s9SBhMthj8L6/Cm7yqM9Sj7LmDWvUB6eqAkc=; b=E6Aw+0T7eug21MHDxBymTD6sC/
-	B2IZf1oT+73+zftgFNzNTF3PT6+qpQxLPJoQTitcln61zWvkHIKsAKh1MwSDCzVhm4a1hizRoYonX
-	U2EC+pqReWxgN2kuriwXNF2FzCW20zii/CB2VlYGFirLlLZtmObPraMgJpzf7mxgt5ckpb+qgPEKg
-	rfY6jJQ9tUtEbH9xUgSHmmbh2qx/WjQdGVHkzFGnHHfbLsj/Jnch2oyoucwtBSL7wW/ic4bpofJ30
-	LQr3486PI1wRZBkOdZ3xhlwKS0sWwxzRAoWAOK3Q7R/rDBdQ44iA7aLvmPJNULyxtJLZJyiCutAEt
-	yLbT6gAA==;
+	bh=jLJWpRgtJqibXh1DOI8AKVaxzGIp7Rk0bOSGzVC/BBM=; b=19c/3D7qUsoNuM5e4wblMw97Am
+	kbnpJvT22SMVbkb9G5eN8tcTkYWa6KU4I+zui1W7UoHUea6+xUc6sqbQ8STofroLnMmxzgKRrdspJ
+	rkKp0GnCMUZ0K7qG6nuDdxaPLoNEWylQneqSHPFtH1TLAIink7NZngX+Upzrk6S/06QZk09D2PFzG
+	8ELeLxZFIGx5JDdROls4WMQe4NIeBPmX3tTIahfBPB2zPn1W75I5S7nODER+F/nxnGDDwjY2QaZ2a
+	XVc3cWEk+X9CfmQHhDPDVRFeBa3brKgvFhBlhSc7vFRumcs80ryu0m9kLeMdKkWk81jifPQUXWljd
+	oFEOS2dw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPSUY-0000000DnJL-2cqC;
-	Fri, 06 Nov 2026 22:33:02 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xPSWC-0000000DnS5-3E5B;
+	Fri, 06 Nov 2026 22:34:44 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPSUX-0000000DnJ0-2X8i
+	id 1xPSWC-0000000DnRt-00QN
 	for linux-phy@lists.infradead.org;
-	Fri, 06 Nov 2026 22:33:01 +0000
+	Fri, 06 Nov 2026 22:34:44 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0602A434DA;
-	Fri,  6 Nov 2026 22:33:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 132861F0089F;
-	Fri,  6 Nov 2026 22:32:55 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 6BD92601BF;
+	Fri,  6 Nov 2026 22:34:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 474EC1F0089F;
+	Fri,  6 Nov 2026 22:34:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794004380;
-	bh=2+q+v1jhfTi1dqHhpWP0G7ARYW151hdrkBAttGROBKQ=;
+	s=k20260515; t=1794004483;
+	bh=7Quq3xcYOSiCqP1VWqFYsEpRGnceLb6KT1qUylBV5i0=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=jCqDvLmOi7mKWIYTXQbT3YV0IbscfGb4EhSCA1M04ujQgQaVg0Ylx0gKdpFJzlbyl
-	 cJUbBqpFk0BJXXc0enmi++0dMmTpHOBt6xp+JeszB649Qkv2mOGE21YCeTU4NN28wE
-	 /iGhom/9FbT3IXbTAWreCYbvIKwyYsU6T8qHv3eFTtEeB802AMf+/JAcFEF2VZSt68
-	 Nr8NujhFCfZxDE7b5zTLXWrfjKKendfuGQwkulw9vkgIXgRPyw2poBE053DGXcn6SD
-	 N1Ebd9nsBS8NOhHvr8ew2wwyGToprdxIBxCta9pfUq6Y1OI9ybO8IzlgkpPcQMCg+D
-	 7F98MFG6W3mcg==
-Message-ID: <e1c5faeb-458b-4ed7-9bdc-145a2c09cae6@kernel.org>
-Date: Fri, 6 Nov 2026 22:32:54 +0000
+	b=AmzZ8OtTiadnCnqTnmUrn4wK5gvLMZ/21+/uTceAXFcpx10yAsv6vL/XCaG+oQAAz
+	 GG8ETTHn+3mDP6tim693onHvQTu0ukO5rX+SetNYamzXPk2PuJ9aiyr22RXdrQFTh+
+	 xluvgtWpQyWGAWPpfcuVWgVWOEvt2Qf3Lj88LD0wWpBSx+ofksWsAI9UwLF5Hq2g5z
+	 fcwoVe1cqKVWST2AP4dNdFZ9DXjGlX8HgxAwBRott8f4el6aSxf+QOJuKO8zQc8pXp
+	 pwaiCQqykoBDLGJCoLyEwqB8FYb19ZF7gi9hDlYgV1f8v6CqORqob5l427a4dRMhO/
+	 5BXgRQqdOQ8XA==
+Message-ID: <5d72eff8-ac6d-453c-ac63-db7e30e4a917@kernel.org>
+Date: Fri, 6 Nov 2026 22:34:36 +0000
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 3/7] dt-bindings: phy: qcom,sm8150-csi2-phy: Add SM8150
- CSI2 PHY
+Subject: Re: [PATCH v3 4/7] media: qcom: camss: Match VFE lite clocks by name
+ prefix
 To: mail@andrewgigena.dev, Loic Poulain <loic.poulain@oss.qualcomm.com>,
  Robert Foss <rfoss@kernel.org>, Andi Shyti <andi.shyti@linaro.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -67,8 +67,8 @@ Cc: linux-arm-msm@vger.kernel.org, linux-i2c@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-media@vger.kernel.org, linux-phy@lists.infradead.org
 References: <20261106-sm8150-v7.4-rc1-camss-v3-0-0103e8a0bbcd@andrewgigena.dev>
- <K-dfrm01MH_S8xoeoPRIme4aizF5TEc2Hb5PFkhmtltkZTB-XX7Xe_5So3-0XfgVViSBBlCxS30ui9OdszuetQ==@protonmail.internalid>
- <20261106-sm8150-v7.4-rc1-camss-v3-3-0103e8a0bbcd@andrewgigena.dev>
+ <6n2xSSEPbQQR62rX2-W0NR48vBjFHq10xHuJ_rAoN_4xOC4HaGuHmz7IM49xl6JHRC2cKI_VCfJ_NS_kW3jphw==@protonmail.internalid>
+ <20261106-sm8150-v7.4-rc1-camss-v3-4-0103e8a0bbcd@andrewgigena.dev>
 From: Bryan O'Donoghue <bod@kernel.org>
 Content-Language: en-GB
 Autocrypt: addr=bod@kernel.org; keydata=
@@ -114,7 +114,7 @@ Autocrypt: addr=bod@kernel.org; keydata=
  LKSGEglMpiX07M1AotgvylN5C8fjbouoK+/RAMsXkk8jba6rPfuuXPaDjCyyKn6zSVHETnHW
  3AJbgVY50T8STpnxayBQvWbCvu+6NOEjXCbyaOJig+5l0zlGN9XHjdANXC5HnwmyaGRL9YDq
  Jh2nVXVJDincOdQRdKcJjYLqaOAoWrYWSDi1iZGspHBTDrnOvfMQzzHY
-In-Reply-To: <20261106-sm8150-v7.4-rc1-camss-v3-3-0103e8a0bbcd@andrewgigena.dev>
+In-Reply-To: <20261106-sm8150-v7.4-rc1-camss-v3-4-0103e8a0bbcd@andrewgigena.dev>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,60 +127,45 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-5.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
-	autolearn=no autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 On 06/11/2026 18:35, Andrew Gigena via B4 Relay wrote:
-> +  vdda-phy-supply:
-> +    description: Phandle to a 0.88V regulator supply to a PHY.
-> +
-> +  vdda-pll-supply:
-> +    description: Phandle to a 1.2V regulator supply to a PHY PLL.
+> @@ -346,6 +347,7 @@ static u32 vfe_src_pad_code(struct vfe_line *line, u32 sink_code,
+>   	case CAMSS_6350:
+>   	case CAMSS_7280:
+>   	case CAMSS_8x96:
+> +	case CAMSS_8150:
+>   	case CAMSS_8250:
+>   	case CAMSS_8280XP:
+>   	case CAMSS_8300:
+> @@ -914,6 +916,9 @@ static int vfe_match_clock_names(struct vfe_device *vfe,
+>   	return (!strcmp(clock->name, vfe_name) ||
+>   		!strcmp(clock->name, vfe_lite_name) ||
+>   		!strcmp(clock->name, "vfe_lite") ||
+> +		(vfe->res->is_lite &&
+> +		 !strncmp(clock->name, "vfe_lite", 8) &&
+> +		 isdigit((unsigned char)clock->name[8])) ||
+>   		!strcmp(clock->name, "camnoc_axi") ||
+>   		!strcmp(clock->name, "camnoc_rt_axi"));
+>   }
+> @@ -2006,6 +2011,7 @@ static int vfe_bpl_align_rdi(struct vfe_device *vfe)
+>   	case CAMSS_6150:
+>   	case CAMSS_6350:
+>   	case CAMSS_7280:
+> +	case CAMSS_8150:
+>   	case CAMSS_8250:
+>   	case CAMSS_8280XP:
+>   	case CAMSS_8300:
 
-Wrong names.
+This patch mangles the thing the patch title does with switch additions 
+for src_pad_code and bpl_align_rdi.
 
-> +  ports:
-> +    $ref: /schemas/graph.yaml#/properties/ports
-> +
-> +    properties:
-> +      port@0:
-> +        $ref: /schemas/graph.yaml#/$defs/port-base
-> +        unevaluatedProperties: false
-> +        description:
-> +          Sensor input. A single sensor is described by a single endpoint with
-> +          one to four data lanes, numbered 1-4. The clock lane is position 0.
-> +
-> +        properties:
-> +          endpoint:
-> +            $ref: /schemas/media/video-interfaces.yaml#
-> +            unevaluatedProperties: false
-> +
-> +            properties:
-> +              bus-type:
-> +                enum:
-> +                  - 4 # MEDIA_BUS_TYPE_CSI2_DPHY
-> +                default: 4
-> +
-> +              data-lanes:
-> +                minItems: 1
-> +                maxItems: 4
-> +                items:
-> +                  minimum: 1
-> +                  maximum: 4
-> +
-> +            required:
-> +              - data-lanes
-> +              - remote-endpoint
-> +
-> +      port@1:
-> +        $ref: /schemas/graph.yaml#/properties/port
-> +        description: Output to the CAMSS CSI input port.
-
-missing split-mode base case definition.
+Please separate.
 
 ---
 bod
