@@ -2,89 +2,58 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EFBBD606A326
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Nov 2026 08:42:59 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D60B5606A328
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Nov 2026 08:48:50 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=3J9wIyny;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=pengutronix.de header.i=@pengutronix.de header.a=rsa-sha256 header.s=20260414 header.b=XwTvp2Hj
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=NtHUyqeT;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=LI+2jXAv
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=ZRhSoOrAvepnQzyOfrcTCU9Ccnj5QNAfjpsocLvyQRs=; b=3J9wIynyLtmU95sE6bzOLryCF+
-	yBxYFbgMHncBfP7Dy4nbeHDWgSSJ4sPf6nvXHez6WILPy+cA0LI5AJ3nHKU1SRKt0LQhXb5WOGPhT
-	Fbvk1EzePAKdxpeoePAC+NrlsNH6+LeFghF1FZRt0ZZyynbYnqCFS2iafIRDZ6ny1dO1g72dePVJ8
-	vR9BGpw7m+9n5zdoI1reOX7HDxbnG9UWVPk996v6gKSnfbZkzacmomVbTmVtlEJLQWHtSZfElp6MN
-	gOr20bGc7bkqcpekr38ZkOljt+VT+KJMGB8QsIca7goa5Eyd72tzBzP3/OovLSMwE8Y5KJXf9gdjC
-	lsRcL5hw==;
+	bh=TZYhRRpS/VdHVblDoeQ9VBUrxLVKGo3HvPyw/Dx9yJY=; b=NtHUyqeTqvCQmLHddQ/scR8DRY
+	5cDhSliHrlh9HezeeZ3yBswVaBAAgxdyN5O8Ki3DwauG8yhtHehXrUZ2OHF/dRKpNeshqyrvhVLty
+	7H0f+MxKF2Q3vGD2uwo9UuryO+rj7sMdhSAFSicxDGsT+RANtJgIeLS1jKSYfcY4/ndMxuFIGytRs
+	fYJEe6n3x6uemA787dY3PYL0jmS1uj5sfyqQa0eNqGxqeU4ls5q327yMHZ+0p2rLz9DpMpxx+DxxG
+	zyEqLkQxOnVeAViWijskKbdCRqavBYyM221ja5cu9TMuuW5beGbuNoC4VpmXiUtTaif6OqYI/76Jz
+	WmEUzlNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPFXH-0000000BcLw-2vZs;
-	Fri, 06 Nov 2026 08:42:59 +0000
-Received: from mx1.white.stw.pengutronix.de ([2a0a:edc0:0:b01:1d::107])
+	id 1xPFcw-0000000Bct1-2ZTW;
+	Fri, 06 Nov 2026 08:48:50 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPFXE-0000000BcKa-3I7a
+	id 1xPFcv-0000000Bcsk-1n9D
 	for linux-phy@lists.infradead.org;
-	Fri, 06 Nov 2026 08:42:58 +0000
-Received: from [IPv6:2a0a:edc0:0:900:1d::4e] (lupine.office.stw.pengutronix.de [IPv6:2a0a:edc0:0:900:1d::4e])
-	(Authenticated sender: pza@pengutronix.de)
-	by mx1.white.stw.pengutronix.de (Postfix) with ESMTPSA id E78F3200681;
-	Fri, 06 Nov 2026 09:42:54 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=pengutronix.de;
-	s=20260414; t=1793954574;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=//BhGWhocoXqTGm5cl7oYST4gdbyKm1YGtkrcPDoUdg=;
-	b=XwTvp2HjcxbbKHLX+rAlFM0I48XMYXfdG9kKIqRRNsNo5AS8gbBGidEzchpwjMWNqcJTkV
-	QwYnUyFICNvgRV3HVlpOGwP9cnnCUFVHks4t3e5xbI89WX+72Rqow6er/5Dup5qY1TRNUH
-	o05lnjD1V9Aucc/cAWPNg882EajYDC+03IMs4UfVZrqfeerofvftrPLahw5/JZxJmrKZnU
-	8veaBx4PWjlckXZNzoBopagLeAfiQcoeHEbVzTRbwZNjeRY+RWpyPmBSMYVsfT/+u85eUZ
-	VCCR7N2Nc5LxyfcjpK5jaz6V7DUNM4ABewpW42XxjRrmx4rMAgetSfWjBV8kDA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=pengutronix.de;
-	s=20260414; t=1793954574;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=//BhGWhocoXqTGm5cl7oYST4gdbyKm1YGtkrcPDoUdg=;
-	b=eDb6HCn7SjdnhBJx3QsJ8qPZy9CkatDumvnznQbh8RtAFxfB+S5FtgmLMpEKOpt2A3VMea
-	xXP1at0nh1FjsEMcCkzOjS1SEo9opHXg3iYD71L89pgyKC5BIH2OU+Ellr9yoe9Ctg7S+o
-	JKaN0kIHRzGQW/ZWIo+Jb2W0KwbgXU5uzB4+2wLZxRa75r3HwpnvudTfuuIcnWXsoJXFS7
-	DeggLSxyDHwelLTGE8Eoj/KnsFRhP9vNs33UJtCxJFmpWPRrv/w0MYCgQCRncBe4ZrBGfD
-	OpkGcbrXSzJ1CZxyshNw+gkVHWNIUZzDSMOKYwqTB7JsDvOpIueHqcmh6TjWQg==
-ARC-Authentication-Results: i=1;
-	ORIGINATING;
-	auth=pass smtp.auth=pza@pengutronix.de smtp.mailfrom=p.zabel@pengutronix.de
-ARC-Seal: i=1; s=20260414; d=pengutronix.de; t=1793954574; a=rsa-sha256;
-	cv=none;
-	b=ImQ8CWpS/K1U4zYKJOUdfiVGehkW1YFe17FPfwrUkqTWPYEB8Q2/mlZQUeylEICiT+uIzt
-	FM6SBZDclWm/qvYWPGl73CQn0DcEw4ftLXjGAJS9t9SdL7tRps6wiEl9ZdxJ8DSW32cSx5
-	LAJbh3zRvpUhcp2Sl3Aeje6iJdgQ3R3gwlZKwWpGAOoukszU+PQDZu+uPsG3n7LrLqeauW
-	+/Lzubr4yBPaFbZpwLwMY9BPyQSBFL6f23UTV3uNTiKHV6jEeCcNcNmmSY1va/P/FnfeZa
-	sgsP8gIDDqHUEPpOhaAZ3BtUxjFLCcm+9li1UO4eQhKZ9ceNg9TROL2jb5sMzA==
-Message-ID: <d3c3dc464510db5b603e578a976ffde4364cae70.camel@pengutronix.de>
-Subject: Re: [PATCH] phy: ath79-usb: support the analog reset
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Rosen Penev <rosenp@gmail.com>, linux-phy@lists.infradead.org
-Cc: Alban Bedel <albeu@free.fr>, Vinod Koul <vkoul@kernel.org>, Neil
- Armstrong	 <neil.armstrong@linaro.org>, Manivannan Sadhasivam
- <mani@kernel.org>, "open list:ARM/QUALCOMM MAILING LIST"	
- <linux-arm-msm@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>
-Date: Fri, 06 Nov 2026 09:42:54 +0100
-In-Reply-To: <20261106014254.544923-1-rosenp@gmail.com>
-References: <20261106014254.544923-1-rosenp@gmail.com>
-User-Agent: Evolution 3.56.2-0+deb13u1 
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261106_004256_977836_889F0102 
-X-CRM114-Status: GOOD (  14.88  )
-X-Spam-Score: -2.1 (--)
+	Fri, 06 Nov 2026 08:48:49 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id E6AF2412BE;
+	Fri,  6 Nov 2026 08:48:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7BF911F0089F;
+	Fri,  6 Nov 2026 08:48:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1793954928;
+	bh=7q7MnvWEnGcX41XHa+pTWvOl61VfVGVeya0hMBQW9Qw=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=LI+2jXAvx16yM9U6xZJcFpIiRnI4UB2Vu6Xchf8l7t9kvE+mQ8fpZBWieOt3drcL/
+	 EPW2tO0pn4m5JdiLH+Wm/DsnObbHDywUpG/DER6VYPhnN1514mDSymQQx9IwSqy1na
+	 VFppdDB+zCdgclOB+h2j8rcbAokAycDY+g6e2uFnd7pAUIlMexsxCH2l4EH0tWUQxI
+	 NNHsyiVEJPSYvPIT6Y0ZJxNYv5hXFv9UkQw14gQTY9BY5+Ro7Jyl7lPdhvlxRyyAIU
+	 xswn1wLnZ0NuyptwGeN4VmbpzCDPiD06SWLgBfNPAmxj90OZ5TVYM4AUgnZz5/gDSA
+	 ax5CGXME1Xm0w==
+Message-ID: <sashiko-outbox-201088@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH 3/3] usb: dwc3: qcom: pass live SS-link state into PHY
+ at suspend entry
+To: "Tapas Rana" <tapas.rana@oss.qualcomm.com>
+Cc: linux-phy@lists.infradead.org, linux-usb@vger.kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20261106082716.128968-4-tapas.rana@oss.qualcomm.com>
+References: <20261106082716.128968-1-tapas.rana@oss.qualcomm.com>
+ <20261106082716.128968-4-tapas.rana@oss.qualcomm.com>
+Date: Fri, 06 Nov 2026 08:48:47 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,51 +63,102 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Do, 2026-11-05 at 17:42 -0800, Rosen Penev wrote:
-> From AR934x on, the analog part of the USB PHY has its own reset. The
-> old platform code released it after the PHY reset on AR934x, and left
-> it to the bootloader on QCA955x.
-> 
-> Take it as an optional "phy-analog" reset, release it after the PHY one
-> when powering on, and assert it first when powering off. This is the
-> reset handling OpenWrt has used on its AR934x, QCA955x and QCA956x
-> boards.
-> 
-> Signed-off-by: Rosen Penev <rosenp@gmail.com>
-> ---
->  drivers/phy/qualcomm/phy-ath79-usb.c | 33 +++++++++++++++++++++++++---
->  1 file changed, 30 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-ath79-usb.c b/drivers/phy/qualcomm/phy-ath79-usb.c
-> index 8e9565846b2f..1e7868fc0b5f 100644
-> --- a/drivers/phy/qualcomm/phy-ath79-usb.c
-> +++ b/drivers/phy/qualcomm/phy-ath79-usb.c
-[...]
-> @@ -78,6 +99,12 @@ static int ath79_usb_phy_probe(struct platform_device *pdev)
->  	if (IS_ERR(priv->no_suspend_override))
->  		return PTR_ERR(priv->no_suspend_override);
->  
-> +	/* AR934x and later also hold the analog part in reset */
-> +	priv->analog_reset = devm_reset_control_get_optional(&pdev->dev,
-> +							     "phy-analog");
-
-Documentation/devicetree/bindings/phy/qca,ar7100-usb-phy.yaml only
-specifies "phy" and "suspend-override".
-
-regards
-Philipp
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwKaXNzdWVzIHRvIGNvbnNpZGVyOgotIFtIaWdoXSB1c2I6IGR3YzM6IHFjb206
+IHBoeV9zZXRfbW9kZV9leHQoKSBjYWxsZWQgYWZ0ZXIgUEhZIHJ1bnRpbWUKICBzdXNwZW5kCi0g
+W01lZGl1bV0gdXNiOiBkd2MzOiBxY29tOiBkd2MzX3Fjb21fcmVhZF9zc19zdGF0ZSgpIGJyb2tl
+biB3aGVuCiAgQ09ORklHX1VTQj1tCkl0IGFsc28gbm90aWNlZCAxIHJlbGF0ZWQgcHJlLWV4aXN0
+aW5nIGlzc3VlIHRoaXMgcGF0Y2ggZG9lcyBub3QKaW50cm9kdWNlOgotIFtIaWdoXSB1c2I6IGR3
+YzM6IHFjb206IE5VTEwgcG9pbnRlciBkZXJlZmVyZW5jZSBpbgogIGR3YzNfcWNvbV9yZWFkX3Vz
+YjJfc3BlZWQoKSBbMV0KLS0KCmNvbW1pdCA5OGVlZTIyYTY5ODFjZTNlZjQ1MmNjOGY5ZWM5OTlh
+MmJmODIzNTEzCkF1dGhvcjogVGFwYXMgUmFuYSA8dGFwYXMucmFuYUBvc3MucXVhbGNvbW0uY29t
+PgoKdXNiOiBkd2MzOiBxY29tOiBwYXNzIGxpdmUgU1MtbGluayBzdGF0ZSBpbnRvIFBIWSBhdCBz
+dXNwZW5kIGVudHJ5CgpUaGlzIGNvbW1pdCBhZGRzIGR3YzNfcWNvbV9yZWFkX3NzX3N0YXRlKCkg
+dG8gY2hlY2sgd2hldGhlciBhIFN1cGVyU3BlZWQKZGV2aWNlIGlzIGF0dGFjaGVkIG9uIGVhY2gg
+cG9ydCdzIFVTQjMgcm9vdGh1YiBhbmQgcGFzc2VzIHRoYXQgc3RhdGUgdG8KcGh5X3NldF9tb2Rl
+X2V4dCgpIGR1cmluZyBkd2MzX3Fjb21fc3VzcGVuZCgpLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVy
+cy91c2IvZHdjMy9kd2MzLXFjb20uYyBiL2RyaXZlcnMvdXNiL2R3YzMvZHdjMy1xY29tLmMKPiBp
+bmRleCBhYzY4YjQyMThiNTZiLi5kNGJhMDk1ZTQ3ZWIwIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMv
+dXNiL2R3YzMvZHdjMy1xY29tLmMKPiArKysgYi9kcml2ZXJzL3VzYi9kd2MzL2R3YzMtcWNvbS5j
+ClsgLi4uIF0KPiBAQCAtMjUxLDYgKzI1MywzNCBAQCBzdGF0aWMgZW51bSB1c2JfZGV2aWNlX3Nw
+ZWVkIGR3YzNfcWNvbV9yZWFkX3VzYjJfc3BlZWQoc3RydWN0IGR3YzNfcWNvbSAqcWNvbSwgaQo+
+ICAJcmV0dXJuIHVkZXYtPnNwZWVkOwo+ICB9Cj4gIAo+ICtzdGF0aWMgZW51bSBxY29tX3VzYl9z
+c19zdGF0ZSBkd2MzX3Fjb21fcmVhZF9zc19zdGF0ZShzdHJ1Y3QgZHdjM19xY29tICpxY29tLCBp
+bnQgcG9ydF9pbmRleCkKPiArewo+ICsJc3RydWN0IHVzYl9kZXZpY2UgKnVkZXY7Cj4gKwlzdHJ1
+Y3QgdXNiX2hjZCBfX21heWJlX3VudXNlZCAqaGNkLCAqdXNiM19oY2Q7Cj4gKwlzdHJ1Y3QgZHdj
+MyAqZHdjID0gJnFjb20tPmR3YzsKPiArCj4gKwkvKgo+ICsJICogRklYTUU6IEZpeCB0aGlzIGxh
+eWVyaW5nIHZpb2xhdGlvbi4KPiArCSAqLwo+ICsJaGNkID0gcGxhdGZvcm1fZ2V0X2RydmRhdGEo
+ZHdjLT54aGNpKTsKPiArCWlmICghaGNkKQo+ICsJCXJldHVybiBRQ09NX1VTQl9TU19BQlNFTlQ7
+CgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgcHJvYmxlbSB3YXNuJ3QgaW50cm9kdWNlZCBieSB0aGlz
+IHBhdGNoLCBidXQgY2FuCmR3YzNfcWNvbV9yZWFkX3VzYjJfc3BlZWQoKSBoaXQgYSBOVUxMIHBv
+aW50ZXIgZGVyZWZlcmVuY2Ugb24gaGNkClsxXSBpZiB0aGUgeEhDSSBkcml2ZXIgZmFpbHMgdG8g
+cHJvYmU/Cgpkd2MzX2hvc3RfaW5pdCgpIGFzc2lnbnMgZHdjLT54aGNpIGJlZm9yZSBwbGF0Zm9y
+bV9kZXZpY2VfYWRkKCksIGFuZApwbGF0Zm9ybV9kZXZpY2VfYWRkKCkgc3VjY2VlZHMgZXZlbiBp
+ZiBkcml2ZXIgYmluZGluZyBmYWlscywgbGVhdmluZwpkd2MtPnhoY2kgbm9uLU5VTEwgd2l0aCBO
+VUxMIGRydmRhdGEuICBEdXJpbmcgc3VzcGVuZCwKZHdjM19xY29tX2lzX2hvc3QoKSBzZWVzIGR3
+Yy0+eGhjaSBhbmQgY2FsbHMgZHdjM19xY29tX3JlYWRfdXNiMl9zcGVlZCgpCnJpZ2h0IGJlZm9y
+ZSBkd2MzX3Fjb21fcmVhZF9zc19zdGF0ZSgpLCB3aGljaCBkZXJlZmVyZW5jZXMKaGNkLT5zZWxm
+LnJvb3RfaHViIHdpdGhvdXQgdGhlICFoY2QgY2hlY2sgYWRkZWQgaGVyZToKCmRyaXZlcnMvdXNi
+L2R3YzMvZHdjMy1xY29tLmM6ZHdjM19xY29tX3JlYWRfdXNiMl9zcGVlZCgpIHsKCS4uLgoJaGNk
+ID0gcGxhdGZvcm1fZ2V0X2RydmRhdGEoZHdjLT54aGNpKTsKCiNpZmRlZiBDT05GSUdfVVNCCgl1
+ZGV2ID0gdXNiX2h1Yl9maW5kX2NoaWxkKGhjZC0+c2VsZi5yb290X2h1YiwgcG9ydF9pbmRleCAr
+IDEpOwoJLi4uCn0KCj4gKwo+ICsjaWZkZWYgQ09ORklHX1VTQgo+ICsJdXNiM19oY2QgPSBoY2Qt
+PnNoYXJlZF9oY2QgPyBoY2QtPnNoYXJlZF9oY2QgOiBoY2Q7Cj4gKwlpZiAoIXVzYjNfaGNkLT5z
+ZWxmLnJvb3RfaHViKQo+ICsJCXJldHVybiBRQ09NX1VTQl9TU19BQlNFTlQ7Cj4gKwo+ICsJdWRl
+diA9IHVzYl9odWJfZmluZF9jaGlsZCh1c2IzX2hjZC0+c2VsZi5yb290X2h1YiwgcG9ydF9pbmRl
+eCArIDEpOwo+ICsjZWxzZQo+ICsJdWRldiA9IE5VTEw7Cj4gKyNlbmRpZgo+ICsJaWYgKCF1ZGV2
+KQo+ICsJCXJldHVybiBRQ09NX1VTQl9TU19BQlNFTlQ7CgpbU2V2ZXJpdHk6IE1lZGl1bV0KRG9l
+cyAjaWZkZWYgQ09ORklHX1VTQiBjb21waWxlIG91dCB0aGUgcm9vdGh1YiBsb29rdXAgd2hlbiBD
+T05GSUdfVVNCPW0/CkJlY2F1c2UgVVNCIGlzIGEgdHJpc3RhdGUgS2NvbmZpZyBzeW1ib2wsIG1v
+ZHVsYXIgYnVpbGRzIGRlZmluZQpDT05GSUdfVVNCX01PRFVMRSByYXRoZXIgdGhhbiBDT05GSUdf
+VVNCLCBzbyBkd2MzX3Fjb21fcmVhZF9zc19zdGF0ZSgpCmFsd2F5cyB0YWtlcyB0aGUgI2Vsc2Ug
+YnJhbmNoIGFuZCByZXR1cm5zIFFDT01fVVNCX1NTX0FCU0VOVCBldmVuIHdoZW4gYQpTdXBlclNw
+ZWVkIGRldmljZSBpcyBhdHRhY2hlZC4gIFNob3VsZCB0aGlzIHVzZSBJU19SRUFDSEFCTEUoQ09O
+RklHX1VTQikKb3IgSVNfRU5BQkxFRChDT05GSUdfVVNCKT8KClsgLi4uIF0KPiBAQCAtMzU5LDgg
+KzM4OSwxMiBAQCBzdGF0aWMgaW50IGR3YzNfcWNvbV9zdXNwZW5kKHN0cnVjdCBkd2MzX3Fjb20g
+KnFjb20sIGJvb2wgd2FrZXVwKQo+ICAJICogZnJlZXphYmxlIHdvcmtxdWV1ZS4KPiAgCSAqLwo+
+ICAJaWYgKGR3YzNfcWNvbV9pc19ob3N0KHFjb20pICYmIHdha2V1cCkgewo+IC0JCWZvciAoaSA9
+IDA7IGkgPCBxY29tLT5udW1fcG9ydHM7IGkrKykKPiArCQlmb3IgKGkgPSAwOyBpIDwgcWNvbS0+
+bnVtX3BvcnRzOyBpKyspIHsKPiAgCQkJcWNvbS0+cG9ydHNbaV0udXNiMl9zcGVlZCA9IGR3YzNf
+cWNvbV9yZWFkX3VzYjJfc3BlZWQocWNvbSwgaSk7Cj4gKwkJCXFjb20tPnBvcnRzW2ldLnNzX3N0
+YXRlID0gZHdjM19xY29tX3JlYWRfc3Nfc3RhdGUocWNvbSwgaSk7Cj4gKwkJCXBoeV9zZXRfbW9k
+ZV9leHQocWNvbS0+ZHdjLnVzYjNfZ2VuZXJpY19waHlbaV0sIFBIWV9NT0RFX1VTQl9IT1NULAo+
+ICsJCQkJCSBxY29tLT5wb3J0c1tpXS5zc19zdGF0ZSk7Cj4gKwkJfQo+ICAJCWR3YzNfcWNvbV9l
+bmFibGVfaW50ZXJydXB0cyhxY29tKTsKPiAgCX0KCltTZXZlcml0eTogSGlnaF0KSXNuJ3QgcGh5
+X3NldF9tb2RlX2V4dCgpIGNhbGxlZCBoZXJlIGFmdGVyIHRoZSBVU0IzIFBIWSBoYXMgYWxyZWFk
+eQplbnRlcmVkIHJ1bnRpbWUgc3VzcGVuZD8KCkJvdGggZHdjM19xY29tX3BtX3N1c3BlbmQoKSBh
+bmQgZHdjM19xY29tX3J1bnRpbWVfc3VzcGVuZCgpIGNhbGwKZHdjM19wbV9zdXNwZW5kKCkgb3Ig
+ZHdjM19ydW50aW1lX3N1c3BlbmQoKSBiZWZvcmUgZHdjM19xY29tX3N1c3BlbmQoKToKCmRyaXZl
+cnMvdXNiL2R3YzMvZHdjMy1xY29tLmM6ZHdjM19xY29tX3J1bnRpbWVfc3VzcGVuZCgpIHsKCS4u
+LgoJcmV0ID0gZHdjM19ydW50aW1lX3N1c3BlbmQoJnFjb20tPmR3Yyk7CglpZiAocmV0KQoJCXJl
+dHVybiByZXQ7CgoJcmV0dXJuIGR3YzNfcWNvbV9zdXNwZW5kKHFjb20sIHRydWUpOwp9CgpJbnNp
+ZGUgZHdjM19zdXNwZW5kX2NvbW1vbigpLCBwaHlfcG1fcnVudGltZV9wdXRfc3luYygpIGRyb3Bz
+IHRoZQpydW50aW1lIFBNIHJlZmVyZW5jZSBvbiBkd2MtPnVzYjNfZ2VuZXJpY19waHlbaV0sIHdo
+aWNoIHNjaGVkdWxlcwpxbXBfY29tYm9fcnVudGltZV9zdXNwZW5kKCkgb24gdGhlIHBhcmVudCBR
+TVAgY29tYm8gUEhZIGRldmljZSB3aGlsZQpkd2MzX3Fjb21fc3VzcGVuZCgpIHNsZWVwcyBpbiBj
+bGtfYnVsa19kaXNhYmxlX3VucHJlcGFyZSgpIGFuZApkd2MzX3Fjb21faW50ZXJjb25uZWN0X2Rp
+c2FibGUoKS4KCkJlY2F1c2UgcW1wX2NvbWJvX3VzYl9zZXRfbW9kZSgpIG9ubHkgcmVjb3JkcyBx
+bXAtPnNzX3N0YXRlIGluIG1lbW9yeSBhbmQKUVBIWV9QQ1NfQVVUT05PTU9VU19NT0RFX0NUUkwg
+aXMgcHJvZ3JhbW1lZCBpbgpxbXBfY29tYm9fcnVudGltZV9zdXNwZW5kKCkgLT4gcW1wX2NvbWJv
+X2VuYWJsZV9hdXRvbm9tb3VzX21vZGUoKSBiZWZvcmUKdGhlIFBIWSBjbG9ja3MgYXJlIGRpc2Fi
+bGVkLCB1cGRhdGluZyBzc19zdGF0ZSBoZXJlIGhhcHBlbnMgYWZ0ZXIgdGhlClBIWSBoYXMgYWxy
+ZWFkeSBwcm9ncmFtbWVkIGF1dG9ub21vdXMgbW9kZSB3aXRoIFFDT01fVVNCX1NTX1VOS05PV04g
+KG9yCnRoZSBwcmV2aW91cyBjeWNsZSdzIHN0YXRlKS4KClsxXSBodHRwczovL3Nhc2hpa28uZGV2
+LyMvYnVnL2xpbnV4LTE0ZjczNDgzLWRjNmMtNDI1MC04MDJhLTllMGUzMjAzY2M5MQoKLS0gClNh
+c2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MTEw
+NjA4MjcxNi4xMjg5NjgtMS10YXBhcy5yYW5hQG9zcy5xdWFsY29tbS5jb20/cGFydD0zCgotLSAK
+bGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
+czovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
