@@ -2,96 +2,69 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 308A2606A331
-	for <linux-phy@archiver.kernel.org>; Sat,  7 Nov 2026 10:03:09 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EB48D606A335
+	for <linux-phy@archiver.kernel.org>; Sat,  7 Nov 2026 12:46:00 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=KQzIj4YG;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=tb3+6P3q
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=KFBF7v/x;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=asZGQ3aT
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=/4+Gx1QvSdQqDUuBrNznmN6GxhvykCWbgu/+8uNU/JQ=; b=KQzIj4YGKtTsDwSLakrzVpefDk
-	VOLvL5JmvqaiEv2GGNiWbQWQZtuJXHUCEOhKzoMHWz4QVtjvB0BGnJPqUmPSrpxWjc5PCQPtyAnno
-	s2bw2tABEf+aHzNHkLGx2lpOPpnDo1+W9QSYYODH0CEgJaboRUgaSmTXNgXiGD56VT+QxYzv3Y/GD
-	Thl5OtGm1e2DpBC4bOpFHKGr6PBBy4Rs6+uXAf1BzzXpJ+hK8xtuOHGBkNj87HLj94gjMpMC03Qt+
-	l4u9nkruepE4kgLSHE527lMN2BjOFePcKP9AgBwOYcHBrQZySNswvo+zL7t0exXLzEGtuYONt+LRo
-	quVMSvJQ==;
+	bh=QZXRAZW04QOlbH7O5Td/PRSi95OUpcyA7NjQg+G13GE=; b=KFBF7v/xX+Llysc6fWJp38MfdA
+	z/w8Sd3A07dOerL5SR34fkapoaqQhDFLN/We0grfe+vpNlO/3oF+gfVjKvbx61QXdP1SQGuVEkOk7
+	LN839P5I8UG3BiXTspgXMLBJtsa1r0UA8TzvxXNMmjsMLj/2Pn9lxZ7RAb/xmsjqrL/7ARDyrTiKH
+	e/ZhWc5JBwpGLFxxWprizJrE+amL+pNEEMNEvX0SVjhvgzoTLLfAkOK4DzI0rZbd7K0dmOdKw7k1r
+	uD4sQJtMsCIs7ZH94qTnq2lQUvXz6WqZ1lFmCIGMKWkoz5E04B4HmVul7XjAdOW2tzSwPuKn/+15S
+	+j79FJ4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPdGO-0000000ES8o-355p;
-	Sat, 07 Nov 2026 10:03:08 +0000
-Received: from mail-pj1-x102c.google.com ([2607:f8b0:4864:20::102c])
+	id 1xPfo0-0000000EgqW-2IQA;
+	Sat, 07 Nov 2026 12:46:00 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPdGL-0000000ES8J-2nUz
-	for linux-phy@lists.infradead.org;
-	Sat, 07 Nov 2026 10:03:07 +0000
-Received: by mail-pj1-x102c.google.com with SMTP id 98e67ed59e1d1-3acb11973c3so1221366a91.3
-        for <linux-phy@lists.infradead.org>; Sat, 07 Nov 2026 02:03:05 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794045785; x=1794650585; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=Hjw8ufxY1uqj/hElRvoiFVTy1rX/3DfCiEVnshIZW2A=;
-        b=tb3+6P3qb8DyMVtQGpp3tkQmeauK99zVDLmXXcI8cx0jTWK9nhdEjmgul8FjwPAzvK
-         CWqdRhJnIi7PC8/AYkQB8kZZ+PB1WDSyF2+AVWaWk/PEj6b8KAmfXxZLxvesLlaXm5V+
-         L8yFxztz1UeH8CznKi28HfKxLt8ktI7whbZjQbhAeO7OjyXs9zo7fwfMcg4NNyOi8QEl
-         m4NFn7/piO05pFk7fmoqFou7qKJp5QJFwSnmzrhS7I+vissAAKYM2KT35IvQTR3Wf4ZH
-         xqwbGZJPv5gyGMoCo+rdAHG4+YEzcoHb3C8G6YlKzCUYTlOuIOG29FyPyr2bQb+xshR4
-         H8Vg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794045785; x=1794650585;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=Hjw8ufxY1uqj/hElRvoiFVTy1rX/3DfCiEVnshIZW2A=;
-        b=jq7cCR29dhtOsK6E8XqiEC3jGNyKqg1eQGxP3UwV+t0lp87nEKasdUuz25dDeLJaKL
-         Vv4wFRy/WWgrfqXWggg7Zc3OtEJABcyw50YIEjje2etiGZQU0mZ/baJwTNGv7Q/2zoF8
-         10EmxHfOF/2Gh/+6S9kfWZGQGEPGCCZY8ly7U1WnjyUdQIrY2vNA/aCj925LLahczKUp
-         qET8MFkAtTlIxdSeNgkuQ0nd4Pb2pYp5bpYJOfMzMDqSBPXWi4o7AazUajWVwJxv/cGA
-         LGBIUrAd+AVsNUzVaHNE4VVCkoZSAKG5S2tgg8tbZRLyNwSpsdQ8vvfvstR4ANNn5zZH
-         1jFw==
-X-Forwarded-Encrypted: i=1; AL+hErEzOezMwa8lXfoNE0m55nCqyyPAq4jOEC84On7qLCVqQqf4VmIr/d3ZZBWEirnXUI5u5qQbmkzKNew=@lists.infradead.org
-X-Gm-Message-State: APuU4Z+WkwCD5M9pnPV3Fo6pPONmEE6dSPb+eVQz5eJSw+Yig9KmMN0Q
-	q5XCsXJ8Pqtg16Sj59kboHcsdWMizZZ3lWTAOBvKjFl94g9ELZaq5Xoy
-X-Gm-Gg: AYBFou3mVYzh+u0M8L4IolxkcghnX3ufKhvNsiDAJtK63TdZ1HYZNkPggLSn7OLrcK6
-	gdg+ex4ua0sww0/tqHZZSHX4R6RrabMo0C4ZIa2JO7Zl5RmLXBnK+MBRrchreFq1dcJWtwerwxT
-	HN8skZrPJ0p6KBsOlXRnzunilfDGibQL93PpMtQLEHvnVr3Fp14dAKPcABYQk9hWddORopCWmmH
-	N8/Bw2n8fwVamWPXxY44iAoTAIjFJz9ONm5nkPH0t3BGqiFzwQCIJQapSXiG2JEgYHYjtPgA8L8
-	kAqD2xoDcpj02jRoaLrNz5B/JkhuJV6S+ZIr5IWnELRQ8qizgn5j34kCjHRPYkz2SRzdywz3SbT
-	o9g9r5P+X3mNXEFfLghJ1O2d7sfmXbfhLmXf4Q/iHNnef6HIK1J8b9z2ninnkmV6kMbwdTFtYJw
-	KLiNaQKeFKVpy/VobmQ+oY/+8X+Q+BfcBOcsEtCQjtac22JPwUsSbjwoe4gleUId6YnVwcjDDwo
-	HmJCWTlLUEfFwhZw1l+EUNOJC9rcbtApKpSnasz/itZQrAneHRSvZj+U9/L9MqHGwiuFRz0jFwA
-	pvTmRSU1BafTuglL9oSRHjrey9MpL/6x9yL68aXBnnt80sVU
-X-Received: by 2002:a17:90a:c10f:b0:3b0:a3eb:759e with SMTP id 98e67ed59e1d1-3b0db6a8de8mr4788271a91.17.1794045784240;
-        Sat, 07 Nov 2026 02:03:04 -0800 (PST)
-Received: from hj.. ([163.239.22.29])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b1057c2bbcsm2857110a91.1.2026.11.07.02.03.01
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 07 Nov 2026 02:03:03 -0800 (PST)
-From: hyunjungg <hj351016@gmail.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Florian Fainelli <florian.fainelli@broadcom.com>,
-	linux-phy@lists.infradead.org
-Cc: Ray Jui <rjui@broadcom.com>,
-	Scott Branden <sbranden@broadcom.com>,
-	bcm-kernel-feedback-list@broadcom.com,
-	linux-kernel@vger.kernel.org,
-	Hyunjung Ko <hj351016@gmail.com>,
-	stable@vger.kernel.org
-Subject: [PATCH] phy: phy-bcm-ns2-usbdrd: cancel extcon work on unbind to avoid use-after-free
-Date: Sat,  7 Nov 2026 19:02:53 +0900
-Message-ID: <20261107100253.3543022-1-hj351016@gmail.com>
-X-Mailer: git-send-email 2.43.0
+	id 1xPfnz-0000000EgqE-00Bx;
+	Sat, 07 Nov 2026 12:45:59 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 3A97760145;
+	Sat,  7 Nov 2026 12:45:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8E9201F0089F;
+	Sat,  7 Nov 2026 12:45:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794055557;
+	bh=CiL1HQxfgsOcvm9vKFk1DVPeae6fGl4/cDDijU+Teks=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date;
+	b=asZGQ3aTW9/wx50mVmL+G2Ag83l/u/ystE8ygXlcryWvsuZcC5vngRH9EwK7E6gWq
+	 7u5dCW5hg+lyGKdAkG/Vx+ZZOJCG3IB8oUXTChL8zXvM9zQOE4CTyxvES7CS6qNNZ/
+	 oxiYbI1Nn3ZxDOhRqe0FbX3oJir7kmjAPTpFV3SlufjiKH0yvxCYnfBvfePpyPbeil
+	 iT6Q2T3Lu/39C+0VJBYOWcnkNzynnLjVaXzQ3f5tv8eH3qlJ2FYGjbHLoYX2q1N3Hk
+	 NE/Fkka48M/NpXxRVeiZBQxlSuEsgYs/HDqfbQMO17wKvLpHGtuPT9VLQSMW847JgJ
+	 kTefC58ivt7lg==
+From: Niklas Cassel <cassel@kernel.org>
+To: linux-kernel@vger.kernel.org, 
+ Florian Fainelli <florian.fainelli@broadcom.com>
+Cc: Damien Le Moal <dlemoal@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Ray Jui <rjui@broadcom.com>, 
+ Scott Branden <sbranden@broadcom.com>, 
+ Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>, 
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Tejun Heo <tj@kernel.org>, 
+ Yendapally Reddy Dhananjaya Reddy <yendapally.reddy@broadcom.com>, 
+ linux-ide@vger.kernel.org, devicetree@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org
+In-Reply-To: <20261029212513.4126083-1-florian.fainelli@broadcom.com>
+References: <20261029212513.4126083-1-florian.fainelli@broadcom.com>
+Subject: Re: (subset) [PATCH v4 0/6] Fix SATA support for NSP SoCs
+Message-Id: <179405555432.938034.8271032337892944854.b4-ty@kernel.org>
+Date: Sat, 07 Nov 2026 13:45:54 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261107_020305_714228_1E90CBAB 
-X-CRM114-Status: GOOD (  14.72  )
-X-Spam-Score: -1.9 (-)
+X-Mailer: b4 0.14.3
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,71 +77,36 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,
-	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,
-	FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: Hyunjung Ko <hj351016@gmail.com>
+On Thu, 29 Oct 2026 14:25:07 -0700, Florian Fainelli wrote:
+> This patch series fixes SATA on the Northstar Plus (BCM58xxx/8831x)
+> which was broken due to a number of things:
+> 
+> - the SATA PHY assumed separate PCB windows when a shared one is used
+>   for this generation of SoCs
+> - the clock/reset (IDM) was not being configured by the driver which
+>   meant that depending upon what the boot loader did, or did not, we
+>   could have had the AHCI controller still in reset by then
+> - on some reference boards, the AHCI controller is not DMA coherent,
+>   assuming so leads to all sorts of timeouts, data corruption, etc.
+> 
+> [...]
 
-ns2_drd_phy_probe() schedules driver->wq_extcon (extcon_work), which is
-also queued from the ID/VBUS GPIO interrupt handler gpio_irq_handler().
-The work handler dereferences the driver data via container_of().
+Applied to libata/linux.git (for-7.5), thanks!
 
-struct ns2_phy_driver is allocated with devm_kzalloc() and the driver has
-no remove callback, so on unbind devres frees it after probe's resources
-are released. The GPIO interrupts are released with devm_request_irq(),
-but free_irq() only stops further interrupts; it does not cancel a delayed
-work that is already queued. probe() queues wq_extcon with a debounce
-delay before returning, and the GPIO interrupt can queue it too, so on
-unbind the pending work can run after ns2_phy_driver has been freed,
-dereferencing freed memory (use-after-free).
+[2/6] dt-bindings: ata: sata-brcm: Describe the NSP IDM registers
+      https://git.kernel.org/libata/linux/c/262e3bbc
+[3/6] ata: ahci_brcm: Initialize the NSP interface clock and reset
+      https://git.kernel.org/libata/linux/c/14d30246
 
-Register the work with devm_delayed_work_autocancel() instead of
-INIT_DELAYED_WORK(). It is set up before the GPIO interrupts are
-requested, so on unwind devres frees the interrupts first - after which
-the work can no longer be queued - and then cancels the work while the
-driver data is still valid. extcon_work() does not re-queue itself, so a
-single cancel drains it.
-
-Found by static analysis and code review; not runtime-reproduced (needs
-Broadcom Northstar2 USB DRD PHY hardware).
-
-Fixes: 787f24543c4a ("phy: phy-bcm-ns2-usbdrd: Broadcom USB DRD PHY driver for Northstar2")
-Cc: stable@vger.kernel.org
-Signed-off-by: Hyunjung Ko <hj351016@gmail.com>
----
- drivers/phy/broadcom/phy-bcm-ns2-usbdrd.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/phy/broadcom/phy-bcm-ns2-usbdrd.c b/drivers/phy/broadcom/phy-bcm-ns2-usbdrd.c
-index 171bf09..4b8930b 100644
---- a/drivers/phy/broadcom/phy-bcm-ns2-usbdrd.c
-+++ b/drivers/phy/broadcom/phy-bcm-ns2-usbdrd.c
-@@ -6,6 +6,7 @@
- #include <linux/gpio/consumer.h>
- #include <linux/init.h>
- #include <linux/interrupt.h>
-+#include <linux/devm-helpers.h>
- #include <linux/io.h>
- #include <linux/iopoll.h>
- #include <linux/irq.h>
-@@ -339,7 +340,9 @@ static int ns2_drd_phy_probe(struct platform_device *pdev)
- 	if (ret < 0)
- 		driver->debounce_jiffies = msecs_to_jiffies(GPIO_DELAY);
- 
--	INIT_DELAYED_WORK(&driver->wq_extcon, extcon_work);
-+	ret = devm_delayed_work_autocancel(dev, &driver->wq_extcon, extcon_work);
-+	if (ret)
-+		return ret;
- 
- 	driver->id_irq = gpiod_to_irq(driver->id_gpiod);
- 	if (driver->id_irq < 0) {
--- 
-2.43.0
+Kind regards,
+Niklas
 
 
 -- 
