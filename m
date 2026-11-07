@@ -2,128 +2,92 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1E784606A338
-	for <linux-phy@archiver.kernel.org>; Sat,  7 Nov 2026 14:22:51 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 351F360A6F46
+	for <linux-phy@archiver.kernel.org>; Sat,  7 Nov 2026 15:00:48 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=YdENyiUO;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=sang-engineering.com header.i=@sang-engineering.com header.a=rsa-sha256 header.s=k1 header.b=deMBkNlk
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=No4oqwNX;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=WsD2wS6y
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:References:In-Reply-To:
+	Cc:To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=Y8k4eEWVji95a8050zJedzs9thGBQDLIDDqA8IiC3d4=; b=YdENyiUOvBPEh8jvuqALcbY9PL
-	7PW0sFK9doDo0o060eP+3xirRyT7PtoD0OTY5oCBJlT1f2lEQ8YQErha76ty9TjhYFNAINPWbDidF
-	Qus7IasItWbyabwVoTSEyTKOyK3Z1LhGpvU4gGejzLkqdTS1c7gkWvSusaHhK6e0miMAwTUIGvUO1
-	r87p7eaG4vHb3igDjtLZLIB5RqOeNLPzUcSseNUEm6wZ5lvpAs4EIyKAJdU1NtnUAwzGcakg+2gmo
-	JHjpQjcBASZKIKRPw1xFpJNXlxLF+wG9C63MKGR+/fuBw+mxX5jf3yURSVhtgTzTLePPPqVI+S/CX
-	K0Q/jsKA==;
+	bh=eMg1g4uNi+xUuF9orcy98Enw78OGDAWbzbMJuwLqZCQ=; b=No4oqwNXc7dZyZYclhwMTg/Q/o
+	mhKS3sjFbExiVdjwRXtBSKXqrCCzneq/Gf8sJjKtQ6dDK0vLFN5ohuQmpEv1C4Jd1Ih8pJQvBW7x2
+	+vXmlH6xoHYIsTBo6V0v1ky+Ffu6ieYRVESndKRYs4aejW9JxNuH7pXezJEzOe98ISGV72m/VW0SZ
+	8rq4nmLP8MqBryXwawJTZUrDzgposGv2v4u1zzHF1dk85V/5FLI8mr2MPV2TMhuuZ/khi2r+S6vx9
+	45ekG4BirRrukjTy5reKPllGCBW7ifr+n9vW/Gta7kQIedQ/stZ6wsP22lqt2BT/uywyXJrXzp7L0
+	Tuv7sfsQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPhJi-0000000EoVh-1L7E;
-	Sat, 07 Nov 2026 14:22:50 +0000
-Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
+	id 1xPhuR-0000000EsNx-3GKC;
+	Sat, 07 Nov 2026 15:00:47 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPhJe-0000000EoUf-24Mc
+	id 1xPhuQ-0000000EsNr-3iRK
 	for linux-phy@lists.infradead.org;
-	Sat, 07 Nov 2026 14:22:48 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	sang-engineering.com; h=date:from:to:cc:subject:message-id
-	:references:mime-version:content-type:in-reply-to; s=k1; bh=Zc76
-	TO6qUVRGeeHVXQdMS6eOYrg3MPsFB1Ka1Yvj58U=; b=deMBkNlkuoAHsHcvg+VW
-	/JOGUyDVHLSNz2M2P318rSNR8ihhOn/icNfH112ofFlA9vj9/Cq1/GB2kPS93Y40
-	YF/E/JzExb1+S9I1cstiBzedJlDUnUSkE30QPeWQc507bnuBni0Z3NyRW4Kbgikv
-	A33vNAj4UQjDG+RAKO5HfUR7weMBMBqiqmK0raV2oPWm0SZWyc4pewIm8g0fDZne
-	LkWZdfpDHRtTXcDecdPHMvKhMX5AroogrzfiJHaQZyQZEmMUS5nMy4dWe/94uyCo
-	CxZZl4Q8KqM0Whbjetz1A4x1NAoLWi2ICCJyuUW9bykg7e8j4gzLaz/eOC4I3nFt
-	YQ==
-Received: (qmail 2530674 invoked from network); 7 Nov 2026 15:22:35 +0100
-Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 7 Nov 2026 15:22:35 +0100
-X-UD-Smtp-Session: l3s3148p1@G1+7dbBfHLcFFu4j
-Date: Sat, 7 Nov 2026 16:22:34 +0200
-From: Wolfram Sang <wsa+renesas@sang-engineering.com>
-To: Danila Tikhonov <danila@jiaxyga.com>
-Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	"Rafael J . Wysocki" <rafael@kernel.org>,
-	Viresh Kumar <viresh.kumar@linaro.org>,
-	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
-	Wim Van Sebroeck <wim@linux-watchdog.org>,
-	Guenter Roeck <linux@roeck-us.net>,
-	Rajendra Nayak <quic_rjendra@quicinc.com>,
-	Jassi Brar <jassisinghbrar@gmail.com>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konradybcio@kernel.org>,
-	Amit Kucheria <amitk@kernel.org>,
-	Thara Gopinath <thara.gopinath@gmail.com>,
-	Daniel Lezcano <daniel.lezcano@linaro.org>,
-	Zhang Rui <rui.zhang@intel.com>, Lukasz Luba <lukasz.luba@arm.com>,
-	Thomas Gleixner <tglx@linutronix.de>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Wesley Cheng <quic_wcheng@quicinc.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Ulf Hansson <ulf.hansson@linaro.org>,
-	Souradeep Chowdhury <quic_schowdhu@quicinc.com>,
-	Lee Jones <lee@kernel.org>, Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S . Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Alex Elder <elder@kernel.org>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Avri Altman <avri.altman@wdc.com>,
-	Bart Van Assche <bvanassche@acm.org>,
-	Andy Gross <agross@kernel.org>,
-	Srinivas Kandagatla <srini@kernel.org>,
-	Herbert Xu <herbert@gondor.apana.org.au>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	Georgi Djakov <djakov@kernel.org>,
-	Loic Poulain <loic.poulain@oss.qualcomm.com>,
-	Robert Foss <rfoss@kernel.org>, Andi Shyti <andi.shyti@kernel.org>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Taniya Das <quic_tdas@quicinc.com>,
-	Sibi Sankar <quic_sibis@quicinc.com>, Will Deacon <will@kernel.org>,
-	Robin Murphy <robin.murphy@arm.com>, Joerg Roedel <joro@8bytes.org>,
-	Imran Shaik <quic_imrashai@quicinc.com>,
-	Mathieu Poirier <mathieu.poirier@linaro.org>,
-	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Jessica Zhang <quic_jesszhan@quicinc.com>,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	Kees Cook <kees@kernel.org>, Tony Luck <tony.luck@intel.com>,
-	"Guilherme G . Piccoli" <gpiccoli@igalia.com>,
-	David Wronek <david@mainlining.org>,
-	Jens Reidel <adrian@mainlining.org>, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-pm@vger.kernel.org,
-	linux-arm-msm@vger.kernel.org, linux-watchdog@vger.kernel.org,
-	linux-usb@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-mmc@vger.kernel.org, netdev@vger.kernel.org,
-	linux-scsi@vger.kernel.org, dmaengine@vger.kernel.org,
-	linux-crypto@vger.kernel.org, linux-i2c@vger.kernel.org,
-	linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	iommu@lists.linux.dev, linux-remoteproc@vger.kernel.org,
-	dri-devel@lists.freedesktop.org, linux-hardening@vger.kernel.org,
-	linux@mainlining.org, ~postmarketos/upstreaming@lists.sr.ht
-Subject: Re: [PATCH 20/33] dt-bindings: i2c: qcom-cci: Add the SM7150
- compatible
-Message-ID: <au80Kv5YDDtUW2L5@shikoro>
-References: <20250422213137.80366-1-danila@jiaxyga.com>
- <20250422213137.80366-4-danila@jiaxyga.com>
+	Sat, 07 Nov 2026 15:00:46 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 3D64A444F3;
+	Sat,  7 Nov 2026 15:00:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3DE181F008A1;
+	Sat,  7 Nov 2026 15:00:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794063646;
+	bh=q9Bi0tahlAuUAjwyCbyX0uGfbCI4CIe5HRgmjbxUD50=;
+	h=Subject:From:To:Cc:In-Reply-To:References:Date;
+	b=WsD2wS6ysh9jVow34VjdTGooGY00OP83R/XQCMu2NQm2eX9SkwPrDBH9tEQP/2Fxy
+	 tA/4p/pURk2t+e8jz74nN1PzwXem3+ELUQhklCvHr74DkeLuLEV55IFLlKb95YEOBA
+	 DvuPRKXBjlDW2A6vwnOqZrmKwvc44Xr7U+qy7CDw9XKwyWOYbORnkKmtok286rLGr/
+	 ubKtFoR2Wl23wbTdgZF50emAMcjEO2PIbhI3ISr0rLbkwa1PmcMrcv8e6bSBcM30yH
+	 N74TtDSd7AksIeEPRmPARZAHFnSR7u+neJDC/ZMmow6xGOnFMndM/0uOyKiN0bv3x4
+	 fOo9Ru34QWLAA==
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250422213137.80366-4-danila@jiaxyga.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261107_062246_869750_40D75DFB 
-X-CRM114-Status: UNSURE (   7.77  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
+Subject: Re: [PATCH v24 08/15] media: qcom: camss: Allow CSI2 PHY devices
+ without CSIPHY resources
+From: bod@kernel.org
+To: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
+Cc: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>, 
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>, 
+ Loic Poulain <loic.poulain@oss.qualcomm.com>, 
+ Mauro Carvalho Chehab <mchehab@kernel.org>, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>, 
+ linux-phy@lists.infradead.org, linux-media@vger.kernel.org, 
+ linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, jeyaprakash.soundrapandian@oss.qualcomm.com, 
+ Vijay Kumar Tumati <vijay.tumati@oss.qualcomm.com>, 
+ Vladimir Zapolskiy <vz@kernel.org>, Frank Li <Frank.Li@nxp.com>
+In-Reply-To: <20261102-kaanapali-camss-v24-8-d6b8f3f6f66f@oss.qualcomm.com>
+References: <20261102-kaanapali-camss-v24-0-d6b8f3f6f66f@oss.qualcomm.com>
+ <20261102-kaanapali-camss-v24-8-d6b8f3f6f66f@oss.qualcomm.com>
+Date: Sat, 07 Nov 2026 15:00:38 +0000
+Message-Id: <179406363848.650304.998225523239519511.b4-reply@b4>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=676; i=bod@kernel.org;
+ h=from:subject:message-id; bh=6ClyclcQAm9+Ak4E3bcpIWErS8e0PORFMEQJE1pwKjM=;
+ b=owEBbQKS/ZANAwAKASJxO7Ohjcg6AcsmYgBq7z0XWv6K3gNFjeKFzT8jxmV7/oCMfZT2S0yYP
+ RVlXOoywDGJAjMEAAEKAB0WIQTmk/sqq6Nt4Rerb7QicTuzoY3IOgUCau89FwAKCRAicTuzoY3I
+ OkhZD/4jKi4nBcmggrLh5V3wbJURfqY7+F2qsds1AjMnhzWgEnbOLpxYBOMZvnBY+vW2y1OfsyU
+ QvJpDc/OM2/qYwRp6QV1tYPe0+TC9w+19ius3C3jAC/1yYQxDXl8TgoiFpikfT/uY+bNv5nyKEw
+ MNrhdZWRuywfHzORCnK7q4zbX9e1OeBKfpUNJbd03GYxyHlyLrvNI6VSRtdnkGphSjUQEJKk4wz
+ 3oE2+ahrBm+EMo9xs8WZKfXC/JmUEFpTx8TvqCpYcuooRu8GP7ZBRnwu6HFyCDDR0Z5ZfBRfQ5z
+ 2FUNDUOXfYXjzicVF6KJdoEz3rcQI40V0SmAdJYTb6p2uPlUJ/xTTmEPU0hldeY3H/eudAX3nl6
+ rAdno+evM2Xj8A7hT930Xox6q5+O5dbbviua2qCteI2ReWllDKz6d2tUXcrcyJm40XJygTTBtVd
+ 7Sy2504N90w2gW/SSDBq6rTfSNCYtohqLPaKA9odxWSTQThWryIdSG+Qvqq9tmckBmXjPXntsVd
+ JVmXIcqkj0kx72vtkgCSUUxvDcZQjUHvE75YhO3Z7Ke0bBZUCjjq6hZa8enRzkFfayLzo6UfBWc
+ gorN3Yc5G3b0udGLsxGQofeUx32WLfx0z4HAT9UsGse3KYrXHACfru140ek8VwjhD5K2rhTG9nx
+ YAvJgfqXPwGNXdQ==
+X-Developer-Key: i=bod@kernel.org; a=openpgp;
+ fpr=E693FB2AABA36DE117AB6FB422713BB3A18DC83A
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,23 +100,29 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Wed, Apr 23, 2025 at 12:31:24AM +0300, Danila Tikhonov wrote:
-> Add the SM7150 CCI device string compatible.
+On 2026-11-02 02:42 -0800, Hangxiang Ma wrote:
+> From: Vladimir Zapolskiy <vz@kernel.org>
 > 
-> Signed-off-by: Danila Tikhonov <danila@jiaxyga.com>
-> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> Acked-by: Andi Shyti <andi.shyti@kernel.org>
+> If CAMSS CSIPHYs are supported by the stand-alone CSI2 PHY driver only,
+> there is no need to provide description of legacy CSIPHY resources in
+> the CAMSS driver, therefore if CSIPHY resources are not given for some
+> supported platform, use CAMSS CSIPHY port numbers as CSIPHY identifiers.
+> 
+> Reviewed-by: Loic Poulain <loic.poulain@oss.qualcomm.com>
+> Reviewed-by: Frank Li <Frank.Li@nxp.com>
+> Signed-off-by: Vladimir Zapolskiy <vz@kernel.org>
+> Signed-off-by: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
+> ---
 
-Andi already acked this, so I guess qcom tree is fine.
+Reviewed-by: Bryan O'Donoghue <bod@kernel.org>
 
-Acked-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
 
 
 -- 
