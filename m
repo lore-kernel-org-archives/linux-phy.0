@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 93AE2606A331
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9757B606A335
 	for <linux-phy@archiver.kernel.org>; Sat,  7 Nov 2026 00:27:46 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=NDSTBtoG;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=redhat.com header.i=@redhat.com header.a=rsa-sha256 header.s=mimecast20190719 header.b=E1ulno/0
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=VTIWmqQV;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=redhat.com header.i=@redhat.com header.a=rsa-sha256 header.s=mimecast20190719 header.b=aEwBouLs
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,77 +14,77 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=pp459xIT1NtDmGQfWrICXru4jghxJL9fC9sb08FjdVA=; b=NDSTBtoGW3eB/3f4H21SjD0yhl
-	fS8sWfwHqyBjLkFPQuwZuSw2vO5q2IySoyPelRNsQ3xFurdpYKSFWS/8U53CK6yG1y+My1jtOYe8j
-	c+NpWHAW1pU2HvKMcj9D3BJm1MkX/5GinHMYptgIoYczcfZXIURbVCVjdUqPkqalXVtw3wFGBEar0
-	RGzwR21Bor63ReuWpdPVah1BySqqzfsXkMByhBsMzOlfy795wX5h6eqzsxgb5tNHtxAj38WxdCiKU
-	sUSSlQnESRUenc6OiE2W/uPJkUFrM+M6TTrKIAVy5QWYEPcFcamAHLjb+cMKrc86oJgkBxJl1wvfC
-	jKrvfIuw==;
+	bh=w/g0tKFUhPjOtEt2yWdTgHm8GQQwRmLsZtPfQOjO8xI=; b=VTIWmqQVZcn7ErZZaft6rjFXjB
+	9Pc21ZpmXf1cq3D4FLiYd/xG3SN13Wr9gTXvI84qdVx6XIJ8Z3GabT0siVw0zcakKrxnJZUrTp7N4
+	thksZ8vcvIjzQ2+XrbNCaxVb1mSypyaJnciBModC7RPFNeI9dlRiOmj4Katxdd7Nank9jh84kIbrV
+	5opRNK+iMjlvah8LGZOV8bNsRf93pyZk6faCpwKl2YYbBXp0Llp63bRf8Q9U3oJ0ibYnQudTKm6Bo
+	6h0bdUPrAF67n0OYNvmI3iT4yYD0YsOtOaoA9YlnLqctm8pxFCwPTVEl1XfOD7KuqDzUzKu3RyyBr
+	M5UCs+Og==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPUHZ-0000000Dv8M-3MrN;
+	id 1xPUHa-0000000Dv8R-0cwv;
 	Sat, 07 Nov 2026 00:27:46 +0000
 Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xPUFY-0000000DuyK-2C1d
+	id 1xPUFZ-0000000DuzR-2PJG
 	for linux-phy@lists.infradead.org;
-	Sat, 07 Nov 2026 00:26:15 +0000
+	Sat, 07 Nov 2026 00:26:26 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1794011139;
+	s=mimecast20190719; t=1794011140;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=cg9pFndiAQ2c3E3VGmGq+B5hFIactzj03FyWxZNckcc=;
-	b=E1ulno/0MAXz0zUCh8mjcWzFOTjLfBQukvH38aUnCsPWHzb5/SnlTxDPXnxbkLOvVM37pW
-	mnCWoLxrNTbYnogMhHvl7dpkOqgYAb7IlEFEiafFwbbe25Xux8kHxKlSkeKdhmsK2KvFFV
-	+U5AUP859KkcEqPkZNTkfAliTRtbTnw=
-Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com
- [209.85.222.197]) by relay.mimecast.com with ESMTP with STARTTLS
+	bh=hj9ZwmouCpMroTFxCx7j3amaFop7D3wBW0J4aQmdNLY=;
+	b=aEwBouLsPQtd/dh6Ro7I6wEmzEmEMJN39Nr0Jj9wmnkMM69M4s6dfdW1jrozzKWPzhB07S
+	4V7cnQeIf21XvNnjXWf6Qy2zoeQU+gdPG913Db961rHt80UyNiyD7ybuZjaDpzJkk+TfQc
+	07AxmRrwRgwOa9eCFnUMPWKne06UKJQ=
+Received: from mail-qv1-f70.google.com (mail-qv1-f70.google.com
+ [209.85.219.70]) by relay.mimecast.com with ESMTP with STARTTLS
  (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-16-LwniLOYtOaGoj8klA3mmxA-1; Fri, 06 Nov 2026 19:25:38 -0500
-X-MC-Unique: LwniLOYtOaGoj8klA3mmxA-1
-X-Mimecast-MFC-AGG-ID: LwniLOYtOaGoj8klA3mmxA_1794011138
-Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-93cb7f9bb86so294579985a.2
-        for <linux-phy@lists.infradead.org>; Fri, 06 Nov 2026 16:25:38 -0800 (PST)
+ us-mta-650-uxe11aFHPDSuGkHYE9d6JQ-1; Fri, 06 Nov 2026 19:25:39 -0500
+X-MC-Unique: uxe11aFHPDSuGkHYE9d6JQ-1
+X-Mimecast-MFC-AGG-ID: uxe11aFHPDSuGkHYE9d6JQ_1794011139
+Received: by mail-qv1-f70.google.com with SMTP id 6a1803df08f44-91eb7d1472cso10372476d6.0
+        for <linux-phy@lists.infradead.org>; Fri, 06 Nov 2026 16:25:39 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794011138; x=1794615938;
+        d=1e100.net; s=20260707; t=1794011139; x=1794615939;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=cg9pFndiAQ2c3E3VGmGq+B5hFIactzj03FyWxZNckcc=;
-        b=gIeoSAAtHi5kYazHnkzhfkv4rv2SqabDIMAzaJdtE3W2dXmOwcCnASn3q+f1n/H4It
-         9DLe89Vj7NPwx9ZwOQHI8t9U2z+ucXgPCRviPOGFSeJjne7bUoRpIjtkLlviayWIy2kE
-         wj+QRzisZb9kgvuSJ2v+BIDBAuswvc5MFpv6lj1R52VV6pQIVVK71BSIKZHty4+YGB9O
-         71FrI1Wujgn0MGLg2TXhSB5+JIZF/33wmvPvCgYMMHID+3uarUR4Plti2pn61h3FYPCb
-         sh40fjgFU89MthL4JrtUWRfjdmF0X6JmWNU84RRsL/d3i+wP3krsEMKDiMxdQTIh2fe8
-         yHog==
-X-Gm-Message-State: APuU4Z/zGN9seajwjRF495q/b3GrC9aCGO+y1GAwXSYHfjDF2jGnFC/0
-	mWbMf8w2JceKkXJ9ZyG2oKawuMWy1Ggzpxb3FcsY2wzl9cxnzWn/4+LquuV5c796/AuHy1cKbrZ
-	2BX9PA3PYnjVtADyGAQa4H9qoNn4BfqoavX/LUcjgSKcLtzDYHyrTqFuhuzKPa/VsTJQ=
-X-Gm-Gg: AYBFou2wQttDcqm6MzuwosXFr//F1DwElqGCBibLyiNVLH9KdtzwKm6ZkJHAdmDes5T
-	irGvc6Do3bzsa/MAIrpeJB1knTArdgRNz/yNigmwcLh7us8SmJnZVZCWB0oulX1DgUKIAdEpDiU
-	6yXcIvdQ/yk1KfJg5brJDfj3HncUackutcSGTIpfzZcLWz4o9gLVff9rxMjbAztzUF6v783itsX
-	zV5Bi9OKcT9DTcGh+fEOJhP1ojetqAHPaBPlF3XZ9V7ds30O1/1t0WN7Z1FFRXPLAFZ/TDQ1Xg8
-	TDnJy17xyX6nYgnAD3ffRsKt3dnvl436We+Cm0OfbYpDZV6G/DOlyxTDtlwkvXAHFzuDSP2yi0f
-	r81nTb5oiLxJ5l55y4QhfmmyT6xZCNGpYI4T7moc9ZkE41K6i7NDGKwSFXlEJlYNkTzSYbChE7g
-	0viA9iXAvIRZtcaBkF
-X-Received: by 2002:a05:620a:414b:b0:940:f224:5a70 with SMTP id af79cd13be357-945f362ec8dmr668083085a.72.1794011137493;
-        Fri, 06 Nov 2026 16:25:37 -0800 (PST)
-X-Received: by 2002:a05:620a:414b:b0:940:f224:5a70 with SMTP id af79cd13be357-945f362ec8dmr668080185a.72.1794011137017;
-        Fri, 06 Nov 2026 16:25:37 -0800 (PST)
+        bh=hj9ZwmouCpMroTFxCx7j3amaFop7D3wBW0J4aQmdNLY=;
+        b=CsMgCOFGhNGco4gCryqcMW+qIFrNsPn5Zo9a9JAkMlvF0xkw85emOM5OsPj95Ht49F
+         PyMpM+c5qywFYqGJBK7y0r9SD5vVCUE43yDSl3480kzfPZXjU3EKKUQIQ1a0fguLKrEm
+         riHLgOxhILs5+Cs9dh4fgKMNVip9mrEAnZpFdVYPzP0Wv5q/z5PgVnHBVcqzO16Y89d5
+         bSDXIcgzjet39FZnaNLgnBcKo11Klcf+k+syiH03dAiOhxqF0sMt9qktqbC1exg/qhS+
+         nf4T0jNbEU9dFhOLT8/gEGjTivDQeDyaAEbnseTMzBC2MNd2LrtwH4R2FwPhVq1M3Azc
+         NXsg==
+X-Gm-Message-State: APuU4Z8yHq7PNDsfh7hJUvzwroYCUzNhWWdkt4UyCO87Vmb8FcJ0u6CA
+	F0Jw3/+rTgbMLNaID6ink37IpAP55/tb1NcbMiBEKhmR29bo3Wdtd/nTtzdMCjc/yLhtp713UKH
+	HloByzFl/KqprNkL4j2lJl7/XMlWVxbtLp1ETkUJVE5GGLLgFUTMP0VGj754DC1BY2Jc=
+X-Gm-Gg: AYBFou3ja0dT0Owb73XbxXSmjh95gSqk+LIiHShgEDnKdAVFTq9OG2bkPxN5bnGDZEF
+	5TY3Rs1gvipMrvvntHV6/TzGbrNpSiftOfO8VAJDCyu13Ba9r6O5w4cDSPLfAIZrshK2qfLel18
+	A68s4hETVvCczUbtmzA6gKYt/0ETfGw0KgtZ6iCds6yrJ7mqEb+tBJPVxdjuNyRXeZALpqQR1+u
+	X7/NIsKCALDlxTkFSKnqdZlNVk+0lCIFCd960R6phZt0nBKXPK8j0NbpcXOL4GDKu6wF1yQZW27
+	AJWJawRwPj/Bhdy9eli/41l6eeDyVuDgLXtKB1/Kxens0JB05bCVl6wKE5Xi6GRpmc3FD5FJTB1
+	rlVM1iKhqD03X3hGpWQsWmqZjpbE3CQDmAA6dpS0H9EkN2cMOxIdd9Dfc3kNefl6AiDQSeKVjc0
+	0D9+PL1mBvoO9Fc9yl
+X-Received: by 2002:a05:6214:43c1:b0:91e:a476:1117 with SMTP id 6a1803df08f44-91ea9282be3mr63164206d6.8.1794011139032;
+        Fri, 06 Nov 2026 16:25:39 -0800 (PST)
+X-Received: by 2002:a05:6214:43c1:b0:91e:a476:1117 with SMTP id 6a1803df08f44-91ea9282be3mr63163896d6.8.1794011138393;
+        Fri, 06 Nov 2026 16:25:38 -0800 (PST)
 Received: from bmasney-x1.rmtuswv.csb ([69.43.42.202])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-91ea6ab543csm32089856d6.39.2026.11.06.16.25.35
+        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-91ea6ab543csm32089856d6.39.2026.11.06.16.25.37
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 06 Nov 2026 16:25:36 -0800 (PST)
+        Fri, 06 Nov 2026 16:25:37 -0800 (PST)
 From: Brian Masney <bmasney@redhat.com>
-Date: Fri, 06 Nov 2026 19:25:20 -0500
-Subject: [PATCH 1/2] phy: ti: omap-control: convert to
+Date: Fri, 06 Nov 2026 19:25:21 -0500
+Subject: [PATCH 2/2] phy: ti: phy-twl4030-usb: convert to
  subsys_platform_driver()
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261106-phy-subsys-v1-1-9a443422e563@redhat.com>
+Message-Id: <20261106-phy-subsys-v1-2-9a443422e563@redhat.com>
 References: <20261106-phy-subsys-v1-0-9a443422e563@redhat.com>
 In-Reply-To: <20261106-phy-subsys-v1-0-9a443422e563@redhat.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -93,21 +93,21 @@ To: Vinod Koul <vkoul@kernel.org>,
 Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
  Brian Masney <bmasney@redhat.com>
 X-Mailer: b4 0.17-dev-d96cb
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1051; i=bmasney@redhat.com;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1009; i=bmasney@redhat.com;
  s=20250903; h=from:subject:message-id;
- bh=lQFgVtCGl8A4/MEJxmwBSoolju9xUsS+nYB3gk5iu1Y=;
- b=owGbwMvMwCW2/dJd9di6A+2Mp9WSGLLe5f92P9xRvnqXvmvGY4lpy9fEnG9ha2A5YVP/xY5jB
- 8ODdp/VHaUsDGJcDLJiiixLco0KIlJX2d67o8kCM4eVCWQIAxenAEzkjTXDf487H5qm/Q4O5Awy
- 6nr7LdT8x6FcjmOHDxx+8Zz53fU5jIsYGZofn9rO4cI4ec7Msi8SMhs+ThbvNtX4zmhx19cw8Ex
- iKxMA
+ bh=R6c0upgxMnhNhVwmId++8F/tWpVwHZnybYHMR5t1NBk=;
+ b=owGbwMvMwCW2/dJd9di6A+2Mp9WSGLLe5f/JX9du9+LnhuTTrz+mRqQtfCVioHPZYfs8Oev7j
+ zdeZdR37yhlYRDjYpAVU2RZkmtUEJG6yvbeHU0WmDmsTCBDGLg4BWAivOYM/11KtQPD3uxYKdRz
+ MeiDsErA5ax/r+bLS8oZmz/STH+8soyRYasHs59b3aKw7ZrrE3/MEOAp05LPX3xrQaYMj3VQyL5
+ tLAA=
 X-Developer-Key: i=bmasney@redhat.com; a=openpgp;
  fpr=A46D32705865AA3DDEDC2904B7D2DD275D7EC087
 X-Mimecast-Spam-Score: 0
-X-Mimecast-MFC-PROC-ID: -_l2J7CghHgqc9_zysSZGaIRw7k8SEOovXePGt3ELds_1794011138
+X-Mimecast-MFC-PROC-ID: _oNEiJm97pI2G2Ty4YtIY_MJPonepBq24XlAR2ub3Vs_1794011139
 X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261106_162603_864328_EF20A738 
-X-CRM114-Status: UNSURE (   8.90  )
+X-CRM114-CacheID: sfid-20261106_162603_862921_4AB86693 
+X-CRM114-Status: UNSURE (   9.01  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
@@ -134,32 +134,32 @@ the macro subsys_platform_driver().
 
 Signed-off-by: Brian Masney <bmasney@redhat.com>
 ---
- drivers/phy/ti/phy-omap-control.c | 12 +-----------
+ drivers/phy/ti/phy-twl4030-usb.c | 12 +-----------
  1 file changed, 1 insertion(+), 11 deletions(-)
 
-diff --git a/drivers/phy/ti/phy-omap-control.c b/drivers/phy/ti/phy-omap-control.c
-index 4968434312f8..3747401600a6 100644
---- a/drivers/phy/ti/phy-omap-control.c
-+++ b/drivers/phy/ti/phy-omap-control.c
-@@ -322,17 +322,7 @@ static struct platform_driver omap_control_phy_driver = {
+diff --git a/drivers/phy/ti/phy-twl4030-usb.c b/drivers/phy/ti/phy-twl4030-usb.c
+index a26aec3ab29e..08aaf0f8712b 100644
+--- a/drivers/phy/ti/phy-twl4030-usb.c
++++ b/drivers/phy/ti/phy-twl4030-usb.c
+@@ -841,17 +841,7 @@ static struct platform_driver twl4030_usb_driver = {
  	},
  };
  
--static int __init omap_control_phy_init(void)
+-static int __init twl4030_usb_init(void)
 -{
--	return platform_driver_register(&omap_control_phy_driver);
+-	return platform_driver_register(&twl4030_usb_driver);
 -}
--subsys_initcall(omap_control_phy_init);
+-subsys_initcall(twl4030_usb_init);
 -
--static void __exit omap_control_phy_exit(void)
+-static void __exit twl4030_usb_exit(void)
 -{
--	platform_driver_unregister(&omap_control_phy_driver);
+-	platform_driver_unregister(&twl4030_usb_driver);
 -}
--module_exit(omap_control_phy_exit);
-+subsys_platform_driver(omap_control_phy_driver);
+-module_exit(twl4030_usb_exit);
++subsys_platform_driver(twl4030_usb_driver);
  
- MODULE_AUTHOR("Texas Instruments Inc.");
- MODULE_DESCRIPTION("OMAP Control Module PHY Driver");
+ MODULE_ALIAS("platform:twl4030_usb");
+ MODULE_AUTHOR("Texas Instruments, Inc, Nokia Corporation");
 
 -- 
 2.56.0
