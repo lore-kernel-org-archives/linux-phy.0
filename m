@@ -2,53 +2,53 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8B44A606D82B
-	for <linux-phy@archiver.kernel.org>; Sun,  8 Nov 2026 15:44:02 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7F848606A321
+	for <linux-phy@archiver.kernel.org>; Sun,  8 Nov 2026 15:44:05 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Wp7XH5W+;
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=chaosmail.tech header.i=@chaosmail.tech header.a=rsa-sha256 header.s=mail header.b=huDZ8nUu
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=vpzjHzc2;
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=chaosmail.tech header.i=@chaosmail.tech header.a=rsa-sha256 header.s=mail header.b=nl6dS3AY
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=sOT82jG6L4HaHB3dhGkEL0pCdt7gj0KE8mU+/nunFeM=; b=Wp7XH5W+zXsssP1iKfF1/lhRcb
-	lQfI6s+GcybJOPwP7Jbzm9yFwr3bOcA98gkjSmKBussWQdsq+CWp/P24fkGbdz6h9oeaaeEihEC51
-	fggxfAnGpqCe0aQnuphP5P4KJLYmjdtdE8UzfAlWRK3qhewLJ0yqvic5+7AXjeK5xNtCoEEAA748f
-	fBOdhxDusyoK/lC7JsW9WnzoxQw3MPHZLP/LsY0j2lg0W8v/BA4l6Yv05zNWurg9H/uHce4TKVCz0
-	fgw4w5FZ54UQgSpPOxeY3zgO+CmttwJJN+fE4zVo9vJsw1P39CMMv9fNLu+XWsozefni1/v8Nry2H
-	Eja2I5Hw==;
+	bh=jCgk7IfBc+MVUNuRpj2e2/xAXIJzQiLuzMTflXlX4mc=; b=vpzjHzc2T0JVVCWf2HOIPwixf9
+	UUYREsxAyXpqSZ2yD5mCcwYHk0FiBAETSDBaowJ4QEs/r7gb3asOb+xWpinXaQ1xNoNVvhCjHY52P
+	ex1YiwWQNGbQMfr6QtW4iNQsEgjmqN1DnjG8AcGkiuGCHf5+z9+4DTH+3yOWe/SOxPSyoyNON+0E6
+	EbG3In1rVUPuuQTFqrVFtiY460mAznRaIB0OFBKrCwjElC7uMoTeFffG14orHoezBGa6Doc3DTLrB
+	vtdvjmOzqgKK7fi7iNnHxU2HAzlvqK9xWF8/GlmQHmKcLJ0bh+LDeas7Y5DlY4p/I5LU5Um4dVHDj
+	K/lTbQcg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQ53q-0000000GKCf-0Ako;
-	Sun, 08 Nov 2026 15:44:02 +0000
+	id 1xQ53t-0000000GKEI-11Vh;
+	Sun, 08 Nov 2026 15:44:05 +0000
 Received: from chaosmail.tech ([77.81.229.115])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQ53n-0000000GKB9-0ajT;
-	Sun, 08 Nov 2026 15:44:00 +0000
-Received: by chaosmail.tech (Postfix) id C78E41C9690;
-	Sun, 08 Nov 2026 15:43:55 +0000 (UTC)
+	id 1xQ53n-0000000GKB7-0Zwt;
+	Sun, 08 Nov 2026 15:44:01 +0000
+Received: by chaosmail.tech (Postfix) id 0C32A1C8E49;
+	Sun, 08 Nov 2026 15:43:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chaosmail.tech;
-	s=mail; t=1794152636;
+	s=mail; t=1794152634;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=BbD1zRVt830j/6FEa37AOCaw0v+voPN0QhLYn1eKXlw=;
-	b=huDZ8nUuPuZlPb6rGLkG1O4TRZLhCNdhU3ucOKG6n0lWUUx2S5JsWS5CJngKz9jYDsQKNI
-	RTBqGyiSCAm/z+ocJdazN8jIFEQ5VF/sql5oCbWyBWbCPU+zTq8EHnRJOQbzVTF8LPG+sg
-	ajjFyLbumfQ+fc622LVdi19Pj2amQks=
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=Eo1ZaLZZrfd/YOlbBrEYtHL95TbpUNio/UU04zuP9t4=;
+	b=nl6dS3AYWV/kVOO5HGd7Dj5S0JlGe481c0Lj7hBqwgRj8RGTMR0ByIaCbWv2fNCtbpkgHW
+	+So4qaocJFPMB3Gtr3UJBJxtPd7+tjmz6KJo7Paw+IpDnHVfAqJRnRya5AYj5BdoyKhsMI
+	iXV2Vq+ibylYrU4s8Rt7HxMNZYkD5M8=
 From: Sasha Finkelstein <k@chaosmail.tech>
-Date: Sun, 08 Nov 2026 16:43:41 +0100
-Subject: [PATCH 2/4] soc: apple: tunable: Allow passing NULL to
- tunable_apply
+Subject: [PATCH 0/4] phy: apple: atc: Add M3 support
+Date: Sun, 08 Nov 2026 16:43:39 +0100
+Message-Id: <20261108-t8122-phy-v1-0-c2783b2a53a8@chaosmail.tech>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261108-t8122-phy-v1-2-c2783b2a53a8@chaosmail.tech>
-References: <20261108-t8122-phy-v1-0-c2783b2a53a8@chaosmail.tech>
-In-Reply-To: <20261108-t8122-phy-v1-0-c2783b2a53a8@chaosmail.tech>
+X-B4-Tracking: v=1; b=H4sIAAAAAAAA/yXMQQ5AMBBA0avIrDXplAiuIhY6BmOBtAgRd1csX
+ /LzL/DshD2U0QWOd/EyTwEYR0BDM/WspA0Go02GqHO15miMWoZTWUqw0GSpoxRCvzju5PheVf3
+ bb3ZkWt8B3PcDTMf27m0AAAA=
+X-Change-ID: 20261108-t8122-phy-bc3190cbcfc4
 To: Sven Peter <sven@kernel.org>, Janne Grunau <j@jannau.net>, 
  Neal Gompa <neal@gompa.dev>, Vinod Koul <vkoul@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>, 
@@ -57,17 +57,18 @@ To: Sven Peter <sven@kernel.org>, Janne Grunau <j@jannau.net>,
  Conor Dooley <conor+dt@kernel.org>
 Cc: asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, Sasha Finkelstein <k@chaosmail.tech>
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1794152633; l=646;
+ linux-kernel@vger.kernel.org, Sasha Finkelstein <k@chaosmail.tech>, 
+ Ramzi Abdiche <abdicheramzi@gmail.com>
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1794152633; l=1027;
  i=k@chaosmail.tech; s=20241124; h=from:subject:message-id;
- bh=tJNNb61/4tJlpWC0322q+2yhiEktKqEr06Kk4Nb8njs=;
- b=Q8GuumKxSRJxH3/hIEU8kY4tFaiOjpFlNYj/mZ2ub8pRKuOc3ltoadcpa/bQmxdShKxgw3ZBX
- /LrSZ2tyatlDpIPr0JELHxr0HnoY+DCdWyp7P+Phi1JlHndc2XMp4nG
+ bh=hj5BkU6UvfYLxZj+OaIPtriXpAtA2vo4TSElMSijvvY=;
+ b=nQm+YUCRhVUPUAOxMfU4UtWOOrV/vO1wbquxn7QSjkoYHDo+taxeGoi8dy1tOQ5fH/1XSC1+I
+ ECVeJaXMMOiDZzzOFYpPVO+GXHAKDfgY8eaooj2qmgy/8B1Mt18ttb1
 X-Developer-Key: i=k@chaosmail.tech; a=ed25519;
  pk=aSkp1PdZ+eF4jpMO6oLvz/YfT5XkBUneWwyhQrOgmsU=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261108_074359_642986_41011B95 
-X-CRM114-Status: UNSURE (   8.25  )
+X-CRM114-CacheID: sfid-20261108_074359_641817_28618A96 
+X-CRM114-Status: UNSURE (   7.30  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
@@ -89,30 +90,34 @@ X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Make it easier to have optional tunables by tolerating NULL entries and
-doing nothing when one is passed
+The M3 series introduced a new Type-C phy. Add support for initializing
+and configuring it. This is one of the puzzle pieces needed for
+USB3/TB/DP support on those devices.
+
+To simplify the merge strategy, the device tree entries will be sent
+in a future patch series.
 
 Signed-off-by: Sasha Finkelstein <k@chaosmail.tech>
 ---
- drivers/soc/apple/tunable.c | 2 ++
- 1 file changed, 2 insertions(+)
+Ramzi Abdiche (1):
+      phy: apple: atc: Add T8122 DisplayPort support
 
-diff --git a/drivers/soc/apple/tunable.c b/drivers/soc/apple/tunable.c
-index 659323839171..e89e8f9bb455 100644
---- a/drivers/soc/apple/tunable.c
-+++ b/drivers/soc/apple/tunable.c
-@@ -63,6 +63,8 @@ void apple_tunable_apply(void __iomem *regs, struct apple_tunable *tunable)
- {
- 	size_t i;
- 
-+	if (!tunable)
-+		return;
- 	for (i = 0; i < tunable->sz; ++i) {
- 		u32 val, old_val;
- 
+Sasha Finkelstein (3):
+      dt-bindings: phy: atcphy: Add M3 series
+      soc: apple: tunable: Allow passing NULL to tunable_apply
+      phy: apple: atc: Add initial M3 series support
 
--- 
-2.56.0
+ .../devicetree/bindings/phy/apple,atcphy.yaml      |    6 +
+ drivers/phy/apple/atc.c                            | 1021 ++++++++++++++++++--
+ drivers/soc/apple/tunable.c                        |    2 +
+ 3 files changed, 924 insertions(+), 105 deletions(-)
+---
+base-commit: 6628e7d4c6b25c8d18f1345e3a20d21829aae7e4
+change-id: 20261108-t8122-phy-bc3190cbcfc4
+
+Best regards,
+--  
+Sasha Finkelstein <k@chaosmail.tech>
 
 
 -- 
