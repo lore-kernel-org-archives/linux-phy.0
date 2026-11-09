@@ -2,112 +2,148 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1778B606A321
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Nov 2026 01:13:13 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5C1A0606A31C
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Nov 2026 02:21:04 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=NNOozv4C;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jpvTyjk/
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=3tpU4rj2;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=Xq4YDBbg;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=aIq5oInm
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version
-	:Subject:Date:From:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=P6ARbXMMbwJv++EEuovTXHKTECL/oL9uUPFZzWpKoDQ=; b=NNOozv4CWJP1slOL1gyS4fdeY5
-	oD2RnyQeQ2CkNXjR5QuAcHBIeqa5kvbQ8CjaHU6yCdZSdk9bX9Uwl1/qMcV28RPI0KfWiM/Iz9IKq
-	6FKvI48nX67pblW515932Xo7bYaoJZffDCTQBDJGLj1VCC0Oxn7pasL8bqNfJHWZHgJSW3H1+4xZ0
-	kFmsmMstUZRLootHR2Z8TtsZjSrEw3UNzJ93AO4f6VjlNPGA2f2yGgDlUhGzoIJFaTVQDuj438mjr
-	HFEPAWwiu6DI1uqsoBb8Hvlqupw0APzGzFsCkjfQiZryV0ZroDQDLKvxesYUqR2fZ4QHtZkvPUEm4
-	wO3EKOlw==;
+	bh=tWAhBYL6I931zWDPcvu7UPDy9YuhuLkIDBpRJWKwwAw=; b=3tpU4rj21EpsqIei14ZN9Fqmml
+	vIHulpD7gV3SwnGHBA9kVHdNFSX8TUHCU1xN/lkgY2GE8+9+5JUkndokJZGb+0A4l/zTamF5JL5qZ
+	6UWDeqALjXrzt/38xQj/0tHaKcTgOJHR+vjFtT5r5QpL9IYSIMHG5hcEosewMXb799dWZSRKYYiur
+	UyFuClf9Yd/VUn8HWOBLk2YkpmIZCkBym2d5N2hccu6aIcVObM72QsOfZdHnTX2Z4si/TtAtaqcJH
+	DSzOMdDTNmKj2/bfDvxG1qLvjR5456+YW0xAMzHu5Wb34QlAazzjaNr2j324ag8A63IXm93n6B7Yt
+	TIk8jpnA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQDwe-0000000H11V-2kwM;
-	Mon, 09 Nov 2026 01:13:12 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xQF0J-0000000H7CD-3xkQ;
+	Mon, 09 Nov 2026 02:21:03 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQDwc-0000000H116-20Ac;
-	Mon, 09 Nov 2026 01:13:10 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 9C3776111B;
-	Mon,  9 Nov 2026 01:13:09 +0000 (UTC)
-Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
-ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1794186789;
-	b=HqkDk+o/mRP/jzqyr8a0kQjiVo2O0bzD3K+K297/YODfcHJ5FQMKWHDOZqpdiRaihCrH
-	 tRCX8JFAQKJxkujgV5UhOeCN4uDBShEHPxLrzv/5DHgiguJr1GEioElfqKSKh3fA2L2DN
-	 tDJf5cTcpYajht/2GJzNS0OQsIPjTU1KqxbpiX5mFOo7sVfD+BLKAQkW4NtpoIntXojFo
-	 UEtMAjHS+tcBWAZmBtC4mDo8GAowqJa99Fwp4Ld30JTzMGnQTR6x9HM+9yBN7nyXhgniN
-	 4OycmrkjfBoEGxJXUDP+4ZcCuppJxgpjTl4pnMMw9p2Ewf3ARVgEd02CxFgmkbCoBhw==
-ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1794186789;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:X-B4-Tracking:X-Change-ID:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=M4WCF4P9vPVA9cU7Tv+J0UseXV6GQroxb3gEfse06vk=;
-	b=VQo3GHlgP35LXmM7hBUfgV70W2wEUyNH0MnGolCflW0hlwFnQypfLh9uDHaymwYlOSjF
-	 86Rcr+rfRLDat7/4TZ5eWJMvrQKqWI1jJVK3adaPtH1ohwTC657hHto8hHJmk5gajCyOU
-	 58wnCeAYT6KogkXeWp0o/1pvQ6vfEpf8HG56iS3SxyBJgzM9JMl/IV9qS4C1pFj0+Zp5a
-	 Q+iTaHOGHF+xGo8CVT4xbglaIf3wW1tIKwpopn2zulJCzWl+DlcaEPLbOkeMn74ptPKR5
-	 4qr35BH4AbBWiz7SHa44Tx5KRo8lJcCE7lNwmWcjeOCZBHonA1vPlsiTV79cDntWTKw==
-ARC-Authentication-Results: i=1; smtp.kernel.org; 
-	arc=none smtp.remote-ip=100.80.115.77
-Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 9D2A21F0089F;
-	Mon,  9 Nov 2026 01:13:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794186789;
-	bh=M4WCF4P9vPVA9cU7Tv+J0UseXV6GQroxb3gEfse06vk=;
-	h=From:Date:Subject:To:Cc:Reply-To;
-	b=jpvTyjk/fb0I/liZiqB24WRLZW+AxBb1dpFfOqONpXGH+X2CdbOKBf0xtWf9c0aGz
-	 b2K84UT6bzyNB/ktSdNBIKpWpPNyQbz6iqYut730z+C4jLvdRhx7Qi6Kzi9HEqys8q
-	 GrLfFAXOYqStJD3owU6ZPLTLy/906+fHnFffpux3Za1T8RCZwwkTQMKbvvchD+JA3p
-	 IPkhPGeOWCng9JJw57TzSCUMJ5kiw5hTWRA/V9qmR1bvr/zDZTXQc82ZctC4D//WHw
-	 b785I1BBopf5RLI6i+/b5OQYS0mZp5INxPRcE8s6uOUmh4xPXoViy1x0RM5HQQXV8Q
-	 FvyW7af9dezPg==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id E5336481E7;
-	Mon,  9 Nov 2026 01:13:07 +0000 (UTC)
-From: Ricardo Pardini via B4 Relay <devnull+ricardo.pardini.net@kernel.org>
-Date: Mon, 09 Nov 2026 02:12:47 +0100
-Subject: [PATCH] phy: rockchip: naneng-combphy: fix RK3588 SATA pipe_con1
- register offset
+	id 1xQF0H-0000000H7Bt-1sD6
+	for linux-phy@lists.infradead.org;
+	Mon, 09 Nov 2026 02:21:02 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A90Go3O2359072
+	for <linux-phy@lists.infradead.org>; Mon, 9 Nov 2026 02:21:00 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	vTHCJSTydXzyoZqC+6clQ/H8kutgx2FD4bqzC+SBHLQ=; b=Xq4YDBbgOranx0+u
+	WArNa9ZawxoY9HxYffDHwnZ+aN6p9hVwn/tSbbRi/E0PQBLz4UzNwokfi4UFpu6H
+	CgG8kDSx4KUjuuQj/VzluU+ePM+0JJ1TTl9zwObGSrPYYNlZyKTabIApp6n1hIPS
+	DOcHxxiGDwblZqf6TA2pAooDOHwR8N8fN+JrozW4MFB3ObLaKne3DGoU47TdFuo5
+	q/HevaVpCn86rpqewqN/TR3u2pPIBzpREilS4A2FByUovbd9ixydMNYxL4SqQMPj
+	XhlDThZWiEAw2jDAaZYoBCDHGfabnNciA/51OF7rdTn0mXI3URgdarXMuqYsa6AU
+	L4XhsQ==
+Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hsvrev67q-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 09 Nov 2026 02:21:00 +0000 (GMT)
+Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-3ae19907a31so318934a91.0
+        for <linux-phy@lists.infradead.org>; Sun, 08 Nov 2026 18:21:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1794190860; x=1794795660; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=vTHCJSTydXzyoZqC+6clQ/H8kutgx2FD4bqzC+SBHLQ=;
+        b=aIq5oInmNPILakXNtTOBONLNAcgQVORuvIs39qqAWR1YzTshuZ8Mhk4RkOLs4pv7uZ
+         YxknpB6MJIQ+rSk6hmPcZbmribDcNnDW+Xybfhtsgfti1Ox4AtXCVzPiQ3cGzAk1B2R0
+         r0tlbMjj+vlTPuvMlFxNgynEck2tFb4j/yOYtbHd/GBH+QfxINhRAux1xC/bqZPEhDqI
+         twKHDOtxVesJRNfhMQcYrRLgTMFITRjfSEZgT9NQpZvQr/7ZtvquN3dUisl66yahkgk4
+         4uFQtbtztpM6ADqDK+twlUojU3NkdVKg8RF0ePfKKRDn9u4evX27+Ey6Fr2wYfzyijKp
+         QQjA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794190860; x=1794795660;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=vTHCJSTydXzyoZqC+6clQ/H8kutgx2FD4bqzC+SBHLQ=;
+        b=G/k8NWNEV99WMiaUQhUK1U3ZBdC9W+Oz0wqlD/JIzGs7diS/UtaOrvg+WvlKQZ4RkZ
+         wLtYvw4skbbAH9yvWPFC6z3hUoj3aKUy5EbJpbUj1naepCR8ddtBO1VTEkJXShE50ePb
+         X8y1VX/gaQf1lBbPsLkiNhTVpS2CXecHmM6ocztW6Vv5rC2PQjDZ5Ts8w4dFvpap2IpI
+         gd6P1Jbr7/xkPUDOsQ7DUQvp8ow4Tn0tIRLvkUxORUqEIkkaCK3Dc2vG94Vd5qca3UCF
+         GVIpjFBvxLbrbdkYge/91F32ov5og4/FTqQeFukmQrrPZgbfFKlqatMUU9GQQIyfqFK3
+         a3EA==
+X-Gm-Message-State: APuU4Z+f710lmxV0FFLgODqgsAfgmqDhvbgrnR85F4gBoMaZep+xGdD4
+	9GDxjH6OGuiGl8BEPODnWn7qS14qZ8xc+qOX6MVuXVnN7Z5/VfZ4BMuHmCi6Ovl5UeR6bPte5Ll
+	g2wp08f5rTHLb/VuYVQDEWhVqYMVOPgpiwdGQHvaUjosnJSdZRNlEWfVQZOMeaa7HrRNkCRmZYb
+	Gc
+X-Gm-Gg: AYBFou0Mfd4bIhEQ88O3A6WGGkJyfx9CvKQUTqBWg/dlYwe9qquu/07I44ufgx2NBBu
+	hvdKESrI446Hv1Wdip+lx2YxBzd+6gWEQLZx3yd+pT98jCcXlu9bs3fBzruXhRVTHvFFJwUanAj
+	8jTVBbT5uKKtiVCl+8fOgeq5pUl41lRzFossWaPakw7iBzVcLO9KGyAHqGsWjWy5FALtG+nJ89p
+	Z5iUljoSA4jUeuK6uA5vros1rXL/CdouGI0Na6IYfMq1OFXXfZgN1OIh4ZHC/M95Yl2nUZjau9I
+	xU+wV4YsYyA2BLVadN1pDm5Y9h0PAPbYPRScIGBYZpD8xsQqjgXaQp/94DnyQ17hzPwOMGdwguU
+	fEXt4kXRiGOx2Zq3BafBGXrmomitZkhDd10ozi70a2GNRy5VClOvg0lcp7fnI4QUT0+KGpncMy+
+	oDyQm7FhcFuIwtUW3rFXTaHXJus6CAW5Eu
+X-Received: by 2002:a17:90b:2588:b0:3ae:3b3d:c617 with SMTP id 98e67ed59e1d1-3b12d54a316mr2013096a91.29.1794190859708;
+        Sun, 08 Nov 2026 18:20:59 -0800 (PST)
+X-Received: by 2002:a17:90b:2588:b0:3ae:3b3d:c617 with SMTP id 98e67ed59e1d1-3b12d54a316mr2013087a91.29.1794190859258;
+        Sun, 08 Nov 2026 18:20:59 -0800 (PST)
+Received: from [10.239.96.176] ([114.94.8.21])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b1032b8c55sm4961050a91.2.2026.11.08.18.20.55
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 08 Nov 2026 18:20:58 -0800 (PST)
+Message-ID: <f5a3fbf4-a7fe-429a-89d2-7334a2375da4@oss.qualcomm.com>
+Date: Mon, 9 Nov 2026 10:20:54 +0800
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261109-rk3588-combphy-sata2-6g-v1-1-e9135c91de6a@pardini.net>
-X-B4-Tracking: v=1; b=H4sIAA4e8WoC/yXMQQ6CMBBA0auQWTtJO7WEeBXjoq0jDEYgHTQQw
- t2tsnyL/zdQzsIKl2qDzB9RGYcCe6ogdWFoGeVeDGSotobOmJ/ONw2m8RWnbkUNcyCsWzQuRme
- st94TlHrK/JDlf77eDus79pzm3w72/QseLD3mewAAAA==
-X-Change-ID: 20261024-rk3588-combphy-sata2-6g-03bb30151552
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
- Andrew Powers-Holmes <aholmes@omnom.net>, 
- Lucas Tanure <lucas.tanure@collabora.com>
-Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
- stable@vger.kernel.org, Yifeng Zhao <yifeng.zhao@rock-chips.com>, 
- Ricardo Pardini <ricardo@pardini.net>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3342;
- i=ricardo@pardini.net; h=from:subject:message-id;
- bh=jlST7yEBtCPASzfQnAPw8q1ZkwqNOjqfjEA41xMvY/o=;
- b=owEBbQGS/pANAwAKATteP+Oex+3pAcsmYgBq8R4jm7OV4UEZAdR8JkXG5eZsGJPwj1sBnGC/K
- PdtxEN5/k2JATMEAAEKAB0WIQSsGCMM9q/qytxIiJM7Xj/jnsft6QUCavEeIwAKCRA7Xj/jnsft
- 6WQWCACpnX6vXbIOFFGIjGte8vXc9/ErH0o2XWlf2nqbLvgp3rSw6bTjqbhrhX2OuywVjojnqh/
- 6khuk8OfiBwqUFDKqwYmRTGWr4BoABoM87ivNn5mXU8R6p1EugVNX5uNqfvYHzXGp1kRDtZWEcG
- DHJ2gacTWr5D86YdFw3279g8y+yn1/hXblWc/9e8TR36+3deh/cODH5k8diskaURtUdcMgCseDP
- j4W0w21u2FWlsKGALXGoTfaHR/H0NgGohEW+dYv59PxHSvnCqUOXy/Fso9MjgvVaF/tfwXWeO2k
- dPzwqX2nK64jpCTrxJDlRrSJJ+FOFvHLR3KobzP7R+bVxTuv
-X-Developer-Key: i=ricardo@pardini.net; a=openpgp;
- fpr=AC18230CF6AFEACADC4888933B5E3FE39EC7EDE9
-X-Endpoint-Received: by B4 Relay for ricardo@pardini.net/default with
- auth_id=588
-X-Original-From: Ricardo Pardini <ricardo@pardini.net>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v24 11/15] media: qcom: camss: tpg: Add support for v2.4.0
+ TPG
+To: bod@kernel.org, sashiko-reviews@lists.linux.dev
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, robh@kernel.org,
+        conor+dt@kernel.org, media-ci@linuxtv.org, vkoul@kernel.org,
+        neil.armstrong@linaro.org, olteanv@gmail.com
+References: <20261102-kaanapali-camss-v24-0-d6b8f3f6f66f@oss.qualcomm.com>
+ <20261102-kaanapali-camss-v24-11-d6b8f3f6f66f@oss.qualcomm.com>
+ <sashiko-outbox-193294@kernel.org>
+ <179406416444.650304.12581893664974319470.b4-reply@b4>
+Content-Language: en-US
+From: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
+In-Reply-To: <179406416444.650304.12581893664974319470.b4-reply@b4>
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTA5MDAwOSBTYWx0ZWRfX9OgUSjBw8O21
+ JNmIJCS40ThYtLX9DbLG8Hpz4bCAnc86xXBESo6YmMwV9b0PEDGDJaBvrbPx1cx/LalUZ3YM9co
+ 20VpgOsluRD4m3uQwXUViu6wMXEggyo=
+X-Proofpoint-GUID: 2l8nHDzl9KQvKOsfOqvus67vOO_p83QZ
+X-Authority-Analysis: v=2.4 cv=FrKQbGrq c=1 sm=1 tr=0 ts=6af12e0c cx=c_pps
+ a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=Uz3yg00KUFJ2y2WijEJ4bw==:17
+ a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
+ a=VwQbUJbxAAAA:8 a=c92rfblmAAAA:8 a=EUspDBNiAAAA:8 a=VNQ3AZqY8Cfn8RaTT-QA:9
+ a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=uKXjsCUrEbL0IQVhDsJ9:22
+ a=GvGzcOZaWPEFPQC_NcjD:22
+X-Proofpoint-ORIG-GUID: 2l8nHDzl9KQvKOsfOqvus67vOO_p83QZ
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTA5MDAwOSBTYWx0ZWRfX0xQRkz1LPlJE
+ XRhC6cBk5qSDehH0Q8she+FochQdnz5ycuMoXxqQGgVhkDotTCwY9L20tjrayQe2xGrieXPPlXs
+ 0CRhvvCHC2IH1gHgjHkLYgVPHUae9tO/cZ2Kn/VdSd6/zObIwng7S5TJ1awREtJ16u6wIIFH9NF
+ /NwJx5O4skd3Wn812sWf7TZ3eVTX1F30ptSKc9flr6hcUnUnr6mI6GNSm/hCqItgCubiB94Oa03
+ gRWK3E7nLdsk+pcaYDMLJZe51ePdGGWBiavaVipk7rUjMEBs9JefeF6vBJ0fwzwN6DJ7moNytLA
+ q9JtlIQ0aVE3/CkJFEesr/lShXaTX9770UjSG3kfpTmbnt5A+uUfVbXiwoJXzgTUH4XfvlZNYoU
+ QdUNXWBVapHg0X3XmY3uTJ+m54ac0emfJlox/XMDrf1xM4kFNTlJAZAGi0ASZ5OLhVMaAJyCflu
+ UTbapi5Jn5sT9PZco9A==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-11-09_01,2026-11-06_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ phishscore=0 clxscore=1015 spamscore=0 priorityscore=1501 impostorscore=0
+ malwarescore=0 bulkscore=0 lowpriorityscore=0 suspectscore=0 adultscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611090009
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261108_182101_491214_4114D213 
+X-CRM114-Status: GOOD (  18.67  )
+X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,98 +153,67 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: ricardo@pardini.net
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-21.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
-	autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: Ricardo Pardini <ricardo@pardini.net>
-
-On RK3588, the sata2 PHY speed is selected by sata2_phy_spdmode in
-PHP_GRF_PHP_CON1[1:0] (offset 0x0004), with sata2_phy_rx_err in bit 2.
-rk3588_combphy_grfcfgs has pipe_con1_for_sata at offset 0x0000 though,
-so the value 0x2 (6.0 Gb/s, rx_err cleared) ends up in PHP_GRF_PHP_CON0
-and CON1 is never written.
-
-This leaves sata2 at its 1.5 Gb/s reset value, so the link only trains
-at 1.5 Gb/s, even with a 6 Gb/s capable disk and no SControl speed
-limit. sata0 and sata1 are not affected: their speed fields are in
-PHP_GRF_PHP_CON0 and are set by pipe_con0_for_sata.
-
-The register layout is described in the RK3588 TRM V1.0 Part1, section
-6.17 "PHP_GRF Register Description". Rockchip fixed this in their BSP
-kernel in 2022 by moving pipe_con1_for_sata to offset 0x0004.
-
-Tested with an mSATA SSD on sata2 (combphy2_psu). Before:
-
-  ata2: SATA link up 1.5 Gbps (SStatus 113 SControl 300)
-  Timing O_DIRECT disk reads: 374 MB in 3.01 seconds = 124.45 MB/sec
-
-After:
-
-  ata2: SATA link up 6.0 Gbps (SStatus 133 SControl 300)
-  Timing O_DIRECT disk reads: 1266 MB in 3.00 seconds = 421.78 MB/sec
-
-Fixes: a03c44277253 ("phy: rockchip: Add naneng combo phy support for RK3588")
-Cc: stable@vger.kernel.org
-Link: https://github.com/rockchip-linux/kernel/commit/2f5fe2c0bbd4fa95102aadd60da1100989103aa0
-Cc: Yifeng Zhao <yifeng.zhao@rock-chips.com>
-Signed-off-by: Ricardo Pardini <ricardo@pardini.net>
----
-This fixes the pipe_con1 GRF offset for SATA in the RK3588 combphy
-table, so sata2 links train at 6 Gb/s instead of being stuck at
-1.5 Gb/s.
-
-I found it when an mSATA SSD on sata2 would only link at 1.5 Gb/s,
-and traced it to Rockchip's BSP kernel, which fixed the same offset in
-2022 in a commit titled "config sata2 rate to 6G for rk3588" (linked
-in the patch). The RK3588 TRM V1.0 Part1 (section 6.17) agrees:
-sata2_phy_spdmode is in PHP_GRF_PHP_CON1, while the sata0/sata1 speed
-fields are in PHP_GRF_PHP_CON0 and already set correctly.
-
-The misplaced write lands in PHP_GRF_PHP_CON0[2:0], which are the PCIe
-link reset grant bits, and turns on the one for pcie3x2 whenever a
-combphy is put in SATA mode. I don't know of any effect from that, but
-this patch stops it too.
-
-Only sata2 was tested. U-Boot has the same table and the same problem;
-a fix is being sent there separately.
----
- drivers/phy/rockchip/phy-rockchip-naneng-combphy.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-index 3102a99128f6..c469222dba8b 100644
---- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-+++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-@@ -1395,7 +1395,7 @@ static const struct rockchip_combphy_grfcfg rk3588_combphy_grfcfgs = {
- 	.con3_for_sata		= { 0x000c, 15, 0, 0x00, 0x0407 },
- 	/* pipe-grf */
- 	.pipe_con0_for_sata	= { 0x0000, 11, 5, 0x00, 0x22 },
--	.pipe_con1_for_sata	= { 0x0000, 2, 0, 0x00, 0x2 },
-+	.pipe_con1_for_sata	= { 0x0004, 2, 0, 0x00, 0x2 },
- 	.pipe_pcie1l0_sel	= { 0x0100, 0, 0, 0x01, 0x0 },
- 	.pipe_pcie1l1_sel	= { 0x0100, 1, 1, 0x01, 0x0 },
- };
-
----
-base-commit: 6628e7d4c6b25c8d18f1345e3a20d21829aae7e4
-change-id: 20261024-rk3588-combphy-sata2-6g-03bb30151552
-
-Best regards,
---  
-Ricardo Pardini <ricardo@pardini.net>
-
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMTEvNy8yMDI2IDExOjA5IFBNLCBib2RAa2VybmVsLm9yZyB3cm90ZToKPiBPbiAyMDI2LTEx
+LTAyIDEwOjUyICswMDAwLCBzYXNoaWtvLWJvdEBrZXJuZWwub3JnIHdyb3RlOgo+PiBUaGFuayB5
+b3UgZm9yIHlvdXIgY29udHJpYnV0aW9uISBTYXNoaWtvIEFJIHJldmlldyBmb3VuZCAxIHBvdGVu
+dGlhbCBpc3N1ZShzKSB0byBjb25zaWRlcjoKPj4gLSBbTWVkaXVtXSBtZWRpYTogcWNvbTogY2Ft
+c3M6IHVuaW5pdGlhbGl6ZWQgaHdfdmVyc2lvbiBjaGVjayBpbiB0cGdfcmVzZXQoKQo+PiAtLQo+
+Pgo+PiBjb21taXQgZWExOGQzOWU1MTQ0Y2ExZThkNjI4YWE1YWI3MDhlODQ5ODNlMTBhMwo+PiBB
+dXRob3I6IEhhbmd4aWFuZyBNYSA8aGFuZ3hpYW5nLm1hQG9zcy5xdWFsY29tbS5jb20+Cj4+Cj4+
+IG1lZGlhOiBxY29tOiBjYW1zczogdHBnOiBBZGQgc3VwcG9ydCBmb3IgdjIuNC4wIFRQRwo+Pgo+
+PiBUaGlzIGNvbW1pdCBhZGRzIHN1cHBvcnQgZm9yIFRQRyBoYXJkd2FyZSB2ZXJzaW9uIDIuNC4w
+IG9uIEthYW5hcGFsaSwKPj4gY29udHJvbGxpbmcgdGVzdC1lbmFibGUgYW5kIGhhcmR3YXJlIHJl
+c2V0IHZpYSB0aGUgVFBHX0NUUkxfQ01EIHJlZ2lzdGVyIGFuZAo+PiByb3V0aW5nIHRoZSBUUEcg
+b3V0cHV0IGludG8gQ1NJRCAxMDgwIFJYIHRocm91Z2ggdGhlIENTSTIgVFBHIG11eC4KPj4KPj4+
+IGRpZmYgLS1naXQgYS9kcml2ZXJzL21lZGlhL3BsYXRmb3JtL3Fjb20vY2Ftc3MvY2Ftc3MtdHBn
+LWdlbjEuYyBiL2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0vcWNvbS9jYW1zcy9jYW1zcy10cGctZ2Vu
+MS5jCj4+PiBpbmRleCBkMjlkZTVmOTNjMThlLi5jYWJiYjI2MzhjZjM4IDEwMDY0NAo+Pj4gLS0t
+IGEvZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9xY29tL2NhbXNzL2NhbXNzLXRwZy1nZW4xLmMKPj4+
+ICsrKyBiL2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0vcWNvbS9jYW1zcy9jYW1zcy10cGctZ2VuMS5j
+Cj4+Cj4+IFsgLi4uIF0KPj4KPj4+IEBAIC0xNjQsMTggKzE2NywyNiBAQCBzdGF0aWMgaW50IHRw
+Z19zdHJlYW1fb24oc3RydWN0IHRwZ19kZXZpY2UgKnRwZykKPj4KPj4gWyAuLi4gXQo+Pgo+Pj4g
+ICBzdGF0aWMgaW50IHRwZ19yZXNldChzdHJ1Y3QgdHBnX2RldmljZSAqdHBnKQo+Pj4gICB7Cj4+
+PiAtCXdyaXRlbCgwLCB0cGctPmJhc2UgKyBUUEdfQ1RSTCk7Cj4+PiAtCXdyaXRlbCgxLCB0cGct
+PmJhc2UgKyBUUEdfQ0xFQVIpOwo+Pj4gKwlpZiAodHBnLT5od192ZXJzaW9uIDwgVFBHX0hXX1ZF
+Ul8yXzRfMCkKPj4+ICsJCXdyaXRlbCgwLCB0cGctPmJhc2UgKyBUUEdfQ1RSTCk7Cj4+Cj4+IFtT
+ZXZlcml0eTogTWVkaXVtXQo+PiBBcyByZXBvcnRlZCBieSBTYXNoaWtvIG9uIHYxNyBbMV0sIGlz
+IHRwZy0+aHdfdmVyc2lvbiBpbml0aWFsaXplZCB3aGVuCj4+IHRwZ19yZXNldCgpIGlzIGNhbGxl
+ZCBmb3IgdGhlIGZpcnN0IHRpbWUgZnJvbSB0cGdfc2V0X3Bvd2VyKCk/Cj4+Cj4+IEluIGRyaXZl
+cnMvbWVkaWEvcGxhdGZvcm0vcWNvbS9jYW1zcy9jYW1zcy10cGcuYywgdHBnX3NldF9wb3dlcigp
+IGNhbGxzCj4+IHJlc2V0KCkgYmVmb3JlIGh3X3ZlcnNpb24oKSBwb3B1bGF0ZXMgdHBnLT5od192
+ZXJzaW9uIGZyb20gdGhlCj4+IFRQR19IV19WRVJTSU9OIHJlZ2lzdGVyOgo+Pgo+PiBkcml2ZXJz
+L21lZGlhL3BsYXRmb3JtL3Fjb20vY2Ftc3MvY2Ftc3MtdHBnLmM6dHBnX3NldF9wb3dlcigpIHsK
+Pj4gCS4uLgo+PiAJCXRwZy0+cmVzLT5od19vcHMtPnJlc2V0KHRwZyk7Cj4+Cj4+IAkJdHBnLT5y
+ZXMtPmh3X29wcy0+aHdfdmVyc2lvbih0cGcpOwo+PiAJLi4uCj4+IH0KPj4KPj4gT24gdGhlIGZp
+cnN0IHBvd2VyLW9uIGFmdGVyIHByb2JlLCB0cGctPmh3X3ZlcnNpb24gaXMgc3RpbGwgMCwgc28K
+Pj4gdHBnLT5od192ZXJzaW9uIDwgVFBHX0hXX1ZFUl8yXzRfMCBldmFsdWF0ZXMgdG8gdHJ1ZSBh
+bmQgdHBnX3Jlc2V0KCkgd3JpdGVzCj4+IDAgdG8gVFBHX0NUUkwgZXZlbiBvbiB2Mi40LjAgaGFy
+ZHdhcmUuIFNob3VsZCB0cGdfc2V0X3Bvd2VyKCkgY2FsbAo+PiBod192ZXJzaW9uKHRwZykgYmVm
+b3JlIHJlc2V0KHRwZyksIG9yIHNob3VsZCB0cGdfcmVzZXQoKSByZWFkIHRoZSB2ZXJzaW9uIGlm
+Cj4+IG5lZWRlZD8KPiAKPiBIYW5neGlhbmcgY2FuIHlvdSBoYXZlIGEgbG9vayBhdCB0aGlzLCBz
+ZWVtcyBjcmVkaWJsZSB0byBtZS4KPiAgIAo+PiBbMV0gaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcv
+ci8yMDI2MDkyOTA2MTI0OC5FMDM1QzFGMDAwRkZAc210cC5rZXJuZWwub3JnCj4+Cj4+IC0tIAo+
+PiBTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAy
+NjExMDIta2FhbmFwYWxpLWNhbXNzLXYyNC0wLWQ2YjhmM2Y2ZjY2ZkBvc3MucXVhbGNvbW0uY29t
+P3BhcnQ9MTEKPj4KPiAKSGkgQnJ5YW4sIFlvdSdyZSByaWdodC4gSSBoYWQgcHJldmlvdXNseSBh
+cmd1ZWQgdGhhdCB0aGUgVFBHX0hXX1ZFUlNJT04gCnJlZ2lzdGVyIGFsd2F5cyByZXNldHMgdG8g
+MHgyMDA0MDAwMCwgYnV0IHRoYXQgZG9lc24ndCBoZWxwIGhlcmUuIAp0cGctPmh3X3ZlcnNpb24g
+aXMgb25seSBwb3B1bGF0ZWQgYnkgaHdfdmVyc2lvbigpLCB3aGljaCB0cGdfc2V0X3Bvd2VyKCkg
+CmNhbGxzIGFmdGVyIHJlc2V0KCkuIFNvIG9uIHRoZSBmaXJzdCBwb3dlci1vbiBhZnRlciBwcm9i
+ZSwgdHBnX3Jlc2V0KCkgCnN0aWxsIHNlZXMgaHdfdmVyc2lvbiA9PSAwIGFuZCB0YWtlcyB0aGUg
+bGVnYWN5IHBhdGguCgpUaGlzIHdlbnQgdW5ub3RpY2VkIGluIG15IGxvY2FsIGFuZCBFMkUgdGVz
+dGluZyBiZWNhdXNlIHRoZSBleHRyYSB3cml0ZSAKdG8gVFBHX0NUUkwgaGFwcGVucyB0byBiZSBo
+YXJtbGVzcyBvbiB2Mi40LjAsIGJ1dCB0aGUgbG9naWMgaXMgd3JvbmcgCnJlZ2FyZGxlc3MuCgot
+LS0KQmVzdCBSZWdhcmRzLApIYW5neGlhbmcKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0Cmxp
+bnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
+YWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
