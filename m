@@ -2,73 +2,112 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 24125606A323
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Nov 2026 00:57:08 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1778B606A321
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Nov 2026 01:13:13 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Be2EGAmr;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=aCLHo9/6
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=NNOozv4C;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jpvTyjk/
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version
+	:Subject:Date:From:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=HMjmpagJRlUDD9/cAeIud5TsckaePAx7ypFtnX/2nis=; b=Be2EGAmr+BPnV3e5usqwRshdr0
-	zOkeEQS7b+2zsEIdNwJUURCvr0zPYHFC6f6mGIVs/8Xo7FDLcuvD9QBVj2OPVG0rpJVSJ/KYrdKD5
-	JECauQtsidmI+/kNFjr4gkQaNcIdqzaEvHwVpoakLtOY52/kVV2dT85SzjHBc9XARGE6EIwizZeUs
-	BGDjmn/Y7yTib19UpZDYDBltoDDisfo8snddmE+dSsqQ35/NsoSBHex0BcRa/xj1p2oV1Gng9HlbP
-	gop2Wdw9PA9+HHtzmNhRR6XLzDZ35QYmvM/6zAhzdKF/S4LLw/3/7uUJ5FKJCW3WnM1IyRg7q0JiP
-	DLfrJakg==;
+	bh=P6ARbXMMbwJv++EEuovTXHKTECL/oL9uUPFZzWpKoDQ=; b=NNOozv4CWJP1slOL1gyS4fdeY5
+	oD2RnyQeQ2CkNXjR5QuAcHBIeqa5kvbQ8CjaHU6yCdZSdk9bX9Uwl1/qMcV28RPI0KfWiM/Iz9IKq
+	6FKvI48nX67pblW515932Xo7bYaoJZffDCTQBDJGLj1VCC0Oxn7pasL8bqNfJHWZHgJSW3H1+4xZ0
+	kFmsmMstUZRLootHR2Z8TtsZjSrEw3UNzJ93AO4f6VjlNPGA2f2yGgDlUhGzoIJFaTVQDuj438mjr
+	HFEPAWwiu6DI1uqsoBb8Hvlqupw0APzGzFsCkjfQiZryV0ZroDQDLKvxesYUqR2fZ4QHtZkvPUEm4
+	wO3EKOlw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQDh5-0000000H0TW-3gH8;
-	Mon, 09 Nov 2026 00:57:07 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xQDwe-0000000H11V-2kwM;
+	Mon, 09 Nov 2026 01:13:12 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQDh5-0000000H0TH-01If
-	for linux-phy@lists.infradead.org;
-	Mon, 09 Nov 2026 00:57:07 +0000
+	id 1xQDwc-0000000H116-20Ac;
+	Mon, 09 Nov 2026 01:13:10 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 1A66961D4E;
-	Mon,  9 Nov 2026 00:57:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BB0461F008A6;
-	Mon,  9 Nov 2026 00:57:03 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 9C3776111B;
+	Mon,  9 Nov 2026 01:13:09 +0000 (UTC)
+Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
+ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
+	t=1794186789;
+	b=HqkDk+o/mRP/jzqyr8a0kQjiVo2O0bzD3K+K297/YODfcHJ5FQMKWHDOZqpdiRaihCrH
+	 tRCX8JFAQKJxkujgV5UhOeCN4uDBShEHPxLrzv/5DHgiguJr1GEioElfqKSKh3fA2L2DN
+	 tDJf5cTcpYajht/2GJzNS0OQsIPjTU1KqxbpiX5mFOo7sVfD+BLKAQkW4NtpoIntXojFo
+	 UEtMAjHS+tcBWAZmBtC4mDo8GAowqJa99Fwp4Ld30JTzMGnQTR6x9HM+9yBN7nyXhgniN
+	 4OycmrkjfBoEGxJXUDP+4ZcCuppJxgpjTl4pnMMw9p2Ewf3ARVgEd02CxFgmkbCoBhw==
+ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
+	c=relaxed/relaxed; t=1794186789;
+	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
+	 Message-Id:X-B4-Tracking:X-Change-ID:To:Cc:X-Mailer:
+	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To:Content-Transfer-Encoding;
+	bh=M4WCF4P9vPVA9cU7Tv+J0UseXV6GQroxb3gEfse06vk=;
+	b=VQo3GHlgP35LXmM7hBUfgV70W2wEUyNH0MnGolCflW0hlwFnQypfLh9uDHaymwYlOSjF
+	 86Rcr+rfRLDat7/4TZ5eWJMvrQKqWI1jJVK3adaPtH1ohwTC657hHto8hHJmk5gajCyOU
+	 58wnCeAYT6KogkXeWp0o/1pvQ6vfEpf8HG56iS3SxyBJgzM9JMl/IV9qS4C1pFj0+Zp5a
+	 Q+iTaHOGHF+xGo8CVT4xbglaIf3wW1tIKwpopn2zulJCzWl+DlcaEPLbOkeMn74ptPKR5
+	 4qr35BH4AbBWiz7SHa44Tx5KRo8lJcCE7lNwmWcjeOCZBHonA1vPlsiTV79cDntWTKw==
+ARC-Authentication-Results: i=1; smtp.kernel.org; 
+	arc=none smtp.remote-ip=100.80.115.77
+Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by smtp.kernel.org (Postfix) with ESMTPS id 9D2A21F0089F;
+	Mon,  9 Nov 2026 01:13:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794185825;
-	bh=UgV8KA7Cu5ZAaXYWYDbHu7HAyaZ/X9DN4CiRecqVryU=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=aCLHo9/66kPxeQ3IlSV3ZYw9X11Y8ElsAX6H6zq2gRhS8i5w9QzUtaTRIqcLj2c50
-	 wNcZ4HApf8c6WjEaVg23WQXbHYNl8X46GGcsTFdfb6z8xL0XwRFd0J+psV6dMO79/O
-	 29Pfb3DCr22DF0WYm5d5fSq1p2OfWoH/5R2VwlwCchRLYS3qrMsut9/Ly1LALQRaE/
-	 ZT7EdN53KZ7DzAn7nuB0As9a6t9BGPo4vMoa44LJhlNwRTzQ5Bgu3qZhDQFXAM0PFd
-	 /bFuGsUALoDM0/f5WnN/BWYUh+vnJF4STVtD2OLic8D//ycbHylWRDxUpBqWSSME/W
-	 t3ai4PjYZ5fWg==
-Message-ID: <sashiko-outbox-204265@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH 17/17] arm64: dts: qcom: Add Samsung Galaxy XR
-To: "Stanislav Aleksandrov" <lightofmysoul@gmail.com>, "Bjorn Andersson" <andersson@kernel.org>, "Konrad
- Dybcio" <konradybcio@kernel.org>, "Abel Vesa" <abelvesa@kernel.org>, "Rob
- Herring" <robh@kernel.org>, "Krzysztof Kozlowski" <krzk+dt@kernel.org>, "Conor
- Dooley" <conor+dt@kernel.org>, "Robert Marko" <robimarko@gmail.com>, "Guru
- Das Srinagesh" <linux@gurudas.dev>, "Thomas Gleixner" <tglx@kernel.org>, "Radu
- Rendec" <radu@rendec.net>, "Lee Jones" <lee@kernel.org>, "Will Deacon" <will@kernel.org>, "Robin
- Murphy" <robin.murphy@arm.com>, =?utf-8?b?Sm9lcmcgUm9lZGVsIChBTUQp?= <joro@8bytes.org>, "Greg
- Kroah-Hartman" <gregkh@linuxfoundation.org>, "Wesley Cheng" <wesley.cheng@oss.qualcomm.com>, "Vinod
- Koul" <vkoul@kernel.org>, "Neil Armstrong" <neil.armstrong@linaro.org>, "Manivannan
- Sadhasivam" <mani@kernel.org>, "Alim Akhtar" <alim.akhtar@samsung.com>, "Bart
- Van Assche" <bvanassche@acm.org>, "Bean Huo" <beanhuo@micron.com>, "Stanley
- Jhu" <stanleyjhu@google.com>, "Herbert Xu" <herbert@gondor.apana.org.au>, "David
- S. Miller" <davem@davemloft.net>, "Rafael J. Wysocki" <rafael@kernel.org>, "Viresh
- Kumar" <viresh.kumar@linaro.org>, "Amit Kucheria" <amitk@kernel.org>, "Thara
- Gopinath" <thara.gopinath@gmail.com>, "Daniel Lezcano" <daniel.lezcano@kernel.org>, "Zhang
- Rui" <rui.zhang@intel.com>, "Lukasz Luba" <lukasz.luba@arm.com>, "Georgi
- Djakov" <djakov@kernel.org>, "Sibi Sankar" <sibi.sankar@oss.qualcomm.com>
-Cc: devicetree@vger.kernel.org, mfd@lists.linux.dev, linux-usb@vger.kernel.org, linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org, linux-crypto@vger.kernel.org, olteanv@gmail.com
-In-Reply-To: <20261109-halliday-dts-v1-17-289114ab8197@gmail.com>
-References: <20261109-halliday-dts-v1-0-289114ab8197@gmail.com>
- <20261109-halliday-dts-v1-17-289114ab8197@gmail.com>
-Date: Mon, 09 Nov 2026 00:57:03 +0000
+	s=k20260515; t=1794186789;
+	bh=M4WCF4P9vPVA9cU7Tv+J0UseXV6GQroxb3gEfse06vk=;
+	h=From:Date:Subject:To:Cc:Reply-To;
+	b=jpvTyjk/fb0I/liZiqB24WRLZW+AxBb1dpFfOqONpXGH+X2CdbOKBf0xtWf9c0aGz
+	 b2K84UT6bzyNB/ktSdNBIKpWpPNyQbz6iqYut730z+C4jLvdRhx7Qi6Kzi9HEqys8q
+	 GrLfFAXOYqStJD3owU6ZPLTLy/906+fHnFffpux3Za1T8RCZwwkTQMKbvvchD+JA3p
+	 IPkhPGeOWCng9JJw57TzSCUMJ5kiw5hTWRA/V9qmR1bvr/zDZTXQc82ZctC4D//WHw
+	 b785I1BBopf5RLI6i+/b5OQYS0mZp5INxPRcE8s6uOUmh4xPXoViy1x0RM5HQQXV8Q
+	 FvyW7af9dezPg==
+Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
+	by lkml.kernel.org (Postfix) with ESMTP id E5336481E7;
+	Mon,  9 Nov 2026 01:13:07 +0000 (UTC)
+From: Ricardo Pardini via B4 Relay <devnull+ricardo.pardini.net@kernel.org>
+Date: Mon, 09 Nov 2026 02:12:47 +0100
+Subject: [PATCH] phy: rockchip: naneng-combphy: fix RK3588 SATA pipe_con1
+ register offset
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Message-Id: <20261109-rk3588-combphy-sata2-6g-v1-1-e9135c91de6a@pardini.net>
+X-B4-Tracking: v=1; b=H4sIAA4e8WoC/yXMQQ6CMBBA0auQWTtJO7WEeBXjoq0jDEYgHTQQw
+ t2tsnyL/zdQzsIKl2qDzB9RGYcCe6ogdWFoGeVeDGSotobOmJ/ONw2m8RWnbkUNcyCsWzQuRme
+ st94TlHrK/JDlf77eDus79pzm3w72/QseLD3mewAAAA==
+X-Change-ID: 20261024-rk3588-combphy-sata2-6g-03bb30151552
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Andrew Powers-Holmes <aholmes@omnom.net>, 
+ Lucas Tanure <lucas.tanure@collabora.com>
+Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ stable@vger.kernel.org, Yifeng Zhao <yifeng.zhao@rock-chips.com>, 
+ Ricardo Pardini <ricardo@pardini.net>
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3342;
+ i=ricardo@pardini.net; h=from:subject:message-id;
+ bh=jlST7yEBtCPASzfQnAPw8q1ZkwqNOjqfjEA41xMvY/o=;
+ b=owEBbQGS/pANAwAKATteP+Oex+3pAcsmYgBq8R4jm7OV4UEZAdR8JkXG5eZsGJPwj1sBnGC/K
+ PdtxEN5/k2JATMEAAEKAB0WIQSsGCMM9q/qytxIiJM7Xj/jnsft6QUCavEeIwAKCRA7Xj/jnsft
+ 6WQWCACpnX6vXbIOFFGIjGte8vXc9/ErH0o2XWlf2nqbLvgp3rSw6bTjqbhrhX2OuywVjojnqh/
+ 6khuk8OfiBwqUFDKqwYmRTGWr4BoABoM87ivNn5mXU8R6p1EugVNX5uNqfvYHzXGp1kRDtZWEcG
+ DHJ2gacTWr5D86YdFw3279g8y+yn1/hXblWc/9e8TR36+3deh/cODH5k8diskaURtUdcMgCseDP
+ j4W0w21u2FWlsKGALXGoTfaHR/H0NgGohEW+dYv59PxHSvnCqUOXy/Fso9MjgvVaF/tfwXWeO2k
+ dPzwqX2nK64jpCTrxJDlRrSJJ+FOFvHLR3KobzP7R+bVxTuv
+X-Developer-Key: i=ricardo@pardini.net; a=openpgp;
+ fpr=AC18230CF6AFEACADC4888933B5E3FE39EC7EDE9
+X-Endpoint-Received: by B4 Relay for ricardo@pardini.net/default with
+ auth_id=588
+X-Original-From: Ricardo Pardini <ricardo@pardini.net>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,42 +117,98 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Reply-To: ricardo@pardini.net
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-21.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwKaXNzdWUgdG8gY29uc2lkZXI6Ci0gW0xvd10gYXJtNjQ6IGR0czogcWNvbTog
-aW52YWxpZCBjaGFzc2lzLXR5cGUgdmFsdWUgaW4KICBoYWxsaWRheS1zYW1zdW5nLXhydnN0Mi5k
-dHMKLS0KCmNvbW1pdCBkMmQ5Y2JjNzc0NGZkOWMzZDk1YTYzYjFkM2RmODVkNWNiZTk5YWZiCkF1
-dGhvcjogU3RhbmlzbGF2IEFsZWtzYW5kcm92IDxsaWdodG9mbXlzb3VsQGdtYWlsLmNvbT4KCmFy
-bTY0OiBkdHM6IHFjb206IEFkZCBTYW1zdW5nIEdhbGF4eSBYUgoKVGhpcyBjb21taXQgYWRkcyB0
-aGUgZGV2aWNlIHRyZWUgZm9yIHRoZSBTYW1zdW5nIEdhbGF4eSBYUiBoZWFkc2V0IGJhc2VkCm9u
-IHRoZSBRdWFsY29tbSBIYWxsaWRheSBTb0MgKFNYUjIyNTBQKS4KCj4gZGlmZiAtLWdpdCBhL2Fy
-Y2gvYXJtNjQvYm9vdC9kdHMvcWNvbS9oYWxsaWRheS1zYW1zdW5nLXhydnN0Mi5kdHMgYi9hcmNo
-L2FybTY0L2Jvb3QvZHRzL3Fjb20vaGFsbGlkYXktc2Ftc3VuZy14cnZzdDIuZHRzCj4gbmV3IGZp
-bGUgbW9kZSAxMDA2NDQKPiBpbmRleCAwMDAwMDAwMDAwMDAwLi42ZmNjMWFhYWZkNTljCj4gLS0t
-IC9kZXYvbnVsbAo+ICsrKyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcWNvbS9oYWxsaWRheS1zYW1z
-dW5nLXhydnN0Mi5kdHMKPiBAQCAtMCwwICsxLDIxOCBAQApbIC4uLiBdCj4gKy8gewo+ICsJbW9k
-ZWwgPSAiU2Ftc3VuZyBHYWxheHkgWFIiOwo+ICsJY29tcGF0aWJsZSA9ICJzYW1zdW5nLHhydnN0
-MiIsICJxY29tLGhhbGxpZGF5IjsKPiArCWNoYXNzaXMtdHlwZSA9ICJoZWFkc2V0IjsKCltTZXZl
-cml0eTogTG93XQpJcyAiaGVhZHNldCIgYSB2YWxpZCB2YWx1ZSBmb3IgY2hhc3Npcy10eXBlIGlu
-IHRoZSByb290IG5vZGU/ICBUaGUKRGV2aWNldHJlZSBTcGVjaWZpY2F0aW9uIGFuZCBkdHNjaGVt
-YSAoc2NoZW1hcy9yb290LW5vZGUueWFtbCkgb25seSBwZXJtaXQKZGVza3RvcCwgbGFwdG9wLCBj
-b252ZXJ0aWJsZSwgc2VydmVyLCB0YWJsZXQsIGhhbmRzZXQsIHdhdGNoLCBlbWJlZGRlZCwKdGVs
-ZXZpc2lvbiwgYW5kIGFsbC1pbi1vbmUsIHNvIGR0YnNfY2hlY2sgZmFpbHMgb24gdGhpcyBEVEIg
-dW5sZXNzIGEKc3RhbmRhcmQgdmFsdWUgKHN1Y2ggYXMgImVtYmVkZGVkIikgaXMgdXNlZCBvciBj
-aGFzc2lzLXR5cGUgaXMgb21pdHRlZC4KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczov
-L3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjExMDktaGFsbGlkYXktZHRzLXYxLTAtMjg5MTE0
-YWI4MTk3QGdtYWlsLmNvbT9wYXJ0PTE3CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51
-eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1waHkK
+From: Ricardo Pardini <ricardo@pardini.net>
+
+On RK3588, the sata2 PHY speed is selected by sata2_phy_spdmode in
+PHP_GRF_PHP_CON1[1:0] (offset 0x0004), with sata2_phy_rx_err in bit 2.
+rk3588_combphy_grfcfgs has pipe_con1_for_sata at offset 0x0000 though,
+so the value 0x2 (6.0 Gb/s, rx_err cleared) ends up in PHP_GRF_PHP_CON0
+and CON1 is never written.
+
+This leaves sata2 at its 1.5 Gb/s reset value, so the link only trains
+at 1.5 Gb/s, even with a 6 Gb/s capable disk and no SControl speed
+limit. sata0 and sata1 are not affected: their speed fields are in
+PHP_GRF_PHP_CON0 and are set by pipe_con0_for_sata.
+
+The register layout is described in the RK3588 TRM V1.0 Part1, section
+6.17 "PHP_GRF Register Description". Rockchip fixed this in their BSP
+kernel in 2022 by moving pipe_con1_for_sata to offset 0x0004.
+
+Tested with an mSATA SSD on sata2 (combphy2_psu). Before:
+
+  ata2: SATA link up 1.5 Gbps (SStatus 113 SControl 300)
+  Timing O_DIRECT disk reads: 374 MB in 3.01 seconds = 124.45 MB/sec
+
+After:
+
+  ata2: SATA link up 6.0 Gbps (SStatus 133 SControl 300)
+  Timing O_DIRECT disk reads: 1266 MB in 3.00 seconds = 421.78 MB/sec
+
+Fixes: a03c44277253 ("phy: rockchip: Add naneng combo phy support for RK3588")
+Cc: stable@vger.kernel.org
+Link: https://github.com/rockchip-linux/kernel/commit/2f5fe2c0bbd4fa95102aadd60da1100989103aa0
+Cc: Yifeng Zhao <yifeng.zhao@rock-chips.com>
+Signed-off-by: Ricardo Pardini <ricardo@pardini.net>
+---
+This fixes the pipe_con1 GRF offset for SATA in the RK3588 combphy
+table, so sata2 links train at 6 Gb/s instead of being stuck at
+1.5 Gb/s.
+
+I found it when an mSATA SSD on sata2 would only link at 1.5 Gb/s,
+and traced it to Rockchip's BSP kernel, which fixed the same offset in
+2022 in a commit titled "config sata2 rate to 6G for rk3588" (linked
+in the patch). The RK3588 TRM V1.0 Part1 (section 6.17) agrees:
+sata2_phy_spdmode is in PHP_GRF_PHP_CON1, while the sata0/sata1 speed
+fields are in PHP_GRF_PHP_CON0 and already set correctly.
+
+The misplaced write lands in PHP_GRF_PHP_CON0[2:0], which are the PCIe
+link reset grant bits, and turns on the one for pcie3x2 whenever a
+combphy is put in SATA mode. I don't know of any effect from that, but
+this patch stops it too.
+
+Only sata2 was tested. U-Boot has the same table and the same problem;
+a fix is being sent there separately.
+---
+ drivers/phy/rockchip/phy-rockchip-naneng-combphy.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+index 3102a99128f6..c469222dba8b 100644
+--- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
++++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+@@ -1395,7 +1395,7 @@ static const struct rockchip_combphy_grfcfg rk3588_combphy_grfcfgs = {
+ 	.con3_for_sata		= { 0x000c, 15, 0, 0x00, 0x0407 },
+ 	/* pipe-grf */
+ 	.pipe_con0_for_sata	= { 0x0000, 11, 5, 0x00, 0x22 },
+-	.pipe_con1_for_sata	= { 0x0000, 2, 0, 0x00, 0x2 },
++	.pipe_con1_for_sata	= { 0x0004, 2, 0, 0x00, 0x2 },
+ 	.pipe_pcie1l0_sel	= { 0x0100, 0, 0, 0x01, 0x0 },
+ 	.pipe_pcie1l1_sel	= { 0x0100, 1, 1, 0x01, 0x0 },
+ };
+
+---
+base-commit: 6628e7d4c6b25c8d18f1345e3a20d21829aae7e4
+change-id: 20261024-rk3588-combphy-sata2-6g-03bb30151552
+
+Best regards,
+--  
+Ricardo Pardini <ricardo@pardini.net>
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
