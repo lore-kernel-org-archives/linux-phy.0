@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0CD7C606A32A
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 380C4606A335
 	for <linux-phy@archiver.kernel.org>; Mon,  9 Nov 2026 06:56:34 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=LxgQC9h2;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=FsRJrQtz
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=tV1cnlEN;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=dS/AMX+z
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,66 +14,66 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=efIM9FjnMdyLIAzzqjK2foaUXLVLm8u8x1hFTEl6sGU=; b=LxgQC9h2it6ARENXhGqGqUpKfu
-	f+MAJdQPlCOsOmm7tZNDfLH4gSg3cqSYMz0HHpmbKudZta087TVXAgxfmkZU2svsPp+wcofIKjaxC
-	3cQ/R0maqJlVu5vs3tZfmZilUXggHbOG3C5r9jrtrRPmVxl1xJY0I4Zsq4fYBTq2eiHd2Czog0gE3
-	MeiOE7PLYDe7J/YYbUJ031e/8zEnjtkOI+V2aV7sMu4rZPhoIjFJSGh6RKkvTMaFfBVqpS+Q00ngM
-	AqPvQsyOk0SD9wf4QkG94MaQA3NNnhn78GZ2MOfbxx10C/DNoW90OC3rSuQM7jJnnwWTlRTJaGfpO
-	q4lybujQ==;
+	bh=sYbQPB1lidiKb2UsET6jc6OeSi61OY7UZ0JkOhL4WVA=; b=tV1cnlENfTDSLjdOfMYRBmAph2
+	7FEbIatWWEyUQ0qns4/8SeVfZuMSc4UAXZmxvb2G/ilUChfOBQLAWROdPQaOvp163ogJR6EITuzOM
+	IhqnVKLdM95FgLllvyokeIHm5bjT+jwaxbOqVD2/3qkVzxi7axuzWI7mWNkP0T36jtwtaeJH9/55j
+	wAXF89YeEFf2J1I34O/KUsw9gEew9SHeaIaF1xBvV20yUUnUiDDn0NDUH5q5tqY7Vsf/TDj50UEpT
+	JUtpnGkSAJE6xvtApja9QFAytIpcQIfxUlrv+u8ssoRml9rlGr7Z1owz20D85vN6cZWsXytJrm4XY
+	gfpQQHZQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQJIv-0000000HX7p-3Ap3;
+	id 1xQJIv-0000000HX8Q-3xgq;
 	Mon, 09 Nov 2026 06:56:33 +0000
-Received: from mail-dl1-x122a.google.com ([2607:f8b0:4864:20::122a])
+Received: from mail-dy1-x1336.google.com ([2607:f8b0:4864:20::1336])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQJIq-0000000HX3y-19JX
+	id 1xQJIt-0000000HX66-36ae
 	for linux-phy@lists.infradead.org;
-	Mon, 09 Nov 2026 06:56:31 +0000
-Received: by mail-dl1-x122a.google.com with SMTP id a92af1059eb24-1ae18eb9ad0so526260c88.1
-        for <linux-phy@lists.infradead.org>; Sun, 08 Nov 2026 22:56:28 -0800 (PST)
+	Mon, 09 Nov 2026 06:56:33 +0000
+Received: by mail-dy1-x1336.google.com with SMTP id 5a478bee46e88-36f8cdd30beso1287140eec.1
+        for <linux-phy@lists.infradead.org>; Sun, 08 Nov 2026 22:56:31 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794207387; x=1794812187; darn=lists.infradead.org;
+        d=gmail.com; s=20260707; t=1794207391; x=1794812191; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=C7z8/qe+AfvmJGG4y2bRYtRiZGRNOq/Sl0ivxixfInc=;
-        b=FsRJrQtzb6IgDdS51pi0hJG6lQdCG4A3c8ETVvCOEkB+RF+5cho1A4y6oXll2KBeJE
-         fw4EBGXpzcXeC0PZXnKh21nTy5M6o8zhy+ssb9h6591TYpB02DZiwytd9zHNSWOW09cc
-         vTjj1JwgXy9y7KaFgawAFAcz9NMsaOIsUFloM8XFlrxx0etF+ydksulxJhR3LM96sg+j
-         vFnrJPR+v5IeYYul0xxbbgY89iScokGGYCJt5uR7WJcBawBDqPf+B53xkZROPAPaCQcH
-         2k3F1Ss5mMA6YXXI2SufBD1b1Gtv/LHhaRBJj77wI1QlbGBBNZXLE9gdrn5Sz6wTFznv
-         5BOA==
+        bh=pHYAVxXuO5e9vCII0JaXIbET91xlBsNZUGiyKc29HGQ=;
+        b=dS/AMX+z4kqmOL0ppRR+4OER4ITYk8Dn3loJeVGacQOzYF7RRQ5c2WpfiNM8Zb16ot
+         wcuHBJjOVNvyGY6MXGBypR0qXB71LLASC5YUFqsB5LPGN7C1wyQJQJ0vqZzrNNQVKrdO
+         VH/KxLuu0jQsjc7yht5TzWEV2RydFBizjGlzvuTK/+Ublc1Mo/LZiQ5Ypjp5+I5X4evn
+         Hz03rm+MmbaJytyfNNJyQo2twrTCSGTJgeQIMFOQBj8i9g3ofDJZe2MFcw4N0+SX+Cj8
+         uvtgXkfJKwnSf70N5QK6/D05OFEnnzZE7hyIMnjQenCuOsaKGdC9DxgN16+aAsF2RG7U
+         CS3g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794207387; x=1794812187;
+        d=1e100.net; s=20260707; t=1794207391; x=1794812191;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=C7z8/qe+AfvmJGG4y2bRYtRiZGRNOq/Sl0ivxixfInc=;
-        b=GR1XMCBK50b1Pm5g/i6rYHS5+Y5HnAX5EfpWRR5cwQ1Nqc8WGR/KUD3k/dasRdlmsz
-         oH85O4u/QPMFsM6Mt/9vmME40IrkhF581COjEExy7QWayxKc+wFWVj0AhXZyOBFmRPcx
-         vKT6hmHqUewSfJi/QLHSM2w3hyjKdRGIPTTiCj6Hmc8jH+rk+AIAZKnWjy1tdWgCway5
-         oBPgHI6B98ajuOf2cQNIUPuvTJVbEQRpnDcTnjf3w4vB8ppebhD60+cvnzzzRfhSVKdd
-         E0mdjK6Nz2i4X/kcWcoCGt3OD4LgJPVEl3Mp5hUFvR+B9Btz+SrJz3EmQV5B7QT6TIDb
-         QfBQ==
-X-Forwarded-Encrypted: i=1; AL+hErE/giyAqB4lfxX4e8PZF6cXEExZbkX8fSbNA0bNUHWoLJj6u7X94sWi9mtWPoHXgblEl4sY9hjhqVM=@lists.infradead.org
-X-Gm-Message-State: APuU4Z9oAUJJoZqdGL8jS6sp70Jdw1kYx7l2/dB+D+Jjsbdzc29tlvXv
-	K3ibjYXUmIdKCTNXuUq4fAw9S0Vxc9LmOPPMboo/XmvYCcNgno5FHikr
-X-Gm-Gg: AYBFou2YvVCMAJgeoM0w/hlgKvJWz5OtYBtJPw3UU1tIPN4B8bOx1AHddDAaHFKERjO
-	FDPxKjHpxdNXEopb3/fxpkkS7zTo6tT0z8X6AJmT9ZuuDcNkWekw7gseCt0wUp31oI2fpdPcGBi
-	0sD7AhtGJdhETWqXH6uASa0DwdhnMvo42rlUTALpoDHHSKT8cPAEtYDz7ziOkyA21RRdyDJLqFB
-	sNANkV0A8bTFev+43q54E2sURd7iUnxs1k0x2X4b2dFkErQqLk0QHpnxvnJCM7xBtioUSB5ogBM
-	fKvAp9Wxodews7OogwHcGk6lAm3W+OM0bbTtNoti3eDLy4YL5+9HPI9whZBKMDfLVQB3peK+5pb
-	KUWDJYnE70mD3AGr0X67CjxIIJmO/R2rtVPP6VQjOfmYG6A8au+RKtXm01l/ZHJT9HKYZtoPYX9
-	W5tAHOsIyB5ZQc1w9JYmviXVhjnme7RHysGiP5gvZt1ed6M7Jnd6qA2JZ1ZDh6+skm77nqRMYT3
-	iN2/xhvXSCoV/376qkLUlOM23NLUI6wG4Z8/p/2JbrBLF0TzaSlR7dJ6zvTQ3MEzYwsg8grGd8M
-	f48wH0weUMXB4a4oBnmz5HYM6wtlXMJfLTaup34SjhyH5pMCjKIdqn027qN53qeId9/CuHJQp1p
-	yUVEWdUmrvn0QtCCk8w==
-X-Received: by 2002:a05:7022:ec07:b0:1b2:557a:aa12 with SMTP id a92af1059eb24-1b39fe8762emr6494368c88.15.1794207387028;
-        Sun, 08 Nov 2026 22:56:27 -0800 (PST)
+        bh=pHYAVxXuO5e9vCII0JaXIbET91xlBsNZUGiyKc29HGQ=;
+        b=WdYJ+MgC+QIPlxDlBPTmwxqiewUzEJKeauvNgEeKRmyHboXZdKaL4fuMkxD/THh151
+         aRnID0KEvCJ/8x4S+tt0thgw4heB6pc2t8LkeUs95MZgXtxzQP8ZXR6dK5H6sMfbyeHN
+         6A5OBQM+kLSFv4e4af0F1L4Ae2a772WLmbJjd9YSCxWwtT9TmRqJSFrBGSoiKMtqQRxj
+         D6pQZ5qBW/9P52qQY5XktihuHJLj5X4F2HiWoho0LaybsORH6ms1m0khGXlfWEeuPgJ8
+         kjWSrDRG2r/iMiisKOxSD9cw3Y48MPK9LyAP8iLHtDIvgTeQCPhMCIBPr7/2NbD2x2IF
+         tX5g==
+X-Forwarded-Encrypted: i=1; AL+hErFaoTVHzNkVwyRS1RwDmUg/UaVrMUtUqQhs3bvM9M1Qqinq0JlYwdQWRVoEVRB/FOuOSV7bf+3R8iM=@lists.infradead.org
+X-Gm-Message-State: APuU4Z+B4+ADeWWS2S865wD4GPXxJeLcUPDgsRKiLmzt1L48DW49343b
+	WK8Ax6RoCtRi7FdaAP/sK6Cc5hdRJjaDlXYJMiY+IEDTu7TBrRDtPfwH
+X-Gm-Gg: AYBFou0y59qJPY89mwNYQDByUulytijK6NyJnMF0DSt8p91DozGpd0GKuVzIXgKeaM+
+	TYFLD8/K2zveUD+IrwuggJXiQRag+aOEF/PwFgbqn02KeNP5jqOEZ3XRohyxPKxwrjf0cVVT3cd
+	bHD8Es8rV60k9rL9FFftHij5DDy9yM//Iol7wSu5IPXOpXvWPMRrhYkUJpfarRohEI1Qo3DwYby
+	s9L1uOUdSUvclA/YWwgjltVSA/yGhjtwbKe7k5zKaWWDznNk14zdBVaJ4DKJllKeI7U9N0LN/bx
+	wXBsOS/NnIpvoir1xE2DGy73AdVVnuwHj2yJixBDZzYhfvY9jwD2JrhKl1tiiJqgLc0fXICQvVV
+	Sm0LHtpu1AoiRRD1CJYRZRptZwRNHfJn8O5acpqpl2e/lqh1ouoRpeoniec5era+eLjGUuCmEwl
+	3eR694FeFHLrN4wKsJk766ueYrr76OeVuIVoXi/nkSCS+YFM09rI0Hx7stF4z73A9lIr8yzcZjV
+	Str+F6gPdoFmmR1OwGwIva0FAUplFEHBE219IOsxJsLUrH1Nqlir+rQsMoxrT2rgSo1BC6HgBRF
+	16oEJVMvY19Mb8shrGcvr4mZPoWNZCMd7Nw6NcvSk0FGaNqEDw1KNE5J2zm9cOer/dgl7FEhwZy
+	v47y1m4b9qAZN+jlXPw==
+X-Received: by 2002:a05:7022:f507:b0:144:f089:b189 with SMTP id a92af1059eb24-1b39fec440bmr4758116c88.36.1794207390517;
+        Sun, 08 Nov 2026 22:56:30 -0800 (PST)
 Received: from localhost.localdomain (60-250-196-139.hinet-ip.hinet.net. [60.250.196.139])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b3757214cbsm10120176c88.13.2026.11.08.22.56.23
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b3757214cbsm10120176c88.13.2026.11.08.22.56.27
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 08 Nov 2026 22:56:26 -0800 (PST)
+        Sun, 08 Nov 2026 22:56:30 -0800 (PST)
 From: Joey Lu <a0987203069@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
@@ -92,18 +92,17 @@ Cc: Rob Herring <robh@kernel.org>,
 	linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Joey Lu <a0987203069@gmail.com>
-Subject: [PATCH v8 3/4] phy: nuvoton: phy-ma35d1-usb2: remove unused linux/io.h include
-Date: Mon,  9 Nov 2026 14:56:05 +0800
-Message-ID: <20261109065606.62641-4-a0987203069@gmail.com>
+Subject: [PATCH v8 4/4] phy: nuvoton: phy-ma35d1-usb2: extend to dual-port with OTG support
+Date: Mon,  9 Nov 2026 14:56:06 +0800
+Message-ID: <20261109065606.62641-5-a0987203069@gmail.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20261109065606.62641-1-a0987203069@gmail.com>
 References: <20261109065606.62641-1-a0987203069@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261108_225630_708868_1551CBE3 
-X-CRM114-Status: UNSURE (   9.66  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20261108_225631_812327_D8CFCED3 
+X-CRM114-Status: GOOD (  27.46  )
 X-Spam-Score: -1.8 (-)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -126,28 +125,439 @@ X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-This driver never performs direct MMIO access (no readl()/writel()/
-ioremap()/__iomem); all register access goes through regmap via
-syscon_regmap_lookup_by_phandle(). linux/io.h has therefore been
-unused since the driver was first added.
+PHY0 and PHY1 use the same power-on/reset sequence in USBPMISCR, with
+PHY1 control bits shifted 16 positions relative to PHY0.  A separate
+driver for PHY1 would duplicate this logic, so the existing driver is
+extended to manage both ports.
+
+The original driver polled only DEVCKSTB after releasing PHY0 from
+reset.  When USB0 operates in host mode (USB ID pin floating or tied
+high) only HSTCKSTB and CK12MSTB assert; DEVCKSTB never sets.  Polling
+exclusively for DEVCKSTB in host mode causes a 1 ms timeout on every
+phy_init() call from the EHCI driver.  The init callback is changed to
+accept either host-mode or device-mode clock stability, whichever
+asserts first.
+
+The init callback handles PHY reset and clock-stable polling.  The
+power_on and power_off callbacks only gate the HUSBH0_GATE clock shared
+by both ports, so it stays off when neither port is in use.  If a PHY
+already in operation mode does not report stable clocks, it is reset
+before failing.
+
+A read-only USB role switch is registered for PHY0 to expose the USB0
+role to userspace via the standard role-switch sysfs interface.  The
+.set callback returns -EOPNOTSUPP because the hardware mux is fully
+automatic with no software override path.  When CONFIG_USB_ROLE_SWITCH
+is not enabled, the registration returns -ENODEV and the driver skips
+the role switch gracefully without failing probe.
+
+Two new optional device-tree properties are implemented:
+  - nuvoton,rcalcode: writes per-port 4-bit resistor calibration trim
+    codes to the RCALCODE field in USBPMISCR.
+  - nuvoton,oc-active-high: sets the UHOVRCURH bit in MISCFCR0 to treat
+    the over-current detect input as active-high.  When absent, the bit
+    is cleared (active-low) regardless of the bootloader setting.
 
 Signed-off-by: Joey Lu <a0987203069@gmail.com>
 ---
- drivers/phy/nuvoton/phy-ma35d1-usb2.c | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/phy/nuvoton/Kconfig           |   1 +
+ drivers/phy/nuvoton/phy-ma35d1-usb2.c | 312 ++++++++++++++++++++------
+ 2 files changed, 240 insertions(+), 73 deletions(-)
 
+diff --git a/drivers/phy/nuvoton/Kconfig b/drivers/phy/nuvoton/Kconfig
+index d02cae2db315..1f37e860de50 100644
+--- a/drivers/phy/nuvoton/Kconfig
++++ b/drivers/phy/nuvoton/Kconfig
+@@ -6,6 +6,7 @@ config PHY_MA35_USB
+ 	tristate "Nuvoton MA35 USB2.0 PHY driver"
+ 	depends on ARCH_MA35 || COMPILE_TEST
+ 	depends on OF
++	depends on USB_ROLE_SWITCH || !USB_ROLE_SWITCH
+ 	select GENERIC_PHY
+ 	help
+ 	  Enable this to support the USB2.0 PHY on the Nuvoton MA35
 diff --git a/drivers/phy/nuvoton/phy-ma35d1-usb2.c b/drivers/phy/nuvoton/phy-ma35d1-usb2.c
-index 9a459b700ed4..0b9976fb15c1 100644
+index 0b9976fb15c1..bc706356c434 100644
 --- a/drivers/phy/nuvoton/phy-ma35d1-usb2.c
 +++ b/drivers/phy/nuvoton/phy-ma35d1-usb2.c
-@@ -5,7 +5,6 @@
+@@ -1,6 +1,12 @@
+ // SPDX-License-Identifier: GPL-2.0
+ /*
+- * Copyright (C) 2024 Nuvoton Technology Corp.
++ * Nuvoton MA35D1 USB 2.0 PHY driver
++ *
++ * Supports PHY0 (USB0 OTG port, shared between DWC2 gadget and EHCI0/OHCI0)
++ * and PHY1 (USB1 host-only port, used by EHCI1/OHCI1). The hardware mux on
++ * PHY0 switches automatically via the USB ID pin.
++ *
++ * Copyright (C) 2024-2026 Nuvoton Technology Corp.
+  */
  #include <linux/bitfield.h>
  #include <linux/clk.h>
- #include <linux/delay.h>
--#include <linux/io.h>
- #include <linux/kernel.h>
- #include <linux/mfd/syscon.h>
- #include <linux/module.h>
+@@ -12,131 +18,291 @@
+ #include <linux/phy/phy.h>
+ #include <linux/platform_device.h>
+ #include <linux/regmap.h>
++#include <linux/usb/role.h>
+ 
+-/* USB PHY Miscellaneous Control Register */
+-#define MA35_SYS_REG_USBPMISCR	0x60
+-#define PHY0POR			BIT(0)  /* PHY Power-On Reset Control Bit */
+-#define PHY0SUSPEND			BIT(1)  /* PHY Suspend; 0: suspend, 1: operaion */
+-#define PHY0COMN			BIT(2)  /* PHY Common Block Power-Down Control */
+-#define PHY0DEVCKSTB			BIT(10) /* PHY 60 MHz UTMI clock stable bit */
++#define MA35_SYS_PWRONOTP		0x04
++#define PWRONOTP_USBP0ID		BIT(16)
++
++#define MA35_SYS_USBPMISCR		0x60
++#define USBPMISCR_PHY_POR(n)		BIT(0  + (n) * 16)
++#define USBPMISCR_PHY_SUSPEND(n)	BIT(1  + (n) * 16)
++#define USBPMISCR_PHY_COMN(n)		BIT(2  + (n) * 16)
++#define USBPMISCR_PHY_HSTCKSTB(n)	BIT(8  + (n) * 16)
++#define USBPMISCR_PHY_CK12MSTB(n)	BIT(9  + (n) * 16)
++#define USBPMISCR_PHY_DEVCKSTB(n)	BIT(10 + (n) * 16)
++/* Mask for control bits (POR, SUSPEND, COMN) */
++#define USBPMISCR_PHY_CTL_MASK(n)	(0x7u << ((n) * 16))
++/* Host-mode ready */
++#define USBPMISCR_PHY_HOST_READY(n)	(USBPMISCR_PHY_SUSPEND(n)  | \
++					 USBPMISCR_PHY_HSTCKSTB(n) | \
++					 USBPMISCR_PHY_CK12MSTB(n))
++/* Device-mode ready */
++#define USBPMISCR_PHY_DEV_READY(n)	(USBPMISCR_PHY_SUSPEND(n)  | \
++					 USBPMISCR_PHY_DEVCKSTB(n))
++/* RCALCODE: 4-bit resistor trim */
++#define USBPMISCR_RCAL_SHIFT(n)		(12 + (n) * 16)
++#define USBPMISCR_RCAL_MASK(n)		GENMASK(USBPMISCR_RCAL_SHIFT(n) + 3, \
++						USBPMISCR_RCAL_SHIFT(n))
++
++#define MA35_SYS_MISCFCR0		0x70
++/* USB host over-current detect polarity (shared, both ports) */
++#define MISCFCR0_UHOVRCURH		BIT(12)
++
++#define MA35_PHY_NUM			2
++
++struct ma35_phy_port {
++	struct phy *phy;
++	unsigned int idx;
++};
+ 
+ struct ma35_usb_phy {
+-	struct clk *clk;
+ 	struct device *dev;
+ 	struct regmap *sysreg;
++	struct clk *clk;
++	struct ma35_phy_port port[MA35_PHY_NUM];
++	struct usb_role_switch *role_sw;
+ };
+ 
+-static int ma35_usb_phy_power_on(struct phy *phy)
++static int ma35_usb_phy_wait_ready(struct ma35_usb_phy *p, unsigned int n,
++				   unsigned int *val)
+ {
+-	struct ma35_usb_phy *p_phy = phy_get_drvdata(phy);
++	if (n == 0)
++		return regmap_read_poll_timeout(p->sysreg, MA35_SYS_USBPMISCR,
++						*val,
++						((*val & USBPMISCR_PHY_HOST_READY(0)) ==
++						 USBPMISCR_PHY_HOST_READY(0)) ||
++						((*val & USBPMISCR_PHY_DEV_READY(0)) ==
++						 USBPMISCR_PHY_DEV_READY(0)),
++						10, 1000);
++
++	return regmap_read_poll_timeout(p->sysreg, MA35_SYS_USBPMISCR, *val,
++					(*val & USBPMISCR_PHY_HOST_READY(n)) ==
++					USBPMISCR_PHY_HOST_READY(n),
++					10, 1000);
++}
++
++static int ma35_usb_phy_init(struct phy *phy)
++{
++	struct ma35_phy_port *port = phy_get_drvdata(phy);
++	struct ma35_usb_phy *p = container_of(port - port->idx,
++					      struct ma35_usb_phy, port[0]);
++	unsigned int n = port->idx;
+ 	unsigned int val;
+ 	int ret;
+ 
+-	ret = clk_prepare_enable(p_phy->clk);
+-	if (ret < 0) {
+-		dev_err(p_phy->dev, "Failed to enable PHY clock: %d\n", ret);
+-		return ret;
+-	}
++	ret = clk_prepare_enable(p->clk);
++	if (ret)
++		return dev_err_probe(p->dev, ret, "failed to enable clock\n");
+ 
+-	regmap_read(p_phy->sysreg, MA35_SYS_REG_USBPMISCR, &val);
+-	if (val & PHY0SUSPEND) {
+-		/*
+-		 * USB PHY0 is in operation mode already
+-		 * make sure USB PHY 60 MHz UTMI Interface Clock ready
+-		 */
+-		ret = regmap_read_poll_timeout(p_phy->sysreg, MA35_SYS_REG_USBPMISCR, val,
+-						val & PHY0DEVCKSTB, 10, 1000);
+-		if (ret == 0)
+-			return 0;
+-	}
++	regmap_read(p->sysreg, MA35_SYS_USBPMISCR, &val);
+ 
+-	/*
+-	 * reset USB PHY0.
+-	 * wait until USB PHY0 60 MHz UTMI Interface Clock ready
+-	 */
+-	regmap_update_bits(p_phy->sysreg, MA35_SYS_REG_USBPMISCR, 0x7, (PHY0POR | PHY0SUSPEND));
++	if ((val & USBPMISCR_PHY_SUSPEND(n)) &&
++	    !ma35_usb_phy_wait_ready(p, n, &val))
++		goto out;
++
++	regmap_update_bits(p->sysreg, MA35_SYS_USBPMISCR,
++			   USBPMISCR_PHY_CTL_MASK(n),
++			   USBPMISCR_PHY_POR(n) | USBPMISCR_PHY_SUSPEND(n));
+ 	udelay(20);
+ 
+-	/* make USB PHY0 enter operation mode */
+-	regmap_update_bits(p_phy->sysreg, MA35_SYS_REG_USBPMISCR, 0x7, PHY0SUSPEND);
++	regmap_update_bits(p->sysreg, MA35_SYS_USBPMISCR,
++			   USBPMISCR_PHY_CTL_MASK(n),
++			   USBPMISCR_PHY_SUSPEND(n));
+ 
+-	/* make sure USB PHY 60 MHz UTMI Interface Clock ready */
+-	ret = regmap_read_poll_timeout(p_phy->sysreg, MA35_SYS_REG_USBPMISCR, val,
+-					val & PHY0DEVCKSTB, 10, 1000);
+-	if (ret == -ETIMEDOUT) {
+-		dev_err(p_phy->dev, "Check PHY clock, Timeout: %d\n", ret);
+-		clk_disable_unprepare(p_phy->clk);
+-		return ret;
+-	}
++	ret = ma35_usb_phy_wait_ready(p, n, &val);
++	if (ret)
++		dev_err(p->dev, "USB PHY%u clock not stable (USBPMISCR=0x%08x)\n",
++			n, val);
++out:
++	clk_disable_unprepare(p->clk);
++	return ret;
++}
+ 
+-	return 0;
++static int ma35_usb_phy_power_on(struct phy *phy)
++{
++	struct ma35_phy_port *port = phy_get_drvdata(phy);
++	struct ma35_usb_phy *p = container_of(port - port->idx,
++					      struct ma35_usb_phy, port[0]);
++
++	return clk_prepare_enable(p->clk);
+ }
+ 
+ static int ma35_usb_phy_power_off(struct phy *phy)
+ {
+-	struct ma35_usb_phy *p_phy = phy_get_drvdata(phy);
++	struct ma35_phy_port *port = phy_get_drvdata(phy);
++	struct ma35_usb_phy *p = container_of(port - port->idx,
++					      struct ma35_usb_phy, port[0]);
+ 
+-	clk_disable_unprepare(p_phy->clk);
++	clk_disable_unprepare(p->clk);
+ 	return 0;
+ }
+ 
+ static const struct phy_ops ma35_usb_phy_ops = {
+-	.power_on = ma35_usb_phy_power_on,
+-	.power_off = ma35_usb_phy_power_off,
+-	.owner = THIS_MODULE,
++	.init		= ma35_usb_phy_init,
++	.power_on	= ma35_usb_phy_power_on,
++	.power_off	= ma35_usb_phy_power_off,
++	.owner		= THIS_MODULE,
+ };
+ 
++static int ma35_role_sw_set(struct usb_role_switch *sw, enum usb_role role)
++{
++	return -EOPNOTSUPP;
++}
++
++static enum usb_role ma35_role_sw_get(struct usb_role_switch *sw)
++{
++	struct ma35_usb_phy *p = usb_role_switch_get_drvdata(sw);
++	u32 val;
++
++	regmap_read(p->sysreg, MA35_SYS_PWRONOTP, &val);
++
++	return (val & PWRONOTP_USBP0ID) ? USB_ROLE_HOST : USB_ROLE_DEVICE;
++}
++
++static int ma35_role_switch_init(struct platform_device *pdev,
++				 struct ma35_usb_phy *p)
++{
++	struct usb_role_switch_desc sw_desc = {0};
++
++	sw_desc.set = ma35_role_sw_set;
++	sw_desc.get = ma35_role_sw_get;
++	sw_desc.allow_userspace_control = true;
++	sw_desc.driver_data = p;
++	sw_desc.fwnode = dev_fwnode(&pdev->dev);
++
++	p->role_sw = usb_role_switch_register(&pdev->dev, &sw_desc);
++	if (IS_ERR(p->role_sw)) {
++		if (PTR_ERR(p->role_sw) == -ENODEV) {
++			p->role_sw = NULL;
++			return 0;
++		}
++		return dev_err_probe(&pdev->dev, PTR_ERR(p->role_sw),
++				     "failed to register role switch\n");
++	}
++
++	return 0;
++}
++
++static void ma35_role_switch_exit(struct ma35_usb_phy *p)
++{
++	if (p->role_sw) {
++		usb_role_switch_unregister(p->role_sw);
++		p->role_sw = NULL;
++	}
++}
++
++static struct phy *ma35_usb_phy_xlate(struct device *dev,
++				      const struct of_phandle_args *args)
++{
++	struct ma35_usb_phy *p = dev_get_drvdata(dev);
++	unsigned int idx;
++
++	if (args->args_count == 0)
++		idx = 0;
++	else
++		idx = args->args[0];
++
++	if (idx >= MA35_PHY_NUM)
++		return ERR_PTR(-EINVAL);
++
++	return p->port[idx].phy;
++}
++
+ static int ma35_usb_phy_probe(struct platform_device *pdev)
+ {
+ 	struct phy_provider *provider;
+-	struct ma35_usb_phy *p_phy;
+-	struct phy *phy;
++	struct ma35_usb_phy *p;
++	int n, ret;
++	u32 code;
+ 
+-	p_phy = devm_kzalloc(&pdev->dev, sizeof(*p_phy), GFP_KERNEL);
+-	if (!p_phy)
++	p = devm_kzalloc(&pdev->dev, sizeof(*p), GFP_KERNEL);
++	if (!p)
+ 		return -ENOMEM;
+ 
+-	p_phy->dev = &pdev->dev;
+-	platform_set_drvdata(pdev, p_phy);
++	p->dev = &pdev->dev;
++	platform_set_drvdata(pdev, p);
++
++	p->sysreg = syscon_regmap_lookup_by_phandle(pdev->dev.of_node,
++						     "nuvoton,sys");
++	if (IS_ERR(p->sysreg))
++		return dev_err_probe(&pdev->dev, PTR_ERR(p->sysreg),
++				     "failed to get SYS regmap\n");
+ 
+-	p_phy->sysreg = syscon_regmap_lookup_by_phandle(pdev->dev.of_node, "nuvoton,sys");
+-	if (IS_ERR(p_phy->sysreg))
+-		return dev_err_probe(&pdev->dev, PTR_ERR(p_phy->sysreg),
+-				     "Failed to get SYS registers\n");
++	p->clk = devm_clk_get(&pdev->dev, NULL);
++	if (IS_ERR(p->clk))
++		return dev_err_probe(&pdev->dev, PTR_ERR(p->clk),
++				     "failed to get clock\n");
+ 
+-	p_phy->clk = of_clk_get(pdev->dev.of_node, 0);
+-	if (IS_ERR(p_phy->clk))
+-		return dev_err_probe(&pdev->dev, PTR_ERR(p_phy->clk),
+-				     "failed to find usb_phy clock\n");
++	for (n = 0; n < MA35_PHY_NUM; n++) {
++		if (of_property_read_u32_index(pdev->dev.of_node,
++					       "nuvoton,rcalcode", n, &code))
++			continue;
+ 
+-	phy = devm_phy_create(&pdev->dev, NULL, &ma35_usb_phy_ops);
+-	if (IS_ERR(phy))
+-		return dev_err_probe(&pdev->dev, PTR_ERR(phy), "Failed to create PHY\n");
++		if (code > 15)
++			return dev_err_probe(&pdev->dev, -EINVAL,
++					     "rcalcode[%d] %u out of range (0-15)\n",
++					     n, code);
++
++		regmap_update_bits(p->sysreg, MA35_SYS_USBPMISCR,
++				   USBPMISCR_RCAL_MASK(n),
++				   code << USBPMISCR_RCAL_SHIFT(n));
++	}
+ 
+-	phy_set_drvdata(phy, p_phy);
++	regmap_update_bits(p->sysreg, MA35_SYS_MISCFCR0, MISCFCR0_UHOVRCURH,
++			   of_property_read_bool(pdev->dev.of_node,
++						 "nuvoton,oc-active-high") ?
++			   MISCFCR0_UHOVRCURH : 0);
++
++	for (n = 0; n < MA35_PHY_NUM; n++) {
++		p->port[n].idx = n;
++
++		p->port[n].phy = devm_phy_create(&pdev->dev, pdev->dev.of_node,
++						 &ma35_usb_phy_ops);
++		if (IS_ERR(p->port[n].phy))
++			return dev_err_probe(&pdev->dev, PTR_ERR(p->port[n].phy),
++					     "failed to create PHY%d\n", n);
++
++		phy_set_drvdata(p->port[n].phy, &p->port[n]);
++	}
+ 
+-	provider = devm_of_phy_provider_register(&pdev->dev, of_phy_simple_xlate);
+-	if (IS_ERR(provider))
++	ret = ma35_role_switch_init(pdev, p);
++	if (ret)
++		return ret;
++
++	provider = devm_of_phy_provider_register(&pdev->dev, ma35_usb_phy_xlate);
++	if (IS_ERR(provider)) {
++		ma35_role_switch_exit(p);
+ 		return dev_err_probe(&pdev->dev, PTR_ERR(provider),
+-				     "Failed to register PHY provider\n");
++				     "failed to register PHY provider\n");
++	}
++
+ 	return 0;
+ }
+ 
++static void ma35_usb_phy_remove(struct platform_device *pdev)
++{
++	struct ma35_usb_phy *p = platform_get_drvdata(pdev);
++
++	ma35_role_switch_exit(p);
++}
++
+ static const struct of_device_id ma35_usb_phy_of_match[] = {
+-	{ .compatible = "nuvoton,ma35d1-usb2-phy", },
+-	{ },
++	{ .compatible = "nuvoton,ma35d1-usb2-phy" },
++	{ /* sentinel */ }
+ };
+ MODULE_DEVICE_TABLE(of, ma35_usb_phy_of_match);
+ 
+ static struct platform_driver ma35_usb_phy_driver = {
+ 	.probe		= ma35_usb_phy_probe,
+-	.driver	= {
+-		.name	= "ma35d1-usb2-phy",
+-		.of_match_table = ma35_usb_phy_of_match,
++	.remove		= ma35_usb_phy_remove,
++	.driver		= {
++		.name		= "ma35d1-usb2-phy",
++		.of_match_table	= ma35_usb_phy_of_match,
+ 	},
+ };
+ module_platform_driver(ma35_usb_phy_driver);
+ 
+ MODULE_DESCRIPTION("Nuvoton ma35d1 USB2.0 PHY driver");
+ MODULE_AUTHOR("Hui-Ping Chen <hpchen0nvt@gmail.com>");
++MODULE_AUTHOR("Joey Lu <a0987203069@gmail.com>");
+ MODULE_LICENSE("GPL");
 -- 
 2.43.0
 
