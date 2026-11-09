@@ -2,12 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B2A7D60A3804
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Nov 2026 00:34:51 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C7DF860A5BC4
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Nov 2026 00:34:55 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Gsh7VlDA;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=infradead.org header.i=@infradead.org header.a=rsa-sha256 header.s=desiato.20200630 header.b=e2bsVe0b;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=BJRdPldB
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=I5xc75+c;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=c0EZEb8/
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -15,88 +14,73 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=c6isMEaZpbkOGGjOfXVKH1w6FkTASfPaW0GHqHOm44s=; b=Gsh7VlDABBn6p22errL0fkN0fq
-	iIA4LGEyKKUdnJ1HA6nlRvo+rY8skc1l3P7W3kkVEymV/hMRdEF1dRvvM8wxoZCLX4ni4MJZJ4Zjo
-	DXYqHhJ7XY0JcNivYS6nrKdiXQbRq4PDC478+/HgyuSrkJV+1IbxPrTqV3Ppzi0U+KOkcKYzcb/g+
-	n89/fpqBWE8CYvBE8X9uinGewZYTULLEDKEQOxJObDuSvEtkRR3R70XdcxIZuvMIgKFEerPgwJEr8
-	gOwOcv1dri6eWsl48ro9d/I2jZhT6jKHZHLliLRw70HNxH/K1XBVyasUpCXXGQobd0Juze4181FKl
-	+btqwmhg==;
+	bh=USsmgim7Iq2onLKi6XlHlCY3uWXSKDi+6GA0+vAWZJc=; b=I5xc75+ckrv0LBFiXAbKpkcN5B
+	1JMIQ0AK3NC2HilvVnfnlAkgU7Jxpi85ErKiCZG/9nqU2eK0OnABCfIkH0+owJiKSiUm7RJfbQFfq
+	Uw38gELKyXJmV765Nns/3tGfvkefO+2/QrY3hT3pg+ZieWH6l8/YuyK9JBIUDiT3DtjprpBj9aBGL
+	nNOu8BZq1TKgrLU/1k0ltd4lyV2GvgD2cS5jcoFcrprexNNwqpr1RZCudXi3bjRifq8fao3priOH/
+	XQpm1BjHydU6WEwaZVwgxanx0iNyi/jSUUQYQqem64namCki4IcT22BVeVHo/BBgOYKvvDazMUz7P
+	DhyG6K5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQDLX-0000000GzC7-1tnd;
-	Mon, 09 Nov 2026 00:34:51 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1xQDLb-0000000GzFZ-28c4;
+	Mon, 09 Nov 2026 00:34:55 +0000
+Received: from mail-wr1-f51.google.com ([209.85.221.51])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQDLV-0000000GzAu-3aJJ
-	for linux-phy@bombadil.infradead.org;
-	Mon, 09 Nov 2026 00:34:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
-	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=RVY15LYwgm0Qc/TTM/+0NaikfZtjUT6nkNDgccuwjcg=; b=e2bsVe0b1wzm9E56/aTRolbQdA
-	kiaPcz0iaYPTnHcdVsfeB9fk3PKcHdmzTNUmt0MSjfD9PfWRc1hLw4dTZL4lnvAHBQwOHjVxerC6H
-	xDgzkQr11VDy53k8uu9b13FmvZ6nThml4hT5w61EmhGOV7cw8KGeejHnBTnHSPpTj7iPczC17Air8
-	sZAPoYRhBIS5SbNLpPN90/zfoN0CkfsXOtFFGuDqdQ5SB2Fx9g76mvLxV98GkKNN3ej/4K9PQNj77
-	5xfTVBVqpsmQp96oJnqhUcCgsHo2nYANTIHbQueT0OvYre49+FrrV1h1H2ycVLUQL7TSU47Bz8GI6
-	Q9png2ww==;
-Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
-	by desiato.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQDLS-00000006917-3Mng
+	id 1xQDLN-0000000Gz34-2LvU
 	for linux-phy@lists.infradead.org;
-	Mon, 09 Nov 2026 00:34:48 +0000
-Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-490d59c3f0aso138702f8f.1
-        for <linux-phy@lists.infradead.org>; Sun, 08 Nov 2026 16:34:46 -0800 (PST)
+	Mon, 09 Nov 2026 00:34:53 +0000
+Received: by mail-wr1-f51.google.com with SMTP id ffacd0b85a97d-492f0a1b685so236620f8f.0
+        for <linux-phy@lists.infradead.org>; Sun, 08 Nov 2026 16:34:41 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794184485; x=1794789285; darn=lists.infradead.org;
+        d=gmail.com; s=20260707; t=1794184479; x=1794789279; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=RVY15LYwgm0Qc/TTM/+0NaikfZtjUT6nkNDgccuwjcg=;
-        b=BJRdPldBbwskhnPbmbp2jCq5U3vCxc9IzQrRpvFhCeN1iP0LPA8G2hI3eMnjvIkM1/
-         GC00xljzuPyv4/fGZH4w3N/P6yqtoTBKxx+zW48JKpS2EHAQiw7OE6kiNxHkGaF1mIcY
-         OuFTbPhpqke12EwbRi1SjTfdTt2NrFxR2gaQUonjMHkqrQko5dtAkYuLNP9SYSHf12VW
-         B85qlUzaS7TgZlZem8f3d419PvmC8qG9me/XUFiIo0m3HtkC7g6KANZDNT7Gm1kzYpSS
-         apuVXLdtSznNU+c/T/iGjWLLB7R6GpMDhc3jX4jo0Vr4lcSItYPSFoaZUCRcOBb3DHYo
-         hebA==
+        bh=bHyunwqhqqpQQZSm8FsYLG0nPatLuBc3TvD/xVa6m3c=;
+        b=c0EZEb8/6+L5YeOqQ03P1HKjSOGBnhm6yuwf5VO3F8DRs0TTjpOJ2LnyXL0AulbQDS
+         s3w1+mJh4ERwYR5wTndECi3/1SOMYPgG5arfiCpHXNYXwz/QY+lP4OZWt3TbYxuaIKw0
+         TabM02VA/5+pFLR3APxbK85ukEf5YC40a3BUhLbvuYcqRYTdMQUsOj807IIJ8QGPU/8G
+         D+CT5HRVkr7BUMJNZoexwjHcW4BKfIzvimBKO+pTUGqXqlzDZcbPs04NSlBkwzCJHdUX
+         cUWG4XN6Rp0N1J2ZR1ZR5ZwFTdg2Iy6RjwhmV3LjScXkFCwIf/uvp5suWroV3bR819hx
+         CLgw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794184485; x=1794789285;
+        d=1e100.net; s=20260707; t=1794184479; x=1794789279;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=RVY15LYwgm0Qc/TTM/+0NaikfZtjUT6nkNDgccuwjcg=;
-        b=2DWWf8pBw7Ngorwm8ogz9Ul8gPqh45W7ougDKPtEepa9CzzK0uwdxj8Fesz9pJM5IP
-         8/vWgMe5cZc7NlItYDPdzdioIRQ6B9+s9trJnEvcnidwzmjdChOChsVh/o2jdvcKLhy2
-         /jbMhxLkC9CRZ1DO0JoYF4VdLL6fNrQFNrwMwVwu3ANQfPpOlb6HgqWPNRbmfTJUaB27
-         jN4MEhxQRh2VvKXXtiA6q5bs4QMekutLwEhXfxleES0eYir/frV5sd1Rz7n2A8GycHdQ
-         OF9KeuI2bf7NhD+/A/Mjx2f487Wv/SKn75fPNTiWDozmZgzgCooyCZ+k1Z+cPPJxr5sk
-         0vlA==
-X-Forwarded-Encrypted: i=1; AL+hErFZLgW4S3OGwazOnCslYfbEk67A5juVNyEWEEdjtw889NJS55n81WJ/9N/oFTC7BcJGXrS1HwL0+Hw=@lists.infradead.org
-X-Gm-Message-State: APuU4Z9Ph2SfL1+PKWqPWn0sAn1Dc/yCItDtHFH1VCR5Jh5TkLLlItCA
-	G1hA2ZDIgwfDrw5MvwISqjODgun963GRy9m23gv7hAAalyiwHzWeu9lz
-X-Gm-Gg: AYBFou2CIS5h8EHmT1+ZW+stwqOV1iai/mFN7F6A5ox0dgE7JMYrzG4D7rHGioluvVH
-	C6Pz/HZB6uucyryWonmNQjbOv0FNr6GzQjcaHYfbZj+CDMJSI4gcZ56GIzd6zAxPDjc01Uc3k2s
-	r+x2z7kSEsrdUmmry3IaqxbxTNlSBwz/HTNRMD3AED3WLr3Pwa1KI0iFdGdC5uTPxSR7tvAL/kq
-	ij3eDGR0J5Po8MwwzTW+t7jxkAvGUPWcVaXnvw5dkZbf1GYfl6hzjObmvMJmosnwF3jq8F6yTsi
-	QwChN6V7M4CZDs3yo0Sfuz6tqRRza6pQm1VEYXWeV8pUGqIyIRqJeaveKSW6RgDBM2IA8rYcdsK
-	LC9OidwbVR9G38nJg2zIkBVl7LA4vfQv8a1HUfRtYQ3PMJX6BJe/SUHJ1/cnBmR06yfcbTOfL6Y
-	rxJoPZ2q/9HOIIrytv7p3E38KVXit3tY2d6RARcpPSF+NFLG9zuw2epmpw4Ia0s7hxD57quelN0
-	bJWOi8wCHz/ab1cHRARA8vsOQFIpWX5sKtzlqEzOWl7meATue6hckIOcOUY79I+urZ97E8/D51R
-	ICW+v9/2gxme20DO4wwMCIrSEu5XNjSogDvRcnMR
-X-Received: by 2002:a05:6000:481a:b0:48e:62a9:1a65 with SMTP id ffacd0b85a97d-49584690551mr4596063f8f.49.1794184484831;
-        Sun, 08 Nov 2026 16:34:44 -0800 (PST)
+        bh=bHyunwqhqqpQQZSm8FsYLG0nPatLuBc3TvD/xVa6m3c=;
+        b=shMMqFak6IdmyKYhK6OtoXDoeR0xUty6JJ0ER+T1U206J7W9RgQk8SBQubef9Rm3iR
+         UKZIvP0ctPJbEl65n5t9BxkSs3N58K9NlphECvgeEpsEiCCXwFSDYUANeXMNb0GULhts
+         NXnH6VqCzLGWF+McP60wUIsDGvgUE9tjKm2vlOZ8xkVls8fIN+MU024aZGJpCmb4NxZz
+         vy+bJ509KloT83+RIfYHTxGehcf9BZGGQgdP9e6gw8r4M0b0NagwKnj1xyNFQMoSm5et
+         4rfjYcUNkagRAJUiBAQChLq3WyE8e8fc+gA3naiMptlz+5pTHs7aRhHvuMB/EeOGx0NX
+         74iw==
+X-Forwarded-Encrypted: i=1; AL+hErGMMUTyokGcGGvm+aDKZoNWlGWiE+eQTZAm/n7hz0ncqQQme4qxmTiWCbk1wbQFePNh5q6ScifhNR8=@lists.infradead.org
+X-Gm-Message-State: APuU4Z907ZD6A85itcTew3iXTot1b60pnVh8KwmG2L6OYO3+QVMCouC+
+	ixPkOU+BQbQLLUUu8D1qmZ6MGhoo+i9PcefoUnrukzqqhLOF/MjtHuvb
+X-Gm-Gg: AYBFou1sAIKvUmDQb/k/JsZF2565aSYv7B6HmDwXO7W2vOQkYZKj4gG/lB1J3/DYuTD
+	mXp01Tq4L2q4Ij0atnGCWHB6TpKZkk3KzWf9xsw13i+0nY6UEMam9jwB9oHrY86DVTBul65U8Td
+	37tvMMcUjkleLqPkKf3pd45RSMHEayX0kKILy8skjESj3zsqqutgS+saUN5InFeWqvuYvzulgze
+	LHgxgd2+VLskRUrBlFH4xdHVW8THJoKv/nH3EwJFI0LmusIzqTopryLXn3i8zepo5cEBFf8TekS
+	QXdAKcenLwSiATRNt8g6miqbO7RRJhBarZnWUiEvjYdU0hSYLvG0x1NNM5Ts22fqRXhqrp8lHqf
+	yKBYaAN5Ba953GSofBVXmTz8BrdBlC+p6j7uCMv0RJOaScLFJs568ZERcH6OyXQ8WZszvr93xBF
+	+86/j29mfotNPJuS/EO/S+Xa8JGFMsgZE3pnHzm1dzbNDEuGOYf6jKP9vKzjt9GyuHnH/t6WJO9
+	fURY2xmhhxw62DpG8w99GCZave/HN2TWsBnyT0HwoNliO7rgSRDKu3AFBpOT692kAqzjMwrpxk5
+	D26Fp8FAAV4NUb0JBAa/XYg4HWDK3/l5rHyOreTK
+X-Received: by 2002:a5d:6f0f:0:b0:48e:679a:4aeb with SMTP id ffacd0b85a97d-49586a3c015mr4911501f8f.3.1794184479389;
+        Sun, 08 Nov 2026 16:34:39 -0800 (PST)
 Received: from [192.168.10.105] ([212.58.121.92])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49592f39c8asm6541675f8f.7.2026.11.08.16.34.39
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49592f39c8asm6541675f8f.7.2026.11.08.16.34.31
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 08 Nov 2026 16:34:43 -0800 (PST)
+        Sun, 08 Nov 2026 16:34:35 -0800 (PST)
 From: Stanislav Aleksandrov <lightofmysoul@gmail.com>
-Date: Mon, 09 Nov 2026 00:33:26 +0000
-Subject: [PATCH 14/17] dt-bindings: interconnect: OSM L3: Add Halliday EPSS
- L3 compatible
+Date: Mon, 09 Nov 2026 00:33:25 +0000
+Subject: [PATCH 13/17] dt-bindings: thermal: qcom-tsens: Document the
+ Halliday Temperature Sensor
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261109-halliday-dts-v1-14-289114ab8197@gmail.com>
+Message-Id: <20261109-halliday-dts-v1-13-289114ab8197@gmail.com>
 References: <20261109-halliday-dts-v1-0-289114ab8197@gmail.com>
 In-Reply-To: <20261109-halliday-dts-v1-0-289114ab8197@gmail.com>
 To: Bjorn Andersson <andersson@kernel.org>, 
@@ -128,18 +112,18 @@ Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
  linux-scsi@vger.kernel.org, linux-crypto@vger.kernel.org, 
  linux-pm@vger.kernel.org, Stanislav Aleksandrov <lightofmysoul@gmail.com>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1794184395; l=844;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1794184395; l=829;
  i=lightofmysoul@gmail.com; s=20261108; h=from:subject:message-id;
- bh=gWRtexQl3K6zrJ8s8OX25X6Fe6c5gXvBp3k5tSGU4UU=;
- b=pnbK9TbDaJw63lMsp+XBx3cpAT1m6LlRO8M5pm7At3undTaYtmQjFmjLHcmBIU0XLq40cIoX8
- jdWhe4OxgWuCqPNlp+TJGp7ld3LSdzNJFNkDbr6brDzv5M8VXRxZg8B
+ bh=QaX1Uqhi9JFBTyniSmrOqgkrx65fb+cn/pSnBpltl3Q=;
+ b=Nal1T+ROAiQwIycyxEfKMIQ4y4aGW1L0uJ4HewmCRmGIZfSJuQVD6Fg2qPRcOrHnEpA/WiD2I
+ u4aa5TB+J3JDBwhP4O82nlPD61zqIxNlRPMGwQQVcuKGnMJPv1tp6Q6
 X-Developer-Key: i=lightofmysoul@gmail.com; a=ed25519;
  pk=jeRUlfmkhE53CJPoeIIXgu7rTE0ybDRH0HQrEwbydzg=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261109_003446_842573_BFA83E30 
-X-CRM114-Status: UNSURE (   9.60  )
+X-CRM114-CacheID: sfid-20261108_163441_666842_E4C28633 
+X-CRM114-Status: UNSURE (   8.70  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -1.1 (-)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -152,33 +136,34 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,
+X-Spam-Status: No, score=-12.8 required=3.0 tests=BAYES_00,
 	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,
-	FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	FORGED_GMAIL_RCVD,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
+	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Document the EPSS L3 interconnect on the Qualcomm Halliday SoC.
+Document the Temperature Sensor (TSENS) on the Qualcomm Halliday SoC.
 
 Signed-off-by: Stanislav Aleksandrov <lightofmysoul@gmail.com>
 ---
- Documentation/devicetree/bindings/interconnect/qcom,osm-l3.yaml | 1 +
+ Documentation/devicetree/bindings/thermal/qcom-tsens.yaml | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/interconnect/qcom,osm-l3.yaml b/Documentation/devicetree/bindings/interconnect/qcom,osm-l3.yaml
-index cd6685683bab..6c3475005a35 100644
---- a/Documentation/devicetree/bindings/interconnect/qcom,osm-l3.yaml
-+++ b/Documentation/devicetree/bindings/interconnect/qcom,osm-l3.yaml
-@@ -31,6 +31,7 @@ properties:
-       - items:
+diff --git a/Documentation/devicetree/bindings/thermal/qcom-tsens.yaml b/Documentation/devicetree/bindings/thermal/qcom-tsens.yaml
+index c78074fbcecf..3b440f395fe8 100644
+--- a/Documentation/devicetree/bindings/thermal/qcom-tsens.yaml
++++ b/Documentation/devicetree/bindings/thermal/qcom-tsens.yaml
+@@ -57,6 +57,7 @@ properties:
            - enum:
-               - qcom,eliza-epss-l3
-+              - qcom,halliday-epss-l3
-               - qcom,milos-epss-l3
-               - qcom,sa8775p-epss-l3
-               - qcom,sc7280-epss-l3
+               - qcom,eliza-tsens
+               - qcom,glymur-tsens
++              - qcom,halliday-tsens
+               - qcom,hawi-tsens
+               - qcom,kaanapali-tsens
+               - qcom,maili-tsens
 
 -- 
 2.55.0
