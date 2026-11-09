@@ -2,101 +2,195 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B19FE606A336
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Nov 2026 03:25:45 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E099A606A31C
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Nov 2026 03:47:54 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=qcXr43Ip;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=oBNP0vO9
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=CIzTaZO6;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=aBZiJqmb;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=mediateko365.onmicrosoft.com header.i=@mediateko365.onmicrosoft.com header.a=rsa-sha256 header.s=selector2-mediateko365-onmicrosoft-com header.b=u46+eg52
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=0pg0fSMn32GJFEp42ooiyjOthXrOM9bh9RMFC8xVUvI=; b=qcXr43Ip8uOyMKM+mDDSHhnFBr
-	WNeNgrHgTqQNYeRbJpGllPOS93+VHBHevYniJEGWzQKcf9buuPQWHIAQCv3jGvMBUYu89g4NWbhZB
-	vHmno19LbK1DqdtUARMWOoiIDfkSPEqXCdsYl7es7C2K/8bTuFx2qzoJEMm+KGYcZXFARBTQuIeAw
-	lFHVaxDh5VRpi5N9iOvqEuY6BHNSCCGGoZt5y58Ai6f5E9pbifHeUjtQ48Z++/XHuD2yKlynbwKzu
-	PFga0mo42vVLoPgLl6ewx9DVcRMxQbTqIs1VxyN5C5akr0ICDuYs1V57e6Obu9SMarEfwZ8liwV9/
-	fY++54zQ==;
+	bh=Djn8NgK710NOsC/ehNS47hGgMpsB2YI8VPtXCT5ldwQ=; b=CIzTaZO6ou3efqDpfxRj5AZasU
+	v/ofnVJyH6KSHP/MDrlWRV0fpvSmZHj2/ywURb/4OV7mZEuwWcBbeGbPIh0E41pWNttZ1Y8YmG4ik
+	29oyW4o2eRMLmA5lnFmDof7SoyuymkbFlHxLmvy09oq1LNM/KoquSzSHrdOQE1XLaFVYN5sZ1Alo4
+	2clafTFa776XmTTZu4mJRuFhO1r6AFEVPqvkb4ubDvvECp4Ar/tu0Tku5Mevt9U4mueI6N5cN8gLU
+	phP+1xipOgcA0HbTflfojML6chT0Yp316rc4d1zAFpqdoISC6D9hraGGyatp6zIhyBS/NSJ8/fvvF
+	M8JCwwLw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQG0v-0000000HBll-0jzY;
-	Mon, 09 Nov 2026 03:25:45 +0000
-Received: from mail-pj1-x102c.google.com ([2607:f8b0:4864:20::102c])
+	id 1xQGMM-0000000HFzS-2deV;
+	Mon, 09 Nov 2026 03:47:54 +0000
+Received: from [216.200.240.184] (helo=mailgw01.mediatek.com)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQG0r-0000000HBkZ-1QbE
-	for linux-phy@lists.infradead.org;
-	Mon, 09 Nov 2026 03:25:43 +0000
-Received: by mail-pj1-x102c.google.com with SMTP id 98e67ed59e1d1-3ae1b34e0d2so196873a91.1
-        for <linux-phy@lists.infradead.org>; Sun, 08 Nov 2026 19:25:40 -0800 (PST)
+	id 1xQGMK-0000000HFxu-0jM6;
+	Mon, 09 Nov 2026 03:47:53 +0000
+X-UUID: 532bced4dbf011f1afed4741b24580c9-20261108
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=MIME-Version:Content-Transfer-Encoding:Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From; bh=NQ5UXNYDOkTDB76B2OyosO2GYpxQlGXe94bO2WsiThA=;
+	b=aBZiJqmbbp+dPAWXNRD7buBPyleYiDFBr4+WqlcgDoEiCApy0GRUqKdeOa3SP2nJKoPZazCyHtxBzBkW8kc6BqJKrtiYnhcaqUsZ0dBX2sPHgSM1aZjBTmfhZeDveAEyG5bzjhpCIVSBvSVs2sPSYCdz6P2SA4F9izdLWjT4/ow=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.3.21,REQID:62353f00-f685-41d5-bd56-6a6a7e3e8d5d,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:b0318ac,CLOUDID:f51207b3-fe72-4c4e-b340-fc5b9cd14a76,B
+	ulkID:nil,BulkQuantity:0,SF:80|81|82|83|102|110|111|836|865|888|898,TC:-5,
+	Content:0|15|50|99,EDM:-3,IP:nil,URL:0,File:130,RT:0,Bulk:nil,QS:nil,BEC:n
+	il,COL:0,OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 2,SSN|SDN
+X-CID-BAS: 2,SSN|SDN,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR
+X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
+X-UUID: 532bced4dbf011f1afed4741b24580c9-20261108
+Received: from mtkmbs09n2.mediatek.inc [(172.21.101.94)] by mailgw01.mediatek.com
+	(envelope-from <ck.hu@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 587517431; Sun, 08 Nov 2026 20:47:45 -0700
+Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
+ MTKMBS14N1.mediatek.inc (172.21.101.75) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.29; Mon, 9 Nov 2026 11:47:43 +0800
+Received: from SI4PR04CU002.outbound.protection.outlook.com (172.21.101.237)
+ by mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server id
+ 15.2.2562.29 via Frontend Transport; Mon, 9 Nov 2026 11:47:43 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=gDaU0BnKvP97ikguafQwrYbvnnaTnm4o7SOylOyVeJDgpEaBm42nzQkTewf8FT1IHPS3CUa+84uibYHxuTAce5YLVSonCYRJnKJsMpg31/H9jOy4Wx+4cuNQc1aYnLJnNleLcG9zGEz5z8nigy6EZoYYO6rcZr0iJjsMDvTYhf+fktTaBFLzcKOb16+cqRTsFZZotALt6Y9bnYV6Rzli4H91ceoJTMvGzKepRezf+5X7ot8NgD6pDfaCULupxOo/VzMK9CyKMUT1iPti3/hrJ1t76bCU2fEcxWBNLeMxomjyR3Kzfo0SmHTponzaoL/cLulpa61KVZlmtnzd0prbrg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=NQ5UXNYDOkTDB76B2OyosO2GYpxQlGXe94bO2WsiThA=;
+ b=KSWkxEMkoNBtG5mM2VVMEJ2BIQKyOt73bHuhuROQihsnVHPWamvmoCq28nZWMjzKHQ/A9AVZmPimfntVnchbwS9IYrQxm9ae/xUQPPvFXEbkivs0s6ZrN9OueT/2bz/gnqMaljW2FXt9fiFhwxdsrxn24r8aluE7XhatPmBQ2yrG04uh9ZdLxOneGvLrLXZDTO82rOHJ8DpZ5fgnfX3hkgRjeSTcrptaH/Fd5AM3Jsl5Y9L6vLQnx/AIeR/Z1Bt7wdvpRMWRwHpy+6c6eS7BwgnolqXkbIFZ2rxOe9xCGOkRA2PlXfIYW8jUiS8OGpIfP9F4iWIU2rtaRAne84GGzg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=mediatek.com; dmarc=pass action=none header.from=mediatek.com;
+ dkim=pass header.d=mediatek.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794194740; x=1794799540; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=z8n7JaPkB/Y4IA6cU4L2s+2dB40viJ/GtgSnJTcko/M=;
-        b=oBNP0vO9Wl4Rw/mQb+ZDusoOxUzqo5035xejNA3UQlTLuU1VjQuOoGswrTRSWrkI5N
-         Z8iNAQXkAHNHVXOSy32O9+tR3cXE4sjw89UlaCZcEZ0MDS+Pzu/c6+0FZPLiB6NWwJ6r
-         eA+mE1rOC7CEwnpNlKLsEz5veazomXuOyVrvYJm2Tf3xZ6PgUMkaISsOwtx8IiM4GUij
-         j9Oyvx2I1vWxXatew6FhiiENA2ciTvWc3XlpqwjRr/RmK5G9Z4BCBSSNma7bwCYqZyjW
-         ttUZXl5DCN/0CilEnFreYAU00ipIsNPnErYS2qKNGFetbEKasWL1e4Sz1RLa3ZLDP0RB
-         dg7g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794194740; x=1794799540;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=z8n7JaPkB/Y4IA6cU4L2s+2dB40viJ/GtgSnJTcko/M=;
-        b=wZtKTPUHfsECHLYEzN5bzYN5JlR4bK1q1rFkWaFLVIDObMcpWYSl8n9ZttfcGOBBNO
-         Y4wE0i2ka7zVGeM+1Mu3XGFXo8lVfyhIZXJdwD7x30ZFZgPeYKXpOnfvVz+nbL0A8tXu
-         9M0DZM+MfPAu3hLsLjsY7msZO+mCTKa2x6kX73shka4LiBJBIyhzv6U+flKlkl1Bxz2D
-         +hOekGQpGWMLl8o6WT/V3tWUloymbgHPcmDkRGXr0umhXAkDbgjJx9F+a84GOLOuUn1C
-         cgpMOpvxWBZGOr97wK9M2U3bgHWNoWf0nkPK4z9pLWnaWOPyarsN/2fclF3V3OKXehXD
-         +4yw==
-X-Forwarded-Encrypted: i=1; AL+hErFczrZn+8PSV50wDg/ncirQntS1Kc77uYKIuBE5YNnV2olZdtPL0vl/lAqN9SYi0vFjMRaaRqyhISM=@lists.infradead.org
-X-Gm-Message-State: APuU4Z+nE67VzkWJHnT+lV/O+sbb4mxFD14IDCLzEOpfpCzqYU3Jjxy1
-	Jj+OjntyqoBNNuEZ2ZqZYeuWSNbDwrI18etOMavPhNiiJuCX+CkoOf5z
-X-Gm-Gg: AYBFou04WKHCegluxCtFyoVJp0jH/vJ7w3D+CFS8/joXVyNAUauvLAfbxWGL4TJfhBG
-	Mzx2C2wcXor9yslZED6B6dxmrG4xlyhii8ZKhbhhh50BvT1CK5dtbKiENQwYV0eIdqzp46TmR8t
-	2zhI7+H1cbnjmnvxDK5jucDQ3GPB6dTPFQ0Pi4DgVyw3jLW5mh6m6pZPysX00mvP43ubAruSqnq
-	9ioyjJTlwrNf+7sJ6OGjbAyxqyKQ61nU+7dN/WJxI0iL6nY960uysgqIAQAVaQR4RbcXkJEEFqN
-	l33XyNtgC3rvM0NJXXWSTmiK5/4X8ILDbMs1LLgQd8SlIuP+4F9LLg/V/fH1f6xlgvRjlEPs1ir
-	rPULnbRX3XGcP9D4zLBJaLT8HOWZr2bx0/SYC8chLPUfWUU1lCoZ1el6k0F3kxVFEtgJRnjNECQ
-	LoXpoehwzeFJwLrp93lW3Y2MOQsByVOopeH1mCnWJAQPtbwEDEs3+AyVTv5v0yoKG21VXtXmG1T
-	ZhjFlkcf2M5ywCqbZht9zzbWPhPUAFYC13Sj5sz9rbqaASgG0pidbE6NBP/Gr1sdZB892BfIS+v
-	pQeW7qorImqzU01dKQQDUcvKdXo6z7i5EG2gj/roNrR85lZRcJXHQTr0OvAsYkKoTscg0MQ/gpw
-	MB1rUhrtm
-X-Received: by 2002:a17:90b:3b50:b0:3b0:e388:d9c9 with SMTP id 98e67ed59e1d1-3b12d3fc0aemr1747792a91.12.1794194739886;
-        Sun, 08 Nov 2026 19:25:39 -0800 (PST)
-Received: from [192.168.0.100] (60-250-196-139.hinet-ip.hinet.net. [60.250.196.139])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b1164f16b3sm3657744a91.0.2026.11.08.19.25.37
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 08 Nov 2026 19:25:39 -0800 (PST)
-Message-ID: <4e271e16-c3a6-462d-ac55-abd9129e03e1@gmail.com>
-Date: Mon, 9 Nov 2026 11:25:36 +0800
+ d=mediateko365.onmicrosoft.com; s=selector2-mediateko365-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=NQ5UXNYDOkTDB76B2OyosO2GYpxQlGXe94bO2WsiThA=;
+ b=u46+eg52XCIzycJHhGCn+7Y7WuqBnfiUIqVkOClhBIEeJZKcGxdvwPBHeVxsn5rPFwmdcCMbsMd6qZT2zWDoz3xXaQEVc9nfK6f5oRfDeQaOYjleAljUDQ66oDjlCMf0wKXGOJqAB2UzuGKToM9UAnhodMvOV1gtJMXAYhTMBwI=
+Received: from KUYPR03MB9902.apcprd03.prod.outlook.com (2603:1096:d10:91::20)
+ by SE3PR03MB10620.apcprd03.prod.outlook.com (2603:1096:101:322::20) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.592.12; Mon, 9 Nov
+ 2026 03:47:38 +0000
+Received: from KUYPR03MB9902.apcprd03.prod.outlook.com
+ ([fe80::9598:2e59:20dd:960b]) by KUYPR03MB9902.apcprd03.prod.outlook.com
+ ([fe80::9598:2e59:20dd:960b%5]) with mapi id 15.21.0592.010; Mon, 9 Nov 2026
+ 03:47:37 +0000
+From: =?utf-8?B?Q0sgSHUgKOiDoeS/iuWFiSk=?= <ck.hu@mediatek.com>
+To: "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+	"l.scorcia@gmail.com" <l.scorcia@gmail.com>
+CC: "fparent@baylibre.com" <fparent@baylibre.com>, "linux-clk@vger.kernel.org"
+	<linux-clk@vger.kernel.org>, "robh@kernel.org" <robh@kernel.org>,
+	=?utf-8?B?Q2h1bmZlbmcgWXVuICjkupHmmKXls7Ap?= <Chunfeng.Yun@mediatek.com>,
+	"simona@ffwll.ch" <simona@ffwll.ch>, AngeloGioacchino Del Regno
+	<angelogioacchino.delregno@collabora.com>, "devicetree@vger.kernel.org"
+	<devicetree@vger.kernel.org>, "conor+dt@kernel.org" <conor+dt@kernel.org>,
+	"jbrunet+clk@baylibre.com" <jbrunet+clk@baylibre.com>,
+	"bmasney+clk@redhat.com" <bmasney+clk@redhat.com>, "chunkuang.hu@kernel.org"
+	<chunkuang.hu@kernel.org>, "vkoul@kernel.org" <vkoul@kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"krzk+dt@kernel.org" <krzk+dt@kernel.org>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "p.zabel@pengutronix.de"
+	<p.zabel@pengutronix.de>, "dri-devel@lists.freedesktop.org"
+	<dri-devel@lists.freedesktop.org>, "chunhui.dai@mediatek.com"
+	<chunhui.dai@mediatek.com>, "wenst@chromium.org" <wenst@chromium.org>,
+	"airlied@gmail.com" <airlied@gmail.com>, "mani@kernel.org" <mani@kernel.org>,
+	"neil.armstrong@linaro.org" <neil.armstrong@linaro.org>,
+	"matthias.bgg@gmail.com" <matthias.bgg@gmail.com>, "sboyd@kernel.org"
+	<sboyd@kernel.org>, "nicolas.frattaroli@collabora.com"
+	<nicolas.frattaroli@collabora.com>, "linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>
+Subject: Re: [PATCH 6/7] drm/mediatek: mtk_hdmi: Improve the secure output bit
+ toggle
+Thread-Topic: [PATCH 6/7] drm/mediatek: mtk_hdmi: Improve the secure output
+ bit toggle
+Thread-Index: AQHdWK5sVFZVsj5AiEudhrGlIjNZrrclSMKA
+Date: Mon, 9 Nov 2026 03:47:37 +0000
+Message-ID: <2b2f11fc12297cba279f70fc4ccbda59b1a2198a.camel@mediatek.com>
+References: <20261010115539.9237-1-l.scorcia@gmail.com>
+	 <20261010115539.9237-7-l.scorcia@gmail.com>
+In-Reply-To: <20261010115539.9237-7-l.scorcia@gmail.com>
+Accept-Language: zh-TW, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Evolution 3.52.3-0ubuntu1.1 
+authentication-results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=mediatek.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: KUYPR03MB9902:EE_|SE3PR03MB10620:EE_
+x-ms-office365-filtering-correlation-id: e1068a42-e70a-4ed0-00da-08df3e14329c
+x-ld-processed: a7687ede-7a6b-4ef6-bace-642f677fbe31,ExtAddr
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|42112799006|1800799024|376014|23010399003|7416014|366016|18002099003|22082099003|10067099003|3023799007|38070700021|4143699003|11063799006|261028144727099003|261102123227099003|261022105027099003|56012099006|261021121427099003|261026140227099003|261026121527099003;
+x-microsoft-antispam-message-info: NvrZvji1HlVRM+uQDeKdfvzKIa0JNJlvlk7RT/9nrvJrjOyni4a20sp7ZJRjFASRHC2Dq1Gmupb6fsZytZ+FQtwB2ylPvvMNyt+6TEMNKBIQJqAIXOwOqjKxF+MNGY9ffQKWq54bXqUJg0pW63+gkm5QrSIwETN8n8TwiZL+2zbvE3VvqtOcvhqYPQ2o5MRYdR9OJ+muvvqpFfTU+hRMGFUh+bMfWPlj6KjBxTZUJjOuUHCjVGn1/1ALvsNugmhg4x8Wvwf9BOzuG8yqKU/JudjOr1yUSQ8M+ErfrXXyumG2pPZif68bmXUz4VdCj27A2LQRd79uLZ0ZYdJYico4QijHezJGxGhUPApppMuI34OMsF2hRTkwUoCUF2u1H8otLSkq4cfSzbWNZ+MgUDFPXJjL7L2R6N80W4+ZIlQH9RBQeqfazkNZzsbqvV9p+7ZOrMLK+y2nLInSj4gkE1ey8xh9Yhbyy8CVZS2drB6xwHPfHfoBxacgJloHfxpw3cMy3i6+OoIpELcxhH4y4JZxLl39huVv22yt3ozK5r933LxaQQ9Zx9su6NNj43h7Yn1CQB/qZCdWpcycWqWBhA5lkt123zHjDIM7sxIyLPLCcXLsL1WIFfPEqdmpYGY68UbIedy3LFe6kMXlGVG/rXy2NYNvvbVAYzkapM3iL7IkRkZbWpmUTk9cEKmfl1nshi+DyzUmm+JJeR7tP+l/0mOgOn/CYAgmfaFXrEssNuYCHrs=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:KUYPR03MB9902.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(42112799006)(1800799024)(376014)(23010399003)(7416014)(366016)(18002099003)(22082099003)(10067099003)(3023799007)(38070700021)(4143699003)(11063799006)(261028144727099003)(261102123227099003)(261022105027099003)(56012099006)(261021121427099003)(261026140227099003)(261026121527099003);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?VVlDOW11WkZTcEYzRUhMWGpaTks4K1lvZzdqSUdDRmZ1bjMyVEpvVkJTUFA5?=
+ =?utf-8?B?bHpxbGo0VGYxYmUzWFdxcHNnWkh1MHY5dHR2RFBmaUl2SktJRXo4bnRaTGdx?=
+ =?utf-8?B?RzZKVWNHY3lYYVlpSElFNmw1NXQ3Z25MVStCZGxOb3lQRUU3dUN0R054WXhz?=
+ =?utf-8?B?alpuQm9zRDZMdTFWRVJ6dk1GUGhVL3lmbFc3SUd3TmFVMXZBTGlFN3ZZL2d2?=
+ =?utf-8?B?Q00rNlFKVHNVNm12UjFkYm54NHdBMGg0MnZkUnA4MUFTTGYyN2dwTk1nSzJa?=
+ =?utf-8?B?Y2NsRGkxWUc3MGsxcXlPWTI5M0h4b3M1aDBzTy9EQ3N3UzZDS3NRQU1ZZEVs?=
+ =?utf-8?B?bGVoK2tFdzg5U0dhS2RZK0NhOEpBbkNVakkyWmFlaUV1ckJlS09HRHZkdXFU?=
+ =?utf-8?B?a21CQVp3YVovL25tNVAvY2JVSG9Sa3Avek5wb3BJU1d2VVpYMTIyU1ozKy9M?=
+ =?utf-8?B?RjFKS1Rya3NMSHJKTmsydmYzeHh6bE4vUlpjMG5CS01lT3ZmVXhjM0twSE12?=
+ =?utf-8?B?MGc4UlIxMG9BTWlsZnE4bjNJc00zWnFWdXlRYkQvTTFXRGdRZTdQbVJoWTB2?=
+ =?utf-8?B?U0RHb3NGMDNzQ0pnUUlubHgzVlZ4VWtzSGNFZXdzUjhoS2V6NmNCck1pMkYr?=
+ =?utf-8?B?cmZGODBVTW56Ly9tVEpoTGZrV2pMTTB3Z2FkcS9FT3lIbTBJWVFlUXgvM2NJ?=
+ =?utf-8?B?N3lGZFpIdkh6MGh3c25NUndqVFIwU0w2bzZDOVhsR21PTDBDMzFlOE5YaDdE?=
+ =?utf-8?B?Z2wxRUtZeURNSTlyNklSQ3Frb1FYTmF2WkpUQzlFS1BvN3JHVk14clZsLy9Q?=
+ =?utf-8?B?K21rYnorODZvR3duS1lKV3hQT2V3MUJtNUxWWUl4Tzc1dkovZ2NxMUluQ3Jt?=
+ =?utf-8?B?alc4T1hrRldsUnFEdGdLekt2NDhEZjVXci9kWFpRUkQ2cEtpUzRDb2JZTjYv?=
+ =?utf-8?B?RytDdjVzNHNNY2FrQ1k0ZVl4RDd0bk1wNlFYQVo5OG1aTEQ0dFFCdG9CRnEx?=
+ =?utf-8?B?RHNYU1kyUWdpdytyb2xQZ1J2UVNPWDQ1OS92eWRUQUR4UDFGTDV4cGpUUkQ1?=
+ =?utf-8?B?Y0l6K29URnhLMkFIaVRNNW0vK0dsMVptcnVoblF5THpCWUl3MkttRXBXRjVr?=
+ =?utf-8?B?SjFaTFJmeEU4L2FubFh0MHRreUx4dmYrRDVWRFgrMHhNT3c0Tm85c3JYU0xy?=
+ =?utf-8?B?cStDVFlXNW5YN1cvR1lVUGhXdDVQTU03c0d4Q0pIdHdXcTYvM0FmRjRzcDFI?=
+ =?utf-8?B?OHBJY21kYW1xaXNSbG5SL0VlWGxvN1pidnF5Vk50NTFSSGt1Yy9sL3ZTaW1x?=
+ =?utf-8?B?dURPN2FzZlkwa3kwQ1pzKzRHQXBwWVk3L3hJMEZsa0xZRFBKaTRIakltVHV0?=
+ =?utf-8?B?aEJSOVRXUVdKL3o3d0lZNEk4cVZMQmh3T2FUcmI3WWllZk4yTnppdDhxV1Zq?=
+ =?utf-8?B?TDF6UXc4UFZyNXBtYnNJbnJBbUw3VDNKVlMxaWgxMFduaXhFaTZ2aFJGK1M4?=
+ =?utf-8?B?ZDBxVEsxckpKODdjaXVXNWs0WUwwVUdaVmdqUWZwQXJhZFRHYlRXWXpRbndp?=
+ =?utf-8?B?ak5CTTBYMzVwY2lhakRMRmZ4SXJyanZuYjVGemQ5QUhJRnQxK2ROUTh1M2NF?=
+ =?utf-8?B?bFEycTI4aFF3czhUTVA4Nk9BM2hIUVpJdmtBdVhjY1pXa2ErZWZ5RVlnamxv?=
+ =?utf-8?B?Zk1hQWVDMVIvZmNEalJVQzcvS3dtRFJJNzZmTFJaTWZXM0Z1R1I5U21hUElS?=
+ =?utf-8?B?MTRwWVlGVVdhcTdUaVkyL0RPNzVIMU83NE90T3VqWHFPN1N1T29TRUVJYWho?=
+ =?utf-8?B?MTZWL0huamxKRGtjbFNzMnFvS2lDU2I5S2VvYzFaMisxZkZUck5YdEhqc20x?=
+ =?utf-8?B?QzA0M2hjOE1zL2t0cEtyOFJUOWdrZkxpZzkrTFJ4OUJsUFRFRzQwWnU3SmpR?=
+ =?utf-8?B?ZERUSDI4QW5taDFadjhtSFFaVzh2QlJhTVdXdmgxbnp4OUFYazhpZlhsUXY5?=
+ =?utf-8?B?U3ZyZlVTUEVLNDlxYlFaazByWGJmb09RTWNuSWw2QlFBNkM0VlA1MisydERK?=
+ =?utf-8?B?cXIva0JNa3hkVWhJK0g0cjFnMzZWNHFkeFA4UFczRlduZ3A0bkVkMmN3b3dH?=
+ =?utf-8?B?REg5WUNiSlJDTEJLRXhvcWtOUjBjWXZNeUp5eFZ0dFlkS24vSStHazJhVERJ?=
+ =?utf-8?B?UVpIL2lsZHR4VzhrL2pRUGh5M2VnbXNac0hXbWhZdytCRU9kckpUb2QvWDAr?=
+ =?utf-8?B?cldzWGd6b1I5NlhLUWxqcjl5ZllVeGV4WWg3eVVTejI1Zkc4MjNyT0pCdy91?=
+ =?utf-8?B?UUU2MEh3LzBWYUZmTnJLSnNLQm44NW82YVcxYnBYd0VydjQyZU9wdz09?=
+Content-ID: <6BBF8273ABBA2042A16B4445E72CF041@apcprd03.prod.outlook.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v7 4/4] phy: nuvoton: phy-ma35d1-usb2: extend to dual-port
- with OTG support
-To: sashiko-reviews@lists.linux.dev
-Cc: devicetree@vger.kernel.org, neil.armstrong@linaro.org,
- linux-phy@lists.infradead.org, olteanv@gmail.com, vkoul@kernel.org,
- robh@kernel.org, conor+dt@kernel.org
-References: <20261008060629.2736806-1-a0987203069@gmail.com>
- <20261008060629.2736806-5-a0987203069@gmail.com>
- <sashiko-outbox-163689@kernel.org>
-Content-Language: en-US
-From: Joey Lu <a0987203069@gmail.com>
-In-Reply-To: <sashiko-outbox-163689@kernel.org>
+X-Exchange-RoutingPolicyChecked: v7yDxlPkzFtxhb1l83v49Ii4IWabuepiDYh+kvLDWkTdUB86uX+0FI0IfnszS/e8+dmjPnWfkBYuVfEw30fcjesarXHaiKB1rSv9P9ldXIgHuwp0LZ+IY3uH4V1fYiplT/nWfQUR4Osyjey3DjtFJjGvS2tHz6qGRrDnbhzT91Ymw8FRhl7s8yRYL17A66JKLkmvEBKBfIWivazUDadd5JJmnEBfhSdshg3AymsHz4NJyWENphrrcosMUHfnj+FPCGyb9HSwIELX7h+mo3HZKllD3KojEGN7vcmehtac6xfQL807USlMezzhPgPvWYV36+dSNjGmYmLVeBCoLZvYlA==
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: KUYPR03MB9902.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e1068a42-e70a-4ed0-00da-08df3e14329c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Nov 2026 03:47:37.9133
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: a7687ede-7a6b-4ef6-bace-642f677fbe31
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Q8Y+W9/zqadhqT16eh+Cui9Kg0UnC/i4p6THJcGLwmvZVFBt5Jp3+rfBikxTd4cVqA9kSB4wUl9fpRhaVD9z9A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SE3PR03MB10620
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261108_192541_400046_F91D4A73 
-X-CRM114-Status: GOOD (  34.50  )
-X-Spam-Score: -1.8 (-)
+X-CRM114-CacheID: sfid-20261108_194752_234956_ED7AB7B2 
+X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -1.3 (-)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,212 +200,33 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-7.3 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,FROM_LOCAL_HEX,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_SANE_1 autolearn=no autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	UNPARSEABLE_RELAY autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
+On Sat, 2026-10-10 at 13:54 +0200, Luca Leonardo Scorcia wrote:
+> External email : Please do not click links or open attachments until you have verified the sender or the content.
+> 
+> 
+> The secure output control bit toggle for mt2701/mt8167 currently sets
+> bit 0 (DEEP_COLOR_EN), 1-2 (DEEP_COLOR_MODE), 15 (HDMI_PSECUR_EN) and 31
+> (HDMI_PCLK_FREE_RUN_EN) in the same operation, but only bit 15 is actually
+> controlling the HDMI_PSECUR_EN bit, the rest of them are already being set
+> in separate operations later. Add a define for bit 15 and clean up the bit
+> update operation.
 
-On 10/8/2026 2:26 PM, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 5 potential issue(s) to consider:
-> - [High] phy: Kconfig missing USB_ROLE_SWITCH dependency causes built-in link failure
-> - [High] phy: DT backward compatibility regression for over-current polarity
-> - [Medium] phy: ignored regmap_read return values cause uninitialized variable usage and info leak
-> - [Medium] phy: regression in PHY reset fallback when clock polling fails
-> - [Medium] PM/clock: PHY permanently holds HUSBH0_GATE preventing USB suspend
-> --
->
-> commit dce53df5cfe4dcfac8af16f8b29743a3f4e147e0
-> Author: Joey Lu <a0987203069@gmail.com>
->
->      phy: nuvoton: phy-ma35d1-usb2: extend to dual-port with OTG support
->      
->      PHY0 and PHY1 use the same power-on/reset sequence in USBPMISCR, with
->      PHY1 control bits shifted 16 positions relative to PHY0.  A separate
->      driver for PHY1 would duplicate this logic, so the existing driver is
->      extended to manage both ports.
->
->> diff --git a/drivers/phy/nuvoton/phy-ma35d1-usb2.c b/drivers/phy/nuvoton/phy-ma35d1-usb2.c
->> index 0b9976fb15c17..25bd0a7a1314b 100644
->> --- a/drivers/phy/nuvoton/phy-ma35d1-usb2.c
->> +++ b/drivers/phy/nuvoton/phy-ma35d1-usb2.c
-> [ ... ]
->> -static int ma35_usb_phy_power_on(struct phy *phy)
->> +static int ma35_usb_phy_init(struct phy *phy)
->>   {
->> -	struct ma35_usb_phy *p_phy = phy_get_drvdata(phy);
->> +	struct ma35_phy_port *port = phy_get_drvdata(phy);
->> +	struct ma35_usb_phy *p = container_of(port - port->idx,
->> +					      struct ma35_usb_phy, port[0]);
->> +	unsigned int n = port->idx;
->>   	unsigned int val;
->>   	int ret;
->>   
->> -	ret = clk_prepare_enable(p_phy->clk);
->> -	if (ret < 0) {
->> -		dev_err(p_phy->dev, "Failed to enable PHY clock: %d\n", ret);
->> -		return ret;
->> +	regmap_read(p->sysreg, MA35_SYS_USBPMISCR, &val);
->> +
->> +	if (!(val & USBPMISCR_PHY_SUSPEND(n))) {
-> [Severity: Medium]
-> Is this code branching on uninitialized stack memory?
->
-> If regmap_read() fails, the return value is ignored and val is left
-> uninitialized, leading to non-deterministic PHY state handling.
-Leaving this as is.
->
-> [Severity: Medium]
-> Could this strict condition remove the fallback reset sequence?
->
-> The original driver would reset the PHY if the clock failed to stabilize during
-> polling. By encapsulating the reset strictly inside this block, it skips the
-> reset entirely if the PHY is already running.
->
-> If the subsequent clock polling times out, the driver immediately returns an
-> error. Can this cause a regression where the PHY fails initialization permanently
-> if it was left running but unstable by the bootloader or a prior kexec?
-PHY reset fallback: valid, v7 dropped the old reset-on-unstable-clock
-behaviour. In v8 I'll restore it: if SUSPEND is already set, poll the ready
-bits first and return on success; on timeout (or if SUSPEND was clear) 
-run the
-POR assert / udelay(20) / POR deassert sequence, then poll again and 
-fail only
-if the second poll times out. This covers a PHY left running but unstable by
-the bootloader or a prior kexec.
->> +		regmap_update_bits(p->sysreg, MA35_SYS_USBPMISCR,
->> +				   USBPMISCR_PHY_CTL_MASK(n),
->> +				   USBPMISCR_PHY_POR(n) | USBPMISCR_PHY_SUSPEND(n));
->> +		udelay(20);
->> +
->> +		regmap_update_bits(p->sysreg, MA35_SYS_USBPMISCR,
->> +				   USBPMISCR_PHY_CTL_MASK(n),
->> +				   USBPMISCR_PHY_SUSPEND(n));
->>   	}
-> [ ... ]
->> -static int ma35_usb_phy_power_off(struct phy *phy)
->> -{
->> -	struct ma35_usb_phy *p_phy = phy_get_drvdata(phy);
->> +static const struct phy_ops ma35_usb_phy_ops = {
->> +	.init		= ma35_usb_phy_init,
->> +	.owner		= THIS_MODULE,
->> +};
-> [Severity: Medium]
-> Will the removal of dynamic clock toggling in .power_on and .power_off cause
-> a power regression?
->
-> Since the clock is now acquired permanently via devm_clk_get_enabled() during
-> probe, the USB host clock gate (HUSBH0_GATE) remains open permanently,
-> preventing it from closing and consuming unnecessary power when the USB host
-> controller (EHCI0/OHCI0) suspends.
-HUSBH0_GATE: valid. devm_clk_get_enabled() keeps the gate open for the
-driver's lifetime. In v8 I'll use devm_clk_get() in probe and restore
-.power_on/.power_off doing clk_prepare_enable()/clk_disable_unprepare(). 
-Both
-ports share the one clock; the PHY core calls these per port and the clk
-framework refcounts, so the gate closes once neither port is powered. init
-will also enable the clock around its register accesses and polling.
->> +
->> +static int ma35_role_sw_set(struct usb_role_switch *sw, enum usb_role role)
->> +{
->> +	return -EOPNOTSUPP;
->> +}
->> +
->> +static enum usb_role ma35_role_sw_get(struct usb_role_switch *sw)
->> +{
->> +	struct ma35_usb_phy *p = usb_role_switch_get_drvdata(sw);
->> +	u32 val;
->> +
->> +	regmap_read(p->sysreg, MA35_SYS_PWRONOTP, &val);
->> +
->> +	return (val & PWRONOTP_USBP0ID) ? USB_ROLE_HOST : USB_ROLE_DEVICE;
->> +}
-> [Severity: Medium]
-> Can this leak uninitialized stack memory to userspace?
->
-> If regmap_read() fails, the return value is ignored and val remains
-> uninitialized. This uninitialized data determines the returned USB role,
-> inadvertently leaking 1 bit of kernel stack state to userspace via the sysfs
-> role attribute.
-Leaving this as is.
->> +
->> +static int ma35_role_switch_init(struct platform_device *pdev,
->> +				 struct ma35_usb_phy *p)
->> +{
->> +	struct usb_role_switch_desc sw_desc = {0};
->> +
->> +	sw_desc.set = ma35_role_sw_set;
->> +	sw_desc.get = ma35_role_sw_get;
->> +	sw_desc.allow_userspace_control = true;
->> +	sw_desc.driver_data = p;
->> +	sw_desc.fwnode = dev_fwnode(&pdev->dev);
->> +
->> +	p->role_sw = usb_role_switch_register(&pdev->dev, &sw_desc);
-> [Severity: High]
-> Would this introduce a built-in link failure if the driver is built-in
-> (CONFIG_PHY_MA35_USB=y) and the role switch framework is modular
-> (CONFIG_USB_ROLE_SWITCH=m)?
->
-> In this configuration, IS_ENABLED(CONFIG_USB_ROLE_SWITCH) evaluates to true,
-> so include/linux/usb/role.h declares the external functions instead of providing
-> inline stubs, causing an undefined reference to usb_role_switch_register.
->
-> Should drivers/phy/nuvoton/Kconfig be updated to include
-> depends on USB_ROLE_SWITCH || !USB_ROLE_SWITCH for PHY_MA35_USB to prevent
-> this invalid Kconfig combination?
-Kconfig: valid, thanks. In v8 I'll add
-"depends on USB_ROLE_SWITCH || !USB_ROLE_SWITCH" to PHY_MA35_USB in
-drivers/phy/nuvoton/Kconfig. With the role switch disabled, the existing
--ENODEV handling in ma35_role_switch_init() still lets probe succeed.
->> +	if (IS_ERR(p->role_sw)) {
-> [ ... ]
->>   static int ma35_usb_phy_probe(struct platform_device *pdev)
->>   {
->>   	struct phy_provider *provider;
->> -	struct ma35_usb_phy *p_phy;
->> -	struct phy *phy;
->> +	struct ma35_usb_phy *p;
->> +	struct clk *clk;
->> +	int n, ret;
->> +	u32 code;
-> [ ... ]
->> +	regmap_update_bits(p->sysreg, MA35_SYS_MISCFCR0, MISCFCR0_UHOVRCURH,
->> +			   of_property_read_bool(pdev->dev.of_node,
->> +						 "nuvoton,oc-active-high") ?
->> +			   MISCFCR0_UHOVRCURH : 0);
-> [Severity: High]
-> Does this unconditional write break device tree backward compatibility?
->
-> If the optional property nuvoton,oc-active-high is absent, this explicitly
-> writes 0 to the bit, forcing the over-current polarity to active-low. The
-> original driver relied on the bootloader's configuration.
->
-> Will this cause a regression in over-current detection on existing boards that
-> use active-high hardware configured by the bootloader but lack this new
-> property in their older device tree?
-OC polarity: the unconditional write is intentional. The binding in
-patch 1 defines "property absent" as active-low, and writing the bit in both
-cases makes the result independent of what the bootloader left in MISCFCR0.
-This bit only affects the EHCI/OHCI host ports' VBUS switch and is 
-irrelevant
-to the gadget (DWC2) use the old driver supported, so existing gadget-only
-users are not affected. The old driver never touched MISCFCR0, and no 
-mainline
-DT uses this PHY with host ports, so no mainline board depends on a
-bootloader-programmed polarity; nuvoton,oc-active-high is new in this 
-series.
-Out-of-tree boards with an active-high switch need to add the property. I'll
-state this explicitly in the commit message and binding description.
+Reviewed-by: CK Hu <ck.hu@mediatek.com>
 
-Joey
->> +
->> +	for (n = 0; n < MA35_PHY_NUM; n++) {
+> 
+> Fixes: 0fc721b2968e ("drm/mediatek: add hdmi driver for MT2701 and MT7623")
+> Signed-off-by: Luca Leonardo Scorcia <l.scorcia@gmail.com>
+> ---
 
 -- 
 linux-phy mailing list
