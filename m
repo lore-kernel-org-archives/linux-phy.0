@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2F7C3606A323
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Nov 2026 08:26:15 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D5A7C606A337
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Nov 2026 08:29:53 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=NddMJmc6;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=DDJzs3gM
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=lGRM5WH5;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=BkWfwYQv
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,41 +14,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=NDm3FLOkdMe7mtiVFrqddUt3DEECMlIGWMjNnsJI5ms=; b=NddMJmc6BJvsorWSy2fOOB4Taq
-	tMGOUrM0Ml9x7hLWVzauS5JmMax0yD7Hn+vYtweRwSixhAQiiQ0mGEDBNcuXjXfBpT8nHwkJC8BQY
-	wCZjQErM9a/5G//BhGeHYTNWFklff8BOH9TLR05zuZWDgi0EGDix4DINBtPnTPoLTw+c1Aw2QEzFu
-	T5nIYe82pYnkbv79tFckTb9BR9Zj7t6a7ytfykD3QIauTtZpDkm2Bb5xQJJPOlY71PV3a+VyDMq+8
-	NJeqcJemFFzR15bgMqzMmwxuwNYApJwi9Ctxsf7u7ZtnpOveJlmqYApujC4iM2+ceJWSmPr8YJVOn
-	Xz+l6e+Q==;
+	bh=siJDRZrGCsimmUwVXnX5BBLQK5hNn6VsXoSjHO7ZqwM=; b=lGRM5WH54iKFRGcNhpRAfkxZBx
+	pZcDb9tC14//G6/Ub8OKQI0bZmzTR0dhv8O6Tpya1ZPLVacMyN23Xg50aoJ/Nax0rfqLvFbYXlJ4n
+	x75SvPYis8xI34/RoYd6U1APPvkokAi3moU3SMbaOC3ycgL9sMfmeyKHUC4sRy2bTeT0YTESsL8+K
+	Z2K95ozm5DIkd02NPWYkH3RnbirLCyazVeha8k0aJE3Jy38i7ZMNYlp7OOiMDUeIweuiqeZ3rfK/x
+	L6130ykjF/qISF0YcYWPwJvEMTrTyTpa5JqmV1jWTHFZIzq3MM8nskmqq2cnrU0PA7WKXTBBX+K+T
+	aDgmICiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQKhi-000000003Et-3lEW;
-	Mon, 09 Nov 2026 08:26:14 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xQKlF-000000003eE-2bzC;
+	Mon, 09 Nov 2026 08:29:53 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQKhh-000000003EA-1Fic;
-	Mon, 09 Nov 2026 08:26:13 +0000
+	id 1xQKlE-000000003db-331j;
+	Mon, 09 Nov 2026 08:29:52 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 84AF761848;
-	Mon,  9 Nov 2026 08:26:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 21B6F1F0089F;
-	Mon,  9 Nov 2026 08:25:56 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 1FD15401CD;
+	Mon,  9 Nov 2026 08:29:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B9C0A1F0089F;
+	Mon,  9 Nov 2026 08:29:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794212771;
-	bh=zWuQ3p27UIemdCXPGPIrkkPUH0IJBHZ4roQ2dSRcIvo=;
+	s=k20260515; t=1794212992;
+	bh=ySwcpEO/v0qQJdUqN0WTogHzx91HMoo5Nvn5a1Zm8QY=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=DDJzs3gMF7pz5Mlv0wt7rZUXIIuiPDhYBkLsRf+HANOIyMcGMt1c+pAjW5PHIyYKi
-	 nYCeMjGIa3MyTCqLn6eDYpsweHwQxjHZNL/M8lS2nGf8TCjOhjMQl9XRkDnzhZU0hM
-	 jWz+hHslZDUnc/E3j470EUFJ7majXC/rON+kq1NckUlowF1ZIzNTN9TQj4jTu4x8IY
-	 Gc0WhTLaPb80aUSREr1NcMxqLYxL2225xVi9FzQB4wCTwmqQHaXQCrNBuLaf6IVN/Q
-	 WUNSX0ejaKQUcZGSLsWUWjb18W4W7wKvWkSob988ZtEoNY1jJm7764VwIWIBDym5kE
-	 D+0TzXxZRVepQ==
-Message-ID: <78a88d4d-11af-40c1-b063-b6a4d4298ecd@kernel.org>
-Date: Mon, 9 Nov 2026 09:25:54 +0100
+	b=BkWfwYQvEfkQobIuzw0xP0ZaLAcRnBRVr8KzoheGOqbZEz8snt70rmqcKKXp3M+SJ
+	 wpy49Q08GLpHiTWcOx3QE0Dzi6xyQvhGtqan+5P+xOAdVGNYQmuffByOu2rn68b5Py
+	 vmBSUqtbc8y168j/q2vmI2HrPOTUalT1w3j2alERGDL2bWcf2r/c3K1MBcyKVx5u++
+	 o3/KD4FQ8ZsLhs7vbmfK9vWjCkom/lV0arnFCp053gge0oXnfveKYvt6YbJcdlPcEB
+	 UvTRpPsl+6+pMM/ZwYQP9/YHscgqgiDmCFT71GdiSTZLohRM+bEsF9pQN7NPMcCIsi
+	 KjoTSssf6zc3g==
+Message-ID: <9dbfc665-089c-45f7-bca2-74caee322885@kernel.org>
+Date: Mon, 9 Nov 2026 09:29:37 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 01/17] dt-bindings: arm: qcom-soc: Add Halliday
+Subject: Re: [PATCH 16/17] arm64: dts: qcom: Add initial Halliday dtsi
 To: Stanislav Aleksandrov <lightofmysoul@gmail.com>,
  Bjorn Andersson <andersson@kernel.org>,
  Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>,
@@ -79,7 +79,7 @@ Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
  linux-scsi@vger.kernel.org, linux-crypto@vger.kernel.org,
  linux-pm@vger.kernel.org
 References: <20261109-halliday-dts-v1-0-289114ab8197@gmail.com>
- <20261109-halliday-dts-v1-1-289114ab8197@gmail.com>
+ <20261109-halliday-dts-v1-16-289114ab8197@gmail.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -125,7 +125,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  K9bCVaboTA2T77QYkRcRJYSsO1alGX0ome/hMLD1daXlkrNUp1HWa3K4iytLRXjCSIorWiGs
  n+q3krnpXu3TFkA8qtOFZMdnIiFuiq1yLT8hptsV5xh1TA2nsVvSYiaCr3q4s4BKjS/KrLDb
  qoxzw8ISjdUp4pA85vb6YLCmb39NgidD+7PmAr65lBNveIFynTgsja1rRQ4=
-In-Reply-To: <20261109-halliday-dts-v1-1-289114ab8197@gmail.com>
+In-Reply-To: <20261109-halliday-dts-v1-16-289114ab8197@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,17 +147,93 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 On 09/11/2026 01:33, Stanislav Aleksandrov wrote:
-> Add Halliday to the SoC codenames allowed in Qualcomm compatibles.
+> Add the device tree for the Qualcomm Halliday SoC
+> (SXR2250P / Snapdragon XR2+ Gen 2).
+> 
+> It describes the CPUs with their idle states, cpufreq and OPP tables,
+> the GIC and the PDC, the timers, SCM, SMEM, RPMh with its clocks, power
+> domains and interconnects, TLMM, GCC, SPMI, the apps SMMU, USB, UFS
+> with ICE, TSENS with the thermal zones and the PMU.
 > 
 > Signed-off-by: Stanislav Aleksandrov <lightofmysoul@gmail.com>
 > ---
->  Documentation/devicetree/bindings/arm/qcom-soc.yaml | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
+>  arch/arm64/boot/dts/qcom/halliday.dtsi | 1859 ++++++++++++++++++++++++++++++++
+>  1 file changed, 1859 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/qcom/halliday.dtsi b/arch/arm64/boot/dts/qcom/halliday.dtsi
+> new file mode 100644
+> index 000000000000..c891913e3cc1
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/qcom/halliday.dtsi
+> @@ -0,0 +1,1859 @@
+> +// SPDX-License-Identifier: BSD-3-Clause
 
-This should be squashed with patch #15. Also, there is no benefit in
-organizing patches within patchset where patches to the SAME subsystem
-are split all over. #1 and #2 targets SoC, then there is a break and
-again we are at SoC at #15.
+Odd license, suggests you copied it.
+
+> +/*
+> + * Copyright (c) 2026, Stanislav Aleksandrov <lightofmysoul@gmail.com>
+
+You should retain original copyrights as well.
+
+> + */
+> +
+> +#include <dt-bindings/clock/qcom,halliday-gcc.h>
+> +#include <dt-bindings/clock/qcom,rpmh.h>
+> +#include <dt-bindings/interconnect/qcom,halliday-rpmh.h>
+> +#include <dt-bindings/interconnect/qcom,icc.h>
+> +#include <dt-bindings/interconnect/qcom,osm-l3.h>
+> +#include <dt-bindings/interrupt-controller/arm-gic.h>
+> +#include <dt-bindings/power/qcom,rpmhpd.h>
+> +#include <dt-bindings/soc/qcom,rpmh-rsc.h>
+> +
+> +/ {
+> +	interrupt-parent = <&intc>;
+> +
+> +	#address-cells = <2>;
+> +	#size-cells = <2>;
+> +
+> +	chosen {
+> +	};
+
+Drop node.
+
+
+> +
+> +	clocks {
+> +		sleep_clk: sleep-clk {
+> +			compatible = "fixed-clock";
+> +			#clock-cells = <0>;
+> +		};
+> +
+> +		xo_board: xo-board {
+> +			compatible = "fixed-clock";
+> +			#clock-cells = <0>;
+> +		};
+> +	};
+> +
+
+...
+
+> +
+> +	thermal-zones {
+> +		aoss0-thermal {
+> +			thermal-sensors = <&tsens0 0>;
+> +
+> +			trips {
+> +				aoss0-critical {
+> +					temperature = <115000>;
+> +					hysteresis = <0>;
+> +					type = "critical";
+> +				};
+> +
+> +				aoss0-hot {
+> +					temperature = <110000>;
+> +					hysteresis = <1000>;
+> +					type = "hot";
+
+Oddly ordered. These are sorted by temperature, even if dt-check-style
+disagrees.
+
 
 Best regards,
 Krzysztof
