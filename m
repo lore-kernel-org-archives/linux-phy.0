@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EEE9A606A905
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Nov 2026 09:22:49 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 09571606A9AE
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Nov 2026 09:23:58 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=wo6VSv+o;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=To4KO2RE
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=lT/TJMDV;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=X8WqXunE
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,37 +14,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=O1rmk6L7C2U0Fhybp4u1yGAi4U2n6mW7ZT0Afm10EdA=; b=wo6VSv+oZ1exp+izyGxsbp4EjM
-	Y/hMs1a+jzbxy1VTcyj7W+ryTniYzNuicb+MUU0n6i3ocLBcvMNOxF6GZdMUpMZ2biovc1iYTp7ny
-	JPtxBNh3djdFErf2o0LXyfdF4jrwHdrwqv8o4n2vBvx+sy21HPO8ev5tqBWcr4g+8QQJfFqzkVAeE
-	KRQ1Fq8JgKuvYON2jyqwq4/TEoMyHtGdfGzdPoCfH42VegfbJwsb00dBfaRB8w9neD2A0/zWrhJg7
-	VT5IXzsUPir5/+1cVF1jcQ0Bo9Qh0AVnwDjykrAU5S7mLA0T40v2R8ROWA4JpMtKdBjUN/jOH4H+S
-	hr0eO1wg==;
+	bh=C9BwbKoBYEeyctuZV+04xxKe0nb237k7o8uliGe3nSg=; b=lT/TJMDVsmqMfgibtXfDwIqEoz
+	cnpzoTBtHRh75lKwSihMNnQEuECcZ2vqPPXnZ32GXs15urTNAKKa4TUKmy8N4sDFTWN0WlT2QrCrN
+	KN/S24/Mlre0+qrCXkxKf/G0ifRRLhfVdZm7qcUe4unVucUgACOWeD2VamtnYGwMYX3YBZ43fvYCZ
+	gMmQRFxyZBuRmXXsH6G2B1/5CIPULUwhW7I5NPQFQsV5dKHoh34SnB6ph6+BDeBvswCdiTlfoRIWH
+	R8GiT6YnKQylCDC3FXATZOYimzRf7XwLgE1dR4WGqSpoFUOqVrdHINZKbbcW0Z0NB3X82gDnuKT/g
+	4UX3LG7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQi41-00000003FY7-2DKH;
-	Tue, 10 Nov 2026 09:22:49 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xQi57-00000003FiU-3Fp7;
+	Tue, 10 Nov 2026 09:23:57 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQi40-00000003FXo-3IWj
+	id 1xQi56-00000003Fhn-0dDX
 	for linux-phy@lists.infradead.org;
-	Tue, 10 Nov 2026 09:22:48 +0000
+	Tue, 10 Nov 2026 09:23:56 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 3C6CD469F8;
-	Tue, 10 Nov 2026 09:22:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 783711F008A3;
-	Tue, 10 Nov 2026 09:22:47 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id BE1DC40304;
+	Tue, 10 Nov 2026 09:23:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C67381F0089F;
+	Tue, 10 Nov 2026 09:23:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794302568;
-	bh=T/00q7GdXxYhOSi56pmqRGTBfomrbHHL5rHo9nrPOFY=;
+	s=k20260515; t=1794302635;
+	bh=Bld72ze3MCWiaLBGA3XPtCKyhfXQPBGjgO3Es6jtm0o=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=To4KO2RE5ArLiLQdHwpN0YGmIrAUshdpjNAcFC8N55W+7Cl21i6FQdzHNYkTiHvF9
-	 w2xx1Oi6muL1FIpjd9/8C9xnVFaxS3Uz8dkzONJq4kwQx52lzTkDs3qJrES5rvTw/H
-	 6cj9UeZVauM9fk3abfcKyDFvRg7Lzu8hTe0g3nU8sIc/K4DzJg6XjPb2wCJaNlPbZW
-	 CxxjAPCBMtWgKHwcRwD1Vi+NBHNW6SG8sXTrzAnZJTcgzFGS4Wyo/EOTExribpuygA
-	 80StOXQeaGJgNwWcCHP69f9os5wT5HKzj1rbkLV3w0NQLPATTLv1J3QM2xwY+V78KZ
-	 iMa7u2MwHqA6A==
-Date: Tue, 10 Nov 2026 10:22:45 +0100
+	b=X8WqXunE/TvBHbIZTYLmqLtMciaQDDJhhDVwJoYkQvcjyE2pVMhVhXPxGtRfI7WS8
+	 CmaLxf2EOuNcVCXftUD11ImJs0lFmU95NaKcGgB3GDUine0NEbUWh86YpQ5X0irJKD
+	 g010juDmaF/0x0RsELQq2aqnkYFVplIaeQnfJw87pL89DDY1mbKjPaYeHvXhg0N68J
+	 e3QoVFakJ6i5kb3ZC6J/qqSkCTZ9kLSmJxlVW9mytVV5Q7a8iJiyRniMCkBzLMiTqS
+	 6R82lCRciBEnRgyO+HSGtUUzHAdwSAMdgf/RHn+E0isNCjOdFRuuWP4KlhC+Y7Lm8I
+	 5pztixN+Xu/VA==
+Date: Tue, 10 Nov 2026 10:23:52 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
 Cc: Loic Poulain <loic.poulain@oss.qualcomm.com>, 
@@ -58,15 +58,15 @@ Cc: Loic Poulain <loic.poulain@oss.qualcomm.com>,
 	linux-i2c@vger.kernel.org, linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
 	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, linux-media@vger.kernel.org, 
 	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-Subject: Re: [PATCH v4 2/6] dt-bindings: phy: qcom,x1e80100-csi2-phy: Add
- Hawi and Maili compatibles
-Message-ID: <20261110-cordial-gecko-of-trust-c864dd@quoll>
+Subject: Re: [PATCH v4 1/6] dt-bindings: i2c: qcom,i2c-cci: Add Hawi
+ compatible
+Message-ID: <20261110-friendly-chipmunk-of-variation-eef4cd@quoll>
 References: <20261106-hawi-maili-camss-v4-0-d528c7a797b4@oss.qualcomm.com>
- <20261106-hawi-maili-camss-v4-2-d528c7a797b4@oss.qualcomm.com>
+ <20261106-hawi-maili-camss-v4-1-d528c7a797b4@oss.qualcomm.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20261106-hawi-maili-camss-v4-2-d528c7a797b4@oss.qualcomm.com>
+In-Reply-To: <20261106-hawi-maili-camss-v4-1-d528c7a797b4@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,32 +79,30 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Fri, Nov 06, 2026 at 12:20:43PM +0530, Nihal Kumar Gupta wrote:
-> Hawi and Maili integrate the same CSIPHY IP as Kaanapali with an
-> identical register interface. Add qcom,hawi-csi2-phy and
-> qcom,maili-csi2-phy falling back to qcom,hawi-csi2-phy.
+On Fri, Nov 06, 2026 at 12:20:42PM +0530, Nihal Kumar Gupta wrote:
+> From: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
 > 
-> Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-> Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+> Document the Camera Control Interface (CCI) compatible for the Qualcomm
+> Hawi platform. Like other recent platforms it requires two clocks, so
+> add it to the corresponding clocks constraint as well.
+> 
+> Reviewed-by: Loic Poulain <loic.poulain@oss.qualcomm.com>
+> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 
-How my tags could appear before this signed off by:
+How could my tag go back in time?
 
-> Co-developed-by: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
 > Signed-off-by: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
-
-? Are you sure you used b4 to collect the tags?
-
 > Signed-off-by: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
-> ---
->  Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml | 5 +++++
->  1 file changed, 5 insertions(+)
+
+Who received the tag and what was happening with this patchset in
+between?
 
 Best regards,
 Krzysztof
