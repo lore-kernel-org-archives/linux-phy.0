@@ -2,135 +2,65 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1CA56606A31C
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Nov 2026 12:06:11 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 21B69606A31C
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Nov 2026 14:32:44 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=je2Gnz+6;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=nxp.com header.i=@nxp.com header.a=rsa-sha256 header.s=selector1 header.b=YpVGEGOV
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=KdfjSzoY;
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=mail.sdu.edu.cn header.i=@mail.sdu.edu.cn header.a=rsa-sha256 header.s=default header.b=MWk+1hke
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=HcuZS5luic8AYSupqSYzvnNd64TaUfve4ACHe5qzAtY=; b=je2Gnz+6iq55Fs7dIHfLpJAD26
-	TBf4drooAeQ+kysVU7UHE4nPJK+RYP2PQqYYRdhzJ/f4EfPwY/cW29GiWZzSGTF8q5yzUOx8LjvRK
-	yJ/RDaywL+p2TTYaLypPmHJ6rQbZ/wawSUpBzWpbgkwNbWrLWuRIDqMGJCsHTrx1xwJFK470YnkAz
-	yGThrYWs46/pWaN6cS3Qa0rGLq4BJbOMyLUZOrNaAqu8UYg1ATWLa7fRM0+vWNLT3+jes+m7yuEJI
-	YuJBtrwFo2mkj3A20Y/5H7+RjFUnd9OcbWS4JP3h9xsd/crhvbD0z2rYM/vINemq97fnxMQjCADdf
-	dPPkD99w==;
+	bh=HuwgXYCIiFmDbJpuXV3u/012n9DGJu+WWJz4rT14pjE=; b=KdfjSzoY6mteqIfwkD2px3iGxO
+	DtncZOmB/AQ6/HQmkIKWYlhDGJsoQZfmPvCL5e1+yqcz9CbsRmSESAVd5TF8kh9fQ8druDmkk08+m
+	I0X0gH4QdVC2xl8lwBEf/9P2Ll5s2HO8NhPcqugJ9hLpGyHv88y4OBeoEbtLatWTupX8/xOWXjFUY
+	ELxiC9zO+BsWuq5zFsi8twhoxiOf88EYZL+AFVSG7PsrzpL69aCAe9nNoJx25HLlAHTMEr/ZR5883
+	kvGAAqWVjKthgGt5dYf269YwLEQaeHUlPDPfeZ16DTE973Q4Pj7U3cR+PvIaqmM/uSLTEI1Qh23JX
+	WC6pq0pw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQkc6-00000003jus-3ThR;
-	Tue, 10 Nov 2026 12:06:10 +0000
-Received: from mail-westeuropeazlp170130006.outbound.protection.outlook.com ([2a01:111:f403:c201::6] helo=AM0PR02CU008.outbound.protection.outlook.com)
+	id 1xQmtv-00000004DFd-2SJ5;
+	Tue, 10 Nov 2026 14:32:43 +0000
+Received: from mail-m49198.qiye.163.com ([45.254.49.198])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQkc1-00000003jth-0yxB;
-	Tue, 10 Nov 2026 12:06:06 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=FkzU0FAktH1dJlr8JJmIAaUOjinhac8dN3yzVxznTZvfxgfMxXkgqnSLAFPbFj03n+SH//wEeHOmXDs5xMV1eCCbDeiu9FdZm9aaRxrcc/rAuW0D5wrx55i23WhJl6oF6UR2ZhBlmNqwr7BR0JgjjL1ktnkHdeH5CHil+Sph08f2cdMtMYxf308CKx3NTzjHnb5C06bgEHIQLr5SNhm3OJxVyF+Ojo6YEgcsuD4WBg0+XpX0rdYN89ENAWeN3u0YJ6RPDI/v/8YetrYwstoSOMNf05lxM6ix9gZ3Hs5V0JSIBQp9nPWHYIT15ysSbg9194BxO7YzVDM7z+H8rNQWkA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=tRlbDnd4PNg3AzJ0rO8/pvTovkhQ3/QptVL33hMY3uE=;
- b=C+lnzAG+9CPylX7pqpABSPyGKWvf/hQFlMkmEoS11IKQIEXybs5+qEAp7DoxBh+nJbbHPJQ7uYMU3BWgagl6AW6zW7ZZJt5p/LfqfcbI/HksdyctpnlDRXuxePp4ceMk+kF9MIAaxr8DLtDHjPMO23svn/veVl6us8KT8odXs/60AcTogRa5VfgmRpYSlpEhBSvWcHw/453K258kU+Z3d/uGr7BKTmfSTQp9fjULi59H8/WUFoiOR1WISglfWniJOA2/G+CcFUaM9i5c3OU5eh951uLK6Nl1y6oWX6JFH9mDvjCcicVWU82t7zawhTqqVoLJlhWz8ZJc60pRIYW5vw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=tRlbDnd4PNg3AzJ0rO8/pvTovkhQ3/QptVL33hMY3uE=;
- b=YpVGEGOVydhhBaOo6PcdFiVBC4qVSZhgaow0upxJElwp3h6JSyzzC1Qsl9DfjrfmnQ8+aPUMuO/aAspybDpKLwE8l0xmPXQIiWCDSONOVeTuRSkl8/57gHrgyXPd6WIzCfCS6mTlRMwBi1SIQyqX4BhVZ+/ooVM9ymhiRWc5Y2oWA0N2ZjHmS1JDuGAj7kEc+dypDs2BXL2HTJryz603IQ0xHcY0m5guMD2qYbLOUYJRfNG2yWBditGSCws2o9HVongDZ1wd0k5OdQZrPWc1LQrTZ/IaqVCoju95N6X935X/LRKileZUU5G7OQMCjlKvCfMS9NbGOmaSCwqNZKst0A==
-Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM6PR04MB4472.eurprd04.prod.outlook.com (2603:10a6:20b:23::20)
- by VI3PR04MB572389.eurprd04.prod.outlook.com (2603:10a6:800:377::10) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.615.8; Tue, 10 Nov
- 2026 12:05:55 +0000
-Received: from AM6PR04MB4472.eurprd04.prod.outlook.com
- ([fe80::aed9:e8b9:c352:9ba0]) by AM6PR04MB4472.eurprd04.prod.outlook.com
- ([fe80::aed9:e8b9:c352:9ba0%6]) with mapi id 15.21.0592.012; Tue, 10 Nov 2026
- 12:05:55 +0000
-From: Stefan Ghetu <stefan.ghetu@nxp.com>
+	id 1xQmtr-00000004DDQ-3tIb;
+	Tue, 10 Nov 2026 14:32:41 +0000
+Received: from lgs.. (unknown [101.76.249.61])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 542cd9c45;
+	Tue, 10 Nov 2026 22:32:26 +0800 (GMT+08:00)
+From: Guangshuo Li <liguangshuo@mail.sdu.edu.cn>
 To: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Frank Li <Frank.Li@nxp.com>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>,
-	daniel.baluta@nxp.com,
-	linux-phy@lists.infradead.org,
-	imx@lists.linux.dev,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>
+Cc: linux-phy@lists.infradead.org,
 	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
-	"Oliver F. Brown" <oliver.brown@oss.nxp.com>,
-	stable@vger.kernel.org,
-	Stefan Ghetu <stefan.ghetu@nxp.com>
-Subject: [PATCH] phy: freescale: phy-fsl-imx8-mipi-dphy: Fix hs_zero underflow
-Date: Tue, 10 Nov 2026 14:05:46 +0200
-Message-Id: <20261110120546.6247-1-stefan.ghetu@nxp.com>
-X-Mailer: git-send-email 2.34.1
-X-ClientProxiedBy: AS4P190CA0043.EURP190.PROD.OUTLOOK.COM
- (2603:10a6:20b:5d1::14) To AM6PR04MB4472.eurprd04.prod.outlook.com
- (2603:10a6:20b:23::20)
+	stable@vger.kernel.org
+Subject: [PATCH] phy: rockchip: inno-hdmi: Fix potential stale clock provider
+Date: Tue, 10 Nov 2026 22:32:25 +0800
+Message-ID: <20261110-9f141e6bc8-phy-rockchip@mail.sdu.edu.cn>
+X-Mailer: git-send-email 2.43.0
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM6PR04MB4472:EE_|VI3PR04MB572389:EE_
-X-MS-Office365-Filtering-Correlation-Id: fe601bc2-1c1c-4c29-4940-08df3f22f907
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|366016|376014|1800799024|23010399003|7416014|18002099003|56012099006|11063799006|261021121427099003|261102123227099003|261021123027099003|261009223027099003|10067099003|261026121527099003;
-X-Microsoft-Antispam-Message-Info: +hZz04YiOxdWY+Mcoo6fKXk1ervrrVDMnx/axch7b3CxZHD1ivszuUeBDu/m2opugYoVHOtOwWhtGUbeWyaL7+36bcepi8v2GN3Wz6AcaKKU3B5AHGku18zOAB3PIg0U2eFhiGV/NV/U7yAnZspXCsbtrwb1TmSA9qd2jRq571W5XIRtzupUKVIzmugeUtqESM9/UjIfcCYGkgXiV6BPe/2poXQwslngIKghtikO5KnD9X6KfUok2XQNy938zaKE0f6q96rPgENKF1ZoJAt9lY4s8HOjI5Nq/Lf7f7qzuRaRfQBeXV6ZeRLo5LQ/Vxpt1d6stcohMux6NsRv9ZVIOlLnjMltAtpF2GjR1iwvkEh1nCM73Akc8ZjrsySzmGRhoqe/V65UAB9wsfq8fpXhBBQ/ncEtx0Z7Pnrq3M9clD2V74U9qGuhJGeV28wXV7u7uKy/UvcPrTh9p7mTyZoVTAcixMWM0rcw2c5QIBNb8Jl0w0DNyuzVHv8oOjNahhaemc8bWD0AqKSmmYspNELIJ9gmeOq4sFJT428QnAChGUCW0//fePSf8d6jnKGHFYh20kuEpsQpZbUdAqD7wekAuxWwF2dnGVY41qa/5qBvkeBOb4Z3MyiPr3XDC9pc4xgku25AexJqV7ctNRzLje+QuG5bc1QKQoWqX5WYeUdwRvg=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM6PR04MB4472.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(366016)(376014)(1800799024)(23010399003)(7416014)(18002099003)(56012099006)(11063799006)(261021121427099003)(261102123227099003)(261021123027099003)(261009223027099003)(10067099003)(261026121527099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?14/TY6DlfmMjvIU82p5ar71r/aWEdH4qlW1McxSme060y94tTM4+ksuebVAA?=
- =?us-ascii?Q?1ZaAt2NW+7PFEUdqZxdtj6P48zH42uEyflotm17VlZI7gOVHX9DEa8qhW8ju?=
- =?us-ascii?Q?hdCN1iyLQUD5CGyCyezDgTUWurh4URPRQQ+5vAIY2OcOxaq7Zvr2/0ykf0Sr?=
- =?us-ascii?Q?VtUl4SykA5P8CM7Lg7RgIAUh2aDksO91dO6XJNRYQvfbJK4P/VVpOYbnSdvO?=
- =?us-ascii?Q?3HZCTVse2qnQJOvJIJBZ0Sj4Ibo6XxremWJ5stQMC13sJEFhnx3zIBZKdYLj?=
- =?us-ascii?Q?VfzsKJgpvQhk/9qYU+Rnz6KYBh+MEoqjFs/uKtcfvq554SdUL6H/2oSi7lVU?=
- =?us-ascii?Q?Q/IRAe5Fe0uqOhl9pR4BzCMN1E4Hk95tgfuPsle+C415fSfdf0TefDBbXp7d?=
- =?us-ascii?Q?mmCi36BV49oxQEOGgXGUvAUDxO6uyqSotMaLajTeeGYr2+4dqwvhpMp8NK/j?=
- =?us-ascii?Q?wW/gKgnR0cTM4Hms5ZXRFg9tVnXhSRFgDWOKXrZMhE0j8qUBA7P/SUBQcKCn?=
- =?us-ascii?Q?9Ew47fIqkYNOIuzr+oub1VUnSQ6Mi5DN/w8Dmymi5diqu+buvah5TyaLW2pL?=
- =?us-ascii?Q?lVlwBLlgYrUP+FbQtEG3v1bw4Az7x9FymQyLY9HCYP6aRjsx6ZfyldxBR4A2?=
- =?us-ascii?Q?i2LhZ6rQm0Xyd1jNZhsZ+2Tq2D/JNjbOG9BxX13ahX+lB9OGh/pSAdnWdgBh?=
- =?us-ascii?Q?ado/n+/4+L99w1SrOn5d3tC7t5UzgISILLGfMBabChTYpbqUMGEHsaiZG/PD?=
- =?us-ascii?Q?3lEwAPahm/2nGv21Y1ONbWdKaHQCezWKprENIeK5/V8KnAUnXNbkKD2rbJeG?=
- =?us-ascii?Q?BBdwWHxPwzQpohwZ1Lj7oeFX1DQFceXPuXpQv5gzgFnElCYGge0fn4qgSu4g?=
- =?us-ascii?Q?odkNfYGVDi1yPNIKIfVEI0ZFDDL1tbjfypHhf0NrhIivw8JAjKkJyGL9a+84?=
- =?us-ascii?Q?2top1QRsh/AxeP2/Cuj0EDtgaeUAqW90QnQdf4TBfew5Pr3rvqBLh8BWvrJt?=
- =?us-ascii?Q?iJWQFsAP81N4sChpGpoyZTdI092B+wQ4CWzni1M3FotGZItGGqpOgVgfEHAb?=
- =?us-ascii?Q?olnJwQ/DNPsWYGviUSB5YFfxGB7TAR/Tc6RlK176iMDevJne1EcM8aPfif4W?=
- =?us-ascii?Q?3+YFXgnaMytBPmND1ylR/4DS5n/1wpad4e/73NeKVKXHzBf8B//l32SZEjzV?=
- =?us-ascii?Q?MzSTcWeo8kG/WT4Bolz6JnmxVrzxN2iYh/ig9WxyRa8f5H+oVn46yZZoqlc4?=
- =?us-ascii?Q?YVxAuFcstqFt+b83EBOis7mQUFcoc1Rnn+Py4DdiDbFzO6YDFL47myQpjAY+?=
- =?us-ascii?Q?H06voCY6AHx2xgsVp/0i6MiCXoKOZ1REU9WxKLZ0yROOwU7nM53BmXnwK3+e?=
- =?us-ascii?Q?WpYfGU0etheO5bdcx7UfFwdk3dRBv53ORnC0ByKyxAw99JBUTSIykBq026ni?=
- =?us-ascii?Q?XxpaL3nW+o8TW8dutR5h4qi4re+wDJp/YwLHQbWdCRaRmB6A+eF/BEz2IU4U?=
- =?us-ascii?Q?bj7d/hcSpp/W9505111bN8q/x2llM2M9aWN2xeczQ3LjhxyNJc2J2xylxpHa?=
- =?us-ascii?Q?G1gS0KRk1nNjUFFfFkefLjoaUtdhw08XsRpKiT8V78Iy9H/hJyftST/PyNWE?=
- =?us-ascii?Q?UBfRnZZsaxhLlIvUa/zFrDxq05SnrXjK/L9wYT6x2Ddi80RsyfEdGXhPxxYb?=
- =?us-ascii?Q?T6WqszNqjZXeiNE7iPT5rqDt/QXpBurUVf12zpFnUHiXn2VX81orhIIeAiXT?=
- =?us-ascii?Q?F4aaJHv+wA=3D=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: fe601bc2-1c1c-4c29-4940-08df3f22f907
-X-MS-Exchange-CrossTenant-AuthSource: AM6PR04MB4472.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Nov 2026 12:05:55.1110
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: IDldVHTYUhwfHWvnCZu7PS518gNxBgTkq3vCO3VMpmzZaLkRWhLTn6xSBIuEpuRvW+OaJGplddt7Hyje8fRUUg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI3PR04MB572389
+X-HM-Tid: 0aa1c5dfe33a03a1kunmc234772916cdd1
+X-HM-MType: 10
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVlDTE1KVkJCH05NTkJJTEsdQ1YeHw
+	5VEwETFhoSFyQUDg9ZV1kYEgtZQVlKS0pVTE1VSU9CVU1KWVdZFhoPEhUdFFlBWU9LSFVKS0lCQ0
+	NMVUpLS1VLWQY+
+DKIM-Signature: a=rsa-sha256;
+	b=MWk+1hkeivr0+ehsU/vkIeW+yDKau72EylflaaUK3n/vIRt3Sb22ZK3MlhztmYNAr2fXEcGc+P8+4i3gk6Q5SGW0nRfhG3Sf2VG5fWU/g9VtPx8yLWjjzS27bGUB/bvwGGpR5RDsVqzzePCKikUrUGWBISLhEp5R3q1UKm9ztQs=; s=default; c=relaxed/relaxed; d=mail.sdu.edu.cn; v=1;
+	bh=LGVJZGIzBqq23FRuwiA17JN76P7yNaAe68+qJxIW3Fc=;
+	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261110_040605_300340_474960BF 
-X-CRM114-Status: GOOD (  12.04  )
-X-Spam-Score: -1.1 (-)
+X-CRM114-CacheID: sfid-20261110_063240_219632_E5F92019 
+X-CRM114-Status: GOOD (  10.50  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,59 +80,57 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: "Oliver F. Brown" <oliver.brown@oss.nxp.com>
+The clock provider remains registered if PHY provider registration fails.
+Device-managed cleanup then frees the clock hardware and PHY private
+data still referenced by the provider.
 
-The hs_zero timing is computed as
+Use a device-managed clock provider so both probe failure and removal
+unregister it before the clock hardware is released.
 
-	n = (144 * (hs_clk_rate / 1000000) - 47500) / 10000;
-	cfg->m_prg_hs_zero = n < 1 ? 1 : n;
+This issue was found by our static analysis tool under development.
 
-hs_clk_rate is an unsigned long, so the subtraction is done unsigned and
-wraps for any rate below about 330 MHz, where 144 * MHz < 47500. Because
-n is a u32, the wrapped value is never seen as negative and the "n < 1"
-clamp does not take effect. The garbage value is then truncated into the
-8-bit m_prg_hs_zero register field. At the minimum supported rate of
-80 MHz this programs 199 on 64-bit and 181 on 32-bit, instead of the
-intended minimum of 1.
-
-Make n signed and do the arithmetic in int so the clamp works on both
-32-bit and 64-bit. The divided rate is at most 1500, so 144 * 1500 fits
-easily in an int.
-
-Fixes: f4c8116e294b ("phy: Add driver for mixel mipi dphy found on NXP's i.MX8 SoCs")
+Fixes: 53706a116863 ("phy: add Rockchip Innosilicon hdmi phy")
 Cc: stable@vger.kernel.org
-Signed-off-by: Oliver F. Brown <oliver.brown@oss.nxp.com>
-Signed-off-by: Stefan Ghetu <stefan.ghetu@nxp.com>
+Signed-off-by: Guangshuo Li <liguangshuo@mail.sdu.edu.cn>
 ---
- drivers/phy/freescale/phy-fsl-imx8-mipi-dphy.c | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-inno-hdmi.c | 8 +-------
+ 1 file changed, 1 insertion(+), 7 deletions(-)
 
-diff --git a/drivers/phy/freescale/phy-fsl-imx8-mipi-dphy.c b/drivers/phy/freescale/phy-fsl-imx8-mipi-dphy.c
-index 0928a526e2ab..84bd21aaf9e8 100644
---- a/drivers/phy/freescale/phy-fsl-imx8-mipi-dphy.c
-+++ b/drivers/phy/freescale/phy-fsl-imx8-mipi-dphy.c
-@@ -191,8 +191,7 @@ static int mixel_dphy_config_from_opts(struct phy *phy,
- 	unsigned long ref_clk = clk_get_rate(priv->phy_ref_clk);
- 	u32 lp_t, numerator, denominator;
- 	unsigned long long tmp;
--	u32 n;
--	int i;
-+	int n, i;
+diff --git a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
+index d2c2b17df5f3..09608f204798 100644
+--- a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
++++ b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
+@@ -1068,7 +1068,7 @@ static int inno_hdmi_phy_clk_register(struct inno_hdmi_phy *inno)
+ 		return ret;
+ 	}
  
- 	if (dphy_opts->hs_clk_rate > DATA_RATE_MAX_SPEED ||
- 	    dphy_opts->hs_clk_rate < DATA_RATE_MIN_SPEED)
-@@ -276,7 +275,7 @@ static int mixel_dphy_config_from_opts(struct phy *phy,
- 	cfg->mc_prg_hs_prepare = dphy_opts->clk_prepare > lp_t ? 1 : 0;
+-	ret = of_clk_add_provider(np, of_clk_src_simple_get, inno->phyclk);
++	ret = devm_of_clk_add_hw_provider(dev, of_clk_hw_simple_get, &inno->hw);
+ 	if (ret) {
+ 		dev_err(dev, "failed to register clock provider: %d\n", ret);
+ 		return ret;
+@@ -1454,11 +1454,6 @@ static int inno_hdmi_phy_probe(struct platform_device *pdev)
+ 	return PTR_ERR_OR_ZERO(phy_provider);
+ }
  
- 	/* hs_zero: formula from NXP BSP */
--	n = (144 * (dphy_opts->hs_clk_rate / 1000000) - 47500) / 10000;
-+	n = (144 * (int)(dphy_opts->hs_clk_rate / 1000000) - 47500) / 10000;
- 	cfg->m_prg_hs_zero = n < 1 ? 1 : n;
+-static void inno_hdmi_phy_remove(struct platform_device *pdev)
+-{
+-	of_clk_del_provider(pdev->dev.of_node);
+-}
+-
+ static const struct of_device_id inno_hdmi_phy_of_match[] = {
+ 	{
+ 		.compatible = "rockchip,rk3228-hdmi-phy",
+@@ -1472,7 +1467,6 @@ MODULE_DEVICE_TABLE(of, inno_hdmi_phy_of_match);
  
- 	/* clk_zero: formula from NXP BSP */
--- 
-2.34.1
+ static struct platform_driver inno_hdmi_phy_driver = {
+ 	.probe = inno_hdmi_phy_probe,
+-	.remove = inno_hdmi_phy_remove,
+ 	.driver = {
+ 		.name = "inno-hdmi-phy",
+ 		.of_match_table = inno_hdmi_phy_of_match,
 
+base-commit: 6628e7d4c6b25c8d18f1345e3a20d21829aae7e4
 
 -- 
 linux-phy mailing list
