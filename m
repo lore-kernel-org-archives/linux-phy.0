@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 21E6B606A31C
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Nov 2026 01:37:43 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7DE5E606A32A
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Nov 2026 02:52:45 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=TozUDUuB;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=sPs9wpbl
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=R0vprphW;
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=rock-chips.com header.i=@rock-chips.com header.a=rsa-sha256 header.s=default header.b=Ns/2mPV9
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
@@ -14,88 +14,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=n00il5WVPTTGqDdgj78g+1r63FUoFpTZ9IyjwfvaJGA=; b=TozUDUuBVtX6cXjB7Ig+jqOVov
-	ZenRmxJtE2lxky2ykO5WAHXnZeprCqgg/ajaemIpe0RJaqKSqggChRqs6OwWjbHXUe+2LoaSSgnyK
-	Yfy4y/6AdUGqfFbNQDT+i0uO/odWM8RQgwrsHsT0F6WsbWJINhbWU9XCNXiPdhBqm9iRbO5Kcodfo
-	dmBm0zmkESFxxLFaYx5D1bTCwE2i7OYqF58JBABcjtv8qDfzdbPI120vIkdPDW/O4to5uoGRFErIs
-	AUuZTsvgJRARB2nzrsxhYzlSpZ4bdW4qxS4xNAiZFo1mrA++1MEFZyoP928apLwr1rsEDFhziU767
-	SJzkdC/g==;
+	bh=b04Fl+V8WCK8cRn1AygdKmA05NrQ3IJuKbelLZpef8M=; b=R0vprphWmb+wr19rivndR8e+Vj
+	wmfdwZpakdspXmry56p/w/4EJuJ+QicN7/DZDOGP76M0btRyG7MDzdcEP7BdDY0+/GU5DmlxXXhJa
+	84Hcce/RPEmRlGY3WY37F3viLg6RiSSRfaqaL9K7l7HgsveyZ3S1RF7e1FkHm/nEw/ZpP8Iq4IY68
+	RVSg7FPfCjb4/LsXk0Z3abDIrKaHTRWk1wcXqCI2GFRJlD5c5zR6MVnINGVG8zqfPP012FMLEPb6w
+	lgErwDQR6Av1c7usbQJBt4l0BTniEL8YmpdMi3AIvLL1LxE8Xwemri6GOex9v1ftDLutUsxkyfi4Y
+	/936QRjw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQanu-000000026Bg-3cYC;
-	Tue, 10 Nov 2026 01:37:42 +0000
-Received: from mail-pj1-x1030.google.com ([2607:f8b0:4864:20::1030])
+	id 1xQbyX-00000002Cw9-0zIm;
+	Tue, 10 Nov 2026 02:52:45 +0000
+Received: from mail-m1024.netease.com ([154.81.10.24])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQans-000000026BK-1dpD
-	for linux-phy@lists.infradead.org;
-	Tue, 10 Nov 2026 01:37:41 +0000
-Received: by mail-pj1-x1030.google.com with SMTP id 98e67ed59e1d1-3b08cf16decso975147a91.0
-        for <linux-phy@lists.infradead.org>; Mon, 09 Nov 2026 17:37:40 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794274659; x=1794879459; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=3ifG6N3GjuE9TBQMDJaU7DFuzuDNphSyfQc7VRPrMxs=;
-        b=sPs9wpblf5k2UkL2LNvVz/4hMgIwjzj5Bdjs5J5g7nouzzPd9Cun5ApTzGyAq6Yyx7
-         +EjmAuXA83EVV7uth4yVhxNfdOWL0dfvxppWvXdUyJFMcg8Iv5hmPduQaDSbpUVTTi2M
-         OF/MF0KNC4lwMajfzu/zss7qmLy1Zx/ASxgN7ooPqi6+9VSgMbVyXHn4KLWGTMpJdUac
-         zTBdkdLW6XmvlAhcFqiYJNXAykbG/SZoJmT/KAHXZaTtn0HgBMD/AZhZrsqgwn3C5zCV
-         UoHA+oZ6rNjBWmkRdYwIn/tqO2Ly97eYmP3iVrzTNuDxfGhffruStpZXgVtn1wguLwnX
-         JQ+A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794274659; x=1794879459;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=3ifG6N3GjuE9TBQMDJaU7DFuzuDNphSyfQc7VRPrMxs=;
-        b=YEAA2VrZAU2qNzJUvurlv4L4nVVfudfJbmCrKHPdqQDNh67JALQaY6VyPzNXIcgOi8
-         Odim5aNLJS+osx3VOsWr23vA3WZ8Iysyt8oHT9sIqQ7uIL+dlMtTfop1GGMXlbCAgO9E
-         uDXORdyEIZi6pc2bdq3HtXHZ0duM2Ll3yB1gkXGm4/qzj2PWgR1eeFiPB4plTGzOZzsf
-         aksHUIOmdAb6fFzPT63pDphBvlIFBXRuQ45V+c43HUyQaMXhZmJiir7p27ooyJr4GSIP
-         3bX2EvMOy44VZ7V4KmGpsP1ISIMjlhOOmTOsVJqgJim6q3oF6vvBOUav5bzci6aEVXCT
-         T9Zw==
-X-Gm-Message-State: APuU4Z92UeNIE3jzZ55Jvkjy8Y3Ab03NUaMwcTZmjeUt6cyobRTdJnbi
-	jVBOFyf24S+LSQNMcthYupoCLNCduQXo8PGmEV4yTEXXipKaYxSP3/zg
-X-Gm-Gg: AYBFou1jpSORUJ4qFpXFSAej4fYpNS9Oh/Nenj47r6jdK+8EuxBhTmmBIexSskEuTRg
-	zaOoOntFgdYOswH6kz8pDeZ3+dnYQqdZNAaTI1iPIwPMiLieaBKvhcTPpuI/vbAwqBQDostDWeR
-	bICyTfO8wvIizlK79+0gU2x4EeVDXuFA3fHQVQuGSshG0jOhi1SJym9v32cBQj5YKbrA8tzJvtp
-	84s7SOae4/Cmfs1tUWk5XZXvAht1WwT8ASlTcxc+ZLx9JTQIP+wdcz0Q1N0sKGokhEA/WQqq7Dw
-	xAMEWEghmmWHoZmYqklfs4JJCmqeel++tNP0nPg/vkI++4GZCdnAwOvNkzAvnZ6k9NwgNeIdUO6
-	d6EN0It+Nw3Fk6thv7dhlIHLt6xVL6lXgatISIUlYofQBnZeaxAfzs6Tq3Xn85K8w7br/0IgWGw
-	vDEOEUh4lt54b5Y2X1WFntIWdvjPl9CPnpc9AkBnMzMnE+zPEXet9ohs83rrhSol1mY01FwOTLX
-	20T+acXnqoV+kp6zdolLBTXLohid/7DUm5/qZsqpGgjAt60EbI9DUBcfnzXYIoQRY6F87mldYTX
-	WJIpFri3yivIuXHiC4FKpHkhAFAp5PrNQ/fMqkqnNv8ZC73lbh/HcV6JJZaXj0k15C+BI897pNx
-	/+FhCKIRSPA==
-X-Received: by 2002:a17:90b:2e49:b0:3ae:8106:6074 with SMTP id 98e67ed59e1d1-3b166c92193mr1307280a91.16.1794274659234;
-        Mon, 09 Nov 2026 17:37:39 -0800 (PST)
-Received: from [192.168.0.100] (60-250-196-139.hinet-ip.hinet.net. [60.250.196.139])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b16792aabfsm1657287a91.12.2026.11.09.17.37.37
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 09 Nov 2026 17:37:38 -0800 (PST)
-Message-ID: <81e91f05-f172-4bbf-b5a6-76f2767ea82b@gmail.com>
-Date: Tue, 10 Nov 2026 09:37:35 +0800
+	id 1xQbyT-00000002CuL-2jNF;
+	Tue, 10 Nov 2026 02:52:44 +0000
+Received: from [172.16.12.74] (unknown [61.154.14.86])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 541744873;
+	Tue, 10 Nov 2026 10:52:32 +0800 (GMT+08:00)
+Message-ID: <ab5694a1-2f10-4888-ad27-20715d3f98a6@rock-chips.com>
+Date: Tue, 10 Nov 2026 10:52:31 +0800
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v8 4/4] phy: nuvoton: phy-ma35d1-usb2: extend to dual-port
- with OTG support
-To: sashiko-reviews@lists.linux.dev
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org,
- neil.armstrong@linaro.org, olteanv@gmail.com
-References: <20261109065606.62641-1-a0987203069@gmail.com>
- <20261109065606.62641-5-a0987203069@gmail.com>
- <sashiko-outbox-204535@kernel.org>
+Subject: Re: [PATCH v4 2/6] dt-bindings: phy: Add rockchip,rk3568-edp-phy
+To: Rob Herring <robh@kernel.org>
+Cc: Krzysztof Kozlowski <krzk@kernel.org>, Sandy Huang <hjc@rock-chips.com>,
+ Heiko Stuebner <heiko@sntech.de>, Andy Yan <andy.yan@rock-chips.com>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss <rfoss@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Luca Ceresoli <luca.ceresoli@bootlin.com>,
+ Dave Jones <s.dave.jones@gmail.com>,
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+ dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+References: <20261030064905.2248999-1-damon.ding@rock-chips.com>
+ <20261030064905.2248999-3-damon.ding@rock-chips.com>
+ <20261103-lemon-guillemot-of-economy-eefbbd@quoll>
+ <fd180b9c-de60-4718-b17f-319bf4339e13@rock-chips.com>
+ <20261106152915.GA3406543-robh@kernel.org>
 Content-Language: en-US
-From: Joey Lu <a0987203069@gmail.com>
-In-Reply-To: <sashiko-outbox-204535@kernel.org>
+From: Damon Ding <damon.ding@rock-chips.com>
+In-Reply-To: <20261106152915.GA3406543-robh@kernel.org>
+X-HM-Tid: 0aa1c35f1cad03a8kunm4f8fb2772be325
+X-HM-MType: 1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVlCHh1CVh1NGh1CTUxNTh4ZQ1YVFA
+	kWGhdVEwETFhoSFyQUDg9ZV1kYEgtZQVlNSlVKTk9VSk9VQ01ZV1kWGg8SFR0UWUFZT0tIVUJCSU
+	5KVUpLS1VKQktCWQY+
+DKIM-Signature: a=rsa-sha256;
+	b=Ns/2mPV9pH9bVvzBBCDzik0xz9kGzB25NEhWCgaJIvkA3av+MymfxdL510FRETs5vrsiCdISksI3CW1wh0tet9VEr08fX0Gv7MFLrFvI8AT3q6u9sMAphY8Oao2Ra1viV41VNtT+Z+VO25d7jt6OQBQja6J3O3lp6ZQ84Bc7Lus=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
+	bh=1pznVwkEZpAe1hyxNb7ShpTi+47BEMmqvSU22FSDZfs=;
+	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261109_173740_466705_F6DBCB66 
-X-CRM114-Status: GOOD (  20.68  )
-X-Spam-Score: -1.8 (-)
+X-CRM114-CacheID: sfid-20261109_185242_277044_B104011A 
+X-CRM114-Status: GOOD (  14.94  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,125 +90,125 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-7.3 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,FROM_LOCAL_HEX,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_SANE_1 autolearn=no autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
+	version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
+Hi Rob,
 
-On 11/9/2026 3:14 PM, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 1 potential
-> issue to consider:
-> - [Medium] phy: nuvoton: missing MFD_SYSCON select and unchecked
->    regmap_read()
-> --
->
-> commit ce87e45e509dca5386021bb0dd4e3bb91e3935d8
-> Author: Joey Lu <a0987203069@gmail.com>
->
-> phy: nuvoton: phy-ma35d1-usb2: extend to dual-port with OTG support
->
-> This commit extends the Nuvoton MA35D1 USB 2.0 PHY driver to support both
-> PHY0 and PHY1, updates clock-stability polling in phy_init(), registers a
-> read-only USB role switch for PHY0, and adds resistor calibration and
-> over-current polarity device-tree properties.
->
->> diff --git a/drivers/phy/nuvoton/Kconfig b/drivers/phy/nuvoton/Kconfig
->> index d02cae2db315a..1f37e860de507 100644
->> --- a/drivers/phy/nuvoton/Kconfig
->> +++ b/drivers/phy/nuvoton/Kconfig
->> @@ -6,6 +6,7 @@ config PHY_MA35_USB
->>   	tristate "Nuvoton MA35 USB2.0 PHY driver"
->>   	depends on ARCH_MA35 || COMPILE_TEST
->>   	depends on OF
->> +	depends on USB_ROLE_SWITCH || !USB_ROLE_SWITCH
->>   	select GENERIC_PHY
->>   	help
->>   	  Enable this to support the USB2.0 PHY on the Nuvoton MA35
->> diff --git a/drivers/phy/nuvoton/phy-ma35d1-usb2.c b/drivers/phy/nuvoton/phy-ma35d1-usb2.c
->> index 0b9976fb15c17..bc706356c4341 100644
->> --- a/drivers/phy/nuvoton/phy-ma35d1-usb2.c
->> +++ b/drivers/phy/nuvoton/phy-ma35d1-usb2.c
-> [ ... ]
->
->> +static int ma35_usb_phy_init(struct phy *phy)
->> +{
->> +	struct ma35_phy_port *port = phy_get_drvdata(phy);
->> +	struct ma35_usb_phy *p = container_of(port - port->idx,
->> +					      struct ma35_usb_phy, port[0]);
->> +	unsigned int n = port->idx;
->>   	unsigned int val;
->>   	int ret;
->>   
->> -	ret = clk_prepare_enable(p_phy->clk);
->> -	if (ret < 0) {
->> -		dev_err(p_phy->dev, "Failed to enable PHY clock: %d\n", ret);
->> -		return ret;
->> -	}
->> +	ret = clk_prepare_enable(p->clk);
->> +	if (ret)
->> +		return dev_err_probe(p->dev, ret, "failed to enable clock\n");
->>   
->> -	regmap_read(p_phy->sysreg, MA35_SYS_REG_USBPMISCR, &val);
->> -	if (val & PHY0SUSPEND) {
->> -		/*
->> -		 * USB PHY0 is in operation mode already
->> -		 * make sure USB PHY 60 MHz UTMI Interface Clock ready
->> -		 */
->> -		ret = regmap_read_poll_timeout(p_phy->sysreg, MA35_SYS_REG_USBPMISCR, val,
->> -						val & PHY0DEVCKSTB, 10, 1000);
->> -		if (ret == 0)
->> -			return 0;
->> -	}
->> +	regmap_read(p->sysreg, MA35_SYS_USBPMISCR, &val);
->>   
->> -	/*
->> -	 * reset USB PHY0.
->> -	 * wait until USB PHY0 60 MHz UTMI Interface Clock ready
->> -	 */
->> -	regmap_update_bits(p_phy->sysreg, MA35_SYS_REG_USBPMISCR, 0x7, (PHY0POR | PHY0SUSPEND));
->> +	if ((val & USBPMISCR_PHY_SUSPEND(n)) &&
->> +	    !ma35_usb_phy_wait_ready(p, n, &val))
->> +		goto out;
-> [ ... ]
->
->> +static enum usb_role ma35_role_sw_get(struct usb_role_switch *sw)
->> +{
->> +	struct ma35_usb_phy *p = usb_role_switch_get_drvdata(sw);
->> +	u32 val;
->> +
->> +	regmap_read(p->sysreg, MA35_SYS_PWRONOTP, &val);
->> +
->> +	return (val & PWRONOTP_USBP0ID) ? USB_ROLE_HOST : USB_ROLE_DEVICE;
->> +}
-> [Severity: Medium]
-> Can val be used uninitialized in ma35_usb_phy_init() and
-> ma35_role_sw_get() when regmap_read() fails or is stubbed out?
->
-> Neither PHY_MA35_USB nor ARCH_MA35 selects MFD_SYSCON, so PHY_MA35_USB can
-> be built with CONFIG_MFD_SYSCON=n and CONFIG_REGMAP=n.  In that
-> configuration, syscon_regmap_lookup_by_phandle() always fails with
-> -ENOTSUPP, and the regmap_read() stub returns -EINVAL without writing val,
-> causing the compiler to flag val as uninitialized in ma35_usb_phy_init()
-> and ma35_role_sw_get().
->
-> Selecting MFD_SYSCON in PHY_MA35_USB and checking the regmap_read() return
-> value (or initializing val) would avoid both issues.
-MFD_SYSCON: valid in part. Neither ARCH_MA35 nor PHY_MA35_USB selects
-MFD_SYSCON, and with CONFIG_REGMAP=n the regmap_read() stub returns -EINVAL
-without writing val, so the compiler can warn about val being uninitialized.
-In practice the probe would already fail at 
-syscon_regmap_lookup_by_phandle()
-(-ENOTSUPP) and never reach those paths. The missing dependency is the real
-problem, so in v9 I'll add "select MFD_SYSCON" to PHY_MA35_USB (it selects
-REGMAP_MMIO as well). I'll keep regmap_read() unchecked as discussed with
-Mani, since once syscon is guaranteed the reads are plain MMIO and do not
-fail.
+On 11/6/2026 11:29 PM, Rob Herring wrote:
+> On Wed, Nov 04, 2026 at 04:59:58PM +0800, Damon Ding wrote:
+>> Hi Krzysztof,
+>>
+>> On 11/3/2026 7:20 PM, Krzysztof Kozlowski wrote:
+>>> On Fri, Oct 30, 2026 at 02:49:01PM +0800, Damon Ding wrote:
+>>>> Document the eDP transmitter PHY with NaNeng IP block found on the
+>>>> RK3568 SoC.  The PHY has its own register window inside the eDP PHY
+>>>> GRF, so its node is modeled as a child of the eDP PHY GRF syscon with
+>>>> a reg property describing that window.  Also add the
+>>>> "rockchip,rk3568-edp-phy-grf" compatible and the phy node reference to
+>>>> the Rockchip GRF schema.
+>>>>
+>>>> Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
+>>>>
+>>>> ---
+>>>>
+>>>> Changes in v4:
+>>>> - Add the reg entry for the PHY node and the ranges/#address-cells/
+>>>>     #size-cells for the parent syscon node.
+>>>> ---
+>>>>    .../bindings/phy/rockchip,rk3568-edp-phy.yaml | 68 +++++++++++++++++++
+>>>>    .../devicetree/bindings/soc/rockchip/grf.yaml | 20 ++++++
+>>>>    2 files changed, 88 insertions(+)
+>>>>    create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3568-edp-phy.yaml
+>>>>
+>>>> diff --git a/Documentation/devicetree/bindings/phy/rockchip,rk3568-edp-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,rk3568-edp-phy.yaml
+>>>> new file mode 100644
+>>>> index 000000000000..b78da00ffefd
+>>>> --- /dev/null
+>>>> +++ b/Documentation/devicetree/bindings/phy/rockchip,rk3568-edp-phy.yaml
+>>>> @@ -0,0 +1,68 @@
+>>>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>>>> +%YAML 1.2
+>>>> +---
+>>>> +$id: http://devicetree.org/schemas/phy/rockchip,rk3568-edp-phy.yaml#
+>>>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>>>> +
+>>>> +title: Rockchip eDP Transmitter PHY with NaNeng IP block
+>>>> +
+>>>> +maintainers:
+>>>> +  - Damon Ding <damon.ding@rock-chips.com>
+>>>> +  - Heiko Stuebner <heiko@sntech.de>
+>>>> +
+>>>> +description:
+>>>> +  On the RK3568 SoC the eDP PHY is controlled through the eDP PHY GRF
+>>>> +  registers, therefore the PHY node is expected to be a child of the
+>>>> +  eDP PHY GRF syscon node.
+>>>> +
+>>>> +properties:
+>>>> +  compatible:
+>>>> +    const: rockchip,rk3568-edp-phy
+>>>> +
+>>>> +  reg:
+>>>> +    maxItems: 1
+>>>> +    description: PHY registers within the eDP PHY GRF.
+>>>> +
+>>>> +  clocks:
+>>>> +    maxItems: 1
+>>>> +
+>>>> +  clock-names:
+>>>> +    const: refclk
+>>>
+>>> Just "ref"
+>>
+>> Will fix in v5.
+>>
+>>>
+>>>> +
+>>>> +  "#phy-cells":
+>>>> +    const: 0
+>>>> +
+>>>> +required:
+>>>> +  - compatible
+>>>> +  - reg
+>>>> +  - clocks
+>>>> +  - clock-names
+>>>> +  - "#phy-cells"
+>>>> +
+>>>> +additionalProperties: false
+>>>> +
+>>>> +examples:
+>>>> +  - |
+>>>> +    #include <dt-bindings/clock/rk3568-cru.h>
+>>>> +
+>>>> +    soc {
+>>>> +      #address-cells = <2>;
+>>>> +      #size-cells = <2>;
+>>>> +
+>>>> +      edp_phy_grf: syscon@fdcb0000 {
+>>>> +        compatible = "rockchip,rk3568-edp-phy-grf", "syscon", "simple-mfd";
+>>>
+>>> This is beyond the scope of this binding. Drop entire node.
+>>
+>> Will Drop in v5. The example should only show the PHY node itself.
+> 
+> Actually, drop the whole thing and put in GRF binding if you want an
+> example. MFD examples should be complete, not piecemeal with each
+> sub-device.
+> 
+> 
 
-Joey
+Understood. For incoming v5, the example will be dropped from the PHY 
+binding schema entirely, and the complete MFD example will live only in 
+the GRF binding schema.
+
+Best regards,
+Damon
+
 
 -- 
 linux-phy mailing list
