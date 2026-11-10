@@ -2,116 +2,91 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 34DB4606A320
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Nov 2026 17:02:52 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8BF2460A3826
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Nov 2026 17:19:45 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=klaAjNdj;
-	dkim=fail reason="signature verification failed" (4096-bit key) header.d=canonical.com header.i=@canonical.com header.a=rsa-sha256 header.s=20251003 header.b=hQD9mPgX
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=baZDUAA2;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=collabora.com header.i=@collabora.com header.a=rsa-sha256 header.s=mail header.b=TZ8SQgs6
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:Subject:References:Cc:To:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=JiOeVoJuFTgCOc8qCYbuP8nLoEOdHoh+98/21ZDJsKk=; b=klaAjNdjrDbl1dl0ZTzfvp7NUt
-	bIScIFIBP8hnHTVQ5qqd+09Quq9F9b2V0ZlDmvscAQQ9pr4wn8Gd5rtxsMsNK/um3EXLrCv80FWDo
-	ASRBhfG81jCsmBmZvMNmmtFWUtPEgVU4/rdI2/qNSVLmnAyG3ARwUNi/EWBceJibCY9RL4kvR6k0K
-	W9pNku8t38KMEpvjdkMVZwcSFLXgALv+SAZJcAuih1bwF6j6cjlPU8Vn+O8SBh2Bj0QtFkC1UVDcc
-	ePRXHCYSBONgLmjg8jDTIrSrhzm/x8g68MJdFM0hk4BOvnjKFuiWVAvtz2BW8aU5rQjNxwHNsBo+l
-	/ukQd5ww==;
+	bh=Bjr3sp4tOQlR76kquFuyEF4Og2g45ZgzW2iFmlzMdxM=; b=baZDUAA2/N+x4wshxLA4NFXhCU
+	y79rIWp8/3Wv2QQ4YkzZNgkkhIjWyURkf8FajicJArB0LN6wuudgWexU5+/UeZJBpRGbiu35PqAat
+	ZOL9r5XoPCcPcSJpDqfte6iTWf3G0JvFxBRsdXtp7EbfLuUZ3sjh9Q1DuZadNuJr0hgjAdxohsj7X
+	Z4fJ5W3wsKXZs4NTHNS6y7B+VL/PdYIWfcGBtURRlKFxdurqR1LF44sAwOLWuRa/qUdq/8Fg3Rsk1
+	7Lg1ELOJa3znx1d5yb9iyc8FK5N46dzR7dBBTrkntgDfKvUhnnuBfirulAt5TZAOkEOOXojYfj1QB
+	6zAG/+5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQpFD-00000004cWn-2tak;
-	Tue, 10 Nov 2026 17:02:51 +0000
-Received: from smtp-relay-internal-0.canonical.com ([185.125.188.122])
+	id 1xQpVZ-00000004eED-0OeW;
+	Tue, 10 Nov 2026 17:19:45 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQpFA-00000004cVx-3dD2
-	for linux-phy@lists.infradead.org;
-	Tue, 10 Nov 2026 17:02:50 +0000
-Received: from mail-wr1-f71.google.com (mail-wr1-f71.google.com [209.85.221.71])
+	id 1xQpVW-00000004eBg-0GoE;
+	Tue, 10 Nov 2026 17:19:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1794331179;
+	bh=8/fTd2v3WW8Lq1B62lCiA4Q4ly0FhC2re1oEGWAOBUQ=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
+	b=TZ8SQgs6tjdKliKufAD2RYTRQajHbrht/NL9Jadw4N8N+/SpFKLJ8pUuUR8aUBnF7
+	 3bksch1DHN5teqEiEHOkgLQ/c9+fHQ71SClfy8BjZDbJ6OkRfXsqw+DxodIwZW4N1I
+	 tzIKzD8dHFMRLlqRoTKh68VU4uLsBQRPAewCO9n//ltUT2hOZ/80TK1RCyBhSzOu+t
+	 wD7h59dM2hm12iOpV0b+aRCtcsGo1YVSbNHekAbRo5VKaGZ99sbVwgfZtNrHQDVkN6
+	 T7dY0xYmc+OaJbVG1w+BjS7WK7QVODI+WrImvWSCZBlwqx6DE7A04YCF/dX/1uD/uv
+	 HOgkXdy45FXIw==
+Received: from jupiter.universe (unknown [100.64.1.62])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
-	by smtp-relay-internal-0.canonical.com (Postfix) with ESMTPS id 063F140266
-	for <linux-phy@lists.infradead.org>; Tue, 10 Nov 2026 17:02:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
-	s=20251003; t=1794330166;
-	bh=ozoC35JH09JXF0SoFXDETE/OXFxO44zArTqmVJlRrnw=;
-	h=Message-ID:Date:MIME-Version:To:Cc:References:Subject:From:
-	 In-Reply-To:Content-Type;
-	b=hQD9mPgXugfhtIhDcvsq4SZThekNRzFT3sMIjicEtPufbY6ARxAAxLQP9WwXgY4CC
-	 aR/wvfhIAOuf3xGqJZo7ygWk+aKNtZBVp7lmCnO9LJjMhM5KrxcmeB8bpIIiHRMrzY
-	 PrQkHf/lANfXuOSU36xUjcvWW5YuG7yc9cPxFeqpveHCwXebfEbaeOUTnysB/U1Bfa
-	 CPGExOBT+QlJol/ka/7z/wx722r0mcwCR5XGgD0Q5CsXjt2jIbL03XUfyNoMmsSoTh
-	 azWcf7ngIBV/oFBaUnd03Yo25hSnHRyOScMrPajLZzJy5tRQmcPlyGJChgcodsy58N
-	 FmaWQlVn+De1Ouo/qWit8uxUXwv+CoTiMTgzmtBj9+o9QGitYLGM8c7Q/jbx1Yas5Y
-	 Y/48ZWEGk1Yw3ZMsowhzD+KSuKGreYgOQSxMwuhcsT8w3gjGieQ12dOUI6ZXkWpzhG
-	 8sMIACnv7Y4gRSVmbu8/sq3RVbNdvF6kvTeBTqiOTSECV65jVm7E9GQMzEHXuE4I6+
-	 4yxISxem7RcOd1JlrFHtBjJWAIfBc13cDpxb24Pe6pnOiyz2sJ0yOQF8Nn30Xsj4Se
-	 9g6K+eeCapUKBWNEHlb7hd/cxrT1Mr+c02r8iPBVBUvKS9yvI67OBzeGZE5fHy1WgH
-	 wOfMNs7ArNDVqstymZ1zmUTA=
-Received: by mail-wr1-f71.google.com with SMTP id ffacd0b85a97d-48df02b91f9so1488680f8f.1
-        for <linux-phy@lists.infradead.org>; Tue, 10 Nov 2026 09:02:46 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794330165; x=1794934965;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:subject:references:cc:to:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=ozoC35JH09JXF0SoFXDETE/OXFxO44zArTqmVJlRrnw=;
-        b=jgXnwTASTSRIA4RLgOxWajYFx7tQvFGe6f3bsNK0DwkM3q3wIiuPpBNRJ1Q+6aqhlK
-         4yUA51MTPCJTVrH3BFAAlLNXx3fyogRBf7uDbWSB/99i42wf9Q5Y2npj/CiLrpCL5/Nb
-         0PJWKOgUv8Dif6CcbNrGA2eG0eVewT/MFP3oxYv/mywdan4GXFWN769yvx2tzPN45OU+
-         397jmOn6p6GJU9STcxqHsUcin+kyg0b4InR9iYzkd2KTIINUgcN3y9PNZCmgqoy6gVPI
-         R9AOPEvAV5MfsOLwsq5bUs92DjS5Ojf/2kPG/S//kvJH3bUutLpqZOKZWSJfKw6e8WlO
-         6xBQ==
-X-Forwarded-Encrypted: i=1; AL+hErFC43YcI0jT8q12W4hsHJeHNUBw8bohTrqRnYcpXgJGY0eGvFP1w61g8JHzo/XNv916zylkhB7BXNs=@lists.infradead.org
-X-Gm-Message-State: APuU4Z/MxrusMjFmCpLYphyt7Fa8poIHZVkoPm60DiiGMiEuJzrfsT2D
-	sfJrpmJ9aoC7IkYcE/Y31RXwTwfmAiaZibU8AMV19uEAidqKvI5th2i7C2M59zLLUtUNIs82Psm
-	zMTAEZvv8TlgQTWhwllLC7Ur1iCAeBbIMa1L7LkIfJZ0ppgMTVbYON1qcREqMk6+ooS7yo6Rzfn
-	A3xvjYDfU=
-X-Gm-Gg: AYBFou23RO2sYfpvF5rnyqei+WoY9M7myMJOkOTxK+zq+IdDkuLHpPLMtf0SqscFB4C
-	djmwKwbBpD12QX113fjcpWIaB4YrdOvRfVDNaEaY/Cz9rZq4JqjJQskz0aB3Sdxc6A4ZPmVk+Nz
-	fsYVMJrqyWivlpWTY7BtvrG+78xbcBreoJGYzbn4jdE7ASqvQOPuYzFjDcvzl8vwUwvr7+kNovj
-	oVeo/aitDOdkTjN0vQDoWII2/w2aOJR70J5NvszxsT+EjXIKyLYK7v33BNk77810HFTG7mnBLvY
-	hNDazxZEPxxq2G4F91zINVUW7WKGZUPVMCMIFBf3zSZYEWW/CvDrYgUQGk4hxX1Eie/d4hjmDW1
-	IR2tIyHpTij6BsLyBEHgATbBdegRFR/uwV32Wi3km6IYF/Xlif8drJLV6ZAIdAy3E/g9o5k0BWX
-	kDqxt1sFV3+JGj2zNUUoKhe3nIn9qV96gM60UqjgELvh4+c0TPYbt6
-X-Received: by 2002:a05:6000:607:b0:48e:eb:56c5 with SMTP id ffacd0b85a97d-49992cc6a24mr288600f8f.8.1794330165610;
-        Tue, 10 Nov 2026 09:02:45 -0800 (PST)
-X-Received: by 2002:a05:6000:607:b0:48e:eb:56c5 with SMTP id ffacd0b85a97d-49992cc6a24mr288536f8f.8.1794330165190;
-        Tue, 10 Nov 2026 09:02:45 -0800 (PST)
-Received: from ?IPV6:2a01:cb19:9432:11ec::c98? (2a01cb19943211ec0000000000000c98.ipv6.abo.wanadoo.fr. [2a01:cb19:9432:11ec::c98])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49836c83432sm5386247f8f.58.2026.11.10.09.02.43
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 10 Nov 2026 09:02:44 -0800 (PST)
-Message-ID: <546efd00-ddaf-47f4-9387-2635785a1bf5@canonical.com>
-Date: Tue, 10 Nov 2026 18:02:42 +0100
+	(Authenticated sender: sre)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 530DA17E080B;
+	Tue, 10 Nov 2026 18:19:39 +0100 (CET)
+Received: by jupiter.universe (Postfix, from userid 1000)
+	id 0B80548002B; Tue, 10 Nov 2026 18:19:39 +0100 (CET)
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+Date: Tue, 10 Nov 2026 18:19:14 +0100
+Subject: [PATCH v5 1/6] phy: rockchip: inno-usb2: simplify and unify PHY op
+ debug messages
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-To: devnull+codykang.hk.gmail.com@kernel.org
-Cc: airlied@gmail.com, alex@ghiti.fr, aou@eecs.berkeley.edu,
- bmasney@redhat.com, codykang.hk@gmail.com, conor+dt@kernel.org,
- devicetree@vger.kernel.org, dlan@kernel.org, docular.xu@gmail.com,
- dri-devel@lists.freedesktop.org, heylenay@4d2.org, krzk+dt@kernel.org,
- linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-riscv@lists.infradead.org,
- maarten.lankhorst@linux.intel.com, me@ziyao.cc, mripard@kernel.org,
- mturquette@baylibre.com, neil.armstrong@linaro.org, p.zabel@pengutronix.de,
- palmer@dabbelt.com, pjw@kernel.org, robh@kernel.org, sboyd@kernel.org,
- simona@ffwll.ch, spacemit@lists.linux.dev, tzimmermann@suse.de,
- u.kleine-koenig@baylibre.com, vkoul@kernel.org
-References: <20260809-k3-display-v2-11-327d7910bf71@gmail.com>
-Subject: Re: [PATCH v2 11/17] drm/spacemit: add Saturn DPU DRM device driver
-Content-Language: en-US
-From: Sarah Emery <sarah.emery@canonical.com>
-In-Reply-To: <20260809-k3-display-v2-11-327d7910bf71@gmail.com>
+Message-Id: <20261110-phy-rockchip-inno-usb2-clock-fix-v5-1-d2e24582ab22@collabora.com>
+References: <20261110-phy-rockchip-inno-usb2-clock-fix-v5-0-d2e24582ab22@collabora.com>
+In-Reply-To: <20261110-phy-rockchip-inno-usb2-clock-fix-v5-0-d2e24582ab22@collabora.com>
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ William Wu <william.wu@rock-chips.com>
+Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Igor Paunovic <royalnet026@gmail.com>, kernel@collabora.com, 
+ Sebastian Reichel <sebastian.reichel@collabora.com>
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1821;
+ i=sebastian.reichel@collabora.com; h=from:subject:message-id;
+ bh=8/fTd2v3WW8Lq1B62lCiA4Q4ly0FhC2re1oEGWAOBUQ=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGrzUipMtJGjGA7JsIcLf3X/vQtc34JG3owgb
+ gomFsu+/0ew5okCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJq81IqAAoJENju1/PI
+ O/qa9+4P/jXLFAzanFy2iVOWOeQXHODjQAcCzLbIZhbdiO6JmAqeTWyjaik9uvM7xdlmzVT7dzC
+ /Zqm+MiuWGWjYv8Vhmk6ZHBQpRfA6X1oNyL0f3DF1pw5trmo6Ub7e3qP7TL+7J3DmjF7J8acInM
+ jiZesbm0MkYJjobjB8BtgCfBMY6Egsk1/9dB0Wjf6QnMH8zVO72AipVuVz9EHGXDfa+FktDkcdP
+ EMnxL8wVP+9RTzqvfDzvfTPVU72o1JgHldioHOLNXjBdZpUxuLtryv+7tfdjUeEZ78jqldL47fB
+ BxGj+/5x/m1nSIAEjlWg8rzNQXWThIAFJq7djD1b8ikmbVLM9NwGqqG/sj7xxlVlrP3lKVMiqmf
+ cIn8ntl1nvM++t/TMNjD3mNQVzzdtYpPAM8QKnHNWbhAIedLOaNjLDj+yziUtP1MPZROfeeuAAl
+ 4IyDsnKHqdWohaJRdvIT8qP8ffcxQTymxmB9dMKUtjZnDZaH+bkSqpvhVh/hyHJHLJ/JTHwtSpD
+ zKWR8LmHfLbIdZqDhXC//LJ43AN+Qw4KsqGNkA2Vuiy37PKtI2QELQTVAQIcfdW5BWQ44lNsIPO
+ 4iI7CoGds8byt+wyg5m8Eqpn12Bwkmot/dKMq9RXQoLBwmUVDQ1gV73IiKGvSnoNv0R1Z0hjpJ5
+ r8CtTe+BGYADcJ4f3zqYwfQ==
+X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
+ fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261110_090249_289041_E8F7E53B 
-X-CRM114-Status: GOOD (  16.15  )
-X-Spam-Score: -4.4 (----)
+X-CRM114-CacheID: sfid-20261110_091942_263659_FCC628B4 
+X-CRM114-Status: GOOD (  10.84  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,96 +96,69 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi,
+Add debug message for init/exit in addition to power_on/power_off and
+avoid the useless extra dereference in the existing power_on/power_off
+to make the prints consistent.
 
-We have incorporated this patchset into the Ubuntu kernel for display 
-support on the K3 platforms.
-
-During testing, we found an issue: the screen would display artifacts 
-all over, kind of like black lines blinking.
-
-I have implemented the following patch to fix the issue:
-
-drm/spacemit: map scanout buffers write-combining
-
-The K3 display controller is not DMA-coherent: the DPU fetches scanout
-buffers straight from memory while fbcon and userspace write them through
-a cached CPU mapping. The shmem helpers clean the buffer only once, when
-the sg table is first built, so nothing flushes later CPU writes. Dirty
-cache lines shadow what the DPU scans out, and erased fbcon text lingers
-on screen until the lines are evicted by chance.
-
-Add a gem_create_object() hook that sets map_wc on the shmem objects.
-The K3 harts implement Svpbmt, so the CPU mapping becomes genuinely
-non-cacheable and writes reach memory immediately; the one-time clean in
-dma_map_sgtable() still covers the initial contents.
-
+Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
-  drivers/gpu/drm/spacemit/spacemit_drm.c | 16 ++++++++++++++++
-  1 file changed, 16 insertions(+)
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/gpu/drm/spacemit/spacemit_drm.c 
-b/drivers/gpu/drm/spacemit/spacemit_drm.c
-index 12b2fe8b6fc99..fe354219b996d 100644
---- a/drivers/gpu/drm/spacemit/spacemit_drm.c
-+++ b/drivers/gpu/drm/spacemit/spacemit_drm.c
-@@ -12,6 +12,7 @@
-  #include <drm/drm_fbdev_shmem.h>
-  #include <linux/component.h>
-  #include <linux/of_graph.h>
-+#include <linux/slab.h>
-
-  #include "spacemit_drm.h"
-  #include "spacemit_crtc.h"
-@@ -75,6 +76,20 @@ int spacemit_drm_mode_config_init(struct drm_device *drm)
-         return 0;
-  }
-
-+static struct drm_gem_object *spacemit_gem_create_object(struct 
-drm_device *drm,
-+                                                        size_t size)
-+{
-+       struct drm_gem_shmem_object *shmem;
+diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+index e47b89015586..0b61f152eb3f 100644
+--- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
++++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+@@ -508,6 +508,8 @@ static int rockchip_usb2phy_init(struct phy *phy)
+ 	struct rockchip_usb2phy *rphy = dev_get_drvdata(phy->dev.parent);
+ 	int ret = 0;
+ 
++	dev_dbg(&phy->dev, "phy port init\n");
 +
-+       shmem = kzalloc_obj(*shmem);
-+       if (!shmem)
-+               return ERR_PTR(-ENOMEM);
+ 	mutex_lock(&rport->mutex);
+ 
+ 	if (rport->port_id == USB2PHY_PORT_OTG) {
+@@ -592,7 +594,7 @@ static int rockchip_usb2phy_power_on(struct phy *phy)
+ 	struct rockchip_usb2phy *rphy = dev_get_drvdata(phy->dev.parent);
+ 	int ret;
+ 
+-	dev_dbg(&rport->phy->dev, "port power on\n");
++	dev_dbg(&phy->dev, "port power on\n");
+ 
+ 	if (!rport->suspended)
+ 		return 0;
+@@ -632,7 +634,7 @@ static int rockchip_usb2phy_power_off(struct phy *phy)
+ 	struct rockchip_usb2phy *rphy = dev_get_drvdata(phy->dev.parent);
+ 	int ret;
+ 
+-	dev_dbg(&rport->phy->dev, "port power off\n");
++	dev_dbg(&phy->dev, "port power off\n");
+ 
+ 	if (rport->suspended)
+ 		return 0;
+@@ -651,6 +653,8 @@ static int rockchip_usb2phy_exit(struct phy *phy)
+ {
+ 	struct rockchip_usb2phy_port *rport = phy_get_drvdata(phy);
+ 
++	dev_dbg(&phy->dev, "phy port exit\n");
 +
-+       shmem->map_wc = true;
-+
-+       return &shmem->base;
-+}
-+
-  DEFINE_DRM_GEM_FOPS(spacemit_drm_fops);
+ 	if (rport->port_id == USB2PHY_PORT_OTG &&
+ 	    rport->mode != USB_DR_MODE_HOST &&
+ 	    rport->mode != USB_DR_MODE_UNKNOWN) {
 
-  struct drm_driver spacemit_drm_drv = {
-@@ -82,6 +97,7 @@ struct drm_driver spacemit_drm_drv = {
-         .fops = &spacemit_drm_fops,
+-- 
+2.53.0
 
-         DRM_GEM_SHMEM_DRIVER_OPS,
-+       .gem_create_object = spacemit_gem_create_object,
-         DRM_FBDEV_SHMEM_DRIVER_OPS,
-
-         .name           = DRIVER_NAME,
---
-
-I'm sending this here in the hope that it will be useful for a future 
-revision.
-Is there a v3 in preparation?
-
-Thanks,
-
-Sarah
 
 -- 
 linux-phy mailing list
