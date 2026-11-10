@@ -2,105 +2,73 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 93E0660A260D
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Nov 2026 07:16:45 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F0C07606A33D
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Nov 2026 07:46:48 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=ADBUT6ul;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=l2bh61aT
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=KXV7xV0F;
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=rock-chips.com header.i=@rock-chips.com header.a=rsa-sha256 header.s=default header.b=cIuw9r3N
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version
-	:Subject:Date:From:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=5YIOJAK8caoChGdg1W/R5FIiGcfGqmki89Eg0nqCqHo=; b=ADBUT6ul9UtBsdIXBX7QqwqeQy
-	XmxT2dXHLl4lvNcMoF70YvuTra5v9I9/WGBQCT4Tjp7NFMfo9NFsHKWnbWSg1MvW/VZDLo/qJ1l/8
-	bD98VSOWROZTOQJmBLJmprb97dOU2gVQpqMChPXwGYciPOFdvnbQrkRC8dDrP3QzxLQylxXPLbcLr
-	ijitD++bjGo9P/vnX3uoX9huRj8eHPB6zSgAXeOBIsrX6O2MfNnkUqRLVKT74VDeL0KYQZwK1UjXI
-	jNhIhHenW7/GbUP98K1GoMHdEM7rNFfwDTZ5JWze1Gqxd3snHCIPLIW5LF12e60K5Qn3fliWzcIup
-	F6VG/TIw==;
+	bh=ahx8dRRQKj1ysCC77kLSJXp3M3Uvo3ZqhTdlnITj1Ng=; b=KXV7xV0FWpqJbqCq9lWM+VJmN8
+	nPBUiNQaxu0ty66ANCyjnMEVl7QIaqX7ynif6ZQOximrHUe3L0uElN7v27KXahprJr7JAaG8a2nNn
+	P6vp3v4K94ABfE1IaoikNqKPKF3UwucbOTCgY+b1a9tTqlVlvJrvByJofJ097sIpyq8l5PKtphwUN
+	DUT8WpuyAVYGblvlJtrWbHWTpDiPkuJF157EQV8nynGkqPXfUcCdIlmiFJt7TBmONXdxEaYnT/tMq
+	UFI2OodK/+WXLAYWY+uAy6qucap8obwFhrbmKAUuzwhWK9D1uKWwqnV4tn4Iq9CGjDbc1+BoM+4rh
+	vBgiZtfA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQg61-00000002oL0-1Lax;
-	Tue, 10 Nov 2026 07:16:45 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xQgZ6-00000002zdG-1pxO;
+	Tue, 10 Nov 2026 07:46:48 +0000
+Received: from mail-m1099.netease.com ([154.81.10.99])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQg5z-00000002oKW-2gqy;
-	Tue, 10 Nov 2026 07:16:43 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id B3A3561E14;
-	Tue, 10 Nov 2026 07:16:42 +0000 (UTC)
-Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
-ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1794295002;
-	b=gM5488e2uoT86yhwhmByI9RIsje39KGozq4bid0bGK1M5BtTMKWd9j3oo8iK7I0L+zFN
-	 T/VZo6vlV4e/x47R3FWSaQxj06MPUM8fQ4zYo+wZvDvygGXly5D38zafBfwQdYFP0PJds
-	 gzYj9EgElqcfYqDkFfrz1FtNvutTsGfiK+GtyarIJTyEl1XNZc0bFJwbCR7Ov5SJ5MBtk
-	 ZXYRedUkIM1S9UQF+S14t38GFIX0LBYeysyxXFK23o2sI8xNJDRxEjGjFwdKljRQGA966
-	 SxaZR7K1kj30ZG1GPLsTjCJSylp5J+isBBmfmyNxEcv3du0I2/d/Iz8QAWLgAq5LE0w==
-ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1794295002;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:X-B4-Tracking:X-Change-ID:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=jb5VhK9RVWn299dBgnYQWC7azpnh+7liBpJOmzkXfak=;
-	b=U1jrm3VyX7G4w61bWcxvwhlMmQlJ1schpNKEFUydSFmO+JsKQe9esB9f+CPb+ZJfIoWV
-	 5MrMELn2IVgj3k8/0y/xeksLohHU4T4izZQWACG3Gbv6sm276wZ+MS4uS+W6IjjpvKllW
-	 sGlOgLvh7b+xIASdJB4MrlFfvRxIbCiMUu48QE9ky86meiwfNeE8HaOmeH1M3mxHIifde
-	 NBxhtd/3q3h4aoCHzan2VaJ8P96uwbrlthR0UCSEpO0Hn3a02fYDK1uvvn06NR6b1sIr1
-	 xS4iiUK4+OYCZEokugEM63NI0NB0i3RxUKmndw4xdnKixLBOsN7fIGCP29Db8a9YcgQ==
-ARC-Authentication-Results: i=1; smtp.kernel.org; 
-	arc=none smtp.remote-ip=100.80.115.77
-Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id D7A081F0089F;
-	Tue, 10 Nov 2026 07:16:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794295002;
-	bh=jb5VhK9RVWn299dBgnYQWC7azpnh+7liBpJOmzkXfak=;
-	h=From:Date:Subject:To:Cc:Reply-To;
-	b=l2bh61aTSJkrKQoGwcOkj9FfnEONOptUG9qmHCIMarWMrFVJVDiqfOp6ojzZTPJH7
-	 LQGSW1MQT8hzjCOOjHce5nDDA6vZNrhrnwvxV/teTgXLgTw4jqEp/UgccTAcy3hUZN
-	 wXSR5TEW8sk4ZAPea1EPZ9aR1sQFo13MjXJqLULy+N/dCqKQia7FY+XAAb6HPBNrRI
-	 ZhXSwYLmxcRC/tyWA6jL9jrcZBY1OO/ajxDvuRoVOFg9S5WNuh5s+0UFjofm0+TDe4
-	 b66uANiddjPxfdov7VJt/v+Rm3ejcEvf4Xi74dDq6unbBx2wa30rIhTImG+9UWoo44
-	 QnG6LfpHuiNKA==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 5677F4891A;
-	Tue, 10 Nov 2026 07:16:41 +0000 (UTC)
-From: Arun Iyengar via B4 Relay <devnull+aiyengar1990.gmail.com@kernel.org>
-Date: Tue, 10 Nov 2026 07:16:41 +0000
-Subject: [PATCH] phy: rockchip: samsung-hdptx: Power down the lanes on
- phy_power_off()
+	id 1xQgY3-00000002xti-1P1m;
+	Tue, 10 Nov 2026 07:45:55 +0000
+Received: from zyb-HP-ProDesk-680-G2-MT.. (unknown [61.154.14.86])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 542170ae1;
+	Tue, 10 Nov 2026 15:45:38 +0800 (GMT+08:00)
+From: Damon Ding <damon.ding@rock-chips.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	Sebastian Reichel <sebastian.reichel@collabora.com>,
+	Dave Jones <s.dave.jones@gmail.com>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Damon Ding <damon.ding@rock-chips.com>
+Subject: [PATCH v5 0/3] Add eDP support for RK3568
+Date: Tue, 10 Nov 2026 15:45:30 +0800
+Message-Id: <20261110074533.4052196-1-damon.ding@rock-chips.com>
+X-Mailer: git-send-email 2.34.1
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261110-hdptx-lanes-pwroff-v1-1-c2f85b7e06a4@gmail.com>
-X-B4-Tracking: v=1; b=H4sIAAAAAAAC/yXMywqDMBBA0V+RWTtgUnTRXyku8pjUKSWGjI+A+
- O+NdnkW9x4glJkEns0BmTYWnmOFahtwk4lvQvbVoDs9KKU6nHxaCn5NJMG05zkE7L13Az2CsVZ
- DDVOmwOWevsa/ZbUfcst1gvP8AVjUIdd2AAAA
-X-Change-ID: 20261110-hdptx-lanes-pwroff-5ddc6e3fabb2
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
- Philipp Zabel <p.zabel@pengutronix.de>, 
- Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1794295001; l=4329;
- i=aiyengar1990@gmail.com; s=20261110; h=from:subject:message-id;
- bh=9zRGlMGjmoLlgrDvFR8/ToCDMVtXPZbT51yULKbcMq8=;
- b=6fx2PKWiYRVDjs7I0iNhOex9Fyzd6QVNJbps4tjjwXUS6cM3JvtMx1U8AaTN6EHtjQ6dKlxro
- ghkAys44cnwDqKkz5wDNuNDP16/vM5N5cK3WGXJV0vZ8bGKkCft4wAW
-X-Developer-Key: i=aiyengar1990@gmail.com; a=ed25519;
- pk=zXpRgUTrhaFe6jLyPqbBy3ccfkj04w0g2690Wv3mg+0=
-X-Endpoint-Received: by B4 Relay for aiyengar1990@gmail.com/20261110 with
- auth_id=1480
-X-Original-From: Arun Iyengar <aiyengar1990@gmail.com>
+X-HM-Tid: 0aa1c46b72e803a8kunm3f9229952eb2cb
+X-HM-MType: 1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVlCHhgfVk0fHR1CTUlDSk1PSlYVFA
+	kWGhdVEwETFhoSFyQUDg9ZV1kYEgtZQVlNSlVKTk9VSk9VQ01ZV1kWGg8SFR0UWUFZS1VLVUtVS1
+	kG
+DKIM-Signature: a=rsa-sha256;
+	b=cIuw9r3NlKowZrUWErU2uw/zWOZ1BHgXaY2pMGQAcI8VJH0escNu3mDkTD9SzrbwU4709UU3cIkQgmtkTvrZomScxd5YSLgUiZagqVIxNwjA9+OkNMtpHL76F/MpwrcZozR2Yhn4yiKff+6Ght1fQnd6qHPkM2hmbkVeDwiUweY=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
+	bh=SV9FPv5bQCpmG5w0OSwyufr0Ia+XJV7fSCSE3cl9f1s=;
+	h=date:mime-version:subject:message-id:from;
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261109_234544_240221_A45DB47A 
+X-CRM114-Status: GOOD (  14.09  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,115 +78,134 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: aiyengar1990@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-14.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,FREEMAIL_REPLYTO_END_DIGIT,
-	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
-	autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: Arun Iyengar <aiyengar1990@gmail.com>
+Picked from:
+https://lore.kernel.org/all/20261030064905.2248999-1-damon.ding@rock-chips.com/
 
-Since the PHY became a clock provider, rk_hdptx_phy_power_off() does
-nothing but drop the shared usage count, and the PHY is only really
-disabled when that count reaches zero.  The count is also held by every
-clock consumer of the PHY PLL, so with a clock reference outstanding
-the lanes keep driving the link after the HDMI controller has asked for
-the PHY to be powered off.
+The 'rockchip,rk3568-edp' display binding, the RK3568 support for the
+Analogix DP bridge driver and the RK3568 support for the Rockchip
+Analogix DP driver have been applied to the drm-misc-next tree.
 
-On RK3588 a clock reference is almost always outstanding: the VOP lists
-the PHY clock among its clocks so it can source its DCLK from it, and
-the Rockchip power domain driver puts every clock of a device under
-pm_clk, which prepares the PHY clock (i.e. bumps the usage count)
-whenever the VOP is runtime active.  As soon as any other video port is
-in use, e.g. a DP output, switching the HDMI CRTC off therefore leaves
-the HDMI lanes enabled and the TMDS clock on the cable, so the sink
-never sees the link go away.  The lanes stay on until the whole VOP
-goes to runtime suspend.
+PATCH 1 is to document the RK3568 eDP Transmitter PHY with Naneng IP
+        block, along with the eDP PHY GRF syscon node it resides in.
+PATCH 2 is to add the driver for the Rockchip eDP Transmitter PHY with
+        Naneng IP block.
+PATCH 3 is to add the eDP controller and eDP PHY nodes for the RK3568
+        SoCs.
 
-The lanes belong to the PHY consumer alone, whereas the PLL is shared
-with the clock consumers.  Hence disable the lane output and hold the
-lanes in reset in rk_hdptx_phy_power_off() regardless of the usage
-count, and keep leaving the PLL to the count.  This is the state the
-PHY is in between PLL and lane bring-up anyway, and the next
-rk_hdptx_phy_power_on() restores the lanes through the regular
-rk_hdptx_post_enable_lane() path, so no additional PLL re-init is
-needed.  The vendor driver does the same: its power_off callback only
-clears the lane enable bits, leaving the PLL to the clock refcount.
+Tested on RK3568 EVB1 board with LG eDP panel LP079QX1-SP0V.
 
-The DP mode is left untouched: its PLL is not exposed as a clock and
-the lanes are torn down by rk_hdptx_dp_reset() from the usage count.
+&edp {
+  avdd-0v9-supply = <&vdda0v9_image>;
+  avdd-1v8-supply = <&vcca1v8_image>;
+  force-hpd;
+  status = "okay";
 
-Fixes: c4b09c562086 ("phy: phy-rockchip-samsung-hdptx: Add clock provider support")
-Signed-off-by: Arun Iyengar <aiyengar1990@gmail.com>
----
-The problem was found on an Orange Pi 5 (RK3588S): with the HDMI output
-switched off, clk_summary still showed clk_hdmiphy_pixel0 at
-prepare/enable count 1/1, held by the VOP through pm_clk, so
-phy_power_off() never reached rk_hdptx_phy_disable() and the PHY lanes
-stayed on across DPMS off. Rockchip's vendor kernel only clears the
-lane enable register (LNTOP_REG0207) in its power_off callback too.
+  aux-bus {
+    panel {
+      compatible = "edp-panel";
+      backlight = <&backlight>;
+      power-supply = <&vcc3v3_lcd0_n>;
+      no-hpd;
 
-Tested on the same board: a trace of the PHY register writes shows each
-HDMI CRTC ACTIVE=0 commit writing 0 to LNTOP_REG0207 from
-rk_hdptx_phy_power_off(), the lanes staying off for the 3 s off window,
-and power_on writing 0xf back with the picture returning. A run of 102
-off/on transitions over a range of TMDS modes, checked with a camera on
-the TV, gave a correct picture every time, no "Failed to get PHY lane
-lock" message, and three suspend-to-idle cycles resumed normally. The
-patch has been in the board's kernel since.
+      port {
+        panel_in_edp: endpoint {
+          remote-endpoint = <&edp_out_panel>;
+        };
+      };
+    };
+  };
+};
 
-This patch was developed with Claude (Anthropic) as a coding assistant:
-it wrote the code and the commit message, and I reviewed and tested it
-as described above.
----
- drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
+&edp_in {
+  edp_in_vp0: endpoint {
+    remote-endpoint = <&vp0_out_edp>;
+  };
+};
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-index 6879eecc5a9f..751bb503dcfe 100644
---- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-+++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-@@ -1768,10 +1768,25 @@ static int rk_hdptx_phy_power_on(struct phy *phy)
- 	return ret;
- }
- 
-+static void rk_hdptx_lane_disable(struct rk_hdptx_phy *hdptx)
-+{
-+	regmap_update_bits(hdptx->regmap, LNTOP_REG(0207), LANE_EN_MASK,
-+			   FIELD_PREP(LANE_EN_MASK, 0));
-+	reset_control_assert(hdptx->rsts[RST_LANE].rstc);
-+}
-+
- static int rk_hdptx_phy_power_off(struct phy *phy)
- {
- 	struct rk_hdptx_phy *hdptx = phy_get_drvdata(phy);
- 
-+	/*
-+	 * The lanes are owned by the PHY consumer alone, hence shut them
-+	 * down right away.  The PLL is shared with the clock consumers, so
-+	 * leave its fate to the usage count.
-+	 */
-+	if (phy_get_mode(phy) != PHY_MODE_DP)
-+		rk_hdptx_lane_disable(hdptx);
-+
- 	return rk_hdptx_phy_consumer_put(hdptx, false);
- }
- 
+&edp_out {
+  edp_out_panel: endpoint {
+    remote-endpoint = <&panel_in_edp>;
+  };
+};
+
+&edp_phy {
+  status = "okay";
+};
+
+&vp0 {
+  vp0_out_edp: endpoint@ROCKCHIP_VOP2_EP_EDP0 {
+    reg = <ROCKCHIP_VOP2_EP_EDP0>;
+    remote-endpoint = <&edp_in_vp0>;
+  };
+};
+
+Damon Ding (3):
+  dt-bindings: phy: Add rockchip,rk3568-edp-phy
+  phy: rockchip: Add support for Naneng eDP phy
+  arm64: dts: rockchip: rk356x: Add eDP controller and phy nodes
+
+ .../bindings/phy/rockchip,rk3568-edp-phy.yaml |  46 ++
+ .../rockchip/rockchip,rk3568-edp-phy-grf.yaml |  80 +++
+ arch/arm64/boot/dts/rockchip/rk356x-base.dtsi |  45 ++
+ drivers/phy/rockchip/Kconfig                  |  11 +
+ drivers/phy/rockchip/Makefile                 |   1 +
+ .../phy/rockchip/phy-rockchip-naneng-edp.c    | 471 ++++++++++++++++++
+ 6 files changed, 654 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3568-edp-phy.yaml
+ create mode 100644 Documentation/devicetree/bindings/soc/rockchip/rockchip,rk3568-edp-phy-grf.yaml
+ create mode 100644 drivers/phy/rockchip/phy-rockchip-naneng-edp.c
 
 ---
-base-commit: 6628e7d4c6b25c8d18f1345e3a20d21829aae7e4
-change-id: 20261110-hdptx-lanes-pwroff-5ddc6e3fabb2
 
-Best regards,
---  
-Arun Iyengar <aiyengar1990@gmail.com>
+Changes in v2:
+- Apply the lane-dependent TX configurations in set_lanes() instead of
+  set_rate(), and store the lane count for set_voltages(), since the
+  Analogix DP core issues separate phy_configure() calls and the lane
+  count is only valid in the set_lanes/set_voltages calls. (Sashiko)
+- Initialize val to zero in rockchip_edp_phy_enabled() to avoid using
+  an uninitialized variable when regmap_read() fails. (Sashiko)
+- Fail the probe when the chip data requires GRF configurations while
+  the "rockchip,grf" property is missing. (Sashiko)
+- Rebase onto latest drm-misc-next tree.
 
+Changes in v3:
+- Restore the PHY related changes which were missing in v2 for
+  unexpected reasons.
+
+Changes in v4:
+- Restrict the avdd-0v9 and avdd-1v8 supplies to the RK3568 compatible
+  in the Rockchip Analogix DP binding.
+- Add the reg entry for the PHY node and the ranges/#address-cells/
+  #size-cells for the parent syscon node in the Rockchip GRF schema.
+- Map the PHY registers from its own reg property instead of accessing
+  them through the parent syscon regmap.
+- Model the PHY node with a reg property under the parent syscon in the
+  DT.
+
+Changes in v5:
+- Move the APB clock (PCLK_EDPPHY_GRF) from the parent syscon node to
+  the PHY node and enable it in the driver. (Sashiko)
+- Split the "rockchip,rk3568-edp-phy-grf" syscon node to its own
+  binding schema, instead of extending the shared Rockchip GRF schema.
+- Validate the voltages against the effective lane count, to also
+  cover combined set_lanes + set_voltages requests. (Sashiko)
+- Select REGMAP_MMIO.
+- Drop the example from the PHY binding schema, as complete MFD
+  examples belong in the GRF binding schema.
+- Rename the reference clock to "ref".
+
+-- 
+2.34.1
 
 
 -- 
