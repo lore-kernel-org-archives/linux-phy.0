@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5351160A2617
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Nov 2026 18:02:11 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 736C9606A336
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Nov 2026 18:50:41 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=FzSR+vcx;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=JmwvKXdM
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=P4Ylqp/+;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=kx2ZaO3z
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,60 +14,58 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=U9Rgf44tU1YCYrcG38GXDLc0ESun/Tyvkeyfpr4woI4=; b=FzSR+vcxfXERHdIW2z7rpFTLUb
-	tdy6BkJCVmKpOd1MdtLBl+YsShv1x6Ugz5r/v7Dt0Gm6K7PwoCZgBxzMEKjrFXZhB35puXj4WO3Ph
-	Y0uRYOKxlgcZhpIT13z8d7jyrO9TluTqcnyop6fG2wvVsNBt3yGsay4LuOBNnQff3J09ohetHle+h
-	7UaNaHo3pNQyewurIy3zliU+e6jrqLz7OmAqYwDbSjY/zOpVmNp+KFAybQwl26fYMNarZa/5rtsoV
-	sTZnYSDqXAd080UAuuPP63syR3sbpMIfcpr2V6NjqyU/dSLCGe+E7t5hc2ffolgW3rAFXwnS1V1vB
-	AgSIU5Cw==;
+	bh=isNtGqCJZ8nXG4FQ3NCW7NH6M3jhmdp6QqpVnQSWSpk=; b=P4Ylqp/++eiE1NXc+YLM8BhrUz
+	b54XA2WR3ogaU/kEQBhXGXC+1U9DkgiWPkCGF2g3XEmk7SSuFraxRKV8bg8E48nCDw0zsWFeFXz7R
+	dY1tZpg87lRU9TxYG0hJqoP7VVFbynSSpAEKXdX0NW1mOB0F1vrn6iYp9m0JxawKahtfWlzNcbrHF
+	FsPh2/zWOW+SKmwF3yMejIe2Hi5pzj7Tc0iXpW96fbaP2zw3loYxYXBBkeFXzmG4QT7r9obBkIPLW
+	aQaVghBsK271bJK66jRCSzSE0gMpuyeSg12GXDh/QMwsTQMeGveEz2aW6TvgJGVi9Y8NkqSROv0tN
+	z/vP8YOQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQqAd-00000004kcD-0I3R;
-	Tue, 10 Nov 2026 18:02:11 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xQqvZ-00000004qNB-0AnF;
+	Tue, 10 Nov 2026 18:50:41 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQqAb-00000004kbx-3TCD;
-	Tue, 10 Nov 2026 18:02:09 +0000
+	id 1xQqvW-00000004qM5-1ltO;
+	Tue, 10 Nov 2026 18:50:39 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 40D73405FE;
-	Tue, 10 Nov 2026 18:02:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E84F41F008BD;
-	Tue, 10 Nov 2026 18:02:08 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id D2F1363B1C;
+	Tue, 10 Nov 2026 18:50:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 566731F008A2;
+	Tue, 10 Nov 2026 18:50:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794333729;
-	bh=y6fbqcobCahuBm1XBPjTDEf+ag8w3TcHGc1/4po/nHM=;
+	s=k20260515; t=1794336637;
+	bh=nVBZoi6/3BeA1E/nAUsBY+mM3R71b9Lch9KwKeBie0g=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=JmwvKXdMQq2NZIpNHAlm7z7TzpeSQ5L2ONEUAW9u641hXSuo0FN1b3QEqSW0N0Ud2
-	 Z1JFdfZ2ynyqLUSM0BsThP0LpHl3q9jrnUHWPGLN8N31rCaeJy3g+/BaN1TGnIMHVT
-	 WWX/IAs3fFqBac3F5kIGGrdlwz3yO05wr0WJHNWjTbfXB06/wkNCWrag5WJ30ufIUE
-	 L68y4NKtYnp0p2LgjchURDzV5PZ28mCQkz655wPbIb8xoGGPVqN2b2RybGAwc8eIaW
-	 QUKqJeiD+/WyN8r8WGaq9jApWSW3nPDiUv+yqYJxe5/rhcNji15ZwCC/tAontg/Ba2
-	 /QuovHZVxxxsQ==
-Date: Tue, 10 Nov 2026 12:02:05 -0600
+	b=kx2ZaO3znvu4YvmU84JU+Iyq4xCs5EF+0qqxwsv7Row54evB55RJqH6zZjZ2YTzQ+
+	 KH6d3TrAUB73sCg7Q4T8ypXYbrkMJ+f7ztTRCFp7X1Ta5vIntCe6skoAzfj1B/aNst
+	 XvaFfDfIz59yeRWjUCmhwHiJa8ugLfELWt6zQuawcKMqTkbJZnBIaDbriM8t/kINrw
+	 VNbS+DBr7usofeo/G9oKuoz5YkNWqwUOJ0KUAyTNIZKZIyV8m8Qp7xFy+bHtMetLOC
+	 EZjZd1GYO25xuVcTjsbN28QUu2N6kI0ISNCbTTLxHSEa0ajGl9mwxkTRvGZO7e3GM0
+	 IWu6/RQKO9MaQ==
+Date: Tue, 10 Nov 2026 12:50:34 -0600
 From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Jason Yang <jason98166@gmail.com>
-Cc: Heiko Stuebner <heiko@sntech.de>,
-	Guochun Huang <hero.huang@rock-chips.com>,
-	Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, linux-phy@lists.infradead.org,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Michael Riesch <michael.riesch@collabora.com>,
-	Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+To: Damon Ding <damon.ding@rock-chips.com>
+Cc: linux-kernel@vger.kernel.org,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	Sebastian Reichel <sebastian.reichel@collabora.com>
-Subject: Re: [PATCH v6 2/9] dt-bindings: phy: rockchip,rk3588-mipi-dcphy:
- Select TX or RX, add phy-type
-Message-ID: <179433372468.928467.11546944638798684027.robh@kernel.org>
-References: <20261110-dcphy-rx-v1-v6-0-d681ba20b36a@gmail.com>
- <20261110-dcphy-rx-v1-v6-2-d681ba20b36a@gmail.com>
+	linux-rockchip@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>, devicetree@vger.kernel.org,
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Sebastian Reichel <sebastian.reichel@collabora.com>,
+	linux-arm-kernel@lists.infradead.org,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	linux-phy@lists.infradead.org, Dave Jones <s.dave.jones@gmail.com>
+Subject: Re: [PATCH v5 1/3] dt-bindings: phy: Add rockchip,rk3568-edp-phy
+Message-ID: <179433663384.1318226.574453120666617957.robh@kernel.org>
+References: <20261110074533.4052196-1-damon.ding@rock-chips.com>
+ <20261110074533.4052196-2-damon.ding@rock-chips.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20261110-dcphy-rx-v1-v6-2-d681ba20b36a@gmail.com>
+In-Reply-To: <20261110074533.4052196-2-damon.ding@rock-chips.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,47 +86,38 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 
-On Tue, 10 Nov 2026 16:18:05 +0800, Jason Yang wrote:
-> The Samsung MIPI D-/C-PHY block on RK3588 and RK3576 has a transmitter
-> for DSI and a receiver for CSI-2, and the DSI host and the CSI-2 host
-> can use the transmitter and the receiver at the same time. The single
-> cell of this binding selects the mode and refers to the transmitter, so
-> the receiver cannot be described.
+On Tue, 10 Nov 2026 15:45:31 +0800, Damon Ding wrote:
+> Document the eDP transmitter PHY with Naneng IP block found on the
+> RK3568 SoC. The PHY has its own register window inside the eDP PHY GRF,
+> so its node is modeled as a child of the eDP PHY GRF syscon with a reg
+> property describing that window.
 > 
-> Change the cell to select the transmitter or the receiver. The
-> transmitter and the receiver cannot operate in different modes [1], so
-> the optional phy-type property of the PHY node sets the mode for the
-> whole block, D-PHY by default:
+> Also add the "rockchip,rk3568-edp-phy-grf" compatible with its own
+> binding schema, so the shared Rockchip GRF schema is not extended with
+> per-device conditionals.
 > 
-> 	/* the MIPI DSI host, driving the transmitter */
-> 	phys = <&mipidcphy0 PHY_DIRECTION_TX>;
+> Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
 > 
-> 	/* the MIPI CSI-2 host, driving the receiver */
-> 	phys = <&mipidcphy0 PHY_DIRECTION_RX>;
-> 
-> For C-PHY the consumers stay the same and the PHY node gets:
-> 
-> 	phy-type = <PHY_TYPE_CPHY>;
-> 
-> Existing DTs on a newer kernel: PHY_TYPE_DPHY and PHY_TYPE_CPHY remain
-> valid as deprecated values. They select the transmitter and imply
-> phy-type = <PHY_TYPE_DPHY> or <PHY_TYPE_CPHY> respectively, so nothing
-> changes for them.
-> 
-> New DTs on an older kernel: an ABI break. The older kernel ignores
-> phy-type and takes any cell value as the mode of the block. A DSI node
-> with PHY_DIRECTION_TX therefore gets no display, and a CSI-2 node with
-> PHY_DIRECTION_RX gets no camera.
-> 
-> [1] RK3588 TRM: section 22.1 (overview): "The TX and RX only support
->     operate in the same PHY mode."
-> 
-> Suggested-by: Michael Riesch <michael.riesch@collabora.com>
-> Link: https://lore.kernel.org/r/94d47cab-10c6-4ec3-84a0-3bddc9d67f5f@collabora.com
-> Signed-off-by: Jason Yang <jason98166@gmail.com>
 > ---
->  .../bindings/phy/rockchip,rk3588-mipi-dcphy.yaml       | 18 +++++++++++++++---
->  1 file changed, 15 insertions(+), 3 deletions(-)
+> 
+> Changes in v4:
+> - Add the reg entry for the PHY node and the ranges/#address-cells/
+>   #size-cells for the parent syscon node.
+> 
+> Changes in v5:
+> - Move the APB clock (PCLK_EDPPHY_GRF) from the parent syscon node to
+>   the PHY node, matching the updated driver.
+> - Split the "rockchip,rk3568-edp-phy-grf" syscon node to its own
+>   binding schema, instead of extending the shared Rockchip GRF schema.
+> - Rename the reference clock to "ref".
+> - Drop the example from the PHY binding schema, as complete MFD
+>   examples belong in the GRF binding schema.
+> ---
+>  .../bindings/phy/rockchip,rk3568-edp-phy.yaml | 46 +++++++++++
+>  .../rockchip/rockchip,rk3568-edp-phy-grf.yaml | 80 +++++++++++++++++++
+>  2 files changed, 126 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3568-edp-phy.yaml
+>  create mode 100644 Documentation/devicetree/bindings/soc/rockchip/rockchip,rk3568-edp-phy-grf.yaml
 > 
 
 Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
