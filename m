@@ -2,91 +2,58 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8FC8D60A2606
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Nov 2026 00:03:17 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BE493606A31C
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Nov 2026 00:32:48 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=FZzQJTfN;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=collabora.com header.i=@collabora.com header.a=rsa-sha256 header.s=mail header.b=TuQIpCN5
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=p71ERIDe;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=iTcrMzJX
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=JrydLdXKGTjsANgudsx93n+/oix7GXMuJqFdupqYj3Y=; b=FZzQJTfNUU7ZPtLLw0tJjBfI5s
-	sizZ4oP6KSapYJ5zbpXEKpBQb2HEHgHgl4pBVsRzSnwKD9bsEDmZ6aSt+ccnNC63bi/mi9CiPOqAO
-	NiXKd3YNzlzuvXoQQxGYIRC+ncb2iri6VAOl+2XUHt+4nktNsclhyKg5Wn60b9aK3xXiUkzZjDQnU
-	hKCQHvKtLbag820ACLYxhNDRCpGSv1500r13PUq2bYnUh0ntcwRZz2ne2P5V2yh6jzp7Tkvr3fBKw
-	TYAWK95QChc5PrgMOdqWazouqW3q5Lpg8kCsrohIwy7lYJhHs0JecjpZMmjWBJnEmNcwgJuZffFzj
-	H51XuaBw==;
+	bh=6Rsm6IWHLdgFXP/YLgZYsKudF6XiHUdUQ+5LGh93mZ8=; b=p71ERIDesq0be2d944b8Rp5iyM
+	cgsjY5jUFOOYHFKQqrCVUkwsp6MySTz1Uy7XYH3667UB8v2FIKwe2Vb8iheWD3EeQtSmMJtQZD95O
+	B832zwtVBMcr3SO8XGNR54a97bR8QGQRMUSEoj//YE/2Xmdo25K3bWAK8uLYk8Ai6OVdqCJ1iVKYl
+	PdDZT5uQoNG0tJYZJcen1hQneRKSdYjMFivY2UjYcHJu3uZr9SjtGN03FhJsx9HEivhqeDpkUsgcr
+	EvuuA/xR7SO9jAfYNqSUuWAb34Z/qyylPMyVt8mSf7A1UZld62EkOArm1+IrX7qwvr+nt1tBg8Wvk
+	Pfzka3ig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQZKX-00000001ywF-0tEH;
-	Tue, 10 Nov 2026 00:03:17 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1xQZn6-000000021ri-1WZm;
+	Tue, 10 Nov 2026 00:32:48 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQZKB-00000001yYi-1BWH;
-	Tue, 10 Nov 2026 00:02:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1794268968;
-	bh=BQgZPTgLJ7+3Z978mywaO2hIMczDhrYpHoIMQtLi5q0=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=TuQIpCN5tIIPhYPKkDUgn6Pt8OjfuktNosBXYZLIHRkMOcLiN9ne46e4N7MuJrLhI
-	 pfOIfPt9MXDg3v5K4dnd4fco8tcYlXTAJXCec2sWJQEYxe8eNpLQeBvVjIitaA09li
-	 c2FMlfhTP088ZSMoDebzyy5Df5ufLmr7hT1kLJN7wdMrZ4YbNuRw9P3dVAFEPjeKki
-	 kw/eEuiT653JuDFSpwxcVFXLKx7/se4yl4A36n+E3CPZRbGTCwwkdZZGpHwdsXLllk
-	 V3KFDS12XowaYyHU6O92bnCX585pTthq/BddwV3lkkCeNn+G6r/iS53XLD0lMI3+M2
-	 uc6Juu0cznGgA==
-Received: from jupiter.universe (unknown [100.64.1.62])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange x25519)
-	(No client certificate requested)
-	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id B4B7717E150A;
-	Tue, 10 Nov 2026 01:02:48 +0100 (CET)
-Received: by jupiter.universe (Postfix, from userid 1000)
-	id 28C25480038; Tue, 10 Nov 2026 01:02:48 +0100 (CET)
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Tue, 10 Nov 2026 01:02:50 +0100
-Subject: [PATCH v4 5/5] phy: rockchip: inno-usb2: move suspend handling
+	id 1xQZn4-000000021rH-44OL
+	for linux-phy@lists.infradead.org;
+	Tue, 10 Nov 2026 00:32:47 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 3C2D344E5E;
+	Tue, 10 Nov 2026 00:32:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D917D1F008A2;
+	Tue, 10 Nov 2026 00:32:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794270765;
+	bh=6h5d1n/NHSITrm+3qrNVH+bA1tp3rC84Yvru+Ks4bCU=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=iTcrMzJXRIF77GnAuVpBK6sdZbMEPHO9cRGyZbIhQqVsk1Gf4DUvfcMbp/RZSsqjr
+	 P3meCO/53to+h4v+vG0J9HrVayGjhhUzZWzsOihQQBCNIsxsUZjJWSlZ3IjgEn1enO
+	 szmVZnsxysCtQ3wBxBcDjJWr/e5VL1XIEaiz9LAMO5LwHUd92xnc+u6Z4goPQ1H6K0
+	 ExQ2rVKASdj073KRhAc2/Ziyydd+p9UijrzEwOnzJ1HGd+z8R0N9y5U1M93CSc/DOO
+	 oAbHqivFGduF1vImO777k6C5yuGd4sPfWDcZn0+ofwpqI05hQ+3HI6cPTFIqrtm6nA
+	 TlHJPKVCqNAYw==
+Message-ID: <sashiko-outbox-205864@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v4 5/5] phy: rockchip: inno-usb2: move suspend handling
  into clock prepare/unprepare for RK3588/RK3576
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Message-Id: <20261110-phy-rockchip-inno-usb2-clock-fix-v4-5-51acc071634f@collabora.com>
+To: "Sebastian Reichel" <sebastian.reichel@collabora.com>
+Cc: linux-phy@lists.infradead.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20261110-phy-rockchip-inno-usb2-clock-fix-v4-5-51acc071634f@collabora.com>
 References: <20261110-phy-rockchip-inno-usb2-clock-fix-v4-0-51acc071634f@collabora.com>
-In-Reply-To: <20261110-phy-rockchip-inno-usb2-clock-fix-v4-0-51acc071634f@collabora.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
- Philipp Zabel <p.zabel@pengutronix.de>, 
- William Wu <william.wu@rock-chips.com>
-Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Igor Paunovic <royalnet026@gmail.com>, kernel@collabora.com, 
- Sebastian Reichel <sebastian.reichel@collabora.com>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=5082;
- i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=BQgZPTgLJ7+3Z978mywaO2hIMczDhrYpHoIMQtLi5q0=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGryXygtU//Jjb1tabrxgjpmXtE/y8LP3Ztjj
- 2ObXnIDy/5+yYkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJq8l8oAAoJENju1/PI
- O/qaJLEP/i59wub3x8Vk/XSJ3ivtLTSlt7F6YaxeamMa3fVyvyRmIDtY9ZTmH/dLakop96+RiCt
- P9cAmxBB3Ig9YoPdV2FaYP5J+kT3XMm+fnNpcjpCPykGc0eMCWryLm8lIgz2Bzgsex+qgx+BWk1
- dKusi7wbPIRo2SXaQF6ENyIOhqZ3jDM0EUL7f92XKV+Otet5BD3R1oXT8wGSOw8dz3Wj9h57XF8
- ewcMjZwOHROBZA0eaIO5DVjy+rRSnuMYu5l5M8xVfxvkOYeT3QNX0xzXaqP34OQ0DNyYzP+WH9c
- 7m49R6N5zx+lD21eXRJ2JEq841QZtMtIsp8xqReVEDPPCW21zRTSHA0VEICKZdGk5qbcBVsTbDa
- si3YcPZUiuoyM8eAftYa4Ro/HlrjbaVZRNEwehiZ9+BdWZdute8TydTBFDrkbi/MsY1TIEcM2MG
- pabCySH8k42IpYfTLe7sbT+m88mKiVhdOUsPWAnHZY+/O1X0VH6EKXMwKIdwCkv/v030C+7xHqo
- aTg9IE0QFwy7IU0A9IbkrV8MsP5myQA3ntNRUAitulkk2ttCi5A7ul1f+816s0f9CcxO9HOASMX
- hMWLrW9nf3BenIczQFGnjhKwh701CsWH2lE9/w4/7rPaOoy54XinLRMHTBm7kxrU6Z2+kFqznEM
- h+rEGGFTYw//IUnnk7KQysQ==
-X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
- fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261109_160255_522924_82537D3B 
-X-CRM114-Status: GOOD (  19.33  )
-X-Spam-Score: -2.1 (--)
+ <20261110-phy-rockchip-inno-usb2-clock-fix-v4-5-51acc071634f@collabora.com>
+Date: Tue, 10 Nov 2026 00:32:44 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,154 +63,93 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On RK3588 the 480MHz PHY clock must be running to access registers on
-the OHCI and EHCI controllers. This requires that the clock output bit
-is configured correctly (already happening) and that the PHY PLL itself
-is running. The PHY PLL is only running when the PHY is not suspended.
-This is currently handled independently of the clock and thus the clock
-might be enabled with the PHY being suspended resulting in a
-non-functional clock despite the clock being marked as prepared and
-enabled according to the common clock framework.
-
-This is especially a problem with OHCI system resume on RK3588, which
-does:
-
-ohci_platform_resume
-    -> ohci_platform_resume_common
-        -> deassert resets
-        -> ohci_platform_power_on -> enable clocks
-        -> ohci_resume
-            -> ohci_readl(ohci, &ohci->regs->control); // SError !
-            -> ...
-        -> ...
-    -> root hub resume (this resumes the PHY)
-
-Fix this by fully powering the PHY from the clock prepare function.
-
-This does not work on older platforms, which have multiple ports and
-only one 480MHz clock as we do not know which port should be resumed.
-But as far as I can tell these platforms do not have the clock
-dependency from their USB controllers and thus are not affected.
-
-Note that the 480MHz PHY clock registration is moved after the port
-initialization loop as the clock operations may access the port after
-this change. Additionally the old behaviour is used for single port
-devices, that have their port disabled and thus port_cfg == NULL.
-
-Backporting this is not trivial as the change relies on prior cleanups.
-Considering system suspend/resume on RK3588 never worked on upstream and
-there are more issues from preventing it (especially on older kernels),
-this is not marked for stable backporting.
-
-Fixes: 3a7db8e9edef ("phy: phy-rockchip-inno-usb2: add rk3588 support")
-Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
----
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 29 +++++++++++++++++++++------
- 1 file changed, 23 insertions(+), 6 deletions(-)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-index 642c996d23de..9fbd9e25f2c1 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-@@ -342,8 +342,15 @@ static void rockchip_usb2phy_set_suspend(struct rockchip_usb2phy *rphy,
- 	}
- }
- 
-+static bool rockchip_usb2phy_clk_manages_suspend(struct rockchip_usb2phy *rphy)
-+{
-+	return rphy->phy_cfg->num_ports == 1 && rphy->ports[0].port_cfg;
-+}
-+
- static int rockchip_usb2phy_clk480m_prepare(struct clk_hw *hw)
- {
-+	struct rockchip_usb2phy *rphy =
-+		container_of(hw, struct rockchip_usb2phy, clk480m_hw);
- 	const struct usb2phy_reg *clkout_ctl;
- 	struct regmap *base;
- 
-@@ -357,16 +364,24 @@ static int rockchip_usb2phy_clk480m_prepare(struct clk_hw *hw)
- 		usleep_range(1200, 1300);
- 	}
- 
-+	if (rockchip_usb2phy_clk_manages_suspend(rphy))
-+		rockchip_usb2phy_set_suspend(rphy, &rphy->ports[0], false);
-+
- 	return 0;
- }
- 
- static void rockchip_usb2phy_clk480m_unprepare(struct clk_hw *hw)
- {
-+	struct rockchip_usb2phy *rphy =
-+		container_of(hw, struct rockchip_usb2phy, clk480m_hw);
- 	const struct usb2phy_reg *clkout_ctl;
- 	struct regmap *base;
- 
- 	rockchip_usb2phy_clk480m_clkout_ctl(hw, &base, &clkout_ctl);
- 
-+	if (rockchip_usb2phy_clk_manages_suspend(rphy))
-+		rockchip_usb2phy_set_suspend(rphy, &rphy->ports[0], true);
-+
- 	/* turn off 480m clk output */
- 	property_enable(base, clkout_ctl, false);
- }
-@@ -559,7 +574,8 @@ static int rockchip_usb2phy_power_on(struct phy *phy)
- 	if (ret)
- 		return ret;
- 
--	rockchip_usb2phy_set_suspend(rphy, rport, false);
-+	if (!rockchip_usb2phy_clk_manages_suspend(rphy))
-+		rockchip_usb2phy_set_suspend(rphy, rport, false);
- 
- 	rport->suspended = false;
- 	return 0;
-@@ -575,7 +591,8 @@ static int rockchip_usb2phy_power_off(struct phy *phy)
- 	if (rport->suspended)
- 		return 0;
- 
--	rockchip_usb2phy_set_suspend(rphy, rport, true);
-+	if (!rockchip_usb2phy_clk_manages_suspend(rphy))
-+		rockchip_usb2phy_set_suspend(rphy, rport, true);
- 
- 	rport->suspended = true;
- 	clk_disable_unprepare(rphy->clk480m);
-@@ -1365,10 +1382,6 @@ static int rockchip_usb2phy_probe(struct platform_device *pdev)
- 	/* Clocks are optional */
- 	rphy->num_clks = ret < 0 ? 0 : ret;
- 
--	ret = rockchip_usb2phy_clk480m_register(rphy);
--	if (ret)
--		return dev_err_probe(dev, ret, "failed to register 480m output clock\n");
--
- 	ret = clk_bulk_prepare_enable(rphy->num_clks, rphy->clks);
- 	if (ret)
- 		return dev_err_probe(dev, ret, "failed to enable phy clock\n");
-@@ -1421,6 +1434,10 @@ static int rockchip_usb2phy_probe(struct platform_device *pdev)
- 		}
- 	}
- 
-+	ret = rockchip_usb2phy_clk480m_register(rphy);
-+	if (ret)
-+		return dev_err_probe(dev, ret, "failed to register 480m output clock\n");
-+
- 	provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
- 
- 	if (rphy->irq > 0) {
-
--- 
-2.53.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwKaXNzdWUgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gcGh5OiByb2NrY2hpcDog
+aW5uby11c2IyOiBsYXRlIGNsazQ4MG0gc2V0dXAgaW4KICByb2NrY2hpcF91c2IycGh5X3Byb2Jl
+KCkKLS0KCmNvbW1pdCA2ZWMzYjRiOGYzYzBhYjNjYWZiZDIwYjMyNWU1ZDIyNWI3ZGY4MjhjCkF1
+dGhvcjogU2ViYXN0aWFuIFJlaWNoZWwgPHNlYmFzdGlhbi5yZWljaGVsQGNvbGxhYm9yYS5jb20+
+CgpwaHk6IHJvY2tjaGlwOiBpbm5vLXVzYjI6IG1vdmUgc3VzcGVuZCBoYW5kbGluZyBpbnRvIGNs
+b2NrIHByZXBhcmUvdW5wcmVwYXJlIGZvciBSSzM1ODgvUkszNTc2CgpUaGlzIGNvbW1pdCBtb3Zl
+cyBQSFkgc3VzcGVuZCBhbmQgcmVzdW1lIGhhbmRsaW5nIG9uIHNpbmdsZS1wb3J0IGRldmljZXMK
+aW50byB0aGUgNDgwTUh6IGNsb2NrIHByZXBhcmUgYW5kIHVucHJlcGFyZSBjYWxsYmFja3MsIGFu
+ZCBtb3ZlcyA0ODBNSHoKY2xvY2sgcmVnaXN0cmF0aW9uIGluIHJvY2tjaGlwX3VzYjJwaHlfcHJv
+YmUoKSBhZnRlciBwb3J0IGluaXRpYWxpemF0aW9uLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9w
+aHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLWlubm8tdXNiMi5jIGIvZHJpdmVycy9waHkvcm9ja2No
+aXAvcGh5LXJvY2tjaGlwLWlubm8tdXNiMi5jCj4gaW5kZXggNjQyYzk5NmQyM2RlYy4uOWZiZDll
+MjVmMmMxOSAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAt
+aW5uby11c2IyLmMKPiArKysgYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtaW5u
+by11c2IyLmMKWyAuLi4gXQo+IEBAIC0xMzY1LDEwICsxMzgyLDYgQEAgc3RhdGljIGludCByb2Nr
+Y2hpcF91c2IycGh5X3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gIAkvKiBD
+bG9ja3MgYXJlIG9wdGlvbmFsICovCj4gIAlycGh5LT5udW1fY2xrcyA9IHJldCA8IDAgPyAwIDog
+cmV0Owo+ICAKPiAtCXJldCA9IHJvY2tjaGlwX3VzYjJwaHlfY2xrNDgwbV9yZWdpc3RlcihycGh5
+KTsKPiAtCWlmIChyZXQpCj4gLQkJcmV0dXJuIGRldl9lcnJfcHJvYmUoZGV2LCByZXQsICJmYWls
+ZWQgdG8gcmVnaXN0ZXIgNDgwbSBvdXRwdXQgY2xvY2tcbiIpOwo+IC0KPiAgCXJldCA9IGNsa19i
+dWxrX3ByZXBhcmVfZW5hYmxlKHJwaHktPm51bV9jbGtzLCBycGh5LT5jbGtzKTsKPiAgCWlmIChy
+ZXQpCj4gIAkJcmV0dXJuIGRldl9lcnJfcHJvYmUoZGV2LCByZXQsICJmYWlsZWQgdG8gZW5hYmxl
+IHBoeSBjbG9ja1xuIik7Cj4gQEAgLTE0MjEsNiArMTQzNCwxMCBAQCBzdGF0aWMgaW50IHJvY2tj
+aGlwX3VzYjJwaHlfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiAgCQl9Cj4g
+IAl9Cj4gIAo+ICsJcmV0ID0gcm9ja2NoaXBfdXNiMnBoeV9jbGs0ODBtX3JlZ2lzdGVyKHJwaHkp
+Owo+ICsJaWYgKHJldCkKPiArCQlyZXR1cm4gZGV2X2Vycl9wcm9iZShkZXYsIHJldCwgImZhaWxl
+ZCB0byByZWdpc3RlciA0ODBtIG91dHB1dCBjbG9ja1xuIik7Cj4gKwo+ICAJcHJvdmlkZXIgPSBk
+ZXZtX29mX3BoeV9wcm92aWRlcl9yZWdpc3RlcihkZXYsIG9mX3BoeV9zaW1wbGVfeGxhdGUpOwoK
+W1NldmVyaXR5OiBNZWRpdW1dCkRvZXMgbW92aW5nIHJvY2tjaGlwX3VzYjJwaHlfY2xrNDgwbV9y
+ZWdpc3RlcigpIGFmdGVyIHRoZSBwb3J0CmluaXRpYWxpemF0aW9uIGxvb3AgYWxsb3cgcnBvcnQt
+Pm90Z19zbV93b3JrIGFuZCBwZXItcG9ydCBJUlFzIHRvIHVzZQpycGh5LT5jbGs0ODBtIGJlZm9y
+ZSBpdCBpcyByZWdpc3RlcmVkIGFuZCBhZnRlciBpdCBpcyB1bnJlZ2lzdGVyZWQ/CgpJbnNpZGUg
+dGhlIGxvb3AsIHJvY2tjaGlwX3VzYjJwaHlfb3RnX3BvcnRfaW5pdCgpIGFuZApyb2NrY2hpcF91
+c2IycGh5X2hvc3RfcG9ydF9pbml0KCkgcmVxdWVzdCBwZXItcG9ydCB0aHJlYWRlZCBJUlFzLCBh
+bmQKcm9ja2NoaXBfdXNiMnBoeV9vdGdfcG9ydF9pbml0KCkgYWxzbyByZWdpc3RlcnMgdGhlIGV4
+dGNvbiBub3RpZmllciBhbmQKc3luY2hyb25vdXNseSB0cmlnZ2VycyByb2NrY2hpcF9vdGdfZXZl
+bnQoKSB0byBzY2hlZHVsZSBycG9ydC0+b3RnX3NtX3dvcms6Cgpkcml2ZXJzL3BoeS9yb2NrY2hp
+cC9waHktcm9ja2NoaXAtaW5uby11c2IyLmM6cm9ja2NoaXBfdXNiMnBoeV9vdGdfcG9ydF9pbml0
+KCkgewoJLi4uCglyZXQgPSByb2NrY2hpcF91c2IycGh5X3BvcnRfaXJxX2luaXQocnBoeSwgcnBv
+cnQsIGNoaWxkX25wKTsKCS4uLgoJaWYgKCFJU19FUlIocnBoeS0+ZWRldikpIHsKCQlycG9ydC0+
+ZXZlbnRfbmIubm90aWZpZXJfY2FsbCA9IHJvY2tjaGlwX290Z19ldmVudDsKCgkJcmV0ID0gZGV2
+bV9leHRjb25fcmVnaXN0ZXJfbm90aWZpZXIocnBoeS0+ZGV2LCBycGh5LT5lZGV2LAoJCQkJCUVY
+VENPTl9VU0JfSE9TVCwgJnJwb3J0LT5ldmVudF9uYik7CgkJLi4uCgkJaWYgKCFvZl9wcm9wZXJ0
+eV9wcmVzZW50KHJwaHktPmRldi0+b2Zfbm9kZSwgImV4dGNvbiIpKSB7CgkJCS8qIGRvIGluaXRp
+YWwgc3luYyBvZiB1c2Igc3RhdGUgKi8KCQkJaWQgPSBwcm9wZXJ0eV9lbmFibGVkKHJwaHktPmdy
+ZiwgJnJwb3J0LT5wb3J0X2NmZy0+dXRtaV9pZCk7CgkJCWV4dGNvbl9zZXRfc3RhdGVfc3luYyhy
+cGh5LT5lZGV2LCBFWFRDT05fVVNCX0hPU1QsICFpZCk7CgkJfQoJfQp9CgpCZWNhdXNlIHJvY2tj
+aGlwX3VzYjJwaHlfY2xrNDgwbV9yZWdpc3RlcigpIG5vdyBxdWV1ZXMgaXRzIGRldm0gYWN0aW9u
+CmFmdGVyIHRoZSBkZXZtLW1hbmFnZWQgcG9ydCBJUlFzIGFuZCBleHRjb24gbm90aWZpZXIsIGRl
+dnJlcyB0ZWFyZG93biBydW5zCnJvY2tjaGlwX3VzYjJwaHlfY2xrNDgwbV91bnJlZ2lzdGVyKCkg
+Zmlyc3QgYW5kIGZyZWVzIHJwaHktPmNsazQ4MG0gd2hpbGUKcG9ydCBJUlEgaGFuZGxlcnMgYW5k
+IHdvcmsgaXRlbXMgY2FuIHN0aWxsIHJ1bjoKCkNQVTAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgQ1BVMSAoa3dvcmtlciAvIElSUSB0aHJlYWQpCmRldmljZV91bmJpbmRfY2xlYW51
+cCgpCiAgZGV2cmVzX3JlbGVhc2VfYWxsKCkKICAgIHJvY2tjaGlwX3VzYjJwaHlfY2xrNDgwbV91
+bnJlZ2lzdGVyKCkKICAgICAgY2xrX3VucmVnaXN0ZXIocnBoeS0+Y2xrNDgwbSkKICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICByb2NrY2hpcF91c2IycGh5X290Z19zbV93b3Jr
+KCkKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJvY2tjaGlwX3VzYjJw
+aHlfcG93ZXJfb24oKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBj
+bGtfcHJlcGFyZV9lbmFibGUocnBoeS0+Y2xrNDgwbSkKICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICA8LS0gdXNlLWFmdGVyLWZyZWUKICAgIGRldm1faXJxX3JlbGVh
+c2UoKQoKSWYgcm9ja2NoaXBfdXNiMnBoeV9jbGs0ODBtX3JlZ2lzdGVyKCkgZmFpbHMgYWZ0ZXIK
+cm9ja2NoaXBfdXNiMnBoeV9vdGdfcG9ydF9pbml0KCkgaGFzIHF1ZXVlZCBycG9ydC0+b3RnX3Nt
+X3dvcmssCnJwaHktPmNsazQ4MG0gaXMgbGVmdCBob2xkaW5nIGFuIEVSUl9QVFIgdGhhdCBjcmFz
+aGVzIGNsa19wcmVwYXJlKCksIGFuZApycG9ydC0+b3RnX3NtX3dvcmsgcmVtYWlucyBxdWV1ZWQg
+YWZ0ZXIgZGV2cmVzIGZyZWVzIHJwaHkuCgpBbHNvLCBpZiBycG9ydC0+b3RnX3NtX3dvcmsgb3Ig
+YSBwb3J0IElSUSByZWFjaGVzCnJvY2tjaGlwX3VzYjJwaHlfcG93ZXJfb24oKSBiZWZvcmUgcm9j
+a2NoaXBfdXNiMnBoeV9jbGs0ODBtX3JlZ2lzdGVyKCkKYXNzaWducyBycGh5LT5jbGs0ODBtLCBj
+bGtfcHJlcGFyZV9lbmFibGUoTlVMTCkgc3VjY2VlZHMgYXMgYSBuby1vcCB3aGlsZQpyb2NrY2hp
+cF91c2IycGh5X3NldF9zdXNwZW5kKCkgaXMgc2tpcHBlZCwgbGVhdmluZyB0aGUgUEhZIHN1c3Bl
+bmRlZCB3aXRoCnJwb3J0LT5zdXNwZW5kZWQgc2V0IHRvIGZhbHNlIGFuZCBjYXVzaW5nIGEgbGF0
+ZXIKcm9ja2NoaXBfdXNiMnBoeV9wb3dlcl9vZmYoKSB0byB1bnByZXBhcmUgYW4gdW5wcmVwYXJl
+ZCBjbG9jay4KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMv
+cGF0Y2hzZXQvMjAyNjExMTAtcGh5LXJvY2tjaGlwLWlubm8tdXNiMi1jbG9jay1maXgtdjQtMC01
+MWFjYzA3MTYzNGZAY29sbGFib3JhLmNvbT9wYXJ0PTUKCi0tIApsaW51eC1waHkgbWFpbGluZyBs
+aXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
