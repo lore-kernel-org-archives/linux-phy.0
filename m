@@ -2,99 +2,116 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A37BB60A2606
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Nov 2026 15:43:26 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 34DB4606A320
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Nov 2026 17:02:52 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=zPtYFBvm
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=klaAjNdj;
+	dkim=fail reason="signature verification failed" (4096-bit key) header.d=canonical.com header.i=@canonical.com header.a=rsa-sha256 header.s=20251003 header.b=hQD9mPgX
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:Subject:References:Cc:To:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=zY8voig2wNIZsT4phHoLJ9Dmh787jWAZ1kQfglBIWBg=; b=zPtYFBvmDSOLwd8i8it9HNWAXn
-	RE7/e16sRr3wAX8zWsOz3oxjtQFSHx+mtnZ9hS8WrXkRqspShm48gYl6ghODf9zO7cUtIAlSm11cB
-	UQGDpXJ7UOGnu+eefabGIuSj22sw8XupSzNcVgL7HseuRFbsq1Qdn8pWBf8qgpjRoN6tausLysj2i
-	5wIdQJaBnXs2auWFIQZJGAjVbDoYTxFbYjDpLDqJlmUZeVQW2QiCRdljGbor6kHmUwZ1W3Sm74ISE
-	DmF6yVGtPx6+aNPWyr/xATGPAIZZqOvwAnHObdwRG87dP1PRGISbXvuz/4NXH31LcBKVaTdDc0U6m
-	Lm5St/MQ==;
+	bh=JiOeVoJuFTgCOc8qCYbuP8nLoEOdHoh+98/21ZDJsKk=; b=klaAjNdjrDbl1dl0ZTzfvp7NUt
+	bIScIFIBP8hnHTVQ5qqd+09Quq9F9b2V0ZlDmvscAQQ9pr4wn8Gd5rtxsMsNK/um3EXLrCv80FWDo
+	ASRBhfG81jCsmBmZvMNmmtFWUtPEgVU4/rdI2/qNSVLmnAyG3ARwUNi/EWBceJibCY9RL4kvR6k0K
+	W9pNku8t38KMEpvjdkMVZwcSFLXgALv+SAZJcAuih1bwF6j6cjlPU8Vn+O8SBh2Bj0QtFkC1UVDcc
+	ePRXHCYSBONgLmjg8jDTIrSrhzm/x8g68MJdFM0hk4BOvnjKFuiWVAvtz2BW8aU5rQjNxwHNsBo+l
+	/ukQd5ww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQo0M-00000004QqP-0cOk;
-	Tue, 10 Nov 2026 15:43:26 +0000
-Received: from mail-pg1-f170.google.com ([209.85.215.170])
+	id 1xQpFD-00000004cWn-2tak;
+	Tue, 10 Nov 2026 17:02:51 +0000
+Received: from smtp-relay-internal-0.canonical.com ([185.125.188.122])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQo0J-00000004Qpa-001D
+	id 1xQpFA-00000004cVx-3dD2
 	for linux-phy@lists.infradead.org;
-	Tue, 10 Nov 2026 15:43:24 +0000
-Received: by mail-pg1-f170.google.com with SMTP id 41be03b00d2f7-cdb9d5c1c8eso1098501a12.0
-        for <linux-phy@lists.infradead.org>; Tue, 10 Nov 2026 07:43:22 -0800 (PST)
+	Tue, 10 Nov 2026 17:02:50 +0000
+Received: from mail-wr1-f71.google.com (mail-wr1-f71.google.com [209.85.221.71])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by smtp-relay-internal-0.canonical.com (Postfix) with ESMTPS id 063F140266
+	for <linux-phy@lists.infradead.org>; Tue, 10 Nov 2026 17:02:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
+	s=20251003; t=1794330166;
+	bh=ozoC35JH09JXF0SoFXDETE/OXFxO44zArTqmVJlRrnw=;
+	h=Message-ID:Date:MIME-Version:To:Cc:References:Subject:From:
+	 In-Reply-To:Content-Type;
+	b=hQD9mPgXugfhtIhDcvsq4SZThekNRzFT3sMIjicEtPufbY6ARxAAxLQP9WwXgY4CC
+	 aR/wvfhIAOuf3xGqJZo7ygWk+aKNtZBVp7lmCnO9LJjMhM5KrxcmeB8bpIIiHRMrzY
+	 PrQkHf/lANfXuOSU36xUjcvWW5YuG7yc9cPxFeqpveHCwXebfEbaeOUTnysB/U1Bfa
+	 CPGExOBT+QlJol/ka/7z/wx722r0mcwCR5XGgD0Q5CsXjt2jIbL03XUfyNoMmsSoTh
+	 azWcf7ngIBV/oFBaUnd03Yo25hSnHRyOScMrPajLZzJy5tRQmcPlyGJChgcodsy58N
+	 FmaWQlVn+De1Ouo/qWit8uxUXwv+CoTiMTgzmtBj9+o9QGitYLGM8c7Q/jbx1Yas5Y
+	 Y/48ZWEGk1Yw3ZMsowhzD+KSuKGreYgOQSxMwuhcsT8w3gjGieQ12dOUI6ZXkWpzhG
+	 8sMIACnv7Y4gRSVmbu8/sq3RVbNdvF6kvTeBTqiOTSECV65jVm7E9GQMzEHXuE4I6+
+	 4yxISxem7RcOd1JlrFHtBjJWAIfBc13cDpxb24Pe6pnOiyz2sJ0yOQF8Nn30Xsj4Se
+	 9g6K+eeCapUKBWNEHlb7hd/cxrT1Mr+c02r8iPBVBUvKS9yvI67OBzeGZE5fHy1WgH
+	 wOfMNs7ArNDVqstymZ1zmUTA=
+Received: by mail-wr1-f71.google.com with SMTP id ffacd0b85a97d-48df02b91f9so1488680f8f.1
+        for <linux-phy@lists.infradead.org>; Tue, 10 Nov 2026 09:02:46 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794325401; x=1794930201;
+        d=1e100.net; s=20260707; t=1794330165; x=1794934965;
         h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
+         :content-language:subject:references:cc:to:user-agent:mime-version
          :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=TQtG4o/ML/2sB0MvTtvE7H8moOh6q/FDtaR4iqmNY1g=;
-        b=l9YnTc7pkh+LAwwE8I0PB2CvsrNENw2nYplD2SES6x7iu+pABVx5jcGxGng+3I2zVg
-         DABRsYQDeq2NyspF4jyz/7y5dw5RgZSkHRqbdvdhrpG/EQawWHv+6a5Snfvc80SuT7WW
-         KlxqDr+QIOhmNo0SfBNvspLv8kiZwR1cvc5SvyEXu2wh8Q2SEXL1hwelwZNUwAujq5Ka
-         xhkOjgkjj88T5WD4RmCHNcN24VcZsXSVm9wpE5+3BcWU8gfCn2nTpzHLKL3LO6Gwxl8N
-         1m4flccqfek6A4GkxJByMmNOR9qmQcrwnfWuzzK/5M8m+dOFA+/nQioPnEfjNuLAte8J
-         /Vjw==
-X-Forwarded-Encrypted: i=1; AL+hErE6SyJAej5pWbu56Y+6hmU4tSZoPuHzoo0dbmZVc1MtF4hnGjwalc8+keuYFklxHw6ABlWdmS2MWys=@lists.infradead.org
-X-Gm-Message-State: APuU4Z9rduyjNeEy+dsmRL9JEuCa3im2JFirllhDOQGszx77kFu70rln
-	XuAHYPkLmK5ojPleZYVBUcpfIkSyNc0E60TrhomvlvnI9EuYb9ZKaKVq
-X-Gm-Gg: AYBFou0f7Rjn2cIoFVsI+Nobk6n/9IWpjJu0C+qiuymibOqxdDY4XVgTgltrVE7w+fu
-	PiQA2iioAqhB5yFH56MJ9NoGlyCXsW3SgC6YyUUNcRLvko8AM4iIinTSPxN+lzhOw++rqJk4i/J
-	jwtIT8DDGqAq5tuORSdxD9zk7hG9hD15vE2zez8UQg0HPWtjGe4k808my6krWmtaz/EoxN6MRBA
-	6TmwC/OQKGDZodEK8Uyz0DPHwzdGBywDE1uoGKXRQ3jFHl2w2d87bJWoPGkWSQ8TByhmqYVVndB
-	5bVxBX8MJr1DHj4HwBlNf0+DJTDM+ttRkwGXbg/saa+ZjypY/RAmCAdSiEbdu3prG1Y1PiXWB1h
-	xjyrArYaWP9zj/SY8MKQQpRPfVh2VngAt1yZ7yfm9if6N7Ps2ByQLkWRP1Bofy+k2u3BXseLQmR
-	Vd49b7WzE6XRXE+p1IlGSKtuQUJUi71xNXNCH5c+xrsavMgWqvZwtIPjgmKgyKNIuiU7aFCfgKm
-	f0gO3RhVHYtq9RflV791p+BbYcTdxUHbLEqwtstQTYjaXWfMHt8gSNbjtPl2ACLtEv9AHvgKeH+
-	CZjspZ4EitkVIrgVCElPLY7iZjoQkZUo6B10nVyT2ShyazC73VwX4dw0QLMXoWCREue3BmUW
-X-Received: by 2002:a17:90b:288a:b0:3b0:a9de:9886 with SMTP id 98e67ed59e1d1-3b166cc035emr3111438a91.12.1794325401459;
-        Tue, 10 Nov 2026 07:43:21 -0800 (PST)
-Received: from ?IPV6:2800:a4:890:2c00:14b6:ffbd:f8b2:d9f2? ([2800:a4:890:2c00:14b6:ffbd:f8b2:d9f2])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-cdd8d5e830dsm891469a12.4.2026.11.10.07.43.15
+        bh=ozoC35JH09JXF0SoFXDETE/OXFxO44zArTqmVJlRrnw=;
+        b=jgXnwTASTSRIA4RLgOxWajYFx7tQvFGe6f3bsNK0DwkM3q3wIiuPpBNRJ1Q+6aqhlK
+         4yUA51MTPCJTVrH3BFAAlLNXx3fyogRBf7uDbWSB/99i42wf9Q5Y2npj/CiLrpCL5/Nb
+         0PJWKOgUv8Dif6CcbNrGA2eG0eVewT/MFP3oxYv/mywdan4GXFWN769yvx2tzPN45OU+
+         397jmOn6p6GJU9STcxqHsUcin+kyg0b4InR9iYzkd2KTIINUgcN3y9PNZCmgqoy6gVPI
+         R9AOPEvAV5MfsOLwsq5bUs92DjS5Ojf/2kPG/S//kvJH3bUutLpqZOKZWSJfKw6e8WlO
+         6xBQ==
+X-Forwarded-Encrypted: i=1; AL+hErFC43YcI0jT8q12W4hsHJeHNUBw8bohTrqRnYcpXgJGY0eGvFP1w61g8JHzo/XNv916zylkhB7BXNs=@lists.infradead.org
+X-Gm-Message-State: APuU4Z/MxrusMjFmCpLYphyt7Fa8poIHZVkoPm60DiiGMiEuJzrfsT2D
+	sfJrpmJ9aoC7IkYcE/Y31RXwTwfmAiaZibU8AMV19uEAidqKvI5th2i7C2M59zLLUtUNIs82Psm
+	zMTAEZvv8TlgQTWhwllLC7Ur1iCAeBbIMa1L7LkIfJZ0ppgMTVbYON1qcREqMk6+ooS7yo6Rzfn
+	A3xvjYDfU=
+X-Gm-Gg: AYBFou23RO2sYfpvF5rnyqei+WoY9M7myMJOkOTxK+zq+IdDkuLHpPLMtf0SqscFB4C
+	djmwKwbBpD12QX113fjcpWIaB4YrdOvRfVDNaEaY/Cz9rZq4JqjJQskz0aB3Sdxc6A4ZPmVk+Nz
+	fsYVMJrqyWivlpWTY7BtvrG+78xbcBreoJGYzbn4jdE7ASqvQOPuYzFjDcvzl8vwUwvr7+kNovj
+	oVeo/aitDOdkTjN0vQDoWII2/w2aOJR70J5NvszxsT+EjXIKyLYK7v33BNk77810HFTG7mnBLvY
+	hNDazxZEPxxq2G4F91zINVUW7WKGZUPVMCMIFBf3zSZYEWW/CvDrYgUQGk4hxX1Eie/d4hjmDW1
+	IR2tIyHpTij6BsLyBEHgATbBdegRFR/uwV32Wi3km6IYF/Xlif8drJLV6ZAIdAy3E/g9o5k0BWX
+	kDqxt1sFV3+JGj2zNUUoKhe3nIn9qV96gM60UqjgELvh4+c0TPYbt6
+X-Received: by 2002:a05:6000:607:b0:48e:eb:56c5 with SMTP id ffacd0b85a97d-49992cc6a24mr288600f8f.8.1794330165610;
+        Tue, 10 Nov 2026 09:02:45 -0800 (PST)
+X-Received: by 2002:a05:6000:607:b0:48e:eb:56c5 with SMTP id ffacd0b85a97d-49992cc6a24mr288536f8f.8.1794330165190;
+        Tue, 10 Nov 2026 09:02:45 -0800 (PST)
+Received: from ?IPV6:2a01:cb19:9432:11ec::c98? (2a01cb19943211ec0000000000000c98.ipv6.abo.wanadoo.fr. [2a01:cb19:9432:11ec::c98])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49836c83432sm5386247f8f.58.2026.11.10.09.02.43
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 10 Nov 2026 07:43:20 -0800 (PST)
-Message-ID: <987c1008-d0ab-4508-82a2-1a26104a47c8@andrewgigena.dev>
-Date: Tue, 10 Nov 2026 15:43:13 +0000
+        Tue, 10 Nov 2026 09:02:44 -0800 (PST)
+Message-ID: <546efd00-ddaf-47f4-9387-2635785a1bf5@canonical.com>
+Date: Tue, 10 Nov 2026 18:02:42 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 2/7] dt-bindings: media: qcom,sm8150-camss: Add SM8150
- CAMSS
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Loic Poulain <loic.poulain@oss.qualcomm.com>,
- Robert Foss <rfoss@kernel.org>, Andi Shyti <andi.shyti@linaro.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Bryan O'Donoghue <bod@kernel.org>,
- Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>,
- Andi Shyti <andi.shyti@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Manivannan Sadhasivam <mani@kernel.org>, linux-arm-msm@vger.kernel.org,
- linux-i2c@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-media@vger.kernel.org,
- linux-phy@lists.infradead.org
-References: <20261106-sm8150-v7.4-rc1-camss-v3-0-0103e8a0bbcd@andrewgigena.dev>
- <20261106-sm8150-v7.4-rc1-camss-v3-2-0103e8a0bbcd@andrewgigena.dev>
- <20261109-slick-transparent-ostrich-28ddad@quoll>
+To: devnull+codykang.hk.gmail.com@kernel.org
+Cc: airlied@gmail.com, alex@ghiti.fr, aou@eecs.berkeley.edu,
+ bmasney@redhat.com, codykang.hk@gmail.com, conor+dt@kernel.org,
+ devicetree@vger.kernel.org, dlan@kernel.org, docular.xu@gmail.com,
+ dri-devel@lists.freedesktop.org, heylenay@4d2.org, krzk+dt@kernel.org,
+ linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-riscv@lists.infradead.org,
+ maarten.lankhorst@linux.intel.com, me@ziyao.cc, mripard@kernel.org,
+ mturquette@baylibre.com, neil.armstrong@linaro.org, p.zabel@pengutronix.de,
+ palmer@dabbelt.com, pjw@kernel.org, robh@kernel.org, sboyd@kernel.org,
+ simona@ffwll.ch, spacemit@lists.linux.dev, tzimmermann@suse.de,
+ u.kleine-koenig@baylibre.com, vkoul@kernel.org
+References: <20260809-k3-display-v2-11-327d7910bf71@gmail.com>
+Subject: Re: [PATCH v2 11/17] drm/spacemit: add Saturn DPU DRM device driver
 Content-Language: en-US
-From: Andrew Gigena <mail@andrewgigena.dev>
-In-Reply-To: <20261109-slick-transparent-ostrich-28ddad@quoll>
+From: Sarah Emery <sarah.emery@canonical.com>
+In-Reply-To: <20260809-k3-display-v2-11-327d7910bf71@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261110_074323_044114_0320AF2F 
-X-CRM114-Status: UNSURE (   9.84  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20261110_090249_289041_E8F7E53B 
+X-CRM114-Status: GOOD (  16.15  )
+X-Spam-Score: -4.4 (----)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,40 +121,96 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-5.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
-	autolearn=no autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi Krzysztof,
+Hi,
 
-First of all, apologies for the late reply and for not following your review
-advice earlier - that was my mistake, and I should have responded to your v2
-comments individually instead of letting them carry over.
+We have incorporated this patchset into the Ubuntu kernel for display 
+support on the K3 platforms.
 
-I have now gone through your v2 and v3 comments again and addressed most of
-them locally in a v4:
-- reg/reg-names moved to the top, redundant minItems dropped, property order
-  aligned with writing-schema.rst, example cleaned up, ports use
-  patternProperties, bus-type dropped from the CAMSS binding, etc.
+During testing, we found an issue: the screen would display artifacts 
+all over, kind of like black lines blinking.
 
-Regarding your v3 question about the order of reg/reg-names/interrupt-names
-(vfe0, csid0, vfe1, csid1, ...): I took it from qcom,sc8280xp-camss.yaml,
-which uses the same paired VFE/CSID layout and is the closest reference for
-SM8150. The entries are also in ascending register-address order in the SoC DTS.
+I have implemented the following patch to fix the issue:
 
-If you would prefer a different grouping (e.g. all CSIDs then all VFEs, as in
-sm8250), I can reorder the binding, DTS and driver resource table. Please let me
-know which ordering you prefer. I would like to hear your feedback first so I
-can adjust anything needed before sending v4.
+drm/spacemit: map scanout buffers write-combining
 
-Best regards,
-Andrew
+The K3 display controller is not DMA-coherent: the DPU fetches scanout
+buffers straight from memory while fbcon and userspace write them through
+a cached CPU mapping. The shmem helpers clean the buffer only once, when
+the sg table is first built, so nothing flushes later CPU writes. Dirty
+cache lines shadow what the DPU scans out, and erased fbcon text lingers
+on screen until the lines are evicted by chance.
+
+Add a gem_create_object() hook that sets map_wc on the shmem objects.
+The K3 harts implement Svpbmt, so the CPU mapping becomes genuinely
+non-cacheable and writes reach memory immediately; the one-time clean in
+dma_map_sgtable() still covers the initial contents.
+
+---
+  drivers/gpu/drm/spacemit/spacemit_drm.c | 16 ++++++++++++++++
+  1 file changed, 16 insertions(+)
+
+diff --git a/drivers/gpu/drm/spacemit/spacemit_drm.c 
+b/drivers/gpu/drm/spacemit/spacemit_drm.c
+index 12b2fe8b6fc99..fe354219b996d 100644
+--- a/drivers/gpu/drm/spacemit/spacemit_drm.c
++++ b/drivers/gpu/drm/spacemit/spacemit_drm.c
+@@ -12,6 +12,7 @@
+  #include <drm/drm_fbdev_shmem.h>
+  #include <linux/component.h>
+  #include <linux/of_graph.h>
++#include <linux/slab.h>
+
+  #include "spacemit_drm.h"
+  #include "spacemit_crtc.h"
+@@ -75,6 +76,20 @@ int spacemit_drm_mode_config_init(struct drm_device *drm)
+         return 0;
+  }
+
++static struct drm_gem_object *spacemit_gem_create_object(struct 
+drm_device *drm,
++                                                        size_t size)
++{
++       struct drm_gem_shmem_object *shmem;
++
++       shmem = kzalloc_obj(*shmem);
++       if (!shmem)
++               return ERR_PTR(-ENOMEM);
++
++       shmem->map_wc = true;
++
++       return &shmem->base;
++}
++
+  DEFINE_DRM_GEM_FOPS(spacemit_drm_fops);
+
+  struct drm_driver spacemit_drm_drv = {
+@@ -82,6 +97,7 @@ struct drm_driver spacemit_drm_drv = {
+         .fops = &spacemit_drm_fops,
+
+         DRM_GEM_SHMEM_DRIVER_OPS,
++       .gem_create_object = spacemit_gem_create_object,
+         DRM_FBDEV_SHMEM_DRIVER_OPS,
+
+         .name           = DRIVER_NAME,
+--
+
+I'm sending this here in the hope that it will be useful for a future 
+revision.
+Is there a v3 in preparation?
+
+Thanks,
+
+Sarah
 
 -- 
 linux-phy mailing list
