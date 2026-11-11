@@ -2,68 +2,75 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 889C5606A330
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Nov 2026 12:50:44 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C3AD6606A31C
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Nov 2026 13:02:53 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=UEyGUf+8;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=GpVHGQep
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=CMkmA3hX;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=collabora.com header.i=@collabora.com header.a=rsa-sha256 header.s=zohomail header.b=Ea3iqC5S
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=whvdj/zWq+W4qJP8qEi/eErrmCH6AlXpIeE2tAjeCbc=; b=UEyGUf+8/VMuiuYVRLlhHmHw/f
-	6ye+YJpAlCiiYTzvpshwAm64BtuH4VsF9c4V7pJYyDcg7lztim2Mx+BaVhIrEk1BDTmeuhoDVvDs7
-	b0S3B6mgBGvRFgzHL2/UGb2ZCBwzlXC2v+LN+NGcWEBmvJu0Dc/V1KEVCBbc4F9VMW2hp2NqqqzFR
-	nfOZD/tbNRAgu7m1KSlyblTXQJiWuqRPP5SlPmz+xH8Zkq72CEoe8jGsCTK1RdYf097wcvk+vuOOa
-	gE3rGBmMmHdSMskHgRcIpAe7az6cWlxG+fNaoFIUgaJaynwihiWS8/7g0avpyr53LLPSPlrPIurCT
-	0+TU5ZPw==;
+	bh=WEYkDgHhYZKpm055pOLSMfqNFCh+XLvX3DRr+MWYD0s=; b=CMkmA3hXsfOR0ONpHGk5bnceS/
+	mL1E61Hps5R5ngoJff1fxzxdtwbbPVOoTY3p6MK0HpZp97+1NgETL0eilAn2a1EodbTqPEP0BhmI9
+	iZCCnyN0KY3UAz0zr58Z1/X98roNdqHfFGfqDL0P9OSpvsohagwfU9Sz/SGQq22CoPIrTikYWrLOg
+	4oeZpI4TKtfsnL4wBFbC9YV3l2/PcbKWaXlQS0GDz2f3Qb/ovyodChovGmFZyFNeb/4Afba1lSjPe
+	THXXjGy9n7gu6Q4+f5+s1xs3ILqcR1eRd1p7vrANEDk0YWsFEV8SmWfEhJe7mfdzT50h8tic3YIRj
+	ybznma5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xR7mm-00000006iu8-17R5;
-	Wed, 11 Nov 2026 12:50:44 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xR7yX-00000006lUb-1JRU;
+	Wed, 11 Nov 2026 13:02:53 +0000
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xR7mk-00000006itA-0vTi;
-	Wed, 11 Nov 2026 12:50:42 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id A76EB63048;
-	Wed, 11 Nov 2026 12:50:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 937001F00A05;
-	Wed, 11 Nov 2026 12:50:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794401441;
-	bh=lJCONQ2S1BJF/RtWm2O9HQRSTMfiKMyOOMP/z54HIUI=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=GpVHGQepxVL+7vb6Rzs0Oim9lI9wvWBp0a/JcViTCYcHZhYt02+9dxv3Za+oyW9ch
-	 CLQBZsb+Q3iIJSru2CXqzVrp1NtYKn3kZwXBRldYyhIROU+kYsJQTIYeLdHDOO6s3v
-	 CqlWnoCKK9WOlrhDF79EGlZ37Mm5SqNaMt0uWUjTNL+DYBV/gFANh8Wvsyf5UC0J0t
-	 WZy45TJTfCprK6+EAYrLD4u7Bx1tkSzJ/pdl0hlpKjfvp+xWqYP8Xv+GswrsC2oy9N
-	 5oX/kXVy3rt7CzVokZ0nuufYx5pGX78l13y1kYw7RyMAXZGq7M9fLOvLwAm8DCP/zq
-	 oBIQVU+gAIYcA==
-Date: Wed, 11 Nov 2026 13:50:37 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Stefan Wahren <wahrenst@gmx.net>
-Cc: Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Linus Walleij <linusw@kernel.org>, Bartosz Golaszewski <brgl@kernel.org>, 
-	Frank Li <Frank.Li@nxp.com>, Vinod Koul <vkoul@kernel.org>, 
-	Marc Kleine-Budde <mkl@pengutronix.de>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Vincent Mailhol <mailhol@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>, kernel@pengutronix.de, 
-	Fabio Estevam <festevam@gmail.com>, Manivannan Sadhasivam <mani@kernel.org>, 
-	devicetree@vger.kernel.org, imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
-	linux-gpio@vger.kernel.org, linux-can@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH 3/5] dt-bindings: gpio: mxs: Allow gpio-line-names to be
- set
-Message-ID: <20261111-active-brilliant-muskox-dd4cdb@quoll>
-References: <20261106230746.21954-1-wahrenst@gmx.net>
- <20261106230746.21954-4-wahrenst@gmx.net>
+	id 1xR7yU-00000006lTk-1kd2;
+	Wed, 11 Nov 2026 13:02:51 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1794402160; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=L8HEZ71KUMccAPwJPXHHfOiZLN3J2ti/R/h1ctJEI8xur9B1I2tKzj/DyOELXhWMG8sSrwmUNgsx4vxgYidSf5RHVHThWMsK5nVd+8DhzbD7iZQsR+gDrRit8Cc3UwRKWsiWPIwBZzNNtOgeBpaMib7dSu4XPZXlxp0ewDcPjWg=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1794402160; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=tlK6hSec1f9jWqEAlhwK9sJn2gZXx81wvvOTkXnIgdE=; 
+	b=nYscZxxZwaOIgkFrYT/t1cicREyBpMxN2YbK7eCAxl3ITUPWeyGhpEKqe8oWc1Mspra1MXRazUh+EJ0NthCk5563oxUxPDvlVim3BXXZoOsuoSUXDOAvmeGCrFYj2tfvz8utypbs8NKq4CiL1wDn7pH4HhsIK8gMTuBE3HVJOKA=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=michael.riesch@collabora.com;
+	dmarc=pass header.from=<michael.riesch@collabora.com>
+DKIM-Signature: a=rsa-sha256; b=Ea3iqC5SA+kLnbCPnCuvTHVE11jFgWxos297PfeM3irdB1DhWWQIjI5xV1fRw+U4Zb72FgD+kLBkV0J2x7OoDeTfVXMamuprjb8KH3vVNWnRrEOvB52B3UxGl99jiFFiMXnAJtPB/2xqMwWVYlTYyP1Oo9o98GBnyown9maOc8A=; c=relaxed/relaxed; s=zohomail; d=collabora.com; v=1; bh=tlK6hSec1f9jWqEAlhwK9sJn2gZXx81wvvOTkXnIgdE=; h=Content-Description:Content-ID:Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:List-Subscribe:List-Post:List-Owner:List-Id:List-Archive:List-Help:List-Unsubscribe:MIME-Version:Message-ID:Resent-Sender:Resent-Cc:Resent-Date:Resent-To:Reply-To:Resent-Message-ID:Resent-From:Sender:Subject:To:Date:From:Message-Id:Reply-To:Subject:To:Cc;
+Received: by smtp.zohomail.com with SMTPS id 1794402159144738.3650032077535;
+	Wed, 11 Nov 2026 05:02:39 -0800 (PST)
+Message-ID: <3ab93996-7e37-4143-aa4c-b4b4b0e025d8@collabora.com>
+Date: Wed, 11 Nov 2026 14:02:33 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20261106230746.21954-4-wahrenst@gmx.net>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 3/9] phy: rockchip-samsung-dcphy: Unwind power-on on
+ PLL lock failure
+To: Jason Yang <jason98166@gmail.com>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Guochun Huang <hero.huang@rock-chips.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: Sebastian Reichel <sebastian.reichel@collabora.com>,
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Sashiko <sashiko-bot@kernel.org>
+References: <20261110-dcphy-rx-v1-v6-0-d681ba20b36a@gmail.com>
+ <20261110-dcphy-rx-v1-v6-3-d681ba20b36a@gmail.com>
+Content-Language: en-US
+From: Michael Riesch <michael.riesch@collabora.com>
+In-Reply-To: <20261110-dcphy-rx-v1-v6-3-d681ba20b36a@gmail.com>
+X-ZohoMailClient: External
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261111_050250_514615_F8793DFC 
+X-CRM114-Status: GOOD (  20.32  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,26 +83,75 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
 	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
+	version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Sat, Nov 07, 2026 at 12:07:43AM +0100, Stefan Wahren wrote:
-> Describe common "gpio-line-names" property to allow DTs to
-> specify names for GPIO lines.
-> 
-> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
-> ---
->  Documentation/devicetree/bindings/gpio/gpio-mxs.yaml | 4 ++++
->  1 file changed, 4 insertions(+)
+Hi Jason,
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+On 11/10/26 09:18, Jason Yang wrote:
+> samsung_mipi_dphy_power_on() returns on a PLL lock timeout with PLL_EN
+> set and m_phy_rst still asserted, and the PHY core does not call
+> power_off after a failed power_on.
+> 
+> Today the APB reset at the start of the next power_on cleans this up.
+> 
+> A later change moves that reset to runtime resume, so the leftover
+> PLL_EN would stay set, and regmap_update_bits() would not even write
+> it again.
+> 
+> Unwind the power-on before returning the error.
+> 
+> Reported-by: Sashiko <sashiko-bot@kernel.org>
+> Closes: https://lore.kernel.org/linux-phy/sashiko-outbox-174059@kernel.org/
+> Signed-off-by: Jason Yang <jason98166@gmail.com>
+> ---
+>  drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c | 5 ++++-
+>  1 file changed, 4 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
+> index 7382043e1f31..ce1bc62497c5 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
+> @@ -1343,8 +1343,11 @@ static int samsung_mipi_dphy_power_on(struct samsung_mipi_dcphy *samsung)
+>  	samsung_mipi_dphy_clk_lane_timing_init(samsung);
+>  	samsung_mipi_dphy_data_lane_timing_init(samsung);
+>  	ret = samsung_mipi_dcphy_pll_enable(samsung);
+
+I wonder whether this should be here in the first place. Only judging by
+the name, samsung_mipi_dcphy_pll_enable is something that affects the
+complete logic block and probably should be kept in runtime resume to
+begin with.
+
+However, since _dphy_rx_power_on does not call this funcion, it seems to
+be something related only to the TX side of the logic block, but for
+D-PHY and C-PHY. In this case, it probably should go into
+samsung_mipi_dcphy_tx_power_on.
+
+On the off chance that this is actually for the D-PHY TX operation, the
+function should be renamed "*_dcphy_pll_*" -> "*_dphy_pll_*" or
+"*_dphy_tx_pll_*".
+
+What do you think?
 
 Best regards,
-Krzysztof
+Michael
+
+
+> -	if (ret < 0)
+> +	if (ret < 0) {
+> +		samsung_mipi_dcphy_pll_disable(samsung);
+> +		reset_control_deassert(samsung->m_phy_rst);
+>  		return ret;
+> +	}
+>  
+>  	samsung_mipi_dphy_lane_enable(samsung);
+>  
+> 
 
 
 -- 
