@@ -2,91 +2,75 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 80D31606A326
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Nov 2026 09:15:50 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 91BBE606A326
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Nov 2026 10:29:27 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=dYP5m3zr;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=pengutronix.de header.i=@pengutronix.de header.a=rsa-sha256 header.s=20260414 header.b=Qai0FJm0
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=lD+KXG1b;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=collabora.com header.i=@collabora.com header.a=rsa-sha256 header.s=zohomail header.b=AoD3nHzP
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=18w1mCrGUipuVjZxUJHY3ck7uz9wb7EWs2UOETh4ja0=; b=dYP5m3zrYbivIW+X2uZRI2Iwl7
-	gSEqM5JojIO14EfXSNzK/mQyudDUEeahbQ/fWISYJvtgGKx6mkdwIBdmjEHPp5iZh2aoKyJp7BR4S
-	6UOKASJeZ77ncAtU/L2oM2U6nPr/b6KXIDJzZAaAgaRW2OeiFBPDFr5JfytAJKmej0yloOGS1QN/j
-	9R7ba00KcAg/VtlNJoPjfN+c72PYDcBAs4jY5UpTZ+zQcVt9m1CAXdUmug3XGVIUZLAQVT+OiDdvt
-	LhlyyJfb5QPOvqohecGJXutgECIjQU/vApwPMo7tQtXkC4tKS9ebhSivvZhwWfUuRlWvVfFE+DJvv
-	8ZQZJi0w==;
+	bh=QsvyZfP66oJqSTtwuDeiq0ZGOwdYLFHODS2AKkPDGKY=; b=lD+KXG1bX7tPhzR1ZwtNTfjn6V
+	qt10A1YsLvgJKwIMU3QtT/8yxrG+BJgmhPxjo9tRPJ228J2qsyMXmCVRKfWCFFo1WcZsQt7x1mXDM
+	wDH1C5BX6o5eZGB5+bL5b43FxgJboJmbTjwbhh+YBd7jIL215MgPSO+YkuOr6Zc8/7ap9mQYbflWG
+	U3H6/K35qDMzF5g985awULDBDJAczljrp5+HnJrvuOQmNYX7TJfk7sCM2lKReem13l7/Ni3FaJJ68
+	GmNIL8IVvYjycpuJbBkcCaRHuLKfcHt4bMmJFXgEkm739bD31sc27OlO+86cv17TYGzIj2XSqiUyk
+	/HAnu0LQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xR4Qo-000000068hQ-0MMa;
-	Wed, 11 Nov 2026 09:15:50 +0000
-Received: from mx1.white.stw.pengutronix.de ([2a0a:edc0:0:b01:1d::107])
+	id 1xR5a3-00000006LZH-1JUR;
+	Wed, 11 Nov 2026 10:29:27 +0000
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xR4Ql-000000068gY-35uc
-	for linux-phy@lists.infradead.org;
-	Wed, 11 Nov 2026 09:15:49 +0000
-Received: from [IPv6:2a0a:edc0:0:900:1d::4e] (lupine.office.stw.pengutronix.de [IPv6:2a0a:edc0:0:900:1d::4e])
-	(Authenticated sender: pza@pengutronix.de)
-	by mx1.white.stw.pengutronix.de (Postfix) with ESMTPSA id 88861200668;
-	Wed, 11 Nov 2026 10:15:43 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=pengutronix.de;
-	s=20260414; t=1794388543;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=vDW8BQ3QK7DFSdWh63AuwvUGvwlRPTs3t87UKhBTiKQ=;
-	b=Qai0FJm01qvgzYgCzoKUwfFRkWXXkV89HX8W0AIUeeo3O4D10HCjZm5UDfhSbS5IZJa05H
-	OLNwC91drMq/tlWnEk2mvH0dSbS99tbn8nBe5DwomURL4TwEReV4y2mKQDtJP2mCvVyBpE
-	r1PblBgZUoIZ0+aAqsKRQQXXXjoBZ+N+bGdnX0GLCvxzOJYxCdEtzgZJqnmIsgaiRzhswL
-	x8vFWQN+JtfoE63jqkDPmz9YtwsuAuUsUy0cJ5MpXDpKex9mQ2mXTsC7aW2AnQTig/Y8pV
-	+U401Ip4zWrlIQiaSZGoDvoUKwYHK4dDePp5fG8qGIrCmkTr73gxXsWgdbVLhg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=pengutronix.de;
-	s=20260414; t=1794388543;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=vDW8BQ3QK7DFSdWh63AuwvUGvwlRPTs3t87UKhBTiKQ=;
-	b=flt1gfAWqs9ee1FfpsFe0RiSyc8UOlD/mXAjMwv3JJh0nPp9NxsrqQlUNKmSLvlgXs339S
-	MPjBobd/kUrbPNisqWdF94gTDH8InCTX2BgLBtOvlJPC8fkmEaNfnCrVNLsJPc7GMM5/BP
-	Ydjfxw5jZbOQ1GwtXXGO9EDvUPuQIagv8YKQg2377e+e13WY88QXj96IDHvSYfAtYTCD6A
-	VSlFZyMWY6/4h2L1Mwx8m/dQClLhEE6SHj8J829Nda5l9bnPg9zvQijmnV8E1RoN7HmvAr
-	9cckseGJgxaDbzTo10ngxQGmmUsxK+tnp4ktVhY3LeMEXFxRkdjZ5lkbOriAcA==
-ARC-Seal: i=1; s=20260414; d=pengutronix.de; t=1794388543; a=rsa-sha256;
-	cv=none;
-	b=edgHNN1SfJhgR3AMrv6ln6caifgSbcJRITbBxlYwwYO6gDawrVAFioKvxFNli4RPBYIT1d
-	qorW9rG3iBlGHABSJiR8thQLZZPC16vpD0QidrL/XYiHjPs8tbNQTAVzhXvdkbsJvpiGyk
-	e2q5BvXRvgq3aS6HhUT+gDGa9ph3LthfICG3yCyHxpoQFefoZamRMef2AnZl10u7Ix17rM
-	zFAX0Edj03CYU0rMeInQ2/0QpGYceSeWI9BSrVOYwCz9oAfOs88muWNlvfbhsZo0+wpo6q
-	JRMG1I6vws5llz0TDgpbPj8EAJEicd/vfEc60athUit7otjdR2k3bf7IV90PTQ==
-ARC-Authentication-Results: i=1;
-	ORIGINATING;
-	auth=pass smtp.auth=pza@pengutronix.de smtp.mailfrom=p.zabel@pengutronix.de
-Message-ID: <dbc39e63b74e1df9dfb134b6100a8deb0ba6afcd.camel@pengutronix.de>
-Subject: Re: [PATCH] phy: hisilicon: fix UTMI reset leaks in INNO USB2 PHY
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Xia Yan <yanxia@cmss.chinamobile.com>, Vinod Koul <vkoul@kernel.org>, 
-	linux-phy@lists.infradead.org
-Cc: Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam
-	 <mani@kernel.org>, Pengcheng Li <lpc.li@hisilicon.com>, Jiancheng Xue
-	 <xuejiancheng@hisilicon.com>, Shawn Guo <shawn.guo@linaro.org>, Shawn Guo
-	 <shawnguo@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	linux-kernel@vger.kernel.org, stable@vger.kernel.org, yana06070@163.com
-Date: Wed, 11 Nov 2026 10:15:43 +0100
-In-Reply-To: <20261111085942.159625-1-yanxia@cmss.chinamobile.com>
-References: <20261111085942.159625-1-yanxia@cmss.chinamobile.com>
-User-Agent: Evolution 3.56.2-0+deb13u1 
+	id 1xR5a0-00000006LYr-0sND;
+	Wed, 11 Nov 2026 10:29:25 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1794392956; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=JTe5DoX4QFDA1xlPbGZSB+3f0P5QxcTRBjZeKv4QyppbcQWFYomOXtmOhbJ5/7eWPkl4gHGAqw73VR+bcZDZ2Zw8OjLS9Nd3fOj4xuJUEL8IeFkcToP+m4oYbB6tFU7tu/1hHYNHek1IdSqlydeFRGe4ojYU1GYgl8m84oU2H1s=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1794392956; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=Lg42JcAukHQ8iAveVz5DalweO0LF5sTRtDq7rYcWLEc=; 
+	b=kLNcBvXSZrMN1elJw3mrcslxlwsDBilJJtF8zRGBe08bqp+tfun9Q6WnGnNjtzZ457JezUXauhcz7mLEeqYfdiTHxC55u84W6HkiMb3+GTAUtoPAPIIlIziaKoXGX3hcINdYTFryxcfm0FG6jN5CPHDcURmPd2WDO88dbXQsHwM=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=michael.riesch@collabora.com;
+	dmarc=pass header.from=<michael.riesch@collabora.com>
+DKIM-Signature: a=rsa-sha256; b=AoD3nHzP+3PjVMejUKvFVKHMzU3OiYbWy/ZL3CVykrmGsEZBu5qdqjSmtElRKQxat9FbOP/NKZsD1BG+TSk4in1TBCLy9K8uNEo4pyO0IKPNree/TEE8k33cqKiOpYwk3AEDNoqof5c2KjeLMZuqZ8PlBGD6J/lA0lYkIim64Mw=; c=relaxed/relaxed; s=zohomail; d=collabora.com; v=1; bh=Lg42JcAukHQ8iAveVz5DalweO0LF5sTRtDq7rYcWLEc=; h=Content-Description:Content-ID:Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:List-Subscribe:List-Post:List-Owner:List-Id:List-Archive:List-Help:List-Unsubscribe:MIME-Version:Message-ID:Resent-Sender:Resent-Cc:Resent-Date:Resent-To:Reply-To:Resent-Message-ID:Resent-From:Sender:Subject:To:Date:From:Message-Id:Reply-To:Subject:To:Cc;
+Received: by smtp.zohomail.com with SMTPS id 1794392952987100.75485625514011;
+	Wed, 11 Nov 2026 02:29:12 -0800 (PST)
+Message-ID: <9b5f5fc4-5fa8-411c-98fd-8655f208e00e@collabora.com>
+Date: Wed, 11 Nov 2026 11:29:07 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 1/9] dt-bindings: phy: Add PHY_DIRECTION_TX/RX
+ definitions
+To: Jason Yang <jason98166@gmail.com>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Guochun Huang <hero.huang@rock-chips.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: Sebastian Reichel <sebastian.reichel@collabora.com>,
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+References: <20261110-dcphy-rx-v1-v6-0-d681ba20b36a@gmail.com>
+ <20261110-dcphy-rx-v1-v6-1-d681ba20b36a@gmail.com>
+Content-Language: en-US
+From: Michael Riesch <michael.riesch@collabora.com>
+In-Reply-To: <20261110-dcphy-rx-v1-v6-1-d681ba20b36a@gmail.com>
+X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261111_011548_230844_22D7443F 
-X-CRM114-Status: UNSURE (   8.16  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20261111_022924_327549_9BF2F376 
+X-CRM114-Status: GOOD (  15.63  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -100,38 +84,59 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
+	version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Mi, 2026-11-11 at 16:59 +0800, Xia Yan wrote:
-> hisi_inno_phy_probe() acquires an exclusive UTMI reset control for each
-> child node but never releases it on probe failure or driver detach.
-> The leaked controls remain acquired, so a later probe can fail with
-> -EBUSY when requesting the same resets.
-> 
-> Register a devres action after each successful lookup to release the
-> control on probe failure and detach.
-> 
-> Found during source review of reset-control lifetimes.
-> 
-> Build-tested the driver object on x86_64 with W=1 and reset support
-> enabled. No hardware testing.
-> 
-> Fixes: ba8b0ee81fbb ("phy: add inno-usb2-phy driver for hi3798cv200 SoC")
-> Cc: stable@vger.kernel.org # needs of_node_put(child) on <= 6.6
-> Signed-off-by: Xia Yan <yanxia@cmss.chinamobile.com>
+Hi Jason,
 
-Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
+Thanks for the patch.
 
-It looks like an equivalent to devm_get_clk_from_child() for reset
-controls could be useful.
+On 11/10/26 09:18, Jason Yang wrote:
+> A MIPI D-PHY or C-PHY can be a transmitter or a receiver. Some PHY
+> blocks have one of each and can use them at the same time, so one PHY
+> node offers two PHYs. The existing cell, PHY_TYPE_DPHY or
+> PHY_TYPE_CPHY, selects the mode of the whole block, not one of the two
+> PHYs.
+> 
+> Add PHY_DIRECTION_TX and PHY_DIRECTION_RX for a cell that selects the
+> transmitter or the receiver. The first user is the Rockchip RK3588 MIPI
+> DC-PHY, where the transmitter serves a DSI host and the receiver a CSI-2
+> host.
+> 
+> Suggested-by: Michael Riesch <michael.riesch@collabora.com>
+> Link: https://lore.kernel.org/r/7425ac83-f6d8-4443-a26e-a47f9306aa24@collabora.com
+> Signed-off-by: Jason Yang <jason98166@gmail.com>
+> Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 
-regards
-Philipp
+Reviewed-by: Michael Riesch <michael.riesch@collabora.com>
+
+Best regards,
+Michael
+
+> ---
+>  include/dt-bindings/phy/phy.h | 3 +++
+>  1 file changed, 3 insertions(+)
+> 
+> diff --git a/include/dt-bindings/phy/phy.h b/include/dt-bindings/phy/phy.h
+> index 979b5dfd8353..9ead74d9a172 100644
+> --- a/include/dt-bindings/phy/phy.h
+> +++ b/include/dt-bindings/phy/phy.h
+> @@ -29,4 +29,7 @@
+>  #define PHY_POL_INVERT		1
+>  #define PHY_POL_AUTO		2
+>  
+> +#define PHY_DIRECTION_TX	0
+> +#define PHY_DIRECTION_RX	1
+> +
+>  #endif /* _DT_BINDINGS_PHY */
+> 
+
 
 -- 
 linux-phy mailing list
