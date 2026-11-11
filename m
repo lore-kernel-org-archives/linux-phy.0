@@ -2,62 +2,58 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BC02760A260A
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Nov 2026 03:24:05 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2722D606A31C
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Nov 2026 03:32:23 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=TfbZDTQF;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=sXl6Ca3B
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=ZWmxPlrQ;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=YUJUB+kD
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:From:To:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=ZNHBiYkLejIObQE7OgG62vm+fnle4Iwj36kSovWrWgQ=; b=TfbZDTQFHOAusHj5BpZsaxywEL
-	Asz1++uYOqykne5fGem3EjkFPMQZ3cWaOH0D3exsBE1uyL/P/MeMhwQaipeo/atOEnZG0kQyq5HnT
-	7TjznJX1hS4kkcXQM1sV00dtfefwYMqw0KSnpLo2U0qje7OgkXjY9rGqUiEDuE0j3oFCJneAjqtVn
-	IdnNgGNzz3CUjHChjolK02RNu7l7x2qDHGdMmel+Hh2taYZJM2dgHmOoevAbNXpTxybP4OE4sFP97
-	Y/G5ZOtGAmUztowXLvtySg1WaQqNf29jQpPJ2crE+NuY0518BcseFTdCTSSjFd12wlklYk07iDmGh
-	lKtwkgPg==;
+	bh=Gwpms+cblQXnSi2EPGS9+fg200NVVoKUgw+TSixbEjg=; b=ZWmxPlrQn1Ev2x8TpFN5li7PQr
+	yC5ppzrYfq/VTuM6jnMPnAebJhb439h7WEhaQUT5UMe8z7Tg9jZSI/k8oTWddESWRoTdOex5n1a2B
+	1wyt0l27nbDNbafmKfYHKsTI5nKNDlyM2dLNSXNlwWViWngPmBsf6cR/CFXsiOV0Cok/nfs9EsTmu
+	SpQJewDtsefVRO02UYd5t07I56qyk3L0VRWBnJRctqghfWMr51OYz1w3yTl/0zl9Z5bfRMg7ucsac
+	my7MMSU3GDAOrUiMKxWQqdtJ8ZMbnbgqmswrCmiljTz7eD64EruQKiV143OSDaafqiYUi9a37fI81
+	8dgXkBfQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQywP-00000005Xhf-24na;
-	Wed, 11 Nov 2026 03:24:05 +0000
-Received: from mail-4322.protonmail.ch ([185.70.43.22])
+	id 1xQz4Q-00000005YhI-3WcG;
+	Wed, 11 Nov 2026 03:32:22 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQywM-00000005XfG-3u2T
+	id 1xQz4P-00000005Yga-2eR1
 	for linux-phy@lists.infradead.org;
-	Wed, 11 Nov 2026 03:24:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
-	s=protonmail2; t=1794367441; x=1794626641;
-	bh=0P2VV1oALOP/3gmFL87eTvjlTzFKQUaWGHBRZ3suqaQ=;
-	h=Date:To:From:Cc:Subject:Message-ID:In-Reply-To:References:
-	 Feedback-ID:From:To:Cc:Date:Subject:Reply-To:Feedback-ID:
-	 Message-ID:BIMI-Selector;
-	b=sXl6Ca3BJ9dUwcv9XKERie1ur21D2I+R7/jLiIire0v4jz94N9xKkpmbV1b8lgJ1C
-	 CXkNHxXQpSWaMck0+AnNTKXX2uJ9dNj93hmQbOKZOOctAOGpidmgKTcyy+NhArS2s+
-	 l7WcDv/b7PkAqjKwj1edYX59Ut1IfAfA3VAvj4lyyTRdSjsgdVgojIcZEGTsrC7L0O
-	 aordiuNL98xNSlPVdkfbxOkdxQfcxCA+2jXBtDZgTBaB4AG67UQYty23wcIphIpxhk
-	 7ZnIJatD/KMBeeMyuRKiRmMP8QCTsOJ1vlmCO2D7SNFnslld8+Q2EWKBD4cGWwxgNL
-	 wCVeTfhhELVeA==
-Date: Wed, 11 Nov 2026 03:23:55 +0000
-To: Vinod Koul <vkoul@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>
-From: Soheyb <soheyb_boulaa@proton.me>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, Peter Griffin <peter.griffin@linaro.org>, Alim Akhtar <alim.akhtar@samsung.com>, Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>, linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org, Soheyb <soheyb_boulaa@proton.me>, stable@vger.kernel.org
-Subject: [PATCH v2 3/3] phy: exynos5-usbdrd: fix HS phy init count imbalance on Exynos2200
-Message-ID: <20261111032309.3365794-4-soheyb_boulaa@proton.me>
-In-Reply-To: <20261111032309.3365794-1-soheyb_boulaa@proton.me>
+	Wed, 11 Nov 2026 03:32:21 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 92E4E60A50;
+	Wed, 11 Nov 2026 03:32:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 09D301F0089F;
+	Wed, 11 Nov 2026 03:32:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794367940;
+	bh=kVQ0S9sewCWa+sGpBoWkkV6ehTKLX6653biV/RtAErE=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=YUJUB+kD2WP4Msh8g5LjNmQeJX6ovtiCj46YPqwgOElY1AiWCyOJI3LxWwKQP5Fcj
+	 b1R7mGmheT9rqOzWM+udA9ybFLUHwdgf6WgDak7rwcg1X488ZmgigiaMgiAOQWpLpP
+	 cWaar1cqN2JP+zivzo2JMfDfYpvlzYYrhreVwHsvqyfj9EDI5phB83WWkwwIvgtX6y
+	 plxAMwIZQfF77lCN2YLHyoMMdrJXzGniXyPF5lk1Ly+ssQR6IvNI36uvfTvbMzO1H/
+	 VkI0JiYRPhwMxdKY942dn+/njCO617mbwLm8tpt+z7I8Do1xQwPPwcqTV2FS9CWOYK
+	 DKqkw8hmshsTQ==
+Message-ID: <sashiko-outbox-208200@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v2 1/3] phy: exynos5-usbdrd: power the Exynos2200 phy
+ down when its init fails
+To: Soheyb <soheyb_boulaa@proton.me>
+Cc: linux-phy@lists.infradead.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20261111032309.3365794-2-soheyb_boulaa@proton.me>
 References: <20261111032309.3365794-1-soheyb_boulaa@proton.me>
-Feedback-ID: 140697376:user:proton
-X-Pm-Message-ID: 5d696f9f01aced19a70b4608e0bcbfc155d0b32a
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261110_192403_136173_DDC2CB6D 
-X-CRM114-Status: UNSURE (   8.41  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.8 (--)
+ <20261111032309.3365794-2-soheyb_boulaa@proton.me>
+Date: Wed, 11 Nov 2026 03:32:19 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,72 +63,45 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-exynos2200_usbdrd_utmi_init() calls phy_init() on the high-speed phy,
-but exynos2200_usbdrd_phy_exit() never calls phy_exit() on it. The init
-count of the high-speed phy therefore never drops back to zero: after
-the first init, every later phy_init() of it returns early, and its
-clocks and supplies stay enabled across an exit of the UTMI phy.
-
-When the high-speed phy loses power while the controller is suspended,
-it is thus not set up again on resume, and the DWC3 core soft reset
-times out:
-
-  dwc3 11210000.usb: DWC3 controller soft reset failed
-
-Exit the high-speed phy when the UTMI phy exits, last, once the rest of
-the exit has succeeded: the phy core counts a failed exit as no exit,
-so the high-speed phy has to stay initialized along with the UTMI phy.
-
-Fixes: cc52a697f87e ("phy: exynos5-usbdrd: support Exynos USBDRD 3.2 4nm controller")
-Cc: stable@vger.kernel.org
-Signed-off-by: Soheyb <soheyb_boulaa@proton.me>
----
-v2: the high-speed phy exits last, once the rest of the exit has
-succeeded, after Sashiko's review of v1; v1 exited it first. The comment
-is dropped, after Ivaylo's review of v1. His Acked-by of v1 is left
-out, since the exit has moved.
-
- drivers/phy/samsung/phy-exynos5-usbdrd.c | 11 +++++++++--
- 1 file changed, 9 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-index cf0597a..041a555 100644
---- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
-+++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-@@ -1510,8 +1510,15 @@ static int exynos2200_usbdrd_phy_exit(struct phy *phy)
- 	clk_bulk_disable_unprepare(phy_drd->drv_data->n_clks, phy_drd->clks);
- 
- 	exynos5_usbdrd_phy_isol(inst, true);
--	return regulator_bulk_disable(phy_drd->drv_data->n_regulators,
--				      phy_drd->regulators);
-+	ret = regulator_bulk_disable(phy_drd->drv_data->n_regulators,
-+				     phy_drd->regulators);
-+	if (ret)
-+		return ret;
-+
-+	if (inst->phy_cfg->id == EXYNOS5_DRDPHY_UTMI)
-+		return phy_exit(phy_drd->hs_phy);
-+
-+	return 0;
- }
- 
- static const struct phy_ops exynos2200_usbdrd_phy_ops = {
--- 
-2.56.0
-
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwKaXNzdWUgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIHBoeTogZXh5bm9zNS11c2Jk
+cmQ6IHNpbmdsZS13b3JkIG5hbWUgaW4gU2lnbmVkLW9mZi1ieSBhbmQKICBBdXRob3IgdHJhaWxl
+cnMKLS0KCmNvbW1pdCBlYTM2MDcxODY0MmExMGZjNTIzMzk2YzM3Y2IwNTRmZDZkNjY2OGZiCkF1
+dGhvcjogU29oZXliIDxzb2hleWJfYm91bGFhQHByb3Rvbi5tZT4KCj4gcGh5OiBleHlub3M1LXVz
+YmRyZDogcG93ZXIgdGhlIEV4eW5vczIyMDAgcGh5IGRvd24gd2hlbiBpdHMgaW5pdCBmYWlscwo+
+Cj4gZXh5bm9zMjIwMF91c2JkcmRfcGh5X2luaXQoKSBlbmFibGVzIHRoZSByZWd1bGF0b3JzIG9m
+IHRoZSBVVE1JIHBoeSBhbmQKPiB0YWtlcyB0aGUgcGh5IG91dCBvZiBpc29sYXRpb24gaW4gdGhl
+IFBNVSBiZWZvcmUgaXQgZW5hYmxlcyB0aGUgY2xvY2tzLgo+IFdoZW4gY2xrX2J1bGtfcHJlcGFy
+ZV9lbmFibGUoKSBmYWlscywgaXQgcmV0dXJucyB3aXRob3V0IHVuZG9pbmcKPiBlaXRoZXIuIFRo
+ZSBwaHkgY29yZSBkb2VzIG5vdCBjb3VudCBhIGZhaWxlZCBpbml0LCBzbyBubyBleGl0IHVuZG9l
+cwo+IHRoZW0gbGF0ZXI6IHRoZSBwaHkgc3RheXMgb3V0IG9mIGlzb2xhdGlvbiwgYW5kIGl0cyBz
+dXBwbGllcyBzdGF5Cj4gZW5hYmxlZCwgdW50aWwgYW4gaW5pdCBhbmQgYW4gZXhpdCBzdWNjZWVk
+Lgo+Cj4gSXNvbGF0ZSB0aGUgcGh5IGFnYWluIGFuZCBkaXNhYmxlIHRoZSBVVE1JIHJlZ3VsYXRv
+cnMgd2hlbiB0aGUgY2xvY2tzCj4gb3IgdGhlIHBoeS1zcGVjaWZpYyBpbml0IGZhaWwuIFRoZSBw
+aHktc3BlY2lmaWMgaW5pdCBkb2VzIG5vdCBmYWlsIHlldDsKPiB0aGUgbmV4dCBwYXRjaCBtYWtl
+cyB0aGUgVVRNSSBpbml0IHJldHVybiB0aGUgcmVzdWx0IG9mIHRoZSBpbml0IG9mIHRoZQo+IGhp
+Z2gtc3BlZWQgcGh5Lgo+Cj4gRml4ZXM6IGNjNTJhNjk3Zjg3ZSAoInBoeTogZXh5bm9zNS11c2Jk
+cmQ6IHN1cHBvcnQgRXh5bm9zIFVTQkRSRCAzLjIgNG5tIGNvbnRyb2xsZXIiKQo+IENjOiBzdGFi
+bGVAdmdlci5rZXJuZWwub3JnCj4gU2lnbmVkLW9mZi1ieTogU29oZXliIDxzb2hleWJfYm91bGFh
+QHByb3Rvbi5tZT4KCltTZXZlcml0eTogSGlnaF0KQ291bGQgdGhlIEF1dGhvciBoZWFkZXIgYW5k
+IFNpZ25lZC1vZmYtYnkgdGFnIHVzZSBhIGZ1bGwgcmVhbCBuYW1lIChmb3IKZXhhbXBsZSwgU29o
+ZXliIEJvdWxhYSkgaW5zdGVhZCBvZiBhIHNpbmdsZS13b3JkIG5hbWUsIGFzIHJlcXVpcmVkIGJ5
+CkRvY3VtZW50YXRpb24vcHJvY2Vzcy9zdWJtaXR0aW5nLXBhdGNoZXMucnN0IGZvciB0aGUgRGV2
+ZWxvcGVyJ3MKQ2VydGlmaWNhdGUgb2YgT3JpZ2luPwoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3
+IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MTExMTAzMjMwOS4zMzY1Nzk0LTEt
+c29oZXliX2JvdWxhYUBwcm90b24ubWU/cGFydD0xCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlz
+dApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
