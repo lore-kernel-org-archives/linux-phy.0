@@ -2,12 +2,12 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0B871606A882
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Nov 2026 17:31:53 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 339F960A260E
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Nov 2026 17:31:58 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=huf9Zcxc;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=GMpyGTuW;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=WwtORY+V
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=3rS+hkY2;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=BkVMxjvy;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=PNELLw2o
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -15,91 +15,90 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=82qhWOBy7ZUMsV7GL01Aioupihe3KQm1/eFK1ewi6ic=; b=huf9ZcxcacQ1bnIz6Zg/7DUcye
-	wy8M9+0afgrSLdEa18v5PhvwzYRXevCoWt2M6a3/TuXTEjK6V/mSvGnnh7210TRIXTZVceM4W/5OU
-	aCakmm8WH9+jQZn2W1bZCmMISq6fze/B1eMsTJSBBdmuKXU4X4Z6zhXNkCRfa0yLamm1dhulGRTzn
-	Z5WQLQepCd+GUePLxwDC9zVUSnTPtXTefDUxVZ/s2C4kdMHkrvvdB8saQdXZk7zlVTrBvSVfJ2ADe
-	DWJFvJg9V8LGrgjiT6rzM5D6EAcv9TtMq1UipA9Bvc5NDsfbAksf57h1quBeuiK5qzhWOxXs69efu
-	XVyvctLQ==;
+	bh=p2L2AwWFP/yKSVrbOqSscbnJq84zROE2wzVk2kKkWls=; b=3rS+hkY2thf1taVFlcyk43H62W
+	BLogOJ5I1XEr4f0stHWn55Vpng/h1soUxpC57r9necMegVUgiJEDDCSfyB3HmjsJF/eVUpmhTXkAR
+	3Mm3B4pyK940wlfkyYbl3Q3vxY1VuN3WMhPYfMg96dRaLYvp91ARaJLR1FXlU+UhYGBAxPeFmr471
+	bq4anXn6F6s5ZP/q+i+dn6x6fQHZ5TCrq95ymdQTax7daMdWZu5b1E67pogmGufWrbrA8IdkC5xYt
+	NV32SzHDL8s2QMt8/+BOvf8UJjjhp5sJJMzrdBhPBRfXyCzh/CiQod5JhunYfMOzM99Stl+UPFyy2
+	qNaqQDjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRCAq-00000007JH1-3C66;
-	Wed, 11 Nov 2026 17:31:52 +0000
+	id 1xRCAv-00000007JJ6-3xI1;
+	Wed, 11 Nov 2026 17:31:57 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRCAn-00000007JFO-0kSr
+	id 1xRCAs-00000007JHv-4BW7
 	for linux-phy@lists.infradead.org;
-	Wed, 11 Nov 2026 17:31:50 +0000
+	Wed, 11 Nov 2026 17:31:56 +0000
 Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6ABF0A08618003
-	for <linux-phy@lists.infradead.org>; Wed, 11 Nov 2026 17:31:48 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6ABF0ASA618000
+	for <linux-phy@lists.infradead.org>; Wed, 11 Nov 2026 17:31:54 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	7zEfWD0gKNdLLpb4i4FbPNLheaURh0EVvm8kyMPPW3I=; b=GMpyGTuWfKCtD3FC
-	JEHPmo0do8hTcM/kvQ4VrfQCxNC8/Evbu5HPHqpPp/nJOvRz/mNyNkhP0n++8e+o
-	rqJPVMKqmENLTDAjyQeXUu+cfT4vGtZzvSk7SkJ3c9GTayUM7wGJXojLzv+yX6L+
-	aZRNYSiEtLQcNgG1B4NV7gwyltqxkIKE+iSKXtYvBxOcg/UHx7RMWcmTwmzy8XdL
-	ucFwb4k6ktd6g97twK+DrDQoJ7eFxHJzbO/mn9KEPRa8NViHldvt+8Z8wnR3Okjy
-	o+RmpbvurHjyUENAPAtU/ZvCicwB2E2KQvkL1dX4glMP/YaKT9QAmc1OwCiSY8Ms
-	OSRWQA==
-Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hvpjjsu7f-1
+	otvmRpR2mK9xATk3zKc89PSH5qkhX1CxundPT37cRfY=; b=BkVMxjvyHZZaGmpJ
+	UILkB8hwOEjHL8wkNRNqodvVze2CZkaZqngmCeeg/nES7D0hVxx5ex5XBThvtUAj
+	lchHR5RHtI+dquTcAvY3SDbB7kO3G3L280SzNU3SZzmyuRmkjj2tucwc3HwXcSxn
+	p38RHfxFbSsd/v525qhhri4dgNtH/5ZLjyuDuVDL7ZW+Jn9O82nXFbzX0BDa7qi2
+	ezm3y1MliNRajb00qh2vhTS/WBm8QMhY3MvRp4XxV2v+gUCdCzdsTR/tinsYHQ9L
+	ovRGb5Lq/AACbymkxO02zGKsrgnr2+ZZqrdnYM32uKHvm1bn02pfrXeZck8WOvQq
+	wdk2hw==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hvpjjsu7p-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 11 Nov 2026 17:31:48 +0000 (GMT)
-Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-3ae1d132d52so3029656a91.0
-        for <linux-phy@lists.infradead.org>; Wed, 11 Nov 2026 09:31:47 -0800 (PST)
+	for <linux-phy@lists.infradead.org>; Wed, 11 Nov 2026 17:31:53 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2eddadcce7cso6895845ad.2
+        for <linux-phy@lists.infradead.org>; Wed, 11 Nov 2026 09:31:53 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794418307; x=1795023107; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1794418313; x=1795023113; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=7zEfWD0gKNdLLpb4i4FbPNLheaURh0EVvm8kyMPPW3I=;
-        b=WwtORY+VbFNTMvwA5xudcfJSwaELYipEw1BeOkQ8cvAB/yQo/DcaFhbVS6OPw43oVX
-         SzK6WM0l+7+gLs5fsKI2hJ2N56fGB9EHRrq8nVVnWHdNpAhUCSvU1rkL3tlm11344nwP
-         UjRDBfXJqR7GqBxZC/nIRj3UieX5FMvwgTSZgen2HsievkYcvK72vSezDjWzd+iN2wwX
-         8NTHHUqmrp/Cmw9ef3ftKBuuiYNAwb+3WfLjLHRBJZDCDSlaK0RyRxqeh0XhR3N0wVVE
-         EbV5ickLoQKUjOiV3An2POA1VOcU9SQEjirHjI4mwE6aJHzXR+IvcyMzTFmjKIECo6h5
-         OKtg==
+        bh=otvmRpR2mK9xATk3zKc89PSH5qkhX1CxundPT37cRfY=;
+        b=PNELLw2oSD0X51+Ax2lpmYrdcl0ajxdV2j7tteLfQcsYN1tdYRZC221I4ifNqIzXgR
+         eFznRtCDVAKOVqksD0D5po0tlpCROT0MkJKHO17rTUDoRxXSiQlf0ezTN5AncFnLkipt
+         MLBCQaNpPBgNOWWcjN+LQkXIOlIK4WdEaxQspb1mthTFTljRYT/YLbdkwyK4koMiWYh8
+         HXiim1vOScVMaf30ZPcghjg4rlqpJLWeUXds0n3P5HVGM5vdBsmu3J2Jh90Rivr0oqwA
+         1MOSK6utDDEMOqXYc4IX5/YFYrza4zZChwcjzmf5j5ZC5KeibsQg9UiQmMAUWwO9nzG9
+         HvEQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794418307; x=1795023107;
+        d=1e100.net; s=20260707; t=1794418313; x=1795023113;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=7zEfWD0gKNdLLpb4i4FbPNLheaURh0EVvm8kyMPPW3I=;
-        b=UbbIkpK0q9srl7IsVEnDsYDv2YbKjwlsOXY7h/n1KsOH2YbOMyclX8WHYGtx+3U/P8
-         kCkY0RVgMd/Ad8V40i62JSp85y4rdSZXD9BBvPAAbYBGHl/3AMJ8puKwikaSeOs9be+W
-         Nl0PPC/JwgyiLS1UG+RXbupqcNLQzun3JnWqaYh5syaKQ4i+YhMAEyT4vazGlaE0ALgp
-         t18ljoNUQSzwMXqcOsgmVTzDIBIMIcVFm0bvX4MPaWNED73LtmsKCcj5WUpQAvLFeNaO
-         ber2E0h4/gSvjMQIQcgEdnI3DgC60+pkTCruBObwp7LCb2cJKJXnGTNM9b5OD8Z/wyhp
-         tO/w==
-X-Forwarded-Encrypted: i=1; AL+hErEtFNvC2b/dZEtpjsdqIAicvxugPefifa9WBn2wZuT49MDSIVrOT5LSQvu67+uGvZqq++YCsBticcs=@lists.infradead.org
-X-Gm-Message-State: APuU4Z+0Sav+lQyG+I9RCilYHI2yP9gvqe9z37gnQ9hm8GADKCGOy7rm
-	J4XIQr69HhWVbuisu0wFNNLcdtPXH53xqrUpIt7aYXCwcP1MVcO2xtj7QeO4Iz9f4NIpO+7nsc7
-	bG6lPhExk7wBbduodvslhYtQGLaKJuPd2PDBHTCK2L/jhTUNh9C7q5zFdaA9uz8BRd4U6
-X-Gm-Gg: AYBFou3nchb/GQCzAI5p2Cu3Vk3LkzqDTpGijsmqC7zDCpM0UdU95JXyxMtMSXYQ+00
-	ehEBNavhvA9kAa+JdRpXOM/oIbmdHIIB/Wz8AP9ltSgMyol3V4ZaztGU0Zd0+1vWTBA6HCC6e3q
-	Wwf5iHpYZ+KIKJwZe53ciKJmg8p0gjIFLoLNPtVr7ieLuC8XWweGSAKd2AIfXg6Bj4McqykLxX3
-	8bLcxAR1x4TR8JLwWwtLynZOqUGJbgzN49hjk3VKK2CyQQTqep3rlXmH/KCENI1dKYub1nVkwax
-	8krc/ETBAYg8W1pVW2RXQalrBu3F5/Ln35i8fGUZCzxXJRWqRi1j0xRTYfOOCbf3D8IYSA2HXdk
-	VvWY2oyr31GxkqkMOUdoaOl7ZsXMGVrHfyJCll3aEbiyUYGtM35ma4MSlCpOYgs1VQ2SrwFW4WO
-	a0VV03HmBFQA/fFl28WOyfsEMs899sCubeaPqtylc75A==
-X-Received: by 2002:a17:90b:3c44:b0:3b0:a3eb:759d with SMTP id 98e67ed59e1d1-3b182efad9cmr2756604a91.10.1794418307009;
-        Wed, 11 Nov 2026 09:31:47 -0800 (PST)
-X-Received: by 2002:a17:90b:3c44:b0:3b0:a3eb:759d with SMTP id 98e67ed59e1d1-3b182efad9cmr2756575a91.10.1794418306531;
-        Wed, 11 Nov 2026 09:31:46 -0800 (PST)
+        bh=otvmRpR2mK9xATk3zKc89PSH5qkhX1CxundPT37cRfY=;
+        b=Th4S/6/nC2/PtQx3E1w9ZPfR6x+fz/CQdCfHcLw6KZTTUGJ31fhS1qZn58lVb1azhB
+         FktWx94H3sdvUOvQ9VLHGrBZoCXJ7fgVQKcpHWJ/tY3aNuN/ei8h50g+cinB/7O8P45g
+         gUCzVSB7l4PfhHhaHgc6o+avlKtXfqlEft/7OQUg43/hGIISTjrs3pWhX/4jo4PSZcTo
+         iRzSL04+6D3Ubhh98QwUjmKpGHyRTUTjBzuM6zWeQeOgS1x+bDqb+eBryiNKlFvGCvGo
+         +Iu1JL08jLcG+4bSHPOFnA593fN6VK8AHjshCM+R0wLcYJQgV6jaN0XGWyF6sJUa3G7c
+         8l1Q==
+X-Forwarded-Encrypted: i=1; AL+hErF/g0sneN1JZqikgOPBfFzz5k8D/liXAEtDaZtVK5JTb3lnSfSJEHByxI3UHYwWZUxE3HswZhKiSfo=@lists.infradead.org
+X-Gm-Message-State: APuU4Z/NyhNrE7IFYvQsGc6184LvH0L7WxuPs+RdykEpCfvGrLWO99Jf
+	gMCPEQzp09jA/3GIQavgLt6lW5Vl6pOq88rPejX1BT23kbMzLE2o1pUnAnwMvNCpWIFLOLw/sVu
+	o6GUONuU31Uo9tQG8HkRlcwqGld4sErPrce3DAEz0+o8KqpKciY89naX8kazQgzF4WvOv
+X-Gm-Gg: AYBFou2vYU5isMd7hyIKqBqKVvFBNfb7UipnTW5ybM1kB9EUzN2TEhJY5dd77H3GM7A
+	Sp71PAkr11YXdTWoU90IKUxz6q0mJyRn0c5JKVVYj+dKy7ufOzWig87WvrlSaiNkqiZ8VqkF9ZN
+	qmwn43QUeP/BI0Nulb75N3M61/hKxt+TC5pcKAEM8VutZ50m5nLkfADTLfg4NqURynayLzXnFRw
+	lN+i9eoDcwDjzAkUS84eR4avwt8duHbiWUWu5S0OkDB96SyI54U8m5gFUGm5UusFvLU5HSw2yjU
+	Y4nMCmo0zKLUhzJS7YpjB6OJiR+i+vTEpGBxgPEpXSn8e9/EPPv0Cy/uzwCjS6woXp2NBpt0WjJ
+	4atTPZvQCdeXDB3/ME+AlWkAFVX2KQ2fiA7IaqHPAi3Znqn1LMOqPNHG/46WWEqjeSuOzuh+qZi
+	64k9aoDc3XNPhdIit9131UydtgpHRuUWCgIYeGCWjuCQ==
+X-Received: by 2002:a17:90b:164a:b0:3ac:9259:122c with SMTP id 98e67ed59e1d1-3b182f5a30cmr2942300a91.40.1794418312127;
+        Wed, 11 Nov 2026 09:31:52 -0800 (PST)
+X-Received: by 2002:a17:90b:164a:b0:3ac:9259:122c with SMTP id 98e67ed59e1d1-3b182f5a30cmr2942283a91.40.1794418311566;
+        Wed, 11 Nov 2026 09:31:51 -0800 (PST)
 Received: from hu-kriskura-hyd.qualcomm.com ([202.46.22.19])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b197c42c11sm237305a91.2.2026.11.11.09.31.42
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b197c42c11sm237305a91.2.2026.11.11.09.31.46
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 11 Nov 2026 09:31:46 -0800 (PST)
+        Wed, 11 Nov 2026 09:31:51 -0800 (PST)
 From: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-Date: Wed, 11 Nov 2026 23:01:26 +0530
-Subject: [PATCH 1/2] dt-bindings: phy: qcom,qusb2: Add support for remote
- endpoints
+Date: Wed, 11 Nov 2026 23:01:27 +0530
+Subject: [PATCH 2/2] phy: qcom: qusb2: Add charger detection support
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261111-shikra-qusb2-charger-det-v1-1-5a9d919c66b5@oss.qualcomm.com>
+Message-Id: <20261111-shikra-qusb2-charger-det-v1-2-5a9d919c66b5@oss.qualcomm.com>
 References: <20261111-shikra-qusb2-charger-det-v1-0-5a9d919c66b5@oss.qualcomm.com>
 In-Reply-To: <20261111-shikra-qusb2-charger-det-v1-0-5a9d919c66b5@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
@@ -113,32 +112,32 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
         Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1794418296; l=2916;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1794418296; l=22926;
  i=krishna.kurapati@oss.qualcomm.com; s=20260707; h=from:subject:message-id;
- bh=owFjultANOxmQtS34XQvZEam8JgpNAnt9Xs6zAWLZVM=;
- b=c3V0jWnq4UiJGGT2KZZQBL4VS3BaOfk2D7xD1gxg2+qfMsMVHw0jUUqQdD15HC+Z7Bno1LeCE
- J42X6d6Rf6pCafyo9wKvwqHm5nWiaXZFfmrh3ZQ51lGw/Ee+F9iyshV
+ bh=+5o2fRk4SGOPPm/ZSNnqD6Ah36z+fkN8a8M9tLB/1WQ=;
+ b=v/iTr/gd8B4+PdioG5ny9IyN6k80+xItf9RqxTfJrre32oUjlNw2AYGYU6f5+htAr03WYHP1v
+ W+YcRKy9AX3BpdwyszWe2M/bh+j7o6QrEK+TBCnULhSE46Y4SaWA8f5
 X-Developer-Key: i=krishna.kurapati@oss.qualcomm.com; a=ed25519;
  pk=6PmiuwGCdov3wRO+bdmRlRxRtmJyDKz3ED57LLPVgds=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTExMDA2OSBTYWx0ZWRfXz/lDl074p3Ke
- MdHzflaJCW1d7RArwcYoXCqtfQ4I0CNfYuiyC5vAtblGeQaLGWrKOTaQ9s01SANopKOWCLZd+av
- kRjn0ub8JO1jlS7s2v957jtVvAKLjtZSDm3pOnp/ua9aOGy6sbIu+jVgYMjmhm7rCfyqCg7GPse
- x/9/cmg+XvMKqZq37vRp+8Mzd1DODDPQCj87VXYkVHtyPbkF+dsIeRn3Kzy7Vl8Y6f6Y/m1+h6b
- 6H/lYFH7rUQohZu0oQJ/6kTuZj989bOrhbT5+R2em5t3BVpYbtrhx6L8Bzh0TFaBIygguho6jhF
- mTX2t5sYfrpQ+wEed4sUkUzGGUCflqwD1fYpyiDigSOsZDEPRj6hD0nIbeAdtQyHF95hmBxgPo+
- r240gX5XeLZOvNW/QVFkgEjd97eHfQPwlRd1gep8e7lfBJgh2NDzdu8QBzn+/ZpTuedJTY+4a/n
- R+KT4OI2b+WI8jqzIuQ==
-X-Proofpoint-ORIG-GUID: KvZHyjiTVfYTf5adB17bAHTvf2immnns
-X-Authority-Analysis: v=2.4 cv=FeuiV5+6 c=1 sm=1 tr=0 ts=6af4a684 cx=c_pps
- a=vVfyC5vLCtgYJKYeQD43oA==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTExMDA2OSBTYWx0ZWRfXwnnzxXZkEM4M
+ qmWgTRL2JYxfRym3DXDYPzN9hZRsCYPq0FB3rSVH01takhnmpuFQF9KCPP/BKbroAEL2L4w7vP6
+ w7K9Nm9WuIXmcMBZ4F1OmlazMlLrYAozYONpUmkQ1kSi8FhSkAZ2PA8u0mI/Ln8hhIV2hxCRM24
+ jZEs9OO4V0TvGmJ9c0gkeohKi7K63zTFnGmFDin7sqIVDvpqQ6+HTVFVl5zjYWSSKr19v43/ZLH
+ uz5DbPEy4CR9k8smRcjiitoxCRMqUkhvA5/JohZIheHIXQWmhnTPlJZhGCUfeEqX2LhwO0Yfq9X
+ cqFzyBDkjnj62wxzEsLcxqXI5kp51SHEHvJTr54wyYNuRD2LCjPLDd5SxIvdiSRU/wEOMDNSALw
+ /xAJc2myTF11iU1SGW1q/3s8TNVW4os1VerlNdDWreu2dvt/Xn1zJgLnQBZNabEyIhzVrUgP84t
+ IoPkwUaDgvq3VYLe4NA==
+X-Proofpoint-ORIG-GUID: y0u79pRvfBoEfNClTSXWwmQ9Yyd38hjn
+X-Authority-Analysis: v=2.4 cv=FeuiV5+6 c=1 sm=1 tr=0 ts=6af4a689 cx=c_pps
+ a=JL+w9abYAAE89/QcEU+0QA==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
  a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
  a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
- a=EUspDBNiAAAA:8 a=VqWNwAWn-JPd5HJ3FDIA:9 a=QEXdDO2ut3YA:10
- a=rl5im9kqc5Lf4LNbBjHf:22
-X-Proofpoint-GUID: KvZHyjiTVfYTf5adB17bAHTvf2immnns
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTExMDA2OSBTYWx0ZWRfX19pGQPvqlFFU
- uRe3SBlFphr0zx1PTOaJuueDr0LEokoOmyQGRvhFgXFzX9cL2234Jk8ql1A3dRtYySntCkAxpg8
- GAuzlfeox0stb0WQSLvycBxLHEmQ0GY=
+ a=EUspDBNiAAAA:8 a=C7_gml_Do48l-12NHYUA:9 a=eh4htEx1MinpzGgb:21
+ a=QEXdDO2ut3YA:10 a=324X-CrmTo6CU4MGRt3R:22
+X-Proofpoint-GUID: y0u79pRvfBoEfNClTSXWwmQ9Yyd38hjn
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTExMDA2OSBTYWx0ZWRfXxOd+peTbMnz9
+ j3a0VxtDjKHnN9AHymTakni5rCiYtE1ZDKOZhzd9KiaV3Od8yr5giJC6lxbsnBQr5OUrbgbG9w2
+ e8gwp+rGK2IxdB1X2elnzszG1ODD1sE=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-11_04,2026-11-11_02,2025-10-01_01
@@ -148,8 +147,8 @@ X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611110069
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261111_093149_363280_97073D97 
-X-CRM114-Status: GOOD (  17.26  )
+X-CRM114-CacheID: sfid-20261111_093155_183868_2057B36E 
+X-CRM114-Status: GOOD (  23.64  )
 X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -170,71 +169,741 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-QUSB2 Phy HW is capable of doing BC.1.2 charger detection. On most of the
-platforms, the charger detection is done by PMIC. But on Shikra CQM/CQS
-platforms, the PM4125 doesn't have ability to do charger detection and
-that responsibility is delegated to QUSB2 Phy which acts on the DP/DM
-lines in its control to get the job done.
+QUSB2 Phy is capable of performing BC.1.2 Charger detection by controlling
+the dp/dm lines. On platforms where the PMIC isn't capable of performing
+charger detection, the responsibility is delegated to the phy.
 
-During process of charger detection, if the controller is supposed to
-enter device mode, the charger is detected as SDP/CDP/DCP. The controller
-must enter device mode only if the detected charger is SDP/CDP. In case of
-DCP, the phy can be turned off after detection. If the controller must
-enter host mode, charger detection can be skipped and hence the phy must
-know the role before the controller so that appropriate decision can be
-taken whether the controller must enter device/host mode or not.
+On Shikra CQM/CQS platforms, the PM4125 relies on QUSB2 Phy to perform
+charger detection. As part of this, the following changes are being done:
 
-Intention of adding remote endpoints and usb-role-switch property binding
-support is as follows:
+a) Refactor phy enable/disable calls to control regulators and clocks.
 
-a) The DP/DM lines do go through the phy to the controller i.e., the phy
-exists between connector and controller. Hence adding remote endpoints
-depicting the same.
+b) Let the usb-role information coming from PM4125 to pass through the phy
+so that when a vbus active signal is detected, the phy can check if its
+SDP/CDP/DCP and pass on the role to controller only when the charger is
+SDP/CDP. In case of host mode, the role is forwarded without any charger
+detection.
 
-b) Although the usb2 phy is not the entity doing role switching, it still
-does need to decide which mode the controller must move into and hence
-adding usb-role-switch property to allow role notifications from charger
-to go to controller via phy.
+c) Since the controller probe relies on phy probe to be completed first,
+during phy probe, it won't be possible to get role-switch handle of the
+controller. Hence check for controller role switch whenever a role info
+is obtained from the connector node.
 
 Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
 ---
- .../devicetree/bindings/phy/qcom,qusb2-phy.yaml    | 23 ++++++++++++++++++++++
- 1 file changed, 23 insertions(+)
+ drivers/phy/qualcomm/phy-qcom-qusb2.c | 606 ++++++++++++++++++++++++++++++++--
+ 1 file changed, 574 insertions(+), 32 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-index 001fd0ccc985..0b6b2933dd98 100644
---- a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
-@@ -159,6 +159,29 @@ properties:
-     maximum: 3
-     default: 0
+diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
+index 2e5fdb620cb2..549dc8d1378a 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
++++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
+@@ -18,9 +18,31 @@
+ #include <linux/regulator/consumer.h>
+ #include <linux/reset.h>
+ #include <linux/slab.h>
++#include <linux/power_supply.h>
++#include <linux/usb/role.h>
  
-+  ports:
-+    $ref: /schemas/graph.yaml#/properties/ports
-+    description:
-+      Those ports can be used with any connector/pmic node that is able to
-+      provide role switch notifications for charger detection purposes.
+ #include <dt-bindings/phy/phy-qcom-qusb2.h>
+ 
++#define QUSB2PHY_PORT_QC1	0x70
++#define VDM_SRC_EN		BIT(4)
++#define VDP_SRC_EN		BIT(2)
 +
-+    properties:
-+      port@0:
-+        $ref: /schemas/graph.yaml#/properties/port
-+        description: Connector Data bus
++#define QUSB2PHY_PORT_UTMI_CTRL1	0xC0
++#define SUSPEND_N			BIT(5)
++#define TERM_SELECT			BIT(4)
++#define XCVR_SELECT_FS			BIT(2)
++#define OP_MODE_NON_DRIVE		BIT(0)
 +
-+      port@1:
-+        $ref: /schemas/graph.yaml#/properties/port
-+        description: Controller data bus.
++#define QUSB2PHY_PORT_UTMI_CTRL2	0xC4
++#define UTMI_ULPI_SEL			BIT(7)
++#define UTMI_TEST_MUX_SEL		BIT(6)
 +
-+  usb-role-switch:
-+    description:
-+      In the context of usb-phy, it denotes the capability to perform charger
-+      detection. Although phy is not the one responsible for switching mode, it
-+      is the one responsible to take a call on whether controller must switch
-+      mode or not. In case of SDP/CDT, the phy would inform the controller to
-+      switch to device and in case of DCP, role switch doesn't need to happen.
++#define QUSB2PHY_PORT_QC2	0x74
++#define RDM_UP_EN		BIT(1)
++#define RDP_UP_EN		BIT(3)
++#define RPUM_LOW_EN		BIT(4)
++#define RPUP_LOW_EN		BIT(5)
 +
- required:
-   - compatible
-   - reg
+ #define QUSB2PHY_PLL			0x0
+ #define QUSB2PHY_PLL_TEST		0x04
+ #define CLK_REF_SEL			BIT(7)
+@@ -30,10 +52,19 @@
+ #define QUSB2PHY_PLL_USER_CTL2		0x10
+ #define QUSB2PHY_PLL_AUTOPGM_CTL1	0x1c
+ #define QUSB2PHY_PLL_PWR_CTRL		0x18
++#define PLL_RESET_N_CNT_5		0x5
++#define PLL_RESET_N			BIT(4)
++#define PLL_AUTOPGM_EN			BIT(7)
+ 
+ /* QUSB2PHY_PLL_STATUS register bits */
+ #define PLL_LOCKED			BIT(5)
+ 
++/* QUSB2PHY_PLL_PWR_CTRL register bits */
++#define REF_BUF_EN			BIT(6)
++#define REXT_EN				BIT(4)
++#define PLL_BYPASSNL			BIT(1)
++#define REXT_TRIM_0			BIT(0)
++
+ /* QUSB2PHY_PLL_COMMON_STATUS_ONE register bits */
+ #define CORE_READY_STATUS		BIT(0)
+ 
+@@ -57,6 +88,10 @@
+ #define DMSE_INTR_EN				BIT(1)
+ #define DPSE_INTR_EN				BIT(0)
+ 
++#define QUSB2PHY_PORT_INTR_STATUS	0xF0
++#define DMSE_INTR_HIGH			BIT(2)
++#define DPSE_INTR_HIGH			BIT(0)
++
+ /* QUSB2PHY_PLL_CORE_INPUT_OVERRIDE register bits */
+ #define CORE_PLL_EN_FROM_RESET			BIT(4)
+ #define CORE_RESET				BIT(5)
+@@ -97,6 +132,29 @@
+ #define QUSB2PHY_IMP_CTRL2			0x224
+ #define QUSB2PHY_CHG_CTRL2			0x23c
+ 
++#define CHG_DCD_TIMEOUT_MSEC			750
++#define CHG_DCD_POLL_TIME_MSEC			50
++#define CHG_PRIMARY_DET_TIME_MSEC		100
++#define CHG_SECONDARY_DET_TIME_MSEC		100
++#define DP_PULSE_WIDTH_MSEC			200
++
++enum port_state {
++	PORT_UNKNOWN,
++	PORT_DISCONNECTED,
++	PORT_DCD_IN_PROGRESS,
++	PORT_PRIMARY_IN_PROGRESS,
++	PORT_SECONDARY_IN_PROGRESS,
++	PORT_CHG_DET_DONE,
++	PORT_HOST_MODE,
++};
++
++enum chg_det_state {
++	STATE_UNKNOWN,
++	STATE_DCD,
++	STATE_PRIMARY,
++	STATE_SECONDARY,
++};
++
+ struct qusb2_phy_init_tbl {
+ 	unsigned int offset;
+ 	unsigned int val;
+@@ -478,9 +536,425 @@ struct qusb2_phy {
+ 	const struct qusb2_phy_cfg *cfg;
+ 	bool has_se_clk_scheme;
+ 	bool phy_initialized;
++	bool is_phy_enabled;
+ 	enum phy_mode mode;
++	int vbus_active;
++	int id_state;
++	struct power_supply	*usb_psy;
++	struct delayed_work	port_det_w;
++	enum port_state		port_state;
++	unsigned int		dcd_timeout;
++	bool			dcp_charger;
++
++	struct usb_role_switch	*connector_role_sw;
++	struct usb_role_switch	*controller_role_sw;
++	enum usb_role		current_role;
++	struct mutex		role_lock;
+ };
+ 
++static int qusb_phy_notify_charger(struct qusb2_phy *qphy,
++					enum power_supply_usb_type charger_type)
++{
++	union power_supply_propval pval = {0};
++
++	if (!qphy->usb_psy) {
++		qphy->usb_psy = power_supply_get_by_name("pm4125-charger");
++		if (!qphy->usb_psy) {
++			dev_err(&qphy->phy->dev, "could not get usb power supply\n");
++			return -ENODEV;
++		}
++	}
++
++	dev_dbg(&qphy->phy->dev, "notifying charger type: %d\n", charger_type);
++
++	pval.intval = charger_type;
++	power_supply_set_property(qphy->usb_psy, POWER_SUPPLY_PROP_USB_TYPE,
++									&pval);
++	return 0;
++}
++
++static bool qusb_phy_chg_det_status(struct qusb2_phy *qphy,
++						enum chg_det_state state)
++{
++	u32 reg, status;
++
++	reg = readl_relaxed(qphy->base + QUSB2PHY_PORT_INTR_STATUS);
++	dev_dbg(&qphy->phy->dev, "chg_det_status: state=%d intr_status=0x%02x\n",
++		state, reg);
++
++	status = reg & 0xff;
++
++	switch (state) {
++	case STATE_DCD:
++		return (status != DPSE_INTR_HIGH);
++	case STATE_PRIMARY:
++		return (status && (status != DPSE_INTR_HIGH));
++	case STATE_SECONDARY:
++		return status;
++	case STATE_UNKNOWN:
++	default:
++		break;
++	}
++
++	return false;
++}
++
++/*
++ * Different circuit blocks are enabled on DP and DM lines as part
++ * of different phases of charger detection. Then the state of
++ * DP and DM lines are monitored to identify different type of
++ * chargers.
++ * These circuit blocks can be enabled with the configuration of
++ * the QUICKCHARGE1 and QUICKCHARGE2 registers and the DP/DM lines
++ * can be monitored with the status of the INTR_STATUS register.
++ */
++static void qusb_phy_chg_det_enable_seq(struct qusb2_phy *qphy, int state)
++{
++	dev_dbg(&qphy->phy->dev, "chg_det_enable_seq: state=%d base: %pK\n", state, qphy->base);
++
++	writel_relaxed(0x23, qphy->base + qphy->cfg->regs[QUSB2PHY_PORT_POWERDOWN]);
++	writel_relaxed(0x35, qphy->base + QUSB2PHY_PORT_UTMI_CTRL1);
++	writel_relaxed(0xC0, qphy->base + QUSB2PHY_PORT_UTMI_CTRL2);
++	writel_relaxed(0x05, qphy->base + QUSB2PHY_PLL_AUTOPGM_CTL1);
++	writel_relaxed(0x22, qphy->base + qphy->cfg->regs[QUSB2PHY_PORT_POWERDOWN]);
++	writel_relaxed(0x17, qphy->base + QUSB2PHY_PLL_PWR_CTRL);
++
++	usleep_range(5, 10);
++
++	writel_relaxed(0x15, qphy->base + QUSB2PHY_PLL_AUTOPGM_CTL1);
++	writel_relaxed(0x00, qphy->base + QUSB2PHY_PORT_QC1);
++	writel_relaxed(0x00, qphy->base + QUSB2PHY_PORT_QC2);
++
++	usleep_range(50, 60);
++
++	switch (state) {
++	case STATE_DCD:
++		writel_relaxed(0x08, qphy->base + QUSB2PHY_PORT_QC1);
++		writel_relaxed(0x01, qphy->base + QUSB2PHY_PORT_QC2);
++		writel_relaxed(0x1F, qphy->base + qphy->cfg->regs[QUSB2PHY_INTR_CTRL]);
++		break;
++	case STATE_PRIMARY:
++		writel_relaxed(0x25, qphy->base + QUSB2PHY_PORT_QC1);
++		writel_relaxed(0x00, qphy->base + QUSB2PHY_PORT_QC2);
++		writel_relaxed(0x1F, qphy->base + qphy->cfg->regs[QUSB2PHY_INTR_CTRL]);
++		break;
++	case STATE_SECONDARY:
++		writel_relaxed(0x72, qphy->base + QUSB2PHY_PORT_QC1);
++		writel_relaxed(0x00, qphy->base + QUSB2PHY_PORT_QC2);
++		writel_relaxed(0x1F, qphy->base + qphy->cfg->regs[QUSB2PHY_INTR_CTRL]);
++		break;
++	case STATE_UNKNOWN:
++	default:
++		break;
++	};
++}
++
++/*
++ * qusb2_phy_enable_phy - power up regulators and enable clocks for the PHY.
++ *
++ * Used by the charger-detection path to bring the PHY up before programming
++ * the QC1/QC2 detection registers, and by qusb2_phy_init().
++ * No-op if the PHY is already enabled (is_phy_enabled is true).
++ */
++static int qusb2_phy_enable_phy(struct qusb2_phy *qphy)
++{
++	struct device *dev = &qphy->phy->dev;
++	int ret;
++
++	if (qphy->is_phy_enabled) {
++		dev_dbg(dev, "PHY already enabled, skipping\n");
++		return 0;
++	}
++
++	dev_vdbg(dev, "enabling PHY clocks and regulators\n");
++
++	ret = regulator_bulk_enable(ARRAY_SIZE(qphy->vregs), qphy->vregs);
++	if (ret) {
++		dev_err(dev, "failed to enable regulators, %d\n", ret);
++		return ret;
++	}
++
++	ret = clk_prepare_enable(qphy->iface_clk);
++	if (ret) {
++		dev_err(dev, "failed to enable iface_clk, %d\n", ret);
++		goto disable_regs;
++	}
++
++	ret = clk_prepare_enable(qphy->cfg_ahb_clk);
++	if (ret) {
++		dev_err(dev, "failed to enable cfg_ahb_clk, %d\n", ret);
++		goto disable_iface_clk;
++	}
++
++	if (!qphy->has_se_clk_scheme) {
++		ret = clk_prepare_enable(qphy->ref_clk);
++		if (ret) {
++			dev_err(dev, "failed to enable ref_clk, %d\n", ret);
++			goto disable_ahb_clk;
++		}
++	}
++
++	qphy->is_phy_enabled = true;
++
++	return 0;
++
++disable_ahb_clk:
++	clk_disable_unprepare(qphy->cfg_ahb_clk);
++disable_iface_clk:
++	clk_disable_unprepare(qphy->iface_clk);
++disable_regs:
++	regulator_bulk_disable(ARRAY_SIZE(qphy->vregs), qphy->vregs);
++	return ret;
++}
++
++/*
++ * qusb2_phy_disable_phy - disable clocks and power down regulators for the PHY.
++ */
++static void qusb2_phy_disable_phy(struct qusb2_phy *qphy)
++{
++	if (!qphy->is_phy_enabled) {
++		dev_dbg(&qphy->phy->dev, "PHY already disabled, skipping\n");
++		return;
++	}
++
++	dev_vdbg(&qphy->phy->dev, "disabling PHY clocks and regulators\n");
++
++	if (!qphy->has_se_clk_scheme)
++		clk_disable_unprepare(qphy->ref_clk);
++
++	clk_disable_unprepare(qphy->cfg_ahb_clk);
++	clk_disable_unprepare(qphy->iface_clk);
++	regulator_bulk_disable(ARRAY_SIZE(qphy->vregs), qphy->vregs);
++	qphy->is_phy_enabled = false;
++}
++
++/*
++ * qusb2_phy_forward_role - forward a USB role to the controller.
++ *
++ * Only called after charger detection confirms the port is SDP or CDP, so
++ * the controller knows it should operate in device mode.
++ */
++static void qusb2_phy_forward_role(struct qusb2_phy *qphy, enum usb_role role)
++{
++	if (!qphy->controller_role_sw)
++		return;
++
++	dev_dbg(&qphy->phy->dev, "forwarding role %s to controller\n",
++		usb_role_string(role));
++
++	usb_role_switch_set_role(qphy->controller_role_sw, role);
++}
++
++static int qusb_phy_drive_dp_pulse(struct qusb2_phy *qphy)
++{
++	int ret;
++
++	dev_dbg(&qphy->phy->dev, "connected to a CDP, drive DP up\n");
++
++	ret = qusb2_phy_enable_phy(qphy);
++	if (ret)
++		return ret;
++
++	ret = reset_control_assert(qphy->phy_reset);
++	if (ret)
++		dev_err(&qphy->phy->dev, "phy assert failed\n");
++	usleep_range(100, 150);
++	ret = reset_control_deassert(qphy->phy_reset);
++	if (ret)
++		dev_err(&qphy->phy->dev, "phy deassert failed\n");
++
++	writel_relaxed(CLAMP_N_EN | FREEZIO_N | POWER_DOWN,
++			qphy->base + qphy->cfg->regs[QUSB2PHY_PORT_POWERDOWN]);
++	writel_relaxed(TERM_SELECT | XCVR_SELECT_FS | OP_MODE_NON_DRIVE |
++			SUSPEND_N, qphy->base + QUSB2PHY_PORT_UTMI_CTRL1);
++	writel_relaxed(UTMI_ULPI_SEL | UTMI_TEST_MUX_SEL,
++			qphy->base + QUSB2PHY_PORT_UTMI_CTRL2);
++	writel_relaxed(PLL_RESET_N_CNT_5,
++			qphy->base + QUSB2PHY_PLL_AUTOPGM_CTL1);
++	writel_relaxed(CLAMP_N_EN | FREEZIO_N,
++			qphy->base + qphy->cfg->regs[QUSB2PHY_PORT_POWERDOWN]);
++	writel_relaxed(REF_BUF_EN | REXT_EN | PLL_BYPASSNL | REXT_TRIM_0,
++			qphy->base + QUSB2PHY_PLL_PWR_CTRL);
++
++	usleep_range(5, 10);
++
++	writel_relaxed(0x15, qphy->base + QUSB2PHY_PLL_AUTOPGM_CTL1);
++	writel_relaxed(PLL_RESET_N | PLL_RESET_N_CNT_5,
++			qphy->base + QUSB2PHY_PLL_AUTOPGM_CTL1);
++	writel_relaxed(0x00, qphy->base + QUSB2PHY_PORT_QC1);
++	writel_relaxed(0x00, qphy->base + QUSB2PHY_PORT_QC2);
++
++	usleep_range(50, 60);
++
++	writel_relaxed(RDP_UP_EN, qphy->base + QUSB2PHY_PORT_QC2);
++
++	msleep(DP_PULSE_WIDTH_MSEC);
++
++	writel_relaxed(CLAMP_N_EN | FREEZIO_N | POWER_DOWN,
++			qphy->base + qphy->cfg->regs[QUSB2PHY_PORT_POWERDOWN]);
++	writel_relaxed(PLL_AUTOPGM_EN | PLL_RESET_N | PLL_RESET_N_CNT_5,
++			qphy->base + QUSB2PHY_PLL_AUTOPGM_CTL1);
++	writel_relaxed(UTMI_ULPI_SEL, qphy->base + QUSB2PHY_PORT_UTMI_CTRL2);
++	writel_relaxed(TERM_SELECT, qphy->base + QUSB2PHY_PORT_UTMI_CTRL1);
++
++	qusb2_phy_disable_phy(qphy);
++
++	return 0;
++}
++
++static void qusb_phy_port_state_work(struct work_struct *w)
++{
++	struct qusb2_phy *qphy = container_of(w, struct qusb2_phy,
++							port_det_w.work);
++	unsigned long delay = 0;
++	int status, ret = 0;
++
++	dev_dbg(&qphy->phy->dev, "port_state_work: state=%d vbus_active=%d id_state=%d\n",
++		qphy->port_state, qphy->vbus_active, qphy->id_state);
++
++	switch (qphy->port_state) {
++	case PORT_UNKNOWN:
++		if (!qphy->id_state) {
++			dev_dbg(&qphy->phy->dev, "ID grounded, entering host mode\n");
++			qphy->port_state = PORT_HOST_MODE;
++			qusb2_phy_forward_role(qphy, USB_ROLE_HOST);
++			return;
++		}
++
++		if (qphy->vbus_active) {
++			dev_dbg(&qphy->phy->dev, "VBUS active, starting DCD\n");
++
++			/* Enable DCD sequence */
++			ret = qusb2_phy_enable_phy(qphy);
++			if (ret)
++				return;
++
++			qusb_phy_chg_det_enable_seq(qphy, STATE_DCD);
++			qphy->port_state = PORT_DCD_IN_PROGRESS;
++			qphy->dcd_timeout = 0;
++			delay = CHG_DCD_POLL_TIME_MSEC;
++			break;
++		}
++		return;
++	case PORT_DISCONNECTED:
++		dev_dbg(&qphy->phy->dev, "port disconnected, resetting state\n");
++		qusb2_phy_disable_phy(qphy);
++		qphy->port_state = PORT_UNKNOWN;
++		qphy->dcp_charger = false;
++		break;
++	case PORT_DCD_IN_PROGRESS:
++		if (!qphy->vbus_active) {
++			dev_dbg(&qphy->phy->dev, "VBUS lost during DCD, aborting\n");
++
++			/* Disable PHY sequence */
++			qusb2_phy_disable_phy(qphy);
++			qphy->port_state = PORT_DISCONNECTED;
++			break;
++		}
++
++		status = qusb_phy_chg_det_status(qphy, STATE_DCD);
++		if (!status && qphy->dcd_timeout < CHG_DCD_TIMEOUT_MSEC) {
++			dev_dbg(&qphy->phy->dev, "DCD polling: timeout=%u ms\n",
++				qphy->dcd_timeout);
++			delay = CHG_DCD_POLL_TIME_MSEC;
++			qphy->dcd_timeout += delay;
++		} else if (status) {
++			dev_dbg(&qphy->phy->dev, "DCD complete, starting primary detection\n");
++			qusb_phy_chg_det_enable_seq(qphy, STATE_PRIMARY);
++			qphy->port_state = PORT_PRIMARY_IN_PROGRESS;
++			delay = CHG_PRIMARY_DET_TIME_MSEC;
++		} else if (qphy->dcd_timeout >= CHG_DCD_TIMEOUT_MSEC) {
++			dev_dbg(&qphy->phy->dev,
++				 "charger detected: DCP (DCD timeout after %u ms)\n",
++				 qphy->dcd_timeout);
++			qusb_phy_notify_charger(qphy,
++						POWER_SUPPLY_USB_TYPE_DCP);
++			qusb2_phy_disable_phy(qphy);
++			qphy->port_state = PORT_CHG_DET_DONE;
++		}
++		break;
++	case PORT_PRIMARY_IN_PROGRESS:
++		if (!qphy->vbus_active) {
++			dev_dbg(&qphy->phy->dev, "VBUS lost during primary detection, aborting\n");
++			qusb2_phy_disable_phy(qphy);
++			qphy->port_state = PORT_DISCONNECTED;
++			break;
++		}
++
++		status = qusb_phy_chg_det_status(qphy, STATE_PRIMARY);
++		if (status) {
++			dev_dbg(&qphy->phy->dev,
++				"primary detection positive, starting secondary detection\n");
++			qusb_phy_chg_det_enable_seq(qphy, STATE_SECONDARY);
++			qphy->port_state = PORT_SECONDARY_IN_PROGRESS;
++			delay = CHG_SECONDARY_DET_TIME_MSEC;
++
++		} else {
++			dev_dbg(&qphy->phy->dev, "charger detected: SDP (standard USB host)\n");
++			qusb2_phy_disable_phy(qphy);
++			qusb_phy_notify_charger(qphy, POWER_SUPPLY_USB_TYPE_SDP);
++			qusb2_phy_forward_role(qphy, USB_ROLE_DEVICE);
++			qphy->port_state = PORT_CHG_DET_DONE;
++		}
++		break;
++	case PORT_SECONDARY_IN_PROGRESS:
++		if (!qphy->vbus_active) {
++			dev_dbg(&qphy->phy->dev, "VBUS lost during secondary detection, aborting\n");
++			qusb2_phy_disable_phy(qphy);
++			qphy->port_state = PORT_DISCONNECTED;
++			break;
++		}
++
++		status = qusb_phy_chg_det_status(qphy, STATE_SECONDARY);
++		if (status) {
++			dev_dbg(&qphy->phy->dev, "charger detected: DCP (dedicated charging port)\n");
++			qusb_phy_notify_charger(qphy,
++						POWER_SUPPLY_USB_TYPE_DCP);
++			qphy->dcp_charger = true;
++		} else {
++			dev_dbg(&qphy->phy->dev, "charger detected: CDP (charging downstream port)\n");
++			qusb_phy_notify_charger(qphy,
++						POWER_SUPPLY_USB_TYPE_CDP);
++			qusb_phy_drive_dp_pulse(qphy);
++			qusb2_phy_disable_phy(qphy);
++			qusb2_phy_forward_role(qphy, USB_ROLE_DEVICE);
++		}
++
++		qphy->port_state = PORT_CHG_DET_DONE;
++		break;
++	case PORT_CHG_DET_DONE:
++		if (!qphy->vbus_active) {
++			dev_dbg(&qphy->phy->dev, "VBUS removed, resetting from CHG_DET_DONE\n");
++
++			if (qphy->dcp_charger) {
++				qphy->dcp_charger = false;
++				qusb2_phy_disable_phy(qphy);
++			} else {
++				qusb2_phy_forward_role(qphy, USB_ROLE_NONE);
++			}
++			qphy->port_state = PORT_UNKNOWN;
++		}
++
++		return;
++	case PORT_HOST_MODE:
++		if (qphy->id_state) {
++			dev_dbg(&qphy->phy->dev, "ID released, leaving host mode\n");
++			qphy->port_state = PORT_UNKNOWN;
++			qusb2_phy_forward_role(qphy, USB_ROLE_NONE);
++		}
++
++		if (!qphy->vbus_active)
++			return;
++
++		break;
++	default:
++		return;
++	}
++
++	queue_delayed_work(system_freezable_wq,
++			&qphy->port_det_w, msecs_to_jiffies(delay));
++}
++
+ static inline void qusb2_write_mask(void __iomem *base, u32 offset,
+ 				    u32 val, u32 mask)
+ {
+@@ -767,29 +1241,16 @@ static int qusb2_phy_init(struct phy *phy)
+ 
+ 	dev_vdbg(&phy->dev, "%s(): Initializing QUSB2 phy\n", __func__);
+ 
+-	/* turn on regulator supplies */
+-	ret = regulator_bulk_enable(ARRAY_SIZE(qphy->vregs), qphy->vregs);
++	/* Power up regulators and enable clocks (including ref_clk if needed). */
++	ret = qusb2_phy_enable_phy(qphy);
+ 	if (ret)
+ 		return ret;
+ 
+-	ret = clk_prepare_enable(qphy->iface_clk);
+-	if (ret) {
+-		dev_err(&phy->dev, "failed to enable iface_clk, %d\n", ret);
+-		goto poweroff_phy;
+-	}
+-
+-	/* enable ahb interface clock to program phy */
+-	ret = clk_prepare_enable(qphy->cfg_ahb_clk);
+-	if (ret) {
+-		dev_err(&phy->dev, "failed to enable cfg ahb clock, %d\n", ret);
+-		goto disable_iface_clk;
+-	}
+-
+ 	/* Perform phy reset */
+ 	ret = reset_control_assert(qphy->phy_reset);
+ 	if (ret) {
+ 		dev_err(&phy->dev, "failed to assert phy_reset, %d\n", ret);
+-		goto disable_ahb_clk;
++		return ret;
+ 	}
+ 
+ 	/* 100 us delay to keep PHY in reset mode */
+@@ -798,7 +1259,7 @@ static int qusb2_phy_init(struct phy *phy)
+ 	ret = reset_control_deassert(qphy->phy_reset);
+ 	if (ret) {
+ 		dev_err(&phy->dev, "failed to de-assert phy_reset, %d\n", ret);
+-		goto disable_ahb_clk;
++		goto assert_phy_reset;
+ 	}
+ 
+ 	/* Disable the PHY */
+@@ -887,23 +1348,15 @@ static int qusb2_phy_init(struct phy *phy)
+ 		dev_err(&phy->dev,
+ 			"QUSB2PHY pll lock failed: status reg = %x\n", val);
+ 		ret = -EBUSY;
+-		goto disable_ref_clk;
++		goto assert_phy_reset;
+ 	}
+ 	qphy->phy_initialized = true;
+ 
+ 	return 0;
+ 
+-disable_ref_clk:
+-	if (!qphy->has_se_clk_scheme)
+-		clk_disable_unprepare(qphy->ref_clk);
+ assert_phy_reset:
+ 	reset_control_assert(qphy->phy_reset);
+-disable_ahb_clk:
+-	clk_disable_unprepare(qphy->cfg_ahb_clk);
+-disable_iface_clk:
+-	clk_disable_unprepare(qphy->iface_clk);
+-poweroff_phy:
+-	regulator_bulk_disable(ARRAY_SIZE(qphy->vregs), qphy->vregs);
++	qusb2_phy_disable_phy(qphy);
+ 
+ 	return ret;
+ }
+@@ -921,16 +1374,83 @@ static int qusb2_phy_exit(struct phy *phy)
+ 
+ 	reset_control_assert(qphy->phy_reset);
+ 
+-	clk_disable_unprepare(qphy->cfg_ahb_clk);
+-	clk_disable_unprepare(qphy->iface_clk);
+-
+-	regulator_bulk_disable(ARRAY_SIZE(qphy->vregs), qphy->vregs);
++	qusb2_phy_disable_phy(qphy);
+ 
+ 	qphy->phy_initialized = false;
+ 
+ 	return 0;
+ }
+ 
++/*
++ * qusb2_role_switch_set - USB role switch callback.
++ *
++ * Invoked by the role-switch framework when an upstream user (e.g. a Type-C
++ * port manager) requests a role change.  For USB_ROLE_DEVICE we kick off
++ * charger detection; the state machine will forward the role to the
++ * controller switch only after confirming SDP or CDP.  For USB_ROLE_HOST
++ * and USB_ROLE_NONE we forward immediately.
++ */
++static int qusb2_role_switch_set(struct usb_role_switch *sw, enum usb_role role)
++{
++	struct qusb2_phy *qphy = usb_role_switch_get_drvdata(sw);
++
++	dev_dbg(&qphy->phy->dev, "role switch set: %s\n", usb_role_string(role));
++
++	mutex_lock(&qphy->role_lock);
++	qphy->current_role = role;
++
++	/*
++	 * If the controller role switch was not available at probe time (e.g.
++	 * the USB controller driver registered its role switch after us), try
++	 * to look it up now.  A return of NULL or -ENODEV simply means there
++	 * is no controller switch to forward to, which is fine.
++	 */
++	if (!qphy->controller_role_sw) {
++		struct usb_role_switch *dsw = usb_role_switch_get(&qphy->phy->dev);
++
++		if (IS_ERR_OR_NULL(dsw)) {
++			if (!IS_ERR(dsw) || PTR_ERR(dsw) == -ENODEV)
++				dev_dbg(&qphy->phy->dev,
++					"no controller role switch available\n");
++			else
++				dev_err(&qphy->phy->dev,
++					"failed to get controller role switch: %ld\n",
++					PTR_ERR(dsw));
++		} else {
++			qphy->controller_role_sw = dsw;
++		}
++	}
++
++	switch (role) {
++	case USB_ROLE_DEVICE:
++		/*
++		 * VBUS is active; start charger detection.  The state machine
++		 * will forward USB_ROLE_DEVICE controller only for SDP/CDP.
++		 */
++		qphy->vbus_active = 1;
++		qphy->id_state = 1;
++		qphy->port_state = PORT_UNKNOWN;
++		queue_delayed_work(system_freezable_wq, &qphy->port_det_w, 0);
++		break;
++	case USB_ROLE_HOST:
++		qphy->id_state = 0;
++		qphy->vbus_active = 0;
++		qphy->port_state = PORT_UNKNOWN;
++		queue_delayed_work(system_freezable_wq, &qphy->port_det_w, 0);
++		break;
++	case USB_ROLE_NONE:
++	default:
++		qphy->vbus_active = 0;
++		qphy->id_state = 1;
++		cancel_delayed_work(&qphy->port_det_w);
++		qusb2_phy_forward_role(qphy, USB_ROLE_NONE);
++		break;
++	}
++	mutex_unlock(&qphy->role_lock);
++
++	return 0;
++}
++
+ static const struct phy_ops qusb2_phy_gen_ops = {
+ 	.init		= qusb2_phy_init,
+ 	.exit		= qusb2_phy_exit,
+@@ -1131,7 +1651,29 @@ static int qusb2_phy_probe(struct platform_device *pdev)
+ 
+ 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+ 
+-	return PTR_ERR_OR_ZERO(phy_provider);
++	if (IS_ERR(phy_provider))
++		return PTR_ERR(phy_provider);
++
++	mutex_init(&qphy->role_lock);
++	INIT_DELAYED_WORK(&qphy->port_det_w, qusb_phy_port_state_work);
++
++	if (device_property_read_bool(dev, "usb-role-switch")) {
++		struct usb_role_switch_desc role_sw_desc = {};
++
++		role_sw_desc.fwnode = dev->fwnode;
++		role_sw_desc.set = qusb2_role_switch_set;
++		role_sw_desc.driver_data = qphy;
++
++		qphy->connector_role_sw = usb_role_switch_register(dev, &role_sw_desc);
++		if (IS_ERR(qphy->connector_role_sw)) {
++			ret = PTR_ERR(qphy->connector_role_sw);
++			dev_err(dev, "failed to register role switch, %d\n", ret);
++			return ret;
++		}
++	}
++	qphy->controller_role_sw = NULL;
++
++	return 0;
+ }
+ 
+ static struct platform_driver qusb2_phy_driver = {
 
 -- 
 2.34.1
