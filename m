@@ -2,12 +2,12 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6D786606A330
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Nov 2026 14:06:51 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0821E606A321
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Nov 2026 14:09:23 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=DB69eerW;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=DGfjdUv4;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=hWwieYS2
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=UxYAdnqJ;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=UUp3Ssbp;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=en7Uabc9
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -15,84 +15,84 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=a6yN7qEIoTslJtMlFBrync+Z3IySoiLZ/Gitzm/qmgc=; b=DB69eerW81BKNWFFnPCuv8faPs
-	y5pTYiAU0o4f/4wr8H23/0uzdAImX/nRO0MaDVMu+r6rpsIyvxJcYQKZXqEGiI/gIbGNWPUE9Fkzj
-	2700+qcL0XfuiopKEatUkM42EJdqNTdjOfx9zrqXYqjhkZAer02xxnCrvoW041dK+XTijmQ0/qIst
-	0c5kPDAbQw76QWNqdxKQVxSLxnEl2V7dyr9GHwxxqJY2zABrYI2c/qDrg/cwZESHpG+FBbomuehsQ
-	OtuWOZIWjysXayJnqXqPbrZi/OoCO2w6EXCxO7zI6oWThUBltj9D65xuHkCHBkoY+yMHFC9TGRLcC
-	eGtm41yg==;
+	bh=AiZtppcuhHfuVOWKv8/D39htcIz+1UoP1Bjyyzcy1jg=; b=UxYAdnqJuUkjjdpn9yI64jf5IU
+	qY2sBOgKU1TftfiVZK4hTL6Z8Sn7mdUEO3aXQv7r0GHEqXL7vM+N5B+PABEC3u3mCTF3YninZzYwK
+	FHqZCsw1pP3F9IfeYagXxpuZGO0rpZRdcvJTr7XAhQwYkW4y+YA7MbTH52nnB6vG0hq9NeMARb6XS
+	kG41k4Dtd0cpJJanFCO5/S9XBWwVi/bfPJuDjtGK4vvhAzwFRZxlDtfm3EbY8XIdcPJP1CpLjVFde
+	FplzZSDuRGjfY6K/D4mAK0ct3yz9JP8x93c9tDjmb1/Ajh6suAZ8KHMdtWqrhPkppX89+qeaRyax6
+	bG4k30Xg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xR8yR-00000006ukV-0iKd;
-	Wed, 11 Nov 2026 14:06:51 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1xR90s-00000006v31-3GAe;
+	Wed, 11 Nov 2026 14:09:22 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xR8yP-00000006ujx-0AnO
+	id 1xR90p-00000006v2R-3khV
 	for linux-phy@lists.infradead.org;
-	Wed, 11 Nov 2026 14:06:50 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6ABCZ3wP3292085
-	for <linux-phy@lists.infradead.org>; Wed, 11 Nov 2026 14:06:48 GMT
+	Wed, 11 Nov 2026 14:09:21 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6ABCZ6gD2338330
+	for <linux-phy@lists.infradead.org>; Wed, 11 Nov 2026 14:09:19 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=VNI21V2lgtz8Hzxic3v5KFi0
-	FrkQQXKocGAVFanNboI=; b=DGfjdUv4+0wwjmeFWoYwb2ro+r/udE3aAA/oqPIw
-	ZKWbQgx2p9MmF/XtqTK8XexmCYHJOR7R/XRdRSTqGcu0HBlrXXXpt3/Nd5VS6/kO
-	lso3tYXcgIEoYmwFeRDrpKM+UQlHiFM1zwieAElsE+Vv5Rc4IwnfgZZpxUtudSin
-	lBcwKuyvjdygaE4mj4rCSyRdR345eGIajAF21QoB8T4C/Kce8aLTEjUnxDmJWlqz
-	WW+3dMRg+8ADOF57x7GKIkKYuspxTxafAMVTkWNATRAyS5cen7N/CbJdz6xOeoKF
-	1Uihh/sP0TXwyTHX6d6U899uXiR5q5j8kX/SRUFNbU6uMQ==
-Received: from mail-ua1-f72.google.com (mail-ua1-f72.google.com [209.85.222.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hvdnp2sqc-1
+	:references:subject:to; s=qcppdkim1; bh=QPstyFoqSPmuHiNdLUorh+Rr
+	f2UfIpcMs4IumwAd9y4=; b=UUp3SsbpMCxDkmG8IVteiSnCXOXpT8PaZqwzPyzO
+	DHGJrREKLf/xq8zpVZgXdboYDqvD3DvFlaDEE7BzXgLiSUbNo4eAyUjMAdsNJW7Y
+	gP97dCBnH3+ykf0gYuvz8RczrG1rXDSZMUs85q+f76ua6PA5G0snPAMRUW4H4IXA
+	6p0C9Lb8Ic4iHXE6qvkWvFVABLAa0vrxlgnux/K0pkA/wSNFHIuCtVO8BGhvlMx5
+	cMoO28JHX1QrYl3fKAJCzhYlb81VqqItDUTLDhpMoK+N6+VuxxZ5RX34LCxyPU+d
+	UZxiP2QIYua22z53/B+CpmdaaNoXSv6j8/JG5yrWa3ec7w==
+Received: from mail-vk1-f197.google.com (mail-vk1-f197.google.com [209.85.221.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hvdnmay44-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 11 Nov 2026 14:06:48 +0000 (GMT)
-Received: by mail-ua1-f72.google.com with SMTP id a1e0cc1a2514c-9806756ea40so2439050241.1
-        for <linux-phy@lists.infradead.org>; Wed, 11 Nov 2026 06:06:48 -0800 (PST)
+	for <linux-phy@lists.infradead.org>; Wed, 11 Nov 2026 14:09:18 +0000 (GMT)
+Received: by mail-vk1-f197.google.com with SMTP id 71dfb90a1353d-5ece56bfeadso2613008e0c.2
+        for <linux-phy@lists.infradead.org>; Wed, 11 Nov 2026 06:09:18 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794406004; x=1795010804; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1794406143; x=1795010943; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:content-type:mime-version
          :references:message-id:subject:cc:to:from:date:from:to:cc:subject
          :date:message-id:reply-to:content-type;
-        bh=VNI21V2lgtz8Hzxic3v5KFi0FrkQQXKocGAVFanNboI=;
-        b=hWwieYS2eCtAQEp0/CyOnjEpK1kZR/yfk34z6t84zejcJvAxDY9g89nCNamQmmRl2Q
-         lQm0i9L48z28v4s7t15tAT9L7egQ2LG5V6Uo8rB77WvZ7x3SBPNNa9vT6/Xweo12asaU
-         dVt+dnyIz68vMguv2SJTPVNzofu/5MLEjgD2+FWBd21RmHbtiheDYz+0t+l7LmYmCoiv
-         DAoirTTiUV94/h4vuQ26FMCXC/buQEBZAH5o1/ENNwDkHsi7zlmbgIxgI34BPbK/qZb+
-         Iy9zJNnH6xqKWRrbzmjvR6z4ar9MTknKhaGbHeE2fnkTE89vWbM5XG4FYAd83zMV4NRJ
-         xR1w==
+        bh=QPstyFoqSPmuHiNdLUorh+Rrf2UfIpcMs4IumwAd9y4=;
+        b=en7Uabc9MUnOpQccbEc2+Idl7H1/gk01jpCGQiXZztXyp8aFg9qyr6nGm09fS5F9VU
+         7OJXWrkauuH+WPQNeUpeBrp6F59GU/RVP4BLaNiSIPOvWwQqNlowGXutakbgJ+QwsCsO
+         n/ZDF8vfnAhojdJyDJxZggCXgLs4Tem4RJ0lD10YWRm2CKSq8SNSe/9x3d0/oLofRGFM
+         yfr8bq0bdhZybcA+uJDr2sYKLrzWXNGZzccfR4llykRp4obAAJPKkz5oOu6atXmWmJSu
+         mvuIviASeA83weL9IzM1EKvfAma5TwdQChosuISWHSH8m+4Tp10oEdv6FnWkRzyR+vqp
+         rOvw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794406004; x=1795010804;
+        d=1e100.net; s=20260707; t=1794406143; x=1795010943;
         h=in-reply-to:content-disposition:content-type:mime-version
          :references:message-id:subject:cc:to:from:date:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=VNI21V2lgtz8Hzxic3v5KFi0FrkQQXKocGAVFanNboI=;
-        b=SxP5VSndpobOcGk53B+PuZyb0OJEXZVAI1411tLIwBYiTKsDIOwDidduMbeiNwtpjy
-         C6zSRA/2XFvwcoHc7U522ny9Y/jNTl+vjR+H+qVzJ+OqfoyhiJOjZ8hD9WWAob4q0/xW
-         pzdk3WtzYUf0Izd4nGtaJKaLADyWSQwja0E7XjswnxRd/ud3k9RYMLwmMYc9paah9pmK
-         ITWN+gIvTIrJlYm4E9pO5nqTLZKegxvYNFFHZHowZ9sMWISNjRENRK4MZVo4q4+oxrsT
-         i/jtgsXS+xrkWVS909nXP0Aiu/SyY71oX8dQl3Z/g39ZfgeTOl2ISZJNxAyuD1ZNRRRd
-         ePuQ==
-X-Forwarded-Encrypted: i=1; AL+hErE81mT9zUI/Uk0F1+JWlSPzDArkj99oDqbUnqhyO/lhcabhBct8u6pN9YOC7LhsHOZoz/5hu68gcp4=@lists.infradead.org
-X-Gm-Message-State: APuU4Z+hULDl0KX9F4IHc9R6wt1WHqezvcNpAJCAAFCuuv2PhoTUS9nE
-	jajSTZtmYZFownHQu6NhIG+TfOa6L2ZA/60gWqisqaXd6nbv0tDfFJi/BtZY4CJKfuN1OxcNtUn
-	rBGaRCXPWglXm2o+yQMX8/MHvUg2ybxB+e/IgPGQUNcKRx9p9+87BdBsaohAcY/mN5OMq
-X-Gm-Gg: AYBFou1AueC8SD3czcBJk7SfDkVYfS4MFR2s1tW73DDfJMhunAXCeCL3uo2R64g6++P
-	t6gBNW9vZf4/0Toee50mMy/JPD31wl/PAo3CgcjfigqrcqJvH3BdJ28Y5Ui1YDzYx53aq+IYpFS
-	ax/28zyDDUATW7fgY1Lva4/YxV81f9r2CxFnX9lsvP9PG4MeBGJ1w9vXCFvoBxFUWwIGRUYK/I+
-	Kv0xzK8aeYvcuTDhvr1CYZi5XH/V/7L/5qXQMb9BpGibLm8UH7xpy8b4CEknnsSCEX4SEgdYuhu
-	FjugbQUZeRtoLKzTaZxQVyDYgmhRKq1iZll1U9Gp46uurUaUg4CNAFYzl+VCEu5iyJYv7T9ZJq6
-	HSon2uhZVesg3fYF5ZOoQhy9diSvucRZOEdAlkuLhZU+7PTI/J/D0evviIPYdnCPVe6huYlO0qW
-	RzIA2N0A9AYs7dsPDiTbY5ZanaxYEcqFfjZVM3j7aeXsMSG+KSvA6nTXXTkWih2w==
-X-Received: by 2002:a05:6122:179b:b0:5ea:d10f:2394 with SMTP id 71dfb90a1353d-5ee1c40c764mr813245e0c.10.1794406004260;
-        Wed, 11 Nov 2026 06:06:44 -0800 (PST)
-X-Received: by 2002:a05:6122:179b:b0:5ea:d10f:2394 with SMTP id 71dfb90a1353d-5ee1c40c764mr813200e0c.10.1794406003823;
-        Wed, 11 Nov 2026 06:06:43 -0800 (PST)
+        bh=QPstyFoqSPmuHiNdLUorh+Rrf2UfIpcMs4IumwAd9y4=;
+        b=CYmWwCdEjvRYxjhPrQjuPf3Kg7Pym2sklna5EMg0Bew0rBqGMJGVCyIQ020vGAL4OY
+         TcgbdimxVLOMp+3GNo5LguRFREch/2wxIrX1uGEseobabLYAhYGLDlZA9M7KihMNwkTf
+         wkaHpe/SBfyYOLwMSD645FcYw1IPohzXH/xz23Jcq0O4lIE/CcUI6xR3Co0GqFG6FeSE
+         QjUqGPQUH63caNIEh0Zfx3IL29BvMydUKuFxKJj0Tt5KBtt2s8Je4BL/6ef1cIUwYsP9
+         0iS+ikmQvveJY636hN4CwPFAlarGgusMICff4zPsEUL4uMSev6FB98L6Fa+9eGA9ojPI
+         Hfmw==
+X-Forwarded-Encrypted: i=1; AL+hErEcriswUr/dA4ZqqOhetL65se11oc5ikYCd0MjorUrlPzHOv1IKSJFAOv7JMpUlUaoPkeslFSvxta0=@lists.infradead.org
+X-Gm-Message-State: APuU4Z8eRKnPMhh5OGGJ6YvqR2CeF9TbxnKOWrXuZDxPNhFlIDByq84T
+	JDzkBdr0fPRSgVkBOG9iU5gEveb8fEVnHNEYoKE5L8oLzVuShGYjiHc4H4tq1+Dgpnm+bkrWd0t
+	BK/YMvzRuBr2NVzrXdE11mKVSeqIm3w8yX+BlRbnBh91DEIyhoeKmKGlXmly+p0jKznMW
+X-Gm-Gg: AYBFou3U32Q4gQEZSxF8gQbACwGeSMtGFLQ2shWchWpSJRqd/TfApIaD1gjdbAGvprf
+	r/XMLoWJL8OdY57rmpLDoCVdgf9tT1d7Spok10OuP2n88wrClOpKiwA+wUrNDNk5AdEXbjvclJ2
+	lLQbwnpIIE8PusjxizUNg3eIH3ER5gZr8r0sVUf+0ywHKV4u4vtA3u/w1gOq5p9WSZ/RylZSZbh
+	aVnaURwNTBqKL1TnpaGRADG3HT0T7IkmJZBOp9HoeRyiH+ySAsGBQph6zt1azUGQpgsKV6BTe1x
+	/9BQFb41maJ13v4eUF/8R66K6PgmuvGrLObQrlZf0HpMQujTepvpVHATiEvQoqleeTERFdDTQzF
+	fZvoIvd2RNnSMYUHgdsjbaiFABjs88XaqYlcNQJWufnMVFsWwUBqx3H5FiTcyS0QBZHKYQFifWM
+	mxgMY1D/cI5DHnPwXJZgG1AfUGv0TSZwE/yE2TMyCRSDlZUJ11pi2vXf3EeIpr2A==
+X-Received: by 2002:a05:6122:4f98:b0:5ea:c722:b3a with SMTP id 71dfb90a1353d-5ee1c3b5490mr777644e0c.7.1794406143350;
+        Wed, 11 Nov 2026 06:09:03 -0800 (PST)
+X-Received: by 2002:a05:6122:4f98:b0:5ea:c722:b3a with SMTP id 71dfb90a1353d-5ee1c3b5490mr777546e0c.7.1794406142456;
+        Wed, 11 Nov 2026 06:09:02 -0800 (PST)
 Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5c159702ae0sm815407e87.20.2026.11.11.06.06.41
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5c157bb87c6sm972630e87.78.2026.11.11.06.09.01
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 11 Nov 2026 06:06:42 -0800 (PST)
-Date: Wed, 11 Nov 2026 16:06:39 +0200
+        Wed, 11 Nov 2026 06:09:01 -0800 (PST)
+Date: Wed, 11 Nov 2026 16:08:59 +0200
 From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 To: naidu nama <naidu.nama@oss.qualcomm.com>
 Cc: vkoul@kernel.org, neil.armstrong@linaro.org, mani@kernel.org,
@@ -104,43 +104,44 @@ Cc: vkoul@kernel.org, neil.armstrong@linaro.org, mani@kernel.org,
         linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
         quic_riteshk@quicinc.com, quic_vproddut@quicinc.com,
         quic_mkuntuma@quicinc.com, mahadevan.p@oss.qualcomm.com
-Subject: Re: [PATCH v2 2/3] drm/msm/dp: Remove redundant force_link_train flag
-Message-ID: <gfzdwaeouexratptiktpzodi44x6ztsfttqajzr5wxtrluyqjx@axwlv5jlakcc>
+Subject: Re: [PATCH v2 3/3] drm/msm/dp: continue link training downgrade when
+ cable is still plugged
+Message-ID: <x74bp2hkm4r2qz7oelhwpgexd3tslsxgc67pu22kmlo5yjy33z@v5ka23e5aqqi>
 References: <20261111104434.2222182-1-naidu.nama@oss.qualcomm.com>
- <20261111104434.2222182-3-naidu.nama@oss.qualcomm.com>
+ <20261111104434.2222182-4-naidu.nama@oss.qualcomm.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20261111104434.2222182-3-naidu.nama@oss.qualcomm.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTExMDA1NiBTYWx0ZWRfX1+4vFXhQ1saB
- SUQsGimjGKkdu3ymAhaYBkhblfmiTYbFoJLWlpySrb0cg6D0fJ9W11HNamZSQhm5H5zkQW/yp80
- VrT5HWGdS+thEZTulFZSzmJunczKXrw9RfRoOzBNZ+cJk5eIuvuyATHjhGnxZgxlctD/0+YKd3k
- xJfBC81fXmSFfApJefp4K/nokmmcKiIP/p5gwjuVXZ2A6n9jFnJYaTRxwml/QnQgWuAf5W62K4J
- suqyzmAnyWXYIZYdalcHe/2ivhu4V9EzOIxRxcqQPNBZhkUZCgOzBQYjWz5sL8Blj8vffW33Cu/
- GEq4NbX5/xAk4qo8McGOgYQLVM9v1gZotu+Q9rGeay/ltRUht8G40soR/KpGBhw/oYxOhViQzDA
- RbZH3DooKB+G9+0pv7JUwg6AR3t4xOq4+iGj8e45PJBxWMXC2til8/g3GpT9p8+0HUNjRUgsI8b
- Vjz7TCAMiV6YGD71wnw==
-X-Proofpoint-GUID: nWQw-Ukzj2NyKLQv5AEDxGsCrXH78QqC
-X-Proofpoint-ORIG-GUID: nWQw-Ukzj2NyKLQv5AEDxGsCrXH78QqC
-X-Authority-Analysis: v=2.4 cv=NK1AaE6g c=1 sm=1 tr=0 ts=6af47678 cx=c_pps
- a=ULNsgckmlI/WJG3HAyAuOQ==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+In-Reply-To: <20261111104434.2222182-4-naidu.nama@oss.qualcomm.com>
+X-Proofpoint-ORIG-GUID: TJbmsGse5K524a1s0qyv6e9wzha3i9f6
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTExMDA1NiBTYWx0ZWRfX/Am2kgspzmKy
+ 6l3Z2oaSaet/Sd7zn8DF5SdLWFRc83gPzueJdNhwIdx0zZGVtVy3YHuJzGByqFxG7b4mTlil2qM
+ 7Eeney3B6xhEfamcTEdFTqZLe6pz32k=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTExMDA1NiBTYWx0ZWRfX6ZPxbKpv28oa
+ +27YGcPmP0kp5eq295ZQnHoak3TnzIfTp/jy8Pjrrf6ZdiSpQZUyQusqs1ujyTO3IAkhiZI4rL1
+ cyfvMErawq/9WmNnj34ni2yAOGTl9GgO7CtJHufQ2ovLG8zOHbvMrc/r6GlVrkAFGoq+ifpLy2f
+ xbDXH0gsyjHDywJwwobLklKqWVF9JGrU4W+rmxkjRfExQcHhch3i2zDM/cTYiL/eJMKMtvwR7SW
+ gkIb8a7KXOINjObhehoc4KJV41ffI92O8t+DpmUVfsm15x5BdoG8X5DvcCAR6oxrMr1USetcHBr
+ 8CXYSI7thH/bOi5OMI7NVs9AJ1MQQlBgESmZwYXlWkLy8m4lT4obkmmo4SZmEgxfzrpn2agzoBT
+ 7fYe+SlsSNNzlC1K5NxoqR5OTe5XCSvV5uxADPiZL1xwS1OZWwzxO4i8cNnd9mzLASqBiZrWQoU
+ d/kMr8CJ0Q9wY+ifdrQ==
+X-Proofpoint-GUID: TJbmsGse5K524a1s0qyv6e9wzha3i9f6
+X-Authority-Analysis: v=2.4 cv=MpzHeGae c=1 sm=1 tr=0 ts=6af4770e cx=c_pps
+ a=JIY1xp/sjQ9K5JH4t62bdg==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
  a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22 a=EUspDBNiAAAA:8
- a=uVK0n7524QBmBBgzDoUA:9 a=CjuIK1q_8ugA:10 a=1WsBpfsz9X-RYQiigVTh:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTExMDA1NiBTYWx0ZWRfX28XUes6ZwudP
- GcVBgJxciYllDQ93dx/saQMd1P13e/5evBSfVPnx3bnZtpFUPPJRx8sW9ADk/kFq2YSmz6zl3c1
- TXIS8EgqVN5HblehzDBvNLDw1CuFbV8=
+ a=u7WPNUs3qKkmUXheDGA7:22 a=gowsoOTTUOVcmtlkKump:22 a=EUspDBNiAAAA:8
+ a=uXSOaOdxFjozXxwA47UA:9 a=CjuIK1q_8ugA:10 a=tNoRWFLymzeba-QzToBc:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-11_02,2026-11-11_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 spamscore=0 clxscore=1015 suspectscore=0 lowpriorityscore=0
- adultscore=0 malwarescore=0 priorityscore=1501 impostorscore=0 bulkscore=0
+ bulkscore=0 clxscore=1015 impostorscore=0 lowpriorityscore=0 phishscore=0
+ suspectscore=0 spamscore=0 malwarescore=0 priorityscore=1501 adultscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611110056
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261111_060649_085863_A219B52F 
-X-CRM114-Status: GOOD (  14.78  )
+X-CRM114-CacheID: sfid-20261111_060920_052979_6EE409D6 
+X-CRM114-Status: GOOD (  28.16  )
 X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -161,25 +162,159 @@ X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Wed, Nov 11, 2026 at 04:13:54PM +0530, naidu nama wrote:
+On Wed, Nov 11, 2026 at 04:13:55PM +0530, naidu nama wrote:
 > From: Saurabh Anand <saurabh.anand@oss.qualcomm.com>
 > 
-> force_link_train is always false when passed to
-> msm_dp_ctrl_prepare_stream_on(): the initial link is trained by
-> msm_dp_ctrl_on_link(), and the flag is cleared before stream preparation.
-> For active streams, it is never set.
+> During a Type-C reconnect the AUX channel may report link-disconnected
+> transiently while the physical cable is still present. The link training
+> retry loop in msm_dp_ctrl_on_link() was aborting immediately on any
+> msm_dp_aux_is_link_connected() failure, preventing the rate/lane downgrade
+> path from running.
 > 
-> Remove the dead flag and parameter. Stream preparation still retrains
-> when channel equalization is incomplete.
+> When the display is known to be plugged (msm_dp_ctrl->plugged), an AUX
+> link-disconnected status is likely a transient glitch rather than a true
+> unplug. Allow the downgrade loop to continue in that case by requiring both
+> conditions before breaking out of the retry loop: AUX reports disconnected
+> and the display is not plugged.
+
+Is there a reason to assume that DP is not plugged at this point? I
+guess not. But the other issue is: what if the DP gets unplugged in the
+middle of link training.
+
 > 
 > Signed-off-by: Saurabh Anand <saurabh.anand@oss.qualcomm.com>
-> ---
->  drivers/gpu/drm/msm/dp/dp_ctrl.c    | 5 ++---
->  drivers/gpu/drm/msm/dp/dp_ctrl.h    | 3 +--
->  drivers/gpu/drm/msm/dp/dp_display.c | 4 +---
->  3 files changed, 4 insertions(+), 8 deletions(-)
 
-The same SoB comment.
+SoB
+
+> ---
+>  drivers/gpu/drm/msm/dp/dp_ctrl.c    | 15 ++++++++-------
+>  drivers/gpu/drm/msm/dp/dp_ctrl.h    |  4 ++--
+>  drivers/gpu/drm/msm/dp/dp_display.c |  7 +++----
+>  3 files changed, 13 insertions(+), 13 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/msm/dp/dp_ctrl.c b/drivers/gpu/drm/msm/dp/dp_ctrl.c
+> index 6b9d9a76ba05..f8a6bd7b0d10 100644
+> --- a/drivers/gpu/drm/msm/dp/dp_ctrl.c
+> +++ b/drivers/gpu/drm/msm/dp/dp_ctrl.c
+> @@ -2274,7 +2274,8 @@ void msm_dp_ctrl_off_pixel_clk(struct msm_dp_ctrl *msm_dp_ctrl, enum msm_dp_stre
+>  }
+>  
+>  static int msm_dp_ctrl_process_phy_test_request(struct msm_dp_ctrl_private *ctrl,
+> -						struct msm_dp_panel *panel)
+> +						struct msm_dp_panel *panel,
+> +						bool plugged)
+
+Can it ever be false here with your patch in place?
+
+>  {
+>  	int ret;
+>  	unsigned long pixel_rate;
+> @@ -2293,7 +2294,7 @@ static int msm_dp_ctrl_process_phy_test_request(struct msm_dp_ctrl_private *ctrl
+>  	msm_dp_ctrl_off_pixel_clk(&ctrl->msm_dp_ctrl, panel->stream_id);
+>  	msm_dp_ctrl_off_link(&ctrl->msm_dp_ctrl, panel);
+>  
+> -	ret = msm_dp_ctrl_on_link(&ctrl->msm_dp_ctrl, panel);
+> +	ret = msm_dp_ctrl_on_link(&ctrl->msm_dp_ctrl, panel, plugged);
+>  	if (ret) {
+>  		DRM_ERROR("failed to enable DP link controller\n");
+>  		return ret;
+> @@ -2310,7 +2311,7 @@ static int msm_dp_ctrl_process_phy_test_request(struct msm_dp_ctrl_private *ctrl
+>  }
+>  
+>  void msm_dp_ctrl_handle_sink_request(struct msm_dp_ctrl *msm_dp_ctrl,
+> -				     struct msm_dp_panel *panel)
+> +				     struct msm_dp_panel *panel, bool plugged)
+>  {
+>  	struct msm_dp_ctrl_private *ctrl;
+>  	u32 sink_request = 0x0;
+> @@ -2325,7 +2326,7 @@ void msm_dp_ctrl_handle_sink_request(struct msm_dp_ctrl *msm_dp_ctrl,
+>  
+>  	if (sink_request & DP_TEST_LINK_PHY_TEST_PATTERN) {
+>  		drm_dbg_dp(ctrl->drm_dev, "PHY_TEST_PATTERN request\n");
+> -		if (msm_dp_ctrl_process_phy_test_request(ctrl, panel)) {
+> +		if (msm_dp_ctrl_process_phy_test_request(ctrl, panel, plugged)) {
+>  			DRM_ERROR("process phy_test_req failed\n");
+>  			return;
+>  		}
+> @@ -2377,7 +2378,7 @@ static bool msm_dp_ctrl_channel_eq_ok(struct msm_dp_ctrl_private *ctrl)
+>  }
+>  
+>  int msm_dp_ctrl_on_link(struct msm_dp_ctrl *msm_dp_ctrl,
+> -			struct msm_dp_panel *panel)
+> +			struct msm_dp_panel *panel, bool plugged)
+>  {
+>  	int rc = 0;
+>  	struct msm_dp_ctrl_private *ctrl;
+> @@ -2427,7 +2428,7 @@ int msm_dp_ctrl_on_link(struct msm_dp_ctrl *msm_dp_ctrl,
+>  			break;
+>  		} else if (training_step == DP_TRAINING_1) {
+>  			/* link train_1 failed */
+> -			if (!msm_dp_aux_is_link_connected(ctrl->aux))
+> +			if (!msm_dp_aux_is_link_connected(ctrl->aux) && !plugged)
+>  				break;
+>  
+>  			drm_dp_dpcd_read_link_status(ctrl->aux, link_status);
+> @@ -2452,7 +2453,7 @@ int msm_dp_ctrl_on_link(struct msm_dp_ctrl *msm_dp_ctrl,
+>  			}
+>  		} else if (training_step == DP_TRAINING_2) {
+>  			/* link train_2 failed */
+> -			if (!msm_dp_aux_is_link_connected(ctrl->aux))
+> +			if (!msm_dp_aux_is_link_connected(ctrl->aux) && !plugged)
+>  				break;
+>  
+>  			drm_dp_dpcd_read_link_status(ctrl->aux, link_status);
+> diff --git a/drivers/gpu/drm/msm/dp/dp_ctrl.h b/drivers/gpu/drm/msm/dp/dp_ctrl.h
+> index fc884038182f..3edf954cc805 100644
+> --- a/drivers/gpu/drm/msm/dp/dp_ctrl.h
+> +++ b/drivers/gpu/drm/msm/dp/dp_ctrl.h
+> @@ -17,7 +17,7 @@ struct msm_dp_ctrl {
+>  struct phy;
+>  
+>  int msm_dp_ctrl_on_link(struct msm_dp_ctrl *msm_dp_ctrl,
+> -			struct msm_dp_panel *panel);
+> +			struct msm_dp_panel *panel, bool plugged);
+>  int msm_dp_ctrl_on_stream(struct msm_dp_ctrl *msm_dp_ctrl, struct msm_dp_panel *panel);
+>  int msm_dp_ctrl_prepare_stream_on(struct msm_dp_ctrl *msm_dp_ctrl,
+>  				  struct msm_dp_panel *panel);
+> @@ -28,7 +28,7 @@ void msm_dp_ctrl_push_idle(struct msm_dp_ctrl *msm_dp_ctrl);
+>  irqreturn_t msm_dp_ctrl_isr(struct msm_dp_ctrl *msm_dp_ctrl,
+>  			    struct msm_dp_panel *panel);
+>  void msm_dp_ctrl_handle_sink_request(struct msm_dp_ctrl *msm_dp_ctrl,
+> -				     struct msm_dp_panel *panel);
+> +				     struct msm_dp_panel *panel, bool plugged);
+>  struct msm_dp_ctrl *msm_dp_ctrl_get(struct device *dev,
+>  				    struct msm_dp_link *link,
+>  				    struct drm_dp_aux *aux,
+> diff --git a/drivers/gpu/drm/msm/dp/dp_display.c b/drivers/gpu/drm/msm/dp/dp_display.c
+> index 169938ba515e..551d2c63ef8e 100644
+> --- a/drivers/gpu/drm/msm/dp/dp_display.c
+> +++ b/drivers/gpu/drm/msm/dp/dp_display.c
+> @@ -399,7 +399,7 @@ static int msm_dp_display_handle_irq_hpd(struct msm_dp_display_private *dp)
+>  
+>  	drm_dbg_dp(dp->drm_dev, "%d\n", sink_request);
+>  
+> -	msm_dp_ctrl_handle_sink_request(dp->ctrl, dp->panel);
+> +	msm_dp_ctrl_handle_sink_request(dp->ctrl, dp->panel, dp->plugged);
+>  
+>  	if (sink_request & DP_TEST_LINK_VIDEO_PATTERN)
+>  		msm_dp_display_handle_video_request(dp);
+> @@ -648,11 +648,10 @@ static int msm_dp_display_prepare_link(struct msm_dp_display_private *dp)
+>  	if (dp->link->sink_count == 0)
+>  		return -ENOTCONN;
+>  
+> -	if (!msm_dp_display->power_on) {
+> +	if (!msm_dp_display->power_on)
+>  		msm_dp_display_host_phy_init(dp);
+> -	}
+>  
+> -	rc = msm_dp_ctrl_on_link(dp->ctrl, dp->panel);
+> +	rc = msm_dp_ctrl_on_link(dp->ctrl, dp->panel, dp->plugged);
+>  	if (rc) {
+>  		DRM_ERROR("Failed link training (rc=%d)\n", rc);
+>  		// TODO: schedule drm_connector_set_link_status_property()
+> -- 
+> 2.43.0
+> 
 
 -- 
 With best wishes
