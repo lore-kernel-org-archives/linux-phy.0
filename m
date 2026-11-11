@@ -2,58 +2,75 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AD2FE606A31C
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Nov 2026 11:03:54 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 55641606A326
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Nov 2026 12:33:02 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=q356XDmd;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=IkQXCnRw
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=FoZNRCvw;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=collabora.com header.i=@collabora.com header.a=rsa-sha256 header.s=zohomail header.b=MyoCTRFh
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=kUrlrpiCJG5aMnFpy0oYrkdSAFTYg2wm0xl4J58JJUk=; b=q356XDmdocFlJJPU4FDvSgnzgE
-	GG9UnW4fNQ2gM3v+2/ya3lQvoZNRBoHlkZlKKhDeoj6KOoGdmjF2B2Q/nj2S+vF49qctoZhPqjWdx
-	Nl0CVzXqmgDqgLu00ogByYxqlALXl4McTNAObbltFrHJdZXTgbhJBF2arL+Y4y0imCctGrJz2k5LJ
-	/e3/RGYOCHgUDODD0VOcIbRlr3s9ISZBZwkISk54HNTAXCT84Qm+7gtxx+7Chc/FGLSMspvp0ry+5
-	N2S82FZeiT8lMnHhXm1MqMQFsYhLbqGzMjNyz+CN5PZvg/f6NLMw6FqagT0JWYFWpEg2c0Sal1OwT
-	DMJORviw==;
+	bh=pgsv0bz2lNxhUzDSImnKPmb2SiMeBMi4wBQPFh3NczA=; b=FoZNRCvwQ3lDNi1Bd6GByGrsZb
+	vjC3kYr9s3aYi2s3illvKrVhBWT2QaJ16gMslOrQbVMg3rLi0e9roKyG4iZ03Jg5OSaXRjntVnkBk
+	wEp6vCWYh5psFYik69wmM/gznMzloXTro2uJIyx4aPYMrY02YsoG8ftsgHk9KmoFH/gvoWxwv/4a0
+	OipT3Fw+KXYRvOScOAISxEMuLWOrdlLpin94OPJhj0AKL3qS9GppmOq/eVg/kQO5dXrYvasaGG2my
+	OSGNJOJBsFqRCfArJ2Jpq76HNIfxpzSSzszihRX+Hy2Y7Is66JqA+uimt2c+uDg70Mi8RlaG3Aq4l
+	PKNFbSBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xR67O-00000006QND-1Jcv;
-	Wed, 11 Nov 2026 11:03:54 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xR7Ve-00000006gUO-0Dgi;
+	Wed, 11 Nov 2026 12:33:02 +0000
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xR67N-00000006QMv-0bh4
-	for linux-phy@lists.infradead.org;
-	Wed, 11 Nov 2026 11:03:53 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 5302063BC7;
-	Wed, 11 Nov 2026 11:03:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B42671F00A05;
-	Wed, 11 Nov 2026 11:03:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794395032;
-	bh=KqBFL7Ix6GHgsHw2p6gDHfdCLUWUgkEp8o91cTzPD+Q=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=IkQXCnRwcCSgMdO6qrqylEuXODfdZqhz1z/LpcdoMnFIgNQ10U7+jR+tyzntPTmIQ
-	 eiR2tsO+FdSK5rpEzVw6dvo3LIF1TxvfiEba3n4LK3iGqoh13dcEfedU9VYg3lDotr
-	 Ih4PEzeK0oOXf1fP6TU5fe/A6jEEr+6HKyHLpEzfrCDTW0MNKn5gJvikV0PQCmr8KK
-	 NwRN5Amsf5UfY1rFWidPH95t48ABR5+P2zkwni1xAT3gOCO8F1rVirpfRblopuMEcj
-	 sEjH3dUx3/9Scu/Hc+IyrfahWNIH4n9BMLMfVB28CZEiW+q5xUMmXbyeWwW7KzHm2w
-	 HVWctWGoLeEqg==
-Message-ID: <sashiko-outbox-208844@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v2 1/3] phy: qcom: qmp-combo: delay Type-C mux switch
- while DP PHY is initializing
-To: "naidu nama" <naidu.nama@oss.qualcomm.com>
-Cc: linux-phy@lists.infradead.org, dri-devel@lists.freedesktop.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
-In-Reply-To: <20261111104434.2222182-2-naidu.nama@oss.qualcomm.com>
-References: <20261111104434.2222182-1-naidu.nama@oss.qualcomm.com>
- <20261111104434.2222182-2-naidu.nama@oss.qualcomm.com>
-Date: Wed, 11 Nov 2026 11:03:51 +0000
+	id 1xR7Vb-00000006gTs-3OZx;
+	Wed, 11 Nov 2026 12:33:01 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1794400367; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=Q+/kXTvFvW8+6LUt5EGKXvW9TPMsc6/DJmfXPJOXdwOr+AJk4S4cdMzVu/2ngkfl47CYQ8gsSqEqMQyXVJ6Kl7+x4/xIRhFQzaMSk1NuiJ6wbOq0iqNKrVLYdfigDib0sY8aybqfAg57c1euVFEhRMaxkpQrOXcgimzhsh28PYA=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1794400367; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=9zO+640/KHWsaMaqBoO79/jSoXhkI8QCCTxXofbivUQ=; 
+	b=XloUxi06PsdEqOPrOlQR7VPh1f5atSlAimk44HiMMAkjm5loG7u85cLUz0YGa7tKj+thHZFJspLPV0PUhwuC+kTx4MkLt+0vnHXm7j4h59ralZ0We0qyvWJqwxhWVzzLqa3cyp2FsJvbQwzmeb3VKiiLovb3xTQfbbExJvj0ynU=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=michael.riesch@collabora.com;
+	dmarc=pass header.from=<michael.riesch@collabora.com>
+DKIM-Signature: a=rsa-sha256; b=MyoCTRFhTyf8w/NUxmE8FnZuSjD2lwiy0FGPrX4bUQk92LBPvq/L72qvVISZoCVbjvKl4AJaMsqVWgREXSsYBRlp7upzTZ5VeeE3cdk7yNvSo9SkuHJ05hSBY0BCy3+/ySPK44w013FGJ3aXCxzvlej4rwZG/oOfdWWtvCAWEjc=; c=relaxed/relaxed; s=zohomail; d=collabora.com; v=1; bh=9zO+640/KHWsaMaqBoO79/jSoXhkI8QCCTxXofbivUQ=; h=Content-Description:Content-ID:Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:List-Subscribe:List-Post:List-Owner:List-Id:List-Archive:List-Help:List-Unsubscribe:MIME-Version:Message-ID:Resent-Sender:Resent-Cc:Resent-Date:Resent-To:Reply-To:Resent-Message-ID:Resent-From:Sender:Subject:To:Date:From:Message-Id:Reply-To:Subject:To:Cc;
+Received: by smtp.zohomail.com with SMTPS id 1794400365749801.6617129785609;
+	Wed, 11 Nov 2026 04:32:45 -0800 (PST)
+Message-ID: <cb2a2451-149f-44d5-aea3-e050673422e4@collabora.com>
+Date: Wed, 11 Nov 2026 13:32:40 +0100
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 9/9] arm64: dts: rockchip: add the dcphy mipi csi-2
+ receiver nodes to rk3588
+To: Jason Yang <jason98166@gmail.com>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Guochun Huang <hero.huang@rock-chips.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: Sebastian Reichel <sebastian.reichel@collabora.com>,
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <20261110-dcphy-rx-v1-v6-0-d681ba20b36a@gmail.com>
+ <20261110-dcphy-rx-v1-v6-9-d681ba20b36a@gmail.com>
+Content-Language: en-US
+From: Michael Riesch <michael.riesch@collabora.com>
+In-Reply-To: <20261110-dcphy-rx-v1-v6-9-d681ba20b36a@gmail.com>
+X-ZohoMailClient: External
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261111_043259_888868_B461F7FF 
+X-CRM114-Status: GOOD (  24.28  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,86 +80,161 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
+	version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwKaXNzdWVzIHRvIGNvbnNpZGVyOgotIFtIaWdoXSBwaHk6IHFjb206IHFtcC1j
-b21ibzogcW1wX2NvbWJvX3R5cGVjX211eF9zZXQoKSBkcm9wcyB2YWxpZAogIG1vZGUgc3dpdGNo
-ZXMKLSBbTWVkaXVtXSBwaHk6IHFjb206IHFtcC1jb21ibzogY29tbWl0IG1lc3NhZ2UgY29uZnVz
-ZXMgb3JpZW50YXRpb24gYW5kCiAgbW9kZSBjYWxsYmFja3MKLS0KCmNvbW1pdCBkZTY1MGJkYWQy
-ODRlMjU1NTc1NDgwZjA5ODUyMDA2ZWI3OGE5MDRhCkF1dGhvcjogU2F1cmFiaCBBbmFuZCA8c2F1
-cmFiaC5hbmFuZEBvc3MucXVhbGNvbW0uY29tPgoKcGh5OiBxY29tOiBxbXAtY29tYm86IGRlbGF5
-IFR5cGUtQyBtdXggc3dpdGNoIHdoaWxlIERQIFBIWSBpcyBpbml0aWFsaXppbmcKClRoaXMgY29t
-bWl0IGV4dGVuZHMgdGhlIGd1YXJkIGluIHFtcF9jb21ib190eXBlY19tdXhfc2V0KCkgdG8gcmV0
-dXJuIGVhcmx5CndoZW4gcW1wLT5kcF9pbml0X2NvdW50IGlzIG5vbi16ZXJvLgoKPiBUaGUgVHlw
-ZS1DIG11eCBzd2l0Y2ggZ3VhcmQgb25seSBjaGVja2VkIGRwX3Bvd2VyZWRfb24sIHdoaWNoIGlz
-IHNldCBpbgo+IHFtcF9jb21ib19kcF9wb3dlcl9vbigpLiBIb3dldmVyIHRoZXJlIGlzIGEgcmFj
-ZSB3aW5kb3cgYmV0d2Vlbgo+IHFtcF9jb21ib19kcF9pbml0KCkgYW5kIHFtcF9jb21ib19kcF9w
-b3dlcl9vbigpIGR1cmluZyB3aGljaCBkcF9pbml0X2NvdW50Cj4gaXMgbm9uLXplcm8gYnV0IGRw
-X3Bvd2VyZWRfb24gaXMgc3RpbGwgZmFsc2UuIEEgVHlwZS1DIG9yaWVudGF0aW9uIGNoYW5nZQo+
-IGFycml2aW5nIGluIHRoaXMgd2luZG93IHdvdWxkIHByb2NlZWQgd2l0aCB0aGUgbXV4IHN3aXRj
-aCB3aGlsZSB0aGUgRFAgUEhZCj4gaXMgbWlkLWluaXRpYWxpemF0aW9uLCBjb3JydXB0aW5nIHRo
-ZSBQSFkgc3RhdGUuCgpbU2V2ZXJpdHk6IE1lZGl1bV0KRG9lcyB0aGUgY29tbWl0IG1lc3NhZ2Ug
-Y29uZnVzZSBUeXBlLUMgb3JpZW50YXRpb24gY2hhbmdlcyB3aXRoIG1vZGUKY2hhbmdlcz8KClR5
-cGUtQyBvcmllbnRhdGlvbiBjaGFuZ2VzIGFyZSBoYW5kbGVkIGJ5IHFtcF9jb21ib190eXBlY19z
-d2l0Y2hfc2V0KCksCndoaWNoIGRvZXMgbm90IGNoZWNrIHFtcC0+ZHBfcG93ZXJlZF9vbiBvciBx
-bXAtPmRwX2luaXRfY291bnQgYmVmb3JlCnJlc2V0dGluZyB0aGUgY29tbW9uIGJsb2NrLiAgcW1w
-X2NvbWJvX3R5cGVjX211eF9zZXQoKSBvbmx5IGhhbmRsZXMKVHlwZS1DIG1vZGUgYW5kIFNWSUQg
-dHJhbnNpdGlvbnMuCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNv
-bS1xbXAtY29tYm8uYyBiL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1jb21iby5j
-Cj4gaW5kZXggNjFkOGI3YTVjZThmOS4uM2Y5MzA0M2Y5NGU1YyAxMDA2NDQKPiAtLS0gYS9kcml2
-ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtY29tYm8uYwo+ICsrKyBiL2RyaXZlcnMvcGh5
-L3F1YWxjb21tL3BoeS1xY29tLXFtcC1jb21iby5jCj4gQEAgLTUxNjMsNyArNTE2Myw4IEBAIHN0
-YXRpYyBpbnQgcW1wX2NvbWJvX3R5cGVjX211eF9zZXQoc3RydWN0IHR5cGVjX211eF9kZXYgKm11
-eCwgc3RydWN0IHR5cGVjX211eF9zCj4gIAkJcmV0dXJuIDA7Cj4gIAl9Cj4gIAo+IC0JaWYgKHFt
-cC0+cW1wcGh5X21vZGUgIT0gUU1QUEhZX01PREVfVVNCM19PTkxZICYmIHFtcC0+ZHBfcG93ZXJl
-ZF9vbikgewo+ICsJaWYgKHFtcC0+cW1wcGh5X21vZGUgIT0gUU1QUEhZX01PREVfVVNCM19PTkxZ
-ICYmCj4gKwkgICAgKHFtcC0+ZHBfcG93ZXJlZF9vbiB8fCBxbXAtPmRwX2luaXRfY291bnQpKSB7
-Cj4gIAkJZGV2X2RiZyhxbXAtPmRldiwgInR5cGVjX211eF9zZXQ6IERQIFBIWSBpcyBzdGlsbCBp
-biB1c2UsIGRlbGF5aW5nIHN3aXRjaFxuIik7Cj4gIAkJcmV0dXJuIDA7Cj4gIAl9CgpbU2V2ZXJp
-dHk6IEhpZ2hdCkRvZXMgYmFpbGluZyBvdXQgd2hlbiBxbXAtPmRwX2luaXRfY291bnQgaXMgbm9u
-LXplcm8gY2F1c2UgcmVncmVzc2lvbiBieQpkcm9wcGluZyB2YWxpZCBUeXBlLUMgbW9kZSBzd2l0
-Y2hlcz8KCnFtcF9jb21ib190eXBlY19tdXhfc2V0KCkgZGlzY2FyZHMgbmV3X21vZGUgb24gdGhp
-cyBwYXRoIGFuZCBub3RoaW5nCnJlcGxheXMgaXQgd2hlbiB0aGUgRFAgUEhZIGxhdGVyIGV4aXRz
-LiAgTWVhbndoaWxlLApxbXBfY29tYm9fcmVjb25maWd1cmVfcGh5KCkgYWxyZWFkeSBoYW5kbGVz
-IHJlY29uZmlndXJpbmcgdGhlIFBIWSB3aGlsZQpxbXAtPmRwX2luaXRfY291bnQgaXMgbm9uLXpl
-cm8gYW5kIHFtcC0+ZHBfcG93ZXJlZF9vbiBpcyBmYWxzZSBieSBwb3dlcmluZwpkb3duIERQIEFV
-WCwgcmVzZXR0aW5nIENPTSB3aXRoIG5ld19tb2RlLCBhbmQgcmUtcnVubmluZwpxbXAtPmNmZy0+
-ZHBfYXV4X2luaXQocW1wKToKCmRyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1jb21i
-by5jOnFtcF9jb21ib19yZWNvbmZpZ3VyZV9waHkoKSB7CgkuLi4KCWlmIChxbXAtPmRwX2luaXRf
-Y291bnQpCgkJd3JpdGVsKERQX1BIWV9QRF9DVExfUFNSX1BXUkROLCBxbXAtPmRwX2RwX3BoeSAr
-IFFTRVJERVNfRFBfUEhZX1BEX0NUTCk7CgoJcW1wX2NvbWJvX2NvbV9leGl0KHFtcCwgdHJ1ZSk7
-CgoJcW1wLT5xbXBwaHlfbW9kZSA9IG5ld19tb2RlOwoKCS8qIE5vdyBldmVyeXRoaW5nJ3MgcG93
-ZXJlZCBkb3duLCBwb3dlciB1cCB0aGUgcmlnaHQgUEhZcyAqLwoJcW1wX2NvbWJvX2NvbV9pbml0
-KHFtcCwgdHJ1ZSk7CgoJaWYgKChxbXAtPnVzYl9pbml0X2NvdW50IHx8IHFtcC0+dXNiNF9pbml0
-X2NvdW50KSAmJgoJICAgIG5ld19tb2RlICE9IFFNUFBIWV9NT0RFX0RQX09OTFkpCgkJcW1wX2Nv
-bWJvX3VzYl9wb3dlcl9vbihxbXAtPnVzYl9waHkpOwoKCWlmICgobmV3X21vZGUgPT0gUU1QUEhZ
-X01PREVfVVNCM0RQIHx8IG5ld19tb2RlID09IFFNUFBIWV9NT0RFX0RQX09OTFkpICYmCgkgICAg
-cW1wLT5kcF9pbml0X2NvdW50KQoJCXFtcC0+Y2ZnLT5kcF9hdXhfaW5pdChxbXApOwp9CgpEdXJp
-bmcgNC1sYW5lIERpc3BsYXlQb3J0IEFsdG1vZGUgZW50cnksIGRwX2FsdG1vZGVfY29uZmlndXJl
-ZCgpIHNpZ25hbHMKZHJtX2Nvbm5lY3Rvcl9vb2JfaG90cGx1Z19ldmVudCgpIGJlZm9yZSBjYWxs
-aW5nIGRwX2FsdG1vZGVfbm90aWZ5KCkgLT4KdHlwZWNfbXV4X3NldCgpLiAgVGhlIGhvdHBsdWcg
-ZXZlbnQgc3luY2hyb25vdXNseSBydW5zCm1zbV9kcF9ocGRfcGx1Z19oYW5kbGUoKSAtPiBwaHlf
-aW5pdCgpLCBzZXR0aW5nIHFtcC0+ZHBfaW5pdF9jb3VudCA9IDEKd2hpbGUgcW1wLT5xbXBwaHlf
-bW9kZSBpcyBRTVBQSFlfTU9ERV9VU0IzRFAuICBXaGVuIHR5cGVjX211eF9zZXQoKSB0aGVuCnJl
-cXVlc3RzIFFNUFBIWV9NT0RFX0RQX09OTFksIHRoaXMgZ3VhcmQgZHJvcHMgdGhlIHN3aXRjaCBh
-bmQgbGVhdmVzIDQtbGFuZQpEUCBicm9rZW4uCgpTaW1pbGFybHksIG9uIGNhYmxlIHVucGx1ZyBp
-biBwbWljX2dsaW5rX2FsdG1vZGVfd29ya2VyKCksCnBtaWNfZ2xpbmtfYWx0bW9kZV9zYWZlKCkg
-Y2FsbHMgdHlwZWNfbXV4X3NldCgpIGJlZm9yZQpkcm1fYXV4X2hwZF9icmlkZ2Vfbm90aWZ5KCkg
-dHJpZ2dlcnMgcGh5X2V4aXQoKSwgc28gdGhlIHRyYW5zaXRpb24gYmFjayB0bwpRTVBQSFlfTU9E
-RV9VU0IzX09OTFkgaXMgYWxzbyBkcm9wcGVkLgoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0
-dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MTExMTEwNDQzNC4yMjIyMTgyLTEtbmFp
-ZHUubmFtYUBvc3MucXVhbGNvbW0uY29tP3BhcnQ9MQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxp
-c3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+Hi Jason,
+
+On 11/10/26 09:18, Jason Yang wrote:
+> The MIPI0 and MIPI1 receiver units are connected to MIPI DCPHY0 and
+> MIPI DCPHY1, whose receiver side is now supported. Add the two nodes and
+> wire them to the VICAP ports.
+> 
+> The dsi nodes keep <&mipidcphy0 PHY_TYPE_DPHY>, the only value the
+> binding had before the PHY receiver was added. PHY_TYPE_DPHY still
+> selects the PHY transmitter in D-PHY mode. The csi nodes use the new
+> PHY_DIRECTION_RX from the dt-bindings header. Neither phy node needs
+> phy-type: the DSI host and the CSI-2 host both run the block in D-PHY
+> mode, the default.
+> 
+> There is an ABI break if the dsi and csi nodes use the new cell values:
+> an older kernel ignores phy-type and takes any cell value as the mode of
+> the block. A DSI node with PHY_DIRECTION_TX then gets no display, and a
+> CSI-2 node with PHY_DIRECTION_RX gets no camera.
+> 
+> To keep the ABI break small, the dsi nodes keep PHY_TYPE_DPHY, which
+> older and newer kernels both accept. With the csi nodes disabled, the
+> display therefore keeps working on either kernel.
+> 
+> The csi nodes have no older value to keep and have to use
+> PHY_DIRECTION_RX. Enabling csi0 or csi1 therefore needs a PHY driver
+> with receiver support. Since v7.0, a CSI-2 host driver probes the csi
+> nodes. An older PHY driver then gives the CSI-2 host the PHY transmitter
+> that drives the display. The camera gets no frames, and the display can
+> stop working as well.
+
+I think you can restrict the patch description to what the patch
+actually does.
+
+This patch modifies the device tree in a perfectly valid way as set out
+in the DT bindings. Any breakage or disadvantage of the approach therein
+should be discussed there.
+
+> Signed-off-by: Jason Yang <jason98166@gmail.com>
+
+But apart from that this LGTM!
+
+Reviewed-by: Michael Riesch <michael.riesch@collabora.com>
+
+Best regards,
+Michael
+
+> ---
+>  arch/arm64/boot/dts/rockchip/rk3588-base.dtsi | 68 +++++++++++++++++++++++++++
+>  1 file changed, 68 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3588-base.dtsi b/arch/arm64/boot/dts/rockchip/rk3588-base.dtsi
+> index aa69fd3793fd..c7174c2f15c3 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3588-base.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3588-base.dtsi
+> @@ -1516,10 +1516,18 @@ vicap_dvp: port@0 {
+>  
+>  			vicap_mipi0: port@1 {
+>  				reg = <0x1>;
+> +
+> +				vicap_mipi0_input: endpoint {
+> +					remote-endpoint = <&csi0_output>;
+> +				};
+>  			};
+>  
+>  			vicap_mipi1: port@2 {
+>  				reg = <0x2>;
+> +
+> +				vicap_mipi1_input: endpoint {
+> +					remote-endpoint = <&csi1_output>;
+> +				};
+>  			};
+>  
+>  			vicap_mipi2: port@3 {
+> @@ -1568,6 +1576,66 @@ vicap_mmu: iommu@fdce0800 {
+>  		status = "disabled";
+>  	};
+>  
+> +	csi0: csi@fdd10000 {
+> +		compatible = "rockchip,rk3588-mipi-csi2", "rockchip,rk3568-mipi-csi2";
+> +		reg = <0x0 0xfdd10000 0x0 0x10000>;
+> +		interrupts = <GIC_SPI 143 IRQ_TYPE_LEVEL_HIGH 0>,
+> +			     <GIC_SPI 144 IRQ_TYPE_LEVEL_HIGH 0>;
+> +		interrupt-names = "err1", "err2";
+> +		clocks = <&cru PCLK_CSI_HOST_0>;
+> +		phys = <&mipidcphy0 PHY_DIRECTION_RX>;
+> +		power-domains = <&power RK3588_PD_VI>;
+> +		resets = <&cru SRST_P_CSI_HOST_0>;
+> +		status = "disabled";
+> +
+> +		ports {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +
+> +			csi0_in: port@0 {
+> +				reg = <0>;
+> +			};
+> +
+> +			csi0_out: port@1 {
+> +				reg = <1>;
+> +
+> +				csi0_output: endpoint {
+> +					remote-endpoint = <&vicap_mipi0_input>;
+> +				};
+> +			};
+> +		};
+> +	};
+> +
+> +	csi1: csi@fdd20000 {
+> +		compatible = "rockchip,rk3588-mipi-csi2", "rockchip,rk3568-mipi-csi2";
+> +		reg = <0x0 0xfdd20000 0x0 0x10000>;
+> +		interrupts = <GIC_SPI 145 IRQ_TYPE_LEVEL_HIGH 0>,
+> +			     <GIC_SPI 146 IRQ_TYPE_LEVEL_HIGH 0>;
+> +		interrupt-names = "err1", "err2";
+> +		clocks = <&cru PCLK_CSI_HOST_1>;
+> +		phys = <&mipidcphy1 PHY_DIRECTION_RX>;
+> +		power-domains = <&power RK3588_PD_VI>;
+> +		resets = <&cru SRST_P_CSI_HOST_1>;
+> +		status = "disabled";
+> +
+> +		ports {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +
+> +			csi1_in: port@0 {
+> +				reg = <0>;
+> +			};
+> +
+> +			csi1_out: port@1 {
+> +				reg = <1>;
+> +
+> +				csi1_output: endpoint {
+> +					remote-endpoint = <&vicap_mipi1_input>;
+> +				};
+> +			};
+> +		};
+> +	};
+> +
+>  	csi2: csi@fdd30000 {
+>  		compatible = "rockchip,rk3588-mipi-csi2", "rockchip,rk3568-mipi-csi2";
+>  		reg = <0x0 0xfdd30000 0x0 0x10000>;
+> 
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
