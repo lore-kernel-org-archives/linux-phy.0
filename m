@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 122BA606A31C
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Nov 2026 07:51:19 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6A3A260A261E
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Nov 2026 07:52:24 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=V5sMUhME;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=oDt7X9F0
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Ho6805KF;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=dPOcnNYN
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,41 +14,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=vLh/llZSudUnrowsaPMmRYCmSpyZhqg0Bmv4MuGfMbs=; b=V5sMUhMEc9dRgzgIfG0pcOu6Yu
-	hDAe2YhHW5Lv4tCvxnz2rZXje3auUB2A9gbPUyqiX7bk+I4mV9zPBBfHf6/w8cBmC5FZgFHadeV58
-	0rNeyW+EBDdCO93dck2VNtY0aQ+Qel6bP7lXAtpC2rUeILF8G6kdjJhKGal++rDCqtgDN181JZD+S
-	Og2eDEoqEtPUVHHVGc6eJ/k7kt9W37oklcSS/+ERmLs1CrszRb50h272GsYhinYTfYyseLvOzDWjt
-	9V/onY0OJpv1Ac48gJOvjTP3ShtcEuZLDMvBFTwG/5zpIsA/iP+uKX2tz/OZmIqzeJqPYiLMpdn4t
-	x4+ytoJg==;
+	bh=OpJqO/k3VEySmE2k1YbAZqpAz6eZDil2YMsYZHDmaYA=; b=Ho6805KF+kgH8kVlXDa6ZcxlLZ
+	nIWowUOyXum0K0A1OsJSTYIw4QKqeI78keCsIwUuWDUwlznh7k0HfWrTmQH0uFaJQ98p+lB/lbUvW
+	FTfDsoQkcgETSKjGpUz2BOv/wsSk5sBO1jv1Eic7cjedMIKIJk+WhlO5cahvxQNGmO0Z/LiuvVUF9
+	YE1xeV1phIa9gU9O5NiG3+G3um5HmRHEEpZlo0OoIx5VFDHnUE7gumD0zlCHDKk77BYYfcbBMKs3W
+	uHTjMoIvZqZlrWK+iI6Pmlib750zBVjtF+F70vSg2GBeaEKnCMFKnxaByeECpO5XgRkxsMxs+PHXU
+	o9j4fdCg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xR370-00000005xJB-3K57;
-	Wed, 11 Nov 2026 07:51:18 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xR384-00000005xZ5-0cc4;
+	Wed, 11 Nov 2026 07:52:24 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xR36x-00000005xIv-488Z;
-	Wed, 11 Nov 2026 07:51:17 +0000
+	id 1xR382-00000005xYJ-0huQ;
+	Wed, 11 Nov 2026 07:52:22 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 352BD60F1B;
-	Wed, 11 Nov 2026 07:51:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DFB431F00A05;
-	Wed, 11 Nov 2026 07:51:10 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 9E14143CDA;
+	Wed, 11 Nov 2026 07:52:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 984461F00A06;
+	Wed, 11 Nov 2026 07:52:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794383474;
-	bh=n9xJ59R09217tj3p/EbtIf2BXh8RU6GaeBdprS7cz1c=;
+	s=k20260515; t=1794383541;
+	bh=sA8YqPjLlTYv3+ylYEgSVUN0judnUpIwnflqMVkdVcg=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=oDt7X9F0CDTOkG2qJI4gHV8jf4dD/zP1+gxukkIp1PUofuP9jNNeUBe1jq9aXONjQ
-	 ojN2re+e0S9hujnj6U8Fes0dwvMgt/W/C0NFXnBx7dFjiR8+ngy3B+HiYvrfkOOAOD
-	 kw0tkXCQZv5XOKQbCF+JKnYUPyL/deHUuXzfahTVCJXT26cDds5z1RhsAH3RR3mSkT
-	 BVw3zVOXx9R/t1QDVDCWqHkAM50YZo6MRMHAZTiLQ0jE8DsEcHyXOkWDQcm9RdxsDq
-	 mSH608BZDrT03WuuYNScezXHkFJ9+sM8zwgwXS5oUSscng2FUXHQXCDO4T40rs47j7
-	 cSUiCxT8gc2bg==
-Message-ID: <e6481e1e-acd9-414c-b6ce-72b1a048833a@kernel.org>
-Date: Wed, 11 Nov 2026 08:51:09 +0100
+	b=dPOcnNYNCMJ+3ZSzTwxy118CYCO1ku9wAuqMhieqTK00ygWFSQdnLNrJc2yNpAEZW
+	 PZO0PAAfsP51fzm+ZNy03yXZo4WMKBnVuPSqj9QrHantOq3SvsMFpxPO+j8gB5PS8z
+	 OH35G94VpSagKiqco0VmPgHlpadS9Odv6o8+eQnqUXXLOXMQKrCH90v5o8DB2+69+q
+	 cxLV91cuNXks7Z07GdEkBitP9fbqjKyv8cerHrEhU4QceKpUgZqcuQPMSnlL7ZV0Tq
+	 ynqvzm4mtActhJ4kA1BY0yTlJ14vDCOqsTHEoz59OWb/9oeiIyuudkyRRGIVfFpzb5
+	 Z9Fw+L6lwRjLQ==
+Message-ID: <66d48a6d-00c8-42fc-889d-d0901c8d85a6@kernel.org>
+Date: Wed, 11 Nov 2026 08:52:13 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 0/3] phy: Add CIX Sky1 USB3 PHY support
+Subject: Re: [PATCH v6 1/3] dt-bindings: phy: Add CIX Sky1 USB3 PHY
 To: Hongliang Yang <hongliang.yang@cixtech.com>
 Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
  <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>,
@@ -59,8 +59,9 @@ Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  cix-kernel-upstream <cix-kernel-upstream@cixtech.com>
 References: <20261105011751.4058411-1-hongliang.yang@cixtech.com>
- <20261105-illegal-fervent-swift-3c05c2@quoll>
- <20261111030914.2954368-1-hongliang.yang@cixtech.com>
+ <20261105011751.4058411-2-hongliang.yang@cixtech.com>
+ <20261105-kind-macaque-of-enhancement-ee0365@quoll>
+ <20261111030926.2954510-1-hongliang.yang@cixtech.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -106,7 +107,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  K9bCVaboTA2T77QYkRcRJYSsO1alGX0ome/hMLD1daXlkrNUp1HWa3K4iytLRXjCSIorWiGs
  n+q3krnpXu3TFkA8qtOFZMdnIiFuiq1yLT8hptsV5xh1TA2nsVvSYiaCr3q4s4BKjS/KrLDb
  qoxzw8ISjdUp4pA85vb6YLCmb39NgidD+7PmAr65lBNveIFynTgsja1rRQ4=
-In-Reply-To: <20261111030914.2954368-1-hongliang.yang@cixtech.com>
+In-Reply-To: <20261111030926.2954510-1-hongliang.yang@cixtech.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,16 +128,57 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 On 11/11/2026 04:09, Hongliang Yang wrote:
->>> Corrected the mail sender name: v5 was sent with a non-ASCII
->>> display name in the From header, v6 uses the plain ASCII name
->>> that matches the Signed-off-by.
->>
->> No, you did not.
+>> So previously you had two phys, now you have only one. Confusing. Where
+>> did the second phy go?
 > 
-> You are right, I did not, and the changelog claim was wrong. The From
+> The second PHY did not go anywhere. It is the second lane of the same
+> block, and it has no resources of its own.
+> 
+> v5 described one child node per lane:
+> 
+> 	usb-phy@9210000 {
+> 		...
+> 		usb-port@0 {
+> 			reg = <0>;
+> 			#phy-cells = <0>;
+> 		};
+> 
+> 		usb-port@1 {
+> 			reg = <1>;
+> 			#phy-cells = <0>;
+> 		};
+> 	};
+> 
 
-LLM reply? Just be aware that's straight way to become deprioritized in
-maintianer's queue.
+This clearly shows two phys - each node with cell=0, means each having
+one phy. Two nodes, so two phys.
+
+
+> Those child nodes had no register range, clocks or resets of their own;
+> everything they described belongs to the parent. Both lanes are
+> programmed through the same register block, with the same clocks and
+> resets, and by the same initialization sequence, so a consumer has
+> nothing to configure per lane. The two children only mirrored the two
+> controllers.
+> 
+> v6 makes the parent the provider, with #phy-cells = <0>, and both
+> controllers reference the same phandle:
+> 
+> 	usb3_phy4: usb-phy@9210000 {
+> 		compatible = "cix,sky1-usb3-phy";
+> 		reg = <0x9210000 0x40000>;
+> 		clocks = <&scmi_clk CLK_TREE_USB3A_PHY3_GATE>,
+> 			 <&scmi_clk CLK_TREE_USB3A_PHY_x2_REF>;
+> 		clock-names = "apb", "ref";
+> 		resets = <&s5_syscon SKY1_USBPHY_SS_RST_N>,
+> 			 <&s5_syscon SKY1_USBPHY_SS_PST_N>;
+> 		reset-names = "core", "apb";
+> 		#phy-cells = <0>;
+> 	};
+
+I saw the code, why are you pasting the same? What happened with the
+second phy?
+
 
 Best regards,
 Krzysztof
