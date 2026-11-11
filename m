@@ -2,147 +2,75 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0821E606A321
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Nov 2026 14:09:23 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E1938606A324
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Nov 2026 15:22:53 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=UxYAdnqJ;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=UUp3Ssbp;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=en7Uabc9
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=sHvbia8U;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=collabora.com header.i=@collabora.com header.a=rsa-sha256 header.s=zohomail header.b=UrZMGIBQ
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=AiZtppcuhHfuVOWKv8/D39htcIz+1UoP1Bjyyzcy1jg=; b=UxYAdnqJuUkjjdpn9yI64jf5IU
-	qY2sBOgKU1TftfiVZK4hTL6Z8Sn7mdUEO3aXQv7r0GHEqXL7vM+N5B+PABEC3u3mCTF3YninZzYwK
-	FHqZCsw1pP3F9IfeYagXxpuZGO0rpZRdcvJTr7XAhQwYkW4y+YA7MbTH52nnB6vG0hq9NeMARb6XS
-	kG41k4Dtd0cpJJanFCO5/S9XBWwVi/bfPJuDjtGK4vvhAzwFRZxlDtfm3EbY8XIdcPJP1CpLjVFde
-	FplzZSDuRGjfY6K/D4mAK0ct3yz9JP8x93c9tDjmb1/Ajh6suAZ8KHMdtWqrhPkppX89+qeaRyax6
-	bG4k30Xg==;
+	bh=y9/kQDpsennieeZ3nsgt5rpAfiRprMcILSKRie5PYyE=; b=sHvbia8UkEJOvupwrPOzUx0mz+
+	w/xqqhR3DEW5LOo3ydv34rYSm1KG5gOH5QHSGWz3pjnkLBaOhkuZ7K4kfnH7WbXwubPO+PeqNnAmh
+	NAGxV1VKzGjT0ETGqh5H2OzkFkp2rPtbcInEk9CegFfvdkr6HWDNQaaUiXx/XBhQN24++nq69E/g4
+	oQWNBriBcyACrRIxSPukAIwrJAa1zpU/NTrVDtpbaIJw3mw0JAB5tFknhhuSzOyZwO+HA3rlaBbtG
+	d0dZdk2Vks2eVloAWFo3SDEAMksvYZIzhWejqltQw08pUaWhgFTzFdMLlqDhP4ywSBXFts1SRlgrU
+	NpFCtzqQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xR90s-00000006v31-3GAe;
-	Wed, 11 Nov 2026 14:09:22 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1xRAA1-000000074lb-1kC8;
+	Wed, 11 Nov 2026 15:22:53 +0000
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xR90p-00000006v2R-3khV
-	for linux-phy@lists.infradead.org;
-	Wed, 11 Nov 2026 14:09:21 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6ABCZ6gD2338330
-	for <linux-phy@lists.infradead.org>; Wed, 11 Nov 2026 14:09:19 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=QPstyFoqSPmuHiNdLUorh+Rr
-	f2UfIpcMs4IumwAd9y4=; b=UUp3SsbpMCxDkmG8IVteiSnCXOXpT8PaZqwzPyzO
-	DHGJrREKLf/xq8zpVZgXdboYDqvD3DvFlaDEE7BzXgLiSUbNo4eAyUjMAdsNJW7Y
-	gP97dCBnH3+ykf0gYuvz8RczrG1rXDSZMUs85q+f76ua6PA5G0snPAMRUW4H4IXA
-	6p0C9Lb8Ic4iHXE6qvkWvFVABLAa0vrxlgnux/K0pkA/wSNFHIuCtVO8BGhvlMx5
-	cMoO28JHX1QrYl3fKAJCzhYlb81VqqItDUTLDhpMoK+N6+VuxxZ5RX34LCxyPU+d
-	UZxiP2QIYua22z53/B+CpmdaaNoXSv6j8/JG5yrWa3ec7w==
-Received: from mail-vk1-f197.google.com (mail-vk1-f197.google.com [209.85.221.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hvdnmay44-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 11 Nov 2026 14:09:18 +0000 (GMT)
-Received: by mail-vk1-f197.google.com with SMTP id 71dfb90a1353d-5ece56bfeadso2613008e0c.2
-        for <linux-phy@lists.infradead.org>; Wed, 11 Nov 2026 06:09:18 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794406143; x=1795010943; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=QPstyFoqSPmuHiNdLUorh+Rrf2UfIpcMs4IumwAd9y4=;
-        b=en7Uabc9MUnOpQccbEc2+Idl7H1/gk01jpCGQiXZztXyp8aFg9qyr6nGm09fS5F9VU
-         7OJXWrkauuH+WPQNeUpeBrp6F59GU/RVP4BLaNiSIPOvWwQqNlowGXutakbgJ+QwsCsO
-         n/ZDF8vfnAhojdJyDJxZggCXgLs4Tem4RJ0lD10YWRm2CKSq8SNSe/9x3d0/oLofRGFM
-         yfr8bq0bdhZybcA+uJDr2sYKLrzWXNGZzccfR4llykRp4obAAJPKkz5oOu6atXmWmJSu
-         mvuIviASeA83weL9IzM1EKvfAma5TwdQChosuISWHSH8m+4Tp10oEdv6FnWkRzyR+vqp
-         rOvw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794406143; x=1795010943;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=QPstyFoqSPmuHiNdLUorh+Rrf2UfIpcMs4IumwAd9y4=;
-        b=CYmWwCdEjvRYxjhPrQjuPf3Kg7Pym2sklna5EMg0Bew0rBqGMJGVCyIQ020vGAL4OY
-         TcgbdimxVLOMp+3GNo5LguRFREch/2wxIrX1uGEseobabLYAhYGLDlZA9M7KihMNwkTf
-         wkaHpe/SBfyYOLwMSD645FcYw1IPohzXH/xz23Jcq0O4lIE/CcUI6xR3Co0GqFG6FeSE
-         QjUqGPQUH63caNIEh0Zfx3IL29BvMydUKuFxKJj0Tt5KBtt2s8Je4BL/6ef1cIUwYsP9
-         0iS+ikmQvveJY636hN4CwPFAlarGgusMICff4zPsEUL4uMSev6FB98L6Fa+9eGA9ojPI
-         Hfmw==
-X-Forwarded-Encrypted: i=1; AL+hErEcriswUr/dA4ZqqOhetL65se11oc5ikYCd0MjorUrlPzHOv1IKSJFAOv7JMpUlUaoPkeslFSvxta0=@lists.infradead.org
-X-Gm-Message-State: APuU4Z8eRKnPMhh5OGGJ6YvqR2CeF9TbxnKOWrXuZDxPNhFlIDByq84T
-	JDzkBdr0fPRSgVkBOG9iU5gEveb8fEVnHNEYoKE5L8oLzVuShGYjiHc4H4tq1+Dgpnm+bkrWd0t
-	BK/YMvzRuBr2NVzrXdE11mKVSeqIm3w8yX+BlRbnBh91DEIyhoeKmKGlXmly+p0jKznMW
-X-Gm-Gg: AYBFou3U32Q4gQEZSxF8gQbACwGeSMtGFLQ2shWchWpSJRqd/TfApIaD1gjdbAGvprf
-	r/XMLoWJL8OdY57rmpLDoCVdgf9tT1d7Spok10OuP2n88wrClOpKiwA+wUrNDNk5AdEXbjvclJ2
-	lLQbwnpIIE8PusjxizUNg3eIH3ER5gZr8r0sVUf+0ywHKV4u4vtA3u/w1gOq5p9WSZ/RylZSZbh
-	aVnaURwNTBqKL1TnpaGRADG3HT0T7IkmJZBOp9HoeRyiH+ySAsGBQph6zt1azUGQpgsKV6BTe1x
-	/9BQFb41maJ13v4eUF/8R66K6PgmuvGrLObQrlZf0HpMQujTepvpVHATiEvQoqleeTERFdDTQzF
-	fZvoIvd2RNnSMYUHgdsjbaiFABjs88XaqYlcNQJWufnMVFsWwUBqx3H5FiTcyS0QBZHKYQFifWM
-	mxgMY1D/cI5DHnPwXJZgG1AfUGv0TSZwE/yE2TMyCRSDlZUJ11pi2vXf3EeIpr2A==
-X-Received: by 2002:a05:6122:4f98:b0:5ea:c722:b3a with SMTP id 71dfb90a1353d-5ee1c3b5490mr777644e0c.7.1794406143350;
-        Wed, 11 Nov 2026 06:09:03 -0800 (PST)
-X-Received: by 2002:a05:6122:4f98:b0:5ea:c722:b3a with SMTP id 71dfb90a1353d-5ee1c3b5490mr777546e0c.7.1794406142456;
-        Wed, 11 Nov 2026 06:09:02 -0800 (PST)
-Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5c157bb87c6sm972630e87.78.2026.11.11.06.09.01
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 11 Nov 2026 06:09:01 -0800 (PST)
-Date: Wed, 11 Nov 2026 16:08:59 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: naidu nama <naidu.nama@oss.qualcomm.com>
-Cc: vkoul@kernel.org, neil.armstrong@linaro.org, mani@kernel.org,
-        robin.clark@oss.qualcomm.com, lumag@kernel.org,
-        abhinav.kumar@linux.dev, jesszhan0024@gmail.com, sean@poorly.run,
-        marijn.suijten@somainline.org, irlied@gmail.com, simona@ffwll.ch,
-        Saurabh Anand <saurabh.anand@oss.qualcomm.com>,
-        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
-        quic_riteshk@quicinc.com, quic_vproddut@quicinc.com,
-        quic_mkuntuma@quicinc.com, mahadevan.p@oss.qualcomm.com
-Subject: Re: [PATCH v2 3/3] drm/msm/dp: continue link training downgrade when
- cable is still plugged
-Message-ID: <x74bp2hkm4r2qz7oelhwpgexd3tslsxgc67pu22kmlo5yjy33z@v5ka23e5aqqi>
-References: <20261111104434.2222182-1-naidu.nama@oss.qualcomm.com>
- <20261111104434.2222182-4-naidu.nama@oss.qualcomm.com>
+	id 1xRA9z-000000074ku-0PSB;
+	Wed, 11 Nov 2026 15:22:52 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1794410565; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=gBXb74t8VyXcyhF2U34LZjd/IUJj3d2VeYmcQwcVmhDgqYdt0aA7l4BF2EycZCovx+aXjoATAiB02Y/M51ryalVmhjkrhC4vlttiGVF6uMyV5tqaNzNd0tQYBIbnVGCct+sk5t0+BYv4Wnj3bz9feMny92y9aE9Cjs8Trt1RtI0=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1794410565; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=Y/MlMaKErObWTkJAP1O/f3fHFrVRzBGbOZAvu7H6yRc=; 
+	b=IPm3G8lZ0a0lC8SsV24HWlwwDfBP6W4rz4bY9DdjLaVpvnm8m/7sexyzQTTeVTLl3dqrCafCGvkxYiXnpi/i+XLIupHGqmIkzXY233oo6gQ5qkLZcbriw9xmfTnppHHlPHGaBhr3GyL+7fnAzYhhoAjhAb5ejKFlfWyg2GiFdp0=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=michael.riesch@collabora.com;
+	dmarc=pass header.from=<michael.riesch@collabora.com>
+DKIM-Signature: a=rsa-sha256; b=UrZMGIBQEwNvdRSMeyfv8q9k6o61Ee2F1LiS1C2mRPoIalF2xvjnL21zkDzXGaEOv/z9paE0HJsU5voIWxvZllirKR4WSYdPG7hxv0PyK2iAhqxeg0897VsJnDLW6rSGNsEMQulXjuEamsOW+NPiqeARAiAy0qaYuXAKO14jK4U=; c=relaxed/relaxed; s=zohomail; d=collabora.com; v=1; bh=Y/MlMaKErObWTkJAP1O/f3fHFrVRzBGbOZAvu7H6yRc=; h=Content-Description:Content-ID:Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:List-Subscribe:List-Post:List-Owner:List-Id:List-Archive:List-Help:List-Unsubscribe:MIME-Version:Message-ID:Resent-Sender:Resent-Cc:Resent-Date:Resent-To:Reply-To:Resent-Message-ID:Resent-From:Sender:Subject:To:Date:From:Message-Id:Reply-To:Subject:To:Cc;
+Received: by smtp.zohomail.com with SMTPS id 1794410563762127.88540542025612;
+	Wed, 11 Nov 2026 07:22:43 -0800 (PST)
+Message-ID: <fd9615e5-bc5a-4ce0-a43b-081f3e9c14c2@collabora.com>
+Date: Wed, 11 Nov 2026 16:22:38 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20261111104434.2222182-4-naidu.nama@oss.qualcomm.com>
-X-Proofpoint-ORIG-GUID: TJbmsGse5K524a1s0qyv6e9wzha3i9f6
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTExMDA1NiBTYWx0ZWRfX/Am2kgspzmKy
- 6l3Z2oaSaet/Sd7zn8DF5SdLWFRc83gPzueJdNhwIdx0zZGVtVy3YHuJzGByqFxG7b4mTlil2qM
- 7Eeney3B6xhEfamcTEdFTqZLe6pz32k=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTExMDA1NiBTYWx0ZWRfX6ZPxbKpv28oa
- +27YGcPmP0kp5eq295ZQnHoak3TnzIfTp/jy8Pjrrf6ZdiSpQZUyQusqs1ujyTO3IAkhiZI4rL1
- cyfvMErawq/9WmNnj34ni2yAOGTl9GgO7CtJHufQ2ovLG8zOHbvMrc/r6GlVrkAFGoq+ifpLy2f
- xbDXH0gsyjHDywJwwobLklKqWVF9JGrU4W+rmxkjRfExQcHhch3i2zDM/cTYiL/eJMKMtvwR7SW
- gkIb8a7KXOINjObhehoc4KJV41ffI92O8t+DpmUVfsm15x5BdoG8X5DvcCAR6oxrMr1USetcHBr
- 8CXYSI7thH/bOi5OMI7NVs9AJ1MQQlBgESmZwYXlWkLy8m4lT4obkmmo4SZmEgxfzrpn2agzoBT
- 7fYe+SlsSNNzlC1K5NxoqR5OTe5XCSvV5uxADPiZL1xwS1OZWwzxO4i8cNnd9mzLASqBiZrWQoU
- d/kMr8CJ0Q9wY+ifdrQ==
-X-Proofpoint-GUID: TJbmsGse5K524a1s0qyv6e9wzha3i9f6
-X-Authority-Analysis: v=2.4 cv=MpzHeGae c=1 sm=1 tr=0 ts=6af4770e cx=c_pps
- a=JIY1xp/sjQ9K5JH4t62bdg==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=gowsoOTTUOVcmtlkKump:22 a=EUspDBNiAAAA:8
- a=uXSOaOdxFjozXxwA47UA:9 a=CjuIK1q_8ugA:10 a=tNoRWFLymzeba-QzToBc:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
- definitions=2026-11-11_02,2026-11-11_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 clxscore=1015 impostorscore=0 lowpriorityscore=0 phishscore=0
- suspectscore=0 spamscore=0 malwarescore=0 priorityscore=1501 adultscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611110056
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 8/9] phy: rockchip-samsung-dcphy: Add MIPI D-PHY
+ receiver support
+To: Jason Yang <jason98166@gmail.com>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Guochun Huang <hero.huang@rock-chips.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: Sebastian Reichel <sebastian.reichel@collabora.com>,
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <20261110-dcphy-rx-v1-v6-0-d681ba20b36a@gmail.com>
+ <20261110-dcphy-rx-v1-v6-8-d681ba20b36a@gmail.com>
+Content-Language: en-US
+From: Michael Riesch <michael.riesch@collabora.com>
+In-Reply-To: <20261110-dcphy-rx-v1-v6-8-d681ba20b36a@gmail.com>
+X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261111_060920_052979_6EE409D6 
-X-CRM114-Status: GOOD (  28.16  )
-X-Spam-Score: -2.8 (--)
+X-CRM114-CacheID: sfid-20261111_072251_213438_54DF83BB 
+X-CRM114-Status: GOOD (  10.45  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -155,170 +83,75 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
 	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
+	version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Wed, Nov 11, 2026 at 04:13:55PM +0530, naidu nama wrote:
-> From: Saurabh Anand <saurabh.anand@oss.qualcomm.com>
-> 
-> During a Type-C reconnect the AUX channel may report link-disconnected
-> transiently while the physical cable is still present. The link training
-> retry loop in msm_dp_ctrl_on_link() was aborting immediately on any
-> msm_dp_aux_is_link_connected() failure, preventing the rate/lane downgrade
-> path from running.
-> 
-> When the display is known to be plugged (msm_dp_ctrl->plugged), an AUX
-> link-disconnected status is likely a transient glitch rather than a true
-> unplug. Allow the downgrade loop to continue in that case by requiring both
-> conditions before breaking out of the retry loop: AUX reports disconnected
-> and the display is not plugged.
+Hi Jason,
 
-Is there a reason to assume that DP is not plugged at this point? I
-guess not. But the other issue is: what if the DP gets unplugged in the
-middle of link training.
+Thanks for the patch!
 
-> 
-> Signed-off-by: Saurabh Anand <saurabh.anand@oss.qualcomm.com>
+On 11/10/26 09:18, Jason Yang wrote:
+> [...]
+> +static int samsung_mipi_dphy_rx_power_on(struct samsung_mipi_dcphy *samsung)
+> +{
+> +	struct samsung_mipi_phy *rx = &samsung->rx;
+> +	int ret;
+> +
+> +	if (!rx->hs_clk_rate || !rx->lanes)
+> +		return -EINVAL;
+> +
+> +	reset_control_assert(samsung->s_phy_rst);
+> +
+> +	samsung_mipi_dphy_rx_config_common(samsung);
+> +	samsung_mipi_dphy_rx_config_settle(samsung);
+> +
+> +	ret = samsung_mipi_dphy_rx_lane_enable(samsung);
+> +
+> +	reset_control_deassert(samsung->s_phy_rst);
+> +
+> +	return ret;
+> +}
+> +
+> +static int samsung_mipi_dphy_rx_power_off(struct samsung_mipi_dcphy *samsung)
+> +{
+> +	reset_control_assert(samsung->s_phy_rst);
 
-SoB
+I wonder whether this is really a D-PHY specific thing. You can keep it
+as is for now, I'll try to bring up the C-PHY part on top of your
+series, and then we'll see.
 
-> ---
->  drivers/gpu/drm/msm/dp/dp_ctrl.c    | 15 ++++++++-------
->  drivers/gpu/drm/msm/dp/dp_ctrl.h    |  4 ++--
->  drivers/gpu/drm/msm/dp/dp_display.c |  7 +++----
->  3 files changed, 13 insertions(+), 13 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/msm/dp/dp_ctrl.c b/drivers/gpu/drm/msm/dp/dp_ctrl.c
-> index 6b9d9a76ba05..f8a6bd7b0d10 100644
-> --- a/drivers/gpu/drm/msm/dp/dp_ctrl.c
-> +++ b/drivers/gpu/drm/msm/dp/dp_ctrl.c
-> @@ -2274,7 +2274,8 @@ void msm_dp_ctrl_off_pixel_clk(struct msm_dp_ctrl *msm_dp_ctrl, enum msm_dp_stre
->  }
+> [...]
+>  static const struct phy_ops samsung_mipi_dcphy_tx_ops = {
+>  	.configure = samsung_mipi_dcphy_tx_configure,
+>  	.power_on  = samsung_mipi_dcphy_tx_power_on,
+> @@ -1535,6 +1905,15 @@ static const struct phy_ops samsung_mipi_dcphy_tx_ops = {
+>  	.owner	   = THIS_MODULE,
+>  };
 >  
->  static int msm_dp_ctrl_process_phy_test_request(struct msm_dp_ctrl_private *ctrl,
-> -						struct msm_dp_panel *panel)
-> +						struct msm_dp_panel *panel,
-> +						bool plugged)
+> +static const struct phy_ops samsung_mipi_dcphy_rx_ops = {
+> +	.configure = samsung_mipi_dcphy_rx_configure,
+> +	.power_on  = samsung_mipi_dcphy_rx_power_on,
+> +	.power_off = samsung_mipi_dcphy_rx_power_off,
+> +	.init = samsung_mipi_dcphy_init,
+> +	.exit = samsung_mipi_dcphy_exit,
+> +	.owner	   = THIS_MODULE,
 
-Can it ever be false here with your patch in place?
+Nit: either align all = or just use a single space (personally I would
+prefer the latter).
 
->  {
->  	int ret;
->  	unsigned long pixel_rate;
-> @@ -2293,7 +2294,7 @@ static int msm_dp_ctrl_process_phy_test_request(struct msm_dp_ctrl_private *ctrl
->  	msm_dp_ctrl_off_pixel_clk(&ctrl->msm_dp_ctrl, panel->stream_id);
->  	msm_dp_ctrl_off_link(&ctrl->msm_dp_ctrl, panel);
->  
-> -	ret = msm_dp_ctrl_on_link(&ctrl->msm_dp_ctrl, panel);
-> +	ret = msm_dp_ctrl_on_link(&ctrl->msm_dp_ctrl, panel, plugged);
->  	if (ret) {
->  		DRM_ERROR("failed to enable DP link controller\n");
->  		return ret;
-> @@ -2310,7 +2311,7 @@ static int msm_dp_ctrl_process_phy_test_request(struct msm_dp_ctrl_private *ctrl
->  }
->  
->  void msm_dp_ctrl_handle_sink_request(struct msm_dp_ctrl *msm_dp_ctrl,
-> -				     struct msm_dp_panel *panel)
-> +				     struct msm_dp_panel *panel, bool plugged)
->  {
->  	struct msm_dp_ctrl_private *ctrl;
->  	u32 sink_request = 0x0;
-> @@ -2325,7 +2326,7 @@ void msm_dp_ctrl_handle_sink_request(struct msm_dp_ctrl *msm_dp_ctrl,
->  
->  	if (sink_request & DP_TEST_LINK_PHY_TEST_PATTERN) {
->  		drm_dbg_dp(ctrl->drm_dev, "PHY_TEST_PATTERN request\n");
-> -		if (msm_dp_ctrl_process_phy_test_request(ctrl, panel)) {
-> +		if (msm_dp_ctrl_process_phy_test_request(ctrl, panel, plugged)) {
->  			DRM_ERROR("process phy_test_req failed\n");
->  			return;
->  		}
-> @@ -2377,7 +2378,7 @@ static bool msm_dp_ctrl_channel_eq_ok(struct msm_dp_ctrl_private *ctrl)
->  }
->  
->  int msm_dp_ctrl_on_link(struct msm_dp_ctrl *msm_dp_ctrl,
-> -			struct msm_dp_panel *panel)
-> +			struct msm_dp_panel *panel, bool plugged)
->  {
->  	int rc = 0;
->  	struct msm_dp_ctrl_private *ctrl;
-> @@ -2427,7 +2428,7 @@ int msm_dp_ctrl_on_link(struct msm_dp_ctrl *msm_dp_ctrl,
->  			break;
->  		} else if (training_step == DP_TRAINING_1) {
->  			/* link train_1 failed */
-> -			if (!msm_dp_aux_is_link_connected(ctrl->aux))
-> +			if (!msm_dp_aux_is_link_connected(ctrl->aux) && !plugged)
->  				break;
->  
->  			drm_dp_dpcd_read_link_status(ctrl->aux, link_status);
-> @@ -2452,7 +2453,7 @@ int msm_dp_ctrl_on_link(struct msm_dp_ctrl *msm_dp_ctrl,
->  			}
->  		} else if (training_step == DP_TRAINING_2) {
->  			/* link train_2 failed */
-> -			if (!msm_dp_aux_is_link_connected(ctrl->aux))
-> +			if (!msm_dp_aux_is_link_connected(ctrl->aux) && !plugged)
->  				break;
->  
->  			drm_dp_dpcd_read_link_status(ctrl->aux, link_status);
-> diff --git a/drivers/gpu/drm/msm/dp/dp_ctrl.h b/drivers/gpu/drm/msm/dp/dp_ctrl.h
-> index fc884038182f..3edf954cc805 100644
-> --- a/drivers/gpu/drm/msm/dp/dp_ctrl.h
-> +++ b/drivers/gpu/drm/msm/dp/dp_ctrl.h
-> @@ -17,7 +17,7 @@ struct msm_dp_ctrl {
->  struct phy;
->  
->  int msm_dp_ctrl_on_link(struct msm_dp_ctrl *msm_dp_ctrl,
-> -			struct msm_dp_panel *panel);
-> +			struct msm_dp_panel *panel, bool plugged);
->  int msm_dp_ctrl_on_stream(struct msm_dp_ctrl *msm_dp_ctrl, struct msm_dp_panel *panel);
->  int msm_dp_ctrl_prepare_stream_on(struct msm_dp_ctrl *msm_dp_ctrl,
->  				  struct msm_dp_panel *panel);
-> @@ -28,7 +28,7 @@ void msm_dp_ctrl_push_idle(struct msm_dp_ctrl *msm_dp_ctrl);
->  irqreturn_t msm_dp_ctrl_isr(struct msm_dp_ctrl *msm_dp_ctrl,
->  			    struct msm_dp_panel *panel);
->  void msm_dp_ctrl_handle_sink_request(struct msm_dp_ctrl *msm_dp_ctrl,
-> -				     struct msm_dp_panel *panel);
-> +				     struct msm_dp_panel *panel, bool plugged);
->  struct msm_dp_ctrl *msm_dp_ctrl_get(struct device *dev,
->  				    struct msm_dp_link *link,
->  				    struct drm_dp_aux *aux,
-> diff --git a/drivers/gpu/drm/msm/dp/dp_display.c b/drivers/gpu/drm/msm/dp/dp_display.c
-> index 169938ba515e..551d2c63ef8e 100644
-> --- a/drivers/gpu/drm/msm/dp/dp_display.c
-> +++ b/drivers/gpu/drm/msm/dp/dp_display.c
-> @@ -399,7 +399,7 @@ static int msm_dp_display_handle_irq_hpd(struct msm_dp_display_private *dp)
->  
->  	drm_dbg_dp(dp->drm_dev, "%d\n", sink_request);
->  
-> -	msm_dp_ctrl_handle_sink_request(dp->ctrl, dp->panel);
-> +	msm_dp_ctrl_handle_sink_request(dp->ctrl, dp->panel, dp->plugged);
->  
->  	if (sink_request & DP_TEST_LINK_VIDEO_PATTERN)
->  		msm_dp_display_handle_video_request(dp);
-> @@ -648,11 +648,10 @@ static int msm_dp_display_prepare_link(struct msm_dp_display_private *dp)
->  	if (dp->link->sink_count == 0)
->  		return -ENOTCONN;
->  
-> -	if (!msm_dp_display->power_on) {
-> +	if (!msm_dp_display->power_on)
->  		msm_dp_display_host_phy_init(dp);
-> -	}
->  
-> -	rc = msm_dp_ctrl_on_link(dp->ctrl, dp->panel);
-> +	rc = msm_dp_ctrl_on_link(dp->ctrl, dp->panel, dp->plugged);
->  	if (rc) {
->  		DRM_ERROR("Failed link training (rc=%d)\n", rc);
->  		// TODO: schedule drm_connector_set_link_status_property()
-> -- 
-> 2.43.0
-> 
+> [...]
+Looks all good to me!
 
--- 
-With best wishes
-Dmitry
+Reviewed-by: Michael Riesch <michael.riesch@collabora.com>
+
+Best regards,
+Michael
+
 
 -- 
 linux-phy mailing list
