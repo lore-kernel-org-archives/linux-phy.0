@@ -2,57 +2,61 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 412E5606A32E
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Nov 2026 03:23:53 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CA7B6606A332
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Nov 2026 03:23:59 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=nHBQBaIW;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=OsuUMHG0
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=nrSg3Pzw;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=NFsfLl7a
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:From:To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=m3m1rxNZeBxY0C7jt7b7wGSphrCO+lv4kOxhX3GFozU=; b=nHBQBaIW+noFkjllq2FyXPnzoS
-	SFWv9qtAjKOEM4WyBxd4KHhBV4mDOo+2jxF8mJkW1r7wDfyDJbXTrbdrY2tCduTnZMtYWHQJzZ7LL
-	gKB9FW31BxDlvLvITpET/og2jPd23WiczRagAiBu9FCHbo3dYhVhTV3c32qJhdvsvkKrdkfV9ctO6
-	8MSPbDDmOa5F65HFUvyIa9yIjXA7iT8tRfYj4FnRU+FQDYhzadGhmRRFR9/v9XRiDln0bcfjIobpP
-	SxhnyWtZMQUTPOiScU75bIRmFkoqJgMkbyD0EFAb9j1cKXXyL4JOHzjKdh1L+eCpm5iV+oBN55fBo
-	09Sjz5zg==;
+	bh=3pPkhVDgt6AMEty8luUv1pQhJ4a5mOYQenaUTfTMIhA=; b=nrSg3Pzwc6NHBQ+v163RX1l3OW
+	AnfEjyXfZFczCYys6iWat4ElR0i/ZFNlnHoUW8l9bGu484F1HLxBZdn8kLRRt4X44tSMDE2LNVIQb
+	IRJpTEpsh5oOgt1Ru3nVv0a1H0vcOZf/EJNaDUqtOKkVpilXuNzoxWzhwQ7JYdch8wYygkUq2PGZA
+	IY+iE5pkuXgRuaN3WflxJBalfuYz8tzvX1Yasg6jaVEiUi+LPmDTJ4z9iWpXsglqrZ7iLF0i76N5E
+	PFDzQOW/AJcJkrDieMYGcTRI8tElTNXb8s7xlxxX0SYrKJhd0WYK1mG0vfbwBsFJr8K/Vm7Mwim8S
+	P54xEdxg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQywD-00000005XZb-01LD;
-	Wed, 11 Nov 2026 03:23:53 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xQywJ-00000005Xdv-2Cjj;
+	Wed, 11 Nov 2026 03:23:59 +0000
+Received: from mail-4322.protonmail.ch ([185.70.43.22])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xQywB-00000005XYr-3VPx
-	for linux-phy@lists.infradead.org;
-	Wed, 11 Nov 2026 03:23:51 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id D97EC63839;
-	Wed, 11 Nov 2026 03:23:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 92E5F1F0089F;
-	Wed, 11 Nov 2026 03:23:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794367430;
-	bh=xumurdd4HtUcLCD6tq9tHmWt2J8OTnMTrO2HIFiLp+A=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=OsuUMHG0cFVUEE54ccOGHd9e0bNID+XM+tYoxMwwRwhd8OZYGRgF+4xUZFpmGki6g
-	 tnCYsAvqQdo2G3pZfsG0TaoihUfjRRi+TH9YsARnSHc0McUqlR0oc+lLlvYcbwXMxI
-	 mhMSDFz4h2r0nZsrnX19EGpyCmHwOpkpgIH3f4B8A951RGDPQszA+lm839QJtip9n9
-	 EcI2nYuVX079GfLv4RWejzwVyNxwxsGhHkbYvdOsBsmZNSt4b71/WXtn+8r2/yVVQy
-	 BctMbAoQjJszKy4eONxg7VwLUfFc8GqCZUfxBlfvfNM5fwfj6BvNznwrGNbxmRKZPW
-	 XzfB36YHGGRYw==
-Message-ID: <sashiko-outbox-208179@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v7 2/2] phy: cix: Add CIX Sky1 USB3 PHY driver
-To: "Hongliang Yang" <hongliang.yang@cixtech.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
-In-Reply-To: <20261111030937.2954646-3-hongliang.yang@cixtech.com>
-References: <20261111030937.2954646-1-hongliang.yang@cixtech.com>
- <20261111030937.2954646-3-hongliang.yang@cixtech.com>
+	id 1xQywG-00000005Xag-3SnL;
+	Wed, 11 Nov 2026 03:23:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
+	s=protonmail2; t=1794367431; x=1794626631;
+	bh=kuGszS9Lfrf5RfF4V1hI8Xte0k/ziHqDGXb0U45lOag=;
+	h=Date:To:From:Cc:Subject:Message-ID:In-Reply-To:References:
+	 Feedback-ID:From:To:Cc:Date:Subject:Reply-To:Feedback-ID:
+	 Message-ID:BIMI-Selector;
+	b=NFsfLl7aVQ4cR5Ieenrw4HvqnfXE158VrpFlHlYih5YhoMb83sjl+FckAyRAStgT7
+	 vTaYE9doV4ckhIEa/vzNT5cDyOVTEyYfjNh+Vhg3We1PHtu/1NrWUq5o8FxnP1jDnN
+	 K1uxjQUkKj1QwgGOidw5dmczWjWMa/i/cIQCXmdwNu5TWa8tiMykFv1mpAlkDzTZip
+	 kX2vEUYcGIJ13BKXx6LSNwbAcIC+7NbLyCgv70LkUS33ACafCs44pPTjFIUO1qSo6e
+	 oHsfCI8xVZza5h3rg3nYVxONKh4uCL8lW4d9QRUWaY+2PNWM/cdwpJVv2fsxz/gnl+
+	 Y/73vkj4l/ghg==
 Date: Wed, 11 Nov 2026 03:23:48 +0000
+To: Vinod Koul <vkoul@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>
+From: Soheyb <soheyb_boulaa@proton.me>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, Peter Griffin <peter.griffin@linaro.org>, Alim Akhtar <alim.akhtar@samsung.com>, Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>, linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org, Soheyb <soheyb_boulaa@proton.me>, Sashiko <sashiko-bot@kernel.org>, stable@vger.kernel.org
+Subject: [PATCH v2 2/3] phy: exynos5-usbdrd: return the Exynos2200 high-speed phy init error
+Message-ID: <20261111032309.3365794-3-soheyb_boulaa@proton.me>
+In-Reply-To: <20261111032309.3365794-1-soheyb_boulaa@proton.me>
+References: <20261111032309.3365794-1-soheyb_boulaa@proton.me>
+Feedback-ID: 140697376:user:proton
+X-Pm-Message-ID: d855c3b8805661db49d988325c6216cccc83caf4
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261110_192357_016030_BD0D000F 
+X-CRM114-Status: UNSURE (   8.75  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,121 +66,59 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwKaXNzdWVzIHRvIGNvbnNpZGVyOgotIFtMb3ddIHBoeTogY2l4OiByZWR1bmRh
-bnQgbG9ja2luZywgcmVmY291bnRpbmcsIGFuZCB3cmFwcGVycyBpbgogIHBoeS1jaXgtdXNiMy5j
-Ci0gW0xvd10gcGh5OiBjaXg6IHVudXNlZCA0LWxhbmUgYW5kIG5vbi0wODAzIHJlZ2lzdGVyIG1h
-Y3JvcyBpbgogIHBoeS1jaXgtdXNiMy5oCi0tCgpjb21taXQgM2I0YTE2OWI3MzM4ZjdkZGU0ZTY2
-MTA5YTcyYzc5NDZiZWY4ZWExNApBdXRob3I6IEhvbmdsaWFuZyBZYW5nIDxob25nbGlhbmcueWFu
-Z0BjaXh0ZWNoLmNvbT4KCnBoeTogY2l4OiBBZGQgQ0lYIFNreTEgVVNCMyBQSFkgZHJpdmVyCgpU
-aGlzIGNvbW1pdCBhZGRzIGEgZHJpdmVyIGZvciB0aGUgQ2FkZW5jZSBTRDA4MDMgVVNCMyBQSFkg
-aW50ZWdyYXRlZCBpbgp0aGUgQ0lYIFNreTEgU29DLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9w
-aHkvY2l4L3BoeS1jaXgtdXNiMy5jIGIvZHJpdmVycy9waHkvY2l4L3BoeS1jaXgtdXNiMy5jCj4g
-bmV3IGZpbGUgbW9kZSAxMDA2NDQKPiBpbmRleCAwMDAwMDAwMDAwMDAwLi5jNjM3NmY3ODdhZjAz
-Cj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBiL2RyaXZlcnMvcGh5L2NpeC9waHktY2l4LXVzYjMuYwoK
-WyAuLi4gXQoKPiArc3RydWN0IGNpeF91M3BoeSB7Cj4gKwlzdHJ1Y3QgZGV2aWNlICpkZXY7Cj4g
-Kwl2b2lkIF9faW9tZW0gKmJhc2U7Cj4gKwlzdHJ1Y3QgcmVnbWFwICpwaHlfcmVnbWFwOwo+ICsJ
-c3RydWN0IHJlc2V0X2NvbnRyb2wgKnByZXNldDsKPiArCXN0cnVjdCByZXNldF9jb250cm9sICpy
-ZXNldDsKPiArCXN0cnVjdCBjbGsgKmFwYl9jbGs7Cj4gKwlzdHJ1Y3QgY2xrICpyZWZfY2xrOwo+
-ICsJc3RydWN0IG11dGV4IG11dGV4OyAvKiBtdXRleCB0byBwcm90ZWN0IGFjY2VzcyB0byBpbmRp
-dmlkdWFsIFBIWXMgKi8KPiArCWJvb2wgaW5pdDsKPiArCWludCBpbml0X2NvdW50Owo+ICsJY29u
-c3Qgc3RydWN0IGNpeF91M3BoeV9jZmcgKmNmZzsKPiArfTsKPiArCj4gK3N0YXRpYyBpbnQgc2t5
-MV91M3BoeV9leGl0KHN0cnVjdCBjaXhfdTNwaHkgKnUzcGh5KQo+ICt7Cj4gKwlpZiAoV0FSTl9P
-TighdTNwaHktPmluaXRfY291bnQpKQo+ICsJCXJldHVybiAtRUlOVkFMOwo+ICsKPiArCXUzcGh5
-LT5pbml0X2NvdW50LS07Cj4gKwlpZiAodTNwaHktPmluaXQgJiYgdTNwaHktPmluaXRfY291bnQg
-PT0gMCkgewo+ICsJCXJlc2V0X2NvbnRyb2xfYXNzZXJ0KHUzcGh5LT5yZXNldCk7Cj4gKwkJcmVz
-ZXRfY29udHJvbF9hc3NlcnQodTNwaHktPnByZXNldCk7Cj4gKwkJY2xrX2Rpc2FibGVfdW5wcmVw
-YXJlKHUzcGh5LT5yZWZfY2xrKTsKPiArCQljbGtfZGlzYWJsZV91bnByZXBhcmUodTNwaHktPmFw
-Yl9jbGspOwo+ICsJCXUzcGh5LT5pbml0ID0gZmFsc2U7Cj4gKwl9Cj4gKwlyZXR1cm4gMDsKPiAr
-fQo+ICsKPiArc3RhdGljIGludCBza3kxX3UzcGh5X2luaXQoc3RydWN0IGNpeF91M3BoeSAqdTNw
-aHkpCj4gK3sKPiArCWludCByZXQ7Cj4gKwo+ICsJaWYgKCF1M3BoeS0+aW5pdCkgewo+ICsJCS8q
-IHVzYiByY3N1IHJlc2V0IGlzIGRlZmF1bHQgZGVhc3NlcnQgKi8KPiArCQlyZXNldF9jb250cm9s
-X2Fzc2VydCh1M3BoeS0+cmVzZXQpOwo+ICsJCXJlc2V0X2NvbnRyb2xfYXNzZXJ0KHUzcGh5LT5w
-cmVzZXQpOwo+ICsJCXJldCA9IGNsa19wcmVwYXJlX2VuYWJsZSh1M3BoeS0+YXBiX2Nsayk7Cj4g
-KwkJaWYgKHJldCkgewo+ICsJCQlkZXZfZXJyKHUzcGh5LT5kZXYsICJGYWlsZWQgdG8gcHJlcGFy
-ZV9lbmFibGUgdTNwaHkgYXBiIGNsb2NrXG4iKTsKPiArCQkJcmV0dXJuIHJldDsKPiArCQl9Cj4g
-KwkJcmV0ID0gY2xrX3ByZXBhcmVfZW5hYmxlKHUzcGh5LT5yZWZfY2xrKTsKPiArCQlpZiAocmV0
-KSB7Cj4gKwkJCWRldl9lcnIodTNwaHktPmRldiwgIkZhaWxlZCB0byBwcmVwYXJlX2VuYWJsZSB1
-M3BoeSByZWYgY2xvY2tcbiIpOwo+ICsJCQlnb3RvIGRpc2FibGVfYXBiX2NsazsKPiArCQl9Cj4g
-KwkJcmVzZXRfY29udHJvbF9kZWFzc2VydCh1M3BoeS0+cHJlc2V0KTsKPiArCQlyZXQgPSByZWdt
-YXBfbXVsdGlfcmVnX3dyaXRlKHUzcGh5LT5waHlfcmVnbWFwLCBza3kxX3UzcGh5X2NvbmYsCj4g
-KwkJCQkJICAgICBBUlJBWV9TSVpFKHNreTFfdTNwaHlfY29uZikpOwo+ICsJCWlmIChyZXQpIHsK
-PiArCQkJZGV2X2Vycih1M3BoeS0+ZGV2LCAiRmFpbGVkIHRvIHdyaXRlIHRoZSByZWcgc2VxdWVu
-Y2VcbiIpOwo+ICsJCQlnb3RvIGFzc2VydF9yZXNldF9wcmVzZXQ7Cj4gKwkJfQo+ICsJCXUzcGh5
-LT5pbml0ID0gdHJ1ZTsKPiArCQlyZXNldF9jb250cm9sX2RlYXNzZXJ0KHUzcGh5LT5yZXNldCk7
-Cj4gKwl9Cj4gKwl1M3BoeS0+aW5pdF9jb3VudCsrOwo+ICsJcmV0dXJuIDA7Cj4gKwo+ICthc3Nl
-cnRfcmVzZXRfcHJlc2V0Ogo+ICsJcmVzZXRfY29udHJvbF9hc3NlcnQodTNwaHktPnByZXNldCk7
-Cj4gKwlyZXNldF9jb250cm9sX2Fzc2VydCh1M3BoeS0+cmVzZXQpOwo+ICsJY2xrX2Rpc2FibGVf
-dW5wcmVwYXJlKHUzcGh5LT5yZWZfY2xrKTsKPiArZGlzYWJsZV9hcGJfY2xrOgo+ICsJY2xrX2Rp
-c2FibGVfdW5wcmVwYXJlKHUzcGh5LT5hcGJfY2xrKTsKPiArCXJldHVybiByZXQ7Cj4gK30KClsg
-Li4uIF0KCj4gK3N0YXRpYyBpbnQgY2l4X3VzYjNfcGh5X3Bvd2VyX29uKHN0cnVjdCBjaXhfdTNw
-aHkgKnUzcGh5KQo+ICt7Cj4gKwlpbnQgcmV0Owo+ICsJY29uc3Qgc3RydWN0IGNpeF91M3BoeV9j
-ZmcgKnBoeV9jZmdzID0gdTNwaHktPmNmZzsKPiArCj4gKwlpZiAocGh5X2NmZ3MtPnUzcGh5X2lu
-aXQpIHsKPiArCQlyZXQgPSBwaHlfY2Zncy0+dTNwaHlfaW5pdCh1M3BoeSk7Cj4gKwkJaWYgKHJl
-dCkgewo+ICsJCQlkZXZfZXJyKHUzcGh5LT5kZXYsICJmYWlsZWQgdG8gaW5pdCB1ZHBoeVxuIik7
-Cj4gKwkJCXJldHVybiByZXQ7Cj4gKwkJfQo+ICsJfQo+ICsJcmV0dXJuIDA7Cj4gK30KPiArCj4g
-K3N0YXRpYyBpbnQgY2l4X3VzYjNfcGh5X3Bvd2VyX29mZihzdHJ1Y3QgY2l4X3UzcGh5ICp1M3Bo
-eSkKPiArewo+ICsJaW50IHJldDsKPiArCWNvbnN0IHN0cnVjdCBjaXhfdTNwaHlfY2ZnICpwaHlf
-Y2ZncyA9IHUzcGh5LT5jZmc7Cj4gKwo+ICsJaWYgKHBoeV9jZmdzLT51M3BoeV9leGl0KSB7Cj4g
-KwkJcmV0ID0gcGh5X2NmZ3MtPnUzcGh5X2V4aXQodTNwaHkpOwo+ICsJCWlmIChyZXQpIHsKPiAr
-CQkJZGV2X2Vycih1M3BoeS0+ZGV2LCAiZmFpbGVkIHRvIGV4aXQgdWRwaHlcbiIpOwo+ICsJCQly
-ZXR1cm4gcmV0Owo+ICsJCX0KPiArCX0KPiArCXJldHVybiAwOwo+ICt9Cj4gKwo+ICtzdGF0aWMg
-aW50IGNpeF91M3BoeV9pbml0KHN0cnVjdCBwaHkgKnBoeSkKPiArewo+ICsJc3RydWN0IGNpeF91
-M3BoeSAqdTNwaHkgPSBwaHlfZ2V0X2RydmRhdGEocGh5KTsKPiArCWludCByZXQgPSAwOwo+ICsK
-PiArCW11dGV4X2xvY2soJnUzcGh5LT5tdXRleCk7Cj4gKwlyZXQgPSBjaXhfdXNiM19waHlfcG93
-ZXJfb24odTNwaHkpOwo+ICsJbXV0ZXhfdW5sb2NrKCZ1M3BoeS0+bXV0ZXgpOwo+ICsJcmV0dXJu
-IHJldDsKPiArfQo+ICsKPiArc3RhdGljIGludCBjaXhfdTNwaHlfZXhpdChzdHJ1Y3QgcGh5ICpw
-aHkpCj4gK3sKPiArCXN0cnVjdCBjaXhfdTNwaHkgKnUzcGh5ID0gcGh5X2dldF9kcnZkYXRhKHBo
-eSk7Cj4gKwlpbnQgcmV0ID0gMDsKPiArCj4gKwltdXRleF9sb2NrKCZ1M3BoeS0+bXV0ZXgpOwo+
-ICsJcmV0ID0gY2l4X3VzYjNfcGh5X3Bvd2VyX29mZih1M3BoeSk7Cj4gKwltdXRleF91bmxvY2so
-JnUzcGh5LT5tdXRleCk7Cj4gKwlyZXR1cm4gcmV0Owo+ICt9CgpbU2V2ZXJpdHk6IExvd10KVGhp
-cyBpc24ndCBhIGJ1ZywgYnV0IHNpbmNlIGNpeF91M3BoeV9wcm9iZSgpIHJlZ2lzdGVycyBhIHNp
-bmdsZSBzdHJ1Y3QKcGh5IHZpYSBvZl9waHlfc2ltcGxlX3hsYXRlKCksIHBoeV9pbml0KCkgYW5k
-IHBoeV9leGl0KCkgaW4gdGhlIFBIWSBjb3JlCmFscmVhZHkgc2VyaWFsaXplIGNhbGxzIHVuZGVy
-IHBoeS0+bXV0ZXggYW5kIHJlZmNvdW50IHBoeS0+aW5pdF9jb3VudCwKY2FsbGluZyBwaHktPm9w
-cy0+aW5pdCgpIG9ubHkgd2hlbiBwaHktPmluaXRfY291bnQgPT0gMCBhbmQKcGh5LT5vcHMtPmV4
-aXQoKSBvbmx5IHdoZW4gcGh5LT5pbml0X2NvdW50ID09IDEuCgpUaGF0IG1ha2VzIHUzcGh5LT5t
-dXRleCwgdTNwaHktPmluaXQsIGFuZCB1M3BoeS0+aW5pdF9jb3VudCByZWR1bmRhbnQuCkRyb3Bw
-aW5nIHRoZW0gYW5kIHdpcmluZyBza3kxX3UzcGh5X2luaXQoKSBhbmQgc2t5MV91M3BoeV9leGl0
-KCkgZGlyZWN0bHkKaW50byBjaXhfdTNwaHlfb3BzIHdvdWxkIGFsc28gcmVtb3ZlIHRoZSBjaXhf
-dXNiM19waHlfcG93ZXJfb24oKSwKY2l4X3VzYjNfcGh5X3Bvd2VyX29mZigpLCBhbmQgc3RydWN0
-IGNpeF91M3BoeV9jZmcgd3JhcHBlcnMsIHdoaWNoIGxvZwpkdXBsaWNhdGUgZXJyb3IgbWVzc2Fn
-ZXMgdXNpbmcgdGhlIHN0YWxlICJ1ZHBoeSIgbmFtZS4KClsgLi4uIF0KCj4gZGlmZiAtLWdpdCBh
-L2RyaXZlcnMvcGh5L2NpeC9waHktY2l4LXVzYjMuaCBiL2RyaXZlcnMvcGh5L2NpeC9waHktY2l4
-LXVzYjMuaAo+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4gaW5kZXggMDAwMDAwMDAwMDAwMC4uMjI2
-NjZjZDNiMjUzNwo+IC0tLSAvZGV2L251bGwKPiArKysgYi9kcml2ZXJzL3BoeS9jaXgvcGh5LWNp
-eC11c2IzLmgKClsgLi4uIF0KCj4gKyNkZWZpbmUgUlhfU0RDQUwwX0lOSVRfVE1SX0xBTkUwICAg
-ICAweDgwNDQKPiArI2RlZmluZSBSWF9TRENBTDBfSU5JVF9UTVJfTEFORTEgICAgIDB4ODI0NAo+
-ICsjZGVmaW5lIFJYX1NEQ0FMMF9JTklUX1RNUl9MQU5FMiAgICAgMHg4NDQ0Cj4gKyNkZWZpbmUg
-UlhfU0RDQUwwX0lOSVRfVE1SX0xBTkUzICAgICAweDg2NDQKClsgLi4uIF0KCj4gKyNkZWZpbmUg
-UEhZX1BJUEVfVVNCM19HRU4yX1BSRV9DRkcwICAweGMwMTgKPiArI2RlZmluZSBQSFlfUElQRV9V
-U0IzX0dFTjJfUE9TVF9DRkcwIDB4YzAxYQo+ICsjZGVmaW5lIFBIWV9QSVBFX1VTQjNfR0VOMl9Q
-T1NUX0NGRzEgMHhjMDFiCgpbIC4uLiBdCgo+ICsvKiBCaXRzICovCj4gKwo+ICsjZGVmaW5lIFBI
-WV9QTExfQ0ZHXzA4MDMgICAgICAgICAgICAgIDB4QzAwRQo+ICsvKiAwODAzIHBoeSByZWdpc3Rl
-ciAqLwo+ICsjZGVmaW5lIFBIWV9QSVBFX1VTQjNfR0VOMl9QUkVfQ0ZHMF8wODAzCTB4YzAxYwo+
-ICsjZGVmaW5lIFBIWV9QSVBFX1VTQjNfR0VOMl9QT1NUX0NGRzBfMDgwMwkweGMwMWUKPiArI2Rl
-ZmluZSBQSFlfUElQRV9VU0IzX0dFTjJfUE9TVF9DRkcxXzA4MDMJMHhjMDFmCj4gKwo+ICsjZW5k
-aWYKCltTZXZlcml0eTogTG93XQpUaGlzIGlzbid0IGEgYnVnLCBidXQgb3ZlciA3MCBtYWNyb3Mg
-aW4gdGhpcyBwcml2YXRlIGhlYWRlciBhcmUgdW51c2VkLAppbmNsdWRpbmcgYWxsICpfTEFORTIg
-YW5kICpfTEFORTMgZGVmaW5pdGlvbnMgZm9yIHRoaXMgMi1sYW5lIFBIWSBhbmQgdGhlCm5vbi0w
-ODAzIFBIWV9QSVBFX1VTQjNfR0VOMl8qIG9mZnNldHMgc3VwZXJzZWRlZCBieSB0aGUgKl8wODAz
-IG1hY3JvcyBhdAp0aGUgYm90dG9tLiAgQ291bGQgdGhlIHVudXNlZCBtYWNyb3MgYmUgZHJvcHBl
-ZCBhbmQgdGhlIHJlbWFpbmluZwpkZWZpbml0aW9ucyBtb3ZlZCBpbnRvIHBoeS1jaXgtdXNiMy5j
-PwoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNl
-dC8yMDI2MTExMTAzMDkzNy4yOTU0NjQ2LTEtaG9uZ2xpYW5nLnlhbmdAY2l4dGVjaC5jb20/cGFy
-dD0yCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1w
-aHkK
+exynos2200_usbdrd_utmi_init() ignores the result of phy_init() on the
+high-speed phy and returns 0. When the high-speed phy fails to
+initialize, the UTMI phy thus counts as initialized, and the controller
+goes on with a high-speed phy that is not set up.
+
+Return the result of phy_init(), so that a failed init of the
+high-speed phy fails the init of the UTMI phy. The next patch, which
+exits the high-speed phy with the UTMI phy, relies on it: an exit after
+a failed init would otherwise take the init count of the high-speed
+phy below zero.
+
+Fixes: cc52a697f87e ("phy: exynos5-usbdrd: support Exynos USBDRD 3.2 4nm controller")
+Reported-by: Sashiko <sashiko-bot@kernel.org>
+Closes: https://lore.kernel.org/linux-phy/sashiko-outbox-205724@kernel.org/
+Cc: stable@vger.kernel.org
+Signed-off-by: Soheyb <soheyb_boulaa@proton.me>
+---
+v2: new patch, after Sashiko's review of v1.
+
+ drivers/phy/samsung/phy-exynos5-usbdrd.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c b/drivers/phy/samsung/phy-exynos5-usbdrd.c
+index a6fe779..cf0597a 100644
+--- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
++++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
+@@ -1369,9 +1369,7 @@ static const struct phy_ops exynos7870_usbdrd_phy_ops = {
+ static int exynos2200_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
+ {
+ 	/* Configure non-Samsung IP PHY, responsible for UTMI */
+-	phy_init(phy_drd->hs_phy);
+-
+-	return 0;
++	return phy_init(phy_drd->hs_phy);
+ }
+ 
+ static void exynos2200_usbdrd_link_init(struct exynos5_usbdrd_phy *phy_drd)
+-- 
+2.56.0
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
