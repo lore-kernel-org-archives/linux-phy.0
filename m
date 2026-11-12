@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C5C55606DE77
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 11:27:17 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A8038606A323
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 11:27:37 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=ldwuYrJJ;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=hRSOhJ1U
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=oWjwyFXu;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Ybcb8Dfv
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,46 +14,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=jgXhPiDbld4qkJMaB9AZroQM5sfgkMOxUIKA9fzAXyU=; b=ldwuYrJJgY6fLMDdKRmFOU8awb
-	U+dpmat7cDMzWIvNGL4BFtZip+Omb39h2yaAKKgUKeITQfQNImmyYPmwmtSH/7MuvI/AaPNsOIhkW
-	IGK+nsy0Nh/nBcBv//D+lRzE/FJ24oO2ohU+jhm4aNwtb90afyVjO+RtCIkUstiPIrfiQqFcr3smc
-	P2rbCv59zZDEnTSb3IyWFI22xJSU+dKSpzCyoDQA11iNNVP5QoN9mlkj3Vu1fPQHKjNfLHfaf4WdW
-	9+SfGwKn6HW4dUODjcz/autmAo8W5rty36KHrrVr88mNbAogVJKjG91J9EaDPpII4HzG0irQzX5Vt
-	cPbYeooQ==;
+	bh=FB6InFNKvElIEHCw/5ojHnrsb32Skv6dbh5o+a/GZ1w=; b=oWjwyFXuIqpDSbRtKm0+8jHeqf
+	eE655lFh7BqKdvxPsf6FJ3mvD+KobWfmfg1pUba16G+iJoa/8KhHv9kqqhOe6SA8bliQ3U6osMa1g
+	4w3lX+5tu5kZgg/aiQ6lQFcIs3QqWdVOhCd4RF2hYvCVfOW36hjpFkrYCZqdiqU4KxwX3lFyX3Hbk
+	jwveRZqU+9w3ctAmnA2T+cPUDlViVMo45yuEQ8slil6ndC75qC5yImZ73lGVXw5sT+yta43bBPHPQ
+	o9h3C87RUEfo8c+LCAeDvsniDNFy1XymUWoQcQEMqFgQJ8xVm0YpjSVT2sXpTES+bqbp2QZCINWM9
+	rFGWWyAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRSxY-00000009hY2-3TdT;
-	Thu, 12 Nov 2026 11:27:17 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xRSxt-00000009i0f-1JJz;
+	Thu, 12 Nov 2026 11:27:37 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRSxE-00000009hEb-0jFB;
-	Thu, 12 Nov 2026 11:26:58 +0000
+	id 1xRSxM-00000009hIR-0g9J;
+	Thu, 12 Nov 2026 11:27:04 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 98D2745642;
+	by tor.source.kernel.org (Postfix) with ESMTP id 7B11F6061E;
+	Thu, 12 Nov 2026 11:27:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 39F951F00A05;
 	Thu, 12 Nov 2026 11:26:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E80DB1F00A07;
-	Thu, 12 Nov 2026 11:26:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794482815;
-	bh=pxwntV3ax7d8ghlUHrSTVkv7b/WcoXHrf0AVg/hqyUo=;
+	s=k20260515; t=1794482823;
+	bh=O4AXPfiKbyDpre+CB6uNRY4elkcJBCP9G8bvuRhJYmw=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=hRSOhJ1UQfb123JzAtD9k716frj9o6HyPgxZFGPA3vj9ebbWjbV1ErBd2aXGbU7lN
-	 M9rge3X+C5n94qtfAE14Sa7varsBnXqLo6YNAfEOlcokAChylNnf2IyLfK7r/ON7dQ
-	 J/sE4YNl98e9rJF0AaCkNi+dFEa8W3O5wxqiNNqdzMgOhTx2C+IMzon8cceuZSJInP
-	 ZRcavHzAFnj+aIqpFOsB2xtDOL5aQEmIrrytl+hs/cnfK/WoWA50e6Bp4KzhxqMh6r
-	 +xnbI17vFoXpgAdGZJ77AYj8W4eyG1nLTJ+A9JZN1BnyeAXZs2lx2Jy6F1EHQuxXXu
-	 1+hywFg8Ul7pg==
+	b=Ybcb8DfvJJta43gpnhAApzXPdEbGDIo6BxvlEiV3cgQi+hMbTguU8+tzxFY970n8H
+	 lAf0aUSMrjjvueWzhwLzG6mzZKi1ac+ij1FlV70wuRR5ENj6eVsvPW97/aZ4JFDl9P
+	 SItvqxet/FaHTHTzOGOQ8X46vnSiZhtIqp/d45EAvfiRzPqQ9lddb9AxQllWdN6taf
+	 PueIJHjQIdLyGkXJSDlJ6OZjXr6Ii+w6sH4Sht/6omTTRlRL3Z9FM4Mi0E+9GpHbpw
+	 vuNphCR0M9x69chCkgI4+VW8ChioDcN9xpBRgREkpqLRjhMuLpd49bcMFxfoV2WSiH
+	 vO4Hfn6M5Wqnw==
 From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>, 
- Shawn Lin <shawn.lin@rock-chips.com>
-Cc: linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org
-In-Reply-To: <1792036787-37927-1-git-send-email-shawn.lin@rock-chips.com>
-References: <1792036787-37927-1-git-send-email-shawn.lin@rock-chips.com>
-Subject: Re: [PATCH] phy: rockchip: naneng-combphy: Fix overwritten PLL SSC
- control bit
-Message-Id: <179448281355.507383.5760526379124804602.b4-ty@kernel.org>
-Date: Thu, 12 Nov 2026 16:56:53 +0530
+To: neil.armstrong@linaro.org, mani@kernel.org, krzk@kernel.org, 
+ peter.griffin@linaro.org, alim.akhtar@samsung.com, pritam.sutar@samsung.com, 
+ andre.draszik@linaro.org, kernel@lvkasz.us, pengpeng@iscas.ac.cn, 
+ kishon@kernel.org, linux-phy@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, Selvarasu Ganesan <selvarasu.g@samsung.com>
+Cc: jh0801.jung@samsung.com, h10.kim@samsung.com, dh10.jung@samsung.com, 
+ akash.m5@samsung.com, hongpooh.kim@samsung.com, eomji.oh@samsung.com, 
+ shijie.cai@samsung.com, muhammed.ali@samsung.com, thiagu.r@samsung.com, 
+ stable@vger.kernel.org
+In-Reply-To: <20261020063559.3530901-1-selvarasu.g@samsung.com>
+References: <CGME20261020063617epcas5p4ba00854fcd38bf211c573629ee062621@epcas5p4.samsung.com>
+ <20261020063559.3530901-1-selvarasu.g@samsung.com>
+Subject: Re: [PATCH v3] phy: exynos5-usbdrd: Use dynamic phy_cfg size to
+ prevent OOB access
+Message-Id: <179448281584.507383.1286765834477602323.b4-ty@kernel.org>
+Date: Thu, 12 Nov 2026 16:56:55 +0530
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
@@ -77,23 +84,25 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 
-On Thu, 15 Oct 2026 11:59:47 +0800, Shawn Lin wrote:
-> rk_combphy_common_cfg_ssc() first sets RK3568_PHYREG33_PLL_SSC_CTRL on the
-> RK3588 and RK3576 SoCs, then, for PCIe at 24MHz, programs the PLL KVCO
-> adjust field. The latter used a plain writel() of the FIELD_PREP() value,
-> which cleared all the other bits of RK3568_PHYREG33, including the
-> PLL_SSC_CTRL bit that had just been set a few lines above.
+On Tue, 20 Oct 2026 12:05:59 +0530, Selvarasu Ganesan wrote:
+> The probe loop currently iterates using EXYNOS5_DRDPHYS_NUM (2),
+> creating both UTMI and PIPE3 PHY instances regardless of the SoC
+> capability. Several SoCs (Exynos2200, Exynos7870, Exynos850, Exynos990,
+> and ExynosAutoV920) provide phy_cfg arrays containing only a single
+> element.
 > 
-> Use rockchip_combphy_updatel() so that only the KVCO field is updated and
-> the SSC control bit is preserved, as the comment and the pre-consolidation
-> code intended.
+> On these SoCs, when the loop reaches index 1, the driver reads past the
+> end of the rodata array, populating the second PHY instance with garbage
+> data. Since the configuration structure contains critical function
+> pointers (phy_isol, phy_init, set_refclk), any subsequent access to this
+> PHY instance via exynos5_usbdrd_phy_xlate could result in a kernel oops.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] phy: rockchip: naneng-combphy: Fix overwritten PLL SSC control bit
-      commit: 96246dc6c16a5e5a6b4b9fde8f4ab9cdeb201088
+[1/1] phy: exynos5-usbdrd: Use dynamic phy_cfg size to prevent OOB access
+      commit: ba6618a1e7c02f384069f7817133ff8cb5c793b8
 
 Best regards,
 -- 
