@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D0B99606A33D
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 10:57:36 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 67164606A331
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 11:08:28 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=mBZzlUJR;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=NU1i7krp
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=PYVrwvXu;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=DyW/n0qa
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,54 +14,60 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=X2qWEOoqa6czla0Ps1Hhujz3WblOJsFsMoJs0igJ3t0=; b=mBZzlUJRqsh/Wrzkew6tL993FS
-	5M7fZ3+5JFu3Oheh14jH9eD5ElrsWTo3UexfG5YkjAXAEnLID8026k8x5wDl10MyzeohorvNazTHq
-	5cxXKqyx4+vNhhC3k241aECaHY/RlzD0GlHHel8YnMSF8ueMhZBNDgnr60Hv4eL6bJIPdpUWqNYQP
-	1HIwJ0phvNDa9qTiSvjOsZKAhcY+VF2lc9exKhFGdwzFYJzM3uxZK0BoWaKmnIb0tEdY4apMylDpq
-	FV3sTX0VnNUv40Vx2ldbw+u+1IlLMRg0ycG086uNO6dZpEhhUt59N0vlw6ucebu7NdU4N9gXCiHWm
-	cWh3NYtw==;
+	bh=MQA6M04fkd4kxbHYdc7Y9KNrSYCMUN0iAryOJ4Xtvec=; b=PYVrwvXuoMIgIGgGA5N205XpEX
+	M6SXViPuKr5Cpu9bZ1HwAA9k5jMM23g0kWHGNJpZnsYWKgHZzD34Vu3azOSeKXrakfIH9OBleRyM+
+	lH7Ae5z7JeOGnYz4KsCOhYD/F4Ljrqx0xtUJWKTy3SyB/dn8qrSx60JU0L9eYohnd2mXTNyHHklTP
+	W3ZbTkXyuhQmKukJtVXxAuVWgzw7Cb5+vju9gkrAwM3XyuS/5VJwMlaxZsh7EoCmOEPANXZ4aXbBj
+	IVkzi3pRZsnG1eGv07i1c5TIdss5/us7ymmwr8PTCmAVAIGoRrCtj0PhrjLk90KLpDx8mY6gWpt2x
+	EJsvd+iQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRSUq-00000009bB4-2QHI;
-	Thu, 12 Nov 2026 10:57:36 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xRSfM-00000009caY-05Mk;
+	Thu, 12 Nov 2026 11:08:28 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRSUp-00000009bAx-18Yt
-	for linux-phy@lists.infradead.org;
-	Thu, 12 Nov 2026 10:57:35 +0000
+	id 1xRSfL-00000009ca0-0Toz;
+	Thu, 12 Nov 2026 11:08:27 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id A199F631F4;
-	Thu, 12 Nov 2026 10:57:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 96B931F00A05;
-	Thu, 12 Nov 2026 10:57:33 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 8D8F26122C;
+	Thu, 12 Nov 2026 11:08:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7B1711F00A05;
+	Thu, 12 Nov 2026 11:08:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794481054;
-	bh=EpsbxHvOdknqVMxZxp6Rs23AKxnAfeyCb2MfnBs6W20=;
+	s=k20260515; t=1794481706;
+	bh=CwOsftxfNPZqsPWmATYl8H3Jcuwt3wJErixQ5+qMlpE=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=NU1i7krpUkLv837uNLTHluVU8yoXpG/UernHHa4P+vFyU8O3pwTEzveHzOyJHMucn
-	 uosuZYshFFEe1dhI+e94V+nd5oW2H86/tnPMxD305PwrcN+yKUFLMtpAFnO1fl9D35
-	 GvhdBl5oGMBqxyQw1gvQAAYXM/6rGslkflmf1qJdtHECju9Vb9CimFcQXlR7XrLfq8
-	 MVhgOX2aOB22gggHA66PLtXpV2QDead70gXi0T9SiEdK2lXux63ELyz94/GuP1MAHA
-	 yxSb9EIwr8TteYaS2mDpx1F4p/bCgKCwf9OCGcp68N3raA0L4Z7QW6i5UsEteDZxhw
-	 oxbXnpUv8mgqg==
-Date: Thu, 12 Nov 2026 16:27:30 +0530
+	b=DyW/n0qa91KOXYIdySgHj3eIEbcxiNLeNpFJQeJIhuco7rqZhcUrZWt85zW2HvkZ9
+	 2wHcJEktysymXTF6HagokqiVhCbjwDWD8yix6rDxMSGsopa8pZHnoxnrvLe/8Hz+2u
+	 /Oeg3+Wul0MlRp1g521fXX3TFW07X/L5HX5Qvh0aSubdGVt08DH7GwnuO2LSJ2KXau
+	 RPAXXyI2D8ChNftplFJpDpNSn2iMeD5JkQihuDtFyl16gS3OoJJvQR25xqK55OoY+3
+	 gzGIr1nwOPmi+95UfGmefDWE5eByHd4cmfi1D0Ti6MIdqFXLTfEYjZ7WsHvUTpW7GR
+	 EzmSUwBmBxA8g==
+Date: Thu, 12 Nov 2026 16:38:22 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: "Rob Herring (Arm)" <robh@kernel.org>
+To: aidenisik@member.fsf.org
 Cc: Neil Armstrong <neil.armstrong@linaro.org>,
 	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Wesley Cheng <quic_wcheng@quicinc.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2] dt-bindings: phy: qcom: Relax required supplies
-Message-ID: <avWbmsjkYo2LMJKs@parshuram>
-References: <20261021022446.3619435-1-robh@kernel.org>
+	Marek Szyprowski <m.szyprowski@samsung.com>,
+	Sylwester Nawrocki <s.nawrocki@samsung.com>,
+	Peter Griffin <peter.griffin@linaro.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org
+Subject: Re: [PATCH 2/2] phy: exynos5-usbdrd: Add support for the Exynos5515
+ usbdrd phy
+Message-ID: <avWeJqbpbLcWgq_R@parshuram>
+References: <20261022-for-next-lucky7-usb-phy-v1-0-2e47f8484bf4@member.fsf.org>
+ <20261022-for-next-lucky7-usb-phy-v1-2-2e47f8484bf4@member.fsf.org>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20261021022446.3619435-1-robh@kernel.org>
+In-Reply-To: <20261022-for-next-lucky7-usb-phy-v1-2-2e47f8484bf4@member.fsf.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,24 +80,63 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 20-10-26, 21:24, Rob Herring (Arm) wrote:
-> For the QUSB2 PHY binding, keep the three regulator supplies required
-> except for legacy IPQ6018 nodes that do not describe the board rails.
+On 22-10-26, 17:46, Aiden Isik via B4 Relay wrote:
+> From: Aiden Isik <aidenisik@member.fsf.org>
 > 
-> This relaxes the requirements for the IPQ5210 as well as if it is
-> compatible with IPQ6018, then it shouldn't have more required
-> properties either.
+> The Exynos5515 USBDRD PHY is a USB PHY which supports USB Super-Speed
+> and High-Speed. Add support for High-Speed (UTMI+) operation.
+> 
+> Signed-off-by: Aiden Isik <aidenisik@member.fsf.org>
+> ---
+>  drivers/phy/samsung/phy-exynos5-usbdrd.c | 43 ++++++++++++++++++++++++++++++++
+>  1 file changed, 43 insertions(+)
+> 
+> diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c b/drivers/phy/samsung/phy-exynos5-usbdrd.c
+> index f10cf7b6e0aa..8718e8f01e46 100644
+> --- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
+> +++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
+> @@ -2075,6 +2075,46 @@ static const struct exynos5_usbdrd_phy_drvdata exynos5433_usbdrd_phy = {
+>  	.n_regulators		= ARRAY_SIZE(exynos5_regulator_names),
+>  };
+>  
+> +static const struct exynos5_usbdrd_phy_tuning exynos5515_tunes_utmi_postinit[] = {
+> +	PHY_TUNING_ENTRY_PHY(EXYNOS850_DRD_HSPPARACON,
+> +			     (HSPPARACON_TXVREF | HSPPARACON_TXRISE |
+> +			      HSPPARACON_TXRES |
+> +			      HSPPARACON_TXPREEMPPULSE |
+> +			      HSPPARACON_TXPREEMPAMP |
+> +			      HSPPARACON_TXHSXV | HSPPARACON_TXFSLS |
+> +			      HSPPARACON_SQRX | HSPPARACON_OTG |
+> +			      HSPPARACON_COMPDIS),
+> +			     (FIELD_PREP_CONST(HSPPARACON_TXVREF, 15) |
+> +			      FIELD_PREP_CONST(HSPPARACON_TXRISE, 3) |
+> +			      FIELD_PREP_CONST(HSPPARACON_TXRES, 3) |
+> +			      FIELD_PREP_CONST(HSPPARACON_TXPREEMPPULSE, 0) |
+> +			      FIELD_PREP_CONST(HSPPARACON_TXPREEMPAMP, 3) |
+> +			      FIELD_PREP_CONST(HSPPARACON_TXHSXV, 3) |
+> +			      FIELD_PREP_CONST(HSPPARACON_TXFSLS, 3) |
+> +			      FIELD_PREP_CONST(HSPPARACON_SQRX, 7) |
+> +			      FIELD_PREP_CONST(HSPPARACON_OTG, 2) |
+> +			      FIELD_PREP_CONST(HSPPARACON_COMPDIS, 7))),
+> +	PHY_TUNING_ENTRY_LAST
+> +};
+> +
+> +static const struct exynos5_usbdrd_phy_tuning *exynos5515_tunes[PTS_MAX] = {
+> +	[PTS_UTMI_POSTINIT] = exynos5515_tunes_utmi_postinit,
+> +};
+> +
+> +static const struct exynos5_usbdrd_phy_drvdata exynos5515_usbdrd_phy = {
+> +	.phy_cfg		= phy_cfg_exynos850,
+> +	.n_phy_cfg		= ARRAY_SIZE(phy_cfg_exynos850),
 
-Hey Rob,
-
-This fails for phy/next I see vdd-supply has been moved around..
+.n_phy_cfg does not exist.. Please fix this
 
 -- 
 ~Vinod
