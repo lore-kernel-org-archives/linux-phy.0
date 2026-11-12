@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 25F34606A31C
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 13:05:54 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 83E0A606A327
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 13:06:35 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=txavZzIn;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmx.net header.i=wahrenst@gmx.net header.a=rsa-sha256 header.s=s31663417 header.b=epUlvKXg
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=mbfDoqdc;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmx.net header.i=wahrenst@gmx.net header.a=rsa-sha256 header.s=s31663417 header.b=pn9mECPn
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,55 +14,55 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=8dd8BFOF+BpEVdodE97o5IXcQ7omm4H66XGvjL7Qp14=; b=txavZzInQEAOMR9HRJ8pbgn2tN
-	UNtsjc6KjKNEhe9UB5DuMWakb44qzpqgu/fuGHlnpCGEfnCFzlXzRzBTwzSNaAjaTkLl2P+keELrF
-	WJrdGnCv90V9UmZSZ1M5M91mkjhaTSmpBPuuSDSRe4FlQTVCjhnX8R1FTmRJ5lK8xXv8RqrRAVsV7
-	+5sdttMTEOtWCuLJqhh9AhQSpnP8tPuSrlw0tqZp08sofAZ+udSsh5XmVbt9El4L5DIN9EHAL9DpV
-	JqCjiscsnRMlX9fyMjQp9gT7Dm0i9sklmf9t01voON02dXBzbnJuHomq2DaV0yc6RVNuSH0j+QYox
-	QGarjLZQ==;
+	bh=LzlHMnZZhCyy6aHtwS3rZddWL6dNtyimokPj7Cjd1dU=; b=mbfDoqdcxCHcGkMsJKukulstFf
+	7WHb4Q4y+R6kKc6yBk8qPo4Z/3uzVqBXOZdS8XhQdv174v6QmjEsUTHcx5SBJ2aYMSTUnIxIMD689
+	Y0mtazeRbHk/8klMMMGFH4f+9XSEOaVCmcDQW321ALmkHg6FE5mP+1Kg0hO/Cj2LJlTrSb9BCWQ7c
+	y45YgbziKjczM4ak6w4Z1//reoBIIxI7eF/m09xGJQRiS0ZloECERV3eelyLCSMxnEPHCbOOq/ctl
+	+GoUAz2nVgjqJY7dZZNaJbgUSIUAnrtVFlAqk+yDyeLs9WTpjPxMalqNVZdpKM6mUNaaJtNnDFvCv
+	7yRy02IQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRUUz-00000009xSr-3LUH;
-	Thu, 12 Nov 2026 13:05:53 +0000
+	id 1xRUVf-00000009xlP-0dD6;
+	Thu, 12 Nov 2026 13:06:35 +0000
 Received: from mout.gmx.net ([212.227.17.22])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRUUs-00000009xJ3-2oC3
+	id 1xRUVc-00000009xjP-2FK1
 	for linux-phy@lists.infradead.org;
-	Thu, 12 Nov 2026 13:05:50 +0000
-DKIM2-Signature: i=1; m=1; t=1794488745;
+	Thu, 12 Nov 2026 13:06:34 +0000
+DKIM2-Signature: i=1; m=1; t=1794488791;
  mf=PHdhaHJlbnN0QGdteC5uZXQ+;
  rt=PGxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnPg==;
  d=gmx.net;
- s=s31663417:rsa-sha256:bvEBlqIIKWD09fld42mrRXl3dlJu
-   t2zSQFoQ9c8t25Kag+URNaYYGG+s9uD+CXCP7GtkXJfyvAw7xbvoukhOpOqESloBZZsWXnh18w5
-   JIHb2BvMMUJADC6wCPJQk1ozqwjWQXw8nP986hFduCGEFmXvVvgJxJbn1u/kMTPFMoL3X/NOPBE
-   m0wA3x8b0fH8OmANnbig3zL2YhPY6jJWBvCH/UVuUjS7Jho/x65OyGZB59F8G3i7AmRcm4UFdZr
-   OsI4UHy5whp/+N9ETksrw6ARp3cTyc78IT14QCKRBq0xlVGV4Ku2gkxOM/Hz7ChkKG2dmQjZgOy
-   ni0WN6+gzrOMFw==;
+ s=s31663417:rsa-sha256:SACmht37JK3MB/wxawUeNXIWD8Ye
+   8pZ6U2tHcNItB4AOCyq8pCFQaF5EFe036up3A835pNx01+pChuEG6vQCG+lPZt9fWn/WQ/Gogpd
+   IhQOoQFPRfWV9VHUo9nSOxIOJ7fFfPQor9JMKUioI1KPPyJi8uuXStjakIQWXF/fqioj+EIFSO3
+   xh2G2jkNNipCVsZmneSImFvN5CHnUzWZb0k6advRXTELIInpCEwHxkndk8KotMGBPO1FlSvYNYT
+   peT13ISNdqVqn/QSChvyYuCMMdO+qVTKEIEnYXIy7mBPDavjeaABXrA1a3y5m6TqJ/f0k7M3fx9
+   ijSogZKGiQ9anA==;
 Message-Instance: m=1;
  h=sha256:
-   YynTVZZ9tho/W5Wu6wgqwsLmQ1bR8Ut+567Pc+qQYpI=:
-   TAXsr0psnSE19sXb3MGHV+Er+ghNimA3DYb/KUc9o5M=,
+   uAdaCHNteyi8sSkELmY+kiU+q5sJgPDJJ/N1Bnpn4po=:
+   ZQ/EMH7oxMdByB8EKJ0VtAPZUVzNkDx7o9D7iuDNRe8=,
   sha512:
-   3ctOO4KWfRRqkSHwd7O25D3z+znEiMHlazpEvpkyCFrRWPekxNAAomlaYzwm6VPrPFZp+522Zx1+eGlPgJFsTQ==:
-   kc49jLj2OA9Sr7Djhx7+IgPjxoceMns3m1KlU1sG39C+OlgN0fUZpiYBui7dT826E6ELtSoGS7axl7ltn07W9A==;
+   ZHuRgrAA/IiLBVX/BNX9KAn4BN14tdpJH+JQzmfs0GXzrTbwVAIEG/BYySrQO+ECHAsaJBAwzzSDgbcee36X3Q==:
+   Ib5m/kPt0p7ZRpN2N6uT3S+xIdErIIAo6eRkaAJFnkdEmCCE7QzNG4c3PKnCHroljTWQv8/yjB3/ZsdZVFBLQg==;
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmx.net;
-	s=s31663417; t=1794488738; x=1795093538; i=wahrenst@gmx.net;
-	bh=PnBklfzasc0XQtSZox9m//v7HW+3388Ys8qCl7k+RBg=;
+	s=s31663417; t=1794488734; x=1795093534; i=wahrenst@gmx.net;
+	bh=305Jb+hKkztJ2anWbpO0/YZ7fs6ZQznyHqAx4GDMm/s=;
 	h=X-UI-Sender-Class:From:To:Cc:Subject:Date:Message-ID:In-Reply-To:
 	 References:MIME-Version:Content-Transfer-Encoding:cc:
 	 content-transfer-encoding:content-type:date:from:message-id:
 	 mime-version:reply-to:subject:to;
-	b=epUlvKXgQ/KYh7Z78etoRJWyCKD9nMZyP/q8ujg5TOyJX2HLUED00wNydxexKfN8
-	 2b7teCOAzNWibKtxdqA3uuLIXaFbbYV/wQkABtg6NbeauAE6iJmUypfaRnSrvBdzb
-	 RPYh/Oe9Tt5q8NquSfZFrNP3aJJDtYezA1MrFq+Tx9Wg1p1dsNjDi9j/UJQ0iyQpD
-	 1SLl8S8J0o+VukwEwP0UYZup7RiL6HE0MnAS5sChMYb4GWRu6nTWXDNCZdEbA9pAQ
-	 p2aTATzlwKhJT5Vm3qVEMncxE+6fK7gSho4IMT15i1rZbzCm8tKzpe7wItQE15w9v
-	 rWugTyt+7cWOAJZzWQ==
+	b=pn9mECPnORdI4iUWjlnEpd4eOnj0QoW8GhDulaEZEBUHZwPISuXYTWQbhaouECPj
+	 CmrShxGoRxYK3dtWChuAd9zKNUb8l7pGDavI36VxlQwRIB4wEESKD5493L5jaglvK
+	 Fusvwn087XaDqcE9Xb6sz3KkGEr33u356M4jNAhMslN+UEbd5q6JdcKQIVVCsR/TC
+	 jUwf9/FPkKB9mD/H3kk7mdk83GNLryFQ/yQXSZh5Zk1blG0K48uEc4ea9MPuRirM/
+	 ZCrkXaxbouiPk7ENuzRaQU8W5kKnJUcgrDJeo4x9CsCgtPTnG1fasruoZ2jgOifE1
+	 c2tdHBpWqXGp4OaoDQ==
 X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
 Received: from client.hidden.invalid by mail.gmx.net (mrgmx105
- [212.227.17.168]) with ESMTPSA (Nemesis) id 1MStCY-1x2m6O0wZC-00Th2m; Thu, 12
- Nov 2026 14:05:38 +0100
+ [212.227.17.168]) with ESMTPSA (Nemesis) id 1M72oB-1xORgP2J3f-007If3; Thu, 12
+ Nov 2026 14:05:34 +0100
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -85,25 +85,27 @@ Cc: Neil Armstrong <neil.armstrong@linaro.org>,
 	linux-gpio@vger.kernel.org,
 	linux-can@vger.kernel.org,
 	linux-phy@lists.infradead.org,
-	Stefan Wahren <wahrenst@gmx.net>
-Subject: [PATCH V2 5/6] ARM: dts: mxs: add EVAchargeSE board support
-Date: Thu, 12 Nov 2026 14:05:04 +0100
-Message-ID: <20261112130506.12823-6-wahrenst@gmx.net>
+	Stefan Wahren <wahrenst@gmx.net>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Subject: [PATCH V2 2/6] dt-bindings: phy: ti,tcan104x-can: Document Microchip MCP2562
+Date: Thu, 12 Nov 2026 14:05:01 +0100
+Message-ID: <20261112130506.12823-3-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261112130506.12823-1-wahrenst@gmx.net>
 References: <20261112130506.12823-1-wahrenst@gmx.net>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:+4R3f9E1gGXB8axDtR3KCd6Xtbc9/+vc6/Ly0DULhTTZTA6xmEW
- 4A6h9ABDENqBOaqGyByl54oP3LynQjuDYMf9/3H2PwKtPVRtlyIhZmkZ9A4Tw83IOCcXk0K
- MCOgu1n1SQuTlS08161H8duzZtCiOyymzRuU4klMlBsIvB87aW0rLP+N7z/GMgcD2oFdPGF
- pJDZqlNnvNxtDMsA/FDHA==
-UI-OutboundReport: notjunk:1;M01:P0:LEm5y12uCKY=;Takdwvfoka6SUF6Pu2YkbUTfL7T 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 GeV9nv2F
+X-Provags-ID: V03:K1:kRecz27rAejTHnD1Gv/hcBe7MgfSRSH5Ajk5rfgQ6v5cxLl5auZ
+ ywJnF6f6dLmEjCwn4UajCCAMPQbjodO4JXQeJGWzxci+w0zvdEkiiDPlj4SpGbTrXtFNtKg
+ 4O4U1Ha41U097/x0SO3FL3aX1ySJ3kUZZzQzxQd14MW/ErQlCnvn7HE0i8boqFZB5cbUkTi
+ 7XL0ciX5x2s6aprMClRvA==
+UI-OutboundReport: notjunk:1;M01:P0:zQPTN5nNz7s=;fEaNofBy3qu0Bi7EEtrHPPgh4UP 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 8aVMY=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261112_050548_966554_3C0451E0 
-X-CRM114-Status: GOOD (  11.74  )
+X-CRM114-CacheID: sfid-20261112_050632_891067_165351CD 
+X-CRM114-Status: UNSURE (   7.47  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -125,339 +127,27 @@ X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-The EVAcharge SE is a ISO 15118 compliant controller for electric vehicle &
-charging stations.
+The Microchip MCP2562 High-speed CAN transceiver with Sleep mode is
+pin-compatible to the Microchip MCP2542.
 
-Supported features:
-  * 128 MB DDR2 RAM
-  * eMMC
-  * Debug UART
-  * 100 Mbit Ethernet
-  * USB 2.0 Host interface
-  * Powerline communication (QCA700x)
-  * CAN/RS232
-
-Link: https://chargebyte.com/products/controllers-modules/evse-controllers/evacharge-se
 Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 ---
- arch/arm/boot/dts/nxp/mxs/Makefile            |   1 +
- .../boot/dts/nxp/mxs/imx28-evachargese.dts    | 295 ++++++++++++++++++
- 2 files changed, 296 insertions(+)
- create mode 100644 arch/arm/boot/dts/nxp/mxs/imx28-evachargese.dts
+ Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/boot/dts/nxp/mxs/Makefile b/arch/arm/boot/dts/nxp/mxs/Makefile
-index d72ba702b6fa..4f9997da9ab8 100644
---- a/arch/arm/boot/dts/nxp/mxs/Makefile
-+++ b/arch/arm/boot/dts/nxp/mxs/Makefile
-@@ -26,6 +26,7 @@ dtb-$(CONFIG_ARCH_MXS) += \
- 	imx28-duckbill.dtb \
- 	imx28-eukrea-mbmx283lc.dtb \
- 	imx28-eukrea-mbmx287lc.dtb \
-+	imx28-evachargese.dtb \
- 	imx28-evk.dtb \
- 	imx28-m28cu3.dtb \
- 	imx28-m28evk.dtb \
-diff --git a/arch/arm/boot/dts/nxp/mxs/imx28-evachargese.dts b/arch/arm/boot/dts/nxp/mxs/imx28-evachargese.dts
-new file mode 100644
-index 000000000000..d991caed2007
---- /dev/null
-+++ b/arch/arm/boot/dts/nxp/mxs/imx28-evachargese.dts
-@@ -0,0 +1,295 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+//
-+// Copyright (C) 2017 I2SE GmbH
-+// Copyright (C) 2026 chargebyte GmbH
-+
-+/dts-v1/;
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/interrupt-controller/irq.h>
-+#include <dt-bindings/leds/common.h>
-+#include "imx28.dtsi"
-+
-+/ {
-+	compatible = "chargebyte,imx28-evachargese", "fsl,imx28";
-+	model = "chargebyte EVAcharge SE";
-+
-+	aliases {
-+		ethernet1 = &qca7000;
-+	};
-+
-+	memory@40000000 {
-+		reg = <0x40000000 0x08000000>;
-+		device_type = "memory";
-+	};
-+
-+	flexcan1_tc: can-phy0 {
-+		compatible = "microchip,mcp2562", "ti,tcan1042";
-+		max-bitrate = <1000000>;
-+		#phy-cells = <0>;
-+	};
-+
-+	emmc_pwrseq: emmc-pwrseq {
-+		compatible = "mmc-pwrseq-emmc";
-+		pinctrl-0 = <&emmc_reset_pin>;
-+		pinctrl-names = "default";
-+		reset-gpios = <&gpio2 20 GPIO_ACTIVE_LOW>;
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+		pinctrl-0 = <&led_pins>;
-+		pinctrl-names = "default";
-+
-+		led-0 {
-+			color = <LED_COLOR_ID_RED>;
-+			function = LED_FUNCTION_HEARTBEAT;
-+			gpios = <&gpio3 5 GPIO_ACTIVE_HIGH>;
-+			linux,default-trigger = "heartbeat";
-+		};
-+
-+		led-1 {
-+			color = <LED_COLOR_ID_YELLOW>;
-+			function = LED_FUNCTION_PROGRAMMING;
-+			gpios = <&gpio3 4 GPIO_ACTIVE_HIGH>;
-+		};
-+
-+		led-2 {
-+			color = <LED_COLOR_ID_YELLOW>;
-+			function = LED_FUNCTION_ACTIVITY;
-+			gpios = <&gpio1 16 GPIO_ACTIVE_HIGH>;
-+		};
-+
-+		led-3 {
-+			color = <LED_COLOR_ID_GREEN>;
-+			function = LED_FUNCTION_BOOT;
-+			gpios = <&gpio1 8 GPIO_ACTIVE_HIGH>;
-+			linux,default-trigger = "timer";
-+		};
-+	};
-+
-+	reg_3p3v: regulator-3p3v {
-+		compatible = "regulator-fixed";
-+		regulator-always-on;
-+		regulator-max-microvolt = <3300000>;
-+		regulator-min-microvolt = <3300000>;
-+		regulator-name = "3P3V";
-+	};
-+};
-+
-+&auart0 {
-+	pinctrl-0 = <&auart0_2pins_a>;
-+	pinctrl-names = "default";
-+
-+	status = "okay";
-+};
-+
-+&auart2 {
-+	pinctrl-0 = <&auart2_2pins_b>;
-+	pinctrl-names = "default";
-+
-+	status = "okay";
-+};
-+
-+&can1 {
-+	phys = <&flexcan1_tc>;
-+	pinctrl-0 = <&can1_pins_b>;
-+	pinctrl-names = "default";
-+
-+	status = "okay";
-+};
-+
-+&duart {
-+	pinctrl-0 = <&duart_pins_a>;
-+	pinctrl-names = "default";
-+
-+	status = "okay";
-+};
-+
-+&gpio1 {
-+	gpio-line-names = "", "", "", "", "",
-+			  "", "", "DAUGHTER_GPIO_0", "LED_3", "",
-+			  "DAUGHTER_GPIO_1", "", "", "QCA7K_RESET", "QCA7K_GPIO_0",
-+			  "QCA7K_GPIO_1", "LED_2", "", "QCA7K_GPIO_2", "",
-+			  "", "QCA7K_GPIO_3", "", "", "",
-+			  "DAUGHTER_GPIO_2", "", "", "DAUGHTER_GPIO_3", "DAUGHTER_GPIO_4",
-+			  "DAUGHTER_GPIO_5";
-+	pinctrl-0 = <&daughter>;
-+	pinctrl-names = "default";
-+};
-+
-+&gpio3 {
-+	gpio-line-names = "", "", "", "", "LED_1",
-+			  "LED_0", "", "", "", "",
-+			  "", "", "", "", "",
-+			  "", "", "", "", "",
-+			  "", "", "", "", "",
-+			  "QCA7K_INT";
-+};
-+
-+&i2c1 {
-+	pinctrl-0 = <&i2c1_pins_b>;
-+	pinctrl-names = "default";
-+
-+	status = "okay";
-+};
-+
-+&lradc {
-+	status = "okay";
-+};
-+
-+&mac0 {
-+	clocks = <&clks 57>, <&clks 57>, <&clks 64>;
-+	clock-names = "ipg", "ahb", "enet_out";
-+	phy-handle = <&ethphy>;
-+	phy-mode = "rmii";
-+	phy-supply = <&reg_3p3v>;
-+	pinctrl-0 = <&mac0_pins_a &mac0_phy_reset_pin>;
-+	pinctrl-names = "default";
-+
-+	status = "okay";
-+
-+	mdio {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		ethphy: ethernet-phy@0 {
-+			compatible = "ethernet-phy-id0007.c0f0","ethernet-phy-ieee802.3-c22";
-+			reg = <0>;
-+			interrupt-parent = <&gpio4>;
-+			interrupts = <5 IRQ_TYPE_LEVEL_LOW>;
-+			max-speed = <100>;
-+			pinctrl-0 = <&mac0_phy_int_pin>;
-+			pinctrl-names = "default";
-+			reset-assert-us = <500>;
-+			reset-deassert-us = <500>;
-+			reset-gpios = <&gpio4 13 GPIO_ACTIVE_LOW>;
-+			smsc,disable-energy-detect;
-+		};
-+	};
-+};
-+
-+&pinctrl {
-+	mac0_phy_reset_pin: mac0-phy-reset@0 {
-+		reg = <0>;
-+		fsl,pinmux-ids = <
-+			MX28_PAD_ENET0_RX_CLK__GPIO_4_13
-+		>;
-+		fsl,drive-strength = <MXS_DRIVE_4mA>;
-+		fsl,pull-up = <MXS_PULL_DISABLE>;
-+		fsl,voltage = <MXS_VOLTAGE_HIGH>;
-+	};
-+
-+	mac0_phy_int_pin: mac0-phy-int@0 {
-+		reg = <0>;
-+		fsl,pinmux-ids = <
-+			MX28_PAD_ENET0_TX_CLK__GPIO_4_5
-+		>;
-+		fsl,drive-strength = <MXS_DRIVE_4mA>;
-+		fsl,pull-up = <MXS_PULL_DISABLE>;
-+		fsl,voltage = <MXS_VOLTAGE_HIGH>;
-+	};
-+
-+	daughter: daughter-pins@0 {
-+		reg = <0>;
-+		fsl,pinmux-ids = <
-+			MX28_PAD_LCD_D07__GPIO_1_7     /* DAUGHTER_GPIO_0 */
-+			MX28_PAD_LCD_D10__GPIO_1_10    /* DAUGHTER_GPIO_1 */
-+			MX28_PAD_LCD_WR_RWN__GPIO_1_25 /* DAUGHTER_GPIO_2 */
-+			MX28_PAD_LCD_VSYNC__GPIO_1_28  /* DAUGHTER_GPIO_3 */
-+			MX28_PAD_LCD_HSYNC__GPIO_1_29  /* DAUGHTER_GPIO_4 */
-+			MX28_PAD_LCD_DOTCLK__GPIO_1_30 /* DAUGHTER_GPIO_5 */
-+		>;
-+		fsl,drive-strength = <MXS_DRIVE_4mA>;
-+		fsl,pull-up = <MXS_PULL_DISABLE>;
-+		fsl,voltage = <MXS_VOLTAGE_HIGH>;
-+	};
-+
-+	qca7k_pins: qca7k-pins@0 {
-+		reg = <0>;
-+		fsl,pinmux-ids = <
-+			MX28_PAD_I2C0_SDA__GPIO_3_25 /* SPI_INT */
-+			MX28_PAD_LCD_D13__GPIO_1_13  /* QCA7K_RESET */
-+			MX28_PAD_LCD_D14__GPIO_1_14  /* GPIO_0 */
-+			MX28_PAD_LCD_D15__GPIO_1_15  /* GPIO_1 */
-+			MX28_PAD_LCD_D18__GPIO_1_18  /* GPIO_2 */
-+			MX28_PAD_LCD_D21__GPIO_1_21  /* GPIO_3 */
-+		>;
-+		fsl,drive-strength = <MXS_DRIVE_4mA>;
-+		fsl,pull-up = <MXS_PULL_DISABLE>;
-+		fsl,voltage = <MXS_VOLTAGE_HIGH>;
-+	};
-+
-+	led_pins: led-pins@0 {
-+		reg = <0>;
-+		fsl,pinmux-ids = <
-+			MX28_PAD_LCD_D16__GPIO_1_16  /* LED_2 */
-+			MX28_PAD_LCD_D08__GPIO_1_8   /* LED_3 */
-+			MX28_PAD_AUART1_RX__GPIO_3_4 /* LED_1 */
-+			MX28_PAD_AUART1_TX__GPIO_3_5 /* LED_0 */
-+		>;
-+		fsl,drive-strength = <MXS_DRIVE_4mA>;
-+		fsl,pull-up = <MXS_PULL_DISABLE>;
-+		fsl,voltage = <MXS_VOLTAGE_HIGH>;
-+	};
-+
-+	emmc_reset_pin: emmc-reset@0 {
-+		reg = <0>;
-+		fsl,pinmux-ids = <
-+			MX28_PAD_SSP2_SS1__GPIO_2_20
-+		>;
-+		fsl,drive-strength = <MXS_DRIVE_4mA>;
-+		fsl,pull-up = <MXS_PULL_DISABLE>;
-+		fsl,voltage = <MXS_VOLTAGE_HIGH>;
-+	};
-+};
-+
-+&ssp0 {
-+	compatible = "fsl,imx28-mmc";
-+	bus-width = <8>;
-+	mmc-pwrseq = <&emmc_pwrseq>;
-+	no-sdio;
-+	non-removable;
-+	pinctrl-0 = <&mmc0_8bit_pins_a &mmc0_cd_cfg &mmc0_sck_cfg>;
-+	pinctrl-names = "default";
-+	vmmc-supply = <&reg_3p3v>;
-+
-+	status = "okay";
-+};
-+
-+&ssp2 {
-+	compatible = "fsl,imx28-spi";
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+	pinctrl-0 = <&spi2_pins_a &qca7k_pins>;
-+	pinctrl-names = "default";
-+
-+	status = "okay";
-+
-+	qca7000: ethernet@0 {
-+		compatible = "qca,qca7000";
-+		reg = <0x0>;
-+		interrupt-parent = <&gpio3>;
-+		interrupts = <25 IRQ_TYPE_EDGE_RISING>;
-+		spi-cpha;
-+		spi-cpol;
-+		spi-max-frequency = <12000000>;
-+	};
-+};
-+
-+&usb0 {
-+	dr_mode = "host";
-+
-+	status = "okay";
-+};
-+
-+&usb1 {
-+	status = "okay";
-+};
-+
-+&usbphy0 {
-+	status = "okay";
-+};
-+
-+&usbphy1 {
-+	status = "okay";
-+};
+diff --git a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+index 1a0dc9bbe6c9..7c356435c03f 100644
+--- a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
++++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+@@ -19,6 +19,7 @@ properties:
+           - enum:
+               - microchip,ata6561
+               - microchip,mcp2542
++              - microchip,mcp2562
+               - ti,tcan1051
+           - const: ti,tcan1042
+       - items:
 -- 
 2.53.0
 
