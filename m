@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BC366606A8BB
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 13:41:05 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3F75C60A3831
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 14:03:54 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=nRZTZdaK;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Yonu3wmr
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=GdLM0he/;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=g16WEPmL
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,57 +14,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=Q6TR55Rnl87JqSCCX/r/klly6QyppwFxEc4//oB6M9E=; b=nRZTZdaKTmX6pijJ6G2fHqM/dn
-	jWkU9na9Egjy8UhGjLb9w02zQ74T8ZYSJSQkVHJ0PvesIGFlHgK2Jw7SdDqs9iF5uCGSHFo4vttUh
-	JQ5ohsb24LuDV3rasvEBQuWRScf+YqRbYcr5KBCWrDLoh1v90giv920ezgjKfWxsmfDWVLzeGRVJC
-	fvUIZlSJRTOU+KwQHoXPOV5TwemUkmSCdV73SfHuY2v8FVL3r/pc8UxX+iW2Ip5/tfnEfLY+rG8Pg
-	AObEnbnqjFUGr2eCsdRHSaE3i2PQ4X0TaV71/6m+Eq5y+qrzcPk+ua2PPMMXeeI6VtCE4yNESyoRC
-	t5gmL6eA==;
+	bh=n50nPbrbMPwYKdLNzgj06vnukhet9ByPIe5TAJ490Qs=; b=GdLM0he/KuwDW9WqeSR5bjgRXt
+	V8Dw/9LStDJaPX20DcWpTMbQir56OJRHRoX2Eysj8Jvw+u/MZjuFFKR5KniJI9mbsZgyV/5jOWCQE
+	YnNibuNFIQOhJo6n5Suu8GWZpoT96cEsaqa8jFkJRZSAZ50bp8qEyY45MTR3k3eSATL1mC2lShgfa
+	6Q+jVhTIsMGEPOy0sLVGgoXUPl+cBeqnk0OxkTiHZD788/m6FwMDq350vSymsA6niMsalUd6H8PiE
+	BdeorGVxOUey/uuuUwCdHLXRUE82x0KEx1qsySaIVxvJxgx1QuRGR7qiRTywQVmgZ/BNXDwT/sGPw
+	QtZte0nA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRV33-0000000A7ZQ-23WY;
-	Thu, 12 Nov 2026 13:41:05 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xRVP7-0000000AAtL-3Uav;
+	Thu, 12 Nov 2026 14:03:53 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRV31-0000000A7Yr-27E5;
-	Thu, 12 Nov 2026 13:41:03 +0000
+	id 1xRVP4-0000000AAsP-2VP5;
+	Thu, 12 Nov 2026 14:03:51 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id EC14E61407;
-	Thu, 12 Nov 2026 13:41:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DB38C1F00A05;
-	Thu, 12 Nov 2026 13:41:01 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id D5B9665811;
+	Thu, 12 Nov 2026 14:03:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 495D01F00A05;
+	Thu, 12 Nov 2026 14:03:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794490862;
-	bh=zcZOYtsVTv31lVYaNP6RLbKLvR8+yhhBm9mhbhr/iKE=;
+	s=k20260515; t=1794492229;
+	bh=m4qjcb8gdZJwkaxEoXzAOBIqfyt8ugrUmG3Eiv5qTnQ=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=Yonu3wmrYZO8QH3w1HXbsKpwGYVcENzULirtc+rC4xIhTzxXLe8imyh9Wsy+ItVwd
-	 hBl+SPQuH39iG8rpqFyAQ74d4UzPaV07pGSCOB28vRxa1+zx2HbmHl2HwkXEZiC5FV
-	 2Ju2NdqmaRS6aAzWIyDH1qU5TAlYWns+gGL0Kf5AbK43+c3NDoXVayjIFKOSQsK+od
-	 FEc3DT4RbjS8MqKXnAy9xJppBHvp+WF28kcptd3ykeZ017qen8Nftwz21ZwL18j0CP
-	 cK6nlnzRa5dODjVazj/M9h4B7NCVTp9EzoOX3bm0Kh8h8j01eubv/h+kWEFXnXkjHA
-	 r9D+pUlHgkl9Q==
-Date: Thu, 12 Nov 2026 19:10:58 +0530
+	b=g16WEPmLJh2qfr1y0FgQLLw3UDj+I8Xs57kLoCCMeud5BUl5MzWwBLwMzXZO3Dtrt
+	 Kp5UWBp/duCls8fuuCh011u2HBXX6esYppxVKEt45L9eStIrRL7Rf0kpHTZeGEy/iS
+	 SEy/JvO10r/qLQ6VvxOVNHjIpPMj2ttl+zR1zpykqEVjD0fo43ybVmC7fkRT/aS1pY
+	 Au9dRXTw4Fexd+5rBiWz4zo7cHPOIqACnpdMVOYCeoZDxThBgHobl2L+9BbT1xNqgd
+	 ZFaM/tUt6BBetfGfopq1EOkI9MPfHfLeUeWn3lXZsGwBkc0NyM0j+fVAyItEUiL4Qg
+	 UOT4O6qRePA4A==
+Date: Thu, 12 Nov 2026 19:33:43 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: Manivannan Sadhasivam <mani@kernel.org>,
-	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Igor Paunovic <royalnet026@gmail.com>, linux-kernel@vger.kernel.org,
-	linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
-	kernel@collabora.com,
-	Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-Subject: Re: [PATCH v18 0/7] usb: dwc3: introduce Rockchip glue driver
-Message-ID: <avXB6ga-QVfks8RF@parshuram>
-References: <20261021-b4-rockchip-dwc3-rockchip-glue-v18-0-60000d03fca2@collabora.com>
- <179353091270.2955.16595397888583885694.b4-reply@b4>
- <aufM3PCuU9CM8zFo@venus>
+To: Aiden Isik <aidenisik@protonmail.com>
+Cc: aidenisik@member.fsf.org, Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Marek Szyprowski <m.szyprowski@samsung.com>,
+	Sylwester Nawrocki <s.nawrocki@samsung.com>,
+	Peter Griffin <peter.griffin@linaro.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org
+Subject: Re: [PATCH 2/2] phy: exynos5-usbdrd: Add support for the Exynos5515
+ usbdrd phy
+Message-ID: <avXHP-GPIRXqFkEv@parshuram>
+References: <20261022-for-next-lucky7-usb-phy-v1-0-2e47f8484bf4@member.fsf.org>
+ <20261022-for-next-lucky7-usb-phy-v1-2-2e47f8484bf4@member.fsf.org>
+ <avWeJqbpbLcWgq_R@parshuram>
+ <Dhrinh2IqyBByHLyFp_SHX9igTjQgKk4G62C1vp6tHdO8QkM4kiFDLaExxnZeljVMXJ8YksFrLRDRT9voAj6LiJYqPvrUg3nFVNFzi7C9Bc=@protonmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <aufM3PCuU9CM8zFo@venus>
+In-Reply-To: <Dhrinh2IqyBByHLyFp_SHX9igTjQgKk4G62C1vp6tHdO8QkM4kiFDLaExxnZeljVMXJ8YksFrLRDRT9voAj6LiJYqPvrUg3nFVNFzi7C9Bc=@protonmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,57 +89,23 @@ X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 02-11-26, 00:46, Sebastian Reichel wrote:
-> Hi,
+On 12-11-26, 12:53, Aiden Isik wrote:
+> Hi Vinod,
 > 
-> On Sun, Nov 01, 2026 at 04:31:52PM +0530, Manivannan Sadhasivam wrote:
-> > On 2026-10-21 20:05 +0200, Sebastian Reichel wrote:
-> > > The recent Rockchip platform have a combined PHY, which does USB3 and
-> > > DisplayPort as well as muxing the lines in arbitrary order. Changing its
-> > > enabled functionality requires a PHY reset and as the PHY provides a
-> > > clock to the DWC3 controller, this can result in an SError. Apart from
-> > > that the PHY might not start up correctly when the DWC3 PIPE interface
-> > > is running. This series prepares a Rockchip specific DWC3 glue driver to
-> > > help out with these problems. To become useful more patches are needed
-> > > on the Rockchip USBDP PHY side, which are send separately.
-> > > 
-> > > This was split from the USBDP cleanup series. v17 has a dependency on
-> > > the patches that have been merged to phy's for-next branch. There are
-> > > some additional Rockchip USBDP phy fixes, which depend on this series
-> > > (which is effectively also a fix).
-> > 
-> > What is the merge strategy for this series?
+> > .n_phy_cfg does not exist.. Please fix this
 > 
-> I see these options (ordered by my preference):
+> As stated in the cover letter, this is introduced by dependency [1]:
 > 
-> 1: Vinod merges everything; the USB side is mostly a new driver
->    and thus there is not much conflict potential
+> > This patchset also depends on [1], due to using an
+> > exynos5_usbdrd_phy_drvdata member > (.n_phy_cfg) which was introduced to fix
+> > an out-of-bounds access bug.
+> 
+> > [1] - https://lore.kernel.org/all/20261020063559.3530901-1-selvarasu.g@samsung.com/
+> 
+> Which has since been merged by yourself. I assume you just
+> looked at these patches in a different order so saw mine first?
 
-I need ack from Greg for that
-> 
-> 2: Vinod provides an immutable branch with the first two patches,
->    USB tree merges the immutable branch and the remaining series.
-
-I can do that
-
-> 
-> 3: Everything is merged through USB; this would block the final
->    cleanup for USBDP from being applied for yet another cycle.
-> 
-> 4: Vinod merges patches 1+2, USB patches are merged one cycle
->    later and final USBDP patches are merged two cycles later.
-> 
-> P.S.: I will have to send another version for the correct Sashiko
-> feedback on the DWC3 side.
-
-Ok
-
-> 
-> Greetings,
-> 
-> -- Sebastian
-
-
+Yep, picked now
 
 -- 
 ~Vinod
