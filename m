@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9E74160A381C
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 09:04:24 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AF42D60A2611
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 09:04:26 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=MIq8vQSf;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Xh/00Dby
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=rnMBZ3pb;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=RQnq4qip
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,54 +14,48 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=ZZbu3QdeQ6ET9J2+QGZ08H/wkF4GwL1qgDBBXzriyu0=; b=MIq8vQSfD8jGxtegwB8xArAvXs
-	o5s3u6KC/Zs42EmB3SGuesb//Q8a8r5sC5r63K2thvUtoO+oRwnuIbbWzfv1mLswF9jY5cPs0XtLf
-	/eUKvw4aoL1YpStBhORLmICO1rAtXjmR4mhEeqlTyKMLle/4ZfV9oP0DIgtlhHc1qP0MvUL5xpM+2
-	Q2KRdtNTOdt3F2xIBmhdZSflwdw6Sut6wLAVuf525CRk96joju22Uj/7AceOYhGGsujqB/VGs5X5x
-	taGBKTddbFQ/YhT+Q7TybSZk1gmic1dDfBfnoo//0QJEZyIBWAACuJiMai2ei5aFZ3XVk/25oOlkE
-	X0zYYH9g==;
+	bh=o/Of6Vmjt7UkQ3/vK1fsbkQ41vX8drMk+xMN8wUqFlE=; b=rnMBZ3pbUUiXT+PpJHXV5ncHrg
+	KGy3Gu5ZLokKAj8HAH5dxE9akWOytJDqoA3Zqn+39B3R7JMouftb5O2YMyu1UrOu+aRLikJEnuo78
+	nCFnbp9fgB3hHVZpD5gPsNZa1OiROXzdlBL8DFKotWVsYbJDMDYvJ0dtanyzA1eq3D8DfHvz92OiN
+	8XYXp+e5HOFD1GKWq8zTB9XOYIj22EnZI8gVBcn7Uy8gz4tDOugR6/9adeyaOPuxK8hn3OUoi/z/2
+	6QLteZm+32jb9yVGOEv8czOP8+K1YW+f3TjnlMWccNI+TgLdnusPk6pas645ipRvbD4+qQDxh6x0o
+	OtMNlM4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRQjH-00000009HVw-3ypZ;
-	Thu, 12 Nov 2026 09:04:24 +0000
+	id 1xRQjK-00000009HX4-1pED;
+	Thu, 12 Nov 2026 09:04:26 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRQjG-00000009HUQ-0wXA
+	id 1xRQjJ-00000009HWV-01cd
 	for linux-phy@lists.infradead.org;
-	Thu, 12 Nov 2026 09:04:22 +0000
+	Thu, 12 Nov 2026 09:04:25 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id D924D438E1;
-	Thu, 12 Nov 2026 09:04:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 68EEC1F00A06;
-	Thu, 12 Nov 2026 09:04:17 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id A206D4716C;
+	Thu, 12 Nov 2026 09:04:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5EE7E1F00A05;
+	Thu, 12 Nov 2026 09:04:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794474261;
-	bh=KvjfimEyLHv2EirF4hxY1Tnpe8ctO+qjqheXOxDIlHc=;
+	s=k20260515; t=1794474264;
+	bh=zANsLWOkkKydSY36VvIkeP0ssVMGqXoqCZ7BWo9mDis=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=Xh/00DbyGSPtH3AcAgDIbB6mH8hRoXnAqFcuJ0aNnnBt0TqsFFvW4x3C6dSUJZulv
-	 UWqpPILLKTcuaSHZixG4U/3tGxXz3t7ImHDBLzrX2p/PxL8xWFqro/18kaa47AjRjr
-	 WH6qd05T/Qc2zKc4keC1gCv1yvgwpLTYFeTCMljPY+2p1LqmXGvcLXqenx1mxcnQxJ
-	 wEF992NpJC2yjHQmTRhqTK8eSk+/MWu7Okl6XMXdjlzDpAIG/htb7rRSKoUv0Ziwbp
-	 M/3o0GcCeWEqPiz5OhQAkug6vGzwM/VLpW2Bluf9boq2BselPi+615IomkmsQiVkbf
-	 UP/Ia+MOml/hg==
+	b=RQnq4qipuMERRhxQu8PeX+pFNm8wHKaDYbzMLOqWVWrqT9SZ/UswIg2Idu9UmXrOC
+	 fSUu9cBigvmwF9SUrjk/8Z5+rntiW2o+GQG8AA0u/RsPR6YPFG03/7EPzwZvZlPUqO
+	 zqo+3QUq+l4SrzOnejIiSXbS7SPbBAdnTKbE9d2T+oUAsE5EN0HOJ+MS1Th23tQgFA
+	 iIxQijVq2O/pezsEG8wZtYOI0kS+KBMzUbaA6H0FfTroLwQG6aw9Iv18DovqDtUaZP
+	 tcE3jqryz4cwaZU3p4X0n5TVh+G2SacZGZEWvzj1QsjXj95I529rjjKDrS0dQbOnaC
+	 UCiVkdC7+dNng==
 From: Vinod Koul <vkoul@kernel.org>
 To: Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Wesley Cheng <quic_wcheng@quicinc.com>, 
- Manu Gautam <mgautam@codeaurora.org>, Stephen Boyd <sboyd@kernel.org>, 
- Philipp Zabel <pza@pengutronix.de>, 
- Varadarajan Narayanan <varadarajan.narayanan@oss.qualcomm.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
- Abel Vesa <abel.vesa@oss.qualcomm.com>, 
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-In-Reply-To: <20261009-phy-v6-0-50408e45bcc1@oss.qualcomm.com>
-References: <20261009-phy-v6-0-50408e45bcc1@oss.qualcomm.com>
-Subject: Re: [PATCH v6 0/6] Add support for USB phys in IPQ9650
-Message-Id: <179447425706.428303.118653133364281959.b4-ty@kernel.org>
-Date: Thu, 12 Nov 2026 14:34:17 +0530
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ Thierry Reding <thierry.reding@kernel.org>, JC Kuo <jckuo@nvidia.com>, 
+ Jon Hunter <jonathanh@nvidia.com>
+Cc: linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org, 
+ linux-kernel@vger.kernel.org
+In-Reply-To: <20261012-tegra-phy-v1-1-3241bf3c86e9@nvidia.com>
+References: <20261012-tegra-phy-v1-1-3241bf3c86e9@nvidia.com>
+Subject: Re: [PATCH] phy: tegra: Clean-up Makefile for Tegra186
+Message-Id: <179447426202.428303.3201325856795215999.b4-ty@kernel.org>
+Date: Thu, 12 Nov 2026 14:34:22 +0530
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
@@ -85,31 +79,21 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 
-On Fri, 09 Oct 2026 10:19:54 +0530, Varadarajan Narayanan wrote:
-> This series
->  - Adds dt-bindings and driver changes for the high speed and super speed
->    phys in IPQ9650.
->  - IPQ9650 specific init tables to QMP super speed phy driver.
->  - The Femto high speed phy driver is refactored to accomodate differences
->    in the init sequences between SoCs first and then support for IPQ9650 is
->    included.
+On Mon, 12 Oct 2026 12:16:31 +0100, Jon Hunter wrote:
+> The Makefile for the Tegra XUSB PHY driver has an entry for every Tegra
+> SoC that compiles the xusb-tegra186.c file. Clean this up by adding a
+> new Kconfig option called PHY_TEGRA186_XUSB that when defined compiles
+> the xusb-tegra186.c file.
+> 
+> Finally, update the xusb.[ch] files to use this new config option as
+> well instead of using the individual SoC Kconfig options.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/6] dt-bindings: phy: qcom,qmp-usb: Add IPQ9650 USB3 PHY
-      commit: 883412a4d4fb3267851de3d5d534980d65251ffd
-[2/6] dt-bindings: phy: qcom,usb-snps-femto-v2: Add IPQ9650 compatible
-      commit: f899f404be9a178b3df15edaa2b33a20dd99ae18
-[3/6] phy: qcom: qmp-usb: Add IPQ9650 USB3 PHY configuration
-      commit: a8361bb39e2502aa9edaed126f01e02cd57c45ef
-[4/6] phy: qcom: snps-femto-v2: Fix order of arguments to qcom_snps_hsphy_write_mask
-      commit: 029a4a78d07a4b133777cff2acc404ad858f3aef
-[5/6] phy: qcom: snps-femto-v2: Move PHY init registers to config tables
-      commit: 8238577c08eadbf38313d0240551c12582884014
-[6/6] phy: qcom: snps-femto-v2: Add IPQ9650 support
-      commit: bd2ef9cf141344e31caa50dd3ef46772df7d9b66
+[1/1] phy: tegra: Clean-up Makefile for Tegra186
+      commit: 96dbc4521e9410912b296e1683a025815cff3fcf
 
 Best regards,
 -- 
