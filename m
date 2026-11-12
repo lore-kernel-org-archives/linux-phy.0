@@ -2,66 +2,79 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 650B7606B367
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 11:27:38 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3BDD8606A881
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 11:52:50 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=yyBVqAeL;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=lHOIVamz
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=K2CR1AU3;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=JciomXZa
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=rWjtcXXYGaVhbPuxmwbdGeYLckMEMQocTJlRoRVhY9k=; b=yyBVqAeLKTANvIHYKCNHdJLIv5
-	JSxj8AogmazA0D7+xpXgH7QbNwg/6wvPRMwoOaWlixGnbx/ulSP89kP0VAt7DSUAbRasdSOJVIC2w
-	q3CWisfCg9qyvg4cvgYhq5Hd2lEEAdhOpxyPcLEl/BQSNwLoni+dBiknvIioqX6TZx/JijaA7OWMO
-	m/oyjqrFqr0N4plGFSTBRmz1lXHq6oZXe1+BGFAy9N1iQsHeKXqZ4xeiYLApYxwEbADm1IrxkiOXQ
-	fWM7fUe8uXhslLd7qW7XImTAkkSRtb3BpQgI48kX2tl8nUSOp8GAyQtI91fQ9jgCzg8IoQAOsHSw+
-	WdwNFC6w==;
+	bh=FTHS+cKxfzBS1mG8ysDmdbFOAlgnuVDokxVSw9BsXSU=; b=K2CR1AU3rRbzFM2e6xbRI/dgmo
+	AHYt+SIg9LdQY/UnTUBwXmlKU45SRrYdFj0GDc6WDo50ZV58HvbJu2DNdiUE5mlv4EtCAXvUVd4u1
+	RF+FDm5Ye4C++O7gHLSoZe4Jp1L49LP6iTlVD+7KQJgeBC3M9Qzj+iSMcL+LGggRWGpnynaodmgI4
+	XLOgk83ND747KcsczkVtUd9RPLLGoaVNWmXCPmbfhWxi538RLR5+bz826NgdEQfERHmqTHY3wjwUd
+	Ti9w7Ll8hcY4iVLusYq68rP+jtbmeUDITI6witKu77aKHFcTTb+5z7cZjt32m1zuOhQBgU4WYsoKV
+	SShy9GRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRSxu-00000009i2A-0JDp;
-	Thu, 12 Nov 2026 11:27:38 +0000
+	id 1xRTMH-00000009mmj-3TyY;
+	Thu, 12 Nov 2026 11:52:49 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRSxQ-00000009hNm-0YzM;
-	Thu, 12 Nov 2026 11:27:08 +0000
+	id 1xRTMG-00000009mmF-3lGf;
+	Thu, 12 Nov 2026 11:52:48 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 69ED644591;
-	Thu, 12 Nov 2026 11:27:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D0C691F00A05;
-	Thu, 12 Nov 2026 11:27:03 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id F22CE409C7;
+	Thu, 12 Nov 2026 11:52:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DDF661F00A05;
+	Thu, 12 Nov 2026 11:52:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794482827;
-	bh=/oEd/Rx7z61vzKiE7TrZNxTBqcUG5YHAydriCm6gOsA=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=lHOIVamzl2HbE2kYl6t1Hi/fSLUIo5a5kdanxjhNZXwjar2Q3xFo7LP69tPoT8FoD
-	 j3Y3zsgNV1Jrkd7xcKNNC6Vfkn0Z29wjdb5h9pWjXgfitk6gJN8htyOqX1zzwLe+/J
-	 wuosM1b5oWfzkAUTuE1V6kVtPrCwuQBQ13KgRfWML/k7R5dVS3We3zNdiG0T8g79yr
-	 OPYcLErMrgOspm9X5kpCjyRxXvaRlc6nQDmtfSgFnKEp7KQdSMuXRLjORLaDscXkBc
-	 1jOye5p9Bi+6AkJ+pQkHJCGING5VpDMNYsGIO3YysGk5RHxqYg+acjTmdQm+x7dwD8
-	 TuBDhhUIRDN7Q==
-From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- Peter Griffin <peter.griffin@linaro.org>, 
- =?utf-8?q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>, 
- Tudor Ambarus <tudor.ambarus@linaro.org>, 
- Joy Chakraborty <joychakr@google.com>, Roy Luo <royluo@google.com>, 
- Naveen Kumar <mnkumar@google.com>, 
- Geert Uytterhoeven <geert+renesas@glider.be>
-Cc: linux-phy@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org
-In-Reply-To: <90a172c2980073a09b4f01c21a251c3d0d2d6fe5.1792499240.git.geert+renesas@glider.be>
-References: <90a172c2980073a09b4f01c21a251c3d0d2d6fe5.1792499240.git.geert+renesas@glider.be>
-Subject: Re: [PATCH v2] phy: PHY_GOOGLE_USB should depend on ARCH_GOOGLE
-Message-Id: <179448282346.507383.17246536028374736454.b4-ty@kernel.org>
-Date: Thu, 12 Nov 2026 16:57:03 +0530
+	s=k20260515; t=1794484367;
+	bh=ab65Y+/YS/ftn0XtRf+D21POuuZDeeWSaeiwjaGmWKM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=JciomXZaUjqGr0rn+i52tzTnVMKf61Ev/r6LPScfy3/DHjKOGHeScELqCPIMBBPlE
+	 ctID8uzarSzJ+lo7upBGVmq2V8xtl5tnfs/cB+SqHYLHbajDMl3JXyuXoq6iIMGLaS
+	 P/y1+WblHvuQml3Bi8eNhvWXoq1nttW3GnSWLFokZJcUeOM6yIoklaaYb3p4yq09r+
+	 kwLPkSBfkFsF+Tiucs3ZfCvR/I4CEgOuCSjcFU0Xwm5gWwbn/fGHeHGO2k6DhfnfU7
+	 DuXsXuV9XgADgIxMopbBrjiRn2Fm6wsL5HTd3PVU2pQnTVkJerK9EXIz1ZTrThwqaH
+	 di4aUgCf/gR1w==
+Date: Thu, 12 Nov 2026 12:52:44 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Stanislav Aleksandrov <lightofmysoul@gmail.com>
+Cc: Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Robert Marko <robimarko@gmail.com>, Guru Das Srinagesh <linux@gurudas.dev>, 
+	Thomas Gleixner <tglx@kernel.org>, Radu Rendec <radu@rendec.net>, Lee Jones <lee@kernel.org>, 
+	Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>, 
+	"Joerg Roedel (AMD)" <joro@8bytes.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+	Wesley Cheng <wesley.cheng@oss.qualcomm.com>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Alim Akhtar <alim.akhtar@samsung.com>, Bart Van Assche <bvanassche@acm.org>, 
+	Bean Huo <beanhuo@micron.com>, Stanley Jhu <stanleyjhu@google.com>, 
+	Herbert Xu <herbert@gondor.apana.org.au>, "David S. Miller" <davem@davemloft.net>, 
+	"Rafael J. Wysocki" <rafael@kernel.org>, Viresh Kumar <viresh.kumar@linaro.org>, 
+	Amit Kucheria <amitk@kernel.org>, Thara Gopinath <thara.gopinath@gmail.com>, 
+	Daniel Lezcano <daniel.lezcano@kernel.org>, Zhang Rui <rui.zhang@intel.com>, 
+	Lukasz Luba <lukasz.luba@arm.com>, Georgi Djakov <djakov@kernel.org>, 
+	Sibi Sankar <sibi.sankar@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, mfd@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+	iommu@lists.linux.dev, linux-usb@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-scsi@vger.kernel.org, linux-crypto@vger.kernel.org, linux-pm@vger.kernel.org
+Subject: Re: [PATCH 02/17] dt-bindings: firmware: qcom,scm: Document Halliday
+ SCM
+Message-ID: <20261112-fabulous-nautilus-of-joviality-dd8d5a@quoll>
+References: <20261109-halliday-dts-v1-0-289114ab8197@gmail.com>
+ <20261109-halliday-dts-v1-2-289114ab8197@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-Mailer: b4 0.14.3
+Content-Disposition: inline
+In-Reply-To: <20261109-halliday-dts-v1-2-289114ab8197@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,31 +87,25 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-6.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=no
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-
-On Tue, 20 Oct 2026 14:27:51 +0200, Geert Uytterhoeven wrote:
-> The Google Tensor SoC USB PHY is only present on Google Tensor G5
-> (Laguna) SoCs.  Hence add a dependency on ARCH_GOOGLE, to prevent asking
-> the user about this driver when configuring a kernel without Google
-> Tensor SoC support.
+On Mon, Nov 09, 2026 at 12:33:14AM +0000, Stanislav Aleksandrov wrote:
+> Document the SCM on the Qualcomm Halliday SoC.
 > 
-> 
+> Signed-off-by: Stanislav Aleksandrov <lightofmysoul@gmail.com>
+> ---
+>  Documentation/devicetree/bindings/firmware/qcom,scm.yaml | 2 ++
+>  1 file changed, 2 insertions(+)
 
-Applied, thanks!
-
-[1/1] phy: PHY_GOOGLE_USB should depend on ARCH_GOOGLE
-      commit: 518d5bc7a636696969e3f4a7f9c66483e4f35e1e
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 
 Best regards,
--- 
-~Vinod
-
+Krzysztof
 
 
 -- 
