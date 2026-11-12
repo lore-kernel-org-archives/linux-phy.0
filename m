@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CD18F606A323
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 09:45:30 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4EE1A606A894
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 10:39:31 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=u1bKl7CV;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=dolcini.it header.i=@dolcini.it header.a=rsa-sha256 header.s=default header.b=nYIwTd1T
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=H8R7mZk8;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=leoUnOsz
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,61 +14,56 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=r6TdbdlHCZeBrOU04STmmM0xtkNH8nu+AGfGt3RyCeE=; b=u1bKl7CVTBZlaCiqiDHJQxegjg
-	8uSA+gChK7EJ9XfE5i0C90ZQwBurBYCYvF8YfyvjYM0TeIJwysoXOSZGeNdjId/M+hebpjTMC7bA2
-	ozhuUeymtJwv+PEU+gCinYmtEJvHu9KEv6HcDuViCad/oJngP31z5y2k7D3NMBLxm54YZWosqxZOH
-	uk6PFwDEWd/vMIOIsDnqdZa+Z8GhGqOB6FA1k54J0+RWtR8/44dC8Zm+r2fwkn14zLCi6yQWp37qc
-	h7Rt1zkXqNVUzLKsxaleXC7/7wvl2wDC8mrRSyTMlUOqLwqrH61B7eXrZatOTJEc17cSvevzWPYPM
-	vWfg2NWg==;
+	bh=uKW0LNdOhswzWYhygxraC0INIYzZr1kOvNGh0M2T8vE=; b=H8R7mZk8dcF7r9j3vgUydvbrJR
+	3HPnwtUthR5aXDNe+GSR5zXhDfGSKknoBK6by+K4FvFhN1Lq72iFMLvgt4mwJouQAdfRU/idAJpbM
+	e+EC+RYXnWmhnZ6/ZdO3LxRtn2wWOdPCT39GdVef3pmFLa6j1A7LdlfH30EqVf5zkHNbO2k5Fgnr1
+	A6VhFW+FY6kt0nqzEop/KfJmJtSANzzXBNfOOmUtN6rsJdM/FkTJ9AViB+RB3GbhiK2bvd1+GK016
+	+1C/Sp4+Nyc3wRWvgOeYGW/Nm60sEmFHsBanyatkibZ3Uf0+afk9mcaUWkllSnE/JGR5BhaFVhDmO
+	7kTDFtjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRRN4-00000009Pvx-1qaZ;
-	Thu, 12 Nov 2026 09:45:30 +0000
-Received: from mail11.truemail.it ([2001:4b7e:0:8::81])
+	id 1xRSDK-00000009YWZ-3kiS;
+	Thu, 12 Nov 2026 10:39:30 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRRN0-00000009Ptx-2baY
+	id 1xRSDJ-00000009YUc-2pif
 	for linux-phy@lists.infradead.org;
-	Thu, 12 Nov 2026 09:45:29 +0000
-Received: from francesco-nb (93-49-2-63.ip317.fastwebnet.it [93.49.2.63])
-	by mail11.truemail.it (Postfix) with ESMTPA id 038901FB1F;
-	Thu, 12 Nov 2026 10:45:18 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dolcini.it;
-	s=default; t=1794476719;
-	bh=uKwkGpbKTSm+TeC+5PE4mVU5+tF0hJnI8MkhBwgF5Is=; h=From:To:Subject;
-	b=nYIwTd1TXIHzMzyjHUt6ACpVqDRCGfeI3oXz1tIdjri8GqMNB+v5D1HAyRabie0V/
-	 JRUaLA0OVVPSW1Sb+6IM0MZXNPv/QCMNanBGHX3iABB5ccTtWB7voffjip+Gvt3Bty
-	 8S91W3X7zqfdvc58FcBd6HL7JlA6qphkaKLRPsuaFbnHFrHZWIJQLeHYN4i8BKlKJe
-	 Nn/EJ8eJFihGH0bKk5HSOwE3GPQ55ccioJYFqBJwAeaJfg7tSt4LFpDSImsNOyk2OD
-	 +hW6Wouyfgh1FckyEwan3n9ArSga7l7TU/eDwU2QNh/97YDg6Y4ED2psE7dUAXegO6
-	 r23KhXIseXyUA==
-Date: Thu, 12 Nov 2026 10:45:15 +0100
-From: Francesco Dolcini <francesco@dolcini.it>
-To: Alexander Stein <alexander.stein@ew.tq-group.com>,
-	regressions@lists.linux.dev,
-	Emanuele Ghidoli <ghidoliemanuele@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org,
-	Aristo Chen <aristo.chen@canonical.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
+	Thu, 12 Nov 2026 10:39:29 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id F12A841499;
+	Thu, 12 Nov 2026 10:39:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1ECE71F00A06;
+	Thu, 12 Nov 2026 10:39:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794479968;
+	bh=jj+KwhjsJ+azPCQ+Sz77HwA7gwWIyWEvUjsiCGUD9u8=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=leoUnOszVpSJqwsR8md0YdWjHXpHl4M2/n9Z08ff7NloH+4Flaa8LxuaBJkUUb7MV
+	 YAXJXa3RpJUht1Czmn3VGmFj0izv8qZDERStGMdyRmxcxpxIE9L00dc2Cy+zzLbCSA
+	 9d5lb6ZbcOKpybjUIYfm2y+sSXjgqw8Ej9i4TOT1wIjqMNBgg3xYV1UZjLWWVnEc6l
+	 Zrz9lLQvECj/6D9kP19PjPfN8JYS/UvnElx7kdxeGEj4CUPl4Ky5BYiejI/cKcpDiE
+	 65gp1sB/1Rkc3rDxdtWwofBgLtMQpWtz+AwvVJh32y/QWqMmenrShvlQmGJUiTOnhj
+	 gfat2VCLaBybw==
+Date: Thu, 12 Nov 2026 16:09:25 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
 	Manivannan Sadhasivam <mani@kernel.org>,
-	Brian Masney <bmasney@redhat.com>,
-	Fabio Estevam <festevam@nabladev.com>,
-	Lucas Stach <l.stach@pengutronix.de>,
-	Adam Ford <aford173@gmail.com>,
-	Marco Felsch <m.felsch@pengutronix.de>,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/1] phy: freescale: fsl-samsung-hdmi: initialize default
- rate
-Message-ID: <20261112094515.GA47236@francesco-nb>
-References: <20260903054811.9720-1-aristo.chen@canonical.com>
- <13219248.O9o76ZdvQC@steina-w>
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+	Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>,
+	Abel Vesa <abel.vesa@oss.qualcomm.com>
+Subject: Re: [PATCH v2] phy: qualcomm: phy-qcom-eusb2-repeater: Fix SMB Power
+ leakage issue
+Message-ID: <avWXXVE9WuLUPbn5@parshuram>
+References: <20261112-smb-repeater-power-leakage-v2-1-0f8ee55c4962@oss.qualcomm.com>
+ <avWB6_hSarfdJV5-@parshuram>
+ <dcc4d7a7-6408-48c4-8fd3-af96519fbd72@oss.qualcomm.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <13219248.O9o76ZdvQC@steina-w>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261112_014527_705598_D08FC026 
-X-CRM114-Status: GOOD (  14.91  )
-X-Spam-Score: -2.1 (--)
+In-Reply-To: <dcc4d7a7-6408-48c4-8fd3-af96519fbd72@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,69 +73,26 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=ham autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-+regressions list and Emanuele
-
-Hi,
-
-On Wed, Nov 11, 2026 at 08:11:39AM +0100, Alexander Stein wrote:
-> Am Donnerstag, 3. September 2026, 07:47:58 Mitteleurop=E4ische Normalzeit=
- schrieb Aristo Chen:
-> > The HDMI PHY clock reports 74.25 MHz when cur_cfg is unset, but does
-> > not establish that rate in hardware. The common clock framework caches
-> > the reported rate when registering the clock and skips a first
-> > clk_set_rate(74250000) request because the rate appears unchanged.
-> > =
-
-> > Consequently, a display whose initial mode uses a 74.25 MHz pixel clock
-> > can leave the PHY with its bootloader register state and receive no
-> > TMDS signal. Requesting another rate first avoids the issue because the
-> > set_rate callback configures the PHY.
-> > =
-
-> > Program the 74.25 MHz table entry with the reference clock enabled
-> > before registering the clock provider. recalc_rate can then report the
-> > configured rate, and a skipped first rate change is safe. Also enable
-> > the reference clock when restoring that configuration on resume.
-> > =
-
-> > Fixes: 6ad082bee902 ("phy: freescale: add Samsung HDMI PHY")
-> > Signed-off-by: Aristo Chen <aristo.chen@canonical.com>
-> =
-
-> Unfortunately this breaks my platform (imx8mp-tqma8mpql-mba8mpxl.dts).
-> With this patch applied I get the following errors in kernel log:
-> > fsl-samsung-hdmi-phy 32fdff00.phy: PLL failed to lock
-> > fsl-samsung-hdmi-phy 32fdff00.phy: error -ETIMEDOUT: failed to configur=
-e default rate
-> > fsl-samsung-hdmi-phy 32fdff00.phy: probe with driver fsl-samsung-hdmi-p=
-hy failed with error -110
-> =
-
-> Reverting fixes my platform and HDMI as expected.
-
-Same here on v7.4-rc2, on all the Toradex i.MX8M Plus boards in our CI
-(Verdin iMX8M Plus on Dahlia, SMARC iMX8M Plus), with the very same
-three errors.
-
-#regzbot ^introduced: c01ccf91b257
-#regzbot title: phy: fsl-samsung-hdmi: i.MX8MP HDMI PHY probe fails with "P=
-LL failed to lock"
-
-Francesco
-
-
--- =
-
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMTItMTEtMjYsIDE0OjQzLCBLcmlzaG5hIEt1cmFwYXRpIHdyb3RlOgoKPiA+IFRoaXMgZmFp
+bHMgdG8gYnVpbGQ6Cj4gPiAKPiA+IGRyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLWV1c2Iy
+LXJlcGVhdGVyLmM6IEluIGZ1bmN0aW9uIOKAmGV1c2IyX3JlcGVhdGVyX2V4aXTigJk6Cj4gPiBk
+cml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1ldXNiMi1yZXBlYXRlci5jOjIzMToyNDogZXJy
+b3I6IOKAmHN0cnVjdCBldXNiMl9yZXBlYXRlcuKAmSBoYXMgbm8gbWVtYmVyIG5hbWVkIOKAmGJh
+c2XigJkKPiA+IAo+IAo+IEhpIFZpbm9kLAo+IAo+ICBXaGVuIFsxXSBnb3QgbWVyZ2VkIGl0IHJl
+bW92ZWQgdGhlIGJhc2UgcG9pbnRlci4gSGVuY2UgdjEgb2YgdGhpcyBwYXRjaAo+IGZhaWxzIHdp
+dGggZXJyb3Igc2F5aW5nIHRoYXQgYmFzZSBpcyBub3QgcHJlc2VudC4gQnV0IHYyIGhhcyBiZWVu
+IHJlYmFzZWQuCj4gVGhpcyB2MSBnaXZlcyB0aGUgaXNzdWUgYnV0IG5vdCB2Mi4gSSBzZWUgdGhh
+dCB5b3UgaGF2ZSBhcHBsaWVkIHYxLiBDYW4geW91Cj4gcmV2ZXJ0IHRoYXQgYW5kIHRha2UgaW4g
+djIuCkRvbmUKCi0tIAp+Vmlub2QKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBo
+eUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
+L2xpc3RpbmZvL2xpbnV4LXBoeQo=
