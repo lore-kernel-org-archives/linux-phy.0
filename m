@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 66C8660A2607
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 09:03:46 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B817D60A2616
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 09:03:48 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=i1htJJB7;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=MheNxSAw
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=diQiatTL;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=oO/wsfao
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,47 +14,48 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=GmXTjo93FK2WG7TmG6a8V2oTPKvceCBFIGBarn0rQfM=; b=i1htJJB7OeFJrilWrLlbCfBzTs
-	YdJH6IvIeYQ9D8+Fvsx7xg9RfB88+784VBHhHFMu76DNc5qfXeb5pcahtO8XEPPqXIHfzbPeer3qG
-	RCTP/WoHpaI/tsASKaRZ110MCNIVcIQZxtVnCmNymwVXqYamUSCMof3AziXXmfGWnHBCHBaS17xwX
-	SxErxBc2QzAVhYb5zNEuS/xZOkHqYPh4RAsH8b4o++hFMrftSZzu2cgm7UDu68nU5neDACfrDo94R
-	ggy0et26lxwyUcCVuwwpBupQ0O0bxTiRcUk9UcOBTrcngjMw3a9APtSn9Km/UBY0U6rgWOtdOQMqZ
-	BVuyQuBg==;
+	bh=9YiioNW3vjw2wPhWAWVg5QhcSBfdMHRZYM1r06o2H68=; b=diQiatTL9puebJnrhqxJ64qjgA
+	JXq+o48QYJUcYLXHP5XZuoCyCOBHIGGZ1nWehWn5WiyovZpxyG/TCPO9ozTugY6i+A3TwpOmFslEc
+	IbsfSx5fHGre+upd0BndOMmSq8QntTd1hJWxqEeWKQZwH9HQSNcNxa/E4G7SIOoB1h4vS1qzNE+Q/
+	CEW5ADJzmUt8Fi+yOZg6K56MXn2i8pfMygtkxikxBpVmKVoJ2kMWrDirL7FuEH7GrVwcLJOQ/Ovqq
+	IHZHoFSh3lRXGQhflGEV9oZylBGVr8U2GXmUjS4pTP50I9c6Ma6nKZswoNs/XbCeKb3X5tIpEMzVa
+	8r/8EQLA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRQig-00000009HKI-0YOh;
-	Thu, 12 Nov 2026 09:03:46 +0000
+	id 1xRQii-00000009HLE-20vP;
+	Thu, 12 Nov 2026 09:03:48 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRQif-00000009HJh-14JT
+	id 1xRQig-00000009HKd-472y
 	for linux-phy@lists.infradead.org;
-	Thu, 12 Nov 2026 09:03:45 +0000
+	Thu, 12 Nov 2026 09:03:47 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 6DBB944D63;
+	by sea.source.kernel.org (Postfix) with ESMTP id AC3AF41FCD;
+	Thu, 12 Nov 2026 09:03:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E3C271F00A09;
 	Thu, 12 Nov 2026 09:03:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 30DB41F00A06;
-	Thu, 12 Nov 2026 09:03:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794474224;
-	bh=0SqNMvBpkWCMg1sYf6ydGcAXlRxW8TbvM8AG+7xsJjo=;
+	s=k20260515; t=1794474226;
+	bh=vXl5m73IC1Qj9DQkgemcl355Soy8bxLPr8ADXHnlPs0=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=MheNxSAwXmt49Dnj1PXDxgAkV0lUuNDkpb5VPGEI71seXnh81299CSKxoiA7eaMgT
-	 gZrfF3Mb4gx4K1OOwYvwil0SR/KrYnpwbS8DKnBDakAbEODfRsLMuQVDb47rWZ7oyX
-	 oLcxuuEPrOPC1ZKabkn2TCx/ZH10m1CtK+xTFJDwi8FR6UdDvvBoxocLKdnuozwIlc
-	 MfVGSbu4wt7dkdQXoxost+1kBuPbhJqGtmCx8t1lcCilwMNIyjrEwYX4Lzz0E69oYZ
-	 t1ggkOHCP92FL4uU9rSuTatXPcMADyIKtMPnGRPiwv7R2TWxWHiHWKIbogKypqwT/O
-	 GUQHIutwkRs3w==
+	b=oO/wsfaoYIUlyNJL3r5/8ieWCg1w9lIqjxjxPPbrU4kRaY7gEweaXTBdQKwjVsmOt
+	 4f2Trpu/65POQguNuQK178OyPiCKuuN2HEf/q0sMfyC9N6nLaKnD4IokeQGbDFvTus
+	 lWePLSyaOS8F4M9YUmF7Wzx0J/K9XTCU4sZ6r9gwRfrpogppH5EtVuRJLoeQJCVpSD
+	 6BfcN7eyc/KO/JUkr8eMYtTsG9GJ79j1TbeHPK5sMHYwZ4aIEvPrXx5Dc3Quj0ozPq
+	 h67r49bx6RQhLOh7SHExZdGhnR4nhxcrWXCPY2B6T7dz1DBQAs+w8sU7UXbeOo57YV
+	 LyiCAAWPdGBqA==
 From: Vinod Koul <vkoul@kernel.org>
-To: neil.armstrong@linaro.org, johan@kernel.org, kishon@kernel.org, 
- rogerq@ti.com, Hongling Zeng <zenghongling@kylinos.cn>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- zhongling0719@126.com
-In-Reply-To: <20260909122630.1313205-1-zenghongling@kylinos.cn>
-References: <20260909122630.1313205-1-zenghongling@kylinos.cn>
-Subject: Re: [PATCH v8 0/4] phy: ti-pipe3: Fix clock resource handling
- issues
-Message-Id: <179447422182.428158.17793904820702370114.b4-ty@kernel.org>
-Date: Thu, 12 Nov 2026 14:33:41 +0530
+To: Miquel Raynal <miquel.raynal@bootlin.com>, 
+ =?utf-8?q?=C5=A0t=C4=9Bp=C3=A1n_Daleck=C3=BD?= <daleckystepan@gmail.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org
+In-Reply-To: <20261001151939.23658-1-daleckystepan@gmail.com>
+References: <20261001151939.23658-1-daleckystepan@gmail.com>
+Subject: Re: [PATCH] phy: marvell: a3700-comphy: Guard missing polarity
+ argument
+Message-Id: <179447422457.428158.9677225220979087471.b4-ty@kernel.org>
+Date: Thu, 12 Nov 2026 14:33:44 +0530
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
@@ -67,8 +68,8 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 X-Spam-Status: No, score=-6.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
@@ -77,35 +78,16 @@ X-Spam-Status: No, score=-6.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-
-On Wed, 09 Sep 2026 20:26:26 +0800, Hongling Zeng wrote:
-> This patch series fixes multiple clock resource handling issues in the
-> ti-pipe3 PHY driver.
-> 
-> Patch 1 fixes a critical issue where ti_pipe3_init() was ignoring the
-> return value of ti_pipe3_enable_clocks(), which could lead to unclocked
-> hardware access and unbalanced clock disables.
-> 
-> [...]
-
-Applied, thanks!
-
-[1/4] phy: ti-pipe3: Fix ignored clock enable return value in init
-      commit: 64207b5bc6be7db5e75ba9b7eb271dbda30834e5
-[2/4] phy: ti: pipe3: Fix clock resource leak on probe errors
-      commit: 6dc01e3516d79cf4d690d892499a0bd08a14285b
-[3/4] phy: ti-pipe3: Fix EPROBE_DEFER handling for clock resources
-      commit: aeb637c73631851de0965514151f7ff7bc13f940
-[4/4] phy: ti-pipe3: Fix clock leaks in init/exit error paths
-      commit: 2be6a65608a5e32b2be6f5da843b1f29f1091098
-
-Best regards,
--- 
-~Vinod
-
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+Ck9uIFRodSwgMDEgT2N0IDIwMjYgMTc6MTk6MzggKzAyMDAsIMWgdMSbcMOhbiBEYWxlY2vDvSB3
+cm90ZToKPiBUaGUgQXJtYWRhIDM3MDAgQ09NUEhZIGJpbmRpbmcgc3BlY2lmaWVzICNwaHktY2Vs
+bHMgPSA8MT4sIHNvIFBIWQo+IHJlZmVyZW5jZXMgc3VwcGx5IG9ubHkgdGhlIHBvcnQgYXJndW1l
+bnQuIEhvd2V2ZXIsCj4gbXZlYnVfYTM3MDBfY29tcGh5X3hsYXRlKCkgdW5jb25kaXRpb25hbGx5
+IHJlYWRzIGFyZ3NbMV0gdG8gc2VsZWN0IFRYCj4gYW5kIFJYIHBvbGFyaXR5IGludmVyc2lvbi4g
+VGhlIFBIWSBjb3JlIGRvZXMgbm90IGluaXRpYWxpemUgaXRzCj4gb2ZfcGhhbmRsZV9hcmdzIHN0
+cnVjdHVyZSwgYW5kIHRoZSBwaGFuZGxlIHBhcnNlciBmaWxscyBvbmx5IHRoZQo+IHN1cHBsaWVk
+IGNlbGxzLCBsZWF2aW5nIGFyZ3NbMV0gdW5pbml0aWFsaXplZC4KPiAKPiBbLi4uXQoKQXBwbGll
+ZCwgdGhhbmtzIQoKWzEvMV0gcGh5OiBtYXJ2ZWxsOiBhMzcwMC1jb21waHk6IEd1YXJkIG1pc3Np
+bmcgcG9sYXJpdHkgYXJndW1lbnQKICAgICAgY29tbWl0OiAyNDMxNDQ0MGE4MmJkMmJiNjYwNDlh
+ZjRkZThmODk5MzlhMWZkNzdmCgpCZXN0IHJlZ2FyZHMsCi0tIAp+Vmlub2QKCgoKLS0gCmxpbnV4
+LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9s
+aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
