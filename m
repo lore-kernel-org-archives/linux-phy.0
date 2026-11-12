@@ -2,64 +2,61 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C586A606A32A
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 11:21:22 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C5C55606DE77
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 11:27:17 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=JJqb3DpG;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jnFxgbB1
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=ldwuYrJJ;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=hRSOhJ1U
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=7SXZXyzDEX+Ec9hb443yM/pTSPD6lnkqNMcXLKO/18E=; b=JJqb3DpG6uT4NNOQ01xaAPZECP
-	ZZRi26yIzgtWymm25por7Q8/5CoHdKRpZvbWPZRFSqIAJoOqjpP0eiHq54WoThThYj1UXgPHPp87p
-	GhODCsDrvkrWim3uU7I5BhX8b35lWF4tkhXKEZg7GZYBqwvMoTZjAHB9EAGzGbyqTrq53s9Dn0LNn
-	irRcbxPBp+6pWEaGwb654KoEBIQkIEzsUfEth9SiNryNcdP81UCdeTaAB2C070oU2Jikib8rmuOo5
-	XpImkD+BmfOIpCJ/qno9t+z+VYzWWzLleu0Iot2tuPKBCGfcpVvHB8yk4XwyMGDM3VNuvj01kdJWI
-	cbM3ujnQ==;
+	bh=jgXhPiDbld4qkJMaB9AZroQM5sfgkMOxUIKA9fzAXyU=; b=ldwuYrJJgY6fLMDdKRmFOU8awb
+	U+dpmat7cDMzWIvNGL4BFtZip+Omb39h2yaAKKgUKeITQfQNImmyYPmwmtSH/7MuvI/AaPNsOIhkW
+	IGK+nsy0Nh/nBcBv//D+lRzE/FJ24oO2ohU+jhm4aNwtb90afyVjO+RtCIkUstiPIrfiQqFcr3smc
+	P2rbCv59zZDEnTSb3IyWFI22xJSU+dKSpzCyoDQA11iNNVP5QoN9mlkj3Vu1fPQHKjNfLHfaf4WdW
+	9+SfGwKn6HW4dUODjcz/autmAo8W5rty36KHrrVr88mNbAogVJKjG91J9EaDPpII4HzG0irQzX5Vt
+	cPbYeooQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRSrq-00000009fWM-2E61;
-	Thu, 12 Nov 2026 11:21:22 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xRSxY-00000009hY2-3TdT;
+	Thu, 12 Nov 2026 11:27:17 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRSrS-00000009fLY-1OJ9;
-	Thu, 12 Nov 2026 11:20:58 +0000
+	id 1xRSxE-00000009hEb-0jFB;
+	Thu, 12 Nov 2026 11:26:58 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 90C5160D86;
-	Thu, 12 Nov 2026 11:20:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4BA131F00A05;
-	Thu, 12 Nov 2026 11:20:56 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 98D2745642;
+	Thu, 12 Nov 2026 11:26:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E80DB1F00A07;
+	Thu, 12 Nov 2026 11:26:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794482457;
-	bh=cs0q7B7MSfaibYoJpjt1BO5ZEbu817EWGpbNhNP+bzo=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=jnFxgbB1Do3DL4+8PW+K3S2xaYDWkSDo7VNra7peWZf/0ZN/lxX9wrk7E/jkQEOVv
-	 EiGhNfdQmHWk8lZtnd+M+F3nVNU2GrI6FwrymYstyvES/t+9o8EGAZs/ub6ay3VMBF
-	 VvHezW8pswmNW/f2ubLsHEqOkvk3G28LwoZkl5HO6YYvYVGs5Mz4S1BRU6xITv4lJW
-	 WcQb9RvJ67oLBra0U0f3MRuZgnoUp8deWk8kETX4KrlaUSl3TkP0Is9E0zYEx2Hka/
-	 RmUxc1uLyIMHVTr+FcInImdUkOHsIQX52CbxtETLn9lPynpEpZHM/WeVmVzHv9rYFf
-	 K1PFz1/frwHvA==
-Date: Thu, 12 Nov 2026 12:20:53 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Sasha Finkelstein <k@chaosmail.tech>
-Cc: Sven Peter <sven@kernel.org>, Janne Grunau <j@jannau.net>, 
-	Neal Gompa <neal@gompa.dev>, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
-	Conor Dooley <conor+dt@kernel.org>, asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/4] dt-bindings: phy: atcphy: Add M3 series
-Message-ID: <20261112-daring-lively-skua-aae32e@quoll>
-References: <20261108-t8122-phy-v1-0-c2783b2a53a8@chaosmail.tech>
- <20261108-t8122-phy-v1-1-c2783b2a53a8@chaosmail.tech>
+	s=k20260515; t=1794482815;
+	bh=pxwntV3ax7d8ghlUHrSTVkv7b/WcoXHrf0AVg/hqyUo=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date;
+	b=hRSOhJ1UQfb123JzAtD9k716frj9o6HyPgxZFGPA3vj9ebbWjbV1ErBd2aXGbU7lN
+	 M9rge3X+C5n94qtfAE14Sa7varsBnXqLo6YNAfEOlcokAChylNnf2IyLfK7r/ON7dQ
+	 J/sE4YNl98e9rJF0AaCkNi+dFEa8W3O5wxqiNNqdzMgOhTx2C+IMzon8cceuZSJInP
+	 ZRcavHzAFnj+aIqpFOsB2xtDOL5aQEmIrrytl+hs/cnfK/WoWA50e6Bp4KzhxqMh6r
+	 +xnbI17vFoXpgAdGZJ77AYj8W4eyG1nLTJ+A9JZN1BnyeAXZs2lx2Jy6F1EHQuxXXu
+	 1+hywFg8Ul7pg==
+From: Vinod Koul <vkoul@kernel.org>
+To: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Shawn Lin <shawn.lin@rock-chips.com>
+Cc: linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org
+In-Reply-To: <1792036787-37927-1-git-send-email-shawn.lin@rock-chips.com>
+References: <1792036787-37927-1-git-send-email-shawn.lin@rock-chips.com>
+Subject: Re: [PATCH] phy: rockchip: naneng-combphy: Fix overwritten PLL SSC
+ control bit
+Message-Id: <179448281355.507383.5760526379124804602.b4-ty@kernel.org>
+Date: Thu, 12 Nov 2026 16:56:53 +0530
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20261108-t8122-phy-v1-1-c2783b2a53a8@chaosmail.tech>
+X-Mailer: b4 0.14.3
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,37 +69,36 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-6.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=no
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Sun, Nov 08, 2026 at 04:43:40PM +0100, Sasha Finkelstein wrote:
-> M3 series SoCs have new phys that are different enough to need
-> a new compatible
-> 
-> Signed-off-by: Sasha Finkelstein <k@chaosmail.tech>
-> ---
->  Documentation/devicetree/bindings/phy/apple,atcphy.yaml | 6 ++++++
->  1 file changed, 6 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/apple,atcphy.yaml b/Documentation/devicetree/bindings/phy/apple,atcphy.yaml
-> index 0acac7e3ee67..39461c5dcf20 100644
-> --- a/Documentation/devicetree/bindings/phy/apple,atcphy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/apple,atcphy.yaml
-> @@ -55,6 +55,12 @@ properties:
->                - apple,t8112-atcphy
->            - const: apple,t8103-atcphy
->        - const: apple,t8103-atcphy
-> +      - const: apple,t8122-atcphy
 
-These two are just 'enum'. That's preferred approach and more
-obvious/readable.
+On Thu, 15 Oct 2026 11:59:47 +0800, Shawn Lin wrote:
+> rk_combphy_common_cfg_ssc() first sets RK3568_PHYREG33_PLL_SSC_CTRL on the
+> RK3588 and RK3576 SoCs, then, for PCIe at 24MHz, programs the PLL KVCO
+> adjust field. The latter used a plain writel() of the FIELD_PREP() value,
+> which cleared all the other bits of RK3568_PHYREG33, including the
+> PLL_SSC_CTRL bit that had just been set a few lines above.
+> 
+> Use rockchip_combphy_updatel() so that only the KVCO field is updated and
+> the SSC control bit is preserved, as the comment and the pre-consolidation
+> code intended.
+> 
+> [...]
+
+Applied, thanks!
+
+[1/1] phy: rockchip: naneng-combphy: Fix overwritten PLL SSC control bit
+      commit: 96246dc6c16a5e5a6b4b9fde8f4ab9cdeb201088
 
 Best regards,
-Krzysztof
+-- 
+~Vinod
+
 
 
 -- 
