@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5969C606A8B1
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 09:03:44 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 66C8660A2607
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 09:03:46 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=wtulK399;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=SuNPzHjH
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=i1htJJB7;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=MheNxSAw
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,49 +14,47 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=hiqPO8XRbYgfsGUwl8dz7+1/70joz91aryqIoCNsFh8=; b=wtulK399GP91af0Yl3whdWNzNP
-	l0krkexUh1VfWf532yTO2dWL9WSLQ8cwaUUQCR/BO4Rbyux0QS+AZ3BNkwYJbAkp8hD0/t/lxVWGc
-	jkqz0j6eUS3TmAcJwfN0SmD3ruZES02X6oNHEpJ6bmq0LvCia98mq2WzQQpW69RDm8kvlG+w2TL5S
-	NVMqhxtCWYP2CNShOnj9NkB79NeKKkobrbDFE6SmQubuN1PBn8/8bbkQvfym2FPt0NbfxX1uiXUHU
-	piDOZG4+QaanqdacmHiAsOJFWnJFJ0JSAkYTQMn6elZ3/UwwA0f/qHADtWUmyICW2OeqtJfxdt3J7
-	p+iy1KKQ==;
+	bh=GmXTjo93FK2WG7TmG6a8V2oTPKvceCBFIGBarn0rQfM=; b=i1htJJB7OeFJrilWrLlbCfBzTs
+	YdJH6IvIeYQ9D8+Fvsx7xg9RfB88+784VBHhHFMu76DNc5qfXeb5pcahtO8XEPPqXIHfzbPeer3qG
+	RCTP/WoHpaI/tsASKaRZ110MCNIVcIQZxtVnCmNymwVXqYamUSCMof3AziXXmfGWnHBCHBaS17xwX
+	SxErxBc2QzAVhYb5zNEuS/xZOkHqYPh4RAsH8b4o++hFMrftSZzu2cgm7UDu68nU5neDACfrDo94R
+	ggy0et26lxwyUcCVuwwpBupQ0O0bxTiRcUk9UcOBTrcngjMw3a9APtSn9Km/UBY0U6rgWOtdOQMqZ
+	BVuyQuBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRQie-00000009HJW-0KLm;
-	Thu, 12 Nov 2026 09:03:44 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xRQig-00000009HKI-0YOh;
+	Thu, 12 Nov 2026 09:03:46 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRQic-00000009HJN-39mO
+	id 1xRQif-00000009HJh-14JT
 	for linux-phy@lists.infradead.org;
-	Thu, 12 Nov 2026 09:03:42 +0000
+	Thu, 12 Nov 2026 09:03:45 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id D87FB634EC;
+	by sea.source.kernel.org (Postfix) with ESMTP id 6DBB944D63;
+	Thu, 12 Nov 2026 09:03:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 30DB41F00A06;
 	Thu, 12 Nov 2026 09:03:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6E4421F00A05;
-	Thu, 12 Nov 2026 09:03:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794474221;
-	bh=4TzZAoqysIzaqY5zMZCOlG6RH0kDdxH5O/qMNybhu/s=;
+	s=k20260515; t=1794474224;
+	bh=0SqNMvBpkWCMg1sYf6ydGcAXlRxW8TbvM8AG+7xsJjo=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=SuNPzHjHvWtalDSiykqLa1Ab9VaWjm3jEK31H2lSO+1rJrZvmU9LsTdmRl6f+nBcd
-	 yRp5WiZKdBYHzhvnxPyhQESL7Qh05hp7lNOUenCBJvlxp7/ufFOMLN2gpT0K5y0AMw
-	 FY+DYhR9L4YORBRcM3TmwVS3ntNneP0E+1FgemGjtP5XjxUvnG3E0Hd9TxMxYUUcBB
-	 n0K3b27+K5BKqZhhDpblaONO5vFXdD64zFyrvhoBa1oA2ghqX2+uM+SeQtbWwGzJp9
-	 AOifOcJ8eTAeZet6PiG4+ToW2TKGjWavwUEQBCD/GRDGqyG/UxZR6AUWYMidgwalDX
-	 dO5k4m7oFGzqA==
+	b=MheNxSAwXmt49Dnj1PXDxgAkV0lUuNDkpb5VPGEI71seXnh81299CSKxoiA7eaMgT
+	 gZrfF3Mb4gx4K1OOwYvwil0SR/KrYnpwbS8DKnBDakAbEODfRsLMuQVDb47rWZ7oyX
+	 oLcxuuEPrOPC1ZKabkn2TCx/ZH10m1CtK+xTFJDwi8FR6UdDvvBoxocLKdnuozwIlc
+	 MfVGSbu4wt7dkdQXoxost+1kBuPbhJqGtmCx8t1lcCilwMNIyjrEwYX4Lzz0E69oYZ
+	 t1ggkOHCP92FL4uU9rSuTatXPcMADyIKtMPnGRPiwv7R2TWxWHiHWKIbogKypqwT/O
+	 GUQHIutwkRs3w==
 From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- =?utf-8?q?=E5=91=A8=E7=90=B0=E6=9D=B0_=28Zhou_Yanjie=29?= <zhouyanjie@wanyeetech.com>, 
- Paul Cercueil <paul@crapouillou.net>, 
- =?utf-8?q?=E6=BC=86=E9=B9=8F=E6=8C=AF_=28Qi_Pengzhen=29?= <aric.pzqi@ingenic.com>, 
- Felix Gu <ustc.gu@gmail.com>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-In-Reply-To: <20260906-ingenic-v1-1-2311f3df8ddc@gmail.com>
-References: <20260906-ingenic-v1-1-2311f3df8ddc@gmail.com>
-Subject: Re: [PATCH] phy: ingenic: fix unbalanced regulator disable in exit
-Message-Id: <179447421909.428158.1735484115225895590.b4-ty@kernel.org>
-Date: Thu, 12 Nov 2026 14:33:39 +0530
+To: neil.armstrong@linaro.org, johan@kernel.org, kishon@kernel.org, 
+ rogerq@ti.com, Hongling Zeng <zenghongling@kylinos.cn>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ zhongling0719@126.com
+In-Reply-To: <20260909122630.1313205-1-zenghongling@kylinos.cn>
+References: <20260909122630.1313205-1-zenghongling@kylinos.cn>
+Subject: Re: [PATCH v8 0/4] phy: ti-pipe3: Fix clock resource handling
+ issues
+Message-Id: <179447422182.428158.17793904820702370114.b4-ty@kernel.org>
+Date: Thu, 12 Nov 2026 14:33:41 +0530
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
@@ -80,20 +78,26 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 
-On Sun, 06 Sep 2026 21:30:31 +0800, Felix Gu wrote:
-> exit() and power_off() both disable vcc_supply, so the regulator
-> gets disabled twice for every power cycle, causing an unbalanced
-> disable WARN.
+On Wed, 09 Sep 2026 20:26:26 +0800, Hongling Zeng wrote:
+> This patch series fixes multiple clock resource handling issues in the
+> ti-pipe3 PHY driver.
 > 
-> Drop the regulator_disable() call from the exit callback and leave
-> the regulator to the power_on/power_off pair.
+> Patch 1 fixes a critical issue where ti_pipe3_init() was ignoring the
+> return value of ti_pipe3_enable_clocks(), which could lead to unclocked
+> hardware access and unbalanced clock disables.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] phy: ingenic: fix unbalanced regulator disable in exit
-      commit: 71c1be5cc4e083852c8437bd6afcb99ee3050e8e
+[1/4] phy: ti-pipe3: Fix ignored clock enable return value in init
+      commit: 64207b5bc6be7db5e75ba9b7eb271dbda30834e5
+[2/4] phy: ti: pipe3: Fix clock resource leak on probe errors
+      commit: 6dc01e3516d79cf4d690d892499a0bd08a14285b
+[3/4] phy: ti-pipe3: Fix EPROBE_DEFER handling for clock resources
+      commit: aeb637c73631851de0965514151f7ff7bc13f940
+[4/4] phy: ti-pipe3: Fix clock leaks in init/exit error paths
+      commit: 2be6a65608a5e32b2be6f5da843b1f29f1091098
 
 Best regards,
 -- 
