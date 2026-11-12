@@ -2,68 +2,163 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 86AE8606B591
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 08:48:40 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1CAA8606A32A
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Nov 2026 08:54:48 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=4xqtJWYf;
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=rock-chips.com header.i=@rock-chips.com header.a=rsa-sha256 header.s=default header.b=HTjyU8HA
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=RCvLt2hk;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=foss.st.com header.i=@foss.st.com header.a=rsa-sha256 header.s=selector2 header.b=a/xjiQMj
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=3a/+fEfLEwk/pkJZCbTJag7l9RUe2c/bn4k5RNXfidI=; b=4xqtJWYfRMAqt2vMgeed8GvV1Z
-	yLGjsYWltgk4t5e2H3nHrainyCZm3/lbtJSMtUI9ULkOuS8PdJiUvlgRYR/9al7mGuiVBKIh1lsoC
-	Ud5f0KKdnHLXjTnE/0E2lI+fn/JASBlNa5JvTT4eeHb0URAMBYRzk2+vRfcbytPzOtOWsAK9xzP0F
-	XRW1snH7TyHdt/HEQeXMVowYltQCSJtFica7lXftgd0/zM2tdJXGG4W2DKH6m86zC+D9GE7USNXVo
-	KMI1zw3W9les2TFzcH9XlplgCum4BaugFl6wORJjtnqP9LsjXkOnGFrIICKMqoQkf2U72Zxw24d4P
-	8UEDFlBg==;
+	bh=Yqnc28/5AXr1swdQONLkgb0IhLKSmgGEerjEc2xxCjM=; b=RCvLt2hkdY4Kphb3VdpewGUF6x
+	+UV8eRQUg+EQGootIi6vhM2tmP1IGQ4GRuEbOahd2tm/C7O1JfsYEm1EILtHzVxuL5mmG9DmjCTu5
+	utvDMjhs7boDtXHKqTrSMfb594wT4rDGY5plfh/Exipg83dwVw9npik4CdB/NtxmRe5rx0Bn5/3vk
+	JyD7+5cbcImI3/sexAmGHVmFLS5zCy+IYertaHWO/YmFUxphXXBQgKmXbhWL7lY8e4iOrhb+MTlBX
+	A3YyRNfNjezy/+KWDKQmudJm5YY/iD15C4RI8EOyzpu3x9LGiXsv+QbN03YmxphYOHFABpzwePazj
+	xFbZqt5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRQU2-00000009ENs-2jtU;
-	Thu, 12 Nov 2026 08:48:39 +0000
-Received: from mail-m81151.netease.com ([47.88.81.151])
+	id 1xRQZz-00000009FHM-0fht;
+	Thu, 12 Nov 2026 08:54:47 +0000
+Received: from mail-norwayeastazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20f::7] helo=OSPPR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRQTn-00000009EI3-3ZK9;
-	Thu, 12 Nov 2026 08:48:37 +0000
-Received: from [172.16.12.90] (unknown [61.154.14.86])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 546f2be92;
-	Thu, 12 Nov 2026 16:48:08 +0800 (GMT+08:00)
-Message-ID: <051621ab-a8b5-4120-afde-fbeeae48690d@rock-chips.com>
-Date: Thu, 12 Nov 2026 16:48:06 +0800
+	id 1xRQZn-00000009FEx-2FKf;
+	Thu, 12 Nov 2026 08:54:38 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=GKEBIVC8vg5v5KclcvbFRvz2/JBW8MNzvvgBGNnbISAe2btp1ohRPNLGyWo+7Y3IhYROcyJX3pyvxeptAA54Ng+Xy5wxmE6fgQA6McTE6/DS3nqIgEOcqWABfOzWJVnERgIrMTExCOwjnu98K40Z5J2pRbzYiTURlFvKnpRYL4TSQV3B4d5Gs86+7TtNy+MdAbcBy9ACeLXItC0MGMPaKE7C3NcTTzEdEI/BLUnv2UaDWyA3TdeOCnf1fKTPi3ta1yvkcDJUydCIH+ZWmTB7zYpS/INcEeue2xzf/W+RyY6PB0NTuMA1zj3pbHlSX9WwGb+gjiuLAWIIUeECj2rtiQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=3hSdrree7mkalBMSQXh5OGUB6ltIwr1aZ72PHT628eI=;
+ b=YNSE5jA0VtchYQYBS4fKXYacu2PENt7zJSdzjEQmAsg0KNLCL9GjEH4D/Qex4pJvi0Zfl4qi5jpq34Xi5KtjXJ8VQRC10rwyZtZmv9sDbNrqeYC+CW5TbDsQhTCom/lSZlwzbBUPhjaz/WlLMM02yWN5LTJbEqn9YgMT3BD9Ptb1wyEa8QmLVTVBpgwOnzAqCsJ1qRmZrHYtC+VjxIAo2LBSXxJZUveb1RWTmaC+AdHxUxnDfgKipE9tjLfR9M3njvtIiCL1MySciYQ5Zlx8R1HM05I/ABwkEsbyT92FwDsFv3xySPan3u05AiqirhvirHo9QEcZDoS/ERLOK441CQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=fail (sender ip is
+ 164.130.1.59) smtp.rcpttodomain=kernel.org smtp.mailfrom=foss.st.com;
+ dmarc=fail (p=none sp=none pct=100) action=none header.from=foss.st.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=3hSdrree7mkalBMSQXh5OGUB6ltIwr1aZ72PHT628eI=;
+ b=a/xjiQMjju6DLxOMjkYDilsA2AwGQ/+N3s/Z2oZM+XWS59CXfPlR2ssUlBFvLfH6L+bW8epbeOm9YCf3wiPQNnRsfmXrKIueZeMlbhqCzScRxKyQynCyxKciQxcBoCm+wowD6N2xtlWv39bOt2u6YJeb+F0TZy5VqgSTvClrR13Paex3MYoBSyrEY14wLozv/WOSd3PvCxyK1qPyEX9QvChpdMZF3qIJ8ZHxeF9xbEby/8DUnsSgmoKdnlmWMSQODRm4kNTWY3kfR/H5ac7KDs8TaC8Kt3lE1cF7yWKhmjGL9e6QpVs6MEHO+D3UeVaDI3ScmnEISl1g9Q8no7j06g==
+Received: from DU7P251CA0014.EURP251.PROD.OUTLOOK.COM (2603:10a6:10:551::17)
+ by AS2PR10MB7603.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:20b:546::22) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.615.8; Thu, 12 Nov
+ 2026 08:54:22 +0000
+Received: from DB1PEPF000509FD.eurprd03.prod.outlook.com
+ (2603:10a6:10:551:cafe::83) by DU7P251CA0014.outlook.office365.com
+ (2603:10a6:10:551::17) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.615.10 via Frontend Transport; Thu,
+ 12 Nov 2026 08:54:22 +0000
+X-MS-Exchange-Authentication-Results: mx.microsoft.com 1; spf=fail (sender IP
+ is 164.130.1.59) smtp.mailfrom=foss.st.com; dkim=none (message not signed)
+ header.d=none;dmarc=fail action=none header.from=foss.st.com;
+Received-SPF: Fail (protection.outlook.com: domain of foss.st.com does not
+ designate 164.130.1.59 as permitted sender) receiver=protection.outlook.com;
+ client-ip=164.130.1.59; helo=smtpO365.st.com;
+Received: from smtpO365.st.com (164.130.1.59) by
+ DB1PEPF000509FD.mail.protection.outlook.com (10.167.242.39) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.615.4 via Frontend Transport; Thu, 12 Nov 2026 08:54:22 +0000
+Received: from STKDAG1NODE2.st.com (10.75.128.133) by smtpo365.st.com
+ (10.250.44.71) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.56; Thu, 12 Nov
+ 2026 09:54:55 +0100
+Received: from [10.48.86.251] (10.48.86.251) by STKDAG1NODE2.st.com
+ (10.75.128.133) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.46; Thu, 12 Nov
+ 2026 09:54:09 +0100
+Message-ID: <9dd9b3fe-11b3-4a40-8681-8bbc0f35bd30@foss.st.com>
+Date: Thu, 12 Nov 2026 09:54:08 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v18 0/7] usb: dwc3: introduce Rockchip glue driver
-To: Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Manivannan Sadhasivam <mani@kernel.org>,
- Igor Paunovic <royalnet026@gmail.com>, linux-kernel@vger.kernel.org,
- linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
- kernel@collabora.com, Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-References: <20261021-b4-rockchip-dwc3-rockchip-glue-v18-0-60000d03fca2@collabora.com>
+Subject: Re: [PATCH] dt-bindings: Use hex unit address patterns
+To: "Rob Herring (Arm)" <robh@kernel.org>
+CC: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard
+	<mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, David Airlie
+	<airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, Krzysztof Kozlowski
+	<krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Vadim Fedorenko
+	<vadim.fedorenko@linux.dev>, Arkadiusz Kubalewski
+	<arkadiusz.kubalewski@intel.com>, Jiri Pirko <jiri@resnulli.us>, Ivan Vecera
+	<ivecera@redhat.com>, Benson Leung <bleung@chromium.org>, Guenter Roeck
+	<groeck@chromium.org>, Linus Walleij <linusw@kernel.org>, Bartosz Golaszewski
+	<brgl@kernel.org>, Frank Li <Frank.Li@nxp.com>, Sascha Hauer
+	<s.hauer@pengutronix.de>, Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, Jonathan Cameron <jic23@kernel.org>,
+	David Lechner <dlechner@baylibre.com>, =?UTF-8?Q?Nuno_S=C3=A1?=
+	<nuno.sa@analog.com>, Andy Shevchenko <andy@kernel.org>, Maxime Coquelin
+	<mcoquelin.stm32@gmail.com>, Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Olivier Moysan <olivier.moysan@foss.st.com>, Arnaud Pouliquen
+	<arnaud.pouliquen@foss.st.com>, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+	Thierry Reding <thierry.reding@kernel.org>, Jonathan Hunter
+	<jonathanh@nvidia.com>, Lee Jones <lee@kernel.org>, Srinivas Kandagatla
+	<srini@kernel.org>, Ekansh Gupta <ekansh.gupta@oss.qualcomm.com>, Ulf Hansson
+	<ulfh@kernel.org>, Hans Ulli Kroll <ulli.kroll@googlemail.com>, Andrew Lunn
+	<andrew+netdev@lunn.ch>, "David S. Miller" <davem@davemloft.net>, "Eric
+ Dumazet" <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni
+	<pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+	<neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, Ray Jui
+	<rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>, "Broadcom
+ internal kernel review list" <bcm-kernel-feedback-list@broadcom.com>,
+	Kunihiko Hayashi <hayashi.kunihiko@socionext.com>, Masami Hiramatsu
+	<mhiramat@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>, Mark Brown
+	<broonie@kernel.org>, "Rafael J. Wysocki" <rafael@kernel.org>, Daniel Lezcano
+	<daniel.lezcano@kernel.org>, Zhang Rui <rui.zhang@intel.com>, Lukasz Luba
+	<lukasz.luba@arm.com>, "Orson Zhai" <orsonzhai@gmail.com>, Baolin Wang
+	<baolin.wang@linux.alibaba.com>, Chunyan Zhang <zhang.lyra@gmail.com>, Paul
+ Kocialkowski <paul.kocialkowski@bootlin.com>, Shawn Guo
+	<shawnguo@kernel.org>, "Chanh Nguyen" <chanh@os.amperecomputing.com>,
+	Alistair Francis <alistair@alistair23.me>, Julius Werner
+	<jwerner@chromium.org>, Paul Cercueil <paul@crapouillou.net>, Dmitry Osipenko
+	<digetx@gmail.com>, Florian Fainelli <f.fainelli@gmail.com>, Thierry Reding
+	<thierry.reding@gmail.com>, Ray Jui <ray.jui@broadcom.com>, Scott Branden
+	<scott.branden@broadcom.com>, "Krzysztof Kozlowski" <krzk@kernel.org>,
+	<dri-devel@lists.freedesktop.org>, <devicetree@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, <netdev@vger.kernel.org>,
+	<chrome-platform@lists.linux.dev>, <linux-gpio@vger.kernel.org>,
+	<imx@lists.linux.dev>, <linux-arm-kernel@lists.infradead.org>,
+	<linux-hwmon@vger.kernel.org>, <linux-iio@vger.kernel.org>,
+	<linux-stm32@st-md-mailman.stormreply.com>, <linux-sound@vger.kernel.org>,
+	<linux-input@vger.kernel.org>, <linux-tegra@vger.kernel.org>,
+	<mfd@lists.linux.dev>, <linux-arm-msm@vger.kernel.org>,
+	<linux-mmc@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+	<linux-pm@vger.kernel.org>
+References: <20261102135330.2493332-1-robh@kernel.org>
 Content-Language: en-US
-From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-In-Reply-To: <20261021-b4-rockchip-dwc3-rockchip-glue-v18-0-60000d03fca2@collabora.com>
-X-HM-Tid: 0aa1cef161e603a7kunm25f03da89714c0
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVkaSBofVkIeGUgfSEJJQx9KHVYVFA
-	kWGhdVEwETFhoSFyQUDg9ZV1kYEgtZQVlNSlVKTk9VSk9VQ01ZV1kWGg8SFR0UWUFZT0tIVUpLSU
-	9PT0hVSktLVUpCS0tZBg++
-DKIM-Signature: a=rsa-sha256;
-	b=HTjyU8HAzlfGIH2zaWksvL0FatkZsBVvluGDZ0gXv7vdsLYvXtsI1AWIvGnpoKDX4/o3OOAfMNjPJk2bzP/cP7pzvx9KI8SL489WjcGeQL4HNW+4jNEWl43izC+LKg0zo4Ip/zGfA514bSOwoCB604D0QANS08DlCPVPFi8nZk4=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=YW52iYa3PS22kVrKBhZRqo+7XMDGvxdxdBLom1iDW5U=;
-	h=date:mime-version:subject:message-id:from;
+From: Fabrice Gasnier <fabrice.gasnier@foss.st.com>
+In-Reply-To: <20261102135330.2493332-1-robh@kernel.org>
+X-ClientProxiedBy: ENXCAS1NODE2.st.com (10.75.128.138) To STKDAG1NODE2.st.com
+ (10.75.128.133)
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DB1PEPF000509FD:EE_|AS2PR10MB7603:EE_
+X-MS-Office365-Filtering-Correlation-Id: 42aedc12-75f3-44a9-0348-08df409a8bc9
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|36860700016|23010399003|376014|1800799024|7416014|22082099003|18002099003|10067099003|56012099006|261009223027099003|11063799006;
+X-Microsoft-Antispam-Message-Info: E3Hn9+91PYLiCPy6iewOxcJGn0xmrf27E7xqACr0TwJZxexYfCYXZP3zeajQW/D7mm2lK63uLtbDAcn6E6jAydIN02RKTt85fs/gR3+yDDQo0Qequ7NDRM1sA+w5f8yzjNCrE7StrwU8cya3uwjzZqDVA5d/n27eG6IQFj01/DJNs/xfbR0xibmQjPjRAwu7NESA8qzz12uNdLWtof+zOkPN/Y6dLZCBSj46hqLktwXfGndpL1UKMkOtjOrwMgST/Zicoonkg++KJk5jqUuHnNOU66S3HFJjqlEY8znI7RXoEDpRKM+0lRXiX7JYj4Ii+ea09kh0Axb8GRpMMztQ3JlUYhafHoDaQC5GH/0mBQmZeZzCV4zW+LtHTMrB68j+FRebzN1i3xmEkOwlI1ghoRoTYp6qQHovWBs/yOLRI6wdr9hehceG9YWDiAuErXjcZSi/ZT04fciHqigmdnZIGAoXxXoRrfMbRax1hyeCUFL+Yx7k2Z62tEfF69h94bbjm/q9FmDq2VxOFOBAhI5D0iTC++kbAiTgMcVsjO9nRkqiWxz9g8amPxlo3UMtJtrtaEyFLOJhtEVs+IBxj6U4mEntk8vHl86A99Wp/jcoZLSnUmGr2DskMKXCXNSskYqMu0GplufZsBK+8OmaiZmHR6YlmodqIZCooyXyp26XdWrK/AslAkfqm7+2gSKt19/4
+X-Forefront-Antispam-Report: CIP:164.130.1.59;CTRY:IT;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:smtpO365.st.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(82310400026)(36860700016)(23010399003)(376014)(1800799024)(7416014)(22082099003)(18002099003)(10067099003)(56012099006)(261009223027099003)(11063799006);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 1CfsLkQBhd/S+iSj0Mgc8J74IQv8uaa5snYPLkuAdma36tpat9k8Ec+j22MYZ3RIiTRvPozFbu0Url9kjQgaBy0ay4my7NTuigYGL5wuSfa7gi/iES6M6IKUwynUr+NYB66tjwvLjF3BBmeSLqRV+G5Z44Te8ZkBYfq/NUqW/b5NMq+q+Ec1Bjzjv+gaWu9yuPqAOTgy79AseiiQnBPj6uRruofVy8OjDGwOV0w5aBw8s5r2ouFOKiUSjcppKrpZHDca9x21R308QwYQWwjCnT6GYvURGZ4XjvDgjEDzT91NgiJ82G6PqSZBM78KwheSKmYuVZkawsi0rkhJi8CGDtV0T66/6QHmh0SE9TJVbDiIbg1n7AevAC1GoxYPrlhBR4KKWHy5aNF+yELl1XktrvtD+w8D0YhVg+h4MUGp07fFRqfo7eOFqvDTgdii6Vgg
+X-OriginatorOrg: foss.st.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Nov 2026 08:54:22.3476
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 42aedc12-75f3-44a9-0348-08df409a8bc9
+X-MS-Exchange-CrossTenant-Id: 75e027c9-20d5-47d5-b82f-77d7cd041e8f
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=75e027c9-20d5-47d5-b82f-77d7cd041e8f;Ip=[164.130.1.59];Helo=[smtpO365.st.com]
+X-MS-Exchange-CrossTenant-AuthSource: DB1PEPF000509FD.eurprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS2PR10MB7603
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261112_004827_294825_D7B35FE9 
-X-CRM114-Status: GOOD (  12.38  )
+X-CRM114-CacheID: sfid-20261112_005437_771328_80C708E3 
+X-CRM114-Status: UNSURE (   8.62  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -74,36 +169,37 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
+	version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-SGkgU2ViYXN0aWFuLAoKT24gMTAvMjIvMjAyNiAyOjA1IEFNLCBTZWJhc3RpYW4gUmVpY2hlbCB3
-cm90ZToKPiBUaGUgcmVjZW50IFJvY2tjaGlwIHBsYXRmb3JtIGhhdmUgYSBjb21iaW5lZCBQSFks
-IHdoaWNoIGRvZXMgVVNCMyBhbmQKPiBEaXNwbGF5UG9ydCBhcyB3ZWxsIGFzIG11eGluZyB0aGUg
-bGluZXMgaW4gYXJiaXRyYXJ5IG9yZGVyLiBDaGFuZ2luZyBpdHMKPiBlbmFibGVkIGZ1bmN0aW9u
-YWxpdHkgcmVxdWlyZXMgYSBQSFkgcmVzZXQgYW5kIGFzIHRoZSBQSFkgcHJvdmlkZXMgYQo+IGNs
-b2NrIHRvIHRoZSBEV0MzIGNvbnRyb2xsZXIsIHRoaXMgY2FuIHJlc3VsdCBpbiBhbiBTRXJyb3Iu
-IEFwYXJ0IGZyb20KPiB0aGF0IHRoZSBQSFkgbWlnaHQgbm90IHN0YXJ0IHVwIGNvcnJlY3RseSB3
-aGVuIHRoZSBEV0MzIFBJUEUgaW50ZXJmYWNlCj4gaXMgcnVubmluZy4gVGhpcyBzZXJpZXMgcHJl
-cGFyZXMgYSBSb2NrY2hpcCBzcGVjaWZpYyBEV0MzIGdsdWUgZHJpdmVyIHRvCj4gaGVscCBvdXQg
-d2l0aCB0aGVzZSBwcm9ibGVtcy4gVG8gYmVjb21lIHVzZWZ1bCBtb3JlIHBhdGNoZXMgYXJlIG5l
-ZWRlZAo+IG9uIHRoZSBSb2NrY2hpcCBVU0JEUCBQSFkgc2lkZSwgd2hpY2ggYXJlIHNlbmQgc2Vw
-YXJhdGVseS4KPiAKPiBUaGlzIHdhcyBzcGxpdCBmcm9tIHRoZSBVU0JEUCBjbGVhbnVwIHNlcmll
-cy4gdjE3IGhhcyBhIGRlcGVuZGVuY3kgb24KPiB0aGUgcGF0Y2hlcyB0aGF0IGhhdmUgYmVlbiBt
-ZXJnZWQgdG8gcGh5J3MgZm9yLW5leHQgYnJhbmNoLiBUaGVyZSBhcmUKPiBzb21lIGFkZGl0aW9u
-YWwgUm9ja2NoaXAgVVNCRFAgcGh5IGZpeGVzLCB3aGljaCBkZXBlbmQgb24gdGhpcyBzZXJpZXMK
-PiAod2hpY2ggaXMgZWZmZWN0aXZlbHkgYWxzbyBhIGZpeCkuCj4gCgpJJ20gbm90IHN1cmUgd2hl
-dGhlciB0aGlzIGlzIHRoZSByaWdodCB0aGluZyB0byBkbywgYnV0IEkgdHJpZWQgYXBwbHlpbmcK
-YWxsIHRoZSB2MTggcGF0Y2hlcyBvbiB0b3Agb2YgdjE0IHBhdGNoMeKAk3BhdGNoMjcsIGFuZCB0
-ZXN0ZWQgVHlwZS1DIERQCm9uIHRoZSBSSzM1NzYgRVZCMSBib2FyZC4gQW5kIGl0IHNlZW1zIHRv
-IHdvcmsgZmluZS4KClRlc3RlZC1ieTogQ2hhb3lpIENoZW4gPGNoYW95aS5jaGVuQHJvY2stY2hp
-cHMuY29tPgoKLS0gCkJlc3QsIApDaGFveWkKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0Cmxp
-bnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On 11/2/26 14:53, Rob Herring (Arm) wrote:
+> Unit-addresses by default (and most commonly) are hexadecimal. There's a
+> number of cases using decimal patterns. Fix all of them, limiting the
+> pattern to match the 'reg' limits if there are any.
+> 
+> Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
+> ---
+
+[snip]
+
+>  .../devicetree/bindings/iio/adc/st,stm32-adc.yaml    |  2 +-
+>  .../bindings/iio/adc/st,stm32-dfsdm-adc.yaml         |  6 +++---
+
+[snip]
+
+>  .../devicetree/bindings/mfd/st,stm32-lptimer.yaml    |  2 +-
+>  .../devicetree/bindings/mfd/st,stm32-timers.yaml     |  2 +-
+Acked-by: Fabrice Gasnier <fabrice.gasnier@foss.st.com> # stm32
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
