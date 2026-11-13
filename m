@@ -2,64 +2,78 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3BD6D606A895
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Nov 2026 10:21:38 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 07DA0606A321
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Nov 2026 10:29:07 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=0vN5/SnW;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=fObJOcqr
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=fZ/TEbv2;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=MZNsxKEm
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=T5l4jzo4PR71Z5cpB57bcaiUhpFsnO6+SMHpj26hCyk=; b=0vN5/SnWMEnL4YZ+BfX1V/ixW4
-	gmXMfDjqpR/E6C6orujuPQ0rD64qc0EhEIUJxJHvcW0S115/MVTPnofs3ExnQNpELc6H+1nK+HrnV
-	UiYygFZSVEde5KYr0xsTyweWKFwugjmiwA+VYHTiwmg+9rbEoXiE7aXzmyOM1m2yBgpC4moS0nH2I
-	85V392L36aUcpFiUZlJVmUPveC/KcOvBxP9KjTWxQ43dzYZiE9kOC6UWVKpvGpvZcuXBsQYl4Foq3
-	+55OTUSTaYNP7s9B3PltousmJO1Oem5se/uZS+P2CEakzxuxvMUW7F2K64kAOPs9QAsrMVvnBLbYz
-	lJFdIL+g==;
+	bh=CS6mALJsQpEtdEdxnTq1B/upiKu8RPxa/Y0p7V7wXTo=; b=fZ/TEbv2tMv3yWB7V6N66hc4R8
+	T6Af6u/J81DSuehGHFHuEGKbi6xBdUg177YN5oTLX/y09Zp0uSumSdIZavWmndH+s9km88+i89V37
+	aezYl3ZBBDbYTDPdcoAwC7wE99on4EnqX8DDGlX/9SPyU10IED7sMlY6TGYsttMPDjx2XTaRn0N1V
+	fYAR8WGIT29lNkJZfVrPK9DCn3CH+Pp1UZLLYcQq1dXJ1C38NKxaobGa8dtxjtq1ELIrBRx13OrQ1
+	dd7b3Ltjoc8YXIQr9apcUZbRf+eXzDi76IDGJN7kbFTde783khDuJC7Zh0hLwcsuKgN7B8lOXdL4b
+	EkPkAJWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRoPZ-0000000CLS2-1H4U;
-	Fri, 13 Nov 2026 10:21:37 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xRoWo-0000000CMrF-2a8p;
+	Fri, 13 Nov 2026 10:29:06 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRoPU-0000000CLQI-1stO
-	for linux-phy@lists.infradead.org;
-	Fri, 13 Nov 2026 10:21:32 +0000
+	id 1xRoWn-0000000CMqk-0oAh;
+	Fri, 13 Nov 2026 10:29:05 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id CEF666266F;
-	Fri, 13 Nov 2026 10:21:31 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 105AB1F000C4;
-	Fri, 13 Nov 2026 10:21:30 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id C417544798;
+	Fri, 13 Nov 2026 10:29:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 79EDD1F000C5;
+	Fri, 13 Nov 2026 10:29:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794565291;
-	bh=A5Fsa6np7bcmClkXRjxn4FFE7aVHpfRJ5ScRIfaHxb0=;
-	h=From:To:Cc:Subject:In-Reply-To:References:Date;
-	b=fObJOcqroU1AFQY7X7MkpxbVFjOvCNRRtEX3H2q9c2I3m5UesCPkUh+oz8h2PRGnk
-	 V706fJSIVT6Tj/fBY3pDOwdI0B2Ja0ZLIisXRLZFNVV0afBjEhYizkCtCSQsPjOYAM
-	 W23b3ksHsXmta9bRCqnHdca/8zar23H3qODcszgdttiJh/ONd8UgvXKmiOiova8+RC
-	 B7K4nhlJNWxbYMcUhTyAQl3Zn6EBA0ivmMVeohkQvAwsbwfslvf/h3Zu80UXxGIZiC
-	 dGDb5GQhfzutP+dAng7ZGnh4zG7Di0l0ZY+jP09L3LGwwa3zULILVMBIgSFLbU8x4+
-	 LOfIS46nMhI2w==
-From: Mattijs Korpershoek <mkorpershoek@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, Sriram Dash
- <quic_sriramd@quicinc.com>
-Subject: Re: [PATCH v4 2/2] phy: qcom-snps-femto-v2: Add support for SA8255P
-In-Reply-To: <20261027-phy-qcom-snps-femto-v2-8255-v4-2-874023825a63@kernel.org>
-References: <20261027-phy-qcom-snps-femto-v2-8255-v4-0-874023825a63@kernel.org>
- <20261027-phy-qcom-snps-femto-v2-8255-v4-2-874023825a63@kernel.org>
-Date: Fri, 13 Nov 2026 11:21:29 +0100
-Message-ID: <xhkdbqzgpqbfa.fsf@mkorpers-koolstof.csb>
+	s=k20260515; t=1794565744;
+	bh=2VlHcIVlZZPb1dKLE+NitYN2zgg0+WkasLdpA/Aa5UY=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=MZNsxKEmYGHH+Fxv7YUDO4n6WwledjMk8ShFPN5VTLJqx+QwIYK6OteOVT9MtMRyt
+	 HZqF72CO5iXpA9DOPsk43UWfkh2QsLDZWKf3UJGiGy763ZsYzpCiaiD99u6d2Wgbar
+	 e3Oxq8D6Ax3eKHviF4mad34+RMQ7+tlF8Jr6nxCVgg81KygZUoWBgULspW/SwrpoLT
+	 ih2Bst8gCZYky7kjv0+ZwvadHeP9B2jpwG5eYs8/pLqsSo9S64mN9qcGzNhSQ+tbP0
+	 IKnZn+o6FxsxjiQhlJYP2etWWglBjSh4aAzfLtimKwwpoiA09++0WIyPkQZNc1YxHP
+	 pSpBNcSQ18JrA==
+Date: Fri, 13 Nov 2026 11:29:00 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Stanislav Aleksandrov <lightofmysoul@gmail.com>
+Cc: Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Robert Marko <robimarko@gmail.com>, Guru Das Srinagesh <linux@gurudas.dev>, 
+	Thomas Gleixner <tglx@kernel.org>, Radu Rendec <radu@rendec.net>, Lee Jones <lee@kernel.org>, 
+	Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>, 
+	"Joerg Roedel (AMD)" <joro@8bytes.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+	Wesley Cheng <wesley.cheng@oss.qualcomm.com>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Alim Akhtar <alim.akhtar@samsung.com>, Bart Van Assche <bvanassche@acm.org>, 
+	Bean Huo <beanhuo@micron.com>, Stanley Jhu <stanleyjhu@google.com>, 
+	Herbert Xu <herbert@gondor.apana.org.au>, "David S. Miller" <davem@davemloft.net>, 
+	"Rafael J. Wysocki" <rafael@kernel.org>, Viresh Kumar <viresh.kumar@linaro.org>, 
+	Amit Kucheria <amitk@kernel.org>, Thara Gopinath <thara.gopinath@gmail.com>, 
+	Daniel Lezcano <daniel.lezcano@kernel.org>, Zhang Rui <rui.zhang@intel.com>, 
+	Lukasz Luba <lukasz.luba@arm.com>, Georgi Djakov <djakov@kernel.org>, 
+	Sibi Sankar <sibi.sankar@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, mfd@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+	iommu@lists.linux.dev, linux-usb@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-scsi@vger.kernel.org, linux-crypto@vger.kernel.org, linux-pm@vger.kernel.org
+Subject: Re: [PATCH 06/17] dt-bindings: arm-smmu: Add Halliday SMMU
+Message-ID: <20261113-inquisitive-spiffy-chimpanzee-d25ec3@quoll>
+References: <20261109-halliday-dts-v1-0-289114ab8197@gmail.com>
+ <20261109-halliday-dts-v1-6-289114ab8197@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20261109-halliday-dts-v1-6-289114ab8197@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,50 +86,25 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi Mani,
+On Mon, Nov 09, 2026 at 12:33:18AM +0000, Stanislav Aleksandrov wrote:
+> Document the SMMU-500 on the Qualcomm Halliday SoC.
+> 
+> Signed-off-by: Stanislav Aleksandrov <lightofmysoul@gmail.com>
+> ---
+>  Documentation/devicetree/bindings/iommu/arm,smmu.yaml | 2 ++
+>  1 file changed, 2 insertions(+)
 
-On Tue, Oct 27, 2026 at 14:00, Mattijs Korpershoek <mkorpershoek@kernel.org> wrote:
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 
-> From: Sriram Dash <quic_sriramd@quicinc.com>
->
-> SA8255p platform abstracts resources such as resets, clocks and
-> regulators in firmware. The SCMI firmware exposes multiple protocols to
-> control such resources which are identified by protocol_id.
->
-> For this USB phy, 2 SCMI protocols are exposed by the firmware:
-> * power domain management protocol (protocol_id=0x11)
-> * performance domain management protocol (protocol_id=0x13)
->
-> The power domain has 2 indices: 'core' and 'transfer'.
-> * core controls the regulators, the clocks and the reset
-> * transfer only controls the clocks
->
-> For example, to power on/off the PHY, we should use the 'core' domain.
-> To disable data transfer and keeping power enabled, we should use the
-> 'transfer' domain.
->
-> Add support for the SCMI firmware-managed variant in the driver.
->
-> Note: the performance domain (0x13) exposes opaques values (0xa to 0x11)
-> for which we don't have any information. Since it is not mandatory
-> for the PHY to be functional, we have ommited it from the driver.
->
-> Signed-off-by: Sriram Dash <quic_sriramd@quicinc.com>
-> Co-developed-by: Mattijs Korpershoek <mkorpershoek@kernel.org>
-> Signed-off-by: Mattijs Korpershoek <mkorpershoek@kernel.org>
-
-I hope I've addressed all the comments you had on v3.
-Could you have a look please?
-
-Thank you for your time.
-Mattijs
+Best regards,
+Krzysztof
 
 
 -- 
