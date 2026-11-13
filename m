@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 39494606A8AA
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Nov 2026 10:18:49 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 87888606A335
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Nov 2026 10:19:37 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=CC+qHv2a;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=iLe85MkD
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Gu1bsGKC;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=K7sXUvxS
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,36 +14,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=kOjJfWoR4CxwdWuaRm2mpIm8AjfKu7K+LWiuNhfF4ZE=; b=CC+qHv2aipDRoePWl0ExuMGNKU
-	XOEAL2O+Er5i76nZdLf5vnoUjlbaFgsu9y2NKH+AvIdpWD3BI/uyifRXa9FThtbeNqy/BalM7V2QU
-	7D27mWh9YBiCdECH25WmePA44v/5Ve7PzDyXgMLALQtI9zeIgubEalxXFUsQ/HFdQhSyr1cTSAuQf
-	CXXm6eCLCoAAHKw9Py5PCC76Y/FVrGMOZ6fb3TiQ1bHp2w5z/7F7dWZ1+0nWr+VJgAmRFpBvhsma6
-	iE77/lY/C8Zw9NRjCi7ufckuGvf0DuNEnreyPCoENPihfV24GJhGAYEWizu4sKUrp+YSSFkQTz4zc
-	SKqTZq/g==;
+	bh=WPPu1ibWKYnkcHL5+G2xnjii2L33cPbXK6M9nScVE9E=; b=Gu1bsGKCn6642LuYsnwJp5JBNf
+	Ch0VVGlyPL5TojHwS2XJbkunBtP8g4SaxA0a5ks9sKFOKhTOM6XBtPrBk7YvfJPS0vFKEnB7W0YUV
+	8vpDQPDv9tsO+imXQaubFKXgNo5jynh/lWb3YwVmlGY7XoO0Bt9ZGXDn93djuOUWWE3gyddzmX3s9
+	aNkp9nAA1Xp83Gr5knzZmpEqbayekYZnuA+ctEpLa3RCX0fxdnU4+8PsNlQle0759s2b1Qmhk3zWB
+	f9KMOsLec+gGoLY3R/tNMJj5GUFCzN3lOxF+bgWY1moW1TUXLy673AnfCxFDRAFdovko6TOaoYA3i
+	5NkEWgdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRoMq-0000000CKjb-2Pbm;
-	Fri, 13 Nov 2026 10:18:48 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xRoNd-0000000CKrS-0bHi;
+	Fri, 13 Nov 2026 10:19:37 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRoMp-0000000CKiM-0ngL;
-	Fri, 13 Nov 2026 10:18:47 +0000
+	id 1xRoNa-0000000CKr2-4AfS;
+	Fri, 13 Nov 2026 10:19:35 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id D027B60622;
-	Fri, 13 Nov 2026 10:18:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5EB741F000C4;
-	Fri, 13 Nov 2026 10:18:44 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 33B4B42206;
+	Fri, 13 Nov 2026 10:19:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E05871F000C4;
+	Fri, 13 Nov 2026 10:19:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794565125;
-	bh=XTQp8SKrmmjGdaoj3cLoQpYxyDLtluff/URZttFHqVM=;
+	s=k20260515; t=1794565174;
+	bh=gyAS678xyehwrSeqsPQSw9GBxZSkkiYhUUKHcjA2qv8=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=iLe85MkDwoT4kspMx2Xssew/DsC5s1mT3SeGP5/ZXBUTBs9e8mrQT2op29NIWNVT0
-	 sTmqKZeiq+pYwGCwkQJIqVUmVIkhUHRJwXoTXU+ShAQ8UybboJW4PPkxBtkZRzVYPP
-	 6dJ87JrYw5MC9q6qk63RPSXXrreyR6zFCC3bpLFZrUI9//O1kZeMcj9XhaUEVEhaek
-	 9ZECLY9buqOwwVW4j58jUXyuImWDrrVyamx91aqdw+vweHvzVf7Dt6GgKxd/xLDWOx
-	 XH4mH76ngEt7jxj2G5IZdXXdk4l08sJvCK0p1OQBdDB3DA+6FMEjIuS6QhYyBS1bKH
-	 j0DKveJvrz0uA==
-Date: Fri, 13 Nov 2026 11:18:42 +0100
+	b=K7sXUvxSeB2tYcx6aB8Y0Y+c2bYY9eXO3YUiOeAL+ePkDCJNuN4GNuygwCv6k0YvR
+	 SnH61/R2Pf3VijDTpLZ8D+gLRuNVXQ2d7XNq0TtYRtxrWdwwZ0r1h+vA+Tjq4lsMeO
+	 whgfswO/RjhT1FZItgMwEQy/Cm1wS1wTTWXqKXSkDwZgN46q73t2uUYLNgclxvfg1M
+	 IdceQi1bag68sn5ZdtghDVenDTCYYHVHBSXfVyYUDJOBp9Wd1DX7yO80Bd/5wH0QNz
+	 5+8pMruEIzDYDcobDS8812sBEievteaeZzJ01K+l9uDKAsM0MxLaCn9/3RdjF2JIUy
+	 DonlvfjBaYA/A==
+Date: Fri, 13 Nov 2026 11:19:30 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Stanislav Aleksandrov <lightofmysoul@gmail.com>
 Cc: Bjorn Andersson <andersson@kernel.org>, 
@@ -66,15 +66,15 @@ Cc: Bjorn Andersson <andersson@kernel.org>,
 	linux-kernel@vger.kernel.org, mfd@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
 	iommu@lists.linux.dev, linux-usb@vger.kernel.org, linux-phy@lists.infradead.org, 
 	linux-scsi@vger.kernel.org, linux-crypto@vger.kernel.org, linux-pm@vger.kernel.org
-Subject: Re: [PATCH 03/17] dt-bindings: interrupt-controller: qcom,pdc:
- Document Halliday PDC
-Message-ID: <20261113-accomplished-impressive-pillbug-c0811f@quoll>
+Subject: Re: [PATCH 04/17] dt-bindings: power: qcom,rpmpd: document the
+ Halliday RPMh Power Domains
+Message-ID: <20261113-remarkable-inescapable-llama-cbec8d@quoll>
 References: <20261109-halliday-dts-v1-0-289114ab8197@gmail.com>
- <20261109-halliday-dts-v1-3-289114ab8197@gmail.com>
+ <20261109-halliday-dts-v1-4-289114ab8197@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20261109-halliday-dts-v1-3-289114ab8197@gmail.com>
+In-Reply-To: <20261109-halliday-dts-v1-4-289114ab8197@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,15 +94,18 @@ X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Mon, Nov 09, 2026 at 12:33:15AM +0000, Stanislav Aleksandrov wrote:
-> Document the Power Domain Controller on the Qualcomm Halliday SoC.
+On Mon, Nov 09, 2026 at 12:33:16AM +0000, Stanislav Aleksandrov wrote:
+> Document the RPMh Power Domains on the Qualcomm Halliday SoC
+> (SXR2250P). Its command DB has the same power domains as SM8450
+> (CX, EBI, GFX, LCX, LMX, MMCX, MSS, MX and MXC), so use
+> qcom,sm8450-rpmhpd as the fallback compatible.
 > 
 > Signed-off-by: Stanislav Aleksandrov <lightofmysoul@gmail.com>
 > ---
->  Documentation/devicetree/bindings/interrupt-controller/qcom,pdc.yaml | 1 +
->  1 file changed, 1 insertion(+)
+>  Documentation/devicetree/bindings/power/qcom,rpmpd.yaml | 4 ++++
+>  1 file changed, 4 insertions(+)
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 
 Best regards,
 Krzysztof
