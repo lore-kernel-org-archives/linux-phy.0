@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 07DA0606A321
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Nov 2026 10:29:07 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F24AE606A331
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Nov 2026 10:29:48 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=fZ/TEbv2;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=MZNsxKEm
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=aGFxMHXx;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=N3B3iDM/
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,36 +14,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=CS6mALJsQpEtdEdxnTq1B/upiKu8RPxa/Y0p7V7wXTo=; b=fZ/TEbv2tMv3yWB7V6N66hc4R8
-	T6Af6u/J81DSuehGHFHuEGKbi6xBdUg177YN5oTLX/y09Zp0uSumSdIZavWmndH+s9km88+i89V37
-	aezYl3ZBBDbYTDPdcoAwC7wE99on4EnqX8DDGlX/9SPyU10IED7sMlY6TGYsttMPDjx2XTaRn0N1V
-	fYAR8WGIT29lNkJZfVrPK9DCn3CH+Pp1UZLLYcQq1dXJ1C38NKxaobGa8dtxjtq1ELIrBRx13OrQ1
-	dd7b3Ltjoc8YXIQr9apcUZbRf+eXzDi76IDGJN7kbFTde783khDuJC7Zh0hLwcsuKgN7B8lOXdL4b
-	EkPkAJWw==;
+	bh=EGi90ZjoqsFiP3R85hGEtQ3Be6YamSfSgCgeIZDN/nk=; b=aGFxMHXxX5YdRejMVEkA48XAK+
+	An9eCZFwyk4UDtCthEjfx85WyWNBhCnZQhZNvnr51qdDQHOjYKVXypTcHmLiMelHNviclJ1LmGWyN
+	FX6V3YcBu+zK4hqv4LQ2qIVBnoO0Y6eOzayK6A5AnL2X9XGwS3bFtuuxPJ+XFpmJw25j4KKKtas3o
+	0nPnjjoHH/2shF+M/BSMflv7AKOKr+iNvEjMl70lDyEBHPimHK5PY9hG2lefS7opy+as0/5afMDYS
+	Nb8MzMRlGuZZqiybzMuBDJFgYXurcpZC8ypjgQ8sdiiORI+JiGD9VrxVTPJ+asluGpJHBu80iCscM
+	cTyNCCeg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRoWo-0000000CMrF-2a8p;
-	Fri, 13 Nov 2026 10:29:06 +0000
+	id 1xRoXU-0000000CN0J-2UJQ;
+	Fri, 13 Nov 2026 10:29:48 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRoWn-0000000CMqk-0oAh;
-	Fri, 13 Nov 2026 10:29:05 +0000
+	id 1xRoXQ-0000000CMyr-1TBw;
+	Fri, 13 Nov 2026 10:29:44 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id C417544798;
-	Fri, 13 Nov 2026 10:29:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 79EDD1F000C5;
-	Fri, 13 Nov 2026 10:29:03 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 1C34B43B93;
+	Fri, 13 Nov 2026 10:29:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 970AE1F000C4;
+	Fri, 13 Nov 2026 10:29:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794565744;
-	bh=2VlHcIVlZZPb1dKLE+NitYN2zgg0+WkasLdpA/Aa5UY=;
+	s=k20260515; t=1794565784;
+	bh=WSY+ANdltmdjp4hZAqbq3uTRH7NaIarF8ThTGR2AH9A=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=MZNsxKEmYGHH+Fxv7YUDO4n6WwledjMk8ShFPN5VTLJqx+QwIYK6OteOVT9MtMRyt
-	 HZqF72CO5iXpA9DOPsk43UWfkh2QsLDZWKf3UJGiGy763ZsYzpCiaiD99u6d2Wgbar
-	 e3Oxq8D6Ax3eKHviF4mad34+RMQ7+tlF8Jr6nxCVgg81KygZUoWBgULspW/SwrpoLT
-	 ih2Bst8gCZYky7kjv0+ZwvadHeP9B2jpwG5eYs8/pLqsSo9S64mN9qcGzNhSQ+tbP0
-	 IKnZn+o6FxsxjiQhlJYP2etWWglBjSh4aAzfLtimKwwpoiA09++0WIyPkQZNc1YxHP
-	 pSpBNcSQ18JrA==
-Date: Fri, 13 Nov 2026 11:29:00 +0100
+	b=N3B3iDM/ljx4vAaf5Jrz/ajm1fa4aQGTl0CefZdslx+6VxkuARBxhjYSNmi4qMZFf
+	 QkKLtsxQnbE33zPcPAahlPFIGDzefeYPn/GChO8RKvxkqM1+jeJu9Et9Q9cexMlMOi
+	 Y2LAHbnJGYXj1OqCp6QwTTvPlu3p/jxUOE88QJniywunLueMhWz0TPZRG1UcPikn9q
+	 Z+xuIMcai4dnLzzigGZCK0FpWlTYQWUm+cXDkkL4DMyUKGvMoICIOjVNnNmmPQkisH
+	 6coL9DouEs1YexVKGveznBYverqxMXunO/dSm6+PLaJ9QpK4do7tS/Wufkn22KCzxo
+	 N3l1ulc/hiATg==
+Date: Fri, 13 Nov 2026 11:29:40 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Stanislav Aleksandrov <lightofmysoul@gmail.com>
 Cc: Bjorn Andersson <andersson@kernel.org>, 
@@ -66,14 +66,14 @@ Cc: Bjorn Andersson <andersson@kernel.org>,
 	linux-kernel@vger.kernel.org, mfd@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
 	iommu@lists.linux.dev, linux-usb@vger.kernel.org, linux-phy@lists.infradead.org, 
 	linux-scsi@vger.kernel.org, linux-crypto@vger.kernel.org, linux-pm@vger.kernel.org
-Subject: Re: [PATCH 06/17] dt-bindings: arm-smmu: Add Halliday SMMU
-Message-ID: <20261113-inquisitive-spiffy-chimpanzee-d25ec3@quoll>
+Subject: Re: [PATCH 15/17] dt-bindings: arm: qcom: Add Samsung Galaxy XR
+Message-ID: <20261113-meek-laughing-orca-ea8a86@quoll>
 References: <20261109-halliday-dts-v1-0-289114ab8197@gmail.com>
- <20261109-halliday-dts-v1-6-289114ab8197@gmail.com>
+ <20261109-halliday-dts-v1-15-289114ab8197@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20261109-halliday-dts-v1-6-289114ab8197@gmail.com>
+In-Reply-To: <20261109-halliday-dts-v1-15-289114ab8197@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,15 +93,16 @@ X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Mon, Nov 09, 2026 at 12:33:18AM +0000, Stanislav Aleksandrov wrote:
-> Document the SMMU-500 on the Qualcomm Halliday SoC.
+On Mon, Nov 09, 2026 at 12:33:27AM +0000, Stanislav Aleksandrov wrote:
+> Document the Samsung Galaxy XR headset, which is based on the Qualcomm
+> Halliday SoC (SXR2250P).
 > 
 > Signed-off-by: Stanislav Aleksandrov <lightofmysoul@gmail.com>
 > ---
->  Documentation/devicetree/bindings/iommu/arm,smmu.yaml | 2 ++
->  1 file changed, 2 insertions(+)
+>  Documentation/devicetree/bindings/arm/qcom.yaml | 5 +++++
+>  1 file changed, 5 insertions(+)
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 
 Best regards,
 Krzysztof
