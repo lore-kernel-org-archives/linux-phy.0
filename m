@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A6EAD606A327
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Nov 2026 13:40:41 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A1CE0606A882
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Nov 2026 13:40:45 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=ImPLvUSK;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=i8gHTW3q
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=TbV9vyD3;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=B5E4Lnpk
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,52 +14,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=1vKSXa+M3ERmSLBTf9LkTQsxg0OzjxnxDtLOedKr2Y8=; b=ImPLvUSKO3FDNXHBHWeYI5jIum
-	aLNPnNYoKXLuLnfl4xh7OdwqC6UaODhoiGN1t7rYtHx44ha0xeguRUyvgTV+R4PWgK4dqyQVFLTJY
-	cOEZ/wMqTe3cqCEBkHOk2FB/GWY8Ykwm91zGXbYLKE0XKucMnoOawGoZYCklGRQzYiSlz1CcAAz8l
-	9tcg5TaQH0xyF8zHw0meEenqWzFb2X+vtxe94t5YwatBy7U8ZeevsXmdlgIe2o2NuxRK6r0+e4d7w
-	S7Sk26drBZCms6QAnDkpDlS2bqYaEVj6nxTRMll+8CbwkH0MfZBRTQ/GusdOzuC8iKLYY6YbK70bv
-	ild/qnhw==;
+	bh=wqrNMJ60aEHCYIVznce9ymLnTBCh91jqOIFay6dyR3s=; b=TbV9vyD3LE7vGhTjwFHxAaPALB
+	9K+jt+5/MCuH7OwCOgCrhhFye0dpBKQAqpePVEVtd8etZnmb+JZSkjLDOJ9XX5S+nCmYdUNjrULvW
+	1bNm6K3KKbjITNuTmBU3sZWfwPfGRhIEW2yPWSQq9x+bWtwTeJnGldqBWvhKcm2c+th5pmN1vG0eU
+	ILOsfbXmLG1Ljq4JBzS7Km69aDPMO38Ov2HMAEXqFHMJKKlpaPrHtjkcZoTTlepvtFMgcn9xqepwE
+	yYWje0OXKROBQHSu1hqleV7V8WYBVSdGbWwOgzZMLqecl4nQ6gwUmT8Nnx4sjAI2nPalJbLOsXZuN
+	7B20MFWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRrWD-0000000CzKG-0ebq;
-	Fri, 13 Nov 2026 13:40:41 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xRrWH-0000000CzLj-1OKZ;
+	Fri, 13 Nov 2026 13:40:45 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xRrWC-0000000CzK4-2ZuT
-	for linux-phy@lists.infradead.org;
-	Fri, 13 Nov 2026 13:40:40 +0000
+	id 1xRrWG-0000000CzL6-0sev;
+	Fri, 13 Nov 2026 13:40:44 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id AB2D2612D8;
+	by sea.source.kernel.org (Postfix) with ESMTP id 96A17406CF;
+	Fri, 13 Nov 2026 13:40:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 098DC1F000C4;
 	Fri, 13 Nov 2026 13:40:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6B70E1F000C4;
-	Fri, 13 Nov 2026 13:40:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794577239;
-	bh=beZHGSkmPVhqezkVJzzwT5A5ST/itYTHmBhwgZp14Hc=;
+	s=k20260515; t=1794577243;
+	bh=SNoLKxUB9rBkU92blcv5qQgqkRz/rRE9L1+6xhOucIA=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=i8gHTW3qe36S0QAB/lTQZVGWTCKSOOVwU48+cA80mOPXEoTi9U6UkYvUNlZWAK1+3
-	 kRNlth4Xw3U/3rhcb0ciwk9Sx5ScGaBT2vbt4IvKY5JW4VelCe6pZUjCbNaIVCB+yG
-	 8mBHsTG3xEUOYqTIuwBoELTSaMeS7OdDc26XFmpfVVYdaO4kWSC6QEOcb0cRjyWBke
-	 5PIF/FbSmKk9vykuk3fQRHI3TJVH+4euE/ZB/SIoJq81C+rGj9Wn1E1OifnJCo4X6v
-	 fqBGIrwx6NSa5Ci1X03xanvORWPJPrCllBXQ50TU3tBOUNi5G6Q2rJhVFC0tdG2CYI
-	 wkR0JX8GyrW8A==
+	b=B5E4LnpkBq28Oq9EAKWTxU+UWi7ZQ+FXozOPosnLV1L8e46K6i2TMUCPLGfeuQ2e4
+	 3JV/DtoqSxfwnzlSEx4QZLe6y5gWXxGPvq+WfTC0eW2VMArWrmJ5lnS0KGJy9Q54RR
+	 6bCHv7qiqrqXkWtXVb5S2rDrtMmE9ynqNucJFhrIDr1MC2jhBKAd5V13Esfh7NUo9F
+	 eYcuLvgDiCgFGGUbqSUNmLRprSGJiCiDVLU8W8M4HH6OOhqV1LOA5WF3CGoTmjyC5r
+	 HOjBp1/zphBabRt/yAERDtHRT7hz3a8k9ugyiP8enhvZvh1JLLIC3iNpT9XbdfyD0x
+	 uzwb5HFYEoO0w==
 From: Vinod Koul <vkoul@kernel.org>
-To: hyunjungg <hj351016@gmail.com>
-Cc: Ray Jui <ray.jui@broadcom.com>, 
- Florian Fainelli <florian.fainelli@broadcom.com>, 
- Raviteja Garimella <raviteja.garimella@broadcom.com>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- bcm-kernel-feedback-list@broadcom.com, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, stable@vger.kernel.org
-In-Reply-To: <20261109170223.1829473-1-hj351016@gmail.com>
-References: <20261109170223.1829473-1-hj351016@gmail.com>
-Subject: Re: [PATCH v2] phy: phy-bcm-ns2-usbdrd: cancel extcon work on
- unbind to avoid use-after-free
-Message-Id: <179457723606.636098.6675726002332403998.b4-ty@kernel.org>
-Date: Fri, 13 Nov 2026 19:10:36 +0530
+To: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Stefan Ghetu <stefan.ghetu@nxp.com>
+Cc: Frank Li <Frank.Li@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>, 
+ Pengutronix Kernel Team <kernel@pengutronix.de>, 
+ Fabio Estevam <festevam@gmail.com>, daniel.baluta@nxp.com, 
+ linux-phy@lists.infradead.org, imx@lists.linux.dev, 
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ "Oliver F. Brown" <oliver.brown@oss.nxp.com>, stable@vger.kernel.org
+In-Reply-To: <20261110120546.6247-1-stefan.ghetu@nxp.com>
+References: <20261110120546.6247-1-stefan.ghetu@nxp.com>
+Subject: Re: [PATCH] phy: freescale: phy-fsl-imx8-mipi-dphy: Fix hs_zero
+ underflow
+Message-Id: <179457723966.636098.12816261169765119793.b4-ty@kernel.org>
+Date: Fri, 13 Nov 2026 19:10:39 +0530
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
@@ -83,26 +81,26 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 
-On Tue, 10 Nov 2026 02:02:23 +0900, hyunjungg wrote:
-> ns2_drd_phy_probe() schedules driver->wq_extcon (extcon_work), which is
-> also queued from the ID/VBUS GPIO interrupt handler gpio_irq_handler().
-> The work handler dereferences the driver data via container_of().
+On Tue, 10 Nov 2026 14:05:46 +0200, Stefan Ghetu wrote:
+> The hs_zero timing is computed as
 > 
-> struct ns2_phy_driver is allocated with devm_kzalloc() and the driver has
-> no remove callback, so on unbind devres frees it after probe's resources
-> are released. The GPIO interrupts are requested with devm_request_irq(),
-> and so released by devres; free_irq() only stops further interrupts, it
-> does not cancel a delayed work that is already queued. probe() queues
-> wq_extcon with a debounce delay before returning, and the GPIO interrupt
-> can queue it too, so on unbind the pending work can run after
-> ns2_phy_driver has been freed, dereferencing freed memory (use-after-free).
+> 	n = (144 * (hs_clk_rate / 1000000) - 47500) / 10000;
+> 	cfg->m_prg_hs_zero = n < 1 ? 1 : n;
+> 
+> hs_clk_rate is an unsigned long, so the subtraction is done unsigned and
+> wraps for any rate below about 330 MHz, where 144 * MHz < 47500. Because
+> n is a u32, the wrapped value is never seen as negative and the "n < 1"
+> clamp does not take effect. The garbage value is then truncated into the
+> 8-bit m_prg_hs_zero register field. At the minimum supported rate of
+> 80 MHz this programs 199 on 64-bit and 181 on 32-bit, instead of the
+> intended minimum of 1.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] phy: phy-bcm-ns2-usbdrd: cancel extcon work on unbind to avoid use-after-free
-      commit: 7a14efb16083531e442de4c7897bce74ac8635e8
+[1/1] phy: freescale: phy-fsl-imx8-mipi-dphy: Fix hs_zero underflow
+      commit: 9a0dd2a09484e5ba45eb8e6ab58c0effe18703a3
 
 Best regards,
 -- 
