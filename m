@@ -2,12 +2,12 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 455D2606A336
-	for <linux-phy@archiver.kernel.org>; Sat, 14 Nov 2026 11:31:01 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5E962606A8A9
+	for <linux-phy@archiver.kernel.org>; Sat, 14 Nov 2026 11:31:10 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=S3HFGORt;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=is+jw5w3;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=GEyUDbNh
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=qhQ7sR3t;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=VUuvxRmP;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=bgpGI1Aa
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -15,90 +15,90 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=hMC1Tz4u+MblCX14aPyo0BRJisbVAz4J6t+M/yRuOeU=; b=S3HFGORtung6T98Z/yzDY9B15e
-	q7wWYWWIozurtWblSAV5sub1k4FRnB3NE4tB5jZ8TcekoCVnKFguwsFyWJA43yUzh+yp84zg16oYZ
-	fzRTsefS43zIT2gJlT+nbI4gmIYvfrsuc42dSZSrb3KOFR5793Fp/Y6ICf4R3vDzvfqzbNlyXBLCe
-	w2nupXKib0ExmiF14G37QKOq4w4ANB2CZbYgx391sIVmC6tI15lseTCaPAcBjVldEeRS2RRg3HJaH
-	nIjdlEofeQUjLTj55bsha/XvYwm+3VE9dMdje2K223nYMjoOAv74rBHEi8cp7n8EPmjlCLzDbkbwd
-	Rl3lFR4A==;
+	bh=QaVTR1YdARRGSFiR2q6WV5UKWltGL7MC0BjoNz73vpI=; b=qhQ7sR3tgvhmZjM78tL0tWlfMl
+	d1YrgwHIJkVvPkFmehPZD4Lb0xtALix64F5Vy77614D9Sx1Pww2rTWlJAuIVNR+TF0y3oK1fphpXh
+	f13OEIbzXdy5WxgpXCF1SNHRjhcNVaSVBGJTZ7++tQC95QYgZ9ko1+zgCcl2rmyOtW12dNuOYRpE2
+	EfrvX29NJg9nhncZmr2By2k9bY/3+QsnKzT/UWgmCtZ3zFLVzWq9/UoblzJlAI2dMiQxR8lUpkwHM
+	7aLFW5RFOMPjX7YpobH1nnlBiwbCuorjoa5/ZPfHKKpyOdtuM9xQsxHK6xoI1i311QMvZizd9U4XT
+	tA27EViA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSByG-0000000Ftr9-49n3;
-	Sat, 14 Nov 2026 11:31:01 +0000
+	id 1xSByQ-0000000FttK-0Pne;
+	Sat, 14 Nov 2026 11:31:10 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSByE-0000000Ftqk-0QWu
+	id 1xSByN-0000000Ftsl-3EN8
 	for linux-phy@lists.infradead.org;
-	Sat, 14 Nov 2026 11:30:59 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AE9wKp91750458
-	for <linux-phy@lists.infradead.org>; Sat, 14 Nov 2026 11:30:57 GMT
+	Sat, 14 Nov 2026 11:31:09 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AE9wRs33276455
+	for <linux-phy@lists.infradead.org>; Sat, 14 Nov 2026 11:31:06 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	HvpnDcakWRnW3PYccxcSi7pSHHqf2SzUoRHYqMjmiUg=; b=is+jw5w3FuItCwi6
-	PB5nilGPbRX9RDS19eIHfUTmWjeWwtOiuzsjtMtiBzUhXYsXu0f6J9Gx5ufxZXca
-	vRHBOCOydbv/BzFG1eo5U0cTLQsseAqR4CqZmJx7mkF39EYa60Yyq6bfKmWzNufl
-	StTglC2ubE12WZDs3K7UGE7ahs6LhTygH7/ADGtZqe3rBfGXAzMCXP5VcWpO0Sev
-	/z7b7aKFoTa/qysPoj5dyhOY7RKa+zBixU74Xfol2R4J0yZiEkbtlqUI3qjKnDpo
-	fA1zU6JgKDwa59vbUE/slA0+7RslM6LNNQeV984stOJvpXWQ4zC0U4FFlRKRcdaZ
-	+Ws2kA==
-Received: from mail-qv1-f69.google.com (mail-qv1-f69.google.com [209.85.219.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hxhj40mx7-1
+	nkSye9//jgyC+XYBBrGzY73sjN+7yBZmuTE+y1hNuDQ=; b=VUuvxRmPEim55o1L
+	vv25lSRbALlqzQ1uA0LSSRuGNXnAfJWFM9pmqlB/HQbG1wmJsq0KUrbgqPIT1q0R
+	pXhyfobPvBe+wNy8R61g8prGbEGyCjXI7rtYHJH41gk1/fp8OEbvpoksiRfTx1AK
+	YYBQUvmKonFnF5T+OPGCO9qFLhzPFS7RYB4DNzfft5TxHMowptubADYj15QgEr1m
+	1uzw8+4B1XUOsfhRhuYl1HLwp69jqntA0E7TpyO9jf30GsupM5YJH8zoXbxvczwu
+	aYnvfpZTq36obTSv+pD12qXb6LTy8ln1o3BTpNE+HbATkKmkarhbv77/Uhm/2lPB
+	2fGPSA==
+Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com [209.85.222.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hxhjqgrfm-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Sat, 14 Nov 2026 11:30:57 +0000 (GMT)
-Received: by mail-qv1-f69.google.com with SMTP id 6a1803df08f44-91ef0fe2914so36082926d6.1
-        for <linux-phy@lists.infradead.org>; Sat, 14 Nov 2026 03:30:56 -0800 (PST)
+	for <linux-phy@lists.infradead.org>; Sat, 14 Nov 2026 11:31:06 +0000 (GMT)
+Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-9495a1f5e47so208660285a.1
+        for <linux-phy@lists.infradead.org>; Sat, 14 Nov 2026 03:31:06 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794655856; x=1795260656; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1794655866; x=1795260666; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=HvpnDcakWRnW3PYccxcSi7pSHHqf2SzUoRHYqMjmiUg=;
-        b=GEyUDbNhQN6PoCcSa+FUFAo2sWDYL2TlNYiqQTT2wQuuGNj+7h5MY588vMymv3YKyy
-         4woS7zLQCl4yQFXwC3q2dbJcdQMjgvoNBwvuaqgE7Ew32RCneczCRXmNvzKiPQ0Uhl1H
-         ujjUMHIrIk2vhlnGJZ5vS9G+3zdqzGl4/eWl90Qbk7UuJDGebhCrkMpgcLOKDHUHFbel
-         K7d0oF0L6l60qu1TDLo4iWnGyQMlrue7VmCxzs0VbzfSRlwODaBB6kvhqaWz+n2fKN4w
-         ZcHZuCsn1E4NjOB2Z7OgxFdQDWxb5vWumHAtZbPBE9ABFp+73tUNW8kyCEAru1a37Ve2
-         zp1w==
+        bh=nkSye9//jgyC+XYBBrGzY73sjN+7yBZmuTE+y1hNuDQ=;
+        b=bgpGI1AaehK83Ctj067W9JL2kiKvVhoCz0oiHNuA2KudbkIFsIVLLz7vPC2D4D2Ktq
+         /yaQ5/7kw2UEei0g1u05IbLXDshkwpDGNy/X/P9arCQ4U8k8rbn2649nz2cZwkR3K9lZ
+         QICMci1wnu6DX1ZGkMPgggJG1yuncnEMhT1V0fZROuOhpf70BybKL2hPbswSwzj0cto7
+         GEvNGghhXwr19P82HTzlu1bSszqkXPu6m037Gm/BxpK2A/B8pQS2M76lE11y8kxwnbBg
+         Sg+fyT5St4fqyDp2um3oGV13icgM6+4mzDXSp/BMzjE5S8jVaJ1dnDNuk1zIk6F0UqRn
+         qd+g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794655856; x=1795260656;
+        d=1e100.net; s=20260707; t=1794655866; x=1795260666;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=HvpnDcakWRnW3PYccxcSi7pSHHqf2SzUoRHYqMjmiUg=;
-        b=W9HiXjjKCmw6NJIBQuTWlqgtvze6A2OM/PZWuGq2ilYR50/7OjnyyKZX9hfGB7BI/C
-         E2Or9AWNq7m4ZvhgpzxFNyhUqVmbTJj03YMwwmwia2+lDdGXbIopV5s+GbCbLjVscLrD
-         EYh2luvmIWa2J/PyQIUKd111hrWSZPcR5iIW3STZhMx1L1EqKAb6vg4iq6kc3Z39e+kj
-         RGXcgHX/mR1O6S9Q7UosrpnBnx27lgtA8OlLjrLrfPQabM+MkAM8j5yaQaXsIfTCpwQ7
-         ZJNWCMuBHm2ohI8VEOdCN/uYAgf4m/GNdb3QdfvCz26ltLc6V1LHr50f6Pzdc3gZtIpp
-         UELw==
-X-Gm-Message-State: APuU4Z+sfX/aWXoQ/T50ziWrFPGULvfzaeZlNtGJI5/s96Kr54CgbfCV
-	o8sLOGLCj8ZfUbenMBUVbI9ERrc/+dWLJUHGLl9iuJ5UVJsDNCoOujbBZYT/kiGzwZ/TAYfbRCl
-	MN2hOKMNUyA/sEiPgInixDHaQXM83iUAAXYE1JF0/9V01GjGOakPQZNj2zK/xX2BdBhIz
-X-Gm-Gg: AYBFou1jLDsKHY9fn18WeXUIP91szzBq0oj8fPlIsPLiVEyYwP6079MbFtQsCwM8LyW
-	oQZnKCSqKIZco64ZgoLwsIXYQ0+AztpF9Ie9dDB5u8XBDGseUcCu7iCJOzmtdlIIH+NXcXWvXd4
-	wka54155TO+VwCeIVgeu3w6TLzqlffZ8bFl2tytJ9kJ4S5N25yI5ZeGVLpFDUFvCyVJonjXX8v6
-	tcTEB4Bp8f8K4K3sTQoznUDUZkxXJARs11rlNXDMJ7/fqfdKc12fDCFUQSq+4/2vLo/G653y5YA
-	UrzQPBvIcPk8nSpiPbvUC51JnIFr0abkEQerQX9ihgS/8mmevZRNlQCEPpPkIrDj62ofQNt722o
-	w7RpILS+J+dTXnVPKeZ3ZYJ/uU8NyOVxSgRgTP/nAeLl69mG0SsBqkLZXiFauQGZBdqVoMk5wL3
-	pcLteOopgO/Q6YJvcocFxakHjCVEwHW+ZfpX9DmuUr
-X-Received: by 2002:a05:6214:c64:b0:91e:7abb:a927 with SMTP id 6a1803df08f44-91f241c65c9mr86645636d6.21.1794655856223;
-        Sat, 14 Nov 2026 03:30:56 -0800 (PST)
-X-Received: by 2002:a05:6214:c64:b0:91e:7abb:a927 with SMTP id 6a1803df08f44-91f241c65c9mr86645216d6.21.1794655855778;
-        Sat, 14 Nov 2026 03:30:55 -0800 (PST)
+        bh=nkSye9//jgyC+XYBBrGzY73sjN+7yBZmuTE+y1hNuDQ=;
+        b=P+fn1/PQuyyuX8KIAM5rE6eUfDTuKtgDEUN6zBPwVIQjei6BP3+lQhRC4KkgEKclTw
+         8YCxwqM6BNv5FWjoKK36deEVZJD9sgITdmdsO7rEXYYGHIyLG/UmPRtFeOH0dZXjiKbZ
+         GFWaujs2hpdCmAY7bwiGnpBRlKnql3oVrpnaI+WEORn2C8v5RNhpWsNKXeJoM9+3Pgnx
+         p36jqRQaDeYn4z/i0xskdpnq0my2iFh4qgz/L9FlQBwxUnCuygNYLP2hgYMzzN+Lf52n
+         lQLriAPR4YmRx1qJA52IFLmZ17Xyk3xQ2M2KdGiGyS/5lfZ1KpSmA8SDVxnFaqg29JVw
+         VQiw==
+X-Gm-Message-State: APuU4Z9+/96FbVli6sfFFEpQORweQuRH35mdHun5eQiQxXAKi2A7PiD8
+	H0pybQnAhngk5EtxFLElQ7Ia7lZONBTCzuFdDzprx2jXx/Z7eB6DlH94ZSJH/w8AsPF1TXAyNJv
+	qT7Lrsuz8DqpPeoNfxCF1jLjw4hNObzkc5ic3/zFh40V0aBmsPAQFt7IpHINPt2v1Vri3
+X-Gm-Gg: AYBFou2FwjxQ3Y7/R7EGKYP/Nv8Jyuefr1VMmGDyhdSIXFi3Xq/9Rr53suACIWVH3OK
+	lAV6Mhh72RposwMaOG5CDBwOZHdh5Meko+UbDMBTTwBTKcXOspII443VAnjJEblgYQlNumTYlbj
+	sveqsOFWu+8pU0Bnxt1EZ4p/XY3xMSOcTlDbanS0hLnvtNZpSKkRXnkrxyf493pXN7+daBTdt2l
+	qvodz9Lj5zP9TirC1g2U4NUS4DJ1n4t60diqRXvMuCZpyWGR6VfxyXhlNMwo1z6i4hGXItVtYY3
+	jLK2tkp0o7u/j6QvZ8uuRqGvV+TYKyf52V8G41DPVBBinyA/2vlpOf5p+nvejLeW+fNwFwJVTr0
+	sVj/QO274V8NGCmZTz9/2UQr9dvqkT39vm5Oy3V0U5EnD93GYm0AicldLAwUo4U7uTEO+5oBuHD
+	3lQW1OEELKpJC+wZpHC27ic5My4MYONQ1BwPuKHWqs
+X-Received: by 2002:a05:620a:6410:b0:948:48b8:6738 with SMTP id af79cd13be357-9494ba5fa05mr843842885a.7.1794655865615;
+        Sat, 14 Nov 2026 03:31:05 -0800 (PST)
+X-Received: by 2002:a05:620a:6410:b0:948:48b8:6738 with SMTP id af79cd13be357-9494ba5fa05mr843835085a.7.1794655864807;
+        Sat, 14 Nov 2026 03:31:04 -0800 (PST)
 Received: from WENMLIU-LAB01.ap.qualcomm.com (Global_NAT1_IAD_FW.qualcomm.com. [129.46.232.65])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-91f23d7ba48sm41389746d6.28.2026.11.14.03.30.46
+        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-91f23d7ba48sm41389746d6.28.2026.11.14.03.30.56
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 14 Nov 2026 03:30:53 -0800 (PST)
+        Sat, 14 Nov 2026 03:31:03 -0800 (PST)
 From: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>
-Date: Sat, 14 Nov 2026 19:29:25 +0800
-Subject: [PATCH v7 08/23] media: qcom: camss: Add PM clock definitions for
- SM8750
+Date: Sat, 14 Nov 2026 19:29:26 +0800
+Subject: [PATCH v7 09/23] media: qcom: camss: csid: Scale the clocks with
+ the CSI-2 link rate
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261114-add-support-for-camss-on-sm8750-v7-8-8ff2a11835f6@oss.qualcomm.com>
+Message-Id: <20261114-add-support-for-camss-on-sm8750-v7-9-8ff2a11835f6@oss.qualcomm.com>
 References: <20261114-add-support-for-camss-on-sm8750-v7-0-8ff2a11835f6@oss.qualcomm.com>
 In-Reply-To: <20261114-add-support-for-camss-on-sm8750-v7-0-8ff2a11835f6@oss.qualcomm.com>
 To: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
@@ -120,43 +120,43 @@ Cc: linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
         linux-kernel@vger.kernel.org, linux-i2c@vger.kernel.org,
         Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1794655774; l=1035;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1794655774; l=10307;
  i=wenmeng.liu@oss.qualcomm.com; s=20250925; h=from:subject:message-id;
- bh=aRxMrdDtYyY97/huckpcHrUdtu8c4K3ZC3GA/RWZCDs=;
- b=vWhSMHcARnVI0vXB2VQvgOzisoN8ZRFT+BwfFUA3Ajfs/RhNvQmm+8FhnwOhPEPYq3FPs84El
- /6E37tDjOSZAaqDqFh+2KI8ArW+N1uCOjbs6QglI38hhbVXTFl71AJs
+ bh=iqpMXB9ofejJNf6SiQOMlWp9y7epexowIxEe0Rry2IM=;
+ b=6dw1moWJi41wTpvlMz7D+B2UCXSz5I5FIb4+9TaPXFTiMhzTcCniZcFscjd9yZUq6tXhgOOUt
+ taRL+Dx2TC/Aa5wIMBQZDMmeD1HOViAxurpPmQOeISuzgEhXKAqKjJh
 X-Developer-Key: i=wenmeng.liu@oss.qualcomm.com; a=ed25519;
  pk=fQJjf9C3jGDjE1zj2kO3NQLTbQEaZObVcXAzx5WLPX0=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE0MDA0NSBTYWx0ZWRfX5cU7RFwcVIqe
- cfXstj5zv0yoFxjq5ZPKpB74zZHR6mSlifQw2pRzB7ke4Q0myY77wyGlTMoSJWFZsRiFwvInVtP
- k1KB+ars4YqSYybQaE0WpCWFOXY1/r/zPsKo47OG6qeNj4Dan6b3CnVEMn24Ik5OwBzP51snW7F
- KUkS9lVuPFWr1F1SvnOfSTfMEODaqw12e8W+IAyE44NLkOzmpbSBO5VKSSRQ8v51+gBr1Cfrlli
- ZTs0QDe3uDIDpGNZAgsMkSWUfxs/3k4tieXVgJa8mESshklz1yh6mggfbK5c2culY1g1N1q/SbO
- A3C+6gTK++qIb13kyyssZuOPNXt2J3rGqGBXwc7amJ6suaT6r4E/pTQFs/mj3xoqu5Pfq5fMcVJ
- 6kzi1va3yypWMUd6ejTQBLhemkC3Yh8YyIhrBLJVscmCzh0Q6zuXoGkhLbo3KF0V1JViHksoIil
- F96aGqFzMkQm6edv8SA==
-X-Authority-Analysis: v=2.4 cv=av0nmiZV c=1 sm=1 tr=0 ts=6af84671 cx=c_pps
- a=wEM5vcRIz55oU/E2lInRtA==:117 a=C3Dk8TwHQYyIj7nOf9RCJw==:17
+X-Authority-Analysis: v=2.4 cv=KelHIgYD c=1 sm=1 tr=0 ts=6af8467a cx=c_pps
+ a=qKBjSQ1v91RyAK45QCPf5w==:117 a=C3Dk8TwHQYyIj7nOf9RCJw==:17
  a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
- a=EUspDBNiAAAA:8 a=MfOgH6a12QNS3LiSQs8A:9 a=QEXdDO2ut3YA:10
- a=OIgjcC2v60KrkQgK7BGD:22
-X-Proofpoint-GUID: ui0AKaA7wfZUubQA_ldZSO9ICnlDtly6
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE0MDA0NSBTYWx0ZWRfX6DJZWKEe2Xlf
- PGrYWyfacq3R9H605oNBrIBDwmvLz2up57vKQojJB6LszD6cYbbzhaXUYySMi3MzbhYEqId6UhC
- i0oShN20yFCyYtxj1SnPhL9sfG/ZmIo=
-X-Proofpoint-ORIG-GUID: ui0AKaA7wfZUubQA_ldZSO9ICnlDtly6
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22
+ a=EUspDBNiAAAA:8 a=Mufm1cvM-A_qJyHKcm0A:9 a=QEXdDO2ut3YA:10
+ a=NFOGd7dJGGMPyQGDc5-O:22
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE0MDA0NSBTYWx0ZWRfX6J/GAW7V236v
+ TB8BjwBl1ovQdcNCijnlPWvAMthVVAezNmLNpoR8pm1NCktTJtWoMcCaxdo6uAI/Pz0b1WSO7M4
+ 9QfJHg1BE7iNFbSqQR69ex7AaG/lfps=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE0MDA0NSBTYWx0ZWRfX0QGfBmS9XT7l
+ mGEnFerekgQEjDesJgdhoNtPBAGCKQ6gVZbhBmyRsCHecTiNHzkmgISV4z+qcDcwl/0ifG4mUnd
+ JcoqqVh3MqEJeV5vs2mRmieajDf6JUKxZ5zwjCdtqU880NIswJtJW54R+nZpMAq0kVPAUsx9i6R
+ j5XchBEZipN/KfLaqicg9L7K4QZ5SdML1ZAjkQZO491a50V69PPFhdfqDs6Z6yEE+cQiBHEiTT8
+ qdpTa2zlFQHGJi9OK/LCRBGltNg6edUPkYKDza9T8R8rSRbXEY8PtRlMEXcQAiufCgSTbpTeUG+
+ s25axCztm0Z8Iv3YFjOkpGfnpQSsYDNeDBh4MmZ+1JZRDB58q/KTUqf8DMtIOMmvo+BBEokAmcx
+ PEH8wy8SdyodVCUWAItWzeETi9k2cmHBK18mfbeDpXv6KCjmAXO9zqkQZ8Rn8E69XScQElvNX/g
+ qBDVj+xmrj4Cjit0YOQ==
+X-Proofpoint-GUID: CkffeFOVetcnnQKb3Lxhy6v6grNzB34w
+X-Proofpoint-ORIG-GUID: CkffeFOVetcnnQKb3Lxhy6v6grNzB34w
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-14_03,2026-11-11_03,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 lowpriorityscore=0
- impostorscore=0 clxscore=1015 spamscore=0 priorityscore=1501 adultscore=0
+ impostorscore=0 bulkscore=0 suspectscore=0 lowpriorityscore=0 phishscore=0
+ clxscore=1015 spamscore=0 adultscore=0 priorityscore=1501 malwarescore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611140045
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261114_033058_292074_050E0997 
-X-CRM114-Status: GOOD (  11.15  )
+X-CRM114-CacheID: sfid-20261114_033107_944012_56A3BA2D 
+X-CRM114-Status: GOOD (  28.93  )
 X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -177,30 +177,314 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
+From: Loic Poulain <loic.poulain@oss.qualcomm.com>
 
-Add cpas_fast_ahb, cpas_ahb and gcc_axi_hf to the PM clock list for
-SM8750. The CAMSS core enables them through the shared PM clock helper
-when the device is probed.
+Only the gen1 "csiN" clocks are scaled with the link rate of the sensor,
+the CSID core and CSIPHY receive clocks of all the other SoCs are set to
+the first rate of the resource table. A SoC can therefore only be
+described for one sensor bandwidth: the lowest rate first breaks fast
+sensors, the highest one burns power with the slow ones.
 
+Compute the minimum rate from the link frequency for all generations.
+The CSIPHY passes each D-PHY lane to the CSID over an 8 bit wide
+interface clocked by the receive clock, so that clock has to run at the
+per lane bit rate divided by 8, which is link_freq / 4. The core clock
+must not be slower, hence the same minimum for it and the cap of the
+receive clock at the core rate. The clocks are matched by suffix and
+voted for with clk_set_rate_range(), as the CSIDs of the recent SoCs
+share them.
+
+Up to 1.8 Gbps/lane the selected rates are unchanged on every supported
+SoC.
+
+Signed-off-by: Loic Poulain <loic.poulain@oss.qualcomm.com>
 Signed-off-by: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
 Signed-off-by: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>
 ---
- drivers/media/platform/qcom/camss/camss.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/media/platform/qcom/camss/camss-csid.c | 208 ++++++++++++++++++++-----
+ 1 file changed, 169 insertions(+), 39 deletions(-)
 
-diff --git a/drivers/media/platform/qcom/camss/camss.c b/drivers/media/platform/qcom/camss/camss.c
-index 3f9dd3a2ec088fa87a9ea90d25c906d14b9a1896..196eebc2d7d118040319bcf967b91c4ca98a4833 100644
---- a/drivers/media/platform/qcom/camss/camss.c
-+++ b/drivers/media/platform/qcom/camss/camss.c
-@@ -6043,6 +6043,7 @@ static const struct camss_resources sm8650_resources = {
- static const struct camss_resources sm8750_resources = {
- 	.version = CAMSS_8750,
- 	.pd_name = "top",
-+	.pm_clks = { "cpas_fast_ahb", "cpas_ahb", "gcc_axi_hf" },
- 	.icc_res = icc_res_sm8750,
- 	.icc_path_num = ARRAY_SIZE(icc_res_sm8750),
- 	.csiphy_num = 6,
+diff --git a/drivers/media/platform/qcom/camss/camss-csid.c b/drivers/media/platform/qcom/camss/camss-csid.c
+index 51f20907ffde6ad2a40b787fdee6d6525e7603a2..714cea6883a78664e76109d11094f7b6c2b0729e 100644
+--- a/drivers/media/platform/qcom/camss/camss-csid.c
++++ b/drivers/media/platform/qcom/camss/camss-csid.c
+@@ -16,6 +16,7 @@
+ #include <linux/platform_device.h>
+ #include <linux/pm_runtime.h>
+ #include <linux/regulator/consumer.h>
++#include <linux/string.h>
+ #include <media/media-entity.h>
+ #include <media/mipi-csi2.h>
+ #include <media/v4l2-device.h>
+@@ -532,72 +533,197 @@ const struct csid_format_info *csid_get_fmt_entry(const struct csid_format_info
+ 	return &formats[0];
+ }
+ 
++/* Match the core clock of the CSID */
++static bool csid_match_core_clock_name(struct camss_clock *clock)
++{
++	/* "csid", "vfe0_csid", "vfe_lite_csid", ... */
++	if (strends(clock->name, "csid"))
++		return true;
++
++	/* Named after the CSI port on the SoCs with a gen1 CSID */
++	return !strcmp(clock->name, "csi0") || !strcmp(clock->name, "csi1") ||
++	       !strcmp(clock->name, "csi2") || !strcmp(clock->name, "csi3");
++}
++
++/* Match the clock of the CSIPHY to CSID interface */
++static bool csid_match_phy_rx_clock_name(struct camss_clock *clock)
++{
++	/* "csiphy_rx", "csid_csiphy_rx", "vfe0_cphy_rx", ... */
++	return strends(clock->name, "phy_rx");
++}
++
++/* Match a clock whose rate depends on the CSI-2 link rate */
++static bool csid_match_scaled_clock_name(struct camss_clock *clock)
++{
++	return csid_match_core_clock_name(clock) ||
++	       csid_match_phy_rx_clock_name(clock);
++}
++
+ /*
+- * csid_set_clock_rates - Calculate and set clock rates on CSID module
+- * @csiphy: CSID device
++ * csid_get_min_clock_rate - Get the rate the CSI-2 link requires
++ * @csid: CSID device
++ *
++ * The CSIPHY deserialises every D-PHY data lane into bytes and passes them to
++ * the CSID over an interface which is, as per the CSID HPG, 8 bits wide per
++ * lane and clocked by the CSIPHY receive clock. That clock has to run at the
++ * per lane bit rate divided by 8 at the very least. The link frequency is the
++ * DDR clock of the link, i.e. half the per lane bit rate, which makes the
++ * minimum rate link_freq / 4.
++ *
++ * Qualcomm recommends clocking the CSID core at least as fast as the CSIPHY
++ * receive clock feeding it, so the same minimum applies to the core clock.
++ *
++ * C-PHY maps 16 bits onto 7 symbols and needs a different ratio, but CAMSS
++ * does not support it so far.
++ *
++ * Return the minimum rate in Hz, clock margin included, or 0 if the link
++ * frequency of the sensor is not known
+  */
+-static int csid_set_clock_rates(struct csid_device *csid)
++static u64 csid_get_min_clock_rate(struct csid_device *csid)
+ {
+-	struct device *dev = csid->camss->dev;
+ 	const struct csid_format_info *fmt;
+ 	s64 link_freq;
+-	int i, j;
+-	int ret;
++	u64 min_rate;
+ 
+ 	fmt = csid_get_fmt_entry(csid->res->formats->formats, csid->res->formats->nformats,
+-				 csid->fmt[MSM_CSIPHY_PAD_SINK].code);
++				 csid->fmt[MSM_CSID_PAD_SINK].code);
+ 	link_freq = camss_get_link_freq(&csid->subdev.entity, fmt->bpp,
+ 					csid->phy.lane_cnt);
+ 	if (link_freq < 0)
+-		link_freq = 0;
++		return 0;
++
++	min_rate = link_freq / 4;
++	camss_add_clock_margin(&min_rate);
++
++	return min_rate;
++}
++
++/* Get the lowest level of a clock above min_rate, or -EINVAL if there is none */
++static int csid_find_clock_level(struct camss_clock *clock, u64 min_rate)
++{
++	int i;
++
++	/* Play safe with the highest level if the link rate is not known */
++	if (!min_rate)
++		return clock->nfreqs - 1;
++
++	for (i = 0; i < clock->nfreqs; i++)
++		if (clock->freq[i] > min_rate)
++			return i;
++
++	return -EINVAL;
++}
++
++/* Lower a level down to max_rate, but never below what min_rate needs */
++static int csid_cap_clock_level(struct camss_clock *clock, int level,
++				u64 min_rate, u64 max_rate)
++{
++	while (level > 0 && clock->freq[level] > max_rate &&
++	       clock->freq[level - 1] > min_rate)
++		level--;
++
++	return level;
++}
++
++/*
++ * csid_set_clock_rates - Calculate and set clock rates on CSID module
++ * @csid: CSID device
++ */
++static int csid_set_clock_rates(struct csid_device *csid)
++{
++	struct device *dev = csid->camss->dev;
++	u64 min_rate = csid_get_min_clock_rate(csid);
++	u64 core_rate = 0;
++	int i, j;
++	int ret;
++
++	/*
++	 * Settle the rate of the core clock first, as the receive clock must
++	 * not outrun it and the clocks are not listed in a fixed order.
++	 */
+ 
+ 	for (i = 0; i < csid->nclocks; i++) {
+ 		struct camss_clock *clock = &csid->clock[i];
+ 
+-		if (!strcmp(clock->name, "csi0") ||
+-		    !strcmp(clock->name, "csi1") ||
+-		    !strcmp(clock->name, "csi2") ||
+-		    !strcmp(clock->name, "csi3")) {
+-			u64 min_rate = link_freq / 4;
+-			long rate;
++		if (!clock->nfreqs || !csid_match_core_clock_name(clock))
++			continue;
+ 
+-			camss_add_clock_margin(&min_rate);
++		j = csid_find_clock_level(clock, min_rate);
++		if (j < 0) {
++			dev_err(dev, "Link rate is too high for the %s clock\n",
++				clock->name);
++			return j;
++		}
+ 
+-			for (j = 0; j < clock->nfreqs; j++)
+-				if (min_rate < clock->freq[j])
+-					break;
++		core_rate = max_t(u64, core_rate, clock->freq[j]);
++	}
+ 
+-			if (j == clock->nfreqs) {
+-				dev_err(dev,
+-					"Pixel clock is too high for CSID\n");
+-				return -EINVAL;
+-			}
++	for (i = 0; i < csid->nclocks; i++) {
++		struct camss_clock *clock = &csid->clock[i];
+ 
+-			/* if sensor pixel clock is not available */
+-			/* set highest possible CSID clock rate */
+-			if (min_rate == 0)
+-				j = clock->nfreqs - 1;
++		if (!clock->nfreqs)
++			continue;
+ 
+-			rate = clk_round_rate(clock->clk, clock->freq[j]);
+-			if (rate < 0) {
+-				dev_err(dev, "clk round rate failed: %ld\n",
+-					rate);
+-				return -EINVAL;
+-			}
++		if (!csid_match_scaled_clock_name(clock)) {
++			/* The remaining clocks run at their lowest level */
+ 
+-			ret = clk_set_rate(clock->clk, rate);
+-			if (ret < 0) {
+-				dev_err(dev, "clk set rate failed: %d\n", ret);
+-				return ret;
+-			}
+-		} else if (clock->nfreqs) {
+ 			clk_set_rate(clock->clk, clock->freq[0]);
++			continue;
++		}
++
++		j = csid_find_clock_level(clock, min_rate);
++		if (j < 0) {
++			dev_err(dev, "Link rate is too high for the %s clock\n",
++				clock->name);
++			return j;
++		}
++
++		/*
++		 * There is nothing to gain from running the receive clock
++		 * faster than the core clock, as long as the link rate is
++		 * still covered.
++		 */
++		if (core_rate && csid_match_phy_rx_clock_name(clock))
++			j = csid_cap_clock_level(clock, j, min_rate, core_rate);
++
++		/*
++		 * Vote for the rate as a minimum, as the clock may be shared
++		 * with another CSID which needs it to run faster.
++		 */
++		ret = clk_set_rate_range(clock->clk, clock->freq[j], ULONG_MAX);
++		if (ret < 0) {
++			dev_err(dev, "clk set rate range failed: %d\n", ret);
++			return ret;
+ 		}
+ 	}
+ 
+ 	return 0;
+ }
+ 
++/*
++ * Drop the minimum rates the CSID votes for and take its clocks back to their
++ * lowest level, or to the lowest level the other users of a shared clock need.
++ */
++static void csid_release_clock_rates(struct csid_device *csid)
++{
++	int i;
++
++	for (i = 0; i < csid->nclocks; i++) {
++		struct camss_clock *clock = &csid->clock[i];
++		long rate;
++
++		if (!clock->nfreqs || !csid_match_scaled_clock_name(clock))
++			continue;
++
++		clk_drop_range(clock->clk);
++
++		/* Round first, so that the rate respects the other votes */
++		rate = clk_round_rate(clock->clk, clock->freq[0]);
++		if (rate > 0)
++			clk_set_rate(clock->clk, rate);
++	}
++}
++
+ /*
+  * csid_hw_version - CSID hardware version query
+  * @csid: CSID device
+@@ -707,6 +833,7 @@ static int csid_set_power(struct v4l2_subdev *sd, int on)
+ 
+ 		ret = csid_set_clock_rates(csid);
+ 		if (ret < 0) {
++			csid_release_clock_rates(csid);
+ 			regulator_bulk_disable(csid->num_supplies,
+ 					       csid->supplies);
+ 			pm_runtime_put_sync(dev);
+@@ -715,6 +842,7 @@ static int csid_set_power(struct v4l2_subdev *sd, int on)
+ 
+ 		ret = camss_enable_clocks(csid->nclocks, csid->clock, dev);
+ 		if (ret < 0) {
++			csid_release_clock_rates(csid);
+ 			regulator_bulk_disable(csid->num_supplies,
+ 					       csid->supplies);
+ 			pm_runtime_put_sync(dev);
+@@ -729,6 +857,7 @@ static int csid_set_power(struct v4l2_subdev *sd, int on)
+ 		if (ret < 0) {
+ 			disable_irq(csid->irq);
+ 			camss_disable_clocks(csid->nclocks, csid->clock);
++			csid_release_clock_rates(csid);
+ 			regulator_bulk_disable(csid->num_supplies,
+ 					       csid->supplies);
+ 			pm_runtime_put_sync(dev);
+@@ -739,6 +868,7 @@ static int csid_set_power(struct v4l2_subdev *sd, int on)
+ 	} else {
+ 		disable_irq(csid->irq);
+ 		camss_disable_clocks(csid->nclocks, csid->clock);
++		csid_release_clock_rates(csid);
+ 		regulator_bulk_disable(csid->num_supplies,
+ 				       csid->supplies);
+ 		pm_runtime_put_sync(dev);
 
 -- 
 2.34.1
