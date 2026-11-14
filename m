@@ -2,94 +2,161 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 198E9606A331
-	for <linux-phy@archiver.kernel.org>; Sat, 14 Nov 2026 01:03:25 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3D31F606A88F
+	for <linux-phy@archiver.kernel.org>; Sat, 14 Nov 2026 01:13:23 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=nctdcLpy;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=collabora.com header.i=@collabora.com header.a=rsa-sha256 header.s=mail header.b=qMANL379
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=fk47H5Wi;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=cXgLXeS1;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=VUB7cKsJ
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=f5eRfACaW9EafLRrm6J73iVgv8yB35GhUrE1s/aGcjI=; b=nctdcLpywuIQNjnC+AUtJmiJ3l
-	7jcvcNOCp38pXMWkRollESWm41cc6a4dwdqIlZKcxOg/cpwotQGJfZZl6TWYB45bHZn1mlBKixFfv
-	Q6gz/fD2Ax6D+2xBnQoHHfGU1v00a495SmbLs1c4WLpfVDI4dJoO1ekidZEv8c5fLdN933uI2zs4s
-	8nHan4i1tVLUtwxkNeqvxeOKG/HziHg9H7IHg1ux7ohehHb77A1SJiZ+JYTJJEOi+OjUqI8DL/ljU
-	HsN5FEj2w5zXToYK99+A5wdv1uQ2TmL+m3Cfsrhr8pF4MQZRA720OMFuRQ/hfoADq32V3m94eEl+H
-	+o7svNww==;
+	bh=cqhPCuF/FUZctqrDDl0vRejBHSuw8PKCsf2hreUk/Sc=; b=fk47H5Wil+WjwpyjNf2r/bbwkc
+	FzrROkKxYX52c1d0wx0eMeClEgjcXi7NBu9BFMylH2R3rceheF6Kcb8VaCJ4WokADSxPwYzG9BTrJ
+	Zti6IrngGXZgToaAFVqqCHQn4gX06GgBtwqi2IsZaQDh+zm2ol1ylTz2m0CBJJzEqfTL6fDa+rHv7
+	M+9N3hD+tOiudWkkgcJlV8CObQLjnSzxypCvkbqNzy7dyd1qSPng5YB5HOiPfU1LYyJLTqr2f5pTP
+	c8wy1gap2E9mIVaoAXfqTArUSdu0DpGluZlJjA4d9flyGbVTTTbqE5ahdHg+RI2tWcbZProjXVqpT
+	hTeBi96w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xS2Au-0000000Ez23-3It7;
-	Sat, 14 Nov 2026 01:03:24 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1xS2KY-0000000Ezwz-3SZQ;
+	Sat, 14 Nov 2026 01:13:22 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xS2AO-0000000EyVI-3Toq;
-	Sat, 14 Nov 2026 01:02:54 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1794618166;
-	bh=g0X6JocB2VyTivc72aE0Omr9YagRRa/kK2iKOuWwk04=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=qMANL379jhUDGWFPor10CFnutR7LqDDBUfzMGf6lkUyVufvtrOcdaDRFUeB+htiJd
-	 1Cr3Ub8Odk2zGGrf8nOC9q31N4Kc2F2QJfy6gklHbBsboEaMinsAUpvEnFHZ6nHRwp
-	 g0iM/iD3K1AFU+hecnuEX1V6v2h6WC4qaHN/K4/LfWUdO8lF6ayYJirlHHQ0tb82ju
-	 XuKsEEGzHjTI9klGcwxeD+KNXcoL7bXwKDTKR4FSSECCJdgPOfCtSVLy45KStD1Q4t
-	 fWunbim4z2Uv9AyyFZLUzLBkcPGJLg7T1Z2EoFUy37jAvWSLltIXsS8ZrylhkCsRcr
-	 YTrg2HzDdlY4A==
-Received: from jupiter.universe (unknown [100.64.1.62])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange x25519)
-	(No client certificate requested)
-	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 5E58017E14AA;
-	Sat, 14 Nov 2026 02:02:46 +0100 (CET)
-Received: by jupiter.universe (Postfix, from userid 1000)
-	id C9CAF48003A; Sat, 14 Nov 2026 02:02:45 +0100 (CET)
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Sat, 14 Nov 2026 02:02:05 +0100
-Subject: [PATCH v19 6/6] usb: dwc3: rockchip: add USBDP PHY reset quirk
+	id 1xS2KV-0000000EzwY-3bip
+	for linux-phy@lists.infradead.org;
+	Sat, 14 Nov 2026 01:13:21 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6ADMbQVf1852757
+	for <linux-phy@lists.infradead.org>; Sat, 14 Nov 2026 01:13:18 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=kTe3eKjY4XOv4bMTLL6hPd
+	xF10qrrinmEmdieEW7Zow=; b=cXgLXeS1+LMy2W/ICjBzD2Owh7SmPZrPOiTmrZ
+	B8ISCHkmxI+EHjqrlu0L4FYVm6IbQQFvc/YYD1VnteEoM9YMpiWfjmg+n5dAITOK
+	RkbSXlzNtnv2u26QaX81b/om8KaCW7A9mF/rNFHpyROLiaNSNXbt2bgScETOQodx
+	TsNlXI5ugGQTnXCH69BoszIMtRszMsKuxMKd0M+nXHv0bBqQksYE3bdVohjcXTYS
+	hJdEIacllZMKrgLso3qgdAROKbYFlFrvOYICs39XRYfFn7VAmNR2PGySXcMeyckv
+	1RBsRHjYR/2ZGJKiY3UASETai/1PTfs8qQqG9cAZg3MeybrQ==
+Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hxahj0n9y-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Sat, 14 Nov 2026 01:13:17 +0000 (GMT)
+Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-36f479b9819so1830277eec.1
+        for <linux-phy@lists.infradead.org>; Fri, 13 Nov 2026 17:13:17 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1794618797; x=1795223597; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:content-type:mime-version
+         :message-id:date:subject:from:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=kTe3eKjY4XOv4bMTLL6hPdxF10qrrinmEmdieEW7Zow=;
+        b=VUB7cKsJZNAYKsLvIFKxUOAOH0jRX3f1RaEEqmg0wqeV/HBahfahmCFmxTx1gnBhkI
+         ukNDoiNSvTapemkXgK16ej5XJ406pUBjShJZYmEZnsVFJP5l8yT2d3syANC0HMxlDvrJ
+         yqXGU6511QHUaiCaNt9nZzcm9a5gDS2fbue30WYpJoqnzj30/ApTWKmCSdMRz5T8U2sA
+         uUsWQMrUNHBrsAJ/X0IUCLu6UDg+bTO1jOWusntQFGWDFI8nyYPImep/mCsZTS+yw757
+         mH3FUw0N+ciVI1/ZgKGWtzsgGR+U2BKBO9S/eMPhAN2d7s2+zcPiMIwdClt24zzO+Rzb
+         tqLw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794618797; x=1795223597;
+        h=cc:to:content-transfer-encoding:content-type:mime-version
+         :message-id:date:subject:from:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=kTe3eKjY4XOv4bMTLL6hPdxF10qrrinmEmdieEW7Zow=;
+        b=LhFPjqouZx0KBwXHcysHKkFPxPbt0fdXwejvuoHftatuw9fYwKkvvVK88WSZakiwRo
+         Mmv4jbuonxRysjnu1xaF2MX/Z2l/Hzs6Ivptyqff+kYVcYBv019y6S8dsasigG2hSaT+
+         KooE9l4rQkbs75ZYs2OqDwNVCk0W+ge5U/jQujXuHboIFcozwrSgj5fOwYn9V6ORVKQt
+         z9f7hRkQA6ig9DVpg/yn0QFUcU6W9gSsohH7viNh1/XuFopzNawHceYX4OuilvW/6m6I
+         gOOfXT2ZQs6t1as447ocSuKH8ZnZyYdv1VJKgvAln5ehbUhLxUYgc/eorZwacTgc7Ybe
+         VhIQ==
+X-Forwarded-Encrypted: i=1; AL+hErGPvMcfu13WcLOJ0kflJnvWcizQummgsudP3hXBnC3bkADI+OWb0aFJ064VMBlINJ/ImrqahkIAqCc=@lists.infradead.org
+X-Gm-Message-State: APuU4Z+OhKQ6bZtaBrp6KQOl6ElJDSUQ9gDCrMSm20N6IPfJkw7Ws8XS
+	lD64vrXVnEjjC6yPuWeBaAeYtjfcaC1kZRZf4MkBvJ+JBBC3/ZffYhBOiDAgxW4p6sTzTMOigMA
+	9mioMDM7Qwpzfrap8+XAN5iXhkwFNgEKG17mPRfhApMcRAlZ0PExvZYPL3rNSQMXHh78o
+X-Gm-Gg: AYBFou0b4poZIZo3BP5AqAyz3H47aBdBAdMatkt7qJgh8ZXY+v3wFtJeCgtPfOz/Q6N
+	RHFuQQaDFlIRIQ8wHhFKK7HDO0jFX/ByxueEbc5Rg1SJyCSbrW7LybofAumJ/VL+YQ6Eq4qSvO8
+	3Td2xtxZ4jSyYfJ9cqqSEdN8o+JCLoNOAzVfsE5q2LMgHQX0GBawzHVDFi3ya9L9msr1JYEXmDT
+	lrYSg9I1fht/1sG/4woJp/F2B3VD+kQbQgmklm+9k+25G2Fks2zD8QcqhMTBwsu2TiWH7klVzzP
+	WMxUgRYygGCenKl/+6Fl/qfdBfz8NoqmUaIfR9g+w07ccGNYq7AcP6F+srWZsveIoh/BJd+97H0
+	DFk5mfM92DFunRxcX027dN2N6rEZf4O4m4wMXPL/aqN70V9Ovr1yNfjOivkMVChsLCfxILTlHrL
+	JXCTxLeYWP
+X-Received: by 2002:a05:701b:2912:b0:1b2:490b:6fdd with SMTP id a92af1059eb24-1b5030ad368mr3877911c88.24.1794618796825;
+        Fri, 13 Nov 2026 17:13:16 -0800 (PST)
+X-Received: by 2002:a05:701b:2912:b0:1b2:490b:6fdd with SMTP id a92af1059eb24-1b5030ad368mr3877886c88.24.1794618796106;
+        Fri, 13 Nov 2026 17:13:16 -0800 (PST)
+Received: from hu-krichai-hyd.qualcomm.com ([202.46.23.25])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3795378d7e5sm10952813eec.3.2026.11.13.17.13.10
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 13 Nov 2026 17:13:15 -0800 (PST)
+From: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+Subject: [PATCH v3 0/6] PCI: qcom-ep: Add PCIe Endpoint support for Monaco
+Date: Sat, 14 Nov 2026 06:43:02 +0530
+Message-Id: <20261114-monaco_ep-v3-0-7fe227cdfac0@oss.qualcomm.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261114-b4-rockchip-dwc3-rockchip-glue-v19-6-b79fb5f4b42a@collabora.com>
-References: <20261114-b4-rockchip-dwc3-rockchip-glue-v19-0-b79fb5f4b42a@collabora.com>
-In-Reply-To: <20261114-b4-rockchip-dwc3-rockchip-glue-v19-0-b79fb5f4b42a@collabora.com>
-To: Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>
-Cc: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>, 
- Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>, 
- Chaoyi Chen <chaoyi.chen@rock-chips.com>, 
- Igor Paunovic <royalnet026@gmail.com>, Alexey Charkov <alchark@flipper.net>, 
- linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- linux-phy@lists.infradead.org, kernel@collabora.com, 
- Sebastian Reichel <sebastian.reichel@collabora.com>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=7897;
- i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=g0X6JocB2VyTivc72aE0Omr9YagRRa/kK2iKOuWwk04=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGr3szVhtZpqns5w2s0Zg7SSkBkwC+W2H7yMF
- 23mFsaqd87kaokCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJq97M1AAoJENju1/PI
- O/qaNhAP/1X0jU5hid9o2gP4+cwGm5zAJ0PHCOTPJyPu3c8tNkyhZ9+xKQ2pgbvvoHL3YuhvrcY
- e7uK682v5ofZaQV2hKOdL3hf79IL2mudZioN7zgS9zRj44vSbOO3xlqHQcHBOfcC2/hmppyCerl
- RCXW2hl1cFT7L4o7w08CnSSBY9C+HAXvp63QT42F9j6D4nsnF5rP/N1chJxqovN/9XYXimaz16F
- oN7MMXTUrbcJCZTe8iPO55sxEHGmZYrjhA5P02mnTgJhKn0Ylmyg8p09yfaYhq740M9ZRZ0Z7wy
- I1PwrJcbYhZzxTNcgmUiAcuiEPNadakNm9KRh00zQJTKdF0HhhubYqSRsI41r52JlMOCPSKOt5S
- GY9tTVuGuvhEWngvf2YFhqffbn/AE12lkw6pzTqY5z1ZLdpeQxl66M/3rzElNoCxVUuKooDg6LV
- ahqGIrTEvNEdNf3OP+06uwKd9eL67LZg6CodpYyacW6tadu00D0kYoWK9L60S/o5aTPNtpvyQRm
- e0sstC+nIXopKbDOh5SEUaCT5hek0ksWt/5QKTE+ptpcuw5c9tXphxTHiLtN2BLnhh+obH+xlNJ
- 7MpAigCnAy048QW1PDyBqD/1Qu5Fd88ueHEARkffHCD5SF2PlTbBDADWhOANhLB/GWD2++RPZi5
- NnHTauir7xqGPU191CFM4Eg==
-X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
- fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
+X-B4-Tracking: v=1; b=H4sIAJ6192oC/23N3wqCMBTH8VeRXTfZjinaVe8REfubi3S26SjEd
+ 2+zCC+6OfCFH58zI6+cUR4dshk5FYw3to9R7DIkWtZfFTYyNgICFWlojTvbM2EvasCa071mWhI
+ lBIr7wSltnqt1On/aT/ymxJiAtGiNH617rc8CTbuvC3TjBooJrgpRQg2aE8mP1vv8MbG7sF2Xx
+ 4MSH+AHUEKbLQARqEsQvNGlJBT+AMuyvAHFbJ3+/AAAAA==
+X-Change-ID: 20260918-monaco_ep-fb14fafd0ecc
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+        Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Bjorn Helgaas <bhelgaas@google.com>,
+        Lorenzo Pieralisi <lpieralisi@kernel.org>,
+        =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-pci@vger.kernel.org,
+        Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
+        Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
+        Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>,
+        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1794618790; l=3448;
+ i=krishna.chundru@oss.qualcomm.com; s=20230907; h=from:subject:message-id;
+ bh=HSSXpCPII9klFGjnKVFNox+HX1Zi7tvJ1q/JdjPsr/A=;
+ b=mzC5SLAz+I4A1GceeUdQy980TaqpgvTcpEzshGVr47GyxQxRt/riLjQ5q6gzXqJQIEpja6etU
+ c851xf0oY1cAa10RU8VyTcPADrmUVLdDu1HgHqJFvxQ0jA0L24WQs3e
+X-Developer-Key: i=krishna.chundru@oss.qualcomm.com; a=ed25519;
+ pk=10CL2pdAKFyzyOHbfSWHCD0X0my7CXxj8gJScmn1FAg=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE0MDAwNCBTYWx0ZWRfX/POV/dDYaOVG
+ fuL3krjvxohQ+MRdVwG3c9c7QWIV98ZqGRGx+D7x8gFwg8V+aUhiR92uuoTgHlZuq1o/gqYcdUq
+ Ebe4SP1XsxcYJ5svySHsWXFRzrC219gaA/bocVzJLP0KGutc7ZthBvjOE0ReG6NoFCLEzINqDzQ
+ CN6iCD78y6LX8MRqxUq0GFKnOiCaQvyqIFnwf2iKr0cnzkKoqMtQnoqAuE/oD0nbZK/bP3wquP0
+ p+KarIl62nPqjPGzhPpsy4l7R/1ppxGzlt5n95mHI8gB2CUkUabLB/1KqNFPVB1TigR0DTGGrzh
+ AxxCGOOj1HUQjb4n1+bALBXB+kauq6c9ZhhrZAXaFI4imZ0CmP41fNLJXhFpXOeVtvcpJ+Baii5
+ 2jXMI9iPgR1Wsyu5l1x4lxcYP0P1Jx85PFccX3eJygtQjCwdVWZGoYHdLABFaE02qzIuvFVMCu/
+ uREWR8reOYdgKd/lKGg==
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE0MDAwNCBTYWx0ZWRfX8he1Pa/lZ6jD
+ Bu/mFQvYfP2PaGBMNkkbo/hVOY+zmkpK2Jb0sIbf181wzsPRrzSpyFtKIPwcCFv24FqmudqPnpp
+ 8Jpn6ft6II/b64NGnKUPUksLA2Vu6dY=
+X-Proofpoint-ORIG-GUID: 8vLogMgYG-kmmJ8w4J997rQiIo0pi8YB
+X-Authority-Analysis: v=2.4 cv=Kv/YSmWN c=1 sm=1 tr=0 ts=6af7b5ae cx=c_pps
+ a=cFYjgdjTJScbgFmBucgdfQ==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+ a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
+ a=bC-a23v3AAAA:8 a=EUspDBNiAAAA:8 a=ABVqSM4OJHPb3BREvlQA:9 a=QEXdDO2ut3YA:10
+ a=scEy_gLbYbu1JhEsrz4S:22 a=FO4_E8m0qiDe52t0p3_H:22
+X-Proofpoint-GUID: 8vLogMgYG-kmmJ8w4J997rQiIo0pi8YB
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-11-13_07,2026-11-11_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 bulkscore=0 impostorscore=0 adultscore=0 clxscore=1015
+ spamscore=0 lowpriorityscore=0 malwarescore=0 phishscore=0 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611140004
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261113_170253_077865_9F484080 
-X-CRM114-Status: GOOD (  21.85  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20261113_171320_053489_2646430A 
+X-CRM114-Status: GOOD (  12.60  )
+X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,262 +176,72 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On recent Rockchip platforms (at least RK3588 & RK3576), DWC3 IP is used
-with a USBDP PHY providing USB3 and DP. This PHY needs to be reset when
-the mode changes, which may happen when plugging in different USB-C
-devices.
+This series adds PCIe Endpoint mode support for the Monaco (QCS8300)
+SoC, which has two PCIe controllers capable of operating as Endpoints.
 
-If the USBDP PHY resets with the DWC3 IP running, its internal state
-corrupts resulting in the USBDP PHY not being able to lock some PLL
-clocks, which effectively renders USB3 unusable.
+- Patch 1 documents the dedicated 16 GT/s x4 QMP PCIe PHY compatible
+  for QCS8300, correcting an earlier gap where this PHY variant had no
+  QCS8300-specific compatible of its own.
+- Patch 2 documents the QCS8300 compatible for the PCIe Endpoint
+  controller binding, with SA8775P as its fallback.
+- Patch 3 adds the corresponding Endpoint PHY register configuration
+  to the QMP PCIe PHY driver, reusing the existing SA8775P programming
+  for the 16 GT/s x2 PHY and adding a new configuration for the 16
+  GT/s x4 PHY.
+- Patch 4 fixes clock-enable ordering in the qcom-ep controller driver:
+  some platforms require the interconnect bandwidth vote to be set
+  before enabling clocks, otherwise certain clocks can get stuck off.
+- Patch 5 fixes the existing pcie1_phy node's compatible string to
+  list the new QCS8300-specific compatible first, ahead of the
+  SA8775P fallback, matching the order used elsewhere in this series.
+- Patch 6 adds the Endpoint device tree nodes for both Monaco PCIe
+  controllers, covering register regions, clocks, interrupts,
+  interconnects, IOMMU mappings, resets, power domains, and PHY
+  connections.
 
-To fix the issue this adds a Rockchip USBDP specific quirk, which will
-assert PHYSOFTRST before the actual PHY is disabled and will deassert it
-once the PHY returns.
-
-The quirk is skipped while DWC3 is suspended, as its registers may be
-inaccessible and the device being suspended is a quirk in itself (the
-vendor BSP enables runtime PM with very short autosuspend as a
-workaround for this issue). Thus the code just ensures the PM state
-does not change while the PHY reset is going on.
-
-Note, that the same platforms also use DWC3 with a different PHY
-(rockchip-naneng-combphy), so the PHY calls are protected by a
-driver name check.
-
-Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
 ---
- drivers/usb/dwc3/Kconfig         |   1 +
- drivers/usb/dwc3/dwc3-rockchip.c | 154 +++++++++++++++++++++++++++++++++++++--
- drivers/usb/dwc3/trace.c         |   3 +
- 3 files changed, 153 insertions(+), 5 deletions(-)
+Changes in v3:
+- Rebased to tip.
+- Link to v2: https://patch.msgid.link/20261019-monaco_ep-v2-0-852cb9f5d012@oss.qualcomm.com
 
-diff --git a/drivers/usb/dwc3/Kconfig b/drivers/usb/dwc3/Kconfig
-index 3c120ea9746d..c86c1ac293bf 100644
---- a/drivers/usb/dwc3/Kconfig
-+++ b/drivers/usb/dwc3/Kconfig
-@@ -193,6 +193,7 @@ config USB_DWC3_OCTEON
- config USB_DWC3_ROCKCHIP
- 	tristate "Rockchip DWC3 Platform Driver"
- 	depends on ARCH_ROCKCHIP || COMPILE_TEST
-+	depends on PHY_ROCKCHIP_USBDP || !PHY_ROCKCHIP_USBDP
- 	depends on OF
- 	default USB_DWC3
- 	help
-diff --git a/drivers/usb/dwc3/dwc3-rockchip.c b/drivers/usb/dwc3/dwc3-rockchip.c
-index 4129aefd6a8b..25bf2794c1fc 100644
---- a/drivers/usb/dwc3/dwc3-rockchip.c
-+++ b/drivers/usb/dwc3/dwc3-rockchip.c
-@@ -2,11 +2,120 @@
- /* Copyright (c) 2026, Collabora Ltd. */
- #include <linux/module.h>
- #include <linux/platform_device.h>
-+#include <linux/phy/rockchip-usbdp.h>
- #include <linux/pm_runtime.h>
-+#include <linux/wait.h>
- #include "glue.h"
-+#include "io.h"
- 
- struct dwc3_rockchip {
- 	struct dwc3		dwc;
-+	wait_queue_head_t	phy_reset_wq;
-+	u8			phy_reset_active;
-+	bool			pm_suspended;
-+};
-+
-+static inline struct dwc3_rockchip *to_dwc3_rockchip(struct dwc3 *dwc)
-+{
-+	return container_of(dwc, struct dwc3_rockchip, dwc);
-+}
-+
-+static void dwc3_rockchip_set_suspended(struct dwc3_rockchip *dwc_rk, bool suspended)
-+{
-+	struct dwc3 *dwc = &dwc_rk->dwc;
-+
-+	guard(spinlock_irq)(&dwc->lock);
-+
-+	wait_event_lock_irq(dwc_rk->phy_reset_wq, !dwc_rk->phy_reset_active, dwc->lock);
-+	dwc_rk->pm_suspended = suspended;
-+}
-+
-+static void dwc3_rockchip_phy_pre_reset(struct dwc3_rockchip *dwc_rk, int port)
-+{
-+	struct dwc3 *dwc = &dwc_rk->dwc;
-+	u32 reg;
-+
-+	guard(spinlock_irqsave)(&dwc->lock);
-+
-+	dwc_rk->phy_reset_active |= BIT(port);
-+
-+	/* DWC3 being suspended also works as a quirk */
-+	if (dwc_rk->pm_suspended)
-+		return;
-+
-+	/*
-+	 * Assert USB3 PHY soft reset within DWC3 before the external
-+	 * PHY resets. This disconnects the PIPE interface, preventing
-+	 * the DWC3 from interfering with PHY reinitialization and
-+	 * avoiding LCPLL lock failures.
-+	 */
-+	reg = dwc3_readl(dwc, DWC3_GUSB3PIPECTL(port));
-+	reg |= DWC3_GUSB3PIPECTL_PHYSOFTRST;
-+	dwc3_writel(dwc, DWC3_GUSB3PIPECTL(port), reg);
-+}
-+
-+static void dwc3_rockchip_phy_post_reset(struct dwc3_rockchip *dwc_rk, int port)
-+{
-+	struct dwc3 *dwc = &dwc_rk->dwc;
-+	u32 reg;
-+
-+	scoped_guard(spinlock_irqsave, &dwc->lock) {
-+		dwc_rk->phy_reset_active &= ~BIT(port);
-+
-+		if (!dwc_rk->pm_suspended) {
-+			reg = dwc3_readl(dwc, DWC3_GUSB3PIPECTL(port));
-+			reg &= ~DWC3_GUSB3PIPECTL_PHYSOFTRST;
-+			dwc3_writel(dwc, DWC3_GUSB3PIPECTL(port), reg);
-+		}
-+	}
-+
-+	wake_up(&dwc_rk->phy_reset_wq);
-+}
-+
-+static void dwc3_rockchip_phy_reset(void *data, int port, bool pre)
-+{
-+	struct dwc3_rockchip *dwc_rk = data;
-+
-+	if (pre)
-+		dwc3_rockchip_phy_pre_reset(dwc_rk, port);
-+	else
-+		dwc3_rockchip_phy_post_reset(dwc_rk, port);
-+}
-+
-+static void dwc3_rockchip_phy_unregister_reset_handler(void *data)
-+{
-+	struct dwc3_rockchip *dwc_rk = data;
-+	struct dwc3 *dwc = &dwc_rk->dwc;
-+	int i;
-+
-+	for (i = 0; i < dwc->num_usb3_ports; i++) {
-+		struct phy *phy = dwc->usb3_generic_phy[i];
-+
-+		if (phy && !strcmp(dev_driver_string(phy->dev.parent), "rockchip-usbdp-phy"))
-+			rk_udphy_unregister_reset_handler(phy);
-+	}
-+
-+	WARN_ON(dwc_rk->phy_reset_active);
-+}
-+
-+static int dwc3_rockchip_phy_register_reset_handler(struct dwc3 *dwc)
-+{
-+	struct dwc3_rockchip *dwc_rk = to_dwc3_rockchip(dwc);
-+	int i;
-+
-+	for (i = 0; i < dwc->num_usb3_ports; i++) {
-+		struct phy *phy = dwc->usb3_generic_phy[i];
-+
-+		if (phy && !strcmp(dev_driver_string(phy->dev.parent), "rockchip-usbdp-phy"))
-+			rk_udphy_register_reset_handler(phy, dwc3_rockchip_phy_reset, dwc_rk, i);
-+	}
-+
-+	return devm_add_action_or_reset(dwc->dev,
-+					dwc3_rockchip_phy_unregister_reset_handler, dwc_rk);
-+}
-+
-+static const struct dwc3_glue_ops dwc3_rockchip_glue_ops = {
-+	.post_phy_registration = dwc3_rockchip_phy_register_reset_handler,
- };
- 
- static int dwc3_rockchip_probe(struct platform_device *pdev)
-@@ -25,8 +134,9 @@ static int dwc3_rockchip_probe(struct platform_device *pdev)
- 	if (!dwc_rk)
- 		return -ENOMEM;
- 
-+	init_waitqueue_head(&dwc_rk->phy_reset_wq);
- 	dwc_rk->dwc.dev = &pdev->dev;
--	dwc_rk->dwc.glue_ops = NULL;
-+	dwc_rk->dwc.glue_ops = &dwc3_rockchip_glue_ops;
- 
- 	probe_data.dwc = &dwc_rk->dwc;
- 	probe_data.res = res;
-@@ -42,12 +152,29 @@ static void dwc3_rockchip_remove(struct platform_device *pdev)
- 
- static int dwc3_rockchip_runtime_suspend(struct device *dev)
- {
--	return dwc3_runtime_suspend(dev_get_drvdata(dev));
-+	struct dwc3 *dwc = dev_get_drvdata(dev);
-+	struct dwc3_rockchip *dwc_rk = to_dwc3_rockchip(dwc);
-+	int ret;
-+
-+	ret = dwc3_runtime_suspend(dwc);
-+	if (!ret)
-+		dwc3_rockchip_set_suspended(dwc_rk, true);
-+
-+	return ret;
- }
- 
- static int dwc3_rockchip_runtime_resume(struct device *dev)
- {
--	return dwc3_runtime_resume(dev_get_drvdata(dev));
-+	struct dwc3 *dwc = dev_get_drvdata(dev);
-+	struct dwc3_rockchip *dwc_rk = to_dwc3_rockchip(dwc);
-+	int ret;
-+
-+	dwc3_rockchip_set_suspended(dwc_rk, false);
-+	ret = dwc3_runtime_resume(dwc);
-+	if (ret)
-+		dwc3_rockchip_set_suspended(dwc_rk, true);
-+
-+	return ret;
- }
- 
- static int dwc3_rockchip_runtime_idle(struct device *dev)
-@@ -57,12 +184,29 @@ static int dwc3_rockchip_runtime_idle(struct device *dev)
- 
- static int dwc3_rockchip_suspend(struct device *dev)
- {
--	return dwc3_pm_suspend(dev_get_drvdata(dev));
-+	struct dwc3 *dwc = dev_get_drvdata(dev);
-+	struct dwc3_rockchip *dwc_rk = to_dwc3_rockchip(dwc);
-+	int ret;
-+
-+	ret = dwc3_pm_suspend(dwc);
-+	if (!ret)
-+		dwc3_rockchip_set_suspended(dwc_rk, true);
-+
-+	return ret;
- }
- 
- static int dwc3_rockchip_resume(struct device *dev)
- {
--	return dwc3_pm_resume(dev_get_drvdata(dev));
-+	struct dwc3 *dwc = dev_get_drvdata(dev);
-+	struct dwc3_rockchip *dwc_rk = to_dwc3_rockchip(dwc);
-+	int ret;
-+
-+	dwc3_rockchip_set_suspended(dwc_rk, false);
-+	ret = dwc3_pm_resume(dwc);
-+	if (ret)
-+		dwc3_rockchip_set_suspended(dwc_rk, true);
-+
-+	return ret;
- }
- 
- static void dwc3_rockchip_complete(struct device *dev)
-diff --git a/drivers/usb/dwc3/trace.c b/drivers/usb/dwc3/trace.c
-index 088995885678..8c4e2a7b142e 100644
---- a/drivers/usb/dwc3/trace.c
-+++ b/drivers/usb/dwc3/trace.c
-@@ -9,3 +9,6 @@
- 
- #define CREATE_TRACE_POINTS
- #include "trace.h"
-+
-+EXPORT_TRACEPOINT_SYMBOL_GPL(dwc3_readl);
-+EXPORT_TRACEPOINT_SYMBOL_GPL(dwc3_writel);
+Changes in v2:
+  -  dt-bindings: PCI: qcom-ep: Drop qcs8300 compatible from the standalone
+    enum list(Krzysztof)
+  - PCI: qcom-ep: Fix qcom_pcie_disable_resources() to tear down resources
+    in strict LIFO order (phy -> clocks -> interconnect bandwidth),
+    matching the enable path's error-unwind sequence. (Sashiko AI review)
+  - arm64: qcom: monaco: Add reset-gpios and wake-gpios to the pcie0_ep and
+    pcie1_ep nodes so the EP driver owns and correctly manages the PERST#
+    and WAKE# lines; drop the output-low override from the wake-pins
+    pinctrl state that was permanently asserting WAKE#. (Sashiko AI review)
+  - phy: qcom: qmp-pcie: Reword commit message to clarify the new RX
+    tuning sequence for the 16 GT/s x4 PHY is common to RC and EP modes,
+    not EP-only.
+- Link to v1: https://patch.msgid.link/20260921-monaco_ep-v1-0-63c5282fb0db@oss.qualcomm.com
 
--- 
-2.53.0
+---
+Krishna Chaitanya Chundru (6):
+      dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add qcs8300 16 GT/s PHY
+      dt-bindings: PCI: qcom-ep: Add QCS8300 compatible
+      phy: qcom: qmp-pcie: Add endpoint PHY configuration for QCS8300
+      PCI: qcom-ep: Set initial interconnect bandwidth before enabling clocks
+      arm64: qcom: monaco: Fix pcie1_phy compatible to list qcs8300 first
+      arm64: qcom: monaco: Add PCIe Endpoint nodes
+
+ .../devicetree/bindings/pci/qcom,pcie-ep.yaml      |   4 +
+ .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml   |   4 +
+ arch/arm64/boot/dts/qcom/monaco.dtsi               | 150 ++++++++++++++++++++-
+ drivers/pci/controller/dwc/pcie-qcom-ep.c          |  36 ++---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c           | 105 +++++++++++++++
+ 5 files changed, 280 insertions(+), 19 deletions(-)
+---
+base-commit: d0cf0853ff6b71724a399a87ca028fc57be9ccca
+change-id: 20260918-monaco_ep-fb14fafd0ecc
+
+Best regards,
+--  
+Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
 
 
 -- 
