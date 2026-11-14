@@ -2,57 +2,59 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2D27E606A32D
-	for <linux-phy@archiver.kernel.org>; Sat, 14 Nov 2026 02:31:18 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 28EA7606A327
+	for <linux-phy@archiver.kernel.org>; Sat, 14 Nov 2026 06:44:27 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=YiaFvTU2;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=euJjFL04
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=qqGrlP8x;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=w4s3brv45bb4vpv2oglioynaxe.protonmail2 header.b=LOMHU3ID
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:From
+	:To:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=4j9ACWlljELWrUzWhQ6g3qhDjyQJ5bPlL3qDLij4T2Q=; b=YiaFvTU2tSsrzMamlFNDRlveeM
-	pSQh5nLqv5DEyLm3XKyIt7GVW7nq0sqVGRofS0o0wzuh6SgomdvWSrWnBX7CaqydqNMcyOkLu4JCt
-	BF9rIKpI8S74IktXRXrrfRwLNCmMPVZibOOotvNBBqx57HT9d8FL5JVCgzczW2lG8VngccFVWkjtF
-	zF3239enSEKCqMG1y/ap1Ex5EjKA/lP/96EuFj5aUl2n6FKu3O+DDev52hucXAGGU3Pc0pTyu4R/2
-	oPhOt5jr/MCmjbuT2Og5sAZZ5heSpZFQSRu7LgQOBcr3a2d2Hr6JTbAjBKZ7wox4wPaiH2i8f0F0A
-	ylJTzFvw==;
+	bh=cZCCojRYr+pzr/d+0KDhay3Odwo1bfnjuj9iGN4O6Ws=; b=qqGrlP8x9D1E6fcA4Bvuzc43ai
+	dJjmnxBk1/043J4P5AY3+yODRepzRhVtl9uhsNF0NSJBn8s0NUS6WqIk1Jzkg+RieuKnmj50jGbWE
+	0vyw/43bOtql0JKAlN39IxigIMoTDfo6F7jCDK6IulIWc9A+JF0072p/HxFH2t02dKaAjvs1BDisF
+	OswPFTey0OIFOuDAWdcq4nxkJgSHCVWJyD4vkm98StsxZYGkHOkUMZpKCpeFUtIBTFKes/BkYNJKz
+	mCXoyRaPJd/xXbfmEvxWCwz5s1Qj4pYqguenZU74y1EAstbin0qS1ekiAEYv8m9blz8U7CwTZwJnR
+	c/AU+AvA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xS3Xx-0000000F7Cf-32FW;
-	Sat, 14 Nov 2026 02:31:17 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xS7Uw-0000000FXRr-1bPf;
+	Sat, 14 Nov 2026 06:44:26 +0000
+Received: from mail-244122.protonmail.ch ([109.224.244.122])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xS3Xw-0000000F7CE-291e
+	id 1xS7Ut-0000000FXRD-3fGa
 	for linux-phy@lists.infradead.org;
-	Sat, 14 Nov 2026 02:31:16 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id D939B60051;
-	Sat, 14 Nov 2026 02:31:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1F7EA1F000C4;
-	Sat, 14 Nov 2026 02:31:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794623474;
-	bh=HCdtEYnJFadi/954jLJ0mJ5BVrAgRDGXdQ9bEMqviCM=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=euJjFL043m3d5Cv4IixK3+qhunY1tcVQ1Oe0xvJSxi+ba1yY5EIKyAp60qEo+eZUe
-	 2jQx3p7hWQpiMzlYvEIJNe97U7eeIObtH+qBbD5B/Wb+iOEfzNTbyDThNfFQcbZbGI
-	 /w2RyBOvbUF5aM7vkUPKM5gQTTtfiVhcbF0O9gms2Z6//zNQsblHddGfsdFYqzQcFQ
-	 rW0fXrLYf3ZdYgd7Xp8XcBCT8puhJzoVH8YmtzBC4m/yoI2JUaiIG38doSksSE8nL1
-	 0DI3T1ZbIXBLeP0xBWTFvQtiRIsunzLU6h5PsRnbxlr6XWNsdOg6r6KgP183pD747W
-	 WbifOqF6S3D9Q==
-Message-ID: <sashiko-outbox-214057@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v17 5/7] phy: rockchip: usbdp: Re-init PHY on mux change
-To: "Sebastian Reichel" <sebastian.reichel@collabora.com>
-Cc: linux-phy@lists.infradead.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
-In-Reply-To: <20261114-b4-rockchip-usbdp-cleanup-part3-v17-5-1af5f566408e@collabora.com>
-References: <20261114-b4-rockchip-usbdp-cleanup-part3-v17-0-1af5f566408e@collabora.com>
- <20261114-b4-rockchip-usbdp-cleanup-part3-v17-5-1af5f566408e@collabora.com>
-Date: Sat, 14 Nov 2026 02:31:11 +0000
+	Sat, 14 Nov 2026 06:44:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
+	s=w4s3brv45bb4vpv2oglioynaxe.protonmail2; t=1794638659;
+	x=1794897859; bh=9lockZfiZPq35Rqgx+UZNXxzny62IZytp1+NEi8Zxc8=;
+	h=Date:To:From:Cc:Subject:Message-ID:Feedback-ID:From:To:Cc:Date:
+	 Subject:Reply-To:Feedback-ID:Message-ID:BIMI-Selector;
+	b=LOMHU3ID8CgrIuaL3663yRwaNLjXWrQYpeoryiXWfQh2ZVAsL1nWT7pSoIa9CTWBM
+	 fKqPlKPztZFTCJENrmViYsAYp9J/8iI26r5LWDP6akb8OlukY+wHIpuMwA6q8d8yUc
+	 D/ueb540JUpgEjAZEiH85/IueldzC+h95SyfOECG9XuDaKM230L3e5aK6NiHOSryjM
+	 /UGTwaLpjUz6WuDhsP2sDxWsbnLRpE2m/WQyHCgo64n+yAN+tkZkXkvbeZWOjlDmzw
+	 wpTyD4gc5BBItlWLyXjRDXCEyPrBlyaB84K3xcSChQ1OxecdXGSuLDSwzWxn9ypzac
+	 UdBUzESzDdtLg==
+Date: Sat, 14 Nov 2026 06:44:15 +0000
+To: Vinod Koul <vkoul@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>
+From: Soheyb Boulaa <soheyb_boulaa@proton.me>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, Peter Griffin <peter.griffin@linaro.org>, Alim Akhtar <alim.akhtar@samsung.com>, Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>, linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org, Soheyb Boulaa <soheyb_boulaa@proton.me>
+Subject: [PATCH v3 0/3] phy: exynos5-usbdrd: fix HS phy init count on Exynos2200
+Message-ID: <20261114064400.45572-1-soheyb_boulaa@proton.me>
+Feedback-ID: 140697376:user:proton
+X-Pm-Message-ID: 1c2bb9a36e534ba52fb78d90e0df16364b079c84
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261113_224424_162735_14361C65 
+X-CRM114-Status: UNSURE (   6.91  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,11 +64,8 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
@@ -75,42 +74,56 @@ X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwKaXNzdWUgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gcGh5OiByb2NrY2hpcDog
-dXNiZHA6IG1pc3NpbmcgUEhZIHJlLWluaXQgaW4KICBya191ZHBoeV9vcmllbl9zd19zZXQoKQot
-LQoKY29tbWl0IGQ2ZWJlM2I0ZDRlNzc3MjJmYTQyNDljMmU2YjkwZWJkNGFhYjBiOTAKQXV0aG9y
-OiBTZWJhc3RpYW4gUmVpY2hlbCA8c2ViYXN0aWFuLnJlaWNoZWxAY29sbGFib3JhLmNvbT4KCnBo
-eTogcm9ja2NoaXA6IHVzYmRwOiBSZS1pbml0IFBIWSBvbiBtdXggY2hhbmdlCgpUaGlzIGNvbW1p
-dCBjYWxscyBya191ZHBoeV91cGRhdGVfcG93ZXJfc3RhdGUoKSBhdCB0aGUgZW5kIG9mCnJrX3Vk
-cGh5X3R5cGVjX211eF9zZXQoKSBzbyB0aGF0IHRoZSBQSFkgaXMgcmUtaW5pdGlhbGl6ZWQgd2hl
-biB0aGUgVHlwZS1DCm11eCBzdGF0ZSBjaGFuZ2VzLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9w
-aHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLXVzYmRwLmMgYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9w
-aHktcm9ja2NoaXAtdXNiZHAuYwo+IGluZGV4IGZjM2M0MTA0ZGNkN2UuLmI3OWI2ZGI5NmEwZTYg
-MTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLXVzYmRwLmMK
-PiArKysgYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtdXNiZHAuYwo+IEBAIC0x
-NDM0LDcgKzE0MzQsNyBAQCBzdGF0aWMgaW50IHJrX3VkcGh5X3R5cGVjX211eF9zZXQoc3RydWN0
-IHR5cGVjX211eF9kZXYgKm11eCwKPiAgCj4gIAlya191ZHBoeV9zZXRfdHlwZWNfc3RhdGUodWRw
-aHksIHN0YXRlLT5tb2RlKTsKPiAgCj4gLQlyZXR1cm4gMDsKPiArCXJldHVybiBya191ZHBoeV91
-cGRhdGVfcG93ZXJfc3RhdGUodWRwaHkpOwo+ICB9CgpbU2V2ZXJpdHk6IE1lZGl1bV0KU2hvdWxk
-IHJrX3VkcGh5X29yaWVuX3N3X3NldCgpIGFsc28gY2FsbCBya191ZHBoeV91cGRhdGVfcG93ZXJf
-c3RhdGUoKT8KCldoZW4gY2FibGUgb3JpZW50YXRpb24gY2hhbmdlcywgcmtfdWRwaHlfb3JpZW5f
-c3dfc2V0KCkgc2V0cwp1ZHBoeS0+cGh5X25lZWRzX3JlaW5pdCA9IHRydWUgYW5kIHVwZGF0ZXMg
-dWRwaHktPmxhbmVfbXV4X3NlbFtdIHZpYQpya191ZHBoeV9zZXRfdHlwZWNfZGVmYXVsdF9tYXBw
-aW5nKCksIGJ1dCByZXR1cm5zIDAgd2l0aG91dCByZS1pbml0aWFsaXppbmcKdGhlIFBIWToKCmRy
-aXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC11c2JkcC5jOnJrX3VkcGh5X29yaWVuX3N3
-X3NldCgpIHsKICAgIC4uLgoJaWYgKHVkcGh5LT5mbGlwICE9IGZsaXBwZWQpIHsKCQlkZXZfZGJn
-KHVkcGh5LT5kZXYsICJjYWJsZSBvcmllbnRhdGlvbiBjaGFuZ2VkLCBQSFkgcmUtaW5pdCByZXF1
-aXJlZC5cbiIpOwoJCXVkcGh5LT5waHlfbmVlZHNfcmVpbml0ID0gdHJ1ZTsKCX0KCgl1ZHBoeS0+
-ZmxpcCA9IGZsaXBwZWQ7Cglya191ZHBoeV9zZXRfdHlwZWNfZGVmYXVsdF9tYXBwaW5nKHVkcGh5
-KTsKCXJrX3VkcGh5X3VzYl9idmFsaWRfZW5hYmxlKHVkcGh5LCB0cnVlKTsKCglyZXR1cm4gMDsK
-fQoKT24gYm9hcmRzIHRoYXQgc3BlY2lmeSBvcmllbnRhdGlvbi1zd2l0Y2ggd2l0aG91dCBtb2Rl
-LXN3aXRjaCBpbiBEZXZpY2UKVHJlZSAob3Igd2l0aCBUeXBlLUMgY29udHJvbGxlciBkcml2ZXJz
-IHRoYXQgY2FsbCB0eXBlY19zZXRfb3JpZW50YXRpb24oKQp3aXRob3V0IGEgc3Vic2VxdWVudCB0
-eXBlY19zZXRfbW9kZSgpKSwgcmtfdWRwaHlfdHlwZWNfbXV4X3NldCgpIGlzIG5vdApjYWxsZWQg
-YWZ0ZXIgYW4gb3JpZW50YXRpb24gY2hhbmdlLCBsZWF2aW5nIHRoZSBoYXJkd2FyZSBsYW5lIG11
-eCByZWdpc3Rlcgp1bnByb2dyYW1tZWQgYW5kIFVTQjMgU3VwZXJTcGVlZCBicm9rZW4gb24gYSBm
-bGlwcGVkIGNhYmxlLgoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5k
-ZXYvIy9wYXRjaHNldC8yMDI2MTExNC1iNC1yb2NrY2hpcC11c2JkcC1jbGVhbnVwLXBhcnQzLXYx
-Ny0wLTFhZjVmNTY2NDA4ZUBjb2xsYWJvcmEuY29tP3BhcnQ9NQoKLS0gCmxpbnV4LXBoeSBtYWls
-aW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+The UTMI phy of Exynos2200 initializes the high-speed (eUSB2) phy but
+never exits it, so the high-speed phy is not set up again after it lost
+power in system sleep (patch 3, v1 [1]).
+
+Sashiko's review of v1 [2] found two error paths that v1 leaves wrong: a
+failed init of the high-speed phy is ignored, so the exit that follows
+takes its init count below zero; and the high-speed phy exits before
+the steps of the UTMI exit that can fail, so a failed exit leaves the
+UTMI phy initialized and the high-speed phy not. Patch 2 returns the
+init error, and patch 3 exits the high-speed phy last. Patch 1 undoes
+the UTMI init when it fails, which its clocks path already lacks and
+which patch 2 makes reachable from the high-speed phy.
+
+Changes in v3:
+- full name in From and Signed-off-by, as Vinod asked [3]; no code
+  change
+- Link to v2: https://lore.kernel.org/all/20261111032309.3365794-1-soheyb_boulaa@proton.me/
+
+Changes in v2:
+- patch 1, new: undo the init on failure
+- patch 2, new: return the init error of the high-speed phy
+- patch 3: exit the high-speed phy last, once the rest of the exit has
+  succeeded; drop the comment (Ivaylo); his Acked-by of v1 is left
+  out, since the exit has moved
+
+Tested on a Google Pixel 9 (Tensor G4), an out-of-tree port on 7.3-rc7
+that uses the Exynos2200 phy ops and powers USB off in system sleep:
+USB comes back after each sleep, and with each error path forced by a
+test-only switch, both init counts stay balanced. Not tested on
+Exynos2200 hardware, nor built in linux-phy next as a whole.
+
+[1] https://lore.kernel.org/all/20261109221522.2796426-1-soheyb_boulaa@proton.me/
+[2] https://lore.kernel.org/linux-phy/sashiko-outbox-205724@kernel.org/
+[3] https://lore.kernel.org/linux-phy/avcPwEEAfCstmORh@parshuram/
+
+Soheyb Boulaa (3):
+  phy: exynos5-usbdrd: power the Exynos2200 phy down when its init fails
+  phy: exynos5-usbdrd: return the Exynos2200 high-speed phy init error
+  phy: exynos5-usbdrd: fix HS phy init count imbalance on Exynos2200
+
+ drivers/phy/samsung/phy-exynos5-usbdrd.c | 28 +++++++++++++++++++-----
+ 1 file changed, 22 insertions(+), 6 deletions(-)
+
+base-commit: 6bdfbe223ed4735073c299a6645ebd3faac3f51f
+
+-- 
+2.56.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
