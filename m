@@ -2,105 +2,105 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DDDA3606A88B
-	for <linux-phy@archiver.kernel.org>; Sat, 14 Nov 2026 11:29:49 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 60D65606A899
+	for <linux-phy@archiver.kernel.org>; Sat, 14 Nov 2026 11:29:56 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=XbMgQHMn;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=FSseDSFt;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=HTBtjpAX
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=QOlfYRNc;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=eKQUzFz4;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=Q72VIBxk
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=ZSLD2KKT6EuiunLApEu9CYNQw+FMBv+4NrWOD+KVxJA=; b=XbMgQHMnZfVqUbqno/S4lhUBjv
-	pCdZhmUvOCevx2ek2JC4cwOripvcDCZlkqMAlEkuxEnYfbq0jBg/XWfWCZd02mcZj0nVSih7xRL+Q
-	MnU429VgfaYoZC9JtnL4hSdtytCJ3MoFYKnTkXKgoxhL23/FFw9e6xlVHLfPiW/QlP5gk9nB98vMZ
-	3AFxCTa/uncdvqHYrccUbujYHB0JQV0W5WPkqM2GUKQa17SuY/veEoIyA1tjfa+b91VmIu3W4BN42
-	nVYeBrBMZPUe2Pe95K5l3WOcnstnI2IfxwoJ7QB6N7S+EmYSG2Nxt20W3G4VqG6+w8xbN7Mu9JyKU
-	1xs+3DLw==;
+	bh=v8kbBWktaHw+l4FKCJfSCvFYcEOQKEsUBNK0z7bbU9k=; b=QOlfYRNc7EtAO9YUi5JAqgabIQ
+	gf57tT5WiseKA/gwFgi4sE/6GQ2bd68zejWnQCJ+yzTa24+OUxP8WGYs5gyGFUEG7SvAdlGNOd320
+	q/cmmk1PxejffWHhzy4XdUrlpEQqvaHe680N8ml0rznWqO3PQc8PIEOwXinNs7XXIlpQhDtBsh6PW
+	Qf0PTLa5U7ZFtwfpayyQ9PvdllO87R7nCX8V2n4iop+ZLRTpRl66G8PT5DPMltmfIsfc+/MrGAKQy
+	LewyRGDFcaouYNxOwA8jkHuJN6sWElZObt+aOPKiUwkne789OqBJA9wqFhiLYf2NZcEYMBhtGe5kY
+	QpDaW8Eg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSBx7-0000000Ftcd-06iH;
-	Sat, 14 Nov 2026 11:29:49 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1xSBxE-0000000FteC-0XZt;
+	Sat, 14 Nov 2026 11:29:56 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSBx4-0000000Ftc8-1uQY
+	id 1xSBxB-0000000Ftdd-3tVm
 	for linux-phy@lists.infradead.org;
-	Sat, 14 Nov 2026 11:29:47 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AE9wKNi3379492
-	for <linux-phy@lists.infradead.org>; Sat, 14 Nov 2026 11:29:44 GMT
+	Sat, 14 Nov 2026 11:29:55 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AE9wG4u3844747
+	for <linux-phy@lists.infradead.org>; Sat, 14 Nov 2026 11:29:53 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=lYQtc23/hKZH4TPph2Tg/s
-	dYM2XjGYrgayP6INE2B3Y=; b=FSseDSFtSrbE/ZEObvOskyvhpmmjHY81VDlbST
-	HbiG1FCI3IiF2am29IVbc8qKBv6ykYErJRatxcPY64Ye1Lpd7SINxsaYiWC9T8mq
-	YoIS9QWrBWgmNFwNGFm4s1ESHjwdz9lBw4lYq3Brq1NqbIavVqZpX9VwO/JQw8dt
-	tLJGN9/vBZ8uXpzxBVcFLxrwvLnLAlZ9/K9rwWqYdqdP+09M+7yqZZnxlIJSQ0wO
-	dKxjCcvhRSR1ceivt6fWOWvTntJu56enG/FJxuuqjYoGCVWKpPUY4uewMRxeZQjD
-	+l65zxarLsws7Lb6gKb/AJvtLNuYD8c21thdMTdqcHnIZAsw==
-Received: from mail-qv1-f69.google.com (mail-qv1-f69.google.com [209.85.219.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hxhnx0mxy-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	pTyV354OgCgsC+UdeFF5DsnhBflmhvuYXStEItKr1io=; b=eKQUzFz43741krLN
+	/oALLtSYyXkq0AcsL/w4XtHfQeZ5csEulv5/mfpFFrY/JJKvqe89fx/f2KSIy+eJ
+	dISWagwXVvYwdrmxEgJKlLjP4BRroC9WQU8rXEIBjFB5NVm6p3jYJZAgQzT1jh6y
+	y6yNldtHt2cU5ks8MQhQz+iABPoDl+LWmxBTIGkK/+vVPo6tUsfWgQrH7L9kBvBC
+	BbZxkXQAC59IKutjCFhj5Hmv0W7oNolY7E95TBTBcGfEOsXLrNls59VgOLQL7RGE
+	nAX9B58UXLgmi4qZwcku7szYxEiS0Lp3LGNCnoLEyS7Shlos+vN785DJchulAnly
+	gwrJFg==
+Received: from mail-qt1-f198.google.com (mail-qt1-f198.google.com [209.85.160.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hxhjqgmpk-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Sat, 14 Nov 2026 11:29:44 +0000 (GMT)
-Received: by mail-qv1-f69.google.com with SMTP id 6a1803df08f44-91ec6cd898eso41716476d6.3
-        for <linux-phy@lists.infradead.org>; Sat, 14 Nov 2026 03:29:44 -0800 (PST)
+	for <linux-phy@lists.infradead.org>; Sat, 14 Nov 2026 11:29:53 +0000 (GMT)
+Received: by mail-qt1-f198.google.com with SMTP id d75a77b69052e-55d2c49c3d9so786431cf.3
+        for <linux-phy@lists.infradead.org>; Sat, 14 Nov 2026 03:29:53 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794655784; x=1795260584; darn=lists.infradead.org;
-        h=cc:to:content-transfer-encoding:content-type:mime-version
-         :message-id:date:subject:from:from:to:cc:subject:date:message-id
-         :reply-to:content-type;
-        bh=lYQtc23/hKZH4TPph2Tg/sdYM2XjGYrgayP6INE2B3Y=;
-        b=HTBtjpAXcmrCzWjqbUb3GxQvAisAmQLQONu+8f7In78AsTeBgcgUyV9CCInnwnaKUz
-         Vlb1DJAtXSWJfHdIcLfIAcj5dXI24P9T2zgqvJROOrFwEWohcovY5zsSATmTKeTBcRg2
-         Q5Pm21zwRJ9DEaX+Fwp/OxhAb4n4OnAs+HnBWQoOOQPfYJ5IcnxqFvIWg1dCLS9VoeTe
-         zIXHzaSIDotc/LUykvs8rluwSJpn6sLg/6OcA2VDboYIUlu41pPbOVOSwNmRXTiY2bXf
-         12VJm5yl+KMeh/7CBObNQtRDMDnQvmUSXQspctldfGRo4naXTeNitJTX3rlfHdZ651lx
-         IgwQ==
+        d=oss.qualcomm.com; s=google; t=1794655793; x=1795260593; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :content-type:mime-version:subject:date:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=pTyV354OgCgsC+UdeFF5DsnhBflmhvuYXStEItKr1io=;
+        b=Q72VIBxkA5Dwzbyh8MWC+BCSWZ9frDMZ3/EgalPfBISeEb0zz235pEgYD3h/TnGZM0
+         NBtQgcKul8VuR1K6Q08RASZEZH1HJGJ8YamACsgukN7IjcMZFrVz+MjXxM5HutVthK2c
+         4W9W3RqnnIIYZMR6ZvvfNwiWa4d1ZtI6EoxsuDXnUmh/hYfU4O+pSWDTNsNdHPI7tCqu
+         jQqM5TPYaWdp0lu8yKdxNUU/8LFDafD6ikm5DgQPdhSfN1xTLKfp0vKxQlbIzzvlti0B
+         RFoqcTwpkPfbkLsCjTxHuAb3NAoK6QufEij/CP/ZpZk9tl+1eSXcHfEPwWiRCv2G2k1N
+         r7vw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794655784; x=1795260584;
-        h=cc:to:content-transfer-encoding:content-type:mime-version
-         :message-id:date:subject:from:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=lYQtc23/hKZH4TPph2Tg/sdYM2XjGYrgayP6INE2B3Y=;
-        b=QnIU5YoRfoaJZm23hvXZtOpqMOQbOtXig/PXk32mhkccHsTmQqUJlxV5uBPv4t2ezE
-         B+q2JZjS2RbrKhm6d69VkUoVZoopn8dspjU68eoPMX5bh4muoWza6b0c/+z/z0ecSYK7
-         wh0dbOQu8gW5iqZI8TXRc76WVEZPfaCUdGTnq8ey31unKr3w3/h3nx5s5ynFKdYUHIxj
-         5jnbHz58dreLJnXkYao4qQYL91OOC8KzQRwX0y5LNBvqNYFVL9U9h5DF5cMO43eZRuDL
-         j38F/Y74xgqNt4a62SdQn0aL7eAvqYgXJPoD8BOw1l5nbI2BjCsSa3b8A6c0+Yk4eBnQ
-         TogA==
-X-Gm-Message-State: APuU4Z8O/KAe7+dzlZ3OglzaiVv9SeRfrjDqZuDM8szqPcGgc02idieP
-	4tzfWKgv56IIpJnDS/+FTO+xgKAInuvMvzHMUMwEhfSq2nSzz0rabJZs7diwyhB5XBP9W5uDSx9
-	IjbuxuhMazXr1xzfJj5x+f7OqNJ+C4M0gtvf+G73Gk5lapLfu5z5YB7PFolgkNNC/hfiH
-X-Gm-Gg: AYBFou12DObF3GEhH6jO8GKZu2C2pBMzXrohAaFg1fcR+lg8T7p0Gd9cZ3cxRYPEtCP
-	/d5O0GPyvRKiD/jDapUCt3NxsLBHiigfVsTKLf+dOqD20kNzWrcfyxAMBiRXaa/ruNiXyeap2/4
-	BNJnVLz87Luxi1sDloNGCdiSxLGRaynF8r4SH3USQsWCx7GJkBhoSVsGcALWEBDhur61oVvq73X
-	FI45lKrnetSs6G5lj5KEmfV91AhwIUewSU98vKX1uQ8nT98fUUEi+xCvSKeCOv0/afvdJySkZxM
-	vmpYiAXKQ6AHzznEx7qQe8BcKlnJjsuN/qguw3J839KJTRZzGJshojyza6fByrqjMnBQQzhA25y
-	6Fdh9QJMY0phcRytt9smYAjPuMPPv+20L9dj/jPdxwgXDYqVXcmsy4ndFgqZ/OBVLhyndtIfe6u
-	wMv8HchDgT7E1/dCrts4JbrlmDiRMgcTwJwGwd7mAx
-X-Received: by 2002:a05:6214:3292:b0:91f:136e:e90c with SMTP id 6a1803df08f44-91f24244031mr71337606d6.53.1794655783792;
-        Sat, 14 Nov 2026 03:29:43 -0800 (PST)
-X-Received: by 2002:a05:6214:3292:b0:91f:136e:e90c with SMTP id 6a1803df08f44-91f24244031mr71337486d6.53.1794655783390;
-        Sat, 14 Nov 2026 03:29:43 -0800 (PST)
+        d=1e100.net; s=20260707; t=1794655793; x=1795260593;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :content-type:mime-version:subject:date:from:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=pTyV354OgCgsC+UdeFF5DsnhBflmhvuYXStEItKr1io=;
+        b=BvHjB4Yr+ddbYNXkOuONaOKXV/1slciP1tmsW+v8gImdh0ajfp/RZMMQncGlAdwmWn
+         ETBy3vvx5RTeCIr9GWFhKtztCI+TGXXcOdiGucAxfTpF4p71B6OgUbt9tuxsyBNeNHso
+         s3tXMhz6S6O7Nm2rn2kFAC6pTySWIb6CgNTmoKC4D2f20gmtZF6FQhIWgSw8T3X77hlO
+         +Y5np9zpMTQAZTKXR24ynDa3ARHGzEibvKrzBpJbsLMqc21WgRQAJU20w7rw26tsZ2b6
+         amOor5+Ib9FPkh+0FUwYcA94FCbt5MUka1se+G7HYWFPlY1Gn8+fu4saAxmEW1/dvXg7
+         xVlw==
+X-Gm-Message-State: APuU4Z9SoVM+G3xR/scbm2XbOxCJzAsyt/1NXoZUxyNVQ0bRnB9TJo0e
+	P5L7IVDRLyFbjnl3tnvmMg13Hkxxkq1hLb39Yq0aJaWOLAwl1fIsEEvfeh5gV1H6Wdl0NJ34e6D
+	Eq2cibSRYhuehWNDcm1/Xj+OnlwP/7RJ42SRi+gw0Npjbu2+PRWvxtHNAAv/+OgeSBsHS
+X-Gm-Gg: AYBFou1Gu5Y19GFnacAMSLYrWyNYRznJeKJ/a+R1SdI6ZYVU6V/m12abbGIZygJVomV
+	E6GtXLoJTttarW7xAuLQogm9msFTyOO7b+FjEQySRUIT7meRE28A5YN1Afsp1zunI1/I6EfRRyY
+	kZrdjLkm3Bq4gK6N04cHW/OlJvDIVjewKW+aVv5MdvFXiCEuzDnnOEdA7mqmtTgXGR0xs21uDbs
+	uWcvCqmCNK1vZFeiovzrcKr/GHptldPBg2jv+nT05LY4gWHQUI46ZFDqkuSIpKMJMO6sodRkPC7
+	SfWhXKeBN82dS1/GECCG8LtDLbJN8xu0v0Ba90u1kZgp+y7+v8hLuMtd+PBCoxLTkZdTMk6NRDg
+	y8UBhL2NFq/axSX8MKZoq1NA2EwnhOcqS2nv+s+j4LUUU/fYk651gCrtf6Fd68EmPz6h+OCTl8M
+	ox+Mx5eBX/jd3w4ab/6OAQ8KwS6b4bVISQI5vL9P2K
+X-Received: by 2002:a05:622a:5c07:b0:55c:37c1:aef7 with SMTP id d75a77b69052e-55c37c1b4b8mr34089341cf.77.1794655792535;
+        Sat, 14 Nov 2026 03:29:52 -0800 (PST)
+X-Received: by 2002:a05:622a:5c07:b0:55c:37c1:aef7 with SMTP id d75a77b69052e-55c37c1b4b8mr34089191cf.77.1794655792088;
+        Sat, 14 Nov 2026 03:29:52 -0800 (PST)
 Received: from WENMLIU-LAB01.ap.qualcomm.com (Global_NAT1_IAD_FW.qualcomm.com. [129.46.232.65])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-91f23d7ba48sm41389746d6.28.2026.11.14.03.29.34
+        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-91f23d7ba48sm41389746d6.28.2026.11.14.03.29.43
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 14 Nov 2026 03:29:42 -0800 (PST)
+        Sat, 14 Nov 2026 03:29:51 -0800 (PST)
 From: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>
-Subject: [PATCH v7 00/23] Add CAMSS support for SM8750 and Eliza
-Date: Sat, 14 Nov 2026 19:29:17 +0800
-Message-Id: <20261114-add-support-for-camss-on-sm8750-v7-0-8ff2a11835f6@oss.qualcomm.com>
+Date: Sat, 14 Nov 2026 19:29:18 +0800
+Subject: [PATCH v7 01/23] dt-bindings: phy: qcom,x1e80100-csi2-phy: Add
+ SM8750 CSI2 PHY
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAA1G+GoC/y3NQQ6CMBCF4auQrh3SoqXIynsYFgMdtNFS7AAxM
- dzdgm4m+d9ivo9gio5Y1NlHRFocuzCkMIdMdHccbgTOphaFLLRSRQloLfA8jiFO0IcIHXpmCAO
- wr4yWoGXZnSwdS1tVIn0ZI/XuvQvX5teRXnOCpt8oPDHjDtVZYkqVHHggDjji0/2BpdAgQVkjz
- 702/dHIS2DOXzM+u+B9ns6mtcgE2+CmOqtO2LZnrVsllWjW9Qvko7h27QAAAA==
-X-Change-ID: 20251126-add-support-for-camss-on-sm8750-506c4de36d88
+Message-Id: <20261114-add-support-for-camss-on-sm8750-v7-1-8ff2a11835f6@oss.qualcomm.com>
+References: <20261114-add-support-for-camss-on-sm8750-v7-0-8ff2a11835f6@oss.qualcomm.com>
+In-Reply-To: <20261114-add-support-for-camss-on-sm8750-v7-0-8ff2a11835f6@oss.qualcomm.com>
 To: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
         Neil Armstrong <neil.armstrong@linaro.org>,
         Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
@@ -118,47 +118,45 @@ To: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
 Cc: linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
         linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
         linux-kernel@vger.kernel.org, linux-i2c@vger.kernel.org,
-        Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>,
-        Atiya Kailany <atiya.kailany@oss.qualcomm.com>,
-        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+        Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1794655774; l=5989;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1794655774; l=1075;
  i=wenmeng.liu@oss.qualcomm.com; s=20250925; h=from:subject:message-id;
- bh=ZF5h2lHCofFCc9Gv68CDYvEz04GrgoDbg7RhcIPuRMM=;
- b=51IvPApOHKdKWHF7Jj4MH9xxNAuThn5MH/FiwFoot3dFIWqUd+ZiZEL0UWyJYHVkPuOWhdB9w
- bBSZOCqQmz7CRt/UmCWit27f6wBrFiYd2yDDZH39RRTfC6Qgn89VW/g
+ bh=LFc6jx+MXDH94lWI3ZDmmoldzQASgCtkGLGfmGw+wwg=;
+ b=qQbMkxieG7t3MHs39IJqk6/8ONMjTaPIKB7+zb7r390+yjZnta8SFA582Lw2EtjV9kt1MoFe7
+ ZbB3RdBwSjZDb0AfWh6sGDhV1szHrA9qdW8cpbOGDDd8ztsmVi4NfG3
 X-Developer-Key: i=wenmeng.liu@oss.qualcomm.com; a=ed25519;
  pk=fQJjf9C3jGDjE1zj2kO3NQLTbQEaZObVcXAzx5WLPX0=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE0MDA0NSBTYWx0ZWRfXxDMYeQP6TnK7
- UIvuKf/oksW9YuQwHAWAIRjF11JeYphwFlz4O4dh2acEO7cJuSc1ycnBirNVafg60BjEGfpmk0q
- SjnwVE9eT1RZ92XTUkoUuVdMaKhHBIZNMyrB4xLS/zbDcoQNC5/KJ04C5kZ8j/O30E7hEfe7aXF
- S/h1qVFxu7TrfOu5bq3DaYTMqCwe56k+YGPaVZsMpHxTWj7yE+8t/PEjUgC2MdYj6l1BHWaz083
- e/qiiJSLFcT04yVkrsl9zbl9kTqTUaEsQIrWEM+CVFRYUoJUZ9l/H+mPTo4UQWZuGyRlZ5DR8vg
- 7TzxqBliWC7XeRlI01FA0yhm2EXBdgUXo7XRBy7eqfNDcs5oxJgbARQjSlJM0pJOWhFnuo2rjO8
- nyY3d0CW/d+sdw55H3UsJlz8yJ1+OqftQa121ey+frrWG1gl5ALDHd3L0JhSZJqEDzkUxAA8tq7
- gZ7W08fSNyRdLERTRjw==
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE0MDA0NSBTYWx0ZWRfXyWJvFBbet4Sg
- nLflaCus5GhHaXSdh5QXv5TxHcN1SNUT0AlTX+BufWNm2NwAzydPrtKRqNykuqaJg3bb5yje2wd
- nBnvxu3ELkyfphZDz20jt9c/X5EkRx0=
-X-Proofpoint-ORIG-GUID: aE_I065qkYUwbkm5maf9ZAtuIrqm5I47
-X-Proofpoint-GUID: aE_I065qkYUwbkm5maf9ZAtuIrqm5I47
-X-Authority-Analysis: v=2.4 cv=Jr5kP84C c=1 sm=1 tr=0 ts=6af84628 cx=c_pps
- a=wEM5vcRIz55oU/E2lInRtA==:117 a=C3Dk8TwHQYyIj7nOf9RCJw==:17
+X-Proofpoint-ORIG-GUID: ewOoWhe7hAm3oC-6nA1pIbByslzIdcOY
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE0MDA0NSBTYWx0ZWRfX1aJBhJCvy8mB
+ OEP4zO5sd67C6xbWD8RP1AeTP9oMfubPat9jidLLsI0TmHq63Aae1LGV5OLUbAsUhvUH+RGDOHU
+ VPUx8eM3iZi+uFxb1aG+GqBTt606bkBYBromufF18G41CEYodU13mX2JWG0tit9yYMJJclafV10
+ an9kmxaM5HsSWuksAE0ZnUsp9RDbBkSIdKOBJQRJD9C2PW+ZTfeOSVAK/tfWKzZ3h/SoHriRcmc
+ VtJoRTWRnVtFvoym342lse/qBH6GIyIwyJsrBE45hBIPbU/H1sONT/iUAgmf3HSFvF0sIwPhfCH
+ O/yKiwVIZvcw6DnbKWHGwQVqT/hME+P1cYj+Rw5beetxatFlEphQAaGCN19t1ESr1Wz4879xi9B
+ shNT215Q467tQvdhgPpWJ0MJxJIn4E3ZvyLX0aRc2FhKw2d6GsBopcwEKtM0H4yu2nfC/nzvCW+
+ prrPjJNsQpQmh1et7jw==
+X-Authority-Analysis: v=2.4 cv=TqJzFzXh c=1 sm=1 tr=0 ts=6af84631 cx=c_pps
+ a=mPf7EqFMSY9/WdsSgAYMbA==:117 a=C3Dk8TwHQYyIj7nOf9RCJw==:17
  a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
- a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=ZzokZsKx-LV0YXTnLPAA:9 a=QEXdDO2ut3YA:10
- a=OIgjcC2v60KrkQgK7BGD:22
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
+ a=EUspDBNiAAAA:8 a=CbQ82e2HgpuiUCsW3z0A:9 a=QEXdDO2ut3YA:10
+ a=dawVfQjAaf238kedN5IG:22
+X-Proofpoint-GUID: ewOoWhe7hAm3oC-6nA1pIbByslzIdcOY
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE0MDA0NSBTYWx0ZWRfXxaVfly+1owXT
+ K6TtjdIs1tAnr6ambgXQRnDUIrHo5F5KlUGlppLK4gIZ3XZX/PqDGjPUMhTTMvq/7wpLzPdh12c
+ swWg8F+i6MSQKME2aqRSsSqClh71JLc=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-14_03,2026-11-11_03,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 bulkscore=0 suspectscore=0 lowpriorityscore=0 clxscore=1015
- priorityscore=1501 impostorscore=0 adultscore=0 malwarescore=0 phishscore=0
+ malwarescore=0 clxscore=1015 lowpriorityscore=0 bulkscore=0 suspectscore=0
+ spamscore=0 priorityscore=1501 phishscore=0 impostorscore=0 adultscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611140045
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261114_032946_622358_8DCA0A0E 
-X-CRM114-Status: GOOD (  14.19  )
+X-CRM114-CacheID: sfid-20261114_032953_985567_B6578897 
+X-CRM114-Status: GOOD (  10.09  )
 X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -179,115 +177,33 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-This series adds CAMSS support for the Qualcomm SM8750 and Eliza SoCs.
+From: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
 
-SM8750 has CSID 980 and VFE 980. Eliza has CSID 970 and VFE 970, which
-are register compatible with 980 apart from the VFE RDI write master
-client IDs, so Eliza reuses the SM8750 CSID and VFE support. Both SoCs
-have TPG v2.3.0. The CSIPHYs are described as standalone
-phy-qcom-mipi-csi2 devices, linked to CAMSS through the OF graph.
+The SM8750 camera subsystem has six CSI2 D-PHY blocks. Describe them
+with a standalone "qcom,sm8750-csi2-phy" compatible, so the CAMSS
+binding can instantiate the CSIPHY nodes as separate phy devices.
 
-SM8750 has 6 CSIPHYs, 3 CSID + 2 CSID Lite, 3 VFE + 2 VFE Lite and 3 TPGs.
-Eliza has 4 CSIPHYs, 3 CSID + 1 CSID Lite, 3 VFE + 1 VFE Lite and 2 TPGs.
-
-The series depends on the Kaanapali CAMSS series.
-https://lore.kernel.org/all/20261112-kaanapali-camss-v25-0-1d709f57f370@oss.qualcomm.com/
-
-Changes in v7:
-- Rework the bindings: describe the SM8750 CSI2 PHY with its own
-  "qcom,sm8750-csi2-phy" compatible (plus the matching phy-qcom-mipi-csi2
-  entry) and move the CSIPHYs out of CAMSS as sibling PHY devices linked
-  through the OF graph. Drop the Reviewed-by tags of the CAMSS binding
-  - Krzysztof
-- Add the "top" register region to the CAMSS binding, a PM clock list for
-  SM8750, and include the CSID clock scaling patch - Loic
-- Clean up the CAMSS binding (reg-names, clock names, unused clocks and
-  interconnects, iommus description) and reuse the SA8775P TPG resources
-  - Vladimir, bod
-- Rework CSID 980 and move VFE 980 into its own camss-vfe-980.c with
-  dedicated SM8750 resources, dropping its Reviewed-by - bod
-- Drop the two-phase CSIPHY patch, the CSIPHYs are now handled by the
-  standalone PHY driver
-- Add the SM8750 DTS and Eliza support (bindings, driver and DTS)
-- Link to v6: https://lore.kernel.org/r/20260721-add-support-for-camss-on-sm8750-v6-0-a5f841061d18@oss.qualcomm.com
-
+Signed-off-by: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
 Signed-off-by: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>
 ---
-Hangxiang Ma (11):
-      dt-bindings: phy: qcom,x1e80100-csi2-phy: Add SM8750 CSI2 PHY
-      dt-bindings: media: qcom,sm8750-camss: Add SM8750 CAMSS
-      phy: qcom-mipi-csi2: Add SM8750 support
-      media: qcom: camss: Add SM8750 compatible
-      media: qcom: camss: Add PM clock definitions for SM8750
-      media: qcom: camss: csid: Add support for CSID 980
-      media: qcom: camss: vfe: Add support for VFE 980
-      media: qcom: camss: tpg: Add support for v2.3.0 TPG
-      arm64: dts: qcom: sm8750: Add CAMSS and CSIPHY block definitions
-      arm64: dts: qcom: sm8750: Add CCI definitions
-      arm64: dts: qcom: sm8750: Add camera MCLK pinctrl
+ Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-Loic Poulain (1):
-      media: qcom: camss: csid: Scale the clocks with the CSI-2 link rate
+diff --git a/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
+index 6e9eb8e265df93b631101ae13f31f6365b6239b6..8ff3df1d0d2787b2af0499c1e4106b86f56ff82c 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
+@@ -19,6 +19,7 @@ properties:
+     oneOf:
+       - enum:
+           - qcom,kaanapali-csi2-phy
++          - qcom,sm8750-csi2-phy
+           - qcom,x1e80100-csi2-phy
+       - items:
+           - const: qcom,glymur-csi2-phy
 
-Wenmeng Liu (11):
-      dt-bindings: phy: qcom,x1e80100-csi2-phy: Add Eliza CSI2 PHY
-      dt-bindings: media: qcom,eliza-camss: Add Eliza CAMSS
-      dt-bindings: i2c: qcom-cci: Document Eliza compatible
-      media: qcom: camss: Add Eliza compatible
-      arm64: dts: qcom: sm8750-qrd: Enable S5KJN1 camera sensor
-      arm64: dts: qcom: eliza: Add CAMSS and CSIPHY block definitions
-      arm64: dts: qcom: eliza: Add CCI definitions
-      arm64: dts: qcom: eliza: Add camera MCLK pinctrl
-      arm64: dts: qcom: eliza-mtp: Add PM8010 PMICs
-      arm64: dts: qcom: eliza-mtp: Enable rear camera
-      arm64: dts: qcom: eliza-evk-imx577-camera: Add DT overlay
-
- .../devicetree/bindings/i2c/qcom,i2c-cci.yaml      |   2 +
- .../bindings/media/qcom,eliza-camss.yaml           | 282 ++++++++
- .../bindings/media/qcom,sm8750-camss.yaml          | 297 +++++++++
- .../bindings/phy/qcom,x1e80100-csi2-phy.yaml       |   9 +-
- arch/arm64/boot/dts/qcom/Makefile                  |   4 +
- .../boot/dts/qcom/eliza-evk-imx577-camera.dtso     |  85 +++
- arch/arm64/boot/dts/qcom/eliza-mtp.dts             | 188 ++++++
- arch/arm64/boot/dts/qcom/eliza.dtsi                | 512 ++++++++++++++
- arch/arm64/boot/dts/qcom/pm8010-eliza.dtsi         |  81 +++
- arch/arm64/boot/dts/qcom/sm8750-qrd.dts            |  72 ++
- arch/arm64/boot/dts/qcom/sm8750.dtsi               | 735 +++++++++++++++++++++
- drivers/media/platform/qcom/camss/Makefile         |   2 +
- drivers/media/platform/qcom/camss/camss-csid-980.c | 478 ++++++++++++++
- drivers/media/platform/qcom/camss/camss-csid.c     | 208 ++++--
- drivers/media/platform/qcom/camss/camss-csid.h     |   1 +
- drivers/media/platform/qcom/camss/camss-tpg-gen1.c |   5 +-
- drivers/media/platform/qcom/camss/camss-vfe-980.c  | 216 ++++++
- drivers/media/platform/qcom/camss/camss-vfe.c      |   4 +
- drivers/media/platform/qcom/camss/camss-vfe.h      |   1 +
- drivers/media/platform/qcom/camss/camss.c          | 229 +++++++
- drivers/media/platform/qcom/camss/camss.h          |   2 +
- drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c     |   1 +
- 22 files changed, 3370 insertions(+), 44 deletions(-)
----
-base-commit: 84abb955b1015477aa11a96e2f3ac1b938b77f48
-change-id: 20251126-add-support-for-camss-on-sm8750-506c4de36d88
-prerequisite-message-id: 20261112-kaanapali-camss-v25-0-1d709f57f370@oss.qualcomm.com
-prerequisite-patch-id: 6108fea87bf95e2911f09bbe7e95fa536c3ce397
-prerequisite-patch-id: b347ad60c475f3035b04ec76741e0f1b5f095580
-prerequisite-patch-id: a38055fcd5b32fbf7f7f03301a48b4ad8601386b
-prerequisite-patch-id: 5faef8cef855ce6fa00e2c7f10f125431ede40a4
-prerequisite-patch-id: ddf0ddaef84c2d088d08f17de8d20f6b966ace37
-prerequisite-patch-id: 5d7b6860d43c9215836a0d50fb27d2d003d0bfd8
-prerequisite-patch-id: 610b107ca35300b00e8edae31dfb959a4501ff66
-prerequisite-patch-id: 0bfebf965372eab19b73ad9629cec919795b557a
-prerequisite-patch-id: d386de6329dabce0b0a459384d28bf290e170552
-prerequisite-patch-id: 702e37b99095301ba1dfb2b48a92f33575178d32
-prerequisite-patch-id: bc7b2ea560fb0a75ae9b2858a40f7340cc63bebb
-prerequisite-patch-id: 83a0f9a6655a615e796ab850955ff764b9dbbf03
-prerequisite-patch-id: a579bc3d977dd6869ddd7e78247982e89bd3e86e
-prerequisite-patch-id: 4ab7713c2b3b3df586b644772b04d33152f57a4c
-prerequisite-patch-id: cf1743d9aeaa627ed310a663621e172a4c095837
-
-Best regards,
 -- 
-Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>
+2.34.1
 
 
 -- 
