@@ -2,12 +2,12 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CB6E3606A339
-	for <linux-phy@archiver.kernel.org>; Sat, 14 Nov 2026 11:32:59 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E8588606A33A
+	for <linux-phy@archiver.kernel.org>; Sat, 14 Nov 2026 11:33:08 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=XnluwRBh;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=O76SxMxb;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=OurNZyrP
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=jx34cn1Y;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=TiRrdehl;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=BvK+MacE
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -15,89 +15,89 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=PMp1WT0n1QLcZ76GeVBLdmbSFltJihjRFIUjJr2jhv8=; b=XnluwRBhLaAE9FpJBAUllUaWuZ
-	/egZTspuc0kIV9zM1V6sN9a0qyYmsNFdf4WZnlyTwympkeuR1HXAqoilSZCcW8SbD6rah7Unh3Bpw
-	QedQiZqdJ3q/g5LdFYBOHnKVL4IXY3M1mtPFEGe/QxYw718dgEzN2qKECiuNJJCsQH+yFKlpFkkwH
-	0mlxswfRJE48it8sCEcqRkjRm5enIZ2fVXLprXhcSBKBqCTaOfje+sL3EGG+dirgPSC0GyB+GszXb
-	D0JsNOPvtKNgQmIn5Zjs1D+j+B1APfUCbr7Elewu68LoSusjocEYv8YQNzNQUjRw7qniwJTzP8cY6
-	O4+p9xXg==;
+	bh=cf5/ZHb3bDWefZZwSXdjtlqocWtXovvphzgSzMkkk58=; b=jx34cn1YZUCkzWYlZ/CCDLBLmD
+	47T1d7w+1Em787JqlaeeyzLE54H9nEZDzZ/tQIJsQpMNcum/KKP8AQkXJ5RToZLZwuoMrtDrvFYPE
+	bF7Qo0ZoQ0KEV+YEe/s0XdoNe3OQVMGUkqR7zau6YYt9bxxhG6Ie9vB9COkN6rBbiD6qP6SXsuL1G
+	78baZV+zjcnJH+qSSHkAP/XqaDb0LfDRZMP721A6Nu7b5M43CjN/FS77+WXRq3EDdMvdXTze8IVaK
+	EvUQYMsL9qWY1jt9JuDpqiu+ngCwYTFI96nVCkNRVzRBPqaFXFBpYhxaV/y4PnDtrjqKcTYYpJula
+	psXtV+nA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSC0B-0000000Fu8L-2PfD;
-	Sat, 14 Nov 2026 11:32:59 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1xSC0K-0000000Fu9m-2qa2;
+	Sat, 14 Nov 2026 11:33:08 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSC09-0000000Fu7y-1Fvg
+	id 1xSC0I-0000000Fu9D-0sw9
 	for linux-phy@lists.infradead.org;
-	Sat, 14 Nov 2026 11:32:58 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AE9w4JY3164174
-	for <linux-phy@lists.infradead.org>; Sat, 14 Nov 2026 11:32:57 GMT
+	Sat, 14 Nov 2026 11:33:07 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AE9xAB01090666
+	for <linux-phy@lists.infradead.org>; Sat, 14 Nov 2026 11:33:05 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	u4Oly2ccZ0M2EddE7iLjGix5zbXSWGoTjOlAUxiJPBQ=; b=O76SxMxbxeqlf+/s
-	J5QM94qjLwegqGbaM40Cw7rgwsy57fIpr56y21gmRl9DNlFjO6/tNMNE6zDPs5VW
-	zVajAGdTmtJR4WV6wAEev7xuWLHEMtATm9wf0D/sKSfo8EdjjhjfQYt+0bpXadHB
-	iHsDnic3pLaNFyZuor4ev4l7so6IlKkz49BuZs22q3MxFLiEj9TTxVPswETOmKS2
-	o3rQJFMSO0RM/uiwxhnDQH/CUyYMrZFRL0aOUoc0vnKsJa69M5dvzvQRYAy37wHl
-	Pr+33+V5M6WeB/nBktPzS/Ow3nTxdIGkZcVMuPSfITkwCc5QVAJ36I+rIfaWzuHN
-	ngsWlQ==
-Received: from mail-qt1-f198.google.com (mail-qt1-f198.google.com [209.85.160.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hxhkw8m4m-1
+	YL2RS/EwYR3+hEcQENBxnWZjthmJZRl0ABwUqhJFCt8=; b=TiRrdehl1Ylx9RcY
+	6YIFYoGiEW2QVqG7BnkgFMNM9oJhm3vVlx8qvrgH15tRMURS6lbT6c3X3eukLsbu
+	2BzvbzThDkxg5/tzX3NjvsmqtUtabJON9Ipl48fN9ltuNMogfZEhEJAVlsJUGyXu
+	5rkTWZMc6XSHxqNrOkfJ0NwshHLOKq+Qkqoa+oRoRPp5czOhK5c0niHWflDvgcSt
+	ibr84UDz4qiTHiFzeUYrB2yLONDQHbbyA8wBW9pASQKl+g46bZ+NjnUjYvZzikEn
+	YcoUkfVc8d8VceZ+su2Qf2wybFTpSL3PcBFPzezUe1I6EydVKfKs4b1R2Isn3hGc
+	ozUoHw==
+Received: from mail-qv1-f70.google.com (mail-qv1-f70.google.com [209.85.219.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hxhm8rm3t-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Sat, 14 Nov 2026 11:32:56 +0000 (GMT)
-Received: by mail-qt1-f198.google.com with SMTP id d75a77b69052e-54af6c38092so20318831cf.0
-        for <linux-phy@lists.infradead.org>; Sat, 14 Nov 2026 03:32:56 -0800 (PST)
+	for <linux-phy@lists.infradead.org>; Sat, 14 Nov 2026 11:33:05 +0000 (GMT)
+Received: by mail-qv1-f70.google.com with SMTP id 6a1803df08f44-91c6c1e082bso51103206d6.0
+        for <linux-phy@lists.infradead.org>; Sat, 14 Nov 2026 03:33:04 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794655976; x=1795260776; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1794655984; x=1795260784; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=u4Oly2ccZ0M2EddE7iLjGix5zbXSWGoTjOlAUxiJPBQ=;
-        b=OurNZyrP7EvZuZayZKiV+BV2q7z1WKpGInc1B1ujrn2BOsrqALymv6OCdoJ8wlU+Rp
-         BkYJ6lYk8Ye079YlYshklOiltjHeU5ENr+Wrm+5NT2nP/Fa8O1/4uGh+pSN74AjBkY6X
-         yZnPKxEd0UnIi1wWelSw4HqPpopVAGU91L2+XDqvt3GbA4z5lhlpIjySQG6LrbLIAEDa
-         hit5lNn43MEkz/r1aEC5rHymg/r5rZxqsOxSCME7FEeAJKLvw8K/DOqdu3iXA0x13N8S
-         z7Eoml1Su1hcEt/vgLe5I8gRoD7MmsvAJcDShFsn+wW3J22Llf6gcrbin4a5t9581g5J
-         X9Ig==
+        bh=YL2RS/EwYR3+hEcQENBxnWZjthmJZRl0ABwUqhJFCt8=;
+        b=BvK+MacESuXnkTTdL6Zi0aJuLgwt6ve4aCL4WekwGAzCK+E+qWRqZHADIhVLDeL9uy
+         nHY7PV8lMetVDXuooppv9WL3Ges0DxUE05Nn1OPSGpSHBQjkWlxeyt9DS2rlgjxgpNIR
+         I/aLBW6qEXLrS42xLm3I/TNRxEoZ7yn8IzRVbaLN1yuds1AADgmwkddHany3E96icxGB
+         p0SCLx3G+bThBdJySQtZb8YgkIH/6+qRqbIckSRpG9qrdWFExDCUcFopwLUFt/YLfTJT
+         Vq3UIT/kf5XIeLJn433VDRJbKz9kiPuD/a6rbcNPpY7O+BjlQVEdAMrrgh24gVAn0UHu
+         GdvQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794655976; x=1795260776;
+        d=1e100.net; s=20260707; t=1794655984; x=1795260784;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=u4Oly2ccZ0M2EddE7iLjGix5zbXSWGoTjOlAUxiJPBQ=;
-        b=qCMr3x7crLD7mqiOFWD+h/s699dWRZhYSoxyu4yRSF9NxragpbjCEqulm8x6D8YUOe
-         86Fjb9WbzUk/I9lZ0FRznwzfEry0GS5lUHPkxiJBLWeJnvZ2katN2g7lnNsGsuSSgDrU
-         YmaVrJf2GSoWhPF7G24rDygZkETZJsu7ELZj5utIFS3arQyei+OITjP0g5Ku3FzwSeXB
-         eDfuyyzXemu5c/ZBTMunrekY8pdhqSGBm2RkYhVZia8Gij8Nzc2F//bnSaERkGyFSma0
-         JGdvEwp1uyoGOHwccTrVlGHQtvnqy8W1aVDLl9xLASa+8OIRuu5iiPqE067L7Wumin9N
-         e3vA==
-X-Gm-Message-State: APuU4Z9GL0sZYsGDCrCMJDsU3wWvApl4HgooEHzPtf7O9BFqIbrppu/R
-	jl5HNt+WL3xivFh0GEtG/Igx6rHQnNtI1YyijnTaIVo/kXEr3Z0a6BRXGkJ5Z2KVAN3Vxby6Xhg
-	Pm4+Fav5zFhhD6j97kP0G3rpaiSA4SqmWQh02iCK/uSq2pQGk3Xt0/7uI9SF+nAcrIEGo
-X-Gm-Gg: AYBFou3hjvKGGUs8WcI8ln5Yk4xzmp9KJo9s6nZNet9ID4fY8bp9aw5zIGbeb6zAisY
-	qWDBn4L8epFB/9iZDhqywGzsTnERsY8OAdFsolohwbh+3i3Acc7XpBOv3yEXTBHEi4gQz3zcCmB
-	qnKRSjldLcxl3zzy9lmYknscSaUQ7m9u0HEoARjh9SwbNKu07bQ+UG7x9KOP1Rycc0+P/67g2S6
-	aAjRCfrQOpu8bL0PzvlCUJxAOUiCWc1eGaiww1UjNO4OPvvK89bGVFnwNYyLygLPn86oARBI3d0
-	j4XWi8ZgELfuLW3btcDymnt+1imlqido78EibVwDYMWpNH0EG9PljRUaANFLgH4nkrg5904rOtg
-	JMf2lFU3jAJXvQa8r9su9YYQpH5+T8MFfsJW1neCRvAL75ZYASl+el1QG0b4mO6Q1LpX3yGJRdU
-	hbUJRVY1m0lMUpp+acv0VUQGU67pLM0uIyMxWhj7t6
-X-Received: by 2002:ac8:5ad3:0:b0:536:3600:f0af with SMTP id d75a77b69052e-55ac4287a80mr83819671cf.7.1794655975593;
-        Sat, 14 Nov 2026 03:32:55 -0800 (PST)
-X-Received: by 2002:ac8:5ad3:0:b0:536:3600:f0af with SMTP id d75a77b69052e-55ac4287a80mr83819451cf.7.1794655975113;
-        Sat, 14 Nov 2026 03:32:55 -0800 (PST)
+        bh=YL2RS/EwYR3+hEcQENBxnWZjthmJZRl0ABwUqhJFCt8=;
+        b=H+41C6kCpUwmng8ncvtW9DfTgs7h3a1jmGhGYYWRb8i1rRsb8OvWBDKfvCNNSeBui6
+         0HBqYFiQGsagl8P65/lK1JLfZTcZUz8XAHKJIB2DQODs2EwR4rTOva78X7kopu4toDOf
+         nOPJtOsYnHxO48H+jpYQBEyFY9Tfy82YQR8ao/DzwsHc4+nOj13S0hpOW3i/InJexir5
+         s61fV+1HU5QR5obI7sRRDo2WvbHrMAoB+FyepYy9vVq3z/9snZuV1SF0iyS1Nl/VQYBr
+         i7A4lIXoQDJQtYzMQA9oihYbzKWUlLFUYnSYpH2i0iAbYk3foTU5XfOURoZ9JUBabdyq
+         ZBGQ==
+X-Gm-Message-State: APuU4Z+7vb+9S9F+11oVB3mkjWX0cpizABZIHbc1n+TDI2FwzNMD1Df8
+	BkZvL9yy4GswEdK4vHbreZ8NfjokfTmaUa5hfy19tmDjNTznuxIPXiY03g4sxg6ACwUbhiqlMc4
+	bM9+QJETrRVeDzX4yFWIhNlcOw8o8SSweKS5SAr1N282veE/0/X4Xxu7CZIBv1NwyMAlQ
+X-Gm-Gg: AYBFou2jWzX2AwTThn1ZBj+VJ0ESQDwh852kRGnRyr8IMkiCvSiB/x8iA2jSPjPW7Zx
+	MYUZsmz68NQJiUFUxrZYbZEykhWKqESzaJB7PzAjr6wMRyED0PfddC6HL40Pwe8FVEBLCGkB3yD
+	9GB06pPcAocQZH+Tsrwkrda750GrWIRHB493fdZgdyXzZ5Ufl/i7DELC+TiU1TQwY1jcaDxUZu4
+	+zOpXsu8WTPviwapgdHUs3lNpGvUQj59dBw4nos1ueSZbZsHFMUjx6gj/JCluhQtdfZfKqBQOnt
+	P+dTOPEJivic+AMWdLkFQEpM+JVmPkdrE7J6gJSdCOPtvjmmVeXm4wXKf30J0EokcRIa5cH/IxB
+	IxTYQ8y91Fzztg1K/JykBUvUFlGanm04pwt4jiOVhyL2OPf1GU+zL4lV0xPy5pX23vqEwwIl2ZT
+	FI+NuHRPZBLmQbbM8I7bxo2vkjFpAPRHbFmlr7Ni1H
+X-Received: by 2002:a05:6214:840d:b0:91f:3063:6b2f with SMTP id 6a1803df08f44-91f30636b51mr36968646d6.17.1794655984205;
+        Sat, 14 Nov 2026 03:33:04 -0800 (PST)
+X-Received: by 2002:a05:6214:840d:b0:91f:3063:6b2f with SMTP id 6a1803df08f44-91f30636b51mr36968476d6.17.1794655983761;
+        Sat, 14 Nov 2026 03:33:03 -0800 (PST)
 Received: from WENMLIU-LAB01.ap.qualcomm.com (Global_NAT1_IAD_FW.qualcomm.com. [129.46.232.65])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-91f23d7ba48sm41389746d6.28.2026.11.14.03.32.46
+        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-91f23d7ba48sm41389746d6.28.2026.11.14.03.32.55
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 14 Nov 2026 03:32:54 -0800 (PST)
+        Sat, 14 Nov 2026 03:33:03 -0800 (PST)
 From: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>
-Date: Sat, 14 Nov 2026 19:29:38 +0800
-Subject: [PATCH v7 21/23] arm64: dts: qcom: eliza-mtp: Add PM8010 PMICs
+Date: Sat, 14 Nov 2026 19:29:39 +0800
+Subject: [PATCH v7 22/23] arm64: dts: qcom: eliza-mtp: Enable rear camera
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261114-add-support-for-camss-on-sm8750-v7-21-8ff2a11835f6@oss.qualcomm.com>
+Message-Id: <20261114-add-support-for-camss-on-sm8750-v7-22-8ff2a11835f6@oss.qualcomm.com>
 References: <20261114-add-support-for-camss-on-sm8750-v7-0-8ff2a11835f6@oss.qualcomm.com>
 In-Reply-To: <20261114-add-support-for-camss-on-sm8750-v7-0-8ff2a11835f6@oss.qualcomm.com>
 To: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
@@ -119,43 +119,44 @@ Cc: linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
         linux-kernel@vger.kernel.org, linux-i2c@vger.kernel.org,
         Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1794655774; l=6334;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1794655774; l=2795;
  i=wenmeng.liu@oss.qualcomm.com; s=20250925; h=from:subject:message-id;
- bh=qEA/VOZEPJj9FtavWPFngGillqdti7IGX6O1SVnmft0=;
- b=kbxzQ1RziT+LGmz0Ob2zzYDFbcTHIesR5ElhBnfStyGUmFJukhp8flA+Wb/U16I6rVwR92MUq
- 6B2Ut4Cu1vVAMopCz/TUd+3A6BK9sBSnBYOoZNcxME7KAFxLrl1JsUY
+ bh=PKU2g+Gn2vrHlq+OzzzbhEEMcvvxoyv/Dn/4YmbMkgI=;
+ b=2qvCfPYV852R9Ur2umoTPGPZuJY4yAANvplFo8GtuVfDjHfTDbxh2tPABEDx/HzDAJfOd8fSU
+ MGwAXRdCf7yCYhfMK3HpmRDfYxqVjRhoA3hSZSB8yJNmnaA8Ej+/Mb3
 X-Developer-Key: i=wenmeng.liu@oss.qualcomm.com; a=ed25519;
  pk=fQJjf9C3jGDjE1zj2kO3NQLTbQEaZObVcXAzx5WLPX0=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE0MDA0NSBTYWx0ZWRfXwy9SKhN+noDJ
- c8k9pALFgJz4UaWn6dEGvtOAzhKPAnKlw5FH/bJZ2tHSZTmOrbzqWllWFMLcw+he775xXh7wrFL
- 9Lu7WmUgiZZjqykQx/dPLjqWJIIrs+eDQwC0VjJ3lidt9kqJF9CSYo4egp1AWexzEbJpOTPNfCS
- Z8cAx10TlW3J1qypjmdJ6ypr9ATdRDLM5ndk/PTJKEqTx9YlP8Z8sEh+r3pnBVoyi2dEFPrifqT
- KRhpqGtNWDQNOrfmLlqnuxXiqwXfgfdftu/OnThPINydaYrDDhzSB1sGmOrMuCMPZTFMcJAC9/+
- +LBZGQ1pLI0P9OVsPOd9sADTig2OeRP2bQa7dkAgs1KBzrpszDBrtyEcK/kNWdwR+UONTadrn04
- lNmo674CV9ACnwHCvLVaf/uYTQIRbL+BJY7YCohlOrE3woujhnaRN73qe4U/NTojoRmWrOgaeZ8
- YsEtMjbL4Lo+2o1qYEQ==
-X-Authority-Analysis: v=2.4 cv=YPYKWhGx c=1 sm=1 tr=0 ts=6af846e8 cx=c_pps
- a=mPf7EqFMSY9/WdsSgAYMbA==:117 a=C3Dk8TwHQYyIj7nOf9RCJw==:17
+X-Authority-Analysis: v=2.4 cv=ItKL47/g c=1 sm=1 tr=0 ts=6af846f1 cx=c_pps
+ a=oc9J++0uMp73DTRD5QyR2A==:117 a=C3Dk8TwHQYyIj7nOf9RCJw==:17
  a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
- a=EUspDBNiAAAA:8 a=THGDsv6KT5CLo26r1dMA:9 a=QEXdDO2ut3YA:10
- a=dawVfQjAaf238kedN5IG:22
-X-Proofpoint-GUID: UDzw5zGFc8DQf3KRTLI_q2tAp_l19GhD
-X-Proofpoint-ORIG-GUID: UDzw5zGFc8DQf3KRTLI_q2tAp_l19GhD
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE0MDA0NSBTYWx0ZWRfX2TaAo/SgRWps
- KIGKh/TRCxRVXOiijCjkjbT4BVcQ5K4/qn5oZ+vOM8GDK/cy6l9slYdBsr7Htrmwhuu99O4fo86
- deMygF9OghXOpkBJpzapxc0art1YyU0=
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22
+ a=EUspDBNiAAAA:8 a=2OLIcDlHICjy9cVqpt0A:9 a=QEXdDO2ut3YA:10
+ a=iYH6xdkBrDN1Jqds4HTS:22
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE0MDA0NSBTYWx0ZWRfXwRZvd74YLY1q
+ RUnzeHN32jHdKRM1ne5+9EYgKl1NxtHq5BZwvuTTq3APaNZSGVsTUNTPm21+zd7c4JFzDVpZbPp
+ q5IM9OMttsUQo1LODdhFklf/KJYGDVc=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE0MDA0NSBTYWx0ZWRfX5b5AH/t7mWSI
+ 2mm0LK77Ta/CAa/Lxs7V20NdRxF4LoalvZeCTpOuiEx2sQjBiSTxQRrEeoVenWuF1cEY0MgHP0O
+ LZRSl7+PZEzSgHBgxbKJnH0xBx7LHFSmDeSN4M6VpY7coTXGkUuKBiaBpU2mWEumJj2IIq2MOsS
+ JAYFXYJrY1gJBOFK0wpjHlantk1hnBg6K8odkFtUftD4aIPgVGmAE1moDLiyI/sFfoYwhUXdDZM
+ 2z14yVdH3vs45xz/N0skGCYS456Evljdw40/y47hKv62em5zuDYrgEia/+nCSIBPMW4NiaiiCeR
+ ZngUt8kalNoyAE2NzUGpfk+RGUy+c50y36nvKav1Kyp2kBe5dCOgzFlMa9Jsl5cpcjUZOzRWKyd
+ ZfeRK8dhnFPGDPRXsKLJegGZtPSyJTbbMdP1SB56FxsTty16dTb01HrvC0pzTtkTa3MPxPm25Z4
+ nKapEvx5MFz5g0QD6wg==
+X-Proofpoint-ORIG-GUID: u_jCoznJqRMNuJ5MdoJ8y2Llod8SBuyD
+X-Proofpoint-GUID: u_jCoznJqRMNuJ5MdoJ8y2Llod8SBuyD
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-14_03,2026-11-11_03,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 suspectscore=0 clxscore=1015 spamscore=0 adultscore=0
- lowpriorityscore=0 impostorscore=0 phishscore=0 bulkscore=0 malwarescore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611140045
+ clxscore=1015 spamscore=0 adultscore=0 malwarescore=0 suspectscore=0
+ priorityscore=1501 lowpriorityscore=0 phishscore=0 impostorscore=0
+ bulkscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.22.0-2611040001
+ definitions=main-2611140045
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261114_033257_377573_D76ADF59 
-X-CRM114-Status: GOOD (  14.45  )
+X-CRM114-CacheID: sfid-20261114_033306_380986_035CC5F5 
+X-CRM114-Status: GOOD (  12.53  )
 X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -176,237 +177,115 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-The Eliza MTP carries two PM8010 PMICs (IDs "m" and "n") that supply the
-camera rails. Add the pm8010-eliza.dtsi describing both PMICs and their
-thermal zones, and instantiate their RPMh regulators on the MTP.
+Enable the rear camera on the Eliza MTP: a Samsung S5KJN1 on CCI1 I2C
+bus 0, connected to CSIPHY2 over four data lanes. The sensor takes MCLK2
+at 24 MHz, is powered from the PM8010 regulators added in the previous
+patch and is reset through GPIO125.
+
+Also enable CAMSS, CSIPHY2 and CCI1.
 
 Signed-off-by: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>
 ---
- arch/arm64/boot/dts/qcom/eliza-mtp.dts     | 116 +++++++++++++++++++++++++++++
- arch/arm64/boot/dts/qcom/pm8010-eliza.dtsi |  81 ++++++++++++++++++++
- 2 files changed, 197 insertions(+)
+ arch/arm64/boot/dts/qcom/eliza-mtp.dts | 72 ++++++++++++++++++++++++++++++++++
+ 1 file changed, 72 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/qcom/eliza-mtp.dts b/arch/arm64/boot/dts/qcom/eliza-mtp.dts
-index ee05192adcfb9f79cba59f11001b640a8572cc91..af7450fa2020d29a4ce98eb958dabd0cd8c61860 100644
+index af7450fa2020d29a4ce98eb958dabd0cd8c61860..cd14b44cf0aef33a7939075949916d054cd77659 100644
 --- a/arch/arm64/boot/dts/qcom/eliza-mtp.dts
 +++ b/arch/arm64/boot/dts/qcom/eliza-mtp.dts
-@@ -12,6 +12,7 @@
+@@ -6,6 +6,7 @@
+ /dts-v1/;
  
- #include "pm7550ba-eliza.dtsi"
- #include "pm7550-eliza.dtsi"
-+#include "pm8010-eliza.dtsi"
- #include "pm8550vs-d-eliza.dtsi"
- #include "pm8550vs-g-eliza.dtsi"
- #include "pmr735d-eliza.dtsi"
-@@ -420,6 +421,121 @@ vreg_l7k: ldo7 {
- 			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
- 		};
+ #include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/media/video-interfaces.h>
+ #include <dt-bindings/pinctrl/qcom,pmic-gpio.h>
+ #include <dt-bindings/regulator/qcom,rpmh-regulator.h>
+ #include "eliza.dtsi"
+@@ -538,6 +539,70 @@ vreg_l7n: ldo7 {
  	};
-+
-+	regulators-4 {
-+		compatible = "qcom,pm8010-rpmh-regulators";
-+
-+		vdd-l1-l2-supply = <&vreg_s2b>;
-+		vdd-l3-l4-supply = <&vreg_bob>;
-+		vdd-l5-supply = <&vreg_s1b>;
-+		vdd-l6-supply = <&vreg_bob>;
-+		vdd-l7-supply = <&vreg_bob>;
-+
-+		qcom,pmic-id = "m";
-+
-+		vreg_l1m: ldo1 {
-+			regulator-name = "vreg_l1m";
-+			regulator-min-microvolt = <1104000>;
-+			regulator-max-microvolt = <1104000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l2m: ldo2 {
-+			regulator-name = "vreg_l2m";
-+			regulator-min-microvolt = <1056000>;
-+			regulator-max-microvolt = <1056000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l3m: ldo3 {
-+			regulator-name = "vreg_l3m";
-+			regulator-min-microvolt = <2800000>;
-+			regulator-max-microvolt = <2800000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l4m: ldo4 {
-+			regulator-name = "vreg_l4m";
-+			regulator-min-microvolt = <2800000>;
-+			regulator-max-microvolt = <2800000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l6m: ldo6 {
-+			regulator-name = "vreg_l6m";
-+			regulator-min-microvolt = <2800000>;
-+			regulator-max-microvolt = <2800000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l7m: ldo7 {
-+			regulator-name = "vreg_l7m";
-+			regulator-min-microvolt = <2800000>;
-+			regulator-max-microvolt = <2800000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+	};
-+
-+	regulators-5 {
-+		compatible = "qcom,pm8010-rpmh-regulators";
-+
-+		vdd-l1-l2-supply = <&vreg_s2b>;
-+		vdd-l3-l4-supply = <&vreg_s1b>;
-+		vdd-l5-supply = <&vreg_s1b>;
-+		vdd-l6-supply = <&vreg_bob>;
-+		vdd-l7-supply = <&vreg_bob>;
-+
-+		qcom,pmic-id = "n";
-+
-+		vreg_l1n: ldo1 {
-+			regulator-name = "vreg_l1n";
-+			regulator-min-microvolt = <1104000>;
-+			regulator-max-microvolt = <1104000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l2n: ldo2 {
-+			regulator-name = "vreg_l2n";
-+			regulator-min-microvolt = <1056000>;
-+			regulator-max-microvolt = <1056000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l3n: ldo3 {
-+			regulator-name = "vreg_l3n";
-+			regulator-min-microvolt = <1800000>;
-+			regulator-max-microvolt = <1800000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l4n: ldo4 {
-+			regulator-name = "vreg_l4n";
-+			regulator-min-microvolt = <1800000>;
-+			regulator-max-microvolt = <1800000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l5n: ldo5 {
-+			regulator-name = "vreg_l5n";
-+			regulator-min-microvolt = <1800000>;
-+			regulator-max-microvolt = <1800000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l6n: ldo6 {
-+			regulator-name = "vreg_l6n";
-+			regulator-min-microvolt = <2800000>;
-+			regulator-max-microvolt = <2800000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l7n: ldo7 {
-+			regulator-name = "vreg_l7n";
-+			regulator-min-microvolt = <3304000>;
-+			regulator-max-microvolt = <3304000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+	};
  };
  
++&camss {
++	status = "okay";
++};
++
++&camss_csiphy2_in_port {
++	camss_csiphy2_inep: endpoint {
++		data-lanes = <1 2 3 4>;
++		remote-endpoint = <&csiphy2_out_ep>;
++	};
++};
++
++&cci1 {
++	status = "okay";
++};
++
++&cci1_i2c0 {
++	camera@56 {
++		compatible = "samsung,s5kjn1";
++		reg = <0x56>;
++
++		reset-gpios = <&tlmm 125 GPIO_ACTIVE_LOW>;
++		pinctrl-0 = <&cam_mclk2_default &cam2_reset_default>;
++		pinctrl-names = "default";
++
++		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK2_CLK>;
++		assigned-clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK2_CLK>;
++		assigned-clock-rates = <24000000>;
++
++		vdda-supply = <&vreg_l4m>;
++		vddd-supply = <&vreg_l2m>;
++		vddio-supply = <&vreg_l5n>;
++
++		port {
++			s5kjn1_out_ep: endpoint {
++				data-lanes = <1 2 3 4>;
++				link-frequencies = /bits/ 64 <700000000>;
++				remote-endpoint = <&csiphy2_in_ep>;
++			};
++		};
++	};
++};
++
++&csiphy2 {
++	vdda-0p9-supply = <&vreg_l2b>;
++	vdda-1p2-supply = <&vreg_l4b>;
++
++	status = "okay";
++};
++
++&csiphy2_in_port {
++	csiphy2_in_ep: endpoint {
++		bus-type = <MEDIA_BUS_TYPE_CSI2_DPHY>;
++		clock-lanes = <0>;
++		data-lanes = <1 2 3 4>;
++		remote-endpoint = <&s5kjn1_out_ep>;
++	};
++};
++
++&csiphy2_out_port {
++	csiphy2_out_ep: endpoint {
++		remote-endpoint = <&camss_csiphy2_inep>;
++	};
++};
++
  &gpu {
-diff --git a/arch/arm64/boot/dts/qcom/pm8010-eliza.dtsi b/arch/arm64/boot/dts/qcom/pm8010-eliza.dtsi
-new file mode 100644
-index 0000000000000000000000000000000000000000..7fe414970b27c483706c86491c4db124bdeed43e
---- /dev/null
-+++ b/arch/arm64/boot/dts/qcom/pm8010-eliza.dtsi
-@@ -0,0 +1,81 @@
-+// SPDX-License-Identifier: BSD-3-Clause
-+/*
-+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-+ */
-+
-+#include <dt-bindings/interrupt-controller/irq.h>
-+#include <dt-bindings/spmi/spmi.h>
-+
-+/ {
-+	thermal-zones {
-+		pm8010-m-thermal {
-+			polling-delay-passive = <100>;
-+
-+			thermal-sensors = <&pm8010_m_temp_alarm>;
-+
-+			trips {
-+				trip0 {
-+					temperature = <95000>;
-+					hysteresis = <0>;
-+					type = "passive";
-+				};
-+
-+				trip1 {
-+					temperature = <115000>;
-+					hysteresis = <0>;
-+					type = "hot";
-+				};
-+			};
-+		};
-+
-+		pm8010-n-thermal {
-+			polling-delay-passive = <100>;
-+
-+			thermal-sensors = <&pm8010_n_temp_alarm>;
-+
-+			trips {
-+				trip0 {
-+					temperature = <95000>;
-+					hysteresis = <0>;
-+					type = "passive";
-+				};
-+
-+				trip1 {
-+					temperature = <115000>;
-+					hysteresis = <0>;
-+					type = "hot";
-+				};
-+			};
-+		};
-+	};
-+};
-+
-+&spmi_bus0 {
-+	pm8010_m: pmic@c {
-+		compatible = "qcom,pm8010", "qcom,spmi-pmic";
-+		reg = <0xc SPMI_USID>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		pm8010_m_temp_alarm: temp-alarm@2400 {
-+			compatible = "qcom,spmi-temp-alarm";
-+			reg = <0x2400>;
-+			interrupts = <0xc 0x24 0x0 IRQ_TYPE_EDGE_BOTH>;
-+			#thermal-sensor-cells = <0>;
-+		};
+ 	status = "okay";
+ };
+@@ -657,6 +722,13 @@ &tlmm {
+ 			       <111 2>,  /* WCN UART1 */
+ 			       <118 1>;  /* NFC Secure I/O */
+ 
++	cam2_reset_default: cam2-reset-default-state {
++		pins = "gpio125";
++		function = "gpio";
++		drive-strength = <2>;
++		bias-disable;
 +	};
 +
-+	pm8010_n: pmic@d {
-+		compatible = "qcom,pm8010", "qcom,spmi-pmic";
-+		reg = <0xd SPMI_USID>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		pm8010_n_temp_alarm: temp-alarm@2400 {
-+			compatible = "qcom,spmi-temp-alarm";
-+			reg = <0x2400>;
-+			interrupts = <0xd 0x24 0x0 IRQ_TYPE_EDGE_BOTH>;
-+			#thermal-sensor-cells = <0>;
-+		};
-+	};
-+};
+ 	disp0_reset_n_active: disp0-reset-n-active-state {
+ 		pins = "gpio12";
+ 		function = "gpio";
 
 -- 
 2.34.1
