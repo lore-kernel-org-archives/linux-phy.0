@@ -2,10 +2,10 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 71A9B606A32C
-	for <linux-phy@archiver.kernel.org>; Sun, 15 Nov 2026 19:45:28 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BB5DC606A323
+	for <linux-phy@archiver.kernel.org>; Sun, 15 Nov 2026 19:48:06 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Z1AJLMQ7
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=sWH67tFW
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -13,50 +13,55 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Cc:To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=g+5eTfeIQXVG+DOkIGwYoTW8EcXFH2WrkI7ExzPylO4=; b=Z1AJLMQ7NX8QCHVhvRbo+KsuMp
-	mgEWc7a01I9iQjsAvwJ2cZvs3Dxiqj69xphOBsbn9ceGcV2xiJV0aQdhPcGv6OTCJ9Uo6HMmPA1BZ
-	rdjCbfBW9zPtynXjo0wbLpgju5oATCUCJhOlDWFgaUfd5NY2DeqEWQF49gDprYn2P1x2kLyUMHyGb
-	ajqhMvkPWxP5MvZQNO/NwiAG91deBQSTLEs/KJuBU+p6DKdZrg/gI/yu2PsPAyVeDLgTdGYZZfNMy
-	wFhOZ4ifDe/KX19P/grdLwbrJxBToF9CDXELs07v2wUh0/nflZpRHvx91H8DmxYjsWYg/U8Ml/w9m
-	QhBQBjQw==;
+	bh=fMraKBPxl/V1Kwk3AY2x8dVUCwXIGJl2E1vF44FG8i0=; b=sWH67tFWDdc+wls9z++ixyFsjQ
+	URpKuXoTuvPT8A1G5swrgTouX6wUGMW7ZkZzqUNZHMdYTFp0huo8R9hVzg4KCIG8oYZTsl888pfTZ
+	GVctypUEdbgDR0V6UUE9gqbhNQMCe1rI189fOcOfSBxLUlwigP40AxQpd332PN2azdD7l63TXEiBp
+	7I9mHa428TRRs/EleGXVEXXQLTAKKtbV+QxnSxMeU/iT0LSrLhnzCRQZrcTniLOk35M0yZr/QpmHs
+	xv6pzFcGPhZvE+ZPcEOoZN/OudMw8pZzYRJacYPt5j1vVaXn0+Nn+1PNf/zw1D2lBZ021nMywgwqr
+	1LVQooHw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSgAK-00000000Odj-0mCo;
-	Sun, 15 Nov 2026 19:45:28 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xSgCs-00000000OgN-218B;
+	Sun, 15 Nov 2026 19:48:06 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSgAI-00000000Odd-0lad
-	for linux-phy@lists.infradead.org;
-	Sun, 15 Nov 2026 19:45:26 +0000
+	id 1xSgCq-00000000OgD-1P9H;
+	Sun, 15 Nov 2026 19:48:04 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 2AD00609E0;
-	Sun, 15 Nov 2026 19:45:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F2F321F000C4;
-	Sun, 15 Nov 2026 19:45:22 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 8D71242A31;
+	Sun, 15 Nov 2026 19:48:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E601E1F000C4;
+	Sun, 15 Nov 2026 19:47:58 +0000 (UTC)
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Subject: Re: [PATCH v2] phy: qcom: qmp-combo: update offsets table for
- x1e80100
+Subject: Re: [PATCH v3 2/2] phy: rockchip: snps-pcie3: Load updated PHY
+ firmware on RK3568
 From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-To: Tapas Rana <tapas.rana@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, linux-arm-msm@vger.kernel.org, 
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Prashanth K <prashanth.k@oss.qualcomm.com>
-In-Reply-To: <20261030105515.1948430-1-tapas.rana@oss.qualcomm.com>
-References: <20261030105515.1948430-1-tapas.rana@oss.qualcomm.com>
-Date: Sun, 15 Nov 2026 11:45:19 -0800
-Message-Id: <179477191938.132702.13137454785343235801.b4-reply@b4>
+To: Shawn Lin <shawn.lin@rock-chips.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Rob Herring <robh@kernel.org>, 
+ linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org, 
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, devicetree@vger.kernel.org, 
+ Samuel Holland <samuel@sholland.org>, Coia Prant <coiaprant@gmail.com>, 
+ Diederik de Haas <diederik@cknow-tech.com>
+In-Reply-To: <20261102015236.3844843-3-shawn.lin@rock-chips.com>
+References: <20261102015236.3844843-1-shawn.lin@rock-chips.com>
+ <20261102015236.3844843-3-shawn.lin@rock-chips.com>
+Date: Sun, 15 Nov 2026 11:47:55 -0800
+Message-Id: <179477207586.132702.13681064910468775977.b4-reply@b4>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=762;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=970;
  i=manivannan.sadhasivam@oss.qualcomm.com; h=from:subject:message-id;
- bh=JRUjBJXo+GEfXop0V8NK49VdWI5pwUUQAk7AQE3FkZI=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq+gvSBpFntFsicBl+nr7S2MAtRjt2KJYNvqFG+
- w3g9FVDOrmJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCavoL0gAKCRBVnxHm/pHO
- 9ZmaB/4naZcfHpZ/Es4f1bIYGrXJ3XitoD9kofj9bvPqgNF6RQ3gAPeolQ7LocGLtU283VAoq7c
- C5dQLqw/MRpBbMMc9YDng5pbJdfN4A5vFQUKbl/z9xPysJ5YZV6zeChF2YjOxLsSjngtFIMElJp
- QlgqvhyOhI+InOajCpKgXRor3+9MHeYm1XrQRQEGDgivUXQOL+MNhHg8RBzOCQfX4sDCuywPxOY
- /zYQcJYPg++RaItUjdftoHMfFVO/KmfykWQkD22I7GpZVqvTOfZRDXynratNmhosHWX4zREkAGv
- ueu6kO13e6gv7FYFnwTCQhbI4fTRB4ZY/7X1uCNc9pD+7yZm
+ bh=z/N/KYzBmLjuxTwfXJmOo9VDU3z5rXYJ+jtGgfky3h0=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq+gxut/r6n3u62ciaAfiwxlRF0b6JJ70NZiftb
+ LSnxtljYFWJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCavoMbgAKCRBVnxHm/pHO
+ 9ezLB/9RZF95g86QTd7xNdk6G43WKTX15whkytnIDCXmLFPMRLeT4K57mh7aOe8/FXyiU3JWpjg
+ 1rY0kOVv5tr5H/tGlS6bsLRon6IWvaS/JDPLjSzd7is/0T2kAdS03VztgC/CDyE5zxFScaKx4R3
+ ssJ9B+OStoKXIIZp//fSlQeLi7V35NLEHcEbBoTc13PnL7dmAULGUnRrf4vU3MlneWSF9TEoRmn
+ WewmI+sVdttKYUnwPfACf9Q6sd0BmR62e2gpP3aYwkikMIHyAbbk3FOJU0XwJVzJr/w30QT2ZIU
+ iQpFEeCfMj/0yo1xErbV2pTxuWzGC1jkroOvmtnG4SB8pQt/
 X-Developer-Key: i=manivannan.sadhasivam@oss.qualcomm.com; a=openpgp;
  fpr=C668AEC3C3188E4C611465E7488550E901166008
 X-BeenThere: linux-phy@lists.infradead.org
@@ -78,24 +83,27 @@ X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 2026-10-30 16:24 +0530, Tapas Rana wrote:
-> x1e80100_usb3dpphy_cfg uses qmp_v6_n4_usb3phy_regs_layout, which
-> places QPHY_PCS_CLAMP_ENABLE in the PCS_AON register space. However,
-> it uses qmp_combo_offsets_v5 currently, which does not define the
-> usb3_pcs_aon region. As a result, qmp->pcs_aon is not mapped and
-> autonomous mode falls back to pcs_misc for clamp control.
+On 2026-11-02 09:52 +0800, Shawn Lin wrote:
+> The RK3568 PCIe3 PHY can load an updated firmware into its internal
+> SRAM during initialization. Without it the PHY may come up with a stale
+> microcode and fail to establish a stable link.
 > 
-> Add a dedicated USB3+DP V6 offsets table with usb3_pcs_aon included
-> and use it for x1e80100_usb3dpphy_cfg so clamp control is performed
-> through the correct PCS_AON register space.
+> Load the firmware named by the optional firmware-name DT property during
+> probe, so that it is available in the phy_init() context and is not read
+> from the filesystem on every init. During initialization, clear SDRAM
+> load done and bypass, wait for the SRAM to lock, map the SRAM into the
+> register window, write the firmware and finally signal SDRAM load done.
 > 
-> Signed-off-by: Tapas Rana <tapas.rana@oss.qualcomm.com>
-
-Missing Fixes tag. With that,
+> The firmware is optional: when firmware-name is absent (older DTBs) or
+> the file cannot be loaded, the driver keeps the behaviour unchanged and
+> uses the microcode already present in the PHY.
+> 
+> Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
 
 Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 
 - Mani
+
 
 
 -- 
