@@ -2,112 +2,112 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B0265606A31A
-	for <linux-phy@archiver.kernel.org>; Sun, 15 Nov 2026 12:16:17 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3BF84606A31A
+	for <linux-phy@archiver.kernel.org>; Sun, 15 Nov 2026 15:48:18 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=D8YO+Slj;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=linaro.org header.i=@linaro.org header.a=rsa-sha256 header.s=google header.b=LmJV4DVp
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=f+2C9IOd;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=KrZOaIhM
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version
+	:Subject:Date:From:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=i0mPtiMQUv1vnhlAF63rXtbmujDLs1ukRJpnOl7v0JU=; b=D8YO+SljH2s1Lnwed1/AblRxz5
-	QGcAjWtdP1Vm0qbO5Rj/Tdv84mb2YXH8yPDAA4HmnY/XRYOMo4/r7G0cxSG3DGIObZctJSGMhv3+R
-	Ztre/uBN9/rzDZGge28bgkouy3P9tXX3AQJ5QuNBxQ9l94Bdms7uw5Ile7TcX1UHz54yMHEoITdTt
-	kvQLs0fRUZpex/YTu9unNWBFHITLbATFaKBHOOCQf4KPXlu6ID+okWktUvfFBB9cBx/DM02FVngJx
-	4sHWFWTG7PqbV3we6yuPiI5IoZUT02HNPmHALsAHO1LcQ91dZ6WH6YXNDIFgiZlHjvG1h6hPMDco+
-	C5bVg2Bw==;
+	bh=0xb7n3aeSsGb1oMFgKEo/jutLLgZ4kvG1OyDeG6Qq1k=; b=f+2C9IOd4q1jnb9eWBgdaUjulI
+	GYUfUZx0n3Fnpbjc4MFHPx7e+qvPZInpl5MWCwUNwQy1Xgd2DTQ3eDDjeVcjwouh1rB/12yzpK9UN
+	V8QSfyKAQAJzDKwa8VggPwBCoNoGGWhlyVFVLWAP87xAAyfHfzVUCURDv7pPNofVelhShUqPOqhXj
+	qJSgzrP7zZfa9cDSmazM18VRYGyl52I04yYb1oGgceR5L/Feu/onFdMwLNDQqq4WkGoHJsz0m7hWu
+	Lrg8PzAGzcHfZypqYaZERgxJyYtKcqpo+46fvzVKelf0bG9PpypEbIeOFJVQTElDDazoHykeXHLu1
+	p7cREWJQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSZ9d-0000000HVE6-1nUT;
-	Sun, 15 Nov 2026 12:16:17 +0000
-Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
+	id 1xScSn-00000000AM2-3FqY;
+	Sun, 15 Nov 2026 15:48:17 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSZ9Z-0000000HVDg-0sEP
-	for linux-phy@lists.infradead.org;
-	Sun, 15 Nov 2026 12:16:16 +0000
-Received: by mail-wm1-x332.google.com with SMTP id 5b1f17b1804b1-4a1fbd52ab6so20764595e9.0
-        for <linux-phy@lists.infradead.org>; Sun, 15 Nov 2026 04:16:12 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1794744971; x=1795349771; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=Cze6EXMazudJouVIRWBezoVb+gMXv48f+e410Dy7G9s=;
-        b=LmJV4DVpqv6udjEtwrVs9LWPNFwcseRhq1fL1wFFvJzppSI1WRbZ9CdyRh4TxhjzF8
-         iGNZG/SWtCfix2AP34DpgVdG6p7KuobdP8c1s11V6idLrJHnu1xEm5jjQlOMxOF0Jj9Z
-         T7/qH2X2nx9Zy4axF0kLrB2kox++PX0ocenJ9lELGY3riIs7uWb4h3A6xK3EINcPS22O
-         r27OhAdNdMzolb+ZRcEUQIiBzfV/EqeFLrfikt1uXiFWnoioTXmpBFbNKtzFNekJ7HF1
-         hE53X1X7gitbRFe0JoGB28mUDPHzZOG6BdYLmYtZTh7fIZ+GYyt0EJ7SS1/JF6F/IS8Q
-         yvmw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794744971; x=1795349771;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=Cze6EXMazudJouVIRWBezoVb+gMXv48f+e410Dy7G9s=;
-        b=x1KDMWGqKxnQqEiNgLzJz3ujVoYbG/jjkOzR2nD68CGljJ3uJFoJCrGgQI2gp9NjkI
-         6Nn2fwc0gqIjr2Q7yL25cUfGS5GXmWdnXt3cOsw+8T16BWPzgUQ7ahWMRC2c5eZs87dt
-         MKvFxaDyPGB65o7muHairJ3AhRvTbkOjHEFeeJADhGXOp9vV4FZfQq3E1IKSH5FSGEOk
-         XUdmW/8kE6GFSpgXb6l68q/CsD+alSb6E1W2ogz6hAiMSVQ+8BfyHnBgGen8PS2m0yTH
-         t5iqcpf3Plt06bvImZi4iVpEHDIaDNdeT7Hho6MPGGkQF/I60sGNlrSZPs7hqeapogDL
-         IIKg==
-X-Gm-Message-State: APuU4Z/fgGxnRnT931NYbEzFrT35p744nwBnOEEhzM4Op2/5uO/5YqAW
-	idOSPI/KTj+MBl08MsMlV52RuANM0slFQx+6U64ZeDDQ9tuvmNoLWjeJnjLfbflr7jY=
-X-Gm-Gg: AYBFou140kjHsvorUQaMIHdfpKvASuzZFFqtWdphgszAhU/Jh7XY9tkBmjojYxJ3JBL
-	V+11x5z1nK0NOJhcOlaMLXhuoT6zGtKu+2HaI4vheVpNKAJ3R45itl64sUPVOWPqTVW0hG5veJC
-	r+vH3d74KoPskxpcorWD8GoHy97VhLTpbRC3ZHYLwImm2994yzEeGQBvh2c+JhVeL0MDJWl7Uso
-	MWd23rbp70jGz31mRmdPlC59NQK8xkoTadmPw6IiUlq4T+BGfJOepZCIlJEmXYzq7Ds3tsCG927
-	iMQzoyriZsYdzT564pwYPQ/fSNw1dqXRUmyDYyDEXccF7eombiHSO+mBDs0J+M/uInEOP0Tv05J
-	fID5MDoexRxKDdv0Zw46W6hVl1vZLZlgS60YEV536cfiR5MGEvfuVCmMerwuLgxRKeOSygfZoi1
-	YGSpbNwyLilnr6rF3aoGU7XCrJpTWf81WS29fGHxgHzxj8O9CMwUNT9sLs3hUBSb/JlnjSHwNPB
-	mLBD5W94QEctQAWpj+v5g3sDIiknj6shlYWCvJQ8eXl1FBGen5eG6wpIa9NFi/NOl8+pTzrbM3b
-	py+n96LAU7DIvJZUQ9QJUKqHRCaQLOs0SJw34I2zatI=
-X-Received: by 2002:a05:600c:8b0a:b0:4a1:da58:1ee with SMTP id 5b1f17b1804b1-4bb55a95dbamr161321305e9.31.1794744970969;
-        Sun, 15 Nov 2026 04:16:10 -0800 (PST)
-Received: from [192.168.0.167] ([78.152.238.245])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb65ce005bsm126726035e9.14.2026.11.15.04.16.08
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 15 Nov 2026 04:16:10 -0800 (PST)
-Message-ID: <ea2dea8f-e696-4e86-be9f-248cb6ec86b9@linaro.org>
-Date: Sun, 15 Nov 2026 12:16:06 +0000
+	id 1xScSl-00000000ALa-2Hzr;
+	Sun, 15 Nov 2026 15:48:15 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 6B8086061D;
+	Sun, 15 Nov 2026 15:48:14 +0000 (UTC)
+Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
+ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
+	t=1794757694;
+	b=Lr3eodA8Kw75qmKUBUYgpnCpf4bXaEg3UZiF7dWF1dfu492etqJZM7Z4gtSxlEMEwjvv
+	 AkBbWVuo3vuAIfuZLG70A4q5zAwoa+omuZrZgbPP1IYkdto6p6SPFZ3URYNic/cAxnShD
+	 DUn4moy08dsDVJCw94DDNWOjVA9+6xWm+fAY9A+Jrq28FRcAmNqEAG+e6bR139OFuAWpb
+	 avKFo6kbmQcQ9XUXElL3g5ZstJlJ7+eOl8C8AWCwD1z474m1TAVhbqDMIWJhpYy+S1mrF
+	 3FhnJGmC7/5TbfynB0nIQfWk850JXZdK3JNeC6j+pPrX1zeIep/EYvxCnKkYt9H4MwA==
+ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
+	c=relaxed/relaxed; t=1794757694;
+	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding:Message-Id:X-B4-Tracking:X-Change-ID:To:Cc:
+	 X-Mailer:X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To;
+	bh=NInYMJ+ut3zDh5Fb+CgE3l3kNaY9NJsY+o6n7flFLcw=;
+	b=vO3MMUNEVQrsW1znvqToAaXEz0m/USwBgJnjZmayoJw6MlJz+wMGXF9oB+4Y3ulnANiF
+	 KGLg9P4FlAfpAX8ecHoEylbPAa1F+3dSI2wN3RW0ZFkEXLQIDuR9rk7iU5AGEzP2wGEwh
+	 IZeHrMKGUjN5ayudt2Ui9NS//xrre+oJU0gemYUjSR14PcecfVMsE0DQC4GcVt/pykKd2
+	 P6D839e9+MeK44A82PsooQGcK87PeTNTLABtiVMBe8ATgOL3NaVNEzPilAnOGqFOSB8v0
+	 jCkYM8Lb2YHnwzxkbfwreU0GtVL8z6W+sKGFuuvWO5s+bXCERQ1he0x/v76I45D9VIA==
+ARC-Authentication-Results: i=1; smtp.kernel.org; 
+	arc=none smtp.remote-ip=100.80.115.77
+Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by smtp.kernel.org (Postfix) with ESMTPS id 958EA1F000C4;
+	Sun, 15 Nov 2026 15:48:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794757694;
+	bh=NInYMJ+ut3zDh5Fb+CgE3l3kNaY9NJsY+o6n7flFLcw=;
+	h=From:Date:Subject:To:Cc:Reply-To;
+	b=KrZOaIhMkWHaTakDBX4dnHLgAkHn7h/WboXX/sanQxYPbHQA2l/yiBQ4MTqDYPoMA
+	 pC/4+PZX8s27EpRPBiHAdPTfeYU1/akNQOorSzNLyI/kNVx6WbPVb5iXJiZlBu+lNV
+	 w0ob3HOXHUhajvbl9996UPTe+I7y+N5WVO7oF03Ne5Ql3zavmdx+BgFenTxQ0wefOt
+	 X/YuOxor+wz5GRvtyd+hHIVl2A1ul6b4Ufp0IYk62v934Hb5OrICteIlqZOhtKcuAH
+	 g8gD/dZ/klkTNt3wvrYNaUc/h0nTuAF71WEcvaaa/4jqUhnanoN8+q8gag6QeX0fKp
+	 Gnz62um5ifR+g==
+Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
+	by lkml.kernel.org (Postfix) with ESMTP id 19E274A0FA;
+	Sun, 15 Nov 2026 15:48:13 +0000 (UTC)
+From: Ricardo Pardini via B4 Relay <devnull+ricardo.pardini.net@kernel.org>
+Date: Sun, 15 Nov 2026 16:48:11 +0100
+Subject: [PATCH v2] phy: rockchip: naneng-combphy: fix RK3588 SATA
+ pipe_con1 register offset
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v7 10/23] media: qcom: camss: csid: Add support for CSID
- 980
-To: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>,
- Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
- Loic Poulain <loic.poulain@oss.qualcomm.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>, Robert Foss
- <rfoss@kernel.org>, Andi Shyti <andi.shyti@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>,
- Frank Li <Frank.Li@nxp.com>
-Cc: linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-i2c@vger.kernel.org,
- Atiya Kailany <atiya.kailany@oss.qualcomm.com>
-References: <20261114-add-support-for-camss-on-sm8750-v7-0-8ff2a11835f6@oss.qualcomm.com>
- <20261114-add-support-for-camss-on-sm8750-v7-10-8ff2a11835f6@oss.qualcomm.com>
- <130fecb6-5372-44d9-8261-c3ac88248631@linaro.org>
-From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-Content-Language: en-GB
-In-Reply-To: <130fecb6-5372-44d9-8261-c3ac88248631@linaro.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261115_041614_907773_865C75CA 
-X-CRM114-Status: UNSURE (   7.94  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
+Message-Id: <20261115-rk3588-combphy-sata2-6g-v2-1-778e0e8011fe@pardini.net>
+X-B4-Tracking: v=1; b=H4sIADrU+WoC/3WNyw6CMBBFf4V07ZhOawm48j8MixZGGI2FtJVIC
+ P8uj7XLk9x7ziwiBaYortksAo0cufcrqFMm6s76loCblYWSKkepLhBe2hQF1P3bDd0E0SarIG9
+ Baue0RIPGKLG+h0AP/u7me3Vw/Lgn1WnTbYuOY+rDtKdH3HZHBWX5tzIiIFCJ2tQlNpTb22BDw
+ 57PnpKolmX5AZz+eZnSAAAA
+X-Change-ID: 20261024-rk3588-combphy-sata2-6g-03bb30151552
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, Heiko Stuebner <heiko@sntech.de>
+Cc: Lucas Tanure <tanure@linux.com>, linux-phy@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, Yifeng Zhao <yifeng.zhao@rock-chips.com>, 
+ stable@vger.kernel.org, Sebastian Reichel <sebastian.reichel@collabora.com>, 
+ Ricardo Pardini <ricardo@pardini.net>
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3245;
+ i=ricardo@pardini.net; h=from:subject:message-id;
+ bh=7C3z50HF4YPPhxfojWOPHlWST5mhlOANTFSCF0BvMLE=;
+ b=owEBbQGS/pANAwAKATteP+Oex+3pAcsmYgBq+dQ8Q7AOEqBEaJ40Qr8v90oLDQJ4qH6b6aZGN
+ Rxv5wgYhS2JATMEAAEKAB0WIQSsGCMM9q/qytxIiJM7Xj/jnsft6QUCavnUPAAKCRA7Xj/jnsft
+ 6Qu5B/43ii5B5vLp7uePCdS2Y60DAhqinh6J/QWpePpP4kNJVbE3YWpuHFy9lFKwgX7VaIRTNjq
+ b3b06t7skss2elc97aE6opCrKTCog4udVuaUFgbXajh63e/nJBZgr91p9dSespZKw1RkNg9fsj7
+ XEnFvSfys82kKhyK3Ap7g9qvhyukWwo6XsSCbUjnTRP0WBBNPJBM2LQ6cjEwia06jlipE5LZIxQ
+ Hv49ZX2NnMZ3ba4y3Q+Dwh1U/KGFw2UuOjpo23r+4MFQFYEetjNqPKQxVkFdseeyz9GHGYtgCpV
+ lJdsS2jc6D6do+YxNpwORkbkyNwgrK9fifExcH/RUeVuGsK4
+X-Developer-Key: i=ricardo@pardini.net; a=openpgp;
+ fpr=AC18230CF6AFEACADC4888933B5E3FE39EC7EDE9
+X-Endpoint-Received: by B4 Relay for ricardo@pardini.net/default with
+ auth_id=588
+X-Original-From: Ricardo Pardini <ricardo@pardini.net>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,24 +117,97 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Reply-To: ricardo@pardini.net
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-5.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
-	autolearn=no autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-T24gMTUvMTEvMjAyNiAxMjoxNCwgQnJ5YW4gTydEb25vZ2h1ZSB3cm90ZToKPiBPbiAxNC8xMS8y
-MDI2IDExOjI5LCBXZW5tZW5nIExpdSB3cm90ZToKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
-Zm9yIChrID0gMDsgayA8IENBTVNTX0lOSVRfQlVGX0NPVU5UOyBrKyspIHsKPj4gK8KgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBfX2NzaWRfYWRkcl91cGRhdGUoY3NpZCwgaSk7Cj4+ICvC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgX19jc2lkX3JlZ191cGRhdGUoY3NpZCwgaSk7
-Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIH0KPiAKPiBXaHkgZG9lcyB0aGlzIHJ1biB0d2lj
-ZSBmb3IgdGhlIHNhbWUgaW5kZXggPwo+IAo+IC0tLQo+IGJvZAoKInJ1biBDQU1TU19JTklUX0JV
-Rl9DT1VOVCIgZm9yIHRoZSBzYW1lIGluZGV4ID8KCllvdSBkb24ndCBpbmNyZW1lbnQgYSBidWZm
-ZXIgaW5kZXguIEhvdyBjYW4gdGhpcyBiZSBsb2dpY2FsID8KCi0tLQpib2QKCi0tIApsaW51eC1w
-aHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+From: Yifeng Zhao <yifeng.zhao@rock-chips.com>
+
+On RK3588, the sata2 PHY speed is selected by sata2_phy_spdmode in
+PHP_GRF_PHP_CON1[1:0] (offset 0x0004), with sata2_phy_rx_err in bit 2.
+rk3588_combphy_grfcfgs has pipe_con1_for_sata at offset 0x0000 though,
+so the value 0x2 (6.0 Gb/s, rx_err cleared) ends up in PHP_GRF_PHP_CON0
+and CON1 is never written.
+
+This leaves sata2 at its 1.5 Gb/s reset value, so the link only trains
+at 1.5 Gb/s, even with a 6 Gb/s capable disk and no SControl speed
+limit. sata0 and sata1 are not affected: their speed fields are in
+PHP_GRF_PHP_CON0 and are set by pipe_con0_for_sata.
+
+The misplaced write also lands in PHP_GRF_PHP_CON0[2:0], which are the
+PCIe link reset grant bits, and turns on the one for pcie3x2 whenever a
+combphy is put in SATA mode. No effect from that is known, but this
+stops it too.
+
+The register layout is described in the RK3588 TRM V1.0 Part1, section
+6.17 "PHP_GRF Register Description".
+
+Tested with an mSATA SSD on sata2 (combphy2_psu). Before:
+
+  ata2: SATA link up 1.5 Gbps (SStatus 113 SControl 300)
+  Timing O_DIRECT disk reads: 374 MB in 3.01 seconds = 124.45 MB/sec
+
+After:
+
+  ata2: SATA link up 6.0 Gbps (SStatus 133 SControl 300)
+  Timing O_DIRECT disk reads: 1266 MB in 3.00 seconds = 421.78 MB/sec
+
+Fixes: a03c44277253 ("phy: rockchip: Add naneng combo phy support for RK3588")
+Cc: stable@vger.kernel.org
+Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
+[rewrite commit message]
+Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+Signed-off-by: Ricardo Pardini <ricardo@pardini.net>
+---
+Only sata2 was tested. U-Boot has the same table and the same problem;
+the fix was sent there in [1].
+
+[1] https://patch.msgid.link/20261109-rk3588-sata-fixes-v2027-01-v1-0-e54ca8e68f18@pardini.net
+---
+Changes in v2:
+- Author is now Yifeng Zhao, who wrote the fix in the Rockchip BSP
+  kernel; add his Signed-off-by (Sebastian)
+- Move the PCIe link reset grant note into the commit message (Sebastian)
+- Drop the BSP history sentence, the BSP Link: and the Cc (Sebastian)
+- Trim the notes below the fold (Sebastian)
+- Collect Sebastian's Reviewed-by
+- Link to v1: https://patch.msgid.link/20261109-rk3588-combphy-sata2-6g-v1-1-e9135c91de6a@pardini.net
+---
+ drivers/phy/rockchip/phy-rockchip-naneng-combphy.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+index 3102a99128f6..c469222dba8b 100644
+--- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
++++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+@@ -1395,7 +1395,7 @@ static const struct rockchip_combphy_grfcfg rk3588_combphy_grfcfgs = {
+ 	.con3_for_sata		= { 0x000c, 15, 0, 0x00, 0x0407 },
+ 	/* pipe-grf */
+ 	.pipe_con0_for_sata	= { 0x0000, 11, 5, 0x00, 0x22 },
+-	.pipe_con1_for_sata	= { 0x0000, 2, 0, 0x00, 0x2 },
++	.pipe_con1_for_sata	= { 0x0004, 2, 0, 0x00, 0x2 },
+ 	.pipe_pcie1l0_sel	= { 0x0100, 0, 0, 0x01, 0x0 },
+ 	.pipe_pcie1l1_sel	= { 0x0100, 1, 1, 0x01, 0x0 },
+ };
+
+---
+base-commit: 6628e7d4c6b25c8d18f1345e3a20d21829aae7e4
+change-id: 20261024-rk3588-combphy-sata2-6g-03bb30151552
+
+Best regards,
+--  
+Ricardo Pardini <ricardo@pardini.net>
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
