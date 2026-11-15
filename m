@@ -2,74 +2,108 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CC3C8606A323
-	for <linux-phy@archiver.kernel.org>; Sun, 15 Nov 2026 05:29:17 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DCC0A606A31A
+	for <linux-phy@archiver.kernel.org>; Sun, 15 Nov 2026 12:03:49 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=ntkLg+ec;
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=mail.ustc.edu.cn header.i=@mail.ustc.edu.cn header.a=rsa-sha256 header.s=dkim header.b=SFIyjy+s
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Ar76MnxW;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=linaro.org header.i=@linaro.org header.a=rsa-sha256 header.s=google header.b=Bt8g3bTZ
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=SykycraexAUPVLEidcFu0cMbQN7DOVo8JPC66wd5xyg=; b=ntkLg+ecvaFa6Mat/uWpf+Iiil
-	On9bLqw5XdlLpHLfBhIojhLl0Q+CKctKbuv5oh3vXC8BP2A2FPmzEiAlJi9fl4of+m94gMsZuM03j
-	9PtAE1V6PjhMS9I6hF6O1CsIPaa89Mj+JnK+LaUvavKHZqgvwyhvgVWFx9b60c0tms7R2YjK9EW3D
-	f9dZrPC/KLrPA7xi5IbCQS3wYLeblZDAoJ0ipCEtqFtuH5zIX8JxS6oVchzukzTEIjDqaUWTcx/zl
-	lLbjSBJyhp4fmV8eHy2oZtpzvKAks47orjArMW/oQenX+MwxKLY/NrdP7QSETK8FfNM84usjd8Z+e
-	Z0q/JcWg==;
+	bh=/0GZkmCL6EhOiHtw1n31FgnHj5OMWgDRR8Z660w1/XU=; b=Ar76MnxWWIL8wxCyLyYfRgzWMo
+	uWImQXGu/cfBw1PWifbNQEzo/bUaufUo4IokUCiNz6QGy0RYKn5OGyGja6hlbTRUa4jJbr0lSBdA+
+	B/S7bkSz+P6PiGt73EnxCq0f0eIVs+t8I5eyKQSB4gvvBemMr0GxyXT63TZbbS7zn7FNuYyu78yaZ
+	W0KDbiup3BsfuVkCT571HGKF88sSW0GwaxxwUrw/ePCavK8YAoFc/CTGq1i4Df1Um/DsZQeMSYUwb
+	aY6725PfllYa4JACaUlogyz+GxuiUG8edDsufgPiGdH3XVvYFvj/ErPlWZXehVF2CSGW60vjGWOM2
+	HpQcKyBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSSnk-0000000H5Qp-21Ah;
-	Sun, 15 Nov 2026 05:29:16 +0000
-Received: from smtp.ustc.edu.cn ([202.38.64.46] helo=ustc.edu.cn)
-	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSSng-0000000H5QA-2Kaq
+	id 1xSYxZ-0000000HUPk-14Y6;
+	Sun, 15 Nov 2026 12:03:49 +0000
+Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
+	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
+	id 1xSYxV-0000000HUPN-1N5I
 	for linux-phy@lists.infradead.org;
-	Sun, 15 Nov 2026 05:29:15 +0000
+	Sun, 15 Nov 2026 12:03:46 +0000
+Received: by mail-wm1-x32e.google.com with SMTP id 5b1f17b1804b1-4bb6adaf0f1so2255105e9.0
+        for <linux-phy@lists.infradead.org>; Sun, 15 Nov 2026 04:03:44 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-	d=mail.ustc.edu.cn; s=dkim; h=Received:From:To:Cc:Subject:Date:
-	Message-ID:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=LS6LmYxoEV+oZoThkbdbahRxFBMWXdWbBypmIrtzAwI=; b=SFIyjy+sZV3g+
-	qqsZ49z7FNqO7H8SeQsU7K3azF1VYX32VpnoxseVt4yRn7s5Zm2x9tY0c8BsQPpO
-	pCCPrs/C/yM2mDVxMkJQzzaDErgzNBOWS1BZdSj0O/bGcmsWlVrdPMcOMGp/DXN9
-	s141Dlcp/hfgzEuByqs4FTob73IGrs=
-Received: from [127.0.1.1] (unknown [114.214.190.248])
-	by mailimap2024 (Coremail) with SMTP id 3pYKCgBX5EgYQ_lqx1rBAA--.168S2;
-	Sun, 15 Nov 2026 13:28:58 +0800 (CST)
-From: Qianhui Xu <xiaqinghuan@mail.ustc.edu.cn>
-To: Bryan O'Donoghue <bod@kernel.org>
-Cc: linux-phy@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- devicetree@vger.kernel.org
-Subject: [RFC] phy: qcom: mipi-csi2-3ph: SM8750 ships CSIPHY 2.4.0 lane table
- - preferred shape?
-Date: Sun, 15 Nov 2026 13:28:56 +0800
-Message-ID: <179472053649.14538.1565870277822789081@mail.ustc.edu.cn>
+        d=linaro.org; s=google; t=1794744223; x=1795349023; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=G2xfTStPsDXrBa4bi2OyO6+uMbuqPCiOosCTtZjhiB0=;
+        b=Bt8g3bTZrOzJHkBk6xk1GdknSmEkrfjLCnawxTKa7LAh9afVyk8XNC2x0hEsB2cYz7
+         dVPLcxTjBsp7xiUw8weDnT6pI2XDUaGul9y8+3DqqdOWFgzc5ckev/MKwqEOj3J/9h8I
+         cV1ZnNMpkmXdVJ4oFDl86KuKnMIlm1ZGKSFNNAv4Xbm63DQcFcBiWp25c5K7pQAFF0zm
+         LgvYmommDKafwd+LJfZR1x+FnZ5aObyMzX7kiAq/ysU8cy9lpsaEcmNukNJrlXMa61bZ
+         O0LAVgGC8w6Pvx3i8paQg7YZOVl4KzxJSiHaYM8dDHi6IeEIxw3Ke9AjDhuk/d2s40Gl
+         ThWA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794744223; x=1795349023;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=G2xfTStPsDXrBa4bi2OyO6+uMbuqPCiOosCTtZjhiB0=;
+        b=Np+PuMpuQ3VeK9nLoK6vaX6CfgE7smA+V64sC54EzzNEozEHcFaO9ATBr5t43tWG/8
+         TStwUvzaSblloVei/gPufGzL0SvDpziitwcsPPGj40LPdF9fhGGhDaCJAKfYEz89T88y
+         pjceJQEZD8/H5qdeUWbWpgJjzkSAVEaf3OGbUctzQ83Eiz07XEBNRRDd48pFF6KwaFnA
+         XAhHU53BnypgqT3ccDeDtAp85S6qZVMA6dd5iN82Q2enqkDeSaytWC2XkB5tDwYE2nz+
+         siMwXpCRKzIsC4owC1jOOT94w6tihwJOaVLtT9jyjBMPagSJCTj2mS6ioAwroM62iT0J
+         kJ3Q==
+X-Gm-Message-State: APuU4Z8+rH+2hDCe9Dq/pNrIEEG+Rq7E0yWCLlhv+bbaLda6hhWWC1nN
+	6hj24RgNSH/LgslICgNDVntmmiRrKmSbVj+ej/akoLNn2psWC19MFkwua+q5gV7mHqM=
+X-Gm-Gg: AYBFou0qJZtWmh7w9m+sOsmVZHpXyjffAmx+mQ4Twa5O+NM1bkjseLZyZu0Nc/Mb0zT
+	soXPB7oD+DPvVusGvqkLBZuEHi8zmetww6m8mhnLl8v5/3etlxnXgi7eAkd6nXUf+E8WyCfQaEX
+	dbb6044KDY5EP8ZWfJhkUQ9sMsC/CM8c6t8RP7nP0cfJGiSZLnAx/XLd0X6CcscSR8AOaDLQL5b
+	5VTIM/+EeR2XUUguV5KGlzQ38Rgf8Ov/cegU6qwZpLRBOz6j0yIOCgmqPqGiCKLOIXoS0Yly/9z
+	Lhu0Be6iNmqq0SG7Lvfqt0BV6nIj+zdpE3RnMIsVh/t+KOnRiYA8wm5T5dGmgSFfIX/jRHkoWBC
+	0Dgc6ZHyWFmIRGK3k+QKJzjykNTEkvjSllmMhpLP9iEBcHob/VfsaKy9FxDKwzXfi8W2+McXOAy
+	g3vmgFDMuPX2rZrNlTERevo/IGBHxEo8eR8msa7ZnBWRnsZ1qveG5hI0DJZbDijNDjHmG/6ttG4
+	YziudEeiYXPjmavtdN7lYc2qXvsMuiRYQ9OQ8yPggPTfD737I5ZRk3zOYk+uLN7EL3NYwW89uYp
+	U6ErcgIApJ6vdlWnegb84vaSpKV+Lh2k6XGLpnVJW6I=
+X-Received: by 2002:a05:600c:34d6:b0:4a8:f2ad:a9e5 with SMTP id 5b1f17b1804b1-4bb559f609cmr148644995e9.3.1794744222495;
+        Sun, 15 Nov 2026 04:03:42 -0800 (PST)
+Received: from [192.168.0.167] ([78.152.238.245])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49c60021375sm15371401f8f.29.2026.11.15.04.03.41
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 15 Nov 2026 04:03:42 -0800 (PST)
+Message-ID: <31101889-9d4f-4863-afb7-0f884b50088f@linaro.org>
+Date: Sun, 15 Nov 2026 12:03:40 +0000
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-CM-TRANSID: 3pYKCgBX5EgYQ_lqx1rBAA--.168S2
-X-Coremail-Antispam: 1UD129KBjvJXoWxAryUZw1UtrWrWr4furW8tFb_yoW5Gryfpa
-	yFgFyrCr1kJr4v9rZayw1xtrWS9wsak3y5AF48t347Aa1DX3W7tryaq34qkr98Ar4rAw47
-	tF4jqF1fXr4jyaUanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDU0xBIdaVrnRJUUUyEb7Iv0xC_Kw4lb4IE77IF4wAFF20E14v26r1j6r4UM7CY07I2
-	0VC2zVCF04k26cxKx2IYs7xG6rWj6s0DM7CIcVAFz4kK6r1j6r18M28lY4IEw2IIxxk0rw
-	A2F7IY1VAKz4vEj48ve4kI8wA2z4x0Y4vE2Ix0cI8IcVAFwI0_Xr0_Ar1l84ACjcxK6xII
-	jxv20xvEc7CjxVAFwI0_Gr0_Cr1l84ACjcxK6I8E87Iv67AKxVWxJr0_GcWl84ACjcxK6I
-	8E87Iv6xkF7I0E14v26F4UJVW0owAS0I0E0xvYzxvE52x082IY62kv0487Mc02F40EFcxC
-	0VAKzVAqx4xG6I80ewAv7VC0I7IYx2IY67AKxVWUJVWUGwAv7VC2z280aVAFwI0_Jr0_Gr
-	1lOx8S6xCaFVCjc4AY6r1j6r4UM4x0Y48IcVAKI48JMxkIecxEwVAFwVW8WwCF04k20xvY
-	0x0EwIxGrwCFx2IqxVCFs4IE7xkEbVWUJVW8JwC20s026c02F40E14v26r1j6r18MI8I3I
-	0E7480Y4vE14v26r106r1rMI8E67AF67kF1VAFwI0_JF0_Jw1lIxkGc2Ij64vIr41lIxAI
-	cVC0I7IYx2IY67AKxVWUJVWUCwCI42IY6xIIjxv20xvEc7CjxVAFwI0_Jr0_Gr1lIxAIcV
-	CF04k26cxKx2IYs7xG6r1j6r1xMIIF0xvEx4A2jsIE14v26r1j6r4UMIIF0xvEx4A2jsIE
-	c7CjxVAFwI0_Jr0_GrUvcSsGvfC2KfnxnUUI43ZEXa7IU5l2MUUUUUU==
-X-CM-SenderInfo: 50ld1x5qjk3t3q6ptxnoox23vfohv3gofq/1tbiAREKB2r2E9lQAwAQsI
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v7 02/23] dt-bindings: phy: qcom,x1e80100-csi2-phy: Add
+ Eliza CSI2 PHY
+To: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>,
+ Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+ Loic Poulain <loic.poulain@oss.qualcomm.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>, Robert Foss
+ <rfoss@kernel.org>, Andi Shyti <andi.shyti@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>,
+ Frank Li <Frank.Li@nxp.com>
+Cc: linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-i2c@vger.kernel.org
+References: <20261114-add-support-for-camss-on-sm8750-v7-0-8ff2a11835f6@oss.qualcomm.com>
+ <20261114-add-support-for-camss-on-sm8750-v7-2-8ff2a11835f6@oss.qualcomm.com>
+From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+Content-Language: en-GB
+In-Reply-To: <20261114-add-support-for-camss-on-sm8750-v7-2-8ff2a11835f6@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261114_212913_625003_3AE7D52F 
-X-CRM114-Status: UNSURE (   6.68  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20261115_040345_427829_374EBC61 
+X-CRM114-Status: GOOD (  11.76  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -80,67 +114,57 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
+	version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi Bryan,
-
-SM8750 (Lenovo TB322FC, mainline bring-up) carries a CSIPHY whose vendor driver
-describes its lane table as csiphy_2ph_v2_4_0_reg. Upstream's lane_regs_x1e80100[]
-in phy-qcom-mipi-csi2-3ph-dphy.c is the 2.1.2 generation, so the two differ.
-Before sending anything I'd like your preference on the shape.
-
-What I measured (vendor camera_dlkm module, unstripped; 103-entry table, 1648 B):
-
-  - address set identical, 103/103; (addr, data, param_type) differs in 13 entries
-  - 0x0000/0x0400/0x0800/0x0c00 : 0x8e -> 0x8c          (DEFAULT, 4)
-  - 0x0008/0x0408/0x0808/0x0c08/0x0e08 : 0x10 -> 0x19    (SETTLE_CNT_LOWER_BYTE, 5)
-  - 0x0060/0x0460/0x0860/0x0c60 : 0xbd -> 0xfd          (SKEW_CAL, 4)
-
-Those three values also track the vendor's own generation numbering across every
-2ph table in that module: v2.1.x = (8e,10,bd), v2.2.x = (8e,19,bd),
-v2.3.0/2.4.0/2.4.1 = (8c,19,fd). So they look like generation markers rather than
-per-SoC tuning.
-
-One thing worth stating up front, because it bounds what the patch can claim:
-in phy_qcom_mipi_csi2_gen2_config_lanes() the SETTLE entries are overwritten with the
-value computed from the link frequency, and SKEW entries are skipped (still
-"TODO: support application of skew from dt flag"). Only the four 0x0000 writes
-(0x8c) actually change behaviour today.
-
-Questions:
-
-1) Shape: a new lane_regs_sm8750[] plus a mipi_csi2_dphy_3nm_sm8750 soc cfg
-   (compatible "qcom,sm8750-csi2-phy" with "qcom,kaanapali-csi2-phy" as fallback),
-   or would you rather see the difference expressed per generation
-   (e.g. lane_regs_2_4_0[] shared by any future SoC on that generation)?
-
-2) Evidence level: with only one SM8750 unit I can measure a 30 fps capture
-   regression, nothing more. Is "matches the vendor table for that generation"
-   an acceptable justification for the 0x0000 value change, or do you want the
-   SETTLE/SKEW entries dropped from the table until the driver actually applies
-   them (so the patch carries no dead data)?
-
-3) Binding: standalone "qcom,sm8750-csi2-phy" const vs. an items entry with the
-   kaanapali fallback. I see a kaanapali series in flight touching the same oneOf,
-   so I'd rather follow whatever shape that series lands with.
-
-I have a two-patch draft ready (binding + driver) that applies on 7.4-rc3 and passes
-checkpatch --strict, W=1 and dt_binding_check; I'll hold it until you answer.
-
-Disclosure: this mail was written with AI assistance; the author reviewed and
-verified every statement, and all measurements and decisions are the author's.
-
-Thanks,
-Qianhui Xu
-
+On 14/11/2026 11:29, Wenmeng Liu wrote:
+> Add "qcom,eliza-csi2-phy" falling back to "qcom,x1e80100-csi2-phy", as
+> Eliza integrates the same CSI2 PHY IP.
+> 
+> Eliza has no MMCX and MXC rails: CX feeds the existing "mmcx" input and
+> MX the "mx" input, so only the power-domain descriptions need updating.
+> 
+> Signed-off-by: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>
+> ---
+>   Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml | 8 +++++---
+>   1 file changed, 5 insertions(+), 3 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
+> index 8ff3df1d0d2787b2af0499c1e4106b86f56ff82c..884984f6f6b9e595df9bb3b0027c0bcf285b8058 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
+> @@ -22,7 +22,9 @@ properties:
+>             - qcom,sm8750-csi2-phy
+>             - qcom,x1e80100-csi2-phy
+>         - items:
+> -          - const: qcom,glymur-csi2-phy
+> +          - enum:
+> +              - qcom,eliza-csi2-phy
+> +              - qcom,glymur-csi2-phy
+>             - const: qcom,x1e80100-csi2-phy
+>   
+>     reg:
+> @@ -48,8 +50,8 @@ properties:
+>     power-domains:
+>       items:
+>         - description: Titan Top GDSC - Titan ISP Block, Global Distributed Switch Controller.
+> -      - description: MMCX voltage rail
+> -      - description: MXC or MXA voltage rail
+> +      - description: MMCX or CX voltage rail
+> +      - description: MXC, MXA or MX voltage rail
+>   
+>     power-domain-names:
+>       items:
+> 
+Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
 
 -- 
 linux-phy mailing list
