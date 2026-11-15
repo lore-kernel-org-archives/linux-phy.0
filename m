@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2A85F606A323
-	for <linux-phy@archiver.kernel.org>; Sun, 15 Nov 2026 04:27:21 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CC3C8606A323
+	for <linux-phy@archiver.kernel.org>; Sun, 15 Nov 2026 05:29:17 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=BlbyzU4y;
-	dkim=pass (1024-bit key) header.d=cmss.chinamobile.com header.i=@cmss.chinamobile.com header.a=rsa-sha256 header.s=default header.b=M7JWE2Et
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=ntkLg+ec;
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=mail.ustc.edu.cn header.i=@mail.ustc.edu.cn header.a=rsa-sha256 header.s=dkim header.b=SFIyjy+s
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,63 +14,63 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=P+CSBUYAcKZIzGWg49z31fGLyEOJ5ppU4CiOYlBlnPQ=; b=BlbyzU4yvXyZkkTeRAPSMCMPjJ
-	YAuGRiqx8hvsdmQkdGvNRSDE44JSmhzGnBHeJYMBgo9QWmzotTQOmsms2cqNvfrzaMOmTknabUYfL
-	KazQHMLj/iYYzUm269VJjoDk+KMkz2bUJ4ZvuIqsjCp1ALVCV4gzwOtJHUxrD9UzM7Mv6k4JDNIJ+
-	FPqOs6f45Zm6SQ/9CBtYV06mEH6gqruSufUFzepQhUH816GCafcjDYaNvEK5jT4Ce605ThG2aMDqY
-	pdZHw3r4RvttcSNcC6nixTpZtp5LAWlXJ16p03OnOfYuPMWEfXzv2bjd7fK5VN54t/WyLRa2sCwHd
-	PTAP3oiQ==;
+	bh=SykycraexAUPVLEidcFu0cMbQN7DOVo8JPC66wd5xyg=; b=ntkLg+ecvaFa6Mat/uWpf+Iiil
+	On9bLqw5XdlLpHLfBhIojhLl0Q+CKctKbuv5oh3vXC8BP2A2FPmzEiAlJi9fl4of+m94gMsZuM03j
+	9PtAE1V6PjhMS9I6hF6O1CsIPaa89Mj+JnK+LaUvavKHZqgvwyhvgVWFx9b60c0tms7R2YjK9EW3D
+	f9dZrPC/KLrPA7xi5IbCQS3wYLeblZDAoJ0ipCEtqFtuH5zIX8JxS6oVchzukzTEIjDqaUWTcx/zl
+	lLbjSBJyhp4fmV8eHy2oZtpzvKAks47orjArMW/oQenX+MwxKLY/NrdP7QSETK8FfNM84usjd8Z+e
+	Z0q/JcWg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSRpn-0000000H3x0-3s8P;
-	Sun, 15 Nov 2026 04:27:19 +0000
-Received: from cmccmta2.chinamobile.com ([111.22.67.135])
+	id 1xSSnk-0000000H5Qp-21Ah;
+	Sun, 15 Nov 2026 05:29:16 +0000
+Received: from smtp.ustc.edu.cn ([202.38.64.46] helo=ustc.edu.cn)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSRpg-0000000H3wK-2mzx;
-	Sun, 15 Nov 2026 04:27:18 +0000
+	id 1xSSng-0000000H5QA-2Kaq
+	for linux-phy@lists.infradead.org;
+	Sun, 15 Nov 2026 05:29:15 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-	d=cmss.chinamobile.com; s=default; l=0;
-	h=from:subject:message-id:to:cc:mime-version;
-	bh=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=;
-	b=M7JWE2EtO30y7rDPR1NaaLdApNOO6bgkG6OQ3Hx30ZLHuoDRZyUUBdkNXogBtjSSKatNJDFyI46dc
-	 i0ueokU9D2SqyVpysvQNxVDvDJd22r1/odVkOAiPc3oCpx62WGUmjx6yG2gK8P2HGU590bcbF1pIdH
-	 OMRDVAxwFeEiwyWs=
-X-RM-TagInfo: emlType=0                                       
-X-RM-SPAM-FLAG: 00000000
-Received: from spf.mail.chinamobile.com (unknown[10.188.0.87])
-	by rmmx-syy-dmz-app07-12007 (RichMail) with SMTP id 2ee76af93489f21-f5aa8;
-	Sun, 15 Nov 2026 12:26:51 +0800 (CST)
-X-RM-TRANSID: 2ee76af93489f21-f5aa8
-X-RM-TagInfo: emlType=0                                       
-X-RM-SPAM-FLAG: 00000000
-Received: from localhost.localdomain (unknown[112.23.105.246])
-	by rmsmtp-syy-appsvr04-12004 (RichMail) with SMTP id 2ee46af9348a5dd-593e3;
-	Sun, 15 Nov 2026 12:26:51 +0800 (CST)
-X-RM-TRANSID: 2ee46af9348a5dd-593e3
-From: Xia Yan <yanxia@cmss.chinamobile.com>
-To: vkoul@kernel.org,
-	linux-phy@lists.infradead.org
-Cc: neil.armstrong@linaro.org,
-	mani@kernel.org,
-	heiko@sntech.de,
-	p.zabel@pengutronix.de,
-	ayaka@soulik.info,
-	kishon@kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org,
-	yana06070@163.com
-Subject: [PATCH] phy: rockchip-usb: fix reset control leak
-Date: Sun, 15 Nov 2026 12:26:40 +0800
-Message-ID: <20261115042640.426517-1-yanxia@cmss.chinamobile.com>
-X-Mailer: git-send-email 2.43.0
+	d=mail.ustc.edu.cn; s=dkim; h=Received:From:To:Cc:Subject:Date:
+	Message-ID:Content-Type:Content-Transfer-Encoding:MIME-Version;
+	bh=LS6LmYxoEV+oZoThkbdbahRxFBMWXdWbBypmIrtzAwI=; b=SFIyjy+sZV3g+
+	qqsZ49z7FNqO7H8SeQsU7K3azF1VYX32VpnoxseVt4yRn7s5Zm2x9tY0c8BsQPpO
+	pCCPrs/C/yM2mDVxMkJQzzaDErgzNBOWS1BZdSj0O/bGcmsWlVrdPMcOMGp/DXN9
+	s141Dlcp/hfgzEuByqs4FTob73IGrs=
+Received: from [127.0.1.1] (unknown [114.214.190.248])
+	by mailimap2024 (Coremail) with SMTP id 3pYKCgBX5EgYQ_lqx1rBAA--.168S2;
+	Sun, 15 Nov 2026 13:28:58 +0800 (CST)
+From: Qianhui Xu <xiaqinghuan@mail.ustc.edu.cn>
+To: Bryan O'Donoghue <bod@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+ devicetree@vger.kernel.org
+Subject: [RFC] phy: qcom: mipi-csi2-3ph: SM8750 ships CSIPHY 2.4.0 lane table
+ - preferred shape?
+Date: Sun, 15 Nov 2026 13:28:56 +0800
+Message-ID: <179472053649.14538.1565870277822789081@mail.ustc.edu.cn>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
+X-CM-TRANSID: 3pYKCgBX5EgYQ_lqx1rBAA--.168S2
+X-Coremail-Antispam: 1UD129KBjvJXoWxAryUZw1UtrWrWr4furW8tFb_yoW5Gryfpa
+	yFgFyrCr1kJr4v9rZayw1xtrWS9wsak3y5AF48t347Aa1DX3W7tryaq34qkr98Ar4rAw47
+	tF4jqF1fXr4jyaUanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUUyEb7Iv0xC_Kw4lb4IE77IF4wAFF20E14v26r1j6r4UM7CY07I2
+	0VC2zVCF04k26cxKx2IYs7xG6rWj6s0DM7CIcVAFz4kK6r1j6r18M28lY4IEw2IIxxk0rw
+	A2F7IY1VAKz4vEj48ve4kI8wA2z4x0Y4vE2Ix0cI8IcVAFwI0_Xr0_Ar1l84ACjcxK6xII
+	jxv20xvEc7CjxVAFwI0_Gr0_Cr1l84ACjcxK6I8E87Iv67AKxVWxJr0_GcWl84ACjcxK6I
+	8E87Iv6xkF7I0E14v26F4UJVW0owAS0I0E0xvYzxvE52x082IY62kv0487Mc02F40EFcxC
+	0VAKzVAqx4xG6I80ewAv7VC0I7IYx2IY67AKxVWUJVWUGwAv7VC2z280aVAFwI0_Jr0_Gr
+	1lOx8S6xCaFVCjc4AY6r1j6r4UM4x0Y48IcVAKI48JMxkIecxEwVAFwVW8WwCF04k20xvY
+	0x0EwIxGrwCFx2IqxVCFs4IE7xkEbVWUJVW8JwC20s026c02F40E14v26r1j6r18MI8I3I
+	0E7480Y4vE14v26r106r1rMI8E67AF67kF1VAFwI0_JF0_Jw1lIxkGc2Ij64vIr41lIxAI
+	cVC0I7IYx2IY67AKxVWUJVWUCwCI42IY6xIIjxv20xvEc7CjxVAFwI0_Jr0_Gr1lIxAIcV
+	CF04k26cxKx2IYs7xG6r1j6r1xMIIF0xvEx4A2jsIE14v26r1j6r4UMIIF0xvEx4A2jsIE
+	c7CjxVAFwI0_Jr0_GrUvcSsGvfC2KfnxnUUI43ZEXa7IU5l2MUUUUUU==
+X-CM-SenderInfo: 50ld1x5qjk3t3q6ptxnoox23vfohv3gofq/1tbiAREKB2r2E9lQAwAQsI
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261114_202713_302998_07D321D3 
-X-CRM114-Status: GOOD (  10.42  )
-X-Spam-Score: -2.4 (--)
+X-CRM114-CacheID: sfid-20261114_212913_625003_3AE7D52F 
+X-CRM114-Status: UNSURE (   6.68  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,69 +83,63 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-rockchip_usb_phy_init() acquires a reset control from each PHY child
-node but never releases it on probe failure or driver detach.
+Hi Bryan,
 
-The leaked exclusive control prevents a later probe from acquiring
-the same reset. Since lookup errors are converted to NULL, subsequent
-PHY reset calls silently skip the hardware reset.
+SM8750 (Lenovo TB322FC, mainline bring-up) carries a CSIPHY whose vendor driver
+describes its lane table as csiphy_2ph_v2_4_0_reg. Upstream's lane_regs_x1e80100[]
+in phy-qcom-mipi-csi2-3ph-dphy.c is the 2.1.2 generation, so the two differ.
+Before sending anything I'd like your preference on the shape.
 
-Register a devres action after a successful lookup to release the
-control on probe failure and detach. Keep the child-node lookup and
-the existing handling of lookup errors.
+What I measured (vendor camera_dlkm module, unstripped; 103-entry table, 1648 B):
 
-Found during review of reset-control lifetimes.
+  - address set identical, 103/103; (addr, data, param_type) differs in 13 entries
+  - 0x0000/0x0400/0x0800/0x0c00 : 0x8e -> 0x8c          (DEFAULT, 4)
+  - 0x0008/0x0408/0x0808/0x0c08/0x0e08 : 0x10 -> 0x19    (SETTLE_CNT_LOWER_BYTE, 5)
+  - 0x0060/0x0460/0x0860/0x0c60 : 0xbd -> 0xfd          (SKEW_CAL, 4)
 
-Fixes: 0f74ab59ce87 ("phy: rockchip-usb: use rockchip_usb_phy_reset to reset phy during wakeup")
-Cc: stable@vger.kernel.org
-Signed-off-by: Xia Yan <yanxia@cmss.chinamobile.com>
----
- drivers/phy/rockchip/phy-rockchip-usb.c | 14 +++++++++++++-
- 1 file changed, 13 insertions(+), 1 deletion(-)
+Those three values also track the vendor's own generation numbering across every
+2ph table in that module: v2.1.x = (8e,10,bd), v2.2.x = (8e,19,bd),
+v2.3.0/2.4.0/2.4.1 = (8c,19,fd). So they look like generation markers rather than
+per-SoC tuning.
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-usb.c b/drivers/phy/rockchip/phy-rockchip-usb.c
-index c5a2853a63d3..79b3315b6590 100644
---- a/drivers/phy/rockchip/phy-rockchip-usb.c
-+++ b/drivers/phy/rockchip/phy-rockchip-usb.c
-@@ -183,6 +183,11 @@ static const struct phy_ops ops = {
- 	.owner		= THIS_MODULE,
- };
- 
-+static void rockchip_usb_phy_reset_put(void *data)
-+{
-+	reset_control_put(data);
-+}
-+
- static void rockchip_usb_phy_action(void *data)
- {
- 	struct rockchip_usb_phy *rk_phy = data;
-@@ -219,8 +224,15 @@ static int rockchip_usb_phy_init(struct rockchip_usb_phy_base *base,
- 	}
- 
- 	rk_phy->reset = of_reset_control_get(child, "phy-reset");
--	if (IS_ERR(rk_phy->reset))
-+	if (IS_ERR(rk_phy->reset)) {
- 		rk_phy->reset = NULL;
-+	} else {
-+		err = devm_add_action_or_reset(base->dev,
-+					       rockchip_usb_phy_reset_put,
-+					       rk_phy->reset);
-+		if (err)
-+			return err;
-+	}
- 
- 	rk_phy->reg_offset = reg_offset;
- 
+One thing worth stating up front, because it bounds what the patch can claim:
+in phy_qcom_mipi_csi2_gen2_config_lanes() the SETTLE entries are overwritten with the
+value computed from the link frequency, and SKEW entries are skipped (still
+"TODO: support application of skew from dt flag"). Only the four 0x0000 writes
+(0x8c) actually change behaviour today.
 
-base-commit: 9a0dd2a09484e5ba45eb8e6ab58c0effe18703a3
+Questions:
 
+1) Shape: a new lane_regs_sm8750[] plus a mipi_csi2_dphy_3nm_sm8750 soc cfg
+   (compatible "qcom,sm8750-csi2-phy" with "qcom,kaanapali-csi2-phy" as fallback),
+   or would you rather see the difference expressed per generation
+   (e.g. lane_regs_2_4_0[] shared by any future SoC on that generation)?
+
+2) Evidence level: with only one SM8750 unit I can measure a 30 fps capture
+   regression, nothing more. Is "matches the vendor table for that generation"
+   an acceptable justification for the 0x0000 value change, or do you want the
+   SETTLE/SKEW entries dropped from the table until the driver actually applies
+   them (so the patch carries no dead data)?
+
+3) Binding: standalone "qcom,sm8750-csi2-phy" const vs. an items entry with the
+   kaanapali fallback. I see a kaanapali series in flight touching the same oneOf,
+   so I'd rather follow whatever shape that series lands with.
+
+I have a two-patch draft ready (binding + driver) that applies on 7.4-rc3 and passes
+checkpatch --strict, W=1 and dt_binding_check; I'll hold it until you answer.
+
+Disclosure: this mail was written with AI assistance; the author reviewed and
+verified every statement, and all measurements and decisions are the author's.
+
+Thanks,
+Qianhui Xu
 
 
 -- 
