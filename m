@@ -2,10 +2,10 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BB5DC606A323
-	for <linux-phy@archiver.kernel.org>; Sun, 15 Nov 2026 19:48:06 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 39DBA606A323
+	for <linux-phy@archiver.kernel.org>; Sun, 15 Nov 2026 19:56:38 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=sWH67tFW
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=asWjbihB
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -13,55 +13,51 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Cc:To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=fMraKBPxl/V1Kwk3AY2x8dVUCwXIGJl2E1vF44FG8i0=; b=sWH67tFWDdc+wls9z++ixyFsjQ
-	URpKuXoTuvPT8A1G5swrgTouX6wUGMW7ZkZzqUNZHMdYTFp0huo8R9hVzg4KCIG8oYZTsl888pfTZ
-	GVctypUEdbgDR0V6UUE9gqbhNQMCe1rI189fOcOfSBxLUlwigP40AxQpd332PN2azdD7l63TXEiBp
-	7I9mHa428TRRs/EleGXVEXXQLTAKKtbV+QxnSxMeU/iT0LSrLhnzCRQZrcTniLOk35M0yZr/QpmHs
-	xv6pzFcGPhZvE+ZPcEOoZN/OudMw8pZzYRJacYPt5j1vVaXn0+Nn+1PNf/zw1D2lBZ021nMywgwqr
-	1LVQooHw==;
+	bh=H14kwOx6WrKjM4fPBWV4BjwkYWM+P9S48qjNmzH/3tg=; b=asWjbihBYo/14bhGoC1t+V1O/P
+	tUdxJ4lE8qyLSdLk8NY/1Ay+orkgMNi2JFL8PsAIyeUrO5aMnost/DmoO2VWCH1uHZt88ahgYqFUR
+	bRPCoMiZOxeCZ0HSlH7TV9FyLdpALY9SnTymTLbNqFEnqTY4syJYWHGdkIieXDqEpbILKqsbsfMdX
+	z2mINPfr9ePaYf6cY/iJnMQcOp0o7dq69RX61Z7yClDmchaX8fY9nGJxR0BCb4LWE6Sz9bRI2l+qo
+	8f+JV4aLtdXYUBeMjr4DON2D6udlFFZoIZe417Uq+LWZ4nxwsHf1AUEiDTjE4blYxP/usCAo2BqDH
+	bVPYzBCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSgCs-00000000OgN-218B;
-	Sun, 15 Nov 2026 19:48:06 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xSgL7-00000000PNZ-2i6y;
+	Sun, 15 Nov 2026 19:56:37 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSgCq-00000000OgD-1P9H;
-	Sun, 15 Nov 2026 19:48:04 +0000
+	id 1xSgL5-00000000PNM-3Tch;
+	Sun, 15 Nov 2026 19:56:35 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 8D71242A31;
-	Sun, 15 Nov 2026 19:48:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E601E1F000C4;
-	Sun, 15 Nov 2026 19:47:58 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 9AC276158A;
+	Sun, 15 Nov 2026 19:56:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0DE461F000C4;
+	Sun, 15 Nov 2026 19:56:30 +0000 (UTC)
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Subject: Re: [PATCH v3 2/2] phy: rockchip: snps-pcie3: Load updated PHY
- firmware on RK3568
+Subject: Re: [PATCH] phy: mediatek: mt8195: Check PLL driver setting return
+ value
 From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-To: Shawn Lin <shawn.lin@rock-chips.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Rob Herring <robh@kernel.org>, 
- linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, devicetree@vger.kernel.org, 
- Samuel Holland <samuel@sholland.org>, Coia Prant <coiaprant@gmail.com>, 
- Diederik de Haas <diederik@cknow-tech.com>
-In-Reply-To: <20261102015236.3844843-3-shawn.lin@rock-chips.com>
-References: <20261102015236.3844843-1-shawn.lin@rock-chips.com>
- <20261102015236.3844843-3-shawn.lin@rock-chips.com>
-Date: Sun, 15 Nov 2026 11:47:55 -0800
-Message-Id: <179477207586.132702.13681064910468775977.b4-reply@b4>
+To: Sreeraj S Kurup <sreekuttan2156239@gmail.com>
+Cc: chunkuang.hu@kernel.org, p.zabel@pengutronix.de, vkoul@kernel.org, 
+ neil.armstrong@linaro.org, mani@kernel.org, matthias.bgg@gmail.com, 
+ angelogioacchino.delregno@collabora.com, dri-devel@lists.freedesktop.org, 
+ linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org
+In-Reply-To: <20261102072139.3588-1-sreekuttan2156239@gmail.com>
+References: <20261102072139.3588-1-sreekuttan2156239@gmail.com>
+Date: Sun, 15 Nov 2026 11:56:27 -0800
+Message-Id: <179477258790.135135.18445455960030835441.b4-reply@b4>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=970;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=612;
  i=manivannan.sadhasivam@oss.qualcomm.com; h=from:subject:message-id;
- bh=z/N/KYzBmLjuxTwfXJmOo9VDU3z5rXYJ+jtGgfky3h0=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq+gxut/r6n3u62ciaAfiwxlRF0b6JJ70NZiftb
- LSnxtljYFWJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCavoMbgAKCRBVnxHm/pHO
- 9ezLB/9RZF95g86QTd7xNdk6G43WKTX15whkytnIDCXmLFPMRLeT4K57mh7aOe8/FXyiU3JWpjg
- 1rY0kOVv5tr5H/tGlS6bsLRon6IWvaS/JDPLjSzd7is/0T2kAdS03VztgC/CDyE5zxFScaKx4R3
- ssJ9B+OStoKXIIZp//fSlQeLi7V35NLEHcEbBoTc13PnL7dmAULGUnRrf4vU3MlneWSF9TEoRmn
- WewmI+sVdttKYUnwPfACf9Q6sd0BmR62e2gpP3aYwkikMIHyAbbk3FOJU0XwJVzJr/w30QT2ZIU
- iQpFEeCfMj/0yo1xErbV2pTxuWzGC1jkroOvmtnG4SB8pQt/
+ bh=eileMYDYBKoPQdgMpGCKEGd2Rd8i7gFuQRzv0kIVzxA=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq+g5uw5yoC7DdghORcWiKirCC7Y3f+wwpthQjL
+ Ot5u7rQq1GJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCavoObgAKCRBVnxHm/pHO
+ 9fN5B/9gix+/uFGVJNKn69SYdcUnNe8tQXcBwew4RpqhpKrjqoRoJthvRkgkmvY5gPV4eiRNV3s
+ GMp/ufdtaYvnUi0uKa1GRAvj6KINn0Pg3V8LE6ddL+rypjWi0OaPZHQurM+lXm0RG49LSRWoB6I
+ EGbVv3tTARsusSgSsVg/puY1Sd8Hai3W5AL4WXiLUpfnCiZ76y7Lwxn7Fugb2kLPx6V9UsbvLoS
+ xuIIqyjsYTzPvNXqSp/JmHHbq9s8djQ607IrAbq6KgqjKvoV1A5eXKOyMZ8XSwTH6wMUTC2wJaG
+ n73A9BzJ/4FkkmSFPJaFcLBm1FcCGy6E0XR4029UmIcv0ISi
 X-Developer-Key: i=manivannan.sadhasivam@oss.qualcomm.com; a=openpgp;
  fpr=C668AEC3C3188E4C611465E7488550E901166008
 X-BeenThere: linux-phy@lists.infradead.org
@@ -83,27 +79,22 @@ X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 2026-11-02 09:52 +0800, Shawn Lin wrote:
-> The RK3568 PCIe3 PHY can load an updated firmware into its internal
-> SRAM during initialization. Without it the PHY may come up with a stale
-> microcode and fail to establish a stable link.
+On 2026-11-02 07:21 +0000, Sreeraj S Kurup wrote:
+> The mtk_hdmi_pll_drv_setting() function can return -EINVAL when
+> the requested pixel clock is outside its supported range.
 > 
-> Load the firmware named by the optional firmware-name DT property during
-> probe, so that it is available in the phy_init() context and is not read
-> from the filesystem on every init. During initialization, clear SDRAM
-> load done and bypass, wait for the SRAM to lock, map the SRAM into the
-> register window, write the firmware and finally signal SDRAM load done.
+> Currently, mtk_hdmi_pll_prepare() ignores this return value and
+> continues with PLL initialization even when the driver settings
+> fail.
 > 
-> The firmware is optional: when firmware-name is absent (older DTBs) or
-> the file cannot be loaded, the driver keeps the behaviour unchanged and
-> uses the microcode already present in the PHY.
+> Check the return value and abort PLL preparation on failure to
+> avoid powering up the PLL with invalid driver settings.
 > 
-> Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
+> Signed-off-by: Sreeraj S Kurup <sreekuttan2156239@gmail.com>
 
 Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 
 - Mani
-
 
 
 -- 
